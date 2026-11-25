@@ -1,7 +1,5 @@
 # The two ends of the persistence argument
 
-Author: Worker 5120.
-
 This module proves three lemmas, in `Langlands.InducedTwistPersistence`, used at the two
 ends of the gallery argument for `InducedTwistQuotientPersistenceStatement`. Throughout,
 `H` is an affine group over a Hausdorff topological field, with the canonical topology on

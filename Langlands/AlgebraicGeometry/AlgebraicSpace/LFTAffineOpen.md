@@ -19,5 +19,5 @@ of finite type without descending local finite type along etale covers.
 - Closure under the constructions of the group-space argument: `isLFTAffineOpen_range`,
   `IsLFTAffineOpen.preimage_iso`, `IsLFTAffineOpen.preimage_mapRight` (for `ρ` affine and
   locally of finite type), `isLFTAffineOpen_iInf` and `IsLFTAffineOpen.iInf_preimage_iso`
-  (nonempty finite intersections, given a closed diagonal). These extend Worker 1150's
-  `IsAffineOpen` lemmas.
+  (nonempty finite intersections, given a closed diagonal). These extend the
+  `IsAffineOpen` lemmas of `AffineOpenSubfunctors`.

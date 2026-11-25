@@ -3,8 +3,7 @@
 `Langlands.LocalFactor.NonabelianSystem.DeligneHenniart.VirtualStabilityStatement`
 is the proposition combining Deligne--Henniart Theorem 4.6 with the coarser
 witness and valuation of Theorem 4.2, for finite extensions of the p-adic numbers.
-It is a theorem statement, not a proof. Worker 46 authored the formulation;
-Worker 33 contributed the base-component construction.
+It is a theorem statement, not a proof.
 
 ## Actual objects and scope
 
@@ -139,6 +138,5 @@ The Lean statement uses the plus sign from 4.2.2 explicitly.
 This is the ordinary unshifted epsilon relation. There is no spectral,
 Weil--Deligne or equal-characteristic extension here. The source's additional
 rank-one sufficiency assertions in 4.2(iii) are not separate targets in this
-file. The broad host task also contains other theorem-statement families;
-this unit covers its full wild virtual twisting relation and witness cosets,
-and does not claim whole-task completion or prove the stated arithmetic result.
+file. This module covers the full wild virtual twisting relation and witness
+cosets, and does not prove the stated arithmetic result.

@@ -1,6 +1,6 @@
 # Finite generation and propagation for the two-bundle Serre argument
 
-This internal helper is derived content written by Worker 311 for the proof of
+This internal helper is derived content written for the proof of
 `ProperAmplePairSerreVanishingStatement`. It proves algebraic and numerical
 steps only. It does not provide sections, cohomological maps, their
 surjectivity, local nilpotence, or a dimension bound.
@@ -27,4 +27,5 @@ a grid point reached from a seed.
 
 These lemmas formalize finite generation and residue-class arguments, without
 an external theorem being assumed. All geometric and cohomological input for
-the intended application remains a separate obligation.
+the intended application lies outside this module; the statement is proved by
+`properAmplePairSerreVanishing` in `ProperAmplePairSerreVanishingProof`.

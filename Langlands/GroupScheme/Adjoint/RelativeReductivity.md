@@ -1,7 +1,5 @@
 # Reductivity of supplied affine full-centre quotients
 
-Worker 795.
-
 `RelativeRoot.IsFppfQuotient.isReductive_target` says that a supplied affine
 full-centre fppf quotient `q : G ⟶ Q` of a reductive group scheme over any
 scheme has reductive target. The only additional target hypothesis is

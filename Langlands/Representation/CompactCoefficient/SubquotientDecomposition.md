@@ -1,6 +1,6 @@
 # Conditional category decomposition by compact restriction
 
-Worker 491 defines the all/no arbitrary-subquotient factors for the actual
+This module defines the all/no arbitrary-subquotient factors for the actual
 subgroup-restriction compact-coefficient property and assembles their conditional
 category decomposition. This is an internal consequence of the imported
 normal-subgroup projector splitting, coefficient permanence, complementary
@@ -62,7 +62,7 @@ Renard VI.3.5 (French edition dated 9 July 2026, printed pp.146–147 / PDF
 pp.152–153) motivates the construction; A.IX (printed p.268 / PDF p.274) fixes
 the category-decomposition convention. The implemented proof is the imported
 conditional splitting followed by the exact factor-membership and coproduct
-arguments above. This intermediate unit does not prove the remaining analytic
+arguments above. This intermediate module does not prove the remaining analytic
 inputs for the actual rational norm kernel, identify compact restriction with
 proper-standard cuspidality, or prove the unchanged whole-cuspidal target.
 None of its additional hypotheses is added to that final target.

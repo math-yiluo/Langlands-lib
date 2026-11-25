@@ -1,6 +1,6 @@
 # Conjugation invariance of the scalar `j` (target)
 
-Worker 5. The module
+The module
 `Langlands.Representation.Plancherel.DynamicOppositeConjugationScalar`
 states one Prop-valued target,
 `ConditionalDynamicOppositeConjugationScalarStatement`. It is Waldspurger's
@@ -59,7 +59,7 @@ of the conjugate data equals the scalar `j_P` transported along
 conjugation. Waldspurger's IV.3 (3) is the case of a Weyl representative
 `g = w`, combined with IV.3 (1) to pass from `w·P` to another parabolic of
 `P(w·M)`. IV.3 (1) for the Library's scalars is treated separately in the
-module `StandardInductionCanonicalScalarComposition` (Worker 200); this
+module `StandardInductionCanonicalScalarComposition`; this
 module does not use it.
 
 **Cocharacters.** The Library's parabolic data are dynamic: `P = P_G(χ)`,

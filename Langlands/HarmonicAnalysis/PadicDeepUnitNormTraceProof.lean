@@ -25,7 +25,7 @@ private theorem trace_mem_integers {p : ℕ} [Fact p.Prime]
   let := T.relativeIntegerFieldAlgebra (E := E)
   let := T.relativeIntegerFieldTower (E := E)
   let := T.relativeIntegerTower S
-  obtain ⟨hclosure, hfinite⟩ := LocalClassField.NYLL.relativeIntegerStructure p F E T S
+  obtain ⟨hclosure, hfinite⟩ := LocalClassField.UniverseZero.relativeIntegerStructure p F E T S
   let := hclosure
   let := hfinite
   let : Module.IsTorsionFree T.Integers S.Integers :=

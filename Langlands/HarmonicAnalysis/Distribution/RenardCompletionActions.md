@@ -1,6 +1,6 @@
 # Renard II.3.13: laws of the full Hecke actions on algebraic distributions
 
-Worker 107 and Worker 104, Task 5530. Source: Renard, *Représentations des
+Source: Renard, *Représentations des
 groupes réductifs p-adiques*, French version dated 9 July 2026, II.3.13,
 Lemma and its proof, printed pp.54–55 / PDF pp.60–61, and the Theorem,
 printed p.55 / PDF p.61; source registration
@@ -11,9 +11,9 @@ This module supports the proof of
 in `RenardCompletionProof`. It proves helper lemmas about the published full
 actions `rightHeckeConvolution μ T h` and `leftHeckeConvolution μ h T` of the
 Haar Hecke algebra on all algebraic distributions, in the namespace
-`Langlands.HarmonicAnalysis.Distribution.RenardCompletion`. It states no
-statement-unit target. In particular, it is not a proof of the separate
-full-Hecke statement units of `RenardFullHeckeStatements`: it proves only
+`Langlands.HarmonicAnalysis.Distribution.RenardCompletion`. It proves no
+published statement as a target. In particular, it is not a proof of the separate
+full-Hecke statements of `RenardFullHeckeStatements`: it proves only
 those identities that the completion argument uses.
 
 Throughout, `G` is a topological group with its Borel structure and `μ` is a

@@ -1,7 +1,7 @@
 # Iwasawa decomposition with the same available special compact witnesses
 
-Author: Worker 1265. The shared existential formulation and dependent torus,
-apartment and standard-Levi identifications are adapted from Worker 1249's
+The shared existential formulation and dependent torus,
+apartment and standard-Levi identifications are adapted from
 `SpecialCompact.AvailableExistenceStatement`.
 
 `Langlands.BruhatTits.Iwasawa.IwasawaExistenceStatement` is a Prop-valued
@@ -125,8 +125,7 @@ For every `J ⊆ simpleRelativeRoots i ν`, set
 
 These are exactly the inherited geometric and special-compact obligations
 of `SpecialCompact.AvailableSpecialMaximalCompactExistence`. Reductivity is
-existential because the current Library has no unconditional theorem
-providing it for the actual standard Levi representative. It is not an
+existential. It is not an
 extra initial assumption.
 
 `SpecialLeviRestriction` says that `xM` is a special vertex obtained by
@@ -178,7 +177,8 @@ V.5.1(5). The source's minimal-parabolic intersection comparison is the
 separate published statement target
 `Langlands.GroupScheme.StandardLeviMinimalParabolicCompatibilityStatement`
 in `Langlands.Geometry.Building.SpecialCompactLeviMinimalParabolicStatement`;
-its proof is a separate obligation.
+it is proved as `standardLeviMinimalParabolicCompatibility` in
+`Langlands.Geometry.Building.SpecialCompactLeviMinimalParabolicProof`.
 
 ## Sources and provenance
 
@@ -225,7 +225,7 @@ either proposition.
 
 The existential packaging and dependent point identifications are
 internal formulation choices. Dynamic, standard and conjugate products
-specialize the algebraic-parabolic source through the current Library's
+specialize the algebraic-parabolic source through the Library's
 actual constructions. General building construction, the corrected
 Chapter 9 verification, Iwasawa proofs, Cartan decomposition and
-compactness of `G/P` remain separate proof obligations.
+compactness of `G/P` are not part of this statement.

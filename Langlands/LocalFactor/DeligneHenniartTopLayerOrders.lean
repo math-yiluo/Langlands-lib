@@ -1,7 +1,7 @@
 import Langlands.LocalFactor.DeligneHenniartNormTrace
 import Langlands.LocalFactor.Ramification.Herbrand.Finite
 import Langlands.LocalField.RelativeIntegers
-import Langlands.ClassFieldTheory.Local.NYLL.RelativeIntegerStructureProof
+import Langlands.ClassFieldTheory.Local.UniverseZero.RelativeIntegerStructureProof
 import Langlands.ClassFieldTheory.Local.PrimeRamifiedDifferentProof
 import Langlands.LocalFactor.Ramification.UniformizerCriterionProof
 import Mathlib.NumberTheory.RamificationInertia.Galois
@@ -179,7 +179,7 @@ theorem lowerGroupOrder_zero_mul_ramificationIndex [IsGalois K.Carrier M.Carrier
     relativeIntegerAlgebra_isTorsionFree TK TM
   have : IsLocalHom (algebraMap TK.Integers TM.Integers) := relativeIntegerMap_isLocalHom TK TM
   let := relativeIntegerFieldAlgebra (E := M) TK
-  have := (LocalClassField.NYLL.relativeIntegerStructure p K M TK TM).2
+  have := (LocalClassField.UniverseZero.relativeIntegerStructure p K M TK TM).2
   have : Algebra.IsIntegral TK.Integers TM.Integers := Algebra.IsIntegral.of_finite _ _
   have : Finite (maximalIdeal TK.Integers).ResidueField := by
     have : Finite (TK.Integers ⧸ maximalIdeal TK.Integers) := TK.finite_residueField

@@ -1,7 +1,5 @@
 # Finite-length components of the actual rational-point duality targets
 
-Author: Worker 196.
-
 This internal construction restricts the two closed rational natural-duality
 propositions to finite-length smooth complex representations. Those closed
 propositions and the required closed finite-length admissibility propositions

@@ -1,7 +1,7 @@
 # Classes in actual automorphic horizontal cohomology
 
 For an actual `OperatorRealization F n` over a number field in arbitrary
-universe and positive natural rank, this internal unit specializes the
+universe and positive natural rank, this internal module specializes the
 published generic horizontal class lemmas to the actual quotient
 `S.HorizontalCohomology q`. Its coefficients are the existing complex module
 `S.Space`, its cochains retain the full standard infinite compact group,
@@ -57,8 +57,6 @@ and the input cochain itself is the boundary preimage. This source-free
 internal specialization asserts no new external-literature comparison.
 Finite adelic quotient action, full-operator transport and analytic or sheaf
 comparisons remain separate. No nonvanishing theorem is asserted.
-
-Authorship: Worker 2.
 
 The inherited additive group instances have explicit names specific to this
 module. Their definitions and local scope are unchanged; the names avoid

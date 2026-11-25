@@ -1,10 +1,8 @@
 # The finite segment-truncation obstruction
 
-Author: Worker 684.
-
 `Langlands.Classification.SegmentTruncationObstruction.{uF,uV} F T` states
 the combinatorial lemma at the end of Zelevinsky 1980 §9.8, printed
-pp.199–200. This contribution defines a proposition; the obstruction remains
+pp.199–200. This module defines a proposition; the obstruction remains
 unproved here. It proves neither the special-head irreducibility criterion
 nor any representation classification result.
 
@@ -82,13 +80,15 @@ Nonlinkage now forces `Δ_j ⊆ Δ_k`. The terminal truncation of `Δ_k`
 therefore contains `νρ`, contradicting the choice of `ρ`.
 
 This paragraph records the source argument, not an implemented Lean proof.
-A successor must justify the finite-union endpoint choice using independently
+A proof must justify the finite-union endpoint choice using independently
 proved integral twist freeness for actual cuspidal classes; finiteness alone
 would not justify it on an arbitrary periodic orbit. It must derive both
 support-containment steps from actual nonlinkage, handling contained segments
 and different twist lines, and prove any integer or rational coordinate bridges.
 No freeness hypothesis, classification hypothesis, or endpoint-choice axiom
-is added to the proposition.
+is added to the proposition. The module
+`Classification.SegmentTruncationObstructionProof` proves it as
+`segmentTruncationObstruction`.
 
 The helper definitions are internal notation for exactly the empty-or-segment
 alternatives and endpoint membership in the source. The only project import is

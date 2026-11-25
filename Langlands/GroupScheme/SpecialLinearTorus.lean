@@ -233,7 +233,7 @@ theorem torusWeights_val (τ : ULift.{u} (OffPivot p) → Aˣ) (c : OffPivot p) 
   rw [torusWeights, weightCoord_val,
     Finset.prod_eq_single (⟨c⟩ : ULift.{u} (OffPivot p)) (fun d _ hd => ?_) (by simp)]
   · simp
-  · rw [Pi.single_eq_of_ne (fun h => hd (ULift.ext _ _ h)), zpow_zero]
+  · rw [Pi.single_eq_of_ne (fun h => hd (ULift.ext h)), zpow_zero]
 
 theorem torusWeights_pivot (τ : ULift.{u} (OffPivot p) → Aˣ) :
     torusWeights p τ p = (∏ c, τ c)⁻¹ := by

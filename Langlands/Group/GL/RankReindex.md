@@ -17,9 +17,8 @@ The entry formulas hold by definition, the identity follows by extensionality,
 and the continuity laws use the published `reindexContinuous`. No compatibility
 between the topology and ring operations is required.
 
-This pair collects the reviewed matrix-reindexing helpers from
-[`Induction/RankCast`](../../Representation/Induction/RankCast.md), authored by
-Worker 837. The identical forward-entry lemma from
+This pair collects the matrix-reindexing helpers from
+[`Induction/RankCast`](../../Representation/Induction/RankCast.md). The identical forward-entry lemma from
 [`LowerBlockQuotientCoordinates`](LowerBlockQuotientCoordinates.md) shares this
 declaration. Both modules import this pair; the declaration names, hypotheses,
 conclusions and proofs are preserved.

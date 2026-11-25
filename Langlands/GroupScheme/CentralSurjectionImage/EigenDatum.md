@@ -1,7 +1,5 @@
 # Cocharacter data from a single point over an algebraically closed field
 
-Author: Worker 1387.
-
 This internal module, in the namespace
 `Langlands.GroupScheme.CentralSurjectionImage`, works over a field `k : Type u`.
 

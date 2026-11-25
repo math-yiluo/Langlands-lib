@@ -97,5 +97,5 @@ The official author errata snapshot
 `milne-2017-algebraic-groups-errata-2026-11-02` was read. It gives no
 correction to Theorem 14.5 or Corollary 14.6.
 
-The statement provides the focused target for the separate unitriangular
-unipotence proof task `12a27202-6649-431d-9786-2c6600bc08ad`.
+The statement is proved separately, by `Langlands.GroupScheme.unitriangularUnipotent`
+in `Langlands.GroupScheme.UnitriangularUnipotentProof`.

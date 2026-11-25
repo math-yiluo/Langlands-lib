@@ -1,6 +1,6 @@
 # Proof: central rigidity for groups of finite presentation from the noetherian case
 
-Worker 396 wrote this module. It proves
+This module proves
 
 ```lean
 theorem Langlands.GroupScheme.multiplicativeTypeCentralRigidityNoetherianReduction :
@@ -15,7 +15,7 @@ over every locally noetherian base. Then it holds over an arbitrary base `S`, pr
 structure morphism of `G` is locally of finite presentation, quasi-compact and
 quasi-separated.
 
-The proof follows the order suggested in the task, not the order of SGA 3. It first passes to
+The proof does not follow the order of SGA 3. It first passes to
 an affine chart of an fppf cover over which `H` is diagonalizable, and only then uses
 noetherian approximation. It never makes `S` local.
 
@@ -173,5 +173,5 @@ residue field extension `κ(s_i) ⟶ κ(s)` (`FibreHyp.descend`), as in the sour
 
 ## Axioms
 
-`lean_check` inspection of `multiplicativeTypeCentralRigidityNoetherianReduction` reports
+Inspection of the axioms of `multiplicativeTypeCentralRigidityNoetherianReduction` reports
 only `propext`, `Classical.choice` and `Quot.sound`.

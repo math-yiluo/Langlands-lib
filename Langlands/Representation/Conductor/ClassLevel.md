@@ -1,6 +1,6 @@
 # First nonzero levels on actual smooth classes
 
-Worker 30 descends the published `Conductor.firstFixedLevel` to the actual
+This module descends the published `Conductor.firstFixedLevel` to the actual
 isomorphism-class quotient `SmoothDualClass`. The rank is `n + 1`, including
 rank one. The integer ring and maximal ideal come from the specified
 `ValuativeRel`; the actual subgroup is the published
@@ -48,5 +48,5 @@ use the original essential-vector existence argument corrected in 2012.
 
 Imports are the companion `Category.ClassInvariants` and published
 `Conductor.Definitions`; the latter imports the actual congruence construction.
-No pending theorem is stored as a construction field. The invariance and
+No unproved theorem is stored as a construction field. The invariance and
 finite-bound characterizations are proved as intrinsic construction obligations.

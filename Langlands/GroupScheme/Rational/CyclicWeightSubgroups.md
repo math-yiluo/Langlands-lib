@@ -13,7 +13,7 @@ proves their normality, stability, smoothness and maximality, and identifies the
 
 - `modelAction e ψ φ b : TorusAction F I` is the torus action on algebra points of the model
   induced by the transported action `b.transport φ.inv ψ`
-  (`TorusAction.ofAutomorphicAction`, Worker 1239's `Rational.TorusActionBridge`).
+  (`TorusAction.ofAutomorphicAction`, `Rational.TorusActionBridge`).
 - `weightSubgroupFunctor e ψ φ b P`, for a subsemigroup `P` of `I → ℤ`, is the subgroup
   functor `(cutSubgroupFunctor (isCutOutBy_weightIdeal e (modelAction e ψ φ b) P)).comap ψ.inv`
   of `G`. By `mem_weightSubgroupFunctor`, a point `g` over `T` lies in it iff the algebra point
@@ -71,7 +71,7 @@ the three properties above and `hL1`, which gives `≥` (`generator_le_semigroup
 ## Provenance
 
 Internal supporting material for the proof of
-`Langlands.GroupScheme.RelativeRoot.CyclicWeightFiltrationStatement` (task 023326af). In
+`Langlands.GroupScheme.RelativeRoot.CyclicWeightFiltrationStatement`. In
 Conrad–Gabber–Prasad, *Pseudo-reductive groups*, 2nd ed., §3.3 (Proposition 3.3.6, the
 construction before Lemma 3.3.8, and Lemma 3.3.8 itself, printed pp.111-112), the subgroups
 `U_{A_j}(G)` of the cyclic tails are constructed by the dynamic method. Lemma 3.3.8 shows

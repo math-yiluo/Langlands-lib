@@ -1,6 +1,6 @@
 # Weyl and Bruhat prerequisites for the p-adic GL geometric lemma
 
-Author: Worker 14. These are proposition definitions over actual matrices,
+These are proposition definitions over actual matrices,
 permutations, subgroups and quotient sets. They assume no theorem truth.
 This development depends on the paired `WeylDefinitions` and its explicitly
 identified published block and permutation constructions.
@@ -17,7 +17,8 @@ same actual permutation `w` to the double coset of its inverse permutation
 matrix in `P_B \ GL_n(F) / P_C`. The field is any actual `PadicField p`,
 for any prime `p` and any positive rank. No extra Bruhat decomposition or
 finite double-coset hypothesis is supplied by the caller. Finiteness follows
-from the finite permutation subtype if this theorem is later proved.
+from the finite permutation subtype, since this theorem is proved
+(`Langlands.Geometric.padicParabolicBruhat` in `PadicParabolicBruhatProof`).
 
 `PadicStandardIntersectionsTheorem` asserts that each of the two
 intersection triples is a standard triple inside its product Levi.
@@ -69,15 +70,15 @@ algebraic subgroup and double-coset assertions, so no topology certificate
 is added to the target.
 
 The proof of lemma 2.11(a) in section 6.3 cites Bourbaki's Coxeter-group
-exercise; section 6.4 cites Borel--Tits for Bruhat decomposition. These are
-proof-source obligations for future proof work; this pair faithfully states
+exercise; section 6.4 cites Borel--Tits for Bruhat decomposition. These
+citations concern the proofs, which are in separate modules; this pair faithfully states
 the explicit BZ77 assertions and does not claim to have verified the cited
 proofs. No irreducibility or tempered-induction theorem is asserted.
 
 The full normalized parabolic geometric lemma, cancellation of modular
-corrections, and the cuspidal-support consequences remain separate targets
-to be implemented using these actual constructions and the induction and
-Jacquet interfaces maintained by their owners.
+corrections, and the cuspidal-support consequences are separate targets,
+stated with these actual constructions and the induction and Jacquet
+interfaces of their own modules.
 
 ## All-field port
 

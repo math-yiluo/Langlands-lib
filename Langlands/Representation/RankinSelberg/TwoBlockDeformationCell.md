@@ -3,8 +3,6 @@
 Module `Langlands.Representation.RankinSelberg.TwoBlockDeformationCell`,
 namespace `Langlands.RankinSelberg.TwoBlockDeformation`.
 
-Author: Worker 831.
-
 This is a helper module for the proof of
 `Langlands.RankinSelberg.TwoBlockWhittakerDeformationStatement` (JPSS 1983,
 Section (4.5)). It records how upper unipotent translation acts on the

@@ -1,9 +1,8 @@
 # Two-sided orbit extensions into an affine scheme are constant
 
-Author: Worker 919.
-
 Module `Langlands.GroupScheme.Dynamic.TwoSidedConstancy`, namespace
-`Langlands.GroupScheme.TwoSidedConstancy`. This is an internal supporting unit for Task 7586.
+`Langlands.GroupScheme.TwoSidedConstancy`. This is an internal supporting module for the proof of
+`RankOneCentralCoverStatement` (`Reductive.RankOneCentralCoverProof`).
 It formalizes an elementary fact: a Laurent polynomial lying in both `A[s]` and `A[s⁻¹]` is
 constant. It uses the Library's polynomial and Laurent charts of `𝔸¹` and `𝔾ₘ`
 (`Dynamic/Uniqueness`, `Dynamic/AffineExtension`, `Dynamic/OppositeIntersection`). It needs no literature source.

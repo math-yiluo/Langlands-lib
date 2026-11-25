@@ -13,5 +13,6 @@ is stable under every actual tangent matrix.
 The proof specializes the published all-algebra character equation
 `characterSpace_affine` to the dual numbers, then takes epsilon
 coefficients of every coordinate. This is an internal derived helper for
-Task 7128's group-side input to the Casimir argument. No smoothness,
+the group-side input to the Casimir argument, toward the Weyl character
+formula for split reductive groups in characteristic zero. No smoothness,
 characteristic-zero hypothesis, irreducibility or character formula is used.

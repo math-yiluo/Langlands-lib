@@ -1,7 +1,7 @@
 # Split rank one for a supplied quaternionic spin cover
 
 This internal consequence of the published rank comparison and central-isogeny
-rank transport belongs to Task 5397. It uses the actual `IsSpinCover` predicate
+rank transport serves the proof of `LocalSpinRankOneStatement`. It uses the actual `IsSpinCover` predicate
 and the published quotient-valued quadratic forms.
 
 `SpinCoverWittIndexOneStatement` quantifies over every infinite field `K` in
@@ -23,4 +23,4 @@ already included in `IsSpinCover`.
 
 This is a composition of published results and makes no new literature claim.
 It proves the rank assertion for a supplied cover. Existence of a cover and its
-almost simplicity still require the geometric input to the full local theorem.
+almost simplicity require the geometric input to the full local theorem.

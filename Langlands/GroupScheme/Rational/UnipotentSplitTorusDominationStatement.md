@@ -1,7 +1,5 @@
 # Unipotent splitness from split-torus domination
 
-Author: Worker 1333.
-
 `UnipotentSplitTorusDominationStatement.{u}` is a proposition target. For
 every field `k : Type u` and every smooth connected affine actual group
 scheme `U` over `k`, it asserts that `IsUnipotent U` together with

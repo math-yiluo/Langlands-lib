@@ -1,7 +1,5 @@
 # Proof of the two-block row Fourier companion identity
 
-Author: Worker 1181.
-
 The theorem `Langlands.HarmonicAnalysis.twoBlockRowFourierCompanion` proves exactly the
 published closed proposition
 `Langlands.HarmonicAnalysis.TwoBlockRowFourierCompanionStatement.{uF}`. Its only

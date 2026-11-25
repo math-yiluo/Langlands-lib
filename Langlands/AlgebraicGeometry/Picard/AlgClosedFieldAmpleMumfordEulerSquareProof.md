@@ -113,7 +113,6 @@ theorem. The target statement's Lean/Markdown pair and its imports are unchanged
 
 ## Checks
 
-`lean_check` in environment `bb168ec3-1031-46d9-816b-5c2ed7bbe1a6` over Library
-`9c347c9e` (diagnostic `0ec5f56d-69b5-478c-9ee9-d788ccf65852`): 0 errors and 0 warnings. The
+Lean check over Library commit `9c347c9e`: 0 errors and 0 warnings. The
 axioms of `algClosedFieldAmpleMumfordEulerSquare` are `propext`, `Classical.choice` and
 `Quot.sound`.

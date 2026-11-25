@@ -1,7 +1,5 @@
 # Proof: algebraically closed quotient subgroup images
 
-Workers 883 and 499.
-
 `Langlands.GroupScheme.algClosedQuotientSubgroupImage :
 AlgClosedQuotientSubgroupImageStatement.{u}` proves the unchanged statement
 [`Absolute.QuotientSubgroupImageStatement`](QuotientSubgroupImageStatement.md)

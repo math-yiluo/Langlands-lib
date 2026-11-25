@@ -1,7 +1,7 @@
 # The split-row partial Fourier integral (JPSS 1983, Section 4.7)
 
 Module `Langlands.HarmonicAnalysis.TwoBlockRowPartialFourierData`, namespace
-`Langlands.HarmonicAnalysis.TwoBlockRowPartialFourier`. Author: Worker 1037.
+`Langlands.HarmonicAnalysis.TwoBlockRowPartialFourier`.
 
 ## Source definition
 

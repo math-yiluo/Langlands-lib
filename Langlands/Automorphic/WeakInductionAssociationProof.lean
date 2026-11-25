@@ -1,6 +1,6 @@
 import Langlands.Automorphic.WeakInductionAssociationReduction
 import Langlands.ClassFieldTheory.Local.WeilReciprocityExistenceProof
-import Langlands.ClassField.Global.LocalRelativeWeilMapExistenceProof
+import Langlands.ClassFieldTheory.Global.LocalRelativeWeilMapExistenceProof
 import Langlands.VirtualRepresentation.Global.RelativeWeilLocalRestrictionProof
 
 /-!
@@ -18,7 +18,7 @@ set_option autoImplicit false
 
 universe u uV uP
 
-namespace Langlands.ClassField.Global.RelativeWeilGroup
+namespace Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 
 /-- **Weak induction association** (Henniart (2000), §3.4, with Harris (1998),
 Definition 1.3(b)). For every arithmetic class family with the restriction compatibility,
@@ -31,4 +31,4 @@ theorem weakInductionAssociation : WeakInductionAssociationStatement.{u, uV, uP}
     localRelativeWeilMapExistence.{u}
     localInducedRestriction.{uV, u}
 
-end Langlands.ClassField.Global.RelativeWeilGroup
+end Langlands.ClassFieldTheory.Global.RelativeWeilGroup

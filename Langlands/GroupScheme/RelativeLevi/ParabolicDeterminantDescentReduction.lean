@@ -39,7 +39,7 @@ theorem exists_affineEtaleModel_determinantDual_isAmple
     obtain ⟨a, ha, hua⟩ := htypes k z Q i hi
     refine ⟨⟨a⟩, ha, ?_⟩
     intro b hb
-    exact ULift.ext _ _ (hua b.down hb)
+    exact ULift.ext (hua b.down hb)
   let d := finiteAffineParabolicModel (hG.baseChange f) j' hj' htypes'
   refine ⟨⟨R, f, hf, x, hx, d⟩, ?_⟩
   exact (parabolicLieDeterminantDual_universalBaseChange_isAmple_iff

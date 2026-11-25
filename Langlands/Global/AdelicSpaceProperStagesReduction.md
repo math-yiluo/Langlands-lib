@@ -1,7 +1,5 @@
 # Reduction of proper adelic stages to three geometric inputs
 
-Authors: Worker 128 and Worker 101.
-
 This derived assembly proves `AdelicSpaceProperStagesStatement` conditional on
 three explicit geometric statements in the same arbitrary universe:
 `LocalFieldProperPointMapStatement`, `SpaceValuativeExistenceStatement`, and
@@ -30,8 +28,9 @@ arithmetic cases. No additional hypothesis is inserted in either published
 statement.
 
 The proof route is the composition of the local-to-stage properness reduction
-by Worker 101 with the full-level preimage and every-stage transport reductions
-by Worker 128. These reductions use the Library's actual ring-point and
+with the full-level preimage and every-stage transport reductions. These
+reductions use the Library's actual ring-point and
 base-change constructions. This assembly does not discharge any of the three
-geometric inputs and is not an unconditional proof publication of the host
-task's target.
+geometric inputs and is not an unconditional proof of
+`AdelicSpaceProperStagesStatement`; that proof is `adelicSpaceProperStages`
+(module `AdelicSpaceProperStagesProof`).

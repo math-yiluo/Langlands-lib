@@ -48,5 +48,5 @@ specified parameter subfield, and the original upper extension is finite with
 compatible constant-field structures. The denominator is nonzero. No
 separability is required. The outside-S premise occurs only in the integral
 compatibility and image clauses. Actual model existence is proved separately;
-the finite-level adelic product and full adelic Weil comparison remain
-obligations of the host task.
+the finite-level adelic product and full adelic Weil comparison are not
+part of this module.

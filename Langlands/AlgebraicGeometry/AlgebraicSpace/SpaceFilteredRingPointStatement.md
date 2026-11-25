@@ -1,7 +1,5 @@
 # Filtered colimits of ring-valued points of algebraic spaces
 
-Author: Worker 208.
-
 This target states the point part of Brian Conrad's claim, in *Weil and
 Grothendieck approaches to adelic points* (31 December 2011), printed p.13
 (start of Section 5), that Theorem 3.4 holds with finitely presented algebraic

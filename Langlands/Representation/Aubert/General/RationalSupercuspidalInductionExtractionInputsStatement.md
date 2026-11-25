@@ -1,7 +1,5 @@
 # Actual supercuspidal induction from the cuspidal extraction inputs
 
-Author: Worker 4238.
-
 This module states one proposition in
 `Langlands.Aubert.General.RationalPointFamily` and proves nothing. It reduces
 the published target `RationalSupercuspidalInductionFiniteLengthStatement`
@@ -22,7 +20,7 @@ RationalCuspidalExtractionInputsStatement.{u, v} →
 
 The target's input carrier universe `uV` is `v`; `u` and `v` are independent.
 
-The antecedent is Worker 4358's published conjunction of two inputs, at the
+The antecedent is the published conjunction of two inputs, at the
 binders of `RationalCuspidalJacquetFactorExtractionStatement.{u, v}` (every
 nonarchimedean local field `k : Type u`, connected reductive `G`, actual
 maximal split torus `i`, generic `ν`, `pointTopology` with local compactness,
@@ -81,6 +79,8 @@ Only input (G) is needed for step 2; input (E) enters through step 1.
 
 ## What remains open
 
-This module proves nothing. Inputs (G) and (E) remain unproved in the Library;
-the inputs Markdown records what each still needs. The implication is to be
-proved in a separate proof unit.
+This module proves nothing. Input (G) is proved in the Library
+(`exists_pointInducedJacquetGeometricFiltration`); input (E) is proved only
+conditionally. The implication is proved in
+`RationalSupercuspidalInductionExtractionInputsProof`
+(`rationalSupercuspidalInductionFiniteLengthFromExtractionInputs`).

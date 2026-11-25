@@ -1,6 +1,6 @@
 # Transport of actual torus-subgroup charts
 
-Worker 706. These internal constructions implement the base-change step in
+These internal constructions implement the base-change step in
 SGA 3, Exposé XI, proof of Theorem 4.1 (registered source
 `sga3-exposes-xi-xii-xiv-gille-polo-2008`, `Expo11.pdf`, PDF page 21).
 
@@ -19,5 +19,5 @@ and to the test base.
 
 The equality-of-ranges interface reuses
 `SubgroupFunctor.range_comp_iso_eq_iff` from
-`Langlands.GroupScheme.Rational.ParabolicAmbientTransport`, with the submitted
-argument order retained.
+`Langlands.GroupScheme.Rational.ParabolicAmbientTransport`, with the argument
+order of that module.

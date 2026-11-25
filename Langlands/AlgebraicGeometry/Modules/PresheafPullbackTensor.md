@@ -38,13 +38,11 @@ below, and its counit by `ε`.
 A local instance, `presheafPullbackTensorMonoidalCategory X`, exposes
 Mathlib's sectionwise monoidal structure on the definitionally equal category
 `X.PresheafOfModules`. It is `inferInstanceAs` applied to the monoidal
-instance on `PresheafOfModulesOfCommRing X.presheaf`. It was first published
-as an anonymous instance. Its explicit name is an integration-only
-correction: the generated name and its auxiliary declarations coincided with
-those of the anonymous local instance in
+instance on `PresheafOfModulesOfCommRing X.presheaf`. It has an explicit name
+because, as an anonymous instance, its generated name and auxiliary
+declarations coincide with those of the anonymous local instance in
 `Langlands.AlgebraicGeometry.Picard.RigidifiedTensorSymmetry`, so the two
-modules could not be imported together. The instance body and the source text
-of every other declaration are unchanged. The elaboration option
+modules could not be imported together. The elaboration option
 `backward.isDefEq.respectTransparency false` permits Lean to unfold these
 category presentations during elaboration; it adds no mathematical assumption.
 
@@ -60,8 +58,8 @@ P(F(V)) ⊗_R Q(F(V)) ⟶ P(F(V)) ⊗_S Q(F(V))
 ```
 
 sending `p ⊗ q` to `p ⊗ q`, with the modules viewed over `R` by restriction
-of scalars along `(f.c.app V).hom : R →+* S`. It is built by applying the
-published `restrictScalarsTensorLift` to the identity of the sectionwise
+of scalars along `(f.c.app V).hom : R →+* S`. It is built by applying
+`restrictScalarsTensorLift` to the identity of the sectionwise
 `S`-tensor product. Thus it is a well-defined `R`-linear map.
 
 `presheafPushforwardTensorApp_app_tmul` proves this formula by definition.
@@ -130,13 +128,12 @@ natural transformation from
 
 ## Provenance and scope
 
-This is internal derived presheaf infrastructure, modeled on the published
+This is internal derived presheaf infrastructure, modeled on the
 sheaf comparison in `Langlands.AlgebraicGeometry.Modules.PullbackTensor`.
-That imported module is unchanged. The construction here uses the pinned
+The construction here uses the
 Mathlib APIs in `Algebra/Category/ModuleCat/Presheaf/Pushforward.lean`,
 `Pullback.lean`, and `Monoidal.lean`, and the adjunction API, at Mathlib
-commit `5ed2965256430c3649e86755f9576b54eca72435`, environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`.
+commit `5ed2965256430c3649e86755f9576b54eca72435`.
 
 The motivating sheaf result is the Stacks Project, Lemma 17.16.4,
 [tag 01CD](https://stacks.math.columbia.edu/tag/01CD), in Section 17.16
@@ -147,9 +144,10 @@ products of sheaves of modules (HTML snapshot 2026-10-21)*, with SHA256
 `825127394e5828c3a56f5134b8823afba20547d7ba5173f624b2f9556a058e34`.
 The present presheaf construction and its implemented proofs are derived
 content, not a claim that the Stacks lemma itself states these presheaf
-maps or proves their invertibility. The later presheaf invertibility and
-transport through sheafification remain separate obligations.
+maps or proves their invertibility. The presheaf invertibility and the
+transport through sheafification are proved separately, as
+`presheafPullbackTensorComparisonIsIso` (module `PresheafPullbackTensorProof`)
+and `pullbackTensorComparisonIsIso` (module `PullbackTensorProof`).
 
-Worker 5 implemented the construction and proofs. Worker 150 supplied the
-downstream adjunction-image formula and its explicit scalar-argument
-presentation, used here to expose the required interface.
+The downstream adjunction-image formula and its explicit scalar-argument
+presentation are used here to expose the required interface.

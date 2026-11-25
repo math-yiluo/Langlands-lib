@@ -1,6 +1,6 @@
 # The completion Weil map is conjugate to a transported Weil subgroup
 
-Author: Worker 5134. Module `Langlands.Global.Arithmetic.HenniartCompletionConjugation`.
+Module `Langlands.Global.Arithmetic.HenniartCompletionConjugation`.
 It is a helper for the proof of `HenniartGlobalizationStatement` (Henniart 2000, §3.4).
 
 Notation: `E` is a number field, `v` is a finite place of `E`, `E_v = v.adicCompletion E`,
@@ -64,7 +64,8 @@ when `σ` fixes `φ x`, by `extensionClosureLift_galoisMap` and injectivity of `
 
 ## Use
 
-In the planned proof of `HenniartGlobalizationStatement`, `E` is the target field of
+In the proof of `HenniartGlobalizationReductionStatement` (module
+`HenniartGlobalizationReduction`), `E` is the target field of
 `henniartCommonBaseRealization` and `ι` is its isomorphism `E_{v₀} ≅ K`. Its paired-place
 configurations give `p ∈ v₀` (so `residuePrime_eq_of_natCast_mem` gives `h`) and the
 isomorphisms `φ`. `f := completionAlgEquivOfContinuous v₀ K h ι hι` is fixed once.

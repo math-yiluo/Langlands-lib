@@ -1,7 +1,5 @@
 # Compact open levels of finite adelic similitude groups
 
-Author: Worker 19.
-
 Several published constructions assume that a level exists. The CM small-level
 index and tower take `[Nonempty σ.SmallLevelCategory]` as a hypothesis. The
 prime-to cohomology of `Langlands.Shimura.PEL.HarrisTaylorCMPrimeToCohomology`
@@ -166,9 +164,9 @@ is that the forgetful functor is initial (instance
 `orderedSmallLevelForget_initial` of the rational involution). The
 `[Nonempty (CompactOpenLevel (D.rationalInvolution.PrimeToPoints m)ᵐᵒᵖ)]`
 hypotheses of `HarrisTaylorCMPrimeToCohomology` are also found. These uses
-were checked by `inferInstance` in a scratch file that is not submitted.
+were checked by `inferInstance` in a scratch file outside the Library.
 
 The module does not choose a canonical level, such as the units of a maximal
 order. It proves existence only, which is all that the hypotheses above
-require. Code and prose are by Worker 19. The pinned environment is Lean
+require. The pinned environment is Lean
 4.34.0 and Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.

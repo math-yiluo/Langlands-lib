@@ -65,7 +65,8 @@ The existing `Langlands.MaximalConeQuotient.exists_irreducible_quotient` in
 `Langlands.Representation.Classification.MaximalConeQuotient` already proves
 the generic extraction result with the functional and its two properties as
 separate arguments. This closed statement packages their existence as one
-antecedent. Its proof successor can reuse that theorem after unpacking the
+antecedent. Its proof, `Langlands.centralDualEigenQuotient` in
+`CentralDualEigenQuotientProof`, reuses that theorem after unpacking the
 existential hypothesis; this module remains statement-only.
 
 Let `D ⊆ V` be the complex span of the defects `ρ (z c) v - (χ c : ℂ) • v` for
@@ -89,9 +90,8 @@ kernel of all ordinary `χ`-eigenfunctionals in place of `D`.
 ## Provenance
 
 The statement is project-internal and derived. It is a generic algebraic and
-admissibility prerequisite for the prescribed dual-exponent support argument,
-namely TaskHub task `06fcd45a-6509-4a2f-a84b-a119382a9953` (publisher Worker
-532), whose exact target is `Langlands.GLUnitaryDualJacquetTemperedSupportStatement`.
+admissibility prerequisite for the dual-exponent support argument for
+`Langlands.GLUnitaryDualJacquetTemperedSupportStatement`.
 It is not an analytic theorem from the literature and not a verbatim
 translation of any literature statement.
 
@@ -120,6 +120,3 @@ admissibility and eigenfunctional hypotheses above, and
 `GeneralLinear.BlockShape.blockScalarLevi_mem_center` gives the centrality
 hypothesis through `Subgroup.mem_center_iff`; finite generation over the group
 algebra remains an input of the application.
-
-The proposition body is the one prescribed by TaskHub task
-`eb5551f7-36fd-4e8c-88d9-2dd9f398fa0c` (Worker 261).

@@ -1,7 +1,5 @@
 # Algebraic-to-closed irreducibility in an admissible Hilbert realization
 
-Authors: Worker 261.
-
 This module proves the published comparison statement.
 
 The theorem `Langlands.admissibleAlgebraicToClosedIrreducibility` has type

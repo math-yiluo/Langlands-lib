@@ -23,7 +23,9 @@ iota(s-r)*a=iota(k(s)-k(r)). Dividing by the nonzero field scalar s-r writes
 a as a field image. No topology on the field or closedness assumption on its
 image is needed for this finite-cover argument.
 
-This is an internal implementation of G5 in Worker 1843's proof plan. Using
+This is an internal implementation of the diagonal annihilator step
+(`adelicPairing_annihilator`) in the proof of `AdelicAdditiveDualityStatement`
+(module `AdelicAdditiveDualityProof`). Using
 all field scalars instead of natural-number multiples requires only an infinite
 field; the intended actual number fields meet that condition. The module does
 not assert full character surjectivity or topological self-duality.

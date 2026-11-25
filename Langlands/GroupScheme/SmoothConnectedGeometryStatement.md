@@ -1,6 +1,7 @@
 # Smooth connected affine group geometry targets
 
-These are unproved proposition targets for the general geometry needed to
+These are proposition targets, stated without proof here, for the general
+geometry needed to
 use actual smooth connected subgroups as commutator sources. They concern
 every universe and every field, including imperfect fields of positive
 characteristic. They provide no new typeclass instances or axioms.
@@ -10,8 +11,8 @@ second edition (2015), Lemma 3.3.4, the paragraph preceding Proposition 3.3.5,
 and Proposition 3.3.5, printed pp.108–109 (PDF pp.134–135), registered source
 `conrad-gabber-prasad-2015-pseudo-reductive`. The explicit targets are derived
 geometric prerequisites of that argument, rather than verbatim propositions
-printed there. A proof successor must supply their geometric proofs and locate
-any additional source results it needs.
+printed there. Their geometric proofs are given by
+`smoothConnectedAffineGeometry` in `SmoothConnectedGeometryProof`.
 
 `SmoothConnectedAffineGroupIntegralStatement` asserts that the structure
 morphism of an actual smooth connected affine group over a field is

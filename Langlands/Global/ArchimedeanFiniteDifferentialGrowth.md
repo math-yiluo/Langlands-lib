@@ -1,7 +1,5 @@
 # Polynomial growth of enveloping derivatives of finite smooth vectors
 
-Author: Worker 94.
-
 `enveloping_hasPolynomialGrowth_of_finite` proves that every genuine
 archimedean smooth function with finite orbit under the actual standard compact
 group, finite orbit under the enveloping center, and polynomial matrix-height
@@ -35,6 +33,7 @@ No measure assumption remains in this version.
 
 This is an internal composition of the actual constructions and proved results
 named in the imports. Its small helper lemmas support the exact automorphic
-differential-growth proof in the same contribution. It does not assert growth
+differential-growth proof, `automorphicDifferentialGrowth` in
+`Langlands.Automorphic.DifferentialGrowthProof` (ported with this file). It does not assert growth
 for arbitrary smooth functions without the compact and center finiteness
 hypotheses.

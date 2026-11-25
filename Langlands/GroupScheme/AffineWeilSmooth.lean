@@ -1,5 +1,5 @@
 import Langlands.GroupScheme.AffineWeilRestriction
-import Langlands.TauCeti.RingTheory.WeilRestriction.Smooth
+import Langlands.RingTheory.WeilRestriction.Smooth
 import Mathlib.AlgebraicGeometry.Morphisms.Smooth
 
 /-! # Smoothness of the actual affine group-scheme Weil restriction -/
@@ -56,7 +56,7 @@ variable (A B : Type u) [CommRing A] [CommRing B] [Algebra A B]
 restriction coordinates; smoothness supplies the finite-presentation hypothesis. -/
 def finitePresentationCoordinateEquiv :
     WeilRestrictionFiniteType A B (AffineCoordinateRing B G.X) ≃ₐ[A]
-      TauCeti.Algebra.WeilRestriction A B (AffineCoordinateRing B G.X) :=
+      Langlands.Algebra.WeilRestriction A B (AffineCoordinateRing B G.X) :=
   WeilRestrictionFiniteType.finitePresentationAlgEquiv A B (AffineCoordinateRing B G.X)
 
 /-- The comparison preserves the actual universal tensor-valued point. -/
@@ -64,7 +64,7 @@ theorem finitePresentationCoordinateEquiv_universalPoint :
     (Algebra.TensorProduct.lTensor B
       (finitePresentationCoordinateEquiv A B G).toAlgHom).comp
         (WeilRestrictionFiniteType.universalPoint A B (AffineCoordinateRing B G.X)) =
-      TauCeti.Algebra.WeilRestriction.universalPoint A B (AffineCoordinateRing B G.X) :=
+      Langlands.Algebra.WeilRestriction.universalPoint A B (AffineCoordinateRing B G.X) :=
   WeilRestrictionFiniteType.finitePresentationAlgEquiv_universalPoint A B
     (AffineCoordinateRing B G.X)
 

@@ -17,7 +17,7 @@ to the actual schematic image is flat, surjective and quasi-compact. Indeed the
 image is reduced, the restricted action has this exact orbit projection, and
 rational-point lifting makes it transitive on rational points. The published
 orbit-map faithful-flatness theorem then applies. Orbit closedness is an explicit
-premise. Worker 362 authored this derivation from existing Library constructions.
+premise. The derivation is built from existing Library constructions.
 
 When the acting group is smooth and affine and the orbit map has the exact
 all-test right-coset fibers of a given smooth closed subgroup, the actual
@@ -41,5 +41,5 @@ monomorphisms into the ambient scheme.
 
 This result does not prove the closed-orbit premise, and it does not descend a
 quotient from an algebraically closed field to an arbitrary field. It is a
-supporting construction for the host ordered-product task, whose final target
-remains separate.
+supporting construction for an ordered-product result, whose final statement
+is not proved here.

@@ -1,6 +1,6 @@
 # The equivariant sheaf of arbitrary stalk-valued sections
 
-Author: Worker 61. Reuses Worker 13's published transport categories and
+Reuses the published transport categories and
 equivariant sheaf interfaces.
 
 For a commutative ring `R`, `zeroSheaf F` assigns to an open `U` the actual
@@ -31,7 +31,7 @@ not assert smoothness of arbitrary stalk families under a topological group,
 nor the analytic equivariant étale specialization.
 
 More precisely, this is an equivariant lift of the ordinary-topological
-Godement construction. It is not yet the `nu_* nu^*` construction on the
+Godement construction. It is not the `nu_* nu^*` construction on the
 equivariant topos in Berkovich section 1.5. For a one-point space, the
 present construction retains the given group module; it does not introduce
 the coinduction factors needed to resolve group cohomology. No flabbiness or
@@ -43,7 +43,7 @@ especially the Godement construction on printed page 10, and Harris 1999,
 section 2, especially printed page 304. This module implements the
 ordinary-topological family-of-stalks construction underlying that method.
 Exactness, softness, and comparison with derived compact-support cohomology
-remain separate theorem obligations.
+are not treated here.
 
 Dependencies are the companion `Stalks` module, Mathlib's dependent-function
 sheaves and module limits, pinned to Lean 4.34.0 and Mathlib

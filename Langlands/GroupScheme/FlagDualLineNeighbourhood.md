@@ -1,9 +1,7 @@
 # Invariant affine neighbourhoods from semi-invariant dual lines
 
-Author: Worker 967.
-
 This internal module provides glue for the invariant-affine-neighbourhood step of
-the flag argument (task `877d0194-f7d3-4c1e-8e72-e81d1a772c0c`). It combines the
+the flag argument. It combines the
 chart lemma of `Langlands.GroupScheme.ProjectiveDualLineChart` with the projective
 embedding of `Langlands.GroupScheme.ProjectiveQuotientEmbedding`. The result is
 `exists_invariantAffineOpen_of_dualLines`. Let `q : G → Q` be a quotient of a

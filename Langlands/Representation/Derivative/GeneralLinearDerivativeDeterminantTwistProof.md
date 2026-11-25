@@ -299,14 +299,12 @@ rule, Gelfand–Kazhdan, filtration, highest-derivative or support result.
 
 ## Independence audit
 
-The trusted operator rulings
-`/home/taskhub/pilot/correspondence/bd71b9185aab5d6eafffb7891bd3a3ca.md` and
-`/home/taskhub/pilot/correspondence/0edda6122ce65ed7ac51603c37473920.md`
-permit fully proved, independently accepted general BZ77 derivative and
-localization theory. They exclude the Zelevinsky 1980 segment derivative
-formulas 3.5 and 9.6, any task listed under the host's Independence section,
-and the segment-socle part of `8e5b4563-0365-41c7-b134-70f2a0b36292`. This
-proof uses less than that permission. It uses only the published definitions
+The proof may use fully proved general BZ77 derivative and
+localization theory, but not the Zelevinsky 1980 segment derivative
+formulas 3.5 and 9.6, the results listed under "Proof route" below,
+or the segment-socle part of the derivative statements
+(`SegmentSocleDerivativesStatement`). This
+proof uses less than that. It uses only the published definitions
 of restriction, character localization, pullback, the normalized minus
 functors and their iteration, together with elementary twist, character and
 determinant lemmas. All of these are in the Library at the base commit.
@@ -334,45 +332,37 @@ code, no module contains any of the substrings `Segment`, `segment`, `Socle`, `s
 `GenericSegmentProductUniqueness`, `SegmentHeadProductIrreducibility`,
 `SquareIntegrableLanglandsClassification`, `SegmentFullJacquetFormula`,
 `SegmentHeadJacquetFormula`, `SegmentSocleJacquetFormula` or
-`SegmentSpecialJacquetExponentNormFormula`. In the closure's Lean and Markdown
-files, the excluded task identifiers occur only in the statement Markdown's
-own list of exclusions.
+`SegmentSpecialJacquetExponentNormFormula`.
 
 Proof route. The proof does not use, in either direction, the conclusions of
-these tasks:
+these results:
 
-- `30341ae4-65f2-4a0e-9283-763db01a409e` (parent `GenericSegmentProductUniqueness`),
-- `3bfb61fa-1129-4fc9-83fd-7fcfec22106e` (multisegment exhaustion),
-- `ebea9a8a-9b21-4208-aa31-98c2dea1f8a3` (ordered strong-head existence),
-- `20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584` (quotient coverage),
-- `8252833d-c269-41a9-824c-5879e531b23b` (ordered conversion),
-- `52e97845-36bb-457d-b76f-70753334b88c` (tempered uniqueness),
-- `1cb45da2-7007-4351-a694-594fb148b8d1` (`SquareIntegrableLanglandsClassification`),
-- `cd8ab97c-0b78-4bce-97c4-d307a28159a4` (square-integrable exhaustion),
-- `bf433f0a-921a-428c-b0c0-6475438125ac` (regular exhaustion),
-- `8364e73f-14ec-4d14-8f2b-1555a7c1ce95` (the full `SegmentHeadProductIrreducibility`
-  criterion, the consumer of this proof),
-- the Ze80 3.5 and 9.6 segment derivative formulas, their proofs and
-  successors, and the segment-socle part of `8e5b4563-0365-41c7-b134-70f2a0b36292`,
-- `ed48ae06-964c-4c84-9e62-978f5a953ca7`, `55ad1e10-62d8-46b7-a081-909ef0056426`,
-  `b95105c6-f8bb-4641-ae53-2f49d1e7f034`, `92aea10f-62ac-4e0b-bd4a-9a80909797c5`
-  (segment Jacquet formulas),
-- `f3a69bc8-7312-4f82-8a7d-ea3c8188cb63`, `23189526-80b0-4828-a6d4-7ebec2cbeef5`
-  (socle exhaustion and ordered multisegment socle existence),
-- `2ae5cbe5-0701-4509-88a0-db8cbeb35be4`, `23e98d90-6055-4e35-91a9-b0f5d8a84961`,
-  `a55c4267-7e3a-43f6-8bb1-ce319e1d0aa9`, `8fa9f68b-fa1b-431a-97f6-5b163964d1fc`,
-  `7ff2a1e9-89dc-439e-a861-a567b3db92bf` (segment-socle irreducibility and socle structure),
-- `e3634665-571b-4852-9f4c-bab8a1053434`, `cded83f3-df9c-4018-bc61-dc54f5c1f9ab`,
-  `426911b4-6620-413f-8065-04b25287f3bd`, `66e3b87c-647e-41e4-af18-df4d436765f0`,
-  `c84cd52c-3ff3-4024-be50-8b84dd480888`, `6780b79c-9526-46aa-b8b4-00377d68b1ea`
-  (socle commutation and gluing, and downstream swaps),
-- `aca8805b-054f-4d56-8045-12db7f623404`, `5eece9e8-7f6b-4ea9-abea-a1f9f1b8c807`
-  (analytic segment classification and special-segment square-integrability),
-- `3c9849a4-a6c0-43ac-9982-d15ed76bf1e9` (two-supercuspidal product structure)
+- `GenericSegmentProductUniqueness`,
+- multisegment exhaustion,
+- ordered strong-head existence,
+- quotient coverage,
+- ordered conversion,
+- tempered uniqueness,
+- `SquareIntegrableLanglandsClassification`,
+- square-integrable exhaustion,
+- regular exhaustion,
+- the full `SegmentHeadProductIrreducibility`
+  criterion, the consumer of this proof,
+- the Ze80 3.5 and 9.6 segment derivative formulas and their proofs,
+  and the segment-socle part of the derivative statements
+  (`SegmentSocleDerivativesStatement`),
+- the segment Jacquet formulas (`SegmentFullJacquetFormula`,
+  `SegmentHeadJacquetFormula`, `SegmentSocleJacquetFormula`,
+  `SegmentSpecialJacquetExponentNormFormula`),
+- socle exhaustion and ordered multisegment socle existence,
+- segment-socle irreducibility and socle structure,
+- socle commutation and gluing, and downstream swaps,
+- analytic segment classification and special-segment square-integrability,
+- two-supercuspidal product structure
   and Whittaker coinvariant-finiteness conclusions.
 
 None of these conclusions appears among the proof dependencies listed above,
 and none is reachable through the import closure. The support-only segment
-theorem, its internal length-two helpers and the narrow support-proof rulings
+theorem and its internal length-two helpers
 are not used. This proof supplies no special-head derivative formula, support
 comparison or product irreducibility statement.

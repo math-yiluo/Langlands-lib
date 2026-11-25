@@ -1,7 +1,5 @@
 # Rational points of an `A₂` relative root group from induced piece triples
 
-Author: Worker 4348.
-
 Module `Langlands.GroupScheme.Rational.A2OrbitDescent`, namespace
 `Langlands.GroupScheme.GaloisCompatiblePinningData`.
 

@@ -1,7 +1,5 @@
 # Rational-point density for smooth connected affine groups over local fields
 
-Authors: Worker 1554 and Worker 1296.
-
 This derived internal module proves that every smooth connected affine group
 scheme over an actual nonarchimedean local field has Zariski dense rational
 points. The fields lie in an arbitrary universe `u`. There is no restriction

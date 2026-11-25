@@ -1,6 +1,6 @@
 # Finite unramified twist stabilizers (Renard V.2.7, Lemma): statement
 
-Author: Worker 1222. Module
+Module
 `Langlands.Representation.CuspidalSupport.RationalTwistStabilizerFiniteStatement`, namespace
 `Langlands.CuspidalSupport`. The module contains one **statement**, the closed `Prop`-valued
 definition `RationalTwistStabilizerFiniteStatement` (universe parameters `uF, uV`). It proves
@@ -10,8 +10,8 @@ nothing.
 
 David Renard, *Représentations des groupes réductifs p-adiques*, French edition dated
 **9 July 2026**, registered as `renard-2026-representations-groupes-reductifs-padiques`,
-SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. Worker 1222 read
-V.2.7, printed pp.108–109 / PDF pp.114–115, for this unit:
+SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. V.2.7, printed
+pp.108–109 / PDF pp.114–115, was read for this module:
 
 > Le groupe des caractères non ramifiés `X(G)` agit sur l'ensemble des classes
 > d'équivalences de représentations irréductibles lisses de `G`, `Irr(G)` par
@@ -76,8 +76,9 @@ The provenance is the source Lemma.
 ## Scope
 
 This module states the Lemma of V.2.7 and proves it in no part. The published construction
-`RationalInertia` records the finite stabilizer as a remaining obligation; this unit supplies
-its statement. A proof belongs to a separate proof task.
+`RationalInertia` records the finite stabilizer as a remaining obligation; this module supplies
+its statement. The proof is `rationalTwistStabilizerFinite` in
+`RationalTwistStabilizerFiniteProof`.
 
 ## Imports
 

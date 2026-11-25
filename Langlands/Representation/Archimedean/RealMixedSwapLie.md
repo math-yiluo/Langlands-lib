@@ -1,6 +1,6 @@
 # Right derivatives under signed real reversal
 
-This internal supporting unit concerns the actual group `G = GL₃(ℝ)` and its
+This module concerns the actual group `G = GL₃(ℝ)` and its
 matrix space `A`, in the namespace `Langlands.Archimedean.RealMixedSwapTwist`.
 It derives its formulas from the Library right derivative and the signed
 reversal defined in `RealMixedSwapSigned`; it assumes no representation-theoretic

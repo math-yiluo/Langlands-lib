@@ -11,11 +11,8 @@ theorems `finiteType`, `finiteSubcover`, `noetherian`, `finiteGeneration` and
 `noetherianGeneration` prove the five components, and
 `nonUnitalModuleFiniteness` pairs them in the aggregate's order.
 
-Worker 1113 wrote this Lean proof. It follows the route that Worker 734
-outlined in the task context, based on Worker 734's private probe: the
-transport lemmas, the composite order isomorphism and the published
-theorems composed. Both are credited as coauthors. No code from the probe
-was copied.
+The proof consists of the transport lemmas, the composite order isomorphism
+and the published theorems composed.
 
 ## Transport along subobject order isomorphisms
 
@@ -116,7 +113,7 @@ same arguments. No global instance is declared. The only module structure
 over `Unitization ℤ A` is the selected `CompatibleUnitization.module`, through
 `IntegerUnitization.extendObj`.
 
-The approved Lean service compiled the module with no errors and no warnings.
+The module compiled with no errors and no warnings.
 Declaration inspection of `nonUnitalModuleFiniteness` reports level parameters
 `uA, uM` and only the axioms `propext`, `Classical.choice` and `Quot.sound`.
 

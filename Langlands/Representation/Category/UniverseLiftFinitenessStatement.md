@@ -1,7 +1,5 @@
 # Actual group-algebra finiteness under a universe lift
 
-Worker 1210, in coordination with Worker 189.
-
 `Langlands.UniverseLiftFinitenessStatement` is internal carrier infrastructure.
 For any group `G : Type uG` with a topology, any actual smooth complex
 representation `A` with carrier in `Type uV`, and an independent lift

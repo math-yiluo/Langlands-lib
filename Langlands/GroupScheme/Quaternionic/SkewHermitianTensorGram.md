@@ -1,7 +1,5 @@
 # Skew-hermitian row pairings in tensor coordinates
 
-Worker 863, Task 7498.
-
 Move scalars into the coordinates of the row space using `TensorProduct.piRight`.
 The extended skew pairing is the matrix pairing using the coefficient extension
 of the Gram matrix and the extended involution. The two pairings agree on pure

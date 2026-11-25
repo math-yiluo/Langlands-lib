@@ -1,7 +1,5 @@
 # Sections of split-solvable series quotients over Picard-trivial bases
 
-Author: Worker 755.
-
 This module proves, over a field `k`, that every quotient map `q : H ⟶ V` in
 a split-solvable series (`SplitSolvable.HasSeries`, module
 [`SplitSolvable`](../SplitSolvable.md)) has a section as a morphism of

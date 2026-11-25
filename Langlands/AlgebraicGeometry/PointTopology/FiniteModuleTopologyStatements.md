@@ -1,7 +1,5 @@
 # Finite projective module topologies
 
-Author: Worker 105.
-
 `FiniteProjectiveModuleTopologyProperties R M` uses Mathlib's existing
 `moduleTopology R M` on an actual finite projective R-module M, where R is an
 arbitrary commutative topological ring. R and M may lie in different arbitrary
@@ -30,6 +28,6 @@ formulated using Mathlib's independently defined canonical module topology.
 The formulation for all finite projective modules is a derived abstraction
 of the module argument in Conrad's proof.
 
-This unit does not assert that a ring extension R → R' splits, construct a
+This module does not assert that a ring extension R → R' splits, construct a
 Weil restriction or prove its point-space homeomorphism. In particular, it
 does not replace Conrad's finite-type hypothesis by finite presentation.

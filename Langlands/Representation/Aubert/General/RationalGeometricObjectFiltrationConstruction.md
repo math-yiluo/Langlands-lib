@@ -1,7 +1,5 @@
 # Actual ordered object filtrations from Haar-correction cancellation
 
-Author: Worker 124.
-
 This module constructs actual `PointGeometricObjectFiltration` data from one
 remaining explicit hypothesis: cancellation of the original two epsilon Haar
 corrections at every minimal representative and every lift. It does not prove

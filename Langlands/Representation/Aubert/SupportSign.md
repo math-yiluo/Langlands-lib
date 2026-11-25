@@ -58,8 +58,9 @@ filtration and complex proof, not the withdrawn proof of Aubert Proposition
 3.2. The positive-rank support embedding depends on minimal nonzero Jacquet
 descent, actual normalized induction and finite-length machinery. The
 involutivity dependency passes through the geometric lemma and formal
-induction/Jacquet identities. In particular, the actual induction K₀ owner
-uses `Classification.normalizedInductionFiniteLength`. Its irreducible-Levi
+induction/Jacquet identities. In particular, the actual induction on K₀
+uses `Classification.normalizedInductionFiniteLength`, through
+`Parabolic.normalizedParabolicFiniteLength`. Its irreducible-Levi
 case uses actual admissible product-Levi factorization and
 `Classification.irreducibleProductFiniteLength`; that theorem uses
 `irreducibleProductEmbedding`, the quasicuspidal tensor and induction-length

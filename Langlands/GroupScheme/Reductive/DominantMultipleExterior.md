@@ -1,6 +1,6 @@
 # Exterior powers of diagonal cocharacters
 
-Worker 1161. This is an internal companion to the published
+This is an internal companion to the published
 `Chevalley.MatrixExterior`. It computes exterior powers of diagonal matrices and
 cocharacters and isolates the unique exterior coordinate of top weight. It is used
 to produce normalized covariant coordinates from top weight lines in

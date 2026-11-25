@@ -37,7 +37,7 @@ additional rank sign. In particular `J = ∅` is permitted, as is an empty
 ambient simple-root type. No ambient simple-root finiteness assumption is
 needed to define the operator of a fixed finite `J`.
 
-All topological and finite-length premises remain explicit. This unit does
+All topological and finite-length premises remain explicit. This module does
 not prove their realization, the shared intersection statement, endpoint
 subgroup identities, conjugation comparisons, or any main identity. It
 neither enlarges the permitted final external boundary nor restricts the

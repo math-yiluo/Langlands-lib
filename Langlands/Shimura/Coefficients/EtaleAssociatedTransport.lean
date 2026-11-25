@@ -115,15 +115,16 @@ structure EtaleTransportDatum {X Z : Scheme.{u}} (f : Z ⟶ X)
   isFiniteGeometricTorsor : IsFiniteGeometricTorsor Z cover
   /-- The map to the base change of the source cover. -/
   toSource : cover.V ⟶ ((etaleTorsorPullbackFunctor f G).obj Y).V
-  toSource_comm : ∀ h : group, cover.ρ h ≫ toSource =
-    toSource ≫ ((etaleTorsorPullbackFunctor f G).obj Y).ρ (toSourceGroup h)
+  toSource_comm : ∀ h : group, (cover.ρ h).asHom ≫ toSource =
+    toSource ≫ (((etaleTorsorPullbackFunctor f G).obj Y).ρ (toSourceGroup h)).asHom
   /-- The map to the target cover. -/
   toTarget : cover.V ⟶ Y'.V
-  toTarget_comm : ∀ h : group, cover.ρ h ≫ toTarget = toTarget ≫ Y'.ρ (toTargetGroup h)
+  toTarget_comm : ∀ h : group, (cover.ρ h).asHom ≫ toTarget =
+    toTarget ≫ (Y'.ρ (toTargetGroup h)).asHom
   /-- The coefficient map. -/
   coefficient : M.V ⟶ M'.V
-  coefficient_comm : ∀ h : group, M.ρ (toSourceGroup h) ≫ coefficient =
-    coefficient ≫ M'.ρ (toTargetGroup h)
+  coefficient_comm : ∀ h : group, (M.ρ (toSourceGroup h)).asHom ≫ coefficient =
+    coefficient ≫ (M'.ρ (toTargetGroup h)).asHom
 
 attribute [instance] EtaleTransportDatum.instGroup
 

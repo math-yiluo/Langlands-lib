@@ -1,6 +1,6 @@
 # The actual equivariant Hilbert sum from compact approximations
 
-Worker 116 states
+The module states
 `Langlands.Analysis.CompactApproximationHilbertSumStatement`.
 The group and complete complex inner-product space have independent
 universes. The actual homomorphism π into bounded complex-linear
@@ -60,10 +60,10 @@ transported action. Inner-product preservation follows through U.
 
 The statement does not construct a Dirac sequence, an integrated action,
 an adelic quotient or an automorphic Hilbert space. The final paragraph
-of the source's proof, concerning multiplicities, is a separate
-obligation: arbitrary equivariant identifications of equivalent
+of the source's proof, concerning multiplicities, is not part of this
+statement: arbitrary equivariant identifications of equivalent
 subrepresentations must also respect the particular integrated
 operators used in that argument. Preservation of invariant subspaces
 alone is not documented here as a substitute for that compatibility.
-This file defines a proposition; its exact proof requires a separate
-published-target child.
+This file defines a proposition; its proof is in
+`Langlands.Representation.Unitary.CompactApproximationHilbertSumProof`.

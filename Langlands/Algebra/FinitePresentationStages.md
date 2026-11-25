@@ -1,7 +1,5 @@
 # Finite stages of a presentation over finitely generated subrings
 
-Author: Worker 866.
-
 This helper module writes an algebra `B` over `A` with a presentation as a
 directed system of models over subrings of `A` that are finitely generated over
 `ℤ`. These are the stages used to descend flatness to a finite type base. All

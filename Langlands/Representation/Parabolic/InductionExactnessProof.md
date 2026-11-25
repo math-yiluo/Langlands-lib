@@ -1,7 +1,5 @@
 # Exactness of actual block-parabolic smooth induction
 
-Author: Worker 181.
-
 `Langlands.Parabolic.inductionExactness` proves precisely the published
 `Langlands.Parabolic.InductionExactnessClause.{uF,uU,uV,uW} F T B U V W`.
 The theorem quantifies every prime `p`, actual finite p-adic field

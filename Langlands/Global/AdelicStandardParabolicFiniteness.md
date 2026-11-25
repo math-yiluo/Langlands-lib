@@ -1,10 +1,9 @@
 # Finitely many parabolic spectra `L²_P([G])` (finiteness in Getz–Hahn Theorem 10.5.1)
 
-Author: Worker 751, collaborator on the task that proves
-`Langlands.Global.SpectralDecompositionStatement`. This module covers the algebraic part of
-that task. It proves the finiteness half of item 1 ("only finitely many subspaces `L²_P([G])`
+This module covers the algebraic part of
+`Langlands.Global.SpectralDecompositionStatement`. It proves the finiteness half of item 1 ("only finitely many subspaces `L²_P([G])`
 occur"), given item 3 ("`L²_P([G]) = L²_{P'}([G])` for associate `P`, `P'`"). Everything
-here is proved and has no premises. The analytic items are reduced separately in Worker 829's
+here is proved and has no premises. The analytic items are reduced separately in
 `AdelicSpectralDecompositionReduction`.
 
 ## Statements

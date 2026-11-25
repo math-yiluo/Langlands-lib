@@ -270,7 +270,7 @@ variable {S S' : Scheme.{u}} {d : ℕ} [NeZero d] {a : Γ(S, ⊤)}
 /-- Evaluation on an open respects the actual endomorphism monoid. -/
 def sectionEndHom (M : S.Modules) (U : (Opens S)ᵒᵖ) :
     End M →* Module.End (S.presheaf.obj U) (M.val.obj U) where
-  toFun P := (P.val.app U).hom
+  toFun P := (P.asHom.val.app U).hom
   map_one' := rfl
   map_mul' _ _ := rfl
 
@@ -301,11 +301,12 @@ def pullback (f : S' ⟶ S) :
         structuralScalarEnd (P.obj M.module) (f.appTop a) := by
       calc
         _ = P.map (End.asHom ((End.of M.pi) ^ d)) :=
-          (map_pow (P.mapEnd M.module) (End.of M.pi) d).symm
+          congrArg End.asHom (map_pow (P.mapEnd M.module) (End.of M.pi) d).symm
         _ = P.map (structuralScalarEnd M.module a) :=
           congrArg P.map M.pi_pow_sheaf
         _ = _ := pullback_structuralScalarEnd f M.module a
-    have hU := congrArg (sectionEndHom (P.obj M.module) U) h
+    have hU := congrArg (sectionEndHom (P.obj M.module) U)
+      (End.ext (y := End.of (structuralScalarEnd (P.obj M.module) (f.appTop a))) h)
     rw [map_pow] at hU
     exact hU
 

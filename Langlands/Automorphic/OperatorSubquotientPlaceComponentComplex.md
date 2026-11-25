@@ -1,18 +1,15 @@
 # Place components of irreducible operator subquotients at the complex places
 
-Original proof author: Worker 3657.
-Submission preparation: Worker 833. Verification: Workers 833 and 835.
-
 Lean module: `Langlands.Automorphic.OperatorSubquotientPlaceComponentComplex`.
 It imports `Langlands.Automorphic.OperatorSubquotientPlaceComponent` (the
 real-place module of this proof, which supplies the descent helpers, the
 commutation laws between real and complex places and the `gkSpan` lemmas)
-and, through it, Worker 174's place-component machinery
+and, through it, the place-component machinery
 (`PlaceComponentExistence`, `PlaceComponentCarrierComplex`). It changes no
 published file.
 
 This module is part of the proof of
-`Langlands.Automorphic.LocalComponentExistenceStatement` (Task 6815). It
+`Langlands.Automorphic.LocalComponentExistenceStatement`. It
 proves the complex-place conjunct, apart from the final packaging done in
 `LocalComponentExistenceProof`.
 
@@ -75,13 +72,13 @@ Each step is the complex-place copy of the corresponding step of
    terms at the real places and the other complex places commute with
    `κ_v` and `π_v` (the real-complex law is
    `realPlaceLieAction_comm_complexPlace` of the real-place module).
-3. **Detection** (`exists_complexPlace_detection`): the free set of Worker
-   174's `exists_not_mem_freeSet` is stable, hence `⊥`.
+3. **Detection** (`exists_complexPlace_detection`): the free set of
+   `exists_not_mem_freeSet` (`PlaceComponentDetection`) is stable, hence `⊥`.
 4. **The carrier** (`complexCarrier`, `isStable_complexCarrier`,
    `lift_mem_jointMultiplicity_complex`, `isAdmissible_complexCarrier`): as
    in `PlaceComponentCarrierComplex`, with the condition `q.2 v = 1` on the
    compact factors; admissible by joint admissibility of `Q`.
-5. **Existence** (`exists_complexPlaceComponent`): Worker 174's argument of
+5. **Existence** (`exists_complexPlaceComponent`): the argument of
    `PlaceComponentExistence.exists_complexPlaceComponent` with steps 3 and
    4.
 6. **Isotypy** (`isComplexPlaceIsotypic_restrict`): the `gkSpan` from the
@@ -92,7 +89,7 @@ Each step is the complex-place copy of the corresponding step of
 ## Provenance and route
 
 As for the real places (`OperatorSubquotientPlaceComponent.md`): a port of
-Worker 174's construction for cuspidal realizations to operator
+the construction for cuspidal realizations to operator
 subquotients, for the archimedean part of Getz–Hahn (2024), Lemma 6.3.6
 and Theorem 6.3.7, p.165 (PDF 179), proof p.166 (PDF 180)
 (`getz-hahn-2024-automorphic-representations`, SHA256
@@ -103,7 +100,7 @@ the isotypy argument of Flath (1979), proof of Theorem 1, p.180 (PDF 176)
 
 ## Axioms
 
-`lean_check` (lake build) reports only `propext`, `Classical.choice` and
+`lake build` reports only `propext`, `Classical.choice` and
 `Quot.sound` for the final theorem
 `Langlands.Automorphic.localComponentExistence`, which depends on this
 module.

@@ -41,6 +41,8 @@ complexStandardPermutation :=
 3. **The rank-one Jacquet functional.** At the positions `i = pre.length`, `j = i + 1` let
    `C(z) = s x(z)`, with `s` the permutation matrix of `(i j)` and `x(z) = 1 + z E_ij`. The
    functional is `Λ_c(f) = ∫_ℂ (R(c E_jj) f - κ_j(c) f)(C(z)) dz`.
+   * `ComplexSwapJacquetChart`: the definitions of the chart `C(z)`, of `κ_j(c)` and of the
+     integrand.
    * `ComplexSwapJacquetLie`: the pointwise identities for right derivatives of `f` along
      `C(z)` and at `1`.
    * `ComplexSwapJacquetAnalysis` and `ComplexSwapJacquetDecay`: integration by parts on `ℂ`
@@ -63,10 +65,3 @@ count above replaces character theory. In `Λ_c`, the function is replaced by
 `R(c E_jj) f - κ_j(c) f`, which vanishes at `1`. This makes the integral converge absolutely
 for `Re t_d ≥ Re t_e`, including the line `Re t_d = Re t_e`, so analytic continuation is not
 used.
-
-## Authors
-
-Worker 28 wrote the permutation reduction, `ComplexSwapJacquetLie`,
-`ComplexSwapJacquetNonvanishing` and this module. Worker 48 wrote `ComplexSwapJacquetChart`,
-`ComplexSwapJacquetAnalysis`, `ComplexSwapJacquetDecay`, `ComplexSwapJacquetFunctional` and
-`ComplexSwapJacquetProof`.

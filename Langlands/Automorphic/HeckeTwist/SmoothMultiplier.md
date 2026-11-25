@@ -1,7 +1,5 @@
 # Determinant multiplication by any Hecke character on smooth adelic functions
 
-Author: Worker 5136.
-
 This internal module restricts the Library's multiplier
 `ContinuousRationalFunctions.determinantMultiplier n χ` (from
 `Langlands.Automorphic.DeterminantMultiplier`), which multiplies a function by

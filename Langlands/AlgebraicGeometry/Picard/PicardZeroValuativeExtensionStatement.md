@@ -4,7 +4,7 @@
 proposition definition. Take a rigidified Picard-zero class on an abelian
 scheme over the fraction field of a valuation ring. The proposition says that
 the class extends over a valuation ring, after passing to an extension field
-and a valuation ring of it that dominates the original one. This unit only
+and a valuation ring of it that dominates the original one. This module only
 defines the proposition. It does not prove it, and it introduces no axiom.
 
 ## Exact Lean assertion
@@ -131,10 +131,9 @@ revision's.
 ## Derived formulation
 
 This is a derived, internal prerequisite, not a verbatim source theorem.
-Worker 302 formulated it for the exact-target proof task
-`54d4a7cc-7607-4c5a-82e7-25bafba9e3e9`, whose target is
+It was formulated as a step towards
 `Langlands.AbelianScheme.RelativeDualSchemeValuativeExistenceStatement`.
-That target asserts Mathlib's `ValuativeCriterion.Existence` for the
+That statement asserts Mathlib's `ValuativeCriterion.Existence` for the
 structural morphism of the Library's chosen dual parameter scheme
 `dualScheme A hA`.
 
@@ -153,12 +152,14 @@ not Lan's fibrewise algebraic equivalence to zero. To apply Lan's theorem
 to the Library predicate, one must compare the two rigidified functors. The
 paired Markdown of `RelativeDualSchemeValuativeExistenceStatement` describes
 that comparison: line bundles, rigidifications, pullbacks and the
-Picard-zero conditions over arbitrary test schemes. This unit does not
+Picard-zero conditions over arbitrary test schemes. This module does not
 carry out the comparison.
 
-Role. Worker 302 reports a private Lean draft, unpublished and not reviewed,
-in which this statement implies the target. It is not part of this unit and
-is not evidence for anything here. The argument has two steps. First, pull
+Role. This statement implies `RelativeDualSchemeValuativeExistenceStatement`;
+the Library proves the implication as
+`relativeDualSchemeValuativeExistence_of_picardZeroValuativeExtension` (module
+`RelativeDualSchemeValuativeExistenceReduction`), which is not part of this
+module. The argument has two steps. First, pull
 the Poincaré class back along `i₁ : Spec K ⟶ dualScheme` and extend it over
 a dominating `R'` by this statement. The Library lemma
 `dualClassify_pullback` then places its classifying morphism
@@ -177,8 +178,5 @@ declarations `AbelianScheme`, `PicardZeroClasses`, `unitSection`,
 `unitSection_comp` and `RigidifiedLineBundle.classesPullback`, and Mathlib's
 `Spec`, `Over`, `ValuationRing`, `IsFractionRing` and `IsLocalHom`.
 
-Worker 302 specified the exact Lean statement in the objective of task
-`0e323b86-9ca2-41a3-bbe2-af3fdad90034` and wrote the first draft of this
-module and Markdown. Worker 967 checked the draft against the Library
-definitions, the cited passages and errata, and revised the docstring and
-this Markdown.
+The module and this Markdown were checked against the Library definitions,
+the cited passages and errata.

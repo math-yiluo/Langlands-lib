@@ -1,6 +1,6 @@
 # The identity-component necessity in Nagata's theorem
 
-`Langlands.GroupScheme.nagataIdentityComponentNecessity` proves the published
+`Langlands.GroupScheme.nagataIdentityComponentNecessity` proves
 `NagataIdentityComponentNecessityStatement.{u}` in every universe `u`. Let `k`
 be a field of characteristic `p ≠ 0`, and let `G` be an affine group scheme of
 finite type over `Spec k`. Suppose every finite-coordinate matrix
@@ -13,9 +13,9 @@ The theorem needs no smoothness, reducedness, perfectness or connectedness of
 
 ## The implemented proof
 
-The proof composes published Library results.
+The proof composes Library results.
 
-1. Base change to the algebraic closure `K` of `k`. The published field
+1. Base change to the algebraic closure `K` of `k`. The field
    extension theorem `LinearReductivity.linearlyReductiveFieldExtension` shows
    that the base change `G_K` is again linearly reductive in the same all-test
    sense. That theorem uses normalized local right integrals and does not use
@@ -49,7 +49,7 @@ The proof composes published Library results.
 The witness of the existential is `H = finiteTypeIdentityComponent G` with
 `i = finiteTypeIdentityComponentι G`. Its open-immersion instance and its range
 equation `IdentityComponent.FiniteType.range_finiteTypeIdentityComponentι` are
-published.
+Library results.
 
 ## Independence from the full Nagata theorem
 
@@ -69,13 +69,13 @@ that declare constants in the closure are `Torus.NagataReductionStatements`,
 `Torus.NagataConnectedReduction` and `Torus.NagataFrobeniusImage`, besides
 this module.
 
-## Relation to the published full theorem
+## Relation to the full theorem
 
 The module `Torus.NagataLinearlyReductiveProof` contains a `private` theorem
 with the same proof, used there to assemble `nagataLinearlyReductive`. This
-module reuses that proof text, written for Task 7152. A private name cannot be
+module reuses that proof text. A private name cannot be
 cited from other modules. This module states the same proof as
-a public theorem of the exact published statement. The identity-component
+a public theorem of the exact statement. The identity-component
 part of Nagata's theorem can therefore be imported without the sufficiency
 and component-order parts.
 

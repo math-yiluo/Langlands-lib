@@ -7,7 +7,7 @@ same namespace. It holds at arbitrary universe `u`, for every commutative
 base ring, morphism of actual schemes over its spectrum, actual module
 morphism, and natural degree, including zero. It adds no assumptions to the
 published statement and uses the published `relativeCohomologyPullback`.
-This is one component of the five-law task; it does not prove identity,
+This is one of the five laws of `CohomologyPullbackLawsStatement`; it does not prove identity,
 composition, degree-zero normalization, or split retraction.
 
 The provenance is internal: coefficient naturality is the coherence obligation
@@ -56,6 +56,3 @@ derived unit, the termwise sections isomorphism, and the inverse
 Finally `relativeCohomologyPullback_naturality` applies the homology functor
 and conjugates by the natural `DerivedPlus.homologyIso` comparisons. This is
 exactly the square defining the published coefficient-naturality proposition.
-
-Worker 310 implemented the proof. Worker 152 supplied the direct naturality
-argument for the termwise sections comparison.

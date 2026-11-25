@@ -56,7 +56,7 @@ supplied-model consumer.
 
 The corrections add Axiom 4.1.6 to the opening hypotheses, explicitly require
 invariance in Proposition 4.2.1, and repair the argument that the apartment
-distance is independent of the chosen apartment. A proof successor must use
+distance is independent of the chosen apartment. A proof must use
 the corrected apartment-comparison argument. The completeness theorem does
 not require local finiteness. The continuous-orbit conclusion is an internal
 topological deduction from the openness part of 4.1.2: the coset of the
@@ -64,16 +64,13 @@ existing norm-one stabilizer at a point is an open neighborhood on which the
 orbit map is constant. Local constancy implies continuity for the metric
 topology on the same quotient.
 
-The record is an internal interface for these source consequences. Worker 118
-proposed the reusable metric and actual-quotient prerequisite boundary;
-Worker 1681 formulated this supplied-data source specialization and authored
-the Lean and Markdown.
+The record is an internal interface for these source consequences.
 
-Actual existence of the data and the five axiom witnesses remains a separate
-construction obligation. This conditional metric target does not provide
+Actual existence of the data and the five axiom witnesses is not part of this
+statement. This conditional metric target does not provide
 unramified descent, the corrected ten-axiom availability certificate, a
 supplied integral-model comparison, a special vertex, a norm-kernel
 stabilizer identity, or unique fixation. In particular, its hypotheses are
-not added to `IntegralModel.BuildingComparisonStatement`; that unchanged
-unconditional theorem still requires actual constructions discharging every
+not added to `IntegralModel.BuildingComparisonStatement`; that
+unconditional statement requires actual constructions discharging every
 input used along this route.

@@ -49,8 +49,7 @@ with the action of `K_λ`. A `K_λ`-linear decomposition into free summands
 would force the same multiset of Hodge–Tate weights at every embedding of
 `K_λ` into `C_w`. That uniformity fails within the scope of this statement.
 
-The following example is due to Reviewer 2555 (review of the withdrawn
-candidate `53ec878e`). Take `E = ℚ`, `F` imaginary quadratic, `n = 3` and a
+The following example shows this. Take `E = ℚ`, `F` imaginary quadratic, `n = 3` and a
 division algebra `A` with signature `(2, 1)`. Take `K = F` and a coefficient
 prime `ℓ` inert in `F`, so that `K_λ = F_w` is quadratic over `ℚ_ℓ`. The
 determinant of the regular action of `A` is an algebraic character (the cube of

@@ -1,6 +1,6 @@
 # Ambient isomorphisms of relative Levi subgroups
 
-This internal derived unit transports the existing
+This internal derived module transports the existing
 `IsRelativeLeviSubgroup` predicate through an isomorphism of its ambient group
 scheme. The base scheme and its universe are arbitrary. It supplies a formal
 transport step for the relative conjugacy argument; it asserts no existence

@@ -1,11 +1,8 @@
 # Actual coroot comparison for derived split-torus centralizers
 
-Authors: Worker 1352 and Worker 1577.
-
 `Langlands.GroupScheme.splitTorusCentralizerDerivedCorootComparison` proves
 exactly `Langlands.GroupScheme.SplitTorusCentralizerDerivedCorootComparisonStatement.{u}`.
 Its type is that published proposition, with the same arbitrary universe `u`.
-The statement pair and every pair it imports are unchanged.
 
 The statement covers every algebraically closed field `k : Type u`, connected
 reductive group `G`, split subtorus `a : A → G`, arbitrary representative
@@ -22,18 +19,18 @@ equals the integral span of the coroots of `P` indexed by `s`.
 
 The proof is a single application of the published reduction
 `splitTorusCentralizerDerivedCorootComparison_of_rootDatumExistence`
-(module `SimplyConnected.SplitTorusCentralizerDerivedCorootComparisonReduction`,
-Workers 1352 and 1577). It discharges the reduction's two structural premises
+(module `SimplyConnected.SplitTorusCentralizerDerivedCorootComparisonReduction`).
+It discharges the reduction's two structural premises
 with these unconditional Library theorems:
 
 - `rootDatumExistence : RootDatumExistenceStatement.{u}` (module
-  `Reductive.RootDatumExistence`, Worker 835 with Workers 1223 and 1283).
+  `Reductive.RootDatumExistence`).
   A split maximal
   torus of a connected reductive group over a field has a finite reduced
   actual root datum. This is Milne, *Algebraic Groups* (2017),
   Theorem 21.11 and Corollary 21.12.
 - `dynamicCentralizerReductive : DynamicCentralizerReductiveStatement.{u}`
-  (module `Dynamic.CentralizerReductiveProof`, Workers 1325 and 1326).
+  (module `Dynamic.CentralizerReductiveProof`).
   Every closed representative of a cocharacter centralizer in a connected
   reductive group is connected reductive.
 
@@ -56,8 +53,8 @@ The comparison constructor builds an actual central split torus complement
 derived torus maps flatly and surjectively onto the centralizer torus.
 `IsRootDatumOf.map_corootSpan_derived` then identifies the image of the
 integral `Q`-coroot span with the integral `R`-coroot span. The coroot face
-of the centralizer root model (`SplitTorusCentralizerCorootFace`,
-Workers 1577 and 1352) supplies a base of `P` and a subset of its support. The integral
+of the centralizer root model (`SplitTorusCentralizerCorootFace`)
+supplies a base of `P` and a subset of its support. The integral
 span of the coroots in that subset is exactly the `R`-coroot span. By
 transitivity, the subset satisfies the displayed equality.
 

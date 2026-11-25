@@ -8,7 +8,7 @@ is the implication
 The premise is the published density input. For every nonzero, closed, `πc`-invariant and
 minimal subspace `P` of the full almost-everywhere cuspidal `L²` space of the positive-central
 rational quotient of `GL_{r+1}`, the classes of the attached stable cusp forms are dense in `P`.
-The conclusion is the unchanged target of Task 7775, the summand-to-realization direction of
+The conclusion is the unchanged `GeneralLinearCuspidalSummandRealizationStatement`, the summand-to-realization direction of
 Getz–Hahn, *An Introduction to Automorphic Representations*, Springer GTM 300 (2024),
 Theorem 9.7.3, pp. 265–267 (PDF pp. 277–279).
 
@@ -25,5 +25,5 @@ Theorem 9.7.3, pp. 265–267 (PDF pp. 277–279).
 ## Scope
 
 Density is the only remaining input. It is neither proved nor assumed elsewhere in this module.
-The proof is in Task 8113 (`GeneralLinearSummandFormsDenseStatement`). This module proves
+Its statement is `GeneralLinearSummandFormsDenseStatement`; the Library does not prove it. This module proves
 neither the converse direction of Theorem 9.7.3 nor any density statement.

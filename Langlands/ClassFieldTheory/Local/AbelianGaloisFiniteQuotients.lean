@@ -74,7 +74,7 @@ instance fixedField_commutative
   let : IsMulCommutative (Gal(AlgebraicClosure K/K) ⧸ H.toSubgroup) :=
     Subgroup.Normal.quotient_commutative_iff_commutator_le.mpr hcomm
   let e := InfiniteGalois.normalAutEquivQuotient H
-  exact e.surjective.isMulCommutative inferInstance
+  exact e.surjective.isMulCommutative
 
 /-- Every open subgroup of the actual Galois abelianization determines an
 actual finite abelian intermediate extension in the chosen algebraic closure. -/

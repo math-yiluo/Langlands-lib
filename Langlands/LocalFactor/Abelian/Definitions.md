@@ -1,10 +1,9 @@
 # Abelian epsilon expressions
 
-Placement note (Worker 64): the canonical module is `Langlands.LocalFactor.Abelian.Definitions`.
+Placement note: the canonical module is `Langlands.LocalFactor.Abelian.Definitions`.
 It is moved from `Langlands.LocalFactor.Abelian` with every public declaration name,
 namespace, type and mathematical body retained. The old module remains a thin
-compatibility import. Original source references and authorship below are retained.
-Worker 20 authored the original construction; Worker 64 authored only this migration.
+compatibility import. Original source references below are retained.
 The [migration record](Definitions.md#structural-migration-record) gives the complete map and checks.
 
 
@@ -12,9 +11,9 @@ This module constructs Tate's measure-dependent abelian epsilon expression
 on an actual finite extension of `Q_p`, with a supplied local-field topology,
 continuous multiplicative quasicharacter, continuous nontrivial unitary additive
 character, and regular additive Haar measure. Both the unramified formula and
-the convergent ramified integral are implemented. This module belongs to the
-coherent construction contribution with `Conductor` and `PadicAbelian`.
-Its external harmonic prerequisite is published in the current Library.
+the convergent ramified integral are implemented. This module forms one
+coherent construction with `Conductor` and `PadicAbelian`.
+Its external harmonic prerequisite is published in the Library.
 
 The source is Tate, *Number theoretic background* (1979), section 3.2.6,
 printed pages 13–14 (retained PDF pages 22–23). The additive conductor is
@@ -71,7 +70,7 @@ character is one. Their normalized absolute values are also equal.
 for every unit with the required valuation. The ramified definition uses
 the intrinsic valuation shell directly and makes no scale choice.
 
-The result is a constructed complex number, not yet a bundled complex unit.
+The result is a constructed complex number, not a bundled complex unit.
 Nonvanishing and identification by the functional equation remain separate
 theorem obligations. No nonabelian constant system, reciprocity map, or
 self-dual measure is assumed. In particular, this does not construct an
@@ -85,7 +84,7 @@ lattices, and integral-unit criteria. Its upstream imports are
 `Langlands.Representation.Twist.ContinuousCharacterProof`, and
 `Langlands.HarmonicAnalysis.Basic`, all present in Library commit
 `843c574c920aa9926ab56adf662c74b3cd4ed0e1`.
-The conductor pair is included in the same coherent contribution.
+The conductor pair belongs to the same coherent construction.
 
 The remaining construction proofs use the pinned Mathlib local-field,
 valuation, topological-unit, and Bochner-integration APIs. In particular,
@@ -97,17 +96,15 @@ Tate's functional equation.
 
 ## Structural migration record
 
-Worker 64 performed this path-only migration for task
-`8be3987f-f024-440f-a653-00af0dc5f79d`, revision 1. The refreshed base is
+This is a path-only migration. Its base is
 Library `30ceb5a0d89d8094c1663fc19f35416519b9a125`: 269 Lean modules,
-each with nonempty same-stem Markdown. Before editing, the workspace matched
+each with nonempty same-stem Markdown. Before editing, the tree matched
 that base byte for byte and none of the eight destinations existed. The
-contribution adds eight canonical modules, for 277 modules in the checked tree,
-and edits the nine existing pairs listed below. It retains Workers 20 and 33's
-original mathematical authorship and all original source references. Worker 64
-owns the path migration and its verification, and asserts no new mathematics.
+migration adds eight canonical modules, for 277 modules in the checked tree,
+and edits the nine existing pairs listed below. It retains all original source
+references and asserts no new mathematics.
 Historical validation/status paragraphs in the moved documentation describe the
-original submissions; migration acceptance and publication are tracked separately.
+original versions.
 
 ### Module and declaration map
 
@@ -153,7 +150,7 @@ The separate regular-point types remain separate. Gamma representatives,
 punctured germs, values at poles, spectral arguments, epsilon normalizations,
 universe parameters, implicit arguments and intrinsic proofs are retained.
 `LocalFactor/Ramification`, `HarmonicAnalysis` and the representation-side
-Rankin–Selberg/JPSS trees are untouched. This contribution proves no previously
+Rankin–Selberg/JPSS trees are untouched. This migration proves no previously
 unproved local functional equation.
 
 ### Source preservation
@@ -179,18 +176,18 @@ selected closing declarations. The last row is the unchanged-path importer.
 
 ### Complete declaration and target checks
 
-Baseline check `71b52e81-3ada-45e1-9e5f-035db0d9a6ad` built all nine
+A baseline check built all nine
 affected modules and inspected `PadicAbelianLocalAnalysisStatement` successfully.
-Private inspection `2d1c5b26-9eb2-45dd-8507-54b16cf391b4` recorded every
-non-private constant owned by those modules: **307 public declarations**, including
+A private inspection recorded every
+non-private constant declared in those modules: **307 public declarations**, including
 compiler-generated public constants. It saved each full Lean `Expr` type,
 ordered universe parameters, declaration kind and transitive axiom closure.
-Post-migration inspection in `a5b97448-8a04-436c-8266-d6a2dee1089d` found
+The post-migration inspection found
 the exact same 307 names, kinds, ordered universes and axiom sets.
 
 Moving a module changes the module component of Lean's generated hygienic
 bound-variable names. Accordingly, raw `reprStr` values differ for 163 types.
-Check `013ef94f-5257-490f-be09-d5c2bbccf534` embeds all 307 saved baseline
+A further check embeds all 307 saved baseline
 expressions as `Lean.Expr` data and compares each with the migrated complete
 type using `Expr.equal` after recursively erasing only names in `forallE`,
 `lam` and `letE` binders. **All 307 comparisons pass.** Binder annotations,
@@ -203,20 +200,20 @@ The original proof bodies are also covered by the byte comparison above.
 The union of the inspected axiom closures is exactly `propext`,
 `Classical.choice` and `Quot.sound`, both before and after the migration.
 No project axiom, `sorry`, `admit` or proof hole is introduced. The inspection
-code is private verification tooling and is absent from the submitted Library.
+code is private verification tooling and is absent from the Library.
 
 Fresh closing-statement inspections returned `statement_returns_prop = true`,
 with the same target fingerprints recorded for the prior statements:
 
-| Closing declaration | Universe parameters | Target SHA-256 | New check |
-| --- | --- | --- | --- |
-| `Langlands.LocalFactor.PadicAbelianLocalAnalysisStatement` | `u` | `1b87b27a4f2f760c082b607704102bc51f8d2f681ea577fa7db6d5ad8823239c` | `a5b97448-8a04-436c-8266-d6a2dee1089d` |
-| `Langlands.LocalFactor.EulerFactorStructureStatement` | `u, v, w, z, t` | `dd0ab470f66a207bf6df629749c49c8249e1a4c78950174bbcb47341ef1f2468` | `013ef94f-5257-490f-be09-d5c2bbccf534` |
-| `Langlands.LocalFactor.ArchimedeanAbelianLocalAnalysisStatement` | none | `dacc90e9f84bfdc175830bb4f55f7dfaacdceb8dc90b2b5a1bb48e644a292328` | `e16ea7ea-a5a1-44c1-a5f6-0d88989afd32` |
-| `Langlands.LocalFactors.PadicHarmonicAnalysisStatement` | `u` | `96cb5af71f21e075cad111e69a8f9db3c6af1a2f97c23eefe3408ed892da277e` | `c99a391b-6295-4637-8774-4bfad8a51983` |
+| Closing declaration | Universe parameters | Target SHA-256 |
+| --- | --- | --- |
+| `Langlands.LocalFactor.PadicAbelianLocalAnalysisStatement` | `u` | `1b87b27a4f2f760c082b607704102bc51f8d2f681ea577fa7db6d5ad8823239c` |
+| `Langlands.LocalFactor.EulerFactorStructureStatement` | `u, v, w, z, t` | `dd0ab470f66a207bf6df629749c49c8249e1a4c78950174bbcb47341ef1f2468` |
+| `Langlands.LocalFactor.ArchimedeanAbelianLocalAnalysisStatement` | none | `dacc90e9f84bfdc175830bb4f55f7dfaacdceb8dc90b2b5a1bb48e644a292328` |
+| `Langlands.LocalFactors.PadicHarmonicAnalysisStatement` | `u` | `96cb5af71f21e075cad111e69a8f9db3c6af1a2f97c23eefe3408ed892da277e` |
 
 The complete public declaration map is the identity on the following inventory.
-Entries are grouped by their old owning module; compiler-generated constants
+Entries are grouped by their old module; compiler-generated constants
 are included to make the preservation boundary explicit.
 
 <details>
@@ -600,66 +597,27 @@ Langlands.LocalFactor.PadicAbelianLocalAnalysisStatement._proof_5
 
 ### Whole-tree validation
 
-The prepared environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`,
+The environment is
 Lean 4.34.0 with Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`. A private umbrella imports
-all 277 workspace Library modules, including the eight old-path wrappers.
-Check `a5b97448-8a04-436c-8266-d6a2dee1089d` built this umbrella and
+all 277 Library modules of the checked tree, including the eight old-path wrappers.
+The check built this umbrella and
 the declaration audit with incremental **Lake**: 280 jobs, exit code 0,
 zero errors, zero warnings, no limited output and a quiet terminal process tree.
 Its source snapshot SHA-256 is
 `7a254728800f75b3f8fb402eff048a3236fb139fc12c7fe31b25a4ffd7b9dd3c`.
 The complete-type and later closing-statement checks also terminated successfully.
 Mathlib was neither downloaded nor rebuilt. The private umbrella and audit
-modules are excluded from staging; the public snapshot contains 277 modules.
-Compilation and preservation checks establish neither independent semantic
-acceptance nor publication; both remain required by this task.
+modules are excluded from the Library; the public snapshot contains 277 modules.
 
-### Coordination and integration sequence
+### Consumers of the old paths
 
-The sequence is: inspect the current base and importers; contact the original
-authors and branch owners; record the baseline; create the canonical pairs and
-old-path re-exports together; rewrite published importers and documentation;
-compare complete declarations and build the whole tree; freeze one coherent
-candidate; obtain independent review and integration; then release downstream
-work to the published canonical paths.
+A scan of Library `fc2adf231e015f979345e06d0d80283856c43c7f`
+found no affected importer or documentation reference added since
+the recorded base.
 
-Before edits, Worker 33 explicitly agreed to the three statement moves and
-`PadicAbelianStatement` import rewrite. Workers 20 and 4 reported no competing
-edits. Worker 35 reported no global consumer. Worker 31 was contacted again
-about JPSS; its prior coordination reported no consumer. Worker 40 confirmed
-that its attachment uses the existing declarations and can consume the old-path
-re-export. Worker 46 was contacted about rank-one stability and WD statements.
-Worker 12 confirmed that regular-evaluation construction/adapters will freeze
-only after this layout publishes. These messages authorize no edits to another
-worker's frozen candidate or task objective.
-
-Pending consumers at the coordination checkpoint are:
-
-| Owner | Candidate or draft | Old import retained by compatibility |
-| --- | --- | --- |
-| Worker 33 | `fbebb012-2d2b-445f-a0f5-f8c6fe6cda6b`, `ArchimedeanPresentationStatement` | `Langlands.LocalFactor.Archimedean` |
-| Worker 20 | `b15ea006-9fae-4d3d-8f20-9dd4d17fbb95`, `WeilDeligne` / `WeilDeligneConductor` | `Langlands.LocalFactor.Euler` |
-| Worker 40 | `a30ca04d-f66e-49d4-86ce-590aa23b5114`, `ArchimedeanAttachment` | `Langlands.LocalFactor.Archimedean` |
-| Workers 33 and 46 | `RankOneStabilityStatement` (reported candidate prefix `8d72ea08`) | `Langlands.LocalFactor.PadicAbelian` |
-| Worker 46 | unstaged WD Euler/correction statements | `Langlands.LocalFactor.Euler` |
-
-The first three import lists were inspected directly in the frozen snapshots.
-A validation-only notice for rank-one stability was explicitly corrected by
-Worker 33; it is not evidence of acceptance or publication. None of these
-pending candidates is replaced or changed by this submission. The old paths
-remain usable throughout the integration window. Newly published consumers
-must have their actual imports and documentation reconciled with the canonical
-paths during integration or a follow-up within this structural task.
-
-A final scan of current Library `fc2adf231e015f979345e06d0d80283856c43c7f`
-found no newly published affected importer or documentation reference since
-the recorded base. The Integrator must validate its actual merged tree;
-this record does not claim that concurrent unpublished work was validated.
-
-At integration against Library `68e8013fc4fed0de284fd849695676aca2e0c32d`,
+Merged with Library `68e8013fc4fed0de284fd849695676aca2e0c32d`,
 the combined tree includes `ArchimedeanPresentationStatement`,
 `RankOneStabilityStatement`, `ArchimedeanAttachment`, and `WeilDeligne`.
-Their imports and paired dependency descriptions now use the canonical paths.
-The old-path compatibility modules remain available. The coordination table
-above records the earlier checkpoint, not the status of these integrated files.
+Their imports and paired dependency descriptions use the canonical paths.
+The old-path compatibility modules remain available.

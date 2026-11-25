@@ -1,6 +1,6 @@
 # Classification of trivial field-isogeny pullbacks by the normalized character
 
-Author: Worker 934. This module proves
+This module proves
 `Langlands.AbelianScheme.FieldTrivialPullbackCharacterBijectiveStatement`
 (module `Langlands.AlgebraicGeometry.Picard.FieldIsogenyKernelDescentStatements`,
 unchanged) as `fieldTrivialPullbackCharacterBijective`.

@@ -1,6 +1,6 @@
 # Actual local rational heights through coefficient extension
 
-This internal unit preserves the existing all-test local kernel-rank height
+This module preserves the existing all-test local kernel-rank height
 condition on actual rational formal-atlas maps through coefficient extension.
 It derives its results from `AtlasRationalHeight`, the actual rational
 coefficient-extension construction and `RationalHeightIso`; no new literature
@@ -38,5 +38,5 @@ The parameters are arbitrary commutative rings `O`, `R`, `S`, a field `F` over
 tensor map between them. `R`, `S`, `F` and the test algebras share universe `v`;
 `O` may be in universe `u`. Principal covers need not be finite. The height
 parameters `π`, the natural rank base `q` and the signed integer `n` are retained.
-Actual framed Nilp-base extension and preservation of its framing square remain
-further constructions.
+Actual framed Nilp-base extension is `DrinfeldFramedAtlas.baseChange` in
+`DrinfeldFramedBaseChange`; preservation of its framing square remains separate.

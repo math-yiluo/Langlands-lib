@@ -45,7 +45,7 @@ makes the descended morphism invertible, and uniqueness of its underlying
 morphism gives uniqueness of the isomorphism. Quasi-coherence is required
 only for `N`, including in this isomorphism result.
 
-This is an internal derived unit. Its inputs are the Library's actual
+This is an internal derived module. Its inputs are the Library's actual
 equal-composite comparisons, the adjunction unit identity in
 `DerivedRestriction`, affine pushforward base change in
 `AffinePushforwardBaseChange`, and the ordinary module comparison equivalence,
@@ -55,5 +55,5 @@ There is no new original-literature assertion used as a premise.
 The results preserve arbitrary universe `u`, arbitrary schemes and ordinary
 module sheaves. They establish descent of morphisms between modules already
 on the base. Effectivity of general geometric object cocycles, preservation
-and detection of the coherent-family conditions, and the smooth scheme atlas
-remain separate obligations of the host task.
+and detection of the coherent-family conditions, and a smooth scheme atlas
+are not proved here.

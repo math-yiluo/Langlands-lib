@@ -1,7 +1,5 @@
 # Faithfulness of the action of an fppf quotient by the full centre
 
-Worker 683.
-
 This is an internal supporting development for the arbitrary-base quasi-split
 inner-form theorem. It derives its results from the published definitions of
 `RelativeRoot.IsFppfQuotient`, `center`, `AutomorphicAction.restrict`,

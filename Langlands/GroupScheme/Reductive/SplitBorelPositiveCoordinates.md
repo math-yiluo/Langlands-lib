@@ -14,7 +14,7 @@ constructs a unique vector of `pos` coordinates whose ordered root product is
 that point. It imposes no localness, reducedness, connectedness or nonzero-ring
 hypothesis on `R` or `B` in the arbitrary-ring theorem or coordinate selector.
 The positive-character hypothesis is unnecessary for this direction of the
-comparison; this unit does not prove that arbitrary positive products contract.
+comparison; this module does not prove that arbitrary positive products contract.
 
 `cocharPoint_eq_comp` identifies the existing pointwise coordinate formula with
 the actual exponent cocharacter. The local-ring theorem then starts with the
@@ -40,6 +40,6 @@ The proof extends the implemented route of
 replacing their explicitly constructed contraction with the orbit extension of
 an actual contracting point. Conrad, *Reductive group schemes* (2014),
 Theorem 5.1.13, pp.143–145, is the structural motivation: the contracting group
-has ordered positive-root coordinates. The present unit is the supplied-cell,
+has ordered positive-root coordinates. The present module is the supplied-cell,
 supplied-root-map direction of that comparison. It does not construct root
 parametrizations, the full scheme isomorphism, or a finite vector-quotient series.

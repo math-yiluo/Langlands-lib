@@ -1,6 +1,6 @@
 # Exact all-test formula for the actual adjoint determinant
 
-`DynamicAdjointDeterminantFormulaStatement` is an unproved proposition target
+`DynamicAdjointDeterminantFormulaStatement` is a proposition target
 for the constructions in `Dynamic.AdjointDeterminant`. It works over an
 arbitrary commutative base ring, with actual represented dynamic `P` and `U`,
 affine `P` and `U`, and natural finite coordinates on the actual Lie kernel of
@@ -30,8 +30,9 @@ This target is internal packaging of the published
 `AutomorphicAction.determinantCharacter_eval`,
 `AutomorphicAction.determinantCharacter_affinePoints` and the actual
 dynamic normalized-conjugation formula. It adds an exact proposition
-boundary for a focused proof successor; it does not assert that the
-proposition has been proved.
+boundary for a proof; it does not assert that the proposition has been
+proved. The theorem `dynamicAdjointDeterminantFormula` in
+`Dynamic.AdjointDeterminantFormulaProof` proves it.
 
 The motivating local-field conventions are Renard, 9 July 2026 version,
 §V.3.1–V.3.4, printed p.110 (PDF p.116), and §V.5.4, printed pp.126–127

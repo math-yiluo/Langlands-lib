@@ -1,7 +1,5 @@
 # Connected groups act trivially on groups of multiplicative type: proof
 
-Workers 798 and 329.
-
 `Langlands.GroupScheme.multiplicativeTypeConnectedAction` proves the unchanged
 [`MultiplicativeTypeConnectedActionStatement`](MultiplicativeTypeConnectedActionStatement.md)
 for every universe `u`. For a field `k`, a connected group scheme `G` of finite

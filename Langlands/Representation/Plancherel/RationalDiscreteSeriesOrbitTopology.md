@@ -1,7 +1,5 @@
 # Topology of actual rational-point discrete-series orbits
 
-Author: Worker 200.
-
 This derived adapter specializes `DiscreteSeriesOrbitTopology` to the shared
 actual rational-point group and all rational norm characters. Its source
 motivation is Waldspurger, *La formule de Plancherel pour les groupes
@@ -11,7 +9,7 @@ and VI.1, printed pp.295–296 (PDF pp.61–62), registered source
 `4b6a6162cd0b3863703fb2f65d1698f926caf813114917f2084c16e38f2e30f7`.
 III.7 parameterizes a discrete-series orbit by unitary unramified characters
 modulo the full stabilizer. VI.1 uses character parameters for coefficient
-families. This unit supplies actual-point topological consequences of the
+families. This module supplies actual-point topological consequences of the
 existing parameterization; it defines no smooth structure or coefficient
 family.
 
@@ -74,7 +72,7 @@ using the inverse of that same coordinate map, then applies the actual
 unitary twisting map into the orbit. Its `_val` theorem identifies the
 underlying class with that reconstructed character acting on `omega`.
 The previously proved Laurent evaluation formula for this character remains
-unchanged; this unit chooses no additional basis or coordinates.
+unchanged; this module chooses no additional basis or coordinates.
 
 `isOpenQuotientMap_rationalDiscreteSeriesOrbitCoordinateMap` composes the
 homeomorphism given by inverse character coordinates with the existing open
@@ -87,7 +85,7 @@ base-point independence through an identity-on-classes homeomorphism.
 ## Scope
 
 The intended source application takes `s` to be the actual split-component
-inclusion. This unit does not construct that inclusion or prove its actual
+inclusion. This module does not construct that inclusion or prove its actual
 valuation-image finite index, nor identify `rationalImageRank G` with the
 split-center dimension. It constructs no manifold, coefficient family, orbit
 measure, formal degree or spectral transform. It asserts no finiteness of a

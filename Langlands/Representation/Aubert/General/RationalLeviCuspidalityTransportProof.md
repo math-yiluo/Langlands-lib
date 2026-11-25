@@ -1,6 +1,6 @@
 # Proof of actual standard-Levi cuspidality transport
 
-Author: Worker 189. This proves exactly `Langlands.Aubert.General.RationalPointFamily.RationalLeviCuspidalityTransportStatement` at independent field and representation universes.
+This proves exactly `Langlands.Aubert.General.RationalPointFamily.RationalLeviCuspidalityTransportStatement` at independent field and representation universes.
 
 The proof specializes `standardLeviStandardFamilies` to the published actual representative `Standard.leviScheme`. Its intrinsic simple roots are exactly the selected ambient character subset. `leviSimpleRootEquivOfEq` therefore identifies an intrinsic simple root with its literal ambient root in `I`, preserving the underlying character. `properFinsetEquiv` lifts this equivalence to all proper finite subsets. The root-set lemma proves that mapping a finite intrinsic subset through this equivalence and `leviIndex` leaves its exact character subset unchanged.
 

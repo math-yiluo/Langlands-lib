@@ -43,7 +43,7 @@ arbitrary topological groups `G` and `H`:
 
 ### Brauer decomposition on `W_{E/F}`
 
-These are in namespace `Langlands.ClassField.Global.RelativeWeilGroup`:
+These are in namespace `Langlands.ClassFieldTheory.Global.RelativeWeilGroup`:
 
 - `characterDifferenceGenerators c F E`, the main definition: the set of classes
   `Ind_{W_H} ([θ] - [θ'])` in `ContinuousVirtual c F E`, for a subgroup `H` of `Gal(E/F)`

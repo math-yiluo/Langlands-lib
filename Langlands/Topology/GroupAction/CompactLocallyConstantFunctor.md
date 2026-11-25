@@ -1,6 +1,6 @@
 # Functorial discrete locally constant functions on compact continuous actions
 
-Author: Worker 56. Internal topological construction.
+Internal topological construction.
 
 The compact continuous action category is the full subcategory of continuous
 TopCat actions whose actual underlying spaces are compact. It retains every

@@ -1,7 +1,5 @@
 # Smooth representation objects of actual completed tensor slices
 
-Author: Worker 2.
-
 This internal construction bundles the intrinsic smooth part of an actual
 completed tensor slice as a smooth representation, proves its admissibility
 and irreducibility under the specified original-factor hypotheses, and compares

@@ -80,10 +80,10 @@ The definition and proof are derived internal mathematics. They use the
 published determinant character and quotient density, actual subgroup and
 rectangular measure definitions, the published p-adic rectangular scaling proof,
 and Mathlib density transport, product pushforward, additive translation and
-skew-product theorems. Worker 936 proposed the diagonal/shear decomposition;
-Worker 113 implemented this helper. No original-literature theorem is claimed
-by this unit. The unchanged full disintegration target still requires the
-actual chart geometry and the positive normalized equality of quotient measures.
+skew-product theorems. No original-literature theorem is claimed
+by this module. The full disintegration statement also requires the
+actual chart geometry and the positive normalized equality of quotient measures;
+`LowerBlockQuotientDisintegrationProof` supplies them.
 
 ## All-field port
 

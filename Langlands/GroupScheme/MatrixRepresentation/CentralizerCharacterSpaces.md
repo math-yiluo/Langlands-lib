@@ -1,7 +1,5 @@
 # Character spaces of a commutative subgroup are stable under its centralizer
 
-Author: Worker 5662.
-
 This module proves a standard fact on all affine tests. Let `T` be a commutative group
 scheme mapping to `G` by `i`, and let `f : H ⟶ G` take values in the all-test
 centralizer of `i`. Then the restriction of a representation of `G` to `H` preserves

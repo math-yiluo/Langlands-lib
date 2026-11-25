@@ -1,6 +1,6 @@
 # Actual lowering endpoints along simple-reflection words
 
-This derived unit works over a field `k : Type u`, with an affine group scheme
+This module works over a field `k : Type u`, with an affine group scheme
 `G` and a supplied split pinning `p`. Its first constructions use supplied
 actual rational simple-reflection representatives `s`, and a supplied family
 `xm` of additive group-scheme maps indexed by the simple roots. Define
@@ -60,6 +60,6 @@ representation at `m • rho`.
 The provenance is the imported positive-root word construction, actual
 normalizer action, conjugation of original additive coefficients, and
 single-root highest-weight endpoint theorem. No external source is used.
-This unit does not construct a highest-weight representation or an induced
+This module does not construct a highest-weight representation or an induced
 space, prove the dimension of the whole induced space, or identify the
 conjugated maps with scheme coordinates on the full radical.

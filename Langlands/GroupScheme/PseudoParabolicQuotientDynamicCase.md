@@ -29,8 +29,8 @@ The theorem takes two hypotheses and proves
 
 - `hred`: the reduction step. Its body is verbatim the Prop
   `PseudoParabolicQuotientPseudoReductiveReductionStatement` of the separately
-  published statement task `61afaf01-88db-478f-9c26-6b12f78d7376` (CGP Proposition 2.2.10 with
-  Corollary 2.1.9). That statement is not yet in the Library, so it is
+  published statement module `Langlands.GroupScheme.PseudoParabolicQuotientReductionStatement` (CGP Proposition 2.2.10 with
+  Corollary 2.1.9). This module does not import that statement, so it is
   inlined here as a hypothesis.
 - `hdyn`: `DynamicParabolicQuotientDVRLifting k` holds for every field `k`.
 

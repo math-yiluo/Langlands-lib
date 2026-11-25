@@ -1,7 +1,7 @@
 # Proof of longest-representative Jacquet compatibility on rational points
 
 Module: `Langlands.Representation.Aubert.General.RationalJacquetCompatibilityProof`,
-namespace `Langlands.Aubert.General.RationalPointFamily`. Author: Worker 3977.
+namespace `Langlands.Aubert.General.RationalPointFamily`.
 
 `rationalJacquetCompatibility : RationalJacquetCompatibilityStatement.{u, v}`
 proves the published proposition
@@ -33,13 +33,13 @@ rationalJacquetCompatibility_of_rationalGeometricK0Expansion.{u, v}
 ```
 
 - `rationalGeometricK0Expansion : RationalGeometricK0ExpansionStatement.{u, v}`
-  (module `RationalGeometricK0Expansion`, Worker 4021) is the published,
+  (module `RationalGeometricK0Expansion`) is the published,
   premise-free geometric lemma on exact K0. For all standard subsets `I`, `J`
   and every section of the actual normalizer quotient, it writes
   `r_I ∘ i_J` as the sum of the actual normalized intersection terms
   `geometricTermK0` over `minimalReps cs I J`.
 - `rationalJacquetCompatibility_of_rationalGeometricK0Expansion`
-  (module `RationalJacquetGeometricAssembly`, Worker 165) proves
+  (module `RationalJacquetGeometricAssembly`) proves
   `RationalGeometricK0ExpansionStatement.{u, v} → RationalJacquetCompatibilityStatement.{u, v}`.
   That expansion is its only premise.
 

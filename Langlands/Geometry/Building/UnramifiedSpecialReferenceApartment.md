@@ -87,10 +87,14 @@ The choice does not change the prescribed point or the original valuation datum.
 The construction has no additional model, reference apartment, transporter,
 fixed-point or residue premise. All such objects in its conclusion are
 constructed from the original data. Its transitive project imports contain none
-of the four barred building-descent statements named in the host task.
+of the unramified building-descent statements, such as
+`UnramifiedBuildingDescentStatement`, `UnramifiedApartmentDescentStatement`,
+`UnramifiedGaloisFixedBuildingPointStatement` and
+`UnramifiedSpecialPointDescentStatement`.
 
 This module does not construct a reference chamber, an integral split source,
-or a residue quotient. Nor does it yet produce a maximal split torus whose
-unit subgroup fixes `y`. Those are further obligations of
-`UnramifiedFixedPointSplitTorusStatement`. The present result supplies the
+or a residue quotient. Nor does it produce a maximal split torus whose
+unit subgroup fixes `y`. Those are further steps toward
+`UnramifiedFixedPointSplitTorusStatement`, which `unramifiedFixedPointSplitTorus`
+in `UnramifiedFixedPointSplitTorusProof` proves. The present result supplies the
 special reference data and the fixed-point comparison needed for that argument.

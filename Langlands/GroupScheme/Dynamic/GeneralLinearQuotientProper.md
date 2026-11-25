@@ -1,6 +1,6 @@
 # Proper dynamic quotients of general linear groups by matrix methods
 
-Worker 708. This internal result proves properness for every supplied separated
+This internal result proves properness for every supplied separated
 locally finite type dynamic quotient of `GL_N` over an algebraically closed
 field in any universe. The projection is assumed surjective and constant on
 right cosets of the dynamic subgroup on every relative scheme test.

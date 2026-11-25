@@ -1,7 +1,5 @@
 # Relative endomorphism representability from affine Hom-scheme pieces
 
-Authors: Worker 1042.
-
 This module derives the published target
 `Langlands.AbelianScheme.RelativeEndomorphismRepresentabilityStatement.{u}`
 from two propositions:

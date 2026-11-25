@@ -1,7 +1,5 @@
 # Actual twist monodromy from invertible orders
 
-Author: Worker 92.
-
 This derived adapter composes the published theorem
 `Langlands.GroupScheme.muFiniteEtale` with the existing actual roots-of-unity
 monodromy constructions. Its declarations lie in

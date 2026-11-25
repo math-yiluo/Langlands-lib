@@ -18,4 +18,5 @@ This is a derived local restriction of the tensor description used in Langlands,
 *On the notion of an automorphic representation*, Corvallis Part I (1979),
 printed pp. 203 and 205 (PDF pp. 198 and 200), source
 `langlands-1979-notion-automorphic-representation`. The map is used to construct
-local coefficient projections for the normalized cuspidal induction in Task 6823.
+local coefficient projections for the normalized cuspidal induction in the proof of
+`CuspidalSupportExistenceStatement`.

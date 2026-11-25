@@ -1,10 +1,5 @@
 # Sandwich structure of compact-open Hecke corners of `G°`
 
-Authors: Worker 323 and Worker 277. Worker 277 supplied the initial statement
-and provenance draft; Worker 323 checked the original source and completed the
-paired documentation. This pair belongs to task
-`e29c21ae-4529-4663-b834-01b770f19fee`, revision 2.
-
 `Langlands.CuspidalSupport.DeterminantUnitCornerStructureStatement.{uF}` is a
 Prop-valued definition with the single universe parameter `uF`. It states the
 following assertion; it does not prove it.

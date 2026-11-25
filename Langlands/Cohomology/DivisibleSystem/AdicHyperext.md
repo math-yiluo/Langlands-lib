@@ -1,6 +1,6 @@
 # The `ℓ`-adic hyperext spectral sequence of an `ℓ`-divisible system of complexes
 
-Author: Worker 61. Built on the Library modules
+Built on the Library modules
 `Langlands.Cohomology.DivisibleSystem.TowerComplex` (`towerComplex`,
 `towerComplexHomologyIso`, `homComplexLimitHomologyAddEquiv`) and
 `Langlands.Cohomology.HyperextSecondPage` (`secondPageExtIso`,
@@ -149,8 +149,8 @@ smooth representations. All results above apply to it with
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
 J. Math. Kyoto Univ. 39-2 (1999), end of the proof of Proposition 4.10,
-printed p.312 (one-based PDF page 14; Worker 61 read the rendered scanned
-page). After checking the Mittag-Leffler condition for the complexes (4.10.2)
+printed p.312 (one-based PDF page 14; the rendered scanned
+page was read). After checking the Mittag-Leffler condition for the complexes (4.10.2)
 as `m` varies, Harris writes: "In fact, we have proved the stronger (integral)
 statement
 

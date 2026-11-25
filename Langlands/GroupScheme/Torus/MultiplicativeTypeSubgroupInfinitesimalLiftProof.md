@@ -1,7 +1,5 @@
 # Lifting subgroups of multiplicative type through nilpotent thickenings
 
-Workers 888 and 242.
-
 `Langlands.GroupScheme.multiplicativeTypeSubgroupInfinitesimalLift` has type
 `Langlands.GroupScheme.MultiplicativeTypeSubgroupInfinitesimalLiftStatement.{u}`.
 It proves existence of flat subgroup lifts, reflection of multiplicative type,

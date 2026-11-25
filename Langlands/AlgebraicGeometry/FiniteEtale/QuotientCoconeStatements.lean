@@ -19,7 +19,7 @@ def FiniteGroupQuotientCocone {S : Scheme.{u}} {G : Type u} [Group G]
     let q := (pointFunctor s).map (c.ι.app (SingleObj.star G))
     Function.Surjective q ∧
       ∀ x y : Fiber s (D.obj (SingleObj.star G)),
-        q x = q y ↔ ∃ g : G, y = (pointFunctor s).map (D.map (SingleObj.toEnd G g)) x
+        q x = q y ↔ ∃ g : G, y = (pointFunctor s).map (D.map (SingleObj.toEnd G g).asHom) x
 
 /-- Quotient cocones with the geometric orbit property over affine locally
 noetherian bases. -/

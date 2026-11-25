@@ -1,6 +1,6 @@
 # Restriction of order-linear formal atlas maps
 
-This derived unit restricts actual same-cover formal maps commuting with a
+This module restricts actual same-cover formal maps commuting with a
 ring action to an actual finer principal cover. It also restricts formal
 isomorphisms, preserves identities and composition, and proves the
 corresponding square on full compatible families.
@@ -60,5 +60,5 @@ gluing. Naturality of restricted maps and their algebra/Nilp natural
 transformations and isomorphisms are provided by the existing
 `OrderAction.Hom` and `OrderAction.Iso` constructions.
 
-This unit does not assert comparison of arbitrary different covers,
+This module does not assert comparison of arbitrary different covers,
 canonical quotient-class maps, height descent, framing or representability.

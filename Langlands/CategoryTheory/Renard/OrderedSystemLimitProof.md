@@ -1,7 +1,5 @@
 # Renard A.IV: universal properties of inverse and direct systems
 
-Author: Worker 695.
-
 This pair proves the unchanged published
 `Langlands.Renard.OrderedSystemLimit.OrderedSystemLimitStatements`
 from [`OrderedSystemLimitStatements`](OrderedSystemLimitStatements.md).

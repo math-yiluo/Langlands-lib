@@ -3,7 +3,7 @@
 `AffineAnalytificationFunctorialityStatement` states that the strong atlas maps
 of `AffineAnalytificationMap` respect identities and composites, and that the
 maps induced by the identity between two presentations of the same algebra are
-mutually inverse. It is a `Prop`-valued definition; this unit supplies no proof.
+mutually inverse. It is a `Prop`-valued definition; this module supplies no proof.
 
 ## Provenance
 

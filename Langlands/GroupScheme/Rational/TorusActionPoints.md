@@ -2,8 +2,8 @@
 
 Let `b : AutomorphicAction (splitTorus (Spec R) I) (groupScheme F e)` be an action of a
 split torus on a corepresented affine group scheme, and let
-`TorusAction.ofAutomorphicAction e b` be the induced action on algebra points (Worker 1239's
-`Rational.TorusActionBridge`). This module shows that, on every test scheme `T`, `b` acts
+`TorusAction.ofAutomorphicAction e b` be the induced action on algebra points
+(`Rational.TorusActionBridge`). This module shows that, on every test scheme `T`, `b` acts
 through the unit coordinates `splitTorus.pointsEquiv I T s` of the torus point `s`. All
 declarations are in namespace `Langlands.GroupScheme.Corepresented`.
 
@@ -42,7 +42,7 @@ identifies the coordinates by `algebraPointsEquiv_affinizationFactor`.
 ## Provenance
 
 Internal supporting material for the proof of
-`Langlands.GroupScheme.RelativeRoot.CyclicWeightFiltrationStatement` (task 023326af). It
+`Langlands.GroupScheme.RelativeRoot.CyclicWeightFiltrationStatement`. It
 sharpens the bridge's existence statement `exists_pointsEquiv_act` to an explicit coordinate
 formula. The intertwining of the vector-group action of weight `r • a` with the lifted
 action (Conrad–Gabber–Prasad, *Pseudo-reductive groups*, 2nd ed., Lemma 3.3.8) needs this

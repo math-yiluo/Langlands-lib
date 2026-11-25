@@ -1,7 +1,5 @@
 # Kernels of cocenter maps and cocenters of subgroup intersections
 
-Authors: Worker 183.
-
 The module `Langlands.GroupScheme.SimplyConnected.RankOneLeviCocenterKernel` proves five
 lemmas about group schemes over an arbitrary base scheme `S`. They are the abstract part of
 the comparison, used in `RankOneLeviCocenterGenerationReduction`, between the kernel of the map

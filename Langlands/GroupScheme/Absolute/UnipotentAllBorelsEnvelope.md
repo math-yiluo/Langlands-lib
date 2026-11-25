@@ -1,7 +1,5 @@
 # Conditional proof of the envelope step
 
-Construction by Worker 1393; compilation and documentation checked by Worker 1461.
-
 This module proves the envelope step
 `Langlands.GroupScheme.UnipotentAllBorelsEnvelopeStatement.{u}` *conditionally*. The
 final theorem assumes three published structural propositions and does not prove them:

@@ -1,11 +1,11 @@
 # The real-place functional equation from continuation premises
 
-Internal reduction for Task 7400, towards
-`Langlands.Global.RankinSelbergGlobal.RealPlaceFunctionalEquationStatement`. Authored by
-Worker 823. All declarations are proved; no axioms beyond Lean's standard ones are used.
+Internal reduction towards
+`Langlands.Global.RankinSelbergGlobal.RealPlaceFunctionalEquationStatement`. All declarations
+are proved; no axioms beyond Lean's standard ones are used.
 
-The published reduction `realPlaceUniformLocalTheoryReduction` (module
-`RealUniformLocalTheoryReduction`, by Worker 771) derives the target from three premises:
+The Library's reduction `realPlaceUniformLocalTheoryReduction` (module
+`RealUniformLocalTheoryReduction`) derives the target from three premises:
 `RealLocalUniformUnequalJacquetStatement`, `RealLocalUniformPositiveEqualJacquetStatement`
 and `RealPlaceContragredientPairLStatement`. The first two require the full packages
 `RealJacquet.UnequalEquation` and `RealJacquet.EqualEquation` for functions in
@@ -56,7 +56,7 @@ In the namespace `Langlands.Global.RankinSelbergGlobal`:
   block lists and sign `determinant(ds,-1)^r`.
 - `realLocalUniformUnequalJacquet_of_continuation`: the unequal continuation statement implies
   `RealLocalUniformUnequalJacquetStatement`. For `W` in `realUniformWhittakerModel r ds a`
-  and `W'` in `realUniformWhittakerModel t es (-a)`, the published theorem
+  and `W'` in `realUniformWhittakerModel t es (-a)`, the Library theorem
   `realUniformWhittakerRegularity` gives, for each function, that every iterated right
   derivative lies in `RealLocalWhittaker.regularFunctions` (for `a` and `-a`
   respectively) and the uniform derivative growth bound. These are the hypotheses of
@@ -68,13 +68,13 @@ In the namespace `Langlands.Global.RankinSelbergGlobal`:
   `RealPlaceContragredientPairLStatement.{u}` imply
   `RealPlaceFunctionalEquationStatement.{u}`.
 - `realPlaceUniformContinuationReduction` proves it: the two theorems above turn the
-  continuation premises into the premises of the published `realPlaceUniformLocalTheoryReduction`,
+  continuation premises into the premises of the Library's `realPlaceUniformLocalTheoryReduction`,
   which is then applied.
 
 The module declares local Borel `MeasurableSpace` and `BorelSpace` instances on
 `GL_(n+1)(ℝ)`, its upper unipotent subgroup and `LeftUnipotentQuotient n ℝ`, as in the
 modules it imports, so that the measurable structures in the conclusions agree with those
-in the published statements. It also sets `backward.isDefEq.respectTransparency false`.
+in the Library statements. It also sets `backward.isDefEq.respectTransparency false`.
 
 ## Relation to the literature
 

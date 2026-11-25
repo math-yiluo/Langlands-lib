@@ -1,9 +1,9 @@
 # Cotangent spaces at a rational point and maximal ideals
 
-Author: Worker 303. This module is local commutative algebra. It is the bridge
+This module is local commutative algebra. It is the bridge
 between two forms of the good-point condition used in the etale slicing proof of
-`Langlands.AlgebraicGeometry.SmoothEquivalenceRelationEtaleSliceStatement`
-(task `3c6168ac-543c-4dc2-a8a6-81647cb26eb6`): the equality of ideals in
+`Langlands.AlgebraicGeometry.SmoothEquivalenceRelationEtaleSliceStatement`:
+the equality of ideals in
 `Langlands.AlgebraicGeometry.SmoothRelationGoodPoint.IsGoodPoint`, and the
 spanning of the relative cotangent space by differentials, which is the input of
 the slicing step.

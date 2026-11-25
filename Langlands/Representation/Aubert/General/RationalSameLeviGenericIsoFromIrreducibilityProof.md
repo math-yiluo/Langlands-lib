@@ -1,7 +1,5 @@
 # Same-Levi generic isomorphism from generic irreducibility: proof
 
-Author: Worker 5266.
-
 This module proves the published statement
 `Langlands.Aubert.General.RationalPointFamily.RationalSameLeviGenericInductionIsoFromIrreducibilityStatement.{u, v}`.
 Its theorem is

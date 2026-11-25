@@ -35,7 +35,7 @@ variable (ρ : G →* Aut X)
 /-- Translations of the étale site are cocontinuous. -/
 instance etale_isTranslationInvariant :
     IsTranslationInvariant (P := etale (K := K)) (ρ := ρ) (etaleTopology X) where
-  isCocontinuous g := EtaleSite.isCocontinuous_translate_functor (ρ g)
+  isCocontinuous g := EtaleSite.isCocontinuous_translate_functor (ρ g).asIso
 
 /-- The twisted étale site of `X` with the action `ρ`. -/
 abbrev twistedEtaleTopology : GrothendieckTopology (TwistedOver (etale (K := K)) ρ) :=
@@ -69,7 +69,7 @@ variable (ρ : G →* Aut X)
 instance quasiEtale_isTranslationInvariant :
     IsTranslationInvariant (P := quasiEtale (K := K)) (ρ := ρ) (quasiEtaleTopology X) where
   isCocontinuous g := isCocontinuous_toGrothendieck_of_equivalence
-    (QuasiEtaleSite.translate (ρ g)) _ _ fun hR => QuasiEtaleSite.map_translate_inverse_mem _ hR
+    (QuasiEtaleSite.translate (ρ g).asIso) _ _ fun hR => QuasiEtaleSite.map_translate_inverse_mem _ hR
 
 /-- The twisted quasi-étale site of `X` with the action `ρ`. -/
 abbrev twistedQuasiEtaleTopology :
@@ -85,7 +85,7 @@ variable {ρ : G →* Aut X}
 
 theorem actionLift_inv_mul_hom {U : LocalizedCategory.{u, v, v} (K := K)} {f : U ⟶ X}
     (l : ActionLift ρ f) (g h : l.subgroup) :
-    (l.action (g * h)⁻¹).hom = (l.action g⁻¹).hom ≫ (l.action h⁻¹).hom := by
+    (l.action (g * h)⁻¹).asIso.hom = (l.action g⁻¹).asIso.hom ≫ (l.action h⁻¹).asIso.hom := by
   rw [mul_inv_rev, map_mul]
   rfl
 
@@ -98,16 +98,18 @@ def liftOpenSubgroup {U : TwistedOver P ρ} (l : ActionLift ρ (TwistedOver.hom 
 twisted endomorphism with twist `h⁻¹` whose arrow is the action of `h⁻¹`. -/
 def liftAction {U : TwistedOver P ρ} (l : ActionLift ρ (TwistedOver.hom U)) :
     ((liftOpenSubgroup l : OpenSubgroup G) : Subgroup G) →* (End U)ᵐᵒᵖ where
-  toFun h := MulOpposite.op (homMk ((h : G)⁻¹) (l.action h⁻¹).hom (l.equivariant h⁻¹))
+  toFun h := MulOpposite.op (End.of (homMk ((h : G)⁻¹) (l.action h⁻¹).asIso.hom (l.equivariant h⁻¹)))
   map_one' := by
     apply MulOpposite.unop_injective
+    apply End.ext
     refine hom_ext ?_ ?_
     · exact inv_one
-    · change (l.action 1⁻¹).hom = 𝟙 _
+    · change (l.action 1⁻¹).asIso.hom = 𝟙 _
       rw [inv_one, map_one]
       rfl
   map_mul' g h := by
     apply MulOpposite.unop_injective
+    apply End.ext
     refine hom_ext ?_ ?_
     · exact mul_inv_rev (g : G) h
     · exact actionLift_inv_mul_hom l g h
@@ -115,13 +117,13 @@ def liftAction {U : TwistedOver P ρ} (l : ActionLift ρ (TwistedOver.hom U)) :
 @[simp]
 theorem liftAction_twist {U : TwistedOver P ρ} (l : ActionLift ρ (TwistedOver.hom U))
     (h : ((liftOpenSubgroup l : OpenSubgroup G) : Subgroup G)) :
-    Hom.twist (liftAction l h).unop = (h : G)⁻¹ :=
+    Hom.twist (liftAction l h).unop.asHom = (h : G)⁻¹ :=
   rfl
 
 @[simp]
 theorem liftAction_left {U : TwistedOver P ρ} (l : ActionLift ρ (TwistedOver.hom U))
     (h : ((liftOpenSubgroup l : OpenSubgroup G) : Subgroup G)) :
-    Hom.left (liftAction l h).unop = (l.action h⁻¹).hom :=
+    Hom.left (liftAction l h).unop.asHom = (l.action h⁻¹).asIso.hom :=
   rfl
 
 /-- The local action of a lift, restricted to an open subgroup, lifts the action on
@@ -141,11 +143,12 @@ theorem isDiscreteSection_liftAction_of_agreeOn {A : Type*} [Category A] {FA : A
   obtain ⟨hN, ha, hb, hab⟩ := h
   refine IsDiscreteSection.of_agree (N := ⟨N, hN⟩) ha hb (fun g hg => ?_) hs
   apply MulOpposite.unop_injective
+  apply End.ext
   refine hom_ext rfl ?_
-  change (l.action ⟨g, ha hg⟩⁻¹).hom = (l'.action ⟨g, hb hg⟩⁻¹).hom
+  change (l.action ⟨g, ha hg⟩⁻¹).asIso.hom = (l'.action ⟨g, hb hg⟩⁻¹).asIso.hom
   have hg' : g⁻¹ ∈ N := inv_mem hg
   have := hab g⁻¹ hg'
-  exact congrArg Iso.hom this
+  exact congrArg (fun a => a.asIso.hom) this
 
 variable (P ρ) in
 /-- The local action system of lifts on the objects satisfying `Adm`: an action of

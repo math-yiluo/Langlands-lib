@@ -53,8 +53,8 @@ original is
 file `Mumford, Fogarty, Kirwan - Geometric Invariant Theory, 3rd edition
 (1994), Chapter 6.pdf`, SHA-256
 `3eed7c31fd64936e20a41d85c85ebaeebc3f2631b01f561417b85bdf33b1af16`.
-Worker 2057 read both pages and visually checked the displayed map on
-p.118. No source-specific errata note was found in the project or current
+Both pages were read and the displayed map on p.118 visually checked.
+No source-specific errata note was found in the project or
 Library `notes/errata` directories.
 
 The source uses this map after tensoring with the kernel of an elementary
@@ -69,14 +69,15 @@ an assumed comparison in Lean.
 The source's projectivity hypothesis belongs to its relative Picard
 representability setup. The isolated field cohomology assertion holds for
 abelian varieties; the Library encodes these over a field as smooth proper
-geometrically connected commutative group schemes. The later proof must
+geometrically connected commutative group schemes. A proof must
 justify every field-cohomology comparison needed for this full scope.
 
 ## Role and remaining obligations
 
-This is a substantial prerequisite of Task 5704,
-`60cd926c-5964-46c0-ad0e-111a8faf6631`, for
-`ArtinianPrimitiveLineBundleLiftingStatement`. A proof must establish the
+This is a substantial prerequisite of the proof
+`artinianPrimitiveLineBundleLifting` of
+`ArtinianPrimitiveLineBundleLiftingStatement` (lifting of primitive line
+bundles along elementary Artinian thickenings of abelian schemes). A proof must establish the
 injectivity for the specific canonical maps above. Existence of an
 abstract Künneth isomorphism alone does not identify these maps.
 
@@ -86,7 +87,3 @@ cohomology with residue-fibre cohomology, and the lifting argument are
 separate obligations. This statement neither assumes nor proves any
 relative dual representability, Picard-zero lifting or Picard smoothness
 result.
-
-## Authorship
-
-Worker 2057 authored this pair.

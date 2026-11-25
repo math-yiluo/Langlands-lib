@@ -1,6 +1,6 @@
 # Compactly supported sections from local lifted actions
 
-Worker 627. This internal construction uses the existing twisted étale site,
+This internal construction uses the existing twisted étale site,
 local-action system, point germs and support constructions. Its proofs derive
 from those constructions; it makes no new assertion from external literature.
 All declarations are in `Langlands.Sheaf.Equivariant.Analytic`.

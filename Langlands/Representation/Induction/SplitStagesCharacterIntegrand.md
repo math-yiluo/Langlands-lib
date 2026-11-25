@@ -14,8 +14,7 @@ than a literal theorem of Bernstein and Zelevinsky. The registered original is
 p-adic groups I* (1977), retained at
 `/home/taskhub/central-library/Bernstein-Zelevinsky--Induced representations of reductive p-adic groups I--1977.pdf`,
 SHA256 `8424600228ab72c5937e45edceefcae410a2a0b8f5ebf282185691542aa89092`.
-No errata file for that source was present in the current Library or project
-notes at the time of this audit.
+The Library's `notes/errata` has no errata file for that source.
 
 BZ77 §1.7–1.8, printed p.444 (PDF p.5), fixes the Haar change of variables,
 right-translation compact induction and character relation quotient. Sections
@@ -135,7 +134,8 @@ function and the two preceding proofs. `integrand_mk` retains the representative
 formula by reduction. `integrand_finMeasSupp` uses finiteness on compact sets to
 prove finite-measure support for every supplied quotient measure with that
 property. No Haar measure or normalization is needed for these elementary
-regularity facts. The later comparison statement must additionally retain all
+regularity facts. The comparison statement,
+`SplitStagesCharacterComparisonStatement`, additionally retains all
 the ordinary comparison's kernel-closedness, compact-open basis, regular left
 and right Haar measure and compatible quotient measure assumptions; this
 helper does not replace those assumptions.
@@ -170,10 +170,9 @@ helper, as opposed to every declaration incidentally loaded by its imports.
 The broader import closure also contains published ordinary relative-integral,
 compact averaging, normal-coinvariant kernel and induction-in-stages proofs.
 They are elementary group/measure/linear algebra, and do not use their later
-segment or derivative consumers. The audited status of
+segment or derivative consumers.
 `compactInductionNormalCoinvariantKernel` is a published proof, as recorded in
-`notes/audits/external-library-2026-10-29/induction-whittaker-smooth.md`, P3-089;
-an old planning passage must not be treated as its current status.
+`notes/audits/external-library-2026-10-29/induction-whittaker-smooth.md`, P3-089.
 
 Two incidental boundaries need explicit mention. First,
 `Induction.StructuralStatement` is imported by `CompactQuotientProof`. It
@@ -193,12 +192,11 @@ missing lower mathematics.
 ## Complete project import closure
 
 The following is the complete recursively computed project-module closure of
-the two imports (100 modules; the new helper itself is additional). Every edge
-was compared with the actual source, and all 100 files are byte-identical to
-Library base `7ad6e7323f2d14f5ccf8d30daa428878acda72c4`. Mathlib imports are
-external foundations, pinned by environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` (Mathlib commit
-`5ed2965256430c3649e86755f9576b54eca72435`). The list includes statement
+the two imports at Library commit `7ad6e7323f2d14f5ccf8d30daa428878acda72c4`
+(100 modules; the new helper itself is additional). Every edge
+was compared with the actual source. Mathlib imports are
+external foundations, pinned to Mathlib commit
+`5ed2965256430c3649e86755f9576b54eca72435`. The list includes statement
 modules as declarations, not evidence that their propositions are true.
 
 ```text
@@ -306,47 +304,44 @@ Langlands.Topology.Nonarchimedean.Subgroup
 
 
 
-## Independence audit against inherited conditions
+## Independence audit against the excluded conditions
 
 The checks in the following table cover the direct proof references just
 listed and the complete transitive project closure. Every excluded family
-includes its mathematical conclusion, exact proof successors and downstream
-consequences. A proposition definition, literature citation, private draft,
-conditional comparison, pending proof or ownership message supplies no proved
+includes its mathematical conclusion, the modules that prove it and downstream
+consequences. A proposition definition, literature citation or
+conditional comparison supplies no proved
 input. The mathematical closure contains only the elementary constructions
 and ordinary comparisons described above; the excluded consumer families do
 not occur in it. In particular, incidental parabolic constructions are not
 parabolic irreducibility/classification results.
 
-| Inherited exclusion condition | Direct and transitive dependency check |
+| Exclusion condition | Direct and transitive dependency check |
 | --- | --- |
-| `SupercuspidalCoinvariantFinitenessStatement`, all-character single-block task `62de5903-b616-4b5c-88eb-a066b77c5467`, and every successor/downstream consequence | Absent from the entire closure; no finite-dimensionality or finiteness input occurs. Missing general derivative or tensor inputs are not assumed from consumers. |
-| `GenericSegmentProductUniqueness`, task `30341ae4-65f2-4a0e-9283-763db01a409e` | Absent from the closure and from all proof terms; no genericity or uniqueness result is used. |
-| `UnlinkedSegmentSocleProductIrreducible`, `LinkedSegmentSocleReverseProductStructure`, `LinkedSegmentSoclePairReducible`; tasks `23e98d90-6055-4e35-91a9-b0f5d8a84961`, `a55c4267-7e3a-43f6-8bb1-ce319e1d0aa9`, `8fa9f68b-fa1b-431a-97f6-5b163964d1fc` | Neither these consumers nor their successors or consequences occur. The elementary quotient construction has no segment input. |
-| `JuxtaposedSegmentSocleReverseProductStructure`, `LinkedSegmentSocleReverseProductQuotientHom`, task `7ff2a1e9-89dc-439e-a861-a567b3db92bf` and proof successors | Absent throughout the closure; no socle product or quotient comparison is used. |
-| `SegmentSocleProductIrreducibility`, task `2ae5cbe5-0701-4509-88a0-db8cbeb35be4` | Absent, including successors and downstream consequences. |
-| `AdjacentUnlinkedSegmentSocleSwap`, tasks `e3634665-571b-4852-9f4c-bab8a1053434`, `cded83f3-df9c-4018-bc61-dc54f5c1f9ab`; `TwoSegmentSocleCommutation`, tasks `426911b4-6620-413f-8065-04b25287f3bd`, `66e3b87c-647e-41e4-af18-df4d436765f0` | No adjacent swap or segment commutation result is imported or invoked, directly or transitively. |
-| `LinkedSegmentSocleGluing`, tasks `c84cd52c-3ff3-4024-be50-8b84dd480888`, `6780b79c-9526-46aa-b8b4-00377d68b1ea` | Absent throughout; no gluing statement is used. |
-| `OrderedMultisegmentSocleExistence`, task `23189526-80b0-4828-a6d4-7ebec2cbeef5`; socle exhaustion `f3a69bc8-7312-4f82-8a7d-ea3c8188cb63` | No existence or exhaustion theorem enters the construction. |
-| Individual special-head/reverse-socle existence `67279e36-f3c2-42e3-9302-11729784042e`; individual segment-socle/reverse-head existence `4ca79bbd-589e-476b-9f65-661e799984b5` | Both families, their successors, and their consequences are absent. |
-| Segment analytic classification `aca8805b-054f-4d56-8045-12db7f623404`; forward `SegmentSpecialEssentialSquareIntegrability`, task `5eece9e8-7f6b-4ea9-abea-a1f9f1b8c807` | No analytic, classification or square-integrability result appears anywhere in the closure. |
-| Multisegment/special-head exhaustion `3bfb61fa-1129-4fc9-83fd-7fcfec22106e`; ordered strong/special-head existence `ebea9a8a-9b21-4208-aa31-98c2dea1f8a3`; quotient coverage `20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584`; ordered conversion `8252833d-c269-41a9-824c-5879e531b23b` | All four families and all of their successors/downstream consequences are absent, directly and transitively. |
-| Tempered/block uniqueness `52e97845-36bb-457d-b76f-70753334b88c`; `SquareIntegrableLanglandsClassification`, task `1cb45da2-7007-4351-a694-594fb148b8d1`; square-integrable exhaustion `cd8ab97c-0b78-4bce-97c4-d307a28159a4`; regular exhaustion `bf433f0a-921a-428c-b0c0-6475438125ac` | No tempered, square-integrable, regular or classification input enters any dependency. |
-| `SegmentHeadProductIrreducibility`, task `8364e73f-14ec-4d14-8f2b-1555a7c1ce95` | The special-head criterion and all of its conclusions/successors/transitive dependents are absent. |
-| Every segment derivative formula, segment-socle/head existence or Jacquet formula, segment classification, and clauses (b), (d), (e), (f) of the parent six-statement contribution | None is imported, assumed, or used to prove a lower input. No general derivative theorem or clause (a)/(c) is used either; no pending proposition is treated as proved. |
-| `TwoSupercuspidalNonadjacentProductIrreducible`, task `3c9849a4-a6c0-43ac-9982-d15ed76bf1e9`; `TwoSupercuspidalProductStructure`, full-product assembly `ab61f565-1427-4746-ba77-46097563e962` | No two-supercuspidal product result, successor, or downstream consequence enters the closure. |
-| `SegmentFullJacquetFormula`, arrangement `ed48ae06-964c-4c84-9e62-978f5a953ca7` and exact proof successor; `SegmentHeadJacquetFormula`, task `55ad1e10-62d8-46b7-a081-909ef0056426`; `SegmentSocleJacquetFormula`, task `b95105c6-f8bb-4641-ae53-2f49d1e7f034`; `SegmentSpecialJacquetExponentNormFormula`, task `92aea10f-62ac-4e0b-bd4a-9a80909797c5` | All four formula families and their mathematical consequences are absent. The generic algebraic module named `Jacquet.Coinvariants` contains only actual relation quotients and elementary maps, not any of these formulas. |
+| `SupercuspidalCoinvariantFinitenessStatement` (all-character single-block), every module proving it and every downstream consequence | Absent from the entire closure; no finite-dimensionality or finiteness input occurs. Missing general derivative or tensor inputs are not assumed from consumers. |
+| `GenericSegmentProductUniqueness` | Absent from the closure and from all proof terms; no genericity or uniqueness result is used. |
+| `UnlinkedSegmentSocleProductIrreducible`, `LinkedSegmentSocleReverseProductStructure`, `LinkedSegmentSoclePairReducible` | Neither these consumers nor the modules proving them or their consequences occur. The elementary quotient construction has no segment input. |
+| `JuxtaposedSegmentSocleReverseProductStructure`, `LinkedSegmentSocleReverseProductQuotientHom` and the modules that prove them | Absent throughout the closure; no socle product or quotient comparison is used. |
+| `SegmentSocleProductIrreducibility` | Absent, including the modules that prove it and downstream consequences. |
+| `AdjacentUnlinkedSegmentSocleSwap`; `TwoSegmentSocleCommutation` | No adjacent swap or segment commutation result is imported or invoked, directly or transitively. |
+| `LinkedSegmentSocleGluing` | Absent throughout; no gluing statement is used. |
+| `OrderedMultisegmentSocleExistence`; socle exhaustion | No existence or exhaustion theorem enters the construction. |
+| Individual special-head/reverse-socle existence; individual segment-socle/reverse-head existence | Both families, the modules that prove them, and their consequences are absent. |
+| Segment analytic classification; forward `SegmentSpecialEssentialSquareIntegrability` | No analytic, classification or square-integrability result appears anywhere in the closure. |
+| Multisegment/special-head exhaustion; ordered strong/special-head existence; quotient coverage; ordered conversion | All four families, the modules that prove them and all of their downstream consequences are absent, directly and transitively. |
+| Tempered/block uniqueness; `SquareIntegrableLanglandsClassification`; square-integrable exhaustion; regular exhaustion | No tempered, square-integrable, regular or classification input enters any dependency. |
+| `SegmentHeadProductIrreducibility` | The special-head criterion, all of its conclusions, the modules that prove it and its transitive dependents are absent. |
+| Every segment derivative formula, segment-socle/head existence or Jacquet formula, segment classification, and clauses (b), (d), (e), (f) of the six statements of `Classification.SegmentSocleDerivativesStatement` | None is imported, assumed, or used to prove a lower input. No general derivative theorem or clause (a)/(c) is used either; no unproved proposition is treated as proved. |
+| `TwoSupercuspidalNonadjacentProductIrreducible`; `TwoSupercuspidalProductStructure` (full-product assembly) | No two-supercuspidal product result, module proving one, or downstream consequence enters the closure. |
+| `SegmentFullJacquetFormula` and its proof `segmentFullJacquetFormula` (`Classification.SegmentFullJacquetProof`); `SegmentHeadJacquetFormula`; `SegmentSocleJacquetFormula`; `SegmentSpecialJacquetExponentNormFormula` | All four formula families and their mathematical consequences are absent. The generic algebraic module named `Jacquet.Coinvariants` contains only actual relation quotients and elementary maps, not any of these formulas. |
 | Ze80 §§3.5, 9.6 derivative formulas; Ze80 4.2/9.7 irreducibility; Ze80 9.3 analytic/square-integrability; classification/exhaustion; the circular route from Ze80 4.2 through §2 to Proposition 1.11 | None is cited or used as proof evidence. No unproved BZ77 derivative assertion is assumed. |
-| `IrreducibleCoinvariantFinitenessStatement`, task `5ab445dc-d2b4-4072-80d1-6370870a4a26`; `LeviCuspidalCoinvariantFinitenessStatement`, task `3ff5c8fb-397c-4345-bcb3-5d98a0993d18`; mirabolic finite-length route `5428fe2c-013c-482d-aa6e-7df43e7191aa` | These finiteness conclusions, proof successors and downstream consequences are absent. No finite-length repair, pending or otherwise, is used. |
+| `IrreducibleCoinvariantFinitenessStatement`; `LeviCuspidalCoinvariantFinitenessStatement`; mirabolic finite-length route | These finiteness conclusions, the modules that prove them and downstream consequences are absent. No finite-length repair is used. |
 | Shared lower derivative functors, derivative exactness, general Leibniz/support filtrations, geometric lemma, cuspidal support, representation finite length and plus-functor theorems | No such proved result is imported or used. The incidental structural exactness proposition and finite-length predicate are definitions only. `Tensor.Finite` is an elementary construction, not a consumer-derived tensor theorem or hypothesis. No matrix `plusSubgroup` specialization is needed. |
-| Plus functors, adjunction, BZ77 §4.13(d) submodule detection, general Leibniz, arbitrary-character Whittaker finiteness and the six host mixed-minus clauses | No such conclusion is invoked or proved. Adjunction proposition definitions are incidental as explained above; no adjunction theorem is an input. Ordinary compact induction, actual stages, quotient integration and Haar covariance are present, with the prescribed Haar ratio, and are independently upstream of these consumers. This helper supplies none of the six host comparison clauses. |
+| Plus functors, adjunction, BZ77 §4.13(d) submodule detection, general Leibniz, arbitrary-character Whittaker finiteness and the six mixed-minus clauses of `Derivative.MirabolicProductMinusCompatibilityStatement` | No such conclusion is invoked or proved. Adjunction proposition definitions are incidental as explained above; no adjunction theorem is an input. Ordinary compact induction, actual stages, quotient integration and Haar covariance are present, with the prescribed Haar ratio, and are independently upstream of these consumers. This helper supplies none of those six comparison clauses. |
 
 
-Worker 127's operator pause, Worker 8's suspension, Worker 114's hold and all
-other operator suspensions remain binding. No paused worker is contacted or
-awakened to execute this work. Worker 499 retains mixed normalization,
-LeftPhi and final assembly; Worker 837 retains Phi/Mackey/right-Phi/exactness
-and downstream E1. These ownership facts are coordination boundaries, not
-hypotheses or proof evidence. The comparison statement and its proof must
-receive their own independent acceptance and publication; this helper's
-compilation or publication does not establish that comparison.
+Mixed normalization, LeftPhi and the final assembly, and
+Phi/Mackey/right-Phi/exactness and downstream E1, lie outside this helper;
+these boundaries are not hypotheses or proof evidence. Compiling this helper,
+or its presence in the Library, does not establish the comparison;
+`splitStagesCharacterComparison` in `SplitStagesCharacterComparison` proves it.

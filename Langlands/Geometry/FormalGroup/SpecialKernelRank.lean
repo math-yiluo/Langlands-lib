@@ -30,7 +30,7 @@ set_option quotPrecheck false in
 local notation "q" => Nat.card 𝓀[K]
 local notation "m" => Nat.card kC - 1
 
-local instance : IsLocalHom (algebraMap 𝒪[K] C) := subfieldIntegerAlgebra_isLocalHom ι
+private local instance : IsLocalHom (algebraMap 𝒪[K] C) := subfieldIntegerAlgebra_isLocalHom ι
 
 section Coordinates
 

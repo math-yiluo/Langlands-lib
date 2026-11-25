@@ -1,6 +1,6 @@
 # Base-change invariance of geometric connected-component counts
 
-Worker 189. This helper module supplies the base-change step used in the proof of
+This helper module supplies the base-change step used in the proof of
 `SchemeGeometricComponentCountConstructibleStatement` (the scheme case of Conrad,
 *Weil and Grothendieck approaches to adelic points*, 2011, Lemma 5.1, which refers
 to EGA IV₃ 9.7.7). Its results are derived internal lemmas: the source treats these
@@ -16,7 +16,7 @@ facts as standard and gives no separate statements for them. Every count below i
 - `componentCount_eq_intersectionQuot`: if a space is covered by finitely many
   closed connected sets `s i`, its component count is the cardinality of the
   quotient of the index type by the relation `intersectionRelation s` ("`s i` and
-  `s j` meet"). The proof applies the published
+  `s j` meet"). The proof applies
   `Langlands.Topology.componentCount_eq_closedCoverIncidence` to the identity map
   and identifies its fibre relation with `intersectionRelation s`.
 

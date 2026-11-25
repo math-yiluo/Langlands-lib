@@ -1,6 +1,6 @@
 # Uniform small-coordinate dilation for actual JPS function spaces (statement)
 
-Author: Worker 941. This unit states the small-coordinate dilation step in the
+This module states the small-coordinate dilation step in the
 proof of JPS (1979), Lemma (2.2.1), printed p.182. It uses the actual function
 spaces, coordinate actions and coordinate-germ quotients published in
 `Langlands.Representation.Whittaker.JPSFunctionSpace`. It is a proposition
@@ -160,8 +160,8 @@ H. Jacquet, I. I. Piatetski-Shapiro and J. Shalika, *Automorphic forms on
 GL(3) I*, Ann. of Math. (2) 109 (1979), 169–212. Registered source
 `jps-1979-gl3-i`, file SHA256
 `6446822f267f9f95156ce7a193409209e56ce7858ed6d3d350480e73f35b1aa5`.
-Printed pp.181–183 are one-based PDF pp.14–16. Worker 941 read the text layer
-of all three pages and the page images of all three on 2026-10-28.
+Printed pp.181–183 are one-based PDF pp.14–16. The text layer of all three
+pages and the page images of all three were read on 2026-10-28.
 
 - Printed p.181, paragraph (2.2): a finite function on a locally compact
   abelian group is a continuous function whose translates span a
@@ -229,10 +229,11 @@ JPS (1979).
 
 ## Statement versus proof
 
-This is a statement unit. It is a separate prerequisite of the exact proof
-task for `Langlands.Whittaker.JPSDecompositionStatement`
-(task b1da68dc-38c9-449e-a71c-bae1f8902b22), not the decomposition itself.
-Its proof is a separate obligation. That proof may not assume
+This is a statement module. It is a separate prerequisite of the proof of
+`Langlands.Whittaker.JPSDecompositionStatement` (`jpsDecomposition`, module
+`JPSDecompositionProof`), not the decomposition itself.
+Its proof, `jpsUniformDilation` in `JPSUniformDilationProof`, is separate. That
+proof does not assume
 `JPSDecompositionStatement`, `Langlands.WhittakerLastEntryOneAsymptoticStatement`
 or the full-torus asymptotic parent. One possible route, not established
 here: obtain a common compact open subgroup of norm-one units acting trivially

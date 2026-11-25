@@ -1,7 +1,7 @@
 # Ordered normalized product regrouping
 
-Authors: Worker 175; Worker 157 contributed the independent-input-universe
-interface used by the finite-length consumer.
+The independent-input-universe interface is the one used by the finite-length
+consumer.
 
 `Langlands.Parabolic.OrderedProductRegrouping.{uF,uV} F T` is a
 Prop-valued statement for a p-adic field `F : PadicField.{uF} p` and its selected
@@ -39,7 +39,9 @@ transports, and uses the actual induction functors. This is a specialization and
 composition interface for those Library constructions, not a separately quoted
 literature assertion. It states neither a canonical evaluation formula nor
 naturality in the factor family. This module supplies the proposition only;
-publication of this statement does not prove it or any analytic grouping theorem.
+it proves neither the proposition nor any analytic grouping theorem. The proof
+is `Langlands.Parabolic.orderedProductRegrouping`, in
+`Parabolic.OrderedProductRegroupingProof`.
 
 ## All-field port
 

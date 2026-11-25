@@ -1,13 +1,14 @@
 # The residue projection of a separable closure: statements
 
-Worker 988 authors this statement unit for Task 7421. Its two declarations are
+The two declarations of this module are
 Prop-valued definitions in `Langlands.LocalGalois`. They state, for a
 nonarchimedean local field of either characteristic and any separable closure,
 every property of the residue projection that the published characteristic-zero
 statement `LocalResidueProperties` (`Galois/Local/AbsoluteStatement.lean`) states
-for the algebraic closure. The objects are Task 7404's general declarations in
+for the algebraic closure. The objects are the general declarations in
 `Langlands.LocalGalois.SepClosed` (`Galois/Local/AbsoluteDefinitions.lean`). The
-statements are targets for later proof tasks; nothing here proves them, and none
+statements are proved in `Galois/Local/ResidueProjectionProof.lean`
+(`residueProjectionExactness`); nothing here proves them, and none
 is used as a hypothesis of a construction.
 
 ## Parameters
@@ -15,7 +16,7 @@ is used as a hypothesis of a construction.
 `ResidueProjectionProperties K Ω` takes `K : Type uK` with `[Field K]
 [ValuativeRel K] [TopologicalSpace K] [IsNonarchimedeanLocalField K]` and
 `Ω : Type uΩ` with `[Field Ω] [Algebra K Ω] [IsSepClosure K Ω]`, and returns
-`Prop`. There is no hypothesis on the characteristic. Task 7404's declarations
+`Prop`. There is no hypothesis on the characteristic. The general declarations
 need `[Algebra.IsAlgebraic K Ω]`, which Mathlib derives from `IsSepClosure`.
 From the residue-closure clauses on they also need `[IsSepClosed Ω]`, which is the
 theorem `IsSepClosure.sep_closed K`, not an instance. The body therefore starts with
@@ -47,7 +48,7 @@ in this order:
 5. An element of `Ω` lies in `B` exactly when it is integral over `𝒪[K]`.
 6. Every `σ ∈ G` preserves `closureValuation K Ω`.
 7. With `SepClosed.residueAlgebra K Ω`, the residue field of `B` is an algebraic
-   closure of `k`. This is the clause the task keeps unchanged. In characteristic
+   closure of `k`. This clause is unchanged from `LocalResidueProperties`. In characteristic
    `p` it holds because the residue field of `B` is separably closed and `k`, being
    finite, is perfect.
 8. The comparison `SepClosed.residueClosureEquiv K Ω` of the residue field of `B`
@@ -71,8 +72,8 @@ in this order:
 
 ## Derivation from the characteristic-zero statement
 
-The clauses are those of `LocalResidueProperties K` with the substitutions the task
-prescribes:
+The clauses are those of `LocalResidueProperties K` with the following
+substitutions:
 
 | `LocalResidueProperties K` (characteristic 0) | `ResidueProjectionProperties K Ω` |
 | --- | --- |
@@ -90,8 +91,9 @@ prescribes:
 | `LocalResidueProperties K` | `ResidueProjectionProperties K Ω` |
 | `PadicResidueExactness` | `ResidueProjectionExactness` |
 
-The left column's characteristic-zero declarations are, by Task 7404, the general
-ones at `Ω = AlgebraicClosure K`. A private check file compiled the following in
+The left column's characteristic-zero declarations are, by
+`Galois/Local/AbsoluteDefinitions.lean`, the general ones at
+`Ω = AlgebraicClosure K`. A private check file compiled the following in
 this environment:
 
 ```lean
@@ -123,7 +125,7 @@ quantifies over every realization `T` of a p-adic field.
 ## Sources
 
 The source correspondence is that of the published characteristic-zero statement
-(`Galois/Local/AbsoluteStatement.md`) and of Task 7404's `AbsoluteDefinitions.md`.
+(`Galois/Local/AbsoluteStatement.md`) and of `AbsoluteDefinitions.md`.
 Jean-Pierre Serre, *Local Fields*, translated by Marvin Jay Greenberg, GTM 67,
 Springer (1979): Chapter I §7, Propositions 20–22 and the definition of the inertia
 group, pp. 20–23 (PDF 28–31); Chapter II §2, Proposition 3 and Corollaries 2–3,
@@ -137,5 +139,6 @@ topological passage and the explicit transports are left to the proofs.
 Separability of the residue extensions, which Serre assumes, holds because `k` is
 finite.
 
-This unit does not edit the published statement `Galois/Local/AbsoluteStatement.lean`,
-the proof module `Galois/Local/AbsoluteProof.lean`, or Task 7404's definitions.
+This module leaves unchanged the published statement `Galois/Local/AbsoluteStatement.lean`,
+the proof module `Galois/Local/AbsoluteProof.lean`, and the general definitions of
+`Galois/Local/AbsoluteDefinitions.lean`.

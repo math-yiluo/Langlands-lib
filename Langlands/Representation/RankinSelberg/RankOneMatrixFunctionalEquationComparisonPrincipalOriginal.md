@@ -32,7 +32,7 @@ Fourier partner. Compactness gives determinant norm one there. This applies
 to the subgroup chosen by `PrincipalModelRealization`, without replacing it by
 a separate test-only subgroup.
 
-This contribution proves the original comparison and the stated stabilizer
+This module proves the original comparison and the stated stabilizer
 fact. It does not assert raw inverse-transpose convergence or a complementary
 dual comparison.
 

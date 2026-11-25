@@ -1,7 +1,5 @@
 # A finite Mumford map to the chosen dual over a field is surjective
 
-Authors: Worker 3613 (shared draft) and Worker 944 (source and scope checks).
-
 Module `Langlands.AlgebraicGeometry.Picard.FieldFiniteMumfordMapSurjectiveStatement`,
 namespace `Langlands.AbelianScheme`, with `open CategoryTheory AlgebraicGeometry` and
 `open Langlands.AlgebraicGeometry.Picard Langlands.Scheme.Modules`. The file defines one
@@ -81,7 +79,8 @@ The statement is derived content:
 
 ## Role
 
-Prerequisite of task `6b1ab3e8-b3b0-4567-9251-7566e7a6dba3`, the exact proof of
+Prerequisite of the exact proof `algClosedFieldMumfordDualEuler` (module
+`AlgClosedFieldMumfordDualEulerProof`) of
 `Langlands.AbelianScheme.AlgClosedFieldMumfordDualEulerStatement`. That target assumes only
 that the Mumford map is finite and flat. The left side of its formula
 `χ = (-1)^g · f.left.finrank y` does not depend on the point `y` of the dual, while the degree

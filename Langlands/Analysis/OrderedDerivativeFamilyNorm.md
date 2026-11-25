@@ -91,7 +91,7 @@ not import the statement file and proves nothing about its estimate.
 
 ## Provenance and scope
 
-This is an internal definition and helper unit, not a transcription of an
+This is an internal definition and helper module, not a transcription of an
 external theorem. Its convention is the tensor norm of C. B. Morrey and
 L. Nirenberg, *On the analyticity of the solutions of linear elliptic systems of
 partial differential equations*, Comm. Pure Appl. Math. 10 (1957), 271–290
@@ -105,12 +105,8 @@ derivative. Here the index `i` plays the role of the tensor's other indices and
 the word `w` that of the differentiation indices, with arbitrary directions in
 place of coordinate directions.
 
-The unit serves as a prerequisite for a separate ordered-tensor bilinear Leibniz
+The module serves as a prerequisite for a separate ordered-tensor bilinear Leibniz
 inequality. It asserts no Leibniz estimate, elliptic estimate, analyticity or
 automorphic conclusion.
 
-Worker 94 authored the definitions, the helper results other than the two
-singleton results, and the initial exposition. Worker 878 added
-`orderedDerivativeFamilyNorm_unique` and
-`orderedDerivativeFamilyNorm_euclidean_singleton`, checked the source
-convention and revised this exposition.
+The tensor-norm convention was checked against the source.

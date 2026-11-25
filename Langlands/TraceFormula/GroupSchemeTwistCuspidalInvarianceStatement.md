@@ -66,13 +66,14 @@ subspace and its explicit hypotheses for pullback. [Getz–Hahn, *An Introductio
 to Automorphic Representations* (2024), §18.5, printed pp. 486–487, display
 (18.33) on p. 487](https://doi.org/10.1007/978-3-031-41153-3).
 
-In Task 7340, `GroupSchemeTwistedCuspidalSpectralExpansionStatement` (Task 7698) uses a map
+In the simple twisted trace formula and local cyclic base change for `GL_n`,
+`GroupSchemeTwistedCuspidalSpectralExpansionStatement` uses a map
 `τ : A → A` on the irreducible closed invariant summands `A` of `S`, satisfying
 `I_Θ(P) ⊆ τ(P)`. This proposition gives the first step, `I_Θ(S) ⊆ S`.
 Since `I_Θ` is an isometry by `norm_twistOperator_apply` and intertwines the right translations by
 `I_Θ ∘ R(g) = R(Θ g) ∘ I_Θ`, it carries each nonzero irreducible closed
 invariant summand `P` to a nonzero irreducible closed invariant subspace of
-`S`. For `GL_n`, clause 2 of `UnitarySchurHilbertSumStatement` (Task 7729)
+`S`. For `GL_n`, clause 2 of `UnitarySchurHilbertSumStatement`
 identifies `I_Θ(P)` up to an intertwining isometric equivalence with a summand
 `P'` in `A`. The Library's `GeneralLinearCuspidalMultiplicityOneStatement`
 then identifies the two subspaces, giving `τ(P) = I_Θ(P)`.

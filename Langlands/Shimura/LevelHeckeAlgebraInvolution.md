@@ -1,6 +1,6 @@
 # The positive involution of the Hecke algebra of a compact open subgroup
 
-Author: Worker 167. Module `Langlands.Shimura.LevelHeckeAlgebraInvolution`, namespace
+Module `Langlands.Shimura.LevelHeckeAlgebraInvolution`, namespace
 `Langlands.Shimura.LevelHecke.LevelHeckeAlgebra`.
 
 For an open subgroup `K` of a topological group `G`, the Library algebra

@@ -1,7 +1,5 @@
 # Connectedness of a smooth closed subgroup containing a Borel: statement
 
-Worker 1336.
-
 `BorelContainingSubgroupConnectedStatement.{u}` concerns a smooth affine
 group scheme `G` with connected underlying space over an algebraically
 closed field `k : Type u`. Let `i : P ⟶ G` be an actual closed subgroup
@@ -31,5 +29,7 @@ the Borel normalizer theorem. The registered author errata snapshot of
 This module only defines a proposition. It supplies no connectedness
 proof or normalizer theorem. Applying it after extension to an
 algebraic closure is a geometric step in the source derivation of
-`ParabolicMaximalTorusStatement`; that derivation still requires the
-other structural prerequisites and an actual proof.
+`ParabolicMaximalTorusStatement`; that derivation also requires the
+other structural prerequisites. The Library proves
+`ParabolicMaximalTorusStatement` as `parabolicMaximalTorus`, in
+`Langlands.GroupScheme.Absolute.ParabolicMaximalTorusProof`.

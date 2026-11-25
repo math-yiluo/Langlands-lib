@@ -3,7 +3,7 @@ Copyright (c) 2025 Matthew Jasper. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Matthew Jasper
 
-Modified by Worker 288 (2026): prove the published three-clause proposition
+Modified in Langlands-lib (2026): prove the published three-clause proposition
 from Imperial FLT commit 923d45174c500aa1d994ba973bac38ea39eacbf7,
 FLT/DedekindDomain/FiniteAdeleRing/TensorRestrictedProduct.lean:93-232.
 Retain the scalar comparison and reduction of left-linear bijectivity;
@@ -15,7 +15,9 @@ The upstream license is retained at licenses/ImperialCollegeLondon-FLT/LICENSE.
 import Langlands.LinearAlgebra.RestrictedProduct.TensorStatement
 import Langlands.LinearAlgebra.RestrictedProduct.TensorPiProof
 
-namespace RestrictedProduct
+open RestrictedProduct
+
+namespace Langlands.LinearAlgebra.RestrictedProduct
 
 open TensorProduct
 
@@ -116,4 +118,4 @@ theorem tensorRestrictedProductComparison_proof :
     rw [scalar_comparison R M N L ℱ]
     exact restricted_bijective R M N L ℱ
 
-end RestrictedProduct
+end Langlands.LinearAlgebra.RestrictedProduct

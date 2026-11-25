@@ -1,6 +1,7 @@
 # Original global quotient point coordinates on each cover component
 
-This internal Task 7200 adapter compares actual original group point lifting
+This internal adapter for the proof of `RelativeUnipotentRadicalFiltrationStatement`
+(finite vector-bundle filtrations of supplied relative unipotent radicals) compares actual original group point lifting
 through a tower with the prescribed direct group pullback comparison. It uses
 the original underlying morphism retained by the lift and the actual pullback
 projection equations.

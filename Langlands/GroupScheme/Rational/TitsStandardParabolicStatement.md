@@ -5,8 +5,8 @@ This module connects two things for an actual connected reductive group:
 - the published `standardParabolicPoints` and `standardRelativeWeylGroup`.
 
 The Tits data are those of the realization target `RelativeTitsSystemStatement`
-(module `Langlands.GroupScheme.Rational.RelativeTitsSystemStatement`, submitted
-separately):
+(module `Langlands.GroupScheme.Rational.RelativeTitsSystemStatement`; the Library
+proves it as `relativeTitsSystem` in `Rational.RelativeTitsSystemProof`):
 - `B = standardParabolicPoints i ν ∅`, i.e. `P_∅(k)`;
 - `N = normalizerPoints i`;
 - `π = QuotientGroup.mk' ((centralizerPoints i).subgroupOf (normalizerPoints i))`, onto
@@ -89,10 +89,12 @@ None of these assumes its own conclusion.
   (Borel–Tits 5.20; Renard V.4.5).
 
 `RationalBruhatStatement` and `StandardParabolicPointsStatement` are imported for these
-comparisons only, and their proof tasks remain independent:
-- `StandardParabolicEndpointsStatement` (07f71149);
-- `StandardParabolicPointsStatement` (e43da082);
-- `RationalBruhatStatement` (2efe8bb8).
+comparisons only. The three statements used are proved in their own modules:
+- `StandardParabolicEndpointsStatement`, as `standardParabolicEndpoints`
+  (`Rational.StandardParabolicEndpointsProof`);
+- `StandardParabolicPointsStatement`, as `standardParabolicPointsStatement_proof`
+  (`Rational.StandardParabolicPointsProof`);
+- `RationalBruhatStatement`, as `rationalBruhat` (`Rational.RationalBruhatProof`).
 
 ## Sources and provenance
 

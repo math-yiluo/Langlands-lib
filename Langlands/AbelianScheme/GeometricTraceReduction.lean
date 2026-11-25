@@ -41,7 +41,8 @@ theorem primeTate_finiteDimensional [IsAlgClosed k] [CharZero k]
 
 /-- The actual prime trace restricted to integral endomorphisms. -/
 def integralPrimeTrace (p : ℕ) [Fact p.Prime] : End A →ₗ[ℤ] ℚ_[p] :=
-  ((primeEndomorphismTrace A p).restrictScalars ℤ).comp homToHom0
+  ((primeEndomorphismTrace A p).restrictScalars ℤ).comp
+    (endToEnd0 A).toAddMonoidHom.toIntLinearMap
 
 /-- Common rational values on integral endomorphisms extend pointwise to End0. -/
 theorem exists_commonRationalTrace
@@ -50,13 +51,17 @@ theorem exists_commonRationalTrace
     (a : End0 A) :
     ∃ t : ℚ, ∀ (p : ℕ) [Fact p.Prime],
       algebraMap ℚ ℚ_[p] t = primeEndomorphismTrace A p a := by
+  obtain ⟨a⟩ := a
   induction a using TensorProduct.inductionOn with
   | tmul q f =>
-      obtain ⟨t, ht⟩ := h f
+      obtain ⟨t, ht⟩ := h (End.of f)
       refine ⟨q * t, ?_⟩
       intro p _
-      have he : q ⊗ₜ[ℤ] f = q • homToHom0 f := by
+      have he : (End.of (q ⊗ₜ[ℤ] f) : End0 A) = q • (End.of (homToHom0 f) : End0 A) := by
+        apply End.ext
+        change q ⊗ₜ[ℤ] f = q • homToHom0 f
         simp [homToHom0_apply, TensorProduct.smul_tmul']
+      change _ = primeEndomorphismTrace A p (End.of (q ⊗ₜ[ℤ] f) : End0 A)
       rw [he, map_smul, map_mul, ht p]
       rfl
   | add a b ha hb =>
@@ -64,6 +69,7 @@ theorem exists_commonRationalTrace
       obtain ⟨s, hs⟩ := hb
       refine ⟨t + s, ?_⟩
       intro p _
+      change _ = primeEndomorphismTrace A p ((End.of a : End0 A) + (End.of b : End0 A))
       rw [map_add, ht p, hs p, map_add]
 
 local instance : Fact (Nat.Prime 2) := ⟨Nat.prime_two⟩

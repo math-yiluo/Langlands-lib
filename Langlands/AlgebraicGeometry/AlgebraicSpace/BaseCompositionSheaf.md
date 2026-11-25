@@ -1,7 +1,5 @@
 # Sheaves after composition of bases
 
-Author: Worker 109.
-
 This internal construction extends `BaseCompositionPresheaf` from actual
 presheaves to actual fppf sheaves. It is derived from the published
 `OriginalBaseTransport` total/fibre constructions, the fppf subcanonical

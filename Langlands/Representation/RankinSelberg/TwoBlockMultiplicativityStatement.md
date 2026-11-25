@@ -1,14 +1,12 @@
 # Two-block multiplicativity of the factors of pairs
 
-Author: Worker 358.
-
 This module defines the two-block cases of the published
 `GammaMultiplicativityStatement` and `LFactorMultiplicativityStatement`, in
 namespace `Langlands.RankinSelberg`. It imports
 `Langlands.Representation.RankinSelberg.MultiplicativityStatement` and reuses
 its `succBlockShape`, actual canonical normalized induction, and certified
 symmetric factor relations. The formulas specialize the published statements
-of Worker 11 to `k = 2`; no imported definition is changed.
+to `k = 2`; no imported definition is changed.
 
 All three declarations are proposition definitions. This module proves
 neither analytic target nor the reduction to an arbitrary number of blocks.
@@ -97,7 +95,7 @@ formal proof of a Laurent-polynomial equivalence in this module.
 proposition definitions at the same independent universe levels.
 
 Neither factor existence nor Whittaker type of the induced representation
-is a premise. Establishing those properties is part of the future proof,
+is a premise. Establishing those properties is part of the proof,
 using the actual induction and the existing factor relations.
 
 ## Lower and upper parabolics
@@ -108,7 +106,7 @@ parabolic. Translating the source requires reversing the **entire ordered
 block family**: its sizes, dependent carriers and representations. For two
 blocks this exchanges the two block positions.
 
-A future proof must construct the conjugation equivalence of the actual
+A proof must construct the conjugation equivalence of the actual
 normalized induced representations, respecting their modulus factors and
 right actions, then transport the certified factors across that
 equivalence. It must also identify the products after reindexing. The
@@ -119,15 +117,14 @@ targets are not constructed here. No such equivalence is assumed as a
 hypothesis.
 
 Likewise, §3.2 motivates isolating the two-block targets but does not
-formally discharge the separate finite-block proof tasks. Normalized
+formally discharge the separate finite-block proofs. Normalized
 induction transitivity, preservation of Whittaker type, the necessary
 coordinate identifications, and the analytic two-block arguments remain
 proof obligations outside this statement module.
 
 ## Lean verification
 
-In environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, the module compiled
-with no errors or warnings. Separate inspections of both analytic targets
+The module compiled with no errors or warnings. Separate inspections of both analytic targets
 and their conjunction reported `statement_returns_prop: true` and exactly
 the level parameters `uF`, `uV`, `uW`. Their inspected assumptions are
 `propext`, `Classical.choice` and `Quot.sound`. There are no proof holes or

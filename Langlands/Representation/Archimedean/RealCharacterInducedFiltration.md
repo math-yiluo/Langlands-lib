@@ -6,7 +6,7 @@ Lean module: `Langlands.Representation.Archimedean.RealCharacterInducedFiltratio
 ## Role and provenance
 
 This module assembles the proof of `Langlands.Archimedean.RealCharacterInducedFiltrationStatement`
-(Library module `RealInducedPairFiltrationReduction`, Task 7133) from its cases. The cases are
+(Library module `RealInducedPairFiltrationReduction`) from its cases. The cases are
 proved in `RealCharacterInducedWeightZero`, `RealCharacterInducedPushforward` and
 `RealCharacterInducedSwap`. The main theorem assumes two statements that are not proved here:
 
@@ -14,7 +14,7 @@ proved in `RealCharacterInducedWeightZero`, `RealCharacterInducedPushforward` an
 - `RealOrthogonalBlockUncertaintyStatement` (module
   `RealOrthogonalUncertaintyStatement`).
 
-The filtration for two characters is used through Task 7067's theorem
+The filtration for two characters is used through the theorem
 `realCharacterPairFiltration` (module `RealCharacterPairFiltration`). The case split is
 specific to this project, and no literature statement is formalized, so the module has no
 sources.

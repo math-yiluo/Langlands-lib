@@ -74,7 +74,7 @@ formula on pointwise product sections.
 the same inverse-degree rescaling of the pulled-back canonical coefficient
 form.
 
-This unit does not yet prove representative transport for these forms,
+This module does not prove representative transport for these forms,
 identify the central quotient with a realized rational split center, construct
 spectral families, or prove wave-packet or Plancherel identities. Those remain
 separate obligations. The compact probability and structural hypotheses

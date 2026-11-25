@@ -1,7 +1,7 @@
 # Cusp forms on `GL_n`: vanishing constant terms and split tensor products
 
 Lean module: `Langlands.BaseChange.CuspForm` (`Langlands/BaseChange/CuspForm.lean`), namespace
-`Langlands.BaseChange`. Author: Worker 820, for Task 7457.
+`Langlands.BaseChange`.
 
 The module contains two definitions, `HasVanishingConstantTerms` (Harish-Chandra's cusp forms on
 `GL_n(R)`) and `splitTensor` (the tensor product `φ_0 ⊗ … ⊗ φ_{l-1}` on `GL_n(F^l)`), and the
@@ -47,7 +47,7 @@ Waldspurger 2003 (Lemma VIII.2.1, printed p. 321: `f ∈ °𝒞(G)` if and only 
 printed p. 322), where it is used on Harish-Chandra Schwartz functions. Definition 1 applies it to the
 unipotent radical of every proper standard block parabolic subgroup of `GL_n(R)` and to every
 Haar measure on it, and adds integrability. The `[IsTopologicalRing R]` argument is part of the
-signature, as specified by the task, although the body only uses the topology of `GL_n(R)`.
+signature, although the body only uses the topology of `GL_n(R)`.
 
 Mathematical meaning. For `P = M U` a parabolic subgroup, the constant term of `f` along `P` at
 `m` is `∫_U f(m u) du` (up to the modulus character, which does not affect vanishing). Definition

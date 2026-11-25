@@ -1,6 +1,6 @@
 # Native source-radical quotients of the actual stabilizer coefficient
 
-This internal unit constructs the coefficient-linear map needed to eliminate proper source intersections in the actual universal induced family. It works with the existing `GeometricLemmaIntersectionDatum` for two represented parabolics. The datum supplies geometric intersection parabolics, their radicals and Levis, and their point identifications. Existence of such a datum, and existence or finiteness of suitable orbit representatives, remain separate obligations.
+This module constructs the coefficient-linear map needed to eliminate proper source intersections in the actual universal induced family. It works with the existing `GeometricLemmaIntersectionDatum` for two represented parabolics. The datum supplies geometric intersection parabolics, their radicals and Levis, and their point identifications. Existence of such a datum, and existence or finiteness of suitable orbit representatives, remain separate obligations.
 
 Write `z` for the datum's representative, `S` and `Q` for the literal source and target parabolic point images, and `H = orbitStabilizer S Q z⁻¹`. Thus the orbit is `S z`, and the stabilizer coefficient uses conjugation by `z` into the original source parabolic. Write `dQ` for the existing target semidirect decomposition and `NQH = H ∩ ker(dQ.projection)`, as a subgroup of `H`. The source radical is the literal point image `Rₛ = pointImage (D.r' ≫ D.p')` inside the original source Levi's own rational points.
 

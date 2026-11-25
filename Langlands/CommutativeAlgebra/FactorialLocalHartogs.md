@@ -1,7 +1,5 @@
 # Hartogs extension in factorial local domains
 
-Author: Worker 171.
-
 Module `Langlands.CommutativeAlgebra.FactorialLocalHartogs`, namespace
 `Langlands.CommutativeAlgebra.FactorialLocalHartogs`. Throughout, `O` is a local
 domain with `UniqueFactorizationMonoid O`.

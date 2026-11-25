@@ -55,13 +55,13 @@ the infinite-slice equivalence. Neither condition is replaced by the other.
 infinite-slice criterion for the canonical connected-reductive atlas.
 
 The function carriers, inclusions and positive full adelic right actions are the
-existing ones throughout: this unit changes no subrepresentation or action.
+existing ones throughout: this module changes no subrepresentation or action.
 Consequently it interprets the existing spaces through the actual manifold
 without introducing a second adelic function-space construction.
 
 The provenance is internal: the specified manifold's proved coordinate-family
 criterion, the existing all-family predicate and the original slice-space
 definitions suffice for every result. No new external assertion is transcribed.
-This unit establishes the ordinary manifold interpretation of the smooth
+This module establishes the ordinary manifold interpretation of the smooth
 conditions. Differential moderate-growth estimates, quotient measures, reduction
 theory, finite volume and cuspidal L2 realizations remain separate obligations.

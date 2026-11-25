@@ -1,10 +1,9 @@
 # Root pieces over a multipliable relative root
 
-Author: Worker 4783.
-
 Lean module: `Langlands.Geometry.Building.QuasiSplitMultipliablePieces`.
 
-This internal unit belongs to task 8ffe0456. It prepares the proof of axiom V 5 at
+This module is part of the construction of actual quasi-split apartments over henselian
+integer-valued fields. It prepares the proof of axiom V 5 at
 multipliable relative roots (type R2) for the descended quasi-split family. Over a splitting
 field, the absolute roots over a multipliable relative root `a` split into *pieces*
 `{p, q, m = p + q}`: `p` and `q` restrict to `a`, and `m` restricts to `2a`. This module
@@ -149,5 +148,6 @@ opposite-factor-pair, semigroup-commutator and apartment-rigidity results of the
 
 ## Scope
 
-This unit proves no axiom of the descended family by itself. It is used by the later units
-of task 8ffe0456 for V 5 at multipliable roots.
+This module proves no axiom of the descended family by itself. It is used by the modules
+`QuasiSplitMultipliableFactorization` and `QuasiSplitMultipliableOpposite` for V 5 at
+multipliable roots.

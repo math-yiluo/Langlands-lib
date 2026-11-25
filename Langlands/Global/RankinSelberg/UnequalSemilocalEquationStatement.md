@@ -33,7 +33,7 @@ J. W. Cogdell, *Analytic theory of L-functions for GL_n*, in Bernstein–Gelbart
 
 ## The statement
 
-The hypotheses are those of the published target
+The hypotheses are those of the Library target
 `Langlands.Global.CuspidalPairPartialGammaEquationStatement`, specialized to `t < r`,
 without the presentations `Pd`, `Pd'` of the contragredients (they do not enter):
 
@@ -62,7 +62,7 @@ The conclusion: there exist `x : T.Space` and `x' : T'.Space` with
 `W = cuspWhittaker F T ψ.complex x`, `W' = cuspWhittaker F T' ψ.complex⁻¹ x'`,
 `Wdual = translateFunction F (r + 1) (unfoldingWeyl F h) (dualFunction F (r + 1) W)` (that
 is, `ρ(w_(n,m)) W̃`) and `W'dual = dualFunction F (t + 1) W'` (that is, `W̃'`), the functions
-of the published `UnequalUnfoldingStatement`. Then there exist `σ : ℝ` and `A B : ℂ → ℂ`
+of the Library's `UnequalUnfoldingStatement`. Then there exist `σ : ℝ` and `A B : ℂ → ℂ`
 such that
 
 1. `A` and `B` are meromorphic on `ℂ`;
@@ -139,7 +139,7 @@ and the premise inherits it; a proof must supply it.
 
 * **Existential vectors.** The vectors `x`, `x'` are existential. For `x = 0` the
   integrals vanish, so the nonvanishing clause cannot hold for all spherical vectors.
-  The consumer (the proof of the target) needs only one good pair.
+  The proof of the target needs only one good pair.
 * **Uniform `G`.** The clause on `G` is universal, as in the target. The gamma factor is
   unique (`IsPadicSymmetricGammaFactor.unique`), so this is no stronger than asserting it
   for one choice.
@@ -154,7 +154,7 @@ and the premise inherits it; a proof must supply it.
   isolates the semi-local part, the product of the local equations at `S ∪ ∞`, as a
   property of the partial integrals `Ψ_(S∪∞)`, `Ψ̃_(S∪∞)` of the Library
   (`Langlands.Global.RankinSelberg.PartialWhittakerIntegrals`). The global parts
-  (analytic properties, unfolding, Euler factorizations) are the published
+  (analytic properties, unfolding, Euler factorizations) are the Library's
   `UnequalAnalyticStatement`, `UnequalUnfoldingStatement`,
   `UnequalEulerFactorizationStatement` and `UnequalDualEulerFactorizationStatement`.
 * Cogdell's "appropriate `φ` and `φ'`" is made precise as the existence of spherical
@@ -162,7 +162,7 @@ and the premise inherits it; a proof must supply it.
 
 ## Provenance
 
-Internal premise of Task 6190 (proof of `CuspidalPairPartialGammaEquationStatement`). It
+Internal premise of the proof of `CuspidalPairPartialGammaEquationStatement`. It
 transcribes the step "by the local functional equations, for each `v ∈ S`" of Cogdell
 p.220, multiplied over `S ∪ ∞`, onto the Library's partial integrals, the target's
 archimedean factors and the target's hypotheses on the finite gamma factors. The

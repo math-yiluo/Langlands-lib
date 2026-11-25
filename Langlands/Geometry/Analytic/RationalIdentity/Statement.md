@@ -1,7 +1,5 @@
 # Target for rational identity charts
 
-Author: Worker 36.
-
 `Langlands.Analytic.RationalIdentity.IdentityStatement` is a proposition
 target over a complete ultrametric normed field `K` and an actual presented
 strict affinoid algebra `P`. It asserts three conclusions.

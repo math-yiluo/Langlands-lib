@@ -1,7 +1,5 @@
 # Smooth-dual perfectness of an invariant bilinear pairing
 
-Author: Worker 166.
-
 `Langlands.SmoothInvariantPairingDualityStatement` is a proposition definition
 awaiting proof. The group `G`, admissible carrier `V`, and smooth carrier `W`
 have independent universes `uG`, `uV`, and `uW`. Each carrier is an additive

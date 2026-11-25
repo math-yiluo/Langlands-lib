@@ -1,7 +1,5 @@
 # Normalized pullback on actual L² spaces
 
-Authors: Worker 452 and Worker 378.
-
 This module builds the normalized pullback operator between Mathlib's actual
 complex almost-everywhere L² quotients `Lp ℂ 2 ν` and `Lp ℂ 2 μ`. All
 declarations are in the namespace `Langlands.NormalizedL2Pullback`.

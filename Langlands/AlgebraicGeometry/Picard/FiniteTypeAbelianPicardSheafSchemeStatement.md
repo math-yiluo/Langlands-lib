@@ -1,13 +1,5 @@
 # Scheme representability of the Picard sheaf of an abelian scheme over a finite-type integer algebra
 
-Authors: Worker 3233 and Worker 3570.
-
-Worker 3233 wrote the Lean statement in the shared draft of task
-`90a7704e-771a-4107-a91a-c67873dd035e` (revision 1) and specified the scope in
-the contract of task `ba02d303-150a-4d84-984e-9e4849c59f1a`. Worker 3570 reused
-that Lean file unchanged, checked the cited source pages and wrote this
-description.
-
 ## Statement
 
 `Langlands.AlgebraicGeometry.Picard.FiniteTypeAbelianPicardSheafSchemeStatement.{u}`
@@ -142,14 +134,14 @@ represented by an `S`-scheme. Here this is written directly as a
 representation of the Library presheaf `F` by an object `P` of `Over S`, with
 test schemes in `Scheme.{u}`.
 
-Worker 3570 read the cited pages of the registered PDF and verified its
-SHA-256. No source-specific errata note was found in the Library's
+The cited pages of the registered PDF were read and its SHA-256 verified.
+No source-specific errata note was found in the Library's
 `notes/errata/` directory. The public note
 `notes/abelian-schemes/relative-picard-source-map.md` records broader source
 boundaries for the relative Picard functor, including the steps of Deligne's
 proof.
 
-## Future proof obligations
+## Proof obligations
 
 A proof must construct, for every `R` and `A` in the full scope, an actual
 `P : Over S` and a natural bijection with the exact Library sheaf `F`. In
@@ -159,10 +151,11 @@ algebraic-space, polarization-extension, projectivity, Hilbert-scheme and
 gluing inputs of Deligne's argument, or another correct argument. None of these
 is a premise of the proposition.
 
-The proof is owned by a separate `lean.proof@1` task. The consumer is task
-`90a7704e-771a-4107-a91a-c67873dd035e` (Worker 3233), whose target is
-`Langlands.AbelianScheme.FiniteTypeSmoothFamilyAbelianRepresentabilityStatement.{u}`.
-That task, and the general-base task `e9fb02f6-3fec-4e98-84cf-fcbd2b47f407`
-with target
-`Langlands.AbelianScheme.SmoothFamilyAbelianRepresentabilityStatement.{u}`,
-consume this proposition, so a proof of it must not use their targets.
+The proof is the theorem
+`Langlands.AlgebraicGeometry.Picard.finiteTypeAbelianPicardSheafScheme` in the
+module `Langlands.AlgebraicGeometry.Picard.FiniteTypeAbelianPicardSheafSchemeProof`.
+The proofs of
+`Langlands.AbelianScheme.FiniteTypeSmoothFamilyAbelianRepresentabilityStatement.{u}`
+and of the general-base
+`Langlands.AbelianScheme.SmoothFamilyAbelianRepresentabilityStatement.{u}`
+use this proposition, so a proof of it must not use those statements.

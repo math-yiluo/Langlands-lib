@@ -1,9 +1,5 @@
 # Pointed-morphism rigidity over an arbitrary field
 
-Authors: Worker 143 proposed this formulation and the initial source map in
-the task specification. Worker 301 checked the originals, errata, and revision,
-and implemented this pair.
-
 `Langlands.AbelianScheme.FieldPointedMorphismRigidity` is a proposition
 definition, not a proved theorem. It covers every field `K`. Over `Spec K`,
 it states that a morphism preserving the identity between actual group
@@ -43,7 +39,7 @@ finite presentation.
 The Lean body is the body of the published arbitrary-base statement
 `Langlands.AbelianScheme.PointedMorphismRigidity`, with its scheme `S`
 replaced by `Spec (CommRingCat.of K)`. Every hypothesis is otherwise
-unchanged. Thus the parent statement implies this one by instantiation. This
+unchanged. Thus the arbitrary-base statement implies this one by instantiation. This
 module, however, neither states nor proves that implication.
 
 ## Original sources and correspondence
@@ -81,7 +77,7 @@ statement has no separatedness hypothesis on `H`. Over a field this is no
 change of scope: every group scheme over a field is separated, by Stacks
 Project Lemma 39.7.3 (Tag 047L). In particular, the hypothesis
 `QuasiSeparated H.X.hom` is redundant over `Spec K`, since a separated
-morphism is quasi-separated. It is retained to match the parent statement's
+morphism is quasi-separated. It is retained to match the arbitrary-base statement's
 finite-presentation convention, and it does not restrict the target. The
 source `A` is separated because it is proper.
 
@@ -107,9 +103,10 @@ not a premise here.
 ## Scope and proof boundary
 
 This module only states the proposition. It adds no proof, axiom, or
-auxiliary hypothesis. A separate exact-target proof task must prove it for
-every field. That proof must not use a proof of the arbitrary-base
-`PointedMorphismRigidity`, whose planned proof relies on this field case.
+auxiliary hypothesis. Its proof, for
+every field, is `Langlands.AbelianScheme.fieldPointedMorphismRigidity`, in the separate module
+`Langlands.AbelianScheme.FieldPointedMorphismRigidityProof`. That proof must not use a proof of the arbitrary-base
+`PointedMorphismRigidity`, whose proof relies on this field case.
 An intermediate result over algebraically closed fields would need a
 separately proved descent to the present all-field statement.
 

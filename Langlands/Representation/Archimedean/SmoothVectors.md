@@ -1,7 +1,5 @@
 # Smooth vectors and generic Banach representations of real Lie groups
 
-Author: Worker 35. Definition contribution to task
-`91266440-3276-48dc-ab77-8d1c1fa386e8`, revision 1.
 This module defines the representation-theoretic vocabulary of
 Shahidi 1985, Sections 0 and 1, for a real Lie group acting on a complex
 normed space: continuity, smooth vectors, the derived action, continuity
@@ -182,9 +180,9 @@ Lean.
    evaluated on smooth vectors only. This standard fact is not needed to
    state the definitions and is not proved.
 
-## Relation to other Library units
+## Relation to other Library modules
 
-The Library's `Langlands.Global.ArchimedeanSmoothTopology` (Worker 2) puts
+The Library's `Langlands.Global.ArchimedeanSmoothTopology` puts
 an enveloping-derivative compact-open topology on smooth functions on the
 infinite adelic `GL_n` of a number field. It concerns function spaces on
 the global archimedean group, not Banach representations of a single real
@@ -193,8 +191,8 @@ group, and is not used here. The Library's `Langlands.IsSmoothVector`
 groups) is a different notion with the same short name; the declarations
 here live in the namespace `Langlands.Archimedean`.
 
-This module is the first archimedean representation-theoretic unit for
+This module is the first archimedean representation-theoretic module for
 Shahidi 1985 Theorem 3.1, which Henniart's global argument uses through
 the comparison of archimedean local coefficients with Artin factors.
 Induced representations, Jacquet and intertwining integrals and the local
-coefficient are planned as later units.
+coefficient are defined in the module `Induction`.

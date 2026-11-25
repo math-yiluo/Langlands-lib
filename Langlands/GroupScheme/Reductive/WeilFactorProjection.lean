@@ -50,6 +50,7 @@ def factorProjection {T : CommAlgCat.{u} (CommRingCat.of A)} (e : B ⊗[A] T)
     refine GrpCat.ext ?_
     intro (x : (AffineWeil.groupScheme A B G).affinePoints
       (CommAlgCat.of (CommRingCat.of A) X.right))
+    set_option maxRecDepth 1024 in
     change (AffineWeil.pointsEquiv A B G Y.right).symm
         (IdempotentPoints.proj G (baseIdem Y e) (AffineWeil.pointsEquiv A B G Y.right
           ((AffineWeil.groupScheme A B G).affinePointMap (CommAlgCat.ofHom a.right.hom) x))) =

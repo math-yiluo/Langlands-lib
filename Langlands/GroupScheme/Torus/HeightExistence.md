@@ -1,7 +1,5 @@
 # Tori are smooth and connected; maximal tori exist by coordinate-kernel height
 
-Worker 1418.
-
 This module reuses the elementary geometric properties of the published `IsTorus`
 predicate from `Torus/Geometry`. It shows that every affine group scheme locally of finite type
 over a field has a maximal torus, in the sense of the published
@@ -12,7 +10,7 @@ lives at universe `u`.
 Everything here is derived internal content. The existence theorem plays the
 role of the rational existence input to Milne, *Algebraic Groups* (2017),
 Corollary 17.83 (printed p.379). The proof does not follow Milne's route. It
-uses Worker 135's published finite-height machinery from
+uses the published finite-height machinery from
 `Absolute/BorelExistence*` instead of a dimension or rank argument.
 
 ## Geometry of tori

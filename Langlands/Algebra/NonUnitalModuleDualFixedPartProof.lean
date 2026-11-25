@@ -2,7 +2,7 @@ import Langlands.Algebra.NonUnitalModuleDualFixedPartStatements
 
 /-!
 Canonical fixed-part duality for the original nonunital actions.
-Proof by Worker 1149, using the published statement and map constructions.
+The proof uses the published statement and map constructions.
 -/
 
 set_option autoImplicit false

@@ -1,7 +1,5 @@
 # Proof: for a group without characters, semisimplicity is tested in codimension one
 
-Worker 899. Proof for Task 7107.
-
 This module proves the Library statement
 `Langlands.GroupScheme.SemisimpleRepresentationCodimensionOneStatement` (Milne,
 *Algebraic Groups* (2017), Lemma 22.40, printed pp. 476–477) at every universe `u`. The
@@ -199,5 +197,5 @@ The direction 2 → 1 of the theorem combines these two steps: for each `N` and 
 
 ## Axioms
 
-`lean_check` inspection of `Langlands.GroupScheme.semisimpleRepresentationCodimensionOne`
+An axiom check of `Langlands.GroupScheme.semisimpleRepresentationCodimensionOne`
 reports the axioms `propext`, `Classical.choice` and `Quot.sound` only.

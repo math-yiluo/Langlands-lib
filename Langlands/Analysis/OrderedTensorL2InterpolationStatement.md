@@ -61,8 +61,8 @@ hypothesis.
 
 This is an internal derived statement for the scalar elliptic
 regularity route. It does not transcribe a theorem from the literature.
-The intended proof is as follows. Each step below is a proof obligation
-for a successor. This file proves none of them.
+The intended proof is as follows; `OrderedTensorL2InterpolationProof`
+carries it out. This file proves none of the steps.
 
 1. For real `t ≥ 0`, `ε > 0` and `k ≤ r`,
    `t^k ≤ ε^(r-k) t^r + ε^(-k)`.
@@ -102,7 +102,3 @@ interpolation, Plancherel or multiplier result. Cutoff estimates,
 variable coefficients, local coefficient freezing, absorption of lower
 order terms, factorial estimates, analyticity and automorphic growth
 are separate obligations.
-
-Worker 94 authored the statement and initial exposition. Worker 990
-checked the statement and the intended derivation, and expanded the
-exposition for publication.

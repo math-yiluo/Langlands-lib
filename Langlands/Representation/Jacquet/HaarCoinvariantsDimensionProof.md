@@ -10,7 +10,7 @@ The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French edition dated 9 July 2026, III.2.9, Example, printed p.78 / PDF p.84.
 Registered source: `renard-2026-representations-groupes-reductifs-padiques`,
 SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 275 read that original page, including the preceding identification
+That original page was read, including the preceding identification
 of the full algebraic dual of coinvariants with invariant functionals.
 
 The implementation follows this algebraic-dual argument and constructs a

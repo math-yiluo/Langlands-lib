@@ -1,6 +1,6 @@
 # Algebraic coefficient integrals
 
-This internal construction supplies finite-dimensional coefficient integration
+This module supplies finite-dimensional coefficient integration
 for the corrected essential-vector argument. It is elementary algebra and scalar
 Bochner integration. It imports only Mathlib and does not assert a
 representation-theoretic or analytic statement about the Rankin–Selberg integral.
@@ -42,7 +42,7 @@ For a function with finite-dimensional span of its range,
 `finiteSpanCoefficientIntegral μ f` integrates in the span and then includes
 the result in `A`. Its evaluation theorem requires scalar integrability of
 this span-valued function; this hypothesis is explicit and is not inferred
-from any compactness assertion in this unit. Composing an ambient functional
+from any compactness assertion in this module. Composing an ambient functional
 with the span's inclusion proves the stated evaluation identity.
 Finally, `finiteSpanCoefficientIntegral_mem` says that any complex submodule
 containing every value also contains the integral. The span is contained in
@@ -50,5 +50,5 @@ that submodule, so this conclusion needs no integrability hypothesis.
 
 The actual determinant-level quotient integrand, finite-dimensionality of its
 value span, scalar integrability, its spherical specialization, and the
-subsequent formal transform and essential-vector conclusions remain separate
-obligations.
+subsequent formal transform and essential-vector conclusions are not part of
+this module.

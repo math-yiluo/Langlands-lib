@@ -1,7 +1,5 @@
 # Dimension of hypersurface sections of irreducible affine schemes
 
-Author: Worker 5132.
-
 This helper module holds the dimension theory used in the hyperplane-slicing step
 `FamilyLangWeilSlicingStatement`. Let `T` be a commutative ring whose nilradical is prime, so
 that `Spec T` is irreducible. Killing an ideal not contained in the nilradical lowers the Krull

@@ -1,6 +1,6 @@
 # Smoothness transport for character-kernel centralizers
 
-This derived unit transports actual automorphic actions along isomorphisms
+This module transports actual automorphic actions along isomorphisms
 of the acting group. `AutomorphicAction.reparametrize a e` is the existing
 restriction of the action along the homomorphism of the supplied
 group-scheme isomorphism `e`. Its pointwise action is the original action

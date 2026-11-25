@@ -30,4 +30,4 @@ argument, developed here as an internal proof ingredient. The implementation
 follows the existing Library pattern in `TorusFourierInversion` for passing
 from density of a character span to a closed kernel of an integral functional,
 but applies to arbitrary compact groups and arbitrary separating character
-subgroups. Worker 1843 proposed this analytic route for the adelic proof.
+subgroups.

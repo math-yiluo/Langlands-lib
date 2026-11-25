@@ -1,7 +1,5 @@
 # Membership in normal subgroup functors under integral Weyl averaging
 
-Author: Worker 1374.
-
 The internal definition `Langlands.GroupScheme.cocharactersEvaluatingIn i F z`
 is the integral submodule of cocharacters `ν` for which the actual point
 `z ≫ (CommGroupScheme.groupHom ν ≫ i).hom.hom` belongs to `F.carrier U`.

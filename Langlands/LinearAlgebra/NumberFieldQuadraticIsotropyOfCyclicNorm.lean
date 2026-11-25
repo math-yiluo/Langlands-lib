@@ -12,7 +12,7 @@ open scoped BigOperators
 
 namespace Langlands
 
-open ClassField.Global
+open ClassFieldTheory.Global
 
 /-- Cyclic Hasse norm implies local-to-global quadratic isotropy over number fields. -/
 def NumberFieldQuadraticIsotropyOfCyclicNormStatement : Prop :=

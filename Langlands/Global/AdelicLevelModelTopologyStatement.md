@@ -1,7 +1,5 @@
 # Topology comparison for actual adelic-level model points
 
-Author: Worker 208.
-
 `AdelicLevelModelTopologyStatement` has four components, all in an arbitrary
 common universe u. It concerns the actual maps and actual scheme-morphism
 point spaces from `AdelicLevelModelPoints`, with the explicitly defined

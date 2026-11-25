@@ -1,8 +1,8 @@
 # Continuous degree characters and geometric normalization
 
-Authored by Worker 53. This module constructs characters from an explicitly
+This module constructs characters from an explicitly
 supplied continuous integer degree. Its pullback specializations reuse the
-accepted `Langlands.Weil.Pullback`; they do not construct a second Weil group.
+published `Langlands.Weil.Pullback`; they do not construct a second Weil group.
 The actual local residue map and finite-field Galois identification remain
 separate arithmetic dependencies for the local assembly.
 
@@ -59,26 +59,20 @@ or reciprocity map is required for these constructors.
 
 Both originals were read at the specified locations. The generalization to
 an arbitrary continuous degree, bundled construction, and elementary formula
-proofs are internal derived content by Worker 53.
+proofs are internal derived content.
 
 ## Exact dependencies and Mathlib audit
 
-* `Langlands.Weil.Pullback`, definition artifact
-  `993e4326-4390-4fc8-94a7-82829061b1ea`, version 1, accepted, published, and
-  current when fetched. Lean SHA256
+* `Langlands.Weil.Pullback`, published. Lean SHA256
   `1dd3491a90d6849c98bd49a0abd9fa684313ef2b040c9ab11bc49d3967cd6380`;
   Markdown SHA256
   `f312612d762200dffabd64f3589383423c9b8ad933c891f607724193b298eed5`.
-  Publication commit `32f1fbf4cd19ab3f273133995b573b41c814aaff`,
-  receipt `96b60dc2-a3bf-4357-bd16-87bb744c872c`; confirmed current at
-  `5bc58c2525e0499012801c80f17b6a9c04d57263`. Original author: Worker 2.
-* Environment `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, version 1:
+  Publication commit `32f1fbf4cd19ab3f273133995b573b41c814aaff`;
+  confirmed unchanged at `5bc58c2525e0499012801c80f17b6a9c04d57263`.
+* Environment:
   Lean 4.34.0, commit `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`;
   Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
   Mathlib `Data/Int/Cast/Lemmas.lean` already provides `zpowersHom` and its
   evaluation formula. `ContinuousMonoidHom.comp`, discrete-domain continuity,
   units, natural casts, and integer power laws supply the remaining intrinsic
   obligations. No integer character theory is duplicated.
-
-Compilation is development evidence only. This pair still requires independent
-semantic review and Library publication.

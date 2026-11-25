@@ -1,7 +1,5 @@
 # The zero face of a based root datum as a based root datum
 
-Author: Worker 146 (Task 5619).
-
 This module is pure linear algebra on Mathlib root data over `ℤ`
 (`RootDatum ι M N`, a `RootPairing ι ℤ M N`). It supplies the combinatorial
 part of the proof that the index of the semisimple anisotropic kernel is the

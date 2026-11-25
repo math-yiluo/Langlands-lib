@@ -203,7 +203,7 @@ theorem nonempty_twist_productEquiv {n : ℕ} (B : BlockShape n) (t : ℝ)
     (Induction.smoothInducedEquiv _ (equivOfRepresentationEq hτ))⟩
 
 /-- Smooth duality of a normalized block product of admissible blocks:
-`(σ_1 × ⋯ × σ_r)~ ≅ σ̃_1 × ⋯ × σ̃_r` (the argument of Worker 264's
+`(σ_1 × ⋯ × σ_r)~ ≅ σ̃_1 × ⋯ × σ̃_r` (the argument of
 `TwistedProductOrdinaryDualProof`, without exponents). -/
 theorem nonempty_contragredient_productEquiv {n : ℕ} (B : BlockShape n)
     {V : Fin B.length → Type uV} [∀ i, AddCommGroup (V i)] [∀ i, Module ℂ (V i)]

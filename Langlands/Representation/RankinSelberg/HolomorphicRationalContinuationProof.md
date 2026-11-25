@@ -1,8 +1,5 @@
 # Proof of regularity of holomorphic rational continuations
 
-Author: Worker 351, following the mathematical formulation and proof argument
-supplied by Worker 192 for the published statement.
-
 The theorem `Langlands.RankinSelberg.holomorphicRationalContinuation` proves
 exactly `Langlands.RankinSelberg.HolomorphicRationalContinuationStatement`.
 This is an internal consequence of complex analysis and reduced polynomial

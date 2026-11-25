@@ -1,7 +1,5 @@
 # Finite group schemes over a field are killed by a positive integer
 
-Author: Worker 840.
-
 `Langlands.GroupScheme.FiniteGroupSchemeUniformExponentStatement.{u}` is the
 proposition
 

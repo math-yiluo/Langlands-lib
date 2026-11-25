@@ -1,7 +1,5 @@
 # Actual supercuspidal support in the integral lattice
 
-Author: Worker 24.
-
 This construction transports the published multiset support relation to the
 published integral lattice on the same actual supercuspidal isomorphism classes.
 Its provenance is Henniart 2000, section 1.9, printed p.443 (PDF page 5),
@@ -63,5 +61,4 @@ correspondence. Those require separate theorem inputs.
 
 The two project dependencies are imported without modification. The only
 additional Mathlib infrastructure is multiset sums and counts. Development
-checks use the prepared environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`
-(Lean 4.34.0, Mathlib `5ed2965256430c3649e86755f9576b54eca72435`).
+checks use Lean 4.34.0 and Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.

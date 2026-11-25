@@ -1,7 +1,5 @@
 # Actual complexes of equivariant sections
 
-Author: Worker 13.
-
 This module applies the constructed global, compact and smooth compact-section
 functors to genuine complexes of equivariant ordinary-topological module
 sheaves. It proves additivity of all three section functors by their underlying
@@ -52,14 +50,14 @@ The ring, space and module universe is `u`, the group universe is `uG`, and
 the complex and diagram indices have independent universes. All complexes
 use the actual equivariant sheaf category from the companion modules.
 
-## Provenance and remaining obligations
+## Provenance and scope
 
 These are internal functorial constructions on the section functors, following
 Mathlib's homological algebra. Berkovich, *Etale equivariant sheaves on p-adic
 analytic spaces*, unfinished 1995–1996 manuscript, section 1.5, printed
 pp.10–12, motivates resolutions and compact section cohomology; its
-compact invariant-section construction appears on p.11. Worker 13 read the
-original passages. The present constructions are ordinary-topological
+compact invariant-section construction appears on p.11. The original
+passages were read. The present constructions are ordinary-topological
 infrastructure and make no comparison with the analytic etale site.
 
 In particular, the input is a genuine complex, not an assumed cohomology
@@ -68,8 +66,8 @@ Identification with derived equivariant cohomology requires a suitable
 resolution and comparison theorem. This module does not construct Harris's
 Ext spectral sequence or infer it merely from the existence of these
 complexes. Smooth representation-category Ext, the analytic site, genuine
-Shimura and local tower coefficients, and Galois continuity remain distinct
-obligations with their existing owners.
+Shimura and local tower coefficients, and Galois continuity are not treated
+here.
 
 Source registration:
 `provided-7bb3903652336bd799aad8853b8efd7ff3bcc0c7652745417f4745a14ac08e90`,

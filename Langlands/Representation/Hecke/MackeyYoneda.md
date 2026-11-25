@@ -1,8 +1,6 @@
 # Abstract Mackey isomorphisms from currying and adjunctions
 
-Worker 231, Task 5449.
-
-This is an internal supporting unit for Renard III.2.11 (*Représentations des
+This is an internal supporting module for Renard III.2.11 (*Représentations des
 groupes réductifs p-adiques*, French version dated 9 July 2026, printed pp.82–83 /
 PDF pp.88–89; registered source
 `renard-2026-representations-groupes-reductifs-padiques`). It formalizes the

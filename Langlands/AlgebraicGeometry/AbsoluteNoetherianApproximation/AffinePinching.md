@@ -6,7 +6,8 @@ Module `Langlands.AlgebraicGeometry.AbsoluteNoetherianApproximation.AffinePinchi
 
 This module formalizes Stacks, Limits, Lemma 32.5.3 (Tag 07RN) for an affine scheme `S`, in the
 single-level, cofinal form used by the absolute Noetherian approximation of algebraic spaces
-(FL proof task 8d02331e, pieces RA and PO). Sources: the registered folder
+(Stacks, Proposition 70.8.1, Tag 07SU; the module `EtaleEquivalenceRelationOpenExtensionFiniteType`
+applies it). Sources: the registered folder
 `stacks-noetherian-approximation-2026-11-01` (page `07RN.html`) and the registered folder
 `stacks-noetherian-approximation-rings-2026-11-02` (pages `01Z7.html`, `01Z8.html`, `01Z9.html`).
 
@@ -31,8 +32,8 @@ smaller (cofiltered category) or larger (directed preorder) index `i` and one fi
 limit of a system of such models, nor the transition maps between models; that is, it is the
 cofinal datum extracted from the proof, not the full statement of Tag 07RN. The extra condition
 that finitely many prescribed global functions on `S` come from `A` is internal: it corresponds to
-the "finitely many additional elements" of the proof of Tag 01Z7 and was requested by the PO piece
-of the FL task to obtain cofinality.
+the "finitely many additional elements" of the proof of Tag 01Z7 and is included to obtain
+cofinality.
 
 ## Definitions
 

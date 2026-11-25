@@ -63,8 +63,8 @@ variable
 from equality loci for maps into the chosen dual. -/
 abbrev integralRosatiClosedLocus : Over S :=
   DualMapEquality.finiteLocus B hB
-    (fun k => (groupHom (a (basisO k) ≫ lam)).hom.hom)
-    (fun k => (groupHom (lam ≫ dualInt (a (tauO (basisO k))))).hom.hom)
+    (fun k => (groupHom ((a (basisO k)).asHom ≫ lam)).hom.hom)
+    (fun k => (groupHom (lam ≫ dualInt (a (tauO (basisO k))).asHom)).hom.hom)
 
 /-- The actual Rosati locus is closed without a supplied relative Hom representative. -/
 instance integralRosatiClosedLocus_isClosedImmersion :
@@ -72,8 +72,8 @@ instance integralRosatiClosedLocus_isClosedImmersion :
       associativity comparison symmetry stability B hB MB evaluationB geometryB a lam).hom :=
   inferInstanceAs (IsClosedImmersion
     (DualMapEquality.finiteLocus B hB
-      (fun k => (groupHom (a (basisO k) ≫ lam)).hom.hom)
-      (fun k => (groupHom (lam ≫ dualInt (a (tauO (basisO k))))).hom.hom)).hom)
+      (fun k => (groupHom ((a (basisO k)).asHom ≫ lam)).hom.hom)
+      (fun k => (groupHom (lam ≫ dualInt (a (tauO (basisO k))).asHom)).hom.hom)).hom)
 
 instance integralRosatiClosedLocus_isLocallyNoetherian [IsLocallyNoetherian S] :
     IsLocallyNoetherian (integralRosatiClosedLocus D C preservation composition unitCoherence
@@ -87,8 +87,8 @@ base-changed homomorphisms in the finite Rosati equations. -/
 theorem integralRosatiClosedLocus_nonempty_iff_pullback (T : Over S) :
     Nonempty (T ⟶ integralRosatiClosedLocus D C preservation composition unitCoherence
       associativity comparison symmetry stability B hB MB evaluationB geometryB a lam) ↔
-      ∀ k, (baseChange T.hom).map (a (basisO k) ≫ lam) =
-        (baseChange T.hom).map (lam ≫ dualInt (a (tauO (basisO k)))) := by
+      ∀ k, (baseChange T.hom).map ((a (basisO k)).asHom ≫ lam) =
+        (baseChange T.hom).map (lam ≫ dualInt (a (tauO (basisO k))).asHom) := by
   rw [DualMapEquality.finiteLocus_nonempty_iff]
   apply forall_congr'
   intro k
@@ -125,16 +125,16 @@ local notation "dualIntT" => dualAbelianSchemeMapFromEvaluation hT geometryT pre
   hT geometryT MT evaluationT
 
 private theorem integralRosatiClosedPullbackEquation_iff (f g : CategoryTheory.End B) :
-    (baseChange T.hom).map (f ≫ lam) =
-        (baseChange T.hom).map (lam ≫ dualInt g) ↔
-      (baseChange T.hom).map f ≫ pullLam lam =
-        pullLam lam ≫ dualIntT ((baseChange T.hom).map g) := by
-  have leftEq : (baseChange T.hom).map (f ≫ lam) ≫ (beta).hom =
-      (baseChange T.hom).map f ≫ pullLam lam := by
+    (baseChange T.hom).map (f.asHom ≫ lam) =
+        (baseChange T.hom).map (lam ≫ dualInt g.asHom) ↔
+      (baseChange T.hom).map f.asHom ≫ pullLam lam =
+        pullLam lam ≫ dualIntT ((baseChange T.hom).map g.asHom) := by
+  have leftEq : (baseChange T.hom).map (f.asHom ≫ lam) ≫ (beta).hom =
+      (baseChange T.hom).map f.asHom ≫ pullLam lam := by
     rw [Functor.map_comp, Category.assoc]
     rfl
-  have rightEq : (baseChange T.hom).map (lam ≫ dualInt g) ≫ (beta).hom =
-      pullLam lam ≫ dualIntT ((baseChange T.hom).map g) := by
+  have rightEq : (baseChange T.hom).map (lam ≫ dualInt g.asHom) ≫ (beta).hom =
+      pullLam lam ≫ dualIntT ((baseChange T.hom).map g.asHom) := by
     rw [Functor.map_comp, Category.assoc,
       dualAbelianBaseChangeNaturality preservation stability composition unitCoherence
         associativity comparison symmetry universality compatibility S T.left T.hom B B

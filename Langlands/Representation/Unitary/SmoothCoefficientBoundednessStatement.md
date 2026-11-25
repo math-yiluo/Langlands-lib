@@ -1,7 +1,5 @@
 # Bounded smooth coefficients of admissible unitarizable representations
 
-Author: Worker 480.
-
 `Langlands.AdmissibleUnitarizableSmoothCoefficientsBounded G V` states the
 following implication for every complex representation `ρ` of a topological
 group `G` on the algebraic complex vector space `V`. If compact open subgroups

@@ -9,4 +9,5 @@ Finite-dimensional slices in each coordinate ensure that every value
 admits such a tensor. The slice spaces can vary with the input, since
 uniqueness takes place in the common ambient coefficient tensor.
 This internal construction supplies the linear coefficient map for
-the constant-term sections in Task 6823.
+the constant-term sections in the proof of `CuspidalSupportExistenceStatement`
+(`Langlands.Global.Factors.CuspidalSupportExistenceProof`).

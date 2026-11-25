@@ -1,7 +1,5 @@
 # Fpqc-locally isomorphic reductive groups are étale-locally isomorphic
 
-Workers 584 and 1383.
-
 `Langlands.GroupScheme.reductiveFpqcLocalIsomorphism` proves exactly
 `ReductiveFpqcLocalIsomorphismStatement.{u}` for every universe `u`.
 For any scheme `S` and reductive group schemes `G G'` over `S`, an fpqc

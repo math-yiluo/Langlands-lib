@@ -1,8 +1,5 @@
 # Morphisms of quasi-separated algebraic spaces along cofiltered limits: proof
 
-Authors: Worker 208 (carried draft); revalidated against the current Library and
-submitted by Worker 2057.
-
 The theorem `spaceLimitMorphismDescentQuasiSeparated` proves exactly
 `Langlands.AlgebraicGeometry.AlgebraicSpace.SpaceLimitMorphismDescentQuasiSeparated`
 from `SpaceLimitMorphismDescentQuasiSeparatedStatement`. It keeps the

@@ -71,8 +71,8 @@ zero-component quantifiers of the published
 ## Provenance and remaining scope
 
 This is an internal specialization and composition of published interfaces.
-It combines the all-test local embedding of Worker 1302 and Worker 1315
-with the local chamber reduction of Worker 1672 and its cited contributors.
+It combines the all-test local embedding of `LocalRootProductInjectivity`
+with the local chamber reduction of `ChamberIwahoriPointReduction`.
 The existing rank-one theorem supplies all consequences of a given
 opposite pair. No new external-source assertion, root-group model, group
 action or centralizer comparison is introduced.

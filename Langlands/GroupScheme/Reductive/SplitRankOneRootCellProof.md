@@ -1,14 +1,12 @@
 # Proof: root groups and the open cell in semisimple rank one
 
-Author: Worker 239.
-
 Module `Langlands.GroupScheme.Reductive.SplitRankOneRootCellProof`. It proves
 
 `splitRankOneRootCell : SplitRankOneRootCellStatement.{u}`
 
 with no hypotheses. It assembles the cell data of `RankOneCellData`, the Weyl-point
 argument of `RankOneRootCellWeyl` and the descent to algebraically closed fields of
-`SplitRankOneRootCellUniversal` (Worker 1388). The published inputs are the Library
+`SplitRankOneRootCellUniversal`. The published inputs are the Library
 theorems `dynamicCentralizerReductive`, `rankOnePositiveRootUniqueness` and
 `splitRootLieLine`, which discharge the hypotheses `hDCR`, `hPRU` and `hLL` of
 `rankOne_exists_rootCell`.

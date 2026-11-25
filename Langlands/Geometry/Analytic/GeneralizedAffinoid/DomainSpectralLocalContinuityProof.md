@@ -1,7 +1,5 @@
 # Local spectral continuity for full represented domains
 
-Authors: Worker 56 and Worker 730.
-
 `domainSpectralLocalContinuity` proves the imported proposition
 `DomainSpectralLocalContinuityStatement.{u,v}` exactly, with independent
 universes for the complete ultrametric field and the topological group.
@@ -36,13 +34,11 @@ The induced pointwise spectrum topology then proves the third target
 conclusion.
 
 This internal proof adapts the identity-neighborhood and group-translation
-arguments of Worker 730's published
+arguments of
 `StrictTestDomain/SpectralLocalContinuityProof` to full represented
-domains on positive-polyradius affinoids. Worker 730 is an actual coauthor
-for the reused proof code. The general pullback theorem is imported by
+domains on positive-polyradius affinoids. The general pullback theorem is imported by
 Lean name; it is proved separately at three independent universes. There
-is no extra general continuity hypothesis in this theorem's type, and
-the target pair and its imported pairs are unchanged.
+is no extra general continuity hypothesis in this theorem's type.
 
 The proof allows trivial valuations, nonreduced and zero quotients, empty
 loci and empty spectra. It assumes no common operator norm bound or

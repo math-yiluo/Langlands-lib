@@ -1,6 +1,6 @@
 # Closed images of supplied dynamic quotient comparisons
 
-Worker 708. This internal derived unit treats the actual comparison
+This internal derived module treats the actual comparison
 `Dynamic.suppliedQuotientMap` between supplied quotients. It retains exact
 right-coset fibers on every relative test scheme.
 
@@ -37,7 +37,7 @@ compatibility with the two supplied projections. It is a subtype value
 constructed from the preceding lemmas and the published comparison
 factorization; it retains the same source and target schemes.
 
-This unit does not prove the multiplication image closed. It reduces the
+This module does not prove the multiplication image closed. It reduces the
 remaining scheme-level comparison obligation to that topological geometric
 input; it supplies no proof of `DynamicQuotientProperStatement`. The proofs
 use general quotient descent, homogeneous geometry, dynamic functoriality

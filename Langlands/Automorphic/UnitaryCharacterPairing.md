@@ -1,7 +1,5 @@
 # The pairing of functions with a common unitary character on a left quotient
 
-Author: Worker 112.
-
 This internal construction gives the usual inner product `∫ conj f * g` on
 continuous functions that are left invariant under one subgroup and transform
 under a second subgroup by a unitary character. The integral is taken over the

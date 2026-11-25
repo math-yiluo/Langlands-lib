@@ -1,7 +1,5 @@
 # Continuity of actual weighted compact averaging
 
-Author: Worker 94.
-
 This internal development proves continuity of the actual scalar compact
 average in the full derivative compact-open topology. It uses the
 previously constructed smooth average and its finite simultaneous

@@ -14,7 +14,7 @@ other families is a derived generalization. Proposition definitions only.
 
 noncomputable section
 
-namespace Langlands.ClassField.Global
+namespace Langlands.ClassFieldTheory.Global
 
 open Langlands.Global Langlands.Unramified
 
@@ -57,4 +57,4 @@ def AssociatedContragredientStatement : Prop :=
 
 end RelativeWeilGroup
 
-end Langlands.ClassField.Global
+end Langlands.ClassFieldTheory.Global

@@ -10,10 +10,8 @@ Proposition: the compact sections over `U` and over `Z`, the restriction map `p_
 predicate "is the extension by zero". The only theorems are the closure and linearity laws
 those definitions need. The module does not prove the Proposition.
 
-Worker 1222 wrote this unit under the whole-book task `f5d1f399-a1f8-4ab5-a981-90b92abd4857`.
 The Library has the scalar case of the Proposition, (II.1.2.1)–(II.1.2.2). For sheaves it has
-the compact sections `F_c(X)` (`CompactSupport.submodule`) and the II.2.5 Theorem. It has no
-restriction of a sheaf to a closed subset and no statement of the Proposition.
+the compact sections `F_c(X)` (`CompactSupport.submodule`) and the II.2.5 Theorem.
 
 ## Source and provenance
 
@@ -21,7 +19,7 @@ The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French edition dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1222 read II.2.5, printed p.42 / PDF p.48:
+II.2.5, printed p.42 / PDF p.48, was read:
 
 > Si `F` est un faisceau sur l'espace t.d. `X` et que `Y` est une partie localement fermée de
 > `X`, alors on définit un faisceau `F|_Y` sur `Y`, que l'on appelle restriction de `F` à `Y`. La
@@ -42,7 +40,7 @@ The next Remark begins: "La proposition ci-dessus affirme que toute section à s
 `s ∈ F_c(U)` est la restriction d'une section de `F_c(X)`." In the statement below this is
 clause 1: `s` is the restriction of `i_U(s)`. The Remark uses it to describe the stalk `F_x` as a
 quotient of `F_c(X)`. That description is the published `CompactSectionStalks.StalkQuotientComparison`
-(Task 5507) and is not restated here.
+(proved as `stalkQuotientComparison` in `CompactSectionStalksProof`) and is not restated here.
 
 ## Objects
 
@@ -131,9 +129,10 @@ dual sequence. Here `*` is the algebraic dual, as in the source's Definition of 
 6. `i_U` is an injective linear map of complex vector spaces. Every linear form on its source
    extends along it.
 
-## Remaining obligations
+## Proof
 
-The proof of `ClosedRestrictionExactStatement` is a separate obligation.
+`ClosedRestrictionExactStatement` is proved by `closedRestrictionExact` in
+`Langlands.Sheaf.Renard.ClosedRestrictionExactProof`.
 
 ## Imports
 

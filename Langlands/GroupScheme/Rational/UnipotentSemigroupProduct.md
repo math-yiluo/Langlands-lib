@@ -1,6 +1,6 @@
 # Unipotent semigroup products using the actual central quotient
 
-This internal unit strengthens the earlier conditional unipotent induction.
+This internal module strengthens the earlier conditional unipotent induction.
 `unipotentSemigroupOrderedProduct_of_centralVector` proves the unchanged
 `UnipotentSemigroupOrderedProductStatement.{u}` from four explicit premises:
 `SemigroupRealizationStatement`, `SemigroupSmoothQuotientStatement`,
@@ -49,9 +49,10 @@ another block. It retains occurring zero weights and `Fin 0`.
 
 The provenance is internal, using the already published coordinate comparison,
 closed-orbit proof, normal quotient, vector products and central extension
-assembly. Worker 362 identified that the central-vector premise already
-supplies the subgroup unipotence needed by the quotient construction;
-Worker 1313 implemented the resulting induction and data construction.
-This unit proves neither the remaining four structural premises nor the
+assembly. The central-vector premise already supplies the subgroup
+unipotence needed by the quotient construction; the induction and data
+construction here rest on that.
+This module proves neither the four structural premises nor the
 solvable-group reduction or scalar descent. The full
-`SemigroupOrderedProductStatement` remains open.
+`SemigroupOrderedProductStatement` is proved separately, as
+`semigroupOrderedProduct` in `SemigroupOrderedProductProof`.

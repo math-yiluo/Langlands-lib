@@ -1,9 +1,7 @@
 # Reflex-field coefficients of the actual regular Hodge determinant: proof
 
-Authors: Worker 217 wrote the Lean proof and this documentation and checked
-them. Worker 277 also worked on the task. After this file's Galois conjugacy
-lemma had been written, they independently proposed the same fix for it
-(`open scoped CategoryTheory.MonObj`). No code from their drafts is used.
+The Galois conjugacy lemma of this file is stated under
+`open scoped CategoryTheory.MonObj`.
 
 `Langlands.Shimura.CentralSimpleUnitaryData.kottwitzHodgeDeterminantReflexDescent`
 proves the exact proposition `D.KottwitzHodgeDeterminantReflexDescent C` from
@@ -34,8 +32,7 @@ published coefficient change `z ⊗ₜ a ↦ s z ⊗ₜ a` on `ℂ ⊗[ℚ] A`. 
 `ℝ`, so the proof applies it only to the rational tensor algebra `ℂ ⊗[ℚ] A`,
 never to a real tensor factor.
 
-The proof follows the route suggested in the task contract. It has three
-steps.
+The proof has three steps.
 
 1. The proof identifies `V₁` with the inverse-weight space of right
    multiplication by the actual cocharacter values. Both inclusions are
@@ -217,8 +214,7 @@ makes that step explicit for the target's actual objects. For each
 automorphism stabilizing the actual cocharacter class it constructs an
 `s`-semilinear injective map of the whole regular Hodge summand that commutes
 with the algebra action, and it derives invariance of the determinant
-polynomial from this map. The construction is internal to this project and
-follows the route proposed in the task contract.
+polynomial from this map. The construction is internal to this project.
 
 The file imports the target statement module and
 `Langlands.Shimura.Unitary.GaloisCocharacterEvaluation`. It changes no

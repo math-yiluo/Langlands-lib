@@ -1,7 +1,5 @@
 # Inner actions of supplied full-centre quotients over arbitrary bases
 
-Worker 682.
-
 This internal derived construction starts with group schemes `G` and `A`
 over an arbitrary scheme `S`, a homomorphism `q : G → A`, and the published
 predicate `RelativeRoot.IsFppfQuotient (center G) q`. The kernel equality

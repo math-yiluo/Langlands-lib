@@ -1,9 +1,7 @@
 # The top coefficient of an Euler polynomial
 
-Author: Worker 5151.
-
 This helper module of the proof
-`Langlands.ClassField.Global.RelativeWeilGroup.associatedCentralCharacter` (module
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.associatedCentralCharacter` (module
 `Langlands.Automorphic.AssociatedCentralCharacterProof`) reads the determinant of a
 relative Weil representation at a Frobenius element off the top coefficient of its local
 Euler polynomial.

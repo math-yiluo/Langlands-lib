@@ -1,7 +1,7 @@
 # Renard VI.8.4 from admissibility, compactness and uniform detection
 
-Worker 452, using Worker 1444's actual universal induced family in
-`ActualLeviUnramifiedInducedFamily`. This module is the final assembly for
+This module uses the actual universal induced family in
+`ActualLeviUnramifiedInducedFamily`. It is the final assembly for
 Renard, *Représentations des groupes réductifs p-adiques* (9 July 2026),
 VI.8.4 Proposition, printed pp. 192–193, PDF pp. 198–199. The registered
 source is `renard-2026-representations-groupes-reductifs-padiques`, SHA256
@@ -26,7 +26,7 @@ and unipotent radical `U`. The groups `G(k)` and `M(k)` carry their canonical
 topologies, and the scheme of `M` is affine and locally of finite type. It
 assumes that the quotient of `G(k)` by the points of `P` is compact, and it
 takes an admissible smooth complex representation `ρ` of `M(k)`. It then proves
-`IsGlobalCoefficientFamily` for Worker 1444's family
+`IsGlobalCoefficientFamily` for the family
 `ActualLevi.universalFamily p l r hp hl hr hmul ρ`, with these data:
 
 - the coefficient algebra is the algebra of regular functions on the
@@ -67,8 +67,8 @@ to the third proposition, the family `ActualLevi.universalFamily`, the
 equivalence `(ActualLevi.regularAlgebraEquiv p l hp hl).symm` and the global
 family property above.
 
-So the remaining obligations for the closed proposition are exactly these
-three propositions. The theorem does not assume them anywhere else, and it
+So, on this route, the closed proposition needs exactly these three
+propositions. The theorem does not assume them anywhere else, and it
 introduces no further hypotheses.
 
 The structure `Inputs.{u, v}` is a proposition with three fields,

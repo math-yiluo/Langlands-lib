@@ -148,6 +148,7 @@ theorem characterMap_finite_cokernel (f : splitTorus S I ⟶ splitTorus S J)
   have hfin : IsFinite (diagonalizableMap I J f).hom.hom.left := by
     rw [he]
     change IsFinite ((eI).hom.hom.hom.left ≫ f.hom.hom.left ≫ (eJ).inv.hom.hom.left)
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
     infer_instance
   rw [diagonalizableMap_hom_left, IsFinite.SpecMap_iff] at hfin
   exact Diagonalizable.finite_cokernel_of_incl_finite

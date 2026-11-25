@@ -1,6 +1,6 @@
 # Canonical point neighbourhoods from finite ordered products
 
-Worker 384, with the consumer interface proposed by Worker 1605.
+The interface of this module is the one used by `OpenRootGenerationReduction`.
 
 This internal topology helper supports the proof of KP Corollary 8.2.6. It is
 derived from the Library's actual finite scheme products, represented subgroup

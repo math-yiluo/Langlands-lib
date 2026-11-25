@@ -15,7 +15,7 @@ universe u uQ
 open NumberField MeasureTheory Filter Topology
 open Langlands.Global.HeckeFunctionalEquation Langlands.Global.CuspidalPairFunctionalEquation
 open Langlands.LocalFactor.Archimedean
-open Langlands.Global.CompletionPadic Langlands.ClassField.Global.RelativeWeilGroup
+open Langlands.Global.CompletionPadic Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 set_option autoImplicit false
 
 namespace Langlands.Global.RankinSelbergGlobal

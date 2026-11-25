@@ -1,7 +1,5 @@
 # Pure norms of isotropic rank-three division forms
 
-Worker 863, Task 7498.
-
 Let a central quaternion division algebra over a characteristic-zero field
 be extended to a field over which it remains a domain. Give the extension its
 finite-dimensional division-ring structure and use the extended standard

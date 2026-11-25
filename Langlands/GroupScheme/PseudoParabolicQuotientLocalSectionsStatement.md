@@ -1,7 +1,5 @@
 # Zariski local sections of pseudo-parabolic quotients
 
-Author: Worker 1373.
-
 `Langlands.GroupScheme.PseudoParabolicQuotientLocalSectionsStatement` is a
 Prop-valued definition stating the infinite-field local-sections conclusion
 of Conrad–Gabber–Prasad, *Pseudo-reductive groups*, second edition (2015),

@@ -1,6 +1,6 @@
 # Finite unitary multiplicity from compatible compact approximations
 
-Worker 116 states
+The module states
 `Langlands.Analysis.CompactApproximationMultiplicityStatement`.
 The group and complete complex inner-product space have independent
 universes. The actual homomorphism π into bounded complex-linear
@@ -59,8 +59,8 @@ on equivalent representations.
 
 No group topology, Haar measure, integrated operator, Dirac sequence or
 automorphic Hilbert space is constructed here. Their existence,
-strong approximation and the displayed compatibility remain genuine
-application obligations. The conclusion is a finite-multiplicity
+strong approximation and the displayed compatibility are inputs of an
+application, not part of this statement. The conclusion is a finite-multiplicity
 criterion with that premise, and does not establish an automorphic
 spectral theorem. This file defines a proposition; its Lean proof
-requires a separate child after publication of the exact target.
+is in `Langlands.Representation.Unitary.CompactApproximationMultiplicityProof`.

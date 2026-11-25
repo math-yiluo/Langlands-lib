@@ -59,7 +59,7 @@ theorem integralCharacter_ne_zero {a : characterLattice S} (ha : a ≠ 0) :
     A.integralCharacter a ≠ 0 := by
   intro h
   have h' := A.generic_integralCharacter a
-  rw [h, map_zero, map_zero] at h'
+  rw [h, map_zero, AddEquiv.map_zero] at h'
   exact ha h'.symm
 
 /-- The full root functor constructed over the integral torus has exactly

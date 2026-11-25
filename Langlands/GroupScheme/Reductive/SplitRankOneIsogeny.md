@@ -1,6 +1,6 @@
 # Realization of root-datum isogenies in semisimple rank at most one
 
-This derived unit realizes a root-datum isogeny between two connected reductive
+This derived module realizes a root-datum isogeny between two connected reductive
 groups over an arbitrary field `k : Type u`. Both specified maximal tori are split,
 and both groups satisfy the explicit rank condition that any two actual roots are
 linearly dependent over `ℤ`. The exponent of the root-datum isogeny is exactly
@@ -33,5 +33,8 @@ these properties.
 The provenance is derived from the published actual rank-one root-cell theorem,
 the powered-cell isogeny construction and the root-datum torus construction.
 No perfectness, separability or kernel-smoothness hypothesis is added. The
-universe is arbitrary. This unit establishes rank at most one; general-rank
-realization and the fixed-torus extension equivalence remain separate obligations.
+universe is arbitrary. This module establishes rank at most one; general-rank
+realization (`SplitIsogenyExistenceStatement`) and the fixed-torus extension
+equivalence (`SplitIsogenyExtensionStatement`) are separate statements, both
+proved in `Langlands.GroupScheme.Reductive.SplitIsogenyProof`
+(`splitIsogenyExistence` and `splitIsogenyTheorem`).

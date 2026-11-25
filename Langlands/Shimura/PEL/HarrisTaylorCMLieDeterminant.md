@@ -1,7 +1,5 @@
 # The normalized Harris–Taylor determinant through one CM structure map
 
-Author: Worker 57.
-
 This internal construction defines a same-CM-base rational Lie determinant condition using the explicitly conjugated scalar map from `HarrisHodgeTraceNormalization`. It preserves the earlier `HarrisCMLieDeterminant` condition and the unconjugated `harrisReflexToCM` with their original meanings. The new condition uses `harrisTaylorReflexToCM` throughout; no equivalence between these two arithmetic normalizations is asserted.
 
 Fix the displayed totally real number field `E`, totally complex quadratic extension `F/E`, actual central simple unitary datum `D` of degree `n`, and the compatible rational, `E` and `F` algebra structures and scalar towers on `A`. Fix an imaginary quadratic CM field `L`, `[Algebra L F]`, its embedding `τ₀ : L →+* ℂ`, and actual Harris signature charts `C` for exactly `harrisCMSection E (algebraMap L F) τ₀`. As in the reflex determinant construction, all these types and schemes have universe zero. The field, signature and scalar-tower hypotheses are retained from the imported constructions; no arbitrary trace or determinant polynomial is supplied.

@@ -69,6 +69,6 @@ def RationalSummandCenterVarietyStatement : Prop :=
                   ∀ s ∈ Stab, ∀ χ, φ (χ * s) = φ χ} ∧
               ∀ (z : Subalgebra.center ℂ (End I)) (ω : X)
                 (φ : I ⟶ rationalUnramifiedTwist G ω (rationalInertiaBaseLift G π)),
-                (z : End I) ≫ φ = Ψ z ω • φ
+                (z : End I).asHom ≫ φ = Ψ z ω • φ
 
 end Langlands.CuspidalSupport

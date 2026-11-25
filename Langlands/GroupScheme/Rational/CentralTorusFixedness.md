@@ -1,8 +1,6 @@
 # The Weyl action on actual central cocharacters
 
-Author: Worker 1319.
-
-This internal unit proves pointwise fixedness for the actual real image of a map `f : A → T` whose composite with `i : T → G` is central. It uses the published `IsCentral`, `normalizingAut`, `cocharacterMapReal`, and `relativeWeylRealAction`, over any field and universe. It does not assume that `A` or `T` is split, or that `G` is reductive. The underlying scheme map of `i` must be a monomorphism, as required for the published Weyl action.
+This internal module proves pointwise fixedness for the actual real image of a map `f : A → T` whose composite with `i : T → G` is central. It uses the published `IsCentral`, `normalizingAut`, `cocharacterMapReal`, and `relativeWeylRealAction`, over any field and universe. It does not assume that `A` or `T` is split, or that `G` is reductive. The underlying scheme map of `i` must be a monomorphism, as required for the published Weyl action.
 
 `relativeWeylFixedSubspace i` constructs the common fixed subspace inside the published `V T`, as the intersection of the kernels of `relativeWeylRealAction i w - id` for all elements of the actual quotient. Its membership criterion is equality with the original vector under every quotient element. This definition introduces no new action or quotient.
 

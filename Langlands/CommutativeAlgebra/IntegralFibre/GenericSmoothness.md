@@ -87,6 +87,6 @@ with geometric reducedness tested only against the algebraic closure; the second
 Mathlib's separably-generated criterion, which Mathlib attributes to the same tag. The third is a
 variant of Stacks Project, Lemma 10.137.16 (Tag 00TF), which assumes smoothness of the fibre at
 the prime only; its Lean proof adapts Mathlib's `Algebra.IsSmoothAt.of_formallySmooth_fiber`.
-The final statement is the generic smoothness step of Worker 281's route to Tag 05FT: Worker 281
-proposed the statement and the route through separability, and Worker 928 wrote the Lean proof.
+The final statement is the generic smoothness step of the project's route to Tag 05FT, which goes
+through separability.
 The module is internal to the project.

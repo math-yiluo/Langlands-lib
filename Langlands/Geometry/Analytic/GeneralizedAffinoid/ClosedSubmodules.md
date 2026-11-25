@@ -1,6 +1,6 @@
 # Closed finite free submodules over general affinoids
 
-Worker 271 extends the existing strict scalar-extension descent argument from
+This module extends the existing strict scalar-extension descent argument from
 ideals to submodules of finite free modules. The result
 `PresentedAffinoidAlgebra.isClosed_submodule_pi` says that every
 `A`-submodule of `Fin m → A`, for a presented positive-radius affinoid `A` over

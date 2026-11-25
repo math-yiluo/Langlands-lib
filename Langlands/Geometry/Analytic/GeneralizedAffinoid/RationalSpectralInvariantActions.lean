@@ -86,19 +86,20 @@ def spectralInvariantSectionAction (H : OpenSubgroup G)
   apply MonoidHom.ext
   intro g
   apply Aut.ext
+  apply Iso.ext
   rfl
 
 @[simp] theorem spectralInvariantSectionAction_baseMap (H : OpenSubgroup G)
     (d : SpectralInvariantChart ρ H) (g : H) (a : A) :
-    ((spectralInvariantSectionAction ρ H d).obj.ρ g).toAlgHom (d.obj.baseMap a) =
-      d.obj.baseMap ((ρ.toMonoidHom (g : G)).hom.toAlgHom a) :=
+    ((spectralInvariantSectionAction ρ H d).obj.ρ g).asHom.toAlgHom (d.obj.baseMap a) =
+      d.obj.baseMap ((ρ.toMonoidHom (g : G)).asIso.hom.toAlgHom a) :=
   ρ.invariantSectionAction_baseMap H ((spectralInvariantDomainFunctor ρ H).obj d) g a
 
 /-- Every original bounded rational restriction is automatically equivariant. -/
 theorem spectralInvariantSectionAction_restriction (H : OpenSubgroup G)
     {d e : SpectralInvariantChart ρ H} (f : d ⟶ e) (g : H) :
-    f.hom.restriction.comp ((spectralInvariantSectionAction ρ H e).obj.ρ g) =
-      ((spectralInvariantSectionAction ρ H d).obj.ρ g).comp f.hom.restriction :=
+    f.hom.restriction.comp ((spectralInvariantSectionAction ρ H e).obj.ρ g).asHom =
+      ((spectralInvariantSectionAction ρ H d).obj.ρ g).asHom.comp f.hom.restriction :=
   ρ.invariantSectionAction_restriction H ((spectralInvariantDomainFunctor ρ H).map f) g
 
 /-- The original bounded section presheaf takes values in continuous spectral
@@ -147,10 +148,10 @@ def spectralInvariantSpectrumFunctor (H : OpenSubgroup G) :
     (d : SpectralInvariantChart ρ H) (g : H)
     (x : BanachSpectrum d.obj.algebra) (b : d.obj.algebra) :
     BanachSpectrum.toMulRingSeminorm
-      (ConcreteCategory.hom (((spectralInvariantSpectrumFunctor ρ H).obj d).obj.ρ g) x) b =
+      (ConcreteCategory.hom (((spectralInvariantSpectrumFunctor ρ H).obj d).obj.ρ g).asHom x) b =
         x ((ρ.invariantSectionAction H
-          ((spectralInvariantDomainFunctor ρ H).obj d) g).inv.toAlgHom b) := by
-  change x (((spectralInvariantSectionAction ρ H d).actionAut g).inv.toAlgHom b) = _
+          ((spectralInvariantDomainFunctor ρ H).obj d) g).asIso.inv.toAlgHom b) := by
+  change x (((spectralInvariantSectionAction ρ H d).actionAut g).asIso.inv.toAlgHom b) = _
   rw [spectralInvariantSectionAction_actionAut]
   rfl
 
@@ -176,10 +177,10 @@ def spectralInvariantSpectrumDomainIsoApp (H : OpenSubgroup G)
         apply TopCat.ext
         intro x
         change BanachSpectrum.comap
-            ((spectralInvariantSectionAction ρ H d).actionAut g).inv.toBoundedRingHom x =
+            ((spectralInvariantSectionAction ρ H d).actionAut g).asIso.inv.toBoundedRingHom x =
           BanachSpectrum.comap
             (ρ.invariantSectionAction H
-              ((spectralInvariantDomainFunctor ρ H).obj d) g).inv.toBoundedRingHom x
+              ((spectralInvariantDomainFunctor ρ H).obj d) g).asIso.inv.toBoundedRingHom x
         rw [spectralInvariantSectionAction_actionAut]
         rfl))
 
@@ -212,7 +213,7 @@ def spectralInvariantLocusFunctor (H : OpenSubgroup G) :
 @[simp] theorem spectralInvariantLocusFunctor_obj_coe (H : OpenSubgroup G)
     (d : SpectralInvariantChart ρ H) (g : H) (x : d.obj.locus) :
     ((show d.obj.locus from
-      ConcreteCategory.hom (((spectralInvariantLocusFunctor ρ H).obj d).obj.ρ g) x) :
+      ConcreteCategory.hom (((spectralInvariantLocusFunctor ρ H).obj d).obj.ρ g).asHom x) :
         BanachSpectrum A) = ρ.toMonoidHom (g : G) • (x : BanachSpectrum A) := rfl
 
 @[simp] theorem spectralInvariantLocusFunctor_forget (H : OpenSubgroup G) :
@@ -231,7 +232,7 @@ def spectralInvariantSpectrumLocusIso (H : OpenSubgroup G) :
         apply Subtype.ext
         change d.obj.spectrumMap
           (BanachSpectrum.comap
-            ((spectralInvariantSectionAction ρ H d).actionAut g).inv.toBoundedRingHom x) =
+            ((spectralInvariantSectionAction ρ H d).actionAut g).asIso.inv.toBoundedRingHom x) =
           ρ.toMonoidHom (g : G) • d.obj.spectrumMap x
         rw [spectralInvariantSectionAction_actionAut]
         exact ρ.spectrumMap_smul d.obj.toDomain

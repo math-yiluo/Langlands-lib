@@ -1,7 +1,5 @@
 # Recovering the coefficients of an ordered product
 
-Author: Worker 1398.
-
 Over any commutative algebra `R` over a field `F`, matrices `xm j s = divExp (e j) s` and
 ordered products `opm l c`. `IsSUnip S M` (diagonal `1`, off-diagonal weight differences in
 `S`) is preserved by products when `S` is additively closed with positive `ℓ`; ordered products

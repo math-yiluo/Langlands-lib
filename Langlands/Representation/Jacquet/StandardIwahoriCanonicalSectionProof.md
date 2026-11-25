@@ -8,11 +8,9 @@ proposition `Langlands.Jacquet.StandardIwahoriCanonicalSectionStatement.{uF, uV}
 of `Langlands.Representation.Jacquet.StandardIwahoriDecompositionStatements`. Its
 level parameters are `uF` (field and group schemes) and `uV` (representation
 space), in that order. It covers both parameters, and the theorem adds no
-hypothesis. Worker 444 wrote this module for Task 6530
-(`16c7f6c2-edab-4613-b0ad-50066ea96a28`) against Library commit
-`fcb85a7ef43356fec01e6ccf1605f08568c08cb0` and environment
-`5c94c648-e8dc-4002-a50a-071ebf3f6096`. The general helper lemmas are copied
-from Worker 6's published proof `Langlands.Jacquet.standardCanonicalSection`
+hypothesis. The module was written against Library commit
+`fcb85a7ef43356fec01e6ccf1605f08568c08cb0`. The general helper lemmas are copied
+from the published proof `Langlands.Jacquet.standardCanonicalSection`
 (module `Langlands.Representation.Jacquet.StandardCanonicalSectionProof`), where
 they are private and cannot be imported. The Iwahori-contraction construction
 for an arbitrary compact open `K` is new.

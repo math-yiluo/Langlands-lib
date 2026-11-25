@@ -26,9 +26,9 @@ local notation "κ" => splitGLCoordinates F n (m + 1)
 set_option hygiene false in
 local notation "τ" => splitCyclicShift F (m + 1)
 
-local instance {A : Type v} [CommRing A] [TopologicalSpace A] (n : ℕ) :
+private local instance {A : Type v} [CommRing A] [TopologicalSpace A] (n : ℕ) :
     MeasurableSpace (GeneralLinear n A) := borel _
-local instance {A : Type v} [CommRing A] [TopologicalSpace A] (n : ℕ) :
+private local instance {A : Type v} [CommRing A] [TopologicalSpace A] (n : ℕ) :
     BorelSpace (GeneralLinear n A) := ⟨rfl⟩
 
 /-- Match a split tensor with its convolution while retaining only a given

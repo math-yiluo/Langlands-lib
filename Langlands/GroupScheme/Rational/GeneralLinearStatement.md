@@ -1,7 +1,5 @@
 # Statement: the rational structure of `GL_n`
 
-Author: Worker 1220.
-
 This module states, as one `Prop`-valued definition, the rational structure
 of the general linear group `GL_n` over a field with its diagonal torus: the
 diagonal torus is a maximal split torus, its relative roots are the

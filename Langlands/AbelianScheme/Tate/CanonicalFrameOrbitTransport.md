@@ -1,7 +1,5 @@
 # Canonical comparisons of geometric fixed Tate-frame orbits
 
-Author: Worker 142.
-
 This module constructs canonical equivalences between the full, and separately
 the prime-to-modulus, fixed Tate-frame orbit spaces at two geometric points.
 Each construction takes the published proposition `GeometricPathExists` as an

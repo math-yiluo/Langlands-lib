@@ -1,8 +1,8 @@
 # Renard II.3.10: convolution laws and concrete comparisons
 
-This unit states nine closed targets, and their conjunction `Statements`, in
+This module states nine closed targets, and their conjunction `Statements`, in
 `Langlands.HarmonicAnalysis.Distribution.RenardConvolution`. It supplies no
-proofs or new algebra instances. Every operation is the published one on the
+proofs or new algebra instances. Every operation is the existing one on the
 original algebraic distribution, compact-support submodule, scalar test or
 locally constant function carrier. All groups have their supplied Hausdorff,
 locally compact, totally disconnected group topology, without countability or
@@ -20,7 +20,7 @@ concrete bridge used in II.3.12 Remark 3 and (II.3.12.1), printed p.52 / PDF p.5
 - `AmbientTensorStatement` identifies the implemented support-descent
   convolution with extended evaluation of the ambient tensor on
   `(x,y) ↦ f(xy)`. Its compact-support witness is for that actual ambient tensor,
-  and its value is the published `compactSupportPairing`. The existing
+  and its value is the existing `compactSupportPairing`. The existing
   `Distribution.TensorProductStatements` contains the general tensor-support
   and compactness targets; the extra obligation here is the convolution
   comparison, not a replacement tensor product.
@@ -28,7 +28,7 @@ concrete bridge used in II.3.12 Remark 3 and (II.3.12.1), printed p.52 / PDF p.5
   compact support when both inputs have compact support, and equality of the
   smooth and test kernel definitions on the identical test function. This
   supplies the regularity deliberately left open in `Distribution.Convolution`.
-- `AssociativityStatement` is Proposition (ii), using the published
+- `AssociativityStatement` is Proposition (ii), using the
   `convolution` on `compactlySupported`.
 - `MixedAssociativityStatement` is Proposition (iii). Four existential locally
   constant intermediate functions are fixed by equality of their underlying
@@ -60,4 +60,4 @@ Proposition (i) is already proved for this very operation by
 `convolution` includes the resulting compactness proof. No duplicate unproved
 support target is introduced. The Library's test-function convolution laws do
 not by themselves prove the laws for arbitrary compact algebraic distributions;
-this unit states those remaining obligations explicitly.
+this module states those remaining obligations explicitly.

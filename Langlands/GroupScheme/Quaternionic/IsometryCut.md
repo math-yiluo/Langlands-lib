@@ -1,7 +1,5 @@
 # Isometry groups of twisted forms as closed subgroups of an algebra-unit group
 
-Authors: Worker 5197.
-
 Module `Langlands.GroupScheme.Quaternionic.IsometryCut`, namespace
 `Langlands.GroupScheme.Quaternionic.IsometryCut`. This is an internal construction. It
 builds the unitary groups and the orthogonal groups of

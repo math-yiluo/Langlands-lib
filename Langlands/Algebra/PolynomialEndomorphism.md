@@ -36,8 +36,8 @@ endomorphism, and whose morphisms are linear intertwiners. The declaration
 The construction over an arbitrary commutative ring, the chosen categorical
 encoding, and the explicit comparison formulas are derived implementation
 content; the book is not being cited as stating this ring generalization or
-these Lean declarations. Worker 490 implemented the construction; Worker 6
-contributed the original-source audit, scope, and Mathlib reuse route.
+these Lean declarations. The original source was audited for this
+construction.
 
 ## Category and composition convention
 
@@ -193,11 +193,12 @@ holes.
 ## Scope boundary
 
 This construction covers only the equivalence assertion at the start of
-example 5. Localization at powers of `X`, its universal property, full
+example 5. Localization at powers of `X` and its universal property are
+constructed separately, in `RenardEndomorphismLocalization`; full
 subcategory or adjunction packaging, the lemma and corollary on PDF page 259,
-and localization exactness remain successor obligations.
+and localization exactness are outside this module.
 The example's final assertion about localization for modules over a
-`k`-algebra `B` also remains a separate obligation: `B` need not be commutative,
+`k`-algebra `B` is also separate (see `RenardAlgebraActionLocalization`): `B` need not be commutative,
 and its treatment must retain or explicitly bridge the book's global
 nonunital ring and module conventions on printed page 6 / PDF page 12.
 The unital commutative-ring generalization here makes no claim to cover that

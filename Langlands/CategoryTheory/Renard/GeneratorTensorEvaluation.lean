@@ -37,7 +37,7 @@ variable {C : Type u} [Category.{v} C] [Preadditive C]
 def tensorEvaluationBalancing (P Y : C) : Submodule ℤ ((P ⟶ Y) ⊗[ℤ] V P) :=
   Submodule.span ℤ (Set.range
     (fun p : End P × (P ⟶ Y) × V P =>
-      (p.1 ≫ p.2.1) ⊗ₜ[ℤ] p.2.2 - p.2.1 ⊗ₜ[ℤ] u p.1 p.2.2))
+      (p.1.asHom ≫ p.2.1) ⊗ₜ[ℤ] p.2.2 - p.2.1 ⊗ₜ[ℤ] u p.1.asHom p.2.2))
 
 variable {V u}
 
@@ -158,7 +158,7 @@ theorem tensorEvaluation_surjective_and_ker [HasFiniteBiproducts C] (P Y : C)
   -- Every value of `Φ` is balanced.
   refine map_mem_of_generator (tensorEvaluationBalancing V u P Y).toAddSubgroup Φ (hgen K) ?_ k
   intro β w'
-  let r : Fin n → End P := fun s => β ≫ ι ≫ biproduct.π B s
+  let r : Fin n → (P ⟶ P) := fun s => β ≫ ι ≫ biproduct.π B s
   have hsum : ∑ s, r s ≫ (e s).1 = 0 := by
     have : β ≫ ι ≫ φ = ∑ s, r s ≫ (e s).1 := by
       simp only [φ, r]
@@ -174,7 +174,7 @@ theorem tensorEvaluation_surjective_and_ker [HasFiniteBiproducts C] (P Y : C)
   rw [hrewrite]
   refine (tensorEvaluationBalancing V u P Y).toAddSubgroup.neg_mem
     ((tensorEvaluationBalancing V u P Y).toAddSubgroup.sum_mem fun s _ => ?_)
-  exact Submodule.subset_span ⟨⟨r s, (e s).1, w'⟩, rfl⟩
+  exact Submodule.subset_span ⟨⟨End.of (r s), (e s).1, w'⟩, rfl⟩
 
 include hid hcomp hadd in
 /-- Existential packaging of `tensorEvaluation_surjective_and_ker`. -/
@@ -188,7 +188,7 @@ theorem exists_tensorEvaluation [HasFiniteBiproducts C] (P Y : C)
       Function.Surjective ev ∧
       LinearMap.ker ev = Submodule.span ℤ (Set.range
         (fun p : End P × (P ⟶ Y) × V P =>
-          (p.1 ≫ p.2.1) ⊗ₜ[ℤ] p.2.2 - p.2.1 ⊗ₜ[ℤ] u p.1 p.2.2)) :=
+          (p.1.asHom ≫ p.2.1) ⊗ₜ[ℤ] p.2.2 - p.2.1 ⊗ₜ[ℤ] u p.1.asHom p.2.2)) :=
   ⟨tensorEvaluation hadd P Y, fun α w => tensorEvaluation_tmul hadd α w,
     tensorEvaluation_surjective_and_ker hid hcomp hadd P Y hgen hker⟩
 

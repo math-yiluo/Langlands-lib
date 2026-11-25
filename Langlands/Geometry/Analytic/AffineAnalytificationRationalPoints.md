@@ -1,13 +1,13 @@
 # Rational points of the polynomial-locus analytification
 
-This unit constructs the maps between the algebraic `K`-points of a presented
+This module constructs the maps between the algebraic `K`-points of a presented
 affine `K`-algebra `A` and the points of its polynomial-locus analytification
 `AffineAnalytification.Space K P`. An algebraic point `φ : A →ₐ[K] K` goes to an
 actual point of the glued Berkovich space and to an actual `K`-valued point of
 the constructed affinoid atlas. A `K`-valued point of that atlas goes back to an
 algebraic point, and the round trip from algebraic points is the identity. The
 other round trip, bijectivity, the topological comparison and the saturated-atlas
-version are left to a separate statement unit.
+version are stated in `AffineAnalytificationRationalPointsStatement`.
 
 ## Provenance
 
@@ -160,7 +160,7 @@ identifies its composite with the coordinate-algebra map with `φ`.
 
 ## Scope
 
-This unit gives definitions and their computation lemmas. It does not state or
+This module gives definitions and their computation lemmas. It does not state or
 prove the following:
 
 - that `toFieldPoint` is bijective;
@@ -169,7 +169,7 @@ prove the following:
 - the analogous equivalence with the `K`-valued points of the saturated atlas
   `saturated K P`.
 
-These comparisons are planned as a separate statement unit with proof
-successors. This unit also does not cover independence of the presentation,
+These comparisons are stated in `AffineAnalytificationRationalPointsStatement`
+and proved in `AffineAnalytificationRationalPointsProof`. This module also does not cover independence of the presentation,
 functoriality in affine scheme morphisms, the gluing to nonaffine schemes and
 algebraic spaces, or extension of the ground field.

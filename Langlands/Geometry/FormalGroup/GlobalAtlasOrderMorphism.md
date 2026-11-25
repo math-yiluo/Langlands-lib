@@ -1,6 +1,6 @@
 # Global order-linear formal maps and their atlas restrictions
 
-This derived unit restricts actual order-linear formal maps to principal-open
+This module restricts actual order-linear formal maps to principal-open
 atlases. It proves that the singleton order-linear point comparison intertwines
 these maps, including on the nilpotent coefficient category.
 
@@ -11,7 +11,7 @@ Drinfeld, *Coverings of p-adic symmetric regions* (1976), printed p.109
 before section 2 and defines formal O_D-modules in section 2 A. The registered
 original is `drinfeld-1976-coverings-p-adic-symmetric-regions`, SHA256
 `7dd09e1967f46c29195ec87a400e145a17374368fc3b9dd0a782b5b7bfc44e2f`.
-The present unit is an internal consequence of the actual formal maps and
+The present module is an internal consequence of the actual formal maps and
 identity-coordinate chart comparisons in `OrderAction`,
 `GlobalAtlasMorphism`, `GlobalAtlasOrderAction` and `AtlasOrderMorphism`.
 It does not identify a new numbered theorem of the source.
@@ -24,7 +24,7 @@ Restriction uses a supplied common principal-open cover with
 `Ideal.span s = top`. The comparison with the original point map is for the
 singleton cover at 1. General cover comparisons, refinements, full
 faithfulness, specialness, heights, formal-scheme comparisons, moduli and
-representability remain outside this unit.
+representability remain outside this module.
 
 ## Evaluating the original order-linear maps
 

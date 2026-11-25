@@ -145,15 +145,3 @@ Fix a scheme `S`.
   point over each `s ∈ S`. The remark after Definition 3.1.1 explains that one geometric point
   over each `s` suffices, because the unipotent radical commutes with extension of algebraically
   closed fields (Conrad, Exercise 3.4.1). That invariance is not proved here.
-
-## Relation to other formalizations
-
-TauCeti (pinned commit `8428d6217f74afa72531df0bc85d7b57ab72810f`) has
-`TauCeti/Algebra/AlgebraicGroup/Reductive/Basic.lean` and `Reductive/Over.lean`. These state
-reductivity for finite-type commutative Hopf algebras over a field, and for Hopf algebras over a
-commutative ring with all algebraically closed field points as tests. This module is written
-directly on `Langlands.GroupScheme` instead, and it allows non-affine bases. The reasons, from
-the reuse ledger for this program: the import closures of those TauCeti modules have 173–215
-modules, they need one Mathlib module absent from the pinned Mathlib, and their setting is only
-affine. Comparing the two definitions for `S = Spec R` and `G = Spec H` is possible future work.
-It is not part of this module.

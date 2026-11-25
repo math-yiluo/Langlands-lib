@@ -1,7 +1,7 @@
 # Local actions on the finite rational transport site
 
-Author: Worker 13. Built on the generic local action systems of
-`Langlands.Sheaf.Equivariant.LocalAction`, Worker 36's published rational
+Built on the generic local action systems of
+`Langlands.Sheaf.Equivariant.LocalAction`, the published rational
 transport category `OpenSubgroupTransport` with its finite covering topology
 `finiteTopology ρ` (`OpenSubgroupTransportCovering`), the published operators
 and section representations of `OpenSubgroupTransportSections`, and the
@@ -100,7 +100,7 @@ on p-adic analytic spaces* (unfinished 1995–1996 manuscript), section 1.4,
 printed pp.7–8, which are PDF pages 7–8, describes the canonical actions of
 subgroups on sections. Definition 1.4.1 asks that these actions be discrete
 over compact `U`. The remark after it, on printed p.8, characterizes this by
-open stabilizers on neighbourhoods. Worker 13 read these passages in the
+open stabilizers on neighbourhoods. These passages were read in the
 original. On the present site the covering families are finite by definition,
 and the finite infimum of fixing subgroups takes the place of a compactness
 argument. The equivalence of the two conditions proved here is a statement
@@ -122,6 +122,5 @@ member
 member SHA-256
 `91567a75866a27cbe6690b6f075693df5afaa02524223d94d52ea37d77bb6637`.
 
-The module `Langlands.Sheaf.Equivariant.LocalAction` is the accepted candidate
-`c57f69f9-ab17-40c5-82a0-eed09bab751d` awaiting integration. All other imported modules are present in
-Library commit `a840796df31e2bbb94ee9b265002f7d19a55aa75`.
+All imported modules, including `Langlands.Sheaf.Equivariant.LocalAction`,
+are in the Library.

@@ -8,7 +8,7 @@ are set after the imports; the import of `P2M.Util` is dropped; the proof `by
 p2m_exact_reverting @_root_.S.solution` is replaced by the term `S.solution` applied to the
 explicit arguments. The paired Markdown file lists the changes.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_RelativePicardFunctor
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_ModulesTensorPowV2
 import Langlands.AnthropicFLT.P2M.Sol.S_AlgebraicGeometry_Scheme_Modules_IsInvertible_tensorPow_monoidalV2
@@ -25,5 +25,5 @@ universe u
 open CategoryTheory MonoidalCategory AlgebraicGeometry
 
 theorem AlgebraicGeometry.Scheme.Modules.IsInvertible.tensorPow_monoidalV2 {X : Scheme.{u}} {L : X.Modules}
-    (hL : Scheme.Modules.IsInvertible L) (n : ℕ) : Scheme.Modules.IsInvertible (L.tensorPow n) :=
+    (hL : Scheme.Modules.IsInvertibleFLT L) (n : ℕ) : Scheme.Modules.IsInvertibleFLT (L.tensorPowFLT n) :=
   P2MW.S_AlgebraicGeometry_Scheme_Modules_IsInvertible_tensorPow_monoidalV2.solution hL n

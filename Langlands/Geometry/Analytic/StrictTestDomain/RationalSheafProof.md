@@ -1,7 +1,5 @@
 # The rational algebra presheaf is a sheaf
 
-Author: Worker 74.
-
 `Langlands.Analytic.StrictTestDomain.rationalPresheafIsSheaf.{u}` proves the
 unchanged `RationalPresheafSheafStatement.{u}`. For every complete ultrametric
 normed field K and presented strict affinoid base P, the actual
@@ -15,7 +13,7 @@ The analytic input is the independently published theorem
 `Langlands.Geometry.Analytic.StrictTestDomain.FiniteRationalGluingProof`.
 It supplies a unique element of a rational target's actual closed-ideal Tate
 quotient for every compatible tuple on a finite covering family, including an
-empty family. Worker 135 authored this imported relative descent assembly; it
+empty family. This imported relative descent assembly
 uses the published whole-spectrum theorem and actual comparison maps. The
 present proof derives the categorical sheaf property from that theorem.
 

@@ -1,7 +1,5 @@
 # Kummer theory for one radical of prime degree
 
-Author: Worker 226.
-
 This module collects the facts about one radical extension `L = K(β)`, `β ^ p = a ∈ K`, that
 the Kummer case of the prime-degree second inequality needs (Artin–Tate, Chapter VI §2,
 Theorems 3 and 4, and the local norm facts used in the proof of Lemma 2 of §3). The results
@@ -62,7 +60,7 @@ at finite places).
 - `exists_pow_eq_of_residue_pow_eq` (Hensel's lemma for `p`-th roots): if `p` is a unit of
   `O_v`, `a ∈ O_v` is a unit, and the residue of `a` is the `p`-th power of the residue of
   some `b ∈ O_v`, then `a = c ^ p` for some `c ∈ O_v`. `O_v` is adically complete (Library
-  `Langlands.ClassField.Global.isAdicComplete_adicCompletionIntegers`), hence Henselian
+  `Langlands.ClassFieldTheory.Global.isAdicComplete_adicCompletionIntegers`), hence Henselian
   (Mathlib's `IsAdicComplete.henselianRing`). Apply `HenselianRing.is_henselian` to
   `X ^ p - a` and `b`: the derivative `p b ^ (p - 1)` is a unit.
 - `ramificationIdx_eq_one_of_valued_eq_one`: let `L/K` be Galois of degree `p` prime, with

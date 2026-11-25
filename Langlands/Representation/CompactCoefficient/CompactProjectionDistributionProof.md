@@ -1,6 +1,6 @@
 # The compact-representation Hecke projectors: proof of Renard IV.1.5
 
-Author: Worker 142. Module
+Module
 `Langlands.Representation.CompactCoefficient.CompactProjectionDistributionProof`,
 namespace `Langlands.Renard.CompactRepresentation`.
 
@@ -46,6 +46,5 @@ its normalized indicator, giving exactly the final clause of the target.
 
 The final proof is thus unconditional. It uses the Library's intrinsic
 compact-isotypic splitting for existence, rather than Renard's formal-degree
-formula. The completeness construction and reduction are due to Worker 138;
-the III.1.4 equivalence proof is due to Worker 155. All three inputs are
+formula. All three inputs are
 imported by their Lean names; no additional mathematical premise is retained.

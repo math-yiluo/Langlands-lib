@@ -23,12 +23,9 @@ the TC form of B5r in place of the TC form of B5. Everything else is unchanged:
 every other premise, the premise order, the universe instantiations and the
 bodies. The module proves nothing.
 
-The change follows operator ruling `c05e16c6` (on request `d972fdbc` of Task
-7340), item 2: "The singleton branch and its TC form use B5r, with `v'` the
-conjugate place." Item 4 of the ruling keeps canonical B5 published but says
-the branches do not use it. The published statements with B5 stay in the
-Library unchanged. The statements here are what the proof tasks of Task 7343
-target.
+With this change the singleton branch and its TC form use B5r, with `v'` the
+conjugate place. Canonical B5 stays published, but the branches do not use
+it. The published statements with B5 stay in the Library unchanged.
 
 ## 1. The restricted singleton branch
 
@@ -91,11 +88,6 @@ Its hypotheses then hold, and their proofs are obligations of the branch proof
 - The unitarity of the central character of `S`, and the weak base change from
   `S` to `T`, are as in the published singleton branch with B5.
 
-Item 2 of the ruling asks Workers 514 and 390 to confirm on the Lean
-statements that the branch has the hypothesis at `w'` where it applies B5r.
-Worker 390 confirmed this to the operator, with the points above (message
-`42269970`).
-
 ## 2. The restricted reduction
 
 `Proposition48ExactStabilizerRestrictedReductionStatement.{uF, uV}` is
@@ -123,7 +115,7 @@ conclusion is the same.
 Canonical B5 is no longer a conjunct of the restricted reductions. Canonical
 B6 (`TowerBaseChangeHeckeComponentStatement`) remains a conjunct, because the
 distinctness statement uses it, as in the published reduction. That use is the
-isolated distinctness lemma of operator ruling `afc4eb77`.
+isolated distinctness lemma, `Proposition48ExactStabilizerDistinctnessStatement`.
 
 ## 3. Relation to the published statements, and proof obligations
 
@@ -135,7 +127,7 @@ isolated distinctness lemma of operator ruling `afc4eb77`.
   reduction: from the published conjuncts, conjunct 18 (B5) gives B5r, and the
   published singleton branch together with B5 gives the restricted singleton
   branch, without using the B5r premise. The same holds for the TC
-  forms. A private development check compiled all four implications. A proof of a restricted
+  forms. A check outside the Library compiled all four implications. A proof of a restricted
   statement therefore also yields the published statement, as a corollary.
   The converses are not claimed.
 - **Proof obligations of the restricted singleton branch.** These are those of
@@ -157,12 +149,8 @@ n < p*, Invent. Math. 134 (1998), 177–210, source `harris-1998-local-langlands
 Proposition 4.8, printed p.201, and its proof, pp.201–203: the induction and
 the singleton case. Condition (4.12): proof of Lemma 4.7, printed p.204.
 
-Design: the operator's plan note, source
+Design: the plan note, source
 `operator-external-inputs-plan-2026-11-16`, `external-inputs-plan.tex`,
 Section 2.2 (B5–B7, TeX lines 196–199) and Section 4.8 (Remark 4.2 and the
 singleton branch, TeX lines 859–909). The classes of Harris's argument are
-supercuspidal at two non-split conjugate places (TeX lines 202 and 758). The
-replacement of B5 by B5r in the singleton branch is operator ruling `c05e16c6`
-(`correspondence/c05e16c66b7657e9aca53372f4114a52.md`), on request `d972fdbc`.
-Restricted B7 and the parameter-carrying solutions are the operator's
-decision R2 (ruling `a79e2e83`).
+supercuspidal at two non-split conjugate places (TeX lines 202 and 758).

@@ -41,17 +41,14 @@ Proposition II.7.1 or any identification of cuspidality with support conditions.
   Section 3, page 6, definition of the contragredient.
 - The original path is recorded in [Definitions.md](Definitions.md).
 
-This target imports the accepted matrix-coefficient definition
-`5352a743-a6a8-4824-b91e-1cbc32b79b30` version 1, published at commit
-`12dbb4572150a088d7f1df3eb9f5b771cb71604c`.
-Its other project imports are accepted algebraic-dual definitions
-`079d7c1a-8b96-4917-997a-536d6954d55b` version 1 and smoothness definitions
-`665022df-625b-44ae-9dbd-425f6e266bab` version 1. Local constancy uses pinned
+This target imports the matrix-coefficient definition
+`Langlands.Representation.MatrixCoefficient.Definitions`.
+Its other project imports are the algebraic-dual definitions
+`Langlands.Representation.Dual.Definitions` and the smoothness definitions
+`Langlands.Representation.Smooth.Definitions`. Local constancy uses pinned
 Mathlib's `Topology.LocallyConstant.Basic`.
-The environment is `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d` version 1,
-Lean 4.34.0, Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.
+It was checked with Lean 4.34.0 and Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.
 
-This statement was authored by Worker 0. It defines the target proposition;
-it does not claim that the laws have been accepted as theorems. The adjacent
-draft proof and all its helper lemmas form one proof contribution, which
-requires a separately bound accepted statement before proof submission.
+It defines the target proposition; it does not prove the laws. The proof,
+`Langlands.matrixCoefficientLaws` with all its helper lemmas, is in the adjacent
+module `Langlands.Representation.MatrixCoefficient.LawsProof`.

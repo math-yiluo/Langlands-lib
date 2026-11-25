@@ -108,15 +108,16 @@ apartment comparison just proved. Finally,
 equivariance to prove fixedness of its inverse image. The final theorem
 packages target stability, quotient equivariance and fixed-point transfer.
 
-## Provenance and remaining task
+## Provenance and scope
 
 This is an internal derivation from the named published Library constructions;
 it claims no independent translation of a literature statement. Its direct
 imports are `ConjugateApartmentIndependence`,
 `GaloisApartmentQuotientAction`, `NormalizerGaloisAction`, and
 `TorusConjugatorGaloisCocycle`. No building-descent theorem or conditional
-building-descent statement is used. In particular the four descent statements
-barred by Task 6009 are absent from the project import closure.
+building-descent statement is used. In particular no unramified building-descent
+statement of the Library, such as `UnramifiedBuildingDescentStatement` or
+`UnramifiedApartmentDescentStatement`, is in the project import closure.
 
 The statement retains the actual embeddings, transporter, valuation datum and
 source stability. It does not choose a maximal split torus over the base field,

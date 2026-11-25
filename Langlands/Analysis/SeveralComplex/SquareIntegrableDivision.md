@@ -2,7 +2,7 @@
 
 Module `Langlands.Analysis.SeveralComplex.SquareIntegrableDivision`
 (namespace `Langlands.Analysis.SeveralComplex`). Helper of
-`Langlands.Analysis.SeveralComplex.RealHyperplaneDivision` (Task 5613, Lapid
+`Langlands.Analysis.SeveralComplex.RealHyperplaneDivision` (for Lapid
 2011 Proposition 6). Provenance: internal; elementary one-variable complex
 analysis. It is the one-dimensional case of the fact used in Lapid's proof of
 Proposition 6 (p.330) that a pole of order `k ≥ 1` along a real hyperplane

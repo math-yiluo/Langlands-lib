@@ -1,9 +1,7 @@
 # Torus restrictions of central isogenies from maximal split images
 
-Author: Worker 1375.
-
 This is an internal conditional construction for the exact central-isogeny
-root-datum task. It uses
+root-datum statement `CentralIsogenyRootDatumHomStatement`. It uses
 `CentralSurjectionMaximalSplitTorusImageStatement` as an explicit premise.
 It does not prove that geometric statement.
 
@@ -44,5 +42,7 @@ Hom-group structure, with no cancellation in the base field.
 
 The proof adds no characteristic, perfection, separability or smooth-kernel
 assumption. The geometric maximal-image premise remains essential and
-must be discharged by its independent proof before using this unit in
-the unconditional host theorem.
+must be discharged by its independent proof,
+`centralSurjectionMaximalSplitTorusImage` in
+`Rational.CentralSurjectionMaximalSplitTorusImageProof`, before using this
+module in an unconditional proof of `CentralIsogenyRootDatumHomStatement`.

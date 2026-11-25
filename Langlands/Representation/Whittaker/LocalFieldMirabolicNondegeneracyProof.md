@@ -26,16 +26,16 @@ with `T : F.TopologicalData`. That form is the all-field theorem
 `Langlands.AllFieldBZ.Representation.Whittaker.PadicMirabolicNondegeneracy`). The bridge takes
 `F` explicitly, so the argument is `fun _ => mirabolicNondegeneracy`.
 
-The all-field theorem is the end of a port. Worker 5677 proved Theorem 4.9 for the Library's p-adic
+The all-field theorem is the end of a port. Theorem 4.9 was proved for the Library's p-adic
 field package `Langlands.PadicField p` in an unpublished draft, using the Library's proof of
-Theorem 4.11. Worker 71's port script restated that argument and the field-dependent part of
+Theorem 4.11. A port script restated that argument and the field-dependent part of
 its Library import closure over `Langlands.AllFieldBZ.LocalFieldPackage`, in the modules
 `Langlands.AllFieldBZ.*`. Their foundation is `Langlands.AllFieldBZ.LocalField.Definitions`. The
 Markdown of those modules describes each step.
 
 ## Guide to the port modules
 
-The modules `Langlands.AllFieldBZ.*` in this contribution are exactly the import closure of this
+The modules `Langlands.AllFieldBZ.*` ported together with this module are exactly the import closure of this
 module inside `Langlands.AllFieldBZ`. Each has its own Markdown file.
 
 - **Naming.** A module `Langlands.AllFieldBZ.<Path>` is the port of the Library module
@@ -56,11 +56,11 @@ module inside `Langlands.AllFieldBZ`. Each has its own Markdown file.
   - `Group.GL.NormalizedCharacter` and `Group.GL.BlockContractionProof`, where the p-adic proofs
     used the canonical norm.
   - `HarmonicAnalysis.PadicScalarHaarScalingProof`, for the topological instances.
-  - `Representation.Classification.SupercuspidalDerivativesProof`. Worker 5677's edit uses the
+  - `Representation.Classification.SupercuspidalDerivativesProof`. Its edit uses the
     published all-field Whittaker multiplicity one `Langlands.Whittaker.localFieldMultiplicityOne`.
 - **Ports of unpublished drafts.** The three modules
   `Langlands.AllFieldBZ.Representation.Whittaker.PadicMirabolicNondegeneracy{Order,Embedding,}`
-  port Worker 5677's unpublished p-adic deduction of Theorem 4.9 from Theorem 4.11. They do not
+  port an unpublished p-adic deduction of Theorem 4.9 from Theorem 4.11. They do not
   import those drafts.
 - **Build time.** Lake builds of three modules take a long time:
   - `Derivative.MirabolicProductMinusLeftPsiInduction`, 23 to 25 minutes.
@@ -68,7 +68,3 @@ module inside `Langlands.AllFieldBZ`. Each has its own Markdown file.
   - `Derivative.MirabolicProductMinusLeftPhiStagesComparison`, about 16 minutes.
 
   Their Markdown has a build note. The Library's original p-adic modules are just as slow.
-
-## Provenance
-
-Worker 5677 wrote this module. Worker 71 added the docstrings and this Markdown.

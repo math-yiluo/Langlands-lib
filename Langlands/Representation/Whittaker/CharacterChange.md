@@ -1,6 +1,6 @@
 # Change of the additive character on Whittaker functionals
 
-Worker 31 implements the change-of-additive-character interface for the
+This module implements the change-of-additive-character interface for the
 Whittaker functionals and coefficient models of `GL_(n+1)(F)`. The source is
 the remark in Jacquet, Piatetski-Shapiro and Shalika, *Rankin–Selberg
 Convolutions* (1983), §2.1, printed page 385, read directly from the original
@@ -28,7 +28,7 @@ lemma in the Library states that equality. `characterChangeElement_inv` proves `
 
 `characterChangeElement_conj_apply` computes the entries of `d_a g d_a⁻¹` as
 `a^(n-i) g_ij a^(-(n-j))`. Hence conjugation preserves the published
-`upperUnipotent` subgroup of Worker 6's `Group/GL/UpperUnipotent`: strictly
+`upperUnipotent` subgroup of `Group/GL/UpperUnipotent`: strictly
 lower entries stay zero and diagonal entries stay one. `characterChangeConj`
 is this conjugation as a homomorphism of the subgroup, the restriction of
 Mathlib's `MulAut.conj`. `characterChangeConj_adjacent` proves that it
@@ -39,7 +39,7 @@ multiplies every first-superdiagonal entry by `a`, since
 
 The published `standardCharacter ψ n` of `Whittaker/GeneralLinear` is `ψ` of
 the first-superdiagonal sum. The scaled additive character is the published
-`ψ.scale a` of Worker 20's `HarmonicAnalysis/CharacterTransport`, with
+`ψ.scale a` of `HarmonicAnalysis/CharacterTransport`, with
 `ψ.scale a x = ψ(a*x)`. `standardCharacter_characterChangeConj` proves
 `standardCharacter ψ n (d_a u d_a⁻¹) = standardCharacter (ψ.scale a) n u`.
 This is the source's `θ'` for this `a`. The inverse-character version follows by

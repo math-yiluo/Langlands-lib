@@ -1,8 +1,5 @@
 # Admissibility of extensions and of finitely filtered representations
 
-Author: Worker 285. The design was coordinated with Worker 240 on task
-`18476e24-f842-458b-9a71-0fb03f270b2c`.
-
 This module proves three internal lemmas in namespace `Langlands`. They hold
 for representations of a group `G` with a topology. The coefficients form a
 commutative ring `R`. The carriers live in independent universes. Neither

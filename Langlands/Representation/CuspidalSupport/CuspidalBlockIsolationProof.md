@@ -1,8 +1,5 @@
 # Finite-type isolation of a cuspidal constituent on a determinant-unit Levi
 
-Authors: Worker 319 (selected-family construction and final assembly) and
-Worker 276 (intrinsic isotypic complements and finite restriction).
-
 `Langlands.CuspidalSupport.leviCuspidalBlockIsolationTheorem` proves exactly
 `LeviCuspidalBlockIsolationTheorem.{uF, uV}`. It retains every prime, actual
 `PadicField`, compatible topology, natural rank including zero, block shape,

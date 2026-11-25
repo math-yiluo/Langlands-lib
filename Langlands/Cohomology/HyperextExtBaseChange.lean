@@ -372,7 +372,7 @@ theorem HasFiniteBasis.projective {P : Rep.{w} R G} (hP : HasFiniteBasis P) : Pr
 
 /-- A zero representation is free of rank `0` over `R[G]`. -/
 theorem hasFiniteBasis_of_isZero {Z : Rep.{w} R G} (hZ : IsZero Z) : HasFiniteBasis Z := by
-  have : Subsingleton Z.ρ.asModule := (Rep.isZero_iff R G Z).1 hZ
+  have : Subsingleton Z.ρ.asModule := (Rep.isZero_iff Z).1 hZ
   exact ⟨0, ⟨Module.Basis.empty _⟩⟩
 
 /-- A representation that is free of finite rank over `R[G]` has resolutions of every length by

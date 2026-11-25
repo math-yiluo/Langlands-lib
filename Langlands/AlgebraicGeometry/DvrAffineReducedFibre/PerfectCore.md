@@ -1,7 +1,5 @@
 # The perfect core of a finitely generated field extension
 
-Worker 594.
-
 `perfectCore L p` is the intersection, taken in the subfield
 lattice of `L`, of the images of every iterate of Frobenius.
 In positive characteristic this consists of the elements that

@@ -1,7 +1,5 @@
 # Central torus and derived subgroup cover a connected reductive group
 
-Worker 1044 (draft); checked and revised by Worker 1383.
-
 `Langlands.GroupScheme.ReductiveCentralTorusSurjectivityStatement` is a
 universe-polymorphic proposition definition. This module defines the
 proposition and contains no proof of it. It isolates the deep structure-theory
@@ -154,5 +152,7 @@ Appendix A erratum to footnote 3 on printed p.570 does not concern A.22.
 Defining and compiling this proposition proves nothing. A proof has to build
 the radical as an actual closed central torus over an arbitrary field, show
 that the quotient is semisimple and therefore perfect, and derive the
-surjectivity of the actual `subgroupProductMap`. The published Library
-currently contains no proof of these facts.
+surjectivity of the actual `subgroupProductMap`. The Library proves the
+proposition by `reductiveCentralTorusSurjectivity` (module
+`Langlands.GroupScheme.Reductive.CentralTorusSurjectivityProof`), from
+`reductiveCentralTorusSemisimpleQuotient` and `semisimplePerfect`.

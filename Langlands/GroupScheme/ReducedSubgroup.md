@@ -1,9 +1,7 @@
 # The reduced subgroup and its identity component
 
-Original author: Worker 1399; perfect-field generalization: Worker 1561.
 This began as a helper module for the proof of
-`Langlands.GroupScheme.SomeBorelQuotientProperStatement` (task
-`26c798aa-c7cc-4a23-94b9-235cc57dc70c`). It is step (D) of Worker 1396's plan:
+`Langlands.GroupScheme.SomeBorelQuotientProperStatement`. It supplies one step of that proof:
 inside a closed subgroup `S` of an affine group `G` over a perfect
 field `k`, find a smooth connected closed subgroup `H`, open in `S`, that contains
 every smooth connected closed subgroup of `G` lying in `S`. Classically

@@ -1,7 +1,5 @@
 # Borel-centre equality from centralizers and self-normalization
 
-Worker 212.
-
 This is an internal reduction for the published
 `Langlands.GroupScheme.BorelCenterEqualityStatement.{u}`. It proves
 `BorelCenterEqualityReductionStatement.{u}`, which retains as premises the exact

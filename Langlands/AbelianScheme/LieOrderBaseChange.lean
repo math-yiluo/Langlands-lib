@@ -22,15 +22,15 @@ variable {S T : AlgebraicGeometry.Scheme.{u}} (b : T ⟶ S)
 
 /-- The ring map on actual integral endomorphisms induced by abelian-scheme pullback. -/
 def baseChangeEnd : End B →+* End ((baseChange b).obj B) where
-  toFun := (baseChange b).map
-  map_zero' := (baseChange b).map_zero B B
-  map_one' := (baseChange b).map_id B
-  map_add' := fun _ _ => (baseChange b).map_add
-  map_mul' := fun f g => (baseChange b).map_comp g f
+  toFun f := CategoryTheory.End.of ((baseChange b).map f.asHom)
+  map_zero' := congrArg CategoryTheory.End.of ((baseChange b).map_zero B B)
+  map_one' := congrArg CategoryTheory.End.of ((baseChange b).map_id B)
+  map_add' := fun _ _ => congrArg CategoryTheory.End.of (baseChange b).map_add
+  map_mul' := fun f g => congrArg CategoryTheory.End.of ((baseChange b).map_comp g.asHom f.asHom)
 
 @[simp]
 theorem baseChangeEnd_apply (f : End B) :
-    baseChangeEnd b B f = (baseChange b).map f := rfl
+    baseChangeEnd b B f = CategoryTheory.End.of ((baseChange b).map f.asHom) := rfl
 
 variable {O : Type v} [Ring O]
 
@@ -41,12 +41,12 @@ def baseChangeOrderAction (α : O →+* End B) :
 
 @[simp]
 theorem baseChangeOrderAction_apply (α : O →+* End B) (a : O) :
-    baseChangeOrderAction b B α a = (baseChange b).map (α a) := rfl
+    baseChangeOrderAction b B α a = CategoryTheory.End.of ((baseChange b).map (α a).asHom) := rfl
 
 /-- The pulled-back order acts by the Lie maps of the pulled-back endomorphisms. -/
 theorem lieOrderAction_baseChange (α : O →+* End B) (a : O) :
     lieOrderAction ((baseChange b).obj B) (baseChangeOrderAction b B α) a =
-      lieMap ((baseChange b).map (α a)) := rfl
+      CategoryTheory.End.of (lieMap ((baseChange b).map (α a).asHom)) := rfl
 
 /-- Select only from the proved canonical Lie base-change existence theorem. -/
 def lieBaseChangeIso :

@@ -1,7 +1,5 @@
 # Full-domain localization through nested actual rational charts
 
-Author: Worker 56.
-
 This module transports a full represented domain through an actual inclusion of
 rational charts over a fixed presented affinoid algebra. It constructs the
 transport functor, proves full faithfulness, and makes both directions of the

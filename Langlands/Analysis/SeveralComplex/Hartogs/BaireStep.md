@@ -5,7 +5,7 @@ Module `Langlands.Analysis.SeveralComplex.Hartogs.BaireStep`, namespace
 holomorphic functions for products `B × D` with `B` open in a finite-dimensional space and
 `D ⊆ ℂ` open. The induction on the dimension in `Langlands.Analysis.SeveralComplex.Hartogs.Basic`
 builds on it. The proof of
-`Langlands.Analysis.Meromorphic.MeromorphicContinuationHolomorphicStatement` (Task 5431) needs
+`Langlands.Analysis.Meromorphic.MeromorphicContinuationHolomorphicStatement` needs
 the result.
 
 ## Provenance

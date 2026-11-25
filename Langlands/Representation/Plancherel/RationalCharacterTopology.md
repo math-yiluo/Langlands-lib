@@ -1,7 +1,5 @@
 # Actual rational norm characters in the canonical point topology
 
-Author: Worker 200.
-
 This adapter composes the existing actual character evaluation with the existing
 local-field unit norm and source-positive integer order. Its source topology is
 exactly `PointTopology.rationalPointTopology F G.X`, bound locally; it declares

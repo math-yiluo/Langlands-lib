@@ -1,6 +1,6 @@
 # Finite-orbit compact averaging over characteristic-zero fields
 
-Worker 1643 generalizes the published finite-orbit construction of Worker 5
+This module generalizes the published finite-orbit construction
 (`Langlands.Representation.Compact.FiniteMean`, `Definitions`, and
 `ProjectionProof`) from complex coefficients to an arbitrary characteristic-zero
 field. This is internal algebraic support for the proof following Vignéras 1996,

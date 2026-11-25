@@ -1,7 +1,5 @@
 # Uniform injectivity of affine étale charts over normed extensions
 
-Author: Worker 114.
-
 `UniformEtaleChartInjectivityStatement` is a derived prerequisite, proposed for
 an elementary approach to ground-field extension in the rational-point topology
 of algebraic spaces. It is not attributed to a numbered theorem of Conrad and

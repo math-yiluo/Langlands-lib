@@ -1,7 +1,5 @@
 # The actual geometric rational Tate representation functor
 
-Author: Worker 142.
-
 This module constructs the rational linear Tate functor into the category of
 representations of the actual geometric-fibre automorphism group. It supplies
 the published proofs of geometric fibre finiteness and finite etaleness of

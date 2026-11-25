@@ -1,7 +1,7 @@
 # ℓ-divisible systems
 
-Author: Worker 61. Built on Mathlib's short complexes, exact functors and
-categories of homological complexes, on Worker 13's abelian category of smooth
+Built on Mathlib's short complexes, exact functors and
+categories of homological complexes, on the abelian category of smooth
 equivariant sheaves `Langlands.Sheaf.Equivariant.SmoothAbelian`, and on the
 abelian category of smooth representations
 `Langlands.Representation.Category.Abelian`.
@@ -105,8 +105,8 @@ ring, the group and the representation spaces.
 ## Provenance and interpretation
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
-J. Math. Kyoto Univ. 39-2 (1999), section 2. Worker 61 read printed
-pp.304–306 in the scanned original. Printed p.304 reads: "By an ℓ-divisible
+J. Math. Kyoto Univ. 39-2 (1999), section 2. Printed pp.304–306 were
+read in the scanned original. Printed p.304 reads: "By an ℓ-divisible
 system of S(ẽ)-modules over U(ẽ) we mean a collection {T_m} of étale sheaves
 in smooth ℤ/ℓ^mℤ[S(ẽ)]-modules over U(ẽ), m ≥ 1, with morphisms
 i = i_{m',m} : T_{m'} → T_m and j = j_{m,m−m'} : T_m → T_{m−m'}, for all
@@ -164,7 +164,7 @@ The Lean reads the printed text as follows.
    rather than a module over `ℤ/ℓ^m`. With `R = ℤ` in
    `SmoothSheafDivisibleSystem` (so `G` and `X` lie in `Type`), a sheaf killed
    by `ℓ ^ m` is the same as a sheaf of `ℤ/ℓ^m`-modules.
-6. Sheaves. `SmoothSheafDivisibleSystem` uses Worker 13's published smooth
+6. Sheaves. `SmoothSheafDivisibleSystem` uses the published smooth
    equivariant sheaves on a topological space. These transcribe Berkovich's
    discrete sheaves, which Harris uses (p.304), to the ordinary-topological
    transport site. They replace étale sheaves on Berkovich's analytic étale

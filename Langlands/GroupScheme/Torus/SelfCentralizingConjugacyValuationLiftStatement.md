@@ -121,7 +121,8 @@ conjugacy of maximal tori over strictly henselian local rings.
 
 SGA 3 does not state this result. It is derived, as above, from the closed
 immersion of Exposé XVI, Lemma 3.2, and the conjugacy theorem of Exposé XII,
-Theorem 7.1(b). It is a premise of the affineness proof of Task 7782. It
+Theorem 7.1(b). It is a premise of the affineness proof
+`selfCentralizingTorusConjugacyQuotientAffine`. It
 isolates the geometric content of
 `SelfCentralizingConjugacyUniversallyClosedStatement`.
 

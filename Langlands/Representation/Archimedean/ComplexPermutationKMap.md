@@ -21,7 +21,7 @@ what the upgrade lemmas of `ComplexPermutationKType` need.
   `f(P m) = f(diag(m (σ j) (σ j)) P) = ∏ⱼ m (σ j) (σ j)^{l_j} f(P) = ∏ₖ m k k^{l_{σ⁻¹ k}} f(P)`.
   This uses the principal series law, `principalSeriesCharacter_ofFn` and `|m j j| = 1`.
 * `permExponent d σ k = 2 t_{σ⁻¹ k} + (n - 1) - 2k` and `permFunction d σ f`: the Frobenius
-  function `frobeniusFunction` (from `ComplexJacquetFrobeniusFunction`, Task 7088) of
+  function `frobeniusFunction` (from `ComplexJacquetFrobeniusFunction`) of
   `evalPerm`, that is `F(β κ) = χ'(β) f(P κ)` for `β` upper triangular and `κ` unitary, where
   `χ'` is the Borel character with the rearranged weights and exponents.
 * `permFunction_mem`: `F` is smooth (`contMDiff_frobeniusFunction`, using that `X(List.ofFn d)`

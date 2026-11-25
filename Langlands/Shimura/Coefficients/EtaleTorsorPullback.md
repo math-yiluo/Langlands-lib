@@ -1,7 +1,5 @@
 # Actual base change of finite geometric etale torsors
 
-Author: Worker 13.
-
 This is an internal geometric prerequisite for comparing associated coefficient
 sheaves with their restrictions. It constructs base change of the actual cover
 and action and proves that the existing finite geometric torsor condition is

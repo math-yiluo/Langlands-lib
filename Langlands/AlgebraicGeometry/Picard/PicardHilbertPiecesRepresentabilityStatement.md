@@ -1,15 +1,12 @@
 # Quasi-projective representability of the Hilbert-polynomial pieces of the Picard sheaf
 
-Authors: Worker 5705.
-
-Worker 5705 wrote the Lean file and this description for task
-`07219dde-fd87-48cf-83be-db16cbb3707c` (Task 5705), after reading pp.27–31 of
+The Lean file and this description were written after reading pp.27–31 of
 Kleiman's survey (Theorem 4.8, its proof, Lemma 4.9 and Exercise 4.10). The
 proposition isolates the central step of that proof. Each open piece `P^φ_m`
 of the Picard sheaf is represented by a quasi-projective scheme, obtained as
 the quotient of an open part of the divisor scheme by the linear-system
 equivalence relation. The pieces enter through hypotheses, in exactly the form
-in which the accepted companion statement `PicardHilbertPolynomialPiecesStatement`
+in which the companion statement `PicardHilbertPolynomialPiecesStatement`
 provides them.
 
 No proof is asserted here.
@@ -29,7 +26,7 @@ module `𝓛X : X.Modules`, and assumes that
 - `f` is proper (`IsProper`), flat (`Flat`) and geometrically integral
   (`GeometricallyIntegral`);
 - `f` has a section: there is `ε : S ⟶ X` with `ε ≫ f = 𝟙 S`;
-- `Scheme.Modules.IsInvertible 𝓛X` and
+- `Scheme.Modules.IsInvertibleFLT 𝓛X` and
   `Scheme.Modules.ClosedImmersionBySections 𝓛X f`: `𝓛X` is invertible and
   finitely many of its global sections define a closed immersion of `X` into a
   finite projective space over `A`. So `𝓛X` plays the role of Kleiman's
@@ -177,8 +174,8 @@ The intended proof combines the companion statements
 quasi-projective Hilbert-polynomial pieces; in the Library),
 `ProperFlatIntegralLinearSystemStatement` (Theorem 3.13 in the form needed
 here; in the Library), `FppfQuotientLocallyNoetherianStatement` (Lemma 4.9
-with [AK80, Thm. 2.9], fppf form, on locally noetherian tests; accepted, staged
-by Worker 22) and `ProperFlatIntegralSheafClassTwistStatement`. This describes
+with [AK80, Thm. 2.9], fppf form, on locally noetherian tests; in the Library)
+and `ProperFlatIntegralSheafClassTwistStatement`. This describes
 intended use only; the module imports none of them.
 
 ## Conventions and scope

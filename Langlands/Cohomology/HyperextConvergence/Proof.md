@@ -1,7 +1,5 @@
 # Convergence of the hyperext spectral sequence for bounded objects: proof
 
-Author: Worker 199.
-
 This module proves the published proposition
 `Langlands.Cohomology.HyperextConvergence.HyperextConvergenceStatements` of
 `Langlands.Cohomology.HyperextConvergence.Statement`:

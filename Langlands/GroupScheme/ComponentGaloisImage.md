@@ -1,7 +1,5 @@
 # The finite coefficient image on actual scheme components
 
-Author: Worker 1107.
-
 This is an internal derived construction over the published
 `AlgebraicallyClosedComponents` module. Its group carrier is the actual space of
 connected components of the underlying scheme, with the existing quotient

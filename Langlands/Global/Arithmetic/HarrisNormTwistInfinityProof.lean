@@ -25,12 +25,12 @@ private theorem completion_finrank_one (v : InfinitePlace K) (w : InfinitePlace 
 
 private theorem localNorm_completionMap (v : InfinitePlace K) (w : InfinitePlace L)
     [w.LiesOver v] (x : v.Completion) :
-    InfiniteExtension.localNorm v w (LiesOver.completionMap x) = x := by
+    InfiniteExtension.localNorm v w (LiesOver.completionMap v w x) = x := by
   rw [InfiniteExtension.localNorm_algebraMap, completion_finrank_one v w, pow_one]
 
 private theorem completionMap_localNorm (v : InfinitePlace K) (w : InfinitePlace L)
     [w.LiesOver v] (y : w.Completion) :
-    LiesOver.completionMap (InfiniteExtension.localNorm v w y) = y := by
+    LiesOver.completionMap v w (InfiniteExtension.localNorm v w y) = y := by
   have hs : Function.Surjective (LiesOver.completionMap (v := v) (w := w)) :=
     (Algebra.finrank_eq_one_iff_bijective_algebraMap.mp (completion_finrank_one v w)).surjective
   obtain ⟨x, rfl⟩ := hs y
@@ -97,7 +97,7 @@ private theorem coordinate_orientation (v : InfinitePlace K) (w : InfinitePlace 
     ((ComplexEmbedding.conjugate w.embedding).comp (algebraMap K L) = v.embedding ∧
       InfinityType.coordinate w x = star (localNormCoordinate v w x)) := by
   let y := InfiniteExtension.localNorm v w (x.val w)
-  have hy : LiesOver.completionMap y = x.val w := completionMap_localNorm v w _
+  have hy : LiesOver.completionMap v w y = x.val w := completionMap_localNorm v w _
   by_cases h : w.embedding.comp (algebraMap K L) = v.embedding
   · refine Or.inl ⟨h, Units.ext ?_⟩
     change extensionEmbedding w (x.val w) = extensionEmbedding v y

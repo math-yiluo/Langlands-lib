@@ -1,7 +1,5 @@
 # Prime powers of Lie elements under field extension
 
-Author: Worker 1420.
-
 This internal, derived module compares the restricted prime powers `X ↦ X^[p^r]` of tangent
 vectors of an affine group `G` over `k` across coefficient extensions. The Library defines the
 prime power `Lie.primePowerKernel H X p r` only for tangent vectors of `H` with coefficients in

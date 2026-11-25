@@ -1,6 +1,6 @@
 # Renard II.3.13 Corollary: the categorical comparison (algebraic part)
 
-Worker 42, Task 5531 (with Worker 108). Source: David Renard,
+Source: David Renard,
 *Représentations des groupes réductifs p-adiques*, French version dated
 9 July 2026, registered `renard-2026-representations-groupes-reductifs-padiques`:
 I.1.7, Theorem (printed pp.12–13 / PDF pp.18–19), and II.3.13, Corollary and

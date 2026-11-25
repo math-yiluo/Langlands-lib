@@ -1,8 +1,8 @@
 # Exact exhaustion from a tempered opposite-Jacquet untwist
 
-Worker 148. This internal reduction isolates the remaining exponent-selection
-obligation in the opposite-Jacquet route to Langlands exhaustion. It does not
-assert that the selection obligation has been proved.
+This internal reduction isolates the remaining exponent-selection
+step in the opposite-Jacquet route to Langlands exhaustion. It does not
+prove the selection statement.
 
 `OppositeJacquetUntwistSelectionStatement` requires, for every irreducible
 ambient smooth representation and the fixed choices in the exact exhaustion
@@ -33,5 +33,8 @@ universe `v`. The provenance is internal assembly of the published standard
 presentation, actual real-parameter realization and unitary-untwist interfaces.
 Neither input proposition is proved here. In particular, the substantive
 maximal-exponent argument yielding a tempered untwist in the open chamber
-remains to be proved; this conditional reduction does not prove the
-unconditional classification.
+is not part of this module: `oppositeJacquetUntwistSelection_of_inputs`
+(module `OppositeJacquetUntwistSelectionReduction`) carries it out from
+further closed inputs, among them `RationalPointsIrreducibleAdmissibleStatement`
+and `LeviJacquetFiniteLengthStatement`. This conditional reduction does not
+prove the unconditional classification.

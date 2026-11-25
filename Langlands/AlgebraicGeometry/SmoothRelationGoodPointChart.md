@@ -1,12 +1,13 @@
 # Good points in affine charts
 
-Author: Worker 303. This module translates the good-point condition
+This module translates the good-point condition
 `Langlands.AlgebraicGeometry.SmoothRelationGoodPoint.IsGoodPoint`, stated with
 stalks of schemes, into commutative algebra on affine charts. It is the
-pointwise input that Worker 101's slicing step needs in the proof of
-`Langlands.AlgebraicGeometry.SmoothEquivalenceRelationEtaleSliceStatement`
-(task `3c6168ac-543c-4dc2-a8a6-81647cb26eb6`). Its main theorem concludes the
-cotangent spanning hypothesis of that step exactly as Worker 101 stated it.
+pointwise input that the slicing step (`GoodPointEtaleSliceProof`) needs in the
+proof of
+`Langlands.AlgebraicGeometry.SmoothEquivalenceRelationEtaleSliceStatement`.
+Its main theorem concludes the cotangent spanning hypothesis of that step
+exactly as that step states it.
 
 The module imports `Langlands.AlgebraicGeometry.SmoothRelationGoodPoint` (the
 predicate) and `Langlands.AlgebraicGeometry.SmoothRelationGoodPointCotangent`
@@ -88,7 +89,8 @@ The cotangent span (section `Residue`):
   for `g ∈ q.comap (algebraMap Γ(U, V) Γ(R, W))`, span
   `κ(q) ⊗[B_q] Ω[B_q⁄Γ(U, V)]` over `κ(q)`. Here `B_q = Localization.AtPrime q`
   and `κ(q) = ResidueField B_q`. The span is indexed by the image set
-  `t^# '' (q.comap σ)`, as in Worker 101's hypothesis.
+  `t^# '' (q.comap σ)`, as in the hypothesis of
+  `exists_identity_slice_of_residue_span` in `SchemeDifferentialSlice`.
 
 ## Proofs
 
@@ -128,17 +130,19 @@ in the statement, after reindexing from `q.comap σ` to its image under `t^#`.
 ## Provenance
 
 The module is internal to the direct proof of
-`SmoothEquivalenceRelationEtaleSliceStatement` in task
-`3c6168ac-543c-4dc2-a8a6-81647cb26eb6`. That proof slices the smooth morphism
+`SmoothEquivalenceRelationEtaleSliceStatement` in
+`SmoothEquivalenceRelationEtaleSliceProof`. That proof slices the smooth morphism
 `s : R → U` at `e x` by functions whose differentials span the relative cotangent
 space. This is the method of Stacks Project, More on Morphisms, Lemmas 057C
 (slicing a smooth morphism by one function with nonzero differential at the
 point) and 057G (étale slices of smooth morphisms). The module itself adds no new
 mathematics. It uses the description of stalks of affine opens as localizations,
 and it transports the local criterion of `SmoothRelationGoodPointCotangent` to
-the chart in which Worker 101's commutative algebra slicing lemma is stated. The
-form of the main theorem's conclusion was agreed with Worker 101: `θ = t^#` and
-`p = q.comap σ`, and `p ≤ q.comap θ` follows from `comap_appLE_eq_comap_appLE`.
+the chart in which the commutative algebra slicing lemma
+`exists_ideal_etale_quotient_of_residue_span` (`AffineDifferentialSlice`) is
+stated. The main theorem's conclusion has the form that the slicing step uses:
+`θ = t^#` and `p = q.comap σ`, and `p ≤ q.comap θ` follows from
+`comap_appLE_eq_comap_appLE`.
 
 The surrounding groupoid slicing construction is the route of Stacks Project,
 Lemma 04LV, used for Theorem 04S6 in the étale-quotient argument of 0461.

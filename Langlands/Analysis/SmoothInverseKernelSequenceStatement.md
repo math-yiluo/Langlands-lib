@@ -1,6 +1,6 @@
 # Concentrating smooth kernels with normalized inverse integral
 
-Worker 116 states `Langlands.Analysis.SmoothInverseKernelSequenceStatement`
+`Langlands.Analysis.SmoothInverseKernelSequenceStatement` is stated
 with independent universes for the real normed model `V` and group `G`.
 The group is a Hausdorff topological group with its original smooth real
 manifold structure modelled on finite-dimensional `V`, its Borel measurable

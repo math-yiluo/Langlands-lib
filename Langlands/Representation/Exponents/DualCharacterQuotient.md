@@ -1,7 +1,5 @@
 # Dual-detected character quotients and central defect images
 
-Author: Worker 531.
-
 This is a derived algebraic construction over the published objects in
 `Exponents.DualJacquet`. It constructs the actual annihilator quotient and
 central-defect images with their full ambient group actions. Every assertion

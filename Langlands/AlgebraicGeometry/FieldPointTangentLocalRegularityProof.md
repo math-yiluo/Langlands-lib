@@ -1,7 +1,5 @@
 # Proof: tangent and local cotangent dimensions at a rational point over a field
 
-Author: Worker 254.
-
 Module `Langlands.AlgebraicGeometry.FieldPointTangentLocalRegularityProof`.
 
 ```lean
@@ -90,7 +88,7 @@ Each is supplied as follows.
 
 ## Dependencies
 
-Helper modules in this contribution:
+Helper modules of this proof:
 
 - `Langlands.CommutativeAlgebra.PointDerivationCotangent`;
 - `Langlands.AlgebraicGeometry.SectionTangentDerivations`.
@@ -113,14 +111,13 @@ Mathlib provides:
 - `IsLocalRing.spanFinrank_maximalIdeal_eq_finrank_cotangentSpace`;
 - `IsRegularLocalRing.of_spanFinrank_maximalIdeal_le`.
 
-The proof uses none of the Picard proofs `2eb8161a`, `9cd303c4`, `e689d392` or
-`4ef972f8`. It makes no dual-number construction. It does not prove that regular
+The proof uses none of the Library's Picard proofs. It makes no dual-number construction. It does not prove that regular
 local rings are domains.
 
 ## Verification
 
-`lean_check` in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` builds the
-three modules with Lake with no errors and no warnings. The declaration
+A Lake build of the
+three modules gives no errors and no warnings. The declaration
 `Langlands.Scheme.fieldPointTangentLocalRegularity` is a theorem with universe
 parameter `u` and axioms `propext`, `Classical.choice` and `Quot.sound` only.
 There is no `sorry`, `admit` or new axiom.

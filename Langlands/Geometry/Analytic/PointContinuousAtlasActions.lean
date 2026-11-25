@@ -20,7 +20,7 @@ variable (K : Type u) [NormedField K] [IsUltrametricDist K] [CompleteSpace K]
 def pointContinuousNonemptyAtlasActionProperty :
     ObjectProperty (Action (AffinoidAtlasPresentation.{u, v, w} K) M) :=
   fun X => X.V.atlas.HasNonemptyCharts ∧
-    Continuous (fun p : M × X.V.space => (X.ρ p.1).baseMap p.2)
+    Continuous (fun p : M × X.V.space => (X.ρ p.1).asHom.baseMap p.2)
 
 -- The category's sort combines the independent point and chart-index universes.
 set_option linter.checkUnivs false in
@@ -52,7 +52,7 @@ theorem toNonempty_inclusion :
     toNonempty (K := K) (M := M) ⋙ NonemptyAtlasAction.inclusion = inclusion := rfl
 
 theorem continuous_action (X : PointContinuousNonemptyAtlasAction.{u, v, w, z} K M) :
-    Continuous (fun p : M × X.obj.V.space => (X.obj.ρ p.1).baseMap p.2) :=
+    Continuous (fun p : M × X.obj.V.space => (X.obj.ρ p.1).asHom.baseMap p.2) :=
   X.property.2
 
 /-- Realize the precise given point action in Mathlib's continuous action category. -/

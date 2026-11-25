@@ -1,7 +1,5 @@
 # A vector filtration of a rational dynamic unipotent subgroup with adjoint determinant
 
-Author: Worker 1423.
-
 `Langlands.Aubert.General.RationalPointFamily.DynamicUnipotentVectorFiltrationStatement`
 is a proposition definition awaiting proof. Over a nonarchimedean local field
 `k`, it asserts that the rational points `U(χ)(k)` of the dynamic unipotent

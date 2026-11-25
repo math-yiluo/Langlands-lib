@@ -1,7 +1,5 @@
 # Reduction of the square-integrable Langlands classification for GL_n
 
-Author: Worker 7.
-
 This module proves that the published proposition
 `Langlands.Classification.SquareIntegrableLanglandsClassification.{uF, uV} F T`
 (module `MultisegmentClassificationStatement`, the block form of Henniart

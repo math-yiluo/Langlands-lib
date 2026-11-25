@@ -1,6 +1,6 @@
 # Standard source parabolics and radicals for minimum geometric terms: proof
 
-Workers 1239 and 1493. This module proves the published proposition
+This module proves the published proposition
 `Langlands.GroupScheme.StandardSourceTwistedIntersectionStatement` from
 `Langlands.GroupScheme.Rational.StandardSourceTwistedIntersectionStatement`.
 
@@ -31,7 +31,7 @@ characteristic assumption, root reducedness or nonempty simple-root type is adde
 The proof is a single application of the published conditional assembly
 `standardSourceTwistedIntersectionStatement_of_negation_of_signs`
 (module `Rational.StandardSourceTwistedIntersectionReduction`). That theorem derives
-the target from two structural statements. Both are now proved without extra
+the target from two structural statements. Both are proved without extra
 premises:
 
 - `relativeRootNegation : RelativeRootNegationStatement.{u}`

@@ -5,7 +5,7 @@ Module `Langlands.GroupScheme.Reductive.LocalWeylNormalizationField`.
 This module proves `FieldWeylNormalizationStatement`, stated in the module
 `LocalWeylNormalizationStatement` (theorem `fieldWeylNormalization`). It is the field half
 of the Weyl normalization step in the proof of the Isomorphism Theorem over a reduced
-local ring. The ring half is Worker 712's `localWeylNormalization_of_field`.
+local ring. The ring half is `localWeylNormalization_of_field`.
 
 Notation is that of `LocalSplitCell`: `Ga k` is the additive group, `rootPoint u Z c` is
 the value `u(c)`, and `weylPoint u v = v(-1) u(1) v(-1)`. `pt` is the base `Spec k`, regarded

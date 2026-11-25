@@ -1,6 +1,6 @@
 import Langlands.Galois.QuadraticFrobeniusPatching.Local
 import Langlands.Galois.QuadraticFrobeniusPatching.Polynomial
-import Langlands.ClassField.Global.IdeleGaloisDescentProof
+import Langlands.ClassFieldTheory.Global.IdeleGaloisDescentProof
 import Langlands.Global.AdelicFunctoriality.GaloisPlaceCount
 
 /-! # Transport of Euler polynomial matching among number fields -/
@@ -119,7 +119,7 @@ private theorem hasEulerPolynomialAt_pullback_aut (σ : K ≃ₐ[F] K)
   let w' := finitePlaceEquiv σ.toRingEquiv w.val
   let g := finiteCompletionEquiv σ.toRingEquiv w.val
   let : w'.asIdeal.LiesOver v.asIdeal :=
-    Langlands.ClassField.Global.IdeleGaloisDescentProof.liesOver_finitePlaceEquiv σ v w.val
+    Langlands.ClassFieldTheory.Global.IdeleGaloisDescentProof.liesOver_finitePlaceEquiv σ v w.val
   have hcard : residueCardinality w.val = residueCardinality w' := by
     rw [residueCardinality_eq_pow v w.val, residueCardinality_eq_pow v w']
     simp only [w', inertiaDeg_finitePlaceEquiv_algEquiv]
@@ -151,7 +151,7 @@ theorem eventually_hasEulerPolynomialAt_pullback_aut (σ : K ≃ₐ[F] K)
   filter_upwards [(tendsto_under_cofinite (K := F) (L := K)).eventually hA] with w hw
   let v := w.under (𝓞 F)
   let w' : FinitePlacesAbove K v := ⟨finitePlaceEquiv σ.toRingEquiv w,
-    Langlands.ClassField.Global.IdeleGaloisDescentProof.liesOver_finitePlaceEquiv σ v w⟩
+    Langlands.ClassFieldTheory.Global.IdeleGaloisDescentProof.liesOver_finitePlaceEquiv σ v w⟩
   apply hasEulerPolynomialAt_pullback_aut σ v ⟨w, liesOver_under w⟩
   simpa only [w', inertiaDeg_finitePlaceEquiv_algEquiv] using hw w'
 

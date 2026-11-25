@@ -22,13 +22,16 @@ between three published propositions, all unchanged:
 2. `UnramifiedTorusIwahoriConnectedImageStatement` (KP Lemma B.3.1 and
    Definition 2.5.13): `T(K)^0` is the image of the integral points of a smooth
    model with geometrically connected fibres under a homomorphism of `K`-groups.
-3. The target `UnramifiedOrderedIntegralOpenCellStatement` of Task 6495: KP
+3. The target `UnramifiedOrderedIntegralOpenCellStatement`: KP
    Proposition 8.3.14(3), open-immersion clause, with family existence, over `K`
    and `O`, for compatible centralizer data and every smooth model with the exact
    zero-point fixer.
 
-Neither input is proved in this contribution; both are the unproved inputs of the
-published `UnramifiedTorusIwahoriModelAssemblyStatement` (Task 6162). This module
+Neither input is proved in this module; both are the inputs of the
+published `UnramifiedTorusIwahoriModelAssemblyStatement`. The Library proves them
+separately: `unramifiedTorusConnectedBound` (module
+`UnramifiedTorusConnectedBoundProof`) and `unramifiedTorusIwahoriConnectedImage`
+(module `UnramifiedTorusIwahoriConnectedImageProof`). This module
 does not prove the target unconditionally.
 
 ## Implemented proof

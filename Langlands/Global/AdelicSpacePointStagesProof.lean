@@ -218,6 +218,8 @@ theorem curve_stage_transition (hX : IsSeparated X)
       ((pullback_comp X _ _ _).trans (congrArg _ ((pullback_comp X _ _ _).trans
         (congrArg _ (pullback_comp X _ _ _)))))
     simp
+    change _ = 𝟙 _ ≫ 𝟙 _ ≫ Spec.map (CommRingCat.ofHom (curvePlaceAdeleLevelMap k F hTT')) ≫ 𝟙 _
+    rw [Category.id_comp, Category.id_comp, Category.comp_id]
     rfl
   let _ := curvePlaceSpaceStageTopology k F S X T
   let _ := curvePlaceSpaceStageTopology k F S X T'

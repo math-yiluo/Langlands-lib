@@ -1,30 +1,26 @@
 # Hecke operators on forms with trivial coefficients and on their `Ext` groups (Proposition 4.4)
 
-Author: Worker 61. Built on two modules of Worker 61 that have been
-independently accepted but are not yet in the Library (commit 568f1cff):
-`Langlands.Shimura.DefiniteFormsSmoothExt` (candidate
-`687f402a-30ce-4e91-8e37-a5c30bf357a6`: `awayLevelForms`, `mem_awayLevel`,
+Built on the published
+`Langlands.Shimura.DefiniteFormsSmoothExt` (`awayLevelForms`, `mem_awayLevel`,
 `awayHom_mem_awayLevel`, `factorTranslation`, `awayTranslate`,
 `factorFormsPresheaf`, `factorSmoothPresheaf`, `factorExtPresheaf`,
 `factorAbutmentPresheaf`, `factorFiltrationPresheaf`, `factorGradedPresheaf`
 and their `DefiniteForms.dividing*` specializations) and
-`Langlands.Cohomology.HyperextAbutmentFunctor` (candidate
-`8e1ba75f-07ac-4edf-8a61-c381b99cc033`:
-`HyperextAbutment.filtrationFunctor`, `gradedFunctor`, `filtrationι`,
-`gradedπ`). Both are included unchanged in this candidate's workspace and
-must be integrated first. It is also built on the published
+`Langlands.Cohomology.HyperextAbutmentFunctor`
+(`HyperextAbutment.filtrationFunctor`, `gradedFunctor`, `filtrationι`,
+`gradedπ`). It is also built on the published
 `Langlands.Shimura.LevelHecke` (`heckeOperator`, `HeckeCosets`,
 `heckeOperator_apply_out`, `heckeOperator_one_of_le`,
 `fixedVectorsMap_heckeOperator`), `Langlands.Shimura.LevelHeckeAlgebra`
 (`LevelHeckeAlgebra`, its module structure on fixed vectors, `heckeAct`,
 `fixedVectorsMap_heckeAct`, `doubleCoset`, `doubleCoset_smul`) and
 `Langlands.Shimura.LevelHeckeCompose` (`heckeOperator_eq_comp_translateFixed`,
-`translateFixed_apply_coe`); on Worker 61's published
+`translateFixed_apply_coe`); on the published
 `Langlands.Shimura.EquivariantForms` (`rightTranslation`),
 `Langlands.Cohomology.HyperextAbutmentNaturality`
 (`HyperextAbutment.filtrationPostcomp`, `gradedPostcomp`) and
 `Langlands.Cohomology.DivisibleSystem.ScalarExtension` (additivity of
-`SmoothRep.smoothPartFunctor`); on Worker 13's published
+`SmoothRep.smoothPartFunctor`); on the published
 `Langlands.Shimura.SplitLevelTower` (`factorHom`, `awayHom`,
 `factorHom_commute_awayHom`), `Langlands.Shimura.Unitary.PointsSplit`
 (`DividingPoints`, `PrimeToPoints`, `finiteAdelicPointsSplit`),
@@ -32,13 +28,13 @@ must be integrated first. It is also built on the published
 `Langlands.Cohomology.SmoothExt` (`SmoothExt.ext`); on the published
 `Langlands.Cohomology.RightDerivedAdditive` (additivity of right derived
 functors) and `Langlands.Shimura.LevelColimit` (`mem_conjLevel`); and on
-Worker 57's published `Langlands.Shimura.Levels` (`CompactOpenLevel` and its
+the published `Langlands.Shimura.Levels` (`CompactOpenLevel` and its
 arrows) and `Langlands.Shimura.Unitary.Adelic` (`finiteAdelicDiagonal`). From Mathlib it uses representations and `Rep`,
 endomorphism rings in preadditive categories, additive functors, derived
 categories with their canonical t-structure (`DerivedCategory.TStructure.t`,
 `singleFunctor`, shifts) and `preadditiveCoyoneda`.
 
-The accepted `DefiniteFormsSmoothExt` models Harris's "as `K(N,m)^p` varies
+The published `DefiniteFormsSmoothExt` models Harris's "as `K(N,m)^p` varies
 the spectral sequences are `GG(𝔸_f^p)`-equivariant" by presheaves on the
 category of compact open levels away from `p`. This module adds the Hecke
 operators at a fixed level. For compact open levels `K`, `L` away from `p` and
@@ -49,7 +45,7 @@ graded pieces. It also defines the action of the Hecke algebra of `K` on the
 value at `K`, as a ring homomorphism. It shows that the map of each presheaf
 along an arrow of levels is the double-coset operator of the arrow's element.
 The operators and the Hecke algebra are the published ones of
-`LevelHecke` and `LevelHeckeAlgebra`, which Worker 13's modules also use. Here
+`LevelHecke` and `LevelHeckeAlgebra`, which other modules of the Library also use. Here
 they are applied to the representation of the second factor by right
 translation on the forms of trivial level. Everything is done for a group `G`
 with a splitting `e : G ≃ₜ* H × H'` and then specialized to Harris's
@@ -63,17 +59,17 @@ groups, `ι : Γ →* G`, and `G`, `H`, `H'` carry topologies.
 `factorHom e h = e⁻¹ (h, 1)` and `awayHom e h' = e⁻¹ (1, h')` embed the two
 factors in `G`; they commute elementwise.
 
-The accepted `awayLevelForms R e ι V K'`, for a subgroup `K'` of `H'`,
+The published `awayLevelForms R e ι V K'`, for a subgroup `K'` of `H'`,
 consists of the functions `f : G → V` with `f (ι γ * g) = f g` and
-`f (g * k) = f g` for `k ∈ e⁻¹ (1 × K')`. The accepted `factorTranslation` is
+`f (g * k) = f g` for `k ∈ e⁻¹ (1 × K')`. The published `factorTranslation` is
 right translation `(h • f) g = f (g * e⁻¹ (h, 1))` by `H` on them. The
-accepted `awayTranslate R e ι V c hc`, for `c ∈ H'` with `c⁻¹ * k * c ∈ L` for
+published `awayTranslate R e ι V c hc`, for `c ∈ H'` with `c⁻¹ * k * c ∈ L` for
 `k ∈ K`, maps the forms of level `e⁻¹ (1 × L)` to those of level
 `e⁻¹ (1 × K)` by `f ↦ f (· * e⁻¹ (1, c))`.
 
 `CompactOpenLevel H'` is the published category of compact open subgroups of
 `H'`. An arrow `a : K ⟶ L` is an element `a.element = c` of `H'` with
-`c⁻¹ * k * c ∈ L` for all `k ∈ K` (`a.respects`). The accepted presheaves
+`c⁻¹ * k * c ∈ L` for all `k ∈ K` (`a.respects`). The published presheaves
 `factorFormsPresheaf`, `factorSmoothPresheaf`, `factorExtPresheaf W i`,
 `factorAbutmentPresheaf X n`, `factorFiltrationPresheaf X n p` and
 `factorGradedPresheaf X n p` are functors out of `(CompactOpenLevel H')ᵒᵖ`.
@@ -184,7 +180,7 @@ pretriangulated category `C`:
   `F^p(K, B) →+ F^p(K, B')` and `gr^p(K, B) →+ gr^p(K, B')` of
   postcomposition with `ψ⟦n⟧'` are additive in `ψ`.
 - Instances `filtrationFunctor_additive`, `gradedFunctor_additive`: the
-  accepted functors `filtrationFunctor t K n p` and `gradedFunctor t K n p`
+  published functors `filtrationFunctor t K n p` and `gradedFunctor t K n p`
   are additive.
 
 Back in `Langlands.Shimura.EquivariantForms`, section `HeckeAbutment`, with
@@ -197,7 +193,7 @@ filtration index.
   `Hom(X, A(L)[n])` to `Hom(X, A(K)[n])`; `factorAbutmentPresheaf_map_eq`;
   `abutmentHeckeAlgebraHom R e ι V X n K` with
   `abutmentHeckeAlgebraHom_doubleCoset`.
-- `factorFiltrationHecke R e ι V X n p K L g`: the accepted
+- `factorFiltrationHecke R e ι V X n p K L g`: the published
   `filtrationFunctor` applied to `factorSmoothHeckeHom` placed in degree `0`,
   from `F^p` at `L` to `F^p` at `K`; `factorFiltrationPresheaf_map_eq`;
   `factorFiltrationHecke_comp_filtrationι` (it commutes with the inclusions
@@ -222,13 +218,13 @@ declarations are the generic ones for the published splitting
 
 - `dividingSmoothHecke σ p hp R V K L g`, `dividingSmoothPresheaf_map_eq`,
   `dividingSmoothHeckeAlgebraHom σ p hp R V K`: `[K g L]` and the Hecke
-  algebra of `K` on the accepted `dividingSmoothPresheaf`, as morphisms of
+  algebra of `K` on the published `dividingSmoothPresheaf`, as morphisms of
   smooth representations of `GJ(∏_{v ∣ p} ℚ_v)`.
 - `dividingExtHecke σ p hp R V W i K L g`, `dividingExtPresheaf_map_eq`,
   `dividingExtHeckeAlgebraHom σ p hp R V W i K`,
   `dividingExtHeckeAlgebraHom_doubleCoset`: the same on `Ext^i(W, -)` for a
   smooth representation `W` of `GJ(∏_{v ∣ p} ℚ_v)`, the page-2 terms of the
-  accepted `dividingSpectralSequence` up to the accepted
+  published `dividingSpectralSequence` up to the published
   `dividingSecondPageAddEquiv`.
 - With `[HasDerivedCategory.{w} (SmoothRep R (σ.DividingPoints p))]`:
   `dividingAbutmentHecke σ p hp R V X n K L g`,
@@ -241,7 +237,7 @@ declarations are the generic ones for the published splitting
 ## Provenance and interpretation
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
-J. Math. Kyoto Univ. 39-2 (1999), §4. Worker 61 read the rendered scanned page,
+J. Math. Kyoto Univ. 39-2 (1999), §4. The rendered scanned page was read,
 printed p.309 (one-based PDF page 11). Proposition 4.4: "There is a spectral
 sequence of `𝒪_m`-modules (4.4.1)
 `E_2^{i,j} = Ext^i(H_c^{2(n-1)-j}(M̌_N, 𝒪_m(n-1)), 𝒜_ℓ(GJ, 𝓛, K(m))) ⇒
@@ -251,7 +247,7 @@ H^{i+j}(S̄_{K(N,m)}, 𝓛~)`. Here `Ext^i` denotes the `i`-th derived functor o
 
 How the module relates to Harris (an explanation, not formalized):
 
-- Equivariance at a fixed level. The accepted `DefiniteFormsSmoothExt` reads
+- Equivariance at a fixed level. The published `DefiniteFormsSmoothExt` reads
   "as `K(N,m)^p` varies" as a presheaf on compact open levels `K` of
   `GJ(𝔸_f^{(p)})`. Its arrows are inclusions of levels and translations by
   elements `g` with `g⁻¹ K g ⊆ L`. For the forms, the `GJ(𝔸_f^{(p)})`-module
@@ -259,7 +255,7 @@ How the module relates to Harris (an explanation, not formalized):
   `K`-invariants are the forms of level `K`. On these invariants, the
   equivariance is the action of the double-coset operators `[K g L]` for all
   `g`, and of the Hecke algebra of `K`. This module defines these operators on
-  each term of the accepted presheaves. On the terms `Ext^i(W, A(K))`, the
+  each term of the published presheaves. On the terms `Ext^i(W, A(K))`, the
   abutment and its filtration, they are defined by functoriality of the term
   in `A(K)`, not from a `GJ(𝔸_f^{(p)})`-action on a limit or colimit over the
   levels.
@@ -278,7 +274,7 @@ How the module relates to Harris (an explanation, not formalized):
 - Hecke operators on the spectral sequence. Harris's statement asserts
   equivariance of the spectral sequences, including their differentials. This
   module provides the operators on the page-2 terms (`dividingExtHecke`,
-  through the accepted `dividingSecondPageAddEquiv`) and on the abutment, its
+  through the published `dividingSecondPageAddEquiv`) and on the abutment, its
   filtration steps and graded pieces, and their compatibility with the
   inclusions `F^p ⊆ Hom(X, A(K)[n])` and projections `F^p ⟶ gr^p`. It does not
   show that the differentials of the spectral sequence, or the identification
@@ -286,8 +282,8 @@ How the module relates to Harris (an explanation, not formalized):
 - The group `GG(𝔸_f^p)`. As in `DefiniteFormsSmoothExt`, we work with
   `GJ(𝔸_f^{(p)})` directly. The identification of `GG(𝔸_f^p)` with
   `GJ(𝔸_f^p)` that Harris uses is not formalized.
-- All declarations are ours, derived from Mathlib and the published and
-  accepted modules named above. `awayTranslation`, `awayFormsFixedEquiv`,
+- All declarations are ours, derived from Mathlib and the published
+  modules named above. `awayTranslation`, `awayFormsFixedEquiv`,
   `awayHecke` and the `*Hecke*` maps and ring homomorphisms are internal
   constructions not printed in Harris 1999. `endRingHom` and the additivity
   lemmas and instances are general facts used to build the ring
@@ -304,9 +300,8 @@ How the module relates to Harris (an explanation, not formalized):
   for that factor. So the operators are taken directly from `heckeOperator`
   and `heckeAct`, and their commuting with the first factor is
   `awayHeckeIntertwining`.
-- `Langlands.Shimura.EquivariantForms.coefficientSmoothPresheaf`
-  (`Shimura/DefiniteFormsSmoothCoefficients`, accepted, not yet in the
-  Library): the case of Proposition 4.10 with coefficients. Hecke operators
+- Library `Langlands.Shimura.EquivariantForms.coefficientSmoothPresheaf`
+  (`Shimura/DefiniteFormsSmoothCoefficients`): the case of Proposition 4.10 with coefficients. Hecke operators
   for it are not treated here.
 
 ## Scope
@@ -315,7 +310,7 @@ The module provides the double-coset operators `[K g L]` and the Hecke
 algebra of `K` acting on the forms with trivial coefficients, their smooth
 parts, their `Ext` groups, and the intended abutment of the hyperext
 spectral sequence with its filtration steps and graded pieces. It shows that
-the maps of the accepted presheaves along arrows of levels are these
+the maps of the published presheaves along arrows of levels are these
 operators. It does not:
 
 - prove that the operators commute with the differentials of the spectral
@@ -331,5 +326,5 @@ Source registration: Harris 1999,
 `harris-1999-cohomological-automorphic-forms-525a222c4489ee9d`, SHA-256
 `525a222c4489ee9d3fe86a52c6c17ffb30fcc7c31f24c16a64669e9615085b26`.
 
-Dependencies are Mathlib and the published and accepted modules named above, pinned to
+Dependencies are Mathlib and the published modules named above, pinned to
 Lean 4.34.0 and Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.

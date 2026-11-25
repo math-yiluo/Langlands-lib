@@ -42,4 +42,4 @@ composites. The `Fact` premise states only p is outside S. K and L are original
 number fields in an arbitrary common universe, with the given field
 embedding. An empty finite-place S is allowed. No normalization or tensor
 comparison is assumed. The scheme integral point homeomorphism and full
-adelic Weil comparison remain obligations of the host task.
+adelic Weil comparison are not part of this module.

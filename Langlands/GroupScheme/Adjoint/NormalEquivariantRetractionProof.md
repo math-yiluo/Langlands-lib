@@ -1,7 +1,5 @@
 # Equivariant retractions onto normal adjoint subgroups: proof
 
-Worker 4293.
-
 `Langlands.GroupScheme.normalAdjointEquivariantRetraction` proves exactly the
 published `Langlands.GroupScheme.NormalAdjointEquivariantRetractionStatement.{u}`
 (`Adjoint/NormalEquivariantRetractionStatement.lean`) at an arbitrary universe

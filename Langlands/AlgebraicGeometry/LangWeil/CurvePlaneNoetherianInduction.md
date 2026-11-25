@@ -3,8 +3,8 @@
 Lean module: `Langlands.AlgebraicGeometry.LangWeil.CurvePlaneNoetherianInduction`, namespace
 `Langlands.AlgebraicGeometry.LangWeil.CurvePlane`.
 
-Author: Worker 189. This module is a helper for the proof of
-`Langlands.AlgebraicGeometry.LangWeil.FamilyCurvePlaneComparisonStatement` (Task 5581).
+This module is a helper for the proof of
+`Langlands.AlgebraicGeometry.LangWeil.FamilyCurvePlaneComparisonStatement`.
 Provenance: internal. It is the standard Noetherian induction on the spectrum of a Noetherian
 ring, in the algebraic form needed by `FamilyCurvePlaneReduction`. It is not a cited theorem.
 

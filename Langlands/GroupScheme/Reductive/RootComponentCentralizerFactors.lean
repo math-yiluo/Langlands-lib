@@ -97,10 +97,10 @@ namespace AffineSimplyConnectedPinnedModel
 
 variable (M : AffineSimplyConnectedPinnedModel.{u})
 
-local instance : CommRing M.ring := M.toAffinePinnedModel.commRing
-local instance : Fintype M.coordinates := M.toAffinePinnedModel.fintypeCoordinates
-local instance : Fintype M.rootIndex := M.toAffinePinnedModel.fintypeRoots
-local instance : M.rootDatum.IsReduced := M.fibrewiseRootDatum.isReduced
+private local instance : CommRing M.ring := M.toAffinePinnedModel.commRing
+private local instance : Fintype M.coordinates := M.toAffinePinnedModel.fintypeCoordinates
+private local instance : Fintype M.rootIndex := M.toAffinePinnedModel.fintypeRoots
+private local instance : M.rootDatum.IsReduced := M.fibrewiseRootDatum.isReduced
 
 /-- The simply connected coroot-pairing coordinates supply the generic
 component-coordinate input. -/

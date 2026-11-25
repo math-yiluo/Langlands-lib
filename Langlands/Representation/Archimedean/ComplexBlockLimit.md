@@ -2,7 +2,7 @@
 
 Lean module: `Langlands.Representation.Archimedean.ComplexBlockLimit`.
 
-Worker 140 wrote this module for Task 7063 (`f2d2e257-dd4b-4820-96ab-faa9c832ffb8`), the proof of
+This module is infrastructure for the proof of
 `ComplexStandardLanglandsQuotientStatement`. It generalizes the published limit argument
 `ComplexJacquetLimit` (along `P_{m,1}`, strictly decreasing exponents) to the maximal parabolic
 subgroup `P_{a,k+1}` whose last block of size `k+1` carries exponents with equal real parts. This
@@ -24,7 +24,8 @@ is `l, z ↦ (χ_l z)⁻¹`. Unprefixed names below are in the namespace
 `ComplexBlockLimitStatement` is an implication. It assumes the two statements
 `ComplexBlockChartIntegrableStatement` (integrability of `blockChartBound` under a tail
 condition) and `ComplexBlockParabolicIntegrationStatement` (the `U(a+k)`-integral in coordinates of
-`P_{a,k}`). These are only stated, not yet proved, in the Library. Under these assumptions it says:
+`P_{a,k}`). Both are proved in the Library (`complexBlockChartIntegrable`,
+`complexBlockParabolicIntegration`). Under these assumptions it says:
 
 Let `a, k ∈ ℕ` and let `χ` be phase-power characters with exponents `e` such that
 

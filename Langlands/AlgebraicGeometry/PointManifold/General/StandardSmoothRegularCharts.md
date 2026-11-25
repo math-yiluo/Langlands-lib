@@ -1,9 +1,9 @@
 # Universe-general regular charts on standard-smooth actual affine point spaces
 
-This module adapts the published `PointManifold.StandardSmoothRegularCharts` implementation by Worker 362
+This module adapts the `PointManifold.StandardSmoothRegularCharts` implementation
 to `PointManifold.General`, with an explicit arbitrary coefficient universe
-`u` and `k : Type u`. Worker 1650 made this universe extension. It uses the
-published actual `RingPoint` carrier and evaluation topology, and leaves the
+`u` and `k : Type u`. It uses the
+actual `RingPoint` carrier and evaluation topology, and leaves the
 existing target and all its imported definitions unchanged. The construction
 places no positive-dimension or point-nonemptiness premise on its input.
 

@@ -1,6 +1,6 @@
 # Units through continuous isomorphisms of completions with local fields
 
-Worker 84. Helper lemmas in namespace `Langlands.Global.HarrisDatum`, used by
+Helper lemmas in namespace `Langlands.Global.HarrisDatum`, used by
 `HarrisDatumCharacterRealizationProof` to compare finite components of a Hecke
 character with characters of a local field `K'` (a `PadicField`). Every
 result is proved; nothing is assumed.

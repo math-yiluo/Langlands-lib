@@ -56,6 +56,7 @@ theorem fromCommutantRingHom_surjective (hA : IsIdempotented A) :
         (IdempotentedRingRightLimit.product hA x (IdempotentedRingRightLimit.canonical a))
     rw [IdempotentedRingRightLimit.familyNaturalEnd_product,
       IdempotentedRingRightLimit.familyNaturalEnd_product, hθ]
+    apply End.ext
     apply NatTrans.ext
     funext M
     apply AddCommGrpCat.hom_ext

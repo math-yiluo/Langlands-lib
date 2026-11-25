@@ -1,14 +1,12 @@
 # Actual irreducible realizations of integral generator images
 
-Authors: Worker 585 (construction and proofs), with Worker 76 (the surrounding
-fixed-factor-vector strategy).
-
 This internal construction transports an endomorphism of the actual exact
 finite-length smooth Grothendieck group to genuine irreducible coefficients.
 It proves that an actual irreducible embedding occurs in the target factor
 vector and turns a signed generator image into an actual irreducible output.
 It also proves the required Aubert image assertion in rank zero. The general
-positive-rank Aubert irreducible-image theorem is still an obligation.
+positive-rank Aubert irreducible-image theorem is proved separately, as
+`Langlands.Aubert.irreducibleImage` in [IrreducibleImageProof](IrreducibleImageProof.md).
 
 ## Exact coefficients and operator transport
 
@@ -100,6 +98,6 @@ identities are outside the claims of this module. The original Aubert
 Proposition 3.2 and its withdrawn proof are not used.
 
 The module imports the existing irreducible-image proposition only as the
-specification for the surrounding task. It leaves that pair and every pair it
+statement of the target it serves. It leaves that pair and every pair it
 imports unchanged. No analytic segment, multisegment, strong-head, tempered,
 square-integrable or regular classification result is an input.

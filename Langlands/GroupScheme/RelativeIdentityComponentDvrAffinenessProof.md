@@ -42,9 +42,7 @@ dilatation description. It adds no henselianity, perfect residue field,
 connected generic fibre, existence of a representative, or uniformizer premise.
 The target and its prerequisite definitions are imported unchanged.
 
-The geometric criterion and DVR geometry were developed by Worker 410;
-the all-test fibre comparison and closedness transports were developed by
-Worker 1559. The local irreducibility argument reuses the method of the private
+The local irreducibility argument reuses the method of the private
 lemmas in the published
 `ConnectedLocallyNoetherianDomainStalksIntegralProof.lean`, as detailed in the
 geometric companion Markdown.

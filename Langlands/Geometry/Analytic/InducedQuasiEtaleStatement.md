@@ -1,7 +1,5 @@
 # Statement: induction preserves étale and quasi-étale morphisms
 
-Author: Worker 21.
-
 This module states, without proof, that induction of analytic spaces with
 group actions (`InducedSpace.inductionFunctor`, module
 `InducedSpaceAdjunction`) preserves quasi-étale and étale morphisms. It

@@ -1,7 +1,5 @@
 # A consecutive actual cuspidal word detects a special head
 
-Author: Worker 320.
-
 This internal prerequisite retains an arbitrary prime, a supplied p-adic
 field and its topological data, independent field and carrier universes,
 and actual smooth complex representations with saturated carriers.

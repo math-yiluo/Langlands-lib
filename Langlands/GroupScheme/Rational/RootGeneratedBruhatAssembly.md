@@ -1,7 +1,5 @@
 # Actual root-generated Bruhat covering from simple lifts
 
-Author: Worker 1325.
-
 This internal supporting module assembles actual rational root-generated
 covering from explicit structural inputs. It does not prove the
 unconditional `RootGeneratedCentralizerRankOneStatement`. All root groups
@@ -9,7 +7,7 @@ are the Library's actual character-orbit-extension groups at the identity
 test object, over an arbitrary field and universe. The ambient setup is
 a commutative group scheme `T`, an affine group scheme `G`, and a map
 `i : T.toGrp ⟶ G` whose underlying scheme map is a monomorphism. Every
-mathematical lemma in this unit additionally assumes `IsSplitTorus T.toGrp`
+mathematical lemma in this module additionally assumes `IsSplitTorus T.toGrp`
 and an actual relative-root-system realization `HasRelativeRootSystem i`.
 The generating-set definition uses the ambient setup alone.
 
@@ -20,7 +18,7 @@ family `m` of actual normalizer points.
 The published `IsRelativeReflection.weylAction_apply_self` translates the
 defining reflection identity on the rational root span to
 `weylAction i n a = -a` on the actual character lattice, using injectivity
-of rationalization for a split torus. This unit reuses that lemma.
+of rationalization for a split torus. This module reuses that lemma.
 
 `RelativeRoot.rootPoint_factorization_of_reflectionLift` assumes splitness
 of `T`, an actual root-system realization, opposite-factor-pair existence, and a chosen

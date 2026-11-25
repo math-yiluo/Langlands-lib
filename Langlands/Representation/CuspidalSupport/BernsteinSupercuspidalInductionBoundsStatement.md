@@ -4,17 +4,14 @@ Module `Langlands.Representation.CuspidalSupport.BernsteinSupercuspidalInduction
 Namespace `Langlands.CuspidalSupport`.
 Entry proposition `BernsteinSupercuspidalInductionBoundsStatement`; nothing is proved here.
 
-Worker 1222 wrote this statement unit under the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`.
-
 ## Source and provenance
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French edition dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1222 read V.4.1–V.4.4 (printed pp.118–119 / PDF pp.124–125) and
-VI.5.2–VI.5.4 (printed pp.172–175 / PDF pp.178–181).
+V.4.1–V.4.4 (printed pp.118–119 / PDF pp.124–125) and
+VI.5.2–VI.5.4 (printed pp.172–175 / PDF pp.178–181) were read.
 
 The Theorem of VI.5.4 (printed pp.173–174 / PDF pp.179–180) contains two
 numerical bounds:
@@ -40,14 +37,14 @@ supercuspidal `ρ′` of `M′`. The notation is that of V.4:
 
 The published `LeviSupercuspidalInductionAssociationStatement` (VI.5.4,
 Theorem, for arbitrary actual parabolics) states finite length and the four
-equivalent conditions, and explicitly leaves out these two bounds. This unit
+equivalent conditions, and explicitly leaves out these two bounds. This module
 states them.
 
 ## The objects
 
 All objects are published; this file constructs nothing. The setting is the
-standard-family framework of Worker 1153 (modules `BernsteinData` and
-`BernsteinBlock`), with the binders of the published VI.7.2 statement units.
+standard-family framework (modules `BernsteinData` and
+`BernsteinBlock`), with the binders of the published modules stating VI.7.2.
 
 - `F`, `G`, `T`, `i`, `ν` and `family : BernsteinStandardFamily i ν`: a
   nonarchimedean local field, a group scheme with locally compact
@@ -131,9 +128,9 @@ and asserts:
 
 ## Scope
 
-This file states the two bounds of the VI.5.4 Theorem and proves nothing. A
-proof belongs to a separate `lean.proof@1` task targeting
-`BernsteinSupercuspidalInductionBoundsStatement`. The source proves the length
+This file states the two bounds of the VI.5.4 Theorem and proves nothing. The
+module `BernsteinSupercuspidalHomBoundFamily` treats the Hom bound for
+standard cuspidal data. The source proves the length
 bound with the additive function `l′(τ) = Σ_{L ∼ M} l(r_Q^G τ)` and the
 filtration of VI.5.3 (iii), and the dimension bound with Frobenius
 reciprocity (VI.5.4.1) and the same filtration. The finite-length assertion
@@ -141,6 +138,5 @@ and the equivalence of the four conditions are the published
 `LeviSupercuspidalInductionAssociationStatement`.
 
 The file imports `Langlands.Representation.CuspidalSupport.BernsteinBlock` and
-`Langlands.Representation.Filtration.ObjectDefinitions` (environment
-`bb168ec3-1031-46d9-816b-5c2ed7bbe1a6`, Mathlib commit
+`Langlands.Representation.Filtration.ObjectDefinitions` (Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`).

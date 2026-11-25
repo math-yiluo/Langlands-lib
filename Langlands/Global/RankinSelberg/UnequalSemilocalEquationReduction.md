@@ -108,7 +108,7 @@ through the premise. The module declares the same two local instances as the tar
 
 ## Provenance
 
-Internal intermediate result of Task 7053, under its "Intermediate results" clause. The
+Internal intermediate result towards `UnequalSemilocalEquationStatement`. The
 argument is Cogdell's (pp.219–220). The finite-place input is the Library's
 nonarchimedean gamma factor theory, so the retained premise concerns only the
 factorization and the archimedean places.

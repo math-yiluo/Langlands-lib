@@ -1,7 +1,5 @@
 # Statement: the simple factors of a connected reductive group over a field
 
-Worker 75.
-
 `Langlands.GroupScheme.ReductiveSimpleFactorDecompositionStatement.{u} : Prop` is a
 statement-only, `Prop`-valued definition. This module does not prove it, and it adds no
 other definitions, theorems or axioms. It imports:

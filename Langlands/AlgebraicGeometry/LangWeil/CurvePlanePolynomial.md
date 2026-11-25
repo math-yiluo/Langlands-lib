@@ -4,9 +4,8 @@ Lean module: `Langlands.AlgebraicGeometry.LangWeil.CurvePlanePolynomial`, namesp
 `Langlands.AlgebraicGeometry.LangWeil.CurvePlane`.
 
 This module is a helper for the proof of
-`Langlands.AlgebraicGeometry.LangWeil.FamilyCurvePlaneComparisonStatement` (Task 5581).
-Provenance: internal; elementary facts about bivariate polynomials, proved directly. Begun
-by Worker 189 and completed by Worker 191.
+`Langlands.AlgebraicGeometry.LangWeil.FamilyCurvePlaneComparisonStatement`.
+Provenance: internal; elementary facts about bivariate polynomials, proved directly.
 
 ## Definitions
 

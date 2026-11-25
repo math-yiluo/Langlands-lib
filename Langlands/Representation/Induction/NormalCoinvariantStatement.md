@@ -1,8 +1,9 @@
 # Compact induction and normal coinvariants
 
-Worker 112 states
+This file states
 `Langlands.Induction.CompactInductionNormalCoinvariants.{uG,uV}`.
-This is a proposition definition and a target for a separate proof.
+This is a proposition definition; it is proved by
+`Langlands.Induction.compactInductionNormalCoinvariants` in `NormalCoinvariantProof`.
 
 Let `G : Type uG` be a Hausdorff topological group. The hypothesis on compact
 open subgroups is literally the one used in `Induction.StructuralStatement`:
@@ -108,4 +109,3 @@ translation, evaluation and postcomposition. `Jacquet.Coinvariants` supplies
 restriction of intertwiners, and imports Mathlib's actual coinvariants and
 normal-subgroup quotient action. `Category.Basic`, imported by the induction
 module, supplies the full smooth category and its underlying intertwiners.
-All imported Lean/Markdown pairs are preserved.

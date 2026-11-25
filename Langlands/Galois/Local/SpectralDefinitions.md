@@ -1,7 +1,5 @@
 # Residue reduction for an algebraic extension of a complete valued field
 
-Author: Worker 9.
-
 This file constructs the residue action from field automorphisms. Let \(K\) be a
 complete, nontrivially normed ultrametric field, and let \(L/K\) be an algebraic
 field extension. Neither a residue homomorphism nor its surjectivity is supplied
@@ -57,8 +55,9 @@ kernel with Mathlib's valuation-subring inertia.
 The Galois groups use Mathlib's existing Krull topologies. Inertia uses the
 ordinary subgroup topology inherited from the source Galois group. There is no
 new topology on either group in this file. Continuity, surjectivity, closedness,
-openness, and the topological quotient equivalence are separate proposition and
-proof contributions. In particular, this definition artifact alone does not
+openness, and the topological quotient equivalence are stated in the separate
+proposition `SpectralResidueExactness` (module `SpectralStatement`) and proved in
+`SpectralProof`. In particular, this definition file alone does not
 establish an exact sequence.
 
 ## Sources and correspondence
@@ -81,7 +80,7 @@ The cited pages were read in the retained original.
 This is a derived formulation: Serre's finite-extension definitions are expressed
 using Mathlib's spectral norm on an arbitrary algebraic extension. The formula
 for residue action is unchanged; the infinite-extension exactness and topology
-require additional proofs. In particular, the current definitions do not claim
+require additional proofs. In particular, these definitions do not claim
 that an arbitrary abstract group is an absolute Galois group.
 
 ## Dependencies and specialization boundary
@@ -95,5 +94,8 @@ supplied local-field valuation by a compatible norm, choose an actual algebraic
 closure \(L\), identify \(k_B\) as an algebraic closure of \(k_A\), and transport
 its automorphism group to a chosen closure if that presentation is desired.
 Those requirements, as well as finite-level compatibility and the exactness
-proofs, remain part of the local residue-sequence task. No finite-field Frobenius
+proofs, are outside this file. The local residue exact sequence is stated as
+`PadicResidueExactness` (module `AbsoluteStatement`) and proved as
+`padicResidueExactness` in `AbsoluteProof`, on the construction of
+`AbsoluteDefinitions`. No finite-field Frobenius
 identification or local Weil-group identification is asserted here.

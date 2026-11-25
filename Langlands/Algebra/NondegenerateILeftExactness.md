@@ -1,8 +1,8 @@
 # Left exactness of the actual right induction functor
 
-Worker 695 supplies the left exactness component of the exact-target proof
-of `Langlands.Algebra.NondegenerateFInductionExactnessTheorem`, in collaboration
-with Worker 595. This is an internal additive argument for arbitrary original
+This module supplies the left exactness component of the exact-target proof
+of `Langlands.Algebra.NondegenerateFInductionExactnessTheorem`, whose other
+parts are in `NondegenerateFInductionExactness`. This is an internal additive argument for arbitrary original
 nonunital rings, motivated by Renard I.2.4, printed pp.18–19 / PDF24–25 in the
 9 July 2026 French edition. The source states left exactness of the Hom induction
 and proves it by left exactness of Hom and exactness of the nondegenerate-part
@@ -22,8 +22,8 @@ part with action `(b • h)(b') = h(b' * b)`.
 All ring and source carrier universes are independent. The output carrier is the
 actual `max uB v`. The pointwise hypotheses here are intermediate proof data,
 not extra assumptions on the final closed target. The theorem
-`sequenceLeftExact` uses Worker 595's accompanying concrete categorical exactness
-and monomorphism criteria to obtain those data from any short complex whose first
+`sequenceLeftExact` uses the accompanying concrete categorical exactness
+and monomorphism criteria of `NondegenerateModuleExactnessConcrete` to obtain those data from any short complex whose first
 map is monic and which is exact at the middle object. It applies `kernel_lift`
 to prove exactness of the actual mapped short complex and `map_injective` to
 prove its first map is monic. This proves the full published

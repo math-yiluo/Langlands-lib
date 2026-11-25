@@ -1,7 +1,5 @@
 # Quadratic forms with zero quadratic radical
 
-Author: Worker 177.
-
 This internal development weakens the invertible-polar-matrix hypothesis in
 the published hyperbolic-pair construction and local scalar dimension bound.
 It applies to actual Tits quadratic forms, defined as the quotient of the

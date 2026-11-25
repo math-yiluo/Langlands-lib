@@ -84,7 +84,7 @@ b := B.compatibleSubatlasInclusion P (proved local refinement) : R → B.
 The locally refining selection `P`, the original algebras and restrictions of
 `R`, and every bounded pullback of `r` are constructed in
 `CoherentQuasiIsoReverseSubatlas`. They are not output assumptions of this
-unit. `r` has inverse ambient map and full bounded reverse-chart pullbacks.
+module. `r` has inverse ambient map and full bounded reverse-chart pullbacks.
 `reverse_comp` proves the whole-map equality
 
 ```text
@@ -139,10 +139,12 @@ They do not assert an unrefined inverse on all original `B` charts.
 
 ## Remaining scope
 
-This unit constructs the hom-set embedding, proves compatible cancellation
+This module constructs the hom-set embedding, proves compatible cancellation
 and monicity, and proves both reverse composite identities on the actual
 refinements. It does not construct a general Ore square for an arbitrary
 compatible map and arbitrary quasi-isomorphism, identify the localized
 category with an independently defined analytic-space category, construct
 etale, quasi-etale or equivariant sites, or specialize to Harris towers.
-Those remain obligations of the surrounding analytic geometry and site task.
+Those lie outside this module; the Ore square, under full-domain closure of
+the source and the common target, is constructed in
+`CompatibleQuasiIsoOreRefinement`.

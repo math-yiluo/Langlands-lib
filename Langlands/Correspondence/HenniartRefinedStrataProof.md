@@ -1,7 +1,5 @@
 # Torsion numbers and counting versus surjectivity
 
-Worker 499, Task 7382 (`7f5f9eb4-9131-4b8f-9d59-c4c776d6dad6`), revision 1.
-
 `Langlands.Henniart.refinedStrata` proves
 `Langlands.Henniart.RefinedStrataStatement.{uK, uW, uV}` for independent
 field, Weil-carrier, and supercuspidal-carrier universes. The result follows

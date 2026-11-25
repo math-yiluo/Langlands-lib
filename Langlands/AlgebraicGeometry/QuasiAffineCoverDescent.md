@@ -1,6 +1,8 @@
 # Quasi-affine descent through finite affine refinements
 
-Worker 585. Internal derived geometry for Task 6831.
+Internal derived geometry for the quasi-affineness of supplied universal
+maximal-torus moduli (`maximalTorusModuliQuasiAffine` in
+`Langlands.GroupScheme.Torus.MaximalTorusModuliQuasiAffineProof`).
 
 This module constructs the coproduct of canonical maps to spectra of global
 sections. For quasi-affine summands this is an open immersion: each map is
@@ -17,4 +19,4 @@ pullback from the coproduct of the supplied quasi-affine pullbacks. The
 affine-base descent helper then gives quasi-affineness of the original scheme.
 All schemes have arbitrary universe and no noetherian or finite-presentation
 hypotheses are imposed. The finite index is essential to these two lemmas.
-These are focused prerequisites: they do not yet give descent for arbitrary etale covers or prove the maximal-torus moduli theorem.
+These are focused prerequisites: they do not give descent for arbitrary etale covers (that is `QuasiAffineEtaleDescent`) or prove the maximal-torus moduli theorem.

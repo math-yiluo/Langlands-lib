@@ -1,6 +1,6 @@
 # Real-place parameters of isobaric constituent data
 
-Worker 766, Task 7484. This is internal bookkeeping over the published `IsobaricData` and
+This is internal bookkeeping over the published `IsobaricData` and
 `ArchimedeanPlaceParameterClasses` definitions. It concerns finite multisets of actual
 positive-rank cuspidal classes, with every multiplicity retained, and constructs no
 isobaric or parabolically induced automorphic representation.
@@ -51,6 +51,6 @@ subtype using its `IsReal` or `IsComplex` proof. No new coordinate on a place is
 The local restriction formulas are motivated by the published real-Weil action identities;
 those identities do not prove global compatibility.
 
-This unit asserts no existence or uniqueness of parameters, classification of characters,
+This module asserts no existence or uniqueness of parameters, classification of characters,
 realization of isobaric representations, restricted sum-model isomorphism, or compatibility
 with weak global base change. The latter remains an explicitly unproved external premise.

@@ -3,7 +3,7 @@
 This file states `Langlands.Parabolic.NormalizedSecondAdjointnessStatement`,
 the conjunction of `StandardSecondAdjointnessClause` and
 `RefinedSecondAdjointnessClause`. All three declarations are Prop-valued
-definitions. This contribution supplies a specification, not a proof.
+definitions. This file supplies a specification, not a proof.
 
 ## Scope and actual representations
 
@@ -105,12 +105,12 @@ extension. No unpublished Bernstein assertion is used as a formal premise.
 
 Silberger, *The Langlands quotient theorem for p-adic groups* (1978),
 Section 2, page 97, and the proof of Lemma 5.3, page 100, motivate the
-quotient direction needed by the consumer. The registered retained source is
+quotient direction needed downstream. The registered retained source is
 `provided-5423f8a28c0b7ad5a7f9a07a3d55d399d5162a798fecd70bf11a5d75fa8b9354`,
 SHA256 `4f437d7ee21c65e43ede0a34b9a6b274cf4d947c23ad7637976bd38fd72fdac5`.
 These passages were read in the original; they are motivation, not a substitute
 for proving this Hom equivalence or the unrestricted wording of Lemma 5.3.
-No source-specific errata file was present in the public notes when checked.
+No source-specific errata file was found.
 
 The file introduces no duality or reciprocity certificate as a hypothesis.
 Proving this statement requires establishing and assembling its actual

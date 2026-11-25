@@ -1,7 +1,5 @@
 # Cobar cocycles and invariant lifting
 
-Author: Worker 148.
-
 This is an internal algebraic sufficient criterion for the published
 `GroupoidCoaction.IsAcyclic` predicate. It imports and preserves the Library
 coaction definitions. Let B and C be commutative rings in Type u, let C be a

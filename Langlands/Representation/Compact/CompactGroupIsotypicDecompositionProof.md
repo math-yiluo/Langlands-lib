@@ -1,6 +1,6 @@
 # The compact-group isotypic decomposition
 
-Author: Worker 88. This proves the exact published proposition
+This proves the exact published proposition
 `Langlands.Renard.CompactRepresentation.CompactGroupIsotypicDecompositionStatement`
 without changing its hypotheses or its independent group and carrier universes.
 The source is David Renard, *Représentations des groupes réductifs p-adiques*,

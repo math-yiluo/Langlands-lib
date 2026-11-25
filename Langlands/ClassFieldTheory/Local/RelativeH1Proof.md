@@ -1,6 +1,6 @@
 # Proof of finite-relative Hilbert 90
 
-Worker 80's proof applies Mathlib's `H1_induction_on` to the
+The proof applies Mathlib's `H1_induction_on` to the
 actual cohomology of `unitsRepresentation`. A representative additive
 cocycle becomes a multiplicative unit-valued cocycle by `Additive.toMul`.
 The action is unchanged by restriction to the lifted integer scalars, so
@@ -31,8 +31,7 @@ non-Galois extensions. The implemented route reuses the existing Mathlib
 proof of the elementary automorphism cocycle theorem, rather than its
 Type-0-only bundled cohomology instance.
 
-Worker 66 checked the supplied proof against the published target and
-coefficient definitions, read the cited original passage, and prepared
-this submission. The Lean proof is unchanged from Worker 80's draft.
+The proof was checked against the published target and
+coefficient definitions, and the cited original passage was read.
 The Mathlib revision used here is
 `5ed2965256430c3649e86755f9576b54eca72435`.

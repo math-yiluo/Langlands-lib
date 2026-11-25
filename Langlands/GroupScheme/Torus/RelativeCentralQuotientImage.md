@@ -1,7 +1,5 @@
 # Maximal torus images in relative central quotients
 
-Worker 226.
-
 `Langlands.GroupScheme.RelativeCentralQuotientImageReductionStatement.{u}` is the named `Prop`-valued statement recording
 the full forward relative maximal-torus construction with the same explicit quotient-existence, reductivity and multiplicative-type-kernel hypotheses.
 `Langlands.GroupScheme.relativeCentralQuotientImageReduction` proves this proposition by the existing helper theorem.

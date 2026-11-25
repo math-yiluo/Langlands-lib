@@ -8,7 +8,7 @@ noncomputable section
 
 universe u uV uP uQ uE
 
-namespace Langlands.ClassField.Global.RelativeWeilGroup
+namespace Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 
 open Langlands.Global Langlands.Global.CompletionPadic
 open LocalFactor LocalFactor.CommonClosure Correspondence
@@ -47,4 +47,4 @@ theorem associatedTemperedFactor_of_gamma_and_existence
     (hgamma c hc F E ψ hψ S S' T T' hS hS' P P' v hI hA hI' hA'
       w e ι hι ψv hψv)
 
-end Langlands.ClassField.Global.RelativeWeilGroup
+end Langlands.ClassFieldTheory.Global.RelativeWeilGroup

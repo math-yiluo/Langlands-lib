@@ -1,8 +1,6 @@
 # Full strong restriction to an actual source chart domain
 
-Author: Worker 36.
-
-This derived unit works with supplied actual indexed affinoid atlases over a
+This module works with supplied actual indexed affinoid atlases over a
 complete ultrametric normed field. It preserves the independent coefficient,
 ambient-space and original chart-index universes `u`, `v` and `w`. The algebras
 are the original presented positive-polyradius affinoid algebras and every
@@ -13,7 +11,7 @@ analytic spaces* (1993), Definition 1.2.3 and Remark 1.2.4(i), printed p.16 /
 PDF p.13, and Definition 1.2.7, printed p.18 / PDF p.15. Registered source:
 `berkovich-1993-etale-cohomology`, SHA256
 `06b42aca1c8f237e607d2cf1f15a41fdc9718324a4dc9fd5bce66574254bb91c`.
-Those pages were reread for this unit. Original chart domains have their
+Those pages were reread for this module. Original chart domains have their
 original affinoid algebras and bounded domain restrictions; a strong morphism
 has a compatible affinoid morphism at every admissible chart pair. Source
 restriction and the equality and composition consequences below are derived
@@ -79,4 +77,4 @@ complete equality.
 These constructions concern the supplied original atlases and their actual
 chart domains. General atlas extension, finite algebraic gluing, unrestricted
 strong composition and localization, structure sheaves, étale and equivariant
-sites, and the Harris tower remain separate obligations.
+sites, and the Harris tower lie outside this module.

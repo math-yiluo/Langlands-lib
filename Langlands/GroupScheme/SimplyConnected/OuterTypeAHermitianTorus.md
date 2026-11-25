@@ -1,9 +1,7 @@
 # The split torus in the descended Hermitian presentation
 
-Author: Worker 5375.
-
-This internal module completes the descent step of Task 6209
-(`OuterTypeAHermitianPresentationStatement`). The setting, `E`, `H`, `InnerTrivial`,
+This internal module completes the descent step of the proof of
+`OuterTypeAHermitianPresentationStatement`. The setting, `E`, `H`, `InnerTrivial`,
 `OuterHermitian`, `descendedIso` and `matrixPoints` are those of
 `OuterTypeAHermitianDescent`.
 

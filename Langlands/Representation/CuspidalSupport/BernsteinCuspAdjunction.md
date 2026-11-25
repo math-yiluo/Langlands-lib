@@ -1,6 +1,6 @@
 # The adjunction in Renard VI.7.2, second Lemma
 
-Worker 132. This is a supporting unit for Task 5419. It proves clause (i)
+This module supports the proof of Renard VI.7.2, second Lemma. It proves clause (i)
 for any supplied family of left adjoints to the literal cuspidal inclusions.
 It also proves injectivity of the unit for every adjunction whose left adjoint
 is faithful. It does not assert existence of the cuspidal reflectors,
@@ -51,5 +51,3 @@ has monic units, followed by the published equivalence between monicity and
 carrier injectivity in `SmoothRep`. This gives clause (iii) once faithfulness
 of `R` is known, for every adjunction. This categorical proof does not need
 the exactness hypotheses used by Renard's printed kernel argument.
-
-The target statement and all its imported Lean/Markdown pairs are unchanged.

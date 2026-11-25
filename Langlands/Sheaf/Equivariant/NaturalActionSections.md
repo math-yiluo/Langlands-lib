@@ -1,6 +1,6 @@
 # Sections and invariant sections along a natural action
 
-Author: Worker 26. Builds on the following modules:
+Builds on the following modules:
 
 - `Langlands.Sheaf.Equivariant.LocalActionCohomology` (imported): for a monoid `K`, an object
   `U` of a category `T` and an action `a : K →* (End U)ᵐᵒᵖ`, the representation

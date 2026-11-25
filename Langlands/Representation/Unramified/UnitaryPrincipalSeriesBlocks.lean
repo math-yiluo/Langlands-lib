@@ -181,6 +181,7 @@ theorem unitaryBlock_isIrreducible {m : ℕ} (hm : 0 < m) (w : Fin m → ℂˣ)
   have e := SmoothRep.equivOfIso
     (PadicField.TopologicalData.SegmentProductDatum.ofCuspidalsInducedIso T ρ h A)
   rw [hEq] at e
+  simp only [d] at hirr
   exact (isIrreducible_iff_of_equiv e).mp hirr
 
 /-- A normalized principal series of norm-one unramified characters is

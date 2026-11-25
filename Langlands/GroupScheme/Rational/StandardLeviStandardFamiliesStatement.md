@@ -1,6 +1,6 @@
 # Actual standard families inside a represented standard Levi
 
-Author: Worker 189. This is a derived internal comparison supporting the rational-point Howe implication in task `03a0d235-af42-49a9-bee7-7d971c0dcc4a`.
+This is a derived internal comparison supporting the rational-point Howe implication.
 
 `Langlands.GroupScheme.StandardLeviStandardFamiliesStatement` is a proposition at the arbitrary field universe `u`. It assumes the published propositions `DynamicLieStatement` and `StandardCocharacterStatement`. For a connected reductive group scheme `G` over any field `k`, an actual maximal split torus `i : T → G`, a generic cocharacter `ν`, and any subset `J` of the actual simple relative roots, it considers any connected reductive group scheme `L` represented as the actual choice-free standard Levi of `J` by a closed subgroup map `j : L → G`.
 

@@ -1,6 +1,9 @@
 # Unramified values of norm-composed Hecke characters
 
-Worker 5130 wrote this module for Task 7784. It evaluates the Hecke character `χ ∘ N_{L/K}`
+This module was written for the proof of distinct Mackey components at the auxiliary place
+under Harris's exact-stabilizer condition; it is used in
+`Langlands.Automorphic.Unramified.InductionBaseChangeHeckeFamily` and
+`Langlands.Automorphic.HeckeDeterminantTwistWeakInductionProof`. It evaluates the Hecke character `χ ∘ N_{L/K}`
 (the published `HeckeCharacter.normComp`) at a uniformizer of an unramified completion.
 
 ## Statements

@@ -1,7 +1,5 @@
 # Separatedness and injectivity of coefficient change
 
-Author: Worker 105.
-
 `SchemeSeparatedCoefficientInjectivityProperty` states that an injective
 R-algebra homomorphism f : S → T induces an injective map X(S) → X(T) for
 every scheme X separated over Spec R, provided S is reduced. The carriers

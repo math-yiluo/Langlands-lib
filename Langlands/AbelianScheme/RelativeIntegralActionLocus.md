@@ -17,9 +17,12 @@ local noetherianness of `E`.
 
 `relativeIntegralActionLocus` specializes the equalizer in
 `Langlands.Algebra.FiniteFreeRingHomLocus` to the canonical ring-valued relative
-endomorphism presheaf. Forgetting that presheaf's ring structure gives exactly
-the published relative-Hom presheaf used in the input `e`, by
-`relativeEndRingFunctor_forget`. Thus the supplied comparison concerns actual
+endomorphism presheaf. Forgetting that presheaf's ring structure gives the
+published relative-Hom presheaf used in the input `e`, up to the natural
+isomorphism `relativeEndRingFunctorForgetIso` (an endomorphism to its underlying
+morphism). The locus is formed with the composite
+`relativeEndRingRepresentation`: that isomorphism, restricted to the locally
+noetherian tests, followed by `e`. Thus the supplied comparison concerns actual
 integral endomorphisms with the canonical restriction maps.
 
 The product coordinates record the images of the integer basis. The two maps
@@ -34,7 +37,7 @@ For every locally noetherian test scheme `T` over `S`,
 with actual unital ring homomorphisms
 `O → End(B ×_S T)`. Its basis evaluation theorem says that the image of each
 basis vector is the corresponding projected morphism, decoded through
-`e.inv`. The inverse reconstructs the action by the integer-linear
+`e.inv` and regarded as an endomorphism by `CategoryTheory.End.of`. The inverse reconstructs the action by the integer-linear
 combination given by the supplied basis.
 
 `relativeIntegralActionLocusIso` gives the natural isomorphism on the entire

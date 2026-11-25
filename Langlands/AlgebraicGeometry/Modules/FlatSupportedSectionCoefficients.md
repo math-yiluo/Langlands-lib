@@ -1,6 +1,6 @@
 # Support-preserving coefficients under flat scalar extension
 
-This internal unit extends the published field argument in
+This internal module extends the published field argument in
 `ScalarExtensionKernels` and `SupportedSectionCoefficients` to a flat
 homomorphism of commutative rings. The construction `FlatBaseChange.scalarKernelImage`
 is the image of the scalar extension of the actual kernel inclusion.
@@ -20,7 +20,7 @@ after restriction and generates at the image point. The proof uses the
 published commutation of scalar sections maps with restriction, the kernel
 coefficient lemma, and the residue-field criterion for a line-bundle section
 to generate at a point. The hypotheses include flatness of the base ring map
-and the two canonical sections isomorphisms; this unit does not assert those
+and the two canonical sections isomorphisms; this module does not assert those
 isomorphisms for arbitrary schemes or prove ampleness descent.
 
 The provenance is internal: these constructions and proofs generalize the

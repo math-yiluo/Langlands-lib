@@ -22,11 +22,11 @@ local instance mellinProofSchemeSmooth (F : Type u) [Field F] (n : ℕ) :
 
 variable (F : Type u) [Field F] [NumberField F]
 
-local instance : MeasurableSpace (Ideles F) := borel _
-local instance : BorelSpace (Ideles F) := ⟨rfl⟩
-local instance : LocallyCompactSpace (Ideles F) :=
+private local instance : MeasurableSpace (Ideles F) := borel _
+private local instance : BorelSpace (Ideles F) := ⟨rfl⟩
+private local instance : LocallyCompactSpace (Ideles F) :=
   (AdelicSchwartzMellin.ideleContinuousEquiv F).symm.toHomeomorph.isClosedEmbedding.locallyCompactSpace
-local instance : SecondCountableTopology (Ideles F) :=
+private local instance : SecondCountableTopology (Ideles F) :=
   (AdelicSchwartzMellin.ideleContinuousEquiv F).symm.toHomeomorph.secondCountableTopology
 
 /-- The inverse-modulus torus estimate gives unconditional convergence on the

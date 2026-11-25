@@ -17,7 +17,7 @@ of the evaluation construction in the published
 `Langlands.Representation.Smooth.Factorization.TwoFactorExistenceProof`; it uses
 finite-dimensional Burnside in place of its group-algebra density argument.
 The helpers in `Langlands.AlgebraTensor` are internal derived lemmas for this
-proof. This unit proves existence only.
+proof. This module proves existence only.
 
 ## Commuting actions and multiplicity
 

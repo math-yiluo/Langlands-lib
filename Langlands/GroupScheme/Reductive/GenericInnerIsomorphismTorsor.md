@@ -1,7 +1,5 @@
 # An integral torsor of inner isomorphisms containing a generic isomorphism
 
-Worker 684.
-
 This is a derived interface for the torsor step in Conrad, *Reductive group
 schemes* (2014), Theorem 7.1.9(1), p.245, and the proof of Theorem 7.2.16,
 pp.261–262. The registered source is

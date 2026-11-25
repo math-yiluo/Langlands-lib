@@ -1,6 +1,6 @@
 # Open kernels under finite-index induction
 
-Worker 17 authored this module. `isOpen_ker_induce` proves that induction
+`isOpen_ker_induce` proves that induction
 from an open finite-index subgroup preserves an open representation kernel.
 For each of the finitely many right cosets, conjugation by the chosen
 representative pulls back the open source kernel, viewed inside the ambient
@@ -29,12 +29,11 @@ continuity and its comparison with kernel openness are separate predicates and
 theorems. Actual local specialization must supply the subgroup and openness
 facts from the local Weil construction.
 
-This contribution includes `Induction.lean` and its paired explanation,
-which supply the actual function model, finite-dimensionality and rank
+`Induction.lean` and its paired explanation, ported together with this
+module, supply the actual function model, finite-dimensionality and rank
 certificates, maps, functor, equivalences and genuine quotient operation.
-The project imports outside this contribution are the published
+The project imports outside these two modules are the published
 `Langlands.Weil.Representation.Basic` and `Predicates`, present at Library
 commit `843c574c920aa9926ab56adf662c74b3cd4ed0e1`. Pinned Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435` supplies subgroup topology and
-finite-coset instances. Compilation alone does not establish independent
-semantic acceptance or publication.
+finite-coset instances.

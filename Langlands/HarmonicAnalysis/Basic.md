@@ -31,7 +31,7 @@ be Fourier self-dual.
 support, and finiteness of Haar measure on compact sets. The unrestricted
 raw Bochner integral has Mathlib's usual convention on nonintegrable
 functions; the test-function transform does not depend on that convention.
-The output has not yet been bundled as a test function: Fourier
+The output is not bundled as a test function here: Fourier
 preservation of this space requires a separate theorem.
 
 `IsSelfDual ψ μ` states that the iterated Fourier integral converges on
@@ -65,9 +65,6 @@ does not use Tate's disputed scalar-measure ratio.
 
 The submodule packaging and intrinsic Fourier predicate are derived Lean
 implementations of these objects, not transcriptions of an existence proof.
-There are no project mathematical dependencies. The pinned environment is
-`2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, version 1, Lean 4.34.0,
-Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
-Worker 20 authored this construction. Native compilation completed without
-diagnostics. Development checks are separate from independent semantic
-review and publication; this file makes no acceptance claim.
+There are no project mathematical dependencies. The module was compiled
+with Lean 4.34.0 and Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
+Native compilation completed without diagnostics.

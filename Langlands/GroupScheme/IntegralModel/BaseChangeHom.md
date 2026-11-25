@@ -32,11 +32,11 @@ closed immersion. Its proof constructs the Cartesian square for the underlying
 pulled-back map by cancellation of the two structural pullback squares, then
 uses stability of closed immersions under base change.
 
-The naturality argument was developed from Worker 1596's shared `FieldFibers`
-draft. The Cartesian-square argument follows the published internal construction
+The naturality argument was developed from the one in the module `FieldFibers`
+(its private `baseChangeCompIso_naturality`). The Cartesian-square argument follows the published internal construction
 `SchematicImageComparison.isSchemeTheoreticallyDominant_baseChange`, with the
 closed-immersion morphism property in place of schematic dominance. All other
 ingredients are the imported category-theoretic pullback and morphism-property
-lemmas. This unit supplies transport of existing models and homomorphisms;
+lemmas. This module supplies transport of existing models and homomorphisms;
 existence of an extending homomorphism and the reductive and parabolic fibre
-conditions remain separate obligations of the full spreading theorem.
+conditions are not proved here; they are parts of the full spreading theorem.

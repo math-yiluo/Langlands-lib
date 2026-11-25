@@ -1,7 +1,5 @@
 # Fixed-vector visibility of Bernstein classes from support uniqueness and the standard-representative criterion
 
-Author: Worker 733, Task 6639 (`97df9594-40e0-45d8-8f8c-0e7562c6b4de`).
-
 This module proves the Library predicate
 `bernsteinFixedVectorVisibility i ν family K` at a level `K` with Iwahori
 decompositions, from two explicit hypotheses. Both theorems are conditional.

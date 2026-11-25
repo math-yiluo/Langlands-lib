@@ -1,7 +1,5 @@
 # Character-localized heredity for upper block induction
 
-Author: Worker 330.
-
 The theorem `Langlands.inducedLocalization.{uF,uV}` proves exactly the published
 closed proposition `Langlands.InducedLocalizationStatement.{uF,uV}`. Its proof
 applies `Whittaker.inducedLocalization_of_prerequisites` to four published closed
@@ -30,19 +28,19 @@ chosen comparison map, evaluation formula or naturality assertion.
 
 The Lean proof supplies the constructor's four inputs in order:
 
-- `Whittaker.unipotentOrbit.{uF}`, proved by Worker 179 with Worker 330,
+- `Whittaker.unipotentOrbit.{uF}`
   classifies the actual upper-unipotent double cosets and gives an ordered
   support filtration with the prescribed permutation representatives.
-- `Whittaker.nonOpenCharacterWitness.{uF}`, proved by Worker 662 with
-  Workers 330 and 179, gives an element in each other orbit stabilizer whose
+- `Whittaker.nonOpenCharacterWitness.{uF}` gives an element in each other
+  orbit stabilizer whose
   Levi projection is the identity and whose ambient character value is
   nonidentity.
-- `Whittaker.compactLocalization.{uF,uV}`, proved by Worker 672, identifies
+- `Whittaker.compactLocalization.{uF,uV}` identifies
   the actual character quotient of compact induction from every closed
   subgroup of the canonical upper-unipotent group with the inducing
   representation's character quotient.
-- `Jacquet.Localization.filtrationCollapse.{uF,max uF uV}`, proved by
-  Worker 673, identifies the ambient character quotient with a selected
+- `Jacquet.Localization.filtrationCollapse.{uF,max uF uV}`
+  identifies the ambient character quotient with a selected
   graded quotient when all the other graded localizations vanish.
 
 The collapse theorem uses carrier universe `max uF uV` because the induced
@@ -84,8 +82,7 @@ criterion.
 
 This is the final internal application of the published geometric assembly and
 the four prerequisite proofs. Their separate files document their constructions
-and source relationships. No unpublished draft is reused in this application.
-The target and all of its imported definitions remain unchanged.
+and source relationships. The target and all of its imported definitions remain unchanged.
 
 The original source map is that of `InducedLocalizationStatement`: Rodier's
 modified author manuscript, *Modèles de Whittaker des représentations admissibles

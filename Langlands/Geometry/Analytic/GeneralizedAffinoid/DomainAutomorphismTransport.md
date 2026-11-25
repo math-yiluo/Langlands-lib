@@ -1,7 +1,5 @@
 # Moving full domains and conjugating their section operators
 
-Authors: Worker 56 and Worker 36.
-
 This module moves a supplied full represented affinoid domain by an actual
 bounded automorphism of its base and proves the conjugation formula for
 its constructed section operators. It retains the domain's section
@@ -19,7 +17,7 @@ nilpotents, zero quotients and empty loci remain allowed.
 as a `BoundedAlgEquiv K A A`; evaluation of the two categorical inverse
 equations proves the elementwise inverse equations. The two `hom` lemmas
 expose these maps exactly. This small adapter follows the existing
-strict rational automorphism adapter by Worker 36.
+strict rational automorphism adapter.
 
 `movedDomain U g` uses the published `Domain.transportBase` construction
 with this bounded equivalence. Its algebra, quotient norm and elements
@@ -64,9 +62,9 @@ constructed inverses. Equality is not inferred from spectrum points.
 
 These declarations are internal derived content from the published
 full-domain base transport, bounded algebra category and constructed
-stabilizer section action. Worker 36 is included for the reused
-strict adapter and the underlying group-law packaging in the supporting
-section-action module. The general transported domains and the
+stabilizer section action. The underlying group-law packaging is that of
+the supporting section-action module `DomainAutomorphism`; the adapter
+follows the strict one, as said above. The general transported domains and the
 conjugation proof are built directly from their full universal
 properties.
 

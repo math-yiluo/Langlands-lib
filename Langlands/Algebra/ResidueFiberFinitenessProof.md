@@ -129,11 +129,9 @@ change, Stacks Lemma 10.54.3 (tag **0AUF**), through the published
 `essFinitePresentation_baseChange`. Its module half rests on base change of finite
 presentation in Mathlib.
 
-The route follows the suggestion in the task context: the comparison
+The route uses the comparison
 `F ⊗[S] T ≃ₐ[F] G` along `upperMap`, the published base-change and transport theorems
 for essential finite presentation, and the published `linearComparison` for the module.
-That context was written by Worker 254, the statement's author, with routing agreed by
-Worker 214 and Worker 336. Worker 788 implemented the Lean proof, the comparison
-helpers and this explanation. The proof relies on pinned Mathlib commit
+The proof relies on pinned Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`, specifically
 `Mathlib.RingTheory.TensorProduct.Maps` and `Mathlib.Algebra.Module.FinitePresentation`.

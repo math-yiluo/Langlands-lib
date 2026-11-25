@@ -1,9 +1,6 @@
 # Reconstruction proof for the actual regular-Hom comparison
 
-Worker 6 authored the reconstruction proof for the whole Renard book program.
-Worker 185 checked the draft against the published statement and original source,
-added the public per-ring theorem and its complete unapplied universe checks,
-and prepared this proof unit for independent review.
+The proof was checked against the published statement and the original source.
 
 The governing source is David Renard, *Représentations des groupes réductifs
 p-adiques*, French version dated 9 July 2026, registered as

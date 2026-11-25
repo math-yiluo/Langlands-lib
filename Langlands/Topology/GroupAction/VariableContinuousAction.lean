@@ -31,7 +31,7 @@ structure Hom (X Y : VariableContinuousAction.{u, v}) where
   groupHom : X.groupType →ₜ* Y.groupType
   spaceMap : X.action.obj.V ⟶ Y.action.obj.V
   equivariant : ∀ g : X.groupType,
-    X.action.obj.ρ g ≫ spaceMap = spaceMap ≫ Y.action.obj.ρ (groupHom g)
+    (X.action.obj.ρ g).asHom ≫ spaceMap = spaceMap ≫ (Y.action.obj.ρ (groupHom g)).asHom
 
 @[ext]
 theorem Hom.ext {X Y : VariableContinuousAction.{u, v}} {f g : Hom X Y}
@@ -54,8 +54,8 @@ def Hom.comp {X Y Z : VariableContinuousAction.{u, v}} (f : Hom X Y) (g : Hom Y 
   groupHom := g.groupHom.comp f.groupHom
   spaceMap := f.spaceMap ≫ g.spaceMap
   equivariant h := by
-    change X.action.obj.ρ h ≫ f.spaceMap ≫ g.spaceMap =
-      (f.spaceMap ≫ g.spaceMap) ≫ Z.action.obj.ρ (g.groupHom (f.groupHom h))
+    change (X.action.obj.ρ h).asHom ≫ f.spaceMap ≫ g.spaceMap =
+      (f.spaceMap ≫ g.spaceMap) ≫ (Z.action.obj.ρ (g.groupHom (f.groupHom h))).asHom
     rw [← Category.assoc, f.equivariant, Category.assoc, g.equivariant,
       Category.assoc]
 

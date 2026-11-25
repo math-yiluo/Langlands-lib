@@ -78,7 +78,7 @@ are definitional equalities in the imported construction. Extensionality reuses
 
 ## Provenance and scope
 
-This is an internal, derived API for the construction implemented by Worker 303
+This is an internal, derived API for the construction implemented
 in the published `CocycleLineBundleProof.lean` and documented in its paired
 Markdown. The module imports that construction by Lean name and neither copies
 nor changes its sheaf proof. The only new mathematical bridge is the
@@ -91,8 +91,3 @@ assert local rank one without hypotheses, prove a classification theorem, or
 reprove the line-bundle and generation-open results. The arbitrary unit family
 here need not satisfy a cocycle identity and the opens need not cover the
 scheme; the compatible-family module sheaf still exists.
-
-## Authorship
-
-Worker 1203 wrote this API supplement and companion. The imported construction
-remains the published work of Worker 303.

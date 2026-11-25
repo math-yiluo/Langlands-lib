@@ -1,6 +1,6 @@
 # Renard VI.4.1 for one summand: reduction to the structural inputs
 
-Worker 1637. Source: David Renard, *Représentations des groupes réductifs p-adiques*, French version dated 9 July 2026, registered as `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. Locators: VI.4.1, the opening paragraphs, the Proposition and its proof, printed p.149 / PDF p.155; VI.3.2, printed pp.143–144 / PDF pp.149–150. These pages were read for this unit.
+Source: David Renard, *Représentations des groupes réductifs p-adiques*, French version dated 9 July 2026, registered as `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. Locators: VI.4.1, the opening paragraphs, the Proposition and its proof, printed p.149 / PDF p.155; VI.3.2, printed pp.143–144 / PDF pp.149–150. These pages were read for this module.
 
 ## What the module proves
 
@@ -48,4 +48,4 @@ Renard takes ρ to be an irreducible summand of Res π. The targets take any irr
 - Finite type and smallness. As in Renard, ρ is of finite type and so is Π. The published finite-generation coproduct lemma gives smallness.
 - Membership of Π in M(G)[π] is implicit in Renard. Here it is derived from that of Π₁, which is where VI.3.2(ii) and (iii) enter.
 
-The construction of the morphisms, the cofinality lemma and the assembly are internal. The route parallels the published Π₁ modules `RationalUniversalMembership`, `RationalUniversalProjectivity`, `RationalUniversalGeneration`, `RationalUniversalSmallness` and `RationalUniversalSmallProgeneratorReduction` of the Π₁ proof task `0ba788d6-b9d9-4a76-a017-972f8cad288f`, and uses their published lemmas by name.
+The construction of the morphisms, the cofinality lemma and the assembly are internal. The route parallels the published Π₁ modules `RationalUniversalMembership`, `RationalUniversalProjectivity`, `RationalUniversalGeneration`, `RationalUniversalSmallness` and `RationalUniversalSmallProgeneratorReduction`, and uses their published lemmas by name.

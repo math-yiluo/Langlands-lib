@@ -1,6 +1,6 @@
 # Jacquet modules of supercuspidal inductions vanish without conjugate Levis
 
-Author: Worker 6. Module `Langlands.Representation.Exponents.LeviJacquetInductionVanishingStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`. Statement `LeviJacquetInductionVanishingStatement : Prop`; nothing is proved here.
+Module `Langlands.Representation.Exponents.LeviJacquetInductionVanishingStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`. Statement `LeviJacquetInductionVanishingStatement : Prop`; nothing is proved here.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*, French edition dated 9 July 2026, VI.5.3, Proposition, assertion (i), printed p.173 / PDF p.179, with its proof on the same page. The registered source ID is `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. In translation, the Proposition says: let `P = MN` and `Q = LU` be parabolic subgroups of `G`, `(ρ, W)` a supercuspidal representation of `M`, and put `τ = r_Q^G i_P^G ρ`. Then (i) if `L` has no Levi subgroup conjugate to `M` in `G`, then `τ = 0`. Assertion (ii) is the separate statement `LeviJacquetInductionNoSupercuspidalStatement`; assertion (iii) is not stated.
 
@@ -40,7 +40,7 @@ A Levi subgroup of `L` is a Levi factor `M''` of a parabolic subgroup `P''` of `
 
 ## Remaining obligations
 
-The proof is a separate obligation. The source derives (i) from the geometric lemma VI.5.1: the graded pieces of `r_Q^G i_P^G ρ` are `i^L_{Q'} ∘ ι ∘ r^M_{P'} ρ`, and each `r^M_{P'} ρ` vanishes unless `P' = M`, in which case `M` is a Levi subgroup of `w·L`. The represented geometric lemma is the published `RepresentedGeometricLemmaStatement`, whose proof is task `c060fb34-b423-4ac5-8448-788ac7627913`.
+The proof is a separate obligation. The source derives (i) from the geometric lemma VI.5.1: the graded pieces of `r_Q^G i_P^G ρ` are `i^L_{Q'} ∘ ι ∘ r^M_{P'} ρ`, and each `r^M_{P'} ρ` vanishes unless `P' = M`, in which case `M` is a Levi subgroup of `w·L`. The represented geometric lemma is the published `RepresentedGeometricLemmaStatement`, proved by `representedGeometricLemma` (module `Langlands.Representation.Geometric.RepresentedGeometricLemmaProof`).
 
 ## Provenance
 

@@ -1,6 +1,7 @@
 # Assembling the actual archimedean inverse-transpose pairing
 
-This internal construction for Task 7294 specializes the actual source-model
+This internal construction for the proof of
+`CuspidalTransposeInverseContragredientStatement` specializes the actual source-model
 assembly to inverse transpose and connects all local identities to the
 full archimedean action.
 
@@ -31,7 +32,7 @@ models. It uses the already proved density-model and finite-family
 assembly constructions. The local form-existence hypotheses remain
 explicit inputs. No local Gelfand--Kazhdan existence theorem, finite
 adelic pairing, or unconditional global contragredient theorem is
-asserted by this unit.
+asserted by this module.
 
 The provenance is internal: all comparisons are direct coordinate
 proofs for the Library's actual local and global involutions, followed

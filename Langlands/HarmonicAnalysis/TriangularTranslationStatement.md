@@ -1,7 +1,5 @@
 # Finite triangular translations of product measures
 
-Author: Worker 117.
-
 This module states the internal prerequisite
 `Langlands.HarmonicAnalysis.FiniteTriangularTranslationStatement`. It supplies
 no proof. The declaration is a transparent proposition definition.

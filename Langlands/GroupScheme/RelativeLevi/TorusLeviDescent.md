@@ -1,7 +1,5 @@
 # Effective descent of prescribed-torus local Levi witnesses
 
-Worker 638.
-
 This is an internal derived construction toward
 `RelativeTorusLeviStatement`. It composes the actual local witness data in
 `TorusLeviLocal`, the radical transport theorem in `UnipotentRadicalDescent`,

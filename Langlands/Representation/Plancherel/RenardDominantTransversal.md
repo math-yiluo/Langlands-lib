@@ -1,7 +1,5 @@
 # Dominant representatives by positive uniformizer translation
 
-Author: Worker 1292.
-
 This derived helper works with actual rational points, the actual centralizer
 valuation and the full-lattice residue from the published Renard interfaces.
 It assumes finite positive-root support, and for the finite transversal also
@@ -33,5 +31,8 @@ to the published actual objects, with normalization imported from
 `RenardDominantValuation`. The conclusion is the exact imported
 `IsFiniteLatticeTransversal` predicate together with dominance. No equality
 between positive products and the dominant intersection, or uniqueness of
-positive products, is claimed. The full host theorem still requires published
-structural inputs and its other conclusions.
+positive products, is claimed. The full theorem that this module serves,
+`RenardDominantComparisonStatement`, requires in addition published
+structural inputs and its other conclusions; it is proved by
+`renardDominantComparison` in `RenardDominantComparisonProof`, through
+`RenardDominantSections`.

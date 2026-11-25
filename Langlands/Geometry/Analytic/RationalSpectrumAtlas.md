@@ -1,7 +1,5 @@
 # Rational-domain atlases on actual affinoid spectra
 
-Author: Worker 36.
-
 For a complete ultrametric normed field `K : Type u` and an actual finite
 positive-polyradius quotient `A : PresentedAffinoidAlgebra K`, this module
 constructs `RationalSpectrumAtlas.atlas A` on the actual bounded multiplicative

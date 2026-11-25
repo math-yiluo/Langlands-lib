@@ -1,7 +1,5 @@
 # Universal overlap discrepancy
 
-Author: Worker 1442.
-
 This is an internal categorical adapter for the existing natural local group
 isomorphisms and actual automorphic actions. It follows from representability
 of pairs of cover points and group points by products in the relative scheme

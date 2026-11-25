@@ -1,0 +1,100 @@
+# `renames-applied.tsv`
+
+This page holds the table `renames-applied.tsv` as it is, in the code block below. To use it, save the content of the block under that name.
+
+```text
+# The constants of the extract that the rows of STX-RENAMES.tsv rename (generated ones included)
+old full name	new full name
+AdicCompletion.factorPow_evalₐ	AdicCompletion.stacks_factorPow_evalₐ
+AdicCompletion.isNoetherianRing	AdicCompletion.stacks_isNoetherianRing
+Algebra.IsSeparableExtension	Algebra.StacksIsSeparableExtension
+Algebra.IsSeparableExtension.casesOn	Algebra.StacksIsSeparableExtension.casesOn
+Algebra.IsSeparableExtension.isSeparablyGenerated	Algebra.StacksIsSeparableExtension.isSeparablyGenerated
+Algebra.IsSeparableExtension.mk	Algebra.StacksIsSeparableExtension.mk
+Algebra.IsSeparableExtension.mk._flat_ctor	Algebra.StacksIsSeparableExtension.mk._flat_ctor
+Algebra.IsSeparableExtension.rec	Algebra.StacksIsSeparableExtension.rec
+Algebra.IsSeparableExtension.recOn	Algebra.StacksIsSeparableExtension.recOn
+Algebra.isSeparableExtension_of_perfectField	Algebra.stacks_isSeparableExtension_of_perfectField
+AlgebraicGeometry.Scheme.Hom.apply_fiberι	AlgebraicGeometry.Scheme.Hom.stacks_apply_fiberι
+AlgebraicGeometry.Scheme.Hom.fiberMap	AlgebraicGeometry.Scheme.Hom.stacksFiberMap
+AlgebraicGeometry.Scheme.Hom.fiberMap._proof_1	AlgebraicGeometry.Scheme.Hom.stacksFiberMap._proof_1
+AlgebraicGeometry.Scheme.IdealSheafData.isReduced_subscheme_vanishingIdeal	AlgebraicGeometry.Scheme.IdealSheafData.stacks_isReduced_subscheme_vanishingIdeal
+AlgebraicGeometry.Scheme.normalization	AlgebraicGeometry.Scheme.stacksNormalization
+IsAnalyticallyUnramified	StacksIsAnalyticallyUnramified
+IsAnalyticallyUnramified.congr_simp	StacksIsAnalyticallyUnramified.congr_simp
+IsAnalyticallyUnramified.of_associatedPrimes_quotient_span_singleton	StacksIsAnalyticallyUnramified.of_associatedPrimes_quotient_span_singleton
+IsAnalyticallyUnramified.of_isNagataRing	StacksIsAnalyticallyUnramified.of_isNagataRing
+IsCohenRing	StacksIsCohenRing
+IsCohenRing.casesOn	StacksIsCohenRing.casesOn
+IsCohenRing.exists_prime_maximalIdeal_eq_span	StacksIsCohenRing.exists_prime_maximalIdeal_eq_span
+IsCohenRing.exists_residueField_ringEquiv	StacksIsCohenRing.exists_residueField_ringEquiv
+IsCohenRing.formallySmooth_quotient_span_pow	StacksIsCohenRing.formallySmooth_quotient_span_pow
+IsCohenRing.mk	StacksIsCohenRing.mk
+IsCohenRing.mk._flat_ctor	StacksIsCohenRing.mk._flat_ctor
+IsCohenRing.rec	StacksIsCohenRing.rec
+IsCohenRing.recOn	StacksIsCohenRing.recOn
+IsCohenRing.toIsAdicComplete	StacksIsCohenRing.toIsAdicComplete
+IsCohenRing.toIsDiscreteValuationRing	StacksIsCohenRing.toIsDiscreteValuationRing
+IsN1	StacksIsN1
+IsN1._proof_1	StacksIsN1._proof_1
+IsNagataRing	StacksIsNagataRing
+IsNagataRing.casesOn	StacksIsNagataRing.casesOn
+IsNagataRing.exists_pow_eq_iff_exists_pow_eq_adicCompletion	StacksIsNagataRing.exists_pow_eq_iff_exists_pow_eq_adicCompletion
+IsNagataRing.isJapaneseRing_quotient	StacksIsNagataRing.isJapaneseRing_quotient
+IsNagataRing.isNoetherianRing	StacksIsNagataRing.isNoetherianRing
+IsNagataRing.mk	StacksIsNagataRing.mk
+IsNagataRing.mk._flat_ctor	StacksIsNagataRing.mk._flat_ctor
+IsNagataRing.of_finiteType	StacksIsNagataRing.of_finiteType
+IsNagataRing.of_isPrecomplete_maximalIdeal	StacksIsNagataRing.of_isPrecomplete_maximalIdeal
+IsNagataRing.rec	StacksIsNagataRing.rec
+IsNagataRing.recOn	StacksIsNagataRing.recOn
+IsRegularLocalRing.isDomain	IsRegularLocalRing.stacks_isDomain
+Module.Flat.tensorProduct_of_flat	Module.Flat.stacks_tensorProduct_of_flat
+Module.depth	Module.stacksDepth
+Module.depth._proof_1	Module.stacksDepth._proof_1
+Module.depth.eq_1	Module.stacksDepth.eq_1
+Module.depth_le_ringKrullDim_quotient_of_mem_associatedPrimes	Module.stacks_depth_le_ringKrullDim_quotient_of_mem_associatedPrimes
+_private.StacksFrontier.RingTheory.Nagata.Universes.0.IsNagataRing.of_finiteType._proof_1_1	_private.StacksFrontier.RingTheory.Nagata.Universes.0.StacksIsNagataRing.of_finiteType._proof_1_1
+_private.StacksFrontier.RingTheory.Nagata.Universes.0.IsNagataRing.of_finiteType._proof_1_2	_private.StacksFrontier.RingTheory.Nagata.Universes.0.StacksIsNagataRing.of_finiteType._proof_1_2
+ringKrullDim_ne_top_of_finiteType	stacks_ringKrullDim_ne_top_of_finiteType
+topologicalKrullDimAt	stacksTopologicalKrullDimAt
+topologicalKrullDimAt.eq_1	stacksTopologicalKrullDimAt.eq_1
+# edits per rename (references, declared names, namespace commands)
+# AdicCompletion.factorPow_evalₐ	AdicCompletion.stacks_factorPow_evalₐ	7
+# AdicCompletion.isNoetherianRing	AdicCompletion.stacks_isNoetherianRing	1
+# Algebra.IsSeparableExtension	Algebra.StacksIsSeparableExtension	109
+# Algebra.IsSeparableExtension.isSeparablyGenerated	Algebra.StacksIsSeparableExtension.isSeparablyGenerated	2
+# Algebra.isSeparableExtension_of_perfectField	Algebra.stacks_isSeparableExtension_of_perfectField	9
+# AlgebraicGeometry.Scheme.Hom.apply_fiberι	AlgebraicGeometry.Scheme.Hom.stacks_apply_fiberι	3
+# AlgebraicGeometry.Scheme.Hom.fiberMap	AlgebraicGeometry.Scheme.Hom.stacksFiberMap	27
+# AlgebraicGeometry.Scheme.IdealSheafData.isReduced_subscheme_vanishingIdeal	AlgebraicGeometry.Scheme.IdealSheafData.stacks_isReduced_subscheme_vanishingIdeal	10
+# AlgebraicGeometry.Scheme.normalization	AlgebraicGeometry.Scheme.stacksNormalization	339
+# IsAnalyticallyUnramified	StacksIsAnalyticallyUnramified	39
+# IsAnalyticallyUnramified.isReduced	StacksIsAnalyticallyUnramified.isReduced	3
+# IsAnalyticallyUnramified.of_associatedPrimes_quotient_span_singleton	StacksIsAnalyticallyUnramified.of_associatedPrimes_quotient_span_singleton	3
+# IsAnalyticallyUnramified.of_isNagataRing	StacksIsAnalyticallyUnramified.of_isNagataRing	5
+# IsCohenRing	StacksIsCohenRing	29
+# IsCohenRing.existsUnique_formallySmooth_zmod_quotient	StacksIsCohenRing.existsUnique_formallySmooth_zmod_quotient	1
+# IsCohenRing.exists_prime_maximalIdeal_eq_span	StacksIsCohenRing.exists_prime_maximalIdeal_eq_span	2
+# IsCohenRing.exists_residueField_ringEquiv	StacksIsCohenRing.exists_residueField_ringEquiv	4
+# IsCohenRing.formallySmooth_quotient_span_pow	StacksIsCohenRing.formallySmooth_quotient_span_pow	3
+# IsCohenRing.mk	StacksIsCohenRing.mk	1
+# IsN1	StacksIsN1	59
+# IsNagataRing	StacksIsNagataRing	119
+# IsNagataRing.exists_pow_eq_iff_exists_pow_eq_adicCompletion	StacksIsNagataRing.exists_pow_eq_iff_exists_pow_eq_adicCompletion	1
+# IsNagataRing.isNoetherianRing	StacksIsNagataRing.isNoetherianRing	1
+# IsNagataRing.of_essFiniteType	StacksIsNagataRing.of_essFiniteType	1
+# IsNagataRing.of_field	StacksIsNagataRing.of_field	1
+# IsNagataRing.of_finiteType	StacksIsNagataRing.of_finiteType	3
+# IsNagataRing.of_isPrecomplete_maximalIdeal	StacksIsNagataRing.of_isPrecomplete_maximalIdeal	5
+# IsRegularLocalRing.isDomain	IsRegularLocalRing.stacks_isDomain	6
+# Module.Flat.tensorProduct_of_flat	Module.Flat.stacks_tensorProduct_of_flat	2
+# Module.depth	Module.stacksDepth	362
+# Module.depth_le_ringKrullDim_quotient_of_mem_associatedPrimes	Module.stacks_depth_le_ringKrullDim_quotient_of_mem_associatedPrimes	4
+# namespace IsCohenRing	StacksIsCohenRing	2
+# namespace IsNagataRing	StacksIsNagataRing	2
+# ringKrullDim_ne_top_of_finiteType	stacks_ringKrullDim_ne_top_of_finiteType	2
+# topologicalKrullDimAt	stacksTopologicalKrullDimAt	143
+# not rewritten (text is not a reference to the name): StacksFrontier.RingTheory.CohenRing	49	IsCohenRing.toIsDiscreteValuationRing	IsDiscreteValuationRing R	declared name
+# not rewritten (text is not a reference to the name): StacksFrontier.RingTheory.CohenRing	49	IsCohenRing.toIsAdicComplete	IsAdicComplete (IsLocalRing.maximalIdeal R) R	declared name
+```

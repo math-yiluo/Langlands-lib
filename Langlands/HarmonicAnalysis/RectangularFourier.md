@@ -2,7 +2,7 @@
 
 This module constructs the scalar matrix model at the beginning of JPSS Section 6.1 on the actual space `Matrix (Fin n) (Fin (n + 1)) K`. It supplies coordinates, right translations, the raw last-column partial Fourier integrals with both signs, and the raw full Fourier integral. The full transform and the right action also work in arbitrary rectangular dimensions `r` and `s`.
 
-The source is H. Jacquet, I. I. Piatetski-Shapiro and J. A. Shalika, *Rankin-Selberg Convolutions*, American Journal of Mathematics 105 (1983), 367–464, Section 6.1, printed pages 427–428 (one-based PDF pages 62–63). The registered source is `jpss-1983-rankin-selberg`, retained at `/home/taskhub/central-library/Jacquet-Piatetski-Shapiro-Shalika--Rankin-Selberg Convolutions--1983.pdf`, SHA-256 `d9feed6388ca5acf02ecc6a8cce984871a7c28f062ff441e45a71fa2d8962245`. Both scanned pages were visually checked. No source-specific errata file was present at `notes/errata/jpss-1983-rankin-selberg.md` in the workspace, current Library, or shared project notes.
+The source is H. Jacquet, I. I. Piatetski-Shapiro and J. A. Shalika, *Rankin-Selberg Convolutions*, American Journal of Mathematics 105 (1983), 367–464, Section 6.1, printed pages 427–428 (one-based PDF pages 62–63). The registered source is `jpss-1983-rankin-selberg`, retained at `/home/taskhub/central-library/Jacquet-Piatetski-Shapiro-Shalika--Rankin-Selberg Convolutions--1983.pdf`, SHA-256 `d9feed6388ca5acf02ecc6a8cce984871a7c28f062ff441e45a71fa2d8962245`. Both scanned pages were visually checked. No source-specific errata file was present at `notes/errata/jpss-1983-rankin-selberg.md` in the Library or shared project notes.
 
 On page 427 the source sets `t = r + 1`. Our `n` is its `r = t - 1`. The first `n` columns are the square block `x`, and the last column is `y`. The source's test-function action evaluates `Φ` at `mg`; its last-column transform uses the conjugate character. Page 428, formula (6), defines the full Fourier transform with a plus-sign trace pairing. The entry sum below expresses that pairing without introducing a transpose convention into the API.
 
@@ -24,7 +24,7 @@ Assume `K` is a field with a topology and `IsTopologicalRing K`. For any `r s : 
 
 `rectangularTranslate (g * h) Φ = rectangularTranslate g (rectangularTranslate h Φ)`.
 
-`rectangularSchwartzRepresentation` bundles precisely this action as a representation. The construction follows the published `rowHomeomorph`, `rowTranslate` and `rowSchwartzRepresentation` pattern and imports that infrastructure. Specializing `r = n` and `s = n + 1` gives the JPSS Section 6 test space and group.
+`rectangularSchwartzRepresentation` bundles precisely this action as a representation. The construction follows the `rowHomeomorph`, `rowTranslate` and `rowSchwartzRepresentation` pattern and imports that infrastructure. Specializing `r = n` and `s = n + 1` gives the JPSS Section 6 test space and group.
 
 ## Full Fourier data
 
@@ -46,4 +46,4 @@ Thus the default partial transform uses the inverse character from page 427. `pa
 
 For partial convergence and linearity, assume a topological field as above, `T2Space K`, `SigmaFinite μ.measure`, and the explicit compatibility `BorelSpace (Fin n → K)` for the row measurable space. `partialFourierIntegrand_integrable` and `partialFourierPlusIntegrand_integrable` combine the proved compact support of the fixed-first-block slice with continuity of the corresponding character kernel. Finite-on-compactness of `rowMeasure μ n` then gives integrability. `partialFourierTransform` and `partialFourierPlusTransform` are complex-linear maps from actual rectangular Schwartz functions into all complex functions, with direct evaluation lemmas. Their additivity and scalar proofs use the same Bochner integral laws as the full transform.
 
-The codomains of all three transforms are spaces of all functions. This unit supplies no assertion or assumed certificate of preservation of Schwartz space, inversion, a self-dual measure, the Fourier-conjugated `rho0` action, covariance, vector-valued Whittaker integrals, or analytic base theorems. In particular, no closure or inversion proposition is used as if it were a proof.
+The codomains of all three transforms are spaces of all functions. This module supplies no assertion or assumed certificate of preservation of Schwartz space, inversion, a self-dual measure, the Fourier-conjugated `rho0` action, covariance, vector-valued Whittaker integrals, or analytic base theorems. In particular, no closure or inversion proposition is used as if it were a proof.

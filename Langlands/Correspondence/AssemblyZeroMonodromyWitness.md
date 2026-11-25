@@ -1,7 +1,5 @@
 # The single-block assembly witness of a zero-monodromy parameter
 
-Author: Worker 1700.
-
 Henniart 2002, §2.9 (printed p. 596, PDF p. 10), states that the assembled map
 `π` satisfies `π(σ) = π_0(σ)` for every irreducible Weil class `σ`. In the
 assembly relation of `AssemblyRelation`, this is the case `r = 1`, `m = 0`: the

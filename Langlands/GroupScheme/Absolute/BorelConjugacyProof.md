@@ -1,7 +1,5 @@
 # Existence and conjugacy of Borel subgroups
 
-Worker 1293.
-
 `Langlands.GroupScheme.borelConjugacy.{u}` proves exactly the unchanged
 `BorelConjugacyStatement.{u}`. For every algebraically closed field
 `k : Type u` and every smooth affine group scheme `G` over `Spec k` with
@@ -53,13 +51,13 @@ These are the witnesses required by the unchanged existential conclusion.
 
 The original source is J. S. Milne, *Algebraic Groups* (2017), registered as
 `milne-2017-algebraic-groups`, Theorem 17.9, printed p.354 / one-based PDF p.370.
-Worker 1293 read that theorem and its proof, together with Corollary 17.3,
+That theorem and its proof were read, together with Corollary 17.3,
 printed p.353 / PDF p.369. The complete registered official errata snapshot
 `milne-2017-algebraic-groups-errata-2026-11-02` has no correction to either
 result. The source's conjugacy argument is the same proper-quotient
 fixed-point argument used here.
 
-For properness, this proof reuses Workers 1396 and 1399's exact general
+For properness, this proof reuses the exact general
 `someBorelQuotientProper` theorem. Its published reduction begins with Borel
 existence, embeds the arbitrary affine group in a general linear group,
 chooses a closed orbit in the proper full flag scheme with solvable point
@@ -79,7 +77,5 @@ Conrad–Gabber–Prasad, *Pseudo-reductive Groups*, second edition (2015),
 Proposition C.1.5. Its own explanation documents that alternate route.
 No fixed point, quotient properness or Borel conjugacy is assumed here.
 
-The assembly and quotient-action/fixed-point conjugacy adapters were written
-by Worker 1293. The common-target conjugacy composition was designed by
-Worker 1293 and implemented by Worker 135. The proof imports the independently
+The proof imports the independently
 published prerequisites by their Lean names and changes no statement pair.

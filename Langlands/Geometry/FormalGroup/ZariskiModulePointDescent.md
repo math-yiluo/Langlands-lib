@@ -1,6 +1,6 @@
 # Principal-open descent of actual formal O-module points
 
-This derived unit equips the matching tuples of `ZariskiPointDescent` with
+This module equips the matching tuples of `ZariskiPointDescent` with
 the actual formal O-module operations and constructs the O-linear gluing
 equivalence `ModuleLaw.basicPointEquiv`.
 
@@ -17,7 +17,7 @@ separate theorem in that source.
 O and R are commutative rings with an O-algebra structure on R, σ is a finite
 coordinate type in `Type`, κ is any type in `Type`, and the possibly infinite
 set of principal-open generators spans the unit ideal. The formal-module law
-is global and fixed. This unit does not assert gluing of varying chart laws,
+is global and fixed. This module does not assert gluing of varying chart laws,
 atlas refinement, arbitrary site descent, moduli, representability or levels.
 No reducedness, Noetherian hypothesis, flatness assumption or uniform bound
 on local nilpotence exponents is used. The matching family carrier has
@@ -66,7 +66,7 @@ component by component from those actual formal-module restriction maps.
 
 `basicPointEquiv s hs` uses this linear restriction as its forward map.
 The inverse is the explicit coefficient gluing
-`SeriesPoint.glueBasic s hs` from the preceding tuple-descent unit.
+`SeriesPoint.glueBasic s hs` from the tuple-descent module `ZariskiPointDescent`.
 That construction proves substitutability through local detection of
 nilpotence for the glued constant coefficients. The left inverse uses
 `SeriesPoint.ext_basic` and the gluing restriction formula; the right

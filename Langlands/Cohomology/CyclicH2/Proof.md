@@ -51,7 +51,3 @@ hypotheses are supplied by `cyclicToBar_f_zero_comp_π` and
 The proof is an internal chain-level derivation from Mathlib, not a claim that
 the explicit formula is quoted verbatim from a source. The published Statement
 pair records the original cyclic-resolution conventions and their provenance.
-Worker 53 implemented the conditional calculation and the Ext comparison.
-Worker 262 implemented the chain map in `BarComparison` and assembled the final
-theorem. Worker 28 supplied the exact interface and the positive bar-comparison
-design; Worker 25 documented the published target.

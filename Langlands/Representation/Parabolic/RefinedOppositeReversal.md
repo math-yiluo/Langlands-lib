@@ -1,6 +1,6 @@
 # Full normalized reversal inside a product Levi
 
-Worker 514 constructs the full representation equivalence needed to transfer
+This module constructs the full representation equivalence needed to transfer
 an upper geometric piece into an opposite piece. For an outer shape `B` and
 refinement `S`, `reverseRefinement B S` reverses the inner blocks separately
 inside each outer block. The actual element `reverseWeyl B S R` is the tuple

@@ -59,9 +59,9 @@ theorem heckeModuleActionFunctor_smul (K : Subgroup G) (A : Action (SmoothRep.{t
 /-- The action of each element of `Γ` commutes with the Hecke algebra. -/
 theorem heckeModuleActionFunctor_ρ_smul (K : Subgroup G) (A : Action (SmoothRep.{t, v, w} R G) Γ)
     (γ : Γ) (a : LevelHeckeAlgebra R K) (x : fixedVectors A.V.obj.ρ K) :
-    (((heckeModuleActionFunctor R Γ K).obj A).ρ γ).hom (a • x) =
-      a • (((heckeModuleActionFunctor R Γ K).obj A).ρ γ).hom x :=
-  map_smul (((heckeModuleActionFunctor R Γ K).obj A).ρ γ).hom a x
+    (((heckeModuleActionFunctor R Γ K).obj A).ρ γ).asHom.hom (a • x) =
+      a • (((heckeModuleActionFunctor R Γ K).obj A).ρ γ).asHom.hom x :=
+  map_smul (((heckeModuleActionFunctor R Γ K).obj A).ρ γ).asHom.hom a x
 
 variable (R) in
 /-- Restricting the scalars from the Hecke algebra to `R` recovers the `K`-fixed vectors with
@@ -107,7 +107,7 @@ variable (K : CompactOpenLevel G)
 
 section Automorphisms
 
-variable {Γ : Type u''} [Group Γ] (ρ : Γ →* (Aut T)ᵐᵒᵖ) (hρ : ∀ γ, (ρ γ).unop.hom ≫ p = p)
+variable {Γ : Type u''} [Group Γ] (ρ : Γ →* (Aut T)ᵐᵒᵖ) (hρ : ∀ γ, (ρ γ).unop.asIso.hom ≫ p = p)
 
 /-- The `K`-fixed vectors of the colimit over levels of `H^n(T(U), p_U^* M)`, as a module over
 the Hecke algebra of `K` with the commuting action of `Γ` by pullback along automorphisms of
@@ -159,8 +159,8 @@ def galoisHeckeModuleForgetIso (n : ℕ) :
 /-- Each Galois element commutes with every element of the Hecke algebra. -/
 theorem galoisHeckeModule_ρ_smul (n : ℕ) (M : ModuleSheaf X R) (σ : E ≃ₐ[F] E)
     (a : LevelHeckeAlgebra R K.subgroup) (x : ((galoisHeckeModuleFunctor R p hT K F E s n).obj M).V) :
-    (((galoisHeckeModuleFunctor R p hT K F E s n).obj M).ρ σ).hom (a • x) =
-      a • (((galoisHeckeModuleFunctor R p hT K F E s n).obj M).ρ σ).hom x :=
+    (((galoisHeckeModuleFunctor R p hT K F E s n).obj M).ρ σ).asHom.hom (a • x) =
+      a • (((galoisHeckeModuleFunctor R p hT K F E s n).obj M).ρ σ).asHom.hom x :=
   map_smul _ a x
 
 /-- The double-coset element `[K g K]` acts as `galoisHecke`. -/
@@ -191,7 +191,7 @@ variable (K : CompactOpenLevel G)
 
 section Automorphisms
 
-variable {Γ : Type u''} [Group Γ] (ρ : Γ →* (Aut T)ᵐᵒᵖ) (hρ : ∀ γ, (ρ γ).unop.hom ≫ p = p)
+variable {Γ : Type u''} [Group Γ] (ρ : Γ →* (Aut T)ᵐᵒᵖ) (hρ : ∀ γ, (ρ γ).unop.asIso.hom ≫ p = p)
 
 /-- The `K`-fixed vectors of the colimit over levels satisfying `P` of `H^n(T(U), p_U^* M)`, as
 a module over the Hecke algebra of `K` with the commuting action of `Γ`, natural in the base
@@ -245,8 +245,8 @@ def restrictedGaloisHeckeModuleForgetIso (n : ℕ) :
 theorem restrictedGaloisHeckeModule_ρ_smul (n : ℕ) (M : ModuleSheaf X R) (σ : E ≃ₐ[F] E)
     (a : LevelHeckeAlgebra R K.subgroup)
     (x : ((restrictedGaloisHeckeModuleFunctor R p hT K F E s n).obj M).V) :
-    (((restrictedGaloisHeckeModuleFunctor R p hT K F E s n).obj M).ρ σ).hom (a • x) =
-      a • (((restrictedGaloisHeckeModuleFunctor R p hT K F E s n).obj M).ρ σ).hom x :=
+    (((restrictedGaloisHeckeModuleFunctor R p hT K F E s n).obj M).ρ σ).asHom.hom (a • x) =
+      a • (((restrictedGaloisHeckeModuleFunctor R p hT K F E s n).obj M).ρ σ).asHom.hom x :=
   map_smul _ a x
 
 /-- The double-coset element `[K g K]` acts as `restrictedGaloisHecke`. -/
@@ -273,10 +273,10 @@ variable (hT₀ : ∀ (U : CompactOpenLevel G) (k : G) (hk : k ∈ U.subgroup),
 section Automorphisms
 
 variable {Γ : Type u''} [Group Γ]
-variable (ρ₀ : Γ →* (Aut T₀)ᵐᵒᵖ) (hρ₀ : ∀ γ, (ρ₀ γ).unop.hom ≫ p₀ = p₀)
+variable (ρ₀ : Γ →* (Aut T₀)ᵐᵒᵖ) (hρ₀ : ∀ γ, (ρ₀ γ).unop.asIso.hom ≫ p₀ = p₀)
 variable (ρ : Γ →* (Aut (P.ι ⋙ T₀))ᵐᵒᵖ)
-  (hρ : ∀ γ, (ρ γ).unop.hom ≫ restrictProjection P p₀ = restrictProjection P p₀)
-  (hρρ₀ : ∀ γ, (ρ γ).unop.hom = Functor.whiskerLeft P.ι (ρ₀ γ).unop.hom)
+  (hρ : ∀ γ, (ρ γ).unop.asIso.hom ≫ restrictProjection P p₀ = restrictProjection P p₀)
+  (hρρ₀ : ∀ γ, (ρ γ).unop.asIso.hom = Functor.whiskerLeft P.ι (ρ₀ γ).unop.asIso.hom)
 
 /-- For the restriction of a tower over all levels, the Hecke-modules of `K`-fixed vectors with
 the action of `Γ` agree with those of the tower over all levels, naturally in the base sheaf. -/

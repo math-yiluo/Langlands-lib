@@ -41,7 +41,7 @@ The scalar additive measure and the rational gamma function are unchanged.
 The continuation, nonvanishing, Fourier-test, block, and reduced-denominator
 requirements are inherited from the supplied gamma equation.
 
-Worker 486 named the local canonical topology instance
+The local canonical topology instance is named
 `matrixComparisonModelsTopology` to permit combined imports with the adjacent
 model convergence and star-integrability proofs. Anonymous local instances
 also create global declaration names; the former generated name collided

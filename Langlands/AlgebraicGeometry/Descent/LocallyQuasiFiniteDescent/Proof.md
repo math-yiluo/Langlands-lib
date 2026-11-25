@@ -46,7 +46,7 @@ base change of `p` along `g t`. The maps `g t` generate an fppf covering sieve o
 `QuasiAffineChart`) gives an open chart `b t ξ : h (Y t ξ) ⟶ G` with
 `z : U ⟶ Y t ξ` such that `h z ≫ b t ξ` is the restriction of `a' t` to `U`.
 
-Let `K = Σ t, (X' t).left` index the charts. Worker 1001's lemma
+Let `K = Σ t, (X' t).left` index the charts. The lemma
 `isLocallySurjective_sigmaDesc_of_charts` (module `Covering`) shows that
 `Sigma.desc b : ∐ₖ h (Y k) ⟶ G` is fppf locally surjective. The Library's `openChartGluing`
 (proof of `OpenChartGluingStatement`) then gives `X : Over S` and `e : h X ≅ G`. Finally

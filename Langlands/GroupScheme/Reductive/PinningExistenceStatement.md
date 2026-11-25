@@ -1,7 +1,5 @@
 # Existence of field pinnings
 
-Author: Worker 1472.
-
 This module defines two propositions over every field `k : Type u`.
 It proves neither proposition.
 

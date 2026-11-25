@@ -1,6 +1,6 @@
 # Characteristic-space decompositions and exponents under induction and restriction
 
-Author: Worker 6. Module `Langlands.Representation.Exponents.ArbitraryParabolicExponentStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`. Statement `ArbitraryParabolicExponentStatement : Prop`; nothing is proved here.
+Module `Langlands.Representation.Exponents.ArbitraryParabolicExponentStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`. Statement `ArbitraryParabolicExponentStatement : Prop`; nothing is proved here.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*, French edition dated 9 July 2026, VII.1.1, printed pp.220–221 / PDF pp.226–227. The registered source ID is `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. The objects are the published definitions of `ArbitraryParabolic` (normalized Jacquet functor, `normalizedJacquetWeightSpace`, `IsNormalizedJacquetExponent`, `normalizedJacquetExponents`) and `ArbitraryParabolicInduction` (`inductionFunctor`, `leviWeightSpace`, `IsLeviExponent`, `groupWeightSpace`, `IsGroupExponent`, `groupExponents`).
 

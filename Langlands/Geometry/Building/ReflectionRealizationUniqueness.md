@@ -1,6 +1,6 @@
 # Normalizer points realizing the same reflection differ by the centralizer
 
-This internal unit proves the uniqueness statement needed for axiom V 2 of a
+This module proves the uniqueness statement needed for axiom V 2 of a
 valuation of the root datum (Kaletha–Prasad, *Bruhat–Tits Theory: A New
 Approach*, Definition 6.1.2). Two rational normalizer points that realize the
 reflection along the same nonzero character, in the sense of the published

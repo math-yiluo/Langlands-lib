@@ -2,14 +2,16 @@
 
 Lean module: `Langlands.Representation.Archimedean.RealBlockDual`.
 
-Worker 5220 wrote this module for Task 6749 (`5dd3db87-6f14-4d0f-b9a7-3d0065415fd8`), the proof
-of `RealStandardLanglandsQuotientStatement` (module `RealLargeLanglandsQuotientReduction`). It is
+This module was written for the proof
+of `RealStandardLanglandsQuotientStatement` (module `RealLargeLanglandsQuotientReduction`); the
+Library's proof of that statement goes through `realLeviLanglandsQuotient` and does not import
+this module. It is
 the recursion step of the Langlands-quotient argument along the maximal parabolic subgroup
 `P_{a,k+1}` whose last block is tied. It generalizes the induction step of the published
 `JacquetDual.jacquet_eq_zero` (`P_{m,1}`), where the restriction `u ↦ u ∘ ι` suffices. Here the
 tied `GL_{k+1}(ℝ)` factor is passive: Jacobson density on its irreducible principal series
 (`GKModuleDensity`) replaces `u(diag(κ₁, κ₂))` by `u(diag(κ₁, 1)) φ(κ₂)`. The module is the real
-analogue of Worker 140's `ComplexBlockDual` (Task 7063) and follows its structure.
+analogue of `ComplexBlockDual` and follows its structure.
 
 Notation: `GL_N(ℝ)` is `Langlands.GeneralLinear N ℝ` and `O(N)` is `unitaryCompact ℝ N`, with the
 Haar probability measure `RealPrincipalSeriesDuality.haarK N`. `n̄(X)`, `diag(g₁, g₂)`
@@ -28,7 +30,8 @@ namespace `Langlands.Archimedean.RealBlockDual`.
 ## The statement
 
 `RealBlockDualStatement` assumes the two statements `RealBlockChartIntegrableStatement` and
-`RealBlockParabolicIntegrationStatement`. These are only stated, not yet proved, in the Library.
+`RealBlockParabolicIntegrationStatement`. The Library proves them as `realBlockChartIntegrable` (`RealBlockChartIntegralProof`) and
+`realBlockParabolicIntegration` (`RealBlockParabolicIntegrationProof`).
 Under these assumptions it says the following.
 
 Let `χ` be signed-power characters with exponents `e`, that is

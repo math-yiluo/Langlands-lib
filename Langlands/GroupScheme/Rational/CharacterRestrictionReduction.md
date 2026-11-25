@@ -1,7 +1,5 @@
 # Reductions for restriction of rational characters to a split component
 
-Author: Worker 33 (Task 3798, `6d0882ee-6e45-410c-b5a1-86d4544a4ffb`).
-
 This module defines three conditional theorems and imports the shared central
 split-torus reduction from
 [CentralSplitTorusCharacterReduction](CentralSplitTorusCharacterReduction.md).

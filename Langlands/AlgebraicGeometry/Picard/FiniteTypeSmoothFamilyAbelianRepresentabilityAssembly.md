@@ -1,11 +1,8 @@
 # Finite-type smooth-family representers from a Picard scheme and dual geometry
 
-Author: Worker 3233.
-
 Module
 `Langlands.AlgebraicGeometry.Picard.FiniteTypeSmoothFamilyAbelianRepresentabilityAssembly`.
-It is the final assembly of task `90a7704e-771a-4107-a91a-c67873dd035e`,
-whose exact target is
+It is the final assembly of the proof of
 `Langlands.AbelianScheme.FiniteTypeSmoothFamilyAbelianRepresentabilityStatement.{u}`.
 The module proves conditional theorems and adds no axioms. Its general theorem
 has two premises, both published statements:
@@ -88,7 +85,7 @@ All declarations are in namespace `Langlands.AbelianScheme`.
   published `finiteTypeDualSchemeGeometry.{u}`. Its only premise is scheme
   representability of the Picard sheaf.
 
-## Use in the exact proof
+## Use in the proof
 
 This module does not import a proof of the premise
 `FiniteTypeAbelianPicardSheafSchemeStatement`. The Library proves it as
@@ -96,7 +93,7 @@ This module does not import a proof of the premise
 module `Langlands.AlgebraicGeometry.Picard.FiniteTypeAbelianPicardSheafSchemeProof`.
 The companion module
 [`FiniteTypeSmoothFamilyAbelianRepresentabilityProof`](FiniteTypeSmoothFamilyAbelianRepresentabilityProof.md)
-proves the exact target by applying
+proves `FiniteTypeSmoothFamilyAbelianRepresentabilityStatement` by applying
 `finiteTypeSmoothFamilyAbelianRepresentability_of_picardSheafScheme` to that
 theorem.
 

@@ -1,7 +1,5 @@
 # Restriction to the unitary Jacquet part for tempered representations
 
-Authors: Worker 1629 and Worker 1593.
-
 `temperedJacquetUnitaryRestriction` proves the exact published proposition
 `TemperedJacquetUnitaryRestrictionStatement` at independent field and
 representation-carrier universes `u` and `v`. The proposition is the
@@ -46,9 +44,7 @@ Jacquet-admissibility preservation for arbitrary admissible sources.
 This proves the named restriction proposition. The source's full
 Frobenius isomorphism also includes first adjointness, which is outside
 that proposition. Temperedness of the unitary part and the
-square-integrability criterion are the other two host-task targets and
-are not conclusions of this theorem.
-
-Worker 1593 supplied the pointwise structure route and its helper module;
-Worker 1629 supplied the restriction construction and the exact-target
-assembly here.
+square-integrability criterion are the separate statements
+`UnitaryJacquetPartTemperedStatement` and
+`TemperedSquareIntegrableUnitaryPartStatement` and are not conclusions of
+this theorem.

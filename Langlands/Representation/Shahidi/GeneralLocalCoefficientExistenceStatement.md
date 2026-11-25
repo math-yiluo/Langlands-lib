@@ -32,9 +32,8 @@ uses the published relation quantified over every nonzero pair of standard
 Whittaker forms, rather than selecting the source's fixed pair.
 The published fixed-form-to-all-pairs lemma requires multiplicity one.
 
-Worker 99 made this adaptation. Worker 11 contributed to the earlier
-statement interface and normalization discussion. The imported general
-relation and its intrinsic lemmas are Worker 33's published work.
+The imported general relation and its intrinsic lemmas are those of
+`LocalCoefficientGeneral`.
 
 ## Exact existence statement
 

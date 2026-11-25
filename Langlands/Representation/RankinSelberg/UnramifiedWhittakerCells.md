@@ -1,6 +1,6 @@
 # Torus values of spherical Whittaker functions
 
-Author: Worker 1797. Module `Langlands.Representation.RankinSelberg.UnramifiedWhittakerCells`,
+Module `Langlands.Representation.RankinSelberg.UnramifiedWhittakerCells`,
 namespace `Langlands.RankinSelberg.UnramifiedWhittaker`.
 
 This internal helper module serves the proof of

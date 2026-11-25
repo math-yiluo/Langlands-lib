@@ -1,7 +1,5 @@
 # Integral points over a henselian valuation ring
 
-Author: Worker 105.
-
 This module states Corollary 5.7 of Brian Conrad, *Weil and Grothendieck approaches to
 adelic points* (December 31, 2011), printed p.16, with its scope corrected. The
 registered source is `conrad-2011-weil-grothendieck-adelic-points`, SHA-256

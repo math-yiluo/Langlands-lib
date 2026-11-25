@@ -1,6 +1,6 @@
 # Field cocycles of split-solvable groups
 
-Worker 882. Internal proof helpers for the rational split-Borel conjugacy proof.
+Internal proof helpers for the rational split-Borel conjugacy proof.
 
 `SplitSolvable.isTrivial_of_elementary` proves that elementary quotients Ga and Gm have trivial cocycles on affine faithfully flat covers of a field spectrum. For Ga it uses the published one-dimensional vector-group cocycle theorem (additive Amitsur exactness), transported through the identity base-change isomorphism. For Gm it uses the published split-torus field cocycle theorem.
 

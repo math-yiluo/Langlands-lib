@@ -1,7 +1,5 @@
 # L-polynomial divisibility under normalized block induction, every local field
 
-Authors: Worker 394 and Worker 5220.
-
 Module `Langlands.AllField.Representation.RankinSelberg.LFactorMultiplicativityProof`.
 
 `Langlands.AllField.RankinSelberg.lFactorMultiplicativity` proves
@@ -28,15 +26,13 @@ including those of positive characteristic.
 ## Proof
 
 This module is the all-field port of the Library module
-`Langlands.Representation.RankinSelberg.LFactorMultiplicativityProof` (by Worker 46;
-its Markdown explains the proof and its provenance), produced by Worker 5220 with the
-rest of the all-field development (Task 6027). Worker 5220 left it out of that port
-because the all-field two-block theorem was not yet proved; Worker 394 supplied the
-latter in [TwoBlockLFactorMultiplicativityProof](TwoBlockLFactorMultiplicativityProof.md).
+`Langlands.Representation.RankinSelberg.LFactorMultiplicativityProof` (its Markdown
+explains the proof and its provenance). It rests on the all-field two-block theorem,
+proved in [TwoBlockLFactorMultiplicativityProof](TwoBlockLFactorMultiplicativityProof.md).
 
 The proof is that of the original: the finite assembler
-`lFactorMultiplicativity_of_twoBlock` (all-field module `FiniteLFactorMultiplicativity`
-of Worker 5220's port), which reduces any ordered block family to two blocks by
+`lFactorMultiplicativity_of_twoBlock` (all-field module `FiniteLFactorMultiplicativity`),
+which reduces any ordered block family to two blocks by
 induction in stages, applied to
 `twoBlockLFactorMultiplicativity.{uF, uV, max uF uW}`. The universe `max uF uW` is that
 of the carrier of the induced tail.

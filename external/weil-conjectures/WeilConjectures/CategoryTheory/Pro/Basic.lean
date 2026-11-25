@@ -1,0 +1,627 @@
+/-
+Copyright (c) 2025 Christian Merten. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Christian Merten
+-/
+module
+
+public import Mathlib.CategoryTheory.Abelian.GrothendieckAxioms.Basic
+public import Mathlib.CategoryTheory.Limits.Indization.Category
+public import Mathlib.CategoryTheory.Limits.Lattice
+public import Mathlib.CategoryTheory.Limits.Shapes.FiniteMultiequalizer
+public import Mathlib.CategoryTheory.Sites.Continuous
+public import Mathlib.Basic.Finite.Prod
+public import Mathlib.Basic.Finite.Sigma
+public import Mathlib.Basic.Finite.Sum
+
+/-!
+# Sheafs in the pro category
+
+In this file we develop conditions for when a presheaf on the pro-category
+is a sheaf.
+-/
+
+@[expose] public section
+
+universe s t w v₁ v₂ u₁ u₂
+
+namespace CategoryTheory
+open Limits
+
+noncomputable
+def Limits.IsLimit.ofPreservesLimitColim {J K C : Type*} [Category J] [Category K] [Category C]
+    [HasColimitsOfShape J C]
+    {D : J ⥤ K ⥤ C} [PreservesLimit D.flip colim]
+    (c : Cone D.flip) (hc : IsLimit c)
+    (d : Cocone D) (hd : IsColimit d)
+    (f : Cocone c.pt) (hf : IsColimit f)
+    (e : Cone d.pt)
+    (iso : f.pt ≅ e.pt)
+    (w : ∀ j k, (c.π.app k).app j ≫ (d.ι.app j).app k = f.ι.app j ≫ iso.hom ≫ e.π.app k) :
+    IsLimit e :=
+  let natiso : D.flip ⋙ colim ≅ d.pt :=
+    (Limits.colimitIsoFlipCompColim _).symm ≪≫ (colimit.isColimit _).coconePointUniqueUpToIso hd
+  let hc' : IsLimit (colim.mapCone c) := isLimitOfPreserves _ hc
+  let t : (Cone.postcompose natiso.hom).obj (colim.mapCone c) ≅ e := by
+    refine Cone.ext (IsColimit.coconePointUniqueUpToIso (colimit.isColimit _) hf ≪≫ iso) ?_
+    intro k
+    apply colimit.hom_ext
+    intro j
+    simp only [Iso.trans_hom, Iso.symm_hom,
+      Cone.postcompose_obj_π, NatTrans.comp_app,
+      Functor.mapCone_π_app, colim_map, colimitIsoFlipCompColim_inv_app,
+      ι_colimMap_assoc, Category.assoc,
+      colimit.comp_coconePointUniqueUpToIso_hom_assoc, natiso,
+      HasColimit.ι_isoOfNatIso_inv_assoc, compEvaluation_inv_app]
+    erw [colimitObjIsoColimitCompEvaluation_ι_inv_assoc]
+    simp [← NatTrans.comp_app, w]
+  IsLimit.equivOfNatIsoOfIso natiso _ e t hc'
+
+end CategoryTheory
+
+namespace CategoryTheory
+
+variable {C : Type u₁} [Category.{v₁} C] {D : Type u₂} [Category.{v₂} D] (F : C ⥤ D)
+
+namespace Limits
+
+structure RelativeColimitPresentation (J : Type w) [Category.{t} J] (F : C ⥤ D) (X : D) where
+  diag : J ⥤ C
+  ι : diag ⋙ F ⟶ (Functor.const J).obj X
+  isColimit : IsColimit (Cocone.mk _ ι)
+
+variable {J : Type w} [Category.{t} J] {F : C ⥤ D} {X : D}
+
+namespace RelativeColimitPresentation
+
+initialize_simps_projections RelativeColimitPresentation (-isColimit)
+
+abbrev cocone (pres : RelativeColimitPresentation J F X) : Cocone (pres.diag ⋙ F) :=
+  Cocone.mk _ pres.ι
+
+/-- Forget the fact that the diagram factors through `F`. -/
+def colimitPresentation (pres : RelativeColimitPresentation J F X) : ColimitPresentation J X where
+  diag := pres.diag ⋙ F
+  ι := pres.ι
+  isColimit := pres.isColimit
+
+noncomputable def self (X : C) : RelativeColimitPresentation PUnit.{s + 1} F (F.obj X) where
+  diag := (Functor.const _).obj X
+  ι := (F.constComp _ X).hom
+  isColimit := .equivOfNatIsoOfIso (F.constComp _ X).symm _
+    (Cocone.mk _ (F.constComp _ X).hom) (Cocone.ext (Iso.refl _))
+    (isColimitConstCocone PUnit.{s + 1} (F.obj X))
+
+/-- Map a relative colimit presentation under an isomorphism. -/
+@[simps]
+def ofIso (pres : RelativeColimitPresentation J F X) {Y : D} (e : X ≅ Y) :
+    RelativeColimitPresentation J F Y where
+  diag := pres.diag
+  ι := pres.ι ≫ (Functor.const _).map e.hom
+  isColimit := pres.isColimit.ofIsoColimit (Cocone.ext e)
+
+/-- A morphism between relative colimit presentations is a natural transformation between
+the diagrams. -/
+@[ext]
+structure Hom {X Y : D} (pres₁ : RelativeColimitPresentation J F X)
+    (pres₂ : RelativeColimitPresentation J F Y) where
+  natTrans : pres₁.diag ⟶ pres₂.diag
+
+namespace Hom
+
+variable {X Y Z : D} {pres₁ : RelativeColimitPresentation J F X}
+    {pres₂ : RelativeColimitPresentation J F Y} {pres₃ : RelativeColimitPresentation J F Z}
+
+@[simps]
+def id (pres : RelativeColimitPresentation J F X) : pres.Hom pres where
+  natTrans := 𝟙 _
+
+@[simps]
+def comp (f : pres₁.Hom pres₂) (g : pres₂.Hom pres₃) : pres₁.Hom pres₃ where
+  natTrans := f.natTrans ≫ g.natTrans
+
+def map (f : pres₁.Hom pres₂) : X ⟶ Y :=
+  pres₁.isColimit.map pres₂.cocone (Functor.whiskerRight f.natTrans F)
+
+variable (f : pres₁.Hom pres₂)
+
+@[reassoc (attr := simp)]
+lemma ι_map (j : J) : pres₁.ι.app j ≫ f.map = F.map (f.natTrans.app j) ≫ pres₂.ι.app j :=
+  pres₁.isColimit.ι_map _ _ j
+
+end Hom
+
+end RelativeColimitPresentation
+
+structure RelativeLimitPresentation (J : Type w) [Category.{t} J] (F : C ⥤ D) (X : D) where
+  diag : J ⥤ C
+  π : (Functor.const J).obj X ⟶ diag ⋙ F
+  isLimit : IsLimit (Cone.mk _ π)
+
+variable {J : Type w} [Category.{t} J] {F : C ⥤ D} {X : D}
+
+namespace RelativeLimitPresentation
+
+initialize_simps_projections RelativeLimitPresentation (-isLimit)
+
+abbrev cone (pres : RelativeLimitPresentation J F X) : Cone (pres.diag ⋙ F) :=
+  Cone.mk _ pres.π
+
+@[reassoc (attr := simp)]
+lemma isLimit_lift_π (pres : RelativeLimitPresentation J F X) (s : Cone (pres.diag ⋙ F)) (j : J) :
+    pres.isLimit.lift s ≫ pres.π.app j = s.π.app j :=
+  pres.isLimit.fac s j
+
+/-- Forget the fact that the diagram factors through `F`. -/
+def limitPresentation (pres : RelativeLimitPresentation J F X) : LimitPresentation J X where
+  diag := pres.diag ⋙ F
+  π := pres.π
+  isLimit := pres.isLimit
+
+@[simps]
+noncomputable def self [IsConnected J] (X : C) : RelativeLimitPresentation J F (F.obj X) where
+  diag := (Functor.const _).obj X
+  π := (F.constComp _ X).inv
+  isLimit := .equivOfNatIsoOfIso (F.constComp _ X).symm _
+    (Cone.mk _ (F.constComp _ X).inv) (Cone.ext (Iso.refl _))
+    (isLimitConstCone J (F.obj X))
+
+/-- Map a relative limit presentation under an isomorphism. -/
+@[simps]
+def ofIso (pres : RelativeLimitPresentation J F X) {Y : D} (e : X ≅ Y) :
+    RelativeLimitPresentation J F Y where
+  diag := pres.diag
+  π := (Functor.const _).map e.inv ≫ pres.π
+  isLimit := pres.isLimit.ofIsoLimit (Cone.ext e)
+
+/-- A morphism between relative colimit presentations is a natural transformation between
+the diagrams. -/
+@[ext]
+structure Hom {X Y : D} (pres₁ : RelativeLimitPresentation J F X)
+    (pres₂ : RelativeLimitPresentation J F Y) where
+  natTrans : pres₁.diag ⟶ pres₂.diag
+
+namespace Hom
+
+variable {X Y Z : D} {pres₁ : RelativeLimitPresentation J F X}
+    {pres₂ : RelativeLimitPresentation J F Y} {pres₃ : RelativeLimitPresentation J F Z}
+
+@[simps]
+def id (pres : RelativeLimitPresentation J F X) : pres.Hom pres where
+  natTrans := 𝟙 _
+
+@[simps]
+def comp (f : pres₁.Hom pres₂) (g : pres₂.Hom pres₃) : pres₁.Hom pres₃ where
+  natTrans := f.natTrans ≫ g.natTrans
+
+def map (f : pres₁.Hom pres₂) : X ⟶ Y :=
+  pres₂.isLimit.map pres₁.cone (Functor.whiskerRight f.natTrans F)
+
+variable (f : pres₁.Hom pres₂)
+
+@[reassoc (attr := simp)]
+lemma map_π (j : J) : f.map ≫ pres₂.π.app j = pres₁.π.app j ≫ F.map (f.natTrans.app j) :=
+  pres₂.isLimit.map_π _ _ j
+
+@[simps]
+def self [IsConnected J] {X Y : C} (f : X ⟶ Y) :
+    (self (F := F) (J := J) X).Hom (self (J := J) Y) where
+  natTrans.app j := f
+  natTrans.naturality _ _ _ := by
+    simp only [RelativeLimitPresentation.self, Iso.symm_hom, Functor.const_obj_map]
+    exact (Category.id_comp _).trans (Category.comp_id _).symm
+
+@[simp]
+lemma self_map [IsConnected J] {X Y : C} (f : X ⟶ Y) :
+    (self (J := J) (F := F) f).map = F.map f := by
+  refine (RelativeLimitPresentation.self (J := J) Y).isLimit.hom_ext fun j ↦ ?_
+  rw [map_π]
+  simp only [self_π, Functor.constComp_inv_app, self_natTrans_app, Category.id_comp]
+  exact (Category.comp_id _).symm
+
+end Hom
+
+end RelativeLimitPresentation
+
+end Limits
+
+open Limits Opposite
+
+class Functor.IsInd (F : C ⥤ D) : Prop where
+  hom_exists {X Y : D} (f : X ⟶ Y) : ∃ (J : Type w) (_ : SmallCategory J) (_ : IsFiltered J)
+    (pres₁ : RelativeColimitPresentation J F X) (pres₂ : RelativeColimitPresentation J F Y)
+    (t : pres₁.Hom pres₂), f = t.map
+
+lemma Functor.IsInd.obj_exists [IsInd.{w} F] (X : D) :
+    ∃ (J : Type w) (_ : SmallCategory J) (_ : IsFiltered J),
+      Nonempty (RelativeColimitPresentation J F X) := by
+  obtain ⟨J, _, _, pres, _, _, _⟩ := hom_exists (F := F) (𝟙 X)
+  use J, inferInstance, inferInstance
+  exact ⟨pres⟩
+
+
+instance : Functor.IsInd.{v₁} (Ind.yoneda (C := C)) where
+  hom_exists {X Y} f := by
+    obtain ⟨J, _, _, D₁, D₂, φ, ⟨e⟩⟩ := Ind.exists_nonempty_arrow_mk_iso_ind_lim (f := f)
+    use J, inferInstance, inferInstance
+    let pres₁ : RelativeColimitPresentation J Ind.yoneda X :=
+    { diag := D₁
+      ι := (colimit.cocone (D₁ ⋙ Ind.yoneda)).ι ≫
+        (Functor.const J).map (Arrow.leftFunc.mapIso e).inv
+      isColimit := (colimit.isColimit _).extendIso _ }
+    let pres₂ : RelativeColimitPresentation J Ind.yoneda Y :=
+    { diag := D₂
+      ι := (colimit.cocone (D₂ ⋙ Ind.yoneda)).ι ≫
+        (Functor.const J).map (Arrow.rightFunc.mapIso e).inv
+      isColimit := (colimit.isColimit _).extendIso _ }
+    refine ⟨pres₁, pres₂, ⟨φ⟩, ?_⟩
+    apply pres₁.isColimit.hom_ext
+    intro j
+    simp only [RelativeColimitPresentation.Hom.ι_map]
+    simp [pres₁, pres₂, Ind.lim]
+
+class Functor.IsPro (F : C ⥤ D) : Prop where
+  hom_exists {X Y : D} (f : X ⟶ Y) : ∃ (J : Type w) (_ : SmallCategory J) (_ : IsCofiltered J)
+    (pres₁ : RelativeLimitPresentation J F X) (pres₂ : RelativeLimitPresentation J F Y)
+    (t : pres₁.Hom pres₂), f = t.map
+
+/-- The pro-category of `C` is `(Ind Cᵒᵖ)ᵒᵖ`. -/
+def Pro (C : Type*) [Category C] := (Ind Cᵒᵖ)ᵒᵖ
+
+noncomputable instance : Category (Pro C) :=
+  inferInstanceAs <| Category (Ind Cᵒᵖ)ᵒᵖ
+
+def PreOneHypercover.functor (F : C ⥤ D) (X : C) :
+    PreOneHypercover.{w} X ⥤ PreOneHypercover.{w} (F.obj X) where
+  obj E := E.map F
+  map {E G} f :=
+    { s₀ := f.s₀
+      h₀ i := F.map (f.h₀ i)
+      s₁ k := f.s₁ k
+      h₁ k := F.map (f.h₁ k)
+      w₀ i := (F.map_comp _ _).symm.trans (F.congr_map (f.w₀ i))
+      w₁₁ := by simp [← Functor.map_comp, Hom.w₁₁]
+      w₁₂ := by simp [← Functor.map_comp, Hom.w₁₂] }
+  -- TODO: improve these proofs by adding some `simp` lemmas
+  map_id E := by apply Hom.ext <;> simp <;> rfl
+  map_comp {E₁ E₂ E₃} f g := by apply Hom.ext <;> simp <;> rfl
+
+structure PreOneHypercover.RelativeLimitPresentation (J : Type*) [Category J]
+    {X : D} (F : C ⥤ D) (E : PreOneHypercover.{w} X) where
+  pres : Limits.RelativeLimitPresentation J F X
+  pres₀ : ∀ i : E.I₀, Limits.RelativeLimitPresentation J F (E.X i)
+  pres₁ : ∀ {i j} (k : E.I₁ i j), Limits.RelativeLimitPresentation J F (E.Y k)
+  f : ∀ i, (pres₀ i).Hom pres
+  p₁ : ∀ {i j} (k : E.I₁ i j), (pres₁ k).Hom (pres₀ i)
+  p₂ : ∀ {i j} (k : E.I₁ i j), (pres₁ k).Hom (pres₀ j)
+  hf : ∀ i, (f i).map = E.f i
+  hp₁ : ∀ {i j} (k : E.I₁ i j), (p₁ k).map = E.p₁ k
+  hp₂ : ∀ {i j} (k : E.I₁ i j), (p₂ k).map = E.p₂ k
+  w : ∀ {i j} (k : E.I₁ i j), (p₁ k).comp (f i) = (p₂ k).comp (f j)
+
+@[simps]
+def PreOneHypercover.RelativeLimitPresentation.preOneHypercover {J : Type*} [Category J]
+    {X : D} {F : C ⥤ D} {E : PreOneHypercover.{w} X}
+    (pres : E.RelativeLimitPresentation J F) (j : J) :
+    PreOneHypercover (pres.pres.diag.obj j) where
+  I₀ := E.I₀
+  X i := (pres.pres₀ i).diag.obj j
+  f i := (pres.f i).natTrans.app j
+  I₁ := E.I₁
+  Y _ _ k := (pres.pres₁ k).diag.obj j
+  p₁ _ _ k := (pres.p₁ k).natTrans.app j
+  p₂ _ _ k := (pres.p₂ k).natTrans.app j
+  w _ _ k := by simpa using congr($(pres.w k).natTrans.app j)
+
+variable {J : Type*} [Category J] {X : D} {F : C ⥤ D} {E : PreOneHypercover.{w} X}
+  {K : GrothendieckTopology C}
+
+def PreOneHypercover.RelativeLimitPresentation.oneHypercover
+    (pres : E.RelativeLimitPresentation J F) (j : J)
+    (mem₀ : (pres.preOneHypercover j).sieve₀ ∈ K _)
+    (mem₁ : ∀ {a b : E.I₀} {W : C} (p₁ : W ⟶ (pres.preOneHypercover j).X a)
+        (p₂ : W ⟶ (pres.preOneHypercover j).X b),
+        p₁ ≫ (pres.preOneHypercover j).f a = p₂ ≫ (pres.preOneHypercover j).f b →
+        (pres.preOneHypercover j).sieve₁ p₁ p₂ ∈ K W) :
+    K.OneHypercover (pres.pres.diag.obj j) where
+  __ := pres.preOneHypercover j
+  mem₀ := mem₀
+  mem₁ _ _ _ := mem₁
+
+variable {A : Type*} [Category A]
+
+@[simps]
+def PreOneHypercover.RelativeLimitPresentation.multicospan (pres : E.RelativeLimitPresentation J F)
+    (P : Dᵒᵖ ⥤ A) :
+    Jᵒᵖ ⥤ (WalkingMulticospan E.multicospanShape ⥤ A) where
+  obj j := ((pres.preOneHypercover j.unop).multicospanIndex (F.op ⋙ P)).multicospan
+  map {i j} f :=
+    { app
+        | .left k => P.map (F.map <| (pres.pres₀ k).diag.map f.unop).op
+        | .right k => P.map (F.map <| (pres.pres₁ k.2).diag.map f.unop).op
+      naturality k l f := by
+        rcases f
+        · simp
+        · simp [← Functor.map_comp, ← op_comp]; rfl
+        · simp [← Functor.map_comp, ← op_comp]; rfl }
+  map_id j := by
+    ext (k | k)
+    · exact (congrArg (fun g ↦ P.map (F.map g).op) ((pres.pres₀ k).diag.map_id (unop j))).trans
+        ((congrArg (fun g ↦ P.map g.op) (F.map_id ((pres.pres₀ k).diag.obj (unop j)))).trans
+          (P.map_id (op (F.obj ((pres.pres₀ k).diag.obj (unop j))))))
+    · exact (congrArg (fun g ↦ P.map (F.map g).op) ((pres.pres₁ k.2).diag.map_id (unop j))).trans
+        ((congrArg (fun g ↦ P.map g.op) (F.map_id ((pres.pres₁ k.2).diag.obj (unop j)))).trans
+          (P.map_id (op (F.obj ((pres.pres₁ k.2).diag.obj (unop j))))))
+
+@[simps]
+def PreOneHypercover.RelativeLimitPresentation.cocone (pres : E.RelativeLimitPresentation J F)
+    (P : Dᵒᵖ ⥤ A) :
+    Cocone (pres.multicospan P) where
+  pt := (E.multicospanIndex P).multicospan
+  ι.app j :=
+    { app
+        | .left k => P.map ((pres.pres₀ k).π.app j.unop).op
+        | .right k => P.map ((pres.pres₁ k.2).π.app j.unop).op
+      naturality k l f := by
+        match f with
+        | .id _ => simp
+        | .fst k =>
+          suffices h : P.map (F.map ((pres.p₁ k.snd).natTrans.app (unop j))).op ≫
+              P.map ((pres.pres₁ k.snd).π.app (unop j)).op =
+                P.map ((pres.pres₀ k.fst.1).π.app (unop j)).op ≫ P.map (E.p₁ k.snd).op by
+            simpa
+          simp_rw [← Functor.map_comp, ← op_comp]
+          rw [← pres.hp₁ k.2]
+          simp
+        | .snd k =>
+          suffices h : P.map (F.map ((pres.p₂ k.snd).natTrans.app (unop j))).op ≫
+              P.map ((pres.pres₁ k.snd).π.app (unop j)).op =
+                P.map ((pres.pres₀ k.fst.2).π.app (unop j)).op ≫ P.map (E.p₂ k.snd).op by
+            simpa
+          simp_rw [← Functor.map_comp, ← op_comp]
+          rw [← pres.hp₂ k.2]
+          simp
+    }
+  ι.naturality i j f := by
+    ext k
+    match k with
+    | .left k =>
+        have h : (pres.pres₀ k).π.app (unop j) ≫ F.map ((pres.pres₀ k).diag.map f.unop) =
+            (pres.pres₀ k).π.app (unop i) :=
+          ((pres.pres₀ k).π.naturality f.unop).symm.trans (Category.id_comp _)
+        exact ((P.map_comp _ _).symm.trans (congrArg (fun g ↦ P.map g.op) h)).trans
+          (Category.comp_id _).symm
+    | .right k =>
+        have h : (pres.pres₁ k.2).π.app (unop j) ≫ F.map ((pres.pres₁ k.2).diag.map f.unop) =
+            (pres.pres₁ k.2).π.app (unop i) :=
+          ((pres.pres₁ k.2).π.naturality f.unop).symm.trans (Category.id_comp _)
+        exact ((P.map_comp _ _).symm.trans (congrArg (fun g ↦ P.map g.op) h)).trans
+          (Category.comp_id _).symm
+
+noncomputable
+def PreOneHypercover.RelativeLimitPresentation.isColimit (pres : E.RelativeLimitPresentation J F)
+    (P : Dᵒᵖ ⥤ A)
+    (h₀ : ∀ i, IsColimit (P.mapCocone (pres.pres₀ i).cone.op))
+    (h₁ : ∀ {i j : E.I₀} (k : E.I₁ i j), IsColimit (P.mapCocone (pres.pres₁ k).cone.op)) :
+    IsColimit (pres.cocone P) :=
+  evaluationJointlyReflectsColimits _ fun k ↦ match k with
+    | .left k => h₀ k
+    | .right k => h₁ k.2
+
+@[simps]
+def PreOneHypercover.RelativeLimitPresentation.multifork (pres : E.RelativeLimitPresentation J F)
+    (P : Dᵒᵖ ⥤ A) :
+    Cone (pres.multicospan P).flip where
+  pt := pres.pres.diag.op ⋙ F.op ⋙ P
+  π.app
+    | .left k =>
+      Functor.whiskerRight (NatTrans.op (pres.f k).natTrans) _
+    | .right k =>
+      Functor.whiskerRight (NatTrans.op <| (pres.p₁ k.2).natTrans ≫ (pres.f k.1.1).natTrans) _
+  π.naturality k l f := by
+    rcases f with a | b | b
+    · ext x
+      exact (Category.id_comp _).trans (Category.comp_id _).symm
+    · ext x
+      change 𝟙 _ ≫ P.map (F.map ((pres.p₁ b.2).natTrans.app (unop x) ≫
+          (pres.f b.1.1).natTrans.app (unop x))).op = _
+      rw [Category.id_comp, F.map_comp, op_comp, P.map_comp]
+      rfl
+    · ext x
+      exact (Category.id_comp _).trans
+        ((congrArg (fun g ↦ P.map (F.map g).op) congr($(pres.w b.2).natTrans.app (unop x))).trans
+          ((congrArg (fun g ↦ P.map g.op) (F.map_comp ((pres.p₂ b.2).natTrans.app (unop x))
+              ((pres.f b.1.2).natTrans.app (unop x)))).trans
+            (P.map_comp (F.map ((pres.f b.1.2).natTrans.app (unop x))).op
+              (F.map ((pres.p₂ b.2).natTrans.app (unop x))).op)))
+
+noncomputable
+def PreOneHypercover.RelativeLimitPresentation.isLimit (P : Dᵒᵖ ⥤ A)
+    [HasColimitsOfShape Jᵒᵖ A]
+    [PreservesLimitsOfShape (WalkingMulticospan E.multicospanShape) (colim : (Jᵒᵖ ⥤ A) ⥤ _)]
+    (pres : E.RelativeLimitPresentation J F)
+    (hX : IsColimit (P.mapCocone pres.pres.cone.op))
+    (h₀ : ∀ i, IsColimit (P.mapCocone (pres.pres₀ i).cone.op))
+    (h₁ : ∀ {i j : E.I₀} (k : E.I₁ i j), IsColimit (P.mapCocone (pres.pres₁ k).cone.op))
+    (h : ∀ j, IsLimit <| (pres.preOneHypercover j).multifork (F.op ⋙ P)) :
+    IsLimit (E.multifork P) := by
+  refine IsLimit.ofPreservesLimitColim (pres.multifork P) ?_ (pres.cocone P)
+      (pres.isColimit P h₀ h₁)
+      (P.mapCocone pres.pres.cone.op) hX _ (.refl _) ?_
+  · refine evaluationJointlyReflectsLimits _ fun j ↦ ?_
+    refine IsLimit.ofIsoLimit (h j.1) (Cone.ext (Iso.refl _) ?_)
+    intro l
+    simp only [Iso.refl_hom,
+      Functor.mapCone_π_app, multifork_π_app, NatTrans.op_comp, Functor.whiskerRight_comp,
+      evaluation_obj_map, Category.id_comp]
+    cases l <;> rfl
+  · intro j k
+    match k with
+    | .left k =>
+      suffices h : (pres.pres₀ k).π.app (unop j) ≫ F.map ((pres.f k).natTrans.app (unop j)) =
+          E.f k ≫ pres.pres.π.app (unop j) by
+        simp only [multifork_π_app, Functor.whiskerRight_app, NatTrans.op_app, Functor.comp_map,
+          Functor.op_map, Quiver.Hom.unop_op, cocone_ι_app_app, ← Functor.map_comp, ← op_comp, h,
+          Functor.mapCocone_ι_app, Cone.op_ι, PreOneHypercover.multifork, Iso.refl_hom,
+          Multifork.ofι_π_app]
+        simp only [op_comp, Functor.map_comp]
+        exact congrArg (CategoryStruct.comp _) (Category.id_comp _).symm
+      rw [← pres.hf]
+      simp
+    | .right k =>
+      suffices h : (pres.pres₁ k.snd).π.app (unop j) ≫
+          F.map ((pres.p₁ k.snd).natTrans.app (unop j) ≫ (pres.f k.fst.1).natTrans.app (unop j)) =
+          E.p₁ k.snd ≫ E.f k.fst.1 ≫ pres.pres.π.app (unop j) by
+        simp only [multifork_π_app, NatTrans.op_comp, Functor.whiskerRight_comp,
+          NatTrans.comp_app, Functor.whiskerRight_app, NatTrans.op_app, Functor.comp_map,
+          Functor.op_map, Quiver.Hom.unop_op, ← Functor.map_comp, ← op_comp, cocone_ι_app_app, h,
+          Functor.mapCocone_ι_app, Cone.op_ι, PreOneHypercover.multifork, Iso.refl_hom,
+          Multifork.ofι_π_app, MulticospanIndex.multicospan_obj_right, multicospanIndex_fst]
+        simp only [op_comp, Functor.map_comp, Category.assoc]
+        exact congrArg (CategoryStruct.comp _) (Category.id_comp _).symm
+      rw [← pres.hf, ← pres.hp₁]
+      simp
+
+section
+
+variable (J : GrothendieckTopology C) (K : GrothendieckTopology D)
+
+protected class PreZeroHypercover.Finite {X : C} (E : PreZeroHypercover.{w} X) : Prop where
+  finite₀ : _root_.Finite E.I₀ := by infer_instance
+
+protected class PreOneHypercover.Finite {X : C} (E : PreOneHypercover.{w} X) : Prop extends
+    E.toPreZeroHypercover.Finite where
+  finite₁ : ∀ i j, _root_.Finite (E.I₁ i j) := by infer_instance
+
+attribute [instance] PreZeroHypercover.Finite.finite₀ PreOneHypercover.Finite.finite₁
+
+instance {X : C} (E : PreZeroHypercover.{w} X) [E.HasPullbacks] [E.Finite] :
+    E.toPreOneHypercover.Finite where
+  finite₀ := inferInstanceAs (_root_.Finite E.I₀)
+  finite₁ _ _ := inferInstanceAs (_root_.Finite PUnit)
+
+instance {X : C} (E : PreOneHypercover.{w} X) [E.Finite] : Finite E.I₁' := by
+  dsimp [PreOneHypercover.I₁']
+  infer_instance
+
+instance (s : MulticospanShape) [Finite s.L] [Finite s.R] : Finite (WalkingMulticospan s) := by
+  cases nonempty_fintype s.L
+  cases nonempty_fintype s.R
+  infer_instance
+
+instance {J : MulticospanShape} [Finite J.L] [Finite J.R] (a b : WalkingMulticospan J) :
+    Finite (a ⟶ b) := by
+  let S := Σ (a : WalkingMulticospan J) (b : WalkingMulticospan J), a ⟶ b
+  let proj : (J.L ⊕ J.R) ⊕ J.R ⊕ J.R → S
+    | .inl (.inl l) => ⟨_, _, .id (.left l)⟩
+    | .inl (.inr r) => ⟨_, _, .id (.right r)⟩
+    | .inr (.inl r) => ⟨_, _, .fst r⟩
+    | .inr (.inr r) => ⟨_, _, .snd r⟩
+  have : proj.Surjective := by
+    intro ⟨a, b, f⟩
+    rcases f
+    · cases a
+      · exact ⟨.inl (.inl _), rfl⟩
+      · exact ⟨.inl (.inr _), rfl⟩
+    · exact ⟨.inr (.inl _), rfl⟩
+    · exact ⟨.inr (.inr _), rfl⟩
+  have := Finite.of_surjective _ this
+  let emb : (a ⟶ b) → S := fun f ↦ ⟨_, _, f⟩
+  refine .of_injective emb fun f g hfg ↦ by cases hfg; rfl
+
+noncomputable
+instance {X : C} (E : PreOneHypercover.{w} X) [E.Finite] :
+    FinCategory (WalkingMulticospan E.multicospanShape) := by
+  haveI : Finite E.multicospanShape.L := inferInstanceAs (Finite E.I₀)
+  haveI : Finite E.multicospanShape.R := inferInstanceAs (Finite E.I₁')
+  letI := Fintype.ofFinite E.multicospanShape.L
+  letI := Fintype.ofFinite E.multicospanShape.R
+  classical
+  infer_instance
+
+variable (F A) in
+def PreOneHypercover.IsRelativelyPresentable
+    {X : D} (E : PreOneHypercover X) : Prop :=
+  ∃ (I : Type w) (_ : SmallCategory I) (_ : IsCofiltered I)
+    (pres : E.RelativeLimitPresentation I F),
+      ∀ j, (pres.preOneHypercover j).sieve₀ ∈ J _ ∧
+      ∀ {a b : E.I₀} {W : C} (p₁ : W ⟶ (pres.preOneHypercover j).X a)
+        (p₂ : W ⟶ (pres.preOneHypercover j).X b),
+        p₁ ≫ (pres.preOneHypercover j).f a = p₂ ≫ (pres.preOneHypercover j).f b →
+        (pres.preOneHypercover j).sieve₁ p₁ p₂ ∈ J W
+
+variable (F A) in
+/--
+The family of `1`-hypercovers of `D` (think: `= Pro C`) that is a limit
+of `1`-hypercovers in `C`.
+
+We shall show that if `D = Pro C`, the finite `1`-hypercovers for a suitable topology
+on `D` satisfy this.
+-/
+def GrothendieckTopology.oneHypercoverRelativelyRepresentable : K.OneHypercoverFamily :=
+  fun _ E ↦ PreOneHypercover.IsRelativelyPresentable.{w} F J E.toPreOneHypercover
+
+def GrothendieckTopology.finiteOneHypercover : K.OneHypercoverFamily :=
+  fun _ E ↦ E.Finite
+
+/-- A presheaf `P : Dᵒᵖ ⥤ A` satisfies the sheaf condition for a pre-`1`-hypercover `E` if the
+associated multifork is limiting. -/
+abbrev PreOneHypercover.IsSheafFor {X : D} (E : PreOneHypercover.{w} X) (P : Dᵒᵖ ⥤ A) :
+    Prop :=
+  Nonempty (IsLimit <| E.multifork P)
+
+/-- A presheaf `P` on `D` sends limits of small cofiltered diagrams factoring through
+`F : C ⥤ D` to colimits in `A`. This is implied by `PreservesFilteredColimitsOfSize.{w, w} P`
+(see the instance below), but unlike the latter it can hold for presheaves that do not
+preserve arbitrary filtered colimits, e.g. pointwise left Kan extensions along `F.op`. -/
+class Functor.PreservesRelativeFilteredColimits (F : C ⥤ D) (P : Dᵒᵖ ⥤ A) : Prop where
+  nonempty_isColimit : ∀ {I : Type w} [SmallCategory I] [IsCofiltered I] {K : I ⥤ C}
+    (c : Cone (K ⋙ F)), IsLimit c → Nonempty (IsColimit (P.mapCocone c.op))
+
+instance (priority := 100) Functor.preservesRelativeFilteredColimits_of_preservesFilteredColimits
+    (P : Dᵒᵖ ⥤ A) [PreservesFilteredColimitsOfSize.{w, w} P] :
+    Functor.PreservesRelativeFilteredColimits.{w} F P where
+  nonempty_isColimit _ hc := ⟨isColimitOfPreserves P hc.op⟩
+
+lemma PreOneHypercover.IsSheafFor.of_preservesFilteredColimitsOfSize (P : Dᵒᵖ ⥤ A)
+    (h : Presheaf.IsSheaf J (F.op ⋙ P))
+    [Functor.PreservesRelativeFilteredColimits.{w} F P] [HasFilteredColimitsOfSize.{w, w} A]
+    [AB5OfSize.{w} A]
+    {X : D} (E : PreOneHypercover.{t} X) (h : IsRelativelyPresentable.{w} F J E) [E.Finite] :
+    E.IsSheafFor P := by
+  obtain ⟨I, _, _, pres, mem⟩ := h
+  constructor
+  apply pres.isLimit (P := P)
+    (Functor.PreservesRelativeFilteredColimits.nonempty_isColimit
+      pres.pres.cone pres.pres.isLimit).some
+    (fun i ↦ (Functor.PreservesRelativeFilteredColimits.nonempty_isColimit
+      (pres.pres₀ i).cone (pres.pres₀ i).isLimit).some)
+    (fun {i j} k ↦ (Functor.PreservesRelativeFilteredColimits.nonempty_isColimit
+      (pres.pres₁ k).cone (pres.pres₁ k).isLimit).some)
+  intro j
+  let E' : J.OneHypercover (pres.pres.diag.obj j) := pres.oneHypercover j (mem j).1 (mem j).2
+  exact E'.isLimitMultifork ⟨_, h⟩
+
+/--
+Let `K` be a topology generated by limits of finite `1`-hypercovers in `C`. Then if `P` is a
+presheaf on `D` (think: `= Pro C`) such that
+
+1. `P` restricted to `C` is a sheaf, and
+2. `P` preserves filtered colimits, then
+
+`P` is a sheaf.
+-/
+lemma Presheaf.IsSheaf.of_preservesFilteredColimitsOfSize (P : Dᵒᵖ ⥤ A) (h : IsSheaf J (F.op ⋙ P))
+    [PreservesFilteredColimitsOfSize.{w, w} P] [HasFilteredColimitsOfSize.{w, w} A]
+    [AB5OfSize.{w} A]
+    [(GrothendieckTopology.oneHypercoverRelativelyRepresentable.{w} F J K ⊓
+      K.finiteOneHypercover).IsGenerating] :
+    IsSheaf K P := by
+  rw [((GrothendieckTopology.oneHypercoverRelativelyRepresentable.{w} F J K ⊓
+    K.finiteOneHypercover)).isSheaf_iff]
+  intro X E ⟨hE, (_ : E.Finite)⟩
+  exact PreOneHypercover.IsSheafFor.of_preservesFilteredColimitsOfSize J _ h _ hE
+
+end
+
+end CategoryTheory

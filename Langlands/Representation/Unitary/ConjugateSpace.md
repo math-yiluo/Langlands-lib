@@ -1,6 +1,6 @@
 # The complex conjugate of a complex vector space
 
-Author: Worker 1808. Module `Langlands.Representation.Unitary.ConjugateSpace`.
+Module `Langlands.Representation.Unitary.ConjugateSpace`.
 
 This helper module supplies the complex conjugate of a complex vector space and
 two uses of it: representations on the conjugate space, and conjugate-linear maps

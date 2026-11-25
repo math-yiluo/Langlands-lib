@@ -1,8 +1,8 @@
 # `ℓ`-adic limits of the truncated constant Godement section systems
 
-Author: Worker 61. This module builds on the following published modules:
+This module builds on the following published modules:
 
-- `Langlands.Cohomology.DivisibleSystem.ConstantTruncation` (Worker 61): the
+- `Langlands.Cohomology.DivisibleSystem.ConstantTruncation`: the
   truncated smooth Godement resolution systems
   `smoothGodementTruncatedResolutionSystem h T D` and their inclusions
   `smoothGodementTruncatedResolutionHom h T D` into
@@ -24,7 +24,7 @@ Author: Worker 61. This module builds on the following published modules:
   and `intConstantSheafSystemObjIso` (ConstantCoefficients module), the
   compact sections functor `smoothSheafCompactSections R G X` and the smooth
   Godement complex `smoothComplex R G X F`.
-- `Langlands.Cohomology.DivisibleSystem.InverseLimit` (Worker 61):
+- `Langlands.Cohomology.DivisibleSystem.InverseLimit`:
   `inverseLimit`, `inverseLimitHomologyComparison` and
   `inverseLimitHomologyComparison_π`,
   `isIso_inverseLimitHomologyComparison_of_finite`,
@@ -36,7 +36,7 @@ Author: Worker 61. This module builds on the following published modules:
   (TotalComparison module), `mapResidualInclusionIsKernel` (LeftExact module),
   `toRepComplexes` and `smoothQuotientInvariants`
   (Invariants module), `quotientProjection` (InvariantTransition module),
-  `IsProPSubgroup` (ProPInvariants module), and Worker 3's unproved statements
+  `IsProPSubgroup` (ProPInvariants module), and the unproved statements
   `FiniteCohomologyInverseLimitStatement`
   (`Langlands.Cohomology.InverseLimit.Statement`) and
   `ProPInvariantSubcomplexStatement`
@@ -221,7 +221,7 @@ epimorphisms.
 `R` is a commutative ring, `G` a topological group, `X` a topological space
 with a `G`-action by homeomorphisms and `HasStableNeighbourhoods G X`, all in
 one universe `u`. `T : SmoothSheafDivisibleSystem R G X ℓ`, `D : ℕ`, and
-`h : SmoothGodementZeroExactStatement R G X` is Worker 3's unproved exactness
+`h : SmoothGodementZeroExactStatement R G X` is the unproved exactness
 statement for the degree-zero smooth Godement functor (an explicit
 hypothesis). `Φ` is an additive sections functor on smooth sheaves preserving
 finite limits, and `hterm`, `hres` are the surjectivity hypotheses of
@@ -398,8 +398,8 @@ integers `PadicInt ℓ`, and `G`, `X` are in `Type`.
   `constantQuotientInvariantsInverseLimitHomologyIso`, except that `hR` is
   replaced by `hpℓ : ℓ.Coprime p`.
 
-These coefficient hypotheses are satisfiable. Worker 61 checked in a private
-Lean probe that the trivial subgroup is pro-`3` and that `3` is a unit in
+These coefficient hypotheses are satisfiable. A separate Lean check, not part
+of the Library, confirmed that the trivial subgroup is pro-`3` and that `3` is a unit in
 `ℤ_[2]`, by `padicInt_isUnit_natCast` and `coprime_of_prime_ne`. For a
 constant family of subgroups the transition kernels are trivial, so `hk`
 holds. The unproved statements `hS` and `hS'`, and the hypotheses on the
@@ -409,7 +409,7 @@ sheaves, remain assumptions.
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
 J. Math. Kyoto Univ. 39-2 (1999), section 2, printed pp.305–306 (one-based PDF
-pages 7–8). Worker 61 read both pages in the scanned original.
+pages 7–8). Both pages were read in the scanned original.
 
 1. What Harris says. On p.305 Harris sets `G_m^• = τ^{≤D+1}(F_m^•)`. He notes
    that "it follows from Fact 2 that, for any m, the inclusion
@@ -453,7 +453,7 @@ pages 7–8). Worker 61 read both pages in the scanned original.
    observation. It uses neither Fact 2 nor exactness of `Φ`, only that `Φ` is
    left exact, so that `Φ(G_m^{D+1})` is the kernel of
    `Φ(F_m^{D+1}) ⟶ Φ(F_m^{D+2})`. Harris's remark on p.305 concerns the sheaf
-   complexes and uses Fact 2. Degrees above `D + 1` are not covered. The finite-cohomology route to the comparison is Worker 3's
+   complexes and uses Fact 2. Degrees above `D + 1` are not covered. The finite-cohomology route to the comparison is
    `FiniteCohomologyInverseLimitStatement`, as in the published InverseLimit
    module, in place of Harris's Mittag-Leffler argument.
 5. What stays a hypothesis. These are explicit hypotheses:

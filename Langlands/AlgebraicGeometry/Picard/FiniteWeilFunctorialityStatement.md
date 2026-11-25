@@ -76,7 +76,7 @@ scheme over that field. Its proof identifies the character of the
 dual image with the original character precomposed with the
 torsion restriction of the primal homomorphism.
 
-This candidate formulates a **relative extension target** for the
+This proposition formulates a **relative extension target** for the
 Library's actual constructions. The cited field proposition does
 not itself establish this equation over a general base. A proof
 must establish the corresponding relative compatibility of the
@@ -86,8 +86,9 @@ only on geometric points would not prove the displayed morphism
 equation on nonreduced schemes.
 
 The file supplies the precise `Prop`-valued target, without a proof
-or a new axiom. A separate proof task must prove this exact
-declaration once it is published. This contribution asserts neither
+or a new axiom. The theorem `relativeFiniteWeilFunctoriality` in
+the module `FiniteWeilFunctorialityProof` proves this exact
+declaration. This proposition asserts neither
 Cartier duality nor perfectness, alternation, divisibility-transition
 compatibility, an inverse-limit pairing, or a completed PEL level
 structure.

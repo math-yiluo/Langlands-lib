@@ -34,8 +34,8 @@ here concern `I.hom`, rather than its composite map to `T.left`.
 
 The provenance is internal: this is a direct comparison of existing
 presheaf definitions followed by a conditional application of the
-published proper-Isom statement. This unit does not prove that
+published proper-Isom statement. This module does not prove that
 statement. It establishes no smoothness, surjectivity, locally finite
 type atlas, or unconditional atlas existence. The proper-Isom proof
-and the construction of a smooth surjective presentation remain
-separate obligations.
+and the construction of a smooth surjective presentation are not part
+of this module.

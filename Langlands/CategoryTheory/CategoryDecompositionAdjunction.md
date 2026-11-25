@@ -27,4 +27,7 @@ There is no size restriction on the index type and no finiteness condition.
 The provenance is internal: this is a direct categorical consequence of the
 two conditions in the published decomposition definition, using Mathlib's
 coproduct and adjunction constructors. It supplies a step toward clause (a)
-of Task 6621 while retaining the decomposition as an explicit hypothesis.
+of `MaximalLeviBlockProjectionEquivalenceStatement` (module
+`Langlands.Representation.Exponents.MaximalLeviBlockProjectionStatement`: the
+inclusion of `M(M)_D` has a left adjoint) while retaining the decomposition as an
+explicit hypothesis.

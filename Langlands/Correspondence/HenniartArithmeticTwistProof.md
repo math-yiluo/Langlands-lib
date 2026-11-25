@@ -1,6 +1,6 @@
 # Unramified twists of arithmetic pair factors
 
-Author: Worker 4803. Module `Langlands.Correspondence.HenniartArithmeticTwistProof`,
+Module `Langlands.Correspondence.HenniartArithmeticTwistProof`,
 namespace `Langlands.Henniart.Extension`. The field universe `uK` and the Weil
 carrier universe `uW` are independent.
 

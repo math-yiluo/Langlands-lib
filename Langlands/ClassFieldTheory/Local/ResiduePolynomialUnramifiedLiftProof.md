@@ -1,7 +1,5 @@
 # Bounded unramified lifts of residue polynomial roots
 
-Author: Worker 32.
-
 The theorem
 `Langlands.LocalClassField.residuePolynomialUnramifiedLift.{u}` proves exactly
 `Langlands.LocalClassField.ResiduePolynomialUnramifiedLift.{u}`, the published

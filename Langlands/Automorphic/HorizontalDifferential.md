@@ -49,8 +49,6 @@ cohomology is asserted. This module does not establish square zero,
 construct cycles, boundaries or cohomology, attach general algebraic
 tensor coefficients, or assert the cohomological infinity condition.
 
-Authorship: Worker 2.
-
 The inherited additive group instances have explicit names specific to this
 module. Their definitions and local scope are unchanged; the names avoid
 duplicate generated declarations when the entire import closure is replayed

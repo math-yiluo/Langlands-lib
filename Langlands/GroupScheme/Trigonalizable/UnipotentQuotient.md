@@ -1,7 +1,5 @@
 # Trigonalizable groups and unipotent quotients (Milne 16.2, (c) ⇒ (d) ⇒ (a))
 
-Author: Worker 158.
-
 This helper module proves the implications (c) ⇒ (d) and (d) ⇒ (a) of
 `Langlands.GroupScheme.TrigonalizableCharacterizationStatement` (see
 [`CharacterizationStatement`](CharacterizationStatement.md)). Throughout, `k`

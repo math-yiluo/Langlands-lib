@@ -1,13 +1,13 @@
 # Weak induction association from local class field theory inputs
 
-Author: Worker 5130. This is an internal supporting unit of the proof task
-`f096b984-dff5-4425-861f-8f298e5896fb`. That task's exact target is
-`Langlands.ClassField.Global.RelativeWeilGroup.WeakInductionAssociationStatement`.
+This is an internal supporting module of the proof of
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.WeakInductionAssociationStatement`.
 The module defines the proposition
-`Langlands.ClassField.Global.RelativeWeilGroup.WeakInductionAssociationReductionStatement`
-and proves it as `weakInductionAssociation_reduction`. It keeps three published,
-still unproved propositions as antecedents. It does not prove the unconditional
-target, and publishing it does not complete the host task.
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.WeakInductionAssociationReductionStatement`
+and proves it as `weakInductionAssociation_reduction`. It keeps three published
+propositions as antecedents. It does not prove the unconditional
+statement; `WeakInductionAssociationProof` combines it with the proofs of the
+three antecedents to prove it as `weakInductionAssociation`.
 
 ## The reduction statement
 
@@ -26,27 +26,30 @@ unchanged quantifiers and universes:
 - `Langlands.LocalClassField.WeilReciprocityExistenceUniqueness.{u}`
   (`Langlands/ClassFieldTheory/Local/WeilReciprocityStatement.lean`): for every
   p-adic field and every topological datum there is a unique geometrically
-  normalized Weil reciprocity candidate. Proof task Task 4920
-  (`b5f5d445-0427-4757-8ab0-b62da08c1a5f`).
-- `Langlands.ClassField.Global.LocalRelativeWeilMapExistenceStatement.{u}`
-  (`Langlands/ClassField/Global/LocalRelativeWeilMapStatement.lean`): for class
+  normalized Weil reciprocity candidate. Proved as
+  `LocalClassField.geometricWeilReciprocityExistenceUniqueness`
+  (`Langlands/ClassFieldTheory/Local/WeilReciprocityExistenceProof.lean`).
+- `Langlands.ClassFieldTheory.Global.LocalRelativeWeilMapExistenceStatement.{u}`
+  (`Langlands/ClassFieldTheory/Global/LocalRelativeWeilMapStatement.lean`): for class
   families that are fundamental classes of class formations with the arithmetic
   normalization, every geometric candidate of `E_w` has a local map
-  `ι : W_{F_v} → W_{E/F}` with `IsLocalRelativeWeilMap v w e ι`. Proof task
-  Task 5073 (`241e7251-de0b-431f-83a9-5584e974e22b`).
-- `Langlands.ClassField.Global.RelativeWeilGroup.LocalInducedRestrictionStatement.{uV, u}`
+  `ι : W_{F_v} → W_{E/F}` with `IsLocalRelativeWeilMap v w e ι`. Proved as
+  `localRelativeWeilMapExistence`
+  (`Langlands/ClassFieldTheory/Global/LocalRelativeWeilMapExistenceProof.lean`).
+- `Langlands.ClassFieldTheory.Global.RelativeWeilGroup.LocalInducedRestrictionStatement.{uV, u}`
   (`Langlands/VirtualRepresentation/Global/RelativeWeilLocalRestrictionStatement.lean`):
   the local restriction formula for representations induced from `W_{E/K}`,
   with local maps `ιᵤ` whose transfer is inverse geometric local reciprocity.
-  Proof task Task 5078 (`cfea3159-7908-43b1-a677-75834c3859bd`).
-- The conclusion is the exact target
-  `Langlands.ClassField.Global.RelativeWeilGroup.WeakInductionAssociationStatement.{u, uV, uP}`
+  Proved as `localInducedRestriction`
+  (`Langlands/VirtualRepresentation/Global/RelativeWeilLocalRestrictionProof.lean`).
+- The conclusion is the statement
+  `Langlands.ClassFieldTheory.Global.RelativeWeilGroup.WeakInductionAssociationStatement.{u, uV, uP}`
   (`Langlands/Automorphic/WeakInductionAssociationStatement.lean`).
 
 The first antecedent is needed only for existence: `IsUnramifiedMatchAt` demands a
 local map at every place above `v`, and each local map comes with a geometric
 reciprocity candidate of `L_w`. The arithmetic hypothesis
-`IsArithmeticClassFamily c` of the target supplies exactly the hypotheses of the
+`IsArithmeticClassFamily c` of the conclusion supplies exactly the hypotheses of the
 second antecedent.
 
 ## Provenance
@@ -55,8 +58,8 @@ Internal. The implication is the step of Henniart (2000), §3.4, from Harris's w
 automorphic induction (Harris 1998, Definition 1.3(b)) to weak association with
 `Ind_{W_{L/E'}}^{W_{L/F}} (ξ ∘ τ_{E'})`, with the local inputs isolated as
 the published propositions above. The route through Tate's restriction formula
-(Tate 1979, (2.3.5) with (1.6.1)) is the one sketched in the target pair's
-Markdown and in the Markdown of `LocalInducedRestrictionStatement`. No source
+(Tate 1979, (2.3.5) with (1.6.1)) is the one sketched in the Markdown of
+`WeakInductionAssociationStatement` and in the Markdown of `LocalInducedRestrictionStatement`. No source
 statement is translated here. The proposition only chains published statements.
 
 ## Other declarations
@@ -120,7 +123,7 @@ All are proved; none is assumed.
   of `(ξ ∘ τ_{E'}) ∘ ιᵤ` and `f_u` is the residue degree of `F_v → E'_u`.
 - `RelativeWeilGroup.isUnramifiedMatchAt_inducedReciprocityRepresentation`: the
   local matching at one place, described below.
-- `RelativeWeilGroup.weakInductionAssociation_of_local hrec hmap hres`: the target
+- `RelativeWeilGroup.weakInductionAssociation_of_local hrec hmap hres`: the conclusion
   under the three antecedents. `weakInductionAssociation_reduction` is this
   theorem in curried form.
 

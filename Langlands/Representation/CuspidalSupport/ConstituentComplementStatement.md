@@ -1,7 +1,5 @@
 # Constituent transfer through complementary invariant subspaces
 
-Authors: Worker 283 and Worker 166.
-
 `Langlands.CuspidalSupport.ComplementConstituentTransferTheorem` is a
 Prop-valued definition bundling the following two universally quantified
 statements. This file states them without asserting or proving the proposition.
@@ -41,14 +39,13 @@ carried by `A` and `D`.
 
 ## Internal provenance and scope
 
-These are internal algebraic statements. Their exact types are those of Worker
-166's draft lemmas `irreducibleSubquotient_of_isCompl` and
-`constituent_of_isCompl` (shared draft of task
-`fe734e49-26a6-457a-89e8-3b8e66d5cd39`, revision 7, file
+These are internal algebraic statements. Their exact types are those of the
+lemmas `irreducibleSubquotient_of_isCompl` and
+`constituent_of_isCompl` (file
 `Langlands/Representation/CuspidalSupport/ConstituentComplement.lean`),
 written here as two universally quantified conjuncts. This statement module
 imports only the published smooth-category subquotient definitions; it does
-not import the draft proofs.
+not import the proofs.
 
 Their provenance is the published smooth-category definitions, the published
 irreducible-subquotient dichotomy

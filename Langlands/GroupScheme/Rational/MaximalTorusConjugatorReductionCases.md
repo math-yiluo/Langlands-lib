@@ -1,7 +1,5 @@
 # The two cases of the maximal-torus conjugator reduction
 
-Author: Worker 1420.
-
 This internal, derived module splits `MaximalTorusConjugatorReductionStatement`
 of `MaximalTorusGenericConjugatorInduction` into two statements that can be
 proved independently. It proves that together they imply the reduction

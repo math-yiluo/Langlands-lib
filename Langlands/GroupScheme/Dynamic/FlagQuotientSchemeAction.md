@@ -1,7 +1,5 @@
 # The categorical action on an actual scheme coset quotient
 
-Worker 1293.
-
 This internal adapter packages the already constructed
 `Dynamic.flagQuotientActionHom` as `SchemeAction G Q`, the existing abbreviation
 for Mathlib's categorical module object. Its base scheme and universe are

@@ -1,7 +1,5 @@
 # Upper bound for the split rank of `SL_m(D)`
 
-Author: Worker 161.
-
 This helper module proves
 `Langlands.GroupScheme.MatrixNormOneSplitRank.splitRank_le`. Let `K : Type u` be a field
 and `D : Type u` a finite-dimensional central division `K`-algebra. Let `n` be a natural

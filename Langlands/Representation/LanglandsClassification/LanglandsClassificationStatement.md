@@ -1,6 +1,6 @@
 # The Langlands classification: statement
 
-Author: Worker 6. Module `Langlands.Representation.LanglandsClassification.LanglandsClassificationStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`.
+Module `Langlands.Representation.LanglandsClassification.LanglandsClassificationStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*, French edition dated 9 July 2026, VII.4.2, Theorem, printed p.243 / PDF p.249 (proof to printed p.246 / PDF p.252). The registered source ID is `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. Langlands triplets are those of VII.4.1, Definition, printed p.241 / PDF p.247, formalized as `IsLanglandsTriplet` in the module `LanglandsTriplet`.
 
@@ -10,7 +10,7 @@ Renard's theorem has three parts:
 - (ii) if `J(P₁, σ₁, ψ₁) = J(P₂, σ₂, ψ₂)`, then `M₁ = M₂`, `ℜ(ψ₂ ψ₁⁻¹) = 0` and `σ₁ψ₁ ≃ σ₂ψ₂`;
 - (iii) every `(π, V) ∈ Irr(G)` is isomorphic to `J(P, σ, ψ)` for some Langlands triplet.
 
-The module states these as three propositions and their conjunction `LanglandsClassificationStatement.{u', v'}`. It is a statement unit: nothing is proved.
+The module states these as three propositions and their conjunction `LanglandsClassificationStatement.{u', v'}`. It is a statement module: nothing is proved.
 
 ## Common setting
 

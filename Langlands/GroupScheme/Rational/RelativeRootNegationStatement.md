@@ -1,7 +1,5 @@
 # Negation stability of the actual relative roots
 
-Author: Worker 1269.
-
 `Langlands.GroupScheme.RelativeRootNegationStatement` is an unproved
 proposition target. For every field `k : Type u`, connected reductive group
 scheme `G` over `Spec k`, and maximal split torus inclusion

@@ -49,7 +49,8 @@ These assume `[Smooth G.X.hom]` and `[Module.Flat R B]`.
 All declarations use only the axioms `propext`, `Classical.choice`, and
 `Quot.sound`.
 
-Provenance: internal to Task 6989 (Worker 496), requested by Worker 880
-as input (4) to the cohomological lifting argument. In Lie-algebra terms
+Provenance: internal; an input to the cohomological lifting argument for
+homomorphisms from groups of multiplicative type through nilpotent
+thickenings. In Lie-algebra terms
 this is `Lie(G) ⊗ I B ≅ B ⊗ (Lie(G) ⊗ I)` for flat `B`. It is stated for
 the actual reduction kernels of a nonaffine smooth group scheme.

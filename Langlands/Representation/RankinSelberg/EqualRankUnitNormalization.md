@@ -1,7 +1,5 @@
 # Scalar normalization of actual equal-rank test vectors
 
-Author: Worker 408.
-
 This module supplies an internal scalar normalization construction for the
 existing actual equal-rank JPSS coefficient integrals. It imports
 `AnalyticStatement` and changes none of its definitions or imported files.

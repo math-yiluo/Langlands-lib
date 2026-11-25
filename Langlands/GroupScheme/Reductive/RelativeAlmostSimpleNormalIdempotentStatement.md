@@ -1,7 +1,5 @@
 # Statement: normal idempotent endomorphisms of a group with almost simple geometric fibres, over any base
 
-Worker 47.
-
 `Langlands.GroupScheme.RelativeAlmostSimpleNormalIdempotentStatement.{u} : Prop` is a
 statement-only, `Prop`-valued definition. This module does not prove it, and it adds no
 other definitions, theorems or axioms. It imports

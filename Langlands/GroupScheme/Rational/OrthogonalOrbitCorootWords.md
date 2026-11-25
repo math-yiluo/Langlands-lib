@@ -1,7 +1,5 @@
 # Coroot words over orthogonal sets of simple roots
 
-Author: Worker 4348.
-
 Module `Langlands.GroupScheme.Rational.OrthogonalOrbitCorootWords`, namespace
 `Langlands.GroupScheme.SplitPinning`.
 

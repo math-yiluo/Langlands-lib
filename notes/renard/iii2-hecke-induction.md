@@ -1,7 +1,5 @@
 # Renard III.2: Hecke induction and the complete assertion map
 
-Worker 150, Task 5296 (`29275a21-bb5b-46f1-8412-ed69ddc931a1`).
-
 The governing source is David Renard, *Représentations des groupes réductifs
 p-adiques*, French version dated 9 July 2026, III.2, printed pp.70–83 /
 PDF pp.76–89. Registered source:
@@ -32,12 +30,11 @@ on Haar densities is `f(x) ↦ Δ(x)f(x⁻¹)`. It is complex-linear and reverse
 convolution. It differs from unweighted function inversion and from the
 conjugate-linear Hecke adjoint.
 
-The eight initial Hecke definition/statement units through III.2.6 are
-published. Their declarations are in the modules linked below. The four units
+The eight initial Hecke definition/statement modules through III.2.6 are
+published. Their declarations are in the modules linked below. The four modules
 `NormalQuotientModels`, `NormalQuotientStatements`, `MackeyModels` and
-`MackeyStatements` have been compiled and staged in the same task. Their entries
-below describe submitted targets, pending independent review/integration as
-applicable at this snapshot. They are not represented here as proved results.
+`MackeyStatements` hold the III.2.10–III.2.11 definitions and statements; their
+proofs are listed at the end of this note.
 
 ## III.2.1: continuous homomorphisms and four Hecke functors
 
@@ -50,7 +47,7 @@ Source: printed pp.70–71 / PDF pp.76–77.
 | The nondegenerate `H(H)` bimodule on the actual `H(G)`, using inversion for the right action | `HH.leftModule`, `HH.rightModule`, `HH.bimodule`, `HH.left_commutes_right`, and `HH.bimodule_isNondegenerate`. `Langlands.Hecke.haarInversion` and `haarInversion_mul` in [HaarInversion](../../Langlands/Representation/Hecke/HaarInversion.lean) implement the required distribution anti-involution. `HH.rightModule_eq_integrated` identifies the actual inversion-defined action with its distribution integration. |
 | Left `H(H)` action commutes with right multiplication by `H(G)`, and right `H(H)` action with left multiplication by `H(G)`; two-sided nondegeneracy | `HH.left_commutes_regular`, `HH.regular_commutes_right`, `HH.left_regular_nondegenerate`, `HH.regular_right_nondegenerate`. These are proved laws of the specified actions. |
 | Definitions of `F`, pseudo-`F`, `I`, `P` through Chapter I and III.1.4 | `HH.F`, `HH.I`, `HH.P`, `HH.pseudoF` directly specialize `NondegenerateTensorFunctor.F/P` and `RenardHomFunctors.I/pseudoF`. `HH.smoothF`, `smoothPseudoF`, `smoothI`, `smoothP` transport them through the exact `heckeNondegenerateModuleFunctor`, consuming explicit equivalence proofs. The independent published theorem `Langlands.Hecke.heckeNondegenerateModuleEquivalence` proves III.1.4. |
-| `Fφ ≅ F`, `F ⊣ I`, `P ⊣` pseudo-`F` | `HH.ContinuousHomomorphismStatements` in [HomomorphismStatements](../../Langlands/Representation/Hecke/HomomorphismStatements.lean), the conjunction of `HeckeInductionAdjunctionStatement` and `SmoothInductionAdjunctionStatement`. The exact generic adjunction evaluation formulas and naturality are retained. Hecke equivalences are conclusions, not extra hypotheses. This is a published statement; its exact proof is Task 5401. |
+| `Fφ ≅ F`, `F ⊣ I`, `P ⊣` pseudo-`F` | `HH.ContinuousHomomorphismStatements` in [HomomorphismStatements](../../Langlands/Representation/Hecke/HomomorphismStatements.lean), the conjunction of `HeckeInductionAdjunctionStatement` and `SmoothInductionAdjunctionStatement`. The exact generic adjunction evaluation formulas and naturality are retained. Hecke equivalences are conclusions, not extra hypotheses. This is a published statement; its exact proof is `continuousHomomorphismStatements` in [HomomorphismProof](../../Langlands/Representation/Hecke/HomomorphismProof.lean). |
 | Example: transport by an isomorphism; conjugation formula (III.2.1.2) | `HH.restriction` already applies to a continuous group isomorphism. The generic inner-conjugation adapter `I.conjugateSmoothInducedEquiv` below consumes the explicit equality `τ(e(p)) = σ(p)`. A source-named declaration of the conjugated coefficient representation and the equation `πᵍ(ghg⁻¹)=π(h)` is not separately packaged here. |
 
 ## III.2.2–III.2.5: function induction and Frobenius reciprocity
@@ -63,14 +60,14 @@ Source: printed pp.70–71 / PDF pp.76–77.
 | III.2.3 Lemma, printed p.72 / PDF p.78: compact `H\G` gives `Ind=ind` and preserves admissibility | `I.CompactQuotientClause`; its proof is `I.compactQuotientClause_holds` in [CompactQuotientProof](../../Langlands/Representation/Induction/CompactQuotientProof.lean), using `compactInclusion_bijective_of_compactSpace` and `smoothInduced_isAdmissible_of_compactSpace`. |
 | III.2.4 Lemma, printed p.73 / PDF p.79: normalizer conjugation does not change either induction, with `f(x) ↦ f(g⁻¹x)` | Generic published `I.conjugateSmoothInducedEquiv`, evaluation and naturality in [ConjugateParabolic](../../Langlands/Representation/Induction/ConjugateParabolic.lean) give the smooth-function assertion for an actual inner-conjugation subgroup equivalence and matching coefficient actions. The corresponding compact-induction equivalence is not provided by this declaration; a full compact counterpart remains a gap. |
 | III.2.5 Theorem, printed pp.73–74 / PDF pp.79–80: smooth induction is right adjoint to restriction | `I.SmoothFrobeniusClause` in `I.StructuralStatement` specifies the linear Hom equivalence by evaluation at `1`. `HH.SmoothInductionAdjunctionStatement` is the separate Hecke-transport adjunction target; neither statement alone identifies the two induction functors. |
-| III.2.5 Remark, (III.2.5.1)–(III.2.5.5), printed pp.74–75 / PDF pp.80–81: explicit smooth induction/Hecke Hom natural isomorphism | Published `HH.ClosedInductionHomStatement` in [ClosedInductionStatements](../../Langlands/Representation/Hecke/ClosedInductionStatements.lean). It prescribes `f ↦ (T ↦ (T·f)(1))`, existence of a compact-open right local unit for each Hom vector, and the inverse `q ↦ (g ↦ q(l(g)eK))` for every such local unit. The original induced carrier supplies covariance (III.2.5.3); the restricted-action identity of (III.2.5.4) is included explicitly. Its exact proof is Task 5402. |
+| III.2.5 Remark, (III.2.5.1)–(III.2.5.5), printed pp.74–75 / PDF pp.80–81: explicit smooth induction/Hecke Hom natural isomorphism | Published `HH.ClosedInductionHomStatement` in [ClosedInductionStatements](../../Langlands/Representation/Hecke/ClosedInductionStatements.lean). It prescribes `f ↦ (T ↦ (T·f)(1))`, existence of a compact-open right local unit for each Hom vector, and the inverse `q ↦ (g ↦ q(l(g)eK))` for every such local unit. The original induced carrier supplies covariance (III.2.5.3); the restricted-action identity of (III.2.5.4) is included explicitly. Its exact proof is `closedInductionHom` in [ClosedInductionHomProof](../../Langlands/Representation/Hecke/ClosedInductionHomProof.lean). |
 
 ## III.2.6–III.2.8: compact induction, duality and stages
 
 | Locator and assertion | Exact Lean counterpart, limitation or gap |
 | --- | --- |
 | III.2.6 right module formula (III.2.6.1), printed p.75 / PDF p.81 | `HH.CompactInductionHeckeStatement` in [CompactInductionStatements](../../Langlands/Representation/Hecke/CompactInductionStatements.lean) includes the equality `(f·a)(x)=∫H ΔG(h)a(h)f(xh⁻¹) dμH`. The action is the original `HH.rightModule`; no unimodularity premise removes the factor. |
-| III.2.6 tensor model, map (III.2.6.2) and Theorem, printed pp.75–76 / PDF pp.81–82 | `HH.relativeModularCharacter`, `tensorInductionHeckeFunctor`, `compactModularHeckeFunctor`, and `tensorInductionTmul` in [CompactInductionModels](../../Langlands/Representation/Hecke/CompactInductionModels.lean). Published `HH.CompactInductionHeckeStatement` asserts the natural isomorphism and specifies `p(f⊗w)(g)=∫H f((hg)⁻¹)ΔG(h)ρ(h⁻¹)w dμH` after every algebraic complex-linear functional. This specifies the vector formula without adding a topology to `W`. Its exact proof is Task 5403. |
+| III.2.6 tensor model, map (III.2.6.2) and Theorem, printed pp.75–76 / PDF pp.81–82 | `HH.relativeModularCharacter`, `tensorInductionHeckeFunctor`, `compactModularHeckeFunctor`, and `tensorInductionTmul` in [CompactInductionModels](../../Langlands/Representation/Hecke/CompactInductionModels.lean). Published `HH.CompactInductionHeckeStatement` asserts the natural isomorphism and specifies `p(f⊗w)(g)=∫H f((hg)⁻¹)ΔG(h)ρ(h⁻¹)w dμH` after every algebraic complex-linear functional. This specifies the vector formula without adding a topology to `W`. Its exact proof is `compactInductionHeckeStatement_proof` in [CompactInductionHeckeProof](../../Langlands/Representation/Hecke/CompactInductionHeckeProof.lean). |
 | Proof models (III.2.6.3)–(III.2.6.4), printed pp.76–77 / PDF pp.82–83: fixed-vector direct sums and orbitwise tensor identifications | The existing finite `I.fixedEvaluationEquiv` supports only the finite-transversal situation. The unrestricted direct-sum models and orbitwise tensor identifications in this proof are not separately stated or proved by the new theorem statement. They remain construction/proof obligations for a proof following this source route. |
 | III.2.6 final Remark, printed p.77 / PDF p.83: for open `H`, extension of Hecke distributions by zero identifies its bimodule with the inclusion bimodule; pseudo-`F ≅ F`; relative modular character is trivial | The generic actions exist above. This exact extension/inclusion bimodule comparison and the resulting Hecke pseudo-forgetful comparison for all open subgroups are not separately packaged here. A direct general-open-subgroup triviality theorem for `HH.relativeModularCharacter` is also not supplied by the compact-induction statement. These are retained gaps. |
 | Same Remark, (III.2.6.5): open-subgroup compact induction is left adjoint to restriction | `I.OpenSubgroupAdjunctionClause` in `I.StructuralStatement`; the actual smooth categorical adjunction is published as `I.compactInductionAdjunction` in [OpenAdjunction](../../Langlands/Representation/Induction/OpenAdjunction.lean), with unit/counit formulas. This proves the function-category assertion, without claiming the preceding Hecke inclusion comparison. |
@@ -93,9 +90,9 @@ Source: printed pp.78–80 / PDF pp.84–86.
 | Proposition: relations are precisely vectors killed by some compact-subgroup average `eK` | `JL.CompactCharacterRelationDetectionClause` and proved `JL.mem_relations_iff_compact` detect a relation inside a single compact subgroup. They do **not** state the literal averaging-kernel criterion. The exact `eK` criterion, including the source's compact subgroup averaging, remains an adapter gap. |
 | Corollary: `E'(H)=E(H)∩E'` and exactness of coinvariants, hence of `j_H` under compact exhaustion | `JL.CharacterLocalizationExactnessStatement` and its proof `JL.characterLocalizationExactness` in [LocalizationExactnessProof](../../Langlands/Representation/Jacquet/LocalizationExactnessProof.lean), at character `1`, cover injectivity, middle exactness and surjectivity of the actual quotient maps, with the full normalizing action. The intersection identity follows through the kernels of these quotient maps; its literal subrepresentation equality and the bridge from the source's filtered-union wording are not separately packaged. This proof is not evidence of the preceding literal `eK` criterion. |
 
-## III.2.10–III.2.11: submitted remaining Hecke targets
+## III.2.10–III.2.11: remaining Hecke targets
 
-| Locator and assertion | Submitted Lean counterpart and scope |
+| Locator and assertion | Lean counterpart and scope |
 | --- | --- |
 | III.2.10, printed pp.80–81 / PDF pp.86–87: closed normal quotient, compact-open image basis and smooth quotient coinvariants | `HH.quotientOpenSubgroup`, `isCompact_quotientOpenSubgroup`, `quotientNonarchimedean`, `normalQuotientAction`, its representative formula and smoothness, and `normalCoinvariantFunctor` in [NormalQuotientModels](../../Langlands/Representation/Hecke/NormalQuotientModels.lean). The action and morphisms reuse `Representation.quotientToCoinvariants` and `Rep.quotientToCoinvariantsFunctor` on exactly `J.Coinvariants`. |
 | Distribution pushforward description and (III.2.10.1), printed p.80 / PDF p.86 | `HH.NormalQuotientHeckeStatement` in [NormalQuotientStatements](../../Langlands/Representation/Hecke/NormalQuotientStatements.lean) includes `T·a_{p,K}=T*a_{q(p),q(K)}`, using `a=eK*l(p)eK` as an actual Hecke density. A general pushforward `E'(P) → D'(P/N)` and its pairing identity are not separately constructed; they are an intermediate source proof device, not an extra input to this statement. |
@@ -107,18 +104,25 @@ Source: printed pp.78–80 / PDF pp.84–86.
 | Same Theorem: tensor Mackey isomorphism under pseudo-`F ≅ F` | Second Mackey assertion, `mackeyTensorLeft ≅ mackeyTensorRight` naturally on `SmoothRep(H) × SmoothRep(G)`, is explicitly conditional on `Nonempty (smoothPseudoF ≅ smoothF)`. The exact Hecke equivalences and `Fφ ≅ F` are conclusions. |
 | Proof displays (III.2.11.1)–(III.2.11.10) | The theorem target states the resulting two natural isomorphisms. The intermediate Hom-set equivalences are not separately asserted here. Their ingredients are the published tensor–Hom adjunction (`Langlands.Renard.Smooth.TensorHom.smoothIntertwinerCurry`), the III.2.1 induction adjunction targets, and the pseudo-forgetful/forgetful condition specifically needed at (III.2.11.8). |
 
-## Proof successors and retained work
+## Proofs and retained work
 
-The exact published statement targets have focused `lean.proof@1` successors:
+The Library proves every statement target named above, in
+`Langlands/Representation/Hecke/`:
 
-- Task 5401 (`1ed372bc-4451-4d12-8a7f-070d0b3afd80`):
-  `HH.ContinuousHomomorphismStatements`.
-- Task 5402 (`1cedfe50-9565-4867-b786-9da87b49b6cd`):
-  `HH.ClosedInductionHomStatement`.
-- Task 5403 (`d95a6f63-4a55-407f-a899-cf5f2b98540f`):
-  `HH.CompactInductionHeckeStatement`.
+- `HH.ContinuousHomomorphismStatements`: `continuousHomomorphismStatements`
+  (`HomomorphismProof.lean`).
+- `HH.ClosedInductionHomStatement`: `closedInductionHom`
+  (`ClosedInductionHomProof.lean`).
+- `HH.CompactInductionHeckeStatement`: `compactInductionHeckeStatement_proof`
+  (`CompactInductionHeckeProof.lean`).
+- `HH.NormalQuotientStatements` and `HH.NormalQuotientHeckeStatement`:
+  `normalQuotientStatements`, `normalQuotientHeckeStatement`
+  (`NormalQuotientProof.lean`); `HH.NormalQuotientAdjunctionStatement` and
+  `HH.NormalQuotientInductionAdjunctionStatement`:
+  `normalQuotientAdjunctionStatement`, `normalQuotientInductionAdjunctionStatement`
+  (`NormalQuotientAdjunctionProof.lean`).
+- `HH.MackeyIsomorphismStatements`: `mackeyIsomorphismStatements`
+  (`MackeyProof.lean`).
 
-The exact III.2.10 and III.2.11 proof successors will be published once their
-statement units enter the Library. Task 5296 supplies definitions, statements
-and this source map; it does not claim their theorem proofs. The gaps recorded
-in the tables remain gaps even when a related restricted result is published.
+The gaps recorded in the tables remain gaps even when a related restricted
+result is published.

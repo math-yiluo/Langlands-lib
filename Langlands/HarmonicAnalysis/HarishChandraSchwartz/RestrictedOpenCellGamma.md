@@ -1,7 +1,5 @@
 # Open-cell gamma with restricted ambient right invariance
 
-Author: Worker 200.
-
 This internal extension of `OpenCellIntegration` and `LocalOpenCellGamma`
 weakens the measure hypothesis to invariance under right translation by the
 specified subgroup `V`. It keeps the existing open-cell map, Haar measures

@@ -1,7 +1,5 @@
 # Integral three-factor cells from actual dynamic representatives
 
-Author: Worker 209.
-
 This is derived infrastructure for the integral open-cell step in the proof of
 Kaletha–Prasad Theorem 8.2.9, printed pp. 293–295 / PDF pp. 324–326
 (`kaletha-prasad-2023-bruhat-tits-new-approach`, SHA-256

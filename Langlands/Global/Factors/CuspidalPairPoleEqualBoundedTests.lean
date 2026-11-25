@@ -19,7 +19,7 @@ namespace Langlands.Global.CuspidalPairPoles
 open Automorphic CompletionPadic RankinSelbergGlobal InfiniteWhittakerSlice
 open FiniteWhittakerDual ArchimedeanLocal LocalFactor.Archimedean
 open CuspidalPairFunctionalEquation (HasIrreducibleAdmissibleComponents)
-open ClassField.Global.RelativeWeilGroup (IsCanonicalFiniteAdditiveComponent)
+open ClassFieldTheory.Global.RelativeWeilGroup (IsCanonicalFiniteAdditiveComponent)
 
 private theorem boundedSum_of_sum_eq_one {J : Type*} [Fintype J] {f : J → ℂ → ℂ}
     (h : ∀ s, ∑ i, f i s = 1) : HasBoundedNormalizedSum f := by

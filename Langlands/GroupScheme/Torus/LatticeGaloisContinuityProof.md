@@ -1,7 +1,6 @@
 # Continuity of the Galois action on the lattices of a torus: proof
 
-Authors: Worker 3483 (formerly Worker 15; Lean proof and original exposition) and
-Worker 119 (dependency documentation and exact-target submission). `Langlands.GroupScheme.torusLatticeGaloisContinuity` proves
+`Langlands.GroupScheme.torusLatticeGaloisContinuity` proves
 `Langlands.GroupScheme.TorusLatticeGaloisContinuityStatement.{u}` exactly,
 with no added hypotheses or proposition-valued inputs. Its axioms are `propext`, `Classical.choice`
 and `Quot.sound`.
@@ -44,11 +43,8 @@ Steps 5 and 6 give `galoisRepresentation σ = 1` on both lattices.
 
 ## Published inputs and provenance
 
-The proof is reused from the immutable Task 3483 draft revision 3, task
-`2b5e4a00-9d44-49a4-9c89-979fb5b6233e`, directory
-`revision-3-ce01aee184dec1c896d6b5edb977d87b1fc08762357b7999f699a7d8b24f5d12/files/`.
-The Lean proof is unchanged. Its source assertion and original-literature
-provenance are documented by the unchanged target module
+The source assertion and original-literature
+provenance are documented by the target module
 `Langlands.GroupScheme.Torus.LatticeGaloisContinuityStatement`.
 The implemented argument is the finite-model and lattice-pairing argument above.
 

@@ -1,7 +1,7 @@
 # The archimedean Rankin–Selberg theory behind the semi-local functional equations
 
 Module `Langlands.Global.RankinSelberg.ArchimedeanSemilocalTheoryStatement`, namespace
-`Langlands.Global.RankinSelbergGlobal`. This is the entry module of Task 7136. It collects the
+`Langlands.Global.RankinSelbergGlobal`. This is the entry module of the archimedean statements. It collects the
 three results that the two open premises
 
 * `UnequalSemilocalFactorizationStatement` (module
@@ -29,8 +29,8 @@ Both are `Prop`-valued, with the universes `u` and `uQ` free, as in the premises
 and 3 do not assume result 1. The helper modules are `ArchimedeanPlaces` (place inclusions,
 archimedean restrictions, minus-one scalars) and `ArchimedeanIntegrals` (local integrals).
 
-Neither premise is proved here; the derivations below are sketches for the consumers
-(Task 7053 for the unequal premise, Task 7124 or Task 7054 for the equal premise).
+Neither premise is proved here; the derivations below are sketches for proofs of the two
+premises.
 
 ## Derivation of `UnequalSemilocalFactorizationStatement`
 
@@ -204,4 +204,4 @@ inconsistency between the premises and the Library's conventions was found.
 
 The three results are source statements (Jacquet 2009, Theorem 2.1; Cogdell 2004,
 pp.216–220) in the Library's conventions. The two conjunctions and the split into results 1–3
-are the organization of Task 7136, agreed with the consumer tasks 7053 and 7054/7124.
+are internal, chosen for what the two premises need.

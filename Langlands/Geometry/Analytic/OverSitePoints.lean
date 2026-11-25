@@ -113,7 +113,7 @@ def pointEquivariance {G : Type uG} [Group G] (ρ : G →* Aut X)
     Sheaf.Equivariant.TwistedOver.PointEquivariance (P := P) (J := J) ρ
       (fun x => toPoint P L J x (h x)) :=
   letI := EtaleSite.pointAction L ρ
-  { fiberIso := fun g x => pointTranslate P L (ρ g) x (h x) (h _) }
+  { fiberIso := fun g x => pointTranslate P L (ρ g).asIso x (h x) (h _) }
 
 end OverSite
 
@@ -171,7 +171,7 @@ abbrev pointEquivariance {G : Type uG} [Group G] (ρ : G →* Aut X)
   OverSite.pointEquivariance quasiEtale L ρ (quasiEtaleTopology X) h
 
 theorem translate_functor_eq {G : Type uG} [Group G] (ρ : G →* Aut X) (g : G) :
-    (translate (ρ g)).functor = Sheaf.Equivariant.TwistedOver.translate quasiEtale ρ g := rfl
+    (translate (ρ g).asIso).functor = Sheaf.Equivariant.TwistedOver.translate quasiEtale ρ g := rfl
 
 end QuasiEtaleSite
 

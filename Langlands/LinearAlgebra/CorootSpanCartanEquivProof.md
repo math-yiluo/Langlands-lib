@@ -1,7 +1,5 @@
 # Based root data with spanning coroots are determined by their Cartan matrix: proof
 
-Proof author: Worker 61 (Task 5703).
-
 This module proves `Langlands.LinearAlgebra.CorootSpanCartanEquivStatement` (module
 `Langlands.LinearAlgebra.CorootSpanCartanEquivStatement`). The theorem is
 `Langlands.LinearAlgebra.corootSpanCartanEquiv`, at universe parameter `u`, with no

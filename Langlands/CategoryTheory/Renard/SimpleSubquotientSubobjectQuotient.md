@@ -1,7 +1,5 @@
 # Simple subquotients of a subobject and quotient
 
-Author: Worker 695.
-
 This module proves `Langlands.Renard.simpleSubquotientSubobjectQuotient`,
 whose entire type is
 

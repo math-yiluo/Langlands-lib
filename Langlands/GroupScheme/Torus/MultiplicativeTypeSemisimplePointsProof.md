@@ -1,7 +1,5 @@
 # Multiplicative type via semisimple geometric points: proof
 
-Author: Worker 906.
-
 `Langlands.GroupScheme.multiplicativeTypeSemisimplePoints` proves
 `Langlands.GroupScheme.MultiplicativeTypeSemisimplePointsStatement.{u}`
 (Milne, *Algebraic Groups* (2017), Corollary 12.21; see

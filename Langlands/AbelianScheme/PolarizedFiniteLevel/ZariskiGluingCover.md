@@ -1,7 +1,7 @@
 # The locally directed cover by opens contained in a member of an open cover
 
 Helper module for gluing ordinary polarized full-level data along an open cover
-(Task 7812). It turns an arbitrary open cover `U : ι → S.Opens` of a scheme `S` into
+(used by `ModuliZariskiSheafOfRigidityProof`, which derives the Zariski sheaf property from rigidity). It turns an arbitrary open cover `U : ι → S.Opens` of a scheme `S` into
 a *locally directed* open cover, as required by Mathlib's relative gluing
 (`Scheme.Cover.RelativeGluingData`, Stacks Tag 01LH).
 

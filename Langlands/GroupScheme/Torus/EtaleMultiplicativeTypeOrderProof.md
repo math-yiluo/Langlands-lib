@@ -9,7 +9,8 @@ multiplicative type if and only if it is commutative and
 `Nat.card (G.affinePoints (CommAlgCat.of k Ks))` is coprime to `p`.
 
 The source is the corrected last sentence of Milne, *Algebraic Groups* (2017),
-Example 12.28, as documented in the target statement's Markdown. In particular,
+Example 12.28, as documented in the page of
+`EtaleMultiplicativeTypeOrderStatement`. In particular,
 the exact target includes commutativity. The implementation uses character
 separation and a closed embedding into a split torus for the converse, rather
 than a Fourier isomorphism of coordinate algebras.
@@ -24,8 +25,7 @@ positive characteristic; in characteristic zero the exponent is one.
 
 For the converse, `extensionPointsEquiv` identifies the rational points of the
 base change to `Ks` with the original `Ks`-coefficient points. This comparison
-follows the base-change point-equivalence construction from Worker 238's
-draft. The base-changed group remains affine, étale and commutative. Its
+is a base-change point-equivalence construction. The base-changed group remains affine, étale and commutative. Its
 coordinate algebra is finite-dimensional, so it is a finite scheme.
 
 `EtaleMultiplicativeTypeOrder.exists_diagonalizableIso_of_coprime_order`

@@ -1,7 +1,5 @@
 # Schur averaging for continuous complex compact representations
 
-Authors: Worker 94 (original pair) and Worker 86 (explicit context parameters).
-
 `Langlands.Representation.CompactSchurAveragingStatement G` concerns an
 arbitrary compact topological group in an arbitrary universe, with its
 Borel measurable structure. For every continuous complex representation
@@ -36,5 +34,5 @@ consequence; it contains no proof of the averaging formula.
 Applied to rank-one endomorphisms and summed over a basis, the formula is
 intended to supply inverse-character reproduction on the source type.
 That application, the actual compact-type projector, finite multiplicity,
-Lie-orbit density, and automorphic differential growth remain separate
-proof obligations.
+Lie-orbit density, and automorphic differential growth are separate
+results.

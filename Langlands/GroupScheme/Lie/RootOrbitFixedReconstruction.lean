@@ -94,7 +94,7 @@ local instance orbitFintype
     Fintype (MulAction.orbit (L ≃ₐ[k] L) β) :=
   (Finite.finite_mulAction_orbit (M := L ≃ₐ[k] L) β).fintype
 
-local instance : LocallyOfFiniteType (G_L).X.hom := by
+private local instance : LocallyOfFiniteType (G_L).X.hom := by
   change LocallyOfFiniteType (CategoryTheory.Limits.pullback.snd G.X.hom (algebraBaseMap k L))
   infer_instance
 

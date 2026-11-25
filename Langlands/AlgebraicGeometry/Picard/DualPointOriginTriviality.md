@@ -3,10 +3,10 @@
 This helper module proves that a point of a chosen dual scheme whose Poincaré
 pullback is trivial is the origin. The point may be a `T`-point, a base point, or
 a point given by any fibre product of the Poincaré projection. All declarations
-are in namespace `Langlands.AbelianScheme`. The Lean code is Worker 1165's
-`section Origin` of their draft support module for the parent task
-`32297f48-3cfc-421a-978e-b84e073ffacc`, moved here unchanged so that both proofs
-can import it. It imports `Picard/DualKernelPullback`, `Picard/RigidifiedCarrierIso`,
+are in namespace `Langlands.AbelianScheme`. The Lean code is the
+`section Origin` of a support module for the proof of the Poincaré direct images, moved
+here unchanged so that both proofs that use it can import it:
+`PoincareDirectImageSupport` and `AlgClosedFieldPoincareTangentSectionsProof`. It imports `Picard/DualKernelPullback`, `Picard/RigidifiedCarrierIso`,
 `Picard/PicardZeroPullbackProof` and `Modules/PullbackTensorProof`.
 
 ## Statements

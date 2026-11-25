@@ -1,11 +1,9 @@
 # The Picard sheaf of a projective abelian scheme over a normal finite-type integer domain is an AF scheme
 
-Authors: Worker 3570.
-
-Worker 3570 wrote the Lean file, checked the cited source pages and wrote this
-description, as part of the decomposition of
-`NormalFiniteTypeAbelianPicardSheafAFSchemeStatement` agreed with Worker 5067
-in proof task `de799868-75c2-4835-b620-f024e5969aa8` (Task 5600).
+This statement is part of the decomposition of
+`NormalFiniteTypeAbelianPicardSheafAFSchemeStatement` used in the proof
+`finiteTypeAbelianPicardSheafScheme` of `FiniteTypeAbelianPicardSheafSchemeStatement`
+(see Use, below). The cited source pages were checked for this description.
 
 ## Statement
 
@@ -102,11 +100,11 @@ property is Theorem 1.9(b) for the affine base `S`, written as conjunct 1.
 The source's decomposition of `P` into open and closed projective pieces is not
 stated; it implies conjunct 1 because a finite set of points meets only
 finitely many pieces, and a scheme projective over an affine scheme has the
-finite-set property. Worker 3570 read the cited pages of both registered PDFs.
+finite-set property. The cited pages of both registered PDFs were read.
 No source-specific errata note was found in the Library's `notes/errata/`
 directory.
 
-## Future proof obligations
+## Proof obligations
 
 A proof must construct, for every `R`, `A` and ample `L`, an actual `P` with
 the finite-set property and a natural bijection with the exact Library presheaf
@@ -114,7 +112,9 @@ the finite-set property and a natural bijection with the exact Library presheaf
 the Picard scheme of a projective abelian scheme (Hilbert schemes, or another
 correct argument), the comparison between the source's normalized or
 fppf-sheafified Picard functor and `RelativePicard.classSheaf A.X.hom`, and the
-finite-set property. None of these is a premise of the proposition.
+finite-set property. None of these is a premise of the proposition. The Library
+proves the proposition as `ampleNormalFiniteTypeAbelianPicardSheafAFScheme` (module
+`Langlands.AlgebraicGeometry.Picard.AmpleNormalFiniteTypeAbelianPicardSheafAFSchemeProof`).
 
 ## Use
 

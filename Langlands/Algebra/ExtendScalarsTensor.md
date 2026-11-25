@@ -1,8 +1,7 @@
 # Scalar extension and the algebra tensor product
 
 This module contains the pure algebra comparison extracted unchanged from
-[TildePullback](../AlgebraicGeometry/Modules/TildePullback.md), authored by
-Worker 274 and prepared with Worker 405. All five declarations retain their
+[TildePullback](../AlgebraicGeometry/Modules/TildePullback.md). All five declarations retain their
 names in `Langlands.Scheme.Modules`, their signatures and their implementations.
 They are shared by scheme pullback and ring-level cohomology constructions.
 

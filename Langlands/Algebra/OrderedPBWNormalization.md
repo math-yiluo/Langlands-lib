@@ -1,6 +1,6 @@
 # Normal forms for ordered Lie words
 
-Author: Worker 1687; uses Worker 1431's ordered-word and shortlex helpers.
+This module uses the ordered-word and shortlex helpers of `OrderedPBWWords`.
 
 This internal construction instantiates `TriangularNormalization.normalize`
 with the actual adjacent-inversion Lie-word reductions. Triangularity is proved
@@ -31,7 +31,8 @@ each singleton, since the normalizer respects every reduction. Linearity
 extends it over `p`; basis expansion extends the remaining basis argument to
 all `y`. This is a proved identity, with no generator-injectivity assumption.
 
-This unit constructs the word normalizer and identities needed for a
+This module constructs the word normalizer and identities needed for a
 representation of the actual universal enveloping algebra. The representation,
-ordered-monomial independence, and full span in that algebra remain the final
-application; this helper alone claims no completed PBW theorem.
+ordered-monomial independence, and full span in that algebra are the final
+application, in `OrderedPBWRepresentation`, `OrderedPBWSpanning` and
+`OrderedPBWBasis`; this helper alone claims no completed PBW theorem.

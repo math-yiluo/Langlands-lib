@@ -44,7 +44,7 @@ def ofGeometricPower [LocallyOfFiniteType G.X.hom] [IsAffineHom G.X.hom]
     GeometricallyConnected H.X.hom ∧
     ∃ m : ℕ, 0 < m ∧ IsDominant (D.powerMap m).left
   refine ⟨?_, inferInstance,
-    GeometricallyIrreducible.geometricallyConnected H.X.hom, n, hn, ?_⟩
+    GeometricallyIrreducible.geometricallyConnectedFLT H.X.hom, n, hn, ?_⟩
   · let : GrpObj (Over.mk H.X.hom) := inferInstanceAs (GrpObj H.X)
     exact smooth_of_grpObj H.X.hom
   · dsimp only [D]

@@ -1,7 +1,5 @@
 # Rescaling the quotient measures of a canonical standard-composite scalar
 
-Author: Worker 200.
-
 ## Declaration and provenance
 
 `Langlands.Plancherel.StandardInductionCanonicalScalarMeasureScalingStatement`

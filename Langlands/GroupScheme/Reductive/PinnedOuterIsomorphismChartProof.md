@@ -36,6 +36,4 @@ This is an internal composite proof of the Library's derived pair statement.
 Its mathematical provenance is the pinned classification and all-test
 splitting described in the target's Markdown. The implemented route is the
 published affine reduction, representation-free constant family, descent and
-normalization assembly detailed above. Worker 216 contributed the full-label
-local classification, and Worker 592 identified the public affine reduction
-used to discharge the remaining input.
+normalization assembly detailed above.

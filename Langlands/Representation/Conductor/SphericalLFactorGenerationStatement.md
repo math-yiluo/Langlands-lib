@@ -1,6 +1,6 @@
 # The L-factor facts behind the existence of the essential vector
 
-Author: Worker 5032. This module defines one proposition,
+This module defines one proposition,
 `Langlands.Conductor.SphericalLFactorGenerationStatement` (universes `uF`, `uV`).
 It is a statement only: nothing here proves it.
 
@@ -184,7 +184,7 @@ Applied to the given data, the statement supplies the hypotheses `P`, `hP`,
 `hconv`, `hpoly` and `hgen` of the published `exists_isEssentialVector_of_jpss`.
 That theorem then gives the published `EssentialVectorExistence`. Together with
 the four other inputs of the published `essentialConductorStatement_of`, this
-gives the target `EssentialConductorStatement` of Task 5032.
+gives `EssentialConductorStatement`.
 
 ## What it does not assert
 

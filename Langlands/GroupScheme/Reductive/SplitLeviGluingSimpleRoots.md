@@ -1,7 +1,5 @@
 # Actual simple roots and rank-one directions for Levi gluing
 
-Author: Worker 1444.
-
 This internal derived construction chooses the actual simple-root family used
 by the Levi graph argument. It uses the intrinsic roots of the supplied torus
 map, rather than assuming a root-group family or a chamber as additional input.

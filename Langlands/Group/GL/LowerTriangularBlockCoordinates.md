@@ -1,7 +1,5 @@
 # Block coordinates on the lower triangular group
 
-Author: Worker 936.
-
 This module identifies the group `B̄_{a+d}` of invertible lower triangular
 `(a+d) × (a+d)` matrices with the product
 

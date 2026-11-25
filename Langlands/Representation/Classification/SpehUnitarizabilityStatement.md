@@ -1,6 +1,6 @@
 # Unitarizability of Speh representations
 
-Author: Worker 1810. This pair contains one Prop-valued statement definition,
+This pair contains one Prop-valued statement definition,
 `Langlands.Classification.SpehUnitarizability`. It proves nothing. It adds no
 axiom, structure field, or hypothesis asserting that a Speh quotient exists or
 that any classification result holds.
@@ -29,8 +29,8 @@ and the modules it imports:
   carrier itself. No norm, completion or finite-dimensionality is involved.
 
 The `d.IsDiscreteSeries` premise repeats the first conjunct of `d.IsSpeh π`.
-It is kept because the task contract prescribes this exact form, which also
-puts the source hypothesis `δ ∈ D^u` in plain view.
+It is kept because this exact form puts the source hypothesis `δ ∈ D^u` in
+plain view.
 
 ## Source
 
@@ -81,7 +81,7 @@ pulling an invariant form back along an isomorphism keeps it invariant and
 positive definite.
 
 The statement does not assume that a Speh quotient exists. Existence is the
-separate published target `SpehExistenceUniqueness`, which another task
+separate published target `SpehExistenceUniqueness`, which `SpehExistenceProof`
 proves. For data where no such `π` exists in the carrier universe, the
 statement is vacuously true. That is the correct reading of A.8 with
 existence kept separate.
@@ -108,15 +108,13 @@ the `u(δ, n)` with `δ ∈ D^u`. A.10 (printed p.377, proof through p.379)
 restates the classification of the unitary dual for `char F = 0` and uses A.9.
 
 This module formalizes only A.8 in its `u(δ, k)` form. The translation into
-Zelevinsky and Langlands multisegment notation is not formalized here. The
-downstream consumer is task 3fcabfac-7cbc-4d66-90b2-40b466df00f2 (Worker
-1792). Its target, the published `TadicUnitaryDualExhaustion`, needs Speh
-unitarizability as a prerequisite.
+Zelevinsky and Langlands multisegment notation is not formalized here. A
+downstream consumer is the published `TadicUnitaryDualExhaustion`, which needs
+Speh unitarizability as a prerequisite.
 
-## The source proof is global (outstanding obligation)
+## The source proof is global
 
-Nothing is proved here. Tadic's proof is global, and every global input it
-uses is missing from the current Library:
+Nothing is proved here. Tadic's proof is global; its global inputs are:
 
 1. **Globalization of `δ`.** Tadic picks a division algebra `H` central over
    `F` of dimension `m²`, a number field `k`, a place `w` with `k_w ≅ F`, and
@@ -160,7 +158,8 @@ by Jacquet. It is cited as the standard reference for the residual spectrum
 behind step 2. Tadic does not cite it, and the argument above needs only
 Jacquet's operator.
 
-A proof of `SpehUnitarizability` is therefore separate later work. Either it
-formalizes the global route (automorphic forms on `GL(n, 𝔸)`, Eisenstein
-residues, the local-global comparison with an inner form), or it gives a
-different argument. Neither is supplied here.
+The proof of `SpehUnitarizability` in `SpehUnitarizabilityProof` does not
+formalize the global route (automorphic forms on `GL(n, 𝔸)`, Eisenstein
+residues, the local-global comparison with an inner form). It gives a
+different argument: Tadic's local induction (Tadic 1986, Lemma 6.2, as
+presented in Badulescu 2014, Theorem 1(b)). No proof is supplied here.

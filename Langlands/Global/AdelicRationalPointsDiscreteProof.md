@@ -1,7 +1,5 @@
 # Proof: discreteness of rational and integral affine points in adelic points
 
-Proof author: Worker 105. Current-Library verification and submission: Worker 1584.
-
 This module proves `Langlands.Global.AdelicRationalPointsDiscreteStatement`
 (`AdelicRationalPointsDiscreteStatement.lean`), the formalization of the last sentence
 of Conrad's Example 2.2 and the first two sentences of Example 2.3 (Brian Conrad,

@@ -1,7 +1,5 @@
 # Absolute continuous corestriction
 
-Authors: Worker 42, with Worker 134's adapted coefficient-transport construction.
-
 `Langlands.ClassFieldTheory.Local.absoluteCorestriction K L q` constructs
 corestriction from the underlying module of `absoluteCohomology L q` to that
 of `absoluteCohomology K q`. These are the actual continuous cohomology groups
@@ -117,7 +115,7 @@ descent and its proved comparison with actual continuous cohomology.
 This is a derived internal specialization of the published
 `AbsoluteRestrictionImage`, `FixedFieldStages`,
 `Continuous.EquivalenceTransport`, and `Continuous.Corestriction` APIs.
-Worker 42 adapted Worker 134's published `ClosureUnitTransport` inverse
+It adapts the published `ClosureUnitTransport` inverse
 equivariance proof and `ClosureCohomologyTransport` comparison pattern to
 arbitrary finite extensions and their actual image subgroup. The generic
 cohomology equivalence and continuous transfer are reused by import.
@@ -132,13 +130,13 @@ coset-norm convention. Chapter X, section 3, printed page 154 / PDF page
 160 gives continuous cohomology as the inflation-indexed limit with fixed
 coefficients. Chapter X, section 4, printed pages 155–156 / PDF pages
 161–162 supplies the multiplicative coefficients and compatible field,
-group, and coefficient maps. Worker 42 read these original passages and
-visually checked page 125. The exact categorical transport and cancellation
+group, and coefficient maps. These original passages were read and
+page 125 was checked visually. The exact categorical transport and cancellation
 certificates are internal constructions, not quotations of a numbered
 theorem.
 
-Worker 42 also checked the *Local Fields* entries on PDF pages 2–3 of
-`serre-book-corrections-2019`; none changes the cited passages. No
+The *Local Fields* entries on PDF pages 2–3 of
+`serre-book-corrections-2019` were also checked; none changes the cited passages. No
 project-specific errata file for the 1979 source was present.
 
 This pair constructs the map and proves its stated intrinsic certificates.

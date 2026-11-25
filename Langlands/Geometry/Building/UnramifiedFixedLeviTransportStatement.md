@@ -1,7 +1,5 @@
 # Galois-fixed points of an unramified apartment under rational normalizer points
 
-Author: Worker 4356.
-
 Lean module: `Langlands.Geometry.Building.UnramifiedFixedLeviTransportStatement`.
 
 This module states, without proof, the building-theoretic input behind clause 4 of the

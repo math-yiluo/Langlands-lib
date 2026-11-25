@@ -1,7 +1,5 @@
 # The actual right-limit action on original nondegenerate modules
 
-Authors: Worker 6 and Worker 702.
-
 The governing original is David Renard, *Représentations des groupes
 réductifs p-adiques*, French version dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256

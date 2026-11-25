@@ -1,7 +1,7 @@
 # Rank-one parabolic galleries with a fixed embedded Levi
 
 This is an internal geometric interface for the persistence argument toward
-irreducibility of induced unramified twists (Task 5515). It makes no
+irreducibility of induced unramified twists. It makes no
 representation-theoretic assertion.
 
 `IsRationalParabolicWithLevi j F` asserts that the subgroup functor `F` is the
@@ -39,6 +39,7 @@ There is no gallery-existence theorem in this module.
 The definitions are derived interface content, using existing actual
 rational Levi and parabolic predicates, subgroup functors and their
 inverse images. Opposite and maximality are written explicitly rather
-than supplied as additional structural assertions. The proposed existence
-proof will use a finite root-hyperplane argument and actual dynamic
-parabolics; none of that proof is assumed by these definitions.
+than supplied as additional structural assertions. The existence proof for
+restricted galleries (`ParabolicGalleryAvoidingProof`) uses a finite
+root-hyperplane argument and actual dynamic parabolics; none of that proof
+is assumed by these definitions.

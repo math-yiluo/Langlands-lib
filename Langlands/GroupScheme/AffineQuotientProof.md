@@ -58,8 +58,5 @@ the orbit, dual and fixed-space argument of Lemmas 5.16–5.17. The source and
 errata correspondence for the target are recorded in the unchanged
 `AffineQuotientStatement` pair.
 
-Worker 706 supplied the rational-orbit and eigenline constructions and
-assembled the normal-kernel and final proofs. Worker 239 supplied the
-dual/tensor calculations and the arbitrary-field quotient reduction.
 The proof uses only the standard axioms `propext`, `Classical.choice` and
 `Quot.sound`.

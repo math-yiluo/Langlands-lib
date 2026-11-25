@@ -1,7 +1,5 @@
 # Compact real points of an anisotropic semisimple group
 
-Worker 862.
-
 `Langlands.GroupScheme.RealAnisotropicPointsCompactnessStatement : Prop`
 states that every anisotropic semisimple group scheme over the actual real
 numbers has compact real points. It has no universe parameters. This module

@@ -1,7 +1,5 @@
 # Sections of finite étale covers of the integers
 
-Worker 193.
-
 This internal consequence of the published integer finite étale algebra
 results constructs an actual section of every finite, étale, surjective
 morphism `p : X → Spec (ULift ℤ)`, in every universe. It is the arithmetic

@@ -34,7 +34,7 @@ theorem IsTorus.latticePairing_injective
   apply hφ
   apply (gmEndEquiv k).injective
   change latticePairing T χ (Additive.ofMul φ) = gmEndEquiv k 0
-  rw [hχ, map_zero]
+  rw [hχ, AddEquiv.map_zero]
   rfl
 
 end Detection
@@ -105,7 +105,7 @@ theorem IsLargestSplitSubtorus.latticePairing_baseChange_eq_zero
   change gmEndEquiv K (((Gm.commBaseChangeIso (algebraBaseMap k K)).inv ≫
     (CommGroupScheme.baseChange (algebraBaseMap k K)).map ν) ≫ χ) = 0
   rw [← he, Functor.map_comp, Category.assoc, Category.assoc, hχ,
-    Limits.comp_zero, Limits.comp_zero, map_zero]
+    Limits.comp_zero, Limits.comp_zero, AddEquiv.map_zero]
 
 /-- A character vanishing on the split part has zero finite-Galois trace, as an
 actual character of the extended torus. -/

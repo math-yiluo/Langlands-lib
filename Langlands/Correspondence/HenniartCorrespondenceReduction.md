@@ -1,6 +1,6 @@
 # Henniart's route with the standard inputs discharged
 
-Author: Worker 4803. Module `Langlands.Correspondence.HenniartCorrespondenceReduction`,
+Module `Langlands.Correspondence.HenniartCorrespondenceReduction`,
 namespace `Langlands.Henniart.Extension`. Universes: `uK` (p-adic fields), `uW`
 (Weil carriers and local constants), `uV` (supercuspidal carriers), all
 independent.
@@ -14,7 +14,7 @@ The implication
 2. `CandidateExistenceStatement.{uK, uW, uV, uW, uK}`,
 3. `StableCorrespondenceStatement.{uK, uW, uV, uW}`,
 4. `UnramifiedTwistIndependenceStatement.{uK, uW, uV, uW}` (items 2–4 are
-   components of Worker 14's published `HenniartStableMapStatement`: Henniart
+   components of `HenniartStableMapStatement`: Henniart
    2000, Théorème 3.1 with §§3.7–3.8, Théorème 4.2, and §4.4),
 5. `LocalClassField.CommonClosureReciprocityExistence.{uK}` (normalized local
    reciprocity in a common closure),

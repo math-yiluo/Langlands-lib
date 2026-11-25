@@ -36,6 +36,7 @@ commutative algebra. The rings are `A → P → C` with
 
   The composite is checked on pure tensors.
 
-Provenance: this is an internal algebraic lemma of Task 6989
-(Worker 496). It is the module-theoretic heart of the identification of
+Provenance: this is an internal algebraic lemma of the lifting of
+homomorphisms from groups of multiplicative type through nilpotent
+thickenings. It is the module-theoretic heart of the identification of
 square-zero reduction kernels with `Hom(ω, J)`.

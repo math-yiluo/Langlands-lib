@@ -1,6 +1,6 @@
 # Actual binary polynomial representations at Steinberg degrees
 
-This internal derived unit constructs `binaryRepresentation m`, the actual
+This internal derived module constructs `binaryRepresentation m`, the actual
 representation of `SL(2,R)` on the monomial coordinate space of binary homogeneous
 polynomials of degree `m`, for any commutative ring `R`. It converts the matrices
 from `BinaryPolynomialMatrices` to linear maps by matrix-vector multiplication.

@@ -4,7 +4,7 @@ This internal construction works over a complete ultrametric normed
 field `K` with a complete normed extension field `L`. The algebra,
 space and extension-field universes are independent. Presentations
 are saturated, with their space and chart-index universes both equal
-to the space universe, as in the localized target statement.
+to the space universe, as in `LocalizedEtaleFieldPointPullbackStatement`.
 
 Each actual chart spectrum is small in its presentation's space
 universe, since its chart map is injective into that space.
@@ -56,6 +56,6 @@ triangles from that one faithful source.
 
 The provenance is internal, from actual chart pullbacks,
 character-kernel quotients, canonical small-spectrum maps,
-full-field-point functoriality, and the atlas net axiom. This unit
+full-field-point functoriality, and the atlas net axiom. This module
 does not assert the final unconditional localized pullback
 preservation theorem.

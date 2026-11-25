@@ -1,10 +1,9 @@
 # The actual Weil pushout class of a finite unramified extension
 
-Author: Worker 1556. Worker 1839 is a coauthor through the reused modules
+This module reuses the modules
 `Langlands.GroupTheory.ExtensionAkizukiWitt` and
-`Langlands.Weil.Local.FiniteGaloisEquivariance`. This is a derived unit for task
-`37d6d58f-e378-4630-8a8c-0f3d7212a970`. All declarations are in
-`Langlands.Weil.Local`.
+`Langlands.Weil.Local.FiniteGaloisEquivariance`. It is a derived module.
+All declarations are in `Langlands.Weil.Local`.
 
 ## Setting
 

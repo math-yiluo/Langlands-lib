@@ -1,7 +1,5 @@
 # Normalized induction for actual upper block parabolics
 
-Author: Worker 8.
-
 `Langlands.Parabolic.NormalizedInductionStatement` conjoins four theorem
 statements over actual mathematical constructions. The four assertions are
 `Prop` definitions, with separate theorem proof obligations.
@@ -134,8 +132,8 @@ Registered sources:
 Only the published construction modules `Group.GL.BlockModulus`,
 `Representation.Induction.Definitions`,
 `Representation.Smooth.Contragredient.Definitions`, and
-`Representation.Unitary.Basic` are imported. Their authors retain
-construction ownership; this pair reuses their declarations directly.
+`Representation.Unitary.Basic` are imported. This pair reuses their
+declarations directly.
 
 The four theorem proofs, the formal modulus identification, normalized
 Jacquet and reciprocity statements, twist and central-character

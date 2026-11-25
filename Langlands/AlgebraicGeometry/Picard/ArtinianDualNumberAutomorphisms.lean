@@ -28,12 +28,12 @@ def autEquiv :
   (pointedEquivalence f M).fullyFaithfulFunctor.autMulEquivOfFullyFaithful A
 
 lemma autEquiv_apply (a : Aut A) :
-    autEquiv f M A a = (pointedEquivalence f M).functor.mapIso a := rfl
+    autEquiv f M A a = Aut.of ((pointedEquivalence f M).functor.mapIso a.asIso) := rfl
 
 /-- The group comparison keeps the ordinary pullback of the actual bundle automorphism. -/
 lemma autEquiv_bundle (a : Aut A) :
-    (autEquiv f M A a).hom.right.iso =
-      (LineBundle.pullback (spaceIso (K := K) f).hom).mapIso a.hom.right.iso := rfl
+    (autEquiv f M A a).asIso.hom.right.iso =
+      (LineBundle.pullback (spaceIso (K := K) f).hom).mapIso a.asIso.hom.right.iso := rfl
 
 /-- Actual Artinian pointed automorphisms are the actual zero-section reduction kernel. -/
 def autKernelEquiv :
@@ -44,8 +44,8 @@ def autKernelEquiv :
 
 /-- Forgetting the kernel proof gives actual ordinary pullback of the original automorphism. -/
 lemma autKernelEquiv_val (a : Aut A) :
-    (autKernelEquiv f M A a).val =
-      (LineBundle.pullback (spaceIso (K := K) f).hom).mapIso a.hom.right.iso := rfl
+    (autKernelEquiv f M A a).val.asIso =
+      (LineBundle.pullback (spaceIso (K := K) f).hom).mapIso a.asIso.hom.right.iso := rfl
 
 /-- Every actual pointed automorphism has a unique residue-fibre global-function coefficient. -/
 def autGlobalFunctionsEquiv :
@@ -55,17 +55,17 @@ def autGlobalFunctionsEquiv :
 
 /-- The coefficient comparison identifies the actual pulled-back automorphism with `1 + ε a`. -/
 lemma autGlobalFunctionsEquiv_formula (a : Aut A) :
-    (LineBundle.pullback (spaceIso (K := K) f).hom).mapIso a.hom.right.iso =
-      LineBundle.unitAutEquiv
+    (LineBundle.pullback (spaceIso (K := K) f).hom).mapIso a.asIso.hom.right.iso =
+      (LineBundle.unitAutEquiv
         ((pointedEquivalence f M).functor.obj A).right.of
         (topUnitsEquiv (residueStructure (K := K) f)
           (coefficientUnit (residueStructure (K := K) f) ⊤
-            (Multiplicative.toAdd (autGlobalFunctionsEquiv f M A a)))) := by
+            (Multiplicative.toAdd (autGlobalFunctionsEquiv f M A a))))).asIso := by
   have h := pointedAutGlobalFunctionsEquiv_symm_val
     (residueStructure (K := K) f) M ((pointedEquivalence f M).functor.obj A)
     (Multiplicative.toAdd (autGlobalFunctionsEquiv f M A a))
   change ((pointedAutGlobalFunctionsEquiv _ _ _).symm
-    ((pointedAutGlobalFunctionsEquiv _ _ _) (autEquiv f M A a))).hom.right.iso = _ at h
+    ((pointedAutGlobalFunctionsEquiv _ _ _) (autEquiv f M A a))).asIso.hom.right.iso = _ at h
   rw [MulEquiv.symm_apply_apply] at h
   exact h
 
@@ -95,25 +95,25 @@ and ordinary scaling pullback of the corresponding bundle automorphisms. -/
 lemma scaleBundleComparison_naturality (c : K) (a : Aut A) :
     (autKernelEquiv f M
       ((ArtinianTestDeformations.restrict f M (ArtinianTest.dualScale k K c)).obj A)
-      ((ArtinianTestDeformations.restrict f M
-        (ArtinianTest.dualScale k K c)).mapIso a)).val ≪≫
+      (Aut.of ((ArtinianTestDeformations.restrict f M
+        (ArtinianTest.dualScale k K c)).mapIso a.asIso))).val.asIso ≪≫
         scaleBundleComparison f M A c =
       scaleBundleComparison f M A c ≪≫
         (LineBundle.pullback (scale (residueStructure (K := K) f) c)).mapIso
-          (autKernelEquiv f M A a).val := by
+          (autKernelEquiv f M A a).val.asIso := by
   rw [autKernelEquiv_val, autKernelEquiv_val]
   simp only [Functor.mapIso_hom]
   rw [ArtinianTestDeformations.restrict_map_iso]
   apply Iso.ext
-  exact (scalePullbackComparison f c).hom.naturality a.hom.right.iso.hom
+  exact (scalePullbackComparison f c).hom.naturality a.asIso.hom.right.iso.hom
 
 /-- Actual Artinian epsilon restriction multiplies the unique coefficient by `c`,
 with the ordinary coherence comparison on the actually pulled-back bundle. -/
 lemma restrictAut_coefficient (c : K) (a : Aut A) :
     (autKernelEquiv f M
       ((ArtinianTestDeformations.restrict f M (ArtinianTest.dualScale k K c)).obj A)
-      ((ArtinianTestDeformations.restrict f M
-        (ArtinianTest.dualScale k K c)).mapIso a)).val ≪≫
+      (Aut.of ((ArtinianTestDeformations.restrict f M
+        (ArtinianTest.dualScale k K c)).mapIso a.asIso))).val.asIso ≪≫
         scaleBundleComparison f M A c =
       scaleBundleComparison f M A c ≪≫
         (infinitesimalAutEquiv (residueStructure (K := K) f)
@@ -121,7 +121,7 @@ lemma restrictAut_coefficient (c : K) (a : Aut A) :
             ((pointedEquivalence f M).functor.obj A).right.of)
           (Multiplicative.ofAdd (baseSectionMap (residueStructure (K := K) f) ⊤ c *
             (Multiplicative.toAdd (autGlobalFunctionsEquiv f M A a) :
-              Γ(residueSpace (K := K) f, ⊤))))).val := by
+              Γ(residueSpace (K := K) f, ⊤))))).val.asIso := by
   rw [scaleBundleComparison_naturality]
   congr 1
   have h : (autKernelEquiv f M A a).val =

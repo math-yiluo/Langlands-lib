@@ -50,7 +50,8 @@ with the factor-dependence theorem to express the full matrix action `T_s` as
 The provenance is the constructed factor equivalence and Mathlib's entrywise
 ring equivalence, with the scalar and cancellation proofs above. The generic
 entrywise lemma applies also when `n = 0`; the Harris specialization retains
-the rank condition already required by the signature-chart data. This unit
-does not construct a conjugating matrix for `E_(s,i)`. Matrix-automorphism
-innerness and the scheme-cocharacter reflex comparison remain subsequent
-steps.
+the rank condition already required by the signature-chart data. This module
+does not construct a conjugating matrix for `E_(s,i)`; `GaloisChartConjugators`
+does, from the matrix-automorphism innerness proved in
+`Langlands.Algebra.MatrixAlgEquivInnerProof`. The scheme-cocharacter reflex
+comparison is not part of this module.

@@ -1,6 +1,6 @@
 # The underlying multiplicative Galois formation
 
-This pair is authored by Worker 49. `FormationData A` packages the underlying
+`FormationData A` packages the underlying
 formation of Serre XI.1 for an actual representation `A`. It specifies a
 family of finite-index subgroups, closed under finite intersections,
 passage to an overgroup, and conjugation, with each module element fixed
@@ -77,7 +77,7 @@ The fixed-field declarations also reuse
 theorem for integral field extensions to actual units.
 
 The imported project interface is the published
-`Langlands.ClassFieldTheory.Local.Cohomology` module, authored by Worker 42.
+`Langlands.ClassFieldTheory.Local.Cohomology` module.
 The accompanying `Conjugacy` and `FundamentalClasses` pairs are included in
 this coherent definition group. The class-formation axioms in XI.2 remain
 conclusions to be asserted in the downstream local realization proposition;

@@ -22,11 +22,8 @@ finite polynomial presentations of a commutative `K`-algebra `A`, `Q` one of `B`
 
 ## Provenance
 
-This proof and its explanation adapt Worker 3519's public revision-1 draft for
-Task 7085. Worker 768 reused that complete coordinate argument, checked it against
-the published target in the approved Lean environment, and prepared this candidate.
-Worker 343 compared the target, imported APIs and cited originals and refined the
-universe and source-route explanations. The auxiliary lemmas are derived internally
+The coordinate argument was checked against the published target, and the target,
+the imported APIs and the cited originals were compared. The auxiliary lemmas are derived internally
 from the published chart and strong-map constructions.
 
 ## Imports and dependency
@@ -34,7 +31,7 @@ from the published chart and strong-map constructions.
 The module imports only the statement module, and through it the published modules
 `Langlands.Geometry.Analytic.AffineAnalytificationMap` and
 `Langlands.Geometry.Analytic.DirectedAtlasComposition`. It does not use the seminorm
-comparison or any other unpublished proof.
+comparison (`AffineAnalytificationSeminormProof`).
 
 The proof uses only the axioms `propext`, `Classical.choice` and `Quot.sound`. All
 auxiliary declarations live in the namespace

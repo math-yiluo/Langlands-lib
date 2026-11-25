@@ -22,6 +22,4 @@ implication. The supporting module's Markdown details these steps.
 
 This is an internal composition proof of the published assembly interface.
 It proves none of the five prerequisite propositions and does not prove the
-closed `InducedTailIntermediateRankSpanStatement`. The zero-row and integral
-adapters reused by the assembly were authored by Worker 829; Worker 318
-authored the assembly and this wrapper.
+closed `InducedTailIntermediateRankSpanStatement`.

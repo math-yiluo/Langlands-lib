@@ -1,6 +1,6 @@
 # Genuine derivative operators on finite vectors of a restricted units action
 
-Worker 1028, Task 7767. This is an internal consequence of the covariance and basis-expansion lemmas in [SmoothUnitAction](SmoothUnitAction.md), on the actual orbit-span carriers of [FiniteVectors](../FiniteVectors.md).
+This is an internal consequence of the covariance and basis-expansion lemmas in [SmoothUnitAction](SmoothUnitAction.md), on the actual orbit-span carriers of [FiniteVectors](../FiniteVectors.md).
 
 Let `A` be a finite-dimensional complete real normed algebra and `R` a representation of `Aˣ` by bounded complex-linear operators on a complex normed space. Let `D` be its genuine smooth carrier, let `j : K →* Aˣ` be a monoid homomorphism, and let `ρ` be the restriction of the transported group action to `K` through `j`. For each `X : A`, `isFiniteVector_operator_units` proves that `dR(X)` preserves the vectors of `D` with finite-dimensional complex `ρ`-orbit span. No topology or compactness of `K` is needed.
 

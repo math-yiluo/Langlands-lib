@@ -30,7 +30,7 @@ may be infinite. Coefficient tests lie in R's universe v and family
 modules in v+1; geometric character tests use `max u v`, as in
 `SpecialAtlas`.
 
-These are classes of the supplied atlas presentations. This unit proves
+These are classes of the supplied atlas presentations. This module proves
 neither existence of an unramified subfield nor specialization to
 invariant 1/d, and makes no classification claim for arbitrary formal
 schemes. No height, framing, varying-base moduli functor or

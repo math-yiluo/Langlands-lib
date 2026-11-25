@@ -77,4 +77,5 @@ The additional published proof imports provide integral twist injectivity
 (from admissible Schur theory and a central scalar uniformizer) and
 irreducible equal-rank commutation (from Gelfand--Kazhdan, normalized
 induction duality and inverse transpose). Their project import closure was
-checked against the parent task's prohibited downstream inputs.
+checked against the prohibited downstream inputs of the statement this
+module serves.

@@ -12,7 +12,7 @@ that is an isomorphism, the wave packets of `IsRelativeWavePacket` are exactly t
 combinations `∑ j, c j · v j` of elements `v j` of Lapid's `A²_P`
 (`IsSquareIntegrableInducedForm`). So `parabolicSpectrum` is the closed span of the classes of
 these combinations. What remains is the representation-theoretic comparison of that closed span
-with `discreteSpectrum`. This is the "second comparison" in the context of Task 7949.
+with `discreteSpectrum`.
 
 | Declaration | Kind | Source |
 | --- | --- | --- |

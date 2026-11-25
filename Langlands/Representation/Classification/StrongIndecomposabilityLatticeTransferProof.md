@@ -1,9 +1,5 @@
 # Proof of generic lattice transport for strong indecomposability
 
-Authors: Worker 864 (Lean proof and initial explanation), Worker 185
-(published target's dependency audit, adapted below), and Worker 695
-(source, complete-interface and dependency verification, and final editing).
-
 This module proves
 `Langlands.Classification.StrongIndecomposabilityLatticeTransferStatement`
 from the unchanged published statement module. The exact theorem is
@@ -118,7 +114,7 @@ Langlands.Representation.Classification.StrongIndecomposabilityLatticeTransferPr
 ```
 
 The imported three project Lean/Markdown pairs are preserved unchanged.
-Their entire authored declaration inventory, together with this proof,
+Their entire declaration inventory, together with this proof,
 is recorded here:
 
 | Module | Declarations and role |
@@ -141,6 +137,6 @@ import or theorem dependency.
 
 ## Inherited exclusions
 
-This is a lower algebraic input to ordered-socle existence task 23189526-80b0-4828-a6d4-7ebec2cbeef5. Exclude that conclusion and socle exhaustion f3a69bc8-7312-4f82-8a7d-ea3c8188cb63, analytic segment classification aca8805b-054f-4d56-8045-12db7f623404, segment-socle product irreducibility 23e98d90-6055-4e35-91a9-b0f5d8a84961, final segment-socle irreducibility criterion 2ae5cbe5-0701-4509-88a0-db8cbeb35be4, AdjacentUnlinkedSegmentSocleSwap, TwoSegmentSocleCommutation, special-head product criterion 8364e73f-14ec-4d14-8f2b-1555a7c1ce95, special-head exhaustion 3bfb61fa-1129-4fc9-83fd-7fcfec22106e, ordered special-head existence ebea9a8a-9b21-4208-aa31-98c2dea1f8a3, quotient coverage 20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584, tempered block uniqueness 52e97845-36bb-457d-b76f-70753334b88c, SquareIntegrableLanglandsClassification / 1cb45da2-7007-4351-a694-594fb148b8d1, square-integrable exhaustion cd8ab97c-0b78-4bce-97c4-d307a28159a4, regular exhaustion bf433f0a-921a-428c-b0c0-6475438125ac, GenericSegmentProductUniqueness / 30341ae4-65f2-4a0e-9283-763db01a409e, ordered special-segment conversion 8252833d-c269-41a9-824c-5879e531b23b, and forward special-segment essential square-integrability 5eece9e8-7f6b-4ea9-abea-a1f9f1b8c807. These exclusions cover the mathematical conclusions, their proof successors and transitive proof dependencies. The shared lower inputs are accounted for in the complete import and declaration audit above; none contains an excluded conclusion. No lower split is introduced.
+This is a lower algebraic input to ordered-socle existence (`OrderedMultisegmentSocleExistence`). The proof excludes that conclusion and socle exhaustion, analytic segment classification, segment-socle product irreducibility, final segment-socle irreducibility criterion, AdjacentUnlinkedSegmentSocleSwap, TwoSegmentSocleCommutation, special-head product criterion, special-head exhaustion, ordered special-head existence, quotient coverage, tempered block uniqueness, SquareIntegrableLanglandsClassification, square-integrable exhaustion, regular exhaustion, GenericSegmentProductUniqueness, ordered special-segment conversion, and forward special-segment essential square-integrability. These exclusions cover the mathematical conclusions, their proofs and transitive proof dependencies. The shared lower inputs are accounted for in the complete import and declaration audit above; none contains an excluded conclusion. No lower split is introduced.
 
-The inherited operator decision also excludes `ed48ae06-964c-4c84-9e62-978f5a953ca7`, `b95105c6-f8bb-4641-ae53-2f49d1e7f034`, `55ad1e10-62d8-46b7-a081-909ef0056426`, `92aea10f-62ac-4e0b-bd4a-9a80909797c5`, and the segment-socle part of `8e5b4563-0365-41c7-b134-70f2a0b36292`, including their proof successors and transitive proof dependencies. No derivative input is needed in this generic lattice proof. In the separate analytic application the allowed derivative route is proved, independently accepted Bernstein-Zelevinsky 1977 general theory; Zelevinsky 1980 segment derivative formulas 3.5 and 9.6 remain excluded. Operator pauses on other tasks remain in force, including minus exactness `b65bc667-6951-4bd5-82af-10fb7046df7f`; this proof neither resumes nor bypasses them.
+Also excluded are the segment Jacquet formulas `SegmentFullJacquetFormula`, `SegmentSocleJacquetFormula`, `SegmentHeadJacquetFormula` and `SegmentSpecialJacquetExponentNormFormula`, and the segment-socle part of `SegmentSocleDerivativesStatement`, including their proofs and transitive proof dependencies. No derivative input is needed in this generic lattice proof. In the separate analytic application the allowed derivative route is the proved Bernstein-Zelevinsky 1977 general theory; Zelevinsky 1980 segment derivative formulas 3.5 and 9.6 remain excluded.

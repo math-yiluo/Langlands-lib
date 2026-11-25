@@ -1,6 +1,6 @@
 # Disjoint unions of arbitrary supplied affinoid atlases
 
-Author: Worker 56. This is an internal construction from original indexed
+This is an internal construction from original indexed
 atlases, `AtlasNonemptyCharts` and the sigma-family net construction.
 No external theorem or original-literature claim is introduced.
 
@@ -75,7 +75,7 @@ space for every family of existing presentations.
 
 An empty component may contribute no chart, and the component-index type may
 itself be empty. No ambient-space nonemptiness assumption is needed.
-This unit constructs atlases and presentations. Complete maps between these
+This module constructs atlases and presentations. Complete maps between these
 disjoint unions, their categorical universal property, arbitrary-source
 induction, refinement localization, analytic action continuity and analytic
 sites remain separate obligations.

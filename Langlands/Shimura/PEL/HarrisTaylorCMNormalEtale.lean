@@ -104,7 +104,7 @@ theorem representedCMNormal_existsUnique_transport
     (Ω : Type) [Field Ω]
     (a b : Spec (CommRingCat.of Ω) ⟶ (schemes R).obj V)
     (hab : a ≫ projection R U V hVU = b ≫ projection R U V hVU) :
-    ∃! g : SmallCMResidualGroup D U V, a ≫ (quotientAction R U V hVU).ρ g = b := by
+    ∃! g : SmallCMResidualGroup D U V, a ≫ ((quotientAction R U V hVU).ρ g).asHom = b := by
   let c := pullback.lift a b hab
   let t := c ≫ inv (kernelComparison R U V hVU)
   obtain ⟨g, ⟨d, hd⟩, hg⟩ := existsUnique_coproductFactor
@@ -117,7 +117,7 @@ theorem representedCMNormal_existsUnique_transport
       (projection R U V hVU) (projection R U V hVU)) hdc
     simpa only [Category.assoc, representedCMNormalGraph_fst, Category.comp_id,
       c, pullback.lift_fst] using he
-  have hgb : a ≫ (quotientAction R U V hVU).ρ g = b := by
+  have hgb : a ≫ ((quotientAction R U V hVU).ρ g).asHom = b := by
     have he := congrArg (fun q => q ≫ pullback.snd
       (projection R U V hVU) (projection R U V hVU)) hdc
     simpa only [hda, Category.assoc, representedCMNormalGraph_snd,
@@ -143,16 +143,18 @@ def representedCMNormalEtaleAction [Etale (projection R U V hVU)] :
     Action ((schemes R).obj U).Etale (SmallCMResidualGroup D U V) where
   V := Scheme.Etale.mk (projection R U V hVU)
   ρ :=
-    { toFun := fun g => MorphismProperty.Over.homMk ((quotientAction R U V hVU).ρ g)
+    { toFun := fun g => End.of (MorphismProperty.Over.homMk ((quotientAction R U V hVU).ρ g).asHom
         (representedCMNormalProjection_invariant D C preservation composition
           unitCoherence associativity comparison symmetry stability square universality
-          dualityNaturality polarizationStability compatibility h htor R U V hVU g)
+          dualityNaturality polarizationStability compatibility h htor R U V hVU g))
       map_one' := by
+        apply End.ext
         apply MorphismProperty.Over.Hom.ext
-        exact (quotientAction R U V hVU).ρ.map_one
+        exact congrArg End.asHom (quotientAction R U V hVU).ρ.map_one
       map_mul' := fun g g' => by
+        apply End.ext
         apply MorphismProperty.Over.Hom.ext
-        exact (quotientAction R U V hVU).ρ.map_mul g g' }
+        exact congrArg End.asHom ((quotientAction R U V hVU).ρ.map_mul g g') }
 
 local notation "etaleAction" => representedCMNormalEtaleAction D C preservation composition
   unitCoherence associativity comparison symmetry stability square universality
@@ -171,7 +173,7 @@ local notation "etaleAction" => representedCMNormalEtaleAction D C preservation 
 /-- The etale action uses the original inverse-right residual translations. -/
 @[simp] theorem representedCMNormalEtaleAction_ρ_left
     [Etale (projection R U V hVU)] (g : SmallCMResidualGroup D U V) :
-    ((etaleAction R U V hVU).ρ g).left = (quotientAction R U V hVU).ρ g := rfl
+    ((etaleAction R U V hVU).ρ g).asHom.left = ((quotientAction R U V hVU).ρ g).asHom := rfl
 
 /-- The exact geometric premises for the original normal cover supply the
 existing finite-geometric-torsor input used by coefficient descent. -/

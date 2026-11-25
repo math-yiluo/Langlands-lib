@@ -157,6 +157,7 @@ theorem isIrreducible_smoothContragredient (ρ : Representation ℂ G V)
     rw [hU'bot] at hxU'
     exact (Submodule.mem_bot ℂ).1 hxU'
   have hS : S = ⊤ := by
+    have : FiniteDimensional ℂ S := FiniteDimensional.finiteDimensional_submodule S
     rw [← Subspace.dualCoannihilator_dualAnnihilator_eq (W := S), hScoann,
       Submodule.dualAnnihilator_bot]
   have hmem : r ⟨η, hηK⟩ ∈ S := by

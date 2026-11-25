@@ -1,6 +1,6 @@
 # Rational finite embedding reduced to literal Levi Jacquet splittings
 
-This is an internal reduction, authored by Worker 1570, of the existing
+This is an internal reduction of the existing
 `RationalCuspidalInducedEmbeddingStatement`. It does not prove the required
 splitting condition or the unconditional embedding theorem.
 
@@ -16,9 +16,9 @@ universe `u` and source carrier universe `v` are independent.
 unchanged rational finite embedding proposition from this single additional
 input. It supplies unimodularity and compact-limit regularity of the standard
 unipotent radicals from the published rational regularity theorems. Nonzero
-cuspidal Jacquet detection is supplied by Worker 1784's
+cuspidal Jacquet detection is supplied by
 `exists_nontrivial_isLeviCuspidal_jacquet_arbitraryCarrier`, whose proof
-generalizes the earlier work of Workers 78 and 379. The supplied literal
+generalizes that of the published `RationalMinimalJacquet`. The supplied literal
 splittings then give the detecting projections and finite orbit-map assembly
 already constructed in `CuspidalJacquetProjectionFromSplitting`.
 

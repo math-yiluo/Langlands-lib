@@ -1,7 +1,5 @@
 # Regular tempered Langlands head existence for GL_n
 
-Author: Worker 156.
-
 `Langlands.glRegularLanglandsHeadExistence` proves exactly the published
 proposition `Langlands.GLRegularLanglandsHeadExistenceStatement.{uF,uV}`.
 For every prime, finite p-adic field `F`, supplied topological realization
@@ -14,8 +12,8 @@ It includes distinct maps to isomorphic quotient targets.
 
 The implemented proof applies the published conditional reduction
 `glRegularLanglandsHeadExistence_of_relativeRegularComparison` to the
-published unconditional theorem `glRelativeRegularComparison`, authored
-by Worker 429. The comparison is instantiated at
+published unconditional theorem `glRelativeRegularComparison`.
+The comparison is instantiated at
 `{uF,max uF uV,max uF uV,max uF uV}`. Thus the field universe `uF` and input
 carrier bound `uV` remain independent, and the block, support, induction
 and head carriers have universe `max uF uV`. The closed theorem has no

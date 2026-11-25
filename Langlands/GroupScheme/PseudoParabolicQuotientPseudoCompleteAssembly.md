@@ -32,10 +32,10 @@ Conclusion: `PseudoParabolicQuotientPseudoCompleteStatement.{u}`.
 Proof. The chain is:
 1. `pseudoParabolicQuotientPseudoComplete_of_dynamic` with `hred` reduces to
    `DynamicParabolicQuotientDVRLifting k` for every field `k`.
-2. Worker 254's `dynamicParabolicQuotientDVRLifting_of_isSepClosed` with `hsep`
+2. `dynamicParabolicQuotientDVRLifting_of_isSepClosed` with `hsep`
    reduces this to separably closed fields. It uses base change to a separable
    closure and descent of the DVR lifting property along algebraic extensions.
-3. Worker 254's `dynamicParabolicQuotientDVRLifting_of_corepresented` reduces to
+3. `dynamicParabolicQuotientDVRLifting_of_corepresented` reduces to
    corepresented groups.
 4. That case is `corepresentedDynamicParabolicQuotientDVRLifting_of_isSepClosed`,
    applied to `unipotentRadicalExistence`, `unipotentRadicalQuotient`, `hflag`,

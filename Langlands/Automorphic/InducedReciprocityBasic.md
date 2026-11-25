@@ -1,8 +1,7 @@
 # Structural steps for induced reciprocity representations
 
-Author: Worker 1646. Internal helper for task
-`f096b984-dff5-4425-861f-8f298e5896fb`, toward the exact published target
-`Langlands.ClassField.Global.RelativeWeilGroup.WeakInductionAssociationStatement`.
+Internal helper toward the exact published target
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.WeakInductionAssociationStatement`.
 This module proves structural consequences of the existing constructions. It
 does not prove weak association or assume an unproved reciprocity statement.
 
@@ -40,10 +39,9 @@ the default Krull topology. The published
 finite Galois group; replacing the topology instance preserves the underlying
 representation.
 
-These lemmas are derived from the Library constructions for this task. Their
+These lemmas are derived from the Library constructions. Their
 proofs use only elementary group index and finite-dimensional linear algebra,
-not local Langlands, globalization, or a global functional equation. They leave
-the target and its imports unchanged.
+not local Langlands, globalization, or a global functional equation.
 
 `continuousInducedReciprocityRepresentation` bundles the actual induced
 representation with the continuity just proved. It is a genuine object of the

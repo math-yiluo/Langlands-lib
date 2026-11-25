@@ -16,7 +16,7 @@ K/k(s) is finite, and a nonzero t in the integral chart ring
 `CurveModel.chartRing k {s}`. Write S for
 `curvePlacePrincipalExceptional k K s (t : K)`, S' for its full upper
 preimage, A for `curvePlaceSIntegers k K S`, and B for
-`curvePlaceSIntegers k L S'`. Thus this unit retains the principal-chart
+`curvePlaceSIntegers k L S'`. Thus this module retains the principal-chart
 initial supports of the underlying finite-projective integral
 construction; it does not assert a new integral finiteness theorem for
 every initial support.
@@ -92,9 +92,10 @@ instances in the proposition are derived from j. Unfolding the
 constructed homeomorphism and applying `finalCoconeHomeomorph_ι`
 proves exactly this stage law.
 
-This unit concerns the original fixed integral models on full curve
+This module concerns the original fixed integral models on full curve
 adeles. The comparison of their generic fibers with the original
 field-level Weil restriction, and of their fixed-model final topologies
-with the spread topologies on generic fibers, remain separate host
-obligations. No completion of Example 4.2 or of the whole paper is
-claimed.
+with the spread topologies on generic fibers, remain separate
+obligations of the proof of Example 4.2, which the Library gives as
+`adelicProjectiveWeilComparison` in `AdelicProjectiveWeilComparisonProof`.
+No completion of Example 4.2 or of the whole paper is claimed here.

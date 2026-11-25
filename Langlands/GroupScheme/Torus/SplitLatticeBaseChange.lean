@@ -58,7 +58,8 @@ theorem gmEndEquiv_baseChange (f : Gm (Spec (CommRingCat.of k)) ⟶ Gm (Spec (Co
     gmEndEquiv K ((Gm.commBaseChangeIso b).inv ≫
       (CommGroupScheme.baseChange b).map f ≫ (Gm.commBaseChangeIso b).hom) = gmEndEquiv k f := by
   conv_lhs => rw [eq_gmEndEquiv_zsmul k f]
-  simp [gmEndEquiv_zsmul_id]
+  refine (congrArg (gmEndEquiv K) ?_).trans (gmEndEquiv_zsmul_id K (gmEndEquiv k f))
+  simp
 
 /-- The integer character/cocharacter pairing commutes with actual base change. -/
 theorem latticePairing_baseChange (T : CommGroupScheme (Spec (CommRingCat.of k)))
@@ -148,7 +149,7 @@ theorem cocharacterLattice_baseChange_single (i : I) :
   change gmEndEquiv k (single _ I i ≫ proj _ I j) =
     gmEndEquiv K (single _ I i ≫ proj _ I j)
   rw [single_comp_proj, single_comp_proj]
-  split_ifs <;> simp
+  split_ifs <;> simp only [gmEndEquiv_id, AddEquiv.map_zero]
 
 /-- Every character retains its complete integral coordinate vector under pullback. -/
 theorem characterLatticeEquiv_baseChange

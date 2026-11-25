@@ -7,7 +7,7 @@ Conrad, *Weil and Grothendieck approaches to adelic points* (December 31,
 `conrad-2011-weil-grothendieck-adelic-points`, SHA-256
 `fe4a9193aff4ef575665b40971f3da32f850a74d87b3f2d0fa28bba26b9cbabb`.
 The construction is an internal prerequisite, not a separately numbered
-assertion of Conrad. Worker 105 is the author.
+assertion of Conrad.
 
 `FiberNormalizationCoordinates R S p` records an actual finite family
 of elements of S. Evaluation at their images `1 tensor s_i` gives a

@@ -1,7 +1,5 @@
 # Generation and length from compact-open detection
 
-Worker 1210, in coordination with Worker 189.
-
 `Langlands.CompactOpenDetectionConsequencesStatement.{uG,uV}` is an internal
 reduction for an arbitrary topological group and a smooth complex
 representation `A`. The group and representation-carrier universes are
@@ -41,4 +39,4 @@ In particular it neither constructs a compact open subgroup on reductive
 rational points nor proves the irreducible detection premise there. The
 unrestricted Howe implication, its converse, the source's other intermediate
 assertions, and the stronger bound for the source's specially chosen
-subgroup remain separate obligations.
+subgroup are not part of this statement.

@@ -68,7 +68,7 @@ Main theorems (namespace `Langlands.Archimedean`):
 
 ## Provenance
 
-The module is internal to Task 7070, the proof of `RealLinkedLanglandsQuotientNotLargeStatement`.
+The module is internal to the proof of `RealLinkedLanglandsQuotientNotLargeStatement`.
 `realStandardCentralGrowth` is the lower bound of that proof, transported to the real
 standard module from the complex-algebra statement `pow_le_finrank_map` of
 `Kostant/BorelCentralGrowth`. The idea of the lower bound adapts Matumoto 1987, §2 (Library

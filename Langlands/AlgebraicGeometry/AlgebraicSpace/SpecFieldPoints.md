@@ -32,5 +32,5 @@ standard. It uses Mathlib's normal closure, `Normal.algHomEquivAut` and
 - `fst_invariant_of_galois_stable`: let `W` be an open subfunctor of `F × Spec L`, with `L`
   a normal field extension of `k`, that is stable under `mapRight (specOverMap σ)` for all
   `σ ∈ Aut(L/k)`. Then for any two sections with the same `F`-component, one lies in `W`
-  if and only if the other does. This is checked on field-valued tests with Worker 1150's
+  if and only if the other does. This is checked on field-valued tests with
   `OpenSubfunctorPoints.invariant_of_field_tests`.

@@ -1,8 +1,8 @@
 # The inverse image `b^*` along `b : X → X(G)`
 
-Author: Worker 26. Builds on the following modules:
+Builds on the following modules:
 
-- `Langlands.Sheaf.Equivariant.NaturalActionInverseImage` (imported; same candidate): for a
+- `Langlands.Sheaf.Equivariant.NaturalActionInverseImage` (imported; ported together with this module): for a
   natural action `a` along `Φ : E ⥤ T`, the inflation `a.inflation`, and, assuming left Kan
   extensions along `a.inflation.op`, the functors `inverseImagePresheafFunctor`,
   `inverseImageFunctor` and `sheafInverseImageFunctor` with their adjunctions
@@ -26,7 +26,7 @@ Author: Worker 26. Builds on the following modules:
   twisted sites of `ρ : G →* Aut X` for modules over `R : Type (max u (v + 1) uL)` when
   `[Small.{max u (v + 1) uL} G]`.
 - `Langlands.Geometry.Analytic.EquivariantQuasiEtaleSite` and
-  `Langlands.Geometry.Analytic.EquivariantEtaleSite` (Worker 21, through the imports):
+  `Langlands.Geometry.Analytic.EquivariantEtaleSite` (through the imports):
   `EquivariantQuasiEtaleSite X = Qét(X(G))` and `EquivariantEtaleSite X = Ét(X(G))`, their
   forgetful functors `toQuasiEtaleSite X` to `QuasiEtaleSite (GSpace.forget.obj X)` and
   `toEtaleSite X` to `EtaleSite (GSpace.forget.obj X)`, and their topologies

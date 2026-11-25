@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 
 /-! # Tools for the proof of Stacks 07F0 (desingularization along a strictly standard element) -/
 
@@ -297,6 +297,7 @@ theorem isSmoothAt_of_strictlyStandard {D : Type u} [CommRing D] {ι σ τ : Typ
     have : (Ideal.Quotient.mk N).mapMatrix M =
         Ideal.Quotient.mk N (Ideal.Quotient.mk K₁ a) • (1 : Matrix τ τ _) := by
       ext t t'
+      set_option synthInstance.maxHeartbeats 40000 in
       simp only [M, RingHom.mapMatrix_apply, Matrix.map_apply, Matrix.sub_apply, Matrix.smul_apply,
         Matrix.of_apply, smul_eq_mul, map_sub, map_mul]
       rw [Ideal.Quotient.eq_zero_iff_mem.mpr (hYN t t'), sub_zero]

@@ -31,7 +31,7 @@ Here `M = twistOne R n`, `s = twistOneCoordinate R n i` is the global section `X
 
 `twistOne R n` is `projTwistingSheaf (projectiveSpaceGrading R n) 1`, the actual sheaf `S(1)~` for `S = MvPolynomial (Fin (n + 1)) R` with total-degree grading. Its sections over an open are functions with values in the localizations `S_𝔭` at the points that are locally a single fraction `a / b`. Here `b` is homogeneous and nonvanishing on the open, and `deg a = deg b + 1`. At a point `𝔭`, each value is an element of the homogeneous localization `S(1)_(𝔭)`, viewed inside `S_𝔭`. Stacks Lemma 27.8.4(5) gives `S(1)_(𝔭)` as the stalk of `S(1)~`. The paired Markdown of `TwistOne` explains this, and records that the comparison with Stacks' `M~` is not formalized.
 
-For this statement no such comparison is needed: both clauses are about the published sheaf itself. The intended local inverse divides by `X i` on `D₊(X i)`. A local section `a / b` of `𝒪(1)` with `deg a = deg b + 1` goes to the degree-zero fraction `a / (b X i)`, a section of the structure sheaf of `Proj`, and multiplying back by `X i / 1` returns `a / b`. Any formal local-description comparison used in a proof, for example identifying sections over `D₊(X i)` with `S(1)_(X i)`, is a proof obligation of the proof task. It is not an assumption of this statement.
+For this statement no such comparison is needed: both clauses are about the published sheaf itself. The intended local inverse divides by `X i` on `D₊(X i)`. A local section `a / b` of `𝒪(1)` with `deg a = deg b + 1` goes to the degree-zero fraction `a / (b X i)`, a section of the structure sheaf of `Proj`, and multiplying back by `X i / 1` returns `a / b`. Any formal local-description comparison used in a proof, for example identifying sections over `D₊(X i)` with `S(1)_(X i)`, is a proof obligation of the proof. It is not an assumption of this statement.
 
 ## Source correspondence
 
@@ -46,11 +46,11 @@ The retained comment threads were read. The comments on Section 27.10 concern a 
 
 ## Relation between the clauses
 
-Clause 2 is a consequence of clause 1 together with the published coordinate-cover theorem `projectiveSpaceCoordinateCover` in `Langlands.AlgebraicGeometry.ProjectiveSpace.CoordinateCoverProof`, which proves `ProjectiveSpaceCoordinateCoverStatement`. Its second clause says that the opens `D₊(X i)` have supremum `⊤`. Every point then lies in some `D₊(X i)`. Clause 1 gives an isomorphism from the restriction of the structure module to the restriction of `𝒪(1)` there. Mathlib's `Scheme.Modules.restrictUnitIso` identifies the restriction of the structure module with the structure sheaf of the open. The task keeps both clauses in one statement so that one proof can establish them together. Including clause 2 adds no new premise.
+Clause 2 is a consequence of clause 1 together with the published coordinate-cover theorem `projectiveSpaceCoordinateCover` in `Langlands.AlgebraicGeometry.ProjectiveSpace.CoordinateCoverProof`, which proves `ProjectiveSpaceCoordinateCoverStatement`. Its second clause says that the opens `D₊(X i)` have supremum `⊤`. Every point then lies in some `D₊(X i)`. Clause 1 gives an isomorphism from the restriction of the structure module to the restriction of `𝒪(1)` there. Mathlib's `Scheme.Modules.restrictUnitIso` identifies the restriction of the structure module with the structure sheaf of the open. Both clauses are kept in one statement so that one proof can establish them together. Including clause 2 adds no new premise.
 
-## Role and remaining obligations
+## Role and what is not stated
 
-This statement supplies the local frames of `𝒪(1)` for the arbitrary-field ample-existence route coordinated by Worker 404. It does not state any of the following:
+This statement supplies the local frames of `𝒪(1)` for the arbitrary-field ample-existence route. It does not state any of the following:
 
 - that the generation (local-isomorphism) open of `X i` equals `D₊(X i)`;
 - any bundling of `twistOne R n` as a `Picard.LineBundle`;
@@ -58,4 +58,4 @@ This statement supplies the local frames of `𝒪(1)` for the arbitrary-field am
 - the identification `Γ(D₊(f), 𝒪(1)) = S(1)_(f)` of Lemma 27.8.4;
 - ampleness, or any chart isomorphism of `D₊(X i)` with affine space.
 
-Those are separate successors. The proof of this proposition is the obligation of a separate exact-target proof task, which should reuse `projectiveSpaceCoordinateCover` for the cover rather than redo the irrelevant-ideal argument.
+Those are outside this statement. The proposition is proved by `projectiveSpaceTwistOneLocalFrames` in `Langlands.AlgebraicGeometry.ProjectiveSpace.TwistOneLocalFramesProof`, which reuses `projectiveSpaceCoordinateCover` for the cover rather than redo the irrelevant-ideal argument.

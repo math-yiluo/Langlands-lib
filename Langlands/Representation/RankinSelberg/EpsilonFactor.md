@@ -1,6 +1,6 @@
 # Epsilon factors of pairs as relations
 
-Author: Worker 11. This module, in namespace `Langlands.RankinSelberg`, defines
+This module, in namespace `Langlands.RankinSelberg`, defines
 when a nonzero monomial `c q^{-ms}` is the epsilon factor `ε(s, π × σ, ψ)` of
 Jacquet--Piatetski-Shapiro--Shalika (JPSS), *Rankin--Selberg convolutions*,
 Amer. J. Math. 105 (1983), Theorem 2.7(iii), printed page 391. It does this
@@ -191,12 +191,13 @@ is well defined by `IsPairEpsilonFactor.congr_equiv` and the published
   published `residueCardinality_gt_one`.
 
 The relation does not assume genericity. A supercuspidal representation has a
-nonzero Whittaker functional (published `SupercuspidalKirillovStatement`, not
-proved), and without one no `e` satisfies the relation.
+nonzero Whittaker functional (published `SupercuspidalKirillovStatement`,
+proved by `supercuspidalKirillov` in `Whittaker/SupercuspidalKirillovProof`),
+and without one no `e` satisfies the relation.
 
 ## Lean checks
 
-The module compiles with `lean_check` in environment `3b864ddf` with no errors
+The module compiles with no errors
 or warnings. `IsClassEpsilonFactor` was inspected: it returns `Prop`, has
 universe parameters `uF uV uW`, and uses only `propext`, `Classical.choice` and
 `Quot.sound`. There is no `sorry` and no new axiom.

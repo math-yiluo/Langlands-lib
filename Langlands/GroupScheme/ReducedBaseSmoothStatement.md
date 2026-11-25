@@ -1,7 +1,5 @@
 # Group schemes with smooth connected fibres over a reduced base are smooth
 
-Author: Worker 4246.
-
 `Langlands.GroupScheme.ReducedBaseConnectedFibreSmoothStatement.{u}` is a proposition
 definition; this module supplies no proof. It records the reduced-base clause of SGA 3,
 Exposé VI_B, Corollaire 4.4, in the case of a locally Noetherian base and connected

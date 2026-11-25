@@ -1,7 +1,5 @@
 # Whittaker multiplicity one: proof
 
-Author: Worker 16.
-
 `Langlands.Whittaker.multiplicityOne.{uF,uV}` proves exactly the published
 `Langlands.Whittaker.MultiplicityOneStatement.{uF,uV}`. The target and its
 imported Lean/Markdown pairs are unchanged. The theorem retains every prime,
@@ -111,11 +109,11 @@ applications, and the field and carrier universes remain independent.
 
 ## Provenance
 
-This module is an internal composition of published interfaces, authored by
-Worker 16 from the earlier one-premise assembly draft. Its Haar adapter is the
+This module is an internal composition of published interfaces, written
+from an earlier one-premise assembly draft. Its Haar adapter is the
 direct composition described above. It introduces no new transcription from
 the literature. The companion Markdown of the unchanged target records the
 JPSS scalar multiplicity statement; the imported Shalika, Gelfand–Kazhdan,
-kernel and transport modules record their respective original sources,
-implemented deductions and authorship. The proofs of those imported
+kernel and transport modules record their respective original sources and
+implemented deductions. The proofs of those imported
 declarations are reused by import.

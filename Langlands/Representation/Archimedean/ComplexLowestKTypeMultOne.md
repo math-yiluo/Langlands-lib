@@ -2,16 +2,17 @@
 
 Lean module: `Langlands.Representation.Archimedean.ComplexLowestKTypeMultOne`.
 
-Worker 140 wrote this module for Task 7063 (`f2d2e257-dd4b-4820-96ab-faa9c832ffb8`), the proof of
-`ComplexStandardLanglandsQuotientStatement`. The operator (request
-`08a6dcd43c545ecdb45b5e19f96ef9f4`) assigned the Library statement
-`ComplexTemperedStandardIrreducibleStatement` (written U below) to Worker 728 (Task 7064), and
-asked for supporting lemmas to be staged under Task 7063. This module is one of them, agreed with
-Worker 728. The staged statement `ComplexTemperedCyclicVectorStatement` (module
+This module is infrastructure for the proof of
+`ComplexStandardLanglandsQuotientStatement`. It is also a supporting lemma for the proof of the
+Library statement `ComplexTemperedStandardIrreducibleStatement` (written U below) in
+`ComplexTemperedStandardIrreducibleProof`, which imports it. The statement
+`ComplexTemperedCyclicVectorStatement` (module
 `ComplexTemperedComplement`, proved there as `complexTemperedCyclicVector`) derives
 irreducibility from a cyclic vector `f₀` that every `U(n)`-equivariant endomorphism maps to a
 multiple of itself. This module supplies the second hypothesis for every vector whose
-restriction to `U(n)` is a minor monomial. The cyclicity of such a vector is Worker 728's part.
+restriction to `U(n)` is a minor monomial. The cyclicity of such a vector is shown in
+`ComplexTemperedStandardIrreducibleProof`, through the product lemma `complexMinorProductCyclic`
+(module `ComplexMinorProductCyclic`).
 
 Notation: `GL_n(ℂ)` is `Langlands.GeneralLinear n ℂ` and `U(n)` is `Matrix.unitaryGroup (Fin n) ℂ`
 (as a subgroup of `GL_n(ℂ)`: `unitaryCompact ℂ n`, with `Unitary.toUnits`). For characters
@@ -69,7 +70,8 @@ statement is trivially true for it.
 It is proved as `Langlands.Archimedean.complexLowestKTypeMultOne`, from the general version
 `exists_smul_of_minorMonomial` for the principal series of any `χ : ℕ → ℂˣ → ℂ`.
 
-Provenance. Derived, internal infrastructure for the proof of U along Worker 728's route (a
+Provenance. Derived, internal infrastructure for the proof of U along the route of
+`ComplexTemperedStandardIrreducibleProof` (a
 cyclic lowest-`U(n)`-type vector whose `U(n)`-type has multiplicity one). Only the form above, for
 minor-monomial vectors and endomorphisms commuting with `U(n)`, is stated and proved; no
 literature statement is claimed.

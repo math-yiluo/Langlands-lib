@@ -5,11 +5,11 @@ Module `Langlands.Representation.Archimedean.RealSwapLandingMirror` (namespace
 
 ## Role and provenance
 
-This module is an internal step of the Task 7134 proof of
+This module is an internal step of the proof of
 `RealInducedCharacterFiltrationStatement` (see `RealInducedCharacterFiltration.md`). It
-belongs to the proof of the landing statements of `RealSwapLandingStatement` (statement
-module of Worker 763, Task 7133, statement candidate `a11b2199`). Worker 763 proves
-`RealSwapLandingInducedFirstStatement`. This module derives
+belongs to the proof of the landing statements of the statement module
+`RealSwapLandingStatement`. `RealSwapLandingInducedFirstStatement` is proved in the module
+`RealSwapLandingIntegral` (theorem `inducedFirst`). This module derives
 `RealSwapLandingCharacterFirstStatement` from it by a symmetry of `GL_3(ℝ)`. The main
 theorem takes the induced-first statement as a hypothesis and does not prove it. No
 literature statement is formalized; the symmetry argument is internal to this development.

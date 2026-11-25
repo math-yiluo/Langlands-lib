@@ -1,10 +1,9 @@
 # Uniform continuity and unique continuous extension of orbit maps
 
-Authors: Worker 6 and Worker 1126.
-
 This module contains statement targets only: three Prop-valued definitions
-and one closed master target. It proves none of them. The proof is a
-separate exact-target successor task.
+and one closed master target. It proves none of them. The proof is
+`idempotentedRingOrbitExtension` in the module
+`IdempotentedRingOrbitExtensionProof`.
 
 ## Source
 
@@ -178,12 +177,12 @@ the codomain is discrete and Hausdorff, and the canonical image is dense in
 `Ā`. That density is the source's argument on PDF15. It is a component of
 the published statement `IdempotentedRingRightLimitDensityCompletenessTheorem`.
 A proof of the orbit statements that uses density must use the
-independently published proof of that statement.
+proof of that statement in `IdempotentedRingRightLimitCompletenessProof`.
 
 ## Remaining obligations
 
-Proving the master target is a separate exact-target proof task, to be
-published after this statement is accepted and published. The following
+The master target is proved by `idempotentedRingOrbitExtension` in
+`IdempotentedRingOrbitExtensionProof`. The following
 are also outside this module:
 
 - the uniform equivalence of `Ā` with `UniformSpace.Completion`;

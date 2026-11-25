@@ -4,7 +4,7 @@ Source: Bushnell–Kutzko, *The admissible dual of GL(N) via compact open subgro
 
 ## Premises
 
-Neither (2.3.11) nor (2.3.4) is in the Library. Task 8149 (`829cd93c-3950-48be-b56e-8f92a8b8cfab`) is to publish their statements. This module states them as named premises, with the content required by Task 8149's contract. Both are closed propositions over every nonarchimedean local field `F` and finite-dimensional `F`-space `V`, using the Library's `Stratum.IsPure`, `Stratum.IsNonsplit` and `Stratum.IsSimple`.
+Neither (2.3.11) nor (2.3.4) is in the Library. This module states them as named premises. Both are closed propositions over every nonarchimedean local field `F` and finite-dimensional `F`-space `V`, using the Library's `Stratum.IsPure`, `Stratum.IsNonsplit` and `Stratum.IsSimple`.
 
 - `TopNonsplitPremise` ((2.3.11)): for every pure stratum `[𝓛,n,r,β]`, the stratum `[𝓛,n,n−1,β]` is nonsplit fundamental.
 - `NonsplitRefinementPremise` ((2.3.4)): for every nonsplit fundamental stratum `S` there is a simple stratum `T` with `T.r = T.n − 1`, `S.coset ⊆ T.coset`, `S.n · e(T) = T.n · e(S)`, and every lattice of `S.chain` occurring as a lattice of `T.chain`.

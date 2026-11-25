@@ -51,7 +51,7 @@ restriction to that subextension. -/
 def levelAction (E : FiniteGaloisIntermediateField K L) : Action ((Over X)ᵒᵖ) (L ≃ₐ[K] L) where
   V := op (levelOver f E)
   ρ :=
-    { toFun σ := (levelAut f E σ).op
+    { toFun σ := End.of (levelAut f E σ).op
       map_one' := by rw [levelAut_one]; rfl
       map_mul' σ τ := by
         rw [levelAut_mul]
@@ -175,7 +175,7 @@ theorem isLevelwiseSmooth_galoisTower :
   refine ⟨⟨(E : IntermediateField K L).fixingSubgroup,
     IntermediateField.fixingSubgroup_isOpen (E : IntermediateField K L)⟩, ?_⟩
   intro σ hσ
-  change (levelAut f E σ).op = 𝟙 _
+  change End.of (levelAut f E σ).op = End.of (𝟙 _)
   rw [levelAut_eq_id_of_mem f E hσ]
   rfl
 

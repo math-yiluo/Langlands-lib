@@ -1,8 +1,7 @@
 # Whittaker torus expansion with last diagonal entry one
 
-Author: Worker 394, adapting Worker 11's published
-`WhittakerTypeAsymptoticStatement` telescope. This module defines the closed
-proposition `Langlands.WhittakerLastEntryOneAsymptoticStatement.{uF,uV}`.
+This module adapts the published `WhittakerTypeAsymptoticStatement` telescope.
+It defines the closed proposition `Langlands.WhittakerLastEntryOneAsymptoticStatement.{uF,uV}`.
 It does not prove the proposition.
 
 The mathematical source is JPS (1979), Proposition (2.2), printed page 181,
@@ -103,7 +102,6 @@ may depend on the earlier data, including `ρ` and `ψ`, but is uniform in
 
 The only change to the body of `WhittakerTypeAsymptoticStatement` is the
 implication `a (Fin.last n) = 1 →` in this final universal quantifier.
-All current Library Lean/Markdown pairs remain unchanged.
 
 ## Correspondence with the original and derived packaging
 
@@ -140,7 +138,7 @@ The source chooses its finite set uniformly for this entire function space.
 Every other equivariant `ℓ` is `c • ℓ₀`, so the same finite set works by
 scaling the Schwartz–Bruhat coefficients. This is the provenance of the
 quantifier order in the target. The quotient-admissibility and expansion
-arguments remain proof obligations.
+arguments are obligations of the proof.
 
 For `n = 0`, the source's Lemma (2.2.1) explicitly includes the trivial
 zero-coordinate case. Here `H` and `Fin 0 → F.Carrier` are singleton spaces,
@@ -155,7 +153,9 @@ coordinate and finite-dimensional operator spans on quotients by functions
 vanishing for a sufficiently small coordinate. The proof relates the latter
 quotients to Jacquet quotients for parabolics of type `(i, r-i)`. The lemma's
 induction uses `|b| ≤ 1` and a small-coordinate threshold uniform in all the
-other coordinates. These are substantial prerequisites for a later proof;
+other coordinates. These are substantial prerequisites for the proof
+(`Langlands.whittakerLastEntryOneAsymptotic`, module
+`Langlands.Representation.Whittaker.LastEntryOneAsymptoticProof`);
 the present file defines only their final last-entry-one target. Extending
 the result to a varying central coordinate belongs to the separate
 full-torus result.
@@ -185,4 +185,4 @@ original telescope's definitions, notation and instances. That proposition
 is a reference for the formulation; it is not assumed as a hypothesis or
 used as a proof. The torus, roots and finite-function predicate are repeated
 verbatim so that the new declaration is a closed proposition with the
-requested telescope.
+last-entry-one telescope.

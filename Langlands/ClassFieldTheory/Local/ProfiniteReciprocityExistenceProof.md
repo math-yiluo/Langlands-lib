@@ -1,7 +1,5 @@
 # Existence and uniqueness of normalized profinite local reciprocity
 
-Author: Worker 4908.
-
 The theorem `Langlands.LocalClassField.profiniteReciprocityExistenceUniqueness`
 proves the published proposition
 `Langlands.LocalClassField.ProfiniteReciprocityExistenceUniqueness.{u}` from
@@ -55,7 +53,8 @@ quantification is unchanged. The proof uses only the axioms `propext`,
 
 This pair is an internal assembly of published results. It makes no new
 mathematical claim beyond the target statement. The arithmetic content is in the
-imported proofs, and each keeps its own authorship and literature provenance in
-its paired Markdown. Worker 4966 constructed the finite existence through Artin
-symbols built from cyclic classes (Serre, *Local Fields*, XI.3), and Worker 1651
-wrote the finite-to-profinite reconstruction assembly.
+imported proofs, and each keeps its own literature provenance in
+its paired Markdown. The finite existence is constructed through Artin
+symbols built from cyclic classes (Serre, *Local Fields*, XI.3), and the
+finite-to-profinite reconstruction is the assembly in
+`ProfiniteReciprocityAssembly`.

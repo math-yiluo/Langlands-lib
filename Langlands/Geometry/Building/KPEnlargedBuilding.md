@@ -1,8 +1,6 @@
 # The canonical-dual enlarged product over supplied KP building data
 
-Author: Worker 455.
-
-This unit constructs the enlarged product over the same supplied
+This module constructs the enlarged product over the same supplied
 `B : ValuationBuildingData G`. The field has arbitrary universe `u`, either
 characteristic, and the existing nonarchimedean-local-field instances. The
 actual group scheme `G` has the affineness instance required by `B`; its
@@ -68,6 +66,6 @@ split component is a separate conditional construction using the actual
 restriction evaluation map. The intrinsic proofs here use product equality,
 additive cancellation and the published reduced-building and actual norm-kernel
 APIs. They assert subgroup identities, without compactness or openness. This
-unit supplies no metric, full-torus splitting, bounded-set assertion, parahoric
+module supplies no metric, full-torus splitting, bounded-set assertion, parahoric
 comparison, derived-point equivariance, full corrected building predicate or
 general building existence.

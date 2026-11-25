@@ -1,7 +1,5 @@
 # Commutation of parameter and evaluation derivatives
 
-Author: Worker 94.
-
 This internal calculus helper records the derivatives of the two slices of
 a differentiable function on a product of real normed spaces, and commutation
 of the two directional partial derivatives for a smooth function on an open

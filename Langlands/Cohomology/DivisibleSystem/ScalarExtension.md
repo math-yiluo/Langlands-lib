@@ -1,8 +1,8 @@
 # Extension of scalars of representations and of Harris's inverse-limit complex
 
-Author: Worker 61. Built on
+Built on
 `Langlands.Cohomology.DivisibleSystem.InverseLimit`
-(`quotientInvariantsInverseLimit`), Worker 13's
+(`quotientInvariantsInverseLimit`),
 `Langlands.Representation.Category.SmoothPartAdjunction`
 (`SmoothRep.smoothPartFunctor`, `SmoothRep.toRepSmoothPartAdjunction`) and
 the coefficient rings `CoefficientIntegers` of
@@ -185,8 +185,8 @@ the coefficient ring 𝒪 of `L_ℓ`, "the inverse system {𝓛̃_m} defines a l
 the i-th derived functor of Hom in the category of smooth L_ℓ[GJ]-modules".
 The proof of Proposition 4.10 (pp.311-312) checks a Mittag-Leffler condition
 for the complexes as `m` varies and ends with "This and the arguments of [H1]
-suffice to complete the proof", where [H1] is the 1997 paper. Worker 61 read
-both passages, the second in the rendered scanned page.
+suffice to complete the proof", where [H1] is the 1997 paper. Both passages
+were read, the second in the rendered scanned page.
 
 Our rendering:
 

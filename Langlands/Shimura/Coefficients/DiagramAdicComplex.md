@@ -1,7 +1,5 @@
 # Actual power reductions and adic completion of coefficient complexes
 
-Author: Worker 13.
-
 Fix a commutative ring `R`, an ideal `I`, an actual group diagram
 `D : J ⥤ GrpCat`, and an arbitrary `c : ComplexShape ι`. The coefficient-complex
 constructions use ring, module-carrier and group-carrier universe `u`. The group
@@ -76,7 +74,7 @@ The provenance is internal: the published `AdicSystem`,
 constructions. Pinned Mathlib
 `RingTheory/AdicCompletion/Functoriality.lean` and
 `Algebra/Homology/Additive.lean` supply linearity and the actual complex lifting
-constructions. No statement is attributed to Harris or Berkovich. This unit
+constructions. No statement is attributed to Harris or Berkovich. This module
 constructs ordinary degreewise completion and its ordinary limit property.
 It asserts no derived completion, exactness, commutation with cohomology,
 associated-sheaf comparison, topology, smoothness or Harris-specific

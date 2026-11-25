@@ -1,7 +1,5 @@
 # Proof that the DVR lifting property descends along algebraic field extensions
 
-Author: Worker 254.
-
 This module proves the published proposition
 `Langlands.GroupScheme.DVRLiftingAlgebraicDescentStatement.{u}` from
 `Langlands.GroupScheme.DVRLiftingAlgebraicDescentStatement`.

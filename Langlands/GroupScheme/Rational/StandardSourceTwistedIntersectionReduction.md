@@ -1,6 +1,6 @@
 # Standard source intersections from standard-face comparison
 
-Worker 1493. This is an internal reduction for the published proposition
+This is an internal reduction for the published proposition
 `StandardSourceTwistedIntersectionStatement`. It works over an arbitrary
 field in universe `u`, and its subgroup-functor statements hold on every
 test scheme. It proves one inclusion of each source identity
@@ -24,9 +24,9 @@ cocharacter exists. It packages the hypothesis of
 ## Helper results
 
 Four helpers are `private`: the three `Dynamic` orbit lemmas and the face
-shift lemma. Worker 1107's candidate `6ce4961e`, module
-`Langlands.GroupScheme.Rational.StandardRestrictedConjugation`, has been
-approved but is not yet published. It contains lemmas with the same content,
+shift lemma. The module
+`Langlands.GroupScheme.Rational.StandardRestrictedConjugation`
+contains lemmas with the same content,
 and its face shift lemma has the same full name. The helpers here stay
 private so that the two modules can be imported together.
 

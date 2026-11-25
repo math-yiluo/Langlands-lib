@@ -25,6 +25,7 @@ The final adapter takes centralizer-quotient existence inside the actual
 normalizer as an explicit argument. Applying it to the factored subgroup
 gives the required homogeneous quotient, and the preceding construction
 gives the separated quasi-compact etale group quotient. This reduces that
-part of the host target to centralizer-quotient existence; it does not assert
+part of `RelativeMultiplicativeTypeQuotientStatement`, the statement this
+module serves, to centralizer-quotient existence; it does not assert
 unconditional existence of either the ambient centralizer or normalizer
 homogeneous quotient.

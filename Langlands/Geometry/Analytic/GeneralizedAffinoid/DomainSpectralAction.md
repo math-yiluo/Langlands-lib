@@ -71,7 +71,7 @@ the section action and its base equation follow by composition with the
 constructed ambient stabilizer action.
 
 This is internal construction from `DomainSpectralTopology` and
-`DomainAutomorphism`, adapting Worker 36's published
+`DomainAutomorphism`, adapting the
 `StrictTestDomain/SpectralAction` pattern to full represented
 positive-polyradius domains. No new original-source translation is claimed.
 The imported tests and representations supply the mathematical inputs.

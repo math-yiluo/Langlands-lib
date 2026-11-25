@@ -30,7 +30,7 @@ Section `Normal` fixes a normal subgroup `N`.
 
 - `exists_mem_mul_out N g`: every `g` is `n * r.out` with `n ∈ N`, where `r.out`
   is the chosen representative of the coset `r` of `g` in `G ⧸ N`.
-- `translate ρ N g S` is the definition selected for this unit. For a
+- `translate ρ N g S` is the definition selected for this file. For a
   subrepresentation `S` of the restriction, it is the subspace `{x | ρ g x ∈ S}`,
   that is, the translate `ρ(g)⁻¹ S`. It is again invariant under `N` because `N` is
   normal. `mem_translate` unfolds membership.

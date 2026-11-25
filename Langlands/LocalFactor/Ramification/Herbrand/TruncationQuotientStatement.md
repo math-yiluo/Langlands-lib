@@ -22,7 +22,7 @@ The inclusion `ι_G : G_E →ₜ* G_F` is the existing
 
 Because `G_F^μ` is normal, this says that its product with the fixing
 subgroup is `G_F`, or equivalently that `G_F^μ` acts transitively on the
-`F`-embeddings of `E`. This is the same hypothesis used by Task 7450.
+`F`-embeddings of `E`. This is the same hypothesis used in `KummerTowerStatement`.
 
 Write `W_F = Langlands.Weil.Local.localWeilGroup F` and
 `R_F(x) = Langlands.VirtualRepresentation.LocalWeil.Ramification.upperGroup F x`,
@@ -41,7 +41,7 @@ instance by `Subgroup.Normal.comap inferInstance _`, pulling the existing
 absolute-group normality instance back along `localProjection`. It
 introduces no new upper group or normality assumption.
 
-Task 7450's imported `KummerTowerStatement` supplies `kummerBreak F`,
+The imported `KummerTowerStatement` supplies `kummerBreak F`,
 `IsKummerRootSystem F ϖ πs` and `kummerStage F πs n`. In particular
 `b = kummerBreak F = p e_F / (p - 1)` with real arithmetic, and
 `K_n = (kummerStage F πs n).field = F(πs n)`.
@@ -142,7 +142,7 @@ For statements 1–6, let `E/F` be any finite intermediate extension and let
    This is the Weil quotient assertion of `cor:kummer`, line 891.
    Both Kummer statements include stage zero.
 
-## Scope and route for later proofs
+## Scope and proof route
 
 The route note uses `μ > 0`, `0 ≤ x ≤ μ` for subgroup comparison and
 `0 < x ≤ μ` for quotient isomorphisms. These statements use Serre's
@@ -162,12 +162,12 @@ conductor with an expression in these fixed-space ranks. For an
 irreducible continuous representation, the ranks determine the
 triviality threshold and hence the slope; the source's relation
 `sw = dim · slope` then gives the Swan exponent. That comparison is
-an obligation for later proofs, not a theorem supplied here.
+not a theorem supplied here.
 
 The following dependency route explains the formulation; it is not
 implemented as a proof in this module.
 
-- Statements 1 and 3 come from Task 7450's
+- Statements 1 and 3 come from `KummerTowerStatement`'s
   `HerbrandPsiTruncationStatement` together with the existing Herbrand
   comparisons
   `HerbrandBridge.intermediateGaloisMap_mem_absoluteUpperRamificationGroup_iff`
@@ -190,7 +190,7 @@ implemented as a proof in this module.
   directions. Their action images agree, giving irreducibility.
   For `-1 ≤ r ≤ μ`, the filtered comparison identifies the actions
   determining the fixed spaces; for `r ≥ μ`, both groups act trivially.
-- Statements 7 and 8 specialize statements 2 and 4 using Task 7450's
+- Statements 7 and 8 specialize statements 2 and 4 using `KummerTowerStatement`'s
   `KummerTowerUpperSupStatement` at `μ = kummerBreak F`. That bound
   is positive for a p-adic field.
 

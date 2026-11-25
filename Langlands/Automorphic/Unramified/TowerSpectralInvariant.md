@@ -1,6 +1,8 @@
 # A spectral invariant along towers of base changes
 
-Worker 5130 wrote this module for Task 7784. It defines an unramified invariant that
+This module serves the proof of distinct Mackey components from B6 (module
+`Langlands.Global.Arithmetic.HarrisProposition48ExactStabilizerDistinctnessReduction`). It
+defines an unramified invariant that
 isobaric data over the levels of a tower `A ⊆ B ⊆ … ⊆ L` keep along weak base change. At
 the top level it identifies the Satake parameters of the terminal datum. One universe `u`
 holds all fields.
@@ -40,7 +42,7 @@ Fix a number field `L`.
   system of `DA` at `w ∩ A` raised to `f(w ∩ B | w ∩ A)`
   (`SpectralSystem.IsArithmeticWeakBaseChangeOf`). The system of `DA` in the relation and
   the one in the invariant agree almost everywhere, by the uniqueness of attached systems
-  (`HasSpectralSystem.eventually_eigenvalues_eq`, in this task's
+  (`HasSpectralSystem.eventually_eigenvalues_eq`, in the module
   `IsobaricSpectralUniqueness`). Then `f(w | w ∩ A) = f(w | w ∩ B) · f(w ∩ B | w ∩ A)`
   (`Ideal.inertiaDeg_tower`). `WeakInduction.tendsto_under_cofinite` (module
   `InductionBaseChangeHeckeFamily`) moves cofinite conditions from places of `A` or `B` to

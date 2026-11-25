@@ -1,6 +1,6 @@
 # Coinvariant evaluation and complements for proper refined induction
 
-Author: Worker 167. This is a derived construction unit for the proof of
+This is a derived construction for the proof of
 `PadicProperRefinedInductionTheorem`. It constructs the needed maps and proves
 their intrinsic properties. It does not prove the quasicuspidal decomposition
 or the final assertion about all subquotients.
@@ -70,7 +70,8 @@ adjointness from 2.3(b). The general adjunction is 1.9(b), printed p.445 /
 PDF p.6. Those original pages were read directly. Registered source:
 `bernstein-zelevinsky-1977-induced-i`, SHA-256
 `8424600228ab72c5937e45edceefcae410a2a0b8f5ebf282185691542aa89092`.
-The final decomposition-dependent proof remains a separate obligation.
+The final decomposition-dependent proof is separate: `padicProperRefinedInduction`
+in `ProperInductionProof`.
 
 ## All-field port
 

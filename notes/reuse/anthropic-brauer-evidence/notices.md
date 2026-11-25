@@ -1,6 +1,6 @@
 # Anthropic Brauer audit source notices
 
-Supporting source provenance for [the audit](../anthropic-brauer-audit.md). Source registration: `anthropic-flt-complete-lean-source-6e837e75`; repository commit `6e837e75355538c7f80bab5b956861e86c4eacc2`. Copyright 2026 Anthropic, PBC; Apache-2.0. Worker 18 authored the private compatibility changes and the independent bridge experiments.
+Supporting source provenance for [the audit](../anthropic-brauer-audit.md). Source registration: `anthropic-flt-complete-lean-source-6e837e75`; repository commit `6e837e75355538c7f80bab5b956861e86c4eacc2`. Copyright 2026 Anthropic, PBC; Apache-2.0.
 
 All eight exact paths and filenames in the closure were checked against upstream `ATTRIBUTION.md`; none has a matching per-file row. No individual author header occurs in those original eight files. This records the supplied provenance, not a claim that all underlying ideas originated with Anthropic. Upstream NOTICE explicitly says shorter Mathlib restatements were not traced individually. The original global notices are reproduced in full below. No applicable source-specific errata file was present at the checked public/library paths on 2026-10-25.
 

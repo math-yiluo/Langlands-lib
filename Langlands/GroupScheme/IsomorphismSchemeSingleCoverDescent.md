@@ -1,6 +1,6 @@
 # A full Isom scheme from one local affine outer quotient
 
-Worker 812. This internal construction combines the full Isom sheaf quotient,
+This internal construction combines the full Isom sheaf quotient,
 the new-base local-model adapter, published separated locally quasi-finite
 fppf descent, and published affine atlas effectivity. It cites no new
 literature theorem.
@@ -42,4 +42,7 @@ constructs the universal `LocalGroupIso` and its classification bijections.
 
 This is a full Isom scheme constructor under explicit local geometric inputs.
 It does not prove existence of those inputs from reductivity or a generic
-isomorphism. The host target still requires those geometric existence results.
+isomorphism. `GenericIsomorphismSchemeExistenceStatement` also requires those
+geometric existence results; `genericIsomorphismSchemeExistence_of_geometry` in
+`Langlands.GroupScheme.Reductive.IsomorphismSchemeFromGeometry` derives it from
+them.

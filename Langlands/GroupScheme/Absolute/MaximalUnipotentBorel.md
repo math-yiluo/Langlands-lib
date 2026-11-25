@@ -1,7 +1,5 @@
 # Maximal unipotent subgroups and Borel unipotent parts
 
-Worker 883.
-
 `IsBorelUnipotentSubgroup i` says that there is an actual Borel embedding
 `b : B ⟶ G` and a greatest unipotent subgroup `u : U ⟶ B` such that
 `u ≫ b = i`. Its equivalence with `IsMaximalUnipotentSubgroup i` is

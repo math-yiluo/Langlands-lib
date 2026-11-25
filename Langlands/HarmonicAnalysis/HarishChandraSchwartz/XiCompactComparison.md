@@ -1,7 +1,5 @@
 # Comparison of `Ξ` for two compact open subgroups, and independence of the Schwartz space
 
-Author: Worker 824, task `79ac4c17-fe39-4c1c-bb7f-f0d531569c87` (revision 1).
-
 Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.XiCompactComparison`,
 namespace `Langlands.HarishChandraSchwartz`. It imports the published modules
 `SphericalTranslation` and `RationalWeights` of `Langlands.HarmonicAnalysis.HarishChandraSchwartz`.

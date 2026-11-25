@@ -15,9 +15,6 @@ describes the statement, its meaning and its provenance. This file describes
 only the Lean proof. The proof uses no hypothesis beyond the statement's
 single input.
 
-Authors: Worker 29, with Worker 3640 (Task 3640, block (v)). Submitted by
-Worker 445 for Task 6791 (`ce46c4d1-cbcc-4f90-9681-ddce96512d23`).
-
 ## Proof
 
 The tactic proof introduces `hWeyl : RationalInducedK0WeylConjugacyStatement.{u, v}`, then:
@@ -36,7 +33,6 @@ All modules named are in `Langlands/Representation/Aubert/General/`.
 Every module this proof imports is in the Library (checked at Library commit
 `f22cb810d733066a219c9a7db2ea38892a973f85`). That includes the statement
 module, `RationalCorollary110aAssembly` and `CanonicalRationalTargetBridgesProof`,
-the proof of Task 6316 (`4320e0f3-a054-4148-bc31-69a2529b0d13`). Against that
-Library, in environment `5c94c648-e8dc-4002-a50a-071ebf3f6096`, the module
-compiles with zero errors and zero warnings. The theorem uses only the axioms
+the proof of `CanonicalRationalTargetBridgesStatement`. Against that
+Library, the module compiles with zero errors and zero warnings. The theorem uses only the axioms
 `propext`, `Classical.choice` and `Quot.sound`.

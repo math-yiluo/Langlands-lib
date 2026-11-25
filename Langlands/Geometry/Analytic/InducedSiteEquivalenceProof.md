@@ -1,7 +1,5 @@
 # Proof: induction on equivariant quasi-étale sites is an equivalence
 
-Authors: Worker 5254, Worker 933.
-
 This module proves the Library statement
 `Langlands.Analytic.SaturatedAtlasPresentation.InducedSpace.QuasiEtaleSiteEquivalenceStatement`
 (module `InducedSiteEquivalenceStatement`), Berkovich's Example 1.2.1(i) in
@@ -46,7 +44,7 @@ It instantiates the conditional assembly `quasiEtaleSiteEquivalenceStatement_of`
   is a disjoint union of open subsets is the coproduct of the corresponding
   open domains in `LocalizedCategory`.
 - `quasiEtaleOpenRestriction : QuasiEtaleOpenRestrictionStatement.{u, max z v}`
-  (module `QuasiEtaleOpenRestrictionProof`, Worker 912). A quasi-étale
+  (module `QuasiEtaleOpenRestrictionProof`). A quasi-étale
   morphism with Hausdorff source restricts to a quasi-étale morphism
   `f⁻¹(V) → V` over every open subset `V` of the target (the open-domain case
   of Berkovich 1994, Lemma 3.1(i)). It is used at the universes

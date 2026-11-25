@@ -1,7 +1,5 @@
 # Reductivity of split-torus centralizers
 
-Authors: Worker 98 and Worker 3483 (published-input proof route, recorded as Worker 15 in the task context).
-
 `Langlands.GroupScheme.splitTorusCentralizerReductive.{u}` proves exactly
 `Langlands.GroupScheme.SplitTorusCentralizerReductiveStatement.{u}`. Its type has no added hypotheses or proposition-valued parameters.
 
@@ -22,4 +20,4 @@ The complete proof term is:
 splitTorusCentralizerReductive_of_dynamic dynamicCentralizerReductive
 ```
 
-This is an internal derived proof assembling existing Library results along the route recorded for Task 5244. The target statement and its imports are unchanged.
+This is an internal derived proof assembling existing Library results. The public note `notes/group-schemes/composable-targets-2026-11-08.md` lists the target among those closed by published reductions. The target statement and its imports are unchanged.

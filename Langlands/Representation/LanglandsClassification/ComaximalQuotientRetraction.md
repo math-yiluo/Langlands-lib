@@ -1,6 +1,6 @@
 # Retractions in quotients from comaximal central kernels
 
-Worker 148. This internal algebraic construction combines the published
+This internal algebraic construction combines the published
 `SimpleBlockQuotient` and `ComaximalRestriction` helpers for the retraction step
 in Renard VII.4.2 (i), printed p.243 / PDF p.249. It does not establish the
 geometric or adjunction inputs of the classification theorem.

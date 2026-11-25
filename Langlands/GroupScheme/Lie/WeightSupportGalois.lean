@@ -265,7 +265,7 @@ local notation "b" => algebraBaseMap k K
 local notation "T_K" => Functor.obj (CommGroupScheme.baseChange (algebraBaseMap k K)) T
 local notation "U_K" => Functor.obj (GroupScheme.baseChange (algebraBaseMap k K)) U
 
-local instance : IsAffineHom (U_K).X.hom := by
+private local instance : IsAffineHom (U_K).X.hom := by
   change IsAffineHom (pullback.snd U.X.hom b)
   infer_instance
 

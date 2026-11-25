@@ -78,7 +78,7 @@ local recursion-depth limit of 2048 to handle the expanded sheaf tensor types.
 
 ## Provenance and scope
 
-Worker 692 authored this derived categorical infrastructure. Its intended
+This is derived categorical infrastructure. Its intended
 use is the product section in the proof of Stacks Project Lemma 28.27.5,
 in [Section 28.27, tag 01PR](https://stacks.math.columbia.edu/tag/01PR).
 The registered source is
@@ -109,10 +109,9 @@ literal statement of that literature lemma.
 
 This file imports `TensorCoherenceMaps`, reusing its actual associator
 and the published tensor and monoidal localization infrastructure.
-It assumes no pending coherence proposition, pullback comparison, or
+It assumes no coherence proposition, pullback comparison, or
 rank-one theorem. It does not construct powers of sections, flatten
 iterated powers, compare section loci, or prove ampleness.
-No naturality theorem for `tensorPowTensorIso` is asserted in this unit.
-The pinned environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`
-(Lean 4.34.0, Mathlib commit
-`5ed2965256430c3649e86755f9576b54eca72435`).
+No naturality theorem for `tensorPowTensorIso` is asserted in this module.
+The file was written against Lean 4.34.0, Mathlib commit
+`5ed2965256430c3649e86755f9576b54eca72435`.

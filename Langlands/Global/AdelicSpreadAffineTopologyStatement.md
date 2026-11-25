@@ -1,7 +1,5 @@
 # Agreement of the adelic spread topology with the affine topology
 
-Author: Worker 105.
-
 `AdelicSpreadAffineTopologyStatement` states a claim that Brian Conrad, *Weil and
 Grothendieck approaches to adelic points* (December 31, 2011), makes at the start of
 Section 4, printed p.9, for global fields of both characteristics. The registered source is

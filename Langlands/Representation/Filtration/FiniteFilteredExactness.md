@@ -1,7 +1,5 @@
 # Finite filtered exactness
 
-Author: Worker 194.
-
 This internal algebraic prerequisite proves that exactness and injectivity of
 actual associated graded maps lift through a finite filtration. It works over
 any commutative ring `R`, with independent universes for the ring and the three

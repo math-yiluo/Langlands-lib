@@ -1,9 +1,9 @@
 # Smooth inverse image and subgroup-space restriction
 
-Worker 151. Construction supporting Renard III.3.2, printed p.84 / PDF p.90
+Construction supporting Renard III.3.2, printed p.84 / PDF p.90
 of the French edition dated 9 July 2026. The source restricts smooth action
 sheaves along a closed subgroup and a locally closed invariant subspace.
-This unit lifts the existing actual inverse image to Renard's smooth-action
+This module lifts the existing actual inverse image to Renard's smooth-action
 category; the construction works for any continuous equivariant space map.
 
 The group, spaces, coefficients and section carriers are in `Type`, as required
@@ -39,6 +39,6 @@ smooth subgroup restriction with the smooth actual inverse image, and proves
 the smoothness needed to define `smoothSubgroupSpaceRestriction`.
 `smoothSubgroupSpaceRestrictionToActionIso` identifies its underlying functor
 with the original `subgroupSpaceRestriction`. For Renard's locally closed
-inclusion it is the requested restriction functor. No countability assumption
+inclusion it is the source's restriction functor. No countability assumption
 is used. Its comparison with the original ordinary restriction stalks remains
 separate.

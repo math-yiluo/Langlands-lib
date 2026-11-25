@@ -1,6 +1,6 @@
 # Normalized determinant and actual Iwasawa degree
 
-This internal unit identifies the previously constructed Iwasawa degree with
+This module identifies the previously constructed Iwasawa degree with
 the normalized determinant strata used in corank-one integrals. The field
 `F : Type uF` is arbitrary: it has a field structure and a valuative relation;
 no topology is needed.
@@ -56,7 +56,7 @@ power. The remaining equality is the identity
 
 These are internal deductions from the actual Iwasawa decomposition,
 upper-unipotent and integral determinant lemmas, and Mathlib's absolute-value
-and real/complex power laws. The unit defines an actual descended function
+and real/complex power laws. The module defines an actual descended function
 and proves its comparisons; it introduces no new factor or normalization
 premise beyond the explicit absolute-value hypotheses above. It proves no
 compact support, convergence, essential identity or conductor conclusion.

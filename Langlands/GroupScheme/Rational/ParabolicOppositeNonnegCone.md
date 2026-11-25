@@ -1,6 +1,6 @@
 # Opposite cones on the same actual Levi split component
 
-Worker 135. This internal derived unit compares compatible root presentations
+This internal derived module compares compatible root presentations
 of two actual parabolics whose specified Levi embeddings agree and whose
 rational-point intersection is exactly that common Levi. It introduces no
 new transcription from the literature.
@@ -33,6 +33,6 @@ the reversed hypotheses. Thus the second cone is exactly the negative of the fir
 between the subtypes of vectors in the second and first cones. Both maps send
 a vector to its negative; double negation proves both inverse laws. Its
 construction depends on exactly the hypotheses of the comparison lemmas.
-This unit supplies this concrete cone equivalence and its supporting lemmas;
+This module supplies this concrete cone equivalence and its supporting lemmas;
 existence of presentations and representation-theoretic regularity remain
 separate results.

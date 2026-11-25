@@ -1,6 +1,6 @@
 # Cuspidality on an actual standard Levi and its literal point subgroup
 
-Author: Worker 189. This derived internal statement supports the rational-point Howe implication.
+This derived internal statement supports the rational-point Howe implication.
 
 `RationalLeviCuspidalityTransportStatement` assumes `DynamicLieStatement` and `StandardCocharacterStatement`. Over any topological field at universe `u`, take a connected reductive group scheme, its actual maximal split torus, a generic cocharacter, and any finite subset `I` of its actual simple roots. Connected reductivity of the published representative `Standard.leviScheme i ν (rootSet i ν I)` remains explicit. The acting torus in that representative is the canonical `standardLeviTorusFactor` of the original torus.
 

@@ -33,7 +33,7 @@ variable {F : Type u} [Field F] [ValuativeRel F] [TopologicalSpace F]
 local instance : SecondCountableTopology (rationalPoints G) :=
   rationalPoint_secondCountableTopology F G
 local instance pointT2 : T2Space (rationalPoints G) := rationalPoint_t2Space F G
-local instance : NonarchimedeanGroup (rationalPoints G) :=
+private local instance : NonarchimedeanGroup (rationalPoints G) :=
   Langlands.Plancherel.rationalPoints_nonarchimedeanGroup G
 local instance subgroupSecondCountable (L : Subgroup (rationalPoints G)) :
     SecondCountableTopology L :=

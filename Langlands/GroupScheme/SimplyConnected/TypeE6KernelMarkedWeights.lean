@@ -87,7 +87,7 @@ private theorem eq_zero_of_e6Branch_kernel_and_split_restrictions (e : d.Vertex 
         (e6Branch_zero_iff e h _).mpr (by simpa only [Equiv.apply_symm_apply] using hi)
       rw [map_zsmul, d.splitTorusDatum_restriction_root, show
         d.rootRestriction (e.symm i).val = 0 from hz, smul_zero]
-    · simp
+    · exact fun h1 => absurd (Finset.mem_univ _) h1
   have hnonzero : d.rootRestriction a.val ≠ 0 :=
     fun hz => (e6Branch_zero_iff e h a).mp hz (e.apply_symm_apply 1)
   have hpos := (d.compatible a.val hnonzero).mp

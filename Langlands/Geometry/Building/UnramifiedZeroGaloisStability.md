@@ -1,6 +1,6 @@
 # Galois stability of the torus contribution
 
-This derived infrastructure unit proves that, for every nonarchimedean local
+This module proves that, for every nonarchimedean local
 field `F : Type u`, every group scheme `G` over `F`, every supplied
 `UnramifiedZeroDatum F (baseChanged F (UnramifiedClosure F) G)`, every
 `F`-automorphism `σ` of the maximal unramified extension, and every
@@ -28,6 +28,6 @@ kernel's conversion checks small.
 `UnramifiedZeroTorusGaloisStabilityStatement` packages exactly the torus
 membership conclusion proved pointwise above. The provenance is internal and
 derived from the named Library constructions, projection formulas and
-independence theorem. This unit does not yet prove stability of the simply
+independence theorem. This module does not prove stability of the simply
 connected image, the complete clause 2, or descent to `F` in clause 3 of
 `UnramifiedZeroDescentStatement`.

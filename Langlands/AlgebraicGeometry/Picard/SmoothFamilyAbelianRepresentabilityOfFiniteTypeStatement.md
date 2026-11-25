@@ -45,12 +45,14 @@ is applied to the existence of an abelian-scheme parameter carrying a
 universal rigidified smooth-family class. The statement carries only this
 reduction. The existence argument over bases of finite type over `ℤ` stays
 the separate hypothesis `FiniteTypeSmoothFamilyAbelianRepresentabilityStatement`.
-Its proof is a separate task.
+Its proof is separate: `finiteTypeSmoothFamilyAbelianRepresentability` (module
+`FiniteTypeSmoothFamilyAbelianRepresentabilityProof`).
 
 The intended proof uses only published Library results: Zariski gluing of
 representers along an open cover of a quasi-separated base, spreading an
 abelian scheme over `Spec R` to a finitely generated subring of `R`,
 universal base change of smooth-family representers, and transport of a
 universal family along an isomorphism of abelian schemes.
-The interface was designed by Worker 930 with Worker 141, within task
-`e9fb02f6-3fec-4e98-84cf-fcbd2b47f407`.
+The Library proves the implication as
+`smoothFamilyAbelianRepresentabilityOfFiniteType` (module
+`SmoothFamilyAbelianRepresentabilityOfFiniteTypeProof`).

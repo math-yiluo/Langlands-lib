@@ -197,7 +197,7 @@ theorem centralizer_mem_shiftSubgroup (ω : kˣ → ℝ)
     { toFun := fun a => -ω (rationalCharacterEval
         ((rationalCharacters.equivCharacterLattice _).symm a) τ)
       map_zero' := by
-        rw [map_zero, rationalCharacterEval_zero, hone, neg_zero]
+        rw [AddEquiv.map_zero, rationalCharacterEval_zero, hone, neg_zero]
       map_add' := by
         intro a c
         rw [map_add, rationalCharacterEval_add, hadd, neg_add] }

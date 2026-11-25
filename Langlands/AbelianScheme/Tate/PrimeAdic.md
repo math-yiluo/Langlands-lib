@@ -10,7 +10,7 @@ The original source is B. Edixhoven, G. van der Geer and B. Moonen, *Abelian Var
 
 The source defines the prime-power inverse limit with multiplication-by-prime transitions, describes the integral scalar action coordinatewise through the residue classes, defines rational scalar extension, and constructs the map induced by a homomorphism. Its ordinary Tate-ℓ discussion uses a prime different from the field characteristic and separable-closure points. It separately discusses the geometric characteristic-p torsion-point limit. Here `p` denotes any prime, without a condition on the characteristic; the construction alone works in this generality. The source's finite étaleness, rank, Galois-action and isogeny results are not asserted here.
 
-The extension to arbitrary commutative group schemes, arbitrary test schemes, and field-valued points is an internal generalization using the published actual kernel construction. The universal linear lift, topology, and explicit functoriality laws are derived constructions. The source writes the rational tensor factors as `T_ℓ X ⊗_{Z_ℓ} Q_ℓ`; this module uses `Q_p ⊗_{Z_p} T_p`, the canonically equivalent ordering over the commutative scalar ring, to obtain the standard left `Q_p`-module instance. No specific comparison equivalence with the source's ordering is exported. The coordinatewise functoriality proofs adapt the published `Tate.Integral` implementation by Worker 143.
+The extension to arbitrary commutative group schemes, arbitrary test schemes, and field-valued points is an internal generalization using the published actual kernel construction. The universal linear lift, topology, and explicit functoriality laws are derived constructions. The source writes the rational tensor factors as `T_ℓ X ⊗_{Z_ℓ} Q_ℓ`; this module uses `Q_p ⊗_{Z_p} T_p`, the canonically equivalent ordering over the commutative scalar ring, to obtain the standard left `Q_p`-module instance. No specific comparison equivalence with the source's ordering is exported. The coordinatewise functoriality proofs adapt the published `Tate.Integral` implementation.
 
 ## Residue and prime-adic scalars
 
@@ -30,7 +30,7 @@ transition G T (pow_dvd_pow p (Nat.le_succ n)) (x (n + 1)) = x n
 
 for every natural `n`. These are precisely the compatible sequences for the successive transition system. Closure under addition follows from additivity of transitions; closure under p-adic scalar multiplication follows from `transition_smul`.
 
-`Integral G T p` is this submodule as a type, with its coordinatewise abelian-group and `ℤ_[p]`-module structures. Its topology is the subtype topology from the product of discrete actual torsion levels. The inherited `IsTopologicalAddGroup` instance makes addition and negation continuous. This unit makes no compactness assertion or assertion about continuity of scalar multiplication as a two-variable map.
+`Integral G T p` is this submodule as a type, with its coordinatewise abelian-group and `ℤ_[p]`-module structures. Its topology is the subtype topology from the product of discrete actual torsion levels. The inherited `IsTopologicalAddGroup` instance makes addition and negation continuous. This module makes no compactness assertion or assertion about continuity of scalar multiplication as a two-variable map.
 
 `evaluation G T p n` is the `ℤ_[p]`-linear coordinate projection. `evaluation_smul` states its scalar formula explicitly through `PadicInt.toZModPow`. `evaluation_transition` gives successive compatibility, and `continuous_evaluation` gives continuity.
 
@@ -48,4 +48,4 @@ For an actual group-scheme homomorphism `f : G ⟶ H`, `levelMapLinear T p f n` 
 
 `IntegralAt G p s` and `RationalAt G p s` specialize to a field-valued point `s : Spec Ω ⟶ S` by taking `T = Over.mk s`. The imported `fibreLevelEquiv G s (p ^ n)` identifies each coordinate level with actual points of the torsion-scheme fibre. Choosing an algebraically closed Ω gives geometric points; choosing a separable closure with `p` invertible gives the source's usual field convention. No equivalence between different point fields is asserted.
 
-The bundled abelian-scheme specialization is a separate integration obligation. This unit also does not construct finite étale monodromy, Weil pairings, twists, full/away adelic scalars, or level structures, and does not complete those parts of the host task.
+The bundled abelian-scheme specialization is the separate module `Langlands.AbelianScheme.Tate.AbelianPrimeAdic`. This module also does not construct finite étale monodromy, Weil pairings, twists, full/away adelic scalars, or level structures.

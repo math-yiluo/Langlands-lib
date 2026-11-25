@@ -105,5 +105,3 @@ Namespace `Langlands.AbelianScheme`:
 - `algClosedFieldAmpleTranslationStabilizerFinite`: the target statement, obtained by supplying
   `rigidifiedClassesEqualizerClosed` to
   `algClosedFieldAmpleTranslationStabilizerFinite_of_equalizer`.
-
-Part A was written by Worker 839 and part B by Worker 920.

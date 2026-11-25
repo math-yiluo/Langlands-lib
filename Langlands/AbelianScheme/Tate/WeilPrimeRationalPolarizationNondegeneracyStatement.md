@@ -67,8 +67,9 @@ the relative Poincare-derived pairing evaluated at s with the
 pairing on the geometric fibre, including dual and Tate-module
 base change. Those identifications are part of the proof obligation;
 the field literature is not claimed to have proved them for the
-Library constructors. A separate proof task must establish this
-exact target or publish and prove its needed prerequisites.
+Library constructors. The exact target is proved by
+`primeRationalPolarizationWeilNondegeneracy` in the module
+`WeilPrimeRationalPolarizationNondegeneracyProof`.
 
 The statement adds no axiom and proves no nondegeneracy theorem.
 It claims no integral perfectness for a nonprincipal polarization,

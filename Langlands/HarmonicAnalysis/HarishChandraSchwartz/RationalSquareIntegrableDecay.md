@@ -1,7 +1,5 @@
 # Corollary III.1.2 and III.7 of Waldspurger on actual rational points
 
-Author: Worker 3642, task `1ef6854b-f0e9-4d96-bbe5-cb8c4b52f927` (revision 1).
-
 Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalSquareIntegrableDecay`,
 namespace `Langlands.HarishChandraSchwartz`.
 
@@ -29,7 +27,7 @@ J.-L. Waldspurger, *La formule de Plancherel pour les groupes p-adiques, d'aprè
 J. Inst. Math. Jussieu 2 (2003), 235–333, DOI 10.1017/S1474748003000082 (literature id
 `waldspurger-2003-plancherel`, SHA256
 `4b6a6162cd0b3863703fb2f65d1698f926caf813114917f2084c16e38f2e30f7`). Page numbers below are the
-printed ones; the PDF page is the printed page minus 234. The author checked the quotations
+printed ones; the PDF page is the printed page minus 234. The quotations were checked
 against the text of PDF pages 5, 17, 29, 30 and 39.
 
 - I.1, printed p. 239: "On pose `G¹ = ⋂_{χ ∈ Rat(G)} Ker |χ|_F`"; `A_G` is the largest split torus

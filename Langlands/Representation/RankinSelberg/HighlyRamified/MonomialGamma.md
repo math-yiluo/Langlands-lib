@@ -18,8 +18,8 @@ Jacquet, Piatetski-Shapiro and Shalika), the gamma factor of `(π ⊗ χ) × σ`
 a product of rank-one gamma factors once `a` is large. With the case `t = 1` they
 conclude that `γ(s, (π ⊗ χ) × σ, ψ) = C_0 X^(r t a)`, where `C_0` depends only on
 `χ`, `ω_π` and `ω_σ`. In (4.4.15) (printed page 329) they use this for
-representations of ranks `r - 1` and `r - 2`. The interface `MonomialTwistGamma`
-was agreed with Worker 1721, who uses it in the §4.4 argument.
+representations of ranks `r - 1` and `r - 2`. The §4.4 argument in
+`HighlyRamified.AdjacentInduction` uses the interface `MonomialTwistGamma`.
 
 The Lean proof differs from the source in four places. It also keeps every bound
 uniform in the levels.

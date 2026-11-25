@@ -1,7 +1,5 @@
 # Localization of the block-reversal stabilizer
 
-Author: Worker 330.
-
 This internal algebraic construction composes published equivalences from
 `Whittaker.OpenStabilizer`, `Jacquet.LocalizationTransport` and
 `Tensor.CharacterLocalization`. It applies over every field `K : Type uK`,

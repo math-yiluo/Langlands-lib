@@ -1,17 +1,14 @@
 # Place components of irreducible operator subquotients at the real places
 
-Original proof author: Worker 3657.
-Submission preparation: Worker 833. Verification: Workers 833 and 835.
-
 Lean module: `Langlands.Automorphic.OperatorSubquotientPlaceComponent`. It
 imports `Langlands.Automorphic.PlaceComponentExistence` and
-`Langlands.Automorphic.CuspidalArchimedeanGenericComponentReduction` (Worker
-174's place-component machinery for cuspidal realizations) and
+`Langlands.Automorphic.CuspidalArchimedeanGenericComponentReduction` (the
+place-component machinery for cuspidal realizations) and
 `Langlands.Automorphic.OperatorSubquotientLocalComponentStatement` (the target
 statement and its isotypy predicates). It changes no published file.
 
 This module is part of the proof of
-`Langlands.Automorphic.LocalComponentExistenceStatement` (Task 6815). It
+`Langlands.Automorphic.LocalComponentExistenceStatement`. It
 proves the real-place conjunct, apart from the final packaging done in
 `LocalComponentExistenceProof`, and it contains the general `gkSpan` lemmas
 that the complex-place module
@@ -104,7 +101,7 @@ commutation and stability hypotheses; the Lean statements spell them out.
    irreducible `Q` it is `⊥` or `⊤`.
 4. **Detection** (`isLocallyFinite_realPlace`,
    `isWeaklyContinuous_realPlace`, `exists_realPlace_detection`). For
-   `x₀ ≠ 0`, Worker 174's `exists_not_mem_freeSet` gives a continuous
+   `x₀ ≠ 0`, `exists_not_mem_freeSet` (`PlaceComponentDetection`) gives a continuous
    matrix representation `τ` of `O(n)` whose free set does not contain
    `x₀`. The free set is stable as in step 3 (`freeSet_map`,
    `freeSet_compact`, `freeSet_lie`), hence `⊥` or `⊤`, hence `⊥`; then
@@ -118,7 +115,7 @@ commutation and stability hypotheses; the Lean statements spell them out.
    `κ_v` and `π_v`. A `τ`-intertwiner into the carrier, uncurried along
    `TensorProduct.lift`, lies in the joint multiplicity space of `L` and
    `τ ⊗ R`, so joint admissibility of `Q` makes the carrier admissible.
-6. **Existence** (`exists_realPlaceComponent`). Worker 174's proof of the
+6. **Existence** (`exists_realPlaceComponent`). The proof of the
    cuspidal case (`PlaceComponentExistence.exists_realPlaceComponent`),
    with steps 4 and 5 in place of their realization versions: a nonzero
    `f₀` fixed by an open `U`, the finite-dimensional compact orbit span
@@ -145,10 +142,10 @@ commutation and stability hypotheses; the Lean statements spell them out.
 
 ## Provenance and route
 
-Steps 4–6 port Worker 174's construction for cuspidal realizations
+Steps 4–6 port the construction for cuspidal realizations
 (`PlaceComponentExistence`, `PlaceComponentRealization`,
 `PlaceComponentCarrier`; Library) from `CuspidalOperatorRealization` to
-`OperatorSubquotient`. Worker 174 proves the stability of the free set
+`OperatorSubquotient`. `PlaceComponentRealization` proves the stability of the free set
 separately for each kind of generator (`realFreeSet_finite`, …,
 `realFreeSet_operator`); here one operator-stability theorem (step 3) serves
 both the free set (detection) and `gkSpan` (isotypy).
@@ -169,7 +166,7 @@ from joint admissibility, and isotypy from the operator-stability theorem.
 
 ## Axioms
 
-`lean_check` (lake build) of this module and of
+`lake build` of this module and of
 `LocalComponentExistenceProof` reports only `propext`, `Classical.choice`
 and `Quot.sound` for the final theorem
 `Langlands.Automorphic.localComponentExistence`.

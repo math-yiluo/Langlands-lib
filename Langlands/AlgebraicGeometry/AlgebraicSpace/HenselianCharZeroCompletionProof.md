@@ -1,8 +1,5 @@
 # Henselian valued fields of characteristic zero are algebraically closed in their completion
 
-Worker 105 authored the shared proof draft. Worker 1607 checked the proof against
-the published target and prepared it for independent review.
-
 `henselianCharZeroAlgebraicallyClosedInCompletion` proves
 `HenselianCharZeroAlgebraicallyClosedInCompletionStatement` (from
 `Langlands/AlgebraicGeometry/AlgebraicSpace/HenselianFinitePointProperStatement.lean`).
@@ -18,7 +15,7 @@ SHA-256 `fe4a9193aff4ef575665b40971f3da32f850a74d87b3f2d0fa28bba26b9cbabb`.
 
 ## Proof
 
-The published theorem `henselianSeparablyClosedInCompletion` (from
+The theorem `henselianSeparablyClosedInCompletion` (from
 `Langlands/AlgebraicGeometry/PointTopology/HenselianEtalePointProof.lean`) says that the
 separable closure of a henselian valued field `K` in its completion is `⊥`. So it is
 enough to show that the algebraic closure of `K` in the completion is contained in the
@@ -29,7 +26,7 @@ Let `x` be an element of the completion that is algebraic over `K`
 irreducible (`minpoly.irreducible`). A field of characteristic zero is perfect (Mathlib's
 instance `PerfectField.ofCharZero`), and over a perfect field every irreducible
 polynomial is separable (`Irreducible.separable`). Hence `x` is separable over `K` and
-lies in the separable closure (`mem_separableClosure_iff`). Combined with the published
+lies in the separable closure (`mem_separableClosure_iff`). Combined with that
 theorem, this gives `algebraicClosure K (UniformSpace.Completion K) = ⊥`
 (`eq_bot_iff`).
 

@@ -32,8 +32,9 @@ For two bundles satisfying this predicate, `comparisonIso` applies
 Mathlib's `RepresentableBy.uniqueUpToIso` to these constructed
 representations. This constructs an isomorphism of their representing
 `S`-schemes. The separate statement that exactly one isomorphism has the
-required compatibility with the universal bundles is left to the
-uniqueness statement and proof unit.
+required compatibility with the universal bundles is the separate
+`UniversalBundleUniquenessStatement` in `RigidifiedUniversalStatements`,
+proved by `universalBundleUniqueness` in `RigidifiedUniversalUniquenessProof`.
 
 The original reference is Edixhoven–van der Geer–Moonen, *Abelian Varieties*,
 Chapter VI §1, (6.2), printed p.88 (PDF p.92), especially the paragraph

@@ -1,6 +1,6 @@
 # Trace and positive Cartan forms on the actual matrix Lie algebra
 
-Authors: Worker 94 and Worker 459. Module:
+Module:
 `Langlands.Global.ArchimedeanCartanTraceForm`. All declarations are in
 `Langlands.Global.ArchimedeanGL`.
 

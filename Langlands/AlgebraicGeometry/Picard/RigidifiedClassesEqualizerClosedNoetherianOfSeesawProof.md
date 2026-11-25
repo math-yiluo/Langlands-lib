@@ -1,7 +1,5 @@
 # Proof: the noetherian affine agreement locus from the noetherian seesaw
 
-Author: Worker 766.
-
 This module proves the published proposition
 `Langlands.AbelianScheme.RigidifiedClassesEqualizerClosedNoetherianOfSeesawStatement`:
 
@@ -117,7 +115,11 @@ The proof uses only the axioms `propext`, `Classical.choice` and `Quot.sound`.
 ## Use
 
 Combined with proofs of the three hypotheses, the theorem proves
-`RigidifiedClassesEqualizerClosedNoetherianAffineStatement`, the target of task
-`00ab6acd-8b6c-4595-8df8-3fbdac0bdd4d`. The noetherian seesaw is ported from the Anthropic FLT
-Lean source in that task. Zariski separatedness is task `f34bab0f-25a2-40c7-a05c-6c0f06ed4283`,
-and smooth geometric integrality is task `13d3f4b1-fadd-43c6-b422-d793dc9adf5f`.
+`RigidifiedClassesEqualizerClosedNoetherianAffineStatement`; the Library does so in
+`rigidifiedClassesEqualizerClosedNoetherianAffine` (module
+`RigidifiedClassesEqualizerClosedNoetherianProof`). The noetherian seesaw,
+`Langlands.AlgebraicGeometry.Picard.noetherianLineBundleSeesaw` (module
+`NoetherianLineBundleSeesawProof`), is ported from the Anthropic FLT Lean source. Zariski
+separatedness is `Langlands.AbelianScheme.rigidifiedClassesZariskiSeparated` (module
+`RigidifiedClassesZariskiSeparatedProof`), and smooth geometric integrality is
+`smoothGeometricIntegrality` (module `Langlands.AbelianScheme.SmoothGeometricIntegralityProof`).

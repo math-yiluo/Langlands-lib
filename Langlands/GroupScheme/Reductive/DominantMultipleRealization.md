@@ -1,6 +1,6 @@
 # Realized torus characters form a submonoid
 
-Worker 1161. This module contains internal definitions supporting the
+This module contains internal definitions supporting the
 positive-multiple step of dominant highest-weight existence. Let `i : H → G` and
 `j : U → G` be homomorphisms of group schemes over a field, with `G` and `H` affine
 over the base.

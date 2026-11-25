@@ -13,8 +13,8 @@ the entire lemma and proof on printed page 43 / PDF page 49. Registered source:
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`, retained at
 `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`.
-Worker 1218 read that page and the supplementary 2010-edition errata PDF pages
-2–3 (source `renard-2010-corrections-complements`, SHA256
+That page and the supplementary 2010-edition errata PDF pages
+2–3 were read (source `renard-2010-corrections-complements`, SHA256
 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`).
 The latter's page 3 distinguishes sigma-compactness from the other
 countability properties; the governing source remains the 2026 book. The
@@ -98,6 +98,6 @@ than a port of their implementations. The direct sources are Mathlib commit
   source `mathlib-lindelof-5ed296525643`, SHA256
   `e75a097a0ac483a700c8eb13d91246dd151d3e34edf331f8fcb4f4f15fbe505d`.
 
-The Lean environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, Lean 4.34.0.
+The Lean environment is Lean 4.34.0.
 No new definition of a coset carrier, topology, group structure, or source
 statement is introduced.

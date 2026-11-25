@@ -165,6 +165,7 @@ theorem isClosedSubgroup_subgroupHom_spec (Q : Family J n Γ(Spec A, ⊤))
     ((Diagonalizable.baseChangeIso b Λ).hom.hom.hom.left ≫
       (representation w (Q.map (Scheme.ΓSpecIso A).hom.hom)).hom.hom.left ≫
       (GeneralLinear.baseChangeIso n b).inv.hom.hom.left)
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   infer_instance
 
 end AffineBase

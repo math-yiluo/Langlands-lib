@@ -1,7 +1,5 @@
 # Finitely generated discrete absolute-Galois modules
 
-Author: Worker 3483.
-
 This construction supplies the module category used in the absolute-Galois
 classification of groups of multiplicative type. It reuses the published
 `Langlands.SmoothRep` category and its open-stabilizer definition.
@@ -86,7 +84,7 @@ and Mathlib's elementary product-continuity theorem.
 Mathlib supplies the chosen separable closure, Krull topology and its
 topological-group instance. No classification theorem is used as a Lean proof.
 
-This unit supplies the target category and its intrinsic interfaces. Constructing
+This module supplies the target category and its intrinsic interfaces. Constructing
 the actual character functor into it, proving finite generation and continuity
 for those actual characters, and proving the absolute-Galois anti-equivalence
 remain separate obligations.

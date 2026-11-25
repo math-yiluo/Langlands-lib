@@ -1,8 +1,5 @@
 # Simultaneous local realization with absolute corestriction
 
-Author: Worker 49, with invariant and compatibility interface design by
-Worker 42.
-
 `Langlands.ClassFieldTheory.Local.LocalAbsoluteCorestrictionCompatibleClassFormationStatement`
 asserts, for every prime `p`, the existence of one raw
 `InvariantFamily.{u,u} p` satisfying all fourteen clauses of
@@ -90,7 +87,7 @@ claim that this degree-zero comparison is an isomorphism.
 The arithmetic normalization, positive fundamental invariant and left
 cup order agree with Serre. In degree minus two the Tate cup map runs
 from the Galois abelianization to the norm quotient; its inverse gives
-arithmetic reciprocity. The host's geometric convention further inverts
+arithmetic reciprocity. The Library's geometric convention further inverts
 the output, as documented in `TateAbelianization.md`. The added invariant
 equality makes no Frobenius choice and introduces no inversion.
 
@@ -128,15 +125,15 @@ direct-limit comparison theorem. The ordinary degree-zero clause is the
 ordinary-range interpretation of XI.3's scaled diagram, using XI.1's
 range `q ≥ 0`.
 
-Worker 49 read the cited original passages, including visual inspection
+The cited original passages were read, including visual inspection
 of Proposition 1(ii). Serre's 2019 book corrections, PDF pp. 2–3, do not
 change these passages. The printed-p. 193 connecting-arrow correction
 agrees with the inherited inverse-boundary normalization. No
 project-specific errata file for the 1979 source was present.
 
-The Lean declaration defines an unproved proposition. It constructs no
-invariant family, chooses no fundamental class and asserts no uniqueness
-of the whole family. Earlier statement declarations and their proof
-bindings are preserved. A later realization proof must bind this exact
-published target; this focused strengthening does not declare completion
-of the umbrella task.
+The Lean declaration defines a proposition; the theorem
+`localAbsoluteCorestrictionCompatibleClassFormation` in
+`ClassFormationAbsoluteCorestrictionProof` proves it. The declaration
+constructs no invariant family, chooses no fundamental class and asserts no
+uniqueness of the whole family. Earlier statement declarations and their
+proof bindings are preserved.

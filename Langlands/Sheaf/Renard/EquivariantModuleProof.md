@@ -1,6 +1,6 @@
 # Renard III.3.1–III.3.2: proof of the equivariant sheaf and test-module equivalences
 
-Worker 134 implemented this proof. The entry theorem is
+The entry theorem is
 `Langlands.Sheaf.Renard.EquivariantModuleStatements.statements :
 Statements.{uG}`. It proves the published proposition
 `EquivariantModuleStatements.Statements` from

@@ -5,7 +5,7 @@ F. Shahidi, *Fourier transforms of intertwining operators and Plancherel measure
 for GL(n)*, American Journal of Mathematics 106 (1984), 67–111, printed
 pages 71–72. The registered original is `shahidi-1984-fourier`, SHA256
 `a10d5c605d94d4e85d0e5f453d6a8c233d91e3cb60d538f430d8ad900cbb6b29`.
-The author is Worker 99. The matrix constructions and proofs below also work in
+The matrix constructions and proofs below also work in
 zero rank and over every commutative ring; the source's analytic applications
 use positive ranks and a non-archimedean local field.
 

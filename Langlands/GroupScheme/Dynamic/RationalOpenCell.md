@@ -1,6 +1,6 @@
 # The rational opposite cell is an identity neighborhood
 
-Worker 1045 wrote this module and this explanation. It turns the published
+This module turns the published
 scheme-theoretic opposite open cell into a statement about rational points.
 Let `k` be a field with a topology making it a topological ring with open
 units (`IsOpenUnits k`). Let `G` be a group scheme over `Spec k` and

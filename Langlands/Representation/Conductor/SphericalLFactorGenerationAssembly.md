@@ -1,6 +1,6 @@
 # Assembly of the spherical L-factor generation facts
 
-Author: Worker 8. The module proves the published
+The module proves the published
 `Langlands.Conductor.SphericalLFactorGenerationStatement`
 ([`SphericalLFactorGenerationStatement`](SphericalLFactorGenerationStatement.md))
 from one statement, which is not proved here or elsewhere in the Library:

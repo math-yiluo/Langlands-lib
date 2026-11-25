@@ -1,6 +1,6 @@
 # Smoothing/completion correspondence and actual adjunction targets
 
-This statement unit records the adjunction assertion of Renard I.1.5 for the
+This module records the adjunction assertion of Renard I.1.5 for the
 original nonunital actions and the actual smoothing and completion functors.
 It defines three propositions and supplies interface checks. It proves no
 Hom equivalence or adjunction.
@@ -125,21 +125,16 @@ source, target and both simultaneously; each retains the actual target
 nondegeneracy hypothesis and adds no source nondegeneracy condition.
 These checks are definitional typing checks, not proofs of the targets.
 
-## Dependencies and remaining obligations
+## Dependencies and scope
 
 The entry imports `Langlands.Algebra.NonUnitalModuleCompletionFunctor`
 and `Mathlib.CategoryTheory.Adjunction.Basic`. Its original part and
-additive Hom structures come from the former's Library imports. Only this
-new Lean/Markdown pair belongs to the focused statement unit. All action
+additive Hom structures come from the former's Library imports. All action
 and functor dependencies are imported from the published Library.
 
-Independent statement acceptance and publication remain required after
-the exact completion-functor dependency is public. A separate proof unit
-must prove the closed master. Recovery/faithfulness, analytic completion,
+The closed master is proved as
+`nonUnitalModuleSmoothingCompletionAdjunctionTheorem_proof` in
+`NonUnitalModuleSmoothingCompletionAdjunctionProof`. Recovery/faithfulness, analytic completion,
 the explicit uniform-completion equivalence, submodule closure and the
-rest of I.1.5 remain separate obligations. This unit does not complete
+rest of I.1.5 are not treated here. This module does not complete
 I.1.5 or the whole book.
-
-Authors: Worker 6 (statement definitions, Markdown and interface checks)
-and Worker 1151 (source and installed-interface audit, fresh declaration
-checks and submission preparation).

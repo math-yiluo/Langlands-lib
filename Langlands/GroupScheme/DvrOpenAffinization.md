@@ -1,7 +1,5 @@
 # Open affinization maps over a DVR
 
-Worker 596.
-
 Let `f : G → H` be an actual open-immersion homomorphism over a DVR. Suppose
 `G` is smooth and quasi-compact over the DVR, `H` is affine, and the actual
 map on global functions induced by `f` is bijective. `specialFiberIso`
@@ -28,5 +26,5 @@ special-fibre map is an isomorphism.
 
 No connectedness, commutativity or henselianity hypothesis is used. The
 affine target and its special fibre are not assumed smooth, reduced or of
-finite type. This construction does not yet prove that the original map
+finite type. This construction does not prove that the original map
 is an open immersion or construct any affinization group law.

@@ -31,6 +31,6 @@ the base-field basis vectors. Their defining weight-space membership gives the
 character eigenvector equation for the original action's differential over that
 algebra. The result includes the zero-dimensional Lie module and empty basis.
 
-This unit supplies actual homogeneous Lie bases. It does not construct new
+This module supplies actual homogeneous Lie bases. It does not construct new
 all-test vector-group coordinates, identify semigroup subgroup functors, or
 prove the full ordered semigroup product proposition.

@@ -1,7 +1,5 @@
 # Concrete matrix data for top character localization
 
-Author: Worker 1004.
-
 This internal construction supplies actual subgroup copies, character
 restrictions and determinant identities for comparing full upper-unipotent
 character localization with the normalized top derivative. The algebraic
@@ -27,7 +25,7 @@ as `bernstein-zelevinsky-1977-induced-i`, SHA256
 at
 `/home/taskhub/central-library/Bernstein-Zelevinsky--Induced representations of reductive p-adic groups I--1977.pdf`.
 The original page was read and visually checked. No source-specific errata
-note was found in the supplied project notes, current Library notes or
+note was found in the project notes, Library notes or
 literature locations.
 
 The Library's `mirabolic n F` is this `P_(n+1)` and `radical n F` is
@@ -172,7 +170,7 @@ Every construction permits `n = 0`. The successor declarations at that
 parameter concern `U_1` inside the successor range in `P_2`; the radical
 character declaration concerns `V_2`. There is no declaration here that
 replaces an arbitrary representation of the trivial `GL_0` by a
-one-dimensional carrier. Representation carriers are absent from this unit.
+one-dimensional carrier. Representation carriers are absent from this module.
 
 ## Import and proof-dependency audit
 
@@ -180,11 +178,10 @@ The five direct imports are `Whittaker.MirabolicQuotientMeasure`,
 `Derivative.MirabolicCharacter`, `Whittaker.EntrywiseCharacter`,
 `Group.GL.NormalizedCharacter` and `Twist.RealPower` (with the common
 `Langlands.Representation` prefix where applicable). Recursively reading their
-actual project import declarations gives exactly the 65 modules listed below.
-Every imported Lean/Markdown pair is unchanged from Library
-`81727e81ea12b8e578930ab79e9857e01bf72975`; all 65 pairs also agree byte for
-byte with the supplied later Library
-`a081e0a279cb7346dce7f5afd3dee14f4fbaa60e`.
+actual project import declarations at Library commit
+`81727e81ea12b8e578930ab79e9857e01bf72975` gave exactly the 65 modules listed
+below; all 65 Lean/Markdown pairs also agree byte for byte with the later
+Library commit `a081e0a279cb7346dce7f5afd3dee14f4fbaa60e`.
 
 The actual new proof dependencies are the two entrywise membership lemmas
 in `MirabolicQuotientMeasure`, the concrete factorization and projection
@@ -207,24 +204,24 @@ length, not a finite-length theorem and not used here. Occurrences of
 `Module.finrank` in field normalization and `NormalizedCharacter` concern
 field extensions or the residue field, not representation dimensions.
 
-The following table audits every exclusion family of the parent task against
+The following table audits every excluded family of results against
 both the actual import closure and these proof dependencies. In each row,
-the named conclusions, proof successors and downstream consequences are absent
-as proof inputs. The reasoning is substantive: no proof in this unit takes
+the named conclusions, the modules that prove them and downstream consequences are absent
+as proof inputs. The reasoning is substantive: no proof in this module takes
 a representation as input or invokes a theorem about one.
 
-| Excluded family and parent task references | Audit result |
+| Excluded family | Audit result |
 | --- | --- |
-| `SegmentHeadProductIrreducibility` (`8364e73f-14ec-4d14-8f2b-1555a7c1ce95`); `GenericSegmentProductUniqueness` (`30341ae4-65f2-4a0e-9283-763db01a409e`); individual special-head/reverse-socle (`67279e36-f3c2-42e3-9302-11729784042e`) and segment-socle/reverse-head (`4ca79bbd-589e-476b-9f65-661e799984b5`) existence | No segment, head or socle module in the closure; only literal matrix subgroups and characters are used. |
-| Multisegment exhaustion (`3bfb61fa-1129-4fc9-83fd-7fcfec22106e`), ordered strong-head existence (`ebea9a8a-9b21-4208-aa31-98c2dea1f8a3`), quotient coverage (`20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584`), ordered conversion (`8252833d-c269-41a9-824c-5879e531b23b`) | No multisegment, ordering or coverage result; the image and join arguments are elementary subgroup arguments. |
-| Tempered uniqueness (`52e97845-36bb-457d-b76f-70753334b88c`), `SquareIntegrableLanglandsClassification` (`1cb45da2-7007-4351-a694-594fb148b8d1`), square-integrable exhaustion (`cd8ab97c-0b78-4bce-97c4-d307a28159a4`), regular exhaustion (`bf433f0a-921a-428c-b0c0-6475438125ac`), analytic segment classification (`aca8805b-054f-4d56-8045-12db7f623404`), `SegmentSpecialEssentialSquareIntegrability` (`5eece9e8-7f6b-4ea9-abea-a1f9f1b8c807`) | No classification or square-integrability import or input. Group measure infrastructure is independent of these representation conclusions. |
-| `UnlinkedSegmentSocleProductIrreducible` (`23e98d90-6055-4e35-91a9-b0f5d8a84961`), `LinkedSegmentSocleReverseProductStructure` (`a55c4267-7e3a-43f6-8bb1-ce319e1d0aa9`), `LinkedSegmentSoclePairReducible` (`8fa9f68b-fa1b-431a-97f6-5b163964d1fc`), `SegmentSocleProductIrreducibility` (`2ae5cbe5-0701-4509-88a0-db8cbeb35be4`), juxtaposed structure and quotient-Hom (`7ff2a1e9-89dc-439e-a861-a567b3db92bf`) | No socle, irreducibility, product-structure or quotient-Hom theorem. The matrix product in the subgroup factorization is unrelated to products of representations. |
-| Adjacent socle commutation (`e3634665-571b-4852-9f4c-bab8a1053434`, `cded83f3-df9c-4018-bc61-dc54f5c1f9ab`), two-segment commutation (`426911b4-6620-413f-8065-04b25287f3bd`, `66e3b87c-647e-41e4-af18-df4d436765f0`), linked gluing (`c84cd52c-3ff3-4024-be50-8b84dd480888`, `6780b79c-9526-46aa-b8b4-00377d68b1ea`), `OrderedMultisegmentSocleExistence` (`23189526-80b0-4828-a6d4-7ebec2cbeef5`), socle exhaustion (`f3a69bc8-7312-4f82-8a7d-ea3c8188cb63`) | No socle commutation, gluing or exhaustion module or proof input. |
-| `SegmentFullJacquetFormula` (`ed48ae06-964c-4c84-9e62-978f5a953ca7`), `SegmentHeadJacquetFormula` (`55ad1e10-62d8-46b7-a081-909ef0056426`), `SegmentSocleJacquetFormula` (`b95105c6-f8bb-4641-ae53-2f49d1e7f034`), `SegmentSpecialJacquetExponentNormFormula` (`92aea10f-62ac-4e0b-bd4a-9a80909797c5`); all segment derivative formulas and parent six-statement parts (b), (d), (e), (f) | No segment/Jacquet formula or segment derivative input. `Jacquet.Localization` supplies only the general relation-quotient definitions used by the imported character module. |
-| `TwoSupercuspidalNonadjacentProductIrreducible` (`3c9849a4-a6c0-43ac-9982-d15ed76bf1e9`), `TwoSupercuspidalProductStructure` (`ab61f565-1427-4746-ba77-46097563e962`); Ze80 §§3.5, 9.6, Theorems 4.2, 9.7 and 9.3 | No two-supercuspidal, segment criterion, analytic or derivative-formula input. No BZ77 derivative theorem is assumed. The inverse-half/Haar bridge hosted by the first task is not imported. |
-| `IrreducibleCoinvariantFinitenessStatement` (`5ab445dc-d2b4-4072-80d1-6370870a4a26`), `LeviCuspidalCoinvariantFinitenessStatement` (`3ff5c8fb-397c-4345-bcb3-5d98a0993d18`), the dependent mirabolic finite-length route (`5428fe2c-013c-482d-aa6e-7df43e7191aa`), `SupercuspidalCoinvariantFinitenessStatement` (`62de5903-b616-4b5c-88eb-a066b77c5467`) | No representation finiteness premise or conclusion. The unused finite-length predicate and arithmetic degree facts described above are the only broad finite-length/finrank scan matches. |
-| Proper-derivative vanishing and finrank-one conclusions of `SupercuspidalDerivatives` (`2e5183b1-01e9-44fb-b26c-f4521a25c7c7`) | No classification module in the closure. In particular neither `UpperUnipotentCharacterFactorization` nor `TopDerivativeCoinvariantComparison`, whose closure reaches that host, is imported. The needed factorization instead comes from the elementary `MirabolicProjection` proof. |
-| Plus, adjunction, duality, derivative filtration, pairing, or unproved general derivative comparisons | No such result is a proof input. The imported dual definitions merely describe linear functionals; no duality theorem is used. The future tower and top-derivative adapter remain separate obligations. |
+| `SegmentHeadProductIrreducibility`; `GenericSegmentProductUniqueness`; individual special-head/reverse-socle and segment-socle/reverse-head existence | No segment, head or socle module in the closure; only literal matrix subgroups and characters are used. |
+| Multisegment exhaustion, ordered strong-head existence, quotient coverage, ordered conversion | No multisegment, ordering or coverage result; the image and join arguments are elementary subgroup arguments. |
+| Tempered uniqueness, `SquareIntegrableLanglandsClassification`, square-integrable exhaustion, regular exhaustion, analytic segment classification, `SegmentSpecialEssentialSquareIntegrability` | No classification or square-integrability import or input. Group measure infrastructure is independent of these representation conclusions. |
+| `UnlinkedSegmentSocleProductIrreducible`, `LinkedSegmentSocleReverseProductStructure`, `LinkedSegmentSoclePairReducible`, `SegmentSocleProductIrreducibility`, juxtaposed structure and quotient-Hom | No socle, irreducibility, product-structure or quotient-Hom theorem. The matrix product in the subgroup factorization is unrelated to products of representations. |
+| Adjacent socle commutation, two-segment commutation, linked gluing, `OrderedMultisegmentSocleExistence`, socle exhaustion | No socle commutation, gluing or exhaustion module or proof input. |
+| `SegmentFullJacquetFormula`, `SegmentHeadJacquetFormula`, `SegmentSocleJacquetFormula`, `SegmentSpecialJacquetExponentNormFormula`; all segment derivative formulas | No segment/Jacquet formula or segment derivative input. `Jacquet.Localization` supplies only the general relation-quotient definitions used by the imported character module. |
+| `TwoSupercuspidalNonadjacentProductIrreducible`, `TwoSupercuspidalProductStructure`; Ze80 §§3.5, 9.6, Theorems 4.2, 9.7 and 9.3 | No two-supercuspidal, segment criterion, analytic or derivative-formula input. No BZ77 derivative theorem is assumed. No inverse-half/Haar bridge is imported. |
+| `IrreducibleCoinvariantFinitenessStatement`, `LeviCuspidalCoinvariantFinitenessStatement`, the dependent mirabolic finite-length route, `SupercuspidalCoinvariantFinitenessStatement` | No representation finiteness premise or conclusion. The unused finite-length predicate and arithmetic degree facts described above are the only broad finite-length/finrank scan matches. |
+| Proper-derivative vanishing and finrank-one conclusions of `SupercuspidalDerivatives` | No classification module in the closure. In particular neither `UpperUnipotentCharacterFactorization` nor `TopDerivativeCoinvariantComparison`, whose closure reaches the vanishing half of `SupercuspidalDerivatives` (`Classification.SupercuspidalDerivativeVanishing`), is imported. The needed factorization instead comes from the elementary `MirabolicProjection` proof. |
+| Plus, adjunction, duality, derivative filtration, pairing, or unproved general derivative comparisons | No such result is a proof input. The imported dual definitions merely describe linear functionals; no duality theorem is used. The tower equivalence and the top-derivative adapter are constructed separately, in `TopLocalizationStep` and `TopLocalizationComparison`. |
 
 ### Complete transitive project import list
 

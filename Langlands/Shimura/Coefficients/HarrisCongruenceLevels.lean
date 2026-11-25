@@ -37,8 +37,8 @@ def harrisCoefficientDiagram (m : ℕ) :
 /-- The diagram action is the actual faithful finite action with integral scalars retained. -/
 theorem harrisCoefficientDiagram_action (m n : ℕ)
     (g : HarrisCongruenceGroup ρ p U m n) (x : (harrisTorsionAction ρ p U m n).V) :
-    ((harrisCoefficientDiagram ρ p U m).ρ (op n) g).hom x =
-      ((harrisFiniteCoefficientAction ρ p U m n).ρ g).hom x := by
+    ((harrisCoefficientDiagram ρ p U m).ρ (op n) g).asHom.hom x =
+      ((harrisFiniteCoefficientAction ρ p U m n).ρ g).asHom.hom x := by
   induction g using QuotientGroup.induction_on with
   | H g => rfl
 

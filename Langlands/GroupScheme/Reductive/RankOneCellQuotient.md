@@ -56,7 +56,9 @@ result after each such restriction proves the assertion for every
 relative scheme test. No reduced-fibre equality or pointwise field
 detection is used.
 
-This unit retains supplied Weyl data and coroot annihilation. Applying
+This module retains supplied Weyl data and coroot annihilation. Applying
 it to actual reductive-group rank-one centralizers, constructing the
 ambient quotient, and proving the full relative derived-group
-existence statement remain separate steps.
+existence statement are separate steps, not part of this module; the
+Library proves that statement as `relativeDerivedGroupExistence` in
+`RelativeDerivedGroupExistenceProof`.

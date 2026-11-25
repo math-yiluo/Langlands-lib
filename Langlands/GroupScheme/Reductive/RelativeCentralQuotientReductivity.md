@@ -1,7 +1,5 @@
 # Reductivity of supplied affine central quotients
 
-Worker 358.
-
 `AffineCentralQuotientReductivityStatement` is the `Prop`-valued definition
 of the assertion below. `affineCentralQuotientReductivity` proves it using
 the parameterized helper theorem in this module.

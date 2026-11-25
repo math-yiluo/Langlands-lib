@@ -1,10 +1,8 @@
 # Anthropic Brauer trace induction and the actual character-lattice bridge
 
-Worker 18, 2026-10-25. Audit task `6f660c3b-fd16-4067-8f6a-611939522624`, revision 1.
+**Verdict: adapt the trace-induction proof in separate mathematical modules.** The eight-module source closure compiles privately on the project pin after four bounded compatibility edits. Its matrix trace theorem is useful for the existing character-lattice endpoint. It does not prove the character formula for the Library's actual quotient induction, nor injectivity of virtual-character realization. Preserve those as separate obligations. Reuse the Library's existing representation classes, induction and split Grothendieck group; leave a public port to separate definition, statement and proof modules. (The block was later ported into `Langlands/Representation/Finite/`; see [the port report](brauer-port/REPORT.md).)
 
-**Verdict: adapt the trace-induction proof in focused mathematical units.** The eight-module source closure compiles privately on the project pin after four bounded compatibility edits. Its matrix trace theorem is useful for the existing character-lattice endpoint. It does not prove the character formula for the Library's actual quotient induction, nor injectivity of virtual-character realization. Preserve those as separate obligations. Reuse the Library's existing representation classes, induction and split Grothendieck group; defer a public port to separately authorized definition, statement and proof tasks.
-
-This is a source and interface audit with development compilation evidence. The experiments are not accepted mathematical artifacts. Independent review and publication of this note do not admit the external theorem. No frozen target or public Lean module is changed by this note.
+This is a source and interface audit of 2026-10-25 with development compilation evidence. The experiments are not part of the Library. This note does not admit the external theorem. No frozen target or public Lean module is changed by this note.
 
 ## Source, scope and evidence
 
@@ -15,12 +13,11 @@ The registered source is `anthropic-flt-complete-lean-source-6e837e75`, content 
 | Anthropic source | `6e837e75355538c7f80bab5b956861e86c4eacc2` |
 | Upstream toolchain | Lean 4.33.1 |
 | Upstream Mathlib | `db584cd6d46c92f209a44c0f1c829460d327499d` |
-| Project environment | `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` |
 | Project toolchain | Lean 4.34.0, commit `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b` |
 | Project Mathlib | `5ed2965256430c3649e86755f9576b54eca72435` |
-| Library comparison verified in this activation | `13a081dfafb3be77f947b586115e69bcabd924c8` |
+| Library comparison verified | `13a081dfafb3be77f947b586115e69bcabd924c8` |
 
-The [evidence appendix](anthropic-brauer-evidence/index.md) contains the original per-file SHA256 hashes, import lists, final adapted hashes, complete compatibility patch, private experiment recipes, full unapplied declaration displays, axiom output, and links to complete terminal service reports. It also fingerprints all four host Lean/Markdown pairs. The [source notices](anthropic-brauer-evidence/notices.md) preserve LICENSE and NOTICE and record the attribution check. No closure path or filename matches an upstream `ATTRIBUTION.md` row, and no individual author header occurs in the selected original files. The global notice is Copyright 2026 Anthropic, PBC, Apache-2.0; it also acknowledges Mathlib and notes that shorter restatements were not individually traced. No applicable source-specific errata file was present at the checked public/library paths on the audit date. This is a bounded provenance finding, not an assertion of original authorship of every underlying argument.
+The [evidence appendix](anthropic-brauer-evidence/index.md) contains the original per-file SHA256 hashes, import lists, final adapted hashes, complete compatibility patch, private experiment recipes, full unapplied declaration displays, axiom output, and links to complete terminal service reports. It also fingerprints all four Library Lean/Markdown pairs. The [source notices](anthropic-brauer-evidence/notices.md) preserve LICENSE and NOTICE and record the attribution check. No closure path or filename matches an upstream `ATTRIBUTION.md` row, and no individual author header occurs in the selected original files. The global notice is Copyright 2026 Anthropic, PBC, Apache-2.0; it also acknowledges Mathlib and notes that shorter restatements were not individually traced. No applicable source-specific errata file was present at the checked public/library paths on the audit date. This is a bounded provenance finding, not an assertion of original authorship of every underlying argument.
 
 Recomputing textual imports from both requested root modules, stopping at `Mathlib` and `Lean`, gives exactly **8 local modules and 2,099 original lines**. The count is a file import closure, not a minimal declaration dependency proof:
 
@@ -83,13 +80,13 @@ The final patch changes four source files without changing any theorem statement
 
 The four modified files carry modification notices. The experiment retains `P2M.Util` and the wrapper tactic; no global attribute-reset module occurs in this closure. `p2m_exact_reverting` reverts the local telescope, elaborates the referenced proof at that type, and rejects remaining metavariables. Its elaboration is not a substitute for checking the resulting theorem; the root and dependency axiom outputs supply that separate evidence. Removing wrappers in a later port is a separate recorded change, not something tested here.
 
-Successful check `4d218106-a903-4467-9b9d-92a576141c2b` compiled and inspected the root and printed the two dependency roots' axioms. After the modification comments were added, `5bab0732-36c7-4627-8d82-e253c503897e` rebuilt both experiment modules with zero errors, but its root inspection failed because the last module did not import the root. Corrected check `ff9426d5-6c84-4f22-865c-eff614d87b0b` inspected the root successfully. The root's axiom set is exactly `propext`, `Classical.choice`, `Quot.sound`; the two dependency roots print the same set. Failed elaboration checks are retained as failures; their diagnostic recovery placeholders are not assumptions of the successfully checked source.
+A successful check compiled and inspected the root and printed the two dependency roots' axioms. After the modification comments were added, a rebuild of both experiment modules had zero errors, but its root inspection failed because the last module did not import the root. A corrected check inspected the root successfully. The root's axiom set is exactly `propext`, `Classical.choice`, `Quot.sound`; the two dependency roots print the same set. Failed elaboration checks are retained as failures; their diagnostic recovery placeholders are not assumptions of the successfully checked source.
 
-Bridge check `63b0c413-d9ca-4c8b-9b51-ac83307704f5` passes without errors or warnings, as does final API check `75c17d9b-4b2b-44e6-a6d0-2dc3f75e9181`. All five bridge theorems print only the standard axioms, and the inspected induction-sum transport retains separate `u` and `w` universes. These are private `lean_check` results, all with `proof_accepted: false`. They establish compilation and reported assumption checks, not independent semantic acceptance or exact proof coverage of a published Brauer target.
+The bridge check passes without errors or warnings, as does the final API check. All five bridge theorems print only the standard axioms, and the inspected induction-sum transport retains separate `u` and `w` universes. These are private compilation results. They establish compilation and reported assumption checks, not an independent semantic check or exact proof coverage of a published Brauer target.
 
 Full terminal JSON reports and complete printed types are preserved. Raw inspection-expression scratch files were removed by the service before copying; only their exact hashes and byte counts remain. Those raw expressions are explicitly unavailable. One interrupted restart job was terminally cancelled, as recorded in the appendix, and is not counted as a successful check.
 
-## Exact host interfaces and the remaining bridge
+## Exact Library interfaces and the remaining bridge
 
 All following names are in **`Langlands.FiniteRep`**, not nested `Classes`, `Induction` or `Virtual` namespaces. The files are [Classes](../../Langlands/Representation/Finite/Classes.lean), [Induction](../../Langlands/Representation/Finite/Induction.lean), [Virtual](../../Langlands/Representation/Finite/Virtual.lean), and [BrauerStatement](../../Langlands/Representation/Finite/BrauerStatement.lean). Full unapplied `#check` output with universes is in the appendix; the table gives its mathematical content.
 
@@ -120,7 +117,7 @@ The existing target `FiniteInducedCharacterFormulaStatement G`, for arbitrary `G
         V.character ⟨x⁻¹ * g * x, h⟩ else 0
 ```
 
-The normalization and conjugation direction agree exactly with the external formula: inverse subgroup cardinality, `x⁻¹ * g * x`, and no inversion of the subgroup character. This agreement alone does not identify the two constructions. The host target concerns an actual induced action for every `FDRep`; the source defines an operation on functions. Its proof remains a separate task, or a weaker actual rank-one trace formula must be proved if that suffices for the immediate lattice endpoint. The weaker bridge would not discharge the full formula target.
+The normalization and conjugation direction agree exactly with the external formula: inverse subgroup cardinality, `x⁻¹ * g * x`, and no inversion of the subgroup character. This agreement alone does not identify the two constructions. The Library's target `FiniteInducedCharacterFormulaStatement G` concerns an actual induced action for every `FDRep`; the source defines an operation on functions. Its proof is a separate obligation, or a weaker actual rank-one trace formula must be proved if that suffices for the immediate lattice endpoint. The weaker bridge would not discharge the full formula target.
 
 The private theorem `BrauerAudit.rankOneBridge` assumes `h : FiniteInducedCharacterFormulaStatement G`, specializes it to `oneDimensional χ`, and proves
 
@@ -150,22 +147,22 @@ The proposed full adapter would restrict the coordinate representation along `e.
 
 ## Character-lattice endpoint and separate representation-group endpoint
 
-The first host endpoint is the unchanged proposition
+The first Library endpoint is the unchanged proposition
 `IntegralBrauerCharacterLatticeStatement G`, namely
 `inducedCharacterLattice (k := ℂ) (G := G) = virtualCharacters (k := ℂ) (G := G)`.
 It is equality over ℤ, not equality after tensoring with ℚ or ℂ, and not a finite-index assertion.
 
-After a reviewed trace port, full universe adapter and actual rank-one induction bridge, each genuine trace character lies in the integral span of `inducedCharacter`. Convert `(a i : ℂ) * f g` to pointwise integer scalar multiplication. Use quotient induction on `RepClass` representatives and `mem_virtualCharacters_iff` to handle differences; the submodule is closed under subtraction. The reverse inclusion is already `inducedCharacterLattice_le`. This is a precise remaining proof plan, not a checked lattice theorem.
+After a trace port, full universe adapter and actual rank-one induction bridge, each genuine trace character lies in the integral span of `inducedCharacter`. Convert `(a i : ℂ) * f g` to pointwise integer scalar multiplication. Use quotient induction on `RepClass` representatives and `mem_virtualCharacters_iff` to handle differences; the submodule is closed under subtraction. The reverse inclusion is already `inducedCharacterLattice_le`. This is a precise remaining proof plan, not a checked lattice theorem.
 
 `IntegralBrauerSpanningStatement G` instead asserts surjectivity of `brauerExpansion G` into **`VirtualRep ℂ G`**. Matching characters of a proposed finite integer sum and a virtual representation does not establish equality there. One additional route is `FiniteVirtualCharacterFaithfulnessStatement G`, exactly `Function.Injective (virtualCharacter (k := ℂ) (G := G))`, plus the identification of the character image of `brauerExpansion` with the induced-character span. A separately proved cancellation argument could replace this route, but no such argument was found or proved here. The source's monomial weight decomposition does not by itself supply faithfulness for all actual complex representation classes. A Brauer–Nesbitt theorem requiring the representation image to span the entire endomorphism algebra cannot be substituted for general semisimple faithfulness.
 
 The full `FiniteBrauerTheoryStatement` also includes finite order of rank-one characters, induced degree, and an irreducible basis assertion. The audited root does not discharge those targets merely by proving a trace expansion.
 
-## Smallest proposed units and ownership
+## Smallest proposed modules
 
-This table is a dependency proposal, not a new task assignment or authorization. Publish definitions first, then any missing Prop-valued statement targets, and submit proofs only against published targets. Group small bookkeeping lemmas with their natural unit.
+This table is a dependency proposal. Definitions come first, then any missing Prop-valued statement targets, and proofs only against published targets. Group small bookkeeping lemmas with their natural module.
 
-| Unit | Dependencies and exact remaining work |
+| Module | Dependencies and exact remaining work |
 | --- | --- |
 | Normalized function induction | Definition and elementary sum/conjugation/transitivity API; preserve source formula and provenance; avoid confusion with actual induction |
 | Solomon trace identity | Function-induction API; port the fixed-coset, integral-span and maximal-ideal argument with its exact hyperelementary predicate |
@@ -176,6 +173,6 @@ This table is a dependency proposal, not a new task assignment or authorization.
 | Integral character-lattice equality | Trace adapter plus actual rank-one bridge and existing `mem_virtualCharacters_iff` / `inducedCharacterLattice_le` |
 | Faithfulness and virtual spanning | Separate faithfulness/cancellation proof; then combine character expansion with injectivity to prove `IntegralBrauerSpanningStatement` |
 
-The Solomon and monomial units can be developed after the common function API; the actual induction-character formula can proceed independently of the external port. No bulk import of the source's 60,478-module tree is proposed.
+The Solomon and monomial modules can be developed after the common function API; the actual induction-character formula can proceed independently of the external port. No bulk import of the source's 60,478-module tree is proposed.
 
-Worker 24 retains construction/realization task `46c1335f-c68d-48e9-b805-9e5113eef3ea`; Worker 30 retains statement task `62ea68fa-e1f4-4187-811b-7436743bba6a`. Their consultations supported this bounded audit and reported no competing private Brauer proof. The existing constructions by Worker 18 are reused by Lean name. The accepted note is to be sent to Workers 0, 24 and 30 with the actionable interfaces above; this audit creates no competing implementation ownership.
+No competing private Brauer proof was known when this audit was made. The existing constructions are reused by Lean name.

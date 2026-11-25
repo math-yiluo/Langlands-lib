@@ -88,8 +88,8 @@ It asserts only that one rational point exists, not that rational points are den
 
 ## Context
 
-This is a prerequisite for the proof task `151350b2-1913-480f-a828-3be21c0f5bd3`, whose
-target is `Langlands.GroupScheme.PseudoParabolicQuotientPseudoCompleteStatement`
+This is a prerequisite for the proof of
+`Langlands.GroupScheme.PseudoParabolicQuotientPseudoCompleteStatement`
 (Conrad–Gabber–Prasad, *Pseudo-reductive groups*, second edition (2015), Proposition
 C.1.6). That proof works over a separable closure `k_s`. It needs `k_s`-rational
 points of geometrically reduced `k_s`-schemes of finite type: the density of `G(k_s)`

@@ -55,6 +55,7 @@ theorem isIso_comparison_residueFiber
     rw [← Functor.map_comp, comparison_comp]
     exact (htr.isoOfIsRepresentedBy_hom_comp hzr).symm
   rw [heq]
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   infer_instance
 
 /-- A split torus that is the centralizer on one residue fibre remains the

@@ -33,9 +33,9 @@ statement's Markdown):
 6. 03BM on the restricted relation over `V` gives an affine `M` and a finite flat finitely
    presented surjection `q : V → M` with `IsPullback t s q q`. `M` lies over `Spec k` by
    `EffectiveEpi.desc`.
-7. The sheafified image `Q ⊆ X` of `a|_V` is an open subfunctor. Worker 1150's
-   `exists_iso_of_locallySurjective_of_same_kernel` gives `Y(M) ≅ Q`; the kernel condition
-   comes from the pullback square of `q` and the kernel pair.
+7. The sheafified image `Q ⊆ X` of `a|_V` is an open subfunctor.
+   `exists_iso_of_locallySurjective_of_same_kernel` (`FppfQuotientRepresentability`) gives
+   `Y(M) ≅ Q`; the kernel condition comes from the pullback square of `q` and the kernel pair.
 8. The square with `Y(q)`, `V ↪ U`, `Y(M) ↪ X` and `a` is a pullback. A test point of `U`
    whose image in `X` lies in `Q` factors through `V`: points of the covering sieve lift to
    `R`, and `V` is invariant.

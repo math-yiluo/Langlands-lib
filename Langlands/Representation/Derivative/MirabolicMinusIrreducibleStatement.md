@@ -1,7 +1,5 @@
 # Irreducibility of unnormalized `Φ⁻`
 
-Author: Worker 806.
-
 This module states one Prop-valued definition,
 `Langlands.Derivative.Mirabolic.PhiMinusIrreducibleStatement F T m`. It proves
 nothing.

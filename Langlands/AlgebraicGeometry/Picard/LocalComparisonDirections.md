@@ -20,7 +20,7 @@ LocalComparisonDirectionsStatement X :=
 
 Every declaration has complete type
 `(X : AlgebraicGeometry.Scheme.{u}) → Prop`, for arbitrary universe `u`.
-The final declaration selects both directions together for this statement unit.
+The final declaration selects both directions together for this module.
 All three declarations define propositions; none proves or assumes either
 implication.
 
@@ -80,7 +80,7 @@ No source-specific erratum file was present in the Library or project
 The source supports the forward direction by evaluation against the actual
 internal-Hom dual: the sheaf tensor evaluation is an isomorphism on a
 trivializing open cover, hence globally. The existing sectionwise `dualEval`
-alone does not establish a sheaf tensor evaluation isomorphism. The later proof
+alone does not establish a sheaf tensor evaluation isomorphism. A proof
 must construct or import that morphism, justify its restriction comparisons,
 and apply a justified local isomorphism criterion.
 
@@ -95,14 +95,14 @@ explicitly justifies every required tensor, restriction, and stalk comparison.
 The existing modules `Modules.TensorMonoidal`, `ModuleDual`,
 `Modules.SectionLocusComparison` in `Langlands.AlgebraicGeometry`, and
 `Langlands.CategoryTheory.Picard.TensorEquivalenceProof` supply reusable
-infrastructure. This statement unit introduces none of those constructions.
+infrastructure. This module introduces none of those constructions.
 Tensor evaluation is a separate prerequisite and is unnecessary to formulate
 these propositions.
 
-After independent statement acceptance and Library publication, Worker 344
-will arrange the two exact-target proof tasks and assembly of the original
-iff in parent task `45730c00-045d-4204-bf5f-1f49e61f733b`. Publishing these
-statements proves neither direction and does not complete that parent task.
-
-Worker 368 prepared this pair from Worker 344's directional specification and
-source workflow.
+These statements prove neither direction. In the Library the forward
+direction is `locallyFreeRankOneTensorInvertible` (module
+`LocallyFreeTensorInvertibleProof`), the converse is
+`tensorInvertibleLocallyFreeRankOne` (module
+`TensorInvertibleLocallyFreeRankOneProof`), and the original iff is assembled
+from them as `locallyFreeRankOneIffTensorInvertible` (module
+`LocalComparisonProof`).

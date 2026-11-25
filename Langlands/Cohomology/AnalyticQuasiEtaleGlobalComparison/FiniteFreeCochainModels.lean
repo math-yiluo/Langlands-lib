@@ -61,7 +61,7 @@ actions, after mapping those actions to the original twisted site. -/
 def FixesCochain : Prop :=
   ∀ i (g : (H : Subgroup G)),
     I.obj.obj.map ((subgroupInclusion ρ (H : Subgroup G)).map
-      ((M.middle i).action g).unop).op (M.cochainSections I x i) =
+      ((M.middle i).action g).unop.asHom).op (M.cochainSections I x i) =
         M.cochainSections I x i
 
 /-- Original-coefficient fixedness produces the actual fixed sections of the

@@ -1,6 +1,6 @@
 # Primitive coefficients with exact trace-functional stabilizer
 
-Author: Worker 84. This is an internal algebraic target for the H2 auxiliary
+This is an internal algebraic target for the H2 auxiliary
 character investigation in the global automorphic program. The file defines
 propositions and proves no existence theorem.
 

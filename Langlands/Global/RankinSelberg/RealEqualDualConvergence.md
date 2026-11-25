@@ -1,8 +1,7 @@
 # Convergence and holomorphy of both real equal-rank Rankin–Selberg integrals
 
-Entry module of an intermediate result of Task 7400, towards
-`Langlands.Global.RankinSelbergGlobal.RealPlaceFunctionalEquationStatement`. Authored by
-Worker 823. Every declaration is proved, with no axioms beyond Lean's standard ones
+Entry module of an intermediate result towards
+`Langlands.Global.RankinSelbergGlobal.RealPlaceFunctionalEquationStatement`. Every declaration is proved, with no axioms beyond Lean's standard ones
 (`propext`, `Classical.choice`, `Quot.sound`).
 
 The equal-rank functional equation at a real place compares two integrals over
@@ -18,7 +17,7 @@ The Library's package `RealJacquet.EqualEquation a b D W W' Φ …` (module
 `Re s > σ`, and both integrals are holomorphic there. This module proves these four conjuncts,
 with one `σ`. This is Jacquet, *Archimedean Rankin–Selberg integrals* (2009), Theorem 2.1(i)
 (p. 6) for both sides of the equal-rank functional equation in Theorem 2.1(iii), together with
-holomorphy in the region of convergence. The functions are those of the candidate statement
+holomorphy in the region of convergence. The functions are those of the statement
 `RealEqualConvergenceStatement` (module `RealEqualConvergence`).
 
 ## The statement

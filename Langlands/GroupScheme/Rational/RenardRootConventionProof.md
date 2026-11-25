@@ -1,6 +1,6 @@
 # Proof of Renard's radical weights and simple indivisible roots
 
-Author: Worker 4478. The composition was identified in Worker 15's note
+The composition is the one recorded in the note
 `notes/group-schemes/composable-targets-2026-11-08.md`.
 
 Module `Langlands.GroupScheme.Rational.RenardRootConventionProof`.

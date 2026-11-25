@@ -62,6 +62,6 @@ ordinary composition comparison and actual dual base-change constructions.
 The imports are `RelativeIntegralActionComparison` and
 `DualAbelianBaseChangeCoherence`. There is no flatness, reducedness, connectedness
 or local noetherianness restriction on a test map. The map need not be a
-polarization. This unit identifies actual maps and does not establish
+polarization. This module identifies actual maps and does not establish
 polarized moduli existence, normalized Harris representability, smoothness,
 projectivity or admissibility.

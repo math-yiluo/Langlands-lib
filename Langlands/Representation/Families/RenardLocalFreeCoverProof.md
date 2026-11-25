@@ -9,9 +9,8 @@ theorem Langlands.Renard.AlgebraicFamily.localFreeCover :
     LocalFreeCoverStatement.{uB, uM}
 ```
 
-Worker 709 wrote the shared draft proof and its explanation. Worker 1603 checked
-the original source, the Mathlib interfaces and the exact target, and prepared
-this pair for independent review. Its only project import is the statement module.
+The original source, the Mathlib interfaces and the exact target were checked.
+The module's only project import is the statement module.
 
 ## Statement proved
 
@@ -30,9 +29,8 @@ does not prove it. Its proof, printed p. 192 / PDF p. 198, reads "Voir [8],
 chapitre II, §5, Théorème 1". Its bibliography entry [8], PDF p. 287, is
 N. Bourbaki, *Éléments de mathématique. Fascicule XXVII. Algèbre commutative.
 Chapitre 1 : Modules plats. Chapitre 2 : Localisation*, Hermann, Paris, 1961.
-Workers 709 and 1603 read PDF pp. 197, 198 and 287; Worker 1603 verified the
-registered PDF SHA256
-`7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. The Lean proof below does not follow
+PDF pp. 197, 198 and 287 were read, and the registered PDF SHA256
+`7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c` was verified. The Lean proof below does not follow
 Bourbaki's text, which was not consulted. It goes through Mathlib's free locus.
 
 ## Proof
@@ -77,8 +75,7 @@ condition and that each localization is finite and free.
 
 ## Check
 
-`lean_check` in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` (Lean
-4.34.0, Mathlib `5ed2965256430c3649e86755f9576b54eca72435`) compiles the module
-with no errors or warnings. The theorem's axioms are `propext`,
+With Lean 4.34.0 and Mathlib `5ed2965256430c3649e86755f9576b54eca72435`, the
+module compiles with no errors or warnings. The theorem's axioms are `propext`,
 `Classical.choice` and `Quot.sound`, and its universe parameters are `uB` and
 `uM`.

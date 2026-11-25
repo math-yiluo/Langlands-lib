@@ -1,13 +1,13 @@
 # Closed rational loci over extensions of complete normed fields: proof
 
-Author: Worker 5045. This module proves
+This module proves
 `CompleteExtensionPointClosedRangeStatement` as the theorem
 `CompleteExtensionClosedRange.completeExtensionPointClosedRange`. Its declarations
 are in the namespace
 `Langlands.AlgebraicGeometry.AlgebraicSpace.CompleteExtensionClosedRange`. The
 statement is a derived internal prerequisite, not a numbered result from the
 literature (see its own Markdown). The proof below is internal. It combines
-published Library results with standard Galois theory and the elementary fact
+Library results with standard Galois theory and the elementary fact
 that a finite-dimensional subspace over a complete field is closed. The
 statement keeps all of its hypotheses: `L/K` is an arbitrary extension of
 complete nontrivially normed fields, and `X` is a separated, quasi-separated
@@ -80,7 +80,7 @@ complete, and `X` is an algebraic space over `Spec K`.
   (`FiniteExtensionEmbedding.isHenselianValuedField_extension`), and `K` is
   henselian by `PointTopology.completeHenselianValuedField`. The map
   `f : X_E(E) → X_M(M)` is coefficient change composed with the tower
-  isomorphism `towerIso K E M X`. It is a topological embedding: the published
+  isomorphism `towerIso K E M X`. It is a topological embedding: the
   `isEmbedding_henselianExtensionPointMap` for the base change of `X` to `E`,
   followed by the homeomorphism induced by an isomorphism of algebraic spaces.
   By `fieldExtensionPointMap_tower`, `f` maps the rational locus over `E` onto

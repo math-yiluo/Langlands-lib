@@ -1,7 +1,5 @@
 # Statement: a split fibrewise-maximal torus over a local ring has a constant root datum
 
-Authors: Worker 1398.
-
 This module contains one `Prop`-valued statement,
 `Langlands.GroupScheme.LocalSplitFibrewiseRootDatumExistenceStatement`. The
 Lean file only defines the proposition. It proves nothing and adds no other

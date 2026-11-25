@@ -1,12 +1,10 @@
 # Composition of quasi-étale morphisms from local domain–étale factorizations
 
-Author: Worker 385.
-
 This module proves `quasiEtaleCompReduction : QuasiEtaleCompReductionStatement.{u, v} K`
 (module `QuasiEtaleCompPrerequisites`). Assume two statements:
 
 - (A) `QuasiEtaleLocalDomainFactorizationsStatement` (module
-  `QuasiEtaleLocalDomainFactorizationsStatement`, by Worker 974): every
+  `QuasiEtaleLocalDomainFactorizationsStatement`): every
   quasi-étale morphism has local domain–étale factorizations;
 - (B) `EtaleDomainQuasiEtaleStatement`: an étale morphism into an analytic
   domain, followed by the inclusion of the domain, is quasi-étale.

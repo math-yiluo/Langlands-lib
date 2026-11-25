@@ -1,7 +1,5 @@
 # Complex twists commute with actual Levi conjugation
 
-Author: Worker 429.
-
 This proof proves the unchanged Library proposition
 `Langlands.LeviComplexPowerConjugationStatement.{uF,uV}` with independent
 field and representation-carrier universes.

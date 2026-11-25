@@ -14,7 +14,7 @@ open scoped CategoryTheory.MonObj NumberField Langlands.Global.AdelicFunctoriali
 
 namespace Langlands.GroupScheme.IsCentralIsogeny
 
-open Langlands.ClassField.Global Langlands.ClassFieldTheory.Local
+open Langlands.ClassFieldTheory.Global Langlands.ClassFieldTheory.Local
 open Langlands.Global.AdelicFunctoriality FundamentalClass
 open NumberField IsDedekindDomain IsDedekindDomain.HeightOneSpectrum
 

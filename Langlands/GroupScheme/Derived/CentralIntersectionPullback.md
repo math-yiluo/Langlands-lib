@@ -1,7 +1,5 @@
 # The pullback representative of the centre inside a subgroup
 
-Author: Worker 846.
-
 This module constructs the closed representative used for
 `DerivedCentralIntersectionFinitenessStatement.{u}`. It also reduces that
 proposition to finiteness of one pullback. It proves no finiteness itself.

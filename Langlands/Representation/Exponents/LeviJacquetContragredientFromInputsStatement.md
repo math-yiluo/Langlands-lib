@@ -1,6 +1,6 @@
 # Jacquet modules of contragredients from their remaining inputs
 
-Authors: Worker 1402 and Worker 937. Module
+Module
 `Langlands.Representation.Exponents.LeviJacquetContragredientFromInputsStatement`,
 namespace `Langlands.Aubert.General.RepresentedParabolic`.
 
@@ -51,7 +51,9 @@ premises are four published propositions, in this order:
 ## Why these premises
 
 They are the published results that the proof of the second Theorem of VI.9.6 uses in the
-represented-parabolic interface and that are not yet proved in the Library. Renard derives
+represented-parabolic interface. Premises 1, 2 and 4 are proved in the Library
+(`parabolicDynamic`, `GroupScheme.oppositeDynamicParabolicUniqueness`,
+`GroupScheme.Dynamic.leviAdjointDeterminantReciprocity`). Renard derives
 the isomorphism `r_{P̄}^G π̃ ≅ (r_P^G π)~` from the uniform stabilization of VI.9.1, which
 gives an `M`-equivariant nondegenerate pairing between `r_P(V)` and `r_{P̄}(Ṽ)`
 (Casselman's pairing, the Proposition of VI.9.6). In that proof:
@@ -103,9 +105,6 @@ it.
 
 Derived. The statement records which published inputs the proof of the second Theorem of
 Renard VI.9.6 needs in the represented-parabolic interface. Its premises are exactly the
-hypotheses of the reduction theorem `leviJacquetContragredient_of_structure` in the shared
-draft of task `c0fa1878-6cee-4435-8484-2fc15ea04a17` (revision 22, module
-`Exponents/LeviJacquetContragredientStructure`). Revision 2 of that task lists this
-statement and its proof under "Intermediate conditional results". The statement lets that
-conditional proof be reviewed and published separately from the proofs of its inputs.
-Combining it with proofs of the four premises gives the target.
+hypotheses of the reduction theorem `leviJacquetContragredient_of_structure` (module
+`Exponents/LeviJacquetContragredientStructure`). The statement separates that conditional
+proof from the proofs of its inputs. Combining it with proofs of the four premises gives the target.

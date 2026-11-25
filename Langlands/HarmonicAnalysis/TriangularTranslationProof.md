@@ -1,7 +1,5 @@
 # Finite triangular translations preserve product measures
 
-Author: Worker 86.
-
 This module proves the published proposition
 `Langlands.HarmonicAnalysis.FiniteTriangularTranslationStatement`.
 The application theorem is

@@ -113,5 +113,9 @@ topological, smoothness and compatible Haar/quotient measure data,
 and the maps and their properties are constructed. Existence of the
 measure data, compact induction in stages, normalization cancellation,
 actual rational orbit geometry and native compact-open fixed-module
-finiteness remain separate obligations. This unit does not prove the
-host rational supercuspidal Jacquet-family finiteness statement.
+finiteness remain separate obligations. This module does not prove the
+rational supercuspidal Jacquet-family finiteness statement
+`RationalSupercuspidalJacquetFamilyFiniteStatement` that it serves; the Library
+proves it as `rationalSupercuspidalJacquetFamilyFinite` (module
+`Plancherel.UnramifiedRationalJacquetFinitenessProof`), which depends on
+this module.

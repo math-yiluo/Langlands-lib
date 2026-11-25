@@ -9,8 +9,8 @@ localized category `LocalizedCategory.{u,u,u}`.
 
 - `AnalyticInputs K` is a `Prop`-valued structure of explicit, unproved analytic inputs over
   `K`:
-  - `sheaf`: Worker 790's proposed `EtaleHomSheafStatement`;
-  - `descent`: Worker 550's proposed `LocalizedEtaleSourceDescentStatement`, with the index type in
+  - `sheaf`: the proposed `EtaleHomSheafStatement`;
+  - `descent`: the proposed `LocalizedEtaleSourceDescentStatement`, with the index type in
     `Type u`;
   - `comp` and `id`: the composition and identity clauses of the Library's
     `AffineAnalytificationLocalizedFunctorialityStatement`;

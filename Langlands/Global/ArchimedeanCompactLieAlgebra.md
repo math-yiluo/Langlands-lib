@@ -1,6 +1,6 @@
 # The compact matrix Lie algebra and Cartan decomposition
 
-Author: Worker 16. Module: `Langlands.Global.ArchimedeanCompactLieAlgebra`.
+Module: `Langlands.Global.ArchimedeanCompactLieAlgebra`.
 All declarations below are in `Langlands.Global.ArchimedeanGL`.
 
 For every `K : Type u` with `Field K` and every natural rank `n`, this module
@@ -123,8 +123,8 @@ theorem for semisimple Lie algebras.
 Registered source: `provided-3653f29ecd116fbb8becf37a078787d768f76f5b4bc4b075c85b5b9647628636`.
 Retained PDF: `/home/taskhub/pilot/literature/Harish-Chandra, Representations of a semisimple Lie group on a Banach space I, Trans. AMS 75 (1953).pdf`.
 SHA256: `c18c739a9344ee9d3860d6683ebf78997c7e0e3588d3156ece27491793cfa2d1`.
-Worker 16 verified the fingerprint and read printed pp.187–191 and 195
-(PDF3–7 and PDF11), with visual checks of the Cartan formulas and Theorem 1.
+The fingerprint was verified and printed pp.187–191 and 195
+(PDF3–7 and PDF11) were read, with visual checks of the Cartan formulas and Theorem 1.
 No source-specific errata file was found in the available project or Library notes.
 
 The source begins with semisimple Lie algebras; the general linear matrix

@@ -56,11 +56,12 @@ including zero, reducible Whittaker-type representations and supplied
 functionals including zero remain present. This result establishes fiber
 convergence at the displayed torus representatives and a profile bound. It
 does not establish quotient integrability, convergence at arbitrary spectral
-parameters, or the host task's Laurent identity.
+parameters, or the first-block Laurent identity
+`TwoBlockDominantFirstBlockLaurentIdentityStatement` (proved in
+`TwoBlockDominantFirstBlockLaurentIdentityProof`).
 
-The accompanying `TwoBlockDominantSliceSpectral` pair preserves its existing
-mathematical declarations and proofs. Its five canonical field local
-instances receive module-specific names so that combined imports with the
+In the imported `TwoBlockDominantSliceSpectral`, the five canonical field
+local instances have module-specific names so that combined imports with the
 support modules elaborate without generated-name collisions.
 
 ## All-field port

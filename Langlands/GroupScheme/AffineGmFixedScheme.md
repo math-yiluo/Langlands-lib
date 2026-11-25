@@ -26,5 +26,7 @@ criterion transfers this back to the actual fixed scheme.
 The construction generalizes the fixed-scheme method in
 `Torus/RelativeTransporterSmooth.lean` to arbitrary affine target schemes and the
 actual chosen multiplicative group. Its general closed quotient helpers are
-internal affine geometry. No external theorem is newly transcribed. This unit
-does not yet construct attracting schemes or prove the properness target.
+internal affine geometry. No external theorem is newly transcribed. This module
+does not construct attracting schemes (they are constructed in
+`AffineGmAttractingScheme`) or prove the properness statement
+`DynamicQuotientProperStatement`.

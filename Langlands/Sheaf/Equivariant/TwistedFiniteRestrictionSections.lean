@@ -44,10 +44,10 @@ theorem isDiscreteSection_restriction_of_finite_discreteSieve_cover {R : Type w}
   choose M _ hM using fun i => hloc i (K i) (hK i)
   let N := H ⊓ OpenSubgroup.iInfOfFinite M
   have hN (g : (H : Subgroup G)) (hg : (g : G) ∈ N) (i : Fin n) :
-      F.map (f i).op (F.map (a g).unop.op s) = F.map (f i).op s := by
+      F.map (f i).op (F.map (a g).unop.asHom.op s) = F.map (f i).op s := by
     obtain ⟨j, hj, he⟩ :=
       hM i g (OpenSubgroup.iInfOfFinite_le M i (OpenSubgroup.mem_inf.mp hg).2)
-    have hp : F.map (p i).op (F.map (a g).unop.op s) = F.map (p i).op s := by
+    have hp : F.map (p i).op (F.map (a g).unop.asHom.op s) = F.map (p i).op s := by
       rw [← map_op_comp_apply, ← he, map_op_comp_apply, hfix i j hj]
     rw [← hfac i, map_op_comp_apply, map_op_comp_apply, hp]
   obtain ⟨N', hN', he⟩ :=
@@ -59,9 +59,9 @@ theorem isDiscreteSection_restriction_of_finite_discreteSieve_cover {R : Type w}
   refine isSeparated_of_isSheaf hF hcov ?_
   rintro Z q ⟨Y, l, _, ⟨i⟩, hq⟩
   calc
-    _ = F.map (q ≫ r).op (F.map (a g).unop.op s) :=
+    _ = F.map (q ≫ r).op (F.map (a g).unop.asHom.op s) :=
       (map_op_comp_apply F q r _).symm
-    _ = F.map l.op (F.map (f i).op (F.map (a g).unop.op s)) := by
+    _ = F.map l.op (F.map (f i).op (F.map (a g).unop.asHom.op s)) := by
       rw [← hq, map_op_comp_apply]
     _ = F.map l.op (F.map (f i).op s) := congrArg (fun t => F.map l.op t) (hN g hg i)
     _ = F.map q.op (F.map r.op s) := by

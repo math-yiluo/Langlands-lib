@@ -1,6 +1,6 @@
 # Finiteness of Henniart's candidate sets from the conductor theorems
 
-Author: Worker 4803. Module `Langlands.Correspondence.HenniartConductorFinitenessProof`,
+Module `Langlands.Correspondence.HenniartConductorFinitenessProof`,
 namespace `Langlands.Henniart.Extension`. Universes: `uK` (p-adic fields) and `uV`
 (supercuspidal carriers), independent.
 

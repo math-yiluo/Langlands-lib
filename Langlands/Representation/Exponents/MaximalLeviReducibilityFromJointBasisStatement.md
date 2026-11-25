@@ -24,9 +24,9 @@ The joint basis also gives Jacquet–Cartan data for admissibility and
 compactness of supercuspidal coefficient support modulo the center.
 The compact coefficient norms give unitarizability in the
 unitary-central-character case. These results feed the published
-reducibility assembly. Task 4412 retains the unconditional fixed-level
-finiteness obligation. Task `004e00e1-5995-4dc1-884e-a5f512150d0c`
-retains the unconditional reducibility proof.
+reducibility assembly. The Library does not prove the fixed-level
+finiteness (`CuspidalSupport.RationalNormKernelFixedLevelFinitenessStatement`)
+or the reducibility statement unconditionally.
 [Constituent reduction](MaximalLeviUnitarizableConstituentLeafReduction.md) ·
 [Reducibility assembly](MaximalLeviSupercuspidalReducibilityFromInputsProof.md)
 

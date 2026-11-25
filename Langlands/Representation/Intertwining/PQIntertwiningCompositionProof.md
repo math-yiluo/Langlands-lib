@@ -1,7 +1,6 @@
 # Renard VII.3.5 (i): proof of the composition of the operators `J_{Q|P}`
 
-Authors: Worker 48 and Worker 102. Worker 102 proved inputs (2)–(4) and drafted the same term
-independently. Module `Langlands.Representation.Intertwining.PQIntertwiningCompositionProof`,
+Module `Langlands.Representation.Intertwining.PQIntertwiningCompositionProof`,
 namespace `Langlands.Aubert.General.RepresentedParabolic`. Universe parameters `u, v`.
 
 This module proves the published proposition

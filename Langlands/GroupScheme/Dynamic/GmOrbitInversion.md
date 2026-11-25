@@ -1,10 +1,8 @@
 # Orbits along the opposite cocharacter
 
-Author: Worker 919.
-
 Module `Langlands.GroupScheme.Dynamic.GmOrbitInversion`, namespace
-`Langlands.GroupScheme.GmOrbitInversion`. This is an internal supporting unit for Task 7586,
-with no literature source. Inversion of `𝔾ₘ` is written as
+`Langlands.GroupScheme.GmOrbitInversion`. This is an internal supporting module for the proof of
+`RankOneCentralCoverStatement` (`Reductive.RankOneCentralCoverProof`), with no literature source. Inversion of `𝔾ₘ` is written as
 `(CommGroupScheme.groupHom (Gm.powerHom S (-1))).hom.hom`. This is the convention of the
 Library's `Dynamic.oppositeCocharacter` and `Dynamic.orbit_oppositeCocharacter`.
 

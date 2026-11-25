@@ -1,8 +1,10 @@
 # Herbrand's subgroup formula in either characteristic
 
 This module contains three proposition definitions in
-`Langlands.Ramification.Local`. They are statements only. Their proofs belong
-to successor tasks. They use the following published constructions:
+`Langlands.Ramification.Local`. They are statements only. The Library proves
+the first, `FiniteHerbrandSubgroupFormula`, as `finiteHerbrandSubgroupFormula` in
+`Langlands.LocalFactor.Ramification.Herbrand.LocalFiniteSubgroupProof`, and does
+not prove the other two. They use the following published constructions:
 
 - the finite Herbrand functions `herbrandPhi`, `herbrandPsi` and the finite
   upper groups `upperRamificationGroup` from `Herbrand.GeneralFinite`;

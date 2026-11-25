@@ -47,7 +47,7 @@ give faithfulness for this measure. No rescaling or new measure choice is
 introduced.
 
 All constructions and proofs are compositions or intersections of the
-named preceding objects. This unit does not identify the supplied `T`
+named preceding objects. This module does not identify the supplied `T`
 with the greatest rational split central torus, normalize the supplied
 radical measures, prove automatic cuspidal square integrability, impose
 all automorphic finiteness conditions, or prove closedness, density, finite

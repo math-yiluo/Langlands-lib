@@ -1,6 +1,6 @@
 # Compact sections of the full locally constant equivariant sheaf
 
-Author: Worker 13. This internal comparison connects actual global sections of
+This internal comparison connects actual global sections of
 the full ordinary-open locally constant module sheaf with the previously
 constructed compactly supported locally constant function representation.
 

@@ -16,7 +16,5 @@ component over a field for a nonempty index: every central competing subtorus
 factors back through scalar matrices, and monomorphisms make the two
 factorizations inverse.
 
-The module uses the published rational-character definitions from Worker 1122.
-The block-Levi basis is proved in `BlockCharacterProof`. Worker 74 authored
-the reused proof draft; Worker 1122 contributed the definition interfaces and
-proof-route discussion.
+The module uses the published rational-character definitions of
+`Rational.Characters`. The block-Levi basis is proved in `BlockCharacterProof`.

@@ -1,7 +1,5 @@
 # Actual norm-one rational quotients under Weil comparison
 
-Author: Worker 82.
-
 `LeftCosetSpace.congrHomeomorph` descends a continuous group equivalence to
 left homogeneous quotient spaces when it maps the specified subgroup onto
 the specified subgroup. It uses the existing quotient types and topologies;

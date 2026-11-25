@@ -1,7 +1,6 @@
 # Exact functors on actual natural smooth filtrations
 
-Author: Worker 181. Internal construction for task
-`b508a47c-d20f-44e6-9e3f-ec5563c78964`, revision 1.
+Internal construction.
 
 ## Scope and parameters
 
@@ -35,7 +34,7 @@ the identifications of its grades.
 For an actual subfunctor `S` of `F ⋙ SmoothRep.toRep`,
 `RepSubfunctor.smoothFunctor S` has value
 `SmoothRep.subrepresentation (F.obj X) (S.obj X)`. Its maps are the original
-restricted equivariant linear maps. The accepted smoothness-transfer theorem
+restricted equivariant linear maps. The published smoothness-transfer theorem
 supplies smoothness through the injective inclusion. `smoothInclusion S` is a
 natural transformation into `F`. Forgetting the lift gives `S.toFunctor` by the
 identity natural isomorphism `smoothFunctorForgetIso`.
@@ -156,7 +155,7 @@ combined with functoriality. This is a generic internal prerequisite motivated
 by natural filtration arguments; it does not formalize a separate assertion
 from BZ77 and cites no original-source theorem as proof evidence.
 
-The mathematical dependencies used by the new declarations are exactly:
+The mathematical dependencies used by this module's declarations are exactly:
 
 1. Actual `RepSubfunctor`, `RepFunctorFiltration`, their natural maps and quotient
    functors, and the definitions of graded pieces, ordered filtration and gluing.
@@ -179,16 +178,15 @@ The mathematical dependencies used by the new declarations are exactly:
    of zero morphisms. No exactness of tensor products or of a particular
    derivative functor is used.
 
-No pre-existing Library pair is edited. Imported results are used by current
-Lean names; neither a draft, a Prop-valued target definition, a citation nor a
-pending proof task supplies a proved mathematical premise.
+Imported results are used by their Lean names; neither a Prop-valued target
+definition nor a citation supplies a proved mathematical premise.
 
 ## Exact project import closure
 
 At Library base `42ebad9dec7efaf48307e0b6085168e104486dfb`, recursively parsing the
-project imports of the new module gives the following 55 imported project
+project imports of this module gives the following 55 imported project
 modules, in dependency order. Every imported Lean file and its Markdown pair
-matches that base, and every pair exists. The new module itself is the 56th
+matches that base, and every pair exists. This module itself is the 56th
 project module. Direct project imports are `Category.Subquotients`,
 `Filtration.QuotientFirstIso` and `Derivative.MirabolicMinusExactnessStatement`;
 the other direct import is Mathlib's `CategoryTheory.Limits.Preserves.Shapes.Zero`.
@@ -259,61 +257,60 @@ used as proved inputs. In particular neither their derivative exactness
 conclusions nor their admissibility targets supply any step of this proof.
 The actual mathematical dependencies are the five items above.
 
-## Inherited independence audit, condition by condition
+## Independence conditions, one by one
 
-All exclusions of the task apply to this module and to every mathematical
-prerequisite, including proof successors and downstream consequences. Each row
+The exclusions below apply to this module and to every mathematical
+prerequisite, including downstream consequences. Each row
 below is absent both from the complete project import closure and from the
 mathematical proof dependencies described above. The closure has no segment,
 classification, exhaustion or Whittaker coinvariant-finiteness module. The only
 Whittaker imports define algebraic characters, models and their elementary
 matrix-coefficient framework; they do not import any finiteness theorem.
 
-| Excluded conclusion or family | Excluded tasks |
-| --- | --- |
-| `UnlinkedSegmentSocleProductIrreducible`, `LinkedSegmentSocleReverseProductStructure`, `LinkedSegmentSoclePairReducible` | `23e98d90-6055-4e35-91a9-b0f5d8a84961`, `a55c4267-7e3a-43f6-8bb1-ce319e1d0aa9`, `8fa9f68b-fa1b-431a-97f6-5b163964d1fc` |
-| `JuxtaposedSegmentSocleReverseProductStructure`, `LinkedSegmentSocleReverseProductQuotientHom` | `7ff2a1e9-89dc-439e-a861-a567b3db92bf` and proof successors |
-| `SegmentSocleProductIrreducibility` | `2ae5cbe5-0701-4509-88a0-db8cbeb35be4` |
-| `AdjacentUnlinkedSegmentSocleSwap` | `e3634665-571b-4852-9f4c-bab8a1053434`, `cded83f3-df9c-4018-bc61-dc54f5c1f9ab` |
-| `TwoSegmentSocleCommutation` | `426911b4-6620-413f-8065-04b25287f3bd`, `66e3b87c-647e-41e4-af18-df4d436765f0` |
-| `LinkedSegmentSocleGluing` | `c84cd52c-3ff3-4024-be50-8b84dd480888`, `6780b79c-9526-46aa-b8b4-00377d68b1ea` |
-| `OrderedMultisegmentSocleExistence` | `23189526-80b0-4828-a6d4-7ebec2cbeef5` |
-| `MultisegmentSocleExhaustion` | `f3a69bc8-7312-4f82-8a7d-ea3c8188cb63` |
-| Analytic segment classification | `aca8805b-054f-4d56-8045-12db7f623404` |
-| Special-head multisegment exhaustion | `3bfb61fa-1129-4fc9-83fd-7fcfec22106e` |
-| Ordered strong/special-head existence | `ebea9a8a-9b21-4208-aa31-98c2dea1f8a3` |
-| Quotient coverage | `20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584` |
-| Ordered conversion | `8252833d-c269-41a9-824c-5879e531b23b` |
-| Tempered block uniqueness | `52e97845-36bb-457d-b76f-70753334b88c` |
-| `GenericSegmentProductUniqueness` | `30341ae4-65f2-4a0e-9283-763db01a409e` |
-| `SquareIntegrableLanglandsClassification` | `1cb45da2-7007-4351-a694-594fb148b8d1` |
-| Square-integrable exhaustion | `cd8ab97c-0b78-4bce-97c4-d307a28159a4` |
-| Regular exhaustion | `bf433f0a-921a-428c-b0c0-6475438125ac` |
-| `SegmentSpecialEssentialSquareIntegrability`, forward special-segment square-integrability | `5eece9e8-7f6b-4ea9-abea-a1f9f1b8c807` |
-| `SegmentHeadProductIrreducibility` | `8364e73f-14ec-4d14-8f2b-1555a7c1ce95` |
-| Individual special-head/reverse-socle existence | `67279e36-f3c2-42e3-9302-11729784042e` |
-| Individual segment-socle/reverse-head existence | `4ca79bbd-589e-476b-9f65-661e799984b5` |
-| `TwoSupercuspidalNonadjacentProductIrreducible` | `3c9849a4-a6c0-43ac-9982-d15ed76bf1e9` |
-| `TwoSupercuspidalProductStructure`, full-product assembly | `ab61f565-1427-4746-ba77-46097563e962` |
-| `SegmentFullJacquetFormula` | `ed48ae06-964c-4c84-9e62-978f5a953ca7` and its exact proof successor |
-| `SegmentHeadJacquetFormula` | `55ad1e10-62d8-46b7-a081-909ef0056426` |
-| `SegmentSocleJacquetFormula` | `b95105c6-f8bb-4641-ae53-2f49d1e7f034` |
-| `SegmentSpecialJacquetExponentNormFormula` | `92aea10f-62ac-4e0b-bd4a-9a80909797c5` |
-| `Langlands.Whittaker.SupercuspidalCoinvariantFinitenessStatement`, all-character single-block finiteness | `62de5903-b616-4b5c-88eb-a066b77c5467` |
-| `Langlands.Whittaker.IrreducibleCoinvariantFinitenessStatement` | `5ab445dc-d2b4-4072-80d1-6370870a4a26` |
-| `LeviCuspidalCoinvariantFinitenessStatement` | `3ff5c8fb-397c-4345-bcb3-5d98a0993d18` |
-| Mirabolic finite-length route using the preceding finiteness | `5428fe2c-013c-482d-aa6e-7df43e7191aa` |
+| Excluded conclusion or family |
+| --- |
+| `UnlinkedSegmentSocleProductIrreducible`, `LinkedSegmentSocleReverseProductStructure`, `LinkedSegmentSoclePairReducible` |
+| `JuxtaposedSegmentSocleReverseProductStructure`, `LinkedSegmentSocleReverseProductQuotientHom` |
+| `SegmentSocleProductIrreducibility` |
+| `AdjacentUnlinkedSegmentSocleSwap` |
+| `TwoSegmentSocleCommutation` |
+| `LinkedSegmentSocleGluing` |
+| `OrderedMultisegmentSocleExistence` |
+| `MultisegmentSocleExhaustion` |
+| Analytic segment classification |
+| Special-head multisegment exhaustion |
+| Ordered strong/special-head existence |
+| Quotient coverage |
+| Ordered conversion |
+| Tempered block uniqueness |
+| `GenericSegmentProductUniqueness` |
+| `SquareIntegrableLanglandsClassification` |
+| Square-integrable exhaustion |
+| Regular exhaustion |
+| `SegmentSpecialEssentialSquareIntegrability`, forward special-segment square-integrability |
+| `SegmentHeadProductIrreducibility` |
+| Individual special-head/reverse-socle existence |
+| Individual segment-socle/reverse-head existence |
+| `TwoSupercuspidalNonadjacentProductIrreducible` |
+| `TwoSupercuspidalProductStructure`, full-product assembly |
+| `SegmentFullJacquetFormula` |
+| `SegmentHeadJacquetFormula` |
+| `SegmentSocleJacquetFormula` |
+| `SegmentSpecialJacquetExponentNormFormula` |
+| `Langlands.Whittaker.SupercuspidalCoinvariantFinitenessStatement`, all-character single-block finiteness |
+| `Langlands.Whittaker.IrreducibleCoinvariantFinitenessStatement` |
+| `LeviCuspidalCoinvariantFinitenessStatement` |
+| Mirabolic finite-length route using the preceding finiteness |
 
-Additional inherited conditions, also checked separately:
+Further conditions, also checked separately:
 
 - No segment derivative formula, segment-socle/head existence or Jacquet formula,
-  or segment classification is a mathematical input. In particular clauses
-  (b), (d), (e), (f) of the parent six-statement contribution are unused.
+  or segment classification is a mathematical input.
 - No Ze80 §3.5 or §9.6 derivative formula, Theorem 4.2 or §9.7 segment product
   irreducibility criterion, or §9.3 analytic/square-integrability result is
   imported or assumed. There is no route through Ze80 §2 to Proposition 1.11.
 - No BZ77 derivative result is used without proof. This generic construction
-  uses no such result at all: `hJ` is the task's supplied generic functor
+  uses no such result at all: `hJ` is the supplied generic functor
   hypothesis, not a replacement for an unconditional derivative Leibniz input.
 - There is no tensor-exactness, restriction-sequence, mixed-product, Leibniz,
   character-localization exactness, Jacquet, cuspidal-support, finite-length or
@@ -321,25 +318,16 @@ Additional inherited conditions, also checked separately:
   premise. The imported localization functor constructions do not assert
   exactness and are not applied by this construction.
 - `MinusExactnessStatement` is only an unused definition in the required
-  predicate's import module. This task neither proves nor assumes its conclusion.
-  Mirabolic minus exactness `b65bc667-6951-4bd5-82af-10fb7046df7f` and GL derivative
-  exactness `44f58b77-789a-478c-ba92-9e33b00c8a23` remain separately owned.
-- Worker 127's operator pause is preserved; this task did not contact or wake
-  Worker 127. Worker 288's all-character/degenerate-character finiteness adapters
-  are coordination pointers, not hypotheses or evidence.
+  predicate's import module. This module neither proves nor assumes its
+  conclusion, and uses neither mirabolic minus exactness nor GL derivative
+  exactness.
+- The all-character and degenerate-character finiteness adapters are neither
+  hypotheses of this module nor evidence for it.
 
-The inherited restrictions originate in
-`2e5183b1-01e9-44fb-b26c-f4521a25c7c7` revision 2 and the shared upstream
-arrangement `3238f371-e9a2-42ce-8b5d-9c4d3400ff55` revision 2. Naming these
-owners does not add either task's mathematical conclusion as an input.
+## Compilation
 
-## Validation boundary
-
-Development compilation uses environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, with Lean 4.34.0 and Mathlib commit
-`5ed2965256430c3649e86755f9576b54eca72435`. The complete implementation compiles
+With Lean 4.34.0 and Mathlib commit
+`5ed2965256430c3649e86755f9576b54eca72435`, the complete implementation compiles
 without errors or warnings. Inspection of the natural graded comparison reports
 exactly the five independent universe levels above and only `propext`,
-`Classical.choice` and `Quot.sound`. Compilation is development evidence;
-independent semantic review and Library publication are required before this
-construction is an accepted prerequisite.
+`Classical.choice` and `Quot.sound`.

@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.CommutativeAlgebra.FiniteTypeIntGRing.RegularQuotient
 
 /-! # A derivation test for quotients of regular local rings -/

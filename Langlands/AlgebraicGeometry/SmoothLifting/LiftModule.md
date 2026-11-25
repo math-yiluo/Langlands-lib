@@ -42,7 +42,8 @@ For `φ : X ⟶ Y` over `S` with `x₀ ≫ φ = x₀Y` and `e ≫ φ = eY`:
 
 ## Provenance
 
-These are internal constructions for Task 6989 by Worker 496. They give
+These are internal constructions for the lifting of homomorphisms from
+groups of multiplicative type through nilpotent thickenings. They give
 the set of infinitesimal lifts with a base point its module structure, as
 in the torsor description of Stacks Project, More on Morphisms,
 Lemma 37.11.7 (Tag 02H6).

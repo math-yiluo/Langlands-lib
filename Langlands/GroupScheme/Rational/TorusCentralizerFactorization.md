@@ -1,7 +1,5 @@
 # A commutative subgroup inside its represented whole-group centralizer
 
-Author: Worker 1348.
-
 This is an internal derived construction from the published all-test centralizer,
 represented-subgroup factorization and maximal-torus predicates. It assumes no
 rational Levi existence, reductive-center theorem or parabolic structure result.

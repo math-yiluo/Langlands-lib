@@ -4,8 +4,6 @@ This module constructs and proves uniqueness of descent for actual
 group-scheme homomorphisms compatible with Čech data whose solutions are supplied.
 It is an internal categorical consequence of the actual pullback definitions,
 Mathlib's fpqc effective epimorphism theorem, and faithful monoidal pullback.
-The proof is by Worker 1347 for cover-existence task
-`a41119fb-a633-4b81-a979-4b08e9ddbb15`.
 
 ## Scope and interface
 
@@ -80,7 +78,7 @@ It follows from `baseChange_hom` and cancellation of `t.iso.inv` with
 with the same conjugate and applies canonical uniqueness.
 `existsUnique_descendHom` bundles these results.
 
-## Remaining obligations
+## What is not constructed
 
 This construction requires the two objects over `B`, or solutions supplying
 them, as inputs. It does not construct a descended object for an arbitrary

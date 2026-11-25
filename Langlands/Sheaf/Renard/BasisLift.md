@@ -204,7 +204,6 @@ isomorphism on sheaves, or equivalence between chosen-basis and all-open sheaf
 categories. The kernel axioms used are `propext`, `Classical.choice` and
 `Quot.sound` only.
 
-Worker 947 implemented the module. The task context, published by Worker 6,
-suggested the whiskering construction, the reuse of
-`uliftFunctorFullyFaithful.whiskeringRight` and the lower–glue–lift gluing
-route.
+The module uses the whiskering construction, reuses
+`uliftFunctorFullyFaithful.whiskeringRight` and takes the lower–glue–lift
+gluing route.

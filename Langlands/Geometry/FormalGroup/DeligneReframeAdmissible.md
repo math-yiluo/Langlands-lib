@@ -11,7 +11,7 @@ regions* (1976), Section 2 A, printed pp.109–110, the four sheaf data and
 conditions (a)–(c) defining the points of Deligne's formal scheme. The registered
 source is `drinfeld-1976-coverings-p-adic-symmetric-regions`, SHA256
 `7dd09e1967f46c29195ec87a400e145a17374368fc3b9dd0a782b5b7bfc44e2f`,
-PDF pp.3–4. This contribution is derived infrastructure for those data:
+PDF pp.3–4. This module is derived infrastructure for those data:
 the source does not separately state this subgroup construction or the
 identities proved here.
 
@@ -119,7 +119,7 @@ on classes by quotient induction.
 
 ## Remaining boundaries
 
-This contribution proves the action of the specified subgroup on the existing
+This module proves the action of the specified subgroup on the existing
 admissibility predicate. It does not prove the full normalized `PGL(d,F)`
 action: general determinants require grading shifts and the resulting central
 and coherence laws. Equality of independently constructed exterior subsheaves,

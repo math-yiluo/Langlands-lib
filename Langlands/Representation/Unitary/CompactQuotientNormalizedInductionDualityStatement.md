@@ -1,6 +1,6 @@
 # Normalized induction from a cocompact closed subgroup and duality
 
-Author: Worker 1222. Module
+Module
 `Langlands.Representation.Unitary.CompactQuotientNormalizedInductionDualityStatement`,
 namespace `Langlands.Renard.CompactRepresentation`. Statement
 `CompactQuotientNormalizedInductionDualityStatement : Prop` (universe parameters `uG`, `v`);
@@ -93,9 +93,10 @@ smooth character `χ : Induction.SmoothCharacter ℂ H` a *half modulus* when ev
   defined without ambiguity". Item 1 makes this explicit, so that the quantification over half
   moduli is not vacuous.
 
-## Remaining obligations
+## Proof
 
-The proof is a separate obligation. The source's computation uses Proposition III.2.2 (ii),
+The proof is in `Langlands.Representation.Unitary.CompactQuotientNormalizedInductionDualityProof`.
+The source's computation uses Proposition III.2.2 (ii),
 or Theorem III.2.7 (`Ind_H^G(W̃) ≃ ind_H^G(W ⊗ δ_{H\G})~`), with `W = τ ⊗ δ_{H\G}^{-1/2}`,
 and the identity `ind_H^G(ρ)‾ = ind_H^G(ρ̄)`, which holds for the normalized induction because
 `δ_{H\G}^{1/2}` is real. A special case of the contragredient identity, for `P \ G` compact and

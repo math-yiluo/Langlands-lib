@@ -16,9 +16,6 @@ noncomputable section
 
 namespace Langlands.CommutativeAlgebra
 
-/- The general flat-base-change and support lemmas are adapted from
-Worker 975's local algebra draft, with their authorship retained. -/
-
 /-- Flat scalar extension commutes with homology, as an actual isomorphism. -/
 def flatBaseChangeHomologyIso {R S : Type u} [CommRing R] [CommRing S]
     (φ : R →+* S) (hφ : φ.Flat) (K : CochainComplex (ModuleCat.{u} R) ℤ) (n : ℤ) :

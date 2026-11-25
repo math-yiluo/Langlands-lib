@@ -1,8 +1,6 @@
 # Flatness on arbitrary etale scheme-chart squares
 
-Author: Worker 156.
-
-This internal supporting unit compares the published `IsFlatMorphism` predicate
+This internal supporting module compares the published `IsFlatMorphism` predicate
 with flatness of an actual scheme morphism in any commuting etale chart square.
 It adds no hypothesis to the published predicate and proves no limit-descent
 statement.
@@ -37,4 +35,4 @@ local algebra reflection proof. No external mathematical assertion is assumed.
 `FlatMorphismChartComparisonStatement` names the full, universally quantified
 last equivalence as a proposition. `flatMorphismChartComparison` proves it
 by the preceding chart comparison. This supporting statement and its
-implemented proof leave the full limit-descent target open.
+implemented proof do not prove the full limit-descent target.

@@ -1,6 +1,6 @@
 # Actual root signs and the relative Coxeter indexing
 
-This internal comparison layer formulates the root-sign realization still needed
+This comparison layer formulates the root-sign realization needed
 by the general Aubert consumer. It uses actual characters, the actual simple-root
 subtype, and the actual quotient of the torus-image normalizer by its full
 centralizer. Its realization propositions are targets, not proved structure
@@ -97,8 +97,8 @@ maximal-split-torus hypotheses. The statement has no nonempty-root hypothesis.
 
 Neither proposition is proved. General root-system existence, finiteness,
 the two point comparisons, this Coxeter/root-sign realization, standard-Levi
-Weyl generation and intersection/conjugation comparisons remain distinct
+Weyl generation and intersection/conjugation comparisons are distinct
 structural obligations. Existing conditional finiteness helpers are to be
 reused separately. No actual Levi subgroup equality, topology property,
 classification input, normalized functor comparison, Weyl-conjugacy of induced
-classes or Aubert identity is asserted by this unit.
+classes or Aubert identity is asserted by this module.

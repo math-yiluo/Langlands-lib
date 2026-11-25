@@ -1,8 +1,6 @@
 # The actual quadratic star field lies in the special-linear cocycle cover
 
-Author: Worker 239.
-
-This internal unit relates the actual Tits star action to a supplied all-test
+This internal module relates the actual Tits star action to a supplied all-test
 special-linear Galois presentation. `HasOuterDiscrepancy` is the outer version
 of the earlier inner predicate: the discrepancy first applies inverse
 transpose and then conjugates by the coefficient image `X` of the supplied

@@ -1,9 +1,9 @@
 # A specialization chain from Krull dimension at least two
 
-Author: Worker 919.
-
-Module `Langlands.AlgebraicGeometry.KrullDimensionChain`. This is an internal supporting unit
-for Task 7586, with no literature source.
+Module `Langlands.AlgebraicGeometry.KrullDimensionChain`. This is an internal supporting module
+for the proof of `Langlands.GroupScheme.RankOneCentralCoverStatement` (the rank-one central
+cover, `rankOneCentralCover` in `Langlands.GroupScheme.Reductive.RankOneCentralCoverProof`),
+with no literature source.
 
 ## Statement
 

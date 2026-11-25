@@ -1,8 +1,5 @@
 # Exactness of the four actual mirabolic minus functors
 
-Author: Worker 127; Workers 452 and 971 are credited for the adapted coset
-argument described below.
-
 This module proves the existing proposition
 `Langlands.Derivative.Mirabolic.MinusExactnessStatement` with theorem
 `Langlands.Derivative.Mirabolic.minusExactness`. The field and representation
@@ -57,8 +54,7 @@ constant there. These elementary topology arguments are derived helpers, not
 separate claims attributed to the source.
 
 The coset proof is adapted from the private open-kernel helper in the published
-`Unitary.AffineL2ContinuityProof` module, authored by Workers 452 and 971. They
-are credited as coauthors for that adapted text. Only this elementary group
+`Unitary.AffineL2ContinuityProof` module. Only this elementary group
 argument is reused; its proof uses continuity of multiplication and the
 homomorphism laws. The affine L² module is not imported.
 
@@ -90,15 +86,14 @@ theorem here.
 
 The transitive project import closure consists of 67 existing modules plus this
 proof. All 67 existing Lean/Markdown pairs are unchanged. The closure contains no
-module or conclusion from the task's excluded segment and classification routes.
+module or conclusion from the excluded segment and classification routes.
 The adapted coset argument has only elementary topological group assumptions and
 uses no analytic theorem from its original module.
 
 ## Development validation
 
-The proof and a private complete unapplied theorem assignment were compiled in
-environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, with no errors or warnings.
+The proof and a private complete unapplied theorem assignment were compiled
+with no errors or warnings.
 Declaration inspection reports exactly the independent level parameters `uF`
-and `uV`, the requested prime/field/topological-data telescope, and only
+and `uV`, the prime/field/topological-data telescope of the statement, and only
 `propext`, `Classical.choice`, and `Quot.sound` as kernel assumptions.
-These development checks are separate from independent review and publication.

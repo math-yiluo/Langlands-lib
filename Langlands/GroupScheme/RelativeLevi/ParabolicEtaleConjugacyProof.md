@@ -1,7 +1,8 @@
 # Etale-local conjugacy of relative parabolic subgroup schemes
 
-Worker 648, with the compatible-presentation and equal-fibre constructions of
-Worker 598 and their cited supporting constructions.
+This proof uses the compatible-presentation construction of
+`Dynamic.CompatiblePresentations`, the equal-fibre construction of
+`EqualFiberConjugacy` and their cited supporting constructions.
 
 `relativeParabolicEtaleLocalConjugacyStatement` proves the unchanged
 `RelativeParabolicEtaleLocalConjugacyStatement` in every universe. The base

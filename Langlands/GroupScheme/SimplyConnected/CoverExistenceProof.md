@@ -1,7 +1,5 @@
 # Proof: existence of simply connected central covers over arbitrary fields
 
-Author: Worker 4027.
-
 This module proves the published proposition
 `Langlands.GroupScheme.SimplyConnectedCoverExistenceStatement`
 ([`CoverExistenceStatement`](CoverExistenceStatement.md)) at its original,

@@ -1,6 +1,6 @@
 # Contragredients and the extended stable map
 
-Author: Worker 4803. Module `Langlands.Correspondence.HenniartExtensionDual`.
+Module `Langlands.Correspondence.HenniartExtensionDual`.
 
 Henniart (2000), §4.3 ("π(σ)^∨ = π(σ^∨) ... découle aussi de 3.8"), extended by
 unramified twists as in §4.4.

@@ -150,16 +150,16 @@ variable {F : Type u} [Field F] [ValuativeRel F] [TopologicalSpace F]
     {H : GroupScheme (Spec (CommRingCat.of (inertiaFixedField F)))}
     [IsAffineHom H.X.hom]
 
-local instance : HenselianLocalRing (fixedFieldIntegers F) :=
+private local instance : HenselianLocalRing (fixedFieldIntegers F) :=
   fixedFieldIntegersIsHenselian F
 
-local instance : Algebra 𝓀[F] (IsLocalRing.ResidueField (fixedFieldIntegers F)) :=
+private local instance : Algebra 𝓀[F] (IsLocalRing.ResidueField (fixedFieldIntegers F)) :=
   (residueToFixedField F).toAlgebra
 
-local instance : IsAlgClosed (IsLocalRing.ResidueField (fixedFieldIntegers F)) :=
+private local instance : IsAlgClosed (IsLocalRing.ResidueField (fixedFieldIntegers F)) :=
   (fixedFieldResidueIsAlgClosure F).isAlgClosed
 
-local instance : IsDiscreteValuationRing (fixedFieldIntegers F) :=
+private local instance : IsDiscreteValuationRing (fixedFieldIntegers F) :=
   fixedFieldIntegersIsDVR_of_valuesFromBase F (fixedFieldValuesFromBase F)
 
 /-- The actual apartment unit bound supplies the first bounded generic torus

@@ -1,6 +1,6 @@
 # Compact averaging for algebraically locally finite representations
 
-Author: Worker 94. This is an internal construction from `Langlands.Analysis.FiniteSpanIntegral`, Mathlib's invariant submodule, and translation invariance of scalar integration. It attributes no theorem to an external source.
+This is an internal construction from `Langlands.Analysis.FiniteSpanIntegral`, Mathlib's invariant submodule, and translation invariance of scalar integration. It attributes no theorem to an external source.
 
 For a complex representation `ρ` of a topological group `G`, `HasFiniteContinuousOrbits ρ` means that every orbit `g ↦ ρ g v` has finitely generated complex span and that composing it with every algebraic complex linear functional is continuous. The group and two representation spaces in the naturality theorem may have independent universes. No topology is chosen on a representation space.
 

@@ -1,7 +1,5 @@
 # Normal semigroup comparison through unipotent radical quotients
 
-Worker 1372.
-
 This is an internal reduction assembled from the Library's actual radical
 quotients, quotient actions, normal reductive comparison and full-kernel
 semigroup transport. It introduces no external structural assertion as a theorem.

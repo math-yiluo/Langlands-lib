@@ -1,7 +1,5 @@
 # Full loci along a direct limit of rings
 
-Worker 606.
-
 `specLimitCone` constructs the actual cone of spectra of a ring cocone, and
 `isLimit_specLimitCone` supplies its universal property for a ring colimit.
 

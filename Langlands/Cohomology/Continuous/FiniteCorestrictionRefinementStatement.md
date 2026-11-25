@@ -1,10 +1,11 @@
 # Refinement compatibility for finite-stage corestriction
 
-Statement by Worker 22. The proposition records a proof obligation for the
+The proposition records a proof obligation for the
 concrete finite-stage corestriction; it does not assert a proof. Its
 finite-corestriction, ordinary-corestriction, and quotient-transport
-definitions are published. This proposition is a separate statement
-submission; an exact proof task follows its acceptance and publication.
+definitions are published. Its proof is
+`Langlands.Continuous.finiteCorestrictionRefinement` in
+`Langlands.Cohomology.Continuous.FiniteCorestrictionRefinementProof`.
 
 `Langlands.Continuous.FiniteCorestrictionRefinement : Prop` quantifies
 over an arbitrary common universe `u`, a commutative ring `k`, a compact
@@ -45,5 +46,5 @@ result or an assumed limit construction.
 Literature ID `serre-1979-local-fields`; source SHA-256
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`;
 retained file `/home/taskhub/central-library/Serre--Local Fields--1979.pdf`.
-Environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, Mathlib
+Environment: Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.

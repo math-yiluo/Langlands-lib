@@ -1,6 +1,6 @@
 # Affine finite presentation from actual sheaf presentations
 
-This internal derived unit connects Mathlib's actual finite presentations of
+This internal derived module connects Mathlib's actual finite presentations of
 module sheaves to finite presentation of their modules of affine sections.
 It imposes no noetherian condition on the scheme or its affine section rings.
 
@@ -29,6 +29,6 @@ choices for different points or sheaves.
 
 The provenance is a direct internal consequence of Mathlib's presentation
 definitions and the published affine exactness and presentation-transport
-APIs. This unit introduces no additional assertion from the literature.
-It does not yet compare finite presentation at stalks or spread a stalk
+APIs. This module introduces no additional assertion from the literature.
+It does not compare finite presentation at stalks or spread a stalk
 trivialization to an open neighbourhood.

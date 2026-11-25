@@ -1,7 +1,5 @@
 # Finite flat torsion of relative multiplicative-type groups
 
-Worker 508.
-
 This internal construction identifies the actual relative diagonalizable
 `n`-torsion with the relative diagonalizable model for the unsaturated quotient
 `M/nM`. It then proves that every positive torsion level of a commutative group

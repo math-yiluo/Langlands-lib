@@ -32,6 +32,7 @@ gives uniform density.
 `CompactRepresentativeWeightsStatement` records this density result with both
 the group and finite index type universes free. `compactRepresentativeWeights`
 proves that proposition. This internal result supplies scalar weights for the
-compact approximation route of Task 7293. The argument combines the Library's
+compact approximation route towards the multiplicity-one statement
+`Langlands.Automorphic.CuspidalOperatorMultiplicityOneStatement`. The argument combines the Library's
 finite-vector construction with Mathlib's Stone-Weierstrass theorem on the
 explicit hypothesis of a faithful representation with continuous vector orbits.

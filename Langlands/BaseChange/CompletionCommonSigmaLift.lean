@@ -23,13 +23,13 @@ section LocalField
 variable {K : Type*} [Field K] [ValuativeRel K] [TopologicalSpace K]
   [IsNonarchimedeanLocalField K]
 
-local instance (n : ℕ) : T2Space (GeneralLinear n K) :=
+private local instance (n : ℕ) : T2Space (GeneralLinear n K) :=
   LocalFieldTopology.generalLinear_t2Space K n
 
-local instance (n : ℕ) : LocallyCompactSpace (GeneralLinear n K) :=
+private local instance (n : ℕ) : LocallyCompactSpace (GeneralLinear n K) :=
   LocalFieldTopology.generalLinear_locallyCompactSpace K n
 
-local instance (n : ℕ) : TotallyDisconnectedSpace (GeneralLinear n K) :=
+private local instance (n : ℕ) : TotallyDisconnectedSpace (GeneralLinear n K) :=
   LocalFieldTopology.generalLinear_totallyDisconnectedSpace K n
 
 variable {F : Type uF} {E : Type uE} [Field F] [Field E] [NumberField F] [NumberField E]

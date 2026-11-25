@@ -1,7 +1,5 @@
 # Logical assembly of cuspidal-induction association
 
-Author: Worker 120.
-
 This module supplies the logical assembly used by `AssociationProof`. Its
 helper theorems make their analytic inputs explicit. The closing theorem in
 that module supplies every input from published proofs.
@@ -32,7 +30,8 @@ a common actual irreducible subquotient, using the source nontriviality.
 The reverse input then proves the reverse direction of both equivalences.
 Forward Hom and its subquotient bridge prove the forward common-subquotient
 direction. The forward factor direction is supplied by its explicit input.
-This constructs all three equivalences in the literal host proposition.
+This constructs all three equivalences in the literal proposition
+`CuspidalInductionAssociationTheorem F T n`.
 
 `artinianInput_of_length` extracts target Artinianness from the group-algebra
 finite-length conclusion of `CuspidalInductionLengthTheorem`, using
@@ -45,5 +44,5 @@ inputs are needed only at positive ranks.
 This is an internal logical deduction from the existing definitions and
 algebraic bridge proofs. It introduces no sourced mathematical statement or
 new axiom. Its explicit theorem inputs are all discharged by the closing
-theorem in `AssociationProof`. The host statement and all imported pairs
+theorem in `AssociationProof`. The statement `CuspidalInductionAssociationTheorem` and all imported pairs
 are preserved unchanged.

@@ -1,7 +1,5 @@
 # Product-Levi tempered sufficiency from the GL criterion and block tensors
 
-Author: Worker 23.
-
 This module proves
 
 ```text

@@ -1,7 +1,5 @@
 # Lang's theorem for corepresented group functors over a finite field
 
-Author: Worker 1387.
-
 Lang's theorem says that for a connected algebraic group `G` over a finite field
 `k` the map `g ↦ g⁻¹ · Frob(g)` is surjective on points over an algebraic
 closure. This

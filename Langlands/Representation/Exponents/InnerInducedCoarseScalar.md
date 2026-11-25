@@ -1,9 +1,9 @@
 # Coarse scalar action on actual inner induction
 
-Author: Worker 526. The namespace is
+The namespace is
 `Langlands.InnerInducedCoarseScalar`. These internal adapters use the
 published induced-function construction and the nested scalar-character
-proof of Workers 526, 359 and 438.
+proof `Exponents.coarseFineTwistScalarCharacter`.
 
 `scalarAction` takes a fine representation of the actual refined Levi
 and a coarse tuple character acting along repeated coarse block scalars.

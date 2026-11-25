@@ -8,7 +8,7 @@ are set after the imports; the import of `P2M.Util` is dropped; the proof `by
 p2m_exact_reverting @_root_.S.solution` is replaced by the term `S.solution` applied to the
 explicit arguments; universe levels are generalized. The paired Markdown file lists the changes.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.P2M.Sol.S_Module_exists_ideal_forall_projective_and_rankAtStalk_eq_iff
 set_option maxHeartbeats 4000000
 set_option synthInstance.maxHeartbeats 400000

@@ -1,7 +1,5 @@
 # Noetherian finite-surjective descent of affineness for étale equivalence relations
 
-Authors: Worker 239, Worker 266.
-
 This module states Stacks Project
 [Lemma 69.17.3, Tag 07VP](https://stacks.math.columbia.edu/tag/07VP) in the
 language of presentations of algebraic spaces by étale equivalence relations.

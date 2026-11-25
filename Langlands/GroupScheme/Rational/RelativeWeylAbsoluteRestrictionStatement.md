@@ -1,7 +1,5 @@
 # The relative Weyl group as restrictions of absolute Weyl elements: statement
 
-Worker 3483.
-
 `Langlands.GroupScheme.RelativeWeylAbsoluteRestrictionStatement.{u}` is a
 proposition definition. This module does not prove it.
 

@@ -6,8 +6,9 @@ import Mathlib.LinearAlgebra.Dimension.RankNullity
 /-!
 # The invariant quotient in Weil–Deligne local factors
 
-This algebraic construction uses the parameter owner's actual representation,
-monodromy kernel, and normal-subgroup invariants. A specified element acts on
+This algebraic construction uses the actual representation, monodromy kernel,
+and normal-subgroup invariants provided by the import
+`Langlands.WeilDeligne.Kernels`. A specified element acts on
 the resulting subquotient. Its interpretation as geometric Frobenius requires
 the corresponding local Weil-group specialization.
 -/
@@ -71,7 +72,7 @@ instance quotientRepresentation_isTrivial (A : WeilDeligneRepresentation K G ν)
       ((inertiaRepresentation A I).representation.comp I.subtype) i x
 
 /-- Reordering the two subtype conditions identifies the subspace with the
-parameter owner's actual inertia-fixed monodromy kernel. -/
+actual inertia-fixed monodromy kernel `WeilDeligneRepresentation.inertiaKernelRepresentation`. -/
 def kernelInInvariantsEquiv (A : WeilDeligneRepresentation K G ν)
     (I : Subgroup G) [I.Normal] :
     kernelInInvariants A I ≃ₗ[K] A.inertiaKernelRepresentation I where

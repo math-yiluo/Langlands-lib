@@ -1,8 +1,9 @@
 # Source measures on every actual semistandard Levi
 
-Worker 268. Namespace
+Namespace
 `Langlands.HarishChandraSchwartz.RationalSemistandard.SourceMeasure`.
-This derived source-normalization adapter supports unit 3 of Task 7258.
+This derived source-normalization adapter supports the weighted synthesis of
+Waldspurger's invariant spectral families.
 It applies to every actual intrinsic semistandard index and each of its
 `LeviModel` witnesses. It uses the model's actual rational-point inclusion
 homeomorphism; neither the literal Levi nor the inducing representation is
@@ -100,6 +101,5 @@ This adapter does not prove the valuation-image finite-index premise,
 choose a source special compact, compare unrelated split components or
 Levi models, or transport inter-parabolic normalized comparisons. It does
 not construct density, source constants, wave packets, global synthesis,
-a global form or Schwartz membership. Those additional Task 7258
-constructions and exact targets remain separate, with their existing
-scalar, geometry and analytic owners retained.
+a global form or Schwartz membership. Those additional
+constructions and exact targets are separate.

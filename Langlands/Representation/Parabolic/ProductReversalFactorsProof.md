@@ -1,7 +1,5 @@
 # Composition-factor commutativity of two-factor products of finite length
 
-Author: Worker 757.
-
 The theorem `Langlands.Parabolic.twoBlockProductReversalFactors` proves the
 published proposition
 `Langlands.Parabolic.TwoBlockProductReversalFactors.{uF, uV}` from
@@ -41,12 +39,12 @@ The Lean proof therefore runs it for an arbitrary block shape `B` and an
 arbitrary permutation `σ` of its blocks (`productPermutationFactors_of_irreducible`),
 and specializes to two blocks at the end.
 
-This route differs from the one suggested in the task. That route uses tensor
+Another route uses tensor
 factor matching (`FiniteTensor.PadicExternalTensorFactorsTheorem`) and
 `Parabolic.normalizedInductionFactorMatchingTheorem`, followed by direct sums.
 The route here needs neither. The reduction also does not use finite length
-of products of irreducible factors (`Classification.IrreducibleProductFiniteLength`,
-task 0717fd42-d711-4f42-8269-f6ae4c8da1e9), because the graded-refinement
+of products of irreducible factors (`Classification.IrreducibleProductFiniteLength`),
+because the graded-refinement
 theorem needs only matched Jordan–Hölder factors of the graded pieces. The
 irreducible-case conclusion `HaveSameJordanHolderFactors` already contains
 actual composition series of `σ × τ` and `τ × σ`. Admissibility of the
@@ -157,16 +155,16 @@ results. Without the irreducible-case proof, their transitive closure is 104
 linked-gluing, classification-exhaustion, tempered, square-integrable,
 genericity or Gelfand–Kazhdan module.
 
-The irreducible case is owned by statement task
-1b2016bd-4fd3-4ec6-a1b4-ec0788046ed9 and its proof task
-afd5ae37-9c4e-44fe-897a-623bb2c92d91. This module imports that task's
-published proof by its Lean name and does not reprove it. That proof follows
+The irreducible case is the statement
+`Classification.TwoFactorProductConstituentCommutativity`, proved in
+`Classification/TwoFactorProductConstituentCommutativityProof`. This module
+imports that published proof by its Lean name and does not reprove it. That proof follows
 Zelevinsky's involution route, so the full closure contains the
 Gelfand–Kazhdan and contragredient modules (`Smooth/Contragredient/*`),
 `Classification/IrreducibleProductFiniteLengthProof`, cuspidal-support
 modules and `Parabolic/InverseTransposeProductProof`. This is the intended
-division of labour: the task assigns the analytic route to the irreducible
-case and asks this module not to duplicate it.
+division of labour: the analytic route belongs to the irreducible case, and
+this module does not duplicate it.
 
 The full transitive closure of this module, in the Library at commit
 `91ab820b34fa295dd50fbdeb1389423b0f6478ea`, was checked file by file. It has
@@ -176,7 +174,7 @@ The full transitive closure of this module, in the Library at commit
 `GenericSegmentProductUniqueness`, socle exhaustion, special heads, quotient
 coverage or tempered block uniqueness. The only exception is that this
 module's own target statement names `TwoBlockProductReversalFactors`. No
-paired Markdown file in it cites any excluded task ID as an input. The one
+paired Markdown file in it cites any excluded result as an input. The one
 mention is the Independence section of the irreducible-case statement, which
 lists the same exclusions for its own proof. The `Classification` modules in
 the closure are `Supercuspidal`, `SupercuspidalTwist`,
@@ -188,7 +186,7 @@ last two contain only definitions, and basic lemmas about those definitions
 `NormalizedProductFiniteLengthStatement`,
 `IrreducibleProductFiniteLengthProof` and the two irreducible-case modules.
 None of these modules contains an excluded result: the segment and
-multisegment conclusions, the adjacent commutation tasks, socle exhaustion,
+multisegment conclusions, the adjacent commutation results, socle exhaustion,
 segment analytic classification, special-head exhaustion and existence,
 quotient coverage, tempered block uniqueness, the square-integrable Langlands
 classification, square-integrable and regular exhaustion, and generic segment

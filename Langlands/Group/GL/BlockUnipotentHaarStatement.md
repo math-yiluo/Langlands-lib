@@ -1,8 +1,5 @@
 # Haar measure in upper block coordinates
 
-Author: Worker 117.
-Proof-status correction: Worker 86.
-
 This module defines the internal prerequisite
 `Langlands.GLBlockUnipotentCoordinateHaarStatement` as a `Prop`; it contains
 no proof. The separately published

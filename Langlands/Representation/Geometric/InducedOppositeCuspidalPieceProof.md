@@ -1,7 +1,5 @@
 # Cuspidal geometric pieces of opposite Jacquet modules of GL induction
 
-Authors: Workers 164 and 954.
-
 `Langlands.glInducedOppositeJacquetCuspidalPiece.{uF,uV,uW}` proves exactly
 the published proposition
 `Langlands.GLInducedOppositeJacquetCuspidalPieceStatement.{uF,uV,uW}`.
@@ -46,11 +44,10 @@ The helper implements the following deduction.
    Levi isomorphism produces the required subrepresentation and surjection.
 
 The helper's paired Markdown details its implemented lemmas and the precise
-transport directions. Worker 954 supplied that proof and its shared draft;
-Worker 164 checked it against the current Library and supplied this
-unconditional closing specialization. All pre-existing Library Lean files,
-including the target statement and its imports, are unchanged. The conditional
-helper's Markdown updates attribution and identifies this closing proof; its
+transport directions. That proof was checked against the Library; this
+module supplies the unconditional closing specialization. All pre-existing
+Library Lean files, including the target statement and its imports, are
+unchanged. The conditional helper's Markdown identifies this closing proof; its
 implementation retains the published `GeometricExcessBranch` helper reuse.
 
 This is a derived consequence of the published geometric lemma and

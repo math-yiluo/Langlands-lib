@@ -1,14 +1,13 @@
 # Actual spectra of represented-domain spectral spaces
 
-Authors: Worker 56, Worker 36 and Worker 730.
-
 This internal construction adapts the spectrum part of the published
 `GeneralizedAffinoid/NormContinuousAction` to the full category
 `DomainSpectralActionCategory`. Its continuity property tests actual
 sections on full represented domains of positive-polyradius affinoids.
 The input field is complete and ultrametric, and the topological group's
 universe is independent. The supporting local continuity proof reuses
-Worker 730's code, as explained in `DomainSpectralLocalContinuityProof.md`.
+the code of `StrictTestDomain/SpectralLocalContinuityProof`, as explained in
+`DomainSpectralLocalContinuityProof.md`.
 
 `spectrumMap_equivariant` proves that pullback along every equivariant
 bounded algebra map intertwines the inverse-pullback spectrum actions.

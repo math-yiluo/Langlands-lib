@@ -34,8 +34,8 @@ with no local-unit or nondegeneracy hypothesis. Surjectivity on the actual
 generated submodules strengthens the quotient-descent assertion to every
 surjective original intertwiner. The final family retains `IsIdempotented A`
 and the actual nondegenerate category. Agreement with separately bundled
-complex scalar actions and complex-linear categories remains a separate
-comparison obligation.
+complex scalar actions and complex-linear categories is a separate
+comparison, not made in this module.
 
 ## Pure tensors and generatedness
 
@@ -131,10 +131,8 @@ proofs above. It assumes neither nonzero idempotents nor nontrivial rings or
 modules. The named original structures and four independent carrier universes
 are retained throughout.
 
-Worker 1158 authored this proof and its explanation. The imported constructions
-and statement retain their existing authorship. The actual fixed-part induction
+The actual fixed-part induction
 isomorphism, complex scalar comparison, evaluation/counit and its image,
 simple-class correspondence, arbitrary submodule closure and equivalence
-criteria remain separate units. This module proves none of those additional
-claims. Development compilation and declaration inspection are separate from
-independent semantic review and publication.
+criteria remain separate results. This module proves none of those additional
+claims.

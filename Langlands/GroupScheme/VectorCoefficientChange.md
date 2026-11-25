@@ -1,6 +1,7 @@
 # Vector quotient coefficient change
 
-This internal adapter for Task 7200 defines actual multiplicative-group
+This internal adapter for the finite vector-bundle filtrations of supplied
+relative radicals defines actual multiplicative-group
 actions and standard vector quotient maps after coefficient change. The
 base schemes and commutative coefficient rings are arbitrary at universe
 `u`. No field, reducedness, nontrivial-ring or positive-rank assumption

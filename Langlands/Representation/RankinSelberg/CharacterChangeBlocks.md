@@ -15,5 +15,5 @@ block. Natural exponent subtraction is justified by the index bounds, and
 cancellation takes place among actual field units. Empty rectangular blocks and
 rank-one leading blocks are included.
 
-This unit supplies algebraic block geometry. It does not establish a Haar
+This module supplies algebraic block geometry. It does not establish a Haar
 Jacobian, convergence, rational continuation, or a local-factor comparison.

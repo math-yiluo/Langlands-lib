@@ -1,6 +1,6 @@
 # Finite character-valuation images of algebraically bounded sets
 
-This internal derived unit works over an arbitrary field with an integer-valued
+This module works over an arbitrary field with an integer-valued
 valuation compatible with its valuative relation. Algebraic boundedness is the
 existing bound on every actual regular function; the character valuation is the
 existing map on actual rational characters and rational points.

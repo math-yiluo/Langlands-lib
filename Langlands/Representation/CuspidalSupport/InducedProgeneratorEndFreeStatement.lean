@@ -83,6 +83,6 @@ def InducedProgeneratorEndFreeStatement : Prop :=
             ∃ (m : ℕ) (c : Fin m → (I.obj piD ⟶ I.obj piD)),
               ∀ x : I.obj piD ⟶ I.obj piD,
                 ∃! z : Fin m → Subring.center (End piD),
-                  x = ∑ i, I.map ((z i : End piD) : piD ⟶ piD) ≫ c i
+                  x = ∑ i, I.map ((z i : End piD).asHom : piD ⟶ piD) ≫ c i
 
 end Langlands.Aubert.General.RepresentedParabolic

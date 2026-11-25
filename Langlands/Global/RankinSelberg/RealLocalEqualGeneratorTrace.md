@@ -1,6 +1,6 @@
 # Recovery of the real equal-rank normalized equation for column generators
 
-This module is the real counterpart of the published complex module
+This module is the real counterpart of the complex module
 `ComplexLocalEqualGeneratorTrace`. Notation:
 
 * `t` with smaller rank `m = t + 1` and larger rank `n = t + 2`; `D`, `D'` real quotient data of
@@ -39,8 +39,8 @@ It also assumes two inputs.
 1. (Corank one.) For every `V'` in the uniform model of `es` with character `-a`, the corank-one
    integral of `(V', U)` and its dual with parameter `-a` satisfy `HasRealPairNormalizedGrowth`.
    The lists are `es, ds` with duals, the `ε`-parameter is `a`, the scale `√|a|`, and the sign
-   `det(es, -1)^(t+1) det(ds, -1)`. This is Worker 1050's adjacent character predicate at rank `t`
-   for these lists.
+   `det(es, -1)^(t+1) det(ds, -1)`. This is the adjacent character predicate
+   `RealLocalAdjacentCharacterGrowthAtRank` at rank `t` for these lists.
 2. (Matrix.) `RealMatrixCoefficientNormalizedGrowth` holds for every orthogonal-finite square
    test, with lists `[χ_0], es` and duals, parameter `-a`, scale `√|a|` and sign `1`.
 
@@ -52,7 +52,7 @@ dual `realEqualDualIntegral (-a) D' (L z) V φ` satisfy `HasRealPairNormalizedGr
 * `ε`-parameter `-a` and scale `√|a|`;
 * sign `det(χ_z :: ds, -1)^(t+1)`.
 
-This is the form of Worker 1050's equal character predicate at rank `t + 1`.
+This is the form of the equal character predicate `RealLocalEqualCharacterGrowthAtRank` at rank `t + 1`.
 
 ## Proof
 
@@ -62,7 +62,7 @@ This is the form of Worker 1050's equal character predicate at rank `t + 1`.
    the normalized unfolded integrals.
 2. On the primal chamber, intersected with the joint-integrability chamber of
    `exists_uniformModel_equalKernel_chamber`:
-   * the published unfolding `realLocalEqualUnfolding` identifies the unfolded integral with
+   * the Library's unfolding `realLocalEqualUnfolding` identifies the unfolded integral with
      `scale · realEqualIntegral D' (R z) V φ`, where `R z` is the recursive coefficient and
      `scale` is the Haar comparison constant of `realGodementColumnQuotient` at rank `t + 1`;
    * `godementLeadingFamily_eq_recursive` with linearity gives
@@ -70,7 +70,7 @@ This is the form of Worker 1050's equal character predicate at rank `t + 1`.
 
    Hence `A = Z` with
    `Z(z, s) = scale (s₀C)⁻¹ · den(es, ds)(s) · den([χ_0], es)(s + z) · realEqualIntegral D' (L z) V φ s`.
-3. On the dual chamber the published dual unfolding `realLocalEqualDualUnfolding` applies, with
+3. On the dual chamber the Library's dual unfolding `realLocalEqualDualUnfolding` applies, with
    the square Fourier identity `realLocalEqualSquareFourier` and `charData_inverse`. It gives
    `A(z, 1 - s) = Zd(z, s)`, where `Zd` is the dual integral of `L z` times the dual denominators,
    the factor `C⁻¹ scale (s₀C)⁻¹`, and the inverse of the nonvanishing reflection factor
@@ -108,5 +108,5 @@ keeps three explicit inputs: the continuous Whittaker evaluation of `B` (the Lib
 it only for irreducible standard modules, under the Casselman–Wallach extension premise), the
 corank-one normalized equation (the induction hypothesis), and the matrix normalized equation.
 It does not treat arbitrary uniform coefficients. That requires the span of the generators and
-the comparison of the given model with the canonical range (Worker 771). It does not prove
+the comparison of the given model with the canonical range. It does not prove
 `RealLocalUniformPositiveEqualContinuationStatement`.

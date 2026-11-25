@@ -1,6 +1,6 @@
 import Langlands.HarmonicAnalysis.PrincipalUnitPowerCofinalityStatement
 import Langlands.LocalField.Normalization.Proof
-import Langlands.ClassField.Global.LocalPowerIndex
+import Langlands.ClassFieldTheory.Global.LocalPowerIndex
 
 /-! # Principal-unit powers and uniform conductor bounds -/
 
@@ -80,7 +80,7 @@ theorem exists_principalUnits_subset_pow (b m : ℕ) (hm : 0 < m) :
     rw [WithZero.exp_le_exp]
     omega
   let t : T.Integers := ⟨_, htmem⟩
-  obtain ⟨z, hz⟩ := Langlands.ClassField.Global.exists_one_add_mul_mul_pow_eq
+  obtain ⟨z, hz⟩ := Langlands.ClassFieldTheory.Global.exists_one_add_mul_mul_pow_eq
     (maximalIdeal T.Integers) m hm.ne' c hc t
   have hz' : (1 + (m : F.Carrier) * T.uniformizer ^ (b + 1) * z) ^ m = u := by
     have h := congrArg Subtype.val hz

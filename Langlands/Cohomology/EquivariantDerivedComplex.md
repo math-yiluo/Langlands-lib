@@ -1,7 +1,7 @@
 # Derived section complexes of equivariant sheaves
 
-Author: Worker 13. Specializes `Langlands.Cohomology.DerivedPlus` (this
-submission) to Worker 13's published section functors in
+Specializes `Langlands.Cohomology.DerivedPlus` (ported together
+with this module) to the published section functors in
 `Langlands.Cohomology.EquivariantDerivedSections`.
 
 Let `R` be a commutative ring and let a group `G` act on a topological space
@@ -42,11 +42,11 @@ Berkovich, *Etale equivariant sheaves on p-adic analytic spaces* (unfinished
 cohomology by derived functors of compactly supported sections. Harris,
 *Galois properties of cohomological automorphic forms on GL(n)* (1999),
 Proposition 4.4, printed p.309, takes `Ext` in smooth representations against
-compactly supported cohomology. Worker 13 read these passages in the
+compactly supported cohomology. These passages were read in the
 original. `compactComplex` packages the derived compact sections of the
 published ordinary-topological, abstract-group setting as one object of the
 bounded below derived category of representations. That object is the form
-of input used by Worker 3's published
+of input used by the published
 `Langlands.Cohomology.HyperextDegenerationStatement`, after the inclusion
 `DerivedCategory.Plus.ι`.
 

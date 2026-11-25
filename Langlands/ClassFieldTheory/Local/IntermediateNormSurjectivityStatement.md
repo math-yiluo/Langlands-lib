@@ -1,6 +1,6 @@
 # Inheritance of all intermediate-field norm surjectivity
 
-Worker 107 authored this statement. The declaration
+The declaration
 `Langlands.ClassFieldTheory.Local.IntermediateNormSurjectivityInheritance.{u}`
 is a `Prop`-valued definition. It states an internal consequence of finite-extension
 norm algebra; this module does not prove it.
@@ -55,7 +55,7 @@ presentation, not the norm `N_{L/F}`.
 ## Derived provenance and proof boundary
 
 This is an internal algebraic prerequisite for the finite p-group norm/H2
-argument, isolated at Worker 28's request. It is not a quotation or a new
+argument (`FinitePGroupNormH2Proof`). It is not a quotation or a new
 literature theorem. Its provenance is the published determinant-norm
 construction, Mathlib's `Algebra.norm_norm`, and the canonical intermediate-field
 operations in `Mathlib.FieldTheory.IntermediateField`.
@@ -70,5 +70,7 @@ and transitivity in the resulting tower. For clause 4, apply the premise to
 is supported by Mathlib's `Algebra.norm_eq_of_ringEquiv`.
 
 These are the provenance and intended derivation, not implemented proofs in
-this pair. The proof of this exact proposition and its cohomological
-applications remain separate tasks. No imported Library pair is modified.
+this pair. The proof of this exact proposition is
+`intermediateNormSurjectivityInheritance` (module
+`IntermediateNormSurjectivityProof`); its cohomological applications are in
+separate modules. No imported Library pair is modified.

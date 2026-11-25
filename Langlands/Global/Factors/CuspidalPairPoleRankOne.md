@@ -34,7 +34,7 @@ of J. W. Cogdell, *Analytic theory of L-functions for GL_n* (2004), §2.3,
 printed pp. 208–211, §4.1, pp. 219–221, and Theorem 4.2, p. 222. The
 rank-one test is obtained from the implemented scalar Tate tests at the
 finite and infinite places. The fixed-rank continuation helpers specialize
-Worker 679's ordinary pure tensor and conjugate residue constructions. The
+the ordinary pure tensor and conjugate residue constructions. The
 pole locations and the split-centre hypothesis are those in Getz and Hahn,
 *An Introduction to Automorphic Representations* (2024), Theorem 11.7.1,
 printed p. 309.

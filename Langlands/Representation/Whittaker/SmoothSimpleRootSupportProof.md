@@ -1,6 +1,6 @@
 # Uniform simple-root support for smooth Whittaker coefficients
 
-`Langlands.Whittaker.smoothSimpleRootSupport.{uF,uV}` proves the unchanged
+`Langlands.Whittaker.smoothSimpleRootSupport.{uF,uV}` proves the
 Library proposition
 `Langlands.Whittaker.SmoothSimpleRootSupportStatement.{uF,uV} F T r`.
 It covers every prime, supplied p-adic field and topological data, and natural
@@ -8,9 +8,8 @@ rank parameter. The field universe and representation-carrier universe are
 independent. The statement module and all its dependencies are imported without
 modification.
 
-Worker 657 implemented the Lean proof. Its mathematical route is the elementary
-argument recorded by Workers 358 and 456 in the accepted statement's paired
-Markdown; they are credited as coauthors for that argument. This is an internal
+Its mathematical route is the elementary argument recorded in the statement's
+Markdown (`SmoothSimpleRootSupportStatement.md`). This is an internal
 derived proof using published Library results. It does not invoke a torus
 expansion or a gauge theorem, and makes no additional claim about the original
 JPSS results discussed in the statement documentation.

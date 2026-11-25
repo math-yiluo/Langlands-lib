@@ -1,6 +1,6 @@
 # Line chart restriction scalars
 
-This derived unit works over an arbitrary scheme `S : Scheme.{u}`, a module
+This derived module works over an arbitrary scheme `S : Scheme.{u}`, a module
 sheaf `N`, and opens `U ≤ V`. Its inputs are actual trivializations of the
 restrictions of `N` to `U` and `V`. No global trivialization is required.
 
@@ -39,5 +39,7 @@ of `TensorContractionTransport` and `LineBundleSectionClearingProof`, the actual
 section pullback comparisons of `EvaluationRestriction` and
 `SectionPullbackBridge`, and the structure-endomorphism extensionality of
 `StructureUnitScalars`. No additional geometric assertion or literature premise
-is introduced. Pulling this equation to the projective charts, tensor scalar
-cancellation, global gluing and ordinary representability remain separate work.
+is introduced. Pulling this equation to the projective charts is done in
+`TensorLineProjectiveRestriction`, tensor scalar cancellation in
+`TensorLineCancellation` and global gluing in `TensorLineTwistGluing`; ordinary
+representability remains unproved.

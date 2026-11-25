@@ -1,7 +1,5 @@
 # Generating series for symmetric polynomials
 
-Author: Worker 1767.
-
 This internal helper works with the published `MvPolynomial.hsymm`, which sums
 monomials indexed by multisets of fixed cardinality. The coefficient of degree
 `k` in the product of geometric series, one for each variable, is `hsymm k`.

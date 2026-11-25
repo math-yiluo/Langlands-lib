@@ -1,7 +1,5 @@
 # Degree-one cohomology classes as Čech cocycles
 
-Author: Worker 727.
-
 This module represents classes in the first cohomology of a Čech-acyclic `𝒪_P`-module (for
 instance a quasi-coherent one) by Čech `1`-cocycles on a cover of `P` by affine opens. It is a
 helper for the proof of `Langlands.AlgebraicGeometry.Picard.FieldTwoAxisH1InjectivityStatement`.

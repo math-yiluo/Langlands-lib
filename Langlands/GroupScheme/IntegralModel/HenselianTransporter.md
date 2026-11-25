@@ -1,7 +1,5 @@
 # Exact integral transporters and their generic conjugacy equation
 
-Author: Worker 362.
-
 This internal construction connects the published exact Henselian transporter
 lifting theorem to the actual integral-point map of a supplied integral model.
 All rings, fields and schemes lie in an arbitrary common universe `u`.

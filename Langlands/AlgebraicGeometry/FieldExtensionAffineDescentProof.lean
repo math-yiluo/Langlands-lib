@@ -1,11 +1,9 @@
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_isPushout_appTop_pullback_fst_appTop_pullback_snd_of_flat
 import Langlands.AlgebraicGeometry.FieldExtensionAffineDescentStatement
 
 /-!
 # Affineness descends along arbitrary field extensions
-
-Authors: Worker 1366 and Worker 1072.
 
 The proof derives the qcqs hypotheses needed for flat base change of global sections,
 then descends the canonical affinization isomorphism.

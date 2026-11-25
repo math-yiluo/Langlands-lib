@@ -38,8 +38,8 @@ def ofFixedFiberPreimage (G : TopologicalGroup.{v}) {X Y : ContAction TopCat.{u}
     { hom := f.val.spaceMap
       comm := fun g => by
         have he := f.val.equivariant g
-        change X.obj.ρ g ≫ f.val.spaceMap =
-          f.val.spaceMap ≫ Y.obj.ρ (f.val.groupHom g) at he
+        change (X.obj.ρ g).asHom ≫ f.val.spaceMap =
+          f.val.spaceMap ≫ (Y.obj.ρ (f.val.groupHom g)).asHom at he
         rw [hf] at he
         exact he }
 

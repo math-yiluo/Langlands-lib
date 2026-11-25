@@ -94,7 +94,7 @@ cancellation theorem instead of the source's local hyperplane argument.
 It also preserves the Library extension's clearing identity on the whole
 fixed domain interior, rather than just a common nonvanishing locus.
 
-This unit does not construct the primary continuation, prove joint
+This module does not construct the primary continuation, prove joint
 convergence or nonemptiness of the weighted domain interior, obtain the pole
 presentation from the actual intertwiners and density ratio, or prove the
 unitary norm estimate. In particular, it does not prove

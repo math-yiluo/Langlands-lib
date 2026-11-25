@@ -1,6 +1,7 @@
 # Categorical currying for the Mackey comparisons
 
-This internal supporting unit packages the published smooth tensor–Hom currying
+This internal module, used by `MackeyYoneda` and `MackeyProof`, packages the
+published smooth tensor–Hom currying
 map of Renard III.1.15 as an equivalence of morphisms for the actual tensor and
 smooth Hom bifunctors in `MackeyModels`. It proves naturality in the source,
 the tensor factor, and the target, and the corresponding inverse formulas.

@@ -1,7 +1,5 @@
 # Algebra and spectrum interfaces for Henselian finite étale refinement
 
-Author: Worker 607.
-
 This module introduces the derived algebraic proposition
 `Langlands.CommutativeAlgebra.LocalFiniteEtaleRefinementRingStatement.{u}`
 and proves its equivalence with the unchanged published
@@ -17,7 +15,9 @@ prime `q`, prescribe the residue extension, or require the resulting map on
 spectra to be an open immersion. No finite residue field or Noetherian
 hypothesis is imposed. The local ring structure entails nontriviality.
 
-The proposition is internal infrastructure for Task 6871. Its provenance is
+The proposition is internal infrastructure for the proof of
+`HenselianFiniteEtaleRefinementStatement` in
+`Langlands.CommutativeAlgebra.HenselianFiniteEtaleRefinementProof`. Its provenance is
 the translation of the published affine scheme statement by the full
 faithfulness of `Spec` and Mathlib's affine criterion for étaleness. It makes
 no additional original-source assertion; the mathematical provenance of the

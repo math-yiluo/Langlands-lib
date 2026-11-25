@@ -1,7 +1,5 @@
 # Constructed equal-rank p-adic epsilon factors
 
-Author: Worker 31.
-
 `padicEqualRankEpsilonData`, `padicEqualRankEpsilonFactor` and
 `padicEqualRankEpsilonValue` construct, respectively, an element of
 `ℂˣ × ℤ`, a unit of `RatFunc ℂ`, and a complex unit at every complex

@@ -1,6 +1,7 @@
 # Generic ampleness from the closed ample-fibre locus
 
-Worker 833's conditional reduction assumes both
+The conditional reduction `noetherianAffineAbelianGenericAmple_of_closedLocus`
+assumes both
 `AbelianFibreAmpleLocusClosedStatement` and
 `ProperAffineFibrewiseAmpleStatement`. It targets
 `NoetherianAffineAbelianGenericAmpleStatement` and supplies neither assumed
@@ -24,5 +25,8 @@ bundle over the noetherian affine base.
 This is an internal reduction using the Library's actual scheme and
 sheaf pullbacks, not a construction of a dual scheme or a proof of
 closedness. The target statements are published in the Library. The
-conditional theorem does not give an unconditional exact proof until
-both assumed geometric inputs have been proved.
+conditional theorem gives no unconditional proof by itself. Both assumed
+geometric inputs are proved in the Library (`abelianFibreAmpleLocusClosed`
+and `properAffineFibrewiseAmple`), and `noetherianAffineAbelianGenericAmple`
+(module `NoetherianAffineAbelianGenericAmpleProof`) applies the conditional
+theorem to them.

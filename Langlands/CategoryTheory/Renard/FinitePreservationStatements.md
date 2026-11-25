@@ -1,9 +1,6 @@
 # Renard A.VIII.1: sequence exactness and finite preservation
 
-Authors: Worker 6 (mathematical specification and shared statement draft),
-Worker 595 (direct source and interface checks, compilation and submission).
-
-This statement unit compares Renard's sequence definitions with actual
+This statement module compares Renard's sequence definitions with actual
 preservation of finite limits and colimits. The governing original is David
 Renard, *Représentations des groupes réductifs p-adiques*, French edition
 dated 9 July 2026, A.VIII.1, printed pages 265–266 / PDF pages 271–272.
@@ -37,7 +34,7 @@ in that source paragraph. The two-sided equivalence follows by combining
 the one-sided comparisons with Renard's definition of exactness as their
 conjunction. The aggregate is internal logical packaging of all three
 comparisons. These provenance distinctions concern the statements; this
-unit contains no proof of any comparison.
+module contains no proof of any comparison.
 
 The intended reuse route for a subsequent proof is the equivalence between
 entries 2 and 4 of each of
@@ -72,8 +69,7 @@ exactness or preservation comparison. No smallness, concreteness,
 module-category, representation, Grothendieck or additional completeness
 assumption is imposed.
 
-`Langlands.CategoryTheory.RenardExactFunctor`, authored by Worker 595
-with Worker 6's mathematical specification, supplies the already published
+`Langlands.CategoryTheory.RenardExactFunctor` supplies the already published
 source predicates. With the full common context above, they are
 
 ```lean
@@ -153,8 +149,9 @@ no left/right name interchange is implicit.
 
 ## Remaining obligations
 
-The four comparisons remain proposition targets until separately proved.
-This statement unit establishes no preservation theorem or global instance.
+The four comparisons are proved in
+`Langlands.CategoryTheory.Renard.FinitePreservation`.
+This statement module establishes no preservation theorem or global instance.
 Preservation of arbitrary exact complexes or homology, reflection of zero
 morphisms and faithfulness criteria, Hom left exactness and object-property
 dictionaries, smallness, presentations and the module-category equivalence

@@ -1,7 +1,5 @@
 # Field fibres of a supplied relative parabolic quotient
 
-Author: Worker 1468.
-
 This is an internal adapter between the published actual homogeneous quotient,
 reductive base change and field parabolic properness interfaces. It assumes a
 supplied `HomogeneousQuotient i`; it does not construct a relative quotient or

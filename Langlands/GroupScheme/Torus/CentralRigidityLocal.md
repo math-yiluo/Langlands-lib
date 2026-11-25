@@ -1,7 +1,5 @@
 # Central rigidity over a locally noetherian base
 
-Worker 738.
-
 This module proves case a) of SGA 3, Exposé IX, Théorème 5.1 (`S` locally noetherian).
 The source is the registered Gille–Polo 2009 recomposed edition
 (`sga3-expose-ix-gille-polo-2009`), p.48 (PDF page 18). The proof there reduces to

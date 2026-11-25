@@ -145,7 +145,10 @@ entry for printed pp. 424, 425, 428, 429, 430 or 577. The errata snapshot of
 `78e5f297fb2c80c6dacf413fc5abd7f82ba3dd5e5f83b5a5205dfd93bf160d49`) has no
 entry for printed pp. 424, 425, 428, 429 or 581.
 
-## For the later proof (not part of this unit)
+## For the proof (not part of this module)
+
+The Library proves the proposition as `splitReductiveDimension` in
+[`Rational.SplitReductiveDimensionProof`](SplitReductiveDimensionProof.md).
 
 A proof of the Lean statement can follow Milne's argument.
 

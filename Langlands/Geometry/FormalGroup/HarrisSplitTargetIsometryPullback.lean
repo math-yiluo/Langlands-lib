@@ -54,10 +54,10 @@ theorem targetPrimalComparison_order (X : Point T) (f : T ⟶ U)
     (a : (IntegerRing K D)ᵐᵒᵖ × IntegerRing K D) :
     let φ := Nilp.scalarMap 𝒪[K] f
     letI : Algebra T.obj U.obj := φ.toRingHom.toAlgebra
-    (X.baseChange f).orderAction hExact a ≫ (X.targetPrimalComparison f hExact).hom =
+    ((X.baseChange f).orderAction hExact a).asHom ≫ (X.targetPrimalComparison f hExact).hom =
       (X.targetPrimalComparison f hExact).hom ≫
-        splitOrderAction ((baseChangeEnd (S := U.obj) (X.target.pDivisibleGroup hp he)).comp
-          (X.target.pDivisibleAction hp he)) hExact a := by
+        (splitOrderAction ((baseChangeEnd (S := U.obj) (X.target.pDivisibleGroup hp he)).comp
+          (X.target.pDivisibleAction hp he)) hExact a).asHom := by
   let φ := Nilp.scalarMap 𝒪[K] f
   let algebra : Algebra T.obj U.obj := φ.toRingHom.toAlgebra
   let G := (X.target.mapSameUniverse φ).pDivisibleGroup hp he
@@ -67,7 +67,7 @@ theorem targetPrimalComparison_order (X : Point T) (f : T ⟶ U)
     (@baseChangeEnd T.obj U.obj _ _ algebra p _ (X.target.pDivisibleGroup hp he)).comp
       (X.target.pDivisibleAction hp he)
   let j : G ≅ H := X.target.pDivisibleBaseChangeIso hp he φ
-  have hOrder (d : IntegerRing K D) : uG d ≫ j.hom = j.hom ≫ uH d :=
+  have hOrder (d : IntegerRing K D) : (uG d).asHom ≫ j.hom = j.hom ≫ (uH d).asHom :=
     X.target.pDivisibleBaseChangeIso_order hp he φ d
   have h := splitPolarizedIso_order hExact (a := uG) (b := uH) j hOrder a
   dsimp only [orderAction, targetPrimalComparison, targetTower, baseChange,
@@ -78,11 +78,11 @@ theorem targetPrimalComparison_order (X : Point T) (f : T ⟶ U)
 def baseChangeTargetIso {X Y : Point T} (hExact : FiniteCartierDualExactnessStatement.{v})
     (i : PolarizedFramedTower.Iso (X.framedTower hExact) (Y.framedTower hExact)) (f : T ⟶ U) :
     (X.baseChange f).targetTower hExact ≅ (Y.baseChange f).targetTower hExact := by
-  let φ := Nilp.scalarMap 𝒪[K] f
+  letI φ := Nilp.scalarMap 𝒪[K] f
   letI : Algebra T.obj U.obj := φ.toRingHom.toAlgebra
-  let G := X.target.pDivisibleGroup hp he
-  let H := Y.target.pDivisibleGroup hp he
-  let e : G.splitWithDual hExact ≅ H.splitWithDual hExact := i.targetIso
+  letI G := X.target.pDivisibleGroup hp he
+  letI H := Y.target.pDivisibleGroup hp he
+  letI e : G.splitWithDual hExact ≅ H.splitWithDual hExact := i.targetIso
   let k := baseChangeSplitTowerIso (S := U.obj) hExact e
   let jX := X.targetPrimalComparison f hExact
   let jY := Y.targetPrimalComparison f hExact

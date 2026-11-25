@@ -1,6 +1,6 @@
 # Actual associated-opposite cocharacter transport
 
-This is a derived supporting unit for the rational rank-one self-association
+This module serves the rational rank-one self-association
 argument. It proves cocharacter and point identities; it makes no assertion
 about scalar characters, admissibility, Jacquet modules or self-association.
 

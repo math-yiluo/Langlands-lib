@@ -55,9 +55,9 @@ theorem copy_liftHom_unitHom
     (c : G ⧸ H) :
     copy H X c ≫ liftHom H (Y := inducedAction H X') (a ≫ unitHom H X') = a ≫ copy H X' c := by
   rw [copy_liftHom, Category.assoc, unitHom, Category.assoc]
-  change a ≫ X'.ρ (baseRep H)⁻¹ ≫ copy H X' (baseCoset H) ≫ actionMap H X' c.out = _
+  change a ≫ (X'.ρ (baseRep H)⁻¹).asHom ≫ copy H X' (baseCoset H) ≫ actionMap H X' c.out = _
   rw [copy_actionMap, correction_out_baseCoset, out_smul_baseCoset, ρ_comp_assoc,
-    mul_inv_cancel, Action.ρ_one, Category.id_comp]
+    mul_inv_cancel, Action.ρ_one, End.one_asHom, Category.id_comp]
 
 /-- On the copy indexed by `c`, the induced morphism is `f` followed by the inclusion of the
 copy `c`. -/

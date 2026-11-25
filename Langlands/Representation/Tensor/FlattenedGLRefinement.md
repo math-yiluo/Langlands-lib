@@ -1,7 +1,5 @@
 # Tensor regrouping over a flattened GL Levi
 
-Author: Worker 711.
-
 `Langlands.FiniteTensor.flattenedTensorRegroupEquiv` specializes the published
 rank-aware GL tensor comparison to a literal flattened block shape and moves
 both actions to the actual flattened product Levi. This is an internal

@@ -1,7 +1,5 @@
 # Closed representability of fixed subgroups
 
-Author: Worker 633.
-
 The theorem `Langlands.GroupScheme.fixedSubgroupRepresentability` proves the exact published proposition `Langlands.GroupScheme.FixedSubgroupRepresentabilityStatement.{u}`. It retains every commutative base ring in the arbitrary universe `u`, the affine and flat acting group with its stated fpqc coordinate-projectivity condition, a separated target group scheme, and an actual automorphic action. The conclusion is an actual closed subgroup scheme representing the fixed subgroup on every test scheme, including nonaffine and nonreduced tests.
 
 The implemented proof passes the published theorem `Langlands.AlgebraicGeometry.ClosedFactorizationLocusProof.closedFactorizationLocus` to `fixedSubgroupRepresentability_of_closedFactorizationLocus` in the accompanying `FixedRepresentabilityReduction` module. The geometric theorem constructs the closed locus where the entire product with the acting scheme factors through a given closed immersion. The reduction applies it to the closed action equalizer inside the product of the acting group and the target group. The target's separatedness makes this equalizer closed. The all-refinement equivalence `AutomorphicAction.mem_fixedSubgroup_iff_factors_actionEqualizer` identifies its factorization condition with membership in the fixed subgroup. Finally, `SubgroupFunctor.isClosedRepresentable_of_scheme` transfers the group law to that same representing scheme and gives its closed subgroup inclusion.

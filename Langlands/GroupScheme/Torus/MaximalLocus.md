@@ -1,7 +1,5 @@
 # The residue-fibre maximal-torus locus
 
-Worker 586.
-
 `Langlands.GroupScheme.maximalTorusLocus i` is the set of points of the base
 where the actual residue-field pullback of the supplied inclusion is a maximal
 torus. It uses the same residue-fibre convention as

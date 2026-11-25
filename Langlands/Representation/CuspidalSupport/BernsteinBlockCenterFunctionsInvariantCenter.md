@@ -1,13 +1,13 @@
 # `ℨ_D^{W(D)} ⊂ ℨ_Ω` for an actual Bernstein cuspidal datum (Renard VI.10.4, proof)
 
-Worker 98. Statement module for one step of the proof of Renard,
+Statement module for one step of the proof of Renard,
 *Représentations des groupes réductifs p-adiques*, French version dated
 9 July 2026 (`renard-2026-representations-groupes-reductifs-padiques`,
 SHA-256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`),
 VI.10.4, Theorem (printed pp.211–212 / PDF pp.217–218). The module contains one
 closed proposition, `BernsteinInvariantCenterInclusionStatement`, and no proof.
 It is an intermediate statement for the conditional reduction of
-`BernsteinBlockCenterFunctionsStatement` (Task 5545, first sentence of the
+`BernsteinBlockCenterFunctionsStatement` (first sentence of the
 Theorem).
 
 ## Renard's notation and the step in question

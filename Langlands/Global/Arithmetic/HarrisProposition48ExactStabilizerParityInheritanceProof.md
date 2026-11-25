@@ -1,7 +1,5 @@
 # Harris's exact stabilizer under the Proposition 4.8 parity correction
 
-Proof by Worker 237.
-
 The theorem `Langlands.Global.Harris.proposition48ExactStabilizerParityInheritance.{uF}`
 proves `Langlands.Global.Harris.Proposition48ExactStabilizerParityInheritanceStatement.{uF}`
 with the hypotheses of the published statement. It lifts the corrected problem's

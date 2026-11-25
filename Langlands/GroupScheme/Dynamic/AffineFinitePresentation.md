@@ -1,6 +1,6 @@
 # Finite presentation of affine dynamic inclusions
 
-Workers 3483 and 286. Helpers for the arbitrary-base representability proof.
+Helpers for the arbitrary-base representability proof.
 
 For an affine group over any commutative ring whose structure morphism is
 locally of finite type, the actual closed inclusions of its parabolic,

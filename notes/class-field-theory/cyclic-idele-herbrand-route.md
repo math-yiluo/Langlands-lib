@@ -1,11 +1,15 @@
 # Cyclic idele-class Herbrand quotient: source and dependency map
 
 This note records a proof route for
-`Langlands.ClassField.Global.CyclicIdeleClassHerbrandQuotient` and the
-infrastructure gaps found by Worker 343 on 2026-10-23. It is a source audit
-and implementation plan, not a proof or a report of completed formalization.
+`Langlands.ClassFieldTheory.Global.CyclicIdeleClassHerbrandQuotient` and the
+infrastructure that the route needs beyond the interfaces described below,
+as found on 2026-10-23.
+It is a source audit and implementation plan, not a proof or a report of
+completed formalization.
 The statement is in
-[`CyclicIdeleClassHerbrandQuotientStatement.lean`](../../Langlands/ClassField/Global/CyclicIdeleClassHerbrandQuotientStatement.lean).
+[`CyclicIdeleClassHerbrandQuotientStatement.lean`](../../Langlands/ClassFieldTheory/Global/CyclicIdeleClassHerbrandQuotientStatement.lean);
+the Library proves it, as `cyclicIdeleClassHerbrandQuotient` in
+[`CyclicIdeleClassHerbrandAssembly.lean`](../../Langlands/ClassFieldTheory/Global/CyclicIdeleClassHerbrandAssembly.lean).
 
 ## Exact target and conventions
 
@@ -92,7 +96,7 @@ the missing coordinate using the sum-zero identity and prove
 equivariance for the resulting full logarithmic hyperplane. The unit
 rank theorem alone is insufficient.
 
-## Ideles: the local arithmetic input is not yet discharged
+## Ideles: the local arithmetic input
 
 Artin–Tate V §§2–3 writes the finite part of `J∞` as products of
 semilocal unit groups. For cyclic local extensions the required
@@ -108,11 +112,11 @@ part. The infinite-place factors give `D∞`.
 The following Library interfaces are useful but do not by themselves
 supply that unconditional calculation:
 
-- [`LocalUnitCohomology.lean`](../../Langlands/ClassField/Global/LocalUnitCohomology.lean)
+- [`LocalUnitCohomology.lean`](../../Langlands/ClassFieldTheory/Global/LocalUnitCohomology.lean)
   defines the actual valuation-unit subgroup, its action, and
   `unitsValuationSequence_shortExact`; it also supplies
   `isZero_H1_trivial_integers` and `mono_map_localUnitsInclusion_two`.
-- [`LocalUnitVanishing.lean`](../../Langlands/ClassField/Global/LocalUnitVanishing.lean),
+- [`LocalUnitVanishing.lean`](../../Langlands/ClassFieldTheory/Global/LocalUnitVanishing.lean),
   theorem `isZero_H2_localUnits`, assumes an unramified place,
   finiteness of actual local `H²(E_wˣ)`, and the cardinal bound by the
   local degree. Its conclusion does not discharge those hypotheses.
@@ -124,9 +128,15 @@ supply that unconditional calculation:
 
 The local prerequisite therefore needs either an unconditional local
 invariant/norm-index result or a separate proof of the cyclic unit
-calculation. The present audit has not established that either is
-available. Coordinate with the local class-field workers before
-duplicating their arithmetic work.
+calculation. This audit did not establish that either was available.
+For the route above it suffices that the valuation units have Herbrand
+quotient one at every place and trivial cohomology at unramified places;
+the Library states these as `CyclicCompletionUnitHerbrand` and
+`UnramifiedCompletionUnitVanishing` in
+[`LocalUnitHerbrandStatement.lean`](../../Langlands/ClassFieldTheory/Global/LocalUnitHerbrandStatement.lean)
+and proves them in
+[`LocalUnitHerbrandProof.lean`](../../Langlands/ClassFieldTheory/Global/LocalUnitHerbrandProof.lean);
+the local class-field results are under `Langlands/ClassFieldTheory/Local/`.
 
 The published `IdeleArchimedean` and `IdeleSemilocal` modules supply
 coordinate, action, and semilocal infrastructure; their presence is not
@@ -135,41 +145,45 @@ existing helpers, including `IdeleCoefficientSequence`, use a common
 field universe. New arithmetic interfaces must handle the target's
 independent universes without changing the target's imported definitions.
 
-## Work decomposition recorded on 2026-10-23
+## Decomposition of the work
 
-The following tasks were published; none of their intended conclusions
-is being asserted as an accepted result here:
+The route divides into the following parts; this note asserts none of
+their conclusions:
 
-| Task | Scope |
-| --- | --- |
-| `0425e75a-8b9f-446a-b471-050b6b43cfb0` | Actual `J∞`, ordinary units, `C∞`, quotient, arithmetic actions and coefficient maps. |
-| `8e89288e-24db-41a4-84e0-0d019b344a51` | Cyclic Herbrand multiplicativity and finite-coefficient proposition statements, then exact proof follow-ups. |
-| `e92da4ea-e03e-4d7e-868d-9a7d459a4125` | Full invariant real-lattice comparison statement, then an exact proof follow-up. |
+| Scope |
+| --- |
+| Actual `J∞`, ordinary units, `C∞`, quotient, arithmetic actions and coefficient maps. |
+| Cyclic Herbrand multiplicativity and finite-coefficient proposition statements, with their proofs. |
+| Full invariant real-lattice comparison statement, with its proof. |
 
-After the coefficient definitions publish, the remaining arithmetic
-statements concern the unit formula, the integral-idele formula, and
-the exact sequence with finite quotient. Parent proof task
-`04294c5a-fea1-46f3-b7ea-e20d88ae0870` will assemble those results.
-The downstream idele-class `H¹` vanishing and fundamental-class tasks
-cannot serve as unproved inputs to this calculation.
+After the coefficient definitions, the remaining arithmetic statements
+concern the unit formula, the integral-idele formula, and the exact
+sequence with finite quotient; a final assembly combines them. In the
+Library these are `cyclicUnitHerbrandQuotient`
+(`CyclicUnitHerbrandQuotient.lean`), `integralIdeleHerbrand`
+(`IntegralIdeleHerbrand.lean`), `integralIdeleClassQuotientFinite`
+(`IntegralIdeleClassQuotientFinite.lean`) and the assembly
+`cyclicIdeleClassHerbrandQuotient` (`CyclicIdeleClassHerbrandAssembly.lean`),
+all in `Langlands/ClassFieldTheory/Global/`. The idele-class `H¹`
+vanishing and the fundamental class are downstream of this calculation and
+cannot serve as unproved inputs to it.
 
 ## Sources and reading extent
 
 Registered originals:
 
 - Emil Artin and John Tate, *Class Field Theory* (2009), literature ID
-  `artin-tate-2009-class-field-theory`, retained at
-  `/home/taskhub/central-library/Artin-Tate--Class Field Theory--2009.pdf`.
+  `artin-tate-2009-class-field-theory`, file
+  `Artin-Tate--Class Field Theory--2009.pdf`.
   Preliminaries §3, printed pp.5–7 (PDF14–16), gives the cyclic quotient
   calculus; V §1, printed p.11 (PDF20), states the target; V §§2–3,
   printed pp.12–13 (PDF21–22), gives the local-unit and finite-quotient
   reduction used here.
 - J. S. Milne, *Class Field Theory*, v4.03 (2020), literature ID
-  `milne-2020-class-field-theory`, retained at
-  `/home/taskhub/central-library/Milne--Class Field Theory (v4.03)--2020.pdf`.
+  `milne-2020-class-field-theory`, file
+  `Milne--Class Field Theory (v4.03)--2020.pdf`.
   VII §§2–4, printed pp.205–211 (PDF214–220), was read. In particular,
   Proposition 3.1 and Lemmas 3.2, 3.4, 3.5, printed pp.208–209
   (PDF217–218), supply the lattice route.
 
-No errata file for either source was found in the workspace or the
-public notes during this audit.
+The Library's `notes/errata/` has no note for either source.

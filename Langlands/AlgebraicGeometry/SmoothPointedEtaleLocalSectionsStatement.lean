@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 
 /-! # Pointed etale local sections of smooth morphisms -/
 

@@ -67,15 +67,15 @@ used by its Lean name, with no change to its definition.
 underlying function of the map, obtained by Mathlib's coercion from algebra
 homomorphisms to functions. The algebra structures enter only through the type
 of the map. The statement does not write that type, so the module opens no
-scope; in particular it does not need `FiniteAdeleExtension`. The private
+scope; in particular it does not need `FiniteAdeleExtension`. The
 development check confirmed that the statement elaborates without it.
 
 ## What this module does and does not contain
 
 This file states the bijectivity assertion only. It supplies no proof of it,
-and it defines no algebra equivalence `A_K ⊗[K] L ≃ₐ[A_K] A_L`. A proof is the
-subject of a separate exact-target proof task. That task will prove a theorem
-of type `FiniteAdeleTensorMapBijective.{u, v}`. Packaging the map as an algebra
+and it defines no algebra equivalence `A_K ⊗[K] L ≃ₐ[A_K] A_L`. The proof, a
+theorem of type `FiniteAdeleTensorMapBijective.{u, v}`, is
+`finiteAdeleTensorMapBijective_proof` in `FiniteAdeleTensorProof`. Packaging the map as an algebra
 equivalence (for example with `AlgEquiv.ofBijective`), and any topology,
 homeomorphism or norm statement, are outside this module.
 
@@ -174,9 +174,9 @@ Imperial proves the theorem from its `L`-linear equivalence
 `baseChangeLinearEquiv` (lines 205–211), a composite of four linear
 equivalences (lines 131–203). Its `baseChangeAlgEquiv` and
 `baseChangeAdeleAlgEquiv` (lines 255–270) then package the bijection as
-algebra equivalences. None of this proof or packaging is copied here, and this
-module claims no acceptance of it. Any later proof of the target is a separate
-Library proof, reviewed on its own.
+algebra equivalences. None of this proof or packaging is copied here. The
+Library's proof of the target, in `FiniteAdeleTensorProof`, is a separate
+module.
 
 ## Provenance and modification notice
 
@@ -192,7 +192,7 @@ The upstream root `LICENSE` is retained at
 [licenses/ImperialCollegeLondon-FLT/LICENSE](../../../licenses/ImperialCollegeLondon-FLT/LICENSE).
 The source snapshot contains no `NOTICE` file.
 
-Worker 300 made these modifications:
+These modifications were made in Langlands-lib:
 
 - the general Dedekind data are specialized to number fields, with
   `A = 𝓞 K` and `B = 𝓞 L`, in independent universes;
@@ -210,15 +210,13 @@ sections 2 and 6, explains the reuse boundary.
 
 ## Checks
 
-A private `lean_check` in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`
-compiled the module without errors or warnings. Inspection of
+A `lean_check` compiled the module without errors or warnings. Inspection of
 `FiniteAdeleTensorMapBijective` reported a `Prop`-valued definition with
 universe parameters `u` and `v`. It depends only on `propext`,
-`Classical.choice` and `Quot.sound`. A separate private check printed the
+`Classical.choice` and `Quot.sound`. A separate check printed the
 fully elaborated body. It contains exactly the quantifiers and five instances
 listed above and the unchanged map `finiteAdeleTensorMap K L`, whose type uses
 `Algebra.TensorProduct.leftAlgebra` on the source and
 `FiniteAdeleExtension.instAlgebra` on the target. The same check proved, by
 `Iff.rfl`, that the target is equivalent to the statement written with the full
-map type `A_K ⊗[K] L →ₐ[A_K] A_L`. These checks are not independent semantic
-acceptance.
+map type `A_K ⊗[K] L →ₐ[A_K] A_L`.

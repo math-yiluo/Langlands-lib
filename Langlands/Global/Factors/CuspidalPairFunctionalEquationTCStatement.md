@@ -1,10 +1,5 @@
 # Totally complex forms of the cuspidal-pair functional equation and its parts
 
-Author: Worker 0. Statement contribution to Task 0
-(`69dd20b3-6a77-44aa-b779-32391843c8dd`), revision 1, as decided in the
-operator's answer `81ed24709e7050068786116ca6613260` (Option A) to request
-`9b5f630f11af591aae45e2157df43d94`.
-
 **Scope.** The module
 `Langlands.Global.Factors.CuspidalPairFunctionalEquationTCStatement` defines three
 propositions in the namespace `Langlands.Global` and proves nothing. Each is a
@@ -18,7 +13,7 @@ universe parameters are the same, and the rest of the body is copied verbatim.
 | `CuspidalPairCompletedEquationTCStatement` | `u uQ` | `CuspidalPairCompletedEquationStatement` | `Langlands.Global.Factors.CuspidalPairFunctionalEquationReduction` |
 | `CuspidalPairGlobalFunctionalEquationTCStatement` | `u uQ` | `CuspidalPairGlobalFunctionalEquationStatement` | `Langlands.Global.Factors.CuspidalPairFunctionalEquationStatement` |
 
-The principal declaration of the unit is
+The principal declaration of the module is
 `Langlands.Global.CuspidalPairGlobalFunctionalEquationTCStatement`.
 
 ## 1. The statements
@@ -69,16 +64,17 @@ So the subtype `{v : InfinitePlace F // v.IsReal}` is empty, and:
   empty type, and the products over real places in `L∞`, `L∞∨` and `ε∞` are empty
   products, equal to `1`.
 
-The bodies keep these clauses verbatim, as the operator's answer requires, so that
+The bodies keep these clauses verbatim, so that
 each new proposition differs from its original only by the instance argument. The
 complex places remain. A proof of the first statement still needs the
-`GL_n(ℂ)` parameters, whose nonvanishing input is open in Task 7065.
+`GL_n(ℂ)` parameters; it is `Langlands.Global.cuspidalArchimedeanParameterExistenceTC`
+(module `Langlands.Global.Factors.CuspidalArchimedeanParameterExistenceTCProof`).
 
 ## 3. Relation to the originals
 
 Each original implies its totally complex form at the same universe levels: apply
-the original to the same field and forget the new instance. A private development
-check of Worker 0 compiled the three implications, each as
+the original to the same field and forget the new instance. A development
+check compiled the three implications, each as
 `fun h F _ _ _ _ => h F`. The converse is not claimed. The statements make no claim
 about number fields with a real place.
 
@@ -92,7 +88,7 @@ restricted.
 
 ## 4. Why the totally complex forms are stated
 
-The goal of Task 0 is local. In the Library's route to the local correspondence
+The Library's goal, the local Langlands correspondence, is local. In the Library's route to the local correspondence
 (route note `notes/henniart/llc-proof-route.md`), these statements are needed only
 over the number fields produced by the globalization of Henniart (2000) §3 and
 Harris (1998) §4: a CM base field and its finite extensions (Galois closures,
@@ -101,9 +97,7 @@ Brauer-induction fields, cyclic towers). A CM field is totally complex (Mathlib
 complex field is totally complex (`NumberField.isTotallyComplex_of_algebra`).
 Restricting the global inputs to totally complex fields therefore loses nothing on
 the route. It removes the real-place (`GL_n(ℝ)`) archimedean theory from the
-critical path. The unrestricted statements stay the targets of their tasks
-(Tasks 5720 and 5493) as infrastructure. The operator asked their owners to stage
-the totally complex forms as supporting proof candidates.
+critical path. The unrestricted statements stay in the Library as infrastructure.
 
 ## 5. Sources and provenance
 

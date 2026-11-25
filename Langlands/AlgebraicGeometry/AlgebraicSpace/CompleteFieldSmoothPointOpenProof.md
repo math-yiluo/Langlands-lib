@@ -1,7 +1,5 @@
 # Smooth maps of algebraic spaces are open on points over complete fields
 
-Author: Worker 3519.
-
 `completeFieldSmoothSpacePointOpen` proves `CompleteFieldSmoothSpacePointOpenStatement`
 (`CompleteFieldSmoothPointOpenStatement.lean`). Let `K` be a complete nontrivially normed field,
 archimedean or not, of any characteristic. Let `X` and `Y` be separated algebraic spaces locally of

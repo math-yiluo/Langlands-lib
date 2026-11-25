@@ -39,4 +39,4 @@ transports the result along `e`.
 
 ## Provenance
 
-This is internal to the 05FT proof, written by Worker 281.
+This is internal to the 05FT proof.

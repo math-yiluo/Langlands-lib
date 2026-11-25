@@ -1,6 +1,6 @@
 # Renard II.3.7–II.3.8: proof of the modular distribution formulas
 
-Worker 1466, Task 5393. The theorem
+The theorem
 `Langlands.HarmonicAnalysis.Distribution.RenardModular.statements` proves the
 published proposition `Langlands.HarmonicAnalysis.Distribution.RenardModular.Statements`
 at its full universe parameter `uG`. It supplies all seven conjuncts with the

@@ -1,6 +1,6 @@
 # Product L-denominators on the whole adjacent model image
 
-Worker 486. This internal assembly extends the actual separated finite-product
+This internal assembly extends the actual separated finite-product
 bound to the whole specified coefficient image and proves the exact Laurent
 polynomial divisibility direction. It retains arbitrary reducible full
 Whittaker-type inputs and independent field and three carrier universes.

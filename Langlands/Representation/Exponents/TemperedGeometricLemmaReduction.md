@@ -1,6 +1,6 @@
 # Conditional assembly of the tempered geometric lemma
 
-Authors: Worker 1725 and Worker 1221. This internal reduction connects the
+This internal reduction connects the
 supplied-filtration adapter `LeviUnitaryFiltration` with the selected-piece
 comparison `TemperedGeometricPiece`. It is derived infrastructure for Renard
 2026, VII.2.5 (printed p.230 / PDF p.236), and does not prove the unconditional
@@ -56,7 +56,6 @@ results; the separate piece module documents the implemented route.
 
 All five hypotheses above are explicit premises of this supporting
 implication. They have not been discharged here, and the conclusion is not
-an unconditional theorem of `TemperedGeometricLemmaStatement`. Neither the
-published target nor any of its imported files is changed. The independent
-proof and publication obligations for the structural inputs and the exact
-host proposition remain.
+an unconditional theorem of `TemperedGeometricLemmaStatement`. The structural
+inputs are discharged, and the exact proposition is proved, in
+[TemperedGeometricLemmaProof](TemperedGeometricLemmaProof.md).

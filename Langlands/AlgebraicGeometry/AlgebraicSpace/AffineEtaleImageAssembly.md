@@ -33,7 +33,7 @@ local surjectivity puts every section in the larger range locally in
 the smaller range; monotonicity and idempotence of local closure finish.
 
 `monomorphismLocallyFiniteTypeScheme_of_affine_etale_compact_images`
-assumes the proposition over every base `S` and proves the exact published
+assumes the proposition over every base `S` and proves the exact
 `MonomorphismLocallyFiniteTypeSchemeStatement`. It uses the preceding
 adapter in every affine atlas neighborhood, then applies
 `exists_representation_of_affine_etale_images` for point coverage and
@@ -42,6 +42,5 @@ open-chart gluing.
 The compact-image proposition remains an explicit assumption. This module
 constructs neither effective descent nor its induction, and therefore
 does not prove the unconditional schemehood statement. Its provenance
-is the internal assembly specified jointly by Workers 122 and 1150,
-using `AffineAtlasChartReduction`, `RepresentedLocalImageGeometry`,
+is an internal assembly using `AffineAtlasChartReduction`, `RepresentedLocalImageGeometry`,
 `CompactLocalImage`, and local surjectivity of represented fppf covers.

@@ -1,7 +1,5 @@
 # Matrix extension along an actual hyperbolic plane
 
-Authors: Worker 124.
-
 This internal construction extends a binary matrix along the actual hyperbolic
 plane of a quaternionic quadratic form and acts as the identity on the polar
 orthogonal complement. It uses row vectors throughout.

@@ -1,7 +1,5 @@
 # Connected zero-dimensional smooth groups over a field
 
-Worker 1569.
-
 This internal prerequisite removes the separably closed field assumption from
 zero-dimensional triviality in the perfect-field unipotent splitness induction.
 It works over every field, without a perfectness or separatedness assumption.

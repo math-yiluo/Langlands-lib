@@ -17,14 +17,14 @@ conclusion is asserted here.
 This is an internal corollary target. Every open subgroup contains the identity
 and is therefore a neighborhood of it (`OpenSubgroup.mem_nhds_one`). Applying
 the compact-open neighborhood result to that neighborhood gives precisely the
-asserted inclusion. The proof will be submitted separately after the target
-is independently accepted and published.
+asserted inclusion. The proof is `Langlands.openSubgroupContainsCompactOpen`
+in the separate module `Langlands.Topology.CompactOpen.OpenSubgroup`.
 
 Mathlib's `NonarchimedeanGroup` supplies continuity of the group operations
 and the open-subgroup neighborhood property. Weak local compactness supplies
 a compact neighborhood at each point. No separation assumption is made.
 The stronger Mathlib hypothesis `LocallyCompactSpace G` supplies
-`WeaklyLocallyCompactSpace G`, so this covers the originally requested
+`WeaklyLocallyCompactSpace G`, so this covers the
 locally compact Hausdorff case.
 
 The terminology is motivated by Bill Casselman, *Introduction to admissible
@@ -43,17 +43,16 @@ about all totally disconnected locally compact groups.
 
 ## Interface audit and exact dependencies
 
-Worker 6 inspected `OpenSubgroup.mem_nhds_one` and the `SetLike` partial-order
-instance in the pinned `Mathlib/Topology/Algebra/OpenSubgroup.lean`. Existing
+`OpenSubgroup.mem_nhds_one` and the `SetLike` partial-order instance were
+inspected in the pinned `Mathlib/Topology/Algebra/OpenSubgroup.lean`. Existing
 `OpenSubgroup` already bundles all required algebra and openness data.
 No new group structure or compact-open basis axiom is needed.
 
 There are no project mathematical dependencies for this statement. It imports
 `Mathlib.Topology.Algebra.Nonarchimedean.Basic` and
-`Mathlib.Topology.Compactness.LocallyCompact`. The prepared environment is
-`2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`: Lean 4.34.0 at commit
+`Mathlib.Topology.Compactness.LocallyCompact`. The environment is
+Lean 4.34.0 at commit
 `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`, with Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`.
 
-The Lean file defines the target only. Compilation establishes elaboration;
-semantic acceptance and publication require independent review.
+The Lean file defines the target only. Compilation establishes elaboration.

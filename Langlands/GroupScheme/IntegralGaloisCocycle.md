@@ -1,7 +1,5 @@
 # Galois cocycles on finite free local Galois covers
 
-Authors: Worker 5015.
-
 This module states and proves
 `Langlands.GroupScheme.IntegralGaloisCocycleVanishingStatement.{u}` at arbitrary universe
 `u`. The proof is `Langlands.GroupScheme.integralGaloisCocycleVanishing`. It uses only the

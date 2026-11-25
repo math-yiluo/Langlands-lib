@@ -1,6 +1,6 @@
 # Irreducibility neighborhoods from fixed-vector detection of subrepresentations
 
-Author: Worker 52. Module
+Module
 `Langlands.Representation.Families.SubrepDetectionPrincipalOpen`, namespace
 `Langlands.Renard.AlgebraicFamily.SubrepDetectionPrincipalOpen`. Internal
 support for the proof of `ConditionalParabolicGenericIrreducibilityStatement`
@@ -74,5 +74,4 @@ subgroup `K` means:
 
 ## Checks
 
-The module compiles with zero errors and zero warnings in the environment
-`5c94c648-e8dc-4002-a50a-071ebf3f6096`.
+The module compiles with zero errors and zero warnings.

@@ -100,7 +100,7 @@ local notation "𝔗" => splitTorus.commGroupScheme (Spec (CommRingCat.of K)) (U
 theorem mem_weightSpace_zero_iff (X : Additive (lieKernel (groupScheme l K) K)) :
     X ∈ weightSpace (diagonalTorus l K) 0 ↔
       ∀ x y : Index l, x ≠ y → lieMatrix K X x y = 0 := by
-  rw [mem_weightSpace_diagonalTorus_iff_support, map_zero]
+  rw [mem_weightSpace_diagonalTorus_iff_support, LinearEquiv.map_zero]
   refine forall_congr' fun x => forall_congr' fun y => ?_
   have hw : (0 : l → ℤ) = weightCoord l x - weightCoord l y ↔ x = y := by
     rw [eq_comm, sub_eq_zero]
@@ -232,7 +232,7 @@ theorem mem_roots_iff (χ : characterLattice 𝔗) :
       rcases OrthogonalMatrix.eq_or_eq_swap_of_index_eq hidx with rfl | rfl
       · apply hχ.1
         apply (GeneralLinear.characterCoordEquiv l K).injective
-        rw [hc, sub_self, map_zero]
+        rw [hc, sub_self, LinearEquiv.map_zero]
       · apply hxy
         simpa using lieMatrix_swap_self K X b.swap
   · rintro (⟨a, hc⟩ | ⟨a, b, hidx, hc⟩)
@@ -241,7 +241,7 @@ theorem mem_roots_iff (χ : characterLattice 𝔗) :
       let X := matrixLieVector K Y hY
       have hX : lieMatrix K X = shortVector a.swap := lieMatrix_matrixLieVector K _ _
       refine ⟨fun h0 => ?_, ?_⟩
-      · rw [h0, map_zero] at hc
+      · rw [h0, LinearEquiv.map_zero] at hc
         exact signedWeight_ne_zero a hc.symm
       · rw [Submodule.ne_bot_iff]
         refine ⟨X, ?_, fun h0 => ?_⟩
@@ -265,7 +265,7 @@ theorem mem_roots_iff (χ : characterLattice 𝔗) :
       let X := matrixLieVector K Y hY
       have hX : lieMatrix K X = Y := lieMatrix_matrixLieVector K _ _
       refine ⟨fun h0 => ?_, ?_⟩
-      · rw [h0, map_zero, eq_comm, sub_eq_zero] at hc
+      · rw [h0, LinearEquiv.map_zero, eq_comm, sub_eq_zero] at hc
         exact hab (SymplecticMatrix.weightCoord_injective hc)
       · rw [Submodule.ne_bot_iff]
         refine ⟨X, ?_, fun h0 => ?_⟩

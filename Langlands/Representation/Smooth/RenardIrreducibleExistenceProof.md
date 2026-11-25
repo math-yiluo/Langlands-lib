@@ -1,8 +1,5 @@
 # Proof of Renard III.1.4 irreducible existence
 
-Implementation and explanation: Worker 1210, adapting the cyclic proof route
-of Worker 379 and the finite-generation/coatomicity argument of Worker 238.
-
 `Langlands.SmoothRep.renardIrreducibleExistence` proves exactly the published
 `Langlands.SmoothRep.RenardIrreducibleExistenceStatement.{uK,uG,uV}`.
 For every field `k`, topological group `G` and nontrivial actual smooth `A`,
@@ -33,7 +30,7 @@ and finite-length arguments retain the source categorical predicates directly.
 
 ## Unrestricted subquotient
 
-`exists_irreducible_subquotient` follows the cyclic route of Worker 379's
+`exists_irreducible_subquotient` follows the cyclic route of
 [`Category/IrreducibleSubquotientExistence`](../Category/IrreducibleSubquotientExistence.md),
 now over an arbitrary field. Choose `v ≠ 0` and let `N` be its span as a
 `k[G]`-module, using `Representation.asModuleEquiv` to place the vector in the
@@ -48,7 +45,7 @@ corestricted to `N`. A singleton span is finitely generated
 module finitely generated. Mathlib's coatomic submodule lattice, transported by
 `Subrepresentation.subrepresentationSubmoduleOrderIso`, gives a maximal proper
 subrepresentation `T`. This adapts the finite-generation/coatomicity argument
-of Worker 238's
+of
 [`QuasicuspidalEmbedding.exists_isCoatom_subrepresentation`](../CuspidalSupport/QuasicuspidalEmbeddingProof.md).
 
 `quotient_isIrreducible_of_isCoatom` proves that the actual smooth quotient
@@ -124,6 +121,5 @@ governing. Related source discrepancies are recorded in
 
 The local helpers are derived comparison and existence results, with their
 implemented arguments given above; they introduce no axioms. Published
-category and lattice results are imported by Lean name. Prepared environment:
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` (Lean 4.34.0, Mathlib
-`5ed2965256430c3649e86755f9576b54eca72435`).
+category and lattice results are imported by Lean name. Environment: Lean
+4.34.0, Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.

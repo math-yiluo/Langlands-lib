@@ -160,17 +160,17 @@ variable (B : SmoothRep.{0, uG, max uG uV} ℂ G)
 /-- The right action of `End(ind_H^G ρ)` on the maps `ind_H^G ρ → B`: `α` acts by
 `φ ↦ α ≫ φ`. -/
 def homAction : End (inducedRep H ρ) →ₗ[ℂ] Module.End ℂ (inducedRep H ρ ⟶ B) where
-  toFun α := Linear.leftComp ℂ B α
+  toFun α := Linear.leftComp ℂ B α.asHom
   map_add' α β := LinearMap.ext fun φ => by
     rw [LinearMap.add_apply, Linear.leftComp_apply, Linear.leftComp_apply,
       Linear.leftComp_apply]
-    exact Preadditive.add_comp _ _ _ α β φ
+    exact Preadditive.add_comp _ _ _ α.asHom β.asHom φ
   map_smul' c α := LinearMap.ext fun φ => by
     rw [RingHom.id_apply, LinearMap.smul_apply, Linear.leftComp_apply, Linear.leftComp_apply]
-    exact Linear.smul_comp _ _ _ c α φ
+    exact Linear.smul_comp _ _ _ c α.asHom φ
 
 theorem homAction_apply (α : End (inducedRep H ρ)) (φ : inducedRep H ρ ⟶ B) :
-    homAction H ρ B α φ = α ≫ φ :=
+    homAction H ρ B α φ = α.asHom ≫ φ :=
   rfl
 
 theorem homAction_one : homAction H ρ B 1 = 1 :=
@@ -178,7 +178,7 @@ theorem homAction_one : homAction H ρ B 1 = 1 :=
 
 theorem homAction_mul (α β : End (inducedRep H ρ)) :
     homAction H ρ B (α * β) = homAction H ρ B β * homAction H ρ B α :=
-  LinearMap.ext fun φ => Category.assoc β α φ
+  LinearMap.ext fun φ => Category.assoc β.asHom α.asHom φ
 
 theorem isMulOrAntiMul_homAction : RankOneGraded.IsMulOrAntiMul (homAction H ρ B) :=
   Or.inr (homAction_mul H ρ B)
@@ -189,11 +189,11 @@ the action of an endomorphism of `I`. -/
 theorem surjective_homAction [FiniteDimensional ℂ (inducedRep H ρ ⟶ B)]
     [Nontrivial (inducedRep H ρ ⟶ B)]
     (hcyc : ∀ φ : inducedRep H ρ ⟶ B, φ ≠ 0 → ∀ ψ : inducedRep H ρ ⟶ B,
-      ∃ α : End (inducedRep H ρ), α ≫ φ = ψ) :
+      ∃ α : End (inducedRep H ρ), α.asHom ≫ φ = ψ) :
     Function.Surjective (homAction H ρ B) := by
   intro f
   let : IsScalarTower ℂ (End (inducedRep H ρ))ᵐᵒᵖ (inducedRep H ρ ⟶ B) :=
-    ⟨fun c a φ => Linear.smul_comp _ _ _ c a.unop φ⟩
+    ⟨fun c a φ => Linear.smul_comp _ _ _ c a.unop.asHom φ⟩
   have : IsSimpleModule (End (inducedRep H ρ))ᵐᵒᵖ (inducedRep H ρ ⟶ B) :=
     isSimpleModule_iff_toSpanSingleton_surjective.mpr ⟨inferInstance, fun φ hφ ψ => by
       obtain ⟨α, hα⟩ := hcyc φ hφ ψ
@@ -219,11 +219,11 @@ theorem eq_zero_of_mem_component {a : ι} {α : End (inducedRep H ρ)}
 /-- The equivariant bijection `φ ↦ v ≫ Φ(φ)`, for a unit `v` of `End(ind_H^G ρ)`. -/
 def twistModuleEquiv (v : (End (inducedRep H ρ))ˣ) :
     (inducedRep H ρ ⟶ B.twist ω hω) ≃ₗ[ℂ] (inducedRep H ρ ⟶ B) where
-  toFun φ := (v : End (inducedRep H ρ)) ≫ twistHomEquiv ρ hH ω hω hωH B φ
+  toFun φ := (v : End (inducedRep H ρ)).asHom ≫ twistHomEquiv ρ hH ω hω hωH B φ
   map_add' φ ψ := by rw [map_add, Preadditive.comp_add]
   map_smul' c φ := by rw [map_smul, Linear.comp_smul, RingHom.id_apply]
   invFun ψ := (twistHomEquiv ρ hH ω hω hωH B).symm
-    (((v⁻¹ : (End (inducedRep H ρ))ˣ) : End (inducedRep H ρ)) ≫ ψ)
+    (((v⁻¹ : (End (inducedRep H ρ))ˣ) : End (inducedRep H ρ)).asHom ≫ ψ)
   left_inv φ := by
     dsimp only
     rw [← Category.assoc, ← End.mul_def, Units.mul_inv, End.one_def, Category.id_comp,
@@ -236,7 +236,7 @@ def twistModuleEquiv (v : (End (inducedRep H ρ))ˣ) :
 theorem twistModuleEquiv_apply (v : (End (inducedRep H ρ))ˣ)
     (φ : inducedRep H ρ ⟶ B.twist ω hω) :
     twistModuleEquiv ρ hH ω hω hωH B v φ =
-      (v : End (inducedRep H ρ)) ≫ twistHomEquiv ρ hH ω hω hωH B φ :=
+      (v : End (inducedRep H ρ)).asHom ≫ twistHomEquiv ρ hH ω hω hωH B φ :=
   rfl
 
 include hωH in
@@ -244,12 +244,12 @@ include hωH in
 of degree `p g` acts as the identity on `Hom(I, B) ≠ 0`. -/
 theorem eq_one_of_homEquiv (hp : IsDegree H p) [Nontrivial (inducedRep H ρ ⟶ B)]
     (Ψ : (inducedRep H ρ ⟶ B.twist ω hω) ≃ₗ[ℂ] (inducedRep H ρ ⟶ B))
-    (hΨ : ∀ (α : End (inducedRep H ρ)) φ, Ψ (α ≫ φ) = α ≫ Ψ φ)
+    (hΨ : ∀ (α : End (inducedRep H ρ)) φ, Ψ (α.asHom ≫ φ) = α.asHom ≫ Ψ φ)
     {u : End (inducedRep H ρ)} {g : G} (hu : u ∈ component H ρ hH p (p g))
-    (hu1 : ∀ φ : inducedRep H ρ ⟶ B, u ≫ φ = φ) : ω g = 1 := by
+    (hu1 : ∀ φ : inducedRep H ρ ⟶ B, u.asHom ≫ φ = φ) : ω g = 1 := by
   obtain ⟨ψ, hψ⟩ := exists_ne (0 : inducedRep H ρ ⟶ B)
   set φ := Ψ.symm ψ with hφ
-  have huφ : u ≫ φ = φ := Ψ.injective (by rw [hΨ, hφ, LinearEquiv.apply_symm_apply, hu1])
+  have huφ : u.asHom ≫ φ = φ := Ψ.injective (by rw [hΨ, hφ, LinearEquiv.apply_symm_apply, hu1])
   have hΦ0 : twistHomEquiv ρ hH ω hω hωH B φ ≠ 0 := by
     rw [ne_eq, LinearEquiv.map_eq_zero_iff, hφ, LinearEquiv.map_eq_zero_iff]
     exact hψ
@@ -268,15 +268,19 @@ theorem twistModuleEquiv_comp (hp : IsDegree H p) (v : (End (inducedRep H ρ))ˣ
     (hconj : ∀ (g : G) (α : End (inducedRep H ρ)), α ∈ component H ρ hH p (p g) →
       α * v = (ω g : ℂ) • ((v : End (inducedRep H ρ)) * α))
     (α : End (inducedRep H ρ)) (φ : inducedRep H ρ ⟶ B.twist ω hω) :
-    twistModuleEquiv ρ hH ω hω hωH B v (α ≫ φ) = α ≫ twistModuleEquiv ρ hH ω hω hωH B v φ := by
+    twistModuleEquiv ρ hH ω hω hωH B v (α.asHom ≫ φ) =
+      α.asHom ≫ twistModuleEquiv ρ hH ω hω hωH B v φ := by
   let S : Submodule ℂ (End (inducedRep H ρ)) :=
-    { carrier := {α | ∀ φ, twistModuleEquiv ρ hH ω hω hωH B v (α ≫ φ) =
-        α ≫ twistModuleEquiv ρ hH ω hω hωH B v φ}
+    { carrier := {α | ∀ φ, twistModuleEquiv ρ hH ω hω hωH B v (α.asHom ≫ φ) =
+        α.asHom ≫ twistModuleEquiv ρ hH ω hω hωH B v φ}
       add_mem' := fun {α β} hα hβ φ => by
-        rw [Preadditive.add_comp, map_add, hα, hβ, Preadditive.add_comp]
-      zero_mem' := fun φ => by rw [Limits.zero_comp, map_zero, Limits.zero_comp]
+        rw [show (α + β).asHom = α.asHom + β.asHom from rfl, Preadditive.add_comp, map_add,
+          hα, hβ, Preadditive.add_comp]
+      zero_mem' := fun φ => by
+        rw [show (0 : End (inducedRep H ρ)).asHom = 0 from rfl, Limits.zero_comp, map_zero,
+          Limits.zero_comp]
       smul_mem' := fun c α hα φ => by
-        rw [Linear.smul_comp, map_smul, hα, Linear.smul_comp] }
+        rw [End.smul_asHom, Linear.smul_comp, map_smul, hα, Linear.smul_comp] }
   have hS : ∀ a, component H ρ hH p a ≤ S := by
     intro a α hα φ
     by_cases ha : ∃ g, p g = a
@@ -284,10 +288,13 @@ theorem twistModuleEquiv_comp (hp : IsDegree H p) (v : (End (inducedRep H ρ))ˣ
       have hω0 : (ω g : ℂ) ≠ 0 := Units.ne_zero _
       rw [twistModuleEquiv_apply, twistModuleEquiv_apply,
         twistHomEquiv_comp hH hωH hp hα rfl φ, Linear.comp_smul, ← Category.assoc,
-        ← End.mul_def, hconj g α hα, Linear.smul_comp, smul_smul, inv_mul_cancel₀ hω0,
+        ← End.mul_def, hconj g α hα, End.smul_asHom, Linear.smul_comp, smul_smul,
+        inv_mul_cancel₀ hω0,
         one_smul, End.mul_def, Category.assoc]
     · push Not at ha
-      rw [eq_zero_of_mem_component ρ hH hα ha, Limits.zero_comp, map_zero, Limits.zero_comp]
+      rw [eq_zero_of_mem_component ρ hH hα ha,
+        show (0 : End (inducedRep H ρ)).asHom = 0 from rfl, Limits.zero_comp, map_zero,
+        Limits.zero_comp]
   have htop : S = ⊤ := top_unique ((iSup_component ρ hH hp).symm.le.trans (iSup_le hS))
   have hα : α ∈ S := htop ▸ Submodule.mem_top
   exact hα φ

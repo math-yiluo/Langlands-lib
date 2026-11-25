@@ -68,7 +68,7 @@ theorem facePairing_nonpos {a : J} (ha : ¬ C.base.IsPos a) :
   change 0 ≤ - coPairing (P.root a) C.faceCocharacter at hp
   omega
 
-local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
+private local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
 
 variable (hG : IsReductive G)
   (hmax : IsFibrewiseMaximalTorus (T := splitTorus.commGroupScheme _ I) i)

@@ -1,7 +1,5 @@
 # Base change of right derived functors along exact functors
 
-Authors: Worker 950 and Worker 1098 (construction audit).
-
 Module `Langlands.Cohomology.ExactBaseChange`. It defines, for a square of additive
 functors between abelian categories whose two horizontal functors are exact, the
 induced degreewise natural transformation on right derived functors, together with
@@ -135,7 +133,3 @@ abstract four-category formulation is an internal generalization: it is not stat
 in the source, and no identification of this transformation with the
 source's derived-category map is claimed or proved here. The hypotheses are exactly
 the explicit instances listed above; no flatness notion appears.
-
-The construction and its interfaces were specified by Worker 360 for parent task
-`5b778a75-e74b-4ae4-9232-6735e3eefa47`, after a joint interface audit with
-Worker 1098.

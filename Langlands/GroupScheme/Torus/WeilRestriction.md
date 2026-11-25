@@ -1,19 +1,16 @@
 # The Weil-restricted multiplicative group `Res_{B/A} 𝔾ₘ` as a host group scheme
 
-Authors: Worker 1122 and Worker 207 (Worker 207 wrote the first draft of the
-functor, corepresentation, group scheme, point equivalence and smoothness).
-
 This module builds the Weil restriction `Res_{B/A} 𝔾ₘ` of the multiplicative
 group as a group scheme over `Spec A` in the host's sense
 (`Langlands.GroupScheme (Spec A)`, a group object in `Over (Spec A)`). The
-coordinate algebra comes from the ported TauCeti closure.
+coordinate algebra comes from the Library’s finite-presentation Weil restriction.
 
 Throughout, `A : CommRingCat.{u}` and `B : Type u` is a commutative `A`-algebra
 with `[Module.Finite A B] [Module.Projective A B]`. Test algebras `T` are
 commutative `A`-algebras in the same universe `u`. All declarations are in the
-namespace `Langlands.GroupScheme.WeilGm`. `WeilRestriction`,
-`multiplicativeGroupPoints` and their lemmas are in the ported namespace
-`TauCeti.Algebra.WeilRestriction`.
+namespace `Langlands.GroupScheme.WeilGm`. The coordinate algebra is
+`Langlands.Algebra.WeilRestriction`. Its namespace contains
+`multiplicativeGroupPoints` and the naturality lemma.
 
 ## Sources
 
@@ -24,19 +21,11 @@ namespace `Langlands.GroupScheme.WeilGm`. `WeilRestriction`,
   over `A`, `(G)_{A/k}` is "the algebraic group over k such that
   (G)_{A/k}(R) = G(A ⊗ R) for all k-algebras R". For `G = 𝔾ₘ` this gives
   `R ↦ (A ⊗ R)ˣ`. In this module Milne's `k`, `A` and `R` are `A`, `B` and `T`.
-- TauCeti, Lean source closure at commit
-  `8428d6217f74afa72531df0bc85d7b57ab72810f`. Source ID
-  `tauceti-8428d621-weil-restriction-closure`, SHA-256
-  `5bba539e0ccb9b91a657a9cac5d7ce8e1c089d634bb7eaaad53a1055fe01d398`, file
-  `TauCeti/Algebra/AlgebraicGroup/MultiplicativeGroup/WeilRestriction.lean`
-  (ported as
-  `Langlands.TauCeti.Algebra.AlgebraicGroup.MultiplicativeGroup.WeilRestriction`).
+- The Library constructs the coordinate algebra from a presentation and identifies its tensor-valued points with units. [Weil restriction of the multiplicative group](../../RingTheory/WeilRestriction/Units.md)
 
 **Derived generality.** Milne works over a field `k` with `A` finite over `k`.
 This module works over an arbitrary commutative ring `A` with `B` finite
-projective over `A`. That ring version is derived, not taken from Milne: it is
-the generality of the TauCeti source. Under exactly these hypotheses on `A`
-and `B`, TauCeti's `WeilRestriction A B C` corepresents
+projective over `A`. Under these hypotheses on `A` and `B`, the Library’s `WeilRestriction A B C` corepresents
 `T ↦ (C →ₐ[B] B ⊗[A] T)` for every `B`-algebra `C` of finite presentation, and
 `multiplicativeGroupPoints` specializes it to `C = B[T;T⁻¹]`. Milne's functor
 is defined on `k`-algebras, that is, on affine test schemes. Here the points are
@@ -56,7 +45,7 @@ global sections `Γ(T)`.
   bijection sends an `A`-algebra map `f : WeilRestriction A B B[T;T⁻¹] →ₐ[A] T`
   to `multiplicativeGroupPoints A B T (toConv f)`. Its inverse is
   `multiplicativeGroupPoints.symm` followed by `ofConv`. Its compatibility with
-  composition is TauCeti's `multiplicativeGroupPoints_naturality`.
+  composition follows from `multiplicativeGroupPoints_naturality`.
 
 ## The group scheme and its points
 
@@ -84,7 +73,7 @@ global sections `Γ(T)`.
   of the algebra map `A → WeilRestriction A B B[T;T⁻¹]`. By
   `HasRingHomProperty.Spec_iff` and `RingHom.smooth_algebraMap`, smoothness
   reduces to `Algebra.Smooth A (WeilRestriction A B B[T;T⁻¹])`. That instance is
-  TauCeti's `WeilRestriction.instSmooth`, applied with TauCeti's
+  given by `WeilRestriction.instSmooth`, applied with
   `LaurentPolynomial.instSmooth` (`B[T;T⁻¹]` is smooth over `B`).
 
 ## Functoriality in `B ≃ₐ[A] B'`

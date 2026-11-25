@@ -17,7 +17,8 @@ for every target in this family. The coordinate-free survivor budget bounds the
 total number of full-source indices by two.
 
 For an arbitrary irreducible actual subquotient of the induced representation,
-Worker 4949's `exists_conjugateLevi_supercuspidal_jacquetQuotient` uses the proved
+`exists_conjugateLevi_supercuspidal_jacquetQuotient` (module
+`LeviSupercuspidalInductionDetection`) uses the proved
 VI.2.1 and exactness of Jacquet functors, together with the VI.5.3(ii) input, to
 produce a nonzero Jacquet module along a parabolic with a conjugate embedded
 Levi. The family's coverage selects a rationally conjugate target.
@@ -34,7 +35,8 @@ of its two named representation-theoretic inputs.
 
 The additional theorem
 `maximalLeviSupercuspidalLengthBound_of_geometricLemma_properInductionExclusion`
-uses Worker 1781's `leviJacquetInductionNoSupercuspidal_of_geometricLemma` to
+uses `leviJacquetInductionNoSupercuspidal_of_geometricLemma` (module
+`LeviJacquetNonSupercuspidalReduction`) to
 replace VI.5.3(ii) by the proper-induction exclusion of VI.5.2. Finally,
 `maximalLeviSupercuspidalLengthBound_of_geometricLemma_cuspidalSplitting` uses
 the published

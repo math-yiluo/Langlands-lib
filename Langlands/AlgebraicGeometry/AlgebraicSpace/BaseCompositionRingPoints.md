@@ -1,7 +1,5 @@
 # Ring-valued fibres after composition of bases
 
-Author: Worker 109.
-
 This internal construction derives point-fibre comparisons from the actual
 base composition and the published restriction-of-scalars test-scheme
 isomorphism. No external literature assertion is claimed as proved.

@@ -1,7 +1,5 @@
 # The locus where a morphism of module sheaves is a stalk isomorphism
 
-Author: Worker 766.
-
 This module is `Langlands.AlgebraicGeometry.Modules.StalkIsoLocus`. All
 declarations are in the namespace `Langlands.AlgebraicGeometry.Modules`.
 

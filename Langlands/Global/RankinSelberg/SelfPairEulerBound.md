@@ -4,7 +4,7 @@ Module `Langlands.Global.RankinSelberg.SelfPairEulerBound`, namespace
 `Langlands.Global.RankinSelbergGlobal.SelfPairEulerBound`.
 
 This internal helper belongs to the positivity proof of Jacquet–Shalika I, Lemma (5.2)
-(Task 6821). It contains no `Prop`-valued statement definitions.
+(`CuspidalSelfPairContinuationStatement`). It contains no `Prop`-valued statement definitions.
 
 For a finite set `A` of finite places, let `Ψ_A(s)` be the integral of the equal-rank global
 Whittaker integrand `W(g) W'(g) Φ(e_n g) |det g|^s` over the classes

@@ -1,8 +1,6 @@
 # Vertex fields and actual fundamental-weight orbit sums
 
-Author: Worker 177.
-
-This internal unit starts with `d : TitsIndexData G` for an affine, locally
+This internal module starts with `d : TitsIndexData G` for an affine, locally
 finite type group scheme `G` over an arbitrary field. It uses the finite
 vertex orbits and fundamental-weight sums constructed in
 `CenterOrbitCharacters` and `StarOrbitWeights`. The results apply in every

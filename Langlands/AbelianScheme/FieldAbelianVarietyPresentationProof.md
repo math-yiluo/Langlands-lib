@@ -60,11 +60,10 @@ and properness only in clauses 1–3.
 ## Dependencies and scope
 
 The only non-Mathlib inputs are the target statement module and the published
-proof of `Langlands.AbelianScheme.SmoothGeometricIntegrality`. That proof was
-supplied by its own proof task. Its theorem
+proof of `Langlands.AbelianScheme.SmoothGeometricIntegrality`. Its theorem
 `Langlands.AbelianScheme.smoothGeometricIntegrality` is imported by Lean name
 from module `Langlands.AbelianScheme.SmoothGeometricIntegralityProof`. This
-module does not reprove it, and it uses no statement or draft as a proof.
+module does not reprove it, and it uses no statement as a proof.
 No ample line bundle, projective embedding, twisting sheaf or ample-existence
 result is used. The universe, field, characteristic and dimension stay
 arbitrary, and imperfect fields and dimension zero are included.

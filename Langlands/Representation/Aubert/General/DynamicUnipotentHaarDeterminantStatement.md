@@ -1,7 +1,5 @@
 # Haar scaling on a rational dynamic unipotent subgroup is the adjoint determinant
 
-Author: Worker 1415.
-
 `Langlands.Aubert.General.RationalPointFamily.DynamicUnipotentHaarDeterminantStatement`
 is a proposition definition awaiting proof. Over a nonarchimedean local field,
 it asserts that conjugation by a rational point `m` of the centralizer of a

@@ -1,7 +1,5 @@
 # Normalized left-Phi identity coefficient comparison
 
-Author: Worker 499.
-
 This module constructs `leftPhiNormalizedSourceEquiv` in
 `Langlands.Derivative.MirabolicProductMinus`. It is a representation
 equivalence from the entire normalized identity-orbit stages coefficient to
@@ -9,8 +7,9 @@ the actual normalized source-Phi coefficient, pulled back through the actual
 section equivalence and its proved rank transport. The equivalence is natural
 in both representation inputs, across four independent carrier universes.
 This is a coefficient comparison for BZ77 §4.13(b). Compact induction,
-ambient normalization of the induced representation, and the six-part host
-compatibility theorem remain separate obligations.
+ambient normalization of the induced representation, and the six-part
+statement `MirabolicProductMinusCompatibilityStatement` are proved in other
+modules.
 
 ## Source and provenance
 
@@ -28,8 +27,8 @@ mirabolic groups, positive character and minus functors. Section 4.12(II),
 printed pp.456–457 (PDF pages 17–18), defines the left mixed product;
 §4.13(b), printed p.458 (PDF page 19), states its functorial comparison.
 Section 7.2, printed p.471 (PDF page 32), supplies the two left orbit
-representatives. These passages and relevant page images were read during
-this task. The bounded supplied-source and public-note errata search found
+representatives. These passages and relevant page images were read for
+this construction. The bounded supplied-source and public-note errata search found
 no applicable BZ77 entry; no global absence is asserted.
 
 The present full representation equivalence, continuity adapters and
@@ -37,9 +36,8 @@ naturality proof are internal derived content. The original does not
 literally state this nested-subgroup coefficient interface. The proof
 compares the published actual normalized section action and actual
 source-Phi coefficient action. The full linear equivalence and the actual
-input maps are supplied by their published constructions. No host
-compatibility or compact-induction comparison is assumed. Worker 499 wrote
-this pair; no peer draft supplies a proof body.
+input maps are supplied by their published constructions. No compatibility
+clause of the statement or compact-induction comparison is assumed.
 
 ## Parameters and rank transport
 
@@ -214,8 +212,7 @@ The full direct and transitive closure has 92 project modules, excluding
 this entry. All 184 imported Lean/Markdown files are nonempty,
 byte-identical to the published Library and checked against its manifest at
 commit `8c5ba55d80ead022f06e4c04ae7621d1f734bac3`.
-No pending module or peer draft is imported. In particular, the separate
-actual character-stages compact-induction comparison is not an input.
+In particular, the separate actual character-stages compact-induction comparison is not an input.
 
 The mathematical proof dependencies are the actual orbit groups, section
 and rank equivalences, the proved normalized radical-quotient identification,
@@ -226,11 +223,11 @@ linear transport and tensor algebra, the existing minus construction,
 and the smooth pullback, twist and quotient infrastructure. The
 admissibility and Whittaker infrastructure appearing transitively contributes
 no admissibility hypothesis or coinvariant-finiteness result. No
-compact-induction equivalence or host compatibility supplies a proof input.
+compact-induction equivalence or compatibility clause of the statement supplies a proof input.
 
 | Condition | Actual dependency finding |
 | --- | --- |
-| Six host conclusions | The host statement and proof modules are absent. No mixed-minus compatibility or boundary conclusion supplies an input. This unit proves only the normalized identity coefficient representation comparison. |
+| Six conclusions of the statement | The statement module `MirabolicProductMinusCompatibilityStatement` and the proofs of its clauses are absent. No mixed-minus compatibility or boundary conclusion supplies an input. This module proves only the normalized identity coefficient representation comparison. |
 | Plus functors, adjunction and §4.13(d) | None supplies an input. The plus subgroup, projection and successor are elementary matrix constructions. |
 | General Leibniz and derivative formulas | No Leibniz theorem, unproved BZ77 comparison, Ze80 §3.5 or §9.6 formula, or segment derivative formula is used. |
 | Individual head and socle existence | Neither individual special-head/reverse-socle nor segment-socle/reverse-head existence supplies an input. |
@@ -240,24 +237,22 @@ compact-induction equivalence or host compatibility supplies a proof input.
 | Special-head criterion and generic uniqueness | Neither special-head product irreducibility nor generic segment-product uniqueness is used. |
 | Ordered existence, coverage and exhaustion | No ordered multisegment-socle or strong-head existence, socle or special-head exhaustion, quotient coverage or ordered conversion is used. |
 | Analytic, tempered and square-integrable classification | No analytic segment classification, forward special essential square-integrability, tempered uniqueness, square-integrable Langlands classification, square-integrable or regular exhaustion, or Ze80 9.3 conclusion is used. |
-| Two-supercuspidal consumers | Neither nonadjacent-product irreducibility, two-supercuspidal product structure nor full-product assembly is used. No parent six-statement conclusion (b),(d),(e),(f) is used. |
+| Two-supercuspidal consumers | Neither nonadjacent-product irreducibility, two-supercuspidal product structure nor full-product assembly is used. |
 | Supercuspidal and all-character finiteness | No supercuspidal, all-character single-block or arbitrary-character coinvariant-finiteness theorem or downstream consequence is used. |
 | Other Whittaker finiteness | No irreducible or Levi-cuspidal coinvariant-finiteness conclusion or prohibited mirabolic finite-length route supplies an input. |
 | Generality and normalization | All `k,r`, arbitrary supplied `T`, positive GL input rank and entire carriers are retained. Only the actual source-Phi input is required smooth. Both the ambient inverse-half character and the lower source normalization are present in the compared actions. |
-| Published-input requirement | Every imported pair is published and unchanged. Prop-valued statement definitions, source formulas, drafts, pending constructions and consumer tasks provide no unproved comparison premise. |
-| Separate owners and controls | This coefficient unit does not duplicate the separate restriction-sequence or exactness work. Worker 127's operator pause, Worker 8's suspension, Worker 114's hold and current suspensions remain binding. |
+| Published-input requirement | Every imported pair is published and unchanged. Prop-valued statement definitions and source formulas provide no unproved comparison premise. |
+| Separate results | This coefficient module does not duplicate the separate restriction-sequence or exactness results. |
 
 A scan of this module and its full project closure finds no occurrence in
-Lean code of the host's 38 excluded task identifiers or 24 named consumer
-declarations, and no proof holes, new axioms or unsafe evaluation commands.
-Excluded names in explanatory Markdown are audit prose. Successful
-development compilation is distinct from independent semantic acceptance
-and publication.
+Lean code of 24 excluded consumer declarations, and no proof holes, new
+axioms or unsafe evaluation commands. Excluded names in explanatory
+Markdown are audit prose.
 
 ## Complete project import closure
 
 The list below includes every direct and transitive project import,
-excluding this entry module. Mathlib is supplied by the pinned authorized
+excluding this entry module. Mathlib is supplied by the pinned
 environment and remains unchanged.
 
 ```text

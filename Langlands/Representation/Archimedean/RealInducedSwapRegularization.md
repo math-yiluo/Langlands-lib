@@ -1,6 +1,6 @@
 # Cancellation and division of the four-crossing family
 
-This internal unit derives cancellation and simple-pole division for the
+This module derives cancellation and simple-pole division for the
 explicit `RealInducedSwapRegularizedFamily` from the existing finite-support
 cancellation, Fourier uniqueness, and finite-layer division theorems.
 It makes no appeal to an analytic-continuation axiom or an external source.

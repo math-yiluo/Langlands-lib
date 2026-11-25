@@ -1,6 +1,7 @@
 # Actual source density models for archimedean multiplicities
 
-This internal construction for Task 7294 connects the published existence of
+This internal construction for the cuspidal contragredient of dual cusp forms
+(`CuspidalTransposeInverseContragredientStatement`) connects the published existence of
 actual irreducible admissible place components to the implemented finite-family
 pairing assembly. Its sources are the Library's proved component-existence,
 restriction, finite-factor evaluation, contraction, and finite-family results.
@@ -28,4 +29,4 @@ of actual multiplicity actions. Given nonzero local pairings for supplied
 compact and Lie twists, it constructs a nonzero pairing on the actual
 multiplicity space satisfying all local twist identities simultaneously.
 The twists remain parameters here. No local pairing existence theorem or
-unconditional global contragredient theorem is asserted by this unit.
+unconditional global contragredient theorem is asserted by this module.

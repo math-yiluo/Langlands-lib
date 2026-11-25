@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 
 /-! # Transport of integral closures in localizations along ring isomorphisms -/
 

@@ -1,7 +1,8 @@
 # The simple-root parabolic factorization from the ordered root product
 
-This internal auxiliary module supports the proof task for
-`Langlands.GroupScheme.RelativeTitsSystemStatement`. It defines the internal predicate
+This internal auxiliary module supports the proof of
+`Langlands.GroupScheme.RelativeTitsSystemStatement`, which the Library proves as
+`relativeTitsSystem` (`Rational.RelativeTitsSystemProof`). It defines the internal predicate
 `HasOrderedRootPointFactorization i ν`: every point of `U(ν)(k)` is an ordered product of
 root-subgroup points. It proves the predicate `HasSimpleRootParabolicFactorization i ν` (module
 `Langlands.GroupScheme.Rational.RelativeTitsMulCellReduction`) from published structural

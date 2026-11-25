@@ -1,7 +1,5 @@
 # Geometry of the lower-block quotient chart: proof
 
-Author: Worker 936.
-
 This module proves the published proposition
 `Langlands.RankinSelberg.LowerBlockQuotientGeometryStatement`
 (module `Langlands.Group.GL.LowerBlockQuotientGeometryStatement`) as the theorem
@@ -81,7 +79,7 @@ block coordinates are `θ = lowerTriangularBlockMap a d F.Carrier`, with
   `μ (range chart)ᶜ = 0`. Proof: by the range lemma, the complement lies in
   `{q | ∀ b ∈ B̄_{a+d}, [b] ≠ q}`. That set is `μ`-null by
   `padic_lowerTriangular_leftQuotient_conull`, from
-  `Langlands.Group.GL.LowerTriangularBigCellConull` (Worker 234).
+  `Langlands.Group.GL.LowerTriangularBigCellConull`.
 
 ## Main theorem
 

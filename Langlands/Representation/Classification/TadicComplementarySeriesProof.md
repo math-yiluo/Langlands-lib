@@ -1,7 +1,5 @@
 # Proof of Tadić's complementary-series proposition
 
-Author: Worker 5219.
-
 The module `Langlands.Representation.Classification.TadicComplementarySeriesProof`
 proves `Langlands.Classification.ComplementarySeriesUnitarity.{uF, uV} F T` (Tadić 1986,
 Proposition 2.9) for every prime `p`, every `F : PadicField.{uF} p` and every
@@ -34,10 +32,10 @@ All ingredients other than the bridge are already in the Library and are importe
 by Lean name.
 
 - `Langlands.unitaryCharacterLimitSubquotients` (module
-  `Langlands.Representation.Unitary.CharacterLimitSubquotientsProof`, Worker 5667)
+  `Langlands.Representation.Unitary.CharacterLimitSubquotientsProof`)
   uses the corner-form gluing theorem `Langlands.CornerFormGluing.cornerFormGluing`
-  (Worker 4713) and the positive trace-form construction in
-  `Langlands.LinearAlgebra.PositiveTraceForms` (Worker 5219).
+  and the positive trace-form construction in
+  `Langlands.LinearAlgebra.PositiveTraceForms`.
 - The admissibility, finite-length and character-continuity lemmas for the
   complementary product are in `TadicComplementaryEndpointHelpers`, and the
   open-interval unitarity is in `TadicComplementarySeriesUnitarityProof`.

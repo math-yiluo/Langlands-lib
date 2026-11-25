@@ -1,7 +1,5 @@
 # Conjugation on the contracting subgroup
 
-Authors: Worker 1741 and Worker 1531 (interface and proof-route design).
-
 For an affine group scheme over an affine base, a cocharacter `χ`, and a base
 point `t` in its dynamic centralizer, `Affine.unipotentCommutator` is an actual
 endomorphism of `Affine.unipotentScheme χ`. Its formula after the closed
@@ -32,7 +30,7 @@ Ax–Grothendieck adapter gives surjectivity on those points. Lifting `u` throug
 the represented inclusion, choosing a commutator preimage and cancelling
 `t⁻¹` yields the required conjugacy equation.
 
-This unit is an internal consequence of the published all-test dynamic
+This module is an internal consequence of the published all-test dynamic
 representability and normalization results and Mathlib's Ax–Grothendieck
 theorem through the internal affine-scheme adapter. It introduces no additional
 external structure theorem or unproved premise. The theorem retains its

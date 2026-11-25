@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.Algebra.EssFinitePresentation
 
 /-! # Formal etaleness descended from a localized base change -/

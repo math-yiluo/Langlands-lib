@@ -1,6 +1,6 @@
 # Semigroup comparison from four structural prerequisites
 
-Worker 1372. Internal deduction using the kernel-contained fppf semigroup
+Internal deduction using the kernel-contained fppf semigroup
 transport theorem and the previous five-input comparison assembly.
 
 `semigroupAdjointImage_of_fixedCenterContainingTorus` derives
@@ -32,4 +32,6 @@ representatives, and all three intersection alternatives: zero excluded,
 subgroup solvable, or subgroup normal.
 
 All four inputs remain explicit unproved premises of this module. This
-conditional reduction does not complete the unconditional host theorem.
+conditional reduction does not by itself prove the unconditional comparison;
+`semigroupComparison` (module `Rational.SemigroupComparisonProof`) supplies the
+four inputs and proves it.

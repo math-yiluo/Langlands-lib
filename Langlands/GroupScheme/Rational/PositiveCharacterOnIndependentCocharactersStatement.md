@@ -1,6 +1,6 @@
 # A positive character on independent cocharacters of a split torus
 
-Worker 1633. This is an internal lattice prerequisite for the coefficientwise
+This is an internal lattice prerequisite for the coefficientwise
 moderate-growth argument on actual rational points. It is not attributed to a
 separate assertion in the literature.
 

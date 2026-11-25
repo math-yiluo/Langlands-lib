@@ -12,8 +12,8 @@ The source is Milne, *Abelian Varieties*, author revision of January 2, 2022 (re
 
 - p. 12, Proposition 8.1: for a homomorphism `f : A → B` of abelian varieties, (b) `dim A = dim B` and `f` surjective, is equivalent to (d) `f` finite, flat and surjective. Milne derives (b) ⇒ (c) (finite kernel) from the theorem on the dimension of fibres, and (c) ⇒ (d) by translations and local freeness.
 
-The proposition is (b) ⇒ (d) for endomorphisms, where `dim A = dim B` is automatic. The Library already proves (c) ⇒ (d) for endomorphisms over any field (`GroupScheme.fieldFiniteKernelIsogeny`). The missing step is (b) ⇒ (c).
+The proposition is (b) ⇒ (d) for endomorphisms, where `dim A = dim B` is automatic. The Library proves (c) ⇒ (d) for endomorphisms over any field (`GroupScheme.fieldFiniteKernelIsogeny`); the further step is (b) ⇒ (c). The proposition itself is proved by `fieldSurjectiveEndomorphismIsogeny` (module `Langlands.AbelianScheme.FieldSurjectiveEndomorphismIsogenyProof`), by a route through flatness.
 
 ## Scope
 
-The field is assumed algebraically closed. This is one of the four inputs of `IsogenyDegreeTateDeterminantNormReductionStatement` (Task 7330).
+The field is assumed algebraically closed. This is one of the four inputs of `IsogenyDegreeTateDeterminantNormReductionStatement` (module `Langlands.AbelianScheme.IsogenyDegreeTateDeterminantNormReduction`).

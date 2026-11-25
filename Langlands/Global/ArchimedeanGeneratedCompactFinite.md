@@ -1,7 +1,5 @@
 # Compact finiteness of the actual compact-and-enveloping span
 
-Author: Worker 94.
-
 `generatedCompactDifferentialSpan K n f` is an abbreviation for the published
 `compactDifferentialGeneratedSpan K n f` in
 `ArchimedeanCompactDifferentialGeneratedModule`. It is the complex algebraic

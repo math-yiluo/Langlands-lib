@@ -1,9 +1,5 @@
 # Proof of spectral residue exactness
 
-Lean proof and mathematical explanation: Worker 9. Worker 38 adopted the
-unchanged Lean proof, verified the accepted dependency bindings, and prepared
-this submission and its attribution.
-
 The closing theorem `Langlands.LocalGalois.spectralResidueExactness` proves
 `Langlands.LocalGalois.SpectralResidueExactness` in both independent field
 universes. Let \(K\) be a complete nontrivially normed ultrametric field and let
@@ -109,30 +105,21 @@ target. The reusable lemmas remain in this proof module.
 
 ## Exact dependencies and source relationship
 
-The selected statement is `SpectralResidueExactness`, artifact
-`c9ec9a6a-5b72-444a-bfb0-7c5406d5950d` version 1, with checked target fingerprint
+The statement is `SpectralResidueExactness`, with checked target fingerprint
 `94c3c18f724e4ee46b15aa630d07da23acf68bfe8fde21c9cebf23b1e9422c89`.
-It is independently accepted and published at commit
-`9007729971e6e6ecea63b5567b6d1621769ccfb0`, with final semantic receipt
-`3e22c642fec14152b4d69cc3af8b1248`. Its effective Lean and Markdown SHA-256
+It was published at Library commit
+`9007729971e6e6ecea63b5567b6d1621769ccfb0`. Its effective Lean and Markdown SHA-256
 values are `f7e2504aa32d31f58435b419a40c4cb4fae7f7da332768b2439832978e769e0a`
 and `3ee464a49247f774612cdd289b39e14b07fba54190b84221ac1c3ef2f47e2ef9`.
-Current Library membership and these exact dependency bytes were verified
-before preparing the native proof task. The definition dependency is the
-accepted, published `SpectralDefinitions` artifact
-`82bd181d-11b1-4000-afb6-1acdb762dd32` version 1. The pinned environment is
-`2ecc41bc-2901-4e34-96c5-6d98fbb3c74d` version 1: Lean 4.34.0 and Mathlib
+Its presence in the Library and these exact dependency bytes were verified.
+The definition dependency is the published `SpectralDefinitions`. The pinned
+environment is Lean 4.34.0 and Mathlib
 commit `5ed2965256430c3649e86755f9576b54eca72435`.
 
-Native proof task `f0e0e8d0-9bed-439a-a648-f7d8d9939d3b` revision 1 binds
-that exact statement and environment to this module and closing theorem.
-The supplied proof comes from the parent task's draft revision 3, content key
-`9491450f49e127f883cb78fa856b9c37e09b90379d8fc00de0fb3a8c6a842f33`.
-Its Lean SHA-256 is
-`0ec2c48c4e49e166a62db849a3f5a2f5b65dac72a9f23e28984d2a3a880e3c14`;
-the Lean file is unchanged from that draft. The statement and definition
-dependencies were fetched again and their final integrated pairs matched this
-checkout before submission.
+The Lean file's SHA-256 is
+`0ec2c48c4e49e166a62db849a3f5a2f5b65dac72a9f23e28984d2a3a880e3c14`.
+The statement and definition pairs used were checked to match those in the
+Library.
 
 The source relationship is inherited from the exact statement: Serre,
 *Local Fields*, Greenberg English translation, Springer GTM 67 (1979),

@@ -90,4 +90,4 @@ the affine-test quotient-fiber adapter, the existing inverse-conjugation
 identity, and the conditional split unipotent same-source correction.
 The smooth connected split kernel remains an assumption. Torus lifting as a
 group homomorphism, quotient maximality, and the full maximal-torus
-conjugacy theorem remain outside this contribution.
+conjugacy theorem remain outside this module.

@@ -43,8 +43,7 @@ topology.
 
 This proof is an internal derivation from the published arithmetic proofs,
 norm-kernel bridges and generic completion comparison. It adds no hypotheses
-to the target and does not require existence of a reciprocity map. Worker 1607
-implements the arithmetic application and assembly; Worker 1556 supplies the
-generic topological comparison in `CompletionComparison`. The imported
-arithmetic proofs retain their authorship and provenance in their own paired
+to the target and does not require existence of a reciprocity map. The
+generic topological comparison is in `CompletionComparison`. The imported
+arithmetic proofs retain their provenance in their own paired
 Markdown.

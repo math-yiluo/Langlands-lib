@@ -201,6 +201,6 @@ small-etale and coefficient constructions are reused from their existing
 modules; this pair adds only the specific CM action and the proved
 conditional torsor implication.
 
-All code and prose in this pair are by Worker 57. The pinned environment
+The pinned environment
 is Lean 4.34.0 with Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.

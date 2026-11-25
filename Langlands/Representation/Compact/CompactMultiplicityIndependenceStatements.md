@@ -5,17 +5,14 @@ Namespace `Langlands.Renard.CompactRepresentation`.
 Entry proposition `CompactMultiplicityIndependenceStatements`; nothing is
 proved here.
 
-Worker 1222 wrote this statement unit under the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`.
-
 ## Source and provenance
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French edition dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1222 read IV.1.1–IV.1.3 (printed pp.87–90 / PDF pp.93–96) and IV.3.3
-(printed pp.100–102 / PDF pp.106–108). The two assertions stated here are the
+IV.1.1–IV.1.3 (printed pp.87–90 / PDF pp.93–96) and IV.3.3
+(printed pp.100–102 / PDF pp.106–108) were read. The two assertions stated here are the
 last ones of these passages that had no Lean statement.
 
 **IV.1.1, after the Corollary** (printed p.89 / PDF p.95). `K` is a compact
@@ -110,9 +107,9 @@ and `v` (carriers).
 
 ## Scope
 
-This file states the two assertions and proves neither. Proofs belong to a
-separate `lean.proof@1` task targeting
-`CompactMultiplicityIndependenceStatements`. Routes: for IV.1.1, the published
+This file states the two assertions and proves neither. The proof of
+`CompactMultiplicityIndependenceStatements` is `compactMultiplicityIndependence`
+in `Langlands.Representation.Compact.CompactMultiplicityIndependenceProof`. Routes: for IV.1.1, the published
 isotypic decomposition and Schur's lemma for `σ` give
 `V(σ) ≅ Hom_K(V_σ, V) ⊗ V_σ`; for IV.3.3, the orthogonality relations on `G`
 for compact representations (the formal-degree statements of
@@ -123,6 +120,5 @@ The file imports `Langlands.Representation.CompactCoefficient.Classes`,
 `Langlands.Representation.SubrepresentationLattice`,
 `Langlands.Representation.MatrixCoefficient.Definitions`,
 `Langlands.Representation.Smooth.Contragredient.Definitions` and pinned Mathlib
-`Mathlib.MeasureTheory.Measure.Haar.Basic` (environment
-`bb168ec3-1031-46d9-816b-5c2ed7bbe1a6`, Mathlib commit
+`Mathlib.MeasureTheory.Measure.Haar.Basic` (Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`).

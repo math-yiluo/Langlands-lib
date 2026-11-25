@@ -1,7 +1,5 @@
 # Two-block L-polynomial multiplicativity in every rank order
 
-Author: Worker 465.
-
 `Langlands.RankinSelberg.twoBlockLFactorMultiplicativity` proves exactly the
 published `TwoBlockLFactorMultiplicativityStatement.{uF,uV,uW}` from
 [TwoBlockMultiplicativityStatement](TwoBlockMultiplicativityStatement.md).

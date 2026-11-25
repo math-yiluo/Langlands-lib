@@ -1,11 +1,8 @@
 # Almost-everywhere unramified Galois actions on étale cohomology
 
-Author: Worker 3, for the Harris and Berkovich cohomological
-theorem-statement framework (task `b91b0934-0122-4c05-b359-4e7ed64bbe3d`).
-
 This module states one proposition, `GaloisCohomologyUnramifiedStatement`.
 Let `K` be a number field and `f : X ⟶ Spec K` a morphism of finite type.
-Worker 13's published `Langlands.Geometry.EtaleGaloisAction` lets the
+The published `Langlands.Geometry.EtaleGaloisAction` lets the
 absolute Galois group `Gal(K̄/K)` act on the étale cohomology of
 `X_K̄ = X ×_{Spec K} Spec K̄` with constant coefficients. The proposition
 says that for a finite coefficient module `M` and a degree `n`, this action
@@ -19,7 +16,7 @@ Harris (1999) works with Galois representations "unramified at all but
 finitely many places" (see [Provenance](#provenance)). This module states
 that property for the étale cohomology of finite-type schemes with finite
 constant coefficients. It is an input to the almost-everywhere unramified
-association, which the task keeps separate from ramified local
+association, which is treated separately from ramified local
 compatibility.
 
 ## Objects
@@ -33,12 +30,12 @@ All types live in one universe `u`.
 - `R` is a commutative ring. `M : ModuleCat R` is quantified inside the
   proposition with the instance `[Finite M]`: the underlying set of `M` is
   finite. `n : ℕ` is the degree.
-- `galoisCohomologyRep (L := AlgebraicClosure K) f R M n` is Worker 13's
+- `galoisCohomologyRep (L := AlgebraicClosure K) f R M n` is the Library's
   representation of `AlgebraicClosure K ≃ₐ[K] AlgebraicClosure K` on the
   degree-`n` étale cohomology of `X_K̄ := baseChange K (AlgebraicClosure K) f`
   with coefficients in the constant sheaf of `M`, computed in sheaves of
-  `R`-modules on Mathlib's small étale site (Worker 13's
-  `Langlands.Geometry.EtaleDerivedSections`). The published
+  `R`-modules on Mathlib's small étale site
+  (`Langlands.Geometry.EtaleDerivedSections`). The published
   [EtaleGaloisSmooth](../EtaleGaloisSmooth/Statement.md) explains the
   action: `σ` acts by the pullback along `baseChangeMap f σ`, the identity
   on `X` times `Spec σ` on `Spec K̄`.
@@ -56,8 +53,8 @@ All types live in one universe `u`.
   `localInertia v` acts trivially on `A` after restriction along Mathlib's
   chosen closure embedding `chosenClosureEmbedding`, a `K`-algebra map from
   `K̄` to the algebraic closure of the completion `K_v`. Here
-  `localInertia v` (published module `Langlands.Galois.CompatibleFamily`,
-  Worker 41) is the kernel of the action of the absolute Galois group of
+  `localInertia v` (published module `Langlands.Galois.CompatibleFamily`)
+  is the kernel of the action of the absolute Galois group of
   `K_v` on the residue field of its algebraic closure, and the restriction
   `localRestriction v ι g` is the unique element `σ` of `Gal(K̄/K)` with
   `ι ∘ σ = g ∘ ι` (`localRestriction_commutes`). The published theorem
@@ -82,7 +79,7 @@ finite set `S` of finite places of `K` such that, for every finite place
 `v ∉ S`, the inertia subgroup at `v` acts trivially on
 `H^n(X_K̄, M)`. The set `S` may depend on `M` and `n`.
 
-The test lemma `isUnramifiedAt_repToAction_iff` of check `526e7ba1` (below)
+The test lemma `isUnramifiedAt_repToAction_iff` of the first check below
 spells out the condition for an arbitrary `A : Rep R (Field.absoluteGaloisGroup K)`:
 `IsUnramifiedAt` holds for `(Rep.RepToAction R _).obj A` if and only if
 `A.ρ (localRestriction v (chosenClosureEmbedding _) i) = LinearMap.id` for
@@ -199,15 +196,14 @@ Related Library declarations:
 
 - The published [EtaleGaloisSmooth](../EtaleGaloisSmooth/Statement.md)
   states that the same Galois action is smooth for the Krull topology.
-- `Langlands.Shimura.DecompositionGroupAction` (no Author line) defines
+- `Langlands.Shimura.DecompositionGroupAction` defines
   `IsUnramifiedAt` for objects of `Action V (Field.absoluteGaloisGroup K)`
   and proves that it is independent of the closure embedding, invariant
   under isomorphism, and that unramified actions give a well-defined
   geometric Frobenius. It proves unramifiedness of no specific object.
-- `Langlands.Shimura.PEL.HarrisTaylorCMDecompositionCohomology` (no Author
-  line) takes unramifiedness of the CM cohomology as a hypothesis of its
+- `Langlands.Shimura.PEL.HarrisTaylorCMDecompositionCohomology` takes unramifiedness of the CM cohomology as a hypothesis of its
   Frobenius results.
-- `Langlands.GaloisRepresentation.IsUnramifiedAt` (Worker 41, module
+- `Langlands.GaloisRepresentation.IsUnramifiedAt` (module
   `Langlands.Galois.CompatibleFamily`) is the analogous predicate for
   finite-dimensional representations in compatible families. It is not used
   here.
@@ -251,32 +247,31 @@ Related Library declarations:
 ## Formal dependencies and checks
 
 Direct project imports, in Library commit
-`568f1cff4df2c51ba08b932716bf99235d0032c7` and the workspace:
+`568f1cff4df2c51ba08b932716bf99235d0032c7`:
 
-| Module | Author | Lean SHA-256 | Markdown SHA-256 |
-| --- | --- | --- | --- |
-| `Langlands.Geometry.EtaleGaloisAction` | Worker 13 | `5d07cffce7425cbd24204e0f65a5ca913c1570e7c5621aae229d13beb0e581fa` | `d9c5b185b7b92d780aeceaa828ac8440c29a30872c2099428cd5a5776dc885f6` |
-| `Langlands.Shimura.DecompositionGroupAction` | no Author line | `9a5ae46b57a07e743845d7980e90a00a4db618f2e14fee54dc16f303e91cda43` | `317291d8aad940a67f73157ad08598516b9d3cb5731f195dd524085ac58b4cfc` |
+| Module | Lean SHA-256 | Markdown SHA-256 |
+| --- | --- | --- |
+| `Langlands.Geometry.EtaleGaloisAction` | `5d07cffce7425cbd24204e0f65a5ca913c1570e7c5621aae229d13beb0e581fa` | `d9c5b185b7b92d780aeceaa828ac8440c29a30872c2099428cd5a5776dc885f6` |
+| `Langlands.Shimura.DecompositionGroupAction` | `9a5ae46b57a07e743845d7980e90a00a4db618f2e14fee54dc16f303e91cda43` | `317291d8aad940a67f73157ad08598516b9d3cb5731f195dd524085ac58b4cfc` |
 
-Through these imports the module uses Worker 13's
+Through these imports the module uses
 `Langlands.Geometry.EtaleConstantCohomology` (`constantCohomologyRep`) and
-Worker 41's `Langlands.Galois.ClosureRestriction` (`chosenClosureEmbedding`)
-and `Langlands.Galois.CompatibleFamily` (`localInertia`). The environment is
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`: Lean 4.34.0, Mathlib commit
+`Langlands.Galois.ClosureRestriction` (`chosenClosureEmbedding`)
+and `Langlands.Galois.CompatibleFamily` (`localInertia`). The Lean environment
+of the checks is Lean 4.34.0, Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`.
 
 Checks against Library `568f1cff`, on the final Lean file (SHA-256
 `f061ad9b56726fbdcde8f3760d3760708ea3948a07763a85b1a0502f6f35caaa`). None reported errors or warnings.
 
-- `526e7ba1-7942-4049-9df2-f6944e4c54ac` compiled the file from a draft
-  directory together with a test file
+- A first check compiled the file together with a test file
   (`Langlands/Inspect/EtaleGaloisUnramifiedPrint.lean`, SHA-256
-  `de494a79265232e065e3d111c87f7260102cf562b6f4a537b64a8581423ed6ee`), not part of the candidate. It printed
+  `de494a79265232e065e3d111c87f7260102cf562b6f4a537b64a8581423ed6ee`), not part of this module. It printed
   `GaloisCohomologyUnramifiedStatement` with universes: a `Prop`-valued
   definition with the single universe parameter `u`. It proved
   `isUnramifiedAt_repToAction_iff`, which depends only on `propext`,
   `Classical.choice` and `Quot.sound`.
-- `5e039e66-b4df-44b5-a0d1-eda4c361255e` built the file with Lake from the workspace and
+- A second check built the file with Lake and
   inspected `GaloisCohomologyUnramifiedStatement`: a `Prop`-valued
   definition with the universe parameter `u`, depending only on `propext`, `Classical.choice` and
   `Quot.sound` (type hash `51b46f1d424817b9b246643699c08a78d18823c7aadc4e7708ba608a8f63b968`).

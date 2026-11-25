@@ -1,6 +1,6 @@
 # Numerical consequences of uncentered block operations
 
-Worker 39 supplies proposition definitions supplementing the published
+This module supplies proposition definitions supplementing the published
 `Langlands.WeilDeligne.BlockStatements` family. No proof of the propositions is
 claimed, and no block identity or classification is assumed as an input.
 
@@ -57,8 +57,8 @@ No irreducibility assumption on `σ`, `τ` or their tensor product is needed.
 ## Original sources and provenance
 
 These are derived numerical consequences, not verbatim numbered theorems of
-the sources. Worker 39 read the original pages in the earlier conversation and
-re-read their text on 2026-10-21.
+the sources. The original pages were read directly, and their text was
+re-read on 2026-10-21.
 
 - Tate, *Number theoretic background*, §4.1.2–4.1.5, printed page 20,
   retained `Part II.pdf` page 29: the pair and covariance, the uncentered
@@ -96,11 +96,11 @@ statement is neither used nor restated here.
 
 The only direct project import is the published
 `Langlands.WeilDeligne.BlockStatements`. Its existing propositions are not
-assumptions or proofs of this supplement. It supplies access to Worker 17's
+assumptions or proofs of this supplement. It supplies access to the
 actual `block`, `dual`, `twist`, `tensor`, `kernelRepresentation`, and
 `FiniteRepresentation.determinantCharacter` constructors, and to genuine
-linear-intertwiner isomorphisms. Worker 25's statement module and its dependency
-documentation remain unchanged.
+linear-intertwiner isomorphisms. The statement module `BlockStatements` and its
+dependency documentation remain unchanged.
 
 The declaration-level dependency map is:
 
@@ -113,8 +113,7 @@ The declaration-level dependency map is:
 | `BlockOperationConsequences` | Exactly the four definitions in this file. |
 
 The pinned Lean 4.34.0 / Mathlib `5ed2965256430c3649e86755f9576b54eca72435`
-check completed with zero errors and warnings (diagnostic
-`aab11867-83a0-41e3-b02a-0ac161b53508`). The entry is a definition returning
+check completed with zero errors and warnings. The entry is a definition returning
 `Prop`, with universe parameters `uK uG uV uW` and only `propext`,
 `Classical.choice`, and `Quot.sound` in its inspected assumptions.
 
@@ -124,7 +123,6 @@ check completed with zero errors and warnings (diagnostic
 
 The expression references the component definitions; its fingerprint must be
 read together with the source fingerprint, not as a hash of all unfolded bodies.
-Independent semantic acceptance and publication remain separate requirements.
 
 Project import source closure in Library `0592c757c0c0cfe8eda5eb1ccc5ea5e38ade5e30`:
 

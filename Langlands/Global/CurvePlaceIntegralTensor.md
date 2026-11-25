@@ -100,7 +100,7 @@ comparison.
 ## Provenance and retained obligations
 
 The finite-coefficient and compact-image arguments adapt the published
-`AdelicFunctoriality.IntegralLocalComparisonProof` (Worker 461), itself adapted
+`AdelicFunctoriality.IntegralLocalComparisonProof`, itself adapted
 from Imperial FLT commit `923d45174c500aa1d994ba973bac38ea39eacbf7` under
 Apache-2.0. The Lean header retains that attribution and the upstream license
 location. The present construction uses actual curve places and the local
@@ -109,7 +109,7 @@ flatness, shortens the coefficient transport by cancellation of base change,
 and uses the proved full lattice density in place of a new Chinese-remainder
 approximation proof.
 
-This unit is an algebraic comparison on actual integer rings. The associated
+This module is an algebraic comparison on actual integer rings. The associated
 finite-module topology, integral Weil point homeomorphism, compatibility with
 spreading to global models and the adelic homeomorphism remain separate
-obligations of the parent task.
+obligations.

@@ -1,6 +1,6 @@
 # L-factors of the assembled correspondence
 
-Author: Worker 7. This module states two results of Henniart 2002 about the
+This module states two results of Henniart 2002 about the
 assembly of a supercuspidal correspondence (`AssemblyRelation`) and pair
 L-factors (`FullLFactorCompatibility`):
 
@@ -99,7 +99,8 @@ Source file: `henniart-2002-characterization`, SHA-256
   §2.9. Here it is the relation `IsAssemblyOf F c0` of `AssemblyRelation`.
   "`τ_n = π_n` for all `n`" becomes: `τ` is an assembly of `c0`, and every
   assembly of `c0` equals `τ`. The second conjunct also follows from the
-  first and the published, unproved `AssemblyWellDefinedStatement`. It is
+  first and the published `AssemblyWellDefinedStatement` (proved as
+  `assemblyWellDefined` in `AssemblyWellDefinedProof`). It is
   included so that the conclusion says that `τ` is *the* assembly without
   relying on that statement.
 - **One additive character.** Henniart fixes one nontrivial `ψ` (§1.1), and
@@ -121,8 +122,10 @@ Source file: `henniart-2002-characterization`, SHA-256
 
 ## Scope
 
-- This module's inheritance and characterization goals remain L-only and
-  unproved. The nongeneric epsilon product of Henniart 2002, §2.8, is
+- This module's inheritance and characterization statements are L-only and
+  are not proved here; `assemblyLInheritance` (`AssemblyLInheritanceProof`) and
+  `assemblyLCharacterization` (`AssemblyLCharacterizationProof`) prove them.
+  The nongeneric epsilon product of Henniart 2002, §2.8, is
   implemented in `RankinSelberg/LanglandsFactors`, with actual quotient-data
   witnesses, block-factor existence and datum independence required by its
   constructor. The published `FullFactorCompatibility` supplies the epsilon
@@ -130,8 +133,9 @@ Source file: `henniart-2002-characterization`, SHA-256
   compatibility; `FullSpecification` supplies `IsFullCorrespondence` and
   unproved existence and uniqueness goals (see `FullLFactorCompatibility`,
   Scope).
-- The epsilon part of Theorem 1.5(iii) is the separate, unproved
-  `AssemblyEpsilonInheritanceStatement` in `AssemblyTheorems`: a
+- The epsilon part of Theorem 1.5(iii) is the separate
+  `AssemblyEpsilonInheritanceStatement` in `AssemblyTheorems` (proved as
+  `assemblyEpsilonInheritance` in `AssemblyEpsilonInheritanceProof`): a
   supercuspidal correspondence and its assembly satisfy
   `FullEpsilonCompatibility` for each geometrically normalized reciprocity
   candidate. The same module's `ConditionalAssemblyStatement` says that,
@@ -141,26 +145,22 @@ Source file: `henniart-2002-characterization`, SHA-256
   every corollary mentioned above, or unconditional analytic existence,
   classification or descent.
 - Theorems 1.6, 1.7 and 1.9 characterize classes on one side only (the
-  parameter side or the representation side); they are not statements of
-  this task.
-- The module imports, and does not copy: this task's
+  parameter side or the representation side); they are not stated in
+  this module.
+- The module imports, and does not copy:
   `FullLFactorCompatibility` (`IsPairLCompatibleAt`,
   `FullPairLCompatibility`), `AssemblyRelation` (`IsAssemblyOf`),
   `SupercuspidalSpecification` (`IsSupercuspidalCorrespondence`) and
   `Domains` (`IsZeroMonodromyOf`, `ExtendsSupercuspidal`), and the published
   `WeilDeligne/BlockStatements` (`Blocks.IsIndecomposable`).
-- This candidate also changes `AssemblyRelation.lean`. Its two local
-  topology instances now have explicit names (`assemblyFieldTopology`,
-  `assemblyGeneralLinearTopology`). Before, `AssemblyRelation` and
-  `ArithmeticFactors` both received the automatic name
-  `instTopologicalSpaceCarrier_4`, so no module could import both. No other
-  declaration of `AssemblyRelation` changes, and its Markdown does not
-  mention the instances.
+- The two local topology instances of `AssemblyRelation.lean` have explicit
+  names (`assemblyFieldTopology`, `assemblyGeneralLinearTopology`). With
+  automatic names, `AssemblyRelation` and `ArithmeticFactors` would both
+  declare `instTopologicalSpaceCarrier_4`, and no module could import both.
 
 ## Validation
 
-The module compiles in the project Lean service, together with
-`FullLFactorCompatibility` and the edited `AssemblyRelation`, with no errors
+The module compiles, together with
+`FullLFactorCompatibility` and `AssemblyRelation`, with no errors
 or warnings. There is no `sorry` and no new axiom. Every definition returns
-`Prop`; the inspection of `AssemblyLCharacterizationStatement` reports
-`statement_returns_prop`.
+`Prop`, `AssemblyLCharacterizationStatement` included.

@@ -20,9 +20,11 @@ No reductivity, maximality, root datum, reducedness, or algebraic closedness is
 assumed in these field-extension lemmas. The content is derived from the
 published actual-root and actual-weight scalar-extension comparisons.
 
-Worker 785 authored the descent component of Task 7509 in coordination with
-Worker 777, who owns the conditional cell construction. This helper does not
-prove the final root-cell statement or the independent geometric input.
+This module is the descent component of the independent root-cell
+construction, whose conditional cell construction is
+`splitRankOneRootCell_of_supportLines` in `Reductive.IndependentRootCellReduction`.
+This helper does not prove the final root-cell statement or the independent
+geometric input.
 
 The module also proves the equivalence between the two structural
 interfaces. The forward direction restricts the field quantifier. For the

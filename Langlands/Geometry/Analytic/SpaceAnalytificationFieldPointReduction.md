@@ -1,6 +1,6 @@
 # Base-field points and the remaining analytification descent
 
-This internal unit proves injectivity of the underlying-point projection for
+This internal module proves injectivity of the underlying-point projection for
 base-field-valued points of every affinoid atlas and every object of the
 localized analytic category. It also constructs the field-valued point attached
 to an algebraic rational point, conditional on the explicitly supplied
@@ -47,7 +47,7 @@ field-point map. The second, together with the unconditional projection
 injectivity, proves its surjectivity. `Equiv.ofBijective` supplies the desired
 equivalence and preserves the already proved underlying-point formula.
 
-This unit does not prove these two premises, the affine comparison, or the
+This module does not prove these two premises, the affine comparison, or the
 complete `SpaceAnalytificationFieldPointsStatement`. In particular, an étale
 chart over a rational target point need not have a rational lift; the retained
 image premise needs descent through a possible residue-field extension.
@@ -57,15 +57,16 @@ image premise needs descent through a possible residue-field extension.
 This is an internal derivation from the published `FieldValuedPoints`,
 `SaturatedStrongLocalization`, `SpaceAnalytification`, and affine rational-point
 statement interfaces. The scalar-subtraction argument is the elementary
-base-field character argument described in the published field-point target's
-Markdown. It also appears in the independently developed, still unpublished
-`FieldPointSaturation` helper of Task 7084; the present unit supplies its own
-short argument and imports no unpublished declarations.
+base-field character argument described in the Markdown of the published
+field-point statement `SpaceAnalytificationFieldPointsStatement`. It also
+appears in the module `FieldPointSaturation`, whose
+`FieldPointSaturationComparison.fieldPoint_ext` the projection proof above
+applies.
 
-The eventual image argument is motivated by Conrad–Temkin,
+The image argument is motivated by Conrad–Temkin,
 *Non-archimedean analytification of algebraic spaces* (2009), Example 2.3.2,
 printed pp.11–12, registered as
 `conrad-temkin-2009-nonarchimedean-analytification`. That passage uses
 residually trivial pointed étale neighborhoods and fibre products to identify
 closed points while preserving residue fields. No completed-residue-field
-comparison or descent result from that passage is claimed in this unit.
+comparison or descent result from that passage is claimed in this module.

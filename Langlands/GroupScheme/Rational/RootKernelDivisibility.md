@@ -35,7 +35,7 @@ This implements the quotient-factorization step in Conrad–Gabber–Prasad,
 printed pp.604–605 (PDF pp.630–631), registered source
 `conrad-gabber-prasad-2015-pseudo-reductive`. It is an internal derived
 construction from the published actual kernels, normalizer action, fpqc
-character theorem, and the homomorphism descent construction authored by
-Worker 1335. It assumes a suitable normalizing point; it does not construct
+character theorem, and the homomorphism descent construction of
+`HomDescent`. It assumes a suitable normalizing point; it does not construct
 one or prove that it sends a relative root to its negative. Those geometric
-inputs are still needed for intrinsic relative-root reflection existence.
+inputs are needed for intrinsic relative-root reflection existence.

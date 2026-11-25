@@ -79,7 +79,8 @@ private theorem weightedSeminorm_scale_le {c : ℝ} (hc : 0 ≤ c) (G : E → �
       exact mul_le_mul' (ENNReal.ofReal_le_ofReal (mul_le_mul_of_nonneg_left hpow hc)) le_rfl
     _ ≤ _ := mul_le_mul' le_rfl (le_iSup₂_of_le ρ hρ le_rfl)
 
-private theorem weightedSeminorm_lt_top {G : E → ℝ} {x₀ : E} {R : ℝ} (hR : 0 ≤ R)
+/-- A function continuous on the closed ball has finite weighted seminorms. -/
+theorem weightedSeminorm_lt_top {G : E → ℝ} {x₀ : E} {R : ℝ} (hR : 0 ≤ R)
     (hG : ContinuousOn G (closedBall x₀ R)) (m : ℕ) :
     ballWeightedSeminorm G x₀ R m < ⊤ := by
   have : IsFiniteMeasure (volume.restrict (closedBall x₀ R)) :=
@@ -275,7 +276,9 @@ private theorem exists_weightedRecursion
   rwa [← mul_assoc f g, hfg, one_mul, ← mul_assoc f, mul_add, ← mul_assoc _ C B,
     ← mul_assoc (f * ENNReal.ofReal K₃) g W, mul_right_comm f _ g, hfg, one_mul] at hf
 
-private theorem absorbs_half {X Y : ℝ≥0∞} (hX : X ≠ ⊤)
+/-- Half-absorption in `ℝ≥0∞`: a finite quantity bounded by half itself plus `Y` is at most
+`2 * Y`. -/
+theorem absorbs_half {X Y : ℝ≥0∞} (hX : X ≠ ⊤)
     (h : X ≤ ENNReal.ofReal (1 / 2 : ℝ) * X + Y) :
     X ≤ ENNReal.ofReal (2 : ℝ) * Y := by
   by_cases hY : Y = ⊤

@@ -1,6 +1,6 @@
 # Principal generation-open lifting on qcqs schemes
 
-`Langlands.SchemeModule.principalGenerationOpenLift` proves exactly the published
+`Langlands.SchemeModule.principalGenerationOpenLift` proves exactly
 `Langlands.SchemeModule.PrincipalGenerationOpenLiftStatement.{u}` in arbitrary
 universe `u`. Import it from
 `Langlands.AlgebraicGeometry.Modules.PrincipalGenerationOpenLiftProof`.
@@ -16,7 +16,7 @@ trivializationOpen (tensorPow M.obj k) t = X.basicOpen r.
 
 The only assumptions on `X` are `CompactSpace X` and `QuasiSeparatedSpace X`.
 There are no nonzero or nonempty assumptions on `X`, `U`, `s`, or `r`. Tensor
-powers are the published right-associated powers with trailing structure-sheaf
+powers are the Library's right-associated powers with trailing structure-sheaf
 factor: the zeroth power is `structureSheaf X`, and power `n + 1` is
 `tensorObj M.obj (tensorPow M.obj n)`. Both sides of the equality are whole opens
 of the ambient scheme `X`.
@@ -52,7 +52,7 @@ inclusion. This calculation requires no line-bundle or qcqs hypothesis.
 
 `trivializesOn_sectionPow_generationOpen` proves that for every `n ≥ 0`,
 `sectionPow M.obj s n` trivializes `tensorPow M.obj n` on `U`. At `n = 0`, the
-published theorem `trivializationOpen_sectionPow_zero` says that the unit
+theorem `trivializationOpen_sectionPow_zero` says that the unit
 section generates everywhere. For successor exponents,
 `trivializationOpen_sectionPow_succ` identifies the whole generation open with
 `U`. In both cases `maximalTrivialization` yields the stated restriction.
@@ -79,14 +79,15 @@ open is contained in `U`, including when `n = 0`.
 
 ## Unconditional assembly
 
-The final theorem invokes the published unconditional
+The final theorem invokes the unconditional
 `Langlands.SchemeModule.lineBundleSectionClearing` from
 `Langlands.AlgebraicGeometry.Modules.LineBundleSectionClearingProof`. On the
 qcqs scheme this provides precisely `n`, `a`, and the restriction equality
 needed by `principalGenerationOpenLift_of_clearedSection`. All auxiliary
 premises are thereby discharged. No localization, extension, comparison,
-quasi-coherence, or ampleness premise remains in the theorem's type. Neither
-final theorem of the parent ampleness task is used.
+quasi-coherence, or ampleness premise remains in the theorem's type. No proof
+of the ampleness statements of
+`Langlands.AlgebraicGeometry.Picard.AmpleSectionOpenStatements` is used.
 
 The proof and all helpers use only the standard axioms `propext`,
 `Classical.choice`, and `Quot.sound`.
@@ -103,9 +104,5 @@ The source's concluding localization isomorphism supplies the scalar clearing
 step, already proved in `LineBundleSectionClearingProof`. Its proof implements
 the corrected common-exponent argument recorded in comments #4719 and #4809.
 The present proof implements the subsequent locus calculation and final
-multiplication described in the published target's paired Markdown; it does
+multiplication described in the Markdown of the statement; it does
 not assert the source's general quasi-coherent localization isomorphism.
-
-Worker 311 supplied the componentwise scalar-frame argument and tensor
-assembly; Worker 5 instantiated that assembly with the published clearing
-theorem and prepared the final proof and explanation.

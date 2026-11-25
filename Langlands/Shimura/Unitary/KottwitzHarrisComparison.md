@@ -3,12 +3,12 @@
 Module `Langlands.Shimura.Unitary.KottwitzHarrisComparison`, namespace
 `Langlands.Shimura.KottwitzDual`.
 
-This module is item 5 of Task 5424. It covers the Shimura data used by Harris
+This module covers the Shimura data used by Harris
 (1999) and Clozel (1991): signature `(n − 1, 1)` at one real place `τ₀` of the
 totally real field and `(n, 0)` at the others. For these data it proves an
-identity that expresses Kottwitz's polynomial `P(π_p, E_v)` (item 3, module
+identity that expresses Kottwitz's polynomial `P(π_p, E_v)` (module
 `KottwitzPolynomial`) through the unramified base-change parameters `BC(π)_w`
-(item 4, module `KottwitzBaseChange`) at the place `w` of the CM field defined
+(module `KottwitzBaseChange`) at the place `w` of the CM field defined
 by `θ ∘ Φ τ₀`:
 
 ```
@@ -202,8 +202,8 @@ The public declarations are:
   N(e_{τ₀,j}) = embeddingCochar θ Φ ((f / f_w) • λ_{w,j}),
   ```
 
-  where `λ_{w,j} = positionCocharacter E p n w j` is item 4's position
-  cocharacter. Its coordinates are `+1` at `(w, j)` and `−1` at
+  where `λ_{w,j} = positionCocharacter E p n w j` is the position
+  cocharacter used by `KottwitzBaseChange`. Its coordinates are `+1` at `(w, j)` and `−1` at
   `(w̄, rev j)`. Proof: by `normCochar_posCochar_snd`, the coordinate `(τ, k)`
   of the norm counts the `r < f` with `F^r Φ τ = Φ τ₀` (when `k = j`), minus
   those with `F^r Φ τ = conj Φ τ₀` (when `rev k = j`). By the counting lemma
@@ -218,8 +218,8 @@ The public declarations are:
   ⟨t, N(e_{τ₀,j})⟩ = β_j^{f / f_w},   β_j = c.positionValue s ξ w j.
   ```
 
-  Here `β_j = ξ(λ_{w,j}(p)) · s^{f_w (n − 1 − 2j)}` is item 4's unitarily
-  normalized position value. Proof: by the previous identity and the
+  Here `β_j = ξ(λ_{w,j}(p)) · s^{f_w (n − 1 − 2j)}` is the unitarily
+  normalized position value used by `KottwitzBaseChange`. Proof: by the previous identity and the
   normalization, the pairing is `ξ(λ_{w,j}(p))^{f/f_w} · s^{⟨2ρ, N(e_{τ₀,j})⟩}`.
   By the `TwoRho` section, `⟨2ρ, N(e_{τ₀,j})⟩ = f (n − 1 − 2j)`. Here `f_w`
   divides `f` (`hper`, with `F^f Φ τ₀ = Φ τ₀`), so this exponent is
@@ -244,14 +244,14 @@ The public declarations are:
   `kottwitzCharpoly_harris` and `cocharPairing_normCochar_posCochar_harris`.
 - `kottwitzPolynomialOf_harris_baseChangeParameter`: the same polynomial is
   `∏_{β ∈ BC(π)_w} (X − α · β^{f / f_w})`, the product over the multiset
-  `c.baseChangeParameter s ξ w` of item 4. That multiset is `symOfFn` of the
+  `c.baseChangeParameter s ξ w` of `KottwitzBaseChange`. That multiset is `symOfFn` of the
   position values.
 
 Consequently, if `ξ` is a principal-series parameter of `π_p`, every
-polynomial in the relation `IsKottwitzPolynomialOver` (item 3) obtained from
-`ξ` has the above form, with `BC(π)_w` the base-change parameter of item 4
-(`IsBaseChangeParameterOf`). The relations themselves are defined in items 3
-and 4 and are not restated here.
+polynomial in the relation `IsKottwitzPolynomialOver` (`KottwitzPolynomial`) obtained from
+`ξ` has the above form, with `BC(π)_w` the base-change parameter of `KottwitzBaseChange`
+(`IsBaseChangeParameterOf`). The relations themselves are defined in `KottwitzPolynomial`
+and `KottwitzBaseChange` and are not restated here.
 
 ### Hypotheses
 
@@ -364,7 +364,7 @@ datum is `H.hodgeFunction` (module `Reflex`).
 - **Kottwitz (1992), §1, printed pp.656-657.** `V(π_p, E_v) =
   (r ∘ φ_{E_v}(π_p)) ⊗ χ`, and `P(π_p, E_v)` is the characteristic polynomial
   of `Φ_v` on it. The objects `kottwitzFrobenius` and `kottwitzPolynomialOf`
-  are item 3's formalization of these, and this module computes them.
+  are the formalization of these in `KottwitzPolynomial`, and this module computes them.
 - **Clozel (1991), §5, (5.24)-(5.31), printed pp.140-141.** Clozel computes
   the image of Frobenius under the parameter in the same situation. Formula
   (5.26) gives the diagonal element `(t_{π_c,u}, …, t_{π_c,u}; β_u(ϖ_u))` of
@@ -377,7 +377,7 @@ datum is `H.hodgeFunction` (module `Reflex`).
   is one scalar `α` times a unitarily normalized base-change Satake parameter.
   The power `β^{f/f_w}` is the restriction from `W_{K_w}` to `W_{E_v}`, the
   analogue of Clozel's passage from `𝓕_u` to `𝓕_w`. The inverse in (5.27)
-  corresponds to the choice of place. At the conjugate place `w̄`, item 4
+  corresponds to the choice of place. At the conjugate place `w̄`, `KottwitzBaseChange`
   gives the inverse parameters (`baseChangeParameter_placeConj`:
   `BC(π)_{w̄} = BC(π)_w^{−1}`, with `f_{w̄} = f_w`). So the identity can be
   read either with `BC(π)_w` or with the inverses of `BC(π)_{w̄}`. This
@@ -434,8 +434,8 @@ datum is `H.hodgeFunction` (module `Reflex`).
   `525a222c4489ee9d3fe86a52c6c17ffb30fcc7c31f24c16a64669e9615085b26`): the
   local factor at `w` is `L(s, BC_{𝒦/E}(π)_w)`.
 
-Provenance. The statement is derived. Kottwitz's `V` and `P` and item 4's
-base-change parameters are the source objects. The identity is the explicit
+Provenance. The statement is derived. Kottwitz's `V` and `P` and the
+base-change parameters of `KottwitzBaseChange` are the source objects. The identity is the explicit
 form, in the Library's coordinates, of the computation (5.24)-(5.31) of
 Clozel. The Lean proof is internal: diagonalization in the standard basis,
 counting Frobenius returns, and the `2ρ` invariance. It is described above.

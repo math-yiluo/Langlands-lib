@@ -1,7 +1,5 @@
 # Independence of closure inflation from the chosen isomorphism
 
-Author: Worker 272.
-
 This module states one proposition,
 `ClosureInflationTransportIndependence.{u,v}`. It defines no data and proves
 nothing.

@@ -29,7 +29,7 @@ diffs):
 Declaration names and namespaces are unchanged. Apart from the universe generalization, the
 mathematical hypotheses and conclusions of the source are retained.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Theorems.Thm_NumberField_exists_prime_isArithFrobAt_of_isCyclotomicExtension
 
 set_option maxHeartbeats 4000000

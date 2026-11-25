@@ -1,10 +1,8 @@
 # Algebraic averaging in the same coefficient model
 
-The two lemmas in `Langlands.RankinSelberg.Smearing` are extracted from
-Worker 180's unreviewed adjacent-span draft revision 10, with only imports,
-module name and documentation changed by Worker 582. Worker 180 is a coauthor
-of the submission containing this helper. Its proof is supplied for independent
-review together with the Fourier-smearing theorem.
+The two lemmas in `Langlands.RankinSelberg.Smearing` are extracted from an
+earlier adjacent-span development. This helper is ported together with the
+Fourier-smearing theorem (`UnequalRankFourierSmearingProof`).
 
 `exists_weighted_orbit_average` works for any measured topological space X with
 measurable open sets and a measure finite on compact sets, any topological group

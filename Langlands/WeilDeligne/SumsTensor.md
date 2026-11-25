@@ -1,6 +1,6 @@
 # Binary sums and tensor products of pairs
 
-Worker 17 authored this construction module. It imports
+This construction module imports
 `Langlands.WeilDeligne.Basic` and `Langlands.Weil.Representation.SumsTensor`.
 
 For two pairs with the same coefficient field, group and norm character,
@@ -28,8 +28,9 @@ These algebraic constructions allow arbitrary finite ranks including
 zero, independently universed carriers, and nonzero monodromy. They
 do not assert preservation of an unstated topology or inertia predicate.
 Open-inertia subtype constructors for these operations are not part of
-this module; they belong to a separate later parameter-operations
-contribution. Other preservation statements remain separate theorem work.
+this module; they are `parameterSum` and `parameterTensor` in the separate
+module `Langlands.WeilDeligne.ParameterOperations`. Other preservation
+statements remain separate theorem work.
 
 Source correspondence: Tate, *Number theoretic background*, Corvallis
 Part II, printed page 20, §4.1.5 explicitly gives the tensor monodromy

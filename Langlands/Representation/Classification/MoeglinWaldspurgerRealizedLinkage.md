@@ -1,7 +1,6 @@
 # Precedence and linkage of realized integer intervals
 
-Module `Langlands.Representation.Classification.MoeglinWaldspurgerRealizedLinkage`. Written by
-Worker 5735 for Task 5735.
+Module `Langlands.Representation.Classification.MoeglinWaldspurgerRealizedLinkage`.
 
 On the cuspidal line through `ρ.twist x`, the realization `I.realize ρ x` of an integer interval
 `I = [b, e]` has integral coordinates `(b, e)` (`realize_hasIntegralCoordinates`: its base is

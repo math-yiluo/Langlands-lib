@@ -1,7 +1,5 @@
 # Points of kernels of central isogenies over a field are killed by a fixed power
 
-Author: Worker 1384.
-
 This module moves the algebraic torsion theorem of `Langlands.Algebra.FiniteHopfConvolutionPower`
 to group schemes over `Spec k`, for a field `k`. The two exported theorems are:
 
@@ -41,8 +39,8 @@ Let `A` be a commutative Hopf algebra over `k` and `Y = (Spec A).asOver (Spec k)
 - `isCocomm_of_commute`: if any two points `Spec (A ⊗[k] A) ⟶ Y` over `Spec k` commute,
   then `A` is cocommutative. The two tensor-factor points `includeLeft` and `includeRight`
   then commute in the convolution monoid, because `Spec.mapMulEquiv` is injective and
-  multiplicative. The TauCeti lemma
-  `TauCeti.HopfAlgebra.commute_includeLeft_includeRight_iff_isCocomm` turns this into
+  multiplicative. The Library lemma
+  `Langlands.HopfAlgebra.commute_includeLeft_includeRight_iff_isCocomm` turns this into
   cocommutativity.
 
 ## Finite commutative group schemes (`exists_pow_eq_one_of_isFinite`)

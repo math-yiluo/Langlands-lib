@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.CommutativeAlgebra.FiniteTypeIntGRing.JacobianQuotient
 import Langlands.CommutativeAlgebra.Popescu.RegularSequenceFlatStatement
 import Langlands.CommutativeAlgebra.Popescu.RegularLocalParametersStatement

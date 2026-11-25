@@ -55,6 +55,6 @@ bases are locally noetherian); it makes connected components open.
 
 This is the polarization input for showing that a frame-normalized datum is
 determined, up to `PolarizedIso`, by the image of its canonical projective
-embedding and its torsion sections (Task 7811, frame-chart representability of
-`FrameChartRepresentabilityStatement`). There the two cubic bundles are both
+embedding and its torsion sections (frame-chart representability,
+`FrameChartRepresentabilityStatement`; module `FrameChartRepresentabilityReduction`). There the two cubic bundles are both
 the pullback of `𝒪(1)` twisted by line bundles from the base.

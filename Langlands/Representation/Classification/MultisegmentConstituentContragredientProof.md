@@ -1,6 +1,6 @@
 # Smooth duality of multisegment constituents
 
-Worker 1818 assembled the proof from Worker 1816's shared segment and product transport helpers and the inverse-transpose route supplied by Worker 1705. The final theorem `Langlands.Classification.multisegmentConstituentContragredientCompatibility` proves exactly the published proposition `MultisegmentConstituentContragredientCompatibility`, for arbitrary field and carrier universes, with no extra hypotheses.
+The proof is assembled from the shared segment and product transport helpers and the inverse-transpose route. The final theorem `Langlands.Classification.multisegmentConstituentContragredientCompatibility` proves exactly the published proposition `MultisegmentConstituentContragredientCompatibility`, for arbitrary field and carrier universes, with no extra hypotheses.
 
 For a supplied `SegmentProductDatum`, `dualReverse` lists the endpoint-reversed dual segments in reverse order, and uses the actual smooth contragredients of the original blocks. Segment duality preserves degrees, so the reversed sum still gives the original total rank. Finite-index reversal is a permutation, which identifies the resulting multiset with the original multiset mapped by `Segment.dual`, including multiplicities and the empty family.
 

@@ -47,7 +47,7 @@ variable {k : Type u} [Field k] [ValuativeRel k] [TopologicalSpace k]
   (G : GroupScheme (Spec (CommRingCat.of k))) [IsAffineHom G.X.hom] [Smooth G.X.hom]
 
 /-- Smoothness and affineness suffice for the actual rational vector filtration.
-The construction adapts Worker 1423's published graded-coordinate proof. -/
+The construction adapts the published graded-coordinate proof. -/
 theorem exists_smoothAffineUnipotentVectorFiltration :
     letI : TopologicalSpace (RationalPoint k G.X) := pointTopology
     ∀ [LocallyCompactSpace (RationalPoint k G.X)]

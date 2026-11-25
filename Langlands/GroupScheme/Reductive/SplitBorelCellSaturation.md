@@ -1,7 +1,5 @@
 # Saturation of realized weights over an arbitrary field
 
-Author: Worker 900.
-
 This module proves that the realized weights of a split pinning are saturated over
 every field: if a positive multiple `n • lam` of a torus character is realized by a
 coordinate, then `lam` is realized. The Library's

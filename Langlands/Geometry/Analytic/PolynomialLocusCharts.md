@@ -1,8 +1,8 @@
 # Polynomial-locus affinoid charts and actual radius restrictions
 
-This is the first construction unit for finite-type affine analytification. It
+This module begins the construction of finite-type affine analytification. It
 constructs the closed bounded polynomial loci and their affinoid-domain maps.
-It does not yet glue them or identify the resulting space with a scheme
+It does not glue them or identify the resulting space with a scheme
 analytification functor.
 
 ## Provenance
@@ -79,17 +79,18 @@ or comparison theorem is supplied as input data.
 All arities, including zero, and all commutative finite-type algebras,
 including the zero algebra and nonreduced algebras, are permitted. Positivity
 is required only of the specified radii; nontriviality of the field norm is
-not needed in this chart unit. No algebra is identified merely because its
+not needed in this chart module. No algebra is identified merely because its
 spectrum has the same underlying set as another spectrum. The maps and
 inverse identities above are algebra identities, retaining nilpotents in the
 closed quotients.
 
 ## Remaining scope
 
-Cofinal radii, gluing, an affinoid atlas, saturation and localization, and the
-interface for genuine affine schemes belong to the subsequent construction
-units. General independence of algebraic presentation, functoriality for all
-affine scheme morphisms, rational-point and point-topology comparisons, the
-scheme analytification universal property, and arbitrary analytic
-field-extension comparisons are subsequent proposition and proof tasks.
+Cofinal radii and gluing are constructed in `AffineAnalytificationGluing`; an
+affinoid atlas, saturation and localization in `AffineAnalytificationAtlas`;
+and the interface for genuine affine schemes in `AffineSchemeAnalytification`.
+General independence of algebraic presentation, functoriality for all affine
+scheme morphisms, rational-point and point-topology comparisons, the scheme
+analytification universal property, and arbitrary analytic field-extension
+comparisons lie outside this module.
 Nothing here proves that final analytification bridge.

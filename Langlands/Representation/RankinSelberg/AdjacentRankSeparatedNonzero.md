@@ -1,6 +1,6 @@
 # Nonzero separated adjacent continuations
 
-Worker 486. This internal composition defines the Prop-valued
+This internal composition defines the Prop-valued
 `AdjacentRankNonzeroSeparatedContinuation`. It states the existence of an
 actual separated square/row Schwartz tensor, a block model vector, an
 ambient model coefficient given by that tensor, an inverse-character test

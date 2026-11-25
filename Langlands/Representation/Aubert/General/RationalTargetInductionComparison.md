@@ -1,6 +1,6 @@
 # The actual rational target map in the literal Levi family
 
-This internal adapter specializes `TargetInductionReduction` to the actual
+This adapter specializes `TargetInductionReduction` to the actual
 rational standard family and the target intersections derived in
 `RationalTargetInduction`. It retains the structural inputs of that module:
 the point normalizer and full-centralizer comparisons, the supplied Coxeter
@@ -40,7 +40,7 @@ closed-subgroup Haar normalization.
 The provenance is internal through the two named target adapters and the
 published exactness and exact K0 constructions. The additional topological,
 projection and finite-length premises are the literal inside-Levi premises
-already displayed by the final rational induction target. This unit does not
+already displayed by the final rational induction target. This module does not
 establish its retained structural properties, normalized stages, Weyl
 conjugacy, geometric expansion or the full rational Aubert compatibility
 equation, and adds no premise to that final proposition.

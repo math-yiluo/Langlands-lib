@@ -1,6 +1,6 @@
 # Actual original framed comparisons under Nilp-base extension
 
-This internal unit constructs `DrinfeldFramedAtlas.Comparison.baseChange`:
+This module constructs `DrinfeldFramedAtlas.Comparison.baseChange`:
 the specified original framed comparison between the actual base-extended
 representatives. Its target comparison is exactly supplied coefficient
 extension of the original formal target comparison along the Nilp scalar map.
@@ -29,4 +29,6 @@ hypotheses, with Nilp universes `{v,u}`. Each actual base-extended representativ
 already carries its proved local kernel-rank height-zero framing certificate.
 Covers may be infinite and scalar maps may merge generators. The large
 dependent framing proof has a finite local elaboration bound. Comparison-class
-functoriality, action laws and representability remain subsequent obligations.
+functoriality, action laws and representability are outside this module;
+`DrinfeldFramedClassFunctor` constructs the comparison-class functor, and action
+laws and representability remain separate.

@@ -36,7 +36,7 @@ given an action `a` of `K` on `U` by endomorphisms: `k` acts by restriction
 along `(a k).unop`. -/
 def actionRepresentation (F : Tᵒᵖ ⥤ ModuleCat.{w} R) {U : T} (a : K →* (End U)ᵐᵒᵖ) :
     Representation R K (F.obj (op U)) where
-  toFun k := (F.map (a k).unop.op).hom
+  toFun k := (F.map (a k).unop.asHom.op).hom
   map_one' := by
     rw [map_one]
     change (F.map (𝟙 (op U))).hom = 1
@@ -48,7 +48,7 @@ def actionRepresentation (F : Tᵒᵖ ⥤ ModuleCat.{w} R) {U : T} (a : K →* (
 
 theorem actionRepresentation_apply (F : Tᵒᵖ ⥤ ModuleCat.{w} R) {U : T} (a : K →* (End U)ᵐᵒᵖ)
     (k : K) (s : F.obj (op U)) :
-    actionRepresentation F a k s = (F.map (a k).unop.op).hom s :=
+    actionRepresentation F a k s = (F.map (a k).unop.asHom.op).hom s :=
   rfl
 
 /-- For an open subgroup, this is the published local representation. -/
@@ -65,7 +65,7 @@ def actionIntertwiningMap {F F' : Tᵒᵖ ⥤ ModuleCat.{w} R} (φ : F ⟶ F') {
   LinearMap.intertwiningMap_of_isIntertwiningMap (actionRepresentation F a)
     (actionRepresentation F' a) (φ.app (op U)).hom fun k s => by
       rw [actionRepresentation_apply, actionRepresentation_apply]
-      exact NatTrans.naturality_apply φ (a k).unop.op s
+      exact NatTrans.naturality_apply φ (a k).unop.asHom.op s
 
 @[simp]
 theorem actionIntertwiningMap_apply {F F' : Tᵒᵖ ⥤ ModuleCat.{w} R} (φ : F ⟶ F') {U : T}

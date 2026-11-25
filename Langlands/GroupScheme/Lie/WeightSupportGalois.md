@@ -3,9 +3,9 @@
 This is an internal construction from the published actual dual-number Lie
 kernels, their coefficient maps and scheme-base-change comparisons, and the
 canonical Galois action on character lattices. The proof route uses twisted
-coefficient algebras and the actual action differential. Worker 1264 contributed
-the coefficient-twist proof design and the published differential comparison;
-Worker 1445 implemented the semilinear and weight-support transport here. No
+coefficient algebras and the actual action differential. The differential
+comparison `AutomorphicAction.differential_baseChange` is in `Lie.ActionBaseChange`;
+the semilinear and weight-support transport is implemented here. No
 external structural theorem or weight-support invariance premise is used.
 
 Let `k` and `K` be commutative rings in a common arbitrary universe `u`, with

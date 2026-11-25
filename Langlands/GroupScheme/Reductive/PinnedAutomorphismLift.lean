@@ -40,45 +40,45 @@ def isoOfBasedRootDatumAut (p : SplitPinning G) (e : p.basedRootDatumAut) :
 /-- Based root-datum automorphisms act by actual automorphisms of the field group. -/
 def basedRootDatumAutLift (p : SplitPinning G) :
     p.basedRootDatumAut →* CategoryTheory.Aut G where
-  toFun e := (p.isoOfBasedRootDatumAut e).groupIso
-  map_one' := congrArg (fun f : SplitPinning.Iso p p => f.groupIso)
+  toFun e := Aut.of (p.isoOfBasedRootDatumAut e).groupIso
+  map_one' := congrArg (fun f : SplitPinning.Iso p p => Aut.of f.groupIso)
     (p.isoOfRootDatumEquiv_id)
-  map_mul' e d := congrArg (fun f : SplitPinning.Iso p p => f.groupIso)
+  map_mul' e d := congrArg (fun f : SplitPinning.Iso p p => Aut.of f.groupIso)
     (isoOfRootDatumEquiv_comp d.val e.val d.property e.property)
 
 /-- The same based root-datum automorphisms act on the actual pinned torus. -/
 def basedRootDatumAutTorusLift (p : SplitPinning G) :
     p.basedRootDatumAut →* CategoryTheory.Aut p.torus where
-  toFun e := (p.isoOfBasedRootDatumAut e).torusIso
-  map_one' := congrArg (fun f : SplitPinning.Iso p p => f.torusIso)
+  toFun e := Aut.of (p.isoOfBasedRootDatumAut e).torusIso
+  map_one' := congrArg (fun f : SplitPinning.Iso p p => Aut.of f.torusIso)
     (p.isoOfRootDatumEquiv_id)
-  map_mul' e d := congrArg (fun f : SplitPinning.Iso p p => f.torusIso)
+  map_mul' e d := congrArg (fun f : SplitPinning.Iso p p => Aut.of f.torusIso)
     (isoOfRootDatumEquiv_comp d.val e.val d.property e.property)
 
 /-- The two lifted actions intertwine the actual torus inclusion. -/
 theorem basedRootDatumAutLift_square (p : SplitPinning G) (e : p.basedRootDatumAut) :
-    p.inclusion ≫ (p.basedRootDatumAutLift e).hom =
-      CommGroupScheme.groupHom (p.basedRootDatumAutTorusLift e).hom ≫ p.inclusion :=
+    p.inclusion ≫ (p.basedRootDatumAutLift e).asIso.hom =
+      CommGroupScheme.groupHom (p.basedRootDatumAutTorusLift e).asIso.hom ≫ p.inclusion :=
   (p.isoOfBasedRootDatumAut e).square
 
 /-- The forward full character action is the given integral weight equivalence. -/
 theorem basedRootDatumAutTorusLift_character (p : SplitPinning G)
     (e : p.basedRootDatumAut) :
-    (characterLattice.congr (p.basedRootDatumAutTorusLift e)).toIntLinearEquiv =
+    (characterLattice.congr (p.basedRootDatumAutTorusLift e).asIso).toIntLinearEquiv =
       e.val.weightEquiv :=
   p.isoOfRootDatumEquiv_character p e.val e.property
 
 /-- The forward cocharacter action is the inverse contravariant coweight map. -/
 theorem basedRootDatumAutTorusLift_cocharacter (p : SplitPinning G)
     (e : p.basedRootDatumAut) :
-    (cocharacterLattice.congr (p.basedRootDatumAutTorusLift e)).toIntLinearEquiv =
+    (cocharacterLattice.congr (p.basedRootDatumAutTorusLift e).asIso).toIntLinearEquiv =
       e.val.coweightEquiv.symm :=
   p.isoOfRootDatumEquiv_cocharacter p e.val e.property
 
 /-- Actual differentials carry each chosen simple-root vector to its prescribed vector. -/
 theorem basedRootDatumAutLift_rootVector (p : SplitPinning G)
     (e : p.basedRootDatumAut) (a : p.base.support) :
-    Lie.targetMapLinear (p.basedRootDatumAutLift e).hom (CommRingCat.of k)
+    Lie.targetMapLinear (p.basedRootDatumAutLift e).asIso.hom (CommRingCat.of k)
         (p.pinning.rootVector a) =
       p.pinning.rootVector ⟨e.val.indexEquiv a, (e.property a).mp a.property⟩ := by
   change Lie.targetMapLinear (p.isoOfRootDatumEquiv p e.val e.property).groupIso.hom
@@ -96,6 +96,6 @@ def basedRootDatumAutLiftBaseChange (p : SplitPinning G) {S : Scheme.{u}}
 theorem basedRootDatumAutLiftBaseChange_apply (p : SplitPinning G) {S : Scheme.{u}}
     (b : S ⟶ Spec (CommRingCat.of k)) (e : p.basedRootDatumAut) :
     p.basedRootDatumAutLiftBaseChange b e =
-      (GroupScheme.baseChange b).mapIso (p.basedRootDatumAutLift e) := rfl
+      Aut.of ((GroupScheme.baseChange b).mapIso (p.basedRootDatumAutLift e).asIso) := rfl
 
 end Langlands.GroupScheme.SplitPinning

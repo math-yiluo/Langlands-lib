@@ -114,7 +114,7 @@ theorem isLeviTempered_liftedTensor_iff (σ : Rep.{uV} ℂ (B.Levi F.Carrier))
       RelativeRegularComparison.IsLeviTempered T B
         (Rep.of (B.blockTensor (fun i => (liftedBlocks.{uF, uV, uJ, uX} T B A i).representation))) :=
   letI := T.topology
-  T.isLeviTempered_iff_of_equiv B (leviLiftEquiv T B A σ eσ)
+  T.isLeviTempered_iff_of_equiv B (leviLiftEquiv.{uF, uV, uJ, uX} T B A σ eσ)
 
 variable (hA : letI := T.topology
     ∀ i, Representation.IsIrreducible (A i).representation)
@@ -127,8 +127,8 @@ set_option linter.checkUnivs false in
 def liftedDatum : T.TemperedLanglandsDatum.{max uF uV uJ uX, uF} n where
   shape := B
   blocks := liftedBlocks.{uF, uV, uJ, uX} T B A
-  irreducible i := (liftedBlocks_isIrreducible_iff T B A i).mpr (hA i)
-  tempered i := (liftedBlocks_isTempered_iff T B A i).mpr (hT i)
+  irreducible i := (liftedBlocks_isIrreducible_iff.{uF, uV, uJ, uX} T B A i).mpr (hA i)
+  tempered i := (liftedBlocks_isTempered_iff.{uF, uV, uJ, uX} T B A i).mpr (hT i)
   exponent := t
   strictAnti := ht
 

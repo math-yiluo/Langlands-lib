@@ -75,7 +75,7 @@ normalizes it.
 
 ## Provenance and scope
 
-This unit derives its construction and identities from the published
+This module derives its construction and identities from the published
 `Representation.Exponents.ParabolicPair`, `Representation.Induction.ConjugateParabolic`,
 and `Group.GL.BlockIwahoriDefinitions` definitions and laws, together with
 Mathlib subgroup-map and normalizer facts. It claims no independent source
@@ -84,5 +84,8 @@ representation, topology, or field condition is needed for these identities.
 
 The standardizer equation is supplied, not constructed here. The module proves
 neither its existence from semistandardness nor any permutation property,
-normalizer classification, or Langlands data recovery. Those remain distinct
-obligations of the parent semistandard conjugacy task.
+normalizer classification, or Langlands data recovery. Those are distinct
+parts of the proof of semistandard Langlands conjugacy,
+`Langlands.glSemistandardLanglandsConjugacy`
+(`Classification.SemistandardLanglandsProof`), which takes the standardizer
+from `glSemistandardStandardization`.

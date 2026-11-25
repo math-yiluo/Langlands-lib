@@ -1,7 +1,5 @@
 # Finite Bruhat-filtration vanishing from actual open restrictions
 
-Authors: Worker 176 and Worker 634.
-
 `Langlands.HarmonicAnalysis.Distribution.bruhatFiltrationVanishing.{u}`
 proves exactly the published proposition
 [`BruhatFiltrationVanishingStatement`](BruhatFiltrationVanishingStatement.md).
@@ -19,7 +17,7 @@ proof.
 ## Implemented proof
 
 The namespace `BruhatFiltrationVanishingProof` contains the three coherent
-support-removal lemmas adapted from Worker 634's preparation.
+support-removal lemmas.
 
 `restrictOpen_compl_layer_zero` assumes that `D` belongs to `supportedOn`
 of the closed layer `upperBruhatLayerLE n K k`. A test function on the open
@@ -67,21 +65,17 @@ quantifiers of `BruhatFiltrationVanishingStatement.{u}` and applies
 
 This is an internal deduction from the published actual upper Bruhat
 partition, inversion-layer topology and Schwartz–Bruhat subspace maps.
-Worker 634 authored `restrictOpen_compl_layer_zero`, `remove_top_layer` and
-`vanishing` in the complete shared parent draft revision 8 of task
-`f79ca82c-d050-4ffa-821b-c347b60e36e0`,
-`BruhatFiltrationVanishingCore.{lean,md}`. Worker 176 ports those three
-lemmas together, imports the public target and locality proof, replaces the
-private locality call with `openRestrictionLocality`, and supplies the
-exact production wrapper. The locality implementation is imported as
-published; its separate attribution to Workers 634, 33 and 121 is recorded
-in its own paired explanation.
+This module holds the three lemmas `restrictOpen_compl_layer_zero`,
+`remove_top_layer` and `vanishing`, imports the public target and locality
+proof, uses `openRestrictionLocality` for the locality step, and supplies the
+exact production wrapper. The locality implementation is
+imported as published.
 
 The statement's Markdown explains the finite support-removal pattern's
 relation to Shalika's dimension-indexed argument. This proof uses numerical
 inversion counts and needs no comparison with dimension. It performs only
 finite support removal from the stated conditional restriction premise.
 The cellwise Whittaker vanishing argument and global Shalika invariance
-remain separate obligations. No equivariance, transpose symmetry, measure,
+are not part of this module. No equivariance, transpose symmetry, measure,
 continuity of the distribution, finite unipotent-orbit decomposition or
 interchange of a distribution with an infinite integral enters.

@@ -1,6 +1,6 @@
 # Limits and colimits under normalized parabolic induction and restriction
 
-Author: Worker 6. Module `Langlands.Representation.Exponents.LeviParabolicFunctorsPreserveLimitsStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`. Statement `LeviParabolicFunctorsPreserveLimitsStatement : Prop`; nothing is proved here.
+Module `Langlands.Representation.Exponents.LeviParabolicFunctorsPreserveLimitsStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`. Statement `LeviParabolicFunctorsPreserveLimitsStatement : Prop`; nothing is proved here.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*, French edition dated 9 July 2026, VI.1.2, Corollary, printed p.136 / PDF p.142. The registered source ID is `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. In translation, the Corollary says: the functor `i_P^G` preserves limits; adapting the remark of the previous paragraph, one sees easily that it also preserves colimits; the functor `r_P^G` preserves colimits. Here `P = MN` is a parabolic subgroup of `G`, and `i_P^G`, `r_P^G` are the normalized functors (VI.1.2.1) and (VI.1.2.2) of the same page.
 
@@ -37,7 +37,7 @@ The size is written explicitly. Mathlib's abbreviations `PreservesLimits F` and 
 
 ## Remaining obligations
 
-The proof is a separate obligation. In the source, the first and third assertions follow from the adjunction of the Proposition of VI.1.2 (staged separately as `LeviFrobeniusReciprocityStatement`) through the properties of adjoint functors (A.V). The second follows from the remark after the Theorem of VI.1.1 (printed p.135 / PDF p.141). There, `G/P` is compact (Lemma III.2.3), so `Ind_P^G = ind_P^G`, and `ind_P^G` and the inflation functor have right adjoints. In Lean, the carrier universes of the two functors differ (`max u v` and `v`), so Mathlib's `Adjunction` does not directly apply. A proof must either work with the explicit bijection across universes or prove preservation directly. Preservation of colimits by `i_P^G` also needs compactness of `P\G`, the published `ArbitraryParabolicQuotientCompactStatement`, whose proof is task `c1ce4629-6768-4eb5-b4ee-0086526913ea`. None of this is asserted here.
+The proof is a separate obligation. In the source, the first and third assertions follow from the adjunction of the Proposition of VI.1.2 (stated separately as `LeviFrobeniusReciprocityStatement`) through the properties of adjoint functors (A.V). The second follows from the remark after the Theorem of VI.1.1 (printed p.135 / PDF p.141). There, `G/P` is compact (Lemma III.2.3), so `Ind_P^G = ind_P^G`, and `ind_P^G` and the inflation functor have right adjoints. In Lean, the carrier universes of the two functors differ (`max u v` and `v`), so Mathlib's `Adjunction` does not directly apply. A proof must either work with the explicit bijection across universes or prove preservation directly. Preservation of colimits by `i_P^G` also needs compactness of `P\G`, the published `ArbitraryParabolicQuotientCompactStatement`, proved by `arbitraryParabolicQuotientCompact`. None of this is asserted here.
 
 ## Provenance
 

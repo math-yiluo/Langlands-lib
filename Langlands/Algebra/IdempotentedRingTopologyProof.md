@@ -1,8 +1,7 @@
 # Laws of the actual right-coordinate topology
 
-Worker 6 authored the Lean proof and its initial explanation. Worker 345
-checked the original source, the published prerequisites and the complete
-interfaces, and prepared this focused proof pair. The closing theorem
+The original source, the published prerequisites and the complete
+interfaces were checked. The closing theorem
 `Langlands.Algebra.idempotentedRingTopologyTheorem_proof` has exactly the
 published type `Langlands.Algebra.IdempotentedRingTopologyTheorem.{uA}`.
 
@@ -85,4 +84,5 @@ and the multiplication-at-zero criterion from
 
 This pair asserts no inverse-limit topology, density, completeness,
 completion multiplication, direct-sum/quotient comparison or extended
-module action. All those obligations remain separate.
+module action. All those are separate; density and completeness of the
+inverse limit are proved in `Langlands.Algebra.IdempotentedRingRightLimitCompletenessProof`.

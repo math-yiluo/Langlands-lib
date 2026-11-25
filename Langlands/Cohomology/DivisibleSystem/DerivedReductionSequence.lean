@@ -27,7 +27,7 @@ cohomology, which is not the cohomology of a functorial system of complexes:
   long exact sequence of right derived functors;
 * `derivedAdicReductionSequence`, `derivedAdicReductionSequence_shortExact`: Milne's sequence
   `0 ⟶ (lim_m R^q F(T m)) / ℓ ^ r ⟶ R^q F(T r) ⟶ (lim_m R^(q+1) F(T m))[ℓ ^ r] ⟶ 0`, short exact
-  for `R`-modules when every `R^q F(T m)` is finite, given Worker 3's
+  for `R`-modules when every `R^q F(T m)` is finite, given
   `MittagLefflerShortExactLimitStatement` as an explicit hypothesis;
 * `etaleReductionSequence`, `harrisEtaleReductionSequence`: the specializations to étale
   cohomology (`EtaleDerivedSections.cohomology`, `EtaleAdicCohomology.adicCohomology`) and to the
@@ -36,8 +36,9 @@ cohomology, which is not the cohomology of a functorial system of complexes:
 The proof follows Milne's: he tensors `0 → ℤ/(l^n) → ℤ/(l^{n+s}) → ℤ/(l^s) → 0` with `F_{n+s}`,
 takes cohomology sequences and passes to the inverse limit, using that inverse limits of exact
 sequences of finite groups are exact. Here the sequence `0 ⟶ T m ⟶ T (m + r) ⟶ T r ⟶ 0` comes
-from the `DivisibleSystem` axioms, and exactness of the limits from Worker 3's statement, which
-is not proved here. Only the finiteness of the `R^q F(T m)` in the degree `q` itself is used.
+from the `DivisibleSystem` axioms, and exactness of the limits from
+`MittagLefflerShortExactLimitStatement`, which is not proved here. Only the finiteness of the
+`R^q F(T m)` in the degree `q` itself is used.
 Not formalized: finite generation of `lim_m H^r(X, F_m)` over `ℤ_ℓ`, and any group or Galois
 action. The statements and proofs are ours.
 -/
@@ -113,7 +114,7 @@ section ModuleCatLimit
 variable {R : Type u'} [Ring R]
 
 /-- For an exact sequence `X₁ ⟶ X₂ ⟶ X₃` of inverse systems of `R`-modules whose first terms are
-finite, the limit sequence `lim X₁ ⟶ lim X₂ ⟶ lim X₃` is exact, given Worker 3's
+finite, the limit sequence `lim X₁ ⟶ lim X₂ ⟶ lim X₃` is exact, given
 `MittagLefflerShortExactLimitStatement` (EGA III.0, 13.2.2). Proof: the kernel of
 `X₁ ⟶ ker(X₂ ⟶ X₃)` has finite terms, hence is Mittag-Leffler, so `lim X₁ ⟶ lim ker(X₂ ⟶ X₃)`
 is surjective, and `lim` preserves kernels. -/
@@ -550,7 +551,7 @@ variable (F : C ⥤ ModuleCat.{v'} R) [F.Additive] {ℓ : ℕ} (T : DivisibleSys
 /-- Milne, Ch. V, Lemma 1.11, for right derived functors with values in `R`-modules: if every
 `R^q F(T m)` is finite, then
 `0 ⟶ (lim_m R^q F(T m)) / ℓ ^ r ⟶ R^q F(T r) ⟶ (lim_m R^(q+1) F(T m))[ℓ ^ r] ⟶ 0` is short
-exact, given Worker 3's `MittagLefflerShortExactLimitStatement`. Proof: the exact sequences
+exact, given `MittagLefflerShortExactLimitStatement`. Proof: the exact sequences
 of inverse systems `R^q F(T m) ⟶ R^q F(T (m + r)) ⟶ R^q F(T r) ⟶ R^(q+1) F(T m) ⟶
 R^(q+1) F(T (m + r))` (the middle one constant) remain exact in the limit
 (`limit_exact_of_finite`); identifying `lim_m R^q F(T (m + r))` with `lim_m R^q F(T m)`
@@ -648,7 +649,7 @@ lemma etaleReductionSequence_X₃ (r q : ℕ) :
 
 /-- If every `H^q(X, T m)` is finite, then
 `0 ⟶ (lim_m H^q(X, T m)) / ℓ ^ r ⟶ H^q(X, T r) ⟶ (lim_m H^(q+1)(X, T m))[ℓ ^ r] ⟶ 0` is short
-exact, given Worker 3's `MittagLefflerShortExactLimitStatement`. -/
+exact, given `MittagLefflerShortExactLimitStatement`. -/
 theorem etaleReductionSequence_shortExact (hML : MittagLefflerShortExactLimitStatement.{u, u} R)
     (r q : ℕ) (hfin : ∀ m, Finite ((EtaleDerivedSections.cohomology X R q).obj (T.obj m))) :
     (etaleReductionSequence X R T r q).ShortExact :=
@@ -697,7 +698,7 @@ lemma harrisEtaleReductionSequence_X₃ (r q : ℕ) :
   rfl
 
 /-- If every `H^q(X, 𝓛 / ℓ ^ m)` is finite, Harris's reduction sequence is short exact, given
-Worker 3's `MittagLefflerShortExactLimitStatement`. -/
+`MittagLefflerShortExactLimitStatement`. -/
 theorem harrisEtaleReductionSequence_shortExact
     (hML : MittagLefflerShortExactLimitStatement.{u, u} (HarrisCoefficientIntegers L p))
     (r q : ℕ)

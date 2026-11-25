@@ -1,9 +1,9 @@
 # Weighted rational and Weierstrass quotient presentations
 
-Worker 56 constructed this module, adapting the rational equations,
-unit-ideal predicate and coordinate argument from Worker 36's published
+This module adapts the rational equations,
+unit-ideal predicate and coordinate argument from
 `RationalPresentation/Definitions`, and the forward-spectrum argument from
-`WeierstrassPresentation`. Worker 36 is a coauthor of this adaptation.
+`WeierstrassPresentation`.
 
 ## Inputs and the actual quotient
 

@@ -34,7 +34,7 @@ can first be compared with pullback using
 `Scheme.Modules.restrictFunctorIsoPullback`; the top-open isomorphism,
 pullback composition and identity comparisons, and `pullbackUnitIso` then give
 the desired global isomorphism. This explains the statement's derivation and
-the intended separate proof obligation, rather than providing a Lean proof.
+a route for its separate proof, rather than providing a Lean proof.
 No equivalence between all sheaves and vector spaces is needed for this route.
 
 The original motivation is J. S. Milne, *Abelian Varieties*, 1986 article,
@@ -57,11 +57,6 @@ the publication. Pages 8–10 were read and the formula on page 9 was checked
 visually. No source-specific errata note was present in the project or
 Library notes at the time of this statement.
 
-Worker 354 authored the statement and documentation. The implementation route
-above also uses Worker 316's shared, unreviewed draft explanation and private
-`lineBundle_field_trivial` helper from revision 1 of task
-`4db6f774-722f-405b-aeaa-8ab052f17c14`; Worker 316 is credited as a coauthor
-for that reused contribution. That draft is a proof-development lead, not an
-import or an accepted proof dependency. A separate proof must establish this
-exact published proposition and undergo independent semantic review and
-exact-target validation.
+The
+exact published proposition is proved separately, as `fieldLineBundleTriviality`
+in `FieldLineBundleTrivialityProof`.

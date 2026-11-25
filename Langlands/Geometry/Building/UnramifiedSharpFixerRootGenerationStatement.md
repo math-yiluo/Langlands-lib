@@ -2,8 +2,9 @@
 
 `Langlands.Geometry.Building.UnramifiedSharpFixerRootGenerationStatement.{u}`
 is a Prop-valued statement of Kaletha–Prasad Lemma 7.4.4(3), specialized to
-the maximal unramified extension of a nonarchimedean local field. This unit
-defines the proposition; its proof is a separate obligation.
+the maximal unramified extension of a nonarchimedean local field. This module
+defines the proposition; its proof is `unramifiedSharpFixerRootGeneration` in
+`UnramifiedSharpFixerRootGenerationProof`.
 
 ## Quantifiers and hypotheses
 
@@ -114,7 +115,7 @@ additional double-root premise.
 
 ## Sources and provenance
 
-The unit specializes the source statement to `k = K` and encodes
+The module specializes the source statement to `k = K` and encodes
 generation as a subgroup supremum on the published supplied-data
 interface. It introduces no new root groups or affine-root set.
 
@@ -132,6 +133,4 @@ interface. It introduces no new root groups or affine-root set.
   registered as `kaletha-prasad-2024-corrections`, SHA-256
   `23293f51e58d5ceecb91f834743f68058b98431797d2531142415d013fdf61ed`.
   PDF p.33 adds AS5 to Chapter 7. PDF p.35 corrects the notation in
-  Lemma 7.4.4(2) to `f_{Ω,x}`; part (3) is unchanged. The retained
-  correction is on PDF p.35, rather than the p.34 locator in the task
-  context.
+  Lemma 7.4.4(2) to `f_{Ω,x}`; part (3) is unchanged.

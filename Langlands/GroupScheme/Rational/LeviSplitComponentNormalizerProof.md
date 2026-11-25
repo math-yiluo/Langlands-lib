@@ -1,7 +1,7 @@
 # Rational normalizers of a Levi and its split component
 
 Module `Langlands.GroupScheme.Rational.LeviSplitComponentNormalizerProof`.
-Namespace `Langlands.GroupScheme`. Author: Worker 228.
+Namespace `Langlands.GroupScheme`.
 
 The theorem `leviSplitComponentNormalizer` has exactly the type
 `LeviSplitComponentNormalizerStatement.{u}`. For every field `k : Type u`,
@@ -19,7 +19,7 @@ The target is the recalled equality in Renard, *Représentations des groupes
 réductifs p-adiques*, French edition dated 9 July 2026, V.3.5.1,
 printed p.110 / PDF p.116, together with the rational-point conventions on
 printed p.109 / PDF p.115 and the Levi description in V.3.1 on
-printed p.110 / PDF p.116. Worker 228 read PDF pp.115–117.
+printed p.110 / PDF p.116. PDF pp.115–117 were read.
 The registered source is
 `renard-2026-representations-groupes-reductifs-padiques`.
 The existing target's

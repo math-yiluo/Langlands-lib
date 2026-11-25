@@ -61,7 +61,7 @@ The embedding follows from induced topology and injectivity. Transport along
 the faithful linear realization gives the topological vector-space properties.
 Continuous precomposition gives fixed translation, morphism pullback and both
 comparison continuities; the functorial and action laws reuse the original
-algebraic maps. No external-source theorem is asserted here. This unit makes
+algebraic maps. No external-source theorem is asserted here. This module makes
 no claim about the compact-open topology of quotient functions, joint group
 action continuity, automorphic regularity, growth, finite volume or Hilbert
 identification.

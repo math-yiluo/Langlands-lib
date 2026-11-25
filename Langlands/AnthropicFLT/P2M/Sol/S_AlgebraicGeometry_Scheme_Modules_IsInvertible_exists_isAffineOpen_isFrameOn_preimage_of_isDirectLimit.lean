@@ -5,7 +5,7 @@ the Apache License, Version 2.0; see `licenses/Anthropic-FLT/LICENSE`, `NOTICE` 
 Modified for this project: FLT imports are renamed to `Langlands.AnthropicFLT.*` and the FLT lakefile
 options are set after the imports; any further change is listed in the paired Markdown file.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_Mathlib_Algebra_IsDirectLimit
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_ModulesSectionsTensor
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_RelativePicardFunctor
@@ -377,7 +377,7 @@ end Reindex
 end DirLimSpread
 open scoped P2MW.S_AlgebraicGeometry_Scheme_Modules_IsInvertible_exists_isAffineOpen_isFrameOn_preimage_of_isDirectLimit.DirLimSpread
 
-namespace AlgebraicGeometry export _root_.AlgebraicGeometry (Spec.map_comp Surjective quasiSeparatedSpace_of_quasiSeparated Scheme.exists_isOpenCover_and_isAffine QuasiCompact IsAffine Spec Spec.map Scheme QuasiCompact.compactSpace_of_compactSpace ΓSpec.adjunction Spec.map_id Scheme.Spec IsAffineOpen Scheme.Modules QuasiSeparated exists_preimage_eq IsAffineHom Scheme.Modules.IsFrameOn Scheme.Modules.IsInvertible) namespace Scheme export _root_.AlgebraicGeometry.Scheme (forget exists_isOpenCover_and_isAffine mk Γ isBasis_affineOpens Modules Opens Modules.IsFrameOn Modules.IsInvertible) namespace Modules export _root_.AlgebraicGeometry.Scheme.Modules (hom_ext pullback presheaf IsFrameOn IsInvertible IsInvertible.exists_isFrameOn) end AlgebraicGeometry.Scheme.Modules
+namespace AlgebraicGeometry export _root_.AlgebraicGeometry (Spec.map_comp Surjective quasiSeparatedSpace_of_quasiSeparated Scheme.exists_isOpenCover_and_isAffine QuasiCompact IsAffine Spec Spec.map Scheme QuasiCompact.compactSpace_of_compactSpace ΓSpec.adjunction Spec.map_id Scheme.Spec IsAffineOpen Scheme.Modules QuasiSeparated exists_preimage_eq IsAffineHom Scheme.Modules.IsFrameOn Scheme.Modules.IsInvertibleFLT) namespace Scheme export _root_.AlgebraicGeometry.Scheme (forget exists_isOpenCover_and_isAffine mk Γ isBasis_affineOpens Modules Opens Modules.IsFrameOn Modules.IsInvertibleFLT) namespace Modules export _root_.AlgebraicGeometry.Scheme.Modules (hom_ext pullback presheaf IsFrameOn IsInvertibleFLT IsInvertible.exists_isFrameOn) end AlgebraicGeometry.Scheme.Modules
 open scoped _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme _root_.AlgebraicGeometry.Scheme.Modules in
 theorem AlgebraicGeometry.Scheme.Modules.exists_isFrameOn_congr {Y : Scheme.{u}} {M : Y.Modules}
     {U U' : Y.Opens} (h : U = U') (hU : ∃ s : Γ(M, U), Scheme.Modules.IsFrameOn s U) :
@@ -394,7 +394,7 @@ theorem solution
     {R : Type u} [CommRing R] (g : ∀ i, G i →+* R)
     (hR : IsDirectLimit (fun i j h => ⇑(φ i j h)) fun i => ⇑(g i))
     (i : ι) {X : Scheme.{u}} (fX : X ⟶ Spec (CommRingCat.of (G i))) [QuasiCompact fX] [QuasiSeparated fX]
-    (𝓛 : (Limits.pullback fX (Spec.map (CommRingCat.ofHom (g i)))).Modules) (h𝓛 : Scheme.Modules.IsInvertible 𝓛) :
+    (𝓛 : (Limits.pullback fX (Spec.map (CommRingCat.ofHom (g i)))).Modules) (h𝓛 : Scheme.Modules.IsInvertibleFLT 𝓛) :
     ∃ (j : ι) (hij : i ≤ j) (n : ℕ) (W : ULift.{u} (Fin n) → (Limits.pullback fX (Spec.map (CommRingCat.ofHom (φ i j hij)))).Opens),
       (∀ k, IsAffineOpen (W k)) ∧
       ∀ (c : Limits.pullback fX (Spec.map (CommRingCat.ofHom (g i))) ⟶ Limits.pullback fX (Spec.map (CommRingCat.ofHom (φ i j hij)))),
@@ -414,7 +414,7 @@ theorem solution
   let Jt : Type u := {A : XR.Opens // IsAffineOpen A ∧ ∃ s : Γ(𝓛, A), Scheme.Modules.IsFrameOn s A}
   have hcov : IsOpenCover (fun A : Jt => (A.1 : XR.Opens)) := by
     refine IsOpenCover.mk (top_le_iff.mp fun x _ => ?_)
-    obtain ⟨U, s, hxU, hs⟩ := h𝓛.exists_isFrameOn x
+    obtain ⟨U, s, hxU, hs⟩ := AlgebraicGeometry.Scheme.Modules.IsInvertible.exists_isFrameOn h𝓛 x
     obtain ⟨_, ⟨A, hA, rfl⟩, hxA, hAU⟩ := XR.isBasis_affineOpens.exists_subset_of_mem_open hxU U.isOpen
     have hsA : Scheme.Modules.IsFrameOn (𝓛.presheaf.map (homOfLE hAU).op s) A := (hs.map (homOfLE hAU)).mono hAU
     exact Opens.mem_iSup.mpr ⟨⟨A, hA, _, hsA⟩, hxA⟩

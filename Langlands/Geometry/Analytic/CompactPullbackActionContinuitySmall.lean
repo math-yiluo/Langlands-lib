@@ -30,8 +30,8 @@ def CompactPullbackActionContinuitySmallStatement : Prop :=
     IsPullback p q f g →
     ∀ (σ : G →* Aut P) (σU : G →* Aut U) (σV : G →* Aut V),
       IsContinuousAction σU → IsContinuousAction σV →
-      (∀ h, (σ h).hom ≫ p = p ≫ (σU h).hom) →
-      (∀ h, (σ h).hom ≫ q = q ≫ (σV h).hom) →
+      (∀ h, (σ h).asIso.hom ≫ p = p ≫ (σU h).asIso.hom) →
+      (∀ h, (σ h).asIso.hom ≫ q = q ≫ (σV h).asIso.hom) →
       IsContinuousAction σ
 
 omit [CompleteSpace K] in

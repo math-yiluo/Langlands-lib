@@ -1,7 +1,5 @@
 # Arithmetic pullback on continuous rational-invariant functions
 
-Author: Worker 2.
-
 This internal construction precomposes actual complex-valued functions by
 `AdelicGLTransport.adelicEquiv n e` for a number-field isomorphism
 `e : K ≃+* L`. The fields have independent universes, and the rank is any

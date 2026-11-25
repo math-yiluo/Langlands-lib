@@ -1,6 +1,6 @@
 # Renard VI.4.5, Proposition: the center of M(G)[π] is the algebra of functions on Irr(G)[π], acting by evaluation
 
-Worker 6. Source: David Renard, *Représentations des groupes réductifs p-adiques*, French version dated 9 July 2026. The locator is the first Proposition of VI.4.5 and its proof, printed p.160 / PDF p.166. It uses the isomorphism Z ≃ Z[π] stated earlier on the same page, the Proposition of VI.4.4 (ψ_x and ℂ[T/⁰G] ≃ Z), printed p.159 / PDF p.165, (VI.4.4.5)–(VI.4.4.7) in the proof of the Theorem of VI.4.4, printed pp.158–159 / PDF pp.164–165, and the definition of T with the Remark of VI.4.4 (the algebra of functions on Irr(G)[π] is ℂ[T/⁰G]), printed pp.156–157 / PDF pp.162–163. The center of a category is defined in A.X, printed p.269 / PDF p.275. Registered source `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. All of these pages were read.
+Source: David Renard, *Représentations des groupes réductifs p-adiques*, French version dated 9 July 2026. The locator is the first Proposition of VI.4.5 and its proof, printed p.160 / PDF p.166. It uses the isomorphism Z ≃ Z[π] stated earlier on the same page, the Proposition of VI.4.4 (ψ_x and ℂ[T/⁰G] ≃ Z), printed p.159 / PDF p.165, (VI.4.4.5)–(VI.4.4.7) in the proof of the Theorem of VI.4.4, printed pp.158–159 / PDF pp.164–165, and the definition of T with the Remark of VI.4.4 (the algebra of functions on Irr(G)[π] is ℂ[T/⁰G]), printed pp.156–157 / PDF pp.162–163. The center of a category is defined in A.X, printed p.269 / PDF p.275. Registered source `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. All of these pages were read.
 
 ## Source content
 
@@ -48,7 +48,7 @@ such that
 
 **The group T.** Renard regards T both as a subgroup of G containing ⁰G and as a sublattice of Λ(G) = G/⁰G. The Lean T is the subgroup of H. The statement does not assert that X(G)(π) is finite or that T has finite index.
 
-**Cuspidality.** Renard's π is supercuspidal. As in the VI.4.1 statements and Worker 1758's `RationalUniversalSmallProgeneratorStatement`, cuspidality is measured by the vanishing of every proper standard normalized Jacquet module. Comparing this with cuspidality along all proper rational parabolics is a separate obligation.
+**Cuspidality.** Renard's π is supercuspidal. As in the VI.4.1 statements and `RationalUniversalSmallProgeneratorStatement`, cuspidality is measured by the vanishing of every proper standard normalized Jacquet module. Comparing this with cuspidality along all proper rational parabolics is a separate obligation.
 
 **Universes.** π has carrier in `Type uV` and the block has carriers in `Type (max uF uV)`. Coefficients are ℂ in universe zero. Renard has no universe restriction.
 

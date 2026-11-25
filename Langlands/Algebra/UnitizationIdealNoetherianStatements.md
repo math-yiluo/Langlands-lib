@@ -2,7 +2,7 @@
 
 This file contains three closed internal statement targets and their
 aggregate, in namespace `Langlands.Algebra.UnitizationIdealNoetherian`.
-Worker 709 drafted them and Worker 850 revised them. They use Mathlib's
+They use Mathlib's
 actual `Unitization R A`, ordinary `Module` instances, `Submodule`,
 `AddSubgroup`, `IsNoetherian` and `IsNoetherianRing`. Each declaration is a
 `def` returning `Prop`. No result is proved in this file.
@@ -148,8 +148,9 @@ countability or nontriviality is assumed.
 ## Provenance and source boundaries
 
 These are derived internal targets. The book does not state any of these
-three equivalences as a separately numbered assertion. The intended
-derivation is elementary algebra, which a later proof must formalize.
+three equivalences as a separately numbered assertion. The
+derivation is elementary algebra, formalized in
+`Langlands.Algebra.UnitizationIdealNoetherianProof`.
 `A` is the kernel of the scalar projection from the unitization onto `R`,
 and the quotient by this kernel is `R`. Under the regular law, the
 submodules of the supplied module `A` are the left ideals of the
@@ -209,9 +210,7 @@ The targets construct no general action, Hom comparison, category
 equivalence, restriction, quotient or stable-subobject lattice. They make
 no comparison with the categorical finite-type or Noetherian predicates.
 They do not state or prove the localization proposition, its
-stable-power decomposition or its localized-pair identification. Those
-obligations stay with whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`; this file neither discharges nor
-narrows them. A separate proof task must wait until this aggregate is
-published. It may then use independently published prerequisites or
-prove the required algebra with full provenance.
+stable-power decomposition or its localized-pair identification. This
+file neither discharges nor narrows them. The aggregate is
+proved as `unitizationIdealNoetherian` in
+`Langlands.Algebra.UnitizationIdealNoetherianProof`.

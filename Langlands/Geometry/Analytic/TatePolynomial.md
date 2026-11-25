@@ -1,7 +1,5 @@
 # Polynomial approximation in the actual restricted-series norm
 
-Author: Worker 56.
-
 This module uses the one-variable instance of the actual restricted-series
 algebra. It imports the polynomial inclusion from
 `RestrictedSeriesDefinitions`, proves that its norm is

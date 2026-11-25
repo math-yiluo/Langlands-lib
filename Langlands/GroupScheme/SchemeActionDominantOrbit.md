@@ -37,5 +37,5 @@ The construction and deductions are internal consequences of the published
 `SchemeAction`, `SchemeActionRationalPoints`, `SubgroupFunctor`, and
 `SmoothReducedProof` interfaces, together with Mathlib's flat base change of
 schematic dominance and reduced-source separated-target extensionality.
-This unit does not prove positive-root uniqueness or supply the remaining
+This module does not prove positive-root uniqueness or supply the remaining
 Borel, quotient-dimension, or curve-to-root comparison arguments.

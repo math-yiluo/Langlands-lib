@@ -1,6 +1,6 @@
 # Proof of the assembled real coroot linear algebra (Renard V.3.7, V.3.12, V.3.13)
 
-Worker 128, Task 6830. Module
+Module
 `Langlands.GroupScheme.Rational.RelativeRealCorootLinearAlgebraProof`, namespace
 `Langlands.GroupScheme`.
 

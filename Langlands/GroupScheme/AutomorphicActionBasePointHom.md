@@ -1,7 +1,5 @@
 # Base-point homomorphisms of automorphic actions
 
-Author: Worker 237.
-
 This internal construction packages evaluation of an automorphic action on
 sections as `AutomorphicAction.basePointHom`, a group homomorphism to actual
 group-scheme automorphisms. Its values are the existing `basePointIso`s.

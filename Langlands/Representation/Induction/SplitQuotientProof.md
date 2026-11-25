@@ -1,12 +1,11 @@
 # Compact induction across a continuous split quotient: proof
 
-Worker 777 proves `Langlands.Induction.compactInductionSplitQuotient`. Its type
+This file proves `Langlands.Induction.compactInductionSplitQuotient`. Its type
 is exactly the published proposition
 `Langlands.Induction.CompactInductionSplitQuotient.{uG, uV}` from
 `Langlands.Representation.Induction.SplitQuotientStatement`. The closing
 theorem is unapplied and keeps both independent universes `uG` and `uV`. The
-module's only direct import is that statement module, whose Lean/Markdown pair
-and imported pairs are unchanged.
+module's only direct import is that statement module.
 
 ## Setting
 
@@ -125,7 +124,7 @@ The source is registered as `bernstein-zelevinsky-1977-induced-i`, retained at
 `/home/taskhub/central-library/Bernstein-Zelevinsky--Induced representations of reductive p-adic groups I--1977.pdf`,
 with SHA256
 `8424600228ab72c5937e45edceefcae410a2a0b8f5ebf282185691542aa89092`.
-The current Library has no `notes/errata` directory.
+The Library's `notes/errata` has no note for this source.
 
 The proof is unnormalized and has no character. It does not prove
 normalization, the actual parabolic specialization, the Case IV₂ quotient
@@ -133,7 +132,5 @@ integration of §5.17, or the full orbit comparison. The same-ambient
 coinvariant step is the separate published theorem
 `Langlands.Induction.compactInductionNormalCoinvariants`.
 
-Development checks used environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`.
-The closing theorem compiles without warnings and depends only on `propext`,
-`Classical.choice` and `Quot.sound`. Compilation is development evidence;
-independent semantic review and Library publication remain required.
+In development checks the closing theorem compiles without warnings and depends only on `propext`,
+`Classical.choice` and `Quot.sound`.

@@ -33,7 +33,7 @@ theorem actionMap_apply {S : Type z} [MulAction G S] (g : G) (s : S)
     (x : localizedSpaceFunctor.obj X.V) :
     localizedSpaceFunctor.map (actionMap X S g)
         (⟨s, x⟩ : (_ : S) × (presentationOf X.V).presentation.space) =
-      (⟨g • s, localizedSpaceFunctor.map (X.ρ g) x⟩ :
+      (⟨g • s, localizedSpaceFunctor.map (X.ρ g).asHom x⟩ :
         (_ : S) × (presentationOf X.V).presentation.space) := by
   refine (sigma_map_apply (fun _ : S => X.V) (actionMap X S g) s x).trans ?_
   rw [copy_actionMap, Functor.map_comp]
@@ -174,11 +174,11 @@ theorem gIndex_comp_map {Y : Over X} {S T : DiscreteGSet G}
 
 theorem gIndex_smul {Y : Over X} {S : DiscreteGSet G} (φ : Y ⟶ (gSpaceOverFunctor hC X).obj S)
     (g : G) (y : localizedSpaceFunctor.obj Y.left.obj.V) :
-    gIndex hC φ (localizedSpaceFunctor.map (Y.left.obj.ρ g) y) = g • gIndex hC φ y := by
-  have e : (Y.left.obj.ρ g ≫ φ.left.hom.hom : Y.left.obj.V ⟶ (copies X.obj S.obj.V).pt) =
+    gIndex hC φ (localizedSpaceFunctor.map (Y.left.obj.ρ g).asHom y) = g • gIndex hC φ y := by
+  have e : ((Y.left.obj.ρ g).asHom ≫ φ.left.hom.hom : Y.left.obj.V ⟶ (copies X.obj S.obj.V).pt) =
       φ.left.hom.hom ≫ actionMap X.obj S.obj.V g :=
     φ.left.hom.comm g
-  have h1 := index_comp _ (Y.left.obj.ρ g)
+  have h1 := index_comp _ (Y.left.obj.ρ g).asHom
     (φ.left.hom.hom : Y.left.obj.V ⟶ (copies X.obj S.obj.V).pt) y
   have h2 := index_comp_actionMap
     (φ.left.hom.hom : Y.left.obj.V ⟶ (copies X.obj S.obj.V).pt) g y
@@ -192,13 +192,13 @@ theorem gHom_ext {Y : Over X} {S : DiscreteGSet G} {φ ψ : Y ⟶ (gSpaceOverFun
 
 theorem exists_gHom (Y : Over X) (S : DiscreteGSet G)
     (c : localizedSpaceFunctor.obj Y.left.obj.V → S.obj.V) (hc : IsLocallyConstant c)
-    (hcg : ∀ (g : G) y, c (localizedSpaceFunctor.map (Y.left.obj.ρ g) y) = g • c y) :
+    (hcg : ∀ (g : G) y, c (localizedSpaceFunctor.map (Y.left.obj.ρ g).asHom y) = g • c y) :
     ∃ φ : Y ⟶ (gSpaceOverFunctor hC X).obj S, ∀ y, gIndex hC φ y = c y := by
   obtain ⟨m, hm, hmc⟩ := exists_copiesHom (X := X.obj) S.obj.V Y.hom.hom.hom c hc
-  have hp : ∀ g : G, Y.left.obj.ρ g ≫ Y.hom.hom.hom = Y.hom.hom.hom ≫ X.obj.ρ g :=
+  have hp : ∀ g : G, (Y.left.obj.ρ g).asHom ≫ Y.hom.hom.hom = Y.hom.hom.hom ≫ (X.obj.ρ g).asHom :=
     fun g => Y.hom.hom.comm g
-  have comm : ∀ g : G, Y.left.obj.ρ g ≫ m = m ≫ actionMap X.obj S.obj.V g := fun g =>
-    copiesHom_ext (p := Y.left.obj.ρ g ≫ Y.hom.hom.hom)
+  have comm : ∀ g : G, (Y.left.obj.ρ g).asHom ≫ m = m ≫ actionMap X.obj S.obj.V g := fun g =>
+    copiesHom_ext (p := (Y.left.obj.ρ g).asHom ≫ Y.hom.hom.hom)
       (by rw [Category.assoc, hm])
       (by rw [Category.assoc, actionMap_projectionHom, ← Category.assoc, hm, hp])
       (fun y => by rw [index_comp, index_comp_actionMap, hmc, hmc, hcg])

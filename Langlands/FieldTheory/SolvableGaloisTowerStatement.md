@@ -1,6 +1,6 @@
 # Cyclic prime-step towers for finite solvable Galois extensions
 
-Worker 109 authored this statement and its explanation. The mathematical
+The mathematical
 provenance is the finite-group and Galois-correspondence argument underlying
 Serre's reduction in *Local Fields*, Chapter V, §4, Proposition 7, printed
 page 90 (PDF page 97). This module defines a proposition target; it proves
@@ -53,7 +53,7 @@ Normality of `Hᵢ₊₁` in `Hᵢ` makes `Tᵢ₊₁/Tᵢ` Galois; restriction 
 its automorphism group with `Hᵢ/Hᵢ₊₁`. Its degree therefore equals the
 prime order of that cyclic group. These are statements about the inclusions
 of these fixed fields in the same `L`. For the trivial group, use the
-length-zero series. This explains the proposed generic target; the module
+length-zero series. This explains the generic target; the module
 contains no Lean implementation of this argument.
 
 Serre's V.4 Proposition 7 first reduces to a finite Galois extension and then
@@ -73,7 +73,7 @@ these Lean quantifiers or provides a formal proof.
   PDF page 97. Retained original:
   `/home/taskhub/central-library/Serre--Local Fields--1979.pdf`.
   SHA256: `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`.
-  Worker 109 read printed pages 89–90 (PDF pages 96–97); no project Serre
+  Printed pages 89–90 (PDF pages 96–97) were read; no project Serre
   errata entry was present when checked.
 - The module imports Mathlib's `FieldTheory.Galois.Basic` and
   `GroupTheory.Solvable`, using their field, algebra, automorphism and

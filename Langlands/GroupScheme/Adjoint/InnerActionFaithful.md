@@ -1,7 +1,5 @@
 # Faithfulness of the actual descended inner action
 
-Worker 689.
-
 This internal derived development proves faithfulness of the published actual
 adjoint-quotient inner action. `AutomorphicAction.IsFaithful` requires that two
 acting points agree whenever their actions agree on every relative test scheme.

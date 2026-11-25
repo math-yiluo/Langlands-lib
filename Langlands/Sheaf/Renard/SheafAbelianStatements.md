@@ -1,9 +1,8 @@
 # Renard A.VI.1: basis-sheaf abelianness at a sufficient section universe
 
-Worker 1153 states two propositions and their source correspondence. Worker 709
-contributed the original-source audit, focused specification and sufficient
-section-universe design. This is a statement-only unit: neither proposition is
-proved here.
+This module states two propositions and their source correspondence. This is a
+statement-only module: neither proposition is proved here. Both are proved in
+[SheafAbelianProof](SheafAbelianProof.md).
 
 The governing original is David Renard, *Représentations des groupes réductifs
 p-adiques*, French version dated 9 July 2026, registered as
@@ -15,7 +14,7 @@ A.VI.1, printed p.261 / PDF p.267, lists sheaves of abelian groups on a
 topological space among the abelian-category examples, then gives axioms
 AB0–AB3*. II.2.1, printed pp.33–34 / PDF pp.39–40, defines the chosen-basis
 presheaves, their morphisms, the sheaf condition (F) and the category of sheaves.
-These three original pages were read and visually checked for this unit.
+These three original pages were read and visually checked for this module.
 
 The separately registered `renard-2010-corrections-complements`, SHA256
 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
@@ -75,8 +74,8 @@ parameter `v`. It is neither a printed hypothesis nor a correction attributed
 to Renard. No relation between `u` and `v` is assumed. The declarations make
 no unrestricted claim for the original-value category `BasisSheaf.{u,v} B`
 and no claim that `max u v` is necessary for each particular space or basis.
-The sufficiency proof and every size argument it needs remain later
-obligations.
+The sufficiency proof and every size argument it needs are in
+[SheafAbelianProof](SheafAbelianProof.md).
 
 The A.VI.1 example has no total disconnectedness, local compactness,
 separation or nonemptiness restriction. The opening II.2.1 definitions also
@@ -87,7 +86,7 @@ with another sheaf category. In particular, neither the raw presheaf category
 nor Mathlib's all-open sheaf category replaces the source category.
 
 Exact proofs of both propositions, together with every needed chosen-basis,
-all-open or Mathlib comparison and universe argument, remain separate work.
-The normalized-presheaf example is also separate. This unit provides the two
-statement targets and their source correspondence; it does not close the
-sheaf example's proof obligation or A.VI.1.
+all-open or Mathlib comparison and universe argument, are outside this module.
+The normalized-presheaf example is also separate. This module provides the two
+statement targets and their source correspondence; it does not prove the
+sheaf example or A.VI.1.

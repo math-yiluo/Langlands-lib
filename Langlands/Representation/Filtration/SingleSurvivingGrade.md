@@ -1,7 +1,5 @@
 # A single surviving graded quotient
 
-Author: Worker 508.
-
 This internal algebra construction evaluates an actual finite functor
 filtration at an input, without changing its subrepresentations or its
 successive quotients. If every quotient vanishes at that input, the ambient

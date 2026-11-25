@@ -1,8 +1,6 @@
 # Proof of the chamber-conjugate intersection
 
-Author: Worker 4691.
-
-This unit proves the published target
+This module proves the published target
 `Langlands.Geometry.Building.ChamberConjugateIntersectionStatement` of
 `Langlands/Geometry/Building/AffineIwahoriTitsInputStatements.lean`. The theorem
 `Langlands.Geometry.Building.chamberConjugateIntersection` is stated at an arbitrary
@@ -105,6 +103,6 @@ proof says only that the argument for `I ∩ sIs ≠ I` "can be iterated". The i
 route is the published Library argument summarized above. It uses KP Lemma 7.4.3 and
 the cover-image step of KP Corollary 2.6.28 through their published Library forms.
 
-This unit is conditional only in the sense of the target: it is a theorem about supplied
+This module is conditional only in the sense of the target: it is a theorem about supplied
 `ParahoricBuildingData` satisfying the fixed-apartment axioms. It does not construct such
 data, and it does not prove the other inputs of `AffineIwahoriTitsStatement`.

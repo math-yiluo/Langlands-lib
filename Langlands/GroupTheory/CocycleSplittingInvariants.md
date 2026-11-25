@@ -32,5 +32,5 @@ proves the claim.
 The provenance is internal, from the displayed coordinate actions,
 torsion-freeness of the lifted integers, and the previously proved
 splitting-class and norm results. There is no transfer comparison in
-this unit. The coefficient group and its action remain the original ones
+this module. The coefficient group and its action remain the original ones
 throughout.

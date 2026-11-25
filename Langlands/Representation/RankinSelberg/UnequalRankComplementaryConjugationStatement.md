@@ -145,20 +145,21 @@ plus-sign unipotents `1 + E` and `1 + X`, the inverse transpose
 `inverseTranspose`, and the published coefficient-image model equivalence
 `translatedFirstDualModelEquiv`. With these conventions the sign is exactly `-1`
 instead of the source's `(-1)^(j+r-1)`. The proposition records this sign as
-it is. Removing it is left to the consumer, which plans to use a separately
+it is. Removing it is left to the consumer, which uses a separately
 stated even Fourier pair. The
 parametrization `r = n + ((j + 1) + k + 1)` is that of the published
 unequal-rank interfaces (`rectangularUnipotent`, `unequalRankSmearingUnipotent`).
 No errata for either source were found in the project, the Library or the
 central library. The central library's correction by Jacquet (2012) concerns the
 different 1981 paper *Conducteur des représentations du groupe linéaire*. The
-proposition was requested for the JPSS paired-transfer proof (task
-`60e55e09-11c3-4f2f-bd81-5011f07445f7`). It should not be read as a verbatim
+proposition serves the JPSS paired-transfer proof
+`UnequalRankComplementaryTransferProof`, which imports it. It should not be read as a verbatim
 statement from either paper.
 
 ## Why the proposition is expected to hold
 
-A separate proof task will establish the proposition. The expected proof is
+The proposition is proved by `unequalRankComplementaryConjugation` in
+`UnequalRankComplementaryConjugationProof`. The proof is
 elementary and does not use the sources:
 
 1. Identify `blockWeylAt n r _` with `permutation (r + 1) F τ`, comparing the
@@ -173,5 +174,4 @@ elementary and does not use the sources:
    `f(w θ(x a) θ(a⁻¹ U(z) a))` because `θ` is multiplicative. Clause 1 then
    finishes the proof.
 
-A private development check (not submitted) has carried out this route and
-compiled it.
+That proof carries out this route.

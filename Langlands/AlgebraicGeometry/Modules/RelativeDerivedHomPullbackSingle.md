@@ -1,6 +1,6 @@
 # Singleton forms of the relative derived comparison
 
-This internal supporting unit transports the derived sections/Hom comparison from an object placed in degree zero in the bounded below derived category to its actual singleton complex. It uses only the existing comparison and canonical localization isomorphisms; it does not prove the final arbitrary-morphism cohomology pullback statement.
+This internal module, which serves the proof of `RelativeAbelianSheafCohomologyPullbackStatement`, transports the derived sections/Hom comparison from an object placed in degree zero in the bounded below derived category to its actual singleton complex. It uses only the existing comparison and canonical localization isomorphisms; it does not prove that final arbitrary-morphism cohomology pullback statement, which the Library proves in `RelativeAbelianSheafCohomologyPullbackProof`.
 
 For an additive functor `U : C ⥤ A`, `singleComplexDerivedIso U M` identifies the localization of the termwise image of the singleton complex of `M` with the derived singleton of `U(M)`. It is the localization of `U.mapCochainComplexSingleFunctor` followed by the inverse of `DerivedCategory.singleFunctorIsoCompQ`.
 

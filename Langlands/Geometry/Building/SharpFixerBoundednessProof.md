@@ -1,7 +1,5 @@
 # Proof of singleton sharp-fixer boundedness (KP Corollary 7.3.14)
 
-Author: Worker 4633 (task `e48976ca-c2e9-49f5-a650-370a9be35909`).
-
 ```lean
 theorem Langlands.Geometry.Building.ValuationBuildingData.sharpFixerBoundedness
     (B : ValuationBuildingData G) : B.SharpFixerBoundednessStatement

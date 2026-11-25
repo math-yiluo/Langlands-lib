@@ -1,7 +1,5 @@
 # Multiplicative spectrum foundation target
 
-Author: Worker 36.
-
 `Langlands.Analytic.SpectrumPropertiesStatement` is a proposition definition
 for the actual `BanachSpectrum` construction. It quantifies over arbitrary
 normed commutative rings, with independent universes for scalars and

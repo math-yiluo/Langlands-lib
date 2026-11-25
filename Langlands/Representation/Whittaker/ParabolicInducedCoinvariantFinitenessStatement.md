@@ -1,8 +1,5 @@
 # Preservation of finite character coinvariants by parabolic induction
 
-Authors: Worker 288 (source audit, Lean statement and documentation) and
-Worker 499 (conditional formulation and finite-orbit dependency route).
-
 `Langlands.Whittaker.ParabolicInducedCoinvariantFinitenessStatement.{uF,uV}`
 is a closed `Prop`-valued definition. It is an internal conditional derivation
 from Bernstein–Zelevinsky (1976), §7.12(1)–(5), printed pp.60–61.
@@ -125,7 +122,9 @@ without the source's factorial bound or its nondegenerate dimension-one
 conclusion.
 
 A proof of this target must implement the following comparisons and assembly;
-they are obligations, not additional hypotheses of the proposition.
+they are obligations, not additional hypotheses of the proposition. The
+Library's proof is `Langlands.Whittaker.parabolicInducedCoinvariantFiniteness`
+in `ParabolicInducedCoinvariantFinitenessProof`.
 
 1. Construct the finite `U`-orbit support filtration of the actual induced
    module, with open initial unions and exhaustive endpoints. Reuse
@@ -141,7 +140,8 @@ they are obligations, not additional hypotheses of the proposition.
    the locally constant character to the required smooth character.
    The existing supplied-topology comparisons and equality of half-modulus
    characters provide infrastructure; their application to every object and
-   comparison in this argument remains to be assembled.
+   comparison in this argument is part of the proof, which reduces to the
+   canonical topological data.
 3. For each minimal representative, include the Levi upper unipotent in
    the conjugated stabilizer as in §7.12(4). In the source convention the
    orbit is `P w U`, its stabilizer is `H_w = U ∩ w⁻¹ P w`, and
@@ -162,10 +162,12 @@ they are obligations, not additional hypotheses of the proposition.
    successive quotients and exact sequences, then supply the finite
    dimensional linear-algebra assembly.
 
-This statement does not depend on an unproved multiplicity-one assertion.
-The independent cuspidal coefficient result can later discharge its premise
-for cuspidal inducing data; neither that result nor the irreducible final
-assembly is stated or proved here.
+This statement does not depend on a multiplicity-one assertion.
+The independent cuspidal coefficient result
+(`LeviCuspidalCoinvariantFinitenessStatement`, proved in
+`LeviCuspidalCoinvariantFinitenessProof`) discharges its premise for cuspidal
+inducing data in `IrreducibleCoinvariantFinitenessProof`; neither that result
+nor the irreducible final assembly is stated or proved here.
 
 ## Original source and reading
 

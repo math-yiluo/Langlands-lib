@@ -1,7 +1,5 @@
 # Central torus subgroups and adic limits
 
-Author: Worker 668.
-
 For a smooth separated group with geometrically connected fibres over
 a noetherian local ring, centrality of a relative torus homomorphism
 can be checked on the maximal-ideal power thickenings. The actual

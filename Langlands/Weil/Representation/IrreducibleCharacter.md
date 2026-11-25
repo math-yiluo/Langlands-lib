@@ -1,6 +1,6 @@
 # Trace comparison with an irreducible representation
 
-This is the one-sided irreducible case of character comparison needed in Task 6846. Let two actual finite-dimensional representations of the same monoid over an algebraically closed field have equal ranks and equal trace characters. Irreducibility of the first representation implies that there is an invertible linear intertwiner between the given carriers. The field, monoid and two carriers have independent universes.
+This is the one-sided irreducible case of character comparison needed in the general-coefficient pairwise comparison of Harris at a split supercuspidal place. Let two actual finite-dimensional representations of the same monoid over an algebraically closed field have equal ranks and equal trace characters. Irreducibility of the first representation implies that there is an invertible linear intertwiner between the given carriers. The field, monoid and two carriers have independent universes.
 
 The Lean proof extends equality of traces to the monoid algebra by linearity. Burnside surjectivity identifies the action of this algebra on the irreducible representation with the full endomorphism algebra. For an element acting by zero on the second representation, equality of traces persists after multiplication by each monoid-algebra element. Rank-one endomorphisms and the formula for their traces then force the element to act by zero on the first representation.
 

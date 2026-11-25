@@ -1,11 +1,5 @@
 # Coherent normalized Jacquet duality from opposite Iwahori contractions
 
-Author: Worker 1004. Worker 127 contributed the structural interface and the
-full-modulus reciprocity formulation. Worker 937 generalized the duality family
-from admissible objects to arbitrary object classes satisfying the stable-pairing
-hypotheses and added the two functor-level isomorphism theorems described in
-the section *Beyond admissible objects*.
-
 `Langlands.Aubert.General.NaturalNormalizedJacquetDuality` is a data type
 containing a chosen family of isomorphisms and its bundled naturality law.
 The noncomputable definition
@@ -56,7 +50,7 @@ The implemented argument first forms
 `Jacquet.stablePairingDataOfIwahoriContractions`.
 `StablePairingData.admits_of_iwahoriContractions` supplies its stable-image
 and kernel conditions from admissibility and both contraction orientations.
-(Since Worker 937's generalization this step sits in the admissible corollary;
+(This step sits in the admissible corollary;
 the general theorem receives these conditions as a hypothesis.)
 `StablePairingData.exists_isStablePairing` then gives a stable pairing `b`.
 Its `IsStablePairing.exists_equiv` gives the equivariant equivalence on
@@ -83,9 +77,9 @@ A.representation A.isSmooth`. It constructs a family `E A hA` for `hA : S A` wit
 the same naturality equation for every actual morphism between members of `S`.
 Its proof is the argument above with admissibility replaced by `hAdm`, which was
 the only use of admissibility. The admissible theorem
-`exists_naturalNormalizedJacquetDuality_of_iwahoriContractions` is now the case
+`exists_naturalNormalizedJacquetDuality_of_iwahoriContractions` is the case
 `S = SmoothRep.IsAdmissible`, with `hAdm` given by
-`admits_of_iwahoriContractions`; its statement is unchanged.
+`admits_of_iwahoriContractions`.
 
 `nonempty_contragredient_normalizedJacquet_iso_of_admits` assumes `Admits` for
 every smooth complex representation (carrier universe `uV`) and concludes
@@ -140,18 +134,15 @@ fixed spaces), the splitting consequences
 `stableImageJacquetMap_bijective_of_splits` of `Jacquet.CompressionSplittingDuality`,
 `powerKernelSup_eq_ker_of_iwahoriContraction`,
 `isAdmissible_smoothContragredient_of_compact_cofinal`, and the stable-pairing
-existence, equivalence and naturality results just named. (Before Worker 937's
-change, the route used `stableImageJacquetMap_bijective_of_iwahoriContraction`
-and `compactCompression_stableEvaluationDuality` instead of the two splitting
-consequences.) They work for the abstract group and its given compact open
+existence, equivalence and naturality results just named. They work for the abstract group and its given compact open
 subgroups. The finite-dimensional fixed spaces come from admissibility. The proof also uses the actual
 coinvariant, localization, Haar-character, character-twist and bundled smooth
 contragredient definitions.
 
 A recursive inspection of the constructor's type and body, including the
 types and values of project constants they reference, reached 454 project
-declarations in 44 modules before Worker 937's generalization; the added
-dependencies are the elementary linear-algebra module
+declarations in 44 modules before the generalization beyond admissible
+objects; the dependencies it added are the elementary linear-algebra module
 `Jacquet.CompressionSplittingDuality` and its imports. None is a classification, character-independence,
 geometric-lemma, parabolic-adjointness or cuspidal-support result.
 `Jacquet.compressedAction_adjoint` and
@@ -185,7 +176,8 @@ actual intertwiners and evaluation under pullback. The coefficient field
 The registered source is `casselman-2019-jacquet-module`, SHA256
 `377edac998669bc88da1224c4582a173854232f7fea5caf945d140ee92fde5c1`.
 The retained original is
-`/home/taskhub/central-library/Casselman--p-adic groups lecture notes/Introduction to representations of p-adic groups/Casselman--Chapter III - Induced representations and the Jacquet module--2019.pdf`.
+`Casselman--p-adic groups lecture notes/Introduction to representations of p-adic groups/Casselman--Chapter III - Induced representations and the Jacquet module--2019.pdf`
+in the central library.
 The original page images were checked for the opposite-radical overbars.
 No separate source errata file was found in the inspected notes or source
 folder.

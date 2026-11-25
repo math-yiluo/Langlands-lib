@@ -1,6 +1,6 @@
 # Relative etale lifting into a prescribed Henselian algebra
 
-Worker 872. This internal construction applies published Henselian etale
+This internal construction applies published Henselian etale
 sections after tensor base change.
 
 Let `A` be a Henselian local `P`-algebra with a supplied surjective map to a

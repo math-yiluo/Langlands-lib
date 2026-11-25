@@ -1,7 +1,5 @@
 # Commutators in the preimage of a unipotent subgroup
 
-Author: Worker 1499.
-
 This internal helper module of the proof of
 `Langlands.GroupScheme.CenterQuotientReductiveStatement` proves the step that
 makes rational points of `G` lying over central rational points of a unipotent

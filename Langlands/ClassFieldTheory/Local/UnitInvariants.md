@@ -1,7 +1,5 @@
 # Fixed units and the field norm
 
-Author: Worker 42.
-
 This pair supplies the field-specific identification needed to interpret
 degree-zero Tate cohomology. It uses the actual representation from
 `Cohomology` and Mathlib's existing algebra norm. It neither defines a

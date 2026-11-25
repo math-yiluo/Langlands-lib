@@ -1,7 +1,5 @@
 # Steinberg's class quotient of a simply connected quasi-split group
 
-Task `d49e6c73-9af7-436f-9fd6-9c447baa4271` (Task 4945). Author: Worker 4945.
-
 This module proves the published proposition
 `Langlands.GroupScheme.QuasiSplitSteinbergQuotientStatement.{u}`
 (module `Rational/QuasiSplitSteinbergQuotientStatement`) as the closing theorem
@@ -24,8 +22,7 @@ and no hypothesis on `K`, `F`, `G`, `v`, `y`, `w`, `S` or `j` is added.
   It applies the assembly to the published proof
   `Langlands.GroupScheme.ClassFunctions.stronglyRegularRationalLifting :
   ClassFunctions.StronglyRegularRationalLiftingStatement.{u}`
-  (module `Rational/ClassFunctionsRationalLifting`, Task 5324,
-  `dae9b3ff-3319-4226-a421-ef1462af985a`). So the closing theorem has no hypotheses and takes no
+  (module `Rational/ClassFunctionsRationalLifting`). So the closing theorem has no hypotheses and takes no
   unproved Library statement as a premise. In particular it does not use
   `QuasiSplitRegularClassRationalStatement` or any other form of Borelâ€“Springer 8.6 as a premise.
 
@@ -58,17 +55,12 @@ Neither this module nor its Markdown asserts a global `K`-rational section of `Ï
 proof of property 3 chooses the lift point by point when `G` has a simple component of type `A_n`
 with `n` even (see `Rational/ClassFunctionsRationalLifting.md`).
 
-## Prerequisite tasks
+## Prerequisites
 
-Property 3 rests on Task 5324 (`dae9b3ff-3319-4226-a421-ef1462af985a`, proof of
-`StronglyRegularRationalLiftingStatement`, Library commit
-`0c3f30c24701c74d5474fca3fbb5324a99aa1d58`). That proof uses
-`Langlands.GroupScheme.splitEvenChainCrossSection` (Task 5373,
-`95361554-92ac-4439-beef-d85479cec26e`, module `Rational/EvenChainCrossSection`) and
-`Langlands.GroupScheme.evenChainGaloisData` (Task 5375, `d652a852-c752-406a-8eff-a02a2a321395`,
-module `Rational/EvenChainGaloisData`). The statement it proves came from Task
-`73a57306-3364-4400-ad5a-af228d5d952c`. The shared planning DAG node
-`proof.quasi-split-steinberg-quotient` records the full decomposition.
+Property 3 rests on the proof of `StronglyRegularRationalLiftingStatement` (module
+`Rational/ClassFunctionsRationalLifting`). That proof uses
+`Langlands.GroupScheme.splitEvenChainCrossSection` (module `Rational/EvenChainCrossSection`) and
+`Langlands.GroupScheme.evenChainGaloisData` (module `Rational/EvenChainGaloisData`).
 
 ## Sources
 

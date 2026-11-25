@@ -8,16 +8,16 @@ Let `W` be an `O(n)`-stable subspace of the `O(n)`-finite functions of a real pr
 `L²(O(n))`. The statement is `Langlands.Archimedean.PrincipalSeriesOrthogonalVectorStatement`,
 proved as `Langlands.Archimedean.principalSeriesOrthogonalVector`.
 
-In the planned proof of the Langlands-quotient statement `RealStandardLanglandsQuotientStatement`
-(Task 6749), `v` produces a nonzero vector of the dual principal series that annihilates `W` in
+For the proof of the Langlands-quotient statement `RealStandardLanglandsQuotientStatement`,
+`v` produces a nonzero vector of the dual principal series that annihilates `W` in
 the `O(n)`-integral pairing: the complex conjugate of `v` on `O(n)` is extended to the dual
-principal series with the separately submitted module `PrincipalSeriesExtension`. This module does
+principal series with the module `PrincipalSeriesExtension`. This module does
 not depend on it.
 
 Notation: `GL_n(ℝ)` is `Langlands.GeneralLinear n ℝ` and `O(n)` is the subgroup
 `unitaryCompact ℝ n`. `principalSeries ℝ n χ`, `kFiniteFunctions` and `Whittaker.rightTranslation`
 (`(R(k) f)(x) = f(x k)`) are the Library's. `RealPrincipalSeriesDuality.haarK n` is the Library's
-normalized Haar measure on `O(n)` (Worker 5459, `RealPrincipalSeriesDualityProof`), with its Borel
+normalized Haar measure on `O(n)` (`RealPrincipalSeriesDualityProof`), with its Borel
 σ-algebra `measurableSpaceK`. Declarations without a prefix are in the namespace
 `Langlands.Archimedean.PrincipalSeriesAnnihilator`.
 

@@ -1,6 +1,6 @@
 # Models of smooth affine group schemes over rings of finite type over `ℤ`
 
-Worker 1412. This is an internal lemma for the noetherian reduction in
+This is an internal lemma for the noetherian reduction in
 SGA 3, Exposé XI, proof of Theorem 4.1, registered source
 `sga3-exposes-xi-xii-xiv-gille-polo-2008`, `Expo11.pdf`, PDF page 21. There
 the base `Spec A` is replaced by `Spec A₀` for a subring `A₀ ⊆ A` of finite

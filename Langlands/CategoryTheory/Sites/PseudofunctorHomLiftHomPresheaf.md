@@ -17,9 +17,9 @@ comparison, reducing the equality to reflexivity. Naturality of
 `presheafHomIso` follows by lowering the lifted arrow and applying
 that lemma to each arbitrary slice morphism.
 
-This is an internal extraction of Worker 214's generic private lemmas
+This is an internal extraction of the generic private lemmas
 `lifted_pullHom_down` and `presheafHomLiftIso` in
-`CoherentSheaves.IsomPresheaf`. Worker 149 exposes the same argument
+`CoherentSheaves.IsomPresheaf`. It exposes the same argument
 in the generic sites namespace for reuse by the actual Picard
 pseudofunctor. The original coherent-family module is unchanged.
 The only mathematical inputs are the published `homLift` construction

@@ -1,7 +1,5 @@
 # Full field-point preservation of quasi-étale pullbacks
 
-Author: Worker 1004.
-
 `localizedQuasiEtaleFieldPointPullback` proves the Library proposition
 `LocalizedQuasiEtaleFieldPointPullbackStatement.{u, v, uL} K L`.
 Here `K : Type u` is complete and ultrametric and `L : Type uL` is complete,

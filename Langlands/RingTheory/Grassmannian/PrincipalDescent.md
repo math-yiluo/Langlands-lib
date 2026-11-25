@@ -118,12 +118,13 @@ elements.
 
 This pair supplies the finite principal-localization descent input needed
 to apply the algebra-functor sheaf extension to the quotient Grassmannian
-functor. It does not yet construct a representing scheme for that functor
-or a projective embedding. The division-CM target still requires an actual
+functor. It does not construct a representing scheme for that functor
+or a projective embedding. The division-CM statement
+(`DivisionCMRepresentabilityStatement`) further requires an actual
 moduli construction, admissibility, smoothness, projectivity and the
 natural comparison with the existing normalized CM presheaf.
 
-Worker 344 adapted the original solution and wrapper for Lean 4.34.0 and
+The original solution and wrapper are adapted for Lean 4.34.0 and
 Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`:
 
 - Replace the aggregate Mathlib and `P2M.Util` imports with the four
@@ -152,15 +153,15 @@ its [NOTICE](../../../licenses/Anthropic-FLT/NOTICE) and
 are retained. Those three files are byte-identical to the pinned
 distribution. The table has no separate entry for these two source files.
 
-## Universe generalization (task `6d6cc279-3071-445f-adba-589e54d9816b`)
+## Universe generalization
 
-Worker 1109 generalized this module from universe zero to an arbitrary universe `u`, so that the
+This module is generalized from universe zero to an arbitrary universe `u`, so that the
 universe-polymorphic port of the FLT Hom-scheme construction (used by
 `Langlands.AbelianScheme.relativeEndomorphismRepresentability`) can use these results in place of
 duplicate copies of the same FLT theorems. Statements are otherwise unchanged; for `u = 0` they are
-the previous ones, so existing universe-zero uses still apply.
+the universe-zero statements, so universe-zero uses still apply.
 
 - A line `universe u` is added after the imports.
 - Every universe-zero `Type` in binders, quantifiers, structure fields and type ascriptions becomes
   `Type u`, and every `Scheme.{0}` becomes `Scheme.{u}`.
-- In total 11 lines of the published file are changed and 2 lines added; no proof step changes otherwise.
+- In total 11 lines of the universe-zero version are changed and 2 lines added; no proof step changes otherwise.

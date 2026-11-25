@@ -1,6 +1,6 @@
 # Finite-dimensional semisimplicity descends to a normal subgroup
 
-Author: Worker 16. This pair states a proposition; it does not prove the
+This pair states a proposition; it does not prove the
 restriction theorem or assume it as supplied data.
 
 ## Exact statement
@@ -39,8 +39,7 @@ All mathematical terms are Mathlib's existing constructions:
 
 The proposition defines no replacement representation or semisimplicity
 predicate. It imports `Mathlib.LinearAlgebra.FiniteDimensional.Defs` and
-`Mathlib.RepresentationTheory.Semisimple`; no existing Library pair is
-modified.
+`Mathlib.RepresentationTheory.Semisimple`.
 
 ## Original source and scope
 
@@ -49,9 +48,9 @@ The motivating original is I. N. Bernshtein and A. V. Zelevinskii,
 field*, Russian Mathematical Surveys 31:3 (1976), 1–68, English translation.
 Registered source: `bernstein-zelevinsky-1976-representations-gln`;
 SHA-256: `72dc22eb9991112936a88327f00d0f02a16a2bf8747518ca0ecfeeadd188e50c`.
-Worker 16 read printed pages 15–17, which are also one-based PDF pages
-15–17, in the registered original. No source-specific errata note was
-present in the project notes or supplied Library.
+Printed pages 15–17, which are also one-based PDF pages 15–17, were read
+in the registered original. No source-specific errata note was present in
+the project notes or the Library.
 
 The representation conventions on page 15 use complex vector spaces,
 without a topology on those vector spaces. Lemma–Definition 2.7 on page 16
@@ -111,7 +110,7 @@ given field and normality; neither requires a finite-index sum or
 division by an index. Mathlib's
 `sSup_simples_eq_top_iff_isSemisimpleModule` and
 `isSemisimpleModule_biSup_of_isSemisimpleModule_submodule` in
-`Mathlib.RingTheory.SimpleModule.Basic` are relevant to a future proof.
+`Mathlib.RingTheory.SimpleModule.Basic` are relevant to a proof.
 They are implementation leads, not a completed formal derivation here.
 
 ## Boundary
@@ -119,7 +118,9 @@ They are implementation leads, not a completed formal derivation here.
 This is the normal-subgroup descent statement complementary to the
 Library's `Langlands.FiniteIndexSemisimplicityAscent`, whose
 characteristic-zero, finite-index hypotheses and reverse direction
-remain unchanged. A proof of this proposition, passage through a normal
-core to general finite-index restriction, induction semisimplicity,
-local Weil specializations, and the local Langlands correspondence are
-separate tasks.
+remain unchanged. The proof of this proposition is
+`finiteDimensionalNormalRestrictionSemisimplicity` in the module
+`NormalRestrictionSemisimplicity`. Passage through a normal core to general
+finite-index restriction, induction semisimplicity, local Weil
+specializations, and the local Langlands correspondence are not treated
+here.

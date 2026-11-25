@@ -1,7 +1,5 @@
 # Joint eigenspace sums and their actual spectral span
 
-Author: Worker 2.
-
 This is an internal construction from the published ordinary joint eigenspaces,
 the genuine fixed-space equivalence of a smooth model, and Mathlib's algebraic
 direct sum. It makes no new identification with original literature. The actual

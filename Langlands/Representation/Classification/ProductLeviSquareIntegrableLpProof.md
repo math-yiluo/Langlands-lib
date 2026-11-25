@@ -1,7 +1,5 @@
 # Proof: discrete-series coefficients of block Levis below exponent two
 
-Author: Worker 246.
-
 This module proves
 
 ```text

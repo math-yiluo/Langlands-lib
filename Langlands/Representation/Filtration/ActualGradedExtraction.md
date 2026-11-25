@@ -1,7 +1,5 @@
 # Actual smooth grades and irreducible subquotient extraction
 
-Author: Worker 19.
-
 This is an internal algebraic construction for the ambient extraction step
 in repeated-factor Jacquet transfer. It reuses actual smooth graded
 objects and proves a finite-filtration extraction lemma. It does not prove

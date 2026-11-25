@@ -1,7 +1,5 @@
 # Cocenters of split-torus centralizers in simply connected groups are induced (proof)
 
-Author: Worker 4721.
-
 `Langlands.GroupScheme.splitTorusCentralizerCocenterInduced` proves exactly
 the public proposition
 `Langlands.GroupScheme.SplitTorusCentralizerCocenterInducedStatement.{u}`
@@ -93,7 +91,6 @@ and the proof of Lemma 2.6.27) is recorded in the statement's own Markdown.
 
 ## Check
 
-`lean_check` in environment `bb168ec3-1031-46d9-816b-5c2ed7bbe1a6` compiled
-this module with no errors or warnings. For
+A compile check of this module reported no errors or warnings. For
 `splitTorusCentralizerCocenterInduced` it reported only the axioms `propext`,
 `Classical.choice` and `Quot.sound`.

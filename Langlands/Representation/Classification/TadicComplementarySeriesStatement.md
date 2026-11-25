@@ -1,6 +1,6 @@
 # Complementary series of `GL_n`: unitarity and length bounds
 
-Author: Worker 1809. This pair states Tadic 1986 Propositions 2.9, 2.10(i)
+This pair states Tadic 1986 Propositions 2.9, 2.10(i)
 and 2.10(ii) as Prop-valued definitions. **None of these assertions is proved
 here.** The module has no axioms, no `sorry`, and no structure field assuming
 the existence of anything. Its one theorem,
@@ -129,7 +129,7 @@ blocks, which is what the Lean states.
 
 This is only the **unitarizable case** of Tadic's 2.10(ii). The source allows
 any `σ ∈ G̃_n`, so this statement is weaker than the source in that respect.
-This is the case the task asks for. Bernstein's Proposition 8.3 (p.89) uses the same product,
+Bernstein's Proposition 8.3 (p.89) uses the same product,
 `π(σ, α) = ν^α σ × ν^(−α) σ⁺ = (ν^α σ) × (ν^α σ)⁺`, for irreducible `σ`. His
 proposition says that `π(σ, α)` is irreducible and unitarizable on the
 interval `I(σ)` and reducible on its boundary. The Remark (p.90) bounds the
@@ -147,8 +147,7 @@ It is also needed to form `BlockShape.uniform 2 n hn`.
 
 ## Scope
 
-- Nothing is proved here. Each statement is a separate target for a later
-  proof task.
+- Nothing is proved here. Each statement is a separate target for a proof.
 - 2.9 and 2.10(i) take `0 < n` because the two-block shape needs positive
   block size. For `n = 0` the source assertions are trivial.
 - 2.10(ii) for irreducible `σ` that are not unitarizable, with `σ⁺` in the

@@ -1,6 +1,6 @@
 # Actual semigroup fppf images under adjoint quotients
 
-Worker 1284. This module proves
+This module proves
 `Langlands.GroupScheme.RelativeRoot.semigroupAdjointImage :
 SemigroupAdjointImageStatement.{u}` for every universe `u`. The proposition is
 the unchanged Library target in `Rational.SemigroupAdjointImageStatement`.
@@ -54,9 +54,8 @@ hypotheses.
 ## Provenance
 
 This is an internal composition of the named published Library theorems.
-Worker 1372 supplied the sufficient reduction; the fixed-torus proof is
-Worker 1544's published assembly, using the semidirect-product route proposed
-by Worker 1334.
+The fixed-torus proof is the published assembly in
+`Reductive.FixedCenterContainingTorusProof`, along a semidirect-product route.
 
 The target's source is Conrad, Gabber and Prasad, *Pseudo-reductive Groups*,
 second edition (2015), registered as

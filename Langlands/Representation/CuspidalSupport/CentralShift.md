@@ -1,11 +1,10 @@
 # Central shifts and strict descent of fixed-vector dimensions
 
-Worker 196 authored this module. Worker 283 submits it, unchanged, as the
-ancillary helper of the proof of
+This module is the ancillary helper of the proof of
 `Langlands.CuspidalSupport.FixedVectorConstituentInduction` in
 `Langlands.Representation.CuspidalSupport.ConstituentInduction`.
 
-This internal proof unit implements the central-operator step in
+This module implements the central-operator step in
 Bernstein–Zelevinsky, *Representations of the group GL(n,F) where F is a
 non-archimedean local field (survey)* (1976), Proposition 3.30, proof step
 (3), printed/PDF page 37. The registered source is

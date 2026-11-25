@@ -99,18 +99,18 @@ variable (ρ : G →* Aut X)
 /-- The action on the actual underlying topological space. -/
 @[instance_reducible]
 def localizedSpaceAction : MulAction G (localizedSpaceFunctor.obj X) where
-  smul g x := localizedSpaceFunctor.map (ρ g).hom x
+  smul g x := localizedSpaceFunctor.map (ρ g).asIso.hom x
   one_smul x := by
-    change localizedSpaceFunctor.map (ρ 1).hom x = x
+    change localizedSpaceFunctor.map (ρ 1).asIso.hom x = x
     rw [map_one]
     change localizedSpaceFunctor.map (𝟙 X) x = x
     rw [CategoryTheory.Functor.map_id]
     rfl
   mul_smul g h x := by
-    change localizedSpaceFunctor.map (ρ (g * h)).hom x =
-      localizedSpaceFunctor.map (ρ g).hom (localizedSpaceFunctor.map (ρ h).hom x)
+    change localizedSpaceFunctor.map (ρ (g * h)).asIso.hom x =
+      localizedSpaceFunctor.map (ρ g).asIso.hom (localizedSpaceFunctor.map (ρ h).asIso.hom x)
     rw [map_mul]
-    change localizedSpaceFunctor.map ((ρ h).hom ≫ (ρ g).hom) x = _
+    change localizedSpaceFunctor.map ((ρ h).asIso.hom ≫ (ρ g).asIso.hom) x = _
     rw [CategoryTheory.Functor.map_comp]
     rfl
 
@@ -120,7 +120,7 @@ theorem continuousConstSMul_localizedSpaceAction :
     letI := localizedSpaceAction ρ
     ContinuousConstSMul G (localizedSpaceFunctor.obj X) := by
   let := localizedSpaceAction ρ
-  exact ⟨fun g => (localizedSpaceFunctor.map (ρ g).hom).hom.continuous⟩
+  exact ⟨fun g => (localizedSpaceFunctor.map (ρ g).asIso.hom).hom.continuous⟩
 
 /-- Zero-function tests make the full setwise stabilizer of each chart open. -/
 def chartOpenStabilizer (hρ : IsContinuousAction ρ)
@@ -133,9 +133,9 @@ def chartOpenStabilizer (hρ : IsContinuousAction ρ)
   let τ : TestTriple (presentationOf X) := ⟨i, 0, 1, zero_lt_one⟩
   apply Filter.mem_of_superset (hρ τ)
   intro g hg
-  have heq := (hg : IsNear τ (ρ g).hom (𝟙 X)).preimage_eq
+  have heq := (hg : IsNear τ (ρ g).asIso.hom (𝟙 X)).preimage_eq
   have hpre : (fun x : localizedSpaceFunctor.obj X => g • x) ⁻¹' S = S := by
-    change (localizedSpaceFunctor.map (ρ g).hom : _ → _) ⁻¹' S =
+    change (localizedSpaceFunctor.map (ρ g).asIso.hom : _ → _) ⁻¹' S =
       (localizedSpaceFunctor.map (𝟙 X) : _ → _) ⁻¹' S at heq
     rw [CategoryTheory.Functor.map_id] at heq
     exact heq

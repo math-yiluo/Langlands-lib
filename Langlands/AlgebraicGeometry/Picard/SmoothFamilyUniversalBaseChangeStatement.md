@@ -70,7 +70,7 @@ This file contains no proof of the statement.
   tests. Neither statement implies the other directly: the classes and the
   test categories differ, and no comparison between the two fibre
   conditions is asserted here.
-- Task `6302965b-461d-4759-82f5-74b5d48bff2d` states base change for the full
+- `RigidifiedUniversalBaseChangeStatement` states base change for the full
   `RigidifiedLineBundle.IsUniversal`. That predicate classifies all
   rigidified families on all test schemes, with no fibre condition. Its
   hypothesis and conclusion are both different from the ones here, so it does
@@ -95,7 +95,7 @@ states this exact Lean theorem.
   Picard functor. The proof of Theorem 1.9 first reduces to affine bases and
   then to finite-type integer algebras.
 
-Worker 141's accepted source map
+The source map
 `notes/abelian-schemes/relative-picard-source-map.md` records the passages
 that were read.
 
@@ -109,18 +109,19 @@ and `P` come from transporting a supplied universal property by scheme
 pullbacks. They do not extend any source existence theorem beyond the
 sources' quasi-separated base conventions.
 
-This statement is meant as the base-change ingredient for the
-shared-representer proof task `e9fb02f6-3fec-4e98-84cf-fcbd2b47f407`, whose
-target is `SmoothFamilyAbelianRepresentabilityStatement`. Following
+This statement is meant as the base-change ingredient for the proof of
+`SmoothFamilyAbelianRepresentabilityStatement`; the Library's
+`smoothFamilyAbelianRepresentabilityOfFiniteType` uses it. Following
 Faltings–Chai Theorem I.1.9, that proof reduces first to affine bases and
 then to finite-type models. Restriction along open immersions `U → S` and
 ground-base change from a finite-type model are both special cases of the
 arbitrary morphism `b`.
 
-## Future proof obligations
+## Proof obligations
 
 A proof must establish the following points. None of them is proved or
-assumed here.
+assumed here. The Library proves the statement as
+`smoothFamilyUniversalBaseChange` (module `SmoothFamilyUniversalBaseChangeProof`).
 
 - Geometric fibres of the family. Every geometric point `Spec K → P_{S'}`
   gives a geometric point `Spec K → P` by composing with the projection.

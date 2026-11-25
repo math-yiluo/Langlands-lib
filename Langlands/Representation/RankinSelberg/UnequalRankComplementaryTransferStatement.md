@@ -1,12 +1,11 @@
 # Paired complementary-block transfer
 
-Worker 396 designed this internal interface for same-multiplier propagation.
-Worker 467 independently checked the original sources and integral definitions,
-and prepared this statement and its expanded documentation. The topological,
-field, measure and representation telescope and the private valuative-topology
-helper are adapted from Worker 331's published
-`UnequalRankGammaPropagationStatement`. Worker 331's setup in turn follows
-Worker 11's published `FunctionalEquationStatement`.
+This is an internal interface for same-multiplier propagation. The statement
+was checked independently against the original sources and integral
+definitions. The topological, field, measure and representation telescope and
+the private valuative-topology helper are adapted from the published
+`UnequalRankGammaPropagationStatement`, whose setup in turn follows the
+published `FunctionalEquationStatement`.
 
 `Langlands.RankinSelberg.UnequalRankComplementaryTransferStatement.{uF,uV,uW}
 F T n r` is a proposition definition. This module states the paired transfer;
@@ -103,7 +102,7 @@ functional equation, continuation, common-generator, analytic or
 irreducibility assumption. Subject only to the data hypotheses above,
 this is an unconditional transfer target.
 
-## Derived provenance and future proof obligations
+## Derived provenance and proof obligations
 
 JPSS Theorem 2.7, printed pp.390–391, treats representations of Whittaker type.
 Its unequal-rank formula (2) uses complementary blocks and the right-translated
@@ -130,7 +129,8 @@ complementary block. Reversing equality gives exactly the two orientations
 stated here. This is the source rationale for the paired internal interface,
 not an assertion that the source states this Lean predicate verbatim.
 
-The future proof must perform both transfers on the actual coefficient image,
+The proof (`unequalRankComplementaryTransfer` in
+`UnequalRankComplementaryTransferProof`) must perform both transfers on the actual coefficient image,
 justify every integral interchange and each right-half-plane bound, and show
 that one averaged coefficient works for both clauses. Self-duality of the
 **supplied** `ν` must account for the Fourier cutoff's volume and every
@@ -140,10 +140,10 @@ scalar measure. The zero-row cases use the published unit point mass, so
 `j=0` or `k=0` causes no new normalization choice.
 
 Uniform rectangular support, finite Schwartz expansion, upper-column
-smearing and its global and pointwise Fourier identities are separate future
+smearing and its global and pointwise Fourier identities are separate
 proof inputs. They are neither assumptions of this statement nor proved by
-this module. The paired equalities suffice for a future same-multiplier
-propagation argument to transport existing continuations with the identical
+this module. The paired equalities suffice for a same-multiplier
+propagation argument (`UnequalRankGammaPropagationProof`) to transport existing continuations with the identical
 rational functions on their respective half-planes; this module supplies
 neither those continuations nor that propagation proof.
 

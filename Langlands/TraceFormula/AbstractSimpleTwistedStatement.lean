@@ -9,7 +9,8 @@ import Mathlib.MeasureTheory.Function.LocallyIntegrable
 
 For a unimodular locally compact group `G`, a discrete subgroup `Γ`, a continuous
 automorphism `θ` of `G` preserving `Γ` and the measures, and a compactly supported
-continuous `f`, suppose that `R(f) ∘ I_θ` is trace class on `L²(Γ \ G)`, that the
+continuous `f`, suppose that `R(f) ∘ I_θ` is trace class on `L²(Γ \ G)`, that every `x`
+with `f (x⁻¹ γ θ x) ≠ 0` for some `γ ∈ Γ` lies in `Γ · C` for one compact set `C`, that the
 `Γ`-`θ`-conjugacy classes of `Γ` meeting the `G`-`θ`-orbits of the support of `f`
 are finitely many, with representatives `r i`, and that each `(Γ ∩ C_{r i}) \ C_{r i}`
 has finite volume and each twisted orbital integral converges absolutely. Then
@@ -55,6 +56,8 @@ def AbstractSimpleTwistedTraceFormulaStatement : Prop :=
     IsTraceClass ((Langlands.Analysis.integratedIsometricAction μG π hπnorm hπmeas f
         (f.continuous.integrable_of_hasCompactSupport f.hasCompactSupport)).comp
       (twistOperator Γ θ hθΓ ν hθν)) →
+    (∃ C : Set G, IsCompact C ∧
+      ∀ x : G, ∀ γ ∈ Γ, f (x⁻¹ * γ * θ x) ≠ 0 → ∃ g ∈ Γ, ∃ y ∈ C, x = g * y) →
     ∀ (n : ℕ) (r : Fin n → Γ),
     (∀ i j, IsTwistedConjugate Γ θ (r i : G) (r j : G) → i = j) →
     (∀ γ ∈ Γ, (∃ x : G, f (x⁻¹ * γ * θ x) ≠ 0) →

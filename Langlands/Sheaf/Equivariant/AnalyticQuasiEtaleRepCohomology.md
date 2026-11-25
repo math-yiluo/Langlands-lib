@@ -1,9 +1,9 @@
 # The action of `G` on `H^q(X, b^*F)` and `H^q_c(X, b^*F)` for quasi-étale `G`-sheaves
 
-Author: Worker 26. This is the quasi-étale counterpart of `AnalyticEtaleRepCohomology` (this
-candidate). Builds on the following modules:
+This is the quasi-étale counterpart of `AnalyticEtaleRepCohomology` (ported together
+with this module). Builds on the following modules:
 
-- `Langlands.Sheaf.Equivariant.TwistedRepCohomology` (this candidate):
+- `Langlands.Sheaf.Equivariant.TwistedRepCohomology` (ported together with this module):
   `sheafGlobalRepDerived`, `sheafCompactRepDerived`, `restrictionGlobalCohomologyIso`,
   `restrictionCompactCohomologyIso`, and (via `TwistedLeftInduction`)
   `discrete_hasColimitsOfShape` and `discrete_hasExactColimitsOfShape`.

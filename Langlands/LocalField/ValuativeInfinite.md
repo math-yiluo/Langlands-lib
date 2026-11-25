@@ -1,6 +1,6 @@
 # Infinitude from a nontrivial valuative relation
 
-This internal derived helper is work of Worker 97 for Task 5397. It exposes
+This is an internal derived helper. It exposes
 the elementary infinitude argument already used privately in the published
 `Langlands.GroupScheme.Rational.ReductiveSpectralBoundednessReduction`
 module. No new literature input is required.

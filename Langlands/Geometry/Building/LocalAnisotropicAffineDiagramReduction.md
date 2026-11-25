@@ -12,16 +12,19 @@ statement hypotheses:
 - `UnramifiedSpecialApartmentChamberStatement`;
 - `RelativeRootSystemIrreducibleStatement`.
 
-Every hypothesis is at the same arbitrary universe `u` as the host proposition.
-The conclusion retains all of the host's field and group hypotheses, every
+Every hypothesis is at the same arbitrary universe `u` as
+`LocalAnisotropicAffineDiagramStatement`. The conclusion retains all of that
+statement's field and group hypotheses, every
 characteristic, the actual supplied Tits index, and its absolute Cartan block.
 The theorem does not supply proofs of the five hypotheses. In particular, it
-does not prove the unconditional host target.
+does not prove the unconditional `LocalAnisotropicAffineDiagramStatement`;
+`Langlands.GroupScheme.localAnisotropicAffineDiagram` (module
+`LocalAnisotropicAffineDiagramProof`) does.
 
 The noncomputable definition
 `localAnisotropicAffineDiagramMatrixOfBuildingInputs` chooses the resulting
 integer matrix on `Option d.Vertex`, with the five supporting statements and
-the host data as arguments. Its specification gives the absolute Cartan block,
+the data of that statement as arguments. Its specification gives the absolute Cartan block,
 diagonal entries two, nonpositive off-diagonal entries, symmetric zero pattern,
 a positive integral left kernel vector, and transitivity of the group of
 entry-preserving permutations.

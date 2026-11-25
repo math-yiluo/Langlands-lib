@@ -87,14 +87,12 @@ The section value identifies the right-hand side with
 Extensionality in `Over S` gives `d = 1`, and the defect criterion
 finishes the proof.
 
-## Provenance and contributions
+## Provenance
 
-Worker 143 designed and implemented this assembly. Its three substantial
-geometric inputs are reused through their published theorem names: field
-pointed-morphism rigidity by Workers 334 and 143, relative global
-functions by Worker 299, and section/global-functions factorization by
-Workers 266 and 143. Their companion Markdown files explain their
-proofs and sources. The private helpers here are elementary group,
+The three substantial geometric inputs of this assembly are reused
+through their published theorem names: field pointed-morphism rigidity,
+relative global functions, and section/global-functions factorization.
+Their companion Markdown files explain their proofs and sources. The private helpers here are elementary group,
 functoriality and fibre-evaluation calculations.
 
 This is an internal derived proof of the stronger target recorded in

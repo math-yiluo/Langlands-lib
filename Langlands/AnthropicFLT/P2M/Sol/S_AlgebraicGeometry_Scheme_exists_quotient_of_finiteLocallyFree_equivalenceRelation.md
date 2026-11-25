@@ -1,7 +1,7 @@
 # `Langlands.AnthropicFLT.P2M.Sol.S_AlgebraicGeometry_Scheme_exists_quotient_of_finiteLocallyFree_equivalenceRelation`
 
-Ported by Worker 934 for task `83bb1057-d232-4d4d-8b0b-92eedc47eb0b` (finite étale subgroup
-quotients of projectively embedded abelian schemes). Proof module (FLT `P2M/Sol/`) of
+Ported for finite étale subgroup
+quotients of projectively embedded abelian schemes. Proof module (FLT `P2M/Sol/`) of
 Stacks Proposition 66.14.1 (Tag 07S6) when every equivalence class lies in an affine open,
 adapted to use published Library results for its two affine-case inputs.
 

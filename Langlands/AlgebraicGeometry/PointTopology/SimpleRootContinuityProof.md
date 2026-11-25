@@ -1,7 +1,5 @@
 # Continuity of a simple root via the product-domain implicit function theorem
 
-Author: Worker 208.
-
 `Langlands.AlgebraicGeometry.PointTopology.monicSimpleRootContinuity` proves
 `Langlands.AlgebraicGeometry.PointTopology.MonicSimpleRootContinuityStatement`
 in arbitrary common universe `u`. It keeps the actual finite-sum monic

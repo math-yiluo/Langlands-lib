@@ -1,6 +1,6 @@
 # Actual root points outside higher-multiple root groups
 
-This derived unit concerns the intrinsic all-test relative root subgroup functors
+This derived module concerns the intrinsic all-test relative root subgroup functors
 of a smooth affine group over a field, acted on by a split torus. The torus map
 need not be monomorphic or maximal, and neither reductivity nor connectedness of
 the ambient group is required. All declarations have arbitrary universe.
@@ -33,7 +33,7 @@ the identity. The all-test noncontainment conclusion does not require the field
 to be algebraically closed.
 
 The provenance is the composition of the named Library interfaces and elementary
-character arithmetic. No separate original-literature claim is made. This unit
+character arithmetic. No separate original-literature claim is made. This module
 does not identify a root's affine depth or prove survival in the reductive
 quotient of a facet model. In particular, a nonidentity root point alone would
 not establish exclusion from the doubled-root subgroup; the exact tangent weight

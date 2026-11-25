@@ -117,7 +117,7 @@ under the Library's empty-matrix convention, not a claim that the source
 separately discusses `GL_0`: the matrix group is trivial, its Lie algebra is
 zero, the enveloping action is scalar, and the growth height is at least one.
 The statements use the same definitions at rank zero without a positivity
-hypothesis; no separate rank-zero proof is supplied in this unit.
+hypothesis; no separate rank-zero proof is supplied in this module.
 
 ## Implemented elementary implication
 
@@ -131,7 +131,13 @@ and combine them with the already published
 `finiteSmoothEnvelopingAction_hasFiniteLevel` and
 `isCenterFinite_finiteSmoothEnvelopingAction`. Convert the assembled predicate
 back to membership. This is a conditional logical reduction, not a proof of
-either remaining differential obligation or of compact-translation preservation.
+either differential obligation or of compact-translation preservation; the
+Library proves these as `automorphicDifferentialInfiniteFinite` (module
+`Langlands.Automorphic.DifferentialInfiniteFiniteProof`),
+`automorphicDifferentialGrowth` (module
+`Langlands.Automorphic.DifferentialGrowthProof`) and
+`automorphicCompactTranslation` (module
+`Langlands.Automorphic.CompactTranslationProof`).
 
 No finite Hecke integration, full `(g,K)` construction, or automorphic
 local-component construction is included.

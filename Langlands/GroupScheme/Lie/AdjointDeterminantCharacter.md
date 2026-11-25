@@ -1,7 +1,5 @@
 # The rational determinant character of the full adjoint action
 
-Author: Worker 107.
-
 For an affine group scheme G over a field k, with locally finite type
 structure morphism, `Lie.adjointDeterminantCharacter G` is the actual
 rational algebraic character det(Ad): G → Gm. The definition specializes

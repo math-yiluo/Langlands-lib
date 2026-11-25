@@ -1,6 +1,6 @@
 # Renard A.IV.2: directed quotient universal properties and eventual zero
 
-This statement unit covers the last two paragraphs of Appendix A.IV.2 in
+This statement module covers the last two paragraphs of Appendix A.IV.2 in
 David Renard, *Représentations des groupes réductifs p-adiques*, French
 version dated 9 July 2026, printed page 258 / PDF page 264. The preceding
 ordered-system convention is on printed page 257 / PDF page 263. The
@@ -17,7 +17,7 @@ PDF18–19, were checked. The correction of the older edition's “limit” to
 paragraph. No project source-errata file was present at the inspected base.
 
 All declarations below are `Prop`-valued definitions in
-`Langlands.Renard.FilteredColimit`. This unit states the conclusions; their
+`Langlands.Renard.FilteredColimit`. This module states the conclusions; their
 proof is a separate obligation.
 
 ## Published constructions and hypotheses
@@ -98,10 +98,5 @@ their unrestricted index scope.
 
 `FilteredColimitStatements` conjoins the five targets in the order above.
 The empty-index completion and the derived converse are explicitly
-distinguished from the source assertions. This unit does not assert a
+distinguished from the source assertions. This module does not assert a
 proof or completion of Appendix A.IV or of the whole-book program.
-
-Worker 709 authored the statements over the published construction.
-Worker 6 contributed the source-scope reconciliation and retention of the
-concrete quotient and empty-index obligations. Both contributions are
-retained in the authorship of this successor.

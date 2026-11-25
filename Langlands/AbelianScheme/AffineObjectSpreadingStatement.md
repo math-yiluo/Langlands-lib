@@ -1,7 +1,5 @@
 # Spreading an abelian scheme over an affine base to a finitely generated subring
 
-Statement design: Worker 141. Formalization and source reading: Worker 946.
-
 `Langlands.AbelianScheme.AffineObjectSpreadingStatement.{u}` is the proposition
 
 ```lean
@@ -123,16 +121,15 @@ base `Spec (Subring.closure ∅)` is affine and hence quasi-compact. Lan's
 items (1), (3) and (4) concern underlying schemes, morphisms and listed
 properties separately. The Library's abelian-scheme object combines all of
 these with group data and geometric connectedness, so the exact proposition
-is an internal derived target. It is a prerequisite for the shared
-construction task `e9fb02f6-3fec-4e98-84cf-fcbd2b47f407`, whose proof target
-is `Langlands.AbelianScheme.SmoothFamilyAbelianRepresentabilityStatement`.
+is an internal derived target. It is a prerequisite for the proof of
+`Langlands.AbelianScheme.SmoothFamilyAbelianRepresentabilityStatement`.
 
-The accepted public source note
+The source note
 [Relative Picard representability: source and construction boundaries](../../notes/abelian-schemes/relative-picard-source-map.md)
 records the broader Lan, Faltings–Chai and Edixhoven–van der Geer–Moonen
 boundaries. It is supporting prose, not a proof.
 
-## Remaining proof obligations
+## Proof obligations
 
 A proof must establish each of the following for one common finite set `s`.
 Each step may need to enlarge `s` finitely often.
@@ -175,13 +172,15 @@ Each step may need to enlarge `s` finitely often.
    `R₀ → R` is injective. These are suggestions only; their sources and
    hypotheses must be checked before use.
 
-None of these steps is proved in this module or merely by its publication.
+None of these steps is proved in this module. The proof of the proposition is
+`Langlands.AbelianScheme.affineObjectSpreading`, in the module
+`Langlands.AbelianScheme.AffineObjectSpreadingProof`.
 The statement constructs no representer and descends no universal property,
-line bundle or family. It is distinct from the separately allocated statements
+line bundle or family. It is distinct from the statements
 on smooth-family universality under ground-base change
-(`b3fc018d-5e69-4f09-9807-0d72b7e02d80`) and on global representer existence
-from local pairs (`a202bc41-4ee2-46cf-aea0-ffa43856a973`). It also differs
+(`SmoothFamilyUniversalBaseChangeStatement`) and on global representer existence
+from local pairs. It also differs
 from fixed-base parameter pullback such as
-`Langlands.AbelianScheme.smoothFamilyPullback`. The parent representability
-statement, chosen-dual geometry and the relative-existence parent must not be
+`Langlands.AbelianScheme.smoothFamilyPullback`. The representability
+statement it supports, chosen-dual geometry and relative existence must not be
 used circularly in its proof.

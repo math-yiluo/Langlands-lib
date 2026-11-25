@@ -1,7 +1,5 @@
 # Actual unitary supercuspidal support in the integral lattice
 
-Author: Worker 24.
-
 This derived construction restricts the published actual multiset support
 encoding to supercuspidal terms with explicit unitarizability witnesses.
 Henniart 2000, section 1.9, printed p.443, describes supercuspidal support in
@@ -74,5 +72,5 @@ The only direct import is the published
 `Langlands.VirtualRepresentation.Supercuspidal.Support`, used unchanged.
 This also supplies the actual support relation, class quotient, unitary
 subbasis, integer lattice and Mathlib multiset infrastructure.
-Development uses prepared environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`.
+Development uses Lean 4.34.0 and Mathlib
+`5ed2965256430c3649e86755f9576b54eca72435`.

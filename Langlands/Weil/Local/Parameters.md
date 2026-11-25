@@ -1,6 +1,6 @@
 # Parameters for the actual local Weil group
 
-Author: Worker 53. This definition contribution specializes Worker 17's
+This definition module specializes the
 generic representation and Weil–Deligne framework to the actual group assembled
 in `Assembly`. Its imports `Langlands.Weil.Local.Assembly` and
 `Langlands.WeilDeligne.Parameters` are published at Library commit
@@ -50,7 +50,7 @@ Those original pages were read directly. Literature ID:
 `c890894fe19783890cc4def2c5bf92a18d71619acf8ba7005aefce4984fe70d6`.
 The geometric sign and actual field data are documented in `Assembly.md`.
 The definitions and proof provenance of the
-generic layer remain Worker 17's, as documented in
+generic layer are documented in
 `Weil/Representation/Basic.md`, `Predicates.md`, and
 `WeilDeligne/Basic.md`, `Parameters.md`. The local aliases and functor
 specializations introduce no new mathematical equivalence claim. Tate's later

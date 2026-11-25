@@ -102,7 +102,3 @@ proof, the fact that an endomorphism of a line bundle is multiplication by a
 global function. The present proof does not follow a source proof. It combines
 the published Library existence theorem with the faithfulness argument above,
 as described in the statement's proof leads.
-
-## Authorship
-
-Worker 317 wrote the Lean proof and this Markdown.

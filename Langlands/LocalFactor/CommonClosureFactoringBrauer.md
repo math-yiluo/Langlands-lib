@@ -1,6 +1,6 @@
 # Unitary classes factoring through a finite Galois quotient, after transport
 
-Author: Worker 5134. Module `Langlands.LocalFactor.CommonClosureFactoringBrauer`,
+Module `Langlands.LocalFactor.CommonClosureFactoringBrauer`,
 namespace `Langlands.LocalFactor.CommonClosure`. It builds on
 `Langlands.LocalFactor.CommonClosureBoundedBrauer`. Universes: `uK` (the p-adic
 field `K`), `uF` (a second p-adic field `F`), `uQ` (the finite group), `uV`

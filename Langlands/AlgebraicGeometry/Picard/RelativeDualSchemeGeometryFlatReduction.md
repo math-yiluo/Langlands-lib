@@ -10,7 +10,7 @@ throughout.
 Unlike the published
 `RelativeDualSchemeGeometryStatement.of_flat_finitePresentation_proper`
 (module `RelativeDualSchemeGeometryReduction`), this reduction needs neither
-`RelativeDualSchemeProperStatement` nor full field geometry. Properness now
+`RelativeDualSchemeProperStatement` nor full field geometry. Properness
 comes from the published theorem `relativeDualSchemeValuativeExistence`, and
 field smoothness is enough on the fibres.
 
@@ -85,16 +85,16 @@ a quasi-separated base `S`, an abelian scheme `A` over `S` and
 
 ## Provenance and source scope
 
-This is an internal derived reduction. It composes accepted Library
+This is an internal derived reduction. It composes Library
 constructions and Mathlib's results about scheme morphisms and invokes no new
 literature theorem. The mathematical scope of the final target remains
 Kai-Wen Lan, *Arithmetic compactifications of PEL-type Shimura varieties*
 (revised March 14, 2021), Theorem 1.3.2.3, printed p.74 (PDF p.102), as
 documented in `RelativeDualSchemeGeometryStatement.md`: arbitrary
 quasi-separated bases. That source scope does not discharge any of the three
-proposition inputs. Separate proof tasks own them: field smoothness (task
-`4ef972f8-8ae6-4f1a-b440-857530de2ca6`), relative flatness (task
-`b6a7f057-6bd6-4d77-ab24-9b79698666f8`) and relative local finite
-presentation (task `209d4877-85e0-4ba7-b1d3-e6e393df82d2`). No new axiom is
-introduced, and the target, `HasDualScheme`, `dualScheme` and their
-dependency closure are unchanged.
+proposition inputs. They are proved separately in the Library: field
+smoothness as `fieldDualSchemeSmooth` (module `FieldDualSchemeSmoothProof`),
+relative flatness as `relativeDualSchemeFlat` (module
+`RelativeDualSchemeFlatProof`) and relative local finite presentation as
+`relativeDualSchemeFinitePresentation` (module
+`RelativeDualSchemeFinitePresentationProof`). No new axiom is introduced.

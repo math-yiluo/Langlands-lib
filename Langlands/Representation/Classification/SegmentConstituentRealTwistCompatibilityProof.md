@@ -1,7 +1,5 @@
 # Real determinant twists of all four segment constituent relations
 
-Authors: Worker 34; Worker 699 (complete-type and strong-uniqueness checks).
-
 The theorem
 `Langlands.Classification.segmentConstituentRealTwistCompatibility`
 proves exactly the published proposition
@@ -110,5 +108,4 @@ existence theorem.
 The development check compiles the paired module in the prepared Lean
 4.34.0 environment and inspects the closing theorem's universe parameters
 and axioms. Its only axioms are `propext`, `Classical.choice` and
-`Quot.sound`. Independent semantic review, exact-target machine validation
-and Library publication remain separate requirements.
+`Quot.sound`.

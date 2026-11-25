@@ -1,6 +1,9 @@
 # Spreading bialgebra isomorphisms along scalar extensions
 
-This is an internal helper for the local-to-neighborhood step in Task 6940.
+This is an internal helper for the local-to-neighborhood step in the proof that
+fppf closed subgroups of groups of multiplicative type are of multiplicative type
+(`relativeMultiplicativeTypeClosedSubgroup` in
+`Langlands.GroupScheme.Torus.RelativeMultiplicativeTypeSubgroupProof`).
 Its main theorem is `Langlands.BialgebraSpreading.exists_bialgEquiv`.
 
 Let `G i` be a directed system of commutative `R`-algebras indexed by a

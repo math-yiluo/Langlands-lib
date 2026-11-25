@@ -1,6 +1,6 @@
 # Ordinary matching of actual parabolic families
 
-Worker 610. This derived internal module connects ordinary presheaf matching
+This derived internal module connects ordinary presheaf matching
 of relative parabolic families with the all-test subgroup matching used by
 `ParabolicZariskiDescent`. For a reductive group over any scheme, local actual
 parabolic families on any open cover of a parameter scheme have a unique

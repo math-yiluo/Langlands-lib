@@ -1,7 +1,5 @@
 # Full-recognition idempotence as an equivalence of affinoid diagrams
 
-Author: Worker 36.
-
 This module constructs the inverse to `fullRecognitionIdempotenceFunctor`,
 its unit and counit, and an actual equivalence of recognized inclusion
 categories. Its natural isomorphism of presented-affinoid diagrams retains

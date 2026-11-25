@@ -1,6 +1,6 @@
 # Exact cuspidal transpose reduction from local archimedean GK forms
 
-This internal conditional intermediate for Task 7294 proves
+This internal conditional intermediate proves
 `CuspidalLocalGKTransposePairingReductionStatement`, whose conclusion is
 exactly the unchanged
 `CuspidalTransposeInverseContragredientStatement` at the free number-field
@@ -9,8 +9,9 @@ universe `u`.
 Its sole premise is the published
 `Langlands.Archimedean.ArchimedeanTransposePairingStatement.{u}`. This
 is the conjunction of `RealTransposePairingStatement` and
-`ComplexTransposePairingStatement`, both still unproved local existence
-propositions. They assert nonzero inverse-transpose bilinear forms for
+`ComplexTransposePairingStatement`, both local existence propositions,
+proved in the Library (`Archimedean.archimedeanTransposePairing`, module
+`TransposePairingProof`). They assert nonzero inverse-transpose bilinear forms for
 every irreducible admissible genuine real or complex GK-module of
 positive matrix rank, without genericity or unitarity assumptions.
 
@@ -36,4 +37,6 @@ The provenance is internal application and composition of the proved
 source-model properties and global assembly with the published local
 statement interface. No local existence proof is supplied or assumed
 proved here. This conditional result does not establish the
-unconditional global target or complete Task 7294.
+unconditional global target; `cuspidalTransposeInverseContragredient`
+(module `CuspidalTransposeInverseContragredientProof`) applies it to
+`Archimedean.archimedeanTransposePairing` and so proves it.

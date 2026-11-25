@@ -88,8 +88,9 @@ source `waldspurger-2003-plancherel`, SHA-256
 The principal-open description and the nonempty-interior criterion are
 derived for the Library's domain, not stated in the article. They are an
 algebraic step toward continuing the weighted operator from its original
-convergence domain. This unit does not prove joint convergence, nonzero
+convergence domain. This module does not prove joint convergence, nonzero
 lower canonical scalar, pole support of the ratio, or any of the three
-assigned exact targets. The original field and representation-carrier
+exact targets on regularity, the weak expansion and the packet identity
+stated in `RationalWeakExpansionTargets`. The original field and representation-carrier
 universes, measures implicit in the packages, and normalization-dependent
 operator are unchanged.

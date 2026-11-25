@@ -1,7 +1,5 @@
 # Normalization through represented fppf products
 
-Author: Worker 60.
-
 These internal subgroup-functor lemmas work over an arbitrary base scheme
 `S : Scheme.{u}` and retain all relative tests.
 

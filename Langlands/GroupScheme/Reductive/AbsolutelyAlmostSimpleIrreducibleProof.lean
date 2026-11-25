@@ -143,9 +143,9 @@ theorem commute_of_mem_same_root (hG : IsConnectedReductive G)
   let : Smooth G.X.hom := hG.smooth
   have hroot : P.root r ∈ roots i := hP.2.1 ▸ Set.mem_range_self r
   have hhigh := hasNoHigherRoots hG hT hi hP r
-  let : IsAddTorsionFree (ℚ ⊗[ℤ] characterLattice T) := IsAddTorsionFree.of_module_rat _
-  let : IsAddTorsionFree (characterLattice T) :=
-    hT.character_toRat_injective.isAddTorsionFree toRat
+  let : HasUniqueDiv (ℚ ⊗[ℤ] characterLattice T) := HasUniqueDiv.of_module_rat _
+  let : HasUniqueDiv (characterLattice T) :=
+    hT.character_toRat_injective.hasUniqueDiv toRat
   refine commute_of_no_strict_combinations hT i (P.root r) (P.root r) hroot.1 hroot.1
     (fun n m hn hm => ?_) hx hy
   rw [← add_smul]

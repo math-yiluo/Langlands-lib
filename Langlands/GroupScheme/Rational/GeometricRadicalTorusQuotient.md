@@ -1,7 +1,5 @@
 # Torus quotients by a supplied geometric unipotent radical
 
-Worker 1333.
-
 This internal construction produces an actual quotient over the original
 field by a supplied geometric unipotent radical of a smooth connected affine
 solvable group. It retains `SolvableTorusQuotientStatement` as an explicit

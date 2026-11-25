@@ -66,13 +66,13 @@ definitionally `Field.absoluteGaloisGroup F`.
   `cmPrimeToGaloisAction_over`, `cmPrimeToArithmeticCoefficients`,
   `cmPrimeToGaloisCohomologyFunctor` and
   `cmPrimeToGaloisCohomology_ρ_ι_apply`.
-- From `Langlands.Shimura.LevelAutomorphismAction`, submitted together with
-  this module: `levelActionFunctor`.
-- From `Langlands.Shimura.ContinuousGaloisAction` (candidate
-  `5c2f38db-a736-4706-aa12-6de9f8bf0b33`, accepted and awaiting
-  publication): `toObjects`, `hasEulerPolynomialAt_toObjects_iff` and
+- From `Langlands.Shimura.LevelAutomorphismAction` (ported together with
+  this module): `levelActionFunctor`.
+- From `Langlands.Shimura.ContinuousGaloisAction`: `toObjects`,
+  `hasEulerPolynomialAt_toObjects_iff` and
   `hasEulerPolynomialAt_toObjects_iff_along`; and
-  `FrobeniusPolynomial.frobeniusEulerPolynomial` from the same candidate.
+  `FrobeniusPolynomial.frobeniusEulerPolynomial` from
+  `Langlands.Shimura.FrobeniusPolynomial`.
 - From the published `Langlands.Shimura.DecompositionGroupAction`:
   `IsUnramifiedAt`, `IsUnramifiedAlong` and `geometricFrobenius`.
 

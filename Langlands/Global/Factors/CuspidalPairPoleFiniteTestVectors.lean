@@ -16,7 +16,7 @@ namespace Langlands.Global.CuspidalPairPoles
 
 open NumberField Automorphic CompletionPadic RankinSelberg RankinSelbergGlobal
 open CuspidalPairFunctionalEquation (HasIrreducibleAdmissibleComponents)
-open ClassField.Global.RelativeWeilGroup (HasUnitaryCentralCharacter)
+open ClassFieldTheory.Global.RelativeWeilGroup (HasUnitaryCentralCharacter)
 open HarmonicAnalysis MeasureTheory QuotientIntegration Whittaker
 open EqualFiniteWhittakerTests FiniteWhittakerModel FiniteWhittakerSemilocal
 

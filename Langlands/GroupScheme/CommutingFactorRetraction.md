@@ -1,7 +1,5 @@
 # Retraction onto a factor of a commuting multiplication isomorphism
 
-Authors: Worker 1356; Worker 1326 (consumer interface).
-
 This is an internal construction from the published group-scheme product,
 commuting multiplication, kernel and centralizer interfaces. It is not an
 existence theorem for complements.
@@ -54,4 +52,4 @@ This proof is an elementary consequence of the published constructions in
 `CentralIsogeny.Basic`. It is intended as the projection and
 kernel-commutation step for the anisotropic-factor centralizer argument.
 The arbitrary-field structural existence of the required complement is
-a separate proof obligation.
+not proved in this module.

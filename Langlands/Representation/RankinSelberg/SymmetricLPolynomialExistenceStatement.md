@@ -1,7 +1,5 @@
 # Existence of symmetric p-adic L-polynomials
 
-Author: Worker 364.
-
 The module defines the closed proposition
 `Langlands.RankinSelberg.SymmetricLPolynomialExistenceStatement.{uF,uV,uW}`.
 It states existence of the published symmetric L-polynomial relation for every
@@ -89,9 +87,10 @@ the selected larger and smaller successor ranks here. Its second Whittaker
 model uses the inverse character, whereas both hypotheses here use the
 standard character; the bridge below accounts for this difference.
 
-## Later proof bridge and outstanding dependencies
+## Proof bridge and dependencies
 
-A later proof must combine the following existing interfaces.
+A proof must combine the following existing interfaces (the Library's proof is
+`symmetricLPolynomialExists`, module `SymmetricLPolynomialExistenceProof`).
 
 1. Split into `n < r`, `n = r` and `r < n`, exchanging the representations
    and their independent carrier universes in the last case.
@@ -113,7 +112,7 @@ A later proof must combine the following existing interfaces.
    `UnequalRankAnalyticStatement` for every block
    `r = n + (j + k + 1)` in the selected order. These theorems are proved
    conditional bridges in `PairLFactor`; their analytic hypotheses are
-   substantive remaining inputs.
+   substantive inputs.
 5. Choose the resulting polynomial once. The already proved
    `unipotentQuotientHaar_unique` identifies every compatible measure for
    the fixed Haar normalizations with the canonical measure, so that the
@@ -125,14 +124,14 @@ A later proof must combine the following existing interfaces.
 6. Package the measure-existence conjunct and universal measure clause,
    and unfold the symmetric relation in the selected rank order.
 
-The open analytic inputs are `EqualRankAnalyticStatement`,
+The analytic inputs are `EqualRankAnalyticStatement`,
 `UnequalRankAnalyticStatement` for all relevant blocks, and
 `UnequalRankCommonGeneratorStatement`. They include actual half-plane
 convergence, rational continuation, denominator control, normalized-generator
-existence and agreement across unequal-rank blocks. Their existing proof
-tasks are respectively `5998b0b2-e367-4e85-8d4d-47e3b9b4a222`,
-`b01bbdd0-5321-41f4-908e-2048e837da34`, and
-`13326f3a-e77f-4ed1-a44a-b6407f6b7c0a`. This statement neither proves nor
+existence and agreement across unequal-rank blocks. The Library proves them
+as `equalRankAnalytic`, `unequalRankAnalytic` and `unequalRankCommonGenerator`
+(modules `EqualRankAnalyticProof`, `UnequalRankAnalyticProof` and
+`UnequalRankCommonGeneratorProof`). This statement neither proves nor
 assumes them. Functional equations, epsilon/gamma-factor existence and
 Langlands classification are not needed for this L-existence bridge.
 

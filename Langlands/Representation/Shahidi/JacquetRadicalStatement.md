@@ -1,8 +1,6 @@
 # Boundary kernel and radical covariance of the scalar Jacquet integral
 
-Author: Worker 643.
-
-This internal statement unit isolates two consequences of the published
+This internal statement module isolates two consequences of the published
 `Shahidi.Geometry`, `Shahidi.Characters`, and `Shahidi.JacquetIntegral`
 definitions. It supplies proposition definitions, without proofs. Its
 provenance is the literal scalar integrand and additive rectangular subgroup

@@ -1,6 +1,6 @@
 # Components of finite geometrically irreducible closed covers
 
-This internal unit derives a component comparison from the elementary finite
+This module derives a component comparison from the elementary finite
 closed-cover characterization of irreducibility and the published equal-support
 comparison for geometric irreducibility.
 
@@ -24,6 +24,6 @@ irreducibility to the actual reduced closed component.
 
 The scheme and field share arbitrary universe `u`; the finite index type has
 an independent universe. There are no finite-type, quasi-compactness,
-Noetherianity, reducedness or separation hypotheses. This unit constructs
+Noetherianity, reducedness or separation hypotheses. This module constructs
 neither a splitting field nor a finite closed cover; those remain inputs to
 its comparison theorem.

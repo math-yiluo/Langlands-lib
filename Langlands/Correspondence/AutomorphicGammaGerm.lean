@@ -143,7 +143,7 @@ theorem IsAutomorphicPairGammaFactor.rationalSpectralValue_eventuallyEq
 
 end Langlands.Correspondence
 
-namespace Langlands.ClassField.Global.RelativeWeilGroup
+namespace Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 
 universe u uV uE
 
@@ -246,4 +246,4 @@ theorem localSelfPair_polynomialGammaExpression_real_positive_order_only_zero
     (localSelfPair_polynomialGammaExpression_order_nonpos
       ι hS hmatch hν hd hd' hP hPd he t₀ (by simpa using ht))) ht₀
 
-end Langlands.ClassField.Global.RelativeWeilGroup
+end Langlands.ClassFieldTheory.Global.RelativeWeilGroup

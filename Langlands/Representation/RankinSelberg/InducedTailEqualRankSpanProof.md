@@ -1,8 +1,5 @@
 # Equal-tail-rank induced Laurent-span inclusion
 
-Author: Worker 646. Worker 53 identified the compatible-measure uniqueness
-route used in the assembly.
-
 `Langlands.RankinSelberg.inducedTailEqualRankSpan.{uF,uV₁,uV₂,uW}` proves exactly
 the closed published
 [`InducedTailEqualRankSpanStatement`](InducedTailSpanStatement.md).
@@ -60,8 +57,7 @@ is Proposition 9.1, printed pages 452–454. The registered source is
 `/home/taskhub/central-library/Jacquet-Piatetski-Shapiro-Shalika--Rankin-Selberg Convolutions--1983.pdf`,
 SHA-256 `d9feed6388ca5acf02ecc6a8cce984871a7c28f062ff441e45a71fa2d8962245`.
 The original rendered pages and published statement documentation were consulted;
-the previous source audit found no source-specific erratum in the checked
-project locations.
+no source-specific erratum was found in the checked project locations.
 
 The construction uses the imported extension proof and the published
 compatible-measure uniqueness, zero-row measure and rational-continuation

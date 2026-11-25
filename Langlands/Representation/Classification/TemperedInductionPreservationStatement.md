@@ -5,7 +5,7 @@ proposition definition. It isolates exactly the final conclusion of the
 published `Langlands.GLTemperedInductionStatement`, retaining its entire input
 telescope. This module states preservation of analytic temperedness; it does
 not prove it. The parent's input-unitarity and algebraic complete-reducibility
-conclusions remain separate proof obligations. There is no irreducibility
+conclusions are separate proof obligations. There is no irreducibility
 conclusion for the induced representation.
 
 ## Exact statement and actual constructions
@@ -71,7 +71,6 @@ modulus is
 
 with the residue-normalized absolute value `q^(-ord_F)`. Neither the
 parabolic, the normalization, nor the right-translation action is changed.
-No imported Lean or Markdown pair is modified.
 
 ## Original source and the focused derivation
 
@@ -86,7 +85,7 @@ Lemma 4.5.15, printed p.191 (one-based PDF p.197), states complete
 reducibility and temperedness of `Ind_P^G(δ_P^(1/2) σ)` for an irreducible
 admissible tempered representation of the Levi. The notation for these input
 representations is fixed on p.190 (PDF p.196). Both pages were read and their
-formulas checked visually for this contribution; the retained hash was
+formulas checked visually; the retained hash was
 rechecked. No source-specific errata file was found in the supplied Library
 notes or project notes on 2026-10-25.
 
@@ -95,7 +94,7 @@ standard block Levi, retain only the temperedness conclusion, and use the
 analytic convention correspondence documented in the complete published
 [TemperedInductionStatement](TemperedInductionStatement.md). The broader
 reductive-group scope and the complete-reducibility conclusion are not
-additional assertions of this new proposition.
+additional assertions of this proposition.
 
 The source proof first obtains complete reducibility from unitarity, citing
 Corollary 4.5.13. For temperedness it then uses precisely:
@@ -115,17 +114,16 @@ and Schwartz spaces, their topologies, characters as distributions,
 conjugation averaging, and normalized constant terms, together with proofs of
 these three results and the complete-reducibility input needed by the
 criterion. Their appearances in the source are dependency locators, not
-implemented Lean theorems. Substantial missing definitions, statements and
-proofs must be isolated in focused prerequisites before using them. This
+implemented Lean theorems. This
 statement adds no theorem-valued fields to stand in for those facts.
 
 ## Analytic boundary and an alternative proof route
 
 The complete analytic-convention explanation in the imported parent's Markdown
-was read for this contribution. Silberger's tempered functions use weak
+was read. Silberger's tempered functions use weak
 `Ξ`-polynomial bounds and Schwartz distributions. Those notions are not
 definitionally the Library's `L^(2+ε)` predicate. The parent's documented
-translation and its Waldspurger source locators remain mathematical proof
+translation and its Waldspurger source locators are mathematical proof
 obligations, including:
 
 - identifying the actual full-center quotients and product-Levi topology
@@ -149,16 +147,13 @@ A proof by the geometric lemma and normalized Jacquet exponents is also
 possible in scope, but requires the actual structural and analytic theorems.
 The existing `Langlands.GLTemperedExponentCriterionStatement` compares
 `T.IsTempered` with weak bounds for exponents of normalized upper standard
-Jacquet modules on the monotone block-absolute-value chamber. Its exact proof
-task is `c98c74eb-a4cb-4924-8df8-f7556ca47689`, owned by Worker 349; that owner
-was contacted for coordination. This statement is not a proved implication,
-and its `GL_n` formulation alone does not supply the needed arbitrary-Levi
-analytic comparison. Reuse its eventual accepted proof and coordinate any
-additional Levi or geometric-lemma prerequisites rather than duplicating or
-assuming them.
+Jacquet modules on the monotone block-absolute-value chamber. Its proof is
+`Langlands.glTemperedExponentCriterion` (module `TemperedExponentProof`).
+Its `GL_n` formulation alone does not supply the needed arbitrary-Levi
+analytic comparison. The Library's proof `glTemperedInductionPreservation`
+(module `TemperedInductionPreservationProof`) takes this route.
 
-The proof successor must retain this exact analytic target. Downstream
+Downstream
 tempered exhaustion, tempered unitarity and genericity, square-integrable
 block induction, or regular Langlands classification cannot discharge this
-upstream prerequisite. Independent acceptance and publication of the present
-statement establish its formulation only.
+upstream prerequisite.

@@ -1,7 +1,5 @@
 # Nilpotent deformations of diagonalizable groups and Hom lifting
 
-Worker 356 and Worker 748.
-
 Let `R` be a commutative ring, `J` a nilpotent ideal, and `G` a flat affine
 group over `Spec R`. If its actual reduction over `R/J` is diagonalizable,
 then `G` is diagonalizable. This conclusion requires no local-ring,
@@ -13,8 +11,8 @@ character group may have torsion.
 presentation of `O(G)` as `R[N]` with `N` finitely generated abelian. Extract
 the actual reduced presentation `(R/J) ⊗ O(G) ≃ (R/J)[N]` using
 `diagonalizableReductionPresentation`. Flatness of the group makes its
-chosen coordinate Hopf algebra flat by the published
-`Diagonalizable.flat_hopfAlgebra` theorem. Worker 748's pure theorem
+chosen coordinate Hopf algebra flat by the
+`Diagonalizable.flat_hopfAlgebra` theorem. The pure theorem
 `exists_bialgEquiv_of_baseChange` then lifts the reduced presentation to an
 actual bialgebra equivalence `O(G) ≃ R[N]`. The definition keeps the same
 character group `N` and its finite-generation instance.
@@ -47,4 +45,4 @@ This is internal derived content for the Artinian step in Conrad (2014),
 Theorem B.3.2(2), p.289. The result supplies the actual nilpotent deformation
 and local Hom-lifting step; it does not algebraize an infinite compatible
 system or descend a lift along a finite étale cover, and therefore does not
-by itself prove the full complete-local target.
+by itself prove the full complete-local statement.

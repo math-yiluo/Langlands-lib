@@ -1,12 +1,12 @@
 import Langlands.VirtualRepresentation.ExactMackeyAlong
-import Langlands.ClassField.Global.RelativeWeilLocalCosets
+import Langlands.ClassFieldTheory.Global.RelativeWeilLocalCosets
 
 /-!
 # The restriction formula for induced relative Weil representations
 
 Condition 2 of `LocalInducedRestriction` for the local maps `localPlaceMap`, from
 Mackey's formula along open embeddings and the double-coset data of
-`Langlands.ClassField.Global.RelativeWeilLocalCosets`; compare Tate (1979), (2.3.5).
+`Langlands.ClassFieldTheory.Global.RelativeWeilLocalCosets`; compare Tate (1979), (2.3.5).
 -/
 
 noncomputable section
@@ -15,7 +15,7 @@ set_option autoImplicit false
 
 universe uV u
 
-namespace Langlands.ClassField.Global.RelativeWeilGroup
+namespace Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 
 open NumberField Langlands.VirtualRepresentation
 open scoped NumberField
@@ -68,4 +68,4 @@ theorem continuousRestrict_continuousInduceAlong_restrictionInclusion
 
 end Discrete
 
-end Langlands.ClassField.Global.RelativeWeilGroup
+end Langlands.ClassFieldTheory.Global.RelativeWeilGroup

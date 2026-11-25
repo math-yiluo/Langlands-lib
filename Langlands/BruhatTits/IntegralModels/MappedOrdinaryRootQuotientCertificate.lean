@@ -73,7 +73,10 @@ theorem mem_affineRoots_of_mapped_quotient_exclusion : ψ ∈ C.affineRoots := b
         rootGroupPoints (i ≫ f) (2 • (a : characterLattice S)) := hz ▸ hfwroot
     have hqz := T.quotient_reduction_mem_rootFunctor hT Q
       (2 • (a : characterLattice S)) h2a.1 z hzroot
-    rw [map_nsmul] at hqz
+    have hnsmul : ∀ (n : ℕ) (x : characterLattice S),
+        T.characterSpecialization hT (n • x) = n • T.characterSpecialization hT x :=
+      fun n x => (T.characterSpecialization hT).toAddMonoidHom.map_nsmul n x
+    rw [hnsmul] at hqz
     have hyone : Q.reductiveReduction y = 1 :=
       hstrict y ⟨v, hv, hy.symm⟩
     have hqzx : Q.reductiveReduction z = Q.reductiveReduction x := by

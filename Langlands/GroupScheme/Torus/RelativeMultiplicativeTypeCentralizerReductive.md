@@ -1,7 +1,5 @@
 # Reductive identity components of relative multiplicative-type centralizers
 
-Worker 735.
-
 This internal support module proves part (3) of
 `RelativeMultiplicativeTypeCentralizerStatement`
 ([`Torus.RelativeMultiplicativeTypeCentralizerStatement`](RelativeMultiplicativeTypeCentralizerStatement.md))
@@ -16,7 +14,8 @@ This internal support module proves part (3) of
 
 It also takes as hypotheses closed representability of the centralizer and smoothness of
 the representative. In the target statement these are parts (1) and (2), which are proved
-in a separate module. The module proves neither sibling statement and adds no axioms. Its
+in a separate module. The module proves neither of the two statements taken as hypotheses
+and adds no axioms. Its
 one definition, the predicate `HasReductiveIdentityComponent`, names the conclusion of
 part (3). All schemes are in universe `u`.
 
@@ -169,7 +168,8 @@ to each `z₀`.
 
 ## Imports
 
-Besides the two sibling statements and the target statement's module, the module
+Besides the modules of the two statements taken as hypotheses and the target statement's
+module, the module
 imports:
 
 - [`Dynamic.RepresentedStructure`](../Dynamic/RepresentedStructure.md), for

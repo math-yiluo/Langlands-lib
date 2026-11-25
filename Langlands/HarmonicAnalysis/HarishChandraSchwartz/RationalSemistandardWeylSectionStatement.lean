@@ -136,7 +136,7 @@ private def unitaryFamilyOfComparison
     ActualParabolicUnitaryTranslation.UnitaryComparisonFamily χ (g : Hpts) A K K P Q := by
   unfold ActualConjugateLeviCoherence.ComparisonFamily at T
   unfold ActualParabolicUnitaryTranslation.UnitaryComparisonFamily
-  exact T
+  with_reducible exact T
 
 end ComparisonFamilyTransport
 

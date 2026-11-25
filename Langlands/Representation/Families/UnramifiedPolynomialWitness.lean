@@ -54,7 +54,7 @@ theorem polynomialToLaurent_eval {n : ℕ} (c : Fin n → ℂˣ)
 
 /-- One nonnegative monomial clears all negative exponents. The induction is
 adapted from the local clearing argument in the published
-`finiteLaurent_exists_zero_eval_ne_zero` proof by Worker 1664. -/
+`finiteLaurent_exists_zero_eval_ne_zero` proof. -/
 theorem exists_monomial_clearing {n : ℕ}
     (f : AddMonoidAlgebra ℂ (Fin n → ℤ)) :
     ∃ (N : Fin n →₀ ℕ) (p : MvPolynomial (Fin n) ℂ),

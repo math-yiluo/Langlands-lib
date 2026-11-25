@@ -74,11 +74,11 @@ required independence visible.
 The actual multiplicative equivalence then uses
 `RelativeWeyl.conjugationEquiv`; continuity, the pullback of smooth
 representations along its inverse, and the induced exact K0 map are
-separate actual-functor obligations of the shared adapter owners.
+separate statements about the actual functors and are not made here.
 None of these targets states Weyl-conjugacy of induced K0 classes.
 That is a distinct representation-theoretic target in the companion
 Corollary 1.10/conjugacy work.
 
-The parent owns the later proof tasks and their assembly. These targets
+These targets
 do not discharge representation-theoretic, classification or geometric-lemma
 premises, nor do they enlarge the permitted external structural boundary.

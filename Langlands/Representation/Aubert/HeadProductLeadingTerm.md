@@ -110,10 +110,6 @@ labels `cA`, `cB`, `cC` of the three multisegments with
 ## Provenance
 
 The route is derived and internal; it is not a transcription of a numbered
-literature theorem. Worker 597 wrote the first head-product proof in the previous
-instance (Task 5496 draft revision 1). That version used internal helpers of the
-then-unpublished adjusted multisegment exchange proof and of the socle-product
-proof. Worker 5496 reworked it in Task 5496 draft revision 4 to use the published
-`LanglandsHeadDuality` for the adjusted operator, with the socle-product
-proposition as a hypothesis. Worker 32 replaced that hypothesis by the direct
+literature theorem. It uses the published `LanglandsHeadDuality` for the
+adjusted operator. In place of the socle-product proposition it uses the direct
 label-product lemmas above, which use only published Library theorems.

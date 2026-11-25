@@ -1,11 +1,11 @@
 # Homology comparison for acyclic terms and acyclic homology: proof
 
-Author: Worker 281. This module proves Worker 595's statement
+This module proves the statement
 `Langlands.Cohomology.AcyclicTermsHomologyComparisonStatement` from the module
 `Langlands.Cohomology.AcyclicResolution.AcyclicTermsHomologyComparisonStatement`. It imports
-that statement module unchanged. It also imports Worker 61's
+that statement module unchanged. It also imports
 `Langlands.Cohomology.RightDerivedSequence`, the long exact sequence of right derived
-functors in the namespace `Langlands.Cohomology.DerivedPlus`, and Worker 716's
+functors in the namespace `Langlands.Cohomology.DerivedPlus`, and
 `Langlands.Cohomology.AcyclicResolution.ComparisonProof`.
 
 Composition `f ≫ g` is `f` followed by `g`. `RᵏF` is Mathlib's `F.rightDerived k`. An object
@@ -67,8 +67,8 @@ Here `C` is any abelian category and `K : CochainComplex C ℕ`.
 ### Acyclicity of cycles and boundaries (section `Acyclic`)
 
 This section assumes `[EnoughInjectives C]` and chosen derived categories
-`[HasDerivedCategory.{w} C]` and `[HasDerivedCategory.{w'} D]`, the setting of Worker 61's long
-exact sequence. `F` is additive. `hX` and `hH` are the statement's two acyclicity hypotheses.
+`[HasDerivedCategory.{w} C]` and `[HasDerivedCategory.{w'} D]`, the setting of the long
+exact sequence of `RightDerivedSequence`. `F` is additive. `hX` and `hH` are the statement's two acyclicity hypotheses.
 
 - `isZero_rightDerived_boundaries F K hX i hZ r`: if `Zⁱ` is `F`-acyclic, then so is `Bⁱ⁺¹`.
   `DerivedPlus.rightDerived_exact₃` applied to `cyclesSc_shortExact K i (i + 1)` in degrees
@@ -79,7 +79,7 @@ exact sequence. `F` is additive. `hX` and `hH` are the statement's two acyclicit
   `R^{r+1}F Bʲ ⟶ R^{r+1}F Zʲ ⟶ R^{r+1}F Hʲ` exact, and its outer terms are zero.
 - `isZero_rightDerived_cycles F K hX hH i r`: every `Zⁱ` is `F`-acyclic. The proof is by
   induction on `i`. In degree `0`, `Z⁰ ≅ H⁰` by Mathlib's `CochainComplex.isoHomologyπ₀`, so
-  `hH 0` gives the claim through Worker 716's
+  `hH 0` gives the claim through `ComparisonProof`'s
   `AcyclicComparison.isZero_rightDerived_obj_of_iso`. For the successor step, the two
   previous helpers give `Zⁱ` acyclic, then `Bⁱ⁺¹` acyclic, then `Zⁱ⁺¹` acyclic.
 
@@ -121,7 +121,7 @@ Here `F` is additive and preserves finite limits; no derived category is used.
     `K.homologyπ 0` is one. `nonempty_homology_map_iso` applies. No acyclicity hypothesis is
     needed in this degree.
   - `n = m + 1`: all cycles are acyclic by `isZero_rightDerived_cycles`, and `Bᵐ⁺¹` is
-    acyclic by `isZero_rightDerived_boundaries`. Worker 61's
+    acyclic by `isZero_rightDerived_boundaries`. `RightDerivedSequence`'s
     `DerivedPlus.shortExact_map_of_isZero_rightDerived_one` uses `R¹F Zᵐ = 0` and
     `R¹F Bᵐ⁺¹ = 0`. It shows that `F` keeps `cyclesSc K m (m + 1)` and
     `boundariesSc K m (m + 1)` short exact. The second gives that

@@ -2,7 +2,7 @@
 
 `Langlands.LocalClassField.ResiduePolynomialUnramifiedLift.{u}` is a
 `Prop`-valued definition. This module states the target and does not prove
-it. Acceptance of this statement is not proof evidence for it.
+it.
 
 ## Exact statement
 
@@ -123,8 +123,5 @@ supplies none of those steps. The target is intended as an ingredient of a
 proof of `PrimeNormAfterUnramifiedBaseChange` in
 `Langlands.ClassFieldTheory.Local.PrimeNormBaseChangeStatement`.
 
-## Authors
-
-The Lean statement was drafted by Worker 27. Worker 271 audited it against
-the Library definitions and Serre's original, compiled it, refined the
-docstring and wrote this Markdown.
+The Lean statement was audited against
+the Library definitions and Serre's original, and compiled.

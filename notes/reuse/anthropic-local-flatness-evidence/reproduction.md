@@ -1,6 +1,6 @@
 # Local-flatness audit: reproducible evidence
 
-Worker 362, 25 October 2026. Companion to [the audit](../anthropic-local-flatness-audit.md). Scripts and snippets here document private development experiments; they are not published Lean modules.
+This note, dated 25 October 2026, is a companion to [the audit](../anthropic-local-flatness-audit.md). Scripts and snippets here document private development experiments; they are not published Lean modules.
 
 ## Closure traversal script
 
@@ -292,7 +292,7 @@ name='Module_flat_of_comap_maximalIdeal_rTensor_injective'
 orig=(src/f'P2M/Sol/S_{name}.lean').read_text()
 s=orig.replace('import P2M.Util\n','').replace('P2MW.S_'+name,'FlatnessAudit.Primary')
 s=re.sub(r'^p2m_reactivate "([^"]*)"$',lambda m:'open scoped '+m[1],s,flags=re.M)
-header='/-\nCopyright 2026 Anthropic, PBC. Apache-2.0; see LICENSE and NOTICE.\nAdapted by Worker 362 for a private feasibility audit, 2026-10-25.\nChanged namespace; removed P2M.Util; replaced scope reactivation with open scoped.\nOriginal: P2M/Sol/S_'+name+'.lean at 6e837e75355538c7f80bab5b956861e86c4eacc2.\n-/\n'
+header='/-\nCopyright 2026 Anthropic, PBC. Apache-2.0; see LICENSE and NOTICE.\nAdapted for a private feasibility audit, 2026-10-25.\nChanged namespace; removed P2M.Util; replaced scope reactivation with open scoped.\nOriginal: P2M/Sol/S_'+name+'.lean at 6e837e75355538c7f80bab5b956861e86c4eacc2.\n-/\n'
 (out/'Primary.lean').write_text(header+s)
 (out/'Primary.md').write_text('# Private primary flatness experiment\n\nAdapted from the registered Anthropic FLT source at commit 6e837e75355538c7f80bab5b956861e86c4eacc2, P2M/Sol/S_Module_flat_of_comap_maximalIdeal_rTensor_injective.lean. Copyright 2026 Anthropic, PBC; Apache-2.0. See LICENSE, NOTICE and ATTRIBUTION.md. No matching per-file third-party row was found in ATTRIBUTION.md. The proof uses a free cover to transfer tensor injectivity, extends a Tor-vanishing surrogate to powers, and applies Artin–Rees and Krull intersection. Localization and semisimplicity supply the residue-prime splitting. Only pipeline scope machinery and namespace are adapted at this stage; no hypotheses are changed. This is an unreviewed private experiment, not a Library proof.\n')
 Path('.private/flatness-audit/primary-initial.patch').write_text(''.join(difflib.unified_diff(orig.splitlines(True),(header+s).splitlines(True),fromfile='upstream/'+name,tofile='Primary.lean')))
@@ -314,7 +314,7 @@ for suffix,label in [('', 'Zero'),('_univ','Univ')]:
   s=orig.replace('import P2M.Util\n','').replace('P2MW.S_'+name, 'FlatnessAudit.'+module)
   s=s.replace('import Theorems.Thm_'+tor+suffix, 'import Tor'+label)
   s=s.replace('Module.flat_of_isLocalHom_of_isNoetherianRing_of_finite_of_tor_one_residueField_isZero'+suffix,'FlatnessAudit.Tor'+label+'.solution')
-  header='/-\nCopyright 2026 Anthropic, PBC. Apache-2.0; see LICENSE and NOTICE.\nAdapted by Worker 362 for a private feasibility audit, 2026-10-25.\nChanged namespace; removed unused P2M.Util; redirected the Tor criterion import and call where present.\nOriginal: P2M/Sol/S_'+name+'.lean at 6e837e75355538c7f80bab5b956861e86c4eacc2.\n-/\n'
+  header='/-\nCopyright 2026 Anthropic, PBC. Apache-2.0; see LICENSE and NOTICE.\nAdapted for a private feasibility audit, 2026-10-25.\nChanged namespace; removed unused P2M.Util; redirected the Tor criterion import and call where present.\nOriginal: P2M/Sol/S_'+name+'.lean at 6e837e75355538c7f80bab5b956861e86c4eacc2.\n-/\n'
   (out/(module+'.lean')).write_text(header+s)
   (out/(module+'.md')).write_text('# Private '+module+' experiment\n\nAdapted from the registered Anthropic source at commit 6e837e75355538c7f80bab5b956861e86c4eacc2, `P2M/Sol/S_'+name+'.lean`. Copyright 2026 Anthropic, PBC; Apache-2.0; see LICENSE, NOTICE and ATTRIBUTION.md. No matching third-party per-file row occurs in ATTRIBUTION.md. Only namespace, unused utility import and calls to the adapted dependency change. Universe restrictions and all hypotheses are preserved. '+('This proof uses categorical Tor exactness, finite-length devissage and an Artin–Rees/Krull-intersection argument.' if kind=='Tor' else 'This proof combines an ideal tensor factorization, quotient base change and Tor exactness with the imported local Tor criterion, applied to the module S\' itself.')+'\n\nThis is private feasibility evidence, not a published mathematical result.\n')
   Path('.private/flatness-audit/'+module+'-initial.patch').write_text(''.join(difflib.unified_diff(orig.splitlines(True),(header+s).splitlines(True),fromfile='upstream/'+name,tofile=module+'.lean')))
@@ -350,7 +350,7 @@ The scripts use the registered local source location. Reproduction runs them onl
 @@ -1,6 +1,11 @@
 +/-
 +Copyright 2026 Anthropic, PBC. Apache-2.0; see LICENSE and NOTICE.
-+Adapted by Worker 362 for a private feasibility audit, 2026-10-25.
++Adapted for a private feasibility audit, 2026-10-25.
 +Changed namespace; removed unused P2M.Util; redirected the Tor criterion import and call where present.
 +Original: P2M/Sol/S_Module_flat_of_isLocalHom_of_isNoetherianRing_of_finite_of_tor_one_residueField_isZero_univ.lean at 6e837e75355538c7f80bab5b956861e86c4eacc2.
 +-/
@@ -385,7 +385,7 @@ The scripts use the registered local source location. Reproduction runs them onl
 @@ -1,6 +1,11 @@
 +/-
 +Copyright 2026 Anthropic, PBC. Apache-2.0; see LICENSE and NOTICE.
-+Adapted by Worker 362 for a private feasibility audit, 2026-10-25.
++Adapted for a private feasibility audit, 2026-10-25.
 +Changed namespace; removed unused P2M.Util; redirected the Tor criterion import and call where present.
 +Original: P2M/Sol/S_Module_flat_of_isLocalHom_of_isNoetherianRing_of_finite_of_tor_one_residueField_isZero.lean at 6e837e75355538c7f80bab5b956861e86c4eacc2.
 +-/
@@ -421,7 +421,7 @@ The scripts use the registered local source location. Reproduction runs them onl
 @@ -1,7 +1,12 @@
 +/-
 +Copyright 2026 Anthropic, PBC. Apache-2.0; see LICENSE and NOTICE.
-+Adapted by Worker 362 for a private feasibility audit, 2026-10-25.
++Adapted for a private feasibility audit, 2026-10-25.
 +Changed namespace; removed unused P2M.Util; redirected the Tor criterion import and call where present.
 +Original: P2M/Sol/S_IsLocalRing_flat_of_isScalarTower_of_flat_of_flat_quotient_maximalIdeal_map_univ.lean at 6e837e75355538c7f80bab5b956861e86c4eacc2.
 +-/
@@ -468,7 +468,7 @@ The scripts use the registered local source location. Reproduction runs them onl
 @@ -1,7 +1,12 @@
 +/-
 +Copyright 2026 Anthropic, PBC. Apache-2.0; see LICENSE and NOTICE.
-+Adapted by Worker 362 for a private feasibility audit, 2026-10-25.
++Adapted for a private feasibility audit, 2026-10-25.
 +Changed namespace; removed unused P2M.Util; redirected the Tor criterion import and call where present.
 +Original: P2M/Sol/S_IsLocalRing_flat_of_isScalarTower_of_flat_of_flat_quotient_maximalIdeal_map.lean at 6e837e75355538c7f80bab5b956861e86c4eacc2.
 +-/
@@ -500,7 +500,7 @@ The scripts use the registered local source location. Reproduction runs them onl
 @@ -1,6 +1,11 @@
 +/-
 +Copyright 2026 Anthropic, PBC. Apache-2.0; see LICENSE and NOTICE.
-+Adapted by Worker 362 for a private feasibility audit, 2026-10-25.
++Adapted for a private feasibility audit, 2026-10-25.
 +Changed namespace; removed P2M.Util; replaced scope reactivation with open scoped.
 +Original: P2M/Sol/S_Module_flat_of_comap_maximalIdeal_rTensor_injective.lean at 6e837e75355538c7f80bab5b956861e86c4eacc2.
 +-/
@@ -562,7 +562,7 @@ The scripts use the registered local source location. Reproduction runs them onl
      {R S M : Type*} [CommRing R] [CommRing S] [Algebra R S]
 ```
 
-The `*-compat.patch` files are failed experiments, not recommended fixes. Apply them after the corresponding initial adaptation only to reproduce check `9b300eab-7016-4613-9f4f-5f365725f4c4`; the original tower check uses only the initial edits.
+The `*-compat.patch` files are failed experiments, not recommended fixes. Apply them after the corresponding initial adaptation only to reproduce the failed tower-edit check ([report](tower-edit-report.md)); the original tower check uses only the initial edits.
 
 ## Inspection module: InspectPrimary
 
@@ -660,7 +660,7 @@ set_option pp.universes true in
 }
 ```
 
-Call these via TaskHub `lean_check`, never through shell Lean/Lake. The primary recheck uses the primary arguments above. Collect each terminal result. Draft Markdown companions explain provenance and the implemented proof; the evidence scripts show their initial construction.
+These requests were run through the Lean checking service of the environment in which the audit was made, not through shell Lean/Lake. The primary recheck uses the primary arguments above. Collect each terminal result. Draft Markdown companions explain provenance and the implemented proof; the evidence scripts show their initial construction.
 
 ## Full unapplied primary declaration and axiom output
 

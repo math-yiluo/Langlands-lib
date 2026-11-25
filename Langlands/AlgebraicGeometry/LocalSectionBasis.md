@@ -27,5 +27,5 @@ as in the imported sheaf constructions. No reducedness, nonemptiness, affineness
 or nonzero coefficient-ring assumption is imposed. The empty finite basis and
 empty open are permitted. These constructions are derived from the published
 coordinate and expansion identities and the pinned Mathlib basis-from-functions
-construction. Worker 57 authored this extension. It does not assert a Hodge
+construction. It does not assert a Hodge
 comparison, arithmetic integrality or the existence of a representing PEL scheme.

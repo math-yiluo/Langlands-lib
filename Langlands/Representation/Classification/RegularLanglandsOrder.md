@@ -1,7 +1,5 @@
 # Ordering exponent-preserving matches of regular Langlands data
 
-Author: Worker 47.
-
 This is an internal construction for the ordered comparison required by
 `Langlands.GLRegularLanglandsDataUniquenessStatement`. It uses only the published
 `TemperedLanglandsDatum` and elementary order theory. It asserts no

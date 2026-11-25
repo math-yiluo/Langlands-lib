@@ -31,28 +31,28 @@ lemma inter_le_pullbackChart [IsAffineHom 𝔓.toProj] {i : ℕ}
 
 /-- Step 1: the twisted presheaf and the presheaf tensor with sections of `L^{⊗ d}`. -/
 lemma nonempty_hsucc_twist_equiv_tensor [IsSeparated f] [IsAffineHom 𝔓.toProj] (F : X.Modules)
-    (d : ℕ) (e : ∀ U : X.Opens, Γ(L.tensorPow d, U) →ₗ[Γ(X, U)] ProjSpace.twistObj f 𝔓.toProj d U)
-    (he : ∀ (U U' : X.Opens) (h : U ≤ U') (x : Γ(L.tensorPow d, U')),
-      e U ((L.tensorPow d).presheaf.map (homOfLE h).op x) = ProjSpace.twistRes f 𝔓.toProj d h (e U' x))
+    (d : ℕ) (e : ∀ U : X.Opens, Γ(L.tensorPowFLT d, U) →ₗ[Γ(X, U)] ProjSpace.twistObj f 𝔓.toProj d U)
+    (he : ∀ (U U' : X.Opens) (h : U ≤ U') (x : Γ(L.tensorPowFLT d, U')),
+      e U ((L.tensorPowFLT d).presheaf.map (homOfLE h).op x) = ProjSpace.twistRes f 𝔓.toProj d h (e U' x))
     (hbij : ∀ (U : X.Opens) (i : Fin (N + 1)), U ≤ ProjSpace.pullbackChart 𝔓.toProj i →
       Function.Bijective (e U)) (j : ℕ) :
     Nonempty (((OModulePresheaf.ofModules f F).tensor
-        (OModulePresheaf.ofModules f (L.tensorPow d))).HSucc
+        (OModulePresheaf.ofModules f (L.tensorPowFLT d))).HSucc
         (ProjSpace.stdCoverPullback 𝔓.toProj) j ≃ₗ[A]
       ((OModulePresheaf.ofModules f F).tensor (ProjSpace.twist f 𝔓.toProj d)).HSucc
         (ProjSpace.stdCoverPullback 𝔓.toProj) j) :=
   ⟨hsuccEquivOfBijective (ProjSpace.stdCoverPullback 𝔓.toProj)
     (tensorRightAffHom (OModulePresheaf.ofModules f F)
-      (OModulePresheaf.ofModules f (L.tensorPow d)) (ProjSpace.twist f 𝔓.toProj d) e
+      (OModulePresheaf.ofModules f (L.tensorPowFLT d)) (ProjSpace.twist f 𝔓.toProj d) e
       (fun h x => he _ _ h x))
     (fun _ s => tensorRightAffHom_bijective (OModulePresheaf.ofModules f F)
-      (OModulePresheaf.ofModules f (L.tensorPow d)) (ProjSpace.twist f 𝔓.toProj d) e
+      (OModulePresheaf.ofModules f (L.tensorPowFLT d)) (ProjSpace.twist f 𝔓.toProj d) e
       (fun h x => he _ _ h x) _
       (hbij _ (s.1 0).down (inter_le_pullbackChart 𝔓 s))) j⟩
 
 /-- Step 2: the presheaf tensor product of sections and the sections of the tensor product. -/
 lemma nonempty_hsucc_tensor_equiv_ofModules [IsSeparated f] (K : X.OrderedAffineCover)
-    (F M : X.Modules) (hF : Scheme.Modules.IsInvertible F) (hM : Scheme.Modules.IsInvertible M)
+    (F M : X.Modules) (hF : Scheme.Modules.IsInvertibleFLT F) (hM : Scheme.Modules.IsInvertibleFLT M)
     (j : ℕ) :
     Nonempty (((OModulePresheaf.ofModules f F).tensor (OModulePresheaf.ofModules f M)).HSucc K j ≃ₗ[A]
       (OModulePresheaf.ofModules f (F ⊗ M)).HSucc K j) :=
@@ -61,7 +61,7 @@ lemma nonempty_hsucc_tensor_equiv_ofModules [IsSeparated f] (K : X.OrderedAffine
 
 /-- Step 3: Čech cohomology of an invertible module is its actual cohomology. -/
 lemma nonempty_hsucc_ofModules_equiv [IsSeparated f] (K : X.OrderedAffineCover) (M : X.Modules)
-    (hM : Scheme.Modules.IsInvertible M) (j : ℕ) :
+    (hM : Scheme.Modules.IsInvertibleFLT M) (j : ℕ) :
     Nonempty ((OModulePresheaf.ofModules f M).HSucc K j ≃ₗ[A]
       (DerivedSections.relativeCohomology f (j + 1)).obj M) := by
   have : M.IsQuasicoherent :=
@@ -75,10 +75,10 @@ invertible module with a projective presentation `𝔓` whose morphism to `ℙ�
 immersion. For every invertible `F`, the cohomology of `F ⊗ L^{⊗ d}` vanishes in all positive
 degrees for all large `d`. -/
 theorem exists_isZero_relativeCohomology_tensor_tensorPow [IsNoetherianRing A] [IsSeparated f]
-    [IsClosedImmersion 𝔓.toProj] (hL : Scheme.Modules.IsInvertible L) (F : X.Modules)
-    (hF : Scheme.Modules.IsInvertible F) :
+    [IsClosedImmersion 𝔓.toProj] (hL : Scheme.Modules.IsInvertibleFLT L) (F : X.Modules)
+    (hF : Scheme.Modules.IsInvertibleFLT F) :
     ∃ d₀ : ℕ, ∀ d : ℕ, d₀ ≤ d → ∀ i : ℕ, 0 < i →
-      IsZero ((DerivedSections.relativeCohomology f i).obj (F ⊗ L.tensorPow d)) := by
+      IsZero ((DerivedSections.relativeCohomology f i).obj (F ⊗ L.tensorPowFLT d)) := by
   obtain ⟨d₀, hd₀⟩ := exists_forall_subsingleton_HSucc_tensor_twist 𝔓.toProj 𝔓.toProj_π
     (OModulePresheaf.ofModules f F)
     (OModulePresheaf.isCoherent_ofModules_of_locallyTrivial f F hF.exists_trivialization)
@@ -86,12 +86,12 @@ theorem exists_isZero_relativeCohomology_tensor_tensorPow [IsNoetherianRing A] [
   refine ⟨d₀, fun d hd i hi => ?_⟩
   obtain ⟨j, rfl⟩ : ∃ j, i = j + 1 := ⟨i - 1, by omega⟩
   obtain ⟨e, -, he, hbij⟩ := 𝔓.exists_linearMap_sections_tensorPow_twistObj_monoidalV2 d
-  have hLd : Scheme.Modules.IsInvertible (L.tensorPow d) := hL.tensorPow_monoidalV2 d
+  have hLd : Scheme.Modules.IsInvertibleFLT (L.tensorPowFLT d) := Scheme.Modules.IsInvertible.tensorPow_monoidalV2 hL d
   obtain ⟨e₁⟩ := nonempty_hsucc_twist_equiv_tensor 𝔓 F d e he hbij j
   obtain ⟨e₂⟩ := nonempty_hsucc_tensor_equiv_ofModules (f := f)
-    (ProjSpace.stdCoverPullback 𝔓.toProj) F (L.tensorPow d) hF hLd j
+    (ProjSpace.stdCoverPullback 𝔓.toProj) F (L.tensorPowFLT d) hF hLd j
   obtain ⟨e₃⟩ := nonempty_hsucc_ofModules_equiv (f := f) (ProjSpace.stdCoverPullback 𝔓.toProj)
-    (F ⊗ L.tensorPow d) (hF.tensor_monoidalV2 hLd) j
+    (F ⊗ L.tensorPowFLT d) (Scheme.Modules.IsInvertible.tensor_monoidalV2 hF hLd) j
   have h₀ := hd₀ d hd j
   have h₁ := e₁.toEquiv.subsingleton
   have h₂ := e₂.symm.toEquiv.subsingleton

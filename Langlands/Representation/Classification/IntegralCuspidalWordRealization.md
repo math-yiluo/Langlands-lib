@@ -1,8 +1,5 @@
 # Realizing a supplied labeling of an actual integral word
 
-Authors: Worker 320 (proof and original draft), Worker 495 (verification
-and submission).
-
 The degree helper `integralCuspidalJacquetWord_length_mul` proves that the
 word length times the fixed supercuspidal rank equals the ambient rank.
 The rank-indexed class equalities identify each actual block size with that

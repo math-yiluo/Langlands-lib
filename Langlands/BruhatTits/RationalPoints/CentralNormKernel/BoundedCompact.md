@@ -1,7 +1,5 @@
 # Closed sets of rational points with bounded matrix entries are compact
 
-Author: Worker 1532.
-
 Namespace: `Langlands.BruhatTits.RationalPoints.CentralNormKernel`. Let `F` be a nonarchimedean
 local field with the norm `LocalGalois.localNormedField F`.
 

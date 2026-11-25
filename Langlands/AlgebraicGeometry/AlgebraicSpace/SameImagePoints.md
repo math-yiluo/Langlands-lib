@@ -1,7 +1,5 @@
 # Points of a scheme with the same image in a presheaf
 
-Author: Worker 1038.
-
 Module `Langlands.AlgebraicGeometry.AlgebraicSpace.SameImagePoints`, namespace
 `Langlands.AlgebraicGeometry.AlgebraicSpace`.
 

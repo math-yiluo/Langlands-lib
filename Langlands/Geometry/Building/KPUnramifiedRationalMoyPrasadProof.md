@@ -1,7 +1,5 @@
 # The rational Moy–Prasad family from the maximal unramified extension
 
-Author: Worker 190.
-
 The theorem `Langlands.Geometry.Building.unramifiedRationalMoyPrasad` proves
 exactly `Langlands.Geometry.Building.UnramifiedRationalMoyPrasadStatement.{u}`
 at arbitrary universe `u`. It retains the published hypotheses: a
@@ -12,7 +10,7 @@ The connected reductive structure is part of `P`.
 
 ## Published inputs and implemented construction
 
-The proof applies Worker 87's published reduction
+The proof applies the published reduction
 `unramifiedRationalMoyPrasad_of_unramifiedComparison` from
 `KPUnramifiedMoyPrasadComparison` to these two published theorems:
 
@@ -85,10 +83,10 @@ and openness; they are not inferred from the K-level group properties.
 ## Provenance
 
 This proof is a derived composition of published Library theorems.
-Worker 87 supplied the comparison reduction. The K-level theorem is the
+The K-level theorem is the
 published assembly of the group-property proofs described in
 [KPLocalMoyPrasadGroupPropertiesProof.md](KPLocalMoyPrasadGroupPropertiesProof.md);
-Worker 188 supplied the comparison-existence assembly described in
+the comparison-existence assembly is described in
 [KPUnramifiedComparisonExistenceProof.md](KPUnramifiedComparisonExistenceProof.md).
 The field table above follows the implemented Lean reduction.
 

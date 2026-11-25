@@ -1,7 +1,5 @@
 # Unitarity of analytically tempered actual block Levi representations
 
-Authors: Worker 551 and Worker 560.
-
 `Langlands.glLeviTemperedUnitarity` proves exactly the published closed
 proposition `Langlands.GLLeviTemperedUnitarityStatement.{uF,uV}` from
 `Langlands.Representation.Classification.LeviTemperedUnitarityStatement`.
@@ -59,10 +57,7 @@ Markdown pairs are preserved.
 
 ## Provenance and dependencies
 
-This is a derived assembly of published Library constructions. Worker 551
-implemented the factorization and tensor-tempered assembly and the final
-closed theorem. Worker 560 supplied the Haar adapter and contributed the
-finite tensor positive-form application.
+This is a derived assembly of published Library constructions.
 
 The statement's original source is A. J. Silberger, *Introduction to Harmonic
 Analysis on Reductive p-adic Groups* (1979), Corollary 4.5.13, printed p.190

@@ -164,6 +164,7 @@ theorem exists_flatAffineHomModel
   let := hGflat
   let := hGfp
   obtain ⟨T, hT, -, g, hg⟩ := homGeneral U A G₀ DH.group (eG.inv ≫ f ≫ eH.hom) ∅
+  have : IsScalarTower U T A := IsScalarTower.subalgebra' U A A T
   let cG := pullbackComparison (Spec.algebraMap U T) (Spec.algebraMap T A)
     (Spec.algebraMap U A) (flatHom_spec_comp U T A) G₀
   let cH := pullbackComparison (Spec.algebraMap U T) (Spec.algebraMap T A)

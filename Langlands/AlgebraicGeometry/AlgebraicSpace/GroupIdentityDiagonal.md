@@ -1,7 +1,5 @@
 # The zero section and diagonal of a presheaf of abelian groups
 
-Author: Worker 509.
-
 This internal construction takes an actual functor `G` from all schemes over a
 scheme `S` to abelian groups in `Type (u + 1)`. Its underlying presheaf retains
 every test scheme. The represented base is `Over.mk (𝟙 S)`, the terminal scheme

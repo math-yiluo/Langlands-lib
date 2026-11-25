@@ -1,6 +1,6 @@
 # Hecke operators on forms with `K_ℓ`-coefficients and on their `Ext` groups (Proposition 4.10)
 
-Author: Worker 61. Built on Worker 61's published
+Built on the published
 `Langlands.Shimura.DefiniteFormsSmoothCoefficients` (`coefficientDomain`,
 `awayHom_mem_of_mem_coefficientDomain`, `awayLevel_domainLevel_le`,
 `coefficientForms`, `coefficientTranslation`, `coefficientTransport`,
@@ -24,13 +24,13 @@ Author: Worker 61. Built on Worker 61's published
 `fixedVectorsMap_heckeAct`, `doubleCoset`, `doubleCoset_smul`),
 `Langlands.Shimura.LevelHeckeCompose` (`heckeOperator_eq_comp_translateFixed`,
 `translateFixed_apply_coe`) and `Langlands.Shimura.LevelColimit`
-(`mem_conjLevel`); on Worker 13's published
+(`mem_conjLevel`); on the published
 `Langlands.Shimura.SplitLevelTower` (`factorHom`, `awayHom`,
 `factorHom_commute_awayHom`), `Langlands.Shimura.Unitary.PointsSplit`
 (`DividingPoints`, `PrimeToPoints`, `finiteAdelicPointsSplit`) and
 `Langlands.Cohomology.SmoothExt` (`SmoothExt.ext`); on the published
 `Langlands.Representation.Category.SmoothPartAdjunction`
-(`SmoothRep.smoothPartFunctor`); and on Worker 57's published
+(`SmoothRep.smoothPartFunctor`); and on the published
 `Langlands.Shimura.Levels` (`CompactOpenLevel` and its arrows) and
 `Langlands.Shimura.Unitary.Adelic` (`finiteAdelicDiagonal`). From Mathlib it
 uses representations and `Rep`, endomorphism rings in preadditive categories,
@@ -271,8 +271,8 @@ compact open levels of the published `dividingCoefficientDomain σ ℓ Kℓ p hp
 ## Provenance and interpretation
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
-J. Math. Kyoto Univ. 39-2 (1999), §4. Worker 61 read the rendered scanned
-page, printed p.311 (one-based PDF page 13): "Proposition 4.10. There is a
+J. Math. Kyoto Univ. 39-2 (1999), §4. The rendered scanned
+page was read, printed p.311 (one-based PDF page 13): "Proposition 4.10. There is a
 spectral sequence of `𝒪`-modules (4.10.1)
 `E_2^{i,j} = Ext^i(H_c^{2(n-1)-j}(M̌_N, L_ℓ(n-1)), 𝒜_ℓ(GJ, ρ, H)) ⇒
 H^{i+j}(S̄_{K(N)}, W̃)`. Here `Ext^i` denotes the `i`-th derived functor of
@@ -334,9 +334,8 @@ How the module relates to Harris (an explanation, not formalized):
 - Coefficients and the limit over `m`. As in
   `DefiniteFormsSmoothCoefficients`, `𝓛` is any representation of any
   subgroup `Kℓ` on any `R`-module, and Harris's (4.10.1) is the case
-  `R = L_ℓ`, `V = W(L_ℓ)`. The inverse systems over `m` of Worker 61's
-  accepted `DefiniteFormsCoefficientSystem` (candidate
-  `c927cd83-db7c-4c13-8b23-68b0ef825299`, not imported here) are not given
+  `R = L_ℓ`, `V = W(L_ℓ)`. The inverse systems over `m` of
+  `DefiniteFormsCoefficientSystem` (not imported here) are not given
   Hecke operators in this module.
 - All declarations are ours, derived from Mathlib and the published modules
   named above. `coefficientAwayTranslation`, `coefficientAwayFixedEquiv`,

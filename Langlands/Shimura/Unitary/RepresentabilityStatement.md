@@ -1,6 +1,6 @@
 # Affine representability of the rational similitude functor
 
-Author: Worker 57. This is an exact proposition target, not a proof or a
+This is an exact proposition target, not a proof or a
 choice of a canonical model.
 
 `SimilitudeRepresentabilityStatement` quantifies a ring `A` in any carrier
@@ -54,7 +54,8 @@ Formal dependencies are the published `Langlands.Shimura.Unitary.Similitude`
 and `Involution` modules and the actual Mathlib `CommAlgCat`, `coyoneda`,
 and `Algebra.FinitePresentation` interfaces at commit
 `5ed2965256430c3649e86755f9576b54eca72435`, Lean 4.34.0.
-The target requires independent acceptance and publication, followed by
-a separately assigned proof of this entire Library declaration. It is
+The proof of this entire Library declaration is the separate theorem
+`Langlands.Shimura.similitudeRepresentability` in
+`Langlands.Shimura.Unitary.RepresentabilityProof`. This file is
 not a proof of representability, a PEL moduli construction, or a completed
 Shimura canonical model.

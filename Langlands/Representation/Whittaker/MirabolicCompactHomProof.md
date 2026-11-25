@@ -1,8 +1,8 @@
 # Proof of scalar uniqueness for compact-to-smooth mirabolic intertwiners
 
-Author: Worker 804. The compact-model uniqueness core used here,
-`Langlands.Representation.Whittaker.MirabolicCompactWhittakerUniqueness`, is
-Worker 805's published module. It is imported by Lean name, and no part of it
+The compact-model uniqueness core used here,
+`Langlands.Representation.Whittaker.MirabolicCompactWhittakerUniqueness`, is a
+published module. It is imported by Lean name, and no part of it
 is copied here.
 
 This module proves the published proposition
@@ -36,7 +36,7 @@ For each such `A` there is `c : ℂ` with `A = c • mirabolicCompactInclusion �
 
 The theorem adds no hypothesis. It assumes no irreducibility, admissibility,
 finite generation, minimality, scalar uniqueness or functional equivalence.
-`A` may be zero, in which case `c = 0`. `lean_check` reports that the theorem
+`A` may be zero, in which case `c = 0`. A Lean check reports that the theorem
 depends only on the standard axioms `propext`, `Classical.choice` and
 `Quot.sound`.
 
@@ -70,7 +70,7 @@ and 5.6, printed pp.44–45.
 
 ## The imported uniqueness core
 
-Worker 805's published theorem, with the instance arguments it needs, is
+The core's published theorem, with the instance arguments it needs, is
 
 ```lean
 MirabolicWhittaker.exists_testVector (hψ : IsOpen {t | ψ.complex t = 1}) :
@@ -194,7 +194,7 @@ module follows the same route, with two changes.
   identity sends an intertwiner to a Whittaker functional (steps 1 and 3).
   Step 3 is the injectivity half of Theorem 2.28, proved directly with the
   model's translation and covariance laws.
-- The bound `dim (E_{U,Θ})* ≤ 1` is taken from Worker 805's core. The core
+- The bound `dim (E_{U,Θ})* ≤ 1` is taken from the core. The core
   proves it by induction on the rank over the actual unnormalized models,
   not with BZ76's derivative functors `Φ⁻` and `Φ⁺`. No normalized
   derivative appears anywhere, so no normalization bridge is required.
@@ -214,10 +214,9 @@ The imports are:
 - `HarmonicAnalysis.PadicRowFourierCutoffStatement`, for the generic
   valuation-topology lemma `rowFourierCutoff_nonarchimedean`.
 
-The transitive closure of these imports in the integrated Library over commit
-`4021bb1d1ec99e65990e08addda3ade7caa73058` has 46 project modules, and
-none of them is a compact-minimality, functional-multiplicity, derivative,
-Kirillov or rigidity module. So the required direction holds:
+None of the project modules in the transitive closure of these imports is a
+compact-minimality, functional-multiplicity, derivative, Kirillov or rigidity
+module. So the required direction holds:
 compact-model functional uniqueness → this scalar-Hom uniqueness → compact
 minimality → irreducible functional multiplicity. The target pair and every
 module it imports are unchanged.
@@ -229,6 +228,6 @@ module it imports are unchanged.
   31:3 (1976), 1–68. Registered source
   `bernstein-zelevinsky-1976-representations-gln`, SHA256
   `72dc22eb9991112936a88327f00d0f02a16a2bf8747518ca0ecfeeadd188e50c`.
-  I read Proposition 5.15 and its proof on printed pp.49–50. The model
+  Proposition 5.15 and its proof on printed pp.49–50 were read. The model
   conventions and the Frobenius duality step on pp.21–24 and 44–47 are
   cited through the target's Markdown.

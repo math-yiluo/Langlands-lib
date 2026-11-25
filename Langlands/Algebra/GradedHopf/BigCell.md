@@ -1,11 +1,11 @@
 # The big cell of a graded bialgebra
 
-Author: Worker 1389 designed and implemented this module and wrote this note, as
-part of task `90ffbd89-a3dd-4baa-84ba-332896bbbd17` (split unipotence from the
-absence of zero Lie weights). No other worker's draft was reused. It builds on
+This module is part of the Hopf-level core of the proof of split unipotence from the
+absence of zero Lie weights (`Langlands.GroupScheme.RelativeRoot.torusActionSplitUnipotence`
+in `Langlands.GroupScheme.Rational.TorusSplitUnipotenceProof`). It builds on
 `Langlands.Algebra.GradedHopf.Positive`, `Langlands.Algebra.GradedHopf.Quotient`,
 `Langlands.Algebra.GradedHopf.Basic`, `Langlands.Algebra.GradedHopf.TensorGrading` and
-`Langlands.Algebra.GradedHopf.Unitriangular` (same author). It also uses Mathlib's
+`Langlands.Algebra.GradedHopf.Unitriangular`. It also uses Mathlib's
 `MvPolynomial.tensorEquivSum`, `Coalgebra.Repr` and Nakayama's lemma
 (`Submodule.exists_sub_one_mem_and_smul_eq_zero_of_fg_of_le_smul`).
 

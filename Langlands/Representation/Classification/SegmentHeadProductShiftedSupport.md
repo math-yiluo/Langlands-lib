@@ -1,13 +1,13 @@
 # Actual shifted-support witnesses for supplied special-head products
 
-Author: Worker 357.
-
 This internal construction compares actual supports attached to derivatives of a
 supplied subquotient and its smooth dual. The selected definition is
 `Langlands.Classification.chooseSegmentHeadProductShiftedSupportData`.
 Its returned structure, the generic subquotient-duality helper, and three
-projections form one focused unit. The full product irreducibility criterion
-remains open.
+projections form one module. The full product irreducibility criterion
+is not proved here; the Library proves it as
+`segmentHeadProductIrreducibility` in
+`Classification.SegmentHeadProductIrreducibilityProof`.
 
 ## Parameters and exact scope
 
@@ -71,7 +71,8 @@ make the residual rank zero. Finally `exists_linked_pair` applies the
 published finite truncation obstruction to these exact original-label
 truncations, the union equality, and nonemptiness. Its conclusion is
 `∃ i j : Fin d.length, (d.segments i).IsLinked (d.segments j)`.
-It does not prove the host criterion or assert that all positive-rank
+It does not prove the criterion `SegmentHeadProductIrreducibility` or
+assert that all positive-rank
 subquotients admit the supplied comparison.
 
 ## Implemented construction and internal provenance
@@ -127,24 +128,19 @@ and external-root inventories follow below; the external list does not
 claim a separate recursive traversal of Mathlib.
 
 The derivative route is inherited from the published terminal-support and
-dual-initial-support units. It uses general derivative exactness, actual
+dual-initial-support modules. It uses general derivative exactness, actual
 Leibniz filtrations, finite length, constituent extraction and support
 addition. Individual heads are used only through the final published
 `Langlands.Classification.segmentHeadDerivativeSupportTruncation` support
 bound. Actual product duality preserves the supplied heads and labels.
-The present unit adds exact smooth subquotient duality, actual support
+This module adds exact smooth subquotient duality, actual support
 transport and uniqueness, and the already proved finite endpoint obstruction.
-It imports no pending highest-derivative untwisted-quotient helper.
+It does not import the highest-derivative untwisted-quotient helper
+`Derivative.GeneralLinearHighestDerivativeUntwistedQuotient`.
 
-The trusted operator rulings
-[bd71b9185aab5d6eafffb7891bd3a3ca](/home/taskhub/pilot/correspondence/bd71b9185aab5d6eafffb7891bd3a3ca.md),
-[0edda6122ce65ed7ac51603c37473920](/home/taskhub/pilot/correspondence/0edda6122ce65ed7ac51603c37473920.md),
-[30144f6f9b59540b88b6d4c1517892d9](/home/taskhub/pilot/correspondence/30144f6f9b59540b88b6d4c1517892d9.md),
-[ed80148e21e7523abfc048f455e98eb0](/home/taskhub/pilot/correspondence/ed80148e21e7523abfc048f455e98eb0.md),
-[2b33898bdd0a5ff1b9031be5155a06f0](/home/taskhub/pilot/correspondence/2b33898bdd0a5ff1b9031be5155a06f0.md),
-and [ca18fd5005bf5e12a3f7cade18dca865](/home/taskhub/pilot/correspondence/ca18fd5005bf5e12a3f7cade18dca865.md)
-were read in full. They permit the general derivative foundations and the
-final independently proved support-only theorem. The stronger `core_mid`,
+The independence boundary of this module admits the general derivative
+foundations and the final independently proved support-only theorem. The
+stronger `core_mid`,
 `core` and at-most-one-simple-factor consequences, and the permitted
 adjacent-reducibility import, stay restricted to that support proof's
 length-two base case. This consumer invokes none of them separately.
@@ -154,28 +150,29 @@ hits: the permitted support-only theorem and its helpers, broad
 two-supercuspidal Prop interfaces, and the nonadjacent theorem inside the
 adjacent-reducibility closure used in that restricted base.
 `TwoSupercuspidalProductStructureProof` is absent. Imported Prop interfaces
-are not assumed proofs. The new code introduces no excluded dependency.
+are not assumed proofs. This module's code introduces no excluded dependency.
 The unchanged original-label support closure is supplemented by elementary
 integral coordinates, linkage and the finite obstruction; these use integral
 twist freeness and no segment derivative identification.
 
-The proof and inherited closure are independent of the host criterion in
-either direction; parent `GenericSegmentProductUniqueness`; multisegment
+The proof and inherited closure are independent of the criterion
+`SegmentHeadProductIrreducibility` in either direction;
+`GenericSegmentProductUniqueness`; multisegment
 exhaustion; ordered strong-head existence; quotient coverage; ordered
 conversion; tempered uniqueness; square-integrable classification and
-exhaustion; regular exhaustion; Ze80 3.5/9.6 and their proof successors;
+exhaustion; regular exhaustion; Ze80 3.5/9.6 and their proofs;
 excluded segment, head, socle and full Jacquet conclusions; and the
-segment-socle part of task `8e5b4563`. No restricted stronger support helper
-is used in place of an excluded result.
+segment-socle part of the derivative statements of
+`Classification.SegmentSocleDerivativesStatement`. No restricted stronger
+support helper is used in place of an excluded result.
 
 ## Validation
 
-The module compiled with zero errors and warnings in the authorized Lean
-service. A Lake-build inspection of the selected definition reports
+The module compiled with zero errors and warnings. A Lake-build inspection
+of the selected definition reports
 independent level parameters `uF,uV`, declaration kind `definition`, and
-only `propext`, `Classical.choice` and `Quot.sound`. Author compilation
-and the dependency audit do not replace independent semantic review and
-Library publication.
+only `propext`, `Classical.choice` and `Quot.sound`. Compilation
+and the dependency audit do not replace a semantic review.
 
 ## Complete project import inventory
 

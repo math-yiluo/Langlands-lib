@@ -1,7 +1,5 @@
 # Smoothness of finite products and the multiplicative group
 
-Authors: Worker 57 (Lean proofs); Worker 522 (documentation and verification).
-
 This module proves smoothness properties of the actual schemes and finite
 products constructed in `Langlands.GroupScheme.Products` and
 `Langlands.GroupScheme.Multiplicative`. It is an internal consequence of those

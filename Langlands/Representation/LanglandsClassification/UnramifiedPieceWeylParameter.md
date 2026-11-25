@@ -79,8 +79,12 @@ automorphism identifies the automorphism for `n⁻¹` with the inverse of the
 one for `n`. The inverse Weyl class in the formula is required because the
 existing character action is defined by inverse precomposition.
 
-This unit proves the character comparison for arbitrary supplied same-Levi
+This module proves the character comparison for arbitrary supplied same-Levi
 intersection data. It does not prove nonidentity double-coset exclusion from
 the Levi Weyl subgroup, a nonzero piece displacement, an opposite-cone
-comparison, spectral separation, or the host regularity proposition. Those
-remain subsequent steps.
+comparison, spectral separation, or the regularity proposition
+`LanglandsTripletOppositeRegularityStatement` that it serves. Those are
+separate steps: the double-coset exclusion and the nonzero displacement are in
+`UnramifiedPieceDisplacement`, which imports this module, and the Library
+proves the regularity proposition as `langlandsTripletOppositeRegularity` in
+`LanglandsTripletRegularityProof`.

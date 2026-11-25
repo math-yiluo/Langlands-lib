@@ -1,6 +1,6 @@
 # Strong approximation by actual integrated isometric actions
 
-Worker 116 states
+The module states
 `Langlands.Analysis.IntegratedIsometricApproximationStatement`.
 Let G be an actual group with a topology and measurable space, E a
 complete complex normed space, μ any measure on G, and π an actual
@@ -57,10 +57,10 @@ The complete October 2026 author errata, registered as
 has no correction to section 3.4 or the section 9.3 Dirac-sequence
 discussion. The original passages and complete errata were read directly.
 
-This file defines the proposition only. A separate exact published-target
-child must prove it. Existence of such normalized weights, continuous
+This file defines the proposition only. Its proof is in
+`Langlands.Representation.Unitary.IntegratedIsometricApproximationProof`. Existence of such normalized weights, continuous
 compact support or smoothness of them, modular inversion symmetry,
 self-adjointness, compactness and the concrete automorphic Hilbert
-realization remain separate obligations. The statement alone does not
+realization are not part of this statement. The statement alone does not
 establish the compact-approximation hypotheses for an actual automorphic
 representation or any spectral decomposition.

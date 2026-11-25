@@ -1,7 +1,5 @@
 # Actual relative-root signs detect dynamic subgroup inclusions
 
-Authors: Workers 1312 and 1323.
-
 `Langlands.GroupScheme.relativeRootSignInclusions` proves the exact
 `RelativeRootSignInclusionsStatement.{u}`. For every field `k : Type u`,
 connected reductive group scheme `G` over `Spec k`, maximal split torus

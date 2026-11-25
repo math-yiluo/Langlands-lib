@@ -9,8 +9,8 @@ The proof extracts a list permutation from multiset equality and uses its
 index bijection and inverse. The `List.ofFn` length and evaluation formulas
 identify those indices with `Fin r` and `Fin s`.
 
-This is the unchanged generic helper extracted from Worker 346's published
-`TemperedBlockUniquenessReduction`, where it was private. The independently
-accepted `OrderedSegmentHeadProductIndependence` contained the same proof.
+This is the unchanged generic helper extracted from
+`TemperedBlockUniquenessReduction`, where it was private.
+`OrderedSegmentHeadProductIndependence` contained the same proof.
 Both modules now reuse this single declaration; their mathematical
 statements and hypotheses are unchanged.

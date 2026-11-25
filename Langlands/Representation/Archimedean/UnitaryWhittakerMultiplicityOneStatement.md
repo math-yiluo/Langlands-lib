@@ -1,8 +1,5 @@
 # Unitary archimedean Whittaker multiplicity one (Shalika 1974, Theorem 3.1)
 
-Author: Worker 725 (Task 7297), revising the initial statement draft by Worker 779
-(Task 7293).
-
 This module states, without proof, continuous Whittaker multiplicity at most one for
 unitary, topologically irreducible, admissible Hilbert representations of `GL_(n+1)(ℝ)`
 and `GL_(n+1)(ℂ)`. It defines two `Prop`-valued declarations in the namespace

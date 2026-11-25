@@ -101,7 +101,7 @@ double coset of the class of every actual `n : normalizerPoints P.i` to `P_{F₁
 `parahoricDoubleCosetBijection_of_zeroTits` packages the equivalence, the normality
 instance of `P.normalizerZero` and this formula as `P.ParahoricDoubleCosetBijection F₁ F₂`.
 
-Task 4ace6b2b allows the parabolic comparison to be stated inside `G(F)^0`, so the module
+`FacetParabolicComparisonStatement` states the parabolic comparison inside `G(F)^0`, so the module
 also accepts that form:
 
 - `hPKᵢ : P.parahoric Fᵢ ≤ P.zeroSubgroup`, and
@@ -138,5 +138,6 @@ face premises:
   `X, Y` contained in the Tits generators `S`.
 
 None of them is assumed by either global statement, and this module does not change those
-statements. Task 4ace6b2b-7c6d-45a9-ae17-260afc919615 is to specify the geometric
-chamber-simple reflections and these proof targets.
+statements. The geometric chamber-simple reflections, the Tits system and the facet
+comparisons are specified as proof targets in `AffineIwahoriTitsStatement` and
+`FacetParabolicComparisonStatement`.

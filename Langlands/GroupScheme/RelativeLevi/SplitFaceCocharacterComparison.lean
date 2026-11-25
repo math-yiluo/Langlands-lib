@@ -34,7 +34,7 @@ variable {R : Type u} [CommRing R] [Nontrivial R]
   (hfam : ∀ a, IsRootParametrization t (P.root a) (fam a))
   (hfam' : ∀ a, IsRootParametrization t (P.root a) (fam' a))
 
-local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
+private local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
 
 include hU hfam in
 /-- Equality of actual contracting functors fixes every root's positive sign. -/
@@ -143,7 +143,7 @@ variable {R : Type u} [CommRing R]
   {t : splitTorus (Spec (CommRingCat.of R)) I ⟶ G}
   {wt wt' : I → ℤ} {iP : Pgrp ⟶ G} (r : U ⟶ Pgrp)
 
-local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
+private local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
 
 /-- Two dynamic presentations of the same supplied parabolic and radical
 have exactly the same contracting functor on all scheme tests. -/

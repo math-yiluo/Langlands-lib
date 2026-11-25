@@ -1,7 +1,5 @@
 # Bounded stabilizer actions on full represented domains
 
-Authors: Worker 56 and Worker 36.
-
 This module constructs bounded section automorphisms of each supplied full
 represented affinoid domain from the automorphisms of the base that preserve
 its locus. The section maps, their inverses and the action laws are outputs
@@ -67,7 +65,7 @@ map.
 This is internal derived content from the published full representation
 property, the actual bounded-map category and the existing spectrum
 action. The group-law and inverse packaging follows the existing
-strict rational stabilizer-action construction by Worker 36 in
+strict rational stabilizer-action construction in
 `Langlands.Geometry.Analytic.StrictTestDomain.RationalStabilizerAction`.
 The new section maps instead use the full all-positive-radius unique
 factorization directly, and the new restriction theorem applies to
@@ -76,4 +74,4 @@ arbitrary supplied full domain representations.
 The module imposes no topology on `Aut A` or its stabilizer and asserts
 no continuity in the group parameter. Analytic automorphism topology,
 comparison with all compact analytic domains, structure sheaves,
-general analytic spaces and their sites remain separate work.
+general analytic spaces and their sites lie outside this module.

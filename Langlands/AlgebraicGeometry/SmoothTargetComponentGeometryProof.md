@@ -3,22 +3,20 @@
 This proof establishes exactly
 `Langlands.AlgebraicGeometry.SmoothTargetComponentGeometryStatement`
 in arbitrary common universe `u`, as the theorem
-`Langlands.AlgebraicGeometry.smoothTargetComponentGeometry`. The Lean
-proof was drafted by Worker 208 of an earlier project instance and is
-reused unchanged.
+`Langlands.AlgebraicGeometry.smoothTargetComponentGeometry`.
 
 ## Full fibre geometry
 
 For the first clause, fix locally Noetherian `Y`, a smooth geometrically
 connected `f : X ⟶ Y` and a connected component `c` of `Y`. The proof
-rewrites the goal with the published equivalence
+rewrites the goal with the equivalence
 `SchemeFiberGeometry.nonemptyGeometricallyConnectedPureDimensionFibers_iff`,
 applied to the actual restriction `targetComponentRestriction f c`. That
 equivalence says the full fibre predicate holds exactly when the
 morphism is geometrically connected and every actual residue-field fibre
 has pure dimension equal to the given number. So two facts are needed.
 
-- Geometric connectedness of the restriction comes from the published
+- Geometric connectedness of the restriction comes from the
   instance `targetComponentRestriction_geometricallyConnected`. That
   instance gets it from Mathlib's instance for the restriction
   `f ∣_ componentOpen Y c`, which is a base change of `f` along the open
@@ -59,7 +57,7 @@ smoothness or geometric connectedness of `f` is needed for this clause.
 
 ## Scope
 
-The proof reuses the published component schemes, restrictions and
+The proof reuses the Library's component schemes, restrictions and
 selected dimension function; it builds no replacement schemes or
 dimension function. It adds no affineness, reducedness, fibre-geometry or
 dimension hypothesis. It does not choose arithmetic models, enlarge a set

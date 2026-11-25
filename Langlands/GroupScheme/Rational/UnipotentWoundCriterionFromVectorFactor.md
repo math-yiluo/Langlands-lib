@@ -6,8 +6,10 @@ This internal derived construction concludes the exact published proposition
 algebraic separably closed rational-point premise from the earlier reduction.
 The original statement pair, its imports and the representation-based
 `IsUnipotent` predicate are unchanged. Every field and characteristic remain in
-the conclusion. The full unconditional target remains open until the
-vector-factor proposition is proved.
+the conclusion. The full unconditional target needs a proof of the vector-factor
+proposition as well: `unipotentWoundCriterion` in
+`Rational/UnipotentWoundCriterionProof` applies `criterion_of_vectorFactor` to
+`RelativeRoot.commutativePTorsionVectorFactor`.
 
 In prime characteristic,
 `exists_central_additive_closed_subgroup_of_charP_of_vectorFactor` uses the
@@ -36,6 +38,6 @@ closed additive subgroup when affine-line constancy fails.
 The implementation reuses the earlier line-through-factor closedness and
 centrality lemmas and the characteristic-zero branch unchanged. The new
 smooth-density theorem discharges the earlier rational-point premise by local
-étale polynomial charts and actual separably closed point lifting. This unit
+étale polynomial charts and actual separably closed point lifting. This module
 neither proves nor assumes a coordinate presentation in place of the remaining
 vector-factor theorem; that exact theorem is retained as its explicit argument.

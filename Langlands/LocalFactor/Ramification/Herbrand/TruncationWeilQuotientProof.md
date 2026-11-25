@@ -88,7 +88,7 @@ splitting property above, and that `ι` is an open map; it concludes
 
 `truncationWeilQuotient` applies `weilQuotientIsoAlong_of_comap` with
 `K = E.asPadicField` and `ι = intermediateWeilMap F E`. It uses
-`truncationWeilComap` (Task 7663) at each `y` with `-1 ≤ y ≤ x ≤ μ` for the
+`truncationWeilComap` (module `Herbrand.TruncationWeilComapProof`) at each `y` with `-1 ≤ y ≤ x ≤ μ` for the
 preimage hypothesis, `exists_upperGroup_mul_mem_range` for the splitting,
 and `intermediateWeilMap_isOpenMap` for openness. The general lemma is stated
 over arbitrary `K` because instance resolution does not find the local

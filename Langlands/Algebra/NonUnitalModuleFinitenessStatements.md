@@ -1,8 +1,8 @@
 # Object finiteness for original additive nonunital modules
 
-Worker 6 prepared this statement-only adapter in namespace
-`Langlands.Algebra.NonUnitalModuleFiniteness`; Worker 734 audited it
-against the imported declarations and the original pages and submitted it.
+This statement-only adapter is in namespace
+`Langlands.Algebra.NonUnitalModuleFiniteness`; it was audited
+against the imported declarations and the original pages.
 It contains five closed transparent propositions and their ordered
 conjunction. It proves none of them. The construction and predicates it
 imports are unchanged.
@@ -109,11 +109,11 @@ réductifs p-adiques*, French version dated 9 July 2026, registered source
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 Its retained file is
 `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`.
-Worker 6 reread saved direct extracts of printed5–6/PDF11–12,
-printed14/PDF20 and printed248–249/PDF254–255 for this adapter. The
-parent's earlier reading also visually checked PDF254–255. For the audit,
-Worker 734 confirmed the file's SHA256 and re-extracted the text of these
-five pages from it.
+Saved direct extracts of printed5–6/PDF11–12,
+printed14/PDF20 and printed248–249/PDF254–255 were reread for this adapter. An
+earlier reading also visually checked PDF254–255. For the audit,
+the file's SHA256 was confirmed and the text of these
+five pages was re-extracted from it.
 
 The Chapter I conventions permit nonunital rings and nonunital actions
 even over a unital ring. A.I.2 defines categorical subobjects and their
@@ -124,16 +124,15 @@ unital modules over a unital ring. The published
 express that example using `ModuleCat`.
 
 The present targets instead concern the whole additive nonunital-action
-category. The intended proof route transfers the categorical conditions
+category. The proof in `NonUnitalModuleFinitenessProof` transfers the categorical conditions
 through the actual subobject comparison and the published integer
 unitization equivalence, then uses the unital-module comparisons and
 the original-action generation comparisons. These are proof ingredients,
 not extra hypotheses or proofs supplied here. The comparison
-`Subobject M ≃o NonUnitalSubmodule A M` is owned by task
-`e0c2f2dc-19ea-4590-8f21-681193c6b15c`, and the proof of
-`IntegerOriginalSubmoduleGenerationStatement` by task
-`1ac1f4eb-ccc6-4bba-afa5-e120455acbc1`; neither was public when this
-statement was prepared.
+`Subobject M ≃o NonUnitalSubmodule A M` is
+`NonUnitalModuleCat.subobjectOrderIso` in `NonUnitalModuleSubobject`, and
+`IntegerOriginalSubmoduleGenerationStatement` is proved as
+`integerOriginalSubmoduleGeneration` in `IntegerOriginalSubmoduleGenerationProof`.
 
 Renard's I.2.1 adjoins a complex unit to a complex algebra whose modules
 are also complex vector spaces. Integer unitization here is an internal
@@ -141,26 +140,27 @@ choice for arbitrary additive groups. This module does not assert that
 integer unitization gives the source's complex-linear category or fixes
 the source's convention for a possibly nonunital Noetherian algebra.
 
-Worker 6 also reread the relevant saved extract of PDF18–19 of the
+The relevant saved extract of PDF18–19 of the
 registered supplement `renard-2010-corrections-complements`, SHA256
 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
 retained at
-`/home/taskhub/pilot/literature/Renard — Représentations des groupes réductifs p-adiques- corrections et compléments (2010 edition errata).pdf`.
+`/home/taskhub/pilot/literature/Renard — Représentations des groupes réductifs p-adiques- corrections et compléments (2010 edition errata).pdf`,
+was also reread.
 Its correction to old printed314 requires extra complex-vector-space
 data. Those pages do not give these integer categorical comparisons or
 correct the A.I.3 wording. The 2026 text governs. The published
 `notes/renard/appendix-a-corrections.md` concerns other passages. No
-dedicated 2026 Renard errata file was found in the parent audit.
+dedicated 2026 Renard errata file was found in the earlier source audit.
 Renard's references [25] and [37] have not been read for this adapter
 and supply no proof evidence here.
 
 ## Scope
 
-The subobject construction belongs to its separate definition task;
+The subobject construction is in `NonUnitalModuleSubobject`;
 these statements assume no order isomorphism as an input and do not
-reimplement one. Existing category and algebraic-generation units retain
-their interfaces. A proof successor must target the exact published
-aggregate and use independently published dependencies.
+reimplement one. Existing category and algebraic-generation modules retain
+their interfaces. The aggregate is proved as `nonUnitalModuleFiniteness` in
+`NonUnitalModuleFinitenessProof`.
 
 This object comparison keeps `uA` and `uM` independent. A category/ring
 criterion involving a regular module requires separate size treatment

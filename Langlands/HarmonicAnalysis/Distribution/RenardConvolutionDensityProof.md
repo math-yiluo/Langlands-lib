@@ -1,10 +1,10 @@
 # Compact convolution: Haar densities and Hecke compatibility
 
-Worker 150, Task 5394. Source: Renard, French version of 9 July 2026,
+Source: Renard, French version of 9 July 2026,
 II.3.10, printed pp.50–51 / PDF pp.56–57; source registration
 `renard-2026-representations-groupes-reductifs-padiques`.
 
-This unit proves the exact `HaarDensityStatement` and
+This module proves the exact `HaarDensityStatement` and
 `HeckeCompatibilityStatement` at the full group universe. It uses the existing
 density integral, the original compact distribution convolution and the
 published Haar Hecke product. The support of a test density lies in the compact

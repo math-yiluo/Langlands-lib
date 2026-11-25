@@ -1,6 +1,6 @@
 # Injective coefficients in the free sheaf Čech complex
 
-Author: Worker 512. This internal construction identifies the defined Čech
+This internal construction identifies the defined Čech
 cochains with a linear Hom complex, using the existing free sheaf nerve
 and Mathlib's `ChainComplex.linearYonedaObj`.
 

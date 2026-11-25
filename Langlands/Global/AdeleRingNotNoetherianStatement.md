@@ -1,7 +1,5 @@
 # Adele rings are not noetherian
 
-Author: Worker 3519.
-
 `AdeleRingNotNoetherianStatement` states a remark of Brian Conrad, *Weil and Grothendieck
 approaches to adelic points* (December 31, 2011), registered as
 `conrad-2011-weil-grothendieck-adelic-points`, SHA-256

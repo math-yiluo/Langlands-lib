@@ -90,16 +90,16 @@ def etaleDiagonalPullback :
     (fun F => Action.mkIso ((etaleProductSheafPullback f R Y.V).app F.V)
       (fun g => by
         change (EtalePullback.restriction f (ModuleCat.{u} R)).map
-            (deckMap X.smallEtaleTopology (Y.ρ g⁻¹) F.V ≫
-              (productSheaf X.smallEtaleTopology Y.V).map (F.ρ g)) ≫
+            (deckMap X.smallEtaleTopology (Y.ρ g⁻¹).asHom F.V ≫
+              (productSheaf X.smallEtaleTopology Y.V).map (F.ρ g).asHom) ≫
             (etaleProductSheafPullback f R Y.V).hom.app F.V =
           (etaleProductSheafPullback f R Y.V).hom.app F.V ≫
-            (deckMap Z.smallEtaleTopology ((etaleObjectPullback f).map (Y.ρ g⁻¹))
+            (deckMap Z.smallEtaleTopology ((etaleObjectPullback f).map (Y.ρ g⁻¹).asHom)
                 ((EtalePullback.restriction f (ModuleCat.{u} R)).obj F.V) ≫
               (productSheaf Z.smallEtaleTopology ((etaleObjectPullback f).obj Y.V)).map
-                ((EtalePullback.restriction f (ModuleCat.{u} R)).map (F.ρ g)))
+                ((EtalePullback.restriction f (ModuleCat.{u} R)).map (F.ρ g).asHom))
         rw [CategoryTheory.Functor.map_comp, Category.assoc]
-        erw [(etaleProductSheafPullback f R Y.V).hom.naturality (F.ρ g)]
+        erw [(etaleProductSheafPullback f R Y.V).hom.naturality (F.ρ g).asHom]
         rw [← Category.assoc, etaleProductSheafPullback_deck, Category.assoc]
         rfl))
     (fun {F F'} a => by

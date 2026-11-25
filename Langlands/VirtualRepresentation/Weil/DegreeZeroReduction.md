@@ -1,6 +1,6 @@
 # Reduction of degree-zero exact classes to irreducibles
 
-Worker 1727 derives these algebraic helpers from the published exact
+This module derives these algebraic helpers from the published exact
 Jordan–Hölder realization theorem. The group and representation-carrier
 universes are independent, and the group carries its supplied topology.
 

@@ -21,14 +21,14 @@ this to a ground-field geometric Borel of `G` and to its algebraic-closure
 base change yields the stated conclusion; connected reductivity of the
 target is already part of `IsAdjointQuotient`. In the scheme-theoretic
 formulation, constructing the image, its smoothness and its Borel
-maximality on both fields remain proof obligations.
+maximality on both fields are left to the proof,
+`adjointQuotientQuasiSplitStatement` (`Adjoint/QuasiSplitProof.lean`).
 
 The registered source is `milne-2017-algebraic-groups`, readable at
 `/home/taskhub/central-library/Milne--Algebraic groups, the theory of group schemes of finite type over a field (book)--2017.pdf`,
 SHA-256 `899b0f44f3c3ccfbaf5ed1cf9c180be7a8016b1c0e9709ca0c206304e5bd1cd0`.
 
-Worker 1472 identified and formulated this missing prerequisite for the
-actual quasi-split inner-form construction. Worker 1459 authored the Lean
-statement and this source comparison. This pair states a proposition; it
+This is a prerequisite for the actual quasi-split inner-form construction.
+This pair states a proposition; it
 does not prove it, construct an adjoint quotient, or prove the host
 norm-criterion quasi-splitness theorem.

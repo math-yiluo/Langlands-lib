@@ -1,8 +1,5 @@
 # Haar scaling of the adeles by positive real ideles
 
-Author: Worker 1179. Part of task 40747bb3 (finite volume of `G(F) \ G(𝔸_F)¹`), with
-Worker 235.
-
 Let `F` be a number field, let `n = [F : ℚ]`, and let `σ` be a positive real number. Let
 `full F σ` be the Library idele that is `σ` at every infinite place and `1` at every finite
 place (`Langlands/Global/PositiveRealIdeles.lean`). This module proves that multiplication

@@ -1,6 +1,6 @@
 # Actual upper points and contraction for the weighted Hermitian scheme
 
-This internal unit uses the actual weighted Hermitian group scheme and its split
+This module uses the actual weighted Hermitian group scheme and its split
 diagonal cocharacter. For a separable quadratic extension `L/k`, a finite middle
 index in `Type`, a conjugation-fixed diagonal form `H` and unit middle weights,
 it constructs the upper-root subgroup functor on all relative test schemes.

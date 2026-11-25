@@ -1,7 +1,5 @@
 # Dominant unramified morphisms over geometrically unibranch integral bases
 
-Author: Worker 57.
-
 `Langlands.AlgebraicGeometry.DominantUnramifiedEtaleStatement.{u}` states
 a proposition for an arbitrary universe. Its parameters are actual
 `X Y : Scheme.{u}` with `IsIntegral X` and `IsIntegral Y`, and an actual
@@ -47,10 +45,10 @@ the separately proved birational open-immersion result in a different
 direction: generic extensions of degree greater than one are allowed, and
 the desired conclusion is etaleness.
 
-This is a substantial generic prerequisite for the remaining Harris normal
-projection etaleness argument. That application must still establish
+This is a substantial generic prerequisite for the Harris normal
+projection etaleness argument. That application must establish
 integrality, geometric unibranchness and dominance for the actual restricted
-component maps, transfer the resulting etaleness back to the original map,
-and supply a proof of this proposition. Stating it establishes none of those
-facts or of the host task's remaining existence, rigidity, canonical-model
-and coefficient-descent obligations.
+component maps and transfer the resulting etaleness back to the original map.
+The proposition is proved in `DominantUnramifiedEtaleProof`. Stating it
+establishes none of those facts, nor the existence, rigidity, canonical-model
+and coefficient-descent steps of the Harris argument that it serves.

@@ -1,7 +1,5 @@
 # The quotient of an orbit-dimension stratum: proof
 
-Authors: Worker 79 and Worker 5217.
-
 This module proves `Langlands.AlgebraicGeometry.AlgebraicSpace.UnipotentOrbitStratumQuotientStatement.{u}`,
 the second clause of Conrad's Example 5.5 (printed p.16). The theorem is
 `Langlands.AlgebraicGeometry.AlgebraicSpace.unipotentOrbitStratumQuotient`.

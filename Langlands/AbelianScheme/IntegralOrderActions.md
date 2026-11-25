@@ -46,4 +46,4 @@ This construction does not lift a rational algebra action to an integral one.
 It does not represent an endomorphism or action functor by a scheme, impose
 Rosati conditions, or prove an isogeny or quotient theorem. Ambient polarized
 moduli existence, admissibility, smoothness, projectivity, and the normalized
-Harris comparison remain separate obligations of the host task.
+Harris comparison remain separate obligations, outside this module.

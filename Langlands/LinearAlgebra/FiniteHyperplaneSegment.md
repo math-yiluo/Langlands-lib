@@ -1,7 +1,7 @@
 # Generic rational segments in finite hyperplane arrangements
 
 This internal linear algebra helper is developed for the rational-parabolic
-gallery proof in Task 5515. It concerns finite families of rational linear
+gallery proof (`FiniteHyperplaneChamberGallery`). It concerns finite families of rational linear
 forms on any rational vector space and has no group-scheme assumptions.
 
 `Regular f x` means that all the forms are nonzero at `x`.
@@ -26,8 +26,9 @@ Evaluating that equality at an arbitrary vector shows that one form is the
 other multiplied by the ratio of their nonzero starting values. The final
 existence theorem combines these facts: a regular endpoint in the specified
 chamber gives a segment with only one proportional class at each crossing.
-These are proved linear facts only; the construction of actual dynamic
-parabolics, maximal rank-one walls and the finite gallery is still separate.
+These are proved linear facts only; the finite gallery is constructed in
+`FiniteHyperplaneChamberGallery`, and actual dynamic parabolics and maximal
+rank-one walls are not part of this module.
 
 The definitions and proofs are internal derived content. Their provenance is
 the elementary finite-hyperplane argument described above, implemented using

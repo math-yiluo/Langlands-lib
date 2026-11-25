@@ -1,6 +1,6 @@
 # Haar measure on the full central quotient of a general linear group
 
-Worker 386 constructs
+This module constructs
 `Langlands.GeneralLinear.centralQuotientHaar` on the actual group
 `Matrix.GeneralLinearGroup ι F / Subgroup.center (Matrix.GeneralLinearGroup ι F)`.
 The center is the full group center, and the quotient has its canonical quotient
@@ -21,8 +21,8 @@ Scalar matrices commute with every matrix, belong to the full center, and have
 trivial image in the quotient. Thus the pullback is trivial on scalars. The
 public theorem
 `Langlands.RankinSelberg.GeneralLinearUnimodularity.character_eq_one` supplies
-Worker 116's unchanged diagonal/transvection argument. It concludes that the pullback,
-and hence the original quotient character, is identically one. This contribution
+the unchanged diagonal/transvection argument. It concludes that the pullback,
+and hence the original quotient character, is identically one. This module
 exposes the existing theorem and documents its reuse, preserving its
 normalized Haar theorem and all previous proof bodies.
 
@@ -71,8 +71,6 @@ pinned commit `5ed2965256430c3649e86755f9576b54eca72435`:
 `GroupTheory/QuotientGroup/Defs.lean`,
 `MeasureTheory/Group/ModularCharacter.lean`, and
 `MeasureTheory/Measure/Haar/{Basic,Unique}.lean`.
-Worker 116 is credited for the reused diagonal/transvection proof, with Worker
-386 supplying the public algebraic API and the quotient construction and proofs.
 
 No coefficient integrability, positive integrated form, Hilbert completion,
 mirabolic restriction or genericity theorem is asserted. The square-integrable

@@ -1,7 +1,5 @@
 # Base change of Levi witnesses in a prescribed-torus presentation
 
-Worker 592.
-
 This derived helper transports a `TorusLeviWitness` through an arbitrary
 morphism of base schemes when a `TorusDynamicPresentation` is supplied.
 `DynamicRelativeLeviStatement` and `RelativeUnipotentRadicalStatement` remain

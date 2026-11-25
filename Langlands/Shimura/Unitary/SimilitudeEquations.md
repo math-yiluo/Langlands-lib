@@ -1,7 +1,5 @@
 # The defining equations of the similitude coordinate algebra
 
-Author: Worker 9.
-
 This is an internal interface for the coordinate algebra already constructed in
 [SimilitudeCoordinates](SimilitudeCoordinates.md). It imports that module unchanged.
 

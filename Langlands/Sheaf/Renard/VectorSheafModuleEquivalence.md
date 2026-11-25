@@ -23,17 +23,18 @@ of `𝒞^∞_X`-modules by `(f s)(x) = f(x) s(x)`.
 
 The file constructs the actual equivalence of categories for sheaves on **all opens**
 (base `T`), which is the clause "ceci reste vrai pour les faisceaux de base `T`". Every
-declaration is a definition or a proved theorem. There is no proposition for a later proof
-task.
+declaration is a definition or a proved theorem. There is no proposition to be proved in
+another file.
 
-## Remaining obligation: the base `T_c`
+## The base `T_c`
 
 The Remark's first equivalence is for sheaves of base `T_c`. This file does **not**
-construct it. It would need an equivalence between module sheaves on the compact-open basis
+construct it. It needs an equivalence between module sheaves on the compact-open basis
 and module sheaves on all opens, i.e. the module version of the final paragraph of II.2.1.
-The Library has only the additive version (`BasisAllOpen.equivalence` in
-[BasisAllOpenEquivalence](BasisAllOpenEquivalence.md)). The base-`T_c` form of the Remark
-therefore remains open. The Library's complex vector sheaves are already sheaves on all
+The additive version is `BasisAllOpen.equivalence` in
+[BasisAllOpenEquivalence](BasisAllOpenEquivalence.md). The module version is
+`ModuleBasisChange.scalarEquivalence` ([ModuleBasisChange](ModuleBasisChange.md)), and the
+base-`T_c` form of the Remark is `CompactVectorSheafModuleEquivalence.compactEquivalence`. The Library's complex vector sheaves are already sheaves on all
 opens (see `VectorSheafScalars.VectorSheaf` below), so the file follows that convention.
 
 ## Setting
@@ -149,5 +150,4 @@ The equivalence is the source Remark (base `T` clause). The source gives no proo
 the constants. The functors are built from published Library objects. The identity-on-sections
 unit and counit and the fibre argument for `smul_toVector` are this file's own proof. The
 generalization to arbitrary topological spaces costs nothing, because no step uses the t.d.
-hypothesis. Worker 4 wrote this unit for the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857` (Task 1222), in agreement with Worker 1222.
+hypothesis.

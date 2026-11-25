@@ -1,7 +1,5 @@
 # Actual cuspidal presentations irreducible at every finite place
 
-Authors: Worker 1793.
-
 This module defines two propositions for later proofs:
 
 - `Langlands.Automorphic.CuspidalIrreducibleAdmissibleFiniteSliceExistenceStatement.{u}`,

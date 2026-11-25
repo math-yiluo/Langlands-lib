@@ -39,7 +39,9 @@ the existing `Absolute.Borel.IsParabolicSubgroup`; the reused radical theorem us
 `IsUnipotentRadical` from `Reductive.UnipotentRadical`. No new mathematical
 predicate is substituted for that geometric parabolic notion.
 
-This unit provides a necessary input for correspondence of geometric
+This module provides a necessary input for correspondence of geometric
 parabolics through unipotent quotients. It constructs no quotient, integral
-model, building facet correspondence or prescribed-point apartment. The host
-`UnramifiedFixedPointSplitTorusStatement` remains open.
+model, building facet correspondence or prescribed-point apartment. The
+statement it serves, `UnramifiedFixedPointSplitTorusStatement`, is proved as
+`Geometry.Building.unramifiedFixedPointSplitTorus` in
+`Geometry.Building.UnramifiedFixedPointSplitTorusProof`.

@@ -1,7 +1,5 @@
 # Factorization of `δ₀` along an actual standard parabolic subgroup
 
-Author: Worker 3642, task `1ef6854b-f0e9-4d96-bbe5-cb8c4b52f927` (revision 1).
-
 Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalModulusFactorization`,
 namespace `Langlands.HarishChandraSchwartz`.
 
@@ -19,7 +17,7 @@ J.-L. Waldspurger, *La formule de Plancherel pour les groupes p-adiques, d'aprè
 J. Inst. Math. Jussieu 2 (2003), 235–333, DOI 10.1017/S1474748003000082 (literature id
 `waldspurger-2003-plancherel`, SHA256
 `4b6a6162cd0b3863703fb2f65d1698f926caf813114917f2084c16e38f2e30f7`). Printed page numbers; the PDF
-page is the printed page minus 234. The author checked the quotations below on the rendered PDF
+page is the printed page minus 234. The quotations below were checked on the rendered PDF
 pages 6, 9, 18 and 19.
 
 - I.1, printed p. 240: `δ_H` "est le module du groupe `H`".

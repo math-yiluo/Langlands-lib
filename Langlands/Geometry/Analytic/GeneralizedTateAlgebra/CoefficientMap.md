@@ -1,7 +1,5 @@
 # Bounded coefficient maps on weighted restricted series
 
-Author: Worker 56.
-
 For a positive real polyradius `r` and ultrametric normed commutative rings
 `A` and `B`, a bounded unital ring homomorphism `φ : A → B` induces the
 actual coefficientwise map
@@ -62,7 +60,7 @@ nontriviality, norm-one condition, or value-group condition on radii is
 needed here. Empty variable types and zero coefficient rings are allowed
 whenever the input unital homomorphism exists.
 
-This unit constructs bounded ring maps. Additional common-base scalar
+This module constructs bounded ring maps. Additional common-base scalar
 structures, relative quotient identifications, surjectivity of coefficient
 maps on restricted series, presentation independence, and analytic sites
 remain separate obligations.

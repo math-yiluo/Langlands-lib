@@ -1,6 +1,6 @@
 # Clozel's prescribed one-split-place division existence statement
 
-Worker 1728. This is an unproved Prop-valued statement of the one-place
+This is an unproved Prop-valued statement of the one-place
 case of Laurent Clozel, Représentations galoisiennes associées aux
 représentations automorphes autoduales de GL(n), Publications mathématiques
 de l'IHÉS 73 (1991), 97–145, Section 2, Proposition 2.3(i),(ii), its proof and
@@ -43,10 +43,13 @@ Langlands.Shimura.FiniteUnitary.ClozelOnePlaceExistenceStatement.
 The explicit tensor and matrix models are in FiniteScalarExtension and
 FiniteModels. The former's isDivision_of_isDivisionAt proves the elementary
 reflection from division of an actual completed algebra, with injective
-scalar extension and finite dimensionality retained. The global arithmetic
-existence proof remains to be supplied against this precise proposition.
+scalar extension and finite dimensionality retained. The Library has no
+unconditional proof of this proposition:
+`clozelOnePlaceExistence_of_localProfile` in
+Langlands.Shimura.Unitary.ClozelOnePlaceExistenceReduction derives it from
+`UnitaryLocalProfileRealizationStatement`.
 
-If this existence proposition is later proved and its conclusion chosen,
+If this existence proposition is proved and its conclusion chosen,
 it supplies the actual CentralSimpleUnitaryData and the D.IsDivision
 premise used by
 Langlands.Shimura.PEL.HarrisTaylorCMWeilLevel.DivisionCMRepresentabilityStatement
@@ -74,7 +77,7 @@ harris-1999-cohomological-automorphic-forms-525a222c4489ee9d, SHA256
 Clozel's local division condition gives a primitive invariant, whose
 numerator need not be 1. The exact oriented specialization, an actual
 Brauer/cyclic-algebra comparison, the definite companion and the actual
-inter-algebra local comparisons remain host obligations. No freely supplied
+inter-algebra local comparisons are not part of this statement. No freely supplied
 rational-valued invariant function replaces them here. Harris's printed [C4]
 in Lemma 1.3 does not match a bibliography entry in that edition; the verified
 Clozel original above is the source for this existence statement.

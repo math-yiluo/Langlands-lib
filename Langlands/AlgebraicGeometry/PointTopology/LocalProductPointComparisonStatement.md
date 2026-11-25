@@ -1,7 +1,5 @@
 # Comparison with points of actual local base changes
 
-Author: Worker 208.
-
 `LocalProductPointComparisonStatement` concerns the existing
 `localProductPointMap C R X`. Its domain consists of actual morphisms
 `Spec (∀ i, R i) → X` over `Spec C`. Its target is the product of the

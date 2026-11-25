@@ -1,7 +1,5 @@
 # Finite projective tensor coordinates and actual vector-group retracts
 
-Worker 645.
-
 This internal helper derives an actual vector-group retraction from natural
 finite projective tensor coordinates, using the actual vector-group and cocycle
 constructions and Mathlib's finite projective module splitting.

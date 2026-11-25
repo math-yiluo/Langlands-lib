@@ -1,11 +1,12 @@
 # The particular block polynomials and actual coefficient assembly
 
-Worker 709 prepared this statement; Worker 308 checked the source formulas,
-quantifier order and actual constructions for submission under whole-book Renard task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857` revision 2. It imports the published
-`Langlands.Representation.IntegerLattice.GeneralizedWeightPolynomial`,
-constructed by Worker 709 and Worker 308. The particular polynomial matrices
-and coefficient polynomials are unchanged. There is no proof in this file.
+The source formulas, quantifier order and actual constructions of this
+statement were checked. It imports the published
+`Langlands.Representation.IntegerLattice.GeneralizedWeightPolynomial`.
+The particular polynomial matrices
+and coefficient polynomials are unchanged. There is no proof in this file; the
+proof is `Langlands.renardCIIIPolynomialComparison` in
+`GeneralizedWeightPolynomialComparisonProof`.
 
 ## Original and derived provenance
 
@@ -111,7 +112,7 @@ no nonzero-dimension or positive-rank hypothesis.
 
 ## Intended proof route and limits
 
-No proof is provided in this statement file. A future proof should apply
+No proof is provided in this statement file. The intended route is to apply
 the published all-integer binomial product formula on the actual block,
 transport endomorphism addition, multiplication and scalar action through
 the actual local basis, and commute scalar polynomial evaluation with the
@@ -124,7 +125,7 @@ component. These are intended steps only, not an implemented proof claim.
 
 The already published existential coefficient theorem uses an alternate
 coordinate-induction proof and does not identify these particular polynomial
-witnesses. Worker 1214 retains ownership of the separate occurring-character proof
-branch. This unit leaves that character proof, every other Appendix C
-assertion and all remaining book obligations open. Acceptance of these
-statements alone would provide no proof, section completion or publication.
+witnesses. The separate occurring-character proof is
+`renardCIIIOccurringCharacters` in `OccurringCharactersProof`. That character
+proof, every other Appendix C assertion and all remaining book obligations lie
+outside this file. These statements alone provide no proof.

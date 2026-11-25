@@ -1,7 +1,5 @@
 # Actual flattened coordinates for a refined Levi
 
-Author: Worker 125.
-
 This module constructs `Langlands.Geometric.flattenedLeviEquiv R B S`, a
 multiplicative equivalence
 

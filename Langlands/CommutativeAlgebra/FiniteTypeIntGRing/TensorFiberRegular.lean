@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.CommutativeAlgebra.RegularLocalLocalizationsProof
 import Langlands.CommutativeAlgebra.FiniteTypeIntGRing.CompletionRegular
 import Langlands.CommutativeAlgebra.FiniteTypeIntGRing.LocalDerivation

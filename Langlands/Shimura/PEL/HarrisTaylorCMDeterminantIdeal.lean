@@ -73,7 +73,7 @@ theorem coefficientIdeal_sub_le_ker_iff {T : Type w} [CommRing T]
     (f : R →+* T) (p q : MvPolynomial σ R) :
     coefficientIdeal (p - q) ≤ RingHom.ker f ↔
       MvPolynomial.map f p = MvPolynomial.map f q := by
-  rw [coefficientIdeal_le_ker_iff, map_sub, sub_eq_zero]
+  rw [coefficientIdeal_le_ker_iff, RingHom.map_sub, sub_eq_zero]
 
 theorem coefficientIdeal_eq_bot_iff (q : MvPolynomial σ R) :
     coefficientIdeal q = ⊥ ↔ q = 0 := by
@@ -239,7 +239,7 @@ theorem harrisTaylorCMDeterminantIdeal_restrict
         (S.presheaf.map j.left.op).hom =
       D.harrisTaylorCMDeterminantIdeal C p B i e V := by
   unfold harrisTaylorCMDeterminantIdeal
-  rw [HodgeDeterminant.coefficientIdeal_map, map_sub,
+  rw [HodgeDeterminant.coefficientIdeal_map, RingHom.map_sub,
     lieRationalSectionDeterminant_restrict p B α e g j, MvPolynomial.map_map]
   congr 3
   apply congrArg MvPolynomial.map
@@ -257,7 +257,7 @@ theorem harrisTaylorCMDeterminantIdeal_baseChange
         ((rationalBaseChangeEnd b B).comp i) (lieBaseChangeChart b B e)
         (Over.mk ((TopologicalSpace.Opens.map b.base).map V.hom)) := by
   unfold harrisTaylorCMDeterminantIdeal
-  rw [HodgeDeterminant.coefficientIdeal_map, map_sub,
+  rw [HodgeDeterminant.coefficientIdeal_map, RingHom.map_sub,
     lieRationalSectionDeterminant_baseChange_of_naturality p b B α
       (lieBaseChangeNaturalityStatements S).1 e g V,
     D.harrisRationalOrderAction_baseChange C B i b, MvPolynomial.map_map]

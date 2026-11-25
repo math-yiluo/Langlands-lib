@@ -1,6 +1,6 @@
 # Actual minimal-parabolic coordinates inside a canonical standard Levi
 
-This internal derived unit constructs the group-scheme morphism and the adelic
+This module constructs the group-scheme morphism and the adelic
 factor comparison needed to apply root-Levi height arguments to original
 minimal-parabolic coordinates. The index `J` is any subset of the actual simple
 relative roots of the supplied maximal split torus and generic cocharacter of
@@ -37,6 +37,6 @@ the equality.
 
 The provenance is the published standard-parabolic order, realizing standard
 cocharacters, all-test unipotent product, canonical standard-family intersection
-comparison, represented subgroup functors and norm-one functoriality. This unit
+comparison, represented subgroup functors and norm-one functoriality. This module
 does not assume or prove arithmetic height bounds, construct original positive
 minimal-parabolic coordinates, or conclude chamber reduction.

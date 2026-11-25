@@ -1,10 +1,10 @@
 # Regularity of rational continuations on the line `Re(s) = 1`
 
-Authors: Worker 3657 (proof) and Worker 828 (verification and
-submission). Module
+Module
 `Langlands.Representation.RankinSelberg.BoundaryRationalRegularity`, namespace
-`Langlands.RankinSelberg.UnitaryGeneric`. Helper module of the Task 6387 proof
-candidate. It imports the published `HolomorphicRationalContinuationProof` and
+`Langlands.RankinSelberg.UnitaryGeneric`. Helper module of the proof of
+`UnitaryGenericLPolynomialNonvanishingStatement`
+(`UnitaryGenericLPolynomialNonvanishingProof`). It imports the published `HolomorphicRationalContinuationProof` and
 Mathlib's Bochner integral. It changes no published file.
 
 ## Why
@@ -64,5 +64,5 @@ from convergence on the closed half-plane to regularity on its boundary. The rou
 
 ## Lean checks
 
-`lean_check` in environment `5c94c648-e8dc-4002-a50a-071ebf3f6096`: check
-d66e9ba6 and the builds of the whole candidate; no errors or warnings.
+The module, and the proof of `UnitaryGenericLPolynomialNonvanishingStatement`
+built with it, compile with no errors or warnings.

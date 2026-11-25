@@ -66,8 +66,9 @@ free `O_S`-algebra. The kernel of that action is `Centr_G(G_n)`, which is
 the centre for `n` large by 6.11(b).
 [SGA 3, Exposé XVI, Proposition 3.1 and the beginning of its proof](https://webusers.imj-prg.fr/~patrick.polo/SGA3/Expo16.pdf#page=13).
 
-The statement is used in Task 7782 to prove
-`Langlands.GroupScheme.SelfCentralizingTorusConjugacyQuotientAffineStatement`:
+The statement is used to prove
+`Langlands.GroupScheme.SelfCentralizingTorusConjugacyQuotientAffineStatement`
+(in `Torus.SelfCentralizingConjugacyQuotientProof`):
 it supplies the local representations assumed by
 `Langlands.GroupScheme.SelfCentralizingQuotientAffineOfRepresentationStatement`.
 

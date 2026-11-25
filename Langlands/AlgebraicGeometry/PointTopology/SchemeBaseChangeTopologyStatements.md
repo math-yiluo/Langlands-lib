@@ -1,7 +1,5 @@
 # Topology comparison for actual nonaffine base change
 
-Author: Worker 105.
-
 `SchemeBaseChangeTopologyProperty C D A` states that the actual pullback-adjunction equivalence `ringPointBaseChangeEquiv C D A X` is a homeomorphism for every scheme X over Spec C. Its source is the actual relative A-points of X over C; its target is the actual relative A-points over D of the scheme pullback X ×[Spec C] Spec D. Each topology is the independently constructed `schemePointTopology`, the final topology from that scheme's affine open charts and their global-section evaluation topologies. Neither topology is defined by transport along this equivalence.
 
 The rings C, D and A are arbitrary commutative rings in the same universe, with compatible algebra structures C → D → A. Only A has a topology. It is a local topological ring with open units and continuous inversion on the units, expressed by `IsOpenUnits A`. There is no topology or continuity assumption on C or D, and there is no affineness, finite-type, quasi-compactness, separatedness, Hausdorff or completeness assumption on X or A.

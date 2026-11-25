@@ -1,7 +1,5 @@
 # Represented solvable radicals under isomorphisms and field extensions
 
-Author: Worker 721.
-
 This helper module proves seven theorems about the Library predicate
 `IsSolvableRadical r` (from `Langlands.GroupScheme.Rational.LeviSubgroup`). They
 are the solvable-radical counterparts of published lemmas for `IsUnipotentRadical`

@@ -1,7 +1,5 @@
 # Finite rational tensor comparison: proof
 
-Author: Worker 737.
-
 `Langlands.Analytic.StrictTestDomain.finiteRationalTensorComparison` proves
 the published proposition `FiniteRationalTensorComparisonStatement.{u}`.
 Let `K` be a complete ultrametric normed field, `P` and `Q` actual presented
@@ -116,7 +114,7 @@ coefficient field. It splits on whether every scalar has norm at most one.
   `ClosedSubmodulesBanach`, using the published Noetherianity of actual
   presented quotients from `TateNoetherian`. For a field whose scalars all
   have norm at most one, `one_le_norm_pi_of_scalar_norm_le_one` shows that
-  nonzero tuples have norm at least one. It uses Worker 56's published
+  nonzero tuples have norm at least one. It uses the published
   `one_le_norm_of_scalar_norm_le_one`. Distinct points therefore have
   distance at least one, and `isClosed_pi_of_scalar_norm_le_one` shows that
   every subset is closed.

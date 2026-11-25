@@ -27,5 +27,3 @@ theorem for modules, applied to the existing equivariant quotient definitions.
 This helper assumes the stated kernel and surjectivity facts; it proves no
 geometric restriction, compactness, or extension assertion. Those must be
 established separately before applying it to the Mackey support filtration.
-
-Author: Worker 112.

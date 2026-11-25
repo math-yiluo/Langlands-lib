@@ -6,9 +6,7 @@ The closing theorem `Langlands.semisimpleFixedVectorsGenerationInheritance`
 assembles all three clauses with independent coefficient, group, source-carrier
 and target-carrier universes.
 
-Worker 196 authored the complete three-lemma proof and mathematical interface
-in the parent development. Worker 213 added the closing theorem against the
-published statement and prepared this account of the proof. The result is an
+The result is an
 internal algebraic derivation from semisimple group-algebra modules, equivariant
 maps, and the existing actual smooth-subquotient presentation; it is not a
 translation of a separately cited literature theorem.

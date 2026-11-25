@@ -8,7 +8,7 @@ printed page 431, PDF page 462 (source ID
 `kaletha-prasad-2023-bruhat-tits-new-approach`, SHA256
 `05ad9a284a2577b34d1a270228b74dfb28f520561ae7772d8f38dddb78938732`). It does not
 prove that statement. It proves the first conjunct (points over
-`K = UnramifiedClosure F`) from three unproved Library statements, which are
+`K = UnramifiedClosure F`) from three Library statements, which are
 explicit premises. It gives no result about the second conjunct (`F`-rational
 points).
 
@@ -38,11 +38,15 @@ and the published target already assert.
   `ReductiveKottwitzExistenceStatement → ReductiveKottwitzFunctorialityStatement →
   CentralTorusInertiaExactnessStatement → ZExtensionUnramifiedKottwitzKernelStatement`,
 
-  all at universe `u`. The three premises are the Library's published, unproved
+  all at universe `u`. The three premises are the Library's published
   statements: KP Lemma 11.5.1 as existence (with surjectivity and the z-extension
   clauses) and as functoriality, in module `Kottwitz.ReductiveMapStatement`, and
   right exactness of inertia coinvariants for a central torus quotient, in module
-  `Kottwitz.CentralTorusExactnessStatement`. Nothing else is assumed. In
+  `Kottwitz.CentralTorusExactnessStatement`. They are proved elsewhere, as
+  `reductiveKottwitzExistence_assembled` (module `Kottwitz.ZExtensionKernelProof`),
+  `reductiveKottwitzFunctoriality` (module `Kottwitz.ReductiveFunctorialityProof`) and
+  `centralTorusInertiaExactness` (module `Kottwitz.CentralTorusExactnessProof`).
+  Nothing else is assumed. In
   particular the reduction does not use `ReductiveKottwitzDescentStatement`,
   injectivity of `π₁(Z)_I → π₁(H)_I`, KP Corollary 11.1.9, or
   `ZeroKernelStatement`.
@@ -105,8 +109,7 @@ It discharges the three hypotheses of `map_kernel_eq_of_kernel_lift` as follows.
 The equation produced by `map_kernel_eq_of_kernel_lift` is then exactly the
 first conjunct for `F`, `k`, `G`, `hG` and `z`.
 
-The module compiles in the pinned environment
-`5c94c648-e8dc-4002-a50a-071ebf3f6096`. The proof uses only the standard axioms
+The module compiles. The proof uses only the standard axioms
 `propext`, `Classical.choice` and `Quot.sound`. It sets
 `backward.isDefEq.respectTransparency false` and raises `maxHeartbeats` to
 800000, as the neighbouring Kottwitz modules do.

@@ -20,7 +20,7 @@ variable {K : Type u} [NormedField K] [IsUltrametricDist K] [CompleteSpace K]
 /-- The action of the representative `c.out` identifies the domain `π⁻¹(X_H)` over the copy
 indexed by `H` with the domain `π⁻¹(X_c)` over the copy indexed by `c`. -/
 def preimageDomainIso (c : G ⧸ H) : (baseAction π).V ≅ domainObj Y.V (preimageDomain π c) :=
-  domainRestrictIso (Y.ρAut c.out) (preimageDomain π (baseCoset H)) (preimageDomain π c)
+  domainRestrictIso (Y.ρAut c.out).asIso (preimageDomain π (baseCoset H)) (preimageDomain π c)
     (fun y hy => by
       have h := ρ_mem_preimageDomain π c.out y hy
       rw [out_smul_baseCoset] at h
@@ -36,7 +36,7 @@ theorem copy_lift_baseInclusion_hom (c : G ⧸ H) :
     copy H (baseAction π) c ≫ (lift H (baseInclusion π)).hom =
       (preimageDomainIso π c).hom ≫ domainι Y.V (preimageDomain π c) :=
   (copy_liftHom (Y := Y) H (baseInclusion π).hom c).trans
-    (domainRestrictIso_hom_inclusion (Y.ρAut c.out) (preimageDomain π (baseCoset H))
+    (domainRestrictIso_hom_inclusion (Y.ρAut c.out).asIso (preimageDomain π (baseCoset H))
       (preimageDomain π c) _ _).symm
 
 variable (hP : OpenPartitionCoproductStatement.{u, v, z})

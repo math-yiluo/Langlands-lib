@@ -19,7 +19,7 @@ Harris's condition (4.12) (proof of Lemma 4.7, printed p.204) instead of being
 in general position. The problems are the published
 `Proposition48Problem`, and the exact-stabilizer validity predicates are those
 of the published `HarrisProposition48ExactStabilizerData`. The restated
-proposition `Proposition48ExactStabilizerStatement` (Task 7413) is neither
+proposition `Proposition48ExactStabilizerStatement` is neither
 imported nor used here. This module only defines
 predicates. It asserts no existence, distinctness or compatibility.
 
@@ -27,22 +27,23 @@ predicates. It asserts no existence, distinctness or compatibility.
 
 The published branch statements demand regular algebraicity of the output,
 but their premises do not explicitly relate archimedean components across
-the cyclic step. The R2 design keeps track of the Langlands parameters at the
+the cyclic step. The design used here keeps track of the Langlands parameters at the
 complex places: the intended output of each step has, at every complex place
 `v` of `E`, the parameters of the representation induced from `ξ`. The later
 proofs must read regular algebraicity off these parameters through the
 archimedean bridge `CuspidalComplexParameterBridgeTCStatement` (stated
-separately by Task 7463), using the published regularity of `ξ`. The induced
+separately in `Langlands.Automorphic.CuspidalComplexParameterBridgeStatement`),
+using the published regularity of `ξ`. The induced
 class gets its parameters from those of the children by the restricted
 complex-place compatibility of cyclic base change and induction,
 `RestrictedCyclicWeakBaseChangeComplexPlaceStatement` (restricted B7, stated
-separately by Task 7552). Neither is imported by this module; the sibling
-branch module takes both as named premises. This design is the
-project operator's R2 choice for the exact-stabilizer branches. Restricted
+separately). Neither is imported by this module; the sibling
+branch module takes both as named premises. This design is the one used for
+the exact-stabilizer branches. Restricted
 B7(2) supplies parameters in the prime branch, and restricted B7(1) in the
 singleton branch. B7(3), the whole-tower parameter transports and an endpoint
-statement beyond rank one are not branch premises. Canonical B7 (Task 7479)
-is a separate statement, not used here. Parameters are lists of
+statement beyond rank one are not branch premises. Canonical B7
+(`CyclicWeakBaseChangeComplexPlaceStatement`) is a separate statement, not used here. Parameters are lists of
 `ComplexCharacterData` compared up to order (`List.Perm`), because the
 parameter of an isobaric sum has no preferred order of its blocks.
 
@@ -124,8 +125,8 @@ def HasDistinctMackeyComponents (Q : Proposition48Problem.{uF})
     DoubleCoset.mk D.fixingSubgroup (Q.conjugateField 1).fixingSubgroup a ≠
       DoubleCoset.mk D.fixingSubgroup (Q.conjugateField 1).fixingSubgroup a' →
     ∀ (r : ℕ) (T U : CuspidalOperatorRealization D r),
-      ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T →
-      ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter U →
+      ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T →
+      ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter U →
       Q.IsMackeyConstituent.{uF, uV} D a T.isoClass →
       Q.IsMackeyConstituent.{uF, uV} D a' U.isoClass →
       ∀ (w : FinitePlacesAbove D Q.Ps.v)
@@ -139,9 +140,9 @@ The class parameter relation is the published actual parameter predicate;
 closure. The separate expected list is compared up to order in
 `IsInducedComplexPlaceParameter`. The coordinates are those already fixed by
 `HasComplexPlaceParameter` and `complexPlaceParameterTransport`, the same
-coordinates as those of the bridge of Task 7463 and of its normalization module
-`ComplexPlaceParameterWeights` (Task 7455), as point (a) of the R2 ruling
-requires. This module introduces no different shift or embedding convention.
+coordinates as those of the bridge `CuspidalComplexParameterBridgeTCStatement`
+and of its normalization module
+`ComplexPlaceParameterWeights`. This module introduces no different shift or embedding convention.
 
 ## Provenance
 
@@ -151,21 +152,22 @@ supercuspidal place (`HarrisSupercuspidalLocalComparisonStatement`) and the
 general position of the auxiliary character. Harris uses it in the
 prime-orbit case of the proof of Proposition 4.8 (printed pp.202–203). Under
 condition (4.12) it is the content of claim (2) of Remark 4.2 of the
-operator's plan note (source `operator-external-inputs-plan-2026-11-16`,
+plan note (source `operator-external-inputs-plan-2026-11-16`,
 `external-inputs-plan.tex`, Section 4.8, TeX lines 859–894, with the prime
 branch at line 908). The sibling module
 `HarrisProposition48ExactStabilizerDistinctnessStatement` states its
-derivation from B6 as an unproved implication. The parameter predicates use the vocabulary of
+derivation from B6 as an implication, proved as
+`proposition48ExactStabilizerDistinctness` in
+`HarrisProposition48ExactStabilizerDistinctnessProof`. The parameter predicates use the vocabulary of
 `Langlands.Automorphic.IsobaricComplexPlaceParameter` and
 `Langlands.Automorphic.Unramified.ComplexPlaceParameterTransport`; their
 normalization is that of `HasComplexPlaceParameter`.
 
 These parameter predicates and the distinctness predicate are internal
-interfaces of the R2 design, not definitions or statements of Harris. The
-design sources are the operator plan, Section 2.2 (B5–B7, TeX lines 196–199)
-and Section 4.8 (Remark 4.2 and the branch paragraphs, lines 859–912), and the
-[operator's R2 ruling](/home/taskhub/pilot/correspondence/a79e2e832569567a8582b3c994f2fc1b.md),
-answer to request `c292736a05f55d4fba67d1a01b7fb2e2`. The ruling requires the
+interfaces of this design, not definitions or statements of Harris. The
+design sources are the plan note, Section 2.2 (B5–B7, TeX lines 196–199)
+and Section 4.8 (Remark 4.2 and the branch paragraphs, lines 859–912). The
+design uses the
 bridge's parameter vocabulary and normalization and restricts B7(1)/(2) to
 unitary cuspidal classes supercuspidal at the auxiliary conjugate pair,
 without an algebraicity hypothesis.

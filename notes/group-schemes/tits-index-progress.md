@@ -1,13 +1,10 @@
 # Actual Tits indices: existence, anisotropic kernel and open targets
 
-Author: Worker 47, 13 November 2026.
-
-This note records the status of the Library's actual Tits-index interface for
-semisimple groups over arbitrary fields: the two published proofs, the
-statements that are still unproved with their proof tasks, how to use the
-existence theorem, and its role in the local rank-one classification. It
-describes Library commit `cfedefb680f317b0ea5d351023e1c9dd886b2547`. All
-declarations are in the namespace `Langlands.GroupScheme`.
+This note, dated 13 November 2026, records the status of the Library's actual Tits-index interface for
+semisimple groups over arbitrary fields: the existence and anisotropic-kernel
+proofs, the statements built on the interface with their proofs in the Library,
+how to use the existence theorem, and its role in the local rank-one
+classification. All declarations are in the namespace `Langlands.GroupScheme`.
 
 ## Source and interface
 
@@ -47,33 +44,29 @@ action of each Galois element.
 
 ## Status
 
-| Statement | Module | Status at `cfedefb6` |
+| Statement | Module | Status |
 |---|---|---|
 | `TitsIndexExistenceStatement` | `Reductive.TitsIndexChoiceStatement` | proved: `titsIndexExistence` |
-| `TitsIndexIndependenceStatement` | `Reductive.TitsIndexChoiceStatement` | unproved; task `338330a2-05d3-4923-af79-cfb245116ae2` |
-| `TitsIndexChoiceStatement` | `Reductive.TitsIndexChoiceStatement` | unproved; needs only independence |
-| `TitsIndexStarInvariantStatement`, `TitsIndexRelativeSimpleRootsStatement` (bundled as `TitsIndexStarRelativeRootsStatement`) | `Reductive.TitsIndexRelativeStatement` | unproved; task `893d04c0-ec89-45ab-a1e1-46f4a0ad7ca0` |
-| `TitsIndexSplitRankStatement` | `Reductive.TitsIndexRelativeStatement` | unproved; task `4280bc84-8750-4f37-ada6-2b41879fc4d6` |
-| `TitsIndexRelativeStructureStatement` | `Reductive.TitsIndexRelativeStatement` | unproved; the conjunction of the two rows above |
+| `TitsIndexIndependenceStatement` | `Reductive.TitsIndexChoiceStatement` | proved: `titsIndexIndependence` (`Reductive.TitsIndexIndependenceProof`) |
+| `TitsIndexChoiceStatement` | `Reductive.TitsIndexChoiceStatement` | the conjunction of the two rows above, both proved; no theorem of this statement under its own name |
+| `TitsIndexStarInvariantStatement`, `TitsIndexRelativeSimpleRootsStatement` (bundled as `TitsIndexStarRelativeRootsStatement`) | `Reductive.TitsIndexRelativeStatement` | proved: `titsIndexStarInvariant`, `titsIndexRelativeSimpleRoots`, `titsIndexStarRelativeRoots` (`Reductive.TitsIndexStarProof`) |
+| `TitsIndexSplitRankStatement` | `Reductive.TitsIndexRelativeStatement` | proved: `titsIndexSplitRank` (`Reductive.TitsIndexSplitRankProof`) |
+| `TitsIndexRelativeStructureStatement` | `Reductive.TitsIndexRelativeStatement` | proved: `titsIndexRelativeStructure` (`Reductive.TitsIndexSplitRankProof`); the conjunction of the two rows above |
 | `TitsAnisotropicKernelStatement` | `Reductive.TitsIndexAnisotropicKernelStatement` | proved: `titsAnisotropicKernel` |
-| `TitsAnisotropicKernelIndexStatement` | `Reductive.TitsIndexAnisotropicKernelStatement` | unproved; task `4073241d-236c-4ef4-9f74-ea19216c6ccd` |
-| `TitsAnisotropicKernelStructureStatement` | `Reductive.TitsIndexAnisotropicKernelStatement` | unproved; needs only the index statement |
+| `TitsAnisotropicKernelIndexStatement` | `Reductive.TitsIndexAnisotropicKernelStatement` | proved: `titsAnisotropicKernelIndex` (`Reductive.TitsIndexAnisotropicKernelIndexProof`) |
+| `TitsAnisotropicKernelStructureStatement` | `Reductive.TitsIndexAnisotropicKernelStatement` | needs only the index statement, which is proved; no theorem of this statement under its own name |
 
-The two proofs are:
+The existence and anisotropic-kernel proofs are:
 
 - `titsIndexExistence : TitsIndexExistenceStatement.{u}`, module
-  [`Reductive.TitsIndexExistenceProof`](../../Langlands/GroupScheme/Reductive/TitsIndexExistenceProof.md),
-  by Worker 148 in Task 5621 (`0559cf0c-3421-4cff-b257-2f60f9ef9c82`),
-  artifact `8918509e-3ce9-4f74-a7d2-cf80732f00ac`, accepted by Reviewer 202.
+  [`Reductive.TitsIndexExistenceProof`](../../Langlands/GroupScheme/Reductive/TitsIndexExistenceProof.md).
 - `titsAnisotropicKernel : TitsAnisotropicKernelStatement.{u}`, module
-  [`Reductive.TitsIndexAnisotropicKernelProof`](../../Langlands/GroupScheme/Reductive/TitsIndexAnisotropicKernelProof.md),
-  by Worker 145 in Task 5618 (`84825882-92e4-4cb1-aed1-e94d39bf9c39`),
-  artifact `1ecfc00c-33f7-46d9-b23c-e06a851943b1`, accepted by Reviewer 206.
+  [`Reductive.TitsIndexAnisotropicKernelProof`](../../Langlands/GroupScheme/Reductive/TitsIndexAnisotropicKernelProof.md).
   For any index data `d`, it shows that every derived subgroup of every actual
   representative of the centralizer of `d.splitInclusion` is semisimple and
   anisotropic.
 
-Neither proof assumes an unproved Library statement.
+Neither of these two proofs assumes a statement of the Library as a hypothesis.
 
 ## Using the existence theorem
 
@@ -97,11 +90,12 @@ in the table, and `LocalRankOneTitsIndexStatement`, quantifies over all
 `d : TitsIndexData G`, so it applies to the data obtained this way. A
 conclusion that depends on which `d` was chosen still needs
 `TitsIndexIndependenceStatement`. For `hind` of that type,
-`⟨titsIndexExistence, hind⟩ : TitsIndexChoiceStatement.{u}`.
+`⟨titsIndexExistence, hind⟩ : TitsIndexChoiceStatement.{u}`; the Library
+proves that statement as `titsIndexIndependence`.
 
-Worker 47 compile-checked the application `titsIndexExistence k G hG`, this
-pair and the use in `localRankOneClassification_of_indexStatements` below with
-`lean_check` against this Library.
+The application `titsIndexExistence k G hG`, this pair and the use in
+`localRankOneClassification_of_indexStatements` below were compile-checked
+against this Library.
 
 ## Route of the existence proof
 
@@ -135,26 +129,28 @@ choice.
 
 ## The local rank-one classification
 
-Task 5621 required the proof to be independent of
+The existence proof is independent of
 `LocalRankOneClassificationStatement` and of every local Kneser–Tits
-statement or result whose planned proof consumes them. The review of artifact
-`8918509e-3ce9-4f74-a7d2-cf80732f00ac` records a recursive import audit: no
-module the proof imports refers to Kneser–Tits, `LocalRankOneClassification`
-or `LocalRankOneTitsIndex`. The review of the anisotropic-kernel proof
-records a similar audit of its imports.
+statement or result whose proof uses them. A recursive import audit of the
+existence proof found that no module it imports refers to Kneser–Tits,
+`LocalRankOneClassification` or `LocalRankOneTitsIndex`. A similar audit
+of the imports of the anisotropic-kernel proof found the same.
 
 The opposite direction is in the Library. The theorem
 `localRankOneClassification_of_indexStatements` (module
 `SimplyConnected.LocalRankOneClassificationIndexReduction`) derives
 `LocalRankOneClassificationStatement` from seven explicit hypotheses. The
 first is `hexist : TitsIndexExistenceStatement.{u}`, and `titsIndexExistence`
-can now be passed for it. The six remaining inputs are
-`LocalRankOneTitsIndexStatement` (task
-`c6b28e3e-647d-4a94-8988-75408718fdd4`), `InnerTypeANormOneStatement`,
+can be passed for it. The six remaining inputs are
+`LocalRankOneTitsIndexStatement`, `InnerTypeANormOneStatement`,
 `CentralSimpleUnits.MatrixNormOneSplitRankStatement`,
 `OuterTypeARankOneHermitianStatement`, `TypeCRankOneQuaternionicStatement`
-and `TypeDRankOneSpinStatement`. No published theorem yet removes the first
-conjunct from the bundled `LocalRankOneClassificationIndexInputs`. The proof
-task of the classification itself is Task 5442
-(`56866550-3ce3-4065-86ef-babcf0251a5e`); see
+and `TypeDRankOneSpinStatement`; the Library proves each of them, as
+`localRankOneTitsIndex`, `innerTypeANormOne`, `matrixNormOneSplitRank`,
+`outerTypeARankOneHermitian`, `typeCRankOneQuaternionic` and
+`typeDRankOneSpin` (the `…Proof` modules of `SimplyConnected`). This note
+does not record a theorem that removes the first conjunct from the bundled
+`LocalRankOneClassificationIndexInputs`. The Library proves the
+classification itself, as `localRankOneClassification`
+(`SimplyConnected.LocalRankOneClassificationProof`); see
 [Local Kneser–Tits: published reductions and open inputs](local-kneser-tits-route.md).

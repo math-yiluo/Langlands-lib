@@ -38,6 +38,6 @@ inclusions prove compatibility in both directions. The inverse identities
 for compact indices prove the two maps inverse; pointwise operations prove
 linearity. The two component formulas are definitional.
 
-This unit supplies a change of group for the completion. It does not assert
+This module supplies a change of group for the completion. It does not assert
 the structural contraction basis, stationarity, Jacquet comparison, or
-either exact represented-parabolic proposition of the parent task.
+either exact represented-parabolic proposition that this module serves.

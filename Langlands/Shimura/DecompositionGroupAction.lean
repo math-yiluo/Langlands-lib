@@ -35,25 +35,25 @@ restriction along `f₂` to the restriction along `f₁`. -/
 def resConjugateIso (f₁ f₂ : H →* G) (c : G) (hc : ∀ h, c * f₂ h = f₁ h * c) :
     Action.res V f₂ ≅ Action.res V f₁ :=
   NatIso.ofComponents
-    (fun M => Action.mkIso (M.ρAut c) (fun h => by
-      change M.ρ (f₂ h) ≫ M.ρ c = M.ρ c ≫ M.ρ (f₁ h)
-      simpa only [map_mul, End.mul_def] using congrArg M.ρ (hc h)))
+    (fun M => Action.mkIso (M.ρAut c).asIso (fun h => by
+      change (M.ρ (f₂ h)).asHom ≫ (M.ρ c).asHom = (M.ρ c).asHom ≫ (M.ρ (f₁ h)).asHom
+      simpa only [map_mul, End.mul_asHom] using congrArg End.asHom (congrArg M.ρ (hc h))))
     (fun p => Action.Hom.ext (p.comm c).symm)
 
 @[simp] theorem resConjugateIso_hom_app_hom (f₁ f₂ : H →* G) (c : G)
     (hc : ∀ h, c * f₂ h = f₁ h * c) (M : Action V G) :
-    ((resConjugateIso V f₁ f₂ c hc).hom.app M).hom = M.ρ c :=
+    ((resConjugateIso V f₁ f₂ c hc).hom.app M).hom = (M.ρ c).asHom :=
   rfl
 
 @[simp] theorem resConjugateIso_inv_app_hom (f₁ f₂ : H →* G) (c : G)
     (hc : ∀ h, c * f₂ h = f₁ h * c) (M : Action V G) :
-    ((resConjugateIso V f₁ f₂ c hc).inv.app M).hom = M.ρ c⁻¹ :=
+    ((resConjugateIso V f₁ f₂ c hc).inv.app M).hom = (M.ρ c⁻¹).asHom :=
   rfl
 
 variable {V} in
 /-- Elements conjugate by `c` act trivially together. -/
 theorem ρ_eq_id_iff_of_conj (M : Action V G) {a b c : G} (h : c * b = a * c) :
-    M.ρ a = 𝟙 M.V ↔ M.ρ b = 𝟙 M.V := by
+    M.ρ a = End.of (𝟙 M.V) ↔ M.ρ b = End.of (𝟙 M.V) := by
   have ha : a = c * b * c⁻¹ := eq_mul_inv_of_mul_eq h.symm
   change a ∈ M.ρ.ker ↔ b ∈ M.ρ.ker
   rw [ha]
@@ -73,7 +73,7 @@ def mapActionResIso {W : Type w} [Category.{v} W] (F : V ⥤ W) {H : Type uH} {G
     F.mapAction G ⋙ Action.res W f ≅ Action.res V f ⋙ F.mapAction H :=
   NatIso.ofComponents
     (fun M => Action.mkIso (Iso.refl _) (fun h => by
-      change F.map (M.ρ (f h)) ≫ 𝟙 (F.obj M.V) = 𝟙 (F.obj M.V) ≫ F.map (M.ρ (f h))
+      change F.map (M.ρ (f h)).asHom ≫ 𝟙 (F.obj M.V) = 𝟙 (F.obj M.V) ≫ F.map (M.ρ (f h)).asHom
       rw [Category.comp_id, Category.id_comp]))
     (fun p => Action.Hom.ext (by
       change F.map p.hom ≫ 𝟙 _ = 𝟙 _ ≫ F.map p.hom
@@ -119,13 +119,13 @@ def alongClosureChangeIso (ι κ : AlgebraicClosure K →ₐ[K] AlgebraicClosure
 @[simp] theorem alongClosureChangeIso_hom_app_hom
     (ι κ : AlgebraicClosure K →ₐ[K] AlgebraicClosure E)
     (M : Action V (Field.absoluteGaloisGroup K)) :
-    ((alongClosureChangeIso V ι κ).hom.app M).hom = M.ρ (closureChange ι κ) :=
+    ((alongClosureChangeIso V ι κ).hom.app M).hom = (M.ρ (closureChange ι κ)).asHom :=
   rfl
 
 @[simp] theorem alongClosureChangeIso_inv_app_hom
     (ι κ : AlgebraicClosure K →ₐ[K] AlgebraicClosure E)
     (M : Action V (Field.absoluteGaloisGroup K)) :
-    ((alongClosureChangeIso V ι κ).inv.app M).hom = M.ρ (closureChange ι κ)⁻¹ :=
+    ((alongClosureChangeIso V ι κ).inv.app M).hom = (M.ρ (closureChange ι κ)⁻¹).asHom :=
   rfl
 
 end Closure
@@ -220,14 +220,14 @@ def atFinitePlaceChangeIso
 @[simp] theorem atFinitePlaceChangeIso_hom_app_hom
     (ι κ : ClosureEmbedding (NumberField.FinitePlace.embedding (K := K) v))
     (M : Action V (Field.absoluteGaloisGroup K)) :
-    ((atFinitePlaceChangeIso V v ι κ).hom.app M).hom = M.ρ (localClosureChange v ι κ) :=
+    ((atFinitePlaceChangeIso V v ι κ).hom.app M).hom = (M.ρ (localClosureChange v ι κ)).asHom :=
   rfl
 
 /-- An action is unramified at `v` along `ι` if the actual inertia subgroup of the completion,
 the kernel of its residue action, acts trivially after restriction along `ι`. -/
 def IsUnramifiedAlong (M : Action V (Field.absoluteGaloisGroup K))
     (ι : ClosureEmbedding (NumberField.FinitePlace.embedding (K := K) v)) : Prop :=
-  ∀ i : localInertia v, ((atFinitePlace V v ι).obj M).ρ i.val = 𝟙 M.V
+  ∀ i : localInertia v, ((atFinitePlace V v ι).obj M).ρ i.val = End.of (𝟙 M.V)
 
 /-- An action is unramified at `v` if it is unramified along Mathlib's chosen closure
 embedding. -/
@@ -253,12 +253,14 @@ theorem IsUnramifiedAlong.of_iso {M N : Action V (Field.absoluteGaloisGroup K)} 
     {ι : ClosureEmbedding (NumberField.FinitePlace.embedding (K := K) v)}
     (hM : IsUnramifiedAlong V v M ι) : IsUnramifiedAlong V v N ι := by
   intro i
-  change N.ρ (localRestriction v ι i.val) = 𝟙 N.V
+  apply End.ext
+  change (N.ρ (localRestriction v ι i.val)).asHom = 𝟙 N.V
   have hc := e.inv.comm (localRestriction v ι i.val)
-  rw [show M.ρ (localRestriction v ι i.val) = 𝟙 M.V from hM i, Category.comp_id] at hc
+  rw [show (M.ρ (localRestriction v ι i.val)).asHom = 𝟙 M.V from congrArg End.asHom (hM i),
+    Category.comp_id] at hc
   calc
-    N.ρ (localRestriction v ι i.val) =
-        N.ρ (localRestriction v ι i.val) ≫ e.inv.hom ≫ e.hom.hom := by
+    (N.ρ (localRestriction v ι i.val)).asHom =
+        (N.ρ (localRestriction v ι i.val)).asHom ≫ e.inv.hom ≫ e.hom.hom := by
       rw [← Action.comp_hom, e.inv_hom_id, Action.id_hom, Category.comp_id]
     _ = 𝟙 N.V := by
       rw [← Category.assoc, hc, ← Action.comp_hom, e.inv_hom_id, Action.id_hom]
@@ -289,14 +291,14 @@ variable (V v)
 along `ι`. For unramified actions every geometric Frobenius lift acts by it. -/
 def geometricFrobenius (M : Action V (Field.absoluteGaloisGroup K))
     (ι : ClosureEmbedding (NumberField.FinitePlace.embedding (K := K) v)) : M.V ⟶ M.V :=
-  ((atFinitePlace V v ι).obj M).ρ (geometricFrobeniusLift v)
+  (((atFinitePlace V v ι).obj M).ρ (geometricFrobeniusLift v)).asHom
 
 variable {V v}
 
 theorem geometricFrobenius_eq_of_lift {M : Action V (Field.absoluteGaloisGroup K)}
     {ι : ClosureEmbedding (NumberField.FinitePlace.embedding (K := K) v)}
     (hM : IsUnramifiedAlong V v M ι) {g : LocalGroup v} (hg : IsGeometricFrobeniusLift v g) :
-    ((atFinitePlace V v ι).obj M).ρ g = geometricFrobenius V v M ι :=
+    ((atFinitePlace V v ι).obj M).ρ g = End.of (geometricFrobenius V v M ι) :=
   hM.ρ_eq_of_residueAction_eq
     (residueAction_eq_of_geometricFrobenius hg (geometricFrobeniusLift_spec v))
 
@@ -310,8 +312,8 @@ theorem geometricFrobenius_naturality {M N : Action V (Field.absoluteGaloisGroup
 element relating them. -/
 theorem geometricFrobenius_conj (M : Action V (Field.absoluteGaloisGroup K))
     (ι κ : ClosureEmbedding (NumberField.FinitePlace.embedding (K := K) v)) :
-    geometricFrobenius V v M κ ≫ M.ρ (localClosureChange v ι κ) =
-      M.ρ (localClosureChange v ι κ) ≫ geometricFrobenius V v M ι :=
+    geometricFrobenius V v M κ ≫ (M.ρ (localClosureChange v ι κ)).asHom =
+      (M.ρ (localClosureChange v ι κ)).asHom ≫ geometricFrobenius V v M ι :=
   ((atFinitePlaceChangeIso V v ι κ).hom.app M).comm (geometricFrobeniusLift v)
 
 end FinitePlace

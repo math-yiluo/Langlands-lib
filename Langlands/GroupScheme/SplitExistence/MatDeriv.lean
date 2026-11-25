@@ -51,6 +51,8 @@ theorem mderiv_map_intCast (M : Matrix m m ℤ) : mderiv (M.map (Int.castRingHom
 /-- A matrix with zero derivative and value `1` at `X = 0` is `1`. -/
 theorem eq_one_of_mderiv_eq_zero [DecidableEq m] [IsAddTorsionFree A] {c : Matrix m m A[X]}
     (hc : mderiv c = 0) (h0 : c.map (evalRingHom 0) = 1) : c = 1 := by
+  have : HasUniqueDiv A :=
+    ⟨fun _ hn a b hab ↦ eq_of_nsmul_eq_nsmul_of_addCommute hn (AddCommute.all a b) hab⟩
   ext a b
   have hd : derivative (c a b) = 0 := by
     simpa using congrFun (congrFun hc a) b

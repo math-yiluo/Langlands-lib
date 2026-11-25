@@ -48,7 +48,8 @@ The theorems without `hinh` supply it by the published proof
 the criterion or necessity proof as an explicit hypothesis and does **not**
 export an unconditional scalar-layer theorem. The product-Levi necessity
 proof is available in its separate proof module; applying the adapter to
-that proof remains a separate assembly step. The theorems
+that proof is the separate assembly step `glTemperedOppositeJacquetScalarLayer`
+in `TemperedOppositeJacquetScalarLayerProof`. The theorems
 `glTemperedOppositeJacquetScalarLayer_of` and
 `glTemperedOppositeJacquetScalarLayer_of_criterion` keep the types they had
 when this module was first published.
@@ -317,16 +318,17 @@ The remaining theorems are compositions:
 - The main proof uses only `TemperedUpperExponentBound`, i.e. the bound
   for irreducible tempered representations of `GL_n(F)`. It is supplied
   either by the forward implication (temperedness implies the exponent
-  bounds) of `GLTemperedExponentCriterionStatement`, owned by task
-  `c98c74eb-a4cb-4924-8df8-f7556ca47689`, or by
+  bounds) of `GLTemperedExponentCriterionStatement`, proved as
+  `glTemperedExponentCriterion` in `TemperedExponentProof`, or by
   `GLProductLeviTemperedExponentNecessityStatement` for the single-block
-  Levi, owned by task `b0fd413c-ec79-49a5-a99b-8ba0ec7c77aa`. The latter now has
-  the separate proof linked above; this module's interfaces remain conditional.
+  Levi. The latter has the separate proof linked above, which
+  `glTemperedOppositeJacquetScalarLayer` (module
+  `TemperedOppositeJacquetScalarLayerProof`) applies; this module's interfaces
+  remain conditional.
 - The module does not assume irreducibility, finite length or semisimplicity
   of `ρ`, nor admissibility of `ρ`; admissibility is proved.
-- No new statement of a published task is introduced; the target statement
-  pair and every imported pair are unchanged. `TemperedUpperExponentBound` is
-  an internal hypothesis interface, not a task statement.
+- No new target statement is introduced. `TemperedUpperExponentBound` is
+  an internal hypothesis interface, not a target statement.
 
 ## Provenance
 

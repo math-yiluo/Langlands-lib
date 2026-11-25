@@ -68,7 +68,7 @@ theorem NumberedPinning.exists_innerIso [IsAlgClosed K] (p : NumberedPinning G n
     (hn : 2 ≤ n) (σ : G ≅ G) :
     ∃ g : Over.mk (𝟙 (Spec (CommRingCat.of K))) ⟶ G.X, G.innerIso g = σ := by
   obtain ⟨A, q, hq⟩ := adjointQuotientExistence K G p.pinning.isConnectedReductive
-  obtain ⟨x, θ, hσ⟩ := PinnedAutomorphismGroup.exists_eq_innerHom_mul_lift hq p.pinning σ
+  obtain ⟨x, θ, hσ⟩ := PinnedAutomorphismGroup.exists_eq_innerHom_mul_lift hq p.pinning (Aut.of σ)
   rw [p.basedRootDatumAut_eq_one hn θ, map_one, mul_one] at hσ
   have : Surjective q.hom.hom.left := hq.surjective
   have : LocallyOfFinitePresentation q.hom.hom.left := hq.locallyOfFinitePresentation
@@ -76,7 +76,7 @@ theorem NumberedPinning.exists_innerIso [IsAlgClosed K] (p : NumberedPinning G n
   refine ⟨g, ?_⟩
   rw [← hg, PinnedAutomorphismGroup.innerHom_apply,
     SplitPinning.innerAction_basePointIso_lift hq g] at hσ
-  exact hσ.symm
+  exact (congrArg Aut.asIso hσ).symm
 
 /-- Every automorphism of the actual split odd identity component is inner
 over an algebraically closed field. -/

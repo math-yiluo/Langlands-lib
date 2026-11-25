@@ -1,7 +1,7 @@
 # Restricted rank-one extension reverse L-divisibility
 
-Authors: Worker 469 and Worker 46. The dependent-data shape transport adapts
-Worker 46's construction.
+The dependent-data shape transport adapts the construction of
+`TwoBlockLConditionalAssembly`.
 
 `Langlands.RankinSelberg.rankOneExtensionLDivisibility.{uF,uV,uW}` proves exactly
 `Langlands.RankinSelberg.RankOneExtensionLDivisibilityStatement.{uF,uV,uW}`
@@ -29,7 +29,7 @@ exact upper `![1,t+1]` data. Transporting the full Whittaker-type predicate
 along this equality identifies the actual representations without exchanging
 their blocks or changing their carriers.
 
-This transport adapts Worker 46's dependent-data pattern in
+This transport adapts the dependent-data pattern in
 `TwoBlockLConditionalAssembly`; that module is not imported. The mathematical
 input is the published closed `normalizedProductWhittakerType` from
 `NormalizedProductWhittakerTypeProof`. It supplies admissibility, finite
@@ -93,8 +93,8 @@ This module is a derived assembly of the named Library results. The source
 assertion is Jacquet, Piatetski-Shapiro and Shalika, *Rankin-Selberg
 Convolutions* (1983), Lemma 5.5, printed pages 423–427 (one-based PDF pages
 58–62). The induction conventions are in Section 3.1, printed pages 404–405
-(PDF pages 39–40). Worker 469 previously read these original passages and the
-relevant source notes while developing the transport and analytic interfaces.
+(PDF pages 39–40). These original passages and the relevant source notes were
+read while developing the transport and analytic interfaces.
 The source is registered as `jpss-1983-rankin-selberg`, SHA-256
 `d9feed6388ca5acf02ecc6a8cce984871a7c28f062ff441e45a71fa2d8962245`,
 at `/home/taskhub/central-library/Jacquet-Piatetski-Shapiro-Shalika--Rankin-Selberg Convolutions--1983.pdf`.

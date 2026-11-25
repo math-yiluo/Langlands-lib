@@ -22,7 +22,7 @@ of functionals satisfying
 
 $$\ell(\rho(n)v)=\theta(n)\ell(v).$$
 
-`coefficientMap rho ell` reuses the accepted matrix-coefficient map to send
+`coefficientMap rho ell` reuses the Library's matrix-coefficient map to send
 `v` to the function `g -> ell(rho(g)v)`, with the covariance and intertwining
 fields proved. `evaluationFunctional` evaluates an intertwiner at the identity.
 `functionalEquiv` packages these inverse maps as a linear equivalence.
@@ -59,7 +59,7 @@ American Journal of Mathematics 105 (1983), 367–464:
   coefficient functions, their left covariance, right-translation invariance,
   and quotient realization.
 
-Source receipt: `jpss-1983-rankin-selberg`, SHA256
+Registered source: `jpss-1983-rankin-selberg`, SHA256
 `d9feed6388ca5acf02ecc6a8cce984871a7c28f062ff441e45a71fa2d8962245`.
 Original file:
 `C:/Central-Library/Jacquet-Piatetski-Shapiro-Shalika--Rankin-Selberg Convolutions--1983.pdf`.
@@ -97,20 +97,17 @@ into this construction.
 `Representation.IsIrreducible.injective_or_eq_zero` supplies the injectivity
 alternative for `modelEquiv`.
 
-The project dependencies are the accepted matrix-coefficient definitions
-`5352a743-a6a8-4824-b91e-1cbc32b79b30` version 1 and the accepted smoothness
-definitions `665022df-625b-44ae-9dbd-425f6e266bab` version 1.
-The matrix-coefficient publication is commit
+The project dependencies are the matrix-coefficient definitions
+`Langlands.Representation.MatrixCoefficient.Definitions` and the smoothness
+definitions `Langlands.Representation.Smooth.Definitions`.
+The matrix-coefficient definitions were published at commit
 `12dbb4572150a088d7f1df3eb9f5b771cb71604c`, effective snapshot
-`aa9653082118d59a057d45b6a329caa3fdfd621252627ae6692fbc7c82d927a1`;
-its accepted Lean is unchanged. Its final Markdown updates only stale submission
-status wording. The local pair matches the effective source hashes.
+`aa9653082118d59a057d45b6a329caa3fdfd621252627ae6692fbc7c82d927a1`.
+The local pair matches the effective source hashes.
 The smoothness dependency has effective snapshot
 `092f2dc612370a1612d3c08d1e60ff18add554e831ee02c7041342ac9dff16c0`.
-Both dependencies were checked as accepted, published and currently available
-at Library commit `d0f5322f745425b08ae8e72c1031206f45cb049e`.
+Both dependencies were checked as available at Library commit
+`d0f5322f745425b08ae8e72c1031206f45cb049e`.
 
-Environment: `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d` version 1,
-Lean 4.34.0, Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
-Authored by Worker 31. Compilation and declaration inspection are development
-checks; independent semantic review and publication are separate requirements.
+Checked with Lean 4.34.0, Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`,
+by compilation and declaration inspection.

@@ -3,11 +3,9 @@
 Lean module: `Langlands.AlgebraicGeometry.Modules.FiniteFlatPushforwardFreeCharts`,
 namespace `Langlands.AlgebraicGeometry.Modules.DerivedSections`.
 
-Author: Worker 998.
-
 ## Role and provenance
 
-This is internal infrastructure for task `981f6bcb-41de-4a08-83b8-48b6eec2b236`, the proof
+This is internal infrastructure for the proof
 of `Langlands.AbelianScheme.AlgClosedFieldAmpleEulerInverseScalingStatement`. Let
 `f : Y₁ ⟶ Y` be finite, flat and locally of finite presentation, with Mathlib degree
 `f.finrank y = d` at every point (`Scheme.Hom.finrank`, Mathlib

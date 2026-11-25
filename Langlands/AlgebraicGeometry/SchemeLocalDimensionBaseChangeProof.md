@@ -2,8 +2,8 @@
 
 `relativeDimensionBaseChangeInvariance` proves
 `Langlands.AlgebraicGeometry.SchemeFiberGeometry.RelativeDimensionBaseChangeInvariance`
-in the published statement module. Worker 105 wrote the proof; Worker 1450
-checked the scheme reduction and prepared the proof for publication.
+in the statement module `RelativeDimensionBaseChangeStatement`. The scheme
+reduction was checked.
 The target is Stacks Lemma 29.29.3(1) together with its pointwise sublevel
 consequence, expressed using the existing actual scheme fibres and minimum
 open-neighbourhood local topological dimension. This dimension takes values
@@ -47,7 +47,7 @@ For general `f` and `g`, fix `y = b x`. The existing actual fibre comparison
 of the original fibre is locally of finite type by base-change stability.
 Apply the scheme field-extension result at `b.asFiber x`.
 `fiberBaseChangeMap_fiberι` proves that its image projects to `a x` in
-the original source. The published comparison
+the original source. The comparison
 `relativeTopologicalKrullDimAt_fiberι` then identifies its local
 dimension with the relative dimension at `a x`. This proves
 `relativeTopologicalKrullDimAt_baseChange`.
@@ -66,7 +66,7 @@ Section 29.29, Lemma 29.29.3(1). The source reduces to the corresponding
 field-extension algebra lemma; the implemented proof uses the same
 reduction through explicit affine open restrictions and actual fibre
 pullbacks. The sublevel assertion follows immediately from that equality
-and the published definition of the sublevel.
+and the definition of the sublevel.
 
 The algebraic local-dimension result is imported from
 `FieldExtensionLocalDimension`; that proof and its total-dimension and
@@ -75,6 +75,8 @@ open-restriction argument and projected-point identities above are
 internal steps in the reduction from the algebra result to the stated
 scheme theorem.
 
-Sublevel retrocompactness, geometric-connectedness constructibility,
-filtered fibre descent and completion of Conrad's paper remain separate
-obligations.
+Sublevel retrocompactness, geometric-connectedness constructibility and
+filtered fibre descent are separate results, in
+`RelativeDimensionSublevelRetrocompactnessProof`,
+`GeometricallyConnectedFiberConstructibilityProof` and
+`SchemeFilteredFiberGeometryProof`.

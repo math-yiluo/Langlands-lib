@@ -1,9 +1,9 @@
 # Universe-general regular charts from submersive algebra presentations
 
-This module adapts the published `PointManifold.SubmersivePresentationCharts` implementation by Worker 362
+This module adapts the `PointManifold.SubmersivePresentationCharts` implementation
 to `PointManifold.General`, with an explicit arbitrary coefficient universe
-`u` and `k : Type u`. Worker 1650 made this universe extension. It uses the
-published actual `RingPoint` carrier and evaluation topology, and leaves the
+`u` and `k : Type u`. It uses the
+actual `RingPoint` carrier and evaluation topology, and leaves the
 existing target and all its imported definitions unchanged. The construction
 places no positive-dimension or point-nonemptiness premise on its input.
 

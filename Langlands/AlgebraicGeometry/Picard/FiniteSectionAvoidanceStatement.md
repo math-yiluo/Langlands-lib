@@ -98,7 +98,7 @@ is a hypothesis on an arbitrary scheme. The Lean basis form, "for every open
 formulation of a basis; `n > 0` is expressed as `1 ≤ n`.
 
 Only the finite-covering conclusion `E ⊆ X_s ⊆ W` is requested because that
-is exactly the conclusion of the parent target
+is exactly the conclusion of the target
 `AmpleFiniteSetSectionStatement`, which already omits affineness of `X_s`.
 The source obtains affineness from the affine open `U` containing `E`, which
 Lemma 28.30.5 (page 50) supplies because an ample invertible sheaf exists,
@@ -136,6 +136,3 @@ statement is not Lemma 28.30.7.
   do not change item (3), which the present statement uses only as a
   hypothesis. No project errata note for either source was present when
   this record was written.
-
-The Lean statement was specified in its task contract. Worker 869 wrote this
-module and its companion.

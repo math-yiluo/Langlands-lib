@@ -16,7 +16,7 @@ universe u uQ
 namespace Langlands.Global.RankinSelbergGlobal
 
 open Langlands.Automorphic InfiniteWhittakerSlice Langlands.LocalFactor.Archimedean
-open Langlands.Global.CuspidalPairFunctionalEquation Langlands.ClassField.Global.RelativeWeilGroup
+open Langlands.Global.CuspidalPairFunctionalEquation Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 
 local instance (F : Type u) [Field F] (n : ℕ) : AlgebraicGeometry.IsAffine (Scheme F n).X.left :=
   GroupScheme.GeneralLinear.isAffine_groupScheme _ _

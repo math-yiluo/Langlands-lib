@@ -1,7 +1,5 @@
 # Cuspidal Jacquet modules of a product of two segment socles on one line
 
-Authors: Worker 1032 and Worker 999.
-
 Lean module: `Langlands.Representation.Classification.TwoSegmentSocleShuffleJacquetStatement`.
 
 ## Declarations
@@ -95,7 +93,7 @@ original increasing order, and those of `r(⟨Δ₁⟩)` fill the other position
 twist exponents add, because a representative of `ρ.twist a` is `A ⊗ |det|^a` and
 `segmentFactor (A ⊗ |det|^a) j ≅ A ⊗ |det|^(a+j)`.
 
-The intended later proof uses two Library statements as inputs:
+The proof, in `TwoSegmentSocleShuffleJacquetProof`, uses two Library statements as inputs:
 `Langlands.Geometric.PadicGeometricLemmaTheorem` (module
 `Langlands.Representation.Geometric.GeometricLemmaStatement`) and
 `Langlands.Classification.SegmentSubrepresentationFullJacquet` (module
@@ -131,7 +129,7 @@ use the segment-socle product structure results downstream of it, such as
 
 ## Development check
 
-`lean_check` in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` over Library
+A Lean check over Library
 commit `c59c0940bd7d47ad634dc767445532ca1108111f` compiled the module with no errors
 or warnings. Its inspection of `TwoSegmentSocleShuffleJacquet` reports a
 `Prop`-valued definition with universe parameters `uF uV uW` and only the

@@ -19,7 +19,7 @@ premise and quantifier of the target is kept. In particular, the group is
 over every nonarchimedean local field `k`. Positive characteristic, nonsplit
 and non-quasisplit groups, empty simple-root sets and relative rank zero are
 all covered. The only axioms used are `propext`, `Classical.choice` and
-`Quot.sound` (development check `5f388b29-f589-4278-aa05-d8db20951398`).
+`Quot.sound`.
 
 ## Route
 
@@ -108,8 +108,7 @@ Used directly:
 ## Transitive dependency ledger
 
 The ledger comes from a recursive scan of the final theorem's type and value
-(`ConstantInfo.getUsedConstantsAsSet`, development check
-`1923dbfc-5ddd-4f1d-9b35-d84fd2d0f486`). The scan reached 135,511 constants,
+(`ConstantInfo.getUsedConstantsAsSet`). The scan reached 135,511 constants,
 whose project constants come from 2,460 modules. Of these, 118 modules are
 under `Langlands.Representation`.
 

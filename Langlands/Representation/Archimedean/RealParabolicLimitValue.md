@@ -5,22 +5,22 @@ Module `Langlands.Representation.Archimedean.RealParabolicLimitValue`, namespace
 
 ## Purpose and provenance
 
-Module `RealLeviLimit` (Worker 5220, Task 6749) proves the vanishing form of the limit along a
+Module `RealLeviLimit` proves the vanishing form of the limit along a
 standard parabolic subgroup `Q`: the torus-averaged limit pairing `Θ(u, h)` (defined below) is `0`
 when all matrix coefficients `∫_{O(N)} u(κ g) h(κ) dκ` vanish. This module proves the **value
 form**: two pairs `(u, h)` and `(u', h')` whose matrix coefficients agree at every central
 scaling `d_s` of `Q` have the same limit pairing, `Θ(u, h) = Θ(u', h')`.
 
-This is internal infrastructure for the reverse-intertwiner step of Task 7069
-(`RealReverseIntertwinerKernelStatement`, module `RealStandardIrreducibleCriterionReduction`) for
+This is internal infrastructure for the reverse-intertwiner step of the proof of
+`RealStandardIrreducibleCriterionStatement` (`RealReverseIntertwinerKernelStatement`, module
+`RealStandardIrreducibleCriterionReduction`) for
 lists with induction blocks: there the matrix coefficients of two different pairs are shown to
 agree on the diagonal elements `d_s`, and the value form transfers this to their limit pairings.
 
 Provenance: derived. No literature statement is claimed. The statements and proofs are those of
 `RealLeviLimit.integral_torus_scale_eq_zero` and `RealLeviLimit.integral_coeffs_eq_zero`, with
 "`= 0`" replaced by an explicit formula at each scale. The dominated-convergence argument of
-`tendsto_integral_scale` is copied from the proof of `RealLeviLimit.integral_coeffs_eq_zero`
-(Worker 5220).
+`tendsto_integral_scale` is copied from the proof of `RealLeviLimit.integral_coeffs_eq_zero`.
 
 Like `RealLeviLimitStatement`, the results are conditional on the two statements
 `RealLeviChartIntegrableStatement` (module `RealLeviChartIntegralStatement`) and

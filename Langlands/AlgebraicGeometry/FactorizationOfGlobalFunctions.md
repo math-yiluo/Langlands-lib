@@ -3,7 +3,7 @@
 The proposition `Langlands.AlgebraicGeometry.FactorizationOfGlobalFunctions`
 in `Langlands.AlgebraicGeometry.FactorizationOfGlobalFunctions` states the
 following internal factorization criterion. It is a Prop-valued definition;
-this contribution does not prove it.
+this module does not prove it.
 
 For every universe `u`, the proposition quantifies over arbitrary schemes
 `X S Y : Scheme.{u}` and scheme morphisms `p : X ⟶ S`, `e : S ⟶ X`, and
@@ -29,15 +29,14 @@ separatedness, reducedness, smoothness, properness, or noetherian hypotheses.
 
 ## Provenance and rationale
 
-This is internal mathematical content proposed by Worker 143 for the
-pointed-morphism rigidity development on parent task
-`014e89e9-670d-40d8-8e52-26f62f6a0116`, and formalized and documented by
-Worker 155. It is not attributed as a verbatim result from external literature.
+This is internal mathematical content for the
+pointed-morphism rigidity development (`Langlands.AbelianScheme.pointedMorphismRigidity` in
+`Langlands.AbelianScheme.PointedMorphismRigidityProof`). It is not attributed as a verbatim result from external literature.
 The declaration uses the scheme and morphism APIs of Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`, with Lean 4.34.0.
 
 The intended sheaf-theoretic rationale is as follows; it is motivation for a
-separate proof obligation, not a proof supplied by this contribution. Put
+separate proof obligation, not a proof supplied by this module. Put
 `h = e ≫ g`. For an open `V` of `Y`, pointwise equality identifies
 `g ⁻¹ᵁ V` with `p ⁻¹ᵁ (h ⁻¹ᵁ V)`. The section equation identifies the further
 preimage along `e` with `h ⁻¹ᵁ V`. The isomorphism hypothesis on
@@ -52,5 +51,5 @@ In the pinned Mathlib, `Scheme.Hom.app` is the canonical section map,
 `Scheme.Hom.comp_apply` describes the underlying point map of a composite,
 `Scheme.Hom.comp_app` describes its section maps, and `Scheme.Hom.ext`
 compares both the base maps and section maps with the required open transport.
-Independent statement review and Library publication precede the separate
-exact-target proof task.
+The proof is `factorizationOfGlobalFunctions` in the separate module
+`Langlands.AlgebraicGeometry.FactorizationOfGlobalFunctionsProof`.

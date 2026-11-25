@@ -1,6 +1,6 @@
 # The affinoid atlas of the glued analytification of a scheme
 
-This unit constructs an `IndexedAffinoidAtlas` on the published glued space
+This module constructs an `IndexedAffinoidAtlas` on the published glued space
 `Space K f` of a scheme `X` locally of finite type over `K`. It assumes the two
 gluing properties packaged in `OpenGluing K f`.
 
@@ -13,8 +13,9 @@ gluing properties packaged in `OpenGluing K f`.
   `range (ι K f U) ∩ range (ι K f V)` is the union of `range (ι K f W)` over the
   affine opens `W ≤ U ⊓ V`.
 
-These are exactly clauses (2) and (3) of the published (unproved)
-`SchemeAnalytificationGluingStatement`. `OpenGluing.injective` extracts the
+These are exactly clauses (2) and (3) of
+`SchemeAnalytificationGluingStatement`, which `SchemeAnalytificationGluingProof`
+proves as `schemeAnalytificationGluing`. `OpenGluing.injective` extracts the
 injectivity of every `ι K f U`.
 
 ## The atlas

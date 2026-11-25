@@ -152,10 +152,10 @@ private theorem segmentHeadProduct_isUnlinked
     rintro rfl
     exact (d.segments i).not_isLinked_self hlink
   rcases hlink.precedes_or_precedes with hp | hp
-  · let pair := segmentHeadProductPairReduction T (Nat.succ_pos n) d hd hirr i j hij
+  · let pair := segmentHeadProductPairReduction (n := n + 1) T (Nat.succ_pos n) d hd hirr i j hij
     exact twoBlockHeadProduct_not_irreducible T ψ hfree (d.blocks i) (d.blocks j)
       (hd i) (hd j) hp pair.datum pair.blocks_eq pair.irreducible
-  · let pair := segmentHeadProductPairReduction T (Nat.succ_pos n) d hd hirr j i hij.symm
+  · let pair := segmentHeadProductPairReduction (n := n + 1) T (Nat.succ_pos n) d hd hirr j i hij.symm
     exact twoBlockHeadProduct_not_irreducible T ψ hfree (d.blocks j) (d.blocks i)
       (hd j) (hd i) hp pair.datum pair.blocks_eq pair.irreducible
 

@@ -1,6 +1,6 @@
 # An integral order for the actual positive Harris left involution
 
-Worker 57. This module constructs a finite full integer order for the
+This module constructs a finite full integer order for the
 positive auxiliary left involution of `HarrisHodgeInput`, restricts that
 involution to the order, and gives a faithful left action on a concrete
 finite full integer lattice in the rational regular module. The rational
@@ -26,7 +26,7 @@ core, rather than supplied as output data.
 Kottwitz's full input is an order over `ℤ_(p)` whose completion is maximal,
 and a self-dual preserved lattice over `ℤ_p`. The present construction is
 a finite full integer order and an integer lattice. Prime-local extension,
-maximality and self-duality remain separate mathematical obligations.
+maximality and self-duality are not treated here.
 In particular, no claim that the rational alternating form takes integer
 values on this chosen lattice is made.
 

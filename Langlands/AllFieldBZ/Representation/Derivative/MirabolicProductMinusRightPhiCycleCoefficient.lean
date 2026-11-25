@@ -322,7 +322,7 @@ theorem rightCycle_phiMinus_tmul
           (T.mirabolicTheta ψ r) w ⊗ₜ b) =
       (Mirabolic.phiMinusCharacter T r g : ℂ) •
         (Jacquet.Localization.mk A.representation (radical (r + 1) F.Carrier)
-          (T.mirabolicTheta ψ r) (A.representation (successor g) w) ⊗ₜ B.representation a b) := by
+          (T.mirabolicTheta ψ r) (A.representation (successor g) w) ⊗ₜ[ℂ] B.representation a b) := by
   let _ := T.topology
   exact (TensorProduct.map_tmul _ _ (Mirabolic.phiMinusQuotient T ψ r A w) b).trans
     ((congrArg (· ⊗ₜ[ℂ] _) (Mirabolic.phiMinus_action T ψ r A g w)).trans

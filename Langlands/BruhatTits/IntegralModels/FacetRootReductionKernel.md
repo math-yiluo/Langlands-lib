@@ -1,6 +1,6 @@
 # Exact root-depth kernels and ordinary facet roots
 
-This internal supporting unit works in arbitrary universe `u` for a supplied
+This module works in arbitrary universe `u` for a supplied
 nonarchimedean local field, parahoric building data, and an integral model with
 the specified unramified zero-subgroup and translated-subset fixer
 characterization. The integral torus is closed and split, and the supplied
@@ -40,4 +40,4 @@ The provenance is an internal composition of the named valuation, model
 integrality, opposite-factor, and quotient-kernel interfaces. The module does
 not require that the subset be a facet, does not assert existence of the
 outside point, and does not establish exact quotient-root comparison or the
-host derivative root-datum theorem.
+derivative root-datum statement `UnramifiedFacetRootDatumStatement`.

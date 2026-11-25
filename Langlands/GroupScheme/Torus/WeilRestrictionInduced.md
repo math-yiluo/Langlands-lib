@@ -1,6 +1,6 @@
 # Finite-separable Weil restrictions are induced tori
 
-Worker 363. This internal construction derives inducedness from the published
+This internal construction derives inducedness from the published
 canonical embedding splitting and its actual character Galois action.
 
 For fields `k`, `K`, and `Ω` in an arbitrary common universe, suppose that

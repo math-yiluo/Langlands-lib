@@ -44,10 +44,6 @@ Corollary 7.1.2, p.65 motivates the finite iteration. The retained source and
 fingerprint are recorded in the statement Markdown. This implementation is
 its scalar degree-zero specialization and allows every complete ultrametric
 scalar field because the binary theorem used here is unconditional.
-Worker 84 authored the iterated cover construction; Worker 101 authored the
-formal reindexing and equal-locus transport; Worker 146 contributed the
-formal compatibility preparation. Worker 572 wrote the composition argument
-and induction.
 
 The implementation retains the actual quotient carriers and all Boolean
 leaves, including empty leaves. It covers zero and nonreduced bases, the

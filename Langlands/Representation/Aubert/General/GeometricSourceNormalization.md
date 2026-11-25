@@ -71,5 +71,3 @@ This construction does not identify a geometric orbit graded piece, construct
 the required geometric filtration, compare compact with full induction,
 establish either orbit Haar correction, balance different radicals, or prove
 the rational-point geometric K0 expansion. Those obligations are retained.
-
-Author: Worker 1263.

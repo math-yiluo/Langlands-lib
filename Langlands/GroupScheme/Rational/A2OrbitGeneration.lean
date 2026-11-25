@@ -41,12 +41,12 @@ theorem tripleProd_ne_one {k : Type u} [Field k] {G : GroupScheme (Spec (CommRin
   have : Mono p.inclusion.hom.hom.left := p.isMaximalTorus.2.1.mono
   have := p.isReduced
   have hT := p.isSplitTorus
-  have : IsAddTorsionFree (ℚ ⊗[ℤ] characterLattice p.torus) := IsAddTorsionFree.of_module_rat _
-  have : IsAddTorsionFree (characterLattice p.torus) :=
-    Function.Injective.isAddTorsionFree toRat hT.character_toRat_injective
-  have : IsAddTorsionFree (ℚ ⊗[ℤ] characterLattice S) := IsAddTorsionFree.of_module_rat _
-  have : IsAddTorsionFree (characterLattice S) :=
-    Function.Injective.isAddTorsionFree toRat hS.character_toRat_injective
+  have : HasUniqueDiv (ℚ ⊗[ℤ] characterLattice p.torus) := HasUniqueDiv.of_module_rat _
+  have : HasUniqueDiv (characterLattice p.torus) :=
+    Function.Injective.hasUniqueDiv toRat hT.character_toRat_injective
+  have : HasUniqueDiv (ℚ ⊗[ℤ] characterLattice S) := HasUniqueDiv.of_module_rat _
+  have : HasUniqueDiv (characterLattice S) :=
+    Function.Injective.hasUniqueDiv toRat hS.character_toRat_injective
   have hE := splitPinnedOppositeFactorPairs k G p
   have ha : ∀ n m : ℕ, n • a = m • a → n = m := fun n m h => by
     have h' : ((n : ℤ) • a) = ((m : ℤ) • a) := by

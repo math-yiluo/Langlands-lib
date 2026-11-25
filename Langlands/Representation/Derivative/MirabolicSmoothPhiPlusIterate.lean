@@ -252,7 +252,7 @@ theorem mirabolicDerivativeRightAdjoint_map_injective (T : F.TopologicalData)
   intro θ θ' g hg
   apply phiHatPlusIterate_map_injective T ψ n k
   intro x y hxy
-  exact ULift.ext _ _ (hg (congrArg ULift.down hxy))
+  exact ULift.ext (hg (congrArg ULift.down hxy))
 
 /-- BZ77 §3.2(b,c) iterated: `Hom(A, Y θ) ≃ Hom(Ψ⁻ (Φ⁻)^k A, θ)`, the composite of the
 iterated `Φ⁻ ⊣ Φ̂⁺`, the carrier lift and `Ψ⁻ ⊣ Ψ⁺`. -/

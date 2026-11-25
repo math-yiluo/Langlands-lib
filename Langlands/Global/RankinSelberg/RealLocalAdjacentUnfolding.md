@@ -16,7 +16,7 @@ The proof uses invariance of `U(g) V(g z)` under left multiplication by
 `N` to evaluate the smaller equal-rank expression at a representative.
 In the inner group integral put `k = g z⁻¹`, so that `k⁻¹g = z`.
 Invariance under inversion of the supplied real group Haar measure is the
-published `realMatrixHaar_symmetries`. The determinant characters of `g`
+existing `realMatrixHaar_symmetries`. The determinant characters of `g`
 and `k⁻¹` combine to `η(det z)`. The determinant powers, including the
 outer corank-one `s-1/2`, combine to `|det k|^s |det z|^(s+r/2)`.
 On `Q × H`, the inverse right-translation shear sends `(N g,z)` to
@@ -28,6 +28,6 @@ weighted by the square-matrix zeta kernel. The scalar `b` is retained.
 The restricted recursive coefficient identity, unipotent invariance of the
 product and absolute integrability of the unfolded joint kernel are explicit
 premises. No equality of continuous and uniform coefficient models is used.
-This unit does not supply the recursive restriction identity, an
+This module does not supply the recursive restriction identity, an
 integrability bound, the dual Fourier comparison, meromorphic continuation,
 or the functional equation.

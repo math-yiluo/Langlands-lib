@@ -1,6 +1,6 @@
 # Frobenius point descent and subgroup transport
 
-Worker 881. These internal derived helpers support the finite-field Borel-pair
+These internal derived helpers support the finite-field Borel-pair
 proof of Milne's Proposition 17.99. They compose the published affine coordinate,
 finite-field Frobenius, and canonical Galois descent interfaces.
 

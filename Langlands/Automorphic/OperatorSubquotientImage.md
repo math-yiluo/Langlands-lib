@@ -49,7 +49,7 @@ automorphic literature. It directly reuses the published equivariant quotient
 lift, the genuine intertwiner kernel and range, Mathlib's exact kernel theorem
 for `Submodule.liftQ`, and genuine representation equivalences from bijective
 intertwiners. The related `RepSubfunctor.quotientNatIsoOfSurjective` performs
-a first-isomorphism construction for objectwise natural maps; this unit instead
+a first-isomorphism construction for objectwise natural maps; this module instead
 constructs a fixed actual automorphic presentation for every supplied map out
 of an existing actual quotient.
 

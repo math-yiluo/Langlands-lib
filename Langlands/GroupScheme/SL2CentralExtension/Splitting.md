@@ -1,6 +1,6 @@
 # Canonical lifts of the root groups
 
-Worker 65. Internal supporting development for the proof of
+Internal supporting development for the proof of
 `Langlands.GroupScheme.SpecialLinearCentralExtensionSplitStatement` (Conrad, *Reductive group
 schemes*, Proposition 4.3.1). It constructs the homomorphic lifts `x′` and `y′` of the root
 groups `x` and `y` into a central extension. These are the equivariant splittings over `U` and

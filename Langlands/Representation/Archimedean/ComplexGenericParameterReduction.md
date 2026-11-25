@@ -1,7 +1,6 @@
 # Reduction of the complex generic standard-parameter statement
 
-Worker 52 wrote this module for task `f488188c-5411-4314-bc62-8e2ff8f5c7cb` (Task 5977). The
-task's target is the Library's `Langlands.Archimedean.ComplexGenericStandardParameterStatement`
+The target of this module is the Library's `Langlands.Archimedean.ComplexGenericStandardParameterStatement`
 (module `Langlands.Representation.Archimedean.GKModule`). It says that every irreducible
 admissible generic `(𝔤𝔩_n(ℂ), U(n))`-module `(ρ, π)` has `HasComplexStandardParameter n ρ π ds`
 for some `ds : List ComplexCharacterData`. This module splits the target into two statements

@@ -1,7 +1,5 @@
 # Geometric inputs for points of the analytic étale site
 
-Author: Worker 620.
-
 This module states three geometric prerequisites and proves that their conjunction
 implies the published `GeometricPointStatement`. The prerequisites themselves are
 unproved proposition definitions. The module does not prove

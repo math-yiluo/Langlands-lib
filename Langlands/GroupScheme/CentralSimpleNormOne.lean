@@ -17,6 +17,7 @@ variable (k A : Type u) [Field k] [Ring A] [Algebra k A]
 
 /-- The actual unit group scheme with the canonical finite-dimensional coordinate basis. -/
 abbrev groupScheme : GroupScheme (Spec (CommRingCat.of k)) :=
+  haveI : Module.Free k A := Module.Free.of_divisionRing k A
   FiniteAlgebraUnits.groupScheme (Module.finBasis k A)
 
 /-- The actual character given by the unconditional reduced norm. -/

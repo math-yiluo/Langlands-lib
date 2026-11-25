@@ -1,6 +1,6 @@
 # Composition of actual reduced framing comparisons
 
-This internal unit composes framing squares for specified comparisons of the
+This module composes framing squares for specified comparisons of the
 reduced targets of actual framed formal atlases.
 
 `globalFrameQuasiIso_trans` proves that the fixed-frame identifications forced by

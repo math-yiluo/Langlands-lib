@@ -54,8 +54,7 @@ identity-component carrier equality.
 
 ## Provenance and scope
 
-Worker 2234 wrote this derived assembly, completing the earlier conditional
-draft with the now-published geometric-reducedness theorem. The new content
+This is a derived assembly. The new content
 is the composition of the published group-object construction, its proved
 coherence inputs, the geometric-reducedness proof, and Mathlib's smoothness
 and open-immersion results. The mathematical provenance of these inputs
@@ -65,5 +64,5 @@ remains in its unchanged statement companion.
 The proof asserts no existence of a universal parameter or of an
 identity-component open. It supplies no comparison with the chosen dual
 scheme. All published statements and dependencies are used unchanged, and
-the separately owned component-comparison, openness and existence workflows
+the component-comparison, openness and existence results
 are not needed in this assembly.

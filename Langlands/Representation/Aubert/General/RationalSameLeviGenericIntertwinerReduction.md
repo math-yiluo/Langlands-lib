@@ -1,7 +1,5 @@
 # Reduction of the same-Levi intertwiner statement to represented parabolics
 
-Author: Worker 194.
-
 This module proves `rationalSameLeviGenericNonzeroIntertwiner_of_represented`:
 `RepresentedSameLeviGenericNonzeroIntertwinerStatement.{u, v}` implies
 `RationalSameLeviGenericNonzeroIntertwinerStatement.{u, v}`. The hypothesis is the

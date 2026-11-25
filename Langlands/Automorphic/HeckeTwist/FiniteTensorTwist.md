@@ -1,7 +1,5 @@
 # Finite tensor presentations after multiplication by any Hecke determinant character
 
-Author: Worker 5136.
-
 A finite tensor presentation (the Library's `FiniteTensorPresentation F n ρ E e he S`)
 identifies a finite realization `S` with the restricted tensor product of local
 representations `ρ v`, built from reference vectors `e v` fixed by `GL_n(𝒪_v)`

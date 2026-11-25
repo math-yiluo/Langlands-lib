@@ -73,8 +73,8 @@ The torus correspondence and normalizer stabilizer use the actual torus
 comparison above.
 
 Every comparison hypothesis and the source `SatisfiesBuildingAxiom` witness
-remain premises. This unit neither supplies actual building data, root
+remain premises. This module neither supplies actual building data, root
 filtration comparisons or the source building witness, nor proves
-`RootValuationBuildingConstructionStatement` or the other requested KP
-axioms. It supplies conditional transport of the one-group building axiom
+`RootValuationBuildingConstructionStatement` or the other KP axioms of
+that statement. It supplies conditional transport of the one-group building axiom
 for the existing quotients, at every universe `u`.

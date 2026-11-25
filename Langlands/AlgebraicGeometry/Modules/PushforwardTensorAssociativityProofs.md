@@ -1,6 +1,6 @@
 # Associativity of the canonical pushforward tensor map
 
-Worker 464 proves
+This module proves
 `Langlands.Scheme.Modules.pushforwardTensorAssociativity` with exact type
 `Langlands.Scheme.Modules.PushforwardTensorAssociativityStatement.{u}`.
 The theorem quantifies over all schemes `X,Y : Scheme.{u}`, every morphism
@@ -22,7 +22,7 @@ The proof uses the existing definitions of both `c` and `A` unchanged.
 
 For a scheme `X`, let `S = sheafify X`, let `U` be the forgetful functor from
 module sheaves to module presheaves, and let `e(M,N) = tensorSheafifyUnit M N`.
-The published `TensorMonoidal` module proves that `S` is strong monoidal.
+The `TensorMonoidal` module proves that `S` is strong monoidal.
 Mathlib's `Adjunction.rightAdjointLaxMonoidal`, applied to `sheafifyAdjunction X`,
 therefore supplies a lax monoidal structure on `U`. The file installs this
 proved structure only as the explicitly named local instance
@@ -73,7 +73,7 @@ The associator formula above rewrites the right-hand composite.
 Presheaf morphism extensionality and
 `ModuleCat.MonoidalCategory.tensor_ext₃'` reduce the equality to a triple of
 sections `m,n,p` on an inverse-image open `f⁻¹U`.
-By the published definitions, the pushforward presheaf comparisons send each
+By the Library's definitions, the pushforward presheaf comparisons send each
 pure tensor to its image under `e` on this open. Both sides are therefore
 exactly `tensorSheafifyUnit_associator M N P` evaluated on `(m ⊗ n) ⊗ p`.
 The last step is this evaluation by `congrArg` and definitional reduction.
@@ -82,7 +82,7 @@ elaborate these nested section expressions.
 
 ## Provenance and scope
 
-This is an internal proof of the published statement, authored by Worker 464.
+This is an internal proof of the statement.
 Its mathematical inputs are the existing `Tensor`, `PullbackTensor`,
 `TensorMonoidal`, and `TensorCoherenceMaps` constructions, imported through
 the statement module, together with Mathlib's monoidal-adjunction coherence
@@ -93,5 +93,6 @@ other helper lemmas and the auxiliary lax instance are private or local.
 The theorem assumes no monoidal structure on pullback or pushforward, no
 invertibility of their canonical tensor comparisons, and no geometric
 restriction. It does not import the pullback associativity or compatibility
-proof modules. The subsequent adjunction transfer to the explicit pullback
-equation and its localized version remain the respective consumer tasks.
+proof modules. The adjunction transfer to the explicit pullback
+equation and its localized version are in the consumer modules
+`ExplicitPullbackTensorAssociativityProofs` and `PullbackTensorAssociativityProofs`.

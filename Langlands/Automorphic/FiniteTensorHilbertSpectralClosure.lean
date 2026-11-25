@@ -1,6 +1,7 @@
 import Langlands.Automorphic.FiniteTensorHilbertSpherical
 import Langlands.Automorphic.FiniteTensorHilbertHeckeProjection
 import Mathlib.Analysis.Normed.Module.FiniteDimension
+import Mathlib.Topology.Algebra.Module.Equiv.Submodule
 
 /-! # The closed joint spectral subspace of actual completed tensor slices -/
 

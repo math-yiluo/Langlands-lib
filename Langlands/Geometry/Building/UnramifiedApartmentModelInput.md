@@ -1,7 +1,5 @@
 # Upper building data from the supplied unramified apartment
 
-Author: Worker 200.
-
 The internal definition `MaximalUnramified.buildingDataOfApartment` packages
 the upper apartment, maximal split torus, centralizer and integer-valuation
 compatibility supplied by the fixed-point depth-zero statement into

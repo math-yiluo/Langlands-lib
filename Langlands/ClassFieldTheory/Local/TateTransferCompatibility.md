@@ -1,7 +1,5 @@
 # Fundamental-class cup products and Tate transfers
 
-Author: Worker 42.
-
 For a finite field tower `K → L → M`, the two proposition definitions
 use the actual unit-valued and integral Tate transfer maps in
 `TateTransfers` and the actual left cup operation in `TateCup`.

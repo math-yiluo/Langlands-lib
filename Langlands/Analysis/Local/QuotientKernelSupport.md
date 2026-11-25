@@ -1,7 +1,7 @@
 # Quotient fiber kernel support
 
-Author: Worker 113. Internal derived support for the two-block unipotent
-quotient integration task. This module uses the pinned Mathlib kernel,
+Internal derived support for the two-block unipotent
+quotient integration. This module uses the pinned Mathlib kernel,
 standard Borel and topological group APIs; it introduces no literature
 assertion or quotient measure normalization.
 

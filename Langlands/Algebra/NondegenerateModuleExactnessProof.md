@@ -1,9 +1,6 @@
 # Exactness of the actual nondegenerate functors
 
-Authors: Workers 6 and 490. Worker 6 supplied the shared proof draft;
-Worker 490 checked it against the published prerequisites, added the two
-named inclusion-exactness directions and their complete universe checks,
-and prepared this explanation.
+The proof was checked against the published prerequisites.
 
 The theorem `Langlands.Algebra.nondegenerateModuleExactnessStatement`
 proves the entire independently published closed proposition
@@ -101,6 +98,6 @@ The separate source issue with the unrestricted Appendix A.VI.1
 abelian-subcategory criterion is recorded in
 [the source-discrepancy note](../../notes/renard/appendix-a-corrections.md);
 the published abelian proof used here includes the necessary zero and
-finite-product closure. This proof does not discharge the separately
-owned ambient categorical range/kernel comparison, completion, other
+finite-product closure. This proof does not discharge the
+ambient categorical range/kernel comparison, completion, other
 adjunctions, scalar comparisons or remaining book content.

@@ -1,6 +1,6 @@
 import Langlands.Global.Factors.RelativeWeilBrauer
-import Langlands.ClassField.Global.RelativeWeilTransferNormStatement
-import Langlands.ClassField.Global.RelativeWeilCharacterFactorizationStatement
+import Langlands.ClassFieldTheory.Global.RelativeWeilTransferNormStatement
+import Langlands.ClassFieldTheory.Global.RelativeWeilCharacterFactorizationStatement
 import Langlands.Global.HeckeCharacter
 import Langlands.Global.AdelicFunctoriality.IdeleClassNorm
 import Langlands.Global.AdelicFunctoriality.Trace
@@ -21,7 +21,7 @@ set_option autoImplicit false
 
 universe u v
 
-namespace Langlands.ClassField.Global.RelativeWeilGroup
+namespace Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 
 open NumberField
 open scoped NumberField
@@ -86,7 +86,7 @@ theorem continuousReciprocityCharacter_comp_restrictionInclusion
 
 end Tower
 
-end Langlands.ClassField.Global.RelativeWeilGroup
+end Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 
 namespace Langlands.Global.AdelicFunctoriality
 

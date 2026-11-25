@@ -1,7 +1,5 @@
 # Standard Whittaker induction on the actual mirabolic group
 
-Author: Worker 353.
-
 This module specializes the published smooth and compact induction constructions
 to the actual mirabolic subgroup and its actual full upper unipotent subgroup.
 It constructs the standard representations of P from Bernstein–Zelevinsky
@@ -80,14 +78,15 @@ an open compact subgroup contained in it, as in §2.21. The generic Library
 induction uses the uniform-open-stabilizer formulation and compact projected
 support. This module does not prove a compact-support lifting theorem or the
 adapter from the ambient compact-set and ambient open-subgroup clauses of the
-inline Kirillov statement. Those adapters belong to the parent task.
+inline Kirillov statement. Those adapters are constructed in
+`Langlands.Representation.Whittaker.MirabolicKirillovAdapters`.
 
 JPSS (1983), §2.1, pp.385–386, gives the functional covariance and
 right-translation Whittaker functions. Its §2.2, p.386, defines K₀(ψ) as smooth
 covariant functions on P with compact support modulo N. Those are the consumer
 conventions followed here. The JPSS inclusion K₀(ψ) ⊆ K(π;ψ), BZ minimality,
 nonvanishing of these models, and all derivative theorems are outside this
-construction unit and are neither assumed nor proved.
+module and are neither assumed nor proved.
 
 ## Sources and dependencies
 

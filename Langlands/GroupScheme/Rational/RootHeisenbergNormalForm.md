@@ -16,7 +16,7 @@ same shape as the quadratic unitary law `(u, v)(u', v') = (u + u', v + v' + u ū
 Kaletha–Prasad (2.7.2).
 
 Provenance: the module is internal; the literature reference is context only. It combines the
-published or staged modules `RootDoubleCommutatorPairing`, `VectorPairingWeightLinearity`,
+modules `RootDoubleCommutatorPairing`, `VectorPairingWeightLinearity`,
 `SplitTorusEquivariantSection` and `RootDoubleCommutatorBilinear`, the published
 `IsVectorGroupOfDimension.exists_quotientSection` (affine split-unipotent torsor
 triviality), and `weightVectorCoordinatesOfNoHigherRoots`.

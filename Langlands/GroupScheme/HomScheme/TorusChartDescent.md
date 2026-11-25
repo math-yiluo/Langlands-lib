@@ -1,9 +1,8 @@
 # Overlap conditions for descent of subgroup families
 
-Author: Worker 1421.
-
-This is an internal module for the chart construction of task
-`45ac6e52-a4d8-4414-91f1-03c3be35223e`. A chart's family of tori is built on a
+This is an internal module for the chart construction of
+`SmoothTorusSubgroupRepresentabilityProof` (smooth moduli of closed torus
+subgroups). A chart's family of tori is built on a
 cover `M → B` and then descended to `B` with the Library's descent of closed
 subgroups (`Langlands.GroupScheme.Descent`). This module turns the descent
 overlap condition into a condition on evaluations, and reduces equality of

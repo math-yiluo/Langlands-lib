@@ -1,10 +1,10 @@
 # Original generic-fibre comparison of a curve-place space Weil model
 
-This internal unit identifies an original principal integral Weil model's generic
+This module identifies an original principal integral Weil model's generic
 fibre, proves compatibility with the canonical full curve adelic tensor map, and
 constructs the field-valued homeomorphism for these specified models. Algebraicity
 and separated finite-type geometry of the integral Weil model remain explicit
-inputs. This unit does not compare arbitrary independent models.
+inputs. This module does not compare arbitrary independent models.
 
 Let `k` be finite, let `K` be a function field over `k`, and let `L/K` be finite,
 with its supplied function-field structure. Fix a principal integral presentation

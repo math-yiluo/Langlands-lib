@@ -1,7 +1,5 @@
 # The parahoric subgroup of type `(1, n + 1)` and right multiplication on the cell
 
-Author: Worker 392.
-
 This helper module of the proof of
 `Langlands.Conductor.OrderedUnramifiedSphericalCyclicityStatement` (see
 [`OrderedUnramifiedSphericalCyclicity`](../OrderedUnramifiedSphericalCyclicity.md))

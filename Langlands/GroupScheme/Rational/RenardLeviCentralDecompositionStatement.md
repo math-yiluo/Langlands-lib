@@ -1,6 +1,6 @@
 # Central and relative directions for compatible Levi data
 
-Worker 1222. Module
+Module
 `Langlands.GroupScheme.Rational.RenardLeviCentralDecompositionStatement`.
 The sole declaration
 `Langlands.GroupScheme.RenardLeviCentralDecompositionStatement.{u}` is a
@@ -13,7 +13,7 @@ David Renard, *Représentations des groupes réductifs p-adiques*, French
 version dated 9 July 2026, V.3.6, printed p.111 / PDF p.117. Registered source
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1222 read the original passage, together with the V.2.6 Lemma and
+The original passage was read, together with the V.2.6 Lemma and
 proof on printed pp.107–108 / PDF pp.113–114.
 
 For a parabolic `P = MN`, the source uses the inclusions
@@ -38,8 +38,8 @@ satisfying
 CommGroupScheme.groupHom f ≫ aM ≫ j = aG.
 ```
 
-These are actual group-scheme objects and morphisms from the shared
-algebraic-groups program. There is no additional record of structural
+These are actual group-scheme objects and morphisms from the Library's
+algebraic-groups development. There is no additional record of structural
 assertions. The hypotheses include `IsSplitComponent aG`,
 `IsSplitComponent aM`, `IsConnectedReductive G` and
 `IsConnectedReductive M`.
@@ -128,5 +128,5 @@ No root or coroot realization, invariant inner product, orthogonality or
 projection from V.3.7–V.3.13 is asserted. In particular this target does not
 reuse the incorrect unprojected-root display of V.3.13 as an assumption.
 It also leaves every geometric split-component factorization assertion
-separate. Publication of the statement will require an exact proof
-successor before it counts as proved coverage.
+separate. The statement is proved by `renardLeviCentralDecomposition`
+(module `Langlands.GroupScheme.Rational.RenardLeviCentralDecompositionProof`).

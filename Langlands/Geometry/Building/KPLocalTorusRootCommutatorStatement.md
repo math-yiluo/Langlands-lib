@@ -2,14 +2,12 @@
 
 Lean module: `Langlands.Geometry.Building.KPLocalTorusRootCommutatorStatement`.
 Declaration: `Langlands.Geometry.Building.KPLocalTorusRootCommutatorStatement`, a
-`Prop`-valued definition. This unit states a proposition and proves nothing.
+`Prop`-valued definition. This module states a proposition and proves nothing.
 
-It is the positive-depth input for clause 2 (root compatibility) of S1 (Task 5890), the
-`K`-level copy of KP Lemma 7.2.3. Worker 119 drafted the first form of this statement, and
-the case computation below, in the Task 5552 shared draft (revision 3,
-`KPLocalTorusRootCommutatorStatement`). That draft used a torus `T`, `hT : IsTorus T.toGrp`
-and an isomorphism `e : T.toGrp ≅ B.centralizer.Z`. This unit uses D1's binder convention
-instead.
+It is the positive-depth input for clause 2 (root compatibility) of
+`QuasiSplitLocalTorusFiltrationStatement`, the `K`-level copy of KP Lemma 7.2.3. This module
+uses the binder convention of `KPLocalMoyPrasadGroups`, not a torus `T`,
+`hT : IsTorus T.toGrp` and an isomorphism `e : T.toGrp ≅ B.centralizer.Z`.
 
 ## Setting
 
@@ -24,11 +22,11 @@ instead.
   Definition 6.1.2), the centralizer datum `B.centralizer` of `Z = Z_H(S)` with its closed
   inclusion `j = B.centralizer.j`, and axiom V 6 for all of `Z(K)`
   (`B.isOmegaCompatible`).
-- `hZ : IsTorus B.centralizer.Z`. This is the single binder of D1 (Task 5875, module
-  `Langlands.Geometry.Building.KPLocalMoyPrasadGroups`). D1 writes `Z` as the commutative
+- `hZ : IsTorus B.centralizer.Z`. This is the single binder of the module
+  `Langlands.Geometry.Building.KPLocalMoyPrasadGroups`, which writes `Z` as the commutative
   group scheme `B.centralizerTorus hZ`, whose underlying group is `B.centralizer.Z`
-  definitionally and whose commutativity is `hZ.isCommMonObj`. S1 (Task 5890) uses the same
-  convention. Since `Z` is a torus, the minimal parabolic subgroups of `H` are Borel
+  definitionally and whose commutativity is `hZ.isCommMonObj`.
+  `QuasiSplitLocalTorusFiltrationStatement` uses the same convention. Since `Z` is a torus, the minimal parabolic subgroups of `H` are Borel
   subgroups, so `H` is quasi-split over `K` (KP §7.2: "When G is quasi-split, then
   Z = T is a maximal torus").
 
@@ -63,7 +61,8 @@ characters of the torus `Z`, and in particular all absolute roots of `H` with re
 of the congruence condition and the depths of the root-group filtrations are measured on
 the same scale.
 
-At depth `r > 0`, D1's `Z(K)_r = B.centralizerTorusFiltration hZ r` is the published
+At depth `r > 0`, the `Z(K)_r = B.centralizerTorusFiltration hZ r` of
+`KPLocalMoyPrasadGroups` is the published
 `localTorusFiltration F (B.centralizerTorus hZ) hZ r`. By definition
 (`localTorusFiltrationAtSplitting`) it is the norm Iwahori subgroup intersected with
 `localGeometricCharacterCongruence F (B.centralizerTorus hZ) r`. So it lies in the
@@ -104,8 +103,7 @@ where `H` is quasi-split and `Z` is a torus, for the congruence condition that d
 
 ## Why the statement should hold
 
-This is an explanation, not a proof. The Library does not yet identify the valuation of `B`
-with a Chevalley–Steinberg valuation.
+This is an explanation, not a proof.
 
 **Reduction to Chevalley–Steinberg coordinates.** Every valuation in `B.apartment` satisfies
 V 0–V 5 and V 6, so it is `ω`-compatible. A Chevalley valuation of the quasi-split group
@@ -160,22 +158,22 @@ not lie in `U_{a,x,r+s}`. It gains the full `r` in `x_{2a}`, which puts it in
 next section). At positive depth, the axioms of `IntegerValuationBuildingData` control only
 `ω(χ(z))`, not `ω(χ(z) - 1)`, so the gain of `r` needs the root-group coordinates above.
 
-## Use: clause 2 of S1
+## Use: clause 2 of `QuasiSplitLocalTorusFiltrationStatement`
 
-Clause 2 of S1 says: for `z ∈ j(Z(K)_r)` and `u ∈ U_{a,x,s}`,
+Clause 2 of `QuasiSplitLocalTorusFiltrationStatement` says: for `z ∈ j(Z(K)_r)` and `u ∈ U_{a,x,s}`,
 `z u z⁻¹ u⁻¹ ∈ U_{a,x,r+s} U_{2a,x,r+s}`. It follows from this statement together with the
 depth-`0` case.
 
 - `r = 0`: `Z(K)_0` lies in the character valuation kernel
-  (`centralizerTorusFiltration_le_characterValuationKernel` in D1). By V 6 such points fix
+  (`centralizerTorusFiltration_le_characterValuationKernel` in `KPLocalMoyPrasadGroups`). By V 6 such points fix
   the apartment, so conjugation by `z` preserves `U_{a,x,s}`. Then
   `z u z⁻¹ u⁻¹ ∈ U_{a,x,s}`, and it equals `(z u z⁻¹ u⁻¹) · 1` in the block.
 - `r > 0`: `Z(K)_r` lies in the congruence subgroup (see above), and this statement applies.
 
-Worker 119's Task 5552 draft (revision 3, `KPLocalCentralizerFiltrationRootCompatible`)
-carries out this derivation in the `T`, `hT`, `e` form of the statement. In D1's
-convention, take `T = B.centralizerTorus hZ` and `e = Iso.refl _`
-(`centralizerTorusFiltration_eq_map_iso` in D1).
+The module `KPLocalCentralizerFiltrationRootCompatible` carries out this derivation
+(`centralizerTorusImage_isRootCompatible_of_torusRoot`). To pass from the `T`, `hT`, `e`
+form to the convention of `KPLocalMoyPrasadGroups`, take `T = B.centralizerTorus hZ` and
+`e = Iso.refl _` (`centralizerTorusFiltration_eq_map_iso` in `KPLocalMoyPrasadGroups`).
 
 ## Sources
 

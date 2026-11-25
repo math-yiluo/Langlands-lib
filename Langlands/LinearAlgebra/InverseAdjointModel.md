@@ -29,7 +29,7 @@ invertible.
 The universe `u` is arbitrary. There is no nonemptiness hypothesis on `I`.
 The construction and all proofs include empty `I`, when only the scalar block
 remains. No growth-comparison theorem or archimedean specialization is part of
-this unit. Only published Mathlib modules are imported.
+this module. Only published Mathlib modules are imported.
 
 ## Intrinsic properties and proofs
 

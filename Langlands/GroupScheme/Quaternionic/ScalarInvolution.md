@@ -1,7 +1,5 @@
 # The scalar involution
 
-Authors: Worker 5196.
-
 Module `Langlands.GroupScheme.Quaternionic.ScalarInvolution`, namespace
 `Langlands.GroupScheme.Quaternionic.FirstKindInvolution`. This module defines the identity
 involution of a commutative ring regarded as an algebra over itself. It also records how the

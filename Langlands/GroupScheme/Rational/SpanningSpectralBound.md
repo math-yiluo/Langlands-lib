@@ -1,7 +1,5 @@
 # Spectral entry bounds when actual rational matrices span
 
-Author: Worker 1296.
-
 `MatrixRepresentation.HasFullRationalMatrixSpan` says that the base-field
 linear span of the matrices of every actual rational point is the whole
 matrix algebra. The points and matrices are the existing `rationalPoints`

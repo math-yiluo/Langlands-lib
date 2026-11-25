@@ -42,7 +42,7 @@ private def recursiveTensorIso {Y : Scheme.{u}} (M : Y.Modules) :
 
 private lemma geomFibreH0Finrank_id_eq_relativeH0 {K : Type u} [Field K] {Y : Scheme.{u}}
     (f : Y ⟶ Spec (CommRingCat.of K)) [IsProper f] (M : Y.Modules)
-    (hM : Scheme.Modules.IsInvertible M) :
+    (hM : Scheme.Modules.IsInvertibleFLT M) :
     Scheme.Modules.geomFibreH0Finrank f M K (RingHom.id K) =
       Module.finrank K ((relativeCohomology f 0).obj M) := by
   rw [Scheme.Modules.geomFibreH0Finrank_id_eq_finrank_sections K f M hM]

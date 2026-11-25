@@ -1,6 +1,6 @@
 # Twists, contragredients and central characters of segment constituents
 
-Author: Worker 47. These proposition definitions state how the segment
+These proposition definitions state how the segment
 relations of the published module
 `Langlands.Representation.Classification.Segments` behave under three
 operations, for segments of supercuspidal representations of general linear
@@ -194,7 +194,11 @@ ambient representation; the algebraic form of this step is the published
   `SegmentConstituentCentralCharacter` is proved, for every `F` and `T`, by
   the published theorem `Classification.segmentConstituentCentralCharacter`
   (`Classification/SegmentConstituentCentralCharacterProof`). The two twist
-  statements, the contragredient statement and the bundles
+  statements are proved by `Classification.segmentConstituentRealTwistCompatibility`
+  (`Classification/SegmentConstituentRealTwistCompatibilityProof`) and
+  `Classification.segmentConstituentCharacterTwistCompatibility`
+  (`Classification/SegmentConstituentCharacterTwistCompatibilityProof`). The
+  contragredient statement and the bundles
   `SegmentConstituentCompatibilityTheorems` and
   `PadicSegmentConstituentCompatibilityTheorems` have no proof in the
   Library. The twist statements follow formally from BZ77 1.9(f). The

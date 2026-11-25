@@ -1,6 +1,6 @@
 import Langlands.Global.AdelicFunctoriality.AlmostEverywhereSplitNormStatement
 import Langlands.Global.AdelicFunctoriality.IdeleNormLift
-import Langlands.ClassField.Global.IdeleArchimedean
+import Langlands.ClassFieldTheory.Global.IdeleArchimedean
 import Langlands.Global.AdelicFunctoriality.MixedWeakApproximation
 import Langlands.Global.AdelicFunctoriality.LocalNormNeighborhood
 
@@ -11,7 +11,7 @@ noncomputable section
 namespace Langlands.Global.AdelicFunctoriality
 
 open NumberField IsDedekindDomain IsDedekindDomain.HeightOneSpectrum Filter
-open Langlands.ClassField.Global
+open Langlands.ClassFieldTheory.Global
 open scoped NumberField FiniteExtension
 
 universe u v

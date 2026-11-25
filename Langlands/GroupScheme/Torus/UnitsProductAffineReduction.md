@@ -1,7 +1,5 @@
 # Affine product-units splitting from tensor-product units
 
-Worker 865.
-
 This module supplies the coordinate-ring bridge for the product-units theorem.
 It defines the fixed-algebra predicate
 `Langlands.GroupScheme.UnitsProduct.TensorUnitsSplit.{u,v,w}` and proves that
@@ -29,8 +27,9 @@ independent universes for all three rings, `TensorUnitsSplit k A B` states
 ```
 
 This is a `Prop`-valued definition with no assertion that it holds for arbitrary
-rings. It allows an eventual theorem for finitely generated domains over an
-algebraically closed field to be used without importing an unpublished theorem
+rings. It allows a theorem for finitely generated domains over an
+algebraically closed field (in the Library, `Langlands.Algebra.rosenlichtTensorUnits`)
+to be used without importing that theorem here
 or introducing an extra premise into the original target statement.
 
 ## Implemented bridge

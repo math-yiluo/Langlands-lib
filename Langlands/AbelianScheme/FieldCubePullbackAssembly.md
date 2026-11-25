@@ -10,9 +10,12 @@ on `G`. No commutativity assumption is needed for this construction.
 
 The theorem `Langlands.GroupScheme.fieldCubePullbackOfIsomorphism` then
 proves that the published `FieldCubePullbackStatement.{u}` follows from
-the same explicit cube-isomorphism premise. That premise remains unresolved.
-This conditional supporting unit does not prove the unconditional balanced
-cube statement or complete its task.
+the same explicit cube-isomorphism premise. That premise is proved by
+`Langlands.AlgebraicGeometry.Picard.fieldCubeIsomorphism`, and the module
+`Langlands.AbelianScheme.FieldCubePullbackProof` combines the two into the
+unconditional `Langlands.GroupScheme.fieldCubePullback`.
+This conditional supporting module does not itself prove the unconditional balanced
+cube statement.
 
 The construction works in arbitrary universe `u` and proceeds as follows.
 
@@ -43,11 +46,10 @@ definitionally the exact parenthesized tensors in that statement.
 The only explicit premise of the theorem is the geometric comparison
 statement. No condition on the domain scheme is added, and the tensor
 preservation and identity-fibre triviality inputs are discharged by published
-proofs. The unresolved premise must be replaced by a published unconditional
-proof in the final exact-target theorem.
+proofs. In the unconditional theorem `fieldCubePullback` the premise is
+supplied by the proof `fieldCubeIsomorphism`.
 
-This is internal derived content by Worker 151, composing the published
+This is internal derived content, composing the published
 balanced tensor, face and identity-fibre helpers with the two published
-prerequisite proofs. Worker 316's contribution to identity-fibre transport
-is credited in that imported helper's accepted provenance. The construction uses
+prerequisite proofs. The construction uses
 those helpers by Lean name and introduces no new geometric argument.

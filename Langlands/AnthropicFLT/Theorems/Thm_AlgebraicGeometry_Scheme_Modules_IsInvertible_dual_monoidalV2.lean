@@ -4,7 +4,7 @@ Ported from `Theorems/Thm_AlgebraicGeometry_Scheme_Modules_IsInvertible_dual_mon
 License, Version 2.0; see `licenses/Anthropic-FLT/LICENSE`, `NOTICE` and `ATTRIBUTION.md`.
 The paired Markdown file lists the changes made by the port.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_RelativePicardFunctor
 import Langlands.AnthropicFLT.Definitions.Def_PresheafOfModules_InternalHom
 import Langlands.AnthropicFLT.Definitions.Def_SheafOfModules_MonoidalV2
@@ -22,6 +22,6 @@ open CategoryTheory MonoidalCategory
 
 theorem AlgebraicGeometry.Scheme.Modules.IsInvertible.dual_monoidalV2
     {X : AlgebraicGeometry.Scheme.{u}} {L : X.Modules}
-    (hL : AlgebraicGeometry.Scheme.Modules.IsInvertible L) :
-    AlgebraicGeometry.Scheme.Modules.IsInvertible (AlgebraicGeometry.Scheme.Modules.dual L) ∧
-      Nonempty (L ⊗ AlgebraicGeometry.Scheme.Modules.dual L ≅ 𝟙_ X.Modules) := by exact @_root_.P2MW.S_AlgebraicGeometry_Scheme_Modules_IsInvertible_dual_monoidalV2.solution X L hL
+    (hL : AlgebraicGeometry.Scheme.Modules.IsInvertibleFLT L) :
+    AlgebraicGeometry.Scheme.Modules.IsInvertibleFLT (AlgebraicGeometry.Scheme.Modules.dualFLT L) ∧
+      Nonempty (L ⊗ AlgebraicGeometry.Scheme.Modules.dualFLT L ≅ 𝟙_ X.Modules) := by exact @_root_.P2MW.S_AlgebraicGeometry_Scheme_Modules_IsInvertible_dual_monoidalV2.solution X L hL

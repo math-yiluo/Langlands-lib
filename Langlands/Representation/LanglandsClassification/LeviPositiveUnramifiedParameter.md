@@ -1,6 +1,6 @@
 # Positive unramified Levi characters realizing actual real parameters
 
-Worker 148. This internal construction realizes every real character
+This internal construction realizes every real character
 parameter of an actual rational Levi's split component by a positive
 continuous unramified character of that same Levi. All groups and component
 inclusions are the original group schemes. The field is a

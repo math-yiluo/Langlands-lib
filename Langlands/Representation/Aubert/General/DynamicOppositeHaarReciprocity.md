@@ -27,18 +27,21 @@ centralizer and the dynamic unipotent subgroup of the inverse cocharacter
   `leviAdjointDeterminantReciprocity_of_structure` and the proved
   `dynamicCentralizerReductive` derive the statement used above from these two.
 
-These results are conditional on the named Library statements. Neither statement is
-proved in the Library at the time of writing.
+These results are conditional on the named Library statements. The Library proves them
+as `leviAdjointDeterminantReciprocity` (`GroupScheme/Dynamic/LeviAdjointDeterminantReciprocityProof`),
+`relativeRootReflectionExistence` (`GroupScheme/Rational/RootReflectionExistenceProof`) and
+`centralSplitTorusCharacter` (`GroupScheme/Rational/CentralSplitTorusCharacterProof`).
 
 ## Provenance
 
 This is the reciprocity `δ_{N̄} δ_N = 1` on `M`, used in the proof of (VI.9.6.2) of
 Renard 2026, VI.9.6 (printed pp. 201–203, PDF pp. 207–209). There `N̄` is the unipotent
 radical of the opposite parabolic. Renard uses it without separate statement. The
-formulation for the parabolic of an arbitrary cocharacter is ours. The proof follows Worker
-1415's proof `rationalOppositeHaarReciprocity_of_dynamic` for standard rational Levis
-(task c94e5d12). The changes are the source of the maximal split torus and the subgroups
-being abstract.
+formulation for the parabolic of an arbitrary cocharacter is ours. The proof follows an
+earlier proof of the reciprocity for standard rational Levis. The changes are the source of
+the maximal split torus and the subgroups being abstract. The standard rational case,
+`rationalOppositeHaarReciprocity` in `RationalOppositeHaarReciprocityProof`, is derived
+from this module.
 
 ## Proof
 

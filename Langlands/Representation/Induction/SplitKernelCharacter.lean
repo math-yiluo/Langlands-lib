@@ -204,7 +204,11 @@ theorem coinvariantsKer_le_comap_relations :
     Jacquet.Localization.relations (compactInduced H σ) r.ker θ.toMonoidHom
   have hsym : ∀ y, (E).symm (compactInduced I σI n y) = compactInduced H σ (n : G) ((E).symm y) :=
     fun y => Representation.IntertwiningMap.isIntertwining _ _ (E).symm.toIntertwiningMap n y
-  rw [map_sub, map_sub, characterMultiply_translate, map_smul, hsym]
+  have hsub : ∀ y z, (E).symm (y - z) = (E).symm y - (E).symm z :=
+    fun y z => (E).symm.toLinearMap.map_sub y z
+  have hsmul : ∀ (c : ℂ) y, (E).symm (c • y) = c • (E).symm y :=
+    fun c y => (E).symm.toLinearMap.map_smul c y
+  rw [map_sub, hsub, characterMultiply_translate, hsmul, hsym]
   have h := (Jacquet.Localization.relations (compactInduced H σ) r.ker θ.toMonoidHom).smul_mem
     (((θ.toMonoidHom n)⁻¹ : ℂˣ) : ℂ)
     (Jacquet.Localization.sub_mem_relations (compactInduced H σ) r.ker θ.toMonoidHom n

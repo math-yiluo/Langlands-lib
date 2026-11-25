@@ -1,7 +1,7 @@
 /-
 Copyright 2026 Anthropic, PBC.
 Released under the Apache License 2.0; see licenses/Anthropic-FLT/LICENSE.
-Adapted by Worker 344 from
+Adapted from
 P2M/Sol/S_AlgebraicGeometry_ProjSpace_specMap_comp_awayInclusion_eq_of_forall_apply_ratio_mul_eq.lean
 and its Theorems wrapper at 6e837e75355538c7f80bab5b956861e86c4eacc2.
 Changes: published imports, ordinary namespace and direct export.

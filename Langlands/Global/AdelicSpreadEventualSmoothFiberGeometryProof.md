@@ -1,8 +1,5 @@
 # Eventual smoothness and fibre geometry over the actual integer rings
 
-Authors: Worker 208 (complete Lean proof and first Markdown draft); Worker
-1557 (source and interface verification, Markdown revision and submission).
-
 `Langlands.Global.adelicSpreadEventualSmoothFiberGeometry` proves exactly
 `Langlands.Global.AdelicSpreadEventualSmoothFiberGeometryStatement.{u}`.
 It specializes the published filtered-ring descent theorems to the actual

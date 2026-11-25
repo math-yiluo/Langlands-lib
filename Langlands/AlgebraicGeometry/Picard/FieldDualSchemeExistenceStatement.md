@@ -36,8 +36,7 @@ This is a derived representability consequence of those passages in
 the project's chosen geometric-fibre formulation. In the Library,
 `IsPicardZeroFamily` tests translation invariance of the restricted
 line bundle at every algebraically closed field-valued point of the
-test scheme. This implements the criterion specified in parent-task
-item 3; it is not already a formal identification with the identity
+test scheme. This implements that chosen criterion; it is not already a formal identification with the identity
 component of a Picard scheme. A proof of this target must supply
 the comparison and representability arguments required to obtain
 the universal family for this exact predicate, including its
@@ -53,9 +52,9 @@ the proof if its chosen route requires it.
 
 ## Proof obligation and scope
 
-This file supplies no proof or new axiom. The separate proof task
-must prove this exact proposition using the published definitions.
-Once such a proof is available, `dualScheme` and `poincareFamily`
+This file supplies no proof or new axiom. The Library proves this
+exact proposition as `fieldDualSchemeExistence` in
+`FieldDualSchemeExistenceProof`. Given such a proof, `dualScheme` and `poincareFamily`
 select the corresponding scheme and actual bundle, and the
 classification constructions apply.
 
@@ -64,4 +63,6 @@ bundle only. It does not separately construct or certify its
 commutative group structure, smoothness, properness, geometric
 connectedness, projectivity, or dimension, nor does it assert that
 `φ_L` is an isogeny. Those further conclusions of the source
-theorem remain distinct obligations.
+theorem are distinct statements; smoothness, properness and geometric
+connectedness over a field are `FieldDualSchemeGeometryStatement`, which the
+Library proves in `FieldDualSchemeGeometryProof`.

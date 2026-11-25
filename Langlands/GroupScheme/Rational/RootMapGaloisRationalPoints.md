@@ -1,7 +1,5 @@
 # Galois transport of rational values of compatible root maps
 
-Author: Worker 4348.
-
 Module `Langlands.GroupScheme.Rational.RootMapGaloisRationalPoints`.
 
 ## Statement

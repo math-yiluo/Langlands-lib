@@ -1,7 +1,5 @@
 # The action of End(ind_H^G ρ) on Hom(ind_H^G ρ, B)
 
-Author: Worker 1826.
-
 This is a supporting module for the proofs of Renard VI.4.4 (the Theorem
 `RationalSummandEndCenterStatement`, the Corollary
 `RationalSummandEndNoetherianStatement` and the Proposition

@@ -2,8 +2,8 @@ import Langlands.Global.AdelicFunctoriality.IdeleClassNormIndexFiniteStatement
 import Langlands.Global.AdelicFunctoriality.IdeleNormLift
 import Langlands.Global.AdelicFunctoriality.UnramifiedUnitNorm
 import Langlands.Global.AdelicFunctoriality.LocalDegree
-import Langlands.ClassField.Global.LocalUnitPowers
-import Langlands.ClassField.Global.IntegralIdeleClassQuotientFiniteStatement
+import Langlands.ClassFieldTheory.Global.LocalUnitPowers
+import Langlands.ClassFieldTheory.Global.IntegralIdeleClassQuotientFiniteStatement
 import Mathlib.GroupTheory.Schreier
 
 /-! # Reduction of the idele-class norm index lemma to the finiteness of `C_K / C∞`
@@ -22,7 +22,7 @@ namespace Langlands.Global.AdelicFunctoriality
 
 open NumberField IsDedekindDomain IsDedekindDomain.HeightOneSpectrum Filter
 open scoped NumberField
-open Langlands.ClassField.Global
+open Langlands.ClassFieldTheory.Global
 
 universe u v
 
@@ -210,7 +210,7 @@ theorem mem_range_ideleNorm_of_localPowerResidue_eq_one
     refine ⟨Units.map (NumberField.LiesOver.completionMap (v := v) (w := (wi v).1)).toMonoidHom y,
       ?_⟩
     change InfiniteExtension.localNorm v (wi v).1
-      (NumberField.LiesOver.completionMap (y : v.Completion)) = _
+      (NumberField.LiesOver.completionMap v (wi v).1 (y : v.Completion)) = _
     rw [InfiniteExtension.localNorm_algebraMap]
     have hy' := congrArg (fun z : (v.Completion)ˣ => (z : v.Completion)) hy
     simp only [powMonoidHom_apply, Units.val_pow_eq_pow_val,

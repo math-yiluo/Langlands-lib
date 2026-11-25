@@ -1,7 +1,5 @@
 # Kernel of restriction to the actual full centre
 
-Author: Worker 177.
-
 Let `d : TitsIndexData G` for an affine, locally finite type group scheme `G`
 over a field `K`. The datum supplies semisimplicity, a ground-field maximal
 torus, and its split pinning over `SeparableClosure K`. The map

@@ -44,15 +44,15 @@ variable {F : Type u} [Field F] [ValuativeRel F] [TopologicalSpace F]
 variable {G : GroupScheme (Spec (CommRingCat.of F))} [IsAffine G.X.left]
   [LocallyOfFiniteType G.X.hom]
 
-local instance : TopologicalSpace (GroupScheme.rationalPoints G) :=
+local instance rationalWavePacketCentralNormalizationTopologicalSpace : TopologicalSpace (GroupScheme.rationalPoints G) :=
   rationalPointTopology F G.X
-local instance : NonarchimedeanGroup (GroupScheme.rationalPoints G) :=
+local instance rationalWavePacketCentralNormalizationNonarchimedeanGroup : NonarchimedeanGroup (GroupScheme.rationalPoints G) :=
   rationalPoints_nonarchimedeanGroup G
 local instance : T2Space F := BruhatTits.localField_t2Space F
-local instance : T2Space (GroupScheme.rationalPoints G) := rationalPoint_t2Space F G
+local instance rationalWavePacketCentralNormalizationT2Space : T2Space (GroupScheme.rationalPoints G) := rationalPoint_t2Space F G
 local instance : LocallyCompactSpace (GroupScheme.rationalPoints G) :=
   rationalPoint_locallyCompactSpace F G
-local instance : SecondCountableTopology (GroupScheme.rationalPoints G) := by
+local instance rationalWavePacketCentralNormalizationSecondCountableTopology : SecondCountableTopology (GroupScheme.rationalPoints G) := by
   have : SecondCountableTopology F :=
     HarmonicAnalysis.GeneralLocalField.secondCountableTopology F
   let : TopologicalSpace (G.affinePoints (CommAlgCat.of (CommRingCat.of F) F)) :=
@@ -60,7 +60,7 @@ local instance : SecondCountableTopology (GroupScheme.rationalPoints G) := by
   have : SecondCountableTopology (G.affinePoints (CommAlgCat.of (CommRingCat.of F) F)) :=
     G.affinePointsSecondCountableTopology (CommAlgCat.of (CommRingCat.of F) F)
   exact (GroupScheme.rationalPointsAffineHomeomorph G).isEmbedding.secondCountableTopology
-local instance : Nonempty (CompactOpenSubgroup (GroupScheme.rationalPoints G)) :=
+local instance rationalWavePacketCentralNormalizationNonemptyCompactOpenSubgroup : Nonempty (CompactOpenSubgroup (GroupScheme.rationalPoints G)) :=
   ⟨BruhatTits.rationalPointCompactOpenSubgroup F G⟩
 
 /-- The closed central part of `G¹` is exactly the intersection with a maximal compact

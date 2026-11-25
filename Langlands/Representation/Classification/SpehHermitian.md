@@ -1,6 +1,6 @@
 # Speh representations are Hermitian
 
-Author: Worker 1808. Module `Langlands.Representation.Classification.SpehHermitian`.
+Module `Langlands.Representation.Classification.SpehHermitian`.
 
 ## Result
 
@@ -111,7 +111,7 @@ All in namespace `Langlands.Classification`; `F` and `T` are explicit arguments.
 
 `hermitianGelfandKazhdanEquiv`, `hermitianItPullback`,
 `hermitianProductFunctor_obj_congr` and `hermitianItPullbackProductIso` reuse
-the helpers extracted from `IrreducibleTwoFactorProductSwapProof` (Worker 1023)
+the helpers extracted from `IrreducibleTwoFactorProductSwapProof`
 into the shared `InverseTransposeHelpers` module. The module uses no axiom beyond `propext`, `Classical.choice` and `Quot.sound`,
 and no `sorry`.
 

@@ -1,7 +1,5 @@
 # Canonical Langlands quotients and Zelevinsky subrepresentations for `GL_n`
 
-Author: Worker 23.
-
 The published modules `Classification/Segments` and `Classification/LanglandsData`
 record the special representations of a segment, the Langlands quotient and
 Zelevinsky's representation only through relations on a given representation

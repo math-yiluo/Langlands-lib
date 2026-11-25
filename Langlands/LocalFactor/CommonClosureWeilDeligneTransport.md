@@ -1,6 +1,6 @@
 # Actual standalone transport of common-closure Weil–Deligne pairs
 
-Worker 40 authored this derived arithmetic attachment of the published
+This module is a derived arithmetic attachment of the published
 group-equivalence factor transport. Its namespace is
 `Langlands.LocalFactor.CommonClosureWeilDeligne.Transport`.
 
@@ -118,7 +118,7 @@ kernel, reciprocal Euler determinant, conductor correction and negative
 determinant on the invariant quotient. Source ID:
 `tate-1979-number-theoretic-background`; PDF SHA-256:
 `c890894fe19783890cc4def2c5bf92a18d71619acf8ba7005aefce4984fe70d6`.
-These pages were read directly during this unit's development.
+These pages were read directly during this module's development.
 
 This attachment is a derived compatibility of existing Library
 constructions, not a separately attributed theorem of Tate.
@@ -135,11 +135,11 @@ Its pair is an algebraic Weil–Deligne pair, with continuity preserved only
 when supplied. It does not claim the open-inertia hypotheses of Tate's
 arithmetic parameter category for every algebraic input.
 
-The identities use corresponding arbitrary Weil elements. This unit does
+The identities use corresponding arbitrary Weil elements. This module does
 not identify the geometric Frobenius subtype or prove equality of the
 intrinsic residue cardinalities needed for spectral coordinates `q^(-s)`.
 It does not transport a full ordinary epsilon system, additive characters
 or Haar measures, and proves no system existence or functional equation.
 The quotient determinant is only the monodromy correction to a full
 epsilon factor. Choice-independence and composition coherence for the
-existing closure lift are not asserted. The broad host task remains open.
+existing closure lift are not asserted.

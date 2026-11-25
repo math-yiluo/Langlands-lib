@@ -1,7 +1,5 @@
 # Actual parabolic subgroup functors and identity-test comparisons
 
-Author: Worker 1291.
-
 This internal interface reuses `IsParabolicFunctor` from
 `Rational.MinimalParabolic`. That predicate means that the functor is the range
 on every test scheme of an actual closed parabolic embedding over the ground

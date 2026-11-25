@@ -1,12 +1,11 @@
 # The open locus of the Hilbert scheme over which the classified family lies in an open
 
-Authors: Worker 5705.
-
 Helper module of the proof of
 `Langlands.AlgebraicGeometry.FlatProperEquivalenceRelationQuotientReductionStatement` (entry
 module `Langlands.AlgebraicGeometry.FlatProperEquivalenceRelationQuotientReductionProof`),
-written for Task 5705 (`07219dde-fd87-48cf-83be-db16cbb3707c`) under operator request
-`98389b48910e54088e0e2b2ba6aaad9c`. It contains no `sorry` and no new axioms.
+written for the proof of scheme representability, with affine neighbourhoods, of the Picard
+sheaf of pointed projective flat families with geometrically integral fibres over noetherian
+rings. It contains no `sorry` and no new axioms.
 
 ## Content
 

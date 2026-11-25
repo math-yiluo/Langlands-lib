@@ -1,9 +1,9 @@
 # The quotient of a connected reductive group by its centre: statements
 
-Worker 1400 (draft) and Worker 1499 (source check).
-
 This module defines two propositions and proves nothing. It constructs no
-quotient. Proofs of the propositions are separate tasks.
+quotient. The propositions are proved as `centerQuotientReductive` in
+`Adjoint.CenterQuotientReductiveProof` and `centerQuotientCenterTrivial` in
+`Adjoint.CenterQuotientCenterProof`.
 
 ## Common hypotheses
 
@@ -103,5 +103,4 @@ follows.
 - Milne's "reductive" is the Library's `IsConnectedReductive`, and Milne's
   "trivial centre" is `center Q = ⊥` on all test schemes over `Spec k`.
 
-This module does not prove these comparisons or the propositions; they are
-obligations of the proof tasks for these statements.
+This module does not prove these comparisons or the propositions.

@@ -1,6 +1,6 @@
 # Affine closed loci of projective tensor equations
 
-This internal derived unit connects `ProjectiveTensorCoefficients` to actual
+This internal derived module connects `ProjectiveTensorCoefficients` to actual
 schemes. For a set I in A tensor_R P, `tensorCoefficientLocus I` is the spectrum
 of A modulo its coefficient ideal. `tensorCoefficientLocusι` is its canonical
 closed immersion into Spec A. These constructions do not require projectivity.

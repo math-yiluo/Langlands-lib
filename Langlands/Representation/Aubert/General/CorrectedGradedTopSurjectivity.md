@@ -1,11 +1,11 @@
 # Surjectivity of the last graded differential of the corrected filtration
 
-Author: Worker 1252. The actual Jacquet diagram, the corrected support
+The actual Jacquet diagram, the corrected support
 filtration, its graded pieces and the `FiniteFiltered.gradedMap` form
-`gradedDifferential` are Worker 691's modules `General.JacquetCutDiagram` and
+`gradedDifferential` are the modules `General.JacquetCutDiagram` and
 `General.CorrectedDegreeFiltration`. The Boolean contraction, the survivor
 predicate `Survives`, `leftDescentSet` and the eliminator `graded_cases` are
-this author's `General.CorrectedGradedContraction` and
+in `General.CorrectedGradedContraction` and
 `General.CorrectedGradedExactness`. The Coxeter length facts
 `eq_of_forall_length_mul_simple_lt` (`Group.RelativeWeylLongestProof`),
 `length_mul_of_right_minimal` and `minimalityLengthCriterion_proof`
@@ -13,15 +13,15 @@ this author's `General.CorrectedGradedContraction` and
 `BooleanInterval.exact_of_free_coordinate` (`BooleanIntervalComplex`), the
 rank-ordered enumeration `Support.rankOrderedEquiv` (`RankOrderedSupports`),
 the two graded targets, the Levi Weyl identification and the support
-category are earlier Library work by other authors.
+category come from other modules of the Library.
 
 This internal helper module serves the corrected Aubert Theorem 3.6 route
 (Aubert, *Dualité dans le groupe de Grothendieck de la catégorie des
 représentations lisses de longueur finie d'un groupe réductif p-adique*,
 Trans. AMS 347 (1995), Thm. 3.6, and its erratum). It is derived glue and is
-not a statement of the paper. It was written for Worker 757's top-degree
-cokernel step, an unpublished module that this module does not import. Its
-premise `hsurj` asks for surjectivity of the graded map into degree `|S| - |I|` at every
+not a statement of the paper. It serves the top-degree cokernel step of
+`General.AssociatedLeviSurvivingStep`, a module that this module does not
+import. The premise `hsurj` of that step asks for surjectivity of the graded map into degree `|S| - |I|` at every
 grade after a fixed grade `i₀`.
 
 That premise does not hold at every grade unconditionally. A graded piece
@@ -106,8 +106,8 @@ surjective. The proof uses `graded_cases`. In case A degree `k + 1` of the
 quotient is zero (`degree_subsingleton_of_le`). In case B it is
 `surjective_top_of_survives`.
 
-`gradedDifferential_surjective_iff`: Worker 691's
-`gradedDifferential ... i k` is surjective if and only if degree differential
+`gradedDifferential_surjective_iff`: the
+`gradedDifferential ... i k` of `General.CorrectedDegreeFiltration` is surjective if and only if degree differential
 `k` of `gradedDiagram ... i` is. It transfers along `gradedEquiv` and
 `gradedEquiv_differential`.
 
@@ -117,7 +117,8 @@ quotient is zero (`degree_subsingleton_of_le`). In case B it is
 `a ∈ W_{K₀} ↔ w_{i₀}⁻¹ a w_{i₀} ∈ W_I` for all `a` (`hconj₀`), that `w_{i₀}`
 is right-`I`-minimal (`hR₀`), and that
 `leftDescentSet cs w_{i₀} = Finset.univ \ K₀` (`hD₀`). The conclusion has
-the shape of Worker 757's `hsurj` for this `A`:
+the shape of the premise `hsurj` of `General.AssociatedLeviSurvivingStep` for
+this `A`:
 
 ```
 ∀ k, k + 1 = Complex.terminalDegree I → ∀ i, i₀ < i →

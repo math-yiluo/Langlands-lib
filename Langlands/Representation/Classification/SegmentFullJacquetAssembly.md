@@ -1,7 +1,5 @@
 # Assembly of the full cuspidal Jacquet modules of segment constituents
 
-Author: Worker 964.
-
 Module `Langlands.Representation.Classification.SegmentFullJacquetAssembly`,
 namespace `Langlands.SegmentFullJacquet`. This is an internal helper for the proof
 of `Langlands.Classification.SegmentFullJacquetFormula` (Zelevinsky 1980, 3.1 and

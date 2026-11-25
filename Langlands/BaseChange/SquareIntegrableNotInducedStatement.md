@@ -4,9 +4,9 @@ This module states, as a proposition, that an irreducible square-integrable
 representation of `GL_n(F)` is not isomorphic to a representation induced from
 a proper standard block parabolic subgroup. It is not proved here. It is the
 first step ("square-integrable representations are σ-discrete for `σ = 1`") of
-the recommended route of Task 7882 to the Library statement
+a route to the Library statement
 `PseudoCoefficientExistenceStatement`; see
-`Langlands.BaseChange.PseudoCoefficientExistenceReduction`.
+`Langlands.BaseChange.PseudoCoefficientExistenceReduction`, which takes it as a premise.
 
 ## Statement
 
@@ -95,7 +95,7 @@ chamber and its block valuations are not all equal, so it is outside
 
 ## Provenance
 
-Derived. The proposition is the author's formulation, with the Library's
+Derived. The proposition is this module's formulation, with the Library's
 predicates (`JacquetLanglands.IsSquareIntegrable`, `BlockShape`,
 `Induction.smoothInduced`) and in the shape of the last clause of
 `IsSigmaDiscreteSeries`, of the classical fact recalled in HL II.1.7 that a

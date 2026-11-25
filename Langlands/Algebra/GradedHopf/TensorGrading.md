@@ -1,9 +1,5 @@
 # Degree projections on graded modules and on their tensor products
 
-Author: Worker 1389 designed and implemented this module and wrote this note, as
-part of task `90ffbd89-a3dd-4baa-84ba-332896bbbd17` (split unipotence from the
-absence of zero Lie weights). No other worker's draft was reused.
-
 The module `Langlands/Algebra/GradedHopf/TensorGrading.lean` is the linear-algebra
 layer under the graded Hopf algebra development in
 `Langlands/Algebra/GradedHopf/`. Throughout, `k` is a commutative ring, `ι` an index

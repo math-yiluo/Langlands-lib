@@ -293,8 +293,7 @@ def fullSourcePieceEquiv (hfull : refinedLevi F.Carrier B S = ⊤)
   let Q' := (subgroupEqualityFunctor _ _ hR).obj Q
   have eQ' : Q'.representation.Equiv (τ.comp e.symm.toMonoidHom) :=
     subgroupEqualityEquivOf _ _ hR Q τ e.symm.toMonoidHom eQ
-  change (T.normalizedRefinedInduced C R Q'.representation).Equiv _
-  exact normalizedRefinedInducedCongr T C R eQ'
+  exact (normalizedRefinedInducedCongr T C R eQ' : _)
 
 end Piece
 
@@ -693,8 +692,8 @@ theorem jacquet_quotient_support {a b k : ℕ} (ha : 0 < a) (hb : 0 < b)
   · exfalso
     have hsub := geometricPieceFunctor_subsingleton_of_proper_source F T _ _ (e (perm i)).val
       (S (e (perm i))) (R (e (perm i))) (hS (e (perm i))).2.1 (hR (e (perm i))).2.1 _ hc.2 hP
-    exact hψ' (LinearMap.ext fun v => by
-      rw [@Subsingleton.elim _ hsub v 0, map_zero, LinearMap.zero_apply])
+    have hsub' : Subsingleton P := hsub
+    exact hψ' (Subsingleton.elim ψ' 0)
 
 end Core
 

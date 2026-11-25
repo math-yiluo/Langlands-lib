@@ -27,9 +27,9 @@ local instance (w : InfinitePlace K) : Field (placeCompletion K (.inl w)) :=
 local instance (w : InfinitePlace K) : IsTopologicalDivisionRing A :=
   inferInstanceAs (IsTopologicalDivisionRing w.Completion)
 
-local instance {R : Type u} [CommRing R] [TopologicalSpace R] (n : ℕ) :
+private local instance {R : Type u} [CommRing R] [TopologicalSpace R] (n : ℕ) :
     MeasurableSpace (GeneralLinear n R) := borel _
-local instance {R : Type u} [CommRing R] [TopologicalSpace R] (n : ℕ) :
+private local instance {R : Type u} [CommRing R] [TopologicalSpace R] (n : ℕ) :
     BorelSpace (GeneralLinear n R) := ⟨rfl⟩
 
 /-- Apply the continuous splitting of the completed tensor algebra entrywise,

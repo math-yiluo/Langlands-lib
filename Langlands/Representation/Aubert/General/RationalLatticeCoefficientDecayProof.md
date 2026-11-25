@@ -1,7 +1,5 @@
 # Coefficient decay on the actual rational uniformizer lattice
 
-Author: Worker 19.
-
 `rationalLatticeCoefficientDecay` proves the complete
 `RationalLatticeCoefficientDecayStatement` at independent universes `u`, `v`
 and `w`. It chooses a single compact-open normal basis from the supplied
@@ -61,5 +59,5 @@ volume estimate or integrability assertion. Those remain obligations of the
 complete rational strict Jacquet criterion. The argument adds no
 finite-length, irreducibility or central-character premise and uses no
 classification, geometric lemma, adjointness, character independence or
-cuspidal-support theorem. The reused spectral proof chain retains Worker
-828's credited finite fixed-vector argument in its own paired files.
+cuspidal-support theorem. The reused spectral proof chain retains its
+finite fixed-vector argument, documented in its own paired files.

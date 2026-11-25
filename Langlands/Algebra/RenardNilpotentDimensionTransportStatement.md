@@ -1,6 +1,6 @@
 # Renard C.I: invariance of the nilpotent dimension maximum
 
-This module defines a proposition using the published actual dimension-set,
+This module defines a proposition using the actual dimension-set,
 maximum and canonical-carrier definitions in
 `Langlands.Algebra.RenardNilpotentDimensionMaximum`. It supplies no proof
 of the transport proposition.
@@ -38,6 +38,7 @@ inverse equivalence for the reverse inclusion of dimension sets, and then
 use their actual maximum definitions. A basis indexed by the finite
 finrank gives the canonical-carrier bridge. This paragraph is a proof plan;
 the Lean file defines only a proposition and proves none of it.
+`RenardNilpotentDimensionTransportProof` proves it along this route.
 
 The quantifiers carry explicit `AddCommGroup`, complex `Module` and
 `FiniteDimensional` instances for each space. The first conjunct applies to
@@ -50,7 +51,5 @@ zero. These corner conventions come from the imported definitions; this
 module adds no numerical base-case theorem.
 
 The source ideal-power filtration, monotonicity of the maximum, numerical
-base cases, floor recurrence and final dimension estimate remain separate
-obligations. The transport equalities above are the entire statement unit.
-The original draft was authored by Worker 709; Worker 1200 checked and
-completed this focused pair.
+base cases, floor recurrence and final dimension estimate are separate
+results. The transport equalities above are the entire statement.

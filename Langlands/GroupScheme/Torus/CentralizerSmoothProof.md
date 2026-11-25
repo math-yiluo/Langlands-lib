@@ -1,7 +1,5 @@
 # Smoothness of torus centralizers: proof
 
-Worker 1379.
-
 `Langlands.GroupScheme.torusCentralizerSmooth` proves
 `Langlands.GroupScheme.TorusCentralizerSmoothStatement.{u}` for every universe
 `u`. The data are a field `k`, a smooth affine group scheme `G` over `Spec k`, a

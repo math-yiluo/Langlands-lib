@@ -20,31 +20,32 @@ section Transport
 variable {A B A' : LocalizedCategory.{u, v, v} (K := K)}
 
 private theorem conjAut_hom_eq (e : A ≅ A') (a : Aut A) :
-    (e.conjAut a).hom = e.inv ≫ a.hom ≫ e.hom := by
+    (e.conjAut a).asIso.hom = e.inv ≫ a.asIso.hom ≫ e.hom := by
   rw [Iso.conjAut_apply]
   rfl
 
 private theorem equivariant_conjAut_source
     (e : A ≅ A') (p : A ⟶ B) (p' : A' ⟶ B)
     (he : e.hom ≫ p' = p) (a : Aut A) (b : Aut B)
-    (h : a.hom ≫ p = p ≫ b.hom) :
-    (e.conjAut a).hom ≫ p' = p' ≫ b.hom := by
+    (h : a.asIso.hom ≫ p = p ≫ b.asIso.hom) :
+    (e.conjAut a).asIso.hom ≫ p' = p' ≫ b.asIso.hom := by
   calc
-    (e.conjAut a).hom ≫ p' = e.inv ≫ (a.hom ≫ p) := by
+    (e.conjAut a).asIso.hom ≫ p' = e.inv ≫ (a.asIso.hom ≫ p) := by
       simp only [conjAut_hom_eq, Category.assoc, he]
-    _ = e.inv ≫ (p ≫ b.hom) := congrArg (e.inv ≫ ·) h
-    _ = p' ≫ b.hom := by rw [← he, Category.assoc, Iso.inv_hom_id_assoc]
+    _ = e.inv ≫ (p ≫ b.asIso.hom) := congrArg (e.inv ≫ ·) h
+    _ = p' ≫ b.asIso.hom := by rw [← he, Category.assoc, Iso.inv_hom_id_assoc]
 
 /-- A continuous action transports through an equivariant analytic isomorphism. -/
 theorem IsContinuousAction.of_equivariant_iso
     {σ : G →* Aut A} (hσ : IsContinuousAction σ) (e : A ≅ A') (σ' : G →* Aut A')
-    (h : ∀ t, (σ t).hom ≫ e.hom = e.hom ≫ (σ' t).hom) :
+    (h : ∀ t, (σ t).asIso.hom ≫ e.hom = e.hom ≫ (σ' t).asIso.hom) :
     IsContinuousAction σ' := by
   have he : e.conjAut.toMonoidHom.comp σ = σ' := by
     apply MonoidHom.ext
     intro t
+    apply Aut.ext
     apply Iso.ext
-    change (e.conjAut (σ t)).hom = (σ' t).hom
+    change (e.conjAut (σ t)).asIso.hom = (σ' t).asIso.hom
     rw [conjAut_hom_eq, h, Iso.inv_hom_id_assoc]
   rw [← he]
   exact hσ.conjAut e
@@ -73,8 +74,8 @@ theorem isContinuousAction_of_isPullback_of_smallFibreProduct
     (σ : G →* Aut P) {σA : G →* Aut (localizationFunctor.obj A)}
     {σB : G →* Aut (localizationFunctor.obj B)}
     (hA : IsContinuousAction σA) (hB : IsContinuousAction σB)
-    (hp : ∀ t, (σ t).hom ≫ p = p ≫ (σA t).hom)
-    (hq : ∀ t, (σ t).hom ≫ q = q ≫ (σB t).hom) :
+    (hp : ∀ t, (σ t).asIso.hom ≫ p = p ≫ (σA t).asIso.hom)
+    (hq : ∀ t, (σ t).asIso.hom ≫ q = q ≫ (σB t).asIso.hom) :
     IsContinuousAction σ := by
   let e := smallFibreProductComparisonIso f g hP
   let p' := localizationFunctor.map (smallFibreProductFst f g)
@@ -84,14 +85,14 @@ theorem isContinuousAction_of_isPullback_of_smallFibreProduct
     hP.isoIsPullback_hom_fst _ _ (smallFibreProduct_isPullback f g)
   have eq : e.hom ≫ q' = q :=
     hP.isoIsPullback_hom_snd _ _ (smallFibreProduct_isPullback f g)
-  have hp' (t : G) : (σ' t).hom ≫ p' = p' ≫ (σA t).hom :=
+  have hp' (t : G) : (σ' t).asIso.hom ≫ p' = p' ≫ (σA t).asIso.hom :=
     equivariant_conjAut_source e p p' ep (σ t) (σA t) (hp t)
-  have hq' (t : G) : (σ' t).hom ≫ q' = q' ≫ (σB t).hom :=
+  have hq' (t : G) : (σ' t).asIso.hom ≫ q' = q' ≫ (σB t).asIso.hom :=
     equivariant_conjAut_source e q q' eq (σ t) (σB t) (hq t)
   have hc := isContinuousAction_smallFibreProduct f g σ' σA σB hA hB hp' hq'
   apply hc.of_equivariant_iso e.symm σ
   intro t
-  change (e.conjAut (σ t)).hom ≫ e.inv = e.inv ≫ (σ t).hom
+  change (e.conjAut (σ t)).asIso.hom ≫ e.inv = e.inv ≫ (σ t).asIso.hom
   rw [conjAut_hom_eq]
   simp only [Category.assoc, Iso.hom_inv_id, Category.comp_id]
 
@@ -105,9 +106,9 @@ variable {P A B X : LocalizedCategory.{u, v, v} (K := K)}
 
 omit [TopologicalSpace G] in
 private theorem equivariant_comp_conjAut {A' : LocalizedCategory.{u, v, v} (K := K)}
-    (e : A ≅ A') (hp : ∀ t, (σ t).hom ≫ p = p ≫ (σA t).hom) (t : G) :
-    (σ t).hom ≫ (p ≫ e.hom) = (p ≫ e.hom) ≫ (e.conjAut (σA t)).hom := by
-  rw [conjAut_hom_eq, ← Category.assoc (σ t).hom p, hp]
+    (e : A ≅ A') (hp : ∀ t, (σ t).asIso.hom ≫ p = p ≫ (σA t).asIso.hom) (t : G) :
+    (σ t).asIso.hom ≫ (p ≫ e.hom) = (p ≫ e.hom) ≫ (e.conjAut (σA t)).asIso.hom := by
+  rw [conjAut_hom_eq, ← Category.assoc (σ t).asIso.hom p, hp]
   simp only [Category.assoc, Iso.hom_inv_id_assoc]
 
 private theorem isContinuousAction_of_isPullback_of_strongQuasiEtale
@@ -121,8 +122,8 @@ private theorem isContinuousAction_of_isPullback_of_strongQuasiEtale
     {σC : G →* Aut (localizationFunctor.obj (ofSaturation C))}
     {σE : G →* Aut (localizationFunctor.obj E)}
     (hC : IsContinuousAction σC) (hE : IsContinuousAction σE)
-    (hp : ∀ t, (σ t).hom ≫ p = p ≫ (σC t).hom)
-    (hq : ∀ t, (σ t).hom ≫ q = q ≫ (σE t).hom) :
+    (hp : ∀ t, (σ t).asIso.hom ≫ p = p ≫ (σC t).asIso.hom)
+    (hq : ∀ t, (σ t).asIso.hom ≫ q = q ≫ (σE t).asIso.hom) :
     IsContinuousAction σ := by
   let F := recognitionMap f
   let H := recognitionMap g
@@ -153,8 +154,8 @@ a continuous action if both projections intertwine continuous actions. -/
 theorem isContinuousAction_of_isPullback_of_quasiEtale
     (hP : IsPullback p q f g) (hf : quasiEtale f)
     (hA : IsContinuousAction σA) (hB : IsContinuousAction σB)
-    (hp : ∀ t, (σ t).hom ≫ p = p ≫ (σA t).hom)
-    (hq : ∀ t, (σ t).hom ≫ q = q ≫ (σB t).hom) :
+    (hp : ∀ t, (σ t).asIso.hom ≫ p = p ≫ (σA t).asIso.hom)
+    (hq : ∀ t, (σ t).asIso.hom ≫ q = q ≫ (σB t).asIso.hom) :
     IsContinuousAction σ := by
   obtain ⟨A₀, X₀, f₀, hf₀, ⟨e⟩⟩ := hf
   let eA : localizationFunctor.obj (ofSaturation A₀) ≅ A := Arrow.leftFunc.mapIso e

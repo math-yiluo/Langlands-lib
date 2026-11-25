@@ -1,7 +1,5 @@
 # Unpinned uniqueness for isogenies of split reductive groups
 
-Worker 3483.
-
 `Langlands.GroupScheme.SplitIsogenyUniquenessStatement` is a `Prop`-valued
 declaration of the uniqueness assertion for arbitrary isogenies of split
 connected reductive groups over a field. This module states the proposition
@@ -111,7 +109,7 @@ is imposed on the centre. The statement includes tori, empty root systems
 and central torus factors.
 
 This generalizes the map scope of the published
-`SplitIsomorphismUniquenessStatement`, whose separate proof task remains
-unchanged. It complements the existence and extension assertions in
+`SplitIsomorphismUniquenessStatement`, which has its own proof
+(`splitIsomorphismUniqueness` in `Reductive.SplitIsomorphismUniquenessProof`). It complements the existence and extension assertions in
 `SplitIsogenyTheoremStatement` and the induced-map assertion in
 `IsogenyRootDatumStatement`. This module proves none of these statements.

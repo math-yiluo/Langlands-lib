@@ -1,7 +1,5 @@
 # Closed scheme representatives of actual subgroup membership
 
-Author: Worker 1726.
-
 This internal construction is derived from absolute subgroup membership,
 actual admissible representatives, and group-valued representability transfer.
 `SubgroupFunctor.IsSchemeRepresentedBy F j` means that every scheme map to the

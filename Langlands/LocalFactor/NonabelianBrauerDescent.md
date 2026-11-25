@@ -1,8 +1,9 @@
 # Conditional descent through the actual Brauer presentation
 
-Worker 1727 constructs linear descent from the explicit arithmetic hypothesis
+This module constructs linear descent from the explicit arithmetic hypothesis
 `KernelCompatibility F e` and the existing normalized reciprocity premise.
-This is internal quotient algebra for the existence task. The hypothesis remains
+This is internal quotient algebra for the existence of a nonabelian
+local-constant system. The hypothesis remains
 visible in every construction; no unconditional existence theorem is asserted.
 
 `presentation_ker_le_evaluation_ker` rewrites the arithmetic assertion as a

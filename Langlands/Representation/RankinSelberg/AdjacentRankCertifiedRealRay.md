@@ -42,12 +42,11 @@ The result is formal real-ray clearing with the same threshold and fixed
 polynomials and no additional scalar-uniqueness premise.
 
 These are internally derived compositions of the imported Library interfaces,
-not new assertions attributed to the original literature. The general spectral
-bridge included as an unchanged dependency is Worker 1191's contribution.
+not new assertions attributed to the original literature.
 The existence of the fixed-polynomial real-ray certificates remains an explicit
-premise; the large-twist model has not yet been identified with this literal
+premise; this module does not identify the large-twist model with this literal
 deformed family. Neither exact adjacent-rank parent proposition is proved by
-this contribution.
+this module.
 
 ## All-field port
 

@@ -1,7 +1,5 @@
 # Coefficients of group algebras over `Λ × Λ`
 
-Author: Worker 1387.
-
 This internal helper module, in the namespace
 `Langlands.GroupScheme.CentralSurjectionImage`, records coefficient formulas
 for group algebras `S[Λ] = AddMonoidAlgebra S Λ`, where `S` is a commutative

@@ -194,12 +194,13 @@ variable (Γ) in
 injective resolution of an equivariant object. -/
 def homologyAction (F : Equivariant 𝒯) (I : InjectiveResolution F.obj) (n : ℕ) :
     G →* End (((Γ.mapHomologicalComplex _).obj I.cocomplex).homology n) where
-  toFun g := HomologicalComplex.homologyMap (chainMap Γ F g I) n
+  toFun g := End.of (HomologicalComplex.homologyMap (chainMap Γ F g I) n)
   map_one' := by
     rw [(oneHomotopy Γ F I).homologyMap_eq n, HomologicalComplex.homologyMap_id]
     rfl
   map_mul' g h := by
-    rw [End.mul_def, ← HomologicalComplex.homologyMap_comp,
+    apply End.ext
+    rw [End.mul_asHom, ← HomologicalComplex.homologyMap_comp,
       (mulHomotopy Γ F g h I).homologyMap_eq n]
 
 variable (Γ) in

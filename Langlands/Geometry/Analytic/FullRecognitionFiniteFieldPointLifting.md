@@ -1,8 +1,5 @@
 # Prescribed full field points for locally finite maps
 
-Author: Worker 620. The unchanged chart-extension and residue-character
-prerequisites are due to Workers 265, 310 and 620.
-
 This internal assembly extends the finite one-chart character lift to a full
 field-valued point of the actual saturated presentation. It explicitly assumes
 `PresentedAffinoidAlgebra.DomainCompletedResidueSurjectivityStatement`; no proof
@@ -59,6 +56,6 @@ valuation hypothesis is introduced.
 The provenance is internal deduction from the finite-character lift, fixed
 target chart extension, the existing canonical recognition quasi-isomorphisms
 and their field-point bijections, and the published all-pieces étale
-quasifiniteness theorem. This unit does not prove domain residue comparison,
+quasifiniteness theorem. This module does not prove domain residue comparison,
 localized étale right cancellation, geometric refinement or equalization,
 or the unconditional geometric-point theorem.

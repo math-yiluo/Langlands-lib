@@ -5,14 +5,13 @@ Namespace `Langlands`. Universe parameters `uG` (the group) and `uV` (the carrie
 The module contains one **statement**, the `Prop`-valued definition
 `AdmissibleUnitaryOrthogonalComplementStatement`. It proves nothing.
 
-Worker 1222 wrote this statement unit under the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`. The published
+The published
 [AdmissibleSemisimplicityStatement](AdmissibleSemisimplicityStatement.md) states that an
 admissible unitarizable representation is semisimple: every invariant subspace has *some*
 invariant complement. Its proof ([AdmissibleSemisimplicityProof](AdmissibleSemisimplicityProof.md))
 builds the orthogonal complement, but the theorem's type asserts only existence. Renard's
 Proposition asserts more: the complement is the orthogonal `V₁^⊥` for the given form. This
-unit states that assertion.
+module states that assertion.
 
 ## Source and provenance
 
@@ -20,7 +19,7 @@ The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French edition dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1222 read IV.2.2, printed pp.97–98 / PDF pp.103–104:
+IV.2.2, printed pp.97–98 / PDF pp.103–104, reads:
 
 > Proposition. Soit `(π, V)` une représentation lisse unitaire admissible du groupe t.d. `G`
 > pour le produit hermitien `⟨. , .⟩_V`. Si `V₁` est un sous-espace `G`-stable de `V` alors
@@ -79,11 +78,12 @@ published proof of `AdmissibleUnitarySemisimplicityStatement` gives the same dec
 through the smooth-dual identification of the admissible subrepresentation `V₁`: the
 functional `s ↦ b(v, s)` on `V₁` is represented by some `s₀ ∈ V₁`, and `v − s₀ ∈ V₁^⊥`.
 
-## Remaining obligations
+## Proof
 
-The proof is a separate obligation. The published proof of
-`AdmissibleUnitarySemisimplicityStatement` constructs exactly this complement and can be
-reused.
+The proof is in `Langlands.Representation.Unitary.AdmissibleOrthogonalComplementProof`
+(`admissibleUnitaryOrthogonalComplement`). The published proof of
+`AdmissibleUnitarySemisimplicityStatement` constructs exactly this complement, and the
+proof in that module follows it.
 
 ## Imports
 

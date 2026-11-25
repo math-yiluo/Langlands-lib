@@ -1,7 +1,5 @@
 # The conjugacy transporter from a section to a point of a group scheme
 
-Worker 1296.
-
 This helper module studies the scheme of elements conjugating a section `x` of
 a group scheme `G` to a point `w`, and shows that it is a translate of the
 centralizer of `x` once one conjugating point is given. It is internal

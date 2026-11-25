@@ -29,5 +29,5 @@ results; their paired explanations supply the geometric derivations
 and source comparisons. It adds no hypothesis to the exact target.
 The finite set may be empty, points need not be closed, and schemes
 may have nilpotents. The target and all imported pairs are preserved.
-The application to canonical polarization bundles, integral CM models
-and representability remains with its assigned owners.
+This module does not treat the application to canonical polarization
+bundles, integral CM models or representability.

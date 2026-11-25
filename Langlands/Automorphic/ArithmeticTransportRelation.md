@@ -34,7 +34,7 @@ Arithmetic transport uses these published maps along `e`:
   `GL_n(𝔸_{K,f}) ≃ GL_n(𝔸_{L,f})`;
 - `ArchimedeanCompactTransport.compactEquiv n e`, the restriction of entrywise
   infinite transport to the standard compact subgroups (module
-  `Langlands.Global.ArchimedeanCompactTransport`, part of this contribution);
+  `Langlands.Global.ArchimedeanCompactTransport`, added together with this module);
 - `ArchimedeanLieTransport.envelopingEquiv n e`, the induced isomorphism of
   complex enveloping algebras.
 
@@ -96,9 +96,10 @@ These are the intrinsic well-formedness facts. All are proved in the module.
 The relation is between realizations that are given. It does not construct the
 transported realization `S ∘ e⁻¹` and does not assert that one exists. The
 existence of an arithmetic transport of every automorphic form, cusp form and
-irreducible cuspidal realization is a separate construction. It belongs to the
-global definition branch (Task 8), extending the published CM chain
-`AutomorphicCMTransport` → `OperatorCMTransportClasses`. For Galois stability,
+irreducible cuspidal realization is a separate construction, extending the
+published CM chain `AutomorphicCMTransport` → `OperatorCMTransportClasses`; it
+is in the modules `AutomorphicArithmeticTransport`,
+`OperatorArithmeticTransport` and `OperatorArithmeticTransportClasses`. For Galois stability,
 the case `d = c` used by the statements, no existence question arises. All
 coefficients are complex, and the module adds no topology.
 

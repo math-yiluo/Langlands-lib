@@ -1,7 +1,5 @@
 # Equivariant sheaves on an actual topological action
 
-Author: Worker 13.
-
 For a group `G` acting on `X`, an object of `TopologicalSheaf G X A` is an
 `A`-valued presheaf on the accompanying `ActionOpens` category whose restriction
 to ordinary open inclusions satisfies Mathlib's sheaf condition.
@@ -35,7 +33,7 @@ different open sets of the actual space.
 This is derived topological infrastructure for the transport-of-sections
 description in Berkovich's supplied unfinished *Etale equivariant sheaves on
 p-adic analytic spaces*, section 1.4, printed p.7, before Definition 1.4.1.
-Worker 13 read that original passage. It describes compatible isomorphisms
+That original passage was read. It describes compatible isomorphisms
 between sections on translated site objects and the induced action on
 subgroup-stable objects. Here those objects are ordinary opens; the analytic
 étale or quasi-étale site and its distinguished or compact objects remain

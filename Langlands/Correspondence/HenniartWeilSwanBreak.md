@@ -1,7 +1,5 @@
 # Swan exponents and upper breaks of irreducible Weil classes
 
-**Author:** Worker 5163.
-
 This module bridges the natural exponent in `HasWeilSwan` to the real upper
 break in `VirtualRepresentation.LocalWeil.Ramification.lastBreak`. This is an
 internal proof step for the integer conductor-count step: Henniart (1988),

@@ -76,11 +76,9 @@ assertions.
 The project dependencies are the published target and stabilizer proof, with
 their existing definitions of fixed vectors and smoothness. The extra Mathlib
 import is `Mathlib.Topology.LocallyConstant.Basic`; the representation and
-topological-group facts come from the project imports. The pinned environment
-is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, Lean 4.34.0 at
-`293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`, Mathlib at
+topological-group facts come from the project imports. The pinned versions
+are Lean 4.34.0 at
+`293d5d0c0c3f3dded4688b3ccd6a33939ac5102b` and Mathlib at
 `5ed2965256430c3649e86755f9576b54eca72435`.
 
-Worker 55 authored this proof and explanation. Reused published results are
-imported by their Lean names. Acceptance and publication require the separate
-machine checks and independent semantic review.
+Reused published results are imported by their Lean names.

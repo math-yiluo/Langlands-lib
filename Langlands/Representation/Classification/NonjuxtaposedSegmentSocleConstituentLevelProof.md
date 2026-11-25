@@ -1,9 +1,5 @@
 # Constituent level for nonjuxtaposed segment-socle products
 
-Authors: Worker 508 (proof and explanation), with Worker 593 (support
-combinatorics and identification of the published actual-subrepresentation
-extraction route).
-
 `Langlands.Classification.nonjuxtaposedSegmentSocleConstituentLevel` proves
 exactly the published proposition
 `Langlands.Classification.NonjuxtaposedSegmentSocleConstituentLevel.{uF,uV} F T`
@@ -99,10 +95,7 @@ inverse-half normalization. The new proof manipulates those actual functor
 objects, exact subquotients and support multisets; it introduces no other
 normalization. The segment and Leibniz proofs use the independently proved
 `mirabolicRadicalHaarModulus` comparison where needed, in
-`Group.GL.MirabolicModulusProof`, proof task
-`f947a735-872d-44db-a9ea-954d17dec4bd` for statement task
-`a622f240-4846-4086-b34f-f650ba636ee4`. Its independently published artifact
-is `f25fdd6c-d842-40be-b220-92bda8715865`. The support-shift proof works
+`Group.GL.MirabolicModulusProof`. The support-shift proof works
 with the actual determinant normalization directly, as its paired Markdown
 explains. The positive twist is `ρ ↦ νρ`, with `ν = |det|`; that direction
 is essential to the shifted-end/beginning contradiction.
@@ -141,26 +134,26 @@ finite-length extraction adapters and definitional content comparisons
 are internal implementation steps. They formalize the printed §4.5 route
 using actual smooth objects. Cited source passages are not treated as Lean
 proofs. All mathematical inputs below are imported by Lean name from
-independently accepted publications.
+published modules.
 
 ## Published proof dependencies
 
-| Module, relative to `Langlands.Representation` | Independently accepted artifact | Publication commit |
-| --- | --- | --- |
-| `Classification.SegmentProductDerivativeConstituentSupport` | `fe277145-8ec9-4367-874f-295b822b0119` | `223b9c65844ea8eecb00eafaad77269b9b54d787` |
-| `Classification.SegmentSocleDerivativeConstituentSupport` | `5671cd1a-0f31-40db-b0f2-edada9b0960a` | `9d1720cbedcfd184cf48bf36249fc3029583cafa` |
-| `Classification.NonjuxtaposedSegmentSupport` | `c655159d-bdd5-4aa7-8889-eebddeee01ff` | `5d3754ec863f6d5013aca65cbcec0801e6972d1f` |
-| `Classification.CuspidalIntegralTwistFreenessProof` | `a7545313-ab91-4eaf-881e-2ad0d4c58e56` | `f2f4a196a2ec57cae218f1368dade88282ce7207` |
-| `Classification.HighestDerivativeSupportShiftProof` | `69a2f4a3-5ed8-49ad-9570-2e54ca7fd84c` | `8415f6175c53876deb57d52d6700854f946e8529` |
-| `Category.RenardFinitenessProof` | `cfa3e67c-f4bd-4a63-9c59-a2890a9f753d` | `9d1720cbedcfd184cf48bf36249fc3029583cafa` |
-| `Smooth.RenardIrreducibleExistenceProof` | `8f5306ec-f8f5-475d-8a64-6fa123e36a75` | `5d3754ec863f6d5013aca65cbcec0801e6972d1f` |
-| `Derivative.GeneralLinearDerivativeFiniteLengthProof` | `fa9c4bdb-4d9c-4ca6-9eb0-dddded5e242f` | `47b67c4eb87954cf163f3a88bb94b9cbae2edbf0` |
-| `Derivative.ProductDerivativeSupportAggregation` | `88bf6476-51bf-4016-83db-68b65ba83479` | `1271a6b7c9a470deaa1b8e2aadc2e2defd10f5b5` |
+| Module, relative to `Langlands.Representation` | Publication commit |
+| --- | --- |
+| `Classification.SegmentProductDerivativeConstituentSupport` | `223b9c65844ea8eecb00eafaad77269b9b54d787` |
+| `Classification.SegmentSocleDerivativeConstituentSupport` | `9d1720cbedcfd184cf48bf36249fc3029583cafa` |
+| `Classification.NonjuxtaposedSegmentSupport` | `5d3754ec863f6d5013aca65cbcec0801e6972d1f` |
+| `Classification.CuspidalIntegralTwistFreenessProof` | `f2f4a196a2ec57cae218f1368dade88282ce7207` |
+| `Classification.HighestDerivativeSupportShiftProof` | `8415f6175c53876deb57d52d6700854f946e8529` |
+| `Category.RenardFinitenessProof` | `9d1720cbedcfd184cf48bf36249fc3029583cafa` |
+| `Smooth.RenardIrreducibleExistenceProof` | `5d3754ec863f6d5013aca65cbcec0801e6972d1f` |
+| `Derivative.GeneralLinearDerivativeFiniteLengthProof` | `47b67c4eb87954cf163f3a88bb94b9cbae2edbf0` |
+| `Derivative.ProductDerivativeSupportAggregation` | `1271a6b7c9a470deaa1b8e2aadc2e2defd10f5b5` |
 
 The last two inputs enter through the product selector. Its individual
 segment-support proof uses the independently published
-`segmentSocleDerivatives`, artifact `ac220f41-e7d4-4c9f-951f-0ff12e51412f`,
-commit `e530d1eb7e66b0d2b988684aaaa90a729bda10e2`. Its actual generic
+`segmentSocleDerivatives`, commit
+`e530d1eb7e66b0d2b988684aaaa90a729bda10e2`. Its actual generic
 ordered-support constructor uses exact derivative transport and actual
 Leibniz graded constituents. `ExactSmoothSubquotients` is the seventh
 direct import here and is already part of that generic construction's
@@ -192,7 +185,7 @@ modules. The generic categorical proofs use composition chains, subobject
 order comparisons and simple quotients; they have no segment input. The
 finite-multiset helper uses only segment definitions, twist arithmetic
 and the independently proved freeness result. The support-shift proof has
-its independently reviewed positive-twist, normalization and transitive
+its own positive-twist, normalization and transitive
 independence audit, preserved by exact-byte comparison here.
 
 A comment-stripped scan finds excluded identifiers only as proposition
@@ -202,10 +195,9 @@ as expected. This lexical check is supplemented by the actual proof route
 and the published upstream audits; no excluded proposition is assumed as
 a theorem or supplied as a premise.
 
-Generic infrastructure published under excluded host tasks is kept distinct
-from their excluded mathematical conclusions, as the complete trusted
-operator responses `2b34e4035a5b5dafad7ad84d5a8c0dd8` and
-`10df3136f50c5901b1061d52c6b92e07` explain. The lower single-segment support
+Generic infrastructure published in the development of excluded results is
+kept distinct from their excluded mathematical conclusions. The lower
+single-segment support
 pair lists those generic modules and their exact provenance: trivial-group
 quotients, supplied-data permutation/reduction, segment-product data,
 singleton comparison, inversion counting, filtration transport and the
@@ -213,33 +205,33 @@ empty tensor unit. The actual final construction retains the original
 order. None of those modules proves or assumes an excluded full
 classification conclusion.
 
-The audit preserves every contract exclusion, its proof successors and
-transitive mathematical consequences:
+The audit covers every excluded result, its proofs and transitive
+mathematical consequences:
 
-| Exclusion, including its proof successors and mathematical consequences | Audit result |
+| Exclusion, including its proofs and mathematical consequences | Audit result |
 | --- | --- |
-| `UnlinkedSegmentSocleProductIrreducible`, task `23e98d90-6055-4e35-91a9-b0f5d8a84961` | No conclusion or proof dependency. |
-| `LinkedSegmentSocleReverseProductStructure`, task `a55c4267-7e3a-43f6-8bb1-ce319e1d0aa9` | No conclusion or proof dependency. |
-| `LinkedSegmentSoclePairReducible`, task `8fa9f68b-fa1b-431a-97f6-5b163964d1fc` | No conclusion or proof dependency. |
-| `JuxtaposedSegmentSocleReverseProductStructure` and `LinkedSegmentSocleReverseProductQuotientHom`, task `7ff2a1e9-89dc-439e-a861-a567b3db92bf` and all proof successors | No conclusion or proof dependency. |
-| `SegmentSocleProductIrreducibility`, task `2ae5cbe5-0701-4509-88a0-db8cbeb35be4` | No conclusion or proof dependency. |
-| `AdjacentUnlinkedSegmentSocleSwap`, tasks `e3634665-571b-4852-9f4c-bab8a1053434` and `cded83f3-df9c-4018-bc61-dc54f5c1f9ab` | No conclusion or proof dependency. |
-| `TwoSegmentSocleCommutation`, tasks `426911b4-6620-413f-8065-04b25287f3bd` and `66e3b87c-647e-41e4-af18-df4d436765f0` | No conclusion or proof dependency. |
-| `LinkedSegmentSocleGluing`, tasks `c84cd52c-3ff3-4024-be50-8b84dd480888` and `6780b79c-9526-46aa-b8b4-00377d68b1ea` | No conclusion or proof dependency. |
-| `OrderedMultisegmentSocleExistence`, task `23189526-80b0-4828-a6d4-7ebec2cbeef5` | Name occurs only in proposition definitions; no proof is used. |
-| Socle exhaustion, task `f3a69bc8-7312-4f82-8a7d-ea3c8188cb63` | Only the explicitly listed generic definitions and tensor/filtration lemmas. |
-| Segment analytic classification, task `aca8805b-054f-4d56-8045-12db7f623404` | No conclusion or proof dependency. |
-| Special-head multisegment exhaustion, task `3bfb61fa-1129-4fc9-83fd-7fcfec22106e` | No conclusion or proof dependency. |
-| Ordered special-head existence, task `ebea9a8a-9b21-4208-aa31-98c2dea1f8a3` | Only the generic data/reduction module in the fixed statement chain. |
-| Quotient coverage, task `20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584` | Only generic trivial-group quotient algebra in the fixed statement chain. |
-| Ordered conversion, task `8252833d-c269-41a9-824c-5879e531b23b` | Only supplied-data permutation transport in the fixed statement chain. |
-| Tempered block uniqueness, task `52e97845-36bb-457d-b76f-70753334b88c` | No conclusion or proof dependency. |
-| `GenericSegmentProductUniqueness`, task `30341ae4-65f2-4a0e-9283-763db01a409e` | No conclusion or proof dependency. |
-| `SquareIntegrableLanglandsClassification`, task `1cb45da2-7007-4351-a694-594fb148b8d1` | Name occurs only in proposition definitions; no proof is used. |
-| Square-integrable exhaustion, task `cd8ab97c-0b78-4bce-97c4-d307a28159a4` | No conclusion or proof dependency. |
-| Regular exhaustion, task `bf433f0a-921a-428c-b0c0-6475438125ac` | No conclusion or proof dependency. |
-| Forward special-segment essential square-integrability, task `5eece9e8-7f6b-4ea9-abea-a1f9f1b8c807` | No conclusion or proof dependency. |
-| `SegmentHeadProductIrreducibility`, task `8364e73f-14ec-4d14-8f2b-1555a7c1ce95`, and its conclusions | Only the generic constructions just audited; the criterion and its conclusions are absent. |
+| `UnlinkedSegmentSocleProductIrreducible` | No conclusion or proof dependency. |
+| `LinkedSegmentSocleReverseProductStructure` | No conclusion or proof dependency. |
+| `LinkedSegmentSoclePairReducible` | No conclusion or proof dependency. |
+| `JuxtaposedSegmentSocleReverseProductStructure` and `LinkedSegmentSocleReverseProductQuotientHom` and all their proofs | No conclusion or proof dependency. |
+| `SegmentSocleProductIrreducibility` | No conclusion or proof dependency. |
+| `AdjacentUnlinkedSegmentSocleSwap` | No conclusion or proof dependency. |
+| `TwoSegmentSocleCommutation` | No conclusion or proof dependency. |
+| `LinkedSegmentSocleGluing` | No conclusion or proof dependency. |
+| `OrderedMultisegmentSocleExistence` | Name occurs only in proposition definitions; no proof is used. |
+| Socle exhaustion (`MultisegmentSocleExhaustion`) | Only the explicitly listed generic definitions and tensor/filtration lemmas. |
+| Segment analytic classification (`SegmentEssentialSquareIntegrableClassification`) | No conclusion or proof dependency. |
+| Special-head multisegment exhaustion (`MultisegmentHeadExhaustion`) | No conclusion or proof dependency. |
+| Ordered special-head existence (`OrderedMultisegmentHeadExistence`) | Only the generic data/reduction module in the fixed statement chain. |
+| Quotient coverage (`OrderedMultisegmentQuotientExhaustion`) | Only generic trivial-group quotient algebra in the fixed statement chain. |
+| Ordered conversion | Only supplied-data permutation transport in the fixed statement chain. |
+| Tempered block uniqueness (`TemperedBlockUniqueness`) | No conclusion or proof dependency. |
+| `GenericSegmentProductUniqueness` | No conclusion or proof dependency. |
+| `SquareIntegrableLanglandsClassification` | Name occurs only in proposition definitions; no proof is used. |
+| Square-integrable exhaustion (`SquareIntegrableLanglandsExhaustion`) | No conclusion or proof dependency. |
+| Regular exhaustion (`GLRegularLanglandsExhaustion`) | No conclusion or proof dependency. |
+| Forward special-segment essential square-integrability | No conclusion or proof dependency. |
+| `SegmentHeadProductIrreducibility` and its conclusions | Only the generic constructions just audited; the criterion and its conclusions are absent. |
 
 The permitted highest-derivative support-shift result (c) is used exactly as
 stated. The later strict-monotonicity result (e) and the segment-product

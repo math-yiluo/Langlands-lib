@@ -126,7 +126,7 @@ lemma fromUniversalUnit_isIso_of_affine (U : Over S) (a : sections f U)
     constructor
     · intro j l hj
       have he : (⟨j⟩ : ULift.{u + 1} (V ⟶ U)) = ⟨l⟩ :=
-        (h V).1 (ULift.ext _ _ hj)
+        (h V).1 (ULift.ext hj)
       exact congrArg ULift.down he
     · intro t
       obtain ⟨j, hj⟩ := (h V).2 ⟨t⟩
@@ -142,7 +142,7 @@ lemma fromUniversalUnit_isIso_of_affine (U : Over S) (a : sections f U)
     exact congrArg ULift.down hj
   · intro t
     obtain ⟨j, hj⟩ := hV.2 t.down
-    exact ⟨⟨j⟩, ULift.ext _ _ hj⟩
+    exact ⟨⟨j⟩, ULift.ext hj⟩
 
 /-- The actual presheaf isomorphism obtained from affine bijectivity of pullback
 of the specified universal unit. -/

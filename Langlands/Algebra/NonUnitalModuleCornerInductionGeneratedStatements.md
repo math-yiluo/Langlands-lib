@@ -1,9 +1,10 @@
 # Generatedness of actual corner induction and surjective descent
 
-This statement unit gives three closed, universally quantified `Prop` targets
+This module gives three closed, universally quantified `Prop` targets
 and their closed conjunction. All declarations are in
 `Langlands.Algebra.NonUnitalModuleCornerInductionGeneratedStatements`.
-The targets are stated here and remain unproved.
+The targets are stated here and not proved here; the proofs are in
+`NonUnitalModuleCornerInductionGenerated`.
 
 ## Sources and correspondence
 
@@ -27,8 +28,8 @@ The registered supplementary source
 PDF pp.1–2, has also been read. It warns that the ambient right corner module
 is not generally unital and supplies the corrected fixed-part injection
 argument. The governing 2026 version includes that warning and correction.
-The author's currently linked corrected French PDF and 2010 errata have these
-same fingerprints. No additional correction to the three assertions was found
+The corrected French PDF and 2010 errata linked by the author when the sources
+were checked have these same fingerprints. No additional correction to the three assertions was found
 in the consulted material.
 
 Renard's I.3 setting is an idempotented complex algebra. The first two targets
@@ -37,8 +38,8 @@ their conclusions use only the published original actions, balanced quotient,
 and additive generated subgroup. They require neither local units nor
 nondegeneracy. The third target uses `IsIdempotented A` to retain the
 nondegeneracy required by the actual full category. Agreement with separately
-bundled complex scalar structures and complex-linear categories remains a
-comparison obligation of the whole-book program.
+bundled complex scalar structures and complex-linear categories is a separate
+comparison, not made by these targets.
 
 ## Induced generatedness with the named original action
 
@@ -68,12 +69,12 @@ the values `a • ((e : A) • m)`, equipped with its proved original-action
 stability. Generatedness means that every vector belongs to that closure;
 it does not replace the original action by a unital action.
 
-The intended future proof uses the balanced identity
+The proof in `NonUnitalModuleCornerInductionGenerated` uses the balanced identity
 `a ⊗ z = (a * e) ⊗ z = a • (e ⊗ z)`, the idempotence of `e`,
 and additive generation of the actual tensor quotient. The first equality
 uses the **corner unit acting on `Z`**. It does not assert `a * e = a`
 in the ambient ring. This route is an explanation of the target, not a
-proof supplied by this unit or a premise of the target.
+proof supplied by this module or a premise of the target.
 
 ## Descent along the actual restricted map
 
@@ -92,7 +93,8 @@ The restriction is explicitly typed using the named inherited
 `aeMAddCommGroup` and `aeMModule` structures on both actual subtypes.
 It is the published map `x ↦ ⟨f x.val, map_mem e f x.property⟩`,
 with its full original intertwining structure. The target chooses no new
-map or surjectivity certificate. The proposed later proof is induction
+map or surjectivity certificate. The proof in
+`NonUnitalModuleCornerInductionGenerated` is induction
 on the target additive closure, lifting generators through surjectivity,
 and then applying the same descent to every target vector.
 No proof is provided here.
@@ -153,11 +155,10 @@ The descent target permits nonzero carriers with zero original action:
 its restricted map is then a map between the actual zero generated subgroups,
 and its generatedness implication retains its stated source hypothesis.
 
-The existing constructions are imported by their published Lean names and
-their authorship is unchanged. Worker 1006 authored this focused statement
-pair; Worker 633 contributed the original-source, contract, and interface
-verification as a second executor. These author-side checks are separate from
-independent semantic review. The fixed-part induction isomorphism, complex scalar comparison,
+The existing constructions are imported by their published Lean names.
+The statements were verified against the original source and the imported
+interfaces. The fixed-part induction isomorphism, complex scalar comparison,
 actual evaluation/counit and image, simple-class correspondence, extra
-submodule-closure condition, and equivalence criterion remain separate units.
-The exact aggregate proof is a separate successor after statement publication.
+submodule-closure condition, and equivalence criterion remain separate results.
+The aggregate is proved as `cornerInductionGeneratedStatements` in
+`NonUnitalModuleCornerInductionGenerated`.

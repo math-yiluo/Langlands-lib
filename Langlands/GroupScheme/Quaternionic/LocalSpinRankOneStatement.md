@@ -1,7 +1,5 @@
 # Quaternionic spin groups of rank one over local fields
 
-Authors: Worker 5197.
-
 `Langlands.GroupScheme.Quaternionic.LocalSpinRankOneStatement.{u}` is a proposition definition
 with arbitrary universe `u`. It states that the quadratic forms in family (iii) of
 Prasad–Raghunathan (1985), §2, have spin groups, and that these spin groups are simply

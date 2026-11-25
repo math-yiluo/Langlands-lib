@@ -1,7 +1,5 @@
 # Character kernels for products of Weil restrictions
 
-Authors: Worker 706 and Worker 1587.
-
 All declarations are in `Langlands.GroupScheme.WeilGm`. The fields and finite
 index types retain the arbitrary universe `u`; valuation groups may lie in
 other universes. This is a supporting construction for the induced-torus
@@ -72,6 +70,4 @@ coordinate types; it adds no new norm or surjectivity assertion.
 
 Provenance: an internal deduction from the published Weil-restriction
 decomposition, relative-spectrum adjunction and character-kernel
-functoriality. Worker 1587 supplied the direct point interfaces and shared
-product embedding coordinates; Worker 706 proved their comparisons with
-the actual character-valuation kernels.
+functoriality.

@@ -1,7 +1,5 @@
 # Square-integrable Whittaker functions on the torus lattice
 
-Authors: Worker 381 (draft), Worker 906.
-
 This module defines the closed proposition
 `Langlands.RankinSelberg.SquareIntegrableWhittakerTorusSumStatement.{uF,uV}`.
 It states that, for an irreducible square-integrable representation of
@@ -115,7 +113,8 @@ restriction-square estimate (7) of p.450, see below.
    hypothesis `T.IsSquareIntegrable π` concerns smooth matrix coefficients
    modulo the center. The source does not prove the passage from it to
    square-integrability of Whittaker functions; this proposition records
-   that bridge in a measure-free form, as a separate proof obligation.
+   that bridge in a measure-free form, as a separate statement (proved in
+   `SquareIntegrableWhittakerTorusSumProof`).
 2. **Lattice sum instead of an integral.** No quotient measure, Haar
    normalization or measurability statement is needed; positive constants
    are irrelevant to summability.
@@ -127,34 +126,38 @@ restriction-square estimate (7) of p.450, see below.
 
 ## Expected proof route
 
-Not part of the statement; recorded to guide the separate proof task.
+Not part of the statement. The proof `squareIntegrableWhittakerTorusSum`
+(module `SquareIntegrableWhittakerTorusSumProof`) takes a different route, a
+direct comparison with matrix coefficients; the route recorded here goes
+through asymptotic expansions.
 A smooth Whittaker function vanishes at `a(λ)` unless `|a_i/a_(i+1)|` is
 bounded for every simple root, with a bound depending only on `W` (the
 published theorem `Langlands.Whittaker.smoothSimpleRootSupport`). On that
 cone, the asymptotic expansion of Whittaker functions (Library statements
 `Langlands.WhittakerTypeAsymptoticStatement` and
-`Langlands.WhittakerLastEntryOneAsymptoticStatement`, not yet proved) writes
+`Langlands.WhittakerLastEntryOneAsymptoticStatement`, proved as
+`whittakerTypeAsymptotic` and `whittakerLastEntryOneAsymptotic`) writes
 `W(a(λ))` as a finite combination of finite functions of `λ`. Casselman's
 square-integrability criterion
-(`Langlands.GLSquareIntegrableExponentCriterionStatement`, not yet proved)
+(`Langlands.GLSquareIntegrableExponentCriterionStatement`, proved as
+`glSquareIntegrableExponentCriterion`)
 bounds the exponents of the normalized Jacquet modules strictly. Relating the
 characters of the expansion to those exponents (as in Casselman's asymptotic
 theory) gives geometric decay of `δ(a(λ))⁻¹ |W(a(λ))|²` on the cone, hence
 summability. The published expansion statements do not themselves tie their
-characters to Jacquet exponents, so that link is part of the proof
-obligation. Their hypotheses also differ from the present ones: they use the
+characters to Jacquet exponents, so that link is part of this route. Their hypotheses also differ from the present ones: they use the
 topology of `F.canonicalTopologicalData` rather than the supplied `T`, and
 assume admissibility, finite generation of `ρ.asModule` over the group
 algebra, and a nonzero equivariant functional unique up to scalars.
 Supplying these from `Representation.IsIrreducible π` and
-`T.IsSquareIntegrable π` (the case `ℓ = 0` being trivial) is part of the
-proof obligation as well.
+`T.IsSquareIntegrable π` (the case `ℓ = 0` being trivial) is part of this
+route as well.
 
 ## Use
 
-The proposition is the representation-theoretic input of the planned proof
+The proposition is the representation-theoretic input of the proof
 of `Langlands.RankinSelberg.SquareIntegrableWhittakerRestrictionStatement`
-(JPSS formula (7), proof task `5e33bf2f-5ef0-4456-af2b-d03e46eab364`). For
+(JPSS formula (7)) in `SquareIntegrableWhittakerRestrictionReduction`. For
 `r = m + 1 = n + k + 2` and `t = n + 1`, the weight of the target integrand
 at `diag(ϖ^λ, 1_(k+1))` satisfies
 

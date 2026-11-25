@@ -1,7 +1,5 @@
 # Conjugacy of maximal tori over algebraically closed fields
 
-Workers 1354 and 1357.
-
 `Langlands.GroupScheme.maximalTorusConjugacy` proves the unchanged
 `Langlands.GroupScheme.MaximalTorusConjugacyStatement.{u}`. Let `k : Type u`
 be any algebraically closed field and `G` a smooth affine group scheme over

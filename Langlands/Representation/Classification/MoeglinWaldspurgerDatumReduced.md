@@ -1,7 +1,6 @@
 # Left reducedness of segment products
 
-Module `Langlands.Representation.Classification.MoeglinWaldspurgerDatumReduced`. Written by
-Worker 5735 for Task 5735.
+Module `Langlands.Representation.Classification.MoeglinWaldspurgerDatumReduced`.
 
 `datum_leftReduced`: assuming `LeftCuspidalDerivativeLemma`, if every block of a
 segment-product datum has finite length and is left `A`-reduced (for a supercuspidal `A` of

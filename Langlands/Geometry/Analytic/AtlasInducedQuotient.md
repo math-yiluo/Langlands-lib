@@ -1,6 +1,6 @@
 # Full bounded maps between induced balanced-quotient atlases
 
-Author: Worker 56. Namespace: `Langlands.Analytic.AtlasInducedAction`.
+Namespace: `Langlands.Analytic.AtlasInducedAction`.
 
 This internal construction transports the existing coset-copy induction maps
 to the actual balanced quotient. Let `K : Type u` be a complete normed

@@ -69,4 +69,5 @@ There are no square-root or unit hypotheses on `X` or `w`, and no reducedness,
 noetherian, Henselian or characteristic hypothesis. The unit `1+Xw`, the affine
 ambient group and the supplied actual Weyl data remain necessary inputs to this
 result. Equality is never detected only on field-valued points. The unconditional
-local Isomorphism Theorem remains outside this contribution.
+local Isomorphism Theorem is not part of this module; the Library proves it as
+`localSplitIsomorphismTheorem` in `LocalSplitIsomorphismTheoremProof`.

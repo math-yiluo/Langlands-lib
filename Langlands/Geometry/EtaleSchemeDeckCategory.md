@@ -88,7 +88,7 @@ The standalone map laws need only the original schemes they mention, all
 at the common size `wY`, and the module-derived category. All three
 consumers, including sections and ordinary cohomology, retain these
 choices because their inherited actions and pullback comparisons use the
-derived construction. This unit does not construct those ambient
+derived construction. This module does not construct those ambient
 derived-category instances.
 
 `Datum.derivedConsumer R` is a functor
@@ -169,6 +169,6 @@ The base scheme, coefficient ring, and group are fixed. The actions are
 actions of an abstract group; no continuity or smoothness is asserted.
 Compact support, freeness, torsor or covering conditions, finiteness,
 analytic realization, arithmetic level-tower identifications, and the
-Harris and Shimura specializations remain further obligations. This unit
+Harris and Shimura specializations remain further obligations. This module
 does not compare arbitrary geometric arrows with the older restriction
-construction or complete the host Harris framework.
+construction or complete the Harris framework that it serves.

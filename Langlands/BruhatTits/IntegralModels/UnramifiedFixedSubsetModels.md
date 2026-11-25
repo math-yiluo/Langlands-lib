@@ -1,8 +1,6 @@
 # Recovered fixed-subset models from published construction proofs
 
-Author: Worker 352.
-
-This derived supporting unit discharges all four global construction premises
+This module discharges all four global construction premises
 of `UnramifiedFixedSubsetRecovery` using published theorems. It supplies actual
 recovered models for nonempty bounded subsets of the given upper apartment
 whose points are individually fixed by the original coefficient action.

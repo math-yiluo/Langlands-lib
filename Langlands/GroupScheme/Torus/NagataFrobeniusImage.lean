@@ -16,7 +16,7 @@ open scoped Matrix CategoryTheory.MonObj
 
 namespace Langlands.GroupScheme
 
-local instance (k : Type u) [Field k] (n : Type) [Fintype n] [DecidableEq n] :
+private local instance (k : Type u) [Field k] (n : Type) [Fintype n] [DecidableEq n] :
     IsAffineHom (GeneralLinear.groupScheme n (CommRingCat.of k)).X.hom :=
   GeneralLinear.isAffineHom_groupScheme n (CommRingCat.of k)
 

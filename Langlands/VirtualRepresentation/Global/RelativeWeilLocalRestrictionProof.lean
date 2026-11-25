@@ -14,7 +14,7 @@ set_option autoImplicit false
 
 universe uV u
 
-namespace Langlands.ClassField.Global.RelativeWeilGroup
+namespace Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 
 /-- **Local restriction formula** (Tate (1979), (2.3.5) with (1.6.1), for relative Weil
 groups). For every class family with the restriction compatibility, every tower
@@ -24,4 +24,4 @@ theorem localInducedRestriction : LocalInducedRestrictionStatement.{uV, u} :=
   localInducedRestriction_of_extensionSquare
     LocalClassField.extensionWeilTransferReciprocity.{u, u}
 
-end Langlands.ClassField.Global.RelativeWeilGroup
+end Langlands.ClassFieldTheory.Global.RelativeWeilGroup

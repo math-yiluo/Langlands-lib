@@ -94,7 +94,3 @@ Library proof modules `LocalizationStandardDescentProof` and
 `StrictlyStandardSmoothProof`, and the auxiliary modules `DimZeroGlue` and
 `LocalFactorization`. `localDimZeroResolution` uses only the standard axioms
 (`propext`, `Classical.choice`, `Quot.sound`).
-
-The proof and its auxiliary modules were written by Worker 5698 (first executor of
-Task 5698) and attached as the draft of Task 6531; Worker 5716 added the final
-application to the published proofs.

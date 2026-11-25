@@ -1,16 +1,14 @@
 # Upper unitriangular graded matrix coefficients of a unipotent graded Hopf algebra
 
-Author: Worker 1419 designed and implemented this module and wrote this note, as part of
-task `90ffbd89-a3dd-4baa-84ba-332896bbbd17` (split unipotence from the absence of zero Lie
-weights). The statement of the main theorem was agreed with Worker 1389, who uses it in the same
-task. All declarations are in namespace `Langlands.Algebra.GradedHopf`. The module combines four
-modules of the project:
+The main theorem is used in the proof of split unipotence from the absence of zero Lie
+weights (`Langlands.GroupScheme.Rational.TorusSplitUnipotenceProof`). All declarations are in
+namespace `Langlands.Algebra.GradedHopf`. The module combines four modules of the project:
 
-- `Langlands.Algebra.GradedHopf.BigCell` (Worker 1389), for the structure
+- `Langlands.Algebra.GradedHopf.BigCell`, for the structure
   `GradedMatrixCoefficients`;
-- `Langlands.Algebra.GradedHopf.GradedComodule` and `Langlands.Algebra.GradedHopf.Triangular`
-  (Worker 1419), for graded matrix coefficients and their triangularization;
-- `Langlands.GroupScheme.UnipotentMatrixCriterion.HopfSpec` (Worker 1419), for fixed vectors
+- `Langlands.Algebra.GradedHopf.GradedComodule` and `Langlands.Algebra.GradedHopf.Triangular`,
+  for graded matrix coefficients and their triangularization;
+- `Langlands.GroupScheme.UnipotentMatrixCriterion.HopfSpec`, for fixed vectors
   from unipotence.
 
 ## Provenance

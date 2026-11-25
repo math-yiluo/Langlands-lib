@@ -41,7 +41,7 @@ private theorem lieDeterminant_eq_section
   let b := localSectionBasis e V
   let mat : Module.End Γ(S, V.left) Γ(B.Lie, V.left) →+* Matrix I I Γ(S, V.left) :=
     { toFun := LinearMap.toMatrix b b
-      map_zero' := map_zero _
+      map_zero' := LinearEquiv.map_zero _
       map_one' := LinearMap.toMatrix_one b
       map_add' := map_add _
       map_mul' := LinearMap.toMatrix_mul b }

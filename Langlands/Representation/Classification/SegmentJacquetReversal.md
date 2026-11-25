@@ -1,8 +1,7 @@
 # Reversing segment test tensors in Jacquet multiplicities
 
-Author: Worker 699, adapting the tensor-reindexing calculation in Worker 495's
-published `SegmentTensorReversalProof`, with the application coordinated
-with Worker 502. This is an internal construction and multiplicity transport.
+The tensor-reindexing calculation adapts the one in the
+published `SegmentTensorReversalProof`. This is an internal construction and multiplicity transport.
 
 For every prime, actual p-adic field with supplied compatible topology,
 positive block rank, natural factor count, and actual smooth representation

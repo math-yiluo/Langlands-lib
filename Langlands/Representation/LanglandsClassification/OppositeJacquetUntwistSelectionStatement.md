@@ -1,7 +1,7 @@
 # Selecting a tempered untwist of an actual opposite Jacquet exponent
 
-Worker 148. `OppositeJacquetUntwistSelectionStatement` is an internal,
-closed proposition isolating the remaining exponent-selection obligation
+`OppositeJacquetUntwistSelectionStatement` is an internal,
+closed proposition isolating the remaining exponent-selection step
 in the opposite-Jacquet proof of Langlands exhaustion. It is a statement
 only; this module proves no existence assertion.
 
@@ -23,4 +23,8 @@ The provenance is internal: this is the exact remaining selection input
 needed by `OppositeJacquetExhaustionReduction`. The published opposite
 Jacquet family and unitary-untwist record supply the actual objects and
 types, without establishing the selection. The maximal-exponent,
-structural decomposition and nested Jacquet arguments remain obligations.
+structural decomposition and nested Jacquet arguments are not part of this
+module: `oppositeJacquetUntwistSelection_of_inputs` (module
+`OppositeJacquetUntwistSelectionReduction`) proves the statement from closed
+inputs, among them `RationalPointsIrreducibleAdmissibleStatement` and
+`LeviJacquetFiniteLengthStatement`.

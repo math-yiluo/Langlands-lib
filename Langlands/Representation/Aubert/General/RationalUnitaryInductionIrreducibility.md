@@ -1,7 +1,5 @@
 # Irreducibility of actual unitary induction from a simple Jacquet module
 
-Author: Worker 480.
-
 This derived supporting construction connects the published normalized-induction
 positive form and admissibility theorems to the semisimple-induction
 irreducibility argument. It treats actual smooth induction and the actual

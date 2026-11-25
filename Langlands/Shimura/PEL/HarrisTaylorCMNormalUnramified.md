@@ -1,7 +1,5 @@
 # Original CM unramifiedness and finite-etale self-pullback
 
-Author: Worker 57.
-
 Under the existing exact representation witnesses, both named relative-dual
 assertions and explicit geometric coarse rigidity, this derived construction
 proves formal unramifiedness of the original CM normal forgetting map. It
@@ -9,7 +7,11 @@ constructs the map's actual self-pullback as an object of the existing
 finite-etale cover category over the fine scheme. Its underlying scheme and
 morphism are reflexively the original kernel pair and its first projection.
 It also proves that etaleness of the original projection is equivalent to
-flatness of that same projection. Flatness itself remains open.
+flatness of that same projection. Flatness itself is not proved here; etaleness
+of the original projection, hence flatness, is proved under the same premises
+by `representedCMNormalProjection_etale_of_dominantCriterion`
+(`HarrisTaylorCMNormalSmoothEtale`), whose additional generic criterion is
+`DominantUnramifiedEtaleProof.dominantUnramifiedEtale`.
 
 ## Parameters and original geometry
 
@@ -111,7 +113,7 @@ the original `pullback.fst p p`. This is the self-base-change of the original
 projection along itself. It does not assert etaleness of `p` before base
 change.
 
-## Exact remaining flatness condition and chosen specialization
+## Exact flatness condition and chosen specialization
 
 `representedCMNormalProjection_etale_iff_flat_of_dualGeometry` first installs
 the proved `FormallyUnramified p`. The original coarse scheme is locally
@@ -123,7 +125,8 @@ flat; conversely Mathlib's
 `AlgebraicGeometry.Etale.of_formallyUnramified_of_flat` applies to these
 proved properties and a supplied `Flat p`. Thus the result is exactly
 `Etale p ↔ Flat p`. No flatness premise is needed by the construction of the
-self-pullback cover, and flatness of the original projection is not proved.
+self-pullback cover, and flatness of the original projection is not proved
+here.
 
 For the exact proposition `q : CMRepresentabilityStatement ...`, all chosen
 declarations substitute precisely `chosenCMLevelRepresentation ... q` for
@@ -137,7 +140,7 @@ chosen tower map.
 `cmNormalProjection_etale_iff_flat_of_dualGeometry` states the same
 equivalence for the direct chosen forgetting map.
 
-## Provenance and retained source obligations
+## Provenance and source assertions not proved here
 
 This is an internal deduction from the constructed original kernel scheme
 inverse, its original graph equations, the proved original finiteness and
@@ -155,13 +158,17 @@ smooth projective representability, finite-etale forgetting and the normal
 `U/V` Galois cover. The imported objects retain those conventions. The
 conditional formal unramifiedness and self-pullback construction here are
 not presented as proofs of all those stronger source assertions. The
-supplied publication/errata list was previously read in full and lists no
+publication/errata list was read in full and lists no
 correction to this passage.
 
-Applicable representability, derivation of the exact geometric rigidity
-hypothesis from source smallness, comparison with the complete source moduli
-problem, original projection flatness and etaleness, canonical-model geometry
-and coefficient descent remain separate obligations. Arbitrary scheme
-structure and nilpotents are preserved. This construction supplies no
+Applicable representability, comparison with the complete source moduli
+problem, canonical-model geometry and coefficient descent are not proved in
+this module. Derivation of the exact geometric rigidity hypothesis from source
+smallness is `cmSmallLevelRigidity` (`HarrisTaylorCMSmallLevelRigidityProof`);
+original projection etaleness, and hence flatness, is
+`representedCMNormalProjection_etale_of_dominantCriterion`
+(`HarrisTaylorCMNormalSmoothEtale`), under the same named premises and the
+proved criterion `DominantUnramifiedEtaleProof.dominantUnramifiedEtale`. Arbitrary
+scheme structure and nilpotents are preserved. This construction supplies no
 section of the original forgetting projection and does not complete the
-source cover theorem or the host task.
+source cover theorem.

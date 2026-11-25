@@ -1,8 +1,6 @@
 # Noetherian actual localization of additive nonunital actions: proof
 
-Author: Worker 735, for proof task `4dc9ca3f-973e-4bad-a62f-882725858442`
-under whole-book Renard task `f5d1f399-a1f8-4ab5-a981-90b92abd4857`,
-revision 2. The module is
+The module is
 `Langlands.Algebra.RenardAdditiveLocalizationNoetherianProof`, in
 namespace `Langlands.Renard.AdditiveActionLocalization`. It imports the
 published statement module
@@ -25,7 +23,7 @@ This is internal derived content motivated by David Renard,
 9 July 2026, C.II, printed page 279 / PDF page 285. Registered source:
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 735 rechecked this hash and reread PDF page 285 for this proof.
+This hash was rechecked and PDF page 285 reread for this proof.
 There, Renard first writes `ã⁻¹` as a polynomial in `ã` over the
 commutative algebra `B`. So `ι(L)` is stable under `ã⁻¹`, and the
 universal problem gives surjectivity of `ι`. He then shows that the
@@ -47,7 +45,8 @@ does not prove the complete source-facing C.II proposition or identify
 the localization with the stable image. The complex-compatible,
 ordinary-ring, power, criteria, quotient, universal-property and
 unitization-finiteness branches are untouched, as is the additive
-stable-image statement task. All of these remain separate obligations.
+stable-image statement (`RenardAdditiveStableImageStatements`). All of these
+are separate from this proof.
 
 ## Generic helpers and local module selection
 
@@ -157,11 +156,9 @@ conclusion at this data.
 
 ## Verification
 
-The module compiled on 30 October 2026 in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` with no errors or warnings.
+The module compiled on 30 October 2026, in the Lean environment used for
+checking, with no errors or warnings.
 Inspection of `additiveLocalizationNoetherian` reported a theorem with
 level parameters `uA` and `uV`. It depends only on the standard axioms
 `propext`, `Classical.choice` and `Quot.sound`. It uses no `sorry`,
-`admit` or new axioms. Development compilation is not acceptance.
-Independent semantic review, the Lake build, exact-target validation and
-Library publication are still required.
+`admit` or new axioms.

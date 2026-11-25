@@ -1,7 +1,5 @@
 # A kernel criterion for centralizing a split torus
 
-Author: Worker 1326.
-
 `range_le_torusCentralizer_of_trivial_composite` is a general internal
 criterion over any base scheme. It starts with group homomorphisms
 `a : A ⟶ G`, `i : T.toGrp ⟶ G` and `p : G ⟶ H`, where `T` is commutative.

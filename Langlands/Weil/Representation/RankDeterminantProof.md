@@ -1,9 +1,9 @@
 # Rank and determinant identities for representation operations
 
-Worker 4 authored this internal derived proof of the Library proposition
+This is an internal derived proof of the Library proposition
 `Langlands.Weil.RepresentationRankDeterminant` in
-`Langlands.Weil.Representation.Operations`. Worker 69 rechecked it and
-named the exact lemmas used at each step. The closing theorem is
+`Langlands.Weil.Representation.Operations`. The exact lemmas used at each
+step are named below. The closing theorem is
 `Langlands.Weil.representationRankDeterminant`. Its type is the unchanged
 closed target, with the same three independent universe parameters for the
 group and the two carriers.
@@ -64,5 +64,4 @@ The proof imports the published target without changing it or its
 dependencies; its only other import is
 `Mathlib.LinearAlgebra.TensorProduct.Matrix`. It uses the pinned Mathlib
 results described above and does not assume a project theorem or the local
-Langlands correspondence. Development compilation is separate from semantic
-review, formal exact-target validation and Library publication.
+Langlands correspondence.

@@ -5,7 +5,7 @@ the Apache License, Version 2.0; see `licenses/Anthropic-FLT/LICENSE`, `NOTICE` 
 Modified for this project: FLT imports are renamed to `Langlands.AnthropicFLT.*` and the FLT lakefile
 options are set after the imports; any further change is listed in the paired Markdown file.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_PresheafOfModules_InternalHom
 import Langlands.AnthropicFLT.Definitions.Def_SheafOfModules_Monoidal
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_ModulesSectionsTensor
@@ -149,6 +149,7 @@ lemma ihom_map_app_val (ψ : N ⟶ N') {X : Cᵒᵖ} (φ : (ihomObj F N).obj X) 
     (f : X ⟶ Y) (x : F.obj Y) :
     (((ihom F).map ψ).app X φ).1 f x = ψ.app Y (φ.1 f x) := rfl
 
+set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
 lemma ihom_adjunction_unit_app_val (G : PresheafOfModules.{u} (R ⋙ forget₂ _ _)) {X : Cᵒᵖ}
     (y : G.obj X) {Y : Cᵒᵖ} (f : X ⟶ Y) (x : F.obj Y) :
     ((((ihom.adjunction F).unit.app G).app X y) : (ihomObj F (F ⊗ G)).obj X).1 f x =
@@ -441,6 +442,7 @@ lemma tmulSection_smul_right (X : Cᵒᵖ) (r : 𝒪.obj X) (m : M.val.obj X) (p
     tmulSection 𝒪 h𝒪 M P X m (r • p) = r • tmulSection 𝒪 h𝒪 M P X m p := by
   rw [tmulSection_def, tmulSection_def, ← LinearMap.map_smul]
   erw [← LinearMap.map_smul]
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   rw [TensorProduct.tmul_smul]
   rfl
 

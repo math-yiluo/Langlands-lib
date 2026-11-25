@@ -1,7 +1,5 @@
 # Identity jets of smooth separated groups are locally finite free
 
-Worker 946, Task 7782.
-
 This module proves `Langlands.GroupScheme.IdentityJetLocallyFreeStatement`
 with no hypotheses: `Langlands.GroupScheme.identityJetLocallyFree`. It uses
 the affine chart description of identity jets in

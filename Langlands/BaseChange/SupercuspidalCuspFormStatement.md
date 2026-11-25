@@ -1,7 +1,7 @@
 # Supercuspidal cusp-form pseudo-coefficients with nonzero elliptic orbital integrals near 1
 
 Lean module: `Langlands.BaseChange.SupercuspidalCuspFormStatement`, namespace
-`Langlands.BaseChange`. Author: Worker 820, for Task 7457.
+`Langlands.BaseChange`.
 
 This module defines one proposition, `SupercuspidalCuspFormStatement.{u, uV} : Prop`. It is a
 statement only: nothing here proves it, and no declaration assumes it.
@@ -17,7 +17,8 @@ locally by the Library's certificates `LocalFieldTopology.generalLinear_t2Space`
 
 - a complex vector space `V : Type uV` and `π : Representation ℂ (GL_n(F)) V` with
   `hπ : IsAdmissible π`, `π.IsIrreducible` and `GeneralLinear.IsSupercuspidal π`;
-- `χ : Subgroup.center (GL_n(F)) →* ℂˣ` with `HasCentralCharacterRep π χ` (Task 7442);
+- `χ : Subgroup.center (GL_n(F)) →* ℂˣ` with `HasCentralCharacterRep π χ`
+  (`Langlands.BaseChange.PseudoCoefficient`);
 - a Haar measure `μ` on `GL_n(F)` (`[μ.IsHaarMeasure]`).
 
 For all such data there is `f : SchwartzBruhat (GL_n(F))` (a locally constant compactly
@@ -25,7 +26,7 @@ supported function) with the following four properties.
 
 - (a) `HasVanishingConstantTerms f`: definition 1 of `Langlands.BaseChange.CuspForm`, for the
   underlying function of `f`.
-- (b) `IsPseudoCoefficient μ χ π hπ f` (Task 7442): `π` has central character `χ`, the
+- (b) `IsPseudoCoefficient μ χ π hπ f` (`Langlands.BaseChange.PseudoCoefficient`): `π` has central character `χ`, the
   character `Character.distribution μ π hπ` takes the value `1` at `f`, and the character of
   every irreducible tempered admissible `π' ≇ π` on a space in universe `uV` with central
   character `χ` vanishes at `f`.
@@ -35,13 +36,14 @@ supported function) with the following four properties.
   `Character.distribution μ π' hπ' f = 0`. Unlike (b), this asks nothing about temperedness.
 - (d) There is `U ∈ nhds 1` in `GL_n(F)` such that for every `γ ∈ U` with
   `IsRegularElliptic γ` (the Library's predicate: the characteristic polynomial is separable
-  and irreducible), every right Haar measure `μγ` on `glCentralizer γ` (Task 7416; a measure
+  and irreducible), every right Haar measure `μγ` on `glCentralizer γ` (`Langlands.BaseChange.OrbitalIntegral`; a measure
   with `IsHaarMeasure` and `IsMulRightInvariant`) and every
   `νγ : Measure (LeftQuotient (glCentralizer γ))` with
   `QuotientIntegration.IsCompatible (glCentralizer γ) μ μγ νγ`, the orbital integral
-  `orbitalIntegral γ νγ f` (Task 7402: `∫ f(x⁻¹ γ x) dνγ(x)` over `G_γ(F)\G(F)`) is nonzero.
+  `orbitalIntegral γ νγ f` (`Langlands.TraceFormula.TwistedOrbital`: `∫ f(x⁻¹ γ x) dνγ(x)`
+  over `G_γ(F)\G(F)`) is nonzero.
   The coset space `LeftQuotient (glCentralizer γ)` carries its Borel σ-algebra, through the
-  reducible definition `leftQuotientMeasurableSpace` (`= borel _`) of Task 7416's module
+  reducible definition `leftQuotientMeasurableSpace` (`= borel _`) of the module
   `Langlands.BaseChange.OrbitalIntegral`, which this module installs as a local instance of
   high priority, as that module and its statement modules do; the centralizer carries the
   subspace σ-algebra.
@@ -49,10 +51,10 @@ supported function) with the following four properties.
 All measures in the Lean proposition are quantified; none is chosen or normalized there.
 
 Names: the module imports the published modules `Langlands.BaseChange.PseudoCoefficient`
-(Task 7442: `HasCentralCharacterRep ρ χ`, `IsPseudoCoefficient μ χ π hπ f`),
-`Langlands.BaseChange.OrbitalIntegral` (Task 7416: `glCentralizer γ`, with `n` implicit) and
-`Langlands.TraceFormula.TwistedOrbital` (Task 7402: `orbitalIntegral γ ν f`, imported through
-`OrbitalIntegral`). Their published names and argument orders are those cited in the objective,
+(`HasCentralCharacterRep ρ χ`, `IsPseudoCoefficient μ χ π hπ f`),
+`Langlands.BaseChange.OrbitalIntegral` (`glCentralizer γ`, with `n` implicit) and
+`Langlands.TraceFormula.TwistedOrbital` (`orbitalIntegral γ ν f`, imported through
+`OrbitalIntegral`). The statement uses their published names and argument orders directly,
 so no correspondence is needed.
 
 ## The construction behind the statement (not formalized)
@@ -108,7 +110,7 @@ Thus (a), (c) and (d) are vacuous in this rank.
 
 ## Why (c) is stated
 
-`IsPseudoCoefficient` (Task 7442) only kills tempered representations. The local components of
+`IsPseudoCoefficient` only kills tempered representations. The local components of
 cuspidal automorphic representations are not known to be tempered, so the globalization of a
 supercuspidal representation needs the trace of every irreducible admissible `π' ≇ π` with
 central character `χ` to vanish. For supercuspidal `π` this holds for the construction above.
@@ -124,11 +126,13 @@ element with nonzero orbital integrals at both places.
 
 ## Hypotheses and universes
 
-- `CharZero F` is assumed, like the other base-change statements of the programme (Tasks 7416,
-  7432, 7442 and 7446). Kazhdan works in characteristic zero, and the Library's
+- `CharZero F` is assumed, like other base-change statements of the Library (for instance
+  `RegularTransferStatement`, `PseudoCoefficientExistenceStatement` and
+  `CuspidalPseudoCoefficientExistenceStatement`). Kazhdan works in characteristic zero, and the Library's
   `IsRegularSemisimple` (part of `IsRegularElliptic`) asks for a separable characteristic
   polynomial, which agrees with HL's regularity (squarefree characteristic polynomial) in
-  characteristic zero. Statements 4-6 of Task 7457 need no such hypothesis.
+  characteristic zero. The companion statements `CuspFormConvolutionStatement`,
+  `SplitTensorCuspFormStatement` and `SupercuspidalExistenceStatement` need no such hypothesis.
 - The representations `π'` in (c), like those in (b), are on spaces in the universe `uV` of
   `V`.
 
@@ -137,7 +141,7 @@ element with nonzero orbital integrals at both places.
 HL use two distinct local inputs. At the cuspidal place `v₁`, the hypothesis `c_{v₁}(f)` of
 II.6.3 requires that the local test function be supported on regular elliptic elements and
 be a linear combination of coefficients of smooth irreducible cuspidal representations.
-The comparison of Task 7340 formulates its cuspidality input through vanishing constant
+The global comparison for local cyclic base change formulates its cuspidality input through vanishing constant
 terms. Clause (a) supplies that input; it does not assert regular elliptic support. At the
 target place `v₀`, HL II.6.7 instead use an elliptic pseudo-coefficient of the chosen discrete
 series; that is the source of the near-identity nonvanishing in (d) for the supercuspidal

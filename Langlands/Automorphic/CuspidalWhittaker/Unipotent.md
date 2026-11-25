@@ -1,7 +1,5 @@
 # Column and block unipotent matrices
 
-Author: Worker 1709.
-
 This is internal matrix algebra for the proof of
 `Langlands.Automorphic.CuspidalUnitaryLocalGenericityStatement`. It works over an arbitrary
 commutative ring `R`, with matrices indexed by `Fin n` (0-indexed). All results are proved,

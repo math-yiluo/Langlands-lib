@@ -1,13 +1,13 @@
 # Pullback tensor associativity statements
 
 This module specifies associativity for the fixed canonical pullback tensor
-comparison in the two published tensor conventions. Both propositions
+comparison in the Library's two tensor conventions. Both propositions
 quantify over all schemes `X,Y : Scheme.{u}`, all morphisms `f : X ⟶ Y`,
 and all module sheaves `M,N,P : Y.Modules`, in an arbitrary universe `u`.
 They have no additional hypotheses.
 
 Write `F` for the existing `Scheme.Modules.pullback f`.
-The symbol `⊗` denotes the published localized monoidal tensor on the actual
+The symbol `⊗` denotes the Library's localized monoidal tensor on the actual
 scheme-module sheaf category. Write `T(M,N)` for the explicit sheafified
 tensor `tensorObj M N`, and `t(a,b)` for its map `tensorMap a b`.
 These tensor objects are related by the fixed natural isomorphism
@@ -17,7 +17,7 @@ These tensor objects are related by the fixed natural isomorphism
 
 Write `d(M,N)` for `localizedPullbackTensorComparisonApp f M N`,
 with direction `F(M ⊗ N) ⟶ FM ⊗ FN`, and `α` for the associator of the
-published monoidal structure. The proposition
+Library's monoidal structure. The proposition
 `LocalizedPullbackTensorAssociativityStatement` is the equation
 
 ```text
@@ -44,26 +44,29 @@ D(T(M,N),P) ≫ t(D(M,N),𝟙 FP) ≫ A(FM,FN,FP).hom
 ```
 
 Both paths start at `F(T(T(M,N),P))` and end at `T(FM,T(FN,FP))`.
-The associator `A` is the published transport of the localized associator
+The associator `A` is the Library's transport of the localized associator
 through `localizedTensorIso`. The localized comparison `d` is the
-published conjugate of `D` by this same natural tensor isomorphism.
+conjugate of `D` by this same natural tensor isomorphism.
 All maps are fixed constructions, not parameters satisfying assumed laws.
 
 ## Combined target and provenance
 
 `PullbackTensorAssociativityStatement` is exactly the conjunction of
 the localized and explicit propositions in the same universe.
-Worker 59 authored these internal categorical specifications. Their
+These are internal categorical specifications. Their
 provenance is the fixed constructions imported from `TensorCoherenceMaps`
-and the associativity convention in pinned Mathlib's
+and the associativity convention in Mathlib's
 `CategoryTheory/Monoidal/Functor.lean`, class `Functor.OplaxMonoidal`.
 The inherited sheaf-theoretic construction and its original sources are
-documented in the imported modules. This unit is not a translation of a
+documented in the imported modules. This module is not a translation of a
 separate literature theorem.
 
 This module introduces three Prop-valued definitions and proves none of
-them. A focused proof task must establish the exact combined target.
-The parent task also retains tensor-comparison invertibility, the unitor,
-symmetry, identity and composition compatibility laws, comparison of
-localized and explicit unitors and symmetry, and the assembly of strong
-symmetric monoidal pullback.
+them. The exact combined target is proved as `pullbackTensorAssociativity`
+(module `PullbackTensorAssociativityProofs`). Tensor-comparison
+invertibility, the unitor, symmetry, identity and composition compatibility
+laws, comparison of localized and explicit unitors and symmetry, and the
+assembly of strong symmetric monoidal pullback are in other modules
+(`PullbackTensorProof`, `PullbackTensorUnitProofs`,
+`PullbackTensorCompatibilityProofs`, `TensorMonoidalComparisonProofs` and
+`PullbackMonoidal`).

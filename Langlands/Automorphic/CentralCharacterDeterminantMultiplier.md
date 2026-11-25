@@ -1,6 +1,6 @@
 # Actual determinant multiplication between specified central-character spaces
 
-Author: Worker 2. This internal construction works on the existing continuous
+This internal construction works on the existing continuous
 complex rational-invariant functions for every number field `F : Type u` and
 every natural rank, including zero. Both characters `χ` and `ω` are arbitrary
 continuous Hecke characters. Finite order and unitarity are not required.
@@ -36,6 +36,6 @@ The provenance is a direct internal restriction of `DeterminantMultiplier`
 using the central-character spaces of `Ambient` and Mathlib's
 `Matrix.GeneralLinearGroup.det_scalar` and continuous-linear submodule
 restriction. No new original-literature comparison is claimed.
-This unit does not assert smoothness, growth, automorphic or cuspidal
+This module does not assert smoothness, growth, automorphic or cuspidal
 preservation, existence of nonzero vectors, or central-character invariance
 under arbitrary equivalence of embedded realizations.

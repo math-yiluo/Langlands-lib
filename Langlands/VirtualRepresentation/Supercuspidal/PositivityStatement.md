@@ -1,6 +1,6 @@
 # Norm-one extraction on the genuine supercuspidal lattice
 
-Worker 30 states the target-side extraction step using the actual
+This module states the target-side extraction step using the actual
 `PadicSupercuspidal.UnitaryBasis F` and its free integral lattice.
 The field is any actual `PadicField p`, with prime `p` and the constructed
 canonical topology. Field and representation-carrier universes are
@@ -45,23 +45,23 @@ positive group-rank weights exclude the negative case when degree is
 positive. This explains the derived provenance and does not assume a proof
 of the generic statement or the existence of any correspondence.
 
-The direct import is Worker 24's published
+The direct import is the published
 `Langlands.VirtualRepresentation.Supercuspidal.Basic`, with Lean SHA256
 `27a08f4c78ca7c2310d0e6e1722fd8093886787f818e1be5a5aab641fa3411a8`
 and Markdown SHA256
 `86d0ae121e859810cfefdb891ec845e20ebcf1e8afd3777c6786b952846726e8`.
-The complete pair and independent review were read, and the published
+The complete pair was read, and the published
 bytes were verified in Library commit
 `68e8013fc4fed0de284fd849695676aca2e0c32d`.
-Its actual class prerequisite, Worker 23's
+Its actual class prerequisite,
 `Langlands.Representation.Classification.Supercuspidal`, is also published.
 Both complete construction pairs were read. Their intrinsic quotient and
 support laws supply the objects; neither theorem conclusion is a field.
-A fresh Lean-service check against the published Basic pair succeeded
+A fresh Lean check against the published Basic pair succeeded
 without diagnostics and confirmed the closing declaration returns `Prop`
 with only standard assumptions. The complete proposition bodies were already
-inspected in the original development. Imported implementations retain
-their original authorship and are not part of this submission.
+inspected in the original development. Imported implementations are not
+part of this module.
 
 Relation independence, construction of an integral map from the local Weil
 side, its pairing and degree identities, signed basis injectivity, removal

@@ -41,7 +41,8 @@ the extension objects quantified by that predicate retain their published
 universe.
 
 The effective relation-ring presentation and faithful flatness are explicit
-assumptions, not consequences proved in this module. This unit does not
-construct a cover pushforward or prove the host task's geometric vanishing
-statement. Its provenance is internal tensor algebra: it asserts no
+assumptions, not consequences proved in this module. This module does not
+construct a cover pushforward or prove the geometric vanishing statement that
+it serves, `EtaleEquivalenceRelationComodulesAcyclicStatement` (proved in
+`EtaleEquivalenceRelationComodulesAcyclicProof`). Its provenance is internal tensor algebra: it asserts no
 identification with a separately constructed sheaf cohomology group.

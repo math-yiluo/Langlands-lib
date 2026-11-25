@@ -1,6 +1,6 @@
 # Renard VII.1.3 from its remaining inputs
 
-Author: Worker 1507. Module
+Module
 `Langlands.Representation.Exponents.MaximalLeviSupercuspidalReducibilityFromInputsStatement`,
 namespace `Langlands.Aubert.General.RepresentedParabolic`.
 
@@ -59,8 +59,11 @@ Their exact formulations and literature locators are in
 
 ## Why these premises
 
-They are the published results that Renard's proof of VII.1.3 uses and that are not yet
-proved in the Library. In that proof:
+They are the published results that Renard's proof of VII.1.3 uses. The Library proves
+premises 1, 4 to 7, 9 and 10 (`parabolicDynamic`, `arbitraryParabolicQuotientCompact`,
+`rationalReductiveUnimodularity`, `standardCocharacter`,
+`parabolicRootPresentationExistence`, `maximalLeviSupercuspidalInductionEndomorphism`,
+`maximalLeviSupercuspidalInductionHom`), but not premises 2, 3, 8 and 11. In that proof:
 
 - Premise 1 places the center of `G(F)` inside `P(F)`. This gives the unramified twist
   that makes the central character of `i_P^G ρ` unitary (the first paragraph of the
@@ -93,6 +96,6 @@ proved in the Library. In that proof:
 ## Provenance
 
 Derived. The statement records which published inputs the proof of Renard VII.1.3 needs in
-the represented-parabolic interface. It lets the conditional proof be reviewed and
-published separately from the proofs of those inputs. Combining it with proofs of the
+the represented-parabolic interface. It keeps the conditional proof separate from the
+proofs of those inputs. Combining it with proofs of the
 eleven premises gives the target.

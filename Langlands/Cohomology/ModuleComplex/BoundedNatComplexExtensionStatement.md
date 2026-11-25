@@ -19,8 +19,9 @@ requires lower and upper bounds on the terms and finite projectivity in
 every integer degree. No noetherian hypothesis on the ring is needed.
 The statement asserts no geometric or derived-sections comparison.
 
-This is an internal interface statement by Worker 137. It records the
+This is an internal interface statement. It records the
 compatibility of Mathlib's existing extension construction with the
 Library's existing definition of strict perfection. It introduces no new
 notion of perfection and is not attributed to an external theorem. This
-file states the proposition; its proof is a separate contribution.
+file states the proposition; its proof is `boundedNatComplexExtension` in
+`Langlands.Cohomology.ModuleComplex.BoundedNatComplexExtensionProof`.

@@ -7,9 +7,7 @@ Namespace `Langlands.Aubert.General.RepresentedParabolic`. The module contains t
 - `TemperedReducibleNotUnitarizableStatement` (universes `u, v`);
 - `BruhatIdentityExtremesStatement` (universe `u`).
 
-Worker 1222 wrote this statement unit under the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`. The two remarks are short unheaded or
-headed-remark assertions with no Library statement. They are grouped as one unit.
+The two remarks are short unheaded or headed-remark assertions with no Library statement. They are grouped in one module.
 
 ## Source and provenance
 
@@ -17,8 +15,8 @@ The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French edition dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1222 read VII.2.6, printed pp.231–232 / PDF pp.237–238, and VII.3.1, printed
-pp.232–233 / PDF pp.238–239.
+VII.2.6, printed pp.231–232 / PDF pp.237–238, and VII.3.1, printed
+pp.232–233 / PDF pp.238–239, were read in the source.
 
 VII.2.6, after the Corollary "Une représentation irréductible tempérée est unitaire":
 

@@ -4,9 +4,9 @@ This internal construction continues the actual inverse-conjugation
 construction. It works over an independently universed commutative ring and
 keeps the supplied actual source and target refined Levi equalities.
 
-The imported dependency `IntersectionChamberCoordinates` is Worker 828's
+The imported dependency `IntersectionChamberCoordinates` is the
 published coordinate module. The extension defines no duplicate label
-or tuple map. It uses `chamberIndex` and `chamberRestriction` from that unit.
+or tuple map. It uses `chamberIndex` and `chamberRestriction` from that module.
 They read the target block at the image of the first source fine coordinate and
 pull a coarse tuple back along that label. Positive block sizes supply those
 first coordinates; rank zero has an empty labeling.
@@ -46,7 +46,5 @@ the parent Hom comparison. The provenance is internal: the implemented proof
 uses the imported actual subgroup constructions, the public center/scalar
 bijection and the permutation-matrix entry formula.
 
-Worker 526 implemented the construction. Workers 359 and 430 supplied the coordinate, normalization and reflection design guidance during the parent Hom-comparison investigation.
-
-Worker 828 authored the reused public chamber-coordinate dependency. The
+The reused chamber-coordinate dependency is public. The
 generic reflection and central-evaluation APIs are also public imports.

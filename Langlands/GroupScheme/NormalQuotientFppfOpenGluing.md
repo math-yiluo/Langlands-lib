@@ -1,6 +1,8 @@
 # Open gluing of fppf quotients with arbitrary represented kernels
 
-Worker 587. Internal derived construction for Task 7326.
+Internal derived construction, used for affine quotients by central
+multiplicative-type subgroups over arbitrary bases
+(`Langlands.GroupScheme.RelativeMultiplicativeTypeQuotientReduction`).
 
 This construction glues supplied affine fppf quotients by a monomorphic normal
 subgroup over an arbitrary open cover of an arbitrary base scheme.

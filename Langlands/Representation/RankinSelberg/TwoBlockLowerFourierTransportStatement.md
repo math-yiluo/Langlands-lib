@@ -18,12 +18,11 @@ on printed pp.412–414, and Section 4.8(2)–(4) on printed p.415
 (one-based PDF pp.47–50). These pages were visually read from the scanned
 original. No applicable registered erratum was located.
 
-The assignment's reference to “Section 4.7 equations (1) and (8)” contains
-a locator error: Section 4.7 has equations (1)–(5). The relevant equation
+Section 4.7 has equations (1)–(5). The equation
 (8) for the separate first-block integration is in Section 4.9, printed
 p.418. This statement uses Section 4.7(1) and its lower-subgroup,
 block-rotation, first-row and last-row conventions, followed by Section
-4.8(2)–(4). This correction changes no mathematical requirement here.
+4.8(2)–(4).
 
 Section 4.8(2) reverses the two blocks and replaces the additive character
 by its inverse. Equation (3) compares the partial Fourier transforms with
@@ -169,6 +168,8 @@ coefficient action of `X ↦ q^-1 X^-1`.
 The proposition does not construct a section equivalence, identify
 coefficient models, prove a first-block Laurent identity or Section 4.10,
 construct local factors, or prove dominant-rank multiplicativity.
-The proof successor must establish the uniform quotient transport and
+A proof must establish the uniform quotient transport and
 rotation cancellation, specialize the existing pure Fourier theorem,
-and assemble the conditional actual integrand and coefficient laws.
+and assemble the conditional actual integrand and coefficient laws;
+`twoBlockLowerFourierTransport` in `TwoBlockLowerFourierTransportProof`
+proves the proposition.

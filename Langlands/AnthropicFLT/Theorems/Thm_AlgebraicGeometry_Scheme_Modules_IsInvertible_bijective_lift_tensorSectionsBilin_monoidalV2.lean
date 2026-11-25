@@ -8,7 +8,7 @@ are set after the imports; the import of `P2M.Util` is dropped; the proof `by
 p2m_exact_reverting @_root_.S.solution` is replaced by the term `S.solution` applied to the
 explicit arguments. The paired Markdown file lists the changes.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_RelativePicardFunctor
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_ModulesSectionsTensorV2
 import Langlands.AnthropicFLT.P2M.Sol.S_AlgebraicGeometry_Scheme_Modules_IsInvertible_bijective_lift_tensorSectionsBilin_monoidalV2
@@ -26,8 +26,8 @@ universe u
 open CategoryTheory MonoidalCategory AlgebraicGeometry TensorProduct
 
 theorem AlgebraicGeometry.Scheme.Modules.IsInvertible.bijective_lift_tensorSectionsBilin_monoidalV2
-    {X : Scheme.{u}} {L M : X.Modules} (hL : Scheme.Modules.IsInvertible L)
-    (hM : Scheme.Modules.IsInvertible M) (U : X.affineOpens) :
+    {X : Scheme.{u}} {L M : X.Modules} (hL : Scheme.Modules.IsInvertibleFLT L)
+    (hM : Scheme.Modules.IsInvertibleFLT M) (U : X.affineOpens) :
     Function.Bijective (TensorProduct.lift (Scheme.Modules.tensorSectionsBilin L M U) :
       Γ(L, U) ⊗[Γ(X, U)] Γ(M, U) →ₗ[Γ(X, U)] Γ(L ⊗ M, U)) :=
   P2MW.S_AlgebraicGeometry_Scheme_Modules_IsInvertible_bijective_lift_tensorSectionsBilin_monoidalV2.solution hL hM U

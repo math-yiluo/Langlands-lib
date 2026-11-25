@@ -1,6 +1,6 @@
 # Dimension shifting in coefficient Hom complexes
 
-Author: Worker 512. This is an internal algebraic construction for the
+This is an internal algebraic construction for the
 coefficient dimension shift in a Cech argument. It concerns actual morphisms
 in an R-linear abelian category D, where R is any ring.
 

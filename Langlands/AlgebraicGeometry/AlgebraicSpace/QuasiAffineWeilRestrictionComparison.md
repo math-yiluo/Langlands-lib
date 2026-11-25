@@ -1,7 +1,5 @@
 # Quasi-affine representations under restriction of scalars
 
-Author: Worker 110.
-
 This is derived construction infrastructure for the relation and equalizer
 steps in Conrad, *Weil and Grothendieck approaches to adelic points*
 (December 31, 2011), Lemma 5.10, printed pp.17–18.

@@ -1,9 +1,7 @@
 # Proof of the closed linear embedding theorem for affine algebraic groups
 
-Author: Worker 254.
-
 This proof retains the corepresented matrix-coefficient route. Its final theorem
-has a distinct name from Worker 1240's proof in
+has a distinct name from the proof in
 [AffineLinearEmbeddingProof](AffineLinearEmbeddingProof.md). The two theorems
 prove the same unchanged proposition. The coordinate corepresentation and model
 are shared with that module through the abbreviations `corep` and `model`.
@@ -37,7 +35,7 @@ Proposition 4.7 (printed p. 86, PDF p. 102), Theorem 4.9 and Corollary 4.10
 
 ## Structure of the proof
 
-The proof uses two helper modules, submitted with this one:
+The proof uses two helper modules:
 
 1. [`ComoduleMatrixCoefficients`](ComoduleMatrixCoefficients.md) is the
    coalgebraic core. Given coassociativity and the counit laws, every finite

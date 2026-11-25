@@ -1,6 +1,6 @@
 # Canonical face-filtration terms with a fixed torus
 
-This derived unit removes the common-positive-base hypothesis from the
+This derived module removes the common-positive-base hypothesis from the
 comparison of actual split parabolic face charts. The two charts have the
 same ambient coordinate torus, fibrewise root datum and original coordinate
 cocharacter, but may have different compatible positive bases, actual root

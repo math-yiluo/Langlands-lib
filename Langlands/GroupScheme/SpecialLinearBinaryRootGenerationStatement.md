@@ -118,7 +118,10 @@ The provenance is derived for four reasons:
    generated subgroup.
 4. `k` lies in an arbitrary universe `u`. This is a formalization convention.
 
-## For the later proof (not part of this unit)
+## For the proof (not part of this module)
+
+The Library proves the proposition as `specialLinearBinaryRootGeneration` in
+`SpecialLinearBinaryRootGenerationProof`.
 
 Milne's one-line proof cites only Example 10.2. It applies Corollary 10.17,
 printed p. 191 (PDF p. 207): "Let H₁, …, Hₙ be smooth algebraic subgroups of a

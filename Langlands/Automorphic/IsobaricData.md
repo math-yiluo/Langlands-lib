@@ -1,7 +1,6 @@
 # Isobaric constituent data
 
-Worker 8 authored this definition unit for task
-`6c50b2fd-cb4a-47b3-8f5d-d464916d69fb`. All declarations lie in the namespace
+All declarations lie in the namespace
 `Langlands.Automorphic`. The module defines the *constituent data* of an isobaric
 automorphic representation `Π₁ ⊞ ⋯ ⊞ Π_b` of `GL_n` over a number field, and its unitarity
 condition. Arthur–Clozel write such a representation, induced from cuspidal data, as

@@ -1,7 +1,5 @@
 # Nonzero weight equivalences for central isogenies
 
-Authors: Worker 1375 and Worker 1283.
-
 This internal module constructs
 `Lie.nonzeroWeightSpaceEquivOfCentralIsogeny`. For any central isogeny
 `q : G ⟶ H` of affine locally finite-type group schemes over an arbitrary
@@ -13,7 +11,7 @@ The equivalence sends a source vector to its actual differential.
 The surjectivity argument first treats a standard split torus. Let `m`
 be the nonzero exponent vector of `χ` and work over its group algebra
 `A = k[ℤ^I]`. Extend a target weight vector `X` to `A` and act by the
-universal torus point. Worker 1283's actual commutator tangent lift,
+universal torus point. The actual commutator tangent lift,
 `CommutatorDescent.range_adjoint_sub_id_le_of_centralIsogeny`,
 provides a source Lie vector whose differential is the adjoint difference
 `Ad(q(n))(X_A) - X_A`.
@@ -45,5 +43,5 @@ universe. Neither group is assumed smooth, connected or reductive, and
 `i` need not be a closed immersion or maximal torus. The provenance is
 internal, combining the actual descended commutator, actual Lie
 coefficient maps, split-torus weight decomposition, and central-kernel
-injectivity. This supporting unit does not prove the final
+injectivity. This supporting module does not prove the final
 central-isogeny root-datum isomorphism criterion.

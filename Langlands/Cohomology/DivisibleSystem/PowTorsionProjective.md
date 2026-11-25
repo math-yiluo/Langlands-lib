@@ -1,6 +1,6 @@
 # Relative projectivity of direct sums and compact inductions
 
-Author: Worker 61. Built on `Langlands.Cohomology.DivisibleSystem`
+Built on `Langlands.Cohomology.DivisibleSystem`
 (`DivisibleSystem`, `DivisibleSystem.obj`, `DivisibleSystem.map`, `powSMul`,
 `comp_powSMul`, `powSMul_comp_powSMul`, `map_powSMul`,
 `SmoothRepComplexDivisibleSystem`), on

@@ -1,6 +1,6 @@
 # Galois-permuted finite families of standard parabolics
 
-This internal unit constructs the actual intersection used in a finite-family
+This module constructs the actual intersection used in a finite-family
 parabolic descent argument. The ground fields and group schemes have arbitrary
 universe `u`; the finite family can have a separate index universe `v`.
 

@@ -1,7 +1,5 @@
 # Actual graphs of group-scheme homomorphisms
 
-Author: Worker 1656.
-
 This module constructs the graph of an actual group-scheme homomorphism
 `f : H ⟶ G` over any scheme `S` in an arbitrary universe `u`. It is an
 internal categorical construction from products and represented subgroup

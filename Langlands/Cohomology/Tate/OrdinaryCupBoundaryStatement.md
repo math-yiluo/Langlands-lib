@@ -1,7 +1,5 @@
 # Ordinary tensor cup and connecting maps
 
-Author: Worker 45.
-
 `Langlands.Tate.OrdinaryCupBoundaryLaws` states the two connecting-map laws
 for the independently constructed `ordinaryCup`, specialized to the actual
 equivariant tensor pairing. It quantifies over a commutative ring `R`, an

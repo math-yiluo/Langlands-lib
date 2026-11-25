@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AlgebraicGeometry.NoetherianApproximation.IntegerFiniteTypeNormalizationProof
 
 /-! # Finite normalization of a monomorphism of finite type out of an integral scheme -/

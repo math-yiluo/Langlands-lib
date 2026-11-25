@@ -1,7 +1,7 @@
 # The convolution dual of a scalar-extended coalgebra
 
 Let \(R\to S\) be a homomorphism of commutative rings and \(C\) an
-\(R\)-coalgebra. This internally derived unit compares the actual convolution
+\(R\)-coalgebra. This internally derived module compares the actual convolution
 dual of \(S\otimes_R C\) with \(S\)-valued convolution functionals on the
 original coalgebra. It then supplies the input for nilpotent lifting of a
 finite group-like basis over a local ring. Cocommutativity is not assumed.
@@ -66,11 +66,11 @@ all group-like elements span \(C\), by including this basis in their set.
 
 ## Provenance and scope
 
-Worker 626 derived this unit from tensor extension of linear maps, convolution,
+This module is derived from tensor extension of linear maps, convolution,
 finite dual bases, and the preceding internal nilpotent-reduction and local
-basis units. No additional literature assertion is made. The input is a
+basis modules. No additional literature assertion is made. The input is a
 basis of the actual scalar-extended coalgebra, so the quotient-valued dual
 family is now constructed rather than assumed. Passing from group-scheme
 base change to these coordinates, reconstructing a diagonalizable group,
-and lifting a splitting cover remain separate obligations. The fibrewise
+and lifting a splitting cover are separate obligations. The fibrewise
 central-isogeny criterion remains open.

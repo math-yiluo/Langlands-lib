@@ -1,8 +1,8 @@
 # Renard I.2.3: the right adjoint and forgetful comparisons
 
-Author: Worker 134. The theorem
+The theorem
 `Langlands.Algebra.RenardForgetfulFunctor.renardForgetfulFunctorStatements`
-proves the published proposition
+proves the proposition
 `Langlands.Algebra.RenardForgetfulFunctor.RenardForgetfulFunctorStatements`
 without changing its hypotheses or its independent universes `uA`, `uB`, `uM`.
 The entry module is `Langlands.Algebra.RenardForgetfulFunctorProof`.
@@ -17,13 +17,13 @@ dated 9 July 2026, I.2.3, printed pp.16–18 / PDF pp.22–24. Registered source
 The target formalizes the unital right adjoint on printed p.16 and the closing
 Remark on printed p.18. The statement module explains the generalization from
 unital complex algebras to rings, and the nonunital additive-module setting.
-This proof uses exactly that published formulation: two-sided local units along
+This proof uses exactly that formulation: two-sided local units along
 `φ`, arbitrary specified module actions, and carrier universe `max uB uM` for
 the two functor comparisons. No idempotentedness hypothesis on `B` is added.
 
 The local-unit and categorical helper declarations in this module are derived
 constructions used to prove the target. They are not additional source assertions.
-The tensor comparison imports the published
+The tensor comparison imports the
 `Langlands.Algebra.RegularTensorContraction` proof.
 
 ## Unital coextension adjunction
@@ -57,15 +57,15 @@ left-local-unit consequence of the hypothesis proves left nondegeneracy;
 right regular nondegeneracy follows from the derived `IsIdempotented B`.
 
 For each nondegenerate `B`-module `N`, the component from `F(N)` to `φ_* N` is
-the published contraction
+the contraction
 
 `c_N : B ⊗_B N → N`, `b ⊗ n ↦ b • n`.
 
 Its `A`-linearity is proved for the actual residual tensor action by equality
 of additive maps. Tensor extensionality reduces this equality to
-`(φ(a) * b) • n = φ(a) • (b • n)`. Published contraction injectivity applies
+`(φ(a) * b) • n = φ(a) • (b • n)`. Contraction injectivity applies
 because `B` is idempotented. For surjectivity, an idempotent `e` fixing `n`
-gives the preimage `e ⊗ n`. Naturality is the published
+gives the preimage `e ⊗ n`. Naturality is
 `RegularTensorContraction.contraction_naturality`.
 
 The private helper `isoOfBijective` turns each bijective additive intertwiner
@@ -91,7 +91,7 @@ nondegeneracy, so choose `e` with `φ(e) • n = n`. Then
 `u_N(n)(b φ(e)) = (b φ(e)) • n = b • n`, which places it in the actual
 `A`-nondegenerate Hom part by `RenardHomFunctors.mem_pseudoPart`.
 Additivity is pointwise; `A`-linearity is
-`b • (φ(a) • n) = (b φ(a)) • n`, exactly the published precomposition action.
+`b • (φ(a) • n) = (b φ(a)) • n`, exactly the precomposition action.
 
 If `u_N(n) = u_N(m)`, choose a `B`-idempotent fixing `n - m`. Evaluating at that
 idempotent shows `n - m = 0`, proving injectivity. For a Hom element `ψ` in the
@@ -102,4 +102,4 @@ part, choose `e` with `ψ(b φ(e)) = ψ(b)` for all `b`. Its preimage is
 
 `forgetfulFunctorRemark` assembles these five clauses.
 `renardForgetfulFunctorStatements` pairs that theorem with the unital
-adjunction theorem, yielding the exact published conjunction.
+adjunction theorem, yielding the exact conjunction.

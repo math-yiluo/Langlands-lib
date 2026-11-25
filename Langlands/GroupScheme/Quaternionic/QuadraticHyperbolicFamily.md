@@ -1,7 +1,5 @@
 # Hyperbolic families of a nondegenerate quaternionic quadratic form
 
-Author: Worker 350.
-
 Module `Langlands.GroupScheme.Quaternionic.QuadraticHyperbolicFamily`, namespace
 `Langlands.GroupScheme.Quaternionic.FirstKindInvolution`.
 

@@ -1,7 +1,5 @@
 # Proof of Bertini's theorem for the generic hyperplane section
 
-Author: Worker 205, with Worker 99 (module `BertiniHyperplaneDimension`).
-
 This module proves the published statement
 `Langlands.AlgebraicGeometry.LangWeil.BertiniGenericHyperplaneStatement`, unchanged, as the
 theorem
@@ -22,7 +20,7 @@ it covers finite base fields: it reduces to an algebraically closed field, not t
 - `BertiniHyperplaneCore`: over an algebraically closed `k`, for a domain `D` of finite type
   with two algebraically independent entries of `g`, the radical of `(1 ⊗ h)` in
   `Ω ⊗[𝓛] (𝓛 ⊗[k] D)` is prime for every algebraic field extension `Ω` of `𝓛`.
-- `BertiniHyperplaneDimension` (Worker 99): dimension and generator bookkeeping for the
+- `BertiniHyperplaneDimension`: dimension and generator bookkeeping for the
   reduction `D = (k̄ ⊗[k] A) ⧸ nil`, where `k̄` is the algebraic closure of `k`, and extraction
   of two algebraically independent generators.
 

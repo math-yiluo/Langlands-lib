@@ -1,7 +1,5 @@
 # Conditional segment Jacquet multiplicity one: proof
 
-Author: Worker 495.
-
 `Langlands.Classification.segmentJacquetMultiplicityReduction`
 proves exactly
 `Langlands.Classification.SegmentJacquetMultiplicityReductionStatement`.

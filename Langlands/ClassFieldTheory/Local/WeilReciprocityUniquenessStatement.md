@@ -1,7 +1,5 @@
 # Uniqueness of geometric local Weil reciprocity
 
-Author: Worker 584.
-
 `Langlands.LocalClassField.GeometricWeilReciprocityUniqueness` is the
 uniqueness-only fragment of the published
 `WeilReciprocityExistenceUniqueness` proposition in

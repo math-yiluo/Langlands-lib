@@ -1,7 +1,7 @@
 # Compact open containment for upper-unipotent groups over local fields
 
-Author: Worker 5165. This is an internal construction derived from the published
-`UpperUnipotentCompactContainmentProof` of Worker 201 (with Worker 117).
+This is an internal construction derived from the published
+`UpperUnipotentCompactContainmentProof`.
 
 `localFieldUpperUnipotentCompactOpenSubgroup F n C hC` chooses an actual compact
 open subgroup containing the entire supplied compact subset C. Its return type

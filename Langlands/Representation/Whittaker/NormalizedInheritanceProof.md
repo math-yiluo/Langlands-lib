@@ -1,8 +1,5 @@
 # Nonzero Whittaker inheritance under normalized upper block induction
 
-Authors: Worker 350; Worker 90 supplied the reused group-algebra
-finite-generation argument.
-
 `Langlands.Whittaker.normalizedInheritance.{uF,uV} F T` proves exactly
 `Langlands.Whittaker.NormalizedInheritanceStatement.{uF,uV} F T`.
 Its outer parameters are `{p : ℕ} [Fact p.Prime]`,
@@ -92,16 +89,14 @@ assumption on the induced representation.
 ## Provenance and original sources
 
 This is an internal composition of published theorems and concrete
-transport constructions. Worker 350 authored it from the earlier private
-conditional assembly after both substantive inputs became available.
-Worker 90's reused contribution is the local-instance finite-generation
-argument. The imported heredity and multiplicity-one proofs are reused by
+transport constructions, written from an earlier private
+conditional assembly. The imported heredity and multiplicity-one proofs are reused by
 Lean name; their companion Markdown describes their own constructions and
 source routes.
 
-For the composition used here, Worker 350 directly read the registered
-JPSS original, printed pp.377 and 385–387, visually, and Kudla printed
-pp.367–368, including visual verification of the normalization formula.
+For the composition used here, the registered JPSS original, printed
+pp.377 and 385–387, and Kudla printed pp.367–368 were read directly and
+visually, including visual verification of the normalization formula.
 JPSS §2.1 distinguishes nonzero functional existence from dimension one,
 and §2.3 states the dimension-one heredity equivalence for admissible
 finite-type factors. Its induction there is normalized and lower

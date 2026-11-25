@@ -1,6 +1,5 @@
 # Removing weight-zero blocks from the two-induced-block filtration problem
 
-Worker 769, Task 7135 (`d3276721-4799-4af9-8958-2f42c88102df`).
 This is an internal reduction of the published filtration target. It uses the
 concrete standard modules and their actual intertwiners modulo earlier ranges.
 It makes no independent assertion about composition factors.
@@ -22,7 +21,7 @@ three premises imply the full, unrestricted two-induced-block statement:
 
 The theorem `realInducedInducedFromNonzeroReduction` proves this implication.
 It does not prove any of these three premises, and therefore does not by itself
-complete Task 7135.
+prove `RealInducedInducedFiltrationStatement`.
 
 For a block `d` of weight zero and exponent `t`, the published zero-weight
 expansion identifies its standard module with that of the two character blocks

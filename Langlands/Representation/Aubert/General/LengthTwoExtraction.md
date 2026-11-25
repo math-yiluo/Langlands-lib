@@ -1,7 +1,5 @@
 # Actual two-factor extraction from a composition-length bound
 
-Author: Worker 1277.
-
 `Langlands.Aubert.General.twoConstituentExtraction` proves the whole exact
 `TwoConstituentExtractionStatement.{uG, uV}` with no additional theorem
 parameters. The imported statement pair remains unchanged.

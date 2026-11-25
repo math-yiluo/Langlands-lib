@@ -55,8 +55,8 @@ argument, followed by a general faithful-flatness argument.
 The last step is an internal derived argument from Mathlib's
 ideal-tensor flatness criterion and faithful-flatness detection of
 injectivity. It replaces the source's final application of the
-Noetherian local criterion. Worker 426 implemented these tensor,
-Nakayama and faithful-flatness arguments using the source and Mathlib.
+Noetherian local criterion. These tensor, Nakayama and faithful-flatness
+arguments are implemented from the source and Mathlib.
 The imported ideal local criterion has its own proof and provenance.
 
 The theorem has the complete named proposition as its type, with no
@@ -71,5 +71,4 @@ the other helper lemmas remain private.
 A development Lake build and complete unapplied declaration inspection
 succeeded without errors or warnings in the project environment. The theorem
 has universe parameters `u`, `v`, `w`, `z` and uses only `propext`,
-`Classical.choice`, and `Quot.sound`. Independent exact-target validation,
-semantic review and Library publication are subsequent TaskHub steps.
+`Classical.choice`, and `Quot.sound`.

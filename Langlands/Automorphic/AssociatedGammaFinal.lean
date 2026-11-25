@@ -11,7 +11,7 @@ import Langlands.Automorphic.Unramified.ContragredientAssociation
 import Langlands.Automorphic.PrincipalSeriesGammaMatchProof
 import Langlands.Correspondence.ArithmeticPairEpsilonExistenceProof
 import Langlands.Automorphic.AssociatedCentralCharacterProof
-import Langlands.ClassField.Global.LocalRelativeWeilMapExistenceProof
+import Langlands.ClassFieldTheory.Global.LocalRelativeWeilMapExistenceProof
 import Langlands.ClassFieldTheory.Local.WeilReciprocityExistenceProof
 import Langlands.ClassFieldTheory.Local.CommonClosureExistenceProof
 import Langlands.LocalFactor.NonabelianSystemExistsProof
@@ -32,7 +32,7 @@ set_option autoImplicit false
 
 universe u uQ uV uE uP
 
-namespace Langlands.ClassField.Global.RelativeWeilGroup
+namespace Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 
 open Langlands.Global Langlands.Global.CompletionPadic
 open Langlands.Global.FunctionalEquationComparison Langlands.Global.AdelicFunctoriality
@@ -300,4 +300,4 @@ theorem associatedGamma_of_inputs
     exact h
   exact key _ _ _ _ hadd_v hmv hlsv hldv hcert
 
-end Langlands.ClassField.Global.RelativeWeilGroup
+end Langlands.ClassFieldTheory.Global.RelativeWeilGroup

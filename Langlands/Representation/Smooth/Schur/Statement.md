@@ -21,7 +21,7 @@ and its scalar-action equality is asserted for every central element and vector.
 No new predicate or construction for central characters is introduced.
 
 The group carries a topological-group structure. The group and the two module
-universes are independent. Admissibility uses the accepted all-open-subgroup
+universes are independent. Admissibility uses the all-open-subgroup
 definition and includes smoothness. No topology or finite-dimensionality is
 assumed on the whole representation space.
 
@@ -68,16 +68,13 @@ of the group is used in these arguments; the retained topological-group
 hypothesis suffices for the local-constancy assertion.
 
 These explanations justify the formulation and scope. They do not insert a
-proof, axiom, or assumed truth of the target into the Lean file. A separate
-proof obligation remains.
+proof, axiom, or assumed truth of the target into the Lean file. The proof is
+`Langlands.admissibleSchur`, in `Langlands.Representation.Smooth.Schur.Proof`.
 
 ## Exact dependencies and status
 
 The only project import is `Langlands.Representation.Smooth.Definitions`,
-artifact `665022df-625b-44ae-9dbd-425f6e266bab`, version 1. It is accepted,
-published at `10c81beaaff024987cf2945c64d0c9511f6cb686`, and current with no
-unavailable dependencies at checked head
-`d0f5322f745425b08ae8e72c1031206f45cb049e`. Its Lean SHA256 is
+which was checked to have no unavailable dependencies. Its Lean SHA256 is
 `435abfa2c0b05c1b6ea8107e3278687e7091e481540508d6647befc0f515aabb`;
 its Markdown SHA256 is
 `4b7364038949eb59db10c95354f290fcba77110c1ed33a227a2b6c92f4afd569`.
@@ -86,10 +83,8 @@ Mathlib's `RepresentationTheory/Irreducible.lean` supplies the irreducibility
 definition and the algebraic nonzero-intertwiner alternative. Its existing
 scalar-endomorphism theorem assumes finite dimension of the full space; that
 hypothesis is deliberately absent here and is replaced by admissibility.
-No pending project proof is imported.
+No project proof is imported.
 
-Environment: `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, version 1,
-Lean 4.34.0, Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.
-Worker 8 authored this Lean/Markdown pair. Statement review and publication
-do not constitute proof acceptance or completion of the broader
+Environment: Lean 4.34.0, Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.
+The statement does not constitute completion of the broader
 induction/Jacquet/classification framework.

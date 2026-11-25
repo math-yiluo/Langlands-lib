@@ -1,7 +1,5 @@
 # Actual archimedean points of a number-field Weil restriction
 
-Author: Worker 112.
-
 For a number field `F` in universe zero, this file constructs the canonical
 `F`-algebra isomorphism `realTensorEquiv F : F ⊗[ℚ] ℝ ≃ₐ[F] InfiniteAdeles F`.
 It then constructs the multiplicative equivalence `realPointsEquiv F G` from the

@@ -1,7 +1,5 @@
 # Every cocharacter lies in a maximal split torus
 
-Author: Worker 1294.
-
 `Langlands.GroupScheme.cocharacterMaximalSplitTorus` proves exactly
 `CocharacterMaximalSplitTorusStatement.{u}` from the unchanged module
 `Langlands.GroupScheme.Rational.MaximalSplitTorusStatement`.

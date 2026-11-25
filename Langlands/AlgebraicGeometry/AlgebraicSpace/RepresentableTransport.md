@@ -1,7 +1,5 @@
 # Transport to a representing scheme
 
-Author: Worker 1150.
-
 This module develops internal consequences of the published
 `AlgebraicSpace.Basic` and `AlgebraicSpace.Thickening` definitions. The lemmas
 take an actual `F.RepresentableBy P` and convert it to a natural isomorphism

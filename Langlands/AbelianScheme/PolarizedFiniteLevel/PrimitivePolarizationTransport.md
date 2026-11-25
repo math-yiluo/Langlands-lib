@@ -5,7 +5,8 @@ isomorphisms of abelian schemes. It uses the published transport of maps to
 the constructed dual, `DualWitness.transportMap`, from
 `PolarizationIsoTransport`. It adds no literature assertion. The positivity
 of polarization ratios enters only as the explicit hypothesis
-`PolarizationRayPositivityStatement`, a separately staged statement target.
+`PolarizationRayPositivityStatement`, a separate statement target in the module
+`PolarizationRayPositivityStatement`.
 
 ## Transport as an additive equivalence
 

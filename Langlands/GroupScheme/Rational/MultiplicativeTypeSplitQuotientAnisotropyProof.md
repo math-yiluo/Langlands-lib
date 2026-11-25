@@ -1,7 +1,5 @@
 # Structural anisotropy of multiplicative-type maximal-split quotients
 
-Authors: Worker 1467 and Worker 1341.
-
 `Langlands.GroupScheme.multiplicativeTypeSplitQuotientAnisotropy.{u}` proves
 exactly the unchanged proposition
 `MultiplicativeTypeSplitQuotientAnisotropyStatement.{u}`. For any field, an

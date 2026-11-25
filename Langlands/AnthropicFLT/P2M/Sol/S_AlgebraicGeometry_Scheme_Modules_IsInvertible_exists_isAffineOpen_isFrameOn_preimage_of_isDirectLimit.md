@@ -9,7 +9,7 @@ The Lean file starts with a notice recording the modification.
 
 ## Changes against the FLT file
 
-- Imports of FLT modules (`Definitions.*`, `Theorems.*`, `P2M.*`) are renamed to `Langlands.AnthropicFLT.*`; Mathlib imports are unchanged.
+- Imports of FLT modules (`Definitions.*`, `Theorems.*`, `P2M.*`) are renamed to `Langlands.AnthropicFLT.*`; `import Mathlib` is now `import Langlands.MathlibBase` (all of Mathlib except the three modules that clash with weil-conjectures, see `Langlands/MathlibBase.md`).
 - The FLT lakefile options are inserted after the imports: `maxHeartbeats 4000000`, `synthInstance.maxHeartbeats 400000`,
   `backward.isDefEq.respectTransparency.types false`.
 - `import P2M.Util` (the command library of FLT's build tooling) is dropped, and its commands are replaced by standard Lean commands. Write `N` for this file's namespace `P2MW.S_AlgebraicGeometry_Scheme_Modules_IsInvertible_exists_isAffineOpen_isFrameOn_preimage_of_isDirectLimit`. The `_root_.` prefix makes a name refer to the global namespace; inside `N` and its subnamespaces the plain name could resolve to a namespace of this file.
@@ -17,10 +17,10 @@ The Lean file starts with a notice recording the modification.
   - FLT line 368: `p2m_reactivate "N.DirLimSpread"` becomes `open scoped N.DirLimSpread`. `p2m_reactivate` first removes the namespace from the active scopes and then activates it again; `open scoped` only activates it. With this file the difference does not matter.
   - FLT line 370: `p2m_export "AlgebraicGeometry" "…"` with 20 names becomes `export _root_.AlgebraicGeometry (…)` with the same names.
   - FLT line 370: `p2m_export "AlgebraicGeometry.Scheme" "…"` with 9 names becomes `export _root_.AlgebraicGeometry.Scheme (…)` with the same names.
-  - FLT line 370: `p2m_export "AlgebraicGeometry.Scheme.Modules" "hom_ext pullback presheaf IsFrameOn IsInvertible IsInvertible.exists_isFrameOn"` becomes `export _root_.AlgebraicGeometry.Scheme.Modules (hom_ext pullback presheaf IsFrameOn IsInvertible IsInvertible.exists_isFrameOn)`.
+  - FLT line 370: `p2m_export "AlgebraicGeometry.Scheme.Modules" "hom_ext pullback presheaf IsFrameOn IsInvertibleFLT IsInvertible.exists_isFrameOn"` becomes `export _root_.AlgebraicGeometry.Scheme.Modules (hom_ext pullback presheaf IsFrameOn IsInvertibleFLT IsInvertible.exists_isFrameOn)`.
   - FLT line 371: `p2m_open_scoped "AlgebraicGeometry AlgebraicGeometry.Scheme AlgebraicGeometry.Scheme.Modules" in` becomes `open scoped _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme _root_.AlgebraicGeometry.Scheme.Modules in`; both only activate the scoped declarations of the namespace for the next command.
 - In the proof of `solution` (FLT line 441), `Scheme.Modules.exists_isFrameOn_congr` is written `AlgebraicGeometry.Scheme.Modules.exists_isFrameOn_congr`. The lemma is declared in this file, so its full name is `N.AlgebraicGeometry.Scheme.Modules.exists_isFrameOn_congr`. FLT found it through the open namespace `N.AlgebraicGeometry`, which is omitted above. The longer name resolves to the same lemma from inside `N`.
-- No other change: the declarations, statements and proofs are the FLT text.
+- No other change: apart from the renames described under “Names changed by the Library” below, the declarations, statements and proofs are the FLT text.
 
 ## Mathematical content
 
@@ -130,3 +130,13 @@ Declarations, with their original FLT names and namespaces (no new definitions o
 ## Dependencies
 
 Ported FLT modules imported: `Langlands.AnthropicFLT.Definitions.Def_Mathlib_Algebra_IsDirectLimit`, `Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_ModulesSectionsTensor`, `Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_RelativePicardFunctor`, `Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_Scheme_Modules_IsInvertible_exists_isFrameOn`.
+
+## Names changed by the Library (22 November 2026)
+
+weil-conjectures, on which the Library depends, declares 21 of the names of this extract itself, so that no module could import both. The Library renamed these 21 declarations: each keeps its name space and the last component of its name gets the marker `FLT` (`tensorPow` becomes `tensorPowFLT`, `tensorPow_zero` becomes `tensorPowFLT_zero`). In this file:
+
+- its uses of `AlgebraicGeometry.Scheme.Modules.IsInvertible` are uses of `IsInvertibleFLT` now;
+- applications in dot notation on a hypothesis `h : Scheme.Modules.IsInvertibleFLT L` of lemmas of the name space `Scheme.Modules.IsInvertible` are written out (`h.exists_isFrameOn …` becomes `Scheme.Modules.IsInvertible.exists_isFrameOn h …`): dot notation looks in the name space `IsInvertibleFLT`, and these lemmas stay in `IsInvertible`; the argument filled is the one dot notation filled;
+- the `export` commands that mirror root name spaces inside `P2MW.…` export the renamed names.
+
+Statements and proofs are otherwise unchanged. Elsewhere on this page the names are given as they now are.

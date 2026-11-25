@@ -36,10 +36,10 @@ actual conjugation and uses integer root-pairing doubling to give equality
 of any two actual roots positive for the original `ν`. No division by two
 or characteristic restriction occurs.
 
-The provenance is internal: Worker 1547 combines the signed noncontainment
-and canonical curve constructions with Worker 1549's signed tangent bridge.
-Worker 317 contributed the included earlier signed-dimension and unipotent
-orbit-bound dependencies. The proof uses their stated conditional results;
+The provenance is internal: the module combines the signed noncontainment
+and canonical curve constructions with the signed tangent bridge of
+`Reductive.RankOneSignedTangentDimension`. It also includes earlier
+signed-dimension and unipotent orbit-bound dependencies. The proof uses their stated conditional results;
 it asserts no additional external structural theorem.
 
 The normal-solvable-torus theorem, existence of the proper subgroup and its

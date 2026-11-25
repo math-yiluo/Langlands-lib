@@ -31,4 +31,5 @@ external inputs of the local Langlands correspondence for GL_n*
 (16 November 2026), registered as
 `operator-external-inputs-plan-2026-11-16`. The Lean proof uses the
 compactness argument recorded in the paired `KummerTowerStatement.md` and
-the published finite-stage theorem from Task 7504.
+the published finite-stage theorem `kummerTowerUpperSup` of
+`Herbrand.KummerTowerUpperSupProof`.

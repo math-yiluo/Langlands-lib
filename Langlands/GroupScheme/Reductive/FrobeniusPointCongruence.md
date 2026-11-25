@@ -38,7 +38,7 @@ All these statements retain arbitrary relative test schemes, including
 nonaffine, nonreduced and empty tests. Height zero, exponential
 characteristic one and the trivial group are allowed. No smoothness,
 connectedness, reductivity, torus or finite-dimensionality hypothesis
-is used. This unit does not characterize invariant functions as
+is used. This module does not characterize invariant functions as
 polynomials in characteristic powers, exclude the entire-covariant
 kernel vector, or prove fixed-height restriction injectivity, the sharp
 whole-space Steinberg dimension bound, or `SteinbergBigCellStatement`.

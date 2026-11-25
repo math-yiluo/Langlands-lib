@@ -96,7 +96,7 @@ under `K` and skew under the real Lie algebra. -/
 def CuspidalArchimedeanStandardUnitarizableStatement : Prop :=
   ∀ (F : Type u) [Field F] [NumberField F] [CompactSpace (AdeleQuotient F)] (r : ℕ)
     (T : CuspidalOperatorRealization F r),
-    Langlands.ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T →
+    Langlands.ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T →
     (∀ (v : {v : NumberField.InfinitePlace F // v.IsReal}) (ds : List RealBlock),
       T.realization.HasRealPlaceParameter v ds →
         Archimedean.IsRealUnitarizableGKModule (r + 1) (Archimedean.realStandardRep (r + 1) ds)
@@ -116,8 +116,8 @@ complex) place, the archimedean pair `L`-factor `L(s, ds × ds') = 1 / P(s)` has
 def CuspidalArchimedeanPairRegularityStatement : Prop :=
   ∀ (F : Type u) [Field F] [NumberField F] [CompactSpace (AdeleQuotient F)] (r t : ℕ)
     (T : CuspidalOperatorRealization F r) (T' : CuspidalOperatorRealization F t),
-    Langlands.ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T →
-    Langlands.ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T' →
+    Langlands.ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T →
+    Langlands.ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T' →
     (∀ (v : {v : NumberField.InfinitePlace F // v.IsReal}) (ds ds' : List RealBlock),
       T.realization.HasRealPlaceParameter v ds →
       T'.realization.HasRealPlaceParameter v ds' →

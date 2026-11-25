@@ -1,7 +1,5 @@
 # Finite sorting by adjacent strict inversions
 
-Author: Worker 17.
-
 This internal interface states a finite combinatorial lemma for the ordered
 segment conversion. It has no literature attribution and makes no claim about
 representations, segment linkage, induction, or analytic square-integrability.

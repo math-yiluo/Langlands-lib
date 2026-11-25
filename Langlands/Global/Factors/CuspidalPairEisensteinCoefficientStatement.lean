@@ -13,7 +13,7 @@ namespace Langlands.Global
 open NumberField CuspidalPairBoundaryNonvanishing CuspidalPairEisenstein
 open Automorphic (CuspidalOperatorRealization CuspidalSpectralPresentation)
 open RankinSelbergGlobal (IsStandardAdditiveCharacter)
-open Langlands.ClassField.Global.RelativeWeilGroup (HasUnitaryCentralCharacter)
+open Langlands.ClassFieldTheory.Global.RelativeWeilGroup (HasUnitaryCentralCharacter)
 
 /-- The identity in the proof of Shahidi (1981), Theorem 5.1, specialized to the
 upper two-block parabolic of `GL_(r+t+2)`. A single enlargement of the omitted set

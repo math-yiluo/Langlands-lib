@@ -1,7 +1,5 @@
 # Constructing normalized Cartan coordinates
 
-Author: Worker 952.
-
 `Langlands.GeneralLinear.CartanQuotient.normalize` constructs an element of the
 existing `NormalizedTuple (m + 1)` from an antitone tuple
 `lam : Fin (m + 1) → ℤ`. Its coordinate at `i` is
@@ -80,16 +78,15 @@ leaving its quotient image unchanged. The full upper modulus is
 
 `Langlands.Group.GL.CartanQuotientCoverStatement` separately states
 `CartanQuotientCoverStatement` and `CartanQuotientDisjointStatement`.
-This constructor does not prove them. Their remaining proof requires
+This constructor does not prove them. Their proof requires
 the supplied-`T` uniformizer adapter, lifting quotient equality through
 the full scalar center, splitting an arbitrary scalar unit into a
 uniformizer power and a valuation-one unit, integral membership of the
 latter scalar matrix, and application of the unique exponents in
 `GeneralLinear.Cartan.cartanDecomposition`. This is a substantive
 algebraic quotient argument beyond the normalization construction.
-The focused proof successor is Task 1443,
-`6680f0d4-3690-408c-a3fd-517e4537f703`. Its shared draft is unreviewed and
-is not imported here.
+It is carried out by `cartanQuotientCover` and `cartanQuotientDisjoint` in
+`Langlands.Group.GL.CartanQuotientCoverProof`, which is not imported here.
 
 No covering, uniqueness, compactness, measurability, Haar-volume bound,
 analytic convergence, coefficient estimate or temperedness claim is
@@ -100,7 +97,7 @@ weight `1 + ∑ |lam i|`; it is not identified with Waldspurger's `1 + sigma`.
 
 The constructor and its elementary integer identities are derived internal
 constructions on the published concrete API, rather than verbatim results
-from the literature. No unpublished draft implementation is used.
+from the literature.
 
 The mathematical conventions come from J.-L. Waldspurger,
 *La formule de Plancherel pour les groupes p-adiques, d'après

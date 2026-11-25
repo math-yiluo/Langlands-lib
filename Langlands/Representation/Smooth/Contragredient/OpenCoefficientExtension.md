@@ -1,6 +1,6 @@
 # Full-dual coefficients from an open subgroup
 
-This internal unit assembles the published same-level
+This internal module assembles the published same-level
 `smoothDualFixedExtension` with the published smooth-dual comparison for
 restriction to an open subgroup. It adds no new functional-extension
 principle. The ambient group, source carrier and ambient carrier occupy

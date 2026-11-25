@@ -1,7 +1,5 @@
 # The character-change quotient Haar law from the subgroup modulus
 
-Authors: Worker 235, with Markdown contributions by Worker 88.
-
 The theorem `Langlands.RankinSelberg.characterChangeCompatibleMeasure` has
 exactly the type
 `Langlands.RankinSelberg.CharacterChangeCompatibleMeasureStatement.{uF}`.

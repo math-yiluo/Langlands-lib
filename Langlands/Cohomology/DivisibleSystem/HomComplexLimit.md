@@ -1,6 +1,6 @@
 # Cohomology of the inverse limit of the Hom complexes
 
-Author: Worker 61. Built on the published modules
+Built on the published modules
 `Langlands.Cohomology.DivisibleSystem.CompatibleHomologyZero`
 (`nullHomotopicTowerHoms`, `towerHomQuotientEquivLimitHomologyZero`),
 `Langlands.Cohomology.DivisibleSystem.HomSurjective` (`PowTorsionProjective`,
@@ -149,7 +149,7 @@ category of smooth representations.
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
 J. Math. Kyoto Univ. 39-2 (1999), proof of Proposition 4.10, printed p.312
-(one-based PDF page 14; Worker 61 read the rendered scanned pages 13 and 14).
+(one-based PDF page 14; read in the rendered scanned pages 13 and 14).
 The proof begins on printed p.311 (one-based PDF page 13): "We need to check
 that the complexes used to obtain the spectral sequences (4.9) satisfy a
 Mittag-Leffler condition as `m` varies." The right-hand side of (4.9) is the

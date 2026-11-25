@@ -1,7 +1,5 @@
 # The Hilbert structure on the almost-everywhere cuspidal `L²` subspace of `[G]`
 
-Author: Worker 112.
-
 Getz--Hahn (`getz-hahn-2024-automorphic-representations`) define
 `L²_cusp([G])` in (6.20)--(6.21), printed p. 168 (PDF p. 182), as the
 `φ ∈ L²([G])` whose constant terms along every proper parabolic vanish almost

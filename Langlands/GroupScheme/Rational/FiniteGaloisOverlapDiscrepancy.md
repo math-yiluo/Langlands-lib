@@ -51,7 +51,8 @@ local isomorphism over the cover, and `a : AutomorphicAction A G`.
   all-test inner-discrepancy property.
 
 Nothing here constructs a Galois cocycle for a particular group, a quasi-split
-inner form, or the host existence theorem; this is a supporting unit for the
+inner form, or a proof of the quasi-split inner-form existence theorem
+`QuasiSplitInnerFormExistenceStatement`; this module serves its
 inner-discrepancy step.
 
 ## Proofs

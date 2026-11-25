@@ -1,7 +1,5 @@
 # Ampleness from one affine section open on an abelian variety
 
-Author: Worker 171.
-
 Module `Langlands.AbelianScheme.AffineSectionAmple`. All declarations are in the
 namespace `Langlands.AbelianScheme.AffineSectionAmple`.
 
@@ -59,7 +57,7 @@ This is the classical translation argument of Weil as written in D. Mumford,
 (printed p.59), and the proof of Application 1, implication (i) ⇒ (iii) (printed
 p.61), uses exactly that `T_x^*(D) + T_{-x}^*(D)` lies in `|2D|` and that for any
 point `u` one can choose `x` with `u ± x` avoiding the divisor. Registered source
-`mumford-abelian-varieties-chapter-ii-scan`; Worker 171 read printed pp.58–61.
+`mumford-abelian-varieties-chapter-ii-scan`; printed pp.58–61 were read.
 The implemented statement replaces "effective divisor with finite stabilizer" by
 "section of a power with affine generation open", which is what the definition of
 `IsAmple` in the Library requires; the proof follows the source's translation step

@@ -1,0 +1,443 @@
+import Langlands.GaloisCohomology.Global.Units.LocalOrder
+import Langlands.GaloisCohomology.Global.Units.Picard
+
+/-!
+# The divisor map of the maximal extension unramified outside `S`
+
+Let `K` be a number field, `Ω` a Galois extension of `K` (a separable closure in the applications),
+`S` a set of finite places, `K_S ⊆ Ω` the maximal subextension unramified outside `S` and
+`ι : PlaceEmbeddings K Ω`. For a finite place `v ∉ S` the embedding `ι.finite v` determines a place
+`w_v` of every finite subextension `L` of `K_S` (the place of `levelEmbedding S ι v L`), and these
+places are compatible in towers; since `K_S / K` is unramified at `v`, the normalized valuations at
+`w_v` are compatible too. This gives `sOrder S ι v : K_Sˣ → ℤ` (the exponent of the valuation at
+`w_v`, i.e. minus the order). It is additive, invariant under the decomposition group of `v`
+(the image of `localizationHom ι S v`), and for `x ∈ K_Sˣ` the function
+`(v, g) ↦ sOrder S ι v (g x)` has finite support in `v`.
+
+* `sDivisorModule S ι`: the `G_S`-module of divisors of `K_S` prime to `S`, the divisor module
+  (`divisorModule`) of the family `localizationHom ι S v`, `v ∉ S`, with coefficients `ℤ`;
+* `unitsToSDivisor S ι : K_Sˣ → sDivisorModule S ι`, `x ↦ ((v, g) ↦ sOrder S ι v (g x))`;
+* `unitsToSDivisor_eq_zero_iff`: its kernel is the group of `S`-units of `K_S`.
+-/
+
+namespace Langlands.GaloisCohomology
+
+open CategoryTheory Langlands.ProfiniteCohomology Langlands.Galois NumberField IsDedekindDomain
+
+universe u
+
+noncomputable section
+
+section Unramified
+
+variable {K Ω : Type u} [Field K] [NumberField K] [Field Ω] [Algebra K Ω] [IsGalois K Ω]
+  (S : Set (HeightOneSpectrum (𝓞 K)))
+
+/-- The finite subextensions of `K_S / K` are unramified at the places outside `S`. -/
+theorem isUnramifiedIn_of_maximalUnramifiedOutside
+    (L : IntermediateField K (maximalUnramifiedOutside K Ω S)) [FiniteDimensional K L]
+    {v : HeightOneSpectrum (𝓞 K)} (hv : v ∉ S) :
+    haveI := NumberField.of_module_finite K L
+    Algebra.IsUnramifiedIn (𝓞 L) v.asIdeal := by
+  have := NumberField.of_module_finite K L
+  let L' : IntermediateField K Ω := L.map (maximalUnramifiedOutside K Ω S).val
+  let φ : L ≃ₐ[K] L' := IntermediateField.equivMap L (maximalUnramifiedOutside K Ω S).val
+  have : FiniteDimensional K L' := LinearEquiv.finiteDimensional φ.toLinearEquiv
+  have := NumberField.of_module_finite K L'
+  have hle : L' ≤ maximalUnramifiedOutside K Ω S := by
+    rintro _ ⟨y, -, rfl⟩
+    exact y.2
+  have hU' := (isUnramifiedOutside_iff_le S).2 hle v hv
+  rw [Algebra.isUnramifiedIn_iff_forall_ramificationIdx_eq_one] at hU' ⊢
+  intro P hP hPv
+  let φO : 𝓞 L ≃ₐ[𝓞 K] 𝓞 L' := RingOfIntegers.mapAlgEquiv φ
+  let P' : Ideal (𝓞 L') := P.comap φO.symm
+  have hP'prime : P'.IsPrime := Ideal.comap_isPrime _ _
+  have hP' : P'.LiesOver v.asIdeal := by
+    constructor
+    rw [hPv.over]
+    ext x
+    rw [Ideal.under, Ideal.under, Ideal.mem_comap, Ideal.mem_comap, Ideal.mem_comap,
+      AlgEquiv.commutes]
+  have h1 := hU' P' hP'
+  have hPeq : P = P'.comap φO := by
+    ext x
+    change x ∈ P ↔ φO.symm (φO x) ∈ P
+    rw [AlgEquiv.symm_apply_apply]
+  have hP0 : P' ≠ ⊥ := Ideal.ne_bot_of_liesOver_of_ne_bot v.ne_bot P'
+  rw [← Ideal.ramificationIdx'_eq_ramificationIdx v.asIdeal P' v.ne_bot] at h1
+  rw [← Ideal.ramificationIdx'_eq_ramificationIdx v.asIdeal P v.ne_bot, hPeq,
+    Ideal.ramificationIdx'_comap_eq v.asIdeal φO P']
+  exact h1
+
+end Unramified
+
+section Order
+
+variable {K Ω : Type u} [Field K] [NumberField K] [Field Ω] [Algebra K Ω] [IsGalois K Ω]
+  (S : Set (HeightOneSpectrum (𝓞 K))) (ι : PlaceEmbeddings K Ω) (v : HeightOneSpectrum (𝓞 K))
+
+/-- The embedding into `K̄_v` given by `ι` of a subextension `L` of `K_S`. -/
+abbrev levelEmbedding (L : IntermediateField K (maximalUnramifiedOutside K Ω S)) :
+    L →ₐ[K] AlgebraicClosure (v.adicCompletion K) :=
+  ((ι.finite v).comp (maximalUnramifiedOutside K Ω S).val).comp L.val
+
+variable {S} in
+/-- A unit of `K_S` lying in a subextension `L`, as a unit of `L`. -/
+def levelUnit {L : IntermediateField K (maximalUnramifiedOutside K Ω S)}
+    (x : (maximalUnramifiedOutside K Ω S)ˣ) (hx : (x : maximalUnramifiedOutside K Ω S) ∈ L) : Lˣ :=
+  Units.mk0 ⟨x, hx⟩ fun h => x.ne_zero (congrArg Subtype.val h)
+
+omit [NumberField K] [IsGalois K Ω] in
+@[simp]
+theorem coe_levelUnit {L : IntermediateField K (maximalUnramifiedOutside K Ω S)}
+    (x : (maximalUnramifiedOutside K Ω S)ˣ) (hx : (x : maximalUnramifiedOutside K Ω S) ∈ L) :
+    ((levelUnit x hx : L) : maximalUnramifiedOutside K Ω S) = x :=
+  rfl
+
+instance finiteDimensional_adjoin_maximal (x : maximalUnramifiedOutside K Ω S) :
+    FiniteDimensional K (IntermediateField.adjoin K {x}) :=
+  IntermediateField.adjoin.finiteDimensional (Algebra.IsIntegral.isIntegral x)
+
+/-- The exponent of the normalized valuation of a unit of `K_S` at the place of `ι` above `v`
+(computed in the subextension generated by the unit). -/
+def sOrder (x : (maximalUnramifiedOutside K Ω S)ˣ) : ℤ :=
+  haveI := NumberField.of_module_finite K (IntermediateField.adjoin K {(x : maximalUnramifiedOutside K Ω S)})
+  placeExponent v (levelEmbedding S ι v (IntermediateField.adjoin K {(x : maximalUnramifiedOutside K Ω S)}))
+    (levelUnit x (IntermediateField.mem_adjoin_simple_self K _))
+
+variable {S v} in
+/-- In a tower `L₁ ≤ L₂` of finite subextensions of `K_S`, at `v ∉ S`, the exponent of an element
+of `L₁` at the place of `ι` is the same in `L₁` and in `L₂`. -/
+theorem placeExponent_levelUnit_of_le (hv : v ∉ S)
+    {L₁ L₂ : IntermediateField K (maximalUnramifiedOutside K Ω S)} [FiniteDimensional K L₁]
+    [FiniteDimensional K L₂] (h : L₁ ≤ L₂) (x : (maximalUnramifiedOutside K Ω S)ˣ)
+    (hx₁ : (x : maximalUnramifiedOutside K Ω S) ∈ L₁) :
+    haveI := NumberField.of_module_finite K L₁
+    haveI := NumberField.of_module_finite K L₂
+    placeExponent v (levelEmbedding S ι v L₂) (levelUnit x (h hx₁)) =
+      placeExponent v (levelEmbedding S ι v L₁) (levelUnit x hx₁) := by
+  have := NumberField.of_module_finite K L₁
+  have := NumberField.of_module_finite K L₂
+  let : Algebra L₁ L₂ := (IntermediateField.inclusion h).toRingHom.toAlgebra
+  have : IsScalarTower K L₁ L₂ := IsScalarTower.of_algebraMap_eq fun _ => rfl
+  have hu : Algebra.IsUnramifiedAt (𝓞 K) (placeOfAlgHom (levelEmbedding S ι v L₂)).1.asIdeal :=
+    isUnramifiedIn_of_maximalUnramifiedOutside S L₂ hv _ inferInstance
+      (placeOfAlgHom (levelEmbedding S ι v L₂)).2
+  have e := placeExponent_algebraMap v (levelEmbedding S ι v L₂) hu (levelUnit x hx₁)
+  have h1 : Units.map (algebraMap L₁ L₂ : L₁ →* L₂) (levelUnit x hx₁) = levelUnit x (h hx₁) :=
+    Units.ext rfl
+  have h2 : (levelEmbedding S ι v L₂).comp (IsScalarTower.toAlgHom K L₁ L₂) =
+      levelEmbedding S ι v L₁ :=
+    AlgHom.ext fun _ => rfl
+  rw [h1, h2] at e
+  exact e
+
+variable {S v} in
+/-- At `v ∉ S`, `sOrder` may be computed in any finite subextension containing the unit. -/
+theorem sOrder_eq (hv : v ∉ S) {L : IntermediateField K (maximalUnramifiedOutside K Ω S)}
+    [FiniteDimensional K L] (x : (maximalUnramifiedOutside K Ω S)ˣ)
+    (hx : (x : maximalUnramifiedOutside K Ω S) ∈ L) :
+    haveI := NumberField.of_module_finite K L
+    sOrder S ι v x = placeExponent v (levelEmbedding S ι v L) (levelUnit x hx) := by
+  have h : IntermediateField.adjoin K {(x : maximalUnramifiedOutside K Ω S)} ≤ L :=
+    IntermediateField.adjoin_simple_le_iff.2 hx
+  exact (placeExponent_levelUnit_of_le ι hv h x (IntermediateField.mem_adjoin_simple_self K _)).symm
+
+variable {S v} in
+theorem sOrder_mul (hv : v ∉ S) (x y : (maximalUnramifiedOutside K Ω S)ˣ) :
+    sOrder S ι v (x * y) = sOrder S ι v x + sOrder S ι v y := by
+  let L := IntermediateField.adjoin K {(x : maximalUnramifiedOutside K Ω S),
+    (y : maximalUnramifiedOutside K Ω S)}
+  have : FiniteDimensional K L := IntermediateField.finiteDimensional_adjoin
+    fun z _ => Algebra.IsIntegral.isIntegral z
+  have hx : (x : maximalUnramifiedOutside K Ω S) ∈ L :=
+    IntermediateField.subset_adjoin K _ (Set.mem_insert _ _)
+  have hy : (y : maximalUnramifiedOutside K Ω S) ∈ L :=
+    IntermediateField.subset_adjoin K _ (Set.mem_insert_of_mem _ rfl)
+  have hxy : ((x * y : (maximalUnramifiedOutside K Ω S)ˣ) : maximalUnramifiedOutside K Ω S) ∈ L := by
+    rw [Units.val_mul]
+    exact mul_mem hx hy
+  rw [sOrder_eq ι hv x hx, sOrder_eq ι hv y hy, sOrder_eq ι hv (x * y) hxy, ← placeExponent_mul]
+  rfl
+
+variable {S v} in
+theorem sOrder_one (hv : v ∉ S) : sOrder S ι v 1 = 0 := by
+  have h := sOrder_mul ι hv 1 1
+  rw [mul_one] at h
+  omega
+
+omit [IsGalois K Ω] in
+/-- An `S`-unit of `K_S` lying in a finite subextension `L` is an `S`-unit of `L`. -/
+theorem levelUnit_mem_sUnitsOf {L : IntermediateField K (maximalUnramifiedOutside K Ω S)}
+    {x : (maximalUnramifiedOutside K Ω S)ˣ} (hx : (x : maximalUnramifiedOutside K Ω S) ∈ L)
+    (hxS : x ∈ maximalSUnits K Ω S) : levelUnit x hx ∈ sUnitsOf S L := by
+  let f := L.val.restrictScalars (S.integer K)
+  have hf : Function.Injective f := L.val.toRingHom.injective
+  refine ⟨(isIntegral_algHom_iff f hf).1 hxS.1, (isIntegral_algHom_iff f hf).1 ?_⟩
+  have h2 := hxS.2
+  have : f ((levelUnit x hx)⁻¹ : Lˣ) = ((x⁻¹ : (maximalUnramifiedOutside K Ω S)ˣ) :
+      maximalUnramifiedOutside K Ω S) := by
+    change L.val ((levelUnit x hx : L)⁻¹) = _
+    rw [map_inv₀, Units.val_inv_eq_inv_val]
+    rfl
+  rw [this]
+  exact h2
+
+omit [IsGalois K Ω] in
+/-- A unit of `K_S` lying in `L` that is an `S`-unit of `L` is an `S`-unit of `K_S`. -/
+theorem mem_maximalSUnits_of_levelUnit {L : IntermediateField K (maximalUnramifiedOutside K Ω S)}
+    {x : (maximalUnramifiedOutside K Ω S)ˣ} (hx : (x : maximalUnramifiedOutside K Ω S) ∈ L)
+    (hxL : levelUnit x hx ∈ sUnitsOf S L) : x ∈ maximalSUnits K Ω S := by
+  let f := L.val.restrictScalars (S.integer K)
+  have hf : Function.Injective f := L.val.toRingHom.injective
+  refine ⟨(isIntegral_algHom_iff f hf).2 hxL.1, ?_⟩
+  have : f ((levelUnit x hx)⁻¹ : Lˣ) = ((x⁻¹ : (maximalUnramifiedOutside K Ω S)ˣ) :
+      maximalUnramifiedOutside K Ω S) := by
+    change L.val ((levelUnit x hx : L)⁻¹) = _
+    rw [map_inv₀, Units.val_inv_eq_inv_val]
+    rfl
+  rw [← this]
+  exact (isIntegral_algHom_iff f hf).2 hxL.2
+
+variable {S v} in
+/-- `S`-units have order zero at the places outside `S`. -/
+theorem sOrder_eq_zero_of_mem (hv : v ∉ S) {x : (maximalUnramifiedOutside K Ω S)ˣ}
+    (hx : x ∈ maximalSUnits K Ω S) : sOrder S ι v x = 0 := by
+  let L := IntermediateField.adjoin K {(x : maximalUnramifiedOutside K Ω S)}
+  have := NumberField.of_module_finite K L
+  have hxL := levelUnit_mem_sUnitsOf S
+    (IntermediateField.mem_adjoin_simple_self K (x : maximalUnramifiedOutside K Ω S)) hx
+  rw [mem_sUnitsOf_iff_mem_unit] at hxL
+  have hw : (placeOfAlgHom (levelEmbedding S ι v L)).1 ∉ finitePlacesAbove L S := by
+    intro h
+    obtain ⟨v', hv', hlo⟩ := h
+    have : v' = v := HeightOneSpectrum.ext
+      (hlo.over.trans (placeOfAlgHom (levelEmbedding S ι v L)).2.over.symm)
+    exact hv (this ▸ hv')
+  have h1 := hxL _ hw
+  apply WithZero.exp_injective
+  rw [sOrder, ← valuation_eq_exp_placeExponent]
+  exact h1
+
+/-- Restriction of `G_S` to a finite Galois subextension of `K_S`. -/
+abbrev levelRestrict (L : FiniteGaloisIntermediateField K (maximalUnramifiedOutside K Ω S))
+    (g : GaloisGroupUnramifiedOutside K Ω S) : Gal(L/K) :=
+  AlgEquiv.restrictNormalHom L.toIntermediateField g
+
+omit [NumberField K] [IsGalois K Ω] in
+theorem levelRestrict_apply (L : FiniteGaloisIntermediateField K (maximalUnramifiedOutside K Ω S))
+    (g : GaloisGroupUnramifiedOutside K Ω S) (z : L) :
+    ((levelRestrict S L g z : L) : maximalUnramifiedOutside K Ω S) = g z :=
+  AlgEquiv.restrictNormal_commutes g L.toIntermediateField z
+
+omit [NumberField K] [IsGalois K Ω] in
+/-- The action of `g ∈ G_S` on a unit lying in a finite Galois subextension is that of its
+restriction. -/
+theorem levelUnit_galUnitsHom (L : FiniteGaloisIntermediateField K (maximalUnramifiedOutside K Ω S))
+    (g : GaloisGroupUnramifiedOutside K Ω S) {x : (maximalUnramifiedOutside K Ω S)ˣ}
+    (hx : (x : maximalUnramifiedOutside K Ω S) ∈ L.toIntermediateField)
+    (hgx : ((galUnitsHom K _ g x : (maximalUnramifiedOutside K Ω S)ˣ) :
+      maximalUnramifiedOutside K Ω S) ∈ L.toIntermediateField) :
+    levelUnit (galUnitsHom K _ g x) hgx =
+      galUnitsHom K L (levelRestrict S L g) (levelUnit x hx) := by
+  apply Units.ext
+  apply Subtype.ext
+  exact (levelRestrict_apply S L g ⟨_, hx⟩).symm
+
+omit [NumberField K] [IsGalois K Ω] in
+theorem mem_level_galUnitsHom (L : FiniteGaloisIntermediateField K (maximalUnramifiedOutside K Ω S))
+    (g : GaloisGroupUnramifiedOutside K Ω S) {x : (maximalUnramifiedOutside K Ω S)ˣ}
+    (hx : (x : maximalUnramifiedOutside K Ω S) ∈ L.toIntermediateField) :
+    ((galUnitsHom K _ g x : (maximalUnramifiedOutside K Ω S)ˣ) : maximalUnramifiedOutside K Ω S) ∈
+      L.toIntermediateField := by
+  have := (levelRestrict S L g ⟨_, hx⟩).2
+  rwa [levelRestrict_apply] at this
+
+/-- Every unit of `K_S` lies in a finite Galois subextension. -/
+theorem exists_level_mem (x : maximalUnramifiedOutside K Ω S) :
+    ∃ L : FiniteGaloisIntermediateField K (maximalUnramifiedOutside K Ω S),
+      x ∈ L.toIntermediateField := by
+  obtain ⟨L, hL⟩ := exists_finiteGaloisIntermediateField_le
+    (IntermediateField.adjoin K {x})
+  exact ⟨L, hL (IntermediateField.mem_adjoin_simple_self K x)⟩
+
+/-- On a finite Galois subextension `L`, the decomposition map of `ι` at `v` restricts to the
+decomposition homomorphism of the embedding of `L` given by `ι`. -/
+theorem levelRestrict_localizationHom
+    (L : FiniteGaloisIntermediateField K (maximalUnramifiedOutside K Ω S))
+    (h : Gal(AlgebraicClosure (v.adicCompletion K)/v.adicCompletion K)) :
+    levelRestrict S L (localizationHom ι S v h) =
+      decompositionHom (v.adicCompletion K) (levelEmbedding S ι v L.toIntermediateField) h := by
+  apply AlgEquiv.ext
+  intro z
+  apply Subtype.ext
+  apply Subtype.ext
+  apply (ι.finite v).injective
+  rw [levelRestrict_apply]
+  have h1 := localizationHom_apply ι S v h (z : maximalUnramifiedOutside K Ω S)
+  have h2 := decompositionHom_apply (levelEmbedding S ι v L.toIntermediateField) h z
+  exact h1.trans h2.symm
+
+variable {S v} in
+/-- The decomposition group of the place of `ι` above `v ∉ S` preserves `sOrder`. -/
+theorem sOrder_localizationHom (hv : v ∉ S)
+    (h : Gal(AlgebraicClosure (v.adicCompletion K)/v.adicCompletion K))
+    (y : (maximalUnramifiedOutside K Ω S)ˣ) :
+    sOrder S ι v (galUnitsHom K _ (localizationHom ι S v h) y) = sOrder S ι v y := by
+  obtain ⟨L, hyL⟩ := exists_level_mem S (y : maximalUnramifiedOutside K Ω S)
+  have := NumberField.of_module_finite K L.toIntermediateField
+  have hgy := mem_level_galUnitsHom S L (localizationHom ι S v h) hyL
+  rw [sOrder_eq ι hv _ hgy, sOrder_eq ι hv _ hyL, levelUnit_galUnitsHom S L _ hyL hgy]
+  rw [levelRestrict_localizationHom S ι v L h]
+  exact placeExponent_decompositionHom v _ h _
+
+variable {S v} in
+/-- `sOrder` of the conjugates of a unit lying in a finite Galois subextension `L` is computed in
+`L`. -/
+theorem sOrder_galUnitsHom_eq (hv : v ∉ S)
+    (L : FiniteGaloisIntermediateField K (maximalUnramifiedOutside K Ω S))
+    {x : (maximalUnramifiedOutside K Ω S)ˣ}
+    (hx : (x : maximalUnramifiedOutside K Ω S) ∈ L.toIntermediateField)
+    (g : GaloisGroupUnramifiedOutside K Ω S) :
+    haveI := NumberField.of_module_finite K L.toIntermediateField
+    sOrder S ι v (galUnitsHom K _ g x) =
+      placeExponent v (levelEmbedding S ι v L.toIntermediateField)
+        (galUnitsHom K L (levelRestrict S L g) (levelUnit x hx)) := by
+  rw [sOrder_eq ι hv _ (mem_level_galUnitsHom S L g hx), levelUnit_galUnitsHom S L g hx]
+
+end Order
+
+section Divisor
+
+variable {K Ω : Type u} [Field K] [NumberField K] [Field Ω] [Algebra K Ω] [IsGalois K Ω]
+  (S : Set (HeightOneSpectrum (𝓞 K))) (ι : PlaceEmbeddings K Ω)
+
+/-- The decomposition maps of `ι` at the places outside `S`. -/
+abbrev outsideLocalizationHom (v : {v : HeightOneSpectrum (𝓞 K) // v ∉ S}) :
+    Gal(AlgebraicClosure (v.1.adicCompletion K)/v.1.adicCompletion K) →ₜ*
+      GaloisGroupUnramifiedOutside K Ω S :=
+  localizationHom ι S v.1
+
+/-- The `G_S`-module of divisors of `K_S` prime to `S` (with integer coefficients). -/
+abbrev sDivisorModule : Rep.{u} (ULift.{u} ℤ) (GaloisGroupUnramifiedOutside K Ω S) :=
+  divisorModule (outsideLocalizationHom S ι) (ULift.{u} ℤ)
+
+/-- The divisor function of a unit of `K_S`: `(v, g) ↦ sOrder S ι v (g x)`. -/
+def unitsDivisorFun (x : (maximalUnramifiedOutside K Ω S)ˣ) (v : {v : HeightOneSpectrum (𝓞 K) // v ∉ S})
+    (g : GaloisGroupUnramifiedOutside K Ω S) : ULift.{u} ℤ :=
+  ULift.up (sOrder S ι v.1 (galUnitsHom K _ g x))
+
+theorem unitsDivisorFun_mem (x : (maximalUnramifiedOutside K Ω S)ˣ) :
+    unitsDivisorFun S ι x ∈ divisorFunctions (outsideLocalizationHom S ι) (ULift.{u} ℤ) := by
+  obtain ⟨L, hxL⟩ := exists_level_mem S (x : maximalUnramifiedOutside K Ω S)
+  have := NumberField.of_module_finite K L.toIntermediateField
+  refine ⟨?_, fun v => ⟨?_, fun h g => ?_⟩⟩
+  · -- finite support
+    let T : Set (HeightOneSpectrum (𝓞 K)) := ⋃ σ : Gal(L/K),
+      (fun W : HeightOneSpectrum (𝓞 L) => W.under (𝓞 K)) ''
+        {W | ordAt W (galUnitsHom K L σ (levelUnit x hxL)) ≠ 0}
+    have hT : T.Finite := Set.finite_iUnion fun σ => (finite_ordAt_ne_zero _).image _
+    refine (hT.preimage Subtype.val_injective.injOn).subset fun v hv => ?_
+    obtain ⟨g, hg⟩ := Function.ne_iff.1 hv
+    refine Set.mem_iUnion.2 ⟨levelRestrict S L g, (placeOfAlgHom (levelEmbedding S ι v.1
+      L.toIntermediateField)).1, ?_, ((liesOver_iff_eq_under).1
+        (placeOfAlgHom (levelEmbedding S ι v.1 L.toIntermediateField)).2).symm⟩
+    intro h0
+    apply hg
+    apply ULift.ext
+    change sOrder S ι v.1 (galUnitsHom K _ g x) = 0
+    rw [sOrder_galUnitsHom_eq ι v.2 L hxL g]
+    rw [ordAt_eq_zero_iff, valuation_eq_exp_placeExponent] at h0
+    exact WithZero.exp_injective (h0.trans WithZero.exp_zero.symm)
+  · -- locally constant
+    have hc : Continuous (levelRestrict S L) :=
+      InfiniteGalois.restrictNormalHom_continuous L.toIntermediateField
+    have heq : unitsDivisorFun S ι x v = fun g => ULift.up (placeExponent v.1
+        (levelEmbedding S ι v.1 L.toIntermediateField)
+        (galUnitsHom K L (levelRestrict S L g) (levelUnit x hxL))) := by
+      funext g
+      exact congrArg ULift.up (sOrder_galUnitsHom_eq ι v.2 L hxL g)
+    rw [heq]
+    exact (IsLocallyConstant.of_discrete fun σ : Gal(L/K) => ULift.up.{u} (placeExponent v.1
+        (levelEmbedding S ι v.1 L.toIntermediateField)
+        (galUnitsHom K L σ (levelUnit x hxL)))).comp_continuous hc
+  · -- invariance under the decomposition group
+    change ULift.up (sOrder S ι v.1 (galUnitsHom K _ (localizationHom ι S v.1 h * g) x)) =
+      ULift.up (sOrder S ι v.1 (galUnitsHom K _ g x))
+    rw [map_mul, Monoid.End.coe_mul, Function.comp_apply, sOrder_localizationHom ι v.2]
+
+/-- The divisor (prime to `S`) of a unit of `K_S`. -/
+def unitsDivisor : Additive (maximalUnramifiedOutside K Ω S)ˣ →+
+    divisorFunctions (outsideLocalizationHom S ι) (ULift.{u} ℤ) where
+  toFun x := ⟨unitsDivisorFun S ι (Additive.toMul x), unitsDivisorFun_mem S ι _⟩
+  map_zero' := by
+    apply Subtype.ext
+    funext v g
+    apply ULift.ext
+    change sOrder S ι v.1 (galUnitsHom K _ g 1) = 0
+    rw [map_one]
+    exact sOrder_one ι v.2
+  map_add' x y := by
+    apply Subtype.ext
+    funext v g
+    apply ULift.ext
+    change sOrder S ι v.1 (galUnitsHom K _ g (Additive.toMul x * Additive.toMul y)) =
+      sOrder S ι v.1 (galUnitsHom K _ g (Additive.toMul x)) +
+        sOrder S ι v.1 (galUnitsHom K _ g (Additive.toMul y))
+    rw [map_mul, sOrder_mul ι v.2]
+
+/-- The divisor map `K_Sˣ → Div_S(K_S)`, a morphism of `G_S`-modules. -/
+def unitsToSDivisor : unitsModule K (maximalUnramifiedOutside K Ω S) ⟶ sDivisorModule S ι :=
+  Rep.ofHom ⟨uliftIntLinearMap (unitsDivisor S ι), fun σ => by
+    ext x v g
+    change sOrder S ι v.1 (galUnitsHom K _ g (galUnitsHom K _ σ (Additive.toMul x))) =
+      sOrder S ι v.1 (galUnitsHom K _ (g * σ) (Additive.toMul x))
+    rw [map_mul, Monoid.End.coe_mul, Function.comp_apply]⟩
+
+theorem unitsToSDivisor_hom_apply (x : Additive (maximalUnramifiedOutside K Ω S)ˣ)
+    (v : {v : HeightOneSpectrum (𝓞 K) // v ∉ S}) (g : GaloisGroupUnramifiedOutside K Ω S) :
+    (((unitsToSDivisor S ι).hom x : divisorFunctions (outsideLocalizationHom S ι) (ULift.{u} ℤ)) :
+      _ → _ → ULift.{u} ℤ) v g = ULift.up (sOrder S ι v.1 (galUnitsHom K _ g (Additive.toMul x))) :=
+  rfl
+
+/-- The kernel of the divisor map is the group of `S`-units of `K_S`. -/
+theorem unitsToSDivisor_eq_zero_iff (x : (maximalUnramifiedOutside K Ω S)ˣ) :
+    (unitsToSDivisor S ι).hom (Additive.ofMul x) = 0 ↔ x ∈ maximalSUnits K Ω S := by
+  constructor
+  · intro h
+    obtain ⟨L, hxL⟩ := exists_level_mem S (x : maximalUnramifiedOutside K Ω S)
+    have := NumberField.of_module_finite K L.toIntermediateField
+    apply mem_maximalSUnits_of_levelUnit S hxL
+    rw [mem_sUnitsOf_iff_mem_unit]
+    intro W hW
+    set v := W.under (𝓞 K) with hvW
+    have hv : v ∉ S := fun hvS => hW (mem_finitePlacesAbove_iff_under.2 hvS)
+    have hWv : W.asIdeal.LiesOver v.asIdeal := liesOver_iff_eq_under.2 rfl
+    obtain ⟨j', hj'⟩ := exists_placeOfAlgHom_eq
+      (⟨W, hWv⟩ : Langlands.Global.AdelicFunctoriality.FinitePlacesAbove L.toIntermediateField v)
+    obtain ⟨τ, rfl⟩ := exists_eq_comp_of_normal (levelEmbedding S ι v L.toIntermediateField) j'
+    obtain ⟨g, hg⟩ := AlgEquiv.restrictNormalHom_surjective (F := K) (K₁ := L.toIntermediateField)
+      (E := maximalUnramifiedOutside K Ω S) τ
+    have h0 : sOrder S ι v (galUnitsHom K _ g x) = 0 :=
+      congrArg ULift.down (congrFun (congrFun (congrArg Subtype.val h) ⟨v, hv⟩) g)
+    rw [sOrder_galUnitsHom_eq ι hv L hxL g] at h0
+    have hW' : W = (placeOfAlgHom ((levelEmbedding S ι v L.toIntermediateField).comp
+        (τ : L →ₐ[K] L))).1 := congrArg Subtype.val hj'.symm
+    change W.valuation L ((levelUnit x hxL : L)) = 1
+    rw [hW', valuation_eq_exp_placeExponent, placeExponent_comp_algEquiv]
+    have : levelRestrict S L g = τ := hg
+    rw [this] at h0
+    rw [← WithZero.exp_zero]
+    exact congrArg WithZero.exp h0
+  · intro hx
+    apply Subtype.ext
+    funext v g
+    apply ULift.ext
+    exact sOrder_eq_zero_of_mem ι v.2 (galUnitsHom_mem_sUnitsOf g hx)
+
+end Divisor
+
+end
+
+end Langlands.GaloisCohomology

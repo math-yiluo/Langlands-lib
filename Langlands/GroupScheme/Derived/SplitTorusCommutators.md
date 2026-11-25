@@ -1,7 +1,5 @@
 # Cocharacters, reflection commutators and closed subgroups
 
-Author: Worker 1484.
-
 This internal module derives all-test subgroup-containment facts from the
 published cocharacter lattices and actual normalizer actions. It introduces
 no structural assumption about semisimple groups.

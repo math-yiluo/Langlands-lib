@@ -1,6 +1,6 @@
 # Pullback of scheme modules along a flat morphism is exact: proof
 
-This proof module imports the published statement
+This proof module imports the statement
 `Langlands.AlgebraicGeometry.Modules.FlatPullbackExactStatement` and changes neither it nor
 anything it imports. Its closing theorem is
 `Langlands.AlgebraicGeometry.Modules.flatPullbackExact.{u}`, whose complete type is
@@ -27,7 +27,7 @@ or the schemes.
 ## Implemented proof
 
 **Monomorphisms (`pullback_map_mono_of_flat`).** Monomorphisms of scheme modules are tested
-on stalks, using two published lemmas of
+on stalks, using two lemmas of
 `Langlands.AlgebraicGeometry.Picard.LineBundleFiniteMonoDetector`:
 
 - `Langlands.SchemeModule.mono_of_stalk_injective`: a morphism of scheme modules is a
@@ -49,7 +49,7 @@ The proof applies the first lemma to `(Scheme.Modules.pullback f).map φ`. Fix `
    `ModuleCat.extendScalars (f.stalkMap x).hom` preserves finite limits. Hence it
    preserves monomorphisms, by Mathlib's instance
    `preservesMonomorphisms_of_preservesLimitsOfShape`.
-3. The published natural isomorphism
+3. The natural isomorphism
    `Langlands.AlgebraicGeometry.Modules.StalkPullback.pullbackStalkIso f x` identifies
    `Scheme.Modules.pullback f ⋙ stalkFunctor x` with
    `stalkFunctor (f x) ⋙ ModuleCat.extendScalars (f.stalkMap x).hom`. Mathlib's
@@ -100,7 +100,7 @@ theorem.
   limits.
 - `Mathlib.Algebra.Homology.ShortComplex.ExactFunctor`: the two exactness criteria.
 
-All Library results used are published with proofs. No published statement is assumed as
+All Library results used are proved in the Library. No Library statement is assumed as
 data.
 
 ## Provenance
@@ -108,7 +108,7 @@ data.
 The original is the Stacks Project Authors, *The Stacks Project*, Sheaves of Modules,
 Lemma 17.20.2 ([tag 02N4](https://stacks.math.columbia.edu/tag/02N4), label
 `lemma-pullback-flat`): pullback along a flat morphism of ringed spaces is exact. The
-published statement's Markdown explains why preservation of finite limits is the remaining
+statement's Markdown explains why preservation of finite limits is the remaining
 part of exactness and how the lemma specializes to schemes. The registered sources are
 `stacks-closed-immersion-exactness-a04446e5` (`modules.tex`, lines 3190–3209, at Stacks
 commit `a04446e57ec1fbc252a871afcec7752fb2807b14`) and
@@ -122,8 +122,8 @@ where the stalk of `f^*` at `x` is extension of scalars along the flat local rin
 `𝒪_{Y, f x} → 𝒪_{X, x}`. Both routes use the same input, flatness of the stalk maps
 (Stacks, Definition 17.20.1, tag 02N3).
 
-The proof relies on pinned Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`,
-specifically `AlgebraicGeometry.Flat.stalkMap` (`Mathlib.AlgebraicGeometry.Morphisms.Flat`),
+The proof was written for Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435` and relies
+specifically on `AlgebraicGeometry.Flat.stalkMap` (`Mathlib.AlgebraicGeometry.Morphisms.Flat`),
 `ModuleCat.preservesFiniteLimits_extendScalars_of_flat`
 (`Mathlib.Algebra.Category.ModuleCat.Descent`), `ModuleCat.mono_iff_injective`
 (`Mathlib.Algebra.Category.ModuleCat.EpiMono`), `CategoryTheory.NatIso.naturality_2`, and
@@ -131,5 +131,5 @@ specifically `AlgebraicGeometry.Flat.stalkMap` (`Mathlib.AlgebraicGeometry.Morph
 `Functor.preservesFiniteColimits_iff_forall_exact_map_and_epi`
 (`Mathlib.Algebra.Homology.ShortComplex.ExactFunctor`).
 
-Worker 228 wrote the published statement, this Lean proof and this explanation. Worker 1098
-published the proof task for the parent flat base-change task of Workers 360 and 1098.
+The theorem is used in the proof of flat base change for higher direct images,
+`flatHigherDirectImageBaseChange` (module `FlatHigherDirectImageBaseChangeProof`).

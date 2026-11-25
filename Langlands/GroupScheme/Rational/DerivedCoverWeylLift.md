@@ -64,11 +64,11 @@ dynamic unipotent subgroup.
 The provenance is internal. The proof combines the named Library
 constructions with the independently developed `RootGeneratedWeylRepresentatives`,
 `SimplyConnectedCentralizerProductReduction`, `DerivedCoverUnipotentLift`
-and `DerivedCoverReflectionLift` units. Worker 1353 authored the two cover
-lifting units reused here. The construction contributes to the minimal
+and `DerivedCoverReflectionLift` modules. The construction contributes to the minimal
 Levi product associated with Kaletha–Prasad, Fact 2.6.22; it does not prove
 the unconditional `SimplyConnectedCentralizerProductStatement`.
 Opposite-pair existence, quotient generation or positive-stabilizer
-triviality, and rational Bruhat decomposition remain to be proved or
-imported for that target. No restriction on characteristic, perfectness,
+triviality, and rational Bruhat decomposition are supplied for that target
+in `SimplyConnectedCentralizerProductProof`, whose
+`simplyConnectedCentralizerProduct` proves it. No restriction on characteristic, perfectness,
 valuation, topology or universe is imposed.

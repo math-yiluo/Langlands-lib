@@ -1,6 +1,6 @@
 # Analyticity of ordinary common-closure local constants
 
-Worker 1768 states
+This module states
 `Langlands.LocalFactor.CommonClosureSpectralAnalyticStatement.{uF,uV}`.
 This is a proposition only. The module proves no analyticity theorem and
 constructs no local-constant system.

@@ -88,7 +88,7 @@ theorem representedCMNormalProjection_preimage_image
     (s : Set ((schemes R).obj V)) :
     projection R U V hVU ⁻¹' (projection R U V hVU '' s) =
       ⋃ g : SmallCMResidualGroup D U V,
-        (Scheme.Hom.toLRSHom ((quotientAction R U V hVU).ρ g)).base '' s := by
+        (Scheme.Hom.toLRSHom ((quotientAction R U V hVU).ρ g).asHom).base '' s := by
   ext x
   constructor
   · rintro ⟨z, hz, hzx⟩
@@ -101,7 +101,7 @@ theorem representedCMNormalProjection_preimage_image
     obtain ⟨g, z, hz, rfl⟩ := Set.mem_iUnion.mp hx
     refine ⟨z, hz, ?_⟩
     change projection R U V hVU z =
-      (((quotientAction R U V hVU).ρ g) ≫ projection R U V hVU) z
+      (((quotientAction R U V hVU).ρ g).asHom ≫ projection R U V hVU) z
     rw [representedCMNormalProjection_invariant]
     rfl
 
@@ -121,12 +121,12 @@ theorem representedCMNormalProjection_isOpenMap
     existence geometry]
   apply isOpen_iUnion
   intro g
-  exact ((quotientAction R U V hVU).ρAut g).hom.homeomorph.isOpenMap s hs
+  exact ((quotientAction R U V hVU).ρAut g).asIso.hom.homeomorph.isOpenMap s hs
 
 /-- Invariant original fine-level open sets, using the actual residual maps. -/
 abbrev representedCMNormalInvariantOpens :=
   {W : ((schemes R).obj V).Opens // ∀ g : SmallCMResidualGroup D U V,
-    (Scheme.Hom.toLRSHom ((quotientAction R U V hVU).ρ g)).base ⁻¹'
+    (Scheme.Hom.toLRSHom ((quotientAction R U V hVU).ρ g).asHom).base ⁻¹'
       (W : Set ((schemes R).obj V)) = (W : Set ((schemes R).obj V))}
 
 local notation "invariantOpens" => representedCMNormalInvariantOpens D C preservation
@@ -141,8 +141,8 @@ def representedCMNormalOpenPullback (W : ((schemes R).obj U).Opens) :
     intro g
     ext x
     change projection R U V hVU
-      ((Scheme.Hom.toLRSHom ((quotientAction R U V hVU).ρ g)).base x) ∈ W ↔ _
-    change ((((quotientAction R U V hVU).ρ g) ≫ projection R U V hVU) x) ∈ W ↔ _
+      ((Scheme.Hom.toLRSHom ((quotientAction R U V hVU).ρ g).asHom).base x) ∈ W ↔ _
+    change ((((quotientAction R U V hVU).ρ g).asHom ≫ projection R U V hVU) x) ∈ W ↔ _
     rw [representedCMNormalProjection_invariant]
     rfl⟩
 
@@ -182,7 +182,7 @@ theorem representedCMNormalOpenPullback_descend
       universality dualityNaturality polarizationStability compatibility h htor
       R U V hVU existence geometry z x hzx
     have hz' : z ∈
-        (Scheme.Hom.toLRSHom ((quotientAction R U V hVU).ρ g)).base ⁻¹'
+        (Scheme.Hom.toLRSHom ((quotientAction R U V hVU).ρ g).asHom).base ⁻¹'
           (W.val : Set ((schemes R).obj V)) := by
       rw [W.property g]
       exact hz
@@ -282,7 +282,7 @@ theorem cmNormalProjection_preimage_image
     (chosenSchemes q).map (smallCMInclusion D hVU) ⁻¹'
       ((chosenSchemes q).map (smallCMInclusion D hVU) '' s) =
         ⋃ g : SmallCMResidualGroup D U V,
-          (Scheme.Hom.toLRSHom ((chosenAction q).ρ g)).base '' s :=
+          (Scheme.Hom.toLRSHom ((chosenAction q).ρ g).asHom).base '' s :=
   representedCMNormalProjection_preimage_image D C preservation composition
     unitCoherence associativity comparison symmetry stability square universality
     dualityNaturality polarizationStability compatibility h htor

@@ -1,7 +1,5 @@
 # Arithmetic pullback on simultaneous adelic center-finite functions
 
-Author: Worker 2.
-
 This internal construction takes actual number fields in independent universes,
 an actual field ring isomorphism, and every natural matrix rank, including
 zero. The coefficient field is complex and arithmetic pullback fixes values.

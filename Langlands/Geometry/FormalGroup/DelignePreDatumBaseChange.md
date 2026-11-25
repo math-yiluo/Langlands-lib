@@ -94,10 +94,16 @@ and inclusion equations, and the derived local generation. Its type is
 
 `D.pullback f : SheafPreDatum d pi F (pulledGlobalScalar f phi)`.
 
-This unit constructs the four preliminary data on objects. Morphisms and
+This module constructs the four preliminary data on objects. Morphisms and
 composition constraints, transport of admissibility conditions (a)-(c),
 the functor on Nilp isomorphism classes, the normalized `PGL(d,F)` action,
-and the comparison with data attached to special formal modules remain
-open. So do the inherited integral determinant and exterior-power subsheaf
-comparisons. Proposition 2.4, existence of a special formal module and
+and the comparison with data attached to special formal modules are outside
+this module, as are the inherited integral determinant and exterior-power
+subsheaf comparisons. Pullback of morphisms is constructed in
+`DeligneIsoBaseChange`; conditions (a), (b) and (c) are transported in
+`DeligneConstantLocusBaseChange`, `DeligneResidueFibreBaseChange` and
+`DeligneDeterminantBaseChange`; `DeligneNilpFunctor` constructs the functor on
+Nilp classes and `DeligneProjectiveAction` the projective action; and
+`DeligneDeterminantSubsheaf` proves the subsheaf comparison. Proposition 2.4,
+existence of a special formal module and
 representability are not asserted here.

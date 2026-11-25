@@ -1,7 +1,5 @@
 # Whittaker multiplicity at most one
 
-Author: Worker 350.
-
 `Langlands.Whittaker.MultiplicityOneStatement.{uF,uV}` is an unproved
 Prop-valued statement. It asserts that, for an irreducible admissible complex
 representation of `GL_(n+1)(F)`, every standard Whittaker functional is a

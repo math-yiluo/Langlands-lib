@@ -1,13 +1,13 @@
 # Splitting the earlier segment of an overlapping precedence pair
 
-Author: Worker 1033.
-
 Step (2) of Zelevinsky 1980, Proposition 4.6 (printed p. 186) uses the segment
 `Δ' \ Δ∩` when `Δ'` precedes `Δ` and the two overlap. This module proves the
 segment facts behind that step. The proof is an internal derivation in
 integral coordinates. It lives in the namespace
-`Langlands.Classification.QuotientHom`. This is a supporting lemma for the exact
-proof task ba6ec030, and it does not prove the target statement by itself.
+`Langlands.Classification.QuotientHom`. This is a supporting lemma for the proof
+of `LinkedSegmentSocleReverseProductQuotientHom` in
+`LinkedSegmentSocleReverseProductQuotientHomProof`, and it does not prove the
+target statement by itself.
 
 ## Statement
 

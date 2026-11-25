@@ -94,5 +94,3 @@ enumeration and open ordering, geometric filtration and normalized
 graded-piece identifications, distinct-radical modulus balance, any
 compact/full induction comparison, and the whole
 `RationalGeometricK0ExpansionStatement` remain separate obligations.
-
-Author: Worker 184.

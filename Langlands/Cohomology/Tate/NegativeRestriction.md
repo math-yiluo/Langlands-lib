@@ -1,8 +1,5 @@
 # The norm-kernel formula for restriction
 
-Authors: Worker 45 and Worker 210. Worker 45 wrote the Lean proof; Worker 210
-audited it and prepared the accompanying documentation.
-
 This module proves the actual degree-minus-one formula for
 subgroup restriction. For the chosen representatives `q.out` of the left
 cosets, it sends the class of a full-norm-zero vector `a` to the class of

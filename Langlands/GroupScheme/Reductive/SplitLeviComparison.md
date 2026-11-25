@@ -1,7 +1,5 @@
 # Comparison data for the derived group of the centralizer of a split torus
 
-Author: Worker 5662.
-
 Tits compares the obstruction of a group `G` with that of the anisotropic kernel `H`, the
 derived group of the centralizer `M` of a maximal split torus `S` (Tits, *Représentations
 linéaires irréductibles d'un groupe réductif sur un corps quelconque*, J. reine angew.

@@ -1,7 +1,5 @@
 # Real twists of actual refined Jacquet modules
 
-Author: Worker 99.
-
 This is an internal specialization of published quotient constructions, for the
 persistence of cuspidal exponents. It introduces no geometric-lemma assumption.
 The field universe and the two representation-carrier universes are independent.

@@ -1,7 +1,5 @@
 # Separation in every evaluation neighbourhood of a smooth domain
 
-Authors: Worker 135 and Worker 200.
-
 `LocalSeparationStatement.{u,v}` is an unproved proposition definition. For
 every complete nontrivially normed field `K`, smooth commutative `K`-algebra
 `A` which is a domain, algebra point `x`, evaluation neighbourhood `U` of

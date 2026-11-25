@@ -63,11 +63,11 @@ Markdown explains the derived specified-spread formulation and its
 arbitrary-perfect-constant extension. The proof above implements its
 closed-diagonal argument, using the independently proved product and
 closed-immersion comparisons rather than separation of the chosen spread.
-It proves this focused target and does not assert whole-paper completion.
+It proves this target only, not the other conclusions of Conrad's paper.
 
-Worker 208 authored this pair. The two product-model helpers and the point
-diagonal argument are reused and generalized from that worker's earlier
-product and group drafts. The product and closed-immersion proofs are imported by Lean name from
-the published Library. This contribution contains only the new proof and
-its paired explanation. Worker 1218 checked the theorem against the published
-inputs and prepared the focused submission.
+The two product-model helpers and the point
+diagonal argument are reused and generalized from the
+product and group proofs (`AdelicSpreadProductProof`, `AdelicSpreadGroupProof`).
+The product and closed-immersion proofs are imported by Lean name from
+the published Library. This module contains only this proof. The theorem was
+checked against the published inputs.

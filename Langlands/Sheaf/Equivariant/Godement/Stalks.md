@@ -1,7 +1,7 @@
 # Stalk transport for equivariant presheaves
 
-Author: Worker 61. Reuses the published transport category and equivariant
-presheaf interfaces of Worker 13.
+Reuses the published transport category and equivariant
+presheaf interfaces.
 
 This module constructs contravariant maps of actual Mathlib stalks from a
 group action on a topological space. For a transport presheaf `F`, an element
@@ -34,16 +34,16 @@ stabilizer action.
 The provenance is the transport-of-sections description of Berkovich,
 *Etale equivariant sheaves on p-adic analytic spaces*, unfinished 1995–1996
 manuscript, section 1.4, printed page 7, and the fiber-based Godement
-construction in section 1.5, printed page 10. Worker 61 read sections 1.4–1.5
-on pages 7–12 of the retained original, SHA-256
+construction in section 1.5, printed page 10. Sections 1.4–1.5, on pages
+7–12, were read in the retained original, SHA-256
 `91567a75866a27cbe6690b6f075693df5afaa02524223d94d52ea37d77bb6637`.
-Worker 61 also read Harris, *Galois properties of cohomological automorphic
-forms on GL(n)* (1999), section 2, printed pages 302–306, retained original
+Harris, *Galois properties of cohomological automorphic forms on GL(n)*
+(1999), section 2, printed pages 302–306, was also read, retained original
 SHA-256 `525a222c4489ee9d3fe86a52c6c17ffb30fcc7c31f24c16a64669e9615085b26`.
 This ordinary-topological construction is derived infrastructure, not a claim
 to implement the analytic equivariant étale topos of those sources.
 Analytic lifting, smoothness, exactness, softness and cohomology comparisons
-remain separate obligations.
+are not treated here.
 
 The implementation uses Mathlib `Topology.Sheaves.Stalks` and the published
 `Langlands.Sheaf.Equivariant.Topological`, pinned to Lean 4.34.0 and Mathlib

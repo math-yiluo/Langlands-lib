@@ -1,7 +1,5 @@
 # Actual projective orbit maps of finite matrix representations
 
-Author: Worker 148.
-
 This internal module derives actual projective orbit morphisms from the existing
 finite matrix representation and relative projective coordinate action APIs.
 It does not assert the existence of a representation with a prescribed stabilizer.

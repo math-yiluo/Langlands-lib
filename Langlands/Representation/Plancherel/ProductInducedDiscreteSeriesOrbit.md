@@ -1,7 +1,5 @@
 # Actual discrete-series orbits and full-stabilizer tensor comparison
 
-Author: Worker 200.
-
 This derived adapter connects the actual representative section space to the
 discrete-series orbit and full unramified stabilizer used by Waldspurger.
 It imports the existing constructions by Lean name from
@@ -37,7 +35,7 @@ space and a measure `mu` with `Measure.IsHaarMeasure mu`.
 For the discrete-series part supply
 `hpi : IsSquareIntegrableModCentralSubgroup C hC pi.obj.representation mu`.
 The source application takes `C` to be the actual split center, with its
-compatible quotient measure. This unit keeps that realization explicit.
+compatible quotient measure. This module keeps that realization explicit.
 
 `UnitaryOrbitRepresentative nu pi` is the existing subtype of actual
 irreducible admissible objects whose canonical smooth class is a unitary
@@ -75,8 +73,8 @@ For the remaining constructions assume exactly
 ```
 
 This is a displayed premise of the derived adapter. For actual reductive
-points its proof is a retained mathematical obligation, not an additional
-permitted external Chapter V assertion.
+points its proof is a retained mathematical obligation, not an assumed
+external Chapter V assertion.
 `RationalCentralQuotient` and `RationalTwistStabilizer` provide existing
 conditional actual-point realizations from finite index of the actual
 `RenardCartan.splitValuationImage`. The general proof of that finite-index

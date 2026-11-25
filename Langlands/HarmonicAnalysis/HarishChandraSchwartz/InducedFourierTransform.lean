@@ -12,7 +12,7 @@ Lemma VII.1.1 states (i) `(ρ(g) λ(h) f)^(ω, P) = (π(g) ⊗ π̌(h)) f̂(ω, 
 (ii) `(E_P^G ψ, f)_G = (ψ, f̂(ω, P))` for the product of V.2 on `L(ω, P)`, and
 (iii) `(E_P^G f̂(ω, P))(g) = d(ω) θ^G_ω(λ(g) f̌)`.
 
-Here `L(ω, P)` is Worker 200's `productInducedCoefficientObject`, `E_P^G` is its
+Here `L(ω, P)` is `productInducedCoefficientObject`, `E_P^G` is its
 coefficient map `CompactInduction.coefficientMap` (the integral over `K` with its Haar
 probability), and the product of V.2 is `CompactInduction.formalDegreeProductForm`. The
 transform is the generic `coefficientFourierTransform` of `FourierTransform` for the normalized

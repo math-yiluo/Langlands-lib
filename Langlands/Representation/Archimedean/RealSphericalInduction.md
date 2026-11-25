@@ -54,7 +54,7 @@ Proof by recursion on `n`, along the maximal parabolic subgroup `P_{n−1,1}`. T
 ## Provenance
 
 The module was written for this project. It adapts the induction `D(n)` of the Library's
-`JacquetDual` (strict Langlands lemma, Task 6749) to the closed chamber. In place of the
+`JacquetDual` (strict Langlands lemma) to the closed chamber. In place of the
 Jacquet integral of an arbitrary vector, the spherical vector is replaced by its regularized
 multiple `H`, which lies in the same `(𝔤, K)`-annihilator (`RealSphericalReach`). The
 statement is the dual form of Kostant's cyclicity of the spherical vector, as quoted by

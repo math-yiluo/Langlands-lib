@@ -1,13 +1,11 @@
 # Projective embeddings by sections from properness and ampleness
 
-Author: Worker 1543.
-
 `Langlands.AlgebraicGeometry.Picard.ProperAmpleClosedImmersionBySectionsStatement.{u}`
 is a proposition, with no proof asserted here. For every noetherian commutative
 ring `R : Type u`, scheme `X : Scheme.{u}` and proper morphism
 `f : X ⟶ Spec (CommRingCat.of R)`, the existence of an ample line bundle on `X`
 implies that there is an actual module sheaf `M : X.Modules` with
-`Scheme.Modules.IsInvertible M` and
+`Scheme.Modules.IsInvertibleFLT M` and
 `Scheme.Modules.ClosedImmersionBySections M f`.
 
 The last predicate supplies a finite integer `N`, actual global sections of

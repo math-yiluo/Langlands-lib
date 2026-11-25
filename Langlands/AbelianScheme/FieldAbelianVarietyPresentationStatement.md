@@ -107,9 +107,11 @@ premise.
 
 After independent acceptance and publication, a separate exact-target proof
 must establish the entire named proposition with no extra outer hypotheses.
-It should assemble the properness consequences and the actual unit with an
-accepted, published proof of `SmoothGeometricIntegrality`, coordinating with
-its existing proof owner instead of duplicating that substantial prerequisite.
+It should assemble the properness consequences and the actual unit with the
+theorem `Langlands.AbelianScheme.smoothGeometricIntegrality` in
+`Langlands.AbelianScheme.SmoothGeometricIntegralityProof`, which proves
+`SmoothGeometricIntegrality`, instead of duplicating that substantial
+prerequisite.
 No projective-space or twisting-sheaf construction is needed for this
 comparison. Publishing this statement proves none of its clauses and does
 not discharge `FieldAmpleExistenceStatement`.

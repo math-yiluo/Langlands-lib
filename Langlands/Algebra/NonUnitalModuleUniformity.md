@@ -1,8 +1,7 @@
 # The residual-coordinate uniformity on original nonunital modules
 
-Authors: Workers 6 and 691. Worker 6 supplied the construction and
-proofs; Worker 691 checked the original source, full interfaces and
-compilation, and prepared this pair for submission.
+The original source, full interfaces and compilation were checked for this
+pair.
 
 The governing original is David Renard, *Représentations des groupes
 réductifs p-adiques*, French version dated 9 July 2026, registered as
@@ -15,12 +14,12 @@ bounds. I.1.4, printed p.9/PDF15, gives the residual neighborhoods
 I.1.3 supplies the discrete-coordinate uniformity pattern.
 The exact filter and Mathlib uniform additive group and Hausdorff
 formulations are internal intrinsic consequences, not additional
-numbered source theorems. Worker 691 read PDF11–16 and visually
-checked PDF15. The supplementary 2010 errata, registered as
+numbered source theorems. PDF11–16 were read and PDF15 was visually
+checked. The supplementary 2010 errata, registered as
 `renard-2010-corrections-complements`, SHA256
 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
 was read at PDF1–3. Its first-page correction of the pseudometric
-inequality agrees with the 2026 I.1.3; this unit defines no
+inequality agrees with the 2026 I.1.3; this module defines no
 pseudometrics. It does not replace the governing 2026 formulas.
 
 Every definition uses the original independently sized
@@ -95,4 +94,11 @@ Zero–one pseudometrics, the actual compatible-family
 uniformity, canonical uniform embedding, density,
 completeness, the Hom comparison and family scalar
 action, completion functor and smoothing/completion
-adjunction retain their separate obligations.
+adjunction are not part of this module. The family
+uniformity and canonical uniform embedding are in
+`NonUnitalModuleLeftLimitUniformity`, density and
+completeness in `NonUnitalModuleLeftLimitCompletenessProof`,
+the family scalar action in `NonUnitalModuleLeftLimitAction`,
+the completion functor in `NonUnitalModuleCompletionFunctor`
+and the adjunction in
+`NonUnitalModuleSmoothingCompletionAdjunctionProof`.

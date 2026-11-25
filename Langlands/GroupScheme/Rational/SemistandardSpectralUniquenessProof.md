@@ -1,7 +1,6 @@
 # Uniqueness of intrinsic semistandard triples from their parabolics
 
-Worker 778, with Worker 770's full-triple dynamic realization proof,
-Task 7514. `Langlands.GroupScheme.semistandardSpectralUniqueness` proves exactly
+`Langlands.GroupScheme.semistandardSpectralUniqueness` proves exactly
 the published `Langlands.GroupScheme.SemistandardSpectralUniquenessStatement.{u}`.
 Its provenance is an internal deduction from the theorems identified below.
 The target originates in

@@ -83,7 +83,7 @@ equality can in turn be supplied by
 representation equivalence and its two scalar-action identities.
 
 The derivation reuses published Lean results and makes no new literature
-claim. This unit does not construct the needed Jacquet equivalence, prove
+claim. This module does not construct the needed Jacquet equivalence, prove
 admissibility, extend unit modulus to the entire abstract Levi center, or
 prove irreducibility of induction. Those steps are still required in the
 self-association argument.

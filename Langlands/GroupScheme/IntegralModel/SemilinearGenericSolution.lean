@@ -75,6 +75,7 @@ theorem genericGroup_isAffineHom
   let : IsAffineHom N.genericFibre.X.hom :=
     MorphismProperty.pullback_snd _ _ N.affine
   rw [← Over.w N.genericIso.inv.hom.hom]
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   infer_instance
 
 /-- Affineness of a specified scalar extension descends to the original group. -/

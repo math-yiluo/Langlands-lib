@@ -81,7 +81,9 @@ through the actual algebraic residue-field extension, giving exactly
 `φ.HasParabolicSpecialFibreImage`.
 
 The provenance is the composition of these named Library constructions and
-theorems, rather than a new translation of an external source. This unit
+theorems, rather than a new translation of an external source. This module
 proves neither `UnramifiedUpstairsRadicalRootGenerationStatement` nor a
 reduction-preimage equality. Those remaining inputs are required before the
-exact host theorem can be concluded.
+exact statement `UnramifiedFacetParabolicImageStatement` can be concluded; the
+theorem `unramifiedFacetParabolicImage` in `UnramifiedFacetParabolicImageProof`
+proves it.

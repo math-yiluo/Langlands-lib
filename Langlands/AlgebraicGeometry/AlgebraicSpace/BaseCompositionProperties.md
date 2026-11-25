@@ -1,7 +1,5 @@
 # Properties after composition of bases
 
-Author: Worker 109.
-
 This internal module derives morphism and atlas transport from the actual
 `BaseCompositionGeometry` construction. It does not claim any external
 literature theorem as proved. All schemes and test schemes retain the arbitrary

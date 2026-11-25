@@ -1,7 +1,6 @@
 # Actual closed retracts of idempotent group-scheme maps
 
-Worker 632, for the relative normal-idempotent gluing input proposed by
-Worker 47.
+This module is an input for the relative normal-idempotent gluing.
 
 For an idempotent endomorphism of a separated group scheme over any base,
 `idempotentRetract` constructs an actual closed subgroup with an inclusion

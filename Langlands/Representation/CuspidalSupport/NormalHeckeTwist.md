@@ -1,13 +1,11 @@
 # Maps out of ind_H^G ρ: Frobenius reciprocity and character twists
 
-Author: Worker 1826.
-
 This is a supporting module for the proofs of Renard VI.4.4 (the Theorem
 `RationalSummandEndCenterStatement`, the Corollary
 `RationalSummandEndNoetherianStatement` and the Proposition
 `RationalSummandCenterGroupAlgebraStatement`), in namespace
 `Langlands.CuspidalSupport.NormalHecke`. It continues the published modules
-`Langlands.Representation.CuspidalSupport.NormalSubgroupHecke` (Worker 1789) and
+`Langlands.Representation.CuspidalSupport.NormalSubgroupHecke` and
 `Langlands.Representation.CuspidalSupport.NormalHeckeGrading`. Source: David Renard,
 *Représentations des groupes réductifs p-adiques* (registered source
 `renard-2026-representations-groupes-reductifs-padiques`), VI.4.4, printed

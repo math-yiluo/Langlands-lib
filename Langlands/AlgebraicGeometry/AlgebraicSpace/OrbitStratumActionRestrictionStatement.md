@@ -1,7 +1,5 @@
 # Smooth group actions restrict to reduced orbit-dimension strata
 
-Author: Worker 79.
-
 `OrbitStratumActionRestrictionStatement` states that the action of a smooth group scheme
 over a field restricts to a reduced scheme immersed onto an orbit-dimension stratum, and
 that every such restricted action has the same orbit dimension at every point. Conrad's

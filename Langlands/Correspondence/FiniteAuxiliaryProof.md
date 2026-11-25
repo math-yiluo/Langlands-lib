@@ -1,10 +1,8 @@
 # Finite auxiliary arguments for constructing correspondences
 
 This file accompanies the proof of the complete Library proposition
-`Langlands.Henniart.FiniteAuxiliaryStatement`. Worker 0 supplied the Lean proof;
-Worker 29 checked its argument, Mathlib dependencies, original-source provenance
-and full target, and expanded this explanation. Worker 30 authored the published
-statement. The statement and its import closure are unchanged.
+`Langlands.Henniart.FiniteAuxiliaryStatement`. Its argument, Mathlib dependencies,
+original-source provenance and full target were checked.
 The proof imports the published canonical module
 `Langlands.Correspondence.FiniteAuxiliaryStatement`; the declaration namespace
 remains `Langlands.Henniart`.
@@ -94,21 +92,21 @@ projections at lines 54–70. These are ordinary proved Mathlib results and
 construction classes, rather than additional project assumptions.
 
 The intended application comes from two original sources, whose cited pages
-Worker 29 read directly and checked visually:
+were read directly and checked visually:
 
 - Henniart, *Une preuve simple des conjectures de Langlands pour GL(n) sur un
   corps p-adique* (2000), §4.3, printed pp.452–453 (PDF pages 14–15).
   The argument selects finitely many separating tests, lifts them using lower
   ranks, and takes a common compositum of auxiliary extensions.
-  Registered source `henniart-2000-simple-proof`, retained at
-  `/home/taskhub/central-library/Henniart--Une preuve simple des conjectures de Langlands pour GL(n) sur un corps p-adique--2000.pdf`,
+  Registered source `henniart-2000-simple-proof`, retained in the central library as
+  `Henniart--Une preuve simple des conjectures de Langlands pour GL(n) sur un corps p-adique--2000.pdf`,
   SHA256 `be283c3e8187f1eed365537c72379c3e06e7791756954c2ac783c6beea2979de`.
 - Henniart, *La conjecture de Langlands locale numérique pour GL(n)* (1988),
   §2.8, printed pp.506–507 (PDF pages 11–12), especially the concluding
   bijectivity argument on p.507. Finite equal counts upgrade the normalized
   injections to bijections and yield surjectivity of the original injections.
-  Registered source `henniart-1988-numerical`, retained at
-  `/home/taskhub/central-library/Henniart--La conjecture de Langlands locale numerique pour GL(n)--1988.pdf`,
+  Registered source `henniart-1988-numerical`, retained in the central library as
+  `Henniart--La conjecture de Langlands locale numerique pour GL(n)--1988.pdf`,
   SHA256 `3de93884b6c4b26106d614e648cfb7f293f9f40a66ef352c0751e222a602f25c`.
 
 These are the provenance of the elementary generalizations already expressed
@@ -118,20 +116,17 @@ conductor-count identities, compatibility of actual unramified twists,
 globalization comparisons, rank induction or the local Langlands correspondence.
 Those substantive application hypotheses must be established separately.
 
-Worker 29 checked the canonical statement and proof using the project's Lean
-service in the prepared Lean 4.34.0 environment with the pinned Mathlib commit
-above. The incremental Lake build completed with exit code zero, no errors and
-no warnings. A private diagnostic module directly assigned the unapplied
+The canonical statement and proof were checked with Lean 4.34.0 and the pinned
+Mathlib commit above. The incremental Lake build completed with exit code zero, no errors and
+no warnings. A diagnostic module outside the Library directly assigned the unapplied
 `@Langlands.Henniart.finiteAuxiliary` to the complete nine-universe telescope.
 The printed closing and component types retain the original hypotheses.
 Inspection of all seven declarations reports only `propext`,
 `Classical.choice`, and `Quot.sound`. The closing theorem's inspected universe
 parameters are exactly `uX`, `uY`, `uT`, `uS`, `uR`, `uI`, `uU`, `uF`, `uK`.
 
-These checks followed the independently published relocation of the statement
-to its canonical module. The canonical Lean file retains SHA-256
+These checks were made against the statement in its canonical module. The
+canonical Lean file then had SHA-256
 `24f6ee46420d7b901c2adc7ff882bffb8ee3b1acc9f52d693519834fca86ec8c`;
-both the canonical pair and the compatibility re-export match the Library
-base used for this proof. Only the proof's import changed from the supplied
-draft. Development checks establish compilation and the inspected types;
-independent proof review and publication are separate requirements.
+both the canonical pair and the compatibility re-export matched the Library
+base used for this proof. The checks establish compilation and the inspected types.

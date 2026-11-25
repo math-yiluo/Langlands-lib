@@ -142,9 +142,9 @@ an integer shift. At every integer i and point of the old zero locus at
 i+z, the required equality is the old component determinant at i+z equal
 to pi^z times the old normalized frame determinant at i+z.
 
-This unit supplies arbitrary integer shifts and their determinant law.
+This module supplies arbitrary integer shifts and their determinant law.
 It does not claim unconditional preservation of condition (c) or full
 admissibility. Zero/addition comparisons and inverse equivalences of the
 framed functors, the normalized GL/PGL action and its central laws,
 compatibility with base change, an independent exterior-subsheaf comparison,
-and representability remain outside this unit.
+and representability remain outside this module.

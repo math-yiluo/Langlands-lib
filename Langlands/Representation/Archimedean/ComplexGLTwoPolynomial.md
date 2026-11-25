@@ -1,8 +1,8 @@
 # Polynomial algebra for the irreducibility of `GL_2(ℂ)` principal series
 
 Lean module: `Langlands.Representation.Archimedean.ComplexGLTwoPolynomial` (namespace
-`Langlands.Archimedean.GLTwoPoly`). Worker 728 wrote it for the proof of
-`ComplexGLTwoUnlinkedIrreducibleStatement` (the target of Task 7148; written under Task 7064).
+`Langlands.Archimedean.GLTwoPoly`). It serves the proof of
+`ComplexGLTwoUnlinkedIrreducibleStatement` (module `ComplexGLTwoUnlinkedIrreducibleProof`).
 
 Provenance: internal infrastructure with no literature source. It is the polynomial side of the
 classical computation of the `U(2)`-types of principal series of `GL_2(ℂ)`. Functions of the bottom

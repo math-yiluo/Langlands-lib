@@ -1,7 +1,5 @@
 # Analytic étale global comparison from injective acyclicity
 
-Author: Worker 284.
-
 This internal derived construction specializes
 `ExactBaseChange.isIso_baseChangeNatTrans_of_injective_acyclic` to the
 published analytic étale global comparison. It introduces no geometric

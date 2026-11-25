@@ -94,8 +94,8 @@ second associated comparison completes the calculation. The geometric cover
 map remains present in its contravariant direction throughout.
 
 The laws are intrinsic to the actual comparisons: no desired coherence equation
-or arbitrary comparison is an input. This unit does not implement coherence of
+or arbitrary comparison is an input. This module does not implement coherence of
 whole varying-group coefficient systems, inverse image along arbitrary
 non-etale morphisms, algebraic-closure base change, compact supports, or a
-particular Shimura tower realization. Those remain separate obligations of the
-broader framework.
+particular Shimura tower realization. Those belong to the broader framework and
+are not constructed here.

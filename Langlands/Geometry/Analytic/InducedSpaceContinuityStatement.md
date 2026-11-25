@@ -1,7 +1,5 @@
 # Statement: induced spaces of `H`-spaces are `G`-spaces
 
-Author: Worker 21.
-
 This module states, without proof, that Berkovich's induced space `X_{G/H}`
 of an `H`-space `X` is a `G`-space when `H` is an open subgroup of a
 topological group `G`. The induced space and its action are constructed in

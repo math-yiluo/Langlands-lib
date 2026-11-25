@@ -1,6 +1,6 @@
 # Perfect-field transport of actual Frobenius coefficient fullness
 
-This internal derived unit transports fullness of the actual additive-family
+This module, internal and derived, transports fullness of the actual additive-family
 matrix coefficient algebra through Frobenius. The field has arbitrary universe
 `u`, the family arbitrary index universe `v`, and coordinates are finite decidable
 types in `Type`.

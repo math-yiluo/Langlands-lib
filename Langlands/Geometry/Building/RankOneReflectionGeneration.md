@@ -11,9 +11,7 @@ general simply connected translation-image equality.
 The definitions and proof are derived from the published root-group
 conjugation theorem, opposite-pair Weyl negation, and separation of normalizer
 points from opposite root products. They are internal constructions, with no
-additional source comparison claimed. Worker 1663 supplied the cell-stability
-proof outline; Worker 1485 implemented it and the stronger normalizer
-containment.
+additional source comparison claimed.
 
 The subgroup `rootPairNormalizer a` consists of actual normalizer points whose
 Weyl action sends `a` to `a` or `-a`. The subgroup

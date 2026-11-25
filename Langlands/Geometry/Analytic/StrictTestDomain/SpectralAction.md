@@ -1,7 +1,5 @@
 # Continuous actions for the restricted rational spectral topology
 
-Author: Worker 36.
-
 Let `K` be a complete ultrametric normed field, `P` a presented strict
 affinoid `K`-algebra, and `G` a topological group. The structure
 `RationalSpectralAction G P` consists of a homomorphism
@@ -113,7 +111,7 @@ test families are not excluded by additional assumptions.
 
 The registered Equish source folder is
 `provided-7bb3903652336bd799aad8853b8efd7ff3bcc0c7652745417f4745a14ac08e90`,
-receipt SHA256
+SHA256 digest
 `e046cadfb9dcec4b0cf6624f80d6316bf532416153b82023f5100bd1ab0726cd`.
 Its member
 `Berkovich--Etale equivariant sheaves on p-adic analytic spaces (unfinished manuscript)--1996.pdf`

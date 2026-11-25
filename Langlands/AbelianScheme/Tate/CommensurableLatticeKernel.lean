@@ -62,7 +62,7 @@ theorem normalizedKernelSubgroup_monodromy
   dsimp only
   intro g x
   change kernelLevelEquiv A (Over.mk s) (n.val * n.val)
-    (Additive.ofMul (g.hom.app (torsionCover htor A (n.val * n.val)
+    (Additive.ofMul (g.asIso.hom.app (torsionCover htor A (n.val * n.val)
       (Nat.mul_pos n.property.1 n.property.1) (hu (fullSquareIndex n))) x.toMul)) ∈
         normalizedLevelSubgroup A.toGrp (Over.mk s) n L ↔ _
   rw [← levelMonodromy_kernel]

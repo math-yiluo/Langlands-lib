@@ -28,5 +28,5 @@ of the tower.
 
 The provenance is internal. The proof uses `CongruencePowers`,
 `CongruenceNeighborhoodBasisProof`, and the rational-point evaluation embedding.
-This unit proves the pro-p property of the congruence kernel; the pro-p property
+This module proves the pro-p property of the congruence kernel; the pro-p property
 of a larger radical preimage also needs control of its special-fibre image.

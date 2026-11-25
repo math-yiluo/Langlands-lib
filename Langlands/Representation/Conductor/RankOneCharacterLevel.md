@@ -1,6 +1,6 @@
 # Character conductors on the actual rank-one carrier
 
-This internal unit uses an actual representation equivalence from a complex
+This module uses an actual representation equivalence from a complex
 representation of `GL₁(F)` to the scalar character representation. The field
 and carrier have independent universes. The level results require only a field
 with its valuation relation; the comparison with the smoothness-constructed

@@ -1,7 +1,5 @@
 # Points of relative affine spaces given by polynomial algebras
 
-Author: Worker 1412.
-
 This module is an internal helper for the proof of
 `Langlands.GroupScheme.AutomorphicAction.AffineFiniteTypeCocycleModelStatement`
 (see [AffineFiniteTypeCocycleModelProof](../GroupScheme/AutomorphicAction/AffineFiniteTypeCocycleModelProof.md)).

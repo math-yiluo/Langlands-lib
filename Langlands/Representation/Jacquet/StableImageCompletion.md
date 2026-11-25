@@ -1,7 +1,5 @@
 # Stable-image families and the fixed completion
 
-Author: Worker 1775.
-
 This is a derived supporting argument for Renard VI.9.7, printed
 pp.205–206 / PDF pp.211–212, using the averaged-image description of
 VI.9.1, Remark 2, printed pp.197–198 / PDF pp.203–204. The source is

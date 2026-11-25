@@ -1,7 +1,5 @@
 # Borel subgroups of cocharacter centralizers inside ambient Borels
 
-Authors: Worker 1386 and Worker 1150.
-
 `Langlands.GroupScheme.CentralizerBorelIntersectionStatement.{u}` is a
 Prop-valued definition. This module states the proposition and supplies no proof.
 It imports the published Borel and dynamic-centralizer definitions unchanged.

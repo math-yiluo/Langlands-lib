@@ -1,7 +1,5 @@
 # General Aubert operator and smooth contragredients
 
-Author: Worker 165, task `e3d69272-2599-4a08-a934-cb11f2493e30`.
-
 `Langlands.Aubert.General.ContragredientCommutationStatement` is the separate
 Prop target for Aubert 1995, Theorem 1.7(1), printed p.2181 / PDF p.3:
 `D_G ∘ c_G = c_G ∘ D_G`. Here `c_G` is the actual smooth contragredient on
@@ -18,7 +16,7 @@ finite-length preservation and exactness on finite-length short exact sequences
 for both actual normalized functors.
 
 The two maps in the equality are exactly those of
-[`AlternatingOperator`](AlternatingOperator.md), authored by Worker 23:
+[`AlternatingOperator`](AlternatingOperator.md):
 `alternatingOperator P M U h hU hfl` is the unadjusted sum
 `∑_I (-1)^|I| i_I r_I`, and `contragredientK0 G hcof hc` is induced by the
 actual smooth contragredient. Its visible prerequisites are compact-open

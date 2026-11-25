@@ -1,10 +1,10 @@
 # Actual domains and structural conditions for correspondence families
 
-Author: Worker 7. This module fixes the parameter-side domains of the local
+This module fixes the parameter-side domains of the local
 Langlands correspondence for `GL_n(F)` and the structural conditions on
 families of maps between the class spaces. It states no part of LLC: the
 normalized correspondence predicate and its existence and uniqueness are
-separate modules of this task.
+in separate modules of `Langlands.Correspondence`.
 
 ## Parameter class spaces
 
@@ -138,12 +138,12 @@ published Library declarations, imported and not copied:
 local Weil group, its inertia, degree and norm character, and the class
 spaces), `Langlands.WeilDeligne.Parameters` and `Langlands.WeilDeligne.Basic`
 (Frobenius-semisimple parameter classes, `classRank`, `zeroMonodromy`),
-`Langlands.WeilDeligne.ParameterRelations` (Worker 1's `forget`) and
+`Langlands.WeilDeligne.ParameterRelations` (`forget`) and
 `Langlands.Weil.Representation.Basic` (`forgetPropertyClass`). The automorphic
-class spaces come from this task's `AutomorphicRelations` and
+class spaces come from `AutomorphicRelations` and
 `SupercuspidalRelations`.
 
 ## Validation
 
-The module compiles in the project Lean service without errors or warnings,
+The module compiles without errors or warnings,
 together with `SupercuspidalRelations` and `OperationCompatibility`.

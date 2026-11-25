@@ -2,11 +2,10 @@
 
 Module `Langlands.Representation.Derivative.MirabolicHighestLayerProof`.
 
-Authors: Worker 805, Worker 806 and Worker 1185. Worker 805 wrote this module and the
-two helper modules it builds on. The averaging lemma of `MirabolicHighestLayerLift`
-adapts Worker 806's published proof of `eq_bot_or_eq_top_of_radicalQuotient`. Worker
-1185 wrote the imported published helper `MirabolicHighestLayerPlusMaps`. See
-[Authorship](#authorship).
+The averaging lemma of `MirabolicHighestLayerLift` adapts the published proof of
+`eq_bot_or_eq_top_of_radicalQuotient`, and the imported published helper
+`MirabolicHighestLayerPlusMaps` supplies the plus-side maps. See
+[Adapted argument and helper](#adapted-argument-and-helper).
 
 ## Result
 
@@ -18,8 +17,7 @@ theorem Langlands.Derivative.mirabolicHighestLayer {p : ℕ} [Fact p.Prime]
 
 The conclusion is exactly the published proposition
 `Langlands.Derivative.MirabolicHighestLayerStatement.{uF,uV} F T` from
-`Langlands.Representation.Derivative.MirabolicHighestLayerStatement` (statement
-artifact `aab6502d-ffdb-4615-bfe5-754f68eff06e`). The outer telescope is
+`Langlands.Representation.Derivative.MirabolicHighestLayerStatement`. The outer telescope is
 `{p : ℕ} [Fact p.Prime] (F : PadicField.{uF} p) (T : F.TopologicalData)`, with
 independent universes `uF` and `uV`. The theorem has no other hypotheses, whether
 explicit, implicit or in typeclasses.
@@ -77,7 +75,7 @@ namespace.
 
 ## The three modules
 
-The proof consists of three new paired modules, all submitted together:
+The proof consists of three paired modules:
 
 1. `Langlands.Representation.Derivative.MirabolicHighestLayerLift`
    (`MirabolicHighestLayerLift.md`). It defines one lifting step `liftStep` through
@@ -115,11 +113,11 @@ For `B` a representation of `P_(m+2)`, define:
   `q = phiMinusQuotient T ψ m B`, a representation of `P_(m+1)`;
 - `Ψ⁺ D = (psiPlus T n).obj D`, for `D` a representation of `GL_n`: the published
   normalized inflation to `P_(n+1)`, that is, twist by `psiPlusCharacter T n = |det|^(1/2)`
-  and let the radical act trivially (`MirabolicPlusNormalization`, Worker 984);
+  and let the radical act trivially (`MirabolicPlusNormalization`);
 - `Φ⁺ τ = (phiPlus T ψ m).obj τ`, for `τ` a representation of `P_(m+1)`: the published
   normalized compact induction to `P_(m+2)` from the subgroup `plusSubgroup m`,
   twisted by the character `thetaPlus ψ m` and by `phiPlusCharacter T m = |det|^(1/2)`
-  (`MirabolicPlus`, Worker 723, and `MirabolicPlusNormalization`, Worker 984). Its
+  (`MirabolicPlus` and `MirabolicPlusNormalization`). Its
   carrier universe is `max uF uV` when that of `τ` is `uV`.
 
 The minus functors are the published functors of `MirabolicMinus` and carry the
@@ -166,8 +164,8 @@ On the plus side the ranks go back up: `Ψ⁺ : GL_n → P_(n+1)` and
   inclusion, and `E` is a linear bijection from `(Φ⁺)^j Ψ⁺ (A^(j+1))` onto `U` that
   commutes with the actions.
 - `isPlusLayerImage_top`: if the radical acts trivially on a representation `A` of
-  `P_(n+1)`, then `IsPlusLayerImage T ψ n 0 A ⊤`. The map is Worker 1185's published
-  `psiPlusBaseEmbedding T n A h : Ψ⁺ (Ψ⁻ A) → A`. It inverts the quotient map
+  `P_(n+1)`, then `IsPlusLayerImage T ψ n 0 A ⊤`. The map is the published
+  `psiPlusBaseEmbedding T n A h : Ψ⁺ (Ψ⁻ A) → A` of `MirabolicHighestLayerPlusMaps`. It inverts the quotient map
   `A → Ψ⁻ A` (bijective because the radical acts trivially); the `|det|^(1/2)` and
   `|det|^(-1/2)` twists cancel. It is injective with range `⊤`
   (`psiPlusBaseEmbedding_injective`, `psiPlusBaseEmbedding_range`).
@@ -287,9 +285,9 @@ page 5, visually checked) normalizes `r_{U,θ}` by `mod_U^(-1/2)`, where `mod_U(
 the module of `u ↦ g u g⁻¹` on `U`. The Lean lemmas `map_inv_mul_haar_iff`,
 `psiMinusCharacter_eq_modulus` and `phiMinusCharacter_eq_modulus` prove that the Haar
 modulus of conjugation by `levi g` on the radical is `|det g|`, and that both minus
-characters are its `-1/2` power. The proof uses Worker 110's published
+characters are its `-1/2` power. The proof uses the published
 `padicRectangularHaarScaling`. So the inherited `|det|^(-1/2)` twists are exactly
-BZ77's `mod_V^(-1/2)`. Worker 710's published `MirabolicMinusNormalization`
+BZ77's `mod_V^(-1/2)`. The published `MirabolicMinusNormalization`
 (`psiMinusHaarInverseHalf_eq`, `phiMinusHaarInverseHalf_eq`) states the same
 agreement with the actual radical Haar character. It is in the import closure but not
 used; this proof's comparison is its own.
@@ -298,7 +296,7 @@ used; this proof's comparison is its own.
 induction `i_{U,θ}` by `mod_U^(1/2)`: its functions satisfy
 `f(umg) = θ(u) mod_U^(1/2)(m) ρ(m)(f(g))`. This is the inverse of the quotient
 normalization. The published
-`phiPlus` and `psiPlus` (`MirabolicPlusNormalization`, Worker 984) twist by
+`phiPlus` and `psiPlus` (`MirabolicPlusNormalization`) twist by
 `phiPlusCharacter T n` and `psiPlusCharacter T n`. Published lemmas fix these
 characters:
 
@@ -359,7 +357,8 @@ invariant subspaces, nor nontriviality, nor kernels. The `Normalization` section
   groups I*, Ann. Sci. ÉNS 10 (1977). Literature ID
   `bernstein-zelevinsky-1977-induced-i`, SHA256
   `8424600228ab72c5937e45edceefcae410a2a0b8f5ebf282185691542aa89092`, file
-  `/home/taskhub/central-library/Bernstein-Zelevinsky--Induced representations of reductive p-adic groups I--1977.pdf`.
+  `Bernstein-Zelevinsky--Induced representations of reductive p-adic groups I--1977.pdf`
+  in the central library.
   Read for this proof: §1.7–1.8 (printed p.444, PDF page 5, visually checked for the
   signs of the `mod^(∓1/2)` normalizations), §3.2–3.3 (printed p.451, PDF page 12),
   including the definition of `Φ⁺`, `Ψ⁺` and the exact sequence 3.2(e)
@@ -383,32 +382,32 @@ the project or public `notes` locations.
 
 ## Mathematical proof-dependency audit
 
-Every lower result used as a theorem is an accepted, published proof in Library
+Every lower result used as a theorem is a published proof in Library
 commit `4bec44eec4c7f23def3d25d5c43f4f2a034af469`. Every reused construction is
 published there as well. The substantive inputs of the three modules:
 
-| Lower result or construction | Module (author) | Use |
+| Lower result or construction | Module | Use |
 |---|---|---|
-| `Mirabolic.subsingleton_of_psiMinus_phiMinus` | `MinusVanishing` (Worker 1025; artifact `c6026915-8731-45a8-bd21-ef1ac39654b8`) | `Ψ⁻Z = Φ⁻Z = 0 ⇒ Z = 0` in `liftStep_imageStep` |
-| `Mirabolic.radical_acts_trivially_of_phiMinus` | `MirabolicHighestDerivativeDescent` (Worker 1024; joint artifact `f957ae76-3779-4436-bdcb-98bc63561e07` of Workers 1024 and 805) | base step |
-| `Mirabolic.radical_acts_trivially_zero`, `relations_one_eq_bot` | `MirabolicDerivativeVanishing` (Worker 1024; same artifact) | base step |
-| `Mirabolic.radicalRelations_stable` | `MirabolicPhiMinusNondegeneratePairing` (Worker 805; same artifact) | invariance of `liftStep` |
-| `mirabolicDerivativeDetection` (via `LevelCalculus.level_pos` inside `nontrivial_phiMinus_iff`) | `MirabolicDerivativeDetectionProof` (Worker 658), a wrapper of `MirabolicDerivativeVanishing.derivativeDetection` | `Nontrivial (Φ⁻A) ⇒ 1 < level A` in the base step |
-| `apply_eq_zero_of_mem_relations` | `Jacquet.CharacterAveraging` (Worker 831) | element-level left exactness |
-| `latticeBox` API, `exists_latticeBox_subset`, `finite_latticeBox_quotient`, `sum_out_eq_zero`, `eq_one_of_smul_eq_self`, `mem_latticeBox_of_forall_character_eq_one` | `MirabolicLatticeBox` (Worker 806) | averaging; supports and character sums in `MirabolicHighestLayerPlus` |
-| `radicalBox`, `isCompact_radicalBox`, `radicalBox_mono`, `exists_mem_latticeBox` | `MinusVanishing` (Worker 1025) | exhaustion in left exactness |
-| `lastRow_image_mem_nhds`, `lastRow_mem_image_iff`, `continuous_lastRow`, `lastRow_ne_zero` | `RankinSelberg.LastRowCompactOrbitProof` (Worker 714) | averaging; last-row supports |
-| `lift`, `lastRow_lift`, `orbitSet`, `mem_orbitSet`, `lastRow_mem_orbitSet`, `isOpen_orbitSet`, `isOpenMap_lastRow`, `exists_lastRow_eq`, `lastRow_mirabolic_mul`, `mul_inv_mem_mirabolic_of_lastRow_eq` | `RankinSelberg.EqualRankFrobeniusProof` (author not recorded in its Markdown); its main theorem is not used | last rows, open orbit sets and the compact-support criterion in `MirabolicHighestLayerPlus` |
-| `GeneralLinearGroup.integralSubgroup`, `isCompact_integralSubgroup`, `isOpen_integralSubgroup` | `Group.GL.IntegralSubgroup` (author not recorded in its Markdown) | compact open subgroup in the support cover |
-| `rowHomeomorph` | `HarmonicAnalysis.RowSchwartzAction` (author not recorded in its Markdown) | only inside `EqualRankFrobeniusProof.isOpenMap_lastRow` |
-| `phiPlus`, `psiPlus`, `phiPlusNormalizedMk`, `phiPlusNormalizedEval` with `_covariant`, `_injective`, `_exists_openSubgroup`, `_isCompact_quotientSupport`; `phiPlusCharacter_eq_inv`, `phiPlusCharacter_mul_phiMinusCharacter`, `psiPlusCharacter_eq_inv`, `psiPlusCharacter_mul_psiMinusCharacter` | `MirabolicPlusNormalization` (Worker 984) | the normalized `Φ⁺`, `Ψ⁺`; vectors of `Φ⁺` and the covariance check |
-| `thetaPlus`, `phiPlusUnnormalized`, `psiPlusUnnormalized`, `phiPlusMk`, `phiPlusEval` and its laws | `MirabolicPlus` (Worker 723) | the unnormalized constructions under the normalized functors |
-| `compactInduced`, `quotientSupport`, `quotientMap` and the function spaces | `Induction.Definitions` (Worker 15) | compact induction underlying `Φ⁺`; quotient supports |
-| `plusSubgroup`, `plusProjection`, `mem_plusSubgroup`, `plus_eq_radicalElement_mul_successor`, `projection_radicalElement_mul_levi`, `lastColumn_mul_last`, continuity lemmas | `MirabolicProjection` (Worker 749) | the inducing subgroup of `Φ⁺` and the factorizations in `MirabolicHighestLayerPlus` |
-| `phiPlusPost`, `phiPlusPost_injective`, `mem_range_phiPlusPost`, `psiPlusBaseEmbedding`, `psiPlusBaseEmbedding_injective`, `psiPlusBaseEmbedding_range` | `MirabolicHighestLayerPlusMaps` (Worker 1185 with Worker 805; artifact `a88fbb0e-6c1c-4f3a-9151-b45d9b90f868`) | `exists_plusStep`; the base `isPlusLayerImage_top` |
-| `padicRectangularHaarScaling` | `HarmonicAnalysis.PadicRectangularHaarScalingProof` (Worker 110) | `Normalization` section of `MirabolicHighestLayerLift` only |
-| `LevelCalculus` lemmas (`hasNonzeroDerivative_succ_iff`, `hasNonzeroDerivative_succ_iff_cast`, `level_eq_level_phiMinus_succ`, `nontrivial_phiMinus_iff`, `level_le_of_imp`, `isoRange`, …) | `LevelCalculus` (Workers 1070/745) | level bookkeeping |
-| Definitions and elementary API of `Φ⁻`, `Ψ⁻`, `θ`, `level`, `IsHomogeneous`, derivative iteration, rank maps | `MirabolicMinus` (Worker 749), `MirabolicCharacter` (Worker 653), `Homogeneity`, `Iteration` (Worker 818), `MirabolicRadical` (Worker 653), `MirabolicProjection` (Worker 749) | definitions |
+| `Mirabolic.subsingleton_of_psiMinus_phiMinus` | `MinusVanishing` | `Ψ⁻Z = Φ⁻Z = 0 ⇒ Z = 0` in `liftStep_imageStep` |
+| `Mirabolic.radical_acts_trivially_of_phiMinus` | `MirabolicHighestDerivativeDescent` | base step |
+| `Mirabolic.radical_acts_trivially_zero`, `relations_one_eq_bot` | `MirabolicDerivativeVanishing` | base step |
+| `Mirabolic.radicalRelations_stable` | `MirabolicPhiMinusNondegeneratePairing` | invariance of `liftStep` |
+| `mirabolicDerivativeDetection` (via `LevelCalculus.level_pos` inside `nontrivial_phiMinus_iff`) | `MirabolicDerivativeDetectionProof`, a wrapper of `MirabolicDerivativeVanishing.derivativeDetection` | `Nontrivial (Φ⁻A) ⇒ 1 < level A` in the base step |
+| `apply_eq_zero_of_mem_relations` | `Jacquet.CharacterAveraging` | element-level left exactness |
+| `latticeBox` API, `exists_latticeBox_subset`, `finite_latticeBox_quotient`, `sum_out_eq_zero`, `eq_one_of_smul_eq_self`, `mem_latticeBox_of_forall_character_eq_one` | `MirabolicLatticeBox` | averaging; supports and character sums in `MirabolicHighestLayerPlus` |
+| `radicalBox`, `isCompact_radicalBox`, `radicalBox_mono`, `exists_mem_latticeBox` | `MinusVanishing` | exhaustion in left exactness |
+| `lastRow_image_mem_nhds`, `lastRow_mem_image_iff`, `continuous_lastRow`, `lastRow_ne_zero` | `RankinSelberg.LastRowCompactOrbitProof` | averaging; last-row supports |
+| `lift`, `lastRow_lift`, `orbitSet`, `mem_orbitSet`, `lastRow_mem_orbitSet`, `isOpen_orbitSet`, `isOpenMap_lastRow`, `exists_lastRow_eq`, `lastRow_mirabolic_mul`, `mul_inv_mem_mirabolic_of_lastRow_eq` | `RankinSelberg.EqualRankFrobeniusProof`; its main theorem is not used | last rows, open orbit sets and the compact-support criterion in `MirabolicHighestLayerPlus` |
+| `GeneralLinearGroup.integralSubgroup`, `isCompact_integralSubgroup`, `isOpen_integralSubgroup` | `Group.GL.IntegralSubgroup` | compact open subgroup in the support cover |
+| `rowHomeomorph` | `HarmonicAnalysis.RowSchwartzAction` | only inside `EqualRankFrobeniusProof.isOpenMap_lastRow` |
+| `phiPlus`, `psiPlus`, `phiPlusNormalizedMk`, `phiPlusNormalizedEval` with `_covariant`, `_injective`, `_exists_openSubgroup`, `_isCompact_quotientSupport`; `phiPlusCharacter_eq_inv`, `phiPlusCharacter_mul_phiMinusCharacter`, `psiPlusCharacter_eq_inv`, `psiPlusCharacter_mul_psiMinusCharacter` | `MirabolicPlusNormalization` | the normalized `Φ⁺`, `Ψ⁺`; vectors of `Φ⁺` and the covariance check |
+| `thetaPlus`, `phiPlusUnnormalized`, `psiPlusUnnormalized`, `phiPlusMk`, `phiPlusEval` and its laws | `MirabolicPlus` | the unnormalized constructions under the normalized functors |
+| `compactInduced`, `quotientSupport`, `quotientMap` and the function spaces | `Induction.Definitions` | compact induction underlying `Φ⁺`; quotient supports |
+| `plusSubgroup`, `plusProjection`, `mem_plusSubgroup`, `plus_eq_radicalElement_mul_successor`, `projection_radicalElement_mul_levi`, `lastColumn_mul_last`, continuity lemmas | `MirabolicProjection` | the inducing subgroup of `Φ⁺` and the factorizations in `MirabolicHighestLayerPlus` |
+| `phiPlusPost`, `phiPlusPost_injective`, `mem_range_phiPlusPost`, `psiPlusBaseEmbedding`, `psiPlusBaseEmbedding_injective`, `psiPlusBaseEmbedding_range` | `MirabolicHighestLayerPlusMaps` | `exists_plusStep`; the base `isPlusLayerImage_top` |
+| `padicRectangularHaarScaling` | `HarmonicAnalysis.PadicRectangularHaarScalingProof` | `Normalization` section of `MirabolicHighestLayerLift` only |
+| `LevelCalculus` lemmas (`hasNonzeroDerivative_succ_iff`, `hasNonzeroDerivative_succ_iff_cast`, `level_eq_level_phiMinus_succ`, `nontrivial_phiMinus_iff`, `level_le_of_imp`, `isoRange`, …) | `LevelCalculus` | level bookkeeping |
+| Definitions and elementary API of `Φ⁻`, `Ψ⁻`, `θ`, `level`, `IsHomogeneous`, derivative iteration, rank maps | `MirabolicMinus`, `MirabolicCharacter`, `Homogeneity`, `Iteration`, `MirabolicRadical`, `MirabolicProjection` | definitions |
 
 The guarantees used from the reused plus constructions are their published explicit
 laws: `phiPlusNormalizedEval_covariant` (left covariance),
@@ -416,17 +415,16 @@ laws: `phiPlusNormalizedEval_covariant` (left covariance),
 `phiPlusNormalizedEval_isCompact_quotientSupport` (compact support modulo
 `plusSubgroup`), `phiPlusNormalizedEval_injective`, the constructor
 `phiPlusNormalizedMk` from exactly these three properties, and the group action by
-right translation. Worker 1185's maps are characterized by their published range and
+right translation. The maps of `MirabolicHighestLayerPlusMaps` are characterized by their published range and
 injectivity lemmas. No theorem about `Φ⁺` or `Ψ⁺` beyond these laws and the character
 identities is used.
 
 Shared lower inputs were checked for independence as follows. The detection chain
 (`MirabolicDerivativeDetectionProof` → `MirabolicDerivativeVanishing` →
 `MirabolicHighestDerivativeDescent`, `MirabolicPhiMinusNondegeneratePairing`,
-`MinusVanishing`) is the general Bernstein–Zelevinsky 1977 derivative route. Its own
-published audits record compliance with the operator's detection conditions
-(`/home/taskhub/pilot/correspondence/bd71b9185aab5d6eafffb7891bd3a3ca.md`). It uses no
-Zelevinsky 1980 segment derivative formula (§3.5 or §9.6) and no task from the
+`MinusVanishing`) is the general Bernstein–Zelevinsky 1977 derivative route. The
+pages of its modules carry their own independence audits. It uses no
+Zelevinsky 1980 segment derivative formula (§3.5 or §9.6) and no result from the
 exclusion lists. This proof adds no such dependency. `LevelCalculus` is shared with a
 segment-socle consumer, but it is a lower module: it imports nothing from that
 consumer. Its results that mention exactness (`mapsShortExact_phiMinusIterate`,
@@ -441,13 +439,14 @@ which contains none of the excluded modules.
 ## Independence and exclusions
 
 - Not used: `Langlands.Derivative.MirabolicStrongIndecomposabilityReduction`, its
-  proof task `08fe06ea-e64e-4f3a-b899-3e0acacf61db`, their proof successors and
+  proof (`mirabolicStrongIndecomposabilityReduction` in
+  `MirabolicStrongIndecomposabilityProof`, which imports this module) and
   consequences, and any strong-indecomposability conclusion.
-- Not used: the generic lattice transport/essential-interval unit (statement
-  `ec62132d-2b17-4cbd-bd75-d5fd43de7cde`, proof task
-  `a2baddab-056b-4503-865e-74d58ecb3812`). These modules prove their own concrete
-  lattice statements and do not duplicate that algebraic unit.
-- Not used: the paused minus-exactness task `b65bc667-6951-4bd5-82af-10fb7046df7f`.
+- Not used: the generic lattice transport/essential-interval statement
+  `Langlands.Classification.StrongIndecomposabilityLatticeTransferStatement` and
+  its proof. These modules prove their own concrete
+  lattice statements and do not duplicate that algebraic result.
+- Not used: minus exactness.
   The statement module `MirabolicMinusExactnessStatement` is in the import closure only
   because `LevelCalculus` imports it (through `ShortExactFunctorLaws`). None of its
   constants is in the declaration closure. Only element-level left exactness for
@@ -457,36 +456,23 @@ which contains none of the excluded modules.
   filtration, finite-length, admissibility or irreducibility theorem is used or
   assumed. In the imported Lean files the word "adjunction" occurs only in a
   docstring of `MirabolicPlus`, which says that no adjunction is stated there.
-- None of the following, nor their mathematical conclusions, proof successors or
-  transitive proof dependencies, occur in the import or declaration closure:
-  ordered-socle existence `23189526-80b0-4828-a6d4-7ebec2cbeef5`; socle exhaustion
-  `f3a69bc8-7312-4f82-8a7d-ea3c8188cb63`; analytic segment classification
-  `aca8805b-054f-4d56-8045-12db7f623404`; segment-socle product irreducibility
-  `23e98d90-6055-4e35-91a9-b0f5d8a84961`; the final segment-socle irreducibility
-  criterion `2ae5cbe5-0701-4509-88a0-db8cbeb35be4`; `AdjacentUnlinkedSegmentSocleSwap`;
-  `TwoSegmentSocleCommutation`; special-head product criterion
-  `8364e73f-14ec-4d14-8f2b-1555a7c1ce95`; special-head exhaustion
-  `3bfb61fa-1129-4fc9-83fd-7fcfec22106e`; ordered special-head existence
-  `ebea9a8a-9b21-4208-aa31-98c2dea1f8a3`; quotient coverage
-  `20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584`; tempered block uniqueness
-  `52e97845-36bb-457d-b76f-70753334b88c`; `SquareIntegrableLanglandsClassification` /
-  `1cb45da2-7007-4351-a694-594fb148b8d1`; square-integrable exhaustion
-  `cd8ab97c-0b78-4bce-97c4-d307a28159a4`; regular exhaustion
-  `bf433f0a-921a-428c-b0c0-6475438125ac`; `GenericSegmentProductUniqueness` /
-  `30341ae4-65f2-4a0e-9283-763db01a409e`; ordered special-segment conversion
-  `8252833d-c269-41a9-824c-5879e531b23b`; forward special-segment essential
-  square-integrability `5eece9e8-7f6b-4ea9-abea-a1f9f1b8c807`.
-- Also absent, as required by the inherited detection restrictions: individual
-  special-head existence `67279e36-f3c2-42e3-9302-11729784042e`; segment-socle
-  existence `4ca79bbd-589e-476b-9f65-661e799984b5`; adjacent socle commutation
-  `e3634665-571b-4852-9f4c-bab8a1053434`; `SegmentFullJacquetFormula` /
-  `ed48ae06-964c-4c84-9e62-978f5a953ca7`; `SegmentHeadJacquetFormula` /
-  `55ad1e10-62d8-46b7-a081-909ef0056426`; `SegmentSocleJacquetFormula` /
-  `b95105c6-f8bb-4641-ae53-2f49d1e7f034`;
-  `SegmentSpecialJacquetExponentNormFormula` /
-  `92aea10f-62ac-4e0b-bd4a-9a80909797c5`; the segment-socle part of
-  `8e5b4563-0365-41c7-b134-70f2a0b36292`; Zelevinsky 1980 §3.5, §4.2, §9.3, §9.6
-  and §9.7.
+- None of the following, nor their mathematical conclusions, the modules that prove
+  them or transitive proof dependencies, occur in the import or declaration closure:
+  ordered-socle existence; socle exhaustion; analytic segment classification;
+  segment-socle product irreducibility; the final segment-socle irreducibility
+  criterion; `AdjacentUnlinkedSegmentSocleSwap`;
+  `TwoSegmentSocleCommutation`; special-head product criterion; special-head
+  exhaustion; ordered special-head existence; quotient coverage; tempered block
+  uniqueness; `SquareIntegrableLanglandsClassification`; square-integrable
+  exhaustion; regular exhaustion; `GenericSegmentProductUniqueness`; ordered
+  special-segment conversion; forward special-segment essential
+  square-integrability.
+- Also absent, as the independence conditions of the detection results require: individual
+  special-head existence; segment-socle existence; adjacent socle commutation;
+  `SegmentFullJacquetFormula`; `SegmentHeadJacquetFormula`;
+  `SegmentSocleJacquetFormula`; `SegmentSpecialJacquetExponentNormFormula`; the
+  segment-socle statements of `Classification.SegmentSocleDerivativesStatement`;
+  Zelevinsky 1980 §3.5, §4.2, §9.3, §9.6 and §9.7.
 - Check performed: the 131 imported Lean files and the three new modules contain
   none of the identifiers `StrongIndecomposab`, `SocleExistence`, `SocleExhaustion`,
   `SegmentSocle`, `SocleSwap`, `SocleCommutation`, `SquareIntegrable`,
@@ -497,21 +483,17 @@ which contains none of the excluded modules.
   only in `MirabolicPlus` (the docstring above). Only
   `MirabolicMinusExactnessStatement`, `ShortExactFunctorLaws` and `LevelCalculus`
   mention `MinusExactnessStatement`.
-- Coordination: the plus constructions are reused by Lean name from the published
-  modules of Workers 723 and 984. The one new plus-side helper,
-  `MirabolicHighestLayerPlusMaps`, was split off to Worker 1185 by agreement within
-  this task and is published. Worker 157's finite-length scope
-  `0717fd42-d711-4f42-8269-f6ae4c8da1e9`, Worker 357's mixed-product/restriction/Leibniz
-  scope, Worker 288's order-zero adapter and Worker 127's controls are untouched. No
-  new task was split off.
+- Reuse: the plus constructions are reused by Lean name from the published
+  modules `MirabolicPlus` and `MirabolicPlusNormalization`. The one new plus-side
+  helper is the published `MirabolicHighestLayerPlusMaps`. The finite-length,
+  mixed-product, restriction and Leibniz results and the order-zero adapter are
+  not touched.
 
 ## Validation
 
 - Lake build of the three modules `MirabolicHighestLayerLift`,
-  `MirabolicHighestLayerPlus` and `MirabolicHighestLayerProof` in environment
-  `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, with declaration inspection of
-  `Langlands.Derivative.mirabolicHighestLayer`: diagnostic
-  `cc31c958-eff3-4a83-9a13-c5ffe0b96371`, 0 errors, 0 warnings. Axioms are `propext`,
+  `MirabolicHighestLayerPlus` and `MirabolicHighestLayerProof`, with declaration
+  inspection of `Langlands.Derivative.mirabolicHighestLayer`: 0 errors, 0 warnings. Axioms are `propext`,
   `Classical.choice` and `Quot.sound` only. Level parameters are `uF` and `uV`. No
   `sorry`, no new axiom, no `native_decide`.
 - Lean file SHA256: `MirabolicHighestLayerLift.lean`
@@ -520,14 +502,13 @@ which contains none of the excluded modules.
   `14bb209d1044412168a508a44a560ca616602e0e9c8c494a4da20ee2f9ff8a59`,
   `MirabolicHighestLayerProof.lean`
   `2f268182472ae941c1f4c98d950c9af506f5722aed2ffe130674399016778a5d`.
-- Unchanged target: the statement pair in the workspace has SHA256
+- Unchanged target: the statement pair has SHA256
   `18167297f5a3657e1b35b1d09a87eb24430248f08baa2bdf9a1b46eae13a6c0d` (Lean) and
   `038132bad17090900b65626b9b168205e311906d32c96ba4c6e5eaae49e588b1` (Markdown). These
-  equal the published pair recorded for artifact `aab6502d` and the Library at the
-  base commit.
+  equal the pair in the Library at the base commit.
 - Unchanged imports: all 262 Lean/Markdown files of the 131 imported project modules
   are byte-identical to Library `4bec44eec4c7f23def3d25d5c43f4f2a034af469`. The only
-  new files are the three pairs of this submission.
+  new files are the three pairs of this proof.
 
 ## Complete project import closure
 
@@ -678,7 +659,7 @@ third column lists each module's direct project imports by row number.
 
 ## Complete project declaration closure
 
-A private diagnostic (draft module importing this one; diagnostic `daa9b3d6-dc17-4a10-b80a-c3a3b2f741e3`, no errors) traversed
+A private diagnostic module importing this one (no errors) traversed
 `ConstantInfo.getUsedConstantsAsSet` recursively. It covers types and values,
 including opaque proof terms, constructors and recursors. The listing below groups the
 project constants (module prefix `Langlands`) by defining module.
@@ -692,7 +673,7 @@ project constants (module prefix `Langlands`) by defining module.
   `phiMinusCharacter_eq_modulus` of `MirabolicHighestLayerLift`, there are 41 further
   project constants not already in the main closure. They lie in 6 modules. The only
   module new relative to the main closure is
-  `HarmonicAnalysis.PadicRectangularHaarScalingProof` (Worker 110).
+  `HarmonicAnalysis.PadicRectangularHaarScalingProof`.
 
 No project axiom occurs. A few helper declarations of the new modules are in neither
 closure: `mem_imageStep` (`MirabolicHighestLayerLift`) and `projectionRow_mul`,
@@ -779,30 +760,16 @@ number after each module is its count of project constants, auxiliaries included
 - `Langlands.LocalField.Normalization.Proof` (4) in `Langlands.PadicField.TopologicalData`: `normalizedAbs_le_one_iff_mem_integers`, `ord_zero`, `topology_eq_canonicalModule`, `topology_eq_canonicalNormTopology`
 - `Langlands.Representation.Derivative.MirabolicHighestLayerLift` (6) in `Langlands.Derivative.Mirabolic.HighestLayer`: `levi_inv_conj_column`, `map_inv_mul_haar`, `map_inv_mul_haar_iff {_proof_1_1}`, `phiMinusCharacter_eq_modulus`, `psiMinusCharacter_eq_modulus`
 
-## Authorship
+## Adapted argument and helper
 
-- Worker 805 wrote the three new modules `MirabolicHighestLayerLift`,
-  `MirabolicHighestLayerPlus` and `MirabolicHighestLayerProof` and their Markdown: the
-  construction (`liftStep`, `imageStep`), the element-level left exactness, the
-  lattice comparison, the base step, the orbit isomorphism `R(B) ≅ Φ⁺(Φ⁻ B)`, the plus
-  model, the induction, the homogeneity criterion and the normalization section.
-- Worker 806 is a coauthor. `exists_levi_translates_mem` (in
-  `MirabolicHighestLayerLift`) adapts the averaging argument of Worker 806's published
+- `exists_levi_translates_mem` (in
+  `MirabolicHighestLayerLift`) adapts the averaging argument of the published
   `eq_bot_or_eq_top_of_radicalQuotient` (module
   `Langlands.Representation.Derivative.MirabolicMinusIrreducibleProof`, which is not
   imported). The adaptation extracts the averaging construction of that proof as a
   standalone lemma. It drops the irreducibility and surjectivity hypotheses, keeps the
   averaged vector inside a given invariant subspace `S`, and normalizes it so that
   `q(x'') = q(x)`. It returns the averaged vector instead of the dichotomy
-  `σ = ⊥ ∨ σ = ⊤`. Worker 806 also wrote the imported `MirabolicLatticeBox` helper.
-- Worker 1185 is a coauthor. Worker 1185 wrote the imported helper
-  `MirabolicHighestLayerPlusMaps` (published artifact
-  `a88fbb0e-6c1c-4f3a-9151-b45d9b90f868`, coauthored with Worker 805, who designed its
-  interfaces). It supplies `phiPlusPost` and `psiPlusBaseEmbedding`, under a split of
-  this task's work agreed with Worker 805. Worker 1185 also audited the normalization
-  comparison against BZ77 §1.8.
-- Worker 440 authored the statement draft and contract, and Worker 658 completed the
-  statement companion, source verification and this proof task's arrangement. Workers
-  864/700 supplied parent planning. Imports of other published modules (authors listed
-  in the dependency audit, including Workers 723, 984, 749, 710 and 15) confer no
-  coauthorship.
+  `σ = ⊥ ∨ σ = ⊤`.
+- The imported helper `MirabolicHighestLayerPlusMaps` supplies `phiPlusPost` and
+  `psiPlusBaseEmbedding`.

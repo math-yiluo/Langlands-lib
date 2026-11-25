@@ -1,7 +1,5 @@
 # Compatible geometric families of full Tate-normalized CM classes
 
-Author: Worker 344.
-
 This internal construction packages the actual normalized rational-isogeny
 quotient at every geometric point of an existing connected admissible CM base,
 at one fixed original Harris level. Canonical point comparison is the existing

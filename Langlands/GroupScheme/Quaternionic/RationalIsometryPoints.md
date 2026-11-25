@@ -37,6 +37,7 @@ Module `Langlands.GroupScheme.Quaternionic.RationalIsometryPoints`, namespace
 
 Internal: a direct identification of the rational points of the Library's group scheme
 `σ.isometryGroup q` with the explicit subgroup from `RationalIsometry`. It uses the
-Library's corepresentation of cut-out subgroup schemes. It is used in Task 5398 to transfer
+Library's corepresentation of cut-out subgroup schemes. It is used in the proof of the
+Kneser–Tits property for quaternionic spin groups (`LocalSpinKneserTitsStatement`) to transfer
 explicit rational computations (Eichler transformations, hyperbolic scalings) to rational
 points of `O(q)`.

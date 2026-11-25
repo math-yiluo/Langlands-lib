@@ -1,12 +1,11 @@
 # Reduction of the real generic standard-parameter statement
 
-Worker 5066 wrote this module for Task 5975 (`3889357f-30ab-4e7b-9624-ca6d3d61208e`). The
-task's target is the Library's `Langlands.Archimedean.RealGenericStandardParameterStatement`
+The target of this module is the Library's `Langlands.Archimedean.RealGenericStandardParameterStatement`
 (module `Langlands.Representation.Archimedean.GKModule`). It says that every irreducible
 admissible generic `(𝔤𝔩_n(ℝ), O(n))`-module `(ρ, π)` on a complex vector space `V` has some
 `ds : List RealBlock` with `HasRealStandardParameter n ρ π ds`. That is, `realRank ds = n`
 and there is an injective `(𝔤, K)`-equivariant linear map from the `O(n)`-finite part of
-Worker 35's standard module `realStandardModule n ds` into `V`.
+the standard module `realStandardModule n ds` into `V`.
 
 This module splits the target into two statements and proves that together they imply it.
 The first is the Langlands classification in quotient form. The second says that the
@@ -149,7 +148,7 @@ discrete series is irreducible for `GL_n(ℝ)`. So the standard module of a Lang
 list is still a standard module `I(ν, σ)` with `σ` tempered and `ν` strictly dominant for a
 coarser parabolic subgroup. The standard modules of generic representations are Jacquet's
 generic induced representations (Jacquet 2009, `jacquet-2009-archimedean-rankin-selberg`,
-pp. 3–4). His Theorem 2.1 and Remark 2.2, which the task objective names, concern
+pp. 3–4). His Theorem 2.1 and Remark 2.2 concern
 Rankin–Selberg integrals of these representations; they do not prove the irreducibility used
 here.
 

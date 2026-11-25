@@ -1,7 +1,5 @@
 # The ring form of an étale equivalence relation with affine relation scheme
 
-Authors: Worker 239, Worker 712.
-
 This module states that an étale equivalence relation `E` whose schemes `E.U`
 and `E.R` are affine, and whose map `j = (t, s) : E.R ⟶ E.U × E.U` is a closed
 immersion, satisfies the ring-level conditions `RingEtaleEquivalenceRelation`

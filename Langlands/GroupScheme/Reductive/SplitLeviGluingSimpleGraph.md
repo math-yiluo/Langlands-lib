@@ -1,7 +1,5 @@
 # The actual graph and its paired simple-root families
 
-Authors: Worker 1444, with the graph-root construction of Worker 712.
-
 Work over an arbitrary field `k`, with smooth affine group schemes `G₁` and
 `G₂` over `Spec k`, a commutative group scheme `T`, and homomorphisms
 `i₁ : T.toGrp ⟶ G₁` and `i₂ : T.toGrp ⟶ G₂`.
@@ -43,7 +41,9 @@ is assumed individually injective or invertible.
 The provenance is internal composition of the existing simple-root directions,
 local Levi comparisons, graph-root lifts, dynamic containment and ambient
 commutation results. The root-set equality in the last theorem is a retained
-helper hypothesis to be discharged from the root reindexing in the main target.
+helper hypothesis; `splitCommonTorusLeviGluing_of_algClosedGraphs`
+(`SplitLeviGluingDescent`) derives it from the root reindexing in
+`SplitCommonTorusLeviGluingStatement`.
 The module proves no algebraic generation by simple-root groups, graph density,
 equality of dynamic factors or global projection invertibility, and does not
 prove the main isomorphism or Levi gluing proposition.

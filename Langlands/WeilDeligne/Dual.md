@@ -1,6 +1,6 @@
 # Negative-transpose duality of Weil–Deligne pairs
 
-Worker 17 authored this construction. `dual A` has the actual full
+`dual A` has the actual full
 dual vector space, the inverse-element dual action, and monodromy
 `-A.monodromy.dualMap`, which is the negative transpose.
 
@@ -31,7 +31,7 @@ Literature ID `tate-1979-number-theoretic-background`, PDF SHA-256
 
 This module imports `Langlands.WeilDeligne.Basic` and
 `Langlands.Weil.Representation.Dual`. The latter imports the unchanged
-Worker 0 module `Langlands.Representation.Dual.Definitions` and records
+module `Langlands.Representation.Dual.Definitions` and records
 the full algebraic-dual convention from Casselman. No
 smooth-contragredient theorem, topology comparison, semisimplification
 existence, or parameter-preservation result is assumed.

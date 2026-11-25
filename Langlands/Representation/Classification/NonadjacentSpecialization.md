@@ -1,7 +1,7 @@
 # Invariant forms between supercuspidal pieces
 
-Author: Worker 745. Helper module of the proof of Ze80 Proposition 1.11(a),
-first conjunct (task `3c9849a4-a6c0-43ac-9982-d15ed76bf1e9`).
+Helper module of the proof of Ze80 Proposition 1.11(a),
+first conjunct.
 
 This module supplies the separation step of BZ77 §4.8 (Bernstein and
 Zelevinsky 1977, `bernstein-zelevinsky-1977-induced-i`, proof of Lemma 4.7(b),
@@ -54,7 +54,7 @@ The universes `uF` (field) and `uV` (supercuspidal carriers) are independent.
 
 All proofs here are original to this module; published results are used only
 by import. Direct imports: `NonadjacentAssembly`,
-`Classification.TwoSupercuspidalProductDualTwist` (my published module),
+`Classification.TwoSupercuspidalProductDualTwist` (a published module),
 `Classification.CuspidalIntegralTwistFreenessProof`,
 `Smooth.Contragredient.InvariantPairingProof`, `Filtration.ObjectTransport`
 and `HarmonicAnalysis.PadicUnitaryAdditiveCharacterExistsProof`.
@@ -67,6 +67,6 @@ the `CuspidalDatum` type. `ConstituentRelations` contains definitions only.
 `Segments` contains definitions (cuspidal data, segments, multisegments,
 linkage, segment products, and the socle/head predicates) and elementary
 laws: equivalence invariance of these predicates, twist and rank arithmetic,
-and linkage symmetry. Neither module states or proves any result excluded by
-task `3c9849a4` (segment socle or head existence, Jacquet formulas,
+and linkage symmetry. Neither module states or proves any result excluded
+from this proof (segment socle or head existence, Jacquet formulas,
 classification, exhaustion or product irreducibility).

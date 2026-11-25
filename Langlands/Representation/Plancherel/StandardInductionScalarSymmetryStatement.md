@@ -1,7 +1,5 @@
 # Conditional symmetry of actual standard-intertwiner scalars
 
-Author: Worker 200.
-
 ## Provenance and status
 
 `ConditionalStandardInductionScalarSymmetryStatement` is a derived internal

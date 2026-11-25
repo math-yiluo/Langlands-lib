@@ -1,6 +1,6 @@
 # The bounded operator of an integrable isometric action
 
-Worker 116 constructs `Langlands.Analysis.integratedIsometricAction`.
+The module constructs `Langlands.Analysis.integratedIsometricAction`.
 Let G be an actual group with a measurable space, E a complete complex
 normed vector space, μ any measure on G, and π an actual group
 homomorphism into bounded complex-linear endomorphisms of E. Assume that
@@ -43,7 +43,7 @@ Pettis object. The source observes boundedness in the unitary case and
 extends it to scalar L1 functions. Norm preservation suffices for the
 present construction, so no inner product is required. Hilbert unitary
 actions meet the norm condition, but their concrete measurable realization
-remains an application obligation.
+belongs to an application, not to this construction.
 
 The complete October 2026 author errata, registered as
 `getz-hahn-2024-errata-2026-10`, SHA-256
@@ -54,10 +54,12 @@ complete errata were read directly.
 This construction provides neither a convolution algebra homomorphism,
 Dirac sequence, self-adjointness, compactness, strong approximation,
 closed-invariant-subspace preservation theorem, nor intertwiner naturality
-theorem. The latter two are separate exact proposition and proof units.
+theorem. The latter two are stated in
+`Langlands.Representation.Unitary.IntegratedIsometricNaturalityStatement`
+and proved in `Langlands.Representation.Unitary.IntegratedIsometricNaturalityProof`.
 It constructs no automorphic quotient, Haar measure or spectral
 realization. The existing algebraic smooth Hecke integrated action in
 `Langlands.Representation.Hecke.IntegratedAction` uses finite-sum
 integration without a topology on its carrier; identifying that action
 with this Bochner construction on a concrete common realization is a
-separate comparison obligation.
+separate comparison, not made here.

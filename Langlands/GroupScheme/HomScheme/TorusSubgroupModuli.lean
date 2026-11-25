@@ -59,6 +59,7 @@ theorem isClosedSubgroup_familyHom
   change IsClosedImmersion
     (((GroupScheme.baseChange a.left).map j).hom.hom.left ≫
       (Descent.pullbackComparison M.hom a.left T.hom (Over.w a) G).hom.hom.hom.left)
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   infer_instance
 
 /-- Every evaluation of a closed relative-torus family is admissible. -/

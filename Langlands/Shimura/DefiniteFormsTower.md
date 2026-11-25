@@ -1,17 +1,18 @@
 # Harris's tower of congruence subgroups `K_ℓ(n)`
 
-Author: Worker 61. Built on the published
-`Langlands.NYLL.ValuedFieldTheory.Ramification.GaloisValuation.RamificationQuotients.Filtration`
-(Naganori Yamaguchi's `AntitoneNormalSubgroupFiltration`, adapted from the
-NYLL ClassFieldTheory repository, with its normality instance
+Built on
+`Langlands.ClassFieldTheory.Local.NormalSubgroupFiltration`, the bridge to
+`Nyll.ValuedFieldTheory.Ramification.GaloisValuation.RamificationQuotients`
+(Naganori Yamaguchi’s `AntitoneNormalSubgroupFiltration`, with its normality instance
 `lower_normal_instance`), `Langlands.Representation.Smooth.Definitions`
 (`fixedVectors`, `IsSmoothVector`, `IsSmooth`),
-`Langlands.Shimura.DefiniteFormsDoubleCoset` (Worker 61: `localLevel`,
+`Langlands.Shimura.DefiniteFormsDoubleCoset` (`localLevel`,
 `localLevelMap`, `ellModuleForms`, `primeToLevel`, `congruenceLevel`,
 `congruenceLevel_le`, `congruenceLevel_subgroupOf`,
 `primeToLevel_le_congruenceLevel`) and `Langlands.Shimura.DefiniteFormsTensor`
-(Worker 61: `congruenceTensorSpace`, `congruenceTensorAction`,
-`congruenceTensorEquiv`), and on Worker 57's similitude groups
+(`congruenceTensorSpace`, `congruenceTensorAction`,
+`congruenceTensorEquiv`), and on the similitude groups of
+`Langlands.Shimura.Unitary.Adelic`
 (`AlgebraInvolution.FiniteAdelicPoints`, the continuous `ℓ`-component map
 `σ.finiteLocalMap ℓ`, the topology on `σ.Points`). From Mathlib it uses
 open subgroups (`OpenSubgroup`, `OpenNormalSubgroup`,
@@ -148,8 +149,8 @@ For a tower `T : CongruenceTower (localLevel σ ℓ K)` (Harris's `K_ℓ(n)`):
 ## Provenance and interpretation
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
-J. Math. Kyoto Univ. 39-2 (1999), §3 "The totally definite case". Worker 61
-read the rendered scanned pages. Printed p.306 (one-based PDF page 8), as
+J. Math. Kyoto Univ. 39-2 (1999), §3 "The totally definite case". The
+rendered scanned pages were read. Printed p.306 (one-based PDF page 8), as
 quoted in the published `DefiniteForms.md`: "Let `K ⊂ GJ(𝔸^f)` be an open
 compact subgroup [...] `K^ℓ = K ∩ GJ^ℓ`, and all functions are taken to be
 continuous." Printed p.308 (one-based PDF page 10): "Fix a lattice of
@@ -205,9 +206,8 @@ How the module relates to Harris (an explanation, not formalized):
 - All declarations are ours, derived from Mathlib and the published
   modules named above. `CongruenceTower` reuses Yamaguchi's
   `AntitoneNormalSubgroupFiltration` (published for ramification
-  filtrations) for the decreasing normal subgroups. Worker 13 (first
-  executor of task 23471a9e) reported that this unit does not overlap
-  their level towers (`Langlands.Shimura.LevelColimit`,
+  filtrations) for the decreasing normal subgroups. This module does not
+  overlap the level towers of the Library (`Langlands.Shimura.LevelColimit`,
   `RestrictedLevelColimit`, `CofinalLevelReindex`), which index colimits
   over compact open subgroups rather than a fixed decreasing sequence.
 

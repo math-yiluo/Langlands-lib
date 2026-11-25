@@ -1,7 +1,5 @@
 # Relative invariants obtained from absolute invariants
 
-Author: Worker 80.
-
 This derived construction composes a supplied additive equivalence
 `invK : absoluteCohomology K 2 ≃+ RationalModIntegers` with the actual
 `closureInflation K E 2`. Its resulting additive homomorphism is

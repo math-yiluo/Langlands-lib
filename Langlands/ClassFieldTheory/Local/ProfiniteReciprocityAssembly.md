@@ -1,7 +1,5 @@
 # Assembly from geometric finite Artin systems
 
-Author: Worker 1651.
-
 This internal structural construction connects the published finite-system
 statement with the unchanged profinite reciprocity statement. It derives no
 arithmetic existence theorem.

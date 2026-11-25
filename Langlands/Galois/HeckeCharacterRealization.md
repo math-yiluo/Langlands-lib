@@ -1,6 +1,6 @@
 # `λ`-adic characters realizing Hecke characters
 
-Author: Worker 34. This module defines the relation saying that a continuous
+This module defines the relation saying that a continuous
 `λ`-adic character of `Gal(K̄/K)` realizes a complex Hecke character of `K`
 through a field embedding `ι : L → ℂ`. Harris 1999 treats its character
 `ν̄(π)` both as a Hecke character and as a `λ`-adic character, for example in
@@ -76,5 +76,7 @@ Fix number fields `K` and `L` and a finite place `λ` of `L`. Throughout,
   `ι` and `λ`. That uniqueness is not proved here.
 - The existence of a realization for algebraic Hecke characters is not stated or
   proved here. That is the classical construction going back to Weil, which
-  needs global class field theory. The Library has the global Artin map only as
-  a statement (`Langlands/Global/Arithmetic/ClassFieldStatement`).
+  needs global class field theory. The finite abelian class field statement
+  `FiniteAbelianClassFieldStatement`
+  (`Langlands/Global/Arithmetic/ClassFieldStatement`) is proved in
+  `Langlands/Global/Arithmetic/ClassFieldProof`.

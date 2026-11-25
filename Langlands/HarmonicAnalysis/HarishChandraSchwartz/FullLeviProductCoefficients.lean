@@ -86,9 +86,9 @@ variable {F : Type u} [Field F] [ValuativeRel F] [TopologicalSpace F]
 
 local instance : NonarchimedeanGroup (rationalPoints G) :=
   Plancherel.rationalPoints_nonarchimedeanGroup G
-local instance : SecondCountableTopology (rationalPoints G) :=
+private local instance : SecondCountableTopology (rationalPoints G) :=
   rationalPoint_secondCountableTopology F G
-local instance : T2Space (rationalPoints G) := rationalPoint_t2Space F G
+private local instance : T2Space (rationalPoints G) := rationalPoint_t2Space F G
 
 variable (hG : IsConnectedReductive G) (hi : IsMaximalSplitTorus i)
   (hν : IsGenericCocharacter i ν)

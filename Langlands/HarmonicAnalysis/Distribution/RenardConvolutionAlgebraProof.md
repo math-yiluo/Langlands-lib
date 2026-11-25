@@ -1,15 +1,16 @@
 # Compact convolution: tensor comparison and algebra laws
 
-Worker 150, Task 5394. Source: Renard, French version of 9 July 2026,
+Source: Renard, French version of 9 July 2026,
 II.3.10, printed pp.50–51 / PDF pp.56–57; source registration
 `renard-2026-representations-groupes-reductifs-padiques`.
 
 The exported theorems `RenardConvolution.ambientTensor` and
 `RenardConvolution.associativity` prove the exact published
 `AmbientTensorStatement` and `AssociativityStatement` at the full group
-universe. This focused unit leaves the other conjuncts to later units.
+universe. The other conjuncts are proved in the companion proof modules
+assembled by `RenardConvolutionProof`.
 
-This unit compares the existing support-descent convolution with iterated
+This module compares the existing support-descent convolution with iterated
 extended evaluation. The compact tensor used here is the actual ambient
 algebraic distribution tensor, whose support lies in the product of the two
 supports. A compactly supported ambient test representative on that product

@@ -1,8 +1,8 @@
 # Reduction of the complex-place functional equation to the local functional equations
 
 Module `Langlands.Global.RankinSelberg.ComplexPlaceFunctionalEquationLocalFEReduction`,
-namespace `Langlands.Global.RankinSelbergGlobal`. Worker 5665 wrote it for Task 7399 (prove
-`ComplexPlaceFunctionalEquationStatement`, Jacquet 2009, Theorem 2.1, at a complex place).
+namespace `Langlands.Global.RankinSelbergGlobal`. It is a step towards
+`ComplexPlaceFunctionalEquationStatement` (Jacquet 2009, Theorem 2.1, at a complex place).
 Provenance: internal.
 
 ## The statement
@@ -19,14 +19,16 @@ In words: the Rankin–Selberg functional equation at the complex places
 complex place, for unequal ranks (`ComplexLocalUnequalFunctionalEquationStatement`) and for equal
 ranks (`ComplexLocalEqualFunctionalEquationStatement`).
 
-Both premises are Library statements in module `ComplexPlaceFunctionalEquationReduction`; their
-proof tasks are Tasks 7569 and 7570. This is a conditional result, and the two premises stay
-open here.
+Both premises are Library statements in module `ComplexPlaceFunctionalEquationReduction`. The
+Library proves them elsewhere (`complexLocalUnequalFunctionalEquation`, module
+`ComplexPlaceUnequalFunctionalEquationProof`; `complexLocalEqualFunctionalEquation`, module
+`ComplexPlaceEqualFunctionalEquationProof`). This is a conditional result, and the two premises
+stay hypotheses here.
 
 ## The proof
 
 `complexPlaceFunctionalEquationLocalFEReduction` is a single term. It combines three Library
-results and two theorems of this candidate:
+results and two theorems written together with this module:
 
 - `complexPlaceFunctionalEquationLocalReduction` (Library module
   `ComplexPlaceWhittakerAnalyticProof`): the target follows from the two local functional
@@ -37,20 +39,19 @@ results and two theorems of this candidate:
   `ComplexPlaceContragredientReduction`): the contragredient premise follows from the
   irreducibility premise `ComplexPlaceParameterIrreducibleStatement` and the local pairing premise
   `ComplexStandardPairingParameterStatement`;
-- `complexPlaceParameterIrreducible` (module `ComplexPlaceParameterIrreducibleProof`, in this
-  candidate) proves the irreducibility premise;
-- `complexStandardPairingParameter` (module `ComplexStandardPairingParameterProof`, in this
-  candidate) proves the local pairing premise.
+- `complexPlaceParameterIrreducible` (module `ComplexPlaceParameterIrreducibleProof`, written
+  together with this module) proves the irreducibility premise;
+- `complexStandardPairingParameter` (module `ComplexStandardPairingParameterProof`, written
+  together with this module) proves the local pairing premise.
 
 It uses only the axioms `propext`, `Classical.choice` and `Quot.sound`.
 
 ## Relation to other reductions
 
-The statement has fewer premises than every earlier reduction of the target:
+The statement has fewer premises than the other reductions of the target in the Library:
 - `ComplexPlaceFunctionalEquationLocalReductionStatement` (Library) has four;
-- `ComplexPlaceFunctionalEquationCombinedReductionStatement` (Worker 822's candidate 2509690e)
-  has four;
-- the withdrawn three-premise candidate e27ecfdb had three.
+- `ComplexPlaceFunctionalEquationCombinedReductionStatement` (module
+  `ComplexPlaceFunctionalEquationCombinedReduction`) has four.
 
 Only the two local functional equations remain.
 

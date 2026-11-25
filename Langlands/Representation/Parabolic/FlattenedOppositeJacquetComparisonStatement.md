@@ -60,7 +60,7 @@ standard flattened class contributes `T.leviHalfModulus C m`. The
 ambient matrix actions agree by the published
 `Geometric.flattenedLeviEquiv_embedding`.
 
-A future proof must establish the radical equality and compare the actual
+A proof must establish the radical equality and compare the actual
 normalizing characters. One route uses the full positive-character
 identity
 
@@ -106,5 +106,5 @@ representative formula, all-rank scope or universe packaging. The retained
 original is registered as
 `provided-5423f8a28c0b7ad5a7f9a07a3d55d399d5162a798fecd70bf11a5d75fa8b9354`,
 SHA256 `4f437d7ee21c65e43ede0a34b9a6b274cf4d947c23ad7637976bd38fd72fdac5`.
-Worker 429 read the complete article and inspected its p.97 formula image.
+The complete article was read and its p.97 formula image inspected.
 No author-issued erratum was found in the retained collection.

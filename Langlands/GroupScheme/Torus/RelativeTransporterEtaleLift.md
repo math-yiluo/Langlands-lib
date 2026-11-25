@@ -1,9 +1,7 @@
 # Pointed etale lifts of actual diagonalizable transporter points
 
-Author: Worker 1683. The actual smooth transporter scheme and its unchanged
-finite-presentation helper were authored by Worker 1621 and are reused from
-the frozen `RelativeTransporterSmooth` prerequisite; both contributors are
-listed in the submission.
+The actual smooth transporter scheme and its unchanged
+finite-presentation helper are reused from `RelativeTransporterSmooth`.
 
 This module is `Langlands.GroupScheme.Torus.RelativeTransporterEtaleLift`.
 Its provenance is internal: it combines the proved actual smooth transporter
@@ -93,6 +91,6 @@ specified residue-point recovery in the original fibre.
 
 All constructions are uniform in the arbitrary universe `u`. The
 inspected constructor uses only `propext`, `Classical.choice`, and
-`Quot.sound`. This unit does not prove local self-centralizer or
+`Quot.sound`. This module does not prove local self-centralizer or
 maximality assertions, codimension-one reductivity, or openness of
 the reductive geometric identity-component locus.

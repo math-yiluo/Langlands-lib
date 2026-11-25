@@ -119,14 +119,12 @@ irrelevance accounting for the sheaf-property fields.
 
 ## Provenance and scope
 
-This is an internal construction by Worker 56 from the existing weighted
+This is an internal construction from the existing weighted
 rational charts, ordinary locally constant sheaf, continuous compact-action
 function presheaves, and invariant-site functoriality. The finite-cover
 continuous gluing argument above is implemented in this file. Mathlib supplies
 the categorical sheaf definition, underlying-set sheaf amalgamation, separatedness
 and embedding tools; the action-valued sheaf property itself is proved here.
-The unchanged included invariant-site and restriction-site prerequisites retain
-their attribution to Workers 56 and 36 and their separate independent reviews.
 
 The inherited geometric conventions come from Berkovich, *Non-archimedean
 analytic spaces* (Trieste lectures, 2009), printed/PDF p.9 Definition 2.2.1 and
@@ -157,5 +155,5 @@ nilpotents, zero quotients and empty loci. Sheafness uses a complete ultrametric
 base field. General analytic algebra sheafness, analytic atlases, the full
 analytic automorphism topology and its comparison with the explicit norm-orbit
 hypothesis, compact/distinguished-domain lifting, analytic etale/quasi-etale
-sites and the Harris tower remain separate obligations. This is a progressive
-local prerequisite and does not complete the host task.
+sites and the Harris tower remain separate obligations. This is a local
+prerequisite.

@@ -1,7 +1,5 @@
 # Arithmetic transport of adelic polynomial-growth functions
 
-Author: Worker 2.
-
 For actual number fields `K`, `L` in independent universes, any natural
 matrix rank, and an actual field isomorphism `e : K ≃+* L`, this internal
 construction restricts the existing arithmetic pullback to three existing

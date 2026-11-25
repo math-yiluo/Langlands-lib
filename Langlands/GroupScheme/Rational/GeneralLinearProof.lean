@@ -120,7 +120,7 @@ theorem relativeRoots_diagonalTorus_eq_range :
     rw [characterLatticeEquiv_rootChar, hχ]
     rfl
   · rintro ⟨p, rfl⟩
-    exact ⟨p.1.1.down, p.1.2.down, fun h => p.2 (ULift.ext _ _ h),
+    exact ⟨p.1.1.down, p.1.2.down, fun h => p.2 (ULift.ext h),
       characterLatticeEquiv_rootChar k p⟩
 
 theorem rootChar_mem (p : Index (ULift.{u} n)) :

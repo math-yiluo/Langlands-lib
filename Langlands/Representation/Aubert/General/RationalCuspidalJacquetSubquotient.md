@@ -1,8 +1,8 @@
 # An irreducible cuspidal subquotient of a standard Jacquet module
 
-Author: Worker 78. This is an internal consequence of published Library
-constructions, prepared as a supporting unit of task
-`b7887025-20b3-4c11-9fad-0e70bdf59da6`.
+This is an internal consequence of published Library
+constructions, supporting irreducible Jacquet detection in the actual general
+reductive support category.
 
 `IsLeviCuspidal.of_isSubquotient` proves that Levi cuspidality passes to actual
 smooth subquotients when each inner unipotent subgroup is a limit of compact
@@ -33,9 +33,9 @@ The generic subquotient lemma then proves cuspidality of `σ`.
 nontriviality, irreducibility, cuspidality and the actual subquotient relation
 as its certified properties. It uses classical choice.
 
-This unit makes no claim that `π` embeds in induction of `σ`, or that `π` is a
+This module makes no claim that `π` embeds in induction of `σ`, or that `π` is a
 subquotient of induction of `σ`. It does not prove support association or the
-assigned irreducible Jacquet detection target. Those require a further actual
+irreducible Jacquet detection target. Those require a further actual
 support-theoretic comparison. The provenance is entirely internal: the
 minimal-Jacquet construction, the unrestricted irreducible-subquotient theorem,
 the exactness/subquotient theorem, and closed-subgroup topology are reused by

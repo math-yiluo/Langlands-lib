@@ -4,8 +4,8 @@ import Langlands.Global.Factors.HeckeFunctionalEquationProof
 import Langlands.Global.Factors.HeckeFiniteRamification
 import Langlands.VirtualRepresentation.Global.RelativeWeilInductionGenerationProof
 import Langlands.VirtualRepresentation.Global.RelativeWeilLocalRestrictionProof
-import Langlands.ClassField.Global.RelativeWeilCharacterFactorization
-import Langlands.ClassField.Global.RelativeWeilTransferNormProof
+import Langlands.ClassFieldTheory.Global.RelativeWeilCharacterFactorization
+import Langlands.ClassFieldTheory.Global.RelativeWeilTransferNormProof
 import Langlands.ClassFieldTheory.Local.CommonClosureGeometricProof
 
 /-!
@@ -235,7 +235,7 @@ theorem exists_functionalEquation_of_heckeFactors
 
 end Langlands.Global.FunctionalEquationComparison.RelativeWeilEngine
 
-namespace Langlands.ClassField.Global.RelativeWeilGroup
+namespace Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 
 /-- A representation of `W_{E/F}` continuous for the Krull topology on `Gal(E/F)` is
 continuous for the discrete topology `relativeGaloisTopology`. -/
@@ -252,7 +252,7 @@ theorem FiniteRepresentation.isContinuous_discrete {c : FundamentalClass.ClassFa
     exact hS
   exact key _ (krullTopology_eq_relativeGaloisTopology F E)
 
-end Langlands.ClassField.Global.RelativeWeilGroup
+end Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 
 namespace Langlands.Global.FunctionalEquationComparison
 
@@ -260,7 +260,7 @@ open NumberField IsDedekindDomain
 open scoped NumberField
 open Langlands.Global Langlands.Global.HeckeFunctionalEquation Langlands.Global.AdelicFunctoriality
 open Langlands.Global.CompletionPadic Langlands.VirtualRepresentation
-open Langlands.ClassField.Global Langlands.ClassField.Global.RelativeWeilGroup
+open Langlands.ClassFieldTheory.Global Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 open Langlands.Global.FunctionalEquationComparison.RelativeWeilEngine
 
 section Discrete

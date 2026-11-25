@@ -46,7 +46,7 @@ conjugacy-class domain, compact open levels, and resulting coefficient systems.
 All these original passages were read; Kottwitz page 654 was also inspected
 visually. These sources motivate the specialization, rather than stating the
 generic transporter category verbatim. Its abstract construction and intrinsic
-proofs are derived here by Worker 57.
+proofs are derived here.
 
 The retained source identifiers and SHA-256 fingerprints are:
 
@@ -60,7 +60,7 @@ The retained source identifiers and SHA-256 fingerprints are:
 Only Mathlib is imported: `Topology.Algebra.OpenSubgroup`,
 `Topology.Category.TopCat.Basic`, and `Algebra.Group.End`. The pinned version
 is commit `5ed2965256430c3649e86755f9576b54eca72435`, with Lean 4.34.0.
-The module does not depend on pending project definitions. The generic topology
+The module does not depend on other project definitions. The generic topology
 does not require continuity of the `Gamma` action; no separation, local
 triviality, manifold structure or local-system theorem is inferred from that
 quotient topology.

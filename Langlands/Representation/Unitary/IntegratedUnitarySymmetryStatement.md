@@ -1,6 +1,6 @@
 # Symmetry of the actual integrated unitary action
 
-Worker 116 formulates the internal proposition
+The module formulates the internal proposition
 `Langlands.Analysis.IntegratedUnitarySymmetryStatement`. Let G be a group
 with a measurable space and measurable inversion, E a complete complex
 inner product space, μ a measure on G, and π an actual group homomorphism
@@ -73,10 +73,10 @@ remaining integral with the inner product gives the claimed identity.
 No completeness or orbit measurability with respect to μ.inv is needed,
 since no second vector integral operator for that measure is constructed.
 
-This file is a proposition target, not its proof. A separate exact
-published-target proof child remains required. Constructing a Haar
+This file is a proposition target, not its proof. The proof is in
+`Langlands.Representation.Unitary.IntegratedUnitarySymmetryProof`. Constructing a Haar
 measure, identifying its actual inversion density with the source's
 modular character on a concrete group, constructing Dirac weights,
 proving compactness, comparing with Pettis or algebraic Hecke integrals,
-and realizing the automorphic Hilbert action remain separate
-obligations. This assertion supplies no spectral decomposition.
+and realizing the automorphic Hilbert action are not part of this
+target. This assertion supplies no spectral decomposition.

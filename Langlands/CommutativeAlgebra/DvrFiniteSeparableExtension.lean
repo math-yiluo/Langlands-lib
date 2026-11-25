@@ -1,5 +1,5 @@
-import Langlands.NYLL.ValuedFieldTheory.Valuation.DiscreteValuationField.FiniteIntegralClosure.DVRProof
-import Langlands.NYLL.ValuedFieldTheory.Valuation.DiscreteValuationField.FiniteIntegralClosure.MaximalIdealCompletenessProof
+import Langlands.CommutativeAlgebra.FiniteIntegralClosure
+import Nyll.ValuedFieldTheory.Valuation.DiscreteValuationField.Complete
 import Mathlib.FieldTheory.IsAlgClosed.Basic
 import Mathlib.RingTheory.AdicCompletion.Topology
 import Mathlib.RingTheory.Flat.FaithfullyFlat.Algebra
@@ -11,7 +11,7 @@ import Mathlib.RingTheory.Valuation.Discrete.IsDiscreteValuationRing
 noncomputable section
 
 open IsLocalRing
-open Langlands.NYLL.ValuationTheory.DiscreteValuationField
+open ValuationTheory.DiscreteValuationField (CompleteDVF)
 
 namespace Langlands.CommutativeAlgebra.DvrFiniteSeparableExtension
 
@@ -54,9 +54,9 @@ theorem isDiscreteValuationRing_and_isAdicComplete
   let C := integralClosure S L
   let eB : B ≃+* C := (Subalgebra.equivOfEq _ _ hsame).toRingEquiv
   have : IsDiscreteValuationRing C :=
-    ValuedExtension.integralClosure_isDiscreteValuationRing_of_finite_separable K L base
+    FiniteIntegralClosure.integralClosure_isDiscreteValuationRing_of_finite_separable K L base
   have hcC : IsAdicComplete (maximalIdeal C) C :=
-    ValuedExtension.integralClosure_maximalIdeal_isAdicComplete_of_finite_separable K L base
+    FiniteIntegralClosure.integralClosure_maximalIdeal_isAdicComplete_of_finite_separable K L base
   have : IsDiscreteValuationRing B :=
     IsDiscreteValuationRing.RingEquivClass.isDiscreteValuationRing eB.symm
   refine ⟨inferInstance, ?_⟩

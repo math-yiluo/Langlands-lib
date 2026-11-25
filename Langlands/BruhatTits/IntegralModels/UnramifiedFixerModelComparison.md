@@ -1,6 +1,6 @@
 # Recovered models of apartment subsets and nearby root bounds
 
-This internal supporting unit works at arbitrary universe `u` over a
+This module works at arbitrary universe `u` over a
 nonarchimedean local field `F`, its actual inertia fixed field `K`, a smooth
 affine group `G`, and supplied upper KP apartment data `D` for a torus
 obtained by base change from `F`. It constructs comparisons between supplied
@@ -58,5 +58,5 @@ comparison, the exact scalar-filtration preimage theorem, and the nearby
 parabolic root-comparison interface. No constancy of full point fixers on
 facet closures is asserted. Existence of the actual recovered models,
 unconditional Hom extension, parabolic special-fibre images and exact
-preimages remain separate inputs. This unit does not prove the
+preimages remain separate inputs. This module does not prove the
 unconditional depth-zero opposite-factor target.

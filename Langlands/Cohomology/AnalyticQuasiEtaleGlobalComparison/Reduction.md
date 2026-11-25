@@ -1,23 +1,23 @@
 # Compact quasi-étale comparison from restricted-injective acyclicity
 
-Author: Worker 512. The generic derived-comparison criterion was developed by
-Worker 284 and is imported from its module.
+The generic derived-comparison criterion is imported from its module,
+`Langlands.Cohomology.ExactBaseChange.InjectiveAcyclic`.
 
 The internal construction
 `quasiEtaleComparisonIsoOfRestrictedInjectivesAcyclic` supplies a natural
 isomorphism from `quasiEtaleGSheafCohomology ρ R q ⋙ smoothForget R G` to
 `quasiEtaleGSheafRestriction ρ R ⋙ quasiEtaleCohomology X R q`, assuming
 restricted-injective acyclicity, compactness of X, and continuity of ρ.
-Its forward map is exactly the published `quasiEtaleComparison ρ R q`;
+Its forward map is exactly `quasiEtaleComparison ρ R q`;
 the final simp theorem records this equality by reflexivity.
 
-The supporting conditional theorem proves the unchanged
+The supporting conditional theorem proves
 `AnalyticQuasiEtaleGlobalComparisonStatement` from the premise
 `QuasiEtaleRestrictedInjectivesAcyclicStatement`, retaining all universes and
-instance hypotheses of both published proposition definitions.
+instance hypotheses of both proposition definitions.
 
 For compact X and continuous ρ, the degree-zero result makes
-`quasiEtaleGlobalInclusion` an isomorphism. The proof installs the published
+`quasiEtaleGlobalInclusion` an isomorphism. The proof installs the Library's
 sheafification, enough-injectives, right Kan extension, and exactness instances
 for quasi-étale restriction. It applies
 `ExactBaseChange.isIso_baseChangeNatTrans_of_injective_acyclic` to the actual

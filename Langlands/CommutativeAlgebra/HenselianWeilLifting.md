@@ -16,7 +16,7 @@ The definition `HenselianSections.finiteProjectiveSmoothLift` chooses such a
 lift, and `HenselianSections.finiteProjectiveSmoothLift_spec` proves its exact
 reduction equation.
 
-The implemented proof forms `TauCeti.Algebra.WeilRestriction R B C`, which is
+The implemented proof forms `Langlands.Algebra.WeilRestriction R B C`, which is
 smooth and finitely presented over `R`. The representing bijection changes the
 given map into a `k`-point of this algebra. The theorem
 `HenselianSections.exists_lift_of_smooth` lifts that point to an `R`-point.

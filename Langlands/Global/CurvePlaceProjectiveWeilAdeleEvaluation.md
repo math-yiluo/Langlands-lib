@@ -7,7 +7,7 @@ Registered source: `conrad-2011-weil-grothendieck-adelic-points`,
 SHA-256 `fe4a9193aff4ef575665b40971f3da32f850a74d87b3f2d0fa28bba26b9cbabb`.
 Conrad uses the natural equality of adelic point sets under Weil
 restriction and proves equality of their independently defined topologies
-through integral models. This unit identifies the underlying map of the
+through integral models. This module identifies the underlying map of the
 existing original-field homeomorphism with that natural counit map.
 The proof uses the full integral counit identity and the generic-fiber
 counit compatibility.
@@ -101,7 +101,7 @@ different constructed model data M', retaining the same original
 immersion j. The two maps agree on every original lower adelic point
 because both equal `adelicEvaluation`.
 
-This unit supplies the canonical-map identification for the original
+This module supplies the canonical-map identification for the original
 function-field projective-immersion comparison, including inseparable
 finite extensions. Algebraic spaces, the separate tensor-ring
 identifications, and the other assertions of the five-section paper

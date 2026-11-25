@@ -1,7 +1,5 @@
 # A separated locally finite type space whose integral points are not closed
 
-Author: Worker 105.
-
 Proof of
 `Langlands.AlgebraicGeometry.AlgebraicSpace.HenselianIntegralPointsNotClosedOfSeparatedStatement.{u}`.
 This is the counterexample showing that the closedness assertion of Corollary 5.7 of Brian
@@ -139,4 +137,4 @@ The proof uses only the standard axioms `propext`, `Classical.choice` and `Quot.
   of finite type; the example shows that quasi-compactness is needed even for separated
   spaces.
 - The example (a chain of dilatations of the affine line whose integral discs accumulate at
-  a non-integral point) is an internal construction by Worker 105 for this proof.
+  a non-integral point) is an internal construction for this proof.

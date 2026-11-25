@@ -188,7 +188,9 @@ theorem induction_weakJacquetBound_of_geometricLemma
   have iso : Nonempty (s.graded i ≅
       geometricPieceFunctor T B C w.val (S w) (R w) (hS w).2.1 (hR w).2.1) := by
     subst hw
-    exact hs i
+    have h := hs i
+    simp only [Function.comp_apply] at h
+    exact h
   have h1 : IsGeneralizedEigencharacter
       (((geometricPieceFunctor T B C w.val (S w) (R w) (hS w).2.1 (hR w).2.1).obj X).ρ.comp
         (C.blockScalarLevi F.Carrier)) χ :=

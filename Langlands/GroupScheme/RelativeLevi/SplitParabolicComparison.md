@@ -33,4 +33,5 @@ Equality of parabolics and their representative isomorphism are conclusions.
 The torus is fixed, and the nontrivial-ring assumption in the specialization is
 explicit. Identifying the original contracting group with a canonical face
 cocharacter, different-torus filtration compatibility, and effective descent
-remain obligations of Task 7200.
+remain separate steps of the finite vector-bundle filtrations of supplied
+relative radicals.

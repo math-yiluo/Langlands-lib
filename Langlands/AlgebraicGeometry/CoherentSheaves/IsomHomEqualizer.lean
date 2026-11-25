@@ -104,7 +104,7 @@ lemma isomPresheaf_map_iso_inv (M N : FamilyGroupoid f T) {Z W : (Over T.left)áµ
   have h : homCompose f (ULift.up e.down.iso.hom : (homPresheaf f M N).obj (op Z.unop))
       (ULift.up e.down.iso.inv : (homPresheaf f N M).obj (op Z.unop)) =
       homIdentity f M Z.unop :=
-    ULift.ext _ _ e.down.iso.hom_inv_id
+    ULift.ext e.down.iso.hom_inv_id
   have h' := homPresheaf_map_comp f q.unop
     (ULift.up e.down.iso.hom : (homPresheaf f M N).obj (op Z.unop))
     (ULift.up e.down.iso.inv : (homPresheaf f N M).obj (op Z.unop))

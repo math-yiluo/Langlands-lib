@@ -1,7 +1,5 @@
 # Restriction of relative homomorphisms and the relative Hom functor
 
-Author: Worker 207.
-
 This module makes the relative Hom groups of
 `Langlands.GroupScheme.Cartier.Evaluation` into a contravariant functor on the
 category `Over S` of `S`-schemes. Throughout, `G`, `G'`, `G''` and `H` are

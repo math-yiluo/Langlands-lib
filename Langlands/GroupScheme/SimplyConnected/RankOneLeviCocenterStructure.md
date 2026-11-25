@@ -1,7 +1,6 @@
 # The derived group of the standard Levi subgroup of a simple relative root
 
-Authors: Worker 183. The construction is copied from the proof of
-`rankOneLeviFactorDichotomy` by Worker 180.
+The construction is copied from the proof of `rankOneLeviFactorDichotomy`.
 
 The module `Langlands.GroupScheme.SimplyConnected.RankOneLeviCocenterStructure` proves one
 theorem, `Langlands.GroupScheme.rankOneLeviFactor_derivedRetraction`, using only the standard

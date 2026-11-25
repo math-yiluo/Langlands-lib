@@ -160,7 +160,7 @@ def CyclicInductionMatchingAtUniquePlaceStatement : Prop :=
       (r m : ℕ) (T : CuspidalOperatorRealization E m)
       (P : CuspidalSpectralPresentation.{uE, uW} T),
       r + 1 = (m + 1) * Module.finrank F E →
-      ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T →
+      ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T →
       (P.localComponent w.1).IsSupercuspidal →
       (∀ i : ℕ, 0 < i → i < Module.finrank F E → ¬ T.isoClass.IsGaloisStable (σ ^ i)) →
       ∃ (U : CuspidalOperatorRealization F r) (Q : CuspidalSpectralPresentation.{uF, uV} U),

@@ -1,6 +1,6 @@
 # Change of additive character: quotient transport
 
-Worker 43 derives this interface from the published modules
+This interface is derived from the published modules
 `Whittaker/CharacterChange`, `RankinSelberg/QuotientIntegrals`,
 `RankinSelberg/LocalFactor`, and `Analysis/Local/QuotientMeasure`.
 It introduces no new source convention. The matrix, the scaled additive

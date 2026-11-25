@@ -29,7 +29,7 @@ Let `t` land in the open of a chart `C`.
   `κ r`. The proof uses the compatibility of `α` and `β`, naturality of section
   pullback and its semilinearity (`sectionPullbackLE_smul`).
 - `κ_ne_zero` holds because pullbacks of local generators are local generators
-  (published FLT `IsFrameOn.pullbackLocalSection`) and `Γ(Spec K, ⊤)` is
+  (FLT `IsFrameOn.pullbackLocalSection`) and `Γ(Spec K, ⊤)` is
   nontrivial.
 - `ofΓ` views global sections as a `K`-vector space. `smul_eq_ψK` compares
   multiplication by functions with the `K`-scalar action through
@@ -92,8 +92,8 @@ finitely many representatives up to one invertible matrix, and
 ## Provenance
 
 This is an internal construction, not taken from a literature source. It
-implements step 5 of the intended proof recorded in the Markdown of the
-published `TorsionBracketMapStatement` and in the context of Task 8069. Over an
+implements step 5 of the intended proof recorded in the Markdown of
+`TorsionBracketMapStatement`. Over an
 algebraically closed field the target generators are first rescaled so that
 their gauges are `1`, which gives `normA`. Target rescaling alone does not make
 the entries of `normA` take finitely many values over a fixed projective point:

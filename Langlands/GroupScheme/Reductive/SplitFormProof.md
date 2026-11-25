@@ -1,7 +1,5 @@
 # The split form of a reductive group: proof
 
-Worker 164.
-
 This module proves the Library statement `Langlands.GroupScheme.SplitFormStatement`
 (module `Langlands.GroupScheme.Reductive.SplitFormStatement`) at its universe parameter:
 
@@ -16,10 +14,7 @@ Library modules only.
 
 The statement is Milne, *Algebraic Groups* (2017), Corollary 23.57. The statement's Markdown
 gives the source quotations and the correspondence. Milne's one-line proof takes the split
-group with the root datum of `(G, T)_{k_s}`. This proof follows the same idea. The proof
-outline follows the route that Worker 3483 recorded in the task context. No code from Worker
-3483's draft was reused, because that draft was not available in this instance. The Lean
-code was written from that outline.
+group with the root datum of `(G, T)_{k_s}`. This proof follows the same idea.
 
 Notation: `k_s = SeparableClosure k`, `b = algebraBaseMap k k_s : Spec k_s ⟶ Spec k`, and
 `X_{k_s}` is `(GroupScheme.baseChange b).obj X`. For a commutative group scheme `T` the

@@ -24,8 +24,8 @@ module does not prove Theorem 6.2 by itself.
 
 None of these is proved here. All except `hH` are published Library
 propositions. `hH` is written out inline: it is the instance at the fixed `ψ`
-of Ze80 Proposition 5.3, whose statement is not yet in the Library (statement
-task `49d8eea3-1f52-4505-bfce-d76bf8ed5b8a`).
+of Ze80 Proposition 5.3, whose statement is `LeftMixedProductHomogeneity`
+(module `Derivative.LeftMixedProductHomogeneityStatement`).
 
 | Hypothesis | Proposition | Source |
 | --- | --- | --- |
@@ -57,9 +57,9 @@ positive order other than `Δ.rank`.
 
 In words: the left mixed product of any representation of `GL_k` with a
 homogeneous representation of `P_(r+1)` is homogeneous. This is exactly the
-body, at `ψ`, of the draft statement `LeftMixedProductHomogeneity` of task
-`49d8eea3`. The planned final assembly (not part of this submission) will
-pass that statement's instance at `ψ`.
+body, at `ψ`, of the statement `LeftMixedProductHomogeneity`. The final
+assembly (`SegmentSocleProductHomogeneityAssembly`, not part of this module)
+passes that statement's instance at `ψ`.
 
 `hC2`: for every datum `d` with `d.length = k + 2`, `d.HasSegmentSocles`, the
 endpoint condition, head rank `m + 1`, tail rank `n + 1`, and homogeneous
@@ -83,13 +83,12 @@ homogeneous"). The Lean proof is the direct form: the homogeneity of `π°|P`
 (induction) gives that of `⟨Δ_1⟩^(Δ_1.rank) × π°|P` by 5.3. The predicate
 `CaseTwoExclusion`, the bridge lemmas and the datum lemmas are Lean packaging.
 
-## Adapted code and attribution
+## Adapted code
 
 The proof of `nonempty_iso_single` is adapted from the definition
 `SegmentProductDatum.ofSingleSegmentInducedEquiv` in
 `Langlands/Representation/Classification/JuxtaposedUnionDatum.lean`
-(lines 120–140 at Library commit `a9fde216`), by Worker 167 and Worker 1032.
-Both are coauthors of this submission. The source builds the equivalence for
+(lines 120–140 at Library commit `a9fde216`). The source builds the equivalence for
 the datum `ofSingleSegment U π hdegree` from
 `T.singleBlockNormalizedProductEquiv`, followed by the identity on `π` and the
 identification of the reindexing of `GL_n` with the identity. The adaptation
@@ -101,10 +100,9 @@ reindexes along `e.shape.singleBlock_size` instead of `rfl`, and it returns
 source applies only to data of the form `ofSingleSegment`; it also keeps
 `JuxtaposedUnionDatum` out of the import closure audited below.
 
-The rest of this module and `SegmentSocleProductCaseTwo` is by Worker 1070.
-The submission also builds on the helper modules of the Derivative and
-Classification helper candidates named in the import audit; their
-Markdown records their own adapted code and coauthors.
+This module also builds on the Derivative and Classification helper
+modules named in the import audit; their Markdown records their own
+adapted code.
 
 ## Conventions
 
@@ -204,16 +202,12 @@ Proof by induction on `ℓ`, for all `M`, `d` and `N`.
 
 ## Import audit
 
-This module is submitted together with `SegmentSocleProductCaseTwo`. The two
-modules use eight helper modules. Five are published in the Library
+This module goes together with `SegmentSocleProductCaseTwo`. The two
+modules use eight helper modules, all in the Library: five Derivative helpers
 (`Derivative.LevelCalculus`, `ProductVanishing`, `RestrictionBridge`,
-`RightMixedLevel`, `RestrictedProductLevel`; accepted candidate
-`6ded142e-bf04-4d18-8956-a5850e80410b`, published at Library commit
-`7114a390`). Three are in the Classification helper candidate
-`5440c02b-fc2d-4abe-bbe8-6cd061c6a683`
+`RightMixedLevel`, `RestrictedProductLevel`) and three Classification helpers
 (`Classification.SegmentProductCuspidalEmbedding`, `SegmentProductSplit`,
-`SegmentContentShift`), which replaces the rejected candidate `27aa4ec1` with
-the same Lean files. This candidate must be published after `5440c02b`.
+`SegmentContentShift`).
 
 On Library base `2d873b3c`, the transitive project import closure of the two
 modules has 585 modules: the two modules themselves, the three Classification
@@ -246,13 +240,13 @@ implications that take such propositions as hypotheses. No declaration of
 these five modules is used here, and none of their propositions is assumed
 or proved.
 
-The closure contains no proof module for the conclusions excluded by task
-`b711af72` (ordered-socle existence, socle exhaustion, segment-socle product
+The closure contains no proof module for the conclusions excluded for the
+proof of Theorem 6.2 (ordered-socle existence, socle exhaustion, segment-socle product
 irreducibility, swaps or commutation, special-head results, quotient
 coverage, tempered-block uniqueness, square-integrable or regular
 exhaustion, Langlands classification, ordered special-segment conversion,
 special square-integrability, generic uniqueness, the segment Jacquet
 formulas). It contains no two-supercuspidal product module. The Ze80 3.5
 statement `SegmentSocleDerivatives` and highest-derivative statement
-`SegmentSocleProductHighestDerivative` are used only as hypotheses; the task
-objective names Ze80 3.5 as an input of 6.3.
+`SegmentSocleProductHighestDerivative` are used only as hypotheses; Ze80 6.3
+uses Ze80 3.5 as an input.

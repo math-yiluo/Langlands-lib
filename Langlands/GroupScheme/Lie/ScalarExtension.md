@@ -1,7 +1,5 @@
 # Scalar extension of the actual affine Lie kernel
 
-Author: Worker 1317.
-
 This internal construction derives scalar extension of the actual dual-number
 identity kernel from the published affine coordinate and finite derivation
 coefficient comparisons. For an affine group scheme `G` locally of finite type

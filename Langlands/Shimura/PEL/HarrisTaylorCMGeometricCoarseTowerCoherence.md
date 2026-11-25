@@ -60,7 +60,7 @@ These predicates retain their original structural parameters; their types do
 not take `q`, `dualityNaturality` or `polarizationStability`. The direct
 comparison uses rigidity at `U` and `T`; the successive comparison also uses
 rigidity at `V`. These are explicit hypotheses, not existence conclusions of
-this unit. No normality of the coarse inclusions is imposed.
+this module. No normality of the coarse inclusions is imposed.
 
 ## Actual base and cover composition
 
@@ -235,8 +235,9 @@ systems. No new external-literature assertion is added.
 
 The result fixes the original `U` lattice while changing the coarse base. The
 composition law for morphisms comparing the separately constructed own
-lattices at `U`, `V` and `T` remains a separate next step. General lattice
+lattices at `U`, `V` and `T` is a separate step, proved in
+`HarrisTaylorCMGeometricLatticeInverseImageCoherence`. General lattice
 commensurability, rational adic independence, Hecke compatibility, and the
-remaining exact-source Harris geometry, representability, small-level
-existence and canonical-model obligations of the containing task remain
-explicit or unfinished. This unit does not establish whole-task completion.
+exact-source Harris geometry, representability, small-level existence and
+canonical-model assertions are explicit premises or are not treated in this
+module.

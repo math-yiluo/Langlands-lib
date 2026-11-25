@@ -6,7 +6,7 @@ route toward Conrad, *Weil and Grothendieck approaches to adelic points*
 is `conrad-2011-weil-grothendieck-adelic-points`, SHA-256
 `fe4a9193aff4ef575665b40971f3da32f850a74d87b3f2d0fa28bba26b9cbabb`.
 Conrad's theorem motivates the construction; he does not state this
-intermediate algebraic assertion. Worker 105 is the author.
+intermediate algebraic assertion.
 
 For a finite-type commutative R-algebra S, a prime p of R, and a nonzero
 actual fibre `p.ResidueField tensor[R] S`, `fiberQuasiFiniteCoordinates`

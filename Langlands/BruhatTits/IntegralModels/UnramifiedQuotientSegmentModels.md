@@ -1,6 +1,6 @@
 # Actual quotient-fixed subsets and compatible segment models
 
-This internal supporting unit proves
+This internal supporting module proves
 `Langlands.BruhatTits.IntegralModels.UnramifiedQuotientSegmentModelsStatement.{u}`
 by `unramifiedQuotientSegmentModels`, for arbitrary universe `u` and in both
 characteristics. It compares two supplied upper integral models, one for a closed
@@ -119,10 +119,12 @@ The integral-point comparison uses the published smooth extension and integral
 model isomorphism APIs; neutral comparison uses
 `RelativeComponentFunctoriality`. These are ordinary imports by Lean name.
 
-The upper models and both exact full image formulas remain supplied. This unit
+The upper models and both exact full image formulas remain supplied. This module
 constructs no upper segment model, residue kernel or parabolic-image comparison,
 Gamma-facet correspondence, residue-torus lift, or maximal `F`-split torus. It
 does not establish a metric or geodesic comparison or locate the prescribed point
-in a special apartment. The host
-`UnramifiedFixedPointSplitTorusStatement` remains open. No prohibited
-building-descent statement or theorem consuming one is used as a proof input.
+in a special apartment. It does not prove
+`UnramifiedFixedPointSplitTorusStatement`; `unramifiedFixedPointSplitTorus`
+(module `Langlands.Geometry.Building.UnramifiedFixedPointSplitTorusProof`)
+proves it without importing this module. No unramified building-descent
+statement or theorem consuming one is used as a proof input.

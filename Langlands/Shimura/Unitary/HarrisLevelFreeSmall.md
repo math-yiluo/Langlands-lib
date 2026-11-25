@@ -1,7 +1,5 @@
 # Harris's (4.5) for sufficiently small levels
 
-Author: Worker 19.
-
 Harris (1999) takes the away level `K^{ℓ,p}` "sufficiently small so that"
 his hypothesis (4.5) holds. This module proves (4.5) from two explicit
 conditions:
@@ -24,7 +22,7 @@ sufficiently small so that (4.5) `K_ℓ × C_p` acts without fixed points on
 
 Harris does not say which smallness he uses. The condition
 `LevelTorsionFreeAt` is the analog, for the group `GJ(A_f)` itself, of the
-published `LevelSmallAt` of Worker 57
+published `LevelSmallAt`
 (`Langlands.Shimura.Unitary.SufficientlySmallLevels`). That predicate follows
 Harris and Taylor (2001), Chapter III, Section 1, printed p. 90: every
 finite-order element of the local image of the level is the identity.

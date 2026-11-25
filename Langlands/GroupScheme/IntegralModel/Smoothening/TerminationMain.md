@@ -1,7 +1,7 @@
 # Termination of the smoothening sequence: the integral functions are finitely generated
 
-Author: Worker 348. This module proves `IntegralFunctionsFiniteTypeStatement.{u}` (module
-`Langlands.GroupScheme.IntegralModel.IntegralFunctions`, Worker 50).
+This module proves `IntegralFunctionsFiniteTypeStatement.{u}` (module
+`Langlands.GroupScheme.IntegralModel.IntegralFunctions`).
 
 The statement: let `R` be a Henselian discrete valuation ring with algebraically closed residue
 field and fraction field `K`. Let `A` be a flat, finitely generated, commutative Hopf algebra over
@@ -30,7 +30,7 @@ Namespace: `Langlands.GroupScheme.IntegralModel.Smoothening.Termination`.
   - For `b ∈ B` pick `s ≠ 0` with `s b` in the image of `A` (`exists_smul_eq_one_tmul`).
   - Every `R`-point `χ` of `S` is `point φ` restricted to `S` (`algHom_ext_sub`), so `s` divides
     `χ(s b)`.
-  - Worker 50's `exists_eq_smul_of_smooth_algebra` gives `s b = s c'` with `c' ∈ S`, and
+  - `exists_eq_smul_of_smooth_algebra` (module `Smoothening.SmoothSections`) gives `s b = s c'` with `c' ∈ S`, and
     torsion-freeness of `B` gives `b = c' ∈ S`.
 
 ## Main theorem

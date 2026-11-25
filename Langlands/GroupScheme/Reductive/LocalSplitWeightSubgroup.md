@@ -1,7 +1,5 @@
 # Nonnegative weights independent of the regular cell cocharacter
 
-Author: Worker 204.
-
 This internal extension of `LocalSplitHeightSubgroup` works over any
 commutative ring and on every scheme test over its spectrum. Its input
 is the existing open split-cell chart, additive root maps equivariant
@@ -42,6 +40,6 @@ to be a homomorphism.
 
 The provenance is derived from the existing universal-polynomial
 construction, all-test specialization, weight vanishing and positive
-cutoff collection. This unit separates the roles of the two
+cutoff collection. This module separates the roles of the two
 cocharacters without asserting the existence of suitable split-cell
 data for a supplied parabolic or the descent of its filtration.

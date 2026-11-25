@@ -1,6 +1,6 @@
 # Valuative separation (F6) for the two-axis class presheaf
 
-Worker 386 wrote this module for Task 6296. It proves the published proposition
+This module proves the published proposition
 `Langlands.AlgebraicGeometry.Picard.NoetherianTwoAxisClassValuativeSeparationStatement`
 as the theorem
 `Langlands.AlgebraicGeometry.Picard.noetherianTwoAxisClassValuativeSeparation`,

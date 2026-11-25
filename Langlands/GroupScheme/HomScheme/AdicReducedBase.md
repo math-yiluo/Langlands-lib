@@ -1,6 +1,6 @@
 # Adic Hom effectivity across nilpotent base reduction
 
-Worker 584. A surjective map from a local ring with nilpotent kernel
+A surjective map from a local ring with nilpotent kernel
 induces an isomorphism on the first quotient by the maximal ideal,
 using the image of that ideal in the target. This is
 `isIso_quotientSpecMap_zero_of_surjective`. The construction

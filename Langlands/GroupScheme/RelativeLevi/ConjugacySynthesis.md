@@ -32,6 +32,6 @@ its conjugacy certificate, and a proof that every other such point equals
 it. The base scheme is arbitrary and all objects lie in universe `u`.
 
 The provenance is the composition of the local torus-cover construction and
-the algebraic uniqueness and descent reduction. This unit does not prove
+the algebraic uniqueness and descent reduction. This module does not prove
 any of its five structural inputs, and it is not an unconditional proof of
 `RelativeLeviConjugacyStatement`.

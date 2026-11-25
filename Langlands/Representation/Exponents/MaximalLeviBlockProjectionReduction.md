@@ -1,10 +1,9 @@
 # A conditional reduction for the maximal Levi block projection
 
-This internal proof helper for Task 6621 retains
-`RationalCuspidalInertiaDecompositionStatement.{u, max u v}` and
+This internal proof helper for `MaximalLeviBlockProjectionEquivalenceStatement`
+retains `RationalCuspidalInertiaDecompositionStatement.{u, max u v}` and
 `MaximalLeviBlockStatements.{u, v}` as explicit hypotheses. It does not prove
-either statement and does not discharge the requested unconditional target.
-The target and every imported published module are unchanged.
+either statement and does not prove the target unconditionally.
 
 `Langlands.Aubert.General.RepresentedParabolic.maximalLeviBlockProjectionEquivalenceOfDecompositionOfBlocks`
 is a defined proof term for the full conditional reduction. It retains the
@@ -49,6 +48,6 @@ natural isomorphism for its inverse.
 
 All three lemmas are internal interface and categorical deductions from
 published definitions and explicitly retained hypotheses. The file makes no
-new assertion about the source beyond those definitions. Publication of
-unconditional proofs of both prerequisite statements is still required
-before this reduction can yield the task's final proof.
+new assertion about the source beyond those definitions. Unconditional proofs
+of both prerequisite statements are needed before this reduction gives an
+unconditional proof of the target.

@@ -1,16 +1,17 @@
 # Structural identities for determinant Euler factors
 
-Placement note (Worker 64): the canonical module is `Langlands.LocalFactor.Euler.Statement`.
+Placement note: the canonical module is `Langlands.LocalFactor.Euler.Statement`.
 It is moved from `Langlands.LocalFactor.EulerStatement` with every public declaration name,
 namespace, type and mathematical body retained. The old module remains a thin
-compatibility import. Original source references and authorship below are retained.
+compatibility import. Original source references below are retained.
 The [migration record](../Abelian/Definitions.md#structural-migration-record) gives the complete map and checks.
 
 
-Worker 33 authors these proposition targets. The closing proposition is
+This module states these proposition targets. The closing proposition is
 `Langlands.LocalFactor.EulerFactorStructureStatement`; no theorem proof is
-supplied. It reuses Worker 20's actual `eulerPolynomial`, `rationalFactor`,
-`regularFactorValue`, and `spectralFactorValue` constructions.
+supplied. It reuses the actual `eulerPolynomial`, `rationalFactor`,
+`regularFactorValue`, and `spectralFactorValue` constructions of
+`Langlands.LocalFactor.Euler.Definitions`.
 
 For an endomorphism `A` of a finite-dimensional vector space, the polynomial
 is `det(1-X A)`. Its rational reciprocal is an element of `RatFunc K`.
@@ -53,7 +54,7 @@ component specializes coefficients to the complex numbers.
   this target does not choose or replace an arithmetic `q`.
 
 The constructor already proves basis invariance and invariance under linear
-equivalence. Those results are reused and are not submitted again here.
+equivalence. Those results are reused and are not proved again here.
 These statements supply the remaining algebraic ingredients for local factors.
 They do not by themselves construct inertia invariants, Weil parameters,
 Frobenius lifts, or Weil--Deligne semisimplification.
@@ -109,24 +110,20 @@ Exact retained sources:
 
 ## Dependency and validation status
 
-The only project dependency is Worker 20's [`Langlands.LocalFactor.Euler.Definitions`](Definitions.md),
-accepted definition artifact `0d2c7ab9-da15-43cf-b878-1cffa68969a4`
-version 1. Its current publication was verified at Library commit
-`843c574c920aa9926ab56adf662c74b3cd4ed0e1`, including the complete final review
-receipt `4ab1b76c841f4a79b04d72113e7586c0` and the effective integrated pair.
-Its Lean SHA256 is
+The only project dependency is [`Langlands.LocalFactor.Euler.Definitions`](Definitions.md).
+It was verified in the Library at commit
+`843c574c920aa9926ab56adf662c74b3cd4ed0e1`, Lean file and page together.
+At that commit its Lean SHA256 was
 `6fde12cbc1ed3f8e6e184468f5edab01cf1e597256f06234e0e6d675f1ba617d`.
-Its effective Markdown SHA256 is
+Its effective Markdown SHA256 was
 `9de51349e57cf40b69f329a136d0fe727d7d70a9cee4768ce11fc463fb042077`.
 The construction's Lean source is unchanged from the development dependency;
 the published documentation was read and its scope reconciled. This statement
-imports that genuine construction and does not reimplement or claim ownership
-of it.
+imports that genuine construction and does not reimplement it.
 
-The pinned environment is `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d` version 1,
-Lean 4.34.0 and Mathlib commit
+The pinned environment is Lean 4.34.0 and Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`.
-Development check `5ddf97c2-ba17-4964-8ff8-dec24c9d2450` succeeded with both
+A development check succeeded with both
 modules compiling without warnings or errors. Inspection confirmed a `Prop`
 definition with independent universe parameters `u`, `v`, `w`, `z`, and `t`,
 and target fingerprint
@@ -134,5 +131,4 @@ and target fingerprint
 Only `propext`, `Classical.choice`, and `Quot.sound` occur in the inspected
 target assumptions. The checked statement and imported Lean bytes are unchanged,
 so the successful exact check remains applicable. This is development validation
-of a statement, not independent semantic publication or a proof. The statement
-still requires its own independent semantic review and publication.
+of a statement, not a proof.

@@ -14,7 +14,7 @@ Here `ℳ` is the sheaf that the Theorem of II.2.5 attaches to a nondegenerate
 `D(X)`-module `M`, with `ℳ(U) = χ_U · M` on compact opens `U`. The file builds `C^∞_X` as
 a sheaf of complex vector spaces and gives an explicit isomorphism between it and the
 published sheaf of the regular module. Everything here is either a definition or proved
-in the file. It adds no proposition for a later proof task.
+in the file. It adds no proposition to be proved elsewhere.
 
 ## Setting
 

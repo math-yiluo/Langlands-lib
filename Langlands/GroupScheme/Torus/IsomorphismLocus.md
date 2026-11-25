@@ -44,4 +44,4 @@ including nonreduced and disconnected schemes.
 This is an internal construction derived from the affine coefficient
 certificate and standard scheme pullback and open-cover operations. It does
 not claim the relative-torus descent result, smoothness, or Hom
-representability; those remain separate steps toward the host task.
+representability; those remain separate steps.

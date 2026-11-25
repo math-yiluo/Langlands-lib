@@ -1,6 +1,6 @@
 # Entire strict-rank determinant-slice families
 
-This internal unit proves entire dependence of the literal determinant-slice
+This internal module proves entire dependence of the literal determinant-slice
 coefficients `strictSliceCoefficient`, at every complementary rectangular row.
 It works over a canonical p-adic field in universe `uF`, with an independent
 representation carrier in universe `uV`. The actual larger rank is `r + 1`, the

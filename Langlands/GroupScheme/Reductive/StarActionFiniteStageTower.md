@@ -1,9 +1,8 @@
 # Galois actions on characters along a tower of base changes
 
-Author: Worker 61. This is a helper module for the proof of
+This is a helper module for the proof of
 `Langlands.GroupScheme.StarActionFiniteStageStatement` (module
-`Langlands.GroupScheme.Reductive.StarActionFiniteStageProof`, Task 5982, written under the
-plan of Task 5703). It contains only definitions and lemmas used by that proof. The module
+`Langlands.GroupScheme.Reductive.StarActionFiniteStageProof`). It contains only definitions and lemmas used by that proof. The module
 proves no published statement. Every declaration lives in the namespace
 `Langlands.GroupScheme.StarActionFiniteStage`. `#print axioms` reports only `propext`,
 `Classical.choice` and `Quot.sound` for every theorem checked (for example

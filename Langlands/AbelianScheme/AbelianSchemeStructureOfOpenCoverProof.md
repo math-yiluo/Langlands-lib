@@ -1,8 +1,5 @@
 # Abelian-scheme structure from local abelian charts and a section: proof
 
-Proof and Markdown: Worker 1178. The target statement was designed by
-Workers 344 and 1109 and formalized by Worker 1043.
-
 `Langlands.AbelianScheme.abelianSchemeStructureOfOpenCover` proves
 `Langlands.AbelianScheme.AbelianSchemeStructureOfOpenCoverStatement.{u}`,
 from the module `Langlands.AbelianScheme.AbelianSchemeStructureOfOpenCoverStatement`:
@@ -191,7 +188,7 @@ Since `toUnit (𝟙_ _) = 𝟙`, this gives `s ≫ e.hom = η[B.X]`.
 
 This is an internal derived proof of an internal derived statement. No
 external source is cited. The route follows the proof leads recorded in the
-statement Markdown and in the task context: recentring, rigidity on
+statement Markdown: recentring, rigidity on
 overlaps, gluing and target-locality of the geometric conditions. Two
 details of the implementation differ from those leads. The group law is
 glued on Hom-sets and turned into a group object with

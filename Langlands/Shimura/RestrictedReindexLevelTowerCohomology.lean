@@ -181,7 +181,7 @@ theorem translate_colimitCohomologyComparison_apply_of_mem [IsDownwardClosed P']
     (hD : IsLevelTrivialCoefficients D) (q : ℕ) {g : G}
     (hg : ∀ K : P'.FullSubcategory, g ∈ (Φ.functor.obj K.obj).subgroup)
     (x : (colimitCohomology (reindexCoefficients Φ hΦ D) q).V) :
-    ((colimitCohomology D q).ρ g).hom ((colimitCohomologyComparison Φ hΦ D q).hom.hom x) =
+    ((colimitCohomology D q).ρ g).asHom.hom ((colimitCohomologyComparison Φ hΦ D q).hom.hom x) =
       (colimitCohomologyComparison Φ hΦ D q).hom.hom x :=
   RestrictedLevelColimit.translate_reindexComparison_apply_of_mem Φ hΦ (D.cohomology q)
     (isLevelTrivial_cohomology hD q) hg x
@@ -311,8 +311,8 @@ theorem baseChangeTower_reindex :
 /-- The Galois automorphism of the reindexed base-changed tower is the restriction of that of
 the base-changed tower. -/
 theorem towerGaloisAction_reindex (σ : L ≃ₐ[F] L) :
-    (towerGaloisAction F L (reindexProjection Φ hΦ s) σ).unop.hom =
-      Functor.whiskerLeft (Φ.restrictedFunctor hΦ) (towerGaloisAction F L s σ).unop.hom := rfl
+    (towerGaloisAction F L (reindexProjection Φ hΦ s) σ).unop.asIso.hom =
+      Functor.whiskerLeft (Φ.restrictedFunctor hΦ) (towerGaloisAction F L s σ).unop.asIso.hom := rfl
 
 variable {X : Scheme.{u}} (p : T ⟶ (Functor.const P.FullSubcategory).obj X)
 
@@ -342,13 +342,13 @@ theorem galois_reindexComparison_apply (n : ℕ) (M : ModuleSheaf X R) (σ : L �
     (x : ((reindexGaloisCohomologyFunctor Φ hΦ F L s p R hT n).obj M).V.obj) :
     (RestrictedLevelColimit.reindexComparison Φ hΦ
         ((canonicalCoefficients R (baseChangeProjection F L s ≫ p) M).cohomology n)).hom
-        ((((reindexGaloisCohomologyFunctor Φ hΦ F L s p R hT n).obj M).ρ σ).hom.hom x) =
-      (((galoisCohomologyFunctor F L s p R hT n).obj M).ρ σ).hom.hom
+        ((((reindexGaloisCohomologyFunctor Φ hΦ F L s p R hT n).obj M).ρ σ).asHom.hom.hom x) =
+      (((galoisCohomologyFunctor F L s p R hT n).obj M).ρ σ).asHom.hom.hom
         ((RestrictedLevelColimit.reindexComparison Φ hΦ
           ((canonicalCoefficients R (baseChangeProjection F L s ≫ p) M).cohomology n)).hom x) :=
   ConcreteCategory.congr_hom
     (canonicalPullback_reindexComparison Φ hΦ R (baseChangeProjection F L s ≫ p)
-      (towerGaloisAction F L s σ).unop.hom (towerGaloisAction_over s p σ) M n) x
+      (towerGaloisAction F L s σ).unop.asIso.hom (towerGaloisAction_over s p σ) M n) x
 
 end Galois
 

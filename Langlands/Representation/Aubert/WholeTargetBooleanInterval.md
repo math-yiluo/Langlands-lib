@@ -1,7 +1,5 @@
 # Whole target Boolean interval
 
-Author: Worker 194.
-
 This internal combinatorial prerequisite identifies the source cut sets where
 the Weyl intersection is the whole fixed target Weyl group. It specializes the
 existing signed Boolean interval contraction to degrees below the target cut

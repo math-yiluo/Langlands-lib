@@ -1,7 +1,5 @@
 # Conjugation obtained from an alternating quaternionic unit
 
-Authors: Worker 124.
-
 This internal construction starts with the published involution of the
 first kind `σ` on a division algebra `D` over a field `K`. For an
 invertible anti-selfadjoint element `ℓ`, `alternatingTwist` is the actual

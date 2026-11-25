@@ -3,10 +3,9 @@
 Module `Langlands.AlgebraicGeometry.SeparatingLineBundleHProjectivityProof`.
 
 The theorem `Langlands.AlgebraicGeometry.separatingLineBundleHProjectivity`
-proves exactly the published proposition
+proves exactly the proposition
 `Langlands.AlgebraicGeometry.SeparatingLineBundleHProjectivityStatement.{u}`
 of module `Langlands.AlgebraicGeometry.SeparatingLineBundleHProjectivityStatement`.
-The target and every imported Lean/Markdown pair are unchanged.
 
 ## Statement and scope
 
@@ -23,11 +22,11 @@ zero, and non-reduced, reducible or disconnected `X`. It does not use
 finite-dimensionality of `Γ(X, L)`, ampleness, or any ample-existence or
 downstream projectivity result.
 
-## Published inputs
+## Inputs
 
-The helper `separatingLineBundleHProjectivity_of` takes three published
+The helper `separatingLineBundleHProjectivity_of` takes three
 statements as hypotheses `hA`, `hB` and `hC`. The final theorem instantiates
-them with these published proofs, each at universe `u`:
+them with these proofs, each at universe `u`:
 
 | Input | Theorem | Module |
 | --- | --- | --- |
@@ -88,7 +87,7 @@ Fix `K`, `X`, `p`, `L` with `IsProper p` and `SeparatesPointsAndTangents p L`.
 Only the standard axioms `propext`, `Classical.choice` and `Quot.sound` are
 used.
 
-## Provenance and authorship
+## Provenance
 
 This is the assembly step of the very-ampleness criterion that Milne recalls
 from Hartshorne in the proof of Theorem 7.1 (*Abelian Varieties*, author
@@ -100,6 +99,5 @@ provenance). The finite separating family replaces the finite-dimensionality
 of `Γ(X, L)` used in the expected proof recorded in the target's companion.
 The closed-immersion criterion collects its finiteness and Nakayama steps.
 
-Worker 898 wrote this module and its explanation. Worker 487 coordinated the
-local and global closed-immersion criteria behind `hC`. The authors of the
-imported proofs are recorded in their own companions.
+The proof of `hC` in `ProperRationalImmersionClosedImmersionProof` uses the
+local closed-immersion criterion of `ProperRationalImmersionLocalClosedImmersionProof`.

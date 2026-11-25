@@ -1,6 +1,6 @@
 # Surjections from dynamic parabolics kill their contracting subgroup
 
-Worker 646. This is an internal prerequisite for the relative parabolic reductive
+This is an internal prerequisite for the relative parabolic reductive
 quotient. It proves `DynamicReductiveAnnihilationStatement` in every universe.
 It does not prove the unchanged `RelativeParabolicReductiveQuotientStatement`:
 local dynamic presentations of arbitrary relative parabolics, identification of
@@ -61,7 +61,7 @@ The other private helpers express that an isomorphism has full range and that
 a monomorphism with full all-test range has an inverse, obtained by evaluating
 range membership at the identity point of the target.
 
-This unit is derived entirely from the named published Library results. It is
+This module is derived entirely from the named published Library results. It is
 not a transcription of an additional external-source assertion. In particular,
 it does not infer equality of morphisms from equality on geometric fibres:
 smooth dynamic representatives and the fibrewise morphism criterion supply

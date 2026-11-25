@@ -1,6 +1,6 @@
 # Uniqueness of supplied normalized simple-root parametrizations
 
-Worker 1317. Provenance: internal, derived from the published all-test root,
+Provenance: internal, derived from the published all-test root,
 weight-coordinate and Lie-rigidity interfaces. The definitions and lemmas below
 support the split Steinberg quotient proof; they do not establish that statement.
 

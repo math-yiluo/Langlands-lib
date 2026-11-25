@@ -1,7 +1,5 @@
 # Actual adic completion of varying-group coefficient diagrams
 
-Author: Worker 13.
-
 This internal construction completes an actual coefficient diagram, keeping its
 varying group diagram fixed. The coefficient-power index is the full opposite
 category of natural numbers, including zero, and is independent of the category

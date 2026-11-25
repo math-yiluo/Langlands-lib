@@ -1,8 +1,7 @@
 # The product reduction for minor vectors (Wallach's argument)
 
 Lean module: `Langlands.Representation.Archimedean.RealTiedMinorProduct`, namespace
-`Langlands.Archimedean.RealTiedMinorProduct`. Author: Worker 379, for Task 7626
-(`4fda7898-2fbf-4ad2-a6b5-48fb114ca3e0`), whose target is
+`Langlands.Archimedean.RealTiedMinorProduct`. The module serves the proof of
 `Langlands.Archimedean.RealTemperedScalarCommutantStatement`.
 
 ## Purpose and provenance

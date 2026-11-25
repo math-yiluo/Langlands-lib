@@ -1,7 +1,5 @@
 # Ambient Phi normalization of left orbit compact induction
 
-Author: Worker 499.
-
 This module constructs `leftPhiAmbientInductionEquiv` in
 `Langlands.Derivative.MirabolicProductMinus`. It moves the actual ambient
 inverse-half determinant character through compact induction from either
@@ -10,8 +8,9 @@ It proves the evaluation formula and naturality for every induced function
 and both input maps across independent carrier universes. It also proves
 that compact induction of the complete normalized cycle coefficient has
 subsingleton carrier. The comparison with localized higher mixed products,
-the identity-orbit source comparison, rank transport and the six-part host
-theorem remain separate obligations.
+the identity-orbit source comparison, rank transport and the six-part
+statement `MirabolicProductMinusCompatibilityStatement` are proved in other
+modules.
 
 ## Source and provenance
 
@@ -30,8 +29,8 @@ printed pp.450–451 (PDF pages 11–12), specify the mirabolic character and
 minus functors. Section 4.12(II), printed pp.456–457 (PDF pages 17–18),
 defines the left mixed product; §4.13(b), printed p.458 (PDF page 19),
 states its functorial comparison. Section 7.2, printed p.471 (PDF page 32),
-supplies the two left orbit representatives. The task's retained reading
-record covers these passages and relevant page images. The bounded
+supplies the two left orbit representatives. These passages and relevant
+page images were read for this construction. The bounded
 supplied-source and public-note errata search found no applicable BZ77
 entry; no global absence is asserted.
 
@@ -39,8 +38,7 @@ The present specialization to actual stages groups, its naturality and
 its cycle-vanishing consequence are internal derived content. The original
 does not literally state this nested-subgroup interface. The proof uses
 the published actual normalized coefficient construction and the published
-compact-induction scalar-twist equivalence. Worker 499 wrote this pair;
-no peer draft supplies a proof body.
+compact-induction scalar-twist equivalence.
 
 ## Parameters, groups and ranks
 
@@ -57,8 +55,8 @@ The declarations quantify arbitrary `{p : ℕ} [Fact p.Prime]`,
 The three universes `uF,uV,uW` are independent. Naturality allows independent
 target universes `uV',uW'`. Neither input representation needs to be smooth
 for these declarations: the compact-induced carriers already consist of
-uniformly smooth functions. In the later host application the inputs will
-be the actual smooth representations. No admissibility, finite dimension,
+uniformly smooth functions. In the application to `LeftPhiCompatibility`
+the inputs are the actual smooth representations. No admissibility, finite dimension,
 irreducibility, finite length, genericity, chosen vector, canonical topology,
 universe saturation or comparison premise is added. All original carriers,
 including zero representations, are retained.
@@ -80,8 +78,9 @@ index `1` is identity. The higher source factor is `P_(r+2)`, so the eventual
 source minus functor is `phiMinus T ψ r : P_(r+2) → P_(r+1)`.
 The ambient minus functor lowers `P_(k+r+3)` to this `G`.
 No `P_0`, Phi-minus on `P_1` or rank-zero GL input is introduced.
-There is no rank cast in this unit; the later identity-section transport
-along `k+1+r = k+r+1` remains an assembly obligation.
+There is no rank cast in this module; the identity-section transport
+along `k+1+r = k+r+1` is made later in the assembly, by
+`leftPhiCompactSourceEquiv` in `MirabolicProductMinusLeftPhiCompactComparison`.
 
 Each declaration explicitly installs `T.topology` and
 `T.generalLinearTopologicalGroup (k+r+2)`. These supply the actual mirabolic
@@ -208,8 +207,7 @@ The full direct and transitive closure has 93 project modules,
 excluding this entry. All 186 imported Lean/Markdown files are nonempty,
 byte-identical to the published Library and checked against its manifest at
 commit `46311733bb8c7e91d5c932b568a8f16981d98999`.
-No pending module or peer draft is imported. In particular the separate
-actual character-stages comparison and normalized source coefficient
+In particular the separate actual character-stages comparison and normalized source coefficient
 comparison are not inputs.
 
 The direct mathematical inputs are the published compact-induction
@@ -225,7 +223,7 @@ closure contribute no finiteness result or admissibility hypothesis.
 
 | Condition | Actual dependency finding |
 | --- | --- |
-| Six host conclusions | The host statement and proof modules are absent. No mixed-minus compatibility or boundary conclusion supplies an input. This unit proves only the actual ambient induction normalization and cycle-induced vanishing. |
+| Six conclusions of the statement | The statement module `MirabolicProductMinusCompatibilityStatement` and the proofs of its clauses are absent. No mixed-minus compatibility or boundary conclusion supplies an input. This module proves only the actual ambient induction normalization and cycle-induced vanishing. |
 | Plus functors, adjunction and §4.13(d) | None supplies an input. The plus subgroup and successor used to name the stages section are elementary matrix constructions. |
 | General Leibniz and derivative formulas | No Leibniz theorem, unproved BZ77 comparison, Ze80 §3.5 or §9.6 formula, or segment derivative formula is used. |
 | Individual head and socle existence | Neither individual special-head/reverse-socle nor segment-socle/reverse-head existence supplies an input. |
@@ -235,24 +233,22 @@ closure contribute no finiteness result or admissibility hypothesis.
 | Special-head criterion and generic uniqueness | Neither special-head product irreducibility nor generic segment-product uniqueness is used. |
 | Ordered existence, coverage and exhaustion | No ordered multisegment-socle or strong-head existence, socle or special-head exhaustion, quotient coverage or ordered conversion is used. |
 | Analytic, tempered and square-integrable classification | No analytic segment classification, forward special essential square-integrability, tempered uniqueness, square-integrable Langlands classification, square-integrable or regular exhaustion, or Ze80 9.3 conclusion is used. |
-| Two-supercuspidal consumers | Neither nonadjacent-product irreducibility, two-supercuspidal product structure nor full-product assembly is used. No parent six-statement conclusion (b),(d),(e),(f) is used. |
+| Two-supercuspidal consumers | Neither nonadjacent-product irreducibility, two-supercuspidal product structure nor full-product assembly is used. |
 | Supercuspidal and all-character finiteness | No supercuspidal, all-character single-block or arbitrary-character coinvariant-finiteness theorem or downstream consequence is used. |
 | Other Whittaker finiteness | No irreducible or Levi-cuspidal coinvariant-finiteness conclusion or prohibited mirabolic finite-length route supplies an input. |
 | Generality and normalization | All `k,r`, both actual orbits, supplied `T`, positive GL input rank and entire arbitrary carriers are retained. Both higher covariance and the actual ambient inverse-half character are present. No input smoothness premise is needed here. |
-| Published-input requirement | Every imported pair is published and unchanged. Prop-valued statement definitions, source formulas, drafts, pending constructions and consumer tasks provide no unproved comparison premise. |
-| Separate owners and controls | This unit does not duplicate the separate restriction-sequence or exactness work. Worker 127's operator pause, Worker 8's suspension, Worker 114's hold and current suspensions remain binding. |
+| Published-input requirement | Every imported pair is published and unchanged. Prop-valued statement definitions and source formulas provide no unproved comparison premise. |
+| Separate results | This module does not duplicate the separate restriction-sequence or exactness results. |
 
 A scan of this module and its full project closure finds no occurrence in
-Lean code of the host's 38 excluded task identifiers or 24 named consumer
-declarations, and no proof holes, new axioms or unsafe evaluation commands.
-Excluded names in explanatory Markdown are audit prose. Successful
-development compilation is distinct from independent semantic acceptance
-and publication.
+Lean code of 24 excluded consumer declarations, and no proof holes, new
+axioms or unsafe evaluation commands. Excluded names in explanatory
+Markdown are audit prose.
 
 ## Complete project import closure
 
 The list below includes every direct and transitive project import,
-excluding this entry module. Mathlib is supplied by the pinned authorized
+excluding this entry module. Mathlib is supplied by the pinned
 environment and is outside this project-module list.
 
 ```text

@@ -586,7 +586,7 @@ theorem integralPointMap_points (x : D.model.integralSections) :
     (Over.homMk (baseMap (CommRingCat.of 𝒪[F]) (CommRingCat.of F)) (by simp) :
       (Over.map (baseMap (CommRingCat.of 𝒪[F]) (CommRingCat.of F))).obj
         (Over.mk (𝟙 _)) ⟶ Over.mk (𝟙 _)) x
-  refine h2.trans ?_
+  refine (normOneCongrIso_hom_points _ _ _).trans ?_
   congr 1
   refine h3.trans ?_
   exact congrArg D.genericTensorEquiv ((congrArg (normOnePointsEquiv (CommRingCat.of 𝒪[F])

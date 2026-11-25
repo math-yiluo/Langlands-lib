@@ -7,7 +7,7 @@ semigroup realization and smooth quotient statements and the exact equalities
 additive semigroup `A`. It also assumes the exact
 per-action ordered product property for a supplied central subgroup and its
 actual smooth fppf quotient. It proves that property for the ambient action.
-These inputs remain explicit; this unit does not prove the general geometric
+These inputs remain explicit; this module does not prove the general geometric
 prerequisites or the full `SemigroupOrderedProductStatement`.
 
 For the assembly theorem, `k` is an arbitrary field in universe `u`, `S` is a

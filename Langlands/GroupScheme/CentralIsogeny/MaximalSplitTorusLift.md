@@ -11,7 +11,7 @@ Borel–Tits 1972 (source `borel-tits-1972-complements-groupes-reductifs`) prove
 2.20(ii) on printed p.260, PDF p.9. They take a maximal `k`-torus `T'` of the target that
 contains the given split torus. The inverse image of `T'` is a maximal torus of the source by
 Proposition 2.11(iv), printed pp.256–257. Its maximal `k`-split subtorus maps onto the given
-split torus. Proposition 2.11(iv) is not in the Library. Here the lift is built instead from
+split torus. Here the lift is built instead from
 the power map of `Langlands.GroupScheme.CentralIsogeny.PowerLift`, and maximality comes from
 a finiteness argument.
 
@@ -70,11 +70,11 @@ Throughout, `k` is a field and `G`, `H` are group schemes over `Spec k`.
 ## Provenance
 
 `injective_of_integral_comp_injective` and
-`isIso_of_closedImmersion_finite_comp_schematic` are reused from Worker 1482's
+`isIso_of_closedImmersion_finite_comp_schematic` are reused from the
 published `Langlands/GroupScheme/Torus/FiniteHomRigidity.lean`.
 `exists_splitSubtorus_lift_of_surjective_splitParametrization` is reused from
-Worker 1437's published `Langlands/GroupScheme/CentralIsogeny/SplitParametrization.lean`.
+the published `Langlands/GroupScheme/CentralIsogeny/SplitParametrization.lean`.
 These three imported helpers live in namespace `Langlands.GroupScheme`.
 The maximality argument of `isMaximalSplitTorus_of_surjective` is adapted from
-Worker 1482's `Langlands/GroupScheme/Torus/FiniteHomMaximalityReduction.lean`,
+`Langlands/GroupScheme/Torus/FiniteHomMaximalityReduction.lean`,
 with split tori in place of maximal tori.

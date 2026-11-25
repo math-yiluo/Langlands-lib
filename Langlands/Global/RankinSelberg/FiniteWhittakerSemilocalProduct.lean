@@ -94,8 +94,8 @@ omit [CompactSpace (AdeleQuotient F)] in
 theorem canonical_inverse (ψ : HarmonicAnalysis.UnitaryAdditiveCharacter (Adeles F))
     (v : FinitePlace F)
     (ψv : Correspondence.NontrivialAdditiveCharacter (CompletionPadic.padicField v))
-    (hψv : ClassField.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent ψ v ψv) :
-    ClassField.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent
+    (hψv : ClassFieldTheory.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent ψ v ψv) :
+    ClassFieldTheory.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent
       (inverseCharacter ψ) v (inverseFinite v ψv) := by
   let := (CompletionPadic.padicField v).canonicalTopologicalData.topology
   intro x
@@ -113,7 +113,7 @@ theorem coefficient_eq_product_at_retained
     (ψ : HarmonicAnalysis.UnitaryAdditiveCharacter (Adeles F))
     (hψF : ∀ x : F, ψ (algebraMap F (Adeles F) x) = 1)
     (ψv : ∀ v : S, Correspondence.NontrivialAdditiveCharacter (CompletionPadic.padicField v.1))
-    (hψv : ∀ v, ClassField.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent ψ v.1 (ψv v))
+    (hψv : ∀ v, ClassFieldTheory.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent ψ v.1 (ψv v))
     (ℓ : ∀ v : S, FactorFunctionals P v.1 (ψv v))
     (a₀ : ∀ v : S, P.localFactor v) (ha₀ : ∀ v, (ℓ v).val (a₀ v) = 1)
     (a : ∀ v : S, P.localFactor v)
@@ -154,7 +154,7 @@ theorem pair_eq_product
     (ψ : HarmonicAnalysis.UnitaryAdditiveCharacter (Adeles F))
     (hψF : ∀ x : F, ψ (algebraMap F (Adeles F) x) = 1)
     (ψv : ∀ v : S, Correspondence.NontrivialAdditiveCharacter (CompletionPadic.padicField v.1))
-    (hψv : ∀ v, ClassField.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent ψ v.1 (ψv v))
+    (hψv : ∀ v, ClassFieldTheory.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent ψ v.1 (ψv v))
     (ℓ : ∀ v : S, FactorFunctionals P v.1 (ψv v))
     (ℓ' : ∀ v : S, FactorFunctionals P' v.1 (inverseFinite v.1 (ψv v)))
     (a₀ : ∀ v : S, P.localFactor v) (ha₀ : ∀ v, (ℓ v).val (a₀ v) = 1)
@@ -204,7 +204,7 @@ theorem exists_prescribed_pair
     (ψ : HarmonicAnalysis.UnitaryAdditiveCharacter (Adeles F))
     (hψF : ∀ x : F, ψ (algebraMap F (Adeles F) x) = 1)
     (ψv : ∀ v : S, Correspondence.NontrivialAdditiveCharacter (CompletionPadic.padicField v.1))
-    (hψv : ∀ v, ClassField.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent ψ v.1 (ψv v))
+    (hψv : ∀ v, ClassFieldTheory.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent ψ v.1 (ψv v))
     (ℓ : ∀ v : S, ComponentFunctionals P v.1 (ψv v))
     (ℓ' : ∀ v : S, ComponentFunctionals P' v.1 (inverseFinite v.1 (ψv v)))
     (hℓ : ∀ v, (ℓ v).val ≠ 0) (hℓ' : ∀ v, (ℓ' v).val ≠ 0)
@@ -284,7 +284,7 @@ def SemilocalProductStatement : Prop :=
     (ψ : HarmonicAnalysis.UnitaryAdditiveCharacter (Adeles F))
     (_hψF : ∀ x : F, ψ (algebraMap F (Adeles F) x) = 1)
     (ψv : ∀ v : S, Correspondence.NontrivialAdditiveCharacter (CompletionPadic.padicField v.1))
-    (_hψv : ∀ v, ClassField.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent ψ v.1 (ψv v))
+    (_hψv : ∀ v, ClassFieldTheory.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent ψ v.1 (ψv v))
     (ℓ : ∀ v : S, ComponentFunctionals P v.1 (ψv v))
     (ℓ' : ∀ v : S, ComponentFunctionals P' v.1 (inverseFinite v.1 (ψv v)))
     (_hℓ : ∀ v, (ℓ v).val ≠ 0) (_hℓ' : ∀ v, (ℓ' v).val ≠ 0)

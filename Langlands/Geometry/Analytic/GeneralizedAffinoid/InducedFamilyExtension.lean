@@ -81,8 +81,8 @@ theorem unitFamilyMap_eq (X : NormContinuousSpace K H) :
       copyMap H X (identityCoset H)) rfl
   apply heq_of_eq
   funext i
-  change (X.unop.actionAut (identityRepresentative H)).hom =
-    ((X.unop.actionAut (identityRepresentative H)⁻¹).inv).comp
+  change (X.unop.actionAut (identityRepresentative H)).asIso.hom =
+    ((X.unop.actionAut (identityRepresentative H)⁻¹).asIso.inv).comp
       (BoundedAlgHom.id K X.unop.obj.V)
   rw [map_inv]
   exact BoundedAlgHom.ext fun _ => rfl
@@ -90,8 +90,8 @@ theorem unitFamilyMap_eq (X : NormContinuousSpace K H) :
 omit [TopologicalSpace G] in
 /-- Compose the actual target action in categorical order. -/
 theorem familyAction_comp (Y : Action (AffinoidFamily.{u, v} K) G) (g k : G) :
-    Y.ρ k ≫ Y.ρ g = Y.ρ (g * k) :=
-  (Y.ρ.map_mul g k).symm
+    (Y.ρ k).asHom ≫ (Y.ρ g).asHom = (Y.ρ (g * k)).asHom :=
+  (congrArg End.asHom (Y.ρ.map_mul g k)).symm
 
 /-- Copywise extension uses the target action at the chosen coset representative. -/
 def extendFamilyMap {X : NormContinuousSpace K H}
@@ -99,7 +99,7 @@ def extendFamilyMap {X : NormContinuousSpace K H}
     (f : (localFunctor H).obj X ⟶
       (Action.res (AffinoidFamily.{u, v} K) H.subtype).obj Y) :
     family H X.unop ⟶ Y.V :=
-  assembleFamilyMap H (fun c => f.hom ≫ Y.ρ c.out)
+  assembleFamilyMap H (fun c => f.hom ≫ (Y.ρ c.out).asHom)
 
 @[simp]
 theorem copyMap_extendFamilyMap {X : NormContinuousSpace K H}
@@ -107,7 +107,7 @@ theorem copyMap_extendFamilyMap {X : NormContinuousSpace K H}
     (f : (localFunctor H).obj X ⟶
       (Action.res (AffinoidFamily.{u, v} K) H.subtype).obj Y)
     (c : G ⧸ H) :
-    copyMap H X c ≫ extendFamilyMap H f = f.hom ≫ Y.ρ c.out :=
+    copyMap H X c ≫ extendFamilyMap H f = f.hom ≫ (Y.ρ c.out).asHom :=
   copyMap_assembleFamilyMap H _ c
 
 /-- The extension is equivariant as a complete bounded family morphism. -/
@@ -117,26 +117,26 @@ theorem extendFamilyMap_equivariant {X : NormContinuousSpace K H}
       (Action.res (AffinoidFamily.{u, v} K) H.subtype).obj Y)
     (g : G) :
     actionMap H X.unop g ≫ extendFamilyMap H f =
-      extendFamilyMap H f ≫ Y.ρ g := by
+      extendFamilyMap H f ≫ (Y.ρ g).asHom := by
   apply familyHom_ext H
   intro c
   let f₀ : localFamily H X ⟶ Y.V := f.hom
   have hc (d : G ⧸ H) : copyMap H X d ≫ extendFamilyMap H f =
-      f₀ ≫ Y.ρ d.out := copyMap_extendFamilyMap H f d
+      f₀ ≫ (Y.ρ d.out).asHom := copyMap_extendFamilyMap H f d
   have hf : localActionMap H X (correction H g c) ≫ f₀ =
-      f₀ ≫ Y.ρ (correction H g c : G) := f.comm (correction H g c)
+      f₀ ≫ (Y.ρ (correction H g c : G)).asHom := f.comm (correction H g c)
   calc
     copyMap H X c ≫ (actionMap H X.unop g ≫ extendFamilyMap H f) =
         localActionMap H X (correction H g c) ≫
           (copyMap H X (g • c) ≫ extendFamilyMap H f) := by
             rw [← Category.assoc, copyMap_action, Category.assoc]
     _ = localActionMap H X (correction H g c) ≫
-        (f₀ ≫ Y.ρ (g • c).out) := by rw [hc]
-    _ = (f₀ ≫ Y.ρ (correction H g c : G)) ≫ Y.ρ (g • c).out := by
+        (f₀ ≫ (Y.ρ (g • c).out).asHom) := by rw [hc]
+    _ = (f₀ ≫ (Y.ρ (correction H g c : G)).asHom) ≫ (Y.ρ (g • c).out).asHom := by
       rw [← Category.assoc, hf]
-    _ = f₀ ≫ Y.ρ (g * c.out) := by
+    _ = f₀ ≫ (Y.ρ (g * c.out)).asHom := by
       rw [Category.assoc, familyAction_comp, ← correction_spec]
-    _ = copyMap H X c ≫ (extendFamilyMap H f ≫ Y.ρ g) := by
+    _ = copyMap H X c ≫ (extendFamilyMap H f ≫ (Y.ρ g).asHom) := by
       rw [← Category.assoc, hc, Category.assoc, familyAction_comp]
 
 /-- The constructed full-group equivariant bounded extension. -/
@@ -179,10 +179,10 @@ theorem unitFamilyMap_extendFamilyMap {X : NormContinuousSpace K H}
     unitFamilyMap H X ≫ extendFamilyMap H f = f.hom := by
   let f₀ : localFamily H X ⟶ Y.V := f.hom
   have hf : localActionMap H X (identityRepresentative H)⁻¹ ≫ f₀ =
-      f₀ ≫ Y.ρ ((identityRepresentative H)⁻¹ : H) :=
+      f₀ ≫ (Y.ρ ((identityRepresentative H)⁻¹ : H)).asHom :=
     f.comm (identityRepresentative H)⁻¹
   have hc : copyMap H X (identityCoset H) ≫ extendFamilyMap H f =
-      f₀ ≫ Y.ρ (identityRepresentative H : G) :=
+      f₀ ≫ (Y.ρ (identityRepresentative H : G)).asHom :=
     copyMap_extendFamilyMap H f (identityCoset H)
   change unitFamilyMap H X ≫ extendFamilyMap H f = f₀
   rw [unitFamilyMap_eq, Category.assoc, hc, ← Category.assoc, hf,
@@ -216,8 +216,8 @@ theorem extendFamily_restrictFamily {X : NormContinuousSpace K H}
   apply familyHom_ext H
   intro c
   rw [copyMap_extendFamilyMap]
-  change (unitFamilyMap H X ≫ p₀) ≫ Y.ρ c.out = copyMap H X c ≫ p₀
-  have hp : actionMap H X.unop c.out ≫ p₀ = p₀ ≫ Y.ρ c.out :=
+  change (unitFamilyMap H X ≫ p₀) ≫ (Y.ρ c.out).asHom = copyMap H X c ≫ p₀
+  have hp : actionMap H X.unop c.out ≫ p₀ = p₀ ≫ (Y.ρ c.out).asHom :=
     p.comm c.out
   rw [Category.assoc, ← hp, ← Category.assoc, unitFamilyMap_action]
 
@@ -274,7 +274,7 @@ theorem extendFamilyMap_indexMap {X : NormContinuousSpace K H}
       (Action.res (AffinoidFamily.{u, v} K) H.subtype).obj Y)
     (c : G ⧸ H) :
     (extendFamilyMap H f).indexMap c =
-      (Y.ρ c.out).indexMap (f.hom.indexMap PUnit.unit) := rfl
+      (Y.ρ c.out).asHom.indexMap (f.hom.indexMap PUnit.unit) := rfl
 
 /-- The retained pullback is the original input pullback composed with the target's. -/
 @[simp]
@@ -285,6 +285,6 @@ theorem extendFamilyMap_pullback {X : NormContinuousSpace K H}
     (c : G ⧸ H) :
     (extendFamilyMap H f).pullback c =
       (f.hom.pullback PUnit.unit).comp
-        ((Y.ρ c.out).pullback (f.hom.indexMap PUnit.unit)) := rfl
+        ((Y.ρ c.out).asHom.pullback (f.hom.indexMap PUnit.unit)) := rfl
 
 end Langlands.Analytic.PresentedAffinoidAlgebra.InducedAction

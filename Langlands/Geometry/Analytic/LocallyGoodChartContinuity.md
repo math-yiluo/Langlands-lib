@@ -1,7 +1,5 @@
 # Continuity of analytic actions from local covers by good charts
 
-Author: Worker 976.
-
 This internal module turns the good-chart criterion of `GoodChartContinuity`
 into a local form. The field `K : Type u` is complete, normed and ultrametric.
 Analytic spaces lie in `LocalizedCategory.{u, v, v}`. The group `G : Type z`
@@ -30,6 +28,7 @@ carries an arbitrary topology.
 ## Provenance and scope
 
 This module is internal, a prerequisite for continuity on compact analytic
-pullbacks (Task 7765). It is the interface with the geometric step of that
-task. The geometric step must still show that the pullback action is locally
-good.
+pullbacks (`CompactPullbackActionContinuitySmallStatement`). It is the interface
+with the geometric step of that statement's proof. The geometric step,
+`isLocallyGood_of_pullback_of_small` in `CompactPullbackContinuityOfSmall`, shows
+that the pullback action is locally good.

@@ -1,7 +1,5 @@
 # Weyl transport and the reduction of factor matching to adjacent block swaps
 
-Authors: Worker 242.
-
 This module proves that factor matching for associated irreducible cuspidal
 inducing data on `GL_n` (the target `AssociatedCuspidalInductionFactorsTheorem`
 of `Langlands.Representation.CuspidalSupport.AssociationForwardStatement`)
@@ -130,7 +128,8 @@ equivalent, so `HaveSameJordanHolderFactors A A'`.
 ## The reduction
 
 Fix `p`, `F`, `T` and `n`. The adjacent-swap hypothesis has exactly the shape
-of the proposition specified in statement task `c5bec005`: for
+of the proposition `AdjacentBlockSwapCuspidalInductionFactorsTheorem` of
+`AdjacentSwapStatement`: for
 `hw : ConjugatesLevi B C w` with `j + 1 < B.length`, block map
 `(blockIndex C (w a) : ℕ) = Equiv.swap j (j + 1) (blockIndex B a : ℕ)`,
 `IsMinimalRepresentative B C w`, irreducible Levi-cuspidal `σ` and `τ` and

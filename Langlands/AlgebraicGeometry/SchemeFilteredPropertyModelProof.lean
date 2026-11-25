@@ -54,7 +54,8 @@ private theorem propertyModelExistence
     Spec.map (CommRingCat.ofHom (algebraMap T₁ c.pt))
   have ha₁ : a₁ ≫ b = Spec.map (CommRingCat.ofHom (algebraMap T₀ c.pt)) := by
     dsimp [a₁, b]
-    rw [← Spec.map_comp, ← CommRingCat.ofHom_comp, ← IsScalarTower.algebraMap_eq]
+    rw [← Spec.map_comp, ← CommRingCat.ofHom_comp]
+    rfl
   let g₁ := pullback.snd f₀ b
   let : LocallyOfFinitePresentation g₁ := inferInstance
   let : QuasiCompact g₁ := inferInstance

@@ -1,7 +1,5 @@
 # Stable lattices and torsion coefficient representations
 
-Author: Worker 57.
-
 This module supplies the algebraic step from an actual invariant lattice in
 an algebraic representation to its torsion coefficient representations. It
 reuses Mathlib's notion of a lattice and the published quotient functors in
@@ -108,7 +106,7 @@ their product and assembling their lattices are not asserted here.
 
 ## Source correspondence and scope
 
-Worker 57 read the following original passages for this contribution.
+The following original passages were read for this module.
 
 - Harris, *Galois properties of cohomological automorphic forms on GL(n)*
   (1999), Section 3, printed pp.307–308 (PDF pp.9–10): a stable integral
@@ -128,9 +126,15 @@ existence assertion discussed by Harris–Taylor for a continuous compact
 action is not proved here. Neither continuity of `placeAction`, existence
 of a stable lattice for a compact open `U`, an open congruence kernel,
 finite freeness of every reduction, nor descent or local triviality of a
-sheaf is asserted by this module. These remain explicit subsequent tasks
-in the larger coefficient-system construction. The constructions here are
-the actual module quotients and actions that those later steps will use.
+sheaf is asserted by this module. Several of these are proved in other
+modules of the coefficient-system construction: continuity of the orbit
+maps of `placeAction` (`continuous_algebraicAdelicCoefficient_orbit`, module
+`AlgebraicCompactCoefficient`), a stable lattice for a compact open `U`
+with open congruence kernels (`compactStableCoefficientLattice` and
+`compactCoefficient_congruenceKernel`, module `CompactCoefficient`, which
+use the actual module quotients and actions constructed here), and local
+triviality of the associated etale sheaf over a finite geometric torsor
+(`etaleAssociatedTrivialization`, module `TrivializationProof`).
 
 Source identifiers and fingerprints:
 

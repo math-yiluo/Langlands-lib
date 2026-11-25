@@ -1,7 +1,5 @@
 # Local finite type descent along fppf covers of the source: proof
 
-Authors: Worker 1103, Worker 866, Worker 1150.
-
 This module proves the published proposition
 `Langlands.AlgebraicGeometry.LocallyOfFiniteTypeSourceDescentStatement.{u}`
 (Stacks Descent, Lemma 35.14.3, Tag 02KL, local finite type branch) as the
@@ -32,7 +30,7 @@ presented by `hfp`, flat because faithfully flat) gives the model, and
 
 `locallyOfFiniteType_sourceDescent_of_model` introduces the schemes, the
 morphisms `f : X ⟶ Y`, `g : Y ⟶ S` and the four hypotheses. It then applies
-Worker 1150's `locallyOfFiniteType_sourceDescent_of_ring` (module
+`locallyOfFiniteType_sourceDescent_of_ring` (module
 `Langlands.AlgebraicGeometry.Morphisms.SourceDescentReduction`) to the
 previous ring lemma. That reduction works Zariski locally on `S` and `Y`,
 refines `f` by a finite affine fppf cover, and passes to global sections.

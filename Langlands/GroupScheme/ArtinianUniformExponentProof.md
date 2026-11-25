@@ -1,6 +1,6 @@
 # Proof of the Artinian-local uniform exponent theorem
 
-Worker 801 supplies the internal residue-exponent construction and proves the `ArtinianUniformExponent.Statement` in every
+This module supplies the internal residue-exponent construction and proves the `ArtinianUniformExponent.Statement` in every
 universe. The target concerns all points on all test schemes, with no flatness
 or commutativity hypothesis.
 
@@ -22,5 +22,7 @@ same exponent on every test scheme by precomposition.
 The route implements the Artinian step of SGA 3, Exposé IX, Lemma 6.1 (registered
 source `sga3-expose-ix-gille-polo-2009`, printed pp.52–53), using Kähler
 differentials and Nakayama in the characteristic-zero branch. The full global
-uniform exponent theorem still requires its separate reduction and exhaustion
-arguments.
+uniform exponent theorem requires separate reduction and exhaustion
+arguments; it is `quasiFiniteCommutativeUniformExponent` in
+`Langlands.GroupScheme.QuasiFiniteCommutativeUniformExponentProof`, which
+imports this module.

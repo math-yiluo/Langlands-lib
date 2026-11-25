@@ -1,7 +1,7 @@
 # Actual absolute and abelianized upper ramification
 
-Worker 68 authored the original construction. Worker 849 generalizes it in
-place and names wild inertia. Public declarations remain in
+This module holds the original construction, generalized in place, and
+names wild inertia. Public declarations remain in
 `Langlands.Ramification.Padic`. The module imports `Herbrand.GeneralAbsolute`,
 the in-place finite wrappers in `Herbrand.Finite`, and the unchanged
 `ClassFieldTheory.Local.Galois` (formerly at `LocalClassField.Galois`).
@@ -27,8 +27,8 @@ Serre describes the infinite upper group by the inverse limit of the
 finite Galois upper groups. Inside the actual absolute Galois group it is
 the intersection of all finite restriction preimages. An absolute
 automorphism already has compatible restrictions. Arithmetic equality of
-its upper-group image with a prescribed finite upper group remains a
-later theorem obligation.
+its upper-group image with a prescribed finite upper group is the
+separate theorem `absoluteUpperFiniteImage` in `Herbrand.AbsoluteProof`.
 
 Here `p` is any prime and `F : PadicField.{u} p` is any finite extension
 of the actual `Padic p`. The real parameter is unrestricted. Lower
@@ -113,7 +113,8 @@ The named definition follows the registered operator plan,
 specifies the closure of the union of the positive upper groups. The
 finite description by `G_1` is Serre IV §2, Corollaries 1–4 to
 Proposition 7, pp.67–68. Its equality with this absolute subgroup is
-still a later arithmetic theorem, as in `AbsoluteUpperWildInertia`.
+the separate arithmetic theorem `absoluteUpperWildInertia` in
+`Herbrand.InertiaProof`, which proves `AbsoluteUpperWildInertia`.
 
 ## Abelianized image
 
@@ -134,5 +135,6 @@ unchanged apart from the generalized definition they consume.
 
 Finite-image equality, inertia at zero, the finite-lower-group
 characterization of wild inertia, right-limit images, left continuity,
-and comparison with finite abelian quotients remain separate theorem
-obligations.
+and comparison with finite abelian quotients are separate results, not
+proved in this module. The first five are proved in `Herbrand.AbsoluteProof`
+and `Herbrand.InertiaProof`.

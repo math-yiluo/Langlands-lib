@@ -1,9 +1,6 @@
 # Actual dominant centralizer sections and positive covers
 
-Author: Worker 454. The unchanged centralizer-valuation helper modules were
-authored by Worker 1266.
-
-This is a statement unit for every actual nonarchimedean local field `F`,
+This module is a statement for every actual nonarchimedean local field `F`,
 in mixed or equal characteristic. Let `G` be an actual connected reductive
 group scheme, let `i : S → G` be a maximal split torus, and let `ν` be an
 actual cocharacter pairing nontrivially with every relative root. The
@@ -136,7 +133,7 @@ module contains no proof of the combined statement.
 ## Remaining geometric comparisons
 
 The actual maximal compact `K0 = G(F)^1_x`, the KP parahoric `P_x`, and
-their double-coset spaces do not occur in this unit. The corrected KP
+their double-coset spaces do not occur in this module. The corrected KP
 indexing set is the dominant centralizer quotient by `Z(F)^0`. The
 intended maximal-compact indexing set is the actual dominant valuation
 image, equivalently the dominant quotient by the common norm kernel
@@ -145,4 +142,5 @@ remains a separate actual-group statement. A full dominant valuation
 section will index distinct `K0` double cosets only after that comparison.
 A finite positive product cover will then supply a product covering,
 with disjointness requiring the separate nonrepetition condition.
-The same-`K0` standard-Levi comparison also remains outstanding.
+The same-`K0` standard-Levi comparison is likewise separate; its properties are
+defined in `RenardSameCompactLeviComparison`.

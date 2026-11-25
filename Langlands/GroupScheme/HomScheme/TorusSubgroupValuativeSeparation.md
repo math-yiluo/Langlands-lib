@@ -1,7 +1,5 @@
 # Restriction of torus subgroups to schematically dominant bases
 
-Author: Worker 668.
-
 Restriction along a quasi-compact schematically dominant map of test schemes
 is injective on the actual closed relative-torus subgroup functors. For the
 containment argument, suppose the source of one group map is flat over the

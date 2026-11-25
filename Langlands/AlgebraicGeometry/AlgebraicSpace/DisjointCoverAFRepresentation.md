@@ -1,10 +1,8 @@
 # AF representations over a finite disjoint open cover of the base
 
-Author: Worker 5067.
-
 Helper module for the proof of
 `Langlands.AlgebraicGeometry.Picard.FiniteTypeAbelianPicardSheafSchemeReductionStatement`
-(Task 5600). All declarations are in namespace
+(`FiniteTypeAbelianPicardSheafSchemeReductionProof`). All declarations are in namespace
 `Langlands.AlgebraicGeometry.AlgebraicSpace.LocalRepresentation`, the namespace of the
 Library's local representations, and extend that Library material. "AF" abbreviates the
 Library property `PointTopology.HasFiniteAffineNeighborhoods X`: every finite set of

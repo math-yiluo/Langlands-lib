@@ -8,7 +8,7 @@ Waldspurger VII.1 (printed p. 316): for an orbit `O` in `E_2(M)` under `Im X(M)`
 `ψ_f[O, P]` is the function on `O` with `ψ_f[O, P]_ω = f̂(ω, P)` for all `ω ∈ O`. Its values lie
 in the spaces `L(ω, P)`, which VI.1 identifies along equivalences of representatives.
 
-Here the orbit is Worker 200's set `UnitaryOrbitRepresentative ν π` of actual irreducible
+Here the orbit is the set `UnitaryOrbitRepresentative ν π` of actual irreducible
 admissible representatives of the classes in the orbit of `π` under the unitary unramified
 characters, and the identifications are the transports `productInducedCoefficientTransport`.
 `productInducedCoefficientTransport_inducedFourierTransform` shows that `f̂(ω, P)` is carried to

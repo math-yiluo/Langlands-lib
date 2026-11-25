@@ -1,6 +1,6 @@
 # The two auxiliary norm polynomials
 
-Author: Worker 5406. Internal helper for the proof of
+Internal helper for the proof of
 `Langlands.AlgebraicGeometry.LangWeil.StepanovNormPolynomialsStatement`.
 
 Provenance. This is the core of Stepanov's method as presented by Schmidt, *Zur Methode von

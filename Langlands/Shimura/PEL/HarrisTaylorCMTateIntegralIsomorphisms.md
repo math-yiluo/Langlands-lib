@@ -1,7 +1,5 @@
 # Actual isomorphisms between full Tate-normalized Harris CM models
 
-Author: Worker 344.
-
 This internal comparison works with two existing
 `TateNormalizedCMRepresentative` values over the same connected admissible CM
 base, geometric point and original Harris level. The Hodge image of that level

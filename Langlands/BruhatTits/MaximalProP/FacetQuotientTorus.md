@@ -43,6 +43,6 @@ back to the original building facet.
 This is an internal composition of the existing finite-field,
 centralizer, generic-rigidity and KP validity interfaces. The imported
 `FacetReductiveComparisonStatement` is used only for the existing data
-and names; its proposition is not assumed. This unit proves the first
+and names; its proposition is not assumed. This module proves the first
 clause of `FacetReductiveComparisons`. It does not prove its Borel-image
 or radical-preimage clauses, or the full maximal pro-p proposition.

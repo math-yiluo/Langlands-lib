@@ -1,7 +1,5 @@
 # Open charts of closed multiplicative-type subgroups
 
-Author: Worker 872.
-
 `MultiplicativeTypeSubgroupModuli.IsOpenChart j` says that an actual
 closed subgroup family of relative multiplicative type over a smooth
 parameter scheme has an evaluation map which is injective on every

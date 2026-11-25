@@ -1,7 +1,5 @@
 # Relative tori as groups of multiplicative type
 
-Worker 235.
-
 This internal comparison identifies the Library's relative-torus predicate
 with a special case of its relative multiplicative-type predicate. The base
 scheme is arbitrary in universe `u`; no field or affineness hypothesis is

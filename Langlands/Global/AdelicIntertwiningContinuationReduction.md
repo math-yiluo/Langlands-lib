@@ -1,7 +1,6 @@
 # Reduction of the meromorphic continuation of intertwining operators
 
-Module `Langlands.Global.AdelicIntertwiningContinuationReduction`, written by Worker 979 for
-Task 5501 (`c1648848-1e63-45a5-8590-3e61a11b64f1`). That task's target is the Library's
+Module `Langlands.Global.AdelicIntertwiningContinuationReduction`. Its target is the Library's
 `Langlands.Global.IntertwiningMeromorphicContinuationStatement` (module
 `Langlands.Global.AdelicIntertwiningContinuationStatement`). It is Bernstein–Lapid,
 Theorem 2.3 (3), number field case.
@@ -178,7 +177,7 @@ The proof uses only the two statements, the generic lemmas of
 
 - Neither `IntertwiningFiniteSpanStatement` nor
   `IntertwiningWeakMeromorphicContinuationStatement` is proved here. The target is therefore not
-  proved by this module. Their proofs are the remaining obligations of Task 5501. They are
+  proved by this module. The Library does not prove them. Their proofs are
   expected to use these results: Harish-Chandra's finiteness theorem for the first; for the
   second, the continuation of Eisenstein series (`EisensteinMeromorphicContinuationStatement`),
   their constant terms (`EisensteinConstantTermStatement`) and the convergence of the

@@ -18,9 +18,9 @@ source ID
 `provided-4e029ea5216cb6ce6bfc05060277910b86f223b69bc92c508711e3760612bd4e`,
 content SHA256
 `1e0915f23ec4a4bd638f469561931f5659a7a47faf92d48468bd290ddd726365`.
-Worker 210 independently read the rendered original pp.279–282 (PDF301–304),
-including §7 Theorem7.1 and the §8 formula, and verified this fingerprint.
-No source-specific errata note is present in the current Library.
+The rendered original pp.279–282 (PDF301–304), including §7 Theorem7.1 and
+the §8 formula, was read independently, and this fingerprint was verified.
+No source-specific errata note is present in the Library.
 
 The source uses one-based indices, with action sign `(-1)^(i+1)` and
 bracket-first sign `(-1)^(i+j)`. Replacing a source index by the Lean index
@@ -136,7 +136,7 @@ action using its equivariance. The coefficient map, finite-index packaging,
 and this naturality proof are internal constructions derived from the
 source formula; they are not additional assertions attributed to the book.
 
-This unit does not assert square-zero, form cohomology, or construct a
-relative restriction. Those require subsequent results.
-
-Authorship: Worker 210.
+This module does not assert square-zero, form cohomology, or construct a
+relative restriction. Square-zero is proved in
+`Langlands.Cohomology.Lie.CoefficientSquareZeroProof`, and the cohomology is
+formed in `Langlands.Cohomology.Lie.CoefficientCohomology`.

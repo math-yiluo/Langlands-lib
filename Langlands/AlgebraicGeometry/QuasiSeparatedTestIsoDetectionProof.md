@@ -15,11 +15,7 @@ from every `T : Over S` with `QuasiSeparatedSpace T.left`. The conclusion is
 ## Provenance
 
 This is a derived internal scheme-theoretic argument, not a theorem quoted
-from external literature. Worker 535 implemented the affine-cover proof in
-the unreviewed `QuasiSeparatedTestIsoPrototype` shared with the relative
-dual flatness task. Worker 453 adapted that proof to import and prove the
-published statement, and prepared this explanation. The prototype's
-development checks are not acceptance evidence for this proof.
+from external literature.
 
 ## Implemented proof
 

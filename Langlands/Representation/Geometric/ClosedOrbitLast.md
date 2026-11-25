@@ -1,7 +1,5 @@
 # Placing a specified closed orbit last
 
-Author: Worker 124.
-
 This internal supporting module constructs
 `Langlands.Geometric.OrderedDoubleCosets.closedOrbitLast`. If an actual
 `OrderedDoubleCosets P Q (m + 1)` ordering `s` has a specified closed orbit at

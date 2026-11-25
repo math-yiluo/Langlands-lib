@@ -65,6 +65,6 @@ Both cell multiplications are open immersions by the arbitrary-base triple-cell
 theorem. Their range equality and commuting square then give the asserted
 pullback by the open-immersion pullback criterion.
 
-This unit does not prove closedness of the three-factor map or the global
+This module does not prove closedness of the three-factor map or the global
 reductive monomorphism closed-immersion theorem. Those conclusions require
 further inputs.

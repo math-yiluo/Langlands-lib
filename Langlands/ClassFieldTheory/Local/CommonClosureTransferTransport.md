@@ -1,6 +1,7 @@
 # Actual common-closure Weil and Galois transfer transport
 
-Worker 125, using Worker 170's prescribed-field comparisons.
+This module uses the prescribed-field comparisons of
+`IntermediateReciprocityTransport`.
 
 The actual Weil projection at each finite intermediate field has dense
 image in its literal fixing subgroup: conjugate the published standalone
@@ -16,7 +17,7 @@ fields.
 
 `galoisTransferHom` is the actual Galois transfer after the unit map induced
 by a supplied candidate family. It is a derived construction used to state
-the remaining arithmetic square. No arithmetic transfer law is assumed by
+the arithmetic transfer square. No arithmetic transfer law is assumed by
 the preceding group-theoretic comparison.
 
 The Weil-to-Galois abelianization projection is injective at each
@@ -26,6 +27,8 @@ equality of the transfer values. Cancellation of each candidate with its
 inverse proves `transferRelation_iff_galoisTransferRelation`: the actual
 Weil transfer law is equivalent to the Galois transfer square for any
 candidate family. The forward implication uses transfer naturality; the
-reverse uses it together with injectivity. This is a reduction, and the
-arithmetic Galois transfer relation remains to be proved for the constructed
-family.
+reverse uses it together with injectivity. This is a reduction. For the
+constructed family, the arithmetic Galois transfer relation is proved by
+`constructedReciprocityFamily_galoisTransfer_of_geometricComparison` (module
+`CommonClosureExistenceGeometricReduction`), whose premise is proved as
+`finiteGeometricCupArtinCharacterComparison`.

@@ -1,19 +1,19 @@
 # The rank-one projective Borel route from its remaining structural inputs
 
-Worker 1547 composes the actual prescribed-Borel quotient construction,
-Worker 1549's rooted proper-Borel and normalizer constructions, and the
-projective fixed-point and regular quotient-curve consumers. Worker 1549
-discharges the projective torus fixed-point dimension premise of the two
-final reductions using the published proof
+The module composes the actual prescribed-Borel quotient construction,
+the rooted proper-Borel and normalizer constructions, and the
+projective fixed-point and regular quotient-curve consumers. The
+projective torus fixed-point dimension premise of the two
+final reductions is discharged using the published proof
 `projectiveTorusFixedPointDimension`. This is an internal conditional
 reduction from algebraically closed maximal-torus self-centralization to
 `RankOnePositiveRootUniquenessStatement`.
-Worker 1547 additionally supplies the published
-`solvableMaximalTorusConjugacy` in both final reductions, removing their
+The published
+`solvableMaximalTorusConjugacy` is supplied in both final reductions, removing their
 global conjugacy premise while preserving the local construction interfaces.
-Worker 1549 also supplies the published `solvableProperFixedPoint` in the
-final reductions, removing their fixed-point premise, and supplies the
-forward implication of the published `maximalTorusBaseChange` in the
+The published `solvableProperFixedPoint` is also supplied in the
+final reductions, removing their fixed-point premise, and the
+forward implication of the published `maximalTorusBaseChange` is supplied in the
 all-field reduction, removing its maximality-after-extension premise.
 
 All fields have arbitrary characteristic and live in universe `u`.
@@ -103,7 +103,7 @@ implication of its equivalence then proves that the actual pullback of
 structural premise.
 
 The resulting algebraically closed reduction preserves every field, split
-maximal torus and cocharacter in the unchanged
+maximal torus and cocharacter in
 `RankOnePositiveRootUniquenessStatement`, including finite and imperfect
 fields. The actual roots, their integral dependence and their pairings
 are transported by the published base-change results.
@@ -116,14 +116,15 @@ proof at the same universe `u`, and also supply the published proofs of
 solvable maximal-torus conjugacy and solvable proper fixed points. The
 fixed-point proof internally derives represented split solvability,
 pseudo-completeness and an initial rational section before applying the
-split-solvable fixed-point theorem; the present module reuses that published
-proof unchanged. The all-field reduction additionally reuses the published
+split-solvable fixed-point theorem; the present module uses that published
+proof as it is. The all-field reduction additionally reuses the published
 proof of maximal-torus base change, extracting its forward implication
 with all geometric hypotheses supplied by maximality and reductivity.
 The implementation supplies the Borel, proper exact
 quotient, projective embedding, dimension bound and nonidentity normalizer
 class from the one remaining displayed structural premise: algebraically
-closed maximal-torus self-centralization. That premise remains a proof
-obligation for the unconditional all-field target. The module does not use
+closed maximal-torus self-centralization. That premise is supplied in
+`Reductive.RankOnePositiveRootProof`, whose `rankOnePositiveRootUniqueness`
+is the unconditional all-field theorem. The module does not use
 the excluded regular-cocharacter Borel, dynamic parabolic or rank-one solvable/Borel
 classification statements.

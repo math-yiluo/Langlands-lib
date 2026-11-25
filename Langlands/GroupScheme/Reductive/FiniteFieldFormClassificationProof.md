@@ -1,7 +1,5 @@
 # Classification of forms of a split reductive group over a finite field
 
-Authors: Worker 148 and Worker 187.
-
 `finiteFieldFormClassification` proves the unchanged
 `Langlands.GroupScheme.FiniteFieldFormClassificationStatement.{u}` in every universe, with
 no additional hypotheses.
@@ -12,7 +10,7 @@ The proof applies the published reduction
 published proofs:
 
 - `innerFormStarAction : InnerFormStarActionStatement.{u}`
-  (`InnerFormStarActionProof.lean`, Task 6546). Inner forms of a
+  (`InnerFormStarActionProof.lean`). Inner forms of a
   reductive group are detected by the star action. The reduction uses it in both
   directions of clause 2.
 - `finiteFieldFormExistence : FiniteFieldFormExistenceStatement.{u}`

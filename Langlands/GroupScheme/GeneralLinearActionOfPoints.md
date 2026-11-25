@@ -1,6 +1,6 @@
 # Actions of `GL_n` from natural actions on affine points
 
-Author: Worker 1399. Internal helper module for the proof of
+Internal helper module for the proof of
 `Langlands.GroupScheme.GeneralLinearSolvableStabilizerStatement`; it has no literature source.
 It turns an action of the matrix groups `GL_n(A)` on the `A`-points of a scheme, natural in
 the `R`-algebra `A`, into an actual `SchemeAction` of the Library's general linear group

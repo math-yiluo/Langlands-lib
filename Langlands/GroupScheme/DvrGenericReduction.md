@@ -1,7 +1,5 @@
 # Closing a smooth reduced generic subgroup
 
-Worker 572.
-
 `Langlands.GroupScheme.DvrGenericReduction.group G` is an actual flat
 group scheme over a Dedekind domain `R`, constructed as the schematic
 closure of the reduced generic subgroup of `G`. The construction uses

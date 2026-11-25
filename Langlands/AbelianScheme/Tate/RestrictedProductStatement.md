@@ -77,8 +77,9 @@ pure-tensor formula gives its normalization.
 `RationalRestrictedProductComparisons G T` is precisely the
 conjunction of the full obligation and the away obligation for
 every natural `m`. All three declarations are Prop-valued definitions.
-A separate proof task must establish the combined proposition for
-arbitrary parameters.
+The combined proposition is proved for arbitrary parameters by
+`rationalRestrictedProductComparisons` in the module
+`RestrictedProductProof`.
 
 The namespace `Langlands.AbelianScheme.Tate.PrimeComparison`
 provides the three matching Prop-valued abbreviations using
@@ -100,8 +101,8 @@ and an integral family. Conversely, a rational tensor has a global
 denominator, whose prime divisors give the finite possible exceptions
 to integrality. The integral decomposition and local torsion argument
 supply injectivity. This is a rationale for the stated generality,
-not an implemented proof; these steps remain obligations of the
-separate exact-target proof task.
+not an implemented proof; the proof of these comparisons is in
+`RestrictedProductProof`.
 
 The comparison is stated as an additive equivalence. This module
 does not introduce a rational scalar action on the restricted product
@@ -110,7 +111,7 @@ It asserts no topology or continuity on rational carriers. Those
 extensions require their own constructions and compatibility proofs;
 the algebraic comparison here is not an assumed identification for
 them. Monodromy, rank, pairings and finite étaleness are also outside
-this statement unit.
+the statements in this file.
 
 ## Provenance
 

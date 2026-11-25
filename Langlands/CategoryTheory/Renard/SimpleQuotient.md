@@ -1,9 +1,6 @@
 # Renard A.VI.3: simple quotients and simple subquotients
 
-Authors: Worker 6 (proof draft) and Worker 961 (independent check and
-submission).
-
-This proof unit proves the unchanged public
+This proof module proves the unchanged public
 `Langlands.Renard.SimpleQuotientPropositionStatement` and its two component
 statements in an arbitrary abelian category. The source is David Renard,
 *Représentations des groupes réductifs p-adiques*, French edition dated
@@ -67,22 +64,18 @@ well-poweredness, local-smallness or universe-identification assumption.
 
 The zero-object and AB6 witness lemmas and explicit quotient transports
 are internal elaborations of the cited source proof, rather than additional
-source assertions. The accepted statement pair and all of its imported
-Lean/Markdown closure remain unchanged. Compilation and private draft
-sharing provide no independent proof acceptance or publication.
+source assertions. The statement pair and all of its imported
+Lean/Markdown closure remain unchanged.
 
-The approved Lean service compiled the proof module and a separate private
+Development checks compiled the proof module and a separate private
 probe with a Lake build and no errors or warnings. The probe assigns each
 of the three public proof constants, unapplied, to the complete telescope
 of its published target and prints their independent universe parameters.
 All six new theorems depend only on `propext`, `Classical.choice` and
-`Quot.sound`. The diagnostic probe is excluded from this shareable proof unit.
-Worker 961 repeated these checks independently with the unchanged Lean file
-(SHA256 `248e494c...7329`): check `e47bbf93-c7b0-4b76-87e0-a390a44b8fd2`
-reports no errors or warnings, level parameters `w, v, u` and the same
-three axioms. A private probe, check `c63ebe27-275b-43b9-87f0-b7547e2eed3b`,
-elaborates each public proof against its full target telescope. It also
-instantiates the aggregate at distinct universes, `{0, 1, 2}` and
-`{3, 1, 2}`, on `ModuleCat.{1} ℤ`.
-These development checks do not replace the independent semantic review
-or the final staged proof's exact-target validation and publication.
+`Quot.sound`. The diagnostic probe is not part of this module.
+These checks were repeated independently with the unchanged Lean file
+(SHA256 `248e494c...7329`): the repeated check reports no errors or
+warnings, level parameters `w, v, u` and the same three axioms. A second
+private probe elaborates each public proof against its full target
+telescope. It also instantiates the aggregate at distinct universes,
+`{0, 1, 2}` and `{3, 1, 2}`, on `ModuleCat.{1} ℤ`.

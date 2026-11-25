@@ -29,8 +29,8 @@ structure CommonEquivariantLiftDiagram where
   le_bound : subgroup ≤ Q
   le_lift : ∀ i, (subgroup : Subgroup G) ≤ (l i).subgroup
   equivariant : ∀ e (g : G) (hg : g ∈ subgroup),
-    ((l (source e)).action ⟨g, le_lift (source e) hg⟩).hom ≫ (arrow e).left =
-      (arrow e).left ≫ ((l (target e)).action ⟨g, le_lift (target e) hg⟩).hom
+    ((l (source e)).action ⟨g, le_lift (source e) hg⟩).asIso.hom ≫ (arrow e).left =
+      (arrow e).left ≫ ((l (target e)).action ⟨g, le_lift (target e) hg⟩).asIso.hom
 
 /-- Pairwise compatibility makes finitely many supplied arrows equivariant
 on a common open subgroup, with every vertex action defined there. -/
@@ -93,10 +93,10 @@ def globalLift (i : I) :
 /-- Every supplied ordinary arrow is equivariant for the normalized
 global lifts, with the inverse twist convention of the twisted site. -/
 theorem globalLift_equivariant (e : E) (g : (d.subgroup : Subgroup G)) :
-    ((d.globalLift (source e)).action g).unop ≫
+    ((d.globalLift (source e)).action g).unop.asHom ≫
         (ι quasiEtale (ρ.comp (d.subgroup : Subgroup G).subtype)).map (arrow e) =
       (ι quasiEtale (ρ.comp (d.subgroup : Subgroup G).subtype)).map (arrow e) ≫
-        ((d.globalLift (target e)).action g).unop := by
+        ((d.globalLift (target e)).action g).unop.asHom := by
   refine hom_ext ((one_mul _).trans (mul_one _).symm) ?_
   exact d.equivariant e ((g⁻¹ : (d.subgroup : Subgroup G)) : G) (g⁻¹).property
 

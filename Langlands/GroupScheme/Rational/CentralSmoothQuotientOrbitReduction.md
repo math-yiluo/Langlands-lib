@@ -1,7 +1,5 @@
 # Actual unipotent quotients using the published closed-orbit theorem
 
-Author: Worker 362.
-
 This derived module uses the published
 [`unipotentAffineOrbitClosed`](../UnipotentAffineOrbitClosedProof.md) and
 [`unipotentFieldExtensionStatement`](../Reductive/UnipotentFieldExtensionProof.md)

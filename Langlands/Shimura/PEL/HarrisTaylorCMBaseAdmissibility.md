@@ -1,7 +1,7 @@
 # Reduction of CM base admissibility to actual dual geometry
 
-Worker 147. This is an internal derivation from the imported Library
-constructions. It characterizes the remaining admissibility obligation
+This is an internal derivation from the imported Library
+constructions. It characterizes the admissibility condition
 on an actual locally Noetherian CM base; it does not construct a moduli
 scheme or prove division-case CM representability.
 
@@ -50,8 +50,12 @@ fields from the two explicitly named proposition hypotheses
 `RelativeDualSchemeExistenceStatement` and
 `RelativeDualSchemeGeometryStatement`. The smooth specialization derives
 local Noetherianity from local finite type over the number field before
-applying that bridge. These hypotheses are substantive unproved
-prerequisites in this module. They are not additional hypotheses for a
+applying that bridge. These hypotheses are substantive prerequisites,
+not proved in this module; the Library proves them as
+`relativeDualSchemeExistence`
+(`Langlands.AlgebraicGeometry.Picard.RelativeDualSchemeExistenceProof`) and
+`relativeDualSchemeGeometry`
+(`Langlands.AlgebraicGeometry.Picard.RelativeDualSchemeGeometryProof`). They are not additional hypotheses for a
 purported proof of `DivisionCMRepresentabilityStatement`, and the
 conditional bridge does not discharge that target.
 
@@ -59,7 +63,5 @@ The provenance is entirely internal: the implemented argument assembles
 the imported Lie naturality, roots-of-unity, inverse line-bundle and
 actual dual-map additivity results. It introduces no new source
 transcription, axioms, representing scheme or moduli comparison.
-The two relative dual assertions remain in their existing independent
-workflows; this file proves neither of them and does not resume their
-ordinary Picard or field-existence dependencies. The exact normalized CM
-presheaf and all imported Lean/Markdown pairs remain unchanged.
+This file proves neither of the two relative dual assertions and does not
+treat their ordinary Picard or field-existence dependencies.

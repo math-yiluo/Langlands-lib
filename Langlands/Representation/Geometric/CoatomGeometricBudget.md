@@ -1,6 +1,6 @@
 # Counting represented geometric survivors through coatom labels
 
-This internal unit proves `CoatomGeometricBudgetStatement` in
+This module proves `CoatomGeometricBudgetStatement` in
 `Langlands.Aubert.General.RepresentedParabolic`.
 It applies the intrinsic finite Coxeter count to the original indices of a
 supplied family of actual represented intersection data. The field, inducing
@@ -56,7 +56,7 @@ of the induction.
 
 The provenance is internal: finite sigma counting and double-coset
 equivalence injectivity are combined with the proved intrinsic coatom count
-and represented geometric-budget reduction. This unit supplies no
+and represented geometric-budget reduction. This module supplies no
 unconditional actual geometric lemma, finite family construction, root
 comparison, support detection theorem, or unitarizable constituent. Those
-remain required for the host's closed maximal-Levi theorem.
+remain required for the closed maximal-Levi theorem that this module serves.

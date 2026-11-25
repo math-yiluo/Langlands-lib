@@ -60,35 +60,35 @@ variable {k : Type u} [Field k]
 /-- Actual scheme sections of the kernel identify with the kernel of the
 actual homomorphism on geometric points. -/
 def kernelSectionsEquiv :
-    {z : Spec (CommRingCat.of k) ⟶ (GroupScheme.kernel (groupHom f)).X.left //
-      z ≫ (GroupScheme.kernel (groupHom f)).X.hom = 𝟙 _} ≃
-      (GroupScheme.pointsHom (groupHom f) (Over.mk (𝟙 _))).ker :=
-  (show {z : Spec (CommRingCat.of k) ⟶ (GroupScheme.kernel (groupHom f)).X.left //
-      z ≫ (GroupScheme.kernel (groupHom f)).X.hom = 𝟙 _} ≃
-      (Over.mk (𝟙 _) ⟶ (GroupScheme.kernel (groupHom f)).X) from
+    {z : Spec (CommRingCat.of k) ⟶ (GroupScheme.kernel (groupHom f.asHom)).X.left //
+      z ≫ (GroupScheme.kernel (groupHom f.asHom)).X.hom = 𝟙 _} ≃
+      (GroupScheme.pointsHom (groupHom f.asHom) (Over.mk (𝟙 _))).ker :=
+  (show {z : Spec (CommRingCat.of k) ⟶ (GroupScheme.kernel (groupHom f.asHom)).X.left //
+      z ≫ (GroupScheme.kernel (groupHom f.asHom)).X.hom = 𝟙 _} ≃
+      (Over.mk (𝟙 _) ⟶ (GroupScheme.kernel (groupHom f.asHom)).X) from
     { toFun z := Over.homMk z.val z.property
       invFun z := ⟨z.left, z.w⟩
       left_inv _ := rfl
       right_inv _ := rfl }).trans
-    (GroupScheme.kernelPointsEquiv (groupHom f) (Over.mk (𝟙 _))).toEquiv
+    (GroupScheme.kernelPointsEquiv (groupHom f.asHom) (Over.mk (𝟙 _))).toEquiv
 
 /-- The cardinality of an actual isogeny's point kernel is its native rank at
 its identity fibre. This uses characteristic zero, without a Tate comparison. -/
 theorem natCard_kernel_eq_nativeRank [IsAlgClosed k] [CharZero k]
-    (hf : GroupScheme.IsIsogeny (groupHom f)) (x : Spec (CommRingCat.of k)) :
-    Nat.card (GroupScheme.pointsHom (groupHom f) (Over.mk (𝟙 _))).ker =
-      (hom f).finrank (η[A.X].left x) := by
-  have : IsFinite (hom f) := hf.1
-  have : Flat (hom f) := hf.2.1
-  have : IsFinite (GroupScheme.kernel (groupHom f)).X.hom :=
-    MorphismProperty.of_isPullback (GroupScheme.kernel_isPullback_scheme (groupHom f))
-      (inferInstance : IsFinite (hom f))
-  have : Flat (GroupScheme.kernel (groupHom f)).X.hom :=
-    MorphismProperty.of_isPullback (GroupScheme.kernel_isPullback_scheme (groupHom f))
-      (inferInstance : Flat (hom f))
+    (hf : GroupScheme.IsIsogeny (groupHom f.asHom)) (x : Spec (CommRingCat.of k)) :
+    Nat.card (GroupScheme.pointsHom (groupHom f.asHom) (Over.mk (𝟙 _))).ker =
+      (hom f.asHom).finrank (η[A.X].left x) := by
+  have : IsFinite (hom f.asHom) := hf.1
+  have : Flat (hom f.asHom) := hf.2.1
+  have : IsFinite (GroupScheme.kernel (groupHom f.asHom)).X.hom :=
+    MorphismProperty.of_isPullback (GroupScheme.kernel_isPullback_scheme (groupHom f.asHom))
+      (inferInstance : IsFinite (hom f.asHom))
+  have : Flat (GroupScheme.kernel (groupHom f.asHom)).X.hom :=
+    MorphismProperty.of_isPullback (GroupScheme.kernel_isPullback_scheme (groupHom f.asHom))
+      (inferInstance : Flat (hom f.asHom))
   rw [← Nat.card_congr (kernelSectionsEquiv A f),
     finiteGroup_natCard_sections_eq_finrank _ x]
   exact Scheme.Hom.finrank_of_isPullback _ _ _ _
-    (GroupScheme.kernel_isPullback_scheme (groupHom f)) x
+    (GroupScheme.kernel_isPullback_scheme (groupHom f.asHom)) x
 
 end Langlands.AbelianScheme

@@ -138,5 +138,5 @@ the carriers and finite maps here are the actual roots-of-unity twists.
 
 Prime-power and rational transport, pointed base change, pairing
 compatibility, existence of paths, and canonical independence of PEL
-fixed-orbit sets remain separate work. This unit asserts no completion
+fixed-orbit sets remain separate work. This module asserts no completion
 of those obligations.

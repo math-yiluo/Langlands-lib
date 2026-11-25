@@ -1,9 +1,8 @@
 # Compact-open valuation lattices for every supplied p-adic topology
 
-Author: Worker 450. The total-disconnectedness argument adapts Worker 161's
+The total-disconnectedness argument adapts the
 private `fieldTotallyDisconnected` in
-`Langlands.Representation.CuspidalSupport.LeviAdmissibleFactorizationProof`;
-Worker 161 is credited as a coauthor for this reused proof material.
+`Langlands.Representation.CuspidalSupport.LeviAdmissibleFactorizationProof`.
 
 The closing theorem
 `Langlands.HarmonicAnalysis.padicLatticeGeometry.{u}` proves exactly the
@@ -40,7 +39,7 @@ theorems
 `Langlands.PadicField.TopologicalData.isCompact_additiveLattice` and
 `Langlands.PadicField.TopologicalData.isOpen_additiveLattice`, imported from
 `Langlands.Representation.RankinSelberg.ZeroRowLastRowCutoffProof`.
-Worker 252 authored those lemmas. They apply to exactly the supplied `T`
+They apply to exactly the supplied `T`
 and every `m : ℤ`.
 
 Those imported results use the existing identity
@@ -99,11 +98,9 @@ locations on 2026-10-28.
 
 ## Verification
 
-The pinned environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`
-(Lean 4.34.0, Mathlib commit
-`5ed2965256430c3649e86755f9576b54eca72435`).
+The pinned environment is Lean 4.34.0, Mathlib commit
+`5ed2965256430c3649e86755f9576b54eca72435`.
 The complete unapplied theorem telescope is checked by assigning
 `@Langlands.HarmonicAnalysis.padicLatticeGeometry` to the dependent function
 type with implicit prime, primality instance, explicit `F`, and explicit `T`.
-Declaration inspection checks its assumptions. Formal exact-target
-validation and independent semantic review are separate publication checks.
+Declaration inspection checks its assumptions.

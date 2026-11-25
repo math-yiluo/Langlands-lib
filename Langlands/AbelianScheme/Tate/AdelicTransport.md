@@ -146,7 +146,7 @@ generalizations of the setting on p.91. The proofs use the published actual
 Tate functor, the scalar constructions, tensor induction, and category laws;
 no additional geometric theorem is inferred from the cited text.
 
-This unit supplies linear transport only. It makes no assertion about Weil
+This module supplies linear transport only. It makes no assertion about Weil
 pairings, similitude multipliers, monodromy, continuity of rational maps,
 pointed base change, or invariant orbit classes. It does not provide a
 prime-to-`p` finite-adele coefficient algebra or a restricted-product

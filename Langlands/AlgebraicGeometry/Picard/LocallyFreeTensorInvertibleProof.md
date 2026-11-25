@@ -73,7 +73,8 @@ that local argument through sheafification, and this theorem extracts the
 tensor-inverse witness. The retained passages and their proofs were read;
 no source-specific errata note was found in the supplied public notes.
 
-Worker 311 authored this assembly and its explanation. The canonical
+The canonical
 evaluation and its invertibility are reused from the published Library by
-Lean name, including Worker 530's exact-target evaluation theorem and
-Worker 270's local evaluation proof. No unpublished draft is used.
+Lean name, including the evaluation theorem
+`locallyFreeRankOneDualEvaluationIsIso` and the local evaluation proof
+described above.

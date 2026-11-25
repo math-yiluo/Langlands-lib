@@ -1,6 +1,6 @@
 # Conjugate-inverse Hecke characters of CM fields are unitary
 
-Author: Worker 5134. Module `Langlands.Global.HeckeConjugateInverseUnitary`,
+Module `Langlands.Global.HeckeConjugateInverseUnitary`,
 namespace `Langlands.Global.HeckeConjugateInverse`. Universe `u` (the field
 `K`).
 

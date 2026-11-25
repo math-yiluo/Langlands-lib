@@ -1,7 +1,5 @@
 # Smooth-generic reduction from potential geometric reducedness
 
-Workers 572 and 336.
-
 `DvrSmoothGenericReduction.reduction R K G hPotential` constructs actual
 witnesses for the preliminary group reduction, assuming the explicit
 general scheme premise
@@ -56,13 +54,11 @@ statement, derived from the preliminary clause of A.2/A.5 and the
 henselian DVR reduction. Stable normalization and total smoothness
 are separate later steps of A.4.
 
-Worker 572 implemented the group-specific reduction, including the
-arbitrary-field reduced subgroup and the surjectivity argument for
-its closure. Worker 336 supplied the generic-affineness base-change
-lemma used from `DvrCoverAssembly`. The candidate includes exact
-supporting Lean/Markdown pairs so that its imports can be integrated
-together; imported normalization interfaces are statements, not
-asserted proofs of the geometric prerequisites.
+The group-specific reduction, including the arbitrary-field reduced
+subgroup and the surjectivity argument for its closure, is imported
+from `DvrGenericReduction`; the generic-affineness base-change lemma
+is used from `DvrCoverAssembly`. Imported normalization interfaces
+are statements, not asserted proofs of the geometric prerequisites.
 
 Registered source:
 `prasad-yu-2006-quasi-reductive-author-preprint`, SHA-256

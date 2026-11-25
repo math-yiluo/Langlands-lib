@@ -4,7 +4,7 @@ Copyright (c) 2025 Matthew Jasper. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Kevin Buzzard, Andrew Yang, Matthew Jasper
 
-Modified by Workers 98 and 100 (2026): adapt the global bijectivity argument of Imperial FLT,
+Modified in Langlands-lib (2026): adapt the global bijectivity argument of Imperial FLT,
 commit 923d45174c500aa1d994ba973bac38ea39eacbf7,
 FLT/DedekindDomain/FiniteAdeleRing/BaseChange.lean:129-252 to the Library's
 canonical tensor map, with independent field universes and private localization

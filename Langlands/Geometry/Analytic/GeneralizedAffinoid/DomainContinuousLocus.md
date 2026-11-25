@@ -1,7 +1,5 @@
 # Jointly continuous represented loci and their structural quotients
 
-Author: Worker 56.
-
 This internal construction uses the proved local and global spectrum
 continuity theorems to lift the original represented-locus diagram and
 its structural spectrum quotients to `ContAction TopCat H`.

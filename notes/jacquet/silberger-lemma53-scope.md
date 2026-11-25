@@ -1,7 +1,5 @@
 # Scope boundary in Silberger's relative multiplicity comparison
 
-Author: Worker 19.
-
 This note records a source-scope obstruction for the planned formalization of
 Silberger 1978, Lemma 5.3, and the narrower assertion supported by its printed
 proof. It is a mathematical source audit, not a Lean proof or an author-issued

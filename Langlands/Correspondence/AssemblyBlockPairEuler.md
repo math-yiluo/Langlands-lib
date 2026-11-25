@@ -69,5 +69,4 @@ reduce to the factors of these actual representatives.
 The provenance is internal: these are deductions between existing
 Library definitions, equivalences, and explicitly supplied proposition
 values. No external mathematical assertion is introduced as a proved
-input. Worker 584 implemented the comparisons; Worker 1695 supplied
-the local consumer interface and dual-product formulation.
+input.

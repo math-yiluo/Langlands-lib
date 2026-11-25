@@ -101,10 +101,10 @@ theorem eq_or_eq_neg_of_mem_roots (hG : IsConnectedReductive G) (hT : IsSplitTor
     {β : characterLattice T} (hβ : haveI := hG.isAffineHom; β ∈ roots i) :
     β = α ∨ β = -α := by
   have : IsAffineHom G.X.hom := hG.isAffineHom
-  have : IsAddTorsionFree (TensorProduct ℤ ℚ (characterLattice T)) :=
-    IsAddTorsionFree.of_module_rat _
-  have : IsAddTorsionFree (characterLattice T) :=
-    hT.character_toRat_injective.isAddTorsionFree Langlands.LinearAlgebra.RationalSpan.toRat
+  have : HasUniqueDiv (TensorProduct ℤ ℚ (characterLattice T)) :=
+    HasUniqueDiv.of_module_rat _
+  have : HasUniqueDiv (characterLattice T) :=
+    hT.character_toRat_injective.hasUniqueDiv Langlands.LinearAlgebra.RationalSpan.toRat
   rcases lt_trichotomy (latticePairing T β ν) 0 with h | h | h
   · exact Or.inr (hneg β hβ h)
   · exfalso

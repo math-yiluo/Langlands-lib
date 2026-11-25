@@ -1,7 +1,5 @@
 # The retained algebra presheaves of full affinoid domains
 
-Author: Worker 36.
-
 Fix a complete ultrametric normed field `K` and an actual presented
 positive-polyradius affinoid algebra `A`. The category `Domain K A` stores
 an actual presented algebra and bounded structural map for every full

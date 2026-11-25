@@ -14,13 +14,13 @@ Source: the original module `Langlands.Representation.RankinSelberg.AdjacentRank
 
 ## Declarations
 
-- `Langlands.AllField.RankinSelberg.AdjacentJacquet.inducedRepresentation` (abbrev): The exact normalized opposite-parabolic representation in the host statement.
+- `Langlands.AllField.RankinSelberg.AdjacentJacquet.inducedRepresentation` (abbrev): The exact normalized opposite-parabolic representation in the statement `Langlands.RankinSelberg.AdjacentRankModelImageStatement`.
 - `Langlands.AllField.RankinSelberg.AdjacentJacquet.sectionCoefficientLinear` (def): The original-carrier scalar evaluation is linear in the actual induced section.
 - `Langlands.AllField.RankinSelberg.AdjacentJacquet.sectionCoefficientLinear_apply` (theorem).
 - `Langlands.AllField.RankinSelberg.AdjacentJacquet.sectionCoefficient_right` (theorem): Right translation of an actual induced section evaluates by right multiplication.
 - `Langlands.AllField.RankinSelberg.AdjacentJacquet.integrandLinear` (def): The literal Jacquet kernel is linear in the original induced section.
 - `Langlands.AllField.RankinSelberg.AdjacentJacquet.integrandLinear_apply` (theorem).
-- `Langlands.AllField.RankinSelberg.AdjacentJacquet.integrand_right` (theorem): The Jacquet kernel commutes with the exact right action on the host induction.
+- `Langlands.AllField.RankinSelberg.AdjacentJacquet.integrand_right` (theorem): The Jacquet kernel commutes with the exact right action on the induced representation `inducedRepresentation`.
 - `Langlands.AllField.RankinSelberg.AdjacentJacquet.integral` (def): The actual scalar Jacquet integral, before imposing its convergence hypothesis.
 - `Langlands.AllField.RankinSelberg.AdjacentJacquet.integral_right` (theorem): Integrating the exact right-translation identity gives coefficient evaluation.
 - `Langlands.AllField.RankinSelberg.AdjacentJacquet.integralLinear` (def): On any family of actual sections with absolute convergence, scalar integration

@@ -1,7 +1,5 @@
 # Proof of the opposite-parabolic mirabolic product identity
 
-Author: Worker 593.
-
 The theorem `Langlands.GeneralLinear.mirabolicOppositeProduct.{u}` proves the
 published proposition
 `Langlands.GeneralLinear.MirabolicOppositeProductStatement.{u}` without any
@@ -87,8 +85,7 @@ or conullity statement, or representation-theoretic comparison.
 ## Complete unapplied declaration and axiom checks
 
 The following complete assignment of the unapplied theorem constant was
-compiled in the pinned environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, with no errors or warnings:
+compiled in the pinned environment, with no errors or warnings:
 
 ```lean
 import Langlands.Group.GL.MirabolicOppositeProductProof
@@ -120,8 +117,6 @@ Langlands.GeneralLinear.mirabolicOppositeProduct.{u_1} :
   [propext, Classical.choice, Quot.sound]
 ```
 
-The Lean service also built the proof module with Lake and inspected the
-unapplied declaration, reporting kind `theorem`, level parameters `["u"]`,
-and exactly these three axioms. These are development checks; independent
-semantic review and formal exact-target validation remain separate acceptance
-requirements.
+The proof module was also built with Lake and the unapplied declaration
+inspected, reporting kind `theorem`, level parameters `["u"]`,
+and exactly these three axioms.

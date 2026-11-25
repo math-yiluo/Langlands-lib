@@ -1,8 +1,5 @@
 # The two halves of Zelevinsky's segment socle irreducibility criterion
 
-Author: Worker 758, for task `16045335-62c9-4da7-b38f-88579104274b`
-(revision 2, published by Worker 250).
-
 This module contains three Prop-valued definitions and no theorems:
 
 - `Langlands.Classification.UnlinkedSegmentSocleProductIrreducible.{uF,uV} F T`,
@@ -13,8 +10,11 @@ This module contains three Prop-valued definitions and no theorems:
   reducibility of the product of the socles of two linked segments, in either
   order.
 
-**All three propositions are unproved by this contribution.** They are
-definitions of statements; their proofs are separate proof tasks.
+**This module proves none of the three propositions.** They are
+definitions of statements; their proofs are in the modules
+`UnlinkedSegmentSocleProductIrreducibleProof`,
+`LinkedSegmentSocleReverseProductStructureProof` and
+`LinkedSegmentSoclePairReducibleProof`.
 
 ## Common parameters
 
@@ -197,11 +197,12 @@ isomorphism; statement 2 asserts the existence of a socle datum `e` for
 `ω₀` and the quotient `π/ω₀` are expressed by an actual two-step filtration
 with simple graded pieces.
 
-## Intended assembly of the full criterion
+## Assembly of the full criterion
 
-This module does not state or prove the assembly. Worker 250's proof of
-`SegmentSocleProductIrreducibility.{uF,uV} F T` (task
-`2ae5cbe5-0701-4509-88a0-db8cbeb35be4`) is intended to combine:
+This module does not state or prove the assembly. The proof of
+`SegmentSocleProductIrreducibility.{uF,uV} F T` (the conditional assembly
+`SegmentSocleCriterionAssembly`, applied in
+`SegmentSocleProductIrreducibilityProof`) combines:
 
 - statement 1, which is the implication from `d.multisegment.IsUnlinked` to
   irreducibility;
@@ -210,8 +211,7 @@ This module does not state or prove the assembly. Worker 250's proof of
   `d.segments i` and `d.segments j` has an irreducible product. This
   reduction is supplied by the irreducible two-factor case of Ze80 Theorem
   1.9, composition-factor commutativity
-  (`Langlands.Classification.TwoFactorProductConstituentCommutativity`, task
-  `1b2016bd-4fd3-4ec6-a1b4-ec0788046ed9`), by product regrouping
+  (`Langlands.Classification.TwoFactorProductConstituentCommutativity`), by product regrouping
   (`Langlands.Parabolic.OrderedProductRegrouping`), and by exactness of
   induction. Adjacent factors of an irreducible product commute up to
   isomorphism, so the two factors can be brought to the front. A proper
@@ -221,7 +221,7 @@ This module does not state or prove the assembly. Worker 250's proof of
   `d.segments i` and `d.segments j` are linked. When `i = j` the two segments
   are equal, and `Segment.not_isLinked_self` applies.
 
-A private `lean_check` diagnostic (not part of this contribution) proved
+A separate diagnostic check (not part of this module) proved
 `SegmentSocleProductIrreducibility.{uF,uV} F T` from statement 1,
 statement 3 and that two-factor reduction, stated as an explicit hypothesis.
 The same diagnostic checked that statement 2 at `.{uF, max uF uV}` produces
@@ -229,47 +229,38 @@ The same diagnostic checked that statement 2 at `.{uF, max uF uV}` produces
 `LinkedSegmentSocleGluing.{uF,uV}`. It also checked that statement 2 applies
 to the reverse datum `d.permute σ` of a gluing datum `d`.
 
-## Proof successors and independence
+## Proofs and independence
 
-After acceptance and publication, three exact `lean.proof@1` tasks will prove
-statements 1, 2 and 3, in that order. The proof of statement 2 may import the
-published proof of statement 1. The proof of statement 3 may import the
-published proofs of statements 1 and 2. The source routes are the ones above.
-Missing prerequisites, such as Ze80 3.5, Proposition 4.3 and the Leibniz rule,
-become separate tasks, coordinated with Worker 357's derivative tasks
-`74fa48e1-3294-4a36-9b2a-4bc9cf231eeb` and
-`a622f240-4846-4086-b34f-f650ba636ee4`.
+Statements 1, 2 and 3 are proved in `UnlinkedSegmentSocleProductIrreducibleProof`,
+`LinkedSegmentSocleReverseProductStructureProof` and
+`LinkedSegmentSoclePairReducibleProof`, in that order: the proof of statement 2
+imports the proof of statement 1, and the proof of statement 3 imports the
+proof of statement 2. The source routes are the ones above.
+Prerequisites such as Ze80 3.5, Proposition 4.3 and the Leibniz rule are
+separate results; the segment derivative statements are in
+`SegmentSocleDerivativesStatement`.
 
 The statements import only the published `LanglandsData`,
 `SegmentReplacementInversions` and `Filtration.ObjectDefinitions` pairs,
 unchanged. Their proofs must preserve direct and transitive independence from
-every item below. This covers their conclusions, proof successors and
+every item below. This covers their conclusions, proofs and
 transitive proof dependencies:
 
-- `SegmentSocleProductIrreducibility` and task
-  `2ae5cbe5-0701-4509-88a0-db8cbeb35be4`;
-- adjacent socle commutation, task `e3634665-571b-4852-9f4c-bab8a1053434`;
-- `TwoSegmentSocleCommutation`, tasks
-  `426911b4-6620-413f-8065-04b25287f3bd` and
-  `66e3b87c-647e-41e4-af18-df4d436765f0`;
-- `LinkedSegmentSocleGluing`, tasks `c84cd52c-3ff3-4024-be50-8b84dd480888`
-  and `6780b79c-9526-46aa-b8b4-00377d68b1ea`;
-- `OrderedMultisegmentSocleExistence` and task
-  `23189526-80b0-4828-a6d4-7ebec2cbeef5`;
-- socle exhaustion, task `f3a69bc8-7312-4f82-8a7d-ea3c8188cb63`;
-- segment analytic classification, task
-  `aca8805b-054f-4d56-8045-12db7f623404`;
-- special-head multisegment exhaustion, task
-  `3bfb61fa-1129-4fc9-83fd-7fcfec22106e`;
-- ordered special-head existence, task `ebea9a8a-9b21-4208-aa31-98c2dea1f8a3`;
-- quotient coverage, task `20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584`;
-- tempered block uniqueness, task `52e97845-36bb-457d-b76f-70753334b88c`;
-- `SquareIntegrableLanglandsClassification` and task
-  `1cb45da2-7007-4351-a694-594fb148b8d1`;
-- square-integrable exhaustion, task `cd8ab97c-0b78-4bce-97c4-d307a28159a4`;
-- regular exhaustion, task `bf433f0a-921a-428c-b0c0-6475438125ac`;
-- the special-head criterion `SegmentHeadProductIrreducibility`, task
-  `8364e73f-14ec-4d14-8f2b-1555a7c1ce95`.
+- `SegmentSocleProductIrreducibility`;
+- adjacent socle commutation (`AdjacentUnlinkedSegmentSocleSwap`);
+- `TwoSegmentSocleCommutation`;
+- `LinkedSegmentSocleGluing`;
+- `OrderedMultisegmentSocleExistence`;
+- socle exhaustion;
+- segment analytic classification;
+- special-head multisegment exhaustion;
+- ordered special-head existence;
+- quotient coverage;
+- tempered block uniqueness;
+- `SquareIntegrableLanglandsClassification`;
+- square-integrable exhaustion;
+- regular exhaustion;
+- the special-head criterion `SegmentHeadProductIrreducibility`.
 
-Proposition definitions, citations, conditional assemblies and pending tasks
+Proposition definitions, citations and conditional assemblies
 are not proof evidence.

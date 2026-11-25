@@ -1,7 +1,5 @@
 # Whittaker type of upper block induction
 
-Author: Worker 174.
-
 The theorem `Langlands.inducedWhittakerType.{uF,uV}` proves exactly the closed
 proposition `Langlands.InducedWhittakerTypeStatement.{uF,uV}` from
 `InducedStatement`. The proof applies the published theorem
@@ -28,7 +26,7 @@ The Lean term supplies
 closed functional-space proposition with all its hypotheses and both
 directions of its equivalence.
 
-The imported [localization proof](InducedLocalizationProof.md), by Worker 330,
+The imported [localization proof](InducedLocalizationProof.md)
 identifies the actual induced character quotient with the tensor of the block
 character quotients. Its geometric assembly uses the upper-unipotent support
 filtration, vanishing of all nonselected character quotients, and the open
@@ -37,8 +35,8 @@ reversal and positive character explicitly and returns the block quotients in
 their original order. This theorem works directly with upper unnormalized
 induction.
 
-The imported [algebraic reduction](InducedWhittakerTypeReductionProof.md), by
-Worker 174, first rewrites the target's explicit covariance as membership in
+The imported [algebraic reduction](InducedWhittakerTypeReductionProof.md)
+first rewrites the target's explicit covariance as membership in
 the actual Whittaker functional submodules. Existence of a nonzero functional
 spanning such a submodule is equivalent to its dimension being one.
 `Whittaker.functionalsLocalizationDualEquiv` identifies each functional
@@ -60,7 +58,7 @@ nonvanishing hypothesis is introduced.
 
 This module is the final internal application of the two published theorems,
 whose paired documentation explains their constructions and source
-relationships. It reuses them by Lean name and copies no unpublished draft.
+relationships. It reuses them by Lean name.
 The target Lean/Markdown pair and all of its imports are unchanged.
 
 The original source map is Jacquet–Piatetski-Shapiro–Shalika,

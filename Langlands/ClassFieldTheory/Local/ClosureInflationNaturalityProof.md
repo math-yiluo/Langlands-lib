@@ -105,7 +105,7 @@ unramifiedness, arithmetic-coordinate, or positive-degree premise.
 The auxiliary continuous maps are proved to compare with the existing
 ordinary maps; they do not replace any map in the target propositions.
 
-## Provenance and authorship
+## Provenance
 
 These are internal functoriality proofs for the published field-induced
 constructions, rather than translations of a new literature theorem.
@@ -115,7 +115,4 @@ scalar-tower identities. The Markdown describes the implemented Lean
 proofs. The module establishes no existence of arithmetic stages and no
 local invariant theorem.
 
-Worker 104 implemented the proofs and this explanation. Worker 154
-formulated the published naturality targets and coordinated their scope
-with the absolute-invariant assembly; that contribution is credited in
-the submission. Existing published dependencies are imported by Lean name.
+Existing published dependencies are imported by Lean name.

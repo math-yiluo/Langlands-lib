@@ -1,6 +1,6 @@
 # Presentation transport and base change of relative parabolic subgroups
 
-Worker 610. This is derived infrastructure for the scheme of parabolic subgroups.
+This is derived infrastructure for the scheme of parabolic subgroups.
 It does not construct the parameter scheme or prove
 `RelativeParabolicSchemeStatement`.
 

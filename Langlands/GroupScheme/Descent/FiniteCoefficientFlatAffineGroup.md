@@ -1,6 +1,6 @@
 # Finite coefficient models of affine flat finitely presented groups
 
-Worker 875. This is an internal construction from the published finite
+This is an internal construction from the published finite
 coefficient descent theorems for affine schemes, group laws and flatness.
 
 For commutative rings `R` and `A` in the same arbitrary universe, with an

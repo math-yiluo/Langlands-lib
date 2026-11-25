@@ -1,7 +1,5 @@
 # Full strong comparison of rational and singleton spectrum atlases
 
-Author: Worker 36.
-
 For every actual presented affinoid algebra, this module constructs full
 strong maps in both directions between its rational atlas and its singleton
 atlas, and proves both maps are strong quasi-isomorphisms. The ambient maps

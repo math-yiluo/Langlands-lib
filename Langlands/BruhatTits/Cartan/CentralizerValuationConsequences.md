@@ -1,6 +1,6 @@
 # Intrinsic image and kernel comparisons for the normalized valuation
 
-This definition unit supplies the algebraic adapters for the actual centralizer
+This module defines the algebraic adapters for the actual centralizer
 valuation image. It retains the explicit bijectivity argument `h` for the
 actual restriction-evaluation map. No building or Cartan conclusion occurs in
 that argument. The surrounding Cartan statements impose the actual maximal

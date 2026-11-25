@@ -120,7 +120,7 @@ theorem isPullback_of_isCartesian
       rw [uliftYonedaEquiv_comp, uliftYonedaEquiv_comp, uliftYonedaEquiv_uliftYoneda_map,
         uliftYonedaEquiv_uliftYoneda_map]
       exact h)
-    exact ⟨⟨w⟩, ULift.ext _ _ hw₁, ULift.ext _ _ hw₂⟩
+    exact ⟨⟨w⟩, ULift.ext hw₁, ULift.ext hw₂⟩
 
 end Cartesian
 

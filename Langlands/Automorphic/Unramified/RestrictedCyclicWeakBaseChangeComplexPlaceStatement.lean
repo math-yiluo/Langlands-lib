@@ -28,8 +28,8 @@ def RestrictedCyclicWeakBaseChangeComplexPlaceStatement : Prop :=
       (∀ w', w' = w₀) → (∀ w', w' = wc) →
       (∀ (r : ℕ) (S : CuspidalOperatorRealization F r)
         (T : CuspidalOperatorRealization E r),
-        ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter S →
-        ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T →
+        ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter S →
+        ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T →
         S.isoClass.HasSupercuspidalComponent.{uF,uV} v₀ →
         S.isoClass.HasSupercuspidalComponent.{uF,uV} (Harris.conjPlace F v₀) →
         T.isoClass.HasSupercuspidalComponent.{uE,uW} w₀.1 →
@@ -42,8 +42,8 @@ def RestrictedCyclicWeakBaseChangeComplexPlaceStatement : Prop :=
               (complexPlaceParameterTransport v w ds)) ∧
       (∀ (r m : ℕ) (S : CuspidalOperatorRealization F r)
         (T : CuspidalOperatorRealization E m),
-        ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter S →
-        ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T →
+        ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter S →
+        ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T →
         S.isoClass.HasSupercuspidalComponent.{uF,uV} v₀ →
         S.isoClass.HasSupercuspidalComponent.{uF,uV} (Harris.conjPlace F v₀) →
         T.isoClass.HasSupercuspidalComponent.{uE,uW} w₀.1 →

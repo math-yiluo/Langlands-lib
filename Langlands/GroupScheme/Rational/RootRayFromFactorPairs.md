@@ -1,7 +1,7 @@
 # Actual root rays from opposite factor pairs
 
-Worker 1314, using Worker 1536's integral-coroot argument. This internal
-derived unit proves ray disjointness from `HasOppositeFactorPairs` and gives
+This internal derived module, using an integral-coroot argument for opposite
+factor pairs, proves ray disjointness from `HasOppositeFactorPairs` and gives
 the global implication
 `RootRankOneFactorizationStatement.{u} →
 RelativeRootRayDecompositionStatement.{u}`.
@@ -52,7 +52,7 @@ by another actual root and makes no assertion of primitivity in the full
 character lattice.
 
 The provenance is internal composition of the named published root-point,
-opposite-pair, lattice, finiteness and ray-enumeration interfaces. This unit
+opposite-pair, lattice, finiteness and ray-enumeration interfaces. This module
 neither constructs opposite factor pairs nor proves the unconditional
 rank-one or ray proposition. Any later unconditional application must
 supply its geometric premise independently; this conditional result does

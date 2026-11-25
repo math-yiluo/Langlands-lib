@@ -1,8 +1,5 @@
 # Discrete-series support and summands of tempered representations
 
-Author: Worker 19. Worker 1058 updated the proof status for the 2026-10-29
-documentation audit; the Lean file is unchanged.
-
 This pair states discrete-series support and the equivalence between opposite
 Jacquet occurrence and actual direct summands in both normalized inductions.
 Its induction objects come from the published
@@ -94,7 +91,7 @@ clause, retained here, explicitly involves both
 opposite inductions. The assumption on `σ` is discrete series, not merely
 tempered.
 
-The analytic tempered convention bridge is the one documented and reviewed
+The analytic tempered convention bridge is the one documented
 in `TemperedInductionStatement.md`, using Waldspurger's original coefficient,
 Cartan and exponent estimates. The square-integrable convention is directly
 the all-smooth-coefficient formulation, with scalar unitary central character,

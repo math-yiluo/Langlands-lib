@@ -1,7 +1,5 @@
 # Embedded irreducible representations are local components
 
-Proof by Worker 3657, prepared for publication by Worker 713 for Task 6816.
-
 `Langlands.Automorphic.localComponentEmbedding` proves
 `Langlands.Automorphic.LocalComponentEmbeddingStatement.{u, uW}`. The universe
 `u` is that of the number field `F`, and `uW` is that of the candidate local
@@ -20,7 +18,7 @@ representation is subject only to the applicable irreducibility condition.
 ## Proof
 
 The theorem applies `localComponentEmbedding_of_localComponentExistence` to the
-published `localComponentExistence` from Task 6815. The latter supplies an
+published `localComponentExistence`. The latter supplies an
 irreducible isotypic type `A` at each place. The proof compares the candidate
 local representation with `A` using intertwiners between their carriers.
 [Local component existence](LocalComponentExistenceProof.md)

@@ -1,13 +1,13 @@
 # Tate modules, Weil pairings and PEL invariant-orbit levels: Library map
 
-This note locates, in the Library at commit `8ff9abe9`, the Lean
+This note locates, in the Library, the Lean
 declarations that build the Tate modules, Weil pairings and invariant-orbit
 level structures of Harris–Taylor, *The Geometry and Cohomology of Some Simple
 Shimura Varieties* (2001), p.18 and Section III.1, pp.90–92
 (`harris-taylor-2001-geometry-cohomology-simple-shimura`), with Kottwitz
 (1992), Section 5, pp.390–391, as the prime-to-p reference. The last
 section lists the general theorems that these declarations take as explicit
-parameters, with their proof status at this commit. The list was obtained by
+parameters, with their proof status. The list was obtained by
 searching the explicit binders of `AbelianScheme/Tate/`, of the finite Weil
 and Cartier modules of `AlgebraicGeometry/Picard/`, and of the cited
 `AlgebraicGeometry/FiniteEtale/` and `Shimura/PEL/` modules. That section
@@ -190,8 +190,9 @@ hypotheses. Paths are relative to `Langlands/`.
 Three kinds of explicit inputs occur. General theorems taken as parameters
 are proved, with two exceptions noted below. Propositions about the
 particular abelian scheme or base form the second kind. Two of them, the
-dual-scheme witness and its geometry, are instances of published general
-statements that are unproved at this commit. The rest are data.
+dual-scheme witness and its geometry, are instances of general statements
+that the Library proves (`relativeDualSchemeExistence` and
+`relativeDualSchemeGeometry`, below). The rest are data.
 
 ### General theorems taken as parameters
 
@@ -247,7 +248,8 @@ data. The caller must discharge them.
   Weil pairing of Sections 4–6 takes it. The general existence statement
   `RelativeDualSchemeExistenceStatement`
   (`AlgebraicGeometry/Picard/RelativeDualSchemeExistenceStatement.lean`) is
-  published and **unproved** at this commit.
+  proved, as `relativeDualSchemeExistence`
+  (`AlgebraicGeometry/Picard/RelativeDualSchemeExistenceProof.lean`).
 - `geometryA : DualSchemeGeometry A hA`
   (`AlgebraicGeometry/Picard/RelativeDualSchemeGeometryStatement.lean`)
   asserts that `dualScheme A hA` is smooth, proper and geometrically
@@ -277,12 +279,16 @@ data. The caller must discharge them.
     `CanonicalFrameOrbitTransport.lean` and `AdelicFrameBaseChange.lean`
     take neither `hA` nor `geometryA`.
 
-  The general statement `RelativeDualSchemeGeometryStatement` is
-  **unproved** at this commit. The conditional theorem
+  The general statement `RelativeDualSchemeGeometryStatement` is proved,
+  as `relativeDualSchemeGeometry`
+  (`AlgebraicGeometry/Picard/RelativeDualSchemeGeometryProof.lean`), through
+  the smooth-family representer rather than the following reduction. The
+  conditional theorem
   `RelativeDualSchemeGeometryStatement.of_flat_finitePresentation_proper`
   (`RelativeDualSchemeGeometryReduction.lean`) derives it from field
   geometry and from flatness, finite presentation and properness of the
-  dual scheme. None of these four inputs has a closed proof at this commit.
+  dual scheme; this note does not record whether those four inputs have
+  closed proofs.
   The representability boundary is described in
   [relative-picard-source-map.md](relative-picard-source-map.md).
 - `DualSchemeMapAdditivity preservation stability A B hA hB` (isogeny and

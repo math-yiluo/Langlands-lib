@@ -53,6 +53,6 @@ This proves `inducedFirst_of` and `characterFirst_of`; `of_landing` combines the
 The final theorem supplies the proved induced-first analytic landing and its
 proved character-first mirror, leaving no landing hypothesis.
 
-This unit proves landing of a two-step multiplier composite. It does not construct
+This module proves landing of a two-step multiplier composite. It does not construct
 the four-step exchange of two induced blocks or prove its kernel and filtration
 properties, and it does not prove `RealInducedInducedFiltrationStatement`.

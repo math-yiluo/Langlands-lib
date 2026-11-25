@@ -85,11 +85,10 @@ isomorphisms with full ranges of subgroup functors.
 ## Provenance
 
 This module is internal, with no external literature source. The route of
-`hasCentralKernelCharacter_of_maximal` is Worker 1785's argument from the
-now-published `MaximalLeviDynamicReduction` module (original candidate
-`a5baa80d`). The two identical range lemmas are reused from that module. This
+`hasCentralKernelCharacter_of_maximal` is the argument of the
+published `MaximalLeviDynamicReduction` module. The two identical range lemmas are reused from that module. This
 module serves the proof of `MaximalLeviConeComplementStatement`: given a
 nonzero real character `x` that vanishes on the central cocharacters, the
 module puts every such character on the line of `x`.
 
-The identical helper proofs are reused from `Langlands.GroupScheme.Rational.MaximalLeviDynamicReduction`; their local copies have been removed.
+The identical helper proofs are reused from `Langlands.GroupScheme.Rational.MaximalLeviDynamicReduction`; this module has no copies of them.

@@ -1,7 +1,7 @@
 import Langlands.Global.HeckeCharacterTransport
 import Langlands.Global.HeckeCharacterFiniteOrder
 import Langlands.Global.AdelicFunctoriality.Inclusion
-import Langlands.ClassField.Global.IdeleClassNormGaloisProductProof
+import Langlands.ClassFieldTheory.Global.IdeleClassNormGaloisProductProof
 import Mathlib.Data.ZMod.Basic
 import Mathlib.Dynamics.PeriodicPts.Defs
 import Mathlib.GroupTheory.SpecificGroups.Cyclic.Basic
@@ -16,7 +16,7 @@ universe u v
 
 namespace Langlands.TraceFormula.CyclicBlockSum
 
-open NumberField Langlands.ClassField.Global Langlands.Global AdelicFunctoriality
+open NumberField Langlands.ClassFieldTheory.Global Langlands.Global AdelicFunctoriality
 
 section Field
 

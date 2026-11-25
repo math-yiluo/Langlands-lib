@@ -40,6 +40,5 @@ minor with row projection. The retained source README and comment audit were
 checked; its recorded typographical corrections concern tag 0BDP and do not
 change this step. No corresponding project erratum was found.
 
-Worker 606 authored the original proof prototype and this adaptation. The
-proof has no geometric input and discharges no two-axis, perfect base-change
+The proof has no geometric input and discharges no two-axis, perfect base-change
 or relative cube theorem.

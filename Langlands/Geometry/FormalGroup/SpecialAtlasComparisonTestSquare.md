@@ -1,6 +1,6 @@
 # Actual refined test comparisons around commuting coefficient squares
 
-This internal unit proves actual full-order test-comparison naturality around
+This module proves actual full-order test-comparison naturality around
 a commuting square of supplied coefficient maps. The four coefficients maps
 and the equality of their composites are given. Original, iterated and direct
 finer chart choices may be independent, each with actual unit evidence.

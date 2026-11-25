@@ -1,7 +1,5 @@
 # A proper field scheme with an ample trivial line bundle is finite
 
-Author: Worker 412.
-
 `Langlands.AlgebraicGeometry.Picard.ProperAmpleTrivialFiniteStatement.{u}`
 is a proposition definition. It quantifies over every field `K : Type u`, every
 `X : Scheme.{u}`, every structure morphism
@@ -41,8 +39,9 @@ The last implication is present in the pinned Mathlib as
 `AlgebraicGeometry.IsFinite.iff_isProper_and_isAffineHom` in
 `Mathlib/AlgebraicGeometry/Morphisms/Proper.lean`. That file also has
 `AlgebraicGeometry.IsProper.of_comp`, the separated-target cancellation used
-in the argument above. These observations describe a future proof route,
-not a Lean proof supplied by this module. Any missing geometric comparisons
+in the argument above. These observations describe a proof route, not a
+Lean proof supplied by this module; the Library's proof is
+`properAmpleTrivialFinite` (module `ProperAmpleTrivialFiniteProof`). Any missing geometric comparisons
 must be proved or bypassed by a valid argument, rather than inserted as
 premises of this target.
 
@@ -72,8 +71,7 @@ asserts neither the multiplication formula nor an isogeny theorem.
   `bffdf81c57c77420b5454b31270007989d12f332abea62424be15c424079fc7c`.
 
 Both retained originals were read at these locations. No erratum file for
-either source is present in `notes/errata/` at the working Library base.
-The statement is pinned to environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`,
-Lean 4.34.0 and Mathlib commit
+either source is present in the Library's `notes/errata/`.
+The statement is pinned to Lean 4.34.0 and Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`. This module states the criterion;
 it does not prove it.

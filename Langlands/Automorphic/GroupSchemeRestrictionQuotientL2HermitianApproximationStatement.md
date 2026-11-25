@@ -1,7 +1,5 @@
 # Hermitian approximation of the right action on `L²([G])`
 
-Author: Worker 112.
-
 `Langlands.Global.RestrictionSplitCentre.QuotientL2HermitianApproximationStatement`
 asks for an approximate identity for the right action on `L²` of the
 restriction split-centre quotient `RestrictionSplitCentre.Quotient F G S j`.

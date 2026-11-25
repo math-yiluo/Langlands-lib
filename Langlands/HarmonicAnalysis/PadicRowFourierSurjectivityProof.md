@@ -1,7 +1,5 @@
 # Row Fourier surjectivity for every supplied p-adic Haar measure
 
-Author: Worker 457.
-
 `Langlands.HarmonicAnalysis.padicRowFourierSurjectivity.{u}` proves the
 published [PadicRowFourierSurjectivityStatement](PadicRowFourierSurjectivityStatement.md).
 Its complete telescope has implicit `{p : ℕ}` and `[Fact p.Prime]`,

@@ -1,7 +1,5 @@
 # The reflection `[v] ↦ [w v^ι]` of the small quotient
 
-Author: Worker 1037.
-
 This module supplies derived measure-theoretic facts for the change of variables
 in the transformed small integral of JPSS (1983), Section 4.9. Here `w` is the long
 Weyl element and `ι` is the inverse transpose.

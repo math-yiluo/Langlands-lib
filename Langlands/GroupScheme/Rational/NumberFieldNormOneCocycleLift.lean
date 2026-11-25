@@ -1,4 +1,4 @@
-import Langlands.ClassField.Global.FundamentalClassReduction
+import Langlands.ClassFieldTheory.Global.FundamentalClassReduction
 import Langlands.GroupScheme.Rational.CentralNormOneLocalNorm
 
 /-! # Global central lifting through quadratic and coprime norm-one torsion kernels -/
@@ -51,7 +51,7 @@ private theorem lifts_of_refined_lift
 
 namespace IsCentralIsogeny
 
-open Langlands.Algebra Langlands.Global Langlands.ClassField.Global
+open Langlands.Algebra Langlands.Global Langlands.ClassFieldTheory.Global
 open TensorUnitShapiro KummerCocycle
 
 variable {F B L : Type u} [Field F] [Field B] [Field L] [NumberField F] [NumberField B]

@@ -1,12 +1,14 @@
 # Zero-excluded semigroup intersections
 
-This derived supporting unit proves the actual semigroup inverse-image equality
+This derived supporting module proves the actual semigroup inverse-image equality
 under an equivariant closed inclusion when the additive semigroup excludes zero.
 The two independent source inputs remain explicit:
 `SemigroupRealizationStatement` and
 `CoordinateWeights.AugmentationLieContainmentStatement`. Their conjunction is
 named `SemigroupZeroExcludedIntersectionPrerequisites`. This file does not
-supply proofs of either input or of the full host comparison statement.
+supply proofs of either input or of the full comparison statement
+`SemigroupComparisonStatement` that it serves, which the Library proves as
+`semigroupComparison` (`Rational.SemigroupComparisonProof`).
 
 All groups are actual smooth affine group schemes over an arbitrary field, all
 actions and equivariance identities use every test scheme, and character
@@ -50,4 +52,4 @@ tests, rather than equality merely on field-valued points.
 
 The coordinate and realization inputs, the zero-containing solvable and normal
 intersection alternatives, general functoriality and the smooth quotient
-comparison remain outside this unit's conclusion.
+comparison remain outside this module's conclusion.

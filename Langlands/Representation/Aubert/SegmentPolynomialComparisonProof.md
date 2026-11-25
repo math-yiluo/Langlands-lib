@@ -62,8 +62,8 @@ multisegment nor injectivity of `a ↦ ⟨a⟩` is used. The Langlands classific
 not used.
 
 The version used is the published theorem
-`Classification.multisegmentSocleExhaustion : MultisegmentSocleExhaustion.{uF, uV} F T`
-(Worker 494), whose only parameters are the prime, the field and the topology. For
+`Classification.multisegmentSocleExhaustion : MultisegmentSocleExhaustion.{uF, uV} F T`,
+whose only parameters are the prime, the field and the topology. For
 every rank `n`, including `n = 0`, and every irreducible `π`, it gives a multisegment
 `a` with `a.degree = n` and `a.IsZelevinskySocle π`. Here `π` is the unique
 irreducible subrepresentation of an actual product of segment socles whose datum
@@ -89,7 +89,7 @@ following published declarations and modules.
   (the rank order), `Aubert/SupportGrading` (supercuspidal support of labels) and
   `Aubert/SegmentEndDerivation` (`injective_of_endExpansion`, used for injectivity).
 - The helper modules `Aubert/SegmentProductClass`, `Aubert/SegmentPolynomialInjectivity`,
-  `Aubert/ZelevinskyHighestDerivative` (Worker 237) and
+  `Aubert/ZelevinskyHighestDerivative` and
   `Aubert/SegmentPolynomialSurjectivity`.
 
 Their own dependencies are recorded in their Markdown files. The Lean axioms are

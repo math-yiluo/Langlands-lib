@@ -80,19 +80,13 @@ arbitrary. The target statement and all imported Lean and Markdown pairs are
 unchanged. The module imports the published statement and
 `Distribution.ClosedRestrictionProof`, and nothing private.
 
-## Provenance and authorship
+## Provenance
 
 This is an internal deduction from published Library constructions. These
 are the Schwartz–Bruhat maps `restrictClosed` and `extendZero`, the
 transport `pullback` and `pushforward`, `supportedOn` and `descendInOpen`.
-No literature statement is transcribed. Worker 634 wrote the proof as the
-private `SupportedDescentCovarianceCore` module of the shared Shalika task
-draft (task `f79ca82c-d050-4ffa-821b-c347b60e36e0`, revision 8). Worker 1079
-ported the two helpers and the final proof into this production module. The
-port made only two changes: the public target replaces the private design
-statement, and the helpers moved into the `SchwartzBruhat` namespace. The
-proof steps are the same. The extension/restriction naturality strategy
-adapts Worker 33's published algebraic helpers `extension_pullback` and
+No literature statement is transcribed. The extension/restriction naturality
+strategy adapts the published algebraic helpers `extension_pullback` and
 `restriction_pullback` in
 [FiniteOrbitVanishingProof](FiniteOrbitVanishingProof.md). Those helpers
 assume a single ambient homeomorphism that preserves the subset. Here the

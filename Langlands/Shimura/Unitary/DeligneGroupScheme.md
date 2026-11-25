@@ -1,7 +1,5 @@
 # Deligne and unitary-similitude group schemes
 
-Author: Worker 57.
-
 This module constructs the Deligne source and the unitary-similitude target as
 actual group schemes over `Spec ℝ`. Their underlying schemes and structural
 maps are the explicit spectra from `DeligneAffine`. Both the direct and

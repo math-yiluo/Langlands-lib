@@ -52,14 +52,14 @@ variable (q : ComparisonClass Φ A)
 /-- The specialized action has the printed inverse Frobenius shift on the
 varying residue homomorphism. -/
 theorem unramifiedAction_residueMap :
-    ((unramifiedAction Φ c g).hom.app A q).residueMap =
+    ((unramifiedAction Φ c g).asIso.hom.app A q).residueMap =
       DrinfeldResidue.shift (DrinfeldAction.exponent K D g) q.residueMap := by
   unfold unramifiedAction
   apply ComparisonClass.act_residueMap
 
 /-- The specialized action conjugates the original target's order action. -/
 theorem unramifiedAction_targetClass :
-    ((unramifiedAction Φ c g).hom.app A q).targetClass =
+    ((unramifiedAction Φ c g).asIso.hom.app A q).targetClass =
       q.targetClass.twistDivisionUnit g.2 := by
   unfold unramifiedAction
   apply ComparisonClass.act_targetClass

@@ -15,6 +15,9 @@ theorem polarizedAutomorphismFiniteness :
     PolarizedAutomorphismFinitenessStatement.{u} :=
   polarizedAutomorphismFiniteness_of_rosati_and_lattice
     Rosati.rationalInverse Rosati.positivity
-    (fun k _ _ _ A => homFiniteFree k A A)
+    (fun k _ _ _ A => by
+      obtain ⟨hfree, hfin⟩ := homFiniteFree k A A
+      exact ⟨Module.Free.of_equiv CategoryTheory.End.addEquiv.toIntLinearEquiv.symm,
+        Module.Finite.equiv CategoryTheory.End.addEquiv.toIntLinearEquiv.symm⟩)
 
 end Langlands.AbelianScheme

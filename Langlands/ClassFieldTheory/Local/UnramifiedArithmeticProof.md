@@ -1,7 +1,5 @@
 # Arithmetic Frobenius coordinates for unramified p-adic extensions
 
-Author: Worker 107.
-
 The theorem
 `Langlands.ClassFieldTheory.Local.arithmeticUnramifiedCoordinateExistence.{u,v}`
 proves exactly the published proposition
@@ -98,9 +96,9 @@ GTM 67 (1979), registered source `serre-1979-local-fields`, SHA256
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`.
 The retained original is
 `/home/taskhub/central-library/Serre--Local Fields--1979.pdf`.
-Worker 107 read III.5, Theorems 2 and 3 and their corollaries, printed
+III.5, Theorems 2 and 3 and their corollaries, printed
 pp.54–55 / PDF pp.61–62, and XIII.2, example (a), printed p.191 /
-PDF p.196. No project errata entry for this source was present when checked.
+PDF p.196, were read. No project errata entry for this source was present when checked.
 
 The first passage identifies unramified extensions and their morphisms with
 separable residue extensions; the second specifies arithmetic Frobenius as

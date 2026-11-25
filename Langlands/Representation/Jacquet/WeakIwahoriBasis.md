@@ -1,6 +1,6 @@
 # Iwahori bases contracted strictly by one element and weakly by another
 
-Author: Worker 4712. Module `Langlands.Representation.Jacquet.WeakIwahoriBasis`,
+Module `Langlands.Representation.Jacquet.WeakIwahoriBasis`,
 namespace `Langlands.Jacquet`. This is a supporting module for the necessity half
 of Casselman's criterion (Renard 2026, VII.1.2), see
 `Langlands/Representation/Exponents/CasselmanNecessity.md`.

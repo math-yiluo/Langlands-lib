@@ -1,10 +1,8 @@
 # Source naturality of the perfect-source scalar adjunction
 
-Author: Worker 727.
-
 Module `Langlands.Cohomology.PerfectScalarDerivedTargetSource`, namespace
-`Langlands.Cohomology`. It adds naturality statements to the published
-`PerfectScalarDerivedTarget`. The published module proves naturality of
+`Langlands.Cohomology`. It adds naturality statements to
+`PerfectScalarDerivedTarget`. That module proves naturality of
 `ModuleComplex.perfectScalarDerivedTargetHomEquiv` in the derived target. This
 module proves naturality in the strictly perfect source and states both
 naturalities for the inverse equivalence. Everything is proved in the file,
@@ -22,7 +20,7 @@ finite limits and finite colimits, and an adjunction `adj : F ⊣ G`.
   `Q.map ψ ≫ derivedComplexAdjunctionUnit adj K'`
   `= derivedComplexAdjunctionUnit adj K ≫ G.mapDerivedCategory.map (Q.map (F.mapHomologicalComplex ψ))`.
 
-  Here `derivedComplexAdjunctionUnit` is the published derived unit
+  Here `derivedComplexAdjunctionUnit` is the derived unit
   `Q(K) ⟶ G(Q(F K))` from `PerfectScalarAdjunctionProof`, which is `Q` applied
   to the unit of the termwise adjunction `complexAdjunction adj`, followed by
   `G.mapDerivedCategoryFactors.inv`. Proof: naturality of the termwise unit and
@@ -42,20 +40,21 @@ and `Res_φ` is `(ModuleCat.restrictScalars φ).mapDerivedCategory`.
   `perfectScalarDerivedTargetHomEquiv φ K hK Y (Q.map (baseChange φ ψ) ≫ f)`
   `= Q.map ψ ≫ perfectScalarDerivedTargetHomEquiv φ K' hK' Y f`.
 
-  Proof: the published forward formula (derived unit followed by `Res_φ`) and
+  Proof: the forward formula of `PerfectScalarDerivedTarget`
+  (`perfectScalarDerivedTargetHomEquiv_apply`: derived unit followed by `Res_φ`) and
   the naturality lemma above for `ModuleCat.extendRestrictScalarsAdj φ`.
 - `perfectScalarDerivedTargetHomEquiv_symm_naturality_source φ hK hK' ψ b`: the
   same for the inverse. For `b : Q(K') ⟶ Res_φ Y`,
   `Q.map (baseChange φ ψ) ≫ (equiv K').symm b = (equiv K).symm (Q.map ψ ≫ b)`.
 - `perfectScalarDerivedTargetHomEquiv_symm_naturality φ K hK b g`: the
-  published target naturality, for the inverse. For
+  target naturality of `PerfectScalarDerivedTarget`, for the inverse. For
   `b : Q(K) ⟶ Res_φ Y` and `g : Y ⟶ Z`,
   `(equiv K).symm (b ≫ Res_φ.map g) = (equiv K).symm b ≫ g`.
 
 ## Provenance
 
 Internal: formal naturality properties of the Library's own derived unit and
-perfect-source scalar adjunction. Worker 950 requested the source-naturality
-form for the perfect-model base-change construction in
+perfect-source scalar adjunction. The source-naturality form is used by the
+perfect-model base-change construction in
 `Langlands.AlgebraicGeometry.Modules.PerfectModelRestriction`. No literature
 statement is formalized, and no external mathematical assertion is used.

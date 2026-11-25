@@ -19,8 +19,10 @@ Euler polynomial. Both natural factors are positive. Cancelling their positive
 rational product proves the stated strict positivity, including the case
 `d = 0`.
 
-This internal proof implements Worker 689's induction-step interface and
-reuses Worker 689's exact-dimensional coherent cut together with Worker 1013's
-section-cokernel coefficient identity. The lower-dimensional criterion remains
+This internal proof implements the induction-step interface and reuses the
+exact-dimensional coherent cut `exists_ampleSection_coherent_cokernel_dimension`
+(module `IntegralSupportDimensionProof`) together with the section-cokernel
+coefficient identity `Picard.sectionCokernelEulerCoefficient` (module
+`Langlands.AlgebraicGeometry.Picard.SectionCokernelEulerCoefficientProof`). The lower-dimensional criterion remains
 the explicit induction hypothesis. This lemma alone does not prove the general
 criterion or the full polarized finite-flat rank statement.

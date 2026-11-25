@@ -1,7 +1,5 @@
 # Analytic temperedness and the smooth contragredient (proof)
 
-Author: Worker 246.
-
 This module proves the published proposition
 [`PadicTemperedSmoothDualityStatement`](TemperedSmoothDualityStatement.md):
 

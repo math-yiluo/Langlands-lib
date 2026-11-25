@@ -56,5 +56,7 @@ explicit the restriction implicit in the source's notation `V ↦ V_N` for a
 induction. Neither an Hecke-equivalence proof nor an adjunction is an input.
 
 These targets include the source's full normal-quotient statements, rather
-than only the case of a chosen split semidirect product. Their proofs belong
-to separate proof tasks after publication.
+than only the case of a chosen split semidirect product. Their proofs are in
+separate modules: `normalQuotientStatements` in `NormalQuotientProof` proves
+the whole proposition, taking the two adjunctions from
+`NormalQuotientAdjunctionProof`.

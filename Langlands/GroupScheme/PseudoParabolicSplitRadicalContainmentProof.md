@@ -1,7 +1,5 @@
 # Split radical containment for pseudo-parabolic subgroups
 
-Author: Worker 60.
-
 `Langlands.GroupScheme.pseudoParabolicSplitRadicalContainment.{u}` proves
 exactly `PseudoParabolicSplitRadicalContainmentStatement.{u}`, with no
 additional premise. The statement and its imported definitions are unchanged.

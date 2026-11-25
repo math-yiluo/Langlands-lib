@@ -1,6 +1,6 @@
 # Analytic data for the rational compact comparison
 
-This internal unit derives the analytic inputs of
+This module derives the analytic inputs of
 `RationalGeometricCompactComparison` from the original closedness,
 nonarchimedean local compactness and unipotent compact-limit hypotheses.
 It preserves the literal restricted projection kernel and nested stabilizer
@@ -15,7 +15,7 @@ universe is independent of the field universe.
 The measure construction and final equivalence assume that the ambient
 point group is Hausdorff, locally compact and nonarchimedean, with closed
 target radical and both original parabolics. These are retained structural
-hypotheses; the unit does not prove them for every point topology.
+hypotheses; the module does not prove them for every point topology.
 
 Local compactness of the restricted kernel is transported through
 `geometricCompactKernelEquiv` from the closed original radical. The nested
@@ -61,7 +61,9 @@ The proof bodies use subgroup topology, the compact-open cover argument,
 Haar and quotient measure existence, and the already constructed actual
 compact comparison. The imported closure includes the original coefficient
 and split-stage constructions through `RationalGeometricCompactHaar`.
-This unit adds no use of adjointness, cuspidal support, character independence
+This module adds no use of adjointness, cuspidal support, character independence
 or Langlands classification. The normalization balance between the two
 radicals, smooth-category naturality, compact/full induction, actual
-filtration and final normalized K0 expansion remain separate obligations.
+filtration and final normalized K0 expansion are separate obligations;
+`rationalGeometricK0Expansion` in `RationalGeometricK0Expansion` proves the
+final K0 expansion.

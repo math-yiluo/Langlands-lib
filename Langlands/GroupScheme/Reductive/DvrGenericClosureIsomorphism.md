@@ -59,5 +59,5 @@ affine target theorem therefore applies.
 These results do not assume a connected-fibre theorem or a supplied
 split maximal torus. The target hypotheses in the smooth affine theorem
 remain explicit. Reduction from a general separated finitely presented
-target over a DVR, and the unrestricted arbitrary-base host theorem,
-are separate obligations.
+target over a DVR, and the unrestricted arbitrary-base theorem
+`ReductiveMonomorphismClosedImmersionStatement`, are separate obligations.

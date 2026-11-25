@@ -1,6 +1,6 @@
 # Adjunction isomorphisms of Hom complexes and of Hom-complex systems
 
-Author: Worker 61. Built on `Langlands.Cohomology.LinearHomComplex`
+Built on `Langlands.Cohomology.LinearHomComplex`
 (`LinearHomComplex.complex`, the Hom complex of two cochain complexes as a
 complex of `R`-modules, and `LinearHomComplex.map`, its functoriality by
 precomposition and postcomposition), on

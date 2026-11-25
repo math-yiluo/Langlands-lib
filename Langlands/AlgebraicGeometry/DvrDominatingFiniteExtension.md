@@ -49,9 +49,9 @@ statement `Langlands.AlgebraicGeometry.DvrPotentialGenericReductionStatement`.
 
 ## Provenance and purpose
 
-This is an internal helper for Task 7618, the proof of
+This is an internal helper for the proof of
 `Langlands.AlgebraicGeometry.DvrPotentialGenericReductionStatement`. It supplies the
-DVR extension in the route the task context suggests as an alternative to
+DVR extension in a route that is an alternative to
 henselization. First a finite field extension `L` of the fraction field is found that
 holds the coefficients of finitely many nilradical generators. Then `R'` is a DVR inside
 `L` that dominates `R`, and `b = Spec.map (R → R')` is the flat surjective base change

@@ -1,14 +1,15 @@
 # The glued analytification space of a scheme locally of finite type
 
-This unit constructs the underlying topological space of the analytification of
+This module constructs the underlying topological space of the analytification of
 a scheme `X` locally of finite type over a complete nonarchimedean field `K`.
 It glues the Library's polynomial-locus analytifications of all affine open
-subschemes along the maps induced by restriction of global sections. The unit
+subschemes along the maps induced by restriction of global sections. The module
 constructs the space, its canonical maps from the affine analytifications, its
 open sets and its universal property for continuous maps. It does not prove
 that the canonical maps are open embeddings, or that the space agrees with the
-affine analytification when `X` is affine. Those facts are left to later
-statement units.
+affine analytification when `X` is affine. Those facts are stated in
+`SchemeAnalytificationGluingStatement` (items 2 and 4) and proved as
+`schemeAnalytificationGluing` in `SchemeAnalytificationGluingProof`.
 
 ## Provenance
 
@@ -107,11 +108,16 @@ agree after every `ι K f U` are equal.
 
 ## Scope
 
-The unit does not prove that `ι K f U` is injective, open or an embedding. It
+The module does not prove that `ι K f U` is injective, open or an embedding. It
 does not prove that `Space K f` is Hausdorff when `X` is separated, or that
 the canonical map from the analytification of the affine open `⊤` is a
 homeomorphism when `X` is affine. It constructs no affinoid atlas
 or analytic structure on `Space K f`, and no maps induced by morphisms of
 schemes. It proves no independence of the chosen presentations, and no
 comparison with rational points or with the rigid analytification of
-Conrad–Temkin. These remain successor obligations of the parent task.
+Conrad–Temkin. Of these, the gluing properties are proved in
+`SchemeAnalytificationGluingProof`, an affinoid atlas is constructed in
+`SchemeAnalytificationAtlas`, the existence of an analytic structure is proved
+in `SchemeAnalytificationAnalyticStructureProof`, maps induced by morphisms
+in `SchemeAnalytificationMorphismProof`, and the comparison with rational
+points in `SchemeAnalytificationRationalPointsProof`.

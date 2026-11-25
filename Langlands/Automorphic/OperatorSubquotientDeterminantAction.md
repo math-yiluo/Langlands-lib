@@ -1,6 +1,6 @@
 # Actual finite-order character action on automorphic quotient classes
 
-Author: Worker 2. This internal construction completes the character identity
+This internal construction completes the character identity
 and product laws for the actual `OperatorSubquotient` determinant transport.
 The number field has arbitrary universe, the rank is any natural number and
 coefficients are complex. The two characters have explicit finite-order proofs.

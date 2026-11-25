@@ -1,7 +1,5 @@
 # Operation compatibility of the Henniart assembly
 
-Authors: Worker 1715, Worker 1705, Worker 1703.
-
 This module proves the published proposition
 `Langlands.Correspondence.AssemblyOperationStatement` (module `AssemblyRelation`):
 
@@ -46,12 +44,12 @@ results listed below.
 | Character twists of heads | `Classification.multisegmentConstituentCharacterTwistCompatibility` | `Representation/Classification/MultisegmentConstituentCharacterTwistCompatibilityProof` |
 | Dual of a block sum and of a head class | `AssemblyDual.exists_isDualOf`, `AssemblyDual.isBlockSum_dual`, `AssemblyDual.isMultisegmentHeadClass_dual` | `Correspondence/AssemblyDual` |
 | Contragredients of heads | `Classification.multisegmentConstituentContragredientCompatibility` | `Representation/Classification/MultisegmentConstituentContragredientProof` |
-| Uniqueness of assembled classes | `isAssembledFrom_unique` | `Correspondence/AssemblyUniqueness` (new, in this candidate) |
+| Uniqueness of assembled classes | `isAssembledFrom_unique` | `Correspondence/AssemblyUniqueness` |
 
 The modules `AssemblyTwist` and `AssemblyDual` also contain main theorems
 `twistCompatibility_of_assembly` and `dualCompatibility_of_assembly`. These assume
-the well-definedness of the assembly, `AssemblyWellDefinedStatement`, which is not
-proved. Its existence half needs the existence of Langlands heads of multisegments.
+the well-definedness of the assembly, `AssemblyWellDefinedStatement`, which is
+proved separately (`assemblyWellDefined`, module `AssemblyWellDefinedProof`). Its existence half needs the existence of Langlands heads of multisegments.
 The proofs here do not use those two theorems. They repeat their final steps and use
 only the uniqueness half, which `isAssembledFrom_unique` proves without hypotheses
 (see `AssemblyUniqueness.md`).
@@ -109,6 +107,5 @@ four conjuncts.
   `DualCompatibility F c`.
 - `assemblyOperation`: the main theorem.
 
-The module `AssemblyUniqueness`, with its own Markdown, belongs to this candidate. It
-was adapted with Worker 1703's permission from their unpublished reduction, so
-Worker 1703 is a coauthor. The twist and dual steps reuse Worker 1705's reductions.
+The module `AssemblyUniqueness` has its own Markdown. The twist and dual steps reuse
+the reductions of `AssemblyTwist` and `AssemblyDual`.

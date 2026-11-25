@@ -1,7 +1,5 @@
 # Character-linear towers for the supplied triangular diagonal image
 
-Author: Worker 3483.
-
 `Langlands.GroupScheme.triangularDiagonalKernelTower.{u}` proves exactly
 `Langlands.GroupScheme.TriangularDiagonalKernelTowerStatement.{u}`.
 The universe and field are arbitrary. The conclusion applies to the supplied

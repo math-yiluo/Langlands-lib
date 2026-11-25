@@ -101,9 +101,8 @@ share its first inputs:
   a map `e` from the reduced building of `B` to that of `C`, and a real
   affine map `a : B.Apartment →ᵃ[ℝ] C.Apartment`. Their hypotheses are
   exactly the eight conclusions of
-  `Langlands.Geometry.Building.UnramifiedApartmentDescentStatement` (Task
-  5877, `94d9a827-c647-49dc-97ed-13e24b678db8`, revision 3), with `B.S`,
-  `B.i` written as `P.S`, `P.i`. That statement is not yet in the Library,
+  `Langlands.Geometry.Building.UnramifiedApartmentDescentStatement`, with `B.S`,
+  `B.i` written as `P.S`, `P.i`. This module does not import that statement,
   so they are spelled out:
   1. `e` is injective;
   2. `e (g • z) = rationalExtend F K G g • e z` for every `g ∈ G(F)`;
@@ -291,7 +290,7 @@ for every facet presentation, as in the `derivative_root_data` field.
 ## Intended consumer
 
 The consumer is the construction of the integral models for KP Axioms 4.1.20
-and 4.1.22 in Task 5429 (`cd2ad671-3edf-4905-a0e2-e7aa2b160b91`), whose final
+and 4.1.22, whose final
 target is `IntegralModelAxiomsStatement`. Its facet models are
 relative-component pairs over `𝒪[F]`, obtained by unramified descent of the
 parahoric models over `fixedFieldIntegers F`. Their neutral models are smooth

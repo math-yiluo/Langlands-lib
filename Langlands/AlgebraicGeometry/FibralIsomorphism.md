@@ -1,7 +1,5 @@
 # The fibral isomorphism criterion
 
-Worker 219.
-
 This module proves
 `Langlands.AlgebraicGeometry.fibralIsomorphism :
 Langlands.AlgebraicGeometry.FibralIsomorphismStatement.{u}` for every universe

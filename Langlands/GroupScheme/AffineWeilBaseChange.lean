@@ -224,6 +224,20 @@ def affinePointIso :
   NatIso.ofComponents (fun R => (pointEquiv A B C G R).toGrpIso) (by
     intro R R' a
     ext p
+    have e1 : ((source A B C G).affinePointFunctor.map a).hom p =
+        (source A B C G).affinePointMap a p := rfl
+    have e2 : ∀ y : (source A B C G).affinePoints R',
+        (MulEquiv.toGrpIso (X := (source A B C G).affinePointFunctor.obj R')
+          (Y := (target A B C G).affinePointFunctor.obj R')
+          (pointEquiv A B C G R')).hom.hom y = pointEquiv A B C G R' y := fun _ => rfl
+    have e3 : ∀ y : (target A B C G).affinePoints R,
+        ((target A B C G).affinePointFunctor.map a).hom y =
+        (target A B C G).affinePointMap a y := fun _ => rfl
+    have e4 : ∀ y : (source A B C G).affinePoints R,
+        (MulEquiv.toGrpIso (X := (source A B C G).affinePointFunctor.obj R)
+          (Y := (target A B C G).affinePointFunctor.obj R)
+          (pointEquiv A B C G R)).hom.hom y = pointEquiv A B C G R y := fun _ => rfl
+    rw [GrpCat.hom_comp, GrpCat.hom_comp, MonoidHom.comp_apply, MonoidHom.comp_apply, e1, e2, e4, e3]
     exact pointEquiv_naturality A B C G a p)
 
 /-- Arbitrary base change commutes with actual finite-projective affine Weil restriction. -/
@@ -299,10 +313,11 @@ theorem targetPointsEquiv_target (R : CommAlgCat.{u} (CommRingCat.of C))
     targetPointsEquiv A B C H R (p ≫ (targetMap A B C G f).hom.hom) =
       targetPointsEquiv A B C G R p ≫ f.hom.hom := by
   dsimp only [targetPointsEquiv, MulEquiv.trans_apply]
-  exact (congrArg (factorTensorPointsEquiv A B C H R)
-    (map_affinePoints C (C ⊗[A] B)
-      ((GroupScheme.baseChange (Spec.algebraMap B (C ⊗[A] B))).map f) R p)).trans
-        (factorTensorPointsEquiv_target A B C G f R _)
+  have h1 := map_affinePoints C (C ⊗[A] B)
+    ((GroupScheme.baseChange (Spec.algebraMap B (C ⊗[A] B))).map f) R p
+  rw [affinePointsTarget_apply, affinePointsTarget_apply] at h1
+  rw [h1]
+  exact factorTensorPointsEquiv_target A B C G f R _
 
 /-- The affine-point comparison commutes with both actual group homomorphisms. -/
 theorem pointEquiv_target (R : CommAlgCat.{u} (CommRingCat.of C))

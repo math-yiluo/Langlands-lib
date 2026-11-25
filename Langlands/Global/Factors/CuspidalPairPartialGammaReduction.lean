@@ -60,7 +60,7 @@ namespace Langlands.Global
 open NumberField HeckeFunctionalEquation CuspidalPairFunctionalEquation
 open CuspidalPairBoundaryNonvanishing
 open LocalFactor.Archimedean
-open Langlands.Global.CompletionPadic Langlands.ClassField.Global.RelativeWeilGroup
+open Langlands.Global.CompletionPadic Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 open Automorphic (CuspidalOperatorRealization CuspidalSpectralPresentation OperatorRealization)
 
 namespace CuspidalPairPartialGamma

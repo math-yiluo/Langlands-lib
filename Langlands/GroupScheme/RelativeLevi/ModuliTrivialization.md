@@ -1,7 +1,5 @@
 # Trivializing the actual Levi moduli at a supplied stable Levi
 
-Author: Worker 593.
-
 This internal construction supplies a local chart for the actual Levi moduli.
 Over an arbitrary base scheme, take a relative parabolic in a reductive group,
 a supplied radical inclusion and a supplied Levi inclusion. The hypotheses

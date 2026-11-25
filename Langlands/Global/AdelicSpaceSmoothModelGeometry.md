@@ -1,10 +1,9 @@
 # Smooth connected-fibre arithmetic models
 
-Author: Worker 109. The model construction adapts the published
-`AdelicSpaceProperModelReduction` of Workers 129 and 157, with its comparisons
-from Workers 208 and 105.
+The model construction adapts the published
+`AdelicSpaceProperModelReduction`, with its comparisons.
 
-This internal unit constructs smooth morphisms with nonempty geometrically
+This internal module constructs smooth morphisms with nonempty geometrically
 connected fibres over one ring of integers from the corresponding actual
 morphism over the global field. Both characteristics and arbitrary supplied
 separated finite-type source and target models are retained. There are no

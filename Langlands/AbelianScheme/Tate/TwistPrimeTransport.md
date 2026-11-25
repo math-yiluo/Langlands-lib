@@ -139,5 +139,5 @@ new claim is attributed to external literature.
 Finite étaleness, fibre finiteness and existence of a path remain explicit
 inputs. Rational transport, base change, pairing compatibility and
 canonical independence of PEL fixed-orbit sets remain separate work.
-This unit asserts no rank result or comparison isomorphism for the
+This module asserts no rank result or comparison isomorphism for the
 extraction maps.

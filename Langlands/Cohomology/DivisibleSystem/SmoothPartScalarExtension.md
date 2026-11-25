@@ -1,6 +1,6 @@
 # Extension of scalars of the smooth part
 
-Author: Worker 61. Built on
+Built on
 `Langlands.Cohomology.DivisibleSystem.SmoothScalarExtension`
 (`smoothRepExtendScalars`, `smoothRepExtendScalarsComplex`), on
 `Langlands.Cohomology.DivisibleSystem.ScalarExtension` (`repExtendScalars`,

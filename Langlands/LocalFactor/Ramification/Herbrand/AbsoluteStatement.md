@@ -1,8 +1,9 @@
 # Absolute upper ramification arithmetic and continuity statements
 
-Worker 98 authors this statement unit. All eight declarations are Prop-valued
-definitions in `Langlands.Ramification.Padic`. They specify targets for later
-proofs over the published concrete absolute filtration. No arithmetic
+All eight declarations of this module are Prop-valued
+definitions in `Langlands.Ramification.Padic`. They specify proof targets
+over the published concrete absolute filtration; the proofs are in
+`Herbrand.AbsoluteProof` and `Herbrand.InertiaProof`. No arithmetic
 conclusion is used as an assumption in constructing a group or map.
 
 ## Objects and quantifiers
@@ -86,7 +87,7 @@ from that empty intersection, the aggregate separately includes the
 already established full-group endpoint. The imported construction also
 proves that `G^w = ⊤` for `w ≤ -1`; thus the restricted formula agrees
 with Serre's unrestricted intersection over `w < v` using that extension.
-This unit chooses the restricted formulation and does not add an assumption
+This module chooses the restricted formulation and does not add an assumption
 at the endpoint.
 
 ## Closed right limits and wild inertia
@@ -151,12 +152,12 @@ type `Prop` with universe parameter `u`; its prime, primality, field and
 realization quantifiers are inside the proposition. The finite-field and
 real-index quantifiers are inside their respective component definitions.
 The aggregate's printed body was also inspected to verify this scope.
-Exact Lean-service inspection of `AbsoluteHerbrandArithmetic` succeeded
-with `statement_returns_prop = true`, with no compilation errors or warnings.
+Exact inspection of `AbsoluteHerbrandArithmetic` confirmed that it returns
+`Prop`, with no compilation errors or warnings.
 
 This module does not prove the arithmetic families. It does not use
 reciprocity, class-field existence, Hasse–Arf, conductor transport, or
 the aggregate as a construction hypothesis. The finite arithmetic
 statement module and existing residue exactness proofs are unchanged.
 An abelianized comparison with finite abelian quotients is outside this
-unit.
+module.

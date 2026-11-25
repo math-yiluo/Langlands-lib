@@ -1,7 +1,5 @@
 # Statement: first cohomology of simply connected groups over number fields lives at the real places
 
-Worker 75.
-
 `Langlands.GroupScheme.SimplyConnectedRealPlacesCohomologyStatement.{u} : Prop`
 is a statement-only, `Prop`-valued definition with one universe parameter
 `u`. This module does not prove it, and it adds no other definitions,
@@ -197,7 +195,8 @@ pointed sets.
 - **Real places.** `w : InfinitePlace F` with `w.IsReal`, completed at `w`,
   gives each real prime `v` of Milne's set `V` once, with `k_v = F_w`.
 - **Cocycle formulation.** As in the companion statement
-  `NumberFieldHassePrincipleStatement` (Milne 25.64, a separate candidate),
+  `NumberFieldHassePrincipleStatement` (Milne 25.64, module
+  `Rational/NumberFieldHassePrincipleStatement`),
   `H^1` is the set of isomorphism classes of torsors (Section 25g, 2.72),
   and classes are represented by cocycles on finite separable covers. The
   facts used are: every `G`-torsor over `F` (or over `F_w`) has a
@@ -246,8 +245,7 @@ a standard consequence of Hilbert's Theorem 90.
 ## Relation to the Library
 
 - `Langlands.GroupScheme.NumberFieldHassePrincipleStatement` (module
-  `Rational/NumberFieldHassePrincipleStatement`; Milne 25.64, submitted as a
-  separate candidate and not yet in the Library) states injectivity of the map to all
+  `Rational/NumberFieldHassePrincipleStatement`; Milne 25.64) states injectivity of the map to all
   places, including case (a) for simply connected groups. Part 1 here is
   the stronger injectivity with only the real places.
 - `LocalSimplyConnectedCocycleVanishingStatement`
@@ -255,7 +253,7 @@ a standard consequence of Hilbert's Theorem 90.
   states Milne 25.61(a) for nonarchimedean local fields in the same
   cocycle language.
 
-## For the later proof (not part of this unit)
+## For a proof (not part of this module)
 
 Milne proves injectivity from Theorems 25.61 and 25.64 (the finite places
 and the complex places contribute trivial local cohomology) and refers to

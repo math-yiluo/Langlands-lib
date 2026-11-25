@@ -2,11 +2,9 @@
 
 Lean module: `Langlands.Representation.Archimedean.ComplexStandardHomExponentJacquetReduction`
 (namespace `Langlands.Archimedean`; the helper lemmas are in
-`Langlands.Archimedean.ComplexStandardHomExponentJacquet`). Worker 27 wrote it for Task 7110
-(`3868646b-f71b-4d18-b426-b9b18f0c8171`), whose target is the Library's
-`Langlands.Archimedean.ComplexStandardHomExponentStatement` (E, module
-`ComplexStandardHomExponent`). It is published as a supporting statement under Task 7178
-(`9e457b4c-4441-4f77-a565-4fa8a2c37411`), so that a separate proof task can target JE.
+`Langlands.Archimedean.ComplexStandardHomExponentJacquet`). It was written for the proof of the
+Library's `Langlands.Archimedean.ComplexStandardHomExponentStatement` (E, module
+`ComplexStandardHomExponent`).
 
 The module contains
 
@@ -15,7 +13,9 @@ The module contains
 * the theorem `complexStandardHomExponentJacquetReduction`, which proves `JE → E`, together with
   three helper lemmas.
 
-JE is not proved in this module, and neither is E. JE is the remaining open input for E. JE no
+JE is not proved in this module, and neither is E. JE is the remaining input for E; the Library
+proves JE as `complexStandardJacquetExponent` (module `ComplexStandardJacquetExponentProof`) and E
+as `complexStandardHomExponent` (module `ComplexStandardHomExponentProof`). JE no
 longer mentions intertwining maps: it is a statement about linear forms on a single principal
 series.
 
@@ -194,8 +194,9 @@ These are the two conclusions of E for the same `σ`, `u`, `v`.
 ## Use
 
 A proof of JE gives E as `complexStandardHomExponentJacquetReduction hJE`. E is an input of
-Worker 729's `ComplexStandardOppositeOrderHomReduction` (Task 7055). The routes for JE in view
-are those of step 2 above: the Bruhat filtration of `B`-equivariant distributions, which needs the
+`ComplexStandardOppositeOrderHomReduction`. The Library proves JE by the route of
+`ComplexStandardJacquetExponentRoute` (Casselman–Osborne, translation and an antidominant bound).
+Two further routes for JE are those of step 2 above: the Bruhat filtration of `B`-equivariant distributions, which needs the
 passage from `X(d)` to smooth vectors (automatic continuity), or the algebraic route through
 category `𝒪` (Bernstein–Gelfand, `bernstein-gelfand-1980-tensor-products`, §6, 6.2–6.7,
 printed pp. 280–283, PDF 37–40). That source is cited only as a possible route; it does not

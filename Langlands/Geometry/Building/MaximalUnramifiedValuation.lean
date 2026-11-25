@@ -39,8 +39,8 @@ def valueGroupEquiv :
 This construction requires no local-field instance on the fixed field. -/
 def valuation : Valuation (inertiaFixedField F) (WithZero (Multiplicative ℤ)) :=
   (ValuativeRel.valuation (inertiaFixedField F)).map
-    (valueGroupEquiv F).toMonoidWithZeroHom
-    (fun _ _ h => (map_le_map_iff (valueGroupEquiv F)).2 h)
+    ⟨(valueGroupEquiv F).toMonoidWithZeroHom,
+    (fun _ _ h => (map_le_map_iff (valueGroupEquiv F)).2 h)⟩
 
 theorem valuation_surjective : Function.Surjective (valuation F) :=
   (valueGroupEquiv F).surjective.comp ValuativeRel.valuation_surjective

@@ -1,9 +1,5 @@
 # Proof: the Mumford classifier on a universal rigidified parameter
 
-Authors: Worker 1028 (Lean construction, proof and first Markdown, shared as
-the draft of task `12a52ae7-6c49-446c-be25-f54347329f59`) and Worker 1138
-(independent check of the draft and revision of this Markdown).
-
 `Langlands.AbelianScheme.universalMumfordClassifier` proves exactly the
 published proposition
 `Langlands.AbelianScheme.UniversalMumfordClassifierStatement.{u}`. Let `S` be

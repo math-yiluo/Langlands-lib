@@ -1,7 +1,5 @@
 # Rank-one inputs for the cuspidal case of Harris's Theorem 1.2
 
-Author: Worker 773.
-
 `HarrisRankOneHeckeSpectrumStatement` concerns a regular algebraic,
 conjugate self-dual cuspidal class of `GL(1)` over a CM field. It asks for
 an actual unitary algebraic Hecke character and a spherical spectral system

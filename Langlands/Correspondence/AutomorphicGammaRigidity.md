@@ -4,7 +4,8 @@ This is an internal composition of existing actual-action results. It removes
 the supplied block shape, square-integrable blocks, real exponents and segment
 parameters from the whole smooth-dual gamma rigidity theorem. It does not prove
 the unitary classification, the generic epsilon comparison, the segment-head
-factor formula or the host associated-pair induction statement.
+factor formula or the associated-pair induction statement that it serves,
+`AssociatedSupercuspidalInductionStatement`.
 
 `unitarySupercuspidalProduct_of_generic_smoothDualGamma` starts with a supplied
 smooth representation, its genericity and unitarizability, an integral gamma
@@ -72,8 +73,8 @@ cuspidal spectral presentation. It requires that component to be irreducible and
 admissible. The cuspidal realization must have unitary central character. The
 published `Automorphic.cuspidalUnitaryLocalGenericity` and
 `Automorphic.cuspidalUnitaryLocalUnitarity` discharge genericity, for the given
-character, and unitarizability. The conclusion is the body of the host
-statement for this presentation and place. It gives a block shape and
+character, and unitarizability. The conclusion is the body of
+`AssociatedSupercuspidalInductionStatement` for this presentation and place. It gives a block shape and
 unitarizable supercuspidal blocks in universe `u`. It also gives an actual
 equivalence from the original local action to the entire normalized upper
 product induction. The second object, its local smooth-dual relation and the
@@ -88,5 +89,5 @@ with presentation, local irreducibility and admissibility of its component, and
 an actual local relative Weil map with a local constant system. All four
 substantive prerequisites must also be proved before this composition can
 support the unchanged `AssociatedSupercuspidalInductionStatement` at its four
-independent universes. This unit is a focused conditional prerequisite and
-supplies no proof of that host statement.
+independent universes. This module is a focused conditional prerequisite and
+supplies no proof of that statement.

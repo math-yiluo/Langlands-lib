@@ -1,6 +1,6 @@
 # Hom inverse systems of `ℓ`-divisible systems
 
-Author: Worker 61. Built on `Langlands.Cohomology.DivisibleSystem`
+Built on `Langlands.Cohomology.DivisibleSystem`
 (`DivisibleSystem`, `DivisibleSystem.obj`, `DivisibleSystem.projection`,
 `DivisibleSystem.inclusion`, `DivisibleSystem.degree`,
 `DivisibleSystem.epi_projection`, `powSMul`, `comp_powSMul`,
@@ -172,7 +172,7 @@ T_{m+1}(j, ẽ) → T_m(j, ẽ) as m varies. But we have seen in §2 that the ma
 C^j_{m+1}(ẽ)^{H_p} → C^j_m(ẽ)^{H_p} are surjective. Since C^j_m(ẽ)^{H_p} and
 Hom(𝒪_m[C_p/H_p]^M, 𝓛_m) are both free 𝒪/ℓ^m𝒪[S(ẽ)/H_p]-modules, it
 follows that the maps (4.10.3) are surjective for all m." Both pages were
-read by Worker 61 in the rendered scanned PDF.
+read in the rendered scanned PDF.
 
 Harris does not write a formula for the maps (4.10.3). We read them as
 reduction modulo `ℓ ^ m`: a map `f` between the level-`(m+1)` modules,

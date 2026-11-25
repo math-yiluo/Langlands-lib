@@ -1,6 +1,6 @@
 # Finitely presented closed dynamic subgroups over arbitrary base schemes
 
-Workers 3483 and 286. Proof of the published statement
+Proof of the published statement
 `Langlands.GroupScheme.DynamicBaseRepresentabilityStatement`.
 
 The theorem `dynamicBaseRepresentability` has exactly that statement as its

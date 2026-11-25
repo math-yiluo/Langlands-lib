@@ -4,7 +4,7 @@ Module `Langlands.Geometry.Building.GenericPointSharpExchange`.
 
 The published `PointSharpExchange` and `RootGroupZeroFixer` prove the point
 exchange and the unipotent-stabilizer lemma for building data over a
-nonarchimedean local field that satisfy the apartment axioms. This derived unit
+nonarchimedean local field that satisfy the apartment axioms. This module
 repeats them for arbitrary apartment data `D : KPApartmentData i ω` over any
 field `k : Type u`, with no apartment axiom. Here `i : S.toGrp ⟶ G` is a
 monomorphism into an affine group scheme `G`, and `ω : kˣ → ℝ` is arbitrary.
@@ -97,12 +97,12 @@ exchange writes `g = v w n′` with `v ∈ X_x(Φ_ν)`, `w ∈ X_x(Φ_{-ν})` an
 
 ## Provenance and scope
 
-This is a derived unit. It ports the published local-field arguments, which
+This module ports the published local-field arguments, which
 follow Kaletha–Prasad, *Bruhat–Tits Theory: A New Approach* (2023),
 Proposition 6.2.1 (printed pp. 212–214 / PDF pp. 243–245) and the range part
 of Proposition 7.3.12(1) (printed p. 250 / PDF p. 281), to apartment data
-over any field. The local versions assume the apartment axioms. This unit
+over any field. The local versions assume the apartment axioms. This module
 avoids them by deriving the ray property from opposite factor pairs. The
-Lean statements are not quoted from the source. The unit proves no
+Lean statements are not quoted from the source. The module proves no
 apartment axiom, no common-apartment property and no statement about a
 specific building.

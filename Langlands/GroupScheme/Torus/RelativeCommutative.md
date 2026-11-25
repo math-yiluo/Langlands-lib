@@ -1,7 +1,5 @@
 # Commutativity of tori over an arbitrary base
 
-Worker 701, supporting Task 6384.
-
 `RelativeTorus.IsTorus.isCommMonObj` proves that every actual group scheme
 over an arbitrary scheme satisfying `RelativeTorus.IsTorus` has a
 commutative group-object structure. No field, connectedness or affineness

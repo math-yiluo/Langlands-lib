@@ -1,8 +1,6 @@
 # Compact-picture compression families of the actual standard operator
 
-Author: Worker 1615.
-
-This module is a supporting construction for the host task proving
+This module is a supporting construction for
 `Langlands.Plancherel.ConditionalParabolicIntertwiningStatement`. It connects
 the published compact picture of actual Levi-normalized unramified induction
 with the truncation and compression identities of
@@ -154,11 +152,12 @@ descend this to the identity values in `A`.
 ## Scope and provenance
 
 The module does not construct the compact subgroup, the contracting element or
-the Iwahori contraction for the host's radicals. It does not make `b`
+the Iwahori contraction for the radicals of
+`ConditionalParabolicIntertwiningStatement`. It does not make `b`
 independent of `H`, treat values at points of `K` other than the identity, or
 treat sections not fixed by `H`. It also does not prove full convergence,
-domination, local divisibility of the denominator or the host theorem. These
-remain separate obligations. All steps are internal compositions of the
+domination, local divisibility of the denominator or that statement itself.
+These are separate obligations. All steps are internal compositions of the
 published Library declarations named above, of `StandardIntertwiningTruncation`
 and of `UnramifiedStableLimit`. No literature theorem replaces a proof.
 Waldspurger 2003, IV.1, printed pp.280–282, proves rationality by a

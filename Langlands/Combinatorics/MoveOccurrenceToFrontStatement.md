@@ -1,6 +1,6 @@
 # Moving an original occurrence to the front
 
-Worker 320's internal proposition `Langlands.Combinatorics.MoveOccurrenceToFront`
+The internal proposition `Langlands.Combinatorics.MoveOccurrenceToFront`
 describes finite transport by adjacent swaps. A permutation of `Fin r` sends a
 new position to its original label. The supplied predicate `P` holds for the
 identity permutation. Whenever the original labels currently at adjacent

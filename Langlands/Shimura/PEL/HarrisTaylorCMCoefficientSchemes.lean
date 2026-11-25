@@ -118,7 +118,7 @@ theorem cmHarrisCoefficientSchemeDiagram_map_over {i j : ℕᵒᵖ} (f : i ⟶ j
 /-- On representatives the residual action is the original inverse-right transporter. -/
 @[simp] theorem cmHarrisCoefficientSchemeDiagram_action_mk (k : ℕᵒᵖ)
     (g : U.obj.subgroup) :
-    (schemeDiagram).ρ k (QuotientGroup.mk g) =
+    ((schemeDiagram).ρ k (QuotientGroup.mk g)).asHom =
       (schemes q).map (smallCMNormalInverseArrow D U (Vcoeff k.unop) (hcoeff k.unop) g) := rfl
 
 /-- All coefficient levels project naturally to the same original coarse CM scheme. -/
@@ -148,7 +148,7 @@ theorem cmHarrisCoefficientSchemeProjection_over (k : ℕᵒᵖ) :
 /-- The original residual actions preserve these original coarse projections. -/
 @[reassoc] theorem cmHarrisCoefficientSchemeProjection_invariant (k : ℕᵒᵖ)
     (g : (groups).obj k) :
-    (schemeDiagram).ρ k g ≫ (projection).app k = (projection).app k :=
+    ((schemeDiagram).ρ k g).asHom ≫ (projection).app k = (projection).app k :=
   representedCMNormalProjection_invariant D C preservation composition unitCoherence
     associativity comparison symmetry stability square universality dualityNaturality
     polarizationStability compatibility h htor (chosen q) U (Vcoeff k.unop) (hcoeff k.unop) g
@@ -228,7 +228,7 @@ theorem cmHarrisCoefficientEtaleDiagram_coversTop (k : ℕᵒᵖ) :
 /-- The etale action retains the same inverse-right deck normalization on representatives. -/
 @[simp] theorem cmHarrisCoefficientEtaleDiagram_action_mk_left (k : ℕᵒᵖ)
     (g : U.obj.subgroup) :
-    ((etaleDiagram).ρ k (QuotientGroup.mk g)).left =
+    ((etaleDiagram).ρ k (QuotientGroup.mk g)).asHom.left =
       (schemes q).map (smallCMNormalInverseArrow D U (Vcoeff k.unop) (hcoeff k.unop) g) := rfl
 
 end Langlands.Shimura.PEL.HarrisTaylorCMWeilLevel

@@ -1,8 +1,8 @@
 # An actual central cover in semisimple rank one
 
 `Langlands.GroupScheme.RankOneCentralCoverStatement.{u}` is an internal
-prerequisite for the independent rank-one branch of root-datum existence in
-Task 7458 (`b380ca09-c2df-46c7-a982-c518769cd977`). This module defines the
+prerequisite for the rank-one branch of a proof of split reductive root-datum
+existence independent of the dynamic-Borel inputs. This module defines the
 proposition; it supplies no proof of cover existence.
 
 Let `k : Type u` be an algebraically closed field, let `G` be a connected
@@ -36,9 +36,7 @@ presentation and centrality of the full scheme-theoretic kernel via
 positive characteristic; it does not assert surjectivity on points over
 each test scheme.
 
-The formulation was proposed in Worker 799's shared draft for Task 7458
-and refined for this statement task by Worker 178. Its provenance is an
-internal reduction: the explicit matrix computation in
+Its provenance is an internal reduction: the explicit matrix computation in
 `Langlands.GroupScheme.Reductive.SpecialLinearRoots` gives the two opposite
 roots of `SL₂`; the commutative factor has trivial adjoint action; and the
 published central-isogeny nonzero-weight comparison, together with
@@ -48,10 +46,10 @@ that consumer reduction or attribute this exact proposition to a numbered
 literature result.
 
 The proposition assumes no root datum, reducedness, reflection-existence
-theorem, root-cell coordinates, or rank-one classification. An existence
-proof must meet the separate independence conditions of Task 7458,
-retained in the focused proof successor; those conditions are not
-additional hypotheses of this proposition. No independent cover proof
-has been established here. In particular, starting a classification proof
+theorem, root-cell coordinates, or rank-one classification. Its proof
+`rankOneCentralCover` in `Reductive.RankOneCentralCoverProof` meets separate
+independence conditions (it avoids the dynamic-Borel route); those
+conditions are not additional hypotheses of this proposition. No cover
+proof is given in this module. In particular, starting a classification proof
 with the assumption that the actual roots are already `±α` would not supply
 the input needed for the proposed reducedness argument.

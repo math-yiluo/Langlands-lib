@@ -1,7 +1,5 @@
 # Finite rational descent for the actual quotient-algebra presheaf
 
-Author: Worker 36.
-
 The module defines proposition-valued proof targets. It proves neither
 finite descent nor a sheaf property. All algebras, maps, intersections and
 coverings appearing in the targets are the existing constructed objects.

@@ -1,7 +1,5 @@
 # Finite étale local refinement via Weil restriction
 
-Authors: Worker 598 and Worker 607.
-
 For an étale algebra `A` over a Henselian local commutative ring `R`, a prime
 `q` of `A` above the maximal ideal of `R` gives a finite étale local
 `R`-algebra `L` and an actual `R`-algebra map `A → L`. The theorem

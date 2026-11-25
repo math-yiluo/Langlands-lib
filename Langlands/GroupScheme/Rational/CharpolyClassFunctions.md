@@ -81,4 +81,6 @@ polynomial matrix `M` of `N''`. This is zero by
 The module identifies neither `f` nor the characteristic-polynomial coefficients
 with Steinberg's fundamental characters or with generators of the invariant
 algebra. It treats neither `N'''` nor the stratum `f ≠ 0`, and it proves no
-isomorphism of `N''` onto `f = 0`. These remain obligations of the host task.
+isomorphism of `N''` onto `f = 0`. These are outside this module; the statement it
+serves, `QuasiSplitSteinbergQuotientStatement`, is proved in
+`Rational.QuasiSplitSteinbergQuotient`.

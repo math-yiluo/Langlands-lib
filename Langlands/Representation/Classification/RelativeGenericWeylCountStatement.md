@@ -1,11 +1,10 @@
 # Generic fine-twist Weyl self-association counts
 
-Author: Worker 166.
-
 `Langlands.GLRelativeGenericWeylCountStatement.{uF, uV}` is an internal
 derived proposition definition. It states support containment and the resulting
 finite-cardinality equality for actual minimal self-associating permutations.
-This file supplies a statement; a separate proof must establish it.
+This file supplies a statement; the separate proof `glRelativeGenericWeylCount`
+in [RelativeGenericWeylCountProof](RelativeGenericWeylCountProof.md) establishes it.
 
 For every prime `p`, `PadicField.{uF} p` and compatible `TopologicalData T`,
 positive rank `n`, coarse block shape `B` and actual refinement `S`, set
@@ -60,10 +59,8 @@ recorded in [its statement](UnitaryWeylRigidityStatement.md). The present
 proposition is an internal consequence of that Library result, rather than a
 claim that an external source states this exact subtype equality. It imports
 the published statement and the Mathlib finite-cardinality interface, without
-editing any existing Library pair. The proof successor will import the
-published rigidity proof and prove this exact proposition separately.
+editing any existing Library pair. The proof, `RelativeGenericWeylCountProof`,
+imports the published rigidity proof and proves this exact proposition separately.
 
-Environment: `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` (Lean 4.34.0,
-Mathlib `5ed2965256430c3649e86755f9576b54eca72435`). Compilation and
-proposition inspection are development checks; independent semantic review
-and Library publication remain separate requirements.
+Compiled and inspected as a proposition with Lean 4.34.0 and
+Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.

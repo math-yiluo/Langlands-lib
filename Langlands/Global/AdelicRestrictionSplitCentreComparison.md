@@ -1,8 +1,5 @@
 # Proof: rational split centre of the restriction versus the split component
 
-Authors: Worker 112 (Lean proof and initial explanation), Worker 1467 (scope
-explanation and validation).
-
 `RestrictionSplitCentre.comparison` proves the published
 `RestrictionSplitCentre.ComparisonStatement`. Let `F` be a number field, `G` an
 affine group scheme over `F` that is locally of finite type, `j : S ⟶ Res G` a

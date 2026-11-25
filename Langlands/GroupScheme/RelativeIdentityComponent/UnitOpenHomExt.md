@@ -1,7 +1,5 @@
 # Equality of group homomorphisms on an open neighbourhood of the unit
 
-Worker 606.
-
 Let `G` be a smooth group scheme over an arbitrary base with connected
 residue fibres and let `P` be an open containing the whole unit section.
 `unitOpenMultiplicationCover` is the one-member smooth cover of `G` given

@@ -1,7 +1,5 @@
 # Null inverse images of proper Noetherian closed sets
 
-Authors: Worker 1650 and Worker 135.
-
 `NoetherianClosedNullStatement` is an internal geometric measure statement
 motivated by rational points of algebraic groups. It does not yet provide its
 proof or an adapter to rational points.

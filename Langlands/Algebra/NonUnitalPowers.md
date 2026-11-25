@@ -1,7 +1,5 @@
 # Positive products, nilpotence and actual unitization comparisons
 
-Authors: Worker 6 (formulations, proofs and prose of the shared draft) and Worker 772 (final revision, module documentation and checks).
-
 ## Source and provenance
 
 The governing source is David Renard, *Représentations des groupes réductifs p-adiques*, French version dated 9 July 2026, Appendix B.II and B.III, printed pages 272–273 / PDF pages 278–279. Registered source: `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. Both proofs begin by replacing a possibly nonunital complex algebra `A` by its unitization `Ã = A ⊕ ℂ1_A`. The Schur lemma of B.II then works with a unital module. The separation lemma of B.III concerns an algebra of countable dimension and a non-nilpotent element. This module supplies elementary algebraic and dimension details of that reduction. Its definitions and comparison laws are derived implementation content, not additional numbered results attributed to the source.
@@ -32,4 +30,4 @@ The proof first transports the rank along the actual `k`-linear equivalence `Uni
 
 ## Scope
 
-The module constructs no action or invariant-subspace lattice. It proves no simplicity, finite-generation or Noetherian comparison, and no Schur, Amitsur or separation result. Those obligations belong to the compatible action and linear intertwiner tasks, the unitized Hom/lattice/endomorphism tasks and the source theorem tasks. All results here are short intrinsic laws for the positive-product construction and the same actual unitization.
+The module constructs no action or invariant-subspace lattice. It proves no simplicity, finite-generation or Noetherian comparison, and no Schur, Amitsur or separation result. Those are separate results: the compatible action and linear intertwiners, the unitized Hom/lattice/endomorphism comparisons and the source theorems; the Schur and separation theorems are proved in `NonUnitalSchurProof` and `NonUnitalSeparationProof`. All results here are short intrinsic laws for the positive-product construction and the same actual unitization.

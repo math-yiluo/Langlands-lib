@@ -81,6 +81,6 @@ corepresented by `B` (via `e`), and any subgroup `Γ` of `F k`.
 ## Provenance
 
 The statement is `RationalPointClosureSubgroupStatement`
-(`Absolute.RationalPointClosureStatement`, by Worker 1394). Its literature source is Milne
+(`Absolute.RationalPointClosureStatement`). Its literature source is Milne
 2017, Lemma 1.40, Theorem 1.45 and Proposition 1.26(b). All helper declarations in this
 module are internal proof infrastructure. The only external code is the copied Mathlib lemma named above.

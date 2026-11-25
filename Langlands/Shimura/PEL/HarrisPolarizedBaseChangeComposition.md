@@ -1,6 +1,6 @@
 # Composition of actual Harris polarized level pullback
 
-This derived unit constructs the actual action comparison between direct and
+This module constructs the actual action comparison between direct and
 successive pointed pullback of Harris polarized level representatives. It
 proves its geometric polarization multiplier is one, identifies its level map
 with the existing geometric Tate comparison, and obtains composition of the
@@ -157,9 +157,9 @@ new translation of a numbered literature theorem; its arithmetic conventions
 are inherited from the imported Harris constructions. The actual identity
 law and equality transports are in `HarrisPolarizedBaseChangeIdentity`.
 
-This unit concerns ambient polarized classes. Restriction to the Harris Lie,
+This module concerns ambient polarized classes. Restriction to the Harris Lie,
 determinant and dimension conditions, the moduli functor's representability,
-scheme levels and coefficient descent remain separate obligations. No
+scheme levels and coefficient descent are not treated in this module. No
 invariance of dimension under all rational isogenies is asserted. None of the
 named tensor, Picard, polarization, torsion or Weil premises is discharged
 here.

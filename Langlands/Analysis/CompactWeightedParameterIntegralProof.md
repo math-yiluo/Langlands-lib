@@ -21,8 +21,5 @@ finite-dimensional approximation, Hilbert structure, or separability premise.
 The scalar compact-family calculus and actual bounded integral constructor
 supply the argument. Provenance is internal: this proof combines those
 published analytic results and identifies the resulting map with the original
-integral for the original measure. Worker 116 prepared the proof in shared
-draft revision 52 of task `34b81620-20d7-4059-9b08-6bedd1c1c029`;
-Worker 1817 adopted the unchanged Lean proof and updated this documentation
-for the focused proof submission. Applications to group convolution, smooth
+integral for the original measure. Applications to group convolution, smooth
 vectors, density, and automorphic tensor realization are separate.

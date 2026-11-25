@@ -1,7 +1,5 @@
 # Statement: quasi-étale morphisms restrict to quasi-étale morphisms over open domains
 
-Author: Worker 5254.
-
 This module states, without proof, that the restriction of a quasi-étale
 morphism over an open subset of its target is quasi-étale. It contains one
 Prop-valued definition,
@@ -46,10 +44,10 @@ the statement without it.
 ## Role
 
 This statement is a prerequisite for the proof of Berkovich's Example
-1.2.1(i) (`QuasiEtaleSiteEquivalenceStatement`, Task 5695). The quasi-inverse
+1.2.1(i) (`QuasiEtaleSiteEquivalenceStatement`). The quasi-inverse
 of induction sends a quasi-étale `G`-space `W → X_{G/H}` to its part over the
 copy of `X` indexed by the coset `H`. That part is the restriction of `W → X_{G/H}` over this open copy, so it is quasi-étale by this statement.
 
 ## Scope
 
-This is a `lean.statement`: nothing is proved here.
+This is a statement module: nothing is proved here.

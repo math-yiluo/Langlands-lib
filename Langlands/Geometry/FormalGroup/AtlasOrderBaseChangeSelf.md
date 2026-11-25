@@ -15,7 +15,7 @@ R and its coefficient tests have universe v and complete families have
 universe v+1. E is an actual formal order action on the actual atlas X.
 No noetherian, flatness or nontriviality hypothesis is imposed.
 
-The unit combines the internal `AtlasBaseChangeSelf` comparison with
+The module combines the internal `AtlasBaseChangeSelf` comparison with
 `AtlasOrderBaseChangeAlong`. The full series for each order element are
 compared using the supplied-target chart comparison, naturality of its
 formal endomorphism along the identity test map, and equality of the chosen
@@ -23,7 +23,7 @@ source generator. No additional source theorem is asserted here; the
 localization-gluing and order-action conventions are documented in
 `BasicAtlas.md` and `AtlasOrderAction.md`.
 
-This unit concerns identity coefficient extension. It does not provide
+This module concerns identity coefficient extension. It does not provide
 successive supplied-map coherence, a specialness or height comparison,
 framing, a varying-base moduli quotient or representability.
 

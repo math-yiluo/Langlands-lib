@@ -1,7 +1,5 @@
 # Finite generation of normalized standard Jacquet modules
 
-Author: Worker 186.
-
 The closed proposition
 `Langlands.Parabolic.NormalizedJacquetFiniteGenerationStatement.{uF,uV}`
 states that the actual normalized standard Jacquet representation of a smooth,

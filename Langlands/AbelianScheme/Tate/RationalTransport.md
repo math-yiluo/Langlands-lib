@@ -1,7 +1,5 @@
 # Actual rational and adelic Tate transport along geometric paths
 
-Author: Worker 142.
-
 This module extends the actual integral path transport to rational Tate modules
 and bundles it over the existing full and away finite-adelic scalar rings and
 PEL tensor algebras. It proves the path identities, monodromy conjugation,

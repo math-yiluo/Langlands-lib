@@ -78,7 +78,7 @@ theorem contDiff_finiteLaurentEvaluation_finiteTorusExp {n : ℕ}
       simp only [finiteLaurentEvaluation_finiteTorusExp_single]
       refine contDiff_const.mul (contDiff_prod fun i _ => ?_)
       refine Complex.contDiff_exp.comp (ContDiff.mul ?_ contDiff_const)
-      exact Complex.ofRealCLM.contDiff.comp (contDiff_const.mul (contDiff_apply ℝ ℝ i))
+      exact Complex.ofRealCLM.contDiff.comp (contDiff_const.mul (contDiff_apply ℝ (fun _ ↦ ℝ) i))
 
 end Angle
 
@@ -255,7 +255,7 @@ theorem RationalFunctionUnitaryRegular.add {f g : KG}
   · change n.val _ * n'.val _ ≠ 0
     exact mul_ne_zero hn hn'
   · rw [hfmn, hgmn, div_add_div _ _ hn0 hn0']
-    simp only [map_add, map_mul]
+    simp only [RingHom.map_add, RingHom.map_mul]
 
 /-- The value of a product is the product of the values. -/
 theorem rationalUnitaryValue_mul {f g : KG}

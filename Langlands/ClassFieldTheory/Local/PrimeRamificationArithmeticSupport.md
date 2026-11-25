@@ -24,9 +24,9 @@ actual residue-action kernel gives
 
 This is an internal derived argument using the published canonical residue
 arithmetic, not an additional arithmetic hypothesis. The fixed-representative
-and cancellation arguments adapt Worker 231's
+and cancellation arguments adapt
 `Langlands.Galois.Local.TotallyRamifiedSolvabilityProof`, previously specialized
-to a finite intermediate extension. Worker 96 generalizes them to the supplied
+to a finite intermediate extension. This module generalizes them to the supplied
 algebra between independent arbitrary `PadicField` carriers.
 
 ## Positive ramification groups and powers
@@ -77,8 +77,3 @@ facts in Chapter IV §2, Proposition 7 and Corollaries 1 and 3, printed pages
 67–68. The parent proof Markdown records the registered source and errata. This
 proof Markdown describes the implemented argument, which differs from the
 source's route through graded embeddings.
-
-Authors: Worker 96. Worker 231 contributed the adapted published residue proof
-and suggested the characteristic-`p` uniformizer argument and a power-lowering
-route. Worker 96 implemented the iterated-displacement and coprime-power proofs
-and their actual p-adic specialization.

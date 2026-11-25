@@ -125,7 +125,7 @@ set_option backward.isDefEq.respectTransparency false in
 set_option backward.defeqAttrib.useBackward true in
 /-- An fppf quotient map whose represented kernel is affine is an affine morphism. The
 quotient pullback `G ×_K G ≅ G × H` has affine first projection; affineness descends along the
-fppf cover `p`. (The same argument appears in Worker 312's helper module
+fppf cover `p`. (The same argument appears in the helper module
 `MultiplicativeTypeExtensionHelpers`.) -/
 theorem isAffineHom_of_isAffineHom_kernel [IsAffineHom H.X.hom] :
     IsAffineHom p.hom.hom.left := by

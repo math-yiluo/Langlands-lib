@@ -1,10 +1,8 @@
 # Statement: a clopen diagonalizable lift over a strictly Henselian base
 
-Worker 508.
-
 `Langlands.GroupScheme.MultiplicativeTypeStrictHenselianLiftStatement.{u}` is a
 statement-only, `Prop`-valued definition of an intermediate lifting result in
-the proof of Conrad's fibral criterion. It supplies a missing prerequisite for
+the proof of Conrad's fibral criterion. It is a prerequisite for
 `MultiplicativeTypeFibralCriterionStatement`; this file contains no proof.
 
 For every commutative Henselian local ring `A` with separably closed residue

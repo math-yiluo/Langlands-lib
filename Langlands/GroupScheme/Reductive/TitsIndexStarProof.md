@@ -30,9 +30,9 @@ correction of root-datum automorphisms
 calculus (`RootDatumFaceHeight`), the continuity of the Galois action on torus
 lattices (`torusLatticeGaloisContinuity`), and the lemma
 `IsLargestSplitSubtorus.galoisFixed_character_eq_zero` of the companion module
-`Torus/LargestSplitGaloisFixed`. That lemma was written by Worker 151 and is
-submitted here together with this proof. Several steps follow the
-finite-Galois Library unit `Rational/FaceSimpleRootRestriction`, transported
+`Torus/LargestSplitGaloisFixed`. That lemma was ported together with this
+module. Several steps follow the
+finite-Galois Library module `Rational/FaceSimpleRootRestriction`, transported
 to `k_s`.
 
 ## Notation

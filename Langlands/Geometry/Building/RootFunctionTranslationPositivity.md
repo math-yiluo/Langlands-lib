@@ -1,7 +1,5 @@
 # Strict positivity from nonnegative nearby torus translations
 
-Author: Worker 200.
-
 The module defines
 `RootFunctionFamily.NonnegativeNearTranslations φ a g`: for every real
 cocharacter vector `v`, the value of `g` in character direction `a` is

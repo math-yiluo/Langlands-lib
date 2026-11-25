@@ -36,7 +36,7 @@ indexed by the empty subtype of real places at `F`.
 
 This is an internal refinement of the totally complex route in
 [`UnequalSemilocalArchimedeanReduction`](UnequalSemilocalArchimedeanReduction.md),
-coordinated with Worker 44 (Task 7053). In that module
+toward the unequal-rank semi-local functional equation. In that module
 `UnequalSemilocalArchimedeanReduction.factorization_at` applies its integrated
 factorization hypothesis only at its field argument `F`; the original hypothesis
 nevertheless quantifies over all number fields. The intended proof reuses that argument
@@ -52,8 +52,8 @@ that name), the intended final step is
 
 No proof of the statement is included. In particular the old reduction cannot simply
 be given a factorization hypothesis restricted to totally complex fields in place of its
-unrestricted one. The unrestricted entry points and tasks are unchanged. The two premises
-here, and the equal-rank and global steps toward A2, are not proved by this statement.
+unrestricted one. The unrestricted entry points are unchanged. The two premises
+here, and the equal-rank and global steps of the chain, are not proved by this statement.
 
 **Source.** J. W. Cogdell, *Analytic theory of L-functions for GL_n*, in J. Bernstein and
 S. Gelbart (eds.), *An Introduction to the Langlands Program*, Birkhäuser, 2004,

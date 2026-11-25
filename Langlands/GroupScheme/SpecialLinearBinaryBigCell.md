@@ -25,7 +25,5 @@ decomposition.
 
 The provenance is elementary matrix multiplication, the explicit binary
 inverse, the already constructed actual upper subgroup and character, and the
-published all-test affine coordinate comparisons. The reused subgroup and row
-coordinate constructions are by Worker 1369; this geometry construction is by
-Worker 669. This result does not identify the entire covariant space, prove
+published all-test affine coordinate comparisons. This result does not identify the entire covariant space, prove
 irreducibility, or prove the general Steinberg big-cell proposition.

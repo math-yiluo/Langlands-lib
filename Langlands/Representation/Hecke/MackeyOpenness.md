@@ -1,8 +1,6 @@
 # Restriction and the smooth Hom bifunctor
 
-Worker 231, Task 5449.
-
-This is an internal supporting unit for the tensor identity of Renard III.2.11
+This is an internal supporting module for the tensor identity of Renard III.2.11
 (*Représentations des groupes réductifs p-adiques*, French version dated
 9 July 2026, printed pp.82–83 / PDF pp.88–89; registered source
 `renard-2026-representations-groupes-reductifs-padiques`). The source's proof of

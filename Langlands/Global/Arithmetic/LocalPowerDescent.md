@@ -1,7 +1,5 @@
 # Global powers from local powers at almost all finite places
 
-Author: Worker 1244.
-
 This module proves the prime-power cases of Artin and Tate, *Class Field
 Theory* (2009), Chapter IX, Section 1, Theorem 1, proof parts 3–6, printed
 pp.65–66 (PDF pp.74–75). The registered source is

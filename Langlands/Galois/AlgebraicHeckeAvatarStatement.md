@@ -34,10 +34,16 @@ Elliptic Curves*, Chapter II §§2.3, 2.5 and 2.7, pp. II-10–II-12,
 II-18–II-20 and II-23–II-24. The agreement with `IsLambdaAdicRealization`
 fixes the convention that a uniformizer matches geometric Frobenius.
 Clozel 1991 §5.3, pp. 143–144, uses a central correction that can have
-nonzero weight. Task 7864 uses the avatar of this algebraic correction as
-part of its coefficient-field and twist comparison. For the rank-one
-unitary endpoint of Task 6698, the same avatar supplies the family and
-Frobenius comparison. That endpoint also asks for weight-zero purity of
+nonzero weight. In the Clozel transfer for Harris's cuspidal existence
+theorem, the avatar of this algebraic correction is part of the
+coefficient-field and twist comparison:
+`HarrisKottwitzPowerNormalizationStatement`
+(`Langlands.Galois.HarrisKottwitzPowerNormalizationStatement`) removes the
+scalar given by such an avatar (`IsUniformHeckeAvatar`), whose weight need
+not be zero. For the rank-one unitary endpoint
+`AlgebraicUnitaryHeckeCharacterRealizationStatement`
+(`Langlands.Galois.HarrisRankOneStatement`), the same avatar supplies the
+family and Frobenius comparison. That endpoint also asks for weight-zero purity of
 every conjugate of `a v`, a separate arithmetic assertion.
 
 Serre source ID `serre-abelian-l-adic-1989` (SHA-256

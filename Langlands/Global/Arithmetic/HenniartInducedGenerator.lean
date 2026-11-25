@@ -47,7 +47,7 @@ end Langlands.VirtualRepresentation.ExactGrothendieckGroup
 
 namespace Langlands.VirtualRepresentation.RelativeGlobal
 
-open Langlands.Global Langlands.Global.CompletionPadic Langlands.ClassField.Global
+open Langlands.Global Langlands.Global.CompletionPadic Langlands.ClassFieldTheory.Global
 open Langlands.Global.AdelicFunctoriality Langlands.Automorphic
 
 /-- Harris's weak automorphic induction of an `E'/F`-regular conjugate-inverse Hecke

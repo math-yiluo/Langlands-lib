@@ -1,7 +1,5 @@
 # Proof of Renard VI.4.3: the structure of A = H(G, ρ)
 
-Author: Worker 40.
-
 `Langlands.CuspidalSupport.rationalNormKernelHecke_structure` proves the published
 `Langlands.CuspidalSupport.RationalNormKernelHeckeStructureStatement.{uF, uV}`, with both
 universes arbitrary and no added hypothesis. Source: David Renard, *Représentations des

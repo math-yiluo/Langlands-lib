@@ -1,6 +1,6 @@
 # The JPSS conductor theorem for supercuspidal representations over p-adic fields
 
-Author: Worker 0 (Task 0, the coordinator of the Henniart route). This module, in
+This module, in
 namespace `Langlands.Conductor`, defines one proposition,
 `SupercuspidalPadicConductorExponentStatement`, with universe parameters `uF uV`.
 It proves nothing.
@@ -35,7 +35,7 @@ groupe linéaire*, Math. Ann. 256 (1981), 199-214** (literature ID
 **Jacquet, Piatetski-Shapiro and Shalika, *Rankin-Selberg Convolutions*,
 Amer. J. Math. 105 (1983), 367-464** (literature ID `jpss-1983-rankin-selberg`;
 the scan has one cover page, so PDF page = printed page - 365). These two
-results are not used in the statement. They are the planned proof route, see
+results are not used in the statement. They are the proof route sketched in
 "Proof plan" below.
 
 - **Theorem (2.7)(ii), printed pages 390-391 (PDF pages 25-26).** `π` and
@@ -150,8 +150,11 @@ the class of supercuspidal generic representations, never leaves the class.
 
 ## Proof plan
 
-This module proves nothing. A separate `lean.proof@1` task is planned for this
-statement. The intended route, which that task must still check, is:
+This module proves nothing. The theorem
+`Langlands.Conductor.supercuspidalPadicConductorExponent`, in
+[`SupercuspidalPadicConductorExponentProof`](SupercuspidalPadicConductorExponentProof.md),
+proves the statement; that page describes the proof as carried out. The route
+sketched for it is:
 
 - **Rank one** (`n = 0`). `Conductor.conductorExponent_rankOne_of_localTate`
   (module `Langlands.Representation.Conductor.RankOneTateReduction`) gives the

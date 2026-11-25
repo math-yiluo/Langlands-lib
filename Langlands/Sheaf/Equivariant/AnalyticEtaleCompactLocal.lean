@@ -93,7 +93,7 @@ theorem exists_openSubgroup_twisted_restriction_eq
     (hs : IsDiscreteSection F b (F.map f.op s)) :
     ∃ M : OpenSubgroup G,
       (∀ g ∈ M, ∀ y ∈ Set.range (localizedSpaceFunctor.map (Hom.left f)),
-        localizedSpaceFunctor.map (ρ g).hom y ∈
+        localizedSpaceFunctor.map (ρ g).asIso.hom y ∈
           Set.range (localizedSpaceFunctor.map (Hom.left f))) ∧
       ∀ g ∈ M, F.map f.op (actionRepresentation F (baseAction etale ρ) g s) =
         F.map f.op s := by
@@ -103,28 +103,28 @@ theorem exists_openSubgroup_twisted_restriction_eq
   · intro g hg y hy
     obtain ⟨z, rfl⟩ := hy
     obtain ⟨k, -, hk⟩ := hM ⟨g⁻¹, trivial⟩ (M.inv_mem hg)
-    have he : Hom.left (b k).unop ≫ Hom.left f =
-        Hom.left f ≫ (ρ g).hom := by
+    have he : Hom.left (b k).unop.asHom ≫ Hom.left f =
+        Hom.left f ≫ (ρ g).asIso.hom := by
       have he' := congrArg Hom.left hk
-      change Hom.left (b k).unop ≫ Hom.left f =
-        Hom.left f ≫ (ρ (g⁻¹)⁻¹).hom at he'
+      change Hom.left (b k).unop.asHom ≫ Hom.left f =
+        Hom.left f ≫ (ρ (g⁻¹)⁻¹).asIso.hom at he'
       simpa only [inv_inv] using he'
-    refine ⟨localizedSpaceFunctor.map (Hom.left (b k).unop) z, ?_⟩
+    refine ⟨localizedSpaceFunctor.map (Hom.left (b k).unop.asHom) z, ?_⟩
     have hcomp := congrArg (fun m : U.obj.left ⟶ X => localizedSpaceFunctor.map m z) he
-    exact (localizedSpaceFunctor.map_comp_apply (Hom.left (b k).unop)
+    exact (localizedSpaceFunctor.map_comp_apply (Hom.left (b k).unop.asHom)
       (show U.obj.left ⟶ X from Hom.left f) z).symm.trans
         (hcomp.trans (localizedSpaceFunctor.map_comp_apply
-          (show U.obj.left ⟶ X from Hom.left f) (ρ g).hom z))
+          (show U.obj.left ⟶ X from Hom.left f) (ρ g).asIso.hom z))
   · intro g hg
     obtain ⟨k, hkN, hk⟩ := hM ⟨g, trivial⟩ hg
-    change F.map f.op (F.map (baseAction etale ρ g).unop.op s) = F.map f.op s
+    change F.map f.op (F.map (baseAction etale ρ g).unop.asHom.op s) = F.map f.op s
     calc
-      F.map f.op (F.map (baseAction etale ρ g).unop.op s) =
-          F.map (f ≫ (baseAction etale ρ g).unop).op s := by
+      F.map f.op (F.map (baseAction etale ρ g).unop.asHom.op s) =
+          F.map (f ≫ (baseAction etale ρ g).unop.asHom).op s := by
         rw [op_comp, F.map_comp, CategoryTheory.comp_apply]
-      _ = F.map ((b k).unop ≫ f).op s :=
+      _ = F.map ((b k).unop.asHom ≫ f).op s :=
         congrArg (fun m : U ⟶ base etale ρ => F.map m.op s) hk.symm
-      _ = F.map (b k).unop.op (F.map f.op s) := by
+      _ = F.map (b k).unop.asHom.op (F.map f.op s) := by
         rw [op_comp, F.map_comp, CategoryTheory.comp_apply]
       _ = F.map f.op s := hN k hkN
 
@@ -139,7 +139,7 @@ theorem exists_open_invariant_etaleGlobalGermMap_eq
     (s : F.obj.obj (op (base etale ρ))) (y : localizedSpaceFunctor.obj X) :
     ∃ (W : Set (localizedSpaceFunctor.obj X)) (M : OpenSubgroup G),
       IsOpen W ∧ y ∈ W ∧
-      (∀ g ∈ M, ∀ z ∈ W, localizedSpaceFunctor.map (ρ g).hom z ∈ W) ∧
+      (∀ g ∈ M, ∀ z ∈ W, localizedSpaceFunctor.map (ρ g).asIso.hom z ∈ W) ∧
       ∀ g ∈ M, ∀ x, pointProjection L X x ∈ W →
         etaleGlobalGermMap L h
             ((TwistedOver.restriction ρ (etaleTopology X)
@@ -218,7 +218,7 @@ theorem isSmoothVector_of_isCompact_etaleUnderlyingSupport
           (ModuleCat.{max u (v + 1) uL} R)).obj F) s x
   let p : Set (localizedSpaceFunctor.obj X) → Prop := fun S =>
     ∃ (M : OpenSubgroup G) (W : Set (localizedSpaceFunctor.obj X)), S ⊆ W ∧
-      (∀ g ∈ M, ∀ y ∈ W, localizedSpaceFunctor.map (ρ g).hom y ∈ W) ∧
+      (∀ g ∈ M, ∀ y ∈ W, localizedSpaceFunctor.map (ρ g).asIso.hom y ∈ W) ∧
       ∀ g ∈ M, ∀ x, pointProjection L X x ∈ W → germEq g x
   have hp : p (etaleUnderlyingSupport L h ((ι etale ρ).op ⋙ F.obj) s) := by
     refine hs.induction_on ?_ ?_ ?_ ?_

@@ -1,7 +1,5 @@
 # Restricting a strict-test representation to a rational domain
 
-Author: Worker 1010.
-
 Fix a normed field K with ultrametric absolute value and presented strict
 affinoid algebras P and Q over K. Write `M(P)` for the Banach spectrum of P.
 

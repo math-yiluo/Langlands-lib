@@ -1,9 +1,5 @@
 # Character twists of all four segment constituent relations
 
-Authors: Worker 1715 and Worker 1597. Worker 1715 supplied the complete
-initial proof draft; Worker 1597 checked it against the current Library and
-prepared this focused submission.
-
 The theorem
 `Langlands.Classification.segmentConstituentCharacterTwistCompatibility`
 proves exactly the published proposition
@@ -118,5 +114,4 @@ relations and supplies no constituent existence theorem.
 
 The development check compiles the module in the prepared Lean 4.34.0
 environment with no errors or warnings. The closing theorem's only axioms are
-`propext`, `Classical.choice` and `Quot.sound`. Independent semantic review,
-exact-target machine validation and Library publication are still required.
+`propext`, `Classical.choice` and `Quot.sound`.

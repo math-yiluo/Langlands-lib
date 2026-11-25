@@ -1,7 +1,5 @@
 # Normalized induction of block factors `i(σ_1, …, σ_r)`
 
-Author: Worker 23.
-
 This module constructs the representation `i(σ_1, …, σ_r)` of `GL_n(F)`. The
 inputs are representations `σ_i` of the diagonal blocks `GL_{n_i}(F)` of an
 ordered block shape `B` with `n = n_1 + ⋯ + n_r`. The construction has two

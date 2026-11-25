@@ -34,7 +34,7 @@ annihilates the `U(L)`-module `V / R`.
 ## Provenance
 
 This is an internal statement, introduced as a prerequisite for
-`ComplexLinkedLanglandsQuotientNotLargeStatement` (Task 7064). There it reduces non-largeness
+`ComplexLinkedLanglandsQuotientNotLargeStatement`. There it reduces non-largeness
 of a Langlands quotient `I / R` to finding an element of `U(L)` that kills `I / R` but not `I`.
 
 ## Proof

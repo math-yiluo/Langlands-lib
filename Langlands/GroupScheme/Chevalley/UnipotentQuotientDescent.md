@@ -3,8 +3,7 @@
 This derived internal construction combines the published smooth homogeneous
 quotient existence theorem with `Chevalley.unipotentAffineQuotient`,
 `HomogeneousQuotient.isAffine_of_fieldExtension`, and
-`HomogeneousQuotient.exists_action_relativeDimension`. Worker 362 authored
-this pair. The closed-orbit result and geometric unipotence are explicit
+`HomogeneousQuotient.exists_action_relativeDimension`. The closed-orbit result and geometric unipotence are explicit
 inputs, not assertions proved by this module.
 
 Let `k` be any field and `K` any algebraically closed extension, with both

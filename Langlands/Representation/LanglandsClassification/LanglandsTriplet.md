@@ -1,6 +1,6 @@
 # Coroot chambers and Langlands triplets
 
-Author: Worker 6. Module `Langlands.Representation.LanglandsClassification.LanglandsTriplet`. The chambers are in namespace `Langlands.GroupScheme`; the unramified characters, their real parts and the triplet predicate are in `Langlands.Aubert.General.RepresentedParabolic`.
+Module `Langlands.Representation.LanglandsClassification.LanglandsTriplet`. The chambers are in namespace `Langlands.GroupScheme`; the unramified characters, their real parts and the triplet predicate are in `Langlands.Aubert.General.RepresentedParabolic`.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*, French edition dated 9 July 2026. The registered source ID is `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. The module uses:
 
@@ -8,7 +8,7 @@ The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 - V.3.20, printed pp.115–116 / PDF pp.121–122: the unramified characters `X(M)` and the real part `ℜ(ψ) ∈ 𝔞*_M`;
 - VII.4.1, Definition, printed p.241 / PDF p.247: Langlands triplets.
 
-This is a definition unit. Its only theorem is that the open chamber is contained in the closed one. It asserts nothing from the VII.4.1 Lemma (`PP̄`-regularity of `σ ⊗ ψ`) or from the VII.4.2 classification theorem.
+This is a definition module. Its only theorem is that the open chamber is contained in the closed one. It asserts nothing from the VII.4.1 Lemma (`PP̄`-regularity of `σ ⊗ ψ`) or from the VII.4.2 classification theorem.
 
 ## Coroot chambers (`Langlands.GroupScheme`)
 
@@ -64,4 +64,4 @@ Renard's triplet carries the representation `(σ, E)` itself. In Lean the carrie
 
 ## Scope
 
-The VII.4.1 Lemma (`σ ⊗ ψ` is `PP̄`-regular, giving an intertwining operator `J_{P̄|P}` unique up to scalar) and Theorem VII.4.2 (existence and uniqueness of the Langlands quotient) are later statement units. Independence of the chamber from the reflection data, the identification of the Lean real part with `ℜ` on `𝔞*_M`, and the decomposition `𝔞*_∅ = 𝔞*_M ⊕ (𝔞^M_∅)*` are not formalized.
+The VII.4.1 Lemma (`σ ⊗ ψ` is `PP̄`-regular, giving an intertwining operator `J_{P̄|P}` unique up to scalar) and Theorem VII.4.2 (existence and uniqueness of the Langlands quotient) are stated in separate modules (`LanglandsTripletRegularityStatement`, `LanglandsClassificationStatement`). Independence of the chamber from the reflection data, the identification of the Lean real part with `ℜ` on `𝔞*_M`, and the decomposition `𝔞*_∅ = 𝔞*_M ⊕ (𝔞^M_∅)*` are not formalized.

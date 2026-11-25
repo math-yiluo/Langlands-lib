@@ -1,7 +1,5 @@
 # The character-change diagonal as a singleton Levi element
 
-Author: Worker 204.
-
 This module connects the Whittaker character-change diagonal
 `d_a = diag(a^n, ..., a, 1)` (`Langlands.Whittaker.characterChangeElement a n`
 in `GL_(n+1)(F)`) and its conjugation `Langlands.Whittaker.characterChangeConj
@@ -23,8 +21,8 @@ Every statement holds for every natural number `n`, including `n = 0`.
 
 ## Provenance
 
-Internal. `characterChangeLevi` is the Levi element prescribed by the task
-contract (task 15b0c237, revision 2, item 6). The theorems are direct
+Internal. `characterChangeLevi` is the singleton Levi element corresponding to
+`d_a`. The theorems are direct
 computations from the Library definitions named below: both `d_a` and the
 block diagonal matrix of `characterChangeLevi a n` are the diagonal matrix
 with entries `a^(n-i)`; both conjugations are conjugation by that matrix; and
@@ -42,7 +40,7 @@ with `t_i = a^(n-i)` the root quotient `|t_i| / |t_j|` for `i < j` is
 
 ## Theorems
 
-Character change (contract item 6), for every field `F`, `a : Fˣ` and `n`:
+Character change, for every field `F`, `a : Fˣ` and `n`:
 
 - `leviEmbedding_characterChangeLevi a n :
   (singletons (n + 1)).leviEmbedding F (characterChangeLevi a n) =
@@ -58,7 +56,7 @@ Character change (contract item 6), for every field `F`, `a : Fˣ` and `n`:
   `leviAction_apply_val`, the previous theorem,
   `upperUnipotentEquivRadical_apply_val` and `characterChangeConj_val`.
 
-Modulus (second formula of contract item 7), for every prime `p` with
+Modulus, for every prime `p` with
 `[Fact p.Prime]`, every `F : PadicField.{uF} p` in an arbitrary carrier
 universe, every `T : F.TopologicalData`, `a : F.Carrierˣ` and `n`:
 

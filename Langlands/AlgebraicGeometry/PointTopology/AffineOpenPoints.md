@@ -1,6 +1,6 @@
 # Actual affine basic-open point comparisons
 
-This unit constructs the homeomorphism from actual points of a basic open
+This module constructs the homeomorphism from actual points of a basic open
 subscheme of an affine scheme to the subtype of points whose entire image
 lies in that open. It uses the existing affine evaluation topology on both
 scheme-point spaces and proves that the inclusion is an open embedding when
@@ -69,7 +69,7 @@ actual open-immersion lift, with no new presentation of points.
 topology is an open embedding. The proof transports the principal-localization
 open embedding along the same exact scheme-point factorization.
 
-This unit uses the separately staged `SchemePoints` and `Localization` pairs
+This module uses the separate modules `SchemePoints` and `Localization`
 unchanged. It establishes the basic-open construction, not the general affine
 open or nonaffine chart-gluing theorem. Localness is still required at the
 later open-cover step, and the other conclusions of Proposition 3.1 remain

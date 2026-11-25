@@ -57,7 +57,7 @@ canonical additive component. -/
 theorem mixedWhittaker_finitePlace (ℓ : W →ₗ[ℂ] ℂ)
     (hℓ : IsMixedWhittakerFunctional (r := r) ψ.complex σ π hcomm ℓ) (p : FinitePlace F)
     (ψp : Correspondence.NontrivialAdditiveCharacter (CompletionPadic.padicField p))
-    (hψp : ClassField.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent ψ p ψp)
+    (hψp : ClassFieldTheory.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent ψ p ψp)
     (a : GeneralLinear.upperUnipotent (r + 1) (FiniteCompletion F p)) (x : W) :
     ℓ (Πf (localInclusion F (r + 1) p a.val) x) =
       (FiniteWhittakerTensor.factorCharacter p ψp a : ℂ) * ℓ x := by
@@ -87,7 +87,7 @@ theorem mixedWhittaker_hasComponents {V : Type w} [AddCommGroup V] [Module ℂ V
     (ρ : Representation ℂ (FiniteAdelicGL F (r + 1)) V)
     (j : V →ₗ[ℂ] W) (hj : ∀ g x, j (ρ g x) = Πf g (j x))
     (ψp : ∀ p, Correspondence.NontrivialAdditiveCharacter (CompletionPadic.padicField p))
-    (hψp : ∀ p, ClassField.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent ψ p (ψp p)) :
+    (hψp : ∀ p, ClassFieldTheory.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent ψ p (ψp p)) :
     HasWhittakerComponents ψp ρ (ℓ.comp j) := by
   intro p a x
   exact (congrArg ℓ (hj (localInclusion F (r + 1) p a.val) x)).trans

@@ -1,7 +1,5 @@
 # Supercuspidality reflected by an actual Levi tensor
 
-Author: Worker 158.
-
 `Langlands.CuspidalSupport.PadicLeviTensorSupercuspidalReflectionStatement.{uF,uW}`
 is a closed proposition definition. It states the reverse factorwise
 cuspidality implication needed by

@@ -1,4 +1,4 @@
-import Langlands.ClassField.Global.RelativeWeilTransfer
+import Langlands.ClassFieldTheory.Global.RelativeWeilTransfer
 import Langlands.Global.HeckeCharacter
 import Mathlib.Data.Matrix.Block
 import Mathlib.Data.ZMod.Basic
@@ -15,7 +15,7 @@ universe u v w
 
 namespace Langlands.TraceFormula.CyclicBlockSum
 
-open NumberField Langlands.ClassField.Global Langlands.Global
+open NumberField Langlands.ClassFieldTheory.Global Langlands.Global
 open scoped NumberField
 
 variable {I : Type v} [AddCommGroup I] {W : Type u} [Group W]

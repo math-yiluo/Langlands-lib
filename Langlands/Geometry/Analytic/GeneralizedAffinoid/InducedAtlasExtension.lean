@@ -72,7 +72,7 @@ theorem extendAtlasMap_equivariant {X : NormContinuousSpace K H}
       (Action.res (AffinoidFamily.{u, v} K) H.subtype).obj Y)
     (g : G) :
     atlasActionMap H hH X g ≫ extendAtlasMap H hH f =
-      extendAtlasMap H hH f ≫ (Y.ρ g).atlasMap := by
+      extendAtlasMap H hH f ≫ (Y.ρ g).asHom.atlasMap := by
   unfold extendAtlasMap
   rw [← Category.assoc, atlasComparisonInv_equivariant, Category.assoc,
     ← AffinoidFamily.Hom.atlasMap_comp, extendFamilyMap_equivariant,
@@ -137,7 +137,7 @@ theorem extendAtlasMap_indexMap {X : NormContinuousSpace K H}
       (Action.res (AffinoidFamily.{u, v} K) H.subtype).obj Y)
     (c : (atlas H X.unop hH).Index) :
     ((extendAtlasMap H hH f).indexMap c).val =
-      (Y.ρ c.val.out).indexMap (f.hom.indexMap PUnit.unit) := rfl
+      (Y.ρ c.val.out).asHom.indexMap (f.hom.indexMap PUnit.unit) := rfl
 
 /-- The atlas pullback is precisely the constructed bounded copywise composite. -/
 @[simp]
@@ -148,7 +148,7 @@ theorem extendAtlasMap_pullback {X : NormContinuousSpace K H}
     (c : (atlas H X.unop hH).Index) :
     (extendAtlasMap H hH f).pullback c =
       (f.hom.pullback PUnit.unit).comp
-        ((Y.ρ c.val.out).pullback (f.hom.indexMap PUnit.unit)) :=
+        ((Y.ρ c.val.out).asHom.pullback (f.hom.indexMap PUnit.unit)) :=
   BoundedAlgHom.ext fun _ => rfl
 
 /-- On every coset copy the continuous map applies the chosen target operator. -/
@@ -158,7 +158,7 @@ theorem extendAtlasMap_baseMap_copy {X : NormContinuousSpace K H}
       (Action.res (AffinoidFamily.{u, v} K) H.subtype).obj Y)
     (c : G ⧸ H) (x : LocalSpectrum H X.unop) :
     (extendAtlasMap H hH f).baseMap (spectrumHomeomorph H X.unop hH ⟨c, x⟩) =
-      (Y.ρ c.out).spectrumMap (f.hom.spectrumMap ⟨PUnit.unit, x⟩) := by
+      (Y.ρ c.out).asHom.spectrumMap (f.hom.spectrumMap ⟨PUnit.unit, x⟩) := by
   change (extendFamilyMap H f).spectrumMap
       ((spectrumHomeomorph H X.unop hH).symm
         (spectrumHomeomorph H X.unop hH ⟨c, x⟩)) = _
@@ -172,7 +172,7 @@ theorem extendAtlasMap_baseMap_mk {X : NormContinuousSpace K H}
       (Action.res (AffinoidFamily.{u, v} K) H.subtype).obj Y)
     (g : G) (x : LocalSpectrum H X.unop) :
     (extendAtlasMap H hH f).baseMap (TopologicalInduction.mk H g x) =
-      (Y.ρ g).spectrumMap (f.hom.spectrumMap ⟨PUnit.unit, x⟩) := by
+      (Y.ρ g).asHom.spectrumMap (f.hom.spectrumMap ⟨PUnit.unit, x⟩) := by
   have hu := congrArg
     (fun p : (localFamily H X).atlasPresentation ⟶ Y.V.atlasPresentation =>
       p.baseMap ⟨PUnit.unit, x⟩) (unitAtlasMap_extendAtlasMap H hH f)
@@ -184,7 +184,7 @@ theorem extendAtlasMap_baseMap_mk {X : NormContinuousSpace K H}
     (fun p : atlasPresentation H hH X ⟶ Y.V.atlasPresentation =>
       p.baseMap (TopologicalInduction.unit H x)) (extendAtlasMap_equivariant H hH f g)
   change (extendAtlasMap H hH f).baseMap (g • TopologicalInduction.unit H x) =
-    (Y.ρ g).spectrumMap
+    (Y.ρ g).asHom.spectrumMap
       ((extendAtlasMap H hH f).baseMap (TopologicalInduction.unit H x)) at he
   simpa only [TopologicalInduction.smul_unit, hu] using he
 

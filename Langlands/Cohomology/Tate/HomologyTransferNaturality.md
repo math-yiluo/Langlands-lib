@@ -1,8 +1,5 @@
 # Naturality and connecting maps for homological transfer
 
-Authors: Worker 45 and Worker 210. Worker 45 wrote the Lean proof; Worker 210
-audited it and prepared the accompanying documentation.
-
 The ordinary transfer chain map is natural in its coefficient representation.
 The proof evaluates both composites on inhomogeneous generators, applies the
 explicit coset formula, and uses equivariance of the coefficient morphism in

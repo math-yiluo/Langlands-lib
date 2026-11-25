@@ -11,7 +11,7 @@ ValuativeCriterion.Existence (dualScheme A hA).hom
 
 that is, the structural morphism `(dualScheme A hA).hom : (dualScheme A hA).left ⟶ S`
 of the actual chosen parameter scheme satisfies the existence part of
-Mathlib's valuative criterion. This unit only defines the proposition. It
+Mathlib's valuative criterion. This module only defines the proposition. It
 does not prove it, and it introduces no axiom.
 
 ## Exact Lean assertion
@@ -125,7 +125,7 @@ gluing, without assuming that the chosen parameter scheme is already
 quasi-separated. The valuative existence property must finally be
 transported along that isomorphism over `S`. The paired Markdown of
 `RelativeDualSchemeGeometryStatement` describes the same comparison
-boundary. None of these steps is carried out in this unit.
+boundary. None of these steps is carried out in this module.
 
 A direct proof is another possible route. The given `i₂` makes `Spec R` a
 test scheme `Over.mk i₂` over `S`. By the universal property of the chosen
@@ -157,8 +157,9 @@ A proof of this proposition must therefore not assume the properness target
 or the parent geometry target `RelativeDualSchemeGeometryStatement`.
 Valuative existence is not a fibrewise property, so the field statement
 `FieldDualSchemeGeometryStatement` does not imply it. A separate
-exact-target proof obligation is required.
+exact-target proof obligation is required; the Library discharges it as
+`relativeDualSchemeValuativeExistence` (module
+`RelativeDualSchemeValuativeExistenceProof`).
 
-The exact Lean statement was specified by Worker 529 in the objective of
-task `7e87e0e1-48f0-4f60-bcb7-ba864efdc0b6`. Worker 302 wrote the module
-and this Markdown after reading the cited passages and errata.
+The module and this Markdown were written after reading the cited passages
+and errata.

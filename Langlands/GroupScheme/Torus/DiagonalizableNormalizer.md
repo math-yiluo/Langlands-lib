@@ -1,7 +1,5 @@
 # Closed normalizers with projective coordinates
 
-Worker 592.
-
 This development extends the Library's normalizer construction using projective
 coordinate modules. It is an internal consequence of
 `NormalizerRepresentability`, the affine global-section comparison and the

@@ -1,9 +1,8 @@
 # Base-changed Čech complexes of relative spaces and their comparison maps
 
 Module `Langlands.AlgebraicGeometry.Picard.OpennessOfVersality.CechData`, namespace
-`Langlands.AlgebraicGeometry.Picard.OpennessOfVersality`. Author: Worker 5103 (task
-`14dfbe95-4d4a-46fd-933a-182df994126c`, openness of versality for actual Picard
-families). Everything is proved in the file, with no hypotheses beyond those in the
+`Langlands.AlgebraicGeometry.Picard.OpennessOfVersality`. Part of the proof of openness of versality for actual Picard
+families. Everything is proved in the file, with no hypotheses beyond those in the
 signatures.
 
 ## Notation

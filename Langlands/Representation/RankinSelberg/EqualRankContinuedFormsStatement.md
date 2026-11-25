@@ -1,9 +1,8 @@
 # Continued normalized equal-rank trilinear forms
 
-Author: Worker 488. The field-instance scope and private valuative-topology
-proof are adapted from Worker 11's `FunctionalEquationStatement`, as used in
-Worker 358's `EqualRankGammaExistenceStatement`. The target and its downstream
-role were specified by Worker 364.
+The field-instance scope and private valuative-topology
+proof are adapted from `FunctionalEquationStatement`, as used in
+`EqualRankGammaExistenceStatement`.
 
 The paired Lean file defines
 `Langlands.RankinSelberg.EqualRankContinuedFormsStatement.{uF,uV,uW}
@@ -192,8 +191,8 @@ J. A. Shalika, *Rankin–Selberg Convolutions*, American Journal of Mathematics
 `/home/taskhub/central-library/Jacquet-Piatetski-Shapiro-Shalika--Rankin-Selberg Convolutions--1983.pdf`,
 SHA256 `d9feed6388ca5acf02ecc6a8cce984871a7c28f062ff441e45a71fa2d8962245`.
 Printed pp.391 and 396 were read visually, respectively one-based PDF
-pages 26 and 31. No source erratum note was found in the checked project,
-workspace, or supplied Library `notes/errata` locations.
+pages 26 and 31. No source erratum note was found in the checked project
+or supplied Library `notes/errata` locations.
 
 Theorem 2.7(ii), at the top of printed p.391, gives the fractional ideal
 with generator `L(s) = 1/P(q^(-s))`, with `P(0)=1`, and gives the analogous

@@ -28,5 +28,3 @@ of `hcover` is 1, but any fixed positive radius would do. The orbit
 discreteness is the second half of Lemma 4.2.11. The second assertion of
 Theorem 4.2.10, about unions of facets, is not treated. The formulation is
 derived and does not refer to buildings.
-
-Author: Worker 1221.

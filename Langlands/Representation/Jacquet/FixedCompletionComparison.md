@@ -1,8 +1,6 @@
 # Fixed completion and Jacquet completion
 
-Author: Worker 1775.
-
-This derived supporting unit assembles the abstract compatible-family argument
+This derived module assembles the abstract compatible-family argument
 in David Renard, *Représentations des groupes réductifs p-adiques*, version dated
 9 July 2026, VI.9.7, printed pp.205–206 / PDF pp.211–212. Registered source:
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
@@ -44,6 +42,8 @@ commutation of compact averaging with the actual quotient intertwiner.
 The second representation has its own independent carrier universe,
 stationarity input, and pointwise bijectivity input.
 
-This unit retains the structural and stabilization inputs. It supplies neither
+This module retains the structural and stabilization inputs. It supplies neither
 their unconditional actual-parabolic proofs nor transport to actual Levi
-rational points, normalization, or either exact parent proposition.
+rational points, normalization, or either of the exact propositions
+`LeviJacquetOppositePairingStatement` (VI.9.6) and
+`LeviCompletionOppositeJacquetStatement` (VI.9.7).

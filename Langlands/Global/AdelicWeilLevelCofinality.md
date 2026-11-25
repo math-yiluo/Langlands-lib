@@ -43,6 +43,6 @@ yields continuity on the prescribed stage. Composition of
 the two literal coefficient inclusions is proved equal on actual point
 morphisms using contravariant spectrum functoriality.
 
-This unit proves cofinality and its topology consequence. Naturality of
+This module proves cofinality and its topology consequence. Naturality of
 the finite-level Weil homeomorphisms and assembly of the full adelic
 comparison remain separate obligations.

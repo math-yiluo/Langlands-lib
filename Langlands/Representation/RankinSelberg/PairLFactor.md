@@ -1,6 +1,6 @@
 # The L-factor of a pair
 
-Worker 31 defines the L-polynomial and the L-factor `L(s, π × σ)` of a pair
+This module defines the L-polynomial and the L-factor `L(s, π × σ)` of a pair
 `π` on `GL_(r+1)(F)`, `σ` on `GL_(n+1)(F)` for every pair of ranks with
 `n ≤ r`, one relation covering equal and unequal rank. The source is Theorem
 2.7(ii) of Jacquet, Piatetski-Shapiro and Shalika, *Rankin–Selberg
@@ -10,10 +10,11 @@ as `jpss-1983-rankin-selberg`, SHA-256
 `d9feed6388ca5acf02ecc6a8cce984871a7c28f062ff441e45a71fa2d8962245`.
 
 The module builds on the published `LocalFactor`, which treats one block
-`(j, k)` at a time. Its own `AnalyticBridge` and `TwistInvariance`, submitted
-with it, are imported. Nothing analytic is proved. The L-factor is built only
-from a proof that its L-polynomial exists, and that existence is derived from
-Worker 11's unproved analytic statements.
+`(j, k)` at a time. Its own `AnalyticBridge` and `TwistInvariance`, ported
+together with this module, are imported. Nothing analytic is proved. The
+L-factor is built only from a proof that its L-polynomial exists, and that
+existence is derived from the analytic statements of `AnalyticStatement`,
+which are hypotheses here.
 
 ## Whittaker functions of quotients
 
@@ -56,7 +57,7 @@ pair, `unequalRankZetaValuesAt j k hr` takes `π` on `GL_(r+1)` and a proof
 - `unequalRankZetaValuesAt_eq_of_equiv`: it is unchanged under
   equivalences.
 
-It is the intrinsic counterpart of Worker 11's per-functional
+It is the intrinsic counterpart of the per-functional
 `unequalRankValuesAt` in `AnalyticStatement`.
 
 ## The relation
@@ -67,7 +68,7 @@ It is the intrinsic counterpart of Worker 11's per-functional
 - `ψ`: the additive character;
 - `abv`: the absolute value;
 - `μ`: a measure on the published left-unipotent quotient of `GL_(n+1)(F)`;
-- `ν`: an additive Haar measure on `F`, Worker 20's `AdditiveHaarMeasure`.
+- `ν`: an additive Haar measure on `F`, the published `AdditiveHaarMeasure`.
 
 It says the following.
 
@@ -87,7 +88,7 @@ the span of the integrals `Ψ(s, W, W'; j)`. The `n < r` case asks exactly that
 one `P` work for every `j` (JPSS rank `t = n + 1`, block index
 `j + k = r − n − 1`). The case `r = n` is the equal-rank part of the theorem.
 
-JPSS treat only `t ≤ r`. As in Worker 11's published `IsPairEpsilonFactor`,
+JPSS treat only `t ≤ r`. As in the published `IsPairEpsilonFactor`,
 whose dispatch is mirrored here, the case `r < n` is false rather than defined
 by exchanging the two representations. No exchange convention is formalized.
 `not_isPairLPolynomial_of_lt` records this case.
@@ -137,7 +138,7 @@ namespace.
   L-polynomials.
 - `isPairLPolynomial_twist`, `pairLPolynomialExists_twist_iff` and
   `pairLFactor_twist`: the pair `(π ⊗ (χ ∘ det), σ ⊗ (χ⁻¹ ∘ det))`, with the
-  published twist of Worker 4, has the same L-polynomial and factor as
+  published twist, has the same L-polynomial and factor as
   `(π, σ)`. They rest on `TwistInvariance`.
 - `isPairLPolynomial_smul_measure`: replacing `μ` by `c • μ` with
   `0 < c < ∞` does not change the relation. It assumes `ν` σ-finite and
@@ -167,13 +168,14 @@ that this is the normalized generator of `LocalFactor`'s
 `dualEqualRankZetaValues`, and of `dualUnequalRankZetaValues` of every block.
 
 JPSS note on page 386 that for irreducible `π`, `π^ι` is equivalent to the
-contragredient `π̃` (Gelfand–Kazhdan). That identification is not formalized.
+contragredient `π̃` (Gelfand–Kazhdan). That identification is not formalized
+here.
 The dual pair here is the inverse-transpose pullback, not the contragredient.
 
 ## Existence from the p-adic statements
 
-Worker 11's p-adic statements in `AnalyticStatement` are hypotheses here, not
-proved. In both theorems, `F` is a p-adic field with topological data `T`, and
+The p-adic statements in `AnalyticStatement` are hypotheses here; this module
+does not prove them. In both theorems, `F` is a p-adic field with topological data `T`, and
 `q = T.residueCardinality`, `abv = normalizedAbsoluteValue T`.
 The theorems quantify over every additive character `ψ` and every quotient
 measure `μ` compatible (published `IsCompatible`) with `generalLinearHaar` and
@@ -188,7 +190,7 @@ for the standard and the inverse standard character.
   the common-generator statement for `n, r`, and
   `UnequalRankAnalyticStatement` for every block with `r = n + (j + k + 1)`.
   From these it derives `PairLPolynomialExists`. Nonzero functionals come from
-  `IsOfWhittakerType.exists_ne_zero`. The common generator of Worker 11's
+  `IsOfWhittakerType.exists_ne_zero`. The common generator of the
   per-functional block values is then the common generator of the intrinsic
   block zeta values. That step uses
   `UnequalRankAnalyticConclusion.zetaValues_eq` of `AnalyticBridge`, block by

@@ -50,7 +50,7 @@ The provenance is internal. All group schemes and maps are the existing
 affine restrictions of the actual SLₙ and additive constructions; the new
 point comparison composes existing canonical equivalences. The only
 generation input is the proved scalar-transvection result over the field
-`E`. This unit does not compare dynamic or parabolic-radical subgroups under
+`E`. This module does not compare dynamic or parabolic-radical subgroups under
 restriction, identify these coordinate-root maps with arbitrary relative-root
 subgroup functors, classify general factors, or prove the unrestricted local
 Kneser–Tits statement.

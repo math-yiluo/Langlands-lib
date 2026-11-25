@@ -1,11 +1,9 @@
 # Renard A.III.1: endomorphism-localization proofs
 
-Worker 709, 31 October 2026, under whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857` revision 2. This note records five
-independently accepted and published proof aggregates over the actual
+This note, dated 31 October 2026, records five published proof aggregates over the actual
 endomorphism localization. It supplements the earlier
 [C.II prerequisite audit](stable-quotients.md); that audit did not verify
-these successors. The [whole-book ledger](coverage.md) retains the rest of
+these later proofs. The [whole-book ledger](coverage.md) retains the rest of
 Appendix A and every other unassigned assertion.
 
 ## Source and reading
@@ -13,10 +11,10 @@ Appendix A and every other unassigned assertion.
 The governing original is David Renard, *Représentations des groupes
 réductifs p-adiques*, French version dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`. The original file is
-`/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`,
+`central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`,
 SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 709 reread A.III.1, printed251–253/PDF257–259, including the universal
+A.III.1, printed251–253/PDF257–259, was reread, including the universal
 problem, uniqueness discussion, example 5, subsequent unnumbered lemma,
 converse paragraph and corollary. PDF259 was also visually inspected.
 The nonunital conventions on printed6/PDF12 were read previously.
@@ -131,25 +129,21 @@ nondegeneracy is assumed. In the field specialization, `IsScalarTower k B B`
 and `SMulCommClass k B B` retain both multiplication-bilinearity requirements
 on B. The coefficient, algebra, source and target universes are independent.
 
-## Verified acceptance and publication
+## In the Library
 
-The following proof candidates have unqualified independent approval and
-accepted `lean.proof@1` receipts containing `lake-build`, `exact-target`,
-`unchanged-statement` and `frozen-inputs`. Their integrations also passed fresh
-build validation. Worker 709 read each complete independent report and checked
-the publication bindings and actual file hashes. The frozen proof pairs,
-their publication trees, current Library commit
-`a471b56846d22482cc30a47a96315f2d487b8c01`, and workspace copies agree.
-Every imported project Lean/Markdown pair, including each target, also agrees
-with its proof's public base. No unchanged proof was rebuilt for this note.
+Each proof below was checked by a Lake build against the exact target, with the
+statement and its inputs unchanged. The proof pairs and the Library at commit
+`a471b56846d22482cc30a47a96315f2d487b8c01` were checked to agree, and every
+imported project Lean/Markdown pair, including each target, agrees with its
+proof's first published base. No unchanged proof was rebuilt for this note.
 
-| Proof | Accepted candidate / reviewer | Exact machine receipt | Publication commit |
-| --- | --- | --- | --- |
-| Kernel and exhaustion | `16d1ce28-f650-452d-8a80-7fd08a520767`, Reviewer 4213 | `b37533f9-3c75-49cd-b22f-291c735d02a5` | `b7a6ea71635c439ae131d5b451e5f403e32dc1c7` |
-| Quotient comparison | `f5dd5021-396f-4933-836d-76a3354f5cf3`, Reviewer 4274 | `a090d885-748d-4975-82d9-7a576c854439` | `a781b405546498b2d765aa36bf30e49c1aeb32a3` |
-| Extension converse | `8dd4f877-5fc5-407c-87bc-51f660989fcc`, Reviewer 4198 | `20e5064d-5320-4061-9dec-72b4e2a13ca0` | `61f87bbe6fe6e5ffe1387e9640956e5d8d8c9fc5` |
-| Surjective-map corollary | `1c68f675-5a9a-4b5f-8f21-eadfd4fccc69`, Reviewer 4284 | `2363ee8b-83d1-4e40-9ef4-91e2775fd71f` | `a781b405546498b2d765aa36bf30e49c1aeb32a3` |
-| B-linear universal property | `4dc553b2-1a4a-4dca-b947-606cbc6f77b3`, Reviewer 4353 | `72139ae4-9f3c-4670-b787-65f54dee5424` | `4e6ed28ccc687ea7e0123318bc2516e1f4b79d11` |
+| Proof | First appeared at Library commit |
+| --- | --- |
+| Kernel and exhaustion | `b7a6ea71635c439ae131d5b451e5f403e32dc1c7` |
+| Quotient comparison | `a781b405546498b2d765aa36bf30e49c1aeb32a3` |
+| Extension converse | `61f87bbe6fe6e5ffe1387e9640956e5d8d8c9fc5` |
+| Surjective-map corollary | `a781b405546498b2d765aa36bf30e49c1aeb32a3` |
+| B-linear universal property | `4e6ed28ccc687ea7e0123318bc2516e1f4b79d11` |
 
 This is documentation of those published declarations. The categorical
 comparison that transports the chosen lifted localization arrow through the
@@ -158,7 +152,7 @@ and its X-action with `E.localizedEnd`, is now published together with
 Prop-valued initiality statements; see the
 [A.III canonical-arrow section](universal-representability-progress.md#published-chosen-endomorphism-canonical-arrow-comparison).
 That section also records their published exact proof.
-The 4 November 2026 clarification under task revision 3 in the
+The 4 November 2026 clarification in the
 [A.III source map](universal-representability-progress.md#existing-exact-localization-functor-and-internal-comparisons)
 credits Mathlib's existing exact localization functor and distinguishes
 its Shrink model and target category from the project's chosen objects.
@@ -169,5 +163,5 @@ Representability, the remaining examples and other A.III assertions retain
 their separate obligations. The
 [C.II audit](stable-quotients.md) separately records the internal
 stable-ideal finite-localization theorem; its source-facing nonunital
-Noetherian and finite-type convention comparison remains open. Existing task
-ownership and the general whole-book scope are unchanged.
+Noetherian and finite-type convention comparison remains open. The general
+whole-book scope is unchanged.

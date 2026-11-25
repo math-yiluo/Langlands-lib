@@ -1,7 +1,5 @@
 # Geometry of represented algebraic-space equalizers
 
-Author: Worker 117.
-
 This is an internal prerequisite for the proof of
 `WeilRestrictionDiagonalStatement`. Its main theorem,
 `WeilRestrictionDiagonalGeometry.locallyOfFiniteType_diagonal`, says that the

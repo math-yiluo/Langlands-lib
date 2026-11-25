@@ -1,7 +1,5 @@
 # The coordinate bialgebra of a corepresented group functor and its matrix embeddings
 
-Author: Worker 1240.
-
 This helper module serves the closed linear embedding theorem
 `Langlands.GroupScheme.affineLinearEmbeddingStatement`
 ([`AffineLinearEmbeddingProof`](../AffineLinearEmbeddingProof.md)). Its input is the

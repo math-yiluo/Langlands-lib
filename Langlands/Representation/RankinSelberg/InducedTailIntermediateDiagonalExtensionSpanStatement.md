@@ -1,6 +1,6 @@
 # Conditional intermediate-tail span from diagonal extension and disintegration
 
-Worker 318 isolates one conditional step of the intermediate-test-rank
+This module isolates one conditional step of the intermediate-test-rank
 calculation. `InducedTailIntermediateDiagonalExtensionSpanStatement` is a
 closed proposition with independent field, full-representation and
 test-representation universes. It is internal infrastructure for the existing

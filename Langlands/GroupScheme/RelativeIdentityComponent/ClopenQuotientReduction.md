@@ -1,7 +1,5 @@
 # Clopen subgroup quotients from separated etale space schemehood
 
-Worker 801.
-
 `clopenQuotient_of_separatedEtaleScheme` reduces the unchanged published
 `ClopenQuotientStatement` to the general proposition
 `AlgebraicSpace.SeparatedEtaleSchemeStatement`. That proposition remains

@@ -1,7 +1,5 @@
 # The rational cyclic weight filtration of a dynamic unipotent subgroup
 
-Author: Worker 1423.
-
 Helper module for the proof of
 `Langlands.Aubert.General.RationalPointFamily.DynamicUnipotentVectorFiltrationStatement`.
 All declarations are in namespace `Langlands.GroupScheme.Dynamic.GradedCoordinates`.

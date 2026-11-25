@@ -1,10 +1,8 @@
 # A finite subalgebra agreeing with a quasi-finite algebra away from one element
 
-Author: Worker 99.
-
 This module restates Zariski's Main Theorem in a factorization form. It is
-internal infrastructure for the local finiteness part of Task 7653, which asks
-that affine analytification detect quasi-finite maps. The algebraic input is
+internal infrastructure for the local finiteness part of the statement that
+affine analytification detects quasi-finite maps. The algebraic input is
 Mathlib's `Algebra.ZariskisMainProperty.of_finiteType`, which formalizes
 Stacks Project Tag 00Q9. No external premise is introduced, and no further
 source passage is formalized.

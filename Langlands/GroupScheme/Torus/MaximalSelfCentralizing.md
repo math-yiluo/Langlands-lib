@@ -1,10 +1,9 @@
 # Self-centralizing tori are geometrically maximal
 
-This derived unit proves a maximality criterion for the actual torus inclusion
+This derived module proves a maximality criterion for the actual torus inclusion
 `j : T.toGrp ⟶ G` over any field `k`, and applies it after every field extension.
 It uses the published all-test centralizer, represented-subgroup factorization,
-and base-change comparisons. Worker 1379 suggested the criterion and its
-base-change proof route; Worker 146 implements it here.
+and base-change comparisons.
 
 ## Actual comparison isomorphism
 
@@ -63,5 +62,5 @@ connected reductive group, and does not prove general preservation of maximal
 tori under field extension. A proof of the required self-centralizer equality
 would make this criterion available for the specified split maximal torus in
 `SplitParabolicCocharacterStatement`; that equality and the remaining
-geometric parabolic classification remain separate obligations. No unproved
+geometric parabolic classification are not proved in this module. No unproved
 classification proposition is used in either proof.

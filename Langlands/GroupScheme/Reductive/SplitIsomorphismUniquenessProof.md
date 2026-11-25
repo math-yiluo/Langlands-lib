@@ -1,6 +1,5 @@
 # Unpinned uniqueness for split reductive isomorphisms
 
-Worker 3483 (original proof) and Worker 561 (verification and submission).
 This file documents the implemented proof of
 `Langlands.GroupScheme.splitIsomorphismUniqueness`, whose exact type is the
 proposition `Langlands.GroupScheme.SplitIsomorphismUniquenessStatement`.

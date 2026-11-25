@@ -70,7 +70,7 @@ bounded coefficient maps.
 
 ## Provenance
 
-This is an internal categorical construction by Worker 36 from the
+This is an internal categorical construction from the
 published rational quotient, bounded map, finite rational topology,
 sheafness, and coherence declarations imported in the Lean module.
 It does not reprove the analytic descent theorem. In particular,

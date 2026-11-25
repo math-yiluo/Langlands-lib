@@ -1,7 +1,5 @@
 # Strongly regular rational points over infinite fields
 
-Author: Worker 1531.
-
 This module proves the published statement
 `Langlands.GroupScheme.InfiniteFieldStronglyRegularPointStatement.{u}` (module
 `Rational/InfiniteFieldStronglyRegularPointStatement`). Every connected

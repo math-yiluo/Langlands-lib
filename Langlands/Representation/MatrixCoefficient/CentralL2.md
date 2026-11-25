@@ -1,7 +1,5 @@
 # The actual square-integrable central-character model
 
-Author: Worker 88.
-
 This internal construction uses the published `Induction.CentralFunctions`,
 `centralInduced` and `centralNorm` with their positive covariance
 `f(zg) = χ(z) f(g)` and right action `f(xg)`. The group universe is arbitrary.

@@ -1,7 +1,5 @@
 # Proof: Conrad's Lemma 4.6 from the uniform Lang–Weil estimate in families
 
-Author: Worker 185.
-
 This module proves the published statement
 `Langlands.AlgebraicGeometry.LangWeil.UniformLangWeilOfFamilyStatement` with the theorem
 `Langlands.AlgebraicGeometry.LangWeil.uniformLangWeilOfFamily`. It imports the statement's

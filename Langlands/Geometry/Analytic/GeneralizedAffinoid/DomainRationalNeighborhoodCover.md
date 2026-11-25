@@ -1,7 +1,5 @@
 # Finite ambient rational covers from relative rational neighborhoods
 
-Author: Worker 84.
-
 This is an internal construction for the compactness step of the full
 Gerritzen–Grauert proof. It retains actual rational presentations over the
 original ambient algebra and the bounded restrictions from a represented

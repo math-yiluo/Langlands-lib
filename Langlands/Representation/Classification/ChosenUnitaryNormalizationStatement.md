@@ -1,8 +1,5 @@
 # Square-integrability at a chosen unitary normalization
 
-Author: Worker 17. Worker 175 supplied the focused interface and the proposed
-central-character argument.
-
 `Langlands.Classification.ChosenUnitarySquareIntegrability.{uF,uV} F T`
 is a proposition definition. It states the normalization claim; it supplies
 no proof of that claim.
@@ -73,9 +70,10 @@ only with an invariant positive form is one of them. The present statement
 supplies precisely that missing conclusion, without assuming the uniqueness
 statement or identifying witness exponents by definition.
 
-## Future proof obligation
+## Proof route
 
-The following is the proposed proof route, not an implemented Lean proof:
+The following is the proof route; the Lean proof is
+`chosenUnitarySquareIntegrability` in `ChosenUnitaryNormalizationProof`:
 
 1. Extract `s` and square-integrability of `ρ_s = ν^(-s)π`. Use an existing
    Haar measure on the central quotient to extract its unitary scalar
@@ -98,7 +96,7 @@ The following is the proposed proof route, not an implemented Lean proof:
 
 Formal transport of the scalar action, the invariant-form computation,
 the scalar determinant/uniformizer calculation and the real-power
-injectivity argument remain proof obligations. No square-integrable
+injectivity argument are carried out in that proof. No square-integrable
 induction, regular exhaustion, or classification theorem is an input.
 
 ## Dependencies and retained originals

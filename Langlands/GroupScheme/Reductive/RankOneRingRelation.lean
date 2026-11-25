@@ -80,11 +80,11 @@ theorem exists_unitSum_test {S : Scheme.{u}} (Z : Over S) [IsAffine Z.left]
   · change j.left.appTop w = g (a : B) + g (b : B)
     rw [hj]
     change g (UnitSumExtension.inclusion w) = _
-    simpa only [map_add] using congrArg g hw
+    simpa only [RingHom.map_add] using congrArg g hw
   · simp only [Units.coe_map]
     rw [hj]
     change g (v : B) = 1 + g (UnitSumExtension.inclusion x) * g (a : B)
-    simpa only [map_add, map_one, map_mul] using congrArg g hv
+    simpa only [RingHom.map_add, RingHom.map_one, RingHom.map_mul] using congrArg g hv
 
 namespace WeylData
 

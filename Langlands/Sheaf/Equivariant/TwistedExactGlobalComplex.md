@@ -1,19 +1,19 @@
 # Derived global section complexes for exact abelian subcategories of twisted sheaves
 
-Author: Worker 26. This is the global (not compactly supported) counterpart of the
-section "Complexes" of Worker 26's published module
+This is the global (not compactly supported) counterpart of the
+section "Complexes" of the published module
 `Langlands.Sheaf.Equivariant.TwistedExactCompactComparison`. The proofs repeat the
 proofs given there. It uses:
 
-- `Langlands.Sheaf.Equivariant.TwistedExactGlobalComparison` (Worker 26):
+- `Langlands.Sheaf.Equivariant.TwistedExactGlobalComparison`:
   `exactGlobalSections`, `exactInvariantGlobalSections`, `exactGlobalInclusion`, their
   derived functors `exactGlobalDerived` and `exactInvariantGlobalDerived`, and the
   comparison `exactGlobalComparison`, which is `ExactBaseChange.baseChangeNatTrans` of
   `exactGlobalInclusion`;
-- `Langlands.Sheaf.Equivariant.TwistedGlobalSections` (Worker 26): `sheafSectionsModule`
+- `Langlands.Sheaf.Equivariant.TwistedGlobalSections`: `sheafSectionsModule`
   (sections over an object of a site) and `sectionsDerived` (its right derived
   functors);
-- `Langlands.Sheaf.Equivariant.TwistedExactCompactComparison` (Worker 26):
+- `Langlands.Sheaf.Equivariant.TwistedExactCompactComparison`:
   `exactRestriction` (the restriction of `incl F` to the site over `X`) and
   `isZero_exactRestriction_rightDerived` (its positive derived functors vanish);
 - `Langlands.Cohomology.DiscreteSheafDerivedComparison`: `derivedComplexMap` and

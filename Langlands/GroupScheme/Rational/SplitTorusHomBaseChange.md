@@ -1,7 +1,8 @@
 # Homomorphism descent to split tori from pointed domination
 
-Worker 1485 assembles descended coordinate characters into an actual
-homomorphism to a split torus and applies Worker 1376's character descent.
+This module assembles descended coordinate characters into an actual
+homomorphism to a split torus and applies the character descent of
+`SplitTorusCharacterDescent`.
 This internal construction uses the finite-product universal property,
 existing actual base-change comparisons and faithful field pullback.
 It cites no external assertion.

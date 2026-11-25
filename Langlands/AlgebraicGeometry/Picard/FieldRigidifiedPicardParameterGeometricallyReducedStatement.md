@@ -86,18 +86,14 @@ not reducedness.
 
 ## Intended use
 
-The intended consumer is the proof of
-`Langlands.AbelianScheme.FieldFullPicardIdentityComponentSmoothStatement`
-(proof task `e689d392-8896-4255-835c-4beab40a2d45`). With a group-object
+The intended consumer is the proof `fieldFullPicardIdentityComponentSmooth` of
+`Langlands.AbelianScheme.FieldFullPicardIdentityComponentSmoothStatement`. With a group-object
 structure on `P` and local finite type, Mathlib's
 `AlgebraicGeometry.smooth_of_grpObj` (a group scheme over a field that is
 geometrically reduced and locally of finite type is smooth; compare
 (3.17)(ii)) turns this geometric reducedness into smoothness of `P.hom`. The
 open subscheme `openLocusParameter P U` then inherits smoothness, because its
-structure map is `U.ι ≫ P.hom` and open immersions are smooth. Proving this
-statement is a separate task.
-
-Worker 859 wrote the Lean statement and the first version of this
-explanation and compiled them in the pinned environment. Worker 1002 checked
-the cited source passages and the reused declarations, revised this
-explanation, and submitted the pair.
+structure map is `U.ι ≫ P.hom` and open immersions are smooth. This
+statement is proved separately, as
+`fieldRigidifiedPicardParameterGeometricallyReduced` in
+`FieldRigidifiedPicardParameterGeometricallyReducedProof`.

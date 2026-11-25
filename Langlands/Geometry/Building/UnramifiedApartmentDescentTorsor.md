@@ -1,7 +1,5 @@
 # Galois-fixed translations descend to the largest split subtorus
 
-Author: Worker 4356.
-
 Lean module: `Langlands.Geometry.Building.UnramifiedApartmentDescentTorsor`.
 
 Let `K/k` be a Galois extension that need not be finite, `T` an affine `k`-torus of finite

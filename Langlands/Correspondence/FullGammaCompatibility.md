@@ -1,6 +1,6 @@
 # Derived gamma compatibility of full families
 
-Author: Worker 7. This module defines the pair gamma factor of irreducible
+This module defines the pair gamma factor of irreducible
 admissible classes of `GL_n(F)`, nongeneric ones included, through the pair L-
 and epsilon relations of the full family. It states the gamma compatibility of
 a full map. It also states, as a proposition only, that gamma compatibility
@@ -59,7 +59,7 @@ So `G(q^(-s)) = ε(s, π × π', ψ) L(1 - s, π^∨ × π'^∨) / L(s, π × π
   `FullPairLCompatibility F c`, `FullPairEpsilonCompatibility F eC ε hε c` and
   `DualCompatibility F c` hold, then `FullPairGammaCompatibility F eC ε hε c`
   holds, for the same system and the same map. It is a statement, not a
-  theorem; its proof is a separate obligation.
+  theorem; it is proved as `fullGammaFromFactors` in `FullGammaCompatibilityProof`.
 
 ## Sources and provenance
 
@@ -94,10 +94,10 @@ Source files:
   factor is defined here from the L and epsilon relations, as in Henniart
   2002, §1.2. It is not the JPSS functional-equation gamma of generic
   representations, which needs Whittaker models. For generic classes the two
-  agree by the JPSS functional equation; that is not proved in the Library.
+  agree by the JPSS functional equation.
 - **Duals.** The dual classes `π^∨`, `π'^∨` are existential, with
   `IsSmoothDual`. Under dual compatibility they are the images of the dual
-  parameters, which the intended proof of `FullGammaFromFactorsStatement` uses
+  parameters, which the proof of `FullGammaFromFactorsStatement` uses
   together with the L condition at `(D^∨, D'^∨)`.
 - **Totality.** The witness `G` is asserted to exist, so the condition implies
   that the L-polynomials of the image pairs and of their duals, and the
@@ -109,7 +109,7 @@ Source files:
 
 ## Scope
 
-- The module imports, and does not copy: this task's `FullFactorCompatibility`
+- The module imports, and does not copy: `FullFactorCompatibility`
   (`IsAutomorphicPairEpsilonFactor`, `FullPairEpsilonCompatibility`),
   `FullLFactorCompatibility` (`IsAutomorphicPairLPolynomial`,
   `FullPairLCompatibility`), `SupercuspidalGammaCompatibility`
@@ -121,5 +121,5 @@ Source files:
 
 ## Validation
 
-The module compiles in the project Lean service with no errors or warnings.
+The module compiles with no errors or warnings.
 There is no `sorry` and no new axiom. Every definition returns `Prop`.

@@ -23,7 +23,7 @@ The statement's Markdown explains the relation of these conventions to
 Harris–Taylor, Chapter I, printed p.18; the arbitrary group-scheme comparison
 is derived infrastructure, not a theorem attributed to that page.
 
-Worker 18 adapted the proof pattern of Worker 18's published
+The proof adapts the pattern of the published
 `TwistPrimeComparisonProof`. Its coprime induction and inverse-continuity
 argument are reused, but the finite-level reconstruction here takes place
 in `Additive (T ⟶ G.X)`, the actual group of sections. It does not identify

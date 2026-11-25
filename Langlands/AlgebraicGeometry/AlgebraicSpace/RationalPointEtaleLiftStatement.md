@@ -1,7 +1,5 @@
 # Lifting rational points of quasi-separated algebraic spaces to étale charts
 
-Author: Worker 105.
-
 This module states the lifting input that Brian Conrad, *Weil and Grothendieck
 approaches to adelic points* (December 31, 2011), uses in the proof of
 Proposition 5.4. The cited result is Knutson II.6.4. The module only states it and

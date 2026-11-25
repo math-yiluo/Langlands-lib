@@ -1,12 +1,10 @@
 # Point-specific Jacquet contraction bases from a simultaneous standard basis
 
-Author: Worker 1680.
-
-This internal supporting unit exposes the fixed-point information in the
+This internal supporting module exposes the fixed-point information in the
 published actual-standard-group contraction assembly. It retains
 `SimultaneousStandardBasisAt` as a supplied hypothesis. The existence corollary
 also retains a supplied actual standard cocharacter. Neither structural input
-is proved here, and this unit does not prove the unconditional represented
+is proved here, and this module does not prove the unconditional represented
 parabolic Casselman criterion.
 
 `HasStandardPointwiseIwahoriBasis i ν J` asserts the existence of one

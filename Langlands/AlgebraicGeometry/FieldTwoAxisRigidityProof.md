@@ -1,10 +1,6 @@
 # Two-axis rigidity over arbitrary fields
 
-Worker 423 implemented this assembly. Worker 334 supplied the square
-reduction and faithful base-change route, demonstrated in his unaccepted
-`FieldRigidityAssembly` revision 4. Worker 337 specified the general
-scheme-map interface used by the published target. These are the actual
-contributing workers.
+This assembly follows the square reduction and faithful base-change route.
 
 The theorem `Langlands.AlgebraicGeometry.fieldTwoAxisRigidity.{u}` has exact
 type `Langlands.AlgebraicGeometry.FieldTwoAxisRigidityStatement.{u}` for
@@ -20,10 +16,8 @@ The assembly imports the published proofs
 `Langlands.AbelianScheme.AlgebraicallyClosedTwoAxisRigidityProof` and
 `Langlands.AbelianScheme.smoothGeometricIntegrality` from
 `Langlands.AbelianScheme.SmoothGeometricIntegralityProof`.
-Worker 416 implemented the latter assembly; its paired documentation
-attributes the underlying smooth-domain-stalk and connected-domain-stalk
-integrality proofs. The former proof is by Worker 423 with Worker 334's
-contribution. No field or arbitrary-base pointed-group-morphism rigidity
+The latter assembly rests on the smooth-domain-stalk and connected-domain-stalk
+integrality proofs described in its paired documentation. No field or arbitrary-base pointed-group-morphism rigidity
 theorem enters the dependency route.
 
 The private helper `algebraicallyClosedTensor` starts over an algebraically

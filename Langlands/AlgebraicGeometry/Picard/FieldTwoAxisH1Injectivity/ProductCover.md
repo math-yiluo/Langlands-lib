@@ -1,7 +1,5 @@
 # Sections of a fibre product over products of affine opens
 
-Author: Worker 727.
-
 This module identifies the sections of a fibre product `P = X ×_R Y` over products of affine
 opens with tensor products of sections, for single opens and for finite families, and records
 how these identifications interact with restriction, with Čech differentials and with the two

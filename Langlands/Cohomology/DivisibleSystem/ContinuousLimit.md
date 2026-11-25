@@ -1,10 +1,10 @@
 # Inverse limit topology on limits of discrete representations
 
-Author: Worker 61. Built on the published modules
+Built on the published modules
 `Langlands.Representation.Smooth.Definitions` (`IsSmooth`,
 `IsSmoothVector`, `fixedVectors`) and
-`Langlands.Cohomology.DivisibleSystem.EtaleAdicCohomology` of Worker 61
-(`equivariantAdicCohomology`), which uses Worker 13's
+`Langlands.Cohomology.DivisibleSystem.EtaleAdicCohomology`
+(`equivariantAdicCohomology`), which uses
 `EtaleCohomologyAction.EquivariantSheaf` and
 `EtaleCohomologyAction.pullbackCohomologyFunctor`. From Mathlib it uses
 `ContRepresentation` (with `ContRepresentation.ofMonoidHom`),
@@ -173,7 +173,7 @@ an action of `G` on `X`, `q` a natural number and
 ## Provenance and interpretation
 
 Milne, *Étale Cohomology* (1980), Chapter V, §1, printed p.164 (one-based
-PDF page 178; Worker 61 read the text layer of the scanned page): "In
+PDF page 178; the text layer of the scanned page was read): "In
 particular, if `X` is connected with geometric point `x`, then the action of
 `π₁(X, x)` on `F_x = lim (F_n)_x` need not factor through a finite quotient.
 However, the action is continuous when `F_x` is given the `l`-adic
@@ -181,8 +181,8 @@ topology". Here `F = (F_n)` is an `l`-adic sheaf (p.163) and each `F_n` is
 killed by `l^n` (p.164).
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
-J. Math. Kyoto Univ. 39-2 (1999) (Worker 61 read the rendered scanned
-pages):
+J. Math. Kyoto Univ. 39-2 (1999) (the rendered scanned
+pages were read):
 
 - §3, printed p.308 (one-based PDF page 10): "More generally, we can let `𝓛`
   be any continuous `K_ℓ`-module; then `𝒜_ℓ(GJ, 𝓛, K)`, defined by analogy

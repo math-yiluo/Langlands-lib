@@ -1,8 +1,5 @@
 # Ordinary tensor cup connecting-map laws
 
-Authors: Worker 45 (Lean proof and initial exposition), Worker 210 (audit and
-exposition corrections).
-
 This proof implements exactly `Langlands.Tate.OrdinaryCupBoundaryLaws`.
 It is an internal derivation from the published actual ordinary cup and its
 signed cochain Leibniz identity, using Mathlib's actual connecting maps.

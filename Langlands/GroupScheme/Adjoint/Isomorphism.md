@@ -56,9 +56,10 @@ No global lift of `x` is assumed.
 
 ## Scope
 
-This unit constructs maps between supplied quotients and proves their
+This module constructs maps between supplied quotients and proves their
 compatibility with supplied source isomorphisms and the actual inner
 actions. It does not construct an adjoint quotient, a quasi-split model,
 a cover, or an initial local isomorphism or inner discrepancy. The
-unconditional `QuasiSplitInnerFormExistenceStatement` remains a separate
-proof obligation.
+unconditional `QuasiSplitInnerFormExistenceStatement` is not proved here; it
+is proved as `quasiSplitInnerFormExistence` in
+`Rational.QuasiSplitInnerFormExistenceProof`.

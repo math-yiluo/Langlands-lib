@@ -7,15 +7,15 @@ The module contains four **statements**, the `Prop`-valued definitions
 `CompactFixedDualRestrictionStatement` and their conjunction
 `ContragredientDistributionLemmaStatement`. It proves nothing.
 
-Worker 1222 wrote this statement unit under the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`. The Library already covers these cases of the
+The Library already covers these cases of the
 III.1.6 Lemma:
 
 - test functions on a group with an inversion-invariant Haar measure
   (`Hecke.integratedAction_smoothDualPairing`, [SmoothTranspose](../../Hecke/SmoothTranspose.md));
 - compact open `K` (`SmoothDualCompactFixedDualityStatement`, [CompactDualityStatement](CompactDualityStatement.md)).
 
-Worker 1222's candidate `a5167755` (`Hecke.ContragredientHeckeDualStatement`) gives the
+`Hecke.ContragredientHeckeDualStatement` (module
+`Langlands.Representation.Hecke.ContragredientDualModuleStatement`) gives the
 Hecke-algebra case for every t.d. group. No published statement covers the Lemma for
 compactly supported distributions `T ∈ ℰ′(G)`, its `e_K` case for compact subgroups that are
 not open, or the identification `(V*)^K ≃ (V^K)*` for such `K`.
@@ -26,7 +26,7 @@ The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French edition dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1222 read III.1.6, printed p.61 / PDF p.67:
+The passage read is III.1.6, printed p.61 / PDF p.67:
 
 > Lemme. Soit `T ∈ ℰ′(G)`. Pour tout `λ ∈ Ṽ`, pour tout `v ∈ V`, on a :
 > `(π̃(Ť) · λ)(v) = λ(π(T) · v)`. En particulier, `(π̃(e_K) · λ)(v) = λ(π(e_K) · v)` pour tout
@@ -83,10 +83,11 @@ linear form to the fixed vectors `V^K = fixedVectors ρ K` is bijective.
 ## Formalization choices
 
 - **The operators `π(T)`.** The Library has no definition of `π(T)` for `T ∈ ℰ′(G)`. As in
-  Worker 1222's III.1.3 candidate `614c7482` (`CompactDistributionActionStatement`), the
+  the III.1.3 statement `CompactDistributionActionStatement`
+  (`Langlands.Representation.Smooth.CompactDistributionActionStatements`), the
   statements characterize `π(T)` by the scalar pairings
   `m(π(T) x) = ⟨T, g ↦ m(π(g) x)⟩`. Linear forms separate the vectors of `V`, so this
-  determines `π(T)`; `614c7482` asserts that such linear maps exist. The statements hold for
+  determines `π(T)`; `CompactDistributionActionStatement` asserts that such linear maps exist. The statements hold for
   every pair `act`, `act'` with this property.
 - **`λ`.** The source's functional `λ` is `ℓ` in Lean, where `λ` is reserved.
 - **Second assertion.** `ě_K = e_K` holds because `K` is compact. Item 1 states the
@@ -116,9 +117,10 @@ For the fourth assertion, `P x = act(e_K) x` is the average of `ρ(k) x` over th
 `k ∈ K`. If `m` is `K`-invariant, `m = m ∘ P` by item 2, so `m` is determined by its restriction
 to `V^K`. Conversely, for `μ ∈ (V^K)*`, `μ ∘ P` is `K`-invariant and restricts to `μ`.
 
-## Remaining obligations
+## Proofs
 
-The proofs are a separate obligation.
+The proofs are in `Langlands.Representation.Smooth.Contragredient.CompactDistributionTransposeProof`
+(`contragredientDistributionLemma`).
 
 ## Imports
 

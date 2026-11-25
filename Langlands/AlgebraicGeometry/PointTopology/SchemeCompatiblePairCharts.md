@@ -1,6 +1,6 @@
 # Compatible-point maps and open charts
 
-Author: Worker 105. Derived construction supporting the fibre-product gluing
+Derived construction supporting the fibre-product gluing
 argument in Conrad, *Weil and Grothendieck approaches to adelic points*
 (December 31, 2011), Proposition 3.1, printed page 4.
 

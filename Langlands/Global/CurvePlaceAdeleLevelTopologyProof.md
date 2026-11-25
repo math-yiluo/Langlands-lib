@@ -1,10 +1,8 @@
 # Proof of the topology of actual discrete curve-place adelic levels
 
-Author: Worker 208.
-
 `curvePlaceAdeleLevelTopology` proves exactly
 `CurvePlaceAdeleLevelTopologyStatement` in arbitrary common universe `u`.
-It adapts Worker 208's finite-adele level topology proof to the concrete
+It adapts the finite-adele level topology proof (`FiniteAdeleLevelTopologyProof`) to the concrete
 curve-place restricted product and its actual completion factors.
 
 Restricted-product coordinate evaluations prove continuity of the

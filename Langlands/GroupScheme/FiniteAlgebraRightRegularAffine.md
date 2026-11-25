@@ -1,7 +1,5 @@
 # Affine coordinates for the inverse-right-regular representation
 
-Author: Worker 118.
-
 This internal helper module identifies the actual affine matrix of
 `FiniteAlgebraUnits.rightRegularRepresentation b` with the original
 `rightRegularUnits b R` applied to the affine unit coordinates.

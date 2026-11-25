@@ -1,6 +1,6 @@
 # Dynamic and relative root subgroups in the actual derived subgroup
 
-This internal unit is derived from the Library definitions of the dynamic
+This module is derived from the Library definitions of the dynamic
 identity-limit subgroup, relative root subgroup functors and the
 scheme-theoretic derived subgroup. Its purpose is to supply the first factor
 in lifting actual root subgroups through a simply connected derived cover.
@@ -28,5 +28,5 @@ If `d : D ⟶ G` is the supplied actual derived inclusion and `j : U ⟶ G`
 represents that root subgroup functor, `RelativeRoot.derivedLift` is the
 resulting morphism `U ⟶ D`. Its composite with `d` is exactly `j`.
 Monicity of the actual derived inclusion proves uniqueness of this factor.
-The nonzero-character premise is essential; this unit makes no assertion
+The nonzero-character premise is essential; this module makes no assertion
 for the zero character.

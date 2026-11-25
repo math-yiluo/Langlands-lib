@@ -5,7 +5,7 @@ namespace `Langlands.HarishChandraSchwartz`. It imports:
 
 - `Langlands.HarmonicAnalysis.GroupAction`: `leftFunctions` (`λ(g) f = f(g⁻¹ ·)` on `G → ℂ`)
   and `leftFunctions_apply`;
-- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.AdmissibleCoefficientSpace` (Worker 249):
+- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.AdmissibleCoefficientSpace`:
   `rightTranslateSpan`, `twoSidedTranslateSpan`, `IsRightAdmissible`, `evalFunctional`,
   `isSmoothVector_evalFunctional`, `mem_span_evalFunctional`, `orbitSpanMap`,
   `orbitSpanMap_surjective`, `isRightAdmissible_iff`; through it `Whittaker.rightTranslation`

@@ -30,11 +30,11 @@ local notation "Kᵥ" => v.adicCompletion K
 local notation "Eᵥ" => LocalBaseChangeAlgebra K L (Sum.inr v)
 local notation "Places" => FinitePlacesAbove L v
 
-local instance : Algebra Kᵥ Eᵥ := LocalBaseChangeAlgebra.algebra K L (.inr v)
+private local instance : Algebra Kᵥ Eᵥ := LocalBaseChangeAlgebra.algebra K L (.inr v)
 
-local instance {A : Type u} [CommRing A] [TopologicalSpace A] (n : ℕ) :
+private local instance {A : Type u} [CommRing A] [TopologicalSpace A] (n : ℕ) :
     MeasurableSpace (GeneralLinear n A) := borel _
-local instance {A : Type u} [CommRing A] [TopologicalSpace A] (n : ℕ) :
+private local instance {A : Type u} [CommRing A] [TopologicalSpace A] (n : ℕ) :
     BorelSpace (GeneralLinear n A) := ⟨rfl⟩
 
 omit [FiniteDimensional K L] in

@@ -1,6 +1,6 @@
 # Separation of complementary segment rows
 
-Author: Worker 1530, Task 5495. This is an internal helper module for the proof of
+This is an internal helper module for the proof of
 `SpehComplementaryIrreducibility`; it does not establish that representation
 theorem.
 
@@ -24,5 +24,6 @@ quotients.
 
 Provenance: internal elementary consequences of the published cuspidal-twist
 and segment-linkage APIs. These lemmas supply the arithmetic separation needed
-in the task's Zelevinsky straight-line argument; they do not assert the general
+in the Zelevinsky straight-line argument for `SpehComplementaryIrreducibility`;
+they do not assert the general
 irreducibility of products of representations supported on different lines.

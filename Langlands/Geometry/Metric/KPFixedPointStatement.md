@@ -90,29 +90,32 @@ instances. This explains the source-equivalent formulation by arbitrary
 groups. It imposes no topology, compactness or finiteness assumption on the
 group. The bounded orbit and fixed-point conclusions use the actual action.
 
-The printed Corollary 1.1.19 does not assume geodesic existence. A later proof
+The printed Corollary 1.1.19 does not assume geodesic existence. A proof
 that invokes Theorem 1.1.15 must discharge that missing hypothesis, for
 example by constructing geodesics from completeness and the primitive NPC
-midpoints. That construction remains a proof obligation. The statement does
+midpoints. That construction is `CompleteNPCGeodesicStatement`, proved in
+`KPCompleteNPCGeodesicProof` as `completeNPCGeodesic`. The statement does
 not assume it, nor does it assume a barycenter or a fixed point.
 
 ## Proof and release boundaries
 
 The corrections to the proof of Theorem 1.1.15 restrict a positive error to
-`ε < r` and allow the approximating errors to be nonnegative. A later proof
-must also handle radius zero and approximants attaining the infimum; the
+`ε < r` and allow the approximating errors to be nonnegative. A proof
+must also handle radius zero and approximants attaining the infimum (the
+proof in `KPBarycenterProof` does); the
 statements here impose neither `r > 0` nor failure of attainment. No numerical
 estimate from that proof is made an assumption.
 
 Proposition 1.1.20 concerns nearest-point projections and is outside this
-focused statement unit. Its corrected printed intermediate estimate and its
-zero-distance continuity argument have separate repair obligations recorded
-in the parent program's private source audit. None of those numerical
+statement module; it is stated in `KPNearestPointStatement` and proved in
+`KPNearestPointProof`. Its corrected printed intermediate estimate and its
+zero-distance continuity argument need separate repairs. None of those numerical
 estimates is asserted or used here.
 
-This module introduces no axioms and proves no major KP result. Its
-publication supplies statement targets for later independent proofs.
+This module introduces no axioms and proves no major KP result. It
+supplies statement targets for independent proofs; their conjunction
+`MetricFixedPointFoundationStatement` is proved in
+`KPMetricFixedPointFoundationProof` as `metricFixedPointFoundation`.
 Constructing a Bruhat–Tits building, proving its completeness and NPC and
 geodesic hypotheses, verifying corrected Theorem 9.2.7, and closing Bundle A
-or any release remain separate obligations of the parent program. No
-external Lean code is used.
+or any release are not part of this module. No external Lean code is used.

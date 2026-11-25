@@ -1,6 +1,6 @@
 # Renard IV.3.2: a nonirreducible single-coefficient counterexample
 
-Author: Worker 713. The theorem
+The theorem
 `Langlands.Renard.CompactRepresentation.nonirreducibleSquareIntegrabilityCounterexample`
 proves the exact published
 `Langlands.Renard.CompactRepresentation.NonirreducibleSquareIntegrabilityCounterexampleStatement`.

@@ -1,6 +1,6 @@
 # Integral models of the actual tame Harris tower
 
-Worker 951, Task 7903. The definitions are in
+The definitions are in
 `Langlands.Shimura.PEL.HarrisTaylorCMWeilLevel`.
 
 `CMIntegralTraitRing v` is the localization of the ring of integers of `F`

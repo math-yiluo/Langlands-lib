@@ -30,9 +30,9 @@ theorem stalk_normal_of_generic (P : Over (Spec (CommRingCat.of R)))
   let e := (asIso ((genericι P).stalkMap z)).commRingCatIsoToRingEquiv
   have hreg : IsRegularLocalRing
       ((pullback P.hom (Spec.algebraMap R (FractionRing R))).presheaf.stalk z) :=
-    AlgebraicGeometry.Smooth.isRegularLocalRing_stalk
+    AlgebraicGeometry.Smooth.isRegularLocalRing_stalkFLT
       (f := pullback.snd P.hom (Spec.algebraMap R (FractionRing R))) z
-  have hdom := IsRegularLocalRing.isDomain
+  have hdom := IsRegularLocalRing.isDomainFLT
     ((pullback P.hom (Spec.algebraMap R (FractionRing R))).presheaf.stalk z)
   have hufd := Langlands.CommutativeAlgebra.regularLocalFactorial _ hreg
   have hic : IsIntegrallyClosed

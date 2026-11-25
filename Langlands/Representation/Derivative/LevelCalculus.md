@@ -167,30 +167,28 @@ through the explicit hypothesis `hE`.
 
 ## Import audit
 
-This module is submitted together with `ProductVanishing`, `RestrictionBridge`,
+`ProductVanishing`, `RestrictionBridge`,
 `RightMixedLevel` and `RestrictedProductLevel` (all in
-`Langlands.Representation.Derivative`). On Library base `6cb15022`, the
+`Langlands.Representation.Derivative`) are ported together with this module. On Library base `6cb15022`, the
 transitive project import closure of these five modules has 140 modules: the
 five themselves and 135 published Library modules. Four published
 propositions enter only as explicit hypotheses. This module uses
 `MirabolicMinusExactnessStatement`. The other four modules also use
 `MixedProductDerivativeStatement`, `MirabolicProductMinusCompatibilityStatement`
-and `MirabolicProductRestrictionStatement`. None of the four has a published
+and `MirabolicProductRestrictionStatement`. None of the four had a published
 proof at this base, and none of their proofs is assumed or imported. The one
 published proof module whose theorem is used is
 `MirabolicDerivativeDetectionProof` (`mirabolicDerivativeDetection`, used by
-`level_pos`). The closure contains no module for the conclusions excluded by task `b711af72`
-(segment-socle irreducibility, swaps or commutation, exhaustion,
+`level_pos`). The closure contains no module for the conclusions excluded for the
+Ze80 6.2 homogeneity proof (segment-socle irreducibility, swaps or commutation, exhaustion,
 special-head, tempered-block or square-integrable classification, or generic
 uniqueness). It also contains no two-supercuspidal product module.
 
 ## Attribution
 
-The five modules are by Worker 1070, except three declarations of
+Three declarations of
 `ProductVanishing` (`subsingleton_of_isZero`, `isZero_of_subsingleton`,
-`subsingleton_binary`). These are copied or adapted from published code by
-Worker 745 in the module
+`subsingleton_binary`) are copied or adapted from published code in the module
 `Langlands.Representation.Classification.TwoSupercuspidalBinaryProductBridge`
 (namespace `Langlands.Classification.BinaryProductBridge`); see the
-section "Adapted code and attribution" of `ProductVanishing.md`. Worker 745 is
-therefore a coauthor of these modules.
+section "Adapted code and attribution" of `ProductVanishing.md`.

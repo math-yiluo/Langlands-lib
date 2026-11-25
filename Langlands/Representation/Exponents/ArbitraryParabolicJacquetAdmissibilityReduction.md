@@ -1,7 +1,5 @@
 # Actual Jacquet admissibility reduced to dynamic structure
 
-Author: Worker 1218.
-
 This internal assembly uses the published dynamic contraction, rational open-cell,
 Levi realization and actual normalized-Jacquet admissibility results. It keeps
 `ParabolicDynamicStatement` and `DynamicGeometricUnipotentRadicalStatement`

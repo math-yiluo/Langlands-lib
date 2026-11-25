@@ -169,11 +169,11 @@ theorem scalarRestriction_sectionsMap (F : EtaleDerivedSections.ModuleSheaf X S)
 
 /-- The ordinary scalar comparison intertwines the geometric group actions. -/
 theorem scalarRestriction_sectionsAction (F : EquivariantSheaf S ρ) (g : G) :
-    ((pullbackSectionsFunctor R ρ).obj ((scalarRestrictionFunctor φ ρ).obj F)).ρ g ≫
+    (((pullbackSectionsFunctor R ρ).obj ((scalarRestrictionFunctor φ ρ).obj F)).ρ g).asHom ≫
         (scalarRestrictionSectionsIso φ (X := X)).hom.app F.obj =
       (scalarRestrictionSectionsIso φ (X := X)).hom.app F.obj ≫
         (ModuleCat.restrictScalars.{u} φ).map
-          (((pullbackSectionsFunctor S ρ).obj F).ρ g) := by
+          (((pullbackSectionsFunctor S ρ).obj F).ρ g).asHom := by
   rw [pullbackSectionsFunctor_obj_ρ, pullbackSectionsFunctor_obj_ρ]
   dsimp only [scalarRestrictionFunctor, scalarRestrictionObj]
   have h := (scalarRestrictionSectionsIso φ (X := X)).hom.naturality (F.act g)

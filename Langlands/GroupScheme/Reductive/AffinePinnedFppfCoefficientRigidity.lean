@@ -56,27 +56,27 @@ on every local coefficient test over a scheme where the pullback is pinned. -/
 theorem pinning_coefficient_eq_one_on_local_test
     (σ : CategoryTheory.Aut M.group)
     {T : Scheme.{u}} (f : T ⟶ M.base)
-    (hpin : PreservesLocalPinning ((baseChange f).mapIso σ))
+    (hpin : PreservesLocalPinning ((baseChange f).mapIso σ.asIso))
     {s t : M.basis.support} {c : M.ring}
-    (hv : Lie.targetMapLinear σ.hom (CommRingCat.of M.ring) (M.pinning s 1).val =
+    (hv : Lie.targetMapLinear σ.asIso.hom (CommRingCat.of M.ring) (M.pinning s 1).val =
       c • (M.pinning t 1).val)
     (A : Type u) [CommRing A] [IsLocalRing A] [Algebra M.ring A]
     (a : Spec (CommRingCat.of A) ⟶ T)
     (ha : algebraBaseMap M.ring A = a ≫ f) :
     algebraMap M.ring A c = 1 := by
   obtain ⟨p, hp⟩ := hpin A a ha ha
-  have hmap : ((baseChange f).map σ.hom).hom.hom.left ≫
+  have hmap : ((baseChange f).map σ.asIso.hom).hom.hom.left ≫
       pullback.fst M.group.X.hom f =
-    pullback.fst M.group.X.hom f ≫ σ.hom.hom.hom.left := by
+    pullback.fst M.group.X.hom f ≫ σ.asIso.hom.hom.hom.left := by
     change pullback.lift _ _ _ ≫ _ = _
     exact pullback.lift_fst _ _ _
   have he := congrArg (fun k => k ≫ pullback.fst M.group.X.hom f) (hp s)
   change (M.rootVectorPoint f A a ha s ≫
-    ((baseChange f).map σ.hom).hom.hom.left) ≫ pullback.fst M.group.X.hom f =
+    ((baseChange f).map σ.asIso.hom).hom.hom.left) ≫ pullback.fst M.group.X.hom f =
       M.rootVectorPoint f A a ha (p s) ≫ pullback.fst M.group.X.hom f at he
   rw [Category.assoc, hmap, ← Category.assoc,
     rootVectorPoint_fst, rootVectorPoint_fst] at he
-  have hLie : Lie.targetMapLinear σ.hom A
+  have hLie : Lie.targetMapLinear σ.asIso.hom A
       (lieKernelMapLinear M.group (Algebra.ofId M.ring A) (M.pinning s 1).val) =
     lieKernelMapLinear M.group (Algebra.ofId M.ring A) (M.pinning (p s) 1).val := by
     apply Additive.toMul.injective
@@ -92,12 +92,12 @@ base change of that same automorphism. -/
 theorem pullComparison_baseChangeIso
     (σ : CategoryTheory.Aut M.group)
     {T U : Scheme.{u}} (f : T ⟶ M.base) (q : U ⟶ T) :
-    pullComparison ((baseChange f).mapIso σ) q =
-      (baseChange (q ≫ f)).mapIso σ := by
+    pullComparison ((baseChange f).mapIso σ.asIso) q =
+      (baseChange (q ≫ f)).mapIso σ.asIso := by
   apply Iso.ext
   simp only [pullComparison, Iso.trans_hom, Iso.symm_hom, Functor.mapIso_hom]
   have h := congrArg (fun a => a ≫ (baseChangeCompIso f q M.group).inv)
-    (baseChangeCompIso_hom_naturality f q σ.hom)
+    (baseChangeCompIso_hom_naturality f q σ.asIso.hom)
   simpa only [Category.assoc, Iso.hom_inv_id, Category.comp_id] using h.symm
 
 /-- A concrete fppf cover on which the direct base change of the original
@@ -109,13 +109,13 @@ structure DirectFppfPinningCover (M : AffinePinnedModel.{u})
   flat : Flat projection
   surjective : Surjective projection
   locallyOfFinitePresentation : LocallyOfFinitePresentation projection
-  pinning : PreservesLocalPinning ((baseChange projection).mapIso σ)
+  pinning : PreservesLocalPinning ((baseChange projection).mapIso σ.asIso)
 
 /-- Normalize the cover supplied by fppf-local pinning into a cover carrying
 the direct base change of the original automorphism. -/
 def directFppfPinningCover (M : AffinePinnedModel.{u})
     (σ : CategoryTheory.Aut M.group)
-    (hpin : IsFppfLocallyPinned ((baseChange (𝟙 M.base)).mapIso σ)) :
+    (hpin : IsFppfLocallyPinned ((baseChange (𝟙 M.base)).mapIso σ.asIso)) :
     DirectFppfPinningCover M σ := by
   classical
   let U := hpin.choose
@@ -128,20 +128,20 @@ def directFppfPinningCover (M : AffinePinnedModel.{u})
     surjective := hq.2.1
     locallyOfFinitePresentation := hq.2.2.1
     pinning := by
-      have hh : PreservesLocalPinning ((baseChange (q ≫ 𝟙 M.base)).mapIso σ) := by
+      have hh : PreservesLocalPinning ((baseChange (q ≫ 𝟙 M.base)).mapIso σ.asIso) := by
         simpa only [pullComparison_baseChangeIso] using hq.2.2.2.2.2
       exact Eq.mp (congrArg
         (fun z => PreservesLocalPinning (M := M) (N := M)
-          ((baseChange z).mapIso σ)) (Category.comp_id q)) hh
+          ((baseChange z).mapIso σ.asIso)) (Category.comp_id q)) hh
   }
 
 /-- An original unit coefficient is one if the identity pullback of the
 actual automorphism is only fppf-locally pinned. -/
 theorem pinning_unit_eq_one_of_fppfLocalPinning
     (σ : CategoryTheory.Aut M.group)
-    (hpin : IsFppfLocallyPinned ((baseChange (𝟙 M.base)).mapIso σ))
+    (hpin : IsFppfLocallyPinned ((baseChange (𝟙 M.base)).mapIso σ.asIso))
     {s t : M.basis.support} {c : M.ringˣ}
-    (hv : Lie.targetMapLinear σ.hom (CommRingCat.of M.ring) (M.pinning s 1).val =
+    (hv : Lie.targetMapLinear σ.asIso.hom (CommRingCat.of M.ring) (M.pinning s 1).val =
       (c : M.ring) • (M.pinning t 1).val) : c = 1 := by
   let C := directFppfPinningCover M σ hpin
   let : Flat C.projection := C.flat

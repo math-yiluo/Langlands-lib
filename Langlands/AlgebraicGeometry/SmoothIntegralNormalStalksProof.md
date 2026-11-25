@@ -1,7 +1,5 @@
 # Proof of normal stalks for integral smooth schemes over arbitrary fields
 
-Author: Worker 57.
-
 The exact theorem
 `Langlands.AlgebraicGeometry.smoothIntegralNormalStalks` has type
 `Langlands.AlgebraicGeometry.SmoothIntegralNormalStalksStatement.{u}`.

@@ -1,7 +1,5 @@
 # Restriction of pinned roots to a maximal split torus
 
-Author: Worker 4348.
-
 Module `Langlands.GroupScheme.Rational.CompatiblePinningRestriction`, namespace
 `Langlands.GroupScheme.GaloisCompatiblePinningData`.
 

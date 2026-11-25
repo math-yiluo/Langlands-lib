@@ -1,7 +1,5 @@
 # Bundling from multiplicative inversion
 
-Author: Worker 133.
-
 This module provides a conditional construction and reduction for the existing
 `Langlands.AbelianScheme.SourceDefinitionEquivalence`. It does not prove that
 statement without a hypothesis. The remaining geometric obligation is to show

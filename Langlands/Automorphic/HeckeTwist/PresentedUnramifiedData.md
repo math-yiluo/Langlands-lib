@@ -1,7 +1,5 @@
 # Unramified data after multiplication by any Hecke determinant character
 
-Author: Worker 5136.
-
 The Library's unramified data `D : P.UnramifiedData hS T` of a finite tensor
 presentation `P` of a nonzero finite realization `S` of `GL_{r+1}` record, at
 every finite place `v` outside a finite set `T`, that the local factor is

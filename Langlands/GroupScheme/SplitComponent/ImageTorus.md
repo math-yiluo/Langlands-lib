@@ -1,7 +1,5 @@
 # The image lattice of a homomorphism from a lattice torus
 
-Author: Worker 1178.
-
 This internal module factors a homomorphism from a lattice torus through the
 lattice torus of its image lattice.
 

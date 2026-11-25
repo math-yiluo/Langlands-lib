@@ -1,6 +1,6 @@
 # Root fixers of nearby subsets in a facet closure
 
-This internal supporting unit connects affine facet incidence to root and sharp
+This module connects affine facet incidence to root and sharp
 fixers in the supplied upper apartment. Its provenance is the existing affine
 root sign formula, the AS4 filtration comparison in `ChamberFiltration`, and the
 bounded finiteness theorem derived from the full integer-valued V6 data in

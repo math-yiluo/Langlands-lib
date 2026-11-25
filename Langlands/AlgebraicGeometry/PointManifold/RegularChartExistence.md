@@ -36,5 +36,5 @@ the global-regular-function family criterion.
 A proof must construct the local charts from algebraic standard-smooth
 or étale presentations and a justified analytic inverse or implicit
 function theorem, including the required inverse evaluation formulas.
-The proposition remains unproved until its separate proof task is
-accepted and published.
+The theorem `regularChartExistence` in `RegularChartExistenceProof`
+proves the proposition.

@@ -1,7 +1,5 @@
 # The ring idempotent for a restricted natural normal idempotent
 
-Worker 632.
-
 For a reductive group with almost-simple geometric fibres, a natural
 idempotent transformation on the group functor restricted to algebras under
 `T`, commuting with conjugation on all such algebras, determines an actual
@@ -29,4 +27,5 @@ statement.
 
 All coefficient rings and scheme tests are retained, including nonreduced
 ones and zero rings. The construction is internal. Uniqueness of the ring
-idempotent remains a separate assertion.
+idempotent is a separate assertion, proved in
+`Reductive.RelativeAlmostSimpleNormalIdempotentProof`.

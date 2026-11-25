@@ -1,6 +1,6 @@
 # Factorization through a generic subgroup closure
 
-Worker 671. This module extends `GenericSubgroupClosure` by the factorization
+This module extends `GenericSubgroupClosure` by the factorization
 property for flat sources over a Dedekind domain.
 
 Let `R` be a Dedekind domain with specified fraction field `K`, let `G` be an

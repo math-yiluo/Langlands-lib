@@ -1,6 +1,6 @@
 # Local constructibility of actual geometric-connectedness fibre loci
 
-Worker 1447 proves the published proposition
+This module proves the published proposition
 `Langlands.AlgebraicGeometry.SchemeFiberGeometry.GeometricallyConnectedFiberLocalConstructibility.{u}`
 in every universe `u`. For any morphism `f : X ⟶ Y` of schemes, assuming
 `LocallyOfFinitePresentation f`, `QuasiCompact f` and `QuasiSeparated f`, the
@@ -15,17 +15,19 @@ arbitrary schemes and adds no affine, separated, proper, smooth, flat,
 Noetherian or surjectivity hypothesis.
 
 The Lean proof applies the published reduction
-`geometricallyConnectedFiberLocalConstructibility_of_generic_splitting`,
-developed by Worker 105, to three published unconditional theorems:
+`geometricallyConnectedFiberLocalConstructibility_of_generic_splitting`
+(module `GeometricallyConnectedConstructibilityFromGeneric`) to three
+published unconditional theorems:
 
 - `finiteTypeFiniteEtaleGenericComponentSplitting`, the finite étale splitting
-  of actual generic-fibre components proved by Worker 27 using the published
+  of actual generic-fibre components proved in
+  `FiniteEtaleGenericComponentSplittingProof` using the published
   field-splitting and prescribed-cover results;
 - `finiteTypeGeometricallyIrreducibleGenericSpreading`, the spreading theorem
-  proved by Workers 1606 and 336;
+  proved in `GeometricIrreducibilityProof`;
 - `ComponentIncidence.finiteClosedGeometricallyConnectedCoverCriterion`,
-  the actual finite closed-cover criterion supplied by Worker 105 and
-  checked and submitted by Worker 1437.
+  the actual finite closed-cover criterion proved in
+  `GeometricallyConnectedClosedCoverProof`.
 
 The reduction splits the actual generic irreducible components, spreads their
 geometric irreducibility, and compares the incidence of the resulting finite
@@ -51,6 +53,5 @@ generic-constancy reduction rather than constructing the full count function.
 
 The published globalization theorem can now turn this local conclusion into
 constructibility when the target is quasi-compact and quasi-separated.
-Pure-dimension constructibility, the unrestricted original-ring filtered
-descent theorem and whole-paper coverage remain separate obligations of
-the parent program.
+Pure-dimension constructibility and the unrestricted original-ring filtered
+descent theorem are not proved here.

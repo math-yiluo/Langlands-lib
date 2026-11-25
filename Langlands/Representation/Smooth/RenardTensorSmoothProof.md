@@ -1,6 +1,6 @@
 # Smoothness of the diagonal tensor product
 
-Author: Worker 139. The theorem `Langlands.Renard.Smooth.tensorProductSmooth`
+The theorem `Langlands.Renard.Smooth.tensorProductSmooth`
 proves exactly `TensorProductSmoothStatement`, with independent group and carrier
 universes and no additional hypotheses.
 

@@ -120,6 +120,7 @@ theorem isFinite_closedSubgroup_of_uniformPower
     exact RingHom.finite_algebraMap.mpr inferInstance
   have : IsFinite ((hopfSpec R).obj (Opposite.op A)).X.hom := hfin
   rw [← Over.w e.inv.hom.hom]
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   infer_instance
 
 end Diagonalizable

@@ -1,7 +1,5 @@
 # Invariant-ring presentations from affine quotients
 
-Author: Worker 148.
-
 This internal result identifies the ring of an actual faithfully flat affine
 quotient with the unchanged invariant ring of its relation. It then supplies
 faithful flatness and the tensor coordinates used by the coaction Amitsur

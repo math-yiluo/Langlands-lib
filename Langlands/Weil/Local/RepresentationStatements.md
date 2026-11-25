@@ -1,14 +1,15 @@
 # Structure statements on the actual local Weil group
 
-Author: Worker 25. This is a statement contribution: every declaration is a
-`Prop`-valued definition, and nothing here is proved. Proofs belong to separate
-tasks.
+This is a statement module: every declaration is a
+`Prop`-valued definition, and nothing here is proved. The proofs are in
+separate modules; `Langlands.Weil.Local.RepresentationProof` proves the
+complete conjunction.
 
 `Langlands.Weil.Local.LocalWeilRepresentationStatements.{u,v}` quantifies
 over every prime `p` and every `F : PadicField.{u} p`, with an independent
 representation-carrier universe `v`. The group, inertia, geometric degree,
 projection to the absolute Galois group, unramified characters and norm are
-Worker 53's published constructions in `Langlands.Weil.Local.Assembly`. No
+the published constructions in `Langlands.Weil.Local.Assembly`. No
 group, comparison map, Frobenius lift, assembly theorem, continuity bridge or
 classification witness is an additional input. Geometric Frobenius has degree
 `+1`, and the norm is `q^(-degree)` with `q` the residue cardinality of
@@ -23,7 +24,7 @@ target takes the actual field `F`; the complete target quantifies over all
 
 | Declaration | Exact content | Source and generic counterpart |
 | --- | --- | --- |
-| `LocalWeilContinuityFor` | For every finite-dimensional complex representation `A` of `localWeilGroup F`, with the usual `moduleTopology` on its carrier: `A.IsContinuous` (continuity into the usual endomorphism topology) is equivalent to orbit continuity, to joint continuity, to open kernel on `localInertia F` and to open kernel on the whole group. Open inertia kernel is equivalent to finite inertia image together with closed inertia kernel. | Henniart 1980 §2.1 and §2.5 (opening: a continuous representation is trivial on an open subgroup of inertia); Tate (2.1). This is the actual-group form of `Langlands.Weil.RepresentationContinuity`. Worker 38's `RepresentationContinuityCompatibility` compares the bundled normed-carrier form with the `FiniteRepresentation` predicates used here. |
+| `LocalWeilContinuityFor` | For every finite-dimensional complex representation `A` of `localWeilGroup F`, with the usual `moduleTopology` on its carrier: `A.IsContinuous` (continuity into the usual endomorphism topology) is equivalent to orbit continuity, to joint continuity, to open kernel on `localInertia F` and to open kernel on the whole group. Open inertia kernel is equivalent to finite inertia image together with closed inertia kernel. | Henniart 1980 §2.1 and §2.5 (opening: a continuous representation is trivial on an open subgroup of inertia); Tate (2.1). This is the actual-group form of `Langlands.Weil.RepresentationContinuity`. `RepresentationContinuityCompatibility` compares the bundled normed-carrier form with the `FiniteRepresentation` predicates used here. |
 | `LocalWeilGaloisTypeFor` | `IsLocalGaloisType F A`, which says `A` extends along `localProjection F`, is equivalent to `A.IsContinuous ∧ A.HasFiniteImage`. A continuous finite-image representation has exactly one continuous extension to the absolute Galois group on the same carrier. | Henniart 1980 §2.1 ("de type galoisien si et seulement si son image est finie"); Tate (2.2). Actual-group form of `Langlands.Weil.FiniteImageExtension`. |
 | `LocalWeilUnramifiedCorrectionFor` | Every continuous representation has a continuous unramified representation `τ` on the same carrier. `τ` commutes with every operator of `A`, and the product `σ g = A g * τ g` is continuous, has finite image and has Galois type. | Henniart 1980 Corollary 2 of Theorem 2.2 (§2.3), with proof in §2.4–2.6 (a polynomial root of a power of Frobenius); Tate (2.2.1). General clause of `Langlands.Weil.UnramifiedReduction`. The statement is not restricted to irreducibles. |
 | `LocalWeilIrreducibleReductionFor` | An irreducible continuous representation is equivalent, by a genuine `FiniteRepresentation.Equiv`, to the twist of a continuous, irreducible, finite-image representation of Galois type by `localUnramifiedCharacter F z` for some `z : ℂˣ`. For such a representation, finite image is equivalent to finite order of its determinant. | Henniart 1980 Corollary 3 (§2.3, proof §2.4); Tate (2.2.1). Irreducible clauses of `UnramifiedReduction`. The determinant criterion is derived: some power of Frobenius acts as a scalar by Schur's lemma. |
@@ -31,7 +32,7 @@ target takes the actual field `F`; the complete target quantifies over all
 | `LocalWeilCharacterNormalizationFor` | Every continuous representation has a unique continuous character equal to its determinant. In rank one there is a unique continuous character `χ` with `A` equivalent to `characterRepresentation χ` and `χ` equal to the determinant. | Actual-group form of `Langlands.Weil.RepresentationCharacterNormalization`. The determinant equality in rank one is derived linear algebra. No correspondence assertion is included. |
 | `LocalCharacterInertiaFor` | Every continuous character `localWeilGroup F →ₜ* ℂˣ` has open kernel and finite image on actual inertia. | Rank-one consequence of the continuity family (Tate (2.1): `GL(V)` has no small subgroups). It is the inertia condition that twisting of parameters requires, for example in `openInertiaTwist`. It does not replace the full bridge. |
 | `LocalNormFaithfulnessFor` | The kernel of `localNormCharacter F` is `localInertia F`. At every element of nonzero degree, no nonzero integer power of the norm equals one. | Derived from `q ≥ 2` and the formula `q^(-degree)`; Tate (1.4.1), (1.4.6) and 4.1.3. |
-| `LocalFrobeniusHypothesesFor` | `Frobenius.NormCompatible` holds for `(localNormCharacter F).toMonoidHom`, `(localDegree F).toMonoidHom` and `q = F.canonicalTopologicalData.residueCardinality`. In addition, `CompactSpace (localDegree F).toMonoidHom.ker` holds. | This states the hypotheses of Worker 1's `FrobeniusStatements` targets and of the `WeilDeligneRepresentation.Blocks` targets in exactly the form those targets take as input. Mathematically it restates the norm formula and compactness clauses of `LocalAssemblyProperties`, together with the proved `residueCardinality_gt_one`. |
+| `LocalFrobeniusHypothesesFor` | `Frobenius.NormCompatible` holds for `(localNormCharacter F).toMonoidHom`, `(localDegree F).toMonoidHom` and `q = F.canonicalTopologicalData.residueCardinality`. In addition, `CompactSpace (localDegree F).toMonoidHom.ker` holds. | This states the hypotheses of the `FrobeniusStatements` targets and of the `WeilDeligneRepresentation.Blocks` targets in exactly the form those targets take as input. Mathematically it restates the norm formula and compactness clauses of `LocalAssemblyProperties`, together with the proved `residueCardinality_gt_one`. |
 | `LocalWeilRepresentationStatements` | The conjunction of all preceding field-specialized families, for every `p` and `F`, with independent universes `u` and `v`. | The complete interface. No conjunct is an assumed construction field. |
 
 ## Use with the generic Weil–Deligne targets
@@ -51,7 +52,7 @@ topological group. At the actual local data these inputs are supplied as follows
 - The local Weil group has the `IsTopologicalGroup` instance of the pullback
   construction.
 
-Worker 25 checked privately, without submitting the check, that these
+A private check, outside the Library, confirmed that these
 facts compile. The check confirmed the `rfl` identification of `localInertia F`
 with the degree kernel, the instance, and the derivation of
 `LocalFrobeniusHypothesesFor F` from `LocalAssemblyProperties F` and
@@ -61,7 +62,7 @@ so this file adds none.
 
 ## Original sources
 
-The originals were read by Worker 25, and the locators were re-verified on 2026-10-20.
+The originals were read directly, and the locators were re-verified on 2026-10-20.
 
 - `henniart-1980-weil-representations`: G. Henniart, *Représentations du groupe
   de Weil d'un corps local*, Enseign. Math. (2) 26 (1980), 155–172, retained PDF
@@ -115,8 +116,8 @@ or local Langlands bijection is supplied or assumed.
 
 ## Lean dependency map
 
-All imports are Lean modules of the current Library (commit
-`00f9ac4d66cfd40043d36dbe31ea364e1316cde9`); no artifact identity is imported.
+All imports are Lean modules of the Library (commit
+`00f9ac4d66cfd40043d36dbe31ea364e1316cde9`).
 The direct imports are `Langlands.Weil.Local.Parameters`,
 `Langlands.Weil.Representation.Twist` and
 `Langlands.WeilDeligne.FrobeniusStatements`. Their transitive project closure
@@ -138,8 +139,8 @@ has 28 modules. The modules whose declarations appear in the statements are:
 | `Langlands.Weil.Local.DegreeCharacters` | (unramified characters, through `Assembly`) | `f93ff5bdd74ce036c69453f9d00c879f611ae40608e0c06cbd6b25e5441ebac0` |
 | `Langlands.Weil.Local.ResidueCharacters` | (the norm character, through `Assembly`) | `8f47ed222e4b3b933bbce66918b67f14803267a2c211a1756f25d3fe4aac3833` |
 
-The local constructions are Worker 53's (parameter-definition companion task
-`503968de-16f8-4f63-ba13-b5e167e11dce`). `FrobeniusStatements` is Worker 1's
+The local constructions are those of `Langlands.Weil.Local.Assembly` and
+`Langlands.Weil.Local.Parameters`. `FrobeniusStatements` is a
 statement family; only its predicate `NormCompatible` is used, and none of its
 targets is assumed. The generic statements cited in the table
 (`RepresentationContinuity`, `UnramifiedReduction`, `FiniteImageExtension`,
@@ -154,4 +155,4 @@ at `5ed2965256430c3649e86755f9576b54eca72435`; `moduleTopology`,
 Restriction and induction along finite extensions, which use
 `extensionWeilMap` and the residue-degree rescaling of the degree, are a
 separate local family. Arithmetic factors and the LLC correspondence assertion
-belong to their existing tasks.
+are stated elsewhere.

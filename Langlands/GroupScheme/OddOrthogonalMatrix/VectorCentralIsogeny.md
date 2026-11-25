@@ -15,10 +15,11 @@ scheme-theoretic kernel, finiteness, flatness and surjectivity meanings.
 Every character in the torus image is separately shown to kill the full
 kernel on arbitrary test schemes, including nonreduced schemes.
 
-This unit uses internal root-datum and actual-group realization results.
+This module uses internal root-datum and actual-group realization results.
 The two supporting new modules compute the odd coroot parity quotient
 and construct the injective numbered root-datum morphism; their paired
 Markdown describes those proofs. The field and characteristic remain
-unrestricted. The codomain here is the identity component. Identifying
-that component with the full odd norm-one group and descending the split
-presentation remain obligations of the host task.
+unrestricted. The codomain here is the identity component. That
+component is identified with the full odd norm-one group in
+`OddOrthogonalMatrix.FullVectorCentralIsogeny`, and the split
+presentation is descended in `SimplyConnected.TypeBVectorQuotient`.

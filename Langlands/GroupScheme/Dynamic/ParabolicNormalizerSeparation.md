@@ -1,8 +1,6 @@
 # Separation of a dynamic parabolic normalizer from opposite directions
 
-Author: Worker 1297.
-
-This internal unit proves that the opposite dynamic unipotent `U(-χ)`
+This module proves that the opposite dynamic unipotent `U(-χ)`
 intersects the all-test normalizer of `P(χ)` trivially. The base is `Spec R`
 for any commutative ring `R`, the underlying scheme of `G` is affine, and
 `χ : Gm → G` is any cocharacter. The test schemes are arbitrary, including
@@ -50,7 +48,7 @@ definitions, their common-cocharacter normalization, the opposite
 intersection theorem, and the definition of the all-test normalizer.
 It does not invoke an external structural theorem.
 
-This unit supplies a local separation step toward scheme-theoretic
+This module supplies a local separation step toward scheme-theoretic
 parabolic self-normalization. It does not construct an opposite open
 cell, prove that arbitrary normalizer points have the displayed
 factorization, identify every geometric parabolic with a dynamic

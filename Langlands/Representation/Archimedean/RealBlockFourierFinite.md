@@ -9,7 +9,7 @@ Module `Langlands.Representation.Archimedean.RealBlockFourierFinite`, namespace
 ## Role and provenance
 
 This is internal infrastructure. It makes no claim from the literature and has no sources. It
-serves the proof of `Langlands.Archimedean.RealCharacterPairFiltrationStatement` (Task 7067).
+serves the proof of `Langlands.Archimedean.RealCharacterPairFiltrationStatement`.
 In that proof, the maps between principal series are described by the rotation Fourier
 coefficients in one pair of block coordinates `p, p + 1`. This module collects the elementary
 facts about those coefficients that the proof needs: how they transform under left rotations

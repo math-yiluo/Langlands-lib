@@ -65,7 +65,9 @@ along `levelFactorAlgHom`. The proof uses composition of the actual test
 spectrum maps and the original product Weil coordinate law. Thus the
 homeomorphism retains the original local counits and literal projections.
 
-This unit supplies the fixed-base enlarged number-field comparison.
-Regrouping its target into the actual upper enlarged level, compatibility
-with support inclusions, and passage to full adelic points remain separate
-host obligations; it does not claim the full Example 4.2 conclusion.
+This module supplies the fixed-base enlarged number-field comparison.
+Regrouping its target into the actual upper enlarged level (in
+`NumberFieldSIntegerFixedLevelRegroup`), compatibility
+with support inclusions (in `NumberFieldFixedLevelWeilEvaluation`), and
+passage to full adelic points (in `NumberFieldFixedModelWeilHomeomorph`) are
+not part of this module; it does not claim the full Example 4.2 conclusion.

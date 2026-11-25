@@ -1,8 +1,5 @@
 # Unramified normalization for every full correspondence
 
-Worker 1273 supplies this proof, using Worker 1664's parameter-spectrum
-construction and their final assembly check and instance-name correction.
-
 `Langlands.Correspondence.fullCorrespondenceUnramified` proves the unchanged
 [`FullCorrespondenceUnramifiedStatement.{uF, uP, uA} F`](FullSpecification.md).
 For every prime `p`, every `F : PadicField.{uF} p`, every full map `c`, and every

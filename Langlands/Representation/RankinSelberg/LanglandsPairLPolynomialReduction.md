@@ -1,7 +1,5 @@
 # Preserving a fixed L-polynomial through Langlands data
 
-Authors: Worker 1753 and Worker 1748.
-
 This internal reduction assumes regular Langlands-data uniqueness and promotes
 one supplied standard-module L-polynomial to the existing
 `IsLanglandsPairLPolynomial` relation. The field and the two original block
@@ -38,7 +36,6 @@ Its polynomial value is definitionally the supplied `P`.
 
 The provenance is internal and derived from `LanglandsLFactor`,
 `LanglandsDatumRealization`, the actual irreducible-quotient transport law, and
-the equivalence invariance of the integral-based L-polynomial. Worker 1748
-authored the reused carrier-realization infrastructure. This reduction proves
+the equivalence invariance of the integral-based L-polynomial. This reduction proves
 neither regular-data uniqueness nor an analytic factor product formula, and it
 does not by itself prove `SquareIntegrableDataLFactorStatement`.

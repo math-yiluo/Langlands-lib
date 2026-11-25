@@ -16,7 +16,7 @@ No integrality assumption on `g` is needed for this second property.
 
 `integralAffinePushoutCocone` bundles the actual scheme cocone and the two proved
 morphism properties. Commutativity is the defining equation of compatible pairs,
-transported by the spectrum functor. This unit does not assert the cocone’s
+transported by the spectrum functor. This module does not assert the cocone’s
 pushout universal property, a cartesian property, or any global gluing result.
 The derivation uses the named internal ring construction and Mathlib directly;
 no additional external mathematical result is assumed. Zero rings are allowed.

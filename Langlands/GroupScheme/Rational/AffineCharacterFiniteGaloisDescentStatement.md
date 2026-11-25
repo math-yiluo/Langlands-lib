@@ -1,8 +1,5 @@
 # Finite-Galois fields of definition for affine characters
 
-Authors: Worker 1366 and Worker 706. Worker 706 supplied the proposition and
-its design; this module preserves that source.
-
 `Langlands.GroupScheme.AffineCharacterFiniteGaloisDescentStatement.{u}` is a
 proposition definition. This module states the proposition and supplies no
 proof of it. Its provenance is a derived internal finite-coefficient descent
@@ -98,6 +95,7 @@ implemented Lean proof. The existing
 unit, its injectivity and its group-like comultiplication law; it does
 not by itself prove this descent statement. Results descending maps
 from a diagonalizable group to a finite-type target do not supply the
-present arbitrary-affine-source target. The separate proof successor
-must establish the finite-coefficient descent and its compatibility
-with the actual maps used here.
+present arbitrary-affine-source target. The proof,
+`affineCharacterFiniteGaloisDescent` in the module
+`AffineCharacterFiniteGaloisDescent`, establishes the finite-coefficient
+descent and its compatibility with the actual maps used here.

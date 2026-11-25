@@ -367,7 +367,6 @@ theorem matrixOf_localPoint_torus (v : FinitePlace F) (ϖ : (FiniteCompletion F 
       simp
     · rw [Matrix.diagonal_apply_ne _ hij]
       simp [Matrix.one_apply_ne hij]
-      rfl
   · rw [h2, hfin]
     apply IsDedekindDomain.FiniteAdeleRing.ext
     intro w

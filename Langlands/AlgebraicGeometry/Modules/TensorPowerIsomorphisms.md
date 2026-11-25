@@ -78,7 +78,7 @@ does not translate an additional literature theorem.
 The constructions use Mathlib's `CategoryTheory.Iso.prod` from
 `Mathlib/CategoryTheory/Products/Basic.lean` and
 `CategoryTheory.Functor.mapIso` from `Mathlib/CategoryTheory/Iso.lean`
-in the pinned environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`.
+in Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435` (Lean 4.34.0).
 Only the component hom and inverse of each product isomorphism and its
 functorial image are used. No pentagon, triangle, or pullback coherence
 result is assumed or asserted by this module. All imported source pairs

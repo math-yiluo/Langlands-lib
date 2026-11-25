@@ -1,7 +1,5 @@
 # Comparison of supplied outer-isomorphism quotients
 
-Worker 635.
-
 This is an internal categorical consequence of the supplied
 `OuterIsomorphismScheme` laws. It works over every scheme and in every
 universe, for two quotients of the same representing isomorphism scheme

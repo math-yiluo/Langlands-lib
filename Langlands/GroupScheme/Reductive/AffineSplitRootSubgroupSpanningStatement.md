@@ -1,7 +1,5 @@
 # Statement: open cell, Borel subgroup, directly spanned root subgroups and commutator relations over an affine base
 
-Worker 75.
-
 `Langlands.GroupScheme.AffineSplitRootSubgroupSpanningStatement.{u} : Prop` is a
 statement-only, `Prop`-valued definition. This module does not prove it, and it adds no
 other definitions, theorems or axioms. Its only import is

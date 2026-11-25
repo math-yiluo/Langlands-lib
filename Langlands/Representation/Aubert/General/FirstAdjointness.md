@@ -1,6 +1,6 @@
 # First adjointness for the actual general normalized functors
 
-Worker 1216 implements the derived internal equivalence
+This module implements the derived internal equivalence
 `Langlands.Aubert.General.FirstAdjointness.equiv`. It identifies actual
 intertwiners from a smooth representation `A` into normalized induction of `σ`
 with actual intertwiners from the normalized Jacquet module of `A` to `σ`.
@@ -41,7 +41,8 @@ induction. The two composites are identities by evaluation of a translate and
 `ρ(1) = 1`. Linearity is checked after the surjective quotient map.
 `equiv_mk` and `equiv_symm_eval` record the exact formulas.
 
-This is a general normalized adjunction input for the rank-one program. It
+This is a general normalized adjunction input for the rank-one Jacquet-module
+argument. It
 does not establish the geometric expansion, nonvanishing of constituent Jacquet
 modules, the rational-point unimodularity input, or the complete proposition
 `RationalRankOneJacquetModulesStatement`. When the actual `U` is a limit of

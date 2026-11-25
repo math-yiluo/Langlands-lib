@@ -1,8 +1,8 @@
 # Spectral presentations of supplied cuspidal contragredients: proof
 
 Module: `Langlands.Automorphic.CuspidalDualPresentationExistenceProof`.
-Author: Worker 5016. The finite-slice step is the published theorem of Task 5152
-([CuspidalAdmissible/Existence](CuspidalAdmissible/Existence.md)); the presentation and universe
+The finite-slice step is the published theorem of
+[CuspidalAdmissible/Existence](CuspidalAdmissible/Existence.md); the presentation and universe
 steps are the published constructions also used by
 [CuspidalContragredientPresentationExistenceProof](CuspidalContragredientPresentationExistenceProof.md).
 

@@ -193,7 +193,10 @@ theorem complexStandardPairingParameter : ComplexStandardPairingParameterStateme
     intro h
     apply hf
     apply ψ.injective.comp hT₂bij.1
-    simpa using LinearMap.congr_fun h f
+    have h' := LinearMap.congr_fun h f
+    rw [LinearMap.zero_apply] at h'
+    simp only [Function.comp_apply, LinearMap.map_zero, LinearEquiv.map_zero]
+    exact h'
   have h₁₂ := complexLanglandsQuotientUnique n _ _ _ _ _ _ _ hgkV hirrV hadmV
     (hperm₁.length_eq.trans hdd) hlen₂ (isComplexLanglandsOrdered_mergeSort dd)
     (isComplexLanglandsOrdered_mergeSort _) hA0 hA hB0 hB

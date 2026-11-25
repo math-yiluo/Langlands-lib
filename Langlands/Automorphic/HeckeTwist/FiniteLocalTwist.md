@@ -1,7 +1,5 @@
 # Images of finite and local automorphic realizations under any Hecke multiplier
 
-Author: Worker 5136.
-
 This internal module twists the Library's finite realizations
 (`FiniteRealization F n`, subspaces of automorphic forms invariant under right
 translation by `GL_n(𝔸_F^∞)`) and local realizations (`LocalRealization F n v`,

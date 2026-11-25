@@ -34,7 +34,7 @@ source is `stacks-invertible-picard-ampleness-2026-10-21`, directory SHA256
 `2a0bbd01484fc7cef97110a88cf4b3e472574fbbb9469d037170744a1462f835`,
 file `01CY.html`, statement and proof of Lemma 17.25.10.
 
-This definition unit asserts no comparison with the quotient of a stalk
+This module of definitions asserts no comparison with the quotient of a stalk
 by its maximal ideal, the stalk-frame predicate, or the local
 trivialization locus. In particular it does not assert that
 `nonvanishingLocus` is open for an arbitrary module. The line-bundle

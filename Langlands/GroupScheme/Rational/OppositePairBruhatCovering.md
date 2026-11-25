@@ -1,7 +1,5 @@
 # The Bruhat covering for a generic dynamic parabolic from opposite root pairs
 
-Author: Worker 1407.
-
 Module `Langlands.GroupScheme.Rational.OppositePairBruhatCovering`.
 
 ## Setting
@@ -166,7 +164,7 @@ rank-one input. Mathematically it is the Tits-system proof of the Bruhat decompo
 Théorème 5.15, registered in the Library literature as
 `borel-tits-1965-groupes-reductifs`). The generation step (2) is the standard argument
 that a dense open cell `U⁻ · P` gives `G(k) = (U⁻ · P)(k) · (U⁻ · P)(k)`. The Lean route
-is the one described above; it was written for Task 7459 so that the Bruhat covering
+is the one described above; it was written so that the Bruhat covering
 hypothesis of the Library's generic big-cell assembly
 (`SplitPinning.highestWeightBigCellGeometricData`) can be supplied without the excluded
 regular-cocharacter, Borel and parabolic-properness inputs.

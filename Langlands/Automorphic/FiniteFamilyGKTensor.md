@@ -5,7 +5,7 @@ Jacobson-density and multiplicity-evaluation results. It extracts a tensor
 **equivalence**, with every local intertwining identity, by adapting the
 recursion of `FiniteFamilyPairing.assembly`. It is not a statement quoted from
 Cogdell, and it supplies only the algebraic tensor step needed toward the
-Rankin–Selberg factorization task.
+Rankin–Selberg factorization statement `ArchimedeanFactorizationStatement`.
 
 `Langlands.Archimedean.FiniteFamilyTensor.FiniteTensorDecompositionStatement`
 asserts the following, and `finiteTensorDecomposition` proves it. Let `I` be
@@ -74,8 +74,8 @@ The proof uses `Finite.induction_empty_option`.
 
 The proof reuses the residual-action setup of the published
 `FiniteFamilyPairing.assembly`, whose original output was a bilinear form;
-this unit retains the equivalence instead. All imported mathematics is used by
+this module retains the equivalence instead. All imported mathematics is used by
 Lean name. It neither constructs a simultaneous global Whittaker functional nor
 proves its product formula, smooth extension, prescribed finite-vector
-normalization, or archimedean integral nonvanishing. Those obligations, and the
-unconditional `ArchimedeanFactorizationStatement`, remain open.
+normalization, or archimedean integral nonvanishing. The unconditional
+`ArchimedeanFactorizationStatement` remains open.

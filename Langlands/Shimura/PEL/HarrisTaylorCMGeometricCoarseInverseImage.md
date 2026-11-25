@@ -86,7 +86,7 @@ sheaf constructed by `etaleAssociatedFunctor`. The original system
 `L(Y_k,M_k)` on the small-etale site of `X_U`. The target system
 `L_V = cmHarrisGeometricCoarseAssociatedSystem` has component
 `L(Z_k,res_{ι_k} M_k)` on the small-etale site of `X_V`. Both systems use the
-published varying-cover transitions from original coefficient reduction
+varying-cover transitions from original coefficient reduction
 followed by inverse cover comparison.
 
 `cmHarrisGeometricCoarseInverseImageSystem` is the actual composite functor
@@ -111,7 +111,7 @@ images of the original components and transitions.
 \alpha:a^*L_U\overset{\sim}{\longrightarrow}L_V.
 \]
 
-The first leg is the published
+The first leg is
 `etaleAssociatedVaryingSystemInverseImage` at the actual coarse map `a`,
 applied to the entire original coefficient diagram. It compares inverse
 image of association with association on the literal pulled torsors `P_k`.
@@ -184,8 +184,8 @@ these dependencies. No new external-source assertion is added.
 The result changes the coarse base from `U` to an included `V` while fixing the
 original lattice. It is distinct from
 `HarrisTaylorCMGeometricInverseImageComparison`, which compares field extension
-at a fixed coarse level. This unit does not compare a separately chosen lattice
-at `V` or prove independence of all coarse levels. The exact representability,
-small-level existence, and remaining global Harris arithmetic and
-canonical-model obligations of the containing task remain explicit or
-unfinished.
+at a fixed coarse level. This module does not compare a separately chosen
+lattice at `V` or prove independence of all coarse levels. The exact
+representability, small-level existence, and global Harris arithmetic and
+canonical-model assertions are explicit premises or are not treated in this
+module.

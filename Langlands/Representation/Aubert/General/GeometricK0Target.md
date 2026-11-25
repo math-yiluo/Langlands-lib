@@ -1,10 +1,9 @@
 # Actual normalized intersection terms and the general geometric-lemma K0 target
 
-Author: Worker 165, task `e3d69272-2599-4a08-a934-cb11f2493e30`.
-The normalized functors and exact-K0 mechanisms are the separately authored
-Worker 23 adapters and the published generic smooth-representation library.
-The filtration and actual orbit-functor work remains with Worker 14 and the
-existing Renard geometric-lemma owners.
+The normalized functors and exact-K0 mechanisms are the adapters of
+`General.Parabolic` and the published generic smooth-representation library.
+The filtration and the actual orbit functor are separate work, in the
+Renard geometric-lemma modules under `Representation/Geometric`.
 
 This module constructs the actual normalized intersection terms and declares
 `Langlands.Aubert.General.GeometricK0ExpansionStatement`, the separate Prop
@@ -53,8 +52,8 @@ The ambient group is locally compact and nonarchimedean; all `M I` and
 closedness needed by the normalized functors. The definitions in namespace
 `Langlands.Aubert.General` are:
 
-- `geometricSourceJacquetFunctor`: Worker 23's
-  `leviNormalizedJacquetFunctor` for the actual source intersection parabolic
+- `geometricSourceJacquetFunctor`: the
+  `leviNormalizedJacquetFunctor` of `General.Parabolic` for the actual source intersection parabolic
   inside `M J`. Its target is the smooth category of the source intersection
   Levi, identified with its `subgroupOf` copy by the actual continuous
   equivalence. Its action is the actual coinvariant action with the inverse
@@ -117,9 +116,12 @@ The intended proof must specialize the existing actual geometric filtration
 and apply the published
 `SmoothRep.filtrationGrothendieckStatement`, which obtains the exact class
 sum from actual smooth gluing and finite length of the total functor.
-The missing work is that specialization and the graded-piece comparisons,
-not another abstract additivity theorem. In Worker 14's general orbit
-convention the term is represented by `P_J * w⁻¹` on `P_J \ G / P_I`;
+The work lies in that specialization and the graded-piece comparisons,
+not in another abstract additivity theorem. For the rational points of
+connected reductive groups the expansion is proved as
+`rationalGeometricK0Expansion` (`RationalGeometricK0ExpansionStatement`) in
+`General.RationalGeometricK0Expansion`. In the general orbit
+convention of the `Representation/Geometric` modules the term is represented by `P_J * w⁻¹` on `P_J \ G / P_I`;
 the inversion comparison with `W_I \ W / W_J` is a separate obligation.
 The actual orbit functor has two Haar correction twists. Proving its
 identification with the normalized intersection composite requires both
@@ -129,10 +131,8 @@ Setting input characters to one does not discard these corrections.
 
 All finite-length, exactness, filtration, smoothness and normalized
 graded-piece comparison assertions are representation-theoretic work.
-They are outside the parent's finite external Chapter V structural boundary.
-The standing explicit pause on the upstream ClosedSemidirect task is
-unchanged; this target neither resumes it nor claims an accepted interface
-from its private draft. No proof of the geometric lemma or assertion of
+They are outside the finite external Chapter V structural boundary.
+No proof of the geometric lemma or assertion of
 classification independence is made here; a future proof must record
 its actual declaration-level dependencies.
 

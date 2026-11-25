@@ -1,7 +1,5 @@
 # A common complete field realizing compatible affinoid points
 
-Author: Worker 125.
-
 `Langlands.Analytic.PresentedAffinoidAlgebra.PointAmalgamationStatement`
 defines an internal derived analytic prerequisite. It states a proposition;
 its proof is a separate obligation.

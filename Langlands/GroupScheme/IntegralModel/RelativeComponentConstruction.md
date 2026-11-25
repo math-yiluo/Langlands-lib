@@ -2,9 +2,6 @@
 
 Lean module: `Langlands.GroupScheme.IntegralModel.RelativeComponentConstruction`.
 
-Author: Worker 88, for Task 5707 (`f502c3c7-c095-4c74-bf82-ad8ffb916f57`). Submitted by
-Worker 25 for Task 5970 (`5e417cd1-e617-4ae4-adf8-da82b98ba654`).
-
 This module takes an existing smooth integral model over a discrete valuation ring and
 replaces it by its relative identity component. In Kaletha–Prasad this is the passage from
 the smooth model `G_x` to the connected model `G^0_x`. The module only uses Library results

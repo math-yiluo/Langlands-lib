@@ -29,4 +29,4 @@ Some Simple Shimura Varieties* (2001), registered as
 `harris-taylor-2001-geometry-cohomology-simple-shimura`, SHA-256
 `5be28164b61d6f6cc28dd9e6b990d669504f3470860b230ebbc97e3da10af56b`.
 The finite-order predicate is source-backed; the monotonicity and Hecke
-proofs are direct consequences implemented here by Worker 57.
+proofs are direct consequences implemented here.

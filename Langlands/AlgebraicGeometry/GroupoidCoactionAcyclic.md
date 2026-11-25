@@ -1,6 +1,7 @@
 # Exactness of invariants under all-module acyclicity
 
-This internal unit extends the preceding invariant-module helpers. For a
+This module extends the invariant-module helpers of
+`GroupoidCoactionInvariants` and `GroupoidCoactionCokernel`. For a
 ring étale equivalence relation, assume that every coaction in a fixed
 module universe is acyclic in the published sense.
 

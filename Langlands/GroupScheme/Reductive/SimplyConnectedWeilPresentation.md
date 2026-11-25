@@ -1,6 +1,7 @@
 # Actual simply connected Weil presentations and conditional pair descent
 
-Worker 634, with Worker 632's finite-family assembly and tensor-base recovery.
+This module uses the finite-family assembly of `AffineWeilFiniteFamily` and the local
+finite-base (tensor-base) recovery of `Reductive.AdjointWeilPairRecovery`.
 
 AffineSimplyConnectedWeilPresentation supplies the actual finite projective
 étale algebra, surjective finite base, reductive factor group with simply
@@ -15,7 +16,7 @@ product and transfers both geometric fibre properties. Nontrivial geometric
 fibres force a nonempty factor index wherever the base has a point, so the
 finite base map is surjective even when the original base is empty.
 
-Assuming the unchanged AffineWeilPairEtaleDescentStatement, presentations on any
+Assuming AffineWeilPairEtaleDescentStatement, presentations on any
 covering family of étale affine charts descend. That supplied statement gives
 the actual tensor-algebra and group recoveries on every chart. Their spectra
 cover the descended finite base; simple connectedness reflects at a point of

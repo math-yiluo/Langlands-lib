@@ -1,7 +1,5 @@
 # Étale equivariant-site comparison with smooth analytic `G`-sheaves
 
-Author: Worker 16.
-
 ## Source
 
 Vladimir Berkovich, *Étale equivariant sheaves on p-adic analytic spaces*

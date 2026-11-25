@@ -1,7 +1,5 @@
 # Stable endomorphisms of arbitrary complex vector spaces: proofs
 
-Author: Worker 277.
-
 This module proves the closed statement targets of
 `Langlands/LinearAlgebra/StableEndomorphismStatements.lean`. That file is imported
 unchanged. The targets formalize David Renard, *Représentations des groupes

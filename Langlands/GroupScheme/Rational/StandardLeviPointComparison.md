@@ -1,7 +1,5 @@
 # Rational points of a represented standard Levi
 
-Author: Worker 450.
-
 This module gives the explicit rational-point identification needed to apply the
 actual center compactness statements to the same standard Levi used by the
 parabolic and building interfaces. It does not choose another reductive group.

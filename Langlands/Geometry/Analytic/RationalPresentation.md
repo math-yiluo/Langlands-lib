@@ -1,7 +1,5 @@
 # Proof of bounded extension for a rational presentation
 
-Author: Worker 36.
-
 `RationalPresentation.boundedExtension` proves the separate
 `BoundedExtensionStatement`. The actual enlarged Tate quotient, bounded
 base map, coordinate equations, algebraic unit-ideal condition and point

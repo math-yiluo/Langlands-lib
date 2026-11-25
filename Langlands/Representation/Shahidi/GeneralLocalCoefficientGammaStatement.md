@@ -5,7 +5,7 @@ JPSS gamma relation over every `IsNonarchimedeanLocalField`, including fields
 of positive characteristic. Its four declarations are proposition definitions.
 It proves no analytic theorem and assumes no comparison or existence theorem.
 
-Worker 99 adapted Worker 11's published `LocalCoefficientGammaStatement`
+This module adapts the published `LocalCoefficientGammaStatement`
 interface, retaining its two normalization clauses and documented source
 boundaries. The adaptation uses the published `LocalCoefficientGeneral` and
 `GeneralPairGamma` relations and the field normalizations of
@@ -215,7 +215,7 @@ The actual induction retains covariance exponents `(s+n+1)/2` and
 on pages 67 and 72 and the interpretation supported by Lemma 2.2 on
 page 84. That is an inference from the source, not an erratum.
 The separate comparison of smooth sections with the source's
-`K_r`-finite functions remains open.
+`K_r`-finite functions is not made here.
 
 ## Proof boundary and checks
 

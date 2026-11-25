@@ -1,16 +1,16 @@
 # Rational structure: family 5 composite-proof coverage
 
-Worker 3483, 13 November 2026. This note records nine exact named proofs in
-Library `3489c50380b46cfbdad8997457a217e6e8e6a27d` that replace historical
+This note records nine exact named proofs in
+Library `3489c50380b46cfbdad8997457a217e6e8e6a27d` that replace earlier
 **C** (composable) statuses in the
 [family 5 ledger](ledger-family-5-rational.md), whose recorded Library snapshot is
-`f2c5495316f5a5631bc8c11875b7509d93271fe5`. It supplements that dated ledger
-without changing its historical entries. The
-[milestone index](ledger-milestones-interfaces.md) already records some subsequent
-progress, including D7.
+`f2c5495316f5a5631bc8c11875b7509d93271fe5`. It supplements that ledger
+without changing its entries. The
+[milestone index](ledger-milestones-interfaces.md) already records some later
+results, including D7.
 
 This is a map of published declarations and their implemented proofs. It adds
-no Lean result and does not establish completion of family 5 or the standing
+no Lean result and does not establish completion of family 5 or of the
 group-scheme program. The separate
 [relative/absolute comparison update](rational-absolute-coverage-2026-11-13.md)
 covers I1–I3.
@@ -22,7 +22,7 @@ parameter `u`. The `RelativeRoot.` qualifier in the last two rows is part of
 the declaration name. Links lead to the paired Library Markdown; the Lean file
 has the same stem.
 
-| Historical ledger entry | Proposition declaration | Exact published theorem and proof module |
+| Family 5 ledger entry | Proposition declaration | Exact published theorem and proof module |
 | --- | --- | --- |
 | B9, split-torus weakening | [`ParabolicIntersectionSplitTorusStatement`](../../Langlands/GroupScheme/Rational/ParabolicIntersectionAssembly.md) | [`parabolicIntersectionSplitTorus`](../../Langlands/GroupScheme/Rational/ParabolicIntersectionSplitTorusProof.md) |
 | C5, rank conjunction | [`RelativeRankStatement`](../../Langlands/GroupScheme/Rational/RelativeRankStatement.md) | [`relativeRank`](../../Langlands/GroupScheme/Rational/RelativeRankProof.md) |
@@ -164,28 +164,26 @@ All nine proof Lean/Markdown pairs and the eight statement pairs linked in the
 table were byte-compared with the stated Library commit. All nine proof modules
 compile together with zero errors or warnings in the prepared Lean environment.
 Inspection of `representedParabolicDoubleCoset` reports only `propext`,
-`Classical.choice` and `Quot.sound`. These are development checks on already
-published modules, not new independent acceptance of mathematical results.
+`Classical.choice` and `Quot.sound`.
 
 The [characteristic-two source correction](../errata/milne-relative-root-groups-characteristic-two.md)
 remains a paper counterexample to the exact-root generation interpretation
 described there. This note adds no formal counterexample and preserves the
 Library's positive-multiple convention.
 
-The historical H3 dimension-at-most-one quasi-split status is also superseded
-in the pinned Library:
+The earlier H3 dimension-at-most-one quasi-split status is also superseded
+in this Library:
 [`Langlands.GroupScheme.dimensionLEOneQuasiSplit`](../../Langlands/GroupScheme/Rational/DimensionLEOneQuasiSplitProof.md)
 proves
 [`Langlands.GroupScheme.DimensionLEOneQuasiSplitStatement.{u}`](../../Langlands/GroupScheme/Rational/DimensionLEOneQuasiSplitStatement.md).
 For a field satisfying the finite-separable/Galois unit-norm criterion, every
 connected reductive group is quasi-split. The closed proof discharges the
-structural inputs through the published class-rationality assembly. Its
-independently accepted proof publication is recorded as
-`30e60549-5c8a-43f0-bbcf-f8a7da396097`, published in commit
+structural inputs through the published class-rationality assembly. The proof first appeared
+in the Library at commit
 `db8d6b3d466f2fd453a4df4624ce6c90db8eed46`.
 Thus this target is not a remaining unproved obligation. The nine-target
-table above retains its focus on historical composite entries.
+table above keeps to the earlier composite entries.
 
-Other family 5 obligations are recorded by the dated ledger and subsequent
-focused updates. Worker 75's relative Levi, parabolic, Borel and relative
-fibrewise-isogeny work remains with that worker.
+Other family 5 obligations are recorded by the family 5 ledger and later
+focused notes, among them the relative Levi, parabolic, Borel and relative
+fibrewise-isogeny statements.

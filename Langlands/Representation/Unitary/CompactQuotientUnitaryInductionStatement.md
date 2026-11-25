@@ -1,6 +1,6 @@
 # Unitarity of normalized induction from a cocompact closed subgroup
 
-Author: Worker 1222. Module
+Module
 `Langlands.Representation.Unitary.CompactQuotientUnitaryInductionStatement`,
 namespace `Langlands.Renard.CompactRepresentation`. Statement
 `CompactQuotientUnitaryInductionStatement : Prop` (universe parameters `uG`, `v`); nothing is
@@ -113,9 +113,9 @@ on `I`. It asserts the conjunction of:
   does not fix one: it quantifies over all nonzero, positive, invariant linear forms. By the
   uniqueness in II.3.9 these are the positive multiples of `ν_{H\G}`, and a positive multiple
   of `⟨·, ·⟩` is again a positive definite invariant form. Quantifying over all of them avoids
-  depending on the existence and uniqueness of II.3.9, which are not proved in the Library
-  (they are the published, unproved
-  `HomogeneousFunctions.Renard.InvariantFunctionalStatement`).
+  depending on the existence and uniqueness of II.3.9 (they are the published
+  `HomogeneousFunctions.Renard.InvariantFunctionalStatement`, proved as `invariantFunctional`
+  in `Langlands.HarmonicAnalysis.RenardHomogeneousAveragingProof`).
 - Positivity. The source's definiteness argument ("the integral reduces to a finite sum")
   uses that `ν_{H\G}` is strictly positive on nonzero nonnegative functions. The statement
   assumes only `ν ≠ 0` and positivity in the weak sense (`ν f ≥ 0` for `f ≥ 0`), the sense of
@@ -123,7 +123,7 @@ on `I`. It asserts the conjunction of:
   `f ≠ 0` is positive on an open `H`-stable set, finitely many right translates of this set
   cover the support of any element of `D`, so every nonnegative element of `D` is bounded by a
   multiple of a finite sum of translates of `f`; as `ν ≠ 0` and every element of `D` is a
-  combination of nonnegative ones, `ν f > 0`. This derivation is part of the proof obligation.
+  combination of nonnegative ones, `ν f > 0`. This derivation is part of the proof.
 - "Inducing this hermitian structure": the source refers to the hermitian structure of
   IV.2.1, the nondegenerate invariant hermitian form making `i_H^G τ` hermitian. A positive
   definite invariant form is such a form, so `B` provides it. The statement does not restate
@@ -151,9 +151,10 @@ parabolic case `leviInductionUnitarizable_of_inputs` (module
 cover the uses of IV.2.3 for parabolic induction of reductive groups; the present statement is
 the source's general case of an arbitrary closed cocompact subgroup and a non-unimodular `G`.
 
-## Remaining obligations
+## Proof
 
-The proof is a separate obligation. It needs: the covariance computation
+The proof is in `Langlands.Representation.Unitary.CompactQuotientUnitaryInductionProof`
+(`compactQuotientUnitaryInduction`). It needs: the covariance computation
 `⟨f₁(hg), f₂(hg)⟩ = δ_{H\G}(h) ⟨f₁(g), f₂(g)⟩`, using `χ` real and `χ² = δ`, and the
 agreement of the two published forms of `δ_{H\G}`; local constancy of (IV.2.3.2) from the
 smoothness of `f₁, f₂`; the support condition, from a compact `K ⊆ G` with `H K = G`, which
@@ -161,7 +162,7 @@ exists because `H \ G` is compact and `G` is locally compact; sesquilinearity, h
 symmetry, positivity and `G`-invariance of `ν ∘ c`; definiteness from the strict positivity
 of `ν` derived above; and, for `IsUnitarizable π`, the existence of a nonzero, positive,
 invariant `ν`, which is the existence part of II.3.9 (`InvariantFunctionalStatement`,
-unproved). None of this is asserted here.
+proved in `RenardHomogeneousAveragingProof`). None of this is asserted here.
 
 ## Provenance
 

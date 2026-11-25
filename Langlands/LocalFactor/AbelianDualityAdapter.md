@@ -28,7 +28,8 @@ The field and representation carrier universes remain independent throughout.
 this adapter with the published degree-zero generation and character-line
 assembly reduction. Both actual generation and scalar duality remain explicit
 premises. This module proves neither premise, does not strengthen `IsSystem`,
-and is not a proof of the host task's unconditional target.
+and is not an unconditional proof of `DualFunctionalEquationStatement`; that
+proof is `dualFunctionalEquation` in `Langlands.LocalFactor.NonabelianDualityProof`.
 
 The provenance is internal: the proof uses the published topological
 abelianization and character-transport equivalences, normalized reciprocity,

@@ -2,7 +2,7 @@
 
 This module gives a generic interface for the quotient of an actual abelian scheme by a finite étale closed subgroup scheme. It specifies the data only. It does not construct a quotient, and no existence of quotients is assumed or proved. The base `S : Scheme.{u}` is an arbitrary scheme in an arbitrary universe; the consumer's universe-zero case is the instance `u := 0`. No noetherian, connectedness, projectivity or characteristic hypothesis appears.
 
-All declarations are in the namespace `Langlands.AbelianScheme`. The module reuses the published interfaces `Langlands.AbelianScheme` (module `Basic`), `Langlands.CommGroupScheme` (module `GroupScheme`), `Langlands.GroupScheme.kernel` (module `Kernel`) and `Langlands.AbelianScheme.IsIsogeny` (module `IsogenySpecialization`). The scheme predicates `IsClosedImmersion`, `IsFinite`, `Etale`, `Surjective` and `Flat` are Mathlib's. No imported Lean/Markdown pair is changed.
+All declarations are in the namespace `Langlands.AbelianScheme`. The module reuses the published interfaces `Langlands.AbelianScheme` (module `Basic`), `Langlands.CommGroupScheme` (module `GroupScheme`), `Langlands.GroupScheme.kernel` (module `Kernel`) and `Langlands.AbelianScheme.IsIsogeny` (module `IsogenySpecialization`). The scheme predicates `IsClosedImmersion`, `IsFinite`, `Etale`, `Surjective` and `Flat` are Mathlib's.
 
 ## Finite étale closed subgroups
 
@@ -17,7 +17,7 @@ The three conditions are declared as instances, so they are available by type-cl
 
 ## Quotient data
 
-`FiniteEtaleSubgroup.QuotientData K`, for `K : FiniteEtaleSubgroup A`, is a structure with the following fields. The selected entry declaration of this unit is `Langlands.AbelianScheme.FiniteEtaleSubgroup.QuotientData`.
+`FiniteEtaleSubgroup.QuotientData K`, for `K : FiniteEtaleSubgroup A`, is a structure with the following fields. The main declaration of this module is `Langlands.AbelianScheme.FiniteEtaleSubgroup.QuotientData`.
 
 - `B : AbelianScheme S` is the quotient, an actual abelian scheme over the same base. By the published definition it is a commutative group scheme whose structure morphism is smooth and proper with geometrically connected fibres.
 - `q : A ⟶ B` is an actual homomorphism of abelian schemes.
@@ -31,7 +31,7 @@ The three conditions are declared as instances, so they are available by type-cl
 
   This is the square of actual scheme morphisms with vertices `K.G.X.left`, `A.X.left`, `S` and `B.X.left`. Its right side `η[B.X].left : S ⟶ B.X.left` is the unit section of `B`. The condition says that `K.G.X.left`, with the inclusion and its structure morphism, is a fibre product of `q` and the unit section of `B`. So `K` is exactly the scheme kernel of `q`, in the sense of Definition (3.13) of the source below, with its full scheme structure.
 
-The task allowed this condition to be encoded either as the cartesian square or as an isomorphism with `GroupScheme.kernel (groupHom q)`. The square is chosen as the field. The isomorphism is derived from it below.
+This condition can be encoded either as the cartesian square or as an isomorphism with `GroupScheme.kernel (groupHom q)`. The square is chosen as the field. The isomorphism is derived from it below.
 
 ## Accessors
 
@@ -43,7 +43,7 @@ For `D : K.QuotientData`:
 - `D.kernelSchemeIso : K.G.X.left ≅ (GroupScheme.kernel (groupHom D.q)).X.left` is the comparison of two pullbacks of the same cospan. One is `D.isPullback`; the other is the published `GroupScheme.kernel_isPullback_scheme`. It is Mathlib's `IsPullback.isoIsPullback`. The lemmas `kernelSchemeIso_hom_inclusion` and `kernelSchemeIso_hom_structure` state that it is compatible with the maps to `A.X.left` and to `S`.
 - `D.kernelOverIso : K.G.X ≅ (GroupScheme.kernel (groupHom D.q)).X` is the same isomorphism in `Over S`, and `kernelOverIso_hom_inclusion` states its compatibility with the inclusions in `Over S`.
 - `D.kernelIso : K.G.toGrp ≅ GroupScheme.kernel (groupHom D.q)` is an isomorphism of group schemes. It is built with Mathlib's `Grp.mkIso` from `kernelOverIso`. Compatibility with unit and multiplication is checked after composing with the kernel inclusion, which is a monomorphism by the published `GroupScheme.kernelι_mono`. Both sides then reduce to the corresponding identities for the homomorphism `K.inclusion`.
-- `kernelIso_hom_inclusion` states `D.kernelIso.hom ≫ GroupScheme.kernelι (groupHom D.q) = CommGroupScheme.groupHom K.inclusion`. So the second encoding allowed by the task, an isomorphism with the published kernel that commutes with inclusion, is also available.
+- `kernelIso_hom_inclusion` states `D.kernelIso.hom ≫ GroupScheme.kernelι (groupHom D.q) = CommGroupScheme.groupHom K.inclusion`. So the second encoding, an isomorphism with the published kernel that commutes with inclusion, is also available.
 
 ## Constructors from a given homomorphism
 
@@ -61,4 +61,4 @@ The source is B. Edixhoven, G. van der Geer and B. Moonen, *Abelian Varieties*, 
 - (4.37), printed p. 65 (PDF p. 69), explains that if the fppf quotient `G/H` by a normal subgroup scheme is representable, then it is a group scheme, `0 → H → G → G/H → 0` is exact, and homomorphisms killing `H` factor through `G/H`. Theorem (4.39)(c), printed p. 66 (PDF p. 70), gives representability for finite locally free `H` under an affineness condition.
 - Example (4.40), printed p. 66 (PDF p. 70), states that the quotient of an abelian variety over a field by a closed subgroup scheme is again an abelian variety. It concerns a field base only.
 
-These results motivate the interface. None of them is formalized here: no quotient is constructed and no representability, exactness or universal property is asserted. The bundle is a derived specialization. It restricts the subgroup to finite étale ones, asks for an abelian-scheme quotient over an arbitrary base, and records only the properties of the quotient map and the exact kernel square, with no factorization property. Its finite, étale and surjective conditions are the properties expected of a quotient by a finite étale subgroup (finite locally free and, since the kernel is étale, étale). Existence of such data, for instance for a projective abelian scheme over a locally noetherian base, its comparison with arbitrary base change, and descent of endomorphism actions are left to separate later tasks.
+These results motivate the interface. None of them is formalized here: no quotient is constructed and no representability, exactness or universal property is asserted. The bundle is a derived specialization. It restricts the subgroup to finite étale ones, asks for an abelian-scheme quotient over an arbitrary base, and records only the properties of the quotient map and the exact kernel square, with no factorization property. Its finite, étale and surjective conditions are the properties expected of a quotient by a finite étale subgroup (finite locally free and, since the kernel is étale, étale). Existence of such data, for instance for a projective abelian scheme over a locally noetherian base, its comparison with arbitrary base change, and descent of endomorphism actions are not treated in this module.

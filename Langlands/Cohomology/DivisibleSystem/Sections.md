@@ -1,6 +1,6 @@
 # Sections of ℓ-divisible systems of complexes
 
-Author: Worker 61. Built on the modules
+Built on the modules
 `Langlands.Cohomology.DivisibleSystem.LeftExact` (images of `ℓ`-divisible
 systems under left exact functors, and compact sections of smooth sheaves) and
 `Langlands.Cohomology.DivisibleSystem.Truncation` (the truncated resolution
@@ -95,7 +95,7 @@ Declarations:
 
 `R`, `G`, `X` and `T : SmoothSheafDivisibleSystem R G X ℓ` are as in the smooth
 section of the LeftExact module. The exactness of the degree-zero smooth
-Godement functor is Worker 3's unproved proposition
+Godement functor is the unproved proposition
 `SmoothGodementZeroExactStatement R G X`. Both declarations below take a proof
 `h` of it and the hypotheses `hterm`, `hres` as explicit arguments, stated for
 the Coaugmented module's `smoothGodementTermSystem h T q` and
@@ -112,8 +112,8 @@ the Coaugmented module's `smoothGodementTermSystem h T q` and
 ## Provenance and interpretation
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
-J. Math. Kyoto Univ. 39-2 (1999), section 2, printed p.305. Worker 61 read the
-page in the scanned original.
+J. Math. Kyoto Univ. 39-2 (1999), section 2, printed p.305. The page was read
+in the scanned original.
 
 1. Systems of section complexes. Harris uses the complexes
    `G_m^•(U(ẽ)_F̄)` and, after `H`-invariants, calls the family "an ℓ-divisible

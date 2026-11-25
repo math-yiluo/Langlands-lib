@@ -1,7 +1,5 @@
 # Vertices, facets and Harris's distinguished covering of Drinfeld's upper half space
 
-Author: Worker 21.
-
 The building of `PGL_{d+1}(F)` is the space `NormClass F (Fin (d + 1) → F)` of
 norms up to homothety (module `DrinfeldReduction`). This module adds to it:
 

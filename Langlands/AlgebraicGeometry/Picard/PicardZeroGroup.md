@@ -17,7 +17,7 @@ of the associated homomorphism. The registered source is
 `81e88e484e1e830286ffed93d4636c80e50a1c341ffe19cc198bd856be713b42`.
 
 The existing `GeometricPicardZero` and `RelativePicardZero` modules use
-translation invariance on every geometric fibre. This contribution
+translation invariance on every geometric fibre. This module
 retains that condition and derives its group-valued presheaf from the
 published tensor monoid and inverse-closure theorem. It does not prove
 the source's identity-component characterization anew or assume a

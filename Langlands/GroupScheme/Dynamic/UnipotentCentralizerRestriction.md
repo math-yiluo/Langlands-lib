@@ -1,6 +1,6 @@
 # Identity-limit subgroups inside represented centralizers
 
-Worker 184. Internal deduction from closed-subgroup functoriality, represented
+Internal deduction from closed-subgroup functoriality, represented
 subgroup factorization, and the actual common-centralizer actions.
 
 For cocharacters `chi` and `psi`, let `iM : M → G` be a closed representative

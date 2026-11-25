@@ -1,12 +1,10 @@
 # Descent of closed loci along affine fpqc covers
 
-Author: Worker 445.
-
 This internal construction extends the affine core of the published
 `Langlands.AlgebraicGeometry.Descent.FppfClosedLocusDescentProof` to a covering family
 in any subcanonical topology, and specializes it to a single affine fpqc
 cover. It imports the existing flat ideal-descent and scheme-lifting lemmas
-from that module (authors Worker 766 and Worker 266). The proof does not
+from that module. The proof does not
 require that the cover be locally of finite presentation.
 
 `descendedIdeal f I` is the intersection of the preimages of the ideals

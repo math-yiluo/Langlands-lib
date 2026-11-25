@@ -1,7 +1,5 @@
 # Normalization after tensoring an integral algebra tower
 
-Worker 594.
-
 `integralClosureTensorTowerEquiv` compares two integral closures
 inside the same tensor product. The bases are the scalar
 extensions of an algebra and of an integral intermediate algebra.

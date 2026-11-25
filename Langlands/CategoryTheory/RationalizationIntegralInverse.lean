@@ -65,8 +65,8 @@ variable {O : Type w} [Ring O] {X Y : C}
 
 /-- Integral inverse-multiple data with exact equivariance in both directions. -/
 structure EquivariantIntegralInverseData extends IntegralInverseData X Y where
-  hom_intertwines : ∀ x : O, a x ≫ hom = hom ≫ a' x
-  inv_intertwines : ∀ x : O, a' x ≫ inv = inv ≫ a x
+  hom_intertwines : ∀ x : O, (a x).asHom ≫ hom = hom ≫ (a' x).asHom
+  inv_intertwines : ∀ x : O, (a' x).asHom ≫ inv = inv ≫ (a x).asHom
 
 namespace EquivariantIntegralIsoData
 

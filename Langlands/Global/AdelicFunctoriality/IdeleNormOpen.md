@@ -1,7 +1,5 @@
 # The idele norm and the idele-class norm are open maps
 
-Author: Worker 1805.
-
 This module, in namespace `Langlands.Global.AdelicFunctoriality`, proves that for number
 fields `K : Type u` and `L : Type v` with `[Algebra K L]` the actual idele norm
 `ideleNorm : 𝕀_L →ₜ* 𝕀_K` of [Norm](Norm.md) and the idele-class norm
@@ -122,8 +120,8 @@ because it contains an open subgroup of the units. The same page uses the fact t
 unramified prime every unit is a local norm (proof of Lemma 2). The global statement follows
 from these two facts and the restricted-product topology of the ideles. It is the standard
 openness of the norm map on ideles and idele classes, which Artin and Tate use without a
-separate statement. Here it is proved with the published unramified-unit-norm theorem and the
+separate statement. Here it is proved with the existing unramified-unit-norm theorem and the
 `S = ∅` product model of the idele topology. The fibre-product lemma, the transport lemma and
-the model norms are internal packaging. The module was written for task 33286360 (factoring
-continuous characters through the transfer), coordinated with its executor, under task
-cc3ec74b.
+the model norms are internal packaging. The module serves the factorization of continuous
+characters through the transfer, proved in
+`Langlands.ClassFieldTheory.Global.RelativeWeilCharacterFactorization`.

@@ -74,8 +74,8 @@ injectivity charts and the measurable-set identities of
 ## Scope
 
 This is a conditional actual rational-point realization of the I.1 measure
-convention. The remaining actual-image finite-index assertion must be
-discharged by its structural owner before removing `hindex`. There is no
+convention. Removing `hindex` requires a proof of the remaining
+actual-image finite-index assertion. There is no
 characteristic-zero, split-group, quasisplit-group or rank assumption.
 
 The pair fixes character measures, but does not yet specialize the

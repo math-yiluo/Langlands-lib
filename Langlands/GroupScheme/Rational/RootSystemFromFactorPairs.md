@@ -1,11 +1,11 @@
 # Relative root systems from opposite factor pairs
 
-This internal supporting unit proves that opposite-factor-pair existence for a
+This internal supporting module proves that opposite-factor-pair existence for a
 maximal split torus in a connected reductive group supplies the existing
 `HasRelativeRootSystem` predicate. It also derives the exact global
 `RelativeRootSystemStatement` from the exact global
 `RootRankOneFactorizationStatement`. The latter remains an
-explicit premise. This unit does not construct opposite factor pairs or prove
+explicit premise. This module does not construct opposite factor pairs or prove
 `RootGeneratedCentralizerRankOneStatement`.
 
 All fields and group schemes lie in an arbitrary universe. There are no

@@ -1,11 +1,9 @@
 # Multiplicative-type groups split by a specified field extension
 
-Author: Worker 3483.
-
 This is a derived construction of a category on the Library's actual commutative
 group schemes. It uses the already published multiplicative-type predicate,
 diagonalizable groups, actual characters and character evaluation. It does not
-use any pending character-functor or classification statement.
+use any character-functor or classification statement.
 
 ## Objects and morphisms
 
@@ -109,7 +107,7 @@ groups over `k`.
 The complete retained official 2017 errata snapshot dated 2 November 2026 was
 read. None of its corrections affects these cited passages.
 
-This unit constructs the category and its actual finitely generated character
+This module constructs the category and its actual finitely generated character
 modules. It does not construct a functor between this category and Galois
 representations, a quasi-inverse, a categorical equivalence, absolute-Galois
 continuity or exact-sequence compatibility. Those are separate obligations.

@@ -1,11 +1,10 @@
 # A conditional reduction of equal-rank and full archimedean factorization
 
 Module `Langlands.Global.RankinSelberg.EqualArchimedeanFactorizationReduction`,
-namespace `Langlands.Global.RankinSelbergGlobal`. Worker 261 authored the equal-rank
-reduction. The module imports Worker 394's shared measure interfaces and
-unequal-rank reduction in `ArchimedeanFactorizationReduction`.
+namespace `Langlands.Global.RankinSelbergGlobal`. The module imports the shared
+measure interfaces and the unequal-rank reduction in `ArchimedeanFactorizationReduction`.
 
-This is an internal conditional result of Task 7397. It does not prove
+This is an internal conditional result. It does not prove
 `ArchimedeanFactorizationStatement`. Its entry proposition is
 `ArchimedeanPointwiseFactorizationReductionStatement.{u,uQ}` and is proved by
 `archimedeanPointwiseFactorizationReduction`. Both universe parameters are free.
@@ -85,12 +84,14 @@ formula, but is not used in this reduction; those clauses remain explicit here.
 
 ## Equal-rank integration
 
-The other premise is the imported open statement
-`UnipotentClassProductStatement.{u}`, called B: for fixed archimedean quotient
+The other premise is the imported statement
+`UnipotentClassProductStatement.{u}`, called B, which the Library proves as
+`UnipotentClass.unipotentClassProductStatement` (module
+`UnipotentClassProductProof`): for fixed archimedean quotient
 measures and compatible finite quotient measures at `S`, one nonzero scalar
 `C` relates integration over `unipotentIntegralClasses F (r + 1) S` to the
 product of the corresponding local quotient integrals, for every family of
-local functions. Its exact hypotheses and its unproved measure comparison are
+local functions. Its exact hypotheses and its measure comparison are
 documented in the paired Markdown of the imported module.
 
 The proposition `EqualArchimedeanFactorizationReductionStatement.{u,uQ}` is
@@ -141,13 +142,15 @@ defines the full target. `RectangleTateStatement` is used by the unequal-rank
 reduction for its inner rectangular integral; it is not needed for the
 equal-rank integration step.
 
-All four named premises remain open. A_U is the imported unequal-rank
+Of the four named premises, A_U and A_E remain open; B and C are proved in
+the Library (modules `UnipotentClassProductProof` and `RectangleTateProof`).
+A_U is the imported unequal-rank
 representation-theoretic pointwise premise; A_E includes the equal-rank
 representation theory, exact Fourier formula and nonvanishing; B is the
 quotient-product measure comparison; C is `RectangleTateStatement`, the
 self-dual additive measure product comparison. Proving this conditional
-implication does not discharge any of those premises or the task's required
-unconditional proof.
+implication does not discharge any of those premises or give an
+unconditional proof of `ArchimedeanFactorizationStatement`.
 
 This decomposition is internal implementation infrastructure. It is derived
 from the two published target definitions and the imported explicit premises,

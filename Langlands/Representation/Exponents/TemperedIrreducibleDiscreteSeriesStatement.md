@@ -1,8 +1,8 @@
 # Irreducible tempered representations as subrepresentations of induced discrete series
 
-Author: Worker 6. Module `Langlands.Representation.Exponents.TemperedIrreducibleDiscreteSeriesStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`. Statement `TemperedIrreducibleDiscreteSeriesStatement : Prop`; nothing is proved here.
+Module `Langlands.Representation.Exponents.TemperedIrreducibleDiscreteSeriesStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`. Statement `TemperedIrreducibleDiscreteSeriesStatement : Prop`; nothing is proved here.
 
-The source is David Renard, *Représentations des groupes réductifs p-adiques*, French edition dated 9 July 2026, VII.2.6, Theorem, printed p.231 / PDF p.237, with its proof on printed pp.231–232 / PDF pp.237–238. The registered source ID is `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. The first assertion of the theorem says: let `(π, V)` be an irreducible smooth representation of `G`. Then `π` is tempered if and only if there are a standard parabolic subgroup `P = MN` of `G` and an irreducible representation `(σ, E)` of `M` that is square-integrable modulo the center such that `π` is a subrepresentation of `i_P^G(σ, E)`. The second assertion, uniqueness of `(M, σ)` up to conjugation, is the companion statement unit `TemperedIrreducibleDiscreteSeriesUniquenessStatement`.
+The source is David Renard, *Représentations des groupes réductifs p-adiques*, French edition dated 9 July 2026, VII.2.6, Theorem, printed p.231 / PDF p.237, with its proof on printed pp.231–232 / PDF pp.237–238. The registered source ID is `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. The first assertion of the theorem says: let `(π, V)` be an irreducible smooth representation of `G`. Then `π` is tempered if and only if there are a standard parabolic subgroup `P = MN` of `G` and an irreducible representation `(σ, E)` of `M` that is square-integrable modulo the center such that `π` is a subrepresentation of `i_P^G(σ, E)`. The second assertion, uniqueness of `(M, σ)` up to conjugation, is the companion statement `TemperedIrreducibleDiscreteSeriesUniquenessStatement`.
 
 This is a **derived** formulation. Temperedness is the published derived predicate `IsNormalizedExponentTempered`, and the parabolic ranges over all actual rational parabolics instead of standard ones. See "Faithfulness notes".
 
@@ -32,7 +32,7 @@ The statement asserts: for every `π : SmoothRep.{0, u, v} ℂ (rationalPoints G
 
 The proof is a separate obligation. The source route uses:
 
-- for sufficiency: Remark 2 of VII.2.1 for `M` (published statement `SquareIntegrableNormalizedTemperedStatement`), the Lemma of VII.2.2 (a separate statement unit, `LeviInductionNormalizedTemperedStatement`), and that subrepresentations of tempered representations are tempered (exactness of the Jacquet functors);
+- for sufficiency: Remark 2 of VII.2.1 for `M` (published statement `SquareIntegrableNormalizedTemperedStatement`), the Lemma of VII.2.2 (a separate statement, `LeviInductionNormalizedTemperedStatement`), and that subrepresentations of tempered representations are tempered (exactness of the Jacquet functors);
 - for necessity: a standard parabolic `P` minimal with `(r_P^G π)_0 ≠ 0`, finite generation of `r_P^G π` for irreducible `π` (VI.1.3), an irreducible quotient of a finitely generated module (A.VI.3), the Lemmas of VII.2.3 and VII.2.4 and minimality to get square-integrability, and Frobenius reciprocity VI.1.1;
 - the structural inputs these use for actual reductive groups (presentation existence, standard reduction, Jacquet admissibility, Cartan and Iwahori decompositions, compactness of `G/P`).
 

@@ -1,6 +1,6 @@
 # Mirabolic restriction of full upper localization
 
-Worker 1004 constructs a natural comparison between the actual full
+This module constructs a natural comparison between the actual full
 upper-unipotent quotient of a `GL_(n+1)` representation and the same quotient
 after restriction to the actual mirabolic subgroup `P_(n+1)`. This is internal
 subgroup-copy infrastructure for the all-rank top-localization adapter.
@@ -30,9 +30,9 @@ is imposed on the additive character. All `n : ℕ` are allowed, including
 rank-zero `GL₀` case has no mirabolic restriction step and is outside this
 constructor.
 
-This unit does not prove quotient transitivity, a top-derivative comparison,
-a determinant-twist identity or the exterior-tensor theorem. Those remain
-separate obligations. No unpublished unit is imported.
+This module does not prove quotient transitivity, a top-derivative comparison,
+a determinant-twist identity or the exterior-tensor theorem. Those are
+separate results.
 
 ## Provenance and original conventions
 
@@ -55,7 +55,7 @@ Only those conventions are used. In particular, none of Proposition 1.9's
 transitivity, adjunction or tensor assertions is an assumed proof input.
 The extension to arbitrary commutative rings, explicit subgroup-copy maps
 and natural isomorphism are internal constructions. Bounded checks of the
-project and current Library errata-note locations and literature filenames
+project and Library errata-note locations and literature filenames
 found no source-specific errata note; this is only a local search result.
 
 ## Implemented maps and proofs
@@ -126,13 +126,11 @@ The new proof also uses the unchanged `Mirabolic` subgroup pair,
 `Localization` quotient laws, `generalLinearRestriction`, the trivial
 representation and elementary natural-isomorphism constructors.
 
-Recursive traversal of the actual project import declarations gives exactly
+Recursive traversal of the actual project import declarations at Library
+commit `7290311ebd03e23d11ae093f6e66366b39cf85f5` gave exactly
 64 modules, listed below, excluding this entry module. All 64 Lean/Markdown
-pairs are byte-identical to workspace base Library
-`7d8c1355c088b76a992b0af1690748d5ae7147b5` and inspected current Library
-`7290311ebd03e23d11ae093f6e66366b39cf85f5`. The published target statement
-pair and its entire dependency closure are unchanged. No private draft,
-staged artifact or unpublished comparison enters this closure.
+pairs are byte-identical to those of the earlier Library commit
+`7d8c1355c088b76a992b0af1690748d5ae7147b5`.
 
 The actual mathematical inputs are the quotient lifts and hom
 extensionality in `Localization`, the two explicitly inverse maps in
@@ -144,8 +142,8 @@ definitional formulas. The source action of the quotient transport is
 literally the restriction of the original action, so no normalizer,
 semidirect-product, localization-tower or normalization theorem is required.
 
-The remaining imports come from the unchanged target's existing definitions
-and the tensor helper's fixed closure. The broad source scan found only
+The remaining imports come from the existing definitions of
+`PartialDerivativeTensorStatement` and the tensor helper's fixed closure. The broad source scan found only
 arithmetic field/residue-degree finranks, the unused
 `Category.Basic.HasFiniteLength` predicate and the unused Fourier
 `HarmonicAnalysis.IsSelfDual` proposition in the excluded mathematical
@@ -153,23 +151,22 @@ families. These are not representation-finiteness or representation-duality
 proof inputs. `LocalizationTransport` also contains an elementary scalar
 vanishing criterion; it is unused by this construction.
 
-Every exclusion of the parent task remains binding. Each following row
-checks both the actual import closure and the implemented mathematical proof
-inputs, including the named conclusions, proof successors and downstream
+Each following row checks an excluded family against both the actual import closure and the implemented mathematical proof
+inputs, including the named conclusions, the modules that prove them and downstream
 consequences.
 
-| Excluded family and parent task references | Restriction proof audit |
+| Excluded family | Restriction proof audit |
 | --- | --- |
-| `SegmentHeadProductIrreducibility` (`8364e73f-14ec-4d14-8f2b-1555a7c1ce95`); `GenericSegmentProductUniqueness` (`30341ae4-65f2-4a0e-9283-763db01a409e`); individual special-head/reverse-socle (`67279e36-f3c2-42e3-9302-11729784042e`) and segment-socle/reverse-head (`4ca79bbd-589e-476b-9f65-661e799984b5`) existence | No segment, head or socle module occurs. The inverse maps use only the existing quotient transport universal property. |
-| Multisegment exhaustion (`3bfb61fa-1129-4fc9-83fd-7fcfec22106e`), ordered strong-head existence (`ebea9a8a-9b21-4208-aa31-98c2dea1f8a3`), quotient coverage (`20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584`), ordered conversion (`8252833d-c269-41a9-824c-5879e531b23b`) | No multisegment, ordering or coverage theorem occurs. Both maps preserve the original quotient representatives. |
-| Tempered uniqueness (`52e97845-36bb-457d-b76f-70753334b88c`), `SquareIntegrableLanglandsClassification` (`1cb45da2-7007-4351-a694-594fb148b8d1`), square-integrable exhaustion (`cd8ab97c-0b78-4bce-97c4-d307a28159a4`), regular exhaustion (`bf433f0a-921a-428c-b0c0-6475438125ac`), analytic segment classification (`aca8805b-054f-4d56-8045-12db7f623404`), `SegmentSpecialEssentialSquareIntegrability` (`5eece9e8-7f6b-4ea9-abea-a1f9f1b8c807`) | No classification or square-integrability input occurs. Every original module carrier is arbitrary. |
-| `UnlinkedSegmentSocleProductIrreducible` (`23e98d90-6055-4e35-91a9-b0f5d8a84961`), `LinkedSegmentSocleReverseProductStructure` (`a55c4267-7e3a-43f6-8bb1-ce319e1d0aa9`), `LinkedSegmentSoclePairReducible` (`8fa9f68b-fa1b-431a-97f6-5b163964d1fc`), `SegmentSocleProductIrreducibility` (`2ae5cbe5-0701-4509-88a0-db8cbeb35be4`), juxtaposed structure and quotient-Hom (`7ff2a1e9-89dc-439e-a861-a567b3db92bf`) | No socle, representation product-structure, reducibility or quotient-Hom theorem occurs. |
-| Adjacent socle commutation (`e3634665-571b-4852-9f4c-bab8a1053434`, `cded83f3-df9c-4018-bc61-dc54f5c1f9ab`), two-segment commutation (`426911b4-6620-413f-8065-04b25287f3bd`, `66e3b87c-647e-41e4-af18-df4d436765f0`), linked gluing (`c84cd52c-3ff3-4024-be50-8b84dd480888`, `6780b79c-9526-46aa-b8b4-00377d68b1ea`), `OrderedMultisegmentSocleExistence` (`23189526-80b0-4828-a6d4-7ebec2cbeef5`), socle exhaustion (`f3a69bc8-7312-4f82-8a7d-ea3c8188cb63`) | No socle commutation, gluing or exhaustion module or theorem occurs. |
-| `SegmentFullJacquetFormula` (`ed48ae06-964c-4c84-9e62-978f5a953ca7`), `SegmentHeadJacquetFormula` (`55ad1e10-62d8-46b7-a081-909ef0056426`), `SegmentSocleJacquetFormula` (`b95105c6-f8bb-4641-ae53-2f49d1e7f034`), `SegmentSpecialJacquetExponentNormFormula` (`92aea10f-62ac-4e0b-bd4a-9a80909797c5`); all segment derivative formulas and parent six-statement parts (b), (d), (e), (f) | No segment formula is used. General localization supplies the relation quotient, and ordinary restriction is its exact published definition. |
-| `TwoSupercuspidalNonadjacentProductIrreducible` (`3c9849a4-a6c0-43ac-9982-d15ed76bf1e9`), `TwoSupercuspidalProductStructure` (`ab61f565-1427-4746-ba77-46097563e962`); Ze80 §§3.5, 9.6, Theorems 4.2, 9.7 and 9.3 | No product criterion, segment derivative, analytic theorem or unproved BZ77 derivative result is used. No Haar bridge is needed. |
-| `IrreducibleCoinvariantFinitenessStatement` (`5ab445dc-d2b4-4072-80d1-6370870a4a26`), `LeviCuspidalCoinvariantFinitenessStatement` (`3ff5c8fb-397c-4345-bcb3-5d98a0993d18`), the dependent mirabolic finite-length route (`5428fe2c-013c-482d-aa6e-7df43e7191aa`), `SupercuspidalCoinvariantFinitenessStatement` (`62de5903-b616-4b5c-88eb-a066b77c5467`) | No representation-finiteness input occurs. The imported finite-length predicate and arithmetic degrees described above are unused. |
-| Proper-derivative vanishing and finrank-one conclusions of `SupercuspidalDerivatives` (`2e5183b1-01e9-44fb-b26c-f4521a25c7c7`) | No classification module occurs. Neither UpperUnipotentCharacterFactorization nor TopDerivativeCoinvariantComparison, whose closure reaches the excluded host, is imported. No derivative dimension is used. |
-| Plus, adjunction, representation duality, derivative filtration, pairing, or unproved general derivative comparisons | No such theorem is used. The dual module only defines linear functionals. The generic quotient tower and higher-rank top-localization comparison remain open. |
+| `SegmentHeadProductIrreducibility`; `GenericSegmentProductUniqueness`; individual special-head/reverse-socle and segment-socle/reverse-head existence | No segment, head or socle module occurs. The inverse maps use only the existing quotient transport universal property. |
+| Multisegment exhaustion, ordered strong-head existence, quotient coverage, ordered conversion | No multisegment, ordering or coverage theorem occurs. Both maps preserve the original quotient representatives. |
+| Tempered uniqueness, `SquareIntegrableLanglandsClassification`, square-integrable exhaustion, regular exhaustion, analytic segment classification, `SegmentSpecialEssentialSquareIntegrability` | No classification or square-integrability input occurs. Every original module carrier is arbitrary. |
+| `UnlinkedSegmentSocleProductIrreducible`, `LinkedSegmentSocleReverseProductStructure`, `LinkedSegmentSoclePairReducible`, `SegmentSocleProductIrreducibility`, juxtaposed structure and quotient-Hom | No socle, representation product-structure, reducibility or quotient-Hom theorem occurs. |
+| Adjacent socle commutation, two-segment commutation, linked gluing, `OrderedMultisegmentSocleExistence`, socle exhaustion | No socle commutation, gluing or exhaustion module or theorem occurs. |
+| `SegmentFullJacquetFormula`, `SegmentHeadJacquetFormula`, `SegmentSocleJacquetFormula`, `SegmentSpecialJacquetExponentNormFormula`; all segment derivative formulas | No segment formula is used. General localization supplies the relation quotient, and ordinary restriction is its exact published definition. |
+| `TwoSupercuspidalNonadjacentProductIrreducible`, `TwoSupercuspidalProductStructure`; Ze80 §§3.5, 9.6, Theorems 4.2, 9.7 and 9.3 | No product criterion, segment derivative, analytic theorem or unproved BZ77 derivative result is used. No Haar bridge is needed. |
+| `IrreducibleCoinvariantFinitenessStatement`, `LeviCuspidalCoinvariantFinitenessStatement`, the dependent mirabolic finite-length route, `SupercuspidalCoinvariantFinitenessStatement` | No representation-finiteness input occurs. The imported finite-length predicate and arithmetic degrees described above are unused. |
+| Proper-derivative vanishing and finrank-one conclusions of `SupercuspidalDerivatives` | No classification module occurs. Neither UpperUnipotentCharacterFactorization nor TopDerivativeCoinvariantComparison, whose closure reaches the vanishing half of `SupercuspidalDerivatives` (`Classification.SupercuspidalDerivativeVanishing`), is imported. No derivative dimension is used. |
+| Plus, adjunction, representation duality, derivative filtration, pairing, or unproved general derivative comparisons | No such theorem is used. The dual module only defines linear functionals. The generic quotient tower and higher-rank top-localization comparison are separate modules (`Jacquet.LocalizationTower`, `TopLocalizationComparison`). |
 
 ### Complete transitive project import list
 

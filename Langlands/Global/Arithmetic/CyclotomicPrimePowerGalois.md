@@ -1,12 +1,9 @@
 # Prime-power cyclotomic Galois groups
 
-Authors: Worker 384 and Worker 1244.
-
 This is an internal arithmetic component of the proof of Artin–Tate,
 *Class Field Theory* (2009), IX.1, Theorem 1, printed pp.65–66
 (PDF pp.74–75). The appended errata (PDF p.202) contains no relevant
-correction. Worker 1244 supplied the component interface and proof plan;
-Worker 384 implemented the Lean proofs. The principal-unit subgroup and
+correction. The principal-unit subgroup and
 its supporting lemmas are derived infrastructure, rather than new
 hypotheses about almost-everywhere powers.
 

@@ -1,9 +1,7 @@
 # Commutators of adjacent simple root subgroups
 
-Author: Worker 90.
-
 This helper module supports the proof of the even-chain Galois data
-statement (Task 5375). That target is derived from Robert Steinberg,
+statement. That target is derived from Robert Steinberg,
 *Regular elements of semi-simple algebraic groups*, Publ. Math. IHÉS 25
 (1965), 49–80 (source `steinberg-1965-regular-elements-semisimple-groups`).
 The Markdown of the target `EvenChainGaloisDataStatement` gives the full

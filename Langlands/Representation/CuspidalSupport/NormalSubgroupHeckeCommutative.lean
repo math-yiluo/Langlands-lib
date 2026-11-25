@@ -188,7 +188,7 @@ def rightAction :
     (End (inducedRep H ρ))ᵐᵒᵖ →+*
       Module.End ℂ ((inducedRep H ρ).representation.IntertwiningMap τ) where
   toFun β :=
-    { toFun := fun T => T.comp (SmoothRep.hom β.unop)
+    { toFun := fun T => T.comp (SmoothRep.hom β.unop.asHom)
       map_add' := fun _ _ => Representation.IntertwiningMap.ext (LinearMap.ext fun _ => rfl)
       map_smul' := fun _ _ => Representation.IntertwiningMap.ext (LinearMap.ext fun _ => rfl) }
   map_one' := LinearMap.ext fun _ => Representation.IntertwiningMap.ext (LinearMap.ext fun _ => rfl)
@@ -208,7 +208,7 @@ attribute [local instance] rightModule
 
 theorem op_smul_eq_comp (β : End (inducedRep H ρ))
     (T : (inducedRep H ρ).representation.IntertwiningMap τ) :
-    MulOpposite.op β • T = T.comp (SmoothRep.hom β) :=
+    MulOpposite.op β • T = T.comp (SmoothRep.hom β.asHom) :=
   rfl
 
 instance rightModule_isScalarTower :
@@ -338,9 +338,10 @@ theorem exists_lift [ρ.representation.IsIrreducible] (π : Representation ℂ G
 theorem exists_end_comp_eq [ρ.representation.IsIrreducible] (π : Representation ℂ G V)
     (T T' : (inducedRep H ρ).representation.IntertwiningMap π)
     (hT : Function.Surjective T) :
-    ∃ β : End (inducedRep H ρ), T.comp (SmoothRep.hom β) = T' := by
+    ∃ β : End (inducedRep H ρ), T.comp (SmoothRep.hom β.asHom) = T' := by
   obtain ⟨ψ, hψ⟩ := exists_lift H ρ hH π ρ.representation T hT (frobenius H ρ hH π T')
-  refine ⟨SmoothRep.ofHom ((frobenius H ρ hH (inducedRep H ρ).representation).symm ψ), ?_⟩
+  refine ⟨End.of (SmoothRep.ofHom
+    ((frobenius H ρ hH (inducedRep H ρ).representation).symm ψ)), ?_⟩
   apply (frobenius H ρ hH π).injective
   rw [← hψ]
   refine Representation.IntertwiningMap.ext (LinearMap.ext fun w => ?_)
@@ -543,7 +544,7 @@ theorem commute_of_rank_le_one [ρ.representation.IsIrreducible] (π : Represent
   have hJ : ∀ ω₀ : G ⧸ H →* ℂˣ,
       ((frobenius H ρ hH (twist (ω₀.comp (QuotientGroup.mk' H)) π)).symm
         ((twistRes (ω₀.comp (QuotientGroup.mk' H)) (comp_mk'_eq_one H ω₀) π
-          ρ.representation).symm j)).comp (SmoothRep.hom γ) = 0 := by
+          ρ.representation).symm j)).comp (SmoothRep.hom γ.asHom) = 0 := by
     intro ω₀
     set ω := ω₀.comp (QuotientGroup.mk' H)
     have hω : ∀ h : H, ω h = 1 := comp_mk'_eq_one H ω₀
@@ -558,10 +559,10 @@ theorem commute_of_rank_le_one [ρ.representation.IsIrreducible] (π : Represent
       apply hj0
       rwa [LinearEquiv.map_eq_zero_iff, LinearEquiv.map_eq_zero_iff] at h0
     obtain ⟨v₀, hv₀⟩ := rank_le_one_iff.mp hr
-    have hscal : ∀ δ : End (inducedRep H ρ), ∃ c : ℂ, J.comp (SmoothRep.hom δ) = c • J := by
+    have hscal : ∀ δ : End (inducedRep H ρ), ∃ c : ℂ, J.comp (SmoothRep.hom δ.asHom) = c • J := by
       intro δ
       obtain ⟨a, ha⟩ := hv₀ J
-      obtain ⟨b, hb⟩ := hv₀ (J.comp (SmoothRep.hom δ))
+      obtain ⟨b, hb⟩ := hv₀ (J.comp (SmoothRep.hom δ.asHom))
       have ha0 : a ≠ 0 := by
         rintro rfl
         rw [zero_smul] at ha
@@ -569,19 +570,20 @@ theorem commute_of_rank_le_one [ρ.representation.IsIrreducible] (π : Represent
       exact ⟨b / a, by rw [← hb, ← ha, smul_smul, div_mul_cancel₀ _ ha0]⟩
     obtain ⟨cα, hcα⟩ := hscal α
     obtain ⟨cβ, hcβ⟩ := hscal β
-    have e1 : J.comp (SmoothRep.hom γ) =
-        (J.comp (SmoothRep.hom α)).comp (SmoothRep.hom β) -
-          (J.comp (SmoothRep.hom β)).comp (SmoothRep.hom α) :=
+    have e1 : J.comp (SmoothRep.hom γ.asHom) =
+        (J.comp (SmoothRep.hom α.asHom)).comp (SmoothRep.hom β.asHom) -
+          (J.comp (SmoothRep.hom β.asHom)).comp (SmoothRep.hom α.asHom) :=
       Representation.IntertwiningMap.ext (LinearMap.ext fun f =>
-        map_sub J ((SmoothRep.hom α) ((SmoothRep.hom β) f))
-          ((SmoothRep.hom β) ((SmoothRep.hom α) f)))
+        map_sub J ((SmoothRep.hom α.asHom) ((SmoothRep.hom β.asHom) f))
+          ((SmoothRep.hom β.asHom) ((SmoothRep.hom α.asHom) f)))
     rw [e1, hcα, hcβ, Representation.IntertwiningMap.smul_comp,
       Representation.IntertwiningMap.smul_comp, hcα, hcβ, smul_smul, smul_smul, mul_comm,
       sub_self]
-  have hF : ∀ w : ρ, SmoothRep.hom γ (unitFunction H hH ρ.representation ρ.isSmooth w) = 0 := by
+  have hF : ∀ w : ρ,
+      SmoothRep.hom γ.asHom (unitFunction H hH ρ.representation ρ.isSmooth w) = 0 := by
     intro w
     set F : CompactFunctions H ρ.representation :=
-      SmoothRep.hom γ (unitFunction H hH ρ.representation ρ.isSmooth w)
+      SmoothRep.hom γ.asHom (unitFunction H hH ρ.representation ρ.isSmooth w)
     let t : LeftQuotient H → V := cosetTerm H π ρ.representation j F
     have ht : t = 0 := by
       refine eq_zero_of_forall_character hsep (leftQuotientEquiv H)

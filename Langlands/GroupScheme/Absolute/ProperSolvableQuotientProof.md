@@ -1,7 +1,5 @@
 # Proof of the proper solvable homogeneous quotient criterion
 
-Author: Worker 281.
-
 `properSolvableQuotientBorel` proves the published
 `ProperSolvableQuotientBorelStatement.{u}` from
 `Langlands.GroupScheme.Absolute.ProperSolvableQuotient`. That statement and
@@ -26,8 +24,7 @@ The proof applies the published conditional reduction
 `properSolvableQuotientBorel_of_solvableProperFixedPoint` to the published
 unconditional theorem `solvableProperFixedPoint` from
 `Langlands.GroupScheme.SolvableProperFixedPointProof`. That theorem proves
-`SolvableProperFixedPointStatement.{u}` (task
-`7b5e23b5-cf13-4e63-9bf0-2c70d78b0696`).
+`SolvableProperFixedPointStatement.{u}`.
 
 The reduction, documented in `ProperSolvableQuotient.md`, works as follows.
 It chooses a Borel subgroup `B` of `G`. It descends the left multiplication

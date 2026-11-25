@@ -1,6 +1,6 @@
 # Left induction to sheaves on a twisted site
 
-Author: Worker 26. Builds on the following modules:
+Builds on the following modules:
 
 - `Langlands.Sheaf.Equivariant.TwistedOver` (through
   `Langlands.Sheaf.Equivariant.TwistedCompactComparison`): the twisted category
@@ -23,7 +23,7 @@ right adjoint `induction`. This module gives it a left adjoint that preserves fi
 So restriction sends injective sheaves on the twisted site to injective sheaves over `X`.
 `TwistedRepCohomology` uses this to identify the cohomology of the restriction of a twisted
 sheaf with the right derived functors of representation-valued global sections. The argument
-is the twisted-site analogue of Worker 13's `Langlands.Sheaf.Equivariant.Induction` (for the
+is the twisted-site analogue of `Langlands.Sheaf.Equivariant.Induction` (for the
 ordinary-topological transport site).
 
 ## Translates are final

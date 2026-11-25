@@ -1,7 +1,5 @@
 # Supplied simply connected covers remain covers after arbitrary field extension
 
-Author: Worker 4036.
-
 The theorem `Langlands.GroupScheme.isSimplyConnectedCover_fieldExtension`
 proves exactly the published
 `Langlands.GroupScheme.IsSimplyConnectedCoverFieldExtensionStatement.{u}`

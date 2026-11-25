@@ -1,6 +1,6 @@
 # Restriction of support in ordered semigroup products
 
-This internal unit provides the support restriction used when an ordered-product
+This internal module provides the support restriction used when an ordered-product
 partition of an ambient group is applied to a central subgroup or a smooth
 quotient. It derives its claims from the existing weight-partition and actual
 semigroup-functor constructions, without a new literature assertion.

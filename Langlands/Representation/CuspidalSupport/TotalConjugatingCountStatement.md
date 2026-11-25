@@ -1,8 +1,5 @@
 # Total count of minimal conjugating block permutations
 
-Author: Worker 204.
-Documentation correction: Worker 179.
-
 This pair states the count `l(M) = r!` from Bernstein–Zelevinsky (1977),
 section 2.8. For an actual standard Levi of a general linear group over a
 finite p-adic extension, the count runs over all minimal permutations that
@@ -146,7 +143,8 @@ forces the permutation to be the increasing map on each block. Conversely,
 each `σ : Equiv.Perm (Fin B.length)` determines a unique target shape and
 a unique such permutation. So `S ≃ Equiv.Perm (Fin B.length)`.
 
-This explains the provenance and the future proof obligation only. This
+This explains the provenance and the separate proof
+(`totalConjugatingCount` in `TotalConjugatingCountProof`) only. This
 pair establishes none of these facts: not the partition description of
 `ConjugatesLevi`, not the bijection, and not the fixed-target coset
 parametrization. The latter is the separate published proposition

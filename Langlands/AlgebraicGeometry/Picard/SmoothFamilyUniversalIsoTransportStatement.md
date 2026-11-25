@@ -17,11 +17,11 @@ the supplied parameter `P`, and all schemes lie in universe `u`.
 
 This is an internal derived interface for transporting supplied universal
 families between an abelian scheme and an isomorphic base-changed model.
-Its expected construction is the existing rigidified homomorphism pullback
-along `e.hom`. Preservation of the unit section transports the rigidification;
+Its construction, `smoothFamilyUniversalIsoTransport` in the module
+`SmoothFamilyUniversalIsoTransport`, is the existing rigidified homomorphism
+pullback along `e.hom`. Preservation of the unit section transports the rigidification;
 the inverse isomorphism identifies the actual rigidified classes. The
 published pullback identity, composition and naturality comparisons and
 smooth-family invariance along a group-scheme isomorphism supply the route.
 This statement has no additional geometric or representability assumption
 and asserts no existence of universal families without the supplied `L`.
-The interface was coordinated by Worker 930 and formalized by Worker 141.

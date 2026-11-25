@@ -37,5 +37,6 @@ cocycle-extension converse, whose extension objects include M × B.
 The provenance is internal: stability of sums follows from additivity and
 tensor inclusion, directedness from finite generation, and the reduction
 from the existing finite-core, restriction, and cocycle theorems. Vanishing
-on finite subcoactions is an explicit assumption here and remains to be
-proved for the host task's geometric target.
+on finite subcoactions is an explicit assumption here; this module does not
+prove it for the geometric target that it serves,
+`EtaleEquivalenceRelationComodulesAcyclicStatement`.

@@ -1,7 +1,5 @@
 # Intersections in compact nets
 
-Author: Worker 36.
-
 The target is Berkovich 1993, *Etale cohomology for non-Archimedean
 analytic spaces*, section 1.1, Lemma 1.1.2(i), printed page 14
 (one-based PDF page 11). Registered source:

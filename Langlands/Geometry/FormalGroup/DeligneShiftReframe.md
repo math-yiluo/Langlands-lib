@@ -164,7 +164,8 @@ The action proved here is for the specified arithmetic subgroup of
 `GL(F^d) × Multiplicative Z`. Constructing a normalized pair from every
 linear automorphism in the discrete-valuation setting, proving the trivial
 action of scalar linear automorphisms and descending to a full projective
-action remain further obligations. The action uses the existing stalkwise
-determinant predicate; an independent exterior-subsheaf comparison remains
-open. Arbitrary base change of the combined construction, comparison with
+action are done in `DeligneValuedReframe`, `DeligneScalarClass` and
+`DeligneProjectiveAction`. The action uses the existing stalkwise
+determinant predicate; an independent exterior-subsheaf comparison is not
+made here (`DeligneDeterminantSubsheaf` proves it). Arbitrary base change of the combined construction, comparison with
 formal-module moduli, and representability are outside this module.

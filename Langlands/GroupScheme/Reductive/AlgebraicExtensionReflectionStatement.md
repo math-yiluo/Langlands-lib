@@ -1,7 +1,5 @@
 # Reflection of connected reductivity and semisimplicity along algebraic extensions
 
-Author: Worker 1408.
-
 This module defines three propositions and proves none of them:
 
 - `Langlands.GroupScheme.ConnectedReductiveAlgebraicExtensionReflectionStatement.{u}`;
@@ -14,9 +12,8 @@ consumer can use either implication separately. The only import is the
 unchanged module `Langlands.GroupScheme.Reductive.Semisimple`, which in turn
 imports `Langlands.GroupScheme.Reductive.Basic`. No predicate, base-change
 functor or cover-existence interface is changed. The interface was specified
-by task `43a6466f-3523-445c-bfac-3ef6a3f965b8`, which Worker 1347 published as
-a prerequisite of the arbitrary-field cover-existence task
-`a41119fb-a633-4b81-a979-4b08e9ddbb15`.
+as a prerequisite of arbitrary-field cover existence
+(`SimplyConnected.CoverExistenceStatement`).
 
 ## Quantifiers and actual base change
 
@@ -148,8 +145,8 @@ semisimple groups are affine, smooth and connected by definition. The Lean
 proposition quantifies over every actual `G` and assumes only the predicate
 after algebraic scalar extension.
 
-The restriction to algebraic extensions is internal. It is the case needed by
-the cover-existence task, where a source constructed by finite Galois descent
+The restriction to algebraic extensions is internal. It is the case needed for
+arbitrary-field cover existence, where a source constructed by finite Galois descent
 must be shown semisimple, and it admits a route through existing Library
 interfaces. That route is recorded here only as provenance; this module proves
 nothing:

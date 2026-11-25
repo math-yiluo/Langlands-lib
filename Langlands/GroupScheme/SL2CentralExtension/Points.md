@@ -1,6 +1,6 @@
 # Points of `SL₂` over a base scheme
 
-Worker 65. Internal supporting development for the proof of
+Internal supporting development for the proof of
 `Langlands.GroupScheme.SpecialLinearCentralExtensionSplitStatement` (Conrad, *Reductive group
 schemes*, Proposition 4.3.1).
 

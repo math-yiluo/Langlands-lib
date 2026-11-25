@@ -1,7 +1,5 @@
 # Actual Fourier partner of the rank-one comparison box
 
-Author: Worker 623.
-
 This internally derived helper identifies the actual compact-open box test in
 `RankOneMatrixWhittakerComparisonBox` with the affine lattice test computed in
 `RankOneMatrixFunctionalEquationComparisonLatticeFourier`. It retains the

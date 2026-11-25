@@ -1,6 +1,6 @@
 # Smooth connected representability of the closed torus envelope
 
-Worker 1333. `TorusGeneratedEnvelopeExistenceStatement.{u}` is the proposition
+`TorusGeneratedEnvelopeExistenceStatement.{u}` is the proposition
 that, over every field `k : Type u`, each smooth connected affine actual group
 scheme `G` has a `TorusGeneratedEnvelope G` whose group is smooth and connected.
 There is no solvability, reductivity, splitness, perfection, infinitude, or

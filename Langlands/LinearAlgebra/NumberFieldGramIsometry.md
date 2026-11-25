@@ -1,7 +1,5 @@
 # The quadratic-form Hasse principle implies the Gram-matrix version
 
-Worker 863.
-
 `Langlands.NumberFieldGramIsometryStatement.{u}` is a `Prop`-valued internal
 matrix version of the classical quadratic-form theorem. For every number field
 `F`, every natural number `n`, and two symmetric invertible `n × n` matrices

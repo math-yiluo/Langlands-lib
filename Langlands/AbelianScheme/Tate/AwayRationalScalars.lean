@@ -201,7 +201,7 @@ theorem rationalEndAction_primeTo_commute (f : Rationalization.End A) (a : Globa
     Commute (rationalEndAction A T (fun n => Nat.Coprime n m) f) (primeToFiniteAdeleAction A T hAway a) := by
   apply LinearMap.ext
   intro x
-  exact rationalHomMap_primeToFiniteAdeleAction T hAway f a x
+  exact rationalHomMap_primeToFiniteAdeleAction T hAway f.asHom a x
 
 /-- The required B tensor_Q A_f away from the modulus action comes from actual rational endomorphisms. -/
 def primeToFiniteAdeleAlgebraAction {D : Type*} [Ring D] [Algebra ℚ D]

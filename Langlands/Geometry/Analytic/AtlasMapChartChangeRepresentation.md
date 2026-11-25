@@ -33,5 +33,5 @@ by its already proved equality with the original map.
 is literally the original domain algebra. Its structural map is the
 constructed bounded chart change, and its locus is
 `a.chart j ⁻¹' (a.chart i '' D.locus)`. The three accompanying equations
-record these literal data. This unit constructs domain transport only;
-quasi-isomorphism composition and localization are subsequent work.
+record these literal data. This module constructs domain transport only;
+quasi-isomorphism composition and localization are not treated here.

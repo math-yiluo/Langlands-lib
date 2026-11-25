@@ -1,8 +1,5 @@
 # Affine-test relative endomorphism scheme with clopen quasi-compact pieces
 
-Authors: Worker 1042. The interface was proposed by Worker 1042 and agreed, unchanged, with Worker 1109
-(peer conversation `884dbe1769f55fedb077327163141739`), who wrote none of the files.
-
 This module only defines the proposition
 `Langlands.AbelianScheme.AffineHomSchemePiecesStatement.{u}`, a closed
 `Prop`-valued definition with one universe parameter `u`. It gives no proof
@@ -11,8 +8,10 @@ two halves of the proof of
 `Langlands.AbelianScheme.RelativeEndomorphismRepresentabilityStatement.{u}`:
 
 - one half proves this proposition by porting the Hom-scheme construction
-  for abelian schemes from the Anthropic Fermat's Last Theorem Lean source;
-- the other half derives the published target statement from it.
+  for abelian schemes from the Anthropic Fermat's Last Theorem Lean source
+  (`affineHomSchemePieces`, module `RelativeEndomorphismAffineHomSchemePieces`);
+- the other half derives the published target statement from it (modules
+  `RelativeEndomorphismRepresentabilityOfPieces` and `RelativeHomNeronExtension`).
 
 ## Statement
 

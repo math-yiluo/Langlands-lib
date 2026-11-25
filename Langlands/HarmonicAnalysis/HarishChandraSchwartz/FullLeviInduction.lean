@@ -147,7 +147,7 @@ variable {F : Type u} [Field F] [ValuativeRel F] [TopologicalSpace F]
   {i : S.toGrp ⟶ G} {ν : cocharacterLattice S}
   [Fintype (RationalPointFamily.SimpleRoot i ν)]
 
-local instance : NonarchimedeanGroup (rationalPoints G) :=
+private local instance : NonarchimedeanGroup (rationalPoints G) :=
   Plancherel.rationalPoints_nonarchimedeanGroup G
 
 variable (hG : IsConnectedReductive G) (hi : IsMaximalSplitTorus i)

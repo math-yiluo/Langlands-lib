@@ -1,6 +1,6 @@
 # Uniform finite expansion of central action operators
 
-Worker 345 defines `Langlands.CentralOperatorExpansionStatement.{uG,uA,uV}`
+This module defines `Langlands.CentralOperatorExpansionStatement.{uG,uA,uV}`
 as a closed proposition. This file states the result; it does not prove it.
 
 ## Exact statement
@@ -112,7 +112,7 @@ are internal derived content, not a verbatim statement from JPS or Casselman.
 The originals at these locations were read. No source-specific files named
 `notes/errata/jps-1979-gl3-i.md` or
 `notes/errata/casselman-1995-admissible-representations.md` were present in the
-project or the current Library when this statement was prepared.
+project or the Library when this statement was prepared.
 
 ## Dependencies and intended uses
 
@@ -127,7 +127,9 @@ center-finiteness and generalized-character decomposition. It is not imported
 or assumed here. Neither is the irreducible scalar-character result in
 `Smooth.Schur.Proof`.
 
-A proof of this proposition will apply to scalar matrices in a general linear
+The proposition, proved as `Langlands.centralOperatorExpansion` in
+`Langlands.Representation.Smooth.CentralOperatorExpansionProof`, applies to
+scalar matrices in a general linear
 group and to one-parameter subgroups of actual product-Levi centers, by supplying
 the corresponding continuous center-valued homomorphism. Those applications
 must establish the hypotheses for their representations. Full-torus Whittaker

@@ -22,7 +22,8 @@ sorted module to the original module a linear equivalence. Conjugating a
 compact endomorphism by this equivalence reduces its action on the transported
 vector to the sorted case.
 
-This is an internal lemma for Task 7004. The sorted construction uses the
+This is an internal lemma for the proof of
+`CuspidalArchimedeanStandardIrreducibleStatement`. The sorted construction uses the
 minor weights and untwisting from `ComplexTemperedStandardIrreducibleProof`,
 and the spherical vector from `ComplexSphericalLieGroup`. The compact
 multiplicity-one calculation and permutation transport are the published

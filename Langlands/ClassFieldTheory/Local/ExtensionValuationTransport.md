@@ -1,6 +1,6 @@
 # Canonical residue and valuation transport to the image field
 
-Author: Worker 20. This is an internal specialization of the arithmetic transport
+This is an internal specialization of the arithmetic transport
 construction in [CanonicalTransport](../../LocalField/CanonicalTransport.md).
 All declarations here lie in `Langlands.LocalClassField`.
 
@@ -61,5 +61,5 @@ comparison of actual filtration levels and conductor predicates. Those
 factor/conductor comparisons are not asserted by this module. Neither chosen
 uniformizer equality nor arbitrary designated-extension identification is
 claimed. The existing choice of closure embedding is retained; its independence
-and coherence, reciprocity existence and epsilon-system existence remain
+and coherence, reciprocity existence and epsilon-system existence are
 separate obligations.

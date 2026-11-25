@@ -1,7 +1,5 @@
 # Continuous families through nested actual rational charts
 
-Author: Worker 56.
-
 This module constructs equivalences of compatible continuous families through
 an actual inclusion of rational charts. It handles both the forward
 finite-cover functor and its constructed inverse on every outer cover,

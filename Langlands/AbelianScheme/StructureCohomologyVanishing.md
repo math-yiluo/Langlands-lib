@@ -3,11 +3,9 @@
 Module `Langlands.AbelianScheme.StructureCohomologyVanishing`, namespace
 `Langlands.AbelianScheme`.
 
-Author: Worker 5218.
-
 ## Purpose
 
-Task 6105 (`FieldH2ExteriorCoproductComparisonStatement`) uses a bounded
+The proof of `FieldH2ExteriorCoproductComparisonStatement` uses a bounded
 creation-contraction family on `H*(A, 𝒪_A)`. Its bound hypothesis is
 `∀ n, dim H¹(A, 𝒪_A) < n → Hⁿ(A, 𝒪_A) = 0`. This module proves the geometric
 vanishing above the relative dimension `g`. It also reduces the bound above
@@ -15,9 +13,10 @@ vanishing above the relative dimension `g`. It also reduces the bound above
 dimension `g = fieldRelativeDimension A`.
 
 This module does not prove that inequality. It is the reverse half of the
-unproved published statement `FieldStructureSheafH1DimensionStatement`
-(Task 6458). The Library already proves the upper bound `dim H¹ ≤ g`
-(`FieldStructureSheafH1DimensionBoundStatement`).
+published statement `FieldStructureSheafH1DimensionStatement`, which the
+Library proves separately (`fieldStructureSheafH1Dimension`, module
+`FieldStructureSheafH1DimensionProof`). The Library also proves the upper
+bound `dim H¹ ≤ g` (`FieldStructureSheafH1DimensionBoundStatement`).
 
 ## Notation
 
@@ -80,7 +79,8 @@ The proofs use only these published Library proofs:
 `CechDegreeOne.isQuasicoherent_unit`. These are general results on smooth
 schemes and on noetherian schemes. The import closure of this module (70
 Library modules) contains none of the modules of the six Picard and
-dual-scheme statements excluded by Task 6105, and no module of
+dual-scheme statements excluded for the proof of
+`FieldH2ExteriorCoproductComparisonStatement`, and no module of
 `FieldH2PrimitiveInjectivityStatement` or its proofs.
 
 ## Provenance

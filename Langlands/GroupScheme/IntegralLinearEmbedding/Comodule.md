@@ -1,7 +1,5 @@
 # Finitely generated free subcomodules of a coalgebra over a principal ideal domain
 
-Author: Worker 4686.
-
 This internal helper module proves that a flat coalgebra `B` over a principal
 ideal domain `R` is a union of finitely generated free subcomodules, provided
 the `R`-valued functionals on `B` separate its elements. It records the result

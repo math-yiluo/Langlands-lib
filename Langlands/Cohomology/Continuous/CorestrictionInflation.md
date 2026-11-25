@@ -1,7 +1,5 @@
 # Ordinary corestriction and maps along compatible surjections
 
-Author: Worker 222.
-
 This module proves one general compatibility of the Library's ordinary
 corestriction `Tate.ordinaryCohomologyCorestriction` with Mathlib's
 `groupCohomology.map`. The refinement proof
@@ -176,7 +174,7 @@ and `Homotopy.homologyMap_eq` for the conjugated homotopy proves them equal.
 ## Provenance
 
 The theorem is internal. It was introduced for the refinement compatibility of
-finite-stage corestriction (task `70dc4748-9aa1-4c8c-8f94-5de992926c61`). It is
+finite-stage corestriction (`Langlands.Continuous.FiniteCorestrictionRefinement`). It is
 the expected fact that corestriction commutes with maps along a compatible pair
 `(π, φ)` when `π` induces a bijection of coset spaces. Its statement and proof
 were written directly for the Library's definitions. They follow no cited
@@ -186,6 +184,6 @@ coordinatewise maps `α` and `β`, built here by the recursive cone formula.
 The module uses `set_option backward.isDefEq.respectTransparency false`
 throughout, as the imported `Langlands.Cohomology.Tate.CohomologyTransfer`
 does. No hypothesis beyond those listed above is assumed. The proof uses only
-the axioms `propext`, `Classical.choice`, and `Quot.sound`. Pinned environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`: Lean 4.34.0, Mathlib
+the axioms `propext`, `Classical.choice`, and `Quot.sound`. Pinned environment:
+Lean 4.34.0, Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.

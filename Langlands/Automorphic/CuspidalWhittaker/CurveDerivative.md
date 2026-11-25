@@ -1,9 +1,8 @@
 # Differentiating Whittaker coefficients along right-translation curves
 
 Module `Langlands.Automorphic.CuspidalWhittaker.CurveDerivative`, namespace
-`Langlands.Automorphic.CuspidalWhittaker`. Worker 174 wrote it for the proof of
-`Langlands.Automorphic.CuspidalArchimedeanWhittakerFunctionalStatement` (Task 5996,
-`e3f48d66-76bc-4321-a8ea-e25681c89d3f`, published under Task 5720).
+`Langlands.Automorphic.CuspidalWhittaker`. It is part of the proof of
+`Langlands.Automorphic.CuspidalArchimedeanWhittakerFunctionalStatement`.
 
 Throughout, `K` is a number field with compact adele quotient `𝔸_K / K`. The Library's
 Whittaker iteration (module `CuspidalWhittaker.WhittakerCoefficient`) builds, from a function

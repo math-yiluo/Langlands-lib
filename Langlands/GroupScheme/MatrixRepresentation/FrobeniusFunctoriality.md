@@ -59,7 +59,7 @@ any pushed distribution on `ρ` with the action of the original distribution on
 `ρ.restrict f`. The proof checks contracted matrix entries and then uses the
 same column-vector action in both expressions.
 
-This unit does not prove injectivity or surjectivity of either functorial map.
+This module does not prove injectivity or surjectivity of either functorial map.
 It constructs no ordered distribution basis, top distribution, Steinberg module
 or bound on an entire induced representation. It proves neither the structural
 existence statements nor the irreducibility conclusion of the general

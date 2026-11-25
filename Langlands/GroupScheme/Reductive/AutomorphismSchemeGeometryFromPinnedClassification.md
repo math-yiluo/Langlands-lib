@@ -1,6 +1,6 @@
 # Full relative Aut geometry from pinned label completeness
 
-Worker 592. This internal conditional assembly identifies the remaining
+This internal conditional assembly identifies the remaining
 mathematical inputs to the full unchanged relative automorphism geometry:
 affine pinned isomorphism classification, local completeness of the
 canonical full-character-lattice pinned labels, and independently proved

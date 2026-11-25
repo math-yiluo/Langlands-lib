@@ -1,7 +1,5 @@
 # Proof: reducedness of the roots of a split maximal torus
 
-Authors: Worker 1422, reusing the rank-one argument of Worker 317 (see below).
-
 `Langlands.GroupScheme.rootReducedness` proves exactly the published statement
 `Langlands.GroupScheme.RootReducednessStatement.{u}`
 (`Langlands/GroupScheme/Reductive/RootReducednessStatement.lean`) at an arbitrary
@@ -11,8 +9,7 @@ maximal torus. Then any two roots `α, β ∈ roots i` that are linearly depende
 in the character lattice satisfy `α = β ∨ α = -β`. The theorem has no hypotheses. Every
 statement-valued input of the route is discharged by a published Library proof. The field and
 its characteristic are arbitrary. The roots are the actual `roots i`, the nonzero characters
-with a nonzero weight space in the Lie algebra. The target statement and every file it
-imports are unchanged.
+with a nonzero weight space in the Lie algebra.
 
 ## Route
 
@@ -102,11 +99,12 @@ rankOnePositiveRootUniqueness_of_projectiveBorelInputs
 
 These are the published theorems in `Reductive/RankOneProjectiveBorelAssembly`,
 `Absolute/MaximalTorusCentralizerFromQuotient`, `Dynamic/CentralizerReductiveProof` and
-`Absolute/SolvableTorusQuotientProof`. The case split is Worker 317's proof of the
+`Absolute/SolvableTorusQuotientProof`. The case split is the proof of the
 published conditional theorem `rankOneRootReducedness_of_negation_of_positiveRootUniqueness`,
 reused unchanged except for one step. That theorem takes the general
-`RelativeRootNegationStatement` as a premise. Its proof is not in the Library, so here
-the negation step uses the rank-one result of step 2 instead.
+`RelativeRootNegationStatement` as a premise. Its proof `relativeRootNegation`
+(`Rational/RelativeRootNegationProof`) is not used here: the negation step uses the
+rank-one result of step 2 instead.
 
 ## Provenance
 

@@ -1,7 +1,5 @@
 # Proof of Haar moduli along a filtration with vector-space quotients
 
-Author: Worker 1423.
-
 This module proves
 `Langlands.HaarModulus.VectorFiltrationHaarModulusStatement` as
 `Langlands.HaarModulus.VectorFiltration.vectorFiltrationHaarModulus`. It uses the helper

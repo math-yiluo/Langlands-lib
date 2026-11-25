@@ -1,20 +1,13 @@
 # Henniart's local construction: statement coverage and dependencies
 
-Author: Worker 14, for task `62ea68fa-e1f4-4187-811b-7436743bba6a` revision 1
-(Brauer, virtual-lattice, numerical and finite-witness theorem statements for
-Henniart). Most finite-group, lattice and finiteness units below were authored
-in the previous instance by Worker 30 for the same task; the finite separating
-tests are Worker 78's (task `3862e611-a782-4534-9f5e-6e9a1001ce83`); the
-relative global construction is the H3 program (task
-`34b81620-20d7-4059-9b08-6bedd1c1c029`, Workers 84 and 116). Each pair names
-its own authors.
+The relative global construction is the H3 program.
 
-This note maps the objective of that task to Lean declarations of Library
-commit `5263a53b575d66cc4ebc5364c0d990d1b111c7f7`, environment
-`bb168ec3-1031-46d9-816b-5c2ed7bbe1a6` (Lean 4.34.0, Mathlib
-`5ed2965256430c3649e86755f9576b54eca72435`), including the last two units of
-this task (`HenniartStableMapStatement` and `HenniartNumericalStatement`,
-sections 1.8–1.9). Modules are given relative to `Langlands/`. Consume them by
+This note maps the Brauer, virtual-lattice, numerical and finite-witness theorem
+statements for Henniart's local construction to Lean declarations of Library
+commit `5263a53b575d66cc4ebc5364c0d990d1b111c7f7` (Lean 4.34.0, Mathlib
+`5ed2965256430c3649e86755f9576b54eca72435`), including
+`HenniartStableMapStatement` and `HenniartNumericalStatement`
+(sections 1.8–1.9). The statuses in the tables are those of that commit. Modules are given relative to `Langlands/`. Consume them by
 Lean name from the current Library; the hashes in section 2 fix the versions
 described here.
 
@@ -40,11 +33,11 @@ replace them.
 | --- | --- | --- | --- |
 | `Representation/Finite/CharacterStatement` | `Langlands.{FiniteCharacterNormalizationStatement, FiniteCompleteReducibilityStatement, FiniteCharacterHomDimensionStatement, FiniteCharacterOrthogonalityStatement, FiniteCharacterIsomorphismStatement, FiniteCharacterNormOneStatement, FiniteCharacterTheoryStatement}` | Serre, *Linear Representations of Finite Groups* (1977), §§1.1, 1.3–1.4, 2.1–2.3 | Proved: `Langlands.FiniteCharacter.finiteCharacterTheory` (`Representation/Finite/CharacterTheoryProof`) |
 | `Representation/Finite/BrauerStatement` | `Langlands.FiniteRep.{FiniteRankOneOrderStatement, FiniteInducedCharacterFormulaStatement, FiniteInducedDegreeStatement, FiniteVirtualCharacterFaithfulnessStatement, FiniteIrreducibleBasisStatement, IntegralBrauerSpanningStatement, IntegralBrauerCharacterLatticeStatement, FiniteBrauerTheoryStatement}` | Serre (1977) §§1.2, 7.1–7.2, 9.1, 10.5; Brauer (1947) Thm 1, formula (6), §9; Henniart 2000 §§3.7–3.8 | Proved: `Langlands.FiniteRep.BrauerTheory.finiteBrauerTheory` (`Representation/Finite/BrauerTheoryProof`, with `BrauerLatticeProof`) |
-| `Representation/Finite/DegreeZeroBrauerStatement` (Worker 1749) | `Langlands.FiniteRep.FiniteDegreeZeroBrauerStatement` | Deligne (1973) §1.1 and Prop. 1.5, pp.507–510 | Proved: `Langlands.FiniteRep.DegreeZeroBrauer.finiteDegreeZeroBrauer` |
+| `Representation/Finite/DegreeZeroBrauerStatement` | `Langlands.FiniteRep.FiniteDegreeZeroBrauerStatement` | Deligne (1973) §1.1 and Prop. 1.5, pp.507–510 | Proved: `Langlands.FiniteRep.DegreeZeroBrauer.finiteDegreeZeroBrauer` |
 | `VirtualRepresentation/Weil/FiniteQuotientStatement` | `Langlands.VirtualRepresentation.Weil.{FiniteQuotientUnitaryStatement, FiniteQuotientTraceFaithfulnessStatement, FiniteQuotientDegreeStatement, FiniteQuotientPairingStatement, FiniteQuotientPositiveInductionStatement, FiniteQuotientBrauerSpanningStatement, FiniteQuotientSpanBijectionStatement, FiniteQuotientRealizationStatement}` | Henniart 2000 §§2.5–2.6, pp.445–447; Serre (1977) §1.3; Brauer (1947) | Unproved |
 
-In the first three units the coefficient field is `ℂ` and the groups are
-finite, the form Henniart uses. The finite-quotient unit applies these results
+In the first three modules the coefficient field is `ℂ` and the groups are
+finite, the form Henniart uses. The finite-quotient module applies these results
 along a surjective homomorphism `f : G →* H` with open kernel, where `G` is a
 topological group that may be infinite and only the quotient `H` is required
 finite. It concerns the actual continuous irreducible complex classes of `G`
@@ -63,10 +56,10 @@ factoring-supported lattice whose degree is the subgroup index.
 | `Global/Factors/RelativeIsometryOperationStatement` (H3) | `Langlands.Global.PoleComparison.RelativeIsometryOperationStatement` | Henniart 2000 Prop. 2.6 (a), (c) | Unproved; reductions in `Global/Factors/RelativeIsometryOperationReduction` |
 | `Global/Factors/RelativeIsometryFactorStatement` (H3) | `Langlands.Global.PoleComparison.RelativeIsometryFactorStatement` | Henniart 2000 Prop. 2.6 (a), (b) | Unproved |
 
-The generic descent unit separates relation descent, generated equivalence,
+The generic descent module separates relation descent, generated equivalence,
 isometry, degree preservation, injectivity, signed basis correspondence and
 positivity as distinct propositions; it does not supply the actual
-representation input. The H3 units supply that input at a finite relative level
+representation input. The H3 modules supply that input at a finite relative level
 `E/F` for witnessed pairs (weak automorphic association with their local
 factors). Under the certified pole comparisons, `RelativePolePairingStatement`
 concludes three things: the local coefficient pairings agree on witnessed
@@ -79,7 +72,7 @@ and specifies its properties: `T` sends each witnessed Weil generator to its
 automorphic partner, preserves pairings and degrees, and sends each
 positive-degree norm-one vector of its source span to a unique positive target
 basis vector. The absolute global group `R_G(F, 0)` of Henniart 2.5 is not
-in the Library and remains with the global definition owners.
+in the Library; it is left to the global definitions.
 
 ### 1.3 Norm-one vectors and genuine positive basis elements
 
@@ -88,7 +81,7 @@ in the Library and remains with the global definition owners.
 | `VirtualRepresentation/DescentStatement` | `IntegralNormOneSignedBasisStatement`, `IntegralPositiveDegreeBasisStatement`, `IntegralIsometrySignedBasisStatement`, `IntegralIsometryPositiveBasisStatement` | Henniart 2000 §2.8, p.448 | Proved (above) |
 | `VirtualRepresentation/Supercuspidal/PositivityStatement` | `Langlands.VirtualRepresentation.Supercuspidal.{UnitarySignedBasisStatement, UnitaryPositiveBasisStatement, UnitaryNormOneExtractionStatement}` | Henniart 2000 §§2.5–2.6, pp.445–447 | Unproved |
 
-The supercuspidal unit works in the published lattice
+The supercuspidal module works in the published lattice
 `PadicSupercuspidal.UnitaryLattice`, free on actual unitary supercuspidal
 classes of all ranks; the target is not the group on all irreducible classes of
 `GL_n`. Its degree `PadicSupercuspidal.unitaryDegree` weights a class of
@@ -98,10 +91,10 @@ classes of all ranks; the target is not the group on all irreducible classes of
 
 | Module | Declarations | Original source | Status |
 | --- | --- | --- | --- |
-| `Weil/Representation/Structure` (parameter task `ce2095a8-9814-480e-ac62-bd2f27fa88ae`) | `Langlands.Weil.{UnramifiedReduction, FiniteImageExtension, RepresentationStructure}` | Henniart 1980 §§2.1–2.6; Tate (1979) §2.2 | Proved: `Langlands.Weil.unramifiedReduction`, `Langlands.Weil.finiteImageExtension`, `Langlands.Weil.representationStructure` |
-| `Correspondence/HenniartStableMapStatement` (this task) | `Langlands.Henniart.{UnramifiedTwistIndependenceStatement, HenniartConstructionStatement}` | Henniart 2000 §4.4; Henniart 1993 §§4.2–4.4 | Unproved |
+| `Weil/Representation/Structure` | `Langlands.Weil.{UnramifiedReduction, FiniteImageExtension, RepresentationStructure}` | Henniart 1980 §§2.1–2.6; Tate (1979) §2.2 | Proved: `Langlands.Weil.unramifiedReduction`, `Langlands.Weil.finiteImageExtension`, `Langlands.Weil.representationStructure` |
+| `Correspondence/HenniartStableMapStatement` | `Langlands.Henniart.{UnramifiedTwistIndependenceStatement, HenniartConstructionStatement}` | Henniart 2000 §4.4; Henniart 1993 §§4.2–4.4 | Unproved |
 
-This task does not restate the intrinsic Weil reductions; it states their
+`HenniartStableMapStatement` does not restate the intrinsic Weil reductions; it states their
 application: independence of the chosen unramified twist and the extension of
 the stable map to all irreducible classes.
 
@@ -112,24 +105,25 @@ the stable map to all irreducible classes.
 | `Representation/Category/ClassInvariants`, `Representation/Conductor/ClassLevel` | class-level central characters and fixed vectors, `Langlands.SmoothDualClass.firstFixedLevel` and their invariance laws | JPSS 1981 §5.1 | Definitions with proved laws |
 | `Representation/Classification/SupercuspidalStrata` | `Langlands.GeneralLinear.SupercuspidalClass.{firstFixedLevel, centralLevelStratum, …}` | Bernstein–Zelevinsky 1976 Cor. 4.15, p.41; JPSS 1981 §5.1, p.211 | Definitions with proved laws |
 | `Correspondence/SupercuspidalFinitenessStatement` | `Langlands.Henniart.{SupercuspidalCompactOpenFinitenessStatement, SupercuspidalBoundedLevelFinitenessStatement, SupercuspidalLevelFinitenessReductionStatement, SupercuspidalFinitenessStatement}` | Bernstein–Zelevinsky 1976 Cor. 4.15 and §3.1 | Reduction proved: `supercuspidalLevelFinitenessReduction`; `SupercuspidalFinitenessStatement` conditional on compact-open finiteness (`Correspondence/SupercuspidalLevelFinitenessProof`) |
-| `Correspondence/HenniartStableMapStatement` (this task) | `Langlands.Henniart.SupercuspidalEpsilonConductorFinitenessStatement` | Henniart 2000 §4.3 (the set `P`); Henniart 1988 §2.5 | Unproved |
+| `Correspondence/HenniartStableMapStatement` | `Langlands.Henniart.SupercuspidalEpsilonConductorFinitenessStatement` | Henniart 2000 §4.3 (the set `P`); Henniart 1988 §2.5 | conditional on `RankinSelberg.PairEpsilonExponentStatement` and the proved `Conductor.SupercuspidalPadicConductorExponentStatement` (`SupercuspidalConductor.supercuspidalEpsilonConductorFiniteness_of_pairEpsilon`); it closes by composition, since `PairEpsilonExponentStatement` follows from `pairEpsilonExponentReduction` and `equalRankEpsilonCharacterChange` (this composition was not compiled) |
 
 `firstFixedLevel : WithTop ℕ` is the newvector level. Its identification with
 the epsilon conductor is the separate statement
 `Langlands.Conductor.ConductorExponentStatement`
-(`Representation/Conductor/EssentialStatement`, Worker 11).
+(`Representation/Conductor/EssentialStatement`).
 
 ### 1.6 Finite separating tests from the local converse
 
 | Module | Declarations | Original source | Status |
 | --- | --- | --- | --- |
-| `Correspondence/SupercuspidalFiniteEpsilonStatement` (Worker 78) | `Langlands.Henniart.{FiniteSupercuspidalEpsilonSeparationStatement, SupercuspidalStratumEpsilonSeparationStatement, FiniteSupercuspidalEpsilonLiftingStatement, SupercuspidalFiniteEpsilonStatement}` | Henniart 1993 §1.1 and Corollary, pp.339–340, Thm 4.1, p.348; Henniart 2000 §4.3 | Lifting proved: `finiteSupercuspidalEpsilonLifting`; the other three conditional on `Langlands.RankinSelberg.SupercuspidalLocalConverseStatement` (`Correspondence/SupercuspidalFiniteEpsilonProof`), and they close by composition (below) |
+| `Correspondence/SupercuspidalFiniteEpsilonStatement` | `Langlands.Henniart.{FiniteSupercuspidalEpsilonSeparationStatement, SupercuspidalStratumEpsilonSeparationStatement, FiniteSupercuspidalEpsilonLiftingStatement, SupercuspidalFiniteEpsilonStatement}` | Henniart 1993 §1.1 and Corollary, pp.339–340, Thm 4.1, p.348; Henniart 2000 §4.3 | Lifting proved: `finiteSupercuspidalEpsilonLifting`; the other three conditional on `Langlands.RankinSelberg.SupercuspidalLocalConverseStatement` (`Correspondence/SupercuspidalFiniteEpsilonProof`), and they close by composition (below) |
 
-The local converse theorem is Worker 11's
-`Representation/RankinSelberg/LocalConverseStatement`; this task consumes it.
+The local converse theorem is
+`Representation/RankinSelberg/LocalConverseStatement`; the finite separating
+tests use it.
 It is proved, for all universes and without hypotheses, by
 `Langlands.RankinSelberg.supercuspidalLocalConverse`
-(`Representation/RankinSelberg/SupercuspidalLocalConverseProof`, Worker 1718).
+(`Representation/RankinSelberg/SupercuspidalLocalConverseProof`).
 Hence the term
 `Langlands.Henniart.supercuspidalFiniteEpsilon_of_localConverse
 Langlands.RankinSelberg.supercuspidalLocalConverse` proves
@@ -148,7 +142,7 @@ compositions were compile-checked against the commit above.
 
 ### 1.8 Choice independence and the rank induction
 
-All in `Correspondence/HenniartStableMapStatement` (this task), main declaration
+All in `Correspondence/HenniartStableMapStatement`, main declaration
 `Langlands.Henniart.HenniartStableMapStatement`, helpers in
 `Langlands.Henniart.StableMap`. Sources: Henniart 2000 §§4.1–4.4 with
 Théorème 4.2, pp.452–453; Henniart 1993 §4.
@@ -175,7 +169,7 @@ steps.
 
 ### 1.9 The numerical correspondence and orbit counting
 
-All in `Correspondence/HenniartNumericalStatement` (this task), main declaration
+All in `Correspondence/HenniartNumericalStatement`, main declaration
 `Langlands.Henniart.NumericalCorrespondenceStatement`, helpers in
 `Langlands.Henniart.Numerical`. Sources: Henniart 1988 §§1.1–1.2, Théorème
 1.2, pp.497–498, §2.8, pp.506–507; Henniart 2000 §1.3 and §4.3; JPSS 1981
@@ -238,8 +232,8 @@ First twelve hexadecimal digits of the SHA-256 of each file at Library commit
 | `Correspondence/SupercuspidalFactorCompatibility` | `28f432e159f2` | `63e608f7ece4` |
 | `Correspondence/SupercuspidalEpsilonComparison` | `73f5ce4f1720` | `9da41f034ddd` |
 | `Correspondence/SupercuspidalSpecification` | `b40cc87cb82b` | `5ceea3448e69` |
-| `Correspondence/HenniartNumericalStatement` (artifact `923c69a6-1ab7-4b0a-83df-40c7226637bb`) | `36ee89946db5` | `0300b95ac419` |
-| `Correspondence/HenniartStableMapStatement` (artifact `35a44b39-88c7-4087-9604-41516fd62593`) | `ccb905fc61f1` | `18455e8e986d` |
+| `Correspondence/HenniartNumericalStatement` | `36ee89946db5` | `0300b95ac419` |
+| `Correspondence/HenniartStableMapStatement` | `ccb905fc61f1` | `18455e8e986d` |
 
 ## 3. Retained source gaps
 
@@ -250,15 +244,15 @@ First twelve hexadecimal digits of the SHA-256 of each file at Library commit
   sufficient formulation that needs neither.
 - The numerical theorem is stated for p-adic fields only, the case Henniart
   2000 uses; Henniart 1988 covers every local field.
-- The H3 units are finite-relative and witnessed; the absolute-global objects
-  of Henniart 2.5 remain with the global definition owners.
-- Worker 78's tests use `RankinSelberg.IsClassEpsilonFactor`; `HenniartProperties`
+- The H3 modules are finite-relative and witnessed; the absolute-global objects
+  of Henniart 2.5 belong to the global definitions.
+- The finite separating tests use `RankinSelberg.IsClassEpsilonFactor`; `HenniartProperties`
   and `SupercuspidalEpsilonConductorFinitenessStatement` use
   `Correspondence.IsSupercuspidalPairEpsilonFactor`. The Markdown of
   `HenniartStableMapStatement` lists their comparison as a retained
   obligation, but it is already met:
   `Langlands.Correspondence.isSupercuspidalPairEpsilonFactor_iff_class`
-  (`Correspondence/SupercuspidalEpsilonComparison`, Worker 357) proves the two
+  (`Correspondence/SupercuspidalEpsilonComparison`) proves the two
   relations equivalent, evaluated at the same nontrivial character and Haar
   measure, whenever the first class has rank at least that of the second. The
   tests used by `ChoiceIndependenceStepStatement` pair a class of rank `n` with
@@ -266,13 +260,13 @@ First twelve hexadecimal digits of the SHA-256 of each file at Library commit
 - That a supercuspidal class with finite-order central character is unitary is
   not asserted.
 
-## 4. Delegated and consumed responsibilities
+## 4. Inputs stated elsewhere
 
-| Input | Owner | Use here |
+| Input | Where stated | Use here |
 | --- | --- | --- |
-| Intrinsic Weil reductions | parameter task `ce2095a8-9814-480e-ac62-bd2f27fa88ae` | section 1.4 |
-| Local converse, pair factors, epsilon conductor | Worker 11 (`RankinSelberg`, `Conductor` statements); JPSS constructions with their owners | sections 1.5–1.6 |
-| Weak association, relative pole comparison, globalization, composite map | H1 task `205503d3-82c7-4b1a-a4f0-90d02bbe9a2e`; H3 task `34b81620-20d7-4059-9b08-6bedd1c1c029`; global statement task `91266440-3276-48dc-ab77-8d1c1fa386e8` | sections 1.2, 1.7 |
+| Intrinsic Weil reductions | `Weil/Representation/Structure` | section 1.4 |
+| Local converse, pair factors, epsilon conductor | the `Representation/RankinSelberg` and `Representation/Conductor` statements; the JPSS constructions | sections 1.5–1.6 |
+| Weak association, relative pole comparison, globalization, composite map | the H1 and H3 programs and the global statements ([global statement coverage](global-statement-coverage.md)) | sections 1.2, 1.7 |
 | Extension to all Weil–Deligne parameters, uniqueness | final LLC assembly | consumes `HenniartConstructionStatement` and `SupercuspidalCorrespondenceStatement` |
 
 The unproved targets in section 1 are separate proof obligations. Their own

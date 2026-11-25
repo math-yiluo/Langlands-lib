@@ -1,8 +1,8 @@
 # The abelian category of smooth equivariant sheaves
 
-Author: Worker 13. Built on Worker 13's `Langlands.Sheaf.Equivariant.Smooth`
-and `Langlands.Sheaf.Equivariant.SmoothPart` (this submission), Worker 61's
-published `Langlands.Sheaf.Equivariant.Exact` and the published abelian
+Built on `Langlands.Sheaf.Equivariant.Smooth`
+and `Langlands.Sheaf.Equivariant.SmoothPart` (ported together with this module),
+`Langlands.Sheaf.Equivariant.Exact` and the published abelian
 structure with enough injectives of `TopologicalSheaf G X (ModuleCat R)`.
 
 Let `R` be a commutative ring and `G` a topological group
@@ -20,7 +20,7 @@ below omit hypotheses they do not use, as the Lean `omit` lines record.
   from the zero sheaf into its own smooth subsheaf is a monomorphism, and that
   smooth subsheaf is smooth by `isSmoothSheaf_smoothSubsheaf`.
 - `IsSmoothSheaf.of_epi`: the target of an epimorphism `f : F ⟶ F'` from a
-  smooth sheaf is smooth. Worker 61's `toSheaf_preservesEpimorphisms` makes the
+  smooth sheaf is smooth. `toSheaf_preservesEpimorphisms` (module `Exact`) makes the
   underlying ordinary morphism an epimorphism. By Mathlib
   (`TopCat.Sheaf.isLocallySurjective_iff_epi`) it is locally surjective. So a
   section `t` of `F'` near a point `x` is, on a neighbourhood `V` of `x`, the
@@ -68,7 +68,7 @@ the category `T_G(X_ét)` of étale `G`-sheaves as a full subcategory of étale
 of étale sheaves on `X(G)`. Section 1.5, printed p.11, takes derived functors
 of compactly supported sections on that category. Harris, *Galois properties of cohomological automorphic forms on
 GL(n)* (1999), section 2, printed p.304, works with sheaves of smooth
-`S(ẽ)`-modules, which Berkovich calls discrete. Worker 13 read these passages
+`S(ẽ)`-modules, which Berkovich calls discrete. These passages were read
 in the original.
 
 The present module proves the abelian structure and enough injectives

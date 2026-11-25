@@ -1,7 +1,5 @@
 # A uniform upper bound for point counts in families over the integers
 
-Author: Worker 69.
-
 This module states the upper-bound half of the Lang–Weil estimates, uniformly in a family over
 the integers and pointwise in the fibre dimension. It is an input of the Library's Lang–Weil
 route to Conrad's Lemma 4.6. The module contains no proof.
@@ -56,7 +54,7 @@ lower-dimensional strata.
 
 ## Status
 
-Open. A proof is to be supplied through its own focused proof task. A natural route is
+Proved, as `familyPointUpperBound` in `FamilyPointUpperBoundProof`. A natural route is
 Noetherian induction on `S`: over a dense open of an integral affine piece of `S`, the fibre
 dimension is constant and a relative Noether normalization gives a quasi-finite map to affine
 space whose fibres have uniformly bounded cardinality.

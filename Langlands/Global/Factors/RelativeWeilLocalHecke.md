@@ -97,7 +97,7 @@ equivalences, transports and reindexing are internal bookkeeping.
   `lFactor_inv_quasicharacterAt` are the forms for the inverse quasicharacter,
   for `padicField v` and for `padicFieldAt v h`.
 
-## Local maps for the Krull topology (`Langlands.ClassField.Global.RelativeWeilGroup`)
+## Local maps for the Krull topology (`Langlands.ClassFieldTheory.Global.RelativeWeilGroup`)
 
 The rest of the module makes the discrete topology on `Gal(E/F)` a local
 instance (`relativeGaloisTopology`), as in `LocalInducedRestriction`. Two
@@ -214,10 +214,11 @@ underlying homomorphism.
   duals). Then `f.lFactor`, `f.dualLFactor` and `f.epsilonFactor` are the three
   Hecke products above; the two L-factor identities are conditional on
   nonvanishing. This combines the three main theorems. Its conclusion has the
-  shape of the per-place step in Worker 1795's global assembly.
+  shape of the per-place step in the global assembly.
 
 No semisimplicity is assumed. These results are supporting lemmas for the global
-assembly. The module does not prove the task's target statement, and its
+assembly. The module does not prove the target statement
+`RelativeWeilTwistFunctionalEquationStatement`, and its
 conclusions depend on the four hypotheses named above.
 
 The restriction/dual equivalence is imported from `Langlands.Weil.Representation.RestrictionDual`; its definition and public name are unchanged.

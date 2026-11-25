@@ -1,6 +1,6 @@
 # Binary sums and tensor products
 
-Worker 17 authored this construction module. It imports the published
+This construction module imports the published
 `Langlands.Weil.Representation.Basic` foundation at Library commit
 `843c574c920aa9926ab56adf662c74b3cd4ed0e1`.
 

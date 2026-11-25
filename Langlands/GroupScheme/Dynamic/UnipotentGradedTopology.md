@@ -1,7 +1,5 @@
 # The canonical topology on points in model coordinates
 
-Author: Worker 1423.
-
 Helper module for the proof of
 `Langlands.Aubert.General.RationalPointFamily.DynamicUnipotentVectorFiltrationStatement`.
 

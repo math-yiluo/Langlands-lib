@@ -26,7 +26,7 @@ variable (hN : ∀ n : ℕ, IsOpen (congruenceKernel I M n : Set U.subgroup))
 /-- The actual kernel-factored action on a discrete coefficient quotient is linear and continuous. -/
 def congruenceReductionLinear (n : ℕ) (g : U.subgroup ⧸ congruenceKernel I M n) :
     Reduction I M.V n →L[R] Reduction I M.V n where
-  toLinearMap := ((quotientTorsionAction I M n (congruenceKernel I M n) le_rfl).ρ g).hom
+  toLinearMap := ((quotientTorsionAction I M n (congruenceKernel I M n) le_rfl).ρ g).asHom.hom
   cont := continuous_of_discreteTopology
 
 omit [IsTopologicalGroup G] in
@@ -81,7 +81,7 @@ def congruenceCompletionRepresentation :
     intro x
     apply AdicCompletion.ext
     intro n
-    change ((quotientTorsionAction I M n (congruenceKernel I M n) le_rfl).ρ 1).hom
+    change ((quotientTorsionAction I M n (congruenceKernel I M n) le_rfl).ρ 1).asHom.hom
       (x.val n) = x.val n
     rw [map_one]
     rfl
@@ -92,11 +92,11 @@ def congruenceCompletionRepresentation :
     intro n
     change ((quotientTorsionAction I M n (congruenceKernel I M n) le_rfl).ρ
       (congruenceGroupLimitProjection U I M hN (op n) g *
-        congruenceGroupLimitProjection U I M hN (op n) h)).hom (x.val n) =
+        congruenceGroupLimitProjection U I M hN (op n) h)).asHom.hom (x.val n) =
         ((quotientTorsionAction I M n (congruenceKernel I M n) le_rfl).ρ
-          (congruenceGroupLimitProjection U I M hN (op n) g)).hom
+          (congruenceGroupLimitProjection U I M hN (op n) g)).asHom.hom
             (((quotientTorsionAction I M n (congruenceKernel I M n) le_rfl).ρ
-              (congruenceGroupLimitProjection U I M hN (op n) h)).hom (x.val n))
+              (congruenceGroupLimitProjection U I M hN (op n) h)).asHom.hom (x.val n))
     rw [map_mul]
     rfl
 
@@ -119,13 +119,15 @@ def congruenceCompletionAction :
     Action (ModuleCat.{w} R) (congruenceGroupLimit U I M hN) where
   V := ModuleCat.of R (Completion I M.V)
   ρ :=
-    { toFun g := ModuleCat.ofHom (congruenceCompletionRepresentation U I M hN g).toLinearMap
+    { toFun g := End.of (ModuleCat.ofHom (congruenceCompletionRepresentation U I M hN g).toLinearMap)
       map_one' := by
+        apply End.ext
         apply ModuleCat.hom_ext
         apply LinearMap.ext
         intro x
         exact DFunLike.congr_fun (congruenceCompletionRepresentation U I M hN).map_one x
       map_mul' g h := by
+        apply End.ext
         apply ModuleCat.hom_ext
         apply LinearMap.ext
         intro x
@@ -149,14 +151,16 @@ def congruenceCompletionTopologicalAction :
     Action TopCat.{w} (congruenceGroupLimit U I M hN) where
   V := TopCat.of (Completion I M.V)
   ρ :=
-    { toFun g := TopCat.ofHom
+    { toFun g := End.of (TopCat.ofHom
         { toFun := congruenceCompletionRepresentation U I M hN g
-          continuous_toFun := (congruenceCompletionRepresentation U I M hN g).continuous }
+          continuous_toFun := (congruenceCompletionRepresentation U I M hN g).continuous })
       map_one' := by
+        apply End.ext
         apply TopCat.ext
         intro x
         exact DFunLike.congr_fun (congruenceCompletionRepresentation U I M hN).map_one x
       map_mul' g h := by
+        apply End.ext
         apply TopCat.ext
         intro x
         exact DFunLike.congr_fun ((congruenceCompletionRepresentation U I M hN).map_mul g h) x }
@@ -170,7 +174,7 @@ def congruenceCompletionContinuousAction :
 /-- Restriction along the original level map recovers its actual induced completion action. -/
 @[simp] theorem congruenceCompletionRepresentation_original (g : U.subgroup) :
     congruenceCompletionRepresentation U I M hN (congruenceGroupLimitMap U I M hN g) =
-      DiscreteAdicCompletion.map I (M.ρ g).hom := by
+      DiscreteAdicCompletion.map I (M.ρ g).asHom.hom := by
   apply ContinuousLinearMap.ext
   intro x
   apply AdicCompletion.ext
@@ -181,7 +185,7 @@ def congruenceCompletionContinuousAction :
 @[simp] theorem congruenceCompletionRepresentation_of (g : U.subgroup) (x : M.V) :
     congruenceCompletionRepresentation U I M hN (congruenceGroupLimitMap U I M hN g)
         (DiscreteAdicCompletion.of I x) =
-      DiscreteAdicCompletion.of I ((M.ρ g).hom x) := by
+      DiscreteAdicCompletion.of I ((M.ρ g).asHom.hom x) := by
   rw [congruenceCompletionRepresentation_original, DiscreteAdicCompletion.map_of]
 
 end General

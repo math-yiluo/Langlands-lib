@@ -1,7 +1,5 @@
 # Reduction of the affine reduced fibre theorem to a complete base
 
-Worker 519.
-
 `DvrAffineReducedFibreCompleteBaseStatement` is the affine reduced fibre
 statement for DVRs complete in the maximal-ideal adic topology and with
 algebraically closed residue field. The conclusion keeps the same finite

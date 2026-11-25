@@ -1,10 +1,10 @@
 # One square-integrable coefficient suffices: statement
 
-Author: Worker 6. Module `Langlands.Representation.MatrixCoefficient.SquareIntegrableCoefficientCriterionStatement`, namespace `Langlands.Renard.CompactRepresentation`.
+Module `Langlands.Representation.MatrixCoefficient.SquareIntegrableCoefficientCriterionStatement`, namespace `Langlands.Renard.CompactRepresentation`.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*, French edition dated 9 July 2026, IV.3.2, Remark after the Definition, printed p.100 / PDF p.106. The registered source ID is `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 
-This is a statement unit: nothing is proved.
+This is a statement module: nothing is proved.
 
 ## The source
 
@@ -15,7 +15,7 @@ In IV.3, `G` is a t.d. group with centre `Z(G)` and a Haar measure `dg*` on `G /
 `SquareIntegrableCoefficientCriterionStatement` quantifies over:
 
 - a group `G` with a topology making it a locally compact, Hausdorff, totally disconnected topological group;
-- a Borel measurable structure on `G ⧸ Subgroup.center G` and a Haar measure `μ` on it that is also right invariant, as in Worker 6's companion IV.3 statements (module `UnitarySquareIntegrableStatements`);
+- a Borel measurable structure on `G ⧸ Subgroup.center G` and a Haar measure `μ` on it that is also right invariant, as in the companion IV.3 statements (module `UnitarySquareIntegrableStatements`);
 - `π : SmoothRep.{0, u, v} ℂ G`, irreducible and admissible;
 - `c : UnitaryCentralCharacter π.representation`, the published unitary central character (a character of `Z(G)` with open kernel and values of norm one by which `Z(G)` acts).
 

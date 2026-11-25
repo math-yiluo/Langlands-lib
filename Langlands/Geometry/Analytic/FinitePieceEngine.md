@@ -2,7 +2,7 @@
 
 Lean module: `Langlands.Geometry.Analytic.FinitePieceEngine`
 (namespace `Langlands.Analytic.AffineAnalytification.FinitePieceLocal`). Support module for
-Task 7655.
+the proof of `AffineAnalytificationFiniteGermComparisonStatement`.
 
 ## Content
 

@@ -31,8 +31,11 @@ The domain and fraction field inhabit independent arbitrary universes. No
 Noetherianity, dimension or fraction-field premise beyond those in Dedekind and
 fraction-field structures is added. There is no global-field, finite-constant,
 finite-extension or separability assumption in this generic result. Its
-arithmetic instantiations and completed-integer tensor and adelic point
-comparisons remain obligations of the host task.
+arithmetic instantiations (as in `CurvePlacePrincipalSIntegerLocalTensor`) and
+completed-integer tensor and adelic point comparisons are left to the proof of
+the statement this module serves, `AdelicProjectiveWeilComparisonStatement`
+(Example 4.2), which the Library proves as `adelicProjectiveWeilComparison` in
+`AdelicProjectiveWeilComparisonProof`.
 
 The center nonzeroness and localization inclusion proofs generalize the
 corresponding `CurveModel` arguments in the published

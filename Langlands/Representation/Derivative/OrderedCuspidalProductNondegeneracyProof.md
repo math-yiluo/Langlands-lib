@@ -1,16 +1,10 @@
 # BZ77 Theorem 4.11 for ordered cuspidal products (proof)
 
-Authors: Worker 818 (this pair); Worker 1166 (the helper pair
-`OrderedCuspidalProductHeadShift`); Worker 1168 (the proof in the helper pair
-`OrderedCuspidalProductTwistOne`).
-
 This module proves the theorem
 `Langlands.Derivative.orderedCuspidalProductNoDegenerateSubmodules` (line 692). Its
 type is exactly the published proposition
 `Langlands.Derivative.OrderedCuspidalProductNoDegenerateSubmodules.{uF,uV} F T` of
-module `Langlands.Representation.Derivative.OrderedCuspidalProductNondegeneracyStatement`
-(statement artifact `bcda0d7d-48a7-4a3a-8b0e-ad48b26c9c68`, task
-`12eb3790-50bc-4727-acc4-14ced067d333`):
+module `Langlands.Representation.Derivative.OrderedCuspidalProductNondegeneracyStatement`:
 
 ```lean
 theorem orderedCuspidalProductNoDegenerateSubmodules {p : ℕ} [Fact p.Prime]
@@ -19,10 +13,10 @@ theorem orderedCuspidalProductNoDegenerateSubmodules {p : ℕ} [Fact p.Prime]
 ```
 
 This is Bernstein–Zelevinsky 1977, Theorem 4.11, sufficient direction (printed
-p. 456, one-based PDF p. 17). The target pair and every pair it imports are
-unchanged. The module adds no axioms and has no `sorry` or `admit`. The theorem
+p. 456, one-based PDF p. 17). The module adds no axioms and has no `sorry` or
+`admit`. The theorem
 has no premise beyond the target's own telescope. Its universe parameters are
-exactly `uF uV`. A Lake build of the workspace has 0 errors and 0 warnings, and
+exactly `uF uV`. A Lake build of the module has 0 errors and 0 warnings, and
 `#print axioms` lists only `propext`, `Classical.choice` and `Quot.sound`. All
 auxiliary declarations are in the namespace
 `Langlands.Derivative.OrderedCuspidalProductNondegeneracy`. The auxiliary lemmas
@@ -81,7 +75,7 @@ for these same functors, so no source normalization is re-derived. The argument
 uses only vanishing, nonvanishing, dimensions and injectivity of derivatives.
 None of these depends on a normalizing character. So the Haar comparisons
 `glBlockModulusHaar`, `psiMinusHaarInverseHalf_eq` and `phiMinusHaarInverseHalf_eq`,
-which the target Markdown cites, are not needed and are not imported.
+which the statement's page cites, are not needed and are not imported.
 
 The universes `uF` (field) and `uV` (block carriers) are independent. `Π`, `R`,
 `U` and all derivatives have carriers in `max uF uV`. When the product is split,
@@ -121,7 +115,7 @@ every ordered product is good (`good_product`, line 658). `Good`, `Ordered`
 of this module, used only as induction invariants and step hypotheses. They have
 no separate literature counterpart.
 
-The source gaps named in the contract are resolved as follows.
+The gaps in the source argument are resolved as follows.
 
 - **Reduction to an irreducible `ω`.** It is avoided. The binary step proves
   homogeneity of `(D × P)|_P` for all nonzero subrepresentations `W` at once,
@@ -132,8 +126,7 @@ The source gaps named in the contract are resolved as follows.
   (`level_le_of_injective`, `level_le_max_of_isShortExact`, from
   `Mirabolic.minusExactness`) squeezes the level of `W` between the level of the
   intersection and the level of the whole product. If it is zero, then `W`
-  injects into `π/σ = D × (P|_P)` (Case 2). This is the route suggested in the
-  contract. It uses no finite-length, Artinian or submodule-existence premise.
+  injects into `π/σ = D × (P|_P)` (Case 2). It uses no finite-length, Artinian or submodule-existence premise.
 - **An irreducible submodule of the highest derivative in Case 2.** None has to
   be chosen. Case 2 shows that the highest derivative of `W` itself injects into
   the head block `D`. `D` is irreducible and the derivative is nonzero, so the
@@ -316,21 +309,20 @@ the first index. `ordered_tail` (646) restricts the order condition to the tail.
   Leibniz filtration (BZ77 4.5/4.6) at the top order.
 - `νρ ≇ ρ`, which BZ77 leaves implicit, is proved by the central character.
 
-The use of Zelevinsky 1980 Proposition 5.3 goes beyond the BZ77 text. It is
-authorized by operator response `da4ad97c47065551b5b24cf4d461b9a4` (see below).
+The use of Zelevinsky 1980 Proposition 5.3 goes beyond the BZ77 text.
 
 ## Helper pairs
 
-Two new helper pairs are part of this candidate. Each has its own Markdown.
+Two helper pairs belong to this proof. Each has its own Markdown.
 
-- `Langlands/Representation/Derivative/OrderedCuspidalProductHeadShift.{lean,md}`
-  (Worker 1166; interface and the `j = i₀` step revised by Worker 818). It proves
+- `Langlands/Representation/Derivative/OrderedCuspidalProductHeadShift.{lean,md}`.
+  It proves
   `irreducible_support_of_injective` and `headShift_false`, the head-shift step of
   Case 2 through the published Lemma 4.7(b) `cuspidalProductMirabolicSupportShift`.
   It imports the 4.7(b) proof module, `OrderedCuspidalProductTwistOne`,
   `Induction.SingleBlock` and `Category.UniverseLift`.
-- `Langlands/Representation/Derivative/OrderedCuspidalProductTwistOne.{lean,md}`
-  (Worker 1168's proof, moved and interfaced by Worker 818). It proves
+- `Langlands/Representation/Derivative/OrderedCuspidalProductTwistOne.{lean,md}`.
+  It proves
   `exponent_eq_zero` and `twist_one_ne_self` (`ρ.twist 1 ≠ ρ` for every cuspidal
   datum). The proof evaluates an equivalence `A ≅ |det|^s A` at the scalar
   uniformizer, using the published admissible Schur lemma
@@ -338,61 +330,56 @@ Two new helper pairs are part of this candidate. Each has its own Markdown.
 
 The Library's existing proof of `νρ ≠ ρ`,
 `RepeatedCuspidalSupport.twist_one_ne_self`, is not used. It rests on
-`CuspidalIntegralTwistFreenessProof`, whose earliest artifact `a7545313` belongs
-to the excluded task `67279e36-f3c2-42e3-9302-11729784042e`.
+`CuspidalIntegralTwistFreenessProof`, which belongs to the excluded individual
+special-head/reverse-socle existence route.
 
 ## Published inputs
 
-Every theorem used has an independently accepted and published proof, or is a
-reviewed lemma inside a published `lean.definition` or `lean.proof` artifact.
+Every theorem used has a published proof, or is a lemma inside a published
+definition or proof module.
 Rows give the module (prefix `Langlands.Representation.` unless stated), the
-introducing artifact with its task and publication commit, and the declarations
-used. "Proof task" means the task recorded on the proof artifact.
+Library commit that introduced it, and the declarations used.
 
-| Module | Publication | Used |
+| Module | Library commit | Used |
 | --- | --- | --- |
-| `Derivative.OrderedCuspidalProductNondegeneracyStatement` | statement `bcda0d7d-48a7-4a3a-8b0e-ad48b26c9c68`, task `12eb3790-50bc-4727-acc4-14ced067d333`, commit `4f2e1785a3faf187359b2dcec3c8bdbe4a70e762` | the target proposition only |
-| `Classification.SupercuspidalDerivativesProof` | proof `fd42c8ef-e65b-4942-9a76-d41f2e22bcd3`, proof task `2e5183b1-01e9-44fb-b26c-f4521a25c7c7` revision 2, commit `c5eebf94883144ce00adc4e252995c28082f08a7` | `Classification.supercuspidalDerivatives` (BZ77 §4.4) |
-| `Derivative.LeftMixedProductHomogeneityProof` | proof `e183909c-e3a3-4843-b1b4-dd3700a47c37`, task `6bb62ea4-c7e1-4325-9eb6-b8bbee1f65c4`, commit `da0312e3777850c14b211f6245ff5b08af56f616`; statement `1e101502`, task `49d8eea3` | `leftMixedProductHomogeneity` (Ze80 5.3) |
-| `Derivative.MirabolicProductRestriction` | proofs `d8caeff4-6ce1-4951-b9f7-ea118beb47f7` and `d58e34da-2a41-4180-baa9-c4cce03286bb`, task `a1d00661`, commits `7114a390` and `368b3cec` | `mirabolicProductRestriction` (BZ77 4.13(a)) |
-| `Derivative.MirabolicProductMinusCompatibility` | proof `ddfa367b-fa96-488a-9f20-285c05af3cf6`, task `6cd54f76`, commit `f6b45fe9` | `mirabolicProductMinusCompatibility` (BZ77 4.13(b,c)); components `RightPhiShortExact`, `RightPhiBoundary` |
-| `Derivative.RightMixedProductPhiMinusDetectionProof` | proof `a07ed51f-f4b9-447c-9da8-cecaed53a506`, task `f8acf579`, commit `9a8ca758` | `rightMixedProductPhiMinusDetection` (BZ77 4.13(d)) |
-| `Derivative.LeftMixedProductDerivativeProof` | proof `e99bbe1b-06fe-42ad-b8ec-d1c4e02c9929`, task `7e19f753`, commit `b4b4160d` | `leftMixedProductDerivative` (BZ77 4.14(a)) |
-| `Derivative.MirabolicMinusExactnessProof` | proof `d307cd07-7e0f-4e38-a3d5-94b78bb3a7d6`, task `b65bc667`, commit `9a8ca758` | `Mirabolic.minusExactness` |
-| `Derivative.GeneralLinearDerivativeLeibnizFiltrationProof` | proof `c4c5439d-5c26-42e5-848a-0f199ce34f7d`, task `4e10058b`, commit `e3944f76`; statement module `GeneralLinearDerivativeLeibnizFiltrationStatement` (statement `3f0ee8cb`, task `3238f371`) | `generalLinearDerivativeLeibnizFiltration` (BZ77 4.5/4.6), `GeneralLinearDerivativeLeibnizFiltrationStatement.filtration`, `leibnizIndices_top`, `mem_leibnizIndices`, `leibnizPiece_obj` |
-| `Derivative.MirabolicDerivativeDetectionProof` (through `LevelCalculus`) | proof `3ace613e-7e47-46fc-aea5-dcd84efc51ec`, task `ed056880`, commit `81727e81` | `mirabolicDerivativeDetection` (BZ77 3.5), inside `level_pos` |
-| `Derivative.RestrictedProductLevel`, `Derivative.RightMixedLevel`, `Derivative.RestrictionBridge`, `Derivative.ProductVanishing`, `Derivative.LevelCalculus` | definitions `6ded142e-bf04-4d18-8956-a5850e80410b` (commit `7114a390`) and `e85cf101-daae-4eb8-bac1-2f3ee0d0ee3b` (`LevelCalculus`, commit `5e4a58e8`), task `b711af72-fdf9-4b32-a450-937911426822` | `isHomogeneous_restrictedProduct`, `level_leftMixed_le`, `le_level_leftMixed`, `isHomogeneous_mirabolicRankCast`, `RestrictionBridge.generalLinearDerivative_succ_obj_eq`, `isHomogeneous_of_single_order`, `level_mirabolicRankCast`, `mapsShortExact_mirabolicDerivativeOfOrder`, `map_injective_of_exact`, `isHomogeneous_of_iso`, `iso_hom_injective`, `level_eq_of_isHomogeneous` |
-| `Derivative.ZeroRankTensor` | definition `2057375a-efa5-4820-8c92-9bfe62629560`, task `3231134e`, commit `9a8ca758` | `binaryRightZeroIso`, `binaryRightZeroEquiv` |
-| `Parabolic.HeadTailProductInduction` | definition `665edfad-042c-4845-bf51-ff72c2267442`, task `30f91c25`, commit `a8a83747` | `headTailProductInductionIso`, `headTailProductFactors` |
-| `Langlands.Group.GL.HeadTailBlocks` | definition `621da62e`, task `8e9f89dc`, commit `feda7e54` | `headRank`, `tailRank`, `headIndex`, `tailIndex`, `tailShape`, `headTailShape`, `headRank_add_tailRank`, `headRank_pos`, `tailRank_pos` |
-| `Induction.BinaryProduct` | definition `34e5003f`, task `85af02b8`, commit `e40be87d` | `binaryNormalizedProductFunctor`, `binaryNormalizedProductPositiveIso`, `binaryPairFamilyFunctor` |
-| `Langlands.Group.GL.MirabolicOppositeIntersection` | definition `3df71010`, task `3f007f96`, commit `f75d5c19` | `BlockShape.binary` |
-| `Langlands.Group.GL.SingleBlock` | definition `d22495cd`, task `7c0e046b`, commit `15eedb12` | `BlockShape.singleBlockIndex`, `singleBlock_size`, `eq_singleBlockIndex`, `BlockShape.rankCast` |
-| `Parabolic.RegroupingFactorEquivalences`, `Parabolic.ThreeBlockRegroupingAssembly` | definitions `fedc6eee` (commit `9de4c692`) and `dcd3e87b` (commit `65f39f42`), task `6508da9d` | `singleBlockTransportedProductEquiv`, `normalizedProductInductionObjEquiv`, `Parabolic.equivTrans` |
-| `Category.UniverseLift` | definition `b6075d7d`, task `4d079ce9`, commit `feda7e54` | `SmoothRep.universeLift`, `universeLiftEquiv`, `isIrreducible_universeLift_iff` |
-| `Derivative.Homogeneity` | definition `609028d8-d915-4c8c-8223-2ece7bff15ff`, task `dfae49d8`, commit `c76b7751` | `IsHomogeneous`, `level`, `HasNonzeroDerivative`, `level_le`, `level_eq_iff`, `le_level_of_hasNonzeroDerivative`, `mirabolicDerivativeOfOrder`, `mirabolicRankCast` |
-| `Derivative.Iteration` | definition `13695739-0adc-4683-906f-57a8029b2353`, task `d3e94f0f`, commit `355c0523` | `generalLinearDerivative`, `generalLinearRestriction`, `generalLinearRankCast`, `mirabolicDerivative` |
-| `Induction.BlockFactors` | definition `ee7ae365`, task `a7a453ca`, commit `f8488ce7` | `normalizedProductInductionFunctor` |
-| `Classification.SupercuspidalTwist` | definition `cba40ce7`, task `a7a453ca`, commit `6700bb75` | `supercuspidalClassRealPowerTwist` |
-| `Classification.Supercuspidal`, `Category.Basic`, `Category.Subquotients` | current versions in definition `0a5d67d6-d44a-4544-b839-0257d12531bf`, task `6c50b2fd`, commit `6473a6d8` | `SupercuspidalRep`, `supercuspidalProperty`, `isSupercuspidal_of_equiv`, `isoClass`, `SmoothRep.mkIso`, `SmoothRep.equivOfIso`, `SmoothRep.subrepresentation` |
+| `Derivative.OrderedCuspidalProductNondegeneracyStatement` | `4f2e1785a3faf187359b2dcec3c8bdbe4a70e762` | the target proposition only |
+| `Classification.SupercuspidalDerivativesProof` | `c5eebf94883144ce00adc4e252995c28082f08a7` | `Classification.supercuspidalDerivatives` (BZ77 §4.4) |
+| `Derivative.LeftMixedProductHomogeneityProof` | `da0312e3777850c14b211f6245ff5b08af56f616` | `leftMixedProductHomogeneity` (Ze80 5.3) |
+| `Derivative.MirabolicProductRestriction` | `7114a390` and `368b3cec` | `mirabolicProductRestriction` (BZ77 4.13(a)) |
+| `Derivative.MirabolicProductMinusCompatibility` | `f6b45fe9` | `mirabolicProductMinusCompatibility` (BZ77 4.13(b,c)); components `RightPhiShortExact`, `RightPhiBoundary` |
+| `Derivative.RightMixedProductPhiMinusDetectionProof` | `9a8ca758` | `rightMixedProductPhiMinusDetection` (BZ77 4.13(d)) |
+| `Derivative.LeftMixedProductDerivativeProof` | `b4b4160d` | `leftMixedProductDerivative` (BZ77 4.14(a)) |
+| `Derivative.MirabolicMinusExactnessProof` | `9a8ca758` | `Mirabolic.minusExactness` |
+| `Derivative.GeneralLinearDerivativeLeibnizFiltrationProof` | `e3944f76`; statement module `GeneralLinearDerivativeLeibnizFiltrationStatement` | `generalLinearDerivativeLeibnizFiltration` (BZ77 4.5/4.6), `GeneralLinearDerivativeLeibnizFiltrationStatement.filtration`, `leibnizIndices_top`, `mem_leibnizIndices`, `leibnizPiece_obj` |
+| `Derivative.MirabolicDerivativeDetectionProof` (through `LevelCalculus`) | `81727e81` | `mirabolicDerivativeDetection` (BZ77 3.5), inside `level_pos` |
+| `Derivative.RestrictedProductLevel`, `Derivative.RightMixedLevel`, `Derivative.RestrictionBridge`, `Derivative.ProductVanishing`, `Derivative.LevelCalculus` | `7114a390`; `LevelCalculus`: `5e4a58e8` | `isHomogeneous_restrictedProduct`, `level_leftMixed_le`, `le_level_leftMixed`, `isHomogeneous_mirabolicRankCast`, `RestrictionBridge.generalLinearDerivative_succ_obj_eq`, `isHomogeneous_of_single_order`, `level_mirabolicRankCast`, `mapsShortExact_mirabolicDerivativeOfOrder`, `map_injective_of_exact`, `isHomogeneous_of_iso`, `iso_hom_injective`, `level_eq_of_isHomogeneous` |
+| `Derivative.ZeroRankTensor` | `9a8ca758` | `binaryRightZeroIso`, `binaryRightZeroEquiv` |
+| `Parabolic.HeadTailProductInduction` | `a8a83747` | `headTailProductInductionIso`, `headTailProductFactors` |
+| `Langlands.Group.GL.HeadTailBlocks` | `feda7e54` | `headRank`, `tailRank`, `headIndex`, `tailIndex`, `tailShape`, `headTailShape`, `headRank_add_tailRank`, `headRank_pos`, `tailRank_pos` |
+| `Induction.BinaryProduct` | `e40be87d` | `binaryNormalizedProductFunctor`, `binaryNormalizedProductPositiveIso`, `binaryPairFamilyFunctor` |
+| `Langlands.Group.GL.MirabolicOppositeIntersection` | `f75d5c19` | `BlockShape.binary` |
+| `Langlands.Group.GL.SingleBlock` | `15eedb12` | `BlockShape.singleBlockIndex`, `singleBlock_size`, `eq_singleBlockIndex`, `BlockShape.rankCast` |
+| `Parabolic.RegroupingFactorEquivalences`, `Parabolic.ThreeBlockRegroupingAssembly` | `9de4c692` and `65f39f42` | `singleBlockTransportedProductEquiv`, `normalizedProductInductionObjEquiv`, `Parabolic.equivTrans` |
+| `Category.UniverseLift` | `feda7e54` | `SmoothRep.universeLift`, `universeLiftEquiv`, `isIrreducible_universeLift_iff` |
+| `Derivative.Homogeneity` | `c76b7751` | `IsHomogeneous`, `level`, `HasNonzeroDerivative`, `level_le`, `level_eq_iff`, `le_level_of_hasNonzeroDerivative`, `mirabolicDerivativeOfOrder`, `mirabolicRankCast` |
+| `Derivative.Iteration` | `355c0523` | `generalLinearDerivative`, `generalLinearRestriction`, `generalLinearRankCast`, `mirabolicDerivative` |
+| `Induction.BlockFactors` | `f8488ce7` | `normalizedProductInductionFunctor` |
+| `Classification.SupercuspidalTwist` | `6700bb75` | `supercuspidalClassRealPowerTwist` |
+| `Classification.Supercuspidal`, `Category.Basic`, `Category.Subquotients` | `6473a6d8` (their versions at the audit base) | `SupercuspidalRep`, `supercuspidalProperty`, `isSupercuspidal_of_equiv`, `isoClass`, `SmoothRep.mkIso`, `SmoothRep.equivOfIso`, `SmoothRep.subrepresentation` |
 | `Filtration.Definitions` | general filtration definitions | `RepFunctorFiltration` (`step`, `graded`, `zero`, `top`) |
-| `Tensor.OneFactor` | integrator extraction from `Induction.BinaryProduct` (no owner) | `BinaryTensor.firstFactor` |
+| `Tensor.OneFactor` | extracted from `Induction.BinaryProduct` | `BinaryTensor.firstFactor` |
 
 The helper pairs use in addition the published Lemma 4.7(b)
-`Classification.cuspidalProductMirabolicSupportShift` (proof
-`4b8c7a7c-baaf-4fb3-bb60-213389f02470`, task
-`0b3bf4c1-9878-444f-899e-ba29d7679c29`, commit `9a8ca758`), the admissible Schur
-lemma `admissibleSchur_centralCharacter` (proof `b97b88e5`, task `7418b301`,
-commit `01a58491`), `Induction.SingleBlock` (definition `fcc278b3`, task
-`8c397428`) and the definitions of `Classification.SupercuspidalSupport`. Their
-Markdown lists the details.
+`Classification.cuspidalProductMirabolicSupportShift` (commit `9a8ca758`), the
+admissible Schur lemma `admissibleSchur_centralCharacter` (commit `01a58491`),
+`Induction.SingleBlock` and the definitions of
+`Classification.SupercuspidalSupport`. Their Markdown lists the details.
 
-The §4.4 proof `fd42c8ef` was checked as the contract requires. It is the
-accepted proof artifact of task `2e5183b1-01e9-44fb-b26c-f4521a25c7c7` at
-revision 2 (its validation binds `task_revision 2` and statement declaration
-`Langlands.Classification.SupercuspidalDerivatives`), and its inputs are the
-multiplicity-one proof `ba2dff22` (Gelfand–Kazhdan, task `209cde88`) and the
-statement `c27c6879`. Its 303-module import closure contains no segment,
+The §4.4 proof `Classification.SupercuspidalDerivativesProof` was checked. It
+proves the statement `Langlands.Classification.SupercuspidalDerivatives`, and
+its inputs are the multiplicity-one proof `Whittaker.MultiplicityOneProof`
+(Gelfand–Kazhdan) and the statement module
+`Classification.SupercuspidalDerivativesStatement`. Its 303-module import closure contains no segment,
 socle, multisegment or exhaustion module. Its `Classification` modules are
 `ConstituentRelations`, `Segments` (cuspidal data and their twists only),
 `Supercuspidal`, `SupercuspidalContragredientAux`,
@@ -402,56 +389,48 @@ socle, multisegment or exhaustion module. Its `Classification` modules are
 statement module `SupercuspidalDerivativesStatement` is the isolated
 cuspidal-derivative statement (it imports only `Classification.Supercuspidal`,
 `Derivative.Iteration` and `HarmonicAnalysis.Basic`), not the segment-socle
-statement module. So it is independent of the segment-socle part of task
-`8e5b4563-0365-41c7-b134-70f2a0b36292`.
+statement module. So it is independent of the segment-socle part of the six
+statements of `Classification.SegmentSocleDerivativesStatement`.
 
-## Operator rulings
+## Scope of the exclusions
 
-- Decision `bd71b9185aab5d6eafffb7891bd3a3ca`: only fully proved, independently
-  accepted and published BZ77 general derivative theory. The closure must avoid
-  the listed tasks and the segment-socle part of `8e5b4563`. This file records
-  the audit.
-- Response `f6869c7da0bf5bb4a8b006fdf51ba668` (for task `0b3bf4c1`): the 4.7(b)
-  proof may import `CuspidalProductDerivativeQuotientSupport` and
-  `WholeLeviTransport`, with a closure audit.
-- Response `09565d9017ef55faa68ad9890c242aed`, to question
-  `f489243c6b4e5a93a776216687d56d51`: for this task,
-  `cuspidalProductMirabolicSupportShift` may be imported with its whole closure,
-  including `bf38b454`, `WholeLeviTransport` and
+- Only fully proved and published BZ77 general derivative theory is used. The
+  closure avoids the excluded results listed below and the segment-socle part
+  of the six statements of `Classification.SegmentSocleDerivativesStatement`.
+  This file records the audit.
+- The 4.7(b) proof imports `CuspidalProductDerivativeQuotientSupport` and
+  `WholeLeviTransport`; its closure was audited.
+- `cuspidalProductMirabolicSupportShift` is imported with its whole closure,
+  including `CuspidalProductDerivativeQuotientSupport`, `WholeLeviTransport` and
   `PartialDerivativeJacquetComparisonProof`. A fully proved general comparison
   of derivatives and Jacquet modules such as Ze80 3.7(b) counts as general
-  derivative theory. The conditions are those of `f6869c7d`. An import whose
-  audit finds an excluded task, module or identifier is not used, and the
-  operator is told.
-- Response `da4ad97c47065551b5b24cf4d461b9a4`, to question
-  `541c6cb8ede4505ea8c3fb53a4e1dc9f`: for this task, `leftMixedProductHomogeneity`
-  (Ze80 5.3, tasks `49d8eea3` and `6bb62ea4`) may be imported with its closure,
+  derivative theory. An import whose audit finds an excluded result or module
+  is not used.
+- `leftMixedProductHomogeneity` (Ze80 5.3) is imported with its closure,
   under the same conditions. `Classification.Supercuspidal*`,
-  `Whittaker.Algebraic`, `Whittaker.GeneralLinear` and `Whittaker.Iwasawa` must
-  be checked explicitly. They are checked below.
-- Response `2b34e4035a5b5dafad7ad84d5a8c0dd8`, to question
-  `8e823787446e583e8462be85b6aaf65e`: this task may keep the nine definition
-  and statement modules of the excluded tasks `f3a69bc8`, `3c9849a4` and
-  `8e5b4563` listed in the closure audit below. The exclusions target the
-  excluded tasks' mathematical conclusions and whatever depends on them, not
-  general infrastructure published under those tasks. The operator checked the
-  nine modules at Library `b1c8a5e8`: they hold definitions and a few generic
-  lemmas, and their project imports are generic too. None states or uses socle
-  exhaustion, the two-supercuspidal product theorem or any other excluded
-  conclusion. Each module is documented below with its artifact, publishing
-  task, content and this check. The two local replacements listed next stay in
-  place. A module found to contain or depend on an excluded conclusion would be
-  removed like them.
+  `Whittaker.Algebraic`, `Whittaker.GeneralLinear` and `Whittaker.Iwasawa` are
+  checked explicitly below.
+- The nine definition and statement modules introduced with the excluded socle
+  exhaustion, `TwoSupercuspidalNonadjacentProductIrreducible` and the six
+  statements of `SegmentSocleDerivativesStatement`, listed in the closure audit
+  below, stay in the closure. The exclusions target the excluded mathematical
+  conclusions and whatever depends on them, not general infrastructure
+  introduced with them. The nine modules were checked at Library `b1c8a5e8`:
+  they hold definitions and a few generic lemmas, and their project imports are
+  generic too. None states or uses socle exhaustion, the two-supercuspidal
+  product theorem or any other excluded conclusion. Each module is documented
+  below with its content and this check. A module that contains or depends on
+  an excluded conclusion is not imported; the two listed next are replaced by
+  local proofs.
 
-Following `09565d90` and `da4ad97c`, two imports of an earlier draft were dropped
-after the audit found excluded owners, and the operator was told in question
-`8e823787`:
+Two modules on excluded routes are not imported:
 
-- `Classification.CuspidalIntegralTwistFreenessProof` (proof `a7545313`, excluded
-  task `67279e36`). It was replaced by `OrderedCuspidalProductTwistOne`.
-- `Derivative.TopProduct` with `Filtration.SingletonIso` (definition `3ee88231`,
-  excluded task `8364e73f`). The dimension of the top derivative of a binary
-  product is now derived locally from the Leibniz filtration, in the section
+- `Classification.CuspidalIntegralTwistFreenessProof` (individual
+  special-head/reverse-socle existence route). `OrderedCuspidalProductTwistOne`
+  is used in its place.
+- `Derivative.TopProduct` with `Filtration.SingletonIso` (introduced with
+  `SegmentHeadProductIrreducibility`). The dimension of the top derivative of a
+  binary product is derived locally from the Leibniz filtration, in the section
   "Top derivative of a binary product".
 
 ## Import closure audit
@@ -496,142 +475,128 @@ individual imports have these sizes:
 The 4.7(b) proof module alone has 606 modules. The imports other than the head-shift
 helper together have 609.
 
-**Owners.** Every module was mapped to the artifacts whose files contain it,
-whether the artifact introduces the module or only bundles a copy. Each artifact
-was mapped to its owning task: the record's task, or for a publication the host
-task of its review task. 889 modules have published artifacts. The other 17 have
-no task owner:
+**Provenance.** Every module was matched against the publication records of
+the Library, whether a record introduces the module or only bundles a copy.
+889 modules have such records. The other 17 have none:
 
-- the three new modules of this candidate (this module and the two helpers);
-- 14 integrator extractions of infrastructure: `Group.GL.OneBlockShape`,
+- the three modules of this proof (this module and the two helpers);
+- 14 extractions of infrastructure from other modules: `Group.GL.OneBlockShape`,
   `Group.GL.RankReindex`, `Group.GL.ReindexCongr`, `Group.GL.Transvection`,
   `HarmonicAnalysis.FiniteProductMeasureScaling`,
   `HarmonicAnalysis.PadicLatticeTopology`, `Representation.Compact.OrbitMeanTranslation`,
-  `Representation.CuspidalSupport.WholeLeviTransport` (allowed by `09565d90`),
+  `Representation.CuspidalSupport.WholeLeviTransport`,
   `Representation.Derivative.MirabolicDeterminant`,
   `Representation.Derivative.ShortExactFunctorLaws`, `Representation.OrbitSpan`,
   `Representation.Smooth.Transfer.GroupEquivalence`, `Representation.Tensor.OneFactor`
   and `Topology.CompactNormCharacter`.
 
-This gives 847 owning tasks. Following every contract requirement of those tasks
-transitively gives 850 tasks. They were compared with the 38 task IDs excluded by
-this contract (every task named in the objective and its inherited restrictions,
-including `5428fe2c`, `3ff5c8fb`, `5ab445dc` and `62de5903`). Four excluded tasks
-appear. In every case the module is a definition or statement module, and none of
-them states or proves an excluded conclusion:
+The provenance of every module, followed transitively through the recorded
+requirements, was compared with the excluded results (all of them, including
+the Whittaker finiteness results and the mirabolic finite-length route). Four
+excluded results appear. In every case the module is a definition or statement
+module, and none of them states or proves an excluded conclusion:
 
-- Task `f3a69bc8-7312-4f82-8a7d-ea3c8188cb63` (socle exhaustion) introduced six
-  general filtration and tensor adapters: `Filtration.ObjectTransport`
-  (`68054cb0`), `Tensor.FiniteFiltration` (`1529e866`), `Tensor.ExternalFiltration`
-  (`428f73bc`), `Tensor.ExternalSubrepresentation` (`6ddf89c2`),
-  `Parabolic.InductionSubrepresentation` (`305bd86b`) and
-  `Parabolic.ProductInductionSubrepresentation` (`fec3f86b`). They are reached only
+- Six general filtration and tensor adapters were introduced with socle
+  exhaustion: `Filtration.ObjectTransport`, `Tensor.FiniteFiltration`,
+  `Tensor.ExternalFiltration`, `Tensor.ExternalSubrepresentation`,
+  `Parabolic.InductionSubrepresentation` and
+  `Parabolic.ProductInductionSubrepresentation`. They are reached only
   through the chain `RestrictedProductLevel` ← `RightMixedLevel` ←
   `ProductVanishing` ← `ProductInductionSubrepresentation` ←
   `ExternalSubrepresentation` ← `ExternalFiltration` ← `FiniteFiltration` ←
   `ObjectTransport`. So they are reached through `RestrictedProductLevel` and
-  through the Ze80 5.3 proof, which imports `RestrictedProductLevel`. The same
-  task also introduced the list-counting API `Combinatorics.RelationInversions`
-  (`9e971abc`). It is reached only through the mandated §4.4 proof
+  through the Ze80 5.3 proof, which imports `RestrictedProductLevel`. The
+  list-counting API `Combinatorics.RelationInversions` was introduced with the
+  same result. It is reached only through the §4.4 proof
   (`SupercuspidalDerivativesProof` ← `Whittaker.MultiplicityOneProof` ← … ←
   `Group.GL.UpperBruhatFiltration`).
-- Task `3c9849a4-a6c0-43ac-9982-d15ed76bf1e9` (two-supercuspidal nonadjacent
-  product) introduced `Derivative.MirabolicMinusNormalization` (`149ed2a1`), the
-  Haar-normalization adapter for `Ψ⁻`/`Φ⁻`. It is reached only through the 5.3
+- `Derivative.MirabolicMinusNormalization`, the Haar-normalization adapter for
+  `Ψ⁻`/`Φ⁻`, was introduced with the two-supercuspidal nonadjacent product
+  result. It is reached only through the 5.3
   proof (`LeftMixedProductPhiHatIterate` ← `MirabolicSmoothPhiPlusProduct` ← … ←
   `MirabolicPlusNormalization`).
-- Task `8e5b4563-0365-41c7-b134-70f2a0b36292` owns the statement `c27c6879`, which
-  bundles `Classification.SupercuspidalDerivativesStatement`. This is the
-  cuspidal-derivative statement of the mandated §4.4 proof, which the contract
-  allows. The task is also reached as a contract requirement of two tasks:
-  task `2e5183b1`, the §4.4 proof task, through that statement; and task
-  `f81d9b36`, the owner of the quotient-support helper `bf38b454`, which
-  `09565d90` authorizes by name. No segment-socle module of `8e5b4563` is in the
+- `Classification.SupercuspidalDerivativesStatement` is part (a) of the six
+  statements of `Classification.SegmentSocleDerivativesStatement`. It is the
+  cuspidal-derivative statement of the §4.4 proof, which may be used. No
+  segment-socle module of the six statements is in the
   closure. In particular, neither `SegmentSocleDerivativesStatement` nor any
   `HighestDerivativeSupportShift` module is in it.
-- Task `62de5903-b616-4b5c-88eb-a066b77c5467` owns proof `001944f3`, which only
+- The publication of the excluded `SupercuspidalCoinvariantFinitenessProof` only
   bundles copies of seven modules: `Derivative.MirabolicDerivativeVanishing`,
   `MirabolicHighestDerivativeDescent`, `MirabolicHighestDerivativePairingProof`,
   `MirabolicPhiMinusNondegeneratePairing`,
   `PartialDerivativeJacquetComparisonStatement`, and
   `Geometric.ParabolicOrbitSectionComparison` and `ParabolicOrbitStagesCoefficient`.
   These copies are byte-identical to the Library files. The modules were
-  accepted earlier under other tasks: proof `f957ae76` (task `a925b519`, BZ77
-  3.8), statement `5d596030` (task `087df35f`) and definitions `a84b7e4a` and
-  `4bfd5d0d` (task `18915f54`). They are reached through the 4.7(b) closure that
-  `09565d90` authorized, and `MirabolicDerivativeVanishing` also through the
+  published earlier with other results: the BZ77 3.8 proof, the positive
+  two-block Jacquet comparison statement and two geometric definition modules.
+  They are reached through the 4.7(b) closure, and
+  `MirabolicDerivativeVanishing` also through the
   detection proof. `Whittaker.SupercuspidalCoinvariantFinitenessStatement`, the
-  conclusion of `62de5903`, is not in the closure.
+  excluded conclusion, is not in the closure.
 
-**Modules kept under response `2b34e403`.** The operator allowed the nine
-modules of `f3a69bc8`, `3c9849a4` and `8e5b4563` above to stay in the closure
-(response `2b34e4035a5b5dafad7ad84d5a8c0dd8`, see "Operator rulings"). Each is
-listed here with its introducing artifact, its publishing task and its content.
+**Modules of excluded results kept in the closure.** The nine modules above,
+introduced with socle exhaustion, the two-supercuspidal nonadjacent product and
+the six statements of `SegmentSocleDerivativesStatement`, stay in the closure
+(see "Scope of the exclusions"). Each is listed here with its content.
 Module names have the prefix `Langlands.Representation.` except
 `Langlands.Combinatorics.RelationInversions`.
 
-| Module | Artifact and publishing task | Content | Project imports |
+| Module | Introduced with | Content | Project imports |
 | --- | --- | --- | --- |
-| `Filtration.ObjectTransport` | definition `68054cb0-7541-498d-bd52-0414519d5815` (copy also in `1529e866`), task `f3a69bc8` | Transport of an `ObjectRepFiltration` along a group homomorphism (`comp`, `compGradedEquiv`) and along an equivalence of representations (`mem_equivTransport_subrepresentation`, `equivTransportGradedEquiv`) | `Filtration.LengthTwoMatching` (definition `701ca674`, task `53969569`) |
-| `Tensor.FiniteFiltration` | definition `1529e866-4b41-41d6-9510-5b00eacdd1c7` (copy also in `428f73bc`), task `f3a69bc8` | Finite tensor products of representations: `congrEquiv`, `slotEquiv`, the filtration induced by a filtration of one slot (`slotFiltration`), its graded pieces and the injectivity of their maps | `Tensor.Finite` (definition `237628bc`, task `a7a453ca`), `Tensor.Filtration` (definition `afd064b6`, task `a084147c`), `Filtration.ObjectTransport` |
-| `Tensor.ExternalFiltration` | definition `428f73bc-5621-43c2-b72b-3aed5f40320c`, task `f3a69bc8` | The same slot filtration for an external tensor product (`externalSlotFiltration`, its graded pieces and maps) | `Tensor.FiniteFiltration` |
-| `Tensor.ExternalSubrepresentation` | definition `6ddf89c2-bf68-48c5-bb80-7b620f4af522` (copies also in `305bd86b` and `fec3f86b`), task `f3a69bc8` | The subrepresentation of an external tensor product generated by a subrepresentation of one slot (`externalSlotSubrepresentation`) with its `⊥`, `⊤`, order, `≠ ⊥` and `≠ ⊤` lemmas, and `leftTensorImage_le_iff` | `Tensor.ExternalFiltration` |
-| `Parabolic.InductionSubrepresentation` | definition `305bd86b-670e-4369-ab5a-549ec74ee689` (copy also in `fec3f86b`), task `f3a69bc8` | Normalized parabolic induction of a subrepresentation (`normalizedInducedSubrepresentation`) with its `⊥`, `⊤`, order, `≠ ⊥` and `≠ ⊤` lemmas; `exists_valueSubrep_eval`, `valueSubrep_le_iff` | `Parabolic.InductionFactorMatchingProof` (proof `91f99d8f`, task `ded88550`) |
-| `Parabolic.ProductInductionSubrepresentation` | definition `fec3f86b-c0ba-42b2-b6b7-bb31421a8b56`, task `f3a69bc8` | The subrepresentation of a normalized block product induced from a subrepresentation of one factor (`normalizedProductSlotSubrepresentation`) with the same lemmas; a proper nonzero subrepresentation of one factor gives a proper nonzero one of the product | `Tensor.ExternalSubrepresentation`, `Parabolic.InductionSubrepresentation`, `Induction.BlockFactors` (definition `ee7ae365`, task `a7a453ca`) |
-| `Combinatorics.RelationInversions` | definition `9e971abc-0144-4575-8205-89a2ae397e63` (copy also in `aa59ea67`), task `f3a69bc8` | For a relation on a type, `relationPairCount` and `relationInversions` of lists, with append, vanishing, monotonicity and swap lemmas | Mathlib and Lean only |
-| `Derivative.MirabolicMinusNormalization` | definition `149ed2a1-eff4-4b02-87a3-569b0f22b048`, task `3c9849a4` | Half-modulus character identities, the characters `psiMinusHaarInverseHalf` and `phiMinusHaarInverseHalf` with their formulas and open kernels, and the Haar-normalization identities `psiMinus_haarNormalization` and `phiMinus_haarNormalization` | `Group.GL.MirabolicModulusProof` (proof `f25fdd6c`, task `f947a735`), `Derivative.MirabolicMinus` (definition `293388d4`, task `74fa48e1`) |
-| `Classification.SupercuspidalDerivativesStatement` | bundled in statement `c27c6879-9906-43fa-8d88-cf1808b55f2d`, task `8e5b4563` | The Prop-valued definition `SupercuspidalDerivatives` (BZ77 §4.4), which the contract allows and which the mandated proof `fd42c8ef` proves | `Classification.Supercuspidal`, `Derivative.Iteration`, `HarmonicAnalysis.Basic` |
+| `Filtration.ObjectTransport` | socle exhaustion | Transport of an `ObjectRepFiltration` along a group homomorphism (`comp`, `compGradedEquiv`) and along an equivalence of representations (`mem_equivTransport_subrepresentation`, `equivTransportGradedEquiv`) | `Filtration.LengthTwoMatching` |
+| `Tensor.FiniteFiltration` | socle exhaustion | Finite tensor products of representations: `congrEquiv`, `slotEquiv`, the filtration induced by a filtration of one slot (`slotFiltration`), its graded pieces and the injectivity of their maps | `Tensor.Finite`, `Tensor.Filtration`, `Filtration.ObjectTransport` |
+| `Tensor.ExternalFiltration` | socle exhaustion | The same slot filtration for an external tensor product (`externalSlotFiltration`, its graded pieces and maps) | `Tensor.FiniteFiltration` |
+| `Tensor.ExternalSubrepresentation` | socle exhaustion | The subrepresentation of an external tensor product generated by a subrepresentation of one slot (`externalSlotSubrepresentation`) with its `⊥`, `⊤`, order, `≠ ⊥` and `≠ ⊤` lemmas, and `leftTensorImage_le_iff` | `Tensor.ExternalFiltration` |
+| `Parabolic.InductionSubrepresentation` | socle exhaustion | Normalized parabolic induction of a subrepresentation (`normalizedInducedSubrepresentation`) with its `⊥`, `⊤`, order, `≠ ⊥` and `≠ ⊤` lemmas; `exists_valueSubrep_eval`, `valueSubrep_le_iff` | `Parabolic.InductionFactorMatchingProof` |
+| `Parabolic.ProductInductionSubrepresentation` | socle exhaustion | The subrepresentation of a normalized block product induced from a subrepresentation of one factor (`normalizedProductSlotSubrepresentation`) with the same lemmas; a proper nonzero subrepresentation of one factor gives a proper nonzero one of the product | `Tensor.ExternalSubrepresentation`, `Parabolic.InductionSubrepresentation`, `Induction.BlockFactors` |
+| `Combinatorics.RelationInversions` | socle exhaustion | For a relation on a type, `relationPairCount` and `relationInversions` of lists, with append, vanishing, monotonicity and swap lemmas | Mathlib and Lean only |
+| `Derivative.MirabolicMinusNormalization` | `TwoSupercuspidalNonadjacentProductIrreducible` | Half-modulus character identities, the characters `psiMinusHaarInverseHalf` and `phiMinusHaarInverseHalf` with their formulas and open kernels, and the Haar-normalization identities `psiMinus_haarNormalization` and `phiMinus_haarNormalization` | `Group.GL.MirabolicModulusProof`, `Derivative.MirabolicMinus` |
+| `Classification.SupercuspidalDerivativesStatement` | the six statements of `SegmentSocleDerivativesStatement` (part (a)) | The Prop-valued definition `SupercuspidalDerivatives` (BZ77 §4.4), which may be used and which the §4.4 proof `SupercuspidalDerivativesProof` proves | `Classification.Supercuspidal`, `Derivative.Iteration`, `HarmonicAnalysis.Basic` |
 
 These modules are reached as described above. The six filtration and tensor
 adapters enter through `RestrictedProductLevel` and the Ze80 5.3 proof.
 `RelationInversions` and `SupercuspidalDerivativesStatement` enter through the
 §4.4 proof, and `MirabolicMinusNormalization` through the 5.3 proof. The
-operator's check was repeated here at `b1c8a5e8`. The declarations of the nine
+check was made at `b1c8a5e8`. The declarations of the nine
 modules are the definitions and lemmas named in the table. None of them states
 or uses socle exhaustion, the irreducibility or structure of a product of two
 supercuspidals, a segment or multisegment result, or any other excluded
 conclusion. The recursive import closures of the nine modules have 7, 19, 20,
 21, 60, 72, 1, 62 and 59 modules, in the order of the table. In each of these
-closures the only modules with an excluded owner are modules from this table.
-Every other project import is owned by a non-excluded task.
+closures the only modules introduced with an excluded result are modules from
+this table.
 
-**Identifiers.** All 906 Lean files were scanned for the excluded declaration
-and module names: every name listed in the contract, the three Whittaker
+**Names.** All 906 Lean files were scanned for the excluded declaration
+and module names: every excluded name listed in this file, the three Whittaker
 coinvariant-finiteness statements, `CuspidalIntegralTwistFreeness`,
 `RepeatedCuspidalSupportShift`, `TopProduct`, `topProductTensorEquiv` and
-`segmentDerivative`. They were also scanned for the 38 excluded task IDs. There
-is no Lean hit. 46 of the 905 Markdown files of the other modules mention
-excluded task IDs. Every such mention is in an independence or exclusion audit
-section, in a provenance line (`SupercuspidalDerivativesStatement`), or explains
-the removal of an excluded import (the two helper pairs).
+`segmentDerivative`. There is no Lean hit.
 
-**Modules named by `da4ad97c`.** The `Classification.Supercuspidal*` modules in
-the closure are cuspidal infrastructure:
+**Supercuspidal and Whittaker modules.** The `Classification.Supercuspidal*`
+modules in the closure are cuspidal infrastructure:
 
-- `Supercuspidal` (definitions, `0a5d67d6`);
-- `SupercuspidalTwist` (`cba40ce7`);
-- `SupercuspidalSupport` (`5f04f9a1`, `6ee5d0b4`);
-- `SupercuspidalSupportStatement` (`ab3b22c3`);
-- `SupercuspidalSupportUniquenessProof` (`9533b6b3`, task `b0b54bc0`);
-- `SupercuspidalContragredient`, `…Statement`, `…Aux` and `…Proof` (`1269a9fc`,
-  `1d93e28a`, `c9408696`, `a090c713`; tasks `a7a453ca`, `1c921aca`);
+- `Supercuspidal` (definitions);
+- `SupercuspidalTwist`;
+- `SupercuspidalSupport`;
+- `SupercuspidalSupportStatement`;
+- `SupercuspidalSupportUniquenessProof`;
+- `SupercuspidalContragredient`, `…Statement`, `…Aux` and `…Proof`;
 - `SupercuspidalDerivativeVanishing`, `SupercuspidalTopDerivative`,
-  `SupercuspidalDerivativesStatement` and `SupercuspidalDerivativesProof` (tasks
-  `2e5183b1`, `8e5b4563` statement only).
+  `SupercuspidalDerivativesStatement` and `SupercuspidalDerivativesProof`.
 
 None states a segment, socle, classification or exhaustion result.
 `Whittaker.Algebraic`, `Whittaker.GeneralLinear` and `Whittaker.Iwasawa`
-(`e4518542`, task `6f0365a3`) are definitions of Whittaker functionals and models.
+are definitions of Whittaker functionals and models.
 The other Whittaker modules in the closure are the Gelfand–Kazhdan
-multiplicity-one development: `Whittaker.MultiplicityOneProof` (`ba2dff22`, task
-`209cde88`), its statement (`4256a9ec`, task `5bd68403`), `PrerequisitesStatement`
-(`bd81d0bb`, task `b036b2e6`) and the Bruhat-cell distribution lemmas. No
+multiplicity-one development: `Whittaker.MultiplicityOneProof`, its statement,
+`PrerequisitesStatement` and the Bruhat-cell distribution lemmas. No
 coinvariant-finiteness module is in the closure:
 
 - not `IrreducibleCoinvariantFinitenessStatement`;
 - not `LeviCuspidalCoinvariantFinitenessStatement`;
 - not `SupercuspidalCoinvariantFinitenessStatement`;
-- no module of tasks `5ab445dc`, `3ff5c8fb` or `5428fe2c`.
+- no module of their proofs or of the mirabolic finite-length route.
 
 The only finite-length modules are the general `Filtration` Jordan–Hölder and
 length APIs, which are not used to prove any finiteness of derivatives.
@@ -640,51 +605,49 @@ length APIs, which are not used to prove any finiteness of derivatives.
 
 Two checks support the table. The mathematical proof chain above (this module, the
 two helpers and the published inputs listed) uses none of the excluded results.
-The import closure audit confirms this at the level of modules, owning tasks,
-transitive requirements and identifiers. An identifier scan cannot exclude a
-renamed result, so each row also records the mathematical inspection. Task IDs
-only identify the prohibitions.
+The import closure audit confirms this at the level of modules, their
+provenance and their names. A name scan cannot exclude a
+renamed result, so each row also records the mathematical inspection.
 
-| Excluded conclusion or task family | Audit result |
+| Excluded conclusion | Audit result |
 | --- | --- |
-| `UnlinkedSegmentSocleProductIrreducible`, `LinkedSegmentSocleReverseProductStructure`, `LinkedSegmentSoclePairReducible`; `23e98d90-6055-4e35-91a9-b0f5d8a84961`, `a55c4267-7e3a-43f6-8bb1-ce319e1d0aa9`, `8fa9f68b-fa1b-431a-97f6-5b163964d1fc` | Not imported and not used. The proof concerns products of supercuspidal blocks, not segment products. |
-| `JuxtaposedSegmentSocleReverseProductStructure`, `LinkedSegmentSocleReverseProductQuotientHom`; `7ff2a1e9-89dc-439e-a861-a567b3db92bf` and successors | Not used. |
-| `SegmentSocleProductIrreducibility`; `2ae5cbe5-0701-4509-88a0-db8cbeb35be4` | Not used. |
-| `AdjacentUnlinkedSegmentSocleSwap`; `e3634665-571b-4852-9f4c-bab8a1053434`, `cded83f3-df9c-4018-bc61-dc54f5c1f9ab` | Not used. |
-| `TwoSegmentSocleCommutation`; `426911b4-6620-413f-8065-04b25287f3bd`, `66e3b87c-647e-41e4-af18-df4d436765f0` | Not used. |
-| `LinkedSegmentSocleGluing`; `c84cd52c-3ff3-4024-be50-8b84dd480888`, `6780b79c-9526-46aa-b8b4-00377d68b1ea` | Not used. |
-| `OrderedMultisegmentSocleExistence`; `23189526-80b0-4828-a6d4-7ebec2cbeef5` | Not used. |
-| `MultisegmentSocleExhaustion`, socle exhaustion; `f3a69bc8-7312-4f82-8a7d-ea3c8188cb63` | No conclusion used. The closure contains seven definition modules introduced by this task (general filtration and tensor adapters and a list-counting API). They enter through `RestrictedProductLevel`, the Ze80 5.3 proof and the §4.4 proof, and contain no socle or exhaustion statement. The operator allowed them in response `2b34e403`; see the closure audit. |
-| Analytic segment classification; `aca8805b-054f-4d56-8045-12db7f623404` | Not used. |
-| Special-head multisegment exhaustion; `3bfb61fa-1129-4fc9-83fd-7fcfec22106e` | Not used. |
-| Ordered strong-head existence; `ebea9a8a-9b21-4208-aa31-98c2dea1f8a3` | Not used. |
-| Quotient coverage; `20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584` | Not used. |
-| Ordered conversion; `8252833d-c269-41a9-824c-5879e531b23b` | Not used. |
-| Tempered uniqueness; `52e97845-36bb-457d-b76f-70753334b88c` | Not used. |
-| `GenericSegmentProductUniqueness`; `30341ae4-65f2-4a0e-9283-763db01a409e` | Not used. |
-| `SquareIntegrableLanglandsClassification`; `1cb45da2-7007-4351-a694-594fb148b8d1` | Not used. |
-| Square-integrable exhaustion; `cd8ab97c-0b78-4bce-97c4-d307a28159a4` | Not used. |
-| Regular exhaustion; `bf433f0a-921a-428c-b0c0-6475438125ac` | Not used. |
-| `SegmentSpecialEssentialSquareIntegrability`; `5eece9e8-7f6b-4ea9-abea-a1f9f1b8c807` | Not used. |
-| `SegmentHeadProductIrreducibility`, special-head criterion and special-head product irreducibility; `8364e73f-14ec-4d14-8f2b-1555a7c1ce95` | Not used. Its definition artifact `3ee88231` (`Derivative.TopProduct`, `Filtration.SingletonIso`) was imported by an earlier draft and has been removed. The dimension of the top derivative of a binary product is proved locally from the Leibniz filtration. This task is the consumer of the theorem. |
-| Individual special-head/reverse-socle existence; `67279e36-f3c2-42e3-9302-11729784042e` | Not used. `CuspidalIntegralTwistFreenessProof` (`a7545313`) and `RepeatedCuspidalSupport` are not in the closure. `νρ ≠ ρ` is proved in `OrderedCuspidalProductTwistOne`. |
-| Individual segment-socle/reverse-head existence; `4ca79bbd-589e-476b-9f65-661e799984b5` | Not used. |
-| `SegmentFullJacquetFormula`; `ed48ae06-964c-4c84-9e62-978f5a953ca7` and its exact proof successor | Not used. The only Jacquet input, inside the 4.7(b) closure, is the general geometric lemma together with the Ze80 3.7(b) comparison authorized by `09565d90`. |
-| `SegmentHeadJacquetFormula`; `55ad1e10-62d8-46b7-a081-909ef0056426` | Not used. |
-| `SegmentSocleJacquetFormula`; `b95105c6-f8bb-4641-ae53-2f49d1e7f034` | Not used. |
-| `SegmentSpecialJacquetExponentNormFormula`; `92aea10f-62ac-4e0b-bd4a-9a80909797c5` | Not used. |
-| `TwoSupercuspidalNonadjacentProductIrreducible`; `3c9849a4-a6c0-43ac-9982-d15ed76bf1e9` | No conclusion used. Its definition module `MirabolicMinusNormalization` (the `Ψ⁻`/`Φ⁻` Haar adapter) is in the 5.3 closure. It contains no product or irreducibility statement. The operator allowed it in response `2b34e403`; see the closure audit. |
-| `TwoSupercuspidalProductStructure`; `ab61f565-1427-4746-ba77-46097563e962` | Not used. No product structure or two-factor conclusion appears. |
-| All-character single-block task `62de5903-b616-4b5c-88eb-a066b77c5467`, `SupercuspidalCoinvariantFinitenessStatement` and its consequences | Not used. Its proof `001944f3` only bundles byte-identical copies of seven lower modules, accepted earlier under other tasks. |
-| Whittaker finiteness: `IrreducibleCoinvariantFinitenessStatement`, parent `5ab445dc-d2b4-4072-80d1-6370870a4a26`; `LeviCuspidalCoinvariantFinitenessStatement`, `3ff5c8fb-397c-4345-bcb3-5d98a0993d18`; the finite-length route of `5428fe2c-013c-482d-aa6e-7df43e7191aa` | Not used, and none of their modules is in the closure. No finite length of mirabolic representations or derivatives is used at all. |
-| Segment-socle part of `8e5b4563-0365-41c7-b134-70f2a0b36292`; parent clauses (b), (d), (e), (f) | Not used. Only the cuspidal-derivative statement `SupercuspidalDerivativesStatement` and its accepted proof `fd42c8ef` (task `2e5183b1` revision 2) are used, and their closure has no segment-socle module. |
-| Zelevinsky 1980 segment derivative formulas (§3.5, §9.6), segment, socle or classification results | Not used. The derivative inputs are BZ77 general derivative theory (4.4, 4.5/4.6, 4.13, 4.14, 3.5, 4.7(b)), exactness, Ze80 5.3 (authorized by `da4ad97c`) and Ze80 3.7(b) inside the 4.7(b) closure (authorized by `09565d90`). |
+| `UnlinkedSegmentSocleProductIrreducible`, `LinkedSegmentSocleReverseProductStructure`, `LinkedSegmentSoclePairReducible` | Not imported and not used. The proof concerns products of supercuspidal blocks, not segment products. |
+| `JuxtaposedSegmentSocleReverseProductStructure`, `LinkedSegmentSocleReverseProductQuotientHom` and their proofs | Not used. |
+| `SegmentSocleProductIrreducibility` | Not used. |
+| `AdjacentUnlinkedSegmentSocleSwap` | Not used. |
+| `TwoSegmentSocleCommutation` | Not used. |
+| `LinkedSegmentSocleGluing` | Not used. |
+| `OrderedMultisegmentSocleExistence` | Not used. |
+| `MultisegmentSocleExhaustion`, socle exhaustion | No conclusion used. The closure contains seven definition modules introduced with it (general filtration and tensor adapters and a list-counting API). They enter through `RestrictedProductLevel`, the Ze80 5.3 proof and the §4.4 proof, and contain no socle or exhaustion statement; see the closure audit. |
+| Analytic segment classification | Not used. |
+| Special-head multisegment exhaustion | Not used. |
+| Ordered strong-head existence | Not used. |
+| Quotient coverage | Not used. |
+| Ordered conversion | Not used. |
+| Tempered uniqueness | Not used. |
+| `GenericSegmentProductUniqueness` | Not used. |
+| `SquareIntegrableLanglandsClassification` | Not used. |
+| Square-integrable exhaustion | Not used. |
+| Regular exhaustion | Not used. |
+| `SegmentSpecialEssentialSquareIntegrability` | Not used. |
+| `SegmentHeadProductIrreducibility`, special-head criterion and special-head product irreducibility | Not used. The definition modules introduced with it, `Derivative.TopProduct` and `Filtration.SingletonIso`, are not imported. The dimension of the top derivative of a binary product is proved locally from the Leibniz filtration. `SegmentHeadProductIrreducibility` is a consumer of the theorem. |
+| Individual special-head/reverse-socle existence | Not used. `CuspidalIntegralTwistFreenessProof` and `RepeatedCuspidalSupport` are not in the closure. `νρ ≠ ρ` is proved in `OrderedCuspidalProductTwistOne`. |
+| Individual segment-socle/reverse-head existence | Not used. |
+| `SegmentFullJacquetFormula` and its proof `segmentFullJacquetFormula` (`Classification.SegmentFullJacquetProof`) | Not used. The only Jacquet input, inside the 4.7(b) closure, is the general geometric lemma together with the Ze80 3.7(b) comparison. |
+| `SegmentHeadJacquetFormula` | Not used. |
+| `SegmentSocleJacquetFormula` | Not used. |
+| `SegmentSpecialJacquetExponentNormFormula` | Not used. |
+| `TwoSupercuspidalNonadjacentProductIrreducible` | No conclusion used. The definition module introduced with it, `MirabolicMinusNormalization` (the `Ψ⁻`/`Φ⁻` Haar adapter), is in the 5.3 closure. It contains no product or irreducibility statement; see the closure audit. |
+| `TwoSupercuspidalProductStructure` | Not used. No product structure or two-factor conclusion appears. |
+| `SupercuspidalCoinvariantFinitenessStatement` (all-character single-block) and its consequences | Not used. The publication of its proof only bundles byte-identical copies of seven lower modules, published earlier with other results. |
+| Whittaker finiteness: `IrreducibleCoinvariantFinitenessStatement`; `LeviCuspidalCoinvariantFinitenessStatement`; the mirabolic finite-length route | Not used, and none of their modules is in the closure. No finite length of mirabolic representations or derivatives is used at all. |
+| Segment-socle part of the six statements of `Classification.SegmentSocleDerivativesStatement`; their clauses (b), (d), (e), (f) | Not used. Only the cuspidal-derivative statement `SupercuspidalDerivativesStatement` and its proof `SupercuspidalDerivativesProof` are used, and their closure has no segment-socle module. |
+| Zelevinsky 1980 segment derivative formulas (§3.5, §9.6), segment, socle or classification results | Not used. The derivative inputs are BZ77 general derivative theory (4.4, 4.5/4.6, 4.13, 4.14, 3.5, 4.7(b)), exactness, Ze80 5.3 and Ze80 3.7(b) inside the 4.7(b) closure. |
 | Ze80 product criteria 4.2 and 9.7, the analytic or square-integrability result 9.3, classification and exhaustion theorems | Not used. |
-| Unproved derivative statements, citations, conditional assemblies, theorem-valued hypotheses or pending tasks | None is used. Every lower result is applied as a published proof term. The hypotheses of `isHomogeneous_restrictedProduct` and `level_of_injective_rightMixed` are discharged by published proofs. The two helper pairs are proved in full in this candidate. |
+| Unproved derivative statements, citations, conditional assemblies or theorem-valued hypotheses | None is used. Every lower result is applied as a published proof term. The hypotheses of `isHomogeneous_restrictedProduct` and `level_of_injective_rightMixed` are discharged by published proofs. The two helper pairs are proved in full. |
 
-All rows exclude mathematical conclusions, proof successors and transitive
-dependents, including renamed versions. No new prerequisite task was published for
-this proof.
+All rows exclude mathematical conclusions, the modules that prove them and
+transitive dependents, including renamed versions.
 
 ## Appendix: import closure
 

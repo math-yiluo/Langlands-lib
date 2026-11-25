@@ -1,6 +1,6 @@
 # Actual object filtrations and composition factors with multiplicity
 
-Author: Worker 14. This definition pair supplies finite composition-series
+This definition pair supplies finite composition-series
 predicates needed to state the length bound and the equality of
 Jordan–Hölder multisets in Bernstein–Zelevinsky 1977, sections 2.8-2.9.
 It does not prove those representation-theoretic results or the
@@ -45,7 +45,8 @@ equivalences; the symmetry lemma reverses the permutation and the
 equivalences. These constructions do not prove independence of the choice
 of series. That independence, transitivity through arbitrary series,
 and comparison with Mathlib's group-algebra finite-length predicate
-remain separate theorem obligations. No such theorem is an input to
+are separate theorems, in `Filtration.JordanHolderComparisonProof` and
+`Filtration.LengthCriterionProof`. No such theorem is an input to
 these definitions.
 
 ## Source and provenance

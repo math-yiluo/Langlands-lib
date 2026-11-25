@@ -63,7 +63,9 @@ assumed.
 
 `ProjectorStalkDescription.{u,v}` aggregates the independent-universe
 annihilator and basis-colimit clauses and the all-open vector-stalk clauses.
-It is a `Prop`-valued statement for a separate proof task. The all-open kernel,
+It is a `Prop`-valued statement, proved separately as
+`ProjectorStalk.projectorStalkDescription` in
+`Langlands.Sheaf.Renard.ProjectorStalkProof`. The all-open kernel,
 surjectivity, and linear-equivalence formulations make explicit the linear
 content of Renard's quotient identification. This passage is distinct from
 the later printed p.42 / PDF p.48 Remark, whose quotient starts with compact

@@ -1,9 +1,5 @@
 # Signed type-A Solomon coefficients for block Weyl intersections
 
-Author: Worker 379. The Lean proposition is the exact expression specified
-by Worker 320 in the task contract, who also designed the source
-dictionary below.
-
 `Langlands.Geometric.TypeASolomonCoefficientStatement` is a proposition
 with no parameters. It is a type-A form, written with the Library's actual
 permutation data, of the Solomon identity that Aubert (1995) quotes after

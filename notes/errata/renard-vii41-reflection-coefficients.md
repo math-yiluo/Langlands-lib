@@ -1,7 +1,5 @@
 # Reflection coefficients in Renard VII.4.1
 
-Worker 1222, Task 1222 (`f5d1f399-a1f8-4ab5-a981-90b92abd4857`).
-
 The proof of (VII.4.1.3) on printed p. 242 (PDF p. 248) gives two incorrect
 formulas for a dual-basis coordinate of the Weyl displacement. The
 nonnegative root-cone bound in (VII.4.1.3) follows from the simple-reflection

@@ -1,19 +1,19 @@
 # Hom groups of representations and localization
 
-Author: Worker 61. Built on the Library module
-`Langlands.Cohomology.HyperextIsotypicBaseChange` (`invariantsBaseChangeMap`;
-Worker 61). Through this import it also uses
+Built on the Library module
+`Langlands.Cohomology.HyperextIsotypicBaseChange` (`invariantsBaseChangeMap`).
+Through this import it also uses
 `Langlands.Cohomology.HyperextScalarExtension` (`IsSemilinear`,
 `baseChangeLift`, `cohomologyHomMap`, `cohomologyHomMap_apply`,
 `cohomologyHomBaseChangeMap`, `cohomologyHomBaseChangeMap_tmul`,
 `smoothCohomologyHomBaseChangeMap`, `repExtendScalars_isSemilinear`,
-`smoothRepExtendScalars_isSemilinear`; Worker 61),
+`smoothRepExtendScalars_isSemilinear`),
 `Langlands.Cohomology.ExactDerivedHomology` (`exactDerivedHomologyIso`),
 `Langlands.Cohomology.DivisibleSystem.ScalarExtension`
 (`baseChangeRepresentation`, `baseChangeRepresentation_apply_tmul`,
-`repExtendScalars`; Worker 61),
+`repExtendScalars`),
 `Langlands.Cohomology.DivisibleSystem.SmoothScalarExtension`
-(`smoothRepExtendScalars`; Worker 61) and
+(`smoothRepExtendScalars`) and
 `Langlands.Representation.Category.Basic` (`SmoothRep`). From Mathlib it
 imports `Mathlib.Algebra.Module.LocalizedModule.Int`,
 `Mathlib.RingTheory.Flat.Localization` and
@@ -274,7 +274,7 @@ algebra is not addressed.
   hypothesis on `Y` the injectivity proof does not apply.
 - The finite generation of `H^q K` over `R[G]` and the absence of `M`-torsion
   in `W` are hypotheses; they are not verified for any complex, and whether they
-  hold in Harris's situation remains an open obligation.
+  hold in Harris's situation is not addressed here.
 - Only `Hom(H^q K, W)` is treated. The maps on `Hom(K, W₀⟦n⟧)`, on `Ext`
   groups, on invariants of hyperext groups and on isotypic parts are not proved
   bijective here.

@@ -1,7 +1,5 @@
 # The isometric comparison with relative series modulo additional equations
 
-Author: Worker 812.
-
 `relativeEquationComparison` proves the entire unchanged published proposition `Langlands.Analytic.PresentedAffinoidAlgebra.Adjoin.RelativeEquationComparisonStatement`. For every complete ultrametric normed field K, presented algebra A, polyradius s and set L of enlarged scalar series, it gives three facts. First, the fixed natural map `relativeEquationMap K A s L` is surjective. Second, it is an isometry for the actual quotient norms. Third, `relativeEquationEvaluation K A s L f = 0` holds exactly when f lies in `(Adjoin.algebra K A s L).ideal`.
 
 ## Implemented proof

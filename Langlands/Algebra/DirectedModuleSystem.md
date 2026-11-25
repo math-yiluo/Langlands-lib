@@ -24,7 +24,7 @@ source `stacks-algebra-flatness-criteria-2026-10-22`, content SHA256
 `00QV.html`, Lemma 10.127.11 and its proof; `00QL.html`, Remark 10.127.12
 (tag 00QW) and Lemma 10.127.13 (tag 00QX), including the proof; and
 `00R3.html`, Lemma 10.128.3 (tag 00R6), for the later use. These passages were
-read for this unit. In particular, 00QW warns that an arbitrary finite-type
+read for this module. In particular, 00QW warns that an arbitrary finite-type
 approximation system need not have the desired localization transitions.
 No such localization property is inferred by this adapter. The corrected
 polynomial-quotient maps and prime localizations in 00QV remain in the existing
@@ -44,7 +44,7 @@ inspected. Its `PresheafOfModules.ModuleColimit` constructs a module action on a
 categorical additive colimit, and gives scalar formulas and joint surjectivity.
 Its ring, component modules and cocone carriers use a shared universe `w`.
 The published `Langlands.Algebra.Modules.TensorColimit` supplies tensor and
-balanced-map machinery with a shared carrier universe as well. This unit
+balanced-map machinery with a shared carrier universe as well. This module
 therefore reuses the underlying algebraic direct-limit lifts directly, keeping
 all five carrier/index universes independent and using the target's existing
 action. It does not duplicate either categorical action construction or tensor
@@ -173,4 +173,4 @@ the whole comparison homomorphisms with `D.baseColimitMap` and
 additive maps and canonical lifts are definitionally unchanged by restriction
 of component scalars. The adapter assumes no `IsApproximation` or `IsColimit`
 property, and proves no new colimit property. The separate regular-module
-adapter and the later flatness-ascent result are outside this unit.
+adapter and the later flatness-ascent result are outside this module.

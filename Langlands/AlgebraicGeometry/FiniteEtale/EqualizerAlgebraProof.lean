@@ -14,7 +14,7 @@ https://github.com/chrisflav/pi1/blob/5c5c0171efc863ce9990171bdf46d7cb5fd582fb/P
 https://github.com/chrisflav/pi1/blob/5c5c0171efc863ce9990171bdf46d7cb5fd582fb/Pi1/RingTheory/FiniteEtale/Descent.lean
 https://github.com/chrisflav/pi1/blob/5c5c0171efc863ce9990171bdf46d7cb5fd582fb/Pi1/RingTheory/FiniteEtale/Equalizer.lean
 The pi1 revision is a comparison revision; the historical NYLL import revision is
-unverified. Adaptation to this Library: Worker 266. The upstream license and
+unverified. Adapted to Langlands-lib. The upstream license and
 notices are retained in `licenses/NYLL/LICENSE` and `licenses/NYLL/NOTICE`.
 -/
 import Langlands.AlgebraicGeometry.FiniteEtale.EqualizerAlgebraStatements

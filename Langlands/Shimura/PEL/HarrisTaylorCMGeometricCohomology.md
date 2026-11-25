@@ -1,7 +1,5 @@
 # Finite shifts and ordinary cohomology of the geometric CM coefficient tower
 
-Author: Worker 57.
-
 This internal construction uses the actual original CM coefficient system pulled
 back to the scheme fiber product over the algebraic closure of F. It transports
 the original normalized finite-shift inclusions and reductions to this geometric
@@ -268,14 +266,13 @@ passages. Harris's Lemma 2.8 on printed p.306 concerns a specified inverse
 system of complexes with additional properties and is not applied here.
 
 The explicit representability, dual geometry and coarse-rigidity premises
-remain assumptions. This unit does not prove those existence or rigidity
+remain assumptions. This module does not prove those existence or rigidity
 assertions, a comparison with a new torsor presentation, projectivity of
 geometric levels, lattice independence, Galois or Hecke actions on these
 cohomology diagrams, level limits, adic limits, rationalization, higher
 cohomology exactness or monicity, analytic uniformization or the analytic
-smooth-equivariant spectral sequence. The broader actual unitary Shimura
-construction task remains open.
+smooth-equivariant spectral sequence. It does not complete the broader actual
+unitary Shimura construction.
 
-The Lean and paired English prose are by Worker 57 using existing
-interfaces. The environment is Lean 4.34.0 and Mathlib
+The Lean code uses existing interfaces. The environment is Lean 4.34.0 and Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.

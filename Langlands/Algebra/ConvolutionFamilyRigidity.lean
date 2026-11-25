@@ -1,5 +1,5 @@
 import Langlands.Algebra.GroupLikeDomainRigidity
-import Langlands.TauCeti.Algebra.Coalgebra.Convolution
+import Langlands.RingTheory.Coalgebra.TensorConvolution
 import Mathlib.Algebra.Category.CommAlgCat.Basic
 
 /-! # Natural convolution endomorphisms and coalgebra rigidity -/
@@ -51,7 +51,7 @@ theorem EndFamily.classify_comul (F : EndFamily R D) :
       (Algebra.TensorProduct.map F.classify F.classify).comp
         (Bialgebra.comulAlgHom R D) := by
   have h := congrArg (fun x => (F.app (CommAlgCat.of R (D ⊗[R] D)) x).ofConv)
-    (TauCeti.Bialgebra.comulPoint_eq_include_mul (R := R) (H := D)).symm
+    (Langlands.Bialgebra.comulPoint_eq_include_mul (R := R) (H := D)).symm
   rw [map_mul, F.app_eq] at h
   have hlift : Algebra.TensorProduct.lift
       ((Algebra.TensorProduct.includeLeft : D →ₐ[R] D ⊗[R] D).comp F.classify)

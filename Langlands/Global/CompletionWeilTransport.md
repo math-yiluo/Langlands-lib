@@ -1,6 +1,6 @@
 # Weil equivalence of isomorphic p-adic fields
 
-Author: Worker 1693. Internal infrastructure for the proof of
+Internal infrastructure for the proof of
 `Langlands.Global.HenniartGlobalizationStatement`.
 
 This module proves the isomorphism property of the actual completion transport

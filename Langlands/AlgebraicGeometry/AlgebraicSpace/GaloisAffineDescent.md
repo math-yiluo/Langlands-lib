@@ -30,7 +30,7 @@ The proof:
 image `W₀` of `W` in `F` is again LFT-affine and `W₀.preimage fst = W`. The quotient `M` is
 locally of finite type by `FiniteFlatSourceDescent`, since `q : A → M` is finite, flat and
 surjective. The proof:
-- The preimage identity is Worker 1150's `universalImage_preimage_eq_of_invariant`.
+- The preimage identity is `universalImage_preimage_eq_of_invariant` (`OpenSubfunctorDescent`).
 - Openness is `universalImage_open_of_finite`, since `fst` is finite.
 - For representability, apply `exists_affine_quotient` to `x₀, α₀` read off from
   `Y(A) ≅ W`. Then use `exists_iso_of_locallySurjective_of_same_kernel` with the map

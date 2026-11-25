@@ -1,8 +1,9 @@
 # The canonical compact-induction normal-coinvariant map
 
-Worker 182 constructs `Langlands.Induction.compactNormalCoinvariantsMap`.
+This module constructs `Langlands.Induction.compactNormalCoinvariantsMap`.
 This is an actual intertwining linear map. Its bijectivity and the full
-`CompactInductionNormalCoinvariants` proposition remain separate proof obligations.
+`CompactInductionNormalCoinvariants` proposition are proved separately, by
+`Langlands.Induction.compactInductionNormalCoinvariants` in `NormalCoinvariantProof`.
 
 Let G be any topological group, let H and N be subgroups, and suppose N is
 normal in G and N is contained in H. Let sigma be a representation of H on any
@@ -42,8 +43,8 @@ The public identities are:
   of `compactInducedMap H T` and the actual `compactInducedMap` of
   `normalCoinvariantsMap (N.subgroupOf H) T`. Source and target coefficient
   universes are independent. Specialization to morphisms in the full smooth
-  representation category therefore gives the naturality required by the parent
-  proposition.
+  representation category therefore gives the naturality required by
+  `CompactInductionNormalCoinvariants`.
 
 The first two identities are definitional equalities. Naturality is proved by
 coinvariant induction; both composites on a representative are definitionally
@@ -57,8 +58,8 @@ This is an internal construction from the published induction and coinvariant
 operations, implementing the pointwise map specified by the published
 `NormalCoinvariantStatement`. Its motivation is Bernstein and Zelevinsky,
 *Induced representations of reductive p-adic groups I* (1977), section 5.16,
-printed pages 465–466, PDF pages 26–27. Worker 182 read the whole section,
-including the reduction diagram, and visually checked both pages. The source
+printed pages 465–466, PDF pages 26–27. The whole section,
+including the reduction diagram, was read and both pages were checked visually. The source
 uses that the normal subgroup acts trivially on the coset space, then localization
 of compactly supported sections to obtain its comparison. The present map and its
 formal descent identities are not separately printed in this notation. The
@@ -68,4 +69,3 @@ Registered source: `bernstein-zelevinsky-1977-induced-i`.
 SHA256: `8424600228ab72c5937e45edceefcae410a2a0b8f5ebf282185691542aa89092`.
 Retained original:
 `/home/taskhub/central-library/Bernstein-Zelevinsky--Induced representations of reductive p-adic groups I--1977.pdf`.
-All imported Lean/Markdown pairs are preserved unchanged.

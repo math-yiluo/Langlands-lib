@@ -1,7 +1,5 @@
 # Isobaric invariance in Harris's Proposition 4.8 over totally complex fields: proof
 
-Author: Worker 998, under Task 7220 `549b134f-cd9d-42ad-94bc-2d2ff16386c1`.
-
 The theorem `Langlands.Global.Harris.proposition48IsobaricInvarianceTC.{uV}`
 proves exactly the published statement
 `Langlands.Global.Harris.Proposition48IsobaricInvarianceTCStatement.{uV}`
@@ -17,8 +15,7 @@ The companion's premise `CuspidalSpectralRigidityTCStatement.{0, uV}`
 asserts rigidity only over totally complex number fields. It is
 therefore weaker than the unrestricted
 `CuspidalSpectralRigidityStatement.{0, uV}` assumed by that theorem.
-The premise stays a hypothesis here. Its proof belongs to Task 6446
-`c4f0be57-1a49-4a42-b813-4354e297ab3f`.
+The premise stays a hypothesis here.
 
 ## Implemented proof
 

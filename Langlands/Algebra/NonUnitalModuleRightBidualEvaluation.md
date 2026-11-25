@@ -58,8 +58,7 @@ naturality equation as original bundled maps.
 
 The comparison transport, scalar packaging and categorical packaging are
 derived internal constructions implementing the source's actual right
-evaluation. The published generic evaluation is imported by Lean name and
-retains its existing authorship. The comparison extends Worker 6's audit.
+evaluation. The published generic evaluation is imported by Lean name.
 The companion Checks pair checks complete unapplied interfaces, unequal
 universes, competing structures and zero carriers. No prior complex module on
 M, dimension bound, nonzero condition, anti-involution, faithful action or

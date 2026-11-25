@@ -1,7 +1,5 @@
 # Affine atlas construction for restriction of scalars
 
-Author: Worker 110.
-
 Derived infrastructure and a conditional assembly for Conrad's Lemma 5.10,
 *Weil and Grothendieck approaches to adelic points* (December 31, 2011),
 printed pp.17–18. Registered source:

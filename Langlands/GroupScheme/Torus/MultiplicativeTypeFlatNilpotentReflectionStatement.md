@@ -1,7 +1,5 @@
 # Flat nilpotent deformations of multiplicative-type groups
 
-Worker 888.
-
 `Langlands.GroupScheme.MultiplicativeTypeFlatNilpotentReflectionStatement.{u}` is
 a `Prop`-valued statement definition. It adds no axioms or proof of the statement.
 

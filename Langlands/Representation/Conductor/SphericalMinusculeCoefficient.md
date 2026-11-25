@@ -1,6 +1,6 @@
 # Integrated weighted minuscule translation
 
-This internal unit integrates the weighted inverse minuscule quotient integrand
+This module integrates the weighted inverse minuscule quotient integrand
 identity using the actual Jacquet quotient measure. It then constructs the
 restricted action on actual finite-support model vectors and proves equivariance
 of their numerator map.
@@ -33,7 +33,7 @@ The finite-sum results retain the following explicit data and hypotheses:
   standard unipotent character has value different from one.
 
 Here `v` is `ValuativeRel.valuation F`. These residue-lift and root witnesses
-are supplied explicitly rather than constructed in this unit. The field,
+are supplied explicitly rather than constructed in this module. The field,
 representation-space and label-type universes are independent.
 
 Let `T_k` be the actual weighted inverse minuscule model operator defined in
@@ -72,7 +72,7 @@ absorbs its inverse and proves stability under every `e_k`. The conclusions
 hold for all natural `k` and all `P`, and assume finite support only when a
 numerator is formed.
 
-The provenance is internal: this unit combines the actual quotient-integrand
+The provenance is internal: this module combines the actual quotient-integrand
 identity, smooth-model integrability, right-invariance of the compatible Jacquet
 measure, linearity of the established coefficient construction and finite
 coefficient reindexing under monomial multiplication. It does not prove that

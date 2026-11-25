@@ -1,6 +1,6 @@
 # Filtered symmetrization and actual compact invariant lifting
 
-Author: Worker 94. This is an internal derivation from the actual symmetrization, conjugation, finite-span integration and symmetric Haar averages in the imported modules.
+This is an internal derivation from the actual symmetrization, conjugation, finite-span integration and symmetric Haar averages in the imported modules.
 
 The construction uses the full complexification of the actual archimedean matrix Lie algebra, its whole symmetric algebra and its genuine universal enveloping algebra. The ambient field `K : Type u` and natural rank `n` are arbitrary; the averaging and finite-continuous-orbit results additionally assume `NumberField K`. Every compact component and rank zero are retained.
 
@@ -16,4 +16,4 @@ The private integration lemma proves that a finite-span integral belongs to ever
 
 To prove `exists_compactInvariant_symmetrize_degree`, lift a compact fixed genuine enveloping element of degree at most `d` to a symmetric element with that bound. Average the preimage in the symmetric algebra. Averaging retains the bound and makes the preimage compact fixed; naturality and the fixed-vector identity show that its symmetrization is the original element. Exhaustiveness of the genuine enveloping filtration then gives `lieSymmetricCompactInvariantSymmetrize_surjective`.
 
-This unit establishes compact invariant lifting, including the degree bound. It does not identify full-group invariants with the enveloping center, prove full-group invariant lifting, central or covariant generation, admissibility, or automorphic differential growth.
+This module establishes compact invariant lifting, including the degree bound. It does not identify full-group invariants with the enveloping center, prove full-group invariant lifting, central or covariant generation, admissibility, or automorphic differential growth.

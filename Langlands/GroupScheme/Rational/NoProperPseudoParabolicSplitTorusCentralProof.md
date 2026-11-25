@@ -1,7 +1,5 @@
 # Central split-torus images without proper pseudo-parabolics
 
-Authors: Worker 98 and Worker 3483 (published-input proof route, recorded as Worker 15 in the task context).
-
 `Langlands.GroupScheme.noProperPseudoParabolicSplitTorusCentral.{u}` proves exactly
 `Langlands.GroupScheme.NoProperPseudoParabolicSplitTorusCentralStatement.{u}`. Its type has no added hypotheses or proposition-valued parameters.
 
@@ -20,7 +18,7 @@ The implemented proof uses these published theorems:
 - `Langlands.GroupScheme.unipotentClosedSubgroup` from
   `Langlands.GroupScheme.UnipotentClosedSubgroupProof`.
 
-First, unitriangular unipotence and inheritance by closed subgroups discharge dynamic unipotence through its published reduction. The outer reduction combines this proof with normal-factor fppf product existence. It shows that every quotient point belongs to each dynamic parabolic, kills the associated unipotent subgroup by pseudo-reductivity, and passes from central coordinate cocharacters to the whole split torus. The dynamic-unipotence proof is used inline, so this module has no dependency on a new sibling candidate.
+First, unitriangular unipotence and inheritance by closed subgroups discharge dynamic unipotence through its published reduction. The outer reduction combines this proof with normal-factor fppf product existence. It shows that every quotient point belongs to each dynamic parabolic, kills the associated unipotent subgroup by pseudo-reductivity, and passes from central coordinate cocharacters to the whole split torus. The dynamic-unipotence proof is used inline, so this module does not depend on a separate proof module for it.
 
 The complete proof term is:
 
@@ -29,4 +27,4 @@ noProperPseudoParabolicSplitTorusCentralReduction normalFactorFppfProductExisten
     (dynamicUnipotentUnipotenceReduction unitriangularUnipotent unipotentClosedSubgroup)
 ```
 
-This is an internal derived proof assembling existing Library results along the route recorded for Task 5244. The target statement and its imports are unchanged.
+This is an internal derived proof assembling existing Library results along the route recorded in the note `notes/group-schemes/composable-targets-2026-11-08.md`. The target statement and its imports are unchanged.

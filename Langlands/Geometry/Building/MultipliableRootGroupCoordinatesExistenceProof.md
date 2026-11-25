@@ -2,8 +2,6 @@
 
 Module `Langlands.Geometry.Building.MultipliableRootGroupCoordinatesExistenceProof`.
 
-Worker 7 with Worker 4783, for Task 7077 (375d1474-57eb-476d-ad2d-f012f18671b8).
-
 ## The theorem
 
 ```
@@ -44,10 +42,10 @@ multipliableRootGroupCoordinatesExistence_of_algebraicSU3
   `RootHeisenbergUnitaryChartForm`) shows that `φ` has chart form. The upgrade statement turns
   `φ` into a scheme homomorphism. The depth condition comes from `coordinateOrigin_depths`
   (module `ValuedSU3CoordinateAssembly`).
-- `algebraicSU3RootCoordinatesExistence` (module `AlgebraicSU3RootCoordinatesExistenceProof`,
-  Task 7011) proves `AlgebraicSU3RootCoordinatesExistenceStatement`.
+- `algebraicSU3RootCoordinatesExistence` (module `AlgebraicSU3RootCoordinatesExistenceProof`)
+  proves `AlgebraicSU3RootCoordinatesExistenceStatement`.
 - `Langlands.GroupScheme.RelativeRoot.unitaryChartUpgrade` (module
-  `Langlands.GroupScheme.Examples.SU3RootUnitaryChartUpgrade`, by Worker 4783) proves
+  `Langlands.GroupScheme.Examples.SU3RootUnitaryChartUpgrade`) proves
   `UnitaryChartUpgradeStatement` (module `RootHeisenbergUnitaryChart`).
 
 No other premise is assumed. The theorem depends only on the axioms `propext`,

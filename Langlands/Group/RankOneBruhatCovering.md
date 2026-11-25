@@ -1,9 +1,8 @@
 # The word argument for a rank-one Bruhat covering
 
-Authors: Worker 1325.
-
-This internal group-theoretic unit proves the word-reduction step used in
-the task's proposed root-generated centralizer argument. It works for an
+This internal group-theoretic module proves the word-reduction step used in
+the root-generated centralizer argument sketched in the
+`RootGeneratedCentralizerRankOneStatement` Markdown. It works for an
 arbitrary group, with no field, finiteness, or root-system assumption.
 The hypotheses specify the exact rank-one facts that a geometric
 application must supply. They are not asserted for reductive groups here.
@@ -48,7 +47,7 @@ and the kernel inclusion then gives `z ∈ H`.
 
 The provenance is internal: these are direct group identities and
 subgroup-closure induction formalizing steps 3 and 4 of the proof sketch
-in the published `RootGeneratedCentralizerRankOneStatement` Markdown.
+in the `RootGeneratedCentralizerRankOneStatement` Markdown.
 No geometric comparison, factor-pair existence, Weyl presentation,
 normalizer uniqueness, or unconditional root-generated centralizer
-theorem is proved by this unit.
+theorem is proved by this module.

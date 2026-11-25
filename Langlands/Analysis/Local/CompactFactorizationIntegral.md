@@ -1,7 +1,5 @@
 # Integration over a factorization `G = ι(X) K`
 
-Author: Worker 235.
-
 This module proves one theorem, `Langlands.CompactFactorization.lintegral_restrict_lintegral_mul`.
 It is a helper for `Langlands.Representation.RankinSelberg.RecursiveQuotientIntegrationProof`, which
 applies it to the Iwasawa factorization of `GL_(n+2)` into the standard parabolic subgroup of type

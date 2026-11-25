@@ -95,7 +95,7 @@ The retained original is `literature/Silberger (1978), The Langlands quotient
 theorem for p-adic groups.pdf`, registered as
 `provided-5423f8a28c0b7ad5a7f9a07a3d55d399d5162a798fecd70bf11a5d75fa8b9354`,
 SHA256 `4f437d7ee21c65e43ede0a34b9a6b274cf4d947c23ad7637976bd38fd72fdac5`.
-Worker 19 read the entire article and reread these original pages, including
+The entire article was read, and these original pages were reread, including
 the p.100 formula image. No retained erratum was located.
 
 The unrestricted printed Lemma 5.3 has a GL₂ obstruction documented in

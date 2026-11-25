@@ -91,4 +91,7 @@ no external theorem of polynomial coherence is assumed.
 This module establishes polynomial coherence. It does not establish finite
 projective dimension in all variable counts, smooth or etale permanence, local
 Picard vanishing for the geometric rings, or the exact two-axis bundle extension
-theorem. Those remain separate obligations of the host task.
+theorem. Those are treated in other modules; the two-axis bundle extension
+theorem is `Langlands.AbelianScheme.ValuationRingTwoAxisExtensionStatement`,
+proved in `ValuationRingTwoAxisExtensionProof`, whose proof depends on this
+module.

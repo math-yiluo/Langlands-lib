@@ -1,7 +1,5 @@
 # Rectangular block coordinates on the block unipotent radical
 
-Author: Worker 53.
-
 This module parametrizes the published radical `B.unipotentRadical R` of
 [`Blocks`](Blocks.md) by its strictly upper rectangular blocks. It builds the
 actual inverse matrix `1 + X`, proves the algebraic laws that hold in these

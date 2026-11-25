@@ -3,11 +3,10 @@
 Module `Langlands.Representation.Exponents.CuspidalInductionJacquetConstituentConditional`.
 Helpers are in namespace `Langlands.CuspidalInductionJacquetConstituent`. The
 conditional main theorem is
-`Langlands.glCuspidalInductionJacquetConstituent_of_cuspidalPiece`. A definition
-record must name a Lean definition, so the submission record names the module's
-only `def`, `Langlands.CuspidalInductionJacquetConstituent.blockTransportEquiv`
-(described under "Declarations" below), as its entry declaration. The main
-content of the module is still the conditional theorem.
+`Langlands.glCuspidalInductionJacquetConstituent_of_cuspidalPiece`. The module's
+only `def` is `Langlands.CuspidalInductionJacquetConstituent.blockTransportEquiv`
+(described under "Declarations" below); the main
+content of the module is the conditional theorem.
 
 ## Purpose and provenance
 
@@ -16,8 +15,7 @@ This module contributes to the proof of the published statement
 `Exponents/WeylBranchPiecesStatement`). That statement is an internal derived
 product-Levi form, for opposite Jacquet modules, of the cuspidal case of
 Bernstein–Zelevinsky 1977 (`bernstein-zelevinsky-1977-induced-i`), Theorem 2.12
-with §2.4(d), as used in Corollary 2.13. It follows the task's suggested tensor
-route (route A).
+with §2.4(d), as used in Corollary 2.13. It follows the tensor route.
 
 The module proves no literature statement unconditionally. Its main theorem is
 an implication:
@@ -35,10 +33,11 @@ along `C` of the normalized induction of a smooth `π` from `B` surjects onto an
 irreducible Levi-cuspidal `ρ`, then there are a refinement `S` of `B`, a
 permutation `w` with `ConjugatesLevi (B.flatten S) C w`, and a subrepresentation
 of the flattened upper normalized refined Jacquet module of `π` along `S` whose
-transport by `w` surjects onto `ρ`. Its proof is the subject of task
-`32a402c0-697b-4091-b597-d960900c54cf`. That task derives it from the GL_n
-geometric lemma (task `67ebcf61-3d58-4499-9c0c-c847e90aaeb4`). Once that proof is
-published, the target follows by applying this theorem to it. The hypothesis is
+transport by `w` surjects onto `ρ`. It is proved by
+`Langlands.glInducedOppositeJacquetCuspidalPiece` (module
+`Geometric/InducedOppositeCuspidalPieceProof`) from the GL_n geometric lemma
+`Geometric.padicGeometricLemma`; applying this theorem to it gives the target, in
+`Exponents/CuspidalInductionJacquetConstituentProof`. The hypothesis is
 used at universes `.{uF, uW, uV}`: its inducing representation is in universe
 `uV` (factors of `ω`), and its cuspidal quotient is in universe `uW` (factors
 of `ρ`).

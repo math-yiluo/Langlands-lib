@@ -26,7 +26,7 @@ morphism of `AffineWeil.groupScheme A B G`.
 This is an internal assembly of the existing finite-type/finitely-presented
 comparison, the canonical affine isomorphism, and the established Weil
 restriction infinitesimal lifting proof in
-`Langlands.TauCeti.RingTheory.WeilRestriction.Smooth`.
+`Langlands.RingTheory.WeilRestriction.Smooth`.
 It changes neither the original group scheme nor the restriction construction.
 It proves smoothness only. Connectedness, geometric reductivity, finite separable
 splitting and the local Kneser–Tits theorem remain separate obligations.

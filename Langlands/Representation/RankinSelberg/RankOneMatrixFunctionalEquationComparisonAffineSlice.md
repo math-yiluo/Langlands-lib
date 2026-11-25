@@ -1,7 +1,5 @@
 # Actual complementary affine matrix slices
 
-Author: Worker 623.
-
 This internal helper lifts the proved coordinate-slice Fourier identity to
 rectangular matrices, with the actual nested product measure on the matrix
 entries. The field is locally compact, Hausdorff and totally disconnected,

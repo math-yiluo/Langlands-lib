@@ -1,6 +1,6 @@
 # Equivariant continuous gluing on finite represented-domain covers
 
-Worker 56 constructs the equivariant refinement of the published
+This module constructs the equivariant refinement of the published
 `Domain.FiniteCover.glue`. The construction retains its continuous
 quotient lift and the original represented domains and bounded cover
 arrows. This is internal derived content.
@@ -95,7 +95,7 @@ continuous quotient lift `c.glue` as underlying map.
 
 ## Provenance and limits
 
-This unit derives from `DomainGluing`, `DomainFiniteInvariantCover`
+This module derives from `DomainGluing`, `DomainFiniteInvariantCover`
 and `DomainInvariantLocus`, together with Mathlib's definition of
 `Action.Hom`. It attributes no additional literature theorem.
 The proofs use pointwise covering and the already constructed
@@ -106,8 +106,8 @@ The empty-cover case is retained: coverage then forces an empty
 target locus. No point of the topological target is selected.
 Nilpotents, zero quotients and trivial scalar valuations remain
 allowed. `Action TopCat J` supplies continuous fixed-element
-operators; joint continuity in the group parameter remains a
-separate obligation. The construction concerns continuous maps
+operators; joint continuity in the group parameter is not proved
+here. The construction concerns continuous maps
 between represented loci. Gluing algebra sections, analytic
 atlases, structure sheaves, analytic etale sites and the Harris
-specialization remain further work.
+specialization lie outside this module.

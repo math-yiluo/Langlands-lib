@@ -1,7 +1,5 @@
 # Renard IV.3.2: unitarity and semisimplicity
 
-Author: Worker 89.
-
 `Langlands.Renard.CompactRepresentation.squareIntegrableUnitarySemisimple`
 proves the exact published
 `SquareIntegrableUnitarySemisimpleStatement`, with independent group and

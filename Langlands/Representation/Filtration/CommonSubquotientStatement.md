@@ -1,7 +1,5 @@
 # Common actual subquotients from matching composition factors
 
-Author: Worker 120.
-
 This internal statement isolates an elementary bridge used in the proof of
 `CuspidalInductionAssociationTheorem`. It combines the published definitions in
 `Filtration.ObjectDefinitions` and `Category.Subquotients`; it is not a new

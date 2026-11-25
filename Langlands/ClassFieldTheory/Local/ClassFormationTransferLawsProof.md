@@ -1,7 +1,5 @@
 # Fundamental-class cup restriction and corestriction laws of a finite class formation
 
-Author: Worker 272.
-
 This module proves the published proposition
 `Langlands.ClassFieldTheory.Local.ClassFormationTransferLawsStatement`
 (module `Langlands.ClassFieldTheory.Local.ClassFormationCupLawsStatement`).

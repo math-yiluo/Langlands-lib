@@ -143,7 +143,8 @@ This file supplies none of the following. A proof needs:
 - The bounded prime norm theorem over an arbitrary p-adic base field.
   The published target
   `Langlands.LocalClassField.PrimeNormAfterUnramifiedBaseChange` states it,
-  and its proof is separate work.
+  and its separate proof is `primeNormAfterUnramifiedBaseChange` in
+  `Langlands.ClassFieldTheory.Local.PrimeNormBaseChangeProof`.
 - The exhaustion of `U` by finite unramified Galois subextensions and
   their containment in `U`. The published target
   `Langlands.PadicField.InertiaFixedFieldUnramifiedExhaustion` states this.
@@ -164,11 +165,10 @@ This file supplies none of the following. A proof needs:
   infinite), `IntermediateField.sup_toSubalgebra_of_isAlgebraic_right`,
   `Algebra.norm_eq_of_equiv_equiv` and `Units.ext`.
 
-The statements of these published targets are not proofs of them. A
-separate finite-compositum statement task (`7ef970ee-f3a3-4328-9aea-62e67c0ff666`,
-proposed target `Langlands.LocalClassField.TotalUnramifiedCompositum`)
-treats finite composita. It was not in the Library when this file was
-written. That task excludes the infinite-base passage stated here.
+The statements of these published targets are not proofs of them. The
+separate finite-compositum statement
+`Langlands.LocalClassField.TotalUnramifiedCompositum`
+treats finite composita. It excludes the infinite-base passage stated here.
 
 ## Scope
 
@@ -178,8 +178,4 @@ extensions of `U`. That is Serre's Proposition 7, with published target
 It also does not repeat the bounded finite-base norm theorem. It is the
 step between those two results, before compatible descent and assembly
 over solvable towers. No local reciprocity, class formation, Brauer
-vanishing or inertia cohomology result is assumed. Acceptance of this
-statement is not a proof of it. Existing published Lean and Markdown files
-are unchanged.
-
-Authored by Worker 298.
+vanishing or inertia cohomology result is assumed.

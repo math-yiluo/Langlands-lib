@@ -1,6 +1,6 @@
 # Regularity in stages for Renard VII.3.5 (ii)
 
-Author: Worker 115. Module
+Module
 `Langlands.Representation.Intertwining.InnerLeviRegularity`.
 
 This module proves the regularity claim of Renard VII.3.5 (ii) (David Renard,

@@ -124,7 +124,7 @@ at level `e⁻¹ (K₀ × K')`. -/
     (K' : (cmPrimeToProperty D m hm K₀).FullSubcategory) :
     (cmPrimeToGaloisAction D C preservation composition unitCoherence associativity comparison
         symmetry stability square universality dualityNaturality polarizationStability
-        compatibility h htor q m hm K₀ σ).unop.hom.app K' =
+        compatibility h htor q m hm K₀ σ).unop.asIso.hom.app K' =
       EtaleGaloisAction.baseChangeMap
         ((arithmeticStructure).app ((awayFunctor (cmPrimeToSplit D m hm) small K₀).obj K')) σ :=
   cmSmallLevelGaloisAut_hom_app D C preservation composition unitCoherence associativity
@@ -135,7 +135,7 @@ at level `e⁻¹ (K₀ × K')`. -/
 theorem cmPrimeToGaloisAction_over (σ : Gamma) :
     (cmPrimeToGaloisAction D C preservation composition unitCoherence associativity comparison
         symmetry stability square universality dualityNaturality polarizationStability
-        compatibility h htor q m hm K₀ σ).unop.hom ≫
+        compatibility h htor q m hm K₀ σ).unop.asIso.hom ≫
         cmPrimeToArithmeticStructure D C preservation composition unitCoherence associativity
           comparison symmetry stability square universality dualityNaturality
           polarizationStability compatibility h htor q m hm K₀ =
@@ -306,9 +306,9 @@ theorem cmPrimeToGaloisCohomologyFunctor_ρ (d : ℕ) (M : ModuleSheaf base R) (
     letI : ∀ {K L : (cmPrimeToProperty D m hm K₀).FullSubcategory} (a : K ⟶ L),
         Etale ((primeToSchemes).map a) :=
       primeToEtale
-    ((primeToGaloisCohomologyFunctor d).obj M).ρ σ =
+    (((primeToGaloisCohomologyFunctor d).obj M).ρ σ).asHom =
       (RestrictedLevelTowerCohomology.smoothCanonicalPullback R primeToStructure
-        (primeToGaloisAction σ).unop.hom (primeToGaloisOver σ)
+        (primeToGaloisAction σ).unop.asIso.hom (primeToGaloisOver σ)
         primeToSelfTrivial primeToSelfTrivial d).app M := by
   let := D.finite
   let : Module.Finite ℚ A := Module.Finite.trans F A
@@ -328,12 +328,12 @@ theorem cmPrimeToGaloisCohomology_ρ_ι_apply (d : ℕ) (M : ModuleSheaf base R)
     letI : ∀ {K L : (cmPrimeToProperty D m hm K₀).FullSubcategory} (a : K ⟶ L),
         Etale ((primeToSchemes).map a) :=
       primeToEtale
-    SmoothRep.hom (((primeToGaloisCohomologyFunctor d).obj M).ρ σ)
+    SmoothRep.hom (((primeToGaloisCohomologyFunctor d).obj M).ρ σ).asHom
         ((RestrictedLevelColimit.ι ((primeToArithmeticCoefficients M).cohomology d) K').hom x) =
       (RestrictedLevelColimit.ι ((primeToArithmeticCoefficients M).cohomology d) K').hom
         ((LevelTowerCohomology.projectionCohomologyMap R
           ((primeToStructure).app K') ((primeToStructure).app K')
-          ((primeToGaloisAction σ).unop.hom.app K') (NatTrans.congr_app (primeToGaloisOver σ) K')
+          ((primeToGaloisAction σ).unop.asIso.hom.app K') (NatTrans.congr_app (primeToGaloisOver σ) K')
           d M).hom x) := by
   let := D.finite
   let : Module.Finite ℚ A := Module.Finite.trans F A
@@ -342,18 +342,18 @@ theorem cmPrimeToGaloisCohomology_ρ_ι_apply (d : ℕ) (M : ModuleSheaf base R)
     primeToEtale
   exact congrArg (fun f => f.hom x)
     (RestrictedLevelTowerCohomology.canonicalPullback_ι R primeToStructure
-      (primeToGaloisAction σ).unop.hom (primeToGaloisOver σ) M d K')
+      (primeToGaloisAction σ).unop.asIso.hom (primeToGaloisOver σ) M d K')
 
 /-- The Galois action commutes with the action of `GG(A_f^{(m)})ᵐᵒᵖ`. -/
 theorem cmPrimeToGaloisCohomology_commutes (d : ℕ) (M : ModuleSheaf base R) (σ : Gamma)
     (g : (D.rationalInvolution.PrimeToPoints m)ᵐᵒᵖ)
     (x : ((primeToGaloisCohomologyFunctor d).obj M).V) :
-    SmoothRep.hom (((primeToGaloisCohomologyFunctor d).obj M).ρ σ)
+    SmoothRep.hom (((primeToGaloisCohomologyFunctor d).obj M).ρ σ).asHom
         (((primeToGaloisCohomologyFunctor d).obj M).V.obj.ρ g x) =
       ((primeToGaloisCohomologyFunctor d).obj M).V.obj.ρ g
-        (SmoothRep.hom (((primeToGaloisCohomologyFunctor d).obj M).ρ σ) x) :=
+        (SmoothRep.hom (((primeToGaloisCohomologyFunctor d).obj M).ρ σ).asHom x) :=
   Representation.IntertwiningMap.isIntertwining _ _
-    (SmoothRep.hom (((primeToGaloisCohomologyFunctor d).obj M).ρ σ)) g x
+    (SmoothRep.hom (((primeToGaloisCohomologyFunctor d).obj M).ρ σ).asHom) g x
 
 /-- The comparison from the prime-to-`m` cohomology to the shrinking-level cohomology of the
 actual CM tower commutes with the Galois action. -/
@@ -363,8 +363,8 @@ theorem cmPrimeToGaloisCohomologyComparison_apply (d : ℕ) (M : ModuleSheaf bas
         comparison symmetry stability square universality dualityNaturality
         polarizationStability compatibility h htor q m hm K₀ existence geometry hRigid
         criterion R (arithmeticCoefficients M) d).hom.hom
-        ((((primeToGaloisCohomologyFunctor d).obj M).ρ σ).hom.hom x) =
-      (((galoisCohomologyFunctor d).obj M).ρ σ).hom.hom
+        ((((primeToGaloisCohomologyFunctor d).obj M).ρ σ).asHom.hom.hom x) =
+      (((galoisCohomologyFunctor d).obj M).ρ σ).asHom.hom.hom
         ((cmPrimeToCohomologyComparison D C preservation composition unitCoherence
           associativity comparison symmetry stability square universality dualityNaturality
           polarizationStability compatibility h htor q m hm K₀ existence geometry hRigid
@@ -421,8 +421,8 @@ def cmPrimeToGaloisHeckeModuleForgetIso (d : ℕ) :
 theorem cmPrimeToGaloisHeckeModule_ρ_smul (d : ℕ) (M : ModuleSheaf base R) (σ : Gamma)
     (a : LevelHecke.LevelHeckeAlgebra R K'.subgroup)
     (x : ((primeToGaloisHeckeModuleFunctor d).obj M).V) :
-    (((primeToGaloisHeckeModuleFunctor d).obj M).ρ σ).hom (a • x) =
-      a • (((primeToGaloisHeckeModuleFunctor d).obj M).ρ σ).hom x :=
+    (((primeToGaloisHeckeModuleFunctor d).obj M).ρ σ).asHom.hom (a • x) =
+      a • (((primeToGaloisHeckeModuleFunctor d).obj M).ρ σ).asHom.hom x :=
   map_smul _ a x
 
 /-- The double-coset element `[K' g K']` acts as the double-coset operator on the

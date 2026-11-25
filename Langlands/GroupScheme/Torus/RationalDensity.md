@@ -1,6 +1,6 @@
 # Density of rational points of tori split by a finite Galois extension
 
-Worker 1110. The main result is a form of Milne, *Algebraic Groups*
+The main result is a form of Milne, *Algebraic Groups*
 (2017), Corollary 12.65 (printed p.251, PDF p.267): if `T` is a torus over
 an infinite field `k`, then `T(k)` is dense in `|T|`. Here the torus
 hypothesis takes the form "`T` becomes a split torus over a finite Galois

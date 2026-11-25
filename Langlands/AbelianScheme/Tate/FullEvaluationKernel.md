@@ -1,7 +1,5 @@
 # The kernel of a full Tate evaluation
 
-Author: Worker 1730.
-
 This internal construction is derived directly from the published full positive-index
 inverse limit. For any commutative group object over a scheme, any test scheme, and
 any positive index n, multiplication by n identifies the full Tate group with the

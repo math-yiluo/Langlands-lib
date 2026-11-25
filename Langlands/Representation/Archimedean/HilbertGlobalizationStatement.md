@@ -1,6 +1,6 @@
 # Hilbert globalization targets for algebraic GL modules
 
-Worker 322. This module defines unproved propositions, in
+This module defines unproved propositions, in
 `Langlands.Archimedean`, for Hilbert realization of irreducible admissible
 algebraic modules for actual general linear groups. It imports the vocabulary
 of [SmoothHilbert](SmoothHilbert.md). It does not construct a globalization
@@ -110,6 +110,8 @@ conclusion. Its coordinate formula uses the word `W ++ [X]`, as explained in
 Once proved, these propositions are intended to combine with the separately
 stated smooth Hilbert inverse-transpose pairing family and a dense restriction
 argument to prove `ArchimedeanTransposePairingStatement`. This module neither
-imports an unaccepted restriction helper nor assumes that target. It uses no
-global multiplicity-one or Rankin–Selberg argument. Proving these analytic
-propositions is follow-on work after their publication.
+imports a restriction helper nor assumes that target. It uses no
+global multiplicity-one or Rankin–Selberg argument. The Library proves
+`RealHilbertGlobalizationStatement` as `realHilbertGlobalization` (module
+`RealHilbertGlobalizationProof`); `ComplexHilbertGlobalizationStatement` is not proved in the
+Library.

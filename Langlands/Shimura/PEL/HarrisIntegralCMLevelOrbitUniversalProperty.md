@@ -53,6 +53,6 @@ The provenance is internal specialization of the proved finite-etale equivalence
 and the preceding raw-orbit constructions. The presheaf here is defined by
 equivariant fibre maps on the finite-etale cover category. Identifying it with
 the unchanged raw restriction tower, extending the representation to the required
-test-scheme category, and representing the full normalized CM presheaf remain
-separate obligations. This unit does not prove the host division-case
-representability statement.
+test-scheme category, and representing the full normalized CM presheaf are not
+done in this module. This module does not prove the division-case
+representability statement `DivisionCMRepresentabilityStatement`.

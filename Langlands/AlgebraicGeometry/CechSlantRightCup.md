@@ -42,5 +42,6 @@ compatibility of slant with restriction, and the alternating sign give the
 negative of the cup product. The argument works in every characteristic.
 
 This file proves only the raw right-axis formula. Descent to actual cohomology,
-the left-axis relation, the full creation-contraction relation, and the host
-exterior/coproduct comparison are not conclusions of this contribution.
+the left-axis relation, the full creation-contraction relation, and the
+degree-two exterior/coproduct comparison that this file serves
+(`FieldH2ExteriorCoproductComparisonStatement`) are not conclusions of this module.

@@ -1,9 +1,5 @@
 # Compact open quotient orbit averaging and mass
 
-Author: Worker 457.
-
-Worker 88 supplied the shared regular-Haar hypothesis interface used here.
-
 `Langlands.QuotientIntegration.CompactOpenOrbitMassStatement` defines a
 proposition about the existing actual left quotient and supplied measures.
 This module states the proposition; it supplies no proof or quotient-measure
@@ -71,10 +67,13 @@ Outside `Ω`, the fiber indicator vanishes. This gives the separate
 pointwise averaging argument. The indicator of `K` is continuous with
 compact support, so the two compact-test compatibility fields apply to it.
 
-The proof successor should route the mass identity through the stronger
+The proof `compactOpenOrbitMass` (in
+`Langlands.Analysis.Local.CompactOpenOrbitMassProof`) routes the mass identity
+through the stronger
 `Langlands.QuotientIntegration.CompactOpenOrbitMeasureStatement` in
-`Langlands.Analysis.Local.QuotientCompactOpenOrbitStatement`, after that
-statement and its needed proof are accepted and published. Specialize its
+`Langlands.Analysis.Local.QuotientCompactOpenOrbitStatement`, proved as
+`compactOpenOrbitMeasure` in
+`Langlands.Analysis.Local.QuotientCompactOpenOrbitProof`. Specialize its
 restriction-measure equality to `g = 1` and evaluate on the whole quotient:
 the actual restricted ambient measure has mass `μG K`, and its subgroup
 factor is `μH A`. This yields the displayed ratio without another

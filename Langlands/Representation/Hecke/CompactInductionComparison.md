@@ -1,6 +1,6 @@
 # Subgroup-test construction of the compact Hecke comparison
 
-Worker 133, Task 5403. Internal construction for Renard III.2.6, printed
+Internal construction for Renard III.2.6, printed
 pp.75–76 / PDF pp.81–82, registered source
 `renard-2026-representations-groupes-reductifs-padiques`.
 
@@ -25,6 +25,6 @@ These laws follow from linearity of restriction and weighting on the subgroup,
 and from the published linearity of `integratedAction`; equality in the
 compact-function space is checked pointwise.
 
-This unit constructs the elementary compact-function map. Balancing over the
+This module constructs the elementary compact-function map. Balancing over the
 subgroup Hecke algebra, ambient Hecke equivariance, the prescribed scalarized
 inversion formula, and bijectivity remain separate obligations.

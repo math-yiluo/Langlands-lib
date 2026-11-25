@@ -1,10 +1,8 @@
 # Comparison, transport and transitivity for actual Jordan–Hölder series
 
-Authors: Worker 244 and Worker 34. Worker 34 specified the formulation,
-in coordination with Worker 242.
-
 This module states three closely related facts about the Library's actual
-composition series, plus one conjunction that a later proof can target. It
+composition series, plus one conjunction, the target of the proof in
+`JordanHolderProof`. It
 contains four `Prop`-valued definitions and no theorem. None of the facts is
 proved here. Publishing them does not establish them.
 
@@ -45,7 +43,9 @@ The statement is stronger than any one of these consequences. It is also
 stronger than the published single-count proposition
 `JordanHolderMultiplicityIndependenceStatement` in
 `Langlands.Representation.Filtration.MultiplicityStatement`. That module is
-unchanged. Deriving its counts from this clause is left to a later proof.
+unchanged. Its counts are derived from this clause by
+`jordanHolderMultiplicityIndependence` in
+`Langlands.Representation.Filtration.MultiplicityIndependenceProof`.
 
 ### Clause 2: `JordanHolderSeriesTransportStatement.{uK, uG, uA, uB}`
 
@@ -60,8 +60,8 @@ with `s.HasSimpleFactors`. The statement says that some
   `Representation.Equiv` to `(t.gradedRepresentation i).ρ`, at the same
   index.
 
-The intended `t` is the image of `s` under the equivalence. A later proof must
-construct it. The clause only transports a supplied series. It never asserts
+The intended `t` is the image of `s` under the equivalence. The proof in
+`JordanHolderTransportProof` constructs it. The clause only transports a supplied series. It never asserts
 that an arbitrary representation has a composition series.
 
 ### Clause 3: `HaveSameJordanHolderFactorsTransStatement.{uK, uG, uA, uB, uC}`
@@ -127,8 +127,8 @@ Provenance: derived (internal algebraic formulation).
 Source: I. N. Bernstein and A. V. Zelevinsky, *Induced representations of
 reductive p-adic groups. I*, Ann. Sci. ENS (4) 10 (1977), 441–472. Source ID
 `bernstein-zelevinsky-1977-induced-i`; original PDF SHA-256
-`8424600228ab72c5937e45edceefcae410a2a0b8f5ebf282185691542aa89092`. Worker 244
-read the following pages directly from the registered file on 2026-10-22.
+`8424600228ab72c5937e45edceefcae410a2a0b8f5ebf282185691542aa89092`. The
+following pages were read directly from the registered file on 2026-10-22.
 
 - §1.2, printed p.443, PDF page 4. For an algebraic (smooth) representation
   `π` of an l-group on a complex vector space, `JH(π)` is the set of
@@ -167,7 +167,10 @@ module.
 
 ## Expected proof route (not implemented here)
 
-The following route is a plan for a separate proof task. It is not evidence.
+The following route is a plan for the proofs. It is not evidence. The proofs
+are in `JordanHolderComparisonProof` (clauses 1 and 3),
+`JordanHolderTransportProof` (clause 2) and `JordanHolderProof` (the
+aggregate).
 
 - Clause 1. Under Mathlib's
   `Subrepresentation.subrepresentationSubmoduleOrderIso`, a filtration with
@@ -188,6 +191,3 @@ The following route is a plan for a separate proof task. It is not evidence.
   `g : Fin n ≃ Fin m`, which forces `n = m`. Then `s_A` and `t_C` match through
   `e.trans (g.trans f)`, by composing three representation equivalences for
   each index.
-
-Worker 242's unfinished draft for these proofs, cited in the task context, is
-not used by this statement module.

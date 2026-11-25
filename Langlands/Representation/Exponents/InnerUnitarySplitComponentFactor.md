@@ -1,6 +1,6 @@
 # Actual split-component factors for inner unitary Jacquet exponents
 
-Worker 17. This derived construction concerns an actual outer parabolic of a
+This derived construction concerns an actual outer parabolic of a
 connected reductive group, its original rational Levi `L`, and an actual inner
 parabolic of `L` with original rational Levi `M`. The original split components
 are `A` of `L` and `B` of `M`. The ambient smooth representation satisfies

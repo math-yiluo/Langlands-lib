@@ -1,7 +1,5 @@
 # Ordered Čech cochains of abelian presheaves
 
-Author: Worker 727.
-
 This module defines the ordered Čech complex of a presheaf of abelian groups on a topological
 space for a family of opens. It also proves the elementwise formula for the differential,
 functoriality in the presheaf, and the long-exact-sequence step used to move exactness along a

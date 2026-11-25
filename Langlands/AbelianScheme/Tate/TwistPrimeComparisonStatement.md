@@ -25,7 +25,8 @@ It does not assert the arbitrary-ring full or away comparison stated
 here. These targets arise internally from decomposing a positive torsion
 order into its coprime prime powers and comparing the corresponding
 compatible families of roots. Establishing this decomposition and its
-topological consequences is the separate proof obligation. Neither
+topological consequences is the work of the separate proof module
+`TwistPrimeComparisonProof`. Neither
 enough roots of unity nor a chosen primitive root is an input.
 
 ## Exact propositions
@@ -66,7 +67,8 @@ and no prime.
 FullPrimeProductComparison R ∧ ∀ m : ℕ, AwayPrimeProductComparison R m.
 ```
 
-It is the combined target of the separate decomposition proof task.
+It is proved by `primeProductComparisons` in the module
+`TwistPrimeComparisonProof`.
 The two component propositions remain individually available to consumers.
 
 ## Topology and scope
@@ -82,7 +84,8 @@ Requiring equality with the already defined additive map fixes the
 comparison on every coordinate. An arbitrary abstract equivalence
 between the source and target would not satisfy the statement without
 this equality. Forward continuity is already proved in the imported
-module; bijectivity and continuity of the inverse remain to be proved.
+module; bijectivity and continuity of the inverse are proved in
+`TwistPrimeComparisonProof`.
 
 The statements concern additive groups and their topologies. They do
 not assert a scalar-ring comparison, linearity over a product of local

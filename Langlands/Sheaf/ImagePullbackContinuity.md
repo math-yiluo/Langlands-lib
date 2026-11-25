@@ -1,6 +1,6 @@
 # Continuity of functors whose images of some squares are pullbacks
 
-Author: Worker 26. Builds only on Mathlib:
+Builds only on Mathlib:
 
 - `CategoryTheory.Limits.IsPullback` with `IsPullback.lift`, `IsPullback.lift_fst`,
   `IsPullback.lift_snd`, `IsPullback.of_hasPullback` and `Functor.map_isPullback`.

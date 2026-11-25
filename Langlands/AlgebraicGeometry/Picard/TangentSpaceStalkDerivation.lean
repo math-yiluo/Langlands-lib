@@ -125,7 +125,7 @@ def tangentDerivationsLinearEquiv :
       rw [tangentDerivationEquiv_smul, derivationsCongr_smul, closedStalkEquiv_germ] }
 
 /-- The published tangent module at a rational point is `k`-linearly equivalent to the
-`k`-derivations of the actual stalk, with Worker 509's `stalkAlgebraOver` base algebra and the
+`k`-derivations of the actual stalk, with the `stalkAlgebraOver` base algebra and the
 coefficient action through `rationalStalkAugmentation`. -/
 def tangentSpaceAtPointDerivationEquiv :
     letI := stalkAlgebraOver Y.hom (e.left (IsLocalRing.closedPoint k))

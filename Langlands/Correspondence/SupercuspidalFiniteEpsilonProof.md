@@ -1,6 +1,6 @@
 # Finite selection and lifting of actual epsilon tests
 
-Worker 357 proves the existing
+This module proves the existing
 `Langlands.Henniart.FiniteSupercuspidalEpsilonLiftingStatement F` in
 `finiteSupercuspidalEpsilonLifting`. The same module gives finite separation
 conditional on the published local converse proposition, and applies it to
@@ -84,10 +84,9 @@ the separation and combined results explicitly retain local converse.
 
 ## Verification
 
-The complete module compiled in the prepared Lean service without errors
+The complete module compiled without errors
 or warnings. Inspection of `finiteSupercuspidalEpsilonLifting` reports a
 theorem with independent universe parameters `uF`, `uC`, `uT`, `uW` and
 only `propext`, `Classical.choice`, and `Quot.sound` as axioms. The theorem
 returns the existing `FiniteSupercuspidalEpsilonLiftingStatement F` without
-an additional hypothesis. These development checks do not replace exact
-target validation, independent review, or publication.
+an additional hypothesis.

@@ -32,6 +32,6 @@ The inverse image of the quotient class of `m` is precisely the actual ambient c
 
 ## Provenance and scope
 
-These are internal constructions from the published actual norm-one splitting, the actual sum-zero cocharacter comparison, perfect lattice pairings of split tori, and Mathlib's integral dot-product, dual-map, quotient, and representation constructions. No external structural assertion, assumed character exactness, smoothness argument, or field-point approximation is used. The Lean proof route is the integral retraction and perfectness argument described above.
+These are internal constructions from the actual norm-one splitting, the actual sum-zero cocharacter comparison, perfect lattice pairings of split tori, and Mathlib's integral dot-product, dual-map, quotient, and representation constructions. No external structural assertion, assumed character exactness, smoothness argument, or field-point approximation is used. The Lean proof route is the integral retraction and perfectness argument described above.
 
-This unit does not prove general rational-point descent, continuity of the norm-one lattice actions, or the whole algebraic-group program's acceptance conditions. It supplies the actual norm-one character quotient, its perfect pairing with sum-zero cocharacters, its all-test monomial formula, and its ordinary Galois compatibility.
+This module does not prove general rational-point descent or continuity of the norm-one lattice actions. It supplies the actual norm-one character quotient, its perfect pairing with sum-zero cocharacters, its all-test monomial formula, and its ordinary Galois compatibility.

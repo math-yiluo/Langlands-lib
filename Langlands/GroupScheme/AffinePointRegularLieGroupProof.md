@@ -53,4 +53,4 @@ algebraic prerequisite constructs charts from standard-smooth principal
 neighborhoods, while the analytic prerequisite proves smooth chart changes
 and tests families by global regular evaluations. This file reuses those
 results by Lean name and proves the group existence target without changing
-its statement or its imported definitions. Author: Worker 135.
+its statement or its imported definitions.

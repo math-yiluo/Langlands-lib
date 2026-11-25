@@ -1,6 +1,6 @@
 # Actual block-parabolic exactness and reciprocity
 
-Author: Worker 8. This proposition pair uses the published actual block
+This proposition pair uses the published actual block
 construction `Langlands.Group.GL.Blocks`. The assertions are statements with
 separate proof obligations.
 
@@ -39,7 +39,8 @@ and then to `N`, and applying Mathlib's quotient map construction. They send
 `[v]` to `[i(v)]` and `[q(v)]`. The exactness assertion is on underlying
 complex linear maps; their quotients carry precisely the Levi actions used
 in the first clause. It does not assume that `N` has a compact exhaustion.
-That property of the actual unipotent group is part of the eventual proof.
+That property of the actual unipotent group belongs to a proof, not to the
+statement.
 
 `InductionExactnessClause` takes a short exact sequence of smooth
 representations of `M`. It inflates the actual intertwiners along the
@@ -102,13 +103,14 @@ Original source identifiers and retained files:
 
 The pair imports the published actual induction and coinvariant constructions,
 smoothness and p-adic group realization modules, together with the published
-`Langlands.Group.GL.Blocks` pair. No owner definition is resubmitted here.
+`Langlands.Group.GL.Blocks` pair. No definition of those modules is restated here.
 
-The three proposition definitions require separate proofs. Their normalized
+The three proposition definitions require separate proofs; the induction
+clause is proved as `Langlands.Parabolic.inductionExactness` in
+`Langlands.Representation.Parabolic.InductionExactnessProof`. Their normalized
 versions, the genuine full-modulus identification, transitivity along actual
 block refinements, canonical opposite-parabolic duality and full geometric
-lemma remain obligations. This pair does not establish the broad task's
-completion.
+lemma are not part of this pair.
 
 ## All-field port
 

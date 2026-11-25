@@ -1,6 +1,6 @@
 # Proper arithmetic models of a proper field morphism
 
-This unit states the arithmetic model-existence step used in the first
+This module states the arithmetic model-existence step used in the first
 paragraph of Conrad's proof of Proposition 4.4. It concerns actual schemes
 and scheme-theoretic properness; it states no topological conclusion.
 
@@ -55,6 +55,6 @@ actual integer colimit and Noetherian results. Nonaffine schemes are retained.
 The statement does not assume a model for `g`, a spreading theorem, or a
 properness-descent conclusion.
 
-Its proof is a separate obligation. Intrinsic adelic properness, compactness,
-eventual stabilization and the other results of the five-section parent task
-remain separate obligations as well.
+Its proof is `adelicSpreadProperExistence` in `AdelicSpreadProperExistenceProof`.
+Intrinsic adelic properness, compactness, eventual stabilization and the other
+results of the five sections of Conrad's paper remain separate obligations.

@@ -1,7 +1,5 @@
 # Proof of full-center detection of a central generalized eigenvalue
 
-Authors: Worker 19 and Worker 828 (the reused finite fixed-vector argument).
-
 `Langlands.centralEigenvalueDetection` proves the complete unapplied
 `Langlands.CentralEigenvalueDetectionStatement.{uG,uV}`. The auxiliary
 `exists_centralExponent_of_generalized_eigenvector` supplies the same
@@ -28,7 +26,7 @@ Finally, `w` is a `χ z` eigenvector lying in the generalized
 `Langlands.eq_of_eigen_of_mem_genEigenspace` identifies these scalars.
 
 This is an internal adaptation of the proof of
-`Langlands.exists_eigencharacter_extension`, by Worker 828, which uses an
+`Langlands.exists_eigencharacter_extension`, which uses an
 entire restricted generalized-character space in place of a single
 operator's generalized eigenspace. It uses the published
 `Module.End.mapsTo_genEigenspace_of_comp` for stability. It has no

@@ -1,8 +1,6 @@
 # Actual integral cuspidal Jacquet words for analytic discrete series
 
-Authors: Worker 78 (integer-orbit argument and final assembly) and Worker 158
-(analytic interfaces, scalar and cone proofs, and the finite complementary
-prefix obstruction). Other authors' published results enter by import.
+Published results of other modules enter by import.
 
 The theorem
 `Langlands.Classification.squareIntegrableIntegralCuspidalJacquetWordExistence`
@@ -141,9 +139,8 @@ the implemented lower arguments, including the inputs they themselves use.
 The binary proof's six Lean/Markdown pairs and five derivative entry proof
 accounts were read. Its corrected source normalization distinguishes BZ77's
 `Delta_P = nu^-1` and inverse pairing convention from the Library's positive
-`|det|` covariance. The corrected independently approved public candidate is
-`98cc1114-db18-414e-8ad5-ddb3f559e47d`; all twelve published file hashes
-match that audited candidate. The exactness, highest-pairing/detection,
+`|det|` covariance. All twelve published file hashes match the corrected
+version that was audited. The exactness, highest-pairing/detection,
 supercuspidal-derivative and Leibniz proof publications were separately
 verified. They supply general derivative theory, not a segment derivative
 formula or classification theorem.
@@ -156,19 +153,19 @@ project Lean/Markdown pairs are byte-identical to the published Library.
 The main proof pair is the only addition. The scan covers every transitive
 project import, not merely the entry module's direct imports.
 
-The scan finds none of the following conclusions, closing proof names,
-named statement/proof modules or task identifiers in any closure Lean file:
+The scan finds none of the following conclusions, closing proof names or
+named statement/proof modules in any closure Lean file:
 
-| Excluded family | Task |
-| --- | --- |
-| Analytic segment classification | `aca8805b-054f-4d56-8045-12db7f623404` |
-| Multisegment special-head exhaustion | `3bfb61fa-1129-4fc9-83fd-7fcfec22106e` |
-| Ordered strong-head existence | `ebea9a8a-9b21-4208-aa31-98c2dea1f8a3` |
-| Ordered quotient coverage | `20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584` |
-| Tempered-block uniqueness | `52e97845-36bb-457d-b76f-70753334b88c` |
-| `SquareIntegrableLanglandsClassification` | `1cb45da2-7007-4351-a694-594fb148b8d1` |
-| Square-integrable Langlands-head exhaustion | `cd8ab97c-0b78-4bce-97c4-d307a28159a4` |
-| Regular tempered Langlands-head exhaustion | `bf433f0a-921a-428c-b0c0-6475438125ac` |
+| Excluded family |
+| --- |
+| Analytic segment classification |
+| Multisegment special-head exhaustion |
+| Ordered strong-head existence |
+| Ordered quotient coverage |
+| Tempered-block uniqueness |
+| `SquareIntegrableLanglandsClassification` |
+| Square-integrable Langlands-head exhaustion |
+| Regular tempered Langlands-head exhaustion |
 
 The closure includes the shared lower `IntegralCuspidalJacquetWord`
 definition. Other segment-named imports provide definitions and elementary
@@ -189,10 +186,7 @@ complementary-cone argument.
 
 ## Development checks
 
-Compilation and theorem inspection succeed in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` with zero errors or warnings. The
+Compilation and theorem inspection succeed with zero errors or warnings. The
 unapplied theorem constant assigns directly to the complete target telescope
 displayed above, preserving parameter order and independent `uF,uV`.
 Inspection reports only `propext`, `Classical.choice` and `Quot.sound`.
-These development checks are separate from the candidate's required
-exact-target machine validation, independent semantic review and publication.

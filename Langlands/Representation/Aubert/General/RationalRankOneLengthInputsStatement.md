@@ -1,7 +1,5 @@
 # Detection and Jacquet-length inputs for rational rank-one length two
 
-Author: Worker 62.
-
 This module states four propositions in
 `Langlands.Aubert.General.RationalPointFamily`. None of them is proved here.
 They split the published target `RationalRankOneLengthTwoStatement.{u, v}`
@@ -77,9 +75,8 @@ and the budget statement, at the same universes, together imply
 
 `RationalMaximalCuspidalJacquetDetectionFromExtractionStatement.{u, v}`. The
 published proposition `RationalCuspidalJacquetFactorExtractionStatement.{u, v}`
-implies the detection statement at the same universes. That proposition has
-no published proof; its proof task is
-`e6add7c5-44c5-45ea-afe9-7f48c98fb927`. Let `π` be a subquotient of the
+implies the detection statement at the same universes. The Library does not
+prove that proposition. Let `π` be a subquotient of the
 induction of an irreducible cuspidal representation, and let `τ` be an actual
 irreducible cuspidal factor of a standard Jacquet module of `π`. The
 proposition then supplies one rational point `n` with an actual root
@@ -116,8 +113,8 @@ section 7.1, Corollary 7.1.2 and Theorem 7.1.4, printed pp.67–68. The pair
 printed pp.173–174, where the proof sums Jacquet lengths over the standard
 Levis conjugate to the inducing Levi. That pair also records that VI.5.3 bounds
 the image lengths, that VI.2.1 with VI.5.3 gives detection, and that V.4.8,
-printed p.122, gives total budget two for a maximal proper Levi. I did not
-reread these originals for this unit. The locators above are those recorded
+printed p.122, gives total budget two for a maximal proper Levi. These
+originals were not reread for this file. The locators above are those recorded
 in the cited reviewed Markdown.
 
 In that route, detection comes from three facts. Every irreducible `D` has
@@ -136,10 +133,14 @@ families of this target, and it is not used here.
 
 ## What remains open
 
-This module proves nothing. The two implications are to be proved in
-separate proof units. The two input statements remain open. The budget
+This module proves nothing. The two implications are proved in separate
+modules: `rationalRankOneLengthTwoFromInputs` in
+`RationalRankOneLengthInputsProof` and
+`rationalMaximalCuspidalJacquetDetectionFromExtraction` in
+`RationalMaximalCuspidalDetectionProof`. Of the two input statements, the
+budget statement is proved (`rationalMaximalCuspidalJacquetBudget`); the
+detection statement is not proved in the Library. The budget
 statement needs the geometric lemma for the actual standard families and the
 coatom count. The extraction statement used by the last implication needs
 the same geometric lemma. These are representation-theoretic obligations.
-They do not belong to the parent's external Chapter V structural boundary,
-and this module does not move them there.
+They are not part of the external Chapter V structural boundary.

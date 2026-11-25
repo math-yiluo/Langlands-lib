@@ -45,8 +45,9 @@ compatible family of projections with finite support splits a module into a
 direct sum. Equivalently, the canonical map `⨁ i, W i → V` is bijective because
 the coefficient map is a two-sided inverse. Mathlib's `DirectSum.Decomposition`
 API is phrased with a map `V → ⨁ i, W i`. This module supplies the form in which
-coefficients are produced as a finitely supported function. Worker 339 asked for
-this interface for the weight-decomposition proof in task 425af515. There, `p`
+coefficients are produced as a finitely supported function, the form used by
+the weight-decomposition proof (`Langlands.GroupScheme.Torus.WeightDecomposition`).
+There, `p`
 is given by the coefficients of the coaction of the coordinate ring of a split
 torus, written in the character basis (compare Milne, *Algebraic Groups*,
 Theorem 12.12, Example 12.15 and Definition 12.16). This module does not depend on that

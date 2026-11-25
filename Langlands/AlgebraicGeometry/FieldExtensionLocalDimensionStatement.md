@@ -29,7 +29,7 @@ statement is its affine specialization to a finite-type algebra over a
 field and an extension of that field, using actual prime spectra and
 the canonical tensor-product inclusion.
 
-Worker 105 introduces this focused prerequisite for the general
+This is a focused prerequisite for the general
 scheme base-change comparison and the retrocompactness argument in
 Stacks Lemma 29.29.6. Those are needed in the pure-dimensional-fibre
 route toward Conrad's *Weil and Grothendieck approaches to adelic

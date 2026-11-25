@@ -1,7 +1,5 @@
 # Polynomial-locus analytification of genuine affine schemes
 
-Author: Worker 265.
-
 This construction uses Mathlib's actual affine schemes. For a scheme morphism
 `f : X → Spec K`, `CoordinateRing f` is precisely the global-section ring
 `Γ(X, ⊤)`, with its `K`-algebra structure induced by the global-section map of
@@ -103,7 +101,7 @@ presentations are permitted.
 
 General independence of presentation, functoriality for all affine scheme
 morphisms, rational-point and point-topology comparisons, the analytification
-universal property, and arbitrary analytic field-extension comparisons belong
-to subsequent proposition and proof tasks. The constructed localized object
+universal property, and arbitrary analytic field-extension comparisons lie
+outside this module. The constructed localized object
 and its intrinsic chart laws alone do not prove the final analytification
 bridge.

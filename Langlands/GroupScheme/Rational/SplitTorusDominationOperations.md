@@ -1,6 +1,6 @@
 # Operations on pointed split-torus domination
 
-This internal derived unit provides operations needed in the structural reduction
+This internal derived module provides operations needed in the structural reduction
 of the unipotent splitness criterion. It does not establish that criterion.
 All schemes and morphisms use the existing group-scheme interfaces.
 

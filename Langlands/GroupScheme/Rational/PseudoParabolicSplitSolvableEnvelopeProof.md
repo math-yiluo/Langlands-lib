@@ -1,6 +1,5 @@
 # The split solvable envelope inside pseudo-parabolic subgroups
 
-Workers 1405 and 846 wrote this proof.
 `Langlands.GroupScheme.pseudoParabolicSplitSolvableEnvelope` proves the exact target
 `Langlands.GroupScheme.PseudoParabolicSplitSolvableEnvelopeStatement.{u}` in every universe.
 That statement records the split solvable subgroup `S ⋉ R_us,k(P)` from the start of the proof of
@@ -36,11 +35,11 @@ split torus (`hs.1.1`) and `U` is split unipotent (`hj.isSplitUnipotent`).
 
 The supporting modules are:
 
-* `Langlands.GroupScheme.Unipotent.SplitTorusSubgroupHom` (Worker 1405): a split torus and a
+* `Langlands.GroupScheme.Unipotent.SplitTorusSubgroupHom`: a split torus and a
   unipotent closed subgroup meet trivially. This gives the trivial kernel of `h`.
-* `Langlands.GroupScheme.Rational.PseudoParabolicSplitSolvableEnvelopeProduct` (Worker 1405):
+* `Langlands.GroupScheme.Rational.PseudoParabolicSplitSolvableEnvelopeProduct`:
   closedness and the fppf product, and the assembly theorem.
-* `Langlands.GroupScheme.Rational.PseudoParabolicSplitSolvableEnvelopeSeries` (Worker 846):
+* `Langlands.GroupScheme.Rational.PseudoParabolicSplitSolvableEnvelopeSeries`:
   split solvability of `U ⋊ S`.
 
 Each module's Markdown describes its proof.

@@ -1,7 +1,5 @@
 # Real duals of actual finite-index character restrictions
 
-Author: Worker 112.
-
 For a field `F`, actual group schemes `G`, `H` over `Spec F`, and an actual
 homomorphism `i : H ⟶ G`, let `r = characterRestrict i`. Thus `r` is
 precomposition on all actual rational algebraic characters. This module and

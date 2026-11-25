@@ -85,9 +85,10 @@ statement asks for the Haar measure on `M(𝔸)` that makes it hold for
 Mathlib's Haar measure on `G(𝔸)`. That is the hypothesis
 `IsIwasawaCompatibleMeasure` of the published
 `BoundedWavePacketNormBoundStatement` (Lapid's Lemma 10), whose
-normalization of `(·,·)_P` depends on it. Worker 5550 formulated it for
-Task 5613 (Lapid's Proposition 6). That task applies Lemma 10 to the data of
-its target, where no measure on `M(𝔸)` is given.
+normalization of `(·,·)_P` depends on it. It is stated for Lapid's
+Proposition 6 (`EisensteinImaginaryAxisHolomorphyStatement`): the reduction in
+`AdelicEisensteinImaginaryHolomorphyReduction` applies Lemma 10 to the data of
+that statement, where no measure on `M(𝔸)` is given.
 
 ## Scope
 

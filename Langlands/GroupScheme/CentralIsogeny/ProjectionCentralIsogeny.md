@@ -1,8 +1,9 @@
 # Projections of closed subgroups of fibre-compatible products
 
-Author: Worker 1224. This is supporting material for task
-`569a2d94-1d47-448e-8db3-48ecf4755ef4`, which proves the published
-`Langlands.GroupScheme.CentralIsogenyCommonSemisimpleRefinement`. That proof
+This is supporting material for the proof of the published
+`Langlands.GroupScheme.CentralIsogenyCommonSemisimpleRefinement`
+(`centralIsogenyCommonSemisimpleRefinement`, through
+`CentralIsogeny/CommonRefinementOfPerfect`). That proof
 builds a common refinement `D` as a closed subgroup of `C × H` on which `π : C ⟶ G`
 and `q : H ⟶ G` agree. This module shows that each projection from such a `D` is a
 central isogeny once it is dominant. It does not prove dominance, which that proof

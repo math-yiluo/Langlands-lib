@@ -1,6 +1,6 @@
 # Smooth inner descent of a supplied stable integral model
 
-This internal unit combines exact common finite recovery with the smooth
+This internal module combines exact common finite recovery with the smooth
 finite inner construction, actual given-integer recovery and compatibility
 with every inertia-field automorphism. It claims no original-literature
 theorem. All fields and schemes have a common arbitrary universe.
@@ -37,6 +37,6 @@ applies the preceding lemma. No finite recovery or effectivity premise
 remains in this final result.
 
 The supplied smooth model and its two stability premises remain explicit.
-This unit constructs no building stabilizer model, reductive residue
-quotient, Frobenius comparison or chamber data, so the host quotient theorem
-remains open.
+This module constructs no building stabilizer model, reductive residue
+quotient, Frobenius comparison or chamber data, so it does not prove the
+quotient theorem it serves.

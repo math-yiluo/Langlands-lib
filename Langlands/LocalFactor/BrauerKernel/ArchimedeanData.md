@@ -1,13 +1,12 @@
 # Archimedean data of Hecke characters with norm-power archimedean components
 
-Author: Worker 5093. This is a supporting unit for task
-`92a3d086-a5ad-476f-9fd9-aa9d4eaa3778`, which must prove
+This is a supporting module for the proof of
 `Langlands.LocalFactor.NonabelianBrauer.KernelCompatibilityStatement`. In Deligne's global argument
 (1973, proof of Lemma 4.12) the archimedean factors of the global functional equations of the
 characters attached to a relation cancel, because the relation has dimension zero type by type.
 In the present setting the global fields are totally real and every character
 `Λ = (α ∘ N) · ‖·‖^t · Θ` has the archimedean components of `‖·‖^t` (by
-`BrauerKernel.ArchimedeanTrivial`). This unit constructs the archimedean data of the published Hecke
+`BrauerKernel.ArchimedeanTrivial`). This module constructs the archimedean data of the published Hecke
 functional-equation package (`HeckeArchData`) for such characters, computes the three
 archimedean functions as products over the real places of the base field, and proves their
 cancellation. The computation is elementary and has no separate literature source.

@@ -1,6 +1,6 @@
 # Conjugates of a subgroup through the opposite open cell
 
-Worker 1387. This internal module proves
+This internal module proves
 `Dynamic.conj_mem_of_centralizer_conj_mem` in `Langlands.GroupScheme.Dynamic`.
 
 ## Statement

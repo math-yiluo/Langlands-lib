@@ -24,11 +24,11 @@ variable {F : Type u} [Field F] [ValuativeRel F] [TopologicalSpace F]
   {S T : CommGroupScheme (Spec (CommRingCat.of F))}
   {iS : S.toGrp ⟶ G} {iT : T.toGrp ⟶ G} {f : S ⟶ T}
 
-local instance : Algebra ↥𝒪[F] (fixedFieldIntegers F) :=
+private local instance : Algebra ↥𝒪[F] (fixedFieldIntegers F) :=
   Valuation.HasExtension.instAlgebraInteger
     (vR := ValuativeRel.valuation F) (vA := fixedFieldValuation F)
 
-local instance : IsScalarTower ↥𝒪[F] (fixedFieldIntegers F) (inertiaFixedField F) :=
+private local instance : IsScalarTower ↥𝒪[F] (fixedFieldIntegers F) (inertiaFixedField F) :=
   Valuation.HasExtension.instIsScalarTowerInteger
     (vR := ValuativeRel.valuation F) (vA := fixedFieldValuation F)
 

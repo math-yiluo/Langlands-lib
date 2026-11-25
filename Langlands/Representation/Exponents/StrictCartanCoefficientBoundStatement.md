@@ -1,7 +1,5 @@
 # Strict exponential Cartan coefficient bound from normalized Jacquet bounds
 
-Author: Worker 693.
-
 `Langlands.GLStrictCartanCoefficientBoundStatement` is a `Prop`-valued
 definition specifying an estimate. This pair proves neither the estimate nor
 integrability. It is a **derived specialization** of the coefficient
@@ -252,14 +250,15 @@ The direct Lean imports are only
 They supply the actual groups, weights, generalized exponents, and smooth
 functionals. Existing imported Lean/Markdown pairs are not changed.
 The bridges above are proof obligations, not assumed fields or supplied
-envelopes. Published statements, pending proof tasks, and literature
+envelopes. Published statements and literature
 citations are not treated as proof certificates.
 
-The intended proof successor must not use the strict square-integrability
+A proof must not use the strict square-integrability
 criterion or its conclusion, segment analytic classification, multisegment
 special-head exhaustion, ordered special-head existence, quotient
 coverage, tempered block uniqueness, square-integrable Langlands
-classification, square-integrable exhaustion, regular exhaustion, their
-proof successors, or their transitive dependencies. This pair introduces
-only the focused statement. An exact proof task is to be published
-separately after this target is accepted and present in the Library.
+classification, square-integrable exhaustion, regular exhaustion, the
+modules that prove them, or their transitive dependencies. This pair introduces
+only the focused statement. The Library proves it as
+`Langlands.glStrictCartanCoefficientBound` in
+`StrictCartanCoefficientBoundProof`.

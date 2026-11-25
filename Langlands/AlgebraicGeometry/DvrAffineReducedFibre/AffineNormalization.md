@@ -1,7 +1,5 @@
 # Relative normalization of affine schemes
 
-Worker 594.
-
 For a ring map `D → G`, `affineNormalizationIso` identifies the
 relative normalization of `Spec D` in `Spec G` with the spectrum
 of the integral closure of `D` in `G`. The compatibility lemma

@@ -1,7 +1,5 @@
 # Rank-one Levi factors generate the derived subgroup of the minimal Levi: proof
 
-Authors: Worker 180.
-
 The theorem `Langlands.GroupScheme.rankOneLeviDerivedGeneration` has type
 exactly `Langlands.GroupScheme.RankOneLeviDerivedGenerationStatement.{u}`,
 from the published module `SimplyConnected.RankOneLeviFactors`, at arbitrary

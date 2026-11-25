@@ -1,7 +1,5 @@
 # Norm-one containment from the actual algebraic Siegel setup
 
-Author: Worker 1377.
-
 This internal derived module constructs
 `IsSiegelAlgebraicSetup.positiveNormOneMap`, the continuous homomorphism from
 the intrinsic positive torus to the actual ambient norm-one adelic group,

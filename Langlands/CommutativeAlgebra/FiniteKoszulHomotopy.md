@@ -1,7 +1,5 @@
 # Generator homotopies for the finite subset Koszul differential
 
-Author: Worker 1015.
-
 This internal supporting construction defines exterior insertion by an index
 `j` on the subset-coordinate modules of `FiniteKoszulComplex`. It applies to
 any commutative ring `R` and any linearly ordered index type `ι`; the identities

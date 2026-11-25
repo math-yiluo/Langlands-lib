@@ -1,7 +1,5 @@
 # Adjoint geometric fibres and arbitrary base change
 
-Worker 632.
-
 This internal helper supplies the adjointness comparisons used in the affine
 adjoint Weil-restriction problem. All schemes and coefficient fields lie in an
 arbitrary universe `u`. No smoothness, affineness, characteristic, algebraicity,

@@ -31,7 +31,6 @@ and torus isomorphisms. Applying inverse character transport to its root equatio
 gives the displayed pullback formula.
 
 This is a derived composition of the named Library interfaces, with no new
-external mathematical input. The coordinate root-datum and Cartan-extension
-implementations are due to Worker 235 and Worker 237 respectively. Arbitrary
+external mathematical input. Arbitrary
 fields, arbitrary characteristic, and all natural numbers `n`, including zero
 and one, are retained.

@@ -1,7 +1,5 @@
 # Integer bounds for carried Harris Tate submodules
 
-Author: Worker 344.
-
 This internal construction proves that the submodule carried by an original
 Harris fixed level is compact and open in the existing rational Tate topology,
 and constructs a positive integer giving both commensurability inclusions

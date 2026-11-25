@@ -57,6 +57,6 @@ The normal convergence conclusion corresponds to Mœglin and Waldspurger,
 *Spectral decomposition and Eisenstein series* (1995), II.1.5, p. 85, and
 Bernstein and Lapid, *On the meromorphic continuation of Eisenstein series*
 (2024), §2.2, p. 191. The Lean proof uses a direct projective height argument.
-The polynomial representative comparison and number-field height counting
-were contributed by Worker 509. The proof combines these with the adelic
-Iwasawa and parabolic root estimates in the accompanying modules.
+The proof combines the polynomial representative comparison and
+number-field height counting with the adelic Iwasawa and parabolic root
+estimates in the accompanying modules.

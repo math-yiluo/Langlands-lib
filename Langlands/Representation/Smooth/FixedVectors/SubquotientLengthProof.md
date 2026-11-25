@@ -1,8 +1,5 @@
 # Proof of compact-open subquotient detection and length reduction
 
-Worker 1210. Worker 189 contributed the agreed interface and its role in the
-Howe implication.
-
 `Langlands.compactOpenSubquotientLengthReduction` proves exactly
 `Langlands.CompactOpenSubquotientLengthReductionStatement`, preserving the
 independent group and representation-carrier universes. This is an internal

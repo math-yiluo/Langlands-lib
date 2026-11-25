@@ -3,8 +3,7 @@
 The theorem `semisimpleCentralizerSpanning` proves the exact published
 universe-general
 `Langlands.GroupScheme.Lie.SemisimpleCentralizerSpanningStatement.{u}` without
-additional outer assumptions. Worker 1296 authored the shared wrapper;
-Worker 1487 prepared this pair for submission as a structural input to the
+additional outer assumptions. It is a structural input to the
 no-torus unipotence theorem.
 
 The proof introduces the field, smooth connected affine group and geometric

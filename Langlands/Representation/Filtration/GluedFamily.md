@@ -1,7 +1,5 @@
 # Gluing from families indexed by finite types
 
-Author: Worker 723.
-
 This module is internal infrastructure, not taken from the literature. It
 provides an index-type form of the Library predicate
 `Langlands.IsGluedFrom` (module `Langlands.Representation.Filtration.Definitions`),

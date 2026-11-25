@@ -1,10 +1,10 @@
 # Twisted equivariant functions and functions on double-quotient level spaces
 
-Author: Worker 61. Built on the published
-`Langlands.Shimura.EquivariantForms` (Worker 61: `forms`),
-`Langlands.Shimura.EquivariantFormsHecke` (Worker 61: `levelTransport`,
+Built on the published
+`Langlands.Shimura.EquivariantForms` (`forms`),
+`Langlands.Shimura.EquivariantFormsHecke` (`levelTransport`,
 `levelPresheaf`, `heckeOperator` and its formula `heckeOperator_apply_coe`)
-and Worker 57's published `Langlands.Shimura.Levels` (`CompactOpenLevel`
+and the published `Langlands.Shimura.Levels` (`CompactOpenLevel`
 and its category of transporter arrows, `heckeLevel`, the double-quotient
 level spaces `LevelSpace`, `LevelSpace.translate`, `LevelSpace.tower`), and
 on Mathlib's `Representation.IsTrivial`.
@@ -17,8 +17,9 @@ invariant under the level. For a representation of the whole group the two
 are identified by multiplying with the representation, and this
 identification turns the level transport of
 `Langlands.Shimura.EquivariantFormsHecke` into plain right translation. For
-trivial coefficients, forms are the functions on Worker 57's double-quotient
-level spaces with a one-point `X`, naturally in the level. Everything is
+trivial coefficients, forms are the functions on the double-quotient level
+spaces of `Langlands.Shimura.Levels` with a one-point `X`, naturally in the
+level. Everything is
 generic in the groups, levels and coefficients.
 
 ## Conventions
@@ -62,7 +63,8 @@ For subgroups `K`, `L` of `G`:
 
 Now `G` is a topological group (`TopologicalSpace G`), and a compact open
 level `K : CompactOpenLevel G` carries the restriction of `ρ` to
-`K.subgroup`. An arrow `a : K ⟶ L` of Worker 57's category of levels is a
+`K.subgroup`. An arrow `a : K ⟶ L` of the category of levels of
+`Langlands.Shimura.Levels` is a
 group element `a.element` with `a.element⁻¹ * k * a.element ∈ L` for all
 `k ∈ K` (`a.respects`); composition multiplies the elements.
 
@@ -99,7 +101,7 @@ representatives `k = q.out` of the cosets `q` of `K ∩ g L g⁻¹`
 
 ## Functions on level spaces
 
-For a type `X` with an action `MulAction Γ X`, Worker 57's
+For a type `X` with an action `MulAction Γ X`, the published
 `LevelSpace (X := X) ι K` is the quotient of `X × G` by
 `(x, g) ~ (γ • x, ι γ * g * k)` for `γ : Γ`, `k ∈ K`, and for a level arrow
 `a : K ⟶ L`, `LevelSpace.translate a.element a.respects` is the map
@@ -110,10 +112,10 @@ For a type `X` with an action `MulAction Γ X`, Worker 57's
   a level `K` goes to the `R`-module of all functions
   `LevelSpace (X := X) ι K.subgroup → V` (pointwise operations), and an
   arrow `a : K ⟶ L` to pullback along `LevelSpace.translate`
-  (`levelSpaceFunctions_map_apply`). The functor laws are Worker 57's
+  (`levelSpaceFunctions_map_apply`). The functor laws are the published
   `LevelSpace.translate_one` and `LevelSpace.translate_comp`.
   `levelSpaceFunctions_map_apply_tower` restates the maps as pullback along
-  the continuous maps `(LevelSpace.tower).map a` of Worker 57's tower of
+  the continuous maps `(LevelSpace.tower).map a` of the published tower of
   level spaces (`TopologicalSpace X`, `ContinuousMul G`), whose underlying
   functions are `LevelSpace.translate`. No continuity is imposed on the
   functions.
@@ -205,8 +207,8 @@ How the module relates to this passage (an explanation, not formalized):
   double cosets with right translation). All Lean statements and proofs are
   ours, derived from Mathlib and the published modules named above.
 
-Worker 13 (first executor of task 23471a9e) reported no overlap with this
-module.
+This module does not overlap the geometric and equivariant cohomology
+framework behind Harris.
 
 ## Scope
 

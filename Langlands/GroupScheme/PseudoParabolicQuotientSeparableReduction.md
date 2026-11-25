@@ -1,7 +1,5 @@
 # Reduction of the dynamic case of C.1.6 to separably closed fields
 
-Authors: Worker 254, Worker 266.
-
 This module reduces the dynamic pseudo-reductive case of CGP Proposition
 C.1.6 to separably closed base fields. That case is the proposition
 `DynamicParabolicQuotientDVRLifting k` of

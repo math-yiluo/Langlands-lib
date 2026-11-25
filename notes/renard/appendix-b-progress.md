@@ -1,21 +1,19 @@
 # Renard Appendix B: Amitsur, simplicity reductions and original actions
 
-Worker 709, with source-convention and reduction-route contributions from Worker 6.
-Status checked on 2 November 2026 against published Library
-`2c43e36f9ac408fcdef45d79d2ac3b56107609c2`. On the same day, Worker 1088,
-with Worker 1210, recorded the final original B.III publication against
-published Library `47b67c4eb87954cf163f3a88bb94b9cbae2edbf0`.
-Worker 709 subsequently verified the original B.II proof published at
-`cd11fff8febbab050837bbdac5d8d37b10233370`; its unchanged pair is present
-in the admitted Library `545ccb3366b363dc0fe0a6d000b281a88d7c2407`.
+Status checked on 2 November 2026 against Library
+`2c43e36f9ac408fcdef45d79d2ac3b56107609c2`. On the same day the final
+original B.III proof was recorded against Library
+`47b67c4eb87954cf163f3a88bb94b9cbae2edbf0`. The original B.II proof, which
+first appeared at `cd11fff8febbab050837bbdac5d8d37b10233370`, was checked
+later; its unchanged pair is present in Library
+`545ccb3366b363dc0fe0a6d000b281a88d7c2407`.
 
-The B.I Amitsur theorem and the general actual-action simplicity reductions have
-independently accepted, published proofs. The unital B.II Schur proof and
+The B.I Amitsur theorem and the general actual-action simplicity reductions have published proofs. The unital B.II Schur proof and
 the unital B.III principal-left-ideal, simple-quotient and separation proofs
 are also published. For original nonunital actions, all three B.III
 components and the exact B.III aggregate now have published proofs. The
-original B.II aggregate and all nine components also have independently
-accepted, published proofs. This note records
+original B.II aggregate and all nine components also have
+published proofs. This note records
 those distinctions and complements the
 [whole-book coverage ledger](coverage.md). It asserts neither Appendix B nor
 whole-book completion.
@@ -247,86 +245,52 @@ describe the implemented reductions. The explicit coatom, action
 comparison and component packaging are derived implementation content
 for the source construction.
 
-The focused proof tasks, all revision 1, are:
+The focused proofs are:
 
-| Task | Result and status at this audit |
+- Unital B.II: all eight unital Schur components and `schurTheorem` are
+  published; they reuse B.I.
+- Original-action B.II: the nine original-action Schur components and exact
+  aggregate `nonUnitalSchur`, using the simplicity-reduction and unital Schur
+  proofs, first appeared in the Library at
+  `cd11fff8febbab050837bbdac5d8d37b10233370`.
+- Original-action B.III separation: its resolvent, quotient and final
+  separation proofs, including the exact aggregate, first appeared in the
+  Library at `47b67c4eb87954cf163f3a88bb94b9cbae2edbf0`.
+
+## In the Library
+
+The ten proofs below were checked by a Lake build against their exact
+targets, with the statements and their inputs unchanged. The two statement
+modules were checked as statements.
+
+| Published module | First appeared at Library commit |
 | --- | --- |
-| `002527a3-e4ad-41b7-80b0-90372fcaa508` | All eight unital Schur components and `schurTheorem` are independently accepted and public; they reuse B.I. |
-| `77ae9ed4-e2d3-4cfe-bd3c-741f4082bdf9` | Workers 751 and 972 retain proof-task ownership. The nine original-action Schur components and exact aggregate `nonUnitalSchur`, using the simplicity-reduction and unital Schur proofs, are independently accepted and public as `0abf4aa4-d0a9-45af-88f3-9d33ce29e245` at `cd11fff8febbab050837bbdac5d8d37b10233370`. This publication check makes no claim about subsequent task completion. |
-| `f40b1a64-b8f2-4f42-b31a-e1155b7b367a` | Workers 1210 and 1088 retain the original-action separation task. Its resolvent, quotient and final separation proofs, including the exact aggregate, are independently accepted and public at `47b67c4eb87954cf163f3a88bb94b9cbae2edbf0`. The task itself was still claimed at inspection; this note does not declare its completion. |
+| B.I `amitsurTheorem` | `bcd3de2ace8b14d5d06939a5afe3ca7742cba169` |
+| Unital B.II `schurTheorem` and eight components | `ea837744ab4d479cb0fa59426ead2c2dec4a2f67` |
+| Original B.II `nonUnitalSchur` and nine components | `cd11fff8febbab050837bbdac5d8d37b10233370` |
+| `nonUnitalSimplicityReduction` | `bcd3de2ace8b14d5d06939a5afe3ca7742cba169` |
+| `principalLeftIdealProper` | `6fd0709bd33fa6c33b4d74b4b638cfc51428b8f1` |
+| `leftShiftSimpleQuotient` | `bcd3de2ace8b14d5d06939a5afe3ca7742cba169` |
+| `unitalSeparation` | `bcd3de2ace8b14d5d06939a5afe3ca7742cba169` |
+| Original `nonUnitalNonnilpotentLeftResolvent` | `ea837744ab4d479cb0fa59426ead2c2dec4a2f67` |
+| Original `nonUnitalLeftShiftSimpleQuotient` and action equality | `ea837744ab4d479cb0fa59426ead2c2dec4a2f67` |
+| Original `nonUnitalSeparation` and aggregate `nonUnitalSeparationReduction` | `47b67c4eb87954cf163f3a88bb94b9cbae2edbf0` |
+| Original-action Schur statements | `bcd3de2ace8b14d5d06939a5afe3ca7742cba169` |
+| Original-action separation statements | `bcd3de2ace8b14d5d06939a5afe3ca7742cba169` |
 
-These are exact record checks at the stated Library commits, rather than
-claims about subsequent task states. The existing proof engines and
-successor tasks retain their owners. No new implementation or duplicate
-proof task is introduced by this note.
-
-## Acceptance and publication evidence
-
-Worker 709 fetched the exact records and verified independent unqualified
-approval and publication; Worker 1088 did the same for the final
-separation record. The ten proof records below have successful
-official Lake build, exact-target, unchanged-statement and frozen-input
-checks under `lean.proof@1`. The two statement records have statement
-acceptance under `lean.statement@1`.
-
-| Published unit | Record | Independent reviewer | Publication commit |
-| --- | --- | --- | --- |
-| B.I `amitsurTheorem` | `656d33de-9fec-4b58-81aa-e45334f04946` | Reviewer 8196 | `bcd3de2ace8b14d5d06939a5afe3ca7742cba169` |
-| Unital B.II `schurTheorem` and eight components | `d81807c4-b46e-44dc-8320-22fd88352a28` | Reviewer 8406 | `ea837744ab4d479cb0fa59426ead2c2dec4a2f67` |
-| Original B.II `nonUnitalSchur` and nine components | `0abf4aa4-d0a9-45af-88f3-9d33ce29e245` | Reviewer 8540 | `cd11fff8febbab050837bbdac5d8d37b10233370` |
-| `nonUnitalSimplicityReduction` | `d0bc713e-edc3-4776-9aec-e8cef64ba39b` | Reviewer 8221 | `bcd3de2ace8b14d5d06939a5afe3ca7742cba169` |
-| `principalLeftIdealProper` | `66db1f0f-133e-4a96-8a95-63c736ca885b` | Reviewer 8184 | `6fd0709bd33fa6c33b4d74b4b638cfc51428b8f1` |
-| `leftShiftSimpleQuotient` | `a4b2ef92-f0f4-4cb2-9ea2-b3a0ebb3052b` | Reviewer 8194 | `bcd3de2ace8b14d5d06939a5afe3ca7742cba169` |
-| `unitalSeparation` | `101973bf-e6d7-4b43-b528-002df8e99936` | Reviewer 8202 | `bcd3de2ace8b14d5d06939a5afe3ca7742cba169` |
-| Original `nonUnitalNonnilpotentLeftResolvent` | `a3b3d3c7-ba1e-466b-a674-56712166e133` | Reviewer 8434 | `ea837744ab4d479cb0fa59426ead2c2dec4a2f67` |
-| Original `nonUnitalLeftShiftSimpleQuotient` and action equality | `bad020a2-02d0-4646-b212-0dcd991e9d01` | Reviewer 8449 | `ea837744ab4d479cb0fa59426ead2c2dec4a2f67` |
-| Original `nonUnitalSeparation` and aggregate `nonUnitalSeparationReduction` | `505e9f2d-9b4c-4fb9-ba44-e08371d3781a` | Reviewer 8471 | `47b67c4eb87954cf163f3a88bb94b9cbae2edbf0` |
-| Original-action Schur statements | `1ebb51b0-5b5f-43b6-9f76-b7407fbeb772` | Reviewer 8217 | `bcd3de2ace8b14d5d06939a5afe3ca7742cba169` |
-| Original-action separation statements | `3eefdbd1-485a-49fb-864b-f9eefe57e06a` | Reviewer 8246 | `bcd3de2ace8b14d5d06939a5afe3ca7742cba169` |
-
-Every listed Lean/Markdown pair matches its frozen submission and the
-published Library named above. The seven earlier pairs also match the
-author's workspace; the three proof pairs published at `ea837744` were
-read directly in the published Library and are absent from the older
-admitted workspace base. The final separation record bundles its own pair
-with both original component pairs. Worker 1088 compared every file of the
-three original B.III records with Library
+Every listed Lean/Markdown pair matches the Library at the commit named
+above. Every file of the three original B.III proofs was compared with Library
 `47b67c4eb87954cf163f3a88bb94b9cbae2edbf0`; all are byte-identical there.
-The new official proof receipts are `09f46a5f-9d03-4115-b9f6-ae12e11c5ed5`
-(unital Schur), `9ee03847-d666-4343-832f-bf1e14245fa8` (original resolvent),
-`ca17a297-d2b4-4362-8232-60abeb4fd093` (original quotient) and
-`1acb8569-8ae2-44d9-b26a-00a5d8b6841b` (final original separation, review
-`7c2dd4ba-88cf-4450-818b-76d370a7b3b9`, integration
-`5904f6715a97448aa83addb07d2c4551`).
-They each record all four proof checks named above.
 
-The original B.II proof has official machine receipt
-`88491735-d87b-4d58-be75-54856aaec3ca`, unqualified independent approval
-in review `cd1363df-300a-4eef-8b14-49ac053d3793`, and published integration
-`7cb5075dab9843dcb2b1559c41b17223`. Worker 709 directly fetched that
-record and verified acceptance and publication. Its Lean/Markdown
-hashes match the frozen submission and the admitted Library
+The original B.II proof was checked by a Lake build against its exact
+target. Its Lean/Markdown files match Library
 `545ccb3366b363dc0fe0a6d000b281a88d7c2407`.
 
-Development check `43c34ad9-9a33-4c37-a592-8be2f5616e81` build-checked
+A separate build checked
 the simplicity, original Schur and original separation statement modules
 without errors or warnings and inspected the separation aggregate as
-`Prop`. The earlier exact Schur aggregate inspection
-`c7301390-9a79-4cd1-9930-731df7fa76bf` also reports `Prop` with independent
-`uA` and `uM`. These development checks supplement the statement records;
+`Prop`. An earlier inspection of the exact Schur aggregate also reports
+`Prop` with independent `uA` and `uM`. These checks concern the statements;
 they do not establish their proofs.
 
-Worker 972 authored the B.I, unital Schur and one-sided-resolvent engine
-proofs. Worker 751
-authored the simplicity proofs with Worker 6's annihilator/orbit,
-scalar-linearity and zero-action route, and the original-action Schur
-proof and its companion documentation. Worker 1210 authored the three
-unital quotient/separation proofs and the three published original-action
-B.III proofs, including the final composition. Worker 709 formulated and
-audited the original-action statements with Worker 6's source and reduction
-clarifications. Worker 1088 recorded the final B.III publication in this
-note with Worker 1210. Worker 709 added the original B.II publication
-check and proof-route account using Worker 751's published documentation.
-Mathematical reuse
-proceeds by the current Library's
-Lean names; the record IDs above identify the evidence for this ledger.
+Mathematical reuse proceeds by the Library's Lean names.

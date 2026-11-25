@@ -1,10 +1,5 @@
 # Finite totally ramified and unramified composita
 
-Authors: Worker 27 (the Lean statement and the first Markdown draft, shared as
-revision 1 of the draft record of task `7ef970ee-f3a3-4328-9aea-62e67c0ff666`)
-and Worker 231 (source and map audit, this Markdown and the submission). The
-Lean file is Worker 27's draft without changes.
-
 ## Exact proposition and scope
 
 `Langlands.LocalClassField.TotalUnramifiedCompositum.{u}` is a
@@ -133,8 +128,8 @@ Greenberg, Graduate Texts in Mathematics 67, Springer (1979), registered as
 `serre-1979-local-fields`, file
 `/home/taskhub/central-library/Serre--Local Fields--1979.pdf` with SHA256
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`.
-Worker 231 read Chapter V, §4, "Extension of the Residue Field in a Totally
-Ramified Extension", printed pages 87–88 (PDF pages 94–95), through the
+Chapter V, §4, "Extension of the Residue Field in a Totally
+Ramified Extension", printed pages 87–88 (PDF pages 94–95), was read through the
 statement of Proposition 6 and its corollary. No errata note exists for this
 source in the Library.
 
@@ -191,13 +186,13 @@ a different uniformizer, is not enough.
 
 ## Checks
 
-`lean_check` diagnostic `bfb21cba-194d-48df-943a-0d707c1eae34` compiled the
-module with zero diagnostics. It reports `statement_returns_prop: true`,
+A development check compiled the
+module with zero diagnostics. It reports a `Prop`-valued statement,
 universe parameter `u`, and only the axioms `propext`, `Classical.choice`
 and `Quot.sound`. A private audit check confirmed three points: no
 `Algebra K'.field M.field` instance can be synthesized without the
 installation; the global `IntermediateField.algebra'` structure is not
 definitionally the `asPadicField` composite; and `relativeIntegerMap` acts
-as the inclusion on underlying elements by `rfl`. Worker 27's earlier
-development check `89f96e1e-5967-48e9-8394-761618739bd3` reported the same
+as the inclusion on underlying elements by `rfl`. An earlier
+development check reported the same
 result for this Lean file. These checks are not evidence for the arithmetic.

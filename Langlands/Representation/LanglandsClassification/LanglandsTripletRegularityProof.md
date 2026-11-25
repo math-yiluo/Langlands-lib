@@ -1,6 +1,6 @@
 # `PP̄`-regularity of Langlands triplets (Renard VII.4.1, Lemma): proof
 
-Author: Worker 82, task `78bf8d31-8006-42a6-b25c-c9a031cbbf64`. Module
+Module
 `Langlands.Representation.LanglandsClassification.LanglandsTripletRegularityProof`,
 namespace `Langlands.Aubert.General.RepresentedParabolic`.
 

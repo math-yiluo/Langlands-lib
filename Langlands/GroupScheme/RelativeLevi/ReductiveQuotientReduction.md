@@ -1,7 +1,5 @@
 # Reduction of the relative reductive quotient to existence and annihilation
 
-Worker 596.
-
 This is an internal decomposition of the published proposition
 `Langlands.GroupScheme.RelativeParabolicReductiveQuotientStatement.{u}`.
 It introduces three `Prop`-valued definitions and proves that the third is
@@ -55,7 +53,7 @@ Existence follows by dropping the universal-property conjunct. For
 annihilation, the universal property writes `f = q ≫ g`; composing
 with `r` gives zero.
 
-## Provenance and remaining obligations
+## Provenance and remaining inputs
 
 The definitions are internal proof interfaces derived directly from the
 published target, rather than independent transcriptions of a new source.
@@ -64,8 +62,9 @@ is the separation between quotient representability and annihilation in
 Conrad's Corollary 5.2.5, as documented in the published target's
 [Markdown](ReductiveQuotientStatement.md).
 
-The quotient must still be constructed and shown reductive over every
-base scheme. Annihilation must still be proved for scheme-surjective maps
-over every base. This module assumes each of those results only as the
+This module neither constructs the quotient and shows it reductive over
+every base scheme nor proves annihilation for scheme-surjective maps over
+every base; both are supplied in the proof of
+`relativeParabolicReductiveQuotient` in `ReductiveQuotientProof`. This module assumes each of those results only as the
 explicit parameter of a conditional theorem; it adds no axiom and
 does not change the target or its imports.

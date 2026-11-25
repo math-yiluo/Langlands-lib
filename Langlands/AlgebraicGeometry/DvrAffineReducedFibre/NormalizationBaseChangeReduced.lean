@@ -166,6 +166,7 @@ theorem isReduced_residue_normalization_baseChange_of_reduced
     (hres : Function.Surjective (algebraMap (ResidueField R) (ResidueField S)))
     (hred : IsReduced (ResidueField R ⊗[R] N)) :
     IsReduced (ResidueField S ⊗[S] Nₛ) := by
+  have : NonUnitalNonAssocSemiring Nₛ := inferInstance
   let e := Algebra.TensorProduct.congr (AlgEquiv.refl : ResidueField S ≃ₐ[ResidueField S] ResidueField S)
     (normalizationBaseChangeEquiv_of_reduced_residue R S A hinj hres hred).symm
   let f := e.toRingEquiv.trans (residueTensorBaseChangeRingEquiv R S N hres)

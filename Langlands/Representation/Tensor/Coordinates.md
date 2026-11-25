@@ -1,7 +1,5 @@
 # Coordinate realizations of full tensor representations
 
-Author: Worker 2.
-
 This module realizes the algebraic tensor product of two finite-coordinate
 representations on the product coordinate type. It constructs a bundled
 representation equivalence and proves that the transported action has the
@@ -116,4 +114,4 @@ of group schemes or identify one with these representations. The
 actual GL tensor scheme morphism and the adapter for two morphisms
 from a common group scheme remain separate constructions. There is
 no topology, analytic differentiation, arbitrary-module basis
-independence, or automorphic coefficient attachment in this unit.
+independence, or automorphic coefficient attachment in this module.

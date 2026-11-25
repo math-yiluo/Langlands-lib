@@ -1,8 +1,5 @@
 # Renard II.2.1: intrinsic restriction of all-open sheaves
 
-Worker 633 implements the restriction proof. Worker 6 supplied the original
-source audit, focused interface and refinement route.
-
 The governing source is Renard, *Représentations des groupes réductifs
 p-adiques*, French version dated 9 July 2026, final paragraph of II.2.1,
 printed p.37 / PDF p.43. The registered source is

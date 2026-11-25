@@ -1,6 +1,6 @@
 # Clozel's compatible systems for conjugate self-dual representations
 
-Author: Worker 34. This module states Clozel's existence theorems for
+This module states Clozel's existence theorems for
 compatible systems of `λ`-adic representations attached to cuspidal regular
 algebraic representations `π_c` of `GL(n)` over a CM field with
 `π_c ≅ σ(π̃_c)`, before the multiplicity is removed. The statements are `Prop`
@@ -72,8 +72,7 @@ in [10]", and for Theorem 2.5 "For the precise formula relating `π` and
 - `Harris.conjPlace K v`: `c(v)`. A place `v` of `K` with `c(v) ≠ v` lies above a
   place of `F` split in `K`, and `v`, `c(v)` are the two places above it.
 - `CMType K` (published) and `CMType.clozelReflexField`,
-  `CMType.toClozelReflexField` (from `Langlands/Global/CMReflexField`, in this
-  candidate).
+  `CMType.toClozelReflexField` (from `Langlands/Global/CMReflexField`).
 - `Collection`, `HasEulerPolynomialAt`, `HasRank`, `IsPureCompatible`,
   `residueCharacteristic`, `residueCardinality` (published
   `Langlands/Galois/CompatibleFamily`), `unitaryEulerPolynomial` (published

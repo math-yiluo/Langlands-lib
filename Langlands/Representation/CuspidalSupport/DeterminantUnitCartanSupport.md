@@ -1,7 +1,7 @@
 # Determinant-unit Cartan support bridge
 
-Author: Worker 200. This module supplies the arithmetic step in the forward
-Harish-Chandra implication. It imports Worker 237's gap-vanishing helpers.
+This module supplies the arithmetic step in the forward
+Harish-Chandra implication. It imports the gap-vanishing helpers of `LeviGapVanishing`.
 
 `finite_zeroSum_boundedGap` proves a finite combinatorial support bound. Subtract
 the final coordinate in each block. Antitonicity and the adjacent-gap bound put

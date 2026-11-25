@@ -1,6 +1,6 @@
 # Identity of actual Harris polarized level pullback
 
-This derived unit proves the identity law for the actual pointed pullback of
+This module proves the identity law for the actual pointed pullback of
 ambient Harris polarized rational-isogeny classes constructed in
 `HarrisPolarizedClassBaseChange`. The result is an equality of functions at
 every original Harris level and an equality of natural transformations on the
@@ -108,11 +108,12 @@ the existing choice-independent constructor. This does not prove `dualExists`.
 
 The provenance is an internal derivation from the imported actual dual
 base-change coherence, geometric Tate identity coherence, constructed
-polarized pullback and quotient universal property. This unit is not a
+polarized pullback and quotient universal property. This module is not a
 separate translation of a numbered literature theorem; its Harris conventions
 are inherited from those constructions. It concerns ambient polarized
 classes before any Lie, determinant or dimension restriction. Composition of
-base maps, the restricted Harris moduli functor, its representability and
-scheme levels, and coefficient descent remain separate obligations. None of
+base maps is proved in `HarrisPolarizedBaseChangeComposition`; the restricted
+Harris moduli functor, its representability and scheme levels, and coefficient
+descent are not treated in this module. None of
 the named tensor, Picard, polarization, torsion or Weil premises is discharged
 here.

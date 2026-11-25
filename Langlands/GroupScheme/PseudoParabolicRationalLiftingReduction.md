@@ -1,7 +1,5 @@
 # Rational lifts through a supplied split-radical quotient
 
-Author: Worker 1478.
-
 This internal construction connects the published actual-map split-radical
 reduction to rational lifting. It supplies a conditional reduction within
 the main proof, rather than a proof of the unrestricted rational-lifting

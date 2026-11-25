@@ -36,5 +36,3 @@ p-adiques (d'après Harish-Chandra)*, J. Inst. Math. Jussieu 2 (2003), 235–333
 registered as `waldspurger-2003-plancherel`, PDF SHA256
 `4b6a6162cd0b3863703fb2f65d1698f926caf813114917f2084c16e38f2e30f7`.
 [Original article](https://doi.org/10.1017/S1474748003000082)
-
-Worker 228, Task 7228.

@@ -4,7 +4,7 @@ Ported from `Definitions/Def_PresheafOfModules_PullbackMonoidal.lean` of the Ant
 License, Version 2.0; see `licenses/Anthropic-FLT/LICENSE`, `NOTICE` and `ATTRIBUTION.md`.
 The paired Markdown file lists the changes made by the port.
 -/
-import Mathlib
+import Langlands.MathlibBase
 set_option maxHeartbeats 4000000
 set_option synthInstance.maxHeartbeats 400000
 set_option backward.isDefEq.respectTransparency.types false
@@ -12,6 +12,7 @@ set_option backward.isDefEq.respectTransparency.types false
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
+set_option backward.isDefEq.respectTransparency.instanceSearchTypes false
 
 universe v u v₁ u₁ v₂ u₂
 

@@ -1,8 +1,6 @@
 # Source changes for exact geometric CM coefficient systems
 
-Author: Worker 57.
-
-This internal specialization compares the published coefficient diagrams after
+This internal specialization compares the coefficient diagrams after
 changing their exact geometric CM source cover. It constructs the restriction
 and reindexing functors, the associated and constant source comparisons, and
 their identity and composition laws. The source scalar comparison commutes
@@ -41,7 +39,7 @@ The following premises remain explicit:
   `geometry : RelativeDualSchemeGeometryStatement`, and
   `hRigid : CMGeometricCoarseRigidity ... U.obj`.
 
-The module does not prove these premises. They are the inputs of the published
+The module does not prove these premises. They are the inputs of the
 exact geometric torsor construction; no output sheaf, comparison isomorphism,
 evaluation map or source-change equation is supplied as an additional premise.
 
@@ -59,7 +57,7 @@ e : B ≅ A = cmHarrisGeometricAssociatedRestrictedCoefficientSystemIso ...,
 T = M.obj ⋙ constantSheaf J (ModuleCat R).
 ```
 
-Y is the published equivariant diagram of the exact geometric full-kernel
+Y is the equivariant diagram of the exact geometric full-kernel
 coefficient covers. Its map `Y.obj.map f` is the actual geometric forgetting
 map. Each action is a proved finite geometric torsor under the retained
 premises. R is the full product of integral coefficient rings at all places
@@ -68,18 +66,18 @@ of K above p. M retains the original full stable-lattice reductions.
 A uses invariant associated sheaves and the proved inverse-cover transitions.
 B uses the direct quotient-ring associated sheaves after restriction of
 scalars to R; its transitions are transported from A through the constructed
-component scalar comparisons. The isomorphism e is published, not an
-independently chosen system comparison. These inputs come from
+component scalar comparisons. The isomorphism e is the one constructed in
+`HarrisTaylorCMGeometricAssociatedScalars`, not an independently chosen system
+comparison. These inputs come from
 [HarrisTaylorCMGeometricAssociatedSystem](HarrisTaylorCMGeometricAssociatedSystem.md)
 and
 [HarrisTaylorCMGeometricAssociatedScalars](HarrisTaylorCMGeometricAssociatedScalars.md).
 
-All new results are internal deductions from these published constructions and
+All new results are internal deductions from these constructions and
 [SourceSlice](../../Sheaf/SourceSlice.md),
 [SliceMap](../../Sheaf/SliceMap.md), and
 [VaryingCoverSourceChange](../Coefficients/VaryingCoverSourceChange.md).
-There is no new assertion attributed directly to external literature and no
-reused unpublished draft.
+There is no new assertion attributed directly to external literature.
 
 ## Source restriction and reindexing
 
@@ -185,7 +183,7 @@ L_k.map (B.map f.right) ≫ (e^k).hom.app j
 This is the naturality of e^k. The original transitions and the original
 coefficient reductions are therefore retained.
 
-Let `t_k : A_k ≅ T_k` and `u_k : B_k ≅ T_k` be the published integral and
+Let `t_k : A_k ≅ T_k` and `u_k : B_k ≅ T_k` be the integral and
 restricted quotient source trivializations.
 `cmHarrisGeometricAssociatedRestrictedCoefficientSourceIso_trivialization`
 identifies the complete isomorphisms
@@ -212,7 +210,7 @@ transitions; it requires no separate equivariant-diagram presentation of B.
 ## Evaluation under source change
 
 `cmHarrisGeometricAssociatedCoefficientSourceTrivialization_sourceChange`
-specializes the published actual invariant-evaluation source-change theorem:
+specializes the actual invariant-evaluation source-change theorem:
 
 ```text
 P_f.map t_l.hom ≫ c_f.hom = a_f.hom ≫ Q_f.map t_k.hom.
@@ -238,7 +236,7 @@ transformations of Under l diagrams, retaining every original
 full-lattice coefficient reduction. The scalar naturality, transition and
 evaluation squares have `@[reassoc]` variants.
 
-## Remaining scope
+## Scope
 
 This construction compares restrictions to induced slice sites of the same
 actual geometric small-etale site. It makes no arbitrary scheme
@@ -249,8 +247,8 @@ constructed scheme levels with all canonical-model data.
 
 The finite reachable source diagram is retained; no fixed finite cover is
 asserted to trivialize every exponent. Completed lisse adic objects, choice
-independence, tensor compatibility, derived or compact-support cohomology,
-uniformization and completion of the host task remain separate.
+independence, tensor compatibility, derived or compact-support cohomology and
+uniformization are not treated in this module.
 
 Formal environment: Lean 4.34.0, Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`.

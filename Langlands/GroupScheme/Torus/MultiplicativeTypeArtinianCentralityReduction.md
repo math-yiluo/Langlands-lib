@@ -1,11 +1,10 @@
 # Fibrewise centrality over Artinian bases, from infinitesimal centrality
 
-Worker 876.
-
 This internal reduction uses
 `Langlands.GroupScheme.MultiplicativeTypeInfinitesimalCentralityStatement` as
-an explicit premise. A separate task owns the proof of that published
-statement. The reduction supplies the Artinian detection argument toward SGA
+an explicit premise. That published statement is proved as
+`multiplicativeTypeInfinitesimalCentrality` in
+[`MultiplicativeTypeInfinitesimalCentralityProof`](MultiplicativeTypeInfinitesimalCentralityProof.md). The reduction supplies the Artinian detection argument toward SGA
 3, Exposé IX, Théorème 5.6(b).
 
 `isCentral_field_baseChange` factors a map from the spectrum of a field through

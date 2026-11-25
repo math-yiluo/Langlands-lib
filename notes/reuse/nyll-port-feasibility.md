@@ -1,25 +1,26 @@
 # NYLL finite local reciprocity: bounded port feasibility
 
-Worker 25, 23 October 2026. This report implements unit 1 of the
-[reviewed source audit](nyll-finite-local-reciprocity-audit.md#6-verdict-and-smallest-next-units),
-for task `ece1c58f-95d0-4ad6-9ddd-adb07dc29028`, revision 1. Worker 215's audit
+This report, dated 23 October 2026, carries out step 1 of the
+[source audit](nyll-finite-local-reciprocity-audit.md#6-verdict-and-smallest-next-steps).
+The audit
 supplies the source map and follow-up plan; the closure reconstruction, adaptation
-and build evidence here are Worker 25's work.
+and build evidence here are the work.
 
-**Verdict: build-feasible at the approved pin, subject to separate mathematical
-port acceptance and the explicit Library bridges below.** The unchanged
+**Verdict: build-feasible at the Library's pin, subject to a separate mathematical
+port and the explicit Library bridges below.** The unchanged
 258-module `NormResidue` baseline failed with 14 errors in three modules.
 After nine compatibility edits, all six selected roots compile with zero errors
 and zero warnings. Their union contains 422 NYLL modules. No compilation blocker
 remains in this bounded union. No external repository was installed in the
-Library, and this report establishes none of the host finite reciprocity Props.
+Library, and this report establishes none of the Library's finite reciprocity Props.
+(The Library has since taken NYLL in whole as the library copy `Nyll/`, and it
+proves the three Library Props: section 7.)
 
-The builds are private development evidence. Independent review and publication
-of this note assess the evidence and feasibility conclusion; they do not accept
-422 modules of mathematics. Any future public port needs paired source
-explanations, independent semantic review and the normal validation for each
-focused contribution. A proof must name a previously published Prop target and
-pass the Lake build and exact-target checks. No whole-repository build or
+The builds are private development evidence. This note gives the evidence and
+the feasibility conclusion; it does not make 422 modules of mathematics part of
+the Library. Any future public port needs paired source explanations and its
+own checks for each module. A proof must name a Prop target already
+stated in the Library and pass the Lake build and exact-target checks. No whole-repository build or
 external Lean execution was used.
 
 ## 1. Pins, evidence and reproducibility
@@ -28,23 +29,25 @@ external Lean execution was used.
 | --- | --- |
 | NYLL repository | `n-yamaguchi-0729/ClassFieldTheory`, commit `fbd320cd8b1b06487c58227e92eb135794267709` |
 | Upstream environment | Lean `4.35.0-rc2`; Mathlib `065356127b1dc0016f66b7283ce0ce2c4055aa55` |
-| Approved environment | `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`; Lean `4.34.0` (commit `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`); Mathlib `5ed2965256430c3649e86755f9576b54eca72435` |
+| Library environment | Lean `4.34.0` (commit `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`); Mathlib `5ed2965256430c3649e86755f9576b54eca72435` |
 | Library interfaces compared | Commit `4fb020971c95d7e55757266feff9f2efdfcbbcdc` |
 | Registered original | `external-lean-reuse-snapshots-2026-10-21`, fingerprint `26e8c647ade044fe9bd4dd1f9d997d4ca12aaa4766e55ab31cb64ca9f8415e01` |
 | Registered supplement | `nyll-classfieldtheory-fbd320cd-supplement`, fingerprint `a81005c3aceabc51e9193cdc643d4dd81dd9d496dca2a0cf0111ce610d5b0330` |
 
 The original is readable under
-`/home/taskhub/pilot/literature/External Lean project reuse survey- pinned source snapshots, 21 October 2026/n-yamaguchi-0729--ClassFieldTheory/source`.
-The supplement was registered by the source audit. No matching source errata
-file was found in the checked project notes. The prior audit's eleven-module
-probes and upstream CI claims are distinct from this task's checks.
+`literature/External Lean project reuse survey- pinned source snapshots, 21 October 2026/n-yamaguchi-0729--ClassFieldTheory/source`.
+The supplement was registered by the source audit. The Library's
+`notes/errata/` has no note for NYLL. The prior audit's eleven-module
+probes and upstream CI claims are distinct from the checks of this report.
 
-[The evidence index](/home/taskhub/pilot/drafts/ece1c58f-95d0-4ad6-9ddd-adb07dc29028/revision-3-2df3e8c2ccf60e3bbabb54ea8c44f8a9ea332e5d97a7fda1fd71fb7484a5c591/files/INDEX.md) is immutable shared draft revision 3. Its manifest SHA-256 is
-`e4bab331d2c067a9c16f5eeaaff28d23ef4e0c3cdd4ffd725f02c4c8a7749f1d`.
-It retains exact requests, terminal records, failed attempts, input inventories,
+The evidence was kept in a shared draft of the environment in which the study
+was made (its `INDEX.md`), which is not part of the Library. Its manifest
+SHA-256 is
+`e4bab331d2c067a9c16f5eeaaff28d23ef4e0c3cdd4ffd725f02c4c8a7749f1d`, the hash of
+the draft as it was when the evidence was taken. The draft retains exact requests, terminal records, failed attempts, input inventories,
 patches, nine modified source texts, original license/notice, and declaration
-output. These are unreviewed development records supporting this report, not
-accepted mathematical dependencies. The diagnostic Lean/Markdown pair only
+output. These are development records supporting this report, not
+mathematical dependencies of the Library. The diagnostic Lean/Markdown pair only
 imports and prints declarations; the external 422 modules are intentionally
 omitted from the shared draft, so that draft alone is not a compilable port.
 The originals and final patch reconstruct its private build input.
@@ -60,10 +63,10 @@ The aggregate hashes below are SHA-256 of UTF-8 lines
 `<file SHA-256><two spaces><relative path>\n`, sorted by module name.
 This counts NYLL's textual closure; it does not count Mathlib's transitive closure.
 
-Six verbatim copies remain in `.private/drafts/nyll-original-<root label>/`;
-only `.private/drafts/nyll-adapted/` was patched. Every original copy was rehashed
+Six verbatim copies were kept in the private workspace (`nyll-original-<root label>/`);
+only `nyll-adapted/` was patched. Every original copy was rehashed
 after the builds and still matches its manifest. The scripts do not run Lean;
-all compilation used `lean_check` in the approved environment.
+all compilation used the project's Lean checking service in the environment above.
 
 ## 2. Exact closures
 
@@ -80,54 +83,54 @@ The root labels in the tables expand as follows:
 
 | Root | NYLL modules | Direct external import names | Raw NYLL lines | Original aggregate SHA-256 |
 | --- | ---: | ---: | ---: | --- |
-| [NormResidue](/home/taskhub/pilot/drafts/ece1c58f-95d0-4ad6-9ddd-adb07dc29028/revision-3-2df3e8c2ccf60e3bbabb54ea8c44f8a9ea332e5d97a7fda1fd71fb7484a5c591/files/closures/NormResidue.json.md) | 258 | 155 | 115017 | `39215df33558965a5b76b252132893e8c8b3f6f3fdc806244e00be07b464af99` |
-| [GeneralTowerNaturality](/home/taskhub/pilot/drafts/ece1c58f-95d0-4ad6-9ddd-adb07dc29028/revision-3-2df3e8c2ccf60e3bbabb54ea8c44f8a9ea332e5d97a7fda1fd71fb7484a5c591/files/closures/GeneralTowerNaturality.json.md) | 262 | 155 | 116062 | `cdb6b1b4c78832019a41f367c1637b4f063283faf1fab4c6cff7211d49eaec1b` |
-| [UnramifiedNormalization](/home/taskhub/pilot/drafts/ece1c58f-95d0-4ad6-9ddd-adb07dc29028/revision-3-2df3e8c2ccf60e3bbabb54ea8c44f8a9ea332e5d97a7fda1fd71fb7484a5c591/files/closures/UnramifiedNormalization.json.md) | 265 | 156 | 117552 | `3fb23e5d2aebad36f78943af4c77a9efcc2c98458be52406f0baf919faef09cd` |
-| [NormRestriction](/home/taskhub/pilot/drafts/ece1c58f-95d0-4ad6-9ddd-adb07dc29028/revision-3-2df3e8c2ccf60e3bbabb54ea8c44f8a9ea332e5d97a7fda1fd71fb7484a5c591/files/closures/NormRestriction.json.md) | 280 | 157 | 127365 | `2c258b23a697b32679a27466b9fa4100845ba82de9e68c30d23bcfd53e4ccfac` |
-| [FiniteAbelian](/home/taskhub/pilot/drafts/ece1c58f-95d0-4ad6-9ddd-adb07dc29028/revision-3-2df3e8c2ccf60e3bbabb54ea8c44f8a9ea332e5d97a7fda1fd71fb7484a5c591/files/closures/FiniteAbelian.json.md) | 402 | 231 | 159883 | `fc6cbb36825d587af6bd5b03aec13bedee6c48eddf53b93b4cd7203388eb669f` |
-| [ShrinkTransport](/home/taskhub/pilot/drafts/ece1c58f-95d0-4ad6-9ddd-adb07dc29028/revision-3-2df3e8c2ccf60e3bbabb54ea8c44f8a9ea332e5d97a7fda1fd71fb7484a5c591/files/closures/ShrinkTransport.json.md) | 33 | 48 | 17506 | `afe753b75140f778828d07a89ab817802bf5f564ec2b4ff2417dd9da56ba149d` |
+| NormResidue | 258 | 155 | 115017 | `39215df33558965a5b76b252132893e8c8b3f6f3fdc806244e00be07b464af99` |
+| GeneralTowerNaturality | 262 | 155 | 116062 | `cdb6b1b4c78832019a41f367c1637b4f063283faf1fab4c6cff7211d49eaec1b` |
+| UnramifiedNormalization | 265 | 156 | 117552 | `3fb23e5d2aebad36f78943af4c77a9efcc2c98458be52406f0baf919faef09cd` |
+| NormRestriction | 280 | 157 | 127365 | `2c258b23a697b32679a27466b9fa4100845ba82de9e68c30d23bcfd53e4ccfac` |
+| FiniteAbelian | 402 | 231 | 159883 | `fc6cbb36825d587af6bd5b03aec13bedee6c48eddf53b93b4cd7203388eb669f` |
+| ShrinkTransport | 33 | 48 | 17506 | `afe753b75140f778828d07a89ab817802bf5f564ec2b4ff2417dd9da56ba149d` |
 
 The closures are not nested. In the displayed order their contributions to the
 union are 258, 4, 7, 19, 132 and 2 new modules. The union has 422 modules and
 aggregate SHA-256
 `579f3b4f6850af659cd5c29728dee728bab44b53f26723621bbb604612044676`.
-Each linked manifest includes the complete file list, per-file hashes, Git blob
+Each manifest (`closures/<root label>.json.md` in the evidence draft) includes the complete file list, per-file hashes, Git blob
 IDs, imports and dependency order. The final adapted input has these same NYLL
 paths, with the nine changes in section 4; the diagnostic modules are additional
 private tooling and are not included in the 422 count.
 
 ## 3. Complete check history
 
-Every row links its exact request and full terminal result in the immutable
-evidence. The private diagnostic record IDs are also retained for TaskHub lookup.
+The exact request and full terminal result of each run are in the evidence
+draft (`receipts/<run>-…-request.json.md` and `…-result.json.md`).
 `E/W` means reported errors/warnings. Successful rows all have `ok: true`,
 process return code 0 and `proof_accepted: false`.
 
-| Run | Request / terminal result | Diagnostic ID | E/W | Outcome |
-| --- | --- | --- | --- | --- |
-| 01 | [request](/home/taskhub/pilot/drafts/ece1c58f-95d0-4ad6-9ddd-adb07dc29028/revision-3-2df3e8c2ccf60e3bbabb54ea8c44f8a9ea332e5d97a7fda1fd71fb7484a5c591/files/receipts/01-NormResidue-original-request.json.md) / [result](/home/taskhub/pilot/drafts/ece1c58f-95d0-4ad6-9ddd-adb07dc29028/revision-3-2df3e8c2ccf60e3bbabb54ea8c44f8a9ea332e5d97a7fda1fd71fb7484a5c591/files/receipts/01-NormResidue-original-result.json.md) | `3518572c-0e3e-4331-8296-deecbc34a65f` | 14/0 | Unchanged NormResidue failed: KummerDelta, HenselianFinite, ValuedAdicComplete. |
-| 02 | [request](/home/taskhub/pilot/drafts/ece1c58f-95d0-4ad6-9ddd-adb07dc29028/revision-3-2df3e8c2ccf60e3bbabb54ea8c44f8a9ea332e5d97a7fda1fd71fb7484a5c591/files/receipts/02-NormResidue-adapted-request.json.md) / [result](/home/taskhub/pilot/drafts/ece1c58f-95d0-4ad6-9ddd-adb07dc29028/revision-3-2df3e8c2ccf60e3bbabb54ea8c44f8a9ea332e5d97a7fda1fd71fb7484a5c591/files/receipts/02-NormResidue-adapted-result.json.md) | `e42a2c92-b6f6-4d52-89c0-c0be90f3b1af` | 10/1 | Patch01 failed: additive-hom conversion selected incompatible integer-module instance. |
-| 03 | [request](/home/taskhub/pilot/drafts/ece1c58f-95d0-4ad6-9ddd-adb07dc29028/revision-3-2df3e8c2ccf60e3bbabb54ea8c44f8a9ea332e5d97a7fda1fd71fb7484a5c591/files/receipts/03-leaves-adapted-request.json.md) / [result](/home/taskhub/pilot/drafts/ece1c58f-95d0-4ad6-9ddd-adb07dc29028/revision-3-2df3e8c2ccf60e3bbabb54ea8c44f8a9ea332e5d97a7fda1fd71fb7484a5c591/files/receipts/03-leaves-adapted-result.json.md) | `3034f7b6-e195-4d5f-a0fe-cb8592a4aa3e` | 0/0 | Patch02 edited leaves passed. |
-| 04 | [request](/home/taskhub/pilot/drafts/ece1c58f-95d0-4ad6-9ddd-adb07dc29028/revision-3-2df3e8c2ccf60e3bbabb54ea8c44f8a9ea332e5d97a7fda1fd71fb7484a5c591/files/receipts/04-NormResidue-adapted-request.json.md) / [result](/home/taskhub/pilot/drafts/ece1c58f-95d0-4ad6-9ddd-adb07dc29028/revision-3-2df3e8c2ccf60e3bbabb54ea8c44f8a9ea332e5d97a7fda1fd71fb7484a5c591/files/receipts/04-NormResidue-adapted-result.json.md) | `fbc615a4-7128-4861-8eaa-08a7829afb72` | 0/0 | Adapted NormResidue passed; Artin-map inspection. |
-| 05 | [request](/home/taskhub/pilot/drafts/ece1c58f-95d0-4ad6-9ddd-adb07dc29028/revision-3-2df3e8c2ccf60e3bbabb54ea8c44f8a9ea332e5d97a7fda1fd71fb7484a5c591/files/receipts/05-GeneralTowerNaturality-adapted-request.json.md) / [result](/home/taskhub/pilot/drafts/ece1c58f-95d0-4ad6-9ddd-adb07dc29028/revision-3-2df3e8c2ccf60e3bbabb54ea8c44f8a9ea332e5d97a7fda1fd71fb7484a5c591/files/receipts/05-GeneralTowerNaturality-adapted-result.json.md) | `ac4404d1-7fd2-48f9-9e57-aac7ca496e0a` | 0/0 | Adapted GeneralTowerNaturality passed; tower inspection. |
-| 06 | [request](/home/taskhub/pilot/drafts/ece1c58f-95d0-4ad6-9ddd-adb07dc29028/revision-3-2df3e8c2ccf60e3bbabb54ea8c44f8a9ea332e5d97a7fda1fd71fb7484a5c591/files/receipts/06-UnramifiedNormalization-adapted-request.json.md) / [result](/home/taskhub/pilot/drafts/ece1c58f-95d0-4ad6-9ddd-adb07dc29028/revision-3-2df3e8c2ccf60e3bbabb54ea8c44f8a9ea332e5d97a7fda1fd71fb7484a5c591/files/receipts/06-UnramifiedNormalization-adapted-result.json.md) | `03328b94-6952-479d-a0d5-8bcbe008fd1c` | 0/0 | Adapted UnramifiedNormalization passed; residue-formula inspection. |
-| 07 | [request](/home/taskhub/pilot/drafts/ece1c58f-95d0-4ad6-9ddd-adb07dc29028/revision-3-2df3e8c2ccf60e3bbabb54ea8c44f8a9ea332e5d97a7fda1fd71fb7484a5c591/files/receipts/07-NormRestriction-adapted-request.json.md) / [result](/home/taskhub/pilot/drafts/ece1c58f-95d0-4ad6-9ddd-adb07dc29028/revision-3-2df3e8c2ccf60e3bbabb54ea8c44f8a9ea332e5d97a7fda1fd71fb7484a5c591/files/receipts/07-NormRestriction-adapted-result.json.md) | `622c7107-58e0-41bb-8da9-052bf83e0d51` | 7/2 | NormRestriction failed: older Valuation.map API. |
-| 08 | [request](/home/taskhub/pilot/drafts/ece1c58f-95d0-4ad6-9ddd-adb07dc29028/revision-3-2df3e8c2ccf60e3bbabb54ea8c44f8a9ea332e5d97a7fda1fd71fb7484a5c591/files/receipts/08-NormRestriction-adapted-request.json.md) / [result](/home/taskhub/pilot/drafts/ece1c58f-95d0-4ad6-9ddd-adb07dc29028/revision-3-2df3e8c2ccf60e3bbabb54ea8c44f8a9ea332e5d97a7fda1fd71fb7484a5c591/files/receipts/08-NormRestriction-adapted-result.json.md) | `d9110091-5de8-4d9b-baab-252705aa9ec4` | 1/2 | Patch03 failed: order isomorphism has no .monotone projection. |
-| 08r | [request](/home/taskhub/pilot/drafts/ece1c58f-95d0-4ad6-9ddd-adb07dc29028/revision-3-2df3e8c2ccf60e3bbabb54ea8c44f8a9ea332e5d97a7fda1fd71fb7484a5c591/files/receipts/08r-resume-leaf-request.json.md) / [result](/home/taskhub/pilot/drafts/ece1c58f-95d0-4ad6-9ddd-adb07dc29028/revision-3-2df3e8c2ccf60e3bbabb54ea8c44f8a9ea332e5d97a7fda1fd71fb7484a5c591/files/receipts/08r-resume-leaf-result.json.md) | `e658942d-51b1-4f4a-9f78-328b6d0d24ca` | 1/2 | Resume leaf check reproduced run08. |
-| 09 | [request](/home/taskhub/pilot/drafts/ece1c58f-95d0-4ad6-9ddd-adb07dc29028/revision-3-2df3e8c2ccf60e3bbabb54ea8c44f8a9ea332e5d97a7fda1fd71fb7484a5c591/files/receipts/09-NormRestriction-adapted-request.json.md) / [result](/home/taskhub/pilot/drafts/ece1c58f-95d0-4ad6-9ddd-adb07dc29028/revision-3-2df3e8c2ccf60e3bbabb54ea8c44f8a9ea332e5d97a7fda1fd71fb7484a5c591/files/receipts/09-NormRestriction-adapted-result.json.md) | `73d11a28-2e1c-4841-b792-e89f51bf9497` | 1/1 | Patch04 failed: valuation-map simplification left surjectivity goal. |
-| 10 | [request](/home/taskhub/pilot/drafts/ece1c58f-95d0-4ad6-9ddd-adb07dc29028/revision-3-2df3e8c2ccf60e3bbabb54ea8c44f8a9ea332e5d97a7fda1fd71fb7484a5c591/files/receipts/10-NormRestriction-adapted-request.json.md) / [result](/home/taskhub/pilot/drafts/ece1c58f-95d0-4ad6-9ddd-adb07dc29028/revision-3-2df3e8c2ccf60e3bbabb54ea8c44f8a9ea332e5d97a7fda1fd71fb7484a5c591/files/receipts/10-NormRestriction-adapted-result.json.md) | `02a32997-59b2-4f17-92e5-52cdb17c44ad` | 1/2 | Patch05 failed: adding map_apply did not discharge that goal. |
-| 11 | [request](/home/taskhub/pilot/drafts/ece1c58f-95d0-4ad6-9ddd-adb07dc29028/revision-3-2df3e8c2ccf60e3bbabb54ea8c44f8a9ea332e5d97a7fda1fd71fb7484a5c591/files/receipts/11-NormRestriction-adapted-request.json.md) / [result](/home/taskhub/pilot/drafts/ece1c58f-95d0-4ad6-9ddd-adb07dc29028/revision-3-2df3e8c2ccf60e3bbabb54ea8c44f8a9ea332e5d97a7fda1fd71fb7484a5c591/files/receipts/11-NormRestriction-adapted-result.json.md) | `71921ef0-faa4-4432-8379-7da6777e63d9` | 0/0 | Patch06 NormRestriction passed; norm-square inspection. |
-| 12 | [request](/home/taskhub/pilot/drafts/ece1c58f-95d0-4ad6-9ddd-adb07dc29028/revision-3-2df3e8c2ccf60e3bbabb54ea8c44f8a9ea332e5d97a7fda1fd71fb7484a5c591/files/receipts/12-FiniteAbelian-adapted-request.json.md) / [result](/home/taskhub/pilot/drafts/ece1c58f-95d0-4ad6-9ddd-adb07dc29028/revision-3-2df3e8c2ccf60e3bbabb54ea8c44f8a9ea332e5d97a7fda1fd71fb7484a5c591/files/receipts/12-FiniteAbelian-adapted-result.json.md) | `c2f17bd3-4316-4b28-858b-83b518a331d7` | 4/0 | FiniteAbelian failed: coe_ofClass name, valuation coercion, two consequent timeouts. |
-| 13 | [request](/home/taskhub/pilot/drafts/ece1c58f-95d0-4ad6-9ddd-adb07dc29028/revision-3-2df3e8c2ccf60e3bbabb54ea8c44f8a9ea332e5d97a7fda1fd71fb7484a5c591/files/receipts/13-FiniteAbelian-adapted-request.json.md) / [result](/home/taskhub/pilot/drafts/ece1c58f-95d0-4ad6-9ddd-adb07dc29028/revision-3-2df3e8c2ccf60e3bbabb54ea8c44f8a9ea332e5d97a7fda1fd71fb7484a5c591/files/receipts/13-FiniteAbelian-adapted-result.json.md) | `1624549e-2f37-4720-ab4f-1a7574e6ded1` | 1/0 | Patch07 failed: missing Valuation.ofClass_eq_toMonoidWithZeroHom. |
-| 14 | [request](/home/taskhub/pilot/drafts/ece1c58f-95d0-4ad6-9ddd-adb07dc29028/revision-3-2df3e8c2ccf60e3bbabb54ea8c44f8a9ea332e5d97a7fda1fd71fb7484a5c591/files/receipts/14-FiniteAbelian-adapted-request.json.md) / [result](/home/taskhub/pilot/drafts/ece1c58f-95d0-4ad6-9ddd-adb07dc29028/revision-3-2df3e8c2ccf60e3bbabb54ea8c44f8a9ea332e5d97a7fda1fd71fb7484a5c591/files/receipts/14-FiniteAbelian-adapted-result.json.md) | `eb59f77b-6d67-40ce-b68f-5e6131265e6c` | 1/0 | Patch08 failed: rewrite expected ofClass, not toMonoidWithZeroHom. |
-| 15 | [request](/home/taskhub/pilot/drafts/ece1c58f-95d0-4ad6-9ddd-adb07dc29028/revision-3-2df3e8c2ccf60e3bbabb54ea8c44f8a9ea332e5d97a7fda1fd71fb7484a5c591/files/receipts/15-FiniteAbelian-adapted-request.json.md) / [result](/home/taskhub/pilot/drafts/ece1c58f-95d0-4ad6-9ddd-adb07dc29028/revision-3-2df3e8c2ccf60e3bbabb54ea8c44f8a9ea332e5d97a7fda1fd71fb7484a5c591/files/receipts/15-FiniteAbelian-adapted-result.json.md) | `7918c040-3243-4059-91c8-ed0940c6e2ec` | 5/0 | Patch09 failed: two further valuation coercions, consequent goal/timeouts. |
-| 16 | [request](/home/taskhub/pilot/drafts/ece1c58f-95d0-4ad6-9ddd-adb07dc29028/revision-3-2df3e8c2ccf60e3bbabb54ea8c44f8a9ea332e5d97a7fda1fd71fb7484a5c591/files/receipts/16-FiniteAbelian-adapted-request.json.md) / [result](/home/taskhub/pilot/drafts/ece1c58f-95d0-4ad6-9ddd-adb07dc29028/revision-3-2df3e8c2ccf60e3bbabb54ea8c44f8a9ea332e5d97a7fda1fd71fb7484a5c591/files/receipts/16-FiniteAbelian-adapted-result.json.md) | `75a0948a-5e35-4372-85b2-cb780f0839e9` | 0/0 | Patch10 FiniteAbelian passed; filtered theorem inspection. |
-| 17 | [request](/home/taskhub/pilot/drafts/ece1c58f-95d0-4ad6-9ddd-adb07dc29028/revision-3-2df3e8c2ccf60e3bbabb54ea8c44f8a9ea332e5d97a7fda1fd71fb7484a5c591/files/receipts/17-ShrinkTransport-adapted-request.json.md) / [result](/home/taskhub/pilot/drafts/ece1c58f-95d0-4ad6-9ddd-adb07dc29028/revision-3-2df3e8c2ccf60e3bbabb54ea8c44f8a9ea332e5d97a7fda1fd71fb7484a5c591/files/receipts/17-ShrinkTransport-adapted-result.json.md) | `3a0b7569-da78-4f54-a0e5-92268495c2f5` | 0/0 | ShrinkTransport passed; universe-polymorphic local-field instance inspection. |
-| 18 | [request](/home/taskhub/pilot/drafts/ece1c58f-95d0-4ad6-9ddd-adb07dc29028/revision-3-2df3e8c2ccf60e3bbabb54ea8c44f8a9ea332e5d97a7fda1fd71fb7484a5c591/files/receipts/18-Declarations-request.json.md) / [result](/home/taskhub/pilot/drafts/ece1c58f-95d0-4ad6-9ddd-adb07dc29028/revision-3-2df3e8c2ccf60e3bbabb54ea8c44f8a9ea332e5d97a7fda1fd71fb7484a5c591/files/receipts/18-Declarations-result.json.md) | `ccb09f04-5bc8-4903-b5d5-c3566b6a5203` | 1/0 | Diagnostic failed only on unsupported pp.width option. |
-| 19 | [request](/home/taskhub/pilot/drafts/ece1c58f-95d0-4ad6-9ddd-adb07dc29028/revision-3-2df3e8c2ccf60e3bbabb54ea8c44f8a9ea332e5d97a7fda1fd71fb7484a5c591/files/receipts/19-Declarations-request.json.md) / [result](/home/taskhub/pilot/drafts/ece1c58f-95d0-4ad6-9ddd-adb07dc29028/revision-3-2df3e8c2ccf60e3bbabb54ea8c44f8a9ea332e5d97a7fda1fd71fb7484a5c591/files/receipts/19-Declarations-result.json.md) | `e0d2ce20-20b3-46ac-bb8d-d5e0977a07e5` | 0/0 | Twelve complete binder signatures and transitive axiom lists passed. |
-| 20 | [request](/home/taskhub/pilot/drafts/ece1c58f-95d0-4ad6-9ddd-adb07dc29028/revision-3-2df3e8c2ccf60e3bbabb54ea8c44f8a9ea332e5d97a7fda1fd71fb7484a5c591/files/receipts/20-ExplicitDeclarations-request.json.md) / [result](/home/taskhub/pilot/drafts/ece1c58f-95d0-4ad6-9ddd-adb07dc29028/revision-3-2df3e8c2ccf60e3bbabb54ea8c44f8a9ea332e5d97a7fda1fd71fb7484a5c591/files/receipts/20-ExplicitDeclarations-result.json.md) | `0df21ace-8798-4a8b-9f43-0f4334d362e5` | 0/0 | Same twelve with explicit implicit arguments passed. |
-| 21 | [request](/home/taskhub/pilot/drafts/ece1c58f-95d0-4ad6-9ddd-adb07dc29028/revision-3-2df3e8c2ccf60e3bbabb54ea8c44f8a9ea332e5d97a7fda1fd71fb7484a5c591/files/receipts/21-Declarations-resume-request.json.md) / [result](/home/taskhub/pilot/drafts/ece1c58f-95d0-4ad6-9ddd-adb07dc29028/revision-3-2df3e8c2ccf60e3bbabb54ea8c44f8a9ea332e5d97a7fda1fd71fb7484a5c591/files/receipts/21-Declarations-resume-result.json.md) | `9ed9ccb3-ed5a-4cae-a3ce-2b8f22e4e4ae` | 0/0 | Resumed final six-root diagnostic passed; all 24 messages equal run19. |
-| 22 | [request](/home/taskhub/pilot/drafts/ece1c58f-95d0-4ad6-9ddd-adb07dc29028/revision-3-2df3e8c2ccf60e3bbabb54ea8c44f8a9ea332e5d97a7fda1fd71fb7484a5c591/files/receipts/22-Declarations-resume-request.json.md) / [result](/home/taskhub/pilot/drafts/ece1c58f-95d0-4ad6-9ddd-adb07dc29028/revision-3-2df3e8c2ccf60e3bbabb54ea8c44f8a9ea332e5d97a7fda1fd71fb7484a5c591/files/receipts/22-Declarations-resume-result.json.md) | `2ffb9676-c4af-465a-8324-2ccace7df8ee` | 0/0 | Second resumed diagnostic passed; all 24 messages equal run19. |
+| Run | E/W | Outcome |
+| --- | --- | --- |
+| 01 | 14/0 | Unchanged NormResidue failed: KummerDelta, HenselianFinite, ValuedAdicComplete. |
+| 02 | 10/1 | Patch01 failed: additive-hom conversion selected incompatible integer-module instance. |
+| 03 | 0/0 | Patch02 edited leaves passed. |
+| 04 | 0/0 | Adapted NormResidue passed; Artin-map inspection. |
+| 05 | 0/0 | Adapted GeneralTowerNaturality passed; tower inspection. |
+| 06 | 0/0 | Adapted UnramifiedNormalization passed; residue-formula inspection. |
+| 07 | 7/2 | NormRestriction failed: older Valuation.map API. |
+| 08 | 1/2 | Patch03 failed: order isomorphism has no .monotone projection. |
+| 08r | 1/2 | Resume leaf check reproduced run08. |
+| 09 | 1/1 | Patch04 failed: valuation-map simplification left surjectivity goal. |
+| 10 | 1/2 | Patch05 failed: adding map_apply did not discharge that goal. |
+| 11 | 0/0 | Patch06 NormRestriction passed; norm-square inspection. |
+| 12 | 4/0 | FiniteAbelian failed: coe_ofClass name, valuation coercion, two consequent timeouts. |
+| 13 | 1/0 | Patch07 failed: missing Valuation.ofClass_eq_toMonoidWithZeroHom. |
+| 14 | 1/0 | Patch08 failed: rewrite expected ofClass, not toMonoidWithZeroHom. |
+| 15 | 5/0 | Patch09 failed: two further valuation coercions, consequent goal/timeouts. |
+| 16 | 0/0 | Patch10 FiniteAbelian passed; filtered theorem inspection. |
+| 17 | 0/0 | ShrinkTransport passed; universe-polymorphic local-field instance inspection. |
+| 18 | 1/0 | Diagnostic failed only on unsupported pp.width option. |
+| 19 | 0/0 | Twelve complete binder signatures and transitive axiom lists passed. |
+| 20 | 0/0 | Same twelve with explicit implicit arguments passed. |
+| 21 | 0/0 | Resumed final six-root diagnostic passed; all 24 messages equal run19. |
+| 22 | 0/0 | Second resumed diagnostic passed; all 24 messages equal run19. |
 
 Only run01 tested an unchanged selected root. Later roots were checked in the
 adapted copy, including shared baseline fixes; they are not independent
@@ -141,17 +144,17 @@ The per-run `*-inputs.json.md` files record cumulative adapted NYLL hashes where
 present. For the initial runs, originals plus patches01/02 specify the source
 changes; diagnostic source texts and both printers are retained separately.
 Failed compiler diagnostics may contain Lean's recovery placeholder text; those
-failures are retained as failures, not accepted source or proof evidence.
+failures are retained as failures, not as source or proof evidence.
 No proof holes were inserted into the port sources.
 
 ## 4. Compatibility changes and semantic assessment
 
-[Patch10](/home/taskhub/pilot/drafts/ece1c58f-95d0-4ad6-9ddd-adb07dc29028/revision-3-2df3e8c2ccf60e3bbabb54ea8c44f8a9ea332e5d97a7fda1fd71fb7484a5c591/files/patches/patch-10.diff.md) is the final cumulative nine-module diff (payload SHA-256
+Patch10 (`patches/patch-10.diff.md` in the evidence draft) is the final cumulative nine-module diff (payload SHA-256
 `385b2353d0b3a0942433de5adfa4ab948687e70a5f33790284973b584e52421b`).
 Patches01–09 preserve intermediate attempts; patch03 contains only its new leaf
 edit, whereas patch10 contains every final change. The inventory records both
 original and final SHA-256 for each changed source. All changes retain the
-original header and add an explicit Worker 25 modification notice.
+original header and add an explicit modification notice.
 
 Paths below are relative to `Nyll/`; the diff supplies exact original/adapted
 line locations and the evidence's `modified/` directory supplies full texts.
@@ -172,14 +175,14 @@ These are assessed as API/elaboration adaptations. None changes a selected
 reciprocity theorem's hypotheses or conclusion, and no new mathematical
 assumption was added. The changed definition of `localIntegerValuation` retains
 its original evaluation formula, which compiled in the target environment.
-This assessment is based on the diff and successful checks, and still requires
-independent semantic review in a public port. It is not a semantic audit of every
+This assessment is based on the diff and successful checks, and a public port
+still needs its own semantic check. It is not a semantic audit of every
 line of the 422-module dependency union. No heartbeat limit was increased.
 The unsupported `pp.width` was only a diagnostic setting, removed before run19.
 
 ## 5. Attribution and proof-evidence limits
 
-[The inventory verification](/home/taskhub/pilot/drafts/ece1c58f-95d0-4ad6-9ddd-adb07dc29028/revision-3-2df3e8c2ccf60e3bbabb54ea8c44f8a9ea332e5d97a7fda1fd71fb7484a5c591/files/inventory-verification.json.md) records the following byte-level inventory. All 422 source files
+The inventory verification (`inventory-verification.json.md` in the evidence draft) records the following byte-level inventory. All 422 source files
 have the same header: copyright 2026 Naganori Yamaguchi, Apache-2.0, authors
 Naganori Yamaguchi (assisted by OpenAI Codex). Root `LICENSE` and `NOTICE` were
 preserved in every original copy and the adapted workspace; verbatim copies are
@@ -211,12 +214,12 @@ The printer can abbreviate proof terms. The evidence does not claim retention of
 complete raw kernel-expression files: service inspections recorded expression
 hashes and byte counts, while their temporary expression files were removed.
 Likewise, `statement_returns_prop: false` in theorem/definition inspections is
-not a failed validation of a submitted host Prop: none was submitted here.
+not a failed validation of a submitted Library Prop: none was submitted here.
 
 ## 6. Required Library adapters
 
-The comparison is against the exact interfaces pinned in [the host-file inventory](/home/taskhub/pilot/drafts/ece1c58f-95d0-4ad6-9ddd-adb07dc29028/revision-3-2df3e8c2ccf60e3bbabb54ea8c44f8a9ea332e5d97a7fda1fd71fb7484a5c591/files/host-files.json.md). The
-unchanged host targets are
+The comparison is against the exact interfaces pinned in the inventory of Library files (`host-files.json.md` in the evidence draft). The
+unchanged Library targets are
 [`FiniteAbelianReciprocity`, `FiniteAbelianNormTransfer`, and `FiniteAbelianRestriction`](../../Langlands/ClassFieldTheory/Local/FiniteReciprocityStatement.lean)
 in namespace `Langlands.LocalClassField`. They quantify over all primes and
 independent field universes and, where used, arbitrary supplied `TF` and `TE`.
@@ -225,7 +228,7 @@ The following are future proof obligations, not accomplishments of this build.
 1. **Actual norm quotient and its evaluation.** NYLL's
    `LocalFieldTheory.normUnits` is `Units.map (Algebra.norm K)`, and its
    `localNormSubgroup` is that map's range. This matches the actual subgroup in
-   the host [`Norms`](../../Langlands/ClassFieldTheory/Local/Norms.lean) interface
+   the Library's [`Norms`](../../Langlands/ClassFieldTheory/Local/Norms.lean) interface
    after unfolding and aligning finite-dimensional instances. Use NYLL's
    `abelianLocalArtinMap_ker` and surjectivity to descend the named continuous
    map, prove the quotient evaluation formula on `QuotientGroup.mk a`, and
@@ -244,44 +247,44 @@ The following are future proof obligations, not accomplishments of this build.
    theorem supplies restriction for these exact maps; the compiled norm square
    supplies norm compatibility. Specialize its four-field square to a tower,
    prove the restriction/scalar-inclusion identifications, and use the norm of
-   an included scalar (the degree power) for the host transfer formula.
+   an included scalar (the degree power) for the Library's transfer formula.
    The audit's `transfer_of_norm` probe is prior evidence for that route, not a
-   new host transfer proof here. Do not select unrelated existential maps for
+   new transfer proof for the Library here. Do not select unrelated existential maps for
    normalization, inertia and tower clauses.
 3. **Geometric sign and residue formulation.** The required comparison is
    `LocalFieldTheory.IsNonarchimedeanLocalField.valuationMap F.Carrier
    (Additive.ofMul a) = - TF.ord (a : F.Carrier)` with the
    exact installed valuation. The audit's sign probe establishes its proposed
    formula in its tested setting; the public adapter must prove it for the
-   supplied host data. If `TF.ord a = 1`, the input satisfying NYLL's
+   supplied Library data. If `TF.ord a = 1`, the input satisfying NYLL's
    `valuationMap π = 1` is `π = a⁻¹`. The compiled unramified theorem then acts
    by residue-cardinality power under `Artin(a⁻¹) = Artin(a)⁻¹`, which is the
-   inverse automorphism in the host geometric clause. Identify NYLL's integer
+   inverse automorphism in the Library's geometric clause. Identify NYLL's integer
    ring and residue map with those of `TF`/`TE`; `TF.residueCardinality` is
    `Nat.card TF.ResidueField`. Convert equality in the residue field to the
-   host inequality `TE.discreteValuation (σ x - x^q) < 1` for integral `x`.
+   Library's inequality `TE.discreteValuation (σ x - x^q) < 1` for integral `x`.
 4. **Ramified normalization.** The printed normalization theorem assumes
-   `IsUnramifiedValuedExtension K L`; the host reciprocity Prop does not.
+   `IsUnramifiedValuedExtension K L`; the Library's reciprocity Prop does not.
    Construct the maximal unramified subextension in a finite abelian
    extension, prove its unramifiedness and residue-field identification with
    the full extension, and prove compatibility of residue action with
    restriction. Combine this with the same Artin family's tower theorem and
-   the unramified formula. The six-root build alone does not provide this host
-   ramified bridge. It needs a separate statement and proof.
+   the unramified formula. The six-root build alone does not provide this
+   ramified bridge for the Library. It needs a separate statement and proof.
 5. **The `t = 0` inertia clause.** Specialize
    `finiteAbelian_filteredLocalReciprocity` at zero, identify its zeroth unit
    step using `LocalFieldTheory.principalUnits_zero`, and use
    `localUpperRamificationGroup_zero_eq_residue_ker`. The latter explicitly
    requires an extension valuation, integral closure and finiteness of the
    integer-ring module. Translate the valuation-ring units to
-   `TF.ord a = 0`, the residue-kernel condition to the host congruence on every
+   `TF.ord a = 0`, the residue-kernel condition to the Library's congruence on every
    integral `x`, and carry the equality through the quotient evaluation lemma.
-   A subgroup equality by itself is not the displayed host existential iff.
+   A subgroup equality by itself is not the displayed existential iff of the Library.
 6. **Extension-field instances with the supplied data.** `TF` supplies the
    base topology, valuative relation and local-field instance. Normalization
    also needs an extension `UniformSpace` compatible with `TE.topology` and
    `IsUniformAddGroup`; norm and residue results need
-   `Valuation.HasExtension (valuation F) (valuation E)`. Each host
+   `Valuation.HasExtension (valuation F) (valuation E)`. Each Library
    `TopologicalData` carries a valuative extension over `Padic p`; that alone
    is not the requested instance over the intermediate field `F`. Prove the
    compatibility through the tower, using uniqueness/comparison of extended
@@ -299,12 +302,12 @@ The following are future proof obligations, not accomplishments of this build.
    tower, and prove transport of units, norms, Galois automorphisms,
    restrictions, topology, valuation and residue action. Return the same
    family to arbitrary `F : Type u`, `E : Type v`, `L : Type w`.
-   The published
+   The Library's
    [`ExtensionFieldTransport`](../../Langlands/ClassFieldTheory/Local/ExtensionFieldTransport.lean)
    supplies `extensionFiniteIntermediate`, `extensionIntermediatePadicEquiv`
    and `extensionIntermediateUnitsEquiv` for an image field in
    `AlgebraicClosure F.Carrier`; it stays in the universe of `F` and so does
-   not alone solve the universe-0 reduction. The published
+   not alone solve the universe-0 reduction. The Library's
    [`ExtensionValuationTransport`](../../Langlands/ClassFieldTheory/Local/ExtensionValuationTransport.lean)
    and [`CanonicalTransport`](../../Langlands/LocalField/CanonicalTransport.lean)
    provide residue-cardinality, order and valuation identities for canonical
@@ -313,44 +316,51 @@ The following are future proof obligations, not accomplishments of this build.
 
 ## 7. Small public boundaries and retained follow-up plan
 
-Unit 1 has resolved the compilation uncertainty. It has not chosen the public
-architecture. Worker 0 and owners 21, 42, 49, 45 and 4 must make unit 2's explicit
-decision using this report: a separate namespaced construction alongside the
-cohomological route, or use of NYLL as a proof route. Their earlier in-principle
-agreement authorized these private checks only. Existing construction,
-class-formation and cup/transfer ownership stays in place.
+Step 1 has resolved the compilation uncertainty. It has not chosen the public
+architecture. Step 2 is that decision, made on the basis of this report: a
+separate namespaced construction alongside the cohomological route, or use of
+NYLL as a proof route. The existing construction, class formation and
+cup/transfer stay in place.
 
-If that decision authorizes a port, submit focused dependency-first units.
+**Later state.** The Library has since taken NYLL in whole as the library copy
+`Nyll/` (licence and notice in `licenses/NYLL/`), and it proves the three Library
+Props: `finiteAbelianReciprocityTheorems`
+(`Langlands/ClassFieldTheory/Local/FiniteReciprocityProof.lean`) proves
+`FiniteAbelianReciprocityTheorems`, the conjunction of `FiniteAbelianReciprocity`,
+`FiniteAbelianNormTransfer` and `FiniteAbelianRestriction`. The plan below is the
+one this report proposed.
+
+If that decision chooses a port, make focused dependency-first modules.
 The smallest evidenced compatibility boundaries are the nine source modules in
 section 4; group only tightly related small leaves, each with its own paired
 explanation and relevant Prop targets for proofs. The 422-module union is a
-build input, not one reviewable public contribution. Unchanged dependencies
-also need reviewable boundaries and original-source correspondence. The closure
+build input, not one checkable public module. Unchanged dependencies
+also need checkable boundaries and original-source correspondence. The closure
 manifests permit an exact dependency-first partition: the initial 258 modules
 must be divided into definitions, statements and proofs; subsequent root stages
 add 4, 7, 19, 132 and 2 new modules respectively. Those counts are incremental
-build scope, not suitable automatic review-unit sizes. Keep the norm quotient,
+build scope, not suitable automatic module sizes. Keep the norm quotient,
 map evaluation, tower, norm square, residue and inertia adapters separately
-reviewable. Choose any smaller replacement proof route only after a new focused
+checkable. Choose any smaller replacement proof route only after a new focused
 check; no smaller import closure is claimed here.
 
-Retain all remaining audit section 6 units in this order:
+Retain all remaining audit section 6 steps in this order:
 
-1. Make the unit 2 owner decision, then separately authorize the necessary
-   public definition/statement/proof tasks. Existing host definitions and exact
+1. Make the step 2 decision, then the necessary
+   public definition, statement and proof modules. Existing Library definitions and exact
    target statements stay unchanged.
-2. Publish Prop-valued targets for the `Type 0` instances
+2. State Prop-valued targets for the `Type 0` instances
    `FiniteAbelianReciprocity.{0,0}`, `FiniteAbelianNormTransfer.{0,0,0}` and
    `FiniteAbelianRestriction.{0,0,0}`, the implication to their
    arbitrary-universe counterparts, and ramified residue normalization via
    the maximal unramified subextension. Define required adapters first.
-3. After the relevant port dependencies have independent acceptance and
-   publication, prove the norm-quotient equivalences with evaluation on the
+3. After the relevant port dependencies are in the
+   Library, prove the norm-quotient equivalences with evaluation on the
    named Artin map, then the universe-0 restriction theorem, then norm/transfer.
 4. Prove geometric residue normalization for unramified extensions and then
    the ramified case, followed by the `t = 0` inertia clause.
 5. Prove the universe-transport implication and assemble the arbitrary-universe
-   host Props. Every proof task names an already published Prop declaration.
+   Library Props. Every proof names a Prop declaration already in the Library.
 
 NYLL's class-field axiom does not discharge the project's class formation,
 one simultaneous invariant family, relative fundamental classes, genuine
@@ -358,9 +368,6 @@ cup/transfer, ordinary-cochain/Tate comparison or absolute corestriction
 obligations. Equality with `geometricReciprocityOfCup` requires a separate
 proved comparison if consumed later. There is no Weil-group component here,
 so no `ReciprocitySystemStatement` or common-closure/Weil coherent system follows.
-Historical task `7b4a513d-a3bc-4cb7-af3c-03c4580608f7` was absent in the owner's
-checks; the active construction owner is Worker 21 on
-`6abce376-f18c-478f-9309-c0c1010f7a99`. This report invents no task migration.
 
 ## Appendix. Selected full binder types, universes and axioms
 

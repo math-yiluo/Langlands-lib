@@ -39,9 +39,9 @@ theorem invariantCoverSpectrum_toAction (c : Domain.FiniteCover d.obj)
 theorem invariantCoverSpectrum_mk (c : Domain.FiniteCover d.obj)
     (hc : ∀ i, H ≤ ρ.locusOpenSubgroup (c.obj i))
     (g : H) (i : Fin c.size) (x : BanachSpectrum (c.obj i).algebra) :
-    ConcreteCategory.hom ((ρ.invariantCoverSpectrum H d c hc).obj.ρ g) ⟨i, x⟩ =
+    ConcreteCategory.hom ((ρ.invariantCoverSpectrum H d c hc).obj.ρ g).asHom ⟨i, x⟩ =
       Sigma.mk i (ConcreteCategory.hom
-        ((((ρ.invariantSpectrumFunctor H).obj ⟨c.obj i, hc i⟩).obj).ρ g) x) := rfl
+        ((((ρ.invariantSpectrumFunctor H).obj ⟨c.obj i, hc i⟩).obj).ρ g).asHom x) := rfl
 
 /-- Lift the original total quotient at the prescribed preserving subgroup. -/
 def invariantCoverQuotientContinuous (c : Domain.FiniteCover d.obj)

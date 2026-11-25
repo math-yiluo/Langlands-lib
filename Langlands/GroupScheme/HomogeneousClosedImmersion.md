@@ -1,8 +1,8 @@
 # Closed equivariant embeddings of homogeneous reduced schemes
 
-Internal supporting construction for the centralizer–Borel intersection argument,
-by Worker 1438. It uses the published generic-flatness and translation argument
-of Worker 716 in `OrbitMapFlatProof`, and the actual scheme-action interfaces.
+Internal supporting construction for the centralizer–Borel intersection argument.
+It uses the published generic-flatness and translation argument
+in `OrbitMapFlatProof`, and the actual scheme-action interfaces.
 It defines the reduced closed image `reducedClosedImage` and its canonical
 inclusion `reducedClosedImageι`. This helper supplies no proof of the main centralizer statement.
 

@@ -1,8 +1,8 @@
 # The transfer law for the Tits obstruction in coset-sum form
 
-This module states the transfer law of Task 7603 (clause 3) for an intermediate field `E` of
+This module states the transfer law for the Tits obstruction for an intermediate field `E` of
 `K / k`, with the coset sum of `SimplyConnected/StarFixedWeights`. It then specializes the law
-to the simple-vertex field of a Tits index (clause 4). The Brauer-level content is the
+to the simple-vertex field of a Tits index. The Brauer-level content is the
 transfer theorem `GaloisPinningData.titsObstructionValue_transfer` of `Reductive/TitsTransfer`.
 That theorem is stated for an enumeration of the embeddings of `E` into a finite Galois
 extension `N` and for extensions of these embeddings to `K`. This module supplies those choices
@@ -10,9 +10,10 @@ and identifies the embedding-indexed sum with the coset sum.
 
 Throughout, `k` and `K` are fields in one universe `u`, and `E : IntermediateField k K`. The
 corestriction is the Library's `corHom k E : BrauerGroup E →+ BrauerGroup k`
-(`Algebra/BrauerCorestriction/Hom`, Task 7575). It needs `E / k` finite and separable, and
+(`Algebra/BrauerCorestriction/Hom`). It needs `E / k` finite and separable, and
 no other hypothesis on `k`. In particular no result here assumes `k` infinite. The extension
-`K / k` is any Galois extension; clause 3 of the task is the case `K = SeparableClosure k`.
+`K / k` is any Galois extension; the specialization to a Tits index below is the case
+`K = SeparableClosure k`.
 
 ## Embeddings and a transversal of `Gal(K/E)`
 
@@ -66,7 +67,7 @@ coset of `Γ_E` and counts a weight again when different cosets give the same we
 
 * `isSimplyConnected_baseChange`: the base change `G_E` of a simply connected `G` is simply
   connected. This is the Library's `isSimplyConnectedFieldExtension`.
-* `titsObstruction_cosetSum` (clause 3): assume `K / k` Galois, `G` simply connected, `E / k`
+* `titsObstruction_cosetSum`: assume `K / k` Galois, `G` simply connected, `E / k`
   finite, and `λ ∈ d.fixedWeights Γ_E`. Then
 
   `d.titsObstruction hG ⟨d.cosetSum E λ, _⟩ =
@@ -94,7 +95,7 @@ coset of `Γ_E` and counts a weight again when different cosets give the same we
 * `titsObstruction_comp_cosetSumHom`: the same identity, with the right side written as the
   composite `corHom k E ∘ α_{G_E,E} ∘ fixedWeightsBaseChangeEquiv E` applied to `λ`.
 
-## Specialization to the simple-vertex field (clause 4)
+## Specialization to the simple-vertex field
 
 Let `G` be an affine group scheme over `Spec K`, locally of finite type and simply connected
 (`hsc`). Let `d : TitsIndexData G` be a Tits index whose Galois pinning data `d.pinning` live
@@ -123,8 +124,8 @@ the actual fundamental weights.
 
 ## Provenance
 
-Derived. The results are integral-weight statements required by clauses 3 and 4 of
-Task 7603. They are not the transfer proposition of Tits (1971).
+Derived. The results are integral-weight statements: the transfer law and its
+specialization to the simple-vertex field. They are not the transfer proposition of Tits (1971).
 
 * Tits (1971), Proposition 5.1 (printed p. 207), concerns the homomorphism
   `β_{G,k} : C*^Γ → Br k` on Galois-invariant central characters. For `c₁ ∈ C*` with exact
@@ -144,7 +145,7 @@ the two statements have different domains:
 
 For example, take split `SL₂` over `ℚ`, `E = ℚ(√2)` and `λ` the fundamental weight. The coset
 sum is `2λ`, whose central character is trivial. The central character of `λ` is the
-nontrivial character of `μ₂`, with stabilizer `Γ` and `k₁ = ℚ`. For the clause-4
+nontrivial character of `μ₂`, with stabilizer `Γ` and `k₁ = ℚ`. For the simple-vertex-field
 specialization the stabilizer of `ϖ_a` is proved to be the vertex stabilizer, so the coset
 sum is the orbit sum of `ϖ_a` without multiplicities. The stabilizer of the central character
 of `ϖ_a` can still be larger, and this module makes no claim about it.

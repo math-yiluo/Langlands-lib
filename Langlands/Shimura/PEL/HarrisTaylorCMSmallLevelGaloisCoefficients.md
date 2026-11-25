@@ -167,7 +167,7 @@ and their compatibility is proved.
 
 ## Provenance and retained obligations
 
-This unit is an internal consequence of the existing CM over-towers, their
+This module is an internal consequence of the existing CM over-towers, their
 pullback projections and scheme self-arrow identity, and the generic
 `RestrictedLevelTowerCanonicalCoefficients` and `RestrictedLevelTowerGalois`
 constructions. It asserts no additional theorem from external literature.
@@ -176,7 +176,7 @@ its coefficients and cohomology use the existing small-etale sheaf functors.
 
 `Gamma` is used as an algebraic group here. No topology on it, continuity of
 its action, or adic limit is constructed. The coefficient input is a sheaf
-on `Spec F`. This unit does not construct the general nonconstant Harris
+on `Spec F`. This module does not construct the general nonconstant Harris
 coefficient system from an algebraic representation, its lattice descent, or
 an all-level comparison for that system. Arbitrary sheaves on `Spec Fbar`
 remain the distinct input of `HarrisTaylorCMSmallLevelBaseCoefficients`.
@@ -185,4 +185,4 @@ Exact representability, the named geometric hypotheses, existence of the
 required global arithmetic datum, small-level nonemptiness, and the source's
 canonical-model and reflex-field comparisons remain separate obligations.
 There is no unconditional representability, identification of `F` as a reflex
-field, compactly supported cohomology, or whole-task completion claim here.
+field, or compactly supported cohomology here.

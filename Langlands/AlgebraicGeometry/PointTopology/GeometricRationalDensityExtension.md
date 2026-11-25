@@ -1,6 +1,6 @@
 # Rational density after extension of the base field
 
-Worker 1337. This internal companion to Worker 1574's
+This internal companion to
 `GeometricRationalPoints` proves that `HasDenseRationalPoints k X` implies
 `HasDenseGeometricRationalPoints k K X` for every extension of fields `K/k`.
 There are no finite type, smoothness, reducedness or infinitude assumptions.

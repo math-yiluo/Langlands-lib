@@ -1,7 +1,5 @@
 # Basis coordinates on unitary unramified characters
 
-*Worker 806*
-
 This module supplies the rational-coordinate calculations for
 `RationalUnitaryUnramifiedSubmanifoldStatement`, part of Renard V.3.20. The
 source is David Renard, *Représentations des groupes réductifs p-adiques*,

@@ -1,6 +1,6 @@
 # Quotient reduction on actual special-atlas comparison classes
 
-This internal unit descends the actual special-atlas reduction through
+This module descends the actual special-atlas reduction through
 refined formal comparison. It uses `SpecialAtlasReduction`,
 `SpecialAtlasClassBaseChangeAlong` and the actual canonical quotient-square
 comparison from `AtlasOrderReductionBaseChange`. It makes no additional

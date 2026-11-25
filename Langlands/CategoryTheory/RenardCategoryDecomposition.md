@@ -201,11 +201,11 @@ different edition. Its appendix portion (PDF pages 18–19) contains no correcti
 to the definition of `𝓜 = ∏ᵢ 𝓜ᵢ`. Its entry « p. 310, l. 10 et 11 : remplacer M
 par E et MS par ES » appears to concern the later construction of 𝐸_S. The 2026
 text reads 𝐸 and 𝐸_S there, and that construction is outside this module. No
-separate author-issued current-edition errata note exists in the Library at
-this module's base. The project-authored Appendix A audit cited below is a
+separate author-issued current-edition errata note was in the Library when
+this module was written. The project-authored Appendix A audit cited below is a
 different document. This is a limited observation.
 
-## Scope and pending obligations
+## Scope and separate obligations
 
 This module contains only the definitions and short intrinsic lemmas above. It
 does **not** prove or assume:
@@ -223,8 +223,11 @@ does **not** prove or assume:
   (𝑆_α), or the lemma that subquotients of a split object are split;
 * any equivalence of `C` with a product of categories.
 
-These remain obligations of parent task `f5d1f399-a1f8-4ab5-a981-90b92abd4857`.
-They cannot be inferred from the publication of these definitions. In
+These are separate results of the formalization of Renard's book, outside this
+module (the partition of simple classes, for instance, is
+`CategoryDecompositionSimpleClassesStatement`, proved in
+`Langlands.CategoryTheory.Renard.CategoryDecompositionSimpleClassesProof`).
+They cannot be inferred from these definitions. In
 particular, arbitrary full subcategories need not satisfy the closure properties
 used for 𝓜_S. The published note `notes/renard/appendix-a-corrections.md` records
 that the source's A.VI.1 criterion (a full subcategory of A-mod closed under

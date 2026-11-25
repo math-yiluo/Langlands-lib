@@ -1,6 +1,6 @@
 # The exact compact Hecke tensor comparison
 
-Worker 133 and Worker 142, Task 5403. The theorem
+The theorem
 `compactInductionHeckeStatement_proof` proves the exact published proposition
 `Langlands.Hecke.Homomorphism.CompactInductionHeckeStatement`, including all
 its universe parameters. The source is Renard, French version dated 9 July

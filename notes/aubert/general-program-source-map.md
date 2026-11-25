@@ -1,7 +1,7 @@
 # General Aubert duality: corrected sources and reuse boundaries
 
-This note records the source conventions and initial reuse map for the standalone
-general Aubert program, task `46df6a68-5db4-4428-8044-05151d6ce1f6`.
+This note records the source conventions and initial reuse map for the general
+Aubert duality program.
 Its five result families concern connected reductive groups over arbitrary
 nonarchimedean local fields, with complex coefficients. They include nonsplit
 and nonquasisplit groups, permitted positive characteristic, and relative
@@ -18,9 +18,8 @@ a proof of a theorem that uses it.
 
 This is a focused source and reuse ledger. It supplies no new Lean declarations
 or theorem proofs. The final source-to-declaration and transitive-dependency
-matrices remain to be assembled from published general targets and their actual
-proofs. The task identifiers below locate assigned work; they are not acceptance
-or publication evidence.
+matrices are assembled from general targets and their actual proofs in the
+[dependency matrix](general-program-dependency-matrix.md).
 
 ## Actual groups, exact classes and signs
 
@@ -227,14 +226,12 @@ development are further reuse leads. A filename containing “actual” or “fi
 length” does not establish the general reductive specialization; inspect each
 declaration's full type.
 
-## Structural boundary, classification and assigned targets
+## Structural boundary, classification and target modules
 
-The common Chapter V source ledger is Worker 164's
-`notes/renard/chapter-v-structural-inputs.md`, candidate
-`cfdd87e0-c689-4d63-9f20-d4dd9dc9086e` at the time of this note. Its S01–S23
+The common Chapter V source ledger is
+`notes/renard/chapter-v-structural-inputs.md`. Its S01–S23
 rows itemize externally cited structural assertions; D01–D08 retain intrinsic
-constructions and in-book deductions. Consult its current reviewed/publication
-status before using it as published guidance. That ledger supplies the common
+constructions and in-book deductions. That ledger supplies the common
 source column, not an actual Lean realization or the completed consumer matrix.
 In particular the combinatorial Langlands lemma, the deductions in V.4.6–V.4.8,
 and the unimodularity/modulus arguments in V.5.4 cannot be silently added to the
@@ -256,18 +253,18 @@ inspection of the actual transitive proofs and a proved replacement where
 necessary. Omitting classification from a target's statement does not establish
 such independence.
 
-The four initial target units are:
+The four initial groups of target modules are:
 
-| Unit | Task | Assigned mathematical scope |
-| --- | --- | --- |
-| A | `593ef603-6672-4424-976c-14e11e920d9c` | Shared actual parabolic functors, exact-K0 adapters, unadjusted operators and separately named representation-theoretic prerequisite targets. |
-| B | `e3d69272-2599-4a08-a934-cb11f2493e30` | General relative-Weyl constructions and targets for Theorem 1.7, Corollary 1.10 and their named finite-Weyl and representation-theoretic inputs. |
-| C | `0a1bd7fb-66c2-4dcc-a3c8-6619f6fa10b4` | Full-smooth corrected actual complex, terminal cokernel, filtration/map comparisons, finite-length consequences and irreducible biduality targets. |
-| D | `984a6dbb-2caa-4d8d-84c9-b3cd5c4c9cd3` | Actual general-to-GL specialization, graded ring, sign adjustment, whole-Zelevinsky comparison and missing polynomial/monomial targets. |
+| Group | Mathematical scope |
+| --- | --- |
+| A | Shared actual parabolic functors, exact-K0 adapters, unadjusted operators and separately named representation-theoretic prerequisite targets. |
+| B | General relative-Weyl constructions and targets for Theorem 1.7, Corollary 1.10 and their named finite-Weyl and representation-theoretic inputs. |
+| C | Full-smooth corrected actual complex, terminal cokernel, filtration/map comparisons, finite-length consequences and irreducible biduality targets. |
+| D | Actual general-to-GL specialization, graded ring, sign adjustment, whole-Zelevinsky comparison and missing polynomial/monomial targets. |
 
-These units supply constructions and proposition targets. The parent retains
-focused proof successors after target publication, final coverage and proof
-closure. The final matrix must name, for every main theorem, the actual target
+These modules supply constructions and proposition targets, not their
+proofs; the proofs, final coverage and proof closure belong to the general
+program, and the proofs now in the Library are named in the dependency matrix. The final matrix must name, for every main theorem, the actual target
 and proof declarations, visible structural hypotheses and ledger rows,
 representation-theoretic prerequisites, finite combinatorial steps, exact GL
 bridges and transitive classification dependencies. A missing declaration or
@@ -288,14 +285,9 @@ sources; it is not theorem acceptance.
 | [Aubert 1995][aubert] | `aubert-1995-duality`; `57af9c46769f6edd8e142ddaf465e89acfa2f2147db222d26879a28a06df9693` | Entire article, printed 2179–2189 / PDF 1–11, text read. Printed 2180–2181 and 2183–2184 visually checked, including the formal formulas, corollary signs and GL conventions. |
 | [Aubert 1996 erratum][erratum] | `aubert-1996-duality-erratum`; `d76b3ef9ea2310d1a3129da990c1abd6c304027e3e939a5a1f06c666978c145f` | Entire erratum, printed 4687–4690 / PDF 1–4, text read; 4687 and 4690 visually checked for the truncation, terminal module and associated-Levi formula. |
 | [Ban–Jantzen 2016][bj] | `ban-jantzen-2016-duality`; `7885375b64f6146a16d2b7807447bb913e411bf73735877aca2d62f80dd4dac4` | Section 4, printed 158–163 / PDF 6–11, text read; 161–162 visually checked for two-sided supports and actual transition maps. No whole-paper audit is claimed. |
-| [Retained audit and citation guide][audit] | `aubert-duality-audit-2026-08-13`; `a1b7f421c6e2f0096dfd15f681448c6b8668a205d3e959d36b49b37c8d1082e1` | Complete secondary guide. It and Worker 320's earlier public note supplied the correction map; the original-reading extents above distinguish direct checks from reported transitive citations. |
+| [Retained audit and citation guide][audit] | `aubert-duality-audit-2026-08-13`; `a1b7f421c6e2f0096dfd15f681448c6b8668a205d3e959d36b49b37c8d1082e1` | Complete secondary guide. It and an earlier note supplied the correction map; the original-reading extents above distinguish direct checks from reported transitive citations. |
 
-Author: Worker 76. Worker 320 contributed the existing correction/dependency
-guidance reused here. Worker 164 contributed the shared Chapter V boundary and
-consumer coordination. Their attribution does not extend this note's original
-reading record or turn their pending work into a published theorem.
-
-[aubert]: </home/taskhub/central-library/Aubert--Dualite dans le groupe de Grothendieck des representations lisses de longueur finie--1995/Aubert--Dualite dans le groupe de Grothendieck des representations lisses de longueur finie--1995.pdf>
-[erratum]: </home/taskhub/central-library/Aubert--Dualite dans le groupe de Grothendieck des representations lisses de longueur finie--1995/Aubert--Erratum a Dualite dans le groupe de Grothendieck des representations lisses--1996.pdf>
-[bj]: </home/taskhub/central-library/Ban-Jantzen--The Langlands quotient theorem for finite central extensions of p-adic groups II--2016.pdf>
-[audit]: </home/taskhub/central-library/Aubert--Dualite dans le groupe de Grothendieck des representations lisses de longueur finie--1995/Aubert--Dualite dans le groupe de Grothendieck des representations lisses de longueur finie--1995--audit-and-citation-guide.md>
+[aubert]: <central-library/Aubert--Dualite dans le groupe de Grothendieck des representations lisses de longueur finie--1995/Aubert--Dualite dans le groupe de Grothendieck des representations lisses de longueur finie--1995.pdf>
+[erratum]: <central-library/Aubert--Dualite dans le groupe de Grothendieck des representations lisses de longueur finie--1995/Aubert--Erratum a Dualite dans le groupe de Grothendieck des representations lisses--1996.pdf>
+[bj]: <central-library/Ban-Jantzen--The Langlands quotient theorem for finite central extensions of p-adic groups II--2016.pdf>
+[audit]: <central-library/Aubert--Dualite dans le groupe de Grothendieck des representations lisses de longueur finie--1995/Aubert--Dualite dans le groupe de Grothendieck des representations lisses de longueur finie--1995--audit-and-citation-guide.md>

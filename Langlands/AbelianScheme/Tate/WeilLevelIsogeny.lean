@@ -89,8 +89,8 @@ local notation "levelTransportB" => weilAdelicLevelTransport preservation compos
 
 /-- The restricted isogeny map intertwines actual geometric monodromy. -/
 theorem weilAdelicFrameIsogeny_monodromy (q : ℚˣ) (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hf : multiple (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB))
     (gMon : FundamentalGroup s hs) (eta : FrameA s) :
@@ -104,8 +104,8 @@ theorem weilAdelicFrameIsogeny_monodromy (q : ℚˣ) (e : Rationalization.of A �
 
 /-- Postcomposition transports geometrically fixed orbits of actual compatible frames. -/
 def weilAdelicLevelIsogeny (U : Subgroup G) (q : ℚˣ) (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hf : multiple (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB)) :
     LevelA s hs htor hu U ≃ LevelB s hs htor hu U := by
@@ -123,8 +123,8 @@ local notation "levelIsogeny" => weilAdelicLevelIsogeny preservation composition
 
 /-- Right Hecke translation commutes with the isogeny map. -/
 theorem weilAdelicLevelIsogeny_translate {U U' : Subgroup G} (q : ℚˣ) (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hf : multiple (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB))
     (g : G) (hg : ∀ u ∈ U, g⁻¹ * u * g ∈ U') (x : LevelA s hs htor hu U) :
@@ -142,8 +142,8 @@ theorem weilAdelicLevelIsogeny_translate {U U' : Subgroup G} (q : ℚˣ) (e : Ra
 
 /-- Isogeny transport commutes with forgetting a finer level. -/
 theorem weilAdelicLevelIsogeny_forget {U U' : Subgroup G} (q : ℚˣ) (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hf : multiple (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB))
     (hU : U ≤ U') (x : LevelA s hs htor hu U) :
@@ -156,8 +156,8 @@ variable {Ω' : Type u} [Field Ω'] {t : Spec (.of Ω') ⟶ S}
 
 /-- The frame isogeny map commutes with actual geometric path transport. -/
 theorem weilAdelicFrameIsogeny_transport (q : ℚˣ) (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hf : multiple (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB))
     (p : fiberFunctor s hs ≅ fiberFunctor t ht) (eta : FrameA s) :
@@ -169,8 +169,8 @@ theorem weilAdelicFrameIsogeny_transport (q : ℚˣ) (e : Rationalization.of A �
 
 /-- The isogeny/path square on fixed compatible level orbits. -/
 theorem weilAdelicLevelIsogeny_transport (U : Subgroup G) (q : ℚˣ) (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hf : multiple (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB))
     (p : fiberFunctor s hs ≅ fiberFunctor t ht) (x : LevelA s hs htor hu U) :
@@ -230,8 +230,8 @@ local notation "levelTransportB" => weilPrimeToAdelicLevelTransport preservation
 
 /-- The restricted isogeny map intertwines actual geometric monodromy. -/
 theorem weilPrimeToAdelicFrameIsogeny_monodromy (q : ℚˣ) (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hf : multiple (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB))
     (gMon : FundamentalGroup s hs) (eta : FrameA s hAway) :
@@ -245,8 +245,8 @@ theorem weilPrimeToAdelicFrameIsogeny_monodromy (q : ℚˣ) (e : Rationalization
 
 /-- Postcomposition transports geometrically fixed orbits of actual compatible frames. -/
 def weilPrimeToAdelicLevelIsogeny (U : Subgroup G) (q : ℚˣ) (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hf : multiple (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB)) :
     LevelA s hs htor hu U ≃ LevelB s hs htor hu U := by
@@ -264,8 +264,8 @@ local notation "levelIsogeny" => weilPrimeToAdelicLevelIsogeny preservation comp
 
 /-- Right Hecke translation commutes with the isogeny map. -/
 theorem weilPrimeToAdelicLevelIsogeny_translate {U U' : Subgroup G} (q : ℚˣ) (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hf : multiple (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB))
     (g : G) (hg : ∀ u ∈ U, g⁻¹ * u * g ∈ U') (x : LevelA s hs htor hu U) :
@@ -283,8 +283,8 @@ theorem weilPrimeToAdelicLevelIsogeny_translate {U U' : Subgroup G} (q : ℚˣ) 
 
 /-- Isogeny transport commutes with forgetting a finer level. -/
 theorem weilPrimeToAdelicLevelIsogeny_forget {U U' : Subgroup G} (q : ℚˣ) (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hf : multiple (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB))
     (hU : U ≤ U') (x : LevelA s hs htor hu U) :
@@ -297,8 +297,8 @@ variable {Ω' : Type u} [Field Ω'] {t : Spec (.of Ω') ⟶ S}
 
 /-- The frame isogeny map commutes with actual geometric path transport. -/
 theorem weilPrimeToAdelicFrameIsogeny_transport (q : ℚˣ) (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hf : multiple (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB))
     (p : fiberFunctor s hs ≅ fiberFunctor t ht) (eta : FrameA s hAway) :
@@ -310,8 +310,8 @@ theorem weilPrimeToAdelicFrameIsogeny_transport (q : ℚˣ) (e : Rationalization
 
 /-- The isogeny/path square on fixed compatible level orbits. -/
 theorem weilPrimeToAdelicLevelIsogeny_transport (U : Subgroup G) (q : ℚˣ) (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hf : multiple (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB))
     (p : fiberFunctor s hs ≅ fiberFunctor t ht) (x : LevelA s hs htor hu U) :

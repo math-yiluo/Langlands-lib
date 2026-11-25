@@ -1,9 +1,8 @@
 # Integral root generation on adjoint pinned charts
 
-Worker 632.
-
 This internal construction isolates the integral criterion on the adjoint
-charts used in Task 6584. Its motivation is Brian Conrad, *Reductive group
+charts used in the proof that adjoint semisimple group schemes over an affine
+base are Weil restrictions of absolutely simple ones. Its motivation is Brian Conrad, *Reductive group
 schemes* (2014), Remark 6.4.5, p.233, and the proof of Proposition 6.4.4,
 pp.232–233, registered as `conrad-2014-reductive-group-schemes`. Remark 6.4.5
 uses the fact that an adjoint semisimple root datum decomposes into adjoint

@@ -1,6 +1,6 @@
 # A primitive coordinate generating the coordinate ring
 
-Worker 716. The purely algebraic core of the proof of
+The purely algebraic core of the proof of
 `Langlands.GroupScheme.PerfectFieldOneDimensionalUnipotentStatement`. It
 combines `Invariant`, `Relation` and `Additive`. No registered source was used.
 The argument below is the one implemented in Lean.

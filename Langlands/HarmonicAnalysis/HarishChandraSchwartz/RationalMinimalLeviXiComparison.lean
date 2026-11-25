@@ -76,7 +76,7 @@ attribute [local instance] rationalWeightsIsAffine rationalWeightsTopology
   rationalWeightsTopologicalGroup rationalWeightsT2Field rationalWeightsLocallyCompact
   rationalWeightsMeasurableSpace rationalWeightsBorelSpace
 
-local instance : SecondCountableTopology (rationalPoints G) :=
+private local instance : SecondCountableTopology (rationalPoints G) :=
   rationalPoint_secondCountableTopology F G
 
 local instance (L : Subgroup (rationalPoints G)) : SecondCountableTopology L :=

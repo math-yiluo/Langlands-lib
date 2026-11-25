@@ -1,7 +1,5 @@
 # Arithmetic actions on simultaneous center-finite adelic functions
 
-Author: Worker 2.
-
 This internal construction specializes actual arithmetic pullback to the existing
 simultaneous center-finite adelic function spaces over an actual number field in
 an arbitrary universe. The matrix rank is any natural number, including zero.

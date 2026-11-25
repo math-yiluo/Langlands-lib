@@ -1,6 +1,6 @@
 # Localized tests on greatest charts
 
-Worker 659 derives this comparison from the Library's greatest-chart
+This module derives the comparison from the Library's greatest-chart
 pullbacks, source quotient equivalence and definition of `IsNear`.
 
 `localizedTopTargetHomEquiv` identifies the complete strong maps into
@@ -29,6 +29,8 @@ strong maps are therefore `StrongNear`, giving `IsNear` with the
 identity denominator.
 
 This comparison translates test triples on whole affinoid charts into
-the spectral estimates used on fibre-product patches in Task 7491.
+the spectral estimates used on fibre-product patches for
+`CompactCompatibleTupleConesStatement` (proved as `compactCompatibleTupleCones`
+in `Cohomology/AnalyticQuasiEtaleGlobalComparison/CompactTupleConeAssembly`).
 
 The common chart-coverage lemma is `range_greatestChart_eq_univ`.

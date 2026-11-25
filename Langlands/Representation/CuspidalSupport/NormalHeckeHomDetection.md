@@ -1,13 +1,13 @@
 # Detecting kernels and twists through End(ind_H^G ρ)
 
-Author: Worker 5102. The three conditional theorems at the end reuse, almost line for
-line, Worker 1826's proofs in `RationalSummandEndCenterReduction`. Only the two
+The three conditional theorems at the end reuse, almost line for
+line, the proofs in `RationalSummandEndCenterReduction`. Only the two
 hypotheses that came from VI.4.1 are replaced.
 
 This supporting module serves the proofs of Renard VI.4.4: the Theorem
 `RationalSummandEndCenterStatement`, the Corollary
 `RationalSummandEndNoetherianStatement` and the Proposition
-`RationalSummandCenterGroupAlgebraStatement`. Worker 1826's generic module
+`RationalSummandCenterGroupAlgebraStatement`. The generic module
 `NormalHeckeCenter` computes the center, the basis over the center, noetherianity and
 the group-algebra description of End(ind_H^G ρ) from two hypotheses on a representation
 B:
@@ -16,7 +16,7 @@ B:
 - `hiso`: an End(I)-equivariant ℂ-linear bijection Hom(I, B ⊗ ω) ≃ Hom(I, B), for a
   character ω with open kernel containing H, forces B ⊗ ω ≅ B.
 
-Worker 1826's `RationalSummandEndCenterReduction` derives both from the VI.4.1
+`RationalSummandEndCenterReduction` derives both from the VI.4.1
 equivalence `RationalSummandHomEquivalenceStatement`, which is not proved. This module
 proves both directly for an irreducible B, from the semisimplicity of the restriction of
 I to H. Hence VI.4.4 follows from the finite-length clause of VI.3.2(ii) alone.

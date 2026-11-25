@@ -1,8 +1,6 @@
 # Proof that `GL_N` acts on a proper scheme with solvable point stabilizers
 
-Authors: Worker 1399 (flag scheme, action, properness, fixed-point reduction, assembly and this
-description), using Worker 135's module `Langlands.LinearAlgebra.FullFlagSolvable` (whose
-interface was designed by Worker 1399) for the linear-algebra step.
+The linear-algebra step uses the module `Langlands.LinearAlgebra.FullFlagSolvable`.
 
 The module proves
 
@@ -69,7 +67,7 @@ the proof does not identify `Z` with the flag scheme over arbitrary rings.
   3. `FlagLocus.exists_fullFlag` gives a full flag `F` of `K^N` (monotone,
      `finrank (F j) = j`) preserved by `Matrix.mulVec` of every matrix fixing `s`, in
      particular by every `ρ g`.
-  4. Worker 135's `LinearAlgebra.isSolvable_of_injective_representation_fullFlag` turns the
+  4. `LinearAlgebra.isSolvable_of_injective_representation_fullFlag` turns the
      injective representation `ρ` preserving `F` into `Group.IsSolvable (T ⟶ H.X)`.
 - `isSolvableGroupScheme_of_isFixed`: if moreover `i` is a closed subgroup, then
   `IsSolvableGroupScheme H`. Take `K := AlgebraicClosure k`,

@@ -1,7 +1,5 @@
 # Affine full-centre quotients over an arbitrary base: statement
 
-Worker 682.
-
 `Langlands.GroupScheme.RelativeAdjointQuotientExistenceStatement.{u}` says
 that, for every scheme `S` and reductive group scheme `G` over `S`, there
 exist a group scheme `A` over the same base and a homomorphism `q : G → A`
@@ -58,6 +56,7 @@ been read. The author-homepage snapshot registered as
 `conrad-author-reductive-errata-check-2026-11-13` links these notes
 without a separate correction link; no correction is being used here.
 
-A proof of this proposition remains a separate obligation. This
+The proof of this proposition is `relativeAdjointQuotientExistence`, in
+the separate module `Adjoint.RelativeExistenceProof`. This
 statement alone proves neither the existence nor the uniqueness of a
 quasi-split inner form over a semilocal base.

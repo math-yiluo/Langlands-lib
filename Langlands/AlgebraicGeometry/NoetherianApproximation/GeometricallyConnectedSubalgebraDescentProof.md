@@ -1,15 +1,13 @@
 # Descent of geometric connectedness to finitely generated subalgebras (proof)
 
-Author: Worker 299, for task `ab019f66-cba5-4921-aa53-b9cfb52e5456`. The lemma used in `of_ring`
-(module `GeometricallyConnectedOfGenericFibre`) is by Worker 946.
+The lemma used in `of_ring` is in module `GeometricallyConnectedOfGenericFibre`.
 
 ## Statement proved
 
 `Langlands.AlgebraicGeometry.NoetherianApproximation.geometricallyConnectedSubalgebraDescent :
 GeometricallyConnectedSubalgebraDescentStatement.{u}`, for an arbitrary universe `u`, with no further
 hypotheses. The proposition is the published one of module
-`Langlands.AlgebraicGeometry.NoetherianApproximation.SubalgebraDescentStatements` (statement artifact
-`a25bcdd5-03da-45b4-a0d3-100bb603e7c5`). Take a noetherian commutative ring `A₀` and a commutative
+`Langlands.AlgebraicGeometry.NoetherianApproximation.SubalgebraDescentStatements`. Take a noetherian commutative ring `A₀` and a commutative
 `A₀`-algebra `A`, both in `Type u`. Let `f : X ⟶ Spec A₀` be proper and smooth, with geometrically connected base
 change `pullback.snd f (Spec.map (algebraMap A₀ A))`. Then for every finite set `s ⊆ A` there is a
 finitely generated `A₀`-subalgebra `T ⊇ s` of `A` such that the base change
@@ -49,7 +47,7 @@ geometrically connected. Proof:
 2. Let `f_R` be the base change of `f` to `R` (along `φ ∘ τ`). Its generic fibre, its base change
    along `R → K`, is `f_K` up to a pullback square, so it is geometrically connected
    (`iff_of_isPullback`). `f_R` is proper and smooth, as a base change of `f`.
-3. Worker 946's lemma
+3. The lemma
    `Langlands.AlgebraicGeometry.NoetherianApproximation.geometricallyConnected_of_smooth_of_geometricallyConnected_pullback_snd`
    then makes `f_R` geometrically connected. So is its fibre over `c`, by Mathlib's instance for
    fibres of geometrically connected morphisms.
@@ -140,12 +138,12 @@ begins with an attribution header stating that it was modified.
 ## Dependencies
 
 - `Langlands.AlgebraicGeometry.NoetherianApproximation.SubalgebraDescentStatements` (Library).
-- `Langlands.AlgebraicGeometry.NoetherianApproximation.GeometricallyConnectedOfGenericFibre` (same
-  contribution).
+- `Langlands.AlgebraicGeometry.NoetherianApproximation.GeometricallyConnectedOfGenericFibre` (written
+  for this proof).
 - The ported FLT modules
   `Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_GeometricallyConnected_descendsAlong_surjective`
   and
   `Langlands.AnthropicFLT.Theorems.Thm_IsLocalRing_exists_valuationSubring_isDiscreteValuationRing_dominates`,
-  with their import closures. The 24 ported FLT modules of this contribution (12 `Theorems` modules,
-  each with its `P2M/Sol` proof module) are new; the rest of the closure is the Library FLT port of
-  task `69435287-9f1e-4abd-8483-5e65ff23668a`.
+  with their import closures. 24 ported FLT modules of the closure (12 `Theorems` modules,
+  each with its `P2M/Sol` proof module) were ported for this proof; the rest of the closure belongs
+  to an earlier FLT port in the Library.

@@ -192,7 +192,8 @@ private theorem sliceDifferentialMatrix_eval {r : ℕ} (B : Matrix (Fin d) (Fin 
     rw [map_smul, map_smul]
     rfl
   ext i (j | j)
-  · simp [sliceDifferentialMatrix, Matrix.fromCols, hd, e, Matrix.sum_apply]
+  · simp [sliceDifferentialMatrix, Matrix.fromCols, hd, e, Matrix.sum_apply, -map_neg, -map_sum,
+      -map_mul, MvPolynomial.eval_neg, MvPolynomial.eval_sum, MvPolynomial.eval_mul]
   · simp [sliceDifferentialMatrix, Matrix.fromCols]
 
 variable {T : CommGroupScheme (Spec (CommRingCat.of k))} (j : T.toGrp ⟶ G)

@@ -27,9 +27,9 @@ as a homomorphism of automorphism groups. -/
 def fullLevelParameterAut (A : AbelianScheme S)
     (hn : 0 < n) (hunit : IsUnit (n : Γ(S, ⊤))) :
     Aut A →* Aut (fullLevelParameterScheme A g n hn hunit) where
-  toFun := fullLevelParameterIso g n hn hunit
-  map_one' := fullLevelParameterIso_refl g n hn hunit
-  map_mul' e d := fullLevelParameterIso_trans g n hn hunit d e
+  toFun e := Aut.of (fullLevelParameterIso g n hn hunit e.asIso)
+  map_one' := congrArg Aut.of (fullLevelParameterIso_refl g n hn hunit)
+  map_mul' e d := congrArg Aut.of (fullLevelParameterIso_trans g n hn hunit d.asIso e.asIso)
 
 private theorem fullLevel_sections_injective :
     Function.Injective (FullLevel.sections (A := A) (g := g) (n := n)) := by

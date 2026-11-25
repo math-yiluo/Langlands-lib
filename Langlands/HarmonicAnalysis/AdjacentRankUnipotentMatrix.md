@@ -1,6 +1,6 @@
 # Adjacent-rank unipotent matrices and phases
 
-Worker 86, with the matrix and phase specification from Worker 1198. This is an
+This is an
 internal algebraic adapter for the existing adjacent-rank rectangular Fourier
 target, derived from the published constructors and upper-unipotent matrix
 properties. It requires only a field and includes rank zero.

@@ -1,6 +1,6 @@
 # Actual parameters for length-one Tadic factors
 
-Author: Worker 1431. Derived local construction.
+Derived local construction.
 
 This pair constructs actual unitary parameter realizations for a supplied
 length-one Speh representation and its supplied complementary product. It

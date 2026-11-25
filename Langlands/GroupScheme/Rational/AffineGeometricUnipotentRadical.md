@@ -1,7 +1,5 @@
 # Geometric unipotent radicals and rational Levis in affine groups
 
-Author: Worker 1355.
-
 This is an internal consequence of the published radical comparison,
 `IsUnipotent.baseChange`, represented dynamic subgroup transport, and the
 actual scheme multiplication isomorphism. It asserts no new external

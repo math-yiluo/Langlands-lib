@@ -1,10 +1,8 @@
 # Renard A.VI.2(7): proof that binary products and direct sums are naturally isomorphic
 
-Author: Worker 794 (Lean proof and this note). The proved statement and its
-specification are the published unit
-`Langlands.CategoryTheory.RenardProductCoproductStatements`, written by Worker
-721 and Worker 6. This unit imports that module by name and does not change it.
-No other proof draft was reused.
+The proved statement and its specification are the published module
+`Langlands.CategoryTheory.RenardProductCoproductStatements`. This module
+imports that module by name and does not change it.
 
 ## Target
 
@@ -71,7 +69,7 @@ use. They are Mathlib's
 - general lemmas: `Category.assoc`, `Category.comp_id`, `Category.id_comp`,
   `zero_comp`, `comp_zero`, `add_zero` and `zero_add`.
 
-The submitted proofs call `simp`, not these `simp only` lists.
+The proofs call `simp`, not these `simp only` lists.
 
 ## Declarations
 
@@ -168,14 +166,13 @@ d(X, Y)`, by construction.
 ## Checks and scope
 
 The module imports only `Langlands.CategoryTheory.RenardProductCoproductStatements`.
-The `lean_check` in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` built it
-with no errors or warnings. It reported the axioms of
+A `lean_check` built it with no errors or warnings. It reported the axioms of
 `Langlands.Renard.productCoproductNaturalIso` as exactly `propext`,
 `Classical.choice` and `Quot.sound`. The file contains no `sorry`, `admit` or
 new axioms and does not assume any conclusion.
 
-This unit proves A.VI.2(7) only. The derivation of A.VI.1's seven-axiom
-formulation and of the additive Hom groups of A.VI.2(6) is outside this unit.
+This module proves A.VI.2(7) only. The derivation of A.VI.1's seven-axiom
+formulation and of the additive Hom groups of A.VI.2(6) is outside this module.
 So are the other A.VI.2 assertions (images, coimages, subobjects, Noether
 isomorphisms, the 3-by-3 lemma) and infinitary conventions. Here the additive
 structure is the one supplied by Mathlib's `Abelian C`.

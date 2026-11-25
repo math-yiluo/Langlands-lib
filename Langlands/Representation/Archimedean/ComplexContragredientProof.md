@@ -30,7 +30,7 @@ linear functionals on `V`, with
 ## Proof route
 
 The generic compact-group facts come from `Langlands.Representation.KFiniteDual`, which is
-a separate helper module (candidate `2503b99f-3b40-46c3-92d6-ddab0655fbf1`). For `K = U(n)` (compact by the Library instance in
+a separate helper module. For `K = U(n)` (compact by the Library instance in
 `Langlands.Global.ArchimedeanCompact`) and the clauses `hgk.1` (every vector finite) and
 `hgk.2.1` (continuous coefficients) of `IsComplexGKModule`, that module gives:
 

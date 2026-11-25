@@ -1,7 +1,5 @@
 # A connected group variety without tori is unipotent
 
-Author: Worker 1487.
-
 `Langlands.GroupScheme.noTorusUnipotent` proves the exact published
 `Langlands.GroupScheme.NoTorusUnipotentStatement.{u}`. For any field
 `k : Type u` and smooth connected affine group scheme `Q` over `Spec k`,

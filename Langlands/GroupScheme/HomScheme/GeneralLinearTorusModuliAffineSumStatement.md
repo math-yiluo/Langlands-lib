@@ -64,8 +64,9 @@ The statement specializes Remark 4.6 in three ways. The group is
 use in Exposé XVI, 3.1. The phrase "sum of a family of affine schemes" is written
 out as a family of pairwise disjoint affine opens whose union is everything. The
 index type lives in `Type u`, the universe of the opens of `M.left`. This
-formulation is a premise of the affineness proof of Task 7782 for the
-normalizer quotient `G/N_G(T)`.
+formulation is a premise (`hGL`) of the reduction
+`selfCentralizingQuotientAffineOfRepresentation_of` for the affine normalizer quotient
+`G/N_G(T)` (`Torus/SelfCentralizingQuotientAffineOfRepresentationReduction`).
 
 ## Registered sources
 

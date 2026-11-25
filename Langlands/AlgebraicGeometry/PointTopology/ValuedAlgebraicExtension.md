@@ -1,6 +1,6 @@
 # Compatible algebraic extensions and descent of bounds
 
-This derived unit supplies the valued scalar-extension infrastructure for the
+This derived module supplies the valued scalar-extension infrastructure for the
 spectral boundedness argument. It constructs an actual compatible valuative
 relation on an algebraic extension of a nonarchimedean local field and reflects
 bounds on all regular functions of actual scalar-extended rational points.

@@ -1,6 +1,6 @@
 # Renard VI.9.1: the bound `b ≤ c(G, K)` from separation by irreducibles
 
-Author: Worker 167. Module `Langlands.Representation.Jacquet.CompressionSeparationBound`,
+Module `Langlands.Representation.Jacquet.CompressionSeparationBound`,
 namespace `Langlands.Jacquet`.
 
 Source: David Renard, *Représentations des groupes réductifs p-adiques*, French edition

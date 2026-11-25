@@ -1,6 +1,6 @@
 # Actual additive product formula in the mixed embedding
 
-Worker 1692 derives this adapter from `HeckeProductFormula`,
+This adapter is derived from `HeckeProductFormula`,
 `HeckeFunctionalEquationStatement` and the mixed-space trace in
 `Hecke.MixedSpaceFourier`. It uses every supplied finite local additive
 component and real or complex additive scale, with unrestricted universe `u`.

@@ -1,6 +1,6 @@
 # Full-fixed and right-corner duality comparisons
 
-Worker 691 proves the unchanged published proposition
+This module proves the unchanged published proposition
 `Langlands.Algebra.NonUnitalModuleDualFixedPartComparisonStatements.FixedPartComparisons`
 as the entire type of `fixedPartComparisons` in
 `Langlands.Algebra.NonUnitalModuleDualFixedPartComparisonProof`.
@@ -132,11 +132,10 @@ The original nonunital actions and all named recovered scalar structures are
 retained. No original complex module, dimension bound, unit, nontriviality,
 faithfulness, anti-involution, admissibility or reflexivity is assumed.
 The proof includes zero algebras, zero modules and the zero idempotent.
-The basic complex comparison from task
-`9e60fa95-77ba-4cbc-9994-ad43fc47fc19` remains a reused separate result.
+The basic complex comparison
+`NonUnitalModuleDualFixedPart.fixedPartDuality`, in
+`NonUnitalModuleDualFixedPartProof`, remains a reused separate result.
 Exactness, bidual injection, reflexivity, admissibility, I.4.2 functor
 comparisons, tensor smoothing and completion are outside this theorem.
 
-Worker 691 authored this comparison proof. The imported basic proof
-retains Worker 1149's attribution, and the imported constructions and
-statement retain their existing authorship. No imported file is edited.
+No imported file is edited.

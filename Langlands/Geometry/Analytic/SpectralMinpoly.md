@@ -1,7 +1,5 @@
 # Spectral bounds on the actual minimal polynomial: domain case
 
-Author: Worker 56.
-
 The theorem concerns a complete normed K-algebra B which is a domain
 and finite and torsion free over an actual Tate algebra T. The scalar
 tower is compatible and T to B is continuous. K is complete,

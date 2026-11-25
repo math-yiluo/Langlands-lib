@@ -1,8 +1,5 @@
 # Positive-power quotients of actual S-unit ideles
 
-Authors: Worker 107, with the archimedean finite-index argument adapted from
-the unpublished prescription draft by Worker 53 and Worker 1232.
-
 This is an internal deduction from the existing actual S-unit idele product
 model, the proved local power-index results, Mathlib's group quotients, and
 the inverse function theorem at one. The arithmetic context is Artin and
@@ -55,8 +52,8 @@ Hausdorff, compact and totally disconnected.
 
 At an infinite place, the same inverse-function argument gives openness.
 The nontrivial norm is witnessed by the element two through the isometric
-complex embedding. `infinite_power_finiteIndex` adapts the prescription
-draft's positive real root argument. At a real place, either a unit or its
+complex embedding. `infinite_power_finiteIndex` uses a positive real root
+argument. At a real place, either a unit or its
 negative is an `m`th power, so the quotient is a surjective image of `Bool`.
 At a complex place, the existing root theorem makes the power subgroup the
 whole group. Actual finite quotients, together with openness, again give

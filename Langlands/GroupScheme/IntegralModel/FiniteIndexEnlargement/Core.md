@@ -1,6 +1,6 @@
 # The algebraic core of the finite-index enlargement
 
-Worker 33, task `e1575004-9fac-4821-9bc9-ddcb15e7cbf3` (Task 6018). This is an internal helper
+This is an internal helper
 module for the proof of
 `Langlands.GroupScheme.IntegralModel.FiniteIndexEnlargementStatement`. It proves the algebraic
 form of the theorem, `exists_hopf_enlargement`, which the final proof transports to schemes.
@@ -96,7 +96,7 @@ Assume moreover that `ι` is injective. The results use an element `b₀ : B` wi
 ### Open immersion (`isOpenImmersion_of_core`)
 
 `Spec A → Spec B` is an open immersion. Apply `isOpenImmersion_specMap_of_away_bijective`
-(module `OpenImmersionCriterion`, by Worker 260) to the family indexed by `Option U`: `ϖ` and the
+(module `OpenImmersionCriterion`) to the family indexed by `Option U`: `ϖ` and the
 translates `pointTrans (pointB u) b₀` for `u ∈ U`.
 
 - Their images generate the unit ideal of `A`. They contain the generators of `span_cover_A`,

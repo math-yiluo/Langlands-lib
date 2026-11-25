@@ -93,7 +93,7 @@ actual class degrees by the Schur characterization and uniqueness on the
 unchanged central quotient. Thus the orbit law concerns those constructed
 degrees, rather than assigned normalization parameters.
 
-This unit supplies orbit-level Haar normalization comparisons toward the
+This module supplies orbit-level Haar normalization comparisons toward the
 Plancherel program. The underlying group, central quotient, representations and
 character family stay fixed while the Haar scale changes explicitly. It
 constructs no topology or measure on character orbits. Identification of `A`

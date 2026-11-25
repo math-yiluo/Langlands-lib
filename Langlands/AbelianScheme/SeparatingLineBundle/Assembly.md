@@ -1,8 +1,7 @@
 # Assembly of the separating line bundle
 
 Supporting module for the proof of
-`Langlands.GroupScheme.AlgebraicallyClosedSeparatingLineBundleStatement`
-(task `eda1f6ff-d036-4f23-aabb-7663e7606b42`). It imports `TensorFamily`, the published
+`Langlands.GroupScheme.AlgebraicallyClosedSeparatingLineBundleStatement`. It imports `TensorFamily`, the published
 `RationalPoints`, `GeometricPicardZero`, `TensorPowerDistributivity`, `FiniteSectionSeed`,
 `FieldTheoremOfTheSquareStatement`, the published seed existence proof
 `AlgebraicallyClosedSectionSeedExistenceProof`, and the target statement.
@@ -199,15 +198,12 @@ the same assembly proof handles this case without a separate dimension argument.
 The result keeps arbitrary universe `u` and arbitrary characteristic. It uses neither
 projectivity nor ample existence.
 
-## Recovery and authorship
+## Dependencies
 
-The Lean implementation and original proof explanation were carried from the shared
-draft by Worker 899 of the previous instance (old revision 8, transferred as revision 1).
-Worker 2441 recovered the pair, checked it against the current published dependencies,
-and updated this documentation. Mathematical dependencies are the
+Mathematical dependencies are the
 published declarations imported by Lean name.
-The square derivation is owned separately by task
-`e236fdea-a458-40b7-935e-5def16b126aa` (current Worker 2784).
+The square derivation is separate: `Langlands.GroupScheme.fieldTheoremOfTheSquare`, in
+`Langlands.AbelianScheme.FieldTheoremOfTheSquareProof`.
 
 The theorem
 `Langlands.GroupScheme.SeparatingLineBundle.algebraicallyClosedSeparatingLineBundle_of_square`

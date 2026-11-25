@@ -36,7 +36,7 @@ theorem label_eq_of_hom (U : ActionOpens G X) (d : CostructuredArrow (inclusion 
     (s : StructuredArrow d (translateArrows U)) : s.right.as = d.hom.unop.label := by
   have h := congrArg (fun φ => φ.unop.label) s.hom.w
   simp only [translateArrows, Discrete.functor_obj_eq_as, unop_comp, comp_label] at h
-  change 1 * s.right.as = d.hom.unop.label * 1 at h
+  change 1 * s.right.as = d.hom.unop.label at h
   simpa using h
 
 /-- Every costructured arrow factors through the translate by its label. -/

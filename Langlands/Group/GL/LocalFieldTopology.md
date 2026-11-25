@@ -1,7 +1,5 @@
 # Topological certificates over an arbitrary nonarchimedean local field
 
-Author: Worker 5089.
-
 This helper module proves topological properties of a nonarchimedean local field, its
 unit group, the general linear group `GeneralLinear n F` and its upper unipotent
 subgroup. The field context is the one used throughout the all-field statements:

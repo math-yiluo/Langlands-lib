@@ -1,7 +1,5 @@
 # Selection of a dominance-maximal cone
 
-Author: Worker 23.
-
 This module is an internal helper for the proof of
 `Langlands.GLMaximalConeJacquetQuotientStatement` (task b291a31b). Take a
 finite family of block vectors in which at least one member has a cone. The

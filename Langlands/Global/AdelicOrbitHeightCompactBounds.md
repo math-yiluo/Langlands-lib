@@ -1,7 +1,5 @@
 # Compact-factor comparison for actual primitive-vector heights
 
-Author: Worker 83.
-
 This derived module proves uniform two-sided comparison of the normalized
 primitive-vector height under compact sets of actual adelic matrices. It also
 proves the corresponding bounds for every actual finite matrix representation

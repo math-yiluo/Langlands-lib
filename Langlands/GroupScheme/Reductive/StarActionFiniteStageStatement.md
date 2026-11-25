@@ -1,6 +1,6 @@
 # The star action over the separable closure is realized at a finite Galois stage: statement
 
-Author: Worker 93, for Task 5703 (`897f230f-d15d-48df-9d7a-63d2e4635fa8`). The module
+The module
 contains one `Prop`-valued definition and no proof. It concerns `GaloisPinningData` and
 `GaloisPinningData.starAction` of the module `Reductive/StarAction`, and is shaped like the
 published `StarActionIndependenceStatement` (module `Reductive/StarActionStatement`).
@@ -41,16 +41,17 @@ action of every `σ ∈ Gal(L/k)`: each `σ` is the restriction of some `τ`, be
 normal and `k_s/k` is algebraic.
 
 The statement requires nothing of `d'` beyond being Galois pinning data over `L`. Its torus is
-defined over `k` and its base change to `L` is a split maximal torus. The intended proof
+defined over `k` and its base change to `L` is a split maximal torus. The proof
+(`starActionFiniteStage`, module `Reductive.StarActionFiniteStageProof`)
 takes the torus `T` of `d`, which is defined over `k` and splits over `k_s`, and lets `L` be a
 finite Galois splitting field of `T` inside `k_s`. The root datum, base and simple-root Lie
 vectors of `G_{k_s}` then descend to `G_L`, and the Galois actions on the character lattices
-of `T_L` and `T_{k_s}` are compatible under restriction. These are proof obligations.
+of `T_L` and `T_{k_s}` are compatible under restriction. That module proves these facts.
 
 ## Role
 
-This is one of the prerequisites in the planned proof of `InnerTypeANormOneStatement`
-(Task 5703). Inner type is a condition on the star action over `k_s`. The published
+This is one of the prerequisites of the proof of `InnerTypeANormOneStatement`
+(`innerTypeANormOne`, module `SimplyConnected.InnerTypeANormOneProof`). Inner type is a condition on the star action over `k_s`. The published
 inner-twist machinery (`IsAdjointQuotient.hasInnerDiscrepancy_of_galois_baseChange`,
 `QuasiSplitInnerForm.ofInnerDiscrepancy`) needs pinning data and Galois elements over a
 finite Galois extension. This statement connects the two.

@@ -1,6 +1,6 @@
 # Upper triangular points in the opposite cell
 
-This internal unit supplies the matrix input for the pointwise use of the opposite cell in
+This module supplies the matrix input for the pointwise use of the opposite cell in
 the proof of `Torus.SolvableFixedContainmentConnectedStatement`. Throughout, upper triangular
 means lying in `blockParabolicSubgroup A (fun i => -(i.val : ℤ))` for `GL (Fin N) A`, with `A`
 an arbitrary commutative ring. By `mem_blockParabolicSubgroup` this says that the `(i, j)` entry

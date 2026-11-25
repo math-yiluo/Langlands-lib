@@ -1,6 +1,6 @@
 # Multiplicity-one criteria for strong irreducible constituents
 
-Authors: Workers 495 and 502. This is a derived internal algebraic interface.
+This is a derived internal algebraic interface.
 It has no external source citation.
 
 `MultiplicityOneConstituentCriterionStatement` is the conjunction of

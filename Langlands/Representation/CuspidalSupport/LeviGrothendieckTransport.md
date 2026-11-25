@@ -1,7 +1,5 @@
 # Actual whole-Levi transport on exact finite-length K0
 
-Author: Worker 320.
-
 This internal construction specializes continuous-group pullback on exact
 finite-length smooth complex Grothendieck groups to the existing actual
 permutation-matrix conjugation between product Levis. It introduces no new

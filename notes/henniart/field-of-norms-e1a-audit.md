@@ -1,21 +1,22 @@
 # Field-of-norms formalization: audit for the close-fields statement E1a
 
-Author: Worker 5168 (Task 7341).
-
 ## Purpose
 
 The close-fields statement E1a is the first half of input (I2) of the numerical route
 to Henniart (1988), Théorème 1.2. In group form it says the following. Let `K` be a
 p-adic field with absolute ramification index `e`, and let `X = k((t))` have the same
-residue field. Then `G_K/G_K^e ≅ G_X/G_X^e` as filtered groups. The operator plan note
+residue field. Then `G_K/G_K^e ≅ G_X/G_X^e` as filtered groups. The plan note
 `operator-external-inputs-plan-2026-11-16` (Remark 4.1, `rem:fon`) derives E1a from
 Wintenberger's field of norms. The note applies it to the Kummer tower
 `L = ⋃ K(ϖ^{1/p^n})`. It names an external Lean formalization of the field of norms.
 
-On 17 November 2026 the operator decided that this formalization is not imported in the
-current instance, because the Lean environment takes no packages. The Library instead
-states, in its own vocabulary, the one statement that crosses the boundary. It is a
-named premise. E1a is then proved from that premise inside the Library.
+The audit below assumes, as decided on 17 November 2026, that this formalization is not imported: the Library states,
+in its own vocabulary, the one statement that crosses the boundary, as a named premise,
+and E1a is proved from that premise inside the Library. The Library now contains the
+formalization as its copy `FontaineWintenberger/`, with bridge modules in
+`Langlands/LocalFactor/Ramification/Wintenberger/`, and proves E1a, as
+`closeFieldsGaloisQuotient` (`Langlands/LocalFactor/Ramification/CloseFieldsGaloisQuotientProof.lean`);
+this note does not record which route that proof takes.
 
 This note records the audit of the external formalization:
 
@@ -25,7 +26,7 @@ This note records the audit of the external formalization:
 - what the formalization does not contain for this application;
 - how its statements correspond to the Library premise.
 
-Nothing in this note is an accepted Lean result.
+This note itself proves nothing in Lean.
 
 ## Checked version
 
@@ -162,7 +163,7 @@ must then be compared with the structures the Library's p-adic layer uses.
    not need it. The filtered isomorphism at index `0` carries inertia onto inertia, so
    it induces an isomorphism of the unramified quotients `G/G^0`. Continuous characters
    of these profinite quotients have finite image, so finite-order unramified twists
-   correspond on the two sides. The Galois–Weil dictionary of Task 7426 then carries the
+   correspond on the two sides. A Galois–Weil dictionary then carries the
    count over to Weil groups.
 3. **Its own ramification layer.** The filtrations of the theorems above are that
    library's (`upperRamificationGroupInfinite`, `RelFieldOfNorms.upperRamificationGroup`).
@@ -172,7 +173,7 @@ must then be compared with the structures the Library's p-adic layer uses.
      `Langlands.Ramification.Padic.absoluteUpperRamificationGroup F u`;
    - from the norm-field filtration, transported along `absoluteGaloisEquiv` and
      `laurentEquiv`, to the absolute upper filtration of the Laurent-series field in the
-     Library's general layer (Task 7403).
+     Library's general layer.
 4. **The residue field.** `laurentEquiv` gives Laurent series over `κL`, the residue
    field of `L`. The Library premise uses `Langlands.Weil.Local.localResidueField F`. The
    Kummer tower is totally ramified, so the two are isomorphic, but the identification
@@ -180,24 +181,21 @@ must then be compared with the structures the Library's p-adic layer uses.
 
 ## The Library premise and its correspondence
 
-The Library states the boundary in three statement tasks. All three are published as tasks
-and not yet as Library modules (17 November 2026); their declaration names are fixed by
-the task contracts.
+The boundary is stated in three statement modules.
 
-- Task 7450 (`45f364a1-995f-476c-87de-0d9eb13b19f5`), module
-  `Langlands.LocalFactor.Ramification.Herbrand.KummerTowerStatement`, namespace
+- Module `Langlands.LocalFactor.Ramification.Herbrand.KummerTowerStatement`, namespace
   `Langlands.Ramification.Kummer`. It defines the tower (`IsKummerRootSystem`,
   `kummerStage`, `kummerTower`, `kummerBreak = p e/(p-1)`). It states the Kummer-step
   and tower lemmas on the Library's p-adic layer: the Herbrand function of the step and
   of every stage, the truncation lemma, and `G_{K_n} · G_F^u = G_F` and
   `G_L · G_F^u = G_F` for `u ≤ p e/(p-1)`.
-- Task 7451 (`6a2c9e18-7b7e-46c4-8a33-0b892673c7da`), module
-  `Langlands.LocalFactor.Ramification.KummerFieldOfNormsStatement`, the same namespace.
-  It states the premise `KummerTowerFieldOfNormsStatement` and the implication
-  `CloseFieldsGaloisFromKummerFieldOfNormsStatement` (premise → E1a).
-- Task 7436 (`dd29c761-8c7b-46a7-a8d6-e918cf37c1fe`), module
-  `Langlands.LocalFactor.Ramification.CloseFieldsStatement`, states E1a as
-  `Langlands.Ramification.Local.CloseFieldsGaloisQuotientStatement`.
+- Module `Langlands.LocalFactor.Ramification.KummerFieldOfNormsStatement`, the same namespace,
+  to state the premise `KummerTowerFieldOfNormsStatement` and the implication
+  `CloseFieldsGaloisFromKummerFieldOfNormsStatement` (premise → E1a). The Library has
+  no module and no declarations of these names.
+- Module `Langlands.LocalFactor.Ramification.CloseFieldsStatement` states E1a as
+  `Langlands.Ramification.Local.CloseFieldsGaloisQuotientStatement`; the Library proves
+  it, as `closeFieldsGaloisQuotient`.
 
 The premise says: for every p-adic field `F`, uniformizer `ϖ` and compatible system
 `πs` of `p^n`-th roots of `ϖ`, there is `φ : G_L ≃ₜ* G_X`, `X = LaurentSeries k`, such
@@ -220,9 +218,9 @@ The premise avoids `ψ_{L/F}` for infinite `L`. For `u ≥ 0` the derivative of
 Hence `ψ_{K_n/F}(u)` is eventually Wintenberger's `ψ_{L/F}(u)` (1.2.1). On `[-1, 0]`
 both are the identity.
 
-## Discharging the premise later
+## Discharging the premise
 
-If a later instance can import the formalization, these steps discharge the premise:
+With the formalization imported, these steps discharge the premise:
 
 1. Prove that `K_{n+1}/K_n` is elementary of level `p^{n+1} e/(p-1)` (in the numbering
    of `K_n`). Show that the step is totally ramified of degree `p` and that its different
@@ -239,12 +237,12 @@ If a later instance can import the formalization, these steps discharge the prem
 4. Apply `RelFieldOfNorms.absoluteGaloisEquiv` and `map_normUpperRamificationGroup` with
    `M = Ω`.
 
-The proof of E1a from the premise does not wait for these steps. It uses only Task 7450's
-lemmas and group theory (plan note, Remark 4.1 (ii)).
+The proof of E1a from the premise does not need these steps. It uses only the lemmas of
+`KummerTowerStatement` and group theory (plan note, Remark 4.1 (ii)).
 
 ## Sources
 
-- Operator plan note `operator-external-inputs-plan-2026-11-16`, LaTeX source
+- Plan note `operator-external-inputs-plan-2026-11-16`, LaTeX source
   `external-inputs-plan.tex`. The formalization is described at lines 277 and 341-349,
   Remark 4.1 is at lines 586-609, and "What remains to be done by us" with the
   recommendation is at lines 613-632.

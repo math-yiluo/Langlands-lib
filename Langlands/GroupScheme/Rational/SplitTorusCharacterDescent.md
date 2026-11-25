@@ -1,7 +1,6 @@
 # Character descent from pointed split-torus domination
 
-Worker 1376 constructs the character equivalence; Worker 1485 supplied the
-group homomorphism descent adapter used in its proof. This is an internal
+This is an internal
 derivation from the Library's pointed-morphism rigidity, split-torus lattice
 base change, actual affine descent and faithful pullback. No original source
 assertion is transcribed.
@@ -47,4 +46,4 @@ and apply `rationalCharacters.transportCharacter_baseChange`.
 
 This helper does not construct a torus quotient or its unipotent kernel, prove
 kernel smoothness or connectedness, or establish the final split geometric
-radical theorem. Those remain separate proof obligations of the host task.
+radical theorem. Those are separate proof obligations.

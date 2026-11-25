@@ -1,7 +1,5 @@
 # Reconstruction from full strong maps on actual source chart domains
 
-Author: Worker 36.
-
 This derived construction works over a complete ultrametric normed field with
 two supplied actual indexed affinoid atlas presentations `A` and `B`. The
 coefficient, point and original chart-index universes `u`, `v` and `w` remain
@@ -17,7 +15,7 @@ bounded restrictions), and Definition 1.2.7, printed p.18 / PDF p.15
 (continuous maps with compatible affinoid maps for every admissible pair).
 Registered source: `berkovich-1993-etale-cohomology`, SHA256
 `06b42aca1c8f237e607d2cf1f15a41fdc9718324a4dc9fd5bce66574254bb91c`.
-These pages were reread for this unit. The reconstruction below is derived
+These pages were reread for this module. The reconstruction below is derived
 from those conventions and the published actual chart-domain restriction
 and topological colimit. It is not a separately numbered source assertion.
 
@@ -87,5 +85,5 @@ actual chart domains. It requires complete strong maps on each source
 chart domain, rather than producing missing local bounded maps from point
 maps. Atlas saturation and extension, finite affinoid algebra gluing,
 unrestricted strong composition and localization, structure sheaves,
-étale and equivariant sites, and the Harris tower remain separate
-construction obligations.
+étale and equivariant sites, and the Harris tower lie outside this
+module.

@@ -1,8 +1,5 @@
 # Proof of relative all-test Cartier kernel bijectivity
 
-Authors: Worker 195 (proof and explanation, drafted for Task 195) and
-Worker 3548 (recompilation against the current Library and submission).
-
 The theorem `Langlands.AbelianScheme.relativeDualKernelCharacterBijective`
 has type `Langlands.AbelianScheme.RelativeDualKernelCharacterBijectiveStatement`
 with the full universe-polymorphic telescope and no additional assumptions.
@@ -47,7 +44,7 @@ arbitrary-base descent context are Edixhoven, van der Geer and Moonen,
 printed pp.99–100 / PDF pp.103–104; Theorem (7.5), printed p.100 / PDF p.104,
 gives the field isogeny context. Source registration and the distinction
 between that field theorem and this derived relative target are recorded
-in the unchanged statement Markdown. No dual-existence or geometry theorem,
+in the statement Markdown. No dual-existence or geometry theorem,
 isogeny assertion for the dual map, rank formula, polarization perfectness,
 or relative pairing theorem is added by this proof.
 

@@ -1,7 +1,5 @@
 # Trivial-scalar rational quotients as denominator localizations
 
-Statement preparation: Worker 574. Target and mathematical design: Worker 146.
-
 `Langlands.Analytic.StrictTestDomain.TrivialScalarRationalLocalizationStatement.{u}`
 is a proposition definition, with no proof of its substantive assertion. It
 quantifies over every `K : Type u` with `NormedField K`, `IsUltrametricDist K`
@@ -32,8 +30,9 @@ input condition; no polynomial comparison, localization property, spectrum
 detection result, sheaf property, or descent statement is assumed.
 
 The following mathematical argument checks the intended truth and scope;
-these steps are proof obligations for a successor task, not theorems proved
-by this module. If `c ≠ 0`, applying the scalar bound to `c` and `c⁻¹`, and
+these steps are proof obligations, not theorems proved by this module; the
+assertion is proved as `trivialScalarRationalLocalization` in
+`TrivialScalarRationalLocalizationProof`. If `c ≠ 0`, applying the scalar bound to `c` and `c⁻¹`, and
 using multiplicativity of the field norm, gives `‖c‖ = 1`. A unit-radius
 restricted series therefore has finite support: convergence of its
 coefficients to zero leaves only finitely many coefficients with norm at
@@ -57,7 +56,7 @@ has exactly one extension through these relations, sending `Yⱼ` to
 `fⱼ/g`. This is the ordinary localization universal property and motivates
 the stated Mathlib predicate. Turning this argument into Lean, including
 the actual presentation comparison and Mathlib's localization criteria,
-remains the successor proof task.
+is left to the separate proof module.
 
 This reasoning does not require a reduced or nonzero base. For no
 numerators, the unit-ideal condition says that `g` is already a unit, and

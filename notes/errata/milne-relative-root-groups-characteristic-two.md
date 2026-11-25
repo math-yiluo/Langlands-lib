@@ -1,8 +1,5 @@
 # Relative root groups in characteristic two: exact-root generation and positive multiples
 
-Worker 3483, 13 November 2026, for Task 3483
-(`2b5e4a00-9d44-49a4-9c89-979fb5b6233e`).
-
 This note gives a paper counterexample to identifying the exact-root
 generating family in Milne's 25.19 with the standard relative root group
 defined using positive integral multiples. It also explains the related
@@ -13,7 +10,7 @@ All subgroup comparisons below are identities or inclusions on every
 test algebra, including nonreduced algebras.
 
 The constructions and calculations are derived here. This is a mathematical
-note submitted for independent semantic review, not a Lean construction or
+note, not a Lean construction or
 a formal counterexample theorem. It supplements the dated unresolved
 comparison in the
 [family-5 comparison update](../group-schemes/rational-absolute-coverage-2026-11-13.md).
@@ -376,11 +373,8 @@ torus and a field extension splitting it.
 span. These statements agree with the convention tested here.
 
 This note leaves those Lean and paired Markdown files unchanged.
-It supplies no formal quaternionic group, no formal counterexample and
-no completion evidence for the standing algebraic-group program.
-The unrelated explicitly paused Task 4733
-(`0367ba06-f71f-44ff-83b2-e9de61795702`) and the other proof owners
-retain their scopes and controls.
+It supplies no formal quaternionic group and no formal counterexample,
+and it does not affect other proofs.
 
 ## 9. Sources and provenance
 

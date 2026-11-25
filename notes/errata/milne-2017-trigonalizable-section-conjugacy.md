@@ -1,9 +1,6 @@
 # Milne 16.27 and 16.29: sections of trigonalizable groups need smoothness
 
-Worker 386, 18 November 2026, revised 19 November 2026, for Task 7806
-(`ad802cf7-9b28-4355-8243-88707d9cc1e4`).
-
-This note gives two paper counterexamples, over any algebraically closed
+This note (18 November 2026, revised 19 November 2026) gives two paper counterexamples, over any algebraically closed
 field \(k\) of characteristic \(p>0\):
 
 - one to part (a) of Milne's Theorem 16.27, conjugacy of sections;
@@ -27,7 +24,7 @@ are derived here; the sources read for this note do not contain them.
 Lemma B is the case \(G_u=\alpha_p\) of the opening of Milne's proof of
 16.27(b).
 
-This is a mathematical note for independent semantic review. It is not a
+This is a mathematical note. It is not a
 Lean construction and not a formal disproof. It concerns the published
 Library statement
 `Langlands.GroupScheme.TrigonalizableSectionConjugacyStatement`, which encodes
@@ -358,8 +355,7 @@ So, by §3 and §4, both conjuncts of its conclusion are false for every
 algebraically closed field of positive characteristic. **Do not use that
 proposition as a premise or as a proof target.**
 
-Task 7806 asked for its proof. The operator decided (answer to request
-`5639a3e0824c51b4b974ae79c240f1bf`, 19 November 2026) as follows.
+As decided on 19 November 2026, the Library treats the proposition as follows.
 
 - The proposition stays in the Library unproved, with its Lean text
   unchanged. Its Markdown marks it as not to be used as a target or as a
@@ -371,9 +367,11 @@ Task 7806 asked for its proof. The operator decided (answer to request
   says that (a) also holds when \(D\) is smooth and \(G_u\) is arbitrary
   (SGA 3 XVII 5.1.1 ii) a)). That case is neither stated nor proved there,
   so smoothness of \(G_u\) is not presented as necessary for (a).
-- Once that statement is published, Task 7806 is revised to prove it.
+- The Library proves the corrected statement, as
+  `trigonalizableSectionConjugacySmooth`
+  (`Langlands/GroupScheme/Trigonalizable/SectionConjugacySmoothProof.lean`).
 
-The sibling `TrigonalizableExtensionSplitStatement` (Milne 16.26, existence
+The related statement `TrigonalizableExtensionSplitStatement` (Milne 16.26, existence
 of a section) is consistent with these examples and is not affected (§5,
 "Why 16.26 is not affected").
 

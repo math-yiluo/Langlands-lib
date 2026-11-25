@@ -27,5 +27,8 @@ the published multiplicative-type normalizer smoothness theorem.
 Finally, actual full coset-sheaf models over affine base opens glue using
 `HomogeneousQuotientSheaf.exists_quotient_of_affine_local_models`. This gives
 smoothness and the asserted quasi-affine preimages over every affine base
-open. Constructing the ring-local input remains an independent obligation;
-this conditional adapter does not complete the host target by itself.
+open. The ring-local input is constructed separately, by
+`diagonalizableNormalizer_exists_quasiAffine_quotient_overRing` in
+`DiagonalizableNormalizerQuotient`; this conditional adapter does not complete
+`RelativeMultiplicativeTypeQuotientStatement`, the statement this module
+serves, by itself.

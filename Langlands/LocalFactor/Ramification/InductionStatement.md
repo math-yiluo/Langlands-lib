@@ -1,6 +1,6 @@
 # Artin conductor of an induced finite-Galois representation
 
-Worker 0 states the induction formula for the published rational Artin sums of
+This module states the induction formula for the published rational Artin sums of
 actual finite p-adic Galois extensions. The complete target is
 `Langlands.Ramification.Padic.FiniteGaloisConductorInductionStatement`; the
 component with fixed data is
@@ -108,7 +108,7 @@ Graduate Texts in Mathematics 67, Springer, 1979:
   is the Galois group of the residue extension, of order `f` when that extension
   is separable.
 
-These original passages were read for this contribution. Serre's author
+These original passages were read. Serre's author
 errata, *Corrections to J-P. Serre's books* (2019, literature ID
 `serre-book-corrections-2019`, Local Fields entries on PDF pages 2–3), list no
 correction to these pages.
@@ -133,8 +133,8 @@ Proposition 2 these groups are `G_i ∩ H`.
 If `dim ψ₁ = dim ψ₂`, subtracting the two instances of the formula removes the
 term with `Ind_H^G 1_H`:
 `a_G(Ind ψ₁) − a_G(Ind ψ₂) = f_{K'/K} (a_H(ψ₁) − a_H(ψ₂))`. This is the
-degree-zero induction step in the suggested route of the proof task for
-`LocalFactor.ConductorExponent.SpectralConductorStatement` (Task 5626). That
+degree-zero induction step in a proof route for
+`LocalFactor.ConductorExponent.SpectralConductorStatement`. That
 subtraction is explained here but is not a separate declaration.
 
 This module does not state a Swan-conductor version, the discriminant formula
@@ -142,8 +142,6 @@ or integrality of `a_G(Ind_H^G 1_H)`. It does not state induction for Weil-group
 representations, presentations or virtual classes. It stays in the finite-Galois
 setting of the published `Ramification.Galois` module, with complex coefficients.
 
-The pinned environment is `bb168ec3-1031-46d9-816b-5c2ed7bbe1a6`,
+The pinned environment is
 Lean 4.34.0, Lean commit `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`,
 Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
-Compilation and whole-target inspection are distinct from independent
-semantic acceptance and current Library publication.

@@ -1,6 +1,6 @@
 # Actual geometry for the intrinsic conjugation integral split
 
-This unit transports the proved geometric estimates of Waldspurger,
+This module transports the proved geometric estimates of Waldspurger,
 *La formule de Plancherel pour les groupes p-adiques (d'après
 Harish-Chandra)*, Proposition VIII.3.1, printed pp.323–325, to the
 exact actual truncated cell used by `RationalConjugationSplit`.
@@ -54,7 +54,7 @@ For the complement inequality,
 `exists_rationalDynamicCell_complement_height_bound` pulls `H`
 back to each closed actual radical. These pullbacks are open and
 compact, so they satisfy the proved full II.3.5 theorem. The
-published maximal-root-sector height comparison controls
+maximal-root-sector height comparison controls
 `1+height(a)` by a constant times `1+order_alpha(a)`. Applying
 `conjugationSigmaBound_of_openCellBound` gives the required
 complement comparison for the geometric cell. The exact cell

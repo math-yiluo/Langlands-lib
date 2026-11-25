@@ -165,9 +165,12 @@ theorem weightChar_signedWeightIndexEquiv (a : Fin n × ℤˣ) :
     weightChar (Fin n) k (signedWeightIndexEquiv a) =
       (a.2 : ℤ) • weightChar (Fin n) k (Sum.inl a.1) := by
   apply (GeneralLinear.characterCoordEquiv (Fin n) k).injective
+  have hneg (x) : GeneralLinear.characterCoordEquiv (Fin n) k (-x) =
+      -GeneralLinear.characterCoordEquiv (Fin n) k x :=
+    (GeneralLinear.characterCoordEquiv (Fin n) k).toLinearMap.map_neg x
   rcases a with ⟨i, s⟩
   rcases Int.units_eq_one_or s with rfl | rfl <;>
-    simp [signedWeightIndexEquiv, characterCoordEquiv_weightChar,
+    simp [-map_neg, hneg, signedWeightIndexEquiv, characterCoordEquiv_weightChar,
       SymplecticMatrix.weightCoord_inl, SymplecticMatrix.weightCoord_inr] <;>
       funext j <;> simp only [Pi.single_apply, Pi.neg_apply] <;> split_ifs <;> rfl
 
@@ -180,7 +183,10 @@ variable {e : p.base.support ≃ Fin n}
 theorem standard_eq (i : Fin n) :
     w.standard i = (w.sign i : ℤ) • weightChar (Fin n) k (Sum.inl (w.permutation i)) := by
   apply (GeneralLinear.characterCoordEquiv (Fin n) k).injective
-  rw [w.coordinate, map_zsmul, characterCoordEquiv_weightChar,
+  have hzsmul (m : ℤ) (x) : GeneralLinear.characterCoordEquiv (Fin n) k (m • x) =
+      m • GeneralLinear.characterCoordEquiv (Fin n) k x :=
+    (GeneralLinear.characterCoordEquiv (Fin n) k).toLinearMap.map_smul m x
+  rw [w.coordinate, hzsmul, characterCoordEquiv_weightChar,
     SymplecticMatrix.weightCoord_inl]
   funext j
   simp [Pi.single_apply]

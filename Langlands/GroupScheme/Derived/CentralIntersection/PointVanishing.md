@@ -1,7 +1,5 @@
 # Global functions on reduced schemes over an algebraically closed field
 
-Author: Worker 1408.
-
 This internal helper module proves two standard facts about global sections.
 They are used by the central intersection finiteness proof. Both are derived
 content, proved directly from Mathlib's scheme theory. Namespace:

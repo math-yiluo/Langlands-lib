@@ -1,7 +1,5 @@
 # Actual constituent extraction in binary normalized products
 
-Author: Worker 357.
-
 This internal construction lifts a supplied finite filtration of either
 factor to an actual filtration of its normalized binary product. It supplies
 representation equivalences for every successive quotient. Applying these
@@ -214,40 +212,33 @@ The derivative portion consists only of `Derivative.MirabolicMinus`,
 `Derivative.MirabolicCharacter`, inherited through the unused generic
 exact-functor interfaces in `ExactConstituentExtraction`. No derivative
 theorem, segment derivative statement or derivative support bound is
-applied by the submitted construction.
+applied by this construction.
 
-The host's independence restrictions remain in force. In particular this
-closure and the inspected proof routes exclude generic unlinked-product
-uniqueness (task `30341ae4-65f2-4a0e-9283-763db01a409e`), multisegment
-exhaustion (`3bfb61fa-1129-4fc9-83fd-7fcfec22106e`), ordered strong-head
-existence (`ebea9a8a-9b21-4208-aa31-98c2dea1f8a3`), quotient coverage
-(`20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584`), ordered conversion
-(`8252833d-c269-41a9-824c-5879e531b23b`), tempered uniqueness
-(`52e97845-36bb-457d-b76f-70753334b88c`),
-`SquareIntegrableLanglandsClassification`
-(`1cb45da2-7007-4351-a694-594fb148b8d1`), square-integrable exhaustion
-(`cd8ab97c-0b78-4bce-97c4-d307a28159a4`) and regular exhaustion
-(`bf433f0a-921a-428c-b0c0-6475438125ac`).
-Neither direction of the host's own product criterion is an input.
+This closure and the inspected proof routes are independent of the
+following results: generic unlinked-product
+uniqueness, multisegment
+exhaustion, ordered strong-head
+existence, quotient coverage, ordered conversion, tempered uniqueness,
+`SquareIntegrableLanglandsClassification`, square-integrable exhaustion
+and regular exhaustion.
+Neither direction of the product criterion
+`SegmentHeadProductIrreducibility` is an input.
 The additional excluded segment derivative, head, socle and full Jacquet
 conclusions, including Zelevinsky 1980 §§3.5 and 9.6 and their proof
-successors, are absent. The segment-socle part of task `8e5b4563-0365-41c7-b134-70f2a0b36292` is not
-used.
+successors, are absent. No segment-socle result is used.
 
-Trusted operator decisions `bd71b9185aab5d6eafffb7891bd3a3ca` and
-`0edda6122ce65ed7ac51603c37473920` retain these exclusions while
-permitting independently proved general infrastructure. Decision
-`30144f6f9b59540b88b6d4c1517892d9` separately permits a newly proved
-support-only terminal-truncation bound. This construction makes no such
-segment derivative assertion, nor any strengthening of it.
-The source-name and excluded-task scan of comment- and string-stripped
-Lean found no excluded conclusion or proof-hole declaration. The explicit
+The exclusions concern these conclusions only; independently proved general
+infrastructure may be used. This construction makes no segment derivative
+assertion, such as a support-only terminal-truncation bound, nor any
+strengthening of one.
+The scan of comment- and string-stripped Lean for source names and excluded
+results found no excluded conclusion or proof-hole declaration. The explicit
 proof-route checks above supplement that name scan.
 
-This is a focused prerequisite contribution. It does not prove support
+This is a focused prerequisite module. It does not prove support
 aggregation, nonlinkage survival, the linked converse or the full
-`SegmentHeadProductIrreducibility` criterion. The two earlier pending
-modules `LeibnizConstituentExtraction` and `SegmentHeadContragredient` are
+`SegmentHeadProductIrreducibility` criterion. The modules
+`LeibnizConstituentExtraction` and `SegmentHeadContragredient` are
 not imported or used.
 
 ## Complete project import inventory
@@ -479,9 +470,7 @@ Mathlib.Topology.LocallyConstant.Basic
 
 ## Development checks
 
-The module and the earlier pending workspace modules compile with zero errors
-and warnings in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`.
+The module compiles with zero errors and warnings.
 Lake compilation and declaration inspection of the left-filtration constructor
 and of the extraction theorem report independent parameters `uV` and `uF`,
-with only `propext`, `Classical.choice` and `Quot.sound`. These development
-checks do not establish independent semantic acceptance or publication.
+with only `propext`, `Classical.choice` and `Quot.sound`.

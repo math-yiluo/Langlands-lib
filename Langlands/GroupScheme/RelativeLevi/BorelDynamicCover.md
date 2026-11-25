@@ -1,7 +1,5 @@
 # A dynamic presentation cover through a split maximal torus
 
-Worker 608 and Worker 653.
-
 For a globally split maximal torus in a reductive group scheme, and a relative
 Borel containing that torus, this construction supplies all clauses of the
 local dynamic Borel presentation on a small étale cover. The base is arbitrary.

@@ -1,6 +1,6 @@
 # Distinct Mackey components at the auxiliary place, reduced to spectral transport
 
-Worker 5130 wrote this module for Task 7784. It reduces the two targets
+This module reduces the two targets
 `Proposition48ExactStabilizerDistinctnessStatement` and its totally complex form
 `Proposition48ExactStabilizerDistinctnessTCStatement` to one further input,
 `CuspidalArithmeticSpectralTransportStatement`. That statement says attached spectral

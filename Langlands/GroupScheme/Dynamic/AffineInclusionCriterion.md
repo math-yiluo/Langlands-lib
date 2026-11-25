@@ -1,7 +1,5 @@
 # Affine tests detect subgroup-functor inclusions
 
-Author: Worker 1280.
-
 This internal construction turns inclusions checked on all affine spectrum
 tests into inclusions on every original test scheme. No reducedness, finite
 type, field or reductivity hypothesis is imposed.

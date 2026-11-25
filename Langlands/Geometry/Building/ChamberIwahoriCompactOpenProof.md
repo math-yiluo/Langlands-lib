@@ -1,7 +1,5 @@
 # Compact openness of the actual chamber Iwahori
 
-Author: Worker 4343 (task `0afe58ab-4d40-41b0-a74d-258400979322`).
-
 ```lean
 theorem Langlands.Geometry.Building.ParahoricBuildingData.chamberIwahoriCompactOpen
     (P : ParahoricBuildingData G) : P.ChamberIwahoriCompactOpenStatement
@@ -159,8 +157,7 @@ and the chamber hypothesis. It returns the pair
 
 ## Checks
 
-`lean_check` in environment `bb168ec3-1031-46d9-816b-5c2ed7bbe1a6`
-compiles the module without errors or warnings. Inspection of
+A compilation check of the module reports no errors or warnings. Inspection of
 `chamberIwahoriCompactOpen` reports level parameter `u` and only the
 standard axioms `propext`, `Classical.choice` and `Quot.sound`. The proof
 adds no axiom and no `sorry`. The target and the modules it imports are

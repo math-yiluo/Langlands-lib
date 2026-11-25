@@ -26,7 +26,8 @@ properties. The commuting base-change square gives the same properties after
 any ring-to-field specialization. Zero dimension and mixtures of zero and
 nonzero coefficients are included.
 
-This is derived infrastructure for Task 6392. It extends the uniform scalar
+This is derived infrastructure for Kaletha–Prasad C.5.3 on unramified
+root-depth special-fibre kernels. It extends the uniform scalar
 calculation used for the additive models in Kaletha–Prasad, *Bruhat–Tits theory:
 a new approach* (2023), Section C.2 and Fact C.2.1, printed pp.697–698 / PDF
 pp.728–729, registered as `kaletha-prasad-2023-bruhat-tits-new-approach`.

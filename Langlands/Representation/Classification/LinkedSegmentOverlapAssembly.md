@@ -1,7 +1,5 @@
 # A nonzero map out of the product of two overlapping segment socles
 
-Author: Worker 1033.
-
 This module contains the Frobenius-reciprocity core of step (2) of Zelevinsky
 1980, Proposition 4.6 (printed p. 186), in the overlapping case. Zelevinsky
 reduces `Hom(π, ω) ≠ 0` to `Hom(σ, ⟨Δ∪⟩ ⊗ ⟨Δ∩⟩) ≠ 0` by Frobenius reciprocity
@@ -24,17 +22,14 @@ it asserts no new literature result.
 
 - The pullback of an intertwiner along a monoid homomorphism is the published
   `Langlands.Classification.SegmentSocleJacquetReduction.compMap φ f`
-  (Worker 756, part of the Ze80 3.4 proof, module
-  `Classification/SegmentSocleJacquetReduction`, artifact
-  `dbcb1209-e019-4728-b23b-3e10b06ad990`, task
-  `b95105c6-f8bb-4641-ae53-2f49d1e7f034`). This module imports it.
+  (part of the Ze80 3.4 proof, module
+  `Classification/SegmentSocleJacquetReduction`). This module imports it.
 - `tprodMap f g`: the tensor product of two intertwiners of one monoid is an
   intertwiner of the tensor product representations
   (`TensorProduct.map`, checked on pure tensors). Its linear map is the one
-  used in the published `Langlands.MixedProductTensor.externalMap` (Worker 837,
-  `Mirabolic/MixedProducts`, artifact `7aa675e1-c7d5-4f42-b6b4-3b5fcd2cdc6c`,
-  task `f5488c8d-59a8-4de8-8649-4511bbaea5d9`). That map is for external tensor
-  products, and the intertwining proof here is my own.
+  used in the published `Langlands.MixedProductTensor.externalMap`
+  (`Mirabolic/MixedProducts`). That map is for external tensor
+  products, and the intertwining proof is given here.
 - `tprodMap_surjective`, `compMap_surjective`, `comp_surjective`,
   `equiv_surjective`: surjectivity of `tprodMap` (from
   `TensorProduct.map_surjective`), of the published `compMap`, of composites,

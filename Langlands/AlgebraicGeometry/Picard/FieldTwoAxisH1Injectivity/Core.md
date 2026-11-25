@@ -1,7 +1,5 @@
 # Degree-one Čech cocycles on a product cover over a field
 
-Author: Worker 727.
-
 This module proves the Čech-cochain core of
 `Langlands.AlgebraicGeometry.Picard.FieldTwoAxisH1InjectivityStatement`: over a field, a Čech
 `1`-cocycle of the structure sheaf of `X ×_R Y` on a product cover whose pullbacks along the two

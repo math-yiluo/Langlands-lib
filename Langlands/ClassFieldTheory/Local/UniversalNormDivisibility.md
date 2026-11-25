@@ -33,7 +33,7 @@ norm subgroup `N(E/K)`. Lift the base universal norm `a` to a universal norm
 `b` of `E`. The preceding result writes `b = c^q` in `E`. The determinant
 norm of `c` is a prime root of `a` lying in `N(E/K)`. This gives a root in
 each norm subgroup separately. Apply the generic directed compact-fiber
-intersection theorem from Worker 1769's `NormExistenceFiberSupport` to the
+intersection theorem from `NormExistenceFiberSupport` to the
 continuous power homomorphism. Its fiber is compact by
 `isCompact_power_fiber`, since the prime exponent is nonzero. The supplied
 downward directedness and closedness then give one root lying in every

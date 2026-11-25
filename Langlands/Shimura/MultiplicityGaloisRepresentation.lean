@@ -59,17 +59,17 @@ theorem isSmooth_multiplicityRepresentation [Module.Finite (MonoidAlgebra R G) �
   intro φ
   choose V hV using fun u : U => hX (φ u)
   refine ⟨t.inf V, (Representation.mem_invariants _ _).2 fun γ => ?_⟩
-  have hfix : ∀ u ∈ t, SmoothRep.hom (X.ρ γ.1) (φ u) = φ u := fun u hu =>
+  have hfix : ∀ u ∈ t, SmoothRep.hom (X.ρ γ.1).asHom (φ u) = φ u := fun u hu =>
     (Representation.mem_invariants _ _).1 (hV u)
       ⟨γ.1, SetLike.le_def.1 (Finset.inf_le (f := V) hu) γ.2⟩
   have hstable : ∀ (g : G), ∀ u ∈ LinearMap.eqLocus
-      ((SmoothRep.hom (X.ρ γ.1)).toLinearMap ∘ₗ φ.toLinearMap) φ.toLinearMap,
+      ((SmoothRep.hom (X.ρ γ.1).asHom).toLinearMap ∘ₗ φ.toLinearMap) φ.toLinearMap,
       τ g u ∈ LinearMap.eqLocus
-        ((SmoothRep.hom (X.ρ γ.1)).toLinearMap ∘ₗ φ.toLinearMap) φ.toLinearMap := by
+        ((SmoothRep.hom (X.ρ γ.1).asHom).toLinearMap ∘ₗ φ.toLinearMap) φ.toLinearMap := by
     intro g u hu
     rw [LinearMap.mem_eqLocus] at hu ⊢
-    change SmoothRep.hom (X.ρ γ.1) (φ (τ g u)) = φ (τ g u)
-    change SmoothRep.hom (X.ρ γ.1) (φ u) = φ u at hu
+    change SmoothRep.hom (X.ρ γ.1).asHom (φ (τ g u)) = φ (τ g u)
+    change SmoothRep.hom (X.ρ γ.1).asHom (φ u) = φ u at hu
     rw [φ.isIntertwining, ← galoisRepresentation_apply, galoisRepresentation_commutes,
       galoisRepresentation_apply, hu]
   have htop := ht _ hstable fun u hu => LinearMap.mem_eqLocus.2 (hfix u hu)
@@ -106,7 +106,7 @@ variable (hX : IsSmooth (galoisRepresentation X))
 /-- A Galois element acts on an intertwining map by composition with its action on `X`. -/
 theorem multiplicityObjects_representation_apply (g : Field.absoluteGaloisGroup K)
     (φ : τ.IntertwiningMap X.V.representation) :
-    (multiplicityObjects τ X hX).val.representation g φ = (SmoothRep.hom (X.ρ g)).comp φ :=
+    (multiplicityObjects τ X hX).val.representation g φ = (SmoothRep.hom (X.ρ g).asHom).comp φ :=
   rfl
 
 /-- The dimension of the Galois representation is that of the multiplicity space. -/

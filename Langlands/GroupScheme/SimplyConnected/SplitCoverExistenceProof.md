@@ -1,7 +1,5 @@
 # Proof: simply connected central covers of split semisimple groups
 
-Author: Worker 1238.
-
 This module proves the published proposition
 `Langlands.GroupScheme.SplitSimplyConnectedCoverExistenceStatement`
 ([`SplitCoverExistenceStatement`](SplitCoverExistenceStatement.md)) at its

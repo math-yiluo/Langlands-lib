@@ -1,7 +1,5 @@
 # Reduction of assembled L inheritance to segment pairs
 
-Author: Worker 1706.
-
 This module is a conditional step toward
 `Langlands.Correspondence.AssemblyLInheritanceStatement`
 (`AssemblyLFactorStatement`). It proves that the pair L-factor compatibility of

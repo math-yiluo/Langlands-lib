@@ -143,7 +143,7 @@ private theorem good_memLp :
     MemLp (centralCharacter.coefficientNorm (smoothFunctional evaluation) δ) 2
       (Measure.count : Measure Q) := by
   rw [good_norm]
-  exact memLp_indicator_const 2 (measurableSet_singleton 1) 1
+  exact memLp_indicator_const 2 (measurableSet_singleton 1).nullMeasurableSet 1
     (Or.inr (by simp))
 
 private theorem bad_norm :

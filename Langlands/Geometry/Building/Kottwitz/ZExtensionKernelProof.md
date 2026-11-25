@@ -98,6 +98,5 @@ The Markdown files of the two reduction modules describe the mathematical argume
 the snake step on `K`-points, and on rational points the lifting of invariant classes
 through the injective map `π₁(i)` followed by Corollary 11.1.9.
 
-The module compiles in the pinned environment `5c94c648-e8dc-4002-a50a-071ebf3f6096`.
-Its three theorems use only the standard axioms `propext`, `Classical.choice` and
+The module compiles. Its three theorems use only the standard axioms `propext`, `Classical.choice` and
 `Quot.sound`.

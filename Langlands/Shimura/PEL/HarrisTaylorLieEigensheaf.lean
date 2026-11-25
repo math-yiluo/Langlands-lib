@@ -52,12 +52,12 @@ variable (B : AbelianScheme S) (i : A →ₐ[ℚ] End0 B)
 omit [NumberField L] [IsCMField L] in
 /-- The full actual algebra action commutes with the imaginary-field Lie action. -/
 theorem imaginaryLieAction_commutes (r : L) (a : A) :
-    imaginaryLieAction L s B i r ≫ lieRationalOrderAction s B i.toRingHom a =
-      lieRationalOrderAction s B i.toRingHom a ≫ imaginaryLieAction L s B i r := by
+    (imaginaryLieAction L s B i r).asHom ≫ (lieRationalOrderAction s B i.toRingHom a).asHom =
+      (lieRationalOrderAction s B i.toRingHom a).asHom ≫ (imaginaryLieAction L s B i r).asHom := by
   let α := lieRationalOrderAction s B i.toRingHom
-  change α (algebraMap K A (algebraMap L K r)) ≫ α a =
-    α a ≫ α (algebraMap K A (algebraMap L K r))
-  have h := congrArg α (_root_.Algebra.commutes (algebraMap L K r) a)
+  change (α (algebraMap K A (algebraMap L K r))).asHom ≫ (α a).asHom =
+    (α a).asHom ≫ (α (algebraMap K A (algebraMap L K r))).asHom
+  have h := congrArg (fun x => (α x).asHom) (_root_.Algebra.commutes (algebraMap L K r) a)
   simpa only [map_mul, End.mul_def] using h.symm
 
 /-- The actual Lie eigensubsheaf for the natural (`false`) or conjugate (`true`) character. -/
@@ -75,7 +75,7 @@ instance (conjugate : Bool) : Mono (lieEigensheafι L s B i conjugate) :=
 theorem mem_lieEigenSections (conjugate : Bool) (U : S.Opens) (x : Γ(B.Lie, U)) :
     x ∈ scalarEigenSections (imaginaryLieAction L s B i)
       (imaginaryLieCharacter L s conjugate) U ↔
-    ∀ r : L, (lieMap0 s (i (algebraMap K A (algebraMap L K r)))).app U x =
+    ∀ r : L, (lieMap0 s (i (algebraMap K A (algebraMap L K r))).asHom).app U x =
       secHom s U
         (algebraMap L K (if conjugate then IsCMField.complexConj L r else r)) • x := by
   simp only [mem_scalarEigenSections, imaginaryLieCharacter_restrict]
@@ -89,19 +89,19 @@ def lieEigensheafAction (conjugate : Bool) :
 
 @[reassoc (attr := simp)]
 theorem lieEigensheafAction_ι (conjugate : Bool) (a : A) :
-    lieEigensheafAction L s B i conjugate a ≫ lieEigensheafι L s B i conjugate =
-      lieEigensheafι L s B i conjugate ≫ lieRationalOrderAction s B i.toRingHom a := rfl
+    (lieEigensheafAction L s B i conjugate a).asHom ≫ lieEigensheafι L s B i conjugate =
+      lieEigensheafι L s B i conjugate ≫ (lieRationalOrderAction s B i.toRingHom a).asHom := rfl
 
 variable {B} {B' : AbelianScheme S} (i' : A →ₐ[ℚ] End0 B')
   (f : Hom0 B B')
-  (hf : ∀ a : A, comp0 B B B' (i a) f = comp0 B B' B' f (i' a))
+  (hf : ∀ a : A, comp0 B B B' (i a).asHom f = comp0 B B' B' f (i' a).asHom)
 
 omit [NumberField L] [IsCMField L] in
 include hf in
 /-- An actual rational action intertwiner induces an imaginary-field Lie intertwiner. -/
 theorem imaginaryLieMap_intertwines (r : L) :
-    imaginaryLieAction L s B i r ≫ lieMap0 s f =
-      lieMap0 s f ≫ imaginaryLieAction L s B' i' r :=
+    (imaginaryLieAction L s B i r).asHom ≫ lieMap0 s f =
+      lieMap0 s f ≫ (imaginaryLieAction L s B' i' r).asHom :=
   lieMap0_intertwines s (centralAction B i) (centralAction B' i') f
     (fun a => hf (algebraMap K A a)) (algebraMap L K r)
 
@@ -124,9 +124,9 @@ theorem lieEigensheafMap_ι (conjugate : Bool) :
 
 /-- The induced actual eigensheaf map intertwines the full restricted algebra actions. -/
 theorem lieEigensheafMap_intertwines (conjugate : Bool) (a : A) :
-    lieEigensheafAction L s B i conjugate a ≫ lieEigensheafMap L s i i' f hf conjugate =
+    (lieEigensheafAction L s B i conjugate a).asHom ≫ lieEigensheafMap L s i i' f hf conjugate =
       lieEigensheafMap L s i i' f hf conjugate ≫
-        lieEigensheafAction L s B' i' conjugate a :=
+        (lieEigensheafAction L s B' i' conjugate a).asHom :=
   scalarEigensheafMap_intertwines (imaginaryLieAction L s B' i')
     (lieRationalOrderAction s B' i'.toRingHom) (imaginaryLieAction_commutes L s B' i')
     (lieMap0 s f) (imaginaryLieMap_intertwines L s i i' f hf)
@@ -144,7 +144,7 @@ theorem lieEigensheafMap_id (conjugate : Bool) :
 /-- The restricted maps preserve actual rational composition. -/
 theorem lieEigensheafMap_comp {B'' : AbelianScheme S}
     (i'' : A →ₐ[ℚ] End0 B'') (g : Hom0 B' B'')
-    (hg : ∀ a : A, comp0 B' B' B'' (i' a) g = comp0 B' B'' B'' g (i'' a))
+    (hg : ∀ a : A, comp0 B' B' B'' (i' a).asHom g = comp0 B' B'' B'' g (i'' a).asHom)
     (conjugate : Bool) :
     lieEigensheafMap L s i i'' (comp0 B B' B'' f g)
         (fun a => by
@@ -158,7 +158,7 @@ theorem lieEigensheafMap_comp {B'' : AbelianScheme S}
 /-- An actual equivariant rational isomorphism gives actual isomorphisms of both Lie eigensheaves. -/
 def lieEigensheafIso (conjugate : Bool)
     (e : Langlands.Rationalization.of B ≅ Langlands.Rationalization.of B')
-    (he : ∀ a : A, comp0 B B B' (i a) e.hom = comp0 B B' B' e.hom (i' a)) :
+    (he : ∀ a : A, comp0 B B B' (i a).asHom e.hom = comp0 B B' B' e.hom (i' a).asHom) :
     lieEigensheaf L s B i conjugate ≅ lieEigensheaf L s B' i' conjugate :=
   scalarEigensheafIso (imaginaryLieAction L s B i) (imaginaryLieAction L s B' i')
     (imaginaryLieCharacter L s conjugate) (lieIso0 s e)
@@ -167,7 +167,7 @@ def lieEigensheafIso (conjugate : Bool)
 @[simp]
 theorem lieEigensheafIso_hom (conjugate : Bool)
     (e : Langlands.Rationalization.of B ≅ Langlands.Rationalization.of B')
-    (he : ∀ a : A, comp0 B B B' (i a) e.hom = comp0 B B' B' e.hom (i' a)) :
+    (he : ∀ a : A, comp0 B B B' (i a).asHom e.hom = comp0 B B' B' e.hom (i' a).asHom) :
     (lieEigensheafIso L s i i' conjugate e he).hom =
       lieEigensheafMap L s i i' e.hom he conjugate := rfl
 

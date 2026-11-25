@@ -1,6 +1,6 @@
 # Left exactness of actual pseudo-F and right exactness of actual P
 
-Workers 321 and 633 prove the published closed proposition
+This module proves the published closed proposition
 `Langlands.Algebra.NondegeneratePInductionExactnessTheorem`, without modifying
 that statement or any of its imported Lean and Markdown pairs. This is the
 P/pseudo-F portion of Renard I.2.4.
@@ -69,6 +69,8 @@ epi, and preserve both exactness and that boundary map.
 This is an internal arbitrary-ring additive generalization of Renard's
 complex-algebra setting. It imposes no nontriviality, unit-action, coefficient
 action or comparison between the three universes. Zero rings and trivial
-nondegenerate modules are included. Complex-linearity, coefficient and scalar
-comparisons, unitization, the F/I assertions and injectivity remain separate
-obligations. This proof does not complete all of I.2.4 or the whole book.
+nondegenerate modules are included. The F/I assertions and injectivity are
+proved separately, by `Langlands.Algebra.nondegenerateFInductionExactness` and
+`Langlands.Algebra.nondegenerateIInductionInjectivity`; complex-linearity,
+coefficient and scalar comparisons and unitization are outside this module.
+This proof does not complete all of I.2.4 or the whole book.

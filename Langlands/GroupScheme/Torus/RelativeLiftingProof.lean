@@ -34,6 +34,7 @@ theorem relativeSplitTorusLifting : RelativeSplitTorusLiftingStatement.{u} := by
   let j₀ : RelativeHom H G (Over.mk c) := e₀.hom ≫ i₀
   have hj₀ : IsClosedImmersion j₀.hom.hom.left := by
     change IsClosedImmersion (e₀.hom.hom.hom.left ≫ i₀.hom.hom.left)
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
     infer_instance
   obtain ⟨M, i, hi, hM⟩ :=
     smoothSplitSourceRepresentability S H G (isSplitTorus_splitTorus I)

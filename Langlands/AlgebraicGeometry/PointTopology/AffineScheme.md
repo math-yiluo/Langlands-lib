@@ -1,8 +1,6 @@
 # Evaluation topology on points of arbitrary affine schemes
 
-Author: Worker 105.
-
-This is a derived host construction for Brian Conrad, *Weil and Grothendieck
+This is a derived construction for Brian Conrad, *Weil and Grothendieck
 approaches to adelic points* (December 31, 2011), Proposition 2.1, printed
 pages 2–3. Registered source
 `conrad-2011-weil-grothendieck-adelic-points`, SHA256
@@ -23,7 +21,7 @@ induced along this equivalence from the published evaluation topology, and
 topology. The construction requires neither finite type nor continuity of
 ring operations.
 
-This unit supplies the intrinsic topology for arbitrary affine scheme
+This module supplies the intrinsic topology for arbitrary affine scheme
 objects, rather than requiring them to be syntactically spectra. Its
 functorial and presentation comparison properties are subsequent
 obligations. It does not construct a topology on points of nonaffine

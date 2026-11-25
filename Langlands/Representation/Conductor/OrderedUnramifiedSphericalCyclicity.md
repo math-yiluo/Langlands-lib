@@ -1,7 +1,5 @@
 # Spherical cyclicity of norm-ordered unramified principal series: proof
 
-Author: Worker 392.
-
 This pair proves the published proposition
 `Langlands.Conductor.OrderedUnramifiedSphericalCyclicityStatement.{uF}` from
 [`OrderedUnramifiedWhittakerStatement`](OrderedUnramifiedWhittakerStatement.md),

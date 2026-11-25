@@ -19,11 +19,13 @@ family is real `C∞`. Constants and postcomposition preserve it. This definitio
 assigns no manifold to the target. The source needs a charted-space structure,
 but no `IsManifold` hypothesis is needed for these tests or the preservation
 lemmas. `regularEvaluation_typeZero` and `regularSmooth_typeZero_iff` identify
-these definitions exactly with the published Type 0 ones, for the same actual
+these definitions exactly with the Type 0 ones, for the same actual
 points and functions.
 
-Worker 94 adapted Worker 274's published `RegularEvaluation` definitions and
-proofs by making the coefficient universe explicit, and added the exact Type 0
-comparisons. The provenance is internal, through the published affine-point
+This file adapts the `PointManifold.RegularEvaluation` definitions and
+proofs by making the coefficient universe explicit, and adds the exact Type 0
+comparisons. The provenance is internal, through the affine-point
 comparison and Mathlib's manifold calculus. Existence of charts from algebraic
-smoothness remains a separate obligation.
+smoothness is a separate target, `regularChartExistenceStatement` in
+`General.RegularChartExistence`, proved by `regularChartExistence` in
+`General.RegularChartExistenceProof`.

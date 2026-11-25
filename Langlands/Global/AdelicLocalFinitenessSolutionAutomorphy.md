@@ -31,4 +31,4 @@ BL's \(V\) uses one bi-\(K\)-finite kernel with \(\delta(h)\phi=\phi\). Ξ_main 
 
 ## Dependencies
 
-Besides the published Library, the module imports two unpublished pairs. `AdelicLocalFinitenessSolutionAutomorphyStatement` is byte-identical to candidate `7bdda931-f4f4-4581-a889-ccb2e30e3a75`. `AdelicLocalFinitenessCenterStabilityStatement` is a separate candidate.
+Among other Library modules, the module imports the statement modules `AdelicLocalFinitenessSolutionAutomorphyStatement` and `AdelicLocalFinitenessCenterStabilityStatement`.

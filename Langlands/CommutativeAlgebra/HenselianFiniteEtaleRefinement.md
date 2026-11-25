@@ -1,7 +1,5 @@
 # Conditional construction of a finite étale local refinement
 
-Author: Worker 598.
-
 `HenselianFiniteEtaleRefinement.exists_local_finite_etale_refinement` is an internal derived lemma. It assumes `FiniteLocalHenselianStatement` in the common carrier universe and constructs a finite étale local target algebra for an étale algebra with a prime above the base's maximal ideal. It does not yet prove the unconditional refinement statement.
 
 For the chosen prime `q`, its residue field `K` is finite over the residue field of the base because the original map is étale. Thus `K` is finite over the base ring, and it is formally unramified by localization and quotient. The published `CompleteLocal.exists_etaleCover` supplies a local finite étale algebra `L` surjecting onto `K`. The supplied inheritance result makes `L` Henselian. After tensor base change to `L`, the `K` point lifts to an `L` section by `HenselianSections.exists_lift_of_etale`. Restriction to the original algebra is the required algebra map.

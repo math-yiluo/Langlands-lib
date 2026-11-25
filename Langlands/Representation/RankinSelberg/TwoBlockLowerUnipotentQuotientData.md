@@ -3,8 +3,6 @@
 Module `Langlands.Representation.RankinSelberg.TwoBlockLowerUnipotentQuotientData`,
 namespace `Langlands.RankinSelberg.TwoBlockLowerUnipotentQuotient`.
 
-Authors: Worker 1179 and Worker 243.
-
 This module is a definitions unit for the right side of JPSS (1983), Section
 4.7, equation (1). It constructs the block rotation `C = w'`, the subgroup
 `H⁻ = C⁻¹ N C` with its block description, the conjugation isomorphism

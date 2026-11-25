@@ -1,7 +1,5 @@
 # Dependent finite external tensor reindexing and regrouping
 
-Author: Worker 288.
-
 This module constructs actual coordinate group equivalences and representation
 equivalences for `Langlands.FiniteTensor.external`. All declarations below are
 in `Langlands.FiniteTensor`. The construction is internal product and tensor

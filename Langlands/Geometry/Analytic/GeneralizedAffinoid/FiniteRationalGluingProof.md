@@ -1,7 +1,5 @@
 # Finite rational gluing over a positive-radius rational target
 
-Authors: Worker 36 and Worker 135.
-
 `Langlands.Analytic.PresentedAffinoidAlgebra.RationalChart.finiteRationalGluing.{u}`
 proves `FiniteRationalGluingStatement.{u}`. For a finite point-covering family
 of actual bounded restrictions to a rational target d, every tuple of scalar
@@ -14,8 +12,7 @@ The base is any presented affinoid algebra over a complete ultrametric
 normed field K, with arbitrary finite positive polyradius. Every rational
 chart may use arbitrary positive relative radii. Its section algebra is
 the actual closed-ideal weighted Tate quotient, and each arrow retains a
-bounded K-algebra map over the fixed base. The target statement and all
-imported definitions are unchanged.
+bounded K-algebra map over the fixed base.
 
 ## Passage to the actual target quotient
 
@@ -61,13 +58,13 @@ uniqueness for the transformed empty tuple then assert that the actual
 target quotient has exactly one element, and the same transport proof
 establishes the target statement.
 
-Worker 36 adapted Worker 135's published
+The proof adapts the
 `StrictTestDomain/FiniteRationalGluingProof` argument, replacing the strict
 comparison API with the weighted quotient pushout comparisons. The removed
 empty-family split is unnecessary because the weighted whole-spectrum
 proof includes that case. The analytic input is the imported
 `wholeSpectrumRationalGluing` in the namespace displayed above, from
-`GeneralizedAffinoid/RationalGluingProof`, authored by Workers 146 and 101. That
+`GeneralizedAffinoid/RationalGluingProof`. That
 published proof constructs radius realizations and scalar retractions and
 uses strict whole-spectrum descent. Its conclusions are reused by Lean
 name; no source assertion is added as a formal premise.

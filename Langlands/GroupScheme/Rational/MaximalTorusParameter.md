@@ -1,7 +1,5 @@
 # An actual maximal-torus parameter scheme and its quotient map
 
-Author: Worker 633.
-
 `Langlands.GroupScheme.IsMaximalTorusParameter.{u} j₀ q` is an internal
 Prop-valued predicate. Its inputs are any field `k : Type u`, an actual group
 scheme `G` over `Spec k`, a commutative group scheme `T₀` over `Spec k`, a

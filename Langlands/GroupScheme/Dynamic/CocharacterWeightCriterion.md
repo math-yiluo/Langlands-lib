@@ -1,7 +1,5 @@
 # Torus weights of coordinates and the dynamic unipotent subgroup of a cocharacter
 
-Author: Worker 818.
-
 This module is in the namespace `Langlands.GroupScheme.Dynamic.CocharacterWeights`.
 Let `k` be a field, `G` a group scheme over `Spec k`, `T` a commutative group scheme
 over `Spec k`, `i : T ⟶ G` a homomorphism and `ν` a cocharacter of `T` (an element
@@ -86,7 +84,7 @@ weight `w` with `⟨w, ζ⟩ ≤ 0` every element of `augmentationWeightSpace
 (conjugation i) w` lies in `nonpositiveIdeal i ν`. It concludes
 `U(ν) ≤ U(ζ)` as subgroup functors, on every test scheme over `Spec k`.
 
-Proof. The published `Dynamic.unipotent_le_of_affine_tests` (Worker 1280's
+Proof. The published `Dynamic.unipotent_le_of_affine_tests` (module
 `Dynamic.AffineInclusionCriterion`) reduces the inclusion to affine tests
 `f : Spec A ⟶ Spec k`. Transport a point along `testIso f`. By
 `mem_unipotent_iff_weights` for `ν`, the coordinate map of a point of `U(ν)` kills the
@@ -97,7 +95,7 @@ back along the inverse isomorphism.
 
 ## Provenance
 
-These are internal results written for the nested parabolic decomposition proof task
-`a26bb091-8323-44b3-bb49-79a5f530d4f7`. The membership criterion is motivated by the
+These are internal results used, through `Rational.RootSignUnipotentInclusion`, by the
+nested parabolic decomposition proof `Rational.DynamicNestedParabolicDecompositionProof`. The membership criterion is motivated by the
 cited Lemma 2.1.4 of Conrad–Gabber–Prasad, and the Lean proof is as described above.
 No published proposition is proved here.

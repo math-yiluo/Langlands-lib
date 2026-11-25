@@ -1,7 +1,5 @@
 # Renard VII.1.2 and the strict root cone
 
-Worker 1222, Task 1222 (`f5d1f399-a1f8-4ab5-a981-90b92abd4857`).
-
 The printed necessity in VII.1.2 fails for a square-integrable representation
 of split \(\mathrm{Sp}_4(\mathbb Q_3)\). Its normalized Jacquet exponent at the
 standard Borel has real part on a wall of the coroot chamber. The decay
@@ -87,8 +85,8 @@ This yields \(c_i>0\) for every \(i\), the first cone of V.3.15.
 The published `ArbitraryParabolicCasselmanCriterionStatement` uses this
 condition through `normalizedRealPart` and `pres.positiveCone`. The
 published `arbitraryParabolicCasselmanNecessity` proves the corresponding
-forward direction. The complete corrected criterion is the target of
-Task 4712 (`2e8d370f-f1ed-4ad4-a529-5083212ebae0`). The example above is
+forward direction. The Library states the complete corrected criterion
+and does not prove it. The example above is
 a paper counterexample to the printed assertion. [Criterion statement](../../Langlands/Representation/Exponents/ArbitraryParabolicCasselmanStatement.md) · [Necessity proof](../../Langlands/Representation/Exponents/CasselmanNecessity.md)
 
 ## Sources

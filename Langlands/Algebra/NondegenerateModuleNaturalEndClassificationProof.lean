@@ -40,11 +40,11 @@ theorem app_eq_evaluation_smul (hA : IsIdempotented A)
     (θ : NondegenerateModuleNaturalEnd.{uA, max uA uM} A)
     (M : NondegenerateModuleCat.{uA, max uA uM} A) (m : M.obj) (e : Idempotent A)
     (he : (e : A) • m = m) :
-    θ.app M m =
-      (θ.app (NondegenerateModuleNaturalEndEvaluation.liftedRegularObject.{uA, uM} hA)
+    θ.asHom.app M m =
+      (θ.asHom.app (NondegenerateModuleNaturalEndEvaluation.liftedRegularObject.{uA, uM} hA)
         (ULift.up (e : A))).down • m := by
-  have h := congrArg (fun f => f (ULift.up (e : A))) (θ.naturality (orbitMap hA M m))
-  change θ.app M ((e : A) • m) = _ at h
+  have h := congrArg (fun f => f (ULift.up (e : A))) (θ.asHom.naturality (orbitMap hA M m))
+  change θ.asHom.app M ((e : A) • m) = _ at h
   rw [he] at h
   exact h
 
@@ -81,6 +81,7 @@ theorem componentRecovery (hA : IsIdempotented A) : ComponentRecovery.{uA, uM} h
 
 theorem naturalEndRecovery (hA : IsIdempotented A) : NaturalEndRecovery.{uA, uM} hA := by
   intro θ
+  apply End.ext
   apply NatTrans.ext
   funext M
   apply AddCommGrpCat.hom_ext

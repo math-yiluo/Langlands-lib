@@ -1,6 +1,6 @@
 # Centrality of a radical under a Levi retraction
 
-This internal derived unit concerns a specified solvable radical and an actual
+This module concerns a specified solvable radical and an actual
 rational Levi. It assumes neither a torus structure nor an ambient maximal-torus
 condition.
 
@@ -25,5 +25,5 @@ radical image, so that Levi factor is central.
 
 The provenance is the indicated formal composition of Library image geometry,
 solvable-image transport, split normality, actual Levi retraction, and the
-arbitrary-field normal-solvable centrality helper. This unit does not assert
+arbitrary-field normal-solvable centrality helper. This module does not assert
 existence of a Levi or of a maximal torus.

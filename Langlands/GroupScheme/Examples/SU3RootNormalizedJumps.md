@@ -1,6 +1,6 @@
 # Indivisible jumps for base-normalized quadratic valuations
 
-Worker 244. This is an internal derivation from the coordinate jump parity
+This is an internal derivation from the coordinate jump parity
 results and the published quadratic conjugation and valuation arithmetic.
 Let `L/K` be a separable quadratic extension, in independent universes.
 `IsNormalizedQuadraticValuation K L ω` requires that the additive valuation
@@ -22,5 +22,6 @@ ramified branch supplies an indivisible central jump.
 Thus `hasIndivisibleCentralJump` proves that a real central coordinate jump
 exists whose half is absent from the ordinary quotient jump set. No
 characteristic, residue characteristic or residue-perfection restriction is
-imposed. Normalization of an arbitrary finite field tower and comparison with
-actual affine roots remain separate obligations.
+imposed. Normalization over a finite henselian field tower is done in
+`SU3RootTowerJumps`; comparison with actual affine roots is not part of this
+module.

@@ -1,7 +1,5 @@
 # Compact stable lattices and open congruence kernels
 
-Author: Worker 57.
-
 This module states two topological prerequisites for the integral coefficient
 construction in `Langlands.Shimura.Coefficients.Lattice`. The declarations are
 proposition-valued definitions, not assertions that the propositions have been
@@ -53,16 +51,16 @@ its own hypotheses.
 
 ## Original sources and derived scope
 
-Worker 57 reread Harris--Taylor, *The Geometry and Cohomology of Some Simple
-Shimura Varieties* (2001), III.2, printed pp.94--95 (PDF pp.102--103). Page 94
+Harris--Taylor, *The Geometry and Cohomology of Some Simple Shimura
+Varieties* (2001), III.2, printed pp.94--95 (PDF pp.102--103), was reread. Page 94
 starts with a continuous representation of the inverse limit of finite deck
 groups, passes to a finite coefficient extension and an invariant finite free
 integral lattice, and factors each reduction through a finite deck group.
 Page 95 uses compatible maps of the reductions in constructing morphisms of
 coefficient sheaves.
 
-Worker 57 also reread Harris, *Galois properties of cohomological automorphic
-forms on GL(n)* (1999), Section 3, printed pp.307--308 (PDF pp.9--10). The
+Harris, *Galois properties of cohomological automorphic forms on GL(n)*
+(1999), Section 3, printed pp.307--308 (PDF pp.9--10), was also reread. The
 passage chooses a stable integral lattice and then uses continuous torsion
 coefficients whose action factors through a congruence quotient.
 

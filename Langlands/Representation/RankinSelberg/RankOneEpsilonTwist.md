@@ -1,7 +1,8 @@
 # Rank-one determinant twists of the full epsilon certificate
 
-Authors: Worker 357, adapting the published rank-one gamma transport of
-Worker 458 and its statement interface of Worker 1062.
+This module adapts the published rank-one gamma transport
+(`RankOneGammaTwistProof`) and its statement interface
+(`RankOneGammaTwistStatement`).
 
 `RankOneEpsilonTwistStatement.{uF,uV}` asserts that the existing p-adic
 JPSS epsilon relation for `(π ⊗ χ∘det, 1)` is equivalent to the relation
@@ -50,7 +51,7 @@ character representation with the product-character representation.
 This is an internal derivation from the published integral identities
 and epsilon definitions. It introduces no new epsilon factor, analytic
 assumption or external literature assertion. It supplies the automorphic
-character-product reduction for a future rank-one comparison. Equality
+character-product reduction for a rank-one comparison. Equality
 with the explicit abelian Gauss-integral epsilon expression, reciprocity
 existence and the closed all-field correspondence remain separate
 obligations.

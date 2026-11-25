@@ -1,8 +1,8 @@
 # Renard II.2.1: canonical germ-unit invertibility on sheaves
 
-Worker 1227 states the proposition family. Worker 6 contributed the original-source
-audit, focused specification and universe design. These are `Prop`-valued
-definitions, with no proofs of the stated assertions.
+This module states the proposition family. These are `Prop`-valued
+definitions, with no proofs of the stated assertions. The aggregate is proved by
+`renardSheafGermUnitIso` in [SheafGermUnitIsoProof](SheafGermUnitIsoProof.md).
 
 The governing original is David Renard, *Représentations des groupes réductifs
 p-adiques*, French version dated 9 July 2026, II.2.1, the first remark on printed
@@ -61,4 +61,4 @@ including empty basis opens when present, remain quantified. The propositions
 assume no adjunction or replacement isomorphism. Proofs of this family,
 universal Hom correspondences and adjunctions, the following paragraph's
 basis/all-open equivalence, compact sections and scalar-module constructions
-remain separate obligations.
+are outside this file.

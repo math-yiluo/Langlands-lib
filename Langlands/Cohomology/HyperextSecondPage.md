@@ -1,6 +1,6 @@
 # The second page of the hyperext spectral sequence in a derived category
 
-Author: Worker 61. Built on the Library module
+Built on the Library module
 `Langlands.Cohomology.HyperextSpectralSequence` (the opposite t-structure
 `opTStructure`, the pieces `heartPiece`, the spectral sequence
 `hyperextSpectralSequence` and its page isomorphism `secondPageIso`), and on
@@ -228,7 +228,7 @@ representations, morphisms in the derived category compute the derived
 functors of `Hom`.
 
 The Library module `Langlands.Cohomology.HyperextDegeneration.Statement`
-(Worker 3) states the degeneration of the spectral sequence
+states the degeneration of the spectral sequence
 `Ext^p(H^{-q} K, W) ⇒ Hom(K, W⟦p + q⟧)` as bijectivity of an edge map,
 without constructing the spectral sequence. This module neither imports nor
 proves that statement, and does not compare its edge map with the spectral

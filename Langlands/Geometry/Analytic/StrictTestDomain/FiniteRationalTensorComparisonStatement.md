@@ -1,7 +1,5 @@
 # Finite rational tensor comparison target
 
-Author: Worker 36.
-
 `FiniteRationalTensorComparisonStatement` says that for a finite bounded
 map `φ : P → Q` between the actual presented strict affinoid algebras,
 and chosen rational data `d` over `P`, the canonical map

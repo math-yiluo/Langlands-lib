@@ -1,6 +1,6 @@
 # Rational root points outside the second cyclic weight tail
 
-This internal supporting unit works at arbitrary universe `u`, over every field,
+This internal supporting module works at arbitrary universe `u`, over every field,
 for a smooth affine group scheme `G` and a homomorphism `i` from a split torus.
 No reductivity, maximal splitness, perfection, infinitude, or algebraic closure
 is required. Its actual root and cyclic weight subgroup functors are the
@@ -28,5 +28,5 @@ The same rational point therefore lies outside `U_(n*a)`.
 exclusion proofs. This extends the earlier algebraically closed witness by an
 actual rational quotient lift, and supplies no integral lifting assertion.
 
-All results are derived from the imported Library theorems; this unit makes
+All results are derived from the imported Library theorems; this module makes
 no additional original-literature assertion.

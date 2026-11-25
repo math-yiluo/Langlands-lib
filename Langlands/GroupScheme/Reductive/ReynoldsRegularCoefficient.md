@@ -1,6 +1,6 @@
 # Normalized regular maps with diagonalizable-invariant image
 
-Worker 1628. This internal construction combines the published normalized
+This internal construction combines the published normalized
 coefficient map with the diagonalizable Reynolds projection. It retains the
 coalgebra chosen by the supplied corepresentation for the actual regular
 representations.

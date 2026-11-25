@@ -1,7 +1,7 @@
 # Affine product factorization through tensor equations
 
-This internal derived unit compares the previously constructed affine coefficient
-locus with factorization of an actual affine fibre product through a closed
+This module compares the affine coefficient locus `tensorCoefficientLocus` of
+`ProjectiveTensorClosedLocus` with factorization of an actual affine fibre product through a closed
 subscheme defined by an ideal I of A tensor_R C. The right factor C is projective
 over R, without a finite generation condition. The coefficient map f:A to B is
 arbitrary; B need not be flat.

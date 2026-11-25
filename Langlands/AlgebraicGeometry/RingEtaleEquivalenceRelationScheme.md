@@ -1,7 +1,5 @@
 # The scheme relation attached to an affine ring relation
 
-Author: Worker 122.
-
 This internal adapter uses the global-sections and spectrum adjunction to
 translate the published ring relation into the corresponding actual scheme
 relation. The adjunction describes maps from any scheme to an affine scheme,

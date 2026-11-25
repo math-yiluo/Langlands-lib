@@ -1,9 +1,9 @@
 # Contragredient association for actual cuspidal realizations and classes: proof
 
-Module: `Langlands.Automorphic.Unramified.ContragredientAssociationProof`. Author: Worker 5016.
+Module: `Langlands.Automorphic.Unramified.ContragredientAssociationProof`.
 
-`Langlands.ClassField.Global.RelativeWeilGroup.associatedContragredient` proves the published
-proposition `Langlands.ClassField.Global.RelativeWeilGroup.AssociatedContragredientStatement.{u, uV, uP, uQ}`
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.associatedContragredient` proves the published
+proposition `Langlands.ClassFieldTheory.Global.RelativeWeilGroup.AssociatedContragredientStatement.{u, uV, uP, uQ}`
 of [AssociatedContragredientStatement](../AssociatedContragredientStatement.md), at all four
 independent universe levels. That proposition is the conjunction of the presented form
 `PresentedContragredientAssociationStatement.{u, uV, uP, uQ}` and the class form

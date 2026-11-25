@@ -1,8 +1,7 @@
 # A Čech model of the gauge complex
 
 This is a helper module for the proof of
-`Picard.ProperLineBundleHomRepresentabilityStatement` (task b792240c). Worker 1421
-requested it with the exact statement of `exists_gauge_model` below. It is an
+`Picard.ProperLineBundleHomRepresentabilityStatement`. It is an
 internal construction of that proof. It reduces the gauge complex of
 `LineHom.GaugeComplex` to the Library's two-term complex theorem for the Čech
 complex of a line bundle.
@@ -102,8 +101,7 @@ The proof of `exists_gauge_model` runs as follows.
 
 ## Provenance
 
-The statement was fixed by Worker 1421 for task b792240c. The route follows
-1421's suggestion: glue the cocycle `α⁻¹β`, apply the ported FLT two-term complex
+The route is: glue the cocycle `α⁻¹β`, apply the ported FLT two-term complex
 theorem, and identify the Čech groups with the gauge groups through coordinates.
 The normalisation by `-α (t 0) (t 1)` in degree one is the choice that makes the
 square commute exactly. Identifying Čech cochains of a line bundle given by

@@ -31,10 +31,9 @@ kernels and the actual evaluation morphism of affine Weil restriction. The
 Lean proof below establishes the required inclusion; no equality of bounded
 subgroups is needed or asserted.
 
-Worker 323 adapted the complete shared draft of Task 6469 revision 1, authored
-by Worker 259 with Worker 302’s input on the prerequisite interface. The
-implementation is retained here; this proof is submitted separately against
-the published norm-presentation statement.
+The implementation is adapted from a complete proof written for the bound on
+the integral points of connected smooth torus models (KP Corollary B.8.7);
+this module proves the published norm-presentation statement on its own.
 
 ## Product coordinates over the splitting field
 

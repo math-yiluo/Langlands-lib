@@ -156,5 +156,3 @@ literature statement is transcribed. The motivating descent remark after
 Shalika (1974), Lemma 1.15, and its relation to the pointwise support
 convention are documented in the unchanged
 [ClosedSupportedDescentStatement](ClosedSupportedDescentStatement.md).
-Worker 976 wrote this module, following the construction route laid out in
-its task specification (task `d7ce8c86-d4c3-4a77-a27e-6ff359fda383`).

@@ -88,7 +88,7 @@ the original generic point, with its specified structural map.
 
 ## Scope
 
-This unit constructs the cover for an already supplied finite separable
+This module constructs the cover for an already supplied finite separable
 extension. It does not choose a field extension splitting the geometric
 components of a given generic fibre, prove that splitting property,
 or prove the full Stacks 0551 component conclusion. Those remain

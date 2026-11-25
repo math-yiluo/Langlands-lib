@@ -2,7 +2,7 @@ import Langlands.CommutativeAlgebra.Popescu.EssentiallySmooth
 import Langlands.CommutativeAlgebra.Popescu.SmoothApproxTools
 import Langlands.CommutativeAlgebra.Popescu.Basic
 import Langlands.CommutativeAlgebra.Popescu.SmoothingAlgebra
-import Mathlib
+import Langlands.MathlibBase
 
 /-! # Tools for the proof of Stacks Lemma 16.11.4 (07FJ) -/
 

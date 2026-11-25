@@ -53,4 +53,4 @@ The input group need not be reductive and the supplied torus need not be
 split or maximal for these conclusions. Existence of suitable structural
 data, the Borel property of the selected dynamic parabolic, a Bruhat
 covering, the covariant coordinate and the entire induced-space
-Steinberg irreducibility remain separate obligations of the host task.
+Steinberg irreducibility are separate steps, not proved in this module.

@@ -125,7 +125,7 @@ matching source functors in these formulas.
 
 ## Scope
 
-The scheme and geometric action stay fixed throughout. This unit supplies
+The scheme and geometric action stay fixed throughout. This module supplies
 coefficient identity/composition coherence for equivariant scalar
 extension. It does not assert exactness, preservation of injectives,
 commutation with global sections or higher cohomology, smoothness of

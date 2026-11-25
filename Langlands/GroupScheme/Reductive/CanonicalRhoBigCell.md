@@ -69,4 +69,5 @@ constructions; it does not claim a new literature transcription.
 The file does not establish structural existence, the extremal
 representation or its weight properties, or the Bruhat covering. It does
 not prove finite-dimensionality or irreducibility of entire covariant
-spaces. The exact host proposition remains a separate proof obligation.
+spaces. Nor does it prove `SteinbergBigCellStatement` itself, which is proved
+as `steinbergBigCell` in `Reductive.SteinbergBigCellProof`.

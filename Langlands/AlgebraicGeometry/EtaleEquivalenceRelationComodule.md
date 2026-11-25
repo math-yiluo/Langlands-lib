@@ -1,23 +1,22 @@
 # Modules on affine étale equivalence relations, in ring form
 
-Authors: Worker 239 and Worker 424. Worker 239 supplied the Lean definitions
-and initial Markdown; Worker 424 checked the ring formulas and original
-sources and clarified the implementation and scope notes.
+The ring formulas and the original sources were checked.
 
 This module defines, in terms of rings and modules, an étale equivalence
 relation on an affine scheme whose relation scheme is affine and whose map
 `j = (t, s)` is a closed immersion, and the quasi-coherent modules on it. It
 also defines invariant elements, morphisms of such modules, and an acyclicity
-property. The definitions are the vocabulary for the planned proof of the
+property. The definitions are the vocabulary for the proof of the
 published statement `NoetherianEtaleEquivalenceRelationAffineDescentStatement`
-(Stacks Lemma 69.17.3, Tag 07VP, for presentations). In that proof,
+(Stacks Lemma 69.17.3, Tag 07VP, for presentations), which the Library gives as
+`noetherianEtaleEquivalenceRelationAffineDescent`. In that proof,
 quasi-coherent modules on the quotient algebraic space `U/R` are handled through
 their pullbacks to `U`. The module states and proves no theorem.
 
 It imports the Library module `Langlands.AlgebraicGeometry.EtaleEquivalenceRelation`
 (for the last definition) and the Mathlib modules `RingTheory.RingHom.Etale`
 and `RingTheory.TensorProduct.Basic`. Mathlib is pinned at commit
-`5ed2965256430c3649e86755f9576b54eca72435` by the prepared environment.
+`5ed2965256430c3649e86755f9576b54eca72435`.
 
 ## Sources and provenance
 
@@ -95,8 +94,9 @@ So the `Spec T`-points of `R` form an equivalence relation on the
 `Spec T`-points of `U` for every ring `T` in the universe `u`, and `s` and `t`
 are étale. This is the affine case of Definitions 39.3.1(4) and 65.9.2 over
 `Spec ℤ`, for points with values in affine schemes, plus the closed immersion
-condition. It is the condition on `(Γ(U), Γ(R), s, t)` that the planned
-translation statement derives from a Library `EtaleEquivalenceRelation` with
+condition. It is the condition on `(Γ(U), Γ(R), s, t)` that the translation
+statement `EtaleEquivalenceRelationRingFormStatement` (proved as
+`etaleEquivalenceRelationRingForm`) derives from a Library `EtaleEquivalenceRelation` with
 `U` and `R` affine and `j` a closed immersion. The translation is not part of
 this module.
 
@@ -199,7 +199,7 @@ So for every short exact sequence `0 → M → G → Q → 0` of modules on the
 groupoid with first term `θ`, the map of invariants `Γ(G) → Γ(Q)` is
 surjective. Both `G` and `Q` range over `Type v`, the universe of `M`;
 the ring universe `u` is independent of `v`. This property is internal to
-the planned proof of Stacks Lemma 69.17.3 (Tag 07VP), where a module
+the proof of Stacks Lemma 69.17.3 (Tag 07VP), where a module
 criterion for affineness is needed. `IsAcyclic` does not occur in Stacks
 under this name. This module defines no cohomology and proves no formal
 comparison with cohomology or a criterion for affineness.
@@ -215,11 +215,14 @@ intended meaning when `E.U` and `E.R` are affine and `j` is a closed
 immersion, which the consuming statements assume. In that case
 `(Γ(E.U, ⊤), Γ(E.R, ⊤), s, t)` is the ring form of `E` used above.
 
-This predicate is internal to the planned proof of Stacks Lemma 69.17.3
+This predicate is internal to the proof of Stacks Lemma 69.17.3
 (Tag 07VP), the Noetherian case. The
-planned statements are that a finite surjective cartesian cover with an
+consuming statements are that a finite surjective cartesian cover with an
 affine quotient makes all modules acyclic when `E.U` is Noetherian and
-affine, and that acyclicity gives an affine quotient. It does not occur in
+affine (`EtaleEquivalenceRelationComodulesAcyclicStatement`), and that
+acyclicity gives an affine quotient (`EtaleEquivalenceRelationSerreCriterionStatement`);
+the Library proves them as `etaleEquivalenceRelationComodulesAcyclic` and
+`etaleEquivalenceRelationSerreCriterion`. It does not occur in
 Stacks under this name. Neither this predicate nor `IsAcyclic` asserts the
 existence of a quotient or incorporates the geometric hypotheses of the
-planned consuming statements.
+consuming statements.

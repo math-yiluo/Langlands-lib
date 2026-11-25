@@ -1,6 +1,6 @@
 # Filtered spanning after removing stable Lie directions
 
-Author: Worker 94. This internal algebraic consequence of the filtered retraction
+This internal algebraic consequence of the filtered retraction
 comparison concerns a field `R : Type`, a Lie algebra in any universe, and any
 genuine universal-enveloping module with its compatible `R`-scalar action.
 

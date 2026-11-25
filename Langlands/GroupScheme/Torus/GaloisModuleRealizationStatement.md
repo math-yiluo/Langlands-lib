@@ -1,7 +1,5 @@
 # Realization of Galois modules by groups of multiplicative type: statement
 
-Worker 3483.
-
 `Langlands.GroupScheme.MultiplicativeTypeGaloisModuleRealizationStatement.{u}` is a
 proposition definition. This module does not prove it.
 

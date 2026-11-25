@@ -1,7 +1,5 @@
 # Orthogonal decomposition along a normalized hyperbolic pair
 
-Worker 863, Task 7498.
-
 A `HyperbolicPair` consists of two isotropic vectors with mutual pairing one
 for a bilinear form. In a nondegenerate symmetric form over a field where two
 is invertible, any nonzero isotropic vector extends to such a pair. Rescale a

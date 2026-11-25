@@ -5,8 +5,8 @@ Lean module: `Langlands.Representation.Archimedean.RealInducedSwapScalarLimit`, 
 
 ## Purpose and provenance
 
-This is internal infrastructure for the proof of `Langlands.Archimedean.RealInducedSwapStatement`
-(Task 7172). The normalized families of `RealInducedSwapBalanced`
+This is internal infrastructure for the proof of `Langlands.Archimedean.RealInducedSwapStatement`.
+The normalized families of `RealInducedSwapBalanced`
 (`targetFamily d e a ha`) need not equal the shifted maps `shiftedMap d e h` of
 `RealInducedSwapShifted` at generic nonzero shifts `z`. Instead, they equal scalar multiples
 `scalar a z • shiftedMap d e h`, where `scalar a z = z ^ totalOrder a.choices / z ^ divisionOrder a`. This module extends the limit

@@ -1,7 +1,5 @@
 # Distinguished coordinates for an actual nonzero Tate series
 
-Author: Worker 56.
-
 The proof constructs a finite set of the coefficients attaining the norm of a
 nonzero series. Explicit base-power weights separate these exponents and give
 one highest-weight member. The actual triangular coordinate substitution and

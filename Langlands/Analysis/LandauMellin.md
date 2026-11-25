@@ -4,7 +4,8 @@ Module `Langlands.Analysis.LandauMellin`, namespace `Langlands.LandauMellin`.
 
 This is an analysis helper module: it contains definitions of transforms and theorems
 about them, but no `Prop`-valued statement definitions. It was written for the self-pair
-Rankin–Selberg continuation (Task 6821). Its global zeta integrals are Mellin transforms
+Rankin–Selberg continuation (`CuspidalSelfPairContinuationStatement`, Jacquet–Shalika I,
+Lemma 5.2). Its global zeta integrals are Mellin transforms
 `∫ F(g) |det g|^s dg` of nonnegative functions `F`, so they are two-sided Laplace transforms
 in the variable `log |det g|`. Everything here holds for an arbitrary measure space `(X, μ)`.
 Nothing in it is specific to automorphic forms.

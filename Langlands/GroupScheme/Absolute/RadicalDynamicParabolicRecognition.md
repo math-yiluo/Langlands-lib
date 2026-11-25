@@ -1,6 +1,7 @@
 # Parabolic recognition with a full unipotent radical
 
-This derived supporting unit concerns smooth connected affine groups over a
+This supporting module, derived from existing Library results, concerns
+smooth connected affine groups over a
 field, at arbitrary universe `u`. It does not assume that the ambient group is
 reductive. The containing subgroup is required to be smooth and closed.
 

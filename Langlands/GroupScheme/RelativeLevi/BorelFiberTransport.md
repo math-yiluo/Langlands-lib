@@ -1,7 +1,5 @@
 # Field fibres and base change of the Borel locus
 
-Worker 597.
-
 These are internal transport lemmas for the Borel-locus proof. They use the
 published parabolic field-extension theorem, reductivity of actual field-valued
 fibres, the field transport lemmas in `BorelFieldTransport`, and naturality of

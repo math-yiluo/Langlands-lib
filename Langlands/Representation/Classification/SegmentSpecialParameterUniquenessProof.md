@@ -1,7 +1,5 @@
 # Uniqueness of the special-head segment parameter
 
-Author: Worker 1750.
-
 `Langlands.Classification.segmentSpecialParameterUniqueness` proves exactly
 the unchanged Library proposition
 `Langlands.Classification.SegmentSpecialParameterUniqueness.{uF,uV} F T`
@@ -72,7 +70,7 @@ is full equality of segments.
 Henniart 2002, §2.6, printed p.595 (one-based PDF p.9), explicitly states
 the bijection `(ρ,m) ↦ St_m(ρ)` and identifies `St_m(ρ)` with the unique
 irreducible quotient of the increasing induction. That source page was
-read for this contribution:
+read for this module:
 
 - Literature ID: `henniart-2002-characterization`.
 - SHA256:
@@ -111,8 +109,4 @@ module and declaration names.
 
 ## Validation boundary
 
-The module compiles in the task's prepared environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, with no errors or warnings.
-Compilation is development evidence; independent semantic review,
-the staged exact-target and Lake validation, and Library publication
-are separate acceptance steps.
+The module compiles with no errors or warnings.

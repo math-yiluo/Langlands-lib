@@ -1,6 +1,6 @@
 # Finite generation from compact-open constituent detection
 
-This internal supporting unit for Renard VI.10.7, Variant, proves
+This supporting module for Renard VI.10.7, Variant, proves
 `Langlands.Renard.AlgebraicFamily.CoefficientFamilyGenerationStatement`.
 It does not prove the full finite-type characterization or assert existence
 of a uniform compact-open detector.
@@ -35,6 +35,6 @@ VI.10.7, Variant (printed p.217 / PDF p.223), with the definition of
 `(G, B)`-modules in VI.8.1 (printed p.187 / PDF p.193). The source is
 registered as `renard-2026-representations-groupes-reductifs-padiques`,
 SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Renard states the Variant without its proof. This unit implements the
+Renard states the Variant without its proof. This module implements the
 generation step through the Library's unconditional detection consequences;
 it is not attributed to a separately numbered assertion in the source.

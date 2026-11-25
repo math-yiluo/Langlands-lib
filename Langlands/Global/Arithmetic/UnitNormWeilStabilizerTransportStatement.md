@@ -1,7 +1,5 @@
 # Unit-norm to Weil stabilizer transport
 
-Author: Worker 84.
-
 `Langlands.Global.UnitNormWeilStabilizerTransportStatement` is a derived
 comparison between the Library's field-side and Weil-side stabilizers.
 It is a proposition definition; this file supplies no proof.

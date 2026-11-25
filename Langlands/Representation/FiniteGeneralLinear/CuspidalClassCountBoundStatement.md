@@ -1,7 +1,5 @@
 # At most `|𝔍(n, k)|` cuspidal classes of `GL_n(k)` (statement)
 
-Author: Worker 377 (Task 7401).
-
 ## Statement
 
 `Langlands.FiniteGeneralLinear.CuspidalClassCountBoundStatement.{u, w} : Prop` says:
@@ -31,9 +29,9 @@ The definitions used:
   there are only finitely many cuspidal classes.
 
 Universes: the field universe `u` is quantified inside the proposition through
-`k : Type u`, and `u` is a universe parameter, so later tasks can apply the statement
-to residue fields in any universe. The carrier universe `w` is the second universe
-parameter, as the task's scope note requires. Universe order: `.{u, w}`.
+`k : Type u`, and `u` is a universe parameter, so the statement applies to residue
+fields in any universe. The carrier universe `w` is the second universe
+parameter. Universe order: `.{u, w}`.
 
 ## Source and how the statement relates to it
 
@@ -61,8 +59,8 @@ so the polynomial `X` does not occur. Source ID
 
 **This record states only the upper-bound half** of the Green parametrisation:
 an inequality of cardinalities, not a bijection, and no explicit map between the two
-sets. The task needs only the upper bound (Task 7339's route note,
-Remark `rem:upper`).
+sets. Only the upper bound is needed for the intended use, the supercuspidal
+upper bound of the numerical step obtained through simple types.
 
 The hypothesis `0 < n` is needed. For `n = 0` the group `GL_0(k)` is trivial and its
 trivial representation is irreducible and (vacuously) cuspidal, so there is one
@@ -74,5 +72,6 @@ class, while `𝔍(0, k)` is empty (`irreduciblePolynomialLabels_zero`).
   representations are not stated.
 - No formula for `|𝔍(n, k)|` (Gauss's necklace count) is stated.
 - Nothing is stated for infinite fields.
-- This file states a proposition only. A proof is the subject of a separate
-  `lean.proof@1` task.
+- This file states a proposition only. The proof is
+  `cuspidalClassCountBound` in
+  `Langlands/Representation/FiniteGeneralLinear/CuspidalClassCountBoundProof.lean`.

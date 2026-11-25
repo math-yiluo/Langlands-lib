@@ -1,7 +1,5 @@
 # Ring-valued points of algebraic spaces and diagonal conditions
 
-Author: Worker 105.
-
 This module supplies the point sets and the separation conditions used in
 Section 5 of Brian Conrad, *Weil and Grothendieck approaches to adelic points*
 (December 31, 2011), for the existing actual algebraic spaces

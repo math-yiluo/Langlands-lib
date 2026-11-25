@@ -1,7 +1,5 @@
 # Nilpotent lifting on Artinian and complete local tests
 
-Author: Worker 668.
-
 For a presheaf on the slice over a base scheme, Artinian nilpotent
 bijectivity requires bijective restriction along every affine test map
 induced by a surjection with nilpotent kernel from a local Artinian ring.

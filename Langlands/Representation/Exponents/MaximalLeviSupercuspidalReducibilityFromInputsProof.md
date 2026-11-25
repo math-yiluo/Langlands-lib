@@ -8,10 +8,10 @@ MaximalLeviSupercuspidalReducibilityFromInputsStatement.{u, v}`.
 The published statement says that `MaximalLeviSupercuspidalReducibilityStatement.{u, v}`
 (Renard VII.1.3) follows from eleven published propositions. See
 `MaximalLeviSupercuspidalReducibilityFromInputsStatement.md`. The proof here only
-assembles theorems proved in other modules of this contribution:
+assembles theorems proved in other modules ported together with this module:
 
 1. **Twist reduction.** `maximalLeviSupercuspidalReducibility_of_unitary` (module
-   `MaximalLeviTwistReduction`, by Worker 1517) derives the target from two statements:
+   `MaximalLeviTwistReduction`) derives the target from two statements:
    - its unitary case `MaximalLeviSupercuspidalReducibilityUnitaryStatement`, in which
      `i_P^G ρ` also has a unitary central character;
    - the twist statement `MaximalLeviUnitaryCentralTwistStatement`.
@@ -19,7 +19,7 @@ assembles theorems proved in other modules of this contribution:
    This is the first paragraph of Renard's proof: twist by an unramified character of
    `G`, then apply the Mackey isomorphism.
 2. **Twist statement.** `maximalLeviUnitaryCentralTwist_of_parabolicDynamic` (module
-   `MaximalLeviUnitaryCentralTwistReduction`, by Worker 1517) proves the twist statement
+   `MaximalLeviUnitaryCentralTwistReduction`) proves the twist statement
    from `ParabolicDynamicStatement`, the first premise.
 3. **Unitary case.** `maximalLeviSupercuspidalReducibilityUnitary_of_inputs` (module
    `MaximalLeviReducibilityUnitaryProof`) proves the unitary case from ten input
@@ -35,7 +35,7 @@ assembles theorems proved in other modules of this contribution:
      unimodularity, standard cocharacters, quotient compactness and root presentations;
    - `leviInductionNontrivial` gives nonzeroness of induction, with no hypotheses;
    - `leviInductionHermitianDuality_of_presentation` (module
-     `LeviInductionHermitianDualityReduction`, by Worker 1517) gives hermitian duality of
+     `LeviInductionHermitianDualityReduction`) gives hermitian duality of
      induction from the same four premises as unitarizability.
 
    The first three are in module `MaximalLeviReducibilityInductionInputs`.

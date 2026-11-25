@@ -1,6 +1,6 @@
 # Split rank from maximal extension and source isomorphisms
 
-Worker 1271. The internal definition `IsSplitTorus.rank` chooses a finite
+The internal definition `IsSplitTorus.rank` chooses a finite
 splitting of an actual split torus and takes its number of factors.
 `IsSplitTorus.rank_eq_card` proves that every other finite splitting has
 that same number, by the integral cocharacter isomorphism rank comparison.
@@ -30,8 +30,9 @@ source isomorphisms.
 The final theorem assembles these hypotheses into the exact arbitrary
 universe proposition `MaximalSplitTorusConjugacyStatement`. It remains a
 conditional reduction: neither maximal extension nor reductive-group
-rational conjugacy is proved here. In particular it is not a proof of the
-host task's unconditional target.
+rational conjugacy is proved here. In particular it is not itself an
+unconditional proof of that proposition; `maximalSplitTorusConjugacy` (module
+`Rational.MaximalSplitTorusConjugacyProof`) is.
 
 The provenance is internal, using the published split-rank construction,
 the integral cocharacter comparison, and the subgroup-conjugacy interface.

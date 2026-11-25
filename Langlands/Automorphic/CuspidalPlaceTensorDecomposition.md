@@ -1,6 +1,6 @@
 # Tensor decomposition at the actual places of a cuspidal realization
 
-This internal unit specializes the finite-family compact and Lie tensor
+This internal module specializes the finite-family compact and Lie tensor
 construction to the actual local source subspaces and actual multiplicity spaces
 of the Library's cuspidal operator realizations. Its provenance is the proved
 `CuspidalArchimedeanDensityModels`, finite-factor evaluation and finite-family
@@ -75,9 +75,7 @@ Finally `T.allPlaceTensorEquiv` specializes the full construction to the chosen
 cuspidal models. The theorem of the main proposition uses these choices and
 their already proved irreducibility and admissibility properties.
 
-This unit imports `FiniteFamilyGKTensor` by Lean name. While that helper's
-separate review and publication are pending, this candidate includes its
-unchanged Lean/Markdown pair for coordinated integration. This unit does not
+This module imports `FiniteFamilyGKTensor` by Lean name. This module does not
 compare these vectors with prescribed vectors in a supplied finite spectral
 presentation; construct a simultaneous global Whittaker functional or its
 ordinary and dual product formulas; extend compact and Lie covariance to

@@ -1,10 +1,8 @@
 # Closed upper cones for actual tempered product-Levi exponents
 
-Authors: Workers 526, 359 and 544. Worker 526 supplied the complete statement
-pair; Worker 359 supplied the scope and fine-size-division guidance; Worker 544
-adapted the documentation and checked the exact interface. This pair defines
-an internal proposition. The proposed result is a coordinate adapter for
-already published analytic necessity bounds; its proof remains separate.
+This pair defines an internal proposition. The result is a coordinate adapter
+for already published analytic necessity bounds; its proof is separate:
+`refinedUpperTemperedCone` in `RefinedUpperTemperedConeProof`.
 
 `Langlands.Exponents.RefinedUpperTemperedConeStatement.{uF,uV}`
 quantifies a prime, an actual finite p-adic extension in universe `uF`,
@@ -72,18 +70,18 @@ the diagonal vector is zero. The statement assumes no chamber,
 nonvanishing Hom space, cuspidal support, finite-dimensional carrier,
 semisimplicity or chosen representation equivalence.
 
-The provenance is an internal deduction proposed from proved Library APIs:
+The provenance is an internal deduction from proved Library APIs:
 
-- [`ProductLeviTemperedExponentNecessityProof`](../Classification/ProductLeviTemperedExponentNecessityProof.md),
-  by Workers 819 and 219, supplies
+- [`ProductLeviTemperedExponentNecessityProof`](../Classification/ProductLeviTemperedExponentNecessityProof.md)
+  supplies
   `Langlands.ProductLeviNecessity.norm_le_one_of_diagonal` and
   `Langlands.ProductLeviNecessity.norm_le_one_of_mem_center`. These
   helper theorems assume analytic temperedness and generalized occurrence,
   with no irreducibility, positive-rank or open-character-kernel premise.
   Their test-tuple contraction, matrix and modulus hypotheses are verified
   by the existing `ProductLeviNecessityTest` lemmas.
-- [`RefinedUpperSquareIntegrableCone`](RefinedUpperSquareIntegrableCone.md),
-  by Worker 953, supplies
+- [`RefinedUpperSquareIntegrableCone`](RefinedUpperSquareIntegrableCone.md)
+  supplies
   `Langlands.Exponents.RefinedUpperSquareIntegrableCone.norm_testScalars`.
   This identity requires only the supplied real part, despite its module's
   name. On the prefix test with uniformizer exponent `e` it gives
@@ -93,8 +91,7 @@ The provenance is an internal deduction proposed from proved Library APIs:
   `norm_le_one_of_mem_center` gives a nonpositive total. Thus each
   total is zero, since `q > 1`.
 - [`WeightedBlockCone`](WeightedBlockCone.md) supplies
-  `Langlands.Exponents.diagonal_cone_of_weighted_block_cone`, adapted by
-  Worker 1008 from Worker 429's published proof. Apply it to the fine
+  `Langlands.Exponents.diagonal_cone_of_weighted_block_cone`. Apply it to the fine
   shape `D j` and slopes `xⱼ(l) / dⱼ(l)`. Their size-weighted vector
   equals `xⱼ`, giving the diagonal clause.
 
@@ -106,5 +103,5 @@ derivation and are not additional imports or premises.
 This statement supplies a necessary numerical cone for actual upper
 refined generalized exponents. Opposite transport, geometric exponent
 transfer, grade identification, whole-induction isolation, generalized-space
-splitting and the parent relative Hom comparison remain separate
-obligations.
+splitting and the relative Hom comparison are not part of this
+statement.

@@ -1,7 +1,5 @@
 # Compatibility of lifts from rigidity and postcomposition
 
-Author: Worker 931.
-
 This is a helper module of `QuasiEtaleLiftCompatibilityProof`. It formalizes
 the deduction recorded in `QuasiEtaleLiftCompatibilityStatement.md`
 ("Correspondence with the sources"), in a form whose analytic inputs are

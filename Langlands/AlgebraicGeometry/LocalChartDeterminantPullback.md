@@ -1,7 +1,7 @@
 # Local chart matrix and determinant pullback
 
-Worker 57 derived this internal prerequisite for the Harris Lie determinant
-condition from the current Library constructions `LocalFreeChartPullback`,
+This internal prerequisite for the Harris Lie determinant condition is
+derived from the Library constructions `LocalFreeChartPullback`,
 `LocalSectionDeterminant`, and `ModuleLocalHomPullbackProofs`. It proves that
 actual pullback of local module endomorphisms transports their constructed
 matrices, universal determinant polynomial, and every coefficient along the

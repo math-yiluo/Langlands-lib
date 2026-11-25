@@ -1,6 +1,6 @@
 # Prescribed embedded finite coefficient vectors in the actual global tensor
 
-This internal unit connects finite Whittaker tensor separation to the prescribed
+This module connects finite Whittaker tensor separation to the prescribed
 coefficient-model vectors on the **actual embedded local components** of a
 cuspidal spectral presentation. Its provenance is the existing actual
 local-component equivalences, coefficient-model surjectivity, finite
@@ -25,7 +25,7 @@ linear group, rather than abstract assigned coefficient values.
 
 The local component and supplied factor carriers differ. `ComponentFunctionals`
 uses the embedded component with the same canonical standard character as the
-finite separation unit. The genuine representation equivalence
+finite separation module `FiniteWhittakerTensor`. The genuine representation equivalence
 `P.presentation.localComponentEquiv P.finiteSlice.nonzero v` maps
 `P.localFactor v` onto that embedded component. Pulling the functional back
 along this equivalence defines `factorFunctional`, now on the exact factor of
@@ -49,8 +49,8 @@ and every finite adelic `d` integral outside `S`, the exact coefficient identity
 `W_(X(a,t))(g · ι_f(d))`
 `  = (∏ v : S, f v (localProjection F (r+1) v d)) * W_(X(a₀,t))(g)`.
 
-Here `W` is the published `cuspWhittaker F T ψ.complex`, and `ι_f` uses the
-published actual adelic group-point equivalence and `AdelicGL.ofFinite`.
+Here `W` is the existing `cuspWhittaker F T ψ.complex`, and `ι_f` uses the
+existing actual adelic group-point equivalence and `AdelicGL.ofFinite`.
 The normalized tuple `a₀`, prescribed tuple `a` and all local identities are
 chosen independently of `g`, `d` and `t`. There is no additional scalar. The
 remaining global coefficient still retains all infinite variables together.
@@ -83,7 +83,7 @@ The proof has the following implemented steps.
    functionals. Substituting the local coefficient identities into its finite
    product gives the displayed formula with the originally prescribed `f v`.
 5. `allPlaceTensorEquiv_finitePure_sphericalOutside` supplies the precise
-   published spherical-outside-`S` predicate. If the local functions are
+   existing spherical-outside-`S` predicate. If the local functions are
    nonzero, the chosen finite factor vectors are nonzero; `finitePure_ne_zero`
    and `allPlaceTensorEquiv_pure_ne_zero` then prove the asserted nonzero
    global pure-vector result.

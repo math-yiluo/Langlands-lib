@@ -1,6 +1,6 @@
 # Parabolic subgroups contain the centre; fppf inverse images reflect containment
 
-Author: Worker 5600. This module is a helper for the proof of
+This module is a helper for the proof of
 `AdjointParabolicCorrespondenceStatement` (Conrad, *Reductive group schemes*
 (2014), Exercise 5.5.8). It contains clause 1 of that statement and the
 descent lemma behind clause 4. Namespace `Langlands.GroupScheme`.

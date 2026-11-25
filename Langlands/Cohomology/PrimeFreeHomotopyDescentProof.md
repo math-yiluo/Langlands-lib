@@ -1,7 +1,5 @@
 # Proof of descent of a finite free homotopy model from a prime localization
 
-Author: Worker 1103.
-
 This module proves the published proposition
 `Langlands.Cohomology.ModuleComplex.PrimeFreeHomotopyDescentStatement.{u}`
 as the theorem

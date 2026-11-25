@@ -1,7 +1,5 @@
 # Functors on varying-group equivariant diagrams
 
-Author: Worker 13.
-
 This is an internal categorical construction extending
 [EquivariantDiagram](EquivariantDiagram.md). Fix a category `I`, an actual
 group functor `D : I ⥤ GrpCat`, and categories `C` and `E`. The group universe,

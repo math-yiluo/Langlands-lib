@@ -1,6 +1,6 @@
 # Descending a supplied proper scheme cover to an actual affine stage
 
-This internally derived unit descends an actual scheme cover of the limit
+This internally derived module descends an actual scheme cover of the limit
 space, including eventual geometric surjectivity. Its main theorem assumes
 a supplied cover; it does not assert cover existence for every space.
 
@@ -41,8 +41,9 @@ some stage space has universally closed structural morphism.
 
 The provenance is internal: the proper scheme stage model, published morphism
 descent and base-change coherence, independently represented eventual
-surjectivity, and surjective-source universal-closedness reflection. Integration
-follows `ProperSchemeStageModel`, `RepresentedSurjectivityLimitDescent` and
-`UniversallyClosedSourceCover`. The scheme-cover existence proof remains an
-explicit unresolved prerequisite, and this unit alone does not establish the
+surjectivity, and surjective-source universal-closedness reflection. It builds
+on `ProperSchemeStageModel`, `RepresentedSurjectivityLimitDescent` and
+`UniversallyClosedSourceCover`. The scheme-cover existence proof is an
+explicit prerequisite here (`ProperSchemeCoverStatement`, proved in
+`ProperSchemeCoverProof`), and this module alone does not establish the
 full eight-property limit theorem.

@@ -25,4 +25,4 @@ full normalization premise, the existing geometric order result also gives
 transfers that conclusion to any candidate satisfying `IsBaseReciprocity`.
 
 The residue-action condition in full geometric reciprocity remains a separate
-obligation. This unit does not prove the closed supercuspidal correspondence.
+obligation. This module does not prove the closed supercuspidal correspondence.

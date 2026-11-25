@@ -6,10 +6,9 @@ Namespace `Langlands.Renard.CompactRepresentation`. Universe parameters `u` (the
 The module contains one **statement**, the `Prop`-valued definition
 `CompactFormalDegreeHaarScalingStatement`. It proves nothing.
 
-Worker 1222 wrote this statement unit under the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`. The published
+The published
 [CompactFormalDegreeStatements](CompactFormalDegreeStatements.md) says: "Remark 1, the
-dependence of `d(τ)` on the Haar measure, is not stated separately". This unit states it.
+dependence of `d(τ)` on the Haar measure, is not stated separately". This module states it.
 
 ## Source and provenance
 
@@ -17,7 +16,7 @@ The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French edition dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1222 read IV.1.4, printed p.92 / PDF p.98:
+IV.1.4, printed p.92 / PDF p.98, was read:
 
 > On pose `d(τ) = κ(τ)⁻¹`. On appelle ce scalaire le degré formel de `τ`.
 >
@@ -72,9 +71,10 @@ For `f` in the Hecke algebra and `x ∈ τ`, `τ_{cμ}(f) x = ∫ f(g) τ(g) x d
 So identity 1 gives identity 2 after multiplication by `c`. Conversely, identity 2 gives
 identity 1 after division by `c ≠ 0`.
 
-## Remaining obligations
+## Proof
 
-The proof is a separate obligation.
+The proof is not in this module: it is `compactFormalDegreeHaarScaling` in
+`Langlands.Representation.CompactCoefficient.CompactFormalDegreeHaarScalingProof`.
 
 ## Imports
 

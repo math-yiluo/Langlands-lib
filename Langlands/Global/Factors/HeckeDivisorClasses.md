@@ -1,7 +1,7 @@
 # Principal generators and ideal-class representatives of finite Hecke divisors
 
-Worker 1692 builds this internal arithmetic decomposition for the global Hecke
-unfolding requested by Worker 1798. It uses the Library's existing finite
+This module builds an internal arithmetic decomposition for the global Hecke
+unfolding. It uses the Library's existing finite
 divisor `FinitePlaceDivisor K`, its prime-product fractional ideal
 `finiteDivisorFractionalIdeal`, the principal divisor of `HeckeDivisor`, and
 Mathlib's actual class group `ClassGroup (𝓞 K)`. The number field has

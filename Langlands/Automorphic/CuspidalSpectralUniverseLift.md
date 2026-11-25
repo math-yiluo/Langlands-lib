@@ -26,7 +26,9 @@ using `LocalRealization.padicClass_eq_iff` and
 `LocalRealization.hasSphericalHeckeSpectrumClass_iff`. The resulting
 `universeLift_spectralSystem` equality is definitional.
 
-The construction supports the proof task for the exact target
+The construction supports a proof of the exact target
 `Langlands.Global.HenniartGlobalizationStatement.{uK, uQ, uW, uP}`: an all-local
 irreducible presentation with factor universe zero must be usable at arbitrary
-`uP`. This module does not prove that target.
+`uP`. This module does not prove that target; the Library proves it only
+conditionally (`henniartGlobalization_reduction`, module
+`Langlands.Global.Arithmetic.HenniartGlobalizationReduction`).

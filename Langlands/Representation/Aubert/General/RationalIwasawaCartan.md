@@ -1,12 +1,11 @@
 # Iwasawa and Cartan decompositions of the actual standard family
 
-Implementation and documentation: Worker 785 (task
-`7d46c4f8-9da1-4872-9784-df53d7c630cf`, Jacquet–Cartan data on general
-reductive rational points). This module supplies the Iwasawa field and the
-Cartan fields of the planned standard parabolic system on `G(F)`. The other
-pieces are the standard-family facts of
-[StandardFamilyStructure](StandardFamilyStructure.md) and Worker 1380's assembly,
-lattice model and wall contraction, which are drafted separately. The datum
+This module supplies the Iwasawa field and the Cartan fields of the standard
+parabolic system on `G(F)`, for Jacquet–Cartan data on general reductive
+rational points. The other pieces are the standard-family facts of
+[StandardFamilyStructure](StandardFamilyStructure.md) and the assembly
+([RationalJacquetCartanDatum](RationalJacquetCartanDatum.md)), lattice model
+and wall contraction, which are in separate modules. The datum
 itself, wall contraction and the final target are not treated here.
 
 The geometric results are **conditional**. They take as explicit hypotheses
@@ -25,7 +24,7 @@ Namespace `Langlands.Induction`. `G` is a group with a topology.
 * `HasCompactCosetCover P` (definition), for `P : Subgroup G`: there is a
   compact set `K ⊆ G` such that every `g : G` is `p * k` with `p ∈ P` and
   `k ∈ K`. That is, `G = P K` with `K` compact. This is word for word the shape
-  of the `iwasawa` field of the planned standard parabolic system for
+  of the `iwasawa` field of the standard parabolic system for
   `P = P_∅`. It is Lean packaging, not a numbered source definition.
 * `compactSpace_of_hasCompactCosetCover`: a compact coset cover makes the
   published `LeftQuotient P = P \ G` (from
@@ -165,7 +164,7 @@ Lean form of Renard, Théorème V.5.1 (4) applied to the Levi `M_I` through V.5.
 The middle set is the image of `C̃⁺_∅ = (C₀ F₀) ∩ Z_dom` in the notation of
 V.3.23. Together with `isCompact_inf_levi` (with `hK` the compactness in
 `SpecialCompactProperties`), `inf_le_right`, `countable_image_tildeC0Plus` and
-`image_tildeC0Plus_subset_levi`, this gives the Cartan fields of the planned
+`image_tildeC0Plus_subset_levi`, this gives the Cartan fields of the
 standard parabolic system with `cartanCompact I = K₀ ⊓ M_I` and
 `cartanSet I = Λ_I`.
 

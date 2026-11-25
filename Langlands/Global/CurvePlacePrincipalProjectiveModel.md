@@ -45,4 +45,6 @@ is imposed. Both prescribed finite exceptional sets may be empty, and the
 projective dimension is any natural number, including zero. Quasi-compactness
 and the specified projective immersion are the geometric inputs. The original
 Weil-model generic-fiber comparisons are available separately; the adelic
-topological comparison remains an obligation of the host task.
+topological comparison is left to the proof of the statement this module serves,
+`AdelicProjectiveWeilComparisonStatement` (Example 4.2), which the Library
+proves as `adelicProjectiveWeilComparison` in `AdelicProjectiveWeilComparisonProof`.

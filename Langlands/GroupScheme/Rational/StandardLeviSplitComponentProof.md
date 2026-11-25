@@ -92,6 +92,7 @@ This proof is internal. It combines the published proofs `leviSplitComponentStat
 argument on finitely many root pairings. The proof shows that the standard Levi functor equals
 the centralizer of one standard cocharacter whenever one exists. It does not prove that standard
 cocharacters exist, and it does not prove the parabolic and unipotent parts of
-`StandardCocharacterStatement`. Those remain with their own proof task. The mathematics follows
+`StandardCocharacterStatement`. The Library proves that statement, existence included, as
+`standardCocharacter` (`Rational.StandardCocharacterProof`). The mathematics follows
 Renard, *Représentations des groupes réductifs p-adiques*, V.3, as cited by the Markdown of the
 generic Levi and split-component statements. The route here is the one described above.

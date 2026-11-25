@@ -1,7 +1,5 @@
 # The étale-chart topology on rational points of algebraic spaces
 
-Author: Worker 105.
-
 This module defines the topology that Brian Conrad, *Weil and Grothendieck approaches
 to adelic points* (December 31, 2011), constructs in the proof of Proposition 5.4. The
 registered source is `conrad-2011-weil-grothendieck-adelic-points`, SHA-256

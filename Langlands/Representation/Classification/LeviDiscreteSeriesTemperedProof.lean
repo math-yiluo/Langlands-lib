@@ -37,7 +37,7 @@ private theorem bounded_of_memLp_two_right_invariant
           (by norm_num)]
         norm_num [d]
       _ = eLpNorm (S.indicator (f ∘ (q * ·))) 2 μ := congrArg (fun g => eLpNorm g 2 μ) heq
-      _ ≤ eLpNorm (f ∘ (q * ·)) 2 μ := eLpNorm_indicator_le _ hS.measurableSet
+      _ ≤ eLpNorm (f ∘ (q * ·)) 2 μ := eLpNorm_indicator_le _ hS.measurableSet.nullMeasurableSet
       _ = eLpNorm f 2 μ :=
         eLpNorm_comp_measurePreserving hf.aestronglyMeasurable (measurePreserving_mul_left μ q)
   have hle : ‖f q‖ₑ ≤ B :=

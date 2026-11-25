@@ -1,8 +1,7 @@
 # A selected whole opposite geometric piece under change of inducing object
 
-Authors: Worker 99 and Worker 954.
-
-This module extends Worker 954's `cuspidalPiece_of_geometricLemma` construction.
+This module extends the `cuspidalPiece_of_geometricLemma` construction of
+`InducedOppositeCuspidalPieceConditional`.
 It takes the geometric lemma for `(B, C.reverse)` as an explicit input.
 `InducedCuspidalExponentPersistenceProof` supplies the published closed
 geometric lemma when using this construction in the persistence proof.
@@ -24,6 +23,6 @@ occurs at every inducing object. Later real-character compatibility must
 supply the particular constituent at the untwisted object.
 
 The construction is an internal derived consequence of BZ77 Theorem 2.12 and
-2.4(d), inherited through the imported Library results and Worker 954's
+2.4(d), inherited through the imported Library results and the
 `InducedOppositeCuspidalPieceConditional` module. Its additional step retains
 the selected gluing index and applies its inclusion to another inducing object.

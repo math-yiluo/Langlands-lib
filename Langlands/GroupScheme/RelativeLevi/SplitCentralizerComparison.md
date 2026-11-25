@@ -33,5 +33,6 @@ exact ambient inclusion equation.
 Equality or an isomorphism of centralizers is a conclusion, not a supplied
 premise. The torus and root datum are fixed throughout, and the nontrivial-ring
 assumption is explicit. Comparison of parabolics, canonical filtration overlaps
-across different tori, the empty-base case of the final task, and global descent
-remain separate obligations in Task 7200.
+across different tori, the empty-base case of the final statement, and global
+descent remain separate steps of the finite vector-bundle filtrations of
+supplied relative radicals.

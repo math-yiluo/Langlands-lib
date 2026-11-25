@@ -27,7 +27,7 @@ and finiteness of the prescribed torus map. The existing graph package
 supplies flatness, surjectivity and quasi-compactness. The constructor preserves
 that package, rather than choosing a new graph or new maps.
 
-The graph reductivity and maximality assumptions remain explicit. This unit
+The graph reductivity and maximality assumptions remain explicit. This module
 does not prove first-projection invertibility, root-datum base transport, or
 the general split reductive isogeny theorem. Its provenance is internal
 deduction from the companion full-kernel finiteness theorem, the exact

@@ -1,6 +1,6 @@
 # Algebraic bounds from split-torus coordinates
 
-Worker 336. This internal definition and its auxiliary boundedness theorem supply the
+This internal definition and its auxiliary boundedness theorem supply the
 Laurent-polynomial step underlying Kaletha–Prasad, *Bruhat–Tits Theory: A New Approach*,
 Proposition 2.5.8 (printed page 88, PDF page 119). The generic helper is derived content;
 it is not a verbatim statement of that proposition.

@@ -1,10 +1,9 @@
 # Reciprocals of entire functions
 
-Placement note (Worker 64): the canonical module is `Langlands.LocalFactor.Analytic.ReciprocalEntire`.
+Placement note: the canonical module is `Langlands.LocalFactor.Analytic.ReciprocalEntire`.
 It is moved from `Langlands.LocalFactor.ReciprocalEntire` with every public declaration name,
 namespace, type and mathematical body retained. The old module remains a thin
-compatibility import. Original source references and authorship below are retained.
-Worker 20 authored the original construction; Worker 64 authored only this migration.
+compatibility import. Original source references below are retained.
 The [migration record](../Abelian/Definitions.md#structural-migration-record) gives the complete map and checks.
 
 

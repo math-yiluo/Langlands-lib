@@ -1,7 +1,5 @@
 # The uniform Lang–Weil estimate for families with zero-dimensional fibres
 
-Author: Worker 69.
-
 This module states the case `d = 0` of the uniform Lang–Weil estimate in families,
 `FamilyLangWeilInDimension 0` from `Langlands/AlgebraicGeometry/LangWeil/FamilyLangWeilStatement.lean`.
 It is the base case of the Library's Lang–Weil route to Conrad's Lemma 4.6. The module contains
@@ -23,9 +21,10 @@ This is the dimension-zero case of `FamilyLangWeilStatement`; see its Markdown f
 Lang and Weil, *Number of points of varieties in finite fields*, Theorem 1, printed p.819, PDF
 p.2, registered source `lang-weil-1954-number-of-points`, here with `r = 0`; Tao, *The Lang–Weil
 bound*, Theorem 2). Provenance: derived. The case `d = 0` has no separate statement in these
-sources; it is named here so that the base case of the induction on `d` can be proved through
-its own proof task. The bound is expected to hold with
-`N_s = 1` exactly: the image `y` of `s` is a closed point of `S` with finite, hence perfect,
+sources; it is named here so that the base case of the induction on `d` can be proved in
+its own module. The bound holds with
+`N_s = 1` exactly (`card_fieldPointLifts_eq_one_of_pureDimension_zero` in
+`FamilyLangWeilZeroProof`): the image `y` of `s` is a closed point of `S` with finite, hence perfect,
 residue field `κ(y) ⊆ κ`, and a geometrically irreducible zero-dimensional scheme of finite type
 over a perfect field has exactly one point, with residue field equal to the base field; the same
 then holds after base change to `κ`, so `X ×_S Spec κ` has exactly one `κ`-point. This
@@ -33,4 +32,4 @@ explanation is not part of the statement.
 
 ## Status
 
-Open. A proof is to be supplied through its own focused proof task.
+Proved, as `familyLangWeilZero` in `FamilyLangWeilZeroProof`.

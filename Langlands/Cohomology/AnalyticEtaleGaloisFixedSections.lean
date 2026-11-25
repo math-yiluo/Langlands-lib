@@ -32,8 +32,8 @@ theorem exists_openSubgroup_intertwining_distinguishedLifts
     (hf : Hom.twist f = 1) :
     ∃ (M : OpenSubgroup G) (hMU : (M : Subgroup G) ≤ lU.subgroup)
       (hMV : (M : Subgroup G) ≤ lV.subgroup), ∀ (g : G) (hg : g ∈ M),
-        (lU.action ⟨g, hMU hg⟩).hom ≫ Hom.left f =
-          Hom.left f ≫ (lV.action ⟨g, hMV hg⟩).hom := by
+        (lU.action ⟨g, hMU hg⟩).asIso.hom ≫ Hom.left f =
+          Hom.left f ≫ (lV.action ⟨g, hMV hg⟩).asIso.hom := by
   have haU : (distinguishedLiftSystem ρ).IsAdmissible U (liftOpenSubgroup lU) (liftAction lU) :=
     ⟨hU, lU, le_rfl, MonoidHom.ext fun _ => rfl⟩
   have haV : (distinguishedLiftSystem ρ).IsAdmissible V (liftOpenSubgroup lV) (liftAction lV) :=
@@ -57,8 +57,8 @@ theorem exists_openSubgroup_intertwining_distinguishedLifts
     Subtype.ext (inv_inj.mp hkh).symm
   subst k
   have hl := congrArg Hom.left hk
-  change (lU.action h⁻¹).hom ≫ Hom.left f =
-    Hom.left f ≫ (lV.action (⟨g⁻¹, hMV hginv⟩ : lV.subgroup)⁻¹).hom at hl
+  change (lU.action h⁻¹).asIso.hom ≫ Hom.left f =
+    Hom.left f ≫ (lV.action (⟨g⁻¹, hMV hginv⟩ : lV.subgroup)⁻¹).asIso.hom at hl
   simpa only [show h⁻¹ = ⟨g, hMU hg⟩ by
       apply Subtype.ext
       exact inv_inv g,
@@ -70,15 +70,15 @@ theorem exists_openSubgroup_intertwining_distinguishedLifts
 finite family over the base. -/
 theorem exists_openSubgroup_commuting_with_deck (hV : IsDistinguishedEtale V.hom)
     (l : ActionLift ρ V.hom) {Γ : Type a} [Finite Γ] (deck : Γ → Aut V.obj.left)
-    (hdeck : ∀ γ, (deck γ).hom ≫ V.hom = V.hom) :
+    (hdeck : ∀ γ, (deck γ).asIso.hom ≫ V.hom = V.hom) :
     ∃ (M : OpenSubgroup G) (hM : (M : Subgroup G) ≤ l.subgroup),
       ∀ (γ : Γ) (g : G) (hg : g ∈ M),
-        (l.action ⟨g, hM hg⟩).hom ≫ (deck γ).hom =
-          (deck γ).hom ≫ (l.action ⟨g, hM hg⟩).hom := by
+        (l.action ⟨g, hM hg⟩).asIso.hom ≫ (deck γ).asIso.hom =
+          (deck γ).asIso.hom ≫ (l.action ⟨g, hM hg⟩).asIso.hom := by
   classical
   choose N hNl _ hN using fun γ =>
     exists_openSubgroup_intertwining_distinguishedLifts hV hV l l
-      (deckEndomorphism V (deck γ) (hdeck γ)) rfl
+      (deckEndomorphism V (deck γ).asIso (hdeck γ)) rfl
   let M := liftOpenSubgroup l ⊓ OpenSubgroup.iInfOfFinite N
   have hM : M ≤ liftOpenSubgroup l := inf_le_left
   refine ⟨M, hM, fun γ g hg => ?_⟩
@@ -91,31 +91,31 @@ section Representation
 variable {R : Type w} [CommRing R] (S : EtaleGSheaf ρ (ModuleCat.{w} R))
 variable (l : ActionLift ρ V.hom) (N : Subgroup G) (hN : N ≤ l.subgroup)
 variable {Γ : Type a} [Group Γ] (deck : Γ →* Aut V.obj.left)
-variable (hdeck : ∀ γ, (deck γ).hom ≫ V.hom = V.hom)
+variable (hdeck : ∀ γ, (deck γ).asIso.hom ≫ V.hom = V.hom)
 variable (hcomm : ∀ (γ : Γ) (k : l.subgroup),
-  (l.action k).hom ≫ (deck γ).hom = (deck γ).hom ≫ (l.action k).hom)
+  (l.action k).asIso.hom ≫ (deck γ).asIso.hom = (deck γ).asIso.hom ≫ (l.action k).asIso.hom)
 
 /-- Membership in the fixed submodule is precisely the pointwise fixed section condition. -/
 theorem mem_liftFixedSubmodule_iff (s : S.obj.obj.obj (op V)) :
     s ∈ liftFixedSubmodule S V l N hN ↔ ∀ (g : G) (hg : g ∈ N),
-      S.obj.obj.map (liftAction l ⟨g, hN hg⟩).unop.op s = s := by
+      S.obj.obj.map (liftAction l ⟨g, hN hg⟩).unop.asHom.op s = s := by
   simp [liftFixedSubmodule, LinearMap.sub_apply, sub_eq_zero]
 
 omit [TopologicalSpace G] in
 private theorem deckEndomorphism_one :
-    deckEndomorphism V (deck 1) (hdeck 1) = 𝟙 V :=
-  hom_ext rfl (by change (deck 1).hom = 𝟙 _; rw [map_one]; rfl)
+    deckEndomorphism V (deck 1).asIso (hdeck 1) = 𝟙 V :=
+  hom_ext rfl (by change (deck 1).asIso.hom = 𝟙 _; rw [map_one]; rfl)
 
 omit [TopologicalSpace G] in
 private theorem deckEndomorphism_mul (γ δ : Γ) :
-    deckEndomorphism V (deck (γ * δ)) (hdeck (γ * δ)) =
-      deckEndomorphism V (deck δ) (hdeck δ) ≫ deckEndomorphism V (deck γ) (hdeck γ) :=
+    deckEndomorphism V (deck (γ * δ)).asIso (hdeck (γ * δ)) =
+      deckEndomorphism V (deck δ).asIso (hdeck δ) ≫ deckEndomorphism V (deck γ).asIso (hdeck γ) :=
   hom_ext (one_mul 1).symm (rho_mul_hom (ρ := deck) γ δ)
 
 include hcomm in
 private theorem liftAction_comm_deckEndomorphism (γ : Γ) (k : l.subgroup) :
-    (liftAction l k).unop ≫ deckEndomorphism V (deck γ) (hdeck γ) =
-      deckEndomorphism V (deck γ) (hdeck γ) ≫ (liftAction l k).unop := by
+    (liftAction l k).unop.asHom ≫ deckEndomorphism V (deck γ).asIso (hdeck γ) =
+      deckEndomorphism V (deck γ).asIso (hdeck γ) ≫ (liftAction l k).unop.asHom := by
   refine hom_ext ?_ (hcomm γ k⁻¹)
   simp [deckEndomorphism]
 
@@ -123,32 +123,32 @@ include hcomm in
 /-- The action of the finite-cover deck group on the fixed submodule. The left
 representation acts by restriction along the inverse deck transformation. -/
 def galoisFixedSectionRepresentation : Representation R Γ (liftFixedSubmodule S V l N hN) where
-  toFun γ := (S.obj.obj.map (deckEndomorphism V (deck γ⁻¹) (hdeck γ⁻¹)).op).hom.restrict (by
+  toFun γ := (S.obj.obj.map (deckEndomorphism V (deck γ⁻¹).asIso (hdeck γ⁻¹)).op).hom.restrict (by
     intro s hs
     rw [mem_liftFixedSubmodule_iff] at hs ⊢
     intro g hg
     let k : (liftOpenSubgroup l : Subgroup G) := ⟨g, hN hg⟩
-    change S.obj.obj.map (liftAction l k).unop.op
-        (S.obj.obj.map (deckEndomorphism V (deck γ⁻¹) (hdeck γ⁻¹)).op s) = _
+    change S.obj.obj.map (liftAction l k).unop.asHom.op
+        (S.obj.obj.map (deckEndomorphism V (deck γ⁻¹).asIso (hdeck γ⁻¹)).op s) = _
     rw [← map_op_comp_apply, liftAction_comm_deckEndomorphism l deck hdeck hcomm γ⁻¹ k,
       map_op_comp_apply, hs g hg])
   map_one' := by
     ext s
-    change S.obj.obj.map (deckEndomorphism V (deck (1 : Γ)⁻¹) _).op s.1 = s.1
+    change S.obj.obj.map (deckEndomorphism V (deck (1 : Γ)⁻¹).asIso _).op s.1 = s.1
     rw [inv_one, deckEndomorphism_one, op_id, S.obj.obj.map_id]
     rfl
   map_mul' γ δ := by
     ext s
-    change S.obj.obj.map (deckEndomorphism V (deck (γ * δ)⁻¹) _).op s.1 =
-      S.obj.obj.map (deckEndomorphism V (deck γ⁻¹) _).op
-        (S.obj.obj.map (deckEndomorphism V (deck δ⁻¹) _).op s.1)
+    change S.obj.obj.map (deckEndomorphism V (deck (γ * δ)⁻¹).asIso _).op s.1 =
+      S.obj.obj.map (deckEndomorphism V (deck γ⁻¹).asIso _).op
+        (S.obj.obj.map (deckEndomorphism V (deck δ⁻¹).asIso _).op s.1)
     rw [mul_inv_rev, deckEndomorphism_mul, map_op_comp_apply]
 
 @[simp]
 theorem coe_galoisFixedSectionRepresentation_apply (γ : Γ)
     (s : liftFixedSubmodule S V l N hN) :
     (galoisFixedSectionRepresentation S l N hN deck hdeck hcomm γ s).1 =
-      S.obj.obj.map (deckEndomorphism V (deck γ⁻¹) (hdeck γ⁻¹)).op s.1 := rfl
+      S.obj.obj.map (deckEndomorphism V (deck γ⁻¹).asIso (hdeck γ⁻¹)).op s.1 := rfl
 
 end Representation
 
@@ -157,9 +157,9 @@ section Coinduction
 variable {R : Type w} [CommRing R] {S : EtaleGSheaf ρ (ModuleCat.{w} R)}
 variable {Γ : Type} [Group Γ]
 variable (l : ActionLift ρ V.hom) (N : Subgroup G) (hN : N ≤ l.subgroup)
-variable (deck : Γ →* Aut V.obj.left) (hdeck : ∀ γ, (deck γ).hom ≫ V.hom = V.hom)
+variable (deck : Γ →* Aut V.obj.left) (hdeck : ∀ γ, (deck γ).asIso.hom ≫ V.hom = V.hom)
 variable (hcomm : ∀ (γ : Γ) (k : l.subgroup),
-  (l.action k).hom ≫ (deck γ).hom = (deck γ).hom ≫ (l.action k).hom)
+  (l.action k).asIso.hom ≫ (deck γ).asIso.hom = (deck γ).asIso.hom ≫ (l.action k).asIso.hom)
 
 /-- The fixed-section representation with the deck group lifted to the coefficient
 universe, as required by the group cohomology functor. -/
@@ -175,7 +175,7 @@ in the left representation. -/
 theorem galoisFixedSectionRep_exists_bijective_inv (hS : HasCoinducedGaloisFixedSections L S)
     (hV : IsDistinguishedEtale V.hom)
     (hfree : ∀ (γ : Γ) (p : (localizedFieldPointFunctor L).obj V.obj.left),
-      (localizedFieldPointFunctor L).map (deck γ).hom p = p → γ = 1)
+      (localizedFieldPointFunctor L).map (deck γ).asIso.hom p = p → γ = 1)
     (hopen : IsOpen (N : Set G)) :
     ∃ (A : ModuleCat.{w} R)
       (π : galoisFixedSectionRep (S := S) l N hN deck hdeck hcomm →ₗ[R] A),
@@ -191,7 +191,7 @@ theorem galoisFixedSectionRep_exists_bijective_inv (hS : HasCoinducedGaloisFixed
     π ((galoisFixedSectionRepresentation S l N hN deck hdeck hcomm γ.down⁻¹ s).1)
   have hcoord := hreindex.comp hπ
   change Function.Bijective (fun s : liftFixedSubmodule S V l N hN => fun γ : ULift.{w} Γ =>
-    π (S.obj.obj.map (deckEndomorphism V (deck γ.down) (hdeck γ.down)).op s.1)) at hcoord
+    π (S.obj.obj.map (deckEndomorphism V (deck γ.down).asIso (hdeck γ.down)).op s.1)) at hcoord
   simpa only [coe_galoisFixedSectionRepresentation_apply, inv_inv] using hcoord
 
 /-- The fixed sections of a distinguished, equivariant finite Galois datum have
@@ -199,7 +199,7 @@ vanishing group cohomology in positive degrees. -/
 theorem isZero_groupCohomology_succ_galoisFixedSectionRep
     (hS : HasCoinducedGaloisFixedSections L S) (hV : IsDistinguishedEtale V.hom)
     (hfree : ∀ (γ : Γ) (p : (localizedFieldPointFunctor L).obj V.obj.left),
-      (localizedFieldPointFunctor L).map (deck γ).hom p = p → γ = 1)
+      (localizedFieldPointFunctor L).map (deck γ).asIso.hom p = p → γ = 1)
     (hopen : IsOpen (N : Set G)) (n : ℕ) :
     IsZero (groupCohomology (galoisFixedSectionRep (S := S) l N hN deck hdeck hcomm) (n + 1)) := by
   obtain ⟨A, π, hπ⟩ :=

@@ -1,6 +1,6 @@
 # Truncated polynomial test algebras and nilpotent points
 
-This internal infrastructure, implemented by Worker 921, supplies the
+This internal infrastructure supplies the
 finite polynomial test algebras used to reconstruct actual formal
 power-series maps from natural families on nilpotent points. The base
 is an arbitrary commutative ring R.

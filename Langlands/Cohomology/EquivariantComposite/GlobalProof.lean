@@ -101,6 +101,7 @@ def globalComparisonOfResolution {F : TopologicalSheaf G X (ModuleCat.{u} R)}
             (AcyclicResolution.derivedResolutionIso (sectionRepresentation R G X) I).symm).homToEquiv
           map_add' := fun _ _ => CategoryTheory.Preadditive.add_comp _ _ _ _ _ _ }))
 
+set_option maxHeartbeats 1000000 in
 /-- The comparison is natural with respect to a map of injective resolutions. -/
 lemma globalComparisonOfResolution_naturality
     {F F' : TopologicalSheaf G X (ModuleCat.{u} R)} {f : F ⟶ F'}

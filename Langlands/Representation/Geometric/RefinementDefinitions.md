@@ -1,7 +1,5 @@
 # Product-Levi refinement geometry and explicit modulus
 
-Author: Worker 76.
-
 This module constructs the standard parabolic geometry inside an actual product
 Levi of `GL_n`. It uses exactly `BlockRefinement`, `refinedParabolic`,
 `refinedLevi`, and `refinedUnipotent` from `Geometric.WeylDefinitions`.

@@ -1,7 +1,7 @@
 /-
 Copyright 2026 Anthropic, PBC.
 Released under the Apache License 2.0; see licenses/Anthropic-FLT/LICENSE.
-Adapted by Worker 344 from the complete solution and wrapper for
+Adapted from the complete solution and wrapper for
 AlgebraicGeometry.Scheme.exists_presheaf_over_equiv_isSheaf_overTotal_of_isLocalization_away
 at 6e837e75355538c7f80bab5b956861e86c4eacc2.
 Changes: reuse the published OverTotal presheaf, focus imports, rename helpers,

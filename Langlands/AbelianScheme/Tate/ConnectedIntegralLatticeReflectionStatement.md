@@ -1,7 +1,5 @@
 # Integral Tate images reflecting rational isomorphisms over connected bases
 
-Author: Worker 239.
-
 `Langlands.AbelianScheme.Tate.ConnectedIntegralLatticeReflectionStatement` is a
 universe-polymorphic proposition target. It says that a rational isomorphism of
 actual abelian schemes over a connected base comes from an actual isomorphism
@@ -73,7 +71,7 @@ The base is not assumed normal, reduced, affine or a field, and the conclusion
 is over all of `S`, not a fibre. The finite-étale torsion target `htor` and the
 unit family `hu` are explicit, matching the consumer. With `hu`, the
 `CharZero Ω` instance is redundant, since `s` makes every positive integer a
-unit in `Ω`. It is kept because the contract asks for it.
+unit in `Ω`. It is kept nonetheless.
 
 ## Relation to existing declarations
 
@@ -99,18 +97,22 @@ The following published interfaces go in the opposite direction or prove less.
 - `GroupScheme.IsogenyFactorization.lift` in
   `Langlands/AbelianScheme/IsogenyFactorization.lean` factors a map through a
   supplied finite-flat-surjective isogeny, given a supplied equation saying that
-  the map kills the scheme kernel. Nothing published derives that equation from
-  Tate-module data.
-- `AbelianScheme.Tate.FieldRationalFaithfulnessStatement` (task `1ee31886`) is a
-  different, unproved field-level injectivity target. This statement does not
+  the map kills the scheme kernel. Over a connected locally noetherian base on
+  which `n > 0` is a unit, and given `htor`,
+  `AbelianScheme.Tate.kernel_comp_eq_one_of_levelMap_eq_zero` (module
+  `ConnectedTorsionDetection`) derives that equation from the vanishing of the
+  map on the level-`n` points at one geometric point.
+- `AbelianScheme.Tate.FieldRationalFaithfulnessStatement` is a
+  different field-level injectivity target, proved as `fieldRationalFaithfulness`
+  in `FieldRationalFaithfulnessProof`. This statement does not
   assume it, and a proof of it would not by itself prove this one.
 
 ## Provenance
 
 This is an internal target, derived from what a consumer needs. It is not a
-verbatim translation of a published theorem. Worker 344 asked for it as the
-denominator-removal step for the division CM representability task `6eac742d`
-(revision 1). That task keeps the Harris specialization, the comparison of
+verbatim translation of a published theorem. It is the
+denominator-removal step for the division-case representability of the
+normalized Harris CM presheaf. That result also needs the Harris specialization, the comparison of
 normalized rational isogenies, and the construction of the representing scheme.
 This proposition establishes none of them.
 
@@ -131,9 +133,10 @@ in several ways:
 - it concludes that a rational isomorphism is integral, not that one map is
   divisible.
 
-## Outstanding proof obligation
+## A proof route
 
-The proposition is not proved. One expected route:
+The proposition is proved by `connectedIntegralLatticeReflection` in
+`Langlands.AbelianScheme.Tate.ConnectedIntegralLatticeReflectionProof`. One route:
 
 1. Use `rationalIsoIntegralData e` to write `ofHom f = a • e.hom` with an actual
    `f` and an integer `a ≠ 0`. That interface does not make `a` positive, so
@@ -161,13 +164,13 @@ The proposition is not proved. One expected route:
    multiplication is an epimorphism, so Hom groups are torsion-free, and the
    composites are identities.
 
-Steps 2–4 need facts that are not published:
+Steps 2–4 need these facts:
 
 - the clopen-equalizer and connected-component argument for finite étale
   schemes;
 - that nonzero integer multiplication on an abelian scheme over `S` is a
-  finite-flat-surjective isogeny. Over a general base this is only the unproved
-  target `GroupScheme.MultiplicationIsogenyStatement`; over a field it is
+  finite-flat-surjective isogeny. Over a general base this is
+  `GroupScheme.MultiplicationIsogenyStatement`, proved as `multiplicationIsogeny`; over a field it is
   `AbelianScheme.multiplication_isIsogeny_of_ne_zero`;
 - torsion-freeness of Hom groups of abelian schemes, which makes
   `Rationalization.ofHom` injective.
@@ -179,5 +182,5 @@ Lean proof.
 ## Formal status
 
 The declaration is a `Prop`-valued `def`, not a theorem or an axiom. Its proof
-is a separate task, to be started after this exact statement has been
-independently accepted and published.
+is in a separate module: `connectedIntegralLatticeReflection` in
+`Langlands.AbelianScheme.Tate.ConnectedIntegralLatticeReflectionProof`.

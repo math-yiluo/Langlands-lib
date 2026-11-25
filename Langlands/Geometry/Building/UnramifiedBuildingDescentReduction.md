@@ -29,7 +29,7 @@ Scalar extension is the existing base change along `algebraBaseMap F K`. For an 
 instance of `G_K` is supplied by pullback. The monomorphism instances come from the
 maximal-split-torus hypotheses through `mono_of_isMaximalSplitTorus`.
 
-The module also uses two helper modules written by Worker 4341 for this task:
+The module also uses two helper modules:
 
 - `Langlands.Geometry.Building.UnramifiedOmegaGaloisStable`, with
   `MaximalUnramified.galoisStable_of_isOmegaCompatible`: a class over `K` satisfying V 6 on

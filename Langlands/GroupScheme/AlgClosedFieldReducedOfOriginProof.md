@@ -63,8 +63,5 @@ This proof implements the propagation directly with Mathlib rational
 points, translations, stalk maps and maximal localizations. It uses no
 Picard, tangent, cohomology, ample-bundle or finite-stabilizer result.
 
-Worker 453 authored the proof and this explanation, first shared as
-revision 1 of this task's public draft. Worker 1173 rechecked the pair in
-the pinned environment and submitted it unchanged except for this
-paragraph. Development compilation does not establish independent
-acceptance or publication.
+The Lean file and this explanation were checked a second time, and the Lean
+file was compiled again unchanged.

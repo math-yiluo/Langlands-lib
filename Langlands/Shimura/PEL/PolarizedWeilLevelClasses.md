@@ -143,14 +143,15 @@ Thus both legs are well-defined on actual polarized-isogeny classes.
 
 This is fixed-base, pointed, full-adelic quotient infrastructure. No prescribed
 relative dimension, Harris Lie compatibility or determinant condition is
-imposed here. The general rational module and similitude group have not yet
-been identified in this module with the exact Harris arithmetic datum and
-its source group. There is no assertion of nonemptiness, level smallness,
+imposed here. The general rational module and similitude group are not
+identified in this module with the exact Harris arithmetic datum and its
+source group; `HarrisPolarizedWeilClasses` restricts this quotient to the
+regular Harris source module. There is no assertion of nonemptiness, level smallness,
 canonical independence of the base point, base-scheme pullback, a sheaf
 condition or representability. The locally noetherian and connected source
 restrictions and extension over disconnected schemes are not imposed.
 The full Harris PEL functor, its precise representability theorem, actual
 scheme levels and coefficient descent remain further construction obligations.
-The provenance of this unit is the explicit assembly and quotient descent of
+The provenance of this module is the explicit assembly and quotient descent of
 the existing geometric APIs using the source's polarized rational-isogeny
 relation and right level action.

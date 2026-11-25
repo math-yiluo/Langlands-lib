@@ -16,7 +16,7 @@ The source assigns compatible affinoid morphisms to every admissible pair of
 charts. The diagram packaging and the directed composition comparison here
 are derived infrastructure for that convention, not separately numbered source
 assertions. General composition in the source uses extension and finite-cover
-gluing, which this unit does not construct.
+gluing, which this module does not construct.
 
 `chartStrongDiagram` sends each original chart, ordered by actual domain
 containment, to its original chart-domain presentation. It retains every
@@ -71,4 +71,4 @@ spectrum points alone is not used to identify algebra maps.
 These are diagram, composition and equality constructions for supplied actual
 atlases. Extended atlases, general finite-cover gluing, unrestricted strong
 composition and localization, structure sheaves, étale sites and Harris tower
-constructions remain separate obligations.
+constructions lie outside this module.

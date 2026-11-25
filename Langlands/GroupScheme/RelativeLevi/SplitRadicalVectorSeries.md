@@ -1,6 +1,6 @@
 # Vector-bundle series for supplied radicals in split dynamic charts
 
-This derived unit works over the spectrum of an arbitrary commutative ring.
+This derived module works over the spectrum of an arbitrary commutative ring.
 The ambient group is reductive and has a supplied fibrewise maximal coordinate
 split torus, a finite fibrewise root datum and actual root parametrizations.
 A parabolic inclusion represents the dynamic parabolic of a specified
@@ -27,6 +27,6 @@ to discharge the root-parametrization input. No reducedness, noetherian
 or field hypothesis is imposed on the ring.
 
 Provenance is the existing split contracting-group series, dynamic relative
-Levi theorem, supplied-radical comparison and series transport. This unit
+Levi theorem, supplied-radical comparison and series transport. This module
 does not construct a split dynamic presentation of an arbitrary parabolic,
 nor compatibility or descent of the series over a cover.

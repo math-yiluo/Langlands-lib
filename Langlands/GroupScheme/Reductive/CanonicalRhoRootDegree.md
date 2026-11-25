@@ -1,6 +1,6 @@
 # Actual simple-root degree bounds for the canonical induced space
 
-This is derived supporting work by Worker 669. It specializes the actual
+This is derived supporting work. It specializes the actual
 rank-one curve construction and degree theorem to the fixed linked maps of a
 supplied split pinning. The all-test covariance premises are discharged by
 membership in the entire canonical induced coordinate subspace.
@@ -39,5 +39,5 @@ integral coroot-span hypothesis remain supplied. This module proves no
 Frobenius cutoff, entire-space dimension or irreducibility, highest-weight
 existence, or `SteinbergBigCellStatement`.
 
-Integration gives the local instances used here module-specific names to permit
+The local instances used here have module-specific names to permit
 joint imports. Their types, values, and local scopes are unchanged.

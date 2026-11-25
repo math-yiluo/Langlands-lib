@@ -1,6 +1,6 @@
 # Actual simply connected factors realizing semisimple Tits components
 
-Workers 587 and 509. The theorem `semisimpleTitsComponentFactor` proves the exact
+The theorem `semisimpleTitsComponentFactor` proves the exact
 published `Langlands.GroupScheme.SemisimpleTitsComponentFactorStatement` at every
 universe parameter, over arbitrary fields. Its witness retains the actual finite
 separable extension, actual affine simply connected absolutely almost-simple group,

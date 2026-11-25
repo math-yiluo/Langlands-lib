@@ -1,6 +1,6 @@
 # Proof of Tadić's exhaustion reduction
 
-Author: Worker 1792 (using Worker 1745's `TadicXBlockAdapters`). Module
+The proof uses `TadicXBlockAdapters`. Module
 `Langlands.Representation.Classification.TadicExhaustionReductionProof`.
 
 `Langlands.Classification.tadicExhaustionReduction` proves exactly the published

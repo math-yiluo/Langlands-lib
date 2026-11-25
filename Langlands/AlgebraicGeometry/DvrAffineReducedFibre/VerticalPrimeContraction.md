@@ -1,7 +1,5 @@
 # Contraction of vertical primes under an integral map
 
-Worker 594.
-
 `primeTensorLocalization` extends a prime ideal to the tensor
 product with a localized base when the prime is disjoint from
 the denominators. This tensor product is the localization at

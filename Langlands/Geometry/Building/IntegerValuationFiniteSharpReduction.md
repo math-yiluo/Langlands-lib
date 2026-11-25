@@ -1,6 +1,7 @@
 # Bounded sharp-fixer reduction for integer valuations
 
-This internal support module for Task 6309 ports the implemented argument in
+This internal support module for the proof of
+`UnramifiedZeroFixerAffineRootStatement` ports the implemented argument in
 `ParahoricFiniteReduction` to `IntegerValuationBuildingData v G` over an arbitrary
 field. The valuation is the supplied integer-valued valuation. No local-field
 structure or extra apartment axioms are used. `IsBoundedSubset` is precisely
@@ -28,7 +29,7 @@ preserves the sharp fixer. The declarations are
 `exists_finite_subset_sharpFixer_eq`, all in namespace
 `IntegerValuationBuildingData`.
 
-The two comparison theorems then apply the sibling draft
+The two comparison theorems then apply the module
 `GenericZeroFixerNormalizerReduction` to Ω′. A pointwise fixer of Ω fixes Ω′;
 the finite comparison and sharp-fixer equality give the upper inclusion. The
 reverse inclusion follows from pointwise fixation of the constant factor and
@@ -43,6 +44,7 @@ trivially on the apartment and mapping into the ambient subgroup.
 The provenance is internal: the published finite-reduction proof supporting
 KP Lemma 7.7.4 and Proposition 7.7.5(1), with the published explicit-valuation
 local-finiteness argument substituted for its local-field instance. The finite
-comparison is the implemented generic induction in the sibling draft. This
+comparison is the implemented generic induction in
+`GenericZeroFixerNormalizerReduction`. This
 module does not prove the unconditional normalizer premise, the unramified
 sharp-fixer comparison statement, or the final affine-root-sign target.

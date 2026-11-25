@@ -34,10 +34,10 @@ theorem acyclic_of_isStrictlyPerfect_of_residue_acyclic
 ```
 
 Here `R : Type u` is any commutative ring, with no noetherian hypothesis. The
-complex `K` is strictly perfect in the sense of the published
+complex `K` is strictly perfect in the sense of
 `Langlands.Cohomology.ModuleComplex.IsStrictlyPerfect`: it is bounded (strictly
 supported in some interval `[a, b]` of degrees) and every term is a finite
-projective `R`-module. `baseChange (Ideal.Quotient.mk m)` is the published
+projective `R`-module. `baseChange (Ideal.Quotient.mk m)` is the
 ordinary degreewise extension of scalars along `R → R ⧸ m`, so its value on `K`
 is the complex `(R ⧸ m) ⊗_R K`. `Acyclic` is Mathlib's
 `HomologicalComplex.Acyclic`, which means exact in every degree.
@@ -63,7 +63,7 @@ three ways:
 - `K` is a strictly perfect complex, which is in particular pseudo-coherent;
 - for such a bounded complex of projectives the derived tensor product
   `K ⊗^L_R κ(m)` is computed by the ordinary degreewise tensor product, which is
-  the published `baseChange`. This identification is not used or proved here:
+  `baseChange`. This identification is not used or proved here:
   the hypothesis is stated directly with the ordinary tensor product;
 - `κ(m)` is written as the quotient ring `R ⧸ m`, which is a field because `m`
   is maximal.
@@ -128,8 +128,8 @@ The proof uses no `sorry` and no axioms beyond Lean's standard `propext`,
 ## Intended use
 
 This is the closed-fibre detection step for the proof of
-`Langlands.AbelianScheme.AlgClosedFieldSquareFirstProjectionAcyclicityStatement`
-(task `651d1a6b-549e-4d79-ae47-19627b02f30d`). Over an affine open `Spec R` of
+`Langlands.AbelianScheme.AlgClosedFieldSquareFirstProjectionAcyclicityStatement`.
+Over an affine open `Spec R` of
 the abelian variety, a universal perfect representative of the derived sections
 of the line bundle is reduced modulo each maximal ideal. Each such reduction
 computes the cohomology of a fibre over a rational point, which vanishes by

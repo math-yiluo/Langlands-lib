@@ -2,7 +2,7 @@
 
 This construction extends `Blocks` without changing its upper or opposite parabolic
 subgroups, its ordered positive `BlockShape`, its standard coordinate numbering, or
-its product of actual general linear groups `B.Levi R`. Worker 6 is the author.
+its product of actual general linear groups `B.Levi R`.
 It imports the independently published `Langlands.Group.GL.Blocks` construction.
 This module supplies the lower-block constructions described below.
 

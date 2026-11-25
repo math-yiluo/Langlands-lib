@@ -1,6 +1,6 @@
 # Change of additive character for the epsilon factor of pairs of equal rank
 
-Author: Worker 818. This module, in namespace `Langlands.RankinSelberg`,
+This module, in namespace `Langlands.RankinSelberg`,
 defines one statement, `EqualRankEpsilonCharacterChangeStatement`. It is not
 proved here. The statement says how the epsilon factor of a pair of equal rank
 changes when the additive character `ψ` is replaced by `ψ^a(x) = ψ(ax)`,
@@ -267,7 +267,7 @@ The statement has universe parameters `uF` (the field), `uV` (the space of
 
 ## Lean checks
 
-`lean_check` of the module with declaration
+Check of the module with declaration
 `Langlands.RankinSelberg.EqualRankEpsilonCharacterChangeStatement`:
 
 - 0 errors and 0 warnings.

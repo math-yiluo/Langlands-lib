@@ -10,4 +10,4 @@ This internal helper first assumes that the actual scheme pullback functor `Over
 
 `rationalBaseChangeHom_ne_zero_field` records the nonzero reflection needed for the Rosati positivity argument. It applies to every actual rational homomorphism, including endomorphisms, and to every field extension, including pullback along an identity morphism.
 
-All schemes, fields and actual abelian schemes retain universe `u`. This unit is an internal derivation from Mathlib's fpqc faithful pullback theorem, flatness of rational scalar extension, and the Library's actual group and rational Hom constructions. It makes no claim about trace rationality or positivity.
+All schemes, fields and actual abelian schemes retain universe `u`. This module is an internal derivation from Mathlib's fpqc faithful pullback theorem, flatness of rational scalar extension, and the Library's actual group and rational Hom constructions. It makes no claim about trace rationality or positivity.

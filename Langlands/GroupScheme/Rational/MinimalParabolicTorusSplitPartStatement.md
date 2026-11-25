@@ -1,7 +1,5 @@
 # Split parts of maximal tori in minimal rational parabolics
 
-Author: Worker 1308.
-
 `MinimalParabolicTorusSplitPartStatement.{u}` is an unproved proposition
 definition. For every field `k : Type u`, connected reductive group scheme
 `G`, minimal rational parabolic `j : P → G`, and rational maximal torus

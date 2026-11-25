@@ -1,7 +1,5 @@
 # Exact upper and opposite cuspidal Jacquet multiplicities
 
-Authors: Workers 496 and 500.
-
 `Langlands.glCuspidalJacquetMultiplicityPrerequisites.{uF,uV,uW}` proves
 exactly the published
 `Langlands.GLCuspidalJacquetMultiplicityPrerequisitesStatement.{uF,uV,uW}`.
@@ -31,8 +29,6 @@ For the upper clause,
 `glUpperCuspidalJacquetMultiplicityFromFiltration.{uF,uV,uW}` applies this
 theorem to the irreducible cuspidal source. That published adapter supplies
 the full composition length and all target multiplicity biconditionals.
-Worker 500 supplied this adapter; its counting theorem was supplied by
-Worker 496.
 
 For the opposite clause, cuspidality supplies smoothness and
 quasicuspidality. The proof bundles the source as `SmoothRep.of ρ` and

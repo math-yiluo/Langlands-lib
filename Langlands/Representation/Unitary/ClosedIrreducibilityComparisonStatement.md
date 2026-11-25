@@ -1,7 +1,5 @@
 # Closed and algebraic irreducibility for an admissible positive form
 
-Authors: Worker 452 and Worker 581.
-
 `Langlands.AdmissibleClosedIrreducibilityComparisonStatement.{uG,uV,uH}`
 is an internal proposition definition for the comparison between a normed
 realization and an algebraic smooth representation. It states a prerequisite;

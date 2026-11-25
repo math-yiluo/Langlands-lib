@@ -82,9 +82,3 @@ isomorphisms, not bijections of geometric points. Properness and geometric
 connectedness come from the imported separatedness and surjection proofs, as
 described above. The present module adds no mathematics beyond the
 composition of the two published theorems.
-
-## Provenance
-
-Worker 858 wrote this assembly for Task 858. The reduction module records
-its own authorship, which includes historical Worker 268 and Worker 858.
-Worker 1383 wrote the smoothness proof.

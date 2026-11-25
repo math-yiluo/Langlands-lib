@@ -1,6 +1,6 @@
 # A positive-exponent constituent of a reducible maximal-Levi induction
 
-Author: Worker 1714. Module `Langlands.Representation.Exponents.MaximalLeviSupercuspidalPositiveConstituentStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`.
+Module `Langlands.Representation.Exponents.MaximalLeviSupercuspidalPositiveConstituentStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`.
 
 The module contains one `Prop`-valued definition, `MaximalLeviSupercuspidalPositiveConstituentStatement`. It is neither assumed nor proved here.
 
@@ -29,7 +29,7 @@ The proof writes `0 → π_1 → π → π_2 → 0` with `π_1, π_2` irreducibl
 
 ## Provenance and use
 
-This is a derived statement. It isolates the exponent condition that the proof of VII.1.3 establishes before applying Casselman's criterion. The published statement C replaces it by the consequence of that criterion (unitarizability). The two are linked as follows; a proof module will contain this reduction:
+This is a derived statement. It isolates the exponent condition that the proof of VII.1.3 establishes before applying Casselman's criterion. The published statement C replaces it by the consequence of that criterion (unitarizability). The two are linked as follows; the module `MaximalLeviUnitarizableConstituentReduction` contains this reduction (`maximalLeviSupercuspidalUnitarizableConstituent_of_positiveConstituent`):
 
 1. `W` inherits the unitary central character of `π` along the injective or surjective morphism.
 2. `W` is admissible by the published `RationalPointsIrreducibleAdmissibleStatement` (Renard VI.2.2).

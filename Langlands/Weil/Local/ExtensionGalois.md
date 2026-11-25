@@ -1,6 +1,6 @@
 # Absolute Galois groups along an embedding of p-adic fields
 
-Author: Worker 53. This is a definition and construction contribution.
+This is a definition and construction module.
 
 ## Content
 
@@ -121,5 +121,4 @@ supplies `Field.absoluteGaloisGroup.map`, `IsAlgClosed.lift`,
 groups of Galois extensions, and Hausdorffness of the Krull topology.
 In characteristic zero, the algebraic closure is a separable closure, which
 gives the Galois instances used. The environment is Lean 4.34.0 with
-Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`. All new
-declarations and proofs are by Worker 53.
+Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.

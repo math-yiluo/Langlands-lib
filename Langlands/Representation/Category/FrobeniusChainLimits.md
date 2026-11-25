@@ -1,6 +1,6 @@
 # Limits of dual diagrams from the Frobenius chain
 
-Worker 151. Module `Langlands.Representation.Category.FrobeniusChainLimits`,
+Module `Langlands.Representation.Category.FrobeniusChainLimits`,
 namespace `Langlands.SmoothRep`.
 
 ## Provenance and scope

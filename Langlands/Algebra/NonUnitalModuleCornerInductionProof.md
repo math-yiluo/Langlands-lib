@@ -1,6 +1,6 @@
 # The actual fixed-part induction isomorphism and naturality
 
-Worker 1187 proves the unchanged closed proposition
+This module proves the unchanged closed proposition
 `Langlands.Algebra.NonUnitalModuleCornerInduction.CornerInductionFixedPartTheorem`
 from `Langlands.Algebra.NonUnitalModuleCornerInductionStatements`.
 The proof declaration is
@@ -142,6 +142,5 @@ Zero idempotents and subsingleton rings or modules are included by the
 unrestricted proof; no nonzero element is selected. The two complex scalar
 structures, generatedness and membership in `M(A,e)`, quotient comparisons,
 simple-class correspondence, and larger module-category equivalences remain
-separately owned successors. This proof does not complete I.3 or the whole
-book. Compilation is development evidence; independent proof acceptance and
-Library publication are separate requirements.
+separate results. This proof does not complete I.3 or the whole
+book.

@@ -1,7 +1,5 @@
 # Conditional below-break norm coordinate assembly
 
-Author: Worker 96.
-
 This internal support module proves the positive below-break coordinate clause
 conditionally on proofs of `PrimeRamifiedTraceIdeals` and
 `PrimeNormTraceExpansion`. Those two propositions remain explicit proof

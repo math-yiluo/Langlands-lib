@@ -1,10 +1,9 @@
 # Actual general-to-GL Aubert specialization and dependency addendum
 
-Worker 585 constructed the adapter in
-`Langlands.Representation.Aubert.GeneralLinearSpecialization` against Worker 23's
-shared general interface. This addendum records its actual maps, conditional
-scope and exact dependency inventory. It supplements the separately reviewed
-[GL source and full-target map](gl-specialization-source-map.md); the older
+The adapter in `Langlands.Representation.Aubert.GeneralLinearSpecialization`
+is built against the shared general interface (`Aubert.General`). This
+addendum records its actual maps, conditional scope and exact dependency
+inventory. It supplements the [GL source and full-target map](gl-specialization-source-map.md); the older
 note's audit snapshot and graded-target inventory remain unchanged.
 
 The present snapshot is Library `0ebc0efd383ff160084af3b33ab2b7806f7a1dde`
@@ -65,39 +64,21 @@ GL note. This adapter introduces no second graded ring or replacement operator.
 
 ## Source status, evidence and remaining bridges
 
-The own specialization pair is shared in task
-`984a6dbb-2caa-4d8d-84c9-b3cd5c4c9cd3`, draft revision 3, content key
-`2743f6de0f3a0d9ac4bf66f543d2650ba1bf749fe3003eb1bd3d4c49fde9f762`.
-The General pairs were borrowed unchanged from task
-`593ef603-6672-4424-976c-14e11e920d9c`, draft revision 1, content key
-`190d77087956b751f8481c1c5e6e7af627dfc00b51e35b8708cb145fc4aff697`.
-They are not submitted under Worker 585's ownership. That task has no staged
-artifact at this snapshot. The exact reviewed dependency is needed before
-the focused specialization submission can be finalized.
+At the snapshot of this addendum the specialization pair and the General
+pairs it uses were prepared outside the Library; both are in the Library
+now. The generic isomorphism helper and the unchanged Levi-model,
+quotient-Jacquet and quotient-induction pairs were then also outside the
+Library. Their sources are included in the audit only where reached or
+imported.
 
-The generic isomorphism helper is staged as
-`6581b7ad-568c-4a4c-bfb4-1780ca65607d`, with machine acceptance and Reviewer
-8882's independent approval, awaiting publication. The unchanged Levi-model,
-quotient-Jacquet and quotient-induction candidates
-`3ffc4cf3-9252-40f6-816b-93b2d24d31ac`,
-`d55f4230-35bb-45dd-b63e-196fe462fafe` and
-`82b8e447-9f67-4b22-945f-58106eb3ada3` also have machine acceptance and independent
-approvals, awaiting publication in that order. Their sources are included in
-the audit only where reached or imported.
-
-The latest restoration check is diagnostic
-`905b642d-8774-422f-a116-4bc5d4c659da` in approved environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`. It reports a successful Lake build with
-zero errors and warnings and inspects
+A restoration check reported a successful Lake build with zero errors and
+warnings and inspected
 `Langlands.Parabolic.GeneralLinearModulusCompatibility` as a definition returning
 `Prop`. The reported axioms are `propext`, `Classical.choice` and `Quot.sound`.
-This is development evidence for the private overlay, not a publication or
-proof receipt.
+This is development evidence, not a proof.
 
-Worker 1107's algebraic bridge
-`4ed8ff46-6de0-4f1d-96aa-19069311455b` has machine acceptance and Reviewer 8833's
-independent approval, awaiting publication. Its pair
-`GroupScheme.Dynamic.GeneralLinearRationalPoints` constructs
+The algebraic bridge `GroupScheme.Dynamic.GeneralLinearRationalPoints`, in
+the Library, constructs
 `GroupScheme.GeneralLinear.rationalPointsEquiv`, the actual parabolic, Levi
 and radical equivalences, and the projection and section identities
 `rationalPointsEquiv_limit`, `rationalLeviEquiv_limitHom` and
@@ -117,27 +98,28 @@ The remaining comparisons are distinct:
 - Reconcile the actual standard subsets, roots, characters and Weyl quotients
   with the shared Chapter V framework, retaining the empty root set and the
   centralizer denominators.
-- Publish the reviewed General dependency and the focused own specialization
-  pair. Then the parent can use the exact modulus proposition as a focused
-  proof target and assemble the general-to-GL comparison.
+- With the General dependency and the specialization pair in the Library,
+  the exact modulus proposition is the statement to prove for the general-to-GL
+  comparison; the Library proves it (`Parabolic.generalLinearModulusCompatibility`,
+  module `Aubert.GeneralLinearModulusCompatibilityProof`) and uses it in the proof
+  of the operator comparison `General.RationalPointFamily.GL.rationalAlternatingOperatorComparison`.
 
 The [Chapter V ledger](../renard/chapter-v-structural-inputs.md) retains its
 itemized external structural boundary. Its D07 Haar/root-product deduction
 is not made into an extra external assumption by this conditional adapter.
 The existing p-adic representation-theoretic preservation proofs are reused
 proved inputs with the dependencies below. The lower whole-ring obligations
-listed in the earlier note remain proof obligations for the parent.
+listed in the earlier note remain proof obligations of the general program.
 
 ## Two separate dependency inventories
 
-The checked-environment audit is diagnostic
-`bba8d5fe-f330-437d-87e4-80f48d460e51`. Its private program
-`GlGeneralSpecializationDependencyAudit.lean` follows each selected root's
+The dependency audit's program `GlGeneralSpecializationDependencyAudit.lean`
+(kept outside the Library) follows each selected root's
 checked type, definition/theorem/opaque body and inductive constructors,
 including private proof helpers. It records actual defining modules and prunes
 nonproject constants. Nonproject modules cannot import project constants in the
-pinned environment. All 17 messages were parsed to the retained file
-`.private/notes/gl-general-specialization-dependencies.json`.
+pinned environment. All 17 messages were parsed into a JSON record kept with
+the program.
 
 The body/type union contains 464 project modules and 67 Classification-origin
 constants in ten defining modules. Its 464 nonempty Lean/Markdown pairs were
@@ -187,7 +169,7 @@ admissible product-Levi factorization, irreducible product embeddings and length
 normalized induction length, supercuspidal support and twists, and refined
 Jacquet length induction. The new natural-isomorphism helper adds no
 Classification import. None of these facts certifies semantic independence
-of the whole module or unrestricted eligibility for a separate upstream task.
+of the whole module or unrestricted eligibility for separate upstream use.
 
 The tables below list every selected root and every Classification-origin
 constant, including private helpers. Keys refer only to this addendum.
@@ -372,7 +354,7 @@ above; none of these eight pairs is present in the pinned Library.
 
 All fourteen source pairs below match the pinned Library exactly. The body
 column distinguishes the ten defining modules reached through constants from
-the four additional imports. Hashes are source fingerprints, not proof receipts.
+the four additional imports. Hashes are source fingerprints, not evidence of proofs.
 
 | Module suffix under `Langlands.Representation.Classification` | Body/type union | Lean SHA-256 | Markdown SHA-256 |
 | --- | --- | --- | --- |

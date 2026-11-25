@@ -1,6 +1,6 @@
 # Universal closedness of target families after arbitrary scheme base change
 
-This internal unit proves that the actual target family tests universal
+This internal module proves that the actual target family tests universal
 closedness after any change of scheme base. It retains arbitrary schemes,
 algebraic spaces and morphisms. Only the target chart is required to be etale
 and surjective for the final equivalence; no affine, finite-presentation or
@@ -43,7 +43,7 @@ returns it to the target-chart pullback fibre.
 The provenance is internal: the published actual affine target families,
 structural and restriction fibre homeomorphisms, recovered-test rebase
 comparisons, the scheme point homeomorphism and the universal-closedness
-target-atlas criterion. Integration follows `SchemeTargetUniversallyClosed`.
+target-atlas criterion. It builds on `SchemeTargetUniversallyClosed`.
 The result does not assume or prove eventual properness. Descent of a chosen
 proper scheme cover and its map, the cover-existence prerequisite, and the
 full eight-property limit theorem remain separate obligations.

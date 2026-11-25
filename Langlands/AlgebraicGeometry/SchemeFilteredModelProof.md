@@ -1,6 +1,6 @@
 # Proof of model descent over the original filtered rings
 
-Worker 105 proves `InitialRingModelDescent` with
+This module proves `InitialRingModelDescent` with
 `initialRingModelDescent`, retaining arbitrary universe `u`.
 This supplies the actual initial-ring specialization of the
 relative Hom and prescribed-isomorphism portions of Conrad's
@@ -34,7 +34,7 @@ it does not assume a tail colimit, Hom bijection or descent result
 as additional data. Nonaffine and nonseparated models and
 possibly noninjective ring transitions remain unrestricted.
 Other morphism properties, arithmetic identifications and topology
-are separate obligations.
+are not treated here.
 
 The motivating original is Brian Conrad, *Weil and Grothendieck
 approaches to adelic points*, December 31, 2011, printed pp. 5–6,
@@ -44,12 +44,9 @@ descent and eventual uniqueness; registered source
 `fe4a9193aff4ef575665b40971f3da32f850a74d87b3f2d0fa28bba26b9cbabb`.
 The small filtered-category formulation and the separate weaker
 finiteness hypotheses are derived strengthenings justified by the
-published generic proofs. Conrad's finitely presented models satisfy
+generic proofs. Conrad's finitely presented models satisfy
 the hypotheses for bijectivity and prescribed-isomorphism descent.
 
-Worker 105 authored the reused Lean proof and original explanation.
-Worker 706 reused that proof unchanged, checked the original source
-and published dependencies, and prepared this focused proof pair
-for submission. Initial-model existence, other morphism properties,
-arithmetic, topology and whole-paper completion remain separate
-obligations.
+The proof was checked against the original source and its
+dependencies. Initial-model existence (`SchemeFilteredModelExistenceProof`),
+other morphism properties, arithmetic and topology are not treated here.

@@ -1,10 +1,9 @@
 # Generator values at the distinguished place of a global realization
 
-Author: Worker 5093. This is a supporting unit for task
-`92a3d086-a5ad-476f-9fd9-aa9d4eaa3778`, which must prove
+This is a supporting module for the proof of
 `Langlands.LocalFactor.NonabelianBrauer.KernelCompatibilityStatement`. In Deligne's global argument
 (1973, proof of Lemma 4.12) the generator values of the local relation at the distinguished place
-`v` are compared with the local epsilon factors at `v` of the global characters. This unit writes a
+`v` are compared with the local epsilon factors at `v` of the global characters. This module writes a
 generator value over the bottom field of `F` as a ratio of Tate epsilon factors on the completion
 `𝕃_u` of the global generator field, in exactly the form in which those factors occur in the
 published finite-place epsilon products (`prod_epsilon_quasicharacterAt_eq_prod_finiteEpsilon`):

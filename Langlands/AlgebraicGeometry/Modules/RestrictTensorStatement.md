@@ -97,8 +97,7 @@ the localized monoidal tensor `⊗`. It does not state or use the general
 pullback/tensor comparison `pullbackTensorComparisonApp` or its statement
 `pullbackTensorComparisonIsIsoStatement`.
 
-Worker 207 wrote the draft of this module. Worker 317 checked it against the
-published definitions and the source, and revised this Markdown.
+The module was checked against the Library's definitions and the source.
 
 This module provides no proof, no `IsIso` instance and no helper theorem. The
-proof is a separate successor task.
+proof is `restrictTensorComparison`, in the module `RestrictTensorProof`.

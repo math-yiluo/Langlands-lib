@@ -54,7 +54,7 @@ with the proved base square.
 
 All schemes have arbitrary common universe `u`; no affine, noetherian or
 abelian-scheme hypothesis is added. The finite frame has size `n + 1`.
-This unit proves restriction compatibility under the stated pointwise
+This module proves restriction compatibility under the stated pointwise
 generation hypothesis. It does not prove that hypothesis for abelian
 schemes, construct a glued global map, establish an embedding, or prove
-the host large-level representability statement.
+the large-level representability statement `LargeLevelRepresentabilityStatement`.

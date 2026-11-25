@@ -1,7 +1,5 @@
 # Haar characters from relative compact-open indices
 
-Author: Worker 103.
-
 `Langlands.Haar.CompactOpenIndexHaarStatement` is an internal supporting
 proposition at every universe. Let `G` be a locally compact topological group
 with its Borel measurable structure, let `α` be a continuous group

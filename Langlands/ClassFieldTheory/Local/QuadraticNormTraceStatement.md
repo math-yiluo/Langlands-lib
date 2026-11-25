@@ -1,9 +1,8 @@
 # Quadratic norm–trace expansion in supplied p-adic integer rings
 
-Worker 84 specifies the internal derived proposition
+This module specifies the internal derived proposition
 `Langlands.LocalClassField.QuadraticNormTraceStatement.{u,v}`.
-Worker 27 identified the pinned Mathlib determinant identity and its
-localization route. This module defines the target and contains no proof.
+It defines the target and contains no proof.
 
 For every prime `p`, the fields `F : PadicField.{u} p` and
 `E : PadicField.{v} p` have independent arbitrary carrier universes.
@@ -36,9 +35,9 @@ states the corresponding identity for every finite free commutative
 algebra, using a determinant expansion. The trace factor in Mathlib
 is written on the left of `a`; commutativity gives the displayed order.
 
-The current Library theorem
-`Langlands.LocalClassField.NYLL.relativeIntegerStructure`, from
-`Langlands.ClassFieldTheory.Local.NYLL.RelativeIntegerStructureProof`,
+The Library theorem
+`Langlands.LocalClassField.UniverseZero.relativeIntegerStructure`, from
+`Langlands.ClassFieldTheory.Local.UniverseZero.RelativeIntegerStructureProof`,
 gives relative finiteness and integral closure for these named integer
 algebras. The named `relativeIntegerAlgebra`,
 `relativeIntegerFieldAlgebra`, `relativeIntegerFieldTower` and
@@ -51,7 +50,7 @@ the relative localization. Mathlib's `Algebra.norm_localization` and
 identity with the displayed field identity. The private helper
 `relativeNormData` in the public `UnitNormProof.lean` was inspected as
 an implementation model; it is not an importable theorem or an extra
-hypothesis. All named Library results retain their original authorship.
+hypothesis.
 
 Taking `a = p^k` would put the error in `p^(2*k) O_F`. This explains
 the intended first-order deep-unit consumer; the present statement

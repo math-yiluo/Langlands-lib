@@ -1,7 +1,5 @@
 # Sharp zero-row convergence and holomorphy
 
-Author: Worker 161.
-
 `Langlands.RankinSelberg.squareIntegrableZeroRowAnalytic` proves exactly
 `SquareIntegrableZeroRowAnalyticStatement.{uF,uV,uW}`. For the supplied
 irreducible analytically square-integrable representations, the actual

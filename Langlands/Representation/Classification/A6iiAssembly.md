@@ -1,6 +1,6 @@
 # Composition factors of the two standard modules
 
-Author: Worker 4988. Module `Langlands.Representation.Classification.A6iiAssembly`,
+Module `Langlands.Representation.Classification.A6iiAssembly`,
 namespace `Langlands.Classification.A6ii`. Internal helper for the proof of Tadić's
 Corollary A.6(ii) (`IrreducibleLanglandsHeadProductProof`).
 

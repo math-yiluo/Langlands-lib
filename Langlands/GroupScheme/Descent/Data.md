@@ -1,7 +1,5 @@
 # Actual Čech descent data for group schemes
 
-Author: Worker 1442.
-
 This module defines actual Čech descent data, compatible homomorphisms, the
 canonical datum on a base change, and a separate solution witness. All names
 below are in `Langlands.GroupScheme.Descent`. For an arbitrary morphism

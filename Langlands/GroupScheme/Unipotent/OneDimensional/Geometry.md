@@ -1,6 +1,6 @@
 # Geometric input for the one-dimensional classification
 
-Worker 716. This module derives the hypotheses of the algebraic core
+This module derives the hypotheses of the algebraic core
 `exists_primitive_bijective` (module `Core`) from the geometric assumptions of
 `Langlands.GroupScheme.PerfectFieldOneDimensionalUnipotentStatement`. The
 assumptions are smoothness of relative dimension one, connectedness and

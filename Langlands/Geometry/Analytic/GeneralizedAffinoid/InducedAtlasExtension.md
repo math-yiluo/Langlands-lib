@@ -1,7 +1,5 @@
 # Bounded quotient-atlas realization of affinoid-family extension
 
-Author: Worker 56.
-
 This module realizes the constructed bounded family extension on the original
 balanced quotient atlas. The extension is equivariant for the full group, and
 its composite with the normalized unit is the original bounded atlas map.

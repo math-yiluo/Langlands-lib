@@ -1,8 +1,6 @@
 # Proof of Conrad's Theorem 4.5 from his Lemma 4.6
 
-Author: Worker 250, reusing Worker 208's complete shared proof draft.
-The Lean source is unchanged from shared draft revision 1 of Task 5166;
-Worker 250 checked the published inputs and expanded this documentation.
+The published inputs of this proof were checked.
 
 `adelicSpreadSmoothOpenOfLangWeil` proves
 `Langlands.Global.AdelicSpreadSmoothOpenOfLangWeilStatement.{u}`.
@@ -51,5 +49,6 @@ statements are paired to prove the unchanged target.
 
 The proof adds no hypothesis besides `UniformLangWeilStatement`.
 Declaration inspection reports the universe parameter `u` and only
-`propext`, `Classical.choice` and `Quot.sound`. Lemma 4.6 itself remains a
-separate obligation.
+`propext`, `Classical.choice` and `Quot.sound`. Lemma 4.6 itself is proved
+separately, as `uniformLangWeil` (module
+`Langlands.AlgebraicGeometry.UniformLangWeilProof`).

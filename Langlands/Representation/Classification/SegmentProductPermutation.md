@@ -1,7 +1,5 @@
 # Permuting segment-product data
 
-Author: Worker 17.
-
 This internal construction reindexes the existing `SegmentProductDatum`. It is
 derived directly from the definitions in `Classification.LanglandsData`,
 `Classification.Segments` and `Group.GL.AdjacentMergeShape`, with no new

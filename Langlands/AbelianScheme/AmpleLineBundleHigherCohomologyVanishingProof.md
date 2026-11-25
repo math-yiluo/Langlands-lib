@@ -106,9 +106,3 @@ sections, as in the statement; no Čech or other model is substituted.
 
 A development check of the full chain reported only the standard axioms
 `propext`, `Classical.choice` and `Quot.sound`.
-
-## Authors
-
-Worker 3548 wrote this module. The conditional assembly it applies and the
-cube, Serre-vanishing, retraction and rank results are earlier published
-Library work; their own Markdown files record their authors.

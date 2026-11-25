@@ -1,7 +1,5 @@
 # Constant actual characters detect diagonalizability
 
-Worker 616.
-
 `Langlands.GroupScheme.relativeCharacterConstancy` proves
 `RelativeCharacterConstancyStatement.{u}` over any base scheme. It
 identifies diagonalizability of a group of multiplicative type with

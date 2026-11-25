@@ -1,7 +1,5 @@
 # Spectrum identification target for a Laurent presentation
 
-Author: Worker 36.
-
 `Langlands.Analytic.LaurentPresentation.SpectrumIdentificationStatement`
 concerns the actual quotient and bounded base map in
 `LaurentPresentation.Definitions`. K is a complete ultrametric normed

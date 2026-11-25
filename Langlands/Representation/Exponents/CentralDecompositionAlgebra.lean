@@ -5,7 +5,7 @@ import Mathlib.RingTheory.Artinian.Ring
 import Mathlib.RingTheory.Jacobson.Ideal
 
 /-! Finite-dimensional central-action decomposition over an arbitrary algebraically closed field.
-The Artinian-algebra argument is adapted from Worker 23's published
+The Artinian-algebra argument is adapted from the published
 `FiniteActionSpectrumProof`; it is generalized from the complex field here. -/
 
 noncomputable section

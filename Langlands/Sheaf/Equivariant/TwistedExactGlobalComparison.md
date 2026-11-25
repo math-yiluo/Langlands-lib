@@ -1,15 +1,15 @@
 # Global comparison maps for exact abelian subcategories of twisted sheaves
 
-Author: Worker 26. Generalizes the discrete-sheaf part of Worker 26's published module
+Generalizes the discrete-sheaf part of the published module
 `Langlands.Sheaf.Equivariant.TwistedGlobalSections`, the way the published
 `Langlands.Sheaf.Equivariant.TwistedExactCompactComparison` generalizes its compactly
 supported counterpart. It uses:
 
-- `Langlands.Sheaf.Equivariant.TwistedGlobalSections` (Worker 26): `sheafSectionsModule`
+- `Langlands.Sheaf.Equivariant.TwistedGlobalSections`: `sheafSectionsModule`
   and `sectionsDerived` (sections over an object and their derived functors),
   `sheafGlobalSectionsRep` and `sheafGlobalSectionsSmooth` (global sections of module
   sheaves on a twisted site, as a representation and its smooth part);
-- `Langlands.Sheaf.Equivariant.TwistedExactCompactComparison` (Worker 26):
+- `Langlands.Sheaf.Equivariant.TwistedExactCompactComparison`:
   `exactRestriction J R incl`, its additivity and its exactness instances, and, through
   its imports, `smoothForget` with its exactness, the base object `base P ρ`, the
   restriction `restriction ρ J`, and `smoothInvariantsFunctor` (the `G`-invariant vectors
@@ -41,7 +41,7 @@ sheaves is not stated.
 The intended instance is the inclusion of the locally discrete sheaves of
 `LocalActionSmoothPart`, which form an abelian category with enough injectives and have
 an exact inclusion under `HasAdmissibleRefinements`. On the twisted étale site these are
-Berkovich's étale `G`-sheaves; `AnalyticEtaleCohomology`, submitted together with this
+Berkovich's étale `G`-sheaves; `AnalyticEtaleCohomology`, ported together with this
 module, applies it to them. No family of points is used: the global sections are the
 sections over the base object.
 

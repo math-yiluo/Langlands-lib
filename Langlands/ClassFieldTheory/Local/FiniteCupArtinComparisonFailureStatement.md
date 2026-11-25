@@ -18,10 +18,9 @@ datum in universe `u`.
 
 ## Provenance
 
-The content is internal. Task 5658 was published to prove
-`FiniteCupArtinCharacterComparison`. That proposition is false: the Library's comparison
-with the true sign is `FiniteGeometricCupArtinCharacterComparison`, which uses
-`geometricReciprocityOfCup`, the inverse of `arithmeticReciprocityOfCup`. The operator ruled
-that the task publishes the refutation instead (correspondence
-fce06321fc9b52d7b36ac74ecf83d799). This module only states the refutation and proves
-nothing. Its proof is a separate deliverable of Task 5658.
+The content is internal. `FiniteCupArtinCharacterComparison` is false: the Library's
+comparison with the true sign is `FiniteGeometricCupArtinCharacterComparison`, which uses
+`geometricReciprocityOfCup`, the inverse of `arithmeticReciprocityOfCup`. This module only
+states the refutation and proves nothing. Its proof is the theorem
+`finiteCupArtinCharacterComparisonFails` (module
+`Langlands.ClassFieldTheory.Local.FiniteCupArtinComparisonFailureProof`).

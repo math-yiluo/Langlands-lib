@@ -1,8 +1,6 @@
 # Relative Borels from the canonical sum of positive coroots
 
-Author: Worker 693.
-
-This internal unit chooses a canonical exponent for the actual affine
+This internal module chooses a canonical exponent for the actual affine
 relative Borel construction and proves its functoriality under based
 root-datum equivalences.
 
@@ -37,5 +35,5 @@ without first assuming a field-valued point exists.
 
 `IsFibrewiseRootDatumOf.relativeQuasiSplitTorusDataOfBase` records this
 relative Borel, the original closed fibrewise maximal coordinate torus and
-its proved containment. The unit does not construct invariant group data,
+its proved containment. The module does not construct invariant group data,
 effective descent solutions, or an innerness witness.

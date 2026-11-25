@@ -1,14 +1,13 @@
 # Renard VI.8.5 from its three remaining inputs
 
-Author: Worker 5148. This is a supporting unit for proof task
-`822bbd74-8853-4535-87b2-aede25e9a259` (Renard VI.8.5). It does not complete that task:
-it does not prove the closed target `GenericInducedIrreducibilityStatement`.
+This is a supporting module for Renard VI.8.5. It does not prove the closed target
+`GenericInducedIrreducibilityStatement`.
 
 Source: Renard, *Représentations des groupes réductifs p-adiques*, French version of
 9 July 2026 (`renard-2026-representations-groupes-reductifs-padiques`), VI.8.5 (printed
 pp.193–194, PDF pp.199–200). The mathematical argument is in the published reduction
 `genericInducedIrreducibility_of_statements`
-(`Langlands/Representation/Families/RenardGenericIrreducibilityReduction.lean`, Worker 1697),
+(`Langlands/Representation/Families/RenardGenericIrreducibilityReduction.lean`),
 whose Markdown describes it. This module adds no new mathematics; it only discharges
 published inputs of that reduction.
 
@@ -29,11 +28,8 @@ hypotheses and concludes `GenericInducedIrreducibilityStatement.{u, v}`:
    is unitarizable.
 
 These are inputs 1–3 of `genericInducedIrreducibility_of_statements`, unchanged. Each is a
-published statement whose proof is the subject of a separate task (VI.8.4: task
-`2113598c-9c21-461a-9a44-f46066850c3e`; Jacquet's theorem: task
-`173e44ba-079b-4597-a13b-1aab371a4ec9`; supercuspidal unitarity: task
-`df1b860d-7b40-4e1b-9e06-fd01618045ff`). Once all three are published, applying this theorem
-to their proofs proves the closed target.
+published statement, and the Library proves none of the three unconditionally. Once all
+three are proved, applying this theorem to their proofs proves the closed target.
 
 ## Packaged form
 
@@ -61,8 +57,7 @@ hypotheses and to proofs of its inputs 4–8:
 
 4. `LeviInductionAdmissibleStatement.{u, v}` (normalized induction preserves admissibility,
    Renard III.2.3): `leviInductionAdmissible`, from
-   `Langlands/Representation/Exponents/LeviInductionUnitarityProof.lean`, which accompanies
-   this module;
+   `Langlands/Representation/Exponents/LeviInductionUnitarityProof.lean`;
 5. `LeviInductionUnitarizableStatement.{u, v}` (normalized induction preserves
    unitarizability, Renard IV.2.3): `leviInductionUnitarizable`, same module;
 6. `LeviJacquetInductionSupercuspidalFiltrationStatement.{u, v}` (Renard VI.5.3(iii)):

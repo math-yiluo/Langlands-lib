@@ -1,7 +1,5 @@
 # H¹ coordinates from an actual universal rigidified Picard family
 
-Author: Worker 327.
-
 This derived internal construction combines published tangent, dimension,
 and ample-line-bundle results. Its geometric input is an **actual supplied**
 rigidified universal Picard family `L` on a parameter scheme `P`, with
@@ -33,7 +31,8 @@ finite-dimensionality.
 The proof uses the ordinary universal rigidified Picard family only as an
 explicit input. It does not prove its existence, a cohomological exterior
 description, or formulas for multiplication pullback. It does not use the
-six Picard/dual-scheme routes excluded by Task 6105, a proof of
+six Picard/dual-scheme routes excluded for the proof of
+`FieldH2ExteriorCoproductComparisonStatement`, a proof of
 `FieldH2PrimitiveInjectivityStatement`, or any consequence of such a
 proof. Its provenance consists of the imported published results and the
 stated local-dimension argument; no additional external theorem is invoked.

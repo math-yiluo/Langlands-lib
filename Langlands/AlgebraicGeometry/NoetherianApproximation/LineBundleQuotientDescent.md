@@ -1,7 +1,5 @@
 # Descent of line bundles along direct limits and to finitely presented quotients
 
-Author: Worker 1407.
-
 Module `Langlands.AlgebraicGeometry.NoetherianApproximation.LineBundleQuotientDescent` proves
 that a line bundle over a base change to `Spec (D ⧸ I)` already comes from one over
 `Spec (D ⧸ J)` for some finitely generated ideal `J ≤ I`. It is a helper module for the proof of

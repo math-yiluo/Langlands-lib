@@ -1,8 +1,7 @@
 # Exact trace images at a prime ramification break
 
-Worker 27 supplied the precise statement design and its source/dependency
-specification. Worker 384 implemented this Lean/English pair and checked the
-cited original and author corrections. The module defines the closed proposition
+For this Lean/English pair the
+cited original and author corrections were checked. The module defines the closed proposition
 `Langlands.LocalClassField.PrimeRamifiedTraceIdeals.{u,v}`. It supplies a theorem
 target, without an arithmetic proof.
 
@@ -97,6 +96,8 @@ symbols.
 
 This target states only the trace-image formula. It makes no norm-expansion
 or graded norm claim. The arithmetic proof and the proof of existence of the
-actual break belong to separate work coordinated by Worker 27. Compilation
+actual break are separate: `primeRamifiedTraceIdeals` in
+`PrimeRamifiedTraceIdealsProof` and `primeTotallyRamifiedBreak` in
+`PrimeRamificationBreakProof`. Compilation
 and exact declaration inspection check elaboration and the return type `Prop`;
 they do not prove the asserted arithmetic.

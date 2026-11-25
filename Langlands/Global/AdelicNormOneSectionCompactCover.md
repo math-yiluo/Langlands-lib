@@ -1,8 +1,6 @@
 # Compact norm-one representatives from a scheme section
 
-Author: Worker 82.
-
-This internal derived unit combines compact rational representatives along an
+This module combines compact rational representatives along an
 actual quotient with an actual scheme section. All point carriers, rational
 maps, norm-one subgroups and topologies are the existing Library constructions.
 
@@ -50,6 +48,6 @@ No errata note exists. The general section lemma is derived infrastructure;
 its proof adapts the published full-cover section argument in
 `SplitUnipotentRationalQuotientCompact` to a norm-one quotient.
 
-This unit proves no existence of a rational Levi in a supplied group,
+This module proves no existence of a rational Levi in a supplied group,
 no compactness for a general Levi, no root bounds and no Galois descent.
 It does not prove the general central-maximal-split-torus compactness theorem.

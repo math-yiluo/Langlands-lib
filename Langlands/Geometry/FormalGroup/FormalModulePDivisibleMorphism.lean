@@ -97,9 +97,11 @@ def pDivisibleMapAdd (hM : M.IsPiDivisible (p : O)) (hN : N.IsPiDivisible (p : O
 
 /-- Restriction is a ring homomorphism on the formal endomorphisms. -/
 def pDivisibleEnd (hM : M.IsPiDivisible (p : O)) : Hom M M →+* End hM.pDivisibleGroup where
-  __ := pDivisibleMapAdd hM hM
-  map_one' := pDivisibleMap_id hM
-  map_mul' g f := pDivisibleMap_comp g f hM hM hM
+  toFun f := End.of (f.pDivisibleMap hM hM)
+  map_zero' := congrArg End.of (map_zero (pDivisibleMapAdd hM hM))
+  map_add' f g := congrArg End.of (map_add (pDivisibleMapAdd hM hM) f g)
+  map_one' := congrArg End.of (pDivisibleMap_id hM)
+  map_mul' g f := congrArg End.of (pDivisibleMap_comp g f hM hM hM)
 
 end Hom
 

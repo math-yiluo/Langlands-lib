@@ -1,7 +1,5 @@
 # Reflection of semisimplicity under arbitrary field extension
 
-Author: Worker 1360.
-
 This module defines the proposition
 `Langlands.GroupScheme.SemisimpleFieldReflectionStatement.{u}`. It states the
 reflection direction of semisimplicity under field extension and supplies no
@@ -61,7 +59,7 @@ a rational-point or reduced centre.
 
 Consequently the conclusion asks for both fields over `k`, including the
 existential finite representative of the full centre. Centre descent is part
-of the future proof obligation; it is not a hypothesis of this statement.
+of what a proof must establish; it is not a hypothesis of this statement.
 
 ## Sources and derived packaging
 
@@ -94,7 +92,7 @@ to Propositions 19.5 or 19.10.
 
 ## Ascent and downstream use
 
-The separately owned `Langlands.GroupScheme.IsSemisimpleFieldExtensionStatement`
+The separate proposition `Langlands.GroupScheme.IsSemisimpleFieldExtensionStatement`
 in `Langlands.GroupScheme.SimplyConnected.FieldExtensionStatement` states
 `IsSemisimple G → IsSemisimple G_K`. This module states the reverse
 implication as its own proof target. Neither proposition supplies a proof of
@@ -102,7 +100,8 @@ the other. No existing predicate or cover-existence interface is changed.
 
 For a descended group whose scalar extension is isomorphic to a semisimple
 group, existing isomorphism transport supplies semisimplicity after scalar
-extension. A future proof of this target would then give semisimplicity of
-the descended group. Constructing effective descent, reflecting central
+extension. The proof of this target (`semisimpleFieldReflectionStatement` in
+`Langlands.GroupScheme.Reductive.SemisimpleFieldReflectionProof`) then gives
+semisimplicity of the descended group. Constructing effective descent, reflecting central
 isogenies, reflecting simple connectedness and constructing a covering
 cocycle remain separate obligations.

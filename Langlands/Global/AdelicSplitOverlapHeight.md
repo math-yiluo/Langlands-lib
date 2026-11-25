@@ -1,7 +1,5 @@
 # A height comparison for two Siegel factorizations in Bruhat position
 
-Author: Worker 2.
-
 This internal helper module formalizes the height half of the proof of
 Springer's overlap estimate (Springer, *Reduction theory over global fields*,
 1994, Proposition 2.6, printed p. 213). Two Siegel factorizations

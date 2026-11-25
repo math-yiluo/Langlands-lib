@@ -71,8 +71,8 @@ For even-path data `C` and normalized root maps `x`:
 
 ## Provenance
 
-This is the locality step (route step 3) of the task context of Task 5373, an internal
-formalization device: in Steinberg, *Regular elements of semi-simple algebraic groups* (1965),
+This is the locality step of the proof of the split even-path cross-section
+(`SplitEvenChainCrossSectionStatement`), an internal formalization device: in Steinberg, *Regular elements of semi-simple algebraic groups* (1965),
 source `steinberg-1965-regular-elements-semisimple-groups`, the corresponding observations are
 used without separate statement (e.g. step 4 of the proof of 9.16, printed p. 76, where factors
 orthogonal to the relevant weights act trivially on `V_ω`). The component lemma adapts the

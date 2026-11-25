@@ -1,8 +1,8 @@
 # Character-localized heredity for upper block induction
 
-Author: Worker 174. This module defines the closed proposition
+This module defines the closed proposition
 `Langlands.InducedLocalizationStatement.{uF,uV}`. It supplies a quotient
-formulation of the remaining heredity problem; it does not prove that
+formulation of the heredity problem; it does not prove that
 proposition or `InducedWhittakerTypeStatement`.
 
 ## Exact objects and hypotheses
@@ -82,7 +82,7 @@ Retained file:
 No source-specific erratum was found in the checked Library, project notes
 or literature locations.
 
-The new statement is a derived strengthening at the level of actual
+The statement is a derived strengthening at the level of actual
 character quotients, motivated by the open-cell heredity argument. It is
 not inferred merely from JPSS's dimension-one iff. A proof must establish
 the character quotient comparison itself, including non-open-cell
@@ -99,7 +99,8 @@ product-group character quotient with the tensor of the block quotients.
 It supplies the algebraic tensor step, without proving the induced
 quotient comparison.
 
-Once this statement is proved, the published
+With this statement proved (`Langlands.inducedLocalization` in
+`Langlands.Representation.Whittaker.InducedLocalizationProof`), the published
 `Whittaker.functionalsLocalizationDualEquiv` and
 `Whittaker.mem_functionals_entrywiseCharacter_iff` identify quotient duals
 with the exact functional spaces of the final target.

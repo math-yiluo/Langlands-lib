@@ -1,11 +1,12 @@
 # Filtrations outside the crossing resonance locus
 
-This derived supporting unit connects the arithmetic crossing table in
+This module connects the arithmetic crossing table in
 `RealInducedPairResonance` with the proved generic exchange theorem in
 `RealInducedPairGenericSwap`. It proves actual adjacent filtrations in the
 regions specified below. The linked cases and the resonant cases at or below
 the strict threshold remain outside these conclusions; the full
-`RealInducedInducedFiltrationStatement` remains open.
+`RealInducedInducedFiltrationStatement` is proved separately, as
+`realInducedInducedFiltration` in `RealInducedInducedFiltrationProof`.
 
 All parameters `d,e` are arbitrary `ComplexCharacterData`, including weight
 zero. Put `a=d.exponent`, `b=e.exponent`, `L=|d.weight|`, `M=|e.weight|` and
@@ -61,7 +62,7 @@ Their conclusion is the actual
 `RealAdjacentFiltration 4 [] [] (induced d) (induced e)`.
 The imported proof constructs a bijective exact intertwiner, inverts it and
 pushes the exchanged module's identity filtration along that inverse. Its
-single piece is `[induced e,induced d]`; this unit adds only the arithmetic
+single piece is `[induced e,induced d]`; this module adds only the arithmetic
 sufficient conditions and reuses that construction without additional map
 or occurrence premises.
 

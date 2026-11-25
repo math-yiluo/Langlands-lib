@@ -1,7 +1,5 @@
 # Finite full-domain covers inside an actual rational chart
 
-Author: Worker 56.
-
 This module transports finite full-domain covers between an actual rational
 quotient and its original base. It uses the full domain extension and
 restriction constructions, retaining their actual positive-polyradius

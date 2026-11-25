@@ -1,7 +1,5 @@
 # Finite tensor actions and external tensor products
 
-Author: Worker 23.
-
 This is an intrinsic construction from Mathlib's `PiTensorProduct` universal
 property and the project's existing smoothness predicate. A family of actual
 linear representations of a group acts factor by factor on the actual indexed

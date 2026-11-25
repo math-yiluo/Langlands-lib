@@ -1,7 +1,5 @@
 # Compatible closure embeddings and the fixing subgroup
 
-Author: Worker 134.
-
 This module constructs `closureSubgroupEquiv K E`, a continuous multiplicative
 equivalence from `Field.absoluteGaloisGroup E` to `E.fixingSubgroup`, for a
 characteristic-zero field `K` and a normal intermediate field `E` of
@@ -61,7 +59,7 @@ results, together with the existing project closure coefficient module.
 Its functorial convention agrees with Jean-Pierre Serre, *Local Fields*
 (1979), Chapter X, sections 3–4, printed pages 154–156 / PDF pages 160–162:
 a base-field-compatible embedding induces a group map in the opposite direction
-characterized by the commuting square. Worker 134 read these pages directly.
+characterized by the commuting square. These pages were read directly.
 The registered source is `serre-1979-local-fields`, SHA256
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`, retained at
 `/home/taskhub/central-library/Serre--Local Fields--1979.pdf`. No project errata

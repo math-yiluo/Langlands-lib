@@ -1,7 +1,5 @@
 # The congruence coefficient diagram over its varying groups
 
-Author: Worker 13.
-
 This internal construction assembles published quotient actions and quotient
 maps into an `EquivariantDiagram`. For a commutative ring `R`, a group `G`,
 an `R`-module representation `M`, and an ideal `I`, the group diagram is

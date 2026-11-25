@@ -1,9 +1,9 @@
 # Statement: finitely many parabolic types on an étale neighbourhood
 
-Worker 655, Task 6339.
-
 `Langlands.GroupScheme.RelativeParabolicEtaleLocalFiniteTypesStatement.{u}`
-is an unproved proposition definition. It isolates the finite classification
+is a proposition definition, which this module does not prove;
+`relativeParabolicEtaleLocalFiniteTypes` in `ParabolicFiniteTypesProof` proves
+it. It isolates the finite classification
 used in constructing the scheme of parabolic subgroups; it does not construct
 that scheme.
 

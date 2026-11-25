@@ -5,13 +5,15 @@ to the actual determinant-unit subgroup of a product Levi. It proves the
 required topological properties and converts the resulting decomposition into
 the exact published Levi proposition, conditional on the four analytic inputs
 and the Harish-Chandra equivalence. It does not prove those five inputs or the
-unconditional host theorem.
+unconditional theorem, which `leviQuasicuspidalDecomposition` in
+`LeviQuasicuspidalDecompositionProof` proves with the help of this module.
 
 The parameters are a prime `p`, an actual `F : PadicField p`, compatible
 `T : F.TopologicalData`, and `B : BlockShape n`. The field universe `uF`
 and representation-carrier universe `uV` are independent. Every topology is
 obtained by installing `T.topology`. All natural ranks are allowed in this
-conditional assembly; the eventual positive-rank theorem is a specialization.
+conditional assembly; the positive-rank case of
+`leviQuasicuspidalDecomposition` is a specialization.
 
 ## Actual subgroup topology
 

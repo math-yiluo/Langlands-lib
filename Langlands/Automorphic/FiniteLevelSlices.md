@@ -14,10 +14,10 @@ covariance proves rational-left-invariance. Reconstruction is complex linear,
 retains real smoothness and the specified open finite stabilizer, and is injective
 because evaluation on each finite/infinite pair recovers the original slice.
 
-This unit supplies a prerequisite for descending actual differential operators
+This module supplies a prerequisite for descending actual differential operators
 to finite-level adelic functions. It does not yet assert that differentiation
 preserves rational covariance, nor define automorphic forms or claim full
 infinite-translation stability of center-finite or compact-finite vectors.
 
-Worker 72 contributed the local coset reconstruction argument; the proof is a
-derived implementation using the previously published smooth ambient definitions.
+The proof is a derived implementation of the local coset reconstruction argument,
+using the previously published smooth ambient definitions.

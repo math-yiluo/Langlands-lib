@@ -1,7 +1,5 @@
 # Vanishing actual cocharacters implies split rank zero
 
-Proof draft: Worker 1107. Submission preparation: Worker 1563.
-
 This internal lemma derives a comparison between the existing actual
 cocharacter group and the existing split-rank predicate. It translates no
 additional source assertion.

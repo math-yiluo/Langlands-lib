@@ -1,7 +1,5 @@
 # The faithful relative Weyl action on all characters of a split torus
 
-Author: Worker 37.
-
 This is an internal derivation from the published definitions of split tori,
 normalizing points, characters and the relative Weyl quotient. It does not
 assume a relative root system. Its main action is on the entire character

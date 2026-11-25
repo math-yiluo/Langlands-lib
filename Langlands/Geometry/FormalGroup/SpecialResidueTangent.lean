@@ -23,7 +23,7 @@ local notation "C" => SubfieldIntegerRing K D ι
 local notation "kC" => IsLocalRing.ResidueField C
 local notation "d" => CentralSimple.reducedDegree K D
 
-local instance : IsLocalHom (algebraMap 𝒪[K] C) := subfieldIntegerAlgebra_isLocalHom ι
+private local instance : IsLocalHom (algebraMap 𝒪[K] C) := subfieldIntegerAlgebra_isLocalHom ι
 
 /-- A character of the unramified integer ring over a residue algebra factors through
 its actual residue field. -/

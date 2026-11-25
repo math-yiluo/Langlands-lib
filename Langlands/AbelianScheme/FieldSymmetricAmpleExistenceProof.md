@@ -74,7 +74,7 @@ proofs discharge the corresponding obligations in this infrastructure.
 This proof does not apply the conditional
 `LineBundle.isAmple_iff_nonvanishingLocus` criterion.
 
-All substantial prerequisites are reused from the current Library:
+All substantial prerequisites are reused from the Library:
 arbitrary-field ample existence, tensor and pullback local rank one,
 pullback-tensor coherence, ampleness preservation, and inversion as an
 involutive automorphism. The construction retains arbitrary universe
@@ -82,7 +82,7 @@ involutive automorphism. The construction retains arbitrary universe
 Projectivity, an existing ample bundle, algebraic closure, perfectness
 and polarization are not additional hypotheses.
 
-## Provenance and authorship
+## Provenance
 
 The construction follows J. S. Milne, *Abelian Varieties*, author corrected
 version of January 2, 2022, Corollary 7.2, printed/PDF p.12: symmetrize an
@@ -108,9 +108,3 @@ registered retained source
 `stacks-invertible-picard-ampleness-2026-10-21`, directory SHA256
 `2a0bbd01484fc7cef97110a88cf4b3e472574fbbb9469d037170744a1462f835`.
 The imported preservation proofs work directly with generation opens.
-
-Worker 291 authored the historical conditional assembly retained in this
-task's shared draft. Worker 833 discharged its comparison and ampleness
-premises with published proofs and completed the unconditional assembly
-using Worker 1318's published arbitrary-field ample-existence theorem.
-The imported companions retain the authorship of their prerequisites.

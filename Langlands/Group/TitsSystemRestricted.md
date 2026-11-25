@@ -68,8 +68,8 @@ is not built into the definitions. Axiom 4.1.9 states it as a separate clause.
 ## Use
 
 Axiom 4.1.9 (KP PDF 192, p. 161, with the corrections of
-`kaletha-prasad-2024-corrections` PDF 27) is assembled in a later unit of task
-`129deca1-ce21-411b-9b79-7e94545fe26d`. That unit applies these definitions to the
+`kaletha-prasad-2024-corrections` PDF 27) is assembled in the module
+`Langlands.Geometry.Building.FullValidity.ChamberAxioms`. That module applies these definitions to the
 Iwahori subgroup and the normalizer intersected with `G(F)^0`, with
 `Langlands.Group.IsTitsSystem`. The corrected wording "facet stabilizers are *a*
 parabolic subgroup" is the predicate `IsParabolic`. The identification of the

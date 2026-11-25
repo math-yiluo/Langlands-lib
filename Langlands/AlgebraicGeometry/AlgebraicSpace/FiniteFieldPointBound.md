@@ -1,7 +1,5 @@
 # A bound on field-valued points of a finite morphism over a point
 
-Author: Worker 1038.
-
 Module `Langlands.AlgebraicGeometry.AlgebraicSpace.FiniteFieldPointBound`, namespace
 `Langlands.AlgebraicGeometry.AlgebraicSpace`.
 

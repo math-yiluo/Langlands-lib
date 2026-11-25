@@ -1,7 +1,5 @@
 # Spectral relations lifted through genuine prime quotients
 
-Author: Worker 56.
-
 For a presented strict affinoid algebra P over a complete, nontrivially
 normed ultrametric field and an actual prime ideal I of P, the construction
 produces a monic polynomial over the original finite-variable Tate algebra.

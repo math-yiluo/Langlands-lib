@@ -13,7 +13,7 @@ applied to `M`, the actual sheaf pullback. The tensor product is over the ring m
 
 ## Section pullback restricted to a smaller open
 
-The published `sectionPullback f M V : Γ(M, V) → Γ(f^* M, f⁻¹V)` is the pullback unit
+The Library's `sectionPullback f M V : Γ(M, V) → Γ(f^* M, f⁻¹V)` is the pullback unit
 `M ⟶ f_* f^* M` on sections over `V`.
 
 - `sectionPullbackLE f M h m`, for `h : U ≤ f⁻¹V`, is `sectionPullback f M V m`
@@ -31,10 +31,10 @@ The published `sectionPullback f M V : Γ(M, V) → Γ(f^* M, f⁻¹V)` is the p
   compatibility with Mathlib's `pullbackComp a b : a^* (b^* M) ≅ (a ≫ b)^* M`
   (`pullback b ⋙ pullback a ≅ pullback (a ≫ b)`). Its `hom` sends the successive
   section pullback `a^*(b^* m)` to the composite section pullback `(a ≫ b)^* m`, and
-  its `inv` reverses this. The proof uses the published `sectionPullback_comp` and
+  its `inv` reverses this. The proof uses `sectionPullback_comp` and
   naturality.
 - `squarePullbackIso_hom_sectionPullbackLE`: for a commutative square
-  `p' ≫ t = s ≫ p`, the published comparison `squarePullbackIso` (module
+  `p' ≫ t = s ≫ p`, the comparison `squarePullbackIso` (module
   `SquarePullbackComparison`) sends `p'^*(t^* m)` to `s^*(p^* m)`. This follows by
   unfolding `squarePullbackIso` into `pullbackComp` and `pullbackCongr`.
 
@@ -42,7 +42,7 @@ The published `sectionPullback f M V : Γ(M, V) → Γ(f^* M, f⁻¹V)` is the p
 
 - `bijective_map_of_eq`: restriction along an equality of opens is bijective.
 - `sectionPullback_bijective_of_isOpenImmersion j F W`: for an open immersion `j` and
-  `W ≤ j.opensRange`, `sectionPullback j F W` is bijective. The published lemma
+  `W ≤ j.opensRange`, `sectionPullback j F W` is bijective. The lemma
   `DerivedSections.pullback_unit_app_comp_restrictFunctorIsoPullback_inv` (module
   `LocalizationSectionsBaseChange`) identifies its composite with the isomorphism
   `restrictFunctorIsoPullback` as a restriction along `j(j⁻¹W) = W`. That restriction
@@ -66,7 +66,7 @@ The published `sectionPullback f M V : Γ(M, V) → Γ(f^* M, f⁻¹V)` is the p
   `Γ(X, U)`-linear.
 - `pullbackTensorMap_one_tmul` and `pullbackTensorMap_tmul`: on pure tensors,
   `1 ⊗ m ↦ sectionPullbackLE f M h m` and `s ⊗ m ↦ s • sectionPullbackLE f M h m`.
-- `affineSectionsPullbackMap_eq`: over `Spec R`, the published map
+- `affineSectionsPullbackMap_eq`: over `Spec R`, the map
   `affineSectionsPullbackMap φ N` (module `AffineSectionsBaseChange`) is
   `sectionPullbackLE (Spec.map φ) N` on global sections.
 - `fromSpecSectionsLinear M hV`: `sectionPullbackLE` along `hV.fromSpec`, as a
@@ -85,12 +85,12 @@ the bijection `ψ = sectionPullbackLE hU.fromSpec (f^* M)` onto global sections 
 `Spec Γ(X, U)`, `pullbackTensorMap` becomes the composite of three bijections:
 
 1. `extendScalars φ` applied to the isomorphism `fromSpecSectionsLinear M hV`;
-2. the published `affineScalarSectionsMap φ (hV.fromSpec^* M)`, the map
+2. `affineScalarSectionsMap φ (hV.fromSpec^* M)`, the map
    `S ⊗_R Γ(Spec R, N) → Γ(Spec S, (Spec.map φ)^* N)`. It is an isomorphism for
-   quasi-coherent `N` by the published instance `isIso_affineScalarSectionsMap`
+   quasi-coherent `N` by the instance `isIso_affineScalarSectionsMap`
    (module `AffineSectionsBaseChange`). `hV.fromSpec^* M` is quasi-coherent by the
-   published instance `isQuasicoherent_pullback` (module `PullbackQuasicoherent`).
-3. the global-sections component of the published isomorphism
+   instance `isQuasicoherent_pullback` (module `PullbackQuasicoherent`).
+3. the global-sections component of the isomorphism
    `squarePullbackIso f (Spec.map φ) hU.fromSpec hV.fromSpec`.
 
 The identity `ψ ∘ pullbackTensorMap = (3) ∘ (2) ∘ (1)` is checked on pure tensors
@@ -103,15 +103,15 @@ Since `ψ` is bijective, `pullbackTensorMap` is bijective
 
 ## Provenance and scope
 
-This is an internal helper for proof task `f2728a31-103a-4d50-ae2d-6cb3f9ce05a9`. It
+This is an internal helper. It
 gives a usable description of the sections of the actual pullback `f^* M` over affine
 opens. Mathematically it is the standard fact that for quasi-coherent `M` and affine
 opens `U ⊆ f⁻¹V`, `Γ(U, f^* M) = Γ(U, O_X) ⊗_{Γ(V, O_Y)} Γ(V, M)`. Its affine case is
-`(Spec.map φ)^* M̃ = (S ⊗_R M)~`, which the published `AffineSectionsBaseChange`
-supplies on global sections. No literature is cited for this unit. The proof uses the
-published modules `SectionPullback`, `LocalizationSectionsBaseChange`,
+`(Spec.map φ)^* M̃ = (S ⊗_R M)~`, which the module `AffineSectionsBaseChange`
+supplies on global sections. No literature is cited for this module. The proof uses the
+Library modules `SectionPullback`, `LocalizationSectionsBaseChange`,
 `AffinePullbackQuasicoherent`, `AffineSectionsBaseChange`, `SquarePullbackComparison`
-and `PullbackQuasicoherent`, and pinned Mathlib (commit
+and `PullbackQuasicoherent`, and Mathlib (commit
 `5ed2965256430c3649e86755f9576b54eca72435`), but no new external assertion.
 
 `pullback_map_app_sectionPullbackLE` identifies the two ways to apply a module morphism and pull a section back to a smaller open.

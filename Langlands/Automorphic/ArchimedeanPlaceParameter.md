@@ -1,10 +1,9 @@
 # Archimedean Langlands parameters of actual automorphic realizations
 
-Worker 8 authored this definition unit for task
-`6c50b2fd-cb4a-47b3-8f5d-d464916d69fb`. All declarations lie in the namespace
-`Langlands.Automorphic`. The module attaches the archimedean blocks of Worker 35's published
+All declarations lie in the namespace
+`Langlands.Automorphic`. The module attaches the archimedean blocks of the published
 standard modules (`Langlands.Representation.Archimedean.StandardModule`) to the archimedean
-components of actual automorphic operator realizations. These are Worker 2's
+components of actual automorphic operator realizations. These are the Library's
 `OperatorRealization F n` and the actual cuspidal classes built on them, at a real or complex
 infinite place `v`. The attachment is a property, with no choice of parameter. It does not
 assert that a parameter exists or is unique.
@@ -27,7 +26,7 @@ differential action. The differential of a real direction `X` is the derivative 
 identification of `F_v` with `ℝ` or `ℂ` is the representative-embedding convention of the
 published place coordinates.
 
-On the local side, Worker 35's module gives, for a list `ds` of the Library's archimedean
+On the local side, the module `StandardModule` gives, for a list `ds` of the Library's archimedean
 blocks (`RealBlock` over `ℝ`, `ComplexCharacterData` over `ℂ`), the standard module
 `realStandardModule n ds` or `complexStandardModule n ds`. This is a space of smooth functions on
 `GL_n(ℝ)` or `GL_n(ℂ)` in a principal series. On it `K` acts by right translation and the real Lie
@@ -48,7 +47,7 @@ algebra by `Archimedean.rightDerivative`.
   3. for every `X ∈ 𝔤𝔩_n(ℝ)` and every `f`, the right derivative of `f` along `X` is again in
      `realStandardKFinite n ds` and `A(R(X)f) = S.realPlaceLieAction v (1 ⊗ X) (A f)`.
 
-  The membership conditions are bundled as `∃ hf`, as in Worker 35's
+  The membership conditions are bundled as `∃ hf`, as in `StandardModule`'s
   `IsInfinitesimallyEquivalent`.
 - `OperatorRealization.HasComplexPlaceParameter S v ds`, for a complex place and
   `ds : List ComplexCharacterData`, is the same with `ds.length = n`, `U(n)`, the complex
@@ -99,19 +98,19 @@ algebra by `Archimedean.rightDerivative`.
    standard module, and needs neither the factorization nor a choice of factor. The
    factorization theorem is used only in this explanation, and is not proved or assumed.
 2. **Generic components and parameters.** If `π_v` is generic, its standard module is
-   irreducible: Vogan's theorem, as recorded in Worker 35's `StandardModule.md`. The predicate
+   irreducible: Vogan's theorem, as recorded in `StandardModule.md`. The predicate
    then says that `π_v` is infinitesimally equivalent to the standard module of `ds`. By
    Knapp's Theorems 1–2 (resp. 4–5), this means that the Langlands parameter of `π_v` is the sum
    of the Weil representations of the blocks, in any order. This is exactly the meaning of
-   Worker 35's `HasRealParameter` and `HasComplexParameter` for Banach representations, now
+   `StandardModule`'s `HasRealParameter` and `HasComplexParameter` for Banach representations, now
    for the `(𝔤_v, K_v)`-module of an automorphic realization. Archimedean components of cuspidal
    representations are generic, by the global Whittaker model. That is the intended use, and it
    is not proved here.
 3. **Non-generic components.** For non-generic `π_v`, the standard module is reducible and
    indecomposable. It then has no injective equivariant map into a `π_v`-isotypic module, so
-   the predicate fails, exactly as Worker 35's predicates fail for non-generic
+   the predicate fails, exactly as the predicates of `StandardModule` fail for non-generic
    representations. No parameter is attached to such components.
-4. **Injectivity instead of isomorphism.** Worker 35 compares a representation with the
+4. **Injectivity instead of isomorphism.** `StandardModule` compares a representation with the
    standard module by a linear isomorphism of `(𝔤, K)`-modules. The automorphic carrier is a
    global space, so the comparison is an injective equivariant map into it.
 

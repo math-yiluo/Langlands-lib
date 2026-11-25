@@ -1,7 +1,5 @@
 # Polygon comparison for dominance-maximal cones
 
-Author: Worker 23.
-
 This module is the numerical core of the proof of
 `Langlands.GLMaximalConeJacquetQuotientStatement` (task b291a31b). It compares
 two piecewise-linear prefix polygons in standard GL coordinates. The first is

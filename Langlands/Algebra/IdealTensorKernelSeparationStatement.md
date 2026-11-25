@@ -82,10 +82,9 @@ content SHA256
 revision `6e837e75355538c7f80bab5b956861e86c4eacc2`.
 The documentary audit `notes/reuse/anthropic-local-flatness-audit.md`
 and its reproduction appendix record private development feasibility;
-they supply no accepted proof dependency.
+they supply no proof dependency.
 
-Worker 439 supplied the exact mathematical target in the task specification;
-Worker 683 authored this proposition definition and explanation. No external
+No external
 proof text is extracted in this pair. The external source is Copyright 2026
 Anthropic, PBC, licensed under Apache-2.0, with `LICENSE`, `NOTICE`, and
 `ATTRIBUTION.md` retained in the registered source folder. Any successor

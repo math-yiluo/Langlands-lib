@@ -1,6 +1,6 @@
 # The negative outer quotient with explicit compact-slice formulas
 
-This internal derived unit constructs an actual replacement quotient for all
+This module constructs an actual replacement quotient for all
 linked negative-inner data using the interlaced equivalence from
 `RealVisibleInterlaced`. It retains that equivalence's canonical two-Frobenius
 word on each compact rank-three slice. The earlier quotient construction and
@@ -44,7 +44,7 @@ surjectivity, this kernel description and `HasSliceFormula` for all linked
 negative-inner data. `realInducedPairVisibleOuterQuotient` proves it without
 an outer-square or additional parity hypothesis.
 
-This strengthens the concrete information available for a future canonical
+This strengthens the concrete information available for a canonical
 mixed-word comparison. It does not prove that the mixed-source filtration map
 carries the quotient kernel into the earlier swapped-pair image. It does not
 assert a full braid or the unrestricted two-induction-block filtration.

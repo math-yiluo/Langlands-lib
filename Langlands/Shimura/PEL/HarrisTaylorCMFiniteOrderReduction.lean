@@ -126,7 +126,7 @@ theorem originalElement_pow_eq_one_of_frame_isogeny :
           (RationalAlgebraAction.intertwines e.hom) he eta =
         right (G := ScalarExtensionSimilitudePoints A A (Global.FiniteAdeles ℚ)
           (D.harrisHodgePELForm C)) eta (scalarEquiv u)) →
-      ∀ m : ℕ, (let f : End0 X.actionObj.abelianScheme := RationalAlgebraAction.hom0 e.hom
+      ∀ m : ℕ, (let f : End0 X.actionObj.abelianScheme := CategoryTheory.End.of (RationalAlgebraAction.hom0 e.hom)
                 f ^ m = 1) →
         u ^ m = 1 := by
   let := auxiliaryStarRing D C
@@ -135,7 +135,7 @@ theorem originalElement_pow_eq_one_of_frame_isogeny :
   let : IsSimpleRing A := D.simple
   let g := scalarEquiv u
   let f := rationalEndAction X.actionObj.abelianScheme (Over.mk s) (fun _ => True)
-    (RationalAlgebraAction.hom0 e.hom)
+    (CategoryTheory.End.of (RationalAlgebraAction.hom0 e.hom))
   have hconj (x : (Global.FiniteAdeles ℚ) ⊗[ℚ] A) :
       f (eta.1 x) = eta.1 (g.val.1 x) :=
     congrArg (fun xi : Frame => xi.1 x) hframe
@@ -171,7 +171,7 @@ theorem isOfFinOrder_originalElement_of_frame_isogeny :
           (RationalAlgebraAction.intertwines e.hom) he eta =
         right (G := ScalarExtensionSimilitudePoints A A (Global.FiniteAdeles ℚ)
           (D.harrisHodgePELForm C)) eta (scalarEquiv u)) →
-      (let f : End0 X.actionObj.abelianScheme := RationalAlgebraAction.hom0 e.hom
+      (let f : End0 X.actionObj.abelianScheme := CategoryTheory.End.of (RationalAlgebraAction.hom0 e.hom)
        IsOfFinOrder f) →
         IsOfFinOrder u := by
   let := auxiliaryStarRing D C
@@ -191,7 +191,7 @@ theorem exists_localIdentity_frame_of_levelIso_fixed
     ∀ (a : (orbitTower X).obj ((indexFunctor).obj U)) (q : ℚˣ)
       (e : X.actionObj ≅ X.actionObj) (he : Mult X X q e),
       transport X X ((indexFunctor).obj U) q e he a = a →
-      (let f : End0 X.actionObj.abelianScheme := RationalAlgebraAction.hom0 e.hom
+      (let f : End0 X.actionObj.abelianScheme := CategoryTheory.End.of (RationalAlgebraAction.hom0 e.hom)
        IsOfFinOrder f) →
       OriginalLevelLocalIdentityFrameWitness D C preservation composition unitCoherence
         associativity comparison symmetry stability square universality compatibility

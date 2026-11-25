@@ -1,7 +1,5 @@
 # The split similitude points as topological groups
 
-Author: Worker 19.
-
 This internal construction upgrades the group isomorphism
 `ImaginaryQuadraticSplit.pointsEquiv σ S hσ : σ.Points S ≃* (S ⊗[L] A)ˣ × Sˣ`
 of `Langlands.Shimura.Unitary.ImaginaryQuadraticSplitPoints` to an isomorphism

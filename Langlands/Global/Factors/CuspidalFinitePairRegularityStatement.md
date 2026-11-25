@@ -1,7 +1,5 @@
 # Regularity of the finite pair L-factors of unitary cuspidal realizations on `Re s ≥ 1`
 
-Author: Worker 3657.
-
 Lean module: `Langlands.Global.Factors.CuspidalFinitePairRegularityStatement`.
 It contains one proposition, `Langlands.Global.CuspidalFinitePairRegularityStatement`,
 and no proofs.

@@ -1,7 +1,5 @@
 # Regularity of actual fine real twists
 
-Author: Worker 166.
-
 `Langlands.FineTwistRegularityStatement` is a closed proposition definition
 combining three preservation statements for actual product-Levi
 representations with the specialization needed by relative Jacquet comparison.

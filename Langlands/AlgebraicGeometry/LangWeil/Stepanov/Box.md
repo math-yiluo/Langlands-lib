@@ -1,6 +1,6 @@
 # Degree boxes for bivariate polynomials
 
-Author: Worker 5406. Internal helper for the proof of
+Internal helper for the proof of
 `Langlands.AlgebraicGeometry.LangWeil.StepanovNormPolynomialsStatement`; not a result of the
 literature.
 

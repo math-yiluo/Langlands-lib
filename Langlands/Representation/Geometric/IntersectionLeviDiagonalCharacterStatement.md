@@ -55,5 +55,3 @@ requested algebraic reduction using the Library's
 permutation constructions. Those published definitions are imported without
 modification. The statement itself does not involve Haar measures or assume
 the desired correction cancellation.
-
-Author: Worker 165.

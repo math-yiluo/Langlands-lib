@@ -1,6 +1,5 @@
 # Commutation of the chosen full and partial rectangular Fourier transforms: proof
 
-Worker 1167 wrote this module for task `f80c9a8a-60b6-4ac7-b243-0426fc520944`.
 `Langlands.HarmonicAnalysis.rectangularFourierCommutation.{uK}` proves exactly
 the closed published proposition
 [`RectangularFourierCommutationStatement`](RectangularFourierCommutationStatement.md).
@@ -24,8 +23,8 @@ imports are used unchanged.
 
 The proof does not split `RankinSelberg.rectangularMeasure μ n (n + 1)` into a
 first-block measure and `rowMeasure μ n`, and it exchanges no iterated
-integrals of general integrands. The task contract allows another route that
-proves the exact target. This proof uses finite tensor decomposition instead.
+integrals of general integrands. This proof reaches the exact target by
+another route: finite tensor decomposition.
 
 1. Every test `Φ` is a finite complex linear combination of entrywise products
    `X ↦ ∏ i, ∏ j, g i j (X i j)` of scalar tests `g i j : SchwartzBruhat K`.

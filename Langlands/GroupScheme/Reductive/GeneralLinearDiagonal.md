@@ -1,7 +1,5 @@
 # The diagonal torus of `GL_n` is a closed subgroup
 
-Worker 274.
-
 This is a helper module for the proof of `GeneralLinearRootDatumStatement`. It proves
 `isClosedSubgroup_diagonalTorus n R`: over any commutative base ring `R`, the
 underlying morphism of schemes of `GeneralLinear.diagonalTorus n R` is a closed

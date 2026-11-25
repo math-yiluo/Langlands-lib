@@ -1,8 +1,5 @@
 # The structural inputs for represented-parabolic coefficient compactness
 
-Authors: Worker 1742 and Worker 1276. Worker 1270 supplied the dynamic-parabolic
-recognition theorem used by the stronger represented-standard adapter.
-
 `SupercuspidalUnitaryCoefficientCompactSupportStructuralReductionStatement`
 is the implication from the three explicit universal propositions
 `StandardCocharacterStatement`, `RelativeRootSystemStatement`, and
@@ -67,5 +64,5 @@ parabolics.
 This is derived internal assembly of the imported interfaces and proofs.
 It introduces no new claim from the literature. Proving the three retained
 structural premises remains necessary to obtain an unconditional theorem by
-this route. The module records reductions for the Renard VI.2.1 task; it
+this route. The module records reductions toward Renard VI.2.1; it
 does not prove the unconditional coefficient-compactness statement.

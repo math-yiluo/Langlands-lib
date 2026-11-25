@@ -1,11 +1,9 @@
 # Two-axis rigidity over fields with a smooth, possibly non-proper second factor
 
-Worker 1140 wrote this proof. The final comparison between the cartesian monoidal product and
+The final comparison between the cartesian monoidal product and
 `Limits.prod` is adapted, essentially verbatim, from the published proof
 `Langlands.AlgebraicGeometry.fieldTwoAxisRigidity` in
-`Langlands/AlgebraicGeometry/FieldTwoAxisRigidityProof.lean`, implemented by Worker 423. The
-clopen-set route follows the suggested route in the task context, written by Worker 998. No
-unpublished draft is reused.
+`Langlands/AlgebraicGeometry/FieldTwoAxisRigidityProof.lean`.
 
 The theorem `Langlands.AlgebraicGeometry.fieldTwoAxisRigiditySmoothSecond.{u}` has type exactly
 `Langlands.AlgebraicGeometry.FieldTwoAxisRigiditySmoothSecondStatement.{u}`, for every universe

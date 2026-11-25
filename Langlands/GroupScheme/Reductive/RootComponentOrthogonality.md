@@ -1,7 +1,5 @@
 # Orthogonality and exclusion of mixed roots between coordinate components
 
-Worker 634.
-
 For a supplied `RootComponentCoordinates M`, every root has a nonzero full
 character coordinate, necessarily in its specified Cartan component. The
 construction `rootCoordinateWitness` chooses one such simple index.

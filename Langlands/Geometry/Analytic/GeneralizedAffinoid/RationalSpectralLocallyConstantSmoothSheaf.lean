@@ -52,7 +52,7 @@ theorem spectralInvariantLocusLocallyConstantSmoothPresheaf_action_apply
         (Opposite.op d)).representation g f) x =
       M.representation g
         (f (ConcreteCategory.hom
-          (((spectralInvariantLocusFunctor ρ H).obj d).obj.ρ g⁻¹) x)) := rfl
+          (((spectralInvariantLocusFunctor ρ H).obj d).obj.ρ g⁻¹).asHom x)) := rfl
 
 @[simp]
 theorem spectralInvariantSpectrumLocallyConstantSmoothPresheaf_action_apply
@@ -65,7 +65,7 @@ theorem spectralInvariantSpectrumLocallyConstantSmoothPresheaf_action_apply
         (Opposite.op d)).representation g f) x =
       M.representation g
         (f (BanachSpectrum.comap
-          ((spectralInvariantSectionAction ρ H d).actionAut g⁻¹).inv.toBoundedRingHom x)) :=
+          ((spectralInvariantSectionAction ρ H d).actionAut g⁻¹).asIso.inv.toBoundedRingHom x)) :=
   rfl
 
 @[simp]

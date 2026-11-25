@@ -48,6 +48,6 @@ that self-map, is inverted instead. This adaptation is derived for this project.
    maps by `SmoothRep.ofHom_hom`, `SmoothRep.hom_comp` and `SmoothRep.hom_ofHom`.
 
 The averaging operations `averageMap`, `averageMap_mem_fixedVectors`,
-`averageMap_commute` and `averageMap_id` are Worker 1643's, from
+`averageMap_commute` and `averageMap_id` are from
 `Langlands.Representation.Compact.CharZeroAverage`. `SmoothRep.epi_iff_surjective` is
 from `Langlands.Representation.Category.Abelian`.

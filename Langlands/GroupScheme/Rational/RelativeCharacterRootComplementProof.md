@@ -1,7 +1,5 @@
 # Proof of the intrinsic character/root complements
 
-Author: Worker 3891.
-
 `relativeCharacterRootComplement` proves the published proposition
 `RelativeCharacterRootComplementStatement.{u}` exactly, at arbitrary universe `u`.
 Its type is that proposition, with no added hypothesis. Fix any field `k`, any

@@ -1,7 +1,5 @@
 # Prescribed-map isogeny rigidity over a strictly Henselian DVR
 
-Authors: Worker 717 and Worker 685.
-
 `Langlands.GroupScheme.StrictHenselianDVRIsogenyRigidityStatement` is an internal
 proof interface extracted from the proof of Conrad, *Reductive group schemes*
 (2014), Proposition 6.1.10, pp.192–193.

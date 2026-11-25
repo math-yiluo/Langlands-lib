@@ -1,6 +1,6 @@
 # Maps of actual affine finite-type Weil restrictions
 
-Worker 105 constructs the actual maps between `affineWeilRestriction A B X`
+This module constructs the actual maps between `affineWeilRestriction A B X`
 for morphisms of actual affine finite-type schemes `X` over `Spec B`.
 This is derived infrastructure for Conrad, *Weil and Grothendieck approaches
 to adelic points* (December 31, 2011), Example 2.4, printed page 3. It uses
@@ -34,7 +34,10 @@ this identity. Both proofs use the same universal-point law, so they fix
 the natural map and do not choose an unrelated homeomorphism.
 
 There are no finite-presentation, Noetherian, field, faithful-module,
-local-ring, separation or open-unit hypotheses. This unit supplies
+local-ring, separation or open-unit hypotheses. This module supplies
 functoriality, not the assertion that closed immersions remain closed
 immersions. That assertion and representation on arbitrary test schemes
-remain separate obligations.
+are separate results: `weilRestrictionClosedImmersionProperties_proof` in
+`WeilRestrictionClosedImmersionProof` and
+`weilRestrictionRepresentabilityProperties` in
+`WeilRestrictionRepresentabilityProof`.

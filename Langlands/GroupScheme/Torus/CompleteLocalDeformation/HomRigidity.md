@@ -1,7 +1,5 @@
 # Rigidity of group-scheme homomorphisms out of diagonalizable groups
 
-Worker 748, for Task 6952 (with Worker 356).
-
 Module `Langlands.GroupScheme.Torus.CompleteLocalDeformation.HomRigidity`, namespace
 `Langlands.GroupScheme.CompleteLocalDeformation`. This module translates the bialgebra
 rigidity of `Rigidity.lean` and `FiniteRigidity.lean` into a statement about actual group
@@ -30,7 +28,7 @@ Auxiliary results:
   pullbacks of `algSpec` maps along `Spec S → Spec R`, then
   `Algebra.TensorProduct.map (AlgHom.id S S) f = Algebra.TensorProduct.map (AlgHom.id S S) g`.
 - `tensorMap_diagonalSourceCoordinateMap_eq`: the same for the coordinate maps
-  `diagonalSourceCoordinateMap f` (Worker 356's `DiagonalizableSourceCoordinates`) of two
+  `diagonalSourceCoordinateMap f` (module `Torus.DiagonalizableSourceCoordinates`) of two
   homomorphisms from the standard diagonalizable group with equal base change along
   `R → S`.
 - `diagonalSourceCoordinateMap_sub_mem`: if such homomorphisms have equal base change to
@@ -51,8 +49,8 @@ those pullbacks with `Spec` of the tensor maps. Since `Spec.map` is injective, t
 are equal. Evaluate at `1 ⊗ a` in `(R ⧸ I) ⊗[R] R[M]` and apply `one_tmul_eq_zero_iff`
 (from `Lifting.lean`). This gives `π_f a - π_g a ∈ I • ⊤`.
 
-Next, `comul_sub_comm_mem_of_bialgEquiv` (from `FiniteRigidity.lean`) applies to Worker 356's
-presentation `diagonalizableReductionPresentation G I hG`. It shows that the coordinate
+Next, `comul_sub_comm_mem_of_bialgEquiv` (from `FiniteRigidity.lean`) applies to the
+presentation `diagonalizableReductionPresentation G I hG` (module `Torus.DiagonalizableReductionCoordinates`). It shows that the coordinate
 bialgebra of `G` is cocommutative modulo `I`. Then `eq_of_sub_mem_smul_top` gives
 `π_f = π_g`, and `eq_of_diagonalSourceCoordinates_eq` gives `f = g`.
 

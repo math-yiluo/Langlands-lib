@@ -29,6 +29,4 @@ any smooth function under the center.
 
 The final unapplied-constant assignment checks the full declaration telescope,
 including an arbitrary universe for K and rank zero, with no additional
-hypotheses. Worker 72 authored the proof and its explanation in task draft
-revision 1. Worker 116 checked the published interfaces, added this declaration
-check, and prepared the pair for independent review.
+hypotheses. The published interfaces were checked.

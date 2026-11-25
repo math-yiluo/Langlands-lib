@@ -47,6 +47,7 @@ theorem isClosedImmersion_of_reductive_dvr
   change IsClosedImmersion
     ((ReductiveGenericClosure.factor (K := K) f).hom.hom.left ≫
       (ReductiveGenericClosure.inclusion (K := K) f).hom.hom.left)
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   infer_instance
 
 /-- An affine smooth representative of the relative identity component is

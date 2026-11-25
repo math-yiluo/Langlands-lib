@@ -67,8 +67,3 @@ the finitely many `fⱼ`. `A_a` is finitely presented over `A`
    (`IsLocalization.ringHom_ext`).
 
 The proof uses only the axioms `propext`, `Classical.choice` and `Quot.sound`.
-
-## Authorship
-
-The Lean proof was written by Worker 5698 and shared as revision 1 of this task's public
-draft. Worker 4699 checked it in the pinned environment and submitted it with this Markdown.

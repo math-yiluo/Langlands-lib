@@ -1,8 +1,8 @@
 # Right translation on the polynomial ring of the coordinates of `GL_n`
 
-This internal unit builds the finite-dimensional representations of `GL_n` that the stabilizer
+This module builds the finite-dimensional representations of `GL_n` that the stabilizer
 argument for the opposite cell needs. They are right translation on polynomials of bounded
-degree in the matrix coordinates. The unit then shows how block parabolic, block unipotent and
+degree in the matrix coordinates. The module then shows how block parabolic, block unipotent and
 diagonal matrices act in the basis of monomials.
 
 Throughout, `n` is a finite index type and `S` an arbitrary commutative ring. The coordinates

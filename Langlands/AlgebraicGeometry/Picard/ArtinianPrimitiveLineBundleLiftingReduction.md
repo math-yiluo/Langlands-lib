@@ -2,7 +2,7 @@
 
 This module reduces the published proposition
 `Langlands.AbelianScheme.ArtinianPrimitiveLineBundleLiftingStatement.{u}` to two Library
-statements that had no published proof when it was written. It does **not** prove the
+statements. It does **not** prove the
 target outright. It imports the shared proposition and entry theorem from
 [ArtinianPrimitiveLineBundleLiftingFromPrerequisites](ArtinianPrimitiveLineBundleLiftingFromPrerequisites.md):
 
@@ -44,17 +44,18 @@ implication are published Library statements, imported unchanged:
   `k`, is injective on the relative H² of the ideal of `A ×_{B'} Spec B ⟶ A`;
 - the target `Langlands.AbelianScheme.ArtinianPrimitiveLineBundleLiftingStatement`.
 
-Once proofs of the first two are published, applying
-`artinianPrimitiveLineBundleLifting_of` to them proves the target exactly, with no further
-hypothesis. The module uses no `sorry` and adds no axiom. It does not use
+Applying
+`artinianPrimitiveLineBundleLifting_of` to proofs of the first two proves the target exactly,
+with no further hypothesis. The Library proves them as
+`Langlands.AlgebraicGeometry.Picard.squareZeroObstructionMorphismNaturality` and
+`Langlands.AbelianScheme.artinianH2PrimitiveInjectivity`. The module uses no `sorry` and adds no axiom. It does not use
 `PicardZeroArtinianLiftingStatement`, `FiniteTypeDualSchemeGeometryStatement`,
 `RelativeDualSchemeGeometryStatement`, `FiniteTypeSmoothFamilyAbelianRepresentabilityStatement`,
 `SmoothFamilyAbelianRepresentabilityStatement` or anything proved from them.
 
-The approved Lean service compiled the module in environment
-`5c94c648-e8dc-4002-a50a-071ebf3f6096` with zero errors and zero warnings. Inspection of
+The module compiles with zero errors and zero warnings. Inspection of
 `ArtinianPrimitiveLineBundleLiftingReductionStatement` reported
-`statement_returns_prop: true`, the sole universe parameter `u`, and only the axioms
+that it is a `Prop`, the sole universe parameter `u`, and only the axioms
 `propext`, `Classical.choice` and `Quot.sound`.
 
 The file sets `backward.isDefEq.respectTransparency false` and

@@ -2,7 +2,7 @@
 
 Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.CuspidalConvolution`, namespace
 `Langlands.HarishChandraSchwartz`. It imports
-`Langlands.HarmonicAnalysis.HarishChandraSchwartz.CuspidalWavePacketOrthogonality` (Worker 249):
+`Langlands.HarmonicAnalysis.HarishChandraSchwartz.CuspidalWavePacketOrthogonality`:
 `ConstantTermIndVanishes` and
 `pairing_inducedOrbitWavePacket_eq_zero_of_constantTermInd_eq_zero`; through it the Library's
 `Space`, `nu`, `levelSubmodule`, `schwartzSubmodule`, `mem_schwartzSubmodule_iff`,

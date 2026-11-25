@@ -1,6 +1,6 @@
 # Monic equivariant additive maps and entire root subgroups
 
-This internal derived unit starts with an actual additive-group homomorphism
+This module starts with an actual additive-group homomorphism
 over an arbitrary field and its scalar torus-equivariance law on every relative
 test scheme. It converts that law into equivariance of the actual weight action,
 proves stability of the map's image on every test, and shows that the whole
@@ -22,7 +22,7 @@ smooth connected affine groups and the proved uniqueness of root subgroups
 from their full positive Lie span. The final theorem derives the target's
 one-dimensionality from the split-root Lie-line theorem.
 
-All hypotheses remain explicit. The unit constructs no torus, root datum,
+All hypotheses remain explicit. The module constructs no torus, root datum,
 parametrization, or highest-weight module; it identifies a supplied monic
 equivariant map with the full root functor. It is derived from the imported
 Library results and uses no external literature.

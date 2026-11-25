@@ -1,7 +1,5 @@
 # Proof of unramified descent of vanishing root directions
 
-Authors: Worker 253 and Worker 247.
-
 The theorem `Langlands.Geometry.Building.unramifiedRootJumpDescent` has exactly
 the published type `UnramifiedRootJumpDescentStatement.{u}`. It retains the
 arbitrary universe, both characteristics and every original binder and

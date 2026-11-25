@@ -1,6 +1,6 @@
 # Assembly of the cocenter construction of the Kottwitz homomorphism
 
-Worker 341. The theorem
+The theorem
 `Langlands.Geometry.Building.Kottwitz.simplyConnectedDerivedKottwitz_proof`
 proves exactly the existing proposition
 `Langlands.Geometry.Building.Kottwitz.SimplyConnectedDerivedKottwitzStatement`.

@@ -1,7 +1,5 @@
 # Corollary 5.6 for algebraic spaces from the valuative criterion: proof
 
-Author: Worker 78.
-
 `localFieldProperPointValuativeReduction` proves
 `LocalFieldProperPointValuativeReductionStatement`: the valuative existence criterion
 `SpaceValuativeExistenceStatement.{u}` (Stacks Lemma 67.42.3, (1) ⇒ (3)) implies Conrad's

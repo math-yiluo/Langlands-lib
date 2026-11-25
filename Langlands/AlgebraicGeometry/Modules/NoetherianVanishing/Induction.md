@@ -1,7 +1,5 @@
 # Vanishing of cohomology by induction on the dimension of the support
 
-Author: Worker 921.
-
 This helper module contains the main induction of the proof of
 `Langlands.AlgebraicGeometry.Modules.NoetherianSeparatedQuasicoherentVanishingStatement`.
 

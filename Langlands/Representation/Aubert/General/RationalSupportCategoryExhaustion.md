@@ -1,6 +1,6 @@
 # Finite invariant spans for actual standard induction-Jacquet objects
 
-This derived adapter by Worker 288 applies the finite-span image exhaustion to
+This derived adapter applies the finite-span image exhaustion to
 the existing standard point subgroups of a connected reductive group scheme
 over a nonarchimedean local field. The point group is literally
 `RationalPoint k G.X`, with the canonical `pointTopology`. The index `K` is a
@@ -43,5 +43,5 @@ construction; this is not an assertion that their import closures are empty.
 
 This theorem supplies an exhaustion step only. Support preservation on every
 finitely generated supported input and actual parabolic quotient compactness
-remain to be proved or supplied by exact published results before applying it
-to `RationalSupportCategoryInductionJacquetStatement`.
+are needed before applying it to
+`RationalSupportCategoryInductionJacquetStatement`.

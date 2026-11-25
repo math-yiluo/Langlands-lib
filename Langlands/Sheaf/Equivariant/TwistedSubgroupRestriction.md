@@ -1,6 +1,6 @@
 # Restriction of twisted sheaves to a subgroup
 
-Author: Worker 26. Builds on the following modules:
+Builds on the following modules:
 
 - `Langlands.Sheaf.Equivariant.TwistedOver` (through the imports): the twisted category
   `TwistedOver P ρ` of a `G`-object `X`, its morphisms (`homMk`, `hom_ext`, the twist

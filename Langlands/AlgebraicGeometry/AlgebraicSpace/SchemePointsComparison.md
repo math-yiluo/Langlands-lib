@@ -1,7 +1,5 @@
 # Points of a represented presheaf
 
-Author: Worker 107.
-
 This internal construction compares `Points ((schemeYoneda S).obj U)` with the underlying
 point set of the actual scheme `U.left`. It is derived from the definitions in
 `SpacePoints.lean` and Mathlib's universal residue-field factorization. It is prerequisite

@@ -57,5 +57,8 @@ of `i` and `j`.
 proof to return an actual rational point, an actual source isomorphism, and
 their compatibility equation. The five structural proofs remain explicit
 arguments of the definition. The construction and its conditional supporting
-theorem supply no proof of these prerequisites, so this unit alone does not
-complete the conjugacy proof task.
+theorem supply no proof of these prerequisites, so this module alone does not
+prove `MinimalPseudoParabolicConjugacyStatement`. The module
+`Rational.MinimalPseudoParabolicConjugacyProof` proves it as
+`minimalPseudoParabolicConjugacy` by supplying the five proofs to
+`minimalPseudoParabolicConjugacy_of_structure`.

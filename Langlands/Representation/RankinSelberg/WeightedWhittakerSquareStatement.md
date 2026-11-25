@@ -1,12 +1,11 @@
 # Weighted Whittaker square estimates for both character signs
 
-Author: Worker 724.
-
 `Langlands.RankinSelberg.WeightedWhittakerSquareStatement.{uF,uV}` is a
 proposition definition, not a theorem or an axiom. It states that a
 square-integrable irreducible representation gives integrable weighted Whittaker
 squares on the actual left-unipotent quotient, for the standard and for the
-inverse Whittaker character. The integrability claims remain a proof obligation.
+inverse Whittaker character. The integrability claims are a proof obligation,
+discharged by `weightedWhittakerSquare` in `WeightedWhittakerSquareProof`.
 
 ## Statement and existing definitions
 
@@ -102,7 +101,7 @@ The conclusion lives on a different space. It concerns Whittaker functions,
 not matrix coefficients, on the left-unipotent quotient `N_(n+1) \ GL_(n+1)`.
 The conclusion also carries the weights
 `|Φ(e_(n+1) g)|²` and `|det g|^(2a)`. Passing from the first kind of
-square-integrability to the second is the content of the future proof. In
+square-integrability to the second is the content of the proof. In
 particular, the source's input (2), square-integrability of the restricted
 Whittaker functions modulo `N_r Z_r`, is not a hypothesis here and must be
 derived from the matrix-coefficient predicate.
@@ -115,7 +114,7 @@ In JPSS a pair `(W, W')` uses `W` in the `ψ`-model of one representation and
 `glFunctionals ψ n π` with `f'.val` from `glInverseFunctionals ψ n σ`. The
 intended use applies the standard clause to `π` and the inverse clause to `σ`.
 
-Worker 462's equal-rank draft, the context of this task, uses only this
+The equal-rank proof `SquareIntegrableEqualRankAnalyticProof` uses only this
 elementary assembly. Write `Φ₀ = √‖Φ‖` and `a = Re(s)/2`. By the arithmetic and
 geometric mean inequality, the norm of the equal-rank integrand is at most the
 average of the two weighted squares for `Φ₀`:
@@ -162,7 +161,7 @@ The source's wording on p. 451 has `s ≥ 0` and `Φ ≥ 0`. This statement requ
 specializes. The endpoint `a = 0` is not asserted. A nonnegative `Φ` is replaced
 by `‖Φ‖` for arbitrary complex `Φ`.
 
-### The source route the proof is expected to follow
+### The source route for the proof
 
 The equal-rank argument on printed p. 449 has three parts. Adapted to
 `|W|² |Φ|² |det|^(2a)`, they read as follows.
@@ -193,7 +192,7 @@ The source writes this route for the product `|W W'|`; the weighted square is
 the case where both factors have the same absolute value. This module neither
 assumes nor proves formula (1) on the Library's quotients, the restricted-norm
 identity (2), the gauge majorization (2.5) or its integrability (2.7). They
-belong to the proof task and are not needed for this statement to be well
+belong to the proof and are not needed for this statement to be well
 formed.
 
 The source works over non-Archimedean local fields. This statement uses the
@@ -201,4 +200,4 @@ existing `PadicField` interface, keeps every positive rank including rank one,
 and uses every compatible quotient measure and the actual coefficient images.
 It adds no convergence, holomorphy, rational-continuation or local-factor
 conclusion. General normal convergence and holomorphy are a separate Mellin
-task, as are the larger-rank restriction-square and last-row cutoff statements.
+statement, as are the larger-rank restriction-square and last-row cutoff statements.

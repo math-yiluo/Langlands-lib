@@ -1,7 +1,5 @@
 # Conditional Iwasawa assembly on actual adelic points
 
-Authors: Worker 399 and Worker 1430.
-
 This derived module specializes the published coordinate patching and assembly
 lemmas to the actual adelic point group. It retains local Iwasawa existence at
 every place and a supplied family satisfying
@@ -48,8 +46,7 @@ maximality and exact coverage.
 
 The provenance is internal and derived from the published
 `AdelicGroupLocalPoints`, `CoordinateCompactPatching`, and
-`IntegralIwasawaFamilyStatement` interfaces. Worker 1430 designed the actual
-coordinate specialization. Getz–Hahn, *An Introduction to Automorphic
+`IntegralIwasawaFamilyStatement` interfaces. Getz–Hahn, *An Introduction to Automorphic
 Representations* (2024), §2.3, Proposition 2.3.1, printed pp.56–57, and §2.7,
 Theorem 2.7.1, printed p.71, motivate this assembly. The separate local and
 integral inputs are discussed in Appendix B, Theorem B.2.5 and Proposition B.3.1,

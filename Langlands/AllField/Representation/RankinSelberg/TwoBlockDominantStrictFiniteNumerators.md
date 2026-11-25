@@ -26,4 +26,4 @@ The module docstring of the port:
   supply finite numerators. All factor witnesses precede every row and test.
 - `Langlands.AllField.RankinSelberg.DominantRankTransport.exists_strictTwoBlockFiniteNumerators` (theorem): Above one real bound, a nonzero ordinary Jacquet functional supplies both
   complete block certificates and finite numerators uniformly in the compatible
-  quotient measures. The independently owned analytic first-block statement is an explicit premise.
+  quotient measures. The analytic first-block statement `TwoBlockDominantFirstBlockLaurentIdentityStatement` is an explicit premise.

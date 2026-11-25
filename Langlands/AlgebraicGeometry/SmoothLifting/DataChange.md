@@ -23,6 +23,7 @@ The following hold.
   compares chart representatives on a covering family of transported
   charts.
 
-These are internal lemmas for Task 6989 by Worker 496. They are used for
+These are internal lemmas for the lifting of homomorphisms from groups of
+multiplicative type through nilpotent thickenings. They are used for
 the naturality of square-zero kernels of group schemes along maps of test
 algebras.

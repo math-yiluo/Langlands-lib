@@ -30,7 +30,7 @@ this embedding and assembles the four clauses in the order of the published
 statement.
 
 This is an internal assembly of the existing comparison constructions and
-proofs. The implemented reduction adapts the direct rational-center
-calculation shared by Worker 325. Worker 532 prepared the affine proof API
-assembly. The contextual literature and its scope are recorded in the
+proofs. The implemented reduction adapts a direct rational-center
+calculation written for the proof of `AnalytificationCenterStatement`. The
+contextual literature and its scope are recorded in the
 unchanged statement's paired Markdown.

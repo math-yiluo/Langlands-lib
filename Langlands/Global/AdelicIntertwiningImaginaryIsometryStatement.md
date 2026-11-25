@@ -2,8 +2,8 @@
 
 Module `Langlands.Global.AdelicIntertwiningImaginaryIsometryStatement` states
 `Langlands.Global.IntertwiningImaginaryIsometryStatement` as a proposition
-definition. It supplies no proof. Worker 106 wrote it for Task 5682, whose
-target is `IntertwiningImaginaryUnitarityStatement` (module
+definition. It supplies no proof. It is stated for
+`IntertwiningImaginaryUnitarityStatement` (module
 `Langlands.Global.AdelicIntertwiningImaginaryUnitarityStatement`). This
 statement is the first of the two steps of the source proof of that target;
 the second step, holomorphy on the imaginary axis, is what separates the two

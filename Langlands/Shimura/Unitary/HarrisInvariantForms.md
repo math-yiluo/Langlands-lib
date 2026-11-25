@@ -1,7 +1,5 @@
 # Harris's (4.8): `K_ℓ`-invariant forms at level `H(m)`
 
-Author: Worker 19.
-
 Harris (1999) identifies the `K_ℓ`-invariants of the forms of level
 `H(m) = K^{ℓ,p} × K_ℓ(m) × H_p` with coefficients `𝓛_m` with
 `Hom(𝒪_m[C_p/H_p]^M, 𝓛_m)`; this is (4.8). This module proves (4.8) under
@@ -159,15 +157,14 @@ Source ID and SHA-256 fingerprint:
 Formal dependencies:
 
 - `Langlands.Shimura.EquivariantFormsFactor` (`LevelFactorization`,
-  `factorFinsuppEquiv`, `invariants_comp_eq`), submitted in the same
-  candidate;
+  `factorFinsuppEquiv`, `invariants_comp_eq`), ported together with this
+  module;
 - `Langlands.Shimura.Unitary.HarrisPairPoints` (`pairPointsEquiv`,
   `pairPointsEquiv_apply`, `ellPlace`, `primePlace`) and
   `Langlands.Shimura.Unitary.HarrisDividingLevelFree` (`splitLevel`,
   `pairLevel`, `splitLevelMap`, `HarrisDividingLevelFree`,
   `DividingLevelFree.doubleCosetStabilizer_le`, `factorHom_mem_splitLevel`,
-  `pairLevel_subgroupOf_normal`, `splitLevel_subgroupOf_normal`), from
-  candidate `2de966a9-8fd3-4a35-8cf5-91658db2a30a`;
+  `pairLevel_subgroupOf_normal`, `splitLevel_subgroupOf_normal`);
 - the published `Langlands.Shimura.EquivariantForms` (`forms`,
   `levelAction`, its triviality instance on the smaller level,
   `levelInvariantsEquiv`) and `Langlands.Shimura.SplitLevelTower`

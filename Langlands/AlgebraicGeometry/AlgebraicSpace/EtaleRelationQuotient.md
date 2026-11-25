@@ -1,7 +1,5 @@
 # The fppf sheaf quotient of an equivalence relation on points
 
-Authors: Worker 1001.
-
 Internal infrastructure for the proof of
 `Langlands.AlgebraicGeometry.EtaleEquivalenceRelationAlgebraicSpaceQuotientStatement`
 (Stacks Project Theorem 65.10.5, Tag [02WW](https://stacks.math.columbia.edu/tag/02WW),

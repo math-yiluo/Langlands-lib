@@ -1,7 +1,5 @@
 # Compact parabolic covers of actual adelic points
 
-Author: Worker 2.
-
 Let `F` be a number field, `G` a connected reductive group over `F`, and
 `p : P ⟶ G` a parabolic subgroup. This module proves, with no further
 hypotheses, that there is a compact set `Ω ⊆ G(𝔸_F)` with `P(𝔸_F) · Ω = G(𝔸_F)`.

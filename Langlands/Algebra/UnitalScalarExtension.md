@@ -27,10 +27,10 @@ The supplementary older-edition corrections, source
 corrections for this example (2010 edition, p.301: "B-morphisme" should read
 "A-morphisme", and a parenthesization fix). The 2026 text already contains
 both corrections, and it governs here. Neither correction affects the
-definitions in this unit.
+definitions in this module.
 
 The source example is the special case k = ℂ of the subalgebra section below.
-Most of this unit is internal infrastructure derived from that example: the
+Most of this module is internal infrastructure derived from that example: the
 generalization to an arbitrary unital ring homomorphism `φ : B →+* A`, the
 general commutative coefficient ring k, and the named adapters
 (`rightModule`, `nonUnitalHom`, `residualModule`, `residualMap`).
@@ -203,7 +203,7 @@ cases:
 
 ## Scope
 
-This unit gives only definitions and their intrinsic laws. It does not state
+This module gives only definitions and their intrinsic laws. It does not state
 or prove:
 
 - the source's θ and σ maps;
@@ -212,20 +212,22 @@ or prove:
 - the triangle identities;
 - any comparison with the source's two-variable Hom-adjunction predicate.
 
-Those remain separate obligations. No completion of Appendix A or of the book
+The first four items are stated in
+`Langlands.Algebra.UnitalScalarExtensionAdjunctionStatements` and proved in
+`Langlands.Algebra.UnitalScalarExtensionAdjunctionProofs`
+(`scalarExtensionAdjunctionStatements`). No completion of Appendix A or of the book
 is claimed.
 
 ## Dependencies
 
-The unit imports the published Library modules
+The module imports the published Library modules
 `Langlands.Algebra.NonUnitalBimoduleTensor` and
 `Langlands.Algebra.NonUnitalModuleRestrictScalars`, plus Mathlib
 `Mathlib.Algebra.Category.ModuleCat.ChangeOfRings` and
 `Mathlib.Algebra.Algebra.Subalgebra.Basic`. The pinned Mathlib commit is
-`5ed2965256430c3649e86755f9576b54eca72435`, in Lean environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`.
+`5ed2965256430c3649e86755f9576b54eca72435`.
 
 Mathlib's native scalar extension `ModuleCat.extendScalars` requires
-commutative rings at this version. So this unit builds the extension from the
+commutative rings at this version. So this module builds the extension from the
 Library's balanced quotient and residual action instead, which keeps A and B
 possibly noncommutative.

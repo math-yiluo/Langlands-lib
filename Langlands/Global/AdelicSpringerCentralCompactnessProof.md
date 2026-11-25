@@ -1,6 +1,6 @@
 # Springer's compactness theorem for a central maximal split torus
 
-Closing module of Task 5268, for the Library statement `CentralSplitCompactQuotientStatement`
+Closing module for the Library statement `CentralSplitCompactQuotientStatement`
 (module `AdelicSiegelChamberReduction`; Springer 1994, Theorem (C), "if" direction).
 
 - `centralSplitCompactQuotient_of_galoisTwist (hS1 hS2) : CentralSplitCompactQuotientStatement.{u}`.
@@ -32,7 +32,7 @@ dependency order:
 3. `AdelicGaloisTwistDescent`: the twist through the Library's canonical descent;
    `twistPoint` and D1 (`twistPoint_comp_radicalGaloisHom`).
 4. `AdelicGaloisTwistNormOne` (statement of Lemma C) and `AdelicGaloisTwistNormOneProof`
-   (its proof, by Worker 10): `twistPoint` preserves norm-one points.
+   (its proof): `twistPoint` preserves norm-one points.
 5. `AdelicGaloisTwistSubgroup` (statements of Lemma S: S1 and S2) and
    `AdelicGaloisTwistSubgroupProof` (their proofs `galoisTwistNormOne`,
    `galoisTwistSubgroup`).

@@ -1,6 +1,6 @@
 # Jacquet modules of contragredients from explicit structure statements
 
-Author: Worker 937. Lean module
+Lean module
 `Langlands.Representation.Exponents.LeviJacquetContragredientStructure`, namespace
 `Langlands.Aubert.General.RepresentedParabolic`.
 
@@ -28,10 +28,9 @@ Notation on rational points:
 `M(χ) = (Dynamic.centralizer χ).carrier (Over.mk (𝟙 _))` and
 `N(χ⁻¹) = (Dynamic.unipotent (Dynamic.inverseCocharacter χ)).carrier (Over.mk (𝟙 _))`.
 
-## Open inputs
+## Inputs
 
-Every result here assumes some of the following Library statements. None of them was proved
-in the Library (commit 6f182f92) when this was last checked:
+Every result here assumes some of the following Library statements:
 
 - `ParabolicDynamicStatement` (`GroupScheme/Absolute/BorelStatement.lean`; rational
   parabolics are dynamic parabolics);
@@ -45,6 +44,14 @@ in the Library (commit 6f182f92) when this was last checked:
 
 So the module does not prove `LeviJacquetContragredientStatement`. It derives it from these
 statements.
+
+`ParabolicDynamicStatement`, `OppositeDynamicParabolicUniquenessStatement` and
+`Dynamic.LeviAdjointDeterminantReciprocityStatement` are proved in the Library, as
+`parabolicDynamic` (`GroupScheme/Absolute/ParabolicDynamicProof.lean`),
+`GroupScheme.oppositeDynamicParabolicUniqueness`
+(`GroupScheme/Dynamic/OppositeParabolicUniquenessProof.lean`) and
+`GroupScheme.Dynamic.leviAdjointDeterminantReciprocity`
+(`GroupScheme/Dynamic/LeviAdjointDeterminantReciprocityProof.lean`).
 
 The module also uses `DynamicGeometricUnipotentRadicalStatement`
 (`GroupScheme/Dynamic/GeometricUnipotentRadicalStatement.lean`): the identity-limit subgroup of
@@ -85,7 +92,7 @@ have the same body.
 The setting of `LeviJacquetContragredientStatement` for one pair of parabolics. There is a
 Hausdorff nonarchimedean local field `k` and a group scheme `G` over `k` with affine structure
 map. `G(k)` carries the Library point topology and is assumed locally compact and
-nonarchimedean. Assume the first three open inputs,
+nonarchimedean. Assume the first three inputs,
 `Dynamic.LeviAdjointDeterminantReciprocityStatement` and that `G` is connected reductive. Let
 `P = MN` and `P̄ = MN̄` be represented parabolics with Levi decompositions,
 `mbar ≫ pbar = m ≫ p` and `pointImage p ⊓ pointImage pbar = pointImage (m ≫ p)`. Then there

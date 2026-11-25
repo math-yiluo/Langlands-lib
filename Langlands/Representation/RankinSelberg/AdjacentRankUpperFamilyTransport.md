@@ -1,10 +1,10 @@
 # Actual adjacent upper-family and certificate transport
 
-Worker 486. This internal composition proves an actual normalized induction
+This internal composition proves an actual normalized induction
 comparison and complete certificate transports for the adjacent analytic
 base. The field and the two original carrier universes remain independent.
 Every natural rank, including zero, and reducible full Whittaker-type blocks
-are retained. It is a transport contribution, not either closed parent proof.
+are retained. It is a transport module, not a proof of either parent statement.
 
 `AdjacentRankUpperFamilyComparison F r h sigma` records a continuous scalar
 quasicharacter, an equivalence from the original first block to its exact
@@ -92,10 +92,10 @@ normalized reversal, block-equivalence and certificate-equivalence APIs.
 It asserts no new literal source theorem and uses no later unrestricted
 multiplicativity or rank descent. Existing Library pairs are unchanged.
 The complete lower `hLower` inputs assert arbitrary-character analytic
-results. The current sufficiently-large-second-twist theorem does not
+results. The sufficiently-large-second-twist theorem does not
 supply them, since its strict real bound cannot be discarded. Parameter
-specialization, the necessary functional equations and both unchanged
-closed adjacent-rank parent proof records remain separate obligations.
+specialization, the necessary functional equations and the two
+adjacent-rank parent proofs remain separate obligations.
 
 ## All-field port
 

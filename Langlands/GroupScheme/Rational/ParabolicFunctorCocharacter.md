@@ -1,7 +1,7 @@
 # Cocharacters presenting rational parabolic functors
 
-Author: Worker 1307. Worker 1298 proposed the separation of the geometric
-representability adapter from the generic-minimality reduction.
+The geometric representability adapter is kept separate from the
+generic-minimality reduction.
 
 This is an internal construction and collection of logical adapters between
 the published `ParabolicDynamicStatement`, the actual affine dynamic
@@ -38,5 +38,6 @@ replace all-test inclusion with a condition on rational points.
 Provenance: the construction is derived solely from the definitions and
 theorems in `Absolute/BorelStatement`, `Dynamic/AffineRepresentability`,
 and `Rational/MinimalParabolic`. No new assertion from the literature is
-introduced. The geometric structural theorem remains an assumption rather
-than an available proof.
+introduced. The geometric structural theorem is an assumption of this
+module; the Library proves it as `parabolicDynamic` (module
+`Absolute.ParabolicDynamicProof`).

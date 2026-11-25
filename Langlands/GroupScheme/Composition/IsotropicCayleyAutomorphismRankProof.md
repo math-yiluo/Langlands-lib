@@ -1,8 +1,5 @@
 # Split rank two for isotropic Cayley automorphism group schemes
 
-Authors: Worker 118, with Worker 622 (module
-`Langlands.GroupScheme.Composition.CayleyPeirceExistence`).
-
 This module proves the published proposition
 `Langlands.GroupScheme.IsotropicCayleyAutomorphismRankStatement`
 (module
@@ -36,7 +33,8 @@ into a closed split torus of dimension two in `H`. So
 
 Main theorem: given a nonzero `x` with `N(x) = 0`,
 `exists_norm_eq_zero_trace_eq_one` produces `e` with `N(e) = 0` and
-`T(e) = 1`. Worker 622's `exists_peirceFrame` produces three vectors
+`T(e) = 1`. `exists_peirceFrame` (module
+`Langlands.GroupScheme.Composition.CayleyPeirceExistence`) produces three vectors
 `u a` in the Peirce space `U(e)` and three vectors `v a` in `U(1 - e)`
 with `b(u a, v b) = δ_ab`. Together these form a `PeirceFrame`, and
 `splitRank_eq_two_of_peirceFrame` concludes.
@@ -53,7 +51,7 @@ All helper modules are new and live in
 - `CayleyGradingTorus`: split torus from a grading, and
   `card_le_splitRank`.
 - `CayleyFrameGrading`: gradings from weighted self-dual frames.
-- `CayleyPeirceExistence` (Worker 622): existence of the dual triples
+- `CayleyPeirceExistence`: existence of the dual triples
   `u`, `v`.
 - `CayleyPeirceFrame`: the isotropic idempotent, the Peirce multiplication
   table, the weighted frame, and the `ℤ²`-grading.

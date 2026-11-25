@@ -1,7 +1,5 @@
 # Comparing geometric unipotent radical predicates
 
-Author: Worker 1355.
-
 This internal comparison relates `IsGeometricUnipotentRadical` from
 `Rational.SemistandardIntersection` to
 `LeviSubgroup.IsGeometricUnipotentRadical` from `Rational.LeviSubgroup`.

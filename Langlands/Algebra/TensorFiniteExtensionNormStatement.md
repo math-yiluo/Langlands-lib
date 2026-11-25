@@ -5,9 +5,6 @@ universe-polymorphic `Prop`-valued definition. It is a statement target: this
 module only states the proposition. It supplies no proof, adds no axiom and
 defines no new norm.
 
-Worker 208 specified the target in the task. Worker 248 wrote the Lean
-statement and this companion.
-
 ## Exact statement
 
 The module imports only Mathlib:
@@ -99,7 +96,7 @@ exponent in clause 2 is `Module.finrank K L`, not `Module.finrank A (A ⊗[K] L)
 These differ in general: over the zero ring Mathlib's
 `Module.finrank_subsingleton` gives `Module.finrank A (A ⊗[K] L) = 1`.
 
-`K`, `L`, `A` and `B` share the single universe `u`, as the task requires.
+`K`, `L`, `A` and `B` share the single universe `u`.
 This is the setting of the consumer statement
 `Langlands.AlgebraicGeometry.Picard.FiniteFieldExtensionNormStatement`,
 where the rings of sections lie in the scheme universe `u`.
@@ -160,7 +157,7 @@ identification:
   remark that a function nonvanishing on the whole fibre has nonvanishing
   norm. The source derives that remark from multiplicativity, using a
   neighbourhood of the fibre on which `f` is a unit. Clause 3 instead
-  states it for a single prime, so its future proof must argue
+  states it for a single prime, so its proof must argue
   algebraically, for example by base change to the residue field at `p`.
 
 The Library statement
@@ -202,11 +199,13 @@ It is The Stacks Project Authors, The Stacks Project, HTML snapshot retrieved
 
 No errata for these passages were found.
 
-## Obligations for a future proof
+## Obligations for a proof
 
-This module proves nothing. A separate proof module must prove exactly
-`Langlands.Algebra.TensorFiniteExtensionNormStatement`, import this module,
-and leave this Lean and Markdown pair unchanged. It must establish all three
+This module proves nothing. The separate proof module
+`Langlands.Algebra.TensorFiniteExtensionNormProof` proves exactly
+`Langlands.Algebra.TensorFiniteExtensionNormStatement`, as
+`Langlands.Algebra.tensorFiniteExtensionNorm`; it imports this module and
+leaves this Lean and Markdown pair unchanged. A proof must establish all three
 clauses, including both directions of clause 3, for arbitrary `K`, `L`, `A`
 and `B`:
 
@@ -239,4 +238,5 @@ and `B`:
   `Langlands.AlgebraicGeometry.Picard.FiniteFieldExtensionNorm.exists_prime_over_of_norm_mem`.
 
 The Library lemmas named above are hints, not dependencies of this module.
-Their exact hypotheses must be checked when the proof is written.
+The proof module uses `norm_map_of_basis`, `norm_mem_comap` and
+`exists_prime_over_of_norm_mem`.

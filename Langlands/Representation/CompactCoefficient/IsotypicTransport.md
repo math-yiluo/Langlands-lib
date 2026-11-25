@@ -1,6 +1,6 @@
 # Intrinsic isotypic transport and conditional projector covariance
 
-Worker 173 constructs an inverse to pullback on actual intertwiners and proves
+This module constructs an inverse to pullback on actual intertwiners and proves
 transport and covariance laws for the existing compact-coefficient isotypic
 subspaces. This is internal algebraic infrastructure derived from the published
 `GroupTransport`, `Isotypic`, and `ConditionalProjection` modules. No original

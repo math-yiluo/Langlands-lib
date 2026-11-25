@@ -1,7 +1,5 @@
 # Proof: big-cell and Steinberg data for simply connected groups
 
-Author: Worker 4716.
-
 This module proves the published proposition
 `Langlands.GroupScheme.SteinbergBigCellStatement`
 ([`SteinbergBigCellStatement`](SteinbergBigCellStatement.md)) at its original
@@ -50,7 +48,7 @@ passes them in:
 
 ## The route through the imported assemblies
 
-The imported assemblies were written by other workers; their Markdown gives
+The Markdown of the imported assemblies gives
 the details. Their chain, as used by this proof, is:
 
 1. `steinbergBigCell_of_rootAndCoroot` adds the published highest-weight

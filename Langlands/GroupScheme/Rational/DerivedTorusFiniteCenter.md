@@ -36,9 +36,9 @@ reductivity theorem for actual derived subgroups. Finally,
 from the supplied actual ambient root datum and compatible maximal split tori,
 and applies this consequence. All field and universe parameters remain arbitrary.
 This is a conditional supporting result, not an unconditional proof of the global
-derived semisimplicity statement or the host Levi cocenter root-model statement.
+derived semisimplicity statement or the Levi cocenter root-model statement.
 
 The provenance is internal: the module composes the named actual constructions
-and comparison results. Worker 1367 contributed the observation that the flatness
+and comparison results. The flatness
 and epimorphism step needs only the source finiteness properties, which derived
 smoothness and the closed immersion supply without using derived reductivity.

@@ -30,8 +30,8 @@ extracts the first four all-test conjuncts of this result and evaluates
 the second set product at the identity test. These are exactly the
 all-test complement and rational-point product in the existing
 `StandardLeviIntersectionStatement`. No statement or Markdown of that
-existing target is changed. Its proof task
-`1d7d4767-a668-4ce1-9989-319a625f6de3` is retained.
+existing target is changed. The Library proves it separately, as
+`standardLeviIntersection` in `StandardLeviIntersectionProof`.
 
 This is a formal relation between the interfaces for the nested
 decompositions in Renard V.3.10–V.3.11 (printed p.112, PDF p.118)

@@ -2,10 +2,9 @@
 
 Lean module: `Langlands.Representation.Archimedean.ComplexMatrixCoefficientAnalytic`.
 
-Worker 140 wrote this module for Task 7063 (`f2d2e257-dd4b-4820-96ab-faa9c832ffb8`), the proof of
-`ComplexStandardLanglandsQuotientStatement`. It is the complex counterpart of the Library module
-`PrincipalSeriesMatrixCoefficientAnalytic` (Worker 5220, for `GL_n(ℝ)`), follows its proof step by
-step and reuses its generic lemmas.
+This module was written for the proof of `ComplexStandardLanglandsQuotientStatement`. It is the
+complex counterpart of the Library module `PrincipalSeriesMatrixCoefficientAnalytic` (for
+`GL_n(ℝ)`), follows its proof step by step and reuses its generic lemmas.
 
 The module proves the analytic step of the Langlands lemma for principal series of `GL_n(ℂ)`. Let
 `W` be a space of `U(n)`-finite functions of a principal series, stable under `U(n)` and under the

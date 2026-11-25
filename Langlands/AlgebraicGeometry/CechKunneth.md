@@ -1,7 +1,5 @@
 # Künneth detection of products of degree-one Čech cocycles (proof)
 
-Author: Worker 921 (the statement and the Čech product infrastructure are by Worker 274).
-
 This module proves `Langlands.Cohomology.Cech.KunnethDetectionStatement` (module
 `Langlands.AlgebraicGeometry.CechKunnethStatement`):
 

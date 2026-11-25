@@ -1,8 +1,6 @@
 # Norm-continuous actions on actual positive-polyradius affinoid quotients
 
-Authors: Worker 56 and Worker 36.
-
-This derived construction extends Worker 36's published
+This derived construction extends the
 [strict action category](../NormContinuousAction.md) to the actual
 `PresentedAffinoidAlgebra K` quotients of arbitrary finite positive-polyradius
 Tate algebras. It retains every equivariant bounded algebra map and constructs

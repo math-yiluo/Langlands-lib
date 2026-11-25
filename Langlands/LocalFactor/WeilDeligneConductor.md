@@ -1,6 +1,6 @@
 # The Weil–Deligne conductor at a supplied finite inertia quotient
 
-Worker 20 connects the actual finite-Galois ramification sums with the actual
+This module connects the actual finite-Galois ramification sums with the actual
 invariant quotient of a Weil–Deligne pair. The pair is the parameter
 definition layer's `WeilDeligneRepresentation`, including its actual
 representation, monodromy, nilpotence and covariance. A normal subgroup
@@ -69,11 +69,9 @@ requires the classical hypotheses and later theorems. No expression is
 silently rounded to an integer.
 
 The project imports are `Langlands.LocalFactor.Ramification.Descent`
-and `Langlands.LocalFactor.WeilDeligne`. The latter retains the parameter
-owner's actual kernel and invariant constructions. The underlying
+and `Langlands.LocalFactor.WeilDeligne`. The latter retains the actual
+kernel and invariant constructions of the parameter modules. The underlying
 ramification modules, Descent, and the parameter kernel module and its
-Basic and Invariants imports are published in the current Library. The WD
-construction pair is included with this conductor pair for independent
-review and publication.
+Basic and Invariants imports are published in the Library.
 No actual local Weil-group constructor, reciprocity map, nonabelian
 epsilon system, self-dual measure or functional equation is postulated.

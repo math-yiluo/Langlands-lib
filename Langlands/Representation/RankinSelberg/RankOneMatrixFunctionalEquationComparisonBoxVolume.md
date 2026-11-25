@@ -1,6 +1,6 @@
 # The explicit positive volume in the original box extraction
 
-Worker 396. Internal derived prerequisite for the matrix functional-equation
+Internal derived prerequisite for the matrix functional-equation
 comparison. The field and representation-carrier universes remain independent.
 This module exposes the actual volume factor from the published box integration
 calculation so that a later paired calculation can identify the same scalar.
@@ -51,7 +51,9 @@ The module is derived from published box reparametrization, support and product
 integration, matrix convergence and the literal original block identification;
 it is not a new source transcription. It adds no self-duality, irreducibility,
 finite-length, nonzero-functional or separate rank-one analytic premise. The
-genuine dual comparison and the host task's exact all-rank theorem remain open.
+genuine dual comparison and the exact all-rank theorem are not proved here; the
+latter is `rankOneMatrixFunctionalEquationComparison` in
+`RankOneMatrixFunctionalEquationComparisonProof`.
 
 ## All-field port
 

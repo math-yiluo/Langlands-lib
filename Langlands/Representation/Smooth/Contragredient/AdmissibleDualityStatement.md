@@ -13,7 +13,7 @@ subgroup. The target asserts three compatible properties:
 The bidual map is the existing equivariant evaluation map `smoothBidual`.
 Bijectivity therefore gives an isomorphism of representations, with its
 canonical map specified. Admissibility already includes smoothness in the
-accepted project definition. It tests finite generation on all open subgroups.
+project definition. It tests finite generation on all open subgroups.
 
 The group and module universes are independent. The topological-group instance,
 compact-open cofinality, smoothness and admissibility are quantified inside the
@@ -45,29 +45,26 @@ SHA256: `2f7868c9e29fd486a42419f5b381237bba5d0ba73accc82ed5d7ade448a79c3d`.
 Actual file:
 `C:/Central-Library/Casselman--p-adic groups lecture notes/Introduction to representations of p-adic groups/Casselman--Chapter II - Smooth representations--2019.pdf`.
 
-## Dependencies and development status
+## Dependencies
 
-The statement uses accepted smooth-contragredient construction
-`be3f8221-aa6f-4069-8faa-f04e1f5dc4b7`, version 1, including the canonical
-smooth bidual map, published at
-`933f2719b54fcf01bebb367c9cae56b8d5f17edc`, independent receipt
-`60084e7c-d793-42be-9a0a-6906ca4a95e9`.
-Its exact version-1 project prerequisites are:
+The statement uses the smooth-contragredient construction of
+`Langlands.Representation.Smooth.Contragredient.Definitions`, including the
+canonical smooth bidual map, published at
+`933f2719b54fcf01bebb367c9cae56b8d5f17edc`.
+Its project prerequisites are:
 
-- Algebraic dual: `079d7c1a-8b96-4917-997a-536d6954d55b`.
-- Smooth part: `9fb5627f-6e8c-48a5-a92f-a4ddcf319b2d`.
+- Algebraic dual: `Langlands.Representation.Dual.Definitions`.
+- Smooth part: `Langlands.Representation.Smooth.SmoothPart.Definitions`.
 - Smoothness, fixed vectors and admissibility:
-  `665022df-625b-44ae-9dbd-425f6e266bab`.
+  `Langlands.Representation.Smooth.Definitions`.
 
-A fresh fetch confirms the construction and its dependencies are accepted,
-published and current at `d02f4b7f1571e734196137adc2dd6a47a8103ac5`.
-All eight effective source files match both workspace and draft copies.
+Inspection found the construction and its dependencies published
+at `d02f4b7f1571e734196137adc2dd6a47a8103ac5`.
+All eight source files matched the local copies.
 
-The adjacent proof develops this result from the unreviewed compact-open
-duality proof and the independently published cofinal admissibility theorem.
-Only the statement pair is proposed for independent statement review; it
-imports none of the pending proof modules. The adjacent complete proof
-remains a draft. No proof acceptance or reflexivity theorem in the Library is
-claimed. All new statement and proof code are by Worker 0.
-Environment: `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, version 1,
-Lean 4.34.0, Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.
+The adjacent proof `Langlands.smoothAdmissibleDuality`
+(`Langlands.Representation.Smooth.Contragredient.AdmissibleDualityProof`)
+derives this result from the compact-open duality proof `CompactDualityProof`
+and the published cofinal admissibility theorem. The statement imports none
+of the proof modules.
+Environment: Lean 4.34.0, Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.

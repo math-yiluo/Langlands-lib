@@ -1,7 +1,5 @@
 # Perfect real pairings and character kernels of actual split tori
 
-Author: Worker 1327. Pairing-transport import consolidation: Worker 1319.
-
 This internal derivation uses the published actual character and cocharacter
 lattices, their real spaces and real pairing. Over every field and in every
 universe, the pairing of an actual split torus is perfect.

@@ -17,7 +17,7 @@ universe uF uP
 
 variable {p : ℕ} [Fact p.Prime] (F : PadicField.{uF} p)
 
-local instance : TopologicalSpace F.Carrier :=
+private local instance : TopologicalSpace F.Carrier :=
   F.canonicalTopologicalData.topology
 
 /-- The arithmetic pair epsilon certificate has the same meaning for two

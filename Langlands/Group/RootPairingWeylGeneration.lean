@@ -42,7 +42,7 @@ variable {ι R M N : Type*} [Field R] [CharZero R] [AddCommGroup M] [Module R M]
 /-- Proportional roots give the same reflection in the Weyl group. -/
 private lemma ofIdx_eq_of_root_eq_smul {i j : ι} {t : R} (h : P.root j = t • P.root i) :
     weylGroup.ofIdx P j = weylGroup.ofIdx P i := by
-  have : IsAddTorsionFree N := .of_isTorsionFree R N
+  have : HasUniqueDiv N := .of_isTorsionFree R N
   have hc : t • P.coroot j = P.coroot i := P.smul_coroot_eq_of_root_eq_smul i j t h
   apply Subtype.ext
   apply Equiv.weightHom_injective P

@@ -1,6 +1,6 @@
 # Exact actual-image reduction preimages under unramified descent
 
-This internal derived unit studies the reduction preimage of the rational
+This module, internal and derived, studies the reduction preimage of the rational
 points of an actual schematic image, the subgroup in KP Axiom 4.1.22(4). It
 transfers the equality of this preimage with the image of the source sections
 through compatible model isomorphisms, and descends it from the actual
@@ -104,7 +104,7 @@ definitions of `Hom.imageReductionPreimage` and `rationalImage` gives exactly
 
 The provenance is a derived composition of Library results on schematic-image
 factorization, flat base change, coefficient squares, generic rigidity,
-smooth model recovery and exact descent of unramified integrality. The unit
+smooth model recovery and exact descent of unramified integrality. The module
 retains as explicit inputs the models `Q` and `P`, their smoothness, the
 integral-point equalities and the upstairs map with its preimage equality. It
 asserts no model existence and no parabolicity of special-fibre images. It

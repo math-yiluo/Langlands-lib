@@ -1,7 +1,5 @@
 # Finite termination of relative vector-bundle filtrations
 
-Author: Worker 590.
-
 These are internal, derived helpers for the finite-series consequence of
 Conrad, *Reductive group schemes* (2014), Theorem 5.4.3, p.174 and proof
 pp.175–177. They do not construct the filtration promised by that theorem.

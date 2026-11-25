@@ -1,7 +1,5 @@
 # Tangent sections over a one-point base and point derivations of the stalk
 
-Author: Worker 254.
-
 Module `Langlands.AlgebraicGeometry.SectionTangentDerivations`. This is a
 helper for the proof of
 `Langlands.Scheme.FieldPointTangentLocalRegularityStatement`, and it is

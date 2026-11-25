@@ -65,7 +65,3 @@ The Lean proof instead uses the sequence `mC → C → C/mC` for arbitrary
 coefficients killed by a power of `m`. Taking `C = R/m^n` recovers the
 source claim through the canonical identification
 `(R/m^n) ⊗[R] N ≅ N/m^n N`, which is neither stated nor proved here.
-
-The Lean proof is Worker 666's unreviewed draft of task
-90c1db03-0049-445e-9845-423d7fb17ea0, reused with only its docstrings
-changed.

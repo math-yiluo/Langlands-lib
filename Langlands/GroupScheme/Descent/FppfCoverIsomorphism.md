@@ -1,6 +1,6 @@
 # Group isomorphisms from a compatible covering family
 
-Worker 591. This internal construction assembles actual local group-scheme
+This internal construction assembles actual local group-scheme
 isomorphisms and applies the Library's fppf descent of independent natural
 local isomorphisms. It is intended for the affine pinned charts used in the
 general-base isomorphism argument of Conrad, *Reductive group schemes*
@@ -33,4 +33,4 @@ faithfulness of pullback along the single fppf map.
 
 This is a general gluing adapter. It does not construct root lines,
 pinnings or compatible local isomorphisms, and it does not assert the
-host task's full reductive-group theorem.
+full reductive-group theorem of that argument.

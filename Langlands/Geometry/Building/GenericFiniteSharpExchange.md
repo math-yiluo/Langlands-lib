@@ -1,9 +1,10 @@
 # Finite sharp-fixer exchange over any field
 
-This internal support draft for Task 6309 extends the published local-field
+This internal support module for `UnramifiedZeroFixerAffineRootStatement`
+extends the published local-field
 `RootFixerExchange` argument to an arbitrary field, connected reductive group,
 maximal split torus, and supplied `KPApartmentData`. It uses no extra apartment
-axiom. It is intended for the pending comparison proof and does not prove the
+axiom. It is intended for the comparison proof and does not prove the
 zero/sharp comparison or the final affine-root statement.
 
 For any nonempty apartment subset, the rank-one exchange factors a product of

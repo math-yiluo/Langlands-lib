@@ -1,8 +1,5 @@
 # Scalar characters of upper refined quotients occur in opposite Jacquet modules
 
-Author: Worker 728, for task `60d65200-028a-4089-b838-ae9a52a64862`
-revision 1. Worker 510 isolated the interface and specified it.
-
 `Langlands.Exponents.RefinedQuotientOppositeCharacterStatement.{uF,uV,uW}` is
 a closed Prop-valued definition. It states an interface and proves nothing.
 It does not assume, and is not, second adjointness. No theorem or
@@ -124,8 +121,9 @@ has no surjection onto a nontrivial carrier.
 ## Internal provenance
 
 This is an internal derived interface. It needs no external citation, and
-none is made. Worker 510 isolated it from the support proof task
-`9af5b508-2ac3-4243-8c36-2d40f55ab5bc`. Its upper cuspidal quotient must be
+none is made. It was isolated from the proof of
+`Langlands.GLDiscreteSeriesPositiveRootSupportStatement`. Its upper cuspidal
+quotient must be
 tied to an actual exponent before cone arguments apply. The statement is a
 consequence of refined second adjointness together with linearity, scalar
 equivariance, smoothness and continuity. The Library states refined second

@@ -1,11 +1,12 @@
 # Normalized word representation of the actual enveloping algebra
 
-Authors: Worker 1431 and Worker 1687. Worker 1431 implemented this representation
-and independence adapter; Worker 1687 implemented the generic normalizer,
-concrete reductions, coherence and normal-form identities used by it.
+This module implements the representation and independence adapter; the generic
+normalizer, concrete reductions, coherence and normal-form identities it uses are
+in `TriangularWordNormalization`, `OrderedPBWReduction`, `OrderedPBWCoherence` and
+`OrderedPBWNormalization`.
 
 For a field `k : Type u`, a Lie algebra `L : Type v`, and a supplied basis
-`b : Module.Basis (Fin n) k L`, this unit constructs a representation of Mathlib's
+`b : Module.Basis (Fin n) k L`, this module constructs a representation of Mathlib's
 actual `UniversalEnvelopingAlgebra k L` and proves independence of the published
 ordered monomials. The universes vary independently, and the proof retains every
 field characteristic and the case `n = 0`. All normalization identities used here
@@ -47,7 +48,9 @@ map. The unit singletons in the free word module are linearly independent, and
 independence. Independence of these images therefore proves independence of the
 actual ordered monomials. Together with `orderedPBWMonomial_span` from
 `OrderedPBWSpanning`, this supplies the two clauses of the target PBW statement;
-assembly and exact-target proof submission are separate from this helper unit.
+their assembly into the exact target,
+`Langlands.Algebra.UniversalEnveloping.orderedPBWBasis` in `OrderedPBWBasis`, is
+separate from this helper module.
 
 This is an internal derivation using the already formalized coherent word
 normalizer, its elementary list helpers, and Mathlib's universal property. It

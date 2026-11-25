@@ -27,7 +27,7 @@ Weyl point, the open cell `U(-α) T U(α)`, and the coroot with `⟨α, αv⟩ =
 
 ## Route of the crux (route A)
 
-Route A was ruled admissible by the operator (message 97eb98d7). Its steps:
+Route A has the following steps:
 - **Ordinary Borel and proper quotient.** A Borel `B` containing the maximal torus, the proper
   quotient `X = G/B` (`IsBorelSubgroup.properQuotientData_of_solvableProperFixedPoint`), and a
   nonidentity Weyl point `n` (`RankOneFlagSetup`).
@@ -62,8 +62,7 @@ proved in this development:
 Neither comes from the prescribed-Borel argument of the excluded projective-Borel route:
 `prescribedBorelProjectiveCurveData`, `ProjectiveTorusFixedPointDimension`,
 `positive_roots_eq_of_rankOne_curve_quotient` and `signedCurveUnipotentData` are neither called
-nor reached. The operator ruled this use of the curve lemmas admissible (message 782343fd,
-answering request 7865ee03).
+nor reached.
 
 The curve construction handles `U(ν) ∩ B` itself. It passes to the smooth connected
 representative, which is normal in the unipotent group by its codimension-one argument
@@ -77,7 +76,7 @@ affine orbit map whose fibres are exactly the `Q`-cosets. No smoothness, reduced
 normality of `Q` enters. The dimension bound uses only that this map is injective on rational
 points.
 
-General lemmas proved for this task (Worker 919): `AlgebraicGeometry/FactorialHartogsExtension`,
+General lemmas proved for this development: `AlgebraicGeometry/FactorialHartogsExtension`,
 `HartogsAffineConstancy`, `KrullDimensionChain`, `ClosedRationalPoints`,
 `GroupScheme/Dynamic/SplitTorusLimitInduction`, `GmOrbitInversion`, `TwoSidedConstancy` and
 `GroupScheme/SchemeActionTranslation`.
@@ -106,12 +105,12 @@ derives the target conclusion from its two inputs (`RootCellCoverInput` and `Loc
 This is not circular: both inputs are proved independently, by
 `rankOneCentralCover_of_rootCell` and `localLineCrux`.
 
-The mechanical check is the type-and-value closure scan of the earlier input scan (diagnostic
-58c5d02a), extended to the final proof. It includes opaque values. It removes the target
+The mechanical check is the type-and-value closure scan used for the inputs, extended to the final
+proof. It includes opaque values. It removes the target
 statement from the root's type, and it traverses the value of
 `RankOneLocalCover.rankOneCentralCover_of_inputs` instead of stopping at its result type. Every
-other occurrence of `RankOneCentralCoverStatement` in the closure would count as a hit. Final
-scan: lean_check receipt f7594613. It visited 115210 constants, 20999 of them Library
+other occurrence of `RankOneCentralCoverStatement` in the closure would count as a hit. The final
+scan visited 115210 constants, 20999 of them Library
 constants from 1682 modules, and found none of the excluded declarations.
 
 The curve lemmas are reached only along the chain `RankOneFlag.CoreData.finrank_tangent_le_one` →
@@ -130,6 +129,5 @@ Other auxiliary Library lemmas of the kernel and line steps are:
 
 The scanner, the exclusion list, the Library modules and all Library constants reached are in
 the published notes `notes/group-schemes/rank-one-central-cover-dependency-audit.md` and
-`notes/group-schemes/rank-one-central-cover-dependency-constants.md`. Worker 169's independent
-audit of this proof (diagnostic cdd3d2c7) reached the same conclusions, including the chain
-above.
+`notes/group-schemes/rank-one-central-cover-dependency-constants.md`. An independent
+audit of this proof reached the same conclusions, including the chain above.

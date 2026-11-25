@@ -35,8 +35,8 @@ structure Hom (X Y : VariableActionSpace.{u, v} K) where
   groupHom : X.groupType →ₜ* Y.groupType
   algebraMap : BoundedAlgHom K Y.algebraAction.obj.V X.algebraAction.obj.V
   equivariant : ∀ (g : X.groupType) (a : Y.algebraAction.obj.V),
-    algebraMap ((Y.algebraAction.obj.ρ (groupHom g)).toAlgHom a) =
-      (X.algebraAction.obj.ρ g).toAlgHom (algebraMap a)
+    algebraMap ((Y.algebraAction.obj.ρ (groupHom g)).asHom.toAlgHom a) =
+      (X.algebraAction.obj.ρ g).asHom.toAlgHom (algebraMap a)
 
 @[ext]
 theorem Hom.ext {X Y : VariableActionSpace.{u, v} K} {f g : Hom X Y}
@@ -59,8 +59,8 @@ def Hom.comp {X Y Z : VariableActionSpace.{u, v} K} (f : Hom X Y) (g : Hom Y Z) 
   algebraMap := f.algebraMap.comp g.algebraMap
   equivariant h a := by
     change f.algebraMap (g.algebraMap
-      ((Z.algebraAction.obj.ρ (g.groupHom (f.groupHom h))).toAlgHom a)) =
-      (X.algebraAction.obj.ρ h).toAlgHom (f.algebraMap (g.algebraMap a))
+      ((Z.algebraAction.obj.ρ (g.groupHom (f.groupHom h))).asHom.toAlgHom a)) =
+      (X.algebraAction.obj.ρ h).asHom.toAlgHom (f.algebraMap (g.algebraMap a))
     rw [g.equivariant, f.equivariant]
 
 instance : Category (VariableActionSpace.{u, v} K) where
@@ -153,8 +153,8 @@ def spectrumFunctor :
         change BanachSpectrum X.algebraAction.obj.V at x
         apply BanachSpectrum.ext
         intro a
-        change x ((X.algebraAction.obj.ρ (g⁻¹)).toAlgHom (f.algebraMap a)) =
-          x (f.algebraMap ((Y.algebraAction.obj.ρ ((f.groupHom g)⁻¹)).toAlgHom a))
+        change x ((X.algebraAction.obj.ρ (g⁻¹)).asHom.toAlgHom (f.algebraMap a)) =
+          x (f.algebraMap ((Y.algebraAction.obj.ρ ((f.groupHom g)⁻¹)).asHom.toAlgHom a))
         rw [← map_inv]
         exact congrArg (fun b : X.algebraAction.obj.V => x b) (f.equivariant (g⁻¹) a).symm }
   map_id _ := by

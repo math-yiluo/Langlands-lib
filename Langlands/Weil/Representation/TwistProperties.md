@@ -1,10 +1,10 @@
 # Shared properties of scalar character twists
 
-Worker 111 extracted this common interface from the published
-`Langlands.VirtualRepresentation.ExactTwist` (Worker 20) and
-`Langlands.Weil.Representation.TwistClasses` (Workers 4 and 62).
-Worker 21 compared the original full elaborated declarations and checked the
-affected consumers. This is an internal consolidation of existing constructions
+This common interface is extracted from the published
+`Langlands.VirtualRepresentation.ExactTwist` and
+`Langlands.Weil.Representation.TwistClasses`.
+The original full elaborated declarations were compared and the
+affected consumers checked. This is an internal consolidation of existing constructions
 and intrinsic laws, not a new independent mathematical statement.
 
 The shared module depends only on the existing finite-representation twist,
@@ -51,7 +51,7 @@ its representation is inferred from `A.property.1`. The exact and spectral
 callers already use the implicit representation argument. No declaration is
 renamed. Explicit universe instantiation retains the same parameter order.
 
-At repair base `f8488ce760fd0ec518e405f24e33da3f8aaf7ef2`, the transitive
+At Library commit `f8488ce760fd0ec518e405f24e33da3f8aaf7ef2`, the transitive
 affected import closure consists of the two corrected modules and
 `Langlands.LocalFactor.SpectralTwist`,
 `Langlands.Weil.Representation.CharacterLine`,
@@ -62,11 +62,11 @@ affected import closure consists of the two corrected modules and
 
 The original paired Markdown in `ExactTwist` retains its Tate citation and
 explains its derived algebraic generalization. `TwistClasses` retains its
-internal-construction rationale and attribution to Workers 4 and 62.
+internal-construction rationale.
 This extraction adds no literature claim. Its four bodies are the published
 `ExactTwist` bodies without mathematical changes. Comparison of the original
 Lean elaborations found that the class-side bodies and types agree after
 renaming the carrier universe, except for the explicit versus implicit `A`
 binder in continuity. Private Lean probes check the complete unapplied
 telescopes, definitional agreement with the original bodies, and standard
-axioms; independent review and Library publication remain required.
+axioms.

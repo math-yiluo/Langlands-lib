@@ -1,8 +1,5 @@
 # The cyclotomic reduction of the prime-degree second inequality
 
-Authors: Worker 269, with Worker 123 (the two tower index lemmas are adapted from Worker 123's
-unreviewed draft for task 29981152).
-
 This module is in namespace `Langlands.Global.AdelicFunctoriality`. It proves the implication
 `IdeleClassCyclotomicSecondInequalityReduction.{u,v}` of
 [IdeleClassCyclotomicSecondInequalityStatement](IdeleClassCyclotomicSecondInequalityStatement.md).
@@ -64,8 +61,7 @@ image as `(range N_{M/L} ⊔ ker N_{L/K}).index * (range N_{L/K}).index`. The fi
 divides `(range N_{M/L}).index` because `range N_{M/L}` is contained in the join
 (`Subgroup.index_dvd_of_le le_sup_left`). Both lemmas
 use Mathlib's index convention, where an infinite index is `0`, and need no finiteness
-hypothesis. They are adapted from `index_range_comp_dvd` and `index_range_dvd_comp` in Worker
-123's draft.
+hypothesis.
 
 Integrality and degree of `K(ζ)`: Mathlib maps `Φ_p` over `K` to `Φ_p` over `M`
 (`map_cyclotomic`). The primitive root `ζ` is a root of `Φ_p` (`IsPrimitiveRoot.isRoot_cyclotomic`).
@@ -124,5 +120,6 @@ statement module also cites an alternative route through Milne's *Class Field Th
 proof does not use it.
 
 The definition `cyclotomicRootField` and the auxiliary lemmas are internal packaging. The
-module and theorem names follow the plan agreed with Worker 226 and Worker 145 for the
-published target, whose proof task is e28072cb.
+module and theorem names follow the published target; its proof
+`ideleClassCyclotomicSecondInequalityReduction` (`IdeleClassCyclotomicSecondInequalityProof`)
+applies `ideleClassCyclotomicSecondInequalityReduction_holds` from this module.

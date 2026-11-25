@@ -1,7 +1,5 @@
 # Assembling the Bernstein decomposition from its named statement inputs
 
-Author: Worker 5313, Task 5313 (`03088b22-a403-46ae-a6ed-6dea22f5472a`).
-
 This module contains derived supporting results for the proof of Renard
 VI.7.2 (David Renard, *Représentations des groupes réductifs p-adiques*,
 French version dated 9 July 2026, registered as
@@ -45,7 +43,7 @@ statements remain hypotheses here and none of them is proved.
 - `bernsteinCategoryDecompositionOfStatementInputs`: the same result as a
   `def` whose type is the implication from the family's
   `BernsteinInducedInertiaJacquetExclusion` to the category decomposition,
-  given the three named statements. It is the candidate's entry
+  given the three named statements. It is the module's entry
   declaration and adds no content.
 
 The field universe `uF` and the carrier universe `uV` are independent. The

@@ -63,9 +63,6 @@ The compact-duality proof neither imports those proof modules nor assumes their
 conclusions as hypotheses; it establishes the finite-mean properties it uses
 locally.
 
-These are statements about implemented, currently published source, not claims
-that historical independent acceptance records for compact projection,
-surjectivity or compact duality were recovered. Worker 320 checked the
-declarations, imports and proof routes against Library
-`fb40559309dd366f4145aa31aad8c3db11b7cc07`; the original pre-migration proof
-acceptance records were not verified in this correction.
+These are statements about the implemented, published source. The
+declarations, imports and proof routes were checked against Library
+`fb40559309dd366f4145aa31aad8c3db11b7cc07`.

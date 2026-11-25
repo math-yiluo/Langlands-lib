@@ -35,17 +35,17 @@ The helper modules carry out the following steps:
 1. `OrderedUnramifiedProductComparison`: `I(z)` is equivalent to the normalized product, over
    the singleton block shape, of the rank-one characters of `GL_1(F)`. On the upper Borel,
    the port's normalized product character agrees with the half modulus.
-2. `OrderedUnramifiedRankOneBlocks` (Worker 222): the rank-one blocks, their action formula,
+2. `OrderedUnramifiedRankOneBlocks`: the rank-one blocks, their action formula,
    and the Bernstein–Zelevinsky condition `χ_j ≇ ν χ_i` for `i < j`, which follows from
    `‖z_i‖ ≤ ‖z_j‖`.
 3. `OrderedUnramifiedNondegeneracy`: by Theorem 4.11, every nonzero mirabolic subrepresentation
    of the product has nonzero standard Whittaker coinvariants.
-4. `OrderedUnramifiedTopLine` (Worker 222): the standard coinvariants of the product are
+4. `OrderedUnramifiedTopLine`: the standard coinvariants of the product are
    one-dimensional. This is the top derivative of a product of rank-one blocks.
 5. `OrderedUnramifiedTransport`: coinvariants and their nontriviality transfer along
    equivalences of representations and along the identification of the inverse standard
    character of `ψ` with the standard character of `x ↦ ψ(-x)`.
-6. `UnramifiedSphericalWhittaker` (Worker 5557, from the draft of Task 5680): every
+6. `UnramifiedSphericalWhittaker`: every
    inverse-character functional sends the spherical section to `ℓ(f₀)` times the spherical
    Whittaker function (Shintani uniqueness).
 7. `OrderedUnramifiedWhittakerReduction`: one-dimensional inverse coinvariants give a

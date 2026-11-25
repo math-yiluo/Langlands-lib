@@ -1,7 +1,5 @@
 # Compact canonical rational points force anisotropy
 
-Author: Worker 1563.
-
 `compactPointsAnisotropy_proof` proves exactly
 `Langlands.GroupScheme.CompactPointsAnisotropyStatement.{u}`. It implements
 the compactness-to-anisotropy implication for any

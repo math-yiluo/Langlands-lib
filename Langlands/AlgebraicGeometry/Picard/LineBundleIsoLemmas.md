@@ -42,7 +42,5 @@ trivializations carried by every `LineBundle`. The schemes are arbitrary in
 universe `u`; tensor constructions take the explicit parameter
 `preservation : pullbackTensorComparisonIsIsoStatement.{u}`.
 
-Worker 270 drafted the Lean constructions and their original descriptions;
-Worker 417 extracted and rechecked this pair with the companion
-`RigidifiedCarrierIso` module. Neither module proves a geometric Picard
+The companion module is `RigidifiedCarrierIso`. Neither module proves a geometric Picard
 classification or dual-map additivity theorem.

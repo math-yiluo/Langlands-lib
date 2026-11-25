@@ -1,7 +1,7 @@
 # Splitting one block of a standard shape along a flattened refinement
 
 Module `Langlands.Representation.Exponents.WeakCriticalTopLayerSplit`.
-Internal combinatorial helper module (no source statement); author Worker 728.
+Internal combinatorial helper module (no source statement).
 
 ## Setting
 

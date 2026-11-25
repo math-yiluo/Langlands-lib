@@ -1,7 +1,7 @@
 # Flat affine-base ampleness reflection and supplied representers
 
 The following internal constructions and their accompanying theorems are
-independently accepted and published in Library commit
+in the Library; they first appeared at Library commit
 `d210ab55a138c1f91b826ee47c6280ce6c6b90bc`. Import them by their Lean names.
 They provide the geometric reflection step for polarized representability
 descent without a noetherian hypothesis.
@@ -47,5 +47,7 @@ remain independent. The comparison isomorphism is constructed by
 These results retain global representability as a premise. They do not
 construct an effective scheme quotient or establish the full
 [`PolarizedSmoothProperEtaleDescentStatement`](../../Langlands/AlgebraicGeometry/Picard/PolarizedSmoothProperDescentStatement.md).
-That task still needs the global representer obtained from coherent
-polarized descent.
+That statement needs, beyond them, the global representer obtained from
+coherent polarized descent. The Library proves it separately, as
+`Langlands.AlgebraicGeometry.Picard.polarizedSmoothProperEtaleDescent`
+([`PolarizedSmoothProperDescentProof`](../../Langlands/AlgebraicGeometry/Picard/PolarizedSmoothProperDescentProof.md)).

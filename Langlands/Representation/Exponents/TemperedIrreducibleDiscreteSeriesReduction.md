@@ -1,7 +1,6 @@
 # The VII.2.6 Theorem (existence) and Corollary from named inputs
 
-Author: Worker 4772. This is an internal reduction for proof task
-`225f7d3d-bb91-4746-9084-ea6b91241e41`. It concerns Renard,
+This is an internal reduction. It concerns Renard,
 *Représentations des groupes réductifs p-adiques*, French version dated
 9 July 2026, VII.2.6, Theorem, first assertion (printed p.231 / PDF p.237),
 and its Corollary (printed p.232 / PDF p.238). The registered source is
@@ -73,7 +72,7 @@ from `TemperedMinimalSquareIntegrable`, which uses `hCompact` and `hSI`.
 The reverse direction is the sufficiency theorem, which does not use the
 irreducibility of `σ`.
 
-The Corollary is Worker 346's published constructor
+The Corollary is the published constructor
 `temperedIrreduciblePresentationForm`. It produces an
 `InvariantPositiveForm` on any irreducible tempered `π`, from the existence
 assertion, `hUnimod`, `hStandard` and `hCompact`, and `IsUnitarizable` is
@@ -90,8 +89,8 @@ kept. Parabolics are arbitrary actual rational parabolics. Square-integrability
 is quantified over all Haar measures, as in the target. No standardness,
 admissibility, finite-length, central-character, presentation-existence,
 Jacquet-admissibility or Iwahori-contraction hypothesis is added beyond the
-six listed propositions. Their proofs are the subject of other tasks:
-`1ebce298-eeeb-4686-ba30-cabcb8e50d4b` (VII.2.1 Remark 2),
-`f83123b9-ff38-4210-9ad7-4f119a13d1ac` (VII.2.2),
-`c1ce4629-6768-4eb5-b4ee-0086526913ea` (quotient compactness) and
-`f0ff1d42-b2ac-439b-a08d-8e2d120a78fa` (VII.2.4 Lemma).
+six listed propositions. Their proofs are separate:
+`SquareIntegrableNormalizedTemperedProof` (VII.2.1 Remark 2),
+`LeviInductionNormalizedTemperedProof` (VII.2.2) and
+`ArbitraryParabolicQuotientCompactProof` (quotient compactness); the
+VII.2.4 Lemma is not proved in the Library.

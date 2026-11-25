@@ -9,7 +9,7 @@ are removed; the `p2m_export` command is removed, and the private abbreviation i
 `_root_.UnionModel.ι`, is declared as `ι` inside the enclosing `UnionModel` namespace instead.
 The paired Markdown file lists the changes.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_exists_fg_subalgebra_opens_preimage_eq_of_isCompact
 import Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_exists_fg_subalgebra_iso_pullback_of_iso_pullback_of_locallyOfFinitePresentation
 import Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_exists_isPullback_glue_of_isPullback_of_isOpenImmersion

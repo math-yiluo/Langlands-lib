@@ -1,7 +1,7 @@
 # Restricting a corrected filtration step to its new support
 
-Author: Worker 1018, task `277860be-2aeb-4a85-8ccb-f1e2e5c573b9` (the right-exactness
-part of the split agreed with Worker 1312).
+This module is the right-exactness part of the argument; the actual function
+witnesses are in `CorrectedFiltrationWitnesses`.
 
 This internal reduction works with the published `CorrectedFiltration.step`, the
 image of `inductionStep` in the actual normalized Jacquet module `r_I(E_J)`. It
@@ -83,7 +83,7 @@ supported in `G_{θ_i'}`. Every group support is right `P_I`-stable
   restriction image does not lie in its translation relations.
 
 The new support is contained in the cell union of the whole new double coset
-`W_J w W_I`. Worker 1312's separate helper `CorrectedFiltrationWitnesses` proves
+`W_J w W_I`. The separate helper module `CorrectedFiltrationWitnesses` proves
 this as `groupSupport_succ_sdiff_subset`; this module does not import it.
 
 ## Scope and provenance

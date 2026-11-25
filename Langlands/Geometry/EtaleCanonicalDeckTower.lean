@@ -56,13 +56,13 @@ def projection :
 scheme, then the original contravariant level map. -/
 theorem schemeDiagram_map {x y : J × SingleObj G} (a : x ⟶ y) :
     ((schemeDiagram A).map a).unop =
-      ((A.obj y.1).ρ a.2).unop.left ≫ (A.map a.1).hom.unop.left := rfl
+      ((A.obj y.1).ρ a.2).asHom.unop.left ≫ (A.map a.1).hom.unop.left := rfl
 
 /-- Pure group arrows recover the original geometric deck maps. -/
 @[simp] theorem schemeDiagram_map_group (i : J) (g : G) :
     ((schemeDiagram A).map (X := (i, SingleObj.star G)) (Y := (i, SingleObj.star G))
       (𝟙 i ×ₘ g)).unop =
-      ((A.obj i).ρ g).unop.left := by
+      ((A.obj i).ρ g).asHom.unop.left := by
   rw [schemeDiagram_map, A.map_id]
   simp
 
@@ -71,22 +71,22 @@ theorem schemeDiagram_map {x y : J × SingleObj G} (a : x ⟶ y) :
     ((schemeDiagram A).map (a ×ₘ 𝟙 (SingleObj.star G))).unop =
       (A.map a).hom.unop.left := by
   rw [schemeDiagram_map]
-  change ((A.obj j).ρ 1).unop.left ≫ _ = _
+  change ((A.obj j).ρ 1).asHom.unop.left ≫ _ = _
   rw [(A.obj j).ρ.map_one]
   simp
 
 /-- Original deck maps are automorphisms because the input is a group action. -/
 instance groupMap_isIso (i : J) (g : G) :
-    IsIso (((A.obj i).ρ g).unop.left) := by
-  let e := ((A.obj i).ρAut g).unop
+    IsIso (((A.obj i).ρ g).asHom.unop.left) := by
+  let e := ((A.obj i).ρAut g).asIso.unop
   exact (Over.forget X).map_isIso e.hom
 
 /-- The original over-base group triangle supplies the coefficient comparison. -/
 def groupCoefficientIso (i : J) (g : G) :
     inverseImage (A.obj i).V.unop.hom R ⋙
-        inverseImage ((A.obj i).ρ g).unop.left R ≅
+        inverseImage ((A.obj i).ρ g).asHom.unop.left R ≅
       inverseImage (A.obj i).V.unop.hom R :=
-  projectionInverseImageIso R _ _ _ (Over.w ((A.obj i).ρ g).unop)
+  projectionInverseImageIso R _ _ _ (Over.w ((A.obj i).ρ g).asHom.unop)
 
 /-- The original over-base level triangle supplies the coefficient comparison. -/
 def levelCoefficientIso {i j : J} (a : i ⟶ j) :
@@ -208,9 +208,9 @@ def sectionsFunctor :
 
 /-- The derived action is pullback along the original deck automorphism. -/
 theorem derivedFunctor_obj_obj_ρ (M : ModuleSheaf X R) (i : J) (g : G) :
-    (((derivedFunctor R A).obj M).obj i).ρ g =
+    ((((derivedFunctor R A).obj M).obj i).ρ g).asHom =
       EtaleDerivedGlobalPullback.sheafDerivedPullbackWithCoefficients
-        ((A.obj i).ρ g).unop.left R ((groupCoefficientIso R A i g).hom.app M) := by
+        ((A.obj i).ρ g).asHom.unop.left R ((groupCoefficientIso R A i g).hom.app M) := by
   change EtaleDerivedGlobalPullback.sheafDerivedPullbackWithCoefficients
     (X := (A.obj i).V.unop.left) (Z := (A.obj i).V.unop.left)
     ((schemeDiagram A).map (𝟙 i ×ₘ g)).unop R
@@ -221,7 +221,7 @@ theorem derivedFunctor_obj_obj_ρ (M : ModuleSheaf X R) (i : J) (g : G) :
     f ≫ (A.obj i).V.unop.hom = (A.obj i).V.unop.hom}
   have h : (⟨((schemeDiagram A).map (𝟙 i ×ₘ g)).unop,
       baseProjection_triangle (projection A) (𝟙 i ×ₘ g)⟩ : T) =
-      ⟨((A.obj i).ρ g).unop.left, (Over.w ((A.obj i).ρ g).unop)⟩ :=
+      ⟨((A.obj i).ρ g).asHom.unop.left, (Over.w ((A.obj i).ρ g).asHom.unop)⟩ :=
     Subtype.ext (schemeDiagram_map_group A i g)
   have result := congrArg
     (fun f : T => EtaleDerivedGlobalPullback.sheafDerivedPullbackWithCoefficients f.val R
@@ -261,10 +261,10 @@ theorem derivedFunctor_obj_map_hom (M : ModuleSheaf X R)
 
 /-- The ordinary action is pullback along the original deck automorphism. -/
 theorem cohomologyFunctor_obj_obj_ρ (q : ℕ) (M : ModuleSheaf X R) (i : J) (g : G) :
-    (((cohomologyFunctor R A q).obj M).obj i).ρ g =
+    ((((cohomologyFunctor R A q).obj M).obj i).ρ g).asHom =
       EtaleDerivedGlobalPullback.cohomologyPullbackWithCoefficients
-        ((A.obj i).ρ g).unop.left R q ((groupCoefficientIso R A i g).hom.app M) := by
-  change ((((coefficientFunctor R A).obj M).cohomologyAction q).obj i).ρ g = _
+        ((A.obj i).ρ g).asHom.unop.left R q ((groupCoefficientIso R A i g).hom.app M) := by
+  change (((((coefficientFunctor R A).obj M).cohomologyAction q).obj i).ρ g).asHom = _
   rw [CoefficientDiagram.cohomologyAction_obj_ρ]
   change EtaleDerivedGlobalPullback.cohomologyPullbackWithCoefficients
     (X := (A.obj i).V.unop.left) (Z := (A.obj i).V.unop.left)
@@ -276,7 +276,7 @@ theorem cohomologyFunctor_obj_obj_ρ (q : ℕ) (M : ModuleSheaf X R) (i : J) (g 
     f ≫ (A.obj i).V.unop.hom = (A.obj i).V.unop.hom}
   have h : (⟨((schemeDiagram A).map (𝟙 i ×ₘ g)).unop,
       baseProjection_triangle (projection A) (𝟙 i ×ₘ g)⟩ : T) =
-      ⟨((A.obj i).ρ g).unop.left, (Over.w ((A.obj i).ρ g).unop)⟩ :=
+      ⟨((A.obj i).ρ g).asHom.unop.left, (Over.w ((A.obj i).ρ g).asHom.unop)⟩ :=
     Subtype.ext (schemeDiagram_map_group A i g)
   have result := congrArg
     (fun f : T => EtaleDerivedGlobalPullback.cohomologyPullbackWithCoefficients f.val R q
@@ -318,10 +318,10 @@ theorem cohomologyFunctor_obj_map_hom (q : ℕ) (M : ModuleSheaf X R)
 
 /-- The section action is pullback along the original deck automorphism. -/
 theorem sectionsFunctor_obj_obj_ρ (M : ModuleSheaf X R) (i : J) (g : G) :
-    (((sectionsFunctor R A).obj M).obj i).ρ g =
+    ((((sectionsFunctor R A).obj M).obj i).ρ g).asHom =
       EtaleDerivedGlobalPullback.sectionsPullbackWithCoefficients
-        ((A.obj i).ρ g).unop.left R ((groupCoefficientIso R A i g).hom.app M) := by
-  change ((((coefficientFunctor R A).obj M).sectionsAction).obj i).ρ g = _
+        ((A.obj i).ρ g).asHom.unop.left R ((groupCoefficientIso R A i g).hom.app M) := by
+  change (((((coefficientFunctor R A).obj M).sectionsAction).obj i).ρ g).asHom = _
   rw [CoefficientDiagram.sectionsAction_obj_ρ]
   change EtaleDerivedGlobalPullback.sectionsPullbackWithCoefficients
     (X := (A.obj i).V.unop.left) (Z := (A.obj i).V.unop.left)
@@ -333,7 +333,7 @@ theorem sectionsFunctor_obj_obj_ρ (M : ModuleSheaf X R) (i : J) (g : G) :
     f ≫ (A.obj i).V.unop.hom = (A.obj i).V.unop.hom}
   have h : (⟨((schemeDiagram A).map (𝟙 i ×ₘ g)).unop,
       baseProjection_triangle (projection A) (𝟙 i ×ₘ g)⟩ : T) =
-      ⟨((A.obj i).ρ g).unop.left, (Over.w ((A.obj i).ρ g).unop)⟩ :=
+      ⟨((A.obj i).ρ g).asHom.unop.left, (Over.w ((A.obj i).ρ g).asHom.unop)⟩ :=
     Subtype.ext (schemeDiagram_map_group A i g)
   have result := congrArg
     (fun f : T => EtaleDerivedGlobalPullback.sectionsPullbackWithCoefficients f.val R

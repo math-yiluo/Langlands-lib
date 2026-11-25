@@ -1,6 +1,6 @@
 # Elementary matrices in `SL₂` over a commutative ring
 
-Worker 65. Internal supporting development for the proof of
+Internal supporting development for the proof of
 `Langlands.GroupScheme.SpecialLinearCentralExtensionSplitStatement` (Conrad, *Reductive group
 schemes*, Proposition 4.3.1, proof on pp. 126-131). It records the matrix identities used in
 Conrad's proof. They are elementary computations over an arbitrary commutative ring `R`, all in

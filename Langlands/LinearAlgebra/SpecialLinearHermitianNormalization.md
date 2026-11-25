@@ -1,8 +1,6 @@
 # Hermitian normalization of a projectively involutive outer matrix
 
-Author: Worker 239.
-
-This internal algebraic unit works over a field `L` of arbitrary
+This algebraic module works over a field `L` of arbitrary
 characteristic, a nontrivial specified field involution `c`, and a finite
 nonempty matrix index type. If a nonsingular matrix `J` satisfies
 `J* = a J`, then applying the adjoint twice and cancelling the nonzero
@@ -28,7 +26,7 @@ applies to the inverse of a supplied projectively involutive outer
 representative while retaining its conjugation.
 
 All claims are elementary consequences of the imported matrix and
-involution operations. This unit assumes a nontrivial involution and
+involution operations. This module assumes a nontrivial involution and
 the stated projective square equation; it does not construct a
 quadratic field, descend an outer representative, or prove an outer
 type A presentation.

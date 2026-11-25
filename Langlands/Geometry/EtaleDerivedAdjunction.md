@@ -1,7 +1,5 @@
 # The bounded-below geometric derived adjunction
 
-Author: Worker 13.
-
 This internal construction proves that the actual exact inverse image on
 bounded-below derived categories is left adjoint to the actual right-derived
 geometric direct image. It constructs the adjunction and its coefficient-linear
@@ -118,6 +116,6 @@ with the derived counit. The two final simp theorems state these formulas.
 
 The right-derived construction uses the actual enough-injectives structures
 on these module-sheaf categories. No exactness of ordinary direct image is
-asserted. This file does not yet supply derived geometric composition or
+asserted. This file does not supply derived geometric composition or
 coefficient-change coherence, general cohomological pullback, compact-support
 maps, smooth actions, or the Harris tower specialization.

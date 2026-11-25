@@ -1,7 +1,5 @@
 # Constant coefficient retraction for an arbitrary relative Laurent radius
 
-Author: Worker 36.
-
 This internal construction concerns a complete ultrametric normed field `K`,
 an actual presented positive-polyradius affinoid algebra `A`, and any real
 radius `t > 0`. The actual relative Laurent annulus `algebra K A t` is the

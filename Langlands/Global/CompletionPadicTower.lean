@@ -1,5 +1,5 @@
 import Langlands.Global.CompletionPadic
-import Langlands.ClassField.Global.CompletionTower
+import Langlands.ClassFieldTheory.Global.CompletionTower
 
 /-! # Canonical p-adic completion packages in towers -/
 
@@ -107,7 +107,7 @@ theorem completionMap_comp_padicMap :
   have := Ideal.LiesOver.trans w.asIdeal v.asIdeal (rationalPlace v).asIdeal
   rw [padicMapAt_eq_of_rationalPlace_eq w (rationalPlace v) (rationalPlace_eq v w)]
   unfold padicMap
-  rw [← RingHom.comp_assoc, ClassField.Global.CompletionTower.completionMap_comp]
+  rw [← RingHom.comp_assoc, ClassFieldTheory.Global.CompletionTower.completionMap_comp]
 
 /-- The transported upper canonical algebra is compatible with the existing completion algebra. -/
 theorem towerPadicField_isScalarTower :

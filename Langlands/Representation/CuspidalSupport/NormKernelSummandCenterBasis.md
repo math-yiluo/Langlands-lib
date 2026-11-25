@@ -1,6 +1,6 @@
 # A finite center basis for norm-kernel summand induction
 
-Worker 86. This internal supporting result derives a finite center basis for the
+This internal supporting result derives a finite center basis for the
 published `rationalNormKernelSummandInduction` of an irreducible summand of the
 restriction of an irreducible smooth representation of a connected reductive group.
 It requires no chosen standard family, torus, cuspidality or admissibility hypothesis.
@@ -64,11 +64,11 @@ right-coefficient product `b_i * I.map(a_i)` is precisely
 
 These results reuse the published VI.4.4 argument at its actual generality.
 They do not construct the induced endomorphism basis required by the first
-VI.10.4 lemma, prove its center inclusion, or prove any of the four complete
-target propositions. In particular the adapter's expansion premise is the
-preceding basis obligation in the first target, rather than an unconditional
+VI.10.4 lemma, prove its center inclusion, or prove any of the statements of
+Renard VI.10.4–VI.10.5. In particular the adapter's expansion premise is the
+preceding basis conjunct of `InducedProgeneratorEndFreeStatement`, rather than an unconditional
 construction of that basis. Supercuspidality is unnecessary for the adapter,
-but remains a premise of the complete target.
+but remains a premise of `InducedProgeneratorEndFreeStatement`.
 
 The provenance is internal: these are direct specializations and algebraic
 consequences of the published `NormalHeckeHomDetection`,

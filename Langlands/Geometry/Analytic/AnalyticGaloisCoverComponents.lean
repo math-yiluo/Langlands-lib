@@ -22,7 +22,7 @@ variable {K : Type u} [NormedField K] [IsUltrametricDist K] [CompleteSpace K]
 outside `H` are disjoint from `S`. -/
 def IsDeckComponent (H : Subgroup Γ) (S : Opens (localizedSpaceFunctor.obj Y)) : Prop :=
   ∀ (γ : Γ) (y : localizedSpaceFunctor.obj Y), y ∈ S →
-    (localizedSpaceFunctor.map (c.deck γ).hom y ∈ S ↔ γ ∈ H)
+    (localizedSpaceFunctor.map (c.deck γ).asIso.hom y ∈ S ↔ γ ∈ H)
 
 /-- The open image of the chosen source open. -/
 def componentImage (S : Opens (localizedSpaceFunctor.obj Y)) : Opens (localizedSpaceFunctor.obj X) :=
@@ -53,12 +53,12 @@ private def componentDeck : H →* Aut (domainObj Y D) :=
 
 @[reassoc]
 private theorem componentDeck_hom_comp (γ : H) :
-    (c.componentDeck S H hS γ).hom ≫ j = j ≫ (c.deck γ).hom :=
+    (c.componentDeck S H hS γ).asIso.hom ≫ j = j ≫ (c.deck γ).asIso.hom :=
   (invariantDomainInclusion (analyticActionOfAut (c.deck.comp H.subtype)) D
     (fun γ y hy => (hS γ y hy).2 γ.property)).comm γ
 
 private theorem componentDeck_over (γ : H) :
-    (c.componentDeck S H hS γ).hom ≫ c.componentMap S = c.componentMap S := by
+    (c.componentDeck S H hS γ).asIso.hom ≫ c.componentMap S = c.componentMap S := by
   apply (cancel_mono i).mp
   rw [Category.assoc, c.componentMap_comp, c.componentDeck_hom_comp_assoc, c.deck_over]
 
@@ -108,7 +108,7 @@ def restrictComponent : AnalyticGaloisCover H (c.componentMap S) := by
     · rw [Category.assoc, ← ha, ← Category.assoc, show graph γ ≫ a = 𝟙 _ from hpb.lift_fst _ _ _,
         Category.id_comp, Category.assoc, c.graph_fst, Category.comp_id]
     · rw [Category.assoc, ← hb, ← Category.assoc,
-        show graph γ ≫ b = (c.componentDeck S H hS γ).hom from hpb.lift_snd _ _ _,
+        show graph γ ≫ b = (c.componentDeck S H hS γ).asIso.hom from hpb.lift_snd _ _ _,
         c.componentDeck_hom_comp, Category.assoc, c.graph_snd]
   have hgraphPoint (γ : H) (y : localizedSpaceFunctor.obj (domainObj Y D)) :
       (localizedSpaceFunctor.map (graph γ) y).val = localizedSpaceFunctor.map (c.graph γ) y.val := by
@@ -134,10 +134,10 @@ def restrictComponent : AnalyticGaloisCover H (c.componentMap S) := by
     have hfst : localizedSpaceFunctor.map c.fst t.val = y := by
       rw [← hy, ← TopCat.comp_app, ← Functor.map_comp, c.graph_fst, localizedSpaceFunctor.map_id]
       rfl
-    have hsnd : localizedSpaceFunctor.map c.snd t.val = localizedSpaceFunctor.map (c.deck γ).hom y := by
+    have hsnd : localizedSpaceFunctor.map c.snd t.val = localizedSpaceFunctor.map (c.deck γ).asIso.hom y := by
       rw [← hy, ← TopCat.comp_app, ← Functor.map_comp, c.graph_snd]
     have hyS : y ∈ S := hfst ▸ (show localizedSpaceFunctor.map c.fst t.val ∈ S from t.property.1)
-    have hγS : localizedSpaceFunctor.map (c.deck γ).hom y ∈ S :=
+    have hγS : localizedSpaceFunctor.map (c.deck γ).asIso.hom y ∈ S :=
       hsnd ▸ (show localizedSpaceFunctor.map c.snd t.val ∈ S from t.property.2)
     let γ' : H := ⟨γ, (hS γ y hyS).1 hγS⟩
     let y' : localizedSpaceFunctor.obj (domainObj Y D) := ⟨y, hyS⟩
@@ -153,7 +153,7 @@ def restrictComponent : AnalyticGaloisCover H (c.componentMap S) := by
 automorphisms along the inclusion. -/
 @[reassoc (attr := simp)]
 theorem restrictComponent_deck_hom_comp (γ : H) :
-    ((c.restrictComponent S H hS).deck γ).hom ≫ j = j ≫ (c.deck γ).hom :=
+    ((c.restrictComponent S H hS).deck γ).asIso.hom ≫ j = j ≫ (c.deck γ).asIso.hom :=
   c.componentDeck_hom_comp S H hS γ
 
 private theorem distinguished_preimage {U : Set (localizedSpaceFunctor.obj Y)}
@@ -208,16 +208,16 @@ theorem exists_distinguishedDeckComponent [T2Space (localizedSpaceFunctor.obj Y)
     t2_separation (fun h => γ.property (MulAction.mem_stabilizer_iff.mpr h.symm))
   choose U V hU hV hyU hyV hUV using hsep
   let W := (N : Set (localizedSpaceFunctor.obj Y)) ∩
-    ⋂ γ : I, U γ ∩ localizedSpaceFunctor.map (c.deck γ.val).hom ⁻¹' V γ
+    ⋂ γ : I, U γ ∩ localizedSpaceFunctor.map (c.deck γ.val).asIso.hom ⁻¹' V γ
   have hW : IsOpen W := N.isOpen.inter <| isOpen_iInter_of_finite fun γ =>
-    (hU γ).inter ((hV γ).preimage (localizedSpaceFunctor.map (c.deck γ.val).hom).hom.continuous)
+    (hU γ).inter ((hV γ).preimage (localizedSpaceFunctor.map (c.deck γ.val).asIso.hom).hom.continuous)
   have hyW : y ∈ W := ⟨hy, mem_iInter.mpr fun γ => ⟨hyU γ, hyV γ⟩⟩
   obtain ⟨W₀, _, hW₀, hyW₀, h₀, hc₀, _⟩ := hasStableDistinguishedOpenNeighborhoods
     (isContinuousAction_one (X := Y) (G := PUnit.{1})) y W hW hyW
   let B : Set (localizedSpaceFunctor.obj Y) :=
-    ⋂ k : H, localizedSpaceFunctor.map (c.deck k.val).hom ⁻¹' W₀
+    ⋂ k : H, localizedSpaceFunctor.map (c.deck k.val).asIso.hom ⁻¹' W₀
   have hB : IsDistinguishedOpen Y B := distinguished_iInter (fun k : H =>
-    distinguished_preimage hW₀ (c.deck k.val).hom)
+    distinguished_preimage hW₀ (c.deck k.val).asIso.hom)
   have hBW : B ⊆ W₀ := by
     intro x hx
     have hx₁ := mem_iInter.mp hx (1 : H)

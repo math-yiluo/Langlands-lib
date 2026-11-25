@@ -40,7 +40,7 @@ converse applies the automorphism condition to the actual trivial bundle
 and composes with the inverse comparison. Hence the two predicates are
 equivalent without any extra assumption on `f`.
 
-This contribution supplies the condition needed by a future smooth-inertia
+This module supplies the condition needed by a smooth-inertia
 quotient argument. It proves neither that these conditions hold for proper
 schemes over fields nor that a sheaf of isomorphism classes is algebraic.
 It also does not assert a comparison with `presheafHom` formed directly

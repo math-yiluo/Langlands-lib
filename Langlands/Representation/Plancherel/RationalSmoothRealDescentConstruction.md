@@ -1,7 +1,5 @@
 # Smooth real descent from the local-point structural inputs
 
-Author: Worker 20.
-
 This derived construction isolates the elementary group and topology part of
 the route to Renard V.3.19. The original local-point compactness,
 cocompactness and derived-annihilation targets remain explicit parameters.

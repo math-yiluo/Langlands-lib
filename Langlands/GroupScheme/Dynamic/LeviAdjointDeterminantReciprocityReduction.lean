@@ -92,7 +92,8 @@ theorem RelativeRootReflectionData.positiveWeightCharacter_neg (D : RelativeRoot
   rw [← finsum_comp_equiv (Equiv.neg (characterLattice T)), ← finsum_neg_distrib]
   apply finsum_congr
   intro α
-  simp only [Equiv.neg_apply, map_neg, LinearMap.neg_apply, neg_neg, smul_neg]
+  simp only [Equiv.neg_apply, AddEquiv.map_neg, LinearMap.map_neg, LinearMap.neg_apply, neg_neg,
+    smul_neg]
   rw [show (Equiv.neg (characterLattice T)) α = -α from rfl, D.finrank_weightSpace_neg]
 
 end Multiplicity
@@ -187,7 +188,7 @@ theorem characterRestrict_centralizerAdjointDeterminant [IsAffine Z.X.left] {d :
   · rw [Set.indicator_of_notMem hmem]
     rw [AutomorphicAction.mem_lieRoots, not_and_or, not_not, not_not] at hmem
     rcases hmem with h0 | hb
-    · rw [h0, map_zero, smul_zero]
+    · rw [h0, AddEquiv.map_zero, smul_zero]
     · rw [hb, finrank_bot, zero_smul]
 
 end LieUnipotent

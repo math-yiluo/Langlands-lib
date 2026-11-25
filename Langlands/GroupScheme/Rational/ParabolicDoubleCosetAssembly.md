@@ -1,7 +1,5 @@
 # Parabolic double-coset assembly through the supplied Levi bridge
 
-Authors: Worker 1336 and Worker 1340.
-
 This internal derived module connects the supplied-torus-to-supplied-Levi
 construction to the double-coset representative reduction. It provides a
 chosen representative and a conditional final assembly. The six structural
@@ -40,8 +38,9 @@ premises are exactly `RationalBruhatStatement`,
 `ParabolicIntersectionCentralizerStatement`, `ParabolicDynamicStatement`
 and `SmoothMaximalSplitTorusConjugacyStatement`, at universe `u`.
 Finiteness uses the first three premises; the torus representative uses
-the last three. None is proved by this composition, and none may remain
-a hypothesis in the host task's final closed proof.
+the last three. None is proved by this composition; the closed proof
+`representedParabolicDoubleCoset` (module `Rational.ParabolicDoubleCosetProof`)
+supplies proofs of all six.
 
 The provenance is the composition of the named Library constructions and
 reductions, rather than a separate translation of a literature assertion.

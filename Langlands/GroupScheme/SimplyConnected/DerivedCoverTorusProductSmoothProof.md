@@ -1,7 +1,5 @@
 # Smoothness of derived-cover and maximal-torus multiplication
 
-Authors: Worker 133 and Worker 1554.
-
 `Langlands.GroupScheme.derivedCoverTorusProductSmooth` proves the existing
 `Langlands.GroupScheme.DerivedCoverTorusProductSmoothStatement.{u}`.
 For every field `k : Type u` and the supplied group schemes and maps

@@ -1,7 +1,5 @@
 # The closed-embedding property fails without separated open covers
 
-Author: Worker 105.
-
 `HenselianExtensionPointNotClosedStatement` states the counterexample of Example 5.13 in Brian
 Conrad, *Weil and Grothendieck approaches to adelic points* (December 31, 2011), printed p.20.
 The registered source is `conrad-2011-weil-grothendieck-adelic-points`, SHA-256

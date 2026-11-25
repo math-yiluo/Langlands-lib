@@ -38,10 +38,10 @@ include hP
 /-- Reducedness excludes every higher positive multiple of an actual root. -/
 theorem noHigherRoots (hT : IsSplitTorus T.toGrp) (r : J) :
     RelativeRoot.HasNoHigherRoots i (P.root r) := by
-  let : IsAddTorsionFree (ℚ ⊗[ℤ] characterLattice T) :=
-    IsAddTorsionFree.of_module_rat _
-  let : IsAddTorsionFree (characterLattice T) :=
-    hT.character_toRat_injective.isAddTorsionFree toRat
+  let : HasUniqueDiv (ℚ ⊗[ℤ] characterLattice T) :=
+    HasUniqueDiv.of_module_rat _
+  let : HasUniqueDiv (characterLattice T) :=
+    hT.character_toRat_injective.hasUniqueDiv toRat
   intro n hn
   let : n.AtLeastTwo := ⟨hn⟩
   rw [relativeRoots_eq_roots, ← hP.2.1]

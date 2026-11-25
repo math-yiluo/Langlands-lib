@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 
 /-! # The symmetric-algebra retract of Stacks Lemma 3.1: definitions and basic identities -/
 

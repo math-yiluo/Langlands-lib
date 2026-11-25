@@ -1,6 +1,6 @@
 # Correcting rational subgroup conjugacy to normalize a maximal split torus
 
-Worker 1335. This internal construction supplies the conjugacy correction used
+This internal construction supplies the conjugacy correction used
 in the discussion following Conrad–Gabber–Prasad, *Pseudo-reductive Groups*, second edition,
 Lemma C.2.14, printed p.602. It generalizes the existing internal
 argument `RelativeWeylSurjective.exists_normalizingPoint_comap_eq` from minimal

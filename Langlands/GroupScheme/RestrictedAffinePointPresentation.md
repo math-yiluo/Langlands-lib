@@ -1,7 +1,5 @@
 # Original objects under a base algebra and their induced presentations
 
-Worker 632.
-
 An original object under an algebra `T` has its own `R`-algebra structure
 and a specified map from `T`. This map defines its actual `T`-algebra
 structure. Restricting that structure back to `R` gives an induced

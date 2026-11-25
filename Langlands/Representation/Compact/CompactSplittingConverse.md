@@ -1,6 +1,6 @@
 # Category splitting forces finite fixed-level strata
 
-Author: Worker 88. This is the converse of Renard IV.1.7 Proposition and
+This is the converse of Renard IV.1.7 Proposition and
 proof, printed pp.95–96 / PDF pp.101–102. The original is David Renard,
 *Représentations des groupes réductifs p-adiques*, French version dated 9 July
 2026, registered as `renard-2026-representations-groupes-reductifs-padiques`,

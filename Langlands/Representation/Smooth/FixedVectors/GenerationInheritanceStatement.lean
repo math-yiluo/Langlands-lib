@@ -5,7 +5,7 @@ import Mathlib.RepresentationTheory.Semisimple
 /-!
 # Inheritance of semisimple fixed-vector generation
 
-Proposition targets for Worker 196's algebraic inheritance interface.
+Proposition targets for the algebraic inheritance interface.
 The same subgroup is retained under surjections, injections into a semisimple
 representation, and actual smooth subquotients after restriction.
 -/

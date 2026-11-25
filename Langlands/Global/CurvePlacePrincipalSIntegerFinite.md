@@ -48,4 +48,6 @@ an assumed normalization, finiteness or projectivity package. No separability
 assumption occurs. This result covers the proved cofinal family of principal
 exceptional sets; it does not assert finite local freeness for every arbitrary
 finite exceptional set. The actual integral Weil generic fiber and adelic
-topological comparison remain obligations of the host task.
+topological comparison are left to the proof of the statement this module serves,
+`AdelicProjectiveWeilComparisonStatement` (Example 4.2), which the Library
+proves as `adelicProjectiveWeilComparison` in `AdelicProjectiveWeilComparisonProof`.

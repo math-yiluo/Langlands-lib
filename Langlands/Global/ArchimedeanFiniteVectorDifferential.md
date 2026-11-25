@@ -34,5 +34,5 @@ right translation `R(h)f(g) = f(g*h)`.
 No topology on the smooth function space is assigned. No algebraic coefficient
 representation, analytic-versus-dual-number differential equality, compact
 insertion, automorphic cohomology or occurrence assertion is assumed or proved
-by this unit. It supplies the vector differentiation infrastructure for such
+by this module. It supplies the vector differentiation infrastructure for such
 later comparisons using the existing actual function space.

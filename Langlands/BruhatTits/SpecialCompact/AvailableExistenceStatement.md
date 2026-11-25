@@ -1,21 +1,18 @@
 # Existence of a special maximal compact subgroup for available Bruhat–Tits data: statement target
 
-Worker 1249, task `219b673d-b7f3-47fb-9019-d1642687d4ac`.
-
 This module states the general existence target
 `Langlands.BruhatTits.SpecialCompact.AvailableSpecialMaximalCompactExistence`.
 It is a proposition-valued definition, not a proof.
 
 The witness data satisfy the full corrected KP Definition 4.1.26, as
 formalized by `Langlands.Geometry.Building.KPBuildingAssignment.IsAvailableFor`
-(module `Langlands.Geometry.Building.FullValidity.Assignment`, task
-`129deca1-ce21-411b-9b79-7e94545fe26d`). This holds for `G` and for every
+(module `Langlands.Geometry.Building.FullValidity.Assignment`). This holds for `G` and for every
 actual standard Levi subgroup, and `K_0` is the compact stabilizer of a
 special vertex in the apartment of the same data. The earlier target
 `SpecialMaximalCompactExistence` (module
 `Langlands.BruhatTits.SpecialCompact.ExistenceStatement`) imposes only part of
-these axioms. It stays published unchanged, and this target does not replace
-it.
+these axioms. It remains a separate published target, and this target does not
+replace it.
 
 ## Statement
 
@@ -88,7 +85,7 @@ and for every `J`.
 The predicates `SpecialCompactProperties`, `SpecialLeviRestriction` and
 `SpecialLeviInheritance` are documented in
 `Langlands.BruhatTits.SpecialCompact.Properties`. The subgroup and the vertex
-predicate are Worker 1229's adapters in
+predicate are the adapters in
 `Langlands.Geometry.Building.SpecialCompact`.
 
 ## Formulation choices
@@ -107,9 +104,8 @@ predicate are Worker 1229's adapters in
   centralizer, zero-subgroup, integral-model and other fields of the data are
   not constrained beyond `IsAvailableFor`.
 - **Levi reductivity.** `𝔅.datum` takes a proof that the group is connected
-  reductive. The Library has no unconditional lemma that `Standard.leviScheme
-  i ν J` is connected reductive, so clause 5 asserts it with the existential
-  `hM`. `IsConnectedReductive` is a proposition, so the data `𝔅.datum F M_J hM`
+  reductive. Clause 5 asserts that `Standard.leviScheme i ν J` is connected
+  reductive with the existential `hM`. `IsConnectedReductive` is a proposition, so the data `𝔅.datum F M_J hM`
   do not depend on the choice of `hM`.
 - **The assignment.** `𝔅` assigns data to every connected reductive group
   over every nonarchimedean local field in universe `u`. The target asks
@@ -124,7 +120,7 @@ predicate are Worker 1229's adapters in
   inside `M_J(F)`. The target does not state that the building of `M_J`
   embeds in that of `G`.
 
-## Relation to the other targets of this task
+## Relation to the other targets
 
 - `SpecialMaximalCompactExistence` (`ExistenceStatement`) asks only for
   `KPApartmentData` satisfying `SatisfiesApartmentAxioms` (V 6 on `Z(F)`, V 7,
@@ -135,7 +131,7 @@ predicate are Worker 1229's adapters in
   2, `B.apartment` is `D`. Informally, this target therefore implies the
   earlier one, with the centralizer of the data as the witness `C`. No
   implication between the two targets is proved in Lean, and the earlier
-  target is kept as published.
+  target remains a separate published target.
 - `ParahoricLeCompactStabilizer` (`ParahoricStatement`) states
   `P.parahoricAt x ≤ P.apartment.specialCompactSubgroup x` for all
   `P : ParahoricBuildingData G`. In this target `(𝔅.datum F G hG).base` is
@@ -144,7 +140,7 @@ predicate are Worker 1229's adapters in
   here.
 - `SharpFixerLeCompactStabilizer` (`SharpFixerStatement`) is the inclusion
   `G(F)^♯_x ⊆ K_0`.
-- Renard V.5.1(1) (Iwasawa) and (4) (Cartan) are sibling tasks and are not
+- Renard V.5.1(1) (Iwasawa) and (4) (Cartan) are sibling targets and are not
   stated here.
 
 ## Sources

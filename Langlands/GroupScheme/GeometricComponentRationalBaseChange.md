@@ -79,7 +79,7 @@ uses the published fixedness of a class represented by a `K`-section. It does
 not require an extension or restriction of that automorphism to the other
 chosen closure.
 
-The fixed-subgroup map here starts from original rational classes. This unit
+The fixed-subgroup map here starts from original rational classes. This module
 constructs no map on the entire `k`-Galois-fixed component subgroup, no
 absolute Galois restriction homomorphism, and no surjectivity or effective
 descent statement. It does not identify these ordinary quotients with points

@@ -1,7 +1,5 @@
 # Closed embeddings for full-adele fixed-model points
 
-Author: Worker 208.
-
 `adelicFixedModelClosedImmersion` proves exactly
 `Langlands.Global.AdelicFixedModelClosedImmersionStatement` in the original
 arbitrary common universe. Both clauses use actual relative scheme morphisms,

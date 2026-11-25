@@ -1,7 +1,5 @@
 # Actual grouping of a subset of cuspidal Jacquet factors
 
-Author: Worker 78.
-
 `Langlands.Classification.CuspidalJacquetSubsetGrouping.{uF,uV} F T` is
 an internal derived proposition. It states a finite consequence of
 `AdjacentCuspidalJacquetInterchange` for arbitrary supplied p-adic field

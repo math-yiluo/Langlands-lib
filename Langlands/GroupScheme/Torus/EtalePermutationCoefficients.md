@@ -49,7 +49,7 @@ is `LocalCoefficientReindexing.Datum.equiv_restrict` applied to
 `coefficientDatum`. Empty overlaps and empty finite coordinate types are
 allowed.
 
-This derived unit uses the actual split-torus and group-scheme pullback
+This derived module uses the actual split-torus and group-scheme pullback
 point models, the internal `EtalePermutationAtlas` interface, open
 immersion lifting, and structure-sheaf coefficient gluing. It does not
 construct a descent coaction, prove a cocycle for these algebra maps, or

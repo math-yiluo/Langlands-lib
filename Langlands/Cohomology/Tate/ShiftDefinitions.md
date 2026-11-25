@@ -1,7 +1,5 @@
 # Scalar-split Tate dimension shifting
 
-Author: Worker 45.
-
 The positive coefficient shift is the cokernel of the equivariant inclusion
 of a representation into the functions coinduced from the trivial subgroup.
 The inclusion sends `a` to `g ↦ g a`. Evaluation at the identity is its

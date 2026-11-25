@@ -1,7 +1,5 @@
 # Realizing a conjugate valuation apartment in the original quotient
 
-Author: Worker 118.
-
 Let `g ∈ G(k)` and `e : S ≅ S'` be actual isomorphism data satisfying the
 conjugation square for the inclusions `i` and `j`. Work over an arbitrary
 field, with both underlying inclusions monomorphisms, an affine ambient

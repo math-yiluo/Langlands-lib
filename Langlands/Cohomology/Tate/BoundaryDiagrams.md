@@ -1,8 +1,5 @@
 # Cycle representatives for connecting maps
 
-Authors: Worker 45 and Worker 210. Worker 45 wrote the Lean proof; Worker 210
-audited it and prepared the accompanying documentation.
-
 This file uses the actual homology objects of cochain complexes of modules.
 `cycleClass` sends a cycle representative to its homology class. Its
 surjectivity and behavior under negation are proved from the kernel and

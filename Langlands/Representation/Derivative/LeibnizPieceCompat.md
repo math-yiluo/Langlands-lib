@@ -1,8 +1,5 @@
 # Natural identification of positive Leibniz grades
 
-Author: Worker 593. The supporting `RankCastCompat` pair is coauthored by
-Workers 593 and 984.
-
 This internal helper identifies the unchanged right mixed derivative grade,
 after restricting its first input from `GL_(m+1)` and transporting its output
 rank, with the unchanged `leibnizPiece` at the same order pair. It constructs
@@ -156,7 +153,7 @@ extractor supplies a premise or a proof step.
 | --- | --- |
 | Actual functors, complete natural filtration, unchanged target and smooth output cast | The helper compares the literal mixed grade with its literal Leibniz grade as whole functors. The forgetting square proves that the final representation cast is exactly the prescribed smooth cast before forgetting. The target and all existing imported pairs remain unchanged. No filtration is claimed. |
 | Arbitrary carriers, independent universes and all boundaries | The comparison has arbitrary `b,d`, feasible `x`, supplied topology and character, and independent input universes. Zero second rank and zero output ranks retain their arbitrary carriers. The first rank is explicitly positive; at order zero the positive block is empty. |
-| Accepted general upstream inputs; no conditional consumer replacement | The only representation-theoretic equation used is the proved defining equation of positive differentiation, packaged in `RankCastCompat`. No exactness, mixed-product filtration, tensor-commutation theorem, or Leibniz assertion is assumed. |
+| Proved general upstream inputs; no conditional consumer replacement | The only representation-theoretic equation used is the proved defining equation of positive differentiation, packaged in `RankCastCompat`. No exactness, mixed-product filtration, tensor-commutation theorem, or Leibniz assertion is assumed. |
 | Segment derivatives, existence, Jacquet or exponent formulas; analytic classification and Ze80 segment formulas or criteria | No segment module is in the closure. No such result supplies an input to the comparison of the defining functors. |
 | Unlinked, linked or juxtaposed segment structures; reducibility, reverse quotients, adjacent swaps, two-segment commutation, gluing and ordered socle existence or exhaustion | No corresponding consumer module or conclusion supplies an input. |
 | Special-head criterion, generic segment product uniqueness, multisegment exhaustion, strong-head existence, quotient coverage, ordered conversion and tempered uniqueness | No head, socle, multisegment, classification or exhaustion result is imported or used. |
@@ -165,8 +162,9 @@ extractor supplies a premise or a proof step.
 | Irreducible, Levi-cuspidal and supercuspidal Whittaker finiteness, all-character single-block finiteness and dependent mirabolic finite length | The two inherited Whittaker imports provide character, functional and model constructions. No prohibited finiteness or mirabolic finite-length assertion supplies a proof step. |
 
 A recursive import scan verified this exact closure and the unchanged
-supporting pairs. A bounded scan for the inherited excluded task identifiers
-and conclusion names found no matches in the Lean closure. Reading the new
+supporting pairs. A bounded scan for the inherited excluded
+conclusion names found no matches in the Lean closure. Reading the new
 terms and their defining-equation inputs also establishes mathematical
 independence from those excluded conclusions. The full all-rank Leibniz
-filtration remains a separate open proof obligation.
+filtration is proved separately, as `generalLinearDerivativeLeibnizFiltration`
+in `GeneralLinearDerivativeLeibnizFiltrationProof`.

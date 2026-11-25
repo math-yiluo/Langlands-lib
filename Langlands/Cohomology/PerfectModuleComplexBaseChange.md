@@ -1,8 +1,6 @@
 # Scalar extension and finite homology of perfect module complexes
 
-Author: Worker 1015.
-
-This internal helper module uses the published vocabulary in
+This internal helper module uses the vocabulary in
 `Langlands.Cohomology.PerfectModuleComplex`, unchanged, in namespace
 `Langlands.Cohomology.ModuleComplex`. All rings, modules, and fields have
 arbitrary universe `u`. It proves routine algebraic prerequisites for
@@ -34,14 +32,14 @@ from cycles to homology. `finite_homology_baseChange` applies this argument
 to every term of a strictly perfect complex after scalar extension to any
 field.
 
-These are internal derived results from the published definitions and the
+These are internal derived results from the definitions of that module and the
 cited Mathlib APIs. Their intended application is the finite-dimensionality
 conjunct in Stacks Project, More on Algebra, tag 0BCD, retained in registered
 source `stacks-perfect-complexes-a04446e5`, `more-algebra.tex`, lines
 19593–19629 at commit `a04446e57ec1fbc252a871afcec7752fb2807b14`.
 The statements in this helper module are not quoted from that source.
-Worker 1015 read the full lemma and its proof and the preceding local-ring
-lemma; no project erratum was found.
+The full lemma and its proof and the preceding local-ring lemma were read; no
+project erratum was found.
 
 This module constructs no local minimal model and proves no descent theorem.
 All scalar extension here is ordinary degreewise scalar extension of a chosen

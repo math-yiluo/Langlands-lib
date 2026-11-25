@@ -1,6 +1,6 @@
 # The actual product-scheme map underlying finite Weil evaluation
 
-This internal unit constructs an actual morphism over the base scheme from
+This internal module constructs an actual morphism over the base scheme from
 the existing intrinsic evaluation on torsion points. It imports
 `FiniteWeilEvaluation` and `DualKernelCharacterNaturality`. Its inputs remain
 the same quasi-separated base, abelian scheme, `HasDualScheme` witness,

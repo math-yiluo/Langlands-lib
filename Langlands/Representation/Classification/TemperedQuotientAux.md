@@ -1,7 +1,9 @@
 # Algebraic adapters for the independent tempered quotient argument
 
-This module is a small part of Worker 624's unfinished proof of
-`Langlands.Classification.TemperedLanglandsQuotientCoverage`. It does not prove
+This module is a small part of the proof of
+`Langlands.Classification.TemperedLanglandsQuotientCoverage`
+(`temperedLanglandsQuotientCoverage` in `TemperedLanglandsQuotientCoverageProof`,
+through `TemperedQuotientAssembly`). It does not prove
 coverage and does not assert any analytic, Jacquet-selection, induction-duality,
 or tensor-duality input. Its internal provenance is the composition of the
 published smooth-bidual constructions and reflexivity results with Mathlib's
@@ -31,5 +33,5 @@ Thus a strictly decreasing exponent family remains strictly decreasing after
 block reversal and negation, including for the empty index set.
 
 No new literature claim is made. The nonzero-map and exponent arguments are
-internal algebraic deductions. These lemmas do not establish the missing
+internal algebraic deductions. These lemmas do not establish the other
 prerequisites or the coverage theorem.

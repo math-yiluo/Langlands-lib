@@ -1,8 +1,5 @@
 # The smooth-family representer over affine bases of finite type over the integers
 
-Statement design: Workers 930 and 141. Formalization and source verification:
-Worker 344.
-
 `Langlands.AbelianScheme.FiniteTypeSmoothFamilyAbelianRepresentabilityStatement.{u}`
 defines the proposition
 
@@ -79,7 +76,7 @@ bases and then, by finite presentation, to algebras of finite type over
 rigidified Picard functor, its zero part and formal smoothness. The discussion
 on printed p.3/PDF p.15 quotes Artin's algebraic-space representability
 theorem and describes the Picard-zero group space and its Poincaré family.
-Those passages motivate the future construction, rather than provide a
+Those passages motivate the construction, rather than provide a
 formal proof of this proposition.
 
 Kai-Wen Lan, *Arithmetic compactifications of PEL-type Shimura varieties*,
@@ -110,11 +107,11 @@ witness condition. Its comparison with the sources' algebraic equivalence
 on ordinary fibres, and with their represented functors, is not asserted.
 The source product order and ordinary quotient also require comparison with
 the Library's parameter-first actual rigidified families.
-The accepted
+The
 [relative Picard source map](../../../notes/abelian-schemes/relative-picard-source-map.md)
 records these boundaries in more detail.
 
-## Role in the shared reduction and future proof obligations
+## Role in the shared reduction and proof obligations
 
 The shared construction can use an affine open cover, the published
 `smoothFamilyAbelianRepresentabilityOfOpenCover`, the published
@@ -122,11 +119,15 @@ The shared construction can use an affine open cover, the published
 `smoothFamilyUniversalBaseChange`. A finitely generated unital subring is
 of finite type over `ℤ`. Applying the present existence statement at the
 spread-out object would leave base change and transport along an abelian-scheme
-isomorphism before gluing. This describes the intended reduction; this module
-proves none of those steps.
+isomorphism before gluing. This describes the reduction, carried out in
+`smoothFamilyAbelianRepresentabilityOfFiniteType` (module
+`SmoothFamilyAbelianRepresentabilityOfFiniteTypeProof`); this module proves
+none of those steps.
 
-An exact proof still has to construct `B` and `L` with the displayed universal
-property. The Faltings–Chai route requires substantial separate inputs:
+A proof has to construct `B` and `L` with the displayed universal
+property; the Library's proof is
+`Langlands.AbelianScheme.finiteTypeSmoothFamilyAbelianRepresentability` (module
+`FiniteTypeSmoothFamilyAbelianRepresentabilityProof`). The Faltings–Chai route requires substantial separate inputs:
 
 1. Reduction to reduced bases, including deformation of the representer and
    its universal family along nilpotent thickenings and the relevant formal
@@ -148,8 +149,4 @@ property. The Faltings–Chai route requires substantial separate inputs:
 
 These are proof obligations, not hypotheses of the statement or results of
 this module. A construction restricted to projective abelian schemes or a
-bijection only on geometric points would leave the target open. Substantial
-missing inputs require focused statement and proof tasks, coordinated with
-their current owners. Existing ordinary Picard, comparison, field-existence,
-ambient-representability and generic dual-infrastructure workflows retain
-their separate ownership and operator pauses.
+bijection only on geometric points would leave the target open.

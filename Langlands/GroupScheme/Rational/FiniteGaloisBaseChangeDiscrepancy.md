@@ -2,13 +2,14 @@
 
 Module `Langlands.GroupScheme.Rational.FiniteGaloisBaseChangeDiscrepancy`.
 
-This supporting unit turns an actual isomorphism of base changes
+This module turns an actual isomorphism of base changes
 `E : G_K ≅ H_K` over a finite Galois extension `K/k` into a local group
 isomorphism with all-test inner discrepancy, once each Galois pullback of `E`
 differs from `E` by an inner automorphism of `G_K` given by a `K`-point of the
 base-changed adjoint quotient. It is a step toward the inner-discrepancy part of
 the quasi-split inner-form existence theorem. Nothing here constructs a specific
-Galois cocycle, a quasi-split inner form, or the host existence theorem.
+Galois cocycle, a quasi-split inner form, or a proof of that existence theorem
+(`QuasiSplitInnerFormExistenceStatement`).
 
 ## Notation
 

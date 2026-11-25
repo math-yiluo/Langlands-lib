@@ -1,6 +1,6 @@
 # Stable merging of exponent-sorted families into equal-exponent groups
 
-Author: Worker 4988. Module `Langlands.Representation.Classification.A6iiMerge`,
+Module `Langlands.Representation.Classification.A6iiMerge`,
 namespace `Langlands.Classification.A6ii`. Internal combinatorics for the proof of Tadić's
 Corollary A.6(ii) (`IrreducibleLanglandsHeadProductProof`); no literature counterpart.
 

@@ -1,6 +1,6 @@
 # Irreducibility of full represented intersection pieces
 
-This internal unit concerns the actual represented geometric-lemma intersection
+This module concerns the actual represented geometric-lemma intersection
 objects and functors. It proves `FullIntersectionPieceIrreducibleStatement`:
 if both intersection parabolic morphisms are isomorphisms, an irreducible
 representation of the source Levi has an irreducible geometric piece.
@@ -39,8 +39,9 @@ a Hausdorff topological field, affine ambient group scheme, and locally compact
 nonarchimedean rational points with their canonical topology. No supercuspidal,
 admissibility or finite-length premise is used. The geometry helpers require
 only the represented intersection datum and an isomorphism of its outer Levis.
-This unit constructs no intersection data or geometric filtration, proves no
-Weyl count or detection theorem, and does not prove the host unitarizable
-constituent statement. All assertions are derived from the implemented actual
+This module constructs no intersection data or geometric filtration, proves no
+Weyl count or detection theorem, and does not prove the unitarizable
+constituent statement it serves
+(`MaximalLeviSupercuspidalUnitarizableConstituentStatement`). All assertions are derived from the implemented actual
 functors and published algebraic constructions; no new external source theorem
 is assumed.

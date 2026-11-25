@@ -1,7 +1,7 @@
 import Langlands.LocalFactor.Ramification.InertiaSolvabilityProof
 import Langlands.FieldTheory.SolvableGaloisTowerProof
 import Langlands.Global.AdelicFunctoriality.UnramifiedUnitNorm
-import Langlands.ClassField.Global.IdeleSemilocal
+import Langlands.ClassFieldTheory.Global.IdeleSemilocal
 import Langlands.Global.Arithmetic.HarrisSetup
 import Langlands.Global.Arithmetic.HarrisProposition48StabilizerComparison
 import Langlands.Automorphic.Unramified.PrimeCyclicBaseChangeTower
@@ -75,10 +75,10 @@ then `Gal(L/K)` is solvable. -/
 theorem isSolvable_of_hasUniquePlaceAbove [IsGalois K L] (v : HeightOneSpectrum (𝓞 K))
     (h : Harris.HasUniquePlaceAbove L v) : Group.IsSolvable (L ≃ₐ[K] L) := by
   obtain ⟨w, hw⟩ := exists_place_above (L := L) v
-  have hsurj : Function.Surjective (ClassField.Global.FundamentalClass.decompositionHom v w) := by
+  have hsurj : Function.Surjective (ClassFieldTheory.Global.FundamentalClass.decompositionHom v w) := by
     intro g
-    have hg : g ∈ (ClassField.Global.FundamentalClass.decompositionHom v w).range := by
-      rw [ClassField.Global.mem_range_decompositionHom_iff]
+    have hg : g ∈ (ClassFieldTheory.Global.FundamentalClass.decompositionHom v w).range := by
+      rw [ClassFieldTheory.Global.mem_range_decompositionHom_iff]
       have hw' := Harris.finitePlaceEquiv_liesOver (RingEquiv.refl K) g.toRingEquiv g.commutes
         v w
       simp only [finitePlaceEquiv_refl, Equiv.refl_apply] at hw'

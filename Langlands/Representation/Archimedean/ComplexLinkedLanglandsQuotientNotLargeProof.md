@@ -31,7 +31,7 @@ It introduces no new lemma.
 
 ## Provenance
 
-This is an internal assembly for Task 7064 of results already in the Library. The route is the
+This is an internal assembly of results already in the Library. The route is the
 dimension-count argument described in the Markdown of the imported modules
 (`ComplexLinkedLanglandsQuotientDuality`, `ComplexLinkedLanglandsQuotientGrowth`). It is not the
 argument Vogan gives for Theorem 6.2.

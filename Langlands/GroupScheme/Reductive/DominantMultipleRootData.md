@@ -1,6 +1,6 @@
 # Integral root-datum lemmas for positive multiples of dominant weights
 
-Worker 1161. This module is internal linear algebra over `ℤ` for an arbitrary
+This module is internal linear algebra over `ℤ` for an arbitrary
 root pairing `P : RootPairing ι ℤ M N` with finitely many roots and a base `b`.
 It supports the proof, in `DominantMultipleAssembly`, that every dominant character
 of a split pinning has a positive multiple realized by a normalized covariant

@@ -1,7 +1,5 @@
 # Coherent restriction of actual subgroup images
 
-Author: Worker 179.
-
 This internal helper constructs restriction on all subgroup functors of the
 actual pullbacks of a group scheme. For a morphism `a : T → M` over `S`,
 `restrictImage a F` first pulls `F` back along `a.left` and then transports it

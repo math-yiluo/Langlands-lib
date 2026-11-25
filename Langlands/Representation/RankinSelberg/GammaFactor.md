@@ -1,6 +1,6 @@
 # Gamma factors of pairs as relations
 
-Author: Worker 11. This module, in namespace `Langlands.RankinSelberg`, defines
+This module, in namespace `Langlands.RankinSelberg`, defines
 when a rational function `G` of `q^{-s}` is the gamma factor
 `γ(s, π × σ, ψ) = G(q^{-s})` of a pair. It does this for actual
 representations of `GL_{r+1}(F)` and `GL_{n+1}(F)`, `n ≤ r`, and for
@@ -202,7 +202,7 @@ satisfies them.
 
 ## Lean checks
 
-The module compiles with `lean_check` in environment `3b864ddf` with no errors
+The module compiles with no errors
 or warnings. `IsClassGammaFactor` was inspected: it returns `Prop`, has
 universe parameters `uF uV uW`, and uses only `propext`, `Classical.choice` and
 `Quot.sound`. There is no `sorry` and no new axiom.

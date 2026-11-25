@@ -1,7 +1,5 @@
 # Actual root groups in different Cartan components commute
 
-Worker 634.
-
 For a supplied `RootComponentCoordinates M`, this internal module defines the
 actual roots of a chosen component on any supplied field-valued fibre of the
 pinned model. These sets are nonempty and are contained in the actual roots;
@@ -20,5 +18,5 @@ The module is internally derived from the component-coordinate support and
 mixed-root theorem, the fibrewise root datum of the pinned model and the
 published strict-combination commutation theorem. It prepares factor
 commutation in the proof route motivated by Conrad, *Reductive group schemes*
-(2014), Proposition 6.4.4, pp.232–233. It does not yet assert that the relative
+(2014), Proposition 6.4.4, pp.232–233. It does not assert that the relative
 derived-centralizer groups themselves commute or form a product.

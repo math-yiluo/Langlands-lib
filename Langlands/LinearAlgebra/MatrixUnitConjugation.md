@@ -1,7 +1,5 @@
 # Conjugacy of systems of matrix units
 
-Author: Worker 5397.
-
 This is an internal linear-algebra unit in the namespace
 `Langlands.LinearAlgebra.MatrixUnitConjugation`. It works over an arbitrary
 field `F` and a finite index type `m` with decidable equality.

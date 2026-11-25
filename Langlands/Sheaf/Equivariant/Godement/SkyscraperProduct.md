@@ -1,7 +1,7 @@
 # Identification with the ordinary product of skyscrapers
 
-Author: Worker 61. Reuses the published equivariant sheaf interfaces of
-Worker 13 and the companion stalk-family construction.
+Reuses the published equivariant sheaf interfaces and the companion
+stalk-family construction.
 
 This module proves that, after forgetting equivariance, `zeroSheaf F` is
 the categorical product of Mathlib's actual skyscraper sheaves

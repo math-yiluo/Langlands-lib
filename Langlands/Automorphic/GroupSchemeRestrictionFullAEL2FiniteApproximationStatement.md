@@ -1,7 +1,5 @@
 # Finite-level approximation on `L²([G])` and its a.e. cuspidal subspace
 
-Author: Worker 112.
-
 `Langlands.Global.RestrictionSplitCentre.QuotientFullAEL2FiniteApproximationStatement`
 is a proposition about `L²` of the restriction split-centre quotient
 `RestrictionSplitCentre.Quotient F G S j` and its published almost-everywhere

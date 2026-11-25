@@ -1,7 +1,8 @@
 # Čech cochains of a Galois covering and injective sheaves
 
-Worker 749. This module is a derived categorical helper for the planned proof of
-`AnalyticEtaleGaloisCoinducedLocalAcyclicStatement`. Its main theorem is
+This module is a derived categorical helper for the proof of
+`AnalyticEtaleGaloisCoinducedLocalAcyclicStatement` from pointed Galois refinements
+(`Langlands.Cohomology.AnalyticEtaleGaloisCartanReduction`). Its main theorem is
 `isZero_groupCohomology_rep_of_injective`. It says that for a Galois covering
 `G : GaloisCovering J Γ V' V` (module `Langlands.Cohomology.GaloisCovering`) and an injective
 sheaf `I` of `R`-modules, `groupCohomology (G.rep I) (n + 1)` is zero for every `n`. This is
@@ -97,4 +98,4 @@ implies exactness of `L` at `n + 1`.
 
 All statements are categorical. Nothing analytic is asserted. Checking the fields of
 `GaloisCovering` for analytic Galois coverings, and passing to filtered colimits over
-neighbourhoods, are separate obligations.
+neighbourhoods, are not part of this module.

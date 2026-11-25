@@ -1,7 +1,5 @@
 # Rational generation from quotient generation and kernel containment
 
-Author: Worker 1757.
-
 This module proves an abstract diagram chase on rational points of group
 schemes. It is the group-theoretic core of the proof of Theorem A of
 Prasad–Raghunathan (1985), §1.6, in the form used for nonarchimedean

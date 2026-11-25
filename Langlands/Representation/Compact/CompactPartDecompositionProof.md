@@ -1,6 +1,6 @@
 # Decomposition of the compact subcategory into its isotypic parts
 
-Worker 141 proves
+This module proves
 `compactPartDecomposition : CompactPartDecompositionStatement`, the third
 display of Renard IV.1.7, printed page 95 / PDF page 101 of the registered
 French 2026 edition. The page and its preceding proof context were read.

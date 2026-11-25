@@ -1,9 +1,9 @@
 # Termination of the smoothening sequence: Hopf structure on the members
 
-Author: Worker 348. Internal helper module for Kaletha–Prasad, Theorem A.6.2. In the source each
+Internal helper module for Kaletha–Prasad, Theorem A.6.2. In the source each
 dilatation is again a group scheme (Proposition A.5.3). Here the corresponding statement is proved
 for subalgebras of `B = integralFunctions R K A`. The argument is internal to this project and
-follows the construction of the Hopf structure on `B` in Worker 50's module `Smoothening.Hopf`.
+follows the construction of the Hopf structure on `B` in the module `Smoothening.Hopf`.
 
 Namespace: `Langlands.GroupScheme.IntegralModel.Smoothening.Termination`.
 
@@ -38,8 +38,8 @@ Assume `hcomul`: the comultiplication of `B` maps `S` into `pureSpan R K A S S`.
   the counit laws hold after composition with `inclSub`, because they hold for `A`
   (`coassoc_simps`). They then hold everywhere by `algHom_ext_sub`, since `S ⊗ S` is flat.
 - `hopfSub S hS hcomul hanti : HopfAlgebra R S` is built with `HopfAlgebra.ofAlgHom`. The antipode
-  laws are checked on the image of `A` using Worker 50's `lift_antipodeAlgHom_comp_comul` and
-  `lift_id_antipodeAlgHom_comp_comul`.
+  laws are checked on the image of `A` using `lift_antipodeAlgHom_comp_comul` and
+  `lift_id_antipodeAlgHom_comp_comul` (module `Smoothening.Hopf`).
 - `chainHopf hϖ n : HopfAlgebra R (chain R K A ϖ n)` applies this to the members of the smoothening
   sequence, using `range_incl_le_chain`, `comul_mem_pureSpan` and `antipodeInt_mem`
   (`TerminationChain`).

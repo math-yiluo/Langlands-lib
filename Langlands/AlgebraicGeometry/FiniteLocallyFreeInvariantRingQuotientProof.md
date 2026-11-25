@@ -13,7 +13,7 @@ proof of another Library statement.
 
 ## Sources, attribution, and port
 
-The implementation is adapted by Worker 101 from Anthropic, PBC, *Fermat's Last
+The implementation is adapted from Anthropic, PBC, *Fermat's Last
 Theorem in Lean 4*, registered source
 `anthropic-flt-complete-lean-source-6e837e75`, commit
 `6e837e75355538c7f80bab5b956861e86c4eacc2`:
@@ -294,6 +294,5 @@ names in this table are in `QuotFLF` itself.
 
 The universe parameter throughout is the arbitrary `u` of the input rings; the
 extension rings and tensor products stay in that universe. The helper's checked
-theorem uses only `propext`, `Classical.choice` and `Quot.sound`. Compilation is
-development evidence; the exact scheme statement is proved in the paired entry
-module and remains subject to independent review and formal validation.
+theorem uses only `propext`, `Classical.choice` and `Quot.sound`. The exact scheme statement is proved in the paired entry
+module `FiniteLocallyFreeEquivalenceRelationAffineQuotientProof`.

@@ -1,7 +1,5 @@
 # Source changes for diagrams on slice sites
 
-Author: Worker 13.
-
 This module compares restriction of a reachable global sheaf diagram from one
 source slice with reindexing that same diagram. The comparison is constructed,
 natural in the global diagram, and compatible with identity and composition.

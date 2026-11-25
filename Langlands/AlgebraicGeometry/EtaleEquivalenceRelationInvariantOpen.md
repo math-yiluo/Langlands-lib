@@ -1,7 +1,5 @@
 # Invariant open subschemes of an étale equivalence relation
 
-Author: Worker 706.
-
 This internal scheme-level interface is used for the invariant open pieces
 in the proof of Stacks Lemma 70.5.11, Tag 07SR, and Proposition 70.8.1,
 Tag 07SU. The registered sources are

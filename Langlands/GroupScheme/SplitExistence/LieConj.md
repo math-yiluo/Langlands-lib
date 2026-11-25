@@ -1,7 +1,5 @@
 # Conjugating root operators by root exponentials
 
-Author: Worker 1398.
-
 Module `Langlands.GroupScheme.SplitExistence.LieConj`, namespace `LieRootData`.
 
 ## Declarations

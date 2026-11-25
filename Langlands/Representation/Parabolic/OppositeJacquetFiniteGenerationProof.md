@@ -1,9 +1,9 @@
 # Finite generation of normalized opposite Jacquet modules
 
-Author: Worker 23. The generator argument adapts the published upper proof
-`Langlands.Parabolic.JacquetFiniteGeneration.finite_of_compactQuotient` by
-Worker 319, which in turn adapts a single-vector cover step by Worker 238. Both
-are credited as coauthors.
+The generator argument adapts the published upper proof
+`Langlands.Parabolic.JacquetFiniteGeneration.finite_of_compactQuotient`,
+which in turn adapts a single-vector cover step of
+`CuspidalSupport.QuasicuspidalEmbeddingProof`.
 
 The theorem `Langlands.Parabolic.oppositeJacquetFiniteGeneration` has the
 complete unapplied type

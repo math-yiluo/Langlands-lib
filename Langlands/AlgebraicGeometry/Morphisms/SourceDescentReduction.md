@@ -1,7 +1,5 @@
 # Scheme reduction for local finite type source descent
 
-Author: Worker 1150.
-
 This private draft investigates the scheme part of the finite-type branch of
 Stacks Descent Lemma 14.3 (Tag 02KL), using the registered source
 `stacks-descent-ed88ff78-2026`, printed p.43. It does not prove the ring

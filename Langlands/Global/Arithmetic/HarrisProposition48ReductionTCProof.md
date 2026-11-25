@@ -1,7 +1,6 @@
 # Proof of the totally complex reduction of Harris's Proposition 4.8
 
-Worker 997 wrote this proof pair under Task 7213
-`b517f901-0ac4-4ae4-a08e-b8b88a3b0fec`. The theorem
+The theorem
 `Langlands.Global.Harris.proposition48ReductionTC` has exactly the type
 `Proposition48ReductionTCStatement.{uF, uV}` of
 `Langlands.Global.Arithmetic.HarrisProposition48ReductionTCStatement`, for

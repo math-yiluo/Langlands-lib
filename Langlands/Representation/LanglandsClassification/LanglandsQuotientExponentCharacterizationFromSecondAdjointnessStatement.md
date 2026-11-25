@@ -1,6 +1,6 @@
 # The exponent characterization of the Langlands quotient from second adjointness
 
-Author: Worker 168, Task 5653 (`1df73c68-230c-4ced-8325-dc9c910df8d8`). Module
+Module
 `Langlands.Representation.LanglandsClassification.LanglandsQuotientExponentCharacterizationFromSecondAdjointnessStatement`,
 namespace `Langlands.Aubert.General.RepresentedParabolic`, universe parameters `u, v`.
 
@@ -79,9 +79,8 @@ geometric lemma `representedGeometricLemma` and the piece filtration
 argument of `langlandsTripletOppositePieceSeparation`, used by the proof of the VII.4.1
 regularity Lemma), the exactness of the Jacquet functor, and the tempered split
 character `normalizedTemperedTwistSplitCharacter`. So second adjointness is the only
-premise. A theorem of this statement and the published proof of
-`LeviSecondAdjointnessStatement` (Task 4834, `c0fa1878-6cee-4435-8484-2fc15ea04a17`) would
-together prove the conclusion.
+premise. A theorem of this statement and a proof of
+`LeviSecondAdjointnessStatement` would together prove the conclusion.
 
 ## Imports
 

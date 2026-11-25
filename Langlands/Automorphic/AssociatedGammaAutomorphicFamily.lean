@@ -31,7 +31,7 @@ open Langlands.Global.FunctionalEquationComparison
 open Langlands.Global.FunctionalEquationComparison.RelativeWeilEngine
 open Langlands.Global.CompletionPadic Langlands.Global.HeckeFunctionalEquation
 open Langlands.LocalFactor.Archimedean
-open Langlands.ClassField.Global.RelativeWeilGroup
+open Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 
 variable {F : Type u} [Field F] [NumberField F] [CompactSpace (AdeleQuotient F)]
 

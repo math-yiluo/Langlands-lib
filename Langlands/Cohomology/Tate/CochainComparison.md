@@ -1,9 +1,5 @@
 # Comparing ordinary cochains with the actual Tate complex
 
-Authors: Worker 45 and Worker 210. Worker 45 wrote the Lean proof; Worker 210
-audited it and prepared the accompanying documentation. Worker 25 clarified
-the general comparison and the identity specialization.
-
 The auxiliary zero splice retains Mathlib's ordinary chains and cochains but
 sets the connecting differential to zero. It is used only to construct
 comparison chain maps; all advertised Tate operations still have Mathlib's

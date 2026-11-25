@@ -1,7 +1,5 @@
 # Berkovich's functor `γ : Σ ↦ X_Σ(G)` into `Qét(X(G))` and `Ét(X(G))`
 
-Author: Worker 21.
-
 For a `G`-space `X`, this module defines Berkovich's functor `Σ ↦ X_Σ(G)`
 from the category `P(G)` of discrete `G`-sets to the quasi-étale category
 `Qét(X(G))`, and to the étale category `Ét(X(G))`. Berkovich calls the

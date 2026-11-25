@@ -1,7 +1,5 @@
 # Opposite associated Jacquet filtration from the upper theorem
 
-Author: Worker 698.
-
 `Langlands.GLOppositeCuspidalJacquetFiltrationFromUpperStatement` is a
 proposition definition for a transfer of the existing upper associated
 Jacquet filtration. This pair states the interface; it proves no

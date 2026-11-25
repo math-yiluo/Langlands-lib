@@ -1,6 +1,6 @@
 # Relations and conditional character transport for local reciprocity
 
-Author: Worker 21. The imported construction modules are independently
+The imported construction modules are independently
 published. This pair adds relations and conditional transport on those objects.
 
 For an actual `PadicField F`, supplied `TopologicalData T` and explicit
@@ -35,8 +35,8 @@ from the generally noncompact group `Fˣ`.
 quantifying both candidates and these conditions. No theorem proves it,
 and no use of choice extracts a canonical map from an unproved assertion.
 Its intended theorem must use the actual geometric residue-degree map
-when that map has been constructed and identified. The companion
-statement task owns the theorem layer.
+when that map has been constructed and identified. The theorem layer
+is not part of this file.
 
 `weilCandidateCharacterEquiv e` is a conditional equivalence of continuous
 complex quasicharacters. It first descends a character of the Weil
@@ -71,7 +71,7 @@ with a separately presented absolute or Weil group over `E` remains
 explicitly separate, as do independence of closure choices and proof of
 the squares.
 
-## Sources and unfinished system layer
+## Sources and the system layer
 
 Henniart (2000), section 1.1, printed page 439 / PDF page 1, states that
 geometric Frobenius corresponds to a uniformizer. Registered source
@@ -81,8 +81,8 @@ Deligne (1973), section 2.3, printed pages 523–524 / PDF pages 23–24,
 gives this normalization and both functoriality diagrams. Registered
 source `deligne-1973-local-constants`, SHA256
 `b03f483c4eeca79b75e34b88f41406fe4c9e16ba621480ce859697c93e8d5844`.
-Worker 21 read these original pages and visually checked Deligne's
-diagrams. Deligne's arithmetic-degree convention explains its minus
+These original pages were read and Deligne's
+diagrams visually checked. Deligne's arithmetic-degree convention explains its minus
 sign; the project's geometric-degree convention gives the plus sign
 in `GeometricOrderRelation`.
 
@@ -108,20 +108,19 @@ The five imported construction pairs, `Units`, `Completion`, `FiniteArtin`,
 `WeilAbelianization` and `Transfer`, were published under
 `Langlands/LocalClassField` in Library
 `30ceb5a0d89d8094c1663fc19f35416519b9a125`. The module-path consolidation
-(pilot task `295b0f1c-439f-4b3e-8c86-14e5bd541262`) moved them to the same
-basenames under `Langlands/ClassFieldTheory/Local`, and this module now
+moved them to the same
+basenames under `Langlands/ClassFieldTheory/Local`, and this module
 imports them from there; the old paths remain as declaration-free re-exports.
-This new module uses the canonical `ClassFieldTheory/Local` directory;
+This module uses the canonical `ClassFieldTheory/Local` directory;
 the existing imported declarations keep their published names.
 The prepared environment is
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, Lean 4.34.0 and Mathlib
+Lean 4.34.0 and Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.
 
-Development check `43d82dee-4bc4-4dd2-9e8e-4308d42c4939`, over that
+A development check, over that
 Library and with the original `Langlands.LocalClassField` imports, compiled
 this module without errors or warnings. Inspection
 confirmed that `LocalReciprocityExistence` is a `Prop`-valued definition
 in the arbitrary field universe `u`, using only the standard axioms
 `propext`, `Classical.choice` and `Quot.sound`. This checks elaboration
-of the definition, not truth of its proposition. Independent semantic review
-accepted this construction contribution separately from the development check.
+of the definition, not truth of its proposition.

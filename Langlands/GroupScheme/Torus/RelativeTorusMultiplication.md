@@ -1,6 +1,6 @@
 # Multiplication and torsion targets for relative tori
 
-Worker 584. Internal lemmas for the arbitrary-base largest-subtorus proof.
+Internal lemmas for the arbitrary-base largest-subtorus proof.
 
 Nonzero integer multiplication on a split torus is flat and surjective over
 every scheme. The proof pulls the corresponding result over `Spec (ULift ℤ)`

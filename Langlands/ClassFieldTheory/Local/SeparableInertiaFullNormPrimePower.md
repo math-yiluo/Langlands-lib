@@ -1,7 +1,5 @@
 # Chosen full norm preimages for prime-power Galois groups
 
-Author: Worker 1607.
-
 This is an internal derived extension of the generic results in
 `SeparableInertiaNormCyclic`, `SeparableInertiaNormReduction`, and
 `SeparableInertiaNormAmbient`. It provides full norm surjectivity for prime-power Galois subextensions under the published valuation hypotheses.

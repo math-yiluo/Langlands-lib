@@ -59,7 +59,7 @@ theorem exists_generic_generization_not_mem [Smooth Y.hom] [QuasiCompact Y.hom]
     exact hyne (hgmax y hyW hyg)
   have : IsRegularLocalRing (Y.left.presheaf.stalk g) :=
     Smooth.isRegularLocalRing_stalk_of_isDiscreteValuationRing R Y.hom g
-  have := IsRegularLocalRing.isDomain (Y.left.presheaf.stalk g)
+  have := IsRegularLocalRing.isDomainFLT (Y.left.presheaf.stalk g)
   have := smoothDVR_factorialStalks R Y.left Y.hom g
   exact FactorialAffineComplement.false_of_generization_chain hW hgE hgen
     hy₀ξ hξg hy₀ne hξne

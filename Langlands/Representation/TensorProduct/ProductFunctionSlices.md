@@ -16,5 +16,7 @@ that coordinate intertwines them.
 
 This internal construction turns identities for individual Levi slices
 into identities for the block operators on the coefficient tensor. It
-allows the cuspidal direct-sum projections in Task 6823 to retain those
+allows the cuspidal direct-sum projections in the proof of
+`CuspidalSupportExistenceStatement`
+(`Langlands.Global.Factors.CuspidalSupportExistenceProof`) to retain those
 operator identities.

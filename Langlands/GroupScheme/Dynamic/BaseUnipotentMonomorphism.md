@@ -48,6 +48,6 @@ groups are affine schemes and the ambient map remains monic. The imported
 affine theorem therefore proves closedness on that chart, and the general
 descent helper finishes.
 
-This unit proves closedness of induced unipotent subgroup maps. It does not
+This module proves closedness of induced unipotent subgroup maps. It does not
 prove the reductive monomorphism theorem: the centralizer, cell, and global
 steps remain separate obligations.

@@ -1,6 +1,6 @@
 # Exponents of a twisted irreducible tempered representation
 
-Author: Worker 135. This derived construction proves the inducing-side
+This derived construction proves the inducing-side
 real-part assertion used in Renard VII.4.1. It does not address the
 nonidentity geometric-lemma pieces or prove opposite regularity.
 
@@ -31,7 +31,7 @@ assumed; the local-field and carrier universes remain independent.
 This is a derived input for Renard, *Représentations des groupes réductifs
 p-adiques*, French version dated 9 July 2026, VII.4.1 Lemma proof, printed
 p.242 / PDF p.248, where the inducing exponents are shown to have real part
-`Re(psi)`. Worker 135 read this page. The registered source is
+`Re(psi)`. This page was read. The registered source is
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 The Lean result permits any smooth twist and proves the assertion directly

@@ -1,7 +1,5 @@
 # Proof of irreducible unequal-rank mirabolic pairing rigidity
 
-Author: Worker 895.
-
 Module `Langlands.Representation.RankinSelberg.UnequalRankMirabolicPairingProof`.
 
 This module proves `Langlands.RankinSelberg.unequalRankMirabolicPairingRigidity`.

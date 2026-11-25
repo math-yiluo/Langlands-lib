@@ -1,6 +1,6 @@
 # Finite-separable Weil restriction in canonical embedding coordinates
 
-Worker 207. This derived adapter applies the published finite-separable
+This derived adapter applies the published finite-separable
 tensor evaluation theorem to the existing Weil-restriction and actual
 Galois lattice constructions.
 

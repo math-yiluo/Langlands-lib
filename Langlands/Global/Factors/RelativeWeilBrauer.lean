@@ -85,7 +85,7 @@ theorem continuousTwist_continuousInduce_eq_along (φ : H →ₜ* G)
 
 end Langlands.VirtualRepresentation.ExactGrothendieckGroup
 
-namespace Langlands.ClassField.Global.RelativeWeilGroup
+namespace Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 
 open Langlands.VirtualRepresentation
 
@@ -432,4 +432,4 @@ theorem exists_continuousRestrict_decomposition {z : Langlands.Global.FinitePlac
 
 end Local
 
-end Langlands.ClassField.Global.RelativeWeilGroup
+end Langlands.ClassFieldTheory.Global.RelativeWeilGroup

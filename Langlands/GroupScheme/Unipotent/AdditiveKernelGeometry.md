@@ -1,7 +1,5 @@
 # Closed additive subgroups in actual polynomial kernels
 
-Author: Worker 864.
-
 This derived geometric adapter implements a consequence of Conrad–Gabber–Prasad,
 *Pseudo-reductive Groups*, second edition (2015), Lemmas B.1.7–B.1.9,
 printed pp.563–565, one-based PDF pp.589–591. The registered source is
@@ -96,8 +94,8 @@ the actual constructions here cover every field. The empty-dimensional
 case causes no exception: the split or nonconstant polynomial input is then
 impossible.
 
-This unit constructs maps of actual group schemes from polynomial tuples.
+This module constructs maps of actual group schemes from polynomial tuples.
 It does not extract polynomials from an arbitrary affine-line morphism,
 construct a full vector-coordinate isomorphism, supply embeddings or
 vector-factor decompositions for arbitrary unipotent groups, or prove the
-full woundness criterion. Those remain separate obligations.
+full woundness criterion.

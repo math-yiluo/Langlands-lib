@@ -40,12 +40,12 @@ include hP in
 /-- The domain of the copy indexed by the coset `H` is identified with `X` by the fold
 morphism followed by the action of the chosen representative `r` of that coset. -/
 theorem isIso_copyDomain_foldHom :
-    IsIso (domainι _ (copyDomain H X (baseCoset H)) ≫ foldHom H X ≫ X.ρ (baseRep H)) := by
+    IsIso (domainι _ (copyDomain H X (baseCoset H)) ≫ foldHom H X ≫ (X.ρ (baseRep H)).asHom) := by
   refine ⟨⟨domainLift (copyDomain H X (baseCoset H)) (unitHom H X)
     (unitHom_mem_copyDomain H X), ?_, ?_⟩⟩
   · apply (cancel_mono (domainι _ (copyDomain H X (baseCoset H)))).1
     rw [Category.assoc, Category.assoc, Category.assoc, domainLift_comp, Category.id_comp,
-      unitHom, ρ_comp_assoc, inv_mul_cancel, Action.ρ_one, Category.id_comp,
+      unitHom, ρ_comp_assoc, inv_mul_cancel, Action.ρ_one, End.one_asHom, Category.id_comp,
       domainι_copyDomain_foldHom_copy H X hP]
   · rw [domainLift_comp_assoc, unitHom_foldHom]
 
@@ -69,7 +69,7 @@ theorem mem_preimageDomain_iff (c : G ⧸ H) (y : localizedSpaceFunctor.obj Y.V)
   mem_range_copy_space_iff H X c _
 
 theorem map_hom_ρ_apply (g : G) (y : localizedSpaceFunctor.obj Y.V) :
-    localizedSpaceFunctor.map π.hom (localizedSpaceFunctor.map (Y.ρ g) y) =
+    localizedSpaceFunctor.map π.hom (localizedSpaceFunctor.map (Y.ρ g).asHom y) =
       localizedSpaceFunctor.map (actionMap H X g) (localizedSpaceFunctor.map π.hom y) := by
   rw [← ConcreteCategory.comp_apply, ← Functor.map_comp, π.comm g, Functor.map_comp,
     ConcreteCategory.comp_apply]
@@ -77,13 +77,13 @@ theorem map_hom_ρ_apply (g : G) (y : localizedSpaceFunctor.obj Y.V) :
 
 theorem ρ_mem_preimageDomain (g : G) {c : G ⧸ H} (y : localizedSpaceFunctor.obj Y.V)
     (hy : y ∈ (preimageDomain π c).carrier) :
-    localizedSpaceFunctor.map (Y.ρ g) y ∈ (preimageDomain π (g • c)).carrier := by
+    localizedSpaceFunctor.map (Y.ρ g).asHom y ∈ (preimageDomain π (g • c)).carrier := by
   rw [mem_preimageDomain_iff] at hy ⊢
   rw [map_hom_ρ_apply, pointCoset_actionMap, hy]
 
 theorem ρ_mem_preimageDomain_baseCoset (h : H) :
     ∀ y ∈ (preimageDomain π (baseCoset H)).carrier,
-      localizedSpaceFunctor.map (Y.ρ (h : G)) y ∈ (preimageDomain π (baseCoset H)).carrier :=
+      localizedSpaceFunctor.map (Y.ρ (h : G)).asHom y ∈ (preimageDomain π (baseCoset H)).carrier :=
   fun y hy => by
     have := ρ_mem_preimageDomain π (h : G) y hy
     rwa [smul_baseCoset] at this
@@ -106,7 +106,7 @@ abbrev baseInclusion : baseAction π ⟶ (Action.res _ H.subtype).obj Y :=
 /-- The morphism `π⁻¹(X_H) → X`: the restriction of `π`, followed by the fold morphism and the
 action of the chosen representative `r` of the coset `H`. -/
 def baseHomV : domainObj Y.V (preimageDomain π (baseCoset H)) ⟶ X.V :=
-  domainι Y.V (preimageDomain π (baseCoset H)) ≫ π.hom ≫ foldHom H X ≫ X.ρ (baseRep H)
+  domainι Y.V (preimageDomain π (baseCoset H)) ≫ π.hom ≫ foldHom H X ≫ (X.ρ (baseRep H)).asHom
 
 variable (hP : OpenPartitionCoproductStatement.{u, v, z})
 
@@ -120,13 +120,13 @@ theorem baseHomV_unitHom :
   have h := foldHom_copy_of_pointCoset H X hP _ _ hf
   rw [Category.assoc] at h
   rw [baseHomV, unitHom, Category.assoc, Category.assoc, Category.assoc, ρ_comp_assoc,
-    inv_mul_cancel, Action.ρ_one, Category.id_comp, h]
+    inv_mul_cancel, Action.ρ_one, End.one_asHom, Category.id_comp, h]
 
 include hP in
 theorem baseHomV_comm (h : H) :
-    domainRestrict (preimageDomain π (baseCoset H)) (preimageDomain π (baseCoset H)) (Y.ρ (h : G))
-        (ρ_mem_preimageDomain_baseCoset π h) ≫ baseHomV π =
-      baseHomV π ≫ X.ρ h := by
+    domainRestrict (preimageDomain π (baseCoset H)) (preimageDomain π (baseCoset H))
+        (Y.ρ (h : G)).asHom (ρ_mem_preimageDomain_baseCoset π h) ≫ baseHomV π =
+      baseHomV π ≫ (X.ρ h).asHom := by
   apply (cancel_mono (unitHom H X)).1
   rw [Category.assoc, baseHomV_unitHom π hP, Category.assoc, unitHom_comm,
     ← Category.assoc (baseHomV π), baseHomV_unitHom π hP, domainRestrict_comp_assoc, π.comm,

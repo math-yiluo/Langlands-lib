@@ -1,6 +1,6 @@
 # Focused finite-index induction and restriction statements
 
-Worker 312 separates the published proposition
+This module separates the published proposition
 `Langlands.Weil.RepresentationInductionFiniteness.{uG,uV}` in
 [`RestrictionInduction`](RestrictionInduction.md) into four standalone
 `Prop`-valued definitions. All four names below are in `Langlands.Weil`.
@@ -83,17 +83,19 @@ verbatim. The existing source map explicitly labels their dimension,
 finite-image, and semisimplicity assertions as derived general representation
 theory over `ℂ`; the new declarations retain that provenance.
 
-Future proofs may use finite coset coordinates for dimension, a finite coset
+Proofs may use finite coset coordinates for dimension, a finite coset
 action or kernel/core argument for finite image, and normal-core descent,
 finite sums of conjugate restrictions, averaging, and identity-coset reflection
 for semisimplicity. These are proof directions, not hypotheses, implemented
-proofs, or assumptions about unpublished dependencies. Proofs of the components
-and their assembly remain separate work.
+proofs, or assumptions about other modules. The components are proved in
+`InductionDimensionProof`, `InductionFiniteImageProof`,
+`InductionSemisimplicityProof` and `FiniteIndexRestrictionSemisimplicityProof`,
+and their assembly in `InductionFinitenessProof`.
 
 ## Dependencies
 
 The sole direct import is the unchanged published
 `Langlands.Weil.Representation.RestrictionInduction`; its existing Mathlib
-definitions supply every construction and predicate used here. The approved
-environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, with Lean 4.34.0 and
+definitions supply every construction and predicate used here. The pinned
+environment has Lean 4.34.0 and
 Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.

@@ -21,4 +21,5 @@ to detect equality of any two global families from their restrictions.
 
 These results provide descent of actual families over supplied parameter
 schemes. Construction and smooth proper representability of the parameter
-scheme remain separate obligations of the host task.
+scheme are separate parts of the proof of `RelativeParabolicSchemeStatement`,
+which `ParabolicSchemeProof` proves.

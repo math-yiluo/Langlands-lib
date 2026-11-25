@@ -23,9 +23,10 @@ published germ map `CompactGerms.germ F x` into Mathlib's stalk
 `F.presheaf.stalk x`. The identification in the Remark is therefore asserted
 through this canonical map and not through an arbitrary isomorphism.
 
-Surjectivity is already proved as
-`CompactSectionStalks.stalkQuotientMap_surjective`. The remaining proof
-obligation is injectivity. Equivalently, a compact section with zero germ
+Surjectivity is proved as
+`CompactSectionStalks.stalkQuotientMap_surjective`. The rest is
+injectivity, proved in `CompactSectionStalksProof`
+(`stalkQuotientMap_injective`). Equivalently, a compact section with zero germ
 at `x` lies in the span. The source's argument takes a compact open
 containing the support of the section and avoiding `x`; its characteristic
 function vanishes at `x` and fixes the section.
@@ -33,5 +34,3 @@ function vanishes at `x` and fixes the section.
 The universe is `Type`, as in `CompactSupport` and `CompactGerms`, which tie
 the space, the coefficient field and the section carriers to one universe.
 This file states the proposition only; it proves nothing.
-
-Worker 184 implements this statement for Task 5338.

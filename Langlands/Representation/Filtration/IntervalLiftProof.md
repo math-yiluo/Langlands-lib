@@ -1,6 +1,6 @@
 # Lifting an actual quotient composition series
 
-Author: Worker 341. Provenance: internal module-theoretic proof.
+Provenance: internal module-theoretic proof.
 
 `Langlands.actualQuotientSeriesLift` proves exactly
 `Langlands.ActualQuotientSeriesLiftStatement.{uK, uG, uV}`, imported from

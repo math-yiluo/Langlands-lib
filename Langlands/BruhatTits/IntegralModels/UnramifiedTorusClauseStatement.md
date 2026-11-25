@@ -1,15 +1,16 @@
 # The integral split torus of a descended parahoric model
 
 `Langlands.BruhatTits.IntegralModels.UnramifiedTorusClauseStatement.{u}` is
-an unproved, Prop-valued target at arbitrary universe `u`. It derives the
+a Prop-valued target at arbitrary universe `u`, proved as
+`unramifiedTorusClause` in `UnramifiedTorusClause`. It derives the
 torus clause of KP Axiom 4.1.20(3) for a supplied model over the local
 integers from its integral points over the maximal unramified integers.
 The combined formulation is derived from several source results; it is
 not the verbatim statement of any one of them.
 
-The Lean formulation is adapted from the revision-9 shared draft of
-Task 5429 (`cd2ad671-3edf-4905-a0e2-e7aa2b160b91`). This unit publishes
-the interface; its proof is a separate obligation.
+The Lean formulation is adapted from a formulation made for the
+construction of KP integral models with Axioms 4.1.20 and 4.1.22. This
+module states the interface; its proof is in `UnramifiedTorusClause`.
 
 ## Sources and exact comparison
 
@@ -123,7 +124,7 @@ such a special apartment. No identification of `S` with the maximal
 `K`-split torus defining `C.Apartment` is needed.
 
 The expected proof proceeds as follows; none of these steps is proved
-by this statement unit.
+by this statement module.
 
 1. Let `H = Int(g)(S)`, with generic inclusion
    `iS ≫ (G.innerIso g).hom`. The image of `S(K)^1` in `G(K)` lies in
@@ -154,14 +155,15 @@ by this statement unit.
 This explains the generalization from the source's constructed descended
 model and special apartment to an arbitrary supplied model satisfying the
 point equality and fixedness. In particular the algebraic closure route
-needs no further building axioms on `C`. The target remains unproved.
+needs no further building axioms on `C`. The target is proved as
+`unramifiedTorusClause` (module `UnramifiedTorusClause`).
 
 ## Consumer
 
-Task 5429 (`cd2ad671-3edf-4905-a0e2-e7aa2b160b91`) needs this target for
-the `torus` field of `BuildingModelFamily` and the `torus_clause` field
+The construction of KP integral models with Axioms 4.1.20 and 4.1.22 needs
+this target for the `torus` field of `BuildingModelFamily` and the `torus_clause` field
 of `ModelAxiomClauses`. Their generic inclusion for the chart `g · A(S)`
 is exactly `B.i ≫ (G.innerIso g).hom`. Its unramified descent inputs
 supply the displayed point equality and the required fixedness for
 images of apartment subsets. The full `IntegralModelAxiomsStatement`
-proof remains on that task.
+proof is not part of this target.

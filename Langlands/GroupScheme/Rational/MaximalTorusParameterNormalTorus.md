@@ -1,7 +1,5 @@
 # The parameter scheme of a maximal torus whose normalizer is the whole group
 
-Author: Worker 1420.
-
 This internal, derived module treats the degenerate case of the
 maximal-torus unirationality target: every point of `G`, over every test
 scheme, normalizes the torus. The field `k : Type u` is arbitrary; there is

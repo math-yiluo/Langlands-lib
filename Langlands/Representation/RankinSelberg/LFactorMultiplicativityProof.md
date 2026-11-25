@@ -1,7 +1,5 @@
 # L-polynomial divisibility under normalized block induction
 
-Author: Worker 46.
-
 `Langlands.RankinSelberg.lFactorMultiplicativity` proves exactly
 `LFactorMultiplicativityStatement.{uF,uV,uW}` from
 [MultiplicativityStatement](MultiplicativityStatement.md). It is a closed

@@ -1,6 +1,6 @@
 # Simultaneous finite coefficient models of group homomorphisms
 
-Worker 700. Internal construction from the published finite coefficient
+Internal construction from the published finite coefficient
 source and separated target models. The two explicit proof premises are
 `HomGeneralStatement` and the scheme-level `MonomorphismStatement`.
 

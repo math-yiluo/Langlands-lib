@@ -1,4 +1,4 @@
-import Langlands.ClassField.Global.RelativeWeilTransfer
+import Langlands.ClassFieldTheory.Global.RelativeWeilTransfer
 
 /-! # The double-coset formula for the transfer along a homomorphism
 

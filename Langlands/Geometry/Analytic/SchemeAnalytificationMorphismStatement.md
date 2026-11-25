@@ -1,6 +1,6 @@
 # Statement: analytifications of morphisms of schemes exist, are unique and are functorial
 
-This unit states, without proof, that every morphism of schemes locally of
+This module states, without proof, that every morphism of schemes locally of
 finite type over `K` has exactly one analytification in the Library's glued
 polynomial-locus model. It also states that this map is compatible with
 Berkovich's center maps and with `K`-rational points, and that analytifications
@@ -42,8 +42,8 @@ functorial analytification. The registered source is
 
 The formulation is derived for the Library's model, in which the sources'
 universal property is replaced by the explicit predicate `IsAnalytificationMap`.
-In this model the items depend on facts that are stated but not yet proved in
-the Library. The image of an affine open of `X` need not lie in an affine open
+In this model the items depend on facts that are stated separately in the
+Library. The image of an affine open of `X` need not lie in an affine open
 of `Y`. So existence and uniqueness need the published
 `SchemeAnalytificationGluingStatement`, in which the canonical maps are open
 embeddings, and item (5) of the published `AnalytificationCenterStatement`, which
@@ -52,6 +52,11 @@ open under the center map. Items (2)–(4) also use the published affine
 functoriality statement `AffineAnalytificationFunctorialityStatement`. Item (3)
 also uses the published `SchemeAnalytificationRationalPointsStatement` and the
 naturality of affine rational points `AffineAnalytificationRationalPointNaturalityStatement`.
+The Library proves these statements as `schemeAnalytificationGluing`,
+`analytificationCenter`, `affineAnalytificationFunctoriality`,
+`schemeAnalytificationRationalPoints` and
+`affineAnalytificationRationalPointNaturality`, in the modules named after
+each statement with `Proof` in place of `Statement`.
 
 ## Hypotheses
 
@@ -104,9 +109,9 @@ identity morphism, is already proved as `isAnalytificationMap_id` in
 
 ## Scope
 
-The unit supplies no proof and edits no published or staged input. It imports
+The module supplies no proof; `SchemeAnalytificationMorphismProof` proves the
+statement as `schemeAnalytificationMorphism`. It imports
 `SchemeAnalytificationMorphism`, `AnalytificationCenter` and
 `SchemeAnalytificationRationalPoints`. It states nothing about open or closed
 immersions, étale maps, fibre products, extension of the ground field,
-structure sheaves, or independence of the chosen presentations. Those remain
-successor obligations of the parent task.
+structure sheaves, or independence of the chosen presentations.

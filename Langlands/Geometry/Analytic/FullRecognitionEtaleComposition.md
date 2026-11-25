@@ -1,7 +1,5 @@
 # Flat, unramified and étale morphisms over all affinoid pieces, and their composition
 
-Author: Worker 36.
-
 This module defines flatness, unramifiedness and étaleness at a point through
 property (b) of Berkovich's Proposition 3.2.3. The pointwise condition is
 required for every affinoid piece over every recognized target subset

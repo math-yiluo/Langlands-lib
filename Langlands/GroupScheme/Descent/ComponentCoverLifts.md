@@ -1,6 +1,6 @@
 # Descent coherence from unique lifts on finite overlap components
 
-Worker 416. This internal construction reduces actual group-scheme descent
+This internal construction reduces actual group-scheme descent
 coherence to isomorphisms on the supplied double-overlap components and
 uniqueness on the supplied triple-overlap components. It also provides a
 stronger interface requiring unique lifting of all pullback isomorphisms
@@ -97,7 +97,7 @@ construction invokes no field-only universal property on a nonfield
 scheme and requires no lifting property on schemes outside the supplied
 components. It constructs no descended object or effective solution.
 Cover existence and the arbitrary-field simple-connectedness theorem
-remain separate obligations.
+are not proved here.
 
 Provenance is internal: the finite-component full-faithfulness theorem,
 the explicit pullback equations in `Descent.Data`, and existence and

@@ -86,8 +86,8 @@ def harrisLatticeActionInclusion :
 
 /-- The action compatibility retains the actual ambient algebraic representation. -/
 @[simp] theorem harrisLatticeInclusion_action (g : V.subgroup) (x : harrisLattice ρ p V) :
-    harrisLatticeInclusion ρ p U V hVU (((harrisLatticeAction ρ p V).ρ g).hom x) =
-      ((harrisLatticeAction ρ p U).ρ (Subgroup.inclusion hVU g)).hom
+    harrisLatticeInclusion ρ p U V hVU (((harrisLatticeAction ρ p V).ρ g).asHom.hom x) =
+      ((harrisLatticeAction ρ p U).ρ (Subgroup.inclusion hVU g)).asHom.hom
         (harrisLatticeInclusion ρ p U V hVU x) := rfl
 
 /-- Actual full-lattice inclusion induces a map of every simultaneous torsion reduction. -/

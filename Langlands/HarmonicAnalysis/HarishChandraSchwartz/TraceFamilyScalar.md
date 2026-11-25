@@ -3,7 +3,7 @@
 Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.TraceFamilyScalar`,
 namespace `Langlands.HarishChandraSchwartz`. It imports:
 
-- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.TraceOrthogonality` (Worker 249):
+- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.TraceOrthogonality`:
   `traceOrthogonalityIntegrand`, `traceOrthogonalityIntegrand_mk`,
   `traceCoefficient_smoothContragredient`, `integral_traceOrthogonalityIntegrand_eq_zero`,
   `integral_traceOrthogonalityIntegrand_eq_formalDegree_of_mem`; through its imports
@@ -12,7 +12,7 @@ namespace `Langlands.HarishChandraSchwartz`. It imports:
   `IdempotentFamily.operator` and `exists_compactOpenSubgroup_fixed` (`SchwartzActionFamily`),
   `HasTemperedCoefficients`, `ext_smoothDual` (`SchwartzAction`), `L2Weights`,
   `ConvolutionWeights`, `TranslationWeights`, `HasRapidlyDecreasingCoefficientsOn`, the predicate
-  `IsSquareIntegrableModCentralSubgroup` (Worker 200, `CentralSubgroupCoefficients`) and
+  `IsSquareIntegrableModCentralSubgroup` (`CentralSubgroupCoefficients`) and
   `Jacquet.compressedAction`;
 - `Langlands.Representation.Twist.AdmissibilityProof` (`fixedVectors_twist_eq_of_le_ker`,
   `isAdmissible_twist_iff`) and `Langlands.Representation.Twist.SmoothPartDefinitions`

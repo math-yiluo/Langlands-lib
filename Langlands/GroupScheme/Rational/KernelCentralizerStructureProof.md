@@ -49,9 +49,8 @@ Finally, `kernelCentralizer_hasLieImage` identifies the centralizer's tangent
 image with `kernelLieInvariants i a`. Rewriting by the established submodule
 equality yields the exact integral-weight image required by the target.
 
-This is an internal assembly by Worker 1279, with Worker 1299's contribution to
-the quotient-kernel and reverse-weight argument imported from the published
-support modules. The general representability and smoothness proofs are also
+This is an internal assembly; the quotient-kernel and reverse-weight argument
+is imported from the published support modules. The general representability and smoothness proofs are also
 imported by their Lean names. There is no remaining general-theorem premise.
 The literature context is Conrad–Gabber–Prasad, *Pseudo-reductive Groups*,
 second edition (2015), Proposition A.8.10 and its use in Proposition 3.3.6

@@ -20,11 +20,11 @@ variable (F : Type u) [Field F] [Algebra O F] {d : ℕ} [NeZero d] {π : O}
 theorem inverseImageRationalLatticeIso_pi (f : X ⟶ Y)
     (M : Y.Sheaf (ModuleCat.{u} (PiAlgebra d π))) (hπ : algebraMap O F π ≠ 0) :
     (TopCat.Sheaf.pullback (ModuleCat.{u} F) f).map
-        (rationalPiAut F Y d π M hπ).hom ≫
+        (rationalPiAut F Y d π M hπ).asIso.hom ≫
           (inverseImageRationalLatticeIso F f M).hom =
       (inverseImageRationalLatticeIso F f M).hom ≫
         (rationalPiAut F X d π
-          ((TopCat.Sheaf.pullback (ModuleCat.{u} (PiAlgebra d π)) f).obj M) hπ).hom := by
+          ((TopCat.Sheaf.pullback (ModuleCat.{u} (PiAlgebra d π)) f).obj M) hπ).asIso.hom := by
   simp only [rationalPiAut_hom]
   change (TopCat.Sheaf.pullback (ModuleCat.{u} F) f).map
       ((rationalSheafFunctor F Y).map (latticePi d π Y M)) ≫
@@ -42,24 +42,24 @@ theorem inverseImageRationalLatticeIso_pi (f : X ⟶ Y)
 theorem rationalPiStalkAut_pullback (f : X ⟶ Y)
     (M : Y.Sheaf (ModuleCat.{u} (PiAlgebra d π))) (hπ : algebraMap O F π ≠ 0)
     (x : X) :
-    (rationalPiStalkAut F Y d π M hπ (f x)).hom ≫
+    (rationalPiStalkAut F Y d π M hπ (f x)).asIso.hom ≫
         (rationalLatticeStalkPullbackIso F f M x).hom =
       (rationalLatticeStalkPullbackIso F f M x).hom ≫
         (rationalPiStalkAut F X d π
-          ((TopCat.Sheaf.pullback (ModuleCat.{u} (PiAlgebra d π)) f).obj M) hπ x).hom := by
+          ((TopCat.Sheaf.pullback (ModuleCat.{u} (PiAlgebra d π)) f).obj M) hπ x).asIso.hom := by
   let T := sheafToPresheaf (Opens.grothendieckTopology X) (ModuleCat.{u} F) ⋙
     TopCat.Presheaf.stalkFunctor (ModuleCat.{u} F) x
   have h := congrArg (fun k => T.map k) (inverseImageRationalLatticeIso_pi F f M hπ)
   simp only [Functor.map_comp] at h
   change (TopCat.Presheaf.stalkFunctor (ModuleCat.{u} F) (f x)).map
-      (rationalPiAut F Y d π M hπ).hom.hom ≫
+      (rationalPiAut F Y d π M hπ).asIso.hom.hom ≫
         ((inverseImageStalkIso f (rationalLattice F Y d π M) x).hom ≫
           T.map (inverseImageRationalLatticeIso F f M).hom) =
     ((inverseImageStalkIso f (rationalLattice F Y d π M) x).hom ≫
       T.map (inverseImageRationalLatticeIso F f M).hom) ≫
         (TopCat.Presheaf.stalkFunctor (ModuleCat.{u} F) x).map
           (rationalPiAut F X d π
-            ((TopCat.Sheaf.pullback (ModuleCat.{u} (PiAlgebra d π)) f).obj M) hπ).hom.hom
+            ((TopCat.Sheaf.pullback (ModuleCat.{u} (PiAlgebra d π)) f).obj M) hπ).asIso.hom.hom
   rw [← Category.assoc, inverseImageStalkIso_naturality, Category.assoc,
     Category.assoc]
   exact congrArg (fun k => (inverseImageStalkIso f (rationalLattice F Y d π M) x).hom ≫ k) h
@@ -81,8 +81,9 @@ theorem rationalPiStalkPullbackAut_eq (f : X ⟶ Y)
       rationalPiStalkAut F X d π
         ((TopCat.Sheaf.pullback (ModuleCat.{u} (PiAlgebra d π)) f).obj M) hπ x := by
   apply Aut.ext
+  apply Iso.ext
   change (rationalLatticeStalkPullbackIso F f M x).inv ≫
-      (rationalPiStalkAut F Y d π M hπ (f x)).hom ≫
+      (rationalPiStalkAut F Y d π M hπ (f x)).asIso.hom ≫
         (rationalLatticeStalkPullbackIso F f M x).hom = _
   rw [rationalPiStalkAut_pullback, Iso.inv_hom_id_assoc]
 
@@ -90,20 +91,20 @@ theorem rationalPiStalkPullbackAut_eq (f : X ⟶ Y)
 theorem rationalPiStalkAut_zpow_pullback (f : X ⟶ Y)
     (M : Y.Sheaf (ModuleCat.{u} (PiAlgebra d π))) (hπ : algebraMap O F π ≠ 0)
     (n : ℤ) (x : X) :
-    (rationalPiStalkAut F Y d π M hπ (f x) ^ n).hom ≫
+    (rationalPiStalkAut F Y d π M hπ (f x) ^ n).asIso.hom ≫
         (rationalLatticeStalkPullbackIso F f M x).hom =
       (rationalLatticeStalkPullbackIso F f M x).hom ≫
         (rationalPiStalkAut F X d π
-          ((TopCat.Sheaf.pullback (ModuleCat.{u} (PiAlgebra d π)) f).obj M) hπ x ^ n).hom := by
+          ((TopCat.Sheaf.pullback (ModuleCat.{u} (PiAlgebra d π)) f).obj M) hπ x ^ n).asIso.hom := by
   have h := map_zpow (Aut.autMulEquivOfIso (rationalLatticeStalkPullbackIso F f M x))
     (rationalPiStalkAut F Y d π M hπ (f x)) n
   change Aut.autMulEquivOfIso (rationalLatticeStalkPullbackIso F f M x)
       (rationalPiStalkAut F Y d π M hπ (f x) ^ n) =
         rationalPiStalkPullbackAut F f M hπ x ^ n at h
   rw [rationalPiStalkPullbackAut_eq] at h
-  have hh := congrArg (fun a => a.hom) h
+  have hh := congrArg (fun a => a.asIso.hom) h
   change (rationalLatticeStalkPullbackIso F f M x).inv ≫
-      (rationalPiStalkAut F Y d π M hπ (f x) ^ n).hom ≫
+      (rationalPiStalkAut F Y d π M hπ (f x) ^ n).asIso.hom ≫
         (rationalLatticeStalkPullbackIso F f M x).hom = _ at hh
   have hhh := congrArg (fun k => (rationalLatticeStalkPullbackIso F f M x).hom ≫ k) hh
   simpa only [← Category.assoc, Iso.hom_inv_id, Category.id_comp] using hhh

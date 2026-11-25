@@ -1,7 +1,5 @@
 # Eigenvectors of compressions from generalized Jacquet exponents
 
-Author: Worker 819.
-
 This module is a helper for the proof of
 `Langlands.GLProductLeviTemperedExponentNecessityStatement`
 (see [`ProductLeviTemperedExponentNecessityStatement`](ProductLeviTemperedExponentNecessityStatement.md)).

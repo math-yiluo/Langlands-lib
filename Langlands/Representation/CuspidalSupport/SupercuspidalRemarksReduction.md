@@ -12,8 +12,8 @@ The module contains one **statement** and its proof:
 
 This is a **conditional** result. It does not prove `SupercuspidalRemarksStatements`
 outright. That still needs a proof of
-`Langlands.BruhatTits.SpecialCompact.JointSpecialCompactBasisExistenceStatement`
-(Task 4169). Once such a proof is in the Library, applying
+`Langlands.BruhatTits.SpecialCompact.JointSpecialCompactBasisExistenceStatement`.
+Once such a proof is in the Library, applying
 `supercuspidalRemarksReduction` to it proves the target statement.
 
 ## Provenance
@@ -28,9 +28,9 @@ source text.
 
 The premise is the published `JointSpecialCompactBasisExistenceStatement`. It is
 not a hypothesis of Renard's remarks. It is the premise under which the Library
-currently proves Renard's VI.2.1 implication "supercuspidal ⇒ compact on `⁰G`"
+proves Renard's VI.2.1 implication "supercuspidal ⇒ compact on `⁰G`"
 (`compactRestriction_of_isSupercuspidal`), which the forward halves of the second
-and third remarks need. The Library has no other route to that implication. The
+and third remarks need. The
 reduction records exactly that dependency: every other step uses theorems already
 proved in the Library or in the companion module `SupercuspidalRemarksGeneric`.
 

@@ -1,6 +1,6 @@
 # Proof of the gamma normalization statement
 
-Worker 216. This module proves the published Library statement
+This module proves the published Library statement
 `Langlands.RankinSelberg.GammaNormalizationStatement` (module
 `Langlands.Representation.RankinSelberg.GammaNormalizationStatement`) as the
 theorem `Langlands.RankinSelberg.gammaNormalization`.

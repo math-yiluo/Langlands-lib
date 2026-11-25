@@ -1,7 +1,5 @@
 # The Getz–Hahn split centre: the greatest `ℚ`-split torus of `Res_{F/ℚ} Z_G`
 
-Author: Worker 3659.
-
 Getz–Hahn (2.20), printed p. 68, define `A_G < G(F_∞) < G(𝔸_F)` for a number field `F` as
 "the neutral component of the `ℝ`-points of the greatest `ℚ`-split torus in
 `Res_{F/ℚ} Z_G`". The published module `AdelicRestrictionSplitCentreCanonical` builds

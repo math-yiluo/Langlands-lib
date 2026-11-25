@@ -46,10 +46,6 @@ The clauses use only the following published constructions.
   whose restriction along the augmentation `a + bε ↦ a` is `x`. `K[ε]` is
   Mathlib's `DualNumber K`.
 
-The Lean names differ slightly from the task text: the second section,
-called `u` in the task, is `t` here, and the tangent vector, called `t` in
-the task, is `v` here.
-
 ## The seven clauses
 
 1. Field-point test. For every scheme `X`, field `F : Type u`, line bundle
@@ -105,11 +101,10 @@ clause 1 makes this equivalent to generation at that point.
 ## Provenance
 
 The provenance is derived internal section calculus. No literature theorem
-is claimed. The seven clauses were assembled by Worker 354 in a shared draft
-for this task. It reuses Worker 899's field-point and right-cancellation
-calculus from the parent task `eda1f6ff-d036-4f23-aabb-7663e7606b42`, the
-algebraically closed separating-line-bundle proof, which needs exactly
-these consequences. Mathematically, clause 1 is the familiar description of
+is claimed. The seven clauses reuse field-point and right-cancellation
+calculus first written for the algebraically closed separating-line-bundle proof (the proof
+of `Langlands.GroupScheme.AlgebraicallyClosedSeparatingLineBundleStatement`),
+which needs exactly these consequences. Mathematically, clause 1 is the familiar description of
 the generation locus `X_s = {x | s ∉ 𝔪_x L_x}` through residue-field points.
 The Library's comparison between residue-field nonvanishing and the
 trivialization open is
@@ -120,14 +115,15 @@ express that a section generating at every image point frames the pulled
 back line bundle. Clause 5 holds because `Spec K[ε]` has exactly one point,
 the image of the augmentation.
 
-These remarks describe the intended proof route only. The module imports
+These remarks describe a proof route only. The module imports
 `Langlands.AlgebraicGeometry.Picard.PointTangentSeparation`,
 `Langlands.AlgebraicGeometry.Picard.LineBundleTensor`,
 `Langlands.AlgebraicGeometry.Modules.TensorSections` and
 `Langlands.AlgebraicGeometry.Modules.PullbackTensorProof`, and none of the
 comparison theorems named above. It defines no new section, tensor product,
 pullback or locus, and it proves none of the seven clauses. The proof is the
-separate obligation of a `lean.proof@1` successor task.
+theorem `lineBundleSectionVanishing` in the module
+`Langlands.AlgebraicGeometry.Picard.LineBundleSectionVanishingProof`.
 
-The pinned environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`: Lean 4.34.0
+The pinned environment is Lean 4.34.0
 and Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.

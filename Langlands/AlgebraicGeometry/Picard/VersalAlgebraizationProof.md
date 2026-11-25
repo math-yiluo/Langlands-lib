@@ -1,8 +1,7 @@
 # Algebraization of formally versal Picard families: proof
 
 Module `Langlands.AlgebraicGeometry.Picard.VersalAlgebraizationProof`, namespace
-`Langlands.AlgebraicGeometry.Picard`. Author: Worker 5125 (task
-`43ead35e-c745-43e8-b3b6-b88e0a294ec9`).
+`Langlands.AlgebraicGeometry.Picard`.
 
 The theorem
 
@@ -60,8 +59,8 @@ The approximation proof
 uses Popescu factorization (`Popescu.popescuFactorization`), the G-ring property of
 finite-type `ℤ`-algebras (`finiteTypeIntGRing`), etale approximation from a smooth
 source (`smoothEtaleCompletionApproximation`), and Noetherianity of adic completions.
-All of these are published proofs, not hypotheses. None of the unproved propositions
-excluded by the task contract is an input: in particular
+All of these are published proofs, not hypotheses. None of the following
+propositions is an input:
 `FiniteTypeVersalChartStatement`, `FiniteTypeFormalVersalBundleStatement`,
 `VersalSmoothNeighbourhoodStatement`, `PicardOpennessOfVersalityStatement` and any
 assumed atlas, approximation or algebraization statement.

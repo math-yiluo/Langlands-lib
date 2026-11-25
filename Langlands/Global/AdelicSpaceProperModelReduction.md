@@ -1,7 +1,5 @@
 # Proper arithmetic model reduction
 
-Authors: Worker 129 and Worker 157. Reused draft arguments: Worker 208 and Worker 105.
-
 This internal derived helper keeps `SpaceLimitMorphismDescent` and the properness
 case of `SpaceLimitPropertyDescends` as explicit premises. It does not prove either
 descent premise or assert an unconditional proper-model theorem.
@@ -21,8 +19,9 @@ explicit descent premises above, in arbitrary common universe `u`. Its two
 component theorems keep all supplied-model hypotheses, the given field arrow,
 and the exact commuting generic-fibre square. In the function-field case the
 constant field is finite and the original nonempty-set hypotheses are retained.
-The number-field case allows empty initial sets. This conditional theorem does
-not discharge Task 5358's unconditional proof target.
+The number-field case allows empty initial sets. This conditional theorem is
+not an unconditional proof; `adelicSpaceProperModel` (module
+`AdelicSpaceProperModelProof`) discharges its two premises.
 
 `ProperStageModel D c g` is the type of proper stage models of an actual arrow
 `g : Y ⟶ W` between spaces over the point of a cone `c` on a scheme diagram
@@ -77,12 +76,11 @@ the properness transport uses the diagonal relative closed-immersion property
 and the published transport lemmas for quasi-compactness, local finite type,
 and universal closedness.
 
-The `compIso_hom_comp_eq` proof is adapted from Worker 208's shared, unreviewed
-`AdelicSpaceSpreadIndependenceProof` draft, revision 1, for Task
-`360a1cdf-4b68-402e-b087-254b03da61f6`. Its argument is reproduced here; no unreviewed
-module is imported.
-The arithmetic spectrum-diagram specializations follow the same draft's
+The `compIso_hom_comp_eq` proof is adapted from the module
+`AdelicSpaceSpreadIndependenceProof`. Its argument is reproduced here; that
+module is not imported.
+The arithmetic spectrum-diagram specializations follow the same module's
 `curve_exists_level_hom` and `numberField_exists_level_hom` arguments.
-The union-base generic-fibre comparisons adapt Worker 105's
+The union-base generic-fibre comparisons adapt
 `curveGenericFiberIso` and `numberFieldGenericFiberIso` from the
-`AdelicSpaceSpreadInitialSet` module in the same shared draft revision.
+`AdelicSpaceSpreadInitialSet` module.

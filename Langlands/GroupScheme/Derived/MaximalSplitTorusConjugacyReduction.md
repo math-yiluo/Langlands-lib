@@ -110,17 +110,18 @@ which is `MaximalSplitToriAreConjugate G` by definition in the same way.
 
 The definition and the reductions are internal. The definition fixes the
 field, the ambient group and `d` in the published
-`DerivedMaximalSplitTorusStatement`. The proof follows the conjugacy route
-set out in the context of the proof task
-`45bba50f-b29d-49c2-b923-64037208e2e1`. It differs from the source proof in
+`DerivedMaximalSplitTorusStatement`. The proof follows the conjugacy route.
+It differs from the source proof in
 Conrad–Gabber–Prasad, *Pseudo-reductive groups*, second edition (2015),
 Theorem C.2.15 (printed p.603 / PDF p.629). Step 1 of that proof (printed
 p.604 / PDF p.630) applies Remark C.2.12(2) to a maximal `k`-torus
 containing `S`, which needs maximal tori and root systems. The conjugacy
 premise is the Borel–Tits theorem, Theorem C.2.3 of the same book (printed
 p.593 / PDF p.619): all maximal `k`-split tori of a smooth connected affine
-`k`-group are `G(k)`-conjugate. When this module was written, neither
-`SmoothMaximalSplitTorusConjugacyStatement` nor
-`MaximalSplitTorusConjugacyStatement` had a published proof in the Library
-(proof tasks `7c6d89b9-d59a-44ce-aac6-95f9fafe7b82` and
-`6cba93f0-40f3-481b-8d85-76977bc6e4ef`).
+`k`-group are `G(k)`-conjugate. The Library proves
+`SmoothMaximalSplitTorusConjugacyStatement` by
+`smoothMaximalSplitTorusConjugacy` (`Rational.SmoothMaximalSplitTorusConjugacyProof`)
+and `MaximalSplitTorusConjugacyStatement` by `maximalSplitTorusConjugacy`
+(`Rational.MaximalSplitTorusConjugacyProof`); `derivedMaximalSplitTorus`
+(`Derived.MaximalSplitTorusProof`) applies the smooth corollary above to the
+first.

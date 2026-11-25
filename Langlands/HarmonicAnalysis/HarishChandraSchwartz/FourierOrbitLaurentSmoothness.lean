@@ -5,7 +5,7 @@ import Langlands.HarmonicAnalysis.HarishChandraSchwartz.LaurentExponent
 
 `FourierOrbitSmoothness` proves that `ψ_f[O, P]` lies in `C^∞(O, P)` (Waldspurger, Proposition
 VII.1.3) for torus coordinates `e` on the unitary unramified characters of `M` and a supplied
-lattice map `n` with `χ_z(m) = ∏ⱼ zⱼ^{n(m)ⱼ}`. When `e` satisfies Worker 200's Laurent condition
+lattice map `n` with `χ_z(m) = ∏ⱼ zⱼ^{n(m)ⱼ}`. When `e` satisfies the Laurent condition
 `HasLaurentUnitaryCoordinates ν e`, the lattice map `laurentExponent ν e he` of `LaurentExponent`
 satisfies all hypotheses on `n` except the growth bound `‖n(m)‖ ≤ C (1 + σ_M(m))`. This module
 states Proposition VII.1.3 in that form.

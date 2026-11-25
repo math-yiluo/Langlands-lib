@@ -1,6 +1,6 @@
 # Extensions of split series along fppf quotients
 
-This derived unit proves that the published finite Ga-series predicate
+This derived module proves that the published finite Ga-series predicate
 `RelativeRoot.HasSplitSeries` is closed under extensions. Let `N` be a closed
 subgroup of `P` and let `q : P ⟶ Q` be an fppf quotient map with kernel exactly
 `N`. If `N` has a split series of length `m` and `Q` one of length `n`, then `P`
@@ -9,7 +9,7 @@ solvable groups", printed p.343 (PDF p.359), calls this fact obvious:
 "Extensions of split solvable groups are obviously split". In the relative
 scheme setting of `HasSplitSeries`, the subgroups of the series must remain
 smooth and connected and the quotient maps must remain fppf. Most of the work
-is checking these conditions. The unit changes no published definition.
+is checking these conditions. The module changes no published definition.
 
 ## Definition
 
@@ -114,5 +114,5 @@ Geometric connectedness follows from the published
 The hypotheses on `N` are smoothness, geometric connectedness (or connectedness
 over a field) and quasi-compactness of `q`. They are needed only to keep the new
 first subgroup `P₁` smooth and connected, as the published `HasSplitSeries`
-requires. The unit proves no statement about images or quotients of split
+requires. The module proves no statement about images or quotients of split
 groups.

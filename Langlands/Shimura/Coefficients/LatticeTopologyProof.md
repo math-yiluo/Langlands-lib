@@ -1,7 +1,5 @@
 # Proof of the topological lattice prerequisites
 
-Author: Worker 57.
-
 The target is `Langlands.Shimura.Coefficients.LatticeTopologyStatement`.
 The proof follows the explicit hypotheses of that statement and does not
 add a local-field specialization.

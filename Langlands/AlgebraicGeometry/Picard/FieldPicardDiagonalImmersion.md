@@ -1,7 +1,5 @@
 # From actual line-bundle class loci to the full Picard diagonal
 
-Author: Worker 509.
-
 This internal reduction assumes the published proposition
 `FieldPicardClassEqualizerImmersionStatement`, which concerns the equality of
 fppf classes of two actual line bundles for every scheme test. It proves the

@@ -1,7 +1,5 @@
 # Harris's groups split at the distinguished place
 
-Author: Worker 5.
-
 This pair splits the finite adelic points of Harris's unitary similitude
 groups, as topological groups, into the factor at the distinguished place
 `w₀ = v^(1)` and a complement. It also identifies the complements of `GJ` and
@@ -9,7 +7,8 @@ groups, as topological groups, into the factor at the distinguished place
 generic relation `Langlands.JacquetLanglands.IsAwayTransfer` (module
 `Langlands.JacquetLanglands.AwayTransfer`) takes as inputs. The Harris transfer
 `JL(π_f)` of Harris (1999), §5, is then this relation with the local
-Jacquet–Langlands relation at `w₀`, in a later module. Entry declaration:
+Jacquet–Langlands relation at `w₀`, in the module
+`Langlands.JacquetLanglands.HarrisTransfer`. Entry declaration:
 `Langlands.JacquetLanglands.harrisAwaySplit`.
 
 Everything here is assembled from published isomorphisms of topological groups
@@ -177,8 +176,7 @@ prime of `F` over `v`, and (4.2) keeps only the factors above `𝔭`.
 
 ## Validation
 
-In-place `lean_check` of this module with declaration
-`Langlands.JacquetLanglands.harrisAwaySplit` (record
-`890ccb8c-3597-474c-9231-59891f5cad2e`): 0 errors, 0 warnings; the
+An in-place Lean check of this module with declaration
+`Langlands.JacquetLanglands.harrisAwaySplit`: 0 errors, 0 warnings; the
 inspection reports a definition using only `propext`, `Classical.choice` and
 `Quot.sound`.

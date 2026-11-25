@@ -285,7 +285,7 @@ section Compatible
 variable {k K : Type u} [Field k] [Field K] [Algebra k K]
     {G : GroupScheme (Spec (CommRingCat.of k))} [IsAffineHom G.X.hom]
 
-local instance : IsAffineHom
+private local instance : IsAffineHom
     ((GroupScheme.baseChange (algebraBaseMap k K)).obj G).X.hom := by
   change IsAffineHom (pullback.snd G.X.hom (algebraBaseMap k K))
   infer_instance

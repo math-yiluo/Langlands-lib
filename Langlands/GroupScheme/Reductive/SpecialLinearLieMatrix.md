@@ -1,8 +1,7 @@
 # Matrix coordinates on the Lie algebra of the special linear group
 
 Helper module for the proof of
-`Langlands.GroupScheme.SpecialLinearSimplyConnectedPinningStatement`. Author: Worker 61
-(Task 5703). It gives the Lie algebra of the Library's special linear group scheme
+`Langlands.GroupScheme.SpecialLinearSimplyConnectedPinningStatement`. It gives the Lie algebra of the Library's special linear group scheme
 `SpecialLinear.groupScheme n R` coordinates: every element is a trace-zero `n × n` matrix,
 and every trace-zero matrix occurs. Here `n` is a finite index type with decidable
 equality. All declarations are in namespace `Langlands.GroupScheme.SpecialLinear.FinSucc`.

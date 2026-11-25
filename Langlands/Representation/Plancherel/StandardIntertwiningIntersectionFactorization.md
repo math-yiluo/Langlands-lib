@@ -9,7 +9,7 @@ coordinate and measure step for already given charts; existence of those
 charts for actual reductive radicals remains separate.
 
 Let `D : OrderedSubgroupFactorization U₀ U₁ U₂ V W` in any topological
-group carrier. The group operations need not be continuous for this unit.
+group carrier. The group operations need not be continuous for this module.
 The existing record supplies homeomorphisms
 
 - `(U₀ ∩ U₁) × V ≃ₜ U₁`;
@@ -57,6 +57,6 @@ The restricted first measure identity remains an application obligation.
 It is not inferred by restricting Haar measure from the original ambient
 group to a potentially null subgroup. Actual compact-open normalization
 and comparison with the source's prescribed measures remain separate.
-This unit establishes neither existence of the original three charts nor
-analytic convergence, continuation or intertwiner composition, and closes
-no whole-program Plancherel condition.
+This module establishes neither existence of the original three charts nor
+analytic convergence, continuation or intertwiner composition, and
+establishes no top-level requirement of the full Plancherel formula.

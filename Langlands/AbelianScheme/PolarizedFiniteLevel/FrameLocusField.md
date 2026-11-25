@@ -1,6 +1,6 @@
 # Projective frames of torsion evaluations over an algebraically closed field
 
-This internal support unit proves the field case of the frame-locus covering
+This internal helper module proves the field case of the frame-locus covering
 step. Let `a` be a datum of the published moduli problem over `Spec K`, where
 `K` is an algebraically closed field. It has abelian scheme `π : A → Spec K`,
 cubic bundle `L³` and rigidification module `V = π_* L³`. Its frame locus is
@@ -193,7 +193,7 @@ it to choose torsion points in general position. Lefschetz's theorem (the
 third power of an ample bundle is very ample) is Mumford, *Abelian
 Varieties*, §17, Theorem on p.163. Here it enters only through the hypothesis
 `CubicFieldEmbeddingStatement`. Mumford's statements concern configurations
-of points in projective space. This unit's frame condition is the linear
+of points in projective space. This module's frame condition is the linear
 dual: the torsion evaluations form a projective frame in the dual of the
 space of global sections. In Lean the frame condition is that frame
 evaluations of module sheaves are isomorphisms. The translation through

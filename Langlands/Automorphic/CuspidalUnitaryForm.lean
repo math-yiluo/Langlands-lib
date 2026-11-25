@@ -647,7 +647,7 @@ variable {F : Type uF} [Field F] [NumberField F] [CompactSpace (AdeleQuotient F)
 carries one positive definite Hermitian form invariant under the finite and compact
 translations and infinitesimally invariant under every actual real Lie direction. -/
 theorem isUnitarizable_of_hasUnitaryCentralCharacter (T : CuspidalOperatorRealization F r)
-    (hT : Langlands.ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T) :
+    (hT : Langlands.ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T) :
     T.realization.IsUnitarizable := by
   obtain ⟨χ, hχ, hTχ⟩ := hT
   let : MeasurableSpace (AdelicGL F (r + 1)) := borel _

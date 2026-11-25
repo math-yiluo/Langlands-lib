@@ -1,10 +1,10 @@
 # Fixed-level visibility from actual association invariance
 
-Worker 146. This internal adapter supplies the ambient-support transport needed
+This internal adapter supplies the ambient-support transport needed
 for the fixed-vector splitting route to VI.10.6(iii)–(iv). Its mathematical
 inputs are the published actual objects and theorems imported by the Lean file.
 It retains VI.9.4 and untwisted association invariance as explicit hypotheses;
-it proves neither of these source statements nor the host proposition.
+it proves neither of these source statements nor VI.10.6(iii)–(iv) itself.
 
 `bernsteinInertiaRepresentativeOnSourceLevi` takes two actual Bernstein
 cuspidal data, an actual algebraic conjugacy of their embedded Levis, and a
@@ -48,7 +48,7 @@ The global theorem
 specializes the local result to the exact geometry of
 `StandardBernsteinFixedVectorVisibilityStatement`. It constructs the canonical
 topology, local compactness, nonarchimedean group structure and actual standard
-family from the host's hypotheses. VI.9.4 at carrier universe `max uF uV` and
+family from the hypotheses of that statement. VI.9.4 at carrier universe `max uF uV` and
 the displayed global form of actual untwisted support invariance remain
 explicit. The independent field universe `uF` and coefficient-carrier universe
 `uV` are preserved. Support witnesses and induced representations use the
@@ -56,4 +56,4 @@ saturated carrier universe `max uF uV`.
 
 These are derived consequences with internal provenance. The exact
 unconditional `FixedVectorCategoryStatements` and its import closure are
-unchanged, and this contribution does not discharge that target.
+unchanged, and this module does not prove that statement.

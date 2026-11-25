@@ -1,6 +1,6 @@
 # Anisotropic inner type A and actual division norm-one models
 
-This internal contribution generalizes the implemented finite-stage pinning route
+This internal module generalizes the implemented finite-stage pinning route
 in `InnerTypeANormOneReduction` and combines it with the published
 `CentralSimpleUnits.matrixNormOneSplitRank` theorem. It holds over every field
 and in every characteristic, at every universe parameter.
@@ -38,6 +38,6 @@ isomorphism on reduced-norm-one group schemes, giving a central division
 model of reduced degree exactly `n + 1`.
 
 The provenance is an internal generalization and composition of published
-constructions. This unit does not construct an algebra anti-equivalence from
+constructions. This module does not construct an algebra anti-equivalence from
 a relative Weyl symmetry, prove that an arbitrary anisotropic group has inner
 type A, or finish the local rank-one Tits-index enumeration.

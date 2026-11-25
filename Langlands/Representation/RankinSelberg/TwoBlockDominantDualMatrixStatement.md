@@ -125,8 +125,7 @@ notation. The algebraic statement here keeps arbitrary complementary
 matrix equality is pointwise for all source rectangles and all `g`,
 with no quotient or almost-everywhere qualification.
 
-Worker 1198 authored this statement and documentation using Worker 484's
-supplied signed-coordinate and full-matrix design. The latter design,
+The statement uses a signed-coordinate and full-matrix design. That design,
 its arbitrary-field scope and its packaging as a single closed proposition
 are derived support for the source comparison. This pair supplies no
 proof of these identities and asserts no dual-section realization,

@@ -1,7 +1,5 @@
 # Signed discriminant of the rank-three symmetric component
 
-Worker 863, Task 7498.
-
 Let `H` be a nondegenerate rank-three skew Gram matrix over a central division
 algebra of characteristic zero. Use quaternion coordinates `Q` compatible with
 the conjugation and assume the quaternion conjugate-product norm identity.

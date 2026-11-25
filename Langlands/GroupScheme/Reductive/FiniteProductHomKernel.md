@@ -1,7 +1,5 @@
 # Finite product homomorphisms with monic factor restrictions
 
-Worker 632.
-
 Internal lemmas for actual component product assembly in the proof of Conrad's
 Proposition 6.4.4 and Remark 6.4.5. Let `f : pi H ⟶ G` be a homomorphism from a
 finite categorical product. If each restriction to a factor is monic on all

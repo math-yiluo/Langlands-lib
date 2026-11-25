@@ -1,7 +1,5 @@
 # Unitary extension of one finite local character
 
-Author: Worker 5167, using the carried draft by Worker 1607.
-
 `Langlands.Global.UnitaryLocalCharacterExtensionStatement.{u}` is a
 proposition definition, with arbitrary field universe `u`. It says that for
 every number field `F : Type u`, finite place `v`, and continuous homomorphism
@@ -88,9 +86,9 @@ Registered originals:
   `/home/taskhub/central-library/Folland--A Course in Abstract Harmonic Analysis (Second Edition)--2015.pdf`;
   Corollary 4.42, Theorem 4.40, and the Chapter 4 conventions as above.
 
-## Remaining formal prerequisites
+## Formal prerequisites
 
-The intended proof must establish or reuse the following facts for these
+A proof must establish or reuse the following facts for these
 actual objects, in every field universe:
 
 1. `finiteClassInclusion F v` is injective, has closed range, and identifies
@@ -124,5 +122,6 @@ directly provide item 3. Likewise
 `Langlands.Global.FiniteOrderCharacterPrescriptionStatement` only covers
 finite-order input and does not settle this unrestricted proposition.
 
-The exact proof is a separate successor. No automorphic twist, Weil
+The proof is `Langlands.Global.unitaryLocalCharacterExtension` in
+`Langlands.Global.Arithmetic.UnitaryLocalCharacterExtensionProof`. No automorphic twist, Weil
 representation, or relative isometry construction is asserted by this file.

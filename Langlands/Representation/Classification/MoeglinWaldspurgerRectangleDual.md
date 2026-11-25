@@ -1,6 +1,6 @@
 # The MW algorithm on integer rectangles
 
-Worker 38. This module computes the Library's integer-line
+This module computes the Library's integer-line
 Moeglin–Waldspurger algorithm (`Langlands.MoeglinWaldspurger.dual`, module
 `MoeglinWaldspurger`) on rectangles. It then identifies the realization of a
 rectangle with Tadić's centered multisegment `a(r,d)^ρ`

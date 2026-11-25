@@ -1,7 +1,5 @@
 # Homology sheaf systems of actual associated power complexes
 
-Author: Worker 13.
-
 This module constructs the homology sheaf systems of the published actual
 sheaf-power and associated coefficient-power complexes. It constructs their
 ordinary inverse limits and comparison, the canonical maps from homology of

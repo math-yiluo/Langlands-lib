@@ -8,7 +8,7 @@ are set after the imports; the import of `P2M.Util` is dropped; in `Λ'_surjecti
 alternative of an `induction` on a tensor product is removed, since the current Mathlib
 induction principle has no zero case. The paired Markdown file lists the changes.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Theorems.Thm_HopfAlgebra_exists_algEquiv_subalgebraTensor_tensorQuotient_of_comul_mem_span
 set_option maxHeartbeats 4000000
 set_option synthInstance.maxHeartbeats 400000

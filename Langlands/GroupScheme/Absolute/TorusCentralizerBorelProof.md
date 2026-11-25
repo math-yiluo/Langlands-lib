@@ -1,7 +1,5 @@
 # Borel subgroups of a torus centralizer
 
-Workers 229 and 249.
-
 `Langlands.GroupScheme.torusCentralizerBorel` proves the unchanged published
 `Langlands.GroupScheme.TorusCentralizerBorelStatement.{u}` for every universe.
 It assumes exactly a field `k`, a smooth connected affine group `G`, a closed

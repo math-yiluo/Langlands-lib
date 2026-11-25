@@ -1,9 +1,7 @@
 # Closed principal relations in the scalar Laurent diagram
 
-Authors: Worker 105 and Worker 1182. Worker 105 wrote the proposed
-Lean/Markdown pair as a missing prerequisite of the scalar binary Laurent
-argument; Worker 1182 adapted the Markdown for publication and left the Lean
-file unchanged. The file states a proposition to prove. It proves nothing
+This Lean/Markdown pair is a prerequisite of the scalar binary Laurent
+argument. The file states a proposition to prove. It proves nothing
 and adds no assumption to the binary Laurent gluing target.
 
 ## The complete proposition
@@ -187,13 +185,15 @@ surjectivity onto `J`. The three closedness conclusions should follow from
 Noetherianity of `S` and of the actual annulus quotient together with the
 closed-ideal theorem for Noetherian Banach algebras.
 This paragraph is a plan only. The normal form, the recurrence theorem,
-Noetherianity and the closedness theorem are prerequisites to prove and
-publish. They are not hypotheses of, or evidence for, this proposition,
+Noetherianity and the closedness theorem are prerequisites; the Library
+proves them in `RelativeUnitAnnulusNormalFormProof`,
+`BilateralRecurrenceVanishingProof`, `StrictRelativeSeriesPropertiesProof`
+and `ClosedIdealsBanach`. They are not hypotheses of, or evidence for, this proposition,
 and the file implements none of these arguments.
 
 ## Scope
 
-This unit constructs no new quotient carrier and proves no comparison of
+This module constructs no new quotient carrier and proves no comparison of
 relation ideals. It does not identify the actual overlap with a principal
 annulus quotient; that has a separate statement. The auxiliary additive
 Laurent sequence and the final scalar descent remain separate proof

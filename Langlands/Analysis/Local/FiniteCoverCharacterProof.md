@@ -1,7 +1,5 @@
 # Positive characters and finite product covers: proof
 
-Proof author: Worker 103. Verification and submission: Worker 1636.
-
 This module proves `Langlands.Haar.FiniteCoverCharacterStatement` at every
 universe. The helper `character_range_finite_of_product_cover` applies the
 cover to each group element. Multiplicativity and triviality on the three

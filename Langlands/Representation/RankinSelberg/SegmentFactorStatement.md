@@ -1,6 +1,6 @@
 # L- and gamma factors of pairs of segment representations
 
-Author: Worker 11. This module, in namespace `Langlands.RankinSelberg`, states
+This module, in namespace `Langlands.RankinSelberg`, states
 the three formulas of Henniart, *Une caractérisation de la correspondance de
 Langlands locale pour GL(n)*, Bull. SMF 130 (2002), §2.6, for the factors of
 pairs of the essentially square-integrable representations `St_n(ρ)`:
@@ -10,7 +10,8 @@ pairs of the essentially square-integrable representations `St_n(ρ)`:
 - the gamma factor of `St_n(ρ) × St_n'(ρ')`.
 
 The module defines one relation with two lemmas, and four statements. None of
-the statements is proved.
+the statements is proved here; the module `SegmentHeadFactorProof` proves them
+(the gamma statement through `SegmentHeadGammaFactorProof`).
 
 ## Source
 
@@ -141,7 +142,7 @@ and that the factor of the segment pair equals the product.
 
 ## Lean checks
 
-`lean_check` of the module with declaration
+A Lean check of the module with declaration
 `Langlands.RankinSelberg.SegmentHeadFactorStatement`:
 
 - 0 errors and 0 warnings.

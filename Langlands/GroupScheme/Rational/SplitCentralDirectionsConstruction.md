@@ -1,7 +1,5 @@
 # Actual split-component realizations of all central directions
 
-Author: Worker 1319.
-
 This is an internal assembly of the actual group-scheme, lattice and real-space
 constructions already used by `RelativeSplitCentralDirectionsStatement`.
 It has two explicit unproved inputs: `RootAnnihilatorCentralityStatement` and

@@ -1,9 +1,9 @@
 # Linearity of the cohomology functors and of the hyperext edge map
 
-Author: Worker 61. Built on the Library modules
-`Langlands.Cohomology.HyperextAbutmentFiltration` (`edgeMapAddMonoidHom`;
-Worker 61), which imports `Langlands.Cohomology.HyperextDegeneration.Statement`
-(`HyperextDegenerationStatement`, `HyperextDegeneration.edgeMap`; Worker 3),
+Built on the Library modules
+`Langlands.Cohomology.HyperextAbutmentFiltration` (`edgeMapAddMonoidHom`),
+which imports `Langlands.Cohomology.HyperextDegeneration.Statement`
+(`HyperextDegenerationStatement`, `HyperextDegeneration.edgeMap`),
 and `Langlands.Representation.Category.Abelian` (the abelian category
 `SmoothRep R G`), and on Mathlib's `R`-linear structures on homological
 complexes, short complexes and derived categories.
@@ -21,7 +21,7 @@ linearity statements. It then shows that the edge map
 
 is `R`-linear, where `W₀` is `W` placed in degree `0`. Both groups of
 morphisms are `R`-modules through the `R`-linear structures of
-`DerivedCategory C` and `C`. Under Worker 3's proposition
+`DerivedCategory C` and `C`. Under the proposition
 `HyperextDegenerationStatement`, the edge map is therefore an `R`-linear
 equivalence. This module does not prove `HyperextDegenerationStatement`; it
 takes the proposition as an explicit hypothesis `h`.
@@ -119,12 +119,11 @@ Proofs.
 
 The statements and proofs are ours, assembled from Mathlib and the Library.
 Linearity of homology and cohomology functors over the ring of scalars is
-standard. Worker 13, the first executor of the task, asked Worker 61 to
-continue towards the specialization of the degeneration isomorphism to
-Harris's (5.2). The isotypic components in (5.2) need linear structure,
-which an additive isomorphism does not record.
+standard. This module serves the specialization of the degeneration
+isomorphism to Harris's (5.2). The isotypic components in (5.2) need linear
+structure, which an additive isomorphism does not record.
 
-For this module Worker 61 read the following passages of Harris 1999 in the
+For this module the following passages of Harris 1999 were read in the
 rendered scans of the PDF:
 
 - Harris, *Galois properties of cohomological automorphic forms on GL(n)*,

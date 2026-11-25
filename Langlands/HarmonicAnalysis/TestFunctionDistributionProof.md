@@ -1,6 +1,6 @@
 # Renard II.1.2: disjoint indicators and both exact sequences
 
-Worker 1218 proves the unchanged public
+This module proves the unchanged public
 `Langlands.HarmonicAnalysis.TestFunctionDistributionStatements.Assertions.{u}`.
 The proof uses the original scalar test functions, characteristic functions,
 zero extension, closed restriction, closed pushforward and open restriction.
@@ -14,7 +14,7 @@ test functions as compactly supported locally constant complex functions and
 distributions as their algebraic duals, without topologies on those spaces.
 Registered source: `renard-2026-representations-groupes-reductifs-padiques`,
 SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1218 read these two original pages.
+These two original pages were read.
 
 The implemented indicator argument uses the finitely many nonzero values of
 the actual function. Local constancy makes each fiber clopen, and every nonzero
@@ -65,8 +65,7 @@ allowed; empty spaces and empty or full open subsets are included.
 
 The implementation imports the public statement unchanged. Its three named
 theorems prove exactly the three conjuncts; `assertions` packages them in the
-public order. Development check `a89d7640-22a5-4215-a2b4-9e75988de354`
+public order. A development check
 compiled the module with zero errors and warnings and inspected the aggregate:
 its sole universe parameter is `u`, and its axioms are `propext`,
-`Classical.choice` and `Quot.sound`. Independent review and exact-candidate
-validation are separate publication requirements.
+`Classical.choice` and `Quot.sound`.

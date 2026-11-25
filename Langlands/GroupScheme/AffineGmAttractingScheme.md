@@ -42,6 +42,6 @@ spectrum criterion transfers this back to the actual scheme.
 This is an internal construction from affine coordinates, polynomial and
 Laurent universal properties, quotient gluing and the existing graded smoothness
 lemmas. It generalizes the affine-group attracting method to arbitrary affine
-targets without imposing a target group law. This unit does not construct the
+targets without imposing a target group law. This module does not construct the
 limit map to the fixed scheme, prove orbit closedness or reductive quotient
 affineness, or prove `DynamicQuotientProperStatement`.

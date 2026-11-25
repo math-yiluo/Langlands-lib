@@ -119,7 +119,7 @@ section MonoDetection
 /-- On an affine scheme, a morphism of invertible modules injective on global sections is a
 monomorphism: sections over basic opens are localizations of global sections. -/
 lemma mono_of_injective_top {Y : Scheme.{u}} [IsAffine Y] {M N : Y.Modules} (φ : M ⟶ N)
-    (hM : Scheme.Modules.IsInvertible M) (hN : Scheme.Modules.IsInvertible N)
+    (hM : Scheme.Modules.IsInvertibleFLT M) (hN : Scheme.Modules.IsInvertibleFLT N)
     (hinj : Function.Injective (φ.app ⊤)) : Mono φ := by
   apply Langlands.SchemeModule.mono_of_stalk_injective
   apply TopCat.Presheaf.stalkFunctor_map_injective_of_isBasis (isBasis_basicOpen Y)
@@ -157,7 +157,7 @@ open Langlands.AlgebraicGeometry.Modules.DerivedSections
 
 /-- Invertible modules are quasi-coherent. -/
 lemma isQuasicoherent_of_isInvertible {X : Scheme.{u}} {M : X.Modules}
-    (hM : Scheme.Modules.IsInvertible M) : M.IsQuasicoherent :=
+    (hM : Scheme.Modules.IsInvertibleFLT M) : M.IsQuasicoherent :=
   IsLocallyFreeRankOne.isQuasicoherent (fun x => by
     obtain ⟨U, hx, ⟨e⟩⟩ := hM.exists_trivialization x
     exact ⟨U, hx, ⟨(Scheme.Modules.restrictFunctorIsoPullback U.ι).app _ ≪≫ e⟩⟩)
@@ -169,7 +169,7 @@ cokernel `C`. Then its pullback along any affine cartesian base change `Y ⟶ U`
 lemma mono_pullback_of_affine_square {U Y : Scheme.{u}} [IsAffine U] [IsAffine Y]
     {R R' : CommRingCat.{u}} (φ : R ⟶ R') (f : U ⟶ Spec R) (f' : Y ⟶ Spec R') (g : Y ⟶ U)
     (hsq : IsPullback g f' f (Spec.map φ)) {M N : U.Modules} (ι : M ⟶ N)
-    (hM : Scheme.Modules.IsInvertible M) (hN : Scheme.Modules.IsInvertible N)
+    (hM : Scheme.Modules.IsInvertibleFLT M) (hN : Scheme.Modules.IsInvertibleFLT N)
     {C : Type u} [AddCommGroup C] [Module R C] [Module.Flat R C]
     (q : (relativeGlobalSections f).obj N →ₗ[R] C) (hq : Function.Surjective q)
     (hι : Function.Injective ((relativeGlobalSections f).map ι))
@@ -197,7 +197,7 @@ lemma mono_pullback_of_affine_square {U Y : Scheme.{u}} [IsAffine U] [IsAffine Y
         (scalarSectionsBaseChangeMap φ f f' g hsq.w N)).1.comp
       (hext.comp (ConcreteCategory.bijective_of_isIso
         (inv (scalarSectionsBaseChangeMap φ f f' g hsq.w M))).1)
-  exact mono_of_injective_top _ (hM.pullback g) (hN.pullback g) htop
+  exact mono_of_injective_top _ (Scheme.Modules.IsInvertible.pullbackFLT (hL := hM) g) (Scheme.Modules.IsInvertible.pullbackFLT (hL := hN) g) htop
 
 end Chart
 
@@ -230,7 +230,9 @@ lemma stalk_injective_of_mono_pullback {W Z : Scheme.{u}} (j : W ⟶ Z) [IsOpenI
     simp
   have : Mono (F.map α) := by
     rw [heq]
-    infer_instance
+    have h1 : Mono (e.inv.app M) := IsIso.mono_of_iso _
+    have h2 : Mono (e.hom.app N) := IsIso.mono_of_iso _
+    exact mono_comp _ _
   exact ConcreteCategory.injective_of_mono_of_preservesPullback (F.map α)
 
 end StalkTransfer
@@ -244,7 +246,7 @@ flat `R`-algebra `B`, the sections map to it being `R`-semilinear along `ρ`. -/
 lemma mono_pullback_of_affine_square_ring {U Y : Scheme.{u}} [IsAffine U] [IsAffine Y]
     {R R' : CommRingCat.{u}} (φ : R ⟶ R') (f : U ⟶ Spec R) (f' : Y ⟶ Spec R') (g : Y ⟶ U)
     (hsq : IsPullback g f' f (Spec.map φ)) {M N : U.Modules} (ι : M ⟶ N)
-    (hM : Scheme.Modules.IsInvertible M) (hN : Scheme.Modules.IsInvertible N)
+    (hM : Scheme.Modules.IsInvertibleFLT M) (hN : Scheme.Modules.IsInvertibleFLT N)
     {B : CommRingCat.{u}} (ρ : R ⟶ B) (hρ : ρ.hom.Flat)
     (q : (relativeGlobalSections f).obj N →+ B)
     (hq_smul : ∀ (r : R) (n : (relativeGlobalSections f).obj N), q (r • n) = ρ r * q n)
@@ -260,15 +262,15 @@ lemma mono_pullback_of_affine_square_ring {U Y : Scheme.{u}} [IsAffine U] [IsAff
 
 /-- Invertibility is invariant under isomorphism. -/
 lemma isInvertible_of_iso {X : Scheme.{u}} {M N : X.Modules}
-    (hM : Scheme.Modules.IsInvertible M) (e : M ≅ N) : Scheme.Modules.IsInvertible N :=
+    (hM : Scheme.Modules.IsInvertibleFLT M) (e : M ≅ N) : Scheme.Modules.IsInvertibleFLT N :=
   ⟨fun x => by
     obtain ⟨U, hx, ⟨eU⟩⟩ := hM.exists_trivialization x
     exact ⟨U, hx, ⟨(Scheme.Modules.pullback U.ι).mapIso e.symm ≪≫ eU⟩⟩⟩
 
 /-- Restriction along an open immersion preserves invertibility. -/
 lemma isInvertible_restrict {X Y : Scheme.{u}} (j : Y ⟶ X) [IsOpenImmersion j] {M : X.Modules}
-    (hM : Scheme.Modules.IsInvertible M) : Scheme.Modules.IsInvertible (M.restrict j) :=
-  isInvertible_of_iso (hM.pullback j) ((Scheme.Modules.restrictFunctorIsoPullback j).app M).symm
+    (hM : Scheme.Modules.IsInvertibleFLT M) : Scheme.Modules.IsInvertibleFLT (M.restrict j) :=
+  isInvertible_of_iso (Scheme.Modules.IsInvertible.pullbackFLT (hL := hM) j) ((Scheme.Modules.restrictFunctorIsoPullback j).app M).symm
 
 variable {S X E : Scheme.{u}} (f : X ⟶ S) (i : E ⟶ X)
 
@@ -300,7 +302,7 @@ variable [IsClosedImmersion i] [Flat (i ≫ f)]
 ideal inclusion stays a monomorphism after any affine base change: its sections are the
 inclusion of the ideal into `Γ(X, U₀)`, whose cokernel `Γ(E, i⁻¹ U₀)` is flat over `Γ(S, V)`
 because `i ≫ f` is flat. -/
-lemma mono_chart (hK : Scheme.Modules.IsInvertible (kernelModule i)) {V : S.Opens}
+lemma mono_chart (hK : Scheme.Modules.IsInvertibleFLT (kernelModule i)) {V : S.Opens}
     (hV : IsAffineOpen V) {U₀ : X.Opens} (hU₀ : IsAffineOpen U₀) (e : U₀ ≤ f ⁻¹ᵁ V)
     {R' : CommRingCat.{u}} (ψ : Γ(S, V) ⟶ R') {Y : Scheme.{u}} [IsAffine Y] (f' : Y ⟶ Spec R')
     (g' : Y ⟶ U₀) (hsq : IsPullback g' f' (chartMap f U₀ e) (Spec.map ψ)) :
@@ -354,7 +356,7 @@ immersion `i : E ⟶ X` is invertible and `i ≫ f` is flat, then the pullback o
 inclusion along `pullback.snd g f` is a monomorphism, for every `g : T ⟶ S`. -/
 lemma mono_pullback_snd_kernelModuleι {S X T E : Scheme.{u}} (f : X ⟶ S) (g : T ⟶ S)
     (i : E ⟶ X) [IsClosedImmersion i] [Flat (i ≫ f)]
-    (hK : Scheme.Modules.IsInvertible (kernelModule i)) :
+    (hK : Scheme.Modules.IsInvertibleFLT (kernelModule i)) :
     Mono ((Scheme.Modules.pullback (pullback.snd g f)).map (kernelModuleι i)) := by
   apply Langlands.SchemeModule.mono_of_stalk_injective
   intro x
@@ -409,7 +411,7 @@ end GlobalMono
 /-- **Arbitrary base change of relative effective Cartier divisors.** -/
 theorem relativeEffectiveDivisorBaseChange : RelativeEffectiveDivisorBaseChangeStatement.{u} := by
   intro S X f I hI T g
-  have hK : Scheme.Modules.IsInvertible (kernelModule I.subschemeι) :=
+  have hK : Scheme.Modules.IsInvertibleFLT (kernelModule I.subschemeι) :=
     isInvertible_of_isLocallyFreeRankOne hI.1
   have : Flat (I.subschemeι ≫ f) := hI.2
   have hm := mono_pullback_snd_kernelModuleι f g I.subschemeι hK

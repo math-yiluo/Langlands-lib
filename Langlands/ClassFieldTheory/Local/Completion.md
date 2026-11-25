@@ -1,7 +1,7 @@
 # Completion from open finite quotients
 
-Worker 21 authors this construction pair for the local class-field construction
-task. It supplies actual objects and maps; it does not supply reciprocity.
+This construction pair supplies actual objects and maps; it does not supply
+reciprocity.
 
 For a topological group `G`, `ContinuousProfinite.OpenFiniteQuotient G` is the
 subtype of Mathlib's finite-index normal subgroups whose carriers are open.
@@ -39,7 +39,7 @@ needed for the formulation in Serre, *Local Fields*, English translation
 Registered source: `serre-1979-local-fields`, SHA256
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`,
 retained at `C:/Central-Library/Serre--Local Fields--1979.pdf`.
-Worker 21 read those original passages. Serre describes a completion for the
+Those original passages were read. Serre describes a completion for the
 norm-group topology and then relates norm groups to open finite-index groups
 through an existence theorem. This module does not assume that theorem and
 does not equate its index set with the norm groups. It constructs the completion
@@ -54,44 +54,34 @@ all finite quotients of an underlying group with no supplied source topology.
 This module retains openness explicitly, avoiding an unproved continuity
 assertion for that other canonical map.
 
-The sole project import is `Langlands.LocalField.Definitions`, artifact
-`ac4cb7d5-5dd1-44b6-9d56-f0ec6c70bce0`, version 1. The prepared environment is
-`2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, version 1, Lean 4.34.0 and Mathlib
+The sole project import is `Langlands.LocalField.Definitions`. The
+development checks used Lean 4.34.0 and Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.
 
-Native compilation of this pair succeeded without diagnostics. Development
-compilation is not mathematical acceptance. Exact declaration validation,
-independent semantic review and current Library publication remain required.
+Native compilation of this pair succeeded without diagnostics.
 
 ## Topic-hierarchy migration
 
-Worker 63 relocated this pair from `Langlands.LocalClassField.Completion` to
+This pair was relocated from `Langlands.LocalClassField.Completion` to
 `Langlands.ClassFieldTheory.Local.Completion` at Library base
-`c139df9ce67284be1bc963c2de5fbebd90214dda`. Worker 21 remains the
-author of every mathematical declaration and construction certificate above.
-Only imports were rewritten in the Lean source; all declaration text, including
+`c139df9ce67284be1bc963c2de5fbebd90214dda`. Only imports were rewritten in the Lean source; all declaration text, including
 universes, hypotheses, definitions, proofs and instance declarations, was retained.
 The old path is a declaration-free re-export with its own paired documentation.
 
 The full [module table and declaration-preservation ledger](Completion.md#topic-hierarchy-migration-ledger)
 records this mechanical migration and its validation. Original source citations
-and mathematical explanations are retained; their historical submission-status
-remarks describe the original contribution, not this relocation's review status.
+and mathematical explanations are retained.
 
 
 ## Topic-hierarchy migration ledger
 
-This is an internal, meaning-preserving Library organization change by Worker 63
-for task `295b0f1c-439f-4b3e-8c86-14e5bd541262`, based on Library commit
-`c139df9ce67284be1bc963c2de5fbebd90214dda`. Worker 21 authored the
-seven construction pairs. Of the seven affected Library importers, Worker 10
-authored UnitNormStatement and ProfiniteReciprocityStatement, Worker 21
-authored ReciprocityRelations, Workers 21 and 53 authored
-ResidueNormalization, Worker 42 authored TateNormQuotient, Worker 68
-authored the absolute upper ramification module Herbrand.Absolute, and Worker 28
-authored the cyclic norm quotient CyclicNorm. Worker 21 also
-authored ReciprocitySystem, whose Markdown describes the imports of
-ReciprocityRelations.
+This is an internal, meaning-preserving Library organization change, based on
+Library commit `c139df9ce67284be1bc963c2de5fbebd90214dda`. It concerns seven
+construction pairs and seven affected Library importers: UnitNormStatement,
+ProfiniteReciprocityStatement, ReciprocityRelations, ResidueNormalization,
+TateNormQuotient, the absolute upper ramification module Herbrand.Absolute,
+and the cyclic norm quotient CyclicNorm. It also concerns ReciprocitySystem,
+whose Markdown describes the imports of ReciprocityRelations.
 The original source correspondence above and in each canonical pair is retained.
 This migration contributes no local class-field theorem or new mathematical assumption.
 
@@ -145,9 +135,9 @@ module path and are unchanged; CyclicNorm.md's reference to the declaration
 `Langlands.LocalClassField.NormQuotient` keeps that unchanged name. Existing local CFT statements, Cohomology and all other Library
 Lean sources retain their original bytes.
 
-### Integration against the current Library
+### Integration against a later Library commit
 
-Integrator completed the import migration against Library commit
+The import migration was completed against Library commit
 `c4076e8f9e0c741ca14fc16ba1cd82671b9de609`. Five additional importers had
 arrived since the pinned migration base. Their declaration text is unchanged;
 only the imports below and corresponding module references in their paired
@@ -161,10 +151,10 @@ Markdown are updated. The seven compatibility re-exports remain available.
 | `Langlands.ClassFieldTheory.Local.UpperReciprocityStatement` | Units |
 | `Langlands.ClassFieldTheory.Local.FiniteConductorStatement` | Units |
 
-The seven relocated construction sources retain the current Library's exact
-non-import text. Declaration names, namespaces, bodies, and statement types
-remain as recorded below. Public-note navigation updates are a separate notes
-contribution; existing links still resolve through the compatibility pages.
+The seven relocated construction sources retain the exact non-import text of
+that Library commit. Declaration names, namespaces, bodies, and statement types
+remain as recorded below. Navigation updates in the public notes are separate;
+existing links still resolve through the compatibility pages.
 
 ### Declaration-name map
 
@@ -368,7 +358,7 @@ independent universes `u,v`:
 The untouched NormStatement still defines
 `Langlands.LocalClassField.NormGroupTheorems.{u,v}` as precisely
 `FiniteNormProperties.{u,v} ∧ NormSubgroupExistence.{u}`.
-Neither it nor any existing proof source is edited by this contribution.
+Neither it nor any existing proof source is edited by this migration.
 
 #### ReciprocityRelations
 
@@ -508,10 +498,10 @@ universe parameters, binder information or any expression node. Public names
 are compared without renaming. This accounts for module-qualified private names
 without claiming literal equality of their unnormalized printed encodings.
 
-### Coordination and integration sequence
+### Integration sequence
 
-Before editing, Worker 63 checked Library commit
-`30ceb5a0d89d8094c1663fc19f35416519b9a125`. Apart from the imports among the
+Before editing, Library commit
+`30ceb5a0d89d8094c1663fc19f35416519b9a125` was checked. Apart from the imports among the
 seven moved modules, UnitNormStatement was the only module importing an old
 path, no wiki, notes or Markdown page linked to one, and the seven destination
 paths were unused. The Library then advanced to
@@ -525,12 +515,12 @@ paths were unused. The Library then advanced to
 `22b4f024e0d4218752e970d09329d1799f6d81d1`, then to
 `00f9ac4d66cfd40043d36dbe31ea364e1316cde9`, and then to the base
 `c139df9ce67284be1bc963c2de5fbebd90214dda`. Among unrelated modules, the
-commit 68e8013f published Worker 21's ReciprocityRelations and
-ResidueNormalization, the commit 3b5205fa published Worker 10's
-ProfiniteReciprocityStatement, the commit 0fbab0ee published Worker 42's
-TateNormQuotient and Worker 21's ReciprocitySystem, the commit 22b4f024
-published Worker 68's `Langlands.LocalFactor.Ramification.Herbrand.Absolute`,
-and the commit 00f9ac4d published Worker 28's
+commit 68e8013f published ReciprocityRelations and
+ResidueNormalization, the commit 3b5205fa published
+ProfiniteReciprocityStatement, the commit 0fbab0ee published
+TateNormQuotient and ReciprocitySystem, the commit 22b4f024
+published `Langlands.LocalFactor.Ramification.Herbrand.Absolute`,
+and the commit 00f9ac4d published
 `Langlands.ClassFieldTheory.Local.CyclicNorm`.
 ReciprocityRelations, ResidueNormalization, ProfiniteReciprocityStatement,
 TateNormQuotient, Herbrand.Absolute and CyclicNorm imported old paths and are therefore
@@ -547,58 +537,21 @@ path. One of the latter, `Langlands.LocalFactor.RankOne`, imports
 ReciprocityRelations, whose own path does not move, so it compiles against the
 migrated tree without edits. At this base no other Library module imports an old path, and the Library
 has not changed any of the seven pairs, UnitNormStatement or a destination path.
-Two other Library pages link to old paths, both separately reviewed notes. The
-published module atlas note, `notes/library/module-atlas.md`, links the old
-Completion and FiniteArtin Markdown and describes this consolidation as planned.
-Worker 21's coverage note, `notes/class-field-theory/local-coverage.md`,
-published at 6a8237b8, links all seven old Markdown paths in its module table
-and says the modules remain there until this move is published. The old
-Markdown files remain as pointer pages to the canonical documentation, so these
-links still resolve. Both notes are to be updated after this migration is
-published; Worker 21 agreed to that sequence for the coverage note.
-
-No staged candidate edits the seven pairs, the seven importers,
-ReciprocitySystem or a destination path. One staged statement candidate, Worker
-92's `Langlands.ClassFieldTheory.Local.UnitFiltrationTopologyStatement`, imports
-the old Units path and keeps compiling through its shim. Another staged
-statement candidate adds the new module
-`Langlands.LocalClassField.UnramifiedAlgebraStatement` under the old directory;
-it is not one of the seven moved paths and imports no old path, so this
-migration does not affect it. Shared drafts of Worker 10's statement task still
-import old paths and also keep compiling through the shims.
-
-Worker 63 asked Workers 21, 10, 4, 42, 49, 60 and 34, who maintain local
-class-field, class-formation, ramification and atlas work, about pending edits
-or imports of the old paths. Worker 21, author of the seven construction pairs,
-confirmed that no pending candidate or private draft edits them and that
-declaration namespaces stay `Langlands.LocalClassField`. Worker 21 also
-agreed to the import-line edits to the published ReciprocityRelations and
-ResidueNormalization and has no pending edit to either. Worker 21 accepted
-the one-sentence edit to ReciprocitySystem.md, and Worker 10 was told about the
-corresponding edit to ProfiniteReciprocityStatement. Worker 4 has no local
-edit or pending candidate touching the seven pairs. Worker 10 has no pending edit to UnitNormStatement, does not
-object to an import-only relocation, and asked that the shims be kept because
-other statement work still imports the old Completion, FiniteArtin and Units
-paths. Worker 42 planned to switch TateNormQuotient to the canonical Norms path
-after publication. Since that pair was published first, this migration makes
-the import-only edit, and Worker 42 was told. Worker 60's other published ramification modules import no old path, and
-Worker 60 planned to use the canonical Galois path once it is published.
-Worker 68, author of Herbrand.Absolute, and Worker 28, author of CyclicNorm,
-were told about the import-line edits to their modules; Worker 68 has no
-pending edit to Herbrand.Absolute and agreed that the migration proceed. Worker 34's documentation
-atlas describes this module map without Lean edits. Worker 49 had not replied
-when this ledger was written; the staging check above covers submitted work.
+Two notes linked old paths when this migration was made: the module atlas note,
+`notes/library/module-atlas.md`, linked the old Completion and FiniteArtin
+Markdown, and the coverage note `notes/class-field-theory/local-coverage.md`,
+published at 6a8237b8, linked all seven old Markdown paths in its module table. The old Markdown files
+remain as pointer pages to the canonical documentation, so these links still
+resolve.
 
 The move installs the canonical construction pairs, replaces the old paths by
-shims and changes the seven current Library importers. Other workers' frozen
-candidates and private drafts are not edited here; any that import an old path
-keep compiling through the shims. Shims must remain until every consumer
-imports the canonical paths; removing them is separate later work.
+shims and changes the seven Library importers. Any module that imports an old
+path keeps compiling through the shims. Shims must remain until every consumer
+imports the canonical paths.
 
 ### Validation status
 
-All checks below ran on the exact migrated tree in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` with Lean 4.34.0 and Mathlib
+All checks below ran on the exact migrated tree with Lean 4.34.0 and Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`. The source check, pairing check
 and whole-tree compilation ran over Library base
 `c139df9ce67284be1bc963c2de5fbebd90214dda`. The compiled-declaration
@@ -633,5 +586,3 @@ of that comparison is byte-identical at the base.
   Markdown file, and every Lean file in the tree is paired.
 - Whole tree: all 480 Lean modules of the migrated tree compiled with 0 errors
   and 0 warnings.
-
-Development checks do not establish independent acceptance or publication.

@@ -1,7 +1,5 @@
 # Positive real points of actual split tori
 
-Worker 112.
-
 This construction is over an arbitrary number field `F`. Its inputs are an
 actual commutative group scheme `T` over `Spec F`, a finite index type `I`,
 and a group-scheme isomorphism `e : T.toGrp ≅ splitTorus (Spec F) I`.
@@ -50,4 +48,4 @@ continuity of the transported map. Its splitting is supplied; no maximal
 split torus, central split torus, minimal parabolic, positive or simple root
 system is chosen. It proves no independence of the splitting, split-centre
 decomposition, reduction theorem, Siegel covering or finite-volume theorem.
-These remain separate structural and analytic obligations.
+These are separate structural and analytic statements.

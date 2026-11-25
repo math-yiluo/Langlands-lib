@@ -1,6 +1,6 @@
 # Fixed-dimension geometry of the actual restricted models
 
-This derived supporting unit completes the geometric hypotheses for applying
+This derived supporting module completes the geometric hypotheses for applying
 the uniform algebraic-space Lang–Weil statement separately to the dimension
 strata from `SmoothDimensionRestrictions`.
 

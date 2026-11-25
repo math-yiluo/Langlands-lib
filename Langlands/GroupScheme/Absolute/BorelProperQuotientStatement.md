@@ -1,8 +1,5 @@
 # Some Borel has proper homogeneous quotients
 
-Workers 1334, 1293 and 898. The statement and common-interface design reuse
-the draft of Workers 1293 and 898.
-
 `Langlands.GroupScheme.SomeBorelQuotientProperStatement.{u}` is a
 proposition-valued definition. For every algebraically closed field
 `k : Type u` and actual group scheme `G` over `S = Spec (CommRingCat.of k)`

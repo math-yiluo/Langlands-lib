@@ -1,6 +1,6 @@
 # Automatic properties of the smooth connected-fibre model
 
-Author: Worker 109. This internal supporting unit supplies three remaining
+This internal supporting module supplies three remaining
 morphism predicates for the actual models constructed in
 `AdelicSpaceSmoothModelGeometry`. It uses the published point quotient,
 relative diagonal and compact atlas interfaces, without a new external
@@ -40,5 +40,5 @@ added as a hypothesis. This applies to both arithmetic branches through the
 same actual model construction.
 
 Relative dimensions, uniform Lang-Weil, and the final adelic openness theorem
-remain separate obligations. No premise or conclusion of those statements is
-changed by this unit.
+are separate statements. No premise or conclusion of those statements is
+changed by this module.

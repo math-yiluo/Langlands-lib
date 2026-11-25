@@ -1,14 +1,11 @@
 # Normalized Jacquet scalar compatibility
 
-Authors: Worker 561, Worker 846 and Worker 438.
-
 This module proves the published proposition
 `Langlands.PadicField.TopologicalData.NormalizedJacquetScalarCompatibility.{uF,uV} T`
 by `Langlands.PadicField.TopologicalData.normalizedJacquetScalarCompatibility`.
 The theorem quantifies the prime, its primality instance, the actual p-adic
 field and its topological data in the target's order, with independent field
-and vector-space universes. Workers 561 and 846 supplied the shared proof
-draft; Worker 438 separated its entry modules and checked the exact signatures.
+and vector-space universes.
 These are internal algebraic calculations using the published quotient and
 modulus, rather than a result quoted from original literature.
 

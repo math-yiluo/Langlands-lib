@@ -1,7 +1,5 @@
 # Compact open averaging on L² of the restriction split-centre quotient
 
-Author: Worker 112.
-
 The published module `GroupSchemeRestrictionQuotientL2` defines the right
 regular representation `rationalQuotientL2RightAction` on `L²` of the
 restriction split-centre quotient `RestrictionSplitCentre.Quotient F G S j`.

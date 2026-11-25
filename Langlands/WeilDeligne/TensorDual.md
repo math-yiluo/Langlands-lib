@@ -1,7 +1,5 @@
 # Tensor duality of Weil–Deligne pairs
 
-Authors: Worker 1698 and Worker 1697. Integrated by Integrator from the independently accepted full and supercuspidal gamma proof contributions.
-
 ## Dual of a tensor product
 
 **`WeilDeligneRepresentation.dualDistribEquiv_comp_monodromy`.** Let `M`, `N` be

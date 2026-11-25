@@ -1,6 +1,6 @@
 # Dual-Hom transpose declaration checks
 
-Worker 1151 authored this companion to the construction by Worker 1187. The
+The
 generic examples assign unapplied constants directly to complete explicit
 telescope types, including every original action, scalar structure and
 nondegeneracy witness. Later examples specialize the same interfaces to explicit
@@ -20,7 +20,7 @@ The conventions, canonical scalar passage and dual definitions are on printed
 pp.5–7, p.14 and pp.22–23 / PDF pp.11–13, p.20 and pp.28–29.
 The supplement `renard-2010-corrections-complements`, SHA256
 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
-PDF pp.1–2, and the current project errata were checked; the governing source
+PDF pp.1–2, and the project errata were checked; the governing source
 and relevant correction scope are described in the construction companion.
 
 The checks cover the actual published dual subtypes and the following
@@ -80,5 +80,6 @@ nondegeneracy using the zero idempotent.
 
 No dimension or nontriviality condition is added. The source claims a natural
 isomorphism; the construction and these checks cover the two maps and their
-intrinsic laws. The inverse identities and natural linear equivalence remain
-separate statement and proof successors.
+intrinsic laws. The inverse identities and natural linear equivalence are
+stated in `NonUnitalModuleDualHomTransposeStatements` and proved in
+`NonUnitalModuleDualHomTransposeProof`.

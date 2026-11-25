@@ -1,6 +1,6 @@
 # Uniform products in unipotent matrix representations
 
-This internal derived unit uses the Library's actual `IsUnipotent` predicate,
+This internal derived module uses the Library's actual `IsUnipotent` predicate,
 which provides a nonzero common fixed vector in each nonzero finite matrix
 representation on every relative scheme test.
 
@@ -28,7 +28,7 @@ ordered product transfers the zero equation to the original representation.
 `pointMatrix_sub_one_pow_eq_zero_of_isUnipotent` takes a constant list and obtains
 `(ρ(x) - 1)^m = 0` on every test.
 
-This supplies matrix product bounds only. It does not yet prove termination of
+This supplies matrix product bounds only. It does not prove termination of
 the group-scheme descending central series, existence of a nontrivial smooth
 central vector subgroup, equivariant linearization, or the ordered-product
 statement.

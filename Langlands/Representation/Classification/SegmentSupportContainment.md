@@ -1,6 +1,6 @@
 # Containment of shifted segment supports
 
-Author: Worker 167. Extracted unchanged by the Integrator from
+Extracted unchanged from
 [SquareIntegrableSegmentNonlinkageProof](SquareIntegrableSegmentNonlinkageProof.md)
 so that both that proof and
 [LinkedSegmentHeadExponentProof](LinkedSegmentHeadExponentProof.md)

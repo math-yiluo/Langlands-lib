@@ -1,7 +1,5 @@
 # Multiplicative-type lifting from smooth subgroup moduli
 
-Author: Worker 872.
-
 `recover_subgroup_fibre_inclusion` and `subgroupFibreIso` construct the
 actual isomorphism between the fibre source and the given subgroup
 source whenever their closed inclusions define the same all-test

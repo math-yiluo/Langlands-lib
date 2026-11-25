@@ -1,6 +1,6 @@
 # Exact trace-functional stabilizers from primitive coefficients
 
-Author: Worker 84. The theorem `Langlands.Global.primitiveTraceStabilizer`
+The theorem `Langlands.Global.primitiveTraceStabilizer`
 proves `Langlands.Global.PrimitiveTraceStabilizerStatement` over independent
 carrier universes `u` and `v`.
 

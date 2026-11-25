@@ -1,7 +1,5 @@
 # Pullback squares for the fibre frame lifting assembly
 
-Author: Worker 1119.
-
 Two general facts used by the proof of
 `Langlands.AlgebraicGeometry.Picard.FibreFrameLiftingStatement`. The module contains no
 `sorry` and no new axioms.

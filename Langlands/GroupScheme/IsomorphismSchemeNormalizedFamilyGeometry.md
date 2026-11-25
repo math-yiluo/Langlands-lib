@@ -1,6 +1,6 @@
 # Geometry of representatives constructed from normalized families
 
-This internal unit supplies geometry for the representation-free construction
+This auxiliary module supplies geometry for the representation-free construction
 `GroupIsomorphismScheme.ofNormalizedFamily`. It retains that construction's
 assumption of a natural family `e` over a label scheme `Q` and a unique
 inverse-twist decomposition on every relative scheme test.
@@ -31,4 +31,4 @@ assumption.
 The provenance is the product construction and the existing stability
 theorems for scheme morphisms, together with the published separated étale
 geometry of `constantParameter`. The input classification data are assumed;
-this unit does not prove their existence or perform descent.
+this module does not prove their existence or perform descent.

@@ -1,7 +1,5 @@
 # Realization of invariant subgroups of finite étale group schemes
 
-Authors: Worker 1609 and Worker 1730.
-
 `Langlands.AlgebraicGeometry.FiniteEtale.InvariantSubgroupRealizationStatement`
 is a proposition definition, polymorphic in the universe `u`. This module states
 the realization target; it does not prove it.
@@ -61,9 +59,9 @@ faithful functor. It makes no characteristic-zero or integer-invertibility
 assumption. It asks for existence, without specifying a chosen realization or
 asserting a uniqueness theorem.
 
-## Internal provenance and intended proof
+## Internal provenance and proof
 
-This is an internal derived target specified by Worker 1730 for the
+This is an internal derived target for the
 commensurable invariant Tate lattice realization problem. It is formulated
 directly using the published interfaces
 `Langlands.CommGroupScheme` in
@@ -72,15 +70,18 @@ directly using the published interfaces
 `Langlands/AbelianScheme/Tate/FiniteMonodromy.lean`.
 It is not presented as a verbatim statement from an external source.
 
-The intended later proof uses the published theorem
+The proof, `Langlands.AlgebraicGeometry.FiniteEtale.invariantSubgroupRealization`
+in `Langlands/AlgebraicGeometry/FiniteEtale/InvariantSubgroupRealizationProof.lean`,
+uses the published theorem
 `FiniteEtale.geometricContinuousActionEquivalence` in
 `Langlands/AlgebraicGeometry/FiniteEtale/GeometricContinuousActionEquivalenceProof.lean`.
 Under exactly the retained geometric hypotheses and `hs`, this theorem proves
 that the actual geometric continuous-action functor is an equivalence.
 The invariant subgroup defines a finite continuous subaction of the fibre of
-`G`. The equivalence should realize that subaction by an actual finite étale
-cover and lift its inclusion and group operations, with faithfulness and
-preservation of finite products verifying the group laws and commutativity.
+`G`. The equivalence realizes that subaction by an actual finite étale
+cover, and its fullness and faithfulness lift the inclusion `i` and the group
+operations. The group laws and commutativity are verified after composition
+with the monomorphism `i`.
 These constructions are proof obligations, not additional inputs to the
 proposition.
 
@@ -88,7 +89,7 @@ The published helper `FiniteEtale.cover_mono_of_fiber_injective` in
 `Langlands/AlgebraicGeometry/FiniteEtale/GeometricFiberConservativeProof.lean`
 detects monomorphisms of the underlying schemes from injectivity on this
 geometric fibre. Combined with finiteness of a morphism between finite étale
-covers, it provides the intended route to the closed immersion conclusion.
-The later proof must also verify the displayed point-image equality for the
+covers, it provides the route to the closed immersion conclusion.
+The proof also verifies the displayed point-image equality for the
 constructed homomorphism. This module contains neither that proof nor a new
 group-object transport construction.

@@ -57,7 +57,7 @@ theorem isometry_sectionMap (g : sectionIsometrySubgroup d ρ) :
   exact g.property (b - c)
 
 variable [TopologicalSpace G] [IsTopologicalGroup G]
-  (hb : ∀ a : P, Continuous (fun g : G => (ρ g : Aut P).hom.toAlgHom a))
+  (hb : ∀ a : P, Continuous (fun g : G => (ρ g : Aut P).asIso.hom.toAlgHom a))
 
 include hb in
 /-- Finitely many continuous coordinate orbits give a uniform local contraction
@@ -131,7 +131,7 @@ include hb in
 for the product of the group topology and the quotient norm topology. -/
 theorem continuous_section_evaluation :
     Continuous (fun p : G × d.algebra =>
-      (stabilizerSectionAction d (ρ p.1)).hom.toAlgHom p.2) := by
+      (stabilizerSectionAction d (ρ p.1)).asIso.hom.toAlgHom p.2) := by
   apply continuous_iff_continuousAt.mpr
   rintro ⟨g, b⟩
   have ht : Tendsto (fun p : G × d.algebra => (g⁻¹ * p.1, p.2))

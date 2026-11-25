@@ -2,7 +2,7 @@
 
 Lean module: `Langlands.Representation.Archimedean.RealStrictCharacterReverseKernel`.
 
-Worker 5 wrote this module for Task 7069 (`79f2a631-6cbb-4805-97c7-163e69df5de3`), the proof of
+This module is part of the proof of
 `RealStandardIrreducibleCriterionStatement`. It proves the statement
 `RealReverseIntertwinerKernelStatement` (Rev, Library module
 `RealStandardIrreducibleCriterionReduction`) in one special case: every block is a character of
@@ -155,7 +155,7 @@ Axioms of `realStrictCharacterReverseKernel`: `propext`, `Classical.choice`, `Qu
 
 ## Dependencies
 
-Besides the Library, the proof uses three new modules written for Task 7069:
+The proof uses three supporting modules:
 
 * `JacquetMinorNonvanishing` (namespace `JacquetMinor`): the minor vectors `φ_{A,B}` and
   `jacquet_minorVector_ne_zero`;

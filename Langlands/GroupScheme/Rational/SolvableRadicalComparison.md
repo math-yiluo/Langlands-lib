@@ -1,7 +1,5 @@
 # Canonical comparison of represented solvable radicals
 
-Author: Worker 1264.
-
 This is an internal derived construction from the published
 `IsSolvableRadical` predicate in `Rational.LeviSubgroup` and the represented
 subgroup API. It proves no existence theorem for a radical, a rational Levi,

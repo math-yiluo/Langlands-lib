@@ -25,7 +25,7 @@ theorem survivingPieceEquiv_of_segmentSubrepresentationFullJacquet
     (h31 : SegmentSubrepresentationFullJacquet.{uF, uV} F T) :
     SurvivingPieceEquiv.{uF, uV} F T :=
   fun _ A a₀ a₁ _ _ d h₂ hA hsoc hb₀ _ hb₁ _ h₀ h₁ w S R hS hR hdiv =>
-    surviving_piece_equiv F T h31 A hA a₀ a₁ d h₂ hsoc hb₀ hb₁ h₀ h₁ w S R hS hR hdiv
+    (surviving_piece_equiv F T h31 A hA a₀ a₁ d h₂ hsoc hb₀ hb₁ h₀ h₁ w S R hS hR hdiv : _)
 
 end TwoSegmentShuffle
 

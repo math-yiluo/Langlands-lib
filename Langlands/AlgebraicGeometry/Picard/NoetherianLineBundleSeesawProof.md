@@ -15,7 +15,7 @@ statement. Two translations between Library language and the language of the por
 
 1. **Hypotheses.** The lemma `isInvertible_of_isLocallyFreeRankOne` turns the Library
    predicate `IsLocallyFreeRankOne M` (local trivialisations `M.restrict U.ι ≅ unit`) into the
-   ported predicate `Scheme.Modules.IsInvertible M` (local trivialisations
+   ported predicate `Scheme.Modules.IsInvertibleFLT M` (local trivialisations
    `(Scheme.Modules.pullback U.ι).obj M ≅ unit`). It composes each trivialisation with the
    inverse of the component at `M` of Mathlib's
    `Scheme.Modules.restrictFunctorIsoPullback U.ι : restrictFunctor U.ι ≅ pullback U.ι`.

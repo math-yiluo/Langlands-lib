@@ -1,6 +1,6 @@
 # Stabilizer-field embeddings and actual factor indices
 
-This internal construction by Worker 166 identifies embeddings of the exact
+This internal construction identifies embeddings of the exact
 selected-factor stabilizer field with the actual product-factor indices.
 Its input is an actual smooth affine almost-simple product presentation after
 a Galois field extension `L/k`. The original group's structure map is

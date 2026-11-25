@@ -1,6 +1,6 @@
 # Semidirect realization of an actual unipotent intersection
 
-This is an internal construction by Worker 184. All subgroup identities are
+This is an internal construction. All subgroup identities are
 identities of functors on every test scheme over an arbitrary base scheme.
 No smoothness, reductivity, field or rational-point topology is assumed.
 

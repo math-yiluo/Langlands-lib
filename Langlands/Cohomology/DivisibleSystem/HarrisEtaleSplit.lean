@@ -24,7 +24,7 @@ exact. This module proves `hΓ` in the split case, when every torsor `Y m` has a
   sections;
 * `surjective_etaleAssociatedTransition_app_top`: a section of `Y i` trivializes the sheaves
   associated to `Y i` and `Y j` compatibly with the published transition
-  `etaleAssociatedTransition` (Worker 13's `etaleAssociatedTrivializationAlong`), so the
+  `etaleAssociatedTransition` (`etaleAssociatedTrivializationAlong`), so the
   transition is surjective over the terminal object when the coefficient map is surjective;
 * `EquivariantStructure.epi_sections_etaleSystem_projection`,
   `EquivariantStructure.etaleSplitSectionsSystem`,

@@ -1,6 +1,6 @@
 # Global vertex fixed loci from common apartments
 
-This unit extends the apartment vertex-rigidity proof to the whole original
+This module extends the apartment vertex-rigidity proof to the whole original
 quotient, under the explicit common-apartment premise.
 
 The imported `KPApartmentData.HasCommonApartments` asks that any two points
@@ -28,7 +28,8 @@ an actual vertex is that vertex. The theorem
 proposition at arbitrary universe `u`.
 
 The imported `MaximalUnramified.CommonApartmentsStatement` states the remaining premise
-for the exact fields and supplied building data of Task 6165.
+for the exact fields and supplied building data of
+`MaximalUnramified.VertexOneStabilizerMaximalBoundedStatement`.
 `vertex_fixed_of_commonApartments` derives only the singleton fixed-locus
 conclusion from it. No common-apartment existence, boundedness, bounded-subgroup
 fixed point or maximality theorem is claimed here. The provenance is internal,

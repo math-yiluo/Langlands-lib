@@ -29,11 +29,10 @@ matrix of `f` and `g` with sizes `m` and `n`.
   `(k+1)`-fold iterate of `Polynomial.divX`, which drops the constant coefficient and divides by
   `X`.
 
-The binders of each theorem are those of the propositions `ResultantNeZeroOfNotDvd`,
-`NonrationalRoots` and `DivXTelescoping` requested by Worker 5406 for the Task 5406 assembly,
-in the same order. A check outside this module confirmed that each theorem proves the
-corresponding proposition verbatim, using only the standard axioms (`propext`,
-`Classical.choice`, `Quot.sound`).
+The binders of each theorem are in the form in which `Assembly.lean`
+(`resultant_ne_zero_of_not_dvd`, `divX_telescoping`) and `NormPolynomials.lean`
+(`nonrationalRoots`) apply them. A check outside this module confirmed that each theorem uses
+only the standard axioms (`propext`, `Classical.choice`, `Quot.sound`).
 
 ## Auxiliary declaration
 
@@ -45,8 +44,8 @@ corresponding proposition verbatim, using only the standard axioms (`propext`,
 
 These three facts are inputs to the Stepanov–Schmidt method (W. M. Schmidt, *Zur Methode von
 Stepanov*, Acta Arithmetica 24 (1973)) as used for the plane-curve Hasse–Weil bound. Their
-exact formulations are internal to the project: Worker 5406 specified them for the Task 5406
-assembly. Mathematically each is standard: (1) is the Gauss lemma together with the
+exact formulations are internal to the project: they are the forms used by the plane-curve
+Hasse–Weil assembly (`Assembly.lean`, `NormPolynomials.lean`). Mathematically each is standard: (1) is the Gauss lemma together with the
 nonvanishing of the resultant of coprime polynomials over a field; (2) is the counting of
 Frobenius-fixed roots in the algebraic closure of a finite field; (3) is the polynomial
 identity behind `f(y) - f(y') = (y - y') * g(y, y')`.

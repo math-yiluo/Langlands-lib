@@ -1,7 +1,5 @@
 # Valuative lifts after a dominating extension
 
-Author: Worker 1543.
-
 `HasDominatingValuativeLift` encodes the extension diagram in Stacks Project,
 *Morphisms of Algebraic Spaces*, Definition 67.41.1 (Tag 03IX), printed
 pp. 82–83. It is a predicate on a supplied pair of sections `x : X(K)` and

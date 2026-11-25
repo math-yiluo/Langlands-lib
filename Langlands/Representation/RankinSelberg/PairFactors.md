@@ -1,7 +1,6 @@
 # Conditional gamma constructor and its rational functional equation
 
-Worker 31, with Worker 11 contributing the finite-exception spectral-point
-proof method. The module `Langlands.RankinSelberg` constructs a unit rational
+The module `Langlands.RankinSelberg` constructs a unit rational
 function from the published pair epsilon and L-factor constructors:
 
 \[

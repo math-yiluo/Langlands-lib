@@ -1,7 +1,5 @@
 # Parabolic Lie containment spreads to a Zariski neighbourhood
 
-Worker 606.
-
 `relativeParabolicLieContainment` proves the unchanged Library proposition
 `Langlands.GroupScheme.RelativeParabolicLieContainmentStatement` in every
 universe. The base scheme is arbitrary, the ambient group is reductive, and

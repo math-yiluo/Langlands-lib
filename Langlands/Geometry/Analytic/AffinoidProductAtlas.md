@@ -1,7 +1,5 @@
 # The affinoid atlas of the product of two Hausdorff analytic spaces
 
-Author: Worker 21.
-
 The Library module `AffinoidProductChartSystem` glues the affinoid
 coproducts of pairs of charts of two indexed affinoid atlases into a
 topological space. It defines the two projections and proves that the

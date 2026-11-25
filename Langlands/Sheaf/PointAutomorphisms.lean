@@ -37,14 +37,14 @@ instance (Φ : J.Point.{w}) : DiscreteTopology (FiberElements Φ) := ⟨rfl⟩
 /-- A point automorphism permutes the elements in each fiber. -/
 def toPerm (Φ : J.Point.{w}) : AutGroup Φ →* Equiv.Perm (FiberElements Φ) where
   toFun σ :=
-    { toFun := fun p => ⟨p.1, σ.hom.app p.1 p.2⟩
-      invFun := fun p => ⟨p.1, σ.inv.app p.1 p.2⟩
+    { toFun := fun p => ⟨p.1, σ.asIso.hom.app p.1 p.2⟩
+      invFun := fun p => ⟨p.1, σ.asIso.inv.app p.1 p.2⟩
       left_inv := by
         rintro ⟨U, x⟩
-        exact congrArg (Sigma.mk U) (ConcreteCategory.congr_hom (σ.hom_inv_id_app U) x)
+        exact congrArg (Sigma.mk U) (ConcreteCategory.congr_hom (σ.asIso.hom_inv_id_app U) x)
       right_inv := by
         rintro ⟨U, x⟩
-        exact congrArg (Sigma.mk U) (ConcreteCategory.congr_hom (σ.inv_hom_id_app U) x) }
+        exact congrArg (Sigma.mk U) (ConcreteCategory.congr_hom (σ.asIso.inv_hom_id_app U) x) }
   map_one' := rfl
   map_mul' _ _ := rfl
 
@@ -58,12 +58,13 @@ theorem continuous_evaluation (Φ : J.Point.{w}) (p : FiberElements Φ) :
 
 theorem toPerm_injective (Φ : J.Point.{w}) : Function.Injective (toPerm Φ) := by
   intro σ τ h
+  apply Aut.ext
   apply Iso.ext
   apply NatTrans.ext
   funext U
   ext x
   have h' := congrArg (fun f : Equiv.Perm (FiberElements Φ) => f ⟨U, x⟩) h
-  change (⟨U, σ.hom.app U x⟩ : Σ V, Φ.fiber.obj V) = ⟨U, τ.hom.app U x⟩ at h'
+  change (⟨U, σ.asIso.hom.app U x⟩ : Σ V, Φ.fiber.obj V) = ⟨U, τ.asIso.hom.app U x⟩ at h'
   exact eq_of_heq (Sigma.mk.inj_iff.mp h').2
 
 instance (Φ : J.Point.{w}) : T2Space (AutGroup Φ) :=
@@ -102,25 +103,25 @@ instance (Φ : J.Point.{w}) : IsTopologicalGroup (AutGroup Φ) where
 /-- The stabilizer of a fiber element is an actual open subgroup. -/
 def stabilizer (Φ : J.Point.{w}) (U : C) (x : Φ.fiber.obj U) :
     OpenSubgroup (AutGroup Φ) where
-  carrier := {σ | σ.hom.app U x = x}
+  carrier := {σ | σ.asIso.hom.app U x = x}
   one_mem' := rfl
   mul_mem' := by
     intro σ τ hσ hτ
-    change σ.hom.app U (τ.hom.app U x) = x
+    change σ.asIso.hom.app U (τ.asIso.hom.app U x) = x
     rw [hτ, hσ]
   inv_mem' := by
     intro σ hσ
-    have h : σ.inv.app U (σ.hom.app U x) = x :=
-      ConcreteCategory.congr_hom (σ.hom_inv_id_app U) x
-    change σ.inv.app U x = x
+    have h : σ.asIso.inv.app U (σ.asIso.hom.app U x) = x :=
+      ConcreteCategory.congr_hom (σ.asIso.hom_inv_id_app U) x
+    change σ.asIso.inv.app U x = x
     rwa [hσ] at h
   isOpen' := by
     have h := (isOpen_discrete ({⟨U, x⟩} : Set (FiberElements Φ))).preimage
       (continuous_evaluation Φ ⟨U, x⟩)
     convert h using 1
     ext σ
-    change σ.hom.app U x = x ↔
-      (⟨U, σ.hom.app U x⟩ : Σ V, Φ.fiber.obj V) = ⟨U, x⟩
+    change σ.asIso.hom.app U x = x ↔
+      (⟨U, σ.asIso.hom.app U x⟩ : Σ V, Φ.fiber.obj V) = ⟨U, x⟩
     simp only [Sigma.mk.inj_iff, heq_eq_eq, true_and]
 
 section Fibers
@@ -131,30 +132,31 @@ variable (Φ : J.Point.{w}) {A : Type uA} [Category.{vA} A]
 /-- Act on the actual colimit fiber by transporting the indexing fiber element. -/
 def presheafFiberEnd (σ : AutGroup Φ) (P : Cᵒᵖ ⥤ A) :
     End (Φ.presheafFiber.obj P) :=
-  Φ.presheafFiberDesc (fun U x => Φ.toPresheafFiber U (σ.hom.app U x) P)
+  End.of <| Φ.presheafFiberDesc (fun U x => Φ.toPresheafFiber U (σ.asIso.hom.app U x) P)
     (fun U V f x => by
       rw [Φ.toPresheafFiber_w]
       exact congrArg (fun y => Φ.toPresheafFiber V y P)
-        (ConcreteCategory.congr_hom (σ.hom.naturality f) x).symm)
+        (ConcreteCategory.congr_hom (σ.asIso.hom.naturality f) x).symm)
 
 @[reassoc (attr := simp)]
 theorem toPresheafFiber_presheafFiberEnd (σ : AutGroup Φ) (P : Cᵒᵖ ⥤ A)
     (U : C) (x : Φ.fiber.obj U) :
-    Φ.toPresheafFiber U x P ≫ presheafFiberEnd Φ σ P =
-      Φ.toPresheafFiber U (σ.hom.app U x) P :=
-  Φ.toPresheafFiber_presheafFiberDesc _ _ U x
+    Φ.toPresheafFiber U x P ≫ (presheafFiberEnd Φ σ P).asHom =
+      Φ.toPresheafFiber U (σ.asIso.hom.app U x) P := by
+  dsimp only [presheafFiberEnd]
+  exact Φ.toPresheafFiber_presheafFiberDesc _ _ U x
 
 @[simp]
 theorem presheafFiberEnd_one (P : Cᵒᵖ ⥤ A) :
-    presheafFiberEnd Φ 1 P = 𝟙 _ := by
+    (presheafFiberEnd Φ 1 P).asHom = 𝟙 _ := by
   apply Φ.presheafFiber_hom_ext
   intro U x
   simp
   rfl
 
 theorem presheafFiberEnd_mul (σ τ : AutGroup Φ) (P : Cᵒᵖ ⥤ A) :
-    presheafFiberEnd Φ (σ * τ) P =
-      presheafFiberEnd Φ τ P ≫ presheafFiberEnd Φ σ P := by
+    (presheafFiberEnd Φ (σ * τ) P).asHom =
+      (presheafFiberEnd Φ τ P).asHom ≫ (presheafFiberEnd Φ σ P).asHom := by
   apply Φ.presheafFiber_hom_ext
   intro U x
   simp
@@ -163,8 +165,8 @@ theorem presheafFiberEnd_mul (σ τ : AutGroup Φ) (P : Cᵒᵖ ⥤ A) :
 @[reassoc]
 theorem presheafFiberEnd_naturality (σ : AutGroup Φ)
     {P Q : Cᵒᵖ ⥤ A} (f : P ⟶ Q) :
-    presheafFiberEnd Φ σ P ≫ Φ.presheafFiber.map f =
-      Φ.presheafFiber.map f ≫ presheafFiberEnd Φ σ Q := by
+    (presheafFiberEnd Φ σ P).asHom ≫ Φ.presheafFiber.map f =
+      Φ.presheafFiber.map f ≫ (presheafFiberEnd Φ σ Q).asHom := by
   apply Φ.presheafFiber_hom_ext
   intro U x
   simp
@@ -178,7 +180,7 @@ variable (Φ : J.Point.{w}) (R : Type w) [CommRing R]
 /-- The representation on the actual module fiber of a presheaf. -/
 def fiberRepresentation (P : Cᵒᵖ ⥤ ModuleCat.{w} R) :
     Representation R (AutGroup Φ) ((Φ.presheafFiber (A := ModuleCat.{w} R)).obj P) where
-  toFun σ := (presheafFiberEnd Φ σ P).hom
+  toFun σ := (presheafFiberEnd Φ σ P).asHom.hom
   map_one' := by
     rw [presheafFiberEnd_one]
     rfl
@@ -189,7 +191,7 @@ def fiberRepresentation (P : Cᵒᵖ ⥤ ModuleCat.{w} R) :
 theorem fiberRepresentation_germ (P : Cᵒᵖ ⥤ ModuleCat.{w} R)
     (σ : AutGroup Φ) (U : C) (x : Φ.fiber.obj U) (s : P.obj (op U)) :
     fiberRepresentation Φ R P σ (Φ.toPresheafFiber U x P s) =
-      Φ.toPresheafFiber U (σ.hom.app U x) P s :=
+      Φ.toPresheafFiber U (σ.asIso.hom.app U x) P s :=
   ConcreteCategory.congr_hom (toPresheafFiber_presheafFiberEnd Φ σ P U x) s
 
 /-- Maps of presheaves induce equivariant maps of their actual fibers. -/

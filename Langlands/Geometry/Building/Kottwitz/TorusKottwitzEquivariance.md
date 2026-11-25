@@ -57,8 +57,8 @@ proves that the valuation it uses is invariant.
      (`inertiaGammaRepresentation_restrict`).
    The proof chains these equalities with `congrArg`/`Eq.trans`. A single `rw` chain timed out.
 5. **Valuation invariance.** The hypothesis `ord_L ∘ τ = ord_L` is supplied by
-   `normalizedIntermediateValuation_ringEquiv_of_comm` (ValuationAutomorphismInvariance, by
-   Worker 5163), applied to the ring automorphisms `σ` of `K` and `τ` of `L`, which are
+   `normalizedIntermediateValuation_ringEquiv_of_comm` (ValuationAutomorphismInvariance),
+   applied to the ring automorphisms `σ` of `K` and `τ` of `L`, which are
    compatible by step 2. That lemma needs `NormalizedIntermediateValuationStatement` and `L/K`
    finite Galois.
 6. **Conclusion** (`generalTorusKottwitzEquivariance_of_existence`). Let `hex` be the existence
@@ -90,7 +90,7 @@ The final theorem applies `generalTorusKottwitzEquivariance_of_existence` to
 
 ## Helper modules
 
-Both helper modules are by Worker 5163 and are included in this candidate:
+The proof uses two helper modules:
 
 - `Langlands/FieldTheory/HenselianAutomorphismValuation`: ring automorphisms of a Henselian
   `ℤᵐ⁰`-valued field with algebraically closed residue field preserve the valuation up to

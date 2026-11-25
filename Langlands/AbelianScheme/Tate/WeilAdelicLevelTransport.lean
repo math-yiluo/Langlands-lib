@@ -184,7 +184,7 @@ theorem weilAdelicLevelTransport_path_independent (U : Subgroup G)
   let := commAt t ht htor hu (hμfin := hμfin) (hμet := hμet)
   symm
   apply InvariantOrbit.equiv_eq_of_left U (pathConjugation p) (pathConjugation q)
-    (frameTransport p) (frameTransport q) _ _ _ _ (p.symm ≪≫ q)
+    (frameTransport p) (frameTransport q) _ _ _ _ (Aut.of (p.symm ≪≫ q))
   intro eta
   apply Subtype.ext
   ext x

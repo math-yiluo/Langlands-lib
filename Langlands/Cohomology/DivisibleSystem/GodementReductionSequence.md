@@ -1,14 +1,14 @@
 # Reduction sequences for ℓ-adic limits of truncated Godement section systems
 
-Author: Worker 61. Built on the published modules
-`Langlands.Cohomology.DivisibleSystem.ReductionSequence` (Worker 61:
-`cokernelKernelShortComplex`, `reductionShortComplex`, `reductionSequence`,
+Built on the published modules
+`Langlands.Cohomology.DivisibleSystem.ReductionSequence`
+(`cokernelKernelShortComplex`, `reductionShortComplex`, `reductionSequence`,
 `reductionSequence_shortExact`, `reductionShortComplex_shortExact_moduleCat`,
 `reductionShortComplex_shortExact_rep`, `homologyMap_powSMul` and
 `powSMul_homology_eq_zero`; the construction of
 `inverseLimitReductionSequence` is the pattern followed here) and
-`Langlands.Cohomology.DivisibleSystem.ConstantInverseLimit` (Worker 61:
-`adicLimit`, `levelCohomologyLimit`, `extendHomologyNatIso`,
+`Langlands.Cohomology.DivisibleSystem.ConstantInverseLimit`
+(`adicLimit`, `levelCohomologyLimit`, `extendHomologyNatIso`,
 `adicLimitComparison`, `adicLimitComparison_π`,
 `isIso_adicLimitComparison_of_finite`, `isIso_adicLimitComparison_rep`,
 `smoothGodementSectionsTower`, `smoothGodementTruncatedSectionsTowerHom`,
@@ -25,8 +25,8 @@ imports it uses the published `DivisibleSystem` with `tower`, `obj` and
 (`Langlands.Cohomology.DivisibleSystem.Coaugmented`),
 `smoothGodementTruncatedSectionsSystem`
 (`Langlands.Cohomology.DivisibleSystem.ConstantTruncation`), the published
-`SmoothSheafDivisibleSystem`, Worker 13's `SmoothTopologicalSheaf` and
-`HasStableNeighbourhoods`, and Worker 3's unproved statements
+`SmoothSheafDivisibleSystem`, `SmoothTopologicalSheaf` and
+`HasStableNeighbourhoods`, and the unproved statements
 `SmoothGodementZeroExactStatement`
 (`Langlands.Cohomology.SmoothGodement.Statement`) and
 `FiniteCohomologyInverseLimitStatement`
@@ -252,13 +252,14 @@ The published constant section systems
 abbreviations for `smoothGodementTruncatedSectionsSystem` with `T` the
 constant systems `constantSheafSystem hℓ G X` and
 `intConstantSheafSystem ℓ hℓ G X`, so the results of this section apply to
-them; there are no separate declarations. Worker 61 checked in a private Lean
-probe that `smoothGodementReductionSequence_shortExact_of_finite` applies to
+them; there are no separate declarations. It was checked in a separate Lean
+probe, not part of the Library, that
+`smoothGodementReductionSequence_shortExact_of_finite` applies to
 `constantGodementTruncatedSectionsSystem`.
 
 ## Provenance and interpretation
 
-Milne, *Étale Cohomology* (1980), Chapter V, §1 (Worker 61 read the scanned
+Milne, *Étale Cohomology* (1980), Chapter V, §1 (read in the scanned
 pages; printed p.165 in the rendered image, the others in the text layer):
 
 - printed p.165 (one-based PDF page 179), Lemma 1.11: "Let F = (F_n) be an
@@ -274,7 +275,7 @@ pages; printed p.165 in the rendered image, the others in the text layer):
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
 J. Math. Kyoto Univ. 39-2 (1999), section 2, printed pp.305–306 (one-based
-PDF pages 7–8; Worker 61 read both pages in the scanned original):
+PDF pages 7–8; both pages read in the scanned original):
 
 - p.305: Harris sets `G_m^• = τ^{≤D+1}(F_m^•)` and notes that "it follows
   from Fact 2 that, for any m, the inclusion τ^{≤q}(F_m^•) → (F_m^•) is a
@@ -284,7 +285,7 @@ PDF pages 7–8; Worker 61 read both pages in the scanned original):
 - p.306: "Lemma 2.8. For every q, there is a canonical isomorphism
   H^q(lim C_m^•(U(ẽ)_F̄)) ≅ lim H_c^q(U(ẽ)_F̄, Z/ℓ^mZ)."
 
-Interpretation. This module combines two published results of Worker 61:
+Interpretation. This module combines two published results:
 Milne's sequence for the inverse limit of an `ℓ`-divisible system of
 complexes (`ReductionSequence`, proved through the homology sequence of
 `0 → L → L → T r → 0`, not by Milne's tensor-product argument) and the
@@ -302,7 +303,7 @@ interpretation, and Harris's (2.3) is not formalized. The `ℓ`-adic limit of
 separate connecting map `smoothGodementReductionδ` are internal framework.
 Milne's flatness hypothesis corresponds to the published `DivisibleSystem`
 axioms. The comparison isomorphisms are hypotheses, or are derived from
-Worker 3's `FiniteCohomologyInverseLimitStatement` with finite level
+`FiniteCohomologyInverseLimitStatement` with finite level
 cohomology, in place of Harris's Mittag-Leffler argument. The statements and
 proofs are ours; the module is derived.
 

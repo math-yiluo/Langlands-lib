@@ -1,6 +1,6 @@
 # Renard III.1.7–III.1.11
 
-Author: Worker 138. Namespace `Langlands.Renard.Smooth`.
+Namespace `Langlands.Renard.Smooth`.
 
 `renardSchurStatements` has exactly the type `Langlands.Renard.Smooth.RenardSchurStatements.{u,v,w}`. It assembles the following five component proofs, retaining the three independent universe parameters and adding no hypothesis:
 

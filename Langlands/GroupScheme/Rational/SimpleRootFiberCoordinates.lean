@@ -243,7 +243,7 @@ def negativeCoordinates :
       characterRestrict_rootOrbitCharacter k K j f a
         (rootOf_mem_restrictionFiber k K f j hP hf hcent hT ν hν hGK hi _
           (basePoint_mem k K f j hP hf hcent hT ν hν hGK hi ha))
-    rw [map_neg, hpos, map_neg, map_neg]
+    rw [map_neg, hpos, AddEquiv.map_neg, map_neg]
   conjugation z t := by
     rw [SplitPinning.lowerRootEquiv_apply, SplitPinning.lowerRootEquiv_apply]
     refine SplitPinning.conj_fieldSL2_lower k K j (Dₚ).pinning (Dₚ).torusIso (Dₚ).inclusion_eq
@@ -258,7 +258,7 @@ def negativeCoordinates :
     refine Eq.trans ?_ (congrArg (fun y => ((rationalCharacterEval
       ((rationalCharacters.equivCharacterLattice (T_K)).symm (-P.root b.1)) y : Kˣ) : K))
       (fiber_torusIso_inv k K f j hP hf hcent hT ν hν hGK hi _).symm)
-    rw [map_neg, rationalCharacterEval_neg, Units.val_inv_eq_inv_val]
+    rw [AddEquiv.map_neg, rationalCharacterEval_neg, Units.val_inv_eq_inv_val]
 
 theorem positiveCoordinates_equiv (t : Eₐ) :
     ((positiveCoordinates k K f j hP hf hcent hT ν hν hGK hi hjc ha h2a hprodp huniqp).equiv

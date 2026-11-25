@@ -1,7 +1,5 @@
 # Geometric structure of a parabolic intersection
 
-Author: Worker 1349.
-
 `Langlands.GroupScheme.ParabolicIntersectionGeometryStatement.{u}` is a
 derived structural prerequisite for the common rational maximal torus
 theorem. It is stated for every field `k : Type u`, a connected reductive

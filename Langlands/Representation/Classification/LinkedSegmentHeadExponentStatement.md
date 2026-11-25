@@ -1,8 +1,5 @@
 # Exponent comparison for linked segment heads
 
-Author: Worker 161. Target design: Worker 17; shared strict-comparison requirement:
-Worker 391.
-
 `Langlands.Classification.LinkedSegmentHeadExponentComparison.{uF,uV} F T`
 is a proposition definition, not a theorem. It states an internal derived
 comparison needed when ordering actual special segment heads. Its direct imports
@@ -123,9 +120,10 @@ tempered exhaustion. Rodier's closing reference to Theorem 2 in §4.3 points in
 context to Theorem 3. None of these disputed formulas or exhaustion claims is
 used here.
 
-## Future proof and independence
+## Proof requirements and independence
 
-A proof must establish the scalar action of segment induction and its quotient,
+The Library proves the proposition as `linkedSegmentHeadExponentComparison` in
+`LinkedSegmentHeadExponentProof`. A proof must establish the scalar action of segment induction and its quotient,
 obtain the needed scalar character for a supercuspidal representative, extract
 the exponent from an arbitrary given positive form, and prove integral-twist
 nonperiodicity and endpoint orientation for the support-based linkage relation.
@@ -141,10 +139,10 @@ central characters and a nonzero vector; `exponent_eq_of_isSquareIntegrable`
 requires analytic square-integrability of both twists. Neither grants those
 hypotheses merely from the existence of the present statement.
 
-The proof successor must remain independent, directly and transitively, of the
+The proof in `LinkedSegmentHeadExponentProof` must remain independent, directly and transitively, of the
 ordered conversion, square-integrable exhaustion, regular exhaustion, full
 square-integrable classification, tempered block uniqueness, multisegment
-exhaustion, ordered-head existence, and quotient coverage tasks named in its
-contract. Shared lower-level proofs may be reused only after checking this
+exhaustion, ordered-head existence, and quotient coverage results. Shared
+lower-level proofs may be reused only after checking this
 independence. This interface provides no classification, exhaustion, analytic
 normalization existence or factor-commutation theorem.

@@ -100,12 +100,13 @@ smooth map with connected source, closed-point smooth stalk dimension, and
 the actual affine-group Lie/stalk comparison. Mathlib supplies closedness of
 a section over a one-point base, smooth base change and composition, and the
 order-theoretic dimension bound. The quotient-dimension step belongs to the
-prescribed-Borel route discussed by Workers 1547 and 317; Worker 1547
-implemented the construction and proofs here. No external structural theorem
+prescribed-Borel route. No external structural theorem
 is asserted.
 
 The module takes the quotient, smooth surjectivity, its exact coset fibers and
 the dimension bound as inputs. It constructs none of these application data
-and does not prove `RankOnePositiveRootUniquenessStatement`. In particular,
+and does not prove `RankOnePositiveRootUniquenessStatement`, which is proved by
+`rankOnePositiveRootUniqueness` in
+`Langlands.GroupScheme.Reductive.RankOnePositiveRootProof`. In particular,
 the rank-one Borel quotient dimension bound, fixed-point and torus arguments,
-and the comparison with positive roots remain separate proof obligations.
+and the comparison with positive roots are not proved here.

@@ -1,7 +1,5 @@
 # Compact mirabolic unit tests for every unequal-rank JPSS block
 
-Author: Worker 481. Worker 356 supplied the focused target specification.
-
 The module defines the proposition
 `Langlands.RankinSelberg.UnequalRankMirabolicUnitTestStatement.{uF,uW} F T n j k`.
 It states an internal compact test construction used before the Kirillov
@@ -140,9 +138,7 @@ Merely defining this proposition establishes none of these facts.
 
 ## Lean validation
 
-Development `lean_check` in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` compiled the entry module with zero
-errors and warnings. Exact declaration inspection reported
+The entry module compiled with zero errors and warnings. Exact declaration inspection reported
 `statement_returns_prop: true`, independent universe parameters `uF` and
 `uW`, and only `propext`, `Classical.choice` and `Quot.sound` among its
 axioms. This verifies the proposition definition, not its truth.

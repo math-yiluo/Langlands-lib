@@ -1,6 +1,6 @@
 # Finite apartment orbits of algebraically bounded normalizer sets
 
-This internal derived unit uses the original integer-valued building datum,
+This module uses the original integer-valued building datum,
 normalizer, centralizer and apartment. A compatible valuative relation is
 assumed on the arbitrary field. No topology is used.
 

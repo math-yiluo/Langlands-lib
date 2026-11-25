@@ -1,7 +1,7 @@
 # The rank-one orbit-height bound from a twisted split factorization over a Galois splitting field
 
-Author: Worker 17. The hypothesis `hM` of
-the core theorem is the body of Worker 5268's Library proposition `HasTwistedOverlapMatching`
+The hypothesis `hM` of
+the core theorem is the body of the Library proposition `HasTwistedOverlapMatching`
 (module `Langlands.Global.AdelicGaloisOverlapMatching`), written out inline.
 
 This internal helper module belongs to the proof of the rank-one parabolic rational-orbit
@@ -159,7 +159,7 @@ for every `g ∈ G(𝔸_F)¹` with a factorization `(x, t, p, q)` and every fami
 `q` with `J 1 = Δ \ {α}`, `α ∈ Δ`, there is `q₀ ∈ G(F)` with
 `orbitHeight F G ρ (Pi.single j 1) (g · q₀) ≤ B`.
 
-*Proof.* Worker 5253's line bound
+*Proof.* The line bound
 `PositiveRealTorus.exists_hasUniformCharacterBound_torusCoordinateLineCharacter_of_minimalStandardParabolic`
 (helper module `AdelicMinimalParabolicLineBound`), applied to `ρ_L ∘ Int(m₀)` (whose line is
 preserved by the previous lemma), gives a bound `K` on the norm of the line character of
@@ -227,7 +227,7 @@ property that for every `α ∈ Δ` with `|α(t)| ≤ d` there is a family `J` w
 `HasUniformNormOneRationalOrbitHeightBound F G ρ (Pi.single j 1)`.
 
 `hM` is exactly `HasTwistedOverlapMatching F L G T i ν` of the Library module
-`Langlands.Global.AdelicGaloisOverlapMatching` (Worker 5268); it is stated inline, so this
+`Langlands.Global.AdelicGaloisOverlapMatching`; it is stated inline, so this
 module does not import that module. The final module
 `Langlands.Global.AdelicRankOneOrbitHeightBoundProof` supplies `hM` from the published
 proposition, which unfolds definitionally to this body.
@@ -241,6 +241,8 @@ simple roots satisfy `d < |β(t)|`, the unmatched case applies. Otherwise some `
 
 The rank-one hypothesis and the stabilizer hypothesis are used only in the matched case. The
 module proves no unconditional instance of the target: the factorization hypothesis `hM`
-(Springer §3.5) still has to be supplied, for example by Worker 5268's
-`SplitGaloisOverlapMatchingStatement` together with the split fundamental-set and overlap
-statements and a Galois Borel twisting.
+(Springer §3.5) is supplied in the final module
+`Langlands.Global.AdelicRankOneOrbitHeightBoundProof`, by `splitGaloisOverlapMatching` (the
+proof of `SplitGaloisOverlapMatchingStatement`, module
+`Langlands.Global.AdelicGaloisOverlapMatchingProof`) together with the split fundamental-set and
+overlap statements and a Galois Borel twisting.

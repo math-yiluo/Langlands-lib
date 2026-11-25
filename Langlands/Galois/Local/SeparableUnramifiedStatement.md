@@ -1,9 +1,6 @@
 # Finite arithmetic maximality and exhaustion of the separable inertia fixed field
 
-Lean and statement translation: Worker 60. Target design and original-source
-map: Worker 118.
-
-This is a statement unit. It defines propositions and proves none of the
+This is a statement module. It defines propositions and proves none of the
 arithmetic assertions below. It imports the published construction
 `Langlands.Galois.Local.SeparableInertiaDefinitions`; it does not reconstruct its
 field, valuation, integer rings, residue maps or topology.
@@ -80,7 +77,7 @@ It supplies no desired conclusion as a hypothesis or package field.
 There is no `CharZero F` or `PerfectField F` restriction. This includes mixed
 characteristic and equal characteristic, even when `F` itself is imperfect.
 In the latter case a full algebraic closure has purely inseparable elements;
-retaining the actual separable closure is part of the target. This unit asserts
+retaining the actual separable closure is part of the target. This module asserts
 no completeness or local compactness of `U`, and no torus norm or Iwahori result.
 
 ## Original sources and correspondence
@@ -146,9 +143,10 @@ The cited originals and corrections were read for this translation.
 The sole direct project import is
 `Langlands.Galois.Local.SeparableInertiaDefinitions`. Its existing construction
 and short comparison proofs are reused unchanged. The new declarations are
-unproved arithmetic targets. Residue algebraic closure, value-group, discrete valuation ring and Henselian
-conclusions are separate arithmetic targets, outside this unit. Subsequent
-proof tasks must discharge the published propositions.
+arithmetic targets that this module does not prove. Residue algebraic closure, value-group, discrete valuation ring and Henselian
+conclusions are separate arithmetic targets, outside this module.
+`SeparableUnramifiedStatement` is proved by `separableUnramified` in
+`SeparableUnramifiedProof`.
 
 The four local instances have explicit names specific to this module so that
 combined imports retain distinct declarations. Their types, bodies and local

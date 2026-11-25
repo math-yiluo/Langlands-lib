@@ -1,7 +1,5 @@
 # The roots of the diagonal torus of `GL_n`
 
-Worker 274.
-
 This is a helper module for the proof of `GeneralLinearRootDatumStatement`. It proves
 `roots_diagonalTorus`: over a field `k`, the roots of the diagonal torus of
 `GL_n` are the characters `χ` with
@@ -11,7 +9,7 @@ spaces are those of the actual adjoint representation over all test algebras
 (module `Langlands.GroupScheme.Torus.Weights`); this all-test-algebra
 formulation over an arbitrary field is derived, Milne computing the conjugation
 action on `gl_n` directly. The proof computes them with the
-matrix coordinates of the Lie kernel of `GL_n` from Worker 339's module
+matrix coordinates of the Lie kernel of `GL_n` from the module
 `Langlands.GroupScheme.Lie.GeneralLinearAdjoint`: the linear coordinates
 `DualNumber.pointKernelLinearEquiv`, their naturality, and the conjugation
 formula `DualNumber.adjoint_pointKernelLinearEquiv`.

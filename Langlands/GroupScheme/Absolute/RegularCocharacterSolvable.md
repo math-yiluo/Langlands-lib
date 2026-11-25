@@ -1,8 +1,7 @@
 # Solvability of closed subgroups representing dynamic parabolic subgroups
 
-Worker 303. This module provides the solvability step of clause 1 of
-`Langlands.GroupScheme.RegularCocharacterBorelStatement` (proof task
-`618cd683-cfcd-43a3-b4bf-6c8abd208b1f`). It concerns a closed subgroup
+This module provides the solvability step of clause 1 of
+`Langlands.GroupScheme.RegularCocharacterBorelStatement`. It concerns a closed subgroup
 `i : B ⟶ G` representing the dynamic parabolic subgroup functor `P(χ)` of a
 cocharacter. The module proves that `B` is solvable in the published sense
 `IsSolvableGroupScheme` as soon as the dynamic centralizer `Z(χ)` lies in the
@@ -56,10 +55,12 @@ The proof chains three results. `Dynamic.isSolvable_unipotent_carrier` (from
   solvable.
 
 For a split maximal torus `j` of a connected reductive group and a regular
-cocharacter `ν`, the hypothesis `Z(ν ≫ j) ≤ range j` would follow from two
+cocharacter `ν`, the hypothesis `Z(ν ≫ j) ≤ range j` follows from two
 published statements, `GenericCentralizerStatement` and
-`MaximalTorusCentralizerStatement`. Neither is proved at the time of writing,
-and neither is assumed in this module.
+`MaximalTorusCentralizerStatement`, proved in the Library as `genericCentralizer`
+and `maximalTorusCentralizer`; `centralizer_comp_eq_range_of_isRegular` in
+`Absolute.RegularCocharacterBorel` derives it from them. Neither statement is
+assumed in this module.
 
 ## Source
 

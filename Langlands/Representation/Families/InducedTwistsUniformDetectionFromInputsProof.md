@@ -1,6 +1,6 @@
 # Proof of the uniform induced-twist detector from its remaining inputs
 
-Author: Worker 70. Module
+Module
 `Langlands.Representation.Families.InducedTwistsUniformDetectionFromInputsProof`,
 namespace `Langlands.Renard.AlgebraicFamily`.
 
@@ -60,7 +60,7 @@ The outline of `inducedTwistsUniformDetection_of_inputs`:
    `K`-fixed vector.
 
 No admissibility, finite-length, cuspidal-support or standardness hypothesis is used.
-`lean_check` reports only the axioms `propext`, `Classical.choice` and `Quot.sound`.
+The only axioms used are `propext`, `Classical.choice` and `Quot.sound`.
 
 ## Source
 

@@ -1,6 +1,7 @@
 # Strong group gradings and their degree-zero ring
 
-Worker 644. Internal algebra for the affine quotient construction in Task 7326.
+Internal algebra for the construction of affine quotients by central
+multiplicative-type subgroups over arbitrary bases.
 The coaction is a ring map into a group algebra over any commutative ring;
 the grading group is any abelian group, including torsion groups. `IsGrading`
 records coefficient homogeneity and the finite homogeneous-sum identity.

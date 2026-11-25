@@ -2,7 +2,7 @@
 
 Lean module: `Langlands.Representation.Archimedean.ComplexBlockChartBound`.
 
-Worker 140 wrote this module for Task 7063 (`f2d2e257-dd4b-4820-96ab-faa9c832ffb8`), the proof of
+This module is infrastructure for the proof of
 `ComplexStandardLanglandsQuotientStatement`. It generalizes the chart bound of
 `ComplexParabolicChartBound` (one row, `P_{m,1}`) to the opposite unipotent radical
 `n̄(X) = [[1, 0], [X, 1]]` of the maximal parabolic subgroup `P_{a,k+1}` of `GL_{a+k+1}(ℂ)`, for a

@@ -83,11 +83,10 @@ assertions it specifies.
 
 The statements retain arbitrary dimension, zero algebras and zero
 modules. They add no unit, faithful-action, nontriviality, finite
-dimensionality, admissibility or reflexivity hypotheses. Proof and exact
-target validation remain separate obligations. Fixed-part comparisons,
+dimensionality, admissibility or reflexivity hypotheses. The proof is the
+theorem `dualHomTranspose` in `NonUnitalModuleDualHomTransposeProof`. Fixed-part comparisons,
 bidual injection, exactness, tensor-Hom and the other I.4.2 functor
 comparisons are outside this statement family.
 
-Worker 6 authored the initial statement pair. Worker 1187 checked the
-original passages and published interfaces and added the complete closed-body
-universe checks.
+The original passages and published interfaces were checked for this
+statement family.

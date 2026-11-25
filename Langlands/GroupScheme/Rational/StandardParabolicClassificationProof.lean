@@ -46,6 +46,7 @@ theorem cocharacterAut_normalizingAut_one (ξ : cocharacterLattice T) :
   rw [map_one]
   rfl
 
+set_option synthInstance.maxHeartbeats 200000 in
 /-- **Chamber move in the stabilizer of `ξ`.** Among the normalizing points fixing the
 pairings of `ξ` with all relative roots, one moves `eta` so that it pairs nonnegatively with
 every positive relative root of `ν` orthogonal to `ξ`. The point maximizes the pairing with
@@ -72,7 +73,8 @@ theorem HasRelativeRootSystem.exists_normalizerPoint_fixing_nonneg
       (ζ : cocharacterLattice T),
       latticePairing T (f ρ) ζ = ∑ β ∈ A, latticePairing T (f β) ζ := by
     intro f ζ
-    rw [hρ, map_sum, map_sum, LinearMap.sum_apply]
+    have hmap : f (∑ β ∈ A, β) = ∑ β ∈ A, f β := map_sum f.toLinearMap _ A
+    rw [hρ, hmap, map_sum, LinearMap.sum_apply]
   set N : Set (normalizerPoints i) := {u | ∀ β ∈ relativeRoots i,
     latticePairing T β (cocharacterAut (normalizingAut i u) ξ) = latticePairing T β ξ}
     with hNdef

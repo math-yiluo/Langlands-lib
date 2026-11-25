@@ -1,6 +1,6 @@
 # Root multiplicities of resultants along power-series branches
 
-Author: Worker 5406. Internal helper for the proof of
+Internal helper for the proof of
 `Langlands.AlgebraicGeometry.LangWeil.StepanovNormPolynomialsStatement`.
 
 Provenance. In Schmidt, *Zur Methode von Stepanov* (Acta Arith. 24, 1973), the auxiliary

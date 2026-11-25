@@ -1,20 +1,18 @@
 # Wave packets detect `ψ_f[O, P]` on actual points, for a weight positive on a dense set (Waldspurger VII.2, proof of Corollary VII.2.3)
 
-Author: Worker 5, task `1ef6854b-f0e9-4d96-bbe5-cb8c4b52f927` (revision 1).
-
 Lean module:
 `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalInducedOrbitWavePacketOrthogonalityDense`,
 namespace `Langlands.HarishChandraSchwartz`. It imports:
 
 - `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalInducedOrbitWavePacketOrthogonality`
-  (Library, Worker 3642). This module copies that module's setting (section variables, local
+  (Library). This module copies that module's setting (section variables, local
   instances, notation and `include` lists). Through its imports come
   `rationalFourierOrbitSmoothSectionLinear` with `_val`, `rationalFourierOrbitSection` with
   `_apply`, `rationalInducedOrbitWavePacket`, `rationalInducedSmoothOrbitSections`,
   `leviRationalUnitaryCoordinates` with `_hasLaurent`, `rationalInducedFourierTransform` and the
   actual data of `P_I(F)`. `RationalInducedOrbitWavePacketOrthogonality.md` describes them.
 - `Langlands.HarmonicAnalysis.HarishChandraSchwartz.InducedOrbitWavePacketOrthogonalityDense`
-  (same candidate). It provides `unitaryOrbitWeightedProductCore_of_dense` and
+  (ported together with this module). It provides `unitaryOrbitWeightedProductCore_of_dense` and
   `fourierOrbitSection_eq_zero_iff_forall_pairing_inducedOrbitWavePacket_eq_zero_of_dense`.
 
 ## Source
@@ -108,11 +106,11 @@ The proofs are those of the Library module, with the dense versions of the gener
 ## Intended use
 
 The intended weight `u` is the Plancherel weight on the orbit. The module
-`PlancherelWeightPositivity` (candidate `4a929a37-8a95-4d82-bca2-b20030228811`, not yet in the
-Library) defines its real form `standardLeviPlancherelWeightReal`. It proves this weight
+`Langlands.Representation.Plancherel.PlancherelWeightPositivity` defines its real form `standardLeviPlancherelWeightReal`. It proves this weight
 continuous and bounded. Assuming `j_P⁻¹` regular and nonnegative at the unitary characters, it
 proves the weight nonnegative; assuming also `j_P ≠ 0`, positive on a dense open set. This module
-does not import it, and the instantiation is left to a later unit.
+does not import it; the instantiation is the module
+`Langlands.Representation.Plancherel.PlancherelOrbitWavePacketOrthogonality`.
 
 ## Scope and hypotheses
 

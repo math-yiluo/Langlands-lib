@@ -1,7 +1,5 @@
 # Translation-stable subalgebras of a unipotent coordinate algebra
 
-Worker 1497.
-
 The algebraic core of the proof of the Kostant–Rosenlicht theorem
 (`Langlands.GroupScheme.UnipotentAffineOrbitClosedStatement`; Milne,
 *Algebraic Groups* (2017), Theorem 17.64). The setting is that of

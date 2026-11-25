@@ -1,7 +1,5 @@
 # Actual representations as modules over the free algebra of coefficient operators
 
-Author: Worker 902.
-
 This module is internal infrastructure. It turns an actual matrix representation
 `ρ : MatrixRepresentation G n` of a group scheme `G` over a field `k` into a module over one
 `k`-algebra that does not depend on `ρ`. After that, Mathlib's module theory applies:

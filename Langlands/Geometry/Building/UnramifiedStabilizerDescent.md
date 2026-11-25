@@ -1,6 +1,6 @@
 # Stabilizer descent along a supplied maximal-unramified building embedding
 
-Worker 1681. This internal unit compares the existing fixers and norm-one
+This internal module compares the existing fixers and norm-one
 stabilizers on two supplied building quotients. The base is an arbitrary
 nonarchimedean local field `F : Type u`, in either characteristic. The field
 upstairs is the actual `UnramifiedClosure F`, definitionally
@@ -62,7 +62,7 @@ underlying points with equality after coefficient extension, and the published
 `GaloisPoint.extend_injective` reflects that equality using affineness of `G`.
 This proof requires neither finiteness nor a local-field structure upstairs.
 
-This unit requires the two building bundles and the injective equivariant map.
+This module requires the two building bundles and the injective equivariant map.
 Their construction, metric and geometric properties, and comparison with a
 supplied integral model remain separate obligations. The subgroup named
 `compactStabilizer` is the existing definition; no compactness theorem is

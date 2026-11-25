@@ -1,6 +1,6 @@
 # The full local Langlands correspondence for GL_n
 
-Author: Worker 7. This module states the local Langlands correspondence for
+This module states the local Langlands correspondence for
 `GL_n(F)`, for every p-adic field `F` and every rank `n ≥ 1`. It runs between
 Frobenius-semisimple Weil–Deligne parameter classes, nonzero monodromy
 allowed, and all irreducible admissible representations of `GL_n(F)`,
@@ -8,7 +8,7 @@ nongeneric ones included. It defines the correspondence predicate on a full
 map and its existence and uniqueness statements, per field and over all
 fields. It also states that a full correspondence restricts to the
 supercuspidal correspondence and satisfies the unramified normalization. All
-are propositions; none is proved, and no correspondence is an input.
+are propositions; none is proved here, and no correspondence is an input.
 
 ## The correspondence predicate
 
@@ -124,8 +124,10 @@ Source files:
 - **Unramified normalization is derived.** Harris–Taylor's properties 1–5 do
   not list it, so it is not a conjunct of `IsFullCorrespondence`. It is the
   separate statement `FullCorrespondenceUnramifiedStatement`. It quantifies
-  over every geometrically normalized `e`. The published, unproved
-  `LocalClassField.WeilReciprocityExistenceUniqueness` says there is exactly
+  over every geometrically normalized `e`. The published
+  `LocalClassField.WeilReciprocityExistenceUniqueness` (proved as
+  `geometricWeilReciprocityExistenceUniqueness` in
+  `ClassFieldTheory/Local/WeilReciprocityExistenceProof`) says there is exactly
   one, so this agrees with using the `e` of the predicate.
 - **Gamma is derived.** Gamma compatibility is not part of the predicate; it
   is `FullGammaFromFactorsStatement` of `FullGammaCompatibility`.
@@ -148,20 +150,17 @@ Source files:
   `SupercuspidalSpecification`. The conditional assembly theorem, from a
   supercuspidal correspondence to a full one, is `ConditionalAssemblyStatement`
   of `AssemblyTheorems`.
-- The module imports, and does not copy: this task's
+- The module imports, and does not copy:
   `FullFactorCompatibility`, `SupercuspidalSpecification`,
   `UnramifiedNormalization`, `OperationCompatibility` and `Domains`.
-- This candidate also changes `UnramifiedNormalization.lean`. Its three local
-  instances now have explicit names (`unramifiedFieldTopology`,
-  `unramifiedGeneralLinearTopology`, `unramifiedGeneralLinearTopologicalGroup`).
-  Before, `UnramifiedNormalization` and `ArithmeticFactors` both received the
-  automatic name `instTopologicalSpaceCarrier_4`, so no module could import
-  both. No other declaration changes; its only importer,
-  `RankinSelberg/UnramifiedPairStatement`, uses `letI` and does not refer to
-  the instance names.
+- The three local instances of `UnramifiedNormalization.lean` have explicit
+  names (`unramifiedFieldTopology`, `unramifiedGeneralLinearTopology`,
+  `unramifiedGeneralLinearTopologicalGroup`). With automatic names,
+  `UnramifiedNormalization` and `ArithmeticFactors` would both declare
+  `instTopologicalSpaceCarrier_4`, and no module could import both.
 
 ## Validation
 
-The module compiles in the project Lean service, together with the edited
+The module compiles, together with
 `UnramifiedNormalization`, with no errors or warnings. There is no `sorry` and
 no new axiom. Every definition returns `Prop`.

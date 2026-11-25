@@ -21,25 +21,25 @@ variable {X : Scheme.{u}}
 /-- The monoidal tensor powers of a module sheaf agree with the right-associated explicit
 sheafified tensor powers. -/
 def tensorPowComparison (L : X.Modules) : (n : ℕ) →
-    L.tensorPow n ≅ Langlands.Scheme.Modules.tensorPow L n
+    L.tensorPowFLT n ≅ Langlands.Scheme.Modules.tensorPow L n
   | 0 => Iso.refl _
-  | n + 1 => β_ (L.tensorPow n) L ≪≫ monoidalTensorIso L (L.tensorPow n) ≪≫
+  | n + 1 => β_ (L.tensorPowFLT n) L ≪≫ monoidalTensorIso L (L.tensorPowFLT n) ≪≫
       (Langlands.Scheme.Modules.tensorFunctor X).mapIso
         ((Iso.refl L).prod (tensorPowComparison L n))
 
-variable {L : X.Modules} {n : ℕ} (τ : L.tensorPow n ≅ 𝟙_ X.Modules)
+variable {L : X.Modules} {n : ℕ} (τ : L.tensorPowFLT n ≅ 𝟙_ X.Modules)
 
 /-- The scalar function obtained by sending the `n`-th tensor power of a local section through
 a trivialization of the `n`-th tensor power. -/
 def gauge {U : X.Opens} (s : Γ(L, U)) : Γ(X, U) :=
-  τ.hom.app U (Scheme.Modules.tensorPowSection s n)
+  τ.hom.app U (Scheme.Modules.tensorPowSectionFLT s n)
 
 lemma gauge_restrict {U V : X.Opens} (i : V ⟶ U) (s : Γ(L, U)) :
     X.presheaf.map i.op (gauge τ s) = gauge τ (L.presheaf.map i.op s) := by
   unfold gauge
   rw [← Scheme.Modules.map_tensorPowSection]
   have h := congrFun (congrArg (fun f => (ConcreteCategory.hom f : _ → _))
-    (τ.hom.mapPresheaf.naturality i.op)) (Scheme.Modules.tensorPowSection s n)
+    (τ.hom.mapPresheaf.naturality i.op)) (Scheme.Modules.tensorPowSectionFLT s n)
   exact h.symm
 
 lemma gauge_smul {U : X.Opens} (g : Γ(X, U)) (s : Γ(L, U)) :

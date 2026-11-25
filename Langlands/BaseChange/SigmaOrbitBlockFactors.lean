@@ -96,9 +96,9 @@ section RankOne
 
 variable {p : ℕ} [Fact p.Prime] (E : PadicField.{v} p)
 
-local instance : TopologicalSpace E.Carrier := E.canonicalTopologicalData.topology
-local instance : ValuativeRel E.Carrier := E.canonicalTopologicalData.valuativeRel
-local instance : IsNonarchimedeanLocalField E.Carrier := E.canonicalTopologicalData.localField
+private local instance : TopologicalSpace E.Carrier := E.canonicalTopologicalData.topology
+private local instance : ValuativeRel E.Carrier := E.canonicalTopologicalData.valuativeRel
+private local instance : IsNonarchimedeanLocalField E.Carrier := E.canonicalTopologicalData.localField
 
 open PadicField.ConductorTransport (quasicharacter quasicharacter_apply unitsEquiv
   unitsEquiv_symm_apply)

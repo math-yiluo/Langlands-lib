@@ -1,6 +1,6 @@
 # Actual field fibres of target families after scheme base change
 
-This internally derived supporting unit compares actual fibre point topologies.
+This internally derived supporting module compares actual fibre point topologies.
 It imposes no affine, finiteness, separation or representability assumption on
 the morphism of algebraic spaces. All tests can be arbitrary schemes in the
 declared universe, and therefore include the field tests in the published
@@ -33,7 +33,7 @@ map/pullback adjunction. This is the Yoneda evaluation identity for the
 existing chart restriction and scheme base-change isomorphism.
 
 The provenance is composition of existing Library constructions and proofs.
-This unit supplies the topological comparisons for connected-fibre descent;
-it does not yet assert the equivalence of connected-fibre predicates after
+This module supplies the topological comparisons for connected-fibre descent;
+it does not assert the equivalence of connected-fibre predicates after
 base change, eventual descent for arbitrary morphisms, or the full eight-property
-host statement.
+statement `SpaceLimitPropertyDescentStatement` that it serves.

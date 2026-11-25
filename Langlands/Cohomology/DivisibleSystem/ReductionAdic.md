@@ -1,14 +1,14 @@
 # Reductions as ideal-adic quotients and as tensor products
 
-Author: Worker 61. Built on the published modules
+Built on the published modules
 `Langlands.Cohomology.DivisibleSystem.Reduction` (`reductionTower`,
 `reductionπ`, `reductionπ_map`, `reductionTowerMap` with
 `reductionTowerMap_app`, `reductionπ_reductionTowerMap_app`,
 `reductionTowerMap_id`, `reductionTowerMap_comp`, and `reductionπ_reductionMap`)
-and `Langlands.Coefficients.AdicTensorComparison` (Worker 13:
-`tensorPower`, `tensorPowerIso`, `tensorPowerIso_unit`, `tensorFunctor`,
+and `Langlands.Coefficients.AdicTensorComparison`
+(`tensorPower`, `tensorPowerIso`, `tensorPowerIso_unit`, `tensorFunctor`,
 `tensorFunctorIso`). Through their imports it uses `powSMul` and
-`map_powSMul` (`Langlands.Cohomology.DivisibleSystem`) and, from Worker 13's
+`map_powSMul` (`Langlands.Cohomology.DivisibleSystem`) and, from
 `Langlands.Coefficients.AdicSystem`, `powerReduction`, `quotientMap`,
 `transition`, `quotientMap_transition`, `system` and `functor`. From Mathlib
 it uses `PreservesCokernel.iso` with `PreservesCokernel.π_iso_hom`,
@@ -34,7 +34,7 @@ projections `L / ℓ ^ m L ⟶ L / ℓ ^ n L` for `n ≤ m`;
 `reductionπ ℓ L m : L ⟶ L / ℓ ^ m L` is the cokernel projection, and
 `reductionTowerMap ℓ f` is the map of towers induced by `f : L ⟶ L'`.
 
-For a commutative ring `R`, an ideal `I` and an `R`-module `M`, Worker 13's
+For a commutative ring `R`, an ideal `I` and an `R`-module `M`, the
 published `AdicSystem` has the functor `powerReduction I m`, sending `M` to
 the quotient `M / I ^ m M` (the quotient by the submodule `I ^ m • ⊤`) as an
 `R`-module, the quotient maps `quotientMap I m : M ⟶ M / I ^ m M`, the
@@ -163,7 +163,7 @@ Here the carriers lie in `Type u`, the universe of `R`, as in the published
 ## Provenance and interpretation
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
-J. Math. Kyoto Univ. 39-2 (1999) (Worker 61 read the rendered scanned pages):
+J. Math. Kyoto Univ. 39-2 (1999) (read in the rendered scanned pages):
 
 - §4, printed p.311 (one-based PDF page 13): "Now we want to let `m` vary.
   Let the `K_ℓ`-modules `(ρ, W)` and `𝓛 = 𝓛_W` be as in §3; let
@@ -189,7 +189,7 @@ with `R` for `𝒪` and an arbitrary `R`-module `L` for `𝓛`:
 `1 ⊗ x`. It holds for every module, so the lattice hypotheses of Harris are
 not needed. For a representation it identifies the underlying modules and
 transports the action. The comparisons are assembled from the published
-results of Worker 13 and Mathlib's description of cokernels of modules; the
+results of `AdicSystem` and `AdicTensorComparison` and Mathlib's description of cokernels of modules; the
 statements, their naturality and compatibility, and the transport along
 functors preserving cokernels are ours. The module is derived.
 
@@ -201,7 +201,7 @@ The tensor comparison is an isomorphism of `R`-modules: the levels
 the universe of `R`. For representations only the underlying `R`-modules
 are compared; the action is transported by
 `reductionTowerForgetAdicIso_hom_ρ`, but no isomorphism of inverse systems
-of representations, nor a comparison with Worker 13's
+of representations, nor a comparison with
 `AdicSystem.actionFunctor` or with
 `Langlands.Shimura.Coefficients.torsionSystem` (systems in
 `Action (ModuleCat R) G`), is formalized. The published

@@ -1,38 +1,41 @@
 # General Aubert duality: canonical complex publications and the whole GL comparison
 
-Author: Worker 3640. Checked on 13 November 2026 against Library commit
-`aad41a6eb68efecf631ccac31f2e33766f3711f1`.
+The data below were checked on 13 November 2026 against Library commit
+`aad41a6eb68efecf631ccac31f2e33766f3711f1`; the proof statuses were checked
+again against the Library as it is.
 
 This is a bounded update to the
 [five-family dependency matrix](general-program-dependency-matrix.md), whose
 main tables remain pinned to `4bd8ef92a8f330864b325814d41cb38bf51b7794`.
-It replaces that snapshot's pending-integration descriptions for the six
-units below and records the new canonical Family 3/4 and whole-graded GL
-targets. It does not re-audit or repin the other matrix rows. The two bridge
-proofs and the whole-graded rational-point GL proof remain unreviewed drafts;
-their statements and constructions are published.
+It records the six modules below, which entered the Library after that
+snapshot, and the new canonical Family 3/4 and whole-graded GL targets. It
+does not re-audit or repin the other matrix rows. The Library proves both
+bridge statements (`canonicalRationalTargetBridges`,
+`canonicalRationalComplexTargetBridges`) and the whole-graded rational-point
+GL target (`rationalTheorem23`).
 
 Write `R` for `Langlands.Aubert.General.RationalPointFamily` and `A` for
 `Langlands.Aubert`. The source reading and correction record remain in the
 [general source map](general-program-source-map.md). This update compares
-published Lean declarations, their paired Markdown and publication receipts;
+Lean declarations of the Library, their paired Markdown and the commits where
+they first appeared;
 it claims no additional reading of the original literature.
 
-## Verified publication batches
+## Modules and the commits where they entered the Library
 
-Each row has independent semantic acceptance and publication. Both files of
-each Lean/Markdown pair are byte-identical to the frozen accepted candidate
-and the current Library. These receipts concern the constructions or
-proposition declarations named, rather than proofs of the new propositions.
+Both files of each Lean/Markdown pair were byte-identical, at the checked
+commit, to the version that first entered the Library. The commits concern
+the constructions or proposition declarations named, rather than proofs of
+the new propositions.
 
-| Published unit | Candidate | Publication commit |
-| --- | --- | --- |
-| [Canonical actual smooth complex](../../Langlands/Representation/Aubert/General/CanonicalRationalComplex.lean) | `0f6c1e24-4998-4e3a-bbdd-a40500235460` | `0c3f30c24701c74d5474fca3fbb5324a99aa1d58` |
-| [Full-support endpoint](../../Langlands/Representation/Aubert/General/CanonicalRationalComplexEndpoints.lean) | `ab63d266-7f7a-413f-beba-b5e4d8aa125f` | `0c3f30c24701c74d5474fca3fbb5324a99aa1d58` |
-| [Eight formal-target bridge statements](../../Langlands/Representation/Aubert/General/CanonicalRationalTargetBridgesStatement.lean) | `756e4d22-f4b1-438b-be63-55c2cf2b7d24` | `0c3f30c24701c74d5474fca3fbb5324a99aa1d58` |
-| [Canonical Family 3/4 targets and their bridge statement](../../Langlands/Representation/Aubert/General/CanonicalRationalComplexTargets.lean) | `714b41bc-ab1a-4a87-8946-32a9c6d8ff5e` | `85c2fe719cf62e96f22aaf4ca03961c5814d086b` |
-| [Actual GL graded constructions](../../Langlands/Representation/Aubert/General/GeneralLinearRationalGraded.lean) | `0a8b5984-4606-4203-abe4-526464db92be` | `85c2fe719cf62e96f22aaf4ca03961c5814d086b` |
-| [Actual GL Theorem 2.3 targets](../../Langlands/Representation/Aubert/General/GeneralLinearRationalTheorem23Statement.lean) | `c4005012-8c28-440f-a5bd-c9bd19f6f041` | `85c2fe719cf62e96f22aaf4ca03961c5814d086b` |
+| Published module | Publication commit |
+| --- | --- |
+| [Canonical actual smooth complex](../../Langlands/Representation/Aubert/General/CanonicalRationalComplex.lean) | `0c3f30c24701c74d5474fca3fbb5324a99aa1d58` |
+| [Full-support endpoint](../../Langlands/Representation/Aubert/General/CanonicalRationalComplexEndpoints.lean) | `0c3f30c24701c74d5474fca3fbb5324a99aa1d58` |
+| [Eight formal-target bridge statements](../../Langlands/Representation/Aubert/General/CanonicalRationalTargetBridgesStatement.lean) | `0c3f30c24701c74d5474fca3fbb5324a99aa1d58` |
+| [Canonical Family 3/4 targets and their bridge statement](../../Langlands/Representation/Aubert/General/CanonicalRationalComplexTargets.lean) | `85c2fe719cf62e96f22aaf4ca03961c5814d086b` |
+| [Actual GL graded constructions](../../Langlands/Representation/Aubert/General/GeneralLinearRationalGraded.lean) | `85c2fe719cf62e96f22aaf4ca03961c5814d086b` |
+| [Actual GL Theorem 2.3 targets](../../Langlands/Representation/Aubert/General/GeneralLinearRationalTheorem23Statement.lean) | `85c2fe719cf62e96f22aaf4ca03961c5814d086b` |
 
 ### What the canonical smooth constructions supply
 
@@ -72,7 +75,12 @@ The associated-Levi target fixes the published canonical Coxeter system
 and conjugation and quantifies every lift of its longest representative.
 
 All names in the first column belong to `R`. Each is a Prop-valued
-definition; publication of this module supplies no theorem of these types.
+definition; the module supplies no theorem of these types. The Library
+proves `CanonicalRationalFixedLeviComparisonStatement`
+(`canonicalRationalFixedLeviComparison`); for the other eight it has the
+conditional derivations `R.canonicalRational…_of_rational` from the existing
+rational targets (`CanonicalRationalComplexTargetBridgesProof`); the
+reductions of the last section concern the rational Sharp targets.
 
 | Declaration | Meaning and source locator |
 | --- | --- |
@@ -99,20 +107,20 @@ The tenth declaration,
 nine implications from the existing whole targets to these canonical
 forms. It adds no reverse implication. The existing
 `R.rationalFixedLeviComparison` already proves its existing target; the
-canonical fixed-Levi target can therefore follow after publication of the
-appropriate bridge proof. Neither bridge publication is established by
-the new statement receipt.
+canonical fixed-Levi target therefore follows with the bridge proof, and the
+Library proves it.
 
 The corrected two-sided supports, minimality, length-order direction and
 actual maps on consecutive surviving grades retain their existing proof
-obligations and owners. The
+obligations. The
 [filtration audit](corrected-filtration-topology-audit.md) and
 [support/filtration map](support-filtration-consequences-source-map.md)
 record these boundaries. No use of Proposition 3.2 is introduced.
 
 ## Actual GL targets and supplied matrix premises
 
-`R.GL.RationalTheorem23Statement.{u,v}` is now a published target. Its
+`R.GL.RationalTheorem23Statement.{u,v}` is a target of the Library, proved
+as `rationalTheorem23` (`GeneralLinearRationalTheorem23Proof`). Its
 construction uses exact finite-length K0 of actual rational-point GL
 groups, the canonical continuous matrix equivalence and exact-K0 pullback.
 The scope is `F : PadicField.{u} p` with supplied `F.TopologicalData`.
@@ -146,23 +154,21 @@ an explicit classification dependency of the prepared specialization.
 No classification-independence conclusion follows from the aggregate's
 arbitrary-premise form or from module names.
 
-The complete shared proof draft conjugates the matrix operators by
+The proof conjugates the matrix operators by
 exact-K0 pullback, applies the existing matrix Theorem 2.3 and segment
 exchange, and transports the whole polynomial equivalence and basis.
 Its supporting `rationalWholeGradedTheorem23Canonical` supplies all three
 published witnesses. Its remaining parameters are the prime, primality,
-field and topology. This draft compiled again at the current Library
-base with zero errors and warnings; compilation is development evidence.
-The existing published literal unadjusted comparison remains a smaller
+field and topology. The existing published literal unadjusted comparison remains a smaller
 proved result with its [separate inventory](gl-rational-comparison-dependencies.md).
 
 ### Historical declaration-dependency measurements
 
-The prepared proof's Markdown records a type-and-value traversal at
+The Markdown of the proof, as prepared then, records a type-and-value traversal at
 Library commit `430cc03fe803c5dbf74bc3baf91e8f7a2c26ea9c`, with its
 prepared construction, statement and proof. It follows project constants,
 including opaque theorem values, and classifies them by defining module.
-These historical counts have not been recomputed for the current base:
+These counts are for that commit and have not been recomputed:
 
 | Root under `R.GL` | Project constants | Project modules | Classification-module constants | Theorems among those constants |
 | --- | ---: | ---: | ---: | ---: |
@@ -175,33 +181,17 @@ modules, including 2,930 classification-module constants and 2,423 such
 theorems. These measure declaration dependencies; they are neither import
 counts nor counts of classification-theorem applications. The aggregate
 and the specialization supplying its three premises have different roots.
-A final ledger must follow the exact accepted proof and its published base.
+A final count must follow the proof as it is in the Library.
 
-## Proof tasks and remaining work
+## Remaining work
 
-Fresh task inspections found each successor ready at revision 1, with
-unreviewed shared draft revision 1 and no submitted proof candidate:
-
-| Task | Exact target under `R` |
-| --- | --- |
-| Task 6316, `4320e0f3-a054-4148-bc31-69a2529b0d13` | `CanonicalRationalTargetBridgesStatement.{u,v}` |
-| Task 6425, `d7477c1e-06c2-43ec-9035-3eb6b594058b` | `CanonicalRationalComplexTargetBridgesStatement.{u,v}` |
-| Task 6427, `54deb973-cbb1-46c9-8ed7-0fe591d421a2` | `GL.RationalTheorem23Statement.{u,v}` |
-
-Worker 29 also staged the two Sharp-reduction proposition declarations
-in candidate `9519779c-4e8c-42c6-b895-b72a1a150c02`. Machine validation
-is accepted; semantic review and publication remain pending at this
-check. The proposed class-formula reduction retains graded vanishing,
-support induction/Jacquet stability, exactness detection and Jacquet
-vanishing as inputs. The proposed cuspidal-series reduction retains
-support retention and Sharp irreducibility. These pending statements do
-not yet change either row to a published reduction; separate proof
-successors are also required.
-
-General dynamic finite-length preservation, the remaining formal-duality
-identities and induced Weyl conjugacy, corrected smooth exactness,
-associated-Levi comparison and Sharp consequences retain the owners and
-unproved inputs in the historical matrix. The GL result keeps its
-`PadicField` scope. The parent still requires accepted exact proofs and a
-final source, hypothesis and classification-dependency ledger for all
-five families.
+The three targets `CanonicalRationalTargetBridgesStatement.{u,v}`,
+`CanonicalRationalComplexTargetBridgesStatement.{u,v}` and
+`GL.RationalTheorem23Statement.{u,v}` under `R` are proved in the Library (see
+above). Two Sharp-reduction propositions were prepared for the class formula
+and the cuspidal series. The class-formula reduction retains graded
+vanishing, support induction/Jacquet stability, exactness detection and
+Jacquet vanishing as inputs; the cuspidal-series reduction retains support
+retention and Sharp irreducibility. The Library proves both reductions
+(`rationalSharpClassFormulaReduction`, `rationalSharpCuspidalSeriesReduction`);
+the Sharp targets themselves have only conditional proofs.

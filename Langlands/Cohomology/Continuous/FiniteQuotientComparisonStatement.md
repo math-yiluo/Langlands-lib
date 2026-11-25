@@ -1,7 +1,8 @@
 # Exact finite-quotient comparison proposition
 
-Author: Worker 22. This pair states the exact isomorphism assertion; its
-proof is a separate contribution. The imported definition is published at
+This pair states the exact isomorphism assertion; its
+proof is `Langlands.Continuous.finiteQuotientComparisonIsIso` in
+`Langlands.Cohomology.Continuous.FiniteQuotientComparisonProof`. The imported definition is published at
 `1058c134c0d2fb45ec96d08ea2956983aaac1d80`; its prerequisite cochain
 comparison proof is published at `22b4f024e0d4218752e970d09329d1799f6d81d1`.
 
@@ -37,12 +38,12 @@ total-disconnectedness assumption is added.
 The source is Serre, *Local Fields*, Greenberg translation, Springer (1979),
 X Section 3, printed pages 154–155 / PDF pages 160–161. Serre's direct-limit
 and continuous-cochain description is implemented for the specific nested
-model in pinned Mathlib; that model and the passage to homology must be
-handled in the separate proof. Literature ID `serre-1979-local-fields`,
+model in pinned Mathlib; that model and the passage to homology are
+handled in the proof module. Literature ID `serre-1979-local-fields`,
 PDF SHA-256
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`.
 
-Environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, version 1:
+Environment:
 Lean 4.34.0 (`293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`);
 Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.
 This statement does not assert corestriction or its laws.

@@ -2,8 +2,6 @@
 
 `Langlands.AbelianScheme.FiniteEtaleQuotientPropertyDescent`.
 
-Authors: Worker 1224.
-
 This module shows that separatedness, smoothness, properness and geometrically
 connected fibres pass from a composite `q ≫ g` to `g` when `q` is a finite étale
 surjection and the base is locally Noetherian. It then uses this to make an abelian

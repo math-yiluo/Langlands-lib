@@ -1,8 +1,5 @@
 # Actual group operations and the smooth-affine-group target
 
-Author: Worker 1203. The generic regular-atlas and comparison interfaces were
-authored by Worker 274.
-
 For an actual affine group scheme `G` over an `RCLike` field `k`, let `A` be a
 `RegularAtlas k G.X d`. `regularAtlasLieGroup` constructs a real `C∞`
 `LieGroup` property on the actual `RingPoint k G.X k` carrier, equipped with
@@ -29,8 +26,11 @@ hypothesis are explicit.
 This is internal derived transport of the existing group-operation
 preservation results through the analytic family criterion. It does not
 prove that comparison assumption or construct an atlas from algebraic
-smoothness. Those remain separate obligations. In particular, this conditional
-construction is not the full smooth-affine-group existence theorem.
+smoothness. Those are proved separately, as `regularAtlasComparison` in
+`Langlands.AlgebraicGeometry.PointManifold.RegularAtlasComparisonProof` and
+`regularChartExistence` in
+`Langlands.AlgebraicGeometry.PointManifold.RegularChartExistenceProof`. In
+particular, this conditional construction is not the full smooth-affine-group existence theorem.
 
 `smoothAffineGroupManifoldStatement.{v,w}` is the exact Prop-valued existence
 target. Its input is the algebraic condition
@@ -52,8 +52,9 @@ real and complex group schemes. Their real models are `Fin d → ℝ` and
 
 The target keeps the actual relative-morphism carrier, original group laws,
 and existing evaluation topology throughout. It assumes no analytic chart or
-manifold as input. Its expected proof combines the separately stated
+manifold as input. Its proof, `smoothAffineGroupManifold` in
+`Langlands.GroupScheme.AffinePointRegularLieGroupProof`, combines the separately stated
 algebraic chart-existence and analytic comparison theorems with the
 conditional transfer above. This file states that full target without
-proving it, so publication of this interface alone establishes no implication
+proving it, so this interface alone establishes no implication
 from algebraic smoothness to a manifold.

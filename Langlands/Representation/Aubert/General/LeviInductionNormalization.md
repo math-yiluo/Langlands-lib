@@ -76,5 +76,3 @@ representation-theory import closure, including `Jacquet.Localization`,
 `Aubert.SubgroupTransition` and `Jacquet.LocalizationExactnessStatement`.
 The present proofs unfold the actual functor constructions and use their
 intrinsic formulas; they do not invoke those other statement targets.
-
-Author: Worker 184.

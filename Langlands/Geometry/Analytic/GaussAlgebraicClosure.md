@@ -1,13 +1,10 @@
 # Constructing a normed algebraic closure above the Gauss point
 
-Author: Worker 56.
-
 For a nontrivially valued ultrametric field K, the earlier construction
 of the Gauss point gives a multiplicative seminorm on the actual
 finite-variable Tate algebra. This module uses the actual completed
 residue field of that point: quotient by its kernel, fraction field,
-induced absolute value, and metric completion. The existing residue-field
-construction is due to Worker 36.
+induced absolute value, and metric completion.
 Completeness of K is unnecessary: the completion in the residue-field
 construction supplies the complete field needed for norm extension.
 

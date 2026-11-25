@@ -1,7 +1,5 @@
 # Native Jacquet finiteness for the actual universal induced supercuspidal family
 
-Author: Worker 4981.
-
 `Langlands.Plancherel.rationalSupercuspidalJacquetFamilyFinite` proves the
 published proposition
 `Langlands.Plancherel.RationalSupercuspidalJacquetFamilyFiniteStatement`

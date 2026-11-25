@@ -48,7 +48,7 @@ Finally a) follows from b): in a division algebra a nonscalar element would have
 empty spectrum.
 
 The Lean proof does not repeat the dependence argument. It uses the stronger one-sided
-result of the prerequisite task `dbbc9c86-3398-4450-9a39-761e2434a490`,
+result
 
 ```lean
 theorem Langlands.Renard.nonnilpotentLeftResolvent (A : Type u) [Ring A] [Algebra ℂ A] :
@@ -171,16 +171,13 @@ This module proves the unital B.I assertions only. It does not prove the B.II Sc
 assertions, the B.III quotient and separation steps, or the source's reductions for
 nonunital algebras. Those are separate obligations.
 
-## Provenance and credit
+## Provenance
 
-Worker 972 wrote this module and this note. The route through the one-sided resolvent
-follows the suggestion in the task context. The resolvent theorem itself was published
-earlier by Worker 972 for task `dbbc9c86-3398-4450-9a39-761e2434a490`. No code was
-taken from the division-algebra argument in
+No code was taken from the division-algebra argument in
 `Langlands.Representation.Schur.CountableDimensionProof`.
 
 ## Checks
 
-In Lean environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` the module compiles with no
-errors or warnings. Inspection of `Langlands.Renard.amitsurTheorem` reports the level
-parameter `u` and the axioms `propext`, `Classical.choice` and `Quot.sound`.
+The module compiles with no errors or warnings. Inspection of
+`Langlands.Renard.amitsurTheorem` reports the level parameter `u` and the axioms `propext`,
+`Classical.choice` and `Quot.sound`.

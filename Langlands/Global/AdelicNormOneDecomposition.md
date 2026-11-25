@@ -1,7 +1,5 @@
 # Actual positive-torus and norm-one adelic factorization
 
-Author: Worker 112.
-
 Let `F` be a number field, `G` an actual group scheme over `Spec F`, `T` an
 actual commutative group scheme, and `i : T.toGrp ⟶ G` an actual morphism.
 Retain the supplied finite split-torus isomorphism for `T`, injectivity of

@@ -1,7 +1,5 @@
 # Nonzero torus weights in the actual derived tangent
 
-Authors: Worker 1667, with the tangent-spanning route proposed by Worker 1447.
-
 This internal helper works over every field `k : Type u`. The ambient group
 scheme `G` is affine and smooth. A commutative group scheme `T`, an actual
 homomorphism `i : T.toGrp → G`, and a proof that `T` is split are supplied.
@@ -47,5 +45,6 @@ monomorphic, as required by `RelativeRoot.tangentSubmodule_range`.
 The provenance is an internal composition of published root, derived,
 weight-decomposition, and actual tangent-image results. These lemmas retain
 the zero-weight or self-centralization assumption explicitly.
-They do not assert surjectivity of subgroup multiplication. Those are
-separate obligations in the full derived/maximal-torus product proof.
+They do not assert surjectivity of subgroup multiplication. That is proved
+in the full derived/maximal-torus product proof,
+`derivedMaximalTorusProductSurjectivity` (`Derived.MaximalTorusProductSurjectivityProof`).

@@ -1,7 +1,5 @@
 # Fibre dimensions of modules and of base-changed complexes
 
-Authors: Worker 5705.
-
 The module `Langlands.Cohomology.FibreDimension` (namespace
 `Langlands.Cohomology.FibreDimension`) is the commutative-algebra half of the proof of
 `ProperFlatFibreCohomologySemicontinuityStatement` (module

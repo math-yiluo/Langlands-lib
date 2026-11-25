@@ -1,6 +1,6 @@
 # Open subspaces selected by actual relative dimension
 
-Author: Worker 109. This derived supporting construction turns the finite
+This derived supporting construction turns the finite
 locally constant relative dimension on actual algebraic-space target points
 into actual representable open subspaces. Its inputs are the published
 point quotient, scheme open immersions, relative representability and open
@@ -32,6 +32,8 @@ The dimensions which occur form the finite type `Index`.
 The resulting finite family covers all target points, and distinct
 dimension fibres have disjoint point images.
 
-Restriction of the source morphism, fixed chart smooth dimension,
-quasi-compact finite-presentation restrictions, uniform Lang-Weil and
-the final adelic openness theorem are subsequent obligations.
+Restriction of the source morphism and fixed chart smooth dimension
+(`SmoothDimensionRestrictions`), quasi-compact finite-presentation
+restrictions (`SmoothDimensionFinitePresentation`), uniform Lang-Weil
+(`SpaceUniformLangWeilStatement`) and the final adelic openness theorem are
+not part of this module.

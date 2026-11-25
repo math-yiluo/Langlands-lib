@@ -1,7 +1,5 @@
 # Finite unramified exhaustion of the actual inertia fixed field
 
-Author: Worker 298.
-
 `Langlands.PadicField.InertiaFixedFieldUnramifiedExhaustion.{u}` is a
 proposition. It quantifies over every natural number `p` with a primality
 certificate `[Fact p.Prime]` and every `F : PadicField.{u} p`, in an arbitrary
@@ -87,7 +85,7 @@ Jean-Pierre Serre, *Local Fields*, translated by Marvin Jay Greenberg,
 Springer GTM 67 (1979), registered source `serre-1979-local-fields`, file
 `/home/taskhub/central-library/Serre--Local Fields--1979.pdf`, SHA256
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`.
-Worker 298 read the following passages in this file:
+The following passages in this file were read:
 
 - Chapter III, section 5, Theorems 2 and 3 and Corollaries 1–3, printed
   pages 54–55 / PDF pages 61–62. Finite unramified extensions correspond to
@@ -127,8 +125,10 @@ IV.1, in the form used in V.4 Lemma 7.
 
 ## Status and unproved bridges
 
-This module defines the proposition only; it proves neither clause. A proof
-is a separate task. A likely route, not carried out here, is as follows.
+This module defines the proposition only; it proves neither clause. The
+proof is `inertiaFixedFieldUnramifiedExhaustion` in
+`Langlands.Galois.Local.InertiaFixedFieldUnramifiedProof`. A likely route,
+not carried out here, is as follows.
 
 - Clause 1 should follow from the published theorem
   `Langlands.PadicField.canonicalUnramifiedCriterion` (forward direction)
@@ -141,6 +141,6 @@ is a separate task. A likely route, not carried out here, is as follows.
   contained in `U`; the reverse direction of the same criterion then yields
   the equality of ramification indices.
 
-These are expectations about a future proof, not results established by this
+These describe a route, not results established by this
 module. It does not state extension descent, existence of unramified
 extensions of every degree, norm surjectivity, or any cohomology vanishing.

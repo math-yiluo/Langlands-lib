@@ -32,7 +32,7 @@ trivial representation on `LocalTensorTail`. The formula
 `separatedLocalRepresentation_tmul` says that its action sends
 `x ⊗ y` to `ρ v g x ⊗ y`.
 
-`localSeparation_intertwines` proves that the published algebraic
+`localSeparation_intertwines` proves that the existing algebraic
 `localSeparation` intertwines these two actions.
 `localTensorSeparation` bundles that linear equivalence and this identity as a
 `Representation.Equiv`. Its underlying linear map and inverse are the existing
@@ -51,7 +51,7 @@ coordinates at exceptional places can still be zero.
 
 ## Implemented proof and provenance
 
-This is an internal construction from published Library results. To prove the
+This is an internal construction from existing Library results. To prove the
 intertwining identity, `hom_ext_cofinal {v}` reduces equality of linear maps to
 elementary tensors on stages containing `v`.
 `tensorRepresentation_localInclusion_pure` changes only that coordinate.
@@ -60,7 +60,7 @@ handles the separated coordinate, and `Function.update_of_ne` leaves every
 complementary coordinate fixed. The inverse-action formula follows from the
 intertwining law of the inverse representation equivalence.
 
-No new assertion from external literature is used. This unit identifies local
+No new assertion from external literature is used. This module identifies local
 actions of a tensor representation already constructed from supplied factors.
 It does not assert that an automorphic representation admits such a
 factorization, that the factors are irreducible or admissible, or that local

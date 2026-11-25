@@ -1,7 +1,5 @@
 # Swapping the factors of an irreducible equal-rank product
 
-Author: Worker 1023.
-
 `Langlands.Classification.IrreducibleTwoFactorProductSwap.{uF,uV} F T` is a
 proposition definition. It names the irreducible equal-rank case of
 Zelevinsky 1980, Theorem 1.9, printed p.174 (PDF p.11): if `α × β` is

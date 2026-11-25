@@ -1,7 +1,5 @@
 # Actual algebraic coefficient modules with their derived Lie action
 
-Author: Worker 2.
-
 This module puts the actual point representation and the constructed algebraic
 Lie differential of a general linear group-scheme representation on the same
 finite free coefficient module. Their conjugation covariance is proved from

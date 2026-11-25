@@ -1,6 +1,6 @@
 # Minimality of the conductor and the scaled identity at the conductor level
 
-Author: Worker 5032. This module defines one proposition,
+This module defines one proposition,
 `Langlands.Conductor.ConductorMinimalityStatement` (universes `uF`, `uV`).
 It is a statement only: nothing here proves it, and no declaration assumes it.
 

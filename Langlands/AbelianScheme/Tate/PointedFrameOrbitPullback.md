@@ -71,9 +71,9 @@ orders on each of `S` and `S'`. These are conditional geometric inputs. The
 field is not required to be algebraically closed by this interface. Connectedness
 and local noetherianness are not needed for this conditional pointed construction.
 
-These are ambient tensor-linear frame orbits. This unit imposes no Weil-pairing
+These are ambient tensor-linear frame orbits. This module imposes no Weil-pairing
 or similitude condition, chooses no Tate-twist trivialization, and makes no
 canonical unpointed-functor claim. Identity and composite base changes are not
-proved on the fixed subsets in this unit. Its provenance is the explicit generic
+proved on the fixed subsets in this module. Its provenance is the explicit generic
 quotient argument specialized to the existing actual Tate and finite étale
 constructions; no new literature theorem is attributed to a source.

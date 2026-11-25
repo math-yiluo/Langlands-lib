@@ -67,8 +67,8 @@ omit [TopologicalSpace G] [IsTopologicalGroup G] in
 /-- Categorical target action in geometric composition order. -/
 theorem atlasTargetAction_comp
     (Y : Action (AffinoidAtlasPresentation.{u, max u v, v} K) G) (g k : G) :
-    Y.ρ k ≫ Y.ρ g = Y.ρ (g * k) :=
-  (Y.ρ.map_mul g k).symm
+    (Y.ρ k).asHom ≫ (Y.ρ g).asHom = (Y.ρ (g * k)).asHom :=
+  (congrArg End.asHom (Y.ρ.map_mul g k)).symm
 
 /-- Copywise bounded extension into any existing categorical atlas-action target. -/
 def extendToAtlasMap {X : NormContinuousSpace K H}
@@ -77,7 +77,7 @@ def extendToAtlasMap {X : NormContinuousSpace K H}
       (Action.res (AffinoidAtlasPresentation.{u, max u v, v} K) H.subtype).obj Y) :
     atlasPresentation H hH X ⟶ Y.V :=
   atlasComparisonInv H hH X ≫
-    assembleCopyAtlasMap H (fun c => f.hom ≫ Y.ρ c.out)
+    assembleCopyAtlasMap H (fun c => f.hom ≫ (Y.ρ c.out).asHom)
 
 /-- Copy restriction recovers the entire prescribed target-action composite. -/
 @[simp]
@@ -86,7 +86,7 @@ theorem quotientCopyMap_extendToAtlasMap {X : NormContinuousSpace K H}
     (f : (localAtlasFunctor H).obj X ⟶
       (Action.res (AffinoidAtlasPresentation.{u, max u v, v} K) H.subtype).obj Y)
     (c : G ⧸ H) :
-    quotientCopyMap H hH X c ≫ extendToAtlasMap H hH f = f.hom ≫ Y.ρ c.out := by
+    quotientCopyMap H hH X c ≫ extendToAtlasMap H hH f = f.hom ≫ (Y.ρ c.out).asHom := by
   unfold quotientCopyMap extendToAtlasMap
   rw [Category.assoc, ← Category.assoc (atlasComparisonHom H hH X),
     atlasComparisonHom_inv, Category.id_comp, copyMap_assembleCopyAtlasMap]
@@ -99,26 +99,26 @@ theorem extendToAtlasMap_equivariant {X : NormContinuousSpace K H}
       (Action.res (AffinoidAtlasPresentation.{u, max u v, v} K) H.subtype).obj Y)
     (g : G) :
     atlasActionMap H hH X g ≫ extendToAtlasMap H hH f =
-      extendToAtlasMap H hH f ≫ Y.ρ g := by
+      extendToAtlasMap H hH f ≫ (Y.ρ g).asHom := by
   apply quotientAtlasHom_ext H hH
   intro c
   let f₀ : (localFamily H X).atlasPresentation ⟶ Y.V := f.hom
   have hc (d : G ⧸ H) : quotientCopyMap H hH X d ≫ extendToAtlasMap H hH f =
-      f₀ ≫ Y.ρ d.out := quotientCopyMap_extendToAtlasMap H hH f d
+      f₀ ≫ (Y.ρ d.out).asHom := quotientCopyMap_extendToAtlasMap H hH f d
   have hf : (localActionMap H X (correction H g c)).atlasMap ≫ f₀ =
-      f₀ ≫ Y.ρ (correction H g c : G) := f.comm (correction H g c)
+      f₀ ≫ (Y.ρ (correction H g c : G)).asHom := f.comm (correction H g c)
   calc
     quotientCopyMap H hH X c ≫ (atlasActionMap H hH X g ≫ extendToAtlasMap H hH f) =
         (localActionMap H X (correction H g c)).atlasMap ≫
           (quotientCopyMap H hH X (g • c) ≫ extendToAtlasMap H hH f) := by
             rw [← Category.assoc, quotientCopyMap_action, Category.assoc]
     _ = (localActionMap H X (correction H g c)).atlasMap ≫
-        (f₀ ≫ Y.ρ (g • c).out) := by rw [hc]
-    _ = (f₀ ≫ Y.ρ (correction H g c : G)) ≫ Y.ρ (g • c).out := by
+        (f₀ ≫ (Y.ρ (g • c).out).asHom) := by rw [hc]
+    _ = (f₀ ≫ (Y.ρ (correction H g c : G)).asHom) ≫ (Y.ρ (g • c).out).asHom := by
       rw [← Category.assoc, hf]
-    _ = f₀ ≫ Y.ρ (g * c.out) := by
+    _ = f₀ ≫ (Y.ρ (g * c.out)).asHom := by
       rw [Category.assoc, atlasTargetAction_comp, ← correction_spec]
-    _ = quotientCopyMap H hH X c ≫ (extendToAtlasMap H hH f ≫ Y.ρ g) := by
+    _ = quotientCopyMap H hH X c ≫ (extendToAtlasMap H hH f ≫ (Y.ρ g).asHom) := by
       rw [← Category.assoc, hc, Category.assoc, atlasTargetAction_comp]
 
 /-- The actual full-group-equivariant extension for arbitrary atlas-action targets. -/
@@ -137,10 +137,10 @@ theorem unitAtlasMap_extendToAtlasMap {X : NormContinuousSpace K H}
     unitAtlasMap H hH X ≫ extendToAtlasMap H hH f = f.hom := by
   let f₀ : (localFamily H X).atlasPresentation ⟶ Y.V := f.hom
   have hf : (localActionMap H X (identityRepresentative H)⁻¹).atlasMap ≫ f₀ =
-      f₀ ≫ Y.ρ ((identityRepresentative H)⁻¹ : H) :=
+      f₀ ≫ (Y.ρ ((identityRepresentative H)⁻¹ : H)).asHom :=
     f.comm (identityRepresentative H)⁻¹
   have hc : quotientCopyMap H hH X (identityCoset H) ≫ extendToAtlasMap H hH f =
-      f₀ ≫ Y.ρ (identityRepresentative H : G) :=
+      f₀ ≫ (Y.ρ (identityRepresentative H : G)).asHom :=
     quotientCopyMap_extendToAtlasMap H hH f (identityCoset H)
   change unitAtlasMap H hH X ≫ extendToAtlasMap H hH f = f₀
   rw [unitAtlasMap_eq_quotientCopyMap, Category.assoc, hc, ← Category.assoc, hf,
@@ -175,9 +175,9 @@ theorem extendToAtlas_restrictFromAtlas {X : NormContinuousSpace K H}
   apply quotientAtlasHom_ext H hH
   intro c
   rw [quotientCopyMap_extendToAtlasMap]
-  change (unitAtlasMap H hH X ≫ p₀) ≫ Y.ρ c.out =
+  change (unitAtlasMap H hH X ≫ p₀) ≫ (Y.ρ c.out).asHom =
     quotientCopyMap H hH X c ≫ p₀
-  have hp : atlasActionMap H hH X c.out ≫ p₀ = p₀ ≫ Y.ρ c.out :=
+  have hp : atlasActionMap H hH X c.out ≫ p₀ = p₀ ≫ (Y.ρ c.out).asHom :=
     p.comm c.out
   rw [Category.assoc, ← hp, ← Category.assoc, unitAtlasMap_action]
 
@@ -265,7 +265,7 @@ theorem extendToAtlasMap_indexMap {X : NormContinuousSpace K H}
       (Action.res (AffinoidAtlasPresentation.{u, max u v, v} K) H.subtype).obj Y)
     (c : (atlas H X.unop hH).Index) :
     (extendToAtlasMap H hH f).indexMap c =
-      (Y.ρ c.val.out).indexMap (f.hom.indexMap ⟨PUnit.unit, c.property⟩) := rfl
+      (Y.ρ c.val.out).asHom.indexMap (f.hom.indexMap ⟨PUnit.unit, c.property⟩) := rfl
 
 /-- The original bounded algebra pullback is the actual contravariant composite. -/
 @[simp]
@@ -276,7 +276,7 @@ theorem extendToAtlasMap_pullback {X : NormContinuousSpace K H}
     (c : (atlas H X.unop hH).Index) :
     (extendToAtlasMap H hH f).pullback c =
       (f.hom.pullback ⟨PUnit.unit, c.property⟩).comp
-        ((Y.ρ c.val.out).pullback (f.hom.indexMap ⟨PUnit.unit, c.property⟩)) :=
+        ((Y.ρ c.val.out).asHom.pullback (f.hom.indexMap ⟨PUnit.unit, c.property⟩)) :=
   BoundedAlgHom.ext fun _ => rfl
 
 /-- On every actual copy the map applies the chosen representative's target action. -/
@@ -286,8 +286,8 @@ theorem extendToAtlasMap_baseMap_copy {X : NormContinuousSpace K H}
       (Action.res (AffinoidAtlasPresentation.{u, max u v, v} K) H.subtype).obj Y)
     (c : G ⧸ H) (x : LocalSpectrum H X.unop) :
     (extendToAtlasMap H hH f).baseMap (spectrumHomeomorph H X.unop hH ⟨c, x⟩) =
-      (Y.ρ c.out).baseMap (f.hom.baseMap ⟨PUnit.unit, x⟩) := by
-  change (assembleCopyAtlasMap H (fun d => f.hom ≫ Y.ρ d.out)).baseMap
+      (Y.ρ c.out).asHom.baseMap (f.hom.baseMap ⟨PUnit.unit, x⟩) := by
+  change (assembleCopyAtlasMap H (fun d => f.hom ≫ (Y.ρ d.out).asHom)).baseMap
       ((spectrumHomeomorph H X.unop hH).symm
         (spectrumHomeomorph H X.unop hH ⟨c, x⟩)) = _
   rw [Homeomorph.symm_apply_apply]
@@ -300,7 +300,7 @@ theorem extendToAtlasMap_baseMap_mk {X : NormContinuousSpace K H}
       (Action.res (AffinoidAtlasPresentation.{u, max u v, v} K) H.subtype).obj Y)
     (g : G) (x : LocalSpectrum H X.unop) :
     (extendToAtlasMap H hH f).baseMap (TopologicalInduction.mk H g x) =
-      (Y.ρ g).baseMap (f.hom.baseMap ⟨PUnit.unit, x⟩) := by
+      (Y.ρ g).asHom.baseMap (f.hom.baseMap ⟨PUnit.unit, x⟩) := by
   have hu := congrArg
     (fun p : (localFamily H X).atlasPresentation ⟶ Y.V =>
       p.baseMap ⟨PUnit.unit, x⟩) (unitAtlasMap_extendToAtlasMap H hH f)
@@ -312,7 +312,7 @@ theorem extendToAtlasMap_baseMap_mk {X : NormContinuousSpace K H}
     (fun p : atlasPresentation H hH X ⟶ Y.V =>
       p.baseMap (TopologicalInduction.unit H x)) (extendToAtlasMap_equivariant H hH f g)
   change (extendToAtlasMap H hH f).baseMap (g • TopologicalInduction.unit H x) =
-    (Y.ρ g).baseMap
+    (Y.ρ g).asHom.baseMap
       ((extendToAtlasMap H hH f).baseMap (TopologicalInduction.unit H x)) at he
   simpa only [TopologicalInduction.smul_unit, hu] using he
 

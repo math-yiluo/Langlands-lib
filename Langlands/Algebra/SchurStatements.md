@@ -19,7 +19,7 @@ text and as a rendered image. Also read were the ring and module conventions of
 Chapter I (printed pages 5–6 / PDF pages 11–12) and the definition of simple
 objects in A.VI.3 (printed page 263 / PDF page 269).
 
-The current Library has no `notes/errata` file for this source. The registered
+When this file was written, the Library had no `notes/errata` file for this source. The registered
 2010-edition list *corrections et compléments*, SHA256
 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`, was also
 checked. Its entry for 2010 page 314 runs from PDF page 18 to PDF page 19. It says
@@ -66,11 +66,12 @@ either, and may even be zero. The proof starts by replacing `A` with its
 unitization `Ã = A ⊕ ℂ1_A` (I.2.1), on which `M` becomes a unital module. This file
 states **only the resulting unital core**: `A` is a unital ring and `M` is an
 ordinary unital `A`-module (Lean's `Module A M`). These targets alone do **not**
-cover Renard's original nonunital statement. The parent program keeps the
-following work: the compatible complex-linear ambient nonunital action, the actual
+cover Renard's original nonunital statement. The
+following work is outside this file: the compatible complex-linear ambient nonunital action, the actual
 unitized action of `Ã`, the comparison of stable complex subspaces, of simplicity
 and of endomorphisms between `A` and `Ã`, and the passage from countable dimension
-of `A` to countable dimension of `Ã`. The published additive interface in
+of `A` to countable dimension of `Ã`. Renard's original nonunital statement is
+proved in `Langlands.Algebra.NonUnitalSchurProof` (`Langlands.Renard.nonUnitalSchur`). The published additive interface in
 `Langlands/Algebra/NonUnitalModule.lean` is not used or changed here.
 
 ## Conventions
@@ -113,8 +114,7 @@ of `A` to countable dimension of `Ã`. The published additive interface in
 
 ## Declarations
 
-All are in namespace `Langlands.Renard`. The eight targets, in the order of the
-task, are:
+All are in namespace `Langlands.Renard`. The eight targets, in order, are:
 
 1. `SchurEndDivisionStatement A M` for `(A : Type u) [Ring A] (M : Type v)
    [AddCommGroup M] [Module A M]`: `IsSimpleModule A M → Nontrivial (Module.End A M) ∧
@@ -198,7 +198,7 @@ here so that later proofs can be split along the source's argument.
 
 ## Verification
 
-Every target was compiled in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`
+Every target was compiled
 and inspected with `statement_returns_prop: true` and only the standard axioms
 (`propext`, `Classical.choice`, `Quot.sound`). A private diagnostic printed the
 complete `@`-types and expanded bodies of all nine definitions. It confirmed the
@@ -216,24 +216,25 @@ Private sanity checks, not part of this file, also proved targets 1–3 directly
 from Mathlib. They confirm that these propositions are neither vacuous nor
 misstated.
 
-## Not claimed; future proof routes
+## Not claimed; proof routes
 
-Nothing here proves Schur's lemma or a dimension transfer. A later proof may use
+Nothing here proves Schur's lemma or a dimension transfer. The proof in
+`Langlands.Algebra.SchurProof` uses
 Mathlib's simple-module results, such as `LinearMap.bijective_of_ne_zero`,
 `Module.End.instDivisionRing` and `IsSimpleModule.toSpanSingleton_surjective`.
-For scalarity it may also use the separate Amitsur division-algebra target
+For scalarity it also uses the separate Amitsur division-algebra target
 `Langlands.Renard.AmitsurDivisionAlgebraStatement` (module
-`Langlands.Algebra.AmitsurStatements`), once that target is proved. These are
+`Langlands.Algebra.AmitsurStatements`), proved as
+`Langlands.Renard.amitsurDivisionAlgebra` in `Langlands.Algebra.AmitsurProof`. These are
 proof obligations, not hypotheses of the present targets. No topology, finite
 dimension, commutativity of `A` or group origin is assumed. The Library's
 `Langlands.countableDimensionalSchur` concerns irreducible group representations
 specifically and is not used.
 
-## Attribution
+## Type probe and later checks
 
-The candidate types follow a private type probe by Worker 6
-(`schur-feasibility/SchurProbe.lean`, diagnostic
-`7978c47a-1e7b-4607-94d3-294f6395307c`). Worker 713 reread the source, wrote this
-file, added the entry conjunction and the proved map lemmas, and repeated the
-complete type inspection. Worker 1055 corrected the binder explanation of target
-5 after a private Lean check of header binders and unused section variables.
+The types follow a private type probe
+(`schur-feasibility/SchurProbe.lean`). The source was reread when this file was
+written, and the complete type inspection was repeated. The binder explanation of
+target 5 was corrected after a private Lean check of header binders and unused
+section variables.

@@ -38,6 +38,7 @@ subgroup to the existing stabilizer. Its inputs are supplied parahoric-building
 data, the full existing apartment predicate, singleton sharp-fixer boundedness,
 boundedness of the image of the actual centralizer norm kernel, the actual
 open-root/centralizer generation statement and canonical openness of the
-centralizer-zero subgroup. All remain explicit. This unit fills the assembly
+centralizer-zero subgroup. All remain explicit. This module fills the assembly
 step for KP 4.1.2; it neither constructs general building data nor discharges
-these structural inputs or the unrestricted parent construction theorem.
+these structural inputs or the unrestricted construction statement
+`RootValuationBuildingConstructionStatement`.

@@ -1,7 +1,5 @@
 # The factor hypotheses for a slot family with one updated merged slot
 
-Author: Worker 890.
-
 The published statement
 `Langlands.Classification.SegmentEdgeJacquetFiltration.{uF,uV,uW} F T`
 (module `SegmentEdgeJacquetStatement`) has two hypotheses on the factors `Y j`

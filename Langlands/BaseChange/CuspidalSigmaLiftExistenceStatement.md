@@ -31,10 +31,10 @@ elements. The statement is **not** proved here.
 ## Notation
 
 As in `CuspidalSigmaLiftStructureStatement.md`: `GL_m(R)` is `Langlands.GeneralLinear m R`;
-`entrywiseAut` and `IsCyclicAlgebra` come from `Langlands.BaseChange.Norm` (Task 7405);
+`entrywiseAut` and `IsCyclicAlgebra` come from `Langlands.BaseChange.Norm`;
 `SigmaIntertwiner` and `IsSigmaLift` (HL's σ-lift, II.2.7: `c ≠ 0` and
 `trace(Π(φ) ∘ A) = c · trace π(f)` for all Haar measures and concordant pairs `(φ, f)`) come
-from `Langlands.BaseChange.TwistedCharacter` (Task 7432); `normTwistStabilizer` and
+from `Langlands.BaseChange.TwistedCharacter`; `normTwistStabilizer` and
 `sigmaOrbitProduct` come from `Langlands.BaseChange.CuspidalSigmaLift`.
 `Π₁^{σ^i}` is `Π₁.comp (entrywiseAut (σ ^ i) n₁).toMonoidHom`. "Irreducible" is Mathlib's
 `Representation.IsIrreducible`, "isomorphic" is `Nonempty (Representation.Equiv _ _)`,
@@ -68,7 +68,7 @@ supplied with `haveI` from the Library's `LocalFieldTopology.generalLinear_t2Spa
 `LocalFieldTopology.generalLinear_locallyCompactSpace` and
 `LocalFieldTopology.generalLinear_totallyDisconnectedSpace`, applied to `F` and to `E`.
 
-The constant `c` is existential, as in Task 7449: the Whittaker normalization of the
+The constant `c` is existential, as in the discrete-series σ-lift statements: the Whittaker normalization of the
 intertwiner `A`, which would fix `c`, is not defined in this programme.
 
 ## The stabilizer clause
@@ -90,7 +90,7 @@ of order `l` and its elements are automatically continuous (see `CuspidalSigmaLi
 
 ## Convention for `Π^σ`
 
-`Π₁^{σ^i}` is `g ↦ Π₁(g^{σ^i})`, as in HL II.1.3 and Task 7432. The factors
+`Π₁^{σ^i}` is `g ↦ Π₁(g^{σ^i})`, as in HL II.1.3 and `Langlands.BaseChange.TwistedCharacter`. The factors
 `{Π₁^{σ^i} : 0 ≤ i < s}` form the `Gal(E/F)`-orbit of the class of `Π₁`; the other convention
 (`σ⁻¹`) gives the same factors in another order, and since the factors are pairwise unlinked
 (next section) the product does not depend on the order.
@@ -124,8 +124,9 @@ countable dimension, so it has a model in every universe.
 HL II.4.12 is stated for a cyclic extension field `E` of `F`. The statement requires `E` to be
 a nonarchimedean local field because the Library's product induction
 (`LocalFieldData.ofInstances E`) needs it. `[IsModuleTopology F E]` makes the topology of `E`
-the one induced from `F`, as in Task 7432. `CharZero F` is assumed as in Tasks 7416, 7432,
-7442 and 7449: the concordance inside `IsSigmaLift` uses the Library's
+the one induced from `F`, as in `Langlands.BaseChange.TwistedCharacter`. `CharZero F` is
+assumed as in the statements on orbital integrals, twisted characters, pseudo-coefficients
+and discrete-series σ-lifts: the concordance inside `IsSigmaLift` uses the Library's
 `IsRegularSemisimple` (separable characteristic polynomial), which agrees with HL's
 regularity in characteristic zero; Arthur–Clozel also work in characteristic zero.
 
@@ -139,9 +140,9 @@ describes both cases of Arthur–Clozel, Chapter 1, Lemma 6.10.
 ## Proof routes
 
 HL deduce the Remarque from the Corollaire of II.4.12 and from σ-discrete descent (II.4.6,
-Théorème (2): Task 7449): `Ξ₁ × ⋯ × Ξ₁^{σ^{s-1}}` is essentially σ-discrete (Arthur–Clozel,
+Théorème (2): `SigmaDiscreteDescentStatement`): `Ξ₁ × ⋯ × Ξ₁^{σ^{s-1}}` is essentially σ-discrete (Arthur–Clozel,
 Lemma 2.8, converse), hence irreducible, and is the σ-lift of an essentially discrete `ρ`;
 the Proposition and the Corollaire applied to `ρ` (via `L(Π, Ξ̌) = ∏_κ L(π, κρ̌)`, II.4.6,
 Théorème (4), and II.3.5 (ii)–(iii)), together with the uniqueness of σ-lifts, show that `ρ`
-is cuspidal with stabilizer of order `s`. A later proof task must not derive this statement
+is cuspidal with stabilizer of order `s`. A later proof must not derive this statement
 from a result that depends on it.

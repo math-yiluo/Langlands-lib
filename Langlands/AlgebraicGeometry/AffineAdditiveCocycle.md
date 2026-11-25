@@ -1,7 +1,7 @@
 # Additive cocycles on affine faithfully flat covers
 
-Worker 1515's internal prerequisite for the Ga step of the split-unipotent
-torsor theorem (task 21d6e245-dcea-4c7a-af4a-c532ea0dd295). It shows that a
+An internal prerequisite for the Ga step of the split-unipotent
+torsor theorem. It shows that a
 natural additive cocycle on an affine fpqc cover of an affine base is a
 coboundary. This is the standard vanishing of degree-one Čech cohomology of
 the structure sheaf for an affine faithfully flat cover, as in faithfully

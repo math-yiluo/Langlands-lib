@@ -1,12 +1,9 @@
 # The selected tempered-reflection obstruction from independent Hom comparison
 
-Author: Worker 2314.
-
 `Langlands.glTemperedReflectionBranchObstruction` proves exactly the published
 `Langlands.GLTemperedReflectionBranchObstructionStatement`, imported from
 `Langlands.Representation.Exponents.TemperedReflectionBranchObstructionStatement`.
 The five universe parameters are `uF`, `uV`, `uM`, `uW`, and `uZ`, independently.
-The target and its imported Lean/Markdown pairs are unchanged.
 
 The implemented proof establishes that the statement's sole extra hypothesis,
 absence of the specified fine-to-coarse surjection, contradicts its other
@@ -92,8 +89,8 @@ The present theorem imports no quotient-reflection proof, Langlands uniqueness
 proof, or classification theorem. The full reflection statement is not used
 as a premise or intermediate theorem. The proof establishes the contradiction
 locally by the two detection clauses and finite-dimensional linear algebra.
-It does not add later tempered-induction, cone-extraction or numerical-rigidity
-proof units to this task.
+It contains no tempered-induction, cone-extraction or numerical-rigidity
+proofs.
 
 ## Scope and provenance
 
@@ -113,8 +110,8 @@ on p.99, parameter and inverse-conjugation conventions on pp.96–97, and
 Proposition 5.8 on p.102. Registered source:
 `provided-5423f8a28c0b7ad5a7f9a07a3d55d399d5162a798fecd70bf11a5d75fa8b9354`,
 SHA256 `4f437d7ee21c65e43ede0a34b9a6b274cf4d947c23ad7637976bd38fd72fdac5`.
-Worker 2314 read these passages and the p.101 comparison, and inspected the
-p.96 and p.102 formula images. The published scope and continuation notes were
+These passages and the p.101 comparison were read, and the p.96 and p.102
+formula images were inspected. The published scope and continuation notes were
 also read. The unrestricted printed Lemma 5.3 and Corollary 5.4 are not used.
 
 This proof is an internal logical assembly of independently published Library
@@ -123,7 +120,6 @@ proofs. Its route differs from the original continuation argument. The paired
 continues to document the source's all-parameter p.102 occurrence and its zero
 specialization; this theorem does not claim a universal continuation theorem.
 
-The development Lake build completed with zero errors and zero warnings.
+The Lake build completed with zero errors and zero warnings.
 Declaration inspection reports exactly the five independent universe
 parameters and only `propext`, `Classical.choice`, and `Quot.sound` as axioms.
-Independent semantic review and submission validation remain separate checks.

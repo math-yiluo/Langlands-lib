@@ -14,7 +14,7 @@ cocharacter `ψ` with the same centralizer subgroup functor, `Z_G(ψ) = Z_G(χ)`
 `ConditionalDynamicCommonLeviScalarStatement` states that `j_ψ = j_χ` after the identification of
 Levis and centralizer schemes of `DynamicOppositePairScalar`, for one `K` that has the four
 compact-parabolic factorizations `G = Q K`, `Q ∈ {P, P̄, P', P̄'}`, and the four splittings of
-Worker 200's `CommonLeviSplitting.IsCommonLeviSplitting K χ ψ`.
+`CommonLeviSplitting.IsCommonLeviSplitting K χ ψ`.
 
 The splittings are those of the consecutive pairs in the four instances of IV.1 (12) of the
 proof. `isCommonLeviSplitting_of_pair` proves them for every `K` when the radicals of `ψ` are

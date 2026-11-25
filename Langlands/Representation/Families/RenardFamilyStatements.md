@@ -20,9 +20,10 @@ dated **9 July 2026**:
 - t.d. spaces and groups: II.1.1, printed p. 30 / PDF p. 36.
 
 Literature ID `renard-2026-representations-groupes-reductifs-padiques`, file
-`/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`,
+`Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`,
 SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 709 checked this hash and read PDF pages 193–195, 197–198 and 258.
+The hash was checked, and PDF pages 193–195, 197–198 and 258 were read for these
+statements.
 
 The standing hypothesis of VI.8.1 is: "Soit `B` une `C`-algèbre commutative
 noethérienne de type fini réduite". VI.8.4 repeats it. A `(G, B)`-module is
@@ -105,7 +106,7 @@ under them.
    finite-dimensionality of the fixed vectors of every open subgroup, not only
    of every compact open subgroup. Here this is the source's notion: in a t.d.
    group every open subgroup `H` contains a compact open subgroup `K`, and then
-   `(ℂ ⊗[B] V)^H ⊆ (ℂ ⊗[B] V)^K`. This equivalence is Worker 709's remark and is
+   `(ℂ ⊗[B] V)^H ⊆ (ℂ ⊗[B] V)^K`. This equivalence is a remark and is
    not checked in Lean.
 5. `LocalFreeCoverStatement`. The Theorem reads: "Un `B`-module `M` est
    projectif de type fini si et seulement s'il existe des éléments
@@ -142,10 +143,15 @@ unpublished items 2, 3, 4 and 8.
 
 ## Environment
 
-Environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`: Lean 4.34.0 at
+Lean 4.34.0 at
 `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`, Mathlib at
 `5ed2965256430c3649e86755f9576b54eca72435`. The project imports are
 `Langlands.Representation.Smooth.Definitions` (`fixedVectors`, `IsSmooth`,
 `IsAdmissible`) and `Langlands.Topology.LocallyProfinite`
-(`IsLocallyProfinite`). No construction or axiom is introduced. Proofs belong
-to separate proof tasks, which must prove these declarations unchanged.
+(`IsLocallyProfinite`). No construction or axiom is introduced. The proofs are
+in [RenardFamilyFixedTensorProof](RenardFamilyFixedTensorProof.md),
+[RenardFamilyFlatnessProof](RenardFamilyFlatnessProof.md),
+[RenardFamilyAdmissibilityProof](RenardFamilyAdmissibilityProof.md),
+[RenardFamilySpecializationProof](RenardFamilySpecializationProof.md) and
+[RenardLocalFreeCoverProof](RenardLocalFreeCoverProof.md), which prove these
+declarations unchanged.

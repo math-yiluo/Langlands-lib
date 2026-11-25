@@ -43,7 +43,7 @@ No connectedness, local Noetherianity, algebraic closure, sufficiently
 small level or representability premise is needed for these
 fixed-object conclusions.
 
-These are internal deductions by Worker 57 from published constructions.
+These are internal deductions from published constructions.
 Their context is Harris–Taylor, *The Geometry and Cohomology of Some
 Simple Shimura Varieties* (2001), III.1, printed pp.90–91 (one-based
 PDF pp.98–99), where compatible frame orbits and right frame composition

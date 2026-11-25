@@ -1,7 +1,5 @@
 # Tensor-unit coordinates for Weil-restriction norms
 
-Author: Worker 1587.
-
 This internal interface specializes the existing corepresented affine-point model to
 `WeilGm.groupScheme`. It is derived from the published constructions, rather than a
 new assertion from the literature.

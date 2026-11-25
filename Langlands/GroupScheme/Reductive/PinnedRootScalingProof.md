@@ -1,8 +1,5 @@
 # Simple-root scaling for an actual split pinning
 
-Author: Worker 1354. The proof assembly was supplied in the task context by
-Workers 1467 and 1416.
-
 `Langlands.GroupScheme.pinnedRootScaling` proves exactly
 `Langlands.GroupScheme.PinnedRootScalingStatement.{u}`, as defined in
 [`PinnedRootScalingStatement`](PinnedRootScalingStatement.md).
@@ -18,7 +15,7 @@ for every supplied simple-root vector using the actual linear differential
 `Lie.targetMapLinear`. These are exactly the two conjuncts in the named
 statement.
 
-This is an internal derived corollary of Worker 1467's
+This is an internal derived corollary of
 [`RootScalingAutomorphism`](RootScalingAutomorphism.md).
 That construction evaluates the descended action of the simple-root split
 torus at the point with coordinates `c`. Its

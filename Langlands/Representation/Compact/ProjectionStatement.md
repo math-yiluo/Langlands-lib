@@ -29,12 +29,11 @@ cardinality is invertible. The result uses only the specified compact open
 subgroup and smoothness; no local profiniteness or countability assumption is
 needed. It does not assert exactness over general coefficient rings.
 
-This file only defines a proposition. Its proof is a separate contribution.
-It imports the compact averaging definitions and the accepted smoothness
-definitions (`665022df-625b-44ae-9dbd-425f6e266bab`, version 1).
-The compact definitions are accepted artifact
-`ed385ab4-3443-4345-a7c7-5d91c74940f9`, version 1, effective snapshot
-`aad5d14b4a17fc183be073cb292549ca0522d206c40cf3977960e1ddf23caebc`,
-published at Library commit `93def8b48b4703317be20fe31714dddf482835a9`.
-The prepared environment is `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, version 1,
+This file only defines a proposition. Its proof is `projectionAndNaturality`
+in `ProjectionProof`.
+It imports the compact averaging definitions (`Compact.Definitions`) and the
+published smoothness definitions (`Smooth.Definitions`).
+The compact definitions were published at Library commit
+`93def8b48b4703317be20fe31714dddf482835a9`.
+The environment in which it was checked is
 Lean 4.34.0, Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.

@@ -1,7 +1,5 @@
 # Rational points over a finite extension of henselian valued fields
 
-Author: Worker 3519.
-
 `HenselianFiniteExtensionPointEmbeddingStatement` states the finite-degree supplement in the
 proof of Proposition 5.11(3) of Brian Conrad, *Weil and Grothendieck approaches to adelic
 points* (December 31, 2011), registered as `conrad-2011-weil-grothendieck-adelic-points`,

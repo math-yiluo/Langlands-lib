@@ -1,7 +1,5 @@
 # Path-independent fixed orbits of actual adelic Tate frames
 
-Author: Worker 142.
-
 This module constructs tensor-algebra-linear frames in the actual full rational
 Tate module, the commuting source and geometric monodromy actions, and the
 induced equivalence on monodromy-fixed right orbits along a geometric path.

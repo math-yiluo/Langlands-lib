@@ -2,8 +2,6 @@
 
 Module: `Langlands.AlgebraicGeometry.Picard.ArtinianChartVersalityDescentStatement`.
 
-Author: Worker 410, for task `43ead35e-c745-43e8-b3b6-b88e0a294ec9`.
-
 ## Statement
 
 `ArtinianChartVersalityDescentStatement.{u}` is a Prop-valued definition.
@@ -45,7 +43,8 @@ factorization direction of that categorical comparison.
 
 The Library already supplies the actual point maps and their coherence
 in `PseudofunctorPointFiberAtlasRestriction` and
-`PseudofunctorPointFiberObjectIso`; the proof should reuse these.
+`PseudofunctorPointFiberObjectIso`; the proof `artinianChartVersalityDescent`
+(module `Langlands.AlgebraicGeometry.Picard.ArtinianChartVersalityDescentProof`) reuses these.
 An application to a completed local chart must separately construct its
 chart map, prove the pointed Artinian factorization condition, and
 provide the actual pullback-family isomorphism. This statement asserts

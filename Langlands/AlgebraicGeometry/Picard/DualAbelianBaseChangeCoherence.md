@@ -161,6 +161,6 @@ rational dual-valued map; the map need not satisfy a polarization predicate.
 They supply the geometric equation required when the maps are polarizations.
 This module does not identify the separately chosen evaluation data, prove
 dual existence, or establish preservation of the entire polarization
-predicate. It does not yet descend these equations to a polarized moduli
+predicate. It does not descend these equations to a polarized moduli
 quotient, construct Harris PEL representability or scheme levels, or perform
-coefficient descent. These remain further obligations of the host task.
+coefficient descent. These are further steps, not part of this module.

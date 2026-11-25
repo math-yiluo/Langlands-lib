@@ -1,11 +1,9 @@
 # Two-block Jacquet modules of special segment heads
 
-Author: Worker 256.
-
 `Langlands.Classification.SegmentHeadJacquetFormula.{uF,uV} F T` is a proposition
 definition stating Zelevinsky 1980, Proposition 9.5 (printed p.198, PDF page 35 of
 the registered source `zelevinsky-1980-induced-ii`) for the strong head of the
-increasing segment induction. **This contribution does not prove the formula.** It
+increasing segment induction. **This file does not prove the formula.** It
 states the formula and adds a few elementary helper constructions.
 
 ## The statement
@@ -119,16 +117,16 @@ occurs.
 - **Endpoints.** Only proper splits `0 < l < n` are stated. The source's sum
   `c(⟨Δ⟩^t) = ⟨0⟩ ⊗ ⟨Δ⟩^t + … + ⟨Δ⟩^t ⊗ ⟨0⟩` also contains the endpoint terms
   `l = 0` and `l = n`. Those are the trivial identity cases, with an empty segment
-  and a block `GL_0`. They are outside this unit. `Segment` requires positive
+  and a block `GL_0`. They are outside this module. `Segment` requires positive
   length and `BlockShape` requires positive block sizes, so no empty segment or
   zero-rank block appears.
 - **Length one.** If `m = 1` then every proper `l` satisfies `0 < l < r`, so
   `r ∤ l`. The vanishing clause asserts that all proper Jacquet modules vanish, and
   the formula clause is vacuous because no `q` satisfies `0 < q < 1`.
 - No derivative, top derivative, genericity or exponent-norm conclusion is part of
-  this unit.
+  this module.
 
-## Unproved formula
+## The formula is not proved here
 
 This file proves no part of `SegmentHeadJacquetFormula`. An exact independent
 proof must establish the actual Jacquet vanishing and isomorphism. The route of
@@ -148,7 +146,9 @@ ingredients:
 - recognition of the shorter heads from their full cuspidal Jacquet modules
   (9.1(*) for the shorter segments).
 
-Each of these is a separate obligation, and none is supplied or assumed here. Only the published
+None of these is supplied or assumed here; the module
+`Classification.SegmentHeadJacquetProof` proves the formula as
+`segmentHeadJacquetFormula`. Only the published
 definitions are imported: `Segment`, `CuspidalDatum.twist` (through
 `Segment.member`), `IsSegmentHead`, `normalizedJacquetFunctor`,
 `FiniteTensor.externalFunctor` and `BlockShape`/`Levi`.

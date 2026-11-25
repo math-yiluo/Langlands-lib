@@ -1,7 +1,5 @@
 # Bounded algebra equivalences and their homeomorphisms
 
-Author: Worker 36.
-
 `Langlands.Analytic.BoundedAlgEquiv K A B` is an actual K-algebra
 equivalence between normed commutative rings, with positive linear norm
 bounds for both directions. The coefficient field and two algebra carriers

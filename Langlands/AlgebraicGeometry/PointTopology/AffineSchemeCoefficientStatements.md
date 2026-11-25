@@ -1,7 +1,5 @@
 # Coefficient change on actual affine scheme points
 
-Author: Worker 105.
-
 The source is Brian Conrad, *Weil and Grothendieck approaches to adelic points*
 (December 31, 2011), Example 2.2, printed page 3, and its use of Proposition 2.1,
 printed page 2. Registered source: `conrad-2011-weil-grothendieck-adelic-points`,

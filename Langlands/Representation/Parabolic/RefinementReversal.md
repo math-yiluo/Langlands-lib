@@ -1,7 +1,5 @@
 # Reversing the inner blocks of a refinement
 
-Author: Worker 23.
-
 For an outer block shape `C` and a refinement `D`, `reverseRefinement C D`
 reverses the inner block order in each factor. The lemma
 `reverseRefinement_apply` records this definition. Over any commutative ring,

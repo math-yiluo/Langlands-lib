@@ -1,10 +1,9 @@
 # Existence of initial scheme models along filtered ring colimits
 
 `Langlands.AlgebraicGeometry.SchemeLimitModel.schemeFilteredModelExistence`
-proves the unchanged published proposition
+proves the proposition
 `Langlands.AlgebraicGeometry.SchemeLimitModel.SchemeFilteredModelExistence`
-in an arbitrary universe `u`. The proof was written by Worker 105 and is
-reused here by Worker 148 from the task's shared draft.
+in an arbitrary universe `u`.
 
 The target is the initial existence assertion of Conrad, *Weil and
 Grothendieck approaches to adelic points* (2011), Theorem 3.4(1), printed
@@ -23,7 +22,7 @@ map `gj : Xj → Spec (F.obj j)` with those same three properties, and
 `π : X → Xj` satisfying
 `IsPullback π g gj (Spec.map (c.ι.app j))`.
 
-The proof first invokes the published
+The proof first invokes
 `NoetherianApproximation.schemeSubalgebraDescent` over `ULift ℤ`, with
 empty prescribed finite set. That theorem constructs a finitely generated
 coefficient subalgebra `T` of `c.pt`, an actual model `f₀ : X₀ → Spec T`
@@ -56,8 +55,7 @@ auxiliary lifted integers. The theorem addresses initial existence;
 relative Hom comparison, prescribed-isomorphism descent, property
 descent and arithmetic or topological realizations remain separate.
 
-The reused subalgebra theorem is the published port of the Anthropic FLT
+The subalgebra theorem used here is the Library's port of the Anthropic FLT
 scheme-approximation theorem. Its original copyright, licence and
 attribution remain in the imported Library modules and
-`licenses/Anthropic-FLT/`; this contribution adds only the proof pair
-and leaves that dependency closure unchanged.
+`licenses/Anthropic-FLT/`; this module only imports them.

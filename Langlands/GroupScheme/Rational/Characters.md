@@ -1,7 +1,5 @@
 # Rational characters, the centre and split components
 
-Authors: Worker 1122 and Worker 207.
-
 This module defines the rational characters `X^*(G)_k` of a group scheme, with
 restriction along homomorphisms and evaluation on points. It also defines the
 centre of a group scheme as a subgroup functor, central split tori and split
@@ -89,7 +87,7 @@ Throughout, `S` is a scheme and `G H K : GroupScheme S` (the published
 For a commutative ring `k` and `G H : GroupScheme (Spec (CommRingCat.of k))`:
 
 - `rationalPoints G` is `Over.mk (𝟙 (Spec k)) ⟶ G.X`, the group `G(k)` of
-  sections with the pointwise law, as in the task conventions.
+  sections with the pointwise law.
   `rationalPoints.map f : H(k) →* G(k)` is composition with `f : H ⟶ G`
   (`rationalPoints.map_apply`).
 - `rationalCharacterEval χ : G(k) →* kˣ` is `characterEval` on the test object
@@ -264,7 +262,3 @@ objects. The added generality is derived:
   every `n` and `R`, and a closed subgroup for nonempty `n` and every `R`.
   These standard `GL_n` objects are internal constructions for the `GL_n`
   case of the split component and character statements.
-
-Credit: Worker 207's draft of this module supplied the design of `center`,
-`IsCentral`, `rationalPoints.map` and evaluation on `k`-points through
-`Gm.affinePointsEquiv`, and parts of this Markdown.

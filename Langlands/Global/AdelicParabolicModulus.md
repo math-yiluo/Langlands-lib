@@ -1,7 +1,5 @@
 # The adelic modulus `δ_P` of a parabolic, and Haar probability on compact subgroups
 
-Author: Worker 3659.
-
 This module constructs two measure-theoretic objects that the global
 theory of parabolic induction and Eisenstein series uses on actual adelic
 points. Both are needed by Mœglin–Waldspurger I.1.13 and its integration

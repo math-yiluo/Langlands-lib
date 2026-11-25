@@ -1,7 +1,5 @@
 # Generic Langlands quotients have the L-factor of their standard modules
 
-Author: Worker 1789.
-
 This module proves `GenericLanglandsQuotientLFactorStatement` (JPSS 1983,
 (9.4), display (4), printed page 458), stated in
 `LanglandsQuotientLFactorStatement`. The theorem is

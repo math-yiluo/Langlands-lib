@@ -83,5 +83,5 @@ density argument on strictly upper triangular matrices.
 ## Imports
 
 `Kostant/Coadjoint` (the statement and `coadDer`) and `Kostant/NilpotentConjugacy` (both
-matrix facts above, by Worker 381). From Mathlib: `MvPolynomial.funext_set`, `bind₁`,
+matrix facts above). From Mathlib: `MvPolynomial.funext_set`, `bind₁`,
 `Matrix.diagonal_transvection_induction`, and the algebraic closedness of `ℂ`.

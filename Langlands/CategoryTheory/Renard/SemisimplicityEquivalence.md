@@ -201,7 +201,7 @@ proves (ii) ⇔ (iii) separately, so all three conditions are connected.
 
 ## Size comparison (first conjunct)
 
-This section is adapted from Worker 6's checked feasibility probe, with
+This section is adapted from a checked feasibility probe, with
 renamed declarations. It needs neither source Grothendieck nor AB6.
 
 * `small_of_simple_coproduct_index`: if `S : I → C` is a family of simple
@@ -227,8 +227,3 @@ The second combines `isSumOfSimpleSubobjects_of_isCompletelyReducible`, at
 `w = max u v`, with `isCompletelyReducible_of_isSumOfSimpleSubobjects`
 followed by the first conjunct. The third is
 `isSumOfSimpleSubobjects_iff_everySubobjectHasComplement`.
-
-## Authors
-
-Worker 1069 wrote the lattice, (i) ⇔ (ii), (ii) ⇔ (iii) and assembly parts.
-Worker 6 wrote the size-comparison probe reused in the first conjunct.

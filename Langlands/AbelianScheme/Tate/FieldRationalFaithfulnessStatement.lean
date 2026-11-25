@@ -29,7 +29,8 @@ theorem rationalEndAction_injective_of_fieldFaithfulness
     Function.Injective
       (rationalEndAction A (Over.mk (𝟙 (Spec (CommRingCat.of Ω))))
         (fun _ => True)) := by
-  exact h Ω A A
+  intro f g hfg
+  exact CategoryTheory.End.ext (h Ω A A hfg)
 
 variable {A} {B : AbelianScheme (Spec (CommRingCat.of Ω))}
 

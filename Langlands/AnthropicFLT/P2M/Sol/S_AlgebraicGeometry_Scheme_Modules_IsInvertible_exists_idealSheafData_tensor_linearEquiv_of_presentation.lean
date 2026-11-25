@@ -7,7 +7,7 @@ Modified: FLT module names are prefixed by `Langlands.AnthropicFLT`; the FLT lak
 are set after the imports; the import of `P2M.Util` is dropped. The paired Markdown file lists
 the changes.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_RelativePicardFunctor
 import Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_OModulePresheaf_isQuasicoherent_ofModules_of_locallyTrivial
 import Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_OModulePresheaf_isCoherent_ofModules_of_locallyTrivial
@@ -289,16 +289,16 @@ variable {X : Scheme.{u}}
 
 def toSpecTop (X : Scheme.{u}) : X ⟶ Spec (.of Γ(X, ⊤)) := X.toSpecΓ
 
-theorem finite_sections (M : X.Modules) (hM : Scheme.Modules.IsInvertible M) (U : X.affineOpens) :
+theorem finite_sections (M : X.Modules) (hM : Scheme.Modules.IsInvertibleFLT M) (U : X.affineOpens) :
     Module.Finite Γ(X, U) Γ(M, U) :=
   OModulePresheaf.isCoherent_ofModules_of_locallyTrivial (toSpecTop X) M hM.1 U
 
-theorem flat_sections (M : X.Modules) (hM : Scheme.Modules.IsInvertible M) (U : X.affineOpens) :
+theorem flat_sections (M : X.Modules) (hM : Scheme.Modules.IsInvertibleFLT M) (U : X.affineOpens) :
     Module.Flat Γ(X, U) Γ(M, U) := by
   haveI := Scheme.Modules.projective_sections_of_locallyTrivial M hM.1 U
   exact Module.Flat.of_projective
 
-theorem res_surj (M : X.Modules) (hM : Scheme.Modules.IsInvertible M) (U : X.affineOpens) (f : Γ(X, U))
+theorem res_surj (M : X.Modules) (hM : Scheme.Modules.IsInvertibleFLT M) (U : X.affineOpens) (f : Γ(X, U))
     (x : Γ(M, X.basicOpen f)) :
     ∃ (n : ℕ) (y : Γ(M, U)), M.presheaf.map (homOfLE (X.basicOpen_le f)).op y =
       (X.presheaf.map (homOfLE (X.basicOpen_le f)).op).hom (f ^ n) • x :=
@@ -365,7 +365,7 @@ theorem idealI_eq_top (U : X.affineOpens) (h : ¬ Nonempty (U : X.Opens)) : idea
 
 theorem idealJ_eq_top (U : X.affineOpens) (h : ¬ Nonempty (U : X.Opens)) : idealJ M φ hφ₂ U = ⊤ := dif_neg h
 
-variable (hM : Scheme.Modules.IsInvertible M)
+variable (hM : Scheme.Modules.IsInvertibleFLT M)
   (hφ₁ : ∀ (U V : X.Opens) (h : V ≤ U), Nonempty V →
     ∀ m : Γ(M, U), φ V (M.presheaf.map (homOfLE h).op m) = φ U m)
 
@@ -420,7 +420,7 @@ end Families
 
 section Nonvanishing
 
-variable [IsIntegral X] (M : X.Modules) (hM : Scheme.Modules.IsInvertible M)
+variable [IsIntegral X] (M : X.Modules) (hM : Scheme.Modules.IsInvertibleFLT M)
   (φ : ∀ U : X.Opens, Γ(M, U) →+ (X.functionField : Type u))
   (hφ₁ : ∀ (U V : X.Opens) (h : V ≤ U), Nonempty V →
     ∀ m : Γ(M, U), φ V (M.presheaf.map (homOfLE h).op m) = φ U m)
@@ -476,7 +476,7 @@ end Nonvanishing
 
 section Assembly
 
-variable [IsIntegral X] (M : X.Modules) (hM : Scheme.Modules.IsInvertible M)
+variable [IsIntegral X] (M : X.Modules) (hM : Scheme.Modules.IsInvertibleFLT M)
   (φ : ∀ U : X.Opens, Γ(M, U) →+ (X.functionField : Type u))
   (hφ₁ : ∀ (U V : X.Opens) (h : V ≤ U), Nonempty V →
     ∀ m : Γ(M, U), φ V (M.presheaf.map (homOfLE h).op m) = φ U m)
@@ -585,7 +585,7 @@ end
 
 open CategoryTheory AlgebraicGeometry TensorProduct in
 theorem solution
-    {X : Scheme.{u}} [IsIntegral X] (M : X.Modules) (hM : Scheme.Modules.IsInvertible M)
+    {X : Scheme.{u}} [IsIntegral X] (M : X.Modules) (hM : Scheme.Modules.IsInvertibleFLT M)
     (φ : ∀ U : X.Opens, Γ(M, U) →+ (X.functionField : Type u))
     (hφ : (∀ (U V : X.Opens) (h : V ≤ U), Nonempty V →
           ∀ m : Γ(M, U), φ V (M.presheaf.map (homOfLE h).op m) = φ U m) ∧

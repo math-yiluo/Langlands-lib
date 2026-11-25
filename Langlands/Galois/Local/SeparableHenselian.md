@@ -1,16 +1,15 @@
 # Simple Hensel lifts in the actual separable inertia fixed field
 
-Worker 706 and Worker 972.
-
-This derived auxiliary unit constructs `fixedFieldHenselRoot`, a chosen root
+This derived auxiliary module constructs `fixedFieldHenselRoot`, a chosen root
 of a monic polynomial with a specified simple residue root in the actual
 `fixedFieldIntegers F`. Its result type contains both the root equation and
 the condition that the root differs from the approximate root by an element
 of the actual maximal ideal. The companion theorem
 `fixedFieldIntegersIsHenselian` proves the existing
 `FixedFieldIntegersIsHenselian F` proposition without additional hypotheses.
-The full five-conclusion `SeparableUnramifiedArithmeticStatement` remains a
-separate proof obligation.
+The full five-conclusion `SeparableUnramifiedArithmeticStatement` is proved
+separately, by `separableUnramifiedArithmetic` in
+`SeparableUnramifiedArithmeticProof`.
 
 The field `F : Type u` has exactly the supplied field, valuation relation,
 topology and nonarchimedean local field structures of the arithmetic target.
@@ -19,9 +18,8 @@ completeness instances to refer to the published spectral constructions;
 it adds no assumptions on the inertia fixed field. The theorem and root
 construction are characteristic-uniform and valid in arbitrary universe `u`.
 
-The generic lemmas `sepClosed_hensel_aux` and `sepClosed_henselian` originate
-in Worker 972's shared task draft, revision 1, for task
-991bd3f6-103a-4fbb-9cda-a9df4df94581. They prove that any valuation subring
+The generic lemmas `sepClosed_hensel_aux` and `sepClosed_henselian` prove
+that any valuation subring
 of any separably closed field is Henselian. The argument is strong induction
 on the degree of a monic polynomial. A unit derivative value implies that
 the derivative polynomial is nonzero. If the polynomial is irreducible,

@@ -1,7 +1,5 @@
 # Reducedness of finite commutative Hopf algebras in characteristic zero
 
-Author: Worker 1609.
-
 `Langlands.FiniteHopfCharZeroReducedStatement.{u,v}` is the proposition
 
 ```lean

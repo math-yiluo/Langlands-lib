@@ -1,7 +1,5 @@
 # Finite Haar measure of adelic Siegel sets with an open-subgroup Iwasawa input
 
-Author: Worker 3994. Part of task 40747bb3 (finite volume of `G(F) \ G(𝔸_F)¹`).
-
 This module proves one theorem,
 `Langlands.Global.AdelicSiegelFactors.measure_weakSiegelProduct_lt_top_of_openSubgroup`.
 It is a variant of the published

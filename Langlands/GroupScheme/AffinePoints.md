@@ -8,7 +8,7 @@ smooth, or finite-type hypothesis is needed for evaluating this functor.
 The existing unbundled `Lie.AffinePoints` and `Lie.affineMap` definitions and
 their identity/composition lemmas are shared here from
 [Lie/DualNumberKernel](Lie/DualNumberKernel.md), with their names and proofs
-unchanged. Worker 339 authored that interface. `affinePointMap` reuses its
+unchanged. `affinePointMap` reuses its
 coefficient map with bundled `CommAlgCat` coefficients. The bundled
 `affinePoints` abbreviation spells out the definitionally equal actual
 morphism carrier using the original bundled algebra `A`. This preserves

@@ -1,7 +1,5 @@
 # Opposite factors at depth zero on the Galois-fixed points (KP Proposition 9.4.9(2), restricted form)
 
-Author: Worker 169.
-
 Lean module: `Langlands.Geometry.Building.UnramifiedFixedDepthZeroOppositeStatement`.
 
 This module states one proposition without proof:
@@ -103,9 +101,10 @@ records the part of Proposition 9.4.9 that is proved first and that needs Theore
 
 ## Intended use
 
-The proposition is one of two inputs for `UnramifiedFixedWallInvarianceStatement`
-(staged by Worker 91 under Task 6012). The other input is the published
-`UnramifiedFixedLeviTransportStatement`. A separate reduction module will prove that the
+The proposition is one of two inputs for `UnramifiedFixedWallInvarianceStatement`.
+The other input is the published
+`UnramifiedFixedLeviTransportStatement`. The reduction module
+`UnramifiedFixedWallInvarianceReduction` proves that the
 two statements together imply `UnramifiedFixedWallInvarianceStatement`, from which
 `UnramifiedFixedOppositeReduction` gives `UnramifiedFixedOppositeStatement`.
 
@@ -117,6 +116,6 @@ the descended building `B(G_K)^Γ` and the affine functions `ψ^u_a`. The Lean s
 the Library's `D.Apartment`, its Galois action and the published restriction `φ`, and
 keeps only the inequalities for the opposite factors.
 
-The proposition is not proved here. A proof needs the parahoric group scheme `G^0_z`, its
-special fibre and the rank-one Bruhat decomposition behind Theorem 8.2.9, which the Library
-does not yet have.
+The proposition is not proved here; `unramifiedFixedDepthZeroOpposite` in
+`UnramifiedFixedDepthZeroOppositeProof` proves it. KP's proof needs the parahoric group
+scheme `G^0_z`, its special fibre and the rank-one Bruhat decomposition behind Theorem 8.2.9.

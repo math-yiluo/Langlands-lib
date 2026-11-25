@@ -1,15 +1,14 @@
 # Haar character on the actual left-Phi stages
 
-Author: Worker 499.
-
 This derived module proves `leftPhiStagesHaarRatio_eq_one`: the actual
 intersection-to-kernel Haar character of the restricted left stages
 retraction is the constant character `1`, at both actual orbit
 representatives. It uses the published actual matrix subgroups and
 retraction. Its p-adic adapter proves this identity for every supplied
 topology, deriving the needed local compactness.
-The normalized representation comparison and the final six-part host
-theorem remain separate obligations.
+The normalized representation comparison and the final six-part
+statement `MirabolicProductMinusCompatibilityStatement` are proved in
+other modules.
 
 ## Source and provenance
 
@@ -28,7 +27,7 @@ character and minus functors. Section 4.12(II), printed pp.456–457
 printed p.458 (PDF page 19), gives its functorial comparisons.
 Section 7.2, printed p.471 (PDF page 32), gives the two left orbit
 representatives. These passages and relevant page images were read
-during this task. The bounded supplied-source and public-note errata
+for this proof. The bounded supplied-source and public-note errata
 search found no applicable BZ77 entry; no global absence is asserted.
 
 This module and `SplitKernelHaarTrivial` are internally derived
@@ -36,9 +35,8 @@ content. The original motivates the eventual p-adic application; it
 does not literally state the arbitrary-ring kernel lemmas or the
 abstract full-intersection Haar identity. The proof uses the actual
 published matrix groups, restricted retraction, Haar ratio and
-continuous-conjugacy theorem. No source comparison or pending
-comparison is assumed. Worker 499 wrote these two pairs; no peer
-draft contributes a proof body.
+continuous-conjugacy theorem. No source comparison or unproved
+comparison is assumed.
 
 ## Parameters and actual groups
 
@@ -62,7 +60,7 @@ The ambient mirabolic group is
 `mirabolic (k+r+2) R = P_(k+r+3)(R)` and `L = P_(k+r+2)(R)`.
 The eventual GL factor has positive rank `k+1`; the source mirabolic
 factor for Phi-minus is `mirabolic (r+1) R = P_(r+2)(R)`.
-The host convention `phiMinus T ψ r : P_(r+2) -> P_(r+1)` is retained.
+The convention `phiMinus T ψ r : P_(r+2) -> P_(r+1)` of the compatibility statement is retained.
 No `P_0` or Phi-minus on `P_1` is introduced. The representative index
 `0` is the descending cycle and `1` is the identity.
 
@@ -134,12 +132,11 @@ The four direct project imports are `SplitKernelHaarTrivial`,
 `SplitStagesRetraction`, `MirabolicMixedOrbitStages` and
 `MirabolicMixedOrbitRadicals`, with their full names below.
 The complete closure excluding the entry has 86 project modules:
-the new helper and 85 published imports. All 170 files in those
-published Lean/Markdown pairs are nonempty and byte-identical to
-the Library and manifest at commit
+the helper `SplitKernelHaarTrivial` and 85 published imports. All 170
+files in those published Lean/Markdown pairs are nonempty and
+byte-identical to the Library and manifest at commit
 `a8934c89b9ba4ec0a4ce1a27cee0290064384404`.
-The helper is submitted with this pair and is not a pending input.
-There are no pending imported modules.
+The helper was written together with this module.
 
 The actual mathematical inputs are the mirabolic projection and
 successor, the actual left stabilizer/stages inclusions, the proof
@@ -156,14 +153,14 @@ measure uniqueness.
 `SplitKernelEquivariant` defines the existing Haar character and
 also imports ordinary compact-induction and quotient-integral
 theory. No comparison theorem from that theory is invoked by
-this unit. Its transitive smoothness, category, induction,
+this module. Its transitive smoothness, category, induction,
 quotient measure and tensor modules remain unchanged. No
 character compact-induction comparison or mixed-minus
 comparison is inferred from their proposition definitions.
 
 | Condition | Actual dependency finding |
 | --- | --- |
-| Six host mixed-minus conclusions | No host comparison or boundary conclusion is used. Only the actual full-kernel containment, closedness, local compactness and Haar-ratio calculation are proved; the final natural isomorphisms, exact sequence and conjunction remain obligations. |
+| Six mixed-minus conclusions of the statement | No comparison or boundary conclusion of the statement is used. Only the actual full-kernel containment, closedness, local compactness and Haar-ratio calculation are proved; the final natural isomorphisms, exact sequence and conjunction are proved in other modules. |
 | Plus functors, adjunction, BZ77 §4.13(d) | No plus functor, adjunction or submodule-detection result supplies an input. The permitted elementary matrix subgroup `plusSubgroup` and its projection/section are used explicitly. |
 | General Leibniz and derivative formulas | No general Leibniz proof, segment derivative formula, Ze80 §3.5 or §9.6 formula, or unproved BZ77 derivative result supplies an input. |
 | Segment head, socle and Jacquet formulas | No individual special-head or segment-socle existence, linked/unlinked or juxtaposed reverse-product conclusion, quotient homomorphism, or full/head/socle/special Jacquet formula supplies an input. |
@@ -171,26 +168,24 @@ comparison is inferred from their proposition definitions.
 | Special-head criterion and generic uniqueness | Neither the special-head product criterion nor generic segment-product uniqueness is used. |
 | Ordered existence and exhaustion | No ordered multisegment-socle existence, socle or special-head exhaustion, ordered strong-head existence, quotient coverage or ordered conversion supplies an input. |
 | Analytic, tempered, square-integrable conclusions | No segment classification, forward special essential square-integrability, tempered uniqueness, square-integrable classification or exhaustion, regular exhaustion, or Ze80 9.3 assertion supplies an input. |
-| Two-supercuspidal consumers | Neither nonadjacent product irreducibility, product structure nor full-product assembly is used. No parent six-statement conclusion (b),(d),(e),(f) supplies an input. |
+| Two-supercuspidal consumers | Neither nonadjacent product irreducibility, product structure nor full-product assembly is used. |
 | Supercuspidal and single-block finiteness | No supercuspidal coinvariant-finiteness statement, all-character single-block conclusion, arbitrary-character finiteness theorem or consequence supplies an input. |
 | Other Whittaker finiteness | No irreducible or Levi-cuspidal finiteness conclusion, consequence or prohibited mirabolic finite-length route supplies an input. |
 | Generality | All natural k,r including zero and both actual representatives are retained. The p-adic theorem uses every supplied T. The generic helper has independent group universes; no representation carrier, nonzero vector, admissibility, finite dimension, finite length, genericity, canonical topology, universe saturation or theorem-valued comparison premise is introduced. |
-| Published inputs and target preservation | Every published imported pair is unchanged. The new helper accompanies the entry. Pending statements, drafts, source formulas and citations are not theorem premises. No host statement or any pair it imports is modified. |
-| Separate owners and user controls | This focused unit does not construct a restriction sequence, exactness proof or generic compact-induction comparison. Worker 127's operator pause, Worker 8's suspension, Worker 114's hold and all current suspensions remain binding. |
+| Published inputs | Every published imported pair is unchanged. The helper `SplitKernelHaarTrivial` accompanies the entry. Unproved statements, source formulas and citations are not theorem premises. |
+| Separate results | This focused module does not construct a restriction sequence, exactness proof or generic compact-induction comparison. |
 
-A source scan of both new modules and the complete project closure
-finds no occurrence in Lean code of the host's 38 excluded task
-identifiers or 24 named consumer declarations, and no proof holes,
-new axioms or unsafe evaluation commands. This supplements the
-condition-by-condition mathematical dependency audit. Compilation
-and declaration inspection are development checks; independent
-acceptance and publication remain required.
+A source scan of both modules and the complete project closure
+finds no occurrence in Lean code of 24 excluded consumer
+declarations, and no proof holes, new axioms or unsafe evaluation
+commands. This supplements the condition-by-condition mathematical
+dependency audit.
 
 ## Complete project import closure
 
 Both direct roots and every transitive project import are included
 below, excluding the present entry. `SplitKernelHaarTrivial` is the
-new helper included in this candidate. Mathlib is supplied by the
+helper written together with this module. Mathlib is supplied by the
 pinned environment and remains unchanged.
 
 ```text

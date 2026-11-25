@@ -18,10 +18,11 @@ This module isolates that `F`-level part of the argument. The predicate
 `IsRationalMoyPrasadFamily` is **derived** (an internal interface, not a definition from the
 book): it lists the properties of the family `Q y r = G(K)_{y,r} ∩ G(F)` that the
 argument uses. The module does **not** construct such a family and does not prove that
-`G(K)_{y,r} ∩ G(F)` has these properties. That is the `K`-level input of Task 5647
-(389efdd6-dfb3-478d-b92e-a38a722094e1), split into the definition task D1 (Task 5875,
-079e96f3-eb4c-4477-8a40-a1acffc66e49) and the statement tasks S1–S3 of that task's
-decomposition.
+`G(K)_{y,r} ∩ G(F)` has these properties. That is the `K`-level input to the proof of
+`CentralizerFiltrationDoubleRootExistenceStatement`: the groups `G(K)_{x,r}` are defined in
+`KPLocalMoyPrasadGroups`, and the properties are the statements
+`QuasiSplitLocalTorusFiltrationStatement`, `LocalMoyPrasadGroupPropertiesStatement` and
+`UnramifiedRationalMoyPrasadStatement`.
 
 ## The definition
 
@@ -131,9 +132,3 @@ theorem exists_doubleRootFriendly_filtration_of_rationalMoyPrasadFamily
 It uses the base point `x₀ = Classical.arbitrary P.Apartment`. Its conclusion is the
 conclusion of `CentralizerFiltrationDoubleRootExistenceStatement` for the given `P`. The
 existence of a family `Q` with `P.IsRationalMoyPrasadFamily Q` is not proved here.
-
-## Credits
-
-Worker 87 wrote the module. The interface follows the decomposition agreed with Worker 5647
-for Task 5647; Worker 5647 pointed out the two double-root sub-cases and the need for the
-depth-zero field `comap_zero`.

@@ -1,6 +1,6 @@
 # Hecke Euler families with chosen partial L-functions
 
-Supporting module of Task 5003 (module `Langlands.Automorphic.AssociatedGammaEulerFamily`), glue step for the analytic input
+Supporting module for the proof of `AssociatedGammaStatement` (module `Langlands.Automorphic.AssociatedGammaEulerFamily`), glue step for the analytic input
 `CommonTwistEulerInputs` of the published two-twist comparison engine
 (`Langlands.Global.FunctionalEquationComparison`, module
 `Langlands.Global.Factors.HeckeTwistComparisonStatement`). That engine only needs partial
@@ -37,21 +37,23 @@ partial L-functions whenever suitable ones exist.
   `ofLocalFactors_spec` four times. The common half-planes are the maxima of the matching
   bound and the two Euler-product bounds for each character (`hasEulerProductsOutside_mono`).
 
-## Overview of the supporting development of Task 5003
+## Overview of the supporting development for `AssociatedGammaStatement`
 
-This module is the entry of one supporting candidate of Task 5003, whose target is
-`Langlands.ClassField.Global.RelativeWeilGroup.AssociatedGammaStatement` (Henniart 2000,
-Théorème 2.3). The candidate contains 25 modules in `Langlands/Automorphic/`. Together they
+This module is the entry of a supporting development for
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.AssociatedGammaStatement` (Henniart 2000,
+Théorème 2.3). The development contains 25 modules in `Langlands/Automorphic/`. Together they
 prove `associatedGamma_of_inputs` (module `Langlands.Automorphic.AssociatedGammaFinal`), which
-derives the target from two statements whose proofs other tasks own:
+derives the statement from two other statements:
 
 - `Langlands.Global.CuspidalPairGlobalFunctionalEquationStatement` (the completed global
-  Rankin–Selberg equation for cuspidal pairs, Task 5493);
-- `Langlands.ClassField.Global.RelativeWeilGroup.StableTwistPairGammaMatchStatement` (the stable
-  local comparison under highly ramified twists, Task 6211).
+  Rankin–Selberg equation for cuspidal pairs);
+- `Langlands.ClassFieldTheory.Global.RelativeWeilGroup.StableTwistPairGammaMatchStatement` (the stable
+  local comparison under highly ramified twists).
 
-The candidate therefore does not prove the target. Once both statements are proved in the
-Library, the proof of the target applies `associatedGamma_of_inputs` to them.
+The development therefore does not prove the statement. The second input is proved in the
+Library (`stableTwistPairGammaMatchStatement`, module
+`Langlands.Automorphic.StableTwistGammaMatchProof`); once the first is proved, the proof of the
+statement applies `associatedGamma_of_inputs` to them.
 
 The route follows Henniart's argument. Fix a finite place `v`. Build an automorphic and an
 arithmetic Hecke Euler family, indexed by finite-order Hecke characters `χ` trivial at
@@ -82,7 +84,7 @@ of the gamma factors at `v`. The modules, in dependency order:
   `AssociatedGammaPrincipalSeries`, `AssociatedGammaTriangular` and
   `AssociatedGammaOutsideStability` (good places, from the published principal-series
   comparison).
-- Presentations (written by Worker 1679): `AssociatedPresentationComparison` and
+- Presentations: `AssociatedPresentationComparison` and
   `AssociatedPresentationSpectrum` (local classes and spherical spectra agree across
   presentations of one cuspidal realization; weak association transfers to any presentation).
 - Assembly: `AssociatedGammaFinal`.

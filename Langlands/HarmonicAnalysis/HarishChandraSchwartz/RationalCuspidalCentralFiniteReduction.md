@@ -70,7 +70,7 @@ here.
 `RationalCuspidalCentralTrivialLevelFiniteStatement.centralProjectionFinite`
 proves `RationalCuspidalCentralProjectionFiniteStatement` from two inputs: the
 published closed convergence target `RationalSchwartzCentralConvergenceStatement`
-(Task 7438) and `RationalCuspidalCentralTrivialLevelFiniteStatement`. The proof
+and `RationalCuspidalCentralTrivialLevelFiniteStatement`. The proof
 splits on whether some `b` of the split-component image lies in `H` with
 `χ b ≠ 1`.
 
@@ -84,21 +84,20 @@ splits on whether some `b` of the split-component image lies in `H` with
 Both inputs are explicit premises of this implication. It is a reduction, not
 a proof of the closed target.
 
-## Open hypotheses and their owners
+## Open hypotheses
 
 This module leaves two propositions open, both premises of
 `RationalCuspidalCentralTrivialLevelFiniteStatement.centralProjectionFinite`:
 
 - `RationalSchwartzCentralConvergenceStatement` (closed central
-  convergence on the whole rational Schwartz space) is owned by Task 7438
-  `79ac4c17-fe39-4c1c-bb7f-f0d531569c87`.
-- `RationalCuspidalCentralTrivialLevelFiniteStatement` is owned by Task 7439
-  `9cea32ed-25c1-4f74-becd-2eaca7c2c888` (this task). Its proof is the
-  local kernel step (focused unit 2 of revision 2), fed by the rank adapter
-  from Task 7277's VIII.2 targets (focused unit 3), inside standing Task
-  3642's mutual well-founded rank assembly. The kernel step also needs
-  Task 5480's split-central height estimates and Task 7256's VIII.3.2
-  integrability.
+  convergence on the whole rational Schwartz space) is proved in the Library as
+  `rationalSchwartzCentralConvergence` (module `RationalSchwartzCentralConvergenceProof`).
+- `RationalCuspidalCentralTrivialLevelFiniteStatement` is not proved in the Library. Its
+  route is the local kernel step (`RationalCuspidalCentralKernelStep`), fed by the rank
+  adapter (`RationalCuspidalUnit`) from the VIII.2 projection targets, inside a mutual
+  well-founded assembly over rank. The kernel step also needs the split-central height
+  estimates (`RationalSplitCenterHeightStatement`) and the VIII.3.2 integrability
+  (`RationalCuspidalConjugationIntegrabilityStatement`).
 
 All other results in this module are proved unconditionally. Nothing here
 assumes same-rank finiteness, same-rank reconstruction, the closed target

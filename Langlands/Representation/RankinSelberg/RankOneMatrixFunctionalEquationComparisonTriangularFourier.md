@@ -1,7 +1,5 @@
 # Fourier duality for the explicit triangular affine slices
 
-Author: Worker 623.
-
 This internal specialization of complementary affine matrix Fourier inversion
 keeps the supplied scalar Haar measure and both character phases explicit.
 The field is locally compact, Hausdorff and totally disconnected with its

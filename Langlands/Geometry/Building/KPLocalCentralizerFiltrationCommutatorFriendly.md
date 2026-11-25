@@ -1,7 +1,8 @@
 # Commutator friendliness of the torus filtration over `K = F^ur`, from the coroot formula
 
-Author: Worker 119. This helper for clause 1 of S1 is submitted with the final
-`KPQuasiSplitLocalTorusFiltrationProof` contribution. It imports the published statement
+This helper for clause 1 of `QuasiSplitLocalTorusFiltrationStatement` (KP Lemma 7.2.3
+over `K`) is used, through `KPLocalCentralizerTorusFiltrationClauses`, by
+`KPQuasiSplitLocalTorusFiltrationProof`. It imports the published statement
 `KPLocalCorootComponentStatement`. The final proof supplies the helper's premise with
 the published theorem `kpLocalCorootComponent` from `KPLocalCorootComponentProof`.
 
@@ -9,10 +10,12 @@ Lean module: `Langlands.Geometry.Building.KPLocalCentralizerFiltrationCommutator
 
 ## Declaration
 
-`B.centralizerTorusFiltration_isCommutatorFriendly_of_coroot hZ hcor` uses D1's binders
-(`B : MaximalUnramified.BuildingData F H`, `hZ : IsTorus B.centralizer.Z`) and assumes
-`KPLocalCorootComponentStatement` (`hcor`, Task 5911). It shows that D1's filtration
-`Z(K)_r = B.centralizerTorusFiltration hZ r` satisfies clause 1 of S1, in the form of
+`B.centralizerTorusFiltration_isCommutatorFriendly_of_coroot hZ hcor` uses the binders of
+`KPLocalMoyPrasadGroups` (`B : MaximalUnramified.BuildingData F H`,
+`hZ : IsTorus B.centralizer.Z`) and assumes `KPLocalCorootComponentStatement` (`hcor`).
+It shows that the filtration of `KPLocalMoyPrasadGroups`
+`Z(K)_r = B.centralizerTorusFiltration hZ r` satisfies clause 1 of
+`QuasiSplitLocalTorusFiltrationStatement`, in the form of
 `ParahoricBuildingData.CentralizerFiltration.IsCommutatorFriendly` with `B` in place of
 `P`. The hypotheses are: a point `x`, a relative root `a`, nontrivial `u ∈ U_a(K)` and
 `u' ∈ U_{-a}(K)`, and `0 < r` with `r = x.val a u + x.val (-a) u'`. If

@@ -1,7 +1,5 @@
 # Positive carry classes under the cyclic norm comparison
 
-Author: Worker 28.
-
 This module proves the published proposition
 `Langlands.ClassFieldTheory.Local.CyclicClassNormNormalization.{u,v}`
 as `cyclicClassNormNormalization`, with exactly that type and no additional
@@ -59,11 +57,6 @@ These passages use `D = σ - 1`, the positive group norm, and the character
 with value `1/n` at `σ`; their relation to the positive carry convention
 is documented in the target's paired Markdown.
 
-Worker 28 implemented the carry arithmetic and field specialization.
-The imported generic proof credits Workers 53 and 262 for its resolution
-comparison and chain map, Worker 28 for its interface and positive
-comparison design, and Worker 25 for documenting its target.
-Worker 80 authored the field normalization target.
 This theorem supplies the algebraic normalization only; it does not
 construct a local invariant map or prove an arithmetic class-formation
 theorem.

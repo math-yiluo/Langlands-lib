@@ -1,7 +1,5 @@
 # Elementary base change for the derived subgroup
 
-Author: Worker 1484.
-
 These internal lemmas complement the field-base-change proof of Milne,
 *Algebraic Groups* (2017), Corollary 6.19(a), printed p.129 / PDF p.145,
 registered source `milne-2017-algebraic-groups`. They derive directly from the

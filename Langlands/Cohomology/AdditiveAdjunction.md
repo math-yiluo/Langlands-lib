@@ -1,6 +1,6 @@
 # Additive adjunctions on complexes and homotopy categories
 
-Author: Worker 606. Internal categorical infrastructure.
+Internal categorical infrastructure.
 
 Let `C` and `D` be arbitrary preadditive categories, with independent
 object and morphism universes. Let `F : C ⥤ D` and `G : D ⥤ C` be additive

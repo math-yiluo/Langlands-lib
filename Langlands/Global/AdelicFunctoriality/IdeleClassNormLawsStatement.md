@@ -35,7 +35,7 @@ can also be used as separate proof targets.
 
 The second law takes norm after inclusion on a lower-field class.
 The separately published
-`Langlands.ClassField.Global.IdeleClassNormGaloisProduct` instead takes
+`Langlands.ClassFieldTheory.Global.IdeleClassNormGaloisProduct` instead takes
 inclusion after norm on an upper-field class, and uses a Galois hypothesis
 to express that value as a product of conjugates.
 

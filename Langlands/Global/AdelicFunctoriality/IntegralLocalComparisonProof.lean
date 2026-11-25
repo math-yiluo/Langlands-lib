@@ -4,7 +4,7 @@ Copyright (c) 2025 Matthew Jasper. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Kevin Buzzard, Andrew Yang, Matthew Jasper
 
-Modified by Worker 461 (2026): adapt the integral-range and BijOn arguments of
+Modified in Langlands-lib (2026): adapt the integral-range and BijOn arguments of
 Imperial FLT, commit 923d45174c500aa1d994ba973bac38ea39eacbf7,
 FLT/DedekindDomain/Completion/BaseChange.lean:364-547 and :854-870.
 Adapt the Chinese remainder and product-closure arguments from
@@ -167,7 +167,7 @@ private theorem integral_product_subset_closure (p : HeightOneSpectrum (𝓞 K))
   have hy0 (q) : Valued.v (y q) ≠ 0 := by
     have h : y q ≠ 0 := by
       intro h
-      exact (γ q).ne_zero (by simpa [h] using (hy q).symm)
+      exact (γ q).ne_zero (by rw [← hy q, h, map_zero]; rfl)
     simpa using h
   obtain ⟨a, ha⟩ := simultaneous_integer_approximation L p s
     (fun q => Valued.v (y q)) hy0 (fun q => ⟨x q, hx q trivial⟩)

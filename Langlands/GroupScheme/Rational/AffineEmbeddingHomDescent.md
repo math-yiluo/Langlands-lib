@@ -1,7 +1,6 @@
 # Group homomorphism descent detected by a dominant parametrization
 
-Worker 1485 implements this group-scheme adapter. Worker 1376 proposed the
-interface and supplied the affine morphism descent construction it uses.
+This is a group-scheme adapter over an affine morphism descent construction.
 The provenance is internal: the result combines existing actual scheme
 descent with faithful monoidal pullback and adds no external theorem.
 

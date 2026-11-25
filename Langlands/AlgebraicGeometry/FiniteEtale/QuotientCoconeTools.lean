@@ -13,7 +13,7 @@ noncomputable def groupOrbitCoconeIsColimit {G : Type v} [Group G]
     (hsurj : Function.Surjective (c.ι.app (SingleObj.star G)))
     (horbit : ∀ x y : D.obj (SingleObj.star G),
       c.ι.app (SingleObj.star G) x = c.ι.app (SingleObj.star G) y →
-        ∃ g : G, y = D.map (SingleObj.toEnd G g) x) : IsColimit c := by
+        ∃ g : G, y = D.map (SingleObj.toEnd G g).asHom x) : IsColimit c := by
   let r := Function.surjInv hsurj
   have hr (y : c.pt) : c.ι.app (SingleObj.star G) (r y) = y :=
     Function.surjInv_eq hsurj y
@@ -23,8 +23,8 @@ noncomputable def groupOrbitCoconeIsColimit {G : Type v} [Group G]
     obtain ⟨g, hg⟩ := horbit _ _ (hr (c.ι.app (SingleObj.star G) x))
     calc
       _ = s.ι.app (SingleObj.star G)
-          (D.map (SingleObj.toEnd G g) (r (c.ι.app (SingleObj.star G) x))) :=
-        (ConcreteCategory.congr_hom (s.w (SingleObj.toEnd G g)) _).symm
+          (D.map (SingleObj.toEnd G g).asHom (r (c.ι.app (SingleObj.star G) x))) :=
+        (ConcreteCategory.congr_hom (s.w (SingleObj.toEnd G g).asHom) _).symm
       _ = s.ι.app (SingleObj.star G) x := congrArg (s.ι.app (SingleObj.star G)) hg.symm
   refine
     { desc := fun s => TypeCat.ofHom (fun y => s.ι.app (SingleObj.star G) (r y))

@@ -1,7 +1,5 @@
 # Adjacent block swaps preserve the factors of cuspidal induction
 
-Author: Worker 289.
-
 `Langlands.CuspidalSupport.adjacentBlockSwapCuspidalInductionFactorsTheorem`
 proves the published
 `AdjacentBlockSwapCuspidalInductionFactorsTheorem.{uF,uV,uW}`. The field

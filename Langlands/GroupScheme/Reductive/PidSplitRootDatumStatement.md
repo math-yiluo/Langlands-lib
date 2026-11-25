@@ -1,7 +1,5 @@
 # Statement: full split root data and free root spaces over a principal ideal domain
 
-Worker 638.
-
 `Langlands.GroupScheme.PidSplitRootDatumStatement.{u}` is a statement-only,
 `Prop`-valued definition. It supplies no proof or additional axiom.
 

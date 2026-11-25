@@ -1,7 +1,5 @@
 # Normalized additive coordinates and descended extension defects
 
-Worker 1330.
-
 This derived construction continues `AdditiveExtensionCoordinate`. Let
 `q : E ⟶ H` be a homomorphism of group schemes over a scheme `B`, and let
 `a : kernel q ⟶ V` be a homomorphism. `IsFiberCoordinate q a f` means that

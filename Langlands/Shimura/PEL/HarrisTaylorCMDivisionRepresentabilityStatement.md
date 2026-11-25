@@ -1,6 +1,6 @@
 # Division-case existence for the normalized CM presheaf
 
-Worker 57. This pair states an unproved characteristic-zero existence target.
+This pair states an unproved characteristic-zero existence target.
 It adds the division hypothesis to the exact existing representability
 property. It constructs no scheme and supplies no proof of existence.
 
@@ -74,7 +74,7 @@ comparison or representability theorem is assumed as unconstrained data.
 
 This proposition states that those steps give the exact imported conclusion
 under division; it proves none of them. In particular it does not discharge
-the named global prerequisites, extend the current restricted test category
+the named global prerequisites, extend the existing restricted test category
 to all locally Noetherian `F`-schemes, or assert finite etale covers, Galois
 groups, canonical-model comparisons, uniformization or coefficient descent.
 The original exact target and the conditional Yoneda scheme-tower pair remain

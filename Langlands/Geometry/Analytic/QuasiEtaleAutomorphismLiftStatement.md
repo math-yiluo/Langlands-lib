@@ -1,7 +1,5 @@
 # Statement: lifts of near-identity automorphisms to compact quasi-étale spaces
 
-Author: Worker 57.
-
 This module states, as a proposition, the existence half of Berkovich's Key
 Lemma 7.2 for one cartesian square. Let `f : U → X` be quasi-étale with `U`
 compact. Then every automorphism of `X` that is close enough to the identity
@@ -9,8 +7,8 @@ is covered by an endomorphism of `U` that is close to the identity. The
 statement is not proved here. Together with the Library's rigidity of
 quasi-étale morphisms with compact source (`isRigid_of_quasiEtale`), it
 implies the Library proposition `QuasiEtaleActionLiftStatement`. That
-deduction is in `ActionLiftFromAutomorphismLifts` and in the final proof of
-Task 5895 (`62153100-ab87-491a-946d-ed708a689bc5`).
+deduction is in `ActionLiftFromAutomorphismLifts` and in the final proof
+`quasiEtaleActionLift` (module `QuasiEtaleActionLiftProof`).
 
 ## Original sources
 

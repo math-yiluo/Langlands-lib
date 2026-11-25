@@ -95,7 +95,7 @@ theorem map_eq_rationalSection_conj (i : T.toGrp ⟶ AffineWeil.unitBaseChange F
   rw [rationalSection_eq_rational_basePointEquiv, eq_mul_inv_iff_mul_eq]
   exact map_mul_rational_basePointEquiv h' s
 
-local instance : IsAffineHom (AffineWeil.unitBaseChange F L G).X.hom :=
+private local instance : IsAffineHom (AffineWeil.unitBaseChange F L G).X.hom :=
   isAffineHom_of_isAffine _
 
 /-- Clause 3 of a Galois Borel twist for one adelic torus point `t`, from a twisted point
@@ -149,7 +149,7 @@ variable (F L : Type u) [Field F] [Field L] [Algebra F L] [FiniteDimensional F L
   (τ : (L ≃ₐ[F] L) → ((CommGroupScheme.baseChange (algebraBaseMap F L)).obj T₀ ≅
     (CommGroupScheme.baseChange (algebraBaseMap F L)).obj T₀))
 
-local instance : IsAffineHom (AffineWeil.unitBaseChange F L G).X.hom :=
+private local instance : IsAffineHom (AffineWeil.unitBaseChange F L G).X.hom :=
   isAffineHom_of_isAffine _
 
 omit [FiniteDimensional F L] in
@@ -228,7 +228,7 @@ variable (F L : Type u) [Field F] [NumberField F] [Field L] [NumberField L]
   [IsAffine T₀.toGrp.X.left] [LocallyOfFiniteType T₀.toGrp.X.hom]
   (i₀ : T₀.toGrp ⟶ G)
 
-local instance : IsAffineHom (AffineWeil.unitBaseChange F L G).X.hom :=
+private local instance : IsAffineHom (AffineWeil.unitBaseChange F L G).X.hom :=
   isAffineHom_of_isAffine _
 
 omit [IsGalois F L] [LocallyOfFiniteType G.X.hom] in
@@ -276,7 +276,7 @@ theorem hasGaloisBorelTwisting_of_rootAction
       (fun β hβ => exists_normCharacter_galoisTwistLie F L G T₀ i₀ hR σ t β hβ)
   · have hr := hR.2.2.1 σ ∅ (Set.empty_subset _)
     rw [Set.image_empty] at hr
-    exact hS2 F L G σ _ _ _ _ (m σ) hcl hcl hr p
+    exact hS2 F L G σ _ _ _ _ (m σ) (by exact hcl) (by exact hcl) (by exact hr) p
   · have hr := hR.2.2.1 σ (simpleRelativeRoots (torusInclusion F L G T₀ i₀) ν \ {β})
       Set.sdiff_subset
     rwa [hR.image_diff_singleton σ β] at hr

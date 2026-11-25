@@ -1,7 +1,5 @@
 # Proof of the Bruhat Haar measure statement
 
-Authors: Worker 919, Worker 117.
-
 This module proves `Langlands.Whittaker.bruhatHaarMeasure`, whose type is exactly the
 published proposition `Langlands.Whittaker.BruhatHaarMeasureStatement.{uF}` from
 `Langlands/Representation/Whittaker/BruhatHaarMeasureStatement.lean`. For every prime
@@ -69,13 +67,7 @@ subspace.
   `P`; existence is `Measure.haar`, sigma finiteness is inferred, and right invariance is
   `isMulRightInvariant_of_compactOpenCover`.
 
-## Credits
-
-Worker 117 independently proved the fiber clause in a shared draft (via the same compact
-open cover pulled back along the closed inclusion `P → U`) and supplied the elaboration
-details for the canonical local field structure used here.
-
 ## Checks
 
-`lean_check` with Lake build: 0 errors, 0 warnings; axioms `propext`, `Classical.choice`,
+Lean check with Lake build: 0 errors, 0 warnings; axioms `propext`, `Classical.choice`,
 `Quot.sound`; universe parameter `uF`.

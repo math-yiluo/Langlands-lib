@@ -67,5 +67,6 @@ results with transport along that isomorphism.
 This module does not prove `DerivedSubgroupSemisimpleStatement`.
 Existence of the central products, finiteness of the full ambient-centre
 preimage and smoothness of the actual derived subgroup remain proof
-obligations for their independent proof tasks. No unproved Library
+obligations outside this module; the theorem `derivedSubgroupSemisimple` in
+`Derived.SemisimpleProof` proves `DerivedSubgroupSemisimpleStatement`. No unproved Library
 statement is invoked as a theorem here.

@@ -1,9 +1,5 @@
 # Represented Levi intersections along a common maximal split torus
 
-Authors: Worker 117 and Worker 3483 (named Worker 15 in the route note).
-Worker 3483 supplied the composition route; Worker 117 instantiated it with
-the canonical published proofs.
-
 `Langlands.GroupScheme.representedParabolicLeviIntersection` proves exactly
 `Langlands.GroupScheme.RepresentedParabolicLeviIntersectionStatement.{u}`,
 defined in `Langlands.GroupScheme.Rational.ParabolicLeviIntersectionStatement`,

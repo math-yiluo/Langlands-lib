@@ -4,7 +4,7 @@ Ported from `P2M/Sol/S_AlgebraicGeometry_Scheme_Modules_IsInvertible_nonempty_is
 License, Version 2.0; see `licenses/Anthropic-FLT/LICENSE`, `NOTICE` and `ATTRIBUTION.md`.
 The paired Markdown file lists the changes made by the port.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_RelativePicardFunctor
 import Langlands.AnthropicFLT.Definitions.Def_PresheafOfModules_InternalHom
 import Langlands.AnthropicFLT.Definitions.Def_SheafOfModules_MonoidalV2
@@ -26,11 +26,11 @@ open CategoryTheory CategoryTheory.MonoidalCategory AlgebraicGeometry Opposite T
 noncomputable section
 
 namespace AlgebraicGeometry
-export _root_.AlgebraicGeometry (Scheme.Modules.hom_ext Scheme.Modules.Hom.app_smul Scheme.Modules.Hom.zero_app map_injective_of_isIntegral Scheme.Modules.pullback Scheme.Hom Scheme.Opens.ι_appIso Scheme.Modules.Hom Scheme.Hom.image_preimage_eq_opensRange_inf IsIntegral Scheme Scheme.Modules.restrictFunctor Scheme.Modules.restrictFunctorIsoPullback Scheme.Modules Scheme.Opens Scheme.Modules.map_smul Scheme.Opens.opensRange_ι Scheme.Modules.IsInvertible Scheme.Modules.dual Scheme.Modules.IsFrameOn Scheme.Modules.Hom.isIso_of_isIso_app_of_iSup_eq_top)
+export _root_.AlgebraicGeometry (Scheme.Modules.hom_ext Scheme.Modules.Hom.app_smul Scheme.Modules.Hom.zero_app map_injective_of_isIntegral Scheme.Modules.pullback Scheme.Hom Scheme.Opens.ι_appIso Scheme.Modules.Hom Scheme.Hom.image_preimage_eq_opensRange_inf IsIntegral Scheme Scheme.Modules.restrictFunctor Scheme.Modules.restrictFunctorIsoPullback Scheme.Modules Scheme.Opens Scheme.Modules.map_smul Scheme.Opens.opensRange_ι Scheme.Modules.IsInvertibleFLT Scheme.Modules.dualFLT Scheme.Modules.IsFrameOn Scheme.Modules.Hom.isIso_of_isIso_app_of_iSup_eq_top)
 namespace Scheme
-export _root_.AlgebraicGeometry.Scheme (Modules.hom_ext Modules.Hom.app_smul Modules.Hom.zero_app ringCatSheaf Modules.pullback Hom Γ empty Opens.ι_appIso Modules.Hom Hom.image_preimage_eq_opensRange_inf Modules.restrictFunctor Modules.restrictFunctorIsoPullback restrictFunctor Modules Opens grothendieckTopology Modules.map_smul Opens.opensRange_ι restrict PresheafOfModules Modules.IsInvertible Modules.dual Modules.IsFrameOn Modules.Hom.isIso_of_isIso_app_of_iSup_eq_top)
+export _root_.AlgebraicGeometry.Scheme (Modules.hom_ext Modules.Hom.app_smul Modules.Hom.zero_app ringCatSheaf Modules.pullback Hom Γ empty Opens.ι_appIso Modules.Hom Hom.image_preimage_eq_opensRange_inf Modules.restrictFunctor Modules.restrictFunctorIsoPullback restrictFunctor Modules Opens grothendieckTopology Modules.map_smul Opens.opensRange_ι restrict PresheafOfModules Modules.IsInvertibleFLT Modules.dualFLT Modules.IsFrameOn Modules.Hom.isIso_of_isIso_app_of_iSup_eq_top)
 namespace Modules
-export _root_.AlgebraicGeometry.Scheme.Modules (hom_ext Hom.app_smul Hom.zero_app pushforward pullback presheaf Hom restrictFunctor restrictFunctorIsoPullback isSheaf restrict map_smul IsInvertible tensor dual IsFrameOn Hom.isIso_of_isIso_app_of_iSup_eq_top)
+export _root_.AlgebraicGeometry.Scheme.Modules (hom_ext Hom.app_smul Hom.zero_app pushforward pullback presheaf Hom restrictFunctor restrictFunctorIsoPullback isSheaf restrict map_smul IsInvertibleFLT tensor dualFLT IsFrameOn Hom.isIso_of_isIso_app_of_iSup_eq_top)
 namespace P2mF1b
 open _root_.AlgebraicGeometry.Scheme.Modules _root_.AlgebraicGeometry.Scheme _root_.AlgebraicGeometry
 
@@ -94,6 +94,7 @@ lemma gen₀_map {W W' : (U : Scheme.{u}).Opens} (i : W' ⟶ W) :
 
 omit e in
 
+set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
 lemma bijective_smul_map_eqToHom {A B : X.Opens} (q : A = B) (t : L.val.obj (op A))
     (h : Function.Bijective (fun b : Γ(X, A) => b • t)) :
     Function.Bijective (fun a : Γ(X, B) => a • L.val.map (eqToHom q.symm : B ⟶ A).op t) := by
@@ -125,7 +126,7 @@ lemma isFrameOn_frameOf : Scheme.Modules.IsFrameOn (frameOf L e) U := by
 
 end
 
-theorem exists_isFrameOn (hL : Scheme.Modules.IsInvertible L) (x : X) :
+theorem exists_isFrameOn (hL : Scheme.Modules.IsInvertibleFLT L) (x : X) :
     ∃ U : X.Opens, x ∈ U ∧ ∃ f : Γ(L, U), Scheme.Modules.IsFrameOn f U := by
   obtain ⟨U, hxU, ⟨eU⟩⟩ := hL.1 x
   exact ⟨U, hxU, frameOf L ((restrictFunctor'IsoPullback U).app L ≪≫ eU), isFrameOn_frameOf L _⟩
@@ -133,11 +134,11 @@ theorem exists_isFrameOn (hL : Scheme.Modules.IsInvertible L) (x : X) :
 end AlgebraicGeometry.Scheme.Modules.P2mF1b
 
 namespace AlgebraicGeometry
-export _root_.AlgebraicGeometry (Scheme.Modules.hom_ext Scheme.Modules.Hom.app_smul Scheme.Modules.Hom.zero_app map_injective_of_isIntegral Scheme.Modules.pullback Scheme.Hom Scheme.Opens.ι_appIso Scheme.Modules.Hom Scheme.Hom.image_preimage_eq_opensRange_inf IsIntegral Scheme Scheme.Modules.restrictFunctor Scheme.Modules.restrictFunctorIsoPullback Scheme.Modules Scheme.Opens Scheme.Modules.map_smul Scheme.Opens.opensRange_ι Scheme.Modules.IsInvertible Scheme.Modules.dual Scheme.Modules.IsFrameOn Scheme.Modules.Hom.isIso_of_isIso_app_of_iSup_eq_top)
+export _root_.AlgebraicGeometry (Scheme.Modules.hom_ext Scheme.Modules.Hom.app_smul Scheme.Modules.Hom.zero_app map_injective_of_isIntegral Scheme.Modules.pullback Scheme.Hom Scheme.Opens.ι_appIso Scheme.Modules.Hom Scheme.Hom.image_preimage_eq_opensRange_inf IsIntegral Scheme Scheme.Modules.restrictFunctor Scheme.Modules.restrictFunctorIsoPullback Scheme.Modules Scheme.Opens Scheme.Modules.map_smul Scheme.Opens.opensRange_ι Scheme.Modules.IsInvertibleFLT Scheme.Modules.dualFLT Scheme.Modules.IsFrameOn Scheme.Modules.Hom.isIso_of_isIso_app_of_iSup_eq_top)
 namespace Scheme
-export _root_.AlgebraicGeometry.Scheme (Modules.hom_ext Modules.Hom.app_smul Modules.Hom.zero_app ringCatSheaf Modules.pullback Hom Γ empty Opens.ι_appIso Modules.Hom Hom.image_preimage_eq_opensRange_inf Modules.restrictFunctor Modules.restrictFunctorIsoPullback restrictFunctor Modules Opens grothendieckTopology Modules.map_smul Opens.opensRange_ι restrict PresheafOfModules Modules.IsInvertible Modules.dual Modules.IsFrameOn Modules.Hom.isIso_of_isIso_app_of_iSup_eq_top)
+export _root_.AlgebraicGeometry.Scheme (Modules.hom_ext Modules.Hom.app_smul Modules.Hom.zero_app ringCatSheaf Modules.pullback Hom Γ empty Opens.ι_appIso Modules.Hom Hom.image_preimage_eq_opensRange_inf Modules.restrictFunctor Modules.restrictFunctorIsoPullback restrictFunctor Modules Opens grothendieckTopology Modules.map_smul Opens.opensRange_ι restrict PresheafOfModules Modules.IsInvertibleFLT Modules.dualFLT Modules.IsFrameOn Modules.Hom.isIso_of_isIso_app_of_iSup_eq_top)
 namespace Modules
-export _root_.AlgebraicGeometry.Scheme.Modules (hom_ext Hom.app_smul Hom.zero_app pushforward pullback presheaf Hom restrictFunctor restrictFunctorIsoPullback isSheaf restrict map_smul IsInvertible tensor dual IsFrameOn Hom.isIso_of_isIso_app_of_iSup_eq_top)
+export _root_.AlgebraicGeometry.Scheme.Modules (hom_ext Hom.app_smul Hom.zero_app pushforward pullback presheaf Hom restrictFunctor restrictFunctorIsoPullback isSheaf restrict map_smul IsInvertibleFLT tensor dualFLT IsFrameOn Hom.isIso_of_isIso_app_of_iSup_eq_top)
 namespace P2mF1b
 open _root_.AlgebraicGeometry.Scheme.Modules _root_.AlgebraicGeometry.Scheme _root_.AlgebraicGeometry
 
@@ -184,17 +185,17 @@ lemma homOfSection_ne_zero {M : Y.Modules} (s : Γ(M, ⊤)) (hs : s ≠ 0) : hom
     rw [one_smul, map_id_top]
   rw [← this, h, Scheme.Modules.Hom.zero_app]; rfl
 
-def homOfDualSection (s' : Γ(Scheme.Modules.dual P, ⊤)) : P ⟶ 𝟙_ Y.Modules :=
-  (ρ_ P).inv ≫ MonoidalClosed.uncurry (homOfSection (Scheme.Modules.dual P) s')
+def homOfDualSection (s' : Γ(Scheme.Modules.dualFLT P, ⊤)) : P ⟶ 𝟙_ Y.Modules :=
+  (ρ_ P).inv ≫ MonoidalClosed.uncurry (homOfSection (Scheme.Modules.dualFLT P) s')
 
-lemma homOfDualSection_ne_zero (s' : Γ(Scheme.Modules.dual P, ⊤)) (hs' : s' ≠ 0) :
+lemma homOfDualSection_ne_zero (s' : Γ(Scheme.Modules.dualFLT P, ⊤)) (hs' : s' ≠ 0) :
     homOfDualSection P s' ≠ 0 := by
   intro h
-  have h1 : MonoidalClosed.uncurry (homOfSection (Scheme.Modules.dual P) s') = 0 := by
+  have h1 : MonoidalClosed.uncurry (homOfSection (Scheme.Modules.dualFLT P) s') = 0 := by
     have := congrArg (fun f => (ρ_ P).hom ≫ f) h
     simpa [homOfDualSection] using this
-  have h2 : homOfSection (Scheme.Modules.dual P) s' = 0 := by
-    rw [← MonoidalClosed.curry_uncurry (homOfSection (Scheme.Modules.dual P) s'), h1,
+  have h2 : homOfSection (Scheme.Modules.dualFLT P) s' = 0 := by
+    rw [← MonoidalClosed.curry_uncurry (homOfSection (Scheme.Modules.dualFLT P) s'), h1,
       MonoidalClosed.curry_eq]
     haveI : (ihom P).IsRightAdjoint := (ihom.adjunction P).isRightAdjoint
     rw [Functor.map_zero, Limits.comp_zero]
@@ -221,7 +222,7 @@ lemma nonempty_inf [IsIntegral Y] {U V : Y.Opens} (hU : Nonempty U) (hV : Nonemp
   obtain ⟨z, hz⟩ := nonempty_preirreducible_inter U.isOpen V.isOpen ⟨x, hx⟩ ⟨y, hy⟩
   exact ⟨⟨z, hz⟩⟩
 
-theorem map_injective_of_isInvertible [IsIntegral Y] (hP : Scheme.Modules.IsInvertible P)
+theorem map_injective_of_isInvertible [IsIntegral Y] (hP : Scheme.Modules.IsInvertibleFLT P)
     {W V : Y.Opens} (i : W ⟶ V) [hW : Nonempty W] : Function.Injective (P.presheaf.map i.op) := by
   rw [injective_iff_map_eq_zero]
   intro x hx
@@ -271,11 +272,11 @@ theorem map_injective_of_isInvertible [IsIntegral Y] (hP : Scheme.Modules.IsInve
 end AlgebraicGeometry.Scheme.Modules.P2mF1b
 
 namespace AlgebraicGeometry
-export _root_.AlgebraicGeometry (Scheme.Modules.hom_ext Scheme.Modules.Hom.app_smul Scheme.Modules.Hom.zero_app map_injective_of_isIntegral Scheme.Modules.pullback Scheme.Hom Scheme.Opens.ι_appIso Scheme.Modules.Hom Scheme.Hom.image_preimage_eq_opensRange_inf IsIntegral Scheme Scheme.Modules.restrictFunctor Scheme.Modules.restrictFunctorIsoPullback Scheme.Modules Scheme.Opens Scheme.Modules.map_smul Scheme.Opens.opensRange_ι Scheme.Modules.IsInvertible Scheme.Modules.dual Scheme.Modules.IsFrameOn Scheme.Modules.Hom.isIso_of_isIso_app_of_iSup_eq_top Scheme.Modules.IsFrameOn.bijective_self)
+export _root_.AlgebraicGeometry (Scheme.Modules.hom_ext Scheme.Modules.Hom.app_smul Scheme.Modules.Hom.zero_app map_injective_of_isIntegral Scheme.Modules.pullback Scheme.Hom Scheme.Opens.ι_appIso Scheme.Modules.Hom Scheme.Hom.image_preimage_eq_opensRange_inf IsIntegral Scheme Scheme.Modules.restrictFunctor Scheme.Modules.restrictFunctorIsoPullback Scheme.Modules Scheme.Opens Scheme.Modules.map_smul Scheme.Opens.opensRange_ι Scheme.Modules.IsInvertibleFLT Scheme.Modules.dualFLT Scheme.Modules.IsFrameOn Scheme.Modules.Hom.isIso_of_isIso_app_of_iSup_eq_top Scheme.Modules.IsFrameOn.bijective_self)
 namespace Scheme
-export _root_.AlgebraicGeometry.Scheme (Modules.hom_ext Modules.Hom.app_smul Modules.Hom.zero_app ringCatSheaf Modules.pullback Hom Γ empty Opens.ι_appIso Modules.Hom Hom.image_preimage_eq_opensRange_inf Modules.restrictFunctor Modules.restrictFunctorIsoPullback restrictFunctor Modules Opens grothendieckTopology Modules.map_smul Opens.opensRange_ι restrict PresheafOfModules Modules.IsInvertible Modules.dual Modules.IsFrameOn Modules.Hom.isIso_of_isIso_app_of_iSup_eq_top Modules.IsFrameOn.bijective_self)
+export _root_.AlgebraicGeometry.Scheme (Modules.hom_ext Modules.Hom.app_smul Modules.Hom.zero_app ringCatSheaf Modules.pullback Hom Γ empty Opens.ι_appIso Modules.Hom Hom.image_preimage_eq_opensRange_inf Modules.restrictFunctor Modules.restrictFunctorIsoPullback restrictFunctor Modules Opens grothendieckTopology Modules.map_smul Opens.opensRange_ι restrict PresheafOfModules Modules.IsInvertibleFLT Modules.dualFLT Modules.IsFrameOn Modules.Hom.isIso_of_isIso_app_of_iSup_eq_top Modules.IsFrameOn.bijective_self)
 namespace Modules
-export _root_.AlgebraicGeometry.Scheme.Modules (hom_ext Hom.app_smul Hom.zero_app pushforward pullback presheaf Hom restrictFunctor restrictFunctorIsoPullback isSheaf restrict map_smul IsInvertible tensor dual IsFrameOn Hom.isIso_of_isIso_app_of_iSup_eq_top IsFrameOn.bijective_self)
+export _root_.AlgebraicGeometry.Scheme.Modules (hom_ext Hom.app_smul Hom.zero_app pushforward pullback presheaf Hom restrictFunctor restrictFunctorIsoPullback isSheaf restrict map_smul IsInvertibleFLT tensor dualFLT IsFrameOn Hom.isIso_of_isIso_app_of_iSup_eq_top IsFrameOn.bijective_self)
 namespace P2mF1b
 open _root_.AlgebraicGeometry.Scheme.Modules _root_.AlgebraicGeometry.Scheme _root_.AlgebraicGeometry
 
@@ -322,8 +323,8 @@ lemma exists_local_coeffs (hf : Scheme.Modules.IsFrameOn f U) :
 end Local
 
 theorem main [IsIntegral Y] (hunit : ∀ t : Γ(Y, ⊤), t ≠ 0 → IsUnit t)
-    (hP : Scheme.Modules.IsInvertible P)
-    (hs : ∃ s : Γ(P, ⊤), s ≠ 0) (hs' : ∃ s' : Γ(Scheme.Modules.dual P, ⊤), s' ≠ 0) :
+    (hP : Scheme.Modules.IsInvertibleFLT P)
+    (hs : ∃ s : Γ(P, ⊤), s ≠ 0) (hs' : ∃ s' : Γ(Scheme.Modules.dualFLT P, ⊤), s' ≠ 0) :
     Nonempty (P ≅ 𝟙_ Y.Modules) := by
   obtain ⟨s, hs⟩ := hs
   obtain ⟨s', hs'⟩ := hs'
@@ -390,7 +391,7 @@ end
 open _root_.AlgebraicGeometry _root_.P2MW.S_AlgebraicGeometry_Scheme_Modules_IsInvertible_nonempty_iso_tensorUnit_of_section_ne_zero_of_dual_section_ne_zero.AlgebraicGeometry in
 theorem solution
     {Y : Scheme.{u}} [IsIntegral Y] (hunit : ∀ t : Γ(Y, ⊤), t ≠ 0 → IsUnit t)
-    (P : Y.Modules) (hP : Scheme.Modules.IsInvertible P)
-    (hs : ∃ s : Γ(P, ⊤), s ≠ 0) (hs' : ∃ s' : Γ(Scheme.Modules.dual P, ⊤), s' ≠ 0) :
+    (P : Y.Modules) (hP : Scheme.Modules.IsInvertibleFLT P)
+    (hs : ∃ s : Γ(P, ⊤), s ≠ 0) (hs' : ∃ s' : Γ(Scheme.Modules.dualFLT P, ⊤), s' ≠ 0) :
     Nonempty (P ≅ 𝟙_ Y.Modules) :=
   AlgebraicGeometry.Scheme.Modules.P2mF1b.main hunit hP hs hs'

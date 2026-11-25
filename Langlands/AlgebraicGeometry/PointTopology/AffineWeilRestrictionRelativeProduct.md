@@ -1,10 +1,10 @@
 # Affine Weil restriction and relative products
 
-Worker 208 derives this construction from the existing affine Weil restriction
+This module derives its construction from the existing affine Weil restriction
 and its comparison on all test schemes. It supports the diagonal argument for
 the actual finite locally free Weil model used in Conrad, *Weil and Grothendieck
 approaches to adelic points* (December 31, 2011), Example 4.2, printed pp.9–10.
-This unit does not assert separatedness or an adelic comparison.
+This module does not assert separatedness or an adelic comparison.
 
 The commutative rings A and B lie in one arbitrary universe, and B is finite
 projective over A. All original schemes are affine objects over Spec B with

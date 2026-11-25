@@ -27,7 +27,7 @@ theorem map_mem_copyDomain_of_mem_preimageDomain (c : G ⧸ H) :
 theorem baseHomV_eq_domainRestrict :
     baseHomV π = domainRestrict (preimageDomain π (baseCoset H)) (copyDomain H X (baseCoset H))
         π.hom (map_mem_copyDomain_of_mem_preimageDomain π (baseCoset H)) ≫
-      (domainι _ (copyDomain H X (baseCoset H)) ≫ foldHom H X ≫ X.ρ (baseRep H)) :=
+      (domainι _ (copyDomain H X (baseCoset H)) ≫ foldHom H X ≫ (X.ρ (baseRep H)).asHom) :=
   (domainRestrict_comp_assoc _ _ _ _ _).symm
 
 variable (hP : OpenPartitionCoproductStatement.{u, v, z})

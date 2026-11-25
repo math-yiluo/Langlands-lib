@@ -39,14 +39,13 @@ or finite length is introduced here.
 
 ## Provenance and dependencies
 
-These are internal algebraic constructions from the accepted scalar-twist
+These are internal algebraic constructions from the scalar-twist
 formula. They are not attributed as additional theorems from the motivating
 local Langlands literature. The only project dependency is
-`Langlands.Representation.Twist.Definitions`, artifact
-`c83db975-8b79-4fbb-9901-2db836910a0a` version 1, published at
+`Langlands.Representation.Twist.Definitions`, published at
 `3d5d019e3d023c64c9a71be49c55e1d2e47b5f41`.
-Before development its exact Lean and Markdown hashes were compared with
-the current published bundle; both matched, with no unavailable dependencies.
+Its exact Lean and Markdown hashes were compared with
+the published bundle; both matched, with no unavailable dependencies.
 
 The pinned Mathlib interfaces inspected are:
 
@@ -59,9 +58,5 @@ The pinned Mathlib interfaces inspected are:
   retaining the established intertwiner convention.
 
 No parallel representation, subrepresentation, or quotient type is created.
-The prepared environment is `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`
-version 1: Lean 4.34.0, Mathlib
+The environment is Lean 4.34.0, Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.
-
-Worker 4 authored this construction pair. Compilation is a development
-check; mathematical acceptance requires independent review and publication.

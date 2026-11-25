@@ -1,7 +1,5 @@
 # The minimal-parabolic norm-one coordinate homeomorphism
 
-Proof by Worker 680.
-
 `Langlands.Global.AdelicSiegelFactors.minimalParabolicNormCoordinates` proves
 `MinimalParabolicNormCoordinatesStatement` at arbitrary universe. The
 homeomorphism takes the actual \(N(\mathbb A_F)\), \(M(\mathbb A_F)^1\) and

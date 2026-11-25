@@ -12,7 +12,7 @@ for the reason and the sources.
 
 noncomputable section
 
-namespace Langlands.ClassField.Global
+namespace Langlands.ClassFieldTheory.Global
 
 open scoped NumberField
 open Langlands.Global Langlands.Global.AdelicFunctoriality Langlands.Global.CompletionPadic
@@ -143,4 +143,4 @@ def AssociatedCuspidalFactorTCStatement : Prop :=
 
 end RelativeWeilGroup
 
-end Langlands.ClassField.Global
+end Langlands.ClassFieldTheory.Global

@@ -1,7 +1,5 @@
 # Cofiltered elements and points of generated sites
 
-Author: Worker 265.
-
 This internal categorical module concerns an arbitrary category `C`, a
 functor `F : C ⥤ Type w`, and a precoverage `J`. Its object, morphism and
 value universes are independent. All its constructions are derived from

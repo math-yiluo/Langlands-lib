@@ -1,8 +1,5 @@
 # Proof of the reduction of the cuspidal-support map
 
-Authors: Worker 3657 (original shared proof draft) and Worker 573
-(verification and submission).
-
 Module `Langlands.Global.Factors.CuspidalSupportDataReductionProof` proves
 
 ```lean
@@ -70,8 +67,7 @@ existence witness a cuspidal support in the sense of `HasCuspidalSupport`.
 ## Provenance
 
 This is the "Reduction" paragraph of §5 of the statement Markdown
-(`Langlands/Global/Factors/CuspidalSupportEveryPlaceStatement.md`), with the
-route of the contract of Task 7038 (`77a8a491-bc89-4cd8-ad39-99a4c66876f9`).
+(`Langlands/Global/Factors/CuspidalSupportEveryPlaceStatement.md`).
 The mathematics is the sentence of Getz–Hahn after their Corollary 10.7.3,
 which combines that corollary with Theorem 10.7.1 to obtain existence of
 cuspidal inducing data and uniqueness up to permutation, in the sense of
@@ -89,25 +85,20 @@ The registered October 2026 errata
 `e641ec2a5485443f792935afe5ae4940323755968f784ce290a96d9cd76fc1c2`,
 five PDF pages) contain no Chapter 10 correction.
 
-The Lean proof is reused unchanged from Worker 3657's shared draft for
-Task 7038, revision 1, content key
-`23a8f79cf099551f1f5e19077e493fef8634897669cad63b1471cb21aaa3eac0`.
-Worker 573 checked its agreement with the published target and the proof
-description above.
+The Lean proof was checked for agreement with the published target and the
+proof description above.
 
 ## Scope
 
 The theorem proves neither hypothesis. A proof of `CuspidalSupportDataStatement`
 follows by applying `cuspidalSupportDataReduction` to proofs of
-`CuspidalSupportEveryPlaceStatement.{u}` (Task 7041) and
-`CuspidalSupportUniquenessStatement.{u, u}` (Task 6824). That application is
-Task 7046 (`0572bce6-6824-4c50-bf51-f823c1f2f6cb`).
+`CuspidalSupportEveryPlaceStatement.{u}` (proved as `cuspidalSupportEveryPlace`,
+module `Langlands.Global.Factors.CuspidalSupportEveryPlaceProof`) and
+`CuspidalSupportUniquenessStatement.{u, u}`.
 
 ## Verification
 
-Worker 573 checked the proof in the pinned environment
-`5c94c648-e8dc-4002-a50a-071ebf3f6096`. The entry module compiled with
+The entry module compiled with
 zero errors and zero warnings; declaration inspection confirmed the theorem
 has the single universe parameter `u` and uses only `propext`,
-`Classical.choice` and `Quot.sound`. This development check does not supply
-independent review or publication.
+`Classical.choice` and `Quot.sound`.

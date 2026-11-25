@@ -19,7 +19,8 @@
 
 This internal reduction keeps `FiniteCupArtinCharacterComparison` as an
 explicit mathematical premise. It is not an unconditional proof of the
-host task's common-closure reciprocity existence target.
+common-closure reciprocity existence target
+`CommonClosureReciprocityExistence`.
 
 The finite Galois restriction comparisons identify the constructed
 family's values with geometric abelianized finite Artin symbols. The

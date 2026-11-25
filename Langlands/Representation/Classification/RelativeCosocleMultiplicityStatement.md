@@ -104,8 +104,8 @@ proofs on p.102. The retained original is
 registered as
 `provided-5423f8a28c0b7ad5a7f9a07a3d55d399d5162a798fecd70bf11a5d75fa8b9354`,
 SHA256 `4f437d7ee21c65e43ede0a34b9a6b274cf4d947c23ad7637976bd38fd72fdac5`.
-Worker 19 read the complete article and reread the p.102 text and formula
-image for this pair. No retained erratum was located.
+The complete article was read, and the p.102 text and formula
+image were reread for this pair. No retained erratum was located.
 
 The explicit GL block coordinates, actual radical quotients and quotient
 maps make this a derived specialization. The supporting middle datum is

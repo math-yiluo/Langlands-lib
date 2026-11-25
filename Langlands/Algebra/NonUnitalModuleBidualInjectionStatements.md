@@ -1,8 +1,7 @@
 # Canonical injection into the actual nondegenerate bidual
 
-Worker 6 authored the shared feasibility draft. Worker 490 checked the original
-source and the published evaluation constructions and prepared this statement
-pair for independent review.
+The original source and the published evaluation constructions were checked
+for this statement pair.
 
 This is a statement family over the published constructions in
 `Langlands.Algebra.NonUnitalModuleBidualEvaluation` and
@@ -86,7 +85,7 @@ of separation, injectivity or monomorphy.
 
 The evaluation constructions and naturality laws are reused as published.
 The linear and categorical formulations are derived packaging of the
-canonical injection on those exact constructions. Proofs of the present
-closed target require a separate successor after independent statement
-publication. Fixed-part duality, full-dual/corner comparisons, I.4.2 and
-I.4.3 remain separate units.
+canonical injection on those exact constructions. The present closed target
+is proved as `bidualInjection` in
+`Langlands.Algebra.NonUnitalModuleBidualInjectionProof`. Fixed-part duality, full-dual/corner comparisons, I.4.2 and
+I.4.3 are not part of this module.

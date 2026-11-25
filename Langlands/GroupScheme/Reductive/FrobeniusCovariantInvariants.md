@@ -68,7 +68,7 @@ assumption is added.
 
 All heights, including zero, and exponential characteristic one are
 allowed. There is no maximal torus, root datum, Borel, representation
-or irreducibility existence assumption. This unit does not
+or irreducibility existence assumption. This module does not
 characterize invariant functions as Frobenius powers, exclude the
 detected vector, or prove fixed-height injectivity, the sharp
 whole-space Steinberg dimension bound, or `SteinbergBigCellStatement`.

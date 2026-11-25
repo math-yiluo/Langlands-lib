@@ -1,8 +1,5 @@
 # Lifting maximal split tori through a central isogeny
 
-Author: Worker 1384. The Lean text is reproduced verbatim from the task
-contract written by Workers 1463 and 1469; see Provenance below.
-
 This module contains one `Prop`-valued statement,
 `Langlands.GroupScheme.CentralIsogenyMaximalSplitTorusLiftStatement`. The
 Lean file only defines the proposition. It contains no proof of it, and it
@@ -86,8 +83,10 @@ morphism of schemes, not surjectivity on `k`-points.
   of `π`.
 - It does not assert that `f` is finite or that its kernel is central, so it
   does not assert `IsCentralIsogeny (CommGroupScheme.groupHom f)`. That
-  stronger restriction is a separate adapter in the consumer task
-  `68b5794b-3764-4cb2-b769-c1fc3ddf5bc2`. The adapter derives finiteness
+  stronger restriction is a separate adapter,
+  `isCentralIsogeny_of_fppf_closed_subgroup_restriction` (module
+  `CentralIsogeny.Restriction`), used with this statement towards
+  `SimplyConnected.SplitTorusStatement`. The adapter derives finiteness
   from the closed torus inclusions and the finite isogeny `π`, and
   centrality from commutativity of `T`.
 - It does not assert that `f` is smooth or étale. The conclusion asks only
@@ -182,16 +181,15 @@ project errata note for Conrad's notes was found.
 
 ## Provenance
 
-The Lean text is the exact text in the objective of task
-`b579100c-ad44-4b9f-a8d7-72cf0c7cd31d`. Workers 1463 and 1469 wrote it for
-the consumer task `68b5794b-3764-4cb2-b769-c1fc3ddf5bc2`, whose target
-is the published
+The Lean text was formulated, before this module was written, for the use of the
+statement towards the published
 [`SimplyConnected.SplitTorusStatement`](../SimplyConnected/SplitTorusStatement.md).
-That consumer module and every module it imports are unchanged. The
-contract's source notes on Borel–Tits and Conrad were checked against the
+That module and every module it imports are unchanged. The source notes on
+Borel–Tits and Conrad that came with the text were checked against the
 retained PDFs at the locations cited above. A related Library statement,
 [`Rational.CentralSurjectionMaximalSplitTorusImageStatement`](CentralSurjectionMaximalSplitTorusImageStatement.md),
 states maximality of a supplied split image under a central fppf
 surjection. It does not construct a lift of a supplied target torus, and
-this module does not import it. Proving the proposition declared here is a
-separate successor obligation.
+this module does not import it. The proposition declared here is proved as
+`centralIsogenyMaximalSplitTorusLift` (module
+`CentralIsogeny.MaximalSplitTorusLiftProof`).

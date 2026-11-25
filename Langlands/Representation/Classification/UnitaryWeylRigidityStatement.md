@@ -1,13 +1,12 @@
 # Real determinant exponents under unitary Weyl association
 
-Author: Worker 497.
-
 `Langlands.GLUnitaryWeylRealExponentRigidityStatement` is a derived
 proposition definition for actual standard product Levis of positive-rank
 GL_n over a `PadicField` with compatible `TopologicalData`. It groups the
 coordinate geometry, real-exponent rigidity, and the resulting generic
 self-association assertion into one focused proof target. This file states
-the proposition; it does not prove it.
+the proposition; it does not prove it. The proof is
+`glUnitaryWeylRealExponentRigidity` in `UnitaryWeylRigidityProof`.
 
 ## Exact assertions
 
@@ -77,10 +76,9 @@ cardinalities in the proof of Lemma 5.3, p.100, is the use isolated here.
 
 - Registered source ID:
   `provided-5423f8a28c0b7ad5a7f9a07a3d55d399d5162a798fecd70bf11a5d75fa8b9354`.
-- Original: `/home/taskhub/pilot/literature/Silberger (1978), The Langlands quotient theorem for p-adic groups.pdf`.
 - PDF SHA-256:
   `4f437d7ee21c65e43ede0a34b9a6b274cf4d947c23ad7637976bd38fd72fdac5`.
-- Reading for this contribution: printed pp.96–100 (PDF pages 2–6);
+- Reading: printed pp.96–100 (PDF pages 2–6);
   p.100 also checked visually, including the stabilizer display.
 
 Bill Casselman, *Introduction to admissible representations of p-adic
@@ -95,13 +93,13 @@ published `AdmissibleSchurStatement` and its proved central-character helper.
 - Original: `/home/taskhub/central-library/Casselman--p-adic groups lecture notes/Introduction to representations of p-adic groups/Casselman--Chapter II - Smooth representations--2019.pdf`.
 - PDF SHA-256:
   `2f7868c9e29fd486a42419f5b381237bba5d0ba73accc82ed5d7ade448a79c3d`.
-- Reading for this contribution: printed/PDF pp.3–5, including both
+- Reading: printed/PDF pp.3–5, including both
   propositions and the central-character proof.
 
-No errata file for either source is present in the current Library notes.
+No errata file for either source was present in the Library notes.
 The present target is derived content, not a claim that either source states
 this exact GL_n theorem or its full generality. In particular it neither
-states nor proves the multiplicity assertions of Lemma 5.3. The reviewed
+states nor proves the multiplicity assertions of Lemma 5.3. The
 scope limitation in `notes/jacquet/silberger-lemma53-scope.md` remains
 applicable to that separate comparison.
 
@@ -119,8 +117,8 @@ Library helpers include
 `CuspidalSupport.BlockPermutation`; the proposition does not assume them
 as input certificates.
 
-Here is the mathematical justification for the rigidity target, to be
-implemented separately. Irreducibility and admissibility give scalar action
+Here is the mathematical justification for the rigidity target, implemented
+separately in `UnitaryWeylRigidityProof`. Irreducibility and admissibility give scalar action
 of every central element, by Schur's lemma. In an invariant positive form,
 a nonzero vector has positive squared length. Invariance under a scalar
 central action makes that squared length equal to the squared modulus of the
@@ -176,8 +174,8 @@ carrier universe is identified with the field universe or with the other
 carrier. The self-association clause uses the actual single source carrier
 in `uV` without restricting the two-carrier rigidity clause.
 
-Environment: `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` (Lean 4.34.0,
-Mathlib `5ed2965256430c3649e86755f9576b54eca72435`). Development compilation
+Lean 4.34.0,
+Mathlib `5ed2965256430c3649e86755f9576b54eca72435`. Development compilation
 and exact declaration inspection succeeded with no warnings. Inspection
 reported `statement_returns_prop: true`, kind `definition`, and exactly
 `[uF, uV, uW]` as its independent level parameters. Its only axioms are
@@ -185,6 +183,5 @@ reported `statement_returns_prop: true`, kind `definition`, and exactly
 fingerprint is
 `8dd3b2818f2493dc92e4293a60bfc484b5fb143652615accbe4e7df706409014`.
 These checks establish elaboration and scope, not mathematical truth. The proposition
-requires a separate exact-target proof. Its proof successor will be published
-only after this statement has independent acceptance and current Library
-publication.
+has a separate exact-target proof, `glUnitaryWeylRealExponentRigidity` in
+`UnitaryWeylRigidityProof`.

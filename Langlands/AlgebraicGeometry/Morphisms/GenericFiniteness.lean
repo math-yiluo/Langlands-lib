@@ -1,7 +1,7 @@
 /-
 Copyright 2026 Anthropic
 Licensed under the Apache License, Version 2.0.
-Adapted by Worker 1001 from Anthropic FLT commit 6e837e75355538c7f80bab5b956861e86c4eacc2, files
+Adapted from Anthropic FLT commit 6e837e75355538c7f80bab5b956861e86c4eacc2, files
 P2M/Sol/S_Algebra_QuasiFinite_exists_not_mem_finite_awayMap_of_mem_minimalPrimes.lean,
 P2M/Sol/S_AlgebraicGeometry_LocallyQuasiFinite_exists_not_mem_isFinite_morphismRestrict_basicOpen_of_mem_minimalPrimes.lean
 and P2M/Sol/S_AlgebraicGeometry_LocallyQuasiFinite_of_formallyUnramified_of_locallyOfFiniteType.lean.
@@ -11,7 +11,7 @@ Changes: the declarations are moved out of the P2M wrapper namespaces into
 small elaboration adjustments for the project Mathlib. The paired Markdown file lists the changes.
 See licenses/Anthropic-FLT/LICENSE and licenses/Anthropic-FLT/NOTICE.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AbelianScheme.TorsionFiniteEtale
 
 /-! # Generic finiteness of quasi-finite morphisms at minimal primes

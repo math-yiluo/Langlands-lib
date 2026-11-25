@@ -1,11 +1,8 @@
 # Proof of Bernstein–Zelevinsky (1977), Proposition 3.8
 
-Authors: Worker 1024 and Worker 805.
-
 This module proves the published proposition
 `Langlands.Derivative.MirabolicHighestDerivativePairingStatement` (module
-`Langlands.Representation.Derivative.MirabolicHighestDerivativePairingStatement`,
-accepted statement candidate `73c253bc-3209-4800-bcc4-6a357f6c66c1`). The
+`Langlands.Representation.Derivative.MirabolicHighestDerivativePairingStatement`). The
 proposition is Proposition 3.8 of Bernstein–Zelevinsky, *Induced
 representations of reductive p-adic groups I* (BZ77), printed p. 453. The
 statement pair is imported unchanged.
@@ -59,8 +56,8 @@ lattice correspondence:
 
 The source works with `Φ⁺Φ⁻A ⊂ A` and restricts the form to it; the Lean `Φ⁻`
 step instead restricts the form to the radical relations `A(V)` and integrates
-it along the radical, which avoids `Φ⁺` entirely (the objective permits a route
-"working with the kernel of the `V`-coinvariant map directly").
+it along the radical, which avoids `Φ⁺` entirely: the route works with the
+kernel of the `V`-coinvariant map directly.
 
 ## Implemented proof
 
@@ -106,7 +103,7 @@ conclusion holds without it. No highestness is needed for `B`.
 
 The proposition is stated with the Library's normalized minus functors
 (`|det|^(-1/2)` twists) and the covariance `|det|` (via `T.determinantNorm`).
-Every comparison is proved in Lean inside the candidate:
+Every comparison is proved in Lean in the modules of this proof:
 
 * `Ψ⁻` step (`MirabolicHighestDerivativeDescent`): `determinantNorm_levi`,
   `determinantNorm_radical`, and `half_power_mul_half_power_mul_self`, which
@@ -129,18 +126,18 @@ covariance convention; no Haar modulus comparison
 `highestDerivativePairing_cast`, `mirabolicHighestDerivativePairing_of_phiMinusStep`;
 all are in namespace `Langlands.Derivative.Mirabolic`.
 
-## Modules of this candidate
+## Modules of this proof
 
-The candidate consists of four paired modules in
+The proof consists of four paired modules in
 `Langlands/Representation/Derivative/`:
 
-* `MirabolicDerivativeVanishing` (Worker 1024): the §3.5 detection and the
+* `MirabolicDerivativeVanishing`: the §3.5 detection and the
   published `MirabolicDerivativeDetection` in the form
   `Langlands.Derivative.Mirabolic.derivativeDetection`.
-* `MirabolicHighestDerivativeDescent` (Worker 1024): radical triviality from
+* `MirabolicHighestDerivativeDescent`: radical triviality from
   `Φ⁻ = 0` and the `Ψ⁻` descent of pairings.
-* `MirabolicPhiMinusNondegeneratePairing` (Worker 805): the `Φ⁻` step.
-* `MirabolicHighestDerivativePairingProof` (Worker 1024): this assembly.
+* `MirabolicPhiMinusNondegeneratePairing`: the `Φ⁻` step.
+* `MirabolicHighestDerivativePairingProof`: this assembly.
 
 Each module's Markdown states its lemmas, describes their proofs and audits
 its own import closure.
@@ -150,7 +147,7 @@ its own import closure.
 Direct imports: `MirabolicHighestDerivativeDescent`,
 `MirabolicPhiMinusNondegeneratePairing` and the statement module
 `MirabolicHighestDerivativePairingStatement`. The transitive `Langlands` import
-closure of this module has 110 modules: the 4 modules of the candidate and 106
+closure of this module has 110 modules: the 4 modules of this proof and 106
 public Library modules. Every public Lean/Markdown pair in it is byte-identical
 to the Library at `6789e5106aba61566887427750f5444a494d5879`.
 
@@ -167,7 +164,7 @@ The 106 public modules are:
   `Filtration.ObjectDefinitions` (from `MirabolicHighestDerivativeDescent`);
 * the statement module `MirabolicHighestDerivativePairingStatement`;
 * 29 modules reached through `MirabolicPhiMinusNondegeneratePairing`: the
-  published, accepted `MirabolicMinusPairingTransferProof` and its statement,
+  published `MirabolicMinusPairingTransferProof` and its statement,
   `Group.GL.MirabolicProjection`, `Group.GL.IntegralSubgroup`, `Group.GL.Maps`,
   `HarmonicAnalysis.CharacterTransport`,
   `HarmonicAnalysis.PadicRectangularHaarScalingProof`,
@@ -183,9 +180,9 @@ The 106 public modules are:
 
 Mathematical proof dependencies of the main theorem: the definitions of the
 minus functors, derivatives, rank transports and invariant-form spaces; the
-published, accepted `MinusVanishing` lemmas (one-step detection, coordinate
+published `MinusVanishing` lemmas (one-step detection, coordinate
 characters, Levi transport, radical boxes, finite Fourier inversion) and
-`Jacquet.CharacterAveraging`; the published, accepted unnormalized pairing
+`Jacquet.CharacterAveraging`; the published unnormalized pairing
 transfer `MirabolicMinusPairingTransferProof` (radical integral, descent to
 coinvariants, Haar change of variables, finite Fourier nonvanishing), whose
 lower inputs include `EqualRankFrobenius.exists_lastRow_eq` and elementary
@@ -196,15 +193,14 @@ closure (`AnalyticStatement`, `EqualRankTrilinearUniquenessStatement`,
 propositions; none is assumed. No minus-functor exactness (the published
 `MinusExactnessStatement` is neither imported nor used), no plus functor, no
 `Φ⁺Φ⁻`/`Ψ⁺Ψ⁻` exact sequence, no Haar modulus comparison and no consumer
-result is used. The only derivative results used are published, accepted
+result is used. The only derivative results used are published
 proofs (`MinusVanishing`, `MirabolicMinusPairingTransferProof`) and the
-results proved in this candidate.
+results proved in the four modules of this proof.
 
-The Independence exclusions of task `a925b519-9bb9-4927-873e-ad322d41328e` hold
-without weakening. Neither this candidate nor its import closure uses: the
-nonadjacent product consumer `3c9849a4-a6c0-43ac-9982-d15ed76bf1e9` or its
-conclusion; `TwoSupercuspidalProductStructure` or parent task
-`ab61f565-1427-4746-ba77-46097563e962`; the special-head/reverse-socle,
+The proof is independent of the following results, without weakening. Neither
+these four modules nor their import closure use: the nonadjacent product
+consumer `TwoSupercuspidalNonadjacentProductIrreducible` or its
+conclusion; `TwoSupercuspidalProductStructure`; the special-head/reverse-socle,
 segment-socle/reverse-head, analytic segment classification, forward special
 square-integrability (`SegmentSpecialEssentialSquareIntegrability`),
 multisegment special-head exhaustion, ordered strong-head existence, quotient
@@ -215,11 +211,11 @@ exhaustion, special-head product irreducibility,
 `MultisegmentSocleExhaustion`, `SegmentSocleProductIrreducibility`, adjacent
 socle commutation, `SegmentFullJacquetFormula`, `SegmentHeadJacquetFormula`,
 `SegmentSocleJacquetFormula` or `SegmentSpecialJacquetExponentNormFormula`
-tasks, statements, conclusions, proof successors or consequences; Ze80's
+statements, conclusions, proofs or consequences; Ze80's
 segment derivative formulas (§3.5, §9.6); a segment product irreducibility
 criterion (Ze80 4.2, 9.7); an analytic or square-integrability result
 (Ze80 9.3); or any classification or exhaustion theorem. A text scan of all 110
-Lean files of the closure finds none of the excluded declaration names. In the
+Lean files of the closure finds none of these declaration names. In the
 Markdown files the only hits are the independence paragraphs of `Iteration.md`
-and `MirabolicMinus.md`, and of this candidate's own Markdown, which state that
+and `MirabolicMinus.md`, and of the Markdown of these four modules, which state that
 those names are not used.

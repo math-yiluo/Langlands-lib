@@ -72,26 +72,29 @@ proposition uses those character definitions and the general smooth twist
 functor. The filename of that import imposes no supercuspidal hypothesis.
 No new character, derivative, localization or representation model is defined.
 
-The motivating consumer is the independent special-head product
-irreducibility task. Its published general highest-derivative pairing bridge
+The motivating consumer is the special-head product
+irreducibility criterion `SegmentHeadProductIrreducibility`. Its published
+general highest-derivative pairing bridge
 produces a quotient from a derivative of a modulus-twisted dual.
 Specializing this statement to `s = 1` would move that modulus twist to the
-output derivative. After its own proof and publication, the comparison can
+output derivative. With its proof (`generalLinearDerivativeDeterminantTwist` in
+`GeneralLinearDerivativeDeterminantTwistProof`), the comparison can
 therefore be combined with actual dual-product support constructions.
 This statement supplies none of the support comparison, nonlinkage
 combinatorics, linked converse or product irreducibility proof.
 
 ## Independence boundary
 
-The statement uses only the two named definition-level imports. A later proof
-must be independently accepted and published from permitted general
-Bernstein–Zelevinsky derivative/localization and character-twist foundations.
-It must preserve the host exclusions: no Zelevinsky 1980 §3.5 or §9.6 segment
-derivative formula or proof successor; no special-head product criterion in
+The statement uses only the two named definition-level imports. Its proof
+uses only general
+Bernstein–Zelevinsky derivative/localization and character-twist foundations,
+with these exclusions: no Zelevinsky 1980 §3.5 or §9.6 segment
+derivative formula or its proof; no special-head product criterion in
 either direction; no downstream segment, head, socle, full Jacquet formula or
-classification conclusion; and no segment-socle part of task `8e5b4563-0365-41c7-b134-70f2a0b36292`.
+classification conclusion; and no segment-socle part of the derivative
+statements (`SegmentSocleDerivativesStatement`).
 The stronger internal length-two helpers of the published support-only proof
-are not inputs to this statement or a permitted route for its proof.
+are not inputs to this statement or a route for its proof.
 
 The native import closure and inherited-pair comparison are recorded below.
 
@@ -100,7 +103,7 @@ this entry, and 56 direct external roots. Each of the 60 inherited Lean and
 Markdown pairs is byte-identical to the current published Library and to the
 previously audited terminal-support closure. There are no missing imports or
 paired Markdown files. A scan of code after removing comments and strings
-finds no proof holes, new axioms, prohibited execution syntax or host-excluded
+finds no proof holes, new axioms, prohibited execution syntax or excluded
 declaration name. The closure contains no segment or head module and no
 segment derivative, socle, Jacquet formula or classification conclusion.
 Its only derivative modules are this statement, `Iteration`, `MirabolicMinus`
@@ -108,23 +111,22 @@ and `MirabolicCharacter`; its only Classification modules are `Supercuspidal`
 and `SupercuspidalTwist`. The normalization and quotient constructions are
 therefore the existing general definitions.
 
-All host exclusions remain required for the separate proof, including the
-conclusions of tasks
-`30341ae4-65f2-4a0e-9283-763db01a409e`,
-`3bfb61fa-1129-4fc9-83fd-7fcfec22106e`,
-`ebea9a8a-9b21-4208-aa31-98c2dea1f8a3`,
-`20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584`,
-`8252833d-c269-41a9-824c-5879e531b23b`,
-`52e97845-36bb-457d-b76f-70753334b88c`,
-`1cb45da2-7007-4351-a694-594fb148b8d1`,
-`cd8ab97c-0b78-4bce-97c4-d307a28159a4`,
-`bf433f0a-921a-428c-b0c0-6475438125ac`,
-`ed48ae06-964c-4c84-9e62-978f5a953ca7`,
-`b95105c6-f8bb-4641-ae53-2f49d1e7f034`,
-`55ad1e10-62d8-46b7-a081-909ef0056426`,
-`92aea10f-62ac-4e0b-bd4a-9a80909797c5`,
-`2ae5cbe5-0701-4509-88a0-db8cbeb35be4`, and the consuming criterion
-`8364e73f-14ec-4d14-8f2b-1555a7c1ce95` itself.
+The exclusions also cover, for the separate proof, the conclusions of
+`GenericSegmentProductUniqueness`,
+multisegment exhaustion,
+ordered strong-head existence,
+quotient coverage,
+ordered conversion,
+tempered uniqueness,
+`SquareIntegrableLanglandsClassification`,
+square-integrable exhaustion,
+regular exhaustion,
+`SegmentFullJacquetFormula`,
+`SegmentSocleJacquetFormula`,
+`SegmentHeadJacquetFormula`,
+`SegmentSpecialJacquetExponentNormFormula`,
+`SegmentSocleProductIrreducibility`, and the consuming criterion
+`SegmentHeadProductIrreducibility` itself.
 The published proposition alone is not a proved input to that consumer.
 
 ### Project modules

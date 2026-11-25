@@ -1,7 +1,5 @@
 # Pointed etale local sections of smooth morphisms
 
-Author: Worker 1683.
-
 `SmoothPointedEtaleLocalSectionsStatement.{u}` states the following, for any
 universe `u`. Let `f : X → S` be a smooth morphism of arbitrary schemes,
 let `s` be a point of `S`, and let `x₀ : Spec κ(s) → X` be a specified point

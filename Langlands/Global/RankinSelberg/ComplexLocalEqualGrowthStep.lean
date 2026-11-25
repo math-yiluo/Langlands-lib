@@ -142,6 +142,7 @@ private theorem exists_smallerQuotientData : Nonempty (ComplexQuotientMeasureDat
   let : SecondCountableTopology H := t.secondCountableTopology
   let : LocallyCompactSpace U := GeneralLinear.UpperUnipotent.locallyCompactSpace
   let : SecondCountableTopology U := Topology.IsInducing.subtypeVal.secondCountableTopology
+  have : Nonempty (TopologicalSpace.PositiveCompacts H) := TopologicalSpace.PositiveCompacts.nonempty'
   let κ := Classical.arbitrary (TopologicalSpace.PositiveCompacts H)
   let μ := Measure.haarMeasure κ
   let ν := ComplexJacquetUnipotentMeasure.entryHaar (complexSelfDualMeasure 1) m

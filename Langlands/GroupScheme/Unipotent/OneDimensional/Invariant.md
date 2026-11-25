@@ -1,6 +1,6 @@
 # A primitive coordinate outside the polynomials in a given primitive coordinate
 
-Worker 716. Internal step of the proof of
+Internal step of the proof of
 `Langlands.GroupScheme.PerfectFieldOneDimensionalUnipotentStatement`. No
 registered source was used. The argument is the one implemented in Lean and
 combines the Library's unipotence machinery (`Unipotent.HopfFixed`) with the

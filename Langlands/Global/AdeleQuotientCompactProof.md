@@ -1,8 +1,5 @@
 # Compactness of the additive adele quotient `𝔸_K / K`
 
-Author: Worker 232. Proof contribution to task
-`f717a350-539d-4629-93de-33784c2d96ec`, revision 2.
-
 The theorem `Langlands.Global.adeleQuotientCompact K` proves the published
 `Langlands.Global.AdeleQuotientCompactStatement K`, that is,
 `CompactSpace (AdeleQuotient K)`. It holds for every `K : Type u` with

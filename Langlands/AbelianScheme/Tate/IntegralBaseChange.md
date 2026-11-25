@@ -37,7 +37,7 @@ Edixhoven–van der Geer–Moonen, *Abelian Varieties*, preliminary build
 of finite étale covers and the induced pointed fundamental-group map.
 Registered source: `edixhoven-vandergeer-moonen-abelian-varieties-draft`,
 SHA-256 `81e88e484e1e830286ffed93d4636c80e50a1c341ffe19cc198bd856be713b42`.
-That paragraph motivates the eventual monodromy compatibility; this module
+That paragraph motivates the monodromy compatibility; this module
 only constructs the underlying Tate-module comparison. Its elementary
 pullback proof works under the weaker hypotheses stated below and does not
 invoke the source's Galois-category theorem.
@@ -116,7 +116,7 @@ order invertibility, or algebraic closure is needed for these comparisons.
 The generic construction requires a commutative group object; the final
 specialization uses the published bundled abelian-scheme pullback.
 
-This unit does not prove identity or composition coherence as the base
+This module does not prove identity or composition coherence as the base
 morphism varies, compatibility with fundamental-group maps, rational or
 adelic scalar extension, or any Weil-pairing restriction. Those are separate
 steps toward the pointed PEL functor. In particular, this module does not

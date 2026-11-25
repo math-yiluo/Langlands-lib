@@ -1,6 +1,6 @@
 # Actual tensor irreducibility from additive coefficient fullness
 
-This internal derived unit uses actual matrix representations and the previously
+This module, internal and derived, uses actual matrix representations and the previously
 proved coefficient-algebra separation theorem. It works over a field in arbitrary
 universe `u`, with an arbitrary index family in universe `v` and finite decidable
 coordinate types in `Type`.
@@ -33,7 +33,7 @@ The actual restriction compatibilities for tensor and Frobenius identify this
 family with the restrictions of the original ambient tensor representation.
 The conclusion concerns its entire product-coordinate space.
 
-Both fullness hypotheses remain substantive inputs. This unit does not derive
+Both fullness hypotheses remain substantive inputs. This module does not derive
 them from restrictedness, construct a generating root family or a Steinberg
 representation, or prove the general `SteinbergBigCellStatement`. It assumes no
 first-factor degree bound, perfectness, algebraic closedness or infinitude.

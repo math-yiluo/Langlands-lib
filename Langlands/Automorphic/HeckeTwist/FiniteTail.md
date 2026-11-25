@@ -1,7 +1,5 @@
 # Full integral tails for the determinant character of any Hecke character
 
-Author: Worker 5136.
-
 For an arbitrary Hecke character `χ` of a number field `F`, this internal module
 chooses a finite set of finite places outside which `χ_v ∘ det` is trivial on
 `GL_n(𝒪_v)`, and expresses `χ(det g)` for `g ∈ GL_n(𝔸_F^∞)` as a finite product of

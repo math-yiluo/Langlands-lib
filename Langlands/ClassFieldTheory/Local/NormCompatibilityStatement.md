@@ -1,7 +1,5 @@
 # Relative norms and arithmetic normalization
 
-Author: Worker 10.
-
 This module defines the proposition
 `Langlands.LocalClassField.RelativeNormCompatibility`. It states the norm and
 embedding compatibility needed to transport the absolute-value character in
@@ -21,8 +19,8 @@ The norm is Mathlib's determinant field norm `Algebra.norm F.Carrier`.
 The embedding is the specified `algebraMap`. On multiplicative groups, the
 norm is exactly `Units.map (Algebra.norm F.Carrier (S := E.Carrier))`.
 The additive orders, residue degrees, ramification indices and normalized
-absolute values are the accepted constructions on these supplied valuation
-integer rings and residue fields. The canonical norm is the accepted spectral
+absolute values are the Library constructions on these supplied valuation
+integer rings and residue fields. The canonical norm is the Library's spectral
 norm extending that of `Padic p`; no alternative field or norm is defined here.
 
 The all-fields realization obligation for an interface using `TopologicalData`
@@ -80,7 +78,7 @@ specialization.
 Registered source `serre-1979-local-fields`, retained at
 `C:/Central-Library/Serre--Local Fields--1979.pdf`, SHA256
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`.
-Worker 10 read these original pages.
+These original pages were read.
 
 Section 1 fixes `q^(-ord x)` away from zero and zero at zero. Corollary 4
 gives `ord_F(N(x)) = f(E/F) * ord_E(x)`, and the paragraph at the top of
@@ -101,7 +99,7 @@ to prove later, not hypotheses or definitional choices forcing the formulas.
 John Tate, *Number theoretic background*, Corvallis Part II (1979),
 section 1.4.6, printed page 7 (PDF page 16), explicitly uses
 `|N_{E/F}(a)|_F = |a|_E` to identify the Weil norm restricted along a finite
-extension. Worker 10 read this passage and the preceding sections 1.1–1.4.
+extension. This passage and the preceding sections 1.1–1.4 were read.
 Registered source `tate-1979-number-theoretic-background`, retained at
 `C:/Central-Library/Borel-Casselman--Automorphic Forms, Representations and L-Functions (Corvallis)--1979/Part II.pdf`,
 SHA256
@@ -109,34 +107,30 @@ SHA256
 This explains the role of this family in character transport. The present
 target asserts only the field-side norm and order identities.
 
-The existing `Langlands.PadicNormalizationStatement` has its own statement
-and proof task. It concerns the arithmetic of a single field, comparison with
+The existing `Langlands.PadicNormalizationStatement` is a separate statement,
+proved as `padicNormalization` in `Langlands.LocalField.Normalization.Proof`. It concerns the arithmetic of a single field, comparison with
 `Q_p`, and the spectral normalization within that field. This pair adds
 compatibility for arbitrary finite `E/F`; it does not redefine or claim a proof
 of that existing target. Reciprocity, its geometric Frobenius convention,
 unit-image surjectivity, higher ramification, and conductor transport remain
-separate parts of the broader local class-field-theory task.
+separate parts of the broader local class-field-theory development.
 
 ## Exact dependencies and validation
 
-Project imports are the accepted definition artifacts
-`ac4cb7d5-5dd1-44b6-9d56-f0ec6c70bce0` version 1
-(`LocalField.Definitions`, transitively) and
-`e3d7bbd4-f2b9-4970-a60f-bf6aa0b34bb2` version 1
-(`LocalField.Normalization.Definitions`).
-The latter's effective Lean SHA256 is
+Project imports are the definition modules
+`LocalField.Definitions` (transitively) and
+`LocalField.Normalization.Definitions`.
+The latter's Lean SHA256 is
 `b997a64a0f59ce13d45e2b5349de9ad87466a5e2d3e16ab3f1a4ef97a048214b`
 and Markdown SHA256 is
 `dac7d3aeb5229c505e5271f66d7decf6c7c4404853e9f15a363b4f9401902436`.
-Their publication and unchanged current availability were verified at Library
+Their presence in the Library, unchanged, was verified at Library
 commit `9007729971e6e6ecea63b5567b6d1621769ccfb0`.
 
-The realization constructor mentioned above is artifact
-`c342ec21-e5ee-4ba4-aec6-b4c1b1e2b629` version 1; it is contextual evidence
+The realization constructor mentioned above is
+`Langlands.PadicField.canonicalTopologicalData`; it is contextual evidence
 that the all-fields realization obligation is discharged, not an imported
 premise of these propositions.
-The environment is `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d` version 1,
+The environment is
 Lean 4.34.0 with Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.
-Compilation and target inspection are development checks. Independent
-literature/Lean/Markdown review and current Library publication are still
-required before a proof task can use this exact statement.
+Compilation and target inspection are development checks.

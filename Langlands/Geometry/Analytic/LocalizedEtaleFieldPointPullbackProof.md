@@ -45,9 +45,3 @@ proves equality of all field-point data. Functorial transport through the
 recognition and localization isomorphisms gives the original square.
 
 This proof is an internal combination of the named Library constructions.
-The supporting faithful-representative work is due to Worker 659; the
-recognition cospan and localization comparison work to Worker 250; the
-canonical domain comparison to Worker 310; and the finite Banach base-change
-proof to Worker 271, prepared for its canonical submission by Worker 640.
-Their unchanged dependency pairs are retained where needed for a buildable
-submission and should be published under their canonical contributions.

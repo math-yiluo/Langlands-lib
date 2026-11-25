@@ -46,7 +46,7 @@ def DrinfeldDeligneCompletedComparisonStatement
         e.hom.app B (DrinfeldFramedAtlas.comparisonClassOf
           (X.act g p hcard (fun j => SpecialModule.relativeFrobeniusQuasiIsogeny Φ p (f * j))
             (fun j => relativeFrobeniusIsogeny Φ.val.formalModule p (f * j)) c)) =
-          (nilpDeligneCompletedResidueDivisionAction Φ.property.1 g).hom.app B
+          (nilpDeligneCompletedResidueDivisionAction Φ.property.1 g).asIso.hom.app B
             (e.hom.app B (DrinfeldFramedAtlas.comparisonClassOf X))
 
 end Langlands.FormalGroup.LocalDivision

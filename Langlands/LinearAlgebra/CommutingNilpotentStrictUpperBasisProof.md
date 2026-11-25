@@ -69,7 +69,7 @@ and the statement module.
 
 ## Provenance
 
-Worker 846 wrote this proof. The route dualizes, takes a common invariant
+The route of this proof dualizes, takes a common invariant
 hyperplane, inducts on dimension and appends a vector. It is a standard
 argument and an internal linear-algebra tool. Renard 2026, Appendix C.III
 (printed pp. 279–280, PDF pp. 285–286), uses such a common triangular basis

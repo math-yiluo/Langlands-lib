@@ -1,6 +1,6 @@
 # Torus envelope normality for solvable groups over a finite field
 
-Worker 1387. This module states one proposition,
+This module states one proposition,
 `FiniteFieldSolvableEnvelopeNormalityStatement.{u}`. It is not proved here.
 
 ## Statement

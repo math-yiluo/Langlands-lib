@@ -1,7 +1,5 @@
 # Normalized rational profinite-integer and finite-adele comparison
 
-Author: Worker 212.
-
 The theorem `Langlands.Global.rationalProfiniteIntegerAdeleComparison` proves
 the published proposition `RationalProfiniteIntegerAdeleComparison` with no
 parameters or hypotheses. It constructs a ring equivalence from the compatible

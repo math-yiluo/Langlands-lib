@@ -103,7 +103,7 @@ private theorem flattenedUnitaryProduct_nonempty {n : ℕ} (B : BlockShape n) (S
   obtain ⟨ereg⟩ := Parabolic.orderedProductRegrouping.{uF,max uF uV} F T n
       (B.flatten S) B S e h (fun j k x => B.index_index_eq_flatten S ⟨j,k⟩ x) τ
   exact ⟨ereg ≪≫ (T.normalizedProductInductionFunctor B).mapIso
-    (Pi.isoMk fun j => flattenedUnitaryInnerIso F T B S δ s j)⟩
+    (Pi.isoMk (flattenedUnitaryInnerIso F T B S δ s : _))⟩
 
 /-- The actual flattened twisted product is the nested normalized product.
 No irreducibility or analytic assumption is needed for this isomorphism. -/

@@ -1,7 +1,5 @@
 # Combined local norm neighborhood theorem
 
-Author: Worker 564.
-
 `Langlands.Global.AdelicFunctoriality.localNormNeighborhood.{u,v}` proves
 exactly
 `Langlands.Global.AdelicFunctoriality.LocalNormNeighborhoodStatement.{u,v}`
@@ -18,8 +16,8 @@ the conjunction. For a finite pair `p, q` and witness `h`, it installs
 `h` as a local instance with `let _ := h` and applies
 `range_finiteLocalNorm_mem_nhds (K := K) (L := L) p q`.
 For an infinite pair it installs the corresponding witness in the same
-way and applies `range_infiniteLocalNorm_mem_nhds`. These are Worker
-269's published theorems in
+way and applies `range_infiniteLocalNorm_mem_nhds`. These are the
+published theorems in
 [LocalNormNeighborhood](LocalNormNeighborhood.md), which supply all the
 local mathematics. The infinite theorem requires only `NumberField K`,
 so it applies under the target's hypotheses.

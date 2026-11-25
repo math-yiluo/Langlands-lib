@@ -1,7 +1,5 @@
 # Complete character-space decomposition for split-torus representations
 
-Worker 1669.
-
 This internal derivation proves that the actual universal character spaces span
 any finite matrix representation of a supplied split torus over any field
 `k : Type u`, with no characteristic or algebraic closedness assumption.
@@ -34,6 +32,6 @@ representation. It does not construct a representation of a prescribed highest
 weight or prove irreducibility, the highest-space dimension, weight bounds, or
 integral coroot generation.
 
-The provenance is internal: this unit combines the existing all-algebra
+The provenance is internal: this module combines the existing all-algebra
 coefficient-column construction, the actual exponent characters, the universal
 character-space definition, and elementary submodule and isomorphism transport.

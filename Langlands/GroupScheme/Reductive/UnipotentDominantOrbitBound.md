@@ -1,7 +1,5 @@
 # Unipotent dimension bounds from dominant orbits and solvable stabilizers
 
-Authors: Worker 1547 and Worker 317.
-
 This internal helper combines codimension-one normality, the full action
 kernel, a smooth connected normal closure, and vanishing of homomorphisms from
 affine unipotent groups to tori. Its final two theorems retain
@@ -103,13 +101,13 @@ This is an internal derivation from the actual normal-closure and action
 interfaces, `Unipotent.CodimensionOneNormality`,
 `Torus.UnipotentHomNonsplit`, represented subgroup factorization, solvability
 under monomorphisms, and the represented-tangent dimension comparison.
-Worker 317 proposed this normality/kernel/torus step in the
-prescribed-Borel route; Worker 1547 implemented the factors and composed
-these proofs. No external source theorem is asserted in this helper.
+This is the normality/kernel/torus step of the
+prescribed-Borel route. No external source theorem is asserted in this helper.
 
 The final results assume the normal-solvable-torus proposition and the
 listed geometry. This module does not prove that structural proposition,
 construct a Borel quotient or its dominant unipotent orbit, supply the
 dimension inequality, or compare the final dimension bound with the
-relative-root set. `RankOnePositiveRootUniquenessStatement` remains a
-separate open proof obligation.
+relative-root set. `RankOnePositiveRootUniquenessStatement` is proved
+separately, as `rankOnePositiveRootUniqueness` in
+`Langlands.GroupScheme.Reductive.RankOnePositiveRootProof`.

@@ -1,7 +1,5 @@
 # Radical triviality and `Ψ⁻` descent of pairings
 
-Authors: Worker 1024.
-
 This module proves two lower inputs of the proof of Bernstein–Zelevinsky,
 *Induced representations of reductive p-adic groups I* (BZ77), Proposition 3.8
 (module `Langlands.Representation.Derivative.MirabolicHighestDerivativePairingProof`).
@@ -121,10 +119,10 @@ No Haar modulus, plus functor or unnormalized/normalized comparison is used.
 ## Imports and independence audit
 
 Direct imports: `Langlands.Representation.Derivative.MirabolicDerivativeVanishing`
-(the companion module of this candidate, which imports `MinusVanishing` and
+(the companion module, which imports `MinusVanishing` and
 `MirabolicDerivativeDetectionStatement`; its own audit is in its Markdown) and
-`Langlands.Representation.Filtration.InvariantBilinear`. Besides these two
-modules of the candidate, the transitive `Langlands` import closure has 76
+`Langlands.Representation.Filtration.InvariantBilinear`. Besides this module
+and `MirabolicDerivativeVanishing`, the transitive `Langlands` import closure has 76
 public modules: the 73 of `MirabolicDerivativeVanishing` plus
 `Filtration.InvariantBilinear`, `Filtration.Definitions` and
 `Filtration.ObjectDefinitions`. They cover
@@ -143,25 +141,25 @@ the published `MinusVanishing` lemmas (its coordinate-character, Levi-transport,
 radical-box and Fourier-inversion lemmas); `RankinSelberg.unipotent_det`; the
 elementary determinant facts above. Nothing from `MirabolicDerivativeVanishing`
 is used in this module's proofs; it is imported so that the proof module sees
-one linear chain of the candidate's modules. No minus-functor exactness (the published
+one linear chain of the two modules. No minus-functor exactness (the published
 `MinusExactnessStatement` is neither imported nor used), no plus functor, no
 `Φ⁺Φ⁻`/`Ψ⁺Ψ⁻` exact sequence, no Haar modulus comparison, and no consumer
 result is used.
 
-The Independence exclusions of task `a925b519-9bb9-4927-873e-ad322d41328e` hold.
+The independence exclusions for the proof of BZ77 Proposition 3.8 hold.
 Neither this module nor its import closure uses: the nonadjacent product
-consumer `3c9849a4-a6c0-43ac-9982-d15ed76bf1e9`; `TwoSupercuspidalProductStructure`
-or parent task `ab61f565-1427-4746-ba77-46097563e962`; any of the excluded
-special-head, segment-socle, segment-classification, square-integrability,
-exhaustion, existence, coverage, conversion, tempered-uniqueness,
-product-irreducibility, socle-commutation or segment Jacquet-formula tasks,
-statements or conclusions listed there; Ze80's segment derivative formulas
+consumer `TwoSupercuspidalNonadjacentProductIrreducible`;
+`TwoSupercuspidalProductStructure`; any of the excluded special-head, segment-socle,
+segment-classification, square-integrability, exhaustion, existence,
+coverage, conversion, tempered-uniqueness, product-irreducibility,
+socle-commutation or segment Jacquet-formula statements or conclusions;
+Ze80's segment derivative formulas
 (§3.5, §9.6), Ze80 4.2, 9.3 or 9.7; or any classification or exhaustion
-theorem. A text scan of the 78 Lean files of the closure (including the two
-candidate modules) finds none of the excluded
+theorem. A text scan of the 78 Lean files of the closure (including this
+module and `MirabolicDerivativeVanishing`) finds none of the excluded
 declaration names. The only hits are in two imported Markdown files
 (`Iteration.md`, `MirabolicMinus.md`), whose independence paragraphs state that
 those names are *not* used; this Markdown and the companion one name
 `MinusExactnessStatement` and `TwoSupercuspidalProductStructure` only to say
-they are not used. The only derivative results used are the published,
-accepted `MinusVanishing` lemmas and the published definitions.
+they are not used. The only derivative results used are the published
+`MinusVanishing` lemmas and the published definitions.

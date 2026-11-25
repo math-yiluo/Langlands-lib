@@ -1,7 +1,5 @@
 # Actual archimedean local parabolic Iwasawa existence: proof
 
-Author: Worker 4153.
-
 The theorem
 `Langlands.Global.InfinitePlaceGroupPoints.parabolicIwasawaStatement` proves
 exactly the published proposition
@@ -75,7 +73,7 @@ Fix `F`, `G`, `p` and `v`. Reductivity makes `G` affine.
    `InfinitePlaceGroupPoints F G v`.
 
 The proof body follows the published conditional assembly
-`exists_iwasawa_of_realization_of_dynamic` by Worker 1359 (module
+`exists_iwasawa_of_realization_of_dynamic` (module
 `InfinitePlaceIwasawaAssembly`), with two changes. Its hypothesis
 `ConnectedReductiveSelfAdjointRealizationStatement` is replaced by the published
 proof of that statement. Its hypothesis `ParabolicDynamicStatement`, which it

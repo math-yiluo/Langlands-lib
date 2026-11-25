@@ -1,7 +1,6 @@
 # Inductive functions of Weil representations: definitions
 
-Worker 33 wrote this definition module for task `e534647a` (row 10 of the
-local-factor coverage map). It defines the objects of Tate's §2.3 for p-adic
+This definition module defines the objects of Tate's §2.3 for p-adic
 fields: representations of Weil groups of finite extensions, induction along a
 tower, and Tate's additive, inductive and degree-zero-inductive functions
 (Tate 1979, (2.3.2)). Every group, representation, virtual group and induction
@@ -13,8 +12,7 @@ the compatibility lemmas for their use in this interface.
 
 Fix a prime `p`. A p-adic field is the Library's `PadicField p`: a field that is
 a finite-dimensional algebra over `ℚ_p`. Its local Weil group `W_E` is the
-Library's `Weil.Local.localWeilGroup E`, built in `Langlands.Weil.Local.Assembly`
-(Workers 9, 28 and 53).
+Library's `Weil.Local.localWeilGroup E`, built in `Langlands.Weil.Local.Assembly`.
 
 `Extension F` is a structure with two fields:
 
@@ -26,8 +24,8 @@ This is the abstract form of a finite extension `E/F`. The Library's
 and `E'` of `F`, an embedding `g : E → E'` over `ℚ_p` is a tower `E'/E/F` when
 `g ∘ embedding_E = embedding_{E'}`. This condition is `IsTower E E' g`.
 
-For an embedding `g : E → E'`, Worker 53's `extensionWeilMap E E' g : W_{E'} → W_E`
-is the actual map of local Weil groups. It is a continuous injective
+For an embedding `g : E → E'`, `extensionWeilMap E E' g : W_{E'} → W_E`
+(`Langlands.Weil.Local.ExtensionWeil`) is the actual map of local Weil groups. It is a continuous injective
 homomorphism and an open embedding (`extensionWeilMap_isOpenEmbedding`). Its
 range is an open subgroup of index `[E' : E]` (`extensionWeilMap_range_index`,
 with the shared instance `extensionWeilRange_finiteIndex`). In Tate (1.1), `W_{E'}`
@@ -44,12 +42,12 @@ continuous homomorphism `G → GL(V)`, with `V` a finite-dimensional complex vec
 space. The module uses these objects:
 
 - `IsRepresentation E A` is the Library's usual-topology continuity predicate
-  `FiniteRepresentation.IsContinuous` (Worker 17). Here `A` is a
+  `FiniteRepresentation.IsContinuous`. Here `A` is a
   finite-dimensional complex representation of `W_E` whose carrier lies in the
   universe of `E`.
 - `Classes E` is Tate's `M(W_E)`: the Library's isomorphism classes of such
   representations (`IsomorphismClassesWith`).
-- `Virtual E` is Tate's `R(W_E)`: Workers 20 and 24's exact-relation virtual group
+- `Virtual E` is Tate's `R(W_E)`: the Library's exact-relation virtual group
   `ExactGrothendieckGroup`. It is the free abelian group on `M(W_E)` modulo
   `[V] = [V'] + [V'']` for every actual short exact sequence. These are the
   relations Tate imposes when he extends an additive function to `R`.
@@ -57,7 +55,7 @@ space. The module uses these objects:
 - `virtualClass E` is the class map `V ↦ [V]`.
 - `characterClass E χ` is the class of the one-dimensional representation of a
   quasi-character `χ : W_E → ℂ^×`, which is a continuous homomorphism. It uses
-  Worker 20's `continuousCharacterLine`, where `W_E` acts on a lifted copy of `ℂ`
+  `continuousCharacterLine` (`Langlands.Weil.Representation.CharacterLine`), where `W_E` acts on a lifted copy of `ℂ`
   by the scalar `χ(w)`. Tate identifies one-dimensional representations with
   quasi-characters through `det` (§2 opening).
 - `trivialClass E` is `[1_E]`, the class of the trivial character.
@@ -66,16 +64,17 @@ space. The module uses these objects:
 ## Induction
 
 `induceClass E E' g : M(W_{E'}) → M(W_E)` is induction along the Weil map. It is
-Worker 17's `continuousInduceAlongClass` for the open embedding
-`extensionWeilMap E E' g`. Worker 17's `induceAlong` restricts along the inverse
+`continuousInduceAlongClass` (`Langlands.Weil.Representation.InductionContinuity`)
+for the open embedding `extensionWeilMap E E' g`. `induceAlong` restricts along the inverse
 of the Weil map on its range, then induces from that finite-index range by the
 Library's equivariant-function construction. Continuity of the result is
-Worker 17's `isContinuous_induceAlong`.
+`isContinuous_induceAlong`.
 
 `virtualInduce E E' g : R(W_{E'}) → R(W_E)` is Tate's `Ind_{E'/E}`. It is the
 homomorphism induced by `induceClass` through the universal property `lift` of the
 exact virtual group. Its well-definedness needs induction to preserve short exact
-sequences. That is Worker 20's `isShortExact_induce`, combined with the published
+sequences. That is `isShortExact_induce` (`Langlands.VirtualRepresentation.ExactInduction`),
+combined with the published
 `FiniteRepresentation.isShortExact_restrict_iff` from
 `Langlands.VirtualRepresentation.ExactRestriction`: restriction keeps the same
 linear maps, so exactness is unchanged. Its `FiniteRepresentation.restrictMap`
@@ -87,7 +86,7 @@ The module also proves:
 - `virtualInduce_virtualClass` and `virtualInduce_ofRepresentation`: on the class
   of a representation, `virtualInduce` is the class of the induced representation.
 - `degree_virtualInduce`: induction multiplies the virtual degree by `[E' : E]`.
-  This follows from Worker 17's `rank_induceAlong` and Worker 53's index theorem.
+  This follows from `rank_induceAlong` and the index theorem `extensionWeilMap_range_index`.
   In particular `Ind_{E'/E}` maps `R⁰(W_{E'})` into `R⁰(W_E)`.
 
 ## Tate's inductive functions
@@ -157,15 +156,13 @@ restriction lemmas.
 
 Imports, all published in the Library:
 
-- `Langlands.VirtualRepresentation.ExactInduction` (Worker 20);
+- `Langlands.VirtualRepresentation.ExactInduction`;
 - `Langlands.VirtualRepresentation.ExactRestriction`;
-- `Langlands.Weil.Local.ExtensionWeilRange` (Worker 53);
-- `Langlands.Weil.Representation.CharacterLine` (Worker 20);
-- `Langlands.Weil.Representation.InductionContinuity` (Worker 17).
+- `Langlands.Weil.Local.ExtensionWeilRange`;
+- `Langlands.Weil.Representation.CharacterLine`;
+- `Langlands.Weil.Representation.InductionContinuity`.
 
-A development check in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`
-(Lean 4.34.0, Mathlib `5ed29652`) compiled the module with no errors or
+A development check (Lean 4.34.0, Mathlib `5ed29652`) compiled the module with no errors or
 warnings. The companion statement module
 `Langlands.LocalFactor.Inductive.Statement` (Tate 2.3.1, 2.3.3, 2.3.4, Gallagher's
-formula and the degree correction) is submitted separately after this module is
-published.
+formula and the degree correction) states the results about these objects.

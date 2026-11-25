@@ -1,8 +1,5 @@
 # Descent of affine étale objects and actions to stable finite levels
 
-Author: Worker 706. The stable-system and ring-groupoid dependencies include
-Worker 266's constructions.
-
 This internal helper assumes an affine cartesian first level
 `h : IsCartesianHom E E₀ f g`, with `E.U`, `E₀.U`, and `E₀.R` affine and the
 coordinate ring of `E₀.U` Noetherian. It descends an affine étale object over
@@ -18,7 +15,7 @@ system in Stacks Proposition 70.8.1, Tag 07SU (the paragraph beginning with
 scheme-and-action interfaces, rather than literal translations of that
 paragraph. Their ingredients are Mathlib's étale algebra descent, the stable
 subalgebra exhaustion developed from Tags 07TR, 07TT, and 07TU, spectrum
-pushout/pullback duality, and the previously developed finite action-law descent.
+pushout/pullback duality, and the finite action-law descent.
 
 ## Finite-subalgebra étale model
 

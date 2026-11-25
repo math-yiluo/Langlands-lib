@@ -1,7 +1,5 @@
 # Geometric solvable radicals of reductive groups from central tori
 
-Author: Worker 1378.
-
 This module reduces the published target
 `ReductiveGeometricSolvableRadicalExistsStatement.{u}` (module
 `Rational.ReductiveGeometricSolvableRadicalExistsStatement`) to three

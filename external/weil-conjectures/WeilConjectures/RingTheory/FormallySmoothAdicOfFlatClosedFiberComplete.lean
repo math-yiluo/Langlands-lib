@@ -1,0 +1,178 @@
+/-
+Copyright (c) 2026 Bin Wu. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Bin Wu
+-/
+
+module
+
+public import WeilConjectures.RingTheory.FormallySmoothAdic
+public import Mathlib.RingTheory.RingHom.Flat
+public import Mathlib.RingTheory.LocalRing.Basic
+public import Mathlib.RingTheory.Noetherian.Defs
+public import Mathlib.RingTheory.AdicCompletion.Basic
+import WeilConjectures.RingTheory.CompleteLocalMapCohenPresentation
+import WeilConjectures.RingTheory.FlatClosedFiberPowerSeriesModel
+import WeilConjectures.RingTheory.PowerSeriesParameterMapFormallySmoothAdic
+import WeilConjectures.RingTheory.FormallySmoothAdicUniverseLift
+import Mathlib.Algebra.CharP.Algebra
+
+/-! # The complete case of the flat closed-fibre criterion
+
+Source: Stacks Project, Tag 07NQ, (2) implies (3), after completing both rings.
+(blueprint: lem-weil-pbc-flat-fs-closed-fibre-complete-case)
+-/
+
+@[expose] public section
+
+universe u v
+
+open IsLocalRing
+
+namespace RingHom
+
+private theorem formallySmoothAdic_descend_surjections
+    {R T A B : Type*} [CommRing R] [CommRing T] [CommRing A] [CommRing B]
+    [Algebra R T] [Algebra A B]
+    (q : R →+* A) (v : T →+* B)
+    (hq : Function.Surjective q) (hv : Function.Surjective v)
+    (hcomm : v.comp (algebraMap R T) = (algebraMap A B).comp q)
+    (hker : RingHom.ker v = (RingHom.ker q).map (algebraMap R T))
+    (n : Ideal T) (nB : Ideal B) (hmap : n.map v ≤ nB)
+    (hfs : Algebra.FormallySmoothAdic R T n) :
+    Algebra.FormallySmoothAdic A B nB := by
+  classical
+  intro D _ _ J hJ g hg
+  let : Algebra R D := ((algebraMap A D).comp q).toAlgebra
+  let gT : T →ₐ[R] D ⧸ J :=
+    { toRingHom := g.toRingHom.comp v
+      commutes' := by
+        intro r
+        change g (v (algebraMap R T r)) =
+          Ideal.Quotient.mk J (algebraMap A D (q r))
+        rw [show v (algebraMap R T r) = algebraMap A B (q r) from
+          DFunLike.congr_fun hcomm r]
+        exact g.commutes (q r) }
+  obtain ⟨k, hk, hgk⟩ := hg
+  have hgT : ∃ k : ℕ, 1 ≤ k ∧ ∀ x ∈ n ^ k, gT x = 0 := by
+    refine ⟨k, hk, ?_⟩
+    intro x hx
+    apply hgk
+    apply pow_le_pow_left' hmap k
+    rw [← Ideal.map_pow]
+    exact Ideal.mem_map_of_mem v hx
+  obtain ⟨l, hl⟩ := Algebra.formallySmoothAdic_lift_universe R T n hfs D J hJ gT hgT
+  have hkill : RingHom.ker v ≤ RingHom.ker l.toRingHom := by
+    rw [hker, Ideal.map_le_iff_le_comap]
+    intro r hr
+    change l (algebraMap R T r) = 0
+    rw [l.commutes]
+    change algebraMap A D (q r) = 0
+    rw [show q r = 0 from hr, map_zero]
+  let lB : B →+* D := v.liftOfSurjective hv ⟨l.toRingHom, hkill⟩
+  have hlB (x : T) : lB (v x) = l x :=
+    v.liftOfSurjective_comp_apply hv ⟨l.toRingHom, hkill⟩ x
+  let lA : B →ₐ[A] D :=
+    { toRingHom := lB
+      commutes' := by
+        intro a
+        obtain ⟨r, rfl⟩ := hq a
+        change lB (algebraMap A B (q r)) = algebraMap A D (q r)
+        rw [← show v (algebraMap R T r) = algebraMap A B (q r) from
+          DFunLike.congr_fun hcomm r, hlB, l.commutes]
+        rfl }
+  refine ⟨lA, ?_⟩
+  ext b
+  obtain ⟨x, rfl⟩ := hv b
+  change Ideal.Quotient.mk J (lB (v x)) = g (v x)
+  rw [hlB]
+  exact DFunLike.congr_fun hl x
+
+
+/-- The flat closed-fibre criterion for rings already complete at their maximal ideals.
+Source: Stacks Project, Tag 07NQ, (2) implies (3), complete-ring argument.
+(blueprint: lem-weil-pbc-flat-fs-closed-fibre-complete-case)
+
+Proof:
+1. Choose the compatible Cohen power-series presentation R -> S, R -> A, S -> B
+using `exists_complete_local_map_cohen_presentation`. The parameters t of R extend to
+parameters of S. Split the characteristic of the residue field of A into zero and prime.
+In characteristic zero, the residue map A -> B is injective on residue fields; the
+coefficient maps into these residue fields give characteristic zero for both coefficients.
+In prime characteristic use the Cohen-ring clauses and the first parameter p.
+2. Apply `exists_flat_closedFiber_powerSeries_model` to remove the equations of the
+regular closed fibre. It supplies a power-series ring T over the same target coefficients,
+a local map j : R -> T preserving t, and a surjection v : T -> B with v j = f q and
+ker(v) = (ker(q))T. Its closed fibre is adically formally smooth over that of R.
+3. The coordinate lifting criterion `formallySmoothAdic_of_parameters_closedFiber`
+proves that R -> T is adically formally smooth. This is the filtration, parameter
+correction, and derivation correction at the end of Tag 07NQ.
+4. Descend this lifting property along the two surjections, directly in the quotient
+presentation of the base change. Given an A-linear map g : B -> D/J killing a positive
+power of m_B, compose with v. Regard D as an R-algebra via q. Surjectivity identifies
+v(m_T) with m_B, so the composite is continuous and lifts to an R-linear l : T -> D.
+For r in ker(q), R-linearity gives l(j(r)) = 0. Thus l kills the ideal generated by
+j(ker(q)), which is ker(v). The universal property of a surjective ring map descends
+l uniquely to lB : B -> D. To check A-linearity, lift each a in A to r in R and use
+v(j(r)) = f(q(r)) and R-linearity of l. To check the quotient equation, lift each b in B
+to x in T and use the quotient equation for l. These are all square-zero lifting
+problems, so B is adically formally smooth over A. No choice of a model defines data
+in the library: its existential witnesses are used only inside this theorem proof.
+-/
+theorem formallySmoothAdic_of_flat_closedFiber_complete
+    (A : Type u) (B : Type v) [CommRing A] [CommRing B]
+    [IsLocalRing A] [IsLocalRing B] [IsNoetherianRing A] [IsNoetherianRing B]
+    [IsAdicComplete (maximalIdeal A) A] [IsAdicComplete (maximalIdeal B) B]
+    (f : A →+* B) [IsLocalHom f] (hflat : f.Flat) :
+    letI : Algebra A B := f.toAlgebra
+    let I : Ideal B := Ideal.map f (maximalIdeal A)
+    letI : Algebra (A ⧸ maximalIdeal A) (B ⧸ I) :=
+      Ideal.Quotient.algebraQuotientOfLEComap (Ideal.le_comap_map :
+        maximalIdeal A ≤ I.comap (algebraMap A B))
+    Algebra.FormallySmoothAdic (A ⧸ maximalIdeal A) (B ⧸ I)
+        (Ideal.map (Ideal.Quotient.mk I) (maximalIdeal B)) →
+      Algebra.FormallySmoothAdic A B (maximalIdeal B) := by
+  let : Algebra A B := f.toAlgebra
+  dsimp only
+  intro hfibre
+  obtain ⟨ΛR, ΛS, cR, cS, n, m, hR, hS, _, _, hzero, hpos,
+    q, b, i, hq, hqlocal, hb, hblocal, hi, hcomm, _, _, t, z, ht, hz, hp⟩ :=
+    exists_complete_local_map_cohen_presentation f
+  let : CommRing ΛR := cR
+  let : CommRing ΛS := cS
+  let R := MvPowerSeries (Fin n) ΛR
+  let S := MvPowerSeries (Fin m) ΛS
+  let : IsRegularLocalRing R := hR
+  let : IsRegularLocalRing S := hS
+  let : IsLocalHom q := hqlocal
+  let : IsLocalHom b := hblocal
+  let : IsLocalHom i := hi
+  have hcoeff : (IsField ΛR ∧ IsField ΛS ∧ CharZero ΛR ∧ CharZero ΛS) ∨
+      ∃ p : ℕ, p.Prime ∧ IsCohenRing p ΛR ∧ IsCohenRing p ΛS ∧
+        t.head? = some (p : R) := by
+    rcases CharP.exists (ResidueField A) with ⟨p, hchar⟩
+    let := hchar
+    rcases CharP.char_is_prime_or_zero (ResidueField A) p with hprime | rfl
+    · exact Or.inr ⟨p, hprime, (hpos p hprime hchar).1,
+        (hpos p hprime hchar).2, hp p hprime hchar⟩
+    · let : CharZero (ResidueField A) := CharP.charP_to_charZero (ResidueField A)
+      have : CharZero (ResidueField B) :=
+        charZero_of_injective_ringHom (ResidueField.map f).injective
+      exact Or.inl ⟨(hzero inferInstance).1, (hzero inferInstance).2,
+        ((residue A).comp (q.comp MvPowerSeries.C)).charZero,
+        ((residue B).comp (b.comp MvPowerSeries.C)).charZero⟩
+  obtain ⟨m', hT, v, j, hv, hj, hcomm', hker, y, hy, hfibreT⟩ :=
+    exists_flat_closedFiber_powerSeries_model A B f hflat ΛR ΛS n m q b i
+      hq hb hcomm t z ht hz hcoeff hfibre
+  let T := MvPowerSeries (Fin m') ΛS
+  let : IsRegularLocalRing T := hT
+  let : IsLocalHom j := hj
+  let : Algebra R T := j.toAlgebra
+  have hsmooth : Algebra.FormallySmoothAdic R T (maximalIdeal T) :=
+    MvPowerSeries.formallySmoothAdic_of_parameters_closedFiber ΛR ΛS n m' j t y
+      ht hy hcoeff hfibreT
+  apply formallySmoothAdic_descend_surjections q v hq hv hcomm' hker
+    (maximalIdeal T) (maximalIdeal B) ?_ hsmooth
+  exact (map_maximalIdeal_of_surjective v hv).le
+
+end RingHom

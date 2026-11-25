@@ -1,6 +1,6 @@
 # NYLL finite local reciprocity: source audit and port plan
 
-Worker 215 prepared this audit for task `b66bd2bc-abd3-4ea5-ae34-af7cdbeac0a3` (revision 2). It audits `ClassFieldTheory.finiteAbelianLocalReciprocity` and the underlying `LocalClassFieldTheory.abelianLocalArtinMap` in Naganori Yamaguchi's NYLL ClassFieldTheory library. It compares them with our `Langlands/ClassFieldTheory/Local/FiniteReciprocityStatement.lean` and `ReciprocitySystemStatement.lean`, and, in section 5, with the Library's existing local class-field declarations. This note does not accept any external theorem, and it imports no external code into the Library.
+This audit followed the [external Lean survey](external-lean-survey-2026-10-21.md). It audits `ClassFieldTheory.finiteAbelianLocalReciprocity` and the underlying `LocalClassFieldTheory.abelianLocalArtinMap` in Naganori Yamaguchi's NYLL ClassFieldTheory library. It compares them with our `Langlands/ClassFieldTheory/Local/FiniteReciprocityStatement.lean` and `ReciprocitySystemStatement.lean`, and, in section 5, with the Library's existing local class-field declarations. This note does not make any external theorem part of the Library, and it imports no external code into the Library.
 
 **Verdict: adapt.** NYLL constructs one concrete Artin map, `abelianLocalArtinMap`. Its sign convention is our geometric convention: a uniformizer goes to geometric Frobenius. Separate NYLL theorems about this same map give tower restriction, the norm square, unramified normalization and an inertia description. Together they cover the clauses of `FiniteAbelianReciprocityTheorems`, with two gaps:
 
@@ -18,7 +18,7 @@ Section 2 summarizes the declarations. Appendix A gives their full types verbati
 | Item | NYLL | Project |
 |---|---|---|
 | Source commit | [`fbd320cd8b1b06487c58227e92eb135794267709`](https://github.com/n-yamaguchi-0729/ClassFieldTheory/tree/fbd320cd8b1b06487c58227e92eb135794267709) | Library commit `2e31df852eed5b4c1a45eca581f8480418360a34` (every Library file cited in this note, except `UnramifiedArithmeticProof.lean`, which is new at this commit, is byte-identical to its version at `0686b4fa`, where the audit began) |
-| Lean | `v4.35.0-rc2` (`lean-toolchain`) | `4.34.0` (environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`) |
+| Lean | `v4.35.0-rc2` (`lean-toolchain`) | `4.34.0` |
 | Mathlib | `065356127b1dc0016f66b7283ce0ce2c4055aa55` (`lakefile.toml`, `lake-manifest.json`; committed 2026-09-16) | `5ed2965256430c3649e86755f9576b54eca72435` |
 
 The other manifest packages (plausible, LeanSearchClient, importGraph, proofwidgets, aesop, Qq, batteries, Cli) come in through Mathlib.
@@ -60,7 +60,7 @@ The other manifest packages (plausible, LeanSearchClient, importGraph, proofwidg
 - No build artifacts.
 - No Lean 4.35.0-rc2 toolchain in our environment.
 - The author's CI verification artifact needs authentication, so I did not download it.
-- Under the task rules no external build was run. Only the project's Lean service was used (section 4).
+- No external build was run. Only the project's Lean service was used (section 4).
 
 ## 2. Declarations, construction and meaning
 
@@ -215,20 +215,18 @@ Together these give clause (ii) of our `FiniteAbelianReciprocity`, after two tra
 
 ## 4. Kernel and axiom evidence
 
-**Obtained in our environment.** All runs used `lean_check` in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, with Lean 4.34.0 and Mathlib `5ed2965`. They are development checks of a task draft. They do not make any NYLL theorem an accepted Library result.
+**Obtained in our environment.** All runs used the project's Lean checking service, with Lean 4.34.0 and Mathlib `5ed2965`. They are development checks of a private draft. They do not make any NYLL theorem a Library result.
 
-- **Where the evidence is.** The compiled files and the verbatim run records are in the immutable shared task draft, revision 2:
-  `/home/taskhub/pilot/drafts/b66bd2bc-abd3-4ea5-ae34-af7cdbeac0a3/revision-2-be21ccfa15f601569a88da87b57effd5cd1303ee0054cfb4c2815958debe5a7d/files`
-  (manifest SHA-256 `f4ef042dfec477193bcbf9eb788a4dcddd0acfb8253d4d5493cc90b4f0c81844`). Its `NyllProbe/Bridge.md` describes the files and lists every run, and `receipts/<run>.md` reproduces each `lean_check` record. Revision 1 (`.../revision-1-2ff5490ad7f4ccaaebae891918abad774e4bd340d097fb7605d4f8c5aeb40960`, manifest SHA-256 `9a74687309136264117a55d233e93409cff5562b63cf4fd56c5960f5c0353968`) has the first seven runs. The draft is readable evidence for this section, not an accepted mathematical dependency.
+- **Where the evidence was.** The compiled files and the verbatim run records were kept in a shared draft of the environment in which the audit was made (manifest SHA-256 `f4ef042dfec477193bcbf9eb788a4dcddd0acfb8253d4d5493cc90b4f0c81844`; an earlier version of the draft, manifest SHA-256 `9a74687309136264117a55d233e93409cff5562b63cf4fd56c5960f5c0353968`, has the first seven runs). These are the manifest hashes of the draft as it was when the evidence was taken. The draft is not part of the Library. Its `NyllProbe/Bridge.md` described the files and listed every run.
 - **What compiled.** The draft contains eleven NYLL modules, copied byte for byte with their headers. Its `LICENSE.md` and `NOTICE.md` reproduce NYLL's `LICENSE` and `NOTICE` verbatim inside code blocks, because drafts accept only `.lean` and `.md` files. The modules are:
   - nine leaf modules: `ValuedFieldTheory/LocalField/NonarchimedeanLocalField/{Basic,PrincipalUnits,PrincipalUnitQuotients,IdealQuotients,NormQuotient}`, `ValuedFieldTheory/LocalField/NormUnits` and `ClassFieldTheory/Definitions/LocalClassFieldTheory/{FieldNormHom,FieldNormSubgroup,IsFieldNorm}`;
   - `ClassFieldTheory/Definitions/LocalClassFieldTheory/FieldNormQuotient` and `ClassFieldTheory/Theorems/LocalClassFieldTheory/FiniteAbelianLocalReciprocityQuotientEquivOfArtin`. With `FieldNormHom` and `FieldNormSubgroup` these form the whole NYLL closure of `finiteAbelianLocalReciprocity_quotientEquiv_of_artin`.
 
-  It also contains `NyllProbe/Bridge.lean` (SHA-256 `9ca80cc37862f539233d4bfa99cb595800e141025ada2a2f698f0cfb95171549`) with four theorems: `nyll_v_eq_neg_ord`, `ord_prime_eq_one`, `fieldNormSubgroup_eq` (by `rfl`) and `transfer_of_norm`. The nine leaf modules and the bridge built unchanged with 0 errors and 0 warnings in run `6639672a-c115-4bab-9bbe-585dc22ff451`, rechecked as run `c673766a-26b7-4749-b60b-5c487bdc01e3`. With the two further modules, run `8a578284-61c1-4f17-baee-755f538a837b` and its recheck `40a694c4-cdd0-4d79-9554-1ca322f600b4` also finished with 0 errors and 0 warnings. The quotient-equivalence module has SHA-256 `313cf68dcc8db62673ae6e182d03c9fc22b4556078a031ef700966c771aafa23` in those records.
+  It also contains `NyllProbe/Bridge.lean` (SHA-256 `9ca80cc37862f539233d4bfa99cb595800e141025ada2a2f698f0cfb95171549`) with four theorems: `nyll_v_eq_neg_ord`, `ord_prime_eq_one`, `fieldNormSubgroup_eq` (by `rfl`) and `transfer_of_norm`. The nine leaf modules and the bridge built unchanged with 0 errors and 0 warnings in one run and in its recheck. With the two further modules, a run and its recheck also finished with 0 errors and 0 warnings. The quotient-equivalence module has SHA-256 `313cf68dcc8db62673ae6e182d03c9fc22b4556078a031ef700966c771aafa23` in those records.
 - **Axiom checks.**
-  - Inspecting `NyllProbe.ord_prime_eq_one` (run `c842fac0-87dc-456f-8ad9-bb460feeea66`) and `NyllProbe.transfer_of_norm` (run `c673766a`) shows exactly `propext`, `Classical.choice` and `Quot.sound`. `ord_prime_eq_one` uses NYLL's `LocalFieldTheory.v_integerRingIrreducibleFieldUnit`, so that lemma and its leaf closure were checked by the kernel in our environment.
-  - Inspecting `ClassFieldTheory.finiteAbelianLocalReciprocity_quotientEquiv_of_artin` (run `8a578284`) shows the same three axioms, with level parameters `u` and `v`.
-  - Four further runs (`6a36db84`, `96477188`, `9db1f396`, `1ce0c59c`) inspected the four bridge theorems with the same result. `Bridge.md` lists them.
+  - Inspecting `NyllProbe.ord_prime_eq_one` and `NyllProbe.transfer_of_norm` shows exactly `propext`, `Classical.choice` and `Quot.sound`. `ord_prime_eq_one` uses NYLL's `LocalFieldTheory.v_integerRingIrreducibleFieldUnit`, so that lemma and its leaf closure were checked by the kernel in our environment.
+  - Inspecting `ClassFieldTheory.finiteAbelianLocalReciprocity_quotientEquiv_of_artin` shows the same three axioms, with level parameters `u` and `v`.
+  - Four further runs inspected the four bridge theorems with the same result. `Bridge.md` lists them.
 - **Not obtained.** We have no build, kernel or axiom result for the 258–502-module Artin-map closures in any environment. Their compatibility with our Mathlib is untested.
 
 **Textual checks (not kernel evidence).**
@@ -277,7 +275,7 @@ Together these give clause (ii) of our `FiniteAbelianReciprocity`, after two tra
    - Library: `CFT.abelianizationCupEquiv`, `CFT.arithmeticReciprocityOfCup` and `CFT.geometricReciprocityOfCup` (`TateAbelianization.lean:66, 82, 99`), for standalone `K : Type v` and finite Galois `L : Type u`. They are built from `relativeTateCup` (`TateCup.lean:21`), `integralTateMinusTwoEquiv` (`TateAbelianization.lean:16`) and `tateZeroEquivNormQuotient` (`TateNormQuotient.lean:82`). The class-formation layer around them includes `multiplicativeFormation` (`MultiplicativeFormation.lean:33`), `InvariantFamily` (`Invariants.lean:19`), `IsFundamentalClass` and `HasUniqueFundamentalClass` (`FundamentalClasses.lean:24, 30`), `RelativeClassFormation` (`ClassFormation.lean:103`) and `FundamentalClassTateIsomorphisms` (`TateCup.lean:35`), with the targets `LocalRelativeClassFormationStatement` and `LocalCompatibleClassFormationStatement` (`ClassFormationStatement.lean:20, 36`).
    - Status in the Library: the three constructors take a class `c : relativeCohomology K L 2` and a proof `h` that `relativeTateCup K L (-2) c` is bijective. They return algebraic `≃*` equivalences without topology. `TateAbelianization.md` says that "no choice of an unconditional local reciprocity map is made". No Library theorem proves that a fundamental class exists or that its cup map is bijective.
    - Different routes: the Library follows Serre's cohomological route, where reciprocity is the inverse of the cup product with a fundamental class. NYLL follows a Neukirch-style abstract route: a continuous surjective degree map to `ℤ̂`, a Henselian valuation, and the class-field axiom `#Ĥ⁰ = [L:K]`, `#Ĥ⁻¹ = 1` for cyclic extensions. NYLL has no cup product or fundamental class. In its `ClassFieldTheory` and `GaloisCohomology` trees, searches find no whole word `cup`, no `Cup` or `cupProduct`, and, ignoring case, no `fundamental class` or `fundamentalClass`. So NYLL cannot supply `c` and `h`, and the Library proves no class-field axiom.
-   - Consequence: a port adds a second, independent construction of the reciprocity map next to the cohomological route of tasks `c7513fdc` (class-formation statements) and `d173a3b0` (cup and transfer construction). No theorem in either project compares the two maps.
+   - Consequence: a port adds a second, independent construction of the reciprocity map next to the cohomological route (class-formation statements, and the cup and transfer construction). No theorem in either project compares the two maps.
 4. **Coefficients and universes.**
    - NYLL: `IntegralRepGroupType := Type 0` (`Nyll/GaloisCohomology/Cyclic/IntegralRepUniverse.lean:18`), `Rep ℤ G` and Mathlib's `tateCohomology`.
    - Library: `CFT.IntegerScalars := ULift ℤ` (`Cohomology.lean:22`) with `integerScalarsEquiv` (`:25`), and `unitsRepresentation (K : Type v) (L : Type u) : Rep.{u} IntegerScalars.{u} Gal(L/K)` (`:28`). On these coefficients it defines `absoluteCohomology`, `relativeCohomology`, `relativeTateCohomology` and `integralTateCohomology` (`:90-108`). `relativeH2Equiv` (`RelativeH2Transport.lean:184`) transports relative H² along a `K`-algebra isomorphism `L ≃ₐ[K] M` between fields in independent universes. Hilbert 90 is proved as `finiteRelativeH1Vanishing` (`RelativeH1Proof.lean:9`, independent universes) and `absoluteH1Vanishing` (`AbsoluteH1Proof.lean:30`).
@@ -339,7 +337,7 @@ No Library declaration defines a map `Kˣ → Gal(L/K)`, or an equivalence betwe
 3. **Formulation.** Our clauses use `TE.discreteValuation` inequalities and `TF.residueCardinality`. NYLL uses `𝒪[L]` residues and `Nat.card 𝓀[K]`.
 4. **Common-closure index.** NYLL's family index is in `SeparableClosure K`; our common-closure index is in `AlgebraicClosure F.Carrier`. They are equivalent in characteristic 0, but the index types differ.
 
-## 6. Verdict and smallest next units
+## 6. Verdict and smallest next steps
 
 **Adapt.** Do not use NYLL directly, and do not import the repository as a whole. Do not reject it for the finite statements: one map, `abelianLocalArtinMap`, has the norm kernel, geometric sign, tower restriction, norm square and inertia image that `FiniteAbelianReciprocityTheorems` needs. The Library has no map defined without supplied data (section 5). The quotient step is already in reach. It is the first isomorphism theorem, as in the Library's `finiteNormResidueEquiv`, and NYLL's `finiteAbelianLocalReciprocity_quotientEquiv_of_artin` compiled unchanged in our environment with the three standard axioms (section 4). The remaining obstacles are listed in sections 2.7 and 5:
 
@@ -347,19 +345,19 @@ No Library declaration defines a map `Kˣ → Gal(L/K)`, or an equivalence betwe
 - the extension-field valuation instances;
 - the ramified residue normalization;
 - an untested port of at least 258 modules across a Lean/Mathlib gap;
-- the port's construction would sit next to the Library's cohomological route (section 5, item 3), so it needs the agreement of that route's owners.
+- the port's construction would sit next to the Library's cohomological route (section 5, item 3), so taking it is a decision about that route, not only a port.
 
 **Reject for `ReciprocitySystemStatement.lean`.** NYLL supplies no Weil-group component. At most, its finite abelian Galois-side maps could later feed the finite norm-residue relations.
 
-**Smallest next units.** Each unit except the owner decision needs its own authorized task, with published statement targets, normal validation and independent review. They are listed in dependency order:
+**Smallest next steps.** Each step except the decision needs its own statement targets and the normal checks. They are listed in dependency order:
 
-1. **Port-feasibility build.** Copy the 258-module `NormResidue` closure verbatim into a private draft and `lean_check` it in environment `3b864ddf`. Record every break caused by the Mathlib/Lean gap. Then extend it to the `GeneralTowerNaturality`, `UnramifiedNormalization`, `NormRestriction` and `Filtered/FiniteAbelian` closures (262, 265, 280 and 402 modules), and to the 33-module `ShrinkTransport` closure if NYLL's transport is chosen. This decides whether a focused port with original headers, `LICENSE` and `NOTICE` is feasible.
-2. **Owner decision.** With the result of unit 1, the owners named in this task's context decide whether the Library should carry NYLL's construction next to the cohomological route, or use NYLL only as a proof route. They own the local class-field construction (tasks `6abce376-f18c-478f-9309-c0c1010f7a99` and `7b4a513d-a3bc-4cb7-af3c-03c4580608f7`), the class-formation statements (`c7513fdc-eb44-48b5-8734-001f18050403`) and the cup and transfer construction (`d173a3b0-7ea1-4c57-afe4-d5d37694635e`).
-3. **Statements.** Publish, as new Prop targets with the existing owners' agreement:
+1. **Port-feasibility build.** Copy the 258-module `NormResidue` closure verbatim into a private draft and check it with the project's Lean service. Record every break caused by the Mathlib/Lean gap. Then extend it to the `GeneralTowerNaturality`, `UnramifiedNormalization`, `NormRestriction` and `Filtered/FiniteAbelian` closures (262, 265, 280 and 402 modules), and to the 33-module `ShrinkTransport` closure if NYLL's transport is chosen. This decides whether a focused port with original headers, `LICENSE` and `NOTICE` is feasible.
+2. **Decision.** With the result of step 1, decide whether the Library should carry NYLL's construction next to the cohomological route (the local class-field construction, the class-formation statements and the cup and transfer construction), or use NYLL only as a proof route.
+3. **Statements.** State, as new Prop targets:
    - **(a)** the universe-0 instances `FiniteAbelianReciprocity.{0,0}`, `FiniteAbelianNormTransfer.{0,0,0}` and `FiniteAbelianRestriction.{0,0,0}`;
    - **(b)** the universe-transport implication from those instances to the arbitrary-universe Props;
    - **(c)** the ramified residue normalization through the maximal unramified subextension.
-4. **Proofs, in order.** These need the port from unit 1.
+4. **Proofs, in order.** These need the port from step 1.
    - The quotient equivalences, by the first isomorphism theorem as inside `finiteNormResidueEquiv`, or from `finiteAbelianLocalReciprocity_quotientEquiv_of_artin` (section 2.7).
    - Universe-0 `FiniteAbelianRestriction`, from `finiteAbelianLocalArtinMap_restrict_tower`.
    - `FiniteAbelianNormTransfer`, from `abelianLocalArtinMonoidHom_norm_restriction` and `transfer_of_norm`.
@@ -367,7 +365,7 @@ No Library declaration defines a map `Kˣ → Gal(L/K)`, or an equivalence betwe
    - Clause (ii), from the `t = 0` filtered theorem.
    - Finally the transport (3b).
 
-Until unit 1 succeeds, NYLL serves only as a proof route and naming reference. Apart from the eleven modules compiled in section 4, none of its theorems has been checked in our environment, and none is established in this project.
+Until step 1 succeeds, NYLL serves only as a proof route and naming reference. Apart from the eleven modules compiled in section 4, none of its theorems had been checked in our environment, and none was established in this project. Since then the Library has taken NYLL in as the library copy `Nyll/` (where `abelianLocalArtinMap` is declared, under `Nyll/ClassFieldTheory/LocalClassFieldTheory/Finite/LocalReciprocity/`), and `Langlands/ClassFieldTheory/Local/FiniteReciprocityProof.lean` proves `FiniteAbelianReciprocityTheorems.{u, v, w}`, as `finiteAbelianReciprocityTheorems`.
 
 ## Appendix A. Full declaration types
 

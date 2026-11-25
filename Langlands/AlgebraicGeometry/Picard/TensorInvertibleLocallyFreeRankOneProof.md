@@ -83,7 +83,7 @@ This implementation uses the internal unit-pairing route described above.
 The source's converse proof instead derives finite presentation and spreads
 a stalk basis. The finite expansion in the proof of Lemma 17.25.2 motivates
 the geometric prerequisite; the present assembly does not derive or assume
-finite presentation. Worker 124 authored the assembly. The cited definitions
+finite presentation. The cited definitions
 and proofs were read in the retained source, and no source-specific project
 erratum was found.
 

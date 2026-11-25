@@ -74,7 +74,7 @@ theorem torusTransportRootDatum_isReduced [P.IsReduced] :
   rcases RootPairing.IsReduced.eq_or_eq_neg a c h' with h | h
   · exact Or.inl (congrArg (characterLattice.congr e) h)
   · exact Or.inr (by
-      simpa only [torusTransportRootDatum_root, map_neg] using
+      simpa only [torusTransportRootDatum_root, AddEquiv.map_neg] using
         congrArg (characterLattice.congr e) h)
 
 end RootDatum

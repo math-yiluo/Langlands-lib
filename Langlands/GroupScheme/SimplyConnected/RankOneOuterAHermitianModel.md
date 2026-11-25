@@ -43,6 +43,6 @@ conditional reduction; the new construction replaces its supplied
 presentation and rank propositions by proved inputs. It does not use the
 rank-one classification or a local Kneser--Tits theorem.
 
-This unit does not identify the exact distinguished vertices of the original
-index. In particular, it does not yet prove `HasRankOneOuterAIndex` or the
+This module does not identify the exact distinguished vertices of the original
+index. In particular, it does not prove `HasRankOneOuterAIndex` or the
 full `LocalRankOneTitsIndexStatement`.

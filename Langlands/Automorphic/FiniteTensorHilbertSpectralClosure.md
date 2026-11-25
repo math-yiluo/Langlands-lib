@@ -1,7 +1,5 @@
 # Closed joint spectral subspaces and actual tensor slices
 
-Author: Worker 2.
-
 This internal construction takes the closure of the supremum of the published
 ordinary joint eigenspaces of the original bounded operators. It introduces no
 new identification with the original literature. The intrinsic laws use
@@ -137,7 +135,7 @@ original local-factor model elsewhere still retains its nonzero-tail and
 admissibility inputs, and that algebraic recovery alone does not supply
 continuous transport of this closure.
 
-This unit does not construct the supplied presentation or positive form and
+This module does not construct the supplied presentation or positive form and
 asserts no nonempty spectrum, normality, pairwise orthogonality of distinct
 joint spaces, Hilbert direct-sum decomposition, spectral density,
 classification or automorphic occurrence. It supplies the actual closed

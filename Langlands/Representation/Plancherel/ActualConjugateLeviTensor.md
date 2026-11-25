@@ -75,10 +75,10 @@ every coefficient vector and every pair of actual rational points, by the
 constructed intertwining map's own action equality.
 
 The translation, inducing-transport and common-Levi components have their
-published or above-proved pure-tensor and evaluation laws. This focused unit
-stages their constructed composite and its action law; dedicated assembled
-pure-tensor, evaluation and generic-bijectivity lemmas remain subsequent
-work. It supplies no unitary extension, coefficient identity, form identity,
+published or above-proved pure-tensor and evaluation laws. This module
+provides their constructed composite and its action law; dedicated assembled
+pure-tensor, evaluation and generic-bijectivity lemmas are not part of it
+(`ActualConjugateLeviTensorLaws` proves `genericComparison_bijective`). It supplies no unitary extension, coefficient identity, form identity,
 cocycle or Weyl descent theorem. The compact Haar probability coefficient
 map and the source formal degree are untouched; the construction introduces
 no new measure, scalar or quotient-duality normalization.

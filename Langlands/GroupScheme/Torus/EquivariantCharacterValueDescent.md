@@ -20,7 +20,9 @@ This is the existence half of the classical description of `T(k)`: when `T` spli
 evaluation identifies `T(L)` with `Hom(X^*(T_L), Lˣ)`, and Galois descent identifies `T(k)`
 with the Galois-fixed points. Uniqueness of `h` is true but is not stated. The theorem's
 binders are those of the proposition `TorusEquivariantCharacterValueDescentStatement`
-proposed in Task 5959 (not published). This module proves the result directly as an
+(module `Torus.EquivariantCharacterValueDescentStatement`), which
+`torusEquivariantCharacterValueDescent` (module `Torus.EquivariantCharacterValueDescentProof`)
+proves by this theorem. This module proves the result directly as an
 ordinary theorem, for use in the proof of
 `QuasiSplitAdjointSimpleRootTransitivityStatement`.
 

@@ -30,7 +30,7 @@ not transcribed from the source.
 - `r : ParabolicRootPresentation p l a` and `r' : ParabolicRootPresentation p' l' a` present two
   parabolics `p : P ⟶ G`, `p' : P' ⟶ G` with Levis `l`, `l'` and a common split component
   `a : A ⟶ M`, with `hLevi : l ≫ p = l' ≫ p'`. `n`, `n'` are geometric unipotent radicals
-  (`hn`, `hn'`). As in the host statement, `Ppt`, `Upt`, `U'pt` are subgroups of `G(F)` with
+  (`hn`, `hn'`). As in `ConditionalParabolicIntertwiningStatement`, `Ppt`, `Upt`, `U'pt` are subgroups of `G(F)` with
   `hPpt`, `hUpt`, `hU'pt` identifying them with the actual points of `P`, `U` and `U'`, and
   `Mpt = parabolicLeviPointSubgroup p l`.
 - `λ_P = groupHom r.splitComponentCocharacter ≫ a ≫ l ≫ p` and
@@ -124,5 +124,5 @@ gives the claim.
 The hypotheses on `qν` are regularity and right invariance; both are fields of
 `QuotientIntegration.IsCompatible`. The module does not bound any intertwining integrand by a
 power of the height, does not prove the Iwasawa or root-cone estimates, and does not prove
-convergence on the region of the host statement. The exponent `D` is not explicit. Nothing here
-completes the host conditional intertwining theorem.
+convergence on the region of `ConditionalParabolicIntertwiningStatement`. The exponent `D` is
+not explicit. Nothing here completes the proof of that conditional intertwining theorem.

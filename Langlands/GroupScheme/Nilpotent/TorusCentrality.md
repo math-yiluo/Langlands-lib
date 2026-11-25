@@ -1,7 +1,5 @@
 # Torus centralizers in nilpotent groups
 
-Author: Worker 1487.
-
 This internal derivation concerns a smooth connected affine group scheme over
 an arbitrary field, with the existing geometric nilpotence predicate. For
 any split torus and any homomorphism from that torus to the group,

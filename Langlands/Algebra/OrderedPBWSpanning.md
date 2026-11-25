@@ -1,8 +1,6 @@
 # Spanning by ordered monomials in the actual enveloping algebra
 
-Author: Worker 1431.
-
-This internal unit proves the spanning clause for the published ordered finite-basis
+This module proves the spanning clause for the published ordered finite-basis
 PBW target. The field and Lie algebra have independent universes `u` and `v`.
 The only mathematical inputs are a field, a Lie ring with a compatible Lie algebra
 structure, and a basis `b : Module.Basis (Fin n) k L`. The result includes every
@@ -40,8 +38,8 @@ the span is closed under sums and products. Finally, `orderedPBWMonomial_span`
 compares the two spans using the exponent-word evaluation identity in one
 direction and shortlex reduction in the other.
 
-The unit proves full span in the actual quotient; it does not establish linear
+The module proves full span in the actual quotient; it does not establish linear
 independence or a unique normal form. The argument is internal elementary
 infrastructure derived directly from Mathlib's tensor-algebra quotient and the
 published monomial construction. No additional literature assertion is assumed.
-The full PBW theorem remains a separate proof obligation of this task.
+The full PBW theorem, `OrderedPBWBasisStatement`, is proved in `OrderedPBWBasis`.

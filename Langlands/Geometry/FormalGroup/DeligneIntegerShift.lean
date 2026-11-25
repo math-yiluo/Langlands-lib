@@ -68,7 +68,7 @@ def rationalPiIntIso (i : ZMod d) : (z : ℤ) →
 theorem rationalNegativeReturnIso_inclusion (i : ZMod d) (n : ℕ) :
     (M.rationalNegativeReturnIso F hπ i n).hom ≫ M.rationalInclusion F i =
       M.rationalInclusion F (i + (Int.negSucc n : ZMod d)) ≫
-        (rationalPiAut F X d π M.sheaf hπ ^ (n + 1)).hom := by
+        (rationalPiAut F X d π M.sheaf hπ ^ (n + 1)).asIso.hom := by
   dsimp only [rationalNegativeReturnIso, Iso.trans_hom]
   rw [Category.assoc, M.rationalTransport_inclusion F (negativeReturn_degree i n),
     M.rationalShiftIso_inclusion F hπ]
@@ -78,7 +78,7 @@ isomorphism; this includes negative paths without assuming rational inclusions m
 @[reassoc]
 theorem rationalPiIntIso_inclusion (i : ZMod d) (z : ℤ) :
     (M.rationalPiIntIso F hπ i z).hom ≫ M.rationalInclusion F (i + (z : ZMod d)) =
-      M.rationalInclusion F i ≫ (rationalPiAut F X d π M.sheaf hπ ^ z).hom := by
+      M.rationalInclusion F i ≫ (rationalPiAut F X d π M.sheaf hπ ^ z).asIso.hom := by
   cases z with
   | ofNat n =>
     dsimp only [rationalPiIntIso, Iso.trans_hom]
@@ -131,12 +131,13 @@ end LatticePiSheaf
 theorem rationalPiStalkAut_zpow_hom
     (M : X.Sheaf (ModuleCat.{u} (PiAlgebra d π)))
     (hπ : algebraMap O F π ≠ 0) (z : ℤ) (x : X) :
-    (rationalPiStalkAut F X d π M hπ x ^ z).hom =
+    (rationalPiStalkAut F X d π M hπ x ^ z).asIso.hom =
       (TopCat.Presheaf.stalkFunctor (ModuleCat.{u} F) x).map
-        (rationalPiAut F X d π M hπ ^ z).hom.hom := by
+        (rationalPiAut F X d π M hπ ^ z).asIso.hom.hom := by
   let G := (sheafToPresheaf (Opens.grothendieckTopology X) (ModuleCat.{u} F)) ⋙
     TopCat.Presheaf.stalkFunctor (ModuleCat.{u} F) x
-  exact congrArg Iso.hom ((G.mapAut _).map_zpow (rationalPiAut F X d π M hπ) z).symm
+  exact congrArg (fun a => a.asIso.hom)
+    ((G.mapAut _).map_zpow (rationalPiAut F X d π M hπ) z).symm
 
 namespace FramedLatticePiSheaf
 
@@ -170,7 +171,7 @@ def shiftIntFunctor (z : ℤ) :
 by the actual total Pi power. -/
 theorem frameToTotal_shiftInt (z : ℤ) :
     (M.shiftInt F hπ z).frameToTotal F =
-      M.frameToTotal F ≫ (rationalPiAut F X d π M.lattice.sheaf hπ ^ z).hom := by
+      M.frameToTotal F ≫ (rationalPiAut F X d π M.lattice.sheaf hπ ^ z).asIso.hom := by
   change (M.frame.hom ≫ (M.lattice.rationalPiIntIso F hπ 0 z).hom) ≫
       M.lattice.rationalInclusion F (0 + (z : ZMod d)) = _
   rw [Category.assoc, M.lattice.rationalPiIntIso_inclusion F hπ, ← Category.assoc]
@@ -180,7 +181,7 @@ theorem frameToTotal_shiftInt (z : ℤ) :
 theorem frameStalkMap_shiftInt (z : ℤ) (x : X) :
     (M.shiftInt F hπ z).frameStalkMap F x =
       M.frameStalkMap F x ≫
-        (rationalPiStalkAut F X d π M.lattice.sheaf hπ x ^ z).hom := by
+        (rationalPiStalkAut F X d π M.lattice.sheaf hπ x ^ z).asIso.hom := by
   unfold frameStalkMap
   rw [M.frameToTotal_shiftInt F hπ z]
   simp only [ObjectProperty.FullSubcategory.comp_hom, NatTrans.comp_app, Category.assoc]
@@ -192,7 +193,7 @@ theorem frameStalkMap_shiftInt (z : ℤ) (x : X) :
 theorem integralFrameStalkMap_shiftInt (z : ℤ) (x : X) :
     (M.shiftInt F hπ z).integralFrameStalkMap F x =
       (((ModuleCat.restrictScalars (algebraMap O F)).map
-        (rationalPiStalkAut F X d π M.lattice.sheaf hπ x ^ z).hom).hom).comp
+        (rationalPiStalkAut F X d π M.lattice.sheaf hπ x ^ z).asIso.hom).hom).comp
           (M.integralFrameStalkMap F x) := by
   apply LinearMap.ext
   intro v
@@ -212,9 +213,9 @@ theorem translatedFrameStalkLattice_shiftInt (z : ℤ) (i : ℤ) (x : X) :
     (M.shiftInt F hπ z).translatedFrameStalkLattice F hπ i x =
       M.translatedFrameStalkLattice F hπ (i + z) x := by
   have hp :
-      (rationalPiStalkAut F X d π M.lattice.sheaf hπ x ^ (i + z)).hom =
-        (rationalPiStalkAut F X d π M.lattice.sheaf hπ x ^ z).hom ≫
-          (rationalPiStalkAut F X d π M.lattice.sheaf hπ x ^ i).hom := by
+      (rationalPiStalkAut F X d π M.lattice.sheaf hπ x ^ (i + z)).asIso.hom =
+        (rationalPiStalkAut F X d π M.lattice.sheaf hπ x ^ z).asIso.hom ≫
+          (rationalPiStalkAut F X d π M.lattice.sheaf hπ x ^ i).asIso.hom := by
     rw [zpow_add]
     rfl
   unfold translatedFrameStalkLattice

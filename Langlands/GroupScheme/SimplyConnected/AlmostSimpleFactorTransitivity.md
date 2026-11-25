@@ -1,6 +1,6 @@
 # Canonical factor orbits and transitivity
 
-Worker 166. This is an internal derived construction from actual product
+This is an internal derived construction from actual product
 coordinates, canonical Galois transport and invariant closed-subgroup descent.
 It introduces no external structural premise. All fields and groups lie in an
 arbitrary universe.

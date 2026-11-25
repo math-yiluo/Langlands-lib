@@ -38,4 +38,4 @@ with the residue-field condition, stalk-frame condition or a Picard invertibilit
 predicate is proved by this module. Those identifications are separate obligations
 before this construction can be used as the source's `X_s` in ampleness.
 No tensor powers, ampleness predicate or assertion that `M` is invertible is
-included in this contribution.
+included in this module.

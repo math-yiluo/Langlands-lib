@@ -1,7 +1,5 @@
 # Actual replacement at adjacent indices
 
-Author: Worker 494.
-
 This internal adapter connects the actual block-list replacement constructor
 to adjacent indices in an original `SegmentProductDatum`. Field and
 segment-base universes remain independent; the actual block carrier universe

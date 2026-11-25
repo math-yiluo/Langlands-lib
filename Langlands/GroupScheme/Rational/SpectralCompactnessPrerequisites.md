@@ -1,10 +1,10 @@
 # Spectral prerequisites for anisotropic local-field compactness
 
-This derived statement unit separates two missing algebraic inputs to the reverse
+This derived statement module separates two algebraic inputs to the reverse
 implication of `Langlands.GroupScheme.AnisotropicCompactnessStatement`. It also
 implements the reduction from those inputs to compactness using published
 embedding and affine-point topology theorems. Neither spectral input is proved
-here, and this unit does not prove the unconditional compactness equivalence.
+here, and this module does not prove the unconditional compactness equivalence.
 
 All fields have arbitrary universe `u`. They carry the existing
 `IsNonarchimedeanLocalField` structure, with its given valuation and topology.
@@ -42,7 +42,7 @@ rational torus, and the Galois sum of a weight detecting a nonzero valuation.
 A nonzero rational character of that torus yields a nontrivial split subtorus
 of the original group, contradicting anisotropy. The published finite-Galois
 splitting and character/cocharacter results are possible inputs, but the
-pointwise eigenvalue and descent bridges still need proofs. In positive
+pointwise eigenvalue and descent bridges need proofs beyond them. In positive
 characteristic a power of the point is used; perfectness of the local field
 itself is not a premise.
 
@@ -66,11 +66,18 @@ points. Finally, `localFieldAffineBoundedCompactness_proof` applied to the close
 set `Set.univ` gives compactness in the exact canonical topology.
 
 This is a conditional helper, not a proof discharging either spectral target.
-An eventual proof of the original equivalence must consume proofs of those
+A proof of the original equivalence must consume proofs of those
 targets and the forward implication; it may not retain them as extra premises.
 The faithful representation is supplied internally. The adjoint representation
 alone would not suffice to detect central split directions because its kernel
 need not be finite.
+The Library's proof `anisotropicCompactness_proof`
+(`Rational.AnisotropicCompactnessProof`) applies
+`anisotropicPointsCompactness_of_spectral` to `reductiveSpectralBoundedness`
+(`Rational.ReductiveSpectralBoundednessProof`) and
+`anisotropicSpectralIntegrality` (`Rational.AnisotropicSpectralIntegralityProof`),
+and takes the forward implication from `compactPointsAnisotropy_proof`
+(`Rational.CompactPointsAnisotropy`).
 
 ## Provenance
 

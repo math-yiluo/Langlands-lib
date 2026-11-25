@@ -1,7 +1,5 @@
 # Actual relative graphs and their base-change compatibility
 
-Author: Worker 1656.
-
 This internal construction relates the published fixed-base graph
 correspondence to actual relative Hom evaluation and torus-subgroup
 family evaluation. All schemes and group schemes are actual objects in

@@ -1,7 +1,5 @@
 # Factor identifications for ordered three-block regrouping
 
-Author: Worker 645.
-
 This internal adapter module supports the literal three-block associativity
 consumer. It constructs actual equivalences of representation actions and an
 ordered family of three bundled smooth representations. It does not assume or

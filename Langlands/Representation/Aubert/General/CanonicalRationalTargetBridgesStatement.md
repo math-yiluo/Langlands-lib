@@ -1,7 +1,6 @@
 # Existing rational-point Aubert targets imply their canonical forms
 
-Authors: Worker 29, with Worker 3640 (Task 3640, Block C(2), bridge
-statement). This module declares one closed Prop-valued definition,
+This module declares one closed Prop-valued definition,
 `Langlands.Aubert.General.RationalPointFamily.CanonicalRationalTargetBridgesStatement`,
 with universe parameters `u` and `v`. It is a proof target, not a theorem.
 The module proves nothing.
@@ -52,9 +51,9 @@ per-group hypothesis `ContragredientPreservesFiniteLength (RationalPoint k G.X)`
 detail.
 
 The statement thus says that each canonical form is no stronger than its
-existing target. Once it is proved, a published proof of an existing target
-together with this statement gives a proof of the canonical form. The existing
-targets keep their own proof owners.
+existing target. It is proved (`canonicalRationalTargetBridges` in
+`CanonicalRationalTargetBridgesProof`), so a published proof of an existing
+target together with this statement gives a proof of the canonical form.
 
 The converse (canonical to existing) is not part of this statement, for two
 reasons:
@@ -67,9 +66,9 @@ reasons:
 The statement asserts no identity of Aubert's paper and no finite-length
 preservation.
 
-## Expected proof
+## Proof
 
-Each implication is expected to follow by instantiating the existing target's
+Each implication follows by instantiating the existing target's
 premises with these published data:
 
 - `standardCocharacter`, `relativeRootSystem`, `standardLeviIntersection` and
@@ -77,12 +76,12 @@ premises with these published data:
 - the closed radicals, closed parabolics, continuous projections and compact
   limits;
 - per-index finite length derived from the two global dynamic statements;
-- the C(1) Levi and Weyl declarations of `CanonicalRationalStructure`.
+- the Levi and Weyl declarations of `CanonicalRationalStructure`.
 
 The canonical operators are, by definition, the published premise-taking
 operators at these data, and the remaining arguments are proofs of
-propositions. A compiled Lean proof of this kind exists as a private draft. It
-is not part of this unit and will be submitted as a separate exact proof.
+propositions. The Lean proof is the separate module
+`CanonicalRationalTargetBridgesProof`; it is not part of this module.
 
 ## Sources and provenance
 
@@ -92,8 +91,3 @@ literature. The literature content and citations of each target, from Aubert
 1995 (`aubert-1995-duality`) and Ban–Jantzen 2016 (`ban-jantzen-2016-duality`),
 are recorded in `CanonicalRationalTheorem17Targets.md` and in the existing
 target modules.
-
-This statement replaces the rejected candidate
-`5093a123-f627-419c-b879-0a6397e3357f`. That candidate submitted the
-implications directly as theorems in a definition-kind unit, which machine
-validation rejected because a definition unit needs a Lean definition.

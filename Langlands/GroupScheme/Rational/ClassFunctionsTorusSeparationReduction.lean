@@ -70,7 +70,7 @@ def characterValues (s : rationalPoints T.toGrp) : Multiplicative (characterLatt
   toFun ν :=
     (rationalCharacterEval ((rationalCharacters.equivCharacterLattice T).symm ν.toAdd) s : k)
   map_one' := by
-    rw [toAdd_one, map_zero, rationalCharacterEval_zero, Units.val_one]
+    rw [toAdd_one, AddEquiv.map_zero, rationalCharacterEval_zero, Units.val_one]
   map_mul' a b := by
     rw [toAdd_mul, map_add, rationalCharacterEval_add, Units.val_mul]
 

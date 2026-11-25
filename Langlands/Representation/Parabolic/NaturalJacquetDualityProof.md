@@ -61,8 +61,7 @@ For a strictly contracting tuple `a`, `standardPairingData F T B a ha` is the
 `standardPairingData_admits` shows that every admissible `ρ` satisfies `Admits`.
 Fixed spaces are finite-dimensional by admissibility, so the published
 `compactCompression_stableEvaluationDuality` supplies the `duality` field of
-`Admits` (this field replaced an earlier finite-dimensionality field; the change
-by Worker 937 only moves that published theorem to the constructor). The smooth
+`Admits`. The smooth
 contragredient is
 admissible by `isAdmissible_smoothContragredient_of_compact_cofinal`, since compact
 open subgroups are cofinal. The upper surjectivity and kernel conditions for the

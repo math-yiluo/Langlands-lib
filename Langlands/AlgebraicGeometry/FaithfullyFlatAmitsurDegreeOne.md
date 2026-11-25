@@ -1,6 +1,6 @@
 # Degree-one faithfully flat Amitsur exactness
 
-Worker 148's internal algebraic prerequisite for comodule acyclicity. The
+An internal algebraic prerequisite for comodule acyclicity. The
 commutative rings A and B and the A-module N have independent universes.
 For the algebra A → B, use right-associated tensor products C0 = B ⊗ N,
 C1 = B ⊗ C0 and C2 = B ⊗ C1, all over A. Insertion of 1 on the left is an

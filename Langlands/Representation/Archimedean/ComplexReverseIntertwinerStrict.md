@@ -1,8 +1,6 @@
 # Intertwiners to the reversed standard module: the strictly ordered case
 
-Lean module: `Langlands.Representation.Archimedean.ComplexReverseIntertwinerStrict`. Worker 5677
-wrote it under Task 7064 (`e4a22cc7-0a28-44a3-afc6-38bb7c243851`), with the supporting module
-`ComplexJacquetLimitSum` written by Worker 728.
+Lean module: `Langlands.Representation.Archimedean.ComplexReverseIntertwinerStrict`.
 
 Notation. `GL_n(ℂ)` is `Langlands.GeneralLinear n ℂ`, `U(n)` is `unitaryCompact ℂ n` with Haar
 probability measure `ComplexDuality.unitaryHaar n`. For a list `ds` of `ComplexCharacterData`,
@@ -27,26 +25,25 @@ It is proved by `Langlands.Archimedean.complexStrictReverseIntertwinerKernel`, w
 ### Provenance
 
 Derived (internal). This is the special case, for strictly decreasing real parts of the exponents,
-of `ComplexReverseIntertwinerKernelStatement` (Rev_C), which Worker 728 stated in the module
-`ComplexStandardIrreducibleCriterionReduction` (candidate `f94dfe9f-7bf7-40a4-8de6-05842c2a02b4`,
-Task 7064); the hypothesis `IsStrictlyOrdered ds` replaces `IsComplexLanglandsOrdered ds`
+of `ComplexReverseIntertwinerKernelStatement` (Rev_C), stated in the module
+`ComplexStandardIrreducibleCriterionReduction`; the hypothesis `IsStrictlyOrdered ds` replaces `IsComplexLanglandsOrdered ds`
 (non-increasing real parts), and everything else is identical. The Markdown of that module
 explains the background in Langlands' classification: the image of a nonzero intertwiner
 `I(ds) → I(ds.reverse)` is the Langlands quotient, so its kernel is the largest proper submodule.
 The formal proof below does not follow that route; it uses the Jacquet integral of the published
-modules `ComplexJacquetDual`, `ComplexJacquetKernel` and `ComplexJacquetNonvanishing` (Task 7063).
+modules `ComplexJacquetDual`, `ComplexJacquetKernel` and `ComplexJacquetNonvanishing`.
 
 ## Supporting modules
 
-- `ComplexReverseTwist` (Worker 5677): the twist `twist g = w₀ (gᵀ)⁻¹`, invariance of the Haar
+- `ComplexReverseTwist`: the twist `twist g = w₀ (gᵀ)⁻¹`, invariance of the Haar
   measure of `U(n)` under it, and pullback of principal series along it.
-- `ComplexJacquetLimitSum` (Worker 728): the limit argument of `ComplexJacquetLimit` for two pairs
+- `ComplexJacquetLimitSum`: the limit argument of `ComplexJacquetLimit` for two pairs
   of functions, with the hypothesis only on the ray `d(s) = diag(1, …, 1, s)`.
-- `ComplexReverseRecursion` (Worker 5677): `integral_mul_swap` and the recursion
+- `ComplexReverseRecursion`: `integral_mul_swap` and the recursion
   `mul_jacquet_eq_of_transpose`: if `∫ x₁(κ g) y₁(κ) dκ = ∫ x₂(κ gᵀ) y₂(κ) dκ` for all `g`, then
   `x₁(1) Λ_n(y₁) = x₂(1) Λ_n(y₂)` (`Λ_n` the Jacquet integral in stages, strictly dominant
   exponents).
-- `ComplexReverseTransfer` (Worker 5677): the pairing transpose `exists_pairing_transpose` and the
+- `ComplexReverseTransfer`: the pairing transpose `exists_pairing_transpose` and the
   transfer identity `integral_mul_transfer`.
 
 ## Results of this module

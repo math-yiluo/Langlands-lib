@@ -45,7 +45,7 @@ theorem isReduced_fieldRealization (P : RootDatum J (I → ℤ) (I → ℤ)) [hP
   · left
     rw [hroot, hroot, h]
   · right
-    rw [hroot, hroot, h, map_neg]
+    rw [hroot, hroot, h, AddEquiv.map_neg]
 
 variable {k}
 variable {P : RootDatum J (I → ℤ) (I → ℤ)} {Q : RootDatum J' (I' → ℤ) (I' → ℤ)}

@@ -2,8 +2,10 @@
 
 Lean module: `Langlands.GroupScheme.IntegralModel.KernelCentralizer`.
 
-Worker 209, with Worker 200, for the kernel-centralizer construction in
-Task 6404. This is derived infrastructure assembled from published Library
+This module is the kernel-centralizer construction for the opposite
+factors at depth zero on the Galois-fixed points
+(`UnramifiedFixedDepthZeroOppositeStatement`, KP Proposition 9.4.9(2)).
+This is derived infrastructure assembled from published Library
 results. All constructions preserve an arbitrary universe `u`.
 
 ## Source and scope
@@ -24,7 +26,7 @@ inclusion for a smooth integral model and any map from a split integral
 torus. Generic connected reductivity follows when the ambient generic
 group is connected reductive and the generic character is nonzero.
 Root-group comparisons, residue radicals, Weyl lifts and the final
-opposite-factor criterion are subsequent proof obligations.
+opposite-factor criterion are not part of this module.
 
 ## Full centralizers
 

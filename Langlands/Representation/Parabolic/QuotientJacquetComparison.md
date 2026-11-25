@@ -99,10 +99,9 @@ The p-adic specialization also reuses the published normalized-parabolic
 finite-length and exactness proofs through `Aubert.AlternatingOperator`.
 Their transitive representation-theoretic and classification dependencies remain
 those of the existing proofs; this module makes no classification-independence
-claim and supplies no new external structural assumption. The host task's
-source/dependency note records the declaration-body closure separately.
+claim and supplies no new external structural assumption.
 
-This focused unit compares actual GL quotient and product Levi Jacquet models.
+This module compares actual GL quotient and product Levi Jacquet models.
 The shared general reductive datum, its induction model, the general-to-GL
 operator comparison, Haar modulus bridge and full graded Zelevinsky comparison
-remain separate host or sibling obligations.
+are separate obligations, not treated in this module.

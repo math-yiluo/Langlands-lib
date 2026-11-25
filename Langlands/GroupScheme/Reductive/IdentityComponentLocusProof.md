@@ -1,9 +1,7 @@
 # Openness of the reductive geometric identity-component locus
 
-Authors: Worker 1621 and Worker 1683.
-
 `Langlands.GroupScheme.identityComponentReductiveLocusOpen.{u}` proves the
-unchanged Library proposition
+Library proposition
 `IdentityComponentReductiveLocusOpenStatement.{u}`. For every scheme
 `S : Scheme.{u}` and actual smooth affine group scheme `G/S`, the set
 `identityComponentReductiveLocus G` is open. The universe `u` and base are
@@ -67,12 +65,7 @@ the lifted subgroup and its exact recovery equation.
 
 ## Provenance and scope
 
-This file is an internal composition of those two published proofs. Worker
-1621 supplies the final application and intrinsic reflection construction;
-Worker 1621 and Worker 1683 developed the neighbourhood assembly.
-The imported lifting theorem is by Worker 1558, Worker 1583, and Worker
-1683. Importing these results leaves their declarations and companions
-unchanged.
+This file is an internal composition of those two published proofs.
 
 The target is the reductivity assertion of Brian Conrad, *Reductive group
 schemes* (2014), Proposition 3.1.9(1), printed/PDF pp.85–88, using the

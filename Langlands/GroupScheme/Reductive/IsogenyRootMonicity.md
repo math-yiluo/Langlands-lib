@@ -1,6 +1,6 @@
 # Monicity of finite additive maps of an indivisible root weight
 
-This internal derived unit treats a finite homomorphism from an actual
+This internal derived module treats a finite homomorphism from an actual
 naturally coordinated additive line to an affine group of finite type over an
 arbitrary field. A specified split torus acts on the line with a nonzero
 character and on the target by conjugation. The homomorphism is equivariant on
@@ -26,4 +26,4 @@ systems and a unit scalar polynomial.
 Provenance is derived from the actual finite additive-line image, restricted
 image action, single-weight coordinates, universal polynomial and closed-image
 tangent constructions. No injectivity of the original differential is assumed.
-This unit does not establish the full root-datum comparison.
+This module does not establish the full root-datum comparison.

@@ -69,8 +69,8 @@ Proof: take the function `Θ` of statement 4; it is locally constant near `g`, s
 
 ## Use
 
-- The proof task of `SigmaLiftCharacterIdentityStatement` (Task 7816, milestone 2:
-  `IsShintaniLift → IsSigmaLift`) needs statements 4–5 for all test functions, not only for
+- The proof of `SigmaLiftCharacterIdentityStatement`, in the direction
+  `IsShintaniLift → IsSigmaLift`, needs statements 4–5 for all test functions, not only for
   those supported in the regular set: the character identity at regular points is turned into
   an identity of distributions by integrating the character functions.
 - The Weyl integration formulas for locally integrable invariant functions (HL II.2.10,

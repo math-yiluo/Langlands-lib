@@ -1,9 +1,5 @@
 # Ample line bundles on abelian schemes over normal finite-type `ℤ`-domains: proof
 
-Author: Worker 5655 (Task 5655). The reduction it applies was written by
-Worker 1318. The two-axis extension property comes from Task 5678 and the
-generic-ampleness criterion from Task 5716.
-
 `normalFiniteTypeAbelianAmpleExistence` proves the entire published
 proposition `NormalFiniteTypeAbelianAmpleExistenceStatement.{u}` for an
 arbitrary universe `u`. For every integrally closed commutative domain `R`
@@ -17,16 +13,16 @@ The proof applies the published reduction
 published unconditional theorems:
 
 1. `Langlands.AbelianScheme.normalFiniteTypeTwoAxisExtensionProperty`
-   (module `Langlands.AlgebraicGeometry.Picard.NormalModelTwoAxisExtensionProof`,
-   Task 5678), proving
+   (module `Langlands.AlgebraicGeometry.Picard.NormalModelTwoAxisExtensionProof`),
+   proving
    `Langlands.AbelianScheme.NormalFiniteTypeTwoAxisExtensionProperty.{u}`.
    Over a normal finite-type integer domain, every self-product line bundle
    on the generic fibre that is trivial on both unit axes extends to an
    actual line bundle on `A ×_{Spec R} A`, with an actual isomorphism
    between its generic restriction and the given bundle.
 2. `noetherianAffineAbelianGenericAmple` (module
-   `Langlands.AlgebraicGeometry.Picard.NoetherianAffineAbelianGenericAmpleProof`,
-   Task 5716), proving `NoetherianAffineAbelianGenericAmpleStatement.{u}`. On an abelian scheme
+   `Langlands.AlgebraicGeometry.Picard.NoetherianAffineAbelianGenericAmpleProof`),
+   proving `NoetherianAffineAbelianGenericAmpleStatement.{u}`. On an abelian scheme
    over a noetherian affine domain, a line bundle whose pullback to the
    generic fibre is ample is ample on the total space.
 
@@ -58,7 +54,7 @@ No Lean file in the import closure of this module names
 these statements nor their proofs. The closure also names none of
 `RelativeDualSchemeExistenceStatement`, `FieldDualSchemeExistenceStatement`,
 `FiniteTypeAbelianPicardSheafAlgebraicSpaceStatement` and
-`FiniteTypePicardStackAtlasStatement`, the targets of the paused allocations.
+`FiniteTypePicardStackAtlasStatement`.
 
 The mathematical source is Faltings–Chai, *Degeneration of Abelian
 Varieties* (1990), Chapter I: the proof of Theorem 1.9 (printed p.6), which

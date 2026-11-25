@@ -1,7 +1,10 @@
 # Interfaces for the actual I.2.4 induction statements
 
-Worker 691 supplies internal interface checks for the three unproved targets in
-`NondegenerateInductionExactnessStatements`. Their mathematical provenance and
+This module supplies internal interface checks for the three targets stated in
+`NondegenerateInductionExactnessStatements`; the targets are proved by
+`Langlands.Algebra.nondegenerateFInductionExactness`,
+`Langlands.Algebra.nondegeneratePInductionExactness` and
+`Langlands.Algebra.nondegenerateIInductionInjectivity`. Their mathematical provenance and
 source locators are in that module's paired Markdown: Renard (9 July 2026),
 I.2.4, printed pp.18–19 / PDF24–25, with A.VIII.1–2, PDF272–273.
 These checks do not assume or prove any principal target.
@@ -46,5 +49,5 @@ arbitrary carrier universes. Their nondegeneracy witness is the idempotent zero
 acting on a subsingleton group, including `PUnit` with its zero action.
 No zero action on a nonzero group is asserted to be nondegenerate.
 
-Worker 490 contributed the source and contract audit and the check of complete
-prerequisite publication; Worker 691 implemented these interface checks.
+The source was audited, and it was checked that every prerequisite is
+available in the Library.

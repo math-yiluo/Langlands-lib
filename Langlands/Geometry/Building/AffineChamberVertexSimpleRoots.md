@@ -106,7 +106,6 @@ Auxiliary results without the root-system hypothesis:
   and hence it acts transitively on Δ." The cited discussion in §9.2.4 (printed p. 327,
   PDF p. 358) is that the barycenter of a Γ-stable facet is Γ-fixed. Here the hypothesis is
   that the fixed points in the closed chamber form a subsingleton. The finite-simplex part is
-  Worker 227's
   `exists_smul_eq_of_simplexFixedPointSubsingleton`
   (`Langlands.Geometry.Building.SimplexFixedPointTransitivity`). The rest (the action on
   simple roots, naturality, transfer from `A` to `V`) is internal glue.
@@ -153,5 +152,5 @@ Auxiliary results without the root-system hypothesis:
   `x ↦ x - c`: the points `p_ψ = x_ψ - c` are affinely independent, `γ` acts on `V` by
   `v ↦ γ(v + c) - c` and maps `p_ψ` to `p_{γ • ψ}`. The convex hull of the `p_ψ` lies in the
   translate of the closed chamber (it is convex, by the simple-root criterion). So the
-  fixed points of `Γ` in the hull form a subsingleton, and Worker 227's
+  fixed points of `Γ` in the hull form a subsingleton, and
   `exists_smul_eq_of_simplexFixedPointSubsingleton` gives transitivity.

@@ -1,8 +1,8 @@
 # Prescribed clopen diagonalizable lifts over strictly Henselian local rings
 
-Worker 872 and Worker 517. The theorem
+The theorem
 `Langlands.GroupScheme.multiplicativeTypeStrictHenselianLift` proves exactly
-the unchanged `MultiplicativeTypeStrictHenselianLiftStatement` in every
+`MultiplicativeTypeStrictHenselianLiftStatement` in every
 universe. For any permitted strictly Henselian local base, ambient group,
 finitely generated full abelian character group and prescribed
 special-fibre isomorphism, it supplies a group homomorphism with exactly
@@ -25,7 +25,7 @@ source so that the prescribed special-fibre map is recovered exactly.
 The construction adapts the clopen lifting step in Brian Conrad,
 *Reductive group schemes* (2014), proof of Theorem B.4.1, pp. 298–299.
 It allows non-Noetherian bases, nonsmooth and noncommutative ambient
-groups, and character groups with torsion. The preserved statement
+groups, and character groups with torsion. The statement
 includes the hypothesis that all geometric fibres have multiplicative
 type. The argument uses the prescribed special-fibre diagonalization to
 supply the splitting it needs.

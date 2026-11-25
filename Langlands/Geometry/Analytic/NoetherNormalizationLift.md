@@ -1,7 +1,5 @@
 # Normalization with a proved lift into the original Tate algebra
 
-Author: Worker 56.
-
 Let K be a complete ultrametric normed field and let a bounded K-algebra
 map from the n-variable Tate algebra into a nontrivial normed commutative
 K-algebra B be finite as a ring homomorphism. The theorem constructs

@@ -1,6 +1,6 @@
 # Torus coefficients of the unramified unequal-rank integrand
 
-Author: Worker 1797. Module
+Module
 `Langlands.Representation.RankinSelberg.UnramifiedPairTorusCoefficient`, namespace
 `Langlands.RankinSelberg.UnramifiedPairTorus`.
 
@@ -19,8 +19,8 @@ over `N_(n+1) \ GL_(n+1)` is computed with the Iwasawa decomposition, Shintani's
 for `W₀` on torus elements, and the Cauchy identity. Everything in this module is
 internal and derived. The one definition, `extendWeight`, is an auxiliary padding of
 exponent vectors and has no counterpart in the source. The analytic regrouping (the
-Cauchy identity) is not done here: it is Worker 1767's `exists_schurCauchy_radius`,
-applied in `UnramifiedPairProof`.
+Cauchy identity) is not done here: it is `exists_schurCauchy_radius` (module
+`SchurCauchyEvaluation`), applied in `UnramifiedPairProof`.
 
 ## Weights
 
@@ -103,8 +103,9 @@ let `E = unequalRankIntegrand ψ abv 0 k w w' s 0` on `N_(n+1) \ GL_(n+1)`. The 
   `standardCharacter_nondegenerate`) makes `W₀` vanish there.
 - `torusCoefficient_natWeight`: for an antitone natural tuple `α`, the coefficient equals
   `schurPairTerm (unramifiedClass F χ) (unramifiedClass F χ') (q^(-s)) α`. Both Whittaker
-  values come from Worker 1767's published Shintani formulas `sphericalTest_torus_schur`
-  and `inverseSphericalTest_torus_schur`: half modulus times `satakeSchur`. The scalar
+  values come from the published Shintani formulas `sphericalTest_torus_schur`
+  and `inverseSphericalTest_torus_schur` (module `SphericalWhittakerFormula`): half
+  modulus times `satakeSchur`. The scalar
   factors then combine by `scalar_identity`.
 
 ## Main theorem

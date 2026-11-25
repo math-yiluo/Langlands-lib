@@ -1,7 +1,5 @@
 # The fold morphism of an induced space on the copies
 
-Author: Worker 5254.
-
 This module proves facts about the fold morphism `foldHom H X : X_{G/H} → X`
 (module `InducedSiteFaithful`) of Berkovich's induced space `X_{G/H}` (module
 `InducedAnalyticSpace`). It is a helper for the proof of Berkovich's Example

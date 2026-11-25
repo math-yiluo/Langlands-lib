@@ -1,6 +1,6 @@
 # The full star action on an actual type-D diagram
 
-This internal unit transports the elementary type-D Cartan symmetry results
+This internal module transports the elementary type-D Cartan symmetry results
 to the full absolute Galois action on actual Tits index vertices. It works over
 every field at arbitrary universe, with the supplied affine locally finite type
 group scheme and its actual Tits index data. No local field or rank-one

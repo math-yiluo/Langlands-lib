@@ -1,7 +1,5 @@
 # Reduction of rational strongly regular representatives to two prerequisites
 
-Author: Worker 1601.
-
 This module proves the target
 `Langlands.GroupScheme.QuasiSplitSimplyConnectedRegularConjugateStatement.{u}`
 conditionally. Two prerequisite statements are explicit hypotheses:

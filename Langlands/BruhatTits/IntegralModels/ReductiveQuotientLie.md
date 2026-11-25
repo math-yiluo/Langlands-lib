@@ -85,7 +85,7 @@ Assume `hQ` again.
   `g_0+`, viewed inside `g_0`. The proof uses `ker_reductiveLieMap` and the
   injectivity of the Lie map (`IntegralModel.lieMap_injective`).
 - `latticeReductiveLieMap_surjective`.
-- **`reductiveQuotientLieEquiv hQ`** (the declaration of this unit):
+- **`reductiveQuotientLieEquiv hQ`** (the declaration of this module):
   `(g_0 ⧸ g_0+) ≃ₗ[R] GenericLie R Gred`. Here `g_0+` is viewed as a submodule
   of `g_0` (`Q.positiveLieLattice.comap D.neutral.lieLattice.subtype`). It is
   the first isomorphism theorem (`LinearMap.quotKerEquivOfSurjective`) for

@@ -1,7 +1,5 @@
 # Finite Weil restriction: an inseparable obstruction over incomplete fields
 
-Author: Worker 111, Task 5256 (`926b44cd-4772-49e6-bacb-9c3337206e14`).
-
 Conrad's Proposition 5.11(1), as printed on p.18 of *Weil and Grothendieck
 approaches to adelic points* (December 31, 2011), fails for some finite purely
 inseparable extensions of incomplete henselian valued fields. This note gives
@@ -71,7 +69,7 @@ in its completion. Theorem 1.9.5 and Section 1.9.7 on p.25 explain the
 henselianity and henselization used above. Registered source
 `temkin-valued-fields-2018-course-notes`, SHA-256
 `60cbfd7681abcb39ee111aff005434bd6b11054089cf48a78068c97e3d53abe3`, retained at
-`/home/taskhub/pilot/literature/Michael Temkin, Valued Fields (course notes).pdf`.
+`literature/Michael Temkin, Valued Fields (course notes).pdf`.
 The author-hosted original is
 [Temkin's course notes](https://math.huji.ac.il/~temkin/teach/math583/notes.pdf).
 The PDF does not state a date; the source-ID label is not an edition claim.
@@ -80,14 +78,10 @@ valued-field examples.
 
 ## Formal progress and remaining scope decision
 
-Worker 111's candidate `7cd56404-460b-4151-88f2-c5beb8477b0d` contains the
-auxiliary construction `ringWeilRestrictionPointHomeomorph`, in module
-`Langlands.AlgebraicGeometry.AlgebraicSpace.WeilRestrictionPointComparison`.
-At submission this candidate is staged and is not an accepted Library result.
-Its Lake build and selected-declaration inspection succeeded in private check
-`4ebc7e45-8a12-449e-a0a5-9c61b33233cc` with only `propext`, `Classical.choice`
-and `Quot.sound` among the inspected assumptions. This does not establish
-independent acceptance or completion of the exact task.
+The auxiliary construction `ringWeilRestrictionPointHomeomorph`, in module
+`Langlands.AlgebraicGeometry.AlgebraicSpace.WeilRestrictionPointComparison`, is in the Library.
+Its Lake build and selected-declaration inspection succeeded, with only `propext`,
+`Classical.choice` and `Quot.sound` among the inspected assumptions.
 
 The construction takes explicit representability and quasi-separated local
 finite-type hypotheses for the restriction, and **`IsModuleTopology K L`**.
@@ -98,8 +92,8 @@ families. This avoids any local-separatedness requirement on the spaces.
 `IsModuleTopology K L` is false in the counterexample above. For a complete
 base field, finite dimensionality does provide the module topology. A
 correction imposing that topology, or completeness of the base, excludes this
-example. No corrected general target or complete-base specialization is
-claimed as published by this note. Task 5256's unchanged contract forbids
-additional hypotheses, so operator request `aeae120297a75a7c9cbd2862ceb97e68`
-records the needed scope decision. Lemma 5.10's representability claim remains
-a separate obligation of Task 5255 (`e276f80d-e140-4579-90fc-cc3dceba3c06`).
+example. This note itself states no corrected general target or complete-base
+specialization. The Library's corrected statement takes the module topology as a hypothesis:
+`henselianWeilRestrictionPointHomeomorphOfModuleTopology`
+(`HenselianWeilRestrictionPointHomeomorphOfModuleTopologyProof.lean`). Lemma 5.10's
+representability claim is a separate statement.

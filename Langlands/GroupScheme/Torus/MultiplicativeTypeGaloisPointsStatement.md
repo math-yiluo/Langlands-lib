@@ -181,7 +181,8 @@ The provenance is derived for these reasons:
 - `k`, `Ks`, `G`, the splitting field and `Λ` lie in one universe `u`. This
   is a formalization convention.
 
-Relation to the Library. The Library has no statement of Remark 12.26.
+Relation to the Library. Apart from this module, the Library has no statement
+of Remark 12.26.
 Related declarations:
 
 - `TorusEquivariantCharacterValueDescentStatement` (in
@@ -221,7 +222,11 @@ it has no entry for printed pp. 3, 6, 230, 231, 232, 233, 236, 237, 239 or
 Chapter 12, one entry, on p. 234 (Example 12.10); it has no entry for printed
 pp. 239 or 240.
 
-## For the later proof (not part of this unit)
+## For the proof (not part of this module)
+
+The Library proves the statement as
+`Langlands.GroupScheme.multiplicativeTypeGaloisPoints` in
+[`MultiplicativeTypeGaloisPointsProof`](MultiplicativeTypeGaloisPointsProof.md).
 
 Milne states the remark without proof. A proof of the Lean statement can
 follow these steps.

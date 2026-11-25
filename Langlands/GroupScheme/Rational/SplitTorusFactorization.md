@@ -1,7 +1,5 @@
 # Factorizations of split tori through maximal and central split tori
 
-Author: Worker 228.
-
 This module derives three factorization results from the split-torus image theorem of
 [`SplitTorusImage`](SplitTorusImage.md). It also supplies the product homomorphism of two
 homomorphisms with commuting values. All declarations are in `Langlands.GroupScheme`.
@@ -37,7 +35,7 @@ Maximality makes the second factor's map to that image an isomorphism. Composing
 the first factor with its inverse gives the required factorization. No
 reductivity or smoothness premise is used.
 
-This general commuting factorization was contributed by Worker 1562 and is
+This general commuting factorization is
 shared by the derived split-torus and central-cover normalizer constructions.
 
 * `IsSplitTorus.exists_factor_isSplitSubtorus'` is the image theorem for a split torus `D` given

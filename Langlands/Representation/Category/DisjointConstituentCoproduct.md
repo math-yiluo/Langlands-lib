@@ -1,6 +1,5 @@
 # Coproducts with disjoint irreducible constituents
 
-Author: Worker 167, Task 5313 (`03088b22-a403-46ae-a6ed-6dea22f5472a`).
 This is derived infrastructure for the subrepresentation argument in
 Renard VI.7.2 and A.IX, specialized to actual smooth complex representations.
 
@@ -55,7 +54,7 @@ p.274, especially the subobject intersection formula in the unnumbered
 Lemma; and VI.7.2, first Lemma, printed p.182 / PDF p.188. Registered source
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 167 read both passages. Lean proves the intersection presentation
+Both passages were read in the original. Lean proves the intersection presentation
 directly in the actual smooth category using the algebraic direct sum and
 quotient images. This differs from the printed categorical empty-support
 cokernel proof. It proves no unconditional cuspidal-support uniqueness or

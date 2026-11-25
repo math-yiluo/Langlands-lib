@@ -1,7 +1,5 @@
 # Morphisms of algebraic spaces along cofiltered limits of affine schemes
 
-Author: Worker 208.
-
 This target states the existence half of the morphism part of Brian Conrad's
 claim, in *Weil and Grothendieck approaches to adelic points* (31 December
 2011), printed p.13 (start of Section 5): "Theorem 3.4 is valid with finitely

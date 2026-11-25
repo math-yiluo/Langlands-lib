@@ -8,6 +8,6 @@ Now fix a nontrivial arbitrary commutative ring, an affine reductive group, a fi
 
 `originalParabolicAction` constructs the actual action of the original affine parabolic representative on each actual represented term by restricting ambient conjugation to this proved stable closed subgroup. The weights remain the original unscaled canonical face heights. No regularity of the original cocharacter, field, noetherian, or reducedness hypothesis is imposed; the nontrivial-ring premise is retained explicitly from the fixed-torus parabolic comparison.
 
-This unit supplies full original parabolic normalization. It does not establish different-torus overlap compatibility, effective global descent, or the final relative radical filtration statement.
+This module supplies full original parabolic normalization. It does not establish different-torus overlap compatibility, effective global descent, or the final relative radical filtration statement.
 
 Provenance: internal combination of the original root commutator normality, actual ambient intrinsic cutoff identification, centralizer normalization for arbitrary test-dependent points, the dynamic limit decomposition, and actual face-cocharacter parabolic comparison.

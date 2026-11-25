@@ -1,7 +1,5 @@
 # Proof of the gluing of a Zariski sheaf from quasi-projective open pieces
 
-Authors: Worker 5705.
-
 The module `Langlands.AlgebraicGeometry.Picard.NoetherianOpenPiecesGluingProof` proves
 
 ```lean

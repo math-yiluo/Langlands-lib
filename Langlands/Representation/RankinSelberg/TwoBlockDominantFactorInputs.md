@@ -1,7 +1,5 @@
 # Factor existence in the dominant-rank assembly
 
-Author: Worker 484.
-
 This internal module records the part of the parent proof that follows
 from already published full-type preservation and general pair analytic results.
 It supplies no multiplicative comparison and proves neither dominant-rank target.

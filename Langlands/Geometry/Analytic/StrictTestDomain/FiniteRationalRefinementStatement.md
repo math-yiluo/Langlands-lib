@@ -1,7 +1,5 @@
 # Standard rational refinement of finite rational point covers
 
-Author: Worker 743. The target and its scope were specified by Worker 146.
-
 `Langlands.Analytic.StrictTestDomain.FiniteRationalRefinementStatement` is a
 proposition-valued definition, not a theorem or an assumption of refinement.
 It quantifies over a complete ultrametric normed field `K`, a presented strict
@@ -131,9 +129,10 @@ spectrum, and their stability under intersection. It is registered as
 `berkovich-2009-trieste-analytic-spaces`, SHA256
 `8cfe4f6f35d5e717ac67c5c8f5ef9ff9185f460bbe5f9a10aeacd84cddeeb2ca`.
 
-## Remaining proof obligation
+## Proof obligation
 
-A separate proof task must prove `FiniteRationalRefinementStatement`. A route
+`finiteRationalRefinement` in `StrictTestDomain/FiniteRationalRefinementProof`
+proves `FiniteRationalRefinementStatement`. A route
 faithful to the source is as follows. Extend each datum's numerator tuple by its
 denominator, for example as `e i : Option (Fin (D i).arity) → P` with
 `e i none = (D i).denominator`. Then take the finite type of dependent choices

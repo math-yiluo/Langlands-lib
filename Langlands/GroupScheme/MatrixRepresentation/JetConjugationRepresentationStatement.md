@@ -47,7 +47,7 @@ SGA 3 works with groups of finite presentation. The statement assumes
 smoothness and separatedness only. Separatedness makes the unit section a
 closed immersion, so that `IdentityJet.scheme G n` is the infinitesimal
 neighbourhood. Smoothness makes its coordinate algebra locally free. This is
-an intermediate statement of Task 7782 toward
+an intermediate statement toward
 `Langlands.GroupScheme.LocalCentralKernelRepresentationStatement`.
 
 ## Registered sources

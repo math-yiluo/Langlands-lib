@@ -1,6 +1,6 @@
 # Tensor powers of line bundles glued from unit cocycles
 
-This internal unit constructs the actual tensor-power comparison for a
+This internal module constructs the actual tensor-power comparison for a
 line glued from a unit cocycle. For any covering family of opens `T i`
 on an arbitrary scheme `X` and any unit cocycle `g` on their overlaps,
 `powerIso g hg hT n` is an isomorphism of actual module sheaves

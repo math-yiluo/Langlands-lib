@@ -212,7 +212,8 @@ theorem conj_mem_torusRestrictedRootDepthSubgroup_smul
     rw [RootFunctionFamily.smul_apply, weylAction_inv_apply_apply, hv']
     exact hv.2
   have hres : f ≫ weylAction i w χ = m • ρ β := by
-    rw [hρ, heq, map_nsmul]
+    have hn : ρ (m • β) = m • ρ β := ρ.toLinearMap.toAddMonoidHom.map_nsmul m β
+    rw [hρ, heq, hn]
   exact Subgroup.mem_iSup_of_mem (weylAction i w χ)
     (Subgroup.mem_iSup_of_mem (weylAction_mapsTo_relativeRoots i w hχ)
       (Subgroup.mem_iSup_of_mem m (Subgroup.mem_iSup_of_mem hm

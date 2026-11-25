@@ -1,6 +1,6 @@
 # The regularity quotient filtered by strict predecessor pieces
 
-Worker 154. Derived geometric prerequisite for Renard VII.3.3 (9 July 2026,
+Derived geometric prerequisite for Renard VII.3.3 (9 July 2026,
 printed pp.234–235 / PDF pp.240–241). The quotient is the original quotient
 by the boundary-support image at the identity. Its filtration has one grade
 for each actual double coset strictly below the identity. Each grade is

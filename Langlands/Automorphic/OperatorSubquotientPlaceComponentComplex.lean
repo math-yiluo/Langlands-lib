@@ -5,7 +5,7 @@ import Langlands.Automorphic.OperatorSubquotientPlaceComponent
 
 The complex-place half of `Langlands.Automorphic.OperatorSubquotientPlaceComponent`: for an
 operator subquotient `Q` of `GL_n` over a number field and a complex place `v`, the place
-actions of `Q` at `v` descend from the numerator realization `Q.upper`, and Worker 174's
+actions of `Q` at `v` descend from the numerator realization `Q.upper`, and the
 construction of irreducible admissible place components for cuspidal realizations
 (`Langlands.Automorphic.PlaceComponentExistence`) carries over to `Q`.
 
@@ -326,7 +326,7 @@ theorem representation_mem_of_complexPlaceStable (v : CP) (Z : Submodule ℂ Q.S
     intro x hx
     have h : Q.representation (⟨e₁, he₁⟩ * ⟨e₂, he₂⟩ : automorphicOperatorAlgebra F n) x =
         Q.representation ⟨e₁, he₁⟩ (Q.representation ⟨e₂, he₂⟩ x) :=
-      LinearMap.congr_fun (map_mul Q.representation _ _) x
+      LinearMap.congr_fun (MonoidHom.map_mul Q.representation _ _) x
     exact (congrArg (fun y => y ∈ Z) h).mpr (h₁ _ (h₂ x hx))
 
 /-- For irreducible `Q`, such a subspace is `⊥` or `⊤`. -/

@@ -2,7 +2,7 @@
 
 This internal construction supplies full original compatible maps from a
 saturated greatest-chart presentation into an arbitrary original target
-presentation. It complements Worker 598's `GlobalChartSourceMaps` construction
+presentation. It complements the `GlobalChartSourceMaps` construction
 in the actual saturated category: here the target need not already be
 saturated, so the result can be used before extending a constructed cone.
 The proof route and recovery/composition pattern are adapted from that

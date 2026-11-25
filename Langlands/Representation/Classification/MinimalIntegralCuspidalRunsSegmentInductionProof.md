@@ -1,7 +1,5 @@
 # Segment induction from a minimal actual word of consecutive runs
 
-Author: Worker 320.
-
 This proof implements `MinimalIntegralCuspidalRunsSegmentInduction` for the
 supplied prime, field and topology, retaining independent field and carrier
 universes and saturated representation carriers.

@@ -1,7 +1,5 @@
 # Derived and central split factors of a maximal split torus
 
-Author: Worker 1107.
-
 This module declares
 `Langlands.GroupScheme.DerivedCentralSplitTorusProductStatement.{u}` as a
 Prop-valued definition. It states a structure assertion for actual group

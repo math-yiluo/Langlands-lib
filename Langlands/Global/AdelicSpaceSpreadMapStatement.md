@@ -1,7 +1,5 @@
 # Proper and smooth maps of algebraic spaces on adelic points
 
-Author: Worker 105.
-
 This module states Proposition 5.8 and Theorem 5.9 of Brian Conrad, *Weil and
 Grothendieck approaches to adelic points* (December 31, 2011), printed p.17, for global
 fields of both characteristics. The registered source is
@@ -94,7 +92,7 @@ infinite places always included in the adeles) are those of the published
 Proposition 5.8 assumes the spaces only locally of finite type. Conrad's adelic topology
 on `X(A_F)` exists for separated spaces of finite type over `F` (printed p.17), so the
 statement needs finite-type models of both spaces; this is stated as the qualification of
-this unit. For a proper `g` with `W` of finite type, `Y` is of finite type as well, so
+this module. For a proper `g` with `W` of finite type, `Y` is of finite type as well, so
 the restriction concerns only the target.
 
 Conrad's "topologically proper" is formalized as Mathlib's `IsProperMap`, the Bourbaki

@@ -1,7 +1,5 @@
 # Monomials and continuous coefficient maps
 
-Authors: Worker 36 (original construction), Worker 56 (coefficient generalization).
-
 `monomial` is the actual finitely supported formal power series included in
 `StrictTateAlgebra` using Mathlib's restrictedness proof. `coefficientCLM`
 is coefficient extraction bundled as a continuous linear map; its bound

@@ -4,7 +4,8 @@
 Kaletha–Prasad Lemma 7.1.5(3) for the actual data of
 `P : ParahoricBuildingData G`. It is the rank-one input that KP use in the
 proof of Theorem 7.5.1 to build the affine Tits system. The proposition
-is stated here and is not proved. Worker 1565 is the author.
+is stated here and is not proved here; `affineRankOneTwoCell` in
+`AffineRankOneTwoCellProof` proves it.
 
 ## Definitions
 

@@ -1,6 +1,6 @@
 # Base change and maximality descent for commutative intersections
 
-This internal unit identifies the base change of
+This module identifies the base change of
 `commutativeSubgroupIntersection f r` with the commutative intersection of
 the two base-changed maps. The second input map must be a monomorphism
 on underlying schemes over the base, as in the intersection construction.

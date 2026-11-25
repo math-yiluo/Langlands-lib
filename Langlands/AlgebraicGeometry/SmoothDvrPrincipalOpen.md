@@ -33,7 +33,7 @@ generization because a flat morphism is generalizing. If a point lies outside
 special, the assumed fibre-density supplies a proper special generization
 in `W`, and flatness supplies a further proper generic generization.
 The stalk at the maximal complement point is a factorial domain by regularity
-and factoriality of smooth DVR stalks. The published
+and factoriality of smooth DVR stalks. The lemma
 `FactorialAffineComplement.false_of_generization_chain` rules out this chain.
 Thus every complement point has a generic-fibre generization outside `W`.
 The maximal-generization lemma is reused from the abelian-scheme development;
@@ -51,7 +51,7 @@ uniformizer. To justify finiteness without total integrality, it uses the germ
 at a chosen special-fibre point. Nonvanishing at a generization implies that
 this germ is nonzero: specialization of stalks would otherwise send it to a
 zero unit. The Krull intersection theorem in the noetherian local stalk
-bounds the possible powers. Worker 596's global division lemma then shows that
+bounds the possible powers. The global division lemma of `SmoothDvrGlobalSections` then shows that
 the normalized function is nonvanishing somewhere on the special fibre.
 Division does not change its principal open on the generic fibre.
 

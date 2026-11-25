@@ -1,7 +1,5 @@
 # Smooth moduli of closed subgroups of multiplicative type
 
-Author: Worker 872.
-
 `MultiplicativeTypeSubgroupModuli.SmoothMultiplicativeTypeSubgroupRepresentabilityStatement.{u}`
 asks, for every smooth affine actual group scheme `G/S` over an arbitrary
 scheme in universe `u`, for a smooth parameter scheme `M/S` and an actual

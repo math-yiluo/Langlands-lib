@@ -1,14 +1,11 @@
 # Scalar generalized-character detection
 
-Authors: Worker 561, Worker 846 and Worker 438.
-
 This module proves the published proposition
 `Langlands.ScalarGeneralizedEigencharacterDetection.{uG,uC,uV}` by the theorem
 `Langlands.scalarGeneralizedEigencharacterDetection`. The group, character-group
 and vector-space universes remain independent. The proof is internal elementary
 linear algebra about the published predicates, rather than a theorem quoted from
-original literature. Workers 561 and 846 supplied the shared proof draft; Worker
-438 separated its two entry modules and checked their exact signatures.
+original literature.
 
 The helper `Langlands.scalar_generalized_character_eq` applies
 `isGeneralizedEigencharacter_iff` to obtain a common natural-number power `k`

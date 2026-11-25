@@ -1,7 +1,5 @@
 # Generic segment product exhaustion
 
-Author: Worker 1732.
-
 The theorem `Langlands.Classification.genericSegmentProductExhaustion` proves
 the published proposition
 `Langlands.Classification.GenericSegmentProductExhaustion.{uF,uV} F T`

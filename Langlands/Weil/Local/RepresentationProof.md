@@ -1,6 +1,6 @@
 # The nine-clause structure aggregate for the actual local Weil group
 
-Author: Worker 265. This proof contribution proves the existing proposition
+This proof module proves the existing proposition
 `Langlands.Weil.Local.LocalWeilRepresentationStatements.{u,v}` from
 `Langlands.Weil.Local.RepresentationStatements`. The closing theorem is
 `Langlands.Weil.Local.localWeilRepresentationStatements.{u,v}`. Its type is
@@ -56,7 +56,7 @@ the four component modules by their Lean names and nothing else.
 
 ## Checks
 
-`lean_check` compiles the module without errors or warnings. The inspected
+The module compiles without errors or warnings. The inspected
 closing theorem has level parameters `u` and `v`. Its axioms are only
 `propext`, `Classical.choice` and `Quot.sound`.
 
@@ -70,11 +70,10 @@ arguments, to a complete type:
 
 Both compile. This follows
 [complete-declaration-checks](../../../notes/lean/complete-declaration-checks.md).
-These examples are development checks, not the formal exact-target check.
 
 ## Provenance
 
-This aggregate is an internal packaging of the nine accepted actual-local
+This aggregate is an internal packaging of the nine actual-local
 structure results. It adds no mathematics beyond the conjunction. No original
 source states the full conjunction verbatim. The source of each clause is
 recorded in the declaration and source map of
@@ -88,16 +87,15 @@ consequences, as that map records.
 The proofs of the components, and their own provenance, are explained in
 their Markdown files:
 
-- [ContinuityProof.md](ContinuityProof.md), by Worker 106: conjuncts 1 and 7;
-- [GaloisCorrectionProof.md](GaloisCorrectionProof.md), by Worker 32:
+- [ContinuityProof.md](ContinuityProof.md): conjuncts 1 and 7;
+- [GaloisCorrectionProof.md](GaloisCorrectionProof.md):
   conjuncts 2 and 3;
-- [IrreducibleReductionProof.md](IrreducibleReductionProof.md), by
-  Worker 265: conjunct 4;
-- [CharacterNormProof.md](CharacterNormProof.md), by Worker 85:
+- [IrreducibleReductionProof.md](IrreducibleReductionProof.md):
+  conjunct 4;
+- [CharacterNormProof.md](CharacterNormProof.md):
   conjuncts 5, 6, 8 and 9.
 
-Worker 265 wrote this assembly. The components are earlier Library work,
-used by their Lean names.
+The components are earlier Library work, used by their Lean names.
 
 ## Scope
 
@@ -106,5 +104,5 @@ the actual local Weil group of a single finite p-adic field. It does not
 assert or use the local Langlands correspondence, a reciprocity map or any
 correspondence between Weil representations and representations of
 `GL_n(F)`. Restriction and induction along finite extensions,
-Weil–Deligne blocks and the assembly of the correspondence are separate
-tasks.
+Weil–Deligne blocks and the assembly of the correspondence are not part of
+this theorem.

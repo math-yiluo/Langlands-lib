@@ -1,6 +1,6 @@
 # Exactness for compact sections and their algebraic duals
 
-Worker 337, Task 5960. Module
+Module
 `Langlands.Sheaf.Renard.ClosedRestrictionExactProof`, namespace
 `Langlands.Sheaf.Renard.ClosedRestriction`.
 

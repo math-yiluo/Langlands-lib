@@ -1,7 +1,5 @@
 # End homology of the finite subset Koszul complex
 
-Author: Worker 1015.
-
 This is an internal calculation for the finite subset Koszul complex constructed
 in `FiniteKoszulCochain`. Let `R` be any commutative ring, let `g` be a natural
 number, and let `a : Fin g → R`. The integer cochain complex has its subset module
@@ -51,4 +49,4 @@ These results use no regularity hypothesis and assert no vanishing of the
 other homology modules. They are direct deductions from the existing subset
 differential, its signs, categorical extension and module cokernel APIs, and
 the previously established reversed-dual order-ideal criterion. No external
-literature theorem is invoked in this unit.
+literature theorem is invoked in this module.

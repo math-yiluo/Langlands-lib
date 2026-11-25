@@ -66,4 +66,4 @@ the Kneser–Tits problem and in Rapinchuk's survey of the Kneser–Tits problem
 of the elementary subgroup of isometry groups of Witt index one. The formulas here are
 written for Tits's σ-quadratic forms with row vectors and are verified directly in Lean;
 they are building blocks for the proof of the Kneser–Tits property for quaternionic spin
-groups (Task 5398).
+groups (`LocalSpinKneserTitsStatement`).

@@ -1,7 +1,5 @@
 # Exact coefficient extraction for normalized Jacquet exponents
 
-Author: Worker 322.
-
 `Langlands.GLJacquetExponentCoefficientExtractionStatement.{uF,uV}` is a closed
 Prop-valued definition. This module states the extraction consequence of
 canonical Jacquet duality; it does not prove it or the tempered exponent

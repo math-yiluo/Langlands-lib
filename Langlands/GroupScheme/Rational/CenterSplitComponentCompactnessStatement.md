@@ -1,10 +1,8 @@
 # Compactness of the actual scheme-center point quotient
 
-Author: Worker 101.
-
 This module states WST-CEN-01. Both declarations are `Prop`-valued definitions;
 neither is a proof of compactness. The point quotient and topology come from
-`CenterSplitComponent`, whose interface design benefited from Worker 207.
+`CenterSplitComponent`.
 
 ## Exact target
 
@@ -101,9 +99,9 @@ The complete official Milne errata snapshot of 2 November 2026, source
 corrections do not change the particular center, character classification,
 quotient, or torsor passages used here.
 
-## Route and retained proof obligations
+## Route of a proof
 
-A prospective proof first represents the full center by its actual
+A proof first represents the full center by its actual
 multiplicative-type group `Z` and forms the algebraic quotient `C = Z/A`.
 The character-module classification and maximality of `A` must show that the
 largest torus `C_t` is anisotropic. Kaletha--Prasad 2.2.9 then makes `C_t(F)`
@@ -120,13 +118,14 @@ with the canonical point topology, give the quotient-topology comparison.
 One must prove that `ker q(F)` is precisely the actual image of `i(F)` in
 the numerator, and construct the resulting homeomorphism
 `CentralPointQuotient i hi.isCentralSplitTorus.isCentral ≃ₜ C(F)`.
-These algebraic and topological comparisons are proof obligations, not
-assumptions in either Lean declaration.
+These algebraic and topological comparisons have to be proved; they are not
+assumptions in either Lean declaration. `centerSplitComponentCompactness`
+(module `CenterSplitComponentCompactnessProof`) proves the statement along
+this route.
 
 This route does not infer a finite rational-point cokernel from an isogeny:
 an inseparable power map in equal characteristic can have infinite-index
 image. It also does not identify `(Z/A)(F)` with `Z(F)/A(F)` by definition.
-Until the bridge is proved, the Lean target remains exactly the quotient of
-actual rational-point groups. Equality of these center points with the
+The Lean target is exactly the quotient of actual rational-point groups. Equality of these center points with the
 abstract center of `M(F)` is the separately named
 `RationalCenterComparisonStatement`, not a premise of this compactness target.

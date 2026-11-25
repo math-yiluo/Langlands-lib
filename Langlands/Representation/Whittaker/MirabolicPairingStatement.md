@@ -1,8 +1,5 @@
 # Irreducible mirabolic functionals and twisted pairings
 
-Author: Worker 440. Worker 353 supplied the target specification and its route
-from JPSS to the equal-rank uniqueness argument.
-
 This module states three inputs from Jacquet–Piatetski-Shapiro–Shalika (1983),
 Proposition 1.4 and the two corollaries in §1.5, printed pp.380–384. The third
 input is the compact-standard pairing used explicitly on p.398 in §2.10.
@@ -190,9 +187,10 @@ the final trilinear uniqueness theorem, or transport to canonical topology.
 A proof following the original may need separately constructed
 classification-by-index and derivative/Fourier results, including the
 irreducibility and character/twist equivalences of the actual compact
-model. None is supplied as a hypothesis here. Worker 127's separate
-compact-minimality/Kirillov scope concerns inclusion of the compact model
-in the smooth model and the coefficient/support adapters; it is not a
+model. None is supplied as a hypothesis here. The separate
+compact-minimality and Kirillov statements (`MirabolicMinimalityStatement`,
+`KirillovStatement`) concern inclusion of the compact model
+in the smooth model and the coefficient/support adapters; they are not a
 proof of this statement family. The source correspondence to BZ76
 §§5.11–5.15, pp.46–50, explains potential prerequisites, without asserting
 that the derivative construction is already formalized.
@@ -223,8 +221,7 @@ was found in the checked project literature/notes or public Library notes.
 The imported model, functional, bilinear-form and normalization definitions
 are existing implementation infrastructure. The new propositions are
 source-derived p-adic specializations, and do not turn those definitions
-into proofs of the cited representation-theoretic results. All existing
-Library Lean/Markdown pairs are preserved.
+into proofs of the cited representation-theoretic results.
 
 ## All-field port
 

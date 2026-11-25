@@ -1,7 +1,5 @@
 # Intrinsic positive-real subgroups of actual adelic tori
 
-Worker 112.
-
 This is an internal construction derived from
 `Langlands.Global.PositiveRealTorus` and the published group-scheme point and
 character APIs. The preceding module realizes the fixed-splitting construction

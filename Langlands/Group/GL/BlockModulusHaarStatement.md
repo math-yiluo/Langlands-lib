@@ -1,7 +1,5 @@
 # The explicit block modulus is the Haar module of Levi conjugation
 
-Author: Worker 23.
-
 This file states a proposition. It does not prove it. The proposition
 `Langlands.GLBlockModulusHaarStatement` asserts that the published explicit block
 modulus `T.leviModulus B` of `Group/GL/BlockModulus` agrees with Bernstein and

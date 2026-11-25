@@ -1,7 +1,5 @@
 # Equivariant retractions onto normal adjoint subgroups
 
-Worker 1372.
-
 This module defines a structural proposition target and proves nothing.
 `NormalAdjointEquivariantRetractionStatement.{u}` concerns group schemes over
 an algebraically closed field `k : Type u`, for arbitrary `u` and in arbitrary
@@ -41,10 +39,11 @@ centralizer and hence the projection onto `H`. Applying this to the supplied
 compatible action gives equivariance of the projection. This reasoning uses the
 actual direct-product isomorphism and scheme-theoretic centralizer, so the
 claimed identities hold after every base change and on all test schemes,
-including nonreduced tests. Establishing the direct factor and implementing this
-argument are obligations of the separate proof, not results of this module.
+including nonreduced tests. Establishing the direct factor and the equivariance
+argument belong to the separate proof `normalAdjointEquivariantRetraction`
+(`Adjoint/NormalEquivariantRetractionProof.lean`), not to this module.
 
 This structural target supports the normal-subgroup case of semigroup
 intersection. It does not prove semigroup functoriality, realization, the radical
 and adjoint-quotient reductions, or `SemigroupComparisonStatement`. In particular,
-accepting the statement does not establish existence of the retraction.
+the statement by itself does not establish existence of the retraction.

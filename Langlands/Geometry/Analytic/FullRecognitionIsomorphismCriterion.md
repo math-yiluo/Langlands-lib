@@ -1,7 +1,5 @@
 # The isomorphism criterion through full-recognition pair systems
 
-Author: Worker 36.
-
 This module proves the sufficient direction of Berkovich's isomorphism
 criterion, Proposition 1.2.15(ii), for strong maps of local-domain
 enlargements. The criterion is stated through their full-recognition pair

@@ -62,12 +62,16 @@ The provenance is internal: the new definitions compose the existing faithful
 finite-image equivalence, finite-slice inclusion, chosen tensor-slice form and
 canonical local packaging. The last two constructors also use the previously
 constructed actual Haar pairings. No positive form is assumed in those last
-two constructors, but their explicit integrability hypotheses remain to be
-derived from cuspidality. This unit therefore does not prove the unconditional
-`CuspidalUnitaryLocalUnitarityStatement`. Once the actual cuspidal covering
-estimate is supplied as a proved theorem, its hypotheses fit
-`padicUnitaryFormOfCover` directly. No relation between `uF` and `uQ` and no
+two constructors, but their explicit integrability hypotheses are not
+derived from cuspidality here. This module therefore does not prove the unconditional
+`CuspidalUnitaryLocalUnitarityStatement`. The actual cuspidal covering
+estimate `OperatorRealization.exists_band_cover` (module
+`Langlands.Automorphic.CuspidalL2.SiegelCover`) fits the hypotheses of
+`padicUnitaryFormOfCover` directly; `cuspidalUnitaryLocalUnitarity` (module
+`Langlands.Automorphic.CuspidalUnitaryLocalUnitarityProof`) proves the statement
+this way. No relation between `uF` and `uQ` and no
 replacement of the original component carrier is used.
 
-Integration gives the local instances used here module-specific names to permit
-joint imports. Their types, values, and local scopes are unchanged.
+The local instances used here were given module-specific names to permit
+joint imports; the one for the spaces of operator realizations is private to the
+module instead. Their types, values, and local scopes are unchanged.

@@ -1,7 +1,5 @@
 # The empty-index standard subgroups and a generic cocharacter
 
-Author: Worker 1623.
-
 This is an internal comparison for the canonical standard subgroup models used
 in the adelic Siegel setup. For a connected reductive group over any field, a
 maximal split torus `i : T → G`, and a generic cocharacter `ν`, it identifies

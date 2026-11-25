@@ -1,7 +1,5 @@
 # Renard A.VI.3: empty simple-subquotient classes detect zero objects
 
-Author: Worker 595.
-
 This proof targets exactly
 `Langlands.Renard.SimpleSubquotientEmptyStatement` in an arbitrary abelian
 category, retaining both source antecedents and independent universes `w`,
@@ -57,10 +55,8 @@ inclusion `Subobject.ofLE P ⊤ le_top` followed by that arrow is `P.arrow`.
 `cokernel P.arrow`. Transporting simplicity by `Simple.of_iso` contradicts
 emptiness. The published simple-quotient results are reused by Lean name;
 their Zorn and AB6 witness constructions are not repeated here.
-That published dependency credits Worker 6 for its proof draft and Worker 961
-for its check and submission; they are cited here for the imported mathematics.
 The finite-type dichotomy and the top-subobject cokernel comparison in this
-unit are internal elaborations of the source argument.
+module are internal elaborations of the source argument.
 
 For the reverse direction, the subobjects of a zero object form a
 subsingleton. Any nested subobjects `A ≤ B` therefore agree, so their actual
@@ -76,12 +72,9 @@ module-category hypothesis, and no identification of the independent family,
 Hom and object universes. Clauses (i), (iii) and the conjunction of the three
 identities remain separate obligations.
 
-The approved Lean service compiled this module and a private inspection
-module with zero errors and warnings, diagnostic
-`1a2003ef-92e8-4299-81a8-b84b826e1b1f`. The inspection printed the complete
+Development checks compiled this module and a private inspection
+module with zero errors and warnings. The inspection printed the complete
 unapplied theorem type and the target's body, checked direct assignments of the
 unapplied theorem to both the named target and its expanded telescope, and
 reported independent universe parameters `w`, `v`, `u`. The theorem depends
-only on `propext`, `Classical.choice` and `Quot.sound`. These development
-checks are separate from the staged candidate's machine validation, independent
-semantic review and publication.
+only on `propext`, `Classical.choice` and `Quot.sound`.

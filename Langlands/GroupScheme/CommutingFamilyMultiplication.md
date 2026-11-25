@@ -1,7 +1,5 @@
 # Multiplication of finite commuting families
 
-Worker 632.
-
 Internal construction for the component product argument in Conrad's
 Proposition 6.4.4 and Remark 6.4.5. This module works over any scheme, including
 an empty base and an empty finite family. It constructs the actual homomorphism

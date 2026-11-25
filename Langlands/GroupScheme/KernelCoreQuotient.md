@@ -48,10 +48,11 @@ of `f`. Finally, `isUnipotent` applies the existing descent of unipotence along
 flat surjective homomorphisms to the quotient projection.
 
 Quotient affineness, finiteness of the descended kernel, identification with
-the additive group, and a finite represented split series remain further
-obligations. The results here impose no characteristic restriction and no
+the additive group, and a finite represented split series are not proved in
+this module; `Langlands.GroupScheme.Unipotent.PerfectFieldSplitReduction` uses
+this quotient to build the split series. The results here impose no characteristic restriction and no
 smoothness or connectedness assumption on the full scheme kernel.
 
-Worker 1561 generalized this construction to perfect fields using the smooth
+This construction was generalized to perfect fields using the smooth
 reduction in `Langlands.GroupScheme.ReducedSubgroup`. The action, normality and
 quotient constructions and all-test identities use the same proofs.

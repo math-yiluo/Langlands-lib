@@ -1,7 +1,5 @@
 # Unirationality of the same actual maximal-torus parameter scheme
 
-Author: Worker 1614.
-
 `Langlands.GroupScheme.MaximalTorusParameterUnirationalStatement.{u}` is
 a proposition definition at arbitrary universe `u`. For every field
 `k : Type u`, every smooth connected affine group scheme `G` over

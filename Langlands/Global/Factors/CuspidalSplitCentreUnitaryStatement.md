@@ -1,7 +1,5 @@
 # Cuspidal realizations trivial on `A_GL` have unitary central characters
 
-Author: Worker 3657.
-
 Lean module: `Langlands.Global.Factors.CuspidalSplitCentreUnitaryStatement`.
 
 This module states one proposition,
@@ -22,7 +20,7 @@ of `GL_{r+1}`:
   Getz–Hahn's normalization before Theorem 11.7.1: every function of `T` is
   invariant under the scalar matrices `a I_{r+1}` with `a ∈ A_(G_m)`.
 - `HasUnitaryCentralCharacter T` (published `AssociatedFactorStatement`, full
-  name `Langlands.ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter`).
+  name `Langlands.ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter`).
   This is the hypothesis of the proved theorem
   `CuspidalOperatorRealization.isUnitarizable_of_hasUnitaryCentralCharacter`
   (module `Automorphic.CuspidalUnitaryForm`) and of the published p-adic

@@ -26,7 +26,8 @@ The file defines this target and proves none of its clauses. Coordinate
 surjectivity is the geometric closed-immersion quotient fact; weightwise
 surjectivity also needs the split-torus decomposition argument. In
 particular, ordinary surjectivity does not itself supply weightwise lifts.
-A focused proof successor must establish both for these actual
-coordinates, using fixed-point preservation to obtain the augmentation
-quotient. The final support containment then follows from the already
+Both must be established for these actual coordinates, using
+fixed-point preservation to obtain the augmentation quotient;
+`Rational.ClosedImmersionPullbackProof` does this and proves the statement
+as `closedImmersionPullback`. The final support containment then follows from the already
 proved `support_subset_of_weightwise_lifts`.

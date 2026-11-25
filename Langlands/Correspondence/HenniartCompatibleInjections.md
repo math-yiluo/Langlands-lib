@@ -69,13 +69,13 @@ The rank bounds are part of the types of \(\varphi_L\) and \(\varphi_M\).
 This avoids requiring a choice of supercuspidal images for irreducible Weil
 classes in ranks above \(N\). `Ch` is the total multiset-valued map from
 `HenniartCyclicBaseChange`. The rank-bounded family types, the fixedness
-implication in item 4, and the lower-rank surjectivity premise are the
-formulation of Task 7376. The premise supplies the earlier surjectivity
+implication in item 4, and the lower-rank surjectivity premise are this
+module's formulation of (I4). The premise supplies the earlier surjectivity
 stages of the induction used to obtain the candidate's rank-\(N\) injections.
 
 ## Provenance
 
-The mathematical template is hypothesis (CI) of §6.5 of the operator's
+The mathematical template is hypothesis (CI) of §6.5 of the route note
 *The numerical local Langlands correspondence for GL_n: counts on the two
 sides and the recommended route of proof*
 (`operator-numerical-llc-route-2026-11-16`, `numerical-LLC-route.tex`,

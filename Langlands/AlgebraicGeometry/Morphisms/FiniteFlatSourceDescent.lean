@@ -1,7 +1,7 @@
 /-
 Copyright 2026 Anthropic
 Licensed under the Apache License, Version 2.0.
-Adapted by Worker 1001 from Anthropic FLT commit 6e837e75355538c7f80bab5b956861e86c4eacc2, file
+Adapted from Anthropic FLT commit 6e837e75355538c7f80bab5b956861e86c4eacc2, file
 P2M/Sol/S_AlgebraicGeometry_LocallyOfFiniteType_of_comp_of_isFinite_of_flat_of_surjective.lean.
 Changes: the FLT `solution` theorem (stated in FLT `Theorems/` as
 `AlgebraicGeometry.LocallyOfFiniteType.of_comp_of_isFinite_of_flat_of_surjective`) is moved out of

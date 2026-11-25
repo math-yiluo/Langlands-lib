@@ -17,8 +17,8 @@ quotient, `ξ = d.cocycle` for the adjoint discrepancy cocycle on `Spec L`, and
 by descending local isomorphisms with the same discrepancy.
 
 The proof uses the Library's matrix action of adjoint points from
-`Langlands.GroupScheme.SpecialLinearInnerForm.AdjointMatrix` (Worker 227) and two
-helper modules submitted with this proof:
+`Langlands.GroupScheme.SpecialLinearInnerForm.AdjointMatrix` and two
+helper modules ported together with this proof:
 `Langlands.GroupScheme.SpecialLinearInnerForm.GaloisDescent` (Galois descent of
 algebras) and `Langlands.GroupScheme.SpecialLinearInnerForm.NormOneChart`
 (reduced-norm-one points as determinant-one matrices through a chart). It does
@@ -77,8 +77,8 @@ Both sides are additive in `x`. On `r ⊗ a` the left side is
 `pointMatrix_naturality` and `normOneChartPoints_naturality`.
 
 `chartLocalIso_galois`: for every `σ`, `s` and `g`,
-`chartLocalIso_s(act(s ≫ c_σ) g) = chartLocalIso_{s ≫ Spec σ}(g)`. By Worker
-227's `pointMatrix_innerAction`, the matrix of `act(s ≫ c_σ) g` is
+`chartLocalIso_s(act(s ≫ c_σ) g) = chartLocalIso_{s ≫ Spec σ}(g)`. By
+`pointMatrix_innerAction` (module `SpecialLinearInnerForm.AdjointMatrix`), the matrix of `act(s ≫ c_σ) g` is
 `extendMatrix (sectionMap s) α_{c_σ}` applied to the matrix of `g`. By
 `pointScalars_comp_ringTestMap`, the chart along `s ≫ Spec σ` is the chart along
 `pointScalars s ∘ σ`. The identity then reduces to Step 3.

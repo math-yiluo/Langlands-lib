@@ -1,9 +1,7 @@
 # Integral cocharacters presenting root support
 
 This internal construction is a conditional step toward the absolute
-Borel-overgroup cocharacter statement. Worker 146 supplied the integral averaging
-argument and the support-preserving negator interface; Worker 1272 implemented
-the Lean proof. The argument combines the published integral Weyl actions,
+Borel-overgroup cocharacter statement. The argument combines the published integral Weyl actions,
 invariant lattice pairing, actual root permutation, reductive Weyl finiteness
 and root-negation theorem. It uses no simple-root classification.
 
@@ -58,12 +56,13 @@ discharges finiteness with
 `IsConnectedReductive.finite_relativeWeylGroup_of_isMaximalTorus` and root
 negation with `neg_mem_roots_of_split_maximalTorus`, retaining the generic
 cocharacter, positive-root inclusion and support-preserving negators as explicit
-inputs. These are proved Library theorems, independent of the prohibited
+inputs. These are proved Library theorems, independent of the
 split-parabolic cocharacter and parabolic-intersection classification chain.
 
 All fields and characteristics and the original universe are retained. No
 nonempty-root, positive-rank, proper-support or nonzero-output condition is
 imposed. The empty-root and rank-zero cases are included. This module neither
 constructs the initial generic cocharacter and negators for a given Borel
-overgroup nor proves the host unconditional cocharacter-existence statement;
-those remain separate obligations.
+overgroup nor proves the unconditional cocharacter-existence statement
+`AbsoluteBorelOvergroupCocharacterStatement`; all three are supplied in
+`BorelOvergroupCocharacterProof`.

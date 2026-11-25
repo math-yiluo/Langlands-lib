@@ -1,7 +1,5 @@
 # The identity geometric piece of two overlapping segment socles
 
-Author: Worker 1033.
-
 Fix `O : OverlapConfig T n` (see
 [LinkedSegmentOverlapShapes](LinkedSegmentOverlapShapes.md)) and two blocks
 `A i`, smooth representations of `GL(deg Δ)` and `GL(deg Δ')`. Suppose the

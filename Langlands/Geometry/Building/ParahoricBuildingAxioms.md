@@ -13,7 +13,7 @@ Proposition 2.11.17 and the groups `G(k)^0` and `Z(k)^0`. Both are now in the Li
 
 - `RelativeRoot.IsOppositeFactorPair` and the statement `RootRankOneFactorizationStatement` of KP
   Proposition 2.11.17 (module `Langlands.GroupScheme.Rational.RootRankOneFactorizationStatement`);
-- `ParahoricBuildingData G` (Worker 1238's module `KPParahoric`), which extends
+- `ParahoricBuildingData G` (module `KPParahoric`), which extends
   `ValuationBuildingData G` by the data that define `Z(F)^0` and `G(F)^0` (module
   `KPZeroSubgroups`).
 
@@ -296,8 +296,8 @@ module:
   4.1.20 (Bruhat–Tits group schemes) and Axiom 4.1.22 (their reductive quotients). The last two
   need smooth affine `o`-models of `G`.
 - The equality of `P.zeroFixer Ω` and `P.parahoric Ω` (KP Propositions 7.6.4 and 7.7.5).
-- The uniqueness in Proposition 2.11.17 (part of the published, unproved
-  `RootRankOneFactorizationStatement`, not used here), the identity `ψ^u_a = −ψ^{u′}_{−a} = −ψ^{u″}_{−a}` of
+- The uniqueness in Proposition 2.11.17 (part of the published
+  `RootRankOneFactorizationStatement`, proved as `rootRankOneFactorization`, not used here), the identity `ψ^u_a = −ψ^{u′}_{−a} = −ψ^{u″}_{−a}` of
   Remark 4.1.7 (as corrected on PDF p. 27), and the existence of smallest affine roots
   (Remark 6.3.17, Proposition 6.3.7).
 - The existence of data satisfying any of these conditions.

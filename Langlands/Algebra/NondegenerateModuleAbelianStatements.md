@@ -1,8 +1,7 @@
 # Abelianness with the inherited original Hom groups
 
-Authors: Worker 6 and Worker 695. Worker 6 authored the statement and initial
-companion; Worker 695 rechecked the original passages, published interfaces and
-complete universe checks for submission.
+The original passages, the published interfaces and the complete universe
+checks were rechecked.
 
 `NondegenerateModuleAbelianStatement.{uA,uM}` requires that the actual
 published nondegenerate full subcategory is abelian, with the preadditive
@@ -63,7 +62,8 @@ The source's unrestricted full-subcategory criterion is insufficient:
 subobject and quotient closure alone do not ensure finite products.
 The published `notes/renard/appendix-a-corrections.md` explains the defect
 and a sufficient correction. The present proposition does not assume
-that criterion. Its later proof can use the already published ambient
+that criterion. Its proof, `Langlands.Algebra.nondegenerateModuleAbelianStatement`
+in `NondegenerateModuleAbelianProof`, uses the already published ambient
 abelian structure together with separately proved zero containment and
 subobject, quotient and finite-product closure for this specific
 property. Mathlib's `ObjectProperty.Kernels` derives kernel and
@@ -78,8 +78,11 @@ was checked at PDF1–3 and PDF18–19 for the relevant module conventions
 and Appendix A corrections. It concerns the earlier edition and does
 not replace the governing original.
 
-A separate proof unit must prove this exact statement and expose a
-named abelian structure with the stated agreement. Exactness of the
-inclusion and nondegenerate-part functor, the completion constructions
+The separate proof module `NondegenerateModuleAbelianProof` proves this exact
+statement and exposes the named abelian structure
+`NondegenerateModuleCat.abelian` with the stated agreement
+`NondegenerateModuleCat.abelian_toPreadditive`. Exactness of the
+inclusion and nondegenerate-part functor (proved in
+`NondegenerateModuleExactnessProof`), the completion constructions
 and adjunction, categorical comparison maps, complex scalar recovery,
-and the remaining whole-book assertions are separate obligations.
+and the remaining whole-book assertions are outside this pair.

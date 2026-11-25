@@ -100,7 +100,7 @@ them in Lean.
   multiplication by a section `Over.mk (𝟙 S) ⟶ G.X`, built from the actual
   group law of `G`. Under `IsCommMonObj G.X` left and right translations
   agree, so Milne's additive `U + a` is this left translation. The instance
-  is kept to match the parent statement; Milne's Corollary 2.4 (p.3) shows
+  is kept to match the separating-line-bundle statement; Milne's Corollary 2.4 (p.3) shows
   that the group law of an abelian variety is commutative anyway.
   Commutativity is not essential to the argument. Without it, one takes the
   right translate `U · a`, which contains `a`, and chooses a closed point `u`
@@ -118,7 +118,7 @@ The passage is the same as for the parent separating-line-bundle statement.
 The opening definition of Section 20, p.42, calls a group scheme over `S` an
 abelian scheme if it is proper and smooth with connected geometric fibres;
 for `S = Spec K` this gives the three geometric hypotheses. They are kept in
-the parent's form; `GeometricallyConnected` is not replaced by connectedness.
+that statement's form; `GeometricallyConnected` is not replaced by connectedness.
 Mathlib's `GeometricallyConnected` asks for connectedness, including
 nonemptiness, after every field-valued base change.
 
@@ -136,9 +136,10 @@ published statement,
 commutative smooth proper geometrically connected group scheme over any
 field, it asserts local finite type, quasi-compactness, separatedness,
 nonemptiness and geometric integrality of the structure morphism. It is a
-statement, not a proof. Its proof is owned by task
-`2d28e6bb-86ce-4f1e-8ab2-c7264d1cbef3`, which reuses the geometric-integrality
-proof task `13d3f4b1-fadd-43c6-b422-d793dc9adf5f`. The present module neither
+statement, not a proof. Its proof is
+`Langlands.GroupScheme.fieldAbelianVarietyPresentation` (module
+`Langlands.AbelianScheme.FieldAbelianVarietyPresentationProof`), which reuses the
+geometric-integrality theorem `Langlands.AbelianScheme.smoothGeometricIntegrality`. The present module neither
 imports nor assumes it.
 
 The facts that Milne's argument actually needs are irreducibility and closed
@@ -149,7 +150,7 @@ them, for the same hypotheses:
 shows that `G.X.left` is irreducible, and
 `Langlands.GroupScheme.SeparatingLineBundle.exists_rationalPoint_mem_of_isOpen`
 supplies a rational point whose underlying point lies in each of finitely
-many nonempty open subsets. These are cited here only as existing owners of
+many nonempty open subsets. These are cited here only as existing proofs of
 the prerequisites; this module does not import them.
 
 Dimension zero is not excluded. Mathematically, a connected smooth proper
@@ -175,7 +176,7 @@ pp.10–11 while Section 12 begins on p.19. So no entry concerns the
 conventions or Theorem 7.1. The latest entries, for printed p.145, correct a
 denominator and the series `−log(1−t) = t + t² + ⋯`; neither occurs in the
 definition of an abelian scheme used here. No source-specific project errata
-note exists for either registered source in the current Library.
+note exists for either registered source in the Library.
 
 ## Provenance and scope
 
@@ -199,6 +200,7 @@ consequences, for example
 `Langlands.GroupScheme.AlgebraicallyClosedProjectivityStatement`,
 `Langlands.GroupScheme.FieldAmpleExistenceStatement` or
 `Langlands.GroupScheme.AlgebraicallyClosedFieldAmpleExistenceStatement`.
-After independent acceptance and publication, a separate exact-target proof
-must have this entire named proposition as its type, with no extra outer
-hypotheses. This module adds no axiom.
+A proof must have this entire named proposition as its type, with no extra
+outer hypotheses; the Library's proof is
+`Langlands.GroupScheme.algebraicallyClosedCommonAffine`, in the module
+`Langlands.AbelianScheme.AlgebraicallyClosedCommonAffineProof`. This module adds no axiom.

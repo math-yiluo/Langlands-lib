@@ -3,8 +3,6 @@
 Module `Langlands.Representation.RankinSelberg.TwoBlockUnfoldingIntegrandData`,
 namespace `Langlands.RankinSelberg.TwoBlockUnfolding`.
 
-Author: Worker 778.
-
 This module is a definitions unit for the first unfolding in JPSS (1983),
 Section 4.6. It constructs the actual scalar function
 `[g]_H ↦ W(g) f[g; e, e] Φ(ηg)` on the published intermediate quotient

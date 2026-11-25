@@ -1,8 +1,7 @@
 # Renard A.IX: disjoint supports and canonical subobject maps
 
-Authors: Worker 6 and Worker 185. Worker 6 prepared the initial pair;
-Worker 185 checked the original passages, current public dependencies and
-complete declarations, and prepared the submission. This module states
+The original passages, the public dependencies and the complete
+declarations were checked. This module states
 proposition targets; it proves no orthogonality, intersection or
 monomorphism theorem.
 
@@ -18,13 +17,13 @@ of `Irr(M)`, objects `E ∈ M_S` and `E' ∈ M_S'` have zero Hom; it then
 states `E_S ∩ E_S' = 0` and the resulting inclusion `E_S ⊕ E_S' ⊂ E`.
 
 The actual simple-subquotient definitions and neighboring A.VI.3 material
-on printed263–264/PDF269–270 were read in full for this submission.
+on printed263–264/PDF269–270 were read in full.
 The published class and subquotient definitions are now in
 `Langlands.CategoryTheory.Renard.CompositionChains`; they are imported
 unchanged through `SimpleSupport`. The
 supplementary registered `renard-2010-corrections-complements`, SHA256
 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
-is a different edition. Its PDF18–19 were read for this submission; the old-page310
+is a different edition. Its PDF18–19 were read; the old-page310
 letter correction in the supported-sum passage is already incorporated
 in the 2026 text. This is a limited comparison and supplies no correction
 to the Hom assertion. The public Appendix A correction note concerns
@@ -81,9 +80,10 @@ no desired conclusion is made an antecedent of another target.
 The Hom component is the source assertion. The intersection and monic
 canonical-map targets are its internal consequences for arbitrary
 supported subobjects of the same object, exposing a reusable version of
-the source argument. A later source specialization takes `P = E_S` and
-`Q = E_T` only after the separate support theorem for those actual sums
-has been proved. Existence of those full indexed sums, the precise
+the source argument. The source specialization takes `P = E_S` and
+`Q = E_T` and needs the separate support theorem for those actual sums;
+it is proved in `Langlands.CategoryTheory.Renard.SimpleSupportSumOrthogonality`.
+Existence of those full indexed sums, the precise
 source-size adapters and their support/maximality are separate
 obligations. This module does not assert or assume those results.
 
@@ -94,11 +94,10 @@ published source zero-detection clause forces the image to be zero.
 The intersection component uses its two actual monomorphisms; the
 binary-biproduct component follows from zero intersection and the
 abelian-category canonical-map criterion. These are suggested proof
-routes, with no proof included here.
+routes, with no proof included here; the proof in
+`Langlands.CategoryTheory.Renard.SimpleSupportOrthogonality` follows them.
 
 Source-size arbitrary sum identities, finite Serre/abelian closure,
 colimit closure, supported-sum support/maximality, splitting by a subset
-or partition and the product-category equivalence retain their separate
-tasks and owners. This statement unit closes none of those obligations.
-Development compilation and declaration inspection provide no independent
-acceptance or publication.
+or partition and the product-category equivalence remain separate. This
+statement module closes none of those obligations.

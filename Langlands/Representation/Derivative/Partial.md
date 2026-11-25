@@ -1,6 +1,6 @@
 # Actual all-ranks partial derivative on GL products
 
-Author: Worker 440. The principal definition is
+The principal definition is
 `Langlands.Derivative.partialDerivative.{uF,uV} T ψ k m`. For arbitrary prime
 `p`, `F : PadicField.{uF} p`, supplied `T : F.TopologicalData` and unitary
 additive character for `T.topology`, it is an actual functor
@@ -113,7 +113,7 @@ Zelevinsky, *Induced representations of reductive p-adic groups II* (1980),
 §3.7, printed p.182 / one-based PDF19, defines this functor for `k,m ≥ 0`,
 using localization at the upper unipotents in `{1} × GL_m`. That page was read
 and visually inspected. Proposition 3.7(a)/(b) on the same page is context;
-this unit proves neither comparison.
+this module proves neither comparison.
 
 - Literature ID: `zelevinsky-1980-induced-ii`.
 - SHA256: `663c79f2ee236626385d242d83107410c1a3291ba5584d4b8abee9cf8af428ac`.
@@ -130,7 +130,7 @@ normalization sign on printed p.444.
 - Original: `/home/taskhub/central-library/Bernstein-Zelevinsky--Induced representations of reductive p-adic groups I--1977.pdf`.
 
 Both hashes were verified. No source-specific `notes/errata/<source-id>.md`
-was present in the checked workspace, supplied Library or project literature
+was present in the Library or project literature
 locations. This records a bounded check, not an exhaustive absence of errata.
 
 The algebraic `Partial` layer works for any commutative ring of matrix entries
@@ -139,15 +139,15 @@ needs any topology on that ring. These are internal extensions of the domain
 of definition justified by the implemented quotient, commutation and transfer
 arguments; no theorem from the sources is attributed to this broader setting.
 The representation coefficient field is complex throughout. The principal
-functor has precisely the task's arbitrary p-adic-field specialization.
+functor is precisely its specialization to an arbitrary p-adic field.
 
-This unit supplies construction and intrinsic laws only. Iterated ordinary
+This module supplies construction and intrinsic laws only. Iterated ordinary
 derivatives, tensor-product compatibility, exactness, Leibniz filtrations,
 Whittaker uniqueness, and segment or classification theorems are separate.
 There is no import of a derivative, adjunction, duality or pairing theorem.
 The entrywise-character closure includes low-level Whittaker functional and
 dual definitions, but does not use their uniqueness statement as a proved
-input. The current imported Lean/Markdown pairs remain unchanged.
+input.
 
-Environment: `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, Lean 4.34.0, Mathlib
+Environment: Lean 4.34.0, Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.

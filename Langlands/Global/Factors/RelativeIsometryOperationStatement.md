@@ -2,11 +2,9 @@
 
 This is a derived **statement target**. The file contains no proof of
 `Langlands.Global.PoleComparison.RelativeIsometryOperationStatement`, whose
-level parameters are `uF uW uP`. It is unit U4a-i of the H3 program
-(Henniart's global construction, task
-`34b81620-20d7-4059-9b08-6bedd1c1c029`). Worker 30, whose task `62ea68fa`
-lists the same sections of Henniart as source leads, agreed that H3 states
-it. The target is a derived analogue, at a fixed finite relative level `E/F`
+level parameters are `uF uW uP`. It belongs to Henniart's global
+construction (track H3 of the program ledger
+`notes/automorphic/global-program-coverage.md`). The target is a derived analogue, at a fixed finite relative level `E/F`
 and for witnessed spans, of the contragredient and twist clauses of
 Henniart's Proposition 2.6 (a) and of all of Proposition 2.6 (c). Henniart
 states these clauses for the images of the absolute global Weil group. The
@@ -99,8 +97,9 @@ imply `RelativeIsometryOperations T` for every `T` satisfying
   uses the published geometric relation `IsGeometricReciprocity` and
   quantifies over every candidate that satisfies it. By local class field
   theory there is exactly one such candidate. In the Library this existence
-  and uniqueness is the published, still unproved statement
-  `LocalClassField.WeilReciprocityExistenceUniqueness`, so the target fixes
+  and uniqueness is the published statement
+  `LocalClassField.WeilReciprocityExistenceUniqueness` (proved as
+  `LocalClassField.geometricWeilReciprocityExistenceUniqueness`). The target fixes
   no candidate. Every unitary character of `W_{F_v}` is
   `weilCharacter e χ` for a unique modulus-one `χ`, via the published
   equivalence `weilCandidateCharacterEquiv`. Therefore (c) is stated with
@@ -145,8 +144,17 @@ Henniart's proof in §2.8 (printed p.448) obtains these clauses from §2.2
 `RelativeGeneratedPositiveIsometry` is fixed on the generators, so each clause
 reduces by linearity to a statement about witnessed generators. The published
 `relativePolePairing` proves only that such a `T` exists, is unique and
-preserves degrees and pairings. Everything below is a future proof
-obligation; the named statements are published but not yet proved.
+preserves degrees and pairings. Everything below is a proof
+obligation outside this file; the Library proves the target as
+`relativeIsometryOperation` (`RelativeIsometryOperationProof`). Of the named
+statements, `AssociatedContragredientStatement`,
+`CuspidalDeterminantMultipleStatement`,
+`PresentedDeterminantMultipleAssociationStatement` and
+`LocalTransferReciprocityStatement` are proved in the Library
+(`associatedContragredient`, `cuspidalDeterminantMultiple`,
+`presentedDeterminantMultipleAssociation`, `localTransferReciprocity`);
+`CuspidalContragredientStatement` and `HeckeDeterminantTwistStatement` are
+published but not proved.
 
 - **Dual.** Let `d` be a witnessed generator with Weil representation `S` and
   cuspidal realization `Π`. A dual witnessed generator at the same `E/F` must
@@ -194,8 +202,8 @@ obligation; the named statements are published but not yet proved.
   So the twisted Weil representation restricts along `ι` to the twist of
   `S ∘ ι` by `weilCharacter e χ`, as the target requires. This step needs
   `IsArithmeticClassFamily c`, the specification `IsLocalRelativeWeilMap`
-  and a proof of `LocalTransferReciprocityStatement`, which the Library does
-  not yet have. It also needs existence of the geometric candidate
+  and a proof of `LocalTransferReciprocityStatement` (`localTransferReciprocity`
+  in the Library). It also needs existence of the geometric candidate
   (`LocalClassField.WeilReciprocityExistenceUniqueness`). The proof of the
   published `RelativePolePairingStatement` provides none of this: it gives
   only the unique isometry `T`.

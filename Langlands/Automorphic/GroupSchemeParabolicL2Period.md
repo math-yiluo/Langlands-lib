@@ -5,8 +5,9 @@ rational parabolic, its actual evaluated adelic radical, the actual principal
 radical quotient and the existing intrinsic mass-one quotient measure. The
 structural premise `ParabolicDynamicStatement` and connected reductivity are
 retained. A commutative group scheme mapping into the ambient group supplies
-the existing positive-central quotient; the later L2 comparison theorem will
-retain the central split-torus and character-restriction hypotheses.
+the existing positive-central quotient; the L2 results built on this module
+(`GroupSchemeFullAEL2`, `GroupSchemeParabolicL2ClosednessStatement`) retain the
+central split-torus and character-restriction hypotheses.
 
 Compactness of each actual radical rational quotient gives the continuous
 `properParabolicNormOneInclusion`. It sends actual principal radical points
@@ -39,6 +40,6 @@ The source convention is Getz–Hahn, Definition6.5.1 and (6.18)–(6.21), print
 pp.167–168, and the compact-period analysis of Section9.2, printed pp.243–246,
 with the complete registered October2026 errata's corrected period quotient.
 The intrinsic mass-one radical measure is the already published adapter to
-Mœglin–Waldspurger I.1.13; this unit reuses that exact construction. Literal
+Mœglin–Waldspurger I.1.13; this module reuses that exact construction. Literal
 GH6.1 algebraic-tensor smoothness, the full automorphic realization and the
 spectral theorems remain separate obligations.

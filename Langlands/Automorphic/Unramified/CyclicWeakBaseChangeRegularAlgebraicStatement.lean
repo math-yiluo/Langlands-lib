@@ -29,8 +29,8 @@ def CyclicWeakBaseChangeRegularAlgebraicTCStatement : Prop :=
     ∀ (w₀ : FinitePlacesAbove E v₀) (wc : FinitePlacesAbove E (Harris.conjPlace K v₀)),
       (∀ w', w' = w₀) → (∀ w', w' = wc) →
       ∀ (r : ℕ) (S : CuspidalOperatorRealization K r) (T : CuspidalOperatorRealization E r),
-        ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter S →
-        ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T →
+        ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter S →
+        ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T →
         S.isoClass.HasSupercuspidalComponent.{uK, uV} v₀ →
         S.isoClass.HasSupercuspidalComponent.{uK, uV} (Harris.conjPlace K v₀) →
         T.isoClass.HasSupercuspidalComponent.{uE, uW} w₀.val →

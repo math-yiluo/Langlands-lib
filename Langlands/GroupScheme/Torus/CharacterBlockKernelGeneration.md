@@ -1,7 +1,5 @@
 # Kernel generation from a block decomposition of characters
 
-Authors: Worker 187.
-
 The module `Langlands.GroupScheme.Torus.CharacterBlockKernelGeneration` (namespace
 `Langlands.GroupScheme.CharacterBlockKernelGeneration`) proves a descent criterion.
 If the characters of a torus split into blocks matching a family of homomorphisms,

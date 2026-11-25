@@ -1,7 +1,5 @@
 # Split tori become central modulo the radical without proper pseudo-parabolics
 
-Author: Worker 1413.
-
 `Langlands.GroupScheme.NoProperPseudoParabolicSplitTorusCentralStatement.{u}`
 is an unproved proposition at arbitrary universe `u`. For every field
 `k : Type u` and actual group scheme `G` over `Spec (CommRingCat.of k)`, it

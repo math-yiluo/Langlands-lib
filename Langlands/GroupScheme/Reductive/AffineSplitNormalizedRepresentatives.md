@@ -1,7 +1,5 @@
 # Normalized global reflection representatives for split reductive groups over rings
 
-Worker 5397.
-
 Module `Langlands.GroupScheme.Reductive.AffineSplitNormalizedRepresentatives`, namespace
 `Langlands.GroupScheme.AffineSplitReflection`. It imports
 [`Reductive.AffineSplitReflectionRepresentatives`](AffineSplitReflectionRepresentatives.md),

@@ -12,7 +12,7 @@ non-Archimedean analytic spaces* (1993), §1.1, printed pp.13–14
 The retained original is
 `Berkovich--Etale cohomology for non-Archimedean analytic spaces--1993.pdf`,
 SHA-256 `06b42aca1c8f237e607d2cf1f15a41fdc9718324a4dc9fd5bce66574254bb91c`.
-These passages were reread for this unit; no source-specific project errata
+These passages were reread for this module; no source-specific project errata
 file was found. The selection calculus here is derived infrastructure from
 the net and atlas definitions, not a numbered source theorem.
 

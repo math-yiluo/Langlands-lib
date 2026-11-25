@@ -1,8 +1,8 @@
 # The presheaf of invariant sections `V(G) ↦ F(V)^G`
 
-Author: Worker 26. Builds on the following modules:
+Builds on the following modules:
 
-- `Langlands.Sheaf.Equivariant.NaturalActionSections` (imported; same candidate): natural
+- `Langlands.Sheaf.Equivariant.NaturalActionSections` (imported; ported together with this module): natural
   actions `NaturalAction K Φ` along a functor `Φ`, the presheaf of invariant sections
   `NaturalAction.invariantPresheaf` and its functor on sheaves
   `NaturalAction.sheafInvariantFunctor R J` with its finite-limit instance, and, for an action
@@ -10,7 +10,7 @@ Author: Worker 26. Builds on the following modules:
   admissible, `isSmooth_actionRepresentation_of_isAdmissible_top` and
   `discreteSectionsSmoothOfTop` with their instances.
 - `Langlands.Geometry.Analytic.EquivariantQuasiEtaleSite` and
-  `Langlands.Geometry.Analytic.EquivariantEtaleSite` (Worker 21, imported): Berkovich's
+  `Langlands.Geometry.Analytic.EquivariantEtaleSite` (imported): Berkovich's
   categories `EquivariantQuasiEtaleSite X = Qét(X(G))` and `EquivariantEtaleSite X = Ét(X(G))`
   of a `G`-space `X`, as `(GSpace.quasiEtale).Over ⊤ X` and `(GSpace.etale).Over ⊤ X`, and the
   forgetful functors `toQuasiEtaleSite X` and `toEtaleSite X` to the quasi-étale and étale
@@ -30,7 +30,7 @@ Author: Worker 26. Builds on the following modules:
   `distinguishedLiftSystem ρ`, and the categories `QuasiEtaleGSheaf ρ A` (discrete sheaves for
   `compactLiftSystem ρ`) and `EtaleGSheaf ρ A` (locally discrete sheaves for
   `distinguishedLiftSystem ρ`).
-- `Langlands.Geometry.Analytic.LocalActionLifts` (Worker 21, through the imports):
+- `Langlands.Geometry.Analytic.LocalActionLifts` (through the imports):
   `ActionLift ρ f` (an open subgroup, a continuous action of it on the source of `f`, and the
   equivariance of `f`) and `IsCompactSpace`.
 - `Langlands.Sheaf.Equivariant.TwistedGlobalSections` (through the imports):
@@ -60,7 +60,7 @@ for a quasi-étale `G`-sheaf `F` on `X`, the presheaf `(b_*F)^G` on `Qét(X(G))`
 `G`-sheaf and compact `V`, it shows that the representation of `G` on `F(V)` is smooth.
 
 Not done here: that `(b_*F)^G` is a sheaf for the topology of `Qét(X(G))` (Berkovich
-asserts it; a proof needs `G`-equivariant fibre products, which the Library does not have),
+asserts it; a proof needs `G`-equivariant fibre products),
 the functor `b_*` itself, and the isomorphisms `b^*((b_*F)^G) ≅ F` and `E ≅ (b_*b^*E)^G` of
 steps A.4 and A.5.
 
@@ -161,7 +161,7 @@ in `ModuleCat.{uR} R`), and `etaleGSheafInvariantPresheaf`, the composite of
 
 The smoothness statements are not made in the étale case. The Library defines étale
 `G`-sheaves by local discreteness. Deducing smoothness of `F(V)` for compact `V` would need
-an argument with finite coverings that is not formalized.
+an argument with finite coverings that is not formalized here.
 
 ## Original source
 

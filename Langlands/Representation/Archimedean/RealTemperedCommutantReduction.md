@@ -1,7 +1,7 @@
 # A form and commutant reduction for real tempered standard modules
 
-This internal module supports Task 7158. It proves a conditional reduction to
-the unchanged `RealTemperedStandardIrreducibleStatement`. It does not establish
+This internal module proves a conditional reduction to
+`RealTemperedStandardIrreducibleStatement`. It does not establish
 the form or scalar commutant premises, and does not assert the unconditional
 irreducibility target.
 
@@ -28,7 +28,9 @@ alone would not prove nontriviality.
 both the compact and the complexified Lie actions is multiplication by a scalar.
 `RealTemperedFormStatement` and `RealTemperedScalarCommutantStatement` ask for
 these respective properties for every list of total rank `n` whose real block
-exponents are equal. Both are proposition-valued, unproved prerequisites.
+exponents are equal. Both are proposition-valued prerequisites, proved elsewhere as
+`realTemperedForm` (module `RealTemperedFormProof`) and `realTemperedScalarCommutant`
+(module `RealTemperedScalarCommutantProof`).
 
 The implemented proof first shows that evaluation at the identity separates
 vectors along their compact orbits. Indeed vanishing of all these evaluations
@@ -51,8 +53,7 @@ The definitions and reduction are internal derived content. They isolate
 sufficient algebraic inputs for the Library target; they are not quotations of
 the literature's irreducibility theorem. The orthogonal proof follows the
 existing complex analogue, through the generic support module, and imports no
-Langlands quotient or tied Langlands classification result. The existing target
-and all of its imported Lean/Markdown pairs remain unchanged.
+Langlands quotient or tied Langlands classification result.
 
 The generic module `GKModuleOrthogonal` exports the shared orthogonal-complement
 declarations in `ComplexTemperedComplement` and its new irreducibility interfaces

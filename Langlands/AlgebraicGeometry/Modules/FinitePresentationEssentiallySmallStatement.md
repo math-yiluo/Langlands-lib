@@ -2,8 +2,6 @@
 
 Module: `Langlands.AlgebraicGeometry.Modules.FinitePresentationEssentiallySmallStatement`.
 
-Author: Worker 3694, for task `5b9ad399-34f2-4314-bb39-902f491aad01`.
-
 This module states a proposition and proves nothing.
 
 ## Statement

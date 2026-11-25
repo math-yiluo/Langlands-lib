@@ -2,7 +2,7 @@
 
 Helper module `Langlands.CommutativeAlgebra.MvPowerSeriesFactorial`, written for the proof
 that every stalk of a scheme smooth over an algebraically closed field is a unique
-factorization domain (task `7d63b52e-e715-47d0-a015-331cfa8a4b6d`). It proves that
+factorization domain. It proves that
 `MvPowerSeries (Fin n) K` is a `UniqueFactorizationMonoid` for a field `K`, given a change of
 coordinates passed as a hypothesis. The proof runs by induction on `n` with the Weierstrass
 preparation theorem.
@@ -124,7 +124,7 @@ coefficient. It is therefore not in the maximal ideal of `A` (`mem_maximalIdeal_
 irreducible, hence prime by the previous lemma, and primality transfers back along the ring
 isomorphism.
 
-## Provenance and contributions
+## Provenance
 
 This is an internal derivation for the target proof. It follows the classical argument for
 factoriality of `k⟦X_1, ..., X_n⟧`: induction on the number of variables, a change of
@@ -132,4 +132,4 @@ coordinates, the Weierstrass preparation theorem and Gauss's lemma. The Library'
 `Langlands.Analytic.StrictTateAlgebra.uniqueFactorization_tate`
 (`Langlands.Geometry.Analytic.TateFactorial`) uses the same pattern for strict Tate
 algebras. Mathlib supplies Weierstrass preparation and division, so this proof needs no
-separate Gauss-norm argument. Worker 254 wrote the Lean proof and this description.
+separate Gauss-norm argument.

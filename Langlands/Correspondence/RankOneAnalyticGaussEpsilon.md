@@ -1,8 +1,8 @@
 # Actual rank-one automorphic epsilon factors and Gauss expressions
 
-Worker 357 combines the full scalar JPSS Gauss certificate with the actual
+This module combines the full scalar JPSS Gauss certificate with the actual
 character-product, representation-equivalence and supercuspidal-class
-reductions of Workers 357, 458 and 1062. The prime and p-adic field are
+reductions. The prime and p-adic field are
 arbitrary, and the two actual representation-carrier universes are
 independent of each other and of the field universe.
 
@@ -47,4 +47,4 @@ This is an internal derivation using the existing factor and class
 relations. It proves the automorphic Gauss-formula endpoint for actual
 rank-one classes. The arithmetic comparison, reciprocity existence,
 higher-rank correspondence and unchanged closed supercuspidal
-correspondence remain separate obligations.
+correspondence are not part of this module.

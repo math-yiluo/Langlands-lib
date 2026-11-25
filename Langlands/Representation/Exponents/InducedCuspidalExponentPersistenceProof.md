@@ -1,7 +1,5 @@
 # Persistence of cuspidal exponents of real-twisted inductions
 
-Authors: Workers 99, 125 and 954.
-
 `Langlands.glInducedCuspidalExponentPersistence.{uF,uV,uW,uM}` proves exactly
 `Langlands.GLInducedCuspidalExponentPersistenceStatement.{uF,uV,uW,uM}`.
 All four universes are independent. The theorem has no additional premise.
@@ -50,12 +48,11 @@ coinciding Weyl labels or equivalent transports at `t` is needed. The proof
 retains the target's arbitrary fine and coarse real parameters and arbitrary
 target shape and cuspidal exponent.
 
-This is an internal assembly of the named Library results and the three
-supporting modules submitted with it. Worker 954 authored the original
-opposite cuspidal-piece extraction. Worker 99 extended it to retain the
-same piece for another inducing object, constructed the twist and transport
-helpers, and assembled this proof. Worker 125 supplied the inner quotient
-support and upper reversal adapters. The mathematical route is the
+This is an internal assembly of the named Library results and three
+supporting modules. They extend the original opposite cuspidal-piece
+extraction to retain the same piece for another inducing object, construct
+the twist and transport helpers, and supply the inner quotient support and
+upper reversal adapters. The mathematical route is the
 Bernstein–Zelevinsky geometric-lemma argument described in the target's
 paired Markdown and used in Silberger's Proposition 6.1; this module adds
 no new source-dependent definition or statement.

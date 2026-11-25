@@ -68,6 +68,7 @@ theorem exists_rootForm_comp_torusFieldTranslationMap
     rw [heval]
     have hzero : χ = 0 :=
       (characterLattice.baseChangeEquiv b S hS).injective (by
+        simp only [characterLattice.baseChangeEquiv_apply]
         simpa only [characterLattice.baseChangeEquiv_apply, map_zero] using hχ.trans hz)
     rw [hzero, eval_eq_pair]
     simp

@@ -10,7 +10,7 @@ universe uF uW uP
 
 namespace Langlands.VirtualRepresentation.RelativeGlobal
 
-open Langlands.Global Langlands.Global.CompletionPadic Langlands.ClassField.Global
+open Langlands.Global Langlands.Global.CompletionPadic Langlands.ClassFieldTheory.Global
 open Langlands.Automorphic
 
 variable {F E : Type uF} [Field F] [NumberField F] [Field E] [NumberField E]

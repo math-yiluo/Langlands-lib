@@ -1,7 +1,5 @@
 # Diagonal Weil–Deligne models
 
-Author: Worker 389.
-
 This supporting module constructs the diagonal Weil–Deligne pair attached to characters
 `η_1, …, η_n`: the action `g · v = (η_1(g) v_1, …, η_n(g) v_n)` on a universe-lifted copy of
 `ℂ^n`, with zero monodromy. For quasi-characters `μ_1, …, μ_(r+1)` of `K^×` and a reciprocity

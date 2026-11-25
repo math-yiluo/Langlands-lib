@@ -1,6 +1,6 @@
 # Regularity and evaluation for Renard's convolution kernels
 
-Worker 150, Task 5394. This proof uses the existing algebraic distributions,
+This proof uses the existing algebraic distributions,
 compact-support pairing and convolution kernels, with their full group universe.
 The source assertions are Renard, *Représentations des groupes réductifs
 p-adiques*, French version of 9 July 2026, II.3.10, printed p.50 / PDF p.56

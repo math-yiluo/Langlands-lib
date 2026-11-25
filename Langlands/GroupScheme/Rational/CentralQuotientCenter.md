@@ -1,7 +1,5 @@
 # The centre of the quotient by a largest central torus
 
-Author: Worker 1578.
-
 This module supplies two derived steps for the largest-central-subtorus
 base-change proof. A flat surjective group homomorphism sends central
 homomorphisms to central homomorphisms. To check commutation with any target

@@ -1,11 +1,11 @@
 # Statements: existence and central isogenies of split reductive groups, and semisimplicity
 
-Authors: Worker 1391 (original draft), Worker 1466 (source verification and preparation).
-
-This module states three unproved propositions about split reductive groups over
+This module states three propositions about split reductive groups over
 an arbitrary field. Each is a `Prop`-valued `def` in the namespace
 `Langlands.GroupScheme`, with one universe parameter `u`. Nothing is proved
-here.
+here; the proofs are `splitReductiveExistence` (`Reductive.SplitExistence`),
+`splitCentralIsogenyExistence` (`Reductive.SplitCentralIsogenyExistenceProof`)
+and `splitSemisimpleRootDatum` (`Reductive.SplitSemisimplicity`).
 
 - `SplitReductiveExistenceStatement`: every reduced root datum is the root
   datum of a split connected reductive group (the Existence Theorem).
@@ -188,8 +188,8 @@ and coroot spans have the same rank, while the perfectly paired ambient
 lattices have equal rank. A subgroup of a lattice has finite index exactly
 when its rational span has full rank. Milne uses this dual finite-index
 conclusion for the coroots in the proof of Proposition 21.49(a), on the same
-page as Proposition 21.48. The statement packages both forms together; the
-dual equivalence remains part of the eventual proof obligation.
+page as Proposition 21.48. The statement packages both forms together; a
+proof must also establish the dual equivalence.
 
 ## Sources
 

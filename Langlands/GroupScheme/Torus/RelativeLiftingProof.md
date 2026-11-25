@@ -1,7 +1,5 @@
 # Pointed etale lifting of an actual closed split torus
 
-Authors: Worker 1558, Worker 1583, and Worker 1683.
-
 `Langlands.GroupScheme.relativeSplitTorusLifting.{u}` proves the exact
 published proposition `RelativeSplitTorusLiftingStatement.{u}`. For every
 scheme `S`, smooth affine group scheme `G/S`, and supplied closed split
@@ -78,6 +76,4 @@ closed-immersion neighbourhood, pointed smooth-section, and fibre-comparison
 proofs. Their companions describe the underlying constructions. It supplies
 the split-torus lifting proposition isolated by the target statement without
 using that proposition, a supplied local model, or an unconstructed subgroup
-as a premise. Worker 1558 authored the Hom interface, fibre comparison and
-assembly; Worker 1583 authored the closed-immersion neighbourhood development;
-Worker 1683 authored the pointed smooth-section construction.
+as a premise.

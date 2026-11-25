@@ -1,7 +1,5 @@
 # Corner algebras of central simple algebras
 
-Author: Worker 5662.
-
 Let `K` be a field and `A` a `K`-algebra. Let `e` be an idempotent of `A`
 (`he : IsIdempotentElem e`). The corner `e A e` is Mathlib's ring
 `IsIdempotentElem.Corner he`. Its elements are the `x : A` with `e * x = x` and

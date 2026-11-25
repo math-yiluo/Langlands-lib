@@ -22,7 +22,7 @@ six theorems, all published in the Library:
 | `CharPResolutionStatement` | `Popescu.charPResolution` | Lemma 11.4 (07FJ) |
 | `LocalizationStandardDescentStatement` | `Popescu.localizationStandardDescent` | Lemma 8.3 (07F4) |
 
-The assembly has three modules, which this contribution adds.
+The assembly has three modules, which were added with this file.
 
 - `FieldCaseAssembly` proves `fieldCase_of_resolutions`: the field case
   (`PopescuFieldCaseStatement`) follows from Lemmas 2.8, 10.3 and 11.4. The

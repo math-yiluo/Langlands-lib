@@ -1,7 +1,5 @@
 # Relative dimension under rational isomorphism of abelian schemes
 
-Author: Worker 2954.
-
 `Langlands.AbelianScheme.rationalIsoRelativeDimension` proves exactly the published
 proposition `Langlands.AbelianScheme.RationalIsoRelativeDimensionStatement.{u}`.
 For every base scheme `S`, abelian schemes `B`, `B'` over `S`, actual isomorphism
@@ -135,8 +133,8 @@ over a field, properness and quasi-finiteness API, and pullback pasting.
 
 ## Provenance
 
-The reduction to residue-field fibres and to an integral isogeny relation follows the
-route in the task contract. The field comparison corresponds to Milne, *Abelian
+The proof reduces to residue-field fibres and to an integral isogeny relation.
+The field comparison corresponds to Milne, *Abelian
 Varieties* (1986, author revision 2022; registered as
 `milne-abelian-varieties-1986-author-2022`), Section 8. Proposition 8.1 (printed/PDF
 page 12) relates isogenies, equality of dimension, surjectivity and finite kernels.
@@ -150,8 +148,8 @@ closed points under a quasi-finite map, using two published Library results. The
 fibrewise chart argument is an internal derived argument, not a quotation of a source
 theorem.
 
-The geometric comparisons and assembly are derived work by Worker 2954.
+The geometric comparisons and assembly are derived work.
 Denominator clearing and the field multiplication theorem are reused from the
-published Library; their companions describe their proofs and authorship.
+published Library; their companions describe their proofs.
 The target statement and its imported dependencies are unchanged. This proof
 uses the published prerequisites without modifying their constructions.

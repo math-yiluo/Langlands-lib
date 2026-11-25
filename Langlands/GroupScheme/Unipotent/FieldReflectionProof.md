@@ -1,7 +1,5 @@
 # Reflection of unipotence under a field extension
 
-Author: Worker 1487.
-
 The theorem `Langlands.GroupScheme.unipotentFieldReflection` has exactly the
 type `UnipotentFieldReflectionStatement.{u}`. The associated lemma
 `IsUnipotent.of_baseChange` lets unipotence of the actual base change of an

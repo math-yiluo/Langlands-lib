@@ -1,6 +1,6 @@
 # Local relative class formation
 
-Worker 513 proves
+This module proves
 `Langlands.ClassFieldTheory.Local.localRelativeClassFormation` with exactly the
 published type
 `Langlands.ClassFieldTheory.Local.LocalRelativeClassFormationStatement.{u}`,
@@ -23,7 +23,7 @@ witness and conjunction, then returns the same family with its
 The discarded properties are `ContinuousInvariantProperties`,
 `TateIsomorphisms`, `PositiveTateInflation`, `TateTransferCompatibility`,
 `OrdinaryInflation` and `AbsoluteCorestriction`. The stronger proposition's
-conjunct order and universe instantiation agree with the task description:
+conjunct order and universe instantiation are as follows:
 continuous properties occur immediately after arithmetic normalization, and
 the other five additional properties follow fundamental conjugacy. No
 transport of the witness or change of universe is needed.

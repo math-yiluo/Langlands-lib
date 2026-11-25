@@ -1,6 +1,6 @@
 # Closed linear embeddings over principal ideal domains
 
-Worker 700. This internal construction combines the finite-subcomodule
+This internal construction combines the finite-subcomodule
 construction in `IntegralLinearEmbedding.FiniteSubcomodule` with the published
 coordinate representation and affine corepresentation APIs. It addresses the
 PID and DVR cases used by the reductive-monomorphism reduction; it does not

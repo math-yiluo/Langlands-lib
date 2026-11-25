@@ -2,7 +2,8 @@
 
 `Langlands.Global.RankinSelbergGlobal.RealSquareFourier.RealSquareFourierMarginalStatement`
 is a projection–slice identity for square real matrix Schwartz functions. It is
-an internal ingredient for the Godement–Jacquet coefficient integrals in Task 7400.
+an internal ingredient for the Godement–Jacquet coefficient integrals towards
+`RealPlaceFunctionalEquationStatement`.
 It is proved by `realSquareFourierMarginal`.
 
 Fix a dimension $n$ and a character parameter $b\in\mathbb R^\times$. Write

@@ -1,7 +1,5 @@
 # Renard's actual uniformizer subgroup
 
-Author: Worker 454.
-
 This module defines the uniformizer subgroup used in Renard's Cartan
 representatives. It uses an actual commutative group scheme `T` over an actual
 nonarchimedean local field `F`, with the Library's `ValuativeRel`,

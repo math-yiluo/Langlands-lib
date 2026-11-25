@@ -38,4 +38,4 @@ equivalence, every tuple on the source stage admits this form.
 
 These are formulas for the existing algebraic restricted tensor representations.
 They do not assert a topology on the tensor spaces, automorphic occurrence,
-factorization of an arbitrary representation, or completion of the host task.
+or factorization of an arbitrary representation.

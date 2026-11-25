@@ -180,7 +180,7 @@ theorem exists_closedImmersionBySections_of_sections {R : Type u} [CommRing R]
       (Set.range (f.appLE ⊤ (T i) le_top) ∪
         {r | ∃ j, M.presheaf.map (homOfLE (le_top : T i ≤ ⊤)).op (σ j) =
           r • M.presheaf.map (homOfLE (le_top : T i ≤ ⊤)).op (σ (base i))})) :
-    ∃ M' : X.Modules, Scheme.Modules.IsInvertible M' ∧
+    ∃ M' : X.Modules, Scheme.Modules.IsInvertibleFLT M' ∧
       Scheme.Modules.ClosedImmersionBySections M' f := by
   let U : Fin (N + 1) → X.Opens := fun t ↦ trivializationOpen M (σ t)
   have hU : iSup U = ⊤ := by

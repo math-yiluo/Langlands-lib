@@ -1,7 +1,7 @@
 # Tate's identity for real zeta integrals
 
 Helper module for the proof of `Langlands.LocalFactor.RealArchimedeanTateStatement`
-(see `RealTateProof.md`). Authored by Worker 823. All declarations are proved; there are
+(see `RealTateProof.md`). All declarations are proved; there are
 no hypotheses or axioms.
 
 ## Statement of the main result

@@ -1,16 +1,16 @@
 # Analytic functoriality across actual smooth dimension pieces
 
-Author: Worker 3519.
-
 This derived statement supports the functorial analytic-manifold assertion in
 Brian Conrad, *Weil and Grothendieck approaches to adelic points*, December 31,
 2011, printed p.15, Proposition 5.4, and the final paragraph of its proof on
 printed p.16. The registered original is
 `conrad-2011-weil-grothendieck-adelic-points`, SHA-256
 `fe4a9193aff4ef575665b40971f3da32f850a74d87b3f2d0fa28bba26b9cbabb`.
-The paper permits dimensions to vary between smooth components. This unit
-states the host bridge from an admissible pure-dimensional family to the
-actual varying-dimensional atlases. It contains no proof.
+The paper permits dimensions to vary between smooth components. This module
+states the bridge from an admissible pure-dimensional family to the
+actual varying-dimensional atlases. It contains no proof; the statement is
+proved as `smoothSourceDimensionAnalyticFunctoriality` in
+`SmoothSourceDimensionAnalyticFunctorialityProof`.
 
 `SmoothSourceDimensionAnalyticFunctorialityStatement` is a proposition
 definition in `Langlands.AlgebraicGeometry.AlgebraicSpace`.
@@ -47,7 +47,7 @@ dimension pieces, and `n` and `m` need not coincide. The conclusion quantifies
 every such chart intersection, including empty ones. It does not assert
 intrinsic dimension preservation for general morphisms.
 
-The mathematical route for a future proof restricts a source piece to its
+The mathematical route of a proof restricts a source piece to its
 intersection with the inverse image of a target piece. This is a genuine
 open subspace, still smooth of the source piece's pure dimension. The
 restriction inclusion is étale, and the restricted map to the target piece
@@ -60,7 +60,13 @@ dimension piece to a single target dimension piece is assumed.
 Conrad states the full analytic structure over complete fields. Here the
 admissible family is retained as an explicit premise, so this assembly
 comparison does not need completeness. A complete-field application must
-supply an admissible family separately. This unit neither constructs that
+supply an admissible family separately. This module neither constructs that
 family nor proves this bridge, intrinsic dimension preservation and analytic
 inverse branches for étale maps, scheme agreement, or uniqueness of the full
-varying-dimensional structure. These remain separate obligations.
+varying-dimensional structure. These are separate results: over a complete
+field the canonical family is admissible by `canonicalAnalyticPointStructure_isAdmissible` in
+`AnalyticAffineNormalization`, the bridge is proved in
+`SmoothSourceDimensionAnalyticFunctorialityProof`, and the others in
+`SmoothSourceDimensionEtaleAnalyticIsoProof`,
+`SmoothSourceDimensionAffineAgreement` and
+`SmoothSourceDimensionAnalyticUniquenessProof`.

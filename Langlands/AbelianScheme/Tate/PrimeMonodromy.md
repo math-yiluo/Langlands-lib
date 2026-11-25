@@ -1,7 +1,5 @@
 # Actual geometric monodromy on prime-adic Tate modules
 
-Author: Worker 142.
-
 This module constructs the geometric action on the existing integral and
 rational prime-adic Tate modules of an actual abelian scheme. It proves
 integral joint continuity, equivariance of actual homomorphisms, and
@@ -57,7 +55,7 @@ hypothesis `IsUnit (p : Γ(S, ⊤))`, using preservation of units under powers
 and the natural-number cast formula. Its proof does not need primality.
 The displayed hypotheses ensure that every actual multiplication kernel
 used by this construction is finite étale. They are not proved geometric
-existence assertions in this unit.
+existence assertions in this module.
 
 The acting group is the imported `FiniteEtale.FundamentalGroup s hfin`,
 the automorphism group of the actual finite-fibre functor, with its existing
@@ -195,7 +193,7 @@ all primes, while `m = 0` has no prime satisfying `hp`.
 
 ## Remaining scope
 
-This unit does not prove the geometric hypotheses, the Galois-category
+This module does not prove the geometric hypotheses, the Galois-category
 classification, prime-product or restricted-product comparison theorems,
 rational continuity, pairings, or pointed base change. It does not construct
 a prime-adic Hom⁰/End⁰ action or identify the field-valued fibre-functor
@@ -203,4 +201,4 @@ automorphism group with an absolute Galois group. The source's usual Galois
 representation is motivating provenance for the actual geometric
 construction, not an additional identification proved here. Weil pairings,
 base-point independence, and invariant-orbit PEL level assembly remain
-separate obligations of the parent task.
+separate obligations.

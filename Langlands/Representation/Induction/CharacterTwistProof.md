@@ -1,6 +1,6 @@
 # Character twists of smooth and compact induction
 
-Worker 438 proves `Langlands.Induction.inductionTwist`, whose target is the
+This module proves `Langlands.Induction.inductionTwist`, whose target is the
 published `Langlands.Induction.InductionTwistClause` from
 `Langlands.Representation.Induction.StructuralStatement`. The group and module
 universes are independent. The hypotheses are precisely a group `G`, a topology
@@ -55,15 +55,13 @@ The source is registered as `bernstein-zelevinsky-1977-induced-i`, retained at
 `/home/taskhub/central-library/Bernstein-Zelevinsky--Induced representations of reductive p-adic groups I--1977.pdf`,
 with SHA256
 `8424600228ab72c5937e45edceefcae410a2a0b8f5ebf282185691542aa89092`.
-The current Library has no `notes/errata` directory.
+The Library's `notes/errata` has no entry for this source.
 
-The sole direct import is the current published structural statement module.
+The sole direct import is the published structural statement module.
 It imports the actual induction, smooth-part, scalar-twist and Mathlib
 representation-equivalence interfaces used in the proof. This module does not
 prove a determinant factorization, normalized induction in stages, half-modulus
 absorption or an analytic classification result.
 
-Development and exact-target checks use environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, Lean 4.34.0 and pinned Mathlib
-`5ed2965256430c3649e86755f9576b54eca72435`. Compilation is development evidence;
-independent semantic acceptance and Library publication remain required.
+Development and exact-target checks use Lean 4.34.0 and pinned Mathlib
+`5ed2965256430c3649e86755f9576b54eca72435`.

@@ -1,7 +1,5 @@
 # Half-power descent reduces finite-order character prescription
 
-Authors: Worker 53 and Worker 1232.
-
 This internal reduction combines the elementary lemmas with
 half-power descent and the proved topology of idele-class power quotients.
 Its intended source is Artin and Tate,

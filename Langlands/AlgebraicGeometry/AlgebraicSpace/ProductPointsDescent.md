@@ -1,7 +1,5 @@
 # Products of finite free algebras of uniform rank
 
-Author: Worker 105.
-
 Helper module (pure algebra) for the proof of Conrad's Proposition 5.2,
 `Langlands.Global.AdelicSpaceLevelPointsStatement`. It contains no statement from the
 literature.

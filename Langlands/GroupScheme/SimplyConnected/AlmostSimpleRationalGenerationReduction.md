@@ -1,7 +1,5 @@
 # Reduction of rational generation to semisimple normal complements
 
-Authors: Worker 1636 and Worker 1371.
-
 The construction `almostSimpleRationalWord_of_normalIsogenyComplement`
 takes an explicit proof of `SemisimpleNormalIsogenyComplementStatement`,
 a simply connected group `G` over any field, and a rational point `g`.
@@ -17,7 +15,7 @@ implements strong induction on the actual Lie dimension
 of a smooth connected affine group. It retains the explicit
 `SemisimpleNormalIsogenyComplementStatement` premise. Noncommutativity of a nontrivial
 semisimple group over an arbitrary field is supplied by the proved helper
-`IsSemisimple.noncommutative_of_nontrivial` of Worker 1371.
+`IsSemisimple.noncommutative_of_nontrivial` of `Reductive.Noncommutativity`.
 Neither construction nor supporting theorem proves the unconditional
 rational-generation target.
 
@@ -31,7 +29,7 @@ condition provides a proper nontrivial smooth connected closed normal
 `H`. The structural premise gives a semisimple commuting complement `K`
 and central-isogeny multiplication from `H ⊗ K` to `G`. Simple
 connectedness makes this multiplication an isomorphism. The direct-factor
-helpers of Worker 1371 make both factors simply connected.
+helpers of `SimplyConnected.DirectFactors` make both factors simply connected.
 
 Both closed factors have smaller Lie dimension. This follows for `H`
 from its properness. If `K` were the entire group, injectivity of

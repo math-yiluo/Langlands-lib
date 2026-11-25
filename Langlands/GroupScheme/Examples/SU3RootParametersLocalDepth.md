@@ -1,6 +1,6 @@
 # Discrete depths on actual quadratic local-field root coordinates
 
-Worker 1676 derives this module internally from the unshifted coordinate depths in `SU3RootValuation` and the actual normalized quadratic extension valuation in `SU3RootParametersLocalValuation`. The base field `F` is a nonarchimedean local field, and `L/F` is an actual separable quadratic field extension. Their universes are independent. No characteristic restriction or supplied topology or valuation on `L` is imposed.
+This module is derived internally from the unshifted coordinate depths in `SU3RootValuation` and the actual normalized quadratic extension valuation in `SU3RootParametersLocalValuation`. The base field `F` is a nonarchimedean local field, and `L/F` is an actual separable quadratic field extension. Their universes are independent. No characteristic restriction or supplied topology or valuation on `L` is imposed.
 
 `quadraticDepth` specializes `Parameters.depthA` to the actual `quadraticValuation`; it is half the value of the second coordinate, with infinity preserved. `quadraticCentralDepth` specializes `Parameters.depthDouble` on the literal central subgroup, so it is the value of the second coordinate itself. The inherited generic formulas and identity criteria apply directly.
 

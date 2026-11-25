@@ -1,7 +1,5 @@
 # A right-invariant measure on the unipotent quotient of the mirabolic group
 
-Author: Worker 805.
-
 This helper module provides, for a nonarchimedean local field `F` and every
 rank `n`, a measure `ν` on the published left quotient
 `QuotientIntegration.LeftQuotient (Mirabolic.upperUnipotent n F)`, that is on

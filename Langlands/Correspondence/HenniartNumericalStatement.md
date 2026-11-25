@@ -1,6 +1,5 @@
 # Henniart's numerical correspondence: conductors, unramified twists and orbit counts
 
-Author: Worker 14 (task `62ea68fa-e1f4-4187-811b-7436743bba6a`, revision 1).
 This module defines proposition targets and three small helper relations. It
 proves none of the propositions.
 
@@ -154,8 +153,7 @@ components.
 
 - Henniart 1988, Théorème 1.3, the explicit count
   `C_K(n, j) = (q_K − 1) q_K^j`, is not stated. Its source chain uses Koch's
-  1984 Satz 1, which the operator declined to supply (request
-  `e6ae248a5a155ec3906cd2ff39478631`), and the previously recorded
+  1984 Satz 1, which was not available as a source for this module, and the previously recorded
   discrepancy in the summation range of §1.3 for Swan conductor zero is
   unresolved. The orbit-count proposition above is a weaker, sufficient
   formulation and does not depend on those formulas.
@@ -170,7 +168,7 @@ components.
 
 ## Dependencies
 
-All imports are accepted and published modules of Library commit
+All imports are published modules of Library commit
 `18a1f10aef8ea135d90e8474439a5e6d9c130008`; the table gives the first twelve
 hexadecimal digits of the SHA-256 of each `.lean` file there.
 

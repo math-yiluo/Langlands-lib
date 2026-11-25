@@ -103,6 +103,7 @@ private theorem baseChangeCompIso_hom_fst {S S' S'' : Scheme.{u}}
         pullback.fst (pullback.snd G.X.hom b) c =
       pullback.map G.X.hom (c ≫ b) G.X.hom b (𝟙 _) c (𝟙 _)
         (by simp) (by simp) := by
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   apply (cancel_epi (baseChangeCompIso b c G).inv.hom.hom.left).mp
   have hi : (baseChangeCompIso b c G).inv.hom.hom.left ≫
       (baseChangeCompIso b c G).hom.hom.hom.left = 𝟙 _ :=

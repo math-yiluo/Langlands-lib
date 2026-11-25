@@ -7,7 +7,7 @@ Modified: FLT module names are prefixed by `Langlands.AnthropicFLT`; the FLT lak
 are set after the imports; the import of `P2M.Util` is dropped. The paired Markdown file lists
 the changes.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_RelativePicardFunctor
 set_option maxHeartbeats 4000000
 set_option synthInstance.maxHeartbeats 400000
@@ -227,7 +227,7 @@ theorem resIn_eq_zero_of_resIn_eq_zero (W : X.Opens)
 
 include hξ in
 
-theorem eq_zero_of_resIn_eq_zero (hM : Scheme.Modules.IsInvertible M) (U : X.Opens) (m : Γ(M, U))
+theorem eq_zero_of_resIn_eq_zero (hM : Scheme.Modules.IsInvertibleFLT M) (U : X.Opens) (m : Γ(M, U))
     (h0 : resIn M W₀ U m = 0) : m = 0 := by
   choose W hxW e using fun x : X => hM.1 x
   let E := fun x : X => restrictIsoOfPullbackIso M (W x) (e x).some
@@ -241,7 +241,7 @@ theorem eq_zero_of_resIn_eq_zero (hM : Scheme.Modules.IsInvertible M) (U : X.Ope
 
 end Inj
 
-theorem main [IsIntegral X] (hM : Scheme.Modules.IsInvertible M) :
+theorem main [IsIntegral X] (hM : Scheme.Modules.IsInvertibleFLT M) :
     ∃ φ : ∀ U : X.Opens, Γ(M, U) →+ (X.functionField : Type u),
       (∀ (U V : X.Opens) (h : V ≤ U), Nonempty V →
           ∀ m : Γ(M, U), φ V (M.presheaf.map (homOfLE h).op m) = φ U m) ∧
@@ -269,7 +269,7 @@ theorem main [IsIntegral X] (hM : Scheme.Modules.IsInvertible M) :
 end P2mKPresSol
 
 theorem solution
-    {X : Scheme.{u}} [IsIntegral X] (M : X.Modules) (hM : Scheme.Modules.IsInvertible M) :
+    {X : Scheme.{u}} [IsIntegral X] (M : X.Modules) (hM : Scheme.Modules.IsInvertibleFLT M) :
     ∃ φ : ∀ U : X.Opens, Γ(M, U) →+ (X.functionField : Type u),
       (∀ (U V : X.Opens) (h : V ≤ U), Nonempty V →
           ∀ m : Γ(M, U), φ V (M.presheaf.map (homOfLE h).op m) = φ U m) ∧

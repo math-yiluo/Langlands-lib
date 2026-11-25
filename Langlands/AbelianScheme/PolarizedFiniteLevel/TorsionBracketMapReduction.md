@@ -2,8 +2,7 @@
 
 This module proves the published `TorsionBracketMapStatement` from the published
 `CubicFieldEmbeddingStatement`. Here `CubicFieldEmbeddingStatement` is
-Lefschetz's theorem for the canonical cubic bundle over fields, which has an
-open proof task, Task 7747. The result is a proved definition of the
+Lefschetz's theorem for the canonical cubic bundle over fields. The result is a proved definition of the
 implication; it does not prove `TorsionBracketMapStatement` outright.
 
 ## Charts on the frame locus
@@ -69,7 +68,7 @@ No quasi-compactness of `T` and no representability is used.
 
 This is internal and not taken from a literature source. It follows the
 intended proof recorded in the Markdown of the published
-`TorsionBracketMapStatement` and in the context of Task 8069. Generation of the
+`TorsionBracketMapStatement`. Generation of the
 bracket coordinates comes from the published frame-locus cover rather than
 directly from the torsion hyperplane bound. The coordinates are glued from
 local charts rather than taken as sections of a determinant line bundle.

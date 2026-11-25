@@ -1,6 +1,6 @@
 # Full rank-one arithmetic pair epsilon in the abelian spectral convention
 
-Worker 1555 derives these internal rewrites from the existing full arithmetic
+These internal rewrites are derived from the existing full arithmetic
 rank-one epsilon formula on the original base field and the normalized
 character-twist comparison in `Abelian.NormalizedTwist`.
 

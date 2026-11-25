@@ -5,9 +5,11 @@ representation of a finite cyclic group `G` have the same Herbrand quotient. Thi
 *Class Field Theory*, Chapter VII, Lemma 3.5. It is infrastructure for the cyclic unit
 calculation `[E : F] · h(O_E^×) = ∏ n_w`. That calculation is part of the first fundamental
 inequality (Library targets `CyclicUnitHerbrandQuotient` and `CyclicIdeleClassHerbrandQuotient`)
-in global class field theory (task fb66219f). This module proves no Library proposition by
-itself. Its main theorem is meant for the content of statement task e92da4ea ("State
-invariance of the cyclic Herbrand quotient for full invariant real lattices").
+in global class field theory. This module proves no Library proposition by
+itself. Its main theorem supplies the content of the statement
+`Langlands.GroupTheory.CyclicLatticeHerbrandInvariance` (invariance of the cyclic Herbrand
+quotient for full invariant real lattices), which `cyclicLatticeHerbrandInvariance` in
+`Langlands.GroupTheory.CyclicLatticeHerbrandProof` proves from `hasHerbrandQuotient_iff_of_bases`.
 
 All declarations are in the namespace `Langlands.Cohomology.Herbrand`. The module builds on
 `Langlands.Cohomology.HerbrandQuotient`, which supplies `HasHerbrandQuotient` and the
@@ -133,7 +135,8 @@ statement.
 - `hasHerbrandQuotient_iff_of_isZLattice` (Milne VII Lemma 3.5): with `G` finite cyclic,
   `HasHerbrandQuotient A q ↔ HasHerbrandQuotient B q` for every `q : ℚ`. So `h(A)` is defined
   iff `h(B)` is, and then they are equal.
-- `natCard_of_isZLattice`: the division-free form required by task e92da4ea. It takes the
+- `natCard_of_isZLattice`: the division-free form, the form in which
+  `CyclicLatticeHerbrandInvariance` states the lemma. It takes the
   hypotheses of `hasHerbrandQuotient_iff_of_isZLattice`, plus `[Finite (groupCohomology A 1)]`
   and `[Finite (groupCohomology A 2)]`. It concludes that `H¹(G, B)` and `H²(G, B)` are finite
   and `|H²(G, A)| · |H¹(G, B)| = |H²(G, B)| · |H¹(G, A)|` in `ℕ`. Swapping the roles of `A`

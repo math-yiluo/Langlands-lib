@@ -1,7 +1,5 @@
 # The local rank-one classification: proof
 
-Author: Worker 84.
-
 `Langlands.GroupScheme.localRankOneClassification.{u}` proves the
 published proposition
 `Langlands.GroupScheme.LocalRankOneClassificationStatement.{u}` as stated,

@@ -2,7 +2,7 @@
 
 Module `Langlands.Representation.RankinSelberg.TwoBlockFirstBlockSliceShift`.
 Namespace `Langlands.RankinSelberg.TwoBlockFirstBlockQuotient`.
-Author: Worker 117. The product-measure transport pattern follows Worker 27's
+The product-measure transport pattern follows the
 published `TwoBlockFirstBlockMeasures`; that module supplies the measures used
 here. The group and quotient definitions are the published first-block data.
 
@@ -11,7 +11,7 @@ This internal construction supplies a normalization step in the proof of
 by a first-block matrix on the actual mixed quotient, proves that it preserves
 every compatible quotient measure for the restriction-normalized mixed Haar,
 and proves the exact pushforward from the zero determinant slice to slice `k`.
-It does not yet compare the fiber kernels or prove the disintegration identity.
+It does not compare the fiber kernels or prove the disintegration identity.
 
 ## Objects and normalization
 
@@ -76,14 +76,15 @@ The motivating original is Jacquet, Piatetski-Shapiro and Shalika,
 Its SHA-256 is
 `d9feed6388ca5acf02ecc6a8cce984871a7c28f062ff441e45a71fa2d8962245`.
 Printed page 412 was visually checked at zero-based PDF index 46 (one-based
-page 47); `resource_pdf` takes one-based page arguments. The source equation
+page 47). The source equation
 has zero outer determinant slice, inner slice `k`, and no displayed scalar.
 This module's quotient homeomorphism and its explicit Haar normalization are
 internal proof constructions for the published target, rather than separately
-named results in JPSS. No source erratum note was found in the earlier audit.
+named results in JPSS. No source erratum note was found.
 
 The fiber-kernel transport, the normalized zero-slice tower and analytic
-conclusions remain obligations of the full integration proof. This module
+conclusions belong to the full integration proof,
+`TwoBlockFirstBlockQuotientIntegrationProof`. This module
 establishes only the mixed-quotient transport described above; it introduces
 no representation, character or convergence assumptions.
 

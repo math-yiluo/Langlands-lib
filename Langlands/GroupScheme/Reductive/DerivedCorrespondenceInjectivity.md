@@ -1,7 +1,5 @@
 # Injectivity in the derived-group correspondence
 
-Worker 715.
-
 This internal result specializes the effective-epimorphism descent criterion in
 [`SubgroupFunctor.FpqcProductReconstruction`](../SubgroupFunctor/FpqcProductReconstruction.md)
 to the intersection maps in the published

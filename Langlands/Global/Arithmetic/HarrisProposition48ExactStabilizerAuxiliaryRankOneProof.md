@@ -1,7 +1,7 @@
 # The rank-one start of Proposition 4.8 with complex-place parameters
 
 Module `Langlands.Global.Arithmetic.HarrisProposition48ExactStabilizerAuxiliaryRankOneProof`,
-namespace `Langlands.Global.Harris`. Proof by Worker 5086 (Task 7783).
+namespace `Langlands.Global.Harris`.
 
 The theorem `Langlands.Global.Harris.proposition48ExactStabilizerAuxiliaryRankOne.{uF, uV}`
 proves the published statement
@@ -69,8 +69,8 @@ lemmas are in namespace `Langlands.Automorphic.RankOneHecke`.
 - `Langlands.Automorphic.RankOneHeckeRestriction`: degree-one comparisons for `ξ ∘ ι`, the
   weak induction, parameters, conjugation, and the parameters of algebraic characters.
 
-These modules also use helper modules of the parameter-untwist unit of Task 7783 (candidate
-`78761ac6`): `Langlands.Automorphic.ComplexPlaceParameterHeckeTwist`,
+These modules also use helper modules of the parameter untwist
+(`HarrisProposition48ExactStabilizerParameterUntwistProof`): `Langlands.Automorphic.ComplexPlaceParameterHeckeTwist`,
 `Langlands.Automorphic.Unramified.ComplexPlaceParameterNorm` and
 `Langlands.Representation.Archimedean.ComplexStandardDeterminantTwist`.
 

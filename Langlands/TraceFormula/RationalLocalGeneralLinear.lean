@@ -16,11 +16,11 @@ universe u
 
 variable (K L : Type u) [Field K] [Field L] [Algebra K L]
 
-local instance (n : ℕ) :
+private local instance (n : ℕ) :
     IsAffine (GroupScheme.GeneralLinear.groupScheme (Fin n) (CommRingCat.of K)).X.left :=
   GroupScheme.GeneralLinear.isAffine_groupScheme (Fin n) (CommRingCat.of K)
 
-local instance (n : ℕ) :
+private local instance (n : ℕ) :
     Smooth (GroupScheme.GeneralLinear.groupScheme (Fin n) (CommRingCat.of K)).X.hom :=
   GroupScheme.GeneralLinear.smoothStatement (Fin n) (CommRingCat.of K)
 
@@ -66,7 +66,7 @@ private theorem unitGroundPointsEquiv_naturality
 entrywise conjugation over `L`. -/
 theorem rationalWeilGLEquiv_twist (σ : L ≃ₐ[K] L) (q : (Wₙ).affinePoints (CommAlgCat.of K K)) :
     rationalWeilGLEquiv K L n
-        ((Wₙ).affinePointsTarget (unitGaloisAut K L GLₙ σ).hom (CommAlgCat.of K K) q) =
+        ((Wₙ).affinePointsTarget (unitGaloisAut K L GLₙ σ).asIso.hom (CommAlgCat.of K K) q) =
       entrywiseAut σ n (rationalWeilGLEquiv K L n q) := by
   simp only [rationalWeilGLEquiv, MulEquiv.trans_apply, unitGaloisAut_hom]
   rw [AffineWeil.unitGaloisAction_groundPoints]

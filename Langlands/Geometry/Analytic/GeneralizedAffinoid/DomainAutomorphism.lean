@@ -55,7 +55,7 @@ theorem boundedHom_ext (U : Domain K A) {R : PresentedAffinoidAlgebra K}
 /-- A stabilizing forward base map has image in the domain: its comap is
 the inverse stabilizer acting on the structural spectrum map. -/
 theorem twistedBase_hasImageIn (U : Domain K A) (g : locusStabilizer U) :
-    HasImageIn K (U.baseMap.comp (g : Aut A).hom) U.locus := by
+    HasImageIn K (U.baseMap.comp (g : Aut A).asIso.hom) U.locus := by
   intro x
   have hx := smul_mem_locus U g⁻¹ (U.represents.hasImageIn x)
   convert hx using 1
@@ -67,14 +67,14 @@ theorem twistedBase_hasImageIn (U : Domain K A) (g : locusStabilizer U) :
 against the domain's own positive-polyradius affinoid algebra. -/
 def stabilizerSectionMap (U : Domain K A) (g : locusStabilizer U) :
     BoundedAlgHom K U.algebra U.algebra :=
-  (U.represents.2.2 U.algebra (U.baseMap.comp (g : Aut A).hom)
+  (U.represents.2.2 U.algebra (U.baseMap.comp (g : Aut A).asIso.hom)
     (twistedBase_hasImageIn U g)).choose
 
 @[simp] theorem stabilizerSectionMap_comp_baseMap
     (U : Domain K A) (g : locusStabilizer U) :
     (stabilizerSectionMap U g).comp U.baseMap =
-      U.baseMap.comp (g : Aut A).hom :=
-  (U.represents.2.2 U.algebra (U.baseMap.comp (g : Aut A).hom)
+      U.baseMap.comp (g : Aut A).asIso.hom :=
+  (U.represents.2.2 U.algebra (U.baseMap.comp (g : Aut A).asIso.hom)
     (twistedBase_hasImageIn U g)).choose_spec.1
 
 @[simp] theorem stabilizerSectionMap_one (U : Domain K A) :
@@ -97,32 +97,35 @@ theorem stabilizerSectionMap_mul (U : Domain K A) (g h : locusStabilizer U) :
 inverse; the full unique-factorization property proves their inverse laws. -/
 def stabilizerSectionAut (U : Domain K A) (g : locusStabilizer U) :
     Aut U.algebra where
-  hom := stabilizerSectionMap U g
-  inv := stabilizerSectionMap U g⁻¹
-  hom_inv_id := by
-    change (stabilizerSectionMap U g⁻¹).comp (stabilizerSectionMap U g) = _
-    rw [← stabilizerSectionMap_mul, inv_mul_cancel, stabilizerSectionMap_one]
-    rfl
-  inv_hom_id := by
-    change (stabilizerSectionMap U g).comp (stabilizerSectionMap U g⁻¹) = _
-    rw [← stabilizerSectionMap_mul, mul_inv_cancel, stabilizerSectionMap_one]
-    rfl
+  asIso :=
+  { hom := stabilizerSectionMap U g
+    inv := stabilizerSectionMap U g⁻¹
+    hom_inv_id := by
+      change (stabilizerSectionMap U g⁻¹).comp (stabilizerSectionMap U g) = _
+      rw [← stabilizerSectionMap_mul, inv_mul_cancel, stabilizerSectionMap_one]
+      rfl
+    inv_hom_id := by
+      change (stabilizerSectionMap U g).comp (stabilizerSectionMap U g⁻¹) = _
+      rw [← stabilizerSectionMap_mul, mul_inv_cancel, stabilizerSectionMap_one]
+      rfl }
 
 /-- The locus stabilizer acts on the fixed actual domain algebra. -/
 def stabilizerSectionAction (U : Domain K A) :
     locusStabilizer U →* Aut U.algebra where
   toFun := stabilizerSectionAut U
   map_one' := by
+    apply CategoryTheory.Aut.ext
     apply CategoryTheory.Iso.ext
     exact stabilizerSectionMap_one U
   map_mul' g h := by
+    apply CategoryTheory.Aut.ext
     apply CategoryTheory.Iso.ext
     exact stabilizerSectionMap_mul U g h
 
 @[simp] theorem stabilizerSectionAction_baseMap
     (U : Domain K A) (g : locusStabilizer U) (a : A) :
-    (stabilizerSectionAction U g).hom.toAlgHom (U.baseMap a) =
-      U.baseMap ((g : Aut A).hom.toAlgHom a) :=
+    (stabilizerSectionAction U g).asIso.hom.toAlgHom (U.baseMap a) =
+      U.baseMap ((g : Aut A).asIso.hom.toAlgHom a) :=
   congrArg (fun f : BoundedAlgHom K A U.algebra => f a)
     (stabilizerSectionMap_comp_baseMap U g)
 

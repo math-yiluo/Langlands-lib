@@ -20,7 +20,7 @@ variable {κ : Type u} [Field κ] [Algebra 𝒪[K] κ] [Algebra 𝓀[K] κ]
   [IsScalarTower 𝒪[K] 𝓀[K] κ]
 variable {π : 𝒪[K]} {B B' : Nilp.{u, v} 𝒪[K] π}
 
-local instance : IsLocalHom (algebraMap 𝒪[K] (SubfieldIntegerRing K D ι)) :=
+private local instance : IsLocalHom (algebraMap 𝒪[K] (SubfieldIntegerRing K D ι)) :=
   subfieldIntegerAlgebra_isLocalHom ι
 
 local notation "d" => CentralSimple.reducedDegree K D

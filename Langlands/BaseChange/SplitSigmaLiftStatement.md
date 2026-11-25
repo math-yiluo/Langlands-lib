@@ -67,25 +67,26 @@ Let `F : Type u` be a nonarchimedean local field of characteristic zero (`[Field
 `IsSigmaLift` takes `T2Space`, `LocallyCompactSpace` and `TotallyDisconnectedSpace` instances
 for `GL_n(F)` and `GL_n(F^{l+1})`. The statement supplies them locally with `haveI` from the
 Library's `LocalFieldTopology.generalLinear_t2Space`, `generalLinear_locallyCompactSpace` and
-`generalLinear_totallyDisconnectedSpace` (for `GL_n(F)`) and from Task 7432's
+`generalLinear_totallyDisconnectedSpace` (for `GL_n(F)`) and from
 `generalLinear_t2Space_of_finite`, `generalLinear_locallyCompactSpace_of_finite` and
-`generalLinear_totallyDisconnectedSpace_of_finite` applied to `E = F^{l+1}` (with Mathlib's
+`generalLinear_totallyDisconnectedSpace_of_finite` of `Langlands.BaseChange.TwistedCharacter`
+applied to `E = F^{l+1}` (with Mathlib's
 instances `Module.Finite F (Fin (l + 1) → F)` and `IsModuleTopology.instPi`). These are
 propositions, so the choice of proofs does not matter.
 
 **Convention for the intertwiner.** HL II.2.15 write the operator
 `A(v₁ ⊗ ⋯ ⊗ v_d) = v_d ⊗ v₁ ⊗ ⋯ ⊗ v_{d-1}` with `Π(δ^σ) = A⁻¹ ∘ Π(δ) ∘ A` (the operator of
-II.2.8, p. 68, has the same direction when `A₁ = 1`). The condition of HL II.1.3 and of Task
-7432's `SigmaIntertwiner` is `A ∘ Π(g) = Π(g^σ) ∘ A`. The inverse operator `splitTensorShift`
+II.2.8, p. 68, has the same direction when `A₁ = 1`). The condition of HL II.1.3 and of
+`SigmaIntertwiner` (`Langlands.BaseChange.TwistedCharacter`) is `A ∘ Π(g) = Π(g^σ) ∘ A`. The inverse operator `splitTensorShift`
 satisfies this condition (lemma `splitTensorShift_comp` of `SplitPlace`). With this `A` the
 twisted trace of a split tensor is the trace of `π(ψ₀) ⋯ π(ψ_l)` (see the proof idea). This
-matches the order of the convolution product of statement 9.
+matches the order of the convolution product of `SplitMatchingStatement`.
 
 ## Use
 
 In the global comparison of HL II.6.7–II.6.10 (printed pp. 123–126), the place `v₁` (II.6.7)
-and an auxiliary place `v₂` (II.6.8) split completely in `E`. There statement 9
-(`SplitMatchingStatement`) matches the test functions, and this statement matches the
+and an auxiliary place `v₂` (II.6.8) split completely in `E`. There
+`SplitMatchingStatement` matches the test functions, and this statement matches the
 representations. The local component of a σ-stable cuspidal `Π` is `Π_v ≅ π_v ⊗ ⋯ ⊗ π_v`
 (part (b)), and `Π_v` is a σ-lift of `π_v` with constant `1` for the cyclic shift `A` (part
 (a)). HL II.6.15 (printed p. 131) uses the corresponding fact for the constant
@@ -97,7 +98,7 @@ F scindée dans E".
 - **(a)** For pure tensors, `splitTensorRep π (ψ₀ ⊗ ⋯ ⊗ ψ_l) ∘ splitTensorShift` sends
   `v₀ ⊗ ⋯ ⊗ v_l` to `π(ψ₀) v₁ ⊗ ⋯ ⊗ π(ψ_{l-1}) v_l ⊗ π(ψ_l) v₀`, whose trace is
   `trace(π(ψ₀) ⋯ π(ψ_l)) = trace π(ψ₀ * ⋯ * ψ_l)` (on the finite-dimensional invariants of a
-  small compact open subgroup); with statement 9 and `μE = μF^{⊗(l+1)}`, this is HL II.2.8's
+  small compact open subgroup); with `SplitMatchingStatement` and `μE = μF^{⊗(l+1)}`, this is HL II.2.8's
   `Θ^A_Π(φ) = Θ_π(φ*)`. Split tensors span the test functions on `GL_n(F^{l+1})`, and in
   characteristic zero a test function whose regular semisimple orbital integrals vanish has
   trace zero in every admissible representation (density of regular semisimple orbital
@@ -112,7 +113,9 @@ F scindée dans E".
 
 ## Hypotheses
 
-- `CharZero F`, as in Tasks 7416, 7432 and 7446: the Library's `IsRegularSemisimple` (used in
+- `CharZero F`, as in other base-change statements of the Library (for instance
+  `RegularTransferStatement`, `TwistedCharacterRegularValuesStatement` and
+  `CuspidalPseudoCoefficientExistenceStatement`): the Library's `IsRegularSemisimple` (used in
   `AreConcordant`) asks for a separable characteristic polynomial, which is HL's regularity in
   characteristic zero, and the proof idea of (a) uses the density of regular semisimple
   orbital integrals in characteristic zero.
@@ -130,14 +133,14 @@ over all concordant pairs for them. So part (a) is **not** tied to `IsSplitProdu
 constant `1` of HL II.2.15 is the constant for every pair of Haar measures, because
 concordance of `(φ, f)` and both twisted and ordinary traces scale compatibly (an
 explanation, not proved here). In contrast,
-statement 9 (b), a pointwise matching of the functions `ψ₀ ⊗ ⋯ ⊗ ψ_l` and `ψ₀ * ⋯ * ψ_l`,
+`SplitMatchingStatement` (b), a pointwise matching of the functions `ψ₀ ⊗ ⋯ ⊗ ψ_l` and `ψ₀ * ⋯ * ψ_l`,
 is tied to `IsSplitProductHaar`.
 
 ## Dependencies and names
 
-The module imports `Langlands.BaseChange.SplitPlace` (this task: `splitCyclicShift`,
-`splitTensorRep`, `splitTensorShift`), Task 7432's `Langlands.BaseChange.TwistedCharacter`
+The module imports `Langlands.BaseChange.SplitPlace` (`splitCyclicShift`,
+`splitTensorRep`, `splitTensorShift`), `Langlands.BaseChange.TwistedCharacter`
 (`SigmaIntertwiner`, `IsSigmaStable`, `IsSigmaLift` and the topology lemmas
 `generalLinear_*_of_finite`), the Library's `Langlands.Group.GL.LocalFieldTopology` and
 `IsAdmissible`, and Mathlib's `Representation.IsIrreducible` and `Representation.Equiv`. The
-names and argument orders are those cited in the task.
+names and argument orders are those of these modules.

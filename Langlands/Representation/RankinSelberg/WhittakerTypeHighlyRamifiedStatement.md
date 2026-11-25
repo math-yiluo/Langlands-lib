@@ -1,7 +1,5 @@
 # Highly ramified L-vanishing for pairs of Whittaker type
 
-Author: Worker 386.
-
 This module defines the proposition
 `Langlands.RankinSelberg.WhittakerTypeHighlyRamifiedLVanishingStatement.{uF,uV,uW}`.
 It states Jacquet–Piatetski-Shapiro–Shalika (JPSS), Proposition 2.13, for
@@ -123,17 +121,19 @@ possible denominators in the resulting one-variable integrals. The
 normalized reciprocal-polynomial generator is then `1`. This describes
 the source argument only; no part of it is proved by this module.
 
-A proof successor must supply the analytic and asymptotic prerequisites
-and the required uniform conductor bound. Full L-factor multiplicativity
+A proof must supply the analytic and asymptotic prerequisites and the
+required uniform conductor bound;
+`Langlands.RankinSelberg.whittakerTypeHighlyRamifiedLVanishing` in
+`Langlands.Representation.RankinSelberg.WhittakerTypeHighlyRamifiedProof`
+does so. Full L-factor multiplicativity
 must not be used to justify this prerequisite: JPSS explicitly uses
 Proposition 2.13 later in Section 7. Compilation and inspection of the
 Prop definition establish well-formedness, independently of this
-remaining mathematical proof obligation.
+mathematical proof obligation.
 
 ## Lean check
 
-The exact declaration compiled and was inspected with `lean_check` in
-environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, with no errors or warnings.
+The exact declaration compiled and was inspected, with no errors or warnings.
 The inspection reports a definition returning `Prop`, universe parameters
 `uF uV uW`, and only `propext`, `Classical.choice` and `Quot.sound` as
 logical assumptions. This is a statement check, not a proof of the target.

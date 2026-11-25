@@ -1,6 +1,6 @@
 # Renard VI.8.1: coefficient averaging and fixed tensors
 
-Worker 1761 proves the unchanged `FixedTensorComparisonStatement` from
+This module proves the unchanged `FixedTensorComparisonStatement` from
 `RenardFamilyStatements` at independent universes `uB`, `uG`, `uV`, `uE`.
 The source is Renard, *Représentations des groupes réductifs p-adiques*,
 9 July 2026, VI.8.1, proof of the Proposition, printed p.188 / PDF p.194.

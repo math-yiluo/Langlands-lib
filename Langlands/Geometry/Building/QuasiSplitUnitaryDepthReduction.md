@@ -1,6 +1,6 @@
 # Actual quasi-split lifts from multipliable unitary depths
 
-Worker 244. This internal reduction isolates the remaining existence input for
+This internal reduction isolates the remaining existence input for
 the published `QuasiSplitIndivisibleDerivativeLiftsStatement`.
 
 For any connected reductive group and actual maximal split torus, the published

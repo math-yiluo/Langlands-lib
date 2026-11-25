@@ -67,6 +67,7 @@ theorem range_inclusion_comp_iso (f : A ⟶ H) (e : H ≅ H') :
       (SubgroupFunctor.range (inclusion f)).comap e.inv := by
   have hclosed : IsClosedSubgroup (inclusion f ≫ e.hom) := by
     change IsClosedImmersion ((inclusion f).hom.hom.left ≫ e.hom.hom.hom.left)
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
     infer_instance
   have heq := range_eq_of_dominantFactorizations
     (projection (f ≫ e.hom)) (projection f)

@@ -1,6 +1,6 @@
 # Strict filtered comparison for the actual Cartan restriction
 
-Author: Worker 94. This is an internal specialization of the generic filtered
+This is an internal specialization of the generic filtered
 direction-removal comparison to the published actual archimedean matrix Lie
 algebra and its Cartan decomposition.
 

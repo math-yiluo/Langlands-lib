@@ -19,7 +19,7 @@ variable {R : Type u} [CommRing R] {G : GroupScheme (Spec (CommRingCat.of R))}
   [IsAffineHom G.X.hom] {I : Type u} [Fintype I]
   (i : splitTorus (Spec (CommRingCat.of R)) I ⟶ G) (mu nu : I → ℤ)
 
-local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
+private local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
 
 /-- The actual dynamic root group represents the intersection of the
 centralizer of `mu` with the unipotent subgroup of `nu`. -/

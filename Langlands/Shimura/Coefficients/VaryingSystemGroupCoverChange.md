@@ -1,7 +1,5 @@
 # Coherent associated-system comparison along varying group and cover maps
 
-Author: Worker 57.
-
 This internal construction compares complete associated sheaf systems when
 both the finite residual groups and their covers change. An actual natural
 group map restricts the actions without changing the underlying coefficient
@@ -34,7 +32,7 @@ identify the full retained functor, its action as the original
 `Action.res` action, and each retained morphism by reflexivity.
 
 The object and morphism universes of `I` and `C` are independent. The
-two group diagrams share the group universe `u`; this unit does not
+two group diagrams share the group universe `u`; this module does not
 change their carriers to a different universe.
 
 ## Actual cover-map and coefficient inputs
@@ -111,7 +109,7 @@ hY : ∀ i, IsFiniteGeometricTorsor X (Y.action i)
 hZ : ∀ i, IsFiniteGeometricTorsor X (Z.action i).
 ```
 
-These premises concern each of the two original group actions. The unit
+These premises concern each of the two original group actions. The module
 does not assert that restriction of the `E_i` torsor action to `D_i`
 is itself a geometric torsor. No additional injectivity or surjectivity
 premise on `φ_i` is required by the existing comparison theorem.
@@ -174,11 +172,12 @@ torsor comparison proves invertibility. No additional external-source
 assertion is introduced.
 
 The existing fixed-group whole-system cover change uses the identity
-group homomorphisms. This unit admits a natural map between two
+group homomorphisms. This module admits a natural map between two
 different group diagrams and keeps coefficient restriction explicit,
 as needed for actual CM common-kernel quotient maps. It does not
 construct the CM levels or covers: those are supplied by the separate
 arithmetic and geometric CM constructions, which can instantiate this
 generic result. Compatibility under further composition of changing
-group diagrams, inverse image across base schemes, and full geometric
-CM level coherence remain separate constructions.
+group diagrams, inverse image across base schemes (treated in
+`EtaleInverseImageGroupCoverChange`), and full geometric CM level coherence
+are not part of this module.

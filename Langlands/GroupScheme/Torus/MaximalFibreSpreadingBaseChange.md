@@ -1,6 +1,6 @@
 # Isomorphisms on residue fibres from isomorphisms on geometric fibres
 
-Worker 5600, as a helper for the proof of
+This is a helper for the proof of
 `Langlands.GroupScheme.MaximalTorusFibreSpreadingStatement`.
 
 This module proves one theorem, in the namespace

@@ -1,7 +1,5 @@
 # V 5 at the Galois-fixed points from the wall invariance of `m(u)` (KP Corollary 9.4.10)
 
-Author: Worker 91.
-
 Lean module: `Langlands.Geometry.Building.UnramifiedFixedOppositeReduction`.
 
 This module proves that `UnramifiedFixedWallInvarianceStatement` (module of the same name)
@@ -22,7 +20,7 @@ proposition is proved here.
 | `unramifiedFixedOppositeReduction` | theorem | The same, stated as `UnramifiedFixedOppositeReductionStatement.{u}`. |
 
 The statement `UnramifiedFixedOppositeReductionStatement` only names the implication. Both
-sides are published or staged statements; neither is asserted.
+sides are statements of the Library; neither is asserted here.
 
 ## Notation
 

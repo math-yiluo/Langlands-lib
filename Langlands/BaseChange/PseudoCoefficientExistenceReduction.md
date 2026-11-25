@@ -5,8 +5,7 @@ This module proves that the Library statement
 fixed central character as in Henniart–Lemaire 2011, II.5.13, for `E = F`,
 `σ = 1`) follows from two premises:
 
-1. `TwistedPseudoCoefficientExistenceStatement` (Library; the target of
-   Task 7881), at the universes `.{v, v, w}` (both fields in the same
+1. `TwistedPseudoCoefficientExistenceStatement` (Library), at the universes `.{v, v, w}` (both fields in the same
    universe);
 2. `SquareIntegrableNotInducedStatement` (module
    `Langlands.BaseChange.SquareIntegrableNotInducedStatement`): an irreducible
@@ -91,8 +90,7 @@ and the facts are propositions, so the proof terms are interchangeable.
 
 ## Provenance
 
-Derived and internal: a conditional reduction, following the recommended route
-of the contract of Task 7882, of the Library statement
+Derived and internal: a conditional reduction of the Library statement
 `PseudoCoefficientExistenceStatement` to the Library statement
 `TwistedPseudoCoefficientExistenceStatement` and the new premise
 `SquareIntegrableNotInducedStatement`. HL II.1.7 identifies the σ-discrete

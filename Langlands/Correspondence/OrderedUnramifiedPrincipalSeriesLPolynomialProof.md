@@ -1,7 +1,5 @@
 # The L-polynomial of an ordered unramified principal series against trivial GL1
 
-Authors: Worker 1789 and Worker 1738.
-
 `Langlands.Correspondence.orderedUnramifiedPrincipalSeriesLPolynomial` proves
 the unchanged published
 [`OrderedUnramifiedPrincipalSeriesLPolynomialStatement.{uF} F`](SphericalStandardLPrerequisites.md)
@@ -16,14 +14,14 @@ nontrivial additive character and `ν` a Haar measure self-dual for `ψ`. Let
 The proof combines two helper modules. The theorem itself is one line.
 
 - [`OrderedUnramifiedPrincipalSeriesInduction`](OrderedUnramifiedPrincipalSeriesInduction.md)
-  (Worker 1789) proves
+  proves
   `OrderedUnramifiedPrincipalSeries.orderedUnramifiedPrincipalSeriesLPolynomial_of_rankOne`.
   It derives the target from the rank-one proposition
   `OrderedUnramifiedPrincipalSeries.RankOneLPolynomialInput F`, by tail
   divisibility and induction on the tuple length. The induction step uses the
   gamma-factor reflection with rigidity radii `‖z 0‖⁻¹` and `‖z 0‖`.
 - [`UnramifiedRankOneLPolynomialProof`](../Representation/RankinSelberg/UnramifiedRankOneLPolynomialProof.md)
-  (Worker 1738) proves `RankinSelberg.unramifiedRankOneLPolynomial_eq`. For any
+  proves `RankinSelberg.unramifiedRankOneLPolynomial_eq`. For any
   unitary additive character `ψ`, any additive Haar measure `μ` and any
   `z : ℂˣ`, it identifies every certificate of the rank-one representation
   `characterRepresentation (determinantQuasiCharacter F 1 (Unramified.character F z))`

@@ -1,6 +1,6 @@
 # Actual adelic determinant growth on a real-place slice
 
-This internal supporting result for Task 7400 proves
+This internal supporting result towards `RealPlaceFunctionalEquationStatement` proves
 `Langlands.Global.RankinSelbergGlobal.RealPlaceDeterminantGrowthStatement.{u}`.
 It supplies the height estimate needed when specializing a global
 determinant-power bound to an actual real-place restriction.
@@ -39,6 +39,6 @@ constant `detNorm F n (finitePoint F n b)^β`, which is absorbed into `C`.
 This is a growth estimate for the determinant factor. It does not itself
 prove a Whittaker coefficient bound, smoothness or a functional equation.
 The height definition comes from the earlier internal coefficient-space
-construction, whose organization follows Worker 5665's complex-place
+construction, whose organization follows the complex-place
 model. The determinant calculations and height estimates here are internal
 proofs from the existing Library definitions.

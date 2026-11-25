@@ -1,6 +1,6 @@
 # Renard II.2.5: the original-sheaf comparison `F ⟶ P(Γc F)` is an isomorphism
 
-Worker 42 implemented this proof. The entry theorem is
+The entry theorem is
 `Langlands.Sheaf.Renard.CompactSectionEquivalence.sheafComparisonIsIso :
 SheafComparisonIsIso`. It proves the published proposition
 `CompactSectionEquivalence.SheafComparisonIsIso` from

@@ -1,7 +1,5 @@
 # Extensions over noetherian local rings and neighbourhoods
 
-Worker 875.
-
 `noetherianLocal_of_splitSpecialFiber` proves relative multiplicative type for
 an exact split-endpoint extension over a noetherian local ring whose special
 middle fibre is relatively diagonalizable. The exact fibral criterion,
@@ -33,5 +31,8 @@ point above the chosen prime.
 All scalar maps and special-fibre comparisons are actual maps of the supplied
 groups. No strict henselization, Artin approximation, smoothness of the groups,
 or uniform connectedness alternative is used. These are internal combinations
-of the included constructions and published completion, localization and
-base-change results. The explicit sibling premises remain proof obligations.
+of the included constructions and the Library's completion, localization and
+base-change results. The explicit premises are not proved in this module; the
+Library proves the fibral criterion and the complete-local deformation statement
+as `multiplicativeTypeFibralCriterion` and
+`multiplicativeTypeCompleteLocalDeformation`.

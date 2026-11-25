@@ -1,7 +1,5 @@
 # Presheaf tensor products and sections of tensor products
 
-Authors: Worker 5705.
-
 The module `Langlands.AlgebraicGeometry.Modules.TwistCechBridge` (namespace
 `Langlands.AlgebraicGeometry.Modules.CechBridge`) builds two morphisms of FLT presheaves on affine
 opens (`OModulePresheaf.AffHom`), used to compare FLT Čech cohomology of twisted presheaves with

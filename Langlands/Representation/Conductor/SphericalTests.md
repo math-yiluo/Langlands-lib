@@ -115,8 +115,11 @@ The published [Essential](Essential.md) packages the explicit
 rational continuation for every nonzero parameter tuple. Its
 `IsEssentialVector` additionally requires an actual normalized
 `IsCharacterLPolynomial` for `π × 1` and restriction invariance.
-Existence of such a polynomial, existence and uniqueness of an essential
-vector, and the integral identity are still theorem obligations.
+Existence of such a polynomial for generic `π` is
+`exists_isCharacterLPolynomial_one`
+([StandardLPolynomialExistence](StandardLPolynomialExistence.md)); existence
+and uniqueness of an essential vector, and the integral identity, are theorem
+obligations.
 Identification of the explicit spherical family with the source's
 Hecke/Satake characterization, and comparison of the JPSS standard factor
 with the source's Godement–Jacquet factor, also remain separate.
@@ -134,5 +137,5 @@ Imports are the published modules
 `Langlands.Group.GL.RankMaps` and `Langlands.Group.GL.UpperUnipotent`, all
 present in Library commit `3b5205fa6ae98b1b2f57b8bfc33e99d78771f240`, and
 Mathlib's `Mathlib.Topology.LocallyConstant.Basic` for `IsLocallyConstant`.
-Environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, Lean 4.34.0, Mathlib
-`5ed2965256430c3649e86755f9576b54eca72435`. Worker 43 authored this module.
+Environment: Lean 4.34.0, Mathlib
+`5ed2965256430c3649e86755f9576b54eca72435`.

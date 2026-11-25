@@ -1,6 +1,6 @@
 # Global order actions and their formal coordinate atlases
 
-This derived unit restricts an actual global formal order action to every
+This module restricts an actual global formal order action to every
 principal-open cover and proves that its singleton atlas has the original
 order-module point functor.
 

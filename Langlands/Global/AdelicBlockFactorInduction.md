@@ -1,6 +1,6 @@
 # Half-twisted adelic induction from actual block factors
 
-Author: Worker 2. Provenance: internal construction from the published
+Provenance: internal construction from the published
 `BlockShape.blockTensor`, `FiniteTensor.externalMap` and actual adelic
 parabolic section APIs. This module makes no new identification with an
 original-literature induction convention.

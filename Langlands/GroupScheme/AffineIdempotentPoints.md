@@ -1,7 +1,5 @@
 # Points of an affine group scheme over a ring split by an idempotent
 
-Worker 47.
-
 Module `Langlands.GroupScheme.AffineIdempotentPoints`, namespace
 `Langlands.GroupScheme.IdempotentPoints`. It imports
 [`AffinePointProducts`](AffinePointProducts.md) (points over a product ring, which brings in

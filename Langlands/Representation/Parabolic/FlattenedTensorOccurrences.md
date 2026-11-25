@@ -1,7 +1,5 @@
 # Actual flattened tensor Jacquet occurrences
 
-Author: Worker 19.
-
 This internal adapter relates actual standard flattened Jacquet occurrences
 to actual composed and blockwise occurrences. It retains every coarse block
 and the exact rank transport of every original factor, the supplied
@@ -67,7 +65,7 @@ be irreducible, and no whole-Jacquet quotient or induction embedding is
 assumed.
 
 All factor carriers remain in `Type uV`, independently of the field
-universe `uF`. The host task uses the specialization of this carrier
+universe `uF`. The statement this module serves uses the specialization of this carrier
 universe to `max uF uV`. The topology is exactly the supplied `T.topology`;
 its ring continuity is derived from `T.valuativeRel` and `T.localField`.
 There is no cuspidal-line, linkage, distinctness or support restriction
@@ -80,8 +78,8 @@ The provenance is internal. The five direct imports are
 `Parabolic.FlattenedJacquetComparisonProof`,
 `Tensor.FlattenedGLRefinement`, and `Tensor.FiniteProperties`. Recursive
 traversal over Library base `125fca1a70e8f89af98a36c8565617cd68f73be5`
-contains 379 project modules, including this one and the separately staged
-prerequisites. The classification-named modules are exactly
+contains 379 project modules, including this one and its separate
+prerequisite modules. The classification-named modules are exactly
 `CanonicalConstituents`, `ConstituentRelations`,
 `CuspidalJacquetMultiplicityStatement`, `Essential`, `FiniteLengthProof`,
 `FiniteLengthStatement`, `RelativeGenericityStatement`,
@@ -152,8 +150,8 @@ The classification-named imports supply lower definitions, statement
 interfaces and the independent finite-length proof just described. The
 used bodies invoke no global support decomposition, general ordered
 quotient coverage, full multisegment classification or any conclusion of
-the eight classification tasks excluded by the host contract, including
-their proof successors. Neither local binary identification nor local
-rank-three structure is asserted here. Applying this bridge to the host's
-literal original and permuted shapes still requires the corresponding
+the eight classification statements excluded for the statement this module
+serves, including the modules that prove them. Neither local binary identification nor local
+rank-three structure is asserted here. Applying this bridge to the
+literal original and permuted shapes of the statement this module serves still requires the corresponding
 block combinatorics and local transfer proofs.

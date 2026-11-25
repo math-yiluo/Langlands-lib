@@ -1,6 +1,6 @@
 # Actual ordinary spectral transport to the standalone extension
 
-Worker 40 authored this derived compatibility construction. Its namespace is
+This module is a derived compatibility construction. Its namespace is
 `Langlands.LocalFactor.CommonClosureSpectral.Transport`. It attaches the existing
 continuous exact virtual group and its spectral twists to the actual standalone
 Weil group of an extension field.
@@ -119,12 +119,11 @@ supplies restriction on the exact quotient. The proof combines these actual
 constructions rather than assuming a character or virtual-group comparison.
 No separate cross-closure comparison theorem is attributed to Tate.
 
-This unit concerns continuous ordinary representations and their exact virtual
+This module concerns continuous ordinary representations and their exact virtual
 classes. It assumes no semisimplicity, no independent open-inertia condition,
 no local reciprocity isomorphism, and no supplied epsilon assignment. It does
 not identify this category with every representation category in Tate.
 It neither constructs nor transports a full nonabelian epsilon system and
 does not prove its existence, a functional equation, or existence of self-dual
 measure. It does not compare different closure choices or prove coherence
-under composition of field embeddings. Those obligations and completion of
-the broad host task remain separate.
+under composition of field embeddings. Those obligations remain separate.

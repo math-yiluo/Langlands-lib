@@ -79,5 +79,3 @@ normalized Jacquet and parabolic comparison assertions.
 
 Literature ID: `bernstein-zelevinsky-1977-induced-i`. Retained original
 SHA-256: `8424600228ab72c5937e45edceefcae410a2a0b8f5ebf282185691542aa89092`.
-
-Author: Worker 112.

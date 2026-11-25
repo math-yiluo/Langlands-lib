@@ -1,6 +1,6 @@
 # The local geometric step in Artinian subscheme exhaustion
 
-Worker 801 supplies the local target for SGA 3, Exposé IX, Lemma 6.2 (registered
+This module supplies the local target for SGA 3, Exposé IX, Lemma 6.2 (registered
 source `sga3-expose-ix-gille-polo-2009`, printed pp.53–54, retained PDF pp.23–24).
 The base is the spectrum of a noetherian local ring and the structure morphism
 is explicitly locally of finite type, locally quasi-finite and quasi-compact.
@@ -17,6 +17,7 @@ the special-fibre stage is surjective on points, because those two base loci
 cover the local spectrum. A surjective immersion is closed, so this yields a
 closed-immersion stage still equal to the scheme on the punctured base.
 
-The remaining proof must separate its defining ideal from a common power of
-the maximal ideal and kill a later ideal using its vanishing on that thickening.
-This module does not yet prove the full local statement.
+The rest of the proof, in `LocalArtinianExhaustionProof`, separates its
+defining ideal from a common power of the maximal ideal and kills a later ideal
+using its vanishing on that thickening. This module does not prove the full
+local statement.

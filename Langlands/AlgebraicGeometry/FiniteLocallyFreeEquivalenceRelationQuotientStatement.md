@@ -1,7 +1,5 @@
 # Quotients of schemes by finite locally free equivalence relations
 
-Authors: Worker 934 wrote the Lean statement and this Markdown.
-
 The module
 `Langlands.AlgebraicGeometry.FiniteLocallyFreeEquivalenceRelationQuotientStatement`
 defines one proposition in namespace `Langlands.AlgebraicGeometry`:
@@ -51,8 +49,7 @@ resulting affine quotients. The Library states both cited results in
 
 The Lean module imports Mathlib's scheme limits and its morphism-property
 modules for finite, flat and locally finitely presented morphisms. Mathlib is
-pinned at commit `5ed2965256430c3649e86755f9576b54eca72435` in the prepared
-environment.
+pinned at commit `5ed2965256430c3649e86755f9576b54eca72435`.
 
 The proposition quantifies over arbitrary schemes `U R : Scheme.{u}` and
 morphisms `t s : R ⟶ U`. Its first ten hypotheses are exactly the common

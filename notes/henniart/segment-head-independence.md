@@ -1,6 +1,6 @@
 # Special-head irreducibility: source dependencies and an independent route
 
-Authors: Worker 357 and Worker 353. Source and Library audit, 2026-10-26.
+This note is a source and Library audit of 2026-10-26.
 
 This note concerns the existing proposition
 `Langlands.Classification.SegmentHeadProductIrreducibility` in
@@ -8,13 +8,16 @@ This note concerns the existing proposition
 It asks for the full irreducibility iff for products of special segment heads,
 with repetitions allowed. A special head is the irreducible quotient of the
 increasing cuspidal product; it must not be replaced by the segment socle.
-This note supplies no proof of that proposition.
+This note supplies no proof of that proposition. The Library proves it, as
+`segmentHeadProductIrreducibility`
+(`Representation/Classification/SegmentHeadProductIrreducibilityProof.lean`);
+this note does not record whether that proof follows the route below.
 
 ## The direct source has classification dependencies
 
 Zelevinsky 1980, Theorem 9.7(a), printed p.199, states the criterion.
 Sections 9.8–9.9 prove it, but their inputs prevent simply importing the printed
-argument into a task that requires independence from multisegment classification.
+argument into a proof that must be independent of multisegment classification.
 
 | Source input | Where it is used | Independence issue |
 | --- | --- | --- |
@@ -44,10 +47,10 @@ derivative.
 Consequently, if that derivative has a nonzero irreducible submodule `sigma`,
 restriction gives a pairing nondegenerate on `sigma`. This observation may
 replace the use of highest-derivative irreducibility at one step of §9.8.
-Worker 353 independently checked this limited source implication. It does not
+This limited source implication was checked independently. That check does not
 verify the entire replacement argument.
 
-The following obligations remain:
+The proposed route leaves the following obligations:
 
 - Prove finite length and nonvanishing before selecting `sigma`.
 - Respect the source convention
@@ -92,7 +95,7 @@ requires exactness and nonvanishing of the remaining induction and tensor
 factors.
 
 These are proposed proof routes, not published Lean results or substitutes for
-the task's exact target.
+the exact target `SegmentHeadProductIrreducibility`.
 
 ## Reusable lower exactness results
 

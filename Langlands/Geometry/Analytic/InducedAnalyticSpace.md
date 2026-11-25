@@ -1,7 +1,5 @@
 # Berkovich's induced analytic spaces `X_{G/H}`
 
-Author: Worker 21.
-
 For a subgroup `H` of a group `G` and an analytic space `X` with an action of
 `H`, this module constructs Berkovich's induced space `X_{G/H}`. It is the
 disjoint union of copies of `X` indexed by `G/H`, with an action of `G`, and

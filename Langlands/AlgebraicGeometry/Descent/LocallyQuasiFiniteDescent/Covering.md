@@ -23,7 +23,8 @@ Notation: `h` is `schemeYoneda S`, i.e. the functor of points with values lifted
   `h (g i)`. Suppose also that the charts `b k` satisfy the hypothesis of the previous item for
   every `a' i`. Then `Sigma.desc b : ∐ₖ h (Y k) ⟶ G` is fppf locally surjective.
 
-The signature is the one Worker 1072 asked for, for use in their final step of the 02W8 proof.
+The signature is the one used in the final step of the 02W8 proof, `fppfSeparatedLocallyQuasiFiniteDescent`
+(module `Proof`).
 
 ## Proof
 

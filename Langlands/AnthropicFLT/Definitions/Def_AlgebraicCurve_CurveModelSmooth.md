@@ -1,12 +1,12 @@
 # `Langlands.AnthropicFLT.Definitions.Def_AlgebraicCurve_CurveModelSmooth`
 
-Ported for task `6d6cc279-3071-445f-adba-589e54d9816b` (projective representability of the relative endomorphism functor of a projective abelian scheme). Definition module (FLT `Definitions/`).
+Ported for the proof of the projective representability of the relative endomorphism functor of a projective abelian scheme. Definition module (FLT `Definitions/`).
 
 ## Source and licence
 
 Port of `Definitions/Def_AlgebraicCurve_CurveModelSmooth.lean` from the Anthropic Lean formalisation of Fermat's Last Theorem (commit `6e837e75355538c7f80bab5b956861e86c4eacc2`; project literature folder "Anthropic - Fermat's Last Theorem - complete Lean source at 6e837e75355538c7f80bab5b956861e86c4eacc2", literature id `anthropic-flt-complete-lean-source-6e837e75`). The text is the FLT text except for the changes listed below.
 
-Licence: Apache License, Version 2.0; Copyright 2026 Anthropic, PBC. Copies of the FLT `LICENSE`, `NOTICE` and `ATTRIBUTION.md` are in `licenses/Anthropic-FLT/` (added by statement artifact `a25bcdd5-03da-45b4-a0d3-100bb603e7c5`).
+Licence: Apache License, Version 2.0; Copyright 2026 Anthropic, PBC. Copies of the FLT `LICENSE`, `NOTICE` and `ATTRIBUTION.md` are in `licenses/Anthropic-FLT/`.
 
 FLT `ATTRIBUTION.md` does not list this file as containing third-party material.
 
@@ -69,5 +69,5 @@ Names, namespaces and statements are the FLT ones.
 
 ## Dependencies
 
-Ported FLT modules imported: `Langlands.AnthropicFLT.Definitions.Def_AlgebraicCurve_CurveModel` (same contribution), `Langlands.AnthropicFLT.Definitions.Def_JacJ1_ChartAlgebra` (same contribution).
+Ported FLT modules imported: `Langlands.AnthropicFLT.Definitions.Def_AlgebraicCurve_CurveModel` (ported together with this module), `Langlands.AnthropicFLT.Definitions.Def_JacJ1_ChartAlgebra` (ported together with this module).
 Other imports: `Mathlib.AlgebraicGeometry.Morphisms.Smooth`, `Mathlib.AlgebraicGeometry.Morphisms.Etale`, `Mathlib.RingTheory.Extension.Presentation.Submersive`, `Mathlib.RingTheory.Smooth.StandardSmoothOfFree`, `Mathlib.RingTheory.Smooth.StandardSmoothCotangent`, `Mathlib.RingTheory.Smooth.Field`, `Mathlib.RingTheory.Smooth.Locus`, `Mathlib.RingTheory.RingHom.LocallyStandardSmooth`, `Mathlib.RingTheory.Etale.Kaehler`, `Mathlib.FieldTheory.IntermediateField.Adjoin.Algebra`, `Mathlib.RingTheory.AlgebraicIndependent.Transcendental`, `Mathlib.RingTheory.Smooth.Fiber`, `Mathlib.RingTheory.Unramified.LocalRing`, `Mathlib.RingTheory.LocalRing.ResidueField.Instances`, `Mathlib.RingTheory.DedekindDomain.Dvr`, `Mathlib.RingTheory.Flat.TorsionFree`.

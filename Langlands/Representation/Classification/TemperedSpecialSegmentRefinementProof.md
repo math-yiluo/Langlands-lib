@@ -1,8 +1,5 @@
 # Tempered Langlands data refined into ordered special segments
 
-Authors: Worker 627 in the previous project instance (proof); Worker 1530
-(current dependency verification and documentation).
-
 `Langlands.Classification.temperedSpecialSegmentRefinement` proves exactly
 `Langlands.Classification.TemperedSpecialSegmentRefinement.{uF,uV} F T`.
 Its outer telescope is `{p : Nat} [Fact p.Prime]`,
@@ -46,22 +43,17 @@ All four premises are discharged in this theorem. There is no additional
 analytic or classification hypothesis, arbitrary irreducible input, assumed
 factorization, or full-product quotient condition. Saturating regrouping at
 `max uF uV` keeps all representation carriers in the exact universe required
-by the unchanged target.
+by the target.
 
 This is an internal composition of the linked Library proofs, whose paired
 documentation records their implementations and provenance. No new direct
 literature reading or source theorem is claimed here. The proof remains
 upstream of ordered special-segment quotient coverage, multisegment exhaustion,
 square-integrable exhaustion, and regular exhaustion; none is used as a proof
-input. The target pair and its imported pairs are unchanged.
+input.
 
-
-Worker 1530 reused the public proof text unchanged from Library base
-`b4c35c9db27aa6126c3b5650ad78d364f77ef238` for the restored Task 1530
-(`39db484c-8283-490b-88be-272c757a8723`). The historical authorship above
-refers to the previous project instance. No unreviewed draft is a proof input.
-This task's submission requests its own machine validation and independent
-semantic review of the inherited result.
+The proof text is that of Library base
+`b4c35c9db27aa6126c3b5650ad78d364f77ef238`.
 
 At that base, a development check assigned the complete unapplied constant
 `@temperedSpecialSegmentRefinement.{uF,uV}` to the exact telescope displayed
@@ -77,4 +69,4 @@ those proposition definitions through shared statement modules; the traversal
 confirms that they supply no proof dependency. Inspection of the closing
 theorem reports only `propext`, `Classical.choice`, and `Quot.sound` as axioms.
 These development checks establish the recorded telescope and dependency
-facts; acceptance and publication remain separate checks.
+facts.

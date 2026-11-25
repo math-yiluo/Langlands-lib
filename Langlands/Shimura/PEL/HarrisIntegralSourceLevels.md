@@ -35,8 +35,8 @@ scalar-extension similitude subgroup. The subgroup used here is exactly
 
 `g(v) ∈ Λf ↔ v ∈ Λf` for every `v : Vf`.
 
-The provenance is internal: this unit derives a finite-basis criterion from
-the published lattice, finite-adele, topology and stabilizer constructions.
+The provenance is internal: this module derives a finite-basis criterion from
+the lattice, finite-adele, topology and stabilizer constructions.
 No external existence theorem or literature assertion is used. The generic
 linear-algebra helpers are private and have the actual Harris consumer below.
 
@@ -122,4 +122,5 @@ The construction does not prove normalized-frame existence on any abelian
 scheme, denominator reflection of a rational isomorphism, existence of an
 ordinary PEL moduli scheme or a natural comparison with the normalized CM
 presheaf. It supplies no admissibility, smoothness or projectivity result.
-The exact division CM representability target remains a separate obligation.
+The Library does not prove the exact division CM representability target
+`DivisionCMRepresentabilityStatement`.

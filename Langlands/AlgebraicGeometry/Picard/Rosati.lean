@@ -53,9 +53,11 @@ abbrev DualData.Additivity (W : DualData A) : Prop :=
 /-- The actual rational dualization used by RationalPolarizationCompatibility. -/
 def DualData.dual0 (W : DualData A) (hadd : W.Additivity P) :
     End0 A →ₗ[ℚ] End0 (W.dual P) :=
+  CategoryTheory.End.linearEquiv.symm.toLinearMap ∘ₗ
   dualHom0 P.preservation P.composition P.unitCoherence P.associativity P.comparison
     P.symmetry P.stability W.hasDual W.hasDual hadd W.inversePoincare W.evaluation
-    W.inversePoincare W.evaluation W.geometry W.geometry
+    W.inversePoincare W.evaluation W.geometry W.geometry ∘ₗ
+  CategoryTheory.End.linearEquiv.toLinearMap
 
 /-- The existing actual geometric polarization predicate, without added conditions. -/
 abbrev DualData.IsPolarization (W : DualData A) (lam : A ⟶ W.dual P) : Prop :=
@@ -84,17 +86,22 @@ def polarizationInverse : Hom0 (W.dual P) A := inv ((rationalization S).map lam)
 
 /-- Actual Rosati conjugation: alpha maps to lambda inverse after alpha dual after lambda. -/
 def involution : End0 A →ₗ[ℚ] End0 A :=
-  { toFun a := comp0 A (W.dual P) A
-      (comp0 A (W.dual P) (W.dual P) (homToHom0 lam) (W.dual0 P hadd a))
-      (polarizationInverse P W lam)
-    map_add' a b := by simp only [map_add, LinearMap.add_apply]
-    map_smul' q a := by simp only [map_smul, LinearMap.smul_apply, RingHom.id_apply] }
+  { toFun a := CategoryTheory.End.of (comp0 A (W.dual P) A
+      (comp0 A (W.dual P) (W.dual P) (homToHom0 lam) (W.dual0 P hadd a).asHom)
+      (polarizationInverse P W lam))
+    map_add' a b := by
+      apply CategoryTheory.End.ext
+      simp only [map_add, CategoryTheory.End.add_asHom, LinearMap.add_apply]
+    map_smul' q a := by
+      apply CategoryTheory.End.ext
+      simp only [map_smul, CategoryTheory.End.smul_asHom, LinearMap.smul_apply,
+        RingHom.id_apply] }
 
 /-- The defining formula uses the actual rational dual, polarization and inverse. -/
 theorem involution_apply (a : End0 A) :
-    involution P W hadd lam a = comp0 A (W.dual P) A
-      (comp0 A (W.dual P) (W.dual P) (homToHom0 lam) (W.dual0 P hadd a))
-      (polarizationInverse P W lam) := rfl
+    involution P W hadd lam a = CategoryTheory.End.of (comp0 A (W.dual P) A
+      (comp0 A (W.dual P) (W.dual P) (homToHom0 lam) (W.dual0 P hadd a).asHom)
+      (polarizationInverse P W lam)) := rfl
 
 variable {k : Type u} [Field k]
   {A : AbelianScheme (Scheme.Spec.obj (Opposite.op (CommRingCat.of k)))}
@@ -104,14 +111,14 @@ is composition with the right factor applied first. -/
 def traceForm (W : DualData A) (hadd : W.Additivity P) (lam : A ⟶ W.dual P)
     [HasRationalInverse P W lam] : LinearMap.BilinForm ℚ (End0 A) where
   toFun a := (geometricEndomorphismTrace A).comp
-    ((comp0 A A A).flip a |>.comp (involution P W hadd lam))
+    (LinearMap.mulLeft ℚ a |>.comp (involution P W hadd lam))
   map_add' a b := by
     ext c
-    simp only [LinearMap.comp_apply, LinearMap.flip_apply, map_add,
+    simp only [LinearMap.comp_apply, LinearMap.mulLeft_apply, add_mul, map_add,
       LinearMap.add_apply]
   map_smul' q a := by
     ext c
-    simp only [LinearMap.comp_apply, LinearMap.flip_apply, map_smul,
+    simp only [LinearMap.comp_apply, LinearMap.mulLeft_apply, smul_mul_assoc, map_smul,
       LinearMap.smul_apply, RingHom.id_apply]
 
 @[simp] theorem traceForm_apply (W : DualData A) (hadd : W.Additivity P)

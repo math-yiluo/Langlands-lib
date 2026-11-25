@@ -34,5 +34,6 @@ free rank-one sheaves.
 The proof adapts the imported fixed-rank determinant-map construction using
 actual local section bases and mixed finite-basis determinants. The frame
 systems and their covering property are inputs. Existence of finite frames,
-pullback comparisons, a parabolic Lie polarization and its ampleness remain
-separate obligations.
+pullback comparisons, a parabolic Lie polarization and its ampleness are not
+part of this module; the variable-rank pullback comparisons are in
+`DeterminantVariablePullback`, which builds on it.

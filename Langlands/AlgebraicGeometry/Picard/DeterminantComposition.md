@@ -49,8 +49,12 @@ subcategory of actual locally free rank-one module sheaves.
 bundles and their canonical pullback composition comparison by forgetting to
 module sheaves and applying `pullbackIso_composition`.
 
-The provenance is derived from the imported Library APIs. This unit proves the
+The provenance is derived from the imported Library APIs. This module proves the
 constant-rank composition law. Naturality in module isomorphisms, compatibility
-between different frame covers, variable rank, and the construction and
-ampleness of the parabolic polarization remain further obligations; this is
-not a proof of the parent parabolic representability statement.
+between different frame covers and variable rank are treated in
+`DeterminantVariableNaturality`, `DeterminantVariableCoverPullback` and
+`DeterminantVariableCoherence`; the construction and ampleness of the
+parabolic polarization are not part of this module either. This is not a
+proof of the parabolic representability statement
+`RelativeParabolicSchemeStatement`, which the Library proves in
+`Langlands.GroupScheme.RelativeLevi.ParabolicSchemeProof`.

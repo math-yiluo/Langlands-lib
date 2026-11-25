@@ -1,19 +1,18 @@
 # The Noetherian case by induction over tuple-orbit covers
 
-Author: Worker 1038.
-
 Module `Langlands.AlgebraicGeometry.AlgebraicSpace.TupleOrbitInduction`, namespace
 `Langlands.AlgebraicGeometry.AlgebraicSpace`.
 
-This module proves the Noetherian case of task 13a3a0fd, "AF representability from a finite
-surjection with quasi-affine source". It assumes the reduced-closed-subspace statement.
+This module proves the Noetherian case of AF representability from a finite surjection with
+quasi-affine source (`FiniteSurjectiveQuasiAffineSourceAFStatement`). It assumes the reduced-closed-subspace statement.
 
 The main theorem is `noetherianSchemeQuasiAffineSourceAF_of_reducedClosedSubspace`:
 
 `ReducedClosedSubspaceStatement.{u} → NoetherianSchemeQuasiAffineSourceAFStatement.{u}`.
 
-- `ReducedClosedSubspaceStatement` (published) has a proof task of its own, fb8256b4.
-- `NoetherianSchemeQuasiAffineSourceAFStatement` (candidate 09f0ac49) says the following.
+- `ReducedClosedSubspaceStatement` (published) is proved separately, as `reducedClosedSubspace`
+  in `ReducedClosedSubspaceProof`.
+- `NoetherianSchemeQuasiAffineSourceAFStatement` says the following.
   Over any base `S`, let `Y` be a quasi-compact quasi-separated algebraic space with a finite
   surjective map from a quasi-affine Noetherian scheme `U`. Then `Y` is represented, by a
   natural isomorphism on all scheme tests, by a scheme in which every finite set of points
@@ -102,7 +101,7 @@ quasi-affine, being finite over `U` (`Scheme.IsQuasiAffine.of_isAffineHom`).
      Its preimage `ι⁻¹ V` is affine, since `ι` is a closed immersion. It is
      `SameImage g`-saturated: by `sameImage_map_comp_iff`, points with the same image under
      `g` map to `rel`-related points of `Wset`.
-5. Worker 336's `SaturatedAffineOpensRepresentation.exists_AF_representation_of_saturated_affine_opens`
+5. `SaturatedAffineOpensRepresentation.exists_AF_representation_of_saturated_affine_opens`
    now gives the representation.
 
 ## The induction: `noetherianSchemeQuasiAffineSourceAF_of_reducedClosedSubspace`

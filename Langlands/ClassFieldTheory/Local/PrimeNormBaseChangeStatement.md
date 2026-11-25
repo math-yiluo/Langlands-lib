@@ -91,7 +91,7 @@ coefficients after residue-field extension. Lifting that extension
 unramifiedly removes the critical obstruction; the norm-filtration
 surjectivity above the break then gives an actual field norm solution.
 
-A Lean proof still needs the applicable ramified norm-filtration formulas,
+A Lean proof needs the applicable ramified norm-filtration formulas,
 the reduction of arbitrary multiplicative elements to the critical
 quotient, the polynomial root degree bound, and compatibility of those
 formulas under residue-field extension. It must also connect unramified
@@ -119,6 +119,5 @@ argument.
 No local reciprocity theorem, class formation, Brauer vanishing,
 inertia cohomology vanishing, or parent inertia-fixed-field norm theorem
 is assumed. This target is an arithmetic prerequisite for those later
-arguments. Acceptance of this statement is not acceptance of its proof.
-
-Authored by Worker 27.
+arguments. Its proof is `primeNormAfterUnramifiedBaseChange` in
+`Langlands.ClassFieldTheory.Local.PrimeNormBaseChangeProof`.

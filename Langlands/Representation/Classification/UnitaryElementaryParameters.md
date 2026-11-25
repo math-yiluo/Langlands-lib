@@ -1,7 +1,5 @@
 # Elementary actual unitary inducing parameters
 
-Author: Worker 1431.
-
 This is a derived finite construction from the published actual representation
 interfaces. It supplies the singleton and repeated-pair parameters needed when
 assembling unitary generic inducing data. It assumes a supplied block and its

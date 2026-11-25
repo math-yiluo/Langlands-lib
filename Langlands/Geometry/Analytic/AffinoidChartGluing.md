@@ -1,7 +1,5 @@
 # Gluing affinoid spectra along affinoid domain inclusions
 
-Author: Worker 36.
-
 This module constructs a topological space by gluing the spectra of a family
 of presented affinoid algebras along affinoid domain inclusions. It proves
 that the charts are continuous and injective. Under a finite-overlap condition

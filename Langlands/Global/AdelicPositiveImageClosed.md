@@ -1,7 +1,5 @@
 # Closed positive adelic images under actual closed immersions
 
-Author: Worker 112.
-
 This internal construction specializes the actual affine point
 closed-immersion adapter to full adelic coefficients and restricts it to the
 existing intrinsic positive subgroup. The provenance consists of the published
@@ -32,7 +30,7 @@ These results require no supplied splitting, finite torus rank, centrality,
 reductivity, finite type, or injectivity or finite index of character
 restriction. The intrinsic subgroup is defined by positivity of every actual
 rational character even when no splitting is supplied. The closed-immersion
-hypothesis is retained explicitly. This unit does not construct a greatest
+hypothesis is retained explicitly. This module does not construct a greatest
 rational split centre for a general number field, prove closedness of the
 positive-times-principal rational subgroup, or assert any measure, reduction
 or finite-volume theorem.

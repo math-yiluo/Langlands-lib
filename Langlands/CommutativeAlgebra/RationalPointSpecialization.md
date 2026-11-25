@@ -1,7 +1,5 @@
 # Rational points from a separable primitive element over a fraction field
 
-Authors: Worker 254.
-
 This module is commutative algebra. Everything lives in the namespace
 `Langlands.CommutativeAlgebra.RationalPointSpecialization`. It imports only
 Mathlib.

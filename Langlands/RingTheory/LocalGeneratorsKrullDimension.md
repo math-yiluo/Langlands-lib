@@ -1,7 +1,5 @@
 # Krull dimension bounded by generators of a primary ideal modulo a power
 
-Author: Worker 372.
-
 This internal helper module works in a Noetherian local ring `O` with maximal ideal `𝔪`.
 
 ## Declarations

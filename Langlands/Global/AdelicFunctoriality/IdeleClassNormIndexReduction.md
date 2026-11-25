@@ -5,13 +5,13 @@ idele-class norm index lemma
 [`IdeleClassNormIndexFinite`](IdeleClassNormIndexFiniteStatement.md)
 under one hypothesis: the quotient of the idele class group by the integral
 idele classes is finite,
-[`IntegralIdeleClassQuotientFinite`](../../ClassField/Global/IntegralIdeleClassQuotientFiniteStatement.md).
+[`IntegralIdeleClassQuotientFinite`](../../ClassFieldTheory/Global/IntegralIdeleClassQuotientFiniteStatement.md).
 Throughout, `K : Type u` and `L : Type v` are number fields in independent
 universes with `Algebra K L`. The module imports
 [IdeleNormLift](IdeleNormLift.md),
 [UnramifiedUnitNorm](UnramifiedUnitNorm.md),
 [LocalDegree](LocalDegree.md),
-[LocalUnitPowers](../../ClassField/Global/LocalUnitPowers.md) and the two
+[LocalUnitPowers](../../ClassFieldTheory/Global/LocalUnitPowers.md) and the two
 statement modules above. It changes none of the imported definitions and
 declares no global instances.
 
@@ -74,7 +74,7 @@ The remaining definitions take arbitrary choice functions
   `(∀ p : ramifiedChosenPlaces wf, localUnits p ⧸ localUnitPowers p (chosenFiniteDegree wf p)) ×
   (∀ v, (v.Completion)ˣ ⧸ infiniteUnitPowers v (chosenInfiniteDegree wi v))`.
   Here `localUnitPowers p d` is the subgroup of `d`-th powers in `localUnits p`
-  (see [LocalUnitPowers](../../ClassField/Global/LocalUnitPowers.md)).
+  (see [LocalUnitPowers](../../ClassFieldTheory/Global/LocalUnitPowers.md)).
 - `localPowerResidue wf wi : integralIdeles K →* LocalPowerResidues wf wi`
   reduces each coordinate of an integral idele modulo local-degree powers:
   the unit coordinates at the finitely many places in `ramifiedChosenPlaces wf`,

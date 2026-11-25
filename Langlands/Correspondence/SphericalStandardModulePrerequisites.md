@@ -1,7 +1,5 @@
 # Ordered spherical generation and tempered realization
 
-Author: Worker 1761.
-
 These are two proposition-valued proof obligations, not assumptions or proved
 classification results. They separate the spherical-vector argument from the
 construction of a tempered datum for the actual normalized upper-Borel

@@ -39,8 +39,8 @@ published inverse identity yields the asserted value of the constructed
 `herbrandPsi`. The proof retains break zero, natural subtraction only beyond
 the break, and the first branch at equality `n = t`.
 
-The helper modules form part of this proof submission and are proved directly;
-no separate proposed helper proposition is used as an assumption. The
+The helper modules are proved directly;
+no separate helper proposition is used as an assumption. The
 arithmetic support imports neither the parent statement nor this proof, so its
 total-inertia result is reusable without a circular import. No norm or
 reciprocity result is used.
@@ -57,8 +57,3 @@ The applicable Local Fields entries in Serre's 2019 corrections, registered
 as `serre-book-corrections-2019`, were checked; they do not change the
 prime-break assertion on printed page 83. The correction document has SHA256
 `b76739179d067850770081597a8e9ced68135ebf80678876605f471297a4fee5`.
-
-Worker 96 implemented the proof and both support modules. Worker 231
-contributed the adapted published fixed-residue-representative argument,
-the characteristic-`p` uniformizer route, and the power-lowering suggestion,
-as detailed in the arithmetic support Markdown.

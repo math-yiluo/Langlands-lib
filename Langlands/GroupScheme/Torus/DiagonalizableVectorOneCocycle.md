@@ -1,9 +1,9 @@
 # Linear vector one-cocycles on diagonalizable groups are coboundaries
 
-Worker 386. This is an internal construction over a field `k` in an arbitrary universe
+This is an internal construction over a field `k` in an arbitrary universe
 `u`. It is the one-cocycle analogue of the two-cocycle averaging in
 `Torus.DiagonalizableVectorCocycle`, and a helper for the conjugacy of sections in
-trigonalizable groups (Task 7806).
+trigonalizable groups.
 
 ## Setting
 

@@ -351,7 +351,8 @@ private theorem lieDerivative_eq_orbitDerivative {W : G → ℂ}
     (fun _ hA x => hasFDerivAt_orbitInCoordinates_eval hW hA x)
   have hcomp := mfderiv_comp (1 : G) hd.differentiableAt.mdifferentiableAt
     ((Units.contMDiff_val (n := ∞)).mdifferentiableAt (by simp))
-  rw [mfderiv_units_val, ContinuousLinearMap.comp_id, mfderiv_eq_fderiv, Units.val_one, hd.fderiv] at hcomp
+  rw [mfderiv_units_val, ContinuousLinearMap.comp_id, mfderiv_eq_fderiv] at hcomp
+  erw [hd.fderiv] at hcomp
   have hfun : orbitMap R (weightedVector hW) = orbitInCoordinates hW ∘ (Units.val : G → M) := by
     funext g
     change R g (weightedVector hW) = R (unitLift g.val) (weightedVector hW)

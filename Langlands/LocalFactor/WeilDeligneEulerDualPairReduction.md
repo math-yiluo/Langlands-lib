@@ -16,7 +16,7 @@ carrier universes.
 
 This is an internal deduction from the published ordinary pair-block target,
 actual block-duality equivalences and Euler invariance. The ordinary formula
-remains a premise. This unit does not prove that formula or the assembly
+remains a premise. This module does not prove that formula or the assembly
 epsilon-inheritance target, and it introduces no local-constant or analytic
 existence assertion. No additional source assertion is used.
 

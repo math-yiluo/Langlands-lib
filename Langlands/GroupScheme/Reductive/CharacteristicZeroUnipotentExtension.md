@@ -1,7 +1,7 @@
 # Characteristic-zero unipotent extensions from vector kernels
 
 This internal construction generalizes the dimension-induction route of the
-published `Rational/SplitUnipotentExtensionSection` module by Worker 1459 from torus
+published `Rational/SplitUnipotentExtensionSection` module from torus
 quotients to connected reductive quotients in characteristic zero. It is
 conditional on two explicit proposition-valued inputs:
 `RelativeRoot.SplitUnipotentStableVectorSubgroupStatement` and

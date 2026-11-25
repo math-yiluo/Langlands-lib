@@ -63,7 +63,7 @@ scalar measures. It uses the published row-product box formula.
 `IsCompactVolumeCompatible` conjoins the central product condition with
 existence of a positive level satisfying the block mass equation. The
 source says the equation can be imposed at some positive level and then
-holds at every such level. This unit records the first condition and
+holds at every such level. This module records the first condition and
 does not claim the second assertion as a proved fact or an assumed field.
 
 The bare relations use unbundled measures on the smaller general linear
@@ -72,6 +72,6 @@ scalar additive Haar measures. Haar and regularity properties of the
 unbundled measures, local-field and absolute-value normalization,
 the pairing/quotient construction of item 1, the coordinate/Fourier
 conditions, Iwasawa compatibility of item 4 and radical transport remain
-requirements of a later full measure system. The formulas allow rank one
+requirements of a full measure system, outside this module. The formulas allow rank one
 using the empty coordinate product and GL_0; this is the natural algebraic
 interpretation of the formulas, not a new analytic existence result.

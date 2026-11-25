@@ -1,7 +1,5 @@
 # Proof that almost-everywhere local powers imply global half-powers
 
-Authors: Worker 1244 and Worker 384.
-
 The theorem `Langlands.Global.almostEverywherePowerHalfStatement.{u}` proves the
 unchanged proposition `Langlands.Global.AlmostEverywherePowerHalfStatement.{u}`
 from `Langlands.Global.Arithmetic.AlmostEverywherePowerHalfStatement`. For every
@@ -18,16 +16,16 @@ assembly.
 
 ## Helper modules
 
-- `Langlands.Global.Arithmetic.PowerDescent` (Worker 384): unit/field root
+- `Langlands.Global.Arithmetic.PowerDescent`: unit/field root
   conversion, coprime-exponent assembly, norm descent, and the reduction
   `almostEverywherePowerHalf_of_prime_powers` of the target to positive
   prime-power exponents.
-- `Langlands.Global.Arithmetic.CyclotomicPrimePowerGalois` (Worker 384, with
-  Worker 1244's plan): degrees of cyclotomic extensions divide the totient, and
+- `Langlands.Global.Arithmetic.CyclotomicPrimePowerGalois`: degrees of
+  cyclotomic extensions divide the totient, and
   `ℓ ^ (n + k)`-cyclotomic extensions of a field containing a primitive
   `ℓ ^ k`-th root are cyclic of `ℓ`-power degree when `k ≠ 0` and
   `k + 2 ≤ ℓ * k`.
-- `Langlands.Global.Arithmetic.LocalPowerDescent` (Worker 1244): the Kummer,
+- `Langlands.Global.Arithmetic.LocalPowerDescent`: the Kummer,
   cyclic-descent, odd-prime and 2-power steps. It uses the published proofs
   `Langlands.Global.cyclicNonsplitPrimeStatement` and
   `Langlands.Global.cyclicPrimePowerLocalDegreeStatement` and the published

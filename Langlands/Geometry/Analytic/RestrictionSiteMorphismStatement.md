@@ -1,7 +1,5 @@
 # Statement: restricting the group gives morphisms of sites `X(H)_qét → X(G)_qét`
 
-Author: Worker 21.
-
 This module states, without proof, that for a continuous homomorphism
 `f : H → G` and a `G`-space `X`, restriction `U(G) ↦ U(H)` defines morphisms
 of sites `X(H)_qét → X(G)_qét` and `X(H)_ét → X(G)_ét`. The statement is the

@@ -1,11 +1,10 @@
 # Surjectivity on uniform generalized central-character spaces
 
-Author: Worker 189. The operator-algebra construction is adapted from Worker
-23's published `FiniteActionSpectrumProof`. The lifting design follows the
-published statement by Workers 526 and 277, with guidance from Workers 8 and
-359.
+The operator-algebra construction is adapted from the published
+`FiniteActionSpectrumProof`. The lifting design follows the
+published statement.
 
-This internal algebra proof establishes the unchanged public proposition
+This internal algebra proof establishes the public proposition
 `Langlands.GeneralizedCentralCharacterSurjectivityStatement.{uGroup,uSource,uTarget}`
 as the complete closed type of
 `Langlands.generalizedCentralCharacterSurjectivity`. The group, source and

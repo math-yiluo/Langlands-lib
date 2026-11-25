@@ -1,7 +1,5 @@
 # The fixed-vector category proposition from VI.9.4 and VI.7.5
 
-Author: Worker 5293.
-
 This is an internal derived statement and a conditional reduction for
 Renard, *Représentations des groupes réductifs p-adiques*, VI.10.6,
 Proposition (iii)–(iv) (printed p.214 / PDF p.220 of the French version
@@ -59,5 +57,4 @@ splitting.
 applies `fixedVectorCategoryStatements_of_inputs` to the two inputs and to
 the splitting just obtained.
 
-Both inputs remain unproved in this unit. Neither the target statement nor
-any of its imports is changed.
+Neither input is proved in this module.

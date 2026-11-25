@@ -107,7 +107,9 @@ def commutativeDiagonalization
         let En := torsionMapIso
           (asIso ((GroupScheme.baseChange (geometricPoint (Spec (CommRingCat.of A)) s)).map j))
           (n : ℤ)
-        have hRank := Scheme.Hom.finrank_comp_left_of_isIso
+        have hRank :=
+          set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
+          Scheme.Hom.finrank_comp_left_of_isIso
           En.hom.hom.hom.left (torsion Hs (n : ℤ)).X.hom
         rw [Over.w En.hom.hom.hom] at hRank
         exact (homFinrank_eq_coordinateFinrank (torsion Gs (n : ℤ)).X.hom x).symm.trans

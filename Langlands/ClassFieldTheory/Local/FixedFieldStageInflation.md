@@ -1,6 +1,6 @@
 # Fixed-field refinement and inflation
 
-Worker 104. This internal construction proves naturality of the published
+This internal construction proves naturality of the published
 fixed-unit cohomology isomorphism under open normal subgroup refinement.
 Its generic portion works for any Galois extension `L/K`, with both fields
 in an arbitrary common universe `u`, in every natural cohomological degree.
@@ -80,8 +80,7 @@ extensionality. Both coefficient composites retain the same closure value.
 The two displayed theorems explicitly supply their inclusion algebra and
 base scalar tower in their Lean types.
 
-Worker 68 authored the published foundation `FixedFieldStages` API used
-by these specializations. Worker 54 supplied the required direct-field
-form. The foundation is imported by module name. The helper `closed`
+These specializations use the API of the published foundation
+`FixedFieldStages`. The foundation is imported by module name. The helper `closed`
 used in the group formulas is definitionally the same closed subgroup
 as the foundation's `finiteStageClosedSubgroup`.

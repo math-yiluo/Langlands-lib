@@ -5,8 +5,9 @@ Lean module: `Langlands.Representation.Archimedean.GLProductWhittaker`.
 This module states Kostant's theorem (Kostant 1978, Theorem 3.9 = Theorem D) for the complex
 reductive Lie algebra `𝔤 = ∏_{i ∈ ι} 𝔤𝔩_{n_i}(ℂ)` with `ι` finite. It contains one
 proposition, `Langlands.Archimedean.GLProductWhittakerMaximallyFaithfulStatement`, and no
-proof of it. It serves two tasks at once: Task 6748 needs the case `ι = Unit`, through
-`ℂ ⊗_ℝ 𝔤𝔩_n(ℝ) ≅ 𝔤𝔩_n(ℂ)`, and Task 6757 needs the case `ι = Fin 2`, through
+proof of it. It serves two statements at once: `RealWhittakerMaximallyFaithfulStatement` needs
+the case `ι = Unit`, through `ℂ ⊗_ℝ 𝔤𝔩_n(ℝ) ≅ 𝔤𝔩_n(ℂ)`, and `ComplexGenericLargeStatement` needs
+the case `ι = Fin 2`, through
 `ℂ ⊗_ℝ 𝔤𝔩_n(ℂ) ≅ 𝔤𝔩_n(ℂ) × 𝔤𝔩_n(ℂ)` (see "Intended applications" below).
 
 ## The Lie algebra
@@ -89,10 +90,10 @@ no simple roots, and a block with `n i = 0` is the zero Lie algebra.
 
 ## Intended applications
 
-* Task 6748 (`RealWhittakerMaximallyFaithfulStatement`): `ι = Unit`, through the isomorphism
+* `RealWhittakerMaximallyFaithfulStatement`: `ι = Unit`, through the isomorphism
   `ℂ ⊗_ℝ 𝔤𝔩_n(ℝ) ≅ 𝔤𝔩_n(ℂ)`, `z ⊗ X ↦ zX`. The functional of `IsRealGenericGKModule` then has
   the character with `a () p = i aₚ`.
-* Task 6757 (`ComplexGenericLargeStatement`): `ι = Fin 2`, through the isomorphism
+* `ComplexGenericLargeStatement`: `ι = Fin 2`, through the isomorphism
   `ℂ ⊗_ℝ 𝔤𝔩_n(ℂ) ≅ 𝔤𝔩_n(ℂ) × 𝔤𝔩_n(ℂ)`, `z ⊗ X ↦ (zX, z X̄)`. The functional of
   `IsComplexGenericGKModule` (character `i Re(∑ aₚ X_{p,p+1})` on real directions) then has the
   character with `a 0 p = (i/2) aₚ` and `a 1 p = (i/2) āₚ`.

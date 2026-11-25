@@ -1,7 +1,5 @@
 # The inverse-coset sum
 
-Author: Worker 45.
-
 Let `H` be a subgroup of a group `G` with finitely many left cosets, and let
 `A` be a representation of `G` over a commutative ring `R`. For each left
 coset `q ∈ G ⧸ H`, Mathlib's quotient supplies a fixed representative

@@ -14,7 +14,7 @@ actual representation `ρ.rationalRepresentation` of the group of scheme-valued
 `k`-points. This means that every invariant linear subspace has an invariant
 complement; it is the semisimplicity of this particular rational representation,
 not a claim about arbitrary abstract representations of the rational-point group.
-No complete-reducibility proof is supplied in this statement unit.
+No complete-reducibility proof is supplied in this statement module.
 
 The accompanying theorem
 `invariant_polynomial_of_reductive_charZero_semisimplicity` is a conditional
@@ -24,8 +24,9 @@ construction. Choosing degree one yields exactly the polynomial conclusion of th
 existing `ReductiveGeometricReductivityStatement` for characteristic-zero fields.
 The invariance still quantifies over every test scheme and all its section-valued
 coordinate vectors, including nonaffine and nonreduced tests. No restriction to
-rational-point polynomial invariance occurs. The premise is not an established
-theorem, and this conditional theorem does not prove the existing Haboush target.
+rational-point polynomial invariance occurs. The premise is not proved in this
+module (it is proved as `reductiveCharZeroSemisimplicityStatement` in
+`Reductive.CharZeroSemisimplicityProof`), and this conditional theorem does not prove the existing Haboush target.
 
 Provenance: Mumford, Fogarty and Kirwan, *Geometric Invariant Theory*, third enlarged
 edition (1994), Appendix to Chapter 1, Section A, printed p.191 (PDF zero-based page

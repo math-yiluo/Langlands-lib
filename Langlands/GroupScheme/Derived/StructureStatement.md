@@ -54,7 +54,7 @@ premise. The elementary containment, minimality and normality proofs in
 structure proofs remain separate obligations.
 
 Annihilation after arbitrary algebra scalar extension, including the character
-specialization, is a separate statement unit. Milne Corollary 6.19(d) obtains
+specialization, is stated separately in `Derived.AnnihilationStatement`. Milne Corollary 6.19(d) obtains
 that assertion from faithfully flat local commutator generation in (c), which
 the elementary intersection lemmas do not provide.
 

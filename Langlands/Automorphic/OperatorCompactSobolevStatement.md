@@ -1,8 +1,7 @@
 # Compact Sobolev estimates on actual automorphic operator spaces
 
 This proposition is a prerequisite for the actual cuspidal operator
-multiplicity-one argument. It develops the initial statement draft by
-Worker 779.
+multiplicity-one argument.
 
 `Langlands.Automorphic.OperatorCompactSobolevStatement.{u}` concerns the actual
 space `S.Space` of an operator realization of `GL_(r+1)` over a number field
@@ -90,7 +89,9 @@ The precise band-norm comparison remains unproved here.
 
 ## Scope and remaining work
 
-This file defines an open proposition and proves no Sobolev estimate.
+This file defines the proposition and proves no Sobolev estimate. The
+Library proves it as `operatorCompactSobolev` (module
+`Langlands.Automorphic.OperatorCompactSobolevProof`).
 The published Euclidean estimates in
 `Langlands.Analysis.LocalSobolevPointwise` concern derivatives and Haar
 measure on real vector spaces. They do not already supply the quotient

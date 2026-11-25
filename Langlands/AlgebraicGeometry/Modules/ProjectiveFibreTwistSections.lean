@@ -14,12 +14,12 @@ namespace Langlands.AlgebraicGeometry.Modules.FibreTwist
 
 /-- An invertible module has nonzero sections over every nonempty open. -/
 lemma nontrivial_sections_of_isInvertible {X : Scheme.{u}} {M : X.Modules}
-    (hM : Scheme.Modules.IsInvertible M) (W : X.affineOpens) [Nonempty W.1] :
+    (hM : Scheme.Modules.IsInvertibleFLT M) (W : X.affineOpens) [Nonempty W.1] :
     Nontrivial Γ(M, W.1) := by
-  obtain ⟨hD, ⟨e⟩⟩ := hM.dual_monoidalV2
+  obtain ⟨hD, ⟨e⟩⟩ := Scheme.Modules.IsInvertible.dual_monoidalV2 hM
   by_contra h
   rw [not_nontrivial_iff_subsingleton] at h
-  have hbij := hM.bijective_lift_tensorSectionsBilin_monoidalV2 hD W
+  have hbij := Scheme.Modules.IsInvertible.bijective_lift_tensorSectionsBilin_monoidalV2 hM hD W
   have h0 := (Equiv.ofBijective _ hbij).symm.subsingleton
   have h1 : Subsingleton Γ(𝟙_ X.Modules, W.1) :=
     @Equiv.subsingleton _ _ (asIso (e.hom.app W.1)).addCommGroupIsoToAddEquiv.toEquiv.symm h0
@@ -71,7 +71,7 @@ variable {A : Type u} [CommRing A] {P : Scheme.{u}} {q : P ⟶ Spec (CommRingCat
 /-- The degree-zero Čech homology of `F ⊗ O(d)` is nonzero once a global generation datum exists
 on a nonempty scheme. -/
 lemma not_isZero_cech_twist [IsSeparated q] [IsClosedImmersion 𝔓.toProj]
-    (hL : Scheme.Modules.IsInvertible L) (F : P.Modules) (hF : Scheme.Modules.IsInvertible F)
+    (hL : Scheme.Modules.IsInvertibleFLT L) (F : P.Modules) (hF : Scheme.Modules.IsInvertibleFLT F)
     [Nonempty P] (d : ℕ) {m : ℕ}
     (σ : Fin m → ((OModulePresheaf.ofModules q F).tensor (ProjSpace.twist q 𝔓.toProj d)).H0
       (ProjSpace.stdCoverPullback 𝔓.toProj))
@@ -99,16 +99,16 @@ lemma not_isZero_cech_twist [IsSeparated q] [IsClosedImmersion 𝔓.toProj]
     exact hyi
   let W := K.affineInter q s₀
   have : Nonempty W.1 := ⟨⟨y, hys⟩⟩
-  have hLd : Scheme.Modules.IsInvertible (L.tensorPow d) := hL.tensorPow_monoidalV2 d
-  have hFLd : Scheme.Modules.IsInvertible (F ⊗ L.tensorPow d) := hF.tensor_monoidalV2 hLd
-  have h1 : Nontrivial Γ(F ⊗ L.tensorPow d, W.1) := nontrivial_sections_of_isInvertible hFLd W
+  have hLd : Scheme.Modules.IsInvertibleFLT (L.tensorPowFLT d) := Scheme.Modules.IsInvertible.tensorPow_monoidalV2 hL d
+  have hFLd : Scheme.Modules.IsInvertibleFLT (F ⊗ L.tensorPowFLT d) := Scheme.Modules.IsInvertible.tensor_monoidalV2 hF hLd
+  have h1 : Nontrivial Γ(F ⊗ L.tensorPowFLT d, W.1) := nontrivial_sections_of_isInvertible hFLd W
   have h2 : Nontrivial (((OModulePresheaf.ofModules q F).tensor
-      (OModulePresheaf.ofModules q (L.tensorPow d))).obj W.1) :=
+      (OModulePresheaf.ofModules q (L.tensorPowFLT d))).obj W.1) :=
     @Equiv.nontrivial _ _ (Equiv.ofBijective _ (tensorSectionsAffHom_bijective (q := q) hF hLd W)) h1
   have h3 : Nontrivial (((OModulePresheaf.ofModules q F).tensor
       (ProjSpace.twist q 𝔓.toProj d)).obj W.1) :=
     (Equiv.ofBijective _ (tensorRightAffHom_bijective (OModulePresheaf.ofModules q F)
-      (OModulePresheaf.ofModules q (L.tensorPow d)) (ProjSpace.twist q 𝔓.toProj d) e
+      (OModulePresheaf.ofModules q (L.tensorPowFLT d)) (ProjSpace.twist q 𝔓.toProj d) e
       (fun h x => he _ _ h x) W (hbij _ i.down (K.inter_le s₀ 0)))).symm.nontrivial
   have hex : ∃ l, (σ l : ((OModulePresheaf.ofModules q F).tensor
       (ProjSpace.twist q 𝔓.toProj d)).cochain K 0) ≠ 0 := by
@@ -131,33 +131,33 @@ lemma not_isZero_cech_twist [IsSeparated q] [IsClosedImmersion 𝔓.toProj]
 /-- Transfer of nonvanishing in degree `0` from the twisted presheaf to the presheaf tensor with
 sections of `L^{⊗ d}`. -/
 lemma not_isZero_cech_tensor_of_twist [IsSeparated q] [IsAffineHom 𝔓.toProj] (F : P.Modules)
-    (d : ℕ) (e : ∀ U : P.Opens, Γ(L.tensorPow d, U) →ₗ[Γ(P, U)] ProjSpace.twistObj q 𝔓.toProj d U)
-    (he : ∀ (U U' : P.Opens) (h : U ≤ U') (x : Γ(L.tensorPow d, U')),
-      e U ((L.tensorPow d).presheaf.map (homOfLE h).op x) = ProjSpace.twistRes q 𝔓.toProj d h (e U' x))
+    (d : ℕ) (e : ∀ U : P.Opens, Γ(L.tensorPowFLT d, U) →ₗ[Γ(P, U)] ProjSpace.twistObj q 𝔓.toProj d U)
+    (he : ∀ (U U' : P.Opens) (h : U ≤ U') (x : Γ(L.tensorPowFLT d, U')),
+      e U ((L.tensorPowFLT d).presheaf.map (homOfLE h).op x) = ProjSpace.twistRes q 𝔓.toProj d h (e U' x))
     (hbij : ∀ (U : P.Opens) (i : Fin (N + 1)), U ≤ ProjSpace.pullbackChart 𝔓.toProj i →
       Function.Bijective (e U))
     (h : ¬ IsZero ((cechComplex ((OModulePresheaf.ofModules q F).tensor
       (ProjSpace.twist q 𝔓.toProj d)) (ProjSpace.stdCoverPullback 𝔓.toProj)).homology 0)) :
     ¬ IsZero ((cechComplex ((OModulePresheaf.ofModules q F).tensor
-      (OModulePresheaf.ofModules q (L.tensorPow d))) (ProjSpace.stdCoverPullback 𝔓.toProj)).homology 0) :=
+      (OModulePresheaf.ofModules q (L.tensorPowFLT d))) (ProjSpace.stdCoverPullback 𝔓.toProj)).homology 0) :=
   not_isZero_homology_zero_of_iso (cechComplexIsoOfBijective (ProjSpace.stdCoverPullback 𝔓.toProj)
     (tensorRightAffHom (OModulePresheaf.ofModules q F)
-      (OModulePresheaf.ofModules q (L.tensorPow d)) (ProjSpace.twist q 𝔓.toProj d) e
+      (OModulePresheaf.ofModules q (L.tensorPowFLT d)) (ProjSpace.twist q 𝔓.toProj d) e
       (fun h x => he _ _ h x))
     (fun _ s => tensorRightAffHom_bijective (OModulePresheaf.ofModules q F)
-      (OModulePresheaf.ofModules q (L.tensorPow d)) (ProjSpace.twist q 𝔓.toProj d) e
+      (OModulePresheaf.ofModules q (L.tensorPowFLT d)) (ProjSpace.twist q 𝔓.toProj d) e
       (fun h x => he _ _ h x) _
       (hbij _ (s.1 0).down (CechBridge.inter_le_pullbackChart 𝔓 s)))).symm h
 
 /-- Transfer of nonvanishing in degree `0` to the actual sections of `F ⊗ M`. -/
 lemma not_isZero_relativeCohomology_zero_of_cech [IsSeparated q] (K : P.OrderedAffineCover)
-    (F M : P.Modules) (hF : Scheme.Modules.IsInvertible F) (hM : Scheme.Modules.IsInvertible M)
+    (F M : P.Modules) (hF : Scheme.Modules.IsInvertibleFLT F) (hM : Scheme.Modules.IsInvertibleFLT M)
     (h : ¬ IsZero ((cechComplex ((OModulePresheaf.ofModules q F).tensor
       (OModulePresheaf.ofModules q M)) K).homology 0)) :
     ¬ IsZero ((DerivedSections.relativeCohomology q 0).obj (F ⊗ M)) := by
   have h' := not_isZero_homology_zero_of_iso (cechComplexIsoOfBijective K
     (tensorSectionsAffHom (q := q) F M) (fun _ _ => tensorSectionsAffHom_bijective hF hM _)) h
-  have hFM : Scheme.Modules.IsInvertible (F ⊗ M) := hF.tensor_monoidalV2 hM
+  have hFM : Scheme.Modules.IsInvertibleFLT (F ⊗ M) := Scheme.Modules.IsInvertible.tensor_monoidalV2 hF hM
   have : (F ⊗ M).IsQuasicoherent :=
     Picard.IsLocallyFreeRankOne.isQuasicoherent (fun x => by
       obtain ⟨U, hx, ⟨e⟩⟩ := hFM.exists_trivialization x
@@ -168,10 +168,10 @@ lemma not_isZero_relativeCohomology_zero_of_cech [IsSeparated q] (K : P.OrderedA
 /-- **Nonzero sections of large twists.** On a nonempty scheme with a presentation whose morphism
 to projective space is a closed immersion, `H⁰(F ⊗ L^{⊗ d}) ≠ 0` for all large `d`. -/
 theorem exists_not_isZero_relativeCohomology_zero [IsSeparated q] [IsClosedImmersion 𝔓.toProj]
-    (hL : Scheme.Modules.IsInvertible L) (F : P.Modules) (hF : Scheme.Modules.IsInvertible F)
+    (hL : Scheme.Modules.IsInvertibleFLT L) (F : P.Modules) (hF : Scheme.Modules.IsInvertibleFLT F)
     [Nonempty P] :
     ∃ d₁ : ℕ, ∀ d : ℕ, d₁ ≤ d →
-      ¬ IsZero ((DerivedSections.relativeCohomology q 0).obj (F ⊗ L.tensorPow d)) := by
+      ¬ IsZero ((DerivedSections.relativeCohomology q 0).obj (F ⊗ L.tensorPowFLT d)) := by
   obtain ⟨d₁, hd₁⟩ := OModulePresheaf.exists_forall_exists_H0_tensor_twist_span_eq_top 𝔓.toProj
     𝔓.toProj_π (OModulePresheaf.ofModules q F)
     (OModulePresheaf.isCoherent_ofModules_of_locallyTrivial q F hF.exists_trivialization)
@@ -180,7 +180,7 @@ theorem exists_not_isZero_relativeCohomology_zero [IsSeparated q] [IsClosedImmer
   obtain ⟨m, σ, hσ⟩ := hd₁ d hd
   obtain ⟨e, -, he, hbij⟩ := 𝔓.exists_linearMap_sections_tensorPow_twistObj_monoidalV2 d
   exact not_isZero_relativeCohomology_zero_of_cech (ProjSpace.stdCoverPullback 𝔓.toProj) F
-    (L.tensorPow d) hF (hL.tensorPow_monoidalV2 d)
+    (L.tensorPowFLT d) hF (Scheme.Modules.IsInvertible.tensorPow_monoidalV2 hL d)
     (not_isZero_cech_tensor_of_twist 𝔓 F d e he hbij (not_isZero_cech_twist 𝔓 hL F hF d σ hσ))
 
 end GlobalGeneration
@@ -192,9 +192,9 @@ attribute [local instance] MvPolynomial.gradedAlgebra
 /-- Nonzero sections of large twists on a nonempty base change along `Spec B ⟶ T`. -/
 theorem nonzeroSections_of_point (A : Type u) [CommRing A] {X : Scheme.{u}}
     (f : X ⟶ Spec (CommRingCat.of A)) (𝓛X : X.Modules) (N : ℕ) (𝔓 : 𝓛X.ProjPresentation f N)
-    [IsProper f] (h𝓛 : Scheme.Modules.IsInvertible 𝓛X) [IsClosedImmersion 𝔓.toProj]
+    [IsProper f] (h𝓛 : Scheme.Modules.IsInvertibleFLT 𝓛X) [IsClosedImmersion 𝔓.toProj]
     (T : Scheme.{u}) (s : T ⟶ Spec (CommRingCat.of A))
-    (F : (pullback f s).Modules) (hF : Scheme.Modules.IsInvertible F) (B : CommRingCat.{u})
+    (F : (pullback f s).Modules) (hF : Scheme.Modules.IsInvertibleFLT F) (B : CommRingCat.{u})
     (b : Spec B ⟶ T) (hne : Nonempty (pullback (C := Scheme.{u}) (pullback.snd f s) b)) :
     ∃ n₀ : ℕ, ∀ n : ℕ, n₀ ≤ n →
       ¬ IsZero ((DerivedSections.relativeCohomology (pullback.snd (pullback.snd f s) b) 0).obj
@@ -215,8 +215,8 @@ theorem nonzeroSections_of_point (A : Type u) [CommRing A] {X : Scheme.{u}}
   have : IsClosedImmersion 𝔓'.toProj :=
     MorphismProperty.of_isPullback (P := @IsClosedImmersion) hpb ‹_›
   let L := (Scheme.Modules.pullback (a ≫ pullback.fst f s)).obj 𝓛X
-  have hL : Scheme.Modules.IsInvertible L := h𝓛.pullback _
-  have hFt : Scheme.Modules.IsInvertible ((Scheme.Modules.pullback a).obj F) := hF.pullback _
+  have hL : Scheme.Modules.IsInvertibleFLT L := Scheme.Modules.IsInvertible.pullbackFLT (hL := h𝓛) _
+  have hFt : Scheme.Modules.IsInvertibleFLT ((Scheme.Modules.pullback a).obj F) := Scheme.Modules.IsInvertible.pullbackFLT (hL := hF) _
   obtain ⟨d₁, hd₁⟩ := exists_not_isZero_relativeCohomology_zero 𝔓' hL
     ((Scheme.Modules.pullback a).obj F) hFt
   refine ⟨d₁, fun n hn hz => hd₁ n hn ?_⟩
@@ -228,9 +228,9 @@ theorem nonzeroSections_of_point (A : Type u) [CommRing A] {X : Scheme.{u}}
 large twists is nonzero. -/
 theorem nonzeroSections (A : Type u) [CommRing A] {X : Scheme.{u}}
     (f : X ⟶ Spec (CommRingCat.of A)) (𝓛X : X.Modules) (N : ℕ) (𝔓 : 𝓛X.ProjPresentation f N)
-    [IsProper f] (h𝓛 : Scheme.Modules.IsInvertible 𝓛X) [IsClosedImmersion 𝔓.toProj]
+    [IsProper f] (h𝓛 : Scheme.Modules.IsInvertibleFLT 𝓛X) [IsClosedImmersion 𝔓.toProj]
     (T : Scheme.{u}) (s : T ⟶ Spec (CommRingCat.of A))
-    (F : (pullback f s).Modules) (hF : Scheme.Modules.IsInvertible F) (t : T)
+    (F : (pullback f s).Modules) (hF : Scheme.Modules.IsInvertibleFLT F) (t : T)
     (hne : Nonempty (pullback (C := Scheme.{u}) (pullback.snd f s) (T.fromSpecResidueField t))) :
     ∃ n₀ : ℕ, ∀ n : ℕ, n₀ ≤ n →
       ¬ IsZero (fibreCohomology (pullback.snd f s) t

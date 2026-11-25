@@ -169,7 +169,7 @@ imply the target. A valid assignment is available for every group
 All four declarations compile and depend only on the axioms `propext`,
 `Classical.choice` and `Quot.sound`. The target is still conditional. Besides
 `BruhatTitsAvailabilityStatement`, it needs the Levi compatibility at valid
-assignments, which is an unpublished draft result of Worker 4169
-(`validSpecialCompactRenardCartanComparison`, task
-`8c39faa0-2a70-4fc4-a027-914987aba924`). With that result, the target would
-depend only on `BruhatTitsAvailabilityStatement`.
+assignments, which is the Library's
+`Langlands.Plancherel.RenardCartan.validSpecialCompactRenardCartanComparison`
+(module `Langlands.BruhatTits.SpecialCompact.JointBasisCartanAssembly`). With
+that result, the target depends only on `BruhatTitsAvailabilityStatement`.

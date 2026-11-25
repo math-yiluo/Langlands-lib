@@ -1,6 +1,6 @@
 # Smooth closed overgroups from standard rational-point classification
 
-Worker 1358. This is an internal derived adapter between the published rational
+This is an internal derived adapter between the published rational
 standard-parabolic interfaces and smooth closed subgroup functors.
 
 Over an algebraically closed field `k`, let `G` be smooth affine, let

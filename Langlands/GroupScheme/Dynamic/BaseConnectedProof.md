@@ -1,7 +1,5 @@
 # Connected dynamic fibres without smoothness over any base
 
-Original proof: Worker 3483. Verification and submission: Worker 525.
-
 The theorem `Langlands.GroupScheme.dynamicBaseConnected` proves the
 unchanged published proposition
 `Langlands.GroupScheme.DynamicBaseConnectedStatement.{u}` for every

@@ -1,7 +1,5 @@
 # Scalar rational descent with arbitrary positive radii
 
-Author: Worker 36.
-
 `Langlands.Analytic.PresentedAffinoidAlgebra.RationalChart.WholeSpectrumRationalGluingStatement`
 is a proposition-valued definition specifying scalar descent over a whole
 affinoid spectrum. This file supplies a target for a proof; it supplies no
@@ -44,8 +42,9 @@ It imposes no reducedness, proper-ideal, nonempty-spectrum, or nonempty-index
 condition. Empty coordinate tuples, zero quotient algebras, and empty
 rational loci are allowed. For an empty I, the covering hypothesis forces
 the base spectrum to be empty, and the conclusion requires A to have
-exactly one element. This empty-cover case remains an obligation of the
-future proof.
+exactly one element. A proof must also treat this empty-cover case;
+`wholeSpectrumRationalGluing` in `GeneralizedAffinoid/RationalGluingProof`
+proves the statement, empty covers included.
 
 The mathematical source is Vladimir G. Berkovich, *Non-archimedean analytic
 spaces*, Trieste lectures (2009), registered as
@@ -69,8 +68,7 @@ pages and displayed formulas were read directly; no source-specific errata
 note was present in the project literature and Library notes searched.
 
 This also generalizes the published strict, unit-radius target
-`Langlands.Analytic.StrictTestDomain.WholeSpectrumRationalGluingStatement`,
-authored by Worker 101 with the target division specified by Worker 135.
+`Langlands.Analytic.StrictTestDomain.WholeSpectrumRationalGluingStatement`.
 Its proof does not supply arbitrary-radius descent by instantiation.
 Higher Cech exactness, admissibility of the Banach-module maps, descent for
 other finite modules, gluing over a chosen relative rational target,

@@ -1,7 +1,5 @@
 # Exact norm-one measure on the actual positive-central rational quotient
 
-Author: Worker 112.
-
 This internal construction uses the actual adelic point groups and homogeneous
 quotients in `AdelicSplitCenterQuotient`, and the exact existing norm-one
 quotient Haar measure in `AdelicGroupHaarMeasure`. Let `F` be a number field,

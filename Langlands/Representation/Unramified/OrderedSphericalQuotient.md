@@ -12,7 +12,7 @@ the actual principal series `A`. It also supplies a nonzero spherical fixed
 vector of `B`. The principal series is smooth and admissible, and compact open
 subgroups of the actual p-adic general linear group are cofinal.
 
-Worker 706's generic dual-quotient construction now applies. Pullback of smooth
+The generic dual-quotient construction now applies. Pullback of smooth
 functionals along the injection, composed with the canonical map into the smooth
 bidual of `A`, gives an actual surjection from `A` onto the smooth contragredient
 of `B`. Admissible smooth duality preserves irreducibility. Compact fixed-space

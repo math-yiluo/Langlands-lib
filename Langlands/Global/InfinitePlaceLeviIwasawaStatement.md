@@ -1,7 +1,5 @@
 # Archimedean Iwasawa existence adapted to an actual Levi subgroup
 
-Author: Worker 112.
-
 `Langlands.Global.InfinitePlaceGroupPoints.LeviCompatibleIwasawaStatement`
 is an unproved proposition definition. Fix a number field `F : Type u`,
 an actual connected reductive group scheme `G/F`, an actual parabolic

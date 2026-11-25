@@ -3,9 +3,8 @@
 The closed proposition
 `Langlands.Aubert.General.RationalPointFamily.RationalCompactRestrictionCuspidalStatement.{uF,uV}`
 states the implication VI.2.1(c) implies (a) in the shared general reductive
-framework. This is a statement unit; its proof remains a separate obligation.
-It does not alter the whole-category VI.3.5 target. Workers 491 and 6
-prepared this formulation.
+framework. This module only states it; its proof remains a separate obligation.
+It does not alter the whole-category VI.3.5 target.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French edition dated 9 July 2026, VI.2.1: the theorem begins on printed p.137 /

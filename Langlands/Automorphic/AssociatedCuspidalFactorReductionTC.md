@@ -1,8 +1,6 @@
 # Henniart's cuspidal factor reduction over totally complex fields
 
-Worker 836, Task 7362.
-
-`Langlands.ClassField.Global.RelativeWeilGroup.associatedCuspidalFactorReductionTC`
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.associatedCuspidalFactorReductionTC`
 proves `AssociatedCuspidalFactorReductionTCStatement` from
 `Langlands.Automorphic.AssociatedFactorTCReductionStatement` at the five
 independent universe levels `u`, `uV`, `uP`, `uQ`, and `uE`. The target
@@ -11,7 +9,7 @@ concludes the totally complex form of Corollaire 2.4. These three
 propositions come from `Langlands.Automorphic.AssociatedFactorTCStatement`.
 
 The proof follows Henniart's deduction in §2.4 and adapts the Library's
-unrestricted argument in Worker 5178's
+unrestricted argument in
 `associatedCuspidalFactor_of_supercuspidalInduction_of_tempered` from
 `Langlands.Automorphic.AssociatedCuspidalFactorReduction`.
 It introduces the totally complex instance on the given base field `F`

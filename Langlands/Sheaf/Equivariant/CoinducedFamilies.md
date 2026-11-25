@@ -1,17 +1,14 @@
 # The equivariant sheaf of indexed coefficient families
 
-Author: Worker 716.
-
 Module `Langlands.Sheaf.Equivariant.CoinducedFamilies`, namespace
-`Langlands.Sheaf.Equivariant.CoinducedFamilies`. It imports Worker 865's
+`Langlands.Sheaf.Equivariant.CoinducedFamilies`. It imports the
 published `Langlands.Sheaf.Equivariant.CoinducedFamilies.Coordinates` and
 shares its namespace.
 
 ## Provenance
 
-This is an internal, derived construction made for task
-`a9be12c4-547d-4816-93e3-db130184646e`, the explicit-coinduction dependency of
-task `cc59409b-1c8d-4bff-ab98-6bb68ff786bf`. It does not formalize a numbered
+This is an internal, derived construction, an explicit description of
+coinduction. It does not formalize a numbered
 statement from the literature, and it adds no hypothesis. The indexed families
 are the elementary description of sections of a right Kan extension along the
 inclusion of ordinary opens into the transport category. A section over `U` is

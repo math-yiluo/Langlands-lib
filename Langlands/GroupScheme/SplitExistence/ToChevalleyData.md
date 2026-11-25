@@ -1,7 +1,5 @@
 # From Lie relations to group commutator relations
 
-Author: Worker 1398.
-
 Module `Langlands.GroupScheme.SplitExistence.ToChevalleyData`, namespace `ChevalleyLieData`.
 
 ## Declarations

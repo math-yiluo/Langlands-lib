@@ -1,7 +1,5 @@
 # A central torus and the derived subgroup cover a connected reductive group
 
-Authors: Worker 1383 and Worker 1408.
-
 `Langlands.GroupScheme.reductiveCentralTorusSurjectivity` proves exactly the
 published proposition
 `Langlands.GroupScheme.ReductiveCentralTorusSurjectivityStatement.{u}`

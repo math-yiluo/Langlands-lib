@@ -1,6 +1,6 @@
 # Open support pairs and geometric comparisons for the PQ support quotients
 
-Author: Worker 154. Module
+Module
 `Langlands.Representation.Intertwining.PQSupportOrbit`.
 
 The module constructs the two open orbit-support pairs underlying Renard
@@ -20,7 +20,7 @@ of 9 July 2026, VII.3.1–VII.3.2, printed pp.232–233 / PDF pp.238–239, with
 the geometric lemma VI.5.1. Registered source
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 154 reread PDF pp.238–239 while implementing the module.
+PDF pp.238–239 were read.
 
 The provenance is derived. Renard uses the inverse of a Bruhat-refining
 order to obtain open orbit prefixes, then identifies the two support
@@ -118,8 +118,8 @@ actions and natural maps are retained, and no finite length, admissibility
 or standardness assumption is introduced.
 
 The identity-functor identification in the final conjunct of
-`PQSupportGradedStatement` remains open. The module also does not prove
+`PQSupportGradedStatement` is not proved here; `PQIdentitySupportProof` adds it,
+and its `pqSupportGraded` proves the whole statement. The module also does not prove
 `PQRegularityLemmaStatement`, construct the strict-predecessor filtration
 for that Lemma, or derive finite action algebras from finite length.
-The original three exact target pairs and their imported closure are
-unchanged.
+The published statements and their imported closure are unchanged.

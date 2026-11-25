@@ -1,5 +1,5 @@
 import Langlands.Global.Arithmetic.CyclicPrimePowerLocalDegreeReductionStatement
-import Langlands.ClassField.Global.CompletionTower
+import Langlands.ClassFieldTheory.Global.CompletionTower
 import Mathlib.GroupTheory.SpecificGroups.Cyclic
 
 noncomputable section

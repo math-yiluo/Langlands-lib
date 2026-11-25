@@ -1,7 +1,5 @@
 # Actual Tits indices from positivity on simple restrictions
 
-Author: Worker 244 for Task 6244.
-
 This internal helper constructs an actual `TitsIndexData` with a prescribed
 Galois pinning, a ground-field maximal torus, and a maximal split torus
 factoring through it. Its additional hypothesis
@@ -30,4 +28,5 @@ Provenance: internal. The root-sign lemmas are direct consequences of
 Mathlib's positive-root addition induction. The constructor combines them
 with the Library's actual splitting-field root-restriction comparison.
 It does not assert that a particular classical group satisfies the simple
-restriction hypothesis, nor prove Task 6244's antihermitian computation.
+restriction hypothesis, nor prove the antihermitian computation for
+`TypeCDistinguishedVerticesStatement` (the distinguished vertices of `SU_{2n/d}(D, h)`).

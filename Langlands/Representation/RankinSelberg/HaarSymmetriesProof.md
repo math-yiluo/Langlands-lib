@@ -1,13 +1,13 @@
 # Symmetries of the normalized general linear Haar measure
 
-Worker 51's `Langlands.RankinSelberg.generalLinearHaarSymmetries` has exactly
+`Langlands.RankinSelberg.generalLinearHaarSymmetries` has exactly
 the type `GeneralLinearHaarSymmetriesStatement F n`. It covers every field
 universe and nonarchimedean local field, every positive matrix rank `n + 1`,
 and the given Borel measurable structure on the actual matrix group. It adds
 no unimodularity, countability, or characteristic assumption. The final
 unapplied-constant example verifies the full outer parameter telescope.
 
-This proof is authored by Worker 51. It proves the unchanged statement already
+This module proves the unchanged statement already
 published in the Library and preserves its normalization and full parameter
 telescope.
 

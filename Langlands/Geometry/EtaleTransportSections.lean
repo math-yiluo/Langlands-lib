@@ -59,7 +59,7 @@ def sectionAction : Sheaf ρ A ⥤ Action A G where
   obj F :=
     { V := F.obj.obj (op (whole ρ))
       ρ :=
-        { toFun g := F.obj.map (wholeMap ρ g).op
+        { toFun g := End.of (F.obj.map (wholeMap ρ g).op)
           map_one' := by rw [wholeMap_one, op_id, F.obj.map_id]; rfl
           map_mul' g h := by
             rw [wholeMap_mul, op_comp, F.obj.map_comp]
@@ -70,7 +70,7 @@ def sectionAction : Sheaf ρ A ⥤ Action A G where
 
 @[simp]
 theorem sectionAction_obj_ρ (F : Sheaf ρ A) (g : G) :
-    ((sectionAction ρ A).obj F).ρ g = F.obj.map (wholeMap ρ g).op := rfl
+    (((sectionAction ρ A).obj F).ρ g).asHom = F.obj.map (wholeMap ρ g).op := rfl
 
 @[simp]
 theorem sectionAction_map_hom {F H : Sheaf ρ A} (f : F ⟶ H) :

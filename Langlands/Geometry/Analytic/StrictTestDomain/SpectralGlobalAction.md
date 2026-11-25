@@ -48,7 +48,7 @@ The motivating original is Berkovich's unfinished 1995–1996 manuscript
 registered as
 `provided-7bb3903652336bd799aad8853b8efd7ff3bcc0c7652745417f4745a14ac08e90`.
 It defines finite compact-domain function tests and continuous analytic group
-actions. The current global topological action is derived internally from the
+actions. The global topological action of this module is derived internally from the
 restricted rational spectral tests; it does not identify that topology with
 the full analytic automorphism topology of the manuscript. Berkovich's
 *Non-archimedean analytic spaces* (Trieste lectures, 2009), Definition 2.2.1
@@ -56,7 +56,7 @@ and Exercise 2.2.2(ii), p.9, provide the rational quotient and affinoid-domain
 context. The empty rational quotient equivalence and this categorical
 packaging are internal consequences of the published Library constructions.
 
-This unit establishes the global topological action. Analytic gluing,
+This module establishes the global topological action. Analytic gluing,
 structure sheaves, arbitrary-radius domains, full analytic atlases,
 etale/quasi-etale sites and the Harris tower specialization remain separate
 construction obligations.

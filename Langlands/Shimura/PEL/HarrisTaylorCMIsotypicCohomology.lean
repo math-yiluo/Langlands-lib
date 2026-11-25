@@ -110,8 +110,8 @@ local notation "isotypicCohomology" => cmSmallLevelIsotypicCohomologyFunctor D C
 /-- A Galois element acts on the `ξ`-isotypic part by the restriction of its action on the
 cohomology. -/
 theorem cmSmallLevelIsotypicCohomologyFunctor_ρ (d : ℕ) (M : ModuleSheaf base R) (σ : Gamma) :
-    ((isotypicCohomology d).obj M).ρ σ =
-      isotypicMap ξ (((galoisCohomologyFunctor d).obj M).ρ σ) :=
+    (((isotypicCohomology d).obj M).ρ σ).asHom =
+      isotypicMap ξ (((galoisCohomologyFunctor d).obj M).ρ σ).asHom :=
   rfl
 
 /-- The inclusion of the `ξ`-isotypic part into the cohomology, equivariant for `GG(A_f)ᵐᵒᵖ`
@@ -150,7 +150,7 @@ cohomology. -/
 @[simp] theorem cmSmallLevelMultiplicityFunctor_ρ_apply (d : ℕ) (M : ModuleSheaf base R)
     (σ : Gamma) (φ : ξ.IntertwiningMap ((galoisCohomologyFunctor d).obj M).V.representation) :
     ((multiplicityCohomology d).obj M).ρ σ φ =
-      (SmoothRep.hom (((galoisCohomologyFunctor d).obj M).ρ σ)).comp φ :=
+      (SmoothRep.hom (((galoisCohomologyFunctor d).obj M).ρ σ).asHom).comp φ :=
   rfl
 
 /-- Every vector of the `ξ`-isotypic part of the cohomology is a sum of values of intertwining
@@ -206,8 +206,8 @@ local notation "primeToIsotypicCohomology" => cmPrimeToIsotypicCohomologyFunctor
 /-- A Galois element acts on the `ξ`-isotypic part by the restriction of its action on the
 cohomology. -/
 theorem cmPrimeToIsotypicCohomologyFunctor_ρ (d : ℕ) (M : ModuleSheaf base R) (σ : Gamma) :
-    ((primeToIsotypicCohomology d).obj M).ρ σ =
-      isotypicMap ξ (((primeToGaloisCohomologyFunctor d).obj M).ρ σ) :=
+    (((primeToIsotypicCohomology d).obj M).ρ σ).asHom =
+      isotypicMap ξ (((primeToGaloisCohomologyFunctor d).obj M).ρ σ).asHom :=
   rfl
 
 /-- The inclusion of the `ξ`-isotypic part into the prime-to-`m` cohomology, equivariant for
@@ -247,7 +247,7 @@ cohomology. -/
     (σ : Gamma)
     (φ : ξ.IntertwiningMap ((primeToGaloisCohomologyFunctor d).obj M).V.representation) :
     ((primeToMultiplicityCohomology d).obj M).ρ σ φ =
-      (SmoothRep.hom (((primeToGaloisCohomologyFunctor d).obj M).ρ σ)).comp φ :=
+      (SmoothRep.hom (((primeToGaloisCohomologyFunctor d).obj M).ρ σ).asHom).comp φ :=
   rfl
 
 /-- Evaluation `ξ ⊗ Hom(ξ, H^d) → H^d[ξ]` on the prime-to-`m` cohomology is surjective. -/
@@ -284,11 +284,11 @@ theorem cmPrimeToIsotypicHeckeModule_ρ_smul (d : ℕ) (M : ModuleSheaf base R) 
     (((cmPrimeToIsotypicHeckeModuleFunctor D C preservation composition unitCoherence
         associativity comparison symmetry stability square universality dualityNaturality
         polarizationStability compatibility h htor q existence geometry hRigid criterion R m hm
-        K₀ ξ K' d).obj M).ρ σ).hom (a • x) =
+        K₀ ξ K' d).obj M).ρ σ).asHom.hom (a • x) =
       a • (((cmPrimeToIsotypicHeckeModuleFunctor D C preservation composition unitCoherence
         associativity comparison symmetry stability square universality dualityNaturality
         polarizationStability compatibility h htor q existence geometry hRigid criterion R m hm
-        K₀ ξ K' d).obj M).ρ σ).hom x :=
+        K₀ ξ K' d).obj M).ρ σ).asHom.hom x :=
   LevelHecke.heckeModuleActionFunctor_ρ_smul Gamma K'.subgroup _ σ a x
 
 end PrimeTo

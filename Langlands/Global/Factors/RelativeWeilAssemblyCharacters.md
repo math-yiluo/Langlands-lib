@@ -8,14 +8,14 @@ It collects the facts about characters that the final assembly needs. These are 
 characters of relative Weil groups, Hecke characters composed with the idele-class norm, and
 the local components of the additive character `ψ ∘ Tr`. Two published propositions enter
 as explicit hypotheses and are not proved here: `TransferCharacterFactorization` (module
-`Langlands.ClassField.Global.RelativeWeilCharacterFactorizationStatement`) and
-`TransferNormCompatibility` (module `Langlands.ClassField.Global.RelativeWeilTransferNormStatement`).
+`Langlands.ClassFieldTheory.Global.RelativeWeilCharacterFactorizationStatement`) and
+`TransferNormCompatibility` (module `Langlands.ClassFieldTheory.Global.RelativeWeilTransferNormStatement`).
 `Gal(E/F)` carries the discrete topology `relativeGaloisTopology` in the
 `RelativeWeilGroup` namespace, as in the published relative Weil modules.
 
 ### Reciprocity characters
 
-Namespace `Langlands.ClassField.Global.RelativeWeilGroup`. `continuousReciprocityCharacter c F E χ`
+Namespace `Langlands.ClassFieldTheory.Global.RelativeWeilGroup`. `continuousReciprocityCharacter c F E χ`
 is the published continuous form of `χ ∘ τ_F = (χ ∘ transfer)⁻¹`
 (`Langlands.Global.Factors.RelativeWeilBrauer`).
 

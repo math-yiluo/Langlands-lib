@@ -1,6 +1,6 @@
 # Sphericity of the dual cusp form
 
-Module `Langlands.Global.RankinSelberg.ContragredientDualSpherical`. Author: Worker 126.
+Module `Langlands.Global.RankinSelberg.ContragredientDualSpherical`.
 
 This module proves one fact and the lemmas it needs. Let `x` be a vector of an actual
 cuspidal realization `T` of `GL_n`, `n = r + 1`, with cusp form `φ`. Let `xd` be a vector of
@@ -10,7 +10,7 @@ number field `F` in an arbitrary universe `u`. The cusp-function results also as
 `CompactSpace (AdeleQuotient F)`, as `cuspFunction` does. No other hypothesis is used, and no
 relation between `T` and `Td` is assumed beyond the equality of cusp functions.
 
-It is a supporting result for Task 7121 (`ContragredientDualWhittakerStatement`, published in
+It is a supporting result for `ContragredientDualWhittakerStatement` (published in
 `Langlands.Global.RankinSelberg.EqualDualEulerFactorizationReduction`). That statement asks
 for a vector `xd` of `Td` that is spherical outside `S` and whose `ψ⁻¹`-Whittaker function is
 the dual of the `ψ`-Whittaker function of `x`. In the source `xd` is the cusp form `φ̃`. This

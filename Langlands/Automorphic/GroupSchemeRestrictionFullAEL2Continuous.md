@@ -1,7 +1,5 @@
 # Continuous parabolic-vanishing functions in the almost-everywhere cuspidal `L²` subspace of the restriction split-centre quotient
 
-Author: Worker 112.
-
 Getz--Hahn (`getz-hahn-2024-automorphic-representations`) define
 `L²_cusp([G])` in (6.20)--(6.21), printed p. 168 (PDF p. 182), by almost
 everywhere vanishing of the integrals `∫_{[N]} φ(n g) dn` for every proper

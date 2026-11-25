@@ -1,6 +1,6 @@
 # Rank-zero constituent helper
 
-Worker 166's ancillary helper for the full Levi constituent proof. This is an
+Ancillary helper for the full Levi constituent proof. This is an
 internal linear-algebra argument; it is not a proof of the positive-rank
 statement. It retains independent group, field and representation universes.
 

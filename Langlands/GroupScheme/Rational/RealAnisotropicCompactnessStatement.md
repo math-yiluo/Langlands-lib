@@ -1,7 +1,5 @@
 # Statement: compact real points of anisotropic reductive groups
 
-Author: Worker 263.
-
 `Langlands.GroupScheme.RealAnisotropicCompactnessStatement : Prop`
 asserts that every connected reductive real group scheme with split rank
 zero has compact full real point set. This module states the assertion and

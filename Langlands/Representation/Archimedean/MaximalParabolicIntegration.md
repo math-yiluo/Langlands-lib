@@ -8,7 +8,7 @@ subgroup `P_{m,1}`, followed by an integral over the Levi compact `O(m)`. The st
 `Langlands.Archimedean.MaximalParabolicIntegrationStatement`, proved as
 `Langlands.Archimedean.maximalParabolicIntegration`.
 
-In the planned proof of `RealStandardLanglandsQuotientStatement` (Task 6749), this formula turns
+For the proof of `RealStandardLanglandsQuotientStatement`, this formula turns
 the `O(n)`-pairing of the Library's `RealPrincipalSeriesDuality` into an iterated integral. The
 partial Jacquet integral over `P_{n-1,1}` and its limit argument are then applied to that iterated
 integral.

@@ -1,7 +1,7 @@
 # Two-sided Haar invariance for compact-open covered groups
 
-Worker 117 proves the published closed proposition
-`Langlands.Haar.CompactOpenCoverUnimodularityStatement.{uG}` by the closed
+The published closed proposition
+`Langlands.Haar.CompactOpenCoverUnimodularityStatement.{uG}` is proved by the closed
 theorem `Langlands.Haar.compactOpenCoverUnimodularity` in
 `Langlands.Analysis.Local.CompactOpenCoverUnimodularityProof`.
 The universe `uG` is arbitrary. The theorem has no additional parameters or
@@ -73,18 +73,15 @@ representation-theoretic input.
 ## Provenance and dependencies
 
 This is an internal generalization, not a transcription of a literature
-theorem. Worker 117 adapted the private ambient scalar-cancellation lemma
+theorem. It adapts the private ambient scalar-cancellation lemma
 of the same name in the published
-`Langlands.Representation.RankinSelberg.UnipotentUnimodularity`.
-Worker 117 authored that Lean proof, and Worker 103 supplied its
-compact-open-subgroup route. Worker 672 supplied the closed-subgroup
-pullback route in this task's context. Worker 841 authored the target
-statement from Worker 672's specification. The current module imports only
-that published statement; it does not import the representation module.
+`Langlands.Representation.RankinSelberg.UnipotentUnimodularity`, whose
+proof follows the compact-open-subgroup route; the closed-subgroup
+pullback route is added here. This module imports only
+the published statement; it does not import the representation module.
 
 The measure, homeomorphism, subgroup and compactness results are from
 Mathlib at pinned commit
 `5ed2965256430c3649e86755f9576b54eca72435`. The proof preserves the target
 Lean/Markdown pair and all its imports. Specialization to p-adic groups,
-quotient measures and character localization belongs to the consumer task
-and is outside this module.
+quotient measures and character localization is outside this module.

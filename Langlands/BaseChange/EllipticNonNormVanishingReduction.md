@@ -23,7 +23,8 @@ orbital integral under Satake separation over \(F\) and Satake character
 existence over \(E\). It applies to the same orbital integral and the same
 quotient measure as `VanishesOffNorms`.
 
-This is a derived internal reduction for Task 7813. The determinant-support
+This is a derived internal reduction for the proof of the fundamental lemma
+`FundamentalLemmaStatement`. The determinant-support
 argument appears in the remark after Henniart–Lemaire I.6.11 (printed p. 53,
 PDF p. 61), and the regular elliptic norm criterion is the lemma of I.6.12 on
 the same page. Arthur–Clozel, Chapter 1, Lemma 1.4 (printed pp. 8–9,

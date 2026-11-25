@@ -1,6 +1,6 @@
 # Weight decomposition of the actual adjoint representation
 
-Worker 339. This module proves that the actual Lie algebra of an
+This module proves that the actual Lie algebra of an
 affine group scheme locally of finite type over a field is the internal direct
 sum of its character weight spaces for any homomorphism from a split torus.
 It uses the existing `weightSpace` definition: the eigenvalue equation must
@@ -10,7 +10,7 @@ algebras. The exact published-statement wrapper
 `Reductive/WeightDecompositionProof`.
 
 The module imports the published `Torus/Weights` and
-`LinearAlgebra/FinsuppDecomposition` interfaces by Worker 274, together with
+`LinearAlgebra/FinsuppDecomposition` interfaces, together with
 the previously published universal adjoint coefficients. It uses their
 existing structures and operations.
 

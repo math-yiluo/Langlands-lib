@@ -1,7 +1,5 @@
 # Finite original local-domain refinements inside recognized charts
 
-Author: Worker 36.
-
 This module constructs a finite cover of every full affinoid domain in a
 recognized chart by actual local domains over the supplied atlas. Applied to
 the recognition atlas of the enlarged full local-domain atlas, it constructs
@@ -15,7 +13,7 @@ and the following paragraph, printed p.23 / PDF p.20, for contained affinoid
 domains and their induced atlases. Registered source
 `berkovich-1993-etale-cohomology`, SHA256
 `06b42aca1c8f237e607d2cf1f15a41fdc9718324a4dc9fd5bce66574254bb91c`.
-These original pages were read for this unit; no source-specific errata file
+These original pages were read for this module; no source-specific errata file
 was found in the available project and Library locations.
 
 This is a derived finite-refinement construction from the existing full
@@ -95,9 +93,9 @@ assumption is added. Empty spectra and zero-size witness covers are allowed.
 The imported `Domain` carries the full universal property against all
 presented affinoid test algebras.
 
-This unit supplies a finite cover with actual algebras and maps. It does
+This module supplies a finite cover with actual algebras and maps. It does
 not construct recognition data for the domain's entire section algebra,
 prove maximal recognition closure, invariance or idempotence, or identify
 the unrestricted analytic morphism category. The special-intersection
 statement and closed-ideal effectiveness are not assumed. Analytic étale
-sites and the Harris specialization remain separate obligations.
+sites and the Harris specialization lie outside this module.

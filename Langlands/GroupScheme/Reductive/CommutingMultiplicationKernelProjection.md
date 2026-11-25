@@ -27,4 +27,4 @@ the published finite-centre factorization lemma applies.
 These results retain nonreduced kernels. They require neither separatedness
 of `G` nor finiteness of the centre of `H`. The intended use is multiplication
 of a central torus and a semisimple subgroup; this helper alone does not assert
-surjectivity or either central isogeny in the host task.
+surjectivity or either central isogeny of `ReductiveDerivedCentralIsogenyStatement`.

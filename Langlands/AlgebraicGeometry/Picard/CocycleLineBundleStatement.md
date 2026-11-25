@@ -140,8 +140,3 @@ The module imports the published
 `Langlands.AlgebraicGeometry.Modules.SectionLocus` (for `GlobalSections` and
 `trivializationOpen`) and `Langlands.AlgebraicGeometry.Picard.LineBundle` (for
 `LineBundle`), unchanged.
-
-## Authorship
-
-The Lean statement and a first companion were drafted by Worker 770. Worker 303
-revised the docstring and this companion.

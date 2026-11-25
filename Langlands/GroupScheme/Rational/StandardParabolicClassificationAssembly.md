@@ -1,8 +1,8 @@
 # The rational classification of standard parabolics from its structural inputs
 
-This unit assembles `StandardParabolicClassificationStatement.{u}` (Milne 2017,
-25.23; Borel–Tits §5.14) from six published structural statements, which are
-still unproved. They are taken as explicit premises:
+This module assembles `StandardParabolicClassificationStatement.{u}` (Milne 2017,
+25.23; Borel–Tits §5.14) from six published structural statements. They are
+taken as explicit premises:
 
 - `SmoothMaximalSplitTorusConjugacyStatement.{u}`: maximal split tori of a
   smooth connected affine group are conjugate by a rational point.
@@ -27,9 +27,17 @@ Smoothness of dynamic subgroups is not a premise. It is the published theorem
 root-system premise through the published
 `relativeRootNegationStatement_of_relativeRootSystemStatement`.
 
-The unit does not prove `StandardParabolicClassificationStatement`
-unconditionally. It shows that the six statements above suffice. Once each is
-proved, applying the final theorem to those proofs gives the target.
+The module does not prove `StandardParabolicClassificationStatement`
+unconditionally. It shows that the six statements above suffice: applying the
+final theorem to proofs of them gives the target. The Library proves the six as
+`smoothMaximalSplitTorusConjugacy` (`Rational.SmoothMaximalSplitTorusConjugacyProof`),
+`dynamicConnected` (`Dynamic.ConnectedProof`), `relativeRootSystem`
+(`Rational.RelativeRootSystemProof`), `relativeRootSignInclusions`
+(`Rational.RelativeRootSignInclusionsProof`), `relativeTitsSystem`
+(`Rational.RelativeTitsSystemProof`) and `standardParabolicOrder`
+(`Rational.StandardParabolicOrderProof`). Its proof of the target,
+`standardParabolicClassification` (`Rational.StandardParabolicClassificationProof`),
+follows another route and does not import this module.
 Minimal-parabolic conjugacy (`MinimalParabolicConjugacyStatement`), the generic
 minimal-parabolic statement and `ParabolicDynamicStatement` are not used.
 
@@ -83,9 +91,9 @@ every test scheme.
 
 ## Provenance
 
-The unit is derived. It is a pure assembly of Library results and introduces
+The module is derived. It is a pure assembly of Library results and introduces
 no mathematical content of its own. The route follows the dependency structure
-recorded in the Markdown of the imported units:
+recorded in the Markdown of the imported modules:
 
 - standardness comes from torus conjugacy and the root-sign criterion;
 - conjugation into an overgroup of `P(ν)` comes from torus conjugacy and the
@@ -107,7 +115,7 @@ Two nearby entries concern this material:
 
 - '*p.545 et seq.' says that in 25.6(b), in the final sentence of 25.24 and in
   25.27 the parabolic subgroup should be minimal. 25.23 applies 25.6 only to a
-  minimal `P`, and this unit uses neither 25.24 nor 25.27.
+  minimal `P`, and this module uses neither 25.24 nor 25.27.
 - 'p.549' says that the classical proofs that the relative root system of 25.16
   is a root system are incomplete, and refers to CGP C.2.15. Here that
   assertion is the explicit premise `RelativeRootSystemStatement.{u}`.

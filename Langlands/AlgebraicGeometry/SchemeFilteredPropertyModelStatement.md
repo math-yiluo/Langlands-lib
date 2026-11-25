@@ -1,6 +1,6 @@
 # Smooth and flat models over actual filtered ring stages
 
-This unit gives two derived prerequisites for Conrad, *Weil and Grothendieck
+This module gives two derived prerequisites for Conrad, *Weil and Grothendieck
 approaches to adelic points* (December 31, 2011), Theorem 3.4(1)–(2),
 printed pp. 5–6. The registered source is
 `conrad-2011-weil-grothendieck-adelic-points`, SHA-256

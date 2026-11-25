@@ -1,14 +1,12 @@
 # Residue-normalized scalar Haar scaling
 
-Author: Worker 90.
-
 This module proves the existing proposition
 `Langlands.HarmonicAnalysis.PadicScalarHaarScalingStatement.{uF}` without changing
 its statement or imported definitions. The field universe remains arbitrary.
 The application theorem is
 `Langlands.HarmonicAnalysis.padicScalarHaarScaling`; the closing theorem
 `Langlands.HarmonicAnalysis.padicScalarHaarScalingStatement` has exactly the
-published proposition as its complete type.
+existing proposition as its complete type.
 
 For a prime `p`, a `PadicField p`, supplied topological data `T`, any Borel
 measurable structure for exactly `T.topology`, any additive Haar measure `μ`,
@@ -18,7 +16,7 @@ and any field unit `a`, the application theorem gives
 
 The theorem adds no regularity, countability, normalization or field-realization
 premise. A field unit here is any nonzero field element, not necessarily a unit
-of the integer ring. The scalar is the published residue-normalized absolute
+of the integer ring. The scalar is the residue-normalized absolute
 value.
 
 ## Intrinsic topology API
@@ -68,7 +66,7 @@ then identifies the Haar character of `π` as `q⁻¹`, by cancelling `μ(O)` in
 the finite-index equation. For a general field unit `a`, the balls `a • O`
 and `π^(T.ord a) • O` coincide because their normalized absolute values agree.
 Cancelling `μ(O)` again identifies their Haar characters. Multiplicativity of
-the character and the published formula `|a| = q^(-T.ord a)` yield exactly
+the character and the formula `|a| = q^(-T.ord a)` yield exactly
 `distribHaarChar F.Carrier a = (T.normalizedAbsUnits a : ℝ≥0)`.
 
 Finally, evaluate the pushforward on each measurable set. The preimage under
@@ -79,9 +77,10 @@ introduces the parameters of the existing proposition and applies it.
 
 ## Provenance and scope
 
-This is an internal derived proof of the already published scalar prerequisite,
+This is an internal derived proof of the existing scalar prerequisite,
 using the existing normalization theory and Mathlib's Haar uniqueness,
 finite-index measure formula and local-field topology results. It does not
 transcribe a new literature statement or introduce a new normalization. The
-rectangular matrix scaling and block-radical product-Haar results remain
-separate proof tasks.
+rectangular matrix scaling, proved as `padicRectangularHaarScalingStatement`
+in `PadicRectangularHaarScalingProof`, and the block-radical product-Haar
+results are not part of this module.

@@ -1,7 +1,5 @@
 # Statement: rational lifting of strongly regular values of the canonical class quotient
 
-Author: Worker 4945.
-
 This module states one proposition and proves nothing:
 `Langlands.GroupScheme.ClassFunctions.StronglyRegularRationalLiftingStatement.{u}`,
 a `Prop`-valued `def` with one universe parameter `u`. It is property 3 of

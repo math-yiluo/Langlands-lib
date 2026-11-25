@@ -1,7 +1,5 @@
 # Normalizing rational inequalities after a change of coefficient field
 
-Author: Worker 146.
-
 This internal construction supplies the strict rational input and exact
 locus comparison used in scalar descent. Let `d` be an actual
 positive-radius rational chart over `A`, let `Q` be a presented strict

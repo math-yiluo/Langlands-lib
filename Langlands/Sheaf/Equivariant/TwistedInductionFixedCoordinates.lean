@@ -22,7 +22,7 @@ def transportTo {U V : TwistedOver P ρ} (f : U ⟶ V) (g g' : G)
     (hg : g' = g * (Hom.twist f)⁻¹) :
     (translate P ρ g).obj U.obj ⟶ (translate P ρ g').obj V.obj :=
   MorphismProperty.Over.homMk (Hom.left (U := U) (V := V) f) (by
-    change Hom.left (U := U) (V := V) f ≫ (V.hom ≫ (ρ g').hom) = U.hom ≫ (ρ g).hom
+    change Hom.left (U := U) (V := V) f ≫ (V.hom ≫ (ρ g').asIso.hom) = U.hom ≫ (ρ g).asIso.hom
     rw [hg, ← Category.assoc, Hom.w, Category.assoc, ← rho_mul_hom, inv_mul_cancel_right])
 
 @[simp]
@@ -43,12 +43,12 @@ variable {U : TwistedOver P ρ} {H : Subgroup G} (a : H →* (End U)ᵐᵒᵖ)
 omit [P.RespectsIso] in
 /-- The underlying arrows of a local action compose according to the group law. -/
 theorem left_comp_left (h k : H) :
-    Hom.left (a h).unop ≫ Hom.left (a k).unop = Hom.left (a (h * k)).unop := by
+    Hom.left (a h).unop.asHom ≫ Hom.left (a k).unop.asHom = Hom.left (a (h * k)).unop.asHom := by
   rw [← comp_left, map_mul, MulOpposite.unop_mul, End.mul_def]
 
 omit [P.RespectsIso] in
 /-- The identity element acts through the identity arrow. -/
-theorem left_one : Hom.left (a 1).unop = 𝟙 U.obj.left := by
+theorem left_one : Hom.left (a 1).unop.asHom = 𝟙 U.obj.left := by
   rw [map_one, MulOpposite.unop_one, End.one_def, id_left]
 
 /-- The element of `K` carrying `g` to the chosen representative `c.out` of a left coset
@@ -67,7 +67,7 @@ omit [P.RespectsIso] in
 element. -/
 theorem out_eq_mul_twist_inv (ha : IsLift a) {K : Subgroup G} (hKH : K ≤ H)
     (g : G) (c : G ⧸ K) (hc : (g : G ⧸ K) = c) :
-    c.out = g * (Hom.twist (a ⟨cosetShift g c hc, hKH (cosetShift g c hc).2⟩).unop)⁻¹ := by
+    c.out = g * (Hom.twist (a ⟨cosetShift g c hc, hKH (cosetShift g c hc).2⟩).unop.asHom)⁻¹ := by
   rw [ha, inv_inv]
   exact (mul_cosetShift g c hc).symm
 
@@ -76,14 +76,14 @@ representative of its coset. -/
 def cosetTransport (ha : IsLift a) {K : Subgroup G} (hKH : K ≤ H)
     (g : G) (c : G ⧸ K) (hc : (g : G ⧸ K) = c) :
     (translate P ρ g).obj U.obj ⟶ (translate P ρ c.out).obj U.obj :=
-  transportTo ρ (a ⟨cosetShift g c hc, hKH (cosetShift g c hc).2⟩).unop g c.out
+  transportTo ρ (a ⟨cosetShift g c hc, hKH (cosetShift g c hc).2⟩).unop.asHom g c.out
     (out_eq_mul_twist_inv ρ ha hKH g c hc)
 
 @[simp]
 theorem cosetTransport_left (ha : IsLift a) {K : Subgroup G} (hKH : K ≤ H)
     (g : G) (c : G ⧸ K) (hc : (g : G ⧸ K) = c) :
     (cosetTransport ρ ha hKH g c hc).left =
-      Hom.left (a ⟨cosetShift g c hc, hKH (cosetShift g c hc).2⟩).unop :=
+      Hom.left (a ⟨cosetShift g c hc, hKH (cosetShift g c hc).2⟩).unop.asHom :=
   rfl
 
 omit [P.RespectsIso] in
@@ -91,13 +91,13 @@ omit [P.RespectsIso] in
 to the representative. -/
 theorem left_comp_cosetTransport_left (ha : IsLift a) {K : Subgroup G} (hKH : K ≤ H)
     (h : H) (g : G) (c : G ⧸ K) (hc : (g : G ⧸ K) = c)
-    (hc' : ((g * (Hom.twist (a h).unop)⁻¹ : G) : G ⧸ K) = c) :
-    Hom.left (a h).unop ≫
-        Hom.left (a ⟨cosetShift (g * (Hom.twist (a h).unop)⁻¹) c hc',
-          hKH (cosetShift _ c hc').2⟩).unop =
-      Hom.left (a ⟨cosetShift g c hc, hKH (cosetShift g c hc).2⟩).unop := by
+    (hc' : ((g * (Hom.twist (a h).unop.asHom)⁻¹ : G) : G ⧸ K) = c) :
+    Hom.left (a h).unop.asHom ≫
+        Hom.left (a ⟨cosetShift (g * (Hom.twist (a h).unop.asHom)⁻¹) c hc',
+          hKH (cosetShift _ c hc').2⟩).unop.asHom =
+      Hom.left (a ⟨cosetShift g c hc, hKH (cosetShift g c hc).2⟩).unop.asHom := by
   rw [left_comp_left]
-  congr 3
+  congr 4
   apply Subtype.ext
   simp only [Subgroup.coe_mul, cosetShift, ha h, inv_inv, mul_inv_rev, ← mul_assoc,
     mul_inv_cancel, one_mul]
@@ -128,12 +128,12 @@ variable (a : H →* (End U)ᵐᵒᵖ)
 lie in `K`, for the action by restriction along the local action. -/
 def fixedSubmodule (K : Subgroup G) : Submodule R (((ι P ρ).op.ran.obj F).obj (op U)) :=
   ⨅ (h : H) (_ : (h : G) ∈ K),
-    LinearMap.eqLocus (((ι P ρ).op.ran.obj F).map (a h).unop.op).hom LinearMap.id
+    LinearMap.eqLocus (((ι P ρ).op.ran.obj F).map (a h).unop.asHom.op).hom LinearMap.id
 
 omit [P.RespectsIso] in
 theorem mem_fixedSubmodule_iff (K : Subgroup G) (s : ((ι P ρ).op.ran.obj F).obj (op U)) :
     s ∈ fixedSubmodule ρ F a K ↔
-      ∀ h : H, (h : G) ∈ K → ((ι P ρ).op.ran.obj F).map (a h).unop.op s = s := by
+      ∀ h : H, (h : G) ∈ K → ((ι P ρ).op.ran.obj F).map (a h).unop.asHom.op s = s := by
   simp only [fixedSubmodule, Submodule.mem_iInf, LinearMap.mem_eqLocus, LinearMap.id_apply]
 
 omit [P.RespectsIso] in
@@ -149,14 +149,14 @@ variable {a}
 translated by an element of `K`. -/
 theorem projection_eq_of_mem_fixedSubmodule {K : Subgroup G}
     {s : ((ι P ρ).op.ran.obj F).obj (op U)} (hs : s ∈ fixedSubmodule ρ F a K)
-    (h : H) (hh : (h : G) ∈ K) (g g' : G) (hg : g' = g * (Hom.twist (a h).unop)⁻¹) :
+    (h : H) (hh : (h : G) ∈ K) (g g' : G) (hg : g' = g * (Hom.twist (a h).unop.asHom)⁻¹) :
     projection ρ F U g s =
-      F.map (transportTo ρ (a h).unop g g' hg).op (projection ρ F U g' s) := by
+      F.map (transportTo ρ (a h).unop.asHom g g' hg).op (projection ρ F U g' s) := by
   subst hg
-  have e : projection ρ F U g (((ι P ρ).op.ran.obj F).map (a h).unop.op s) =
-      F.map (transport ρ (a h).unop g).op
-        (projection ρ F U (g * (Hom.twist (a h).unop)⁻¹) s) :=
-    congrArg (fun k => k.hom s) (map_projection ρ F (a h).unop g)
+  have e : projection ρ F U g (((ι P ρ).op.ran.obj F).map (a h).unop.asHom.op s) =
+      F.map (transport ρ (a h).unop.asHom g).op
+        (projection ρ F U (g * (Hom.twist (a h).unop.asHom)⁻¹) s) :=
+    congrArg (fun k => k.hom s) (map_projection ρ F (a h).unop.asHom g)
   rw [(mem_fixedSubmodule_iff ρ F a K s).1 hs h hh] at e
   exact e
 
@@ -222,16 +222,16 @@ theorem spreadSection_mem (ha : IsLift a) {K : Subgroup G} (hKH : K ≤ H)
   apply section_ext ρ F U
   intro g
   have e : projection ρ F U g
-        (((ι P ρ).op.ran.obj F).map (a h).unop.op (spreadSection ρ F ha hKH u)) =
-      F.map (transport ρ (a h).unop g).op
-        (projection ρ F U (g * (Hom.twist (a h).unop)⁻¹) (spreadSection ρ F ha hKH u)) :=
-    congrArg (fun k => k.hom (spreadSection ρ F ha hKH u)) (map_projection ρ F (a h).unop g)
+        (((ι P ρ).op.ran.obj F).map (a h).unop.asHom.op (spreadSection ρ F ha hKH u)) =
+      F.map (transport ρ (a h).unop.asHom g).op
+        (projection ρ F U (g * (Hom.twist (a h).unop.asHom)⁻¹) (spreadSection ρ F ha hKH u)) :=
+    congrArg (fun k => k.hom (spreadSection ρ F ha hKH u)) (map_projection ρ F (a h).unop.asHom g)
   rw [e, projection_spreadSection, projection_spreadSection]
-  have hc' : ((g * (Hom.twist (a h).unop)⁻¹ : G) : G ⧸ K) = (g : G ⧸ K) := by
+  have hc' : ((g * (Hom.twist (a h).unop.asHom)⁻¹ : G) : G ⧸ K) = (g : G ⧸ K) := by
     rw [ha h, inv_inv]
     exact QuotientGroup.mk_mul_of_mem g hh
   rw [spreadCoordinates_eq ρ F ha hKH u _ (g : G ⧸ K) hc', spreadCoordinates_eq ρ F ha hKH u g _ rfl]
-  have key : transport ρ (a h).unop g ≫ cosetTransport ρ ha hKH _ (g : G ⧸ K) hc' =
+  have key : transport ρ (a h).unop.asHom g ≫ cosetTransport ρ ha hKH _ (g : G ⧸ K) hc' =
       cosetTransport ρ ha hKH g (g : G ⧸ K) rfl :=
     MorphismProperty.Over.Hom.ext (left_comp_cosetTransport_left ρ ha hKH h g _ rfl hc')
   rw [← key, op_comp, F.map_comp]

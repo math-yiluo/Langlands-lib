@@ -1,7 +1,5 @@
 # Full-torus expansion for finite-type Whittaker representations
 
-Author: Worker 78.
-
 `Langlands.whittakerTypeAsymptotic` proves exactly the closed proposition
 `Langlands.WhittakerTypeAsymptoticStatement.{uF,uV}` from
 `Langlands.Representation.Whittaker.AsymptoticStatement`.

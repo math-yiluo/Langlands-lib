@@ -1,7 +1,5 @@
 # Topology of the common kernel of continuous positive characters
 
-Author: Worker 55.
-
 `Langlands.Plancherel.commonNormKernelTopology` proves exactly the published
 `Langlands.Plancherel.CommonNormKernelTopologyStatement.{uG,uI}`. It imports the
 statement and uses its existing `commonNormKernel` construction unchanged.
@@ -37,7 +35,7 @@ French edition of 9 July 2026, V.2.3, printed p.106 / PDF p.112, the lemma
 and following proposition. Registered source:
 `renard-2026-representations-groupes-reductifs-padiques`; SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 55 read and visually checked this page. The implemented proof uses the
+That source page was read and visually checked. The implemented proof uses the
 published generic compact-character and compact-open-basis results to carry
 out the analytic argument with exactly the target hypotheses.
 

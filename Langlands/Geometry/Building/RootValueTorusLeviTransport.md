@@ -1,7 +1,5 @@
 # Restricted root functions under normalizer points through the Levi subgroup
 
-Author: Worker 4356.
-
 Lean module: `Langlands.Geometry.Building.RootValueTorusLeviTransport`.
 
 Let `k` be a field, `f : S → T` a homomorphism of commutative group schemes over `k`,

@@ -1,7 +1,5 @@
 # Spectral convergence of factorizations through affinoid domains
 
-Author: Worker 976.
-
 This internal module extends the Library's `SpectralConvergesOn` from
 `AffinoidPushoutSpectralTests` from algebra maps to their factorizations
 through affinoid domains. It works over a complete ultrametric normed field
@@ -77,7 +75,7 @@ many rational charts with restrictions from `D`.
 ## Provenance and scope
 
 This module is internal. It is a prerequisite for Berkovich continuity on
-compact analytic pullbacks (Task 7765). It combines the Library's coordinate
+compact analytic pullbacks (`CompactPullbackActionContinuitySmallStatement`). It combines the Library's coordinate
 approximation (`spectralConvergesOn_of_coordinates`), rational chart pullback,
 fraction coordinates and Gerritzen–Grauert covering. No norm continuity,
 common operator bound, nonempty spectrum or nontrivial valuation is assumed.

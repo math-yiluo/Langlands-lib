@@ -15,8 +15,8 @@ Both are stated as `Prop`-valued definitions and **neither is proved here**. The
 also defines the subspace predicates they use. Together with the fact that the place
 actions restricted to a stable subspace satisfy the axioms of a `(𝔤, K)`-module, the two
 statements give the global premise `CuspidalArchimedeanGenericComponentStatement` of the
-reduction in `Langlands.Automorphic.ArchimedeanParameterReduction` (a separate candidate
-of Task 5720, not imported here); that derivation is not part of this module either.
+reduction in `Langlands.Automorphic.ArchimedeanParameterReduction` (not imported here);
+that derivation is not part of this module either.
 
 ## Setting
 
@@ -57,7 +57,7 @@ Lie algebra acting on `V` by `π`. These are abstract versions of the place acti
   finite multiplicity, i.e. that every `K`-isotypic component of `W` is finite-dimensional:
   admissibility of a `(𝔤, K)`-module (Getz–Hahn, Definition 4.4.4 and p. 116). This is the
   same formulation as `Langlands.Archimedean.IsAdmissibleGKModule` in the companion
-  candidate, applied to `W`.
+  module `Langlands.Representation.Archimedean.GKModule`, applied to `W`.
 * `IsRealWhittakerFunctional π W a ℓ` (`π` a Lie action of `ℂ ⊗_ℝ 𝔤𝔩_n(ℝ)`,
   `a : Fin n → ℝ`, `ℓ : V →ₗ[ℂ] ℂ`): for every strictly upper triangular real matrix `X`
   (`X i j = 0` whenever `j ≤ i`) and every `x ∈ W`,

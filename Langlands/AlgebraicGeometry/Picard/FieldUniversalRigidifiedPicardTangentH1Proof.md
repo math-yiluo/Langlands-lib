@@ -30,7 +30,7 @@ upgrades the composed additive equivalence to a `k`-linear equivalence.
 The proof retains the target's locally finite type hypothesis on the parameter;
 this route does not need to use it. It introduces no replacement carriers or
 additional hypotheses, and has the single universe parameter `u` required by
-the statement. Worker 509 assembled the final proof; Worker 207 supplied the
-actual deformation and H1 scaling construction. The prerequisites are submitted
-as separate units for independent review and publication before whole-task
-completion.
+the statement. The actual deformation and H1 scaling construction is in
+the separate prerequisite modules `UniversalRigidifiedTangentDeformation`,
+`UniversalRigidifiedTangentScaling`, `DualNumberDeformationH1` and
+`DualNumberDeformationScaling`.

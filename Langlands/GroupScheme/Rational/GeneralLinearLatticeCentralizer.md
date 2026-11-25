@@ -1,7 +1,5 @@
 # The lattice step in the diagonal-torus centralizer calculation
 
-Worker 176.
-
 This helper imports the published `Torus.Lattice`. It supplies the lattice
 calculation used by `GeneralLinearGenericCentralizer` to specialize to the
 actual `GeneralLinear.diagonalTorus` and rational genericity predicate.

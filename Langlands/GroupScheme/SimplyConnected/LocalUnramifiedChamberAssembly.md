@@ -2,8 +2,9 @@
 
 This module states and proves `LocalSimplyConnectedUnramifiedChamberAssemblyStatement`: five
 focused statements imply `LocalSimplyConnectedUnramifiedChamberStatement`. It is a conditional
-reduction. It does not prove the chamber statement, because three of its inputs are new and
-unproved, and the other two are published but not yet proved.
+reduction. It does not prove the chamber statement by itself: the five inputs are proved in
+other modules, and `localSimplyConnectedUnramifiedChamber` (module
+`GroupScheme/SimplyConnected/LocalUnramifiedChamberProof`) applies this reduction to them.
 
 ## Statement
 
@@ -82,7 +83,7 @@ The proof uses no proof of `LocalSimplyConnectedUnramifiedIntegralTwistStatement
 
 ## Provenance
 
-This is an internal reduction for Task 5999. Its mathematical content is the decomposition of
+This is an internal reduction toward `LocalSimplyConnectedUnramifiedChamberStatement`. Its mathematical content is the decomposition of
 the chamber statement into the building facts cited in its Markdown: Kaletha–Prasad
 Proposition 6.3.13 with Lemma 1.3.17 (chamber transitivity of `N(K)` through `W(Ψ)`, the
 apartment form of 4.1.12(4)), Proposition 9.10.4 with the proof of Theorem 10.6.1 (stable and

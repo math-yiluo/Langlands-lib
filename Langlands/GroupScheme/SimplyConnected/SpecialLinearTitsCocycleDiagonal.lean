@@ -80,7 +80,7 @@ theorem eq_descendedDiagonalWeight_sub (α : characterLattice T) (i j : n)
         SpecialLinear.diagonalWeight p (Spec (CommRingCat.of L)) j)) :
     α = descendedDiagonalWeight b T hT p q i - descendedDiagonalWeight b T hT p q j := by
   apply (characterLattice.baseChangeEquiv b T hT).injective
-  simpa only [map_sub, characterLattice.baseChangeEquiv_apply,
+  simpa only [AddEquiv.map_sub, characterLattice.baseChangeEquiv_apply,
     baseChange_descendedDiagonalWeight, Preadditive.comp_sub] using hα
 
 /-- A diagonal factorization over the cover gives the diagonal formula on every original test. -/

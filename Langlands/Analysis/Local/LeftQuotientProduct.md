@@ -3,7 +3,7 @@
 This module collects generic facts about left quotients `H \ G` (the Library's
 `LeftQuotient H`, the quotient of `G` by the relation `x ~ h x`) of product
 groups. It is a helper for premise B (`UnipotentClassProductStatement`) of the
-published reduction `ArchimedeanFactorizationReduction` (Task 7397). There, the
+published reduction `ArchimedeanFactorizationReduction`. There, the
 semilocal part of `N(𝔸) \ GL_m(𝔸)` is identified with a product of local
 quotients `N(F_v) \ GL_m(F_v)` and of a compact factor, and two right-invariant
 measures on it are compared. Everything here is standard point-set topology and

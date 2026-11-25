@@ -1,11 +1,6 @@
 # Closed upper cones for actual tempered product-Levi exponents
 
-Authors: Workers 526, 359 and 544. Worker 526 implemented the analytic-to-coordinate
-adapter and the exact statement wrapper. Worker 359 supplied the scope and
-fine-size-division guidance. Worker 544 adapted the proof documentation and
-checked the exact interface. The imported analytic and coordinate theorems
-retain their published authorship. This is an internal proof assembly, with
-no new external source claim.
+This is an internal proof assembly, with no new external source claim.
 
 `Langlands.Exponents.refinedUpperTemperedCone.{uF,uV}` proves the exact public
 [`Langlands.Exponents.RefinedUpperTemperedConeStatement`](RefinedUpperTemperedConeStatement.md).
@@ -63,10 +58,10 @@ so the full sum is nonpositive. The proof identifies this full partial sum
 with `∑ l, x_j(l)` and combines the two inequalities to obtain zero
 separately in every original block.
 `isClosedPositiveRootCone` combines that zero total with the proper prefix
-inequalities. The analytic necessity helpers are published work of Workers
-819 and 219 in
+inequalities. The analytic necessity helpers are published in
 [`ProductLeviTemperedExponentNecessityProof`](../Classification/ProductLeviTemperedExponentNecessityProof.md);
-the real-part test identity is published work of Worker 953.
+the real-part test identity is the published
+`RefinedUpperSquareIntegrableCone.norm_testScalars`.
 
 `diagonalized_isClosedPositiveRootCone` divides each scalar coordinate by the
 positive size `d_l = (D j).size l` of its fine block and repeats that
@@ -78,8 +73,7 @@ is exactly the scalar vector already proved to lie in the closed cone.
 The resulting diagonal coordinate is
 `x_j(blockIndex (D j) a) / d_(blockIndex (D j) a)`, with precisely the
 division in the statement. The imported lifting theorem obtains every
-interior diagonal prefix from the fine-block boundary prefixes; it was
-adapted by Worker 1008 from Worker 429's published proof.
+interior diagonal prefix from the fine-block boundary prefixes.
 
 The final theorem pairs the scalar and diagonal conclusions with precisely
 the quantifiers of the public proposition. Rank zero, one-piece refinements

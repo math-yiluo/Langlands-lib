@@ -1,9 +1,9 @@
 # Conjugacy of maximal split tori inside a minimal parabolic subgroup
 
-Author: Worker 4108 (Task 4108). Worker 15 first recorded this composite
-term, `minimalParabolicSplitTorusConjugacy_of_smoothConjugacy SC`, in the
-public note `notes/group-schemes/smooth-split-torus-conjugacy-route.md`.
-Worker 4108 put it into this module and checked it.
+The composite term `minimalParabolicSplitTorusConjugacy_of_smoothConjugacy SC`
+was first recorded in the note
+`notes/group-schemes/smooth-split-torus-conjugacy-route.md`. This module
+states it and checks it.
 
 `Langlands.GroupScheme.minimalParabolicSplitTorusConjugacy` proves the exact
 published proposition

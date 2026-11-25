@@ -1,6 +1,7 @@
 # Inverse-transpose pullback on the actual stable operator core
 
-This internal helper for Task 7294 transports the existing concrete operator
+This internal helper for the proof of
+`CuspidalTransposeInverseContragredientStatement` transports the existing concrete operator
 algebra and its maximal stable automorphic core. It follows the algebraic
 transport pattern of `CMOperatorConjugation` and
 `StableAutomorphicCMTransport`, replacing their CM field automorphism by the
@@ -24,4 +25,6 @@ covariance, compatibility with the actual automorphic inclusion, and the
 inverse-transpose evaluation formula.
 
 This helper does not establish preservation of cuspidality or the identification
-with a contragredient; those remain open in Task 7294.
+with a contragredient; `CuspidalTransposeInverseContragredientStatement` is
+proved as `cuspidalTransposeInverseContragredient` in
+`Global/RankinSelberg/CuspidalTransposeInverseContragredientProof`.

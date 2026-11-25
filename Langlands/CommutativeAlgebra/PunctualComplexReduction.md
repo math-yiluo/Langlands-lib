@@ -1,7 +1,5 @@
 # Reduction of the punctual complex theorem to two local algebra inputs
 
-Author: Worker 1015.
-
 The definition `punctualTopHomologyIsoOfLocalAlgebra` chooses an actual
 `R`-module isomorphism `H^g(K) ≅ k` from the conditional theorem below.
 It takes proofs of both supporting propositions and every original

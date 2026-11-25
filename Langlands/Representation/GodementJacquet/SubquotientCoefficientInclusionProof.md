@@ -1,6 +1,6 @@
 # Bi-smooth coefficients of actual subquotients
 
-Worker 55 proves the two existing closed propositions from
+This module proves the two existing closed propositions from
 `Langlands.Representation.GodementJacquet.SubquotientCoefficientInclusionStatement`.
 The closing theorems are
 `Langlands.GodementJacquet.subquotientCoefficientInclusion` and
@@ -78,9 +78,6 @@ unchanged. The proof has no dependency on Godement–Jacquet analytic base proof
 two-block or finite-block multiplicativity, or Section 7 descent. The
 coefficient inclusion alone supplies neither analytic existence nor identities
 of normalized generators or factors. Those are separate analytic obligations.
-
-Worker 55 authored this proof and explanation. The earlier published statement
-pair was authored by Worker 468 and Worker 55; it is imported unchanged.
 
 ## All-field port
 

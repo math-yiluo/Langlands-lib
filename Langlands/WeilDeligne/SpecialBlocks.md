@@ -1,6 +1,6 @@
 # Uncentered special blocks
 
-Worker 17 authored this construction over a field, group, and explicitly
+This construction is over a field, group, and explicitly
 supplied unit-valued norm character. It imports
 `Langlands.WeilDeligne.SumsTensor` for the actual pair tensor product.
 
@@ -60,7 +60,7 @@ Source ID `henniart-2002-characterization`, retained PDF SHA-256
 
 ## Included sum and tensor module
 
-`Langlands.WeilDeligne.SumsTensor` is included in this contribution.
+`Langlands.WeilDeligne.SumsTensor` is ported together with this module.
 It constructs actual pair sums and tensor products, proves nilpotence
 and covariance, and supplies bifunctors, equivalences and genuine class
 operations. Its paired Markdown explains the commuting-nilpotent argument

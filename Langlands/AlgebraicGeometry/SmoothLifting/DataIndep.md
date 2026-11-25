@@ -17,6 +17,7 @@ with square-zero ideals.
   global lifts for both data, their global affine combinations computed
   with either data coincide.
 
-This is an internal lemma for Task 6989 by Worker 496. It is used to
+This is an internal lemma for the lifting of homomorphisms from groups of
+multiplicative type through nilpotent thickenings. It is used to
 compare kernel lifts along maps of test algebras when the target ideal is
 larger than the extended ideal.

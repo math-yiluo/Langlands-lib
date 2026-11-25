@@ -201,7 +201,7 @@ After the premises are introduced:
 
 ## Check
 
-`lean_check` in environment `5c94c648-e8dc-4002-a50a-071ebf3f6096`, modules
+`lean_check`, modules
 `ParabolicLimitOfAnnihilators` and `RationalOrbitWeakConstantTermLimitProof`, declaration
 `Langlands.HarishChandraSchwartz.rationalOrbitWeakConstantTermLimit` (lake-build): 0 errors, 0 warnings,
 axioms `propext`, `Classical.choice`, `Quot.sound`, level parameters `u`, `uV`.

@@ -1,7 +1,5 @@
 # Finite admissible irreducible tensor factorization for standard p-adic Levis
 
-Author: Worker 161.
-
 The closing theorem
 `Langlands.CuspidalSupport.padicLeviAdmissibleFactorization.{uF,uW}` proves
 exactly the published proposition

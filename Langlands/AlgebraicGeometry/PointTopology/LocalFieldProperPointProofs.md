@@ -1,7 +1,5 @@
 # Proper maps on actual points over locally compact fields: proofs
 
-Authors: Worker 266 and Worker 712.
-
 This module proves the published target
 `Langlands.AlgebraicGeometry.PointTopology.LocalFieldProperPointProperties`
 (module `LocalFieldProperPointStatements`) with its exact hypotheses: `K` is an

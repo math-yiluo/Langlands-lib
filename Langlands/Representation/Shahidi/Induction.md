@@ -1,6 +1,6 @@
 # Shahidi's two-block induced representations `I(s, π₁ ⊗ π₂)` and `I(-s, π₂ ⊗ π₁)`
 
-This construction unit defines the induced representations of Shahidi,
+This construction module defines the induced representations of Shahidi,
 *Fourier transforms of intertwining operators and Plancherel measures for
 GL(n)*, Amer. J. Math. 106 (1984). The registered source is
 `shahidi-1984-fourier`, SHA256
@@ -13,13 +13,13 @@ The relevant passages are on printed pages 67 (the display defining `I(s, π)`),
 intertwining and Whittaker-functional computations; nothing on them is
 formalized here.
 
-The source does not repeat the defining display for `I(-s, π')`. This unit
+The source does not repeat the defining display for `I(-s, π')`. This module
 reads it as the same construction for the ordered pair `(n, m)` and parameter
 `-s`, the reading under which `A(s, π, w_{m,n})` of (0.1) maps `I(s, π)` to
 `I(-s, π')`.
 
 For positive ranks `m, n`, a complex number `s`, and representations `π₁` of
-`GL_m(F)` and `π₂` of `GL_n(F)`, the unit builds
+`GL_m(F)` and `π₂` of `GL_n(F)`, the module builds
 
 - `I(s, π₁ ⊗ π₂)`: the Library's normalized induction, from the standard upper
   parabolic of `GL_(m+n)(F)` with Levi `GL_m × GL_n`, of the block tensor
@@ -36,7 +36,7 @@ finite-dimensional or normed.
 
 ## Use of the published normalized induction
 
-The unit introduces no induction of its own and no induction predicate. With
+The module introduces no induction of its own and no induction predicate. With
 `B` a block shape, `χ` a smooth Levi character and `σ i` the block
 representations, the Library defines
 
@@ -62,8 +62,8 @@ The covariance proofs use only the Library's covariance lemmas
 scalar computation. Smoothness is the Library's `isSmooth_productInducedOf` or
 `isSmooth_normalizedProductInduced`.
 
-Shahidi's display uses `GL_r(O)`-finite functions. Following the task, this
-unit uses the Library's smooth induction instead. It does not prove the
+Shahidi's display uses `GL_r(O)`-finite functions. This
+module uses the Library's smooth induction instead. It does not prove the
 comparison of the two descriptions.
 
 ## The induction-exponent display (pages 67 and 72)
@@ -84,12 +84,12 @@ factor `diag(-a, a⁻¹)` contributes `|det a|^{(s+n)/2 + (s+n)/2} = |det a|^{s+
 under the normalized exponents. The total is the lemma's `|det a|^{s-n}`. The
 literal exponents would give `|det a|^{s-3n/2}`.
 
-This unit therefore implements the normalized exponents `(s + n)/2` and
+This module therefore implements the normalized exponents `(s + n)/2` and
 `-(s + m)/2`. This interpretation is inferred from the source's computations.
 It is not a known published erratum. For the target `I(-s, π₂ ⊗ π₁)`, the same
 normalization with blocks `(n, m)` and parameter `-s` gives `(m - s)/2` on the
-`GL_n` block and `(s - n)/2` on the `GL_m` block. The author of this unit read
-printed pages 67, 70–73 and 84–87 of the registered scan directly.
+`GL_n` block and `(s - n)/2` on the `GL_m` block. Printed pages 67, 70–73 and
+84–87 of the registered scan were read directly.
 
 ## Complex powers of positive characters
 
@@ -156,7 +156,7 @@ For any block shape `B` and absolute value `abv`:
 
 Thus the general layer uses actual determinant characters and the explicit
 block-modulus formula built from the given absolute value. It never takes an
-unconstrained character. The unit does not prove the Haar-measure meaning of
+unconstrained character. The module does not prove the Haar-measure meaning of
 this formula, the Library's separately stated `GLBlockModulusHaarStatement`.
 No proof here depends on it.
 
@@ -259,7 +259,7 @@ making it a topological ring, an explicit real absolute value `abv`, and
 value of a non-archimedean local field, with `|ϖ| = q⁻¹` and value one on
 units. Its unit condition gives `IsOpenNormOne` by
 `isOpenNormOne_of_valuation`. The covariance laws hold for every admissible
-`abv`. They use no uniformizer normalization, so this unit asserts nothing
+`abv`. They use no uniformizer normalization, so this module asserts nothing
 that depends on it. The hypothesis fails for the usual absolute values of
 `ℝ` and `ℂ`, so this layer does not model the archimedean case. It is stated for
 all fields, including those of positive characteristic. For these, the
@@ -289,9 +289,7 @@ These declarations lie in `Langlands.PadicField.TopologicalData`, for
 - `determinantComplexPower n t` is the Library character
   `T.determinantUnramifiedCharacter n` at the nonzero complex parameter
   `LocalFactor.spectralParameter q _ t = exp(-t log q) = q^(-t)`
-  (`determinantComplexPower_def`). The task text calls this character
-  `T.unramifiedDeterminantCharacter`; its Library name is
-  `T.determinantUnramifiedCharacter`.
+  (`determinantComplexPower_def`).
 - `determinantComplexPower_apply` gives agreement with the positive normalized
   determinant absolute value:
   `T.determinantComplexPower n t g = ((T.determinantNorm n g : ℝ) : ℂ) ^ t`.
@@ -346,11 +344,14 @@ layer above.
 
 ## Not included
 
-This unit constructs only the twists, the two shapes and the induced
+This module constructs only the twists, the two shapes and the induced
 representations. It does not formalize the Weyl element, the intertwining
 integral `A(s, π, w_{m,n})`, its convergence or continuation, Whittaker or
 Jacquet functionals, the local coefficient `C(s)`, or the comparison with
-gamma factors. These belong to later units of the parent task. The
+gamma factors. These are treated in other modules of
+`Langlands.Representation.Shahidi`, among them `Geometry` (the Weyl element),
+`IntertwiningIntegral`, `JacquetIntegral`, `LocalCoefficient` and
+`LocalCoefficientGammaStatement`. The
 identification of `V₁ ⊗ V₂` with a two-factor `TensorProduct` and the
 tensor flip `V₁ ⊗ V₂ ≃ V₂ ⊗ V₁` are not constructed here. No analytic
 compatibility statement is assumed.

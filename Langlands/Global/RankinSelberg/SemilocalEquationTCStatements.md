@@ -1,17 +1,18 @@
 # Totally complex forms of the semi-local functional equations
 
-Module `Langlands.Global.RankinSelberg.SemilocalEquationTCStatements`. Author: Worker 382.
-Part of the supporting work of Task 6190 (`f4660bce-a3cb-416c-89bf-9f0cb2004c8e`). It follows
-the operator's answer `81ed24709e7050068786116ca6613260` (Option A), which restricts the global
+Module `Langlands.Global.RankinSelberg.SemilocalEquationTCStatements`.
+Part of the supporting work for the partial Rankin–Selberg functional equation of cuspidal
+pairs with integral gamma factors at the exceptional places
+(`CuspidalPairPartialGammaEquationStatement`). It belongs to the restriction of the global
 statements on the route to the local correspondence to totally complex base fields.
 
 **Scope.** The module defines two propositions in the namespace
-`Langlands.Global.RankinSelbergGlobal` and proves nothing. Each is a published proposition
+`Langlands.Global.RankinSelbergGlobal` and proves nothing. Each is a Library proposition
 with one more instance argument, `[NumberField.IsTotallyComplex F]`, inserted directly after
 `[NumberField F]`. The universe parameters are the same, and the rest of the body is copied
 verbatim.
 
-| New proposition | Universes | Published original | Original module |
+| New proposition | Universes | Original proposition | Original module |
 |---|---|---|---|
 | `UnequalSemilocalEquationTCStatement` | `u uQ` | `UnequalSemilocalEquationStatement` | `Langlands.Global.RankinSelberg.UnequalSemilocalEquationStatement` |
 | `EqualSemilocalEquationTCStatement` | `u uQ` | `EqualSemilocalEquationStatement` | `Langlands.Global.RankinSelberg.EqualSemilocalEquationStatement` |
@@ -73,7 +74,7 @@ Totally complex number fields exist (for example `ℚ(i)`, or any CM field; Math
 
 ## 4. Use
 
-Task 6190 uses the two propositions, in a separate module, as premises of a totally complex
+The two propositions are used, in a separate module (`CuspidalPairPartialGammaGlobalTCReduction`), as premises of a totally complex
 form of `CuspidalPairPartialGammaGlobalReductionStatement`
 ([`CuspidalPairPartialGammaGlobalReduction`](../Factors/CuspidalPairPartialGammaGlobalReduction.md)),
 whose conclusion is `Langlands.Global.CuspidalPairPartialGammaEquationTCStatement`. That
@@ -84,7 +85,7 @@ places.
 ## 5. Sources and provenance
 
 Provenance: *derived*. The two propositions are the special cases, for totally complex base
-fields, of the published statements. Those statements follow the source below, which states
+fields, of the Library statements. Those statements follow the source below, which states
 its results for every number field. The locators are those of the originals; the full
 correspondence, including the normalizations, is in the Markdown of the originals.
 

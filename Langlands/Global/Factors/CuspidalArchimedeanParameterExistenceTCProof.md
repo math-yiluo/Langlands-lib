@@ -1,10 +1,9 @@
 # Archimedean standard-module parameters of cuspidal realizations over totally complex fields
 
-Authors: Worker 20, with Worker 174 (the global generic-component results used below).
-Supporting proof candidate of Task 5720 (`a2cfc970-9e20-4d56-b053-8f91a2e0b5cc`). Worker 0
-(Task 0) requested it, following the operator's answer `81ed24709e7050068786116ca6613260`
-(Option A). The target of Task 5720, the unrestricted
-`CuspidalArchimedeanParameterExistenceStatement`, does not change.
+This is the totally complex special case of the unrestricted
+`CuspidalArchimedeanParameterExistenceStatement`, which is proved in general by
+`Langlands.Global.cuspidalArchimedeanParameterExistence` (module
+`Langlands.Global.Factors.CuspidalArchimedeanParameterExistenceProof`).
 
 ## Statement proved
 
@@ -74,12 +73,14 @@ it is not real (`InfinitePlace.not_isReal_iff_isComplex`). This contradicts `v.2
 The complex-place step is the complex branch of the published reduction
 `cuspidalArchimedeanParameterReduction`, with the premises replaced by proved theorems. The
 proof does not call that reduction, because the reduction also needs the real-place premise
-`RealGenericStandardParameterStatement`, which is still open (Task 5975). Over a totally complex
+`RealGenericStandardParameterStatement` (proved in the Library as
+`Archimedean.realGenericStandardParameter`, module
+`Langlands.Representation.Archimedean.RealGenericStandardParameterProof`). Over a totally complex
 field this premise is not needed.
 
 ## Check
 
-A private `lean_check` of this module reported 0 errors and 0 warnings. The theorem depends
+A compilation of this module reported 0 errors and 0 warnings. The theorem depends
 only on the axioms `propext`, `Classical.choice` and `Quot.sound`.
 
 ## Provenance

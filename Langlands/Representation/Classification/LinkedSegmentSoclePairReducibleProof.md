@@ -1,10 +1,5 @@
 # Reducibility of a linked pair of segment socles
 
-Authors: Workers 328 and 991. Worker 991 wrote the assembly and its initial
-explanation. Worker 328 verified the original source passages, replaced the
-conditional inputs by the published proofs, and audited the enlarged import
-closure.
-
 The theorem `Langlands.Classification.linkedSegmentSoclePairReducible` proves
 exactly the published proposition
 `Langlands.Classification.LinkedSegmentSoclePairReducible.{uF,uV} F T`.
@@ -90,8 +85,8 @@ reductive p-adic groups II. On irreducible representations of GL(n)*,
 Ann. Sci. ENS (4) 13 (1980), pp.165–210, literature ID
 `zelevinsky-1980-induced-ii`. The retained PDF has SHA256
 `663c79f2ee236626385d242d83107410c1a3291ba5584d4b8abee9cf8af428ac`.
-Worker 328 verified that fingerprint and read the rendered printed pages
-174 and 184–186 (one-based PDF pages 11 and 21–23). No public errata file
+That fingerprint was verified and the rendered printed pages 174 and 184–186
+(one-based PDF pages 11 and 21–23) were read. No public errata file
 `notes/errata/zelevinsky-1980-induced-ii.md` existed in the audited Library.
 
 Section 4.1, p.184, defines linkage and precedence. The proposition in §4.6,
@@ -135,7 +130,7 @@ conclusion. The filtration arguments are general module theory: covering pairs,
 actual quotient representations, the second isomorphism theorem, and Mathlib's
 lattice Jordan–Hölder comparison.
 
-Worker 328 reconstructed all direct and transitive project imports in Library
+All direct and transitive project imports were reconstructed in Library
 commit `25b91125ea94e88d741b206d633e82eb0d87c3e5`. The closure contains 1377
 project modules, including this one. The reverse-structure proof's closure has
 1374 modules and the commutativity proof's closure has 558; their union has
@@ -153,7 +148,7 @@ those input proofs record their own independence audits. The present proof uses
 only the resulting length-two series, never a socle criterion or a gluing
 conclusion. Commutativity uses inverse transpose, normalized induction duality,
 Gelfand–Kazhdan, admissibility, finite length of products of irreducibles, and
-Jordan–Hölder transport. In the integrated Library its generic pullback helpers
+Jordan–Hölder transport. In the Library its generic pullback helpers
 are shared in `Filtration.FactorMatchingPullback`; that actual module is included
 in this audit. Its proof has no segment classification input.
 
@@ -176,11 +171,10 @@ which were inspected:
 - The present target occurs only in its original proposition definition and
   this theorem. No inherited proof assumes or invokes it.
 
-In addition, an inventory of the currently published, task-bound proof records
-of all eighteen explicitly excluded tasks and proof successors finds no
-contributed module in this closure. The seven lower definition modules recorded
-by the accepted juxtaposed and quotient-Hom audits as having been authored under
-the socle-exhaustion task are `Combinatorics.RelationInversions`,
+In addition, no module proving one of the excluded results is in this
+closure. The seven lower definition modules that the
+juxtaposed and quotient-Hom audits record as introduced with socle exhaustion
+are `Combinatorics.RelationInversions`,
 `Classification.SegmentIntegralCoordinates`, `SegmentIntervalLinkage`,
 `SegmentReplacementInversions`, `SegmentUnionIntersection`,
 `SegmentProductReplacement`, and `Filtration.ObjectTransport`. They supply
@@ -196,44 +190,31 @@ These checks, together with the closed proofs and their inherited audits,
 establish direct and transitive independence from the conclusions below.
 Shared lower definitions and proofs are used only with that independence.
 
-The complete exclusions carried by this task are:
+The complete exclusions of this proof are:
 
-- `SegmentSocleProductIrreducibility` and task
-  `2ae5cbe5-0701-4509-88a0-db8cbeb35be4`;
-- `AdjacentUnlinkedSegmentSocleSwap`, task
-  `e3634665-571b-4852-9f4c-bab8a1053434` and proof successor
-  `cded83f3-df9c-4018-bc61-dc54f5c1f9ab`;
-- `TwoSegmentSocleCommutation` and tasks
-  `426911b4-6620-413f-8065-04b25287f3bd` and
-  `66e3b87c-647e-41e4-af18-df4d436765f0`;
-- `LinkedSegmentSocleGluing` and tasks
-  `c84cd52c-3ff3-4024-be50-8b84dd480888` and
-  `6780b79c-9526-46aa-b8b4-00377d68b1ea`;
-- `OrderedMultisegmentSocleExistence` and task
-  `23189526-80b0-4828-a6d4-7ebec2cbeef5`;
-- socle exhaustion `f3a69bc8-7312-4f82-8a7d-ea3c8188cb63`;
-- segment analytic classification `aca8805b-054f-4d56-8045-12db7f623404`;
-- special-head multisegment exhaustion
-  `3bfb61fa-1129-4fc9-83fd-7fcfec22106e`;
-- ordered special-head existence `ebea9a8a-9b21-4208-aa31-98c2dea1f8a3`;
-- quotient coverage `20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584`;
-- tempered block uniqueness `52e97845-36bb-457d-b76f-70753334b88c`;
-- `SquareIntegrableLanglandsClassification` and task
-  `1cb45da2-7007-4351-a694-594fb148b8d1`;
-- square-integrable exhaustion `cd8ab97c-0b78-4bce-97c4-d307a28159a4`;
-- regular exhaustion `bf433f0a-921a-428c-b0c0-6475438125ac`;
-- `SegmentHeadProductIrreducibility` and task
-  `8364e73f-14ec-4d14-8f2b-1555a7c1ce95`, including its conclusions.
+- `SegmentSocleProductIrreducibility`;
+- `AdjacentUnlinkedSegmentSocleSwap` and its proof;
+- `TwoSegmentSocleCommutation` and its proof;
+- `LinkedSegmentSocleGluing` and its proof;
+- `OrderedMultisegmentSocleExistence`;
+- socle exhaustion;
+- segment analytic classification;
+- special-head multisegment exhaustion;
+- ordered special-head existence;
+- quotient coverage;
+- tempered block uniqueness;
+- `SquareIntegrableLanglandsClassification`;
+- square-integrable exhaustion;
+- regular exhaustion;
+- `SegmentHeadProductIrreducibility`, including its conclusions.
 
-These exclusions cover mathematical conclusions, proof successors, and
+These exclusions cover mathematical conclusions, the files proving them, and
 transitive proof dependencies. Shared lower infrastructure is reusable only
 after checking that independence.
 
 ## Development validation
 
-In the approved environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`,
-`lean_check` compiled this exact theorem and inspected its declaration with zero
+A build compiled this exact theorem and inspected its declaration with zero
 errors and warnings. Its universe parameters are `uF` and `uV`, and its only
-axioms are `propext`, `Classical.choice`, and `Quot.sound`. This development
-check is separate from the candidate's exact-target validation and independent
-semantic review.
+axioms are `propext`, `Classical.choice`, and `Quot.sound`. This is a
+development check.

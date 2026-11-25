@@ -40,7 +40,9 @@ or prove either local functional equation.
 
 ## Lean proof
 
-* Construct `radialGaussian` on a real inner product space. The polynomial
+* Take `radialGaussian` on a real inner product space; it is declared, under its
+  full name in this module's namespace, in
+  [SchwartzGaussian](../../Analysis/SchwartzGaussian.md). The polynomial
   `Q(x) = -‖x‖²` has temperate growth. Its first through `n`th derivatives admit
   a uniform polynomial bound in `1 + ‖x‖`. Since all real derivatives of
   `exp` are `exp`, the iterated composition bound gives an exponential factor

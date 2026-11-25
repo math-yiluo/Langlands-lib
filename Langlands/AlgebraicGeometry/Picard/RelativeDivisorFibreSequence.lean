@@ -42,7 +42,7 @@ lemma shortExact_divisorSequence_map {X' : Scheme.{u}} (b : X' ⟶ X)
 /-- The ideal inclusion of a relative effective Cartier divisor stays a monomorphism after
 pullback along the first projection of any base change. -/
 lemma mono_pullback_fst_kernelModuleι {S : Scheme.{u}} (f : X ⟶ S) [Flat (i ≫ f)]
-    {T : Scheme.{u}} (h : T ⟶ S) (hK : Scheme.Modules.IsInvertible (kernelModule i)) :
+    {T : Scheme.{u}} (h : T ⟶ S) (hK : Scheme.Modules.IsInvertibleFLT (kernelModule i)) :
     Mono ((Scheme.Modules.pullback (pullback.fst f h)).map (kernelModuleι i)) := by
   have := mono_pullback_snd_kernelModuleι f h i hK
   have : PreservesFiniteLimits (Scheme.Modules.pullback (pullbackSymmetry f h).hom) :=

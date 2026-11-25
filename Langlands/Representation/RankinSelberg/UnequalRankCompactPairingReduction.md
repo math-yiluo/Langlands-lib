@@ -1,7 +1,5 @@
 # Rank reduction for unequal-rank compact mirabolic pairings
 
-Author: Worker 896.
-
 Module `Langlands.Representation.RankinSelberg.UnequalRankCompactPairingReduction`.
 This is a helper step towards the proof of
 `Langlands.RankinSelberg.UnequalRankCompactGenericPairingStatement`. It removes

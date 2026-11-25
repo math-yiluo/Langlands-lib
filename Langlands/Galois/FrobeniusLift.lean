@@ -2,6 +2,8 @@ import Langlands.Galois.CompatibleFamily
 import Langlands.Galois.FiniteField.Frobenius
 import Langlands.Galois.Local.SpectralProof
 import Langlands.Global.CompletionResidue
+import Langlands.Galois.Local.AbsoluteProof
+import Langlands.Global.FiniteCompletionLocalField
 
 /-!
 # Geometric Frobenius lifts at actual number-field completions
@@ -130,5 +132,66 @@ theorem matchesOutside_iff
   simp only [MatchesOutside, hasEulerPolynomialAt_iff]
 
 end Families
+
+end Langlands.GaloisRepresentation
+
+namespace Langlands.GaloisRepresentation
+
+universe u
+
+section Completion
+
+open scoped Valued
+open IsLocalRing Langlands.LocalGalois NumberField IsDedekindDomain Langlands.Global
+
+variable {K : Type u} [Field K] [NumberField K] (v : HeightOneSpectrum (𝓞 K))
+
+/-- The valuation integers of the norm of `K_v` are those of its valuative relation. -/
+theorem normedField_valuation_integer_eq :
+    (NormedField.valuation (K := FiniteCompletion K v)).integer =
+      (@ValuativeRel.valuation (FiniteCompletion K v) _
+        (FiniteCompletion.valuativeRel v)).integer := by
+  let _ := FiniteCompletion.valuativeRel v
+  ext x
+  change ‖x‖₊ ≤ 1 ↔ ValuativeRel.valuation (FiniteCompletion K v) x ≤ 1
+  rw [← Valuation.vle_one_iff (ValuativeRel.valuation (FiniteCompletion K v)),
+    FiniteCompletion.valuativeRel_vle, map_one, ← NNReal.coe_le_coe, coe_nnnorm, NNReal.coe_one]
+  exact Valued.toNormedField.norm_le_one_iff
+
+/-- The spectral integers of `AlgebraicClosure K_v` for the local-field structure of `K_v`. -/
+abbrev localClosureIntegers : ValuationSubring (AlgebraicClosure (FiniteCompletion K v)) :=
+  letI := FiniteCompletion.valuativeRel v
+  letI := FiniteCompletion.isNonarchimedeanLocalField v
+  closureIntegers (FiniteCompletion K v)
+
+/-- The spectral integers of `AlgebraicClosure K_v` for the norm of `K_v` are those for its
+local-field structure. -/
+theorem extensionIntegers_eq_localClosureIntegers :
+    extensionIntegers (FiniteCompletion K v) (AlgebraicClosure (FiniteCompletion K v)) =
+      localClosureIntegers v := by
+  ext x
+  refine (integral_iff_mem_spectralIntegers _ _ x).symm.trans ?_
+  let _ := FiniteCompletion.valuativeRel v
+  have := FiniteCompletion.isNonarchimedeanLocalField v
+  refine Iff.trans ?_ (closureIntegers_integral (FiniteCompletion K v) x)
+  exact (RingEquiv.subringCongr (normedField_valuation_integer_eq v)).isIntegral_iff
+    (by ext y; rfl) x
+
+/-- The residue field of `K_v` for its local-field structure has `N(v)` elements. -/
+theorem card_residueField_localNormedField :
+    letI := FiniteCompletion.valuativeRel v
+    letI := FiniteCompletion.isNonarchimedeanLocalField v
+    letI := localNormedField (FiniteCompletion K v)
+    letI := localNormedField_ultrametric (FiniteCompletion K v)
+    Nat.card (ResidueField (baseIntegers (FiniteCompletion K v))) = Ideal.absNorm v.asIdeal := by
+  have h₁ : Nat.card (ResidueField (baseIntegers (FiniteCompletion K v))) =
+      Ideal.absNorm v.asIdeal := CompletionResidue.card_residueField K v
+  let _ := FiniteCompletion.valuativeRel v
+  have := FiniteCompletion.isNonarchimedeanLocalField v
+  have e₁ := ResidueField.mapEquiv (RingEquiv.subringCongr (normedField_valuation_integer_eq v))
+  rw [← h₁, Nat.card_congr (localResidueEquiv (FiniteCompletion K v)).toEquiv]
+  exact (Nat.card_congr e₁.toEquiv).symm
+
+end Completion
 
 end Langlands.GaloisRepresentation

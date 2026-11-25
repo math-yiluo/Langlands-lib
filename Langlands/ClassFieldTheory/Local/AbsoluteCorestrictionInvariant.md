@@ -1,7 +1,5 @@
 # Absolute corestriction preserves local invariants
 
-Author: Worker 42.
-
 `Langlands.ClassFieldTheory.Local.InvariantFamily.AbsoluteCorestriction`
 is a proposition on one raw `InvariantFamily.{u,v} p`. For every pair
 `F E : PadicField.{u} p`, every specified finite extension structure
@@ -85,8 +83,8 @@ to the arithmetic fundamental class. The clause contains no reciprocity
 map or Frobenius choice. The inverse relation between arithmetic and
 geometric reciprocity remains as documented in `Invariants`.
 
-Worker 42 read the cited original passages and visually checked
-Proposition 1(ii). The *Local Fields* entries on PDF pages 2–3 of Serre's
+The cited original passages were read and Proposition 1(ii) was checked
+visually. The *Local Fields* entries on PDF pages 2–3 of Serre's
 2019 book corrections do not change these passages; the separate
 correction to the connecting arrow on printed page 193 does not alter
 the corestriction equality. No project-specific errata file for the

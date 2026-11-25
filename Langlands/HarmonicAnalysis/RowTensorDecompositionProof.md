@@ -17,8 +17,8 @@ f x = ∑ j : Fin N, c j * ∏ i : Fin d, g j i (x i)
 for every `x : Fin d → X`. Both Schwartz–Bruhat spaces are the actual
 submodule carriers from `Langlands.HarmonicAnalysis.Basic`.
 
-This is an internal derived proof by Worker 128 of the prerequisite specified
-for Worker 110's row Fourier argument. It is not a transcription of an external
+This is an internal derived proof of the prerequisite specified
+for the row Fourier argument. It is not a transcription of an external
 theorem. It uses the existing Mathlib clopen-basis, compactness, locally constant
 indicator, and linear-span results. The compact-clopen neighborhood lemma
 `Langlands.HarmonicAnalysis.exists_compact_clopen` is also public, so

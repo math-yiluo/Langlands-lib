@@ -1,7 +1,5 @@
 # Spectrum identification target for a Weierstrass presentation
 
-Author: Worker 36.
-
 `Langlands.Analytic.WeierstrassPresentation.SpectrumIdentificationStatement`
 concerns the actual enlarged finite Tate quotient and bounded base map in
 `WeierstrassPresentation.Definitions`. The coefficient field K is complete

@@ -1,7 +1,5 @@
 # Proof of Renard VI.4.5, Corollary: the inertia block M(G)[π] is indecomposable
 
-Author: Worker 5104.
-
 `Langlands.CuspidalSupport.rationalInertiaBlockIndecomposable` proves the published
 `Langlands.CuspidalSupport.RationalInertiaBlockIndecomposableStatement.{uF, uV}`,
 with both universes arbitrary. Its type is exactly that proposition; the
@@ -10,7 +8,7 @@ Renard, *Représentations des groupes réductifs p-adiques*, French version date
 9 July 2026, VI.4.5, Corollary, printed p.160 / PDF p.166 (registered source
 `renard-2026-representations-groupes-reductifs-padiques`).
 
-The proof uses two supporting modules of the same contribution:
+The proof uses two supporting modules, ported with this file:
 
 - `Langlands.Representation.Induction.OpenNormalRestrictionSemisimple`
   (semisimplicity of the restriction of a compact induction to an open normal

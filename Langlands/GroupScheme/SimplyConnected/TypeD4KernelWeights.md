@@ -1,8 +1,6 @@
 # Actual vertices and weights of the centrally marked D4 kernel
 
-Author: Worker 177.
-
-This unit is an internal specialization of the actual anisotropic-kernel
+This module is an internal specialization of the actual anisotropic-kernel
 comparison and actual character-restriction constructions. It works over
 every field and characteristic. Its input is actual `TitsIndexData d`
 with a complete numbering `q` by `CartanMatrix.D 4` whose unique
@@ -44,7 +42,7 @@ fundamental weight restricts to zero by the published distinguished-weight
 restriction theorem.
 
 All restrictions are morphisms of actual integral character lattices after
-base change to the original separable closure. This unit constructs no
+base change to the original separable closure. This module constructs no
 individual component group over a vertex field, norm-one presentation of
 such a component, actual Tits obstruction, Brauer transfer, local invariant
 or local D4 exclusion. Its provenance is the explicitly described

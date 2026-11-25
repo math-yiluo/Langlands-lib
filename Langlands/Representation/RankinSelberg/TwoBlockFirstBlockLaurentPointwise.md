@@ -1,7 +1,5 @@
 # The first-block Laurent identity at a representative
 
-Author: Worker 1037.
-
 This module proves `pointwise_laurent_identity`, the identity of JPSS (1983),
 Section 4.9 at a single representative `g` of the lower mixed quotient. It is
 derived internal material. The hypotheses are:

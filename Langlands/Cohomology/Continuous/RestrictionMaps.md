@@ -1,6 +1,6 @@
 # Restriction on finite quotient cohomology
 
-Author: Worker 22. The imported comparison definition is published at
+The imported comparison definition is published at
 `1058c134c0d2fb45ec96d08ea2956983aaac1d80`; the subgroup finite-stage
 infrastructure is published at `68e8013fc4fed0de284fd849695676aca2e0c32d`.
 
@@ -45,5 +45,5 @@ certificates for this exact Mathlib model.
 Literature ID `serre-1979-local-fields`; SHA-256
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`;
 retained file `/home/taskhub/central-library/Serre--Local Fields--1979.pdf`.
-Environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, Lean 4.34.0,
+Environment: Lean 4.34.0,
 Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.

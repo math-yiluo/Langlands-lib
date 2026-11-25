@@ -1,7 +1,5 @@
 # Existence of the numerical block cone
 
-Author: Worker 23.
-
 The theorem `Langlands.glBlockConeExists` proves exactly
 `Langlands.GLBlockConeExistenceStatement` from
 `Langlands.Representation.Classification.ParabolicConeAuxiliaryStatement`.

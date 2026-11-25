@@ -48,7 +48,7 @@ is in pinned Mathlib's `MeasureTheory/Measure/Haar/Unique.lean`.
 The proposition supplies a measure-theoretic prerequisite only. It asserts
 no invariance theorem for arbitrary distributions, character separation,
 trace identity, representation equivalence, or generic contragredient
-realization. No proof of the proposition is included in this statement unit.
+realization. No proof of the proposition is included in this statement module.
 
 ## Proof in the Library
 

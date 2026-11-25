@@ -1,8 +1,5 @@
 # Supercuspidal Ext vanishing over a semisimple commutative ℚ-algebra
 
-Author: Worker 3, for the Harris and Berkovich cohomological
-theorem-statement framework (task `b91b0934-0122-4c05-b359-4e7ed64bbe3d`).
-
 Harris (1999) forms `Ext` in the category of smooth `L_ℓ[GJ]`-modules, where
 `L_ℓ = L ⊗_ℚ ℚ_ℓ` for a number field `L`. This ring is a finite product of
 fields of characteristic zero and need not be a field. The published module
@@ -25,7 +22,7 @@ All types live in one universe `u`.
   Haar measure `μ` that is also right invariant, so `G` is unimodular. These
   are the group hypotheses of the published characteristic-zero module.
 - `SmoothRep A G` is the Library's category of smooth representations of `G`
-  over `A`. `SmoothExt.ext A G V n` is Worker 13's `n`-th right derived functor
+  over `A`. `SmoothExt.ext A G V n` is the `n`-th right derived functor
   of `Hom(V, -)` on it. `restriction A G G₀` and `compactInduction A G G₀` are
   the published restriction and compact induction for a subgroup `G₀`.
 - `IsIrreducible ρ` is `IsSimpleOrder (Subrepresentation ρ.representation)`.
@@ -107,8 +104,14 @@ characteristic-zero propositions for the residue fields of `A`.
    argument is in the published `SupercuspidalExt` module.
 
 So the conjunction over `A` follows from the published characteristic-zero
-conjunction over the residue fields of `A`. That conjunction is itself an
-unproved statement. Its truth argument (Vignéras 1996, I.7 and II.3.9) is in
+conjunction over the residue fields of `A`. Its three components are proved
+in the Library for every field of characteristic zero:
+`compactInductionExtReciprocity` in
+`Langlands.Cohomology.SupercuspidalExt.ReciprocityProof`,
+`compactCoefficientInjectiveProjective` in
+`Langlands.Cohomology.SupercuspidalExtCharZero.InjectiveProjectiveProof` and
+`compactInductionSupercuspidalExtVanishing` in
+`Langlands.Cohomology.SupercuspidalExtCharZero.VanishingProof`. Its truth argument (Vignéras 1996, I.7 and II.3.9) is in
 the published characteristic-zero module.
 
 ## The hypotheses cannot simply be dropped
@@ -197,31 +200,29 @@ the published `Langlands/Cohomology/SupercuspidalExtCharZero/Statement.md`.
 Direct project import, in Library commit
 `c5a40b0f54880b1825ea05214c2b066f68bfc156`:
 
-| Module | Author | Lean SHA-256 | Markdown SHA-256 |
-| --- | --- | --- | --- |
-| `Langlands.Cohomology.SupercuspidalExtCharZero.Statement` | Worker 3 | `230104bf28592e2914c25444c5f9ee52ce2fedfbce15108f0caad141bb2279b7` | `b8dc02fd0c3dc9c5d14e459e4f525af72c76dbef15e188706dc765443f2712cc` |
+| Module | Lean SHA-256 | Markdown SHA-256 |
+| --- | --- | --- |
+| `Langlands.Cohomology.SupercuspidalExtCharZero.Statement` | `230104bf28592e2914c25444c5f9ee52ce2fedfbce15108f0caad141bb2279b7` | `b8dc02fd0c3dc9c5d14e459e4f525af72c76dbef15e188706dc765443f2712cc` |
 
 Through it the module uses `Langlands.Cohomology.SupercuspidalExt.Statement`
-(Worker 3; `restriction`, `compactInduction`,
+(`restriction`, `compactInduction`,
 `CompactInductionExtReciprocityStatement`; Lean SHA-256
 `f7e3f1d1ec7bf54178be094a654eee3a7619c4d2347a5462288bf266e4d450fd`) and
-Worker 13's `Langlands.Cohomology.SmoothExt` (`SmoothExt.ext`; Lean SHA-256
+`Langlands.Cohomology.SmoothExt` (`SmoothExt.ext`; Lean SHA-256
 `7dc67a2e1e0e9244dfd73c8d056c8a308e1cd04fc3bbce696f574dfd34391d9f`). It
 also imports Mathlib's `Mathlib.RepresentationTheory.Subrepresentation` and
 `Mathlib.RingTheory.SimpleModule.Basic`.
 
-The environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`: Lean 4.34.0,
+The environment is Lean 4.34.0,
 Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
 
-Check `c1ca33e5-22c7-42c9-9120-2a4aba4b2f5d` built this Lean file from a
-draft directory against the published imports, with no errors or warnings.
-Check `2bdc2678-dda9-4f63-8963-bc085fc00c7a` built the same file with Lake
-from the workspace, against Library `c5a40b0f`, with no errors or warnings.
+A first check built this Lean file against its imports, with no errors or
+warnings. A second check built the same file with Lake against Library
+`c5a40b0f`, with no errors or warnings.
 Both inspected `SupercuspidalExtSemisimpleStatements` as a `Prop`-valued
 definition with the single universe parameter `u`, depending only on
-`propext`, `Classical.choice` and `Quot.sound`. Check
-`59f0881d-3790-446e-a4ac-2b0e733382a8` compiled a test file against the same
-Lean file, with no errors or warnings, and its output was read. It printed
+`propext`, `Classical.choice` and `Quot.sound`. A third check compiled a test
+file against the same Lean file, with no errors or warnings, and its output was read. It printed
 the two predicates and three propositions with universes. All binders listed
 above are present, `A` and `G` live in `u`, and the index type `ι` of the
 biproduct is in `Type`. It printed the type of

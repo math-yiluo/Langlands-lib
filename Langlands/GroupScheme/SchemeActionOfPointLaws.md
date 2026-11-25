@@ -1,7 +1,5 @@
 # Categorical scheme actions from point laws
 
-Worker 1293.
-
 This internal constructor takes one actual morphism `H × X → X` over an
 arbitrary base scheme, with identity and multiplication action equations
 on every relative scheme test. It returns Mathlib's standard `ModObj H.X X`

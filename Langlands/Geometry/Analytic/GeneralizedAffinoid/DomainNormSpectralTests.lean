@@ -17,7 +17,7 @@ variable {K : Type u} [NormedField K] [IsUltrametricDist K] [CompleteSpace K]
   {A : PresentedAffinoidAlgebra K}
   {G : Type v} [Group G] [TopologicalSpace G] [IsTopologicalGroup G]
   (ρ : G →* Aut A)
-  (hρ : ∀ a : A, Continuous (fun g : G => (ρ g).hom.toAlgHom a))
+  (hρ : ∀ a : A, Continuous (fun g : G => (ρ g).asIso.hom.toAlgHom a))
 
 /-- A full represented domain is the union of the loci of the rational
 charts of a finite rational covering. -/
@@ -67,8 +67,8 @@ theorem domainSpectralSubgroup_mem_nhds_of_normContinuous (U : Domain K A)
   subst hx
   have hres := stabilizerSectionMap_restriction (ι k) (ρ g) (hstab k) hU
   have key : (ι k).restriction
-      ((stabilizerSectionAction U ⟨ρ g, hU⟩).hom.toAlgHom b - b) =
-      (stabilizerSectionAction (D k).toDomain ⟨ρ g, hstab k⟩).hom.toAlgHom
+      ((stabilizerSectionAction U ⟨ρ g, hU⟩).asIso.hom.toAlgHom b - b) =
+      (stabilizerSectionAction (D k).toDomain ⟨ρ g, hstab k⟩).asIso.hom.toAlgHom
         ((ι k).restriction b) - (ι k).restriction b := by
     rw [map_sub]
     congr 1
@@ -76,7 +76,7 @@ theorem domainSpectralSubgroup_mem_nhds_of_normContinuous (U : Domain K A)
       hres).symm
   have hb := hbound k x'
   change x' ((ι k).restriction
-    ((stabilizerSectionAction U ⟨ρ g, hU⟩).hom.toAlgHom b - b)) ≤ r
+    ((stabilizerSectionAction U ⟨ρ g, hU⟩).asIso.hom.toAlgHom b - b)) ≤ r
   rw [key]
   exact hb
 

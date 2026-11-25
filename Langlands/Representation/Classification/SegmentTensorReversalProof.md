@@ -1,7 +1,5 @@
 # Association of the two actual segment tensors
 
-Author: Worker 495.
-
 This proof supplies
 `Langlands.Classification.segmentTensorReversalAssociation.{uF,uV} F T`
 of `Langlands.Classification.SegmentTensorReversalAssociation.{uF,uV} F T`.

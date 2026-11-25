@@ -2,9 +2,8 @@
 
 The module `Langlands.LocalFactor.Ramification.Breaks` constructs upper-break
 multiplicities, their finite support, and the extrema of nonempty support.
-Worker 70 implemented the original p-adic construction and proofs. Worker 46
-supplied the construction route and boundary conventions. Worker 849 extends
-the construction in place to the published general finite ramification groups.
+The construction and proofs were first written for p-adic fields; the module
+extends them in place to the published general finite ramification groups.
 
 ## Arithmetic objects and scope
 

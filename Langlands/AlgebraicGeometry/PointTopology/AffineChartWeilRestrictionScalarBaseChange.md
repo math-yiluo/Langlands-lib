@@ -131,7 +131,7 @@ theorems preserve the same canonical forward map and both naturalities.
 The target remains locally finite type; no quasi-compactness is inferred
 from an arbitrary projective immersion over an arbitrary ring.
 
-This unit proves the all-test representing property of the actual
+This module proves the all-test representing property of the actual
 base-changed original scheme over the actual extension pullback.
 It supplies the extension's tensor-spectrum isomorphism, but does not
 yet transport the target and functor through it or identify `G_C`
@@ -141,4 +141,4 @@ product decompositions, geometric preservation of the representing
 scheme, arithmetic integral models, function-field completion
 instances, the local topology compatibility of these comparisons,
 and the global adelic comparison remain separate obligations of
-Example 4.2 and the whole-paper task.
+Example 4.2 and of the rest of the paper.

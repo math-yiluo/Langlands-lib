@@ -67,9 +67,11 @@ proves `height_diagonal_smul` for every nonzero principal scalar.
 
 ## Scope
 
-This unit proves the displayed construction, finite-support, positivity and
+This module proves the displayed construction, finite-support, positivity and
 scaling assertions. It does not prove compactness of normalized vectors,
 comparison under arbitrary invertible adelic matrices, existence of rational
 height minima, Gauss reduction, rank induction or Galois descent. In particular,
 actual connected reductive Siegel coverage, algebraic setup existence and the
-compatible compact subgroup remain obligations of the reduction task.
+compatible compact subgroup are not proved here; algebraic setup existence is
+proved as `AdelicSiegelFactors.siegelAlgebraicSetupExistence` in
+`AdelicSiegelSetupExistenceProof`.

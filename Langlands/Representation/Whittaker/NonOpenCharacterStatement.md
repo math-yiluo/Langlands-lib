@@ -1,8 +1,5 @@
 # A radical character witness outside the open GL orbit
 
-Author: Worker 179. Mathematical specification and proposed elementary-root
-route: Worker 330.
-
 `Langlands.Whittaker.NonOpenCharacterWitnessStatement` is a proposition
 definition, with no proof supplied here. It quantifies a field `K : Type uK`
 in an arbitrary universe, a positive total rank `n + 1`, an actual
@@ -86,7 +83,8 @@ criterion. Rodier works in a p-adic setting and introduces an admissible
 irreducible inducing representation for Theorem 4. He does not literally
 state the arbitrary-field, raw-additive-character proposition above.
 
-The intended future proof can be entirely algebraic. Read the original block
+The proof, `Langlands.Whittaker.nonOpenCharacterWitness` in
+`NonOpenCharacterProof`, is entirely algebraic. Read the original block
 labels along the ambient positions, namely
 `Geometric.blockIndex B (v.val.symm a)`. If no adjacent labels strictly
 increase, this finite sequence is nonincreasing. Every original block occurs
@@ -105,7 +103,8 @@ upper root subgroup: the matrix is `1 + t Eᵢ,ᵢ₊₁`. Its inverse is
 blocks. Hence it is in `P` with identity diagonal blocks, and its original
 Levi projection is one. The ambient character has complex value `ψ t`, so
 detects it without changing the character sign. This is the proposed proof
-route, not a Lean proof supplied by this pair.
+route, which `NonOpenCharacterProof` follows; no Lean proof is supplied by
+this pair.
 
 ## Boundary with induced localization
 

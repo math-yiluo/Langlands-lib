@@ -1,7 +1,5 @@
 # Descent of local finite presentation along fppf coverings
 
-Author: Worker 766.
-
 This module is `Langlands.AlgebraicGeometry.Modules.FinitePresentationDescent`.
 All declarations are in the namespace `Langlands.AlgebraicGeometry.Modules`.
 
@@ -19,9 +17,9 @@ the conclusion includes quasi-coherence of `M`.
 
 ## Purpose and provenance
 
-Workers 311 and 214 requested this lemma for the proof task `5b9ad399`, which
-proves algebraicity of the coherent stack. It serves the representability of
-the Picard sheaf in task `d084a453`. The lemma resembles the classical fpqc
+This lemma is an input to the algebraicity of the coherent stack (it is used
+in `Langlands.AlgebraicGeometry.CoherentSheaves.GeometricDescent`) and to the
+representability of the Picard sheaf. The lemma resembles the classical fpqc
 descent of finite presentation for quasi-coherent modules. The statement here
 differs from it: `M` is an arbitrary sheaf of modules, and the covering is a
 single flat, locally finitely presented surjection. The statement and the proof

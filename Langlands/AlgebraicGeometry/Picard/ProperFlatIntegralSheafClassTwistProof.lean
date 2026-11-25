@@ -125,14 +125,14 @@ lemma unitHom_classOf_pullback_projection (T : Over S) (N : LineBundle T.left) :
 
 /-- A line bundle is an invertible module in the sense of the ported definition. -/
 lemma isInvertible_lineBundle {Y : Scheme.{u}} (N : LineBundle Y) :
-    Scheme.Modules.IsInvertible N.obj :=
+    Scheme.Modules.IsInvertibleFLT N.obj :=
   ⟨fun x => by
     obtain ⟨U, hx, ⟨e⟩⟩ := N.property x
     exact ⟨U, hx, ⟨((Scheme.Modules.restrictFunctorIsoPullback U.ι).app N.obj).symm ≪≫ e⟩⟩⟩
 
 /-- An invertible module in the sense of the ported definition is a line bundle. -/
 def lineBundleOfIsInvertible {Y : Scheme.{u}} (N : Y.Modules)
-    (hN : Scheme.Modules.IsInvertible N) : LineBundle Y :=
+    (hN : Scheme.Modules.IsInvertibleFLT N) : LineBundle Y :=
   ⟨N, fun x => by
     obtain ⟨U, hx, ⟨e⟩⟩ := hN.exists_trivialization x
     exact ⟨U, hx, ⟨(Scheme.Modules.restrictFunctorIsoPullback U.ι).app N ≪≫ e⟩⟩⟩

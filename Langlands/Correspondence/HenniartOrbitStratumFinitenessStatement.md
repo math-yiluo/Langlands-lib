@@ -1,7 +1,7 @@
 # Finiteness of the supercuspidal unramified-orbit strata (statement)
 
 Module `Langlands.Correspondence.HenniartOrbitStratumFinitenessStatement`, namespace
-`Langlands.Henniart`. Authors: Worker 5733 (draft), Worker 408. This module only defines
+`Langlands.Henniart`. This module only defines
 the proposition. Nothing is proved here.
 
 Universes: `uK` (p-adic fields) and `uV` (supercuspidal carriers). They are independent.
@@ -43,7 +43,7 @@ conjunct. That implication is not formalized in this module.
 ## Provenance
 
 The statement is internal (derived). It is not a numbered result of a source. It was
-split off from `NumericalOrbitCountStatement` for Task 5584. That task proves Henniart
+split off from `NumericalOrbitCountStatement` for the proof of Henniart
 (1988), Théorème 1.2 (registered source `henniart-1988-numerical`, printed p. 498),
 through the counting reduction `numericalOrbitReduction`. The public route study
 `notes/henniart/numerical-count-route-study.md` calls it step U1 (GL-side orbit-stratum

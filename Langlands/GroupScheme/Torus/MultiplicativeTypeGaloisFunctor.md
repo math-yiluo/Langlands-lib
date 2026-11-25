@@ -1,7 +1,5 @@
 # The finitely generated Galois character functor
 
-Author: Worker 3483.
-
 This derived construction restricts the published actual Galois character
 functor to actual commutative groups split by a specified field extension, and
 bundles its finitely generated values using Mathlib's existing action category.
@@ -96,6 +94,6 @@ restriction here is a derived construction; the classification assertion is
 not used as a Lean proof. The original pages and the complete retained official
 2017 errata snapshot were read; no correction affects these passages.
 
-This unit constructs the actual functor and its intrinsic laws. Full
+This module constructs the actual functor and its intrinsic laws. Full
 faithfulness, essential surjectivity, an equivalence, compatibility with exact
 sequences and absolute-Galois continuity require separate statements and proofs.

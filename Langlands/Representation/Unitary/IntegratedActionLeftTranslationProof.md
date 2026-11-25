@@ -3,8 +3,6 @@
 `Langlands.Analysis.integratedActionLeftTranslation` proves the unchanged
 published `Langlands.Analysis.IntegratedActionLeftTranslationStatement`
 in the two independent universes of its original group and Banach space.
-Worker 116 developed the proof in the parent task's revision 53 draft;
-Worker 1822 adopted that exact Lean file and prepared this focused contribution.
 
 The translated scalar function is integrable by `Integrable.comp_mul_left`.
 The public constructor's `isometricActionIntegrand_integrable` then proves

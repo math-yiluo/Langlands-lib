@@ -1,6 +1,6 @@
 # Quadratic root-coordinate jumps modulo the central subgroup
 
-Worker 244. This is an internal derivation from the published quadratic
+This is an internal derivation from the published quadratic
 coordinate group, its literal zero-first-coordinate subgroup, and the optimal
 trace-one representative lemmas in `SU3RootQuotientDepth`.
 
@@ -31,5 +31,5 @@ hypothesis. Existence of the maximal trace-one scalar is an explicit premise of
 the quotient characterization.
 
 This module does not identify an arbitrary actual root group with these
-coordinates or prove the host apartment theorem. Those comparisons and the
-arithmetic separation of root jumps remain separate obligations.
+coordinates or prove the host apartment theorem. Those comparisons are not part
+of this module; the arithmetic separation of root jumps is in `SU3RootJumpParity`.

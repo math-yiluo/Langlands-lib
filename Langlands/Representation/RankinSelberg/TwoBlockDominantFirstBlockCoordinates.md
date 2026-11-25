@@ -1,6 +1,6 @@
 # First-block rectangle coordinates for the dominant calculation
 
-Worker 113. This internal helper supplies the elementary row substitution in
+This internal helper supplies the elementary row substitution in
 the first-block calculation of JPSS (1983), Section 4.9, printed pages 416–418,
 as used in Section 4.10(2), printed page 419. The original is registered as
 `jpss-1983-rankin-selberg`, SHA-256

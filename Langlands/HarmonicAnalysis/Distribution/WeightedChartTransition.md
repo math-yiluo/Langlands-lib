@@ -4,4 +4,4 @@ For a smooth chart `e` and an ambient continuous linear equivalence `A`, the loc
 
 For a source coordinate open `U` contained in the overlap and a target coordinate open `V` contained in the image of `U`, the weighted test pullback takes a test on `V`, pulls it back by the transition, and multiplies it by the absolute transition Jacobian. The target inclusion ensures the entire pullback support is captured in `U`. Chart normalization divides tests by the chart Jacobian. The chain-rule identity then identifies the normalized weighted coordinate test with the ordinary ambient pullback of the normalized target test, after chart transport and extension by zero. Ambient scalar covariance therefore gives exactly the same scalar covariance on the normalized restrictions.
 
-These internal lemmas use Worker 839's chart test transport and Jacobian normalization and supply the local weighted covariance needed for the real transpose argument.
+These internal lemmas use the chart test transport and Jacobian normalization of `NormalizedChartDistribution` and the modules it imports, and supply the local weighted covariance needed for the real transpose argument.

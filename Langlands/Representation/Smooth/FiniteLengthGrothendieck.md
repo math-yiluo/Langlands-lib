@@ -1,12 +1,12 @@
 # The exact Grothendieck group of finite-length smooth representations
 
-Worker 503 constructs
+This module constructs
 `Langlands.SmoothRep.FiniteLengthGrothendieckGroup R G` from actual smooth
 representations. The elementary integral-presentation proofs adapt the published
-pattern in `Langlands.VirtualRepresentation.Exact` by Worker 20. The latter
+pattern in `Langlands.VirtualRepresentation.Exact`. The latter
 module is not imported: its finite-dimensional objects do not supply the objects
-of the present construction. `Langlands.VirtualRepresentation.Integral`, authored
-by Worker 24, is reused through its published interface.
+of the present construction. `Langlands.VirtualRepresentation.Integral`
+is reused through its published interface.
 
 ## Objects and exact sequences
 
@@ -104,7 +104,7 @@ the universal property: exact additivity gives `lift` and its uniqueness by
 Integer-linear maps here are additive homomorphisms in their canonical
 integer-linear form. These laws provide the generator computation and
 extensionality needed to construct later maps from exact functors after those
-functors' hypotheses have been proved. This unit does not construct those
+functors' hypotheses have been proved. This module does not construct those
 functors or assume their exactness or finite-length preservation.
 
 ## Universe accounting and actual GL and Levi specialization
@@ -156,7 +156,7 @@ Introduction and §1, printed pp.2179–2181 (PDF pp.1–3). On p.2180, Aubert t
 smooth representations on complex vector spaces and the Grothendieck group of
 those of finite length. Definition 1.5 on p.2181 then uses that group for a
 separate operator. These three original pages and the complete retained audit
-and citation guide were read for this unit.
+and citation guide were read for this module.
 
 - Literature ID: `aubert-1995-duality`.
 - Original SHA-256: `57af9c46769f6edd8e142ddaf465e89acfa2f2147db222d26879a28a06df9693`.
@@ -166,7 +166,7 @@ The precise integral exact-relations presentation, universe accounting,
 generalization to a commutative coefficient ring and arbitrary group topology,
 and all elementary construction laws here have explicit **derived/internal**
 provenance. They implement the defining universal presentation of an exact
-Grothendieck group using the accepted project objects and Mathlib's free modules,
+Grothendieck group using the published project objects and Mathlib's free modules,
 spans and quotients. Aubert is cited for the original finite-length smooth
 category context, not as if she printed these Lean definitions or the broader
 ring/topology generality. The p.2180 assertion of an irreducible basis is not
@@ -198,30 +198,23 @@ submodule spans and quotient laws. Mathlib's generic irreducibility interface
 is inherited through the canonical category; no irreducible decomposition or
 basis result is invoked.
 
-Consequently none of the prohibited conclusions or their project proof
-successors supplies an input: analytic segment classification
-`aca8805b-054f-4d56-8045-12db7f623404`, special-head exhaustion
-`3bfb61fa-1129-4fc9-83fd-7fcfec22106e`, ordered special-head existence
-`ebea9a8a-9b21-4208-aa31-98c2dea1f8a3`, quotient coverage
-`20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584`, tempered block uniqueness
-`52e97845-36bb-457d-b76f-70753334b88c`,
-`SquareIntegrableLanglandsClassification` / `1cb45da2-7007-4351-a694-594fb148b8d1`,
-square-integrable exhaustion `cd8ab97c-0b78-4bce-97c4-d307a28159a4`, or regular
-exhaustion `bf433f0a-921a-428c-b0c0-6475438125ac`. No assertion that a proposition
+Consequently none of the following classification conclusions or their proofs
+supplies an input: analytic segment classification, special-head exhaustion,
+ordered special-head existence, quotient coverage, tempered block uniqueness,
+`SquareIntegrableLanglandsClassification`, square-integrable exhaustion, or
+regular exhaustion. No assertion that a proposition
 definition or citation constitutes a proved mathematical input is made.
 
 An irreducible-basis or Jordan–Holder identification, comparisons between carrier
 universes, actual induction/Jacquet maps on this quotient, their finite-length
-preservation, and the Aubert operator remain separate units.
+preservation, and the Aubert operator are not part of this module.
 
 ## Development validation
 
-`lean_check` in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` compiled the
-entry module and inspected `SmoothRep.FiniteLengthGrothendieckGroup` successfully
-(diagnostic `974bdb70-5539-40e3-9bac-999b5381406e`), with no errors or warnings and
+The entry module compiled and `SmoothRep.FiniteLengthGrothendieckGroup` was
+inspected successfully, with no errors or warnings and
 only `propext`, `Classical.choice`, and `Quot.sound` in its reported assumptions.
 A separate private module constructed the GL and product-Levi classes directly
 from arbitrary saturated-carrier actions and actual `IsFiniteLength` proofs,
 and checked the specialized quotient universe; it also compiled without errors
-or warnings (diagnostic `d6f97535-9c59-427f-aebf-9eb2ce854ae3`). These are development
-checks; independent semantic acceptance and Library publication are separate.
+or warnings. These are development checks.

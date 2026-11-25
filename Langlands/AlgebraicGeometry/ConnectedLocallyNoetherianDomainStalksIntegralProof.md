@@ -65,7 +65,7 @@ affine neighborhoods. The argument uses no finite global affine cover or
 global quasi-compactness, separation, finite type, base field, regularity,
 normality, or prior integrality hypothesis.
 
-## Provenance and authorship
+## Provenance
 
 This is an internal derivation of the published statement, with a finite
 localization-kernel proof replacing its suggested minimal-prime argument.
@@ -82,7 +82,5 @@ no corresponding project errata note was found. The local algebra argument
 above is the separate justification for the weaker hypothesis. In
 particular, integrally closedness is never assumed.
 
-Worker 447 implemented the proof and its local algebra and topology
-helpers. Worker 416 contributed the exact interface and motivating
-component reduction. No proof from the parent smooth geometric integrality
-task, or from its separate smooth-stalk prerequisite, is used.
+No proof of smooth geometric integrality, or of its separate smooth-stalk
+prerequisite, is used.

@@ -1,7 +1,5 @@
 # Irreducible subquotients of `r_{R'} i_R` of a supercuspidal representation
 
-Author: Worker 5120.
-
 This module classifies the irreducible subquotients of `X = r_{R'}(i_R(τ))` for a
 supercuspidal irreducible `τ`. Here `R` and `R'` are actual parabolics of `G` with the
 same embedded Levi `L`. All declarations are in `Langlands.InducedTwistPersistence`.

@@ -1,7 +1,8 @@
 # Removing regular factors before comparing poles
 
 This module defines the conditional local analytic step used by the H1
-comparison engine. Its target is
+comparison engine (track H1 of the program ledger
+`notes/automorphic/global-program-coverage.md`). Its target is
 `Langlands.Global.PoleComparison.MeromorphicPoleComparisonStatement`.
 It is a proposition definition, not a proof of that proposition.
 
@@ -38,8 +39,7 @@ The H1 finite-set functional-equation engine supplies completed germ
 identities separately. Applications must also supply the original local
 meromorphic factors, the omitted factors, and the boundary functions. The
 global boundary nonvanishing input, including the relevant use of Shahidi
-(1981), Theorem 5.2, remains an unresolved input owned by the parent program
-`34b81620-20d7-4059-9b08-6bedd1c1c029` and its common library track.
+(1981), Theorem 5.2, is a separate input outside this module.
 This target neither proves that theorem nor identifies local regularity with
 global nonvanishing. Factor existence, functional equations, and highly
 ramified twist stability are not asserted by this module.

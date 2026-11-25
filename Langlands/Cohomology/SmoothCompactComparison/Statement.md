@@ -1,14 +1,12 @@
 # Derived compact sections of smooth equivariant sheaves and Godement compact cohomology
 
-Author: Worker 3.
-
 This module defines two propositions and their conjunction
 `Langlands.Cohomology.SmoothCompactComparison.SmoothCompactComparisonStatements`.
 The setting is a topological group acting on a locally compact Hausdorff
 space, and smooth equivariant sheaves of modules on it. Two compactly
-supported cohomologies are attached to such a sheaf. The first is Worker 13's
+supported cohomologies are attached to such a sheaf. The first is the
 right derived functors of compact sections, computed in the abelian category
-of smooth equivariant sheaves. The second is Worker 13's compactly supported
+of smooth equivariant sheaves. The second is the compactly supported
 Godement cohomology of the underlying equivariant sheaf. The first proposition
 says that injective smooth sheaves have no compactly supported Godement
 cohomology in positive degrees. The second says that the two cohomologies are
@@ -28,11 +26,11 @@ topological space `X`, all in one universe `u`. `G` is a topological group
 continuously (`ContinuousConstSMul`), hence by a homeomorphism. `X` is
 Hausdorff (`T2Space`) and locally compact (`LocallyCompactSpace`). The
 hypothesis `Langlands.Sheaf.Equivariant.HasStableNeighbourhoods G X`, from
-Worker 13's `Langlands.Sheaf.Equivariant.SmoothPart`, says that every open
+`Langlands.Sheaf.Equivariant.SmoothPart`, says that every open
 neighbourhood of every point contains an open neighbourhood of that point that
-is stabilized by some open subgroup. Worker 13 publishes instances for
+is stabilized by some open subgroup. That module provides instances for
 discrete `G`, and for nonarchimedean `G` acting continuously
-(`NonarchimedeanGroup G`, `ContinuousSMul G X`). Worker 13's abelian structure
+(`NonarchimedeanGroup G`, `ContinuousSMul G X`). The abelian structure
 on smooth sheaves and the derived functors below assume `IsTopologicalGroup`,
 `ContinuousConstSMul` and `HasStableNeighbourhoods`, but neither separation
 nor local compactness. Those two are added here because the comparison uses
@@ -40,21 +38,21 @@ them.
 
 The objects are the published ones:
 
-- `Langlands.Sheaf.Equivariant.TopologicalSheaf G X (ModuleCat R)` is Worker
-  13's category of equivariant sheaves of `R`-modules on the ordinary open-set
+- `Langlands.Sheaf.Equivariant.TopologicalSheaf G X (ModuleCat R)` is the
+  category of equivariant sheaves of `R`-modules on the ordinary open-set
   transport site.
-- `Langlands.Sheaf.Equivariant.SmoothTopologicalSheaf R G X` is Worker 13's
+- `Langlands.Sheaf.Equivariant.SmoothTopologicalSheaf R G X` is the
   full subcategory of smooth sheaves (`IsSmoothSheaf`). A sheaf is smooth when,
   for every open `U`, every section `s` over `U` and every point `x` of `U`,
   there are an open `V` with `x ∈ V ⊆ U` and an open subgroup `H` with
   `H • V ⊆ V` such that every element of `H` fixes the restriction of `s` to
   `V`. `Langlands.Sheaf.Equivariant.smoothInclusion R G X` is the inclusion
-  functor. Worker 13's `Langlands.Sheaf.Equivariant.SmoothAbelian` makes the
+  functor. `Langlands.Sheaf.Equivariant.SmoothAbelian` makes the
   subcategory abelian, with the kernels and cokernels of the ambient
   category, and proves that it has enough injectives. `Injective I` below is
   Mathlib's categorical notion in this subcategory.
-- `Langlands.Sheaf.Equivariant.smoothSheafCompactSections R G X`, from Worker
-  13's `Langlands.Sheaf.Equivariant.SmoothSheafCompactSections`, sends a
+- `Langlands.Sheaf.Equivariant.smoothSheafCompactSections R G X`, from
+  `Langlands.Sheaf.Equivariant.SmoothSheafCompactSections`, sends a
   smooth sheaf to its compactly supported global sections, as an object of
   the published category `Langlands.SmoothRep R G` of smooth representations.
   `smoothSheafCompactSectionsToRepIso R G X` identifies its composite with
@@ -63,18 +61,18 @@ The objects are the published ones:
   `Langlands.Sheaf.Equivariant.CompactSections.functor R G X`. The support of
   a global section is the set of points where its germ is nonzero.
 - `Langlands.Cohomology.SmoothSheafCohomology.compactDerived R G X q` is
-  Worker 13's `q`-th right derived functor of `smoothSheafCompactSections`,
+  the `q`-th right derived functor of `smoothSheafCompactSections`,
   computed by Mathlib's `Functor.rightDerived` with injective resolutions in
   the smooth category. Its values are smooth representations.
   `compactDerivedZeroIso R G X` is Mathlib's identification of the degree-zero
   derived functor with the functor itself.
 - `Langlands.Cohomology.EquivariantGodementCohomology.compactCohomology R G X q`
-  is Worker 13's `q`-th cohomology of the compactly supported global sections
-  of Worker 61's equivariant Godement complex
+  is the `q`-th cohomology of the compactly supported global sections
+  of the equivariant Godement complex
   (`Langlands.Sheaf.Equivariant.Godement.complexFunctor`), as an object of
   `Rep R G`. `compactCohomologyZeroIso R G X` identifies degree zero with
-  `CompactSections.functor R G X` through the Godement coaugmentation. Worker
-  61's published `underlyingComplexIso`, in
+  `CompactSections.functor R G X` through the Godement coaugmentation.
+  `underlyingComplexIso`, in
   `Langlands.Sheaf.Equivariant.Godement.Underlying`, shows that after
   forgetting the action this complex is the ordinary Godement complex over
   the points of `X`. This module does not import that comparison.
@@ -124,7 +122,7 @@ A consequence: since `compactDerived` takes values in smooth
 representations, the second proposition implies that
 `compactCohomology R G X q` of every smooth sheaf is a smooth representation,
 under the hypotheses above. That smoothness assertion is stated separately,
-without `HasStableNeighbourhoods`, in Worker 3's
+without `HasStableNeighbourhoods`, in
 `Langlands.Cohomology.SmoothCompactCohomology.Statement`, a published
 module that this module does not import.
 
@@ -161,8 +159,8 @@ spaces are paracompact, and every compact set has a compact neighbourhood. So
 `Γ_c = Γ_Φ` for `Φ = c`, and "`c`-soft" below means `Φ`-soft for this `Φ`.
 
 Step 1: smooth parts of Godement sheaves are `c`-soft. For an equivariant
-sheaf `M`, let `D⁰(M)` be Worker 13's `smoothCoreflector R` applied to Worker
-61's degree-zero Godement sheaf `Godement.zeroFunctor R G X` of `M`. It is the
+sheaf `M`, let `D⁰(M)` be `smoothCoreflector R` applied to the
+degree-zero Godement sheaf `Godement.zeroFunctor R G X` of `M`. It is the
 subsheaf of the product of the stalks of `M` consisting of the families that
 are locally fixed in the sense of `IsSmoothSheaf`, and it is smooth. Let `t`
 be a section of `D⁰(M)` over a compact set `K`. Since `K` has a compact
@@ -195,15 +193,15 @@ Hence the extended family is a global section of `D⁰(M)`. Its support lies in
 the closure of `V`, which is compact, and it induces `t` on `K`.
 
 Step 2: the first proposition. Let `I` be injective in the smooth category.
-Worker 61's coaugmentation of `ι I`, where `ι = smoothInclusion R G X`, is a
-monomorphism into the degree-zero Godement sheaf. Since `I` is smooth, Worker
-13's `smoothAdjunction` factors it through a morphism `I ⟶ D⁰(ι I)` of smooth
+The coaugmentation of `ι I`, where `ι = smoothInclusion R G X`, is a
+monomorphism into the degree-zero Godement sheaf. Since `I` is smooth,
+`smoothAdjunction` factors it through a morphism `I ⟶ D⁰(ι I)` of smooth
 sheaves, which is again a monomorphism. Since `I` is injective, this morphism
 splits, so `ι I` is a direct summand of `D⁰(ι I)`. A direct summand of a
 `c`-soft sheaf is `c`-soft: extend a section of the summand over `K` as a
 section of the big sheaf and project it back. By step 1, `ι I` is `c`-soft.
 By Proposition 3.3.2 and its Corollary, `H^p_c(X, ι I) = 0` for `p > 0`. By
-p.160 and Worker 61's `underlyingComplexIso`, the module underlying
+p.160 and `underlyingComplexIso`, the module underlying
 `compactCohomology R G X p` of `ι I` is `H^p_c(X, ι I)`. A representation with
 zero underlying module is a zero object of `Rep R G`.
 
@@ -232,7 +230,7 @@ ordinary injective resolution of `ι F` over the identity, so they are
 compatible with morphisms of resolutions over the identity. So `Γ_c(ι α)` and
 `Γ_c(β)` induce isomorphisms on cohomology that intertwine the actions of
 `G`. The comparison is the inverse of the first followed by the second. The
-cohomology of `Γ_c(I^•)` is `compactDerived R G X q` of `F` (Worker 13's `compactDerivedIso`). Smooth
+cohomology of `Γ_c(I^•)` is `compactDerived R G X q` of `F` (`compactDerivedIso`). Smooth
 representations are closed under subrepresentations and quotients, so
 `SmoothRep.toRep` does not change this cohomology. The cohomology of
 `Γ_c(C^•(ι F))` is `compactCohomology R G X q` of `ι F`. The resulting
@@ -248,15 +246,15 @@ isomorphisms `H^q_c(X{G}, F) ≅ H^q_c(X, b^*F)` (Corollary 1.5.2(i)) to the
 ordinary open-set site of a locally compact Hausdorff space, as follows:
 
 - Berkovich's étale abelian sheaves on `X(G)` correspond, by his Theorem
-  1.4.2, to `G`-sheaves `b^*F` on `X`. Here they are replaced by Worker 13's
+  1.4.2, to `G`-sheaves `b^*F` on `X`. Here they are replaced by
   smooth equivariant sheaves; `IsSmoothSheaf` transcribes the
   characterization by open stabilizers of restricted local sections that
   follows his Definition 1.4.1.
 - `H^q_c(X{G}, F)` is the derived functor of
   `Γ_{c,X{G}} = lim_N Γ_{c,X(N)}`, the compactly supported sections fixed by
   some open subgroup `N`. For a smooth sheaf every compactly supported
-  section is fixed by an open subgroup (Worker 13's
-  `CompactSections.isSmooth_representation_of_isSmoothSheaf`), so this
+  section is fixed by an open subgroup
+  (`CompactSections.isSmooth_representation_of_isSmoothSheaf`), so this
   functor becomes `smoothSheafCompactSections`, and its derived functors
   `compactDerived`.
 - `H^q_c(X, b^*F)` becomes `compactCohomology` of the underlying equivariant
@@ -331,7 +329,7 @@ discreteness consequence of Corollary 1.5.2(i): `H^q_c(U(ẽ)_{F̄}, ℤ/ℓ^m �
   theorem proves neither proposition of this module.
 - The spectral sequence of Corollary 1.5.2(i), Corollary 1.5.2(ii) on ringed
   spaces, and the relative versions of Corollary 1.5.3 are not stated.
-- `compactCohomology` is not replaced by Worker 13's `smoothCompactCohomology`,
+- `compactCohomology` is not replaced by `smoothCompactCohomology`,
   the cohomology of the smooth parts of compactly supported Godement
   sections. The two differ in degree one. Take `R = ℚ`, `G = X = ℤ_p` acting
   by translation, and the constant sheaf `ℚ`, which is smooth. Then
@@ -375,18 +373,18 @@ discreteness consequence of Corollary 1.5.2(i): `H^q_c(U(ẽ)_{F̄}, ℤ/ℓ^m �
 
 ## Formal dependencies and checks
 
-The direct project imports are both by Worker 13. They are byte-identical in
+The two direct project imports are byte-identical in
 Library commits `7c81d0a237386f36202562546586b28c306f0121` and
 `01a58491bc71539f1ecd3d5f0eec6ab8eae20fed`:
 
-| Module | Author | Lean SHA-256 | Markdown SHA-256 |
-| --- | --- | --- | --- |
-| `Langlands.Cohomology.SmoothSheafCohomology` | Worker 13 | `f1365e1fcf6064dbbc6bacd8491c16ce24fe3a76215dc606adc263032be3c7d1` | `8e14762c1b9488273aae24c89c1f7bfce0f5f3001cc7b09cd250edd79206d02d` |
-| `Langlands.Cohomology.EquivariantGodementCohomology` | Worker 13 | `d8e9978c4ff9fe11a14d39f62f186f9de896125332b12d55f086d451fa5035b2` | `7d4af4966241481da61efb6fbf53fb0bb9e52b89c8805af6eb1d47576a38d1ae` |
+| Module | Lean SHA-256 | Markdown SHA-256 |
+| --- | --- | --- |
+| `Langlands.Cohomology.SmoothSheafCohomology` | `f1365e1fcf6064dbbc6bacd8491c16ce24fe3a76215dc606adc263032be3c7d1` | `8e14762c1b9488273aae24c89c1f7bfce0f5f3001cc7b09cd250edd79206d02d` |
+| `Langlands.Cohomology.EquivariantGodementCohomology` | `d8e9978c4ff9fe11a14d39f62f186f9de896125332b12d55f086d451fa5035b2` | `7d4af4966241481da61efb6fbf53fb0bb9e52b89c8805af6eb1d47576a38d1ae` |
 
 From the first the module uses `compactDerived` and `compactDerivedZeroIso`.
 From the second it uses `compactCohomology` and `compactCohomologyZeroIso`.
-Through these imports it also uses Worker 13's `SmoothTopologicalSheaf` and
+Through these imports it also uses `SmoothTopologicalSheaf` and
 `smoothInclusion` (`Langlands.Sheaf.Equivariant.Smooth`),
 `HasStableNeighbourhoods` (`Langlands.Sheaf.Equivariant.SmoothPart`), the
 abelian structure of `Langlands.Sheaf.Equivariant.SmoothAbelian`, and
@@ -394,20 +392,16 @@ abelian structure of `Langlands.Sheaf.Equivariant.SmoothAbelian`, and
 (`Langlands.Sheaf.Equivariant.SmoothSheafCompactSections`), as well as
 `Langlands.SmoothRep.toRep` from `Langlands.Representation.Category.Basic`.
 
-The environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`: Lean 4.34.0,
+The environment is Lean 4.34.0,
 Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
 
-Checks `e69f6bbe-6671-47e5-8a7f-a335cb7f705c` (from a draft directory),
-`8ab91b2d-9213-4218-9910-38ade9e2e94c` and
-`7e878c35-d684-4e43-9034-afd2809bd835` (from the workspace, the last against
-Library `01a58491`) built this module with Lake against the published
-imports, with no errors or warnings. The Lean file is unchanged since the
-first check. Each inspected
+Three checks built this module with Lake against its imports, the last
+against Library `01a58491`, with no errors or warnings. The Lean file is
+unchanged since the first check. Each inspected
 `SmoothCompactComparisonStatements` as a `Prop`-valued definition with the
 single universe parameter `u`, depending only on `propext`,
-`Classical.choice` and `Quot.sound`. Check
-`33cd0358-15d0-4c8c-8f64-5b5af501d4f7` compiled a test file against the
-module and its output was read. It printed the three definitions, the axioms
+`Classical.choice` and `Quot.sound`. A further check compiled a test file
+against the module and its output was read. It printed the three definitions, the axioms
 of the conjunction, the types of `compactDerived`, `compactDerivedZeroIso`,
 `smoothSheafCompactSectionsToRepIso`, `compactCohomologyZeroIso` and
 `smoothInclusion`, and the class `HasStableNeighbourhoods`. The prints show:

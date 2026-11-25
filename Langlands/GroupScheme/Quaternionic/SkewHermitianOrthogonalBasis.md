@@ -1,7 +1,5 @@
 # Orthogonal division-algebra bases for antihermitian pairings
 
-Worker 863, Task 7498.
-
 `AntihermitianForm.OrthogonalBasisStatement` concerns a finite-dimensional left
 vector space over a division algebra with a first-kind involution `τ`. It assumes
 that `τ` moves some coefficient and that the antihermitian pairing is left-separating.

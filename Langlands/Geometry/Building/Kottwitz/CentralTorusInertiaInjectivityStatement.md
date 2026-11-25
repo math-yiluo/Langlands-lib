@@ -104,7 +104,7 @@ quotation. KP's argument covers it:
    This is the companion group-scheme statement
    `Langlands.GroupScheme.AlgebraicFundamentalGroup.CentralTorusFundamentalExactnessStatement`.
    Its proof `centralTorusFundamentalExactness` (module
-   `Langlands.GroupScheme.AlgebraicFundamentalGroupCentralTorusProof`, Task 6713)
+   `Langlands.GroupScheme.AlgebraicFundamentalGroupCentralTorusProof`)
    was published in Library commit `4abbe7aa`.
 2. Inertia acts on these finitely generated groups through a finite quotient
    `Ī`. In the long exact homology sequence, the kernel of
@@ -117,7 +117,7 @@ quotation. KP's argument covers it:
 
 The statement assumes that `Z` is induced. Induced ramification (KP
 Definition 2.5.16) would be enough for this argument. The Library has no
-predicate for it, and the objective of this task, like Proposition 11.5.3,
+predicate for it, and this statement, like Proposition 11.5.3,
 concerns induced tori.
 
 Inducedness cannot simply be dropped. Take a quadratic extension `L/k` that is

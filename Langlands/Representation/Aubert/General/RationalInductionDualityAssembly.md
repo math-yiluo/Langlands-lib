@@ -7,7 +7,7 @@ namespace `Langlands.Aubert.General`.
 
 This module reduces the proof target
 `Langlands.Aubert.General.RationalPointFamily.RationalNaturalInductionDualityStatement`
-(task `2137e0ce-8d32-43f5-b4ed-79824b68585f`) to two published proof targets:
+to two published proof targets:
 
 - `Langlands.BruhatTits.DynamicParabolicQuotientCompactStatement`: the right-coset
   space of the rational points of a dynamic parabolic is compact;
@@ -25,7 +25,7 @@ Internal: both theorems assemble published Library results and the companion
 module `RationalInductionDualityReduction`. The published inputs include
 `IsSemidirectDecomposition.isClosed_levi` from `RationalInvolutivityReduction` and
 the Bruhat-function measure and integral duality of
-`Langlands.Representation.Induction.CompactQuotientDuality` (Worker 805). The
+`Langlands.Representation.Induction.CompactQuotientDuality`. The
 underlying mathematics is the compact-picture duality `i(σ)∨ ≅ i(σ∨)` through
 `⟨ℓ, f⟩ = ∫ ⟨ℓ(k), f(k)⟩ dk` (Casselman, lecture notes *Introduction to
 representations of p-adic groups*, Chapter III, section 1, Proposition III.1.1),

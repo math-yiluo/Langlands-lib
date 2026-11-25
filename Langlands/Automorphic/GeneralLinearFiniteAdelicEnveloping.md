@@ -27,7 +27,7 @@ use the function equivalence's inverse law. The local additive group on the
 actual finite carrier is the standard one induced by its complex module.
 
 These are internal consequences of the actual general-linear differential and
-infinite-place enveloping comparisons, the actual adelic slice laws, and Worker
-72's original matrix enveloping construction. No replacement function carrier,
+infinite-place enveloping comparisons, the actual adelic slice laws, and the
+original matrix enveloping construction. No replacement function carrier,
 supplied tangent identification, scalar commutator proof, growth estimate,
 quotient-measure or reduction assertion is introduced.

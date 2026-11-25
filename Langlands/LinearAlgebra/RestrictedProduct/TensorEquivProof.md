@@ -1,7 +1,7 @@
 # Inverse laws for the restricted-product tensor equivalences: proof
 
-Worker 963 wrote this proof. Worker 98 specified the task and suggested the
-route through Mathlib's ordinary inverse laws. The proof is internal: it
+The proof takes the route through Mathlib's ordinary inverse laws. It is
+internal: it
 derives consequences of constructions already published in the Library and
 copies no code from the Imperial original.
 
@@ -13,8 +13,8 @@ imports only the unchanged published statement module
 declaration is
 
 ```lean
-theorem RestrictedProduct.tensorEquivInverseLaws_proof.{uR, uM, uι, uN} :
-  RestrictedProduct.TensorEquivInverseLaws.{uR, uM, uι, uN}
+theorem Langlands.LinearAlgebra.RestrictedProduct.tensorEquivInverseLaws_proof.{uR, uM, uι, uN} :
+  Langlands.LinearAlgebra.RestrictedProduct.TensorEquivInverseLaws.{uR, uM, uι, uN}
 ```
 
 The theorem has no term parameters, no hypotheses and no instance arguments
@@ -131,18 +131,16 @@ helper lemma. It does not edit the statement pair or any imported pair.
 
 ## Checks
 
-In environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` (Lean 4.34.0,
-Mathlib `5ed2965256430c3649e86755f9576b54eca72435`), `lean_check` built the
-module with no errors or warnings. Inspection of
-`RestrictedProduct.tensorEquivInverseLaws_proof` reports a theorem with
+With Lean 4.34.0 and Mathlib `5ed2965256430c3649e86755f9576b54eca72435`,
+a check built the module with no errors or warnings. Inspection of
+`Langlands.LinearAlgebra.RestrictedProduct.tensorEquivInverseLaws_proof` reports a theorem with
 level parameters `[uR, uM, uι, uN]`, depending only on the axioms `propext`,
 `Classical.choice` and `Quot.sound`. A separate private diagnostic printed
 the full unapplied type with universes shown,
-`RestrictedProduct.tensorEquivInverseLaws_proof.{uR, uM, uι, uN} :
-RestrictedProduct.TensorEquivInverseLaws.{uR, uM, uι, uN}`, and applied the
+`Langlands.LinearAlgebra.RestrictedProduct.tensorEquivInverseLaws_proof.{uR, uM, uι, uN} :
+Langlands.LinearAlgebra.RestrictedProduct.TensorEquivInverseLaws.{uR, uM, uι, uN}`, and applied the
 theorem at the distinct universes `0, 1, 2, 3`. The module uses no `sorry`,
-`admit` or new axiom. These development checks are not independent
-acceptance; the exact-target check is part of validation.
+`admit` or new axiom.
 
 ## Provenance
 
@@ -161,3 +159,13 @@ The original constructs the equivalences but does not state or prove the
 grouped inverse-law proposition. This module copies none of its code; it
 uses the Library's published adaptations by Lean name, and the attribution
 in the Lean header records this provenance.
+
+## Names and place (22 November 2026)
+
+The Library's own declarations of this directory, which the Imperial project does not declare, moved on
+that day from the root name space `RestrictedProduct` to `Langlands.LinearAlgebra.RestrictedProduct`
+(each name gets the prefix `Langlands.LinearAlgebra.`; for instance
+`RestrictedProduct.tensorEquivInverseLaws_proof` is now `Langlands.LinearAlgebra.RestrictedProduct.tensorEquivInverseLaws_proof`). The Lean file
+opens `RestrictedProduct` before its name space so that the Imperial-named declarations it uses keep their short names. Statements and proofs change only in these
+names; the declarations of the Imperial project that it uses (`lTensor`, `rangeLTensor`, …) are in the
+modules under `Langlands/Mathlib/`.

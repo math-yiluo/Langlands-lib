@@ -49,5 +49,8 @@ subgroups via the published `compactOpenCoverUnimodularity` theorem.
 No quotient measure is changed or selected in this module. Compatibility
 of actual quotient measures with these prescribed subgroup scales,
 literal local product geometry, general reductive realization of the
-charts, convergence and rational continuation remain open application
-obligations. This unit closes no whole-task Plancherel condition.
+charts, convergence and rational continuation remain application
+obligations; a compatible quotient measure for these scales is selected by
+`sourceCompactOpenQuotientMeasure` in
+`Langlands.Analysis.Local.CompactOpenSourceFactorization`. This module
+proves no condition of the full Plancherel formula.

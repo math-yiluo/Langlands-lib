@@ -1,7 +1,5 @@
 # Actual absolute-Galois characters: finiteness and continuity
 
-Author: Worker 3483.
-
 These proposition declarations isolate the two assertions needed to bundle
 actual characters in the finitely generated discrete absolute-Galois module
 category. They assert results about the existing character group and canonical

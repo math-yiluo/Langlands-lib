@@ -84,10 +84,10 @@ corrected matrix formula, the actual quadratic scalar-extension map, and the
 ordered matrix equivalence over `S`. It assumes no matrix-weight comparison
 as input and uses no additional external existence theorem.
 
-These are algebraic formulas for the constructed Deligne map on all
-commutative complex coefficient algebras. The module does not yet connect
-them to the categorical point comparison of the published cocharacter on
-every complex test scheme. It does not establish the inverse Kottwitz weight
-formula, chart independence, conjugacy, reflex-field comparison, smoothness,
-reductivity, or the PEL geometry and coefficient descent. Those remain
-obligations of the host task.
+These are algebraic formulas for the constructed Deligne map on all commutative
+complex coefficient algebras. The module does not connect them to the
+categorical point comparison of the published cocharacter on every complex test
+scheme; `ComplexCocharacterMatrices` does. It does not establish the inverse
+Kottwitz weight formula, chart independence, conjugacy, reflex-field comparison,
+smoothness, reductivity, or the PEL geometry and coefficient descent. Those
+remain separate obligations.

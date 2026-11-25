@@ -1,6 +1,6 @@
 # Arithmetic place facts for the adelic product subspace topology
 
-Worker 208. This is derived infrastructure for Conrad, *Weil and Grothendieck
+This is derived infrastructure for Conrad, *Weil and Grothendieck
 approaches to adelic points* (2011), printed p.10, Example 4.3. It supplies
 arithmetic inputs to the non-local-compactness argument, rather than assuming
 an infinite abstract place system or noncompact completed fields.

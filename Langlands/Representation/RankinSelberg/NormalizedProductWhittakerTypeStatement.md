@@ -1,7 +1,5 @@
 # Full Whittaker type of normalized upper block induction
 
-Author: Worker 350.
-
 `Langlands.RankinSelberg.NormalizedProductWhittakerTypeStatement.{uF,uW}`
 is a proposition definition stating preservation of full Whittaker type under
 the existing normalized upper block induction. This module supplies the
@@ -101,10 +99,12 @@ exponent of `|det g_i|` is the total size of earlier blocks minus that of
 later blocks, which is the upper exponent in the reversed order. An actual
 representation equivalence therefore transports full Whittaker type, and
 quantification over all ordered families supplies the upper formulation.
-Constructing and proving this opposite-parabolic comparison is separate work;
-this proposition definition does not establish it.
+This proposition definition does not establish this opposite-parabolic
+comparison; the Library proves it as `glOppositeProductReversal`
+(`Induction/OppositeProductReversalProof`).
 
-An intended Lean route instead reuses the upper-unnormalized targets
+The Lean proof `normalizedProductWhittakerType`
+(`NormalizedProductWhittakerTypeProof`) instead reuses the upper-unnormalized targets
 `Langlands.InducedWhittakerTypeStatement` and
 `Langlands.InducedFiniteTypeStatement`, with the canonical construction
 `PadicField.TopologicalData.normalizedProductHalfAbsorptionEquiv` in
@@ -113,7 +113,7 @@ modulus into scalar twists of the individual blocks. Their characters have
 open kernels and are trivial on their upper unipotent subgroups. Full
 functional spaces are transported using `Whittaker.twistFunctionalEquiv`.
 Finite generation under these scalar twists must hold for arbitrary
-representations, not just irreducible ones: the currently published
+representations, not just irreducible ones: the published
 `Langlands.finite_asModule_twist_iff` in `RankinSelberg.WhittakerTypeTwist`
 supplies this via the order equivalence of invariant submodules over the
 group algebra. The same module's `isOfWhittakerType_twist_iff` combines these
@@ -121,15 +121,15 @@ facts with admissibility. Induced admissibility can reuse
 `Parabolic.normalizedInductionAdmissibility` and
 `FiniteTensor.isAdmissible_external`.
 
-These are dependencies for the later proof, not hypotheses added to this
-statement. This unit introduces no absorption construction, heredity proof,
+These are dependencies of the proof, not hypotheses added to this
+statement. This module introduces no absorption construction, heredity proof,
 finite-type proof, admissibility proof, or opposite-parabolic transport.
 Stating the proposition does not prove those inputs or their assembly.
 
 ## Validation
 
-Exact declaration inspection in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` succeeded with zero errors or warnings,
+Exact declaration inspection in the pinned environment
+succeeded with zero errors or warnings,
 `statement_returns_prop: true`, and independent universe parameters `uF` and
 `uW`. Its only reported axioms are `propext`, `Classical.choice`, and
 `Quot.sound`. This compilation and inspection does not prove the proposition.

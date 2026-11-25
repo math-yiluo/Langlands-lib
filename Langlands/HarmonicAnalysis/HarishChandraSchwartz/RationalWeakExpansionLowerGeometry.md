@@ -1,6 +1,6 @@
 # Actual lower semistandard geometry for the weighted weak expansion
 
-This unit implements the lower groups of Waldspurger V.1 in the actual group
+This module implements the lower groups of Waldspurger V.1 in the actual group
 scheme `M' = Standard.leviScheme i ν I'`. All declarations are in
 `Langlands.HarishChandraSchwartz.WeakExpansion`. They use the lower subgroup
 functors from `RationalWeakExpansionWeyl`, rather than replace the parabolic
@@ -20,10 +20,10 @@ These formulas motivate the new constructions below. The cocharacter
 implementation and its topology adapters are derived from published Library
 constructions, rather than additional analytic assertions from the source.
 
-This is a geometry definition unit. It defines no representations, characters,
+This module concerns geometry only. It defines no representations, characters,
 orbit measures, densities or c-families. In particular it states or proves
 neither V.1.1, V.2.3 nor VI.3.1. Their regularity, expansion and finite
-decomposition targets belong to later units of the task.
+decomposition targets are stated in `RationalWeakExpansionTargets`.
 
 ## Cocharacters and actual subgroup functors
 
@@ -116,6 +116,6 @@ No transport to a standard parabolic of `M'` occurs. In particular the
 normalized c-operator of V.3.1 is not used here, and no character or measure
 compatibility is inferred from this group homeomorphism. Such compatibility
 must be supplied by the later orbit and source-measure constructions and
-agreement targets. The field characteristic is unrestricted. This unit has
+agreement targets. The field characteristic is unrestricted. This module has
 no representation-carrier parameter and makes no identification of field and
 representation universes.

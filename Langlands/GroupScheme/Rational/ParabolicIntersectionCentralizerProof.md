@@ -1,7 +1,5 @@
 # Common maximal split torus centralizers for two rational parabolics: proof
 
-Author: Worker 49.
-
 `Langlands.GroupScheme.parabolicIntersectionCentralizer` proves the published
 `Langlands.GroupScheme.ParabolicIntersectionCentralizerStatement.{u}` from
 `Langlands.GroupScheme.Rational.ParabolicTorusStatement`, for every universe `u`.
@@ -98,7 +96,6 @@ by Step 2. The same argument with `i₂` and `mu'` gives the inclusion into
 
 ## Checks
 
-`lean_check` of the two modules in environment
-`bb168ec3-1031-46d9-816b-5c2ed7bbe1a6` reports no errors or warnings. The
+A development check of the two modules reports no errors or warnings. The
 theorem depends only on the axioms `propext`, `Classical.choice` and
 `Quot.sound`.

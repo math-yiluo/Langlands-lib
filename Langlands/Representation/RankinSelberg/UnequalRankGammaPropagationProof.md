@@ -1,8 +1,8 @@
 # Same-multiplier propagation of the unequal-rank gamma equation
 
-Worker 396 authored the induction and final assembly. The supplied-data
-telescope follows Worker 331's published propagation statement and Worker
-11's earlier functional-equation statement. The valuative-topology bridge
+This module carries out the induction and final assembly. The supplied-data
+telescope follows the published propagation statement and the earlier
+functional-equation statement `FunctionalEquationStatement`. The valuative-topology bridge
 reuses `Langlands.HarmonicAnalysis.rowFourierCutoff_nonarchimedean`.
 The substantive transfer and adjacent-span results are imported from their
 published proof modules.
@@ -136,6 +136,7 @@ rectangular-integration results. This module adds the formal induction and
 the nonzero-value transport, reusing the existing continuation transport. The rational
 predicate packaging, span argument and maximum-bound argument are internal
 derived formulations, not assertions that the originals use those interfaces.
-Worker 623 authored the imported paired-transfer assembly; Worker 180 authored
-the imported adjacent-span proof. Their published declarations are reused by
-Lean name, without copying their implementations or relying on a shared draft.
+The published declarations of the imported paired-transfer assembly
+(`UnequalRankComplementaryTransferProof`) and the imported adjacent-span proof
+(`UnequalRankBlockSpanProof`) are reused by Lean name, without copying their
+implementations.

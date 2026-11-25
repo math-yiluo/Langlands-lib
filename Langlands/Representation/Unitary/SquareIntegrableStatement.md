@@ -1,7 +1,5 @@
 # Unitarizability from square-integrable coefficients on a central quotient
 
-Author: Worker 580, with interface guidance from Worker 438.
-
 `Langlands.SquareIntegrableUnimodularUnitarityStatement.{uG,uV}` is a closed
 proposition definition for an internal extension of the square-integrable
 unitarity argument. This pair states an implication; it supplies no proof,
@@ -51,7 +49,7 @@ functional on `V`.
 The quotient topology is the actual group quotient topology. Closedness of
 the center of a Hausdorff topological group gives the Hausdorff quotient;
 local compactness and second countability pass to this quotient. These
-facts are available to a future proof from the group hypotheses. Right
+facts follow from the group hypotheses. Right
 invariance of the specified Haar measure is an explicit additional
 hypothesis. The name does not assert or prove unimodularity of an arbitrary
 group or quotient.
@@ -64,7 +62,8 @@ p-adic reductive groups*, draft of 1 May 1995, §2.5, pp.28–29,
 especially Proposition 2.5.4 on p.29. It abstracts the integral argument
 while making compact-open cofinality and right invariance explicit.
 Casselman's proposition is not cited as a theorem about every group
-quantified here. The generic extension remains to be proved.
+quantified here. The generic extension is proved in
+`Langlands.Representation.Unitary.SquareIntegrableProof`.
 
 - Literature ID: `casselman-1995-admissible-representations`.
 - Source SHA-256:
@@ -87,10 +86,11 @@ This convention reverses the arguments of the source form and preserves
 its diagonal. The complex coefficients need not individually descend to
 the quotient; the paired product does, using the unitary central character.
 
-## Obligations for the subsequent proof
+## Proof route
 
-The following is a proposed proof route, not an implemented proof or a list
-of extra hypotheses.
+The following proof route is not implemented in this module and is not a list
+of extra hypotheses; the proof in
+`Langlands.Representation.Unitary.SquareIntegrableProof` follows it.
 
 1. Extract admissibility, hence smoothness, and the central character from
    `IsSquareIntegrableModCenter ρ μ`. Irreducibility supplies a nonzero
@@ -129,13 +129,11 @@ of extra hypotheses.
 
 The direct project imports are `MatrixCoefficient.ModuloCenter` and
 `Unitary.Basic`; Mathlib supplies `RepresentationTheory.Irreducible`.
-The proof dependencies mentioned above are already published, but this
-statement does not import them or depend on an unpublished product
-construction or proof draft.
+The proof dependencies mentioned above are published, but this
+statement does not import them.
 
-In a general linear group application, the parent theorem must supply
+In a general linear group application, the theorem applying it must supply
 compact-open cofinality and right invariance for its actual central quotient
 Haar measure, then instantiate this generic implication. This pair does
 not prove the generic implication or the final GL theorem. It uses no
-tempered, induction, classification, or equal-exponent grouping assumption,
-and changes no existing Lean/Markdown pair.
+tempered, induction, classification, or equal-exponent grouping assumption.

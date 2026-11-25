@@ -1,7 +1,5 @@
 # Tensor presentation of coefficient reductions and their inverse system
 
-Author: Worker 13.
-
 Let `R : Type u` be an arbitrary commutative ring and `I : Ideal R`. All
 module carriers in this file also lie in `Type u`. No field, nontriviality,
 flatness, finite-generation, principal-ideal or completeness assumption is
@@ -88,9 +86,9 @@ natural isomorphism to `AdicSystem.functor I`. Its components are exactly
 the `e_n` above, with compatibility proved both in the module and in the
 power index. Index zero is included, with `I^0 = R` and its zero quotient.
 
-This contribution constructs module functors, maps and isomorphisms. It
+This module constructs module functors, maps and isomorphisms. It
 makes no exactness, completion, continuity, smoothness or cohomology claim.
 The published limit construction is reused by import but is not enhanced
 here. Sheafified reduction, geometric equivariance, sheaf inverse systems,
-and identification with the required Harris coefficient sheaves remain
-separate construction obligations.
+and identification with the required Harris coefficient sheaves are
+outside this module.

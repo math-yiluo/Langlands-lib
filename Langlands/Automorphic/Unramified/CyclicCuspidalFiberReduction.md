@@ -1,6 +1,6 @@
 # The cyclic cuspidal fibre from partial pair pole orders
 
-Worker 539. This is a reduction of the exact cyclic cuspidal fibre to the arithmetic order and partial Rankin–Selberg inputs used in Arthur–Clozel, *Simple Algebras, Base Change, and the Advanced Theory of the Trace Formula* (1989), Chapter III, §§2–3, printed pp. 200–201 (PDF pp. 214–215). The registered source is `arthur-clozel-1989-base-change`, SHA-256 `c2e47ee562810367ebcacd3f1c242eda40b9e78b271668e36d99ce31001f9a19`.
+This is a reduction of the exact cyclic cuspidal fibre to the arithmetic order and partial Rankin–Selberg inputs used in Arthur–Clozel, *Simple Algebras, Base Change, and the Advanced Theory of the Trace Formula* (1989), Chapter III, §§2–3, printed pp. 200–201 (PDF pp. 214–215). The registered source is `arthur-clozel-1989-base-change`, SHA-256 `c2e47ee562810367ebcacd3f1c242eda40b9e78b271668e36d99ce31001f9a19`.
 
 `CyclicCuspidalFiberReductionStatement` assumes the published partial pair existence and boundary nonvanishing statement, the existence of a norm-trivial character with the cofinite residue-degree orders, and the two exact orders at one for same-rank partial pairs. These are premises of the reduction. Its conclusion is the published `CyclicCuspidalFiberStatement` with independent field and presentation universes and without any unitarity hypothesis on the incoming realizations.
 

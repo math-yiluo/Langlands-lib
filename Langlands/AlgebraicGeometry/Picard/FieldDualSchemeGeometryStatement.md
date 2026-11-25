@@ -58,7 +58,7 @@ leave the underlying object of `Over (Spec k)` equal to
 supply exactly the remaining geometric fields when bundling that group
 scheme as an abelian scheme.
 
-No proof or new axiom is supplied here. A separate proof task must
-prove this exact proposition. The target claims no arbitrary-base
+No proof or new axiom is supplied here. The Library proves this exact
+proposition as `fieldDualSchemeGeometry` in `FieldDualSchemeGeometryProof`. The target claims no arbitrary-base
 geometry, projectivity, dimension formula, isogeny theorem, additivity
 of dualization or polarization.

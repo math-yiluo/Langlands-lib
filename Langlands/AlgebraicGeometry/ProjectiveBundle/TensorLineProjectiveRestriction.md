@@ -51,7 +51,8 @@ The concrete result supplies the existing cocycle chart equations and
 `FrameAtlas.openCover_trans`. Its unit identification uses
 `LinearSystem.scalarsFromBase_comp_toSpecΓ`.
 
-This unit proves projective transport of the base-line scalar restriction.
-Tensor scalar cancellation, compatibility of the combined local degree-one
-comparisons, global gluing and the host ordinary-moduli representability
-statement remain subsequent obligations.
+This module proves projective transport of the base-line scalar restriction.
+Tensor scalar cancellation is proved in `TensorLineCancellation`;
+compatibility of the combined local degree-one comparisons and global gluing
+are in `TensorLineTwistGluing`; the ordinary-moduli representability
+statement `LargeLevelRepresentabilityStatement` remains unproved.

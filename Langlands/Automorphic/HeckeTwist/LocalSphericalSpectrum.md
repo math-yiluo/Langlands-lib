@@ -1,7 +1,5 @@
 # Spherical spectra under multiplication by any Hecke determinant character
 
-Author: Worker 5136.
-
 Let `S` be a local realization of `GL_{r+1}(F_v)` at a finite place `v` and `χ` an
 arbitrary Hecke character with `χ_v ∘ det` trivial on `GL_{r+1}(𝒪_v)` (hypothesis
 `hlocal`). This internal module shows that the twist

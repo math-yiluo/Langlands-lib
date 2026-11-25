@@ -54,7 +54,7 @@ theorem geometricDegreeTraceReduction : GeometricDegreeTraceReductionStatement.{
   intro k _ _ _ A f
   obtain ⟨g, hA⟩ := exists_hasRelativeDimension_of_field A
   obtain ⟨δ, hδiso, hδline⟩ := hG1 k A g hA
-  obtain ⟨P, -, hP⟩ := hδline (𝟙 A) (-f)
+  obtain ⟨P, -, hP⟩ := hδline (𝟙 A) (-f).asHom
   refine ⟨-P.nextCoeff, ?_⟩
   intro p _
   have hp : IsUnit ((p : ℕ) : Γ(Spec (CommRingCat.of k), ⊤)) := by
@@ -65,35 +65,35 @@ theorem geometricDegreeTraceReduction : GeometricDegreeTraceReductionStatement.{
   let Vp : End A →+* Module.End ℚ_[p]
       (Tate.PrimeAdic.Rational A (Over.mk (𝟙 (Spec (CommRingCat.of k)))) p) :=
     (Tate.PrimeAdic.rationalEndAction (Over.mk (𝟙 _)) p A).toRingHom.comp (endToEnd0 A)
-  have hVp : ∀ β : A ⟶ A, Vp β = Tate.PrimeAdic.rationalMap (Over.mk (𝟙 _)) p β :=
-    fun β => rationalEndAction_homToHom0 A p β
+  have hVp : ∀ β : End A, Vp β = Tate.PrimeAdic.rationalMap (Over.mk (𝟙 _)) p β.asHom :=
+    fun β => rationalEndAction_homToHom0 A p β.asHom
   let ρ : End A →+* Matrix (Fin (2 * g)) (Fin (2 * g)) ℚ_[p] :=
     (LinearMap.toMatrixAlgEquiv b).toRingHom.comp Vp
-  have hdet : ∀ β : A ⟶ A,
-      (ρ β).det = LinearMap.det (Tate.PrimeAdic.rationalMap (Over.mk (𝟙 _)) p β) := by
+  have hdet : ∀ β : End A,
+      (ρ β).det = LinearMap.det (Tate.PrimeAdic.rationalMap (Over.mk (𝟙 _)) p β.asHom) := by
     intro β
     rw [← hVp β]
     exact LinearMap.det_toMatrix b (Vp β)
   obtain ⟨y₀⟩ := nonempty_left A
-  have hD : DegreeData ρ δ (fun β : End A => IsIsogeny (β : A ⟶ A)) :=
-    { line := fun φ ψ => hδline φ ψ
+  have hD : DegreeData ρ (fun β : End A => δ β.asHom) (fun β : End A => IsIsogeny β.asHom) :=
+    { line := fun φ ψ => hδline φ.asHom ψ.asHom
       mul := by
         intro β γ hβ hγ
-        change δ (γ ≫ β) = δ β * δ γ
-        rw [hδiso _ (hγ.comp hβ) y₀, hδiso β hβ y₀, hδiso γ hγ y₀,
-          finrank_comp_of_isIsogeny γ β hγ hβ ((hom γ).finrank y₀)
-            (fun y => finrank_eq_of_isIsogeny γ hγ y y₀) y₀ y₀]
+        change δ (γ.asHom ≫ β.asHom) = δ β.asHom * δ γ.asHom
+        rw [hδiso _ (hγ.comp hβ) y₀, hδiso β.asHom hβ y₀, hδiso γ.asHom hγ y₀,
+          finrank_comp_of_isIsogeny γ.asHom β.asHom hγ hβ ((hom γ.asHom).finrank y₀)
+            (fun y => finrank_eq_of_isIsogeny γ.asHom hγ y y₀) y₀ y₀]
         push_cast
         ring
       norm := by
         intro β hβ
-        rw [hdet, hδiso β hβ y₀]
+        rw [hdet, hδiso β.asHom hβ y₀]
         push_cast
-        exact (hG23 k A p β).1 hβ y₀
+        exact (hG23 k A p β.asHom).1 hβ y₀
       zero := by
         intro β hβ
         rw [hdet]
-        exact (hG23 k A p β).2 hβ }
+        exact (hG23 k A p β.asHom).2 hβ }
   have hchar : P.map (algebraMap ℚ ℚ_[p]) = (ρ f).charpoly :=
     map_line_eq_charpoly hD f P hP
   change algebraMap ℚ ℚ_[p] (-P.nextCoeff) = LinearMap.trace ℚ_[p] _ (Vp f)

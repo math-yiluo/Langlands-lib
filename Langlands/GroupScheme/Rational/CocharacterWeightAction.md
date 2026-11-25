@@ -25,7 +25,8 @@ The closed-subgroup version applies the published monicity theorem.
 
 ## Provenance
 
-This is an internal derived helper for the group-side Lie-weight input in
-Task 7128. It uses actual all-algebra character spaces, actual tangent maps
+This is an internal derived helper for the group-side Lie-weight input of
+the Weyl character formula for a split reductive group in characteristic
+zero (`WeylCharacterFormulaStatement`). It uses actual all-algebra character spaces, actual tangent maps
 and the unchanged root datum on the supplied torus. It assumes no
 Freudenthal or Weyl character formula.

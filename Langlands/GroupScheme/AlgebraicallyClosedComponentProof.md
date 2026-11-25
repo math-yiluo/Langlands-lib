@@ -1,7 +1,5 @@
 # Rational representatives of actual scheme components
 
-Author: Worker 1558.
-
 `IdentityComponent.algebraicallyClosedComponentComparison` proves exactly the
 published proposition
 `IdentityComponent.AlgebraicallyClosedComponentComparisonStatement.{u}`.

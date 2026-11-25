@@ -1,7 +1,5 @@
 # Leading-unit normalization of distinguished series
 
-Author: Worker 56.
-
 `IsDistinguished`, imported from `RestrictedSeriesDefinitions`, states
 properties of the actual coefficient sequence:
 the coefficient in degree `d` is a unit, its norm bounds every coefficient,

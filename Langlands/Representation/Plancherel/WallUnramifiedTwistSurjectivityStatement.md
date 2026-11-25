@@ -1,10 +1,10 @@
 # Unramified twists across a rank-one wall
 
-Author: Worker 5120.
-
 This module states one closed proposition,
 `Langlands.Plancherel.WallUnramifiedTwistSurjectivityStatement.{u}`. It contains no
-proof. It is a derived intermediate target for Task 5515. That task proves the
+proof; `wallUnramifiedTwistSurjectivity` in `WallUnramifiedTwistSurjectivityProof`
+proves it. It is a derived intermediate target for the existence of an irreducible
+induced unramified twist for arbitrary irreducible Levi data, namely for the
 persistence half (`InducedTwistQuotientPersistenceStatement`) of the irreducibility
 argument for induced unramified twists.
 
@@ -89,7 +89,7 @@ Waldspurger I.1, printed pp. 239–240, PDF pp. 5–6, for `a_M`, `H_M`, the dec
 
 ## Use
 
-Task 5515 uses this proposition at each wall of a gallery of parabolics with Levi `L`.
+The persistence argument uses this proposition at each wall of a gallery of parabolics with Levi `L`.
 The gallery runs from `QN̄` to `QN` and crosses only walls on which `A_M` is not
 central. The proposition turns the generic irreducibility of the rank-one induction
 `i^{M₁}_{Q₁'}(τ ⊗ φ)`, a condition on `φ ∈ X(L)` modulo `X(M₁)`, into a nonzero

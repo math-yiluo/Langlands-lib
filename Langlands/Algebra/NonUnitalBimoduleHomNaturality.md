@@ -1,9 +1,9 @@
 # Natural maps and fixed-variable functors on residual-action Hom spaces
 
-Author: Worker 1174. This is the naturality and categorical-packaging
-definition unit of task `4cc99517-b08b-4532-a78f-5075d458f4ab`, below the
-Renard whole-book task `f5d1f399-a1f8-4ab5-a981-90b92abd4857`. It imports
-the core unit `Langlands.Algebra.NonUnitalBimoduleHomActions` by Worker 702,
+This is the naturality and categorical-packaging definition module for the
+residual actions on Hom spaces, a prerequisite for a formalization of the
+whole of Renard's 2026 book. It imports
+the core module `Langlands.Algebra.NonUnitalBimoduleHomActions`,
 whose paired Markdown explains the residual actions themselves, and adds
 declarations to the same namespace.
 
@@ -21,7 +21,7 @@ Naturality in `Y` and `Z` requires the Hom space `Hom_S(Y, Z)` to depend
 functorially on `Y` and `Z` as a module over the residual ring. I.2.3,
 printed pp.16–18/PDF22–24, uses the same Hom construction with the
 source-precomposition action on `Hom_B(B, N)`. These pages were read for
-this unit.
+this module.
 
 The supplementary registered source `renard-2010-corrections-complements`,
 SHA256 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
@@ -30,7 +30,7 @@ fixes the induced map on Hom spaces as postcomposition in the covariant
 variable and precomposition in the contravariant variable. This is the
 order used here: `h ↦ g ∘ h ∘ f` for `f : Y' → Y` and `g : Z → Z'`. Its
 correction for printed p.20 concerns adjunction orientation, which this
-unit does not treat.
+module does not treat.
 
 Renard works with complex algebras, and the subsequent functors use
 nondegenerate modules and nondegenerate parts of Hom spaces. The present
@@ -41,13 +41,13 @@ action is a left action of the opposite ring. They use only the published
 `NonUnitalModuleHom` with its pointwise group and `comp`,
 `NonUnitalBimoduleHom` and `NonUnitalBimoduleCat`, and the named residual
 actions `sourceAction`, `targetAction` and `rightSourceAction` of the core
-unit. No complex linearity, unit law, nondegeneracy or alternative Hom
+module. No complex linearity, unit law, nondegeneracy or alternative Hom
 carrier is introduced or asserted.
 
 ## Identity, composition and separate additivity of composition
 
 All declarations below are in
-`Langlands.Algebra.NonUnitalBimoduleHomActions`. The core unit provides
+`Langlands.Algebra.NonUnitalBimoduleHomActions`. The core module provides
 the additive maps `precomposeAddHom f : h ↦ h.comp f`,
 `postcomposeAddHom g : h ↦ g.comp h` and `mapAddHom f g : h ↦ g.comp
 (h.comp f)` on original Hom groups.
@@ -213,13 +213,12 @@ complete unapplied interfaces, competing instances, subsingleton carriers,
 the nonzero integer Hom with zero residual actions, and the failure of
 joint additivity. Its paired Markdown describes these checks.
 
-## Remaining work
+## Limits
 
-This unit gives only the natural maps of the residual-action Hom spaces in
+This module gives only the natural maps of the residual-action Hom spaces in
 the variables `Y` and `Z`, and their categorical packaging. It does not
 assert or construct the tensor-Hom isomorphisms (I.2.2.1)–(I.2.2.7), their
 naturality in `X`, any adjunction or exactness, a nondegenerate part of
 Hom, or comparison with recovered coefficient scalars or unitization. The
 actual `F`, pseudo-`F`, `I` and `P` functors of I.2.3 and later sections
-remain separate definition or proposition/proof units. The tensor-action,
-corner and annihilator-quotient tasks keep their existing scope.
+are not part of this module.

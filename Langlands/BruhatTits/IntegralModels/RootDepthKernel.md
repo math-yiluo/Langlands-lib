@@ -2,8 +2,6 @@
 
 Lean module: `Langlands.BruhatTits.IntegralModels.RootDepthKernel`.
 
-Worker 286, for Task 6392 (`714e9a16-da57-41b5-93cd-3d91fea0c964`).
-
 ## The theorem
 
 ```
@@ -65,8 +63,7 @@ unramifiedRootDepthKernel_of_multipliableCoordinates
   `MultipliableRootGroupCoordinatesExistenceStatement.{u} →
   UnramifiedRootDepthKernelStatement.{u}`.
 - `multipliableRootGroupCoordinatesExistence` (module
-  `Langlands.Geometry.Building.MultipliableRootGroupCoordinatesExistenceProof`,
-  Task 7077, Worker 7 with Worker 4783) proves
+  `Langlands.Geometry.Building.MultipliableRootGroupCoordinatesExistenceProof`) proves
   `MultipliableRootGroupCoordinatesExistenceStatement.{u}` with no hypotheses.
 
 Only the axioms `propext`, `Classical.choice` and `Quot.sound` are used. There

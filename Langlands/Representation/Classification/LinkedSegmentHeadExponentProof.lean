@@ -56,7 +56,7 @@ private theorem exponent_difference_of_norm_identities
 
 variable {p : ℕ} [Fact p.Prime] {F : PadicField.{uF} p} (T : F.TopologicalData)
 
-/-- Adaptation of Worker 167's twisted representative and scalar calculation.
+/-- Adaptation of the twisted representative and scalar calculation.
 Here the arbitrary supplied positive form replaces analytic square-integrability. -/
 private theorem segmentHead_norm_identity :
     letI := T.topology

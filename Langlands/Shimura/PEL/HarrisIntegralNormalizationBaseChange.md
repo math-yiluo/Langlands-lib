@@ -1,6 +1,6 @@
 # Integral-normalization compatibility with actual Harris pullback
 
-This internal supporting unit proves that the existing pointed Harris pullback
+This module proves that the existing pointed Harris pullback
 preserves and reflects the additional integral Tate-image normalization of
 original compatible frames and monodromy-fixed level orbits. It constructs the
 restriction of the literal `levelDataBaseChange` to normalized representatives.
@@ -126,18 +126,18 @@ does not assert surjectivity, descent through rational-isogeny classes, or
 functorial coherence. No replacement orbit quotient or level category is
 introduced.
 
-## Provenance and remaining obligations
+## Provenance and what is not proved here
 
 This is an internal consequence of the existing actual integral and rational
 Tate base-change equivalences, their compatibility with rationalization, and
 the original compatible-frame and fixed-orbit constructions. There is no
-external existence theorem or new source assertion in this unit. Its only
+external existence theorem or new source assertion in this module. Its only
 integral-image and frame-normalization inputs are the two sides of the proved
 equivalences.
 
-These results provide base-change compatibility needed for an eventual natural
+These results provide base-change compatibility needed for a natural
 normalized-moduli comparison. They do not construct normalized models, reflect
 rational isomorphisms to actual integral morphisms, identify an ordinary
 moduli problem with the normalized CM presheaf, or prove representability,
-admissibility, smoothness, or division-case projectivity. The exact
-`DivisionCMRepresentabilityStatement` remains an open obligation.
+admissibility, smoothness, or division-case projectivity. The Library does not
+prove the exact `DivisionCMRepresentabilityStatement`.

@@ -28,5 +28,5 @@ prescribed elements.
 This implements the internal commutative-algebra argument explained
 in the published statement's Markdown. It includes the empty finite
 set, nonreduced algebras and arbitrary characteristic. It proves only
-the specialization result; the group-scheme spreading and
-unipotent-radical arguments in the parent task remain separate.
+the specialization result; group-scheme spreading and
+unipotent-radical arguments are not part of this module.

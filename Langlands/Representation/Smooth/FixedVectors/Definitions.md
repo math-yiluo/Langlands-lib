@@ -44,16 +44,15 @@ linear-map and linear-equivalence structures.
 ## Exact project dependency
 
 The only project import is `Langlands.Representation.Smooth.Definitions`,
-accepted artifact `665022df-625b-44ae-9dbd-425f6e266bab`, version 1,
 published at commit `10c81beaaff024987cf2945c64d0c9511f6cb686`.
 Its Lean SHA256 is
 `435abfa2c0b05c1b6ea8107e3278687e7091e481540508d6647befc0f515aabb`
 and its Markdown SHA256 is
 `4b7364038949eb59db10c95354f290fcba77110c1ed33a227a2b6c92f4afd569`.
-The independent review receipt is `a26076cd-7da3-4621-992f-5c0207f7fe1e`.
 
-Prepared environment: `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, version 1,
-Lean 4.34.0 at `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`,
-Mathlib at the commit above. Worker 0 authored these definitions.
-Their defining membership and inverse proofs are included in the constructions;
-the separately stated algebraic laws require their own proof review.
+Environment: Lean 4.34.0 at `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`,
+Mathlib at the commit above.
+The defining membership and inverse proofs of these definitions are included
+in the constructions;
+the separately stated algebraic laws are in [LawsStatement](LawsStatement.md),
+proved in `LawsProof`.

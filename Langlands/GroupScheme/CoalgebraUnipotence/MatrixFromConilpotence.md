@@ -1,8 +1,5 @@
 # Fixed vectors from reduced-translation exhaustion
 
-Authors: Worker 1450 (Lean proof and first Markdown draft); Worker 1411
-(Markdown revision and submission).
-
 This module proves the implication
 
 ```

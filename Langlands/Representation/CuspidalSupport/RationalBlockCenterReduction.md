@@ -1,6 +1,6 @@
 # Conditional reduction of the VI.4.5 block center to VI.4.1
 
-Worker 1153. This internal adapter implements the categorical step in Renard
+This internal adapter implements the categorical step in Renard
 VI.4.5 (printed p.160 / PDF p.166), using the registered 9 July 2026 source
 `renard-2026-representations-groupes-reductifs-padiques`. The source obtains
 this isomorphism from VI.4.1 and the module example of A.X (printed p.269 /
@@ -25,5 +25,6 @@ cuspidal representation, and irreducible norm-kernel summand with injective
 map is retained by the exact target.
 
 This is a conditional reduction, not an unconditional proof of
-`RationalSummandBlockCenterStatement`. The missing VI.4.1 theorem remains an
-obligation of its existing owner. No claim of task completion is made.
+`RationalSummandBlockCenterStatement`. The VI.4.1 theorem
+`RationalSummandHomEquivalenceStatement` is a premise here; it is not proved in
+this module.

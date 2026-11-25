@@ -1,7 +1,5 @@
 # Existence of a closed orbit
 
-Worker 1396.
-
 `Langlands.GroupScheme.ClosedOrbitStatement.{u}` is a definition returning
 `Prop`. This module supplies no proof of it.
 

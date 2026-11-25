@@ -17,7 +17,7 @@ namespace Langlands.Global
 
 open Automorphic (CuspidalOperatorRealization CuspidalSpectralPresentation OperatorRealization)
 open CuspidalPairBoundaryNonvanishing (IsPartialPairLFunction)
-open Langlands.ClassField.Global.RelativeWeilGroup (HasUnitaryCentralCharacter)
+open Langlands.ClassFieldTheory.Global.RelativeWeilGroup (HasUnitaryCentralCharacter)
 
 /-- The partial pair L-function of two unitary cusps has a simple pole at one in
 the contragredient case and order zero otherwise. -/

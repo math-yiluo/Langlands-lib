@@ -1,6 +1,6 @@
 # Quotient roots give ordinary roots vanishing on the facet
 
-This internal supporting unit works at arbitrary universe `u` over a
+This internal supporting module works at arbitrary universe `u` over a
 nonarchimedean local field. It uses supplied parahoric building data `P`,
 the apartment axioms and root-reflection property, an injective equivariant
 comparison with a supplied maximal-unramified building, a zero datum upstairs,
@@ -46,7 +46,7 @@ original character, so this proves the asserted membership.
 character as a member of the actual derivative-root set. Its character
 formula is definitional.
 
-This is a composition of the named Library and separately submitted internal
-supporting results, with no new external-source formulation. It proves one
+This is a composition of the named Library and internal supporting results,
+with no new external-source formulation. It proves one
 direction of the root-set comparison. It does not prove the opposite-factor
 statement, the converse root-set inclusion, or the full derivative root datum.

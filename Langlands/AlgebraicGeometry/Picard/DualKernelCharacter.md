@@ -87,8 +87,12 @@ isomorphic representatives are constructed, as conditional internal
 consequences of the existing dual-family API over `S`.
 
 No isogeny, finiteness, characteristic or base-separation assumption is
-needed for this map. This unit does not prove compatibility with
+needed for this map. This module does not prove compatibility with
 replacement by test-scheme pullback or tensor products, hence does not
 package beta as a natural additive map. It asserts no Cartier-duality
-isomorphism, perfectness, finite Weil pairing or host-task completion.
-Those remain subsequent obligations.
+isomorphism, perfectness or finite Weil pairing. These are treated in modules
+built on this one:
+test-scheme naturality in `DualKernelCharacterNaturality`, additivity in
+`DualKernelCharacterAdditivity`, Cartier duality over a field in
+`KernelCartierDuality`, the finite Weil pairing in `FiniteWeilPairing` and its
+Cartier perfectness in `FiniteWeilCartierPerfectness`.

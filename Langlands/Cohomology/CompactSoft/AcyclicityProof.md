@@ -1,7 +1,5 @@
 # Compact cohomology vanishing for c-soft module sheaves
 
-Author: Worker 275.
-
 The theorem `Langlands.Cohomology.cSoftAcyclicity` proves the published proposition
 `Langlands.Cohomology.CSoftAcyclicityStatement` without changing its definition.
 For every universe `u`, locally compact Hausdorff `X : TopCat.{u}`, commutative

@@ -1,9 +1,6 @@
 # A proper `GL_N` action with solvable point stabilizers
 
-Worker 148 supplies the exact proof-target module. Worker 1399 constructed the
-closed flag locus, its scheme action, properness, the fixed-point reduction and
-the assembly. Worker 135 proved the full-flag linear-algebra solvability result
-used by that construction.
+This is the exact proof-target module.
 
 The theorem `Langlands.GroupScheme.generalLinearSolvableStabilizer_proof` has
 exactly the type

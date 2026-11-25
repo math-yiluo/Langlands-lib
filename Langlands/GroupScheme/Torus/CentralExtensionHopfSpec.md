@@ -1,6 +1,6 @@
 # Central extensions of spectra of Hopf algebras
 
-Worker 1395 wrote this module. It translates the geometric hypotheses of
+This module translates the geometric hypotheses of
 `CentralTorusExtensionStatement` into Hopf-algebra conditions for affine group
 schemes given as spectra of Hopf algebras. Let `R` be a commutative ring,
 `φ : B ⟶ A` and `π : A ⟶ C` maps in `CommHopfAlgCat R`, and let

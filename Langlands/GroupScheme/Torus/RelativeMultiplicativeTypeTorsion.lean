@@ -66,6 +66,7 @@ theorem IsDiagonalizable.torsion_geometry (hH : IsDiagonalizable H)
     IsFinite (torsion H (n : ℤ)).X.hom ∧
       Flat (torsion H (n : ℤ)).X.hom ∧
         LocallyOfFinitePresentation (torsion H (n : ℤ)).X.hom := by
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   obtain ⟨M, hM, hfg, ⟨e⟩⟩ := hH
   let E := torsionMapIso e (n : ℤ) ≪≫ diagonalizableTorsionIso S M n
   have : Finite (Diagonalizable.torsionCharacters M n) :=
@@ -83,6 +84,7 @@ theorem IsMultiplicativeType.torsion_geometry (hH : IsMultiplicativeType H)
     IsFinite (torsion H (n : ℤ)).X.hom ∧
       Flat (torsion H (n : ℤ)).X.hom ∧
         LocallyOfFinitePresentation (torsion H (n : ℤ)).X.hom := by
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   obtain ⟨𝒰, h𝒰⟩ := hH
   let P : MorphismProperty Scheme.{u} := @IsFinite ⊓ (@Flat ⊓ @LocallyOfFinitePresentation)
   have : P.IsLocalAtTarget Scheme.fppfPrecoverage :=
@@ -108,6 +110,7 @@ theorem geometricTorsionFinrank_eq {S : Scheme.{u}} (H : GroupScheme S)
     Module.finrank (AlgebraicClosure (S.residueField s))
       Γ((torsion (geometricFiber H s) n).X.left, ⊤) =
         (torsion H n).X.hom.finrank s := by
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   let b := geometricPoint S s
   let E := torsionBaseChangeIso b H n
   have : IsFinite (torsion (geometricFiber H s) n).X.hom := by

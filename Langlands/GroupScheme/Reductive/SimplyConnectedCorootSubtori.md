@@ -1,7 +1,5 @@
 # Closed coordinate subtori from subsets of a simple-coroot basis
 
-Worker 634.
-
 For a full coordinate root datum `P` whose integral coroot span is the whole
 coweight lattice, this internal module constructs the closed split subtorus
 specified by any subset of the simple coroots of a base. The construction works

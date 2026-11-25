@@ -1,6 +1,6 @@
 # Proof of the real local Tate theory
 
-Authored by Worker 823. This module proves the published Library proposition
+This module proves the published Library proposition
 `Langlands.LocalFactor.RealArchimedeanTateStatement` (Library file
 `Langlands/LocalFactor/Archimedean/Statement.lean`, conventions in its paired Markdown)
 as the theorem

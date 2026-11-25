@@ -1,7 +1,5 @@
 # Normalized multiplication from tangent spanning
 
-Author: Worker 1447.
-
 This internal construction applies to three actual smooth affine group schemes
 `D`, `T`, and `G` over any field, in an arbitrary common universe. The ambient
 scheme `G` is connected. The two homomorphisms are `d : D → G` and `i : T → G`.

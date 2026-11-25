@@ -3,7 +3,7 @@ import Langlands.Global.Arithmetic.HarrisProposition48StabilizerComparison
 import Langlands.Global.Arithmetic.HarrisProposition48MackeyChildCompletion
 import Langlands.Global.HeckeCharacterTransport
 import Langlands.Global.Factors.RelativeWeilAssemblyCharacters
-import Langlands.ClassField.Global.CompletionTower
+import Langlands.ClassFieldTheory.Global.CompletionTower
 import Langlands.ClassFieldTheory.Local.FiniteArtinTransport
 
 /-! # The auxiliary finite component of the Mackey character -/
@@ -15,7 +15,7 @@ universe uF
 namespace Langlands.Global.Harris.Proposition48Problem
 
 open NumberField IsDedekindDomain AdelicFunctoriality LocalFactor.CommonClosure
-open LocalClassField GeneralPosition Langlands.ClassField.Global
+open LocalClassField GeneralPosition Langlands.ClassFieldTheory.Global
 open scoped FiniteExtension
 
 /-- The parent auxiliary inducing place carried to the actual conjugate field. -/

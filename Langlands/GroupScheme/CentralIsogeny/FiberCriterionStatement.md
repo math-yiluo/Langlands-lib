@@ -1,7 +1,5 @@
 # Statement: the reductive fibre criterion for central isogenies
 
-Worker 673.
-
 `Langlands.GroupScheme.ReductiveCentralIsogenyFiberCriterionStatement.{u}`
 is a `Prop`-valued statement with no proof in this module.
 

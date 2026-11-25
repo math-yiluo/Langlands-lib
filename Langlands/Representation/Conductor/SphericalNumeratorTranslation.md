@@ -1,6 +1,6 @@
 # Central translation of actual finite spherical numerators
 
-This internal unit propagates the actual integrated central-translation identity
+This module propagates the actual integrated central-translation identity
 to Laurent series, denominator products and finite numerators. For an integer
 `t`, let `Aₜ` be the central translation factor, `wₜ` the actual translated model
 vector, and `S(w)` its actual spherical Laurent series. Then
@@ -11,7 +11,7 @@ Equality follows coefficient by coefficient from the integrated formula.
 Associativity gives the same formula for the product with the fixed coordinate
 denominator of any scalar polynomial `P`.
 
-The unit proves directly that multiplying a finite Laurent series by one
+The module proves directly that multiplying a finite Laurent series by one
 monomial preserves finite support, and that the sum of its coefficients is
 multiplied by the monomial coefficient. The proof sums over the translated
 original support, allowing cancellation to shrink the actual resulting support.
@@ -36,5 +36,7 @@ All results concern arbitrary nonarchimedean local fields with the existing
 Jacquet normalization and smooth models, at independent field and vector-space
 universes. They are internal deductions from the actual coefficient identity,
 finite sums and model linearity. Full stability under symmetric Laurent
-polynomials, universal finite denominator products, the constant numerator one,
-and the essential-conductor target remain separate obligations.
+polynomials is proved in `SphericalNumeratorIdeal`
+(`mul_mem_corankOneModelNumeratorSubmodule`); universal finite denominator
+products, the constant numerator one,
+and the essential-conductor target are not part of this module.

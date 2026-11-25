@@ -1,7 +1,5 @@
 # Unconditional positive and norm-one adelic decomposition target
 
-Author: Worker 112.
-
 `HasPositiveNormOneDecomposition F G T i` is the proposition that there
 exists a continuous group equivalence
 

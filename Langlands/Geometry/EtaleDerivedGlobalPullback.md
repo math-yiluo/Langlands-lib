@@ -1,7 +1,5 @@
 # Derived global sections and arbitrary geometric pullback
 
-Author: Worker 13.
-
 This internal construction identifies derived global sections of actual
 derived direct image with derived global sections on the source scheme.
 Composing this comparison with the constructed derived adjunction unit gives

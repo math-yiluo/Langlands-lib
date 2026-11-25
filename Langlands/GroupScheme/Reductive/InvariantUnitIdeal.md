@@ -1,10 +1,10 @@
 # Unit ideals in actual right-invariant section rings
 
-Worker 525. This derived supporting unit constructs the polynomial of covariant
+This derived supporting module constructs the polynomial of covariant
 rows over the actual invariant section ring and proves a unit-ideal reflection
 theorem for the invariant subring of global functions on an affine group. It
-uses Worker 690's covariant-family and normalized homogeneous-separator
-interfaces. Geometric reductivity is an explicit hypothesis in the unit-ideal
+uses the covariant-family and normalized homogeneous-separator interfaces of
+`Reductive/InvariantPowerLift`. Geometric reductivity is an explicit hypothesis in the unit-ideal
 theorem. No independent reductivity theorem or quotient affineness is claimed.
 
 The two polynomial identities work for any commutative coefficient rings k,A
@@ -70,4 +70,4 @@ The provenance is internal: finite polynomial substitution, the published
 universal invariance interface, scalar covariant coefficients and normalized
 homogeneous separation imply the result. It is not a transcription from an
 original source. The independent geometric-reductivity prerequisite and the
-application to the same supplied homogeneous quotient remain separate.
+application to the same supplied homogeneous quotient are not part of this module.

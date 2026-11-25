@@ -84,8 +84,9 @@ theorem field_no_strict_combinations (r s : M.rootIndex)
   simp only [splitTorus.exponentCharacter_eq_characterLatticeEquiv_symm]
   set f := (splitTorus.characterLatticeEquiv k M.coordinates).symm
   let z := n • M.rootDatum.root r + m • M.rootDatum.root s
+  have hns : ∀ (a : ℕ) x, f (a • x) = a • f x := fun a x => f.toAddMonoidHom.map_nsmul a x
   have he : n • f (M.rootDatum.root r) + m • f (M.rootDatum.root s) = f z := by
-    simp only [z, map_add, map_nsmul]
+    simp only [z, AddEquiv.map_add, hns]
   have hmix : z ≠ 0 ∧ z ∉ Set.range M.rootDatum.root := by
     simpa only [z, Nat.cast_smul_eq_nsmul] using
       D.mixed_combination_ne_zero_and_not_root r s hrs (n : ℤ) (m : ℤ)
@@ -95,7 +96,7 @@ theorem field_no_strict_combinations (r s : M.rootIndex)
   constructor
   · intro hz
     rw [he] at hz
-    exact hmix.1 (f.injective (hz.trans (map_zero f).symm))
+    exact hmix.1 (f.injective (hz.trans (AddEquiv.map_zero f).symm))
   · intro hz
     rw [he, ← hroots] at hz
     obtain ⟨t, ht⟩ := hz
@@ -128,11 +129,11 @@ theorem commute_component_root_groups (r s : M.rootIndex)
   · rw [splitTorus.exponentCharacter_eq_characterLatticeEquiv_symm]
     exact fun h => M.rootDatum.ne_zero r
       ((splitTorus.characterLatticeEquiv k M.coordinates).symm.injective
-        (h.trans (map_zero _).symm))
+        (h.trans (AddEquiv.map_zero _).symm))
   · rw [splitTorus.exponentCharacter_eq_characterLatticeEquiv_symm]
     exact fun h => M.rootDatum.ne_zero s
       ((splitTorus.characterLatticeEquiv k M.coordinates).symm.injective
-        (h.trans (map_zero _).symm))
+        (h.trans (AddEquiv.map_zero _).symm))
 
 /-- The actual field roots of every component form a commuting root
 partition, in the Library's full all-test sense. -/

@@ -1,7 +1,5 @@
 # Open kernels of generalized characters of smooth actions
 
-Author: Worker 19.
-
 `Langlands.SmoothGeneralizedEigencharacterOpenKernelStatement.{uR,uG,uV}`
 is a closed proposition definition. It states that every
 `IsGeneralizedEigencharacter π χ` of a smooth representation `π` of a

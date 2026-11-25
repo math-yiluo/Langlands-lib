@@ -1,6 +1,6 @@
 # Reduction of the real smooth Hilbert transpose pairing to three inputs
 
-Worker 1028. `Langlands.Archimedean.realSmoothHilbertTransposePairing_of_casselmanWallach` proves the published [real smooth Hilbert pairing proposition](SmoothHilbertTransposePairingStatement.md), **conditionally** on these three propositions:
+`Langlands.Archimedean.realSmoothHilbertTransposePairing_of_casselmanWallach` proves the published [real smooth Hilbert pairing proposition](SmoothHilbertTransposePairingStatement.md), **conditionally** on these three propositions:
 
 1. `RealSmoothCasselmanWallachExtensionStatement`, the [extension of an intertwiner](SmoothCasselmanWallachStatement.md) of compact-finite vectors to the genuine smooth carriers;
 2. `RealSmoothHilbertHarishChandraModuleStatement`, the [induced Harish-Chandra module structure](SmoothHarishChandraModuleStatement.md) on the compact-finite smooth vectors of the given Hilbert representation;

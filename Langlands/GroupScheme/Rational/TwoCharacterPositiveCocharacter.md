@@ -1,6 +1,6 @@
 # A cocharacter positive on two nonopposite characters
 
-Worker 27. This is an internal lattice construction derived from the published
+This is an internal lattice construction derived from the published
 `IndependentStandardCocharacter`, `RootFiniteness` and `RationalRealSpan`
 interfaces and Mathlib's linear algebra over the rationals. It is intended to
 supply a lattice input to the transfer of valuation axiom V 3; it asserts no

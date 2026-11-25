@@ -1,6 +1,6 @@
 # Symmetric polynomial choice and finite-block L-polynomial divisibility
 
-Worker 46 adapted the ordered induction in Worker 20's
+This module adapts the ordered induction in
 `FiniteGammaMultiplicativity` to symmetric L-polynomial certificates and their
 cleared polynomial divisibility relation. This is an internal derivation from
 the imported Library results, following the finite-block reduction motivating
@@ -71,8 +71,9 @@ full Whittaker-type inputs remain quantified as in the imported statements.
 There is no irreducibility assumption.
 
 This conditional result leaves the two-block analytic theorem as a premise.
-It does not establish the closed multiplicativity proposition required by the
-parent task. Its mathematical provenance is the imported actual induction
+It does not by itself establish the closed multiplicativity proposition
+`LFactorMultiplicativityStatement`; `lFactorMultiplicativity` in
+`LFactorMultiplicativityProof` proves it. Its mathematical provenance is the imported actual induction
 equivalences, closed Whittaker-type and polynomial-existence theorems,
 certificate transport and uniqueness, and elementary polynomial algebra.
 

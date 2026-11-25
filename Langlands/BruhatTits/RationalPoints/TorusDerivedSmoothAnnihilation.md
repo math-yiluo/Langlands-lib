@@ -1,6 +1,6 @@
 # Conditional smooth real annihilation of a torus in the derived subgroup
 
-Worker 1374. This internal construction assembles actual-point interfaces.
+This internal construction assembles actual-point interfaces.
 It retains general torus norm-kernel compactness and intrinsic relative-root
 reflection existence as explicit proposition premises; it proves neither input.
 
@@ -41,13 +41,15 @@ hypothesis when it needs the ambient locally finite type instance.
 The provenance is internal: the compact-domain finite-range theorem,
 torsion freeness of the real group, the actual torus split/norm factorization,
 the maximal-split extension theorem and the existing whole-point split-torus
-annihilation theorem imply the construction directly. The two unproved
-structural statements remain explicit assumptions. No new literature
+annihilation theorem imply the construction directly. The two
+structural statements remain explicit assumptions here; the Library proves
+them as `Langlands.Plancherel.torusNormKernelCompactness` and
+`relativeRootReflectionExistence`. No new literature
 assertion is made.
 
 This conditional construction does not prove the unrestricted ambient target.
-The structural premises and the reduction of arbitrary derived points to
-torus and additive images remain required. No commutator identification or
+That target also needs the structural premises and the reduction of arbitrary
+derived points to torus and additive images. No commutator identification or
 rational-point surjectivity of a central isogeny is used.
 
 The four local affine and topology instances have module-specific names so

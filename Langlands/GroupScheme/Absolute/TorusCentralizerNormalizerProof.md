@@ -1,7 +1,5 @@
 # The identity component of a maximal-torus centralizer
 
-Author: Worker 360.
-
 `Langlands.GroupScheme.torusCentralizerNormalizer.{u}` proves exactly the
 published `Langlands.GroupScheme.TorusCentralizerNormalizerStatement.{u}`.
 The statement and its imported pairs are unchanged. Its hypotheses include an

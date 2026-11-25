@@ -1,9 +1,9 @@
 # The fixed-level comparison for Bernstein fixed-vector splitting
 
-Author: Worker 146. This internal adapter isolates a remaining comparison
-needed for the fixed-vector splitting in Task 5293. It proves neither the
-actual Bernstein decomposition nor the required comparison at the special
-levels in the target.
+This internal adapter isolates a comparison needed for the fixed-vector
+splitting in Renard VI.10.6 Proposition (iii)–(iv) (representations generated
+by fixed vectors). It proves neither the actual Bernstein decomposition nor
+the required comparison at the special levels in that proposition.
 
 `bernsteinFixedVectorVisibility i ν family K` says that two irreducible
 representations with the same actual Bernstein inertial support either both
@@ -32,7 +32,7 @@ to an actual Bernstein component presentation and this dichotomy.
 `fixedVectorSplitting_of_bernsteinDecomposition` supplies the presentation
 from the exact published `BernsteinDecompositionStatement`, taken as a
 hypothesis. Both retain the fixed-level comparison as an explicit
-hypothesis. The standard family is also supplied; this unit does not derive
+hypothesis. The standard family is also supplied; this module does not derive
 its structural fields from the geometric telescope of
 `StandardFixedVectorSplittingStatement`.
 

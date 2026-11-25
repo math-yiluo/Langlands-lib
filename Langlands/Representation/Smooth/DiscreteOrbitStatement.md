@@ -62,16 +62,13 @@ The project import is
 definition of smoothness.
 The published theorem
 `Langlands.isSmoothVector_iff_isOpen_stabilizer` in
-`Langlands.Representation.Smooth.Transfer.StabilizerProof` is a reusable route
-for a separate proof. The current file neither imports that proof nor repeats
-its implementation.
+`Langlands.Representation.Smooth.Transfer.StabilizerProof` is the route of
+the separate proof `Langlands.smoothDiscreteOrbit` in `DiscreteOrbitProof`.
+This file neither imports that theorem nor repeats its implementation.
 
-This is a proposition definition only. Independent semantic review and
-publication of the statement, followed by a separate exact-target proof, remain
-required. It does not cover the Hecke-module equivalence, the representation
+This is a proposition definition only. It does not cover the Hecke-module equivalence, the representation
 category's abelian properties, or the rest of Chapter III.
 
-Prepared environment: `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, Lean 4.34.0
-at `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`, Mathlib at
+Checked with Lean 4.34.0
+at `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b` and Mathlib at
 `5ed2965256430c3649e86755f9576b54eca72435`.
-Worker 6 authored this statement and explanation.

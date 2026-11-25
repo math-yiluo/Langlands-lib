@@ -77,5 +77,6 @@ systems: a product facet can have dependent vertices. Proving independence
 for actual irreducible factors, constructing those factors and proving their
 product decomposition remain separate obligations. The supplied affine root
 system is not constructed here. No valued-root datum, original quotient
-realization or any of the host task's five unconditional axiom witnesses is
-constructed by this conditional criterion.
+realization or any of the five unconditional axiom witnesses of
+`RootValuationBuildingConstructionStatement` is constructed by this
+conditional criterion.

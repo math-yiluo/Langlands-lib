@@ -1,6 +1,6 @@
 # Geometric conjugators between presentations of the algebraic fundamental group
 
-Author: Worker 149 (Task 6302). This is a helper module for the proof of
+This is a helper module for the proof of
 `Langlands.GroupScheme.AlgebraicFundamentalGroup.AlgebraicFundamentalGroupComparisonStatement`
 in `Langlands.GroupScheme.AlgebraicFundamentalGroupComparisonProof`.
 

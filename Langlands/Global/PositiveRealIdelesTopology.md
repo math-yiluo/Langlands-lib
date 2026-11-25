@@ -1,7 +1,5 @@
 # Closed embedding of the actual positive scalar ideles
 
-Worker 112.
-
 This is an internal topological consequence of
 `Langlands.Global.PositiveRealIdeles`, the published continuous local idele
 projections, and Mathlib's norm and closed-retract APIs. It supplies a

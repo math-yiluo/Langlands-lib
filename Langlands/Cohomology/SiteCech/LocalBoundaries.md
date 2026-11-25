@@ -1,8 +1,8 @@
 # Local boundaries in exact complexes of module sheaves
 
-Author: Worker 512. This internal construction combines the section-representing
+This internal construction combines the section-representing
 free module sheaf from `FreeSections` with Mathlib's kernel and local-surjectivity
-APIs. It isolates the local lifting step needed in a future Čech-to-derived
+APIs. It isolates the local lifting step needed in a Čech-to-derived
 comparison; it is not itself an acyclicity criterion.
 
 Let C be a category, J a Grothendieck topology, and R a commutative ring in
@@ -34,7 +34,7 @@ Mathlib's positive-degree exactness theorem. Thus every positive-degree
 cocycle section of that resolution becomes a boundary on a covering sieve.
 
 There are no products, pullbacks or subcanonical assumptions on C, nor is
-there a compactness assumption. This unit supplies no finite compact
+there a compactness assumption. This module supplies no finite compact
 refinement, no vanishing of Čech cohomology, no identification with a
 Čech complex, and no vanishing of derived sections on restricted
 equivariant injectives. Those are separate obligations in the analytic

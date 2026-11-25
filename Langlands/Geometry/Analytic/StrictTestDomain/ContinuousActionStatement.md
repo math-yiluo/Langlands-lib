@@ -1,7 +1,5 @@
 # A criterion for joint continuity on a strict-affinoid spectrum
 
-Author: Worker 36.
-
 `PointwiseContinuousSpectrumActionStatement` concerns the existing
 concrete `PresentedStrictAffinoidAlgebra` and `BanachSpectrum`, together
 with the published bounded automorphism action from
@@ -49,7 +47,10 @@ reusable analytic step is the separate spectrum joint-continuity
 target: normalized spectrum seminorms satisfy
 `|x(a)-x(b)| ≤ ‖a-b‖`, uniformly in `x`, which upgrades fixed-element
 evaluation continuity to joint evaluation continuity. This is a
-proposed route, not a claim that either proof has been published.
+proposed route. The Library proves the statement as
+`RationalAutomorphism.pointwiseContinuousSpectrumAction` in
+`StrictTestDomain.ContinuousActionProof`, and the spectrum joint-continuity
+statements in `Spectrum.JointContinuityProof`.
 
 The same operators already act on chosen unit-radius rational
 presentations by the forward algebra map. The published theorem
@@ -78,7 +79,7 @@ identifies that hypothesis with Berkovich's automorphism topology nor
 constructs a full analytic `G`-space or an equivariant etale site.
 The registered source folder is
 `provided-7bb3903652336bd799aad8853b8efd7ff3bcc0c7652745417f4745a14ac08e90`,
-receipt SHA256
+folder SHA256
 `e046cadfb9dcec4b0cf6624f80d6316bf532416153b82023f5100bd1ab0726cd`.
 Its member `Berkovich--Etale equivariant sheaves on p-adic analytic spaces (unfinished manuscript)--1996.pdf`
 has SHA256

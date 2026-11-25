@@ -1,6 +1,6 @@
 # Nonzero restriction of incident roots in recovered apartment models
 
-This derived internal unit combines the actual recovered apartment tori, their
+This derived internal module combines the actual recovered apartment tori, their
 generic and residue comparison squares, special-fibre quotient recovery,
 incident-root survival and the finite-residue root restriction criterion. Its
 provenance is composition of the imported constructions and theorems; it adds
@@ -94,10 +94,9 @@ integral torus morphism. The exact identity
 pullback of f, giving the stated conclusion.
 
 The global neutral-fixer equality and positive-reduction hypothesis are not
-proved here. The unit supplies neither recovered models nor reductive quotients
+proved here. The module supplies neither recovered models nor reductive quotients
 from scratch, and does not by itself prove the special-apartment chamber
 statement.
 
 The residue algebraicity and separability used for the actual recovered quotient
-are imported directly from `UnramifiedResidueArithmetic`; those published lemmas
-retain their original types and proof bodies.
+are imported directly from `UnramifiedResidueArithmetic`.

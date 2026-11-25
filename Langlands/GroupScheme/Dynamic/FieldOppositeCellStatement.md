@@ -1,7 +1,5 @@
 # Statement: the opposite dynamic open cell over a field without smoothness
 
-Worker 3483.
-
 `Langlands.GroupScheme.DynamicFieldOppositeCellStatement.{u} : Prop` is a
 statement-only proposition definition. This module supplies no proof and
 introduces no axiom.

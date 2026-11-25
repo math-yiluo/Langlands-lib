@@ -1,7 +1,5 @@
 # The local E7 exclusion and the remaining E6 marking
 
-Author: Worker 177.
-
 `TitsIndexData.HasRankOneE6BranchIndex` is a predicate on actual index data
 for an affine, locally finite type group scheme over an arbitrary field.
 It records an equivalence of the entire vertex type with `Fin 6` that

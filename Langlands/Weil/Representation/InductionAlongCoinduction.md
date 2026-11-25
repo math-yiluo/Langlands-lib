@@ -1,7 +1,5 @@
 # Induction along a map and coinduction
 
-Author: Worker 1646.
-
 This is an internal comparison construction used in the proof of inductivity
 of local Euler factors. It compares two existing Library constructions; no
 additional representation, induction convention or mathematical hypothesis is

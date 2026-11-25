@@ -43,7 +43,7 @@ on `GL_n(F)`, every `f : SchwartzBruhat (GL_n(F))` and every `γ : GL_n(F)` such
 - `0 < f γ`,
 
 the following holds, where the coset space `G_γ(F) \ GL_n(F)`
-(`QuotientIntegration.LeftQuotient (glCentralizer γ)`, with Task 7416's centralizer
+(`QuotientIntegration.LeftQuotient (glCentralizer γ)`, with the centralizer
 `glCentralizer γ`) carries its Borel σ-algebra (introduced locally with `letI ... := borel _`
 and a `BorelSpace` instance `⟨rfl⟩`, as is the σ-algebra of `GL_n(F)`): for every right Haar
 measure `μγ` on `glCentralizer γ` (`IsHaarMeasure` and `IsMulRightInvariant`) and every
@@ -54,19 +54,22 @@ functions),
 
 `0 < Langlands.TraceFormula.orbitalIntegral γ νγ f`,
 
-the orbital integral `∫ f(x⁻¹ γ x) dνγ(x)` over `G_γ(F) \ GL_n(F)` of Task 7402. The
+the orbital integral `∫ f(x⁻¹ γ x) dνγ(x)` over `G_γ(F) \ GL_n(F)` of
+`Langlands.TraceFormula.TwistedOrbital`. The
 conclusion says that this integral is a positive real number.
 
 ## Use
 
 In the global comparison of HL II.6.7–II.6.10 (printed pp. 123–126), the orbital integrals of
 the global test function `f = ⊗ f_v` at the chosen global regular elliptic norm `γ` must not
-vanish. At `v₀` and `v₁` they are nonzero by Tasks 7446 and 7457. At the other places HL use
+vanish. At `v₀` and `v₁` they are nonzero by `CuspidalPseudoCoefficientExistenceStatement`
+(clause (d)) and `SupercuspidalCuspFormStatement`. At the other places HL use
 positivity (II.6.8). HL's setting differs from this statement in two ways: their global
 field, and hence every `F_v`, has positive characteristic (II.6.1, printed p. 118: the
 result being known in characteristic zero, they assume from then on that `F` has
 characteristic `> 0`), and their local test functions have a central character. This
-statement keeps the host task's characteristic-zero scope (`CharZero F`) and concerns
+statement keeps the characteristic-zero scope of the surrounding base-change statements
+(`CharZero F`) and concerns
 compactly supported functions; it does not apply verbatim to HL's functions. It applies to
 the characteristic-zero analogues of the compactly supported functions underlying II.6.8:
 
@@ -114,7 +117,8 @@ integral is positive.
 
 ## Hypotheses
 
-- `CharZero F`, as in Tasks 7416, 7432 and 7446: the Library's `IsRegularSemisimple` asks for
+- `CharZero F`, as in the statements on orbital integrals, twisted characters and functions
+  whose orbital integrals vanish off the elliptic set: the Library's `IsRegularSemisimple` asks for
   a separable characteristic polynomial, which is HL's regularity in characteristic zero.
   HL's own use of positivity in II.6.8 is in positive characteristic (II.6.1); the
   statement does not cover that case.
@@ -131,9 +135,9 @@ or normalized; the positivity does not depend on the normalization.
 
 ## Dependencies and names
 
-The module imports Task 7416's `Langlands.BaseChange.OrbitalIntegral` (`glCentralizer`),
-Task 7402's `Langlands.TraceFormula.TwistedOrbital` (`orbitalIntegral`), the Library's
+The module imports `Langlands.BaseChange.OrbitalIntegral` (`glCentralizer`),
+`Langlands.TraceFormula.TwistedOrbital` (`orbitalIntegral`), the Library's
 `Langlands.Analysis.Local.QuotientMeasure` (`QuotientIntegration.LeftQuotient`,
 `QuotientIntegration.IsCompatible`) and `Langlands.HarmonicAnalysis.Basic`
-(`SchwartzBruhat`), and Mathlib's `ComplexOrder`, with the names and argument orders cited in
-the task.
+(`SchwartzBruhat`), and Mathlib's `ComplexOrder`, with the names and argument orders as
+published.

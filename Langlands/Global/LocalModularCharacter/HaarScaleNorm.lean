@@ -235,8 +235,7 @@ theorem finiteCompletion_map_mul_left (v : FinitePlace F)
       ((Ideal.absNorm v.asIdeal : ℕ) : ℝ)⁻¹ := by
     rw [NormedField.toAbsoluteValue_apply, hϖdef, Units.val_mk0,
       NumberField.FinitePlace.norm_def, hϖv,
-      WithZeroMulInt.toNNReal_neg_apply _ WithZero.exp_ne_zero,
-      WithZero.toAdd_unzero_eq_log, WithZero.log_exp]
+      WithZeroMulInt.toNNReal_neg_apply _ WithZero.exp_ne_zero, WithZero.log_exp]
     simp
   have habv1 : ∀ x : FiniteCompletion F v, ValuativeRel.valuation (FiniteCompletion F v) x = 1 →
       NormedField.toAbsoluteValue (FiniteCompletion F v) x = 1 := by

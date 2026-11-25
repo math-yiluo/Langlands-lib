@@ -1,7 +1,5 @@
 # Unit and composition coherence of associated coefficient-sheaf base change
 
-Author: Worker 13.
-
 This is internal derived infrastructure for the actual associated invariant
 sheaf. It extends `EtaleAssociatedPullback` using the product-sheaf equations
 in `EtaleProductPullbackCoherence`, the actual geometric cover comparisons,

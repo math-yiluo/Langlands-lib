@@ -1,7 +1,5 @@
 # Reduction of local Kneser–Tits to groups of split rank one
 
-Authors: Worker 1757.
-
 This module states, as the proposition definition
 `Langlands.GroupScheme.LocalKneserTitsRankOneReductionStatement.{u}` with
 arbitrary universe `u`, the reduction of the local Kneser–Tits theorem to

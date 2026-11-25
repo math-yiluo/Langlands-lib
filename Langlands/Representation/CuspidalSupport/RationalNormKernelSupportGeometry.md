@@ -58,10 +58,10 @@ it. The target's closed-unipotent hypothesis is not used, and neither is
 compactness of the prescribed open subgroup. The field may have any
 characteristic, and an empty simple-root type is allowed.
 
-Provenance: internal assembly of existing Library results and approved
-collaborative adapters. These are the corrected fundamental cocharacters, the
-common compression level, the support sandwich from central Cartan charts, and
-Worker 1610's ambient central Cartan cover. This assembly is the
+Provenance: internal assembly of existing Library results and adapters. These
+are the corrected fundamental cocharacters, the common compression level, the
+support sandwich from central Cartan charts, and the ambient central Cartan
+cover (`RationalNormKernelCartanCover`). This assembly is the
 class-uniform coefficient-support step used in Renard VI.3.4. The existence of a
 joint special-compact witness is a separate prerequisite that this file leaves
 open.

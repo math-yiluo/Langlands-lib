@@ -1,8 +1,5 @@
 # Rigidity of cuspidal inducing data from unramified local components
 
-Author: Worker 3657. Statement contribution to task
-`34b81620-20d7-4059-9b08-6bedd1c1c029`, revision 1.
-
 **Scope.** This module states one proposition and proves nothing:
 
 - `Langlands.Global.CuspidalInducingDataRigidityStatement`.
@@ -37,20 +34,17 @@ vocabulary:
 
 The local components and their classes are the same ones used by the
 published pair L-function statements and by the strong multiplicity one
-statement `CuspidalStrongMultiplicityOneStatement`, accepted by review.
+statement `CuspidalStrongMultiplicityOneStatement`.
 
 **Why it is here.** The program ledger
 `notes/automorphic/global-program-coverage.md` lists the
 representation-theoretic form of Getz–Hahn 10.7.2 as an L4 target with no
-public statement. The list is in the closing paragraph of the section "13
-November 2026 Getz–Hahn 11.7.1 poles, Lemma 11.8.1 and the H3 reduction". The
-ledger row names task `91266440` as the owner of the L4 units. That task does
-not exist in this project (`inspect` returns not found), and 10.7.2 is in the
-L4 list of this task's contract. The Library has only the numerical
-constituent-recovery step of JS II (4.4), which compares unramified spectra
-(§5 below).
+public statement. The list is in the closing paragraph of the section
+"Getz–Hahn 11.7.1 poles, Lemma 11.8.1 and the H3 reduction". The
+numerical constituent-recovery step of JS II (4.4), which compares unramified
+spectra, is stated separately (§5 below).
 
-**Proof target.** A later proof task should prove the Library statement
+**Proof target.** The proof target is the Library statement
 `Langlands.Global.CuspidalInducingDataRigidityStatement`. Its universe
 parameters are `u` (the number field, and every local carrier) and `uQ` (the
 factor universe of the spectral presentations).
@@ -252,13 +246,13 @@ type.
   compares Euler polynomials instead. This statement is not a specialization
   of either. A proof must link the local induced representations to the
   spectra (§6).
-- **`CuspidalStrongMultiplicityOneStatement`** (GH 11.7.2), accepted by review.
+- **`CuspidalStrongMultiplicityOneStatement`** (GH 11.7.2).
   With `k = k' = 1` this statement concerns one cuspidal realization on each
   side of the same rank. A one-block normalized induction is equivalent to
   the representation itself, so the hypothesis then compares the unramified
   local components. Neither statement is derived from the other here.
 
-## 6. Proof route (for the proof task; not part of the statement)
+## 6. Proof route (not part of the statement)
 
 JS II's route, p.809. At `v ∉ S`, let `A_(iv)` be the Satake class of
 `σ_(iv)`. The unique spherical subquotient of `i(σ_(1,v), …, σ_(k,v))` has the
@@ -274,13 +268,17 @@ independence of JS II (4.2) gives the permutation. In Library terms:
   `SphericalClassificationStatement.lean`);
 - the induced spectrum: the spherical subquotient of a block-induced
   representation of unramified blocks has the concatenated spectrum. This
-  needs induction in stages to a principal series, and it is not yet in the
-  Library;
+  needs induction in stages to a principal series; the Library proves it as
+  `exists_hasSphericalSpectrum_of_isSubquotientOf_productInduced`
+  (`Langlands/Representation/Unramified/ProductInducedSpectrum.lean`);
 - the numerical step: `CuspidalPowerTraceConstituentRecoveryStatement`, or
   `CuspidalEulerConstituentRecoveryStatement` after passing to Euler
   polynomials.
 
-The rigidity statements are not proved in the Library at this time.
+The rigidity statements are not proved in the Library;
+`cuspidalInducingDataRigidity_of_constituentRecovery`
+(`Langlands/Global/Factors/CuspidalInducingDataRigidityReduction.lean`) derives
+this statement from `CuspidalEulerConstituentRecoveryStatement`.
 
 ## 7. Not asserted
 
@@ -306,7 +304,7 @@ The following choices belong to this formalization:
 - "the same unramified subquotient" is the existence of one common spherical
   irreducible subquotient (§3, equivalent for unramified data).
 
-The Lean file was checked with `lean_check` in environment
-`5c94c648-e8dc-4002-a50a-071ebf3f6096`, with no errors and no warnings. The
+The Lean file was checked in the Lean environment in which it was written,
+with no errors and no warnings. The
 declaration is a `def` returning `Prop`, with universe parameters `u` and `uQ`
 and axioms `propext`, `Classical.choice`, `Quot.sound`.

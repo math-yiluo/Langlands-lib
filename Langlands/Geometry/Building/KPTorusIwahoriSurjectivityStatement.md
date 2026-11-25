@@ -1,8 +1,7 @@
 # Surjectivity of Iwahori subgroups of tori over `K`
 
-Authors: Workers 1532 and 1444. The statement and initial exposition reuse
-Worker 1532's shared draft; Worker 1444 checked the source correspondence
-and completed the source and correction notes.
+The source correspondence of the statement was checked; the source and
+correction notes are below.
 
 `Langlands.Geometry.Building.TorusIwahoriSurjectivityStatement.{u}` is a
 proposition definition, not a proof. It states the form of KP Lemma
@@ -83,7 +82,7 @@ Cambridge University Press, 2023, registered as
   surjectivity over `K`. The printed proof writes `O_E` in the tensor
   step. The multiplicative torus calculation uses `O_E^×`; this explains
   the intended coefficient rather than asserting a formal comparison
-  proved in this unit.
+  proved in this module.
 
 The proposition is a derived formulation. KP's proof uses the exact
 sequence only through the surjectivity of `X_*(T₂) → X_*(T₃)` over the
@@ -103,4 +102,5 @@ was found.
 KP Lemma 2.6.27, printed p. 105 / PDF p. 136, applies Lemma 2.5.20 to the
 quotient map `T → D = T/T_sc` to lift an element of `D(K)^0` to `T(K)^0`.
 
-The statement supplies no proof. A proof is a separate obligation.
+The statement supplies no proof. The Library proves it as `torusIwahoriSurjectivity`
+(module `KPTorusIwahoriSurjectivityProof`).

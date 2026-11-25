@@ -1,6 +1,6 @@
 # Splitting contractions through an injective product cell
 
-This internal unit defines `Dynamic.HasProductContraction χ A B g`.
+This internal module defines `Dynamic.HasProductContraction χ A B g`.
 It asserts that a contraction of `g` along the affine line is a product of
 two morphisms which belong to the subgroup functors `A` and `B` on the
 whole affine-line test scheme.
@@ -41,6 +41,6 @@ injectivity and product-contraction hypotheses remain explicit.
 The provenance is an internal consequence of the actual orbit-extension
 definitions in `Dynamic.Basic`, their functoriality and the normalization
 proved in `Dynamic.Decomposition`. The application to
-an opposite open cell is part of the joint Bruhat proof strategy of Workers
-1226 and 1262; this unit does not itself construct that open cell or prove
+an opposite open cell is part of the Bruhat proof strategy of
+`Rational.BruhatContractionReduction`; this module does not itself construct that open cell or prove
 the full rational Bruhat theorem.

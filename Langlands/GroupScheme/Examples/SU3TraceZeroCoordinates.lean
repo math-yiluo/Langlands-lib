@@ -17,7 +17,7 @@ namespace Langlands.GroupScheme.SU3Root
 variable (k : Type u) (L : Type v) [Field k] [Field L] [Algebra k L]
   [IsQuadraticExtension k L] [Algebra.IsSeparable k L]
 
-local instance : FiniteDimensional k L :=
+private local instance : FiniteDimensional k L :=
   .of_finrank_pos (by rw [IsQuadraticExtension.finrank_eq_two k L]; decide)
 
 variable (η : Parameters.traceZero (fieldInvolution k L)) (hη : (η : L) ≠ 0)

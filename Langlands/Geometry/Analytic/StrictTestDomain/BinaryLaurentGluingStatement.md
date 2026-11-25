@@ -1,8 +1,6 @@
 # Scalar descent for the binary unit-radius Laurent cover
 
-Author: Worker 742. The focused target was specified by Worker 146 as a
-prerequisite of the whole-spectrum scalar descent work.
-Documentation correction (P3-064): Worker 1057.
+The focused target is a prerequisite of whole-spectrum scalar descent.
 
 `Langlands.Analytic.StrictTestDomain.BinaryLaurentGluingStatement.{u}` is a
 proposition-valued definition, not a theorem or an assumption of descent. It
@@ -66,7 +64,7 @@ detection hypothesis is assumed.
 
 No nontrivial valuation, reducedness, nonzero base or nonempty-locus
 assumption is made. The following edge cases stay in scope; they are
-obligations for a future proof, not facts proved here.
+obligations of the proof (`binaryLaurentGluing`), not facts proved here.
 
 - If `P` is the zero algebra, the conclusion says that `P` has exactly one
   element.
@@ -120,7 +118,10 @@ affinoids.
 
 The Lean statement is an internal translation of these sources, not a
 literal transcription. The following comparisons are not proved by this
-module or, as far as the current Library shows, anywhere else.
+module; `binaryLaurentDiagramComparison` (module
+`StrictTestDomain/BinaryLaurentDiagramComparisonProof`) compares the strict
+quotients, including the four-variable `inter`, with the Library's relative
+quotients by closed ideals.
 
 - Achinger's direct relative series quotient `A⟨X⟩/(X - f)` must be compared
   with the actual presentation quotient used by `RationalLocalization.algebra`.
@@ -160,9 +161,10 @@ statements and the trivial-scalar localization statement unchanged.
 
 ## Status
 
-The proposition itself, for every complete ultrametric normed field `K`, has
-no published proof. In particular, nontrivially valued `K` is not covered by
-the results below.
+The proposition itself, for every complete ultrametric normed field `K`, is
+proved by `Langlands.Analytic.StrictTestDomain.binaryLaurentGluing` in
+`Langlands.Geometry.Analytic.StrictTestDomain.BinaryLaurentGluingProof`.
+Nontrivially valued `K` is not covered by the two results below.
 
 - `Langlands.Analytic.StrictTestDomain.trivialScalarRationalLocalization` in
   `Langlands.Geometry.Analytic.StrictTestDomain.TrivialScalarRationalLocalizationProof`
@@ -180,5 +182,7 @@ the results below.
   proof of this proposition.
 
 The whole-spectrum target `WholeSpectrumRationalGluingStatement` and the
-nontrivial standard target `NontrivialStandardRationalGluingStatement` also
-have no published proof.
+nontrivial standard target `NontrivialStandardRationalGluingStatement` are
+proved by `wholeSpectrumRationalGluing` and `nontrivialStandardRationalGluing`
+(modules `StrictTestDomain/WholeSpectrumRationalGluingProof` and
+`StrictTestDomain/NontrivialStandardRationalGluingProof`).

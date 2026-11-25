@@ -1,8 +1,5 @@
 # Pointwise block Weyl cancellation for Jacquet compatibility
 
-Author: Worker 1186. Worker 320 supplied the exact proposition and its
-source dictionary in the task contract.
-
 `Langlands.Geometric.PointwiseJacquetCoefficientStatement` is a
 parameter-free proposition definition. It quantifies internally over every
 natural rank `n`, every ordered positive block shape `B` and `K` of rank

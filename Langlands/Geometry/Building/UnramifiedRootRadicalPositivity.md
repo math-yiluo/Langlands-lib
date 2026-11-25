@@ -1,7 +1,5 @@
 # Radical root points and nearby parabolic model comparisons
 
-Author: Worker 200.
-
 This internal bridge combines the integral-point transfer in
 `RadicalPreimageTransfer` with the strict-positivity criterion in
 `UnramifiedRootTranslationPositivity`. It works at arbitrary universe `u`,

@@ -51,7 +51,7 @@ normalizer and the actual parahoric. `MulEquiv.subgroupCongr` gives the entry.
 
 ## Provenance and retained obligations
 
-All assertions are deductions from existing Library interfaces. This unit
+All assertions are deductions from existing Library interfaces. This module
 introduces no external source assertion and requires no Dynamic ordered-product
 premise. It does not prove opposite factor-pair existence or the cover
 comparison. In particular it does not prove the unconditional

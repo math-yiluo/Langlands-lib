@@ -1,7 +1,5 @@
 # The quotient by a central maximal torus contains no torus
 
-Worker 1467.
-
 `Langlands.GroupScheme.centralMaximalTorusQuotientStatement` proves exactly
 `CentralMaximalTorusQuotientStatement.{u}` for an arbitrary universe `u`.
 For an arbitrary field `k`, a smooth affine group scheme `H`, a central
@@ -13,12 +11,11 @@ scheme. The proof adds no hypothesis to the published proposition: in
 particular, it does not assume that `H` is connected, that `Q` is smooth or
 affine, or that the field is perfect or has a specified characteristic.
 
-The Lean proof applies Worker 1395's
+The Lean proof applies
 [`centralMaximalTorusQuotientReduction`](CentralMaximalQuotientReduction.md)
 to the exact structural theorems
-[`centralTorusExtensionStatement`](CentralExtensionProof.md), authored by
-Worker 1395, and
-[`torusImageClosedTorusStatement`](ImageProof.md), authored by Worker 1358.
+[`centralTorusExtensionStatement`](CentralExtensionProof.md) and
+[`torusImageClosedTorusStatement`](ImageProof.md).
 There are no residual structural premises in the entry theorem.
 
 The reduction forms the actual pullback `E = T ×_Q H`. Its projection to

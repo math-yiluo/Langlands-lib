@@ -1,6 +1,6 @@
 # Actual positive Harris PEL input with the fixed Kottwitz Hodge sign
 
-Worker 57. This derived construction selects one witness from the proved
+This derived construction selects one witness from the proved
 `rationalHodgePolarizingTwistExists` theorem and constructs the auxiliary
 positive algebra, rational alternating form and its scalar extensions.
 For this same choice, the fixed Kottwitz action makes the real Hodge form
@@ -151,9 +151,9 @@ multiplier equals the original one.
 constructed complex action on units with this same scalar-extended
 similitude equivalence applied to the actual Kottwitz complex unit.
 
-This unit constructs the rational algebra, form, action and positivity
+This module constructs the rational algebra, form, action and positivity
 prerequisites. The name “polarization form” refers to the real form
 `H`; it does not supply a polarization morphism of an abelian scheme.
 Orders, integral self-dual lattices, finite-place conditions, reflex
 coefficient descent, the Lie-section determinant condition and a
-representing PEL scheme remain separate obligations.
+representing PEL scheme are not constructed here.

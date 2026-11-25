@@ -169,17 +169,17 @@ def reversedWholeLeviGeometricPieceEquiv :
             (flattenedLeviEquiv F.Carrier B S).toMonoidHom)) := by
   letI := T.topology
   intro A
-  let y := reversedPiecePermutation B S C x
   let hy := conjugatesLevi_reversedPiece B S F.Carrier C x hx
   let J := (T.normalizedRefinedJacquet B (reverseRefinement B S)
     A.representation).comp
       (flattenedLeviEquiv F.Carrier B (reverseRefinement B S)).toMonoidHom
-  let e := wholeLeviGeometricPieceEquiv T B C.reverse y
+  let e := wholeLeviGeometricPieceEquiv T B C.reverse (reversedPiecePermutation B S C x)
     (reverseRefinement B S) R hS hR hy A
   let e' := FiniteTensorFiltration.compCongr e (leviReverseEquiv C).toMonoidHom
   have eTransport :
       Representation.Equiv
-        ((transport (B.flatten (reverseRefinement B S)) C.reverse y hy J).comp
+        ((transport (B.flatten (reverseRefinement B S)) C.reverse
+          (reversedPiecePermutation B S C x) hy J).comp
           (leviReverseEquiv C).toMonoidHom)
         (transport (B.flatten S) C x hx
           (transport (B.flatten (reverseRefinement B S)) (B.flatten S)
@@ -188,12 +188,13 @@ def reversedWholeLeviGeometricPieceEquiv :
     have eReverse := transportReverseEquiv hy
       (conjugatesLevi_mul hy (conjugatesLevi_reverse C)) J
     have eReverse' : Representation.Equiv
-        ((transport (B.flatten (reverseRefinement B S)) C.reverse y hy J).comp
+        ((transport (B.flatten (reverseRefinement B S)) C.reverse
+          (reversedPiecePermutation B S C x) hy J).comp
           (leviReverseEquiv C).toMonoidHom)
         (transport (B.flatten (reverseRefinement B S)) C
           (x * innerReversePermutation B S)
           (conjugatesLevi_mul (conjugatesLevi_innerReverse B S F.Carrier) hx) J) := by
-      simpa only [y, reversedPiecePermutation, mul_inv_cancel_left] using eReverse
+      simpa only [reversedPiecePermutation, mul_inv_cancel_left] using eReverse
     rw [transport_mul (conjugatesLevi_innerReverse B S F.Carrier) hx] at eReverse'
     exact eReverse'
   exact e'.trans (eTransport.trans

@@ -50,5 +50,5 @@ This is a derived internal construction, assembled from the published
 subgroup-functor descent and range-transport interfaces and Mathlib's
 effective-epimorphism theorem. The open-image construction is reused from the
 torus-isomorphism-locus module; no new open image or external literature
-transcription is asserted. Worker 606 identified the etale-image descent step
-needed in the parent proof, and Worker 652 implemented the general form here.
+transcription is asserted. The etale-image descent step is the one needed in
+the open-neighbourhood argument; this module gives it in general form.

@@ -1,8 +1,6 @@
 # Scaled coroot compatibility in an fppf torus square
 
-Author: Worker 659.
-
-This internal unit extends the finite normalizer image argument of
+This internal module extends the finite normalizer image argument of
 `CentralIsogeny.CorootCompatibility` to a root pulled back to a positive
 integer multiple of a source root. It is derived from the published actual
 normalizer, fppf torus image, and lattice pairing interfaces. No additional
@@ -72,7 +70,7 @@ constructed object are the actual maps; these identities are definitional.
 The finiteness instances for the character and cocharacter lattices come
 from splitness of the tori.
 
-This unit supplies a conditional constructor and the scaled coroot
+This module supplies a conditional constructor and the scaled coroot
 comparison, not the whole `IsogenyRootDatumStatement`. It does not construct
 the root index equivalence or the characteristic-power root equations,
 prove that a given ambient isogeny restricts to an isogeny of tori, or

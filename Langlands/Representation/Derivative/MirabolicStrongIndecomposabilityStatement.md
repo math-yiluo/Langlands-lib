@@ -1,14 +1,12 @@
 # Highest-derivative strong indecomposability reduction
 
-Authors: Worker 700 (Lean statement and initial Markdown, shared draft
-revision 2 of task `ff4738d8-47e3-433b-bedc-629bc2d492a7`) and Worker 749
-(source check, Markdown revision and import audit).
-
 This module states one proposition and proves nothing. It records Zelevinsky's
 criterion for strong indecomposability of a representation of a mirabolic
 group in terms of homogeneity and its highest derivative. It also records the
 positivity of the derivative level of a nonzero representation, which that
-criterion presupposes. Both are unproved assertions of the proposition.
+criterion presupposes. Both are assertions of the proposition; this module
+proves neither (the proof is `mirabolicStrongIndecomposabilityReduction` in
+`MirabolicStrongIndecomposabilityProof`).
 
 ## The declaration
 
@@ -143,8 +141,9 @@ layer of the filtration. By BZ77 §3.3(a) the submodule lattices of `τ_k` and
 `τ^(k)` is. With §5.1 (1)⇔(2), condition (2) becomes "`τ_k` is strongly
 indecomposable and meets every nonzero submodule of `τ`", which is trivially
 equivalent to strong indecomposability of `τ`. This module asserts neither
-the highest-layer embedding nor the lattice isomorphism; both are obligations
-of later proof tasks.
+the highest-layer embedding nor the lattice isomorphism; both are supplied by
+`mirabolicHighestLayer` (`MirabolicHighestLayerProof`), which the proof in
+`MirabolicStrongIndecomposabilityProof` applies.
 
 **Errata.** No errata note for either source exists in the project
 literature collection or in the Library's notes. The published note
@@ -158,7 +157,8 @@ The imported `Φ⁻` and `Ψ⁻` are the published determinant-normalized minus
 functors, which twist by the absolute value of the determinant to the power
 `-1/2` at each step in place of the source's `mod_U^(-1/2)` (BZ77 §1.8). The
 comparison of those determinant characters with the source's Haar-modulus
-normalization is a separate, still pending proof obligation; this
+normalization is proved separately (`psiMinusCharacter_eq_modulus` and
+`phiMinusCharacter_eq_modulus` in `MirabolicHighestLayerLift`); this
 proposition neither assumes nor supplies it. The published twists act on
 the same carriers (`Langlands.Representation.Category.Twist`), so the
 normalization does not change which derivative carriers are nonzero; this
@@ -186,49 +186,39 @@ remark explains the convention and is not proved in this module.
 
 ## Scope and dependencies
 
-The proposition supplies no proof of either clause. Definition and statement
-publication proves no analytic assertion. The source proof inputs named
+The proposition supplies no proof of either clause. Stating the definition
+proves no analytic assertion. The source proof inputs named
 above (the §3.5 filtration, exactness, the §3.3(a) lattice isomorphisms, the
 essential highest layer and §5.1) and the normalization comparison are
-obligations of later proof tasks, not hidden hypotheses of this proposition.
+not hidden hypotheses of this proposition.
 
-This statement is a lower input to the independent ordered-socle existence
-task `23189526-80b0-4828-a6d4-7ebec2cbeef5`. It uses no conclusion, proof
-successor or transitive proof dependency of that task, of socle exhaustion
-`f3a69bc8-7312-4f82-8a7d-ea3c8188cb63`, of analytic segment classification
-`aca8805b-054f-4d56-8045-12db7f623404`, of segment-socle product
-irreducibility `23e98d90-6055-4e35-91a9-b0f5d8a84961`, of the final
-segment-socle irreducibility criterion
-`2ae5cbe5-0701-4509-88a0-db8cbeb35be4`, of `AdjacentUnlinkedSegmentSocleSwap`
-or `TwoSegmentSocleCommutation`, of the special-head product criterion
-`8364e73f-14ec-4d14-8f2b-1555a7c1ce95`, special-head exhaustion
-`3bfb61fa-1129-4fc9-83fd-7fcfec22106e`, ordered special-head existence
-`ebea9a8a-9b21-4208-aa31-98c2dea1f8a3`, quotient coverage
-`20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584`, tempered block uniqueness
-`52e97845-36bb-457d-b76f-70753334b88c`,
-`SquareIntegrableLanglandsClassification` /
-`1cb45da2-7007-4351-a694-594fb148b8d1`, square-integrable exhaustion
-`cd8ab97c-0b78-4bce-97c4-d307a28159a4`, regular exhaustion
-`bf433f0a-921a-428c-b0c0-6475438125ac`, `GenericSegmentProductUniqueness` /
-`30341ae4-65f2-4a0e-9283-763db01a409e`, ordered special-segment conversion
-`8252833d-c269-41a9-824c-5879e531b23b`, or forward special-segment essential
-square-integrability `5eece9e8-7f6b-4ea9-abea-a1f9f1b8c807`. Later proof
-tasks and lower splits must preserve this exclusion set.
+This statement is a lower input to ordered-socle existence
+(`OrderedMultisegmentSocleExistence`; the module
+`Classification.OrderedMultisegmentSocleAdapter` imports it). It uses no
+conclusion, proof or transitive proof dependency of that result, of socle
+exhaustion, of analytic segment classification, of segment-socle product
+irreducibility, of the final segment-socle irreducibility criterion, of
+`AdjacentUnlinkedSegmentSocleSwap` or `TwoSegmentSocleCommutation`, of the
+special-head product criterion, special-head exhaustion, ordered special-head
+existence, quotient coverage, tempered block uniqueness,
+`SquareIntegrableLanglandsClassification`, square-integrable exhaustion,
+regular exhaustion, `GenericSegmentProductUniqueness`, ordered
+special-segment conversion, or forward special-segment essential
+square-integrability. A proof of it must preserve this exclusion set.
 
 ### Import closure audit
 
 The complete transitive project import closure was traversed in Library
-commit `3987c3d7445531c2c7f784464a3fd47061ba0865`, the base of this
-contribution. It has the 55 project modules listed below. Every one has a
-nonempty Markdown pair, and every pair is byte-identical between that
-Library tree and the submitting workspace. The derivative branch contains
+commit `3987c3d7445531c2c7f784464a3fd47061ba0865`. It has the 55 project
+modules listed below. Every one has a nonempty Markdown pair, and every
+pair is byte-identical to that Library tree. The derivative branch contains
 group and functor constructions, quotient carriers, rank transports, the
 finite-maximum level and the invariant-subspace homogeneity definition, with
 elementary laws about them. The strong-indecomposability branch adds the
 subrepresentation lattice and the intersection predicate. The closure
 contains no socle, segment, classification, commutation, exhaustion,
 coverage, derivative-filtration or derivative-detection result, and no module
-of any excluded task above. The `Proof` modules in the closure prove the
+of any excluded result above. The `Proof` modules in the closure prove the
 p-adic arithmetic normalization interfaces, the matrix-coefficient laws,
 smoothness and admissibility transfer, and character-twist laws; none
 concerns derivatives, socles or classification.
@@ -291,16 +281,15 @@ Langlands.Representation.Whittaker.GeneralLinear
 Langlands.Topology.Nonarchimedean.Subgroup
 ```
 
-### Development checks
+### Checks
 
-`lean_check` in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` compiled
+A Lean check compiled
 the module with no errors or warnings. Inspection of the declaration reported
 `statement_returns_prop: true`, level parameters `uF, uV`, and only the
-standard axioms `propext`, `Classical.choice` and `Quot.sound`. A private
+standard axioms `propext`, `Classical.choice` and `Quot.sound`. A separate
 scratch check, not part of this module, confirmed by `Iff.rfl` that the
 proposition unfolds to the literal two-clause statement with the intersection
 predicate, the homogeneity condition and the rank-transport-then-iteration
 derivative spelled out. It also confirmed that at order one clause 2
 specializes to `Ψ⁻` by `mirabolicDerivativeOfOrder_one`. These checks
-establish elaboration and proposition kind only; they are not semantic
-acceptance.
+establish elaboration and proposition kind only.

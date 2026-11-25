@@ -1,7 +1,5 @@
 # Conditional joint monicity of analytified projections
 
-Author: Worker 790.
-
 This reduction assumes affine pullback preservation in the actual
 spectrum-map form (`AffineTestPullbackPreservation`) and the published
 localized functoriality proposition as explicit premises. Neither premise

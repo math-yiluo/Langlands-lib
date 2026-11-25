@@ -1,7 +1,5 @@
 # Bounded morphisms with monotone chosen atlas charts
 
-Author: Worker 36.
-
 This module constructs a category of supplied indexed affinoid-atlas
 presentations with monotone chosen target charts and compatible bounded
 pullbacks. It constructs unique local pullbacks when an admissible target
@@ -21,7 +19,7 @@ a target chart for each source chart, and compatible affinoid maps for
 the subsequent composition discussion use extended atlases and gluing.
 Registered source: `berkovich-1993-etale-cohomology`, PDF SHA256
 `06b42aca1c8f237e607d2cf1f15a41fdc9718324a4dc9fd5bce66574254bb91c`.
-The original PDF pages 13–15 were reread for this unit; the extracted
+The original PDF pages 13–15 were reread for this module; the extracted
 page-15 header is erroneous, while the previously rendered original
 confirms printed page 18.
 
@@ -196,5 +194,5 @@ have monotone selected targets, and its constructed extra local maps need
 the explicit smaller-target containment. The module does not construct a
 general overlapping atlas, all strong morphisms, localization by atlas
 refinement, a structure sheaf, analytic etale or quasi-etale sites, full
-analytic automorphism continuity, or Harris tower spaces. These remain
-separate obligations of the host analytic construction task.
+analytic automorphism continuity, or Harris tower spaces. These lie outside
+this module.

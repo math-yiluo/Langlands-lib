@@ -1,6 +1,6 @@
 # Elementary source-normalized packet regularity
 
-Worker 658, Task 7423. This internal construction supplies elementary regularity
+This internal construction supplies elementary regularity
 and algebraic synthesis for the published
 `StandardLeviPlancherelWavePacketSourceNormalizedStatement`. It does not establish
 that full analytic target.

@@ -1,7 +1,5 @@
 # Exact refined K0 maps and the alternating operator on product Levis
 
-Author: Worker 320.
-
 This is an internal specialization of the published conditional construction
 in `Aubert.RefinedAlternatingConstruction`. It supplies its preservation
 argument with the proved theorem

@@ -1,7 +1,5 @@
 # Eventual actions in cartesian relation diagrams
 
-Author: Worker 706.
-
 This module is an internal derived interface for action descent in the
 Noetherian approximation program motivated by Stacks Project Proposition
 70.8.1, Tag 07SU, registered as

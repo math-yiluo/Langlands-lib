@@ -1,8 +1,7 @@
 # Torus separation from triangular character data
 
-Worker 1800. Internal support for the proof of
-`Langlands.GroupScheme.ClassFunctions.TorusSeparationStatement` (task
-`0c854e73-f39c-45cf-9dda-31e34e1711f6`). It follows the proof of Corollary 6.6
+Internal support for the proof of
+`Langlands.GroupScheme.ClassFunctions.TorusSeparationStatement`. It follows the proof of Corollary 6.6
 in R. Steinberg, *Regular elements of semi-simple algebraic groups*, 1965
 (source `steinberg-1965-regular-elements-semisimple-groups`, printed p.63).
 There, regular class functions with equal values at two points `s t` of a
@@ -109,12 +108,15 @@ For a field `k`, a group scheme `G` over `Spec k` and `i : T ⟶ G`:
 
 ## Scope
 
-Both hypotheses of `torusSeparation_of_triangular` remain open here.
-`RootDatumExistenceStatement` is a separate task
-(`972e4466-2aff-4fc0-a62e-1be346c899a0`). `htri` is to be supplied by the trace
-characters of highest-weight representations restricted to the torus. Their
-existence is `SplitDominantHighestWeightRepresentationsExistStatement` (task
-`65df1467-7f2d-4446-b493-1dc93e8e54e0`). The triangularity and invariance of
-their weight multiplicities are not proved in this file. The semisimplicity
+Both hypotheses of `torusSeparation_of_triangular` remain hypotheses here.
+`RootDatumExistenceStatement` is proved separately (`rootDatumExistence`,
+module `Langlands.GroupScheme.Reductive.RootDatumExistence`). `htri` is supplied
+by the trace characters of highest-weight representations restricted to the
+torus. Their existence is `SplitDominantHighestWeightRepresentationsExistStatement`
+(`splitDominantHighestWeightRepresentationsExist`, module
+`Langlands.GroupScheme.Rational.DominantHighestWeightProof`). The triangularity
+and invariance of their weight multiplicities are not proved in this file;
+[ClassFunctionsTorusSeparationProof](ClassFunctionsTorusSeparationProof.md)
+supplies `htri` and proves `TorusSeparationStatement`. The semisimplicity
 hypothesis of `TorusSeparationStatement` is used only through
 `IsSemisimple.isConnectedReductive`.

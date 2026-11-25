@@ -1,7 +1,5 @@
 # Local section representations on the finite rational transport site
 
-Author: Worker 13.
-
 This internal construction evaluates actual categorical sheaves on the existing
 varying-open-subgroup rational transport site. It constructs each object's
 subgroup action on its entire section object, and restriction intertwiners along

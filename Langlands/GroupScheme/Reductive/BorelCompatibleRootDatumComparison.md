@@ -58,7 +58,7 @@ This is a derived construction from the published actual torus-compatible
 root-datum comparison, the regular-cocharacter Borel sign criterion,
 dynamic functoriality, and positive-root indecomposability. The preceding
 paragraphs describe the implemented proof; there is no new external-source
-translation. This unit is a field comparison with supplied regular
+translation. This module is a field comparison with supplied regular
 cocharacters and parabolic equality. It does not construct open overlap
 comparisons over arbitrary bases, a relative Borel atlas, effective descent,
 or the final finite etale Weil presentation.

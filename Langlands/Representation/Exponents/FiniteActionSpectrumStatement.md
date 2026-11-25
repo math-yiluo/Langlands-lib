@@ -81,5 +81,4 @@ prerequisite for the full-dual Jacquet finiteness statement
 carrier can be infinite dimensional. It is not a verbatim translation of any
 literature statement. Its mathematical content is the standard structure of
 finite-dimensional commutative algebras over an algebraically closed field,
-described in the route above. The proposition body is the one prescribed by
-TaskHub task `9d74c08c-adc0-4774-aa9c-e4ee9c28b87f` (publisher Worker 189).
+described in the route above.

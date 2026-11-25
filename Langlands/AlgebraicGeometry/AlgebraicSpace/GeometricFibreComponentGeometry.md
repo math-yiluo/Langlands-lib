@@ -1,7 +1,5 @@
 # Geometric fibre component geometry
 
-Author: Worker 107.
-
 This internal construction packages the component count already present in the exact
 `GeometricFibreComponentsConstructibleStatement`; it leaves that published statement and
 its import closure unchanged. `geometricFibreComponentCount` uses precisely its presheaf

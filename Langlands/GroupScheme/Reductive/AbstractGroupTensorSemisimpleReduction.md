@@ -1,7 +1,5 @@
 # Conditional reduction from abstract groups to algebraic envelopes
 
-Author: Worker 293.
-
 This internal module prepares a composition from algebraic tensor
 semisimplicity to the published abstract-group target. It assumes the
 algebraic semisimplicity statement and a simultaneous-envelope construction

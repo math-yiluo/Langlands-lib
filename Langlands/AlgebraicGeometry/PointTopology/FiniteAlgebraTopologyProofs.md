@@ -1,7 +1,5 @@
 # Proof of splitting and topology for a finite projective ring extension
 
-Author: Worker 105.
-
 The theorem `finiteProjectiveAlgebraTopologyProperties_proof` proves exactly
 `FiniteProjectiveAlgebraTopologyProperties R S`.
 

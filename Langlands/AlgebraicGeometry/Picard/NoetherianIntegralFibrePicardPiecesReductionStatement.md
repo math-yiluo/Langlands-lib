@@ -1,7 +1,5 @@
 # The Picard scheme on noetherian affine tests from its Hilbert-polynomial pieces
 
-Authors: Worker 5705.
-
 `Langlands.AlgebraicGeometry.Picard.NoetherianIntegralFibrePicardPiecesReductionStatement.{u}`
 is the proposition
 
@@ -17,7 +15,7 @@ ProperAmpleClosedImmersionBySectionsStatement.{u} →
 in module
 `Langlands.AlgebraicGeometry.Picard.NoetherianIntegralFibrePicardPiecesReductionStatement`. All
 six names are existing Prop-valued definitions in namespace `Langlands.AlgebraicGeometry.Picard`,
-used unchanged at the same universe `u`. This unit only defines the proposition. It proves none
+used unchanged at the same universe `u`. This module only defines the proposition. It proves none
 of the six propositions; it says only that the last follows from the first five.
 
 ## The six propositions
@@ -76,8 +74,9 @@ In each item, `S = Spec R` for a commutative ring `R : Type u`. "Noetherian" mea
 
 ## Provenance
 
-Internal. The implication is the assembly step of the work task
-`07219dde-fd87-48cf-83be-db16cbb3707c` (Task 5705). It adds no mathematics of its own: the
+Internal. The implication is the assembly step of the proof of
+`NoetherianIntegralFibrePicardSheafAFSchemeStatement` (module
+`NoetherianIntegralFibrePicardSheafAFSchemeProof`). It adds no mathematics of its own: the
 geometric content lies in the five hypotheses, whose Markdown cites the sources. It is the
 order of argument in the proof of Theorem 4.8 in S. L. Kleiman, *The Picard scheme*, arXiv
 math/0504020v1 (2005), pp.28–31 (registered as
@@ -93,4 +92,5 @@ math/0504020v1 (2005), pp.28–31 (registered as
 
 The fourth hypothesis (Kleiman's Theorem 2.5 and Exercise 3.11) gives, for each element of the
 Picard sheaf, a line bundle whose pieces define the pieces of that element. A Lean proof of the
-implication is a separate unit.
+implication is in a separate module: `noetherianIntegralFibrePicardPiecesReduction` in
+`NoetherianIntegralFibrePicardPiecesReduction`.

@@ -1,7 +1,5 @@
 # Actual equivalences from ordered product regrouping
 
-Author: Worker 645.
-
 This internal adapter requires a proof of the published proposition
 `Langlands.Parabolic.OrderedProductRegrouping.{uF,uV} F T` as an explicit
 argument. It does not supply that proof.

@@ -1,9 +1,8 @@
 # Actual rational geometry for cuspidal Jacquet-factor extraction
 
-Worker 321, with Worker 1553's audit of the published full-Levi comparison.
 This internal derived construction supplies the geometric subgroup and
 single-term comparisons needed by the actual cuspidal Jacquet-factor
-extraction task. It does not supply the normalized geometric filtration or
+extraction target. It does not supply the normalized geometric filtration or
 exclude cuspidal subquotients from proper target induction.
 
 For a minimum `w` in `IsMinimal cs J I w`, suppose the intrinsic source

@@ -1,7 +1,5 @@
 # Determinant twists of presented local components for any Hecke character
 
-Author: Worker 5136.
-
 A finite tensor presentation `P` of a nonzero finite realization `S` has, at each
 finite place `v`, a local component `P.localComponent hS v`: a local realization
 inside the forms of `S`, equivalent to the local factor `ρ v` (the Library's

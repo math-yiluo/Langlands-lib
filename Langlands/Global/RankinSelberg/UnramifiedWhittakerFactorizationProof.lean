@@ -464,7 +464,7 @@ standard character of the component `ψ_v`. -/
 theorem genericCharacter_localPoint {r : ℕ}
     (ψ : HarmonicAnalysis.UnitaryAdditiveCharacter (Adeles F)) (v : FinitePlace F)
     (ψv : Correspondence.NontrivialAdditiveCharacter (CompletionPadic.padicField v))
-    (hψv : ClassField.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent ψ v ψv)
+    (hψv : ClassFieldTheory.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent ψ v ψv)
     (u : GeneralLinear.upperUnipotent (r + 1) (CompletionPadic.padicField v).Carrier) :
     genericCharacter F r ψ.complex (fun _ => 1)
         ⟨localPoint F v u.val, localPoint_mem_unipotentAdelic F v u.val u.property⟩ =

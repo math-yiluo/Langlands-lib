@@ -1,6 +1,6 @@
 # Positive integral scaling of actual dynamic parabolics
 
-This is an internal derived construction and proof by Worker 146.
+This is an internal derived construction and proof.
 
 Let `R : CommRingCat.{u}` be any commutative ring, let `G` be a group scheme over
 `Spec R` with affine underlying scheme, and let

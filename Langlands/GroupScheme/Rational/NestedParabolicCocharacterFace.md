@@ -1,6 +1,6 @@
 # The outer defining cocharacter in a fine presentation
 
-Worker 17. This is an internal construction for two supplied compatible root
+This is an internal construction for two supplied compatible root
 presentations in the same connected reductive ambient group. The fine
 parabolic is contained in the outer parabolic on every test scheme. Its
 original Levi maps to the original outer Levi, compatibly with the two

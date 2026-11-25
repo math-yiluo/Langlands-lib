@@ -4,16 +4,13 @@ Module `Langlands.Algebra.NonUnitalModuleCornerSimpleStatements`.
 Namespace `Langlands.Algebra.NonUnitalModuleCornerSimpleStatements`.
 Entry proposition `Statements`.
 
-Worker 1222 wrote this statement unit under the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`.
-
 ## Source and provenance
 
 The governing source is David Renard, *Représentations des groupes réductifs
 p-adiques*, French version dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1222 read I.3.1–I.3.2 on printed pp.19–22 / PDF pp.25–28 for this unit.
+I.3.1–I.3.2 on printed pp.19–22 / PDF pp.25–28 was read for these statements.
 The two assertions stated here are on printed pp.21–22 / PDF pp.27–28:
 
 > **Proposition.** L'application `M ↦ e·M` réalise une bijection entre
@@ -178,8 +175,9 @@ module carriers) are independent; the Theorem uses carriers in `max uA uM`.
 
 ## Scope and dependencies
 
-This file states the two assertions and proves neither. Proofs belong to a
-separate `lean.proof@1` task targeting `Statements`.
+This file states the two assertions and proves neither. The proof is the
+theorem `Langlands.Algebra.NonUnitalModuleCornerSimpleProof.statements :
+Statements` in `NonUnitalModuleCornerSimpleProof`.
 
 The other assertions of I.3 are already published: the construction of `j_e`
 and (I.3.1.1) in `NonUnitalModuleCorner`, the exactness Proposition of I.3.1
@@ -198,7 +196,6 @@ The file imports `Langlands.Algebra.NonUnitalModuleCornerEvaluation`,
 Mathlib `Mathlib.CategoryTheory.Simple`,
 `Mathlib.CategoryTheory.ObjectProperty.EpiMono`,
 `Mathlib.CategoryTheory.Abelian.Basic` and `Mathlib.RingTheory.SimpleModule.Basic`
-(environment `bb168ec3-1031-46d9-816b-5c2ed7bbe1a6`, Mathlib commit
-`5ed2965256430c3649e86755f9576b54eca72435`). Like
+(Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`). Like
 `NonUnitalModuleCornerEvaluationStatement`, it makes the published
 `rightCornerModule`, `cornerModule` and `tensorModule` local instances.

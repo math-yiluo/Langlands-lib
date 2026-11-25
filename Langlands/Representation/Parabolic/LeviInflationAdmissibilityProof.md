@@ -1,7 +1,5 @@
 # Admissibility under actual Levi inflation
 
-Author: Worker 198.
-
 This module proves the published proposition
 `Langlands.Parabolic.LeviInflationAdmissibilityClause` in
 `Langlands.Representation.Parabolic.AdmissibilityStatement`, preserving its

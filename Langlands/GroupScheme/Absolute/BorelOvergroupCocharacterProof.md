@@ -1,8 +1,7 @@
 # Actual integral cocharacters of absolute Borel overgroups
 
-Worker 146 assembled this proof with Worker 1272's integral averaging and root
-support recognition implementations. Worker 1240 contributed the recognition
-outline used in the latter.
+This proof assembles the integral averaging of `BorelOvergroupAveraging` and
+the root support recognition of `BorelOvergroupRootSupport`.
 
 `Langlands.GroupScheme.absoluteBorelOvergroupCocharacter.{u}` proves exactly the
 unchanged published proposition

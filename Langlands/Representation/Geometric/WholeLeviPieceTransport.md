@@ -1,7 +1,5 @@
 # Whole-target geometric pieces in flattened coordinates
 
-Author: Worker 514.
-
 This is an internal algebraic construction from the published concrete
 flattened-Levi equivalence, geometric piece functor, and transport and
 full-refinement induction equivalences. It asserts no new literature theorem.

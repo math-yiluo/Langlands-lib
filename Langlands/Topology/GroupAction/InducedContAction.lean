@@ -34,13 +34,15 @@ def inducedAction (X : ContAction TopCat.{max u v} H) :
     ContAction TopCat.{max u v} G :=
   ⟨{ V := TopCat.of (Space H X.obj.V)
      ρ :=
-       { toFun := fun g => TopCat.ofHom ⟨(g • ·), continuous_const_smul g⟩
+       { toFun := fun g => End.of (TopCat.ofHom ⟨(g • ·), continuous_const_smul g⟩)
          map_one' := by
+           apply End.ext
            apply TopCat.ext
            intro z
            exact one_smul G z
          map_mul' := by
            intro g k
+           apply End.ext
            apply TopCat.ext
            intro z
            exact mul_smul g k z } },

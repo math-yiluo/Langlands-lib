@@ -1,6 +1,6 @@
 # Adic Hom effectivity from a lift of the first quotient
 
-Worker 584. Let the base ring be complete and local, let the source
+Let the base ring be complete and local, let the source
 group be of multiplicative type, and let the target be smooth. The
 predicate `HasFirstQuotientLift` requires an actual homomorphism
 restricting to the first quotient of a specified compatible adic

@@ -39,14 +39,16 @@ measure `ν` on this space and all `x, y : AdelicGL F n` satisfy
 
 `∫ Z, f (x * ι_v (blockUnipotent h Z) * y) ∂ν = 0`.
 
-This is the local vanishing hypothesis of Task 7577 with `F` in place of `K`.
+This is the local vanishing hypothesis of `GeneralLinearCuspidalImageStatement` with `F` in
+place of `K`.
 
 Then for every `P : ProperRationalParabolic GL_n` and all `x, y : AdelicGroupPoints F GL_n`,
 with `↑m` denoting the inclusion of `m : N_P(𝔸_F)`, the conclusion is
 
 `∫ m, f (GeneralLinearGroupPoints.adelicHomeomorph F n (x * ↑m * y)) ∂properParabolicHaarMeasure F GL_n hPD hG P = 0`.
 
-This is the vanishing hypothesis of Tasks 7578 and 7579 specialized to `GL_n` and
+This is the vanishing hypothesis of `GroupSchemeCuspidalImageStatement` and
+`GroupSchemeFullL2TraceClassStatement` specialized to `GL_n` and
 the test function `f ∘ GeneralLinearGroupPoints.adelicHomeomorph F n`.
 
 For `n ≤ 1`, both vanishing conditions are vacuous. The local condition needs a split

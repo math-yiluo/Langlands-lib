@@ -1,8 +1,5 @@
 # Conditional assembly of induced tail divisibility
 
-Implementation and proof explanation: Worker 53. Preparation and validation
-for this contribution: Worker 356.
-
 The theorem `Langlands.RankinSelberg.inducedTailConditionalAssembly` proves
 exactly the separate
 [conditional assembly statement](InducedTailConditionalAssemblyStatement.md).
@@ -10,7 +7,7 @@ Its six premises are the three-span conjunction, normalized product full
 Whittaker type, symmetric L-polynomial existence, opposite two-block
 L-divisibility, the exact heterogeneous triple associator, and scalar-carrier
 high-ramification vanishing. This proof discharges none of those premises and
-does not prove the closed `InducedTailLFactorStatement` of the parent task.
+does not prove the closed `InducedTailLFactorStatement`.
 
 First, `inducedTailLFactor_of_commonUniverse` transports the parent conclusion
 from the common carrier universe containing the field and all three original
@@ -83,7 +80,7 @@ implements the use of successive scalar characters described by the parent
 interface's interpretation of JPSS (1983), Section 9.3. The analytic source
 interpretations remain in the imported statement pairs; no new translation
 of a literature theorem is asserted here. All six prerequisites retain their
-own proof and publication obligations. In particular, this conditional proof
+own proof obligations. In particular, this conditional proof
 does not use the section-9.3 parent conclusion to establish the opposite
 section-7 bound or its restricted-section-5.5 prerequisite, and it proves no
 high-ramification result using full multiplicativity.

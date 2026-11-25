@@ -4,16 +4,13 @@ Module `Langlands.Representation.CuspidalSupport.BernsteinDecompositionStatement
 Namespace `Langlands.CuspidalSupport`.
 Entry proposition `BernsteinDecompositionStatements`; nothing is proved here.
 
-Worker 1222 wrote this statement unit under the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`.
-
 ## Source and provenance
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French edition dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1222 read VI.7.1–VI.7.4, printed pp.180–186 / PDF pp.186–192. The
+VI.7.1–VI.7.4, printed pp.180–186 / PDF pp.186–192, were read. The
 assertions stated here are on printed pp.181–184 / PDF pp.187–190.
 
 For a connected component `Ω` of `Ω(G)` and a smooth `(π, V)`, `V(Ω)` is the
@@ -42,7 +39,7 @@ The section's other assertions are not stated here; see "Scope".
 ## The objects
 
 All objects are published; this file constructs nothing. The framework is the
-standard-family construction of Worker 1153 (modules `BernsteinData` and
+standard-family construction (modules `BernsteinData` and
 `BernsteinBlock`), already used by the published VI.10 statements
 `BernsteinBlockCenterStatements` and `BernsteinBlockHomEquivalenceStatement`.
 
@@ -118,7 +115,7 @@ The conjunction of the three statements.
   structure is not available in the Library.
 - Cuspidal data are those of the actual standard family; the comparison of the
   standard-family cuspidality with supercuspidality for all parabolics and the
-  uniqueness of cuspidal support are recorded as obligations in
+  uniqueness of cuspidal support are not proved in
   `BernsteinBlock`. The Theorem implies that the induction-occurrence supports
   partition the irreducible representations; that is part of what a proof
   must supply, not a hypothesis.
@@ -127,22 +124,25 @@ The conjunction of the three statements.
 
 ## Scope
 
-This file states three assertions of VI.7.2 and proves none of them. Proofs
-belong to a separate `lean.proof@1` task targeting
-`BernsteinDecompositionStatements`. The source's proof uses the functors
+This file states three assertions of VI.7.2 and proves none of them.
+`bernsteinDecompositionStatements_of_inputs` (module
+`BernsteinDecompositionStatementsFromInputs`) derives
+`BernsteinDecompositionStatements` from named input statements. The source's proof uses the functors
 `I : Cusp(G) → M(G)` and `R : M(G) → Cusp(G)`, (VI.7.2.1), VI.5.3 (iii),
 VI.5.4, VI.6.1–VI.6.4 and the first Lemma.
 
-Not stated here, and remaining for later units: the second Lemma of VI.7.2
+Not stated here: the second Lemma of VI.7.2
 (adjunction, exactness, faithfulness of `R` and `I`, injectivity of
 `V → IR(V)`), which needs the category `Cusp(G)` and the cuspidal-part
-functors; the Proposition of VI.7.2 (three characterizations of `M(G)_Ω`); the
+functors (stated in `BernsteinCuspAdjunctionStatement`); the Proposition of
+VI.7.2 (three characterizations of `M(G)_Ω`; `BernsteinBlockCharacterizationStatement`); the
 VI.7.3 Proposition (behaviour under `i_P^G` and `r_P^G`), which needs the
-Bernstein data of a Levi; the central idempotents and Hecke algebra
-decomposition of VI.7.4; and the variety structure of the VI.7.1 Theorem.
+Bernstein data of a Levi (`BernsteinInductionRestrictionStatement`); the central
+idempotents and Hecke algebra decomposition of VI.7.4
+(`BernsteinCentralIdempotentStatements`); and the variety structure of the
+VI.7.1 Theorem (`BernsteinCuspidalDataVarietyStatements`).
 
 The file imports `Langlands.Representation.CuspidalSupport.BernsteinBlock`,
 `Langlands.Representation.Category.Abelian` (the abelian structure of
 `SmoothRep`) and `Langlands.CategoryTheory.RenardCategoryDecomposition`
-(environment `bb168ec3-1031-46d9-816b-5c2ed7bbe1a6`, Mathlib commit
-`5ed2965256430c3649e86755f9576b54eca72435`).
+(Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`).

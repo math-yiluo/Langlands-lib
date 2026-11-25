@@ -1,6 +1,6 @@
 # Reduction of the split semisimplicity criterion to its root form
 
-Worker 1391. This module is a derived, conditional step toward the published
+This module is a derived, conditional step toward the published
 `SplitSemisimpleRootDatumStatement` (module
 `Langlands.GroupScheme.Reductive.SplitClassificationStatement`). That
 statement has two conjuncts: a root finite-index form and a coroot

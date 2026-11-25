@@ -1,7 +1,5 @@
 # Constructed equal-rank p-adic L-factors
 
-Author: Worker 31.
-
 This module constructs the normalized L-polynomial and L-factor of actual
 representations of `GL_(n+1)(F)` over a p-adic field. It uses the proved
 `equalRankAnalytic` theorem to discharge normalized-generator existence.
@@ -115,7 +113,7 @@ This is a derived construction from the published
 [canonical pair constructor](CanonicalPairLFactor.md), and
 [p-adic pair relation](PadicPairFactors.md). It composes their proved
 existence, uniqueness and compatibility results; none is a new premise or
-axiom here. The new contribution is the actual selection of the equal-rank
+axiom here. What is new in this module is the actual selection of the equal-rank
 polynomial and unit with these prerequisites discharged, including its
 generic specialization and agreement with the existing relations.
 
@@ -136,8 +134,7 @@ in the imported theorem's paired Markdown.
 
 This focused construction covers equal positive ranks. Unequal-rank
 analytic existence, functional equations, epsilon and gamma existence,
-and nongeneric Langlands-classification constructions retain their separate
-owners and proof obligations.
+and nongeneric Langlands-classification constructions are not treated here.
 
 Local instances have explicit names prefixed by `padicEqualRankLFactor` to
 avoid generated-name collisions in combined imports. Their types and defining

@@ -1,7 +1,5 @@
 # Affineness of actual linear quotients by connected reductive subgroups
 
-Worker 708.
-
 `Langlands.GroupScheme.ReductiveLinearQuotientAffineStatement` is an internal
 proposition at every universe `u`. This file states a missing geometric input;
 it supplies no proof of that input.
@@ -49,8 +47,9 @@ quotient for it. The construction retains all the quotient data just
 described.
 
 For the intended properness application, a proof of this proposition must
-be independent of the regular-cocharacter/Borel route and of the excluded
-parabolic-dynamic and rank-one inputs of Task 6453. This is a requirement
+be independent of the regular-cocharacter/Borel route and of the
+parabolic-dynamic and rank-one inputs excluded from the independent route to
+properness of supplied dynamic parabolic quotients. This is a requirement
 on a future proof, not an additional logical premise of this proposition.
 Publishing the present statement establishes neither its truth nor
 properness of a supplied dynamic quotient. The latter still requires the

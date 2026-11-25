@@ -64,7 +64,8 @@ of the actual ambient geometric identity component.
 
 The provenance is internal composition of the published actual relative
 centralizer, geometric profile and radical-detection constructions, the
-geometric-transporter rank-one neighbourhood constructor, and Worker 1683's
-fixed-cocharacter transporter lemma. The construction retains arbitrary
+geometric-transporter rank-one neighbourhood constructor, and the
+fixed-cocharacter transporter lemma `IsTransporter.mem_centralizer_of_fixed_cocharacter`
+(`Torus/RelativeCentralizerTransporters`). The construction retains arbitrary
 commutative rings and arbitrary universe `u`; the base may be nonreduced or
 nonnoetherian and the ambient fibres may be disconnected.

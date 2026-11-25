@@ -1,6 +1,6 @@
 # Actual noetherian models and reduction to discrete valuation rings
 
-Worker 700. This internal construction specializes the published finite
+This internal construction specializes the published finite
 coefficient descent results to the prime subring of an affine base. It uses
 the actual published scheme monicity, homomorphism and whole-group reductivity
 descent proofs, with no additional descent premises.

@@ -1,7 +1,5 @@
 # Right invariance of Haar measures on actual p-adic GL central quotients
 
-Author: Worker 576.
-
 `Langlands.GLCentralQuotientHaarRightInvariantStatement.{uF}` is a closed
 Prop-valued definition. It states that every Haar measure on the full central
 quotient of a positive-rank p-adic general linear group is right invariant.
@@ -59,21 +57,24 @@ central quotient. Likewise `T.exists_isHaarMeasure_centralQuotient n`
 ensures that the measure quantification here is not vacuous.
 Those existence and topology results alone do not prove right invariance.
 
-The current Library also supplies
+The Library also supplies
 `PadicField.TopologicalData.centralQuotientHaar_rightInvariant` in
 `Langlands.Group.GL.CentralQuotientMeasure`. That theorem covers every rank
 and every Borel measurable realization for the supplied topology. A separate
 proof of this exact closed statement can specialize that theorem to
 `T.centralQuotientMeasurableSpace n`, using `T.centralQuotientBorelSpace n`,
-and then restrict to positive rank.
+and then restrict to positive rank; the Library's proof is
+`Langlands.glCentralQuotientHaarRightInvariant` in
+`Langlands.Group.GL.CentralQuotientUnimodularityProof`.
 The existing theorem derives right invariance from the triviality of positive
 characters on the full central quotient, applied to its modular character,
-and regular Haar uniqueness. Its algebraic argument is Worker 116's
-diagonal/transvection proof, exposed and used in Worker 386's quotient
-construction. Those implementations remain unchanged; this pair neither
+and regular Haar uniqueness. Its algebraic argument is the
+diagonal/transvection proof of
+`Langlands.RankinSelberg.GeneralLinearUnimodularity.character_eq_one`, exposed
+and used in the quotient construction of `CentralQuotientMeasure`. Those implementations remain unchanged; this pair neither
 reimplements their proofs nor asserts that Haar existence proves their result.
 
 The separate exact proof must establish the displayed conclusion for every
 measure binder with the specified instances. Constructing an invariant
-positive form or proving square-integrable unitarity remains the obligation
-of the consuming representation-theoretic task.
+positive form or proving square-integrable unitarity is not part of this
+statement; it belongs to the representation-theoretic proof that uses it.

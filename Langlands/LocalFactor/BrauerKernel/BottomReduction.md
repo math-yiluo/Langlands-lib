@@ -1,10 +1,9 @@
 # Reduction of the Brauer kernel identity to the bottom field
 
-Author: Worker 1838. This is a supporting unit for task
-`92a3d086-a5ad-476f-9fd9-aa9d4eaa3778`, which must prove
+This is a supporting module for the proof of
 `Langlands.LocalFactor.NonabelianBrauer.KernelCompatibilityStatement`. The kernel statement
 concerns actual relations over every intermediate field `E` of the common closure of `F`.
-This unit shows that it suffices to treat relations over the bottom field
+This module shows that it suffices to treat relations over the bottom field
 `Correspondence.baseExtension F`. It needs the normalized reciprocity premise and nothing
 else. The global argument then only has to handle the bottom field of each p-adic field,
 where the standalone transports of `BrauerKernel.StandaloneBridge` apply directly.
@@ -33,7 +32,7 @@ and `uV`.
 ## Proof of the reduction
 
 The published `padicUnitaryAdditiveCharacterExists` gives a nontrivial additive character
-`ψ₀` of the bottom field. The accepted `evaluationMap_additiveCharacter_independent` of
+`ψ₀` of the bottom field. The lemma `evaluationMap_additiveCharacter_independent` of
 `BrauerKernel.Determinant` replaces `ψ` by `ψ₀ ∘ Tr_{E/⊥}`. By
 `Finsupp.linearCombination_mapDomain` and `generatorValue_toBottom`, the evaluation over `E`
 for this character is the evaluation over `⊥` of `z.mapDomain (Generator.toBottom F)` for
@@ -49,5 +48,5 @@ page 540, PDF page 40). There the criterion for a theory of constants on `K'/K` 
 the base field `K` alone. Axiom (3) transports degree-zero relations of subgroups by
 induction. The reduction here is the common-closure counterpart: induction from `E` to the
 bottom field with the trace character `ψ ∘ Tr`. It is internal bookkeeping that uses the
-published coherence of induction and trace pullback and the accepted additive-character
-independence.
+published coherence of induction and trace pullback and the additive-character
+independence of `BrauerKernel.Determinant`.

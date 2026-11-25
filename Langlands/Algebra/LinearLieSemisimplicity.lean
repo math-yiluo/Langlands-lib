@@ -4,8 +4,6 @@ import Langlands.LinearAlgebra.JordanChevalleyFunctoriality
 
 /-!
 # Complete reducibility for Jordan-closed linear Lie algebras
-
-Authors: Worker 1429
 -/
 
 noncomputable section

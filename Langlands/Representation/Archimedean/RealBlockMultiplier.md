@@ -7,7 +7,7 @@ Module `Langlands.Representation.Archimedean.RealBlockMultiplier`, namespace
 
 This is internal, elementary algebra: sequences `μ : ℤ → ℂ` and explicit binomial and
 product formulas. It makes no claim from the literature and has no sources. It serves the
-proof of `Langlands.Archimedean.RealCharacterPairFiltrationStatement` (Task 7067). There, a
+proof of `Langlands.Archimedean.RealCharacterPairFiltrationStatement`. There, a
 linear map between principal series of `GL_2(ℝ)` in the block coordinates `p, p + 1`
 multiplies the `k`-th rotation Fourier coefficient of a function by a scalar `μ k`. Its
 compatibility with the Lie algebra action becomes the recurrence below, and its

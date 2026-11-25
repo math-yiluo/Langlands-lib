@@ -135,9 +135,10 @@ structure EquivariantStructure (T : DivisibleSystem C ℓ) (D : ℕᵒᵖ ⥤ Gr
   /-- The action of `D m` on `T m`. -/
   act (n : ℕᵒᵖ) : D.obj n →* End (T.tower.obj n)
   comm {i j : ℕᵒᵖ} (f : i ⟶ j) (g : D.obj i) :
-    act i g ≫ T.tower.map f = T.tower.map f ≫ act j ((D.map f).hom g)
+    (act i g).asHom ≫ T.tower.map f = T.tower.map f ≫ (act j ((D.map f).hom g)).asHom
   inclusion_comm {m' m : ℕ} (h : m' < m) (g : D.obj (op m)) :
-    act (op m') ((D.map (homOfLE h.le).op).hom g) ≫ T.inclusion h = T.inclusion h ≫ act (op m) g
+    (act (op m') ((D.map (homOfLE h.le).op).hom g)).asHom ≫ T.inclusion h =
+      T.inclusion h ≫ (act (op m) g).asHom
 
 namespace EquivariantStructure
 

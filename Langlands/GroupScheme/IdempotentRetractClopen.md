@@ -1,7 +1,5 @@
 # The clopen identity locus of a group-scheme idempotent
 
-Worker 632.
-
 Actual identity or triviality on an open remains such after every base
 change factoring through that open. The proof uses naturality of the
 direct-versus-iterated pullback comparison, so the statement concerns actual

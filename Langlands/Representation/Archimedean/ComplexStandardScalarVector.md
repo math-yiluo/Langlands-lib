@@ -1,7 +1,7 @@
 # A scalar vector in every complex standard module
 
 Module `Langlands.Representation.Archimedean.ComplexStandardScalarVector`, namespace
-`Langlands.Archimedean.ComplexStandardScalarVector`. Worker 5665 wrote it for Task 7399, as a
+`Langlands.Archimedean.ComplexStandardScalarVector`. It is a
 step in the proof of `ComplexPlaceParameterIrreducibleStatement`. Provenance: internal.
 
 Notation: `X(ds)` (`KF n ds`) is the space of `U(n)`-finite functions of the complex standard

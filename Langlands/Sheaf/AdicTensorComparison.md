@@ -105,4 +105,4 @@ cohomological coefficient-change comparison, or geometric equivariance is
 asserted. These are actual ordinary module sheaves and ordinary inverse
 systems. The small-etale specialization is supplied by
 `Langlands/Geometry/EtaleAdicTensorComparison.lean`; identification with the
-specific Harris coefficient sheaves remains a separate obligation.
+specific Harris coefficient sheaves is not made in this file.

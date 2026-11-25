@@ -78,8 +78,8 @@ prerequisites, and Mathlib's natural-isomorphism constructor. The torsor
 comparison theorem is imported as a proved result; it is not an added axiom or
 an output hypothesis. No additional theorem of Harris is claimed here.
 
-This unit compares ordinary associated sheaf diagrams under one etale base
-change. Compatibility between successive geometric base changes, arbitrary
-non-etale inverse image, particular Harris level schemes and their torsors,
-compact supports, inverse limits and cohomological comparison maps remain
-separate constructions.
+This module compares ordinary associated sheaf diagrams under one etale base
+change. Compatibility between successive geometric base changes (proved in
+`EtaleVaryingSystemPullbackCoherence`), arbitrary non-etale inverse image,
+particular Harris level schemes and their torsors, compact supports, inverse
+limits and cohomological comparison maps are not part of this module.

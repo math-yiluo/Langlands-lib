@@ -1,10 +1,10 @@
 # Conditional sheaf comparison for finite rational transport sites
 
-Author: Worker 367. The type-valued proof adapts Worker 61's published
+The type-valued proof adapts
 `Langlands.Sheaf.Equivariant.isSheaf_of_isSheaf_inclusion` from
-`Langlands/Sheaf/Equivariant/Site.lean`. Worker 36 supplied the rational
-normalization interfaces, target statements, and the rational proof route
-in this task. Both are credited contributors to this adaptation.
+`Langlands/Sheaf/Equivariant/Site.lean`. The rational normalization
+interfaces come from `RationalTransportNormalization`, and the target
+statements and the rational proof route from `RationalTransportSheafStatement`.
 
 This module proves the unchanged Library proposition
 `Langlands.Analytic.StrictTestDomain.RationalTransport.SheafComparisonStatement`.
@@ -81,8 +81,8 @@ quotient hypothesis. The setting is the constructed finite rational site,
 not the full analytic G-topology, an etale or quasi-etale site, or a
 continuous topological-group action.
 
-Provenance is derived categorical infrastructure: Worker 61's published
-open-set proof supplies the gluing argument; Worker 36's
+Provenance is derived categorical infrastructure: the open-set proof in
+`Langlands/Sheaf/Equivariant/Site.lean` supplies the gluing argument;
 `RationalTransportNormalization` and `RationalTransportContinuity` supply
 the rational-site factorization, covering comparison, continuity, and
 presheaf isomorphism. The proof imports those Library constructions by

@@ -1,7 +1,7 @@
 import Langlands.Automorphic.LocalDeterminantCharacter
 import Langlands.Global.Factors.RelativeLocalOperationTransport
 import Langlands.Automorphic.HeckeDeterminantTwistStatement
-import Langlands.ClassField.Global.LocalRelativeWeilTransferStatement
+import Langlands.ClassFieldTheory.Global.LocalRelativeWeilTransferStatement
 import Langlands.Global.FiniteAdelicGL.Determinant
 
 /-! # Actual relative witnessed generators under unitary Hecke twisting -/
@@ -12,7 +12,7 @@ universe uF uW uP
 
 set_option backward.isDefEq.respectTransparency false
 
-namespace Langlands.ClassField.Global.RelativeWeilGroup
+namespace Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 
 open Langlands.Global Langlands.Global.CompletionPadic
 
@@ -43,11 +43,11 @@ theorem norm_reciprocityCharacter_of_isUnitary
   change ‖(((Ω (transfer c F E g))⁻¹ : ℂˣ) : ℂ)‖ = 1
   rw [Units.val_inv_eq_inv_val, norm_inv, hΩ _, inv_one]
 
-end Langlands.ClassField.Global.RelativeWeilGroup
+end Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 
 namespace Langlands.VirtualRepresentation.RelativeGlobal
 
-open Langlands.Global Langlands.Global.CompletionPadic Langlands.ClassField.Global
+open Langlands.Global Langlands.Global.CompletionPadic Langlands.ClassFieldTheory.Global
 open Langlands.Global.AdelicFunctoriality Langlands.Automorphic
 
 variable {F E : Type uF} [Field F] [NumberField F] [Field E] [NumberField E]

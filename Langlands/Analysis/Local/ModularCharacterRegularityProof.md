@@ -1,7 +1,5 @@
 # Modular-character regularity and compact-subgroup triviality
 
-Proof: Worker 103. Documentation and submission: Worker 1580.
-
 `Langlands.Haar.modularCharacterRegularity` proves exactly
 `Langlands.Haar.ModularCharacterRegularityStatement.{u}` for every universe
 `u`. For every locally compact nonarchimedean group, Mathlib's actual

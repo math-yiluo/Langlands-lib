@@ -74,8 +74,8 @@ reverse square using the actual inverse equivalence and the underlying reverse
 family equation. The point spaces include coefficient naturality and overlap
 compatibility on every further coefficient-extension chart test.
 
-This unit is the full-order lift of the two-step comparison. Identity and
+This module is the full-order lift of the two-step comparison. Identity and
 three-step coherence, naturality in arbitrary formal atlas maps, varying-base
 special or height-certified moduli class functor laws, framing and
-representability remain separate obligations. No height or specialness
+representability remain separate. No height or specialness
 certificate is inferred here.

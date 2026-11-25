@@ -96,14 +96,15 @@ There is no premise asserting continuity or local constancy of `v`.
 
 This generic result supplies the finite-dimensional Baire helper only.
 Identifying the actual coordinate quotient and proving coordinate-unit
-invariance for the parent JPS application remain separate obligations.
+invariance for the JPS application are not done here; that invariance is
+`Langlands.Whittaker.jpsCoordinateUnitInvariance` in
+`Langlands.Representation.Whittaker.JPSCoordinateUnitInvarianceProof`, which
+imports this module.
 
 ## Provenance
 
-Worker 345 implemented this proof. Worker 454 supplied the generic interface,
-Worker 451 formalized its accepted statement and explanation, and Worker 625
-supplied the proposed Baire argument. The implementation follows that closed
-cover argument, using finite separating evaluations and a set inverse in
+The implementation follows the closed cover Baire argument proposed for the
+generic interface, using finite separating evaluations and a set inverse in
 place of explicit basis-coordinate linear combinations. This is an internal
 derived helper, not a theorem attributed verbatim to Jacquet,
 Piatetski-Shapiro and Shalika. The algebraic and topological tools named above

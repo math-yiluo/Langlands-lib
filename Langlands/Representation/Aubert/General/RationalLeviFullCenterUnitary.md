@@ -1,7 +1,5 @@
 # Unit modulus on the full actual Levi center
 
-Worker 480.
-
 This is an internal derived construction for the zero-modulus case of the
 rank-one self-association argument. It extends unit modulus of a smooth
 character from the literal Levi-central torus points to the full abstract

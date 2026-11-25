@@ -1,7 +1,6 @@
 # Tower embeddings into finite Galois intermediate fields of the closure
 
-Author: Worker 1839, for task `37d6d58f-e378-4630-8a8c-0f3d7212a970`. All
-declarations are in `Langlands.Weil.Local.FiniteGaloisTower`. The tower theorem
+All declarations are in `Langlands.Weil.Local.FiniteGaloisTower`. The tower theorem
 `relativeInflation_finiteGaloisClass` of `FiniteGaloisTower` has the hypothesis
 `hF1`: the published embedding of `L` into `\bar F` extends that of `E`. This
 module produces, for every finite normal intermediate field `L₀` of the closure of
@@ -54,5 +53,5 @@ Internal. The module is a construction from the published
 intermediate fields. It makes no arithmetic claim beyond the tower theorem that it
 specializes.
 
-Integration uses module-specific names for local instances. Their types, values,
+The local instances have module-specific names. Their types, values,
 and local instance scopes are unchanged.

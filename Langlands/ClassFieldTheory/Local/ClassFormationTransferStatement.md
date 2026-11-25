@@ -1,7 +1,5 @@
 # Simultaneous local realization with Tate transfer compatibility
 
-Author: Worker 49, with invariant and transfer interface design by Worker 42.
-
 `LocalTransferCompatibleClassFormationStatement` asserts, for every prime
 `p`, the existence of one raw `InvariantFamily.{u,u} p` satisfying all the
 properties of `LocalCompatibleClassFormationStatement` and the additional
@@ -57,7 +55,7 @@ nonvacuous on every quantified tower.
 The positive invariant and left cup conventions are unchanged. At degree
 minus two, the existing Tate abelianization and norm-quotient
 identifications apply. The inverse of that cup isomorphism is arithmetic
-reciprocity; the host's geometric convention additionally inverts the
+reciprocity; the Library's geometric convention additionally inverts the
 output, as explained in `TateAbelianization.md`. The transfer diagrams
 themselves perform no such inversion.
 
@@ -97,9 +95,7 @@ printed pp. 154–156 (PDF pp. 160–162), XI.2, printed pp. 166–167
 (PDF pp. 172–173), and XIII.3, Propositions 6–7 and Corollary 2,
 printed pp. 193–194 (PDF pp. 198–199).
 
-This progressive target still leaves absolute continuous corestriction,
-ordinary degree-zero inflation, the ordinary-to-Tate cup comparison and
-the generic direct-limit comparison to separate assigned work. It does
-not assert completion of the whole class-formation assignment or a proof
-of local class field theory. Subsequent proof tasks must name the exact
-published proposition declaration.
+This target does not include absolute continuous corestriction,
+ordinary degree-zero inflation, the ordinary-to-Tate cup comparison or
+the generic direct-limit comparison. It is not a proof of local class
+field theory.

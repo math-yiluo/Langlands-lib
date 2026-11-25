@@ -14,5 +14,5 @@ character group, uses full faithfulness of relative spectrum, and obtains
 injectivity from dominance and reducedness of the target. Pointedness gives
 the augmentation identity. The morphism need not preserve multiplication.
 
-This unit does not provide finite primitive algebra generators or prove the
+This module does not provide finite primitive algebra generators or prove the
 all-characteristic splitness criterion.

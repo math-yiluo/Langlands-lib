@@ -1,7 +1,5 @@
 # Jordan decomposition of central rational points
 
-Author: Worker 1532.
-
 Namespace: `Langlands.BruhatTits.RationalPoints.CentralNormKernel`. Internal helper for the
 proof of `CentralNormKernelCompactnessStatement`. Let `K` be a field, `G` a group scheme over
 `Spec K`, `ρ : MatrixRepresentation G N` and `D : SpectralData K (CentralAlgebra ρ)`. For a

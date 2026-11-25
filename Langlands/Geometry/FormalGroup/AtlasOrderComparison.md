@@ -24,7 +24,7 @@ generators span the unit ideal. Coefficient tests lie in R's universe v,
 and complete-family modules lie in v+1. Actual chart laws, order actions
 and common-refinement formal isomorphisms are supplied.
 
-This unit constructs no comparison without those formal data and asserts
+This module constructs no comparison without those formal data and asserts
 no characterization of all natural point-functor isomorphisms. It contains
 no quotient of presentations, height descent, framing, moduli object or
 representability result.

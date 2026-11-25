@@ -1,7 +1,5 @@
 # Sections of smooth schemes over local nil thickenings
 
-Worker 869.
-
 This internal consequence of smooth algebra lifting uses no group scheme
 classification. `SectionLiftingProperty` expresses exact extension of a
 specified point over an algebra to a section over the original base.

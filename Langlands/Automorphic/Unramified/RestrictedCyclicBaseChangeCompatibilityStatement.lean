@@ -55,7 +55,7 @@ def RestrictedCyclicBaseChangeCompatibilityStatement : Prop :=
               (∀ x : S.base.Carrier, αE (S.embedding x) =
                 FiniteExtension.completionMap v w.1 (αF x)) →
               ∀ (r : ℕ) (T : CuspidalOperatorRealization F r),
-                ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T →
+                ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T →
                 T.isoClass.IsRegularAlgebraic →
                 T.isoClass.HasSupercuspidalComponent.{uF, uP} v →
                 T.isoClass.HasSupercuspidalComponent.{uF, uP} vc →

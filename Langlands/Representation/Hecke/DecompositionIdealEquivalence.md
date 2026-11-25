@@ -1,6 +1,6 @@
 # Smooth decomposition factors as central-ideal modules
 
-This derived unit connects the generic central-ideal module equivalence to the
+This derived module connects the generic central-ideal module equivalence to the
 actual factors of a supplied smooth category decomposition. It is infrastructure
 for Renard (9 July 2026), VI.7.4, printed pp.185–186 / PDF pp.191–192.
 
@@ -23,4 +23,4 @@ restriction; it is reflexive after unfolding the actual functors.
 The group, topology, measure and regular-smoothness hypotheses are those of the
 central multiplier construction. The factor index has an independent universe.
 The decomposition and closure under isomorphism are explicit hypotheses; this
-unit does not prove the unconditional Bernstein decomposition.
+module does not prove the unconditional Bernstein decomposition.

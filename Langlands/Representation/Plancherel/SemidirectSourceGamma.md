@@ -1,7 +1,5 @@
 # The source open-cell constant in canonical semidirect coordinates
 
-Author: Worker 200.
-
 This derived adapter identifies the existing canonical semidirect coordinates
 and product measure with the published Harish–Chandra integration engines.
 It constructs the open-cell constant from that actual measure, proves its
@@ -19,7 +17,7 @@ fixed compact subgroup, uses `G = P K` and defines
 `γ(P) = ∫_Ū δ_P(m_P(ū)) dū`. The adapter keeps each supplied measure and its
 scale explicit. Its coordinate-identification steps are internal derived
 content. It covers the source parabolic constant `γ(P)`; the identification
-as a Levi-only constant `γ(G|M)` is a remaining obligation.
+as a Levi-only constant `γ(G|M)` is a separate obligation.
 
 ## Canonical coordinates and the actual measure
 
@@ -114,5 +112,8 @@ Actual rational-point realizations of compact splitting, open-cell embedding
 and conullness, the source opposite-radical data and normalized subgroup
 measures, parabolic independence of gamma, the rank-one product defining
 `c(G|M)`, spectral density and all Plancherel conclusions remain separate
-obligations. These open obligations are not classified as permitted permanent
-Chapter V structural inputs by this unit.
+obligations; for actual rational points, the open-cell embedding and
+conullness are proved as `isOpenEmbedding_openCellMap_rationalPoint` (in
+`OpenCellPoints`) and `rationalDynamicOpenCellConull` (in
+`RationalOpenCellConullProof`). This module does not treat these obligations
+as permanent structural hypotheses of Chapter V.

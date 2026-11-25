@@ -111,5 +111,5 @@ geometric additivity theorem beyond its hypotheses. The kernel isomorphism
 is the formal pullback consequence of the multiplication equality. It is
 not Cartier duality of kernels and does not construct a character, finite
 Weil pairing or perfectness proof. No finiteness, finite-etaleness or rank
-claim is made about torsion, and this unit does not complete the Tate/PEL
-task.
+claim is made about torsion, and this module does not prove a Tate or PEL
+statement.

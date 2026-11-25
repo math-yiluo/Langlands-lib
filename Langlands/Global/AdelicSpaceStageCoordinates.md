@@ -34,5 +34,5 @@ naturality of `baseChangeRingPointsEquiv` and cancellation with the defining
 stage equivalence.
 
 The provenance is internal composition of the defining stage topology,
-the published level point bijection, and base-change identities. This unit
+the published level point bijection, and base-change identities. This module
 does not compare global fields or prove the adelic Weil restriction theorem.

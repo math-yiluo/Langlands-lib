@@ -18,8 +18,8 @@ Admissibility enters only through the finite-dimensional bidual argument
 Throughout, `k` is a field of characteristic zero, `G` a topological group, `ρ` a
 representation on `V` and `τ` a representation on `Y`. `SmoothDual ρ` is the Library's
 space of smooth functionals, with the action `smoothContragredient ρ`
-(`Langlands.Representation.Smooth.Contragredient.Definitions`). Averaging is Worker
-1643's `Langlands.Compact.CharZero.averageMap`.
+(`Langlands.Representation.Smooth.Contragredient.Definitions`). Averaging is
+`Langlands.Compact.CharZero.averageMap`.
 
 ## The bidual lemma
 

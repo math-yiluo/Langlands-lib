@@ -1,6 +1,6 @@
 # Exact image of the actual orbit-cover Hom-to-level comparison
 
-This internal unit gives an exact range for the existing construction of direct
+This internal module gives an exact range for the existing construction of direct
 raw levels from actual finite-etale orbit-cover morphisms. It uses the original
 universe-zero number fields, central simple unitary algebra, Harris signature
 charts, abelian family, supplied dual witness and dual-valued map, and full
@@ -62,12 +62,13 @@ supplied level. Both inverse laws are supplied by the constructed `Equiv`.
 identifies the underlying forward map with the original `HomLevel`.
 
 The full stabilizer condition is retained in both equivalences. In particular,
-this unit proves no equality between that stabilizer and the image of the
+this module proves no equality between that stabilizer and the image of the
 source fundamental group, and does not identify all orbit-valued direct levels
-with cover morphisms without this condition. Removing it still requires the
-generic stabilizer-lift result. Comparison on the full admissible test
+with cover morphisms without this condition. Removing it requires the
+generic stabilizer-lift result; `HarrisIntegralCMLevelOrbitCoverEquivalence`
+does so. Comparison on the full admissible test
 category, normalized rational-isogeny comparison, existence of the representing
 PEL scheme, output admissibility, smoothness and division-case projectivity
-remain open. The unit is an internal deduction from the unchanged transitive
+are not proved here. The module is an internal deduction from the unchanged transitive
 evaluation, cover Hom universal property and direct restriction constructions;
 it introduces no new original-literature assertion.

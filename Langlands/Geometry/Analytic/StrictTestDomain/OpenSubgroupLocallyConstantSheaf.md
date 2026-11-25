@@ -1,7 +1,5 @@
 # Full locally constant modules on the finite rational transport site
 
-Author: Worker 13.
-
 This internal construction gives an actual module sheaf on the existing
 `OpenSubgroupTransport.finiteTopology`. It uses every object and labelled arrow
 of that category and proves matching, gluing and uniqueness for its original

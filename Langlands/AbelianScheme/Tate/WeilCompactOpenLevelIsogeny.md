@@ -1,6 +1,6 @@
 # Natural rational-isogeny comparisons of compact-open Weil level towers
 
-Worker 142. This derived unit assembles the published actual
+This derived module assembles the published actual
 fixed-level rational-isogeny equivalences into natural isomorphisms of
 the full and away compact-open Weil level towers. Harris–Taylor,
 *The Geometry and Cohomology of Some Simple Shimura Varieties* (2001),
@@ -112,7 +112,7 @@ implement the same constructions and laws for the away tower, with the
 order and scalar hypotheses specified above. The modulus need not be
 prime; at a prime it gives the prime-to-that-prime version.
 
-This unit compares actual towers for specified rational isogenies over
+This module compares actual towers for specified rational isogenies over
 one base and point. It does not assert polarization, positivity,
 nondegeneracy or existence of compatible frames for arbitrary
 dual-valued maps. It constructs no PEL moduli functor or comparison

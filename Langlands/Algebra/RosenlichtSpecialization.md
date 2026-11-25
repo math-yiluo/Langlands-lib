@@ -1,7 +1,5 @@
 # Rational-point and specialization tools for Rosenlicht tensor units
 
-Worker 287, 17 November 2026.
-
 These internally derived helpers supply the specialization step of the algebraic
 Rosenlicht tensor-unit proof. Their rational-point assertions concern finite-type
 algebras over an algebraically closed field; zero detection and constancy also

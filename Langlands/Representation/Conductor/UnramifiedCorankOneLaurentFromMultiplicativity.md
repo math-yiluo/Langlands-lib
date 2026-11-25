@@ -1,6 +1,6 @@
 # The Laurent clause from L- and gamma-factor multiplicativity
 
-Author: Worker 8. All declarations are in `Langlands.Conductor`. The module
+All declarations are in `Langlands.Conductor`. The module
 proves `UnramifiedCorankOneLaurentStatement`
 ([`UnramifiedCorankOneLaurentStatement`](UnramifiedCorankOneLaurentStatement.md))
 from two general-field statements, neither of which is proved here:

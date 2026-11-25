@@ -1,8 +1,6 @@
 # Reduction of finite-surjective affine descent to the Noetherian case
 
-Authors: Worker 239 and Worker 148. Worker 239 supplied the shared Lean and
-Markdown draft; Worker 148 checked the sources and clarified the quantifiers
-and provenance.
+The sources, the quantifiers and the provenance were checked.
 
 This module states the Noetherian-approximation step of the proof of Stacks
 Project [Lemma 70.15.1, Tag 07VS](https://stacks.math.columbia.edu/tag/07VS)
@@ -58,7 +56,7 @@ or algebraic-space parameter.
 
 ## Provenance
 
-This is a derived internal reduction statement for the planned presentation
+This is a derived internal reduction statement for the presentation
 route to Stacks Lemma 70.15.1,
 `FiniteSurjectiveAffineDescentStatement`. It is not stated in this form in the
 literature. It records the content of the second and third paragraphs of
@@ -100,11 +98,14 @@ The other registered original sources are:
 The cited originals and their retained comments were read. Comment #1792
 on Section 70.15 concerns Proposition 70.15.2; comment #216 on Theorem
 65.10.5 corrects a typo. The other cited tag pages have no comments.
-No source-specific errata note was present in the checked workspace,
-project or Library errata locations.
+No source-specific errata note was present in the checked project or
+Library errata locations.
 
-The future proof must construct and compare suitable Noetherian finite-level
-presentations and affine quotients. This declaration supplies no approximation
+The proof, `etaleEquivalenceRelationNoetherianApproximation` in
+`AlgebraicSpace.FiniteSurjectiveAffineDescentProof`, constructs and compares suitable
+Noetherian finite-level presentations (`etaleEquivalenceRelationNoetherianFirstLevel`,
+`etaleEquivalenceRelationNoetherianCoverLevel`) and affine quotients
+(`etaleEquivalenceRelationCartesianAffineQuotient`). This declaration supplies no approximation
 data or limit theorem, and assumes no such result as an extra hypothesis.
 The numbered limit results above are cited as steps explicitly invoked in
 the retained proof of 07VS; this module does not formalize their individual
@@ -112,8 +113,10 @@ statements.
 
 ## Scope and role
 
-This is the approximation step of the planned presentation route. Together
+This is the approximation step of the presentation route. Together
 with `EtaleEquivalenceRelationAffineDescentTransferStatement` and a proof of
 `NoetherianEtaleEquivalenceRelationAffineDescentStatement`, it gives the
-published Lemma 70.15.1 statement. The proof is a separate unit.
+published Lemma 70.15.1 statement (`finiteSurjectiveAffineDescent`). The proof of
+this statement is `etaleEquivalenceRelationNoetherianApproximation`, in
+`AlgebraicSpace.FiniteSurjectiveAffineDescentProof`.
 All imported Library Lean/Markdown pairs remain unchanged.

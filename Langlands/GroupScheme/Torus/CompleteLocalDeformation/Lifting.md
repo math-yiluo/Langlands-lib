@@ -1,7 +1,5 @@
 # Lifting split bialgebras through nilpotent thickenings
 
-Worker 748.
-
 This module is an internal helper for the proof of
 `Langlands.GroupScheme.MultiplicativeTypeCompleteLocalDeformationStatement` (Conrad,
 *Reductive group schemes*, Appendix B, B.3.2). The proof uses it for the following step: over
@@ -108,7 +106,7 @@ Here `C` is a commutative `R`-bialgebra.
   bialgebra map (`BialgHom.ofAlgHom`) and bijective, and `θ` is its inverse.
 - `comul_one_tmul J x`: the comultiplication of `(R ⧸ J) ⊗ C` on `1 ⊗ x` is the image of
   `1 ⊗ comul x` under `TensorProduct.AlgebraTensorModule.distribBaseChange`.
-- `exists_bialgEquiv_lift_of_baseChange J hJ e` (Worker 869) takes a flat `R`-bialgebra `C`,
+- `exists_bialgEquiv_lift_of_baseChange J hJ e` takes a flat `R`-bialgebra `C`,
   a nilpotent ideal `J`, and an additive commutative monoid `N`. Given a bialgebra isomorphism
   `e : (R ⧸ J) ⊗[R] C ≃ₐc[R ⧸ J] AddMonoidAlgebra (R ⧸ J) N`, it produces a bialgebra
   isomorphism `θ : C ≃ₐc[R] AddMonoidAlgebra R N` with

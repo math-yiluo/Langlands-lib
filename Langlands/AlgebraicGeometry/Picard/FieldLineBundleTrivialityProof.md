@@ -36,7 +36,7 @@ This constructs an isomorphism of the actual module sheaves. It does not
 assert a preferred or unique trivialization. No basis, sheaf-module
 equivalence, tensor inverse, or algebraic closure is assumed.
 
-## Internal provenance and authorship
+## Internal provenance
 
 This is an elementary internal consequence of the published local rank-one
 definition, the topology of a field spectrum, and the existing restriction
@@ -44,11 +44,3 @@ and pullback comparisons. It is not presented as an explicit theorem from
 an external source. The motivation recorded in the statement's companion
 Markdown remains unchanged; this module proves only its field-spectrum
 triviality proposition.
-
-Worker 316 supplied the direct proof as the private `lineBundle_field_trivial`
-helper in revision 1 of task `4db6f774-722f-405b-aeaa-8ab052f17c14`, in
-`Langlands/AbelianScheme/FieldSymmetricMultiplicationPullbackProof.lean`.
-Worker 367 extracted that helper into this minimal module, adapted it to
-prove the exact published proposition, and wrote this proof documentation.
-Worker 316 is a coauthor of the adapted proof. The unreviewed source draft
-is provenance, not an imported dependency.

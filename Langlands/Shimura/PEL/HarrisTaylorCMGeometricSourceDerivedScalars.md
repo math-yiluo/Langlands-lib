@@ -1,12 +1,10 @@
 # Derived scalar comparisons for exact geometric CM source diagrams
 
-Author: Worker 57.
-
 This internal construction places the actual scalar-restricted quotient
 coefficient source diagram in any integer degree of its unbounded derived
 category. It compares that object with the existing exact-derived integral
 associated object, constructs its invariant-evaluation isomorphism, and proves
-that the forward and inverse maps recover the particular published ordinary
+that the forward and inverse maps recover the particular ordinary
 scalar comparison and evaluation. Every reduction in the reachable coefficient
 diagram is retained.
 
@@ -77,8 +75,8 @@ u_k : B_k ≅ T_k
 ```
 
 B_k uses the direct quotient-ring associated sheaves restricted to the fixed
-ring R. Its transitions are the published transitions transported through the
-actual component scalar comparisons. The published isomorphisms satisfy
+ring R. Its transitions are the existing transitions transported through the
+actual component scalar comparisons. These isomorphisms satisfy
 `u_k = e_k ≪≫ t_k`. They are the particular constructed maps, with every
 coefficient reduction preserved.
 
@@ -95,15 +93,14 @@ comparison hypothesis.
 All new content is an internal categorical deduction from the two linked
 predecessors and their imported
 [HarrisTaylorCMGeometricAssociatedScalars](HarrisTaylorCMGeometricAssociatedScalars.md).
-There is no new assertion attributed directly to external literature or reused
-unpublished draft.
+There is no new assertion attributed directly to external literature.
 
 ## Object and scalar comparison in any degree
 
 For `d : ℤ`, write `s_d = DerivedCategory.singleFunctor S_k d` and let
 `M_d` be the full coefficient diagram M placed in degree d. Write A_d and T_d
 for the existing exact-derived associated and constant objects at M_d. Their
-published canonical single-degree comparisons are
+canonical single-degree comparisons are
 
 ```text
 b_A : A_d ≅ s_d.obj A_k
@@ -137,7 +134,7 @@ canonical comparison, rather than only an unspecified isomorphism class.
 
 ## Derived evaluation and exact recovery
 
-Let `t_d : A_d ≅ T_d` be the published derived invariant-evaluation
+Let `t_d : A_d ≅ T_d` be the derived invariant-evaluation
 isomorphism evaluated at M_d.
 `cmHarrisGeometricAssociatedRestrictedCoefficientSourceDerivedTrivialization ... k d`
 constructs
@@ -153,10 +150,10 @@ u_d = s_d.mapIso u_k ≪≫ b_T.symm.
 ```
 
 Its implemented proof applies `Iso.ext` to the forward maps, expands the two
-new composites, and uses the published single-degree recovery formula
+new composites, and uses the single-degree recovery formula
 `t_d.hom = b_A.hom ≫ s_d.map t_k.hom ≫ b_T.inv`. It cancels b_A.inv followed by
 b_A.hom, combines the mapped ordinary morphisms by functoriality, and uses the
-published definition `u_k = e_k ≪≫ t_k`.
+definition `u_k = e_k ≪≫ t_k`.
 
 The `_hom` and `_inv` theorems then recover
 
@@ -172,11 +169,11 @@ records `e_d ≪≫ t_d = u_d`, directly from the construction.
 
 ## Scope
 
-This unit constructs and compares the actual quotient coefficient objects in
+This module constructs and compares the actual quotient coefficient objects in
 every degree, at a fixed source cover k, with their entire reachable
 coefficient diagrams. General coefficient systems with exponent-dependent
 quotient rings require further scalar-restriction constructions. Compatibility
-of these derived maps with change of source is a separate extension. Arbitrary
+of these derived maps with change of source is a separate extension, proved in
+`HarrisTaylorCMGeometricSourceDerivedScalarChange`. Arbitrary
 scheme inverse-image comparisons, canonical-model identification, adic
-completion and discharge of the geometric premises remain outside this unit.
-The host task remains incomplete.
+completion and discharge of the geometric premises remain outside this module.

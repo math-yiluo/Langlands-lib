@@ -1,7 +1,5 @@
 # Irreducibility, admissibility and Jacquet vanishing of finite external tensors
 
-Author: Worker 218.
-
 This module proves three general properties of the Library's actual finite
 external tensor product `Langlands.FiniteTensor.external` (from
 `Langlands.Representation.Tensor.Finite`). Here `ρ i` is a representation of a

@@ -41,7 +41,8 @@ property are unnecessary. The inclusions and root data are actual Library
 objects. This module does not construct the special-linear local isomorphism
 or prove the full Tits cocycle statement.
 
-The stage-character interface is Worker 243's extension of the finite-stage
-construction of Workers 61 and 5375. Its three dependency pairs are reused
+The stage-character interface (module `Reductive.StarActionFiniteStageTorus`)
+extends the finite-stage construction of `Reductive.StarActionFiniteStageProof`.
+Its three dependency pairs are reused
 unchanged. The additional tower coherence and root-restriction comparison here
 are direct consequences of those definitions and the original Tits index.

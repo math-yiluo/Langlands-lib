@@ -1,7 +1,5 @@
 # Common solvable envelope without proper pseudo-parabolic subgroups
 
-Author: Worker 1413.
-
 `Langlands.GroupScheme.noProperPseudoParabolicSolvableEnvelope` proves the exact
 published proposition
 `Langlands.GroupScheme.NoProperPseudoParabolicSolvableEnvelopeStatement.{u}`

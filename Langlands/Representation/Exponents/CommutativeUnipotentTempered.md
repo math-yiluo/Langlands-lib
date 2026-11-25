@@ -1,6 +1,6 @@
 # Unipotent representations of commutative reductive groups are tempered
 
-Author: Worker 100. Module `Langlands.Representation.Exponents.CommutativeUnipotentTempered`.
+Module `Langlands.Representation.Exponents.CommutativeUnipotentTempered`.
 
 This helper module proves the temperedness half of the counterexample built for Renard's
 Remark after the Corollary of VII.2.6: `𝔾_m` acting on `ℂ²` by `x ↦ [[1, ord(x)], [0, 1]]` is

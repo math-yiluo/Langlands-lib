@@ -26,7 +26,7 @@ namespace Langlands.Global
 open NumberField
 open Automorphic (CuspidalOperatorRealization CuspidalSpectralPresentation)
 open CuspidalPairFunctionalEquation (HasIrreducibleAdmissibleComponents residueCardinality)
-open Langlands.ClassField.Global.RelativeWeilGroup (HasUnitaryCentralCharacter)
+open Langlands.ClassFieldTheory.Global.RelativeWeilGroup (HasUnitaryCentralCharacter)
 
 /-- **Getz–Hahn (2024), Theorem 11.5.2, non-Archimedean case, for cuspidal pairs.** For actual
 cuspidal realizations `T`, `T'` of `GL_(r+1)`, `GL_(t+1)` with unitary central characters,

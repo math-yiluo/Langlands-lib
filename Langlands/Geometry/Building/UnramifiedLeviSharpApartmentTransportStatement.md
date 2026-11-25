@@ -1,7 +1,5 @@
 # Levi sharp transport from membership in an unramified apartment
 
-Author: Worker 181.
-
 Lean module: `Langlands.Geometry.Building.UnramifiedLeviSharpApartmentTransportStatement`.
 
 This module states the geometric prerequisite for the proof of

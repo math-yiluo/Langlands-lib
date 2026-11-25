@@ -1,7 +1,5 @@
 # Actual field roots of complementary-torus centralizers
 
-Worker 634.
-
 For the actual component-indexed centralizers of an
 `AffineSimplyConnectedPinnedModel`, this internal module identifies the roots
 on every supplied field-valued fibre. With respect to the full normalized

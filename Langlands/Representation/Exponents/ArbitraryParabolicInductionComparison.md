@@ -1,6 +1,6 @@
 # Restricting exponents through normalized induction
 
-Author: Worker 1666. Internal proof of Renard 2026, VII.1.1, lemma (i).
+Internal proof of Renard 2026, VII.1.1, lemma (i).
 
 The statement names the exact induction comparison for a represented parabolic,
 a chosen Levi and radical, their isomorphic multiplication, the two split
@@ -28,5 +28,6 @@ The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French version dated 9 July 2026, VII.1.1, printed pages 220–221 / PDF pages
 226–227, registered as `renard-2026-representations-groupes-reductifs-padiques`,
 SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-This is a supporting internal derivation; the full target also requires Jacquet
+This is a supporting internal derivation; the full
+`ArbitraryParabolicExponentStatement` also requires Jacquet
 spanning and finiteness and the separate Jacquet exponent comparison.

@@ -1,7 +1,5 @@
 # Refining the torus splitting cover
 
-Worker 608 and Worker 653.
-
 This internal construction refines the supplied relative torus's small étale
 splitting cover. On each splitting chart, reductivity, closed torus inclusion,
 fibrewise maximality, the relative Borel predicate and the all-test torus

@@ -119,7 +119,7 @@ def cmHarrisLambdaCohomologyObjects : LambdaAdic F K l.1 :=
 /-- A Galois element acts on the representation by its action on `H^d(S_U ×_F F̄, W)_λ`. -/
 theorem cmHarrisLambdaCohomologyObjects_representation_apply
     (g : Field.absoluteGaloisGroup F) :
-    (lambdaObj).val.representation g = ((lambdaCoh).ρ g).hom :=
+    (lambdaObj).val.representation g = ((lambdaCoh).ρ g).asHom.hom :=
   rfl
 
 /-- The dimension of the representation is the dimension of `H^d(S_U ×_F F̄, W)_λ` over `K_λ`. -/

@@ -28,6 +28,3 @@ This is an internal derivation using the original quotient measure, L2
 norm, finite adelic topology, representation and actual Haar averages.
 It does not assert archimedean smoothness, automorphic tensor realization,
 admissibility, growth, decay or spectral decomposition.
-
-Worker 116 authored the adopted proof. Worker 1557 prepared the focused
-submission and updated this explanation.

@@ -34,4 +34,4 @@ parabolic root presentation and geometric unipotent radical, the actual
 semidirect decomposition with closed unipotent image, continuity of its
 projection, compactness of its literal quotient, and the ambient local
 compactness and nonarchimedean group structures. This conditional family result
-does not yet prove the host theorem for every smooth representation.
+does not prove the theorem it serves, which concerns every smooth representation.

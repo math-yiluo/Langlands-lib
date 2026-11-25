@@ -45,12 +45,14 @@ theorem isClosedImmersion_evaluate_iff {T T' : Over S} (a : T' ⟶ T)
       ((Descent.pullbackComparison T.hom a.left T'.hom (Over.w a) H).hom.hom.hom.left ≫
         (evaluate a i).hom.hom.left ≫
         (Descent.pullbackComparison T.hom a.left T'.hom (Over.w a) G).inv.hom.hom.left)
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
     infer_instance
   · intro h
     change IsClosedImmersion
       ((Descent.pullbackComparison T.hom a.left T'.hom (Over.w a) H).inv.hom.hom.left ≫
         ((baseChange a.left).map i).hom.hom.left ≫
         (Descent.pullbackComparison T.hom a.left T'.hom (Over.w a) G).hom.hom.hom.left)
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
     infer_instance
 
 /-- Compose the actual iterated-pullback comparison with a chosen direct-fibre

@@ -20,8 +20,6 @@ Remark 10.127.12 (tag 00QW) gives an example where a system with the properties 
 
 Registered source `stacks-algebra-flatness-criteria-2026-10-22`, content SHA256 `4bc1f2db6141508f6dad2132d4abc7963380cd71497ad20620c0e511b972a949`, files `00QV.html` and `00QL.html`. The abstract formulation is internal and adds no assumptions to 00QV.
 
-## Intended proof route
+## Proof route
 
-The proof belongs to a separate task. Composition of pushout squares makes `L ⊗[A] B`, with `ψ.toAlgebra`, a localization of `Q'` at the image of `M`. The equation `f ∘ ψ = algebraMap Q' C` then makes `f` a map between two localizations of `Q'`. Because the target is local, this map is the localization at the contracted maximal ideal. The published theorem `Langlands.Algebra.isLocalization_atPrime_tensor_of_isPushout` in `Langlands.Algebra.PrimeLocalizationCriterion` has the same hypotheses and conclusion.
-
-Worker 706 designed this interface. Worker 928 checked it and revised this documentation.
+The proof is `Langlands.Algebra.tensorPrimeLocalization` in `Langlands.Algebra.TensorPrimeLocalizationProof`. Composition of pushout squares makes `L ⊗[A] B`, with `ψ.toAlgebra`, a localization of `Q'` at the image of `M`. The equation `f ∘ ψ = algebraMap Q' C` then makes `f` a map between two localizations of `Q'`. Because the target is local, this map is the localization at the contracted maximal ideal. The published theorem `Langlands.Algebra.isLocalization_atPrime_tensor_of_isPushout` in `Langlands.Algebra.PrimeLocalizationCriterion` has the same hypotheses and conclusion.

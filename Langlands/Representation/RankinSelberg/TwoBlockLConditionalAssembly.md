@@ -4,7 +4,9 @@ This module is internal support for the two-block proof of JPSS (1983),
 Theorem (3.1)(ii), with its two descending inductions from Section 7. It proves
 an implication from explicit analytic and representation-theoretic inputs to
 `TwoBlockLFactorMultiplicativityStatement` in a stable carrier universe. It
-does not prove the closed multiplicativity statement of the parent task.
+does not prove the closed multiplicativity statement,
+`TwoBlockLFactorMultiplicativityStatement` with independent universes, which
+`twoBlockLFactorMultiplicativity` in `TwoBlockLFactorMultiplicativityProof` proves.
 
 The namespace is `Langlands.RankinSelberg.TwoBlockLConditionalAssembly`.
 `PolynomialLDivides P A` means
@@ -76,8 +78,10 @@ fieldwise predicate defined in this module. This predicate requires, for each
 base rank `r + 1`, arbitrary full-type test rank `r + 2`, and arbitrary
 continuous `χ`, certified polynomials for the test against the base and the
 actual upper induction `(χ, base)`, with `Pbase | Pind`. It asserts neither its
-own proof nor the availability of a closed endpoint theorem. The separate
-endpoint statement/proof task remains necessary.
+own proof nor the availability of a closed endpoint theorem. The endpoint is
+proved separately: `equalRankRankOneExtensionLDivisibility` in
+`EqualRankRankOneExtensionDivisibilityProof` supplies it, through
+`TwoBlockLVerifiedInputAssembly.equalRankReverseAt`.
 
 The exported theorem
 `twoBlockLMultiplicativity_of_inputs_commonUniverse` concludes exactly
@@ -88,9 +92,12 @@ symmetric L-polynomial existence, stable-universe equal-rank swap, normalized
 product full type, scalar-versus-block high-ramification vanishing, scalar
 rank-one full type, scalar-versus-block equal-rank swap, and unbounded
 continuous quasicharacter conductors for every field. None of these analytic
-premises is discharged by this contribution. The independent original
-carrier universes also require the separately owned common-universe
-transport before the parent task's closed target can be proved.
+premises is discharged by this module. The independent original
+carrier universes also require the common-universe transport
+`twoBlockLFactorMultiplicativity_of_commonUniverse` in
+`TwoBlockUniverseTransport` before the closed statement can be proved;
+`TwoBlockLVerifiedInputAssembly` and `TwoBlockLFactorMultiplicativityProof`
+complete that proof.
 
 Provenance is internal: the relation algebra, certificate packaging, exact
 auxiliary family identification, and conditional assembly are derived from

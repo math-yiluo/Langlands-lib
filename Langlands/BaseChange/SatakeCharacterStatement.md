@@ -2,8 +2,9 @@
 
 Module `Langlands.BaseChange.SatakeCharacterStatement`.
 `Langlands.BaseChange.SatakeCharacterStatement.{u}` is a proposition-valued definition
-(statement 6 of Task 7424). It states an unproved obligation; it is neither proved nor
-assumed in this module.
+(statement 6 of the statements on Satake characters and unramified base change). It is
+neither proved nor assumed in this module; the Library proves it as `satakeCharacter`
+(module `Langlands.BaseChange.SatakeCharacter`).
 
 ## Statement
 

@@ -29,5 +29,5 @@ transporter or assert a geometric smooth representative.
 
 The provenance is the internal group-law calculation and the imported
 fixed-point lifting theorem. No additional literature theorem is used. The
-unchanged graded helper behind lifting retains Worker 1131's contribution to the
-original rank-one square-zero argument.
+graded helper behind lifting is the square-zero argument generalized from the
+rank-one case.

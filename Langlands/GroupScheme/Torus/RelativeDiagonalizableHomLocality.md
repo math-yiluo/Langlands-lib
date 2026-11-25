@@ -90,15 +90,17 @@ The proof uses only the standard axioms.
 
 ## Provenance
 
-This is internal infrastructure for Task 6943 (Conrad, *Reductive group schemes*,
+This is internal infrastructure for the proof `multiplicativeTypeTorusEmbedding` of
+`MultiplicativeTypeTorusEmbeddingStatement` (Conrad, *Reductive group schemes*,
 Proposition B.3.8: groups of multiplicative type are closed subgroups of tori).
 It records, in the form that proof needs, the standard fact that over any base,
 homomorphisms between diagonalizable groups with finitely generated character
 groups are given Zariski-locally by homomorphisms of character groups. For
 `Λ' = ℤ` this is the identification `Hom_{S-gp}(D_S(M), G_m) = Γ(S, M_S)` that
 Conrad uses, for example in Remark 6.1.2. The definitions and statements were
-written for this task. Their content is exactly the Lean statements above. The
+written for that proof. Their content is exactly the Lean statements above. The
 interfaces (diagonalizableMap with functoriality, base change, local rigidity,
-uniqueness) were agreed with Worker 386, who assembles the proof of Task 6943.
+uniqueness) are the ones used by that proof, which is assembled in
+[`MultiplicativeTypeTorusEmbedding`](MultiplicativeTypeTorusEmbedding.md).
 
 `diagonalizableMap` is imported from [`RelativeDiagonalizableExactQuotient`](RelativeDiagonalizableExactQuotient.md); the point formulas here use that same base-change definition.

@@ -16,7 +16,7 @@ universe u
 namespace Langlands.Global
 
 open NumberField
-open Langlands.ClassField.Global
+open Langlands.ClassFieldTheory.Global
 
 namespace CMUnramifiedInfinity
 

@@ -16,7 +16,7 @@ For a presented affinoid algebra with spectrum small in universe `v`,
 `SmallAffinoidSpectrum.chartMap` turns a bounded map from a chosen
 target chart algebra into the original algebra into a complete strong
 map to the saturated target. The target space and chart-index
-universes are both `v`, as for the localized target statement.
+universes are both `v`, as for `LocalizedEtaleFieldPointPullbackStatement`.
 The construction transports along the retained global-algebra equality
 and applies the canonical global-chart source map. Its image lies
 inside the chosen target chart and its global bounded pullback is
@@ -43,5 +43,5 @@ is quotiented by its own actual kernel; no faithfulness of the
 original evaluation or global chart on the target is assumed.
 
 The provenance is internal, from full-field-point chart extension and
-the actual canonical strong chart-source maps. This unit does not
+the actual canonical strong chart-source maps. This module does not
 assert the final localized pullback preservation statement.

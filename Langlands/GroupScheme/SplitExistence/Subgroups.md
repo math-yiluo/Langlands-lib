@@ -1,6 +1,6 @@
 # Subgroups of the Chevalley group
 
-Author: Worker 1398. Internal helper of the proof of the split reductive Existence Theorem.
+Internal helper of the proof of the split reductive Existence Theorem.
 
 For Chevalley data `D` and a commutative ring `K`, the module defines these subgroups of
 `GL_n(K)`:

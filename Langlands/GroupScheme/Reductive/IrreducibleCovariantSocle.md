@@ -1,7 +1,5 @@
 # Every irreducible representation is a covariant socle
 
-Author: Worker 900.
-
 `SplitPinning.exists_isRealizedBy_intertwines_affineCovariantSocleRepresentation`:
 let `p` be a split pinning of `G` over a field `k`, and let
 `ρ : MatrixRepresentation G n` be irreducible. Then there are:

@@ -82,6 +82,7 @@ theorem exists_smoothAffineHomModel (hHom : HomGeneralStatement.{u})
   let := hGaff
   let := hGsm
   obtain ⟨T, hT, -, g, hg⟩ := hHom U A G₀ DH.group (eG.inv ≫ f ≫ eH.hom) ∅
+  have : IsScalarTower U T A := IsScalarTower.subalgebra' U A A T
   let cG := pullbackComparison (Spec.algebraMap U T) (Spec.algebraMap T A)
     (Spec.algebraMap U A) (smoothModel_spec_comp U T A) G₀
   let cH := pullbackComparison (Spec.algebraMap U T) (Spec.algebraMap T A)

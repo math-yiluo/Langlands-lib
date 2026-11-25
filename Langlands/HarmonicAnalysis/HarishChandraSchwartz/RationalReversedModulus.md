@@ -1,6 +1,6 @@
 # Modulus cancellation under reversal of the minimal parabolic
 
-Worker 248, Task 5460. `RationalReversedModulusStatement.{u}` is a Prop-valued
+`RationalReversedModulusStatement.{u}` is a Prop-valued
 statement at arbitrary universe `u`; `rationalReversedModulus` proves it.
 This derived module transports the published actual
 opposite-radical Haar reciprocity to the exact `standardUnipotentModulus`

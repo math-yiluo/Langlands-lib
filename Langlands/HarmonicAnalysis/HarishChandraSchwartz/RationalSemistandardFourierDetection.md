@@ -25,7 +25,8 @@ In the direction from zero cutoff to intrinsic cuspidality, it applies
 `hreconstructZero` to `constantTerm f g` at the rank inequality from `rank_lt`.
 This input is the zero case of the local reconstruction formula VIII.1 (2)
 on each actual strictly smaller Levi. Full reconstruction and its rank
-restriction belong to the subsequent adapter to Task 7276. The zero-case
+restriction belong to the full VIII.1 surjectivity and character-inversion
+targets, not to this module. The zero-case
 reduction is independent of the finiteness premise used to construct the
 smooth proper cutoff. The opposite implication uses VII.1.2 and the fixed
 radical Haar for each proper Fourier component.

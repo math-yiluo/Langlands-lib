@@ -280,6 +280,7 @@ theorem maximalTorusFibreSpreading : MaximalTorusFibreSpreadingStatement.{u} := 
     let : IsOpenImmersion (B.map a).hom.hom.left := by
       rw [← hfe, B.map_comp]
       change IsOpenImmersion ((B.map f).hom.hom.left ≫ (B.map e).hom.hom.left)
+      set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
       infer_instance
     let : IsClosedImmersion (B.map a).hom.hom.left := haclosed.baseChange b
     let : GeometricallyConnected (B.obj T.toGrp).X.hom :=
@@ -303,11 +304,13 @@ theorem maximalTorusFibreSpreading : MaximalTorusFibreSpreadingStatement.{u} := 
       rw [← haj, Functor.map_comp]
       change IsOpenImmersion
         (((baseChange V.ι).map a).hom.hom.left ≫ ((baseChange V.ι).map d.hom).hom.hom.left)
+      set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
       infer_instance
     let : IsClosedImmersion (((baseChange V.ι).map j).hom.hom.left) := by
       rw [← haj, Functor.map_comp]
       change IsClosedImmersion
         (((baseChange V.ι).map a).hom.hom.left ≫ ((baseChange V.ι).map d.hom).hom.hom.left)
+      set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
       infer_instance
     exact component_of_open_closed ((baseChange V.ι).map j)
 

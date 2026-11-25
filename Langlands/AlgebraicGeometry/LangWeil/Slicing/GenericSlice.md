@@ -1,7 +1,5 @@
 # Geometric irreducibility of generic hyperplane sections
 
-Author: Worker 5132.
-
 This helper module of the hyperplane-slicing step `FamilyLangWeilSlicingStatement` spreads
 Bertini's theorem out from the generic point of the parameter space of hyperplanes.
 

@@ -1,6 +1,6 @@
 # Locally constant sheaves on finite weighted rational sites
 
-Author: Worker 56. Internal derivation from the actual rational chart category,
+Internal derivation from the actual rational chart category,
 the published finite-cover quotient criterion and the original-domain
 locally constant sieve-gluing construction.
 
@@ -74,7 +74,7 @@ positive real radii, actual closed quotient by the equations
 `g * Y_j - f_j`, bounded restrictions and original quotient topologies.
 The stored unit-generation condition implies the source's absence of
 common zeros; this construction claims no converse. Trivial valuations,
-nilpotents and zero quotient algebras remain included. This unit constructs
+nilpotents and zero quotient algebras remain included. This module constructs
 locally constant function sheaves on the restricted finite rational site;
 general analytic algebra sheafness, analytic atlases, full analytic sites,
 group-action topology, etale and quasi-etale sites and the Harris tower

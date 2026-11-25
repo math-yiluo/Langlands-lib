@@ -1,6 +1,6 @@
 # Rational conjugation of actual additive coefficient operators
 
-This internal derived unit works over any field with a finite matrix
+This module, internal and derived, works over any field with a finite matrix
 representation of an actual group scheme. `VectorGroup.conjugateMap x g`
 postcomposes a supplied additive group map `x` with the actual inner scheme
 automorphism of a supplied rational point `g`. Its point formula holds on

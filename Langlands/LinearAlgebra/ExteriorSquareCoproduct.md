@@ -1,7 +1,5 @@
 # An exterior-square comparison from cup generators
 
-Author: Worker 327.
-
 This internal algebraic construction is a helper for the degree-two
 cohomology comparison of abelian varieties. It works over an arbitrary
 commutative ring `R`, with a free module `M` and arbitrary modules `H`, `P`.

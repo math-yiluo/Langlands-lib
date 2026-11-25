@@ -51,16 +51,16 @@ def rationalInertiaBlockCenterFromEnd :
 
 @[simp]
 theorem rationalInertiaBlockCenterFromEnd_app_generator (f : MonoidAlgebra ℂ Γ) :
-    ((rationalInertiaBlockCenterFromEnd G π X a f).app X).hom = (a f : End X.obj) := by
+    ((rationalInertiaBlockCenterFromEnd G π X a f).app X).hom = (a f : End X.obj).asHom := by
   change (rationalInertiaBlockCenterEquiv G π X
-    ((rationalInertiaBlockCenterEquiv G π X).symm (a f)) : End X.obj) = _
+    ((rationalInertiaBlockCenterEquiv G π X).symm (a f)) : End X.obj).asHom = _
   rw [RingEquiv.apply_symm_apply]
 
 /-- The action on Hom modules is precomposition by the given central element. -/
 theorem rationalInertiaBlockCenterFromEnd_comp
     (f : MonoidAlgebra ℂ Γ) (Y : RationalInertiaBlock G π) (φ : X.obj ⟶ Y.obj) :
     φ ≫ ((rationalInertiaBlockCenterFromEnd G π X a f).app Y).hom =
-      (a f : End X.obj) ≫ φ := by
+      (a f : End X.obj).asHom ≫ φ := by
   have h := congrArg (fun k => k.hom)
     (CatCenter.naturality (rationalInertiaBlockCenterFromEnd G π X a f)
       (ObjectProperty.homMk φ : X ⟶ Y))
@@ -71,7 +71,7 @@ theorem rationalInertiaBlockCenterFromEnd_comp
 /-- Any scalar action on the Hom module is the same scalar action on the object. -/
 theorem rationalInertiaBlockCenterFromEnd_scalar_action
     (f : MonoidAlgebra ℂ Γ) (Y : RationalInertiaBlock G π) (c : ℂ)
-    (h : ∀ φ : X.obj ⟶ Y.obj, (a f : End X.obj) ≫ φ = c • φ) :
+    (h : ∀ φ : X.obj ⟶ Y.obj, (a f : End X.obj).asHom ≫ φ = c • φ) :
     ((rationalInertiaBlockCenterFromEnd G π X a f).app Y).hom = c • 𝟙 Y.obj := by
   apply rationalInertiaBlock_hom_ext G π X
   intro φ
@@ -86,10 +86,10 @@ theorem rationalInertiaBlockCenterFromEnd_scalar
       c • 𝟙 Y.obj := by
   apply rationalInertiaBlockCenterFromEnd_scalar_action G π X a _ Y c
   intro φ
-  have hc : (a (MonoidAlgebra.single 1 c) : End X.obj) = c • 𝟙 X.obj := by
-    change (a (algebraMap ℂ (MonoidAlgebra ℂ Γ) c) : End X.obj) = _
+  have hc : (a (MonoidAlgebra.single 1 c) : End X.obj).asHom = c • 𝟙 X.obj := by
+    change (a (algebraMap ℂ (MonoidAlgebra ℂ Γ) c) : End X.obj).asHom = _
     rw [a.commutes]
-    change algebraMap ℂ (End X.obj) c = _
+    change (algebraMap ℂ (End X.obj) c).asHom = _
     simp [Algebra.algebraMap_eq_smul_one]
   rw [hc]
   simp

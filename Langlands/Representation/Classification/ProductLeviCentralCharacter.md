@@ -21,7 +21,7 @@ character along a continuous group homomorphism has open kernel when the
 representation is smooth and its complex carrier is nonzero. A nonzero vector
 has an open stabilizer. The inverse image of this stabilizer lies in the
 character kernel, since scalar multiplication on that vector is faithful.
-This argument is adapted from Worker 349's private helper
+This argument is adapted from the private helper
 `scalarCharacter_open_kernel` in `TemperedExponentEdgeProof`.
 
 `Classification.HasScalarCharacter.eq_unitaryCentralCharacter` compares a

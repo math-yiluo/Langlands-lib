@@ -1,7 +1,5 @@
 # Integral models for doubled-root depth subgroups of apartment lifts
 
-Author: Worker 510.
-
 The module defines `UnramifiedDoubledRootDepthModelStatement.{u}` as an unproved
 proposition. It is an internal prerequisite for the depth-preserving two-factor
 descent required by `UnramifiedComparisonRootFieldStatement`. It neither proves

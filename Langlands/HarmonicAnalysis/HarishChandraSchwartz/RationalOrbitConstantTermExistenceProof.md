@@ -65,6 +65,6 @@ structure enter only through the representative `R`.
 
 ## Check
 
-`lean_check` with environment `5c94c648-e8dc-4002-a50a-071ebf3f6096`: 0 errors, 0 warnings;
+`lean_check`: 0 errors, 0 warnings;
 inspection of `rationalOrbitConstantTermExistence` reports level parameters `u, uV` and axioms
 `propext`, `Classical.choice`, `Quot.sound`.

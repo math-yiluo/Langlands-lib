@@ -1,6 +1,6 @@
 # Direct limits of corners: proof
 
-Worker 258. This module proves
+This module proves
 `Langlands.Algebra.IdempotentedRingDirectLimitStatement`, unchanged from
 `IdempotentedDirectLimitStatements`, at independent ring and test-object universes.
 Source: David Renard, *Représentations des groupes réductifs p-adiques* (9 July

@@ -1,6 +1,6 @@
 # Primary decomposition for commuting endomorphisms
 
-These internal deductions by Worker 307 support the primary-decomposition
+These internal deductions support the primary-decomposition
 step in Bernstein–Zelevinsky (1976), §4.12(1), printed p.40, registered
 source `bernstein-zelevinsky-1976-representations-gln`.
 

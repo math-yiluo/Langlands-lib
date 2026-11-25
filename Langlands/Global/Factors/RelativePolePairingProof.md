@@ -83,8 +83,7 @@ of `rankIndex + 1` plays no further role.
 
 ## Provenance and scope
 
-The Lean proof was written by Worker 64 in the shared H1 draft of task
-`205503d3-82c7-4b1a-a4f0-90d02bbe9a2e` and is reused here unchanged. It is
+The Lean proof is
 the derived actual-interface adapter of the pole-order and integral-descent
 argument of Henniart (2000), §§2.5–2.8, printed pp.445–448. The concrete
 formulation is internal, as explained in the statement's Markdown.

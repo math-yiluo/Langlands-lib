@@ -1,7 +1,5 @@
 # Functional extension from a subgroup representation
 
-Author: Worker 643.
-
 This is an internal consequence of the published character-localization
 exactness and coefficient-image constructions. It uses no external source
 theorem beyond those already implemented in its imported modules.

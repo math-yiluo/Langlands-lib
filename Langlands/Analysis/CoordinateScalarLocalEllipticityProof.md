@@ -29,5 +29,3 @@ This is an internal compactness and continuity argument derived from
 the published coordinate scalar operator and Mathlib topology. It uses
 no external literature theorem. It establishes no analytic regularity,
 operator composition, Fourier estimate or automorphic growth.
-
-Worker 94 authored this proof.

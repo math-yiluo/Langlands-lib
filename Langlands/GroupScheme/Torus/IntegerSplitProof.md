@@ -1,7 +1,5 @@
 # Every torus over the integers is split
 
-Workers 193 and 665.
-
 `Langlands.GroupScheme.integerTorusSplit` proves
 `Langlands.GroupScheme.IntegerTorusSplitStatement.{u}` in every universe.
 Given an étale-locally split torus over the spectrum of `ULift.{u} ℤ`, it

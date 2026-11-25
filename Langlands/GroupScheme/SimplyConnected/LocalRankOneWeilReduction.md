@@ -1,7 +1,5 @@
 # Reduction of rank-one local Kneser–Tits to absolutely almost-simple groups
 
-Authors: Worker 4953.
-
 This module contains:
 
 - the proposition definition
@@ -91,9 +89,11 @@ it back along `R_{K/k}`. The proposition does not name the three families.
 It is the special case of Tits 1.2 for absolutely almost-simple groups of
 split rank 1. It is stated separately so that this module can carry out
 the transport along Weil restriction, and so that a later proof can
-combine the classification (statement task
-`45286b38-e76d-4ab7-a663-9458e462226c`) with the Kneser–Tits property of
-each family.
+combine the classification (`LocalRankOneClassificationStatement`, module
+`SimplyConnected.LocalRankOneClassificationStatement`) with the Kneser–Tits
+property of each family, as
+`localAbsolutelyAlmostSimpleRankOneKneserTits_of_classification` (module
+`SimplyConnected.LocalRankOneClassificationReduction`) does.
 
 ## The theorem
 
@@ -192,9 +192,17 @@ None of them is proved here.
 published reduction of `Langlands.GroupScheme.LocalKneserTitsStatement`
 (see `notes/group-schemes/local-kneser-tits-route.md`). This theorem
 reduces it to the absolutely almost-simple case and to the three Weil
-restriction statements. Those statements have their own proof tasks
-(Task 5312 for the Weil restriction structure, Task 5336 for the split
-rank, Task 5351 for the parabolic transfer). The
-three statements of `RankOneLeviFactorStatements` have proof tasks
-Task 5333, Task 5334 and Task 5335, and local cocycle vanishing has proof
-task `306b2ea2-25ed-490a-9131-292ce36e6c84`.
+restriction statements. Those statements are proved in the Library:
+`simplyConnectedAlmostSimpleWeilRestriction` (module
+`SimplyConnected.AlmostSimpleWeilRestrictionProof`) for the Weil restriction
+structure, `affineWeilSplitRank` (module `Rational.AffineWeilSplitRankProof`)
+for the split rank, and `affineWeilParabolicElementarySubgroup` (module
+`Rational.AffineWeilParabolicElementaryProof`) for the parabolic transfer.
+The three statements of `RankOneLeviFactorStatements` are proved as
+`rankOneLeviFactorExistence`, `rankOneLeviDerivedGeneration` and
+`rankOneLeviCocenterGeneration` (modules
+`SimplyConnected.RankOneLeviFactorExistenceProof`,
+`SimplyConnected.RankOneLeviDerivedGenerationProof` and
+`SimplyConnected.RankOneLeviCocenterGenerationProof`), and local cocycle
+vanishing is proved as `localSimplyConnectedCocycleVanishing` (module
+`SimplyConnected.LocalCocycleVanishingProof`).

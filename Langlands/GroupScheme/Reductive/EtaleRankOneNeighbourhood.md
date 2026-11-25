@@ -50,6 +50,7 @@ the supplied equality of base points gives the stated neighbourhood type.
 The provenance is internal: arbitrary-base-change integral automorphism
 compatibility and actual profile comparison, followed by the existing
 rank-one construction and open-map descent. The underlying actual
-section-in-identity-component construction is by Worker 1683 and is reused
+section-in-identity-component construction (`SectionIdentityNeighbourhoodData`,
+module `RelativeIdentityComponent.SectionNeighbourhood`) is reused
 with its exact actual-fibre comparisons. No characteristic, reducedness,
 noetherian or connected-ambient-fibre restriction is introduced.

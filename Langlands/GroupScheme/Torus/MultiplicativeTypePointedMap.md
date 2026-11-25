@@ -1,7 +1,5 @@
 # Pointed maps to groups of multiplicative type
 
-Worker 504.
-
 `Langlands.GroupScheme.multiplicativeTypePointedMap` proves
 `Langlands.GroupScheme.MultiplicativeTypePointedMapStatement.{u}` for every
 universe `u`. Over any field, a scheme morphism `φ` from a smooth connected

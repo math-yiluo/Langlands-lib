@@ -1,7 +1,6 @@
 # Fixed measures for the two-block unipotent quotient
 
 Module `Langlands.Representation.RankinSelberg.TwoBlockUnipotentMeasures`.
-Author: Worker 113.
 
 This is internal measure infrastructure for the representation-free unfolding
 derived from JPSS (1983), Section 4.6, printed pages 411–412. The definitions

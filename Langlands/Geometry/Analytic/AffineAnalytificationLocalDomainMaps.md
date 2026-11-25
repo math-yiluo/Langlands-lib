@@ -1,12 +1,12 @@
 # Bounded maps out of local-domain algebras of a polynomial-locus analytification
 
-This unit collects affine facts about the Library's polynomial-locus
+This module collects affine facts about the Library's polynomial-locus
 analytification `Space K P` of `Spec A`, for a finite polynomial presentation
 `P` of a `K`-algebra `A`. The main theme is that a bounded map out of the
 algebra of a local affinoid domain of the atlas `atlas K P` is determined by its
 values on `A`, and that a `K`-algebra map from `A` to a presented affinoid algebra
 extends boundedly to such an algebra exactly when its spectrum lands in the
-domain. The unit is internal supporting material for the analytic structure on
+domain. The module is internal supporting material for the analytic structure on
 the glued analytification of a scheme (`SchemeAnalytificationAnalyticStructure`).
 
 ## Contents

@@ -1,6 +1,6 @@
 # Identifying the original Levi from contraction and containment
 
-This is a derived unit over an arbitrary base scheme. It uses the published actual multiplication coordinates from `Rational.LeviRetraction`, uniqueness of limits in a separated group scheme from `Dynamic.Uniqueness`, and the published all-test whole-group centralizer. It asserts no new structural theorem about parabolics or reductive groups.
+This module works over an arbitrary base scheme. It uses the published actual multiplication coordinates from `Rational.LeviRetraction`, uniqueness of limits in a separated group scheme from `Dynamic.Uniqueness`, and the published all-test whole-group centralizer. It asserts no new structural theorem about parabolics or reductive groups.
 
 Fix actual maps `l : L → P`, `r : U → P`, and `j : P → G` such that the actual scheme multiplication `L × U → P` is an isomorphism. No group-homomorphism property of this multiplication is needed. The image of `j` lies in any subgroup functor containing the images of both `l ≫ j` and `r ≫ j`, by the inverse multiplication coordinates. In particular, if a cocharacter fixes the first image and contracts the second, the entire image lies in its dynamic parabolic. These containments need neither monicity of the maps nor separatedness.
 
@@ -12,4 +12,4 @@ For any supplied commutative group map `a : A → G` and cocharacter `ν : Gm �
 
 Finally, when `l ≫ j` is monic and `m : M → G` is any supplied representative of that whole-group centralizer, `torusCentralizerIsoOfMultiplication` constructs the actual isomorphism `L ≅ M` using uniqueness of represented subgroups. Its homomorphism composed with `m` is exactly `l ≫ j`, and its inverse composed with `l ≫ j` is exactly `m`.
 
-In the minimal-parabolic Levi application, `L` and `U` may be the originally supplied Levi and its represented geometric unipotent radical. Positive source weights can discharge contraction, but the existence of a suitable positive direction, centralizer containment in the parabolic, and ambient maximal splitness remain separate obligations. This unit does not prove `MinimalParabolicLeviCentralizerStatement` or add a premise to that immutable host target.
+In the minimal-parabolic Levi application, `L` and `U` may be the originally supplied Levi and its represented geometric unipotent radical. Positive source weights can discharge contraction, but the existence of a suitable positive direction, centralizer containment in the parabolic, and ambient maximal splitness remain separate obligations. This module does not prove `MinimalParabolicLeviCentralizerStatement` or add a premise to it; the module `Rational.MinimalParabolicLeviCentralizerProof` proves it as `minimalParabolicLeviCentralizer`.

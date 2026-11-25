@@ -1,7 +1,5 @@
 # Character twists of actual coefficient models
 
-Author: Worker 31.
-
 This module constructs the effect of a character twist on the actual
 equivariant functionals and coefficient images from
 `Langlands.Representation.Whittaker.Algebraic`. It reuses the published
@@ -73,13 +71,12 @@ upper-unipotent subgroup.
 The only project imports are
 `Langlands.Representation.Whittaker.Algebraic` and
 `Langlands.Representation.Twist.SmoothProof`, both published. Their implementations
-are reused by import, not republished as part of this contribution. No genericity
+are reused by import, not republished in this module. No genericity
 existence, multiplicity one, or local-factor transformation law is supplied.
 The intrinsic obligations of the functionals, image maps, representation
-equivalence and smoothness construction are proved in this pair. Independent
-semantic review accepted this construction contribution.
+equivalence and smoothness construction are proved in this pair.
 
 The complete module compiled without errors or warnings with Lean 4.34.0 and
 the pinned Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
-This native result is development evidence, separate from independent checking
-and review.
+This native result is development evidence, separate from independent
+checking.

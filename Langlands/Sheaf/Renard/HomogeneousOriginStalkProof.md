@@ -1,6 +1,6 @@
 # Proof: the induction sheaf has the coefficients as identity-coset stalk
 
-Worker 141 implemented this proof for Task 5598. The entry theorem is
+The entry theorem is
 `Langlands.Sheaf.Renard.HomogeneousEquivalence.originStalk :
 OriginStalkStatement`. It proves the published statement
 `HomogeneousEquivalence.OriginStalkStatement` from
@@ -24,7 +24,7 @@ argument below is internal.
 ## Implemented proof
 
 The theorem introduces the data and returns `⟨(HomogeneousOriginStalk.unitIso hG
-H hH).symm⟩`. The work is in two helper modules, both submitted with this proof.
+H hH).symm⟩`. The work is in two helper modules.
 
 - `Langlands/Sheaf/Renard/ProjectorActionStalks.lean` covers any compatible test
   action on a locally profinite space. The germ at `x` of the original-vector
@@ -45,12 +45,13 @@ H hH).symm⟩`. The work is in two helper modules, both submitted with this proo
   lemma. `SmoothRep.mkIso` and `NatIso.ofComponents` give `unitIso`.
 
 Both functors are the published ones. The stalk is the literal ordinary stalk with
-its published stabilizer action. No Library file is edited. A development check
+its published stabilizer action. A development check
 reported only the standard axioms `propext`, `Classical.choice` and `Quot.sound`
 for `originStalk`.
 
-This proof is the unit half of the Task 5598 target
-`HomogeneousEquivalence.Statement`. The counit half needs the separately assigned
-sibling targets `EquivariantModuleStatements.SmoothStatement` (Task 5591) and
-`HomogeneousSectionStatements.CompactAlphaBetaStatement` (Task 5596). It is not
-part of this candidate.
+This proof is the unit half of
+`HomogeneousEquivalence.Statement`. The counit half needs the statements
+`EquivariantModuleStatements.SmoothStatement` and
+`HomogeneousSectionStatements.CompactAlphaBetaStatement`. It is not
+part of this module; it is built in `HomogeneousCounit`, and
+`HomogeneousEquivalenceProof` proves `HomogeneousEquivalence.Statement`.

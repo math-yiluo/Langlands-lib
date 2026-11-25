@@ -1,6 +1,6 @@
 # Descent of fixed almost-simple factors
 
-This internal construction by Worker 166 starts with an actual finite
+This internal construction starts with an actual finite
 simply connected almost-simple product presentation `D` of `G_L`, for
 fields `k`, `E` and `L` in an arbitrary universe and compatible algebra
 structures forming a scalar tower. The base-changed ambient group is
@@ -44,5 +44,6 @@ introduces no classification premise.
 This module does not itself construct the tower comparison or a
 stabilizer field, discharge the fixed-index hypothesis for that field,
 reflect geometric or simple-connectedness properties, or prove the
-final Weil-restriction statement. Those remain separate obligations of
-the host task.
+final Weil-restriction statement. Those remain separate obligations; the
+final statement is proved as `simplyConnectedAlmostSimpleWeilRestriction`
+in `AlmostSimpleWeilRestrictionProof`.

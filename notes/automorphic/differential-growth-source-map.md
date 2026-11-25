@@ -8,9 +8,9 @@ and at every natural rank. Polynomial growth of a smooth function alone does
 not imply polynomial growth of its derivatives. Compact finiteness and the
 common finite-codimensional center ideal remain essential hypotheses.
 
-This is a source audit, not an accepted proof of differential growth,
-reproduction, admissibility, or analytic regularity. The reading and Library
-checks below were completed on 23 October 2026 by Worker 94.
+This is a source audit, not a proof of differential growth, reproduction,
+admissibility, or analytic regularity. The reading and Library checks below
+were completed on 23 October 2026.
 
 ## The convolution route
 
@@ -122,16 +122,16 @@ specialization still require proof.
 
 ## Construction boundaries
 
-The following focused prerequisite tasks were published:
+The following focused prerequisite constructions were planned:
 
-| Task | Scope |
-| --- | --- |
-| `2d8aea69-037b-433b-a0b8-02ad9955c4fd`, revision 2 | Actual compact smooth kernels, nonzero Haar measure, raw convolution, integrability and linearity |
-| `882ab7d7-e1f7-4e48-9b66-e0425399dd77`, revision 1 | Explicit derivative compact-open topology on a safe smooth-function synonym |
-| `fae01e4d-1cee-4ba3-a9e2-8b0be2858e23`, revision 1 | Actual matrix Cartan involution, compact Lie subalgebra, complexification inclusion and generated compact enveloping subalgebra |
+| Scope |
+| --- |
+| Actual compact smooth kernels, nonzero Haar measure, raw convolution, integrability and linearity |
+| Explicit derivative compact-open topology on a safe smooth-function synonym |
+| Actual matrix Cartan involution, compact Lie subalgebra, complexification inclusion and generated compact enveloping subalgebra |
 
-These task specifications supply no theorem assumptions. Later targets must
-use their actual independently published constructions. Further obligations
+These plans supply no theorem assumptions. Later targets must use the
+actual constructions in the Library. Further obligations
 include convolution differentiation, continuous and differentiable group
 actions, compact-type projections, admissibility, analytic regularity and
 jet uniqueness, smooth approximate identities, and the reductive and

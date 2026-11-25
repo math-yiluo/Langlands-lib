@@ -1,7 +1,5 @@
 # The represented-Levi contragredient formula from second adjointness
 
-Author: Worker 138.
-
 This derived module proves the forward implication in David Renard,
 *Représentations des groupes réductifs p-adiques*, French version dated 9 July 2026,
 VI.9.6, printed pp.201–202 / PDF pp.207–208: (VI.9.6.1) implies (VI.9.6.2), using the

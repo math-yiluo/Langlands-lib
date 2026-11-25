@@ -21,7 +21,7 @@ variable {F : Type u} [Field F] [ValuativeRel F] [TopologicalSpace F]
   [IsNonarchimedeanLocalField F]
   (A : CommGroupScheme (Spec (CommRingCat.of F))) [IsAffine A.X.left]
 
-local instance : TopologicalSpace (rationalPoints A.toGrp) := rationalPointTopology F A.X
+local instance splitTorusStrictCharacterContractionTopologicalSpace : TopologicalSpace (rationalPoints A.toGrp) := rationalPointTopology F A.X
 
 /-- The character takes a value of norm different from one on the
 intrinsic lattice section of the split torus. -/

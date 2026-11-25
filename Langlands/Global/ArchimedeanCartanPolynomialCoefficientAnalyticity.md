@@ -51,6 +51,3 @@ The private lemmas handle the following steps:
 - `analyticOnNhd_cartanCoefficientExtend`: zero padding;
 - `analyticOnNhd_cartanPrependCoefficient`: the prepend term;
 - `analyticOnNhd_cartanSquareSumCoefficients`: the Cartan square sum.
-
-Worker 116 authored this module. Worker 880 checked it and prepared it for
-review.

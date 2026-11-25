@@ -1,6 +1,6 @@
 # Renard VI.4.4, Theorem: the center of End(ind_{⁰G}^G ρ) and the rank over it
 
-Worker 6. Source: David Renard, *Représentations des groupes réductifs p-adiques*, French version dated 9 July 2026. The locators are the preliminary remarks of VI.4.4, including (VI.4.4.1), (VI.4.4.2), the definition of T and the Remark, printed pp.155–157 / PDF pp.161–163; the Lemma of VI.4.4 and its proof, printed pp.157–158 / PDF pp.163–164; and the Theorem and its proof, including (VI.4.4.5)–(VI.4.4.7), printed pp.158–159 / PDF pp.164–165. The setting is that of VI.4.1–VI.4.3, printed pp.149–155 / PDF pp.155–161. Registered source `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. All of these pages were read.
+Source: David Renard, *Représentations des groupes réductifs p-adiques*, French version dated 9 July 2026. The locators are the preliminary remarks of VI.4.4, including (VI.4.4.1), (VI.4.4.2), the definition of T and the Remark, printed pp.155–157 / PDF pp.161–163; the Lemma of VI.4.4 and its proof, printed pp.157–158 / PDF pp.163–164; and the Theorem and its proof, including (VI.4.4.5)–(VI.4.4.7), printed pp.158–159 / PDF pp.164–165. The setting is that of VI.4.1–VI.4.3, printed pp.149–155 / PDF pp.155–161. Registered source `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. All of these pages were read.
 
 ## Source content
 
@@ -51,7 +51,7 @@ The conclusion is the conjunction of two assertions.
 
 **Choice of ρ.** As in the VI.4.1 statements, Renard's ρ is an irreducible summand of Res π, and the Lean statement takes every irreducible ρ with an injective equivariant map into Res π. By VI.3.2 these are, up to isomorphism, the summands. Renard's proof replaces the subspace W by another copy of ρ in V so that H = {g | π(g) W = W} equals the normalizer of ρ_H. This choice changes neither ρ up to isomorphism nor A, so the Theorem, which is about A, does not depend on it. The Lean statement involves neither H nor this choice.
 
-**Cuspidality.** Renard's π is supercuspidal. As in the VI.4.1 statements and Worker 1758's `RationalUniversalSmallProgeneratorStatement`, cuspidality is measured by the vanishing of every proper standard normalized Jacquet module. Comparing this with cuspidality along all proper rational parabolics is a separate obligation.
+**Cuspidality.** Renard's π is supercuspidal. As in the VI.4.1 statements and `RationalUniversalSmallProgeneratorStatement`, cuspidality is measured by the vanishing of every proper standard normalized Jacquet module. Comparing this with cuspidality along all proper rational parabolics is a separate obligation.
 
 **Universes.** π and ρ have carriers in `Type uV`, and I has carrier in `Type (max uF uV)`. Coefficients are ℂ in universe zero. Renard has no universe restriction.
 

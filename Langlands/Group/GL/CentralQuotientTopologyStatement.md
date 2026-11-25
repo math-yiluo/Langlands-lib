@@ -1,7 +1,5 @@
 # Topology and Haar measures on actual central quotients
 
-Author: Worker 158.
-
 `Langlands.CentralQuotientHaarTopology G` is a proposition about the actual
 quotient `G / Subgroup.center G`, with its quotient topology. It asserts that
 this quotient is a Hausdorff, locally compact, second-countable topological

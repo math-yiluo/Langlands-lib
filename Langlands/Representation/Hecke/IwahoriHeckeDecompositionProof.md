@@ -1,7 +1,7 @@
 # Proof of Renard V.5.3: the decomposition of `H(G, K)`
 
 Module `Langlands.Representation.Hecke.IwahoriHeckeDecompositionProof`, namespace
-`Langlands.Hecke`. Worker 127 wrote it for Task 5575. The theorem
+`Langlands.Hecke`. The theorem
 `iwahoriHeckeDecomposition : IwahoriHeckeDecompositionStatement.{u}` proves the
 published proposition `Langlands.Hecke.IwahoriHeckeDecompositionStatement`
 exactly, with universe `u` and no additional hypothesis.

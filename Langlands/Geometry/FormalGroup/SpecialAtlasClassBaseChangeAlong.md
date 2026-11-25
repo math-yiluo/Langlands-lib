@@ -1,6 +1,6 @@
 # Supplied-target extension and identity on special-atlas classes
 
-This internal unit extends actual refined formal comparisons and their
+This module extends actual refined formal comparisons and their
 special-atlas comparison classes along a supplied O_K-algebra map. It also
 proves the identity law for special and height-certified comparison classes.
 
@@ -102,6 +102,6 @@ No transfer of height to an uncertified representative is needed.
 
 Successive supplied-map composition, a varying-base class functor and its
 restriction to Nilp remain separate. These quotients classify the supplied
-special formal atlases under actual refined formal comparison; the unit
+special formal atlases under actual refined formal comparison; the module
 does not construct framed triples, polarizations, actions, levels,
 representing formal schemes or any representability theorem.

@@ -1,7 +1,5 @@
 # Products of unit opens in connected field group schemes
 
-Worker 876.
-
 This internal helper extends the published smooth-field-group
 open-product argument to connected group schemes locally of finite type over
 any field. It uses the published irreducibility theorem

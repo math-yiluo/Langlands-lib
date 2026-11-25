@@ -1,7 +1,5 @@
 # Continuity of roots over a henselian field algebraically closed in its completion
 
-Author: Worker 105.
-
 Internal infrastructure for the proof of Conrad's Corollary 5.12
 (`HenselianFinitePointProperStatement`). Brian Conrad, *Weil and Grothendieck approaches to
 adelic points* (December 31, 2011), printed p.20, reduces to complete fields and then cites

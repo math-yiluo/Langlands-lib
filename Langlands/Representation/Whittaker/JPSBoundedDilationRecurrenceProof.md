@@ -1,7 +1,6 @@
 # Uniform-region recurrence for powers of a bounded coordinate dilation (proof)
 
-Authors: Worker 941 (proof draft), Worker 454 (current-Library verification,
-documentation and submission). This module proves the published proposition
+This module proves the published proposition
 `Langlands.Whittaker.JPSBoundedDilationRecurrenceStatement.{uF}` from module
 `Langlands.Representation.Whittaker.JPSBoundedDilationRecurrenceStatement`.
 
@@ -118,8 +117,6 @@ stabilization in place of a polynomial equation.
 
 ## Checks
 
-The submitted proof is checked in approved environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, with the closing constant inspected
-unapplied and assigned directly to the target in a private check. Formal
-acceptance additionally requires the exact-target and Lake-build validation
-and independent semantic review.
+The proof was checked with Lean 4.34.0 and Mathlib
+`5ed2965256430c3649e86755f9576b54eca72435`, with the closing constant inspected
+unapplied and assigned directly to the target in a private check.

@@ -74,8 +74,9 @@ cancellation result for essential finite presentation.
 ## Internal provenance
 
 This is an internal supporting lemma. It is not a displayed statement
-of a cited source. It serves the cancellation proof task
-`111a8cec-091c-4186-bfe2-036cc141210a`, whose target is the published
+of a cited source. It serves the cancellation proof
+`Langlands.Algebra.essFinitePresentationTowerCancellation` (module
+`Langlands.Algebra.EssFinitePresentationTowerCancellationProof`) of the published
 `Langlands.Algebra.EssFinitePresentationTowerCancellationStatement`.
 That route uses the published base-change theorem
 `Langlands.Algebra.essFinitePresentation_baseChange`, which makes
@@ -96,7 +97,8 @@ the pattern of that Mathlib proof.
 ## Finite-relations justification
 
 The following is an informal derivation of the stated assertion. It is
-not a Lean proof; the proof is left to a separate successor task.
+not a Lean proof; the Lean proof is `Langlands.Algebra.tensorRetractionKernelFG`
+in `Langlands.Algebra.TensorRetractionKernelFGProof`.
 
 Choose a finite set `σ ⊆ S` that witnesses essential finite type, for
 example Mathlib's `Algebra.EssFiniteType.finset R S`. Let `J` be the

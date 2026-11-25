@@ -16,9 +16,9 @@ open HarmonicAnalysis MeasureTheory Polynomial QuotientIntegration Whittaker
 
 variable {p : ℕ} [Fact p.Prime] (K : PadicField.{u} p)
 
-local instance : TopologicalSpace K.Carrier := K.canonicalTopologicalData.topology
-local instance : ValuativeRel K.Carrier := K.canonicalTopologicalData.valuativeRel
-local instance : IsNonarchimedeanLocalField K.Carrier := K.canonicalTopologicalData.localField
+private local instance : TopologicalSpace K.Carrier := K.canonicalTopologicalData.topology
+private local instance : ValuativeRel K.Carrier := K.canonicalTopologicalData.valuativeRel
+private local instance : IsNonarchimedeanLocalField K.Carrier := K.canonicalTopologicalData.localField
 local instance : MeasurableSpace K.Carrier := borel K.Carrier
 local instance : BorelSpace K.Carrier := ⟨rfl⟩
 local instance (n : ℕ) : MeasurableSpace (GeneralLinear (n + 1) K.Carrier) := borel _

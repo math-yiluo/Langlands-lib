@@ -100,6 +100,7 @@ theorem infiniteEvaluation_lie_real_upper (v : {v : InfinitePlace F // v.IsReal}
   let c := archimedeanHalfDerivative F B (realPlaceLieInclusion F (r + 1) v X)
   have h₀ : e u = realPlaceEvaluation hm T v (real v) (hr v) 1 := by
     simp only [e, u, map_one, Pi.one_apply, infiniteLocalEvaluation]
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   have h (x : A u) : e u (D x) = c • e u x + H (e u x) := by
     let E₀ := realPlaceEvaluation hm T v (real v) (hr v) 1
     have hx : E₀ (D x) = c • E₀ x + H (E₀ x) :=
@@ -123,6 +124,7 @@ theorem infiniteEvaluation_lie_complex_upper (v : {v : InfinitePlace F // v.IsCo
   let c := archimedeanHalfDerivative F B (complexPlaceLieInclusion F (r + 1) v X)
   have h₀ : e u = complexPlaceEvaluation hm T v (complex v) (hc v) 1 := by
     simp only [e, u, map_one, Pi.one_apply, infiniteLocalEvaluation]
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   have h (x : A u) : e u (D x) = c • e u x + H (e u x) := by
     let E₀ := complexPlaceEvaluation hm T v (complex v) (hc v) 1
     have hx : E₀ (D x) = c • E₀ x + H (E₀ x) :=

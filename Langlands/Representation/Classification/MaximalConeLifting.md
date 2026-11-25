@@ -1,7 +1,5 @@
 # Lifting opposite exponents of a twisted Jacquet quotient
 
-Author: Worker 23.
-
 This module is an internal helper for the proof of
 `Langlands.GLMaximalConeJacquetQuotientStatement` (task b291a31b). Let `S` be a
 quotient of the normalized opposite Jacquet module of `A` along `C`. The target

@@ -1,8 +1,5 @@
 # Derivatives of left mixed products in every GL rank
 
-Authors: Worker 1190 (higher-order natural comparisons, rank bookkeeping,
-final assembly and audit) and Worker 1018 (the vanishing proof).
-
 The theorem `Langlands.Derivative.leftMixedProductDerivative` proves the
 entire published proposition
 `Langlands.Derivative.LeftMixedProductDerivative.{uF,uV} F T`.
@@ -46,8 +43,8 @@ genericity, nonzero-object or theorem-valued premise is imposed.
 
 The final theorem pairs the two helper conclusions and supplies
 `MirabolicProductMinus.leftPhiCompatibility T` to each explicit Phi
-argument. That exact clause has an independently accepted and published
-proof. The helper modules are part of this contribution and are explained
+argument. That exact clause has a published
+proof. The helper modules are ported together with this module and are explained
 in [LeftMixedProductHigher](LeftMixedProductHigher.md) and
 [LeftMixedProductVanishing](LeftMixedProductVanishing.md).
 
@@ -125,7 +122,7 @@ p.457 (PDF p.18), gives the mixed products. Proposition 4.13(b) and
 Corollary 4.14(a), printed p.458 (PDF p.19), give the source scope,
 and §7.2, printed p.471 (PDF p.32), gives the two-orbit argument for
 4.13(b). These original passages and relevant page images were read
-during this task; a bounded supplied-source and errata-note search found
+for this proof; a bounded supplied-source and errata-note search found
 no applicable BZ77 entry.
 
 The source derives 4.14(a) from 4.13(b). Here its positive-rank Psi,
@@ -137,32 +134,31 @@ boundary convention at P₀.
 The quotient/tensor construction agrees with BZ77 Proposition 1.9(g),
 printed p.445 (PDF p.6), and is proved directly in Lean.
 
-| Published Lean input | Verified role and independent review |
+| Published Lean input | Verified role and publication |
 | --- | --- |
-| `MirabolicProductMinus.leftPsiCompatibility` | Exact left Psi clause; Reviewer 6250, no qualifications; published at `5c739daf70eeb88f11ce9139aeb3ed04904874ca`. |
-| `MirabolicProductMinus.leftPhiCompatibility` | Exact left Phi clause; Reviewer 7335, no qualifications; published at `a76eaf5aaac38487c19b4cf2e7c9bd64e2493518`. |
-| `MirabolicProductMinus.leftPhiBoundary` | Exact P₁ boundary; Reviewer 5947, no qualifications; independently accepted and published. |
-| `LeftMixedProductZeroRank.leftMixedProductZeroRankIso` | All-order arbitrary-carrier GL₀ natural comparison; Reviewer 6175, no qualifications; published at `2003a7a6a41b5e54c3f790e0887743ed616ed614`. |
-| `ZeroRankTensor` | Full quotient/tensor, pullback, twist, derivative and cast commutations; replacement reviewed by Reviewer 6107 without qualifications; published at `9a8ca758097242bde4147f33304f43fceef22fa4`. |
-| `OrderRecursion` | Definitional derivative recursion and cast laws; Reviewer 6096, no qualifications; independently accepted and published. |
-| `MixedProductRankCast` | Both-input natural rank transport; Reviewer 6099, no qualifications; independently accepted and published. |
+| `MirabolicProductMinus.leftPsiCompatibility` | Exact left Psi clause; published at `5c739daf70eeb88f11ce9139aeb3ed04904874ca`. |
+| `MirabolicProductMinus.leftPhiCompatibility` | Exact left Phi clause; published at `a76eaf5aaac38487c19b4cf2e7c9bd64e2493518`. |
+| `MirabolicProductMinus.leftPhiBoundary` | Exact P₁ boundary; published. |
+| `LeftMixedProductZeroRank.leftMixedProductZeroRankIso` | All-order arbitrary-carrier GL₀ natural comparison; published at `2003a7a6a41b5e54c3f790e0887743ed616ed614`. |
+| `ZeroRankTensor` | Full quotient/tensor, pullback, twist, derivative and cast commutations; published at `9a8ca758097242bde4147f33304f43fceef22fa4`. |
+| `OrderRecursion` | Definitional derivative recursion and cast laws; published. |
+| `MixedProductRankCast` | Both-input natural rank transport; published. |
 
 The Psi proof's `MirabolicProductMinusLeftPsiInduction` and
-`Induction.BinaryPositiveCompact` inputs were independently reviewed by
-Reviewers 6173 and 6043 and published at
+`Induction.BinaryPositiveCompact` inputs were published at
 `2003a7a6a41b5e54c3f790e0887743ed616ed614` and
 `9a8ca758097242bde4147f33304f43fceef22fa4`. The Phi proof's full
 normalization, localized Mackey and rank-transport comparisons are
-published inputs of its accepted proof. Acceptance and publication of
-these prerequisites were checked separately from development compilation.
+published inputs of its proof. Publication of
+these prerequisites was checked separately from compilation.
 All mathematics is imported by Lean name. No source citation, Prop
-definition, conditional draft, pending task or consumer conclusion fills
+definition or consumer conclusion fills
 a missing proof.
 
 ## Complete import and proof-dependency audit
 
 The combined closure has 260 project modules including this entry: the
-three new pairs in this contribution and 257 published modules. All 514
+three new pairs of this proof and 257 published modules. All 514
 published Lean/Markdown files are nonempty and byte-identical to Library
 commit `8d926c3850083c700afa54adc0d07240e27fe799`. The target pair and its
 entire dependency closure are unchanged. The only new or edited public
@@ -182,105 +178,102 @@ construction does not prove a consumer assertion.
 | Published left Psi comparison | The actual radical projection, surjectivity, kernel, subgroup topology and smoothness conditions are proved. Normal-coinvariant comparison, split quotient and character twist identify the full localized compact induction. Relation-kernel arguments, local sections, cutoff and compact averaging prove its lower maps; no consumer finiteness input is used. |
 | Psi determinant normalization | Determinant factorization and a real-power identity identify the whole coefficient scalar with the binary parabolic half modulus, retaining both blocks. No scalar comparison remains as a premise. |
 | Positive binary compact comparison | Pointwise coefficient transport, binary tensor action/map laws and compact-inclusion bijectivity identify the actual binary product. Parabolic quotient compactness follows from `G=P K`, compactness of the integral subgroup and the elementary column-reduction proof of Iwasawa decomposition. |
-| Published left Phi localization | Two-orbit coverage and the actual closed-subgroup Mackey restriction sequence give the cycle and identity pieces. Right exactness of the entire character relation-span quotient and vanishing of the entire localized cycle make the localized identity projection bijective. This is the proved general quotient/Mackey route, without using the paused minus-exactness task. |
+| Published left Phi localization | Two-orbit coverage and the actual closed-subgroup Mackey restriction sequence give the cycle and identity pieces. Right exactness of the entire character relation-span quotient and vanishing of the entire localized cycle make the localized identity projection bijective. This is the proved general quotient/Mackey route, without using minus exactness. |
 | Phi stages and scalar normalization | The positive-character stages comparison retains the full compact-function and quotient carriers. `leftPhiAmbientInductionEquiv` moves the ambient inverse-half determinant character through compact induction, multiplying values by the character and inversely by its reciprocal. The source action proves the complete identity `χ(h)=λ_(K,r)(a,q) α_r(q)`: ambient inverse-half times higher covariance equals lower covariance times source Phi normalization, with actual determinant norms and no residual twist. |
 | Phi identity/source coefficient and host transport | The map `id ⊗ q_B` is onto with kernel exactly the identity-orbit radical relation span. The full normalized identity/source equivalence and both-input naturality, compact-induction transport/transitivity and actual inverse rank maps give the lower source comparison. The final Phi proof composes these natural equivalences and uses fullness/faithfulness of `SmoothRep.toRep` to return to the exact smooth host functors. |
 | Published P₁ boundary | The actual quotient relations and nontrivial character kill the full boundary carrier; the subsequent rank casts and minus functors preserve subsingleton carriers. No finite-length or detection theorem is invoked. |
 | Arbitrary-carrier GL₀ comparison and `ZeroRankTensor` | Whole-group evaluation, trivial GL₀ action/character, swap/lift and binary-left-zero tensor equivalence construct the endpoints. The direct quotient maps `[v ⊗ a] ↔ [v] ⊗ a` are inverse on all generators and commute with actions, both maps, pullbacks, twists and rank casts. Iteration supplies every order without a positive-rank compatibility assumption. |
 | `Mirabolic.MixedProducts` and `Induction.BinaryProduct` | These supply actual subgroup matrices, coefficients, normalized compact/smooth induction, tensor models and full functor maps unchanged. Their lower mathematical inputs are matrix identities, smoothness, tensor algebra and induction constructions. |
 | `MirabolicProductRestrictionFactors` and `SplitStagesComparison` | The binary route uses `FiniteTensor.binaryLinearEquiv` with its external action/map laws, and pointwise `Induction.compactInducedEquiv`. The Phi route additionally uses the independently proved actual Mackey and stages comparisons described above. No GL Leibniz or segment geometric-lemma consumer supplies an input. |
-| `Derivative.Homogeneity` | This imported module defines the order wrapper, actual rank casts and homogeneity predicates and proves elementary zero-carrier facts. It supplies no Ze80 5.3 or 6.2 theorem. Its name does not constitute use of the excluded homogeneity consumers. |
-| `Classification.Supercuspidal`, `SupercuspidalContragredientAux` and `SupercuspidalContragredientStatement` | These occur in the transitive closure through `Smooth.SmallRealizationProof`. Their bodies provide the actual admissibility/Jacquet-vanishing predicate, class packaging, equivalence invariance, conjugate-coinvariant equivalence, conditional admissibility/irreducibility transfer and an unproved duality proposition. They contain no segment classification, exhaustion, two-supercuspidal product or coinvariant-finiteness theorem. No excluded conclusion follows merely from these definitions or conditional interfaces; none supplies a derivative-comparison premise. |
+| `Derivative.Homogeneity` | This imported module defines the order wrapper, actual rank casts and homogeneity predicates and proves elementary zero-carrier facts. It supplies no Ze80 5.3 or 6.2 theorem. Its name does not constitute use of the homogeneity consumers listed below. |
+| `Classification.Supercuspidal`, `SupercuspidalContragredientAux` and `SupercuspidalContragredientStatement` | These occur in the transitive closure through `Smooth.SmallRealizationProof`. Their bodies provide the actual admissibility/Jacquet-vanishing predicate, class packaging, equivalence invariance, conjugate-coinvariant equivalence, conditional admissibility/irreducibility transfer and an unproved duality proposition. They contain no segment classification, exhaustion, two-supercuspidal product or coinvariant-finiteness theorem. No conclusion listed below follows merely from these definitions or conditional interfaces; none supplies a derivative-comparison premise. |
 | Lower Whittaker/Rankin–Selberg constructions | Character and matrix-coefficient constructions, compatible Haar quotient measures, quotient integration, compact-orbit averaging, cutoff, local sections and unimodularity are used in the lower induction/stages route. They do not assume supercuspidal, irreducible, Levi-cuspidal or all-character coinvariant finiteness. |
 | `Category.Basic` and `Filtration.Definitions` | These define categorical finite length and filtrations. No mirabolic finite-length theorem or Leibniz filtration proof is used. |
-| Compatibility and derivative statement modules | These supply exact proposition types and functor definitions unchanged. The left Psi, Phi and boundary clauses enter only through independently accepted and published proofs. Other proposition definitions supply no proved comparison. |
+| Compatibility and derivative statement modules | These supply exact proposition types and functor definitions unchanged. The left Psi, Phi and boundary clauses enter only through published proofs. Other proposition definitions supply no proved comparison. |
 
-## First complete exclusion set: inherited Ze80 6.2 route
+## Results not used, first set: the Ze80 6.2 route
 
-Each row rules out both the named conclusions and their successors and transitive
-consequences. The reasons refer to the actual construction audit above, not just
-to absence of a task identifier. Repeated conditions inherited through more than
-one consumer retain their full scope.
+Each row rules out both the named conclusions and the modules proving them and
+their transitive consequences. The reasons refer to the actual construction
+audit above, not just to absence of an identifier.
 
-| Excluded condition and task | Audit result |
+| Result not used | Audit result |
 | --- | --- |
-| Ordered-socle existence / `OrderedMultisegmentSocleExistence`, `23189526-80b0-4828-a6d4-7ebec2cbeef5`; socle exhaustion / `MultisegmentSocleExhaustion`, `f3a69bc8-7312-4f82-8a7d-ea3c8188cb63` | No socle, essential-subobject or ordered-existence input; components come from quotient and induction equivalences. |
-| Analytic segment classification, `aca8805b-054f-4d56-8045-12db7f623404` | No segment or analytic classification input. |
-| Unlinked segment-socle product irreducibility, `23e98d90-6055-4e35-91a9-b0f5d8a84961` | No segment-product irreducibility argument or criterion supplies an input. |
-| Final `SegmentSocleProductIrreducibility`, `2ae5cbe5-0701-4509-88a0-db8cbeb35be4` | No criterion or consequence supplies an input. |
-| `AdjacentUnlinkedSegmentSocleSwap`, adjacent commutation `e3634665-571b-4852-9f4c-bab8a1053434`, and `TwoSegmentSocleCommutation` | No socle-product swap or commutation theorem; the tensor swap in GL₀ is elementary linear algebra. |
-| Special-head product criterion / `SegmentHeadProductIrreducibility`, `8364e73f-14ec-4d14-8f2b-1555a7c1ce95` | No head or special-head criterion is used. |
-| Special-head multisegment exhaustion, `3bfb61fa-1129-4fc9-83fd-7fcfec22106e` | No exhaustion input. |
-| Ordered special/strong-head existence, `ebea9a8a-9b21-4208-aa31-98c2dea1f8a3` | No head-existence input. |
-| Quotient coverage, `20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584` | No representation-coverage theorem; quotient universal properties here are elementary module operations. |
-| Tempered block uniqueness, `52e97845-36bb-457d-b76f-70753334b88c` | No tempered decomposition or uniqueness input. |
-| `SquareIntegrableLanglandsClassification`, `1cb45da2-7007-4351-a694-594fb148b8d1` | No square-integrable or Langlands classification input. |
-| Square-integrable exhaustion, `cd8ab97c-0b78-4bce-97c4-d307a28159a4`; regular exhaustion, `bf433f0a-921a-428c-b0c0-6475438125ac` | Neither exhaustion result nor a consequence is used. |
-| `GenericSegmentProductUniqueness`, `30341ae4-65f2-4a0e-9283-763db01a409e` | No genericity or segment uniqueness input. |
-| Ordered special-segment conversion, `8252833d-c269-41a9-824c-5879e531b23b` | No head/socle conversion input. |
-| Forward special essential square-integrability / `SegmentSpecialEssentialSquareIntegrability`, `5eece9e8-7f6b-4ea9-abea-a1f9f1b8c807` | No square-integrability input. |
-| Individual special-head/reverse-socle existence, `67279e36-f3c2-42e3-9302-11729784042e` | No individual segment-existence input. |
-| Individual segment-socle/reverse-head existence, `4ca79bbd-589e-476b-9f65-661e799984b5` | No individual segment-existence input. |
-| `SegmentFullJacquetFormula`, statement/arrangement `ed48ae06-964c-4c84-9e62-978f5a953ca7` and its exact proof successor | No segment Jacquet formula; the localized coefficient computation is general and proved directly. |
-| `SegmentHeadJacquetFormula`, `55ad1e10-62d8-46b7-a081-909ef0056426` | No segment head Jacquet input. |
-| `SegmentSocleJacquetFormula`, `b95105c6-f8bb-4641-ae53-2f49d1e7f034` | No segment socle Jacquet input. |
-| `SegmentSpecialJacquetExponentNormFormula`, `92aea10f-62ac-4e0b-bd4a-9a80909797c5` | No segment exponent formula; determinant factors are computed from matrices and characters. |
-| Combined Ze80 §5.4 reduction and strong-indecomposability conclusion, including its consumer `ff4738d8-47e3-433b-bedc-629bc2d492a7` | No detection, indecomposability or combined reduction input. |
-| `TwoSupercuspidalNonadjacentProductIrreducible`, `3c9849a4-a6c0-43ac-9982-d15ed76bf1e9`; `TwoSupercuspidalProductStructure`, `ab61f565-1427-4746-ba77-46097563e962`, including adjacent composition/Jacquet conjuncts | No excluded supercuspidal-product or two-factor structure theorem; the elementary predicate and conjugation imports are accounted for above. |
-| Ze80 §3.5 and §9.6 segment derivatives; segment-socle portion of `8e5b4563-0365-41c7-b134-70f2a0b36292` | No segment derivative formula or either portion of that task is used. Order recursion is definitional; Psi, Phi, boundary and GL₀ comparisons enter through their published proofs. |
+| Ordered-socle existence / `OrderedMultisegmentSocleExistence`; socle exhaustion / `MultisegmentSocleExhaustion` | No socle, essential-subobject or ordered-existence input; components come from quotient and induction equivalences. |
+| Analytic segment classification | No segment or analytic classification input. |
+| Unlinked segment-socle product irreducibility | No segment-product irreducibility argument or criterion supplies an input. |
+| Final `SegmentSocleProductIrreducibility` | No criterion or consequence supplies an input. |
+| `AdjacentUnlinkedSegmentSocleSwap`, adjacent commutation, and `TwoSegmentSocleCommutation` | No socle-product swap or commutation theorem; the tensor swap in GL₀ is elementary linear algebra. |
+| Special-head product criterion / `SegmentHeadProductIrreducibility` | No head or special-head criterion is used. |
+| Special-head multisegment exhaustion | No exhaustion input. |
+| Ordered special/strong-head existence | No head-existence input. |
+| Quotient coverage | No representation-coverage theorem; quotient universal properties here are elementary module operations. |
+| Tempered block uniqueness | No tempered decomposition or uniqueness input. |
+| `SquareIntegrableLanglandsClassification` | No square-integrable or Langlands classification input. |
+| Square-integrable exhaustion; regular exhaustion | Neither exhaustion result nor a consequence is used. |
+| `GenericSegmentProductUniqueness` | No genericity or segment uniqueness input. |
+| Ordered special-segment conversion | No head/socle conversion input. |
+| Forward special essential square-integrability / `SegmentSpecialEssentialSquareIntegrability` | No square-integrability input. |
+| Individual special-head/reverse-socle existence | No individual segment-existence input. |
+| Individual segment-socle/reverse-head existence | No individual segment-existence input. |
+| `SegmentFullJacquetFormula`, its statement/arrangement and the module proving it | No segment Jacquet formula; the localized coefficient computation is general and proved directly. |
+| `SegmentHeadJacquetFormula` | No segment head Jacquet input. |
+| `SegmentSocleJacquetFormula` | No segment socle Jacquet input. |
+| `SegmentSpecialJacquetExponentNormFormula` | No segment exponent formula; determinant factors are computed from matrices and characters. |
+| Combined Ze80 §5.4 reduction and strong-indecomposability conclusion, including its consumer | No detection, indecomposability or combined reduction input. |
+| `TwoSupercuspidalNonadjacentProductIrreducible`; `TwoSupercuspidalProductStructure`, including adjacent composition/Jacquet conjuncts | No such supercuspidal-product or two-factor structure theorem; the elementary predicate and conjugation imports are accounted for above. |
+| Ze80 §3.5 and §9.6 segment derivatives; segment-socle derivative results | No segment derivative formula or segment-socle derivative result is used. Order recursion is definitional; Psi, Phi, boundary and GL₀ comparisons enter through their published proofs. |
 | Ze80 4.2 or 9.7 product criteria, Ze80 9.3 analytic/square-integrability results, and any classification/exhaustion theorem | None is used. No linked-pair converse is used circularly to establish Proposition 1.11. |
-| Consumer homogeneity: Ze80 6.2 `b711af72-fdf9-4b32-a450-937911426822`, Ze80 5.3 `49d8eea3-1f52-4505-bfce-d76bf8ed5b8a` and its proof `6bb62ea4-c7e1-4325-9eb6-b8bbee1f65c4` | No consumer homogeneity theorem or proof dependency. `RestrictedProductLevel`, `SegmentSocleProductHomogeneityInduction` and `SegmentSocleProductCaseTwo` are absent from the closure. |
-| All-rank GL Leibniz consumer `3238f371-e9a2-42ce-8b5d-9c4d3400ff55` | No Leibniz theorem, filtration proof or downstream consequence is used. |
-| Operator-paused minus exactness, `b65bc667-6951-4bd5-82af-10fb7046df7f` | No input from that task, no duplicate replacement, no request for resumption, and no contact with Worker 127. |
+| Consumer homogeneity: Ze80 6.2, Ze80 5.3 and its proof | No consumer homogeneity theorem or proof dependency. `RestrictedProductLevel`, `SegmentSocleProductHomogeneityInduction` and `SegmentSocleProductCaseTwo` are absent from the closure. |
+| All-rank GL Leibniz consumer | No Leibniz theorem, filtration proof or downstream consequence is used. |
+| Minus exactness | No input from minus exactness and no duplicate of it. |
 
-## Second complete exclusion set: shared all-rank Leibniz upstream scope
+## Results not used, second set: the all-rank Leibniz route
 
-All conditions in the preceding table also hold for the second inherited set:
+All conditions in the preceding table also hold for the second set:
 in particular its repeated classification, exhaustion, two-supercuspidal,
 individual existence, segment Jacquet and analytic restrictions are checked by
 those same rows without weakening. The following rows cover the additional
-named conclusions and proof-successor IDs of the shared upstream scope and its
-binding exact-derivative contract `2e5183b1-01e9-44fb-b26c-f4521a25c7c7` revision 2.
+named conclusions, and the modules proving them, of the all-rank Leibniz route
+and its exact-derivative statement.
 
 | Additional or more explicitly named condition | Audit result |
 | --- | --- |
-| `UnlinkedSegmentSocleProductIrreducible`, `LinkedSegmentSocleReverseProductStructure`, `LinkedSegmentSoclePairReducible`; `23e98d90-6055-4e35-91a9-b0f5d8a84961`, `a55c4267-7e3a-43f6-8bb1-ce319e1d0aa9`, `8fa9f68b-fa1b-431a-97f6-5b163964d1fc` | None is an input. The induction/coinvariant equivalences are constructed independently of these segment-product irreducibility conclusions. |
-| `JuxtaposedSegmentSocleReverseProductStructure`, `LinkedSegmentSocleReverseProductQuotientHom`; `7ff2a1e9-89dc-439e-a861-a567b3db92bf` and successors | No segment quotient-homomorphism or juxtaposed-product input. |
-| Adjacent socle commutation successor `cded83f3-df9c-4018-bc61-dc54f5c1f9ab` | Absent together with its parent commutation result. |
-| `TwoSegmentSocleCommutation`, `426911b4-6620-413f-8065-04b25287f3bd`, `66e3b87c-647e-41e4-af18-df4d436765f0` | No commutation result or successor. The GL₀ tensor swap uses tensor algebra only. |
-| `LinkedSegmentSocleGluing`, `c84cd52c-3ff3-4024-be50-8b84dd480888`, `6780b79c-9526-46aa-b8b4-00377d68b1ea` | No gluing or extension classification input. |
-| Parent six-statement contribution's (b), (d), (e), (f), every segment derivative, existence, Jacquet or classification conclusion, and proofs depending on them | None is used. No cuspidal or segment derivative theorem supplies the tensor or localization maps. |
-| `Langlands.Whittaker.SupercuspidalCoinvariantFinitenessStatement`, all-character single-block task `62de5903-b616-4b5c-88eb-a066b77c5467`, successors and consequences | No supercuspidal/all-character finiteness input; compact averaging in induction is a direct local construction. |
-| `Langlands.Whittaker.IrreducibleCoinvariantFinitenessStatement`, parent `5ab445dc-d2b4-4072-80d1-6370870a4a26` | No irreducible Whittaker-finiteness input or downstream consequence. |
-| `LeviCuspidalCoinvariantFinitenessStatement`, proof `3ff5c8fb-397c-4345-bcb3-5d98a0993d18` | No Levi/cuspidal finiteness input or downstream consequence. |
-| Mirabolic finite-length route `5428fe2c-013c-482d-aa6e-7df43e7191aa` using the prohibited finiteness | No mirabolic finite-length proof or pending repair is used. The categorical finite-length definition in `Category.Basic` proves none of these assertions. |
+| `UnlinkedSegmentSocleProductIrreducible`, `LinkedSegmentSocleReverseProductStructure`, `LinkedSegmentSoclePairReducible` | None is an input. The induction/coinvariant equivalences are constructed independently of these segment-product irreducibility conclusions. |
+| `JuxtaposedSegmentSocleReverseProductStructure`, `LinkedSegmentSocleReverseProductQuotientHom`, and the modules proving them | No segment quotient-homomorphism or juxtaposed-product input. |
+| Proof of adjacent socle commutation (`AdjacentUnlinkedSegmentSocleSwap`) | Absent, as is the statement it proves. |
+| `TwoSegmentSocleCommutation` | No commutation result or proof of one. The GL₀ tensor swap uses tensor algebra only. |
+| `LinkedSegmentSocleGluing` | No gluing or extension classification input. |
+| Every segment derivative, existence, Jacquet or classification conclusion, and proofs depending on them | None is used. No cuspidal or segment derivative theorem supplies the tensor or localization maps. |
+| `Langlands.Whittaker.SupercuspidalCoinvariantFinitenessStatement`, the all-character single-block result, their proofs and consequences | No supercuspidal/all-character finiteness input; compact averaging in induction is a direct local construction. |
+| `Langlands.Whittaker.IrreducibleCoinvariantFinitenessStatement` | No irreducible Whittaker-finiteness input or downstream consequence. |
+| `LeviCuspidalCoinvariantFinitenessStatement` and its proof | No Levi/cuspidal finiteness input or downstream consequence. |
+| Mirabolic finite-length route using these finiteness results | No mirabolic finite-length proof is used. The categorical finite-length definition in `Category.Basic` proves none of these assertions. |
 | General derivative/tensor results must not be supplied by their consumers | Psi, Phi, boundary and GL₀ comparisons are independently published constructions; tensor commutation is proved by quotient maps. No consumer assumption fills a missing proof. |
-| Shared character, Jacquet, top-localization, exactness, geometric lemma, cuspidal-support and finite-length infrastructure requires an independence check | The actual character/localization/induction bodies are covered above, including proved quotient right exactness and the actual closed-subgroup Mackey sequence. No top-localization consumer, paused minus-exactness conclusion, GL Leibniz/geometric-lemma consumer, cuspidal-support theorem or mirabolic finite-length theorem supplies an input. |
-| Ownership and run controls | Ownership pointers grant no hypothesis. The separate 4.13(b,c), 4.13(d), 4.14(b) and Whittaker-finiteness tasks are not duplicated; no suspended collaborator or paused worker is awakened. |
+| Shared character, Jacquet, top-localization, exactness, geometric lemma, cuspidal-support and finite-length infrastructure requires an independence check | The actual character/localization/induction bodies are covered above, including proved quotient right exactness and the actual closed-subgroup Mackey sequence. No top-localization consumer, minus-exactness conclusion, GL Leibniz/geometric-lemma consumer, cuspidal-support theorem or mirabolic finite-length theorem supplies an input. |
+| BZ77 4.13(b,c), 4.13(d), 4.14(b) and Whittaker finiteness | Their proofs are not duplicated here. |
 
-A nested-comment-aware scan of all 260 project Lean modules checked all
-63 UUIDs appearing in the contract objective/context and 31 exact names,
-including the named excluded declarations and the three homogeneity
-consumer modules. No UUID occurred in Lean code. The exact-name hits were
-only the permitted derivative/compatibility statement imports and imports
+A nested-comment-aware scan of all 260 project Lean modules checked
+31 exact names,
+including the declarations named above and the three homogeneity
+consumer modules. The exact-name hits were
+only the derivative/compatibility statement imports and imports
 of `Derivative.Homogeneity`. A broader segment, socle, head, classification,
 supercuspidal, finite-length, coinvariant-finiteness, Leibniz and homogeneity
 scan found only the elementary predicate, class, conditional duality and
 zero-carrier material identified above, including the supercuspidal imports.
-No prohibited consumer declaration, proof hole, invented axiom or forbidden
+No consumer declaration named above, proof hole, invented axiom or forbidden
 execution construct was found. This scan supports the mathematical body
-and provenance audit; it is not a substitute for independent semantic review.
+and provenance audit; it is not a substitute for a semantic reading of the proofs.
 
-The full readable declaration inspection and the recovery Lake build
+The full readable declaration inspection and the Lake build
 confirm the stated telescope, independent `uF,uV`, no extra premise and
-only `propext`, `Classical.choice` and `Quot.sound`. Development compilation
-is separate from the staged proof's exact-target validation, independent
-semantic acceptance and publication.
+only `propext`, `Classical.choice` and `Quot.sound`.
 
 ## Complete project import closure
 
 All direct and transitive project imports, excluding this entry, follow.
-The authorized Lean and Mathlib commits are respectively
+The Lean and Mathlib commits are respectively
 `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b` and
 `5ed2965256430c3649e86755f9576b54eca72435`.
 

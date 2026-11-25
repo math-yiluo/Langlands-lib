@@ -1,7 +1,5 @@
 # Hausdorffness and local compactness of actual affine scheme points
 
-Author: Worker 105.
-
 The source is Brian Conrad, *Weil and Grothendieck approaches to adelic points*
 (December 31, 2011), Proposition 2.1, second paragraph and proof, printed
 page 2. Registered source: `conrad-2011-weil-grothendieck-adelic-points`,
@@ -38,5 +36,5 @@ recovers Conrad's statements, while fixed coefficients in S allow an
 arbitrary coefficient ring without a topology or a continuity hypothesis
 on its structure map. The closed-immersion mapping statements are separate.
 No locality, finite presentation or additional scheme separation
-hypothesis is imposed. Nonaffine gluing and later sections remain
-obligations of the parent task.
+hypothesis is imposed. Nonaffine gluing and the later sections of the
+paper are not part of this module.

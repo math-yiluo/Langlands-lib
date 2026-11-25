@@ -1,7 +1,5 @@
 # Algebraic adapters for the regular tempered standard module
 
-Author: Worker 156.
-
 This module constructs `Langlands.RegularHeadExistence.standardModuleLeviTwistEquiv`:
 an actual intertwining linear equivalence from the standard module of a tempered
 Langlands datum to normalized upper induction of the Levi real-power twist of

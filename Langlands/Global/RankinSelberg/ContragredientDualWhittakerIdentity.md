@@ -1,7 +1,6 @@
 # The Whittaker function of the dual cusp form
 
-Module `Langlands.Global.RankinSelberg.ContragredientDualWhittakerIdentity`. Author:
-Worker 381.
+Module `Langlands.Global.RankinSelberg.ContragredientDualWhittakerIdentity`.
 
 ## Content
 

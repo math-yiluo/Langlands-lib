@@ -1,7 +1,5 @@
 # Statement: the explicit decomposition of `L ⊗[k] L` for a finite Galois extension
 
-Authors: Worker 928.
-
 `Langlands.FieldTheory.FiniteGaloisTensorDecompositionStatement.{u}` is a
 proposition definition, not a theorem. It states the decomposition; it does
 not prove it or supply an equivalence.
@@ -106,9 +104,9 @@ The statement does not claim that any source states this exact formulation.
 
 ## Scope and consumer boundary
 
-Worker 1347 requested this statement as a prerequisite for the
-simply connected central-cover existence task
-`a41119fb-a633-4b81-a979-4b08e9ddbb15`. There the overlap
+This statement is a prerequisite for the existence of simply connected
+central covers, `Langlands.GroupScheme.SimplyConnectedCoverExistenceStatement`.
+There the overlap
 `Spec L ×_{Spec k} Spec L` of a finite Galois splitting cover has coordinate
 algebra `L ⊗[k] L`. This proposition supplies only the algebraic
 decomposition of that coordinate ring and the identification of its two
@@ -123,7 +121,8 @@ The following remain obligations of the consumers:
 The published `Langlands.GroupScheme.SimplyConnectedCoverExistenceStatement`
 pair is neither imported nor changed.
 
-Proving the proposition is a separate exact-target proof obligation.
+The proposition is proved by `finiteGaloisTensorDecomposition` in
+`Langlands.FieldTheory.FiniteGaloisTensorDecompositionProof`.
 
 ## Imports
 

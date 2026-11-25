@@ -69,7 +69,7 @@ theorem homAction_homMk {Y Z : AlgebraicallyFiniteEtaleAffinoidActionUnder X}
 /-- Admit every equivariant bounded map whose algebra triangle commutes. -/
 def boundedHomMk {Y Z : AlgebraicallyFiniteEtaleAffinoidActionUnder X}
     (h : BoundedAlgHom K Y.obj.right.obj.V Z.obj.right.obj.V)
-    (equivariant : ∀ g : G, Y.obj.right.obj.ρ g ≫ h = h ≫ Z.obj.right.obj.ρ g)
+    (equivariant : ∀ g : G, (Y.obj.right.obj.ρ g).asHom ≫ h = h ≫ (Z.obj.right.obj.ρ g).asHom)
     (comm : h.comp Y.baseMap = Z.baseMap) : Y ⟶ Z :=
   homMk (NormContinuousAffinoidAction.homMk h equivariant)
     (NormContinuousAffinoidAction.hom_ext comm)
@@ -77,7 +77,7 @@ def boundedHomMk {Y Z : AlgebraicallyFiniteEtaleAffinoidActionUnder X}
 @[simp]
 theorem homMap_boundedHomMk {Y Z : AlgebraicallyFiniteEtaleAffinoidActionUnder X}
     (h : BoundedAlgHom K Y.obj.right.obj.V Z.obj.right.obj.V)
-    (equivariant : ∀ g : G, Y.obj.right.obj.ρ g ≫ h = h ≫ Z.obj.right.obj.ρ g)
+    (equivariant : ∀ g : G, (Y.obj.right.obj.ρ g).asHom ≫ h = h ≫ (Z.obj.right.obj.ρ g).asHom)
     (comm : h.comp Y.baseMap = Z.baseMap) :
     homMap (boundedHomMk h equivariant comm) = h :=
   rfl

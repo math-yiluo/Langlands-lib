@@ -1,7 +1,5 @@
 # Slope bounds and descent for Henniart's numerical correspondence
 
-Author: Worker 981, Task 7379, revision 3.
-
 This module states three propositions in `Langlands.Henniart` for Option II
 of the numerical local Langlands route note. It proves none of them.
 The universes for p-adic fields (`uK`), Weil representations (`uW`), and
@@ -54,7 +52,7 @@ weak cyclic base change, `IsBaseChangeCompatible S Ch N φL φM`, and
 
 This is the count implication of route note §6.6, Lemma `lem:step`. The
 [injection families and compatibility predicates](HenniartCompatibleInjections.md)
-are those of Task 7376, revision 3. The first predicate is (CI1): `Ch` on the
+are those of the module `HenniartCompatibleInjections`. The first predicate is (CI1): `Ch` on the
 image of a Weil class agrees with applying `φM` to the multiset of
 restriction constituents. The second says that if `φM k hk τ` is fixed by
 `Gal(M/L)`, then `τ` is fixed under conjugation by `W_L`. This is the part of

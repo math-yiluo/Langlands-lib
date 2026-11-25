@@ -1,7 +1,5 @@
 # Reflection of immersions across a nilpotent thickening
 
-Worker 888.
-
 `Langlands.GroupScheme.ImmersionNilpotentReflectionStatement.{u}` is a
 `Prop`-valued statement definition, with no proof or additional axiom.
 

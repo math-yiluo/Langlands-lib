@@ -1,6 +1,6 @@
 # A hypersurface model over an arbitrary domain
 
-Worker 336. This internal prerequisite for the affine algebraic case of Stacks
+This internal prerequisite for the affine algebraic case of Stacks
 0559 removes the auxiliary finite type over a ground field hypothesis from the
 existing hypersurface construction. It assumes directly that the fraction field
 of the base is separably closed in the fraction field of the algebra.

@@ -6,7 +6,7 @@ Module `Langlands.TraceFormula.WeilGeneralLinearCuspidalLocalTwistedTraceStateme
 - `Langlands.TraceFormula.WeilGeneralLinearCuspidalLocalTwistedTraceStatement.{u, uV}`.
 
 Let `L/K` be a finite extension of number fields, `σ ∈ Aut(L/K)` and `W = Res_{L/K} GL_{r+1}`.
-Task 7701 (`Langlands.TraceFormula.GroupSchemeCuspidalLocalTraceFactorizationStatement`) asserts
+`Langlands.TraceFormula.GroupSchemeCuspidalLocalTraceFactorizationStatement` asserts
 that the traces on an irreducible cuspidal summand `P` of `L²([W])` split off, at a finite place
 `v` of `K`, the character of *some* irreducible admissible representation of `W(K_v)`, and, for a
 twist `Θ` preserving `P`, the twisted character of that representation for *some* intertwiner.
@@ -16,18 +16,18 @@ of `L` above it: it is the Library's local component at `w` of a cuspidal operat
 viewed as a representation of `GL_{r+1}(K_v ⊗_K L)`. For the Galois twist `Θ` attached to `σ`,
 the intertwiner is a `SigmaIntertwiner` for `σ_v = id ⊗ σ`, the object of the Library's local
 base change statements (`Langlands.BaseChange.TwistedCharacter`). It is the analogue for `W` of
-`GeneralLinearCuspidalLocalComponentTraceStatement` (Task 7819; staged candidate
-`7dc598a7-504c-4632-95ec-9b5eea52eb9a`, not in the Library at the base commit and not imported
+`GeneralLinearCuspidalLocalComponentTraceStatement` (not imported
 here), which treats `GL_{r+1}` over one field and only the untwisted part. At an arbitrary finite
 place of `K` the local factor is the tensor product of the local components above it
-(`WeilGeneralLinearCuspidalLocalTensorTraceStatement`, in the same task).
+(`WeilGeneralLinearCuspidalLocalTensorTraceStatement`).
 
 The module declares the `local instance`s `IsAffine` and `Smooth` for the general linear group
 scheme (from `GroupScheme.GeneralLinear.isAffine_groupScheme` and
 `GroupScheme.GeneralLinear.smoothStatement`) and five `local instance`s of `AddCommGroup` on the
 Library's form spaces `Langlands.Automorphic.RationalInvariantFunctions`,
 `ContinuousRationalFunctions`, `FiniteSmoothRationalFunctions`, `AutomorphicForms` and on the
-carrier of a `LocalRealization`, as Task 7819 and the Library's own modules do (for example
+carrier of a `LocalRealization`, as `GeneralLinearCuspidalLocalComponentTraceStatement` and the
+Library's own modules do (for example
 `Langlands.Automorphic.PresentedLocalCategory`). They are not exported. The definition carries
 `set_option maxHeartbeats 1000000`, because elaborating the whole statement exceeds the default
 limit (each of its parts elaborates within the default limit when checked separately).
@@ -52,7 +52,8 @@ measure on the norm-one subgroup; `ν` a Haar measure on `W(𝔸_K)`. Then
   complete subspace `P`, `P_P X ι_P` denotes `P.orthogonalProjectionOnto ∘L X ∘L P.subtypeL`.
 
 Realizations. `R : CuspidalOperatorRealization L r`, `Ψ : R.Space →ₗ[ℂ] S` and the predicate
-`IsWeilFormClass` (through the comparison map `Φ : W(𝔸_K) → GL_{r+1}(𝔸_L)` of Task 7670) are as
+`IsWeilFormClass` (through the comparison map `Φ : W(𝔸_K) → GL_{r+1}(𝔸_L)` of
+`GeneralLinearWeilAdelicTwistStatement`) are as
 in `WeilGeneralLinearCuspidalSummandRealizationStatement`.
 `D : Langlands.Automorphic.CuspidalSpectralPresentation.{u, uV} R` is a spectral presentation of
 `R` (module `Langlands.Automorphic.CuspidalSpectralPresentation`). For a finite place `w` of `L`
@@ -86,9 +87,7 @@ Places and local groups.
   module topology of `E_v` over `K_v` (`IsModuleTopology`, topological ring); Hausdorff, locally
   compact and totally disconnected `GL_{r+1}(E_v)` from the Library lemmas
   `generalLinear_t2Space_of_finite`, `generalLinear_locallyCompactSpace_of_finite` and
-  `generalLinear_totallyDisconnectedSpace_of_finite`; and the Borel σ-algebra. This is the
-  instance block of the draft `CuspidalCyclicBaseChangeLiftStatement` (Task 7846, not in the
-  Library) with the Borel σ-algebra added. `μv` is a Haar measure on `GL_{r+1}(E_v)`.
+  `generalLinear_totallyDisconnectedSpace_of_finite`; and the Borel σ-algebra. `μv` is a Haar measure on `GL_{r+1}(E_v)`.
 - `σv := Algebra.TensorProduct.congr AlgEquiv.refl σ : E_v ≃ₐ[K_v] E_v` is `id ⊗ σ`; it is the
   Library's `localGalois K L σ (.inr v)`.
 - `Θ := adelicAut K (unitGaloisAut K L GLᵣ₊₁ σ)` is the automorphism of `W(𝔸_K)` induced by the
@@ -103,8 +102,7 @@ Local representations.
 - `PiV` is `(D.localComponent w).representation` composed with
   `GL_{r+1}(E_v) → GL_{r+1}(L_w)` induced by the evaluation at `w` composed with
   `finiteTensorMap v`. So `y ∈ GL_{r+1}(E_v)` acts on a form by right translation at `w` by the
-  image of `y`. It is the representation `tensorPlaceAboveRepresentation` of the draft of Task 7846, written
-  inline so that this statement does not depend on Task 7846.
+  image of `y`.
 - `SchwartzBruhat GL_{r+1}(E_v)` is the space of locally constant compactly supported functions,
   and `Character.distribution μv PiV hP fv` is the trace of the finite-rank operator
   `PiV(fv) = ∫ fv(y) PiV(y) dμv(y)` (module `Langlands.Representation.Character.Basic`).
@@ -119,7 +117,7 @@ For all data as above, assume:
 
 1. `P` is a subspace of `S` with `[CompleteSpace P]` and `P ≠ ⊥`, invariant under every `πc a`,
    such that every closed subspace `Q ≤ P` invariant under every `πc a` is `⊥` or `P` (the
-   hypotheses on `P` in Task 7701);
+   hypotheses on `P` in `GroupSchemeCuspidalLocalTraceFactorizationStatement`);
 2. `IsWeilFormClass K L r T i (Ψ f) (R.realization.toContinuous f)` for every `f : R.Space`, and
    the topological closure of the range of `Ψ` is `P` (the output of
    `WeilGeneralLinearCuspidalSummandRealizationStatement`);
@@ -142,7 +140,8 @@ Then there is `hP : Langlands.IsAdmissible PiV` such that:
 
 In each part `C` may depend on everything chosen before it, but not on `fv` or `fw`. The
 statement asserts nothing about the trace class property; it computes the trace when the
-property holds. The hypotheses `hΘ` and `hΘμ` are binders, as in Task 7701; this statement
+property holds. The hypotheses `hΘ` and `hΘμ` are binders, as in
+`GroupSchemeCuspidalLocalTraceFactorizationStatement`; this statement
 neither proves nor uses that they hold for the Galois twist `Θ`.
 
 ## Why the statement is true
@@ -159,7 +158,8 @@ neither proves nor uses that they hold for the Galois twist `Θ`.
    `𝔸_K ⊗_K L = 𝔸_L` and `K_v ⊗_K L = ∏_{q|v} L_q`, applied to matrix entries. Likewise `ofPlace`
    at `v` corresponds to the insertion at `w`. So, through `Ψ` (hypothesis 2), right translation
    at `w` on the forms of `R` corresponds to `πc ∘ ofPlace ∘ localPointsEquiv⁻¹` on `P`.
-3. **Untwisted factor.** The argument for Task 7701 (`W(𝔸_K) = W(K_v) × W(𝔸_K^v)` with
+3. **Untwisted factor.** The argument for `GroupSchemeCuspidalLocalTraceFactorizationStatement`
+   (`W(𝔸_K) = W(K_v) × W(𝔸_K^v)` with
    `W(K_v)` of type I) writes the irreducible unitary representation on `P` as a Hilbert tensor
    product `π_v ⊗̂ π^v` and gives `C` with
    `operatorTrace (P_P R_S(f) ι_P) = tr ρ(fv ∘ localPointsEquiv) · C(fw)`, where `ρ` is the
@@ -172,13 +172,15 @@ neither proves nor uses that they hold for the Galois twist `Θ`.
    `πc (ofPlace (localPointsEquiv⁻¹ y))`. For a nonzero `x` and a continuous linear functional
    `λ` on `π^v` with `(id ⊗ λ)(j x) ≠ 0`, the map `(id ⊗ λ) ∘ j` is a nonzero equivariant map
    from `PiV` (read on `W(K_v)`) to the smooth vectors of `π_v`; both are irreducible, so it is an
-   isomorphism. This is the argument of step 3 of the Markdown of Task 7819, the analytic form
+   isomorphism. This is the argument of step 3 of the Markdown of
+   `GeneralLinearCuspidalLocalComponentTraceStatement`, the analytic form
    of Flath's remark (proof of Theorem 1, printed p. 180) that the restriction of `W_1 ⊗ W_2` to
    `G_1` is `W_1`-isotypic. Isomorphic admissible representations have the same distribution
    character.
 4. **Twisted factor.** By `localPointsEquiv_atPlace_adelicAut`, the local action of `Θ` at `v`
    is `θ_v = entrywiseAut σv (r + 1)` in the coordinates `gv`, and `Θ (ofPlace x) = ofPlace (θ_v x)`.
-   Task 7701 gives a bijective `A_v` on the space of `ρ` with `A_v ∘ ρ(y) = ρ(θ_v y) ∘ A_v` and
+   The argument for `GroupSchemeCuspidalLocalTraceFactorizationStatement` gives a bijective `A_v`
+   on the space of `ρ` with `A_v ∘ ρ(y) = ρ(θ_v y) ∘ A_v` and
    `C` with `operatorTrace BP = tr (ρ(fv) ∘ A_v) · C(fw)`. Transporting `A_v` by an isomorphism
    `ρ ≅ PiV` from step 3 gives `A : SigmaIntertwiner σv (r + 1) PiV` with the same twisted
    trace. The direction `σv` (not `σv⁻¹`) comes from `IΘ R(y) = R(Θ y) IΘ` and the convention
@@ -186,8 +188,10 @@ neither proves nor uses that they hold for the Galois twist `Θ`.
 
 ## Provenance
 
-This is derived content, formulated for this project: Task 7701 for the group `W`, with the local
-factor identified as in Task 7819 through the identification of `W` with `GL_{r+1}` over `L`.
+This is derived content, formulated for this project:
+`GroupSchemeCuspidalLocalTraceFactorizationStatement` for the group `W`, with the local
+factor identified as in `GeneralLinearCuspidalLocalComponentTraceStatement` through the
+identification of `W` with `GL_{r+1}` over `L`.
 
 - Henniart–Lemaire, *Changement de base et induction automorphe pour GL_n en caractéristique non
   nulle* (2011), Proposition of II.6.5 (printed pp. 121–122): for a cuspidal automorphic
@@ -199,12 +203,13 @@ factor identified as in Task 7819 through the identification of `W` with `GL_{r+
 - Getz–Hahn, *An Introduction to Automorphic Representations* (2024): §13.4, printed p. 350
   (`Res_{E/F} GL_n(𝔸_F) := GL_n(𝔸_E)`); Theorem 9.7.3, printed p. 265; Flath's theorem 5.7.1,
   printed p. 152, and (11.14), printed p. 300 (factorization of cuspidal representations);
-  (18.33), printed p. 487 (pullback convention for the twist), as cited in Task 7701.
+  (18.33), printed p. 487 (pullback convention for the twist), as cited in the Markdown of
+  `GroupSchemeCuspidalLocalTraceFactorizationStatement`.
 - D. Flath, *Decomposition of representations into tensor products*, Proc. Sympos. Pure Math. 33,
-  part 1 (1979), Theorems 1 and 3 (printed pp. 179–181), as cited in Task 7819.
-- The Library statement `GroupSchemeCuspidalLocalTraceFactorizationStatement` (Task 7701) and the
-  statement `GeneralLinearCuspidalLocalComponentTraceStatement` of Task 7819 (staged, not yet in
-  the Library), whose form is followed.
+  part 1 (1979), Theorems 1 and 3 (printed pp. 179–181), as cited in the Markdown of
+  `GeneralLinearCuspidalLocalComponentTraceStatement`.
+- The Library statements `GroupSchemeCuspidalLocalTraceFactorizationStatement` and
+  `GeneralLinearCuspidalLocalComponentTraceStatement`, whose form is followed.
 
 Differences from the sources, all of which keep the content: one place `v` is split off, so the
 remaining factor is an arbitrary functional `C`; the local component is the Library's
@@ -215,12 +220,11 @@ rescaling of `A` is absorbed into `C`); the trace class property is a hypothesis
 
 ## Use
 
-Task 7340 uses the statement in the comparison of the twisted trace formula for `W` with the
-trace formula for `GL_{r+1}` over `K`, at places `v` of `K` with one place above them (in
+The statement serves the comparison of the twisted trace formula for `W` with the
+trace formula for `GL_{r+1}` over `K` in local cyclic base change for `GL_n`, at places `v` of `K` with one place above them (in
 particular at places that do not split in a cyclic extension of prime degree): the twisted
 traces of cuspidal summands of `L²([W])` become twisted characters of the Library's local
 components, the objects on which the local base change statements (`IsSigmaLift`,
 `IsSigmaStable`, supercuspidality) are stated. At places of `K` with several places above them
 (for example places that split in `L`) the local group is a product of several groups
-`GL_{r+1}(L_q)`; that case is `WeilGeneralLinearCuspidalLocalTensorTraceStatement` (in the same
-task).
+`GL_{r+1}(L_q)`; that case is `WeilGeneralLinearCuspidalLocalTensorTraceStatement`.

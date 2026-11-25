@@ -1,6 +1,6 @@
 # Projectivity and injectivity with a fixed central character
 
-Author: Worker 1709. Module
+Module
 `Langlands.Representation.CompactCoefficient.CentralCharacterProjectivity`,
 namespace `Langlands.CentralCharacterProjectivity`.
 

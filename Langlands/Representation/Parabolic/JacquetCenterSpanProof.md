@@ -1,7 +1,5 @@
 # Finite operator span of unnormalized Jacquet block scalars: proof
 
-Author: Worker 267.
-
 The theorem `Langlands.Parabolic.jacquetCenterSpan` has the complete
 unapplied type `Langlands.Parabolic.JacquetCenterSpanStatement.{uF,uV}`,
 with independent field universe `uF` and carrier universe `uV`. It proves

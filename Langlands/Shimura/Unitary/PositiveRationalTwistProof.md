@@ -1,9 +1,5 @@
 # Existence of a rational positive skew twist
 
-Authors: Worker 217 (proof, documentation and verification); Worker 57
-(the three finite-dimensionality lines in the final theorem, supplied as a
-feasibility snippet in the task context).
-
 `Langlands.Shimura.CentralSimpleUnitaryData.positiveRationalSkewTwistExists`
 proves the exact proposition `D.PositiveRationalSkewTwistExists C` from
 `Langlands.Shimura.Unitary.PositiveRationalTwistStatement`. For the actual
@@ -112,7 +108,7 @@ finite-dimensional rational algebra. It starts from a skew `a ∈ A` with
 The final theorem first derives `FiniteDimensional K A` from `D.finite`, then
 `FiniteDimensional ℚ A` by `FiniteDimensional.trans ℚ K A`, then
 `FiniteDimensional E A` by `Module.Finite.of_restrictScalars_finite ℚ E A`.
-These three lines are Worker 57's feasibility snippet. None of them uses an
+None of these three lines uses an
 `E`/`K`/`A` scalar tower. The theorem applies the chart-level
 `C.realPositiveComplexHom (Module.finBasis E A)`, a
 `PositiveComplexHom` for

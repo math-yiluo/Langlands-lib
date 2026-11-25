@@ -1,8 +1,6 @@
 # Solvability of rational points from geometric-point solvability
 
-Worker 1364.
-
-This internal unit constructs `basePointExtension b G` for every morphism
+This internal module constructs `basePointExtension b G` for every morphism
 `b : S' ⟶ S` of schemes and every actual group scheme over `S`. It is a
 group homomorphism from the sections of `G` over `S` to the sections of its
 actual pullback over `S'`. Its projection to `G` is the composite of `b` and
@@ -34,4 +32,8 @@ rings, Galois descent, finite field extensions, or affine schemes.
 
 The conclusion is only abstract solvability of the rational-point group.
 It neither constructs a Ga/Gm normal series nor proves that an action has
-a fixed point. Those structural and geometric obligations remain open.
+a fixed point. Those structural and geometric results are proved elsewhere in
+the Library: split solvability over an algebraically closed field by
+`algebraicallyClosedSplitSolvable` (`Langlands.GroupScheme.AlgebraicallyClosedSplitSolvableProof`)
+and fixed points on proper schemes by `solvableProperFixedPoint`
+(`Langlands.GroupScheme.SolvableProperFixedPointProof`).

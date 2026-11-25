@@ -8,7 +8,7 @@ import Mathlib.Algebra.Homology.DerivedCategory.Ext.EnoughInjectives
 
 Let `C` be an abelian category, `K` an object of its derived category whose cohomology vanishes
 above some degree `b`, and `W` an object of `C` placed in degree `0` as `W₀`. Assume that
-`Ext^i(H^k K, W)` vanishes for every `k` and every `i > 0`. Worker 3's proposition
+`Ext^i(H^k K, W)` vanishes for every `k` and every `i > 0`. The proposition
 `HyperextDegenerationStatement` asserts that the edge map
 `HyperextDegeneration.edgeMap K W n : Hom(K, W₀⟦n⟧) → Hom(H^{-n} K, W)` is then bijective.
 

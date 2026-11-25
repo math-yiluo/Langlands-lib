@@ -1,6 +1,6 @@
 # Hecke distributions, local units and compact-open corners
 
-This statement unit covers the remaining distribution comparisons in Renard
+This statement module covers the remaining distribution comparisons in Renard
 II.3.12. It reuses the existing Haar `HeckeAlgebra μ`, its unital `Corner`, the
 original distribution dual, `compactlySupported`, normalized compact-subgroup
 Haar distributions and actual compact convolution. All groups are Hausdorff,
@@ -32,9 +32,10 @@ Declarations are in `Langlands.HarmonicAnalysis.Distribution.RenardHecke`.
   this actual Hecke range. An actual compact open subgroup, contained in any
   prescribed open subgroup, gives both convolution identities for every family
   member. The refinement clause is the standard strengthening already present
-  in the published function-valued finite-family local-unit theorem; it also
+  in the existing function-valued finite-family local-unit theorem; it also
   supplies the filtered family by refining two subgroups via their intersection.
-  Idempotence is stated for all compact subgroups in the II.3.11 unit.
+  Idempotence is stated for all compact subgroups in the II.3.11 module
+  `RenardCompactSubgroupStatements`.
 - `IdempotentOrderStatement` states both directions of the source's reversed
   subgroup-inclusion criterion: both products of `e_K` and `e_L` equal `e_K`
   exactly when `L ≤ K`. This spells out the order from I.1.1 without installing
@@ -49,10 +50,10 @@ Declarations are in `Langlands.HarmonicAnalysis.Distribution.RenardHecke`.
 - `CornerStatement` identifies the range of the existing corner inclusion
   followed by the density map with exactly
   `GroupFunctionSpaces.compactDistributionsBoth K.toSubgroup`. The unit of this
-  actual unital corner maps to `e_K`. The published `Corner` construction
+  actual unital corner maps to `e_K`. The existing `Corner` construction
   already proves equality with the function sandwich `e_K H(G) e_K` and its
   ring and complex-algebra laws; the statement here is its distribution bridge.
-- `DoubleCosetBasisStatement` first equates the density of the published
+- `DoubleCosetBasisStatement` first equates the density of
   `Corner.massIndicator K hK μ g` with the literal compact distribution
   `e_K * δ_g * e_K`. The function is the indicator of `KgK` divided by its
   Haar mass, rather than the unnormalized indicator. For any family of
@@ -64,4 +65,4 @@ Declarations are in `Langlands.HarmonicAnalysis.Distribution.RenardHecke`.
 `Statements` is the conjunction of these seven closed `Prop`-valued targets.
 They supply statements, not proofs. The exact uniform-density range, the
 corrected discrete exceptions, the ideal property and the modular inversion
-formula are already in the separate `RenardUniformDensityStatements` unit.
+formula are already in the separate module `RenardUniformDensityStatements`.

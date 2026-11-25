@@ -1,7 +1,5 @@
 # Unipotent radicals of normal connected subgroups
 
-Worker 1372.
-
 `Langlands.GroupScheme.NormalUnipotentRadicalIntersectionStatement` is a
 proposition target at every universe `u`. Let `k : Type u` be an algebraically
 closed field, let `G` and `H` be smooth connected affine group schemes over

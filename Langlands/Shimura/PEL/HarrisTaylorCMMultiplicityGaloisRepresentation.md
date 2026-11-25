@@ -55,22 +55,20 @@ abbreviates them. Write `base` for `Spec (CommRingCat.of F)`. Let
   Both send `ModuleSheaf base R` to actions of `F̄ ≃ₐ[F] F̄`, which is
   definitionally `Field.absoluteGaloisGroup F`.
 - The published
-  `Langlands.Cohomology.HarrisCMLevelGaloisSmooth.HarrisCMLevelGaloisSmoothStatement ... R`
-  (Worker 3): for every `d`, `M` and class `x` of `(H d).obj M`, some open
+  `Langlands.Cohomology.HarrisCMLevelGaloisSmooth.HarrisCMLevelGaloisSmoothStatement ... R`:
+  for every `d`, `M` and class `x` of `(H d).obj M`, some open
   subgroup of `F̄ ≃ₐ[F] F̄`, with its Krull topology, fixes `x`.
-- From `Langlands.Shimura.PEL.HarrisTaylorCMIsotypicCohomology` (candidate
-  `06482d9c-709f-449e-bd42-538102e24d51`, accepted and awaiting
-  publication): `cmSmallLevelIsotypicCohomologyFunctor`,
+- From `Langlands.Shimura.PEL.HarrisTaylorCMIsotypicCohomology`:
+  `cmSmallLevelIsotypicCohomologyFunctor`,
   `cmSmallLevelMultiplicityFunctor`, `cmPrimeToIsotypicCohomologyFunctor`
   and `cmPrimeToMultiplicityFunctor`.
-- From `Langlands.Shimura.MultiplicityGaloisRepresentation`, submitted
-  together with this module: `isSmooth_isotypicGaloisRepresentation`,
+- From `Langlands.Shimura.MultiplicityGaloisRepresentation` (ported
+  together with this module): `isSmooth_isotypicGaloisRepresentation`,
   `isSmooth_multiplicityRepresentation`, `multiplicityObjects` and its
   Euler-polynomial results. It uses `multiplicityActionFunctor` and
   `galoisRepresentation` of `Langlands.Shimura.IsotypicGaloisAction`.
-- `FrobeniusPolynomial.frobeniusEulerPolynomial` (candidate
-  `5c2f38db-a736-4706-aa12-6de9f8bf0b33`, accepted and awaiting
-  publication), and `IsUnramifiedAt`, `IsUnramifiedAlong` and
+- `FrobeniusPolynomial.frobeniusEulerPolynomial` (in
+  `Langlands.Shimura.FrobeniusPolynomial`), and `IsUnramifiedAt`, `IsUnramifiedAlong` and
   `geometricFrobenius` of the published
   `Langlands.Shimura.DecompositionGroupAction`.
 

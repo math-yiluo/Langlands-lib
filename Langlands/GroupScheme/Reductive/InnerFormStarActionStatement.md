@@ -1,7 +1,5 @@
 # Statement: inner forms are detected by the star action
 
-Author: Worker 75.
-
 This module contains one `Prop`-valued statement,
 `Langlands.GroupScheme.InnerFormStarActionStatement.{u}`. The Lean file only defines the
 proposition. It contains no proof of it and adds no other declarations or axioms. It
@@ -163,7 +161,8 @@ on root data through the Weyl group).
 ## Role in the Library
 
 This is a statement for the program of algebraic and reductive group schemes with
-rational and Galois structure. A separate proof task will prove it. A possible route:
+rational and Galois structure. The Library proves it as `innerFormStarAction` in
+`InnerFormStarActionProof`. A possible route:
 for (1 ⇒ 2), extend `e` to `k_s`, move the torus and base of `d` along it, conjugate back
 to those of `d'` by a point of `G'(k_s)` (conjugacy of pairs of a maximal torus and a
 Borel subgroup over `k_s`), and use that the discrepancies are inner, so they act on

@@ -4,9 +4,6 @@ Module `Langlands.Algebra.UnitizationTensorComparisonStatements`.
 Namespace `Langlands.Algebra.UnitizationTensorComparison`.
 Entry proposition `Statements`.
 
-Worker 1222 wrote this statement unit under the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`.
-
 ## Source and provenance
 
 The governing source is David Renard, *Représentations des groupes réductifs
@@ -35,9 +32,9 @@ The page reads (French original):
 > est vrai en particulier si `A`, ainsi que les modules `X` et `Y`, sont
 > unitaires.
 
-The published note `notes/renard/unitization-tensor-progress.md` (Worker 709)
+The published note `notes/renard/unitization-tensor-progress.md`
 maps every assertion of I.2.1 to the Library. It records three assertions of
-this passage with no published statement. This unit states those three, plus
+this passage with no published statement. This file states those three, plus
 the unital special case introduced by "en particulier". The note's labels are:
 
 - (f) "ceci détermine une unique structure d'algèbre sur `Ã`".
@@ -48,7 +45,7 @@ the unital special case introduced by "en particulier". The note's labels are:
   sont unitaires", tensor half.
 
 The Hom halves of (j) and (k) are already published as
-`NondegenerateModuleHomScalars.unitizedHomEquiv`. This unit states only the
+`NondegenerateModuleHomScalars.unitizedHomEquiv`. This file states only the
 tensor halves.
 
 "Ils deviennent naturellement des `Ã`-modules unitaires" uses the
@@ -161,15 +158,13 @@ with universe parameters `uK uA uX uY`.
 
 ## Scope and dependencies
 
-This file states these four assertions and proves none of them. Proofs belong
-to a separate `lean.proof@1` task targeting `Statements` (or its components).
-A complete compiled proof exists privately in Worker 1222's drafts. It is not
-evidence for this unit.
+This file states these four assertions and proves none of them. The proofs
+are in `Langlands.Algebra.UnitizationTensorComparisonProof`, whose main
+theorem `statements` proves `Statements`.
 
 The file imports `Langlands.Algebra.CompatibleUnitizationTensor`,
 `Langlands.Algebra.NondegenerateTensorScalars` and pinned Mathlib
-`Mathlib.Algebra.Algebra.Bilinear` (environment
-`bb168ec3-1031-46d9-816b-5c2ed7bbe1a6`, Mathlib commit
+`Mathlib.Algebra.Algebra.Bilinear` (Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`). It makes the published opposite
 adapters `NondegenerateTensorScalars.opIsScalarTower` and `opSMulCommClass`
 local instances, as `NondegenerateTensorScalars` itself does, so that the
@@ -178,4 +173,4 @@ canonical scalars on the right factor elaborate.
 The remark that a nonunital `A` gives no canonical vector-space structure on
 `Hom_A(X, Y)` or `X ⊗_A Y` (the note's (e)) remains an informal remark with no
 statement. The
-rest of I.2 retains its separate obligations.
+rest of I.2 is outside this file.

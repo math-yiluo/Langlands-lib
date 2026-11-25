@@ -359,7 +359,7 @@ theorem flat_relativeRationalAlgebra (A : PresentedAffinoidAlgebra K)
     exact Ideal.closure_eq_of_isClosed _ (isClosed_ideal_generalizedTateAlgebra A s _)
   have key : ∀ J : Ideal (GeneralizedTateAlgebra s A),
       J = Ideal.span {algebraMap A (GeneralizedTateAlgebra s A) g * X s A 0 -
-        algebraMap A (GeneralizedTateAlgebra s A) (f 0)} →
+                        algebraMap A (GeneralizedTateAlgebra s A) (f 0)} →
         Module.Flat A (GeneralizedTateAlgebra s A ⧸ J) := by
     rintro J rfl
     exact flat_quotient_rationalEquation A s g (f 0) hgen'

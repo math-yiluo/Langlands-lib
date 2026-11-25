@@ -1,7 +1,5 @@
 # Quaternionic symplectic models from rank-one type-C indices: proof
 
-Author: Worker 178.
-
 `Langlands.GroupScheme.typeCRankOneQuaternionic.{u}` proves the unchanged
 published proposition `Langlands.GroupScheme.TypeCRankOneQuaternionicStatement.{u}`
 with no additional premise.

@@ -1,8 +1,8 @@
 # The rank-one real local Rankin–Selberg functional equation from Tate's theory
 
 Helper module for the rank-one (`r = 0`) case of
-`Langlands.Global.RankinSelbergGlobal.RealEqualFunctionalEquationStatement`. Authored by
-Worker 823. Every declaration is proved. The main theorem `realEqual_rankZero` assumes the
+`Langlands.Global.RankinSelbergGlobal.RealEqualFunctionalEquationStatement`.
+Every declaration is proved. The main theorem `realEqual_rankZero` assumes the
 Library proposition `Langlands.LocalFactor.RealArchimedeanTateStatement` as a hypothesis
 `hTate`; nothing else is assumed and no axioms are added.
 

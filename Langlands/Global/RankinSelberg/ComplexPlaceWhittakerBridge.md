@@ -1,12 +1,12 @@
 # The bridge premise from an analytic premise
 
 Module `Langlands.Global.RankinSelberg.ComplexPlaceWhittakerBridge`, namespace
-`Langlands.Global.RankinSelbergGlobal`. Worker 5665 wrote it for Task 7399 (prove
-`ComplexPlaceFunctionalEquationStatement`, Jacquet 2009, Theorem 2.1, at a complex place). It
-is a conditional reduction: it proves implications from premises that stay open. Provenance:
-internal.
+`Langlands.Global.RankinSelbergGlobal`. It is a step towards
+`ComplexPlaceFunctionalEquationStatement` (Jacquet 2009, Theorem 2.1, at a complex place). It
+is a conditional reduction: it proves implications whose premises stay hypotheses here.
+Provenance: internal.
 
-The module `ComplexPlaceFunctionalEquationReduction` proves the target from five open
+The module `ComplexPlaceFunctionalEquationReduction` proves the target from five
 premises. One of them is the bridge `ComplexPlaceWhittakerModelStatement`: every archimedean
 restriction `g ↦ W_x(ι_w(g) b)` of a global Whittaker function of an actual cuspidal
 realization `T` with parameter `d` at the complex place `w` lies in `complexWhittakerModel r d a`
@@ -142,5 +142,5 @@ proved in `ComplexPlaceWhittakerEquivariance` and are not part of the analytic p
   `complexPlaceFunctionalEquationIntertwinerReduction` with the per-map premise supplied by
   `complexPlaceWhittakerIntertwinerReduction`.
 
-None of the five premises is proved here. The required unconditional proof of
+None of the five premises is proved here. The unconditional proof of
 `ComplexPlaceFunctionalEquationStatement` stays open.

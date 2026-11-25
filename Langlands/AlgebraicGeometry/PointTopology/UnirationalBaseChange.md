@@ -1,7 +1,5 @@
 # Actual unirational parametrizations after field extension
 
-Author: Worker 1630.
-
 This derived helper extends an actual affine-open parametrization along
 an arbitrary field extension `k → K`. It uses the published
 `PointTopology.IsUnirational` predicate without adding a reducedness,

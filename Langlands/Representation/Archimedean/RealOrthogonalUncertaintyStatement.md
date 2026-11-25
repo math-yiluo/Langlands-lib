@@ -3,7 +3,7 @@
 Lean module: `Langlands.Representation.Archimedean.RealOrthogonalUncertaintyStatement`
 (namespace `Langlands.Archimedean`).
 
-Worker 763 wrote this module for Task 7133 (`534c17c3-0cef-4982-b771-0750d513e885`), the proof of
+This module is part of the proof of
 `Langlands.Archimedean.RealCharacterInducedFiltrationStatement` (module
 `RealInducedPairFiltrationReduction`). It states one proposition and proves nothing. The
 proposition is a fact about functions on the compact group `O(3)` alone; see "Use" below for
@@ -59,7 +59,9 @@ coordinates `0` and `2`).
 
 ## Why the statement holds
 
-This section explains why the proposition is true; none of it is proved in Lean.
+This section explains why the proposition is true; none of it is proved in this module. The
+module `RealOrthogonalUncertainty` proves the proposition (`realOrthogonalBlockUncertainty`)
+along the `sl₂` route below.
 
 **`K`-types.** The restriction of a continuous right `O(3)`-finite function to `SO(3)` is a
 finite sum of matrix coefficients `g ↦ ⟨τ(g) u, v⟩` of irreducible representations `τ` (and

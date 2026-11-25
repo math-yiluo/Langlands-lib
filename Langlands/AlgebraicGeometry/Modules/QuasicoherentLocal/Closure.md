@@ -1,7 +1,5 @@
 # Kernels, cokernels and pushforwards of modules that are quasi-coherent on affine opens
 
-Author: Worker 921.
-
 This helper module is part of the proof of
 `Langlands.AlgebraicGeometry.Modules.NoetherianSeparatedQuasicoherentVanishingStatement`. It
 introduces the property of an `𝒪_X`-module used in the vanishing induction and shows that the

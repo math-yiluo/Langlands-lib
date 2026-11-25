@@ -25,7 +25,7 @@ truncated smooth Godement section systems:
   `lim_m H^n(K m)` in place of `H^n(adicLimit K)`, when the published `adicLimitComparison` is an
   isomorphism in degrees `n` and `n + 1`; `adicLevelReductionSequence_shortExact_of_finite` and
   `adicLevelReductionSequence_shortExact_rep` for complexes of modules and of representations
-  with finite cohomology, given Worker 3's `FiniteCohomologyInverseLimitStatement`.
+  with finite cohomology, given `FiniteCohomologyInverseLimitStatement`.
 * `smoothGodementReductionSequence`, `smoothGodementReductionSequence_shortExact`: for the
   truncated smooth Godement section system and `n ≤ D`,
   `0 ⟶ (lim_m H^n(Φ(F_m^•))) / ℓ ^ r ⟶ H^n(Φ(F_r^•)) ⟶ (lim_m H^{n+1}(Φ(F_m^•)))[ℓ ^ r] ⟶ 0`,

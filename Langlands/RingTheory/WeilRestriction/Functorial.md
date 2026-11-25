@@ -1,37 +1,30 @@
-# Functoriality of the finite-type Weil-restriction algebra
+# Functoriality of the finite-type Weil restriction algebra
 
-Worker 105 extends the existing canonical universal-property functoriality of
-`TauCeti.Algebra.WeilRestriction` to
-`Langlands.Algebra.WeilRestrictionFiniteType`. The implementation adapts the
-published `Langlands/TauCeti/RingTheory/WeilRestriction/Basic.lean`,
-upstream commit `8428d6217f74afa72531df0bc85d7b57ab72810f`, by the Tau Ceti
-contributors. Its Apache 2.0 attribution is retained; the license is in
-`licenses/TauCeti/`. The old finite-presentation interface is unchanged.
+The commutative `A`-algebra `B` is finite projective, and `C`, `D`, `E` are commutative `B`-algebras of finite type. There are no topological, faithfulness, field, Noetherian or freeness hypotheses, and the universes of the algebras are independent.
 
-This is derived infrastructure for Conrad, *Weil and Grothendieck approaches
-to adelic points* (December 31, 2011), Example 2.4, printed page 3. In
-particular it supplies the actual map needed to state preservation of closed
-immersions without adding a finite-presentation hypothesis.
+[FiniteType](FiniteType.md) constructs the `A`-algebra `WeilRestrictionFiniteType A B C` together with a bijection `homEquiv A B C T` between `A`-algebra maps `WeilRestrictionFiniteType A B C →ₐ[A] T` and `B`-algebra maps `C →ₐ[B] B ⊗[A] T`, the points of `C` over `T`. The point of a map `g` is `B ⊗ g` composed with the universal point (`homEquiv_apply`), and for `h : T →ₐ[A] T'` the point of `h ∘ g` is `B ⊗ h` composed with the point of `g` (`homEquiv_comp`). This file makes the construction a functor in `C`.
 
-The commutative `A`-algebra `B` is finite projective. The commutative
-`B`-algebras `C`, `D` and `E` are finite type. There are no topological,
-faithfulness, field, Noetherianity or freeness hypotheses; the algebra
-universes are independent.
+It is derived infrastructure for Conrad, *Weil and Grothendieck approaches to adelic points* (December 31, 2011), Example 2.4, printed page 3: it supplies the map of representing algebras needed to state preservation of closed immersions without a finite-presentation hypothesis.
 
-`map A B φ`, for `φ : C →ₐ[B] D`, is the actual `A`-algebra map between the
-two constructed representing algebras. It is classified by composing `φ` with
-the universal point of `D`. `homEquiv_map` and
-`lTensor_map_universalPoint` state this exact law on universal points.
-`homEquiv_comp_map` identifies precomposition by the constructed map with
-precomposition by `φ`, on represented points at every test algebra.
-`map_id` and `map_comp` prove the identity and composition laws by the
-universal-point extensionality theorem.
+## The induced map
 
-On finitely presented input algebras,
-`finitePresentationAlgEquiv_map` proves that the new map agrees with the
-published TauCeti map under the canonical representing-algebra comparisons
-from `FiniteType.lean`. Its proof applies the representing equivalence and
-uses the two universal-point laws. Thus this is a compatible finite-type
-extension of the existing functor. Preservation of surjections and the
-corresponding actual-scheme closed-immersion assertion are separate
-proposition/proof obligations.
+For `φ : C →ₐ[B] D`, the composite of `φ` with the universal point of `D` is a point of `C` over `WeilRestrictionFiniteType A B D`. `map A B φ` is the `A`-algebra map `WeilRestrictionFiniteType A B C →ₐ[A] WeilRestrictionFiniteType A B D` with that point, that is, its preimage under `homEquiv`.
+
+- `homEquiv_map`: the point of `map A B φ` is the universal point of `D` composed with `φ`. This is the definition, read through the bijection.
+- `lTensor_map_universalPoint`: the same statement evaluated at `c : C`; `B ⊗ map A B φ` sends the universal point at `c` to the universal point at `φ c`. It is a `simp` lemma.
+- `homEquiv_comp_map`: for `g` out of the Weil restriction of `D`, the point of `g ∘ map A B φ` is the point of `g` composed with `φ`. By `homEquiv_comp` the left side is `B ⊗ g` composed with the point of `map A B φ`, which `homEquiv_map` identifies; the result is the point of `g` composed with `φ` by `homEquiv_apply`.
+
+## Functor laws
+
+Both are proved by comparing points, using that `homEquiv` is injective.
+
+- `map_id`: the point of `map A B (AlgHom.id B C)` is the universal point (`homEquiv_map`), and so is the point of the identity, since `B ⊗ id` is the identity.
+- `map_comp`: for `ψ : D →ₐ[B] E`, the point of `map A B ψ ∘ map A B φ` is the point of `map A B ψ` composed with `φ` (`homEquiv_comp_map`), which is the universal point of `E` composed with `ψ` and then with `φ`. This is the point of `map A B (ψ ∘ φ)`.
+
+## Comparison with the finitely presented case
+
+When `C` and `D` are finitely presented, [FiniteType](FiniteType.md) gives isomorphisms `finitePresentationAlgEquiv` with `Langlands.Algebra.WeilRestriction`, which has its own map `Langlands.Algebra.WeilRestriction.map A B φ` (see [PresentedAlgebra](PresentedAlgebra.md)). `finitePresentationAlgEquiv_map` states that the square formed by the two maps and the two isomorphisms commutes.
+
+The proof computes the point of both composites as maps out of `WeilRestrictionFiniteType A B C`. For the composite through `WeilRestriction A B C`, `homEquiv_comp_finitePresentationAlgEquiv` turns it into the point of `WeilRestriction.map A B φ` for the other bijection, which is the universal point of `WeilRestriction A B D` composed with `φ`. For the composite through `WeilRestrictionFiniteType A B D`, `homEquiv_comp_map` gives the point of the comparison isomorphism of `D` composed with `φ`, and that point is the same universal point by `finitePresentationAlgEquiv_universalPoint`.
+
+Preservation of surjections, and the closed-immersion statement for schemes, are in [WeilRestrictionClosedImmersionProof](../../AlgebraicGeometry/PointTopology/WeilRestrictionClosedImmersionProof.md).

@@ -1,7 +1,5 @@
 # Morphisms of the localized category from pair systems with the local condition
 
-Author: Worker 36.
-
 This module implements the converse direction of Berkovich's Proposition
 1.2.15(i). A compatible pair system with the local condition determines a
 morphism in the localized category of analytic spaces. For the full-recognition

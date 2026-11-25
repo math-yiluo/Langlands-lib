@@ -92,25 +92,25 @@ variable {G : Type z} [Group G] [TopologicalSpace G]
 
 private theorem eventually_chart_preimage_eq (hV : IsContinuousAction σV)
     (j : (presentationOf V).presentation.atlas.Index) :
-    ∀ᶠ t in 𝓝 (1 : G), localizedSpaceFunctor.map (σV t).hom ⁻¹'
+    ∀ᶠ t in 𝓝 (1 : G), localizedSpaceFunctor.map (σV t).asIso.hom ⁻¹'
       ((presentationOf V).chartDomain j).carrier = ((presentationOf V).chartDomain j).carrier := by
   let τ : TestTriple (presentationOf V) := ⟨j, 0, 1, zero_lt_one⟩
   filter_upwards [hV τ] with t ht
-  have ht' := (show IsNear τ (σV t).hom (𝟙 V) from ht).preimage_eq
+  have ht' := (show IsNear τ (σV t).asIso.hom (𝟙 V) from ht).preimage_eq
   rw [CategoryTheory.Functor.map_id, TopCat.coe_id] at ht'
   exact ht'
 
 set_option backward.isDefEq.respectTransparency false in
 set_option backward.isDefEq.respectTransparency.types false in
 private theorem spectralConvergesOn_chartDomainPullback_of_equivariant
-    (p : U ⟶ V) (hp : ∀ t, (σU t).hom ≫ p = p ≫ (σV t).hom)
+    (p : U ⟶ V) (hp : ∀ t, (σU t).asIso.hom ≫ p = p ≫ (σV t).asIso.hom)
     (i : (presentationOf U).presentation.atlas.Index) (j : (presentationOf V).presentation.atlas.Index)
     (himg : ∀ x ∈ ((presentationOf U).chartDomain i).carrier,
       localizedSpaceFunctor.map p x ∈ ((presentationOf V).chartDomain j).carrier)
-    (hpres : ∀ᶠ t in 𝓝 (1 : G), localizedSpaceFunctor.map (σU t).hom ⁻¹'
+    (hpres : ∀ᶠ t in 𝓝 (1 : G), localizedSpaceFunctor.map (σU t).asIso.hom ⁻¹'
       ((presentationOf U).chartDomain i).carrier = ((presentationOf U).chartDomain i).carrier)
     (hV : IsContinuousAction σV) (b : (presentationOf V).presentation.atlas.algebra j) :
-    SpectralConvergesOn (𝓝 (1 : G)) (fun t => preservedChartPullback i (σU t).hom)
+    SpectralConvergesOn (𝓝 (1 : G)) (fun t => preservedChartPullback i (σU t).asIso.hom)
       (BoundedAlgHom.id K _)
       (chartDomainPullback i j (domainRestrict _ _ p himg) b) := by
   intro ε hε
@@ -121,24 +121,24 @@ private theorem spectralConvergesOn_chartDomainPullback_of_equivariant
   let e := domainι U D
   let d := domainι V E
   let p' := domainRestrict D E p himg
-  let a := domainRestrict D D (σU t).hom (mapsTo_chart_of_preimage_eq i _ hi)
-  let c := domainRestrict E E (σV t).hom (mapsTo_chart_of_preimage_eq j _ hj)
+  let a := domainRestrict D D (σU t).asIso.hom (mapsTo_chart_of_preimage_eq i _ hi)
+  let c := domainRestrict E E (σV t).asIso.hom (mapsTo_chart_of_preimage_eq j _ hj)
   have hp' : p' ≫ d = e ≫ p := domainRestrict_comp _ _ _ _
-  have ha : a ≫ e = e ≫ (σU t).hom := domainRestrict_comp _ _ _ _
-  have hc : c ≫ d = d ≫ (σV t).hom := domainRestrict_comp _ _ _ _
+  have ha : a ≫ e = e ≫ (σU t).asIso.hom := domainRestrict_comp _ _ _ _
+  have hc : c ≫ d = d ≫ (σV t).asIso.hom := domainRestrict_comp _ _ _ _
   have heq : a ≫ p' = p' ≫ c := by
     apply (cancel_mono d).1
     calc
       (a ≫ p') ≫ d = (a ≫ e) ≫ p := by rw [Category.assoc, hp', ← Category.assoc]
-      _ = e ≫ p ≫ (σV t).hom := by rw [ha, Category.assoc, hp]
-      _ = (p' ≫ d) ≫ (σV t).hom := by rw [hp', Category.assoc]
+      _ = e ≫ p ≫ (σV t).asIso.hom := by rw [ha, Category.assoc, hp]
+      _ = (p' ≫ d) ≫ (σV t).asIso.hom := by rw [hp', Category.assoc]
       _ = (p' ≫ c) ≫ d := by rw [Category.assoc, Category.assoc, hc]
   have hcomm := congrArg (chartDomainPullback i j) heq
   rw [chartDomainPullback_comp, chartDomainPullback_comp] at hcomm
   let m := chartDomainPullback i j p'
   have happly := congrArg (fun f : BoundedAlgHom K _ _ => f b) hcomm
   change chartDomainPullback i i a (m b) = m (chartDomainPullback j j c b) at happly
-  change SpectralBound (preservedChartPullback i (σU t).hom (m b) - m b) ε
+  change SpectralBound (preservedChartPullback i (σU t).asIso.hom (m b) - m b) ε
   rw [preservedChartPullback_of_preimage_eq _ _ hi, happly, ← map_sub]
   rw [preservedChartPullback_of_preimage_eq _ _ hj] at hb
   exact hb.map m.toBoundedRingHom
@@ -265,10 +265,10 @@ theorem isContinuousAction_smallFibreProduct
     (σ : G →* Aut (localizationFunctor.obj P))
     (σX : G →* Aut (localizationFunctor.obj X)) (σY : G →* Aut (localizationFunctor.obj Y))
     (hX : IsContinuousAction σX) (hY : IsContinuousAction σY)
-    (hp : ∀ t, (σ t).hom ≫ localizationFunctor.map p =
-      localizationFunctor.map p ≫ (σX t).hom)
-    (hq : ∀ t, (σ t).hom ≫ localizationFunctor.map q =
-      localizationFunctor.map q ≫ (σY t).hom) :
+    (hp : ∀ t, (σ t).asIso.hom ≫ localizationFunctor.map p =
+      localizationFunctor.map p ≫ (σX t).asIso.hom)
+    (hq : ∀ t, (σ t).asIso.hom ≫ localizationFunctor.map q =
+      localizationFunctor.map q ≫ (σY t).asIso.hom) :
     IsContinuousAction σ := by
   apply isContinuousAction_of_chart_subsets σ
   intro i
@@ -277,9 +277,9 @@ theorem isContinuousAction_smallFibreProduct
   let j := (r k).val.1
   let j' := (r k).val.2
   have hrange := range_smallFibreProductChart f g k
-  have hpres : ∀ᶠ t in 𝓝 (1 : G), localizedSpaceFunctor.map (σ t).hom ⁻¹'
+  have hpres : ∀ᶠ t in 𝓝 (1 : G), localizedSpaceFunctor.map (σ t).asIso.hom ⁻¹'
       ((P).chartDomain I).carrier = ((P).chartDomain I).carrier := by
-    change ∀ᶠ t in 𝓝 (1 : G), localizedSpaceFunctor.map (σ t).hom ⁻¹'
+    change ∀ᶠ t in 𝓝 (1 : G), localizedSpaceFunctor.map (σ t).asIso.hom ⁻¹'
       range ((P).presentation.atlas.chart I) = range ((P).presentation.atlas.chart I)
     rw [hrange]
     exact eventually_preimage_eq_pullback_patch hX hY _ _ hp hq j j'
@@ -294,18 +294,18 @@ theorem isContinuousAction_smallFibreProduct
     rintro _ ⟨x, hx, rfl⟩
     exact (hrange.subset hx).2
   have hl (c : X.presentation.atlas.algebra j) :
-      SpectralConvergesOn (𝓝 (1 : G)) (fun t => preservedChartPullback I (σ t).hom)
+      SpectralConvergesOn (𝓝 (1 : G)) (fun t => preservedChartPullback I (σ t).asIso.hom)
         (BoundedAlgHom.id K _) ((p).pullback I j hleft c) := by
     rw [← chartDomainPullback_restrict_map p I j hleft]
     exact spectralConvergesOn_chartDomainPullback_of_equivariant _ hp I j _ hpres hX c
   have hr (c : Y.presentation.atlas.algebra j') :
-      SpectralConvergesOn (𝓝 (1 : G)) (fun t => preservedChartPullback I (σ t).hom)
+      SpectralConvergesOn (𝓝 (1 : G)) (fun t => preservedChartPullback I (σ t).asIso.hom)
         (BoundedAlgHom.id K _) ((q).pullback I j' hright c) := by
     rw [← chartDomainPullback_restrict_map q I j' hright]
     exact spectralConvergesOn_chartDomainPullback_of_equivariant _ hq I j' _ hpres hY c
   let φ (t : G) : BoundedAlgHom K ((P).presentation.atlas.algebra I)
       ((P).presentation.atlas.algebra I) :=
-    preservedChartPullback (X := localizationFunctor.obj P) I (σ t).hom
+    preservedChartPullback (X := localizationFunctor.obj P) I (σ t).asIso.hom
   exact spectralConvergesOn_of_pushout_heq (FibreProduct.leftBase F G₀ (r k))
     (FibreProduct.rightBase F G₀ (r k)) ((A).atlas.saturatedAtlas_original_algebra k)
     φ ((p).pullback I j hleft)

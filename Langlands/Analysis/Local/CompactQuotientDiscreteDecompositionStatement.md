@@ -80,9 +80,13 @@ input.
 
 ## Intended proof
 
-A private proof compiles. Besides published results, it uses only the
-staged statements `IntegratedTranslationPointwiseStatement` and
-`CompactQuotientIntegratedHilbertSchmidtStatement`.
+The Library does not prove this statement. Besides published results, the
+route below uses only the statements `IntegratedTranslationPointwiseStatement`
+(proved as `integratedTranslationPointwise` in
+`Langlands.Representation.Unitary.IntegratedTranslationPointwiseProof`) and
+`CompactQuotientIntegratedHilbertSchmidtStatement` (in
+`Langlands.Analysis.Local.CompactQuotientHilbertSchmidtStatement`, not proved
+in the Library).
 
 1. The published `rightHaarHermitianApproximation` gives continuous,
    compactly supported, nonnegative weights. Their integrated operators

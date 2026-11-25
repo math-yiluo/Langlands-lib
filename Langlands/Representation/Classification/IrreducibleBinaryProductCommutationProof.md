@@ -1,7 +1,5 @@
 # Proof of actual irreducible binary product commutation
 
-Authors: Worker 78 and Worker 1023.
-
 `Langlands.Classification.irreducibleBinaryProductCommutation` proves
 `Langlands.Classification.IrreducibleBinaryProductCommutation.{uF,uV} F T`.
 For positive, possibly unequal ranks `a` and `b`, and actual irreducible
@@ -21,8 +19,8 @@ binary irreducibility.
 This is an internal derivation from lower published Library results. The
 inverse-transpose pullback, Gelfand–Kazhdan topology adapter, normalized
 product duality, product reversal, and product congruence helpers are
-adapted from Worker 1023's published
-`IrreducibleTwoFactorProductSwapProof`. Worker 78 extends that argument to
+adapted from the published
+`IrreducibleTwoFactorProductSwapProof`. This proof extends that argument to
 arbitrary reversed block shapes and identifies the exact unequal-rank
 binary endpoint. The proof does not import the equal-rank theorem.
 
@@ -111,7 +109,7 @@ irreducibility criterion is used.
 
 A recursive source audit of the complete project import closure at
 Library base `676ac944440098acb714f6b953083e88bb89c9c2`, including this
-proof and its authored proposition, resolved all 294 project modules.
+proof and its proposition, resolved all 294 project modules.
 There were no unresolved or unusual project imports and no occurrences
 of the excluded statement modules or declarations in those Lean sources.
 The only Classification modules are `ConstituentRelations`, this proof
@@ -121,17 +119,12 @@ and its statement, `Segments`, `Supercuspidal`,
 `SupercuspidalTwist`. Their role is definitions and lower transport facts,
 rather than classification or exhaustion.
 
-The excluded families checked were analytic segment classification
-(task `aca8805b-054f-4d56-8045-12db7f623404`), multisegment special-head
-exhaustion (`3bfb61fa-1129-4fc9-83fd-7fcfec22106e`), ordered strong-head
-existence (`ebea9a8a-9b21-4208-aa31-98c2dea1f8a3`), ordered quotient
-coverage (`20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584`), tempered-block
-uniqueness (`52e97845-36bb-457d-b76f-70753334b88c`),
-`SquareIntegrableLanglandsClassification`
-(`1cb45da2-7007-4351-a694-594fb148b8d1`), square-integrable Langlands-head
-exhaustion (`cd8ab97c-0b78-4bce-97c4-d307a28159a4`), and regular tempered
-Langlands-head exhaustion (`bf433f0a-921a-428c-b0c0-6475438125ac`).
-Their conclusions and proof successors cannot supply a proposition in
+The excluded families checked were analytic segment classification,
+multisegment special-head exhaustion, ordered strong-head existence,
+ordered quotient coverage, tempered-block uniqueness,
+`SquareIntegrableLanglandsClassification`, square-integrable
+Langlands-head exhaustion, and regular tempered Langlands-head exhaustion.
+Their conclusions and the files proving them cannot supply a proposition in
 this closure through an imported statement. The implemented argument also
 uses no global disjoint-support irreducibility, general ordered quotient
 coverage, multisegment classification, or one-integral-line support
@@ -145,5 +138,4 @@ grouping, or support-existence result is invoked.
 
 Development compilation and theorem inspection succeed with zero errors
 or warnings, reporting only `propext`, `Classical.choice`, and
-`Quot.sound`. These checks do not establish independent semantic
-acceptance or publication.
+`Quot.sound`.

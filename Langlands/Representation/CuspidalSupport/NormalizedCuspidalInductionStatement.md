@@ -1,6 +1,6 @@
 # Cuspidal embedding and normalized induction for actual GL_n
 
-Author: Worker 14. These proposition definitions specialize Bernstein and
+These proposition definitions specialize Bernstein and
 Zelevinsky (1977), theorem 2.5 and theorems 2.8–2.9, to actual general linear
 groups over finite extensions of p-adic fields. They assert no proofs and
 assume no theorem truth as data.

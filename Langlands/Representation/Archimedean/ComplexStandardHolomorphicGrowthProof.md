@@ -42,16 +42,13 @@ Let `χ` be the position characters of `ds`, so that `χ_k(z) = phase(z)^{l_k} |
 `ComplexMomentSymbols` (leading monomials), `ComplexOperatorSymbols` (top symbols of words),
 `ComplexHolomorphicFormal` (the operators and their symbols), `FormalRealPolynomials`,
 `WeightedWirtinger`, `ComplexHolomorphicJets` (jets), `ComplexHolomorphicIntertwining`
-(`hasJet_holDeriv`), `ComplexHolomorphicTestFunctions`. They build on the T4 infrastructure
-of Task 7064 (`ComplexNoncompactPicture`, `ComplexNoncompactFiltration`, `ComplexTorusDerivative`,
+(`hasJet_holDeriv`), `ComplexHolomorphicTestFunctions`. They build on the infrastructure
+of the growth bound `ComplexLinkedSmallGrowthStatement` (`ComplexNoncompactPicture`, `ComplexNoncompactFiltration`, `ComplexTorusDerivative`,
 `ComplexLevelSpan`, `ComplexLinkedSmallGrowthAdjacent`, `ComplexLinkedSmallGrowthProof`, …).
 
 ## Provenance
 
-Internal proof of Task 7064 of a statement already in the Library, by an elementary route: the
+Internal proof of a statement already in the Library, by an elementary route: the
 holomorphic factor acts on holomorphic jets of principal-series functions in the noncompact
 picture through polynomial differential operators, whose top symbols are entries of the moment map
-`Φ = nb⁻¹ (nb Ξᵀ)_{strictly upper} nb`; it does not use Kostant's or Duflo's theorem. It is staged as
-a supporting proof under Task 7064 following the operator's answer to request
-2ddc84bd11d15912b1f81ef7e039fc99 (correspondence 3e821d365d9d5ba3ac9cf6a34e8108bc), since the
-proof task for this statement (Task 7145) cannot be executed by a worker of Task 7064.
+`Φ = nb⁻¹ (nb Ξᵀ)_{strictly upper} nb`; it does not use Kostant's or Duflo's theorem.

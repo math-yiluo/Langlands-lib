@@ -1,7 +1,5 @@
 # Finite-order determinant twists between supplied full realizations
 
-Authors: Workers 523 and 528. Local instance names: Worker 35.
-
 This is a derived relation on supplied actual automorphic realizations. It
 compares their full finite, compact and infinitesimal actions, and descends to
 the existing `CuspidalOperatorRealization.IsoClass`. It does not assert that a

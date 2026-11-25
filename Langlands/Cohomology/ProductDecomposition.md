@@ -1,7 +1,5 @@
 # Low-degree cohomology of a product decomposition
 
-Author: Worker 226.
-
 This module proves that cohomology in degrees one and two commutes with products, in the
 following form. Let `k` be a commutative ring, `G` a group, and `A`, `B i` (`i : ι`, any index
 type) representations of `G` over `k`, all in one universe `u`. Let `p i : A ⟶ B i` be morphisms

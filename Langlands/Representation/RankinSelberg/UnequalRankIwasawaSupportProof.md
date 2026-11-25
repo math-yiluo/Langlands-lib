@@ -1,7 +1,5 @@
 # Proof of geometric unequal-rank support
 
-Author: Worker 676.
-
 `Langlands.RankinSelberg.unequalRankIwasawaSupport` proves the imported
 `UnequalRankIwasawaSupportStatement F T n j k`, for every prime `p`, every
 `F : PadicField.{uF} p`, every supplied `T : F.TopologicalData`, and every

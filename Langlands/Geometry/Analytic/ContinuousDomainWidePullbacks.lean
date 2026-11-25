@@ -23,11 +23,11 @@ variable {U : LocalizedCategory.{u, v, v} (K := K)} {f : U ⟶ X}
 abbrev toAction (l : ActionLift ρ f) :
     Action (LocalizedCategory.{u, v, v} (K := K)) l.subgroup where
   V := U
-  ρ := (Aut.toEnd U).comp l.action
+  ρ := (Aut.toEnd (X := U)).comp l.action
 
 @[simp]
 theorem toAction_ρ (l : ActionLift ρ f) (g : l.subgroup) :
-    l.toAction.ρ g = (l.action g).hom := rfl
+    (l.toAction.ρ g).asHom = (l.action g).asIso.hom := rfl
 
 @[simp]
 theorem toAction_ρAut (l : ActionLift ρ f) : l.toAction.ρAut = l.action := by
@@ -47,18 +47,18 @@ def invariantDomain (l : ActionLift ρ f)
     apply IsContinuousAction.invariantDomainAction
     simpa using l.isContinuousAction
   equivariant g := by
-    change domainRestrict D D ((l.action g).hom) (hD g) ≫ (domainι U D ≫ f) =
-      (domainι U D ≫ f) ≫ (ρ g).hom
-    rw [← Category.assoc, domainRestrict_comp D D ((l.action g).hom) (hD g), Category.assoc,
+    change domainRestrict D D ((l.action g).asIso.hom) (hD g) ≫ (domainι U D ≫ f) =
+      (domainι U D ≫ f) ≫ (ρ g).asIso.hom
+    rw [← Category.assoc, domainRestrict_comp D D ((l.action g).asIso.hom) (hD g), Category.assoc,
       l.equivariant, ← Category.assoc]
 
 @[reassoc (attr := simp)]
 theorem invariantDomain_inclusion_equivariant (l : ActionLift ρ f)
     (D : (presentationOf U).AnalyticDomain)
     (hD : IsInvariantDomain l.toAction D) (g : l.subgroup) :
-    ((l.invariantDomain D hD).action g).hom ≫ domainι U D =
-      domainι U D ≫ (l.action g).hom :=
-  domainRestrict_comp D D ((l.action g).hom) (hD g)
+    ((l.invariantDomain D hD).action g).asIso.hom ≫ domainι U D =
+      domainι U D ≫ (l.action g).asIso.hom :=
+  domainRestrict_comp D D ((l.action g).asIso.hom) (hD g)
 
 end ActionLift
 
@@ -68,8 +68,8 @@ variable {U : QuasiEtaleSite X} (C : FiniteCompactDomainChartCover U)
   (l : ActionLift ρ U.hom)
   (σ : ∀ i, l.subgroup →* Aut (C.obj i).left)
   (hσ : ∀ i (g : l.subgroup),
-    (σ i g).hom ≫ (C.arrow i).left =
-      (C.arrow i).left ≫ (l.action g).hom)
+    (σ i g).asIso.hom ≫ (C.arrow i).left =
+      (C.arrow i).left ≫ (l.action g).asIso.hom)
 
 include σ hσ
 
@@ -87,7 +87,7 @@ theorem domain_invariant (i : C.Index) :
       domainι_apply]
   have heq := congrArg (fun k => localizedSpaceFunctor.map k z) (hσ i g)
   simp only [Functor.map_comp, TopCat.comp_app] at heq
-  change localizedSpaceFunctor.map (l.action g).hom x ∈ (C.domain i).carrier
+  change localizedSpaceFunctor.map (l.action g).asIso.hom x ∈ (C.domain i).carrier
   rw [← hz, ← heq]
   exact C.arrow_image_mem i _
 
@@ -109,16 +109,16 @@ def wideActionLift : ActionLift ρ (C.wideObj a j₀).hom :=
 
 @[reassoc (attr := simp)]
 theorem wideActionLift_base_equivariant (g : l.subgroup) :
-    ((C.wideActionLift l σ hσ a j₀).action g).hom ≫ (C.wideBase a j₀).left =
-      (C.wideBase a j₀).left ≫ (l.action g).hom :=
+    ((C.wideActionLift l σ hσ a j₀).action g).asIso.hom ≫ (C.wideBase a j₀).left =
+      (C.wideBase a j₀).left ≫ (l.action g).asIso.hom :=
   l.invariantDomain_inclusion_equivariant _ _ g
 
 /-- Every actual wide-pullback projection commutes with the supplied chart
 action. The complete morphism equation follows by cancelling the chart arrow. -/
 theorem wideActionLift_projection_equivariant (j : J) (g : l.subgroup) :
-    ((C.wideActionLift l σ hσ a j₀).action g).hom ≫
+    ((C.wideActionLift l σ hσ a j₀).action g).asIso.hom ≫
         (C.wideProjection a j₀ j).left =
-      (C.wideProjection a j₀ j).left ≫ (σ (a j) g).hom := by
+      (C.wideProjection a j₀ j).left ≫ (σ (a j) g).asIso.hom := by
   let : Mono (C.arrow (a j)).left := C.arrow_left_mono (a j)
   have hπ : (C.wideProjection a j₀ j).left ≫ (C.arrow (a j)).left =
       (C.wideBase a j₀).left :=

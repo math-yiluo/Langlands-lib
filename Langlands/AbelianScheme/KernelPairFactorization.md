@@ -1,6 +1,6 @@
 # Pairs with equal composite along a homomorphism family map
 
-Author: Worker 934. This helper module supplies the geometric reduction of
+This helper module supplies the geometric reduction of
 equal-composite pairs along `f_T := (homFamilySpaceMap f).app T : T ×_S A ⟶ T ×_S B`
 to the published kernel translations `kernelShear`. It is an internal formal
 deduction from published definitions and Mathlib; no literature result is

@@ -14,11 +14,11 @@ https://github.com/anthropics/fermats-last-theorem/blob/aa2d8b34692b16c70f699536
 Earlier Mathlib source:
 https://github.com/leanprover-community/mathlib4/blob/db584cd6d46c92f209a44c0f1c829460d327499d/Mathlib/AlgebraicGeometry/Sites/Representability.lean
 Local adaptation and maintenance: Naganori Yamaguchi (https://github.com/n-yamaguchi-0729).
-AI assistance in local adaptation and maintenance: OpenAI Codex.
+
 Registered snapshot: external-lean-reuse-snapshots-2026-10-21,
 n-yamaguchi-0729--ClassFieldTheory/source/Nyll/SchemeTheory/LocalGeometry/
 LocalRepresentabilityULift.lean.
-Slice-category adaptation: Worker 336.
+Slice-category adaptation: Langlands-lib.
 -/
 import Langlands.AlgebraicGeometry.AlgebraicSpace.LocalRepresentationProperties
 

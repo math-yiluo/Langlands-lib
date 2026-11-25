@@ -124,11 +124,10 @@ that quotient with the existing localization Hom type.
 
 ## Scope
 
-This unit constructs the exact source-subatlas Hom quotient, its localization
+This module constructs the exact source-subatlas Hom quotient, its localization
 Hom equivalence, descent to independently sized types and the categorical
 filtered-colimit witness. It does not prove injectivity of restriction
 transitions or faithfulness of the localization. Analytic identification
 with a separately defined category, actual analytic etale, quasi-etale and
 equivariant sites, compact/distinguished domains and Harris tower
-specializations remain obligations of the surrounding task. Every
-predecessor retains its independent acceptance and publication gate.
+specializations lie outside this module.

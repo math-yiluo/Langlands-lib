@@ -1,5 +1,5 @@
 import Langlands.AlgebraicGeometry.Picard.DiscreteValuationRingSelfProductLineBundleExtensionProof
-import Mathlib
+import Langlands.MathlibBase
 
 /-! # Generic fibres of schemes over a discrete valuation ring -/
 

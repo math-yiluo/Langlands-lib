@@ -1,7 +1,5 @@
 # Ordered cuspidal products have no degenerate mirabolic submodules
 
-Author: Worker 1166.
-
 This module states Theorem 4.11 of Bernstein and Zelevinsky (1977) for actual
 general linear groups over finite extensions of p-adic fields. Take an
 ordered family of irreducible cuspidal representations `ρ_1, …, ρ_r` with
@@ -189,7 +187,7 @@ cuspidal `ρ_i`, the sigma-class inequality for `i < j` is `ρ_j ≇ νρ_i`, an
 - The product uses the positive half modulus `δ_P^(1/2)` (BZ77 §1.8(a),
   §2.3). Here `δ_P` is the explicit block modulus `T.leviModulus B` of
   `Group.GL.BlockModulus`. The published theorem `Langlands.glBlockModulusHaar`
-  (module `Group.GL.BlockModulusHaarProof`, Worker 117) proves that it is the
+  (module `Group.GL.BlockModulusHaarProof`) proves that it is the
   Haar module of Levi conjugation on the block unipotent radical, which is
   the source's `mod_U`. That theorem is not imported here; it is cited only
   as a proved comparison.
@@ -198,7 +196,7 @@ cuspidal `ρ_i`, the sigma-class inequality for `i < j` is `ρ_j ≇ νρ_i`, an
   `|det|^(-1/2)` on `GL_m` and on `P_(m+1)`, respectively. The sign follows
   BZ77 §1.8(b) and §3.2. The published theorems
   `psiMinusHaarInverseHalf_eq` and `phiMinusHaarInverseHalf_eq` (module
-  `Derivative.MirabolicMinusNormalization`, Worker 710) prove that these
+  `Derivative.MirabolicMinusNormalization`) prove that these
   characters are the inverse halves of the actual radical Haar moduli, which
   is the source's `mod_U^(-1/2)`. That module is not imported here either.
 - The twist by a character keeps the carrier (`psiMinus_obj_carrier`,
@@ -208,9 +206,10 @@ cuspidal `ρ_i`, the sigma-class inequality for `i < j` is `ρ_j ≇ νρ_i`, an
   on that normalization. This remark is not formalized. The statement uses
   the published normalized functors.
 
-No comparison remains open at the statement stage: both normalization
-comparisons are proved and published. The proof successor still has to
-connect them to whatever lower results it uses, by proved inputs.
+No comparison is open at the statement: both normalization
+comparisons are proved and published. The statement itself is proved as
+`Langlands.Derivative.orderedCuspidalProductNoDegenerateSubmodules` in
+`Derivative.OrderedCuspidalProductNondegeneracyProof`.
 
 ## Boundary cases
 
@@ -270,7 +269,7 @@ irreducibility criterion uses an all-pairs condition and is not an input.
 The transitive `Langlands` import closure at Library
 `e3944f764d2c00d53ac87227e98601bb667f348f` has 72 modules besides this one. It
 was computed from the `import` lines of the Library sources. Every one of
-these Lean/Markdown pairs is byte-identical to the Library; none was edited.
+these Lean/Markdown pairs is byte-identical to the Library.
 
 - `Langlands.Group` (12): `GL.Basic`, `GL.BlockModulus`, `GL.Blocks`,
   `GL.Mirabolic`, `GL.MirabolicRadical`, `GL.Nonarchimedean`,
@@ -317,8 +316,7 @@ module-name scan for the excluded families found no match. The scan covered
 segment, socle, head, Jacquet formula, two-supercuspidal, Leibniz, exactness,
 support shift, coinvariant finiteness, mirabolic finite length,
 classification and exhaustion. The closure contains no derivative theorem,
-no segment or classification result, and no conclusion of any task excluded
-by the contract. Importing these modules uses only their definitions.
+no segment or classification result, and no excluded conclusion. Importing these modules uses only their definitions.
 
 ## Proof in the source
 
@@ -330,7 +328,7 @@ the exact sequence of §4.13(a), it treats `ω ⊂ (ρ_1 |_P) × π°` with
 §4.13(c), (d), §4.4, §3.5 and induction. It treats `ω ⊂ ρ_1 × (π° |_P)` with
 §4.14(a) and Lemma 4.7(b). The product functors used there are defined in
 §4.12, and §4.13 is proved in §7. These are references for the proof
-successor only. They are not hypotheses of this statement. The reduction to
+only. They are not hypotheses of this statement. The reduction to
 an irreducible `ω` and the exactness steps need independently proved inputs.
 
 ## Original source

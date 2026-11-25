@@ -32,6 +32,6 @@ linear functional on that quotient.
 The provenance is the internal derivation described above from naturality,
 all-test stability, rational irreducibility, the existing Burnside result and
 ideal-power separation. The proper ideal and coordinate-ring domain and
-Noetherian hypotheses remain explicit here. This unit does not prove tensor
+Noetherian hypotheses remain explicit here. This module does not prove tensor
 irreducibility or construct highest-weight representations, induced-space
 comparisons or big-cell data.

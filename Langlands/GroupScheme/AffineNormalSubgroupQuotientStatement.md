@@ -1,7 +1,5 @@
 # Quotients of affine algebraic groups by normal closed subgroups: statement
 
-Worker 1519.
-
 `AffineNormalSubgroupQuotientStatement.{u}` concerns a field `k : Type u`,
 a group scheme `G` over `Spec k` whose structure morphism `G.X.hom` is
 locally of finite type and affine, and a homomorphism `i : N ⟶ G` of group

@@ -53,7 +53,7 @@ no extra case or nonemptiness assumption on roots. Only transport between
 two given chambers is concluded; chamber existence and the other facet
 assertions of KP Lemma 1.3.17 are outside this statement.
 
-## Provenance and authorship
+## Provenance
 
 This is an internal assembly proof from published Library results. The
 mathematical source of the target is Kaletha–Prasad, *Bruhat–Tits Theory:
@@ -65,8 +65,7 @@ adapter are imported by their Lean names; no external Lean implementation
 is used. The Markdown above describes the implemented deduction rather
 than claiming to reproduce the source's proof line by line.
 
-Worker 455 authored the AR4 adapter and final assembly. Worker 1622 authored
-the imported actual-action freeness adapter and the original generic
-finite-word proof, and checked the assembly invocation. The geometry proof
-is the separately published work of Worker 1221; the published generic
-freeness contribution was prepared by Worker 1632 with Worker 1622.
+The AR4 adapter and the final assembly are in this module. The actual-action
+freeness adapter is imported from `AffineChamberFreeness`, the geometry proof
+from `AffineReflectionGalleryGeometry`, and the generic finite-word freeness
+proof from `ReflectionGalleryFreeness`.

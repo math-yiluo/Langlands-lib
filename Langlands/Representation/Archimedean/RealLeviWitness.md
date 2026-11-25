@@ -2,8 +2,8 @@
 
 Lean module: `Langlands.Representation.Archimedean.RealLeviWitness`.
 
-Worker 5220 wrote this module for Task 6749 (`5dd3db87-6f14-4d0f-b9a7-3d0065415fd8`), the proof
-of `RealStandardLanglandsQuotientStatement` (module `RealLargeLanglandsQuotientReduction`). It
+This module is part of the proof of `RealStandardLanglandsQuotientStatement` (module
+`RealLargeLanglandsQuotientReduction`). It
 states and proves `Langlands.Archimedean.RealLeviWitnessStatement` (proof `realLeviWitness`).
 The module combines the density step (`RealLeviDensityStatement`) with the nonvanishing step
 (`RealLeviNonvanishingStatement`) of the single-shot Langlands-quotient argument. It produces the

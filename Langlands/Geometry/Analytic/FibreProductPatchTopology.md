@@ -22,4 +22,4 @@ therefore gives `isClosedEmbedding_patchChart`.
 No openness or saturation assumption is needed for these finite overlaps.
 This is a local topological prerequisite, not a same-universe analytic
 pullback presentation or the localized categorical and etale conclusion
-of Task 7349. No external statement is transcribed.
+of `LocalizedEtalePullbackStatement`. No external statement is transcribed.

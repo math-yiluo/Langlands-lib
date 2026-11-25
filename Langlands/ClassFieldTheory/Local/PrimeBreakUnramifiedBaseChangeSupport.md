@@ -1,7 +1,5 @@
 # Restriction and arithmetic transport for the prime-break comparison
 
-Author: Worker 32.
-
 This derived support module constructs the actual restriction homomorphism and
 collects elementary transport facts used by the pending proof of
 `Langlands.LocalClassField.PrimeBreakUnramifiedBaseChange`. It does not prove that

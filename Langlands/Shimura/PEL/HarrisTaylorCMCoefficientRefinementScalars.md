@@ -1,7 +1,5 @@
 # Integral scalars under original CM coefficient refinement
 
-Author: Worker 57.
-
 Construct the integral coefficient sheaf independently on any original CM
 normal cover below the full coefficient-kernel level. Construct its comparison
 with the corresponding component of the existing integral inverse system.
@@ -52,7 +50,7 @@ geometric-point conditions. The tower and its morphisms are constructed
 from representing witnesses for that presheaf. They are not arbitrary
 scheme outputs. The imported construction derives the original normal
 finite geometric torsors from these premises, including the existing
-dominant-unramified-etale result. This unit does not prove representability,
+dominant-unramified-etale result. This module does not prove representability,
 dual existence and geometry, or coarse rigidity.
 
 Use the notation
@@ -302,12 +300,11 @@ lattice, scalar and exponent. The exponent inverse system is imported,
 and no new varying-cover inverse system is defined here. Applicable
 representability and dual existence theorems, source rigidity, full
 source-moduli and canonical-model geometry, and identification with
-the sources' component-function sheaves remain obligations of the
-surrounding program. This unit also does not prove independence of
+the sources' component-function sheaves are not established here.
+This module also does not prove independence of
 the lattice or coefficient data, arbitrary scheme inverse-image
 compatibility, scalar extension, or completion to a lisse adic sheaf.
-Those broader obligations remain assigned and required.
 
-Only published dependencies are imported. This pair is by Worker 57,
-using Lean 4.34.0 and Mathlib
+Only published dependencies are imported. This pair uses
+Lean 4.34.0 and Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.

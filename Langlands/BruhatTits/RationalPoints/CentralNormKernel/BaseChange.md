@@ -1,7 +1,5 @@
 # Base change of central rational points and matrices to an algebraic closure
 
-Author: Worker 1532.
-
 Namespace: `Langlands.BruhatTits.RationalPoints.CentralNormKernel`. Internal helper for the
 proof of `CentralNormKernelCompactnessStatement`. Let `F` be a field and `M` a group scheme over
 `Spec F`.

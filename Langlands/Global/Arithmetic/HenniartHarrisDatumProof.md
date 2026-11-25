@@ -1,7 +1,6 @@
 # Henniart's Harris datum and the datum characters
 
-Worker 84 and Worker 1690. Worker 1690 adopted Worker 84's supplied Lean
-proof unchanged and checked it against the published prerequisites. The module
+The module
 proves two unconditional theorem statements, with the local hypotheses
 quantified inside their respective target propositions.
 

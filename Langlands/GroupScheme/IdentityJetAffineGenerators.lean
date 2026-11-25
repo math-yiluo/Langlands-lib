@@ -97,6 +97,7 @@ theorem ambient_coordinateMap_span
   have hsurj : Function.Surjective (fun a : algebra G =>
       (groupSchemeIso G).inv.hom.hom.left.appTop
         ((Scheme.ΓSpecIso (CommRingCat.of (algebra G))).inv a)) :=
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
     (ConcreteCategory.bijective_of_isIso
       (groupSchemeIso G).inv.hom.hom.left.appTop).surjective.comp
         (ConcreteCategory.bijective_of_isIso

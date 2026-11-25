@@ -1,10 +1,9 @@
 # Compact tests for quotient-measure invariance and nonzeroness
 
-This internal helper unit supplies concrete inputs for the published
+This internal helper module supplies concrete inputs for the published
 `measureOfPositiveAveraging_ne_zero` and `measureOfPositiveAveraging_preserving`
-results in `QuotientFunctional`. Worker 112 proposed these interfaces; Worker 113
-implemented the unit. Its only project import is the unchanged `QuotientMeasure`
-API.
+results in `QuotientFunctional`. Its only project import is the unchanged
+`QuotientMeasure` API.
 
 For any locally compact Hausdorff space with a Borel measurable structure,
 `exists_compact_integral_ne_zero` proves that a nonzero regular measure has a

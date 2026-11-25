@@ -2,9 +2,9 @@
 
 The namespace `Langlands.HaarModulus` constructs the positive Haar modulus of
 conjugation on an actual subgroup. The module is
-`Langlands.Group.HaarModulus`. Worker 76 authored this construction and its
-intrinsic proofs. It imports the published compact-open stabilizer construction
-of Workers 76 and 128 and the existing positive-character and smooth-twist APIs.
+`Langlands.Group.HaarModulus`. It imports the published compact-open stabilizer
+construction (`Langlands.Topology.CompactOpen.ConjugationStabilizer`) and the
+existing positive-character and smooth-twist APIs.
 
 ## Conjugation and the positive character
 
@@ -120,7 +120,7 @@ With `[LocallyCompactSpace G]` and `[NonarchimedeanGroup G]`, four corresponding
 `isOpen_ker_closed...` lemmas and the two
 `isSmooth_twist_closedHalfCharacter_iff` and
 `isSmooth_twist_closedInverseHalfCharacter_iff` lemmas use only ambient instances
-and hU. These specialize to the requested Hausdorff locally compact
+and hU. These specialize to the Hausdorff locally compact
 nonarchimedean setting. The implemented arguments do not need a Hausdorff
 hypothesis, so it is not included in their Lean types. No closedness of M or
 local compactness of the normalizer is needed.
@@ -145,5 +145,5 @@ source construction. They are not attributed to a separately numbered source
 result. The analytic input is the pinned Mathlib module
 `Mathlib.MeasureTheory.Measure.Haar.MulEquivHaarChar`; the square-root machinery
 and smooth-twist proof are reused through published Library imports.
-This unit establishes no Jacquet exactness, induction compatibility, geometric
+This module establishes no Jacquet exactness, induction compatibility, geometric
 lemma or identification with an explicit GL determinant modulus.

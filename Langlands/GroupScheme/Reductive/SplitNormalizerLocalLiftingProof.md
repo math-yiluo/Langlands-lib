@@ -18,7 +18,7 @@ transporter, self-centralization and cocycle results. The source provenance
 of the target, including Conrad's Proposition 5.1.6, Corollary 5.1.11 and
 Corollary 5.2.13(2), is recorded in the unchanged statement companion. The
 implemented proof uses smooth affine transporters and Zariski local
-triviality of split-torus cocycles. Worker 799's
+triviality of split-torus cocycles. The module
 `Torus.LocalTransporterDescent` supplies the local descent helper; its paired
 Markdown explains that construction. All other mathematical inputs are
 imported by their published Lean names.

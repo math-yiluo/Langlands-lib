@@ -1,6 +1,6 @@
 # Coherence and descent of canonical fixed pinned comparisons
 
-Worker 591. This derived adapter completes the composition and single-cover
+This derived adapter completes the composition and single-cover
 descent laws for canonical comparisons of affine pinned models over
 arbitrary common schemes. The exact affine pinned Isomorphism Theorem
 remains an explicit input, in the setting of Conrad, *Reductive group

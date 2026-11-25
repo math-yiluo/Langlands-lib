@@ -1,7 +1,5 @@
 # Rationalization of finite-index maps of abelian groups
 
-Author: Worker 1321.
-
 This internal linear-algebra helper isolates the scalar-extension step used by
 the relative-rank task. For arbitrary abelian groups `M` and `N` in arbitrary
 universes, an injective additive map `f : M →+ N` with finite-index image induces

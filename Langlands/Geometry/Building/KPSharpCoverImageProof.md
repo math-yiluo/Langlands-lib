@@ -69,11 +69,11 @@ follow a numbered source argument. It uses the commutator cocharacter instead of
 the coroot because the supplied `R.coroot α` is not formally known to land in
 the derived subgroup. The commutator cocharacter lands there by construction.
 
-The three helper declarations are adapted from
-`Langlands/GroupScheme/SimplyConnected/RootPointLift.lean` in revision 1 of
-this task's carried-over shared draft. That draft derived the target only
+The three helper declarations are adapted from an earlier file
+`Langlands/GroupScheme/SimplyConnected/RootPointLift.lean`, which is not part
+of the Library. That file derived the target only
 conditionally on `RelativeRootReflectionExistenceStatement`, through its own
 lifting modules. The present proof discharges that input with the published
 `relativeRootReflectionExistence_of_rootRankOneFactorization` and
-`rootRankOneFactorization`. It replaces the draft's lifting chain with the
+`rootRankOneFactorization`. It replaces that file's lifting chain with the
 published `Dynamic.exists_derivedCover_lift_of_mem_unipotent`.

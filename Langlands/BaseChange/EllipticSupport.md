@@ -46,23 +46,24 @@ of cuspidal representations) is not part of them.
    polynomial, so the two notions agree when `F` is perfect, in particular in characteristic
    zero.
 2. `IsSigmaEllipticSupported σ l φ`, for `φ : GL_n(E) → ℂ`: every `δ` with `φ δ ≠ 0`
-   satisfies Task 7405's `IsSigmaElliptic σ l δ` (`δ` is associated with a regular elliptic
+   satisfies `IsSigmaElliptic σ l δ` (module `Langlands.BaseChange.Norm`; `δ` is associated with a regular elliptic
    element of `GL_n(F)`). This is HL's condition that `φ` vanish off the set `G(E)_{σ-e}` of
    σ-elliptic elements (as in `c^σ_{v₁}(φ)`), with the Library's notion of regular
    elliptic element. The two notions of σ-elliptic element differ in two ways:
-   - *Quantifier.* HL II.1.2 ask that every element associated with `δ` be elliptic, Task
-     7405 that some associated element be regular elliptic. For a cyclic algebra, the
+   - *Quantifier.* HL II.1.2 ask that every element associated with `δ` be elliptic,
+     `IsSigmaElliptic` that some associated element be regular elliptic. For a cyclic algebra, the
      elements associated with `δ` exist and form one conjugacy class of `GL_n(F)` (HL I.2.2;
-     Task 7405's `CyclicNormLemmaStatement`, not proved there), so for a property invariant
+     `CyclicNormLemmaStatement` of `Langlands.BaseChange.Norm`, proved as `cyclicNormLemma` in
+     `Langlands.BaseChange.CyclicNormLemma`), so for a property invariant
      under conjugacy, "some associated element" and "every associated element" agree.
    - *Separability.* As in item 1, the Library's regular elliptic elements have a separable
      characteristic polynomial, whereas HL's elliptic elements need not. For a cyclic
-     algebra, Task 7405's σ-elliptic elements are therefore exactly HL's σ-elliptic elements
+     algebra, the σ-elliptic elements of `IsSigmaElliptic` are therefore exactly HL's σ-elliptic elements
      whose associated elements have a separable characteristic polynomial; this is a strict
      subset in general when `F` is not perfect (for instance `F = 𝔽₂((t))`, `E = F`,
      `σ = id`, `l = 1`, and `δ` the companion matrix of `X² - t`, which is HL-elliptic with
      inseparable characteristic polynomial). The two notions agree when `F` is perfect, in
-     particular in characteristic zero, the setting of the statements of Task 7464 that use
+     particular in characteristic zero, the setting of `EllipticTransferStatement`, which uses
      this predicate.
 
 Both are pointwise conditions on arbitrary functions; they are applied to test functions by
@@ -71,8 +72,8 @@ the coercion of `SchwartzBruhat` to functions.
 ## Lemmas (all proved)
 
 3. For `IsEllipticSupported`:
-   - `IsEllipticSupported.isRegularSupported`: an elliptic-supported `f` satisfies Task
-     7416's `IsRegularSupported f`, by the Library's
+   - `IsEllipticSupported.isRegularSupported`: an elliptic-supported `f` satisfies
+     `IsRegularSupported f` (module `Langlands.BaseChange.OrbitalIntegral`), by the Library's
      `IsRegularElliptic.isRegularSemisimple`;
    - `isEllipticSupported_zero`: the zero function is elliptic-supported;
    - `IsEllipticSupported.add`: if `f` and `f'` are, so is `f + f'` (where `(f + f') g ≠ 0`,
@@ -81,16 +82,16 @@ the coercion of `SchwartzBruhat` to functions.
      (where `c * f g ≠ 0`, `f g ≠ 0`).
 4. For `IsSigmaEllipticSupported`:
    - `IsSigmaEllipticSupported.isSigmaRegularSupported`: a σ-elliptic-supported `φ`
-     satisfies Task 7416's `IsSigmaRegularSupported σ l φ`: a witness `γ` of
+     satisfies `IsSigmaRegularSupported σ l φ`: a witness `γ` of
      `IsSigmaElliptic σ l δ` is regular elliptic, hence regular semisimple, and so witnesses
-     Task 7405's `IsSigmaRegular σ l δ`;
+     `IsSigmaRegular σ l δ`;
    - `isSigmaEllipticSupported_zero`, `IsSigmaEllipticSupported.add` and
      `IsSigmaEllipticSupported.const_mul`, with the same proofs as in item 3.
 
 ## Dependencies and names
 
-The module imports Task 7405's `Langlands.BaseChange.Norm` (`IsSigmaElliptic`,
-`IsSigmaRegular`), Task 7416's `Langlands.BaseChange.OrbitalIntegral`
+The module imports `Langlands.BaseChange.Norm` (`IsSigmaElliptic`,
+`IsSigmaRegular`), `Langlands.BaseChange.OrbitalIntegral`
 (`IsRegularSupported`, `IsSigmaRegularSupported`) and the Library's
 `Langlands.JacquetLanglands.RegularElliptic` (`IsRegularElliptic`,
 `IsRegularElliptic.isRegularSemisimple`). All names are used as published.

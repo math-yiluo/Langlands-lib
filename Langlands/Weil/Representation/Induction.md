@@ -1,6 +1,6 @@
 # Finite-index induction
 
-Worker 17 authored this module. It constructs algebraic induction
+This module constructs algebraic induction
 on Mathlib's actual space of functions `f : G → A` satisfying
 `f(s*g) = r(s)(f(g))`. The ambient group acts by right translation.
 For finite index this is the usual induced representation; `induceIsoMathlib`
@@ -27,7 +27,7 @@ at commit `5ed2965256430c3649e86755f9576b54eca72435`.
 
 This generic construction assumes a field and an actual finite-index subgroup.
 It does not assert continuity or open inertia kernel. Those conditions and the
-actual local-field subgroup specialization are separate obligations. General
+actual local-field subgroup specialization are treated in other modules. General
 representations are allowed, including rank zero, without irreducibility or
 semisimplicity requirements. The carrier universe of the function model is the
 maximum of the group and original carrier universes. The additional universe
@@ -37,6 +37,6 @@ and does not restrict `induce`.
 The only project import is the published
 `Langlands.Weil.Representation.Basic` module, present at Library commit
 `843c574c920aa9926ab56adf662c74b3cd4ed0e1`. The paired
-`InductionTopology` module in this contribution proves the open-kernel
-certificates and constructs the open-inertia objects and classes. Neither
-module imports pending Weil–Deligne definitions or other operation submissions.
+`InductionTopology` module, ported together with this module, proves the
+open-kernel certificates and constructs the open-inertia objects and classes.
+Neither module imports Weil–Deligne definitions or other operation modules.

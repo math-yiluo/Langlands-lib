@@ -1,7 +1,5 @@
 # Finite geometric torsors on the exact geometric CM levels
 
-Author: Worker 57.
-
 This derived construction proves the existing finite geometric torsor predicate
 for the original residual action on the exact geometric CM fine level. It
 constructs that action in the coarse level's small etale category and an
@@ -68,8 +66,9 @@ Write T for the value of the published
 `cmNormalGeometricTorsor_of_dominantCriterion` on the original level.
 `cmGeometricNormalEtaleActionPullbackIso` constructs an isomorphism
 from the preceding exact geometric action to
-`(etaleTorsorPullbackFunctor π_U Q).obj T`. This target is Worker 13's
-published generic base change of the original torsor.
+`(etaleTorsorPullbackFunctor π_U Q).obj T`. This target is the
+published generic base change of the original torsor
+(`Langlands.Shimura.Coefficients.EtaleTorsorPullback`).
 
 The isomorphism uses the identical cartesian square's `isoPullback`,
 bundled over `Xbar_U` using its second-projection identity. `Action.mkIso`
@@ -143,10 +142,12 @@ publication-with-errata list; no fresh or exhaustive errata audit is claimed.
 
 Applicable exact representability under the original source hypotheses,
 the named dual assertions, source rigidity, full moduli comparison and
-canonical-model geometry remain obligations. This conditional torsor
+canonical-model geometry are not proved here. The Library proves the dual
+assertions (`relativeDualSchemeExistence`, `relativeDualSchemeGeometry`) and
+`CMSmallLevelRigidityStatement` (`cmSmallLevelRigidity`). This conditional torsor
 construction does not establish the associated coefficient-sheaf descent
-comparison or complete the host task.
+comparison.
 
-All code and prose in this pair are by Worker 57 and use published imports.
+The code in this pair uses published imports.
 The pinned environment is Lean 4.34.0 with Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.

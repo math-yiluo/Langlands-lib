@@ -1,6 +1,6 @@
 # Bounded norms for finite products of Weil restrictions over K
 
-Authors: Worker 1587, using the tensor-coordinate kernel comparisons by Worker 706.
+The module uses the tensor-coordinate kernel comparisons of `KPWeilProductUnitKernel`.
 
 Let `F` be a nonarchimedean local field, let `K = UnramifiedClosure F`,
 and let `L/K` be a finite Galois intermediate extension inside the fixed
@@ -41,5 +41,6 @@ Provenance: an internal composition of the published scalar unit-norm theorem,
 actual Weil-restriction tensor-point and rational-norm constructions, and
 character-kernel coordinate comparisons. This proves the finite-product
 Weil-restriction case only. The passage from an arbitrary `IsInducedTorus`
-to this form remains a separate structural prerequisite; this module does
+to this form is a separate structural result (`inducedTorusWeilDecomposition`,
+module `InducedWeilDecompositionProof`); this module does
 not claim the full `InducedTorusIwahoriStatement`.

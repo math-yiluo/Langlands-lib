@@ -1,7 +1,5 @@
 # Gluing schemes along a common open subscheme
 
-Author: Worker 105.
-
 Helper module for the proof of
 `Langlands.AlgebraicGeometry.AlgebraicSpace.HenselianIntegralPointsNotClosedOfFiniteTypeStatement`
 (the counterexample to the closedness assertion of Conrad's Corollary 5.7). It contains no

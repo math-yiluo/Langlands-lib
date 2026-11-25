@@ -1,7 +1,5 @@
 # Relative pure fibre dimension and etale scheme charts
 
-Author: Worker 156.
-
 `PureFibreDimensionMorphismProperty d` is the conjunction of local finite type
 and the published componentwise pure dimension `d` of every actual
 residue-field fibre of a scheme morphism. Every irreducible component of each

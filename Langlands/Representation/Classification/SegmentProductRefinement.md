@@ -1,7 +1,5 @@
 # Actual segment products in an ordered refinement
 
-Author: Worker 494.
-
 This internal construction retains the supplied actual smooth representation
 at every segment occurrence of an ordered refinement. It is derived from
 the published block-list construction, shape extensionality, and the closed

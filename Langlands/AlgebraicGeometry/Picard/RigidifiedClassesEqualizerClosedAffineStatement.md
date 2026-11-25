@@ -15,7 +15,7 @@ proposition:
             (unitSection_comp A) h r
 ```
 
-This unit only defines the proposition. It proves nothing.
+This module only defines the proposition. It proves nothing.
 
 ## Meaning
 
@@ -34,8 +34,10 @@ This is the published
 other quantifiers, the conclusion and the universe are unchanged. The module records this with
 an `example` deriving the present proposition from the general one by
 `fun R A q r => h (Spec R) A (Over.mk (𝟙 (Spec R))) q r`. The converse, deriving the general
-statement from this one, is the remaining reduction (base change along `T.hom` and gluing over
-an affine open cover of `T.left`); it is not part of this unit.
+statement from this one, is the reduction (base change along `T.hom` and gluing over
+an affine open cover of `T.left`) proved as `rigidifiedClassesEqualizerClosedReduction` (module
+`RigidifiedClassesEqualizerClosedReductionProof`), which also uses Zariski separatedness of
+rigidified classes; it is not part of this module.
 
 ## Exact interface
 
@@ -68,5 +70,5 @@ chosen total space over the identity object), with `E = L ⊗ M⁻¹` for repres
 of `q`, `r`.
 
 The affine specialisation is introduced as the cohomological core of the proof of the general
-statement (task `e3d4a3ab-f378-42af-87c5-0cd4caec7b2e`): the remaining passage to arbitrary `S`
+statement: the remaining passage to arbitrary `S`
 and `T` is formal.

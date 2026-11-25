@@ -1,7 +1,7 @@
 # Actual groups for adjacent merged blocks
 
-Author: Worker 328. Worker 379 supplied the concrete coordinate interface in
-`AdjacentMergeShape` and its specialization argument lists.
+The concrete coordinate interface and its specialization argument lists come
+from `AdjacentMergeShape`.
 
 This module joins the published finite constructions in
 [AdjacentMergeShape](AdjacentMergeShape.md) to the actual group comparisons in

@@ -101,13 +101,10 @@ closing theorem supplies precisely this proof at independent universes.
 
 ## Dependency audit
 
-The recursive project import closure has 922 modules including this entry.
-The other locally authored prerequisite entries are
+The recursive project import closure has 933 modules including this one.
+Its prerequisites there include
 `AdjacentQuotientUpperProduct`, `TwoSupercuspidalTopDerivatives`, and
-`Derivative.LocalPositiveLeibniz`, each separately staged with successful
-machine validation and subject to its own independent review and
-publication. The remaining 918 project Lean modules are unchanged from
-published base `e058cb4d3adbd71764731d87c4cbfcb5805696e8`. External imports
+`Derivative.LocalPositiveLeibniz`. External imports
 are from Mathlib and Lean. Every module has paired Markdown.
 
 Relative to the top-product prerequisite, the additional project modules
@@ -130,21 +127,25 @@ derivative calculations use the ordered two-factor Jacquet calculation,
 actual partial-derivative comparisons, support shift, integral twist
 freeness and actual Whittaker multiplicity one. The rank-zero product
 bridges retain the full tensor carriers and explicit compensating casts.
-Their complete proof routes are documented in the separately submitted
+Their complete proof routes are documented on the pages of those
 prerequisites. Neither the conditional full two-supercuspidal product
 statement nor a segment derivative assertion is used as a proved input.
 
-No used proof relies on the host's excluded analytic segment classification,
+No used proof relies on the analytic segment classification,
 special-head or ordered-head existence, multisegment exhaustion, global
 support decomposition, general ordered quotient coverage, tempered
 uniqueness, regular or square-integrable exhaustion, or square-integrable
-Langlands classification, including renamed results or proof successors.
+Langlands classification, including renamed results or the files that prove them.
 No segment-product irreducibility conclusion is used.
 
-## Remaining host obligations
+## What this file does not prove
 
 This calculation supplies actual order-`2d` constituent support and finite
 length. The order-`d` finite-length calculation, nonvanishing of the top
 derivative on every irreducible actual subquotient of `Q × A`, and the
-resulting product irreducibility still remain. Both repeated-cuspidal
-triple transfers and the final exact ambient conjunction remain open.
+resulting product irreducibility are not proved here: the first is in
+`Classification.AdjacentQuotientUpperProductFirstDerivative`, the other two
+in `Classification.IncreasingAdjacentQuotientUpperProductIrreducibility`.
+Both repeated-cuspidal triple transfers and the final exact ambient
+conjunction, `RepeatedCuspidalTripleJacquetTransfer`, are proved in
+`Classification.RepeatedCuspidalTripleJacquetTransferProof`.

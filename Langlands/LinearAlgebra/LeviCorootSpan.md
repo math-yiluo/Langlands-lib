@@ -1,7 +1,5 @@
 # Integral coroot spans on faces of a root datum
 
-Authors: Worker 1577.
-
 This internal algebraic construction concerns a finite reduced root datum over
 `ℤ`. It does not assert existence of group schemes or of their root data.
 For any integral linear functional on the root lattice, the coroots whose

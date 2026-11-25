@@ -2,11 +2,11 @@
 
 The primary construction is
 `Langlands.Plancherel.rationalUnitaryCancelledOperator`.
-This internal unit assembles algebraic cancellation for polynomial operators
+This module, of internal provenance, assembles algebraic cancellation for polynomial operators
 on the actual unramified parameter space. A supplied list of basis-coordinate
 root powers describes the factors to remove from one common denominator.
 Each root direction has its own supplied integral basis of the actual
-valuation image; the unit does not identify those directions with a root
+valuation image; the module does not identify those directions with a root
 system or prove any standard-family pole-support claim.
 
 The construction and its proofs retain the existing actual regular-function

@@ -184,6 +184,7 @@ def normOneBaseChangeIso :
   normOneAlgebraBaseChangeIso A A' B
 
 set_option maxRecDepth 4000 in
+set_option maxHeartbeats 800000 in
 /-- The arbitrary-ring-map isomorphism is the canonical tensor equivalence on
 all norm-one test points. -/
 theorem normOneBaseChangeIso_hom_points (T : Over (Spec A'))
@@ -195,7 +196,7 @@ theorem normOneBaseChangeIso_hom_points (T : Over (Spec A'))
         (normOnePointsEquiv A B ((Over.map (Spec.map f)).obj T)
           (GroupScheme.baseChangePointsEquiv (Spec.map f) (normOne A B) T x)) := by
   let _ := f.hom.toAlgebra
-  exact normOneAlgebraBaseChangeIso_hom_points A A' B T x
+  exact (normOneAlgebraBaseChangeIso_hom_points A A' B T x : _)
 
 /-- The arbitrary-ring-map isomorphism respects the actual norm-one inclusion. -/
 theorem normOneBaseChangeIso_hom_ι :

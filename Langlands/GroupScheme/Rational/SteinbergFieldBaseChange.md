@@ -1,6 +1,6 @@
 # Actual field extension of supplied Steinberg products
 
-Worker 1317. This internal construction is derived from the actual pinning,
+This internal construction is derived from the actual pinning,
 normalized-root-map, normalizer and character-lattice base-change APIs, the
 standard vector-source comparison, and the published class-function quotient
 descent result. It makes no new literature claim.
@@ -78,5 +78,5 @@ It reduces the desired property to an algebraic extension of the supplied
 data; proving that property over an algebraic closure remains a separate
 obligation of the main split Steinberg quotient theorem.
 
-Integration gives the local instances used here module-specific names to permit
+The local instances used here have module-specific names to permit
 joint imports. Their types, values, and local scopes are unchanged.

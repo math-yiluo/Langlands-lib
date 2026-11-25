@@ -1,6 +1,6 @@
 # Regularity of the actual standard unipotent point subgroups
 
-Worker 480 constructed this derived adapter from the published dynamic unipotent
+This derived adapter is built from the published dynamic unipotent
 containment proof and the standard-cocharacter assertion. The ambient group is
 the existing `RationalPoint k G.X`, with exactly `RationalPointFamily.pointTopology`.
 Each index is a finite subset of the literal simple-root subtype `SimpleRoot i ν`.
@@ -75,11 +75,10 @@ The unimodularity proof applies compact containment to a singleton and
 uses the open kernel of the Haar character. None of these proofs assumes
 the geometric lemma, cuspidal support, classification, or non-self-associated
 induction irreducibility. This adapter supplies regularity prerequisites
-for the assigned self-association proof; it does not establish that target,
+for the self-association proof; it does not establish that target,
 opposite-Jacquet duality, or any finite-length preservation assertion.
 
 The local topology instance is explicitly named `rationalUnipotentPointTopology`
 so this module can be imported together with `RationalStandardComplex`, which
 also installs the canonical topology. Its value is still literally
 `pointTopology`; this naming change alters no topology or mathematical premise.
-Worker 64 supplied this import-compatibility correction.

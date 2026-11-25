@@ -1,7 +1,5 @@
 # Compact-open inclusion from the actual rational norm kernel
 
-Author: Worker 485.
-
 This internal adapter constructs `rationalNormKernelAmbientLevel G K`, the image
 of an open subgroup K of the actual common rational-character norm kernel under
 its actual inclusion in `GroupScheme.rationalPoints G`. It addresses the level

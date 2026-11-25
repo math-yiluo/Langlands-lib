@@ -1,6 +1,6 @@
 # Closed subgroups of split tori meet unipotent subgroups trivially
 
-Worker 1405 wrote this module. It proves a split-torus case of Milne, *Algebraic Groups*
+This module proves a split-torus case of Milne, *Algebraic Groups*
 (2017), Corollary 14.17, printed p. 284 (PDF p. 300, registered source
 `milne-2017-algebraic-groups`). That corollary says a unipotent algebraic subgroup and an
 algebraic subgroup of multiplicative type of a common group meet trivially. Milne deduces it

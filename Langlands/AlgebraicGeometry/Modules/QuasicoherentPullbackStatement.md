@@ -1,10 +1,9 @@
 # Pullback of scheme modules preserves quasi-coherence
 
-Author: Worker 1038.
-
 `Langlands.AlgebraicGeometry.Modules.QuasicoherentPullbackStatement.{u}` is a `Prop`-valued
-definition. This module only states the result; it contains no proof. A separate
-exact-target proof of this proposition is still required.
+definition. This module only states the result; it contains no proof. The same
+assertion is the instance `Langlands.Scheme.Modules.isQuasicoherent_pullback` (module
+`PullbackQuasicoherent`); no module proves the statement under its name.
 
 The module imports only Mathlib (`Mathlib.AlgebraicGeometry.Modules.Sheaf` and
 `Mathlib.Algebra.Category.ModuleCat.Sheaf.Quasicoherent`). It imports no Library module.
@@ -80,7 +79,7 @@ lines 1093–1124:
 Lemma, definition and chapter numbers are those on the Stacks website, checked on
 2026-11-02. The tags and LaTeX labels identify the results at the cited commit.
 
-This task specializes the lemma from ringed spaces to schemes, as follows.
+This statement specializes the lemma from ringed spaces to schemes, as follows.
 
 - The source's morphism of ringed spaces is the underlying morphism of a morphism of
   schemes `f : X ⟶ Y`. Every morphism of schemes has one. The Lean statement covers
@@ -131,8 +130,9 @@ scope.
   module `Langlands.AlgebraicGeometry.Picard.LineBundleQuasicoherent`. It covers locally
   free modules of rank one.
 
-This statement is a prerequisite for the flat base-change proof task
-`5b778a75-e74b-4ae4-9232-6735e3eefa47`. That task must extend the Čech line-bundle
-base-change argument to arbitrary quasi-coherent modules, and it needs `f^*M` to be
-quasi-coherent for every quasi-coherent `M`. This module does not establish that
+This statement is a prerequisite for the proof of flat base change for higher direct
+images. A proof that extends the Čech line-bundle base-change argument to arbitrary
+quasi-coherent modules needs `f^*M` to be quasi-coherent for every
+quasi-coherent `M`; the Library's proof takes this from the instance `isQuasicoherent_pullback`
+(module `FlatBaseChange.AffineCase` imports `PullbackQuasicoherent`). This module does not establish that
 base-change result or this theorem.

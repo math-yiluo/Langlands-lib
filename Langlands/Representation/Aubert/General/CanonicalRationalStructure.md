@@ -1,6 +1,6 @@
 # Canonical standard Levi operators and Weyl data on actual rational points
 
-Worker 29, with Worker 3640, assembles the structural data that the
+This module assembles the structural data that the
 published rational-point targets of the general Aubert program still take
 as separate premises. The data are the standard Levi subgroups, their
 restricted parabolic structure and alternating operators, and the
@@ -9,7 +9,7 @@ Families 1 and 2 of the program. It is a companion to
 `CanonicalRationalOperator` and leaves that module unchanged. No
 finite-length preservation, duality identity, Jacquet or induction formula,
 or corrected-complex statement is proved here, and no published proposition
-or proof-task target is changed.
+or target is changed.
 
 ## Scope
 
@@ -97,7 +97,7 @@ definitional proof irrelevance.
   `canonicalRationalLeviAlternatingOperator hG i ν hi hν hiFl hrFl J`.
 - `rationalAlternatingOperator_eq_canonical`: likewise, for any premises
   `hStandard`, `hU`, `hP`, `hproj`, `hUc`, per-index finite-length premises
-  and `hRoots`, `rationalAlternatingOperator` equals Worker 3640's
+  and `hRoots`, `rationalAlternatingOperator` equals
   `canonicalRationalAlternatingOperator hG i ν hi hν hiFl hrFl`.
 
 The dynamic inputs `hiFl` and `hrFl` on the right are arbitrary. So these

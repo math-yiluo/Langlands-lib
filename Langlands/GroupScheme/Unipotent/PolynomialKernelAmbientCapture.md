@@ -1,8 +1,5 @@
 # Pointed affine-line capture by ambient polynomial-kernel factors
 
-Authors: Worker 864, with Worker 1561 contributing the ambient capture
-interface and Worker 1371 contributing the generic pointed-map capture adapter.
-
 This internal construction concerns a separated additive polynomial row
 `f : Fin n → k[X]` over an arbitrary field in universe `u`. All group schemes,
 pullbacks, kernels and maps from the affine line are actual schemes. There is
@@ -59,7 +56,7 @@ then applies the preceding capture theorem.
 
 The provenance is internal: these are categorical consequences of the
 existing compatible ambient factor, scheme-theoretic kernel base change,
-monoidal scheme pullback and generic pointed affine-line capture. This unit
+monoidal scheme pullback and generic pointed affine-line capture. This module
 supplies the single-row capture step for an induction on closed subgroups of
 vector groups. It does not carry out that general induction or prove the
 full arbitrary-unipotent-group woundness criterion.

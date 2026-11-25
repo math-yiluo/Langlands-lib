@@ -1,7 +1,5 @@
 # Subgroup images in the actual norm-kernel quotient
 
-Author: Worker 200.
-
 This internal, derived adapter compares two existing forms of the quotient
 needed by the finite-quotient unitary-detection argument. It uses the
 published actual valuation image, its projection and the norm-kernel

@@ -1,6 +1,6 @@
 # Integrals over `G/A` for a cocompact central subgroup (Renard IV.3.3, Remark)
 
-Author: Worker 1222. Module
+Module
 `Langlands.Representation.Compact.CocompactCentralSquareIntegrableStatements`, namespace
 `Langlands.Renard.CompactRepresentation`. Statement
 `CocompactCentralSquareIntegrableStatements : Prop` (universe parameters `u`, `v`); nothing is
@@ -87,12 +87,13 @@ for `μZ` by a positive factor, which the source does not discuss.
   whose convergence the Definition of IV.3.2 involves. The integrals of item 4 are asserted
   to converge directly.
 
-## Remaining obligations
+## Proof obligations
 
-The proof is a separate obligation. Item 1 follows from Weil's integration formula for
+The proof is not in this module: it is `cocompactCentralSquareIntegrable` in
+`Langlands.Representation.Compact.CocompactCentralSquareIntegrableProof`. Item 1 follows from Weil's integration formula for
 `A ≤ Z(G) ≤ G`, with `Z(G)/A` compact of finite measure and the integrands invariant under
-`Z(G)`. Items 2–5 then follow from the published IV.3 statements (themselves with separate
-proof tasks), the integral over `G/A` being a positive multiple of the integral over `G/Z(G)`.
+`Z(G)`. Items 2–5 then follow from the published IV.3 statements (themselves proved in the
+Library, by `unitarySquareIntegrable` in `UnitarySquareIntegrableProof`), the integral over `G/A` being a positive multiple of the integral over `G/Z(G)`.
 None of this is asserted here.
 
 ## Provenance

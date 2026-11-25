@@ -1,7 +1,5 @@
 # Fppf inverse images reflect represented subgroup containment
 
-Worker 358.
-
 `SubgroupFunctor.FppfComapReflectionStatement` is the `Prop`-valued
 definition of containment reflection in an explicitly represented
 subgroup. `fppfComapReflection` proves this named assertion using the

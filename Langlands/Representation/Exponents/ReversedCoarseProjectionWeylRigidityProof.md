@@ -1,10 +1,5 @@
 # Coarse projection rigidity in raw reversed upper-geometric coordinates
 
-Authors: Workers 526, 430 and 176. Worker 526 implemented the coarse-projection
-energy argument and exact statement proof. Worker 430 supplied the raw-index
-monotonicity route and the inverse-reversal correction. Worker 176 adapted the
-pair and expanded the coordinate and energy explanations. Imported cone-pairing
-and minimal-representative uniqueness results retain their published authorship.
 This is internal finite real algebra, with no new external source claim.
 
 `Langlands.Exponents.reversedCoarseProjectionWeylRigidity` proves the exact
@@ -54,7 +49,7 @@ P := ∑ a, x(u.symm a) * A(a)
    = ∑ a, x(a) * A(u a) ≤ 0.
 ```
 
-The real pairing helper is Worker 165's published finite summation-by-parts
+The real pairing helper is the finite summation-by-parts
 result in [`SupportedRegularWeylConeNumerics`](SupportedRegularWeylConeNumerics.md).
 
 Since `A(B.index i a) = t i`, the coarse-sum premise, including its factor
@@ -93,7 +88,7 @@ inverse's target-block condition. These are the two actual minimality
 conditions from [`WeylDefinitions`](../Geometric/WeylDefinitions.md).
 Since `r.symm = v * u⁻¹` and `u⁻¹ ∈ blockWeyl B`, `v` and `r.symm`
 have equal double cosets in `W_(B.reverse) \ S_n / W_B`. The public
-`Geometric.weylDoubleCoset_injective`, from Worker 175's
+`Geometric.weylDoubleCoset_injective`, from
 [`WeylUniquenessProof`](../Geometric/WeylUniquenessProof.md), identifies their
 minimal representatives. The conclusion is exactly
 `v = B.reversePermutation.symm`. The proof uses no minimality of `u`

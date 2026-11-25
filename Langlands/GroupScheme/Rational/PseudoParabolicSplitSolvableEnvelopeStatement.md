@@ -1,7 +1,5 @@
 # The split solvable envelope used in minimal pseudo-parabolic conjugacy
 
-Author: Worker 274.
-
 `Langlands.GroupScheme.PseudoParabolicSplitSolvableEnvelopeStatement.{u}`
 isolates the split solvable subgroup construction at the start of the proof
 of Theorem C.2.5 in Conrad–Gabber–Prasad, *Pseudo-reductive groups*, second

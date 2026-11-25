@@ -1,9 +1,8 @@
 # Type C distinguished vertices from actual restriction coordinates
 
-Author: Worker 244 for Task 6244.
-
 `HasTypeCRestrictionCoordinates d n degree r` is an internal interface for
-the remaining geometric construction. It requires a numbering of the actual
+the geometric construction of these coordinates in `TypeCIndexFromBlockTorus`.
+It requires a numbering of the actual
 simple vertices whose actual Cartan matrix is `CartanMatrix.C n`, an additive
 equivalence from the character lattice of the actual maximal split torus to
 `Fin r → ℤ`, and equality of the actual simple-root restrictions with the
@@ -31,5 +30,8 @@ index and the given numbering. It retains positive `degree`,
 Provenance: internal. The interface and transport lemmas are derived from
 the published definitions of actual Tits indices, their proved independence,
 and the elementary Cartan and block-weight helpers. They are a conditional
-reduction of Task 6244; constructing these coordinates from its original
-antihermitian hypotheses is still required.
+reduction of `TypeCDistinguishedVerticesStatement`. The coordinates are
+constructed in `TypeCIndexFromBlockTorus` (`exists_typeCIndex_of_blockTorus`),
+and the proof `typeCDistinguishedVertices` (module
+`TypeCDistinguishedVerticesProof`) applies `typeC_distinguished_of_coordinates`
+to them.

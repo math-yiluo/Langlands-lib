@@ -1,7 +1,5 @@
 # The two large integrands on the first-block fibers
 
-Author: Worker 1037.
-
 This module evaluates the published integrands of JPSS (1983), Sections 4.6–4.9 on
 the fibers used in the first-block calculation. It is derived internal material.
 

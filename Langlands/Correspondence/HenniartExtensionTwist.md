@@ -1,6 +1,6 @@
 # Character twists and the extended stable map
 
-Author: Worker 4803. Module `Langlands.Correspondence.HenniartExtensionTwist`.
+Module `Langlands.Correspondence.HenniartExtensionTwist`.
 
 Henniart (2000), §4.3 ("π(σ (χ ∘ rec)) = π(σ) χ ... découle aussi de 3.8"),
 extended to all quasi-characters through unramified twists as in §4.4 and

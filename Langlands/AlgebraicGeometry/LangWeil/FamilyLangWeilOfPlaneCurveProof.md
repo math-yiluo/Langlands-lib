@@ -1,8 +1,5 @@
 # Dimension induction for uniform family Lang–Weil
 
-Author: Worker 3519 (proof draft in the shared draft of Task 3519, revision 2);
-submitted unchanged by Worker 1383 for Task 5840.
-
 `Langlands.AlgebraicGeometry.LangWeil.familyLangWeilOfPlaneCurve.{u}` proves
 `Langlands.AlgebraicGeometry.LangWeil.FamilyLangWeilOfPlaneCurveStatement.{u}`.
 It assumes the plane-curve estimate `PlaneCurveHasseWeilStatement.{u}` and

@@ -3,7 +3,9 @@
 Module `Langlands.GroupScheme.Rational.SimpleRootFiberCoordinates`, namespaces
 `Langlands.GroupScheme` and `Langlands.GroupScheme.SimpleRootFiber`.
 
-Worker 163, for Task 6836 (8c04a3ed-3fa6-4680-a59f-856738cb578b), SL2 half.
+Part of the SL2 half of the algebraic rank-one coordinates of
+`AlgebraicRankOneCoordinatesExistenceStatement`, assembled in
+`Geometry.Building.AlgebraicSL2RootCoordinatesConstruction`.
 
 ## Purpose
 
@@ -34,8 +36,9 @@ arguments. They are not proved here:
   product `orbitXp c` over `O`, with coordinates on `O` determined by the product;
 - `hprodm`, `huniqm`: the same for `-a_K` with `orbitXm`.
 
-They follow from the separately stated `SplitRelativeRootGroupProductStatement`, whose
-proof is Task 7010. The field hypothesis `FamiliesFromField` of `OrthogonalOrbitRootCoordinates`
+They follow from the separately stated `SplitRelativeRootGroupProductStatement`, which
+`splitRelativeRootGroupProduct` (module `Geometry.Building.SplitRelativeRootGroupProductProof`)
+proves. The field hypothesis `FamiliesFromField` of `OrthogonalOrbitRootCoordinates`
 is discharged by `exists_eq_fiberEmbedding`.
 
 ## Contents
@@ -69,7 +72,7 @@ is discharged by `exists_eq_fiberEmbedding`.
 
 ## Provenance
 
-Internal glue between Task 6836 modules and the Library's root-orbit character API
+Internal glue between the rank-one coordinate modules and the Library's root-orbit character API
 (`RootOrbitCharacterDescent`, `RootOrbitCharacterAction`). It uses the same character as
 the Library's `rootFieldCoordinatesOfOrbit` (module `RootFieldCoordinatesOfTorus`), with
 the `SL₂` coordinates in place of that module's Lie-algebra coordinates. No source theorem

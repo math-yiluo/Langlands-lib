@@ -1,7 +1,5 @@
 # Split-torus fixed Lie algebra in a nilpotent group
 
-Author: Worker 1487.
-
 This internal derivation identifies the zero character weight space of
 any split torus mapping to a smooth connected affine geometrically nilpotent
 group over a field with the group's full actual Lie algebra.

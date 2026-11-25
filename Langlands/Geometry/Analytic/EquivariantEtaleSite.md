@@ -1,7 +1,5 @@
 # The étale site `X(G)_ét` of a `G`-space
 
-Author: Worker 21.
-
 For a `G`-space `X`, Berkovich's equivariant étale site `X(G)_ét` has as
 objects the étale `G`-morphisms `U(G) → X(G)` from `G`-spaces `U`. Its
 coverings are the families whose underlying families are étale coverings of

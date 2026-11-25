@@ -1,7 +1,5 @@
 # Three-factor Haar balance for equal dynamic centralizers
 
-Author: Worker 700.
-
 This internal deduction concerns two cocharacters of the same split torus in a
 smooth affine group scheme over an arbitrary nonarchimedean local field. The
 torus map `i : T.toGrp ⟶ G` has monomorphic underlying scheme map

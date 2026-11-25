@@ -1,7 +1,5 @@
 # Statement: Borel pairs of connected group varieties over finite fields
 
-Worker 75.
-
 `Langlands.GroupScheme.FiniteFieldBorelPairStatement.{u} : Prop` is a statement-only,
 `Prop`-valued definition. This module does not prove it, and it adds no other definitions,
 theorems or axioms. It imports:
@@ -110,9 +108,8 @@ such that `g B g⁻¹` is fixed by `σ`. Then `g B g⁻¹` comes from a Borel su
 existence of a maximal torus in B is proved similarly." For conjugacy, he takes `g ∈ G(k^a)`
 with `(B₁, T₁)_{k^a} = g (B, T)_{k^a} g⁻¹` and uses Lang's theorem to correct `g` to a `k`-point.
 
-Two steps of the printed proof are wrong as written. Reviewer 4098 found them in an earlier
-version of this candidate, and the errata snapshot above does not list them. Neither affects
-the proposition.
+Two steps of the printed proof are wrong as written, and the errata snapshot above does not
+list them. Neither affects the proposition.
 
 - **Orientation.** The proof writes `h = g⁻¹ σ(g)`. Since
   `σ(g B g⁻¹) = σ(g) h B h⁻¹ σ(g)⁻¹`, the equation that makes `g B g⁻¹` stable under `σ` is

@@ -1,6 +1,6 @@
 # Unramified norm membership by normalized order
 
-Worker 90 proves `Langlands.LocalClassField.unramifiedNormMembership.{u,v}`
+This module proves `Langlands.LocalClassField.unramifiedNormMembership.{u,v}`
 with exactly the published type
 `Langlands.LocalClassField.UnramifiedNormMembership.{u,v}`. For every prime,
 finite p-adic fields in independent universes, their compatible finite
@@ -48,7 +48,7 @@ The closing theorem discharges both premises of the general helper. It uses
 `Langlands.ClassFieldTheory.Local.NormOrderProof`, for the displayed genuine
 norm-order formula. It specializes `unramifiedUnitNorms p F E T S he` from
 `Langlands.ClassFieldTheory.Local.UnitNormProof` at `n = 0` for unit-norm
-surjectivity. Both imported results are independently accepted and published.
+surjectivity. Both imported results are published.
 They retain the supplied data and independent field universes. The statement
 pair and all existing imported pairs are unchanged.
 
@@ -58,7 +58,7 @@ This is a derived kernel formulation of Jean-Pierre Serre, *Local Fields*,
 Greenberg English translation, GTM 67 (1979), Chapter V introduction,
 printed p.80 (PDF p.87), and Section 2, Proposition 3(c), corollary,
 finite-residue-field remark and non-Galois exercise, printed p.82 (PDF p.89).
-Worker 90 read PDF pp.87–89. The general norm-order equation is in the chapter
+PDF pp.87–89 were read. The general norm-order equation is in the chapter
 introduction; Lemma 2 on printed p.81 (PDF p.88) is the filtered-group lifting
 result used in the unit-norm argument. The membership proof here chooses an
 arbitrary source element of order `k` and takes a quotient; it does not require
@@ -70,9 +70,8 @@ Registered source: `serre-1979-local-fields`, retained at
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`.
 No source-specific errata file was found in the project notes.
 
-The norm-order proof was authored by Worker 110; the unit-norm proof was
-authored by Worker 26. This module imports their published declarations and
-reuses the published normalization and filtration API. Their proofs are not
+This module imports the published declarations of the norm-order and
+unit-norm proofs and reuses the published normalization and filtration API. Their proofs are not
 copied or reproved here. No local reciprocity or local invariant theorem is
 used. The implementation uses Lean 4.34.0 and Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`.

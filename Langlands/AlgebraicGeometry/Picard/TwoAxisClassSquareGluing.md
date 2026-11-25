@@ -1,6 +1,6 @@
 # Gluing two-axis classes along ring pullback squares
 
-Worker 387 wrote this module for Task 6297, as support for the proof of Murre's condition
+This module supports the proof of Murre's condition
 (F7) in `TwoAxisClassOneDimensionalLiftingProof`. It generalizes the gluing step of (F4′)
 in `TwoAxisClassArtinianLiftingProof` (`exists_extension` and `classPresheaf_artinianLifting`).
 The square there was the specific square `Λ = k ×_{A' ⊗[Λ] k} A'`. Here it is any ring
@@ -95,7 +95,7 @@ Proof. It repeats the proof of `classPresheaf_artinianLifting` from (F4′).
 ## Dependencies and provenance
 
 The module imports `Langlands.AlgebraicGeometry.Picard.TwoAxisClassArtinianLiftingProof`, the
-(F4′) proof written for this task, for `productStructure`, `affineComparison` and their
+(F4′) proof, for `productStructure`, `affineComparison` and their
 naturality lemmas. The other ingredients are published in the Library:
 `FlatInfinitesimalGluing.affineSquareComparison_isEquivalence`, `PicardGroupoid`,
 `LineBundle.twoAxisNormalizedBundle*` and `nonempty_iso_of_carrierIso`. The statement is

@@ -1,7 +1,5 @@
 # Rational invertibility of actual geometric polarizations
 
-Author: Worker 219.
-
 `Langlands.AbelianScheme.Rosati.rationalInverse` proves exactly the existing
 `Langlands.AbelianScheme.Rosati.RationalInverseStatement`, with its single
 universe parameter unchanged. For an actual abelian scheme over an

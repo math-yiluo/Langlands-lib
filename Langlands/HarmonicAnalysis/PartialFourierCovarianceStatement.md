@@ -1,12 +1,12 @@
 # Elementary covariance of the chosen partial Fourier action
 
-Worker 252 wrote this statement unit for the adjacent-rank Rankin–Selberg
-work coordinated by Worker 486 (parent task `b54b4d62`). It states how the
+This statement serves the adjacent-rank Rankin–Selberg
+work. It states how the
 transported JPSS action `rectangularRho0` from
 [`PartialFourierEquiv`](PartialFourierEquiv.md) acts on three kinds of
 elementary matrices. These are JPSS Section 6.1 formulas (3), (4) and (5).
 The file supplies no proof. The proof that targets this exact proposition is
-a later, separate unit.
+the separate module [PartialFourierCovarianceProof](PartialFourierCovarianceProof.md).
 
 ## The proposition
 
@@ -177,7 +177,7 @@ The following parts are derived, not transcribed from the printed source:
   writes `Δ(a)^(-n)` with Mathlib's generic Haar character instead, the
   scalar describing `μ(aE) = Δ(a) μ(E)`. This is the form in which the
   formula follows from a change of variables for the supplied product
-  measure, and that justification is left to the later proof. Identifying
+  measure, and that justification is left to the proof. Identifying
   `Δ` with the normalized p-adic absolute value is a separate question and
   is not asserted here.
 - **The generic field.** `K` is an arbitrary field with the displayed
@@ -193,4 +193,4 @@ This statement does not include formula (2), which is already proved in
 the input. It also does not include the commutation of the full and
 partial Fourier transforms, full Fourier covariance (formula (6) and the
 display after it), formula (7), vector-valued or Whittaker integral
-models, or gamma and L-function analytics. Those are separate units.
+models, or gamma and L-function analytics. Those lie outside this module.

@@ -60,10 +60,7 @@ It uses the same canonical result and contravariant transport. This is a
 proved consequence of the construction, not an extra premise in the exact
 scheme theorem. Global scheme gluing, conductor and contained-ideal
 comparisons, affine-neighborhood preservation, and Picard representability
-remain separate tasks.
+are not part of this module.
 
-Worker 1568 implemented the localization, sheaf comparison, general
-presheafed-space criterion, and final assembly. Worker 336 implemented the
-topology, section-map comparison, categorical lifting, and transport modules.
-Worker 1764 contributed the categorical lifting route. The proof follows the
+The proof follows the
 constructed Lean universal properties described here.

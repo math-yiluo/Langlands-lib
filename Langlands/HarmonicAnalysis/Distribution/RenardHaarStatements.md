@@ -1,7 +1,7 @@
 # Renard II.3.6: Haar distributions and density embeddings
 
-This unit states five closed propositions and their conjunction, without proofs.
-They use the published complex algebraic dual `Distribution G` of
+This module states five closed propositions and their conjunction, without proofs.
+They use the complex algebraic dual `Distribution G` of
 `SchwartzBruhat G`, the original translation actions and the concrete integration
 and density maps in `Distribution.Haar`. No continuity condition on the dual is
 introduced. All groups are Hausdorff, locally compact and totally disconnected,
@@ -31,7 +31,7 @@ The declarations are in
   invariant algebraic distribution with this very integration functional.
 - `DensityEmbeddingStatement` states injectivity of `density μ`, equality of
   its topological distribution support with the nonzero locus of the locally
-  constant density, and membership of every `testDensity μ f` in the published
+  constant density, and membership of every `testDensity μ f` in the
   compact-support submodule `compactlySupported`.
 
 The support equality makes explicit a consequence of positivity and local
@@ -45,8 +45,8 @@ Mathlib's `Measure.isHaarMeasure_haarMeasure` constructs an actual measure;
 `Measure.haarMeasure_unique` and the general uniqueness results in
 `Mathlib.MeasureTheory.Measure.Haar.Unique` concern measures. They do not
 classify arbitrary elements of the full algebraic dual. The bridge above states
-that additional conclusion explicitly. In particular this unit neither assumes
+that additional conclusion explicitly. In particular this module neither assumes
 that all algebraic distributions are measures nor claims a distribution proof
 from measure uniqueness alone. The predicates `IsPositive`, `IsLeftInvariant`
-and `IsRightInvariant` are the published ones; strict positivity includes real
+and `IsRightInvariant` are the existing ones; strict positivity includes real
 values on all nonzero nonnegative real-valued tests.

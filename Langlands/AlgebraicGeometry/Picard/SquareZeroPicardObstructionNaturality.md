@@ -61,7 +61,7 @@ this into `picard_lift_further_pullback_iff`: the actual class `y` lifts
 to `Pic(X)` exactly when its pullback to `Z` lifts to `Pic(X)`, under
 that same injectivity hypothesis.
 
-This contribution concerns nested closed immersions and their actual
+This module concerns nested closed immersions and their actual
 obstruction groups. It proves no general scheme base-change theorem,
 unconditional injectivity of ideal-cohomology maps, scalar stability,
 representability of a family, or final fppf Picard representability.

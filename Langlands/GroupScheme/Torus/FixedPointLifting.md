@@ -30,4 +30,6 @@ reduction of the lifted point is the original point as an actual scheme morphism
 The provenance is the imported internally derived fixed-quotient proof, followed
 by Mathlib's `Algebra.FormallySmooth.exists_lift` and the published affine point
 comparison. No additional literature result is used here. The imported graded
-square-zero argument was generalized from Worker 1131's rank-one construction.
+square-zero argument was generalized from the rank-one
+`formallySmooth_quotient_offIdeal` argument of
+`Langlands.CommutativeAlgebra.GradedFormallySmooth`.

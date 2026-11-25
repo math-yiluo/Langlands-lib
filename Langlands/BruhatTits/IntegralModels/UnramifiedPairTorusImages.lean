@@ -152,6 +152,7 @@ theorem isMaximalTorus_specialFibreMap_of_unramified_full_pair
     change _ ≤ _ ↔ MaximalUnramified.valueGroupEquiv F _ ≤
       MaximalUnramified.valueGroupEquiv F _
     rw [map_le_map_iff]
+    exact Iff.rfl
   rw [← characterValuationKernel_eq_of_isEquiv heq T₀.toGrp] at hb
   exact φ.isMaximalTorus_specialFibreMap_of_coefficient_bounded
     (A := fixedFieldIntegers F) (L := inertiaFixedField F)

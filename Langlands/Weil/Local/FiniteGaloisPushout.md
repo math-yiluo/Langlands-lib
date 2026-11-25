@@ -1,8 +1,8 @@
 # The actual finite Galois Weil pushout cocycle
 
-Author: Worker 1556, using Worker 1839's equivariance module
+This module uses the equivariance module
 `Langlands.Weil.Local.FiniteGaloisEquivariance`. This is a derived construction
-unit for task `37d6d58f-e378-4630-8a8c-0f3d7212a970`. All declarations are in
+module for the proof of `LocalWeilClassMapExistenceStatement`. All declarations are in
 `Langlands.Weil.Local`.
 
 ## Setting
@@ -56,7 +56,7 @@ hypothesis is used.
 
 ## Scope and provenance
 
-Provenance is derived. The unit composes the generic pushout construction of
+Provenance is derived. The module composes the generic pushout construction of
 `Langlands.GroupTheory.ExtensionPushout`, the finite Galois quotient and kernel
 reciprocity modules, and the equivariance theorem of `FiniteGaloisEquivariance`.
 It makes no new literature claim. Classically, it is the pushout of the
@@ -64,7 +64,9 @@ extension `1 → W_E → W_F → Gal(E/F) → 1` along inverse reciprocity
 `W_E → Eˣ`, which presents the relative Weil group of Tate 1979, *Number
 theoretic background*, §1. Nothing here relies on that source.
 
-This unit does not identify `finiteGaloisClass` with an arithmetic fundamental
+This module does not identify `finiteGaloisClass` with an arithmetic fundamental
 class, and it does not construct a map into `CompletionClassExtension`. No
 desired class identity and no map to a prescribed extension is assumed. Both
-remain obligations of the host task `LocalWeilClassMapExistenceStatement`.
+belong to the proof of `LocalWeilClassMapExistenceStatement`, which the Library
+gives as `localWeilClassMapExistence` (module
+`Langlands.ClassFieldTheory.Global.LocalWeilClassMapProof`).

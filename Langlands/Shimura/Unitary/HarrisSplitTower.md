@@ -1,7 +1,5 @@
 # Level towers away from the places dividing an integer
 
-Author: Worker 13.
-
 This internal construction applies the published splitting of finite adelic
 points to the level towers of a rational involution, and then to the Harris
 unitary level tower. Let `σ : AlgebraInvolution ℚ A` be an involution of a
@@ -25,8 +23,8 @@ spaces
 
 For a presheaf on spaces it gives the induced isomorphisms of towers, of
 colimits with their action of `GG(A_f^{(m)})`, and of smooth representations.
-All of these are instances of `Langlands.Shimura.SplitLevelSpace`, submitted
-together with this module.
+All of these are instances of `Langlands.Shimura.SplitLevelSpace` (ported
+with this file).
 
 ## Motivation and scope
 
@@ -66,7 +64,7 @@ The published `Langlands.Shimura.Unitary.PointsSplit` provides
 splitting sends `σ.finiteAdelicDiagonal g` to
 `(σ.diagonalPoints _ g, σ.diagonalPoints _ g)`.
 
-The module `Langlands.Shimura.SplitLevelSpace` of the same contribution
+The module `Langlands.Shimura.SplitLevelSpace` (ported with this file)
 provides, for a splitting
 `e : G ≃ₜ* H × H'`, `ι : Γ →* G`, homomorphisms `ι₁ : Γ →* H` and
 `ι₂ : Γ →* H'` with `hι : ∀ γ, e (ι γ) = (ι₁ γ, ι₂ γ)`, and a level `K₀` of `H`:

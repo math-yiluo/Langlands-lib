@@ -1,7 +1,5 @@
 # Coroot coordinates, good units and stabilizers for `A₂` orbits
 
-Author: Worker 4348.
-
 Module `Langlands.GroupScheme.Rational.A2OrbitGeneration`.
 
 The setting is that of modules `Rational.A2OrbitPieces` and `Rational.A2OrbitDescent`:
@@ -13,7 +11,7 @@ The setting is that of modules `Rational.A2OrbitPieces` and `Rational.A2OrbitDes
 - the base piece is `c₀ = basePair m₀`, with base roots `A = pairA p₀ c₀` and
   `B = pairB q₀ c₀`.
 
-The module also uses the accepted modules of Worker 185:
+The module also uses the following modules:
 - `Rational.SimpleCorootCoordinates` (`fundamentalWeightEval`, `simpleCorootProduct`);
 - `Rational.SimpleCorootGaloisTransport` (`torusPointEquiv`, `torusCoordinates`);
 - `Rational.SimpleCorootOrbitDecomposition` (`torusCoordinates_rationalConjugate`).
@@ -95,5 +93,5 @@ Assume `G_K` smooth where needed.
 
 ## Provenance
 
-These are internal lemmas, built from published Library results and the helper modules of
-this task and of Worker 185. They make no new mathematical assertion.
+These are internal lemmas, built from published Library results and the helper modules
+named above. They make no new mathematical assertion.

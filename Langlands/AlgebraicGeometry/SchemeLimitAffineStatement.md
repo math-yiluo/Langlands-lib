@@ -40,7 +40,7 @@ For a filtered diagram of coefficient rings, the opposite spectrum
 diagram supplies the affine schemes and their limit, recovering the
 affineness assertion after a coefficient stage has been chosen.
 
-This unit states only relative affineness descent. It does not prove the
+This module states only relative affineness descent. It does not prove the
 proposition or state the other properties in Theorem 3.4(2), initial
 model existence, relative Hom comparison, or an arithmetic or topological
 comparison.

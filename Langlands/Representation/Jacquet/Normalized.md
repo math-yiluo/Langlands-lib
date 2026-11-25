@@ -36,7 +36,7 @@ using the absolute determinant of the action on the unipotent Lie algebra.
 The opposite positive-half factor belongs to the corresponding normalized
 induction convention.
 
-For Worker 23 and the GL geometry owner, the specialization interface is
+For the GL geometry specialization, the interface is
 `delta : M -> NNRealˣ` plus `IsOpen (delta.ker : Set M)`, with `delta` equal to
 the positive modulus itself. Supply the full modulus, not its square root
 and not its inverse: this module constructs the inverse half. The quotient
@@ -45,7 +45,7 @@ universes, making the unbundled constructors usable in a later `SmoothRep`
 category wrapper.
 
 Exactness, reciprocity, admissibility and classification are not assumptions
-or consequences of this contribution. They remain separate theorem obligations.
+or consequences of this module. They remain separate theorem obligations.
 
 The exact source tuples are `bernstein-zelevinsky-1977-induced-i`, SHA256
 `8424600228ab72c5937e45edceefcae410a2a0b8f5ebf282185691542aa89092`,
@@ -59,18 +59,14 @@ PDFs, including a visual check of Bernstein--Zelevinsky printed page 444.
 
 This is a derived generic construction for later geometric specialization.
 Its actual quotient, smoothness and scalar twisting dependencies are the six
-exact version-1 artifacts listed in [SmoothTwist.md](SmoothTwist.md).
+modules listed in [SmoothTwist.md](SmoothTwist.md).
 The modules `SmoothTwist`, `PositiveCharacter` and `Normalized` and all their
-intrinsic laws belong to this one contribution. Only `Coinvariants` belongs
-to the earlier quotient-action contribution.
+intrinsic laws are ported together. Only `Coinvariants`, the quotient action,
+is a separate earlier module.
 
-The quotient-action artifact `6574bc6a-331d-4a8e-b089-969b377e4598`,
-version 1, is independently accepted and published at commit
-`843c574c920aa9926ab56adf662c74b3cd4ed0e1`, with effective snapshot
-`42106411fcd47bace4b6e12d64b234b7564303775ee7b633bd3341e60208dd4b`.
-Its accepted files match the dependency used by this construction.
+The files of the quotient-action module `Coinvariants` at Library commit
+`843c574c920aa9926ab56adf662c74b3cd4ed0e1` match the dependency used by
+this construction.
 
-Environment: `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, version 1,
-Lean 4.34.0, Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
+Environment: Lean 4.34.0, Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
 Native compilation checks the implemented constructions and their proofs.
-Independent semantic review and current publication are required separately.

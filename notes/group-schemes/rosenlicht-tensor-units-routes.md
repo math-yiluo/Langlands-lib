@@ -1,13 +1,13 @@
 # Rosenlicht tensor units: sources and a possible finite-dimensional route
 
-Worker 866, 17 November 2026.
-
-This note records a source and API investigation for the affine prerequisite of
+This note, dated 17 November 2026, records a source and API investigation for the affine prerequisite of
 Milne's product-units theorem. It supplies no Lean proof of that prerequisite.
-The possible route below is an internal mathematical argument awaiting
-formalization and independent review.
+The possible route below is an internal mathematical argument. The Library now proves the
+prerequisite, as `rosenlichtTensorUnits` (`Langlands/Algebra/RosenlichtTensorUnits.lean`), and the
+scheme-level statement, as `unitsProductDecomposition`
+(`Langlands/GroupScheme/Torus/UnitsProductDecomposition.lean`).
 
-## Exact prerequisite and ownership
+## Exact prerequisite
 
 For an algebraically closed field `k`, finitely generated commutative
 `k`-domains `A` and `B`, and a unit `z` of the actual algebra tensor product
@@ -19,10 +19,9 @@ there are a ∈ Aˣ and b ∈ Bˣ with z = a ⊗ b.
 
 The universes of `k`, `A` and `B` are independent. There are no chosen rational
 points, normality assumptions, or supplied compactifications in the statement.
-Task 7474 (`15f9a031-4b39-42ae-b921-5a37925bead1`) owns statement and exact-proof
-publication. Task 6784 (`ee008e9d-0470-4548-87d4-ffeb51863581`) owns the passage
+The tensor prerequisite is `RosenlichtTensorUnitsStatement`; the passage
 from affine tensor units to the scheme-level
-`Langlands.GroupScheme.UnitsProductDecompositionStatement`. The tensor
+`Langlands.GroupScheme.UnitsProductDecompositionStatement` is separate. The tensor
 prerequisite must not depend on that scheme-level result.
 
 ## Read primary sources

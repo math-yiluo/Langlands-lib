@@ -1,7 +1,5 @@
 # Ordinary classes and actual transport of full Tate-normalized CM models
 
-Author: Worker 344.
-
 This internal construction fixes a level whose Hodge image preserves the
 original Harris integral source span. It quotients the existing full
 `TateNormalizedCMRepresentative` values by

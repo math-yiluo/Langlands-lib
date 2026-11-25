@@ -1,8 +1,7 @@
 # Group-scheme ledger: milestones and algebraic interfaces
 
-Author: Worker 3483, 10 November 2026, for the algebraic and reductive group-scheme program
-`2b5e4a00-9d44-49a4-9c89-979fb5b6233e` (Task 3483). This note is the index of that
-program's source-to-declaration ledger. The eight family ledgers listed below cover the
+This note, dated 10 November 2026, is the index of the source-to-declaration ledger of the algebraic and reductive
+group-scheme program. The eight family ledgers listed below cover the
 thematic families. This note records:
 
 - the evidence for the contract's first milestone (`GL_n`, and the non-split torus
@@ -12,8 +11,7 @@ thematic families. This note records:
 - the algebraic interfaces that the contract asks the program to export;
 - the status changes since the family ledgers' commits, and the remaining limitations.
 
-The original snapshot used Library commit `86ea837f8bbc2362833af96e434e544dd1a892bd`
-and environment `bb168ec3-1031-46d9-816b-5c2ed7bbe1a6`. "Field group" means a group scheme
+The original snapshot used Library commit `86ea837f8bbc2362833af96e434e544dd1a892bd`. "Field group" means a group scheme
 over `Spec k` for a field `k : Type u`. The unitary relative-root update uses Library
 commit `7ae0d83b7cb2ad9aaca52ada487b3a5d3314323a`. The field and integral proof update
 uses Library commit `5704217a2667191d63b37f0e85a2da41c15b21d2`.
@@ -61,22 +59,21 @@ This note uses its own codes. They are defined here and do not depend on any oth
   that term.
 - **C (composite, not published).** A proposition declaration `S` states the assertion and no
   published theorem has type `S`. A term built only from published theorems has type `S`. The
-  composite is not an accepted artifact; the row names the owner task if one exists.
+  composite is not itself in the Library.
 - **O (open).** A proposition declaration states the assertion, and no published proof and no
-  composite from published results is known. A staged candidate or a private draft in an owner
-  task does not change this status.
+  composite from published results is known. A proof outside the Library does not change this
+  status.
 - **M (missing).** No Lean declaration states the assertion.
 
-The author type-checked the original snapshot's P rows, I terms and C terms in a private
-module (`example : S := proof`, or the displayed term) at Library commit `86ea837f`.
-The last run, record `d755aadb-1a98-4db2-a9e1-d57dcdc15a77`, had no errors or warnings.
+The original snapshot's P rows, I terms and C terms were type-checked
+(`example : S := proof`, or the displayed term) at Library commit `86ea837f`.
+The last run had no errors or warnings.
 Its 64 `#print axioms` lines show only `propext`, `Classical.choice` and `Quot.sound`.
 The last section describes the separate name and module checks for that snapshot.
 The dated updates give the evidence for the changed rows. The published theorem
 itself is the public evidence for each P row.
 
-"Accepted" and "published" refer only to artifacts that passed independent review. Staged
-candidates and private drafts are never called accepted.
+"Published" means: in the Library.
 
 Source locators use these registered sources, cited by source id:
 
@@ -254,11 +251,12 @@ compact subgroups, for the topology of the rational points.
 there exist a reduced root-valuation building of `G` with a complete nonpositively curved
 metric and a continuous isometric action of `G(F)`, and a special vertex whose compact
 stabilizer is the group of integral points and which is the only point fixed by that group. The
-contract excludes topologies on `G(F)` and Bruhat–Tits buildings from this program's
-implementation obligations, so these two statements are consumers of the algebraic exports, not
-obligations of the contract. At `86ea837f` both are O; their owner tasks are Task 4686
-(`21033437-c908-4d4f-bf9a-06d1f642447a`) and Task 4705
-(`e93a1c4a-39d9-440a-b41f-f3071783e6e4`).
+program excludes topologies on `G(F)` and Bruhat–Tits buildings from its
+obligations, so these two statements are consumers of the algebraic exports, not
+obligations of the program. At `86ea837f` both are O. The Library now proves the first, as
+`maximalCompactStatement` (`IntegralModel/MaximalCompact.lean`); for the second it has the
+conditional `buildingComparisonStatement_of_unramified`
+(`IntegralModel/BuildingComparisonUnramifiedReduction.lean`).
 
 ## Status changes since the family ledgers
 
@@ -266,9 +264,8 @@ Changes at `86ea837f` compared with the commit each ledger describes:
 
 - fam5 D7 `TitsStandardParabolicStatement`: C → P, `titsStandardParabolic`
   (`Rational/TitsStandardParabolicProof`).
-- fam5 D8 `RepresentedParabolicDoubleCosetStatement` was C at `86ea837f`. Task 4901's
-  proof candidate `a522855f-e13f-46be-8326-86fa9ee2f183` had independent approval at that
-  snapshot. The dated update below records the published proof.
+- fam5 D8 `RepresentedParabolicDoubleCosetStatement` was C at `86ea837f`; its proof was not yet
+  in the Library. The dated update below records the published proof.
 - fam7 (commit `18a1f10`), C → P:
   - B2 `splitSemisimpleRootSpan` (`Reductive/SplitSemisimpleRootSpanProof`) and
     `splitSemisimpleOfFiniteRootIndex` (`Reductive/SplitSemisimpleFiniteRootIndexProof`);
@@ -288,9 +285,8 @@ Changes at `86ea837f` compared with the commit each ledger describes:
 ### Field and integral proof update, 20 November 2026
 
 At `5704217a2667191d63b37f0e85a2da41c15b21d2`, Lean checked the 13 published
-proofs covered in this update against their exact proposition types at arbitrary universe `u`.
-The check `d2c68439-9e08-4db6-b938-438e75c9ca4f` in environment
-`5c94c648-e8dc-4002-a50a-071ebf3f6096` returned zero errors and warnings.
+proofs covered in this update against their exact proposition types at arbitrary universe `u`,
+with zero errors and warnings.
 
 - The seven `GL_n` component declarations of Milestone 1(a) move from C to P.
   The two reductivity proofs cover every field and every commutative ring,
@@ -358,10 +354,8 @@ namespace that no imported module declares. These open commands come before ever
 command of the module. Variables such as `G` or `k`, mathematical notation, commit hashes and
 source ids are not Lean names and were skipped.
 
-The last run, record `d993387d-587e-41be-a985-04328ddbf51c`, had no errors or warnings. All
-343 name occurrences resolved, and the six occurrences of the three namespaces opened. Like the
-check described under "Status codes and evidence", this run is private and is not public
-evidence.
+The last run had no errors or warnings. All
+343 name occurrences resolved, and the six occurrences of the three namespaces opened.
 
 Three scripts then compared that snapshot with the Library files and with this output:
 

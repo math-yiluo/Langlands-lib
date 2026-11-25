@@ -233,7 +233,10 @@ theorem henselianSeparable_exists_integer_scale :
     obtain ⟨t, ht0, ht⟩ := henselianSeparableAddValuation_exists_base_value v hH E hv 1
     refine ⟨algebraMap K E t, (map_ne_zero _).mpr ht0, ?_⟩
     rw [ht, Int.cast_natCast, div_self (ne_of_gt hn), Int.cast_one]
-  obtain ⟨g, hg⟩ := Int.subgroup_cyclic H
+  obtain ⟨g, hg⟩ : ∃ g : ℤ, H = AddSubgroup.closure {g} := by
+    obtain ⟨g, hg⟩ :=
+      (AddSubgroup.isAddCyclic_iff_exists_zmultiples_eq_top H).mp (Int.subgroup_cyclic H)
+    exact ⟨g, hg.symm.trans (AddSubgroup.zmultiples_eq_closure g)⟩
   have hmul : ∀ m ∈ H, ∃ k : ℤ, k * g = m := by
     intro m hm
     rw [hg, AddSubgroup.mem_closure_singleton] at hm

@@ -1,6 +1,6 @@
 # Torus conjugation under arbitrary base change
 
-This internal derived unit concerns the all-test predicate `TorusConjugates`
+This internal derived module concerns the all-test predicate `TorusConjugates`
 from `IsogenyAdjointTorusDescent`. The supplied conjugating group is any
 commutative group scheme; no torus, reductivity, isogeny or affineness
 hypothesis is needed.
@@ -32,4 +32,4 @@ The provenance is the imported actual base-change point equivalence and its
 naturality and homomorphism compatibility. The construction of the induced
 test scheme follows the method already used for range conjugators in
 `RelativeLevi.ConjugacyCovers`. No external literature or structural existence
-result is used. This unit does not assert existence of any conjugating point.
+result is used. This module does not assert existence of any conjugating point.

@@ -1,8 +1,5 @@
 # Analytic manifolds of actual smooth affine points over complete fields
 
-Author: Worker 115, adapting constructions of Workers 274, 94, 362, 135, 1650,
-383 and 1659.
-
 For every affine `X : Over (Spec (CommRingCat.of k))` and every natural `d`,
 `smoothAffineRegularAtlas k X d h` constructs a regular analytic atlas from
 its sole additional premise `h : SmoothOfRelativeDimension d X.hom`.
@@ -31,15 +28,19 @@ maps and identity diffeomorphisms comparing any two regular atlases.
 This is an internal prerequisite construction for Conrad's Proposition 5.4
 analytic-manifold assertion (registered source
 `conrad-2011-weil-grothendieck-adelic-points`, printed pp.15–16). It adapts the
-published `PointManifold.General` algebraic and real-smooth construction,
-while leaving every published file unchanged. It now covers arbitrary complete
+`PointManifold.General` algebraic and real-smooth construction,
+while leaving every other file of the Library unchanged. It covers arbitrary complete
 nontrivially normed fields and analytic regularity over the original field.
 It constructs manifolds only on smooth affine schemes. Analytic local
 isomorphisms for etale maps, charts on nonaffine schemes or algebraic spaces,
-and the exact `AnalyticPointManifoldStatement` are further obligations.
+and the exact `AnalyticPointManifoldStatement` are outside this module:
+`smoothAffine_isLocalDiffeomorph_etale` in
+`PointManifold.Analytic.UnramifiedLocalDiffeomorph` gives the first for smooth
+affine schemes, and `analyticPointManifold` in
+`AlgebraicSpace.AnalyticPointManifoldProof` proves the statement.
 
 Throughout this module, `k : Type u` is an arbitrary complete nontrivially
 normed field, the scheme is affine over `Spec k`, and its actual point carrier
-is `PointTopology.RingPoint k X k` with its published evaluation topology.
+is `PointTopology.RingPoint k X k` with its evaluation topology.
 The analytic order is `ω` over `k`. There is no characteristic, archimedean,
 positive-dimension or point-nonemptiness assumption.

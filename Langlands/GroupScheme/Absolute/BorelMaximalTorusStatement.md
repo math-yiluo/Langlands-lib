@@ -1,7 +1,5 @@
 # An ambient maximal torus in every Borel subgroup: statement
 
-Worker 1336.
-
 `BorelMaximalTorusStatement.{u}` says that every actual Borel subgroup
 `i : B ⟶ G` of a smooth affine group scheme with connected underlying
 space over an algebraically closed field `k : Type u` is part of a Borel

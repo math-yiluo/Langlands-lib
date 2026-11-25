@@ -8,7 +8,7 @@ are set after the imports; the import of `P2M.Util` is dropped; the proof `by
 p2m_exact_reverting @_root_.S.solution` is replaced by the term `S.solution` applied to the
 explicit arguments. The paired Markdown file lists the changes.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_RelativePicardFunctor
 import Langlands.AnthropicFLT.P2M.Sol.S_AlgebraicGeometry_Scheme_Modules_IsInvertible_exists_functionField_presentation
 set_option maxHeartbeats 4000000
@@ -22,7 +22,7 @@ universe u
 open CategoryTheory AlgebraicGeometry
 
 theorem AlgebraicGeometry.Scheme.Modules.IsInvertible.exists_functionField_presentation
-    {X : Scheme.{u}} [IsIntegral X] (M : X.Modules) (hM : Scheme.Modules.IsInvertible M) :
+    {X : Scheme.{u}} [IsIntegral X] (M : X.Modules) (hM : Scheme.Modules.IsInvertibleFLT M) :
     ∃ φ : ∀ U : X.Opens, Γ(M, U) →+ (X.functionField : Type u),
       (∀ (U V : X.Opens) (h : V ≤ U), Nonempty V →
           ∀ m : Γ(M, U), φ V (M.presheaf.map (homOfLE h).op m) = φ U m) ∧

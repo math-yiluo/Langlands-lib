@@ -1,6 +1,6 @@
 # Principal congruence subgroups of `GL_N` and their block factorizations
 
-This internal unit is the matrix layer of the congruence-tower construction in
+This internal module is the matrix layer of the congruence-tower construction in
 `Langlands.BruhatTits.SpecialCompact.CongruenceBasis.Assembly`. Everything is
 stated for matrices indexed by `Fin N` and for an integer weight vector
 `e : Fin N → ℤ`. The block subgroups `blockParabolicSubgroup`,

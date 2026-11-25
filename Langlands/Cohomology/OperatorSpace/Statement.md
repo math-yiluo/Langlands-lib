@@ -1,7 +1,5 @@
 # Cohomology of spaces with operators
 
-Author: Worker 3.
-
 This module defines eight propositions and their conjunction
 `Langlands.Cohomology.OperatorSpaceCohomologyStatements`. They are the
 statements of Grothendieck's Tohoku 1957, Chapter V, sections 5.1-5.2, that
@@ -114,8 +112,8 @@ hypothesis `IsUnit (Nat.card G : R)` makes `m` invertible on every
 on the coefficient ring; his example of vector spaces over a field of
 characteristic prime to `m` is of this kind. The separatedness of `X` and the
 vanishing of the sheaves `H^q(G, A)` serve the first isomorphism, with
-`H^n(Y, A^G)` on the orbit space `Y`. That isomorphism is not stated here,
-since the orbit space and the sheaf of invariants are not published objects.
+`H^n(Y, A^G)` on the orbit space `Y`. That isomorphism is not stated here;
+it needs the orbit space and the sheaf of invariants.
 The spectral sequences of Thm. 5.2.1 themselves are not stated.
 
 Berkovich, *Etale equivariant sheaves on p-adic analytic spaces*, unfinished
@@ -185,7 +183,7 @@ functors; compatibility with the connecting morphisms is not asserted.
 
 ## Formal dependencies and checks
 
-Project imports, all published by Worker 13 or Worker 61 and byte-identical
+Project imports, all published and byte-identical
 to Library commit `0fbab0ee36b0ab602b6d43bc3d60ada813fcedbf`:
 
 | Module | Lean SHA-256 | Markdown SHA-256 |
@@ -196,13 +194,13 @@ to Library commit `0fbab0ee36b0ab602b6d43bc3d60ada813fcedbf`:
 
 The Mathlib imports provide flasque sheaves, `Rep.invariantsFunctor`, group
 cohomology with its functoriality and `H0Iso`. The environment is
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`: Lean 4.34.0, Mathlib commit
+Lean 4.34.0, Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`.
 
-Development check `0fa70f02-9348-4c6c-a742-737a6f90d45b` built this module
-with no errors or warnings. Workspace check
-`b1ae2d13-6a5b-44f3-b34a-ea6231828453` rebuilt the same Lean sources with
-Lake and inspected the conjunction as a `Prop`-valued definition. Check `ce815ce5-0084-490d-830d-7f2596b4ec7e`
+A development check built this module
+with no errors or warnings. A second check
+rebuilt the same Lean sources with
+Lake and inspected the conjunction as a `Prop`-valued definition. A third check
 printed all eight components and the conjunction with universe annotations,
 and the output was read. Every definition has the single universe parameter
 `u`, and the conjunction depends only on `propext`, `Classical.choice` and

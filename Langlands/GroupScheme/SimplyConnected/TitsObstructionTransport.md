@@ -1,7 +1,7 @@
 # Transport of the Tits obstruction along pinned isomorphisms and conjugations
 
 This module proves three invariance properties of the Tits obstruction of a simply connected
-group (Task 7603, clause 1, last sentence):
+group:
 
 1. it is transported along actual isomorphisms of groups with compatible pinnings;
 2. it does not depend on the choice of Galois pinning data of a fixed group, up to the
@@ -73,8 +73,8 @@ Assume in addition that `K/k` is Galois (`IsGalois k K`), as the obstruction req
   `(d'.titsObstruction hG').comp f.starFixedWeightsEquiv = d.titsObstruction hG`.
 
 The obstruction `titsObstruction`, `dominantTitsClass`, `titsCSAOf`, `dominantPart` and
-`titsObstruction_eq_sub` are the Library's constructions from Worker 90's part of the same
-task (`Reductive/TitsObstructionSimplyConnected`, `Reductive/TitsObstruction`,
+`titsObstruction_eq_sub` are the Library's constructions
+(`Reductive/TitsObstructionSimplyConnected`, `Reductive/TitsObstruction`,
 `Reductive/TitsDominantClass`); `titsAlgebra_restrict_iso` is in
 `Reductive/TitsAlgebraTransport`.
 
@@ -130,8 +130,8 @@ With `K/k` Galois:
   `d'` (`IsHighestWeight`, including irreducibility) and its restriction along `innerIso f.point` (highest weight `λ` for `d`), the Tits
   central simple algebras are Brauer equivalent. The invertible matrix `C = ρ(g)` intertwines
   the two representations (`intertwines_restrict_innerIso`). Conjugation by `C` is then an
-  isomorphism of `k`-algebras between their Tits algebras (Worker 90's
-  `titsAlgebraEquivOfIntertwines`). This gives Brauer equivalence with matrix size `1` on
+  isomorphism of `k`-algebras between their Tits algebras
+  (`titsAlgebraEquivOfIntertwines`, `Reductive/TitsDominantClass`). This gives Brauer equivalence with matrix size `1` on
   both sides.
 * `Conj.dominantTitsClass_weightMap`: `d'.dominantTitsClass (f.weightMap λ) =
   d.dominantTitsClass λ` for dominant star-fixed `λ`, by the same argument as for pinned
@@ -163,8 +163,8 @@ transported data `d.transport e` of `G'` and the pinned isomorphism `d.transport
 
 ## Provenance
 
-Internal. Clause 1 of Task 7603 requires independence of auxiliary choices and transport of
-the obstruction along actual group isomorphisms and compatible pinning isomorphisms. The
+Internal. The results give independence of auxiliary choices and transport of the
+obstruction along actual group isomorphisms and compatible pinning isomorphisms. The
 pinned conjugations cover the choice of Galois pinning data for a fixed group, and together
 with the transported pinning data they give invariance under every `k`-isomorphism. The proofs
 combine the transport lemmas for pinned isomorphisms, the Library's star-action independence

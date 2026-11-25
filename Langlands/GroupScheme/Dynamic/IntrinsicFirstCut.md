@@ -1,6 +1,7 @@
 # First intrinsic cyclic cutoff and the dynamic unipotent subgroup
 
-This internal bridge for Task 7200 identifies the first rank-one intrinsic
+This internal bridge for the proof of `RelativeUnipotentRadicalFiltrationStatement`
+(`RelativeUnipotent.RadicalFiltrationProof`) identifies the first rank-one intrinsic
 cyclic weight cutoff with the actual dynamic unipotent subgroup. It works in
 arbitrary universe `u`, over an arbitrary commutative ring. No field,
 smoothness, finite type, reducedness, connectedness or nonempty-base
@@ -58,5 +59,5 @@ torus point comparison, corepresented coordinates, conjugation coaction and
 dynamic representability results. Only the arbitrary-ring definition of
 `cyclicTail` is used from the polynomial weight interface; no field-only
 weight-filtration comparison is invoked. Root-chart existence, higher cutoff
-invariance, parabolic normality and the parent radical-filtration statement
-remain separate obligations.
+invariance, parabolic normality and the radical-filtration statement
+`RelativeUnipotentRadicalFiltrationStatement` remain separate obligations.

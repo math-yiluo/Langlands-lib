@@ -35,10 +35,10 @@ these coefficients. Induction gives ideal stability under every nonnegative
 Frobenius power, hence under every coefficient automorphism. This argument
 uses no finite field of definition for the subgroup.
 
-Worker 1611 derived the generalization using the published infinite-Galois
+The generalization uses the published infinite-Galois
 ideal descent of `GaloisIdealDescent`, the tensor-coordinate bridge and radical
-source-intertwining proof of `Descent.RadicalTensorIdeal` (Worker 1370), and the
-ideal-sheaf adapter of `Descent.RadicalIdealSheaf` (Worker 1359). The latter
+source-intertwining proof of `Descent.RadicalTensorIdeal`, and the
+ideal-sheaf adapter of `Descent.RadicalIdealSheaf`. The latter
 proofs are generalized here by replacing the radical-specific invariance
 result with the explicitly supplied equality of closed-subgroup images.
 This is a supporting descent result; it does not produce a Frobenius-invariant

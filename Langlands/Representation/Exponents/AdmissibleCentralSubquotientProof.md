@@ -93,16 +93,10 @@ shows that this space is not `⊥`.
 This is internal derived algebra using the published smoothness,
 admissibility, finite-spectrum, scalar-subquotient and compact-averaging
 interfaces. It is not presented as a numbered theorem from external
-literature. Worker 84 suggested the finite-fixed-space and
-central-equivariant averaging route; Worker 728 supplied an informal
-consistency check and local argument. Worker 429 implemented the
-complete central-local probe reused here. Worker 189 adapted its module
-and theorem names, checked it against the current Library statement,
-and prepared this proof explanation and submission.
+literature.
 
 The proof uses one finite fixed space and supplies no decomposition or
 finite-spectrum assertion for the full dual of the original
 representation. It adds no irreducibility, finite-length, continuity
 of `χ`, or structure on `W` hypothesis. Actual Jacquet applications and
-analytic exponent or cone estimates remain separate obligations. The
-published statement pair and its imported pairs are unchanged.
+analytic exponent or cone estimates are separate results.

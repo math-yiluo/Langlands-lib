@@ -14,7 +14,7 @@ noncomputable def openCohomology (U : X.Opens) (n : ℕ) : X.Modules ⥤ ModuleC
 For a scheme `X : Scheme.{u}`, an open `U` of `X` and `n : ℕ`, this functor sends an
 `𝒪_X`-module `M` to `Hⁿ(U, M|_U)`. Here `M|_U` is Mathlib's restriction
 `(Scheme.Modules.restrictFunctor U.ι).obj M` along the open immersion `U.ι : U ⟶ X`, and
-`cohomology U n` is the published sheaf cohomology functor
+`cohomology U n` is the sheaf cohomology functor
 `Langlands.AlgebraicGeometry.Modules.DerivedSections.cohomology` of the scheme `U`. Its values
 are modules over `Γ(U, ⊤)`, the ring of global functions of the scheme `U`. This is the usual
 cohomology `Hⁿ(U, M)` of `M` over the open `U`, and the definition just gives it a name. In
@@ -23,7 +23,7 @@ the results below, `U` is the preimage `f ⁻¹ᵁ W` of an open `W` of the targ
 ## Main results
 
 All results take `f : X ⟶ Y` a morphism of schemes in `Scheme.{u}`, `n : ℕ` and
-`M : X.Modules`. `higherDirectImage f n` is the published `Rⁿ f_*` from `DerivedSections`.
+`M : X.Modules`. `higherDirectImage f n` is the `Rⁿ f_*` from `DerivedSections`.
 `Opens.IsBasis B` is Mathlib's notion that `B` is a basis of the topology of `Y`.
 
 ```lean
@@ -99,10 +99,10 @@ Supporting lemmas, in the sub-namespace `OpenCohomologyVanishing`:
   `N₃` has no nonzero sections over opens contained in `V`.
 - `surjective_app_of_isZero`: for a short exact sequence `0 → M₁ → M₂ → M₃ → 0` of
   `𝒪_X`-modules and an open `W` with `H¹(W, M₁) = 0`, the map `M₂(W) → M₃(W)` is surjective. It
-  restricts the sequence to `W` and applies the published
+  restricts the sequence to `W` and applies
   `DerivedPlus.epi_rightDerived_zero_map_of_isZero` to the global sections functor of `W`.
-- `subsingleton_of_isZero`: `H⁰(W, M) = 0` implies that `M(W)` is trivial, through the
-  published `cohomologyZeroIso`.
+- `subsingleton_of_isZero`: `H⁰(W, M) = 0` implies that `M(W)` is trivial, through
+  `cohomologyZeroIso`.
 - `isZero_openCohomology_X₃`: for a short exact sequence with flasque middle term,
   `Hⁿ⁺²(W, M₁) = 0` implies `Hⁿ⁺¹(W, M₃) = 0`. The restricted middle term is flasque, so its
   `Hⁿ⁺¹` vanishes. Hence the connecting map `Hⁿ⁺¹(W, M₃) → Hⁿ⁺²(W, M₁)` is a monomorphism
@@ -139,7 +139,8 @@ and `Quot.sound`.
 ## Intended use
 
 This is the local-to-global zero detection step for the proof of
-`Langlands.AbelianScheme.AlgClosedFieldSquareFirstProjectionAcyclicityStatement` (task
-`651d1a6b-549e-4d79-ae47-19627b02f30d`). It reduces vanishing of `Rⁿ f_*` (or of its pullback
+`Langlands.AbelianScheme.AlgClosedFieldSquareFirstProjectionAcyclicityStatement`
+(`algClosedFieldSquareFirstProjectionAcyclicity`, module
+`Langlands.AlgebraicGeometry.Picard.SquareFirstProjectionAcyclicityProof`). It reduces vanishing of `Rⁿ f_*` (or of its pullback
 to an open `V`) to vanishing of the cohomology of preimages of affine opens. The module proves
 nothing about base change, perfect complexes or fibres.

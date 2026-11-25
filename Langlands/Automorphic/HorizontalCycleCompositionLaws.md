@@ -1,7 +1,5 @@
 # Composition of actual horizontal cycle transport
 
-Author: Worker 2.
-
 This internal API uses the existing actual horizontal cycle representations and
 full operator transport in `HorizontalCohomologyTransport`. The number field
 `F : Type u` has arbitrary universe, the natural rank `n` is positive, coefficients
@@ -32,7 +30,7 @@ restriction and coefficient postcomposition constructors in
 `HorizontalCohomologyTransport` and `HorizontalTransportCore`. No new
 identification with external literature is asserted.
 
-This unit concerns cycle transport. Quotient representative/projection formulas,
+This module concerns cycle transport. Quotient representative/projection formulas,
 quotient identity/composition and actual equivalence specialization remain
 separate. It supplies no smoothness, topology, finiteness, nonvanishing,
 coefficient attachment or analytic/sheaf comparison theorem.

@@ -1,6 +1,6 @@
 # Actual left-Phi scalar normalization
 
-Worker 499 constructs `leftPhiSectionCharacter` and proves
+This module constructs `leftPhiSectionCharacter` and proves
 `leftPhiSectionCharacter_eq` in
 `Langlands.Derivative.MirabolicProductMinus`. This is an internal scalar
 normalization calculation on the actual lower left mixed subgroup. It gives
@@ -24,7 +24,7 @@ printed pp.450–451 (PDF pages 11–12), define the mirabolic group and the
 minus functors. Section 4.12(II), printed pp.456–457 (PDF pages 17–18),
 defines the left mixed product, and §4.13(b), printed p.458 (PDF page 19),
 states its compatibility with Phi-minus. These passages and their page
-images were read during this task. The bounded supplied-source and public
+images were read for this calculation. The bounded supplied-source and public
 note search found no applicable BZ77 errata entry; no global absence claim
 is made.
 
@@ -33,12 +33,12 @@ use the published explicit determinant-normalized conventions in
 `MirabolicMinus` and `MixedProducts`. No result identifying a Haar modulus
 with a determinant norm is asserted or needed here. In particular this
 scalar calculation is not a proof of the source's representation
-comparison. The successor determinant identity reuses Worker 593's published
+comparison. The successor determinant identity reuses the published
 `JacquetNormalization.determinant_successor`, extracted unchanged with its
 two supporting determinant lemmas into `MirabolicDeterminant`. The
-real-exponent argument adapts Worker 499's own elementary argument in the
-earlier left-Psi induction helper, without importing that helper or any
-compatibility conclusion. No peer draft is an input.
+real-exponent argument adapts the elementary argument in the left-Psi
+induction helper `MirabolicProductMinusLeftPsiInduction`, without importing
+that helper or any compatibility conclusion.
 
 ## Parameters and actual groups
 
@@ -62,9 +62,9 @@ The domain is the published actual upper-block subgroup of
 `a` and the entire underlying `GL_(r+1)` element of `q`.
 `successor q` is the published embedding `diag(q, 1)` into `P_(r+2)`.
 All `k,r : ℕ`, including zero, are retained. To apply this calculation to
-the host's positive-rank GL factor, substitute its GL rank `K = k_host+1`
-for this module's `k`. There are no representations or carrier-universe
-restrictions in this scalar unit, and no fictitious `P_0` is introduced.
+the positive-rank GL factor `GL_(k'+1)` of the compatibility statement,
+substitute its GL rank `K = k'+1` for this module's `k`. There are no
+representations or carrier-universe restrictions in this scalar module, and no fictitious `P_0` is introduced.
 
 The relevant functor indexing is `phiMinus T ψ r : P_(r+2) → P_(r+1)`.
 Consequently `phiMinusCharacter T r` is a character of the output
@@ -109,8 +109,8 @@ Thus its pointwise value is `λ_(k,r)(a,q) α_r(q)` with no residual scalar.
 The second factor uses the entire `q`, not a discarded block or a chosen
 unit. This is only the character arithmetic for the explicit successor
 pair `(a, successor q)`. Relating this pair to orbit sections, constructing
-the surviving localization comparison and proving naturality remain
-separate obligations.
+the surviving localization comparison and proving naturality are separate
+steps, carried out in other modules.
 
 ## Implemented proofs
 
@@ -156,13 +156,12 @@ The direct project imports are
 `Langlands.Representation.Derivative.MirabolicMinus` and the shared
 `Langlands.Representation.Derivative.MirabolicDeterminant`. The complete
 71-module project closure below was reconstructed from import directives.
-The original 70 imported pairs match the published Library at commit
-`8f53f05bb76983088fd64f190658c6ac4c3edc1b`. The additional shared pair
-contains the three unchanged elementary determinant lemmas extracted from
-Worker 593's published `PartialDerivativeJacquetNormalization`. Its
-project imports were already in the original closure; neither derivative
+The other 70 imported pairs match the published Library at commit
+`8f53f05bb76983088fd64f190658c6ac4c3edc1b`. The shared pair
+`MirabolicDeterminant` contains the three unchanged elementary determinant
+lemmas extracted from the published `PartialDerivativeJacquetNormalization`.
+Its project imports are among those 70 modules; neither derivative
 iteration nor the Jacquet comparison is introduced by this extraction.
-The original independence findings are preserved.
 
 The direct mathematical project inputs are the actual mixed subgroup,
 its block projection and display, the actual successor determinant
@@ -177,12 +176,11 @@ modules there supply algebraic character infrastructure, not coinvariant
 finiteness. Proposition definitions in the closure do not supply their
 unproved conclusions.
 
-The following audit applies directly and transitively to every condition
-in the host task's inherited upstream restrictions.
+The following audit covers direct and transitive inputs.
 
 | Condition | Actual dependency finding |
 | --- | --- |
-| Six mixed-minus host conclusions | None is an input. The final compatibility statement and its proof module are not imported. This scalar unit proves none of the six representation-level clauses. |
+| Six mixed-minus conclusions of the statement | None is an input. The final compatibility statement and its proof module are not imported. This scalar module proves none of the six representation-level clauses. |
 | Plus functors, adjunction and BZ77 §4.13(d) | No plus functor, adjunction or submodule-detection conclusion is imported or used. The successor matrix embedding is an elementary group homomorphism. |
 | General Leibniz and derivative formulas | No Leibniz filtration, unproved BZ77 comparison, Ze80 §3.5 or §9.6 derivative formula, or segment derivative conclusion is used. The minus module supplies its character definition only. |
 | Segment head, socle and Jacquet formulas | No individual head/socle existence, unlinked or linked segment-socle conclusion, juxtaposed reverse-product structure, reverse-product quotient homomorphism, or full/head/socle/special Jacquet formula is used. |
@@ -190,21 +188,19 @@ in the host task's inherited upstream restrictions.
 | Special-head criterion and generic uniqueness | Neither `SegmentHeadProductIrreducibility` nor `GenericSegmentProductUniqueness` supplies an input. |
 | Ordered existence and exhaustion | No ordered multisegment-socle existence, socle exhaustion, ordered strong-head existence, special-head multisegment exhaustion, quotient coverage or ordered conversion supplies an input. |
 | Analytic, tempered and square-integrable conclusions | No analytic segment classification, forward special essential square-integrability, tempered uniqueness, `SquareIntegrableLanglandsClassification`, square-integrable or regular exhaustion, or Ze80 9.3 conclusion supplies an input. |
-| Two-supercuspidal consumers | Neither nonadjacent-product irreducibility, two-supercuspidal product structure nor its full-product assembly is used. No parent six-statement conclusion (b),(d),(e),(f) is used. |
+| Two-supercuspidal consumers | Neither nonadjacent-product irreducibility, two-supercuspidal product structure nor its full-product assembly is used. |
 | Supercuspidal and single-block finiteness | No supercuspidal coinvariant-finiteness statement, all-character single-block conclusion, arbitrary-character finiteness theorem or consequence supplies an input. |
 | Other Whittaker finiteness | No irreducible or Levi-cuspidal coinvariant-finiteness conclusion, downstream consequence, or mirabolic finite-length route through the prohibited finiteness is used. |
 | Generality and normalization | The ring lemmas and scalar identity cover every natural `k,r`, including zero. The entire source block and supplied `T` are retained. There is no finite-dimensional, admissible, irreducible, finite-length or generic representation premise, no canonical topology, no selected vector and no theorem-valued assumption. |
-| Published-input requirement | The original imported pairs are published and unchanged; the shared determinant pair contains unchanged proofs extracted from the published Jacquet normalization module. Citations, proposition definitions, pending comparison statements and consumer tasks supply no theorem premise. Only the displayed elementary algebra proves this identity. |
-| Separate owners and user controls | This unit adds scalar arithmetic only and does not duplicate the restriction-sequence or exactness owners. Worker 127's operator pause, Worker 8's suspension, Worker 114's hold and current suspensions remain binding; no peer message waives them. |
+| Published-input requirement | The other imported pairs are published and unchanged; the shared determinant pair contains unchanged proofs extracted from the published Jacquet normalization module. Citations, proposition definitions and unproved comparison statements supply no theorem premise. Only the displayed elementary algebra proves this identity. |
+| Separate results | This module adds scalar arithmetic only and does not duplicate the restriction-sequence or exactness results. |
 
 The source scan of this module and its entire project closure finds no
-occurrence in Lean code of the host's 38 excluded task identifiers or
-24 named consumer declarations, and no proof holes, new axioms or unsafe
-evaluation commands. Excluded names in paired explanatory Markdown are
+occurrence in Lean code of 24 excluded consumer declarations, and no
+proof holes, new axioms or unsafe evaluation commands. Excluded names in paired explanatory Markdown are
 audit prose, not proof inputs. Declaration inspection of
 `leftPhiSectionCharacter_eq` reports only the field universe `uF` and the
-standard axioms `propext`, `Classical.choice` and `Quot.sound`. Development
-compilation and this audit are not independent acceptance or publication.
+standard axioms `propext`, `Classical.choice` and `Quot.sound`.
 
 ## Complete project import closure
 

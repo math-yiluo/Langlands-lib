@@ -99,7 +99,7 @@ def pointStalkIso (F : ActionSheaf G Y) :
 
 /-- The point comparison commutes with the two original labelled stalk transports. -/
 theorem pointStalkIso_action (F : ActionSheaf G Y) (q : Q) :
-    (fixedStalkAction Q y hfix F).ρ q ≫ (pointStalkIso Q y hfix F).hom =
+    ((fixedStalkAction Q y hfix F).ρ q).asHom ≫ (pointStalkIso Q y hfix F).hom =
       (pointStalkIso Q y hfix F).hom ≫ Godement.stalkPull
         ((subgroupSpaceRestriction Q (pointMap y) (pointMap_equivariant Q y hfix)).obj F).obj
         q⁻¹ PUnit.unit PUnit.unit rfl :=

@@ -1,6 +1,6 @@
 # Norm of the finite divisor of an actual idele
 
-Worker 1692 derives these internal comparisons from `HeckeDivisor`,
+This module derives these internal comparisons from `HeckeDivisor`,
 `IdeleAbsoluteValue` and Mathlib's normalized completion norms. The field has
 unrestricted universe `u`. The constructions use the existing idele divisor,
 the actual inclusion of finite ideles, and the existing normalized absolute

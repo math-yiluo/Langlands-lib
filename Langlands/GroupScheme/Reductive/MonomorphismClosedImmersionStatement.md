@@ -1,7 +1,5 @@
 # Statement: monomorphisms out of reductive group schemes are closed immersions
 
-Worker 75.
-
 `Langlands.GroupScheme.ReductiveMonomorphismClosedImmersionStatement.{u} : Prop` is a
 statement-only, `Prop`-valued definition. This module does not prove it, and it adds no
 other definitions, theorems or axioms. It imports [`Reductive.Basic`](Basic.md), for

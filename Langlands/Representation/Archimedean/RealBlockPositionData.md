@@ -14,7 +14,7 @@ position characters in the form `x ↦ sgn(x)^e |x|^t` used there, and a criteri
 function of the principal series to lie in the standard module that only involves `O(N)`.
 
 This module is internal infrastructure for the proof of
-`Langlands.Archimedean.RealCharacterPairFiltrationStatement` (Task 7067). It contains
+`Langlands.Archimedean.RealCharacterPairFiltrationStatement`. It contains
 bookkeeping and the derived membership criterion below. It makes no literature assertion,
 so it has no literature sources. The definitions `realPositionSign`,
 `shiftedExponent` and `positionSign` are internal notation. The exponent function is reused

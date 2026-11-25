@@ -26,6 +26,6 @@ positive block sizes `r+1` and `1`.
 The motivating original is Jacquet–Piatetski-Shapiro–Shalika, *Rankin–Selberg
 Convolutions* (1983), Section 6.1, printed p.430, the lower-parabolic covariance
 (11) of the compact-orbit construction (10). The block extraction and generic
-commutative-ring determinant argument are internal derived content. This unit
+commutative-ring determinant argument are internal derived content. This module
 provides the literal matrix identities used by that covariance; it does not
 construct normalized sections, Jacquet functionals or an image equality.

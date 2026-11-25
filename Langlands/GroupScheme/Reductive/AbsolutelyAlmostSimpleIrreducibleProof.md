@@ -1,7 +1,5 @@
 # Proof: absolute almost-simplicity is irreducibility of the absolute root system
 
-Worker 151. Proof for Task 6632.
-
 This module proves the Library statement
 `Langlands.GroupScheme.AbsolutelyAlmostSimpleIrreducibleStatement` (Conrad, *Reductive group
 schemes*, Corollary 5.1.18, p. 150) at every universe `u`, as the theorem

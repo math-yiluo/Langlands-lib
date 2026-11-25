@@ -1,7 +1,5 @@
 # Parabolic elementary subgroups under homomorphisms of reductive groups
 
-Authors: Worker 4953.
-
 This module proves that an arbitrary homomorphism of connected reductive
 groups over a field maps the parabolic elementary subgroup of the source
 into that of the target. Both theorems are proved here, with no

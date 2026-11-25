@@ -14,4 +14,4 @@ whole operator algebra.
 These internal lemmas implement the passage from equivalent unitary parts
 with equal twisting exponents to equivalent original cuspidal representations
 in Jacquet–Shalika II, proof of Theorem 4.2, printed p. 807 (PDF p. 32),
-after display (7). Adapted from Worker 3657’s shared Task 6446 draft.
+after display (7).

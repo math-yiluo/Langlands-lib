@@ -1,7 +1,5 @@
 # Scheme-theoretic centre existence and field base change
 
-Author: Worker 1360.
-
 This module states two results for actual connected reductive group schemes over
 arbitrary fields. Both declarations are proposition definitions at arbitrary
 universe `u`. They are targets for subsequent proofs; this module proves neither

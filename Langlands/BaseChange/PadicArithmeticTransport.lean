@@ -1,7 +1,7 @@
 import Langlands.BaseChange.ExtensionInvariants
 import Langlands.AllField.HarmonicAnalysis.ConductorSupplement
 import Langlands.LocalField.PadicBridge
-import Langlands.ClassFieldTheory.Local.NYLL.UniverseZeroModel
+import Langlands.ClassFieldTheory.Local.UniverseZero.UniverseZeroModel
 
 /-! # Transport of conductor and extension invariants on p-adic models -/
 
@@ -9,7 +9,7 @@ noncomputable section
 
 namespace Langlands.BaseChange
 
-open HarmonicAnalysis LocalClassField.NYLL ValuativeRel
+open HarmonicAnalysis LocalClassField.UniverseZero ValuativeRel
 open PadicField.TopologicalData
 
 universe u v

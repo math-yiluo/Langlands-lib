@@ -26,8 +26,8 @@ extension in characteristic zero; the formalization follows HL.
 
 `F` is a field and `E` a commutative `F`-algebra, both topological rings, `σ : E ≃ₐ[F] E`,
 and `l n : ℕ`. HL's σ-conjugation `g⁻¹ δ g^σ` is `twistedConj (entrywiseAut σ n) g δ`
-(Task 7402's module `Langlands.TraceFormula.TwistedOrbital`, with `entrywiseAut` from
-Task 7405's module `Langlands.BaseChange.Norm`). HL's quotients `G_γ(F)\G(F)` are the
+(module `Langlands.TraceFormula.TwistedOrbital`, with `entrywiseAut` from
+the module `Langlands.BaseChange.Norm`). HL's quotients `G_γ(F)\G(F)` are the
 Library's `QuotientIntegration.LeftQuotient`, whose points are the cosets `H g`.
 
 **Measurable structures.** `GL_n(F)` and `GL_n(E)` carry a supplied σ-algebra with
@@ -41,7 +41,7 @@ priority is needed: a supplied `[MeasurableSpace G]` would otherwise also make M
 quotient σ-algebra `Quotient.instMeasurableSpace` available, and a check with
 `with_reducible rfl` confirmed that the instance found on `LeftQuotient (glCentralizer γ)`
 is the Borel one. The instances are local, so importing the module changes no instance
-elsewhere. This is the arrangement the task prescribed, as a named local instance.
+elsewhere. The instance is a named local instance.
 
 ## Definitions (items 1–6)
 
@@ -51,13 +51,13 @@ elsewhere. This is the arrangement the task prescribed, as a named local instanc
    `glCentralizer γ`, for `γ : GL_n(F)`, is the reducible abbreviation of
    `twistedCentralizer (MonoidHom.id _) γ`: HL's `G_γ(F)` (I.2.4, p. 14). It is
    expressed through `twistedCentralizer` so that `LeftQuotient (glCentralizer γ)` is
-   exactly the domain of the quotient measure in Task 7402's `orbitalIntegral γ ν f`.
+   exactly the domain of the quotient measure in `orbitalIntegral γ ν f`.
 2. **σ-orbital integral.** `sigmaOrbitalIntegral σ n δ ν φ` is the reducible abbreviation
    of `twistedOrbitalIntegral (entrywiseAut σ n) δ ν φ`, for a measure `ν` on
    `LeftQuotient (sigmaCentralizer σ n δ)` and `φ : GL_n(E) → ℂ`. It is
    `∫ φ(x⁻¹ δ x^σ) dν(x)` over `G^σ_δ(F)\G(E)`, HL's `Λ^{G(E)}_σ(φ, δ)` (I.2.4,
-   pp. 15–16). The ordinary orbital integral `Λ^{G(F)}(f, γ)` is Task 7402's
-   `orbitalIntegral γ ν f`; no second one is defined. Both are Mathlib Bochner
+   pp. 15–16). The ordinary orbital integral `Λ^{G(F)}(f, γ)` is
+   `orbitalIntegral γ ν f` of `Langlands.TraceFormula.TwistedOrbital`; no second one is defined. Both are Mathlib Bochner
    integrals, which are `0` for non-integrable integrands; no convergence is asserted.
 3. **Associated measure.** `IsAssociatedMeasure σ l δ γ μδ μγ`, for measures `μδ` on
    `sigmaCentralizer σ n δ` and `μγ` on `glCentralizer γ`, says: there is `x : GL_n(E)` with
@@ -99,7 +99,7 @@ elsewhere. This is the arrangement the task prescribed, as a named local instanc
 7. `mem_sigmaCentralizer`: `x ∈ sigmaCentralizer σ n δ ↔ x⁻¹ * δ * entrywiseAut σ n x = δ`.
    Proof: `Iff.rfl`, by the definition of `twistedCentralizer`.
 8. `glCentralizer_eq_centralizer`: `glCentralizer γ = Subgroup.centralizer {γ}`.
-   Proof: Task 7402's `twistedCentralizer_id`.
+   Proof: `twistedCentralizer_id` of `Langlands.TraceFormula.TwistedOrbital`.
 9. `conj_mem_sigmaCentralizer`: if `c ∈ sigmaCentralizer σ n δ`, then
    `x⁻¹ * c * x ∈ sigmaCentralizer σ n (x⁻¹ * δ * entrywiseAut σ n x)` for every `x`.
    Proof: `entrywiseAut σ n` is multiplicative, so the stabilizer equation for
@@ -155,9 +155,9 @@ respectively `G(E)_{σ-r}`.
 
 ## Dependencies
 
-Task 7402 (`Langlands.TraceFormula.TwistedOrbital`): `twistedCentralizer`,
-`twistedCentralizer_id`, `twistedOrbitalIntegral`, `orbitalIntegral`. Task 7405
-(`Langlands.BaseChange.Norm`): `entrywiseAut`, `baseChange`, `cyclicNorm`,
+`Langlands.TraceFormula.TwistedOrbital`: `twistedCentralizer`,
+`twistedCentralizer_id`, `twistedOrbitalIntegral`, `orbitalIntegral`.
+`Langlands.BaseChange.Norm`: `entrywiseAut`, `baseChange`, `cyclicNorm`,
 `IsNormAssociated`, `IsNorm`, `IsSigmaRegular`. Library:
 `Langlands.QuotientIntegration.IsCompatible` and `LeftQuotient`
 (`Langlands/Analysis/Local/QuotientMeasure.lean`), `Langlands.GeneralLinear`,

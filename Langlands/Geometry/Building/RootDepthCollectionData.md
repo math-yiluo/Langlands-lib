@@ -1,6 +1,6 @@
 # Filtration subgroup data for positive-depth collection
 
-This internal unit isolates the actual inputs used by positive-depth collection.
+This module isolates the actual inputs used by positive-depth collection.
 It works over any field at universe `u`, with an affine ambient group scheme;
 no monomorphism premise is required by this interface.
 `RootDepthCollectionData i φ` consists of subgroups whose literal carriers are
@@ -8,7 +8,7 @@ no monomorphism premise is required by this interface.
 arbitrary-depth doubled-root inclusion when `2 * r ≤ s`. The V3 condition uses
 the original actual root set and the original nonopposite real-ray condition.
 There are no reflection, opposite-root, support-normalization, nontriviality,
-or apartment-existence fields. The data must be supplied; this unit does not
+or apartment-existence fields. The data must be supplied; this module does not
 assert their existence for a new class of groups.
 
 Carrier equality gives antitonicity in the real depth and containment in the
@@ -39,7 +39,7 @@ The proof extracts the height-collection and adjacent-comparable-pair arguments
 from the existing `PositiveDepthCollection` and `PositiveDepthRayCompression`
 interfaces. These are internal group-theoretic consequences; no additional
 literature theorem is claimed. In particular, no full valuation, its reflection
-or opposite-root laws, or the host supplied-model building comparison is
-constructed by this unit.
+or opposite-root laws, or the supplied-model building comparison
+`BuildingComparisonStatement` that it serves is constructed by this module.
 
 The generic adjacent-pair theorem `range_orderedProduct_rayPairs` is reused from `PositiveDepthRayCompression` with its unchanged statement.

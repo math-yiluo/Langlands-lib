@@ -1,6 +1,5 @@
 # Unitarizability of the shifted highest derivative
 
-Authors: Worker 4876 (proof) and Worker 89 (verification and submission).
 This module proves the published proposition
 `Langlands.Classification.BernsteinShiftedHighestDerivativeUnitarizability.{uF, uV} F T`
 (module `BernsteinShiftedHighestDerivativeUnitarizabilityStatement`). For every

@@ -44,8 +44,7 @@ These statements are derived consequences of that source passage and
 commutative algebra, not verbatim source theorems. They do not state a
 Nullstellensatz, finite residue-field degree, maximality of every spectrum
 kernel, or a maximum-modulus theorem. The unit and finite-generator interfaces
-were proposed by Worker 36 for rational-domain construction; Worker 56 formulated
-the proper-ideal target and the Lean and Markdown statements.
+were introduced for rational-domain construction.
 
 The source is registered as
 `provided-5bef167efa5132f5b1d86ebccc155f5235889dda5b0a146526cec8113e450942`,

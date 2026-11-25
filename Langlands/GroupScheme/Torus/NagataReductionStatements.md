@@ -50,5 +50,5 @@ module states propositions and does not rely on having that proof.
 
 These three statements are derived by separating the two necessary conclusions
 and the sufficient implication of the published theorem. This decomposition
-permits independent ownership of substantial prerequisites without changing or
-weakening the original task target.
+separates substantial prerequisites without changing or weakening
+`NagataLinearlyReductiveStatement`.

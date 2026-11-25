@@ -1,6 +1,6 @@
 # Actual unitary central characters of discrete-series classes
 
-Worker 200. This internal construction makes the existing scalar central
+This internal construction makes the existing scalar central
 character available as an actual function on the canonical discrete-series
 classes. It supplies a representation-side input for central Fourier inversion.
 It imports the existing `DiscreteSeriesClass`, descended
@@ -86,12 +86,12 @@ central subgroup and inclusion are identified. The formula holds at every
 actual character and every central subgroup element, with no finiteness or
 continuity premise about the entire smooth dual.
 
-## Remaining scope
+## Scope
 
 This is an internal extraction, uniqueness and transport argument from the
 published class and coefficient definitions. It defines no topology on the
 whole discrete-series set. It proves no Fourier inversion, finite fiber bound,
 central Haar normalization, spectral finiteness or Plancherel formula. Rational
-split-center identification and a consumer's analytic Fourier theorem remain
-separate obligations; this unit supplies the actual central-character map and
+split-center identification and a consumer's analytic Fourier theorem are
+separate obligations; this module supplies the actual central-character map and
 its scalar twisting law for them.

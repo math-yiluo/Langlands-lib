@@ -1,8 +1,5 @@
 # CM finite prescription from finite-order global prescription
 
-Author: Worker 84. Derived statement contribution to program
-`34b81620-20d7-4059-9b08-6bedd1c1c029`, revision 1.
-
 `Langlands.Global.CMFiniteCharacterPrescriptionOfFiniteOrderStatement.{u}`
 is the implication
 
@@ -40,14 +37,14 @@ component transport and all character identities. In particular, this
 statement supplies neither Grunwald--Wang existence nor an unconditional
 proof of `CMFiniteCharacterPrescriptionStatement`. CM infinity realization,
 local integral-unit extension, regular unit-prescription assembly, auxiliary
-general position and Harris normalization remain separate.
+general position and Harris normalization are separate.
 
 The original is Guy Henniart, *Une preuve simple des conjectures de Langlands
 pour GL(n) sur un corps p-adique* (2000), Section 3.6, Lemma 2, printed
 pp.450--451 (one-based PDF pp.12--13), source
 `henniart-2000-simple-proof`, SHA-256
 `be283c3e8187f1eed365537c72379c3e06e7791756954c2ac783c6beea2979de`.
-Worker 84 read these original pages directly. The source prescribes two
+These original pages were read directly. The source prescribes two
 places, chooses a finite-order character trivial at their conjugates and
 takes the displayed conjugate quotient. The finite-set generalization and
 explicit trivial whole infinity component are inherited from the existing

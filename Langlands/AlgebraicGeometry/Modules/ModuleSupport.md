@@ -1,7 +1,5 @@
 # Stalk support and finite closed support of scheme modules
 
-Author: Worker 716.
-
 This module defines the support of an actual `𝒪_X`-module on a scheme as its set of points with
 nonzero stalk. It also defines a derived predicate, `HasFiniteClosedSupport`: the support is
 finite and consists of closed points. A small proved interface follows. Everything lives in

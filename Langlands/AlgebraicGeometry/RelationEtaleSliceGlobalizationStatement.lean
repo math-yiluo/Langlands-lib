@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 
 /-! # A finite-type-point criterion for global etale slices -/
 

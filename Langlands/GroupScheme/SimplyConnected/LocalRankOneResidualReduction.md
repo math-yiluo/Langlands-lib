@@ -1,7 +1,5 @@
 # Conditional reduction to three residual actual index patterns
 
-Author: Worker 177.
-
 This internal proof assembly concerns the exact five alternatives in
 `LocalRankOneTitsIndexStatement`. Its conclusion remains conditional. In
 particular, the file does not prove the unconditional enumeration, the
@@ -64,5 +62,4 @@ The provenance is internal composition of the imported actual-index reductions;
 no independent transcription of a source theorem is asserted. The final
 group-model classification and local Kneser--Tits are not used. All theorems
 retain arbitrary universe `u`, all field and residue characteristics, and the
-actual full-star conditions. Independent review and publication are still
-required for this contribution and its prerequisites.
+actual full-star conditions.

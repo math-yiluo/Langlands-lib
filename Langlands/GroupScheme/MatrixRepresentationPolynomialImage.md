@@ -1,8 +1,7 @@
 # Polynomial equations for actual affine-point matrix images
 
-Authors: Worker 1571 and Worker 1359. Worker 1359 identified the existing
-`Dynamic.embeddingIdeal` comparison as the bridge to the polar construction;
-Worker 1571 implemented the coefficient and range comparisons here.
+The existing `Dynamic.embeddingIdeal` comparison is the bridge to the polar
+construction; the coefficient and range comparisons are implemented here.
 
 Let `k : Type u` be a field, `G` an actual group scheme over `Spec k`, and
 `ρ : G ⟶ GL_n` an actual homomorphism whose underlying scheme morphism is a

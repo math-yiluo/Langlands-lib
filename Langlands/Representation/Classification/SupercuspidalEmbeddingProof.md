@@ -1,7 +1,5 @@
 # Embedding into a product of supercuspidal representations
 
-Author: Worker 78. The accompanying transport helpers are by Worker 195.
-
 `Langlands.glSupercuspidalEmbedding` proves exactly
 `Langlands.GLSupercuspidalEmbeddingStatement.{uV,uF}` from
 [SupercuspidalSupportStatement](SupercuspidalSupportStatement.md).
@@ -22,14 +20,14 @@ topological-group structure supplied by `T`.
 
 1. Apply `Langlands.CuspidalSupport.cuspidalEmbedding.{uF,max uF uV}`
    from [CuspidalEmbeddingProof](../CuspidalSupport/CuspidalEmbeddingProof.md)
-   (Worker 156) to `π` and its irreducibility proof. This gives an ordered
+   to `π` and its irreducibility proof. This gives an ordered
    block shape `B`, an irreducible cuspidal smooth Levi representation `σ`,
    and an injective intertwiner `j` from `π` into normalized induction of
    `σ`. The source admissibility conclusion is not needed here.
 2. Apply
    `Langlands.CuspidalSupport.padicLeviCuspidalFactorization.{uF,max uF uV,uV}`
-   from [LeviTensorFactorizationProof](../CuspidalSupport/LeviTensorFactorizationProof.md)
-   (Worker 82), using `n > 0`, irreducibility and cuspidality of `σ`.
+   from [LeviTensorFactorizationProof](../CuspidalSupport/LeviTensorFactorizationProof.md),
+   using `n > 0`, irreducibility and cuspidality of `σ`.
    This supplies supercuspidal block factors `A i` in the prescribed
    universe `uV` and an actual representation equivalence `e` from `σ`
    to their external block tensor.

@@ -1,8 +1,5 @@
 # General linear groups and their basic continuous maps
 
-Author: Worker 6. This is a construction group for task
-974e7b2e-4779-4b03-a8a1-6b81962d310c, revision 2.
-
 `Langlands.GeneralLinear n R` is an abbreviation for
 `Matrix.GeneralLinearGroup (Fin n) R`, hence exactly the units of the square
 matrix ring. It has Mathlib's existing group and topology instances. The
@@ -41,7 +38,7 @@ character twists. Those original passages were read. The extension to arbitrary
 commutative rings, continuous-map packaging, and index equivalences are internal
 constructions from the pinned Mathlib interfaces.
 
-Source receipts:
+Sources:
 
 - `bernstein-zelevinsky-1977-induced-i`,
   SHA256 `8424600228ab72c5937e45edceefcae410a2a0b8f5ebf282185691542aa89092`,
@@ -58,6 +55,5 @@ Lean 4.34.0 and Mathlib commit
 `LinearAlgebra.Matrix.Reindex`, `Topology.Algebra.Group.Units`, and
 `Topology.Algebra.Group.Matrix`.
 
-The p-adic specialization is the companion `Padic.lean` module in this
-construction group. Block geometry and Weyl/inverse-transpose maps belong to
+The p-adic specialization is the companion `Padic.lean` module. Block geometry and Weyl/inverse-transpose maps belong to
 separate construction modules; they are not asserted by this file.

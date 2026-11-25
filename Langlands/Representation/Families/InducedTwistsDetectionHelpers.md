@@ -1,6 +1,6 @@
 # Auxiliary facts for the uniform induced-twist detector
 
-Author: Worker 70. Module
+Module
 `Langlands.Representation.Families.InducedTwistsDetectionHelpers`, namespace
 `Langlands.Renard.AlgebraicFamily.InducedTwistsDetection`.
 

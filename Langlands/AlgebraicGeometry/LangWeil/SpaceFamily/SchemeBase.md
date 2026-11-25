@@ -1,6 +1,6 @@
 # The uniform Lang–Weil estimate for a separated algebraic space over a scheme
 
-Author: Worker 75. A helper module of the proof of
+A helper module of the proof of
 `Langlands.AlgebraicGeometry.LangWeil.SpaceUniformLangWeilOfFamilyStatement`. Provenance:
 internal. This is the scheme-base case of the argument. The stratification follows the
 strategy recorded in the statement's Markdown: the space is stratified by schemes, the top

@@ -1,7 +1,5 @@
 # Geometric solvable radicals of parabolics from the structure theory
 
-Author: Worker 1131.
-
 This module reduces the published target
 `ParabolicGeometricSolvableRadicalExistsStatement.{u}` (module
 `Rational.ParabolicGeometricSolvableRadicalExistsStatement`) to three

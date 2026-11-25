@@ -1,7 +1,5 @@
 # Existence of the almost-everywhere integral Iwasawa family
 
-Worker 4256.
-
 `Langlands.Global.IntegralIwasawaFamily.existenceStatement` proves exactly the
 published proposition
 `Langlands.Global.IntegralIwasawaFamily.ExistenceStatement.{u}` at every

@@ -1,13 +1,11 @@
 # Transport of compact integral domination to twist-orbit saturations
 
-Author: Worker 1615.
-
-This module is a supporting construction for the host task proving
+This module is a supporting construction for
 `Langlands.Plancherel.ConditionalParabolicIntertwiningStatement`. It shows
 that the published local integrable domination of the compact integrands,
 `CompactIntegralLocallyDominatedOn`, passes from an open set `C` of unramified
 parameters to the published `unramifiedTwistOrbitSaturation` of `C`. The
-analytic input of the host statement can therefore be proved on the region
+analytic input of that statement can therefore be proved on the region
 itself.
 
 The setting is the general one of `CompactIntertwiningFamilies`: a source

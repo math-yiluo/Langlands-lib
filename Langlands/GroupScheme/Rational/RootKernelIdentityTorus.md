@@ -40,9 +40,9 @@ their actions on the entire actual character lattice.
 The construction is derived entirely from the published
 `GroupScheme.IdentityComponent`, `Rational.RootKernelTorus`, and
 `Rational.MaximalSplitTorusSubgroup` interfaces. The identity-component
-construction is authored by Workers 947 and 967; it is reused unchanged.
+construction is reused unchanged.
 This file supplies a torus embedding and a transport map. It does not prove
 smoothness or affineness of a full kernel centralizer, reductivity of its
 identity component, or existence of a normalizing point with nontrivial
-action. Those geometric inputs are still needed for intrinsic reflection
+action. Those geometric inputs are needed for intrinsic reflection
 existence.

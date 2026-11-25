@@ -1,7 +1,5 @@
 # Adelic positive-torus compatibility from supplied local Levi compacts
 
-Author: Worker 112.
-
 `Langlands.Global.AdelicSiegelFactors.AdelicPositiveTorusCompatibilityStatement`
 is a proposition-valued definition of a universal implication. Its conclusion
 is the existing `IsPositiveTorusCompatible` predicate on the actual adelic

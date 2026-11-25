@@ -51,10 +51,12 @@ constant polynomial.
 ## Provenance and scope
 
 This is internal auxiliary mathematics for the matrix-transpose conjugacy proof,
-not a quotation or proof attributed to Bernstein–Zelevinsky. Worker 308 supplied
-the coefficient-of-product construction plan and the target interface; Worker 697
-implemented this proof. The published statement and its documentation were
-formalized separately by Worker 642. The implementation uses the project's
+not a quotation or proof attributed to Bernstein–Zelevinsky. It implements the
+coefficient-of-product construction plan recorded in the Markdown of the
+statement module `Langlands.LinearAlgebra.CyclicQuotientPairingStatement`.
+The implementation uses the project's
 pinned Mathlib quotient, polynomial-remainder, linear-map and bilinear-form APIs.
 It leaves the published statement and its import closure unchanged. Finite-sum
-transport and the matrix-conjugator assembly are separate downstream work.
+transport and the matrix-conjugator assembly are done downstream, in the proof
+`Langlands.matrixTransposeConjugate` (module
+`Langlands.LinearAlgebra.MatrixTransposeConjugateProof`).

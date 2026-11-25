@@ -22,7 +22,7 @@ Choosing a basis of the finite-dimensional tangent space over a field and
 using its natural base change yields the stated coordinate-existence target.
 The Library's `Lie.FiniteDimensional` already proves finite dimension for an
 affine locally finite type group; it does not supply those natural coordinates.
-The existing dynamic smoothness and structural proof owners are retained;
+The dynamic smoothness and structural statements remain separate;
 this target assembles their consequences and adds the coordinate conclusion.
 
 The motivating local-field setting is Renard, 9 July 2026 version,

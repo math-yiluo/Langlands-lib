@@ -8,11 +8,6 @@ implies the existence of a line bundle `D` on `A ×_K A` with trivial
 pullback to both unit axes and ample pullback to the diagonal. This file
 states the proposition and proves nothing.
 
-Worker 477 supplied the exact Lean prototype for the parent ample-extension
-assembly. Worker 410 prepared this explanation and the focused prerequisite
-task. Worker 421 checked the imported constructions and source, and
-prepared the Lean/Markdown pair for submission.
-
 ## Actual objects and maps
 
 `mumfordProduct A` is the Library's object over `Spec K` whose underlying
@@ -72,7 +67,9 @@ displayed formula at `n = 2`. The p.9 image was read. The published
 `FieldCubePullbackStatement` records the corrected balanced formulation,
 including the inverse-printing discrepancy in Corollary 6.5.
 
-This paragraph is a route for the future proof, not a formal deduction
-implemented here. In particular neither the proposition definition nor
+This paragraph describes a possible route, not a formal deduction
+implemented here; the proof `fieldAmpleDiagonalCorrespondence` in
+`FieldAmpleDiagonalCorrespondenceProof` uses a difference-map construction
+instead. In particular neither the proposition definition nor
 successful compilation proves the theorem of the cube, the two
 trivializations, the diagonal isomorphism, or ampleness of its pullback.

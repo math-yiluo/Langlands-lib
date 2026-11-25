@@ -3,7 +3,7 @@
 This internal module proves that the published proposition
 `SpecialLinearTitsCocycleStatement` implies the published proposition
 `OuterTypeAUnitarySplitPresentationStatement`, in the same universe. The Tits
-cocycle proposition remains an explicit premise. This unit does not prove the
+cocycle proposition remains an explicit premise. This module does not prove the
 unconditional target.
 
 ## Discrepancy conversions

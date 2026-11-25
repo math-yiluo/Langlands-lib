@@ -98,6 +98,7 @@ member PDF SHA256
 The compact fiber and finite-coset statements here are derived topological
 results, not assertions quoted from that manuscript.
 
-This unit supplies topology for subsequent actual induced rational spectra.
+This module supplies topology for subsequent actual induced rational spectra
+(`Langlands.Geometry.Analytic.StrictTestDomain.InducedRationalCompactCharts`).
 It constructs no analytic atlas, structure sheaf, analytic morphism category,
 distinguished domain, etale or quasi-etale site, cohomology, or Harris tower.

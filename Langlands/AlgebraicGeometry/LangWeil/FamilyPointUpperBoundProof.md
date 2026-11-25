@@ -1,7 +1,5 @@
 # Proof of the uniform upper bound for point counts in families
 
-Author: Worker 90.
-
 `Langlands.AlgebraicGeometry.LangWeil.familyPointUpperBound` proves the unchanged
 published proposition
 `Langlands.AlgebraicGeometry.LangWeil.FamilyPointUpperBoundStatement`

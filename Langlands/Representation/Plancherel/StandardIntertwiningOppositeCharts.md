@@ -1,7 +1,5 @@
 # Ordered charts for an opposite source and a common-Levi middle radical
 
-Author: Worker 200.
-
 ## Source and provenance
 
 This is derived support for J.-L. Waldspurger, *La formule de Plancherel

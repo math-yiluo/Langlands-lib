@@ -190,9 +190,9 @@ the original one.
 
 ## Scope
 
-This unit constructs the equivalence of additive module categories and its
+This module constructs the equivalence of additive module categories and its
 intrinsic laws. It asserts nothing about abelianness, exactness, coproducts,
 categorical subobjects versus `NonUnitalSubmodule`, finiteness or Noetherian
 transport, canonical complex scalars on nondegenerate modules, tensor products,
-or the source's functors and adjunctions. Those are separate units of the
-parent program.
+or the source's functors and adjunctions. Those are not treated in this
+module.

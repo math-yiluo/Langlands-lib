@@ -3,7 +3,6 @@
 Module `Langlands.Representation.RankinSelberg.TwoBlockLowerFirstBlockSliceTower`.
 Statement `Langlands.RankinSelberg.TwoBlockLowerFirstBlockQuotient.FirstBlockSliceTowerStatement`,
 proved by `firstBlockSliceTower`.
-Authors: Worker 1179.
 
 This module proves the geometric measure identity behind JPSS (1983),
 Section 4.9, equation (8), printed page 418, one determinant slice at a time,

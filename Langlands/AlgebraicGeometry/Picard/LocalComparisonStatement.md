@@ -62,12 +62,12 @@ The Lean statement combines the two latter equivalences and specializes to
 schemes. It does not assert the additional finite-presentation or dual
 identification conclusions of Lemma 17.25.2.
 
-## Scope and proof workflow
+## Scope and proof route
 
-After independent acceptance and publication of this statement, publish a
-focused proof task whose target is the exact declaration above, for every
-scheme and universe. Pin environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`. Both implications remain required.
+The proof is the theorem
+`Langlands.AlgebraicGeometry.Picard.locallyFreeRankOneIffTensorInvertible`
+(module `LocalComparisonProof`), for every scheme and universe. Both
+implications are required.
 
 One possible source-guided route is the following; none of these steps is
 claimed as proved by this statement.
@@ -87,8 +87,7 @@ claimed as proved by this statement.
 3. Relate any concrete tensor and unit maps used by the proof to the actual
    monoidal structure, and assemble the full equivalence.
 
-Any substantial prerequisite needs its own precise published proposition and
-proof workflow. Reuse the tensor construction in `Modules.TensorMonoidal`, the available
+Reuse the tensor construction in `Modules.TensorMonoidal`, the available
 pullback comparisons, and the generic bridge
 `Langlands.CategoryTheory.Picard.tensorInvertibilityEquivalence` from
 `Langlands.CategoryTheory.Picard.TensorEquivalenceProof`. Full monoidal
@@ -96,5 +95,5 @@ pullback coherence and comparison with the earlier explicit unitors and swap
 are separate obligations; this statement assumes none of them.
 The existing internal Hom construction is reusable; its tensor evaluation,
 local isomorphism criterion, and any needed stalk comparison must be proved
-or located explicitly. This task does not duplicate the tensor construction,
+or located explicitly. This statement does not duplicate the tensor construction,
 the generic Picard group, or the scheme Picard specialization.

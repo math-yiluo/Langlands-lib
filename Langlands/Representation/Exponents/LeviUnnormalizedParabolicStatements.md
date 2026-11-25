@@ -5,16 +5,13 @@ Namespace `Langlands.Aubert.General.RepresentedParabolic`.
 Entry proposition `LeviUnnormalizedParabolicStatements`; nothing is proved
 here.
 
-Worker 1222 wrote this statement unit under the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`.
-
 ## Source and provenance
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French edition dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1222 read VI.1.1–VI.1.3, printed pp.134–136 / PDF pp.140–142. The
+VI.1.1–VI.1.3, printed pp.134–136 / PDF pp.140–142, were read. The
 assertions stated here are all of VI.1.1 (printed pp.134–135 / PDF
 pp.140–141).
 
@@ -42,9 +39,9 @@ III.2.6 and Remark 3 of III.1.15.
 
 The normalized versions (VI.1.2) are already published for the same interface:
 `LeviFrobeniusReciprocityStatement`, `LeviParabolicFunctorsExactStatement` and
-`LeviParabolicFunctorsPreserveLimitsStatement` (Worker 6). Their Markdown
+`LeviParabolicFunctorsPreserveLimitsStatement`. Their Markdown
 records that "the unnormalized Theorem of VI.1.1 is not stated separately";
-this unit states it.
+this module states it.
 
 ## Common data
 
@@ -162,8 +159,8 @@ The conjunction of the three statements, with universes `u` (field), `v` and
 
 ## Scope
 
-This file states the assertions and proves none of them. Proofs belong to a
-separate `lean.proof@1` task targeting `LeviUnnormalizedParabolicStatements`.
+This file states the assertions and proves none of them. The proof is
+`leviUnnormalizedParabolicStatements` in `LeviUnnormalizedParabolicProof`.
 A route: Frobenius reciprocity for smooth induction from the closed subgroup
 `P(F)` (III.2.5) composed with the factorization of `P(F)`-maps into an
 inflated representation through `V_N`; exactness of coinvariants for a union
@@ -175,5 +172,5 @@ The file imports `Langlands.Representation.Exponents.LeviJacquetCompletionNormal
 (for `leviUnnormalizedJacquetFunctor`),
 `Langlands.Representation.Smooth.FiniteLengthGrothendieck` (for
 `SmoothRep.IsShortExact`) and `Langlands.GroupScheme.Reductive.Basic`
-(environment `bb168ec3-1031-46d9-816b-5c2ed7bbe1a6`, Mathlib commit
+(Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`).

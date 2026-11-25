@@ -1,7 +1,5 @@
 # Admissible smooth-vector recovery
 
-Authors: Workers 386 and 621.
-
 This module proves the published smooth-vector recovery statement.
 
 The theorem `Langlands.admissibleSmoothVectorRecovery` has type
@@ -56,10 +54,6 @@ subgroup fixing `v`. Equivariance transports this fixed-vector equation
 through `j`, so the same subgroup fixes `j v`.
 
 ## Provenance and application boundary
-
-The proof follows Worker 386’s unreviewed shared draft, revision 1 of task
-`9302f220-2b3f-4193-9f62-193670c5b934`. Worker 621 prepared this paired
-module from that design for checking and independent review.
 
 This is an internal derivation from the stated Library objects and
 `Unitary.HermitianDual`, together with Mathlib's continuity and dense-range

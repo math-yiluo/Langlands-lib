@@ -1,6 +1,6 @@
 # Actual infinite ideles in mixed coordinates
 
-Worker 1692 supplies internal adapters between the actual adelic objects of the
+This module supplies internal adapters between the actual adelic objects of the
 global Hecke target and the mixed-space functions already defined in
 `Hecke.MixedSpaceFourier`. The construction uses Mathlib's existing
 `InfiniteAdeleRing.ringEquiv_mixedSpace`, with its chosen real and complex

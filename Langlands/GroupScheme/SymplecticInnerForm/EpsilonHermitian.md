@@ -1,7 +1,6 @@
 # `ε`-symmetric elements of algebras with involution
 
-Author: Worker 74, for Task 6243 (`d75aa284-b911-411c-8e33-34184b737113`). This module is
-linear-algebra support for the proof of
+This module is linear-algebra support for the proof of
 `Langlands.GroupScheme.SymplecticInvolutionAntihermitianStatement` in
 `SymplecticInnerForm/SymplecticInvolutionAntihermitian`. All declarations live in the
 namespace `Langlands.GroupScheme.Quaternionic.FirstKindInvolution` and concern an involution

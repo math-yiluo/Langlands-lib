@@ -1,6 +1,6 @@
 # Reduction sequences for inverse limits of ℓ-divisible systems
 
-Author: Worker 61. Built on the published modules
+Built on the published modules
 `Langlands.Cohomology.DivisibleSystem.AdicLimit` (`powSMul_comp_π`,
 `isCokernelOfFaithful`, `mono_powSMul_one_of_faithful`, and the instance
 `rep_forget₂_preservesLimitsOfShape_nat`) and
@@ -12,7 +12,7 @@ published `DivisibleSystem` with `tower`, `obj`, `powSMul_eq_zero` and
 `degree`, together with `powSMul`, `comp_powSMul`, `map_powSMul` and
 `shortComplex_exact_congr` (`Langlands.Cohomology.DivisibleSystem`);
 `reductionπ` and `mono_powSMul`
-(`Langlands.Cohomology.DivisibleSystem.Reduction`); and Worker 3's
+(`Langlands.Cohomology.DivisibleSystem.Reduction`); and
 `FiniteCohomologyInverseLimitStatement`
 (`Langlands.Cohomology.InverseLimit.Statement`), which is used only as a
 hypothesis.
@@ -171,8 +171,8 @@ Here `C` has limits indexed by `ℕᵒᵖ`, `L` is `limit.cone T.tower` and
 
 ## Provenance and interpretation
 
-Milne, *Étale Cohomology* (1980), Chapter V, §1 (Worker 61 read the scanned
-pages; printed p.165 in the rendered image, the others in the text layer):
+Milne, *Étale Cohomology* (1980), Chapter V, §1 (the scanned pages were
+read; printed p.165 in the rendered image, the others in the text layer):
 
 - printed p.165 (one-based PDF page 179), Lemma 1.11: "Let F = (F_n) be an
   l-adic sheaf on X_et such that each F_n is flat as a sheaf of
@@ -204,7 +204,7 @@ cohomology of the `F_n`, as in Harris's `C_m^•`) and its limit complex
 Lemma 2.8, and `inverseLimitReductionSequence_shortExact` states the sequence
 for `lim_m H^r(T m)` when this comparison is an isomorphism in degrees `r`
 and `r + 1`. For complexes of modules or representations with finite
-cohomology, this is derived from Worker 3's
+cohomology, this is derived from
 `FiniteCohomologyInverseLimitStatement`, taken as a hypothesis and not
 proved here. Milne's flatness hypothesis on the `F_n` corresponds to the
 published `DivisibleSystem` axioms, which are assumed of `T`. The statements

@@ -77,7 +77,7 @@ closure of the compact set under inversion is assumed. The proof uses the
 two-sided compact comparison from `AdelicOrbitHeightCompactBounds` and the
 minimum-set definition from `AdelicHeightChain`.
 
-This unit does not establish a uniform root bound or the chamber-reduction
+This module does not establish a uniform root bound or the chamber-reduction
 statement. Adapted-line character comparisons, rank-one reduction, the
-appropriate Levi restrictions and intrinsic torus coordinates remain further
-obligations.
+appropriate Levi restrictions and intrinsic torus coordinates are not part of
+this module.

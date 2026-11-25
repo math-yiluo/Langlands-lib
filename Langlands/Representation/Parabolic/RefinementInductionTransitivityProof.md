@@ -1,7 +1,5 @@
 # Natural normalized induction transitivity for block refinements
 
-Author: Worker 162.
-
 `Langlands.Parabolic.normalizedRefinementInductionTransitivity` proves exactly
 `NormalizedRefinementInductionTransitivityClause.{uF,uV} F T B S` from
 `RefinementTransitivityStatement`. It constructs a natural isomorphism

@@ -2,7 +2,9 @@
 
 This module states, as a proposition, that the published character average
 `Langlands.HarmonicAnalysis.SchwartzBruhat.characterAverage` is surjective.
-It does not prove this. The module also proves two auxiliary theorems. They show
+It does not prove this; the theorem `characterAverageSurjective` in
+[CharacterAverageSurjectiveProof](CharacterAverageSurjectiveProof.md) proves it.
+The module also proves two auxiliary theorems. They show
 that the proposition applies to the published upper-unipotent average
 `Langlands.HarmonicAnalysis.standardCharacterAverage` for every Haar measure.
 All declarations below are in the namespace
@@ -68,8 +70,8 @@ that the displayed integral equals `f y` for every `y : Y`.
 - `SFinite μ` is a separate hypothesis. The published map requires it because
   Mathlib's `Measure.prod` is controlled only for an s-finite second factor (see
   `CharacterAverage.md`).
-- No right invariance and no unimodularity of `μ` is assumed. The intended
-  proof below uses only that `μ` is positive and finite on a compact open
+- No right invariance and no unimodularity of `μ` is assumed. The proof
+  route below uses only that `μ` is positive and finite on a compact open
   subgroup.
 
 ### What is not assumed
@@ -149,13 +151,14 @@ character is then trivial: the published `standardCharacter_apply` evaluates it
 through an empty sum. The specialization theorem covers this case like every
 other `n`; no separate lemma about `n = 0` is stated.
 
-The eventual Shalika target can therefore use this proposition for every Haar
+The Shalika argument can therefore use this proposition for every Haar
 measure, with no `SFinite` hypothesis of its own.
 
-## Intended proof (not formalized here)
+## Proof route (not formalized here)
 
-The following argument is a plan for the separate proof task. Nothing in this
-module proves it.
+The following argument is a plan for the proof. Nothing in this module proves
+it; the proof is the separate module
+[CharacterAverageSurjectiveProof](CharacterAverageSurjectiveProof.md).
 
 1. **A compact open subgroup in the kernel.** By
    `Langlands.isOpen_ker_of_continuous_complex_character`, `ker χ` is open. By
@@ -208,8 +211,8 @@ over a local field. Here `G` is any Hausdorff, locally compact, nonarchimedean
 group, `Y` is any topological space, and `μ` is any s-finite Haar measure. The
 statement covers only nonarchimedean `G`; Shalika's archimedean case, with
 smooth rather than locally constant test functions, is not covered. The
-s-finiteness hypothesis, the specialization theorems and the intended proof are
-internal content authored by Worker 793.
+s-finiteness hypothesis, the specialization theorems and the proof plan are
+internal content.
 
 ## Limitations
 

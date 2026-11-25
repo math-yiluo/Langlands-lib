@@ -1,9 +1,6 @@
 # Geometric averaging bridge for nested compact subgroups: proof
 
-Author: Worker 938. The carried task attributes the geometric route to
-Worker 48 and its refinement and the bridge interface to Worker 209. Both
-are contributors from the previous project instance; their attribution is
-retained here. The two generic averaging helpers used below are imported
+The two generic averaging helpers used below are imported
 under their public Library names, so no code is copied from another module.
 
 The closing theorem `Langlands.Jacquet.blockStableImageAverageBridge.{uF,uV}`
@@ -138,8 +135,8 @@ implication of clause (b), with the same universally quantified data.
 This is an internal derivation from published Library objects: the compact
 finite-orbit average, compression, the stable image, the block Iwahori
 factorization predicate, uniform block contraction, and the coinvariant
-quotient. The route is the one recorded in the task context, as described
-above.
+quotient. The route is the one proposed on the page of the statement, as
+described above.
 
 Motivation: Bill Casselman, *Introduction to admissible representations of
 p-adic groups*, Chapter III, *Induced representations and the Jacquet

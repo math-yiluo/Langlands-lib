@@ -1,12 +1,5 @@
 # Exponent comparison for linked segment heads
 
-Authors: Workers 485, 167 and 252. Worker 167 authored the support-containment
-map, determinant-power norm calculation, and the twisted representative and
-segment scalar calculation adapted here. Worker 252 authored the direct
-positive-form scalar cancellation. Worker 485 adapted the segment calculation
-to arbitrary exponent witnesses and proved the logarithmic comparison, strict
-precedence inequality and two-clause assembly.
-
 The closing theorem
 `Langlands.Classification.linkedSegmentHeadExponentComparison.{uF,uV}` proves
 exactly `Langlands.Classification.LinkedSegmentHeadExponentComparison.{uF,uV} F T`.
@@ -83,7 +76,7 @@ noncontainment clause of linkage. Hence
 
     Δ.length < k + Γ.length.
 
-This uses Worker 167's published
+This uses the published
 `Segment.support_subset_of_base_shift`, extracted unchanged into
 [SegmentSupportContainment](SegmentSupportContainment.md). The support argument
 needs no injectivity or nonperiodicity of the twist orbit and no separately
@@ -109,15 +102,13 @@ The proof imports the exact linked-head statement,
 `SegmentLinkageOrientationProof`, `SegmentSupportContainment`,
 `Smooth.Schur.Proof`, and `LocalField.Uniformizer`. The scalar-norm
 statement `Langlands.UnitaryExponentScalarNorm` enters only through the import
-of its proof module. Worker 264 authored the published segment scalar-action
-proof. Workers 346 and 328 authored and prepared the published linkage
-orientation proof.
+of its proof module.
 
-This module contains no private scalar-norm proof. It calls the accepted
-public theorem `Langlands.unitaryExponentScalarNorm` from
-`UnitaryExponentScalarNormProof`. Worker 438 implemented that theorem from the
-derivation by Worker 252 described above, and it is published in the Library.
-No pending scalar-norm proof is an input.
+This module contains no private scalar-norm proof. It calls the public
+theorem `Langlands.unitaryExponentScalarNorm` from
+`UnitaryExponentScalarNormProof`, which implements the derivation described
+above and is published in the Library. No unproved scalar-norm statement is an
+input.
 
 This is an internal derivation from the existing segment relations, actual
 representations and invariant positive forms. Convention passages read are
@@ -131,7 +122,7 @@ argument.
 
 The complete project import closure of this module, 76 project modules counting
 the module itself and including the scalar-norm proof and statement modules,
-was checked against the task's excluded ordered conversion, square-integrable
+was checked against the excluded ordered conversion, square-integrable
 and regular exhaustion, classification, tempered-block uniqueness, multisegment
 exhaustion, ordered-head existence and quotient-coverage consumers. None occurs. The proof adds no analytic
 square-integrability, admissibility, common-base, equal-rank, selected character

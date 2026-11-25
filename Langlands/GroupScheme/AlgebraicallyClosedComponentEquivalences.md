@@ -1,7 +1,5 @@
 # Actual component equivalences and field-tower compatibility
 
-Author: Worker 1107.
-
 This is an internal derived construction from the published
 `AlgebraicallyClosedComponentBaseChangeProof`,
 `AlgebraicallyClosedComponents`, and `GaloisPointTowerBaseChange` interfaces.

@@ -4,7 +4,7 @@
 root-preserving affine automorphism is a simple affine root of `C` or
 its negative. This predicate is defined for any set `C` of affine points.
 
-This internal supporting unit refines the existing Library gallery proof:
+This module refines the existing Library gallery proof:
 a coroot reflection is conjugate, by chamber wall reflections, to a wall
 reflection of any prescribed regular chamber. The proof follows the generic
 hyperplane point, nearby regular point and gallery construction already

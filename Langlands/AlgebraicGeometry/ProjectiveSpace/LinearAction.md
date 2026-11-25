@@ -69,7 +69,7 @@ the source and target prime, and the homogeneous-localization calculation
 makes the induced local map the identity. Thus the corresponding sections
 are equal on every open subset.
 
-This unit has internal provenance. It combines the existing graded
+This module has internal provenance. It combines the existing graded
 substitution and irrelevant-ideal proof with Mathlib's projective-spectrum
 functor, its affine chart formulas, its coefficient structure morphism,
 weighted-homogeneous polynomial induction and homogeneous local fractions.

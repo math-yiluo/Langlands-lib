@@ -1,7 +1,7 @@
 # Transport of ordinary polarized full-level data along isomorphisms
 
 This module moves a whole datum `Datum P S g d n` along an isomorphism of abelian
-schemes. It uses Worker 5600's `DualWitness.isPolarization_iso_transport` (module
+schemes. It uses `DualWitness.isPolarization_iso_transport` (module
 `PolarizationIsoTransport`) for the polarization.
 
 ## Declarations

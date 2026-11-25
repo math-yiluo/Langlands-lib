@@ -50,7 +50,7 @@ of object properties.
 These are internal consequences of the Library's actual stalk and pullback
 constructions and Mathlib's tensor, faithfully flat, and scheme-morphism
 results. The imported `FaithfullyFlatPullbackDescent` supplies the faithful
-flatness lemma for actual scheme stalk maps. This unit proves relative-flatness
+flatness lemma for actual scheme stalk maps. This module proves relative-flatness
 detection only. It does not establish descent of finite presentation,
 identify geometric cocycles with module coalgebras, or construct a scheme atlas
 for the coherent-family stack.

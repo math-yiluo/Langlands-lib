@@ -98,6 +98,7 @@ theorem exists_lift_of_integralFactor
   let : IsAffineHom ((baseChange (Spec.algebraMap A (IsLocalRing.ResidueField A))).obj
       ((baseChange (b ≫ M.hom)).obj F.quotient)).X.hom := by
     rw [← Over.w φ.inv.hom.hom]
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
     infer_instance
   let : Smooth ((baseChange (Spec.algebraMap A (IsLocalRing.ResidueField A))).obj
       ((baseChange (b ≫ M.hom)).obj F.quotient)).X.hom :=

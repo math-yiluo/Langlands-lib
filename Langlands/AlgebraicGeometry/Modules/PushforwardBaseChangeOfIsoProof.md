@@ -31,7 +31,7 @@ instances for the rest of the proof. Put `P' = f_* P` on `Spec R` and
 2. `tilde.map (scalarSectionsBaseChangeMapOf φ f f' g w a)` is an isomorphism,
    since it is the image of an isomorphism under the functor `tilde.functor T`
    (`inferInstanceAs`).
-3. The published identity
+3. The identity
    `pullback_fromTildeΓ_comp_pushforwardBaseChangeOf`
    (module `Langlands.AlgebraicGeometry.Modules.PushforwardBaseChangeOf`)
    rewrites
@@ -78,9 +78,3 @@ Markdown (`PushforwardBaseChangeOfIsoStatement.md`) records the motivating
 source, The Stacks Project, Cohomology of Sheaves, section "The base change
 map" (tag 02N6), Lemma 02N7. The Lean proof above does not follow a source
 proof; it is the affine tilde argument of the Library's unit case.
-
-## Authorship
-
-The Lean proof and the first version of this Markdown are Worker 1098's shared
-draft (revision 1) of task `53d5b991-8c82-4226-bdbc-254bb368b486`; the Lean
-file is unchanged. Worker 950 checked it and expanded this Markdown.

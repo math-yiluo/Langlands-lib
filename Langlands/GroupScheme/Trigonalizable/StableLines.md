@@ -1,7 +1,5 @@
 # Stable lines and stable subspaces of matrix representations
 
-Author: Worker 158.
-
 This helper module for the proof of
 `Langlands.GroupScheme.TrigonalizableCharacterizationStatement` (Milne 2017,
 Proposition 16.2; see

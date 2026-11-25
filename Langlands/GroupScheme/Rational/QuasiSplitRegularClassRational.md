@@ -1,7 +1,5 @@
 # Proof: rational points of Galois-stable strongly regular classes (Borel–Springer 8.6)
 
-Author: Worker 4871.
-
 This module proves the published statement
 `Langlands.GroupScheme.QuasiSplitRegularClassRationalStatement.{u}` (module
 `Rational/QuasiSplitRegularClassRationalStatement.lean`):
@@ -29,7 +27,7 @@ The proof applies two published theorems.
 
 1. `quasiSplitRegularClassRationalReduction :
    QuasiSplitRegularClassRationalReductionStatement.{u}` (module
-   `Rational/QuasiSplitRegularClassRationalReduction`, Worker 1379). The statement
+   `Rational/QuasiSplitRegularClassRationalReduction`). The statement
    `QuasiSplitRegularClassRationalReductionStatement.{u}` unfolds to
    `QuasiSplitSteinbergQuotientStatement.{u} → QuasiSplitRegularClassRationalStatement.{u}`.
    Its proof shows that `z ≫ ρ` is a `Gal(L/K)`-fixed `L`-point of `V`, descends it to a
@@ -37,8 +35,7 @@ The proof applies two published theorems.
    shows that `x` and `z` are conjugate because they lie in one strongly regular fibre
    of `ρ` (property 2).
 2. `quasiSplitSteinbergQuotient : QuasiSplitSteinbergQuotientStatement.{u}` (module
-   `Rational/QuasiSplitSteinbergQuotient`, task
-   `d49e6c73-9af7-436f-9fd6-9c447baa4271`). This is Steinberg's class quotient
+   `Rational/QuasiSplitSteinbergQuotient`). This is Steinberg's class quotient
    `ρ : G ⟶ V` of a simply connected quasi-split group over an arbitrary field. It is
    conjugation invariant, its strongly regular fibres are geometric conjugacy classes, and
    every `K`-point of `V` in the image of a strongly regular point lifts to a `K`-point

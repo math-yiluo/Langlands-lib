@@ -1,18 +1,18 @@
 # `Langlands.AnthropicFLT.P2M.Sol.S_GoodReductionJacobian_RelativeGroupLaw_exists_opens_diagonal_difference_extension_of_forall_ringKrullDim_le_one`
 
-Ported for task `6d6cc279-3071-445f-adba-589e54d9816b` (projective representability of the relative endomorphism functor of a projective abelian scheme). Proof module (FLT `P2M/Sol/`).
+Ported for the proof of projective representability of the relative endomorphism functor of a projective abelian scheme, `Langlands.AbelianScheme.relativeEndomorphismRepresentability`, which depends on this module through its imports. Proof module (FLT `P2M/Sol/`).
 
 ## Source and licence
 
 Port of `P2M/Sol/S_GoodReductionJacobian_RelativeGroupLaw_exists_opens_diagonal_difference_extension_of_forall_ringKrullDim_le_one.lean` from the Anthropic Lean formalisation of Fermat's Last Theorem (commit `6e837e75355538c7f80bab5b956861e86c4eacc2`; project literature folder "Anthropic - Fermat's Last Theorem - complete Lean source at 6e837e75355538c7f80bab5b956861e86c4eacc2", literature id `anthropic-flt-complete-lean-source-6e837e75`). The text is the FLT text except for the changes listed below.
 
-Licence: Apache License, Version 2.0; Copyright 2026 Anthropic, PBC. Copies of the FLT `LICENSE`, `NOTICE` and `ATTRIBUTION.md` are in `licenses/Anthropic-FLT/` (added by statement artifact `a25bcdd5-03da-45b4-a0d3-100bb603e7c5`).
+Licence: Apache License, Version 2.0; Copyright 2026 Anthropic, PBC. Copies of the FLT `LICENSE`, `NOTICE` and `ATTRIBUTION.md` are in `licenses/Anthropic-FLT/`.
 
 FLT `ATTRIBUTION.md` does not list this file as containing third-party material.
 
 ## Changes against the FLT file
 
-- Imports of FLT modules (`Definitions.*`, `Theorems.*`, `P2M.*`) are renamed to `Langlands.AnthropicFLT.*`; Mathlib imports are unchanged.
+- Imports of FLT modules (`Definitions.*`, `Theorems.*`, `P2M.*`) are renamed to `Langlands.AnthropicFLT.*`; `import Mathlib` is now `import Langlands.MathlibBase` (all of Mathlib except the three modules that clash with weil-conjectures, see `Langlands/MathlibBase.md`).
 - The FLT lakefile options are inserted after the imports: `maxHeartbeats 4000000`, `synthInstance.maxHeartbeats 400000`, `backward.isDefEq.respectTransparency.types false`.
 - An attribution header comment is added at the top of the file.
 - The import of the FLT utility module `P2M.Util` (custom tactics and commands) is dropped.
@@ -21,7 +21,7 @@ FLT `ATTRIBUTION.md` does not list this file as containing third-party material.
   - `open _root_.CategoryTheory _root_.CategoryTheory.Limits _root_.AlgebraicGeometry _root_.NeronModelInfra _root_.GoodReductionJacobian _root_.P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_opens_diagonal_difference_extension_of_forall_ringKrullDim_le_one.GoodReductionJacobian`: namespace `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_opens_diagonal_difference_extension_of_forall_ringKrullDim_le_one.GoodReductionJacobian` dropped.
 - 16 `p2m_export "N" "a b …"` command(s) (an FLT command from `P2M.Util` that adds aliases `a`, `b`, … in the current namespace for `N.a`, `N.b`, …) are replaced by `export _root_.N (a b …)` with the same names.
 - Manual edit for Mathlib drift (FLT line 141, line 152 here): `(IsLocalRing.local_hom_TFAE φ).out 0 3` is replaced by `(IsLocalRing.local_hom_TFAE φ).out 1 4`. In the project's Mathlib, `List.TFAE.out` takes 1-indexed positions (FLT's Mathlib used 0-indexed ones); the list of `IsLocalRing.local_hom_TFAE` is unchanged, so both indices are increased by one and the proved implication is the same.
-- No other change: apart from the edits listed above, the declarations, statements and proofs are the FLT text.
+- No other change: apart from the edits listed above and the renames described under “Names changed by the Library” below, the declarations, statements and proofs are the FLT text.
 
 ## Content
 
@@ -37,7 +37,7 @@ the unit on the diagonal of `V` (`diagonal_restrict_comp_eq_unit`, `eq_one_of_mu
 (applied on an affine integral normal component, `exists_rationalMap_component_affine`; stalks of smooth schemes
 are normal domains, ported `Smooth.isDomain_and_isIntegrallyClosed_stalk`, `isOpen_irreducibleComponent_of_isDomain_stalk`)
 gives a point of `T ×_k T` of codimension `≤ 1` outside `W` specializing to it. Dimension theory of the regular
-local rings of `T ×_k T` (ported `Smooth.isRegularLocalRing_stalk`, `IsRegularLocalRing.spanFinrank_ker_add_ringKrullDim_eq`,
+local rings of `T ×_k T` (ported `Smooth.isRegularLocalRing_stalkFLT`, `IsRegularLocalRing.spanFinrank_ker_add_ringKrullDim_eq`,
 `IsLocalRing.IsCohenMacaulayOfDim.ringKrullDim_quotient_add_height`, `IsRegularLocalRing.depth_self_eq_ringKrullDim`;
 local `exists_specializes_diagonal_of_ringKrullDim_le_one_of_quotient_add_height`, `krull_transfer_inputs`,
 `diag_assembly`) shows that such a point near the diagonal projects to points of codimension `≤ 1` of `T`, hence lies
@@ -45,7 +45,7 @@ over `V × V ⊆ W`, a contradiction.
 
 ## Declarations
 
-Names, namespaces and statements are the FLT ones. Solution modules put their auxiliary declarations in the FLT namespace `P2MW.<module name>`.
+Names, namespaces and statements are the FLT ones, apart from the renames described under “Names changed by the Library” below. Solution modules put their auxiliary declarations in the FLT namespace `P2MW.<module name>`.
 
 - theorem `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_opens_diagonal_difference_extension_of_forall_ringKrullDim_le_one.GoodReductionJacobian.RelativeGroupLaw.WeilExtField.DIAG.exists_nat_of_add_natCast_eq`
 - theorem `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_opens_diagonal_difference_extension_of_forall_ringKrullDim_le_one.GoodReductionJacobian.RelativeGroupLaw.WeilExtField.DIAG.exists_nat_ringKrullDim_of_le`
@@ -80,5 +80,13 @@ Names, namespaces and statements are the FLT ones. Solution modules put their au
 
 ## Dependencies
 
-Ported FLT modules imported: `Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_NeronModelPropertyBundleCarrier` (Library), `Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_RelativeGroupLaw` (Library), `Langlands.AnthropicFLT.Definitions.Def_Patching_CohenMacaulayOfDim` (same contribution), `Langlands.AnthropicFLT.Theorems.Thm_GoodReductionJacobian_RelativeGroupLaw_exists_isGreatest_opens_difference_extension_of_dense` (same contribution), `Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_isOpen_irreducibleComponent_of_isDomain_stalk` (same contribution), `Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_Smooth_isDomain_and_isIntegrallyClosed_stalk` (same contribution), `Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_Smooth_isRegularLocalRing_stalk` (same contribution), `Langlands.AnthropicFLT.Theorems.Thm_IsRegularLocalRing_spanFinrank_ker_add_ringKrullDim_eq` (same contribution), `Langlands.AnthropicFLT.Theorems.Thm_IsLocalRing_IsCohenMacaulayOfDim_ringKrullDim_quotient_add_height` (same contribution), `Langlands.AnthropicFLT.Theorems.Thm_IsRegularLocalRing_depth_self_eq_ringKrullDim` (same contribution), `Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_Scheme_RationalMap_exists_specializes_ringKrullDim_le_one_of_not_mem_domain` (same contribution).
-Other imports: `Mathlib`.
+Ported FLT modules imported: `Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_NeronModelPropertyBundleCarrier` (Library), `Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_RelativeGroupLaw` (Library), `Langlands.AnthropicFLT.Definitions.Def_Patching_CohenMacaulayOfDim` (ported together with this module), `Langlands.AnthropicFLT.Theorems.Thm_GoodReductionJacobian_RelativeGroupLaw_exists_isGreatest_opens_difference_extension_of_dense` (ported together with this module), `Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_isOpen_irreducibleComponent_of_isDomain_stalk` (ported together with this module), `Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_Smooth_isDomain_and_isIntegrallyClosed_stalk` (ported together with this module), `Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_Smooth_isRegularLocalRing_stalk` (ported together with this module), `Langlands.AnthropicFLT.Theorems.Thm_IsRegularLocalRing_spanFinrank_ker_add_ringKrullDim_eq` (ported together with this module), `Langlands.AnthropicFLT.Theorems.Thm_IsLocalRing_IsCohenMacaulayOfDim_ringKrullDim_quotient_add_height` (ported together with this module), `Langlands.AnthropicFLT.Theorems.Thm_IsRegularLocalRing_depth_self_eq_ringKrullDim` (ported together with this module), `Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_Scheme_RationalMap_exists_specializes_ringKrullDim_le_one_of_not_mem_domain` (ported together with this module).
+Other imports: `Langlands.MathlibBase`.
+
+## Names changed by the Library (22 November 2026)
+
+weil-conjectures, on which the Library depends, declares 21 of the names of this extract itself, so that no module could import both. The Library renamed these 21 declarations: each keeps its name space and the last component of its name gets the marker `FLT` (`tensorPow` becomes `tensorPowFLT`, `tensorPow_zero` becomes `tensorPowFLT_zero`). In this file:
+
+- its uses of `AlgebraicGeometry.Smooth.isRegularLocalRing_stalk` are uses of `isRegularLocalRing_stalkFLT` now.
+
+Statements and proofs are otherwise unchanged. Elsewhere on this page the names are given as they now are.

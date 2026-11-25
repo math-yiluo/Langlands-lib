@@ -1,7 +1,5 @@
 # Determinant multiplication and actual cuspidal functions
 
-Author: Worker 2.
-
 This internal construction reuses `Langlands.Automorphic.DeterminantMultiplier`,
 the actual standard block-unipotent matrices from `Langlands.Group.GL.BlockUnipotent`
 and the maximal-block constant terms and cuspidal subrepresentation from

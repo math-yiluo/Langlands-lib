@@ -2,7 +2,7 @@
 
 Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalOrbitCentralProjection`,
 namespace `Langlands.HarishChandraSchwartz`. It imports
-`Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalOrbitWavePacketPairing` (Worker 249):
+`Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalOrbitWavePacketPairing`:
 the wave packet `rationalOrbitWavePacket` with `rationalOrbitWavePacket_apply`,
 `coefficientTensorMap_out_mul`, `finite_setOf_rationalOrbitCentralCharacter_eq` and
 `integral_rationalOrbitCentralInversion_eq_finsum`; through it `rationalOrbitCentralCharacter`,

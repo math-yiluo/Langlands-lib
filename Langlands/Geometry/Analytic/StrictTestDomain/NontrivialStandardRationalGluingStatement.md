@@ -1,10 +1,7 @@
 # Scalar descent on standard rational covers over nontrivially valued fields
 
-Author: Worker 744. The target shape was fixed by task
-`7d2dd83f-c475-4220-813e-717a542c9f81`. It matches the standard-cover premise
-of Worker 146's unreviewed refinement-adapter draft for whole-spectrum task
-`04cd68d2-2e04-44e7-a757-bc6ed7ab2150`.
-Documentation correction (P3-064): Worker 1057.
+This statement is the standard-cover premise of the whole-spectrum assembly in
+`StrictTestDomain/WholeSpectrumConditionalAssembly`.
 
 ## The proposition
 
@@ -105,7 +102,8 @@ The edge cases stay inside the statement:
   `f = Fin.elim0`.
 - **Zero base.** If `P` is zero, then every actual quotient is zero as well.
 
-Both cases are proof obligations for the successor proof. Neither is excluded
+Both cases are proof obligations for the proof
+(`nontrivialStandardRationalGluing`). Neither is excluded
 by an added premise.
 
 The statement quantifies over every presented strict affinoid algebra `P`.
@@ -171,10 +169,11 @@ SHA256
 When checked on 2026-10-27, the project and Library notes contained no errata
 note for either source. These citations do not constitute a formal proof.
 
-## Intended proof route (future obligations only)
+## Intended proof route
 
-The successor proof is meant to follow the proof of Achinger's Theorem 7.0.1
-on pp.66–67, restricted to degree zero. Nothing below is established by this
+The proof `nontrivialStandardRationalGluing` in
+`StrictTestDomain/NontrivialStandardRationalGluingProof` follows the proof of
+Achinger's Theorem 7.0.1 on pp.66–67, restricted to degree zero. Nothing below is established by this
 module or by the existing rational maps.
 
 1. **Binary Laurent descent under base change.** The basic input is the
@@ -182,8 +181,8 @@ module or by the existing rational maps.
    p.65.
    It is needed for the actual quotients of the published
    `RationalData.laurentUpper` and `RationalData.laurentLower` inputs, over
-   arbitrary presented bases. This descent is the subject of the separate
-   statement task `e11bd243-a4fd-4de7-b898-baa097c6eb63`.
+   arbitrary presented bases. This descent is stated separately as
+   `BinaryLaurentGluingStatement` and proved by `binaryLaurentGluing`.
 2. **Induction.** The argument inducts on `n`, and for fixed `n` on the
    number of nonunit entries. It uses the degree-zero part of the diagram
    chase in Lemma 7.3.3, pp.66–67. That chase needs binary descent for the
@@ -196,14 +195,14 @@ module or by the existing rational maps.
 4. **Some entry not a unit.** The hypothesis `∃ c : K, 1 < ‖c‖` should
    supply a nonzero scalar whose norm is below the threshold
    `inf_x max_i x (f i)`. Proving that this threshold is positive is also
-   part of the future work. Achinger uses `tᴺ` with `|tᴺ| < c` here. Split by
+   part of the proof. Achinger uses `tᴺ` with `|tᴺ| < c` here. Split by
    `f_last` divided by that scalar:
    - on the upper piece, the last standard locus is empty, and the last entry
      is removed;
    - on the lower piece and the overlap, the last entry becomes a unit.
 
    Comparing these pulled-back covers with standard covers of shorter or
-   unit-richer tuples is part of the future proof.
+   unit-richer tuples is part of the proof.
 
 ## Scope
 
@@ -218,8 +217,8 @@ any analytic descent. In particular it does not claim:
 - a result relative to an arbitrary target rational datum;
 - a sheaf theorem.
 
-The proposition covers only nontrivially valued scalars. The parent target
-`WholeSpectrumRationalGluingStatement` stays unconditional and unchanged.
+The proposition covers only nontrivially valued scalars. The whole-spectrum
+target `WholeSpectrumRationalGluingStatement` stays unconditional and unchanged.
 Trivially valued scalars belong to a separate branch through the published
 `TrivialScalarRationalLocalizationStatement`. That statement is proved by
 `Langlands.Analytic.StrictTestDomain.trivialScalarRationalLocalization` in
@@ -228,6 +227,7 @@ for trivially normed `K`, each actual rational quotient is a localization away
 from its denominator along its structural map. This localization theorem is a
 prerequisite of the trivially valued branch only, and it does not prove
 whole-spectrum gluing for trivially valued scalars. This statement and the
-parent target have no published proof. This statement does
-not complete the parent target, and the parent is not weakened. All imported
+whole-spectrum target are proved by `nontrivialStandardRationalGluing` and
+`wholeSpectrumRationalGluing`. This statement does
+not complete the whole-spectrum target, and that target is not weakened. All imported
 Library pairs are unchanged.

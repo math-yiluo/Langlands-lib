@@ -1,6 +1,6 @@
 # Orthonormal square sums of genuine derivatives
 
-Worker 1028, Task 7767. This internal development proves that a sum of squared genuine derivatives over an orthonormal basis is basis independent. It also proves that the sum commutes with the actual action of every unit whose inverse conjugation preserves the form. The operators are those of [SmoothUnitAction](SmoothUnitAction.md). The intended use is the transported Cartan square sum and the orthogonal group.
+This internal development proves that a sum of squared genuine derivatives over an orthonormal basis is basis independent. It also proves that the sum commutes with the actual action of every unit whose inverse conjugation preserves the form. The operators are those of [SmoothUnitAction](SmoothUnitAction.md). The intended use is the transported Cartan square sum and the orthogonal group.
 
 ## Linear algebra
 

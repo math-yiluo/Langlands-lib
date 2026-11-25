@@ -1,7 +1,5 @@
 # Statement: reflection of the central-cover universal property from a tensor decomposition
 
-Authors: Worker 928.
-
 `Langlands.GroupScheme.CentralCoverUniversalPropertyTensorReflectionStatement.{u}`
 is a proposition definition, not a theorem. It states the reflection; it
 neither proves it nor constructs a tensor equivalence, a covering group or a
@@ -127,14 +125,12 @@ property over `k` is taken as extra data. Those are proof obligations.
 
 ## Why the implication holds (derived content)
 
-This explains the intended proof route. It is not a Lean proof, and no
-proof is supplied with this statement. The route follows Worker 1347's
-compiled, unreviewed prototype
-`Langlands.GroupScheme.HasCentralCoverUniversalProperty.of_tensorDecomposition`.
-A development check (`lean_check` diagnostic
-`c0829d06-df2b-451a-8a55-d393f6d8c967`) closes this exact proposition with
-that theorem, using only `propext`, `Classical.choice` and `Quot.sound`. This
-is evidence of feasibility, not proof acceptance.
+This explains the proof route. It is not a Lean proof, and no
+proof is supplied with this statement. The route follows
+`Langlands.GroupScheme.HasCentralCoverUniversalProperty.of_tensorDecomposition`
+in [`FieldComponentUniversalReflection`](FieldComponentUniversalReflection.md).
+That module closes this exact proposition with that theorem, as
+`centralCoverUniversalPropertyTensorReflection`.
 
 1. *Finiteness.* `e` makes `K ⊗[k] K` finite as a `K`-module. Since `K` is
    faithfully flat over `k`, `K` is finite over `k`
@@ -168,13 +164,12 @@ group, the `σ`-twist of `a_K` is again a factorization of `π_K` through
 ## Provenance
 
 This is an internal, derived statement; no original-source tuple is cited.
-Worker 1347's task `e53cfe57-9d09-4417-846a-b6d415597a95` specifies the
-exact formulation: the supplied finite tensor decomposition with
+Its formulation uses the supplied finite tensor decomposition with
 automorphism coordinates, the actual base-change functor, and the existing
-universal-property predicate. It is requested as a prerequisite of
-arbitrary-field simply connected cover existence
-(task `a41119fb-a633-4b81-a979-4b08e9ddbb15`) and of Worker 416's covering
-datum assembly (task `b962f329-c6a7-4ca2-b95b-3aadf1f90690`). The underlying
+universal-property predicate. It is a prerequisite of arbitrary-field simply
+connected cover existence: its proof is used in
+`simplyConnectedCoverTensorDescent` (module `Descent/TensorFullCoverProof`),
+which `SimplyConnected/CoverExistenceProof` imports. The underlying
 principle, Galois descent of morphisms combined with uniqueness of the
 factorization, is classical. This Markdown does not claim that any source
 states this exact formulation.
@@ -190,8 +185,9 @@ states this exact formulation.
 - The statement does not prove simple-connectedness reflection, existence of
   a tensor decomposition, or existence of simply connected covers. The
   published `Langlands.GroupScheme.SimplyConnectedCoverExistenceStatement`
-  pair is neither imported nor changed.
-- The proof is a separate exact-target obligation.
+  is not imported.
+- The proof is `centralCoverUniversalPropertyTensorReflection` in
+  `SimplyConnected/FieldComponentUniversalReflection`.
 
 ## Imports
 
@@ -202,5 +198,5 @@ states this exact formulation.
 - `Mathlib.RingTheory.TensorProduct.Basic`: the algebra tensor product and
   its left algebra structure.
 
-The environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, which pins Lean
-4.34.0 and Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.
+The module was written against Lean 4.34.0 and Mathlib
+`5ed2965256430c3649e86755f9576b54eca72435`.

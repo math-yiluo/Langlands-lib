@@ -1,6 +1,6 @@
 # Actual affine-line maps in polynomial kernels
 
-Worker 864. Internal adapter for the central additive-subgroup criterion, derived
+Internal adapter for the central additive-subgroup criterion, derived
 from the polynomial curve and actual geometry constructions associated with CGP,
 *Pseudo-reductive groups*, second edition, Lemmas B.1.7–B.1.9, printed pp.563–565
 (one-based PDF pp.589–591).

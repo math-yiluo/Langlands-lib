@@ -1,7 +1,5 @@
 # Proof: the Haar modulus of a refined product-Levi radical
 
-Author: Worker 799.
-
 This module proves the published proposition
 `Langlands.Geometric.PadicRefinedUnipotentHaarModulus.{uF}` of
 `Representation/Geometric/RefinedUnipotentHaarStatement`. The closing theorem is

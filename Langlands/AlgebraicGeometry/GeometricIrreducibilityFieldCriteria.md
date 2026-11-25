@@ -1,6 +1,6 @@
 # Field criteria for geometric irreducibility
 
-This internal unit supplies geometric irreducibility comparisons for actual
+This module supplies geometric irreducibility comparisons for actual
 schemes in arbitrary common universe `u`. It is derived from the published
 algebraically closed field theorem and Mathlib's pullback, radicial morphism,
 integral morphism and purely inseparable extension APIs. It imposes no finite

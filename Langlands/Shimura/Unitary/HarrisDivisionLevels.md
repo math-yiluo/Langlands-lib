@@ -1,7 +1,5 @@
 # Harris's level `K(N)_p` at a split prime
 
-Author: Worker 19.
-
 This module assembles Harris's `p`-adic level
 
 `K(N)_p = C_v^{N,0} × ∏_{j>1} C^(j) × ℤ_pˣ`

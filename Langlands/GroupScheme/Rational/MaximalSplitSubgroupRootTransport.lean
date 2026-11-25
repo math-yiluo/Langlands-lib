@@ -115,8 +115,9 @@ theorem mem_closure_of_baseChange_mem_cone (hT : IsSplitTorus S.toGrp)
   have : c' = c := (hT.characterLattice_baseChange_bijective bc S).injective hcc'
   exact this ▸ hc'
 
-/-- **(A3b)** Transport of the root data of Worker 163's generated-subgroup argument from `k`
-to `K`. For a split torus `S` over `k`, a negation-stable set `R` of characters, a subset
+/-- **(A3b)** Transport of the root data of the generated-subgroup argument of
+`MaximalSplitGeneratedReductive` from `k` to `K`. For a split torus `S` over `k`, a
+negation-stable set `R` of characters, a subset
 `R' ⊆ R`, a finite set `D`, a generic cocharacter `lam` and cocharacters `ν d` with the listed
 properties, the base-changed data `aK`, `νK`, `lamK` and
 `ΦK = nonmultipliableBaseChange K R = ψ '' {c ∈ R | 2 • c ∉ R}` (with

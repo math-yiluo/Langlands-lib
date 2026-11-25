@@ -1,6 +1,6 @@
 # Canonical p-adic gamma construction
 
-Worker 31. This module assembles the published equal- and unequal-rank gamma
+This module assembles the published equal- and unequal-rank gamma
 constructors, specializes them to the canonical realization of a p-adic field,
 and returns an actual rational-function unit with the existing universal gamma
 relation. The final constructor covers either order of two positive ranks,

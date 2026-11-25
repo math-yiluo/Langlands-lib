@@ -1,6 +1,6 @@
 # Henniart's route with the conductor theorem only for supercuspidal p-adic representations
 
-Author: Worker 0 (Task 0, the coordinator of the Henniart route). This module, in
+This module, in
 namespace `Langlands.Henniart.Extension`, defines one proposition,
 `SupercuspidalCorrespondenceHenniartSupercuspidalConductorStatement`, with universe
 parameters `uK uW uV`. It proves nothing. It imports
@@ -46,7 +46,9 @@ p-adic fields. The Markdown file of
 two results of JPSS 1983 (*Rankin-Selberg Convolutions*, Amer. J. Math. 105 (1983),
 367-464, literature ID `jpss-1983-rankin-selberg`), Theorem (2.7)(ii) (printed
 pages 390-391) and §(8.1), Proposition (i) (printed page 443), on which the planned
-proof of that hypothesis rests. The Library statements document the sources of the
+proof of that hypothesis rested. The hypothesis is proved as
+`supercuspidalPadicConductorExponent` (module
+`Langlands.Representation.Conductor.SupercuspidalPadicConductorExponentProof`). The Library statements document the sources of the
 target and of hypotheses 1 and 2. The route as a whole follows Henniart 2000.
 
 ## Why the weaker hypothesis suffices
@@ -77,17 +79,18 @@ representation of `GL_(k+1)(K.Carrier)` for a p-adic field `K` with its canonica
 structures, and `A.property.2` is its supercuspidality. Hypothesis 3 covers exactly
 this case.
 
-A private check by the author (Lean service diagnostic `be50c246`, not part of the
-Library) proves that hypothesis 3 supplies the conclusion of
+A Lean check outside the Library showed that hypothesis 3 supplies the conclusion of
 `genericConductor_isNewvectorConductor_of_conductorExponentStatement` for a
-supercuspidal `π`, with the instances of `GenericEpsilonConductor`. It also proves
+supercuspidal `π`, with the instances of `GenericEpsilonConductor`. It also showed
 that `ConductorExponentStatement` implies hypothesis 3.
 
-## Planned proof
+## Plan of the proof
 
-A separate `lean.proof@1` task is planned for this statement. The intended proof
-copies the chain listed above, with hypothesis 3 in place of
-`ConductorExponentStatement`:
+The statement is proved as
+`Henniart.Extension.supercuspidalCorrespondenceHenniartSupercuspidalConductor` (module
+`HenniartSupercuspidalConductorReductionProof`, whose Markdown describes the proof as
+carried out). The plan for that proof copies the chain listed above, with hypothesis 3
+in place of `ConductorExponentStatement`:
 
 1. a supercuspidal version of
    `genericConductor_isNewvectorConductor_of_conductorExponentStatement`, which adds
@@ -99,14 +102,9 @@ copies the chain listed above, with hypothesis 3 in place of
 3. the six-, rank-one-, five- and three-input reductions with hypothesis 3, which
    supply the other hypotheses from the same published proofs as before.
 
-The proof task must still check this plan in Lean. It must not change the published
-modules.
-
 ## Provenance
 
 The statement is derived. It is the published
 `SupercuspidalCorrespondenceHenniartThreeInputsStatement` (Henniart 2000's route as
 formalized in the Library) with its third hypothesis restricted to the only case
-that the route uses. It introduces no new mathematics. On 15 November 2026 the
-user approved this variant (Option A) for publication under Task 0. Hypotheses 1
-and 2 have the TaskHub proof tasks 5583 and 5584.
+that the route uses. It introduces no new mathematics.

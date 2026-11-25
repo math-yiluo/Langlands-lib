@@ -4,7 +4,7 @@ The theorem `Langlands.Analytic.SaturatedAtlasPresentation.compactPullbackAction
 in `Langlands.Geometry.Analytic.CompactPullbackContinuityOfSmall` proves
 `CompactPullbackActionContinuitySmallStatement` from
 `Langlands.Geometry.Analytic.CompactPullbackActionContinuitySmall`. This is the
-assembly of the internal chart argument developed for Task 7765.
+assembly of the internal chart argument.
 
 ## Statement proved
 

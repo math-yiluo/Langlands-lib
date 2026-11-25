@@ -15,7 +15,7 @@ noncomputable section
 universe u uQ
 open NumberField
 open Langlands.Global.CuspidalPairFunctionalEquation
-open Langlands.Global.CompletionPadic Langlands.ClassField.Global.RelativeWeilGroup
+open Langlands.Global.CompletionPadic Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 set_option autoImplicit false
 
 namespace Langlands.Global.RankinSelbergGlobal

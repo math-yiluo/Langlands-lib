@@ -1,9 +1,8 @@
 # Pinned rigidity from split-pinned opposite-factor pairs
 
-Worker 1368 implements this internal composition of the conditional pinned
-rigidity reduction with the published maximal-torus self-centralization proof.
-Workers 1416 and 1467 contributed the underlying reduction plan, and Worker 1467
-implemented the equivariant root-coordinate helper bundled with that reduction.
+This module is an internal composition of the conditional pinned rigidity
+reduction with the published maximal-torus self-centralization proof. The
+reduction bundles an equivariant root-coordinate helper.
 
 `SplitPinnedOppositeFactorPairsStatement.{u}` is the proposition that every actual
 split pinning of every affine group scheme over every field in universe `u`
@@ -36,6 +35,8 @@ field and on every test scheme, without an additional premise. Its paired
 Markdown describes its structural assembly and Milne source. No new external
 assertion is used here. The target and its imported Lean/Markdown pairs remain
 unchanged; arbitrary universes, all field characteristics, central tori and an
-empty root system remain in scope. Opposite-factor-pair existence remains an
-unproved prerequisite, so this is a conditional intermediate contribution,
-not an unconditional proof of the task target.
+empty root system remain in scope. Opposite-factor-pair existence is a premise
+here, so this is a conditional intermediate result, not an unconditional proof
+of `PinnedAutomorphismRigidityStatement`. The unconditional proof
+`pinnedAutomorphismRigidity` (module `PinnedRigidityProof`) supplies the premise
+by `splitPinnedOppositeFactorPairs` (module `SplitPinnedOppositeFactorPairs`).

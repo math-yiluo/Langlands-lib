@@ -1,6 +1,6 @@
 # Axioms V 2 and V 5 for the Chevalley root function family
 
-This internal unit proves the rank-one axioms V 2 and V 5 of a valuation of the
+This module proves the rank-one axioms V 2 and V 5 of a valuation of the
 root datum (Kaletha–Prasad, *Bruhat–Tits Theory: A New Approach*, Definition
 6.1.2; Lemma 6.1.1 for the split case) for the published Chevalley root function
 family `ChevalleyRootFamily.family G omega`. Here `G` is a Chevalley group of
@@ -67,7 +67,7 @@ The proof writes `u = u_j(S)` with `S ≠ 0`. The published
 `reflection` is exactly the V 2 field of `IsRootDatumValuation`. Let `n` realize
 the reflection along the root character `a` of `α`, and take the reflection
 element `m` of `α`. By the uniqueness theorem
-`RealizesReflection.inv_mul_mem_centralizerPoints` of the companion unit
+`RealizesReflection.inv_mul_mem_centralizerPoints` of the companion module
 `ReflectionRealizationUniqueness`, `m⁻¹ n` is a torus point `τ`. So
 `n u_α(s) n⁻¹ = u_{-α}(ε α(τ) s)`, and `φ_{-a}(n u n⁻¹) = φ_a(u) + omega(α(τ))`.
 The constant is `c = -omega(α(τ))`, which is finite because `α(τ)` is a unit.
@@ -78,6 +78,6 @@ torus.
 
 ## Scope
 
-The unit proves V 2 and V 5 only. V 3 (commutators) and normalizer stability
+The module proves V 2 and V 5 only. V 3 (commutators) and normalizer stability
 are not treated, and nothing is transported to other split groups. All results
 are uniform in the universe and the characteristic.

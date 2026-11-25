@@ -2,7 +2,7 @@
 
 Lean module: `Langlands.Representation.Archimedean.RealTemperedIrreducibleStatement`.
 
-Worker 5220 wrote this module for Task 6749 (`5dd3db87-6f14-4d0f-b9a7-3d0065415fd8`), the proof
+This module serves the proof
 of `RealStandardLanglandsQuotientStatement` (L, module `RealLargeLanglandsQuotientReduction`).
 It states one proposition and proves nothing. It is the real analogue of the Library's
 `ComplexTemperedStandardIrreducibleStatement` (module `ComplexTemperedIrreducibleStatement`).
@@ -110,7 +110,7 @@ From the source to the statement (standard derivation, not a quotation):
 
 The published `RealStrictCharacterLanglandsQuotientStatement` (module
 `RealStrictCharacterLanglandsQuotient`) proves L for lists of character blocks with strictly
-decreasing real exponents. The planned route for general Langlands-ordered lists in Task 6749
+decreasing real exponents. A route for general Langlands-ordered lists
 uses the block parabolic subgroup whose Levi blocks collect the blocks of equal real exponent.
 The Langlands lemma on this parabolic subgroup reduces L to the irreducibility of the Levi
 module. Its factors are standard modules of lists whose blocks all have the same real exponent,

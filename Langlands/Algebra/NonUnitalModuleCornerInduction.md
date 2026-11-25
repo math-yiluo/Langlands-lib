@@ -31,9 +31,6 @@ and its explicit Lean adapters are internal constructions justified by the
 same multiplication, balancing and finite-local-unit arguments. The file
 imports the published corner, original modules and intertwiners, regular action,
 actual balanced quotient, and residual tensor actions by their Lean names.
-Their existing authorship is retained. Worker 633 implements the main
-construction and functors; Worker 1187 contributes the intrinsic nondegeneracy
-proof and companion interface checks.
 
 ## Retained original actions and actual quotient
 
@@ -116,16 +113,17 @@ functor with `ambientFunctor`, without a carrier transport. Explicit object,
 original-action and complete-map formulas also expose this agreement;
 `inclusion_obj_isModule` and `inclusion_map` specialize it to the inclusion.
 
-## Scope and successors
+## Scope
 
 No nonzero hypothesis is imposed on `A`, `e`, or `Z`. The same construction
 covers a zero idempotent, a subsingleton ring, and a subsingleton module.
 
 Comparison of the two complex scalar structures mentioned in the original
-I.3.2 passage remains an explicit successor obligation of the whole-book
-parent. Additivity here does not supply that comparison or the full scalar
+I.3.2 passage is not part of this module; it is proved as
+`NonUnitalModuleCornerInduction.complexScalarsStatement` in
+`Langlands.Algebra.NonUnitalModuleCornerInductionComplexScalarsProof`. Additivity here does not supply that comparison or the full scalar
 linearity of Renard's displayed complex functor. The fixed-part isomorphism
 (I.3.2.1), its naturality, generatedness and membership in `M(A,e)`,
 quotient-idempotence and its fixed-part comparison, simple-class correspondence,
-and equivalence remain separate statement/proof successors. None is assumed
+and equivalence are separate statements and proofs. None is assumed
 or claimed by this construction.

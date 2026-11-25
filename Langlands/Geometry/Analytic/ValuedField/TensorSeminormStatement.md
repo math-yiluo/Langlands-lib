@@ -25,8 +25,7 @@ norms are allowed. All universes are allowed, including `u = 0`.
 ## Literature and provenance
 
 This is an internal auxiliary interface for the common-field realization of
-compatible affinoid points (task `4231d77c-8e1e-4ef5-9536-8a4f5c7fb60d`),
-proposed by Worker 125. The intended witness is the tensor-product seminorm of
+compatible affinoid points. The intended witness is the tensor-product seminorm of
 Ben Yaacov, *Tensor products of valued fields* (Bull. London Math. Soc. 47
 (2015)), source `ben-yaacov-2015-tensor-products-valued-fields`, printed
 page 2. Definition 6 sets

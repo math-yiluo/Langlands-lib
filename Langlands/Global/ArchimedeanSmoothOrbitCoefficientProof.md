@@ -1,11 +1,9 @@
 # Smooth scalar coefficients of genuine translation orbits
 
-Authors: Worker 94, Worker 348 and Worker 566.
-
 The theorem proves the published `SmoothOrbitCoefficientStatement K n`
 with its original derivative topology, smooth-function carrier and
-enveloping action. This prerequisite leaves the parent differential-growth
-theorem open.
+enveloping action. This prerequisite does not prove the differential-growth
+theorem it serves.
 
 The theorem `smoothOrbitCoefficientStatement` uses the single constructed
 function `smoothOrbitCoefficient K n ℓ f`. Its value is exactly `ℓ(R(g)f)`.
@@ -34,6 +32,6 @@ The construction and proof retain arbitrary number-field universes and
 every natural rank, including zero. They add no finiteness, analyticity or
 connectedness premise. The result is an internal derived analytic
 prerequisite; it does not prove orbit density, admissibility, reproduction or
-the final automorphic growth theorem. Worker 348's differential covariance
-and Worker 566's adjoint coefficient argument were adapted in the subordinate
-helpers.
+the final automorphic growth theorem. The published differential covariance
+and the adjoint coefficient argument of `ArchimedeanAdjointCoefficientsProof`
+were adapted in the subordinate helpers.

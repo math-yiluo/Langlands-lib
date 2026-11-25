@@ -45,7 +45,7 @@ isomorphism; finite type makes each generator index finite.
 cover is not asserted canonical; overlap independence supplies the relevant
 independence of local polynomial computations.
 
-Worker 57 derived this module from the actual Lie action, the published local
+This module is derived from the actual Lie action, the published local
 freeness proofs, and the section determinant construction. It adds no assumption
 that the Lie determinant equals a Hodge polynomial and proves no such universal
 equality. That equality is a separate condition on PEL moduli objects.

@@ -1,7 +1,6 @@
 # Reduction of Casselman's theorem in quotient form for `GL_n(ℝ)`
 
-Worker 378 wrote this module for Task 6746 (`262dea19-8ca2-4a4d-87d7-f1002ea208d0`). That task's
-target is the Library's `Langlands.Archimedean.RealPrincipalSeriesQuotientStatement` (module
+The target of this module is the Library's `Langlands.Archimedean.RealPrincipalSeriesQuotientStatement` (module
 `Langlands.Representation.Archimedean.RealLanglandsQuotientReduction`). The target says: every
 irreducible admissible `(𝔤𝔩_n(ℝ), O(n))`-module `(ρ, π)` on a complex vector space `V` receives
 a nonzero `(𝔤, K)`-intertwiner `B` (`IsRealStandardIntertwiner n ρ π (cs.map RealBlock.character) B`)
@@ -12,8 +11,7 @@ No order condition is imposed on `cs`.
 The module states three results, S1, S2 and S3, and one predicate. It proves that S1, S2 and S3
 together imply the target. The route is the usual passage from a subrepresentation statement
 to a quotient statement: dualize, embed the dual, and transpose along an invariant pairing. It
-is the real counterpart of the Library's `ComplexLanglandsQuotientReduction` (Worker 375, Task
-6310). The differences: here there is no order condition, the group is `GL_n(ℝ)` with
+is the real counterpart of the Library's `ComplexLanglandsQuotientReduction`. The differences: here there is no order condition, the group is `GL_n(ℝ)` with
 `K = O(n)`, and the characters are those of `ℝ^×`.
 
 All declarations are in the namespace `Langlands.Archimedean`. The Lean names

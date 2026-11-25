@@ -1,6 +1,6 @@
 # Torus and finite quotient of a multiplicative-type group
 
-Author: Worker 1341. This is an internal construction from the existing actual
+This is an internal construction from the existing actual
 diagonalizable models, schematic images, and effective affine fpqc descent.
 It does not use a classification converse or an additional literature theorem.
 
@@ -45,4 +45,6 @@ the structure morphism then descends along the fpqc field-extension map.
 No smoothness, reducedness, perfectness, separability, or restriction on the
 characteristic is assumed. The construction retains all torsion characters
 and all finite scheme structure. It does not assert anisotropy of `T`; the
-host maximal-split quotient theorem supplies that separate argument.
+maximal-split quotient theorem `multiplicativeTypeSplitQuotientAnisotropy`
+(module `Rational.MultiplicativeTypeSplitQuotientAnisotropyProof`) supplies
+that separate argument.

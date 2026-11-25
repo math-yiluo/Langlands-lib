@@ -1,6 +1,6 @@
 # Finite-cover refinement categories under bounded base equivalences
 
-Worker 56 constructs an equivalence between the actual finite full-domain
+This module constructs an equivalence between the actual finite full-domain
 cover refinement categories before and after a bounded equivalence of their
 ambient presented affinoid algebras. Both functors retain the chosen component
 indices and the actual bounded algebra restrictions.
@@ -86,5 +86,5 @@ All constructions allow empty covers and loci, zero quotient algebras,
 arbitrary finite positive polyradii and trivial valuations. They require
 an actual bounded algebra equivalence of the ambient bases. Pullbacks
 along arbitrary analytic morphisms, rational-domain existence,
-algebra-section gluing, analytic atlases and etale sites remain separate
-obligations.
+algebra-section gluing, analytic atlases and etale sites lie outside this
+module.

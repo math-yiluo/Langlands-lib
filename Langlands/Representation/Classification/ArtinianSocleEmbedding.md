@@ -1,7 +1,5 @@
 # Strong socles in nonzero Artinian subobjects
 
-Author: Worker 357.
-
 This internal construction returns an actual injective intertwiner from a
 supplied strong irreducible socle into any nonzero Artinian representation
 embedded in its ambient representation. It is a generic algebraic prerequisite
@@ -90,7 +88,7 @@ finite-length comparison. No original-literature assertion is introduced.
 The construction proves an actual-map interface from supplied strong socle
 data and supplied Artinianity.
 
-A search of the current Library found no existing constructor with this
+A search of the Library found no existing constructor with this
 interface. `CanonicalConstituents` supplies the two equivalences used here but
 requires an irreducible embedding for the comparison. The Artinian source
 supplies that embedding. `StrongIndecomposabilitySocleProof` extracts a unique
@@ -122,33 +120,23 @@ representation-equivalence invariance, with no GL classification input.
 
 This closure contains no segment module, derivative or mirabolic module,
 Jacquet theorem, ordered multisegment theorem or classification conclusion.
-It is independent of all exclusions of host task
-`8364e73f-14ec-4d14-8f2b-1555a7c1ce95`: parent uniqueness
-`30341ae4-65f2-4a0e-9283-763db01a409e`, multisegment exhaustion
-`3bfb61fa-1129-4fc9-83fd-7fcfec22106e`, ordered strong-head existence
-`ebea9a8a-9b21-4208-aa31-98c2dea1f8a3`, quotient coverage
-`20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584`, ordered conversion
-`8252833d-c269-41a9-824c-5879e531b23b`, tempered uniqueness
-`52e97845-36bb-457d-b76f-70753334b88c`, square-integrable classification
-`1cb45da2-7007-4351-a694-594fb148b8d1`, square-integrable exhaustion
-`cd8ab97c-0b78-4bce-97c4-d307a28159a4`, regular exhaustion
-`bf433f0a-921a-428c-b0c0-6475438125ac`, their conclusions and proof successors,
-and the segment-socle part of `8e5b4563-0365-41c7-b134-70f2a0b36292`.
+It is independent of all the results excluded for the special-head product
+irreducibility criterion: generic segment-product uniqueness
+(`GenericSegmentProductUniqueness`), multisegment exhaustion, ordered
+strong-head existence, quotient coverage, ordered conversion, tempered
+uniqueness, square-integrable classification, square-integrable exhaustion,
+regular exhaustion, their conclusions and their proofs, and the propositions
+of `SegmentSocleDerivativesStatement`.
 
-The same inventory excludes Ze80 3.5/9.6 and their proof successors and all
-restricted segment, head, socle and full Jacquet formulas under the operator
-responses `bd71b9185aab5d6eafffb7891bd3a3ca`,
-`0edda6122ce65ed7ac51603c37473920` and
-`30144f6f9b59540b88b6d4c1517892d9`. The generic strong-socle relation and its
+The same inventory excludes Ze80 3.5/9.6 and their proofs and all
+restricted segment, head, socle and full Jacquet formulas. The generic
+strong-socle relation and its
 algebraic canonical-object tools are the lower definitions used here. Neither
 the support-only bound nor its restricted length-two `core_mid` step nor the
-adjacent-supercuspidal reducibility exception of responses
-`ed80148e21e7523abfc048f455e98eb0`,
-`2b33898bdd0a5ff1b9031be5155a06f0` and
-`ca18fd5005bf5e12a3f7cade18dca865` enters this construction.
+adjacent-supercuspidal reducibility exception enters this construction.
 
-The host's special-head product irreducibility equivalence remains a separate
-proof obligation. This module supplies neither an embedding of a particular
+The special-head product irreducibility equivalence is not proved here.
+This module supplies neither an embedding of a particular
 head nor derivative nonvanishing; a consumer must first provide the strong
 socle, a nonzero Artinian source and its actual ambient injection.
 

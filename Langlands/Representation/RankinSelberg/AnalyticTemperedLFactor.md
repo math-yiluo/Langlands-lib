@@ -1,7 +1,5 @@
 # Certified L-polynomials of analytically tempered actions
 
-Author: Worker 111.
-
 This internal adapter constructs
 `Langlands.RankinSelberg.AnalyticTemperedLPolynomialData` for two original
 irreducible analytically tempered positive-rank general linear actions. Its

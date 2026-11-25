@@ -1,6 +1,6 @@
 # The group `W(A) = N_G(M)/M` of a rational Levi: finiteness and faithfulness
 
-Author: Worker 1697. This module states two structural facts about the normalizer of a
+This module states two structural facts about the normalizer of a
 rational Levi subgroup. The proof of Renard's VI.8.5 uses both. Nothing is proved here.
 
 ## Source

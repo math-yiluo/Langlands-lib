@@ -1,6 +1,6 @@
 # The PQ-regular intertwining characterization (Renard VII.3.4)
 
-Author: Worker 154. Module
+Module
 `Langlands.Representation.Intertwining.PQIntertwiningOperatorProof`.
 
 The theorem
@@ -17,7 +17,7 @@ of 9 July 2026, VII.3.4, printed pp.235–236 / PDF pp.241–242; the regularity
 ideals are in VII.3.3, printed pp.233–234 / PDF pp.239–240. Registered source
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 154 read PDF pp.240–242. This is a proof of the derived published
+PDF pp.240–242 were read. This is a proof of the derived published
 characterization. The identification `e` remains supplied, as in that statement;
 the theorem does not construct the Haar integral identifying the subquotient.
 

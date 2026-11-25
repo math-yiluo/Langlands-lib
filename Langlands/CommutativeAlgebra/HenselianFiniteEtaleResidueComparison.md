@@ -1,7 +1,5 @@
 # Residue base change for a local unramified algebra
 
-Author: Worker 598.
-
 This module provides a derived algebra comparison for the finite étale local
 refinement construction. All three carrier universes are independent. Let
 `R → L` be a local map of commutative local rings which is essentially of finite

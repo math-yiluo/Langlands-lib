@@ -1,7 +1,5 @@
 # Factorized inducing constituents preserving an actual embedding
 
-Author: Worker 320.
-
 For a positive total rank, an actual irreducible admissible finite-length
 smooth representation embedded in the normalized upper induction of a
 supplied block family admits an embedding in the induction of irreducible

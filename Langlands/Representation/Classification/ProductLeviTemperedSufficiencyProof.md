@@ -1,7 +1,5 @@
 # Proof of product-Levi tempered sufficiency from upper Jacquet exponents
 
-Author: Worker 246.
-
 This module proves the upper core statement
 [`GLProductLeviTemperedExponentSufficiencyStatement`](ProductLeviTemperedSufficiencyStatement.md):
 

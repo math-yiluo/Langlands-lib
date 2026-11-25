@@ -1,14 +1,13 @@
 # The actual full subcategory of local modules
 
-Authors: Worker 709 and Worker 1158. Worker 709 prepared the construction;
-Worker 1158 checked the original passages, the imported interface and the
-category and universe conventions, and prepared this definition submission
-under whole-book task `f5d1f399-a1f8-4ab5-a981-90b92abd4857` revision 2.
-It extends the published linear-map bridge of Worker 618 and Worker 6,
-`Langlands.Algebra.RenardModuleLocalization`, without changing that interface.
+A second reader checked the original passages, the imported interface and the
+category and universe conventions.
+This module extends the linear-map bridge
+`Langlands.Algebra.RenardModuleLocalization` without changing that interface.
 The definitions provide the full subcategory, inclusion, canonical structured
 arrow and an explicit factor candidate. They do not prove initiality of the
-structured arrow. That assertion requires separate statement and proof units.
+structured arrow. That assertion has separate statement and proof modules,
+`RenardLocalModuleUniversalStatement` and `RenardLocalModuleUniversalProof`.
 
 ## Source and provenance
 
@@ -56,7 +55,7 @@ This construction targets modules over R, rather than modules over
 
 `isSLocal_ulift_iff S N` proves
 `IsSLocal S (ULift.{w} N) ↔ IsSLocal S N`
-for independently variable `u`, `v` and `w`. The proof uses the published
+for independently variable `u`, `v` and `w`. The proof uses the
 equivalence with bijectivity of scalar multiplication and transports its
 injectivity and surjectivity along `ULift.up` and `ULift.down`.
 
@@ -83,7 +82,7 @@ to the original carrier. These are universe raises, with no `Small`
 assumption, shrinking, identification of independent universes or restriction
 on the cardinality of M. Every independently sized target can likewise be
 raised into a common ambient universe by taking w to include its carrier
-universe. Initiality, when separately proved, will quantify over *every*
+universe. Initiality, proved separately, quantifies over *every*
 local object in the common ambient category.
 
 The canonical locality proof uses `isSLocal_ulift_iff` and the imported
@@ -105,12 +104,13 @@ from the actual canonical local object to N. Its underlying linear map is
 factor S N.property (f.hom ∘ ULift.up) ∘ ULift.down.
 ```
 
-The function named `factor` here is the already published
+The function named `factor` here is the Library's
 `LocalizedModule.lift` bridge; `N.property` is exactly the required locality
 hypothesis. `canonicalFactor_apply` exposes the formula and is definitional.
 The present file provides no categorical factorization or uniqueness theorem
-and no `IsInitial`, `IsUniversal` or adjunction structure. A focused
-Prop-valued statement must first be published before such a proof is submitted.
+and no `IsInitial`, `IsUniversal` or adjunction structure. Such a proof
+needs a focused Prop-valued statement; the Library's is
+`CategoricalUniversalStatements` in `RenardLocalModuleUniversalStatement`.
 Mathlib's `StructuredArrow.IsUniversal` is initiality data, so a proposition
 target should express its existence with `Nonempty`.
 
@@ -119,7 +119,7 @@ The source's right universal problem has equation
 direction. The independent-universe linear-map theorem in the imported
 module remains available unchanged. Ring-localization example 3,
 polynomial-module/endomorphism equivalence and example 5, exactness, general
-adjunction theory and the remainder of Appendix A remain parent obligations.
+adjunction theory and the remainder of Appendix A are outside this module.
 The source comparison remark applies only to isomorphisms compatible with
 the canonical maps; it does not assert uniqueness among all isomorphisms.
 

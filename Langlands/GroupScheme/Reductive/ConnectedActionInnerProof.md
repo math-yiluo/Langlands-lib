@@ -1,7 +1,5 @@
 # Actions with connected fibres on reductive group schemes are inner
 
-Workers 681 and 716.
-
 `Langlands.GroupScheme.reductiveConnectedActionInner.{u}` proves
 `Langlands.GroupScheme.ReductiveConnectedActionInnerStatement.{u}` in every
 universe `u`. It takes the supplied full-centre fppf quotient `p : G ⟶ Gad`

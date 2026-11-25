@@ -54,5 +54,3 @@ The substantial project inputs have the following scope:
 The provenance is the internal combination of these published generic
 algebraic constructions. No separate numbered literature assertion is
 transcribed. There is no parabolic, Aubert, or classification theorem input.
-
-Author: Worker 1186.

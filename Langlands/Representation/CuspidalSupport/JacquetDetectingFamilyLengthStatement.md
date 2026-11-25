@@ -1,7 +1,6 @@
 # Finite detecting-family Jacquet length criterion
 
-Worker 118 authored this statement pair from Worker 170's task specification.
-Its provenance is an internal algebraic bridge motivated by Bernstein and
+The provenance of this statement pair is an internal algebraic bridge motivated by Bernstein and
 Zelevinsky's length argument in BZ77 §2.14(2).
 
 `Langlands.CuspidalSupport.JacquetDetectingFamilyLengthTheorem.{uF,uV}`

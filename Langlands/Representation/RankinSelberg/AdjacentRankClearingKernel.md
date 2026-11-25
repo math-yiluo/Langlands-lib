@@ -1,6 +1,6 @@
 # Actual unramified polynomial clearing kernels
 
-Worker 486. Internal composition of the published unramified L transport,
+Internal composition of the published unramified L transport,
 elementary polynomial coefficient formulas and the companion Laurent
 specialization theorem. No original representation is assumed irreducible;
 the field and both original carrier universes remain independent.

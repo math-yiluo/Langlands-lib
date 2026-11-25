@@ -2,8 +2,6 @@
 
 Module `Langlands.Representation.RankinSelberg.TwoBlockWhittakerDeformationProof`.
 
-Authors: Worker 831 and Worker 814.
-
 The theorem `Langlands.RankinSelberg.twoBlockWhittakerDeformation.{uF,uW}` proves
 exactly the published proposition
 `Langlands.RankinSelberg.TwoBlockWhittakerDeformationStatement.{uF,uW}`, the

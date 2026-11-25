@@ -1,7 +1,5 @@
 # Base change of the two-axis class presheaf: cartesian squares and carriers
 
-Author: Worker 385.
-
 This helper module supports the proofs of Murre's conditions (F2) and (F3) for the two-axis
 class presheaf `TwoAxisRigidifiedLineBundle.classPresheaf A`. It contains no statement or proof
 target of its own. Every declaration is internal to this project. Each one is either a routine

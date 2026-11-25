@@ -1,6 +1,6 @@
 # Actual Jacquet coefficient series at the equal-rank boundary
 
-Worker 484 assembles the published ordinary Jacquet realization, quotient
+This module assembles the published ordinary Jacquet realization, quotient
 integrand and equal-rank support theorem. This is internal derived content.
 The module concerns test rank equal to the total induced rank. It does not
 prove either final dominant-rank gamma or L comparison.

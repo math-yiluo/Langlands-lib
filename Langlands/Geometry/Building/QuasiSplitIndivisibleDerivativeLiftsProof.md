@@ -1,7 +1,5 @@
 # Indivisible lifts of all derivatives in actual quasi-split apartments
 
-Author: Worker 244, Task 6506.
-
 `Langlands.Geometry.Building.quasiSplitIndivisibleDerivativeLifts` proves
 exactly the published proposition
 `QuasiSplitIndivisibleDerivativeLiftsStatement.{u}`, at every universe `u`.

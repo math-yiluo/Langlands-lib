@@ -316,29 +316,34 @@ theorem SpehDatum.hasNonzeroInvariantSesquilinearForm_of_isSpeh
     (fun i => T.segmentFactor δ (d.exponent i))
   obtain ⟨e2⟩ := uniformReverseProductIso F T hr d.length
     (fun i => hermitianItPullback F T (T.segmentFactor δ (d.exponent i.rev)))
-  let L := e1 ≪≫ e2
   let C' := (T.normalizedProductInductionFunctor (BlockShape.uniform d.length d.rank hr)).obj
     (fun i => T.segmentFactor δ (d.exponent i))
-  let q' : C'.representation.IntertwiningMap S.representation := q
-  let Q : C' →ₗ⋆[ℂ] S :=
-    q'.toLinearMap.comp ((SmoothRep.hom L.inv).toLinearMap.comp N.toLinearMap)
-  have hQ : ∀ g f, Q (C'.representation g f) = S.representation (θ g) (Q f) := by
-    intro g f
-    have h1 := congrArg (fun x => q' (SmoothRep.hom L.inv x)) (hN g f)
-    have h2 := Representation.IntertwiningMap.isIntertwining _ _ (SmoothRep.hom L.inv) g (N f)
-    have h3 := Representation.IntertwiningMap.isIntertwining _ _ q' (θ g)
-      (SmoothRep.hom L.inv (N f))
-    exact h1.trans ((congrArg q' h2).trans h3)
-  have hQs : Function.Surjective Q := by
-    intro y
-    obtain ⟨x, hx⟩ := hq y
-    refine ⟨N.symm (SmoothRep.hom L.hom x), ?_⟩
-    have h1 : N (N.symm (SmoothRep.hom L.hom x)) = SmoothRep.hom L.hom x :=
-      N.apply_symm_apply _
-    have h2 : SmoothRep.hom L.inv (SmoothRep.hom L.hom x) = x := SmoothRep.hom_inv_hom_apply L x
-    change q' (SmoothRep.hom L.inv (N (N.symm (SmoothRep.hom L.hom x)))) = y
-    exact ((congrArg (fun z => q' (SmoothRep.hom L.inv z)) h1).trans (congrArg q' h2)).trans hx
-  have hquot := isIrreducibleQuotient_conjTwist F T C' S Q hQ hQs hSirr
+  have key : ∀ (C D : SmoothRep.{0, uF, max uF uV} ℂ (GeneralLinear d.degree F.Carrier))
+      (q' : C.representation.IntertwiningMap S.representation), Function.Surjective q' →
+      ∀ (L : hermitianItPullback F T C ≅ D) (N : C ≃ₗ⋆[ℂ] D),
+      (∀ g f, N (C.representation g f) = D.representation g (N f)) →
+      IsIrreducibleQuotient C.representation (conjTwist F T S).representation := by
+    intro C D q' hq L N hN
+    let Q : C →ₗ⋆[ℂ] S :=
+      q'.toLinearMap.comp ((SmoothRep.hom L.inv).toLinearMap.comp N.toLinearMap)
+    have hQ : ∀ g f, Q (C.representation g f) = S.representation (θ g) (Q f) := by
+      intro g f
+      have h1 := congrArg (fun x => q' (SmoothRep.hom L.inv x)) (hN g f)
+      have h2 := Representation.IntertwiningMap.isIntertwining _ _ (SmoothRep.hom L.inv) g (N f)
+      have h3 := Representation.IntertwiningMap.isIntertwining _ _ q' (θ g)
+        (SmoothRep.hom L.inv (N f))
+      exact h1.trans ((congrArg q' h2).trans h3)
+    have hQs : Function.Surjective Q := by
+      intro y
+      obtain ⟨x, hx⟩ := hq y
+      refine ⟨N.symm (SmoothRep.hom L.hom x), ?_⟩
+      have h1 : N (N.symm (SmoothRep.hom L.hom x)) = SmoothRep.hom L.hom x :=
+        N.apply_symm_apply _
+      have h2 : SmoothRep.hom L.inv (SmoothRep.hom L.hom x) = x := SmoothRep.hom_inv_hom_apply L x
+      change q' (SmoothRep.hom L.inv (N (N.symm (SmoothRep.hom L.hom x)))) = y
+      exact ((congrArg (fun z => q' (SmoothRep.hom L.inv z)) h1).trans (congrArg q' h2)).trans hx
+    exact isIrreducibleQuotient_conjTwist F T C S Q hQ hQs hSirr
+  have hquot := key C' _ q hq (e1 ≪≫ e2) N hN
   obtain ⟨e⟩ := huniq (conjTwist F T S) hquot
   have hSadm : S.IsAdmissible := (CuspidalSupport.cuspidalEmbedding F T d.degree S hSirr).1
   exact hasNonzeroInvariantSesquilinearForm_of_conjTwist F T hn S hSadm hSirr ⟨e⟩

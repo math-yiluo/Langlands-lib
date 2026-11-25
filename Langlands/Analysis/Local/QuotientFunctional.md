@@ -1,6 +1,6 @@
 # Descent of integration through a positive averaging map
 
-Worker 112 implements the algebraic and Riesz-representation step used in
+This module implements the algebraic and Riesz-representation step used in
 quotient integration. This is an internal construction from an averaging map
 and explicit proved properties of that map. It does not prove those properties
 for a subgroup and does not by itself prove `CompatibleMeasureExists`.

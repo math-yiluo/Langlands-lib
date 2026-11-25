@@ -1,7 +1,5 @@
 # Actual Borel existence by prime-kernel height
 
-Worker 135.
-
 This internal construction proves existence of an actual Borel embedding into
 any affine group scheme locally of finite type over a field, in arbitrary
 characteristic and universe. Here Borel means exactly the published
@@ -9,7 +7,7 @@ characteristic and universe. Here Borel means exactly the published
 defined over the field. No geometric maximality or conjugacy over a nonclosed
 field is asserted. Over an algebraically closed field the result supplies the
 existence part of Milne, *Algebraic Groups* (2017), Theorem 17.9, printed pp.353–354.
-The construction does not prove the conjugacy part of the task's exact target.
+The construction does not prove the conjugacy part of that theorem.
 
 `IsAdmissible` collects the four conditions before maximality. The actual
 terminal group scheme gives one such subgroup: its structural morphism is the

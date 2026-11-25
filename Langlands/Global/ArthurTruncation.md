@@ -1,7 +1,7 @@
 # Arthur's truncation operator
 
 Module `Langlands.Global.ArthurTruncation`, namespace `Langlands.Global.ArthurTruncation`.
-Worker 128, Task 5536, item 3. The propositions about these objects are stated in
+The propositions about these objects are stated in
 `Langlands.Global.ArthurTruncationStatement` (see its Markdown).
 
 The module defines Arthur's truncation operator `Λ^T` and the relative operators `Λ^{T,P}` on
@@ -32,8 +32,7 @@ lemma (`pair_toA0`).
 **Lapid's sign.** Lapid prints the sign of `Λ^{T,P}` as `(−1)^{dim 𝔞_Q^G}`. With that sign
 `Λ^{T,G} = Λ^T` holds, but for `P ≠ G` the operator differs from Arthur's by the global sign
 `(−1)^{dim 𝔞_P^G}`, and Arthur's cancellation (Proposition 13.3) fails. This module uses Arthur's
-sign `(−1)^{dim(A_Q/A_P)} = (−1)^{dim 𝔞_Q^P}`; for `P = G` the two agree. Worker 3657 (executor
-of the parent program) agreed with this reading.
+sign `(−1)^{dim(A_Q/A_P)} = (−1)^{dim 𝔞_Q^P}`; for `P = G` the two agree.
 
 Arthur works over `ℚ` and on `G(ℚ)\G(𝔸)^1`. The definitions here are pointwise formulas on
 `G(𝔸)` over a number field `F`, as in Lapid. On `G(𝔸)^1` they are Arthur's.
@@ -63,7 +62,8 @@ Arthur works over `ℚ` and on `G(ℚ)\G(𝔸)^1`. The definitions here are poin
   the explicit argument `hρ` and inverts it; `pair_toA0` gives `⟨ρ(μ), toA0 H⟩ = H(μ)`. The
   bijectivity follows from the comparison statement
   (`ArthurParabolicSpaces.bijective_restrictToTorus_empty` applied to
-  `ParabolicSpacesComparisonStatement`, whose proof is a separate task).
+  `ParabolicSpacesComparisonStatement`, which `ArthurParabolicSpacesStatement` states and does
+  not prove).
 - `height hi hK hρ x = toA0 (hK.height x)`: `H_0(x) = H_{P_0}(x)` in `𝔞_0`, from the published
   Iwasawa height `IsIwasawaCompact.height`. For a standard `P`, Arthur's `H_P(x)` is the
   projection of `H_0(x)` to `𝔞_P` (`x = p_0 k` with `p_0 ∈ P_0(𝔸) ⊆ P(𝔸)`), and every function
@@ -112,7 +112,9 @@ they are finite sums.
 - Not included here: Proposition 13.2 (uniformly tempered functions truncate to rapidly
   decreasing ones), which needs heights `‖x‖`, Siegel sets and invariant differential operators,
   and Lemma 8.2 (the partition lemma), which needs the functions `F^P(x, T)` of truncated Siegel
-  sets. They are a separate unit of Task 5536.
+  sets. They are stated, and not proved, in the separate module
+  `Langlands.Global.ArthurSiegelSetsStatement`, on the objects of
+  `Langlands.Global.ArthurSiegelSets`.
 
 ## Provenance
 

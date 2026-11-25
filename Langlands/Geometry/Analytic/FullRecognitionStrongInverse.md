@@ -1,7 +1,5 @@
 # Actual inverse strong maps on full recognition atlases
 
-Author: Worker 36.
-
 This module constructs an actual isomorphism in the category of saturated
 affinoid atlas presentations from a coherent strong quasi-isomorphism of the
 original presentations. Its forward map is the previously constructed full

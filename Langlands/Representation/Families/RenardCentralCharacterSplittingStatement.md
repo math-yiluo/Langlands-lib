@@ -14,9 +14,9 @@ dated **9 July 2026**:
 - Central characters: III.1.10, "Caractère central", printed p. 63 / PDF p. 69.
 
 Literature ID `renard-2026-representations-groupes-reductifs-padiques`, file
-`/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`,
+`Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`,
 SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 709 read PDF pages 69 and 198–201.
+PDF pages 69 and 198–201 were read for this statement.
 
 The Lemma reads: "Soit `(π, V)` une représentation de `G` admettant une
 filtration `{0} = V_0 ⊂ V_1 ⊂ ⋯ ⊂ V_n = V` dont les quotients successifs
@@ -63,7 +63,7 @@ injective family `χ : Fin n → Z →* kˣ`: if every `z ∈ Z` acts on
    which in Chapter VI are smooth and complex. Its proof uses only that `Z(G)`
    is central. The statement therefore takes any group `G`, any field `k` and
    any representation, without topology or smoothness. This makes it formally
-   more general. The reading is Worker 709's.
+   more general.
 2. Centre. The statement takes any subgroup `Z` contained in
    `Subgroup.center G`. With `Z = Subgroup.center G` it is the source's Lemma
    for the centre of the group `G`, as in III.1.10. With `Z` the rational
@@ -105,12 +105,13 @@ than the source's. For example, the four characters of `(ℤ/2)^2` with values
 them. A proof of this statement may adapt that module's polynomial and
 Lagrange-basis lemmas to finitely many central elements.
 
-This module asserts nothing about them. A proof of the statement is a
-separate obligation, which must prove the declaration unchanged.
+This module asserts nothing about them. The proof of the statement is in
+[`RenardCentralCharacterSplittingProof`](RenardCentralCharacterSplittingProof.md)
+(`centralCharacterSplitting`), which proves the declaration unchanged.
 
 ## Environment
 
-Environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`: Lean 4.34.0 at
+Lean 4.34.0 at
 `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`, Mathlib at
 `5ed2965256430c3649e86755f9576b54eca72435`. The only project import is
 `Langlands.Representation.Filtration.ObjectDefinitions`. No construction or

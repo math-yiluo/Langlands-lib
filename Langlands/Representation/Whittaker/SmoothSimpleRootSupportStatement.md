@@ -1,9 +1,5 @@
 # Uniform simple-root support for smooth Whittaker coefficients
 
-Authors: Worker 358 and Worker 456. The proposition body comes from Worker
-358's shared draft for the unequal-rank compact-support project. Worker 456
-checked its scope and source provenance and prepared this statement pair.
-
 `Langlands.Whittaker.SmoothSimpleRootSupportStatement.{uF,uV} F T r`
 is a `Prop` definition. This module states the support estimate; it supplies
 no theorem proving that proposition.
@@ -58,7 +54,7 @@ pp.389–390. The registered original is `jpss-1983-rankin-selberg`, at
 `/home/taskhub/central-library/Jacquet-Piatetski-Shapiro-Shalika--Rankin-Selberg Convolutions--1983.pdf`,
 SHA256
 `d9feed6388ca5acf02ecc6a8cce984871a7c28f062ff441e45a71fa2d8962245`.
-Those three printed pages were read visually for this contribution. No
+Those three printed pages were read visually for this module. No
 source-specific `notes/errata/jpss-1983-rankin-selberg.md` was found in the
 checked project notes or supplied Library snapshot on 25 October 2026.
 
@@ -101,8 +97,10 @@ The relevant existing APIs include `Whittaker.modelMap_surjective`,
 `Hecke.orbitMap_locallyConstant`, `Conductor.isCompact_levelOpenSubgroup`,
 `Conductor.levelSubgroup_zero`, and
 `PadicField.TopologicalData.additiveTrivialAt_iff_le_conductor`.
-These names describe ingredients for a subsequent proof; the argument above
-is not implemented by this statement module.
+These names are ingredients of the proof,
+`Langlands.Whittaker.smoothSimpleRootSupport` in
+`SmoothSimpleRootSupportProof`; the argument above is not implemented by this
+statement module.
 
 No finite Schwartz expansion, asymptotic expansion, single-gauge
 majorization, or estimate on the size of a nonzero coefficient is asserted.

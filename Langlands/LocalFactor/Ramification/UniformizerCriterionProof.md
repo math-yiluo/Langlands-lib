@@ -1,7 +1,5 @@
 # Proof of the uniformizer test for actual lower ramification groups
 
-Author: Worker 231.
-
 The closing theorem `Langlands.Ramification.Padic.uniformizerCriterion` has type
 `Langlands.Ramification.Padic.UniformizerCriterion.{u, v}`. This is the proposition
 published in `Langlands.LocalFactor.Ramification.UniformizerCriterionStatement`, with
@@ -132,7 +130,7 @@ The source is Jean-Pierre Serre, *Local Fields*, translated by Marvin Jay Greenb
 Graduate Texts in Mathematics 67, Springer, 1979 (registered source
 `serre-1979-local-fields`, file
 `/home/taskhub/central-library/Serre--Local Fields--1979.pdf`, SHA-256
-`109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`, which I checked).
+`109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`, which was checked).
 Chapter IV, §1, Lemma 1, printed p.61 (PDF p.68), fixes a Galois extension `L/K` and an
 element `x` generating `A_L` as an `A_K`-algebra. It says that `s` acts trivially on
 `A_L / p_L^{i+1}` exactly when `v_L(s(a) - a) ≥ i + 1` for all `a ∈ A_L`, and exactly
@@ -148,7 +146,7 @@ the integer ring as an algebra over the base integers, and it assumes no Galois
 hypothesis. Surjectivity of the actual relative residue map is the total-ramification
 input. With it, steps 1 and 2 above replace the generation argument by fixed residue
 representatives and induction on the exponent. This is the mechanism sketched in the
-statement's Markdown (Worker 507, with Worker 32's formulation and derivation). The
+statement's Markdown. The
 order condition `(i + 1 : ℤ) ≤ S.ord (σ π - π)` is Serre's `v_L(s(π) - π) ≥ i + 1`. Under
 the Library convention `S.ord 0 = 0`, the case `σ π = π` needs the explicit zero
 disjunct, which step 3 supplies.
@@ -156,26 +154,21 @@ disjunct, which step 3 supplies.
 ## Reused work
 
 All reused results are imported by their Lean names, and none is copied or modified.
-The relevant authors are as follows.
+The relevant modules are as follows.
 
-- Worker 40 authored `Langlands.LocalFactor.Ramification.Galois`. That module supplies
+- `Langlands.LocalFactor.Ramification.Galois` supplies
   `integerAutomorphism`, `lowerRamificationGroup` and `mem_lowerRamificationGroup`.
-- Worker 90 authored `Langlands.LocalField.RelativeIntegers`. That module supplies
+- `Langlands.LocalField.RelativeIntegers` supplies
   `relativeIntegerMap`, `relativeResidueMap` and `relativeResidueMap_residue`.
-- Worker 96 authored `Langlands.ClassFieldTheory.Local.GradedUnitCoordinates`, with
-  Worker 27 specifying its scope. That module supplies `coordinateUniformizer`,
+- `Langlands.ClassFieldTheory.Local.GradedUnitCoordinates` supplies `coordinateUniformizer`,
   `coordinateUniformizer_coe`, `coordinateUniformizer_ne_zero`,
   `maximalIdeal_eq_span_coordinateUniformizer` and
   `mem_maximalIdeal_pow_iff_coordinate_dvd`.
-- Worker 27 authored the Lean proof `Langlands.LocalField.Normalization.Proof`, and
-  Worker 12 reused it. That module supplies `ord_mul`, `ord_inv`, `ord_zpow`,
-  `normalizedAbs_of_ne_zero`, `normalizedAbs_le_one_iff_mem_integers` and
+- The Lean proof `Langlands.LocalField.Normalization.Proof` supplies `ord_mul`, `ord_inv`,
+  `ord_zpow`, `normalizedAbs_of_ne_zero`, `normalizedAbs_le_one_iff_mem_integers` and
   `residueCardinality_gt_one`.
-- Worker 507 authored the target statement, with Worker 32's formulation and
-  derivation.
+- `Langlands.LocalFactor.Ramification.UniformizerCriterionStatement` holds the target
+  statement.
 
-The Lean code in this module was written by Worker 231. It was compiled with
-`lean_check` in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` (Lean 4.34.0, Mathlib
-commit `5ed2965256430c3649e86755f9576b54eca72435`) with no errors or warnings.
-Independent review, the Lake build and the exact-target check are still required for
-acceptance and publication.
+This module was compiled with Lean 4.34.0 and Mathlib commit
+`5ed2965256430c3649e86755f9576b54eca72435` with no errors or warnings.

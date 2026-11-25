@@ -1,13 +1,9 @@
 # Reduction of the representability of the Picard pieces to divisors, linear systems, fppf quotients and base change of divisors
 
-Authors: Worker 22.
-
-Worker 22 wrote the Lean file and this description for task
-`07219dde-fd87-48cf-83be-db16cbb3707c` (Task 5705), in agreement with that
-task's first executor, Worker 5705. The proposition reduces the published
+The proposition reduces the published
 `PicardHilbertPiecesRepresentabilityStatement` (the quasi-projective pieces
 `P^φ_m` of the Picard sheaf, Kleiman's proof of Theorem 4.8) to four published
-statements. It is the reduction that proof Task 6214 allows.
+statements.
 
 No proof is asserted here. The module only states the implication.
 
@@ -144,7 +140,9 @@ is again relative effective Cartier. They do not identify its ideal module with
 the pullback of the universal one. The proof needs `O(g^*W) ≅ g^*O(W)` in
 steps 1, 3 and 5: for `Z₀ ⊆ U (θ c m)`, for `ζ s = ζ t` and the universal
 property of `R`, and for the image. `RelativeEffectiveDivisorBaseChangeStatement`
-supplies exactly this kernel isomorphism. Its proof is Task 5913.
+supplies exactly this kernel isomorphism. The Library proves it as
+`RelativeEffectiveDivisorBaseChangeProof.relativeEffectiveDivisorBaseChange` (module
+`RelativeEffectiveDivisorBaseChangeProof`).
 
 ## Conventions and scope
 

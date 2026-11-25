@@ -1,7 +1,5 @@
 # Full field-point lifts for locally finite analytic maps
 
-Author: Worker 620.
-
 `StrongHom.IsFiniteAt.fieldPointLift` chooses an actual full field-valued
 point of the saturated source presentation above a prescribed target
 field point. Its inputs are a saturated strong map `g`, a source point

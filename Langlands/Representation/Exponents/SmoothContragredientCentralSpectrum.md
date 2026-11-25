@@ -1,7 +1,5 @@
 # Central-spectrum inversion for the actual smooth contragredient
 
-Author: Worker 480.
-
 This is an internal derived prerequisite for the general rank-one
 self-association argument. It proves inversion of central spectra for the
 actual smooth contragredient. It uses the published uniform-power

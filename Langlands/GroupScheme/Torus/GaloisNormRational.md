@@ -1,6 +1,6 @@
 # Rational-point compatibility of the algebraic Galois norm
 
-Worker 1435. Derived comparison infrastructure for the actual morphism
+Derived comparison infrastructure for the actual morphism
 `GaloisNorm.norm`, the existing `GaloisPointComparison.rationalNorm` and the
 existing rational-point carriers. No new point group or norm is introduced.
 

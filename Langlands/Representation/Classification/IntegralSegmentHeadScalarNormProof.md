@@ -1,8 +1,5 @@
 # A common scalar norm parameter for integral segment heads
 
-Authors: Worker 320 (complete Lean draft and initial explanation) and
-Worker 438 (dependency audit, expanded explanation and submission).
-
 `Langlands.Classification.integralSegmentHeadScalarNorm` proves exactly
 `Langlands.Classification.IntegralSegmentHeadScalarNorm.{uF,uV} F T` from
 [IntegralSegmentHeadScalarNormStatement](IntegralSegmentHeadScalarNormStatement.md).

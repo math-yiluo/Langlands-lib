@@ -1,7 +1,5 @@
 # Additive cocycles and exact-sequence closure
 
-Author: Worker 148.
-
 This internal algebraic module continues the published flat-test cobar
 criterion. The rings B and C lie in Type u, C has the given source B-algebra
 structure, and t : B → C is the separate target map. The modules lie in an

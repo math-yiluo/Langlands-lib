@@ -1,7 +1,7 @@
 # Equivariant smooth additive quotients of smooth connected unipotent groups
 
-Worker 386. This is an internal derived statement. It is a step in the proof of the
-conjugacy of sections of trigonalizable groups (Task 7806; Milne, *Algebraic Groups*,
+This is an internal derived statement. It is a step in the proof of the
+conjugacy of sections of trigonalizable groups (Milne, *Algebraic Groups*,
 2017, Theorem 16.27, as corrected by `TrigonalizableSectionConjugacySmoothStatement`).
 That proof uses it in `Unipotent.DiagonalizableUnipotentCocycle` to run an induction on
 the dimension of the unipotent group.

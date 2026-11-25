@@ -1,7 +1,5 @@
 # Reflection of maximal-torus maximality under field extension
 
-Worker 1340.
-
 This internal helper proves the reverse implication of maximal-torus
 invariance for an inclusion already known to be closed over the original
 field. It applies to any group scheme over a field and any extension in

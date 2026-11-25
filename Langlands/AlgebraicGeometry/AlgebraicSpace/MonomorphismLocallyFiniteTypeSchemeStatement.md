@@ -1,7 +1,5 @@
 # Schemeness of algebraic spaces with a locally finite type monomorphism to a scheme
 
-Author: Worker 303.
-
 This module states that an algebraic space with a monomorphism, locally of
 finite type, to a scheme is represented by a scheme. This combines Stacks Project
 Lemma 67.27.10 (Tag 0463) with Proposition 67.50.2 (Tag 03XX). Local finite type
@@ -157,22 +155,26 @@ finite type on an atlas can be expressed with published and Mathlib notions.
 ## Intended use
 
 The statement is a prerequisite of the proof of
-`Langlands.AlgebraicGeometry.AlgebraicSpace.SmoothRelationQuotientStatement`
-(task `947bc5d5-327d-4b44-91e8-22c7382f065b`). There, an arrow algebraic space
+`Langlands.AlgebraicGeometry.AlgebraicSpace.SmoothRelationQuotientStatement`.
+There, an arrow algebraic space
 `R` with `s t : R.presheaf ⟶ (schemeYoneda S).obj U` is injective on sections
 through `(s, t)` and has a surjective etale atlas `b` with
 `b ≫ s = (schemeYoneda S).map s₀` and `b ≫ t = (schemeYoneda S).map t₀` for
-smooth `s₀.left` and `t₀.left`. The plan is to apply this statement with
+smooth `s₀.left` and `t₀.left`.
+`MonomorphismPairScheme.isRepresentedByScheme_of_injective_pair` applies this
+statement with
 `Y` the product `U ⨯ U` in `Over S`, `f` the pair `(s, t)` composed with the
 comparison of `(schemeYoneda S).obj (U ⨯ U)` with the product of functors of
 points, and `w` the pair `(s₀, t₀)`. The morphism `w.left` is locally of finite
 type because its composite with the first projection is the smooth morphism
-`s₀.left`. That application is a plan and is not part of this unit.
+`s₀.left`. That application is in the module `MonomorphismPairScheme`, not in
+this one.
 
 ## Status and scope
 
-This unit states the proposition only. Its proof is a later separate
-candidate or exact-target task, after this statement is in the Library. The
-unit formalizes neither Lemma 67.27.10 nor Proposition 67.50.2 separately,
+This module states the proposition only. Its proof is
+`monomorphismLocallyFiniteTypeScheme` in the module
+`MonomorphismLocallyFiniteTypeSchemeProof`. The
+module formalizes neither Lemma 67.27.10 nor Proposition 67.50.2 separately,
 and it defines no separated or locally quasi-finite morphisms of algebraic
 spaces.

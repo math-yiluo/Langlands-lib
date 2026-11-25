@@ -53,8 +53,7 @@ does. So the restated body elaborates with the same instances.
 
 ## The proof of the case `r = 0`
 
-The proof uses three helper modules in the same directory, each with paired Markdown. All
-three are authored by Worker 822.
+The proof uses three helper modules in the same directory, each with paired Markdown.
 
 1. `ComplexRankZeroHaar`: every quotient measure `D.measure` on
    `N₁(ℂ) \ GL₁(ℂ) ≅ ℂˣ` is a nonzero multiple `κ` of the Haar measure `|z|⁻² dz`
@@ -78,10 +77,10 @@ three are authored by Worker 822.
 
 ## Provenance
 
-Worker 822 developed the original reduction and its three helper modules. The case `n = n' = 1` of Jacquet,
+The case `n = n' = 1` of Jacquet,
 *Archimedean Rankin–Selberg integrals* (2009), Theorem 2.1, at a complex place is Tate's
 local functional equation at `ℂ` (Tate's thesis; Cassels–Fröhlich 1967, Chapter XV). The
 Library states it as `ComplexArchimedeanTateStatement`. The split by rank, the description
 of the rank-one Whittaker model and the reduction of the rank-one integrals to Tate
-integrals are internal to this project. They follow Worker 823's real-place version
+integrals are internal to this project. They follow the real-place version
 (`RealEqualRankZeroReduction`, `RealRankZeroHaar`, `RealRankZeroLocal`).

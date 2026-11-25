@@ -4,7 +4,7 @@ import Langlands.GroupScheme.Reductive.RankOneCentralCoverStatement
 /-! # Conditional assembly of the rank-one central cover
 
 The target `RankOneCentralCoverStatement` from two inputs stated as propositions:
-the root-cell-to-cover step (Worker 919's `rankOneCentralCover_of_rootCell`) and the
+the root-cell-to-cover step (`rankOneCentralCover_of_rootCell`) and the
 local line crux. See the paired Markdown.
 -/
 

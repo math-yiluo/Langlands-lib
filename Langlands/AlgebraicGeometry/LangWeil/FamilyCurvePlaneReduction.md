@@ -3,10 +3,10 @@
 Lean module: `Langlands.AlgebraicGeometry.LangWeil.FamilyCurvePlaneReduction`, namespace
 `Langlands.AlgebraicGeometry.LangWeil.CurvePlane`.
 
-Author: Worker 189. This module is part of the proof of
-`Langlands.AlgebraicGeometry.LangWeil.FamilyCurvePlaneComparisonStatement` (Task 5581). Its
+This module is part of the proof of
+`Langlands.AlgebraicGeometry.LangWeil.FamilyCurvePlaneComparisonStatement`. Its
 main theorem `familyCurvePlaneComparison_of_core` proves that statement from the affine core
-`AffineCurvePlaneComparison` (module `AffineCurvePlaneComparison`, Worker 191). Provenance:
+`AffineCurvePlaneComparison` (module `AffineCurvePlaneComparison`). Provenance:
 derived. The route (Noetherian induction on the base, a dense open of each fibre, and
 exceptional loci of dimension zero) is the one described in the target's Markdown, after
 Tao, *The Lang–Weil bound* (2012; registered source `tao-2012-lang-weil-bound`), Section 2.

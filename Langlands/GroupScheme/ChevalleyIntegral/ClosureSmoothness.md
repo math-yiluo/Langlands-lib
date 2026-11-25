@@ -4,7 +4,7 @@ This internal construction equips each field-valued base point with the
 ordered negative-root, full character-torus and positive-root parameter
 scheme, named `fieldOrderedCellSpace`. The root lists may be arbitrary.
 Zero root coordinates and the torus identity supply a point over the
-field. This part follows Worker 704's field-cell nonemptiness construction,
+field. This part follows the existing field-cell nonemptiness construction,
 generalized from a ring map to any field-valued scheme point.
 
 When the root index is finite and the character lattice is finitely

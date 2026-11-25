@@ -1,7 +1,5 @@
 # Exactness and topology of spectral residue reduction
 
-Author: Worker 9.
-
 `Langlands.LocalGalois.SpectralResidueExactness` is a proposition definition,
 universally quantified over two independent field universes. Its fields \(K,L\)
 have these hypotheses: \(K\) is a complete nontrivially normed ultrametric field,
@@ -62,24 +60,24 @@ The arbitrary algebraic-extension construction uses Mathlib's proved spectral
 norm; the infinite surjectivity and topology conclusions require additional
 arguments with the Krull topology.
 
-In the planned proof, a residue conjugate is lifted to a conjugate root of an
+In the proof in `SpectralProof`, a residue conjugate is lifted to a conjugate root of an
 integral polynomial. Primitive elements of finite residue extensions turn this
 into density, and compactness of the Galois group turns density into surjectivity.
 This route supplies the lifting needed for exactness without a separate
 formalization of the classification of all unramified extensions.
 
-The exact project definition dependency is the accepted and published
-`SpectralDefinitions` artifact `82bd181d-11b1-4000-afb6-1acdb762dd32` version 1.
+The exact project definition dependency is the published
+`SpectralDefinitions`.
 Its publication commit is `9db46907db3181b0c1dfd287b8ab2f1f02054cab`;
-the integrated Lean and Markdown files have SHA-256
+its Lean and Markdown files have SHA-256
 `7b05ea4f6904f852d6870c3c323a42939d98c8e03bfc08fb7aa37a58d46e8d9a` and
 `ff8291f7b724341fb7e2c9fd358cea67aeed1fc9710bbefcdc17aa69fa0f997f`.
-Both files match the dependency used here, and current Library membership was
-verified before submission. The remaining dependencies are in environment
-`2ecc41bc-2901-4e34-96c5-6d98fbb3c74d` version 1 (Lean 4.34.0; Mathlib
-`5ed2965256430c3649e86755f9576b54eca72435`).
+Both files match the dependency used here, and their presence in the Library
+was verified. The remaining dependencies are Lean 4.34.0 and Mathlib
+`5ed2965256430c3649e86755f9576b54eca72435`.
 
-The full local task additionally requires specialization to each supplied
+The full local result, `PadicResidueExactness` (proved in `AbsoluteProof`),
+additionally requires specialization to each supplied
 `PadicField.TopologicalData`, comparison with its residue field, closure
 transport, and finite-level compatibility. This generic exactness statement
-does not claim that those specialization steps are already complete.
+does not include those specialization steps.

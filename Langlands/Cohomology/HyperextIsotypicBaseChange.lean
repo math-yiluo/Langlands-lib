@@ -225,9 +225,9 @@ lemma cohomologyHomMap_cohomologyHomAction {K : DerivedCategory C} {W : C} (ρ :
         (cohomologyHomMap F K W (-n) g) := by
   rw [cohomologyHomAction_apply, cohomologyHomAction_apply, cohomologyHomMap_apply,
     cohomologyHomMap_apply, Functor.map_comp, Functor.map_comp]
-  have h := (exactDerivedHomologyIso F (-n)).hom.naturality (ρ γ).inv
+  have h := (exactDerivedHomologyIso F (-n)).hom.naturality (ρ γ).asIso.inv
   simp only [Functor.comp_map] at h
-  refine (Category.assoc _ _ _).symm.trans ((congrArg (· ≫ F.map g ≫ F.map (σ γ).hom) h.symm).trans
+  refine (Category.assoc _ _ _).symm.trans ((congrArg (· ≫ F.map g ≫ F.map (σ γ).asIso.hom) h.symm).trans
     ?_)
   simp only [Category.assoc]
   rfl

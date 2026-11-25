@@ -1,7 +1,5 @@
 # Proof of the classification of simple representations by highest weight
 
-Author: Worker 900.
-
 This module proves `Langlands.GroupScheme.SplitHighestWeightClassificationStatement.{u}`
 (module `Rational.SplitHighestWeightClassificationStatement`) as the theorem
 `Langlands.GroupScheme.splitHighestWeightClassification`. The theorem's type is
@@ -11,7 +9,7 @@ only axioms used are `propext`, `Classical.choice` and `Quot.sound`.
 
 The proof uses the Library's realized coordinates and covariant socles
 (`SplitPinning.IsRealizedBy`, `Chevalley.affineCovariantSocleRepresentation`), and
-these helper modules of the same contribution:
+these helper modules, ported with this file:
 
 - `Reductive.SplitBorelCellSaturation`: saturation of realized weights over every
   field (`SplitPinning.IsRealizedWeight.of_nsmul'`).

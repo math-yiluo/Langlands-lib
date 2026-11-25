@@ -1,10 +1,8 @@
 # Dynamic intertwining roots under split-torus restriction
 
-Author: Worker 200.
-
 This internal construction reuses the published same-field root restriction
 theorem `Langlands.GroupScheme.mem_roots_comp_iff` from
-`Torus/WeightRestriction`, by Worker 1317. It does not reprove the decomposition
+`Torus/WeightRestriction`. It does not reprove the decomposition
 of a restricted weight space. Its new comparison concerns the complete
 two-sign dynamic intersection under an arbitrary morphism of split tori.
 

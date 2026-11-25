@@ -1,7 +1,5 @@
 # Local algebra for the Poincaré direct image
 
-Author: Worker 975.
-
 Module `Langlands.AlgebraicGeometry.Picard.PoincareDirectImageLocalAlgebra`, namespace
 `Langlands.AbelianScheme.PoincareDirectImage`. This is an internal helper module for the proof
 of `Langlands.AbelianScheme.AlgClosedFieldPoincareDirectImageStatement`. It contains only

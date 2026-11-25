@@ -1,7 +1,5 @@
 # Relative derived groups as kernels of smooth torus quotients
 
-Author: Worker 646.
-
 This internal supporting module reformulates the geometric existence input
 `RelativeDerivedGroupExistenceStatement` using the full scheme-theoretic kernel
 of a supplied quotient homomorphism. It does not construct that quotient and

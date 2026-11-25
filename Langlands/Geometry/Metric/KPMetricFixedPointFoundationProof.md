@@ -49,8 +49,7 @@ that component is proved.
 
 ## Checks
 
-A development `lean_check` of this module in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` reported zero diagnostics. Inspection
+A Lean check of this module reported zero diagnostics. Inspection
 of `metricFixedPointFoundation` reported universe parameters `uX` and `uG` and
 only the standard axioms `propext`, `Classical.choice` and `Quot.sound`. No
 external Lean code is adopted.

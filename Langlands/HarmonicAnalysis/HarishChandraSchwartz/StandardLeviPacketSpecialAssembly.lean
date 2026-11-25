@@ -201,12 +201,13 @@ theorem standardLeviPlancherelWavePacketSourceNormalized_of_specialCompact_weakB
         (hFactors (jRoots[J]) (RationalPointFamily.rootSet_subset i ν J)),
       hweakL J hJ hA⟩
   let := hi.isSplitSubtorus.1.finite_realCocharacterSpace
+  have : Module.Free ℝ (RealTorusSpace.V S) := Module.Free.of_divisionRing ℝ _
   let b := Module.finBasis ℝ (RealTorusSpace.V S)
   let N := (normSeminorm ℝ (Fin (Module.finrank ℝ (RealTorusSpace.V S)) → ℝ)).comp
     b.equivFun.toLinearMap
   have hN (v : RealTorusSpace.V S) (hv : N v = 0) : v = 0 := by
     apply b.equivFun.injective
-    rw [map_zero]
+    rw [LinearEquiv.map_zero]
     exact norm_eq_zero.mp hv
   have hest := standardLeviPacketDerivativeEstimates_of_weakConstantTerms
     hG hi hν I hζ s hs hindex π mu hsq hRefl hCST Ks hKs hPKs hOppKs p qrev

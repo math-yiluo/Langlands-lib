@@ -1,6 +1,6 @@
 # Generic character crossings on a fixed compact model
 
-This derived internal unit connects the finite rational compact families to
+This module connects the finite rational compact families to
 actual Frobenius maps between fixed three-character standard modules. Its main
 result retains an explicit equality hypothesis on the positive integral grid.
 
@@ -63,4 +63,4 @@ All ingredients come from existing explicit multiplier formulas, actual
 Frobenius data, the Fourier law and the polynomial grid extension.
 The actual grid identity remains a premise. No full differential braid,
 operator degeneration at poles, chosen interlaced-word comparison, or
-filtration kernel-image absorption is proved by this unit.
+filtration kernel-image absorption is proved by this module.

@@ -1,6 +1,6 @@
 # Existence of epsilon factors of arbitrary irreducible pairs: proof
 
-Author: Worker 5077. Module
+Module
 `Langlands.Representation.RankinSelberg.LanglandsPairEpsilonFactorExistenceProof`,
 namespace `Langlands.RankinSelberg`.
 
@@ -112,7 +112,7 @@ analytic JPSS factor of a generic pair is claimed.
 
 ## Lean checks
 
-`lean_check` in environment `bb168ec3-1031-46d9-816b-5c2ed7bbe1a6`, module
+`lean_check` in the pinned environment, module
 `Langlands.Representation.RankinSelberg.LanglandsPairEpsilonFactorExistenceProof`,
 declaration `Langlands.RankinSelberg.langlandsPairEpsilonFactorExistence`:
 

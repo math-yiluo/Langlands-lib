@@ -1,6 +1,6 @@
 # Actual original framing squares on a restricted base-change test
 
-This internal unit retains the given original framing square on a test algebra
+This module retains the given original framing square on a test algebra
 over a new Nilp quotient, viewed as a test over the old quotient and then
 typed with its actual new scalar structure. It uses the existing all-test
 framing condition and equality of scalar structures; it makes no new
@@ -34,5 +34,7 @@ hypotheses. The specialized construction retains the local field,
 finite-dimensional central division algebra, embedded field, coefficient and
 residue fields, fixed height-certified frame and Nilp objects in universes
 `{v,u}`. Covers may be infinite and coefficient maps may merge generators.
-Preservation of the extended comparison square and class functoriality remain
-further constructions.
+Preservation of the extended comparison square and class functoriality are
+outside this module; they are `framingSquare_baseChange` in
+`DrinfeldFramedComparisonBaseChange` and the functor of
+`DrinfeldFramedClassFunctor`.

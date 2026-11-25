@@ -1,6 +1,6 @@
 # Plus-sign Fourier integral of a p-adic lattice coset
 
-Worker 741 authored this focused proposition definition.
+This is a focused proposition definition.
 `Langlands.HarmonicAnalysis.PadicLatticeFourierStatement.{u}` has implicit
 parameters `{p : ℕ}` and `[Fact p.Prime]`, followed by explicit parameters
 `(F : Langlands.PadicField.{u} p)` and `(T : F.TopologicalData)`. It returns
@@ -84,7 +84,7 @@ is `μ(O)` times the characteristic function of `π^(-n) O`.
 
 The measure is converted with `ENNReal.toReal`. This loses nothing: `L_m` is
 compact and open, so `0 < μ(L_m) < ∞`. Proving this finiteness is part of the
-future proof; it is not a hypothesis here.
+proof; it is not a hypothesis here.
 
 ## Scope
 
@@ -102,9 +102,9 @@ It does not assert any of the following:
 - the larger `PadicFourierDualityStatement`;
 - any local-factor functional equation.
 
-## Expected proof route (not part of this artifact)
+## Expected proof route (not part of this module)
 
-A later proof task can argue as follows.
+A proof can argue as follows.
 
 - Translate by `x = a + t`, using that additive Haar measure is
   translation invariant. Then `ψ(xy) = ψ(ay) ψ(ty)`, so the integral is
@@ -112,7 +112,7 @@ A later proof task can argue as follows.
 - Character orthogonality on the compact open subgroup `L_m` gives `μ(L_m)` if
   `t ↦ ψ(ty)` is trivial on `L_m`, and `0` otherwise.
 - `t ↦ ψ(ty)` is trivial on `L_m` exactly when `y ∈ L_(n-m)`. This follows
-  from the accepted conductor API: `additiveTrivialAt_iff_le_conductor`,
+  from the Library's conductor API: `additiveTrivialAt_iff_le_conductor`,
   `mul_mem_additiveLattice_iff` and `integer_annihilator_iff_mem_additiveLattice`
   in `Langlands.PadicField.TopologicalData`.
 - Compactness and openness of the lattices follow from `T.isCompact_integers`,
@@ -157,12 +157,11 @@ lattice, conductor and Fourier conventions.
     `f^(y) = ∫ f(x) ψ(xy) dx` for an arbitrary Haar measure `dx`.
   - (3.2.6) there defines `n(ψ)` as the largest `n` with `ψ(π^(-n) O) = 1`.
 
-Worker 741 read Weil PDF pp.57–59 and 121–125, viewing a rendered image of
-PDF p.124 for formula (2), and Tate PDF pp.21–22. No errata file for either
+Weil PDF pp.57–59 and 121–125 and Tate PDF pp.21–22 were read for this
+statement, PDF p.124 from a rendered image for formula (2). No errata file for either
 source was present in the public notes or the literature collection. The bundled
 character, the raw `Set.indicator` formulation, the `toReal` measure
 coefficient and the explicit integrability conjunct are derived Lean
 packaging, not source notation.
 
-The environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`: Lean 4.34.0 and
-Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
+The environment is Lean 4.34.0 and Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.

@@ -1,7 +1,7 @@
 # The coset sum of a fundamental weight over its simple-vertex field
 
 This module specializes the coset sum of `StarFixedWeights` to the actual simple-vertex
-field of a `TitsIndexData` (Task 7603, clause 4, lattice part).
+field of a `TitsIndexData`: the lattice part of the transfer law for that field.
 
 ## Setting
 

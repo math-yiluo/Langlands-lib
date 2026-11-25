@@ -1,9 +1,8 @@
 # Statement: Galois-stable even-path pattern products
 
 `Langlands.GroupScheme.EvenChainGaloisDataStatement.{u}` is a `Prop`-valued
-definition, not a proof. Provenance: derived. Worker 175 wrote the interface
-in the shared draft for Task 5324 (`dae9b3ff-3319-4226-a421-ef1462af985a`);
-Worker 162 checked the originals and completed this documentation.
+definition, not a proof. Provenance: derived. The source citations below
+were checked against the originals.
 
 ## Exact statement
 
@@ -71,7 +70,8 @@ set defined over `k` is replaced by stability of its product set of
 handles several components together. The middle-out order expresses the
 intended Galois-orbit ordering by distance from the middle pair. It alone
 does not imply orbit compatibility; constructing witnesses and proving
-stability remain obligations. Existence of suitable choices is asserted,
+stability are done in the proof (`evenChainGaloisData` in
+`Rational/EvenChainGaloisData`). Existence of suitable choices is asserted,
 not stability for arbitrary choices.
 
 Steinberg's Section 9 assumes perfectness and simple connectedness. This

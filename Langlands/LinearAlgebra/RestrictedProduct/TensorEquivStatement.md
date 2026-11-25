@@ -1,16 +1,17 @@
 # Inverse laws for the restricted-product tensor equivalences
 
-`RestrictedProduct.TensorEquivInverseLaws` is a proposition definition in
+`Langlands.LinearAlgebra.RestrictedProduct.TensorEquivInverseLaws` is a proposition definition in
 `Langlands.LinearAlgebra.RestrictedProduct.TensorEquivStatement`. It states
 both inverse identities for each of the published equivalences in
 `Langlands.LinearAlgebra.RestrictedProduct.TensorEquiv`, using the published
 canonical forward maps and the equivalences' actual `.symm` inverses.
 This module states a target; it contains no theorem proving that target.
-An accepted exact proof is a subsequent phase.
+The theorem `Langlands.LinearAlgebra.RestrictedProduct.tensorEquivInverseLaws_proof`
+in `Langlands.LinearAlgebra.RestrictedProduct.TensorEquivProof` proves it.
 
 The declaration has four independent universe parameters, in the order
 `.{uR, uM, uι, uN}`. Its full outer type is
-`RestrictedProduct.TensorEquivInverseLaws.{uR, uM, uι, uN} : Prop`.
+`Langlands.LinearAlgebra.RestrictedProduct.TensorEquivInverseLaws.{uR, uM, uι, uN} : Prop`.
 Every mathematical datum and instance is universally quantified inside its
 value. The value is a conjunction `A ∧ B`, whose two clauses quantify their
 data separately. Consequently, the first clause retains general modules
@@ -136,9 +137,8 @@ are unchanged.
 
 ## Provenance and attribution
 
-This is an internal target derived from the accepted constructions, with
-the mathematical specification by Worker 98 and the Lean/Markdown
-formulation by Worker 288. The Imperial original constructs the
+This is an internal target derived from the existing constructions. The
+Imperial original constructs the
 equivalences at lines 234–244 of
 [`FLT/DedekindDomain/FiniteAdeleRing/TensorRestrictedProduct.lean`](https://github.com/ImperialCollegeLondon/FLT/blob/923d45174c500aa1d994ba973bac38ea39eacbf7/FLT/DedekindDomain/FiniteAdeleRing/TensorRestrictedProduct.lean#L234-L244),
 at commit `923d45174c500aa1d994ba973bac38ea39eacbf7`. The general module
@@ -164,7 +164,7 @@ Mathlib at pinned commit `5ed2965256430c3649e86755f9576b54eca72435`,
 laws `LinearEquiv.apply_symm_apply` and `LinearEquiv.symm_apply_apply`.
 Those laws, together with the canonical forward maps of the published
 equivalences, motivate this target. This provenance does not constitute
-an accepted proof of the exact grouped proposition.
+a proof of the exact grouped proposition.
 
 The relevant public
 [finite-adele base-change audit](../../../notes/reuse/finite-adele-base-change-audit.md),
@@ -175,12 +175,21 @@ file was found. No Anthropic derivative code is used.
 
 ## Development validation
 
-In environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` (Lean 4.34.0,
-Mathlib `5ed2965256430c3649e86755f9576b54eca72435`), `lean_check` built
-the paired statement module with no errors or warnings. Inspection reports
+With Lean 4.34.0 and Mathlib `5ed2965256430c3649e86755f9576b54eca72435`,
+a check built the paired statement module with no errors or warnings. Inspection reports
 a definition returning `Prop`, with `statement_returns_prop: true` and
 exactly the universe parameters `[uR, uM, uι, uN]`. The only transitive
 axioms are `propext`, `Classical.choice` and `Quot.sound`. A separate
 private diagnostic inspected the full unapplied types of the two imported
 equivalences and the two maps. These development checks do not establish
-independent semantic acceptance or an exact proof of this target.
+an exact proof of this target.
+
+## Names and place (22 November 2026)
+
+The Library's own declarations of this directory, which the Imperial project does not declare, moved on
+that day from the root name space `RestrictedProduct` to `Langlands.LinearAlgebra.RestrictedProduct`
+(each name gets the prefix `Langlands.LinearAlgebra.`; for instance
+`RestrictedProduct.TensorEquivInverseLaws` is now `Langlands.LinearAlgebra.RestrictedProduct.TensorEquivInverseLaws`). The Lean file
+opens `RestrictedProduct` before its name space so that the Imperial-named declarations it uses keep their short names. Statements and proofs change only in these
+names; the declarations of the Imperial project that it uses (`lTensor`, `rangeLTensor`, …) are in the
+modules under `Langlands/Mathlib/`.

@@ -1,7 +1,5 @@
 # Ambient isomorphisms of pseudo-parabolic subgroups
 
-Author: Worker 274.
-
 This internal transport module works over every field in universe `u` and
 retains all relative scheme tests. It proves that the published
 pseudo-parabolic and minimal pseudo-parabolic predicates are invariant under

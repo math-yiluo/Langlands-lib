@@ -1,7 +1,5 @@
 # Restricting topological inputs to an actual Levi
 
-Author: Worker 1343.
-
 This is an internal construction used to apply actual standard-family
 induction compatibility to Corollary 1.10(a). It proves elementary
 topological inheritance for literal subgroup intersections. It does not

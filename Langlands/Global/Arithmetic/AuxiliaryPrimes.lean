@@ -3,7 +3,7 @@ import Mathlib.GroupTheory.QuotientGroup.Basic
 import Mathlib.Data.Finset.Basic
 import Langlands.Global.Arithmetic.KummerRadical
 import Langlands.Global.Arithmetic.SUnitIndex
-import Langlands.ClassField.Global.LocalPowerIndex
+import Langlands.ClassFieldTheory.Global.LocalPowerIndex
 import Langlands.Global.Arithmetic.CyclicNonsplitPrimeStatement
 
 /-! # Choosing auxiliary characters with prescribed common kernel -/
@@ -153,7 +153,7 @@ end GroupTheory
 section LocalCharacters
 
 open NumberField IsDedekindDomain IsDedekindDomain.HeightOneSpectrum
-open Langlands.ClassField.Global Langlands.Global.Arithmetic.SUnitIndex
+open Langlands.ClassFieldTheory.Global Langlands.Global.Arithmetic.SUnitIndex
 open scoped NumberField Langlands.Global.AdelicFunctoriality.FiniteExtension
 
 variable {K : Type*} [Field K] [NumberField K] (S : Finset (HeightOneSpectrum (𝓞 K)))
@@ -256,7 +256,7 @@ end LocalCharacters
 section Global
 
 open NumberField IsDedekindDomain IsDedekindDomain.HeightOneSpectrum Polynomial
-open Langlands.ClassField.Global Langlands.Global.Arithmetic.SUnitIndex
+open Langlands.ClassFieldTheory.Global Langlands.Global.Arithmetic.SUnitIndex
   Langlands.Global.Arithmetic.KummerRadical
 open scoped NumberField Langlands.Global.AdelicFunctoriality.FiniteExtension
 

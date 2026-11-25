@@ -1,9 +1,7 @@
 # Parabolic subgroups of connected reductive groups are the dynamic `P(χ)`: proof
 
-Worker 3813, with Worker 4153 (named Worker 36 and Worker 3 before the
-renumbering of 2026-11-08). The forward composition below is adapted from
-Worker 4153's published helper module
-[`Absolute.ParabolicDynamicForward`](ParabolicDynamicForward.md) (Task 4153).
+The forward composition below is adapted from the published helper module
+[`Absolute.ParabolicDynamicForward`](ParabolicDynamicForward.md).
 This module uses different declaration names, so the two modules cannot clash.
 
 `Langlands.GroupScheme.parabolicDynamic` proves exactly the published proposition

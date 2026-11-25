@@ -110,7 +110,7 @@ theorem generalLinearAdelicCenterAnnihilator
   constructor
   · intro hz
     apply (finitePlotSmoothGeneralLinearEquiv F n).injective
-    rw [map_zero, finitePlotSmoothGeneralLinearEquiv_adelicCenterAction]
+    rw [LinearEquiv.map_zero, finitePlotSmoothGeneralLinearEquiv_adelicCenterAction]
     apply Langlands.Automorphic.finiteSmoothSlice_injective F n
     funext b
     dsimp only
@@ -118,7 +118,7 @@ theorem generalLinearAdelicCenterAnnihilator
     exact hz b
   · intro hz b
     have h := finitePlotSmoothGeneralLinearEquiv_adelicCenterAction F n hsmooth hcalc z f
-    rw [hz, map_zero] at h
+    rw [hz, LinearEquiv.map_zero] at h
     have hs := congrArg (Langlands.Automorphic.finiteSmoothSlice F n b) h
     change Langlands.Global.ArchimedeanGL.centerAction F n
       (GeneralLinearGroupPoints.infiniteCenterEquiv F n hsmooth hcalc z)

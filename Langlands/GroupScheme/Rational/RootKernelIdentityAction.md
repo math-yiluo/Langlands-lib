@@ -41,9 +41,8 @@ descent. The character may be divisible, so its kernel may be nonreduced.
 
 The provenance is internal composition of `Rational.RootKernelIdentityTorus`,
 `Rational.RootSubgroup`, `RepresentedAction`, `ActionDescent`, and
-`Rational.CharacterFpqcProof`. The identity-component construction of
-Workers 947 and 967 and the fpqc action-descent construction of Worker 1335
-are reused unchanged. Smoothness, affineness and representability of `C`
+`Rational.CharacterFpqcProof`. The identity-component construction and the
+fpqc action-descent construction are reused unchanged. Smoothness, affineness and representability of `C`
 remain explicit assumptions. This file does not assert that the identity
 component is reductive, that the action has nontrivial weights, or that any
 normalizing point moves a root.

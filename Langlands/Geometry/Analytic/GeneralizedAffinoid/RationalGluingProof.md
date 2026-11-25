@@ -1,7 +1,5 @@
 # Scalar rational descent for arbitrary positive polyradii
 
-Authors: Worker 101 and Worker 146.
-
 The theorem `RationalChart.wholeSpectrumRationalGluing` has the exact target
 `RationalChart.WholeSpectrumRationalGluingStatement.{u, v}`. It concerns the
 actual weighted rational quotient algebras and their published product-overlap

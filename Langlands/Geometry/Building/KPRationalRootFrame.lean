@@ -72,8 +72,9 @@ private theorem exists_zmultiples_fibreShiftGroup (hΨ : IsAffineRootSystemWithR
     change Ioo (-1 : ℝ) 1 ⊆ closure T at hsub
     rw [hfin.isClosed.closure_eq] at hsub
     exact (Set.Ioo_infinite (by norm_num : (-1 : ℝ) < 1)).not_finite (hfin.subset hsub)
-  obtain ⟨d, hd⟩ := H.dense_or_cyclic.resolve_left hd
-  exact ⟨d, hd.trans (AddSubgroup.zmultiples_eq_closure d).symm⟩
+  obtain ⟨d, hd⟩ := (AddSubgroup.isAddCyclic_iff_exists_zmultiples_eq_top H).mp
+    (H.dense_or_cyclic.resolve_left hd)
+  exact ⟨d, hd.symm⟩
 
 private theorem reflect_in_fibre (hΨ : IsAffineRootSystemWithRankZero Ψ)
     {ψ φ : A →ᵃ[ℝ] ℝ} (hψ : ψ ∈ Ψ) (hφ : φ ∈ Ψ) (hlin : φ.linear = ψ.linear) :

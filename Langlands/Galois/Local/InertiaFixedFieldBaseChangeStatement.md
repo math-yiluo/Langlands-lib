@@ -1,7 +1,5 @@
 # Inertia fixed fields under finite local base change
 
-Author: Worker 60.
-
 `Langlands.PadicField.InertiaFixedFieldBaseChange.{u}` is a proposition
 asserting the full maximal-unramified-field identity under finite local
 base change. This module states the proposition and does not prove it.
@@ -126,7 +124,7 @@ using the compatibility of `j` on `D`, remains part of the proof.
 
 ## Relation to neighboring statements and finite descent
 
-Worker 154's published
+The published
 `Langlands.ClassFieldTheory.Local.UnramifiedBaseChangeStageExistence`
 asserts containment of a specified finite unramified Galois source stage
 in some finite unramified Galois target stage. Its compatible closure
@@ -138,9 +136,11 @@ containment described above. It does not supply the reverse containment
 or the full equality asserted here. That statement is not assumed in
 the Lean target.
 
-Finite unramified exhaustion of the actual inertia fixed field and
-generic descent of finite extensions from a directed union are separate
-obligations. After generic descent expresses a finite extension of
+Finite unramified exhaustion of the actual inertia fixed field
+(`InertiaFixedFieldUnramifiedProof`) and generic descent of finite
+extensions from a directed union
+(`Langlands.FieldTheory.FiniteExtensionDescentProof`) are separate
+results. After generic descent expresses a finite extension of
 `F_nr` as `D F_nr`, the present identity identifies that compositum with
 `D_nr`; this is the local-field identification used in Serre V.4
 Lemma 7. If descent initially yields an abstract finite field, its
@@ -148,6 +148,7 @@ realization in the specified closure and the compatible embeddings must
 also be supplied separately.
 
 This proposition contains no generic descent theorem, simultaneous
-finite-tower construction, or norm equation. Those results, the
-downstream norm transport, and the proof of this full field comparison
-remain separate work.
+finite-tower construction, or norm equation. Those results and the
+downstream norm transport are outside this module; the full field
+comparison is proved by `inertiaFixedFieldBaseChange` in
+`InertiaFixedFieldBaseChangeProof`.

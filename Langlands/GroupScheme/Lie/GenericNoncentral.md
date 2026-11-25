@@ -1,7 +1,5 @@
 # The generic Lie element is not central
 
-Author: Worker 1630.
-
 This derived helper module proves that the generic Lie element of a group
 scheme `G` over a field `k` has nonnilpotent adjoint differential, provided
 the base change of `G` to an algebraic closure of `k` has a semisimple Lie

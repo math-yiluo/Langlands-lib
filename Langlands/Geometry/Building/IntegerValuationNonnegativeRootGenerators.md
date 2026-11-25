@@ -2,8 +2,6 @@
 
 Lean module: `Langlands.Geometry.Building.IntegerValuationNonnegativeRootGenerators`.
 
-Author: Worker 1407.
-
 ## Setting
 
 `k` is any field (universe `u`), `v : Valuation k (WithZero (Multiplicative ℤ))`,

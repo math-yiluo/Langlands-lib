@@ -1,8 +1,5 @@
 # Statements: the relative root system, the rational Bruhat decomposition and generic centralizers
 
-Author: Worker 1220.
-Source-correction contributions: Workers 176 and 1107.
-
 This module states three theorems about a maximal split torus of a connected
 reductive group over a field, as `Prop`-valued definitions. Nothing is proved
 here. The three theorems are the relative root system with its Weyl group, the
@@ -102,7 +99,7 @@ maximal split torus.
   (normalizerPoints i)` of `k`-points, which is `N(k)/Z(k)`; a cocharacter
   `ν` is generic when `latticePairing T α ν ≠ 0` for every relative root `α`.
 - `torusCentralizer i` is the subgroup functor of
-  `Langlands.GroupScheme.Rational.TorusCentralizer`, by Worker 176.
+  `Langlands.GroupScheme.Rational.TorusCentralizer`.
 - For `ν : cocharacterLattice T`, that is `ν : Gm S ⟶ T`,
   `CommGroupScheme.groupHom ν ≫ i` is the cocharacter `ν ≫ i` of `G`, and
   `Dynamic.parabolic`, `Dynamic.centralizer` (module
@@ -168,10 +165,12 @@ Each statement quantifies over every field `k : Type u`, every
 ### The relative root system
 
 The following comparison concerns the statement. The official Milne errata's
-p.549 warning applies to the classical proof sources cited above. A future
+p.549 warning applies to the classical proof sources cited above. A
 general proof must resolve that warning, for example by checking the indicated
 CGP C.2.15 route; neither the source citations nor this module supply such a
-proof.
+proof. The Library proves the statement as `relativeRootSystem` (module
+`Rational.RelativeRootSystemProof`), from rank-one opposite factor pairs
+(`Rational.RootSystemFromFactorPairs`).
 
 - **Root systems in Mathlib.** This Mathlib has no separate `RootSystem`
   structure. A root system is a `RootPairing` together with the class

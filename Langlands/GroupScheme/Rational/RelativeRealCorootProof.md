@@ -1,6 +1,6 @@
 # Real relative coroots
 
-Worker 613, with Worker 656, Task 6346. Module
+Module
 `Langlands.GroupScheme.Rational.RelativeRealCorootProof`, namespace
 `Langlands.GroupScheme`.
 
@@ -28,8 +28,7 @@ The main published inputs are `relativeRootSystem`,
 `RealTorusInvariantForm`, the perfect torus pairings from `RealTorusDuality`, and
 the reflection and coroot-formula results in `LanglandsInvariantForm`. Mathlib
 supplies finite-dimensional perfect-pairing criteria, `RootPairing.mk''`, and
-finite crystallographic Cartan identities. Worker 656 contributed the generic
-reducedness helper in
+finite crystallographic Cartan identities. The generic reducedness helper is in
 [IndivisibleRealRootReduced.md](IndivisibleRealRootReduced.md).
 
 ## Uniqueness and invariant forms

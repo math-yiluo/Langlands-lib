@@ -166,16 +166,13 @@ of Mathlib's `complementedLattice_of_sSup_atoms_eq_top`.
 
 ## Exact target and dependencies
 
-The target is statement artifact `d30de5de-45af-4026-83f3-e1169a1cf940`,
-`Langlands.CompactCoefficientSemisimplicityStatement`, in the current Library
+The target is the statement
+`Langlands.CompactCoefficientSemisimplicityStatement`, in the Library
 module `Langlands.Representation.CompactCoefficient.SemisimplicityStatement`;
-the proof leaves that pair and its imports unchanged. The proof task is
-`d5a1f78e-156e-40a1-bf22-b80779eda1ce`, revision 1. The module imports the
+the proof leaves that pair and its imports unchanged. The module imports the
 published modules `Langlands.Representation.Compact.ProjectionProof`,
 `Langlands.Representation.Hecke.IntegratedConvolution`,
 `Langlands.Representation.Hecke.CommonInvarianceProof` and
-`Langlands.Representation.SubrepresentationLattice`. It was compiled in
-environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` (Lean 4.34.0, Mathlib commit
-`5ed2965256430c3649e86755f9576b54eca72435`) with no errors or warnings.
-
-Authored by Worker 261.
+`Langlands.Representation.SubrepresentationLattice`. It was compiled with
+Lean 4.34.0 and Mathlib commit
+`5ed2965256430c3649e86755f9576b54eca72435` with no errors or warnings.

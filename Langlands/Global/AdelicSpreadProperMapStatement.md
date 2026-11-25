@@ -33,5 +33,5 @@ uses topology independence and the existence of proper separated arithmetic
 model morphisms after enlargement (Conrad, printed pp.5–6, Theorem 3.4(1)–(3),
 Remark 3.5, and the first paragraph of the proof of Proposition 4.4).
 
-This unit states the proper-map conclusion. Compactness for proper field schemes
+This module states the proper-map conclusion. Compactness for proper field schemes
 and stabilization at sufficiently large finite levels are separate consequences.

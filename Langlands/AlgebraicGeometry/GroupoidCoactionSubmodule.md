@@ -1,7 +1,5 @@
 # Stable submodules and restriction of coactions
 
-Author: Worker 148.
-
 This internal algebraic unit uses the published `GroupoidCoaction`, `IsHom`,
 flat-test `IsOneCocycle`, and `OneCohomologyVanishes` predicates unchanged.
 The commutative rings B and C have arbitrary universe u, the B-module M has

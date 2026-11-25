@@ -5,16 +5,13 @@ Namespace `Langlands.Aubert.General.RepresentedParabolic`. Universe parameters `
 The module contains one **statement**, the `Prop`-valued definition
 `SupercuspidalRemarksStatements`; it proves nothing.
 
-Worker 1222 wrote this statement unit under the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`.
-
 ## Source and provenance
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French edition dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1222 read VI.2.1, printed pp.137–139 / PDF pp.143–145. After the
+VI.2.1, printed pp.137–139 / PDF pp.143–145, was read. After the
 definition (printed p.137):
 
 > *Remarques.* 1. Une représentation lisse `(π, V)` de `G` est supercuspidale si
@@ -31,7 +28,7 @@ After the proof of the Theorem (printed p.139):
 
 The general subquotient theorem already exists as
 `Langlands.Aubert.General.RepresentedParabolic.IsSupercuspidal.of_isSubquotient`
-in `RepresentedCuspidalProjection.lean`. This unit packages that assertion with
+in `RepresentedCuspidalProjection.lean`. This module packages that assertion with
 the two other general remarks as a single statement. The first remark of the first block, that standard parabolics
 suffice, compares the represented predicate with the standard-family one. It needs
 the conjugacy of parabolics to standard ones, and it is not stated here (see
@@ -92,7 +89,9 @@ transport of Jacquet modules under conjugation.
 
 ## Remaining obligations
 
-The proof is a separate obligation.
+The proof is separate. `supercuspidalRemarksReduction` in
+`SupercuspidalRemarksReduction` proves the statement from
+`JointSpecialCompactBasisExistenceStatement`.
 
 ## Imports
 

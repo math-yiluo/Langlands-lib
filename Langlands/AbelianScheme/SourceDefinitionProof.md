@@ -1,7 +1,5 @@
 # Equivalence of the geometric and bundled abelian-scheme definitions
 
-Author: Worker 133.
-
 `Langlands.AbelianScheme.sourceDefinitionEquivalence.{u}` proves exactly
 `Langlands.AbelianScheme.SourceDefinitionEquivalence.{u}` from the published
 `SourceDefinition` module. For every scheme `S : Scheme.{u}` and actual group

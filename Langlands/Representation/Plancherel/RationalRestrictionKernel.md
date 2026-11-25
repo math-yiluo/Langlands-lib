@@ -1,7 +1,5 @@
 # The actual split-center restriction kernel
 
-Author: Worker 200.
-
 This derived construction compares the actual restriction maps with the
 published abstract-subgroup restriction kernel. It contributes to
 J.-L. Waldspurger, *La formule de Plancherel pour les groupes p-adiques
@@ -9,7 +7,7 @@ J.-L. Waldspurger, *La formule de Plancherel pour les groupes p-adiques
 `waldspurger-2003-plancherel`, SHA-256
 `4b6a6162cd0b3863703fb2f65d1698f926caf813114917f2084c16e38f2e30f7`.
 That passage states finite kernel for restriction of unitary unramified
-characters from \(G\) to \(A_G\). The present unit proves the kernel comparison
+characters from \(G\) to \(A_G\). This module proves the kernel comparison
 and deduces finiteness under an explicit finite-index premise about the
 actual central valuation image.
 
@@ -103,7 +101,7 @@ The field universe is arbitrary, with no characteristic restriction. The
 construction requires no connectedness, reductivity, finite type or torus
 structure. Its intended application takes \(T=A_G\) and the actual split-center
 inclusion, but finite index of that actual valuation image remains explicit.
-The unit supplies no proof of that premise, surjectivity or character extension,
+The module supplies no proof of that premise, surjectivity or character extension,
 topological or manifold structure on the kernel, Haar normalization,
 stabilizer or orbit-family finiteness, spectral finiteness or Plancherel identity.
 

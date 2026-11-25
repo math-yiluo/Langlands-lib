@@ -55,7 +55,7 @@ fraction field directly.
 
 ## Provenance and scope
 
-Worker 477 implemented this internal categorical assembly. Its inputs
+This is an internal categorical assembly. Its inputs
 are the published actual-bundle results in
 `ValuationRingTwoAxisExtensionProof` and
 `FieldAmpleDiagonalCorrespondenceProof`, and ampleness transport from

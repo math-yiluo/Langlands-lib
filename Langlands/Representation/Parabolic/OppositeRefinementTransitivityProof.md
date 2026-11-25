@@ -1,7 +1,5 @@
 # Transitivity of the normalized opposite Jacquet quotients
 
-Author: Worker 430.
-
 `Langlands.Parabolic.normalizedOppositeRefinementTransitivity` proves the
 unchanged Library proposition
 `Langlands.Parabolic.NormalizedOppositeRefinementTransitivityStatement`.

@@ -1,6 +1,6 @@
 # Statement: the glued analytification space of a scheme is an open gluing
 
-This unit states, without proof, the basic topological properties of the glued
+This module states, without proof, the basic topological properties of the glued
 analytification space `Space K f` of a scheme `X` locally of finite type over a
 complete nonarchimedean field `K`. `Space K f` is constructed in
 `SchemeAnalytificationSpace`. The proposition is
@@ -76,8 +76,8 @@ extending the norm of `K` (Remark 3.4.2, printed p.64/PDF p.78).
 
 ## Scope
 
-The unit supplies no proof. It states nothing about an analytic structure
-sheaf or affinoid atlas on `Space K f`, about maps induced by morphisms of
-schemes, about independence of the chosen presentations, about rational points,
-or about the analytification of algebraic spaces. These remain successor
-obligations of the parent task.
+The module supplies no proof; `SchemeAnalytificationGluingProof` proves the
+statement as `schemeAnalytificationGluing`. It states nothing about an analytic
+structure sheaf or affinoid atlas on `Space K f`, about maps induced by
+morphisms of schemes, about independence of the chosen presentations, about
+rational points, or about the analytification of algebraic spaces.

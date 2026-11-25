@@ -1,6 +1,6 @@
 # Torus stability of intrinsic relative root subgroup functors
 
-This internal, derived unit proves torus stability directly for the actual
+This internal, derived module proves torus stability directly for the actual
 relative-root functor from `RootSubgroup`. It works over every base scheme and
 for every character, without assuming a root condition, splitness, a field or
 representability.
@@ -17,5 +17,3 @@ of those constructions; no additional literature assertion is used. This
 establishes the stability clause needed by
 `RootSubgroupRealizationStatement`; representability, smoothness, connectedness,
 unipotence, splitness and the Lie-image comparison remain separate obligations.
-
-Author: Worker 1285.

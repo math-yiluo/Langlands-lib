@@ -1,7 +1,5 @@
 # Bounded powers in a normed ring
 
-Author: Worker 56.
-
 `Langlands.Analytic.HasBoundedPowers a` says that there exists a positive real
 number `C` such that `‖a ^ n‖ ≤ C` for every natural number `n`. The same `C`
 must work for all exponents, including zero. The predicate is defined for any

@@ -22,8 +22,8 @@ The proof is the conjunction of three theorems.
      `coinvariantTensorIso_inv_tmul` (inverse map `T ⊗ w ↦ T·[w]`).
 2. `normalQuotientAdjunctionStatement` and
 3. `normalQuotientInductionAdjunctionStatement`, imported unchanged from the
-   published module `Langlands.Representation.Hecke.NormalQuotientAdjunctionProof`
-   (Worker 150): the Proposition `j_N ⊣` quotient pullback and the Corollary
+   published module `Langlands.Representation.Hecke.NormalQuotientAdjunctionProof`:
+   the Proposition `j_N ⊣` quotient pullback and the Corollary
    for a closed subgroup.
 
 The theorem uses only the standard axioms `propext`, `Classical.choice` and

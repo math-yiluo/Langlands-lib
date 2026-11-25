@@ -72,5 +72,6 @@ The module compiles with no errors or warnings.
 
 ## Provenance
 
-Internal to Task 7070, built on the Library's block Fourier coefficients and Frobenius functions
-(`RealBlockJacquetFunctional`, `RealJacquetFrobenius`) and on Worker 5731's `frobMap`.
+Internal to the proof of `RealInterlacedInducedInducedLinkedJacquetFunctionalStatement`, built on
+the Library's block Fourier coefficients and Frobenius functions
+(`RealBlockJacquetFunctional`, `RealJacquetFrobenius`) and on `frobMap` (`RealCharacterCrossing`).

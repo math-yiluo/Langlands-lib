@@ -1,7 +1,5 @@
 # Actual-local character normalization and norm hypotheses
 
-Author: Worker 85.
-
 This module proves four existing targets from
 `Langlands.Weil.Local.RepresentationStatements`. Each theorem takes
 `{p : ℕ} [Fact p.Prime] (F : PadicField.{u} p)`. The character normalization

@@ -1,7 +1,6 @@
 # Deligne's tame Gauss-sum formula for `ε₀`
 
-Worker 33 wrote this module for task `e534647a`. It adds Deligne (5.10) to that
-task's coverage map. This is the evaluation of the rank-one modified local
+This module covers Deligne (5.10). This is the evaluation of the rank-one modified local
 constant `ε₀` as a residue-field Gauss sum when the quasicharacter is at most
 tamely ramified. The main declaration is
 `Langlands.LocalFactor.PadicAbelianTameEpsilonZeroStatement`. It is a

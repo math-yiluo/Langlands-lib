@@ -1,7 +1,5 @@
 # Conditional reduction of Renard VI.10.4, Corollary and Remark 3, to the Theorem of VI.10.4
 
-Worker 5226, task 03c64afa (Renard VI.10.4–VI.10.5), target 3.
-
 The source is Renard, *Représentations des groupes réductifs p-adiques*, French version
 dated 9 July 2026 (`renard-2026-representations-groupes-reductifs-padiques`,
 SHA-256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`):
@@ -12,11 +10,11 @@ SHA-256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`):
 
 **Scope.** This module does not prove the published target
 `BernsteinBlockCenterStatements` unconditionally. It proves that the target follows from
-one published statement that is not yet proved in the Library:
+one published statement:
 `BernsteinBlockCenterFunctionsStatement`, the first sentence of the Theorem of VI.10.4 with
-Remark 1 (module `BernsteinCenterFunctionsStatements`; its proof is the work of task
-c4d4541b). Once that statement is proved, the target follows by applying
-`bernsteinBlockCenterStatements_of_centerFunctions`.
+Remark 1 (module `BernsteinCenterFunctionsStatements`), which the Library proves only
+conditionally (module `BernsteinBlockCenterFunctionsReduction`). Given that statement, the
+target follows by applying `bernsteinBlockCenterStatements_of_centerFunctions`.
 
 ## Lean statement
 

@@ -7,7 +7,7 @@ paragraph through equation (II.2.1.1). The registered source is
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 The original page was read and visually checked. The separately registered
 2010-edition errata, PDF pp.2–3, do not correct these definitions; their later
-sheafification corrections are outside this unit.
+sheafification corrections are outside this module.
 
 `OpenBasis X` chooses a set of actual `TopologicalSpace.Opens X` and requires
 Mathlib's `IsTopologicalBasis` for its image as subsets of `X`, using the supplied
@@ -42,7 +42,5 @@ and composition laws. `restriction_naturality` and its evaluated version are
 component. `empty_section_eq_zero` exposes normalization on bundled objects.
 
 The categorical implementation and the intrinsic construction laws are derived
-formal packaging of the cited definitions. Worker 595 implemented them after
-reading the original; Worker 6 contributed the source audit and the suggested
-full-subcategory packaging. Stalks, basis extension and sheafification are not
-used here.
+formal packaging of the cited definitions, as a full subcategory. Stalks, basis
+extension and sheafification are not used here.

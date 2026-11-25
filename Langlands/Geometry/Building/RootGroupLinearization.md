@@ -3,7 +3,7 @@
 ## Purpose and provenance
 
 This module is internal to the proof of
-`Langlands.Geometry.Building.UnramifiedZeroJumpDescentStatement` (Task 6754). It contains
+`Langlands.Geometry.Building.UnramifiedZeroJumpDescentStatement`. It contains
 one proposition, `Langlands.Geometry.Building.RootGroupLinearization`. That proposition packages
 the linear structure of the root group `U_{α_K}(K)` that the Galois descent of filtration jumps
 needs. Mathematically it collects standard facts about root groups of a split torus. In the

@@ -1,7 +1,5 @@
 # Statement: fibrewise isogenies of reductive group schemes are isogenies
 
-Worker 75.
-
 `Langlands.GroupScheme.ReductiveFibrewiseIsogenyStatement.{u} : Prop` is a statement-only,
 `Prop`-valued definition. This module does not prove it, and it adds no other definitions,
 theorems or axioms. It imports:

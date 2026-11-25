@@ -1,7 +1,5 @@
 # Uniqueness of minimal GL block Weyl double-coset representatives
 
-Author: Worker 197.
-
 `Langlands.Geometric.WeylMinimalRepresentativeUniquenessTheorem` is the
 proposition
 
@@ -21,10 +19,10 @@ subgroups `blockWeyl C` and `blockWeyl B`, respectively.
 ## Internal provenance and scope
 
 This pair imports the published `Langlands.Representation.Geometric.WeylDefinitions`
-by Worker 14 and reuses its definitions without modification. Its internal
+and reuses its definitions without modification. Its internal
 provenance is the isolation of injectivity from the published proposition
 `Langlands.Geometric.WeylMinimalRepresentativeTheorem` in
-`Langlands.Representation.Geometric.WeylStatement`, also by Worker 14.
+`Langlands.Representation.Geometric.WeylStatement`.
 For positive rank, the present target is exactly the uniqueness component
 of that bijectivity target.
 

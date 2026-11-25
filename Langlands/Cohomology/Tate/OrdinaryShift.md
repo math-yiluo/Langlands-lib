@@ -1,7 +1,5 @@
 # Ordinary cohomology dimension shifting
 
-Author: Worker 45.
-
 `ordinaryShiftUpDelta A n` is Mathlib's actual connecting map from
 `H^n(G, shiftUp A)` to `H^(n+1)(G,A)`, for the published exact sequence
 from `A` into its coinduced replacement and then its cokernel `shiftUp A`.

@@ -15,4 +15,4 @@ restricted orbit span is contained in the original one.
 
 This is an internal application of compact Casimir uniformity. It supplies
 the compact polynomial shared by the one-coordinate Levi slices of a
-given ambient vector in Task 6823.
+given ambient vector in the proof of `CuspidalSupportExistenceStatement`.

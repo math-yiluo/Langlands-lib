@@ -28,5 +28,3 @@ uses only the published algebra and Mathlib's Laurent-polynomial, polynomial
 root-multiplicity and singleton-span lemmas. It proves neither the analytic
 common denominator nor the unit membership for any particular family of
 integrals. No finiteness hypothesis on the original set is added.
-
-Author: Worker 64.

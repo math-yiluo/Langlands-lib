@@ -5,8 +5,7 @@ Namespace `Langlands.CuspidalSupport`. Universe parameters `uF, uV`.
 The module contains one **statement**, the `Prop`-valued definition
 `BernsteinBlockTensorQuasiInverseStatement`. It proves nothing.
 
-Worker 1222 wrote this statement unit under the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`. It closes a gap recorded in the Chapter VI
+This module closes a gap recorded in the Chapter VI
 item ledger (`notes/renard/item-ledger-vi.md`): the quasi-inverse of the VI.10.2
 equivalence was not stated.
 
@@ -16,7 +15,7 @@ The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French edition dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1222 read VI.10.2, printed p.208 / PDF p.214:
+VI.10.2, printed p.208 / PDF p.214, was read:
 
 > Posons `R_Ω = End_G(Π_Ω)`. Exactement comme en VI.4.1, on introduit les foncteurs
 > `F_{Π_Ω} : M(G)_Ω → M(R_Ω)_d, (π, V) ↦ Hom_G(Π_Ω, π)`,
@@ -28,7 +27,7 @@ Worker 1222 read VI.10.2, printed p.208 / PDF p.214:
 
 The published `BernsteinBlockHomEquivalenceStatement` states that `F_{Π_Ω}` is an
 equivalence. Its Markdown records that the identification of the quasi-inverse with
-`G_{Π_Ω}` is not stated. This unit states it, in the same setting and in the same way as
+`G_{Π_Ω}` is not stated. This module states it, in the same setting and in the same way as
 the published VI.4.1 analogue `RationalSummandTensorQuasiInverseStatement`.
 
 ## The statement
@@ -78,10 +77,12 @@ commutes with direct sums because `Π_Ω` is a small projective generator of the
 isomorphism for `τ = Π_Ω`. Every object of the block is a cokernel of a map between direct
 sums of copies of `Π_Ω` (Lemma A.VIII.2), and the five lemma concludes.
 
-## Remaining obligations
+## Status of the proof
 
-The proof is a separate obligation. It needs the published VI.10.1 statements (task
-2174cd68) and the right exactness of balanced tensor products.
+The proof is not in this file. `BernsteinBlockTensorQuasiInverseReduction` derives the
+statement from the published VI.10.1 statement `BernsteinInducedProgeneratorStatement`, or
+from `BernsteinBlockHomEquivalenceStatement`; neither has an unconditional proof in the
+Library.
 
 ## Imports
 

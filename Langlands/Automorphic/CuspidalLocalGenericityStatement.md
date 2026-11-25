@@ -1,12 +1,10 @@
 # Actual local genericity of all cuspidal presentations
 
-Author: Worker 1809.
-
 `Langlands.Automorphic.CuspidalLocalGenericityStatement.{uF, uQ}` is a
 proposition definition. It is the published
 [`CuspidalUnitaryLocalGenericityStatement`](CuspidalUnitaryLocalGenericityStatement.md)
 with exactly one premise removed: the hypothesis
-`Langlands.ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T`.
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T`.
 It therefore covers every actual cuspidal realization and presentation that
 [`AssociatedGammaStatement`](AssociatedFactorStatement.md) quantifies over,
 because that consumer imposes no central-character condition. This module
@@ -160,8 +158,12 @@ This route needs no central character, no twist, and no unitarity. Let
    `Langlands.Global.HeckeFunctionalEquation.finiteAdditiveRestriction ψ_A v :
    AddChar (FiniteCompletion F v) Circle`. It is continuous by
    `continuous_finiteAdditiveRestriction`, and nontrivial by Weil's
-   Corollary 1. The Library does not yet prove either the existence of `ψ_A` or
-   this nontriviality.
+   Corollary 1. The Library proves both: the character
+   `Langlands.Global.HeckeFunctionalEquation.standardGlobalAdditiveCharacter`
+   (module `Langlands.Automorphic.AssociatedAdditiveInputs`) is trivial on the
+   diagonal by `standardGlobalAdditiveCharacter_diagonal`, and
+   `finiteAdditiveRestriction_ne_one` (module
+   `Langlands.Global.Factors.HeckeLocalData`) gives the nontriviality.
 2. **Whittaker coefficient on actual forms.** For each actual form `f` in the
    realization, define
    `W_f(g) = ∫_{N(F)\N(A)} f(n g) ψ_A^{-1}(∑ n_{i,i+1}) dn`. The integral uses a
@@ -244,12 +246,16 @@ None of them is supplied here, and unitarization is not tautological.
    presentations.
 4. **Local transport.** Identify the twisted local component with
    `(P.localComponent v) ⊗ |det|_v^{-σ/(r+1)}`, along with `hI` and `hA`. Apply
-   the unitary target once it is proved. This gives a functional `ℓ'` on the
+   the unitary target, which the Library proves as
+   `Langlands.Automorphic.cuspidalUnitaryLocalGenericity`. This gives a functional `ℓ'` on the
    twisted component. Transport it back to the original `ρ` by
    `ℓ(x) = ℓ'(x · |det|_A^{-σ/(r+1)})`. The result is still `ψ`-equivariant
    because `|det u|_v = 1` for unipotent `u`.
 
-Route A avoids all of steps 1–4. It is recommended for the later proof task.
+Route A avoids all of steps 1–4. It is the recommended route for a proof; the
+Library proves this statement as
+`Langlands.Automorphic.CuspidalPairPartialGamma.localGenericity` (module
+`Langlands.Global.Factors.CuspidalPairPartialGammaReduction`).
 
 ## Scope
 

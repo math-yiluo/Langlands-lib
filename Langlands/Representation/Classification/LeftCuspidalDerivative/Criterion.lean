@@ -314,7 +314,7 @@ def rightRegularEval : rightRegularRep.{uV, uG} (H := H) →ₗ[ℂ] (H → ℂ)
 theorem rightRegularEval_injective :
     Function.Injective (rightRegularEval.{uV, uG} (H := H)) := by
   intro v w h
-  exact ULift.ext _ _ (Subtype.ext h)
+  exact ULift.ext (Subtype.ext h)
 
 theorem rightRegularEval_equivariant (h : H) (s : rightRegularRep.{uV, uG} (H := H)) (g : H) :
     rightRegularEval ((rightRegularRep.{uV, uG} (H := H)).representation h s) g =

@@ -1,7 +1,5 @@
 # Artinian lifting of Picard-zero families, assuming the underlying line bundle lifts
 
-Author: Worker 225.
-
 This module reduces the target proposition
 `Langlands.AbelianScheme.PicardZeroArtinianLiftingStatement` to lifting a plain line
 bundle. The rigidification and the Picard-zero condition of the lift are not part of
@@ -42,10 +40,10 @@ All declarations are in the namespace
 The target is a derived formulation of the Artinian case of Faltings–Chai, *Degeneration
 of Abelian Varieties*, Chapter I, Remark 1.5(c); see the Markdown of
 `PicardZeroArtinianLiftingStatement`. This module formalizes step 1 of the mathematical
-outline in the context of task `d1735ac9-6af5-4460-8c3a-b09a43c01ffa`. Once the
+outline of the proof (see the Markdown of `PicardZeroArtinianLiftingProof`). Once the
 underlying line bundle lifts, the rigidification and the Picard-zero condition of the
-lift come for free. The hypotheses `hlift` are internal interfaces chosen for the split
-of that task between its two executors. They are not source theorems.
+lift come for free. The hypotheses `hlift` are internal interfaces chosen to split the
+proof into steps. They are not source theorems.
 
 ## Declarations and proofs
 

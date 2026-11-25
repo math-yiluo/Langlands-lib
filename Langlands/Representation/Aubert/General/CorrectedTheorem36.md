@@ -1,7 +1,7 @@
 # Corrected Theorem 3.6 on the full smooth support category
 
-Statement target by Worker 194, using Worker 379's support-category definition
-and Worker 23's actual normalized functor adapters.
+Statement target, using the support-category definition of `General.SupportCategory`
+and the actual normalized functor adapters of `General.Parabolic`.
 
 `Langlands.Aubert.General.CorrectedTheorem36Statement` is a proposition target
 for the actual complex. Fix standard-subset families `P`, `M`, `U`, their

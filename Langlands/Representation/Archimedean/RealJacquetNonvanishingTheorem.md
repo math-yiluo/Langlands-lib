@@ -22,7 +22,7 @@ The proof is a single application of two results:
 
 - `Langlands.Archimedean.RealJacquetNonvanishing.realJacquetNonvanishingSubquotientReduction :
   RealJacquetNonvanishingSubquotientReductionStatement.{uV}`. This is in the Library module
-  `Langlands.Representation.Archimedean.RealJacquetNonvanishingProof` (Worker 723). It says that
+  `Langlands.Representation.Archimedean.RealJacquetNonvanishingProof`. It says that
   `RealPrincipalSeriesSubquotientStatement.{uV}` implies `RealJacquetNonvanishingStatement.{uV}`,
   by Casselman's matrix-coefficient technique (Wallach 1979, 4.13).
 - `Langlands.Archimedean.realPrincipalSeriesSubquotient :
@@ -37,6 +37,5 @@ theorem realJacquetNonvanishing : RealJacquetNonvanishingStatement.{uV} :=
     realPrincipalSeriesSubquotient
 ```
 
-Both imported modules are in the Library. `RealPrincipalSeriesSubquotientProof` and its seven
-helper modules `RealSubquotient{Eval,Projection,Symbol,Finite,Average,KType,Main}` were published
-from the separate accepted candidate `72a4d5db-6944-471b-8977-a3d4ea8f24c0` of the same task.
+Both imported modules are in the Library. `RealPrincipalSeriesSubquotientProof` has seven
+helper modules `RealSubquotient{Eval,Projection,Symbol,Finite,Average,KType,Main}`.

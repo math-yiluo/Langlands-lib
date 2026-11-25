@@ -1,6 +1,6 @@
 # Finite full-domain covers along a specified embedded domain
 
-Author: Worker 36. Adapted from Worker 56's published
+This module is adapted from the
 `RationalChartDomainCoverLocalization` construction.
 
 This module transports actual finite full-domain covers along a particular

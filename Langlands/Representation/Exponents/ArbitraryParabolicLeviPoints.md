@@ -1,6 +1,6 @@
 # Levi points of an actual rational parabolic
 
-Author: Worker 6. Module `Langlands.Representation.Exponents.ArbitraryParabolicLeviPoints`, namespace `Langlands.Aubert.General.RepresentedParabolic`.
+Module `Langlands.Representation.Exponents.ArbitraryParabolicLeviPoints`, namespace `Langlands.Aubert.General.RepresentedParabolic`.
 
 This module identifies the rational points `M(F)` of a rational Levi subgroup, with their own canonical topology, with the literal Levi image `pointImage (l ≫ p)` inside `G(F)`. It then transports the published normalized induction and Jacquet functors of the represented-parabolic interface to smooth representations of `M(F)` itself. Renard works with `M` as a subgroup of `G` throughout. The published interface realizes the Levi as the image subgroup `pointImage (l ≫ p)`, while the published temperedness predicate `IsNormalizedExponentTempered` applies to representations of the points of a connected reductive group scheme. This module connects the two, as needed for statements about tempered representations of Levi subgroups (Renard VII.2.2–VII.2.6, printed pp.227–231 / PDF pp.233–237; registered source `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`).
 
@@ -41,4 +41,4 @@ The normalizations are those of the published functors, whose Markdown explains 
 
 ## Scope
 
-No statement about temperedness, exponents, adjunction, exactness or admissibility of the transported functors is made here. Those are separate statement units. The local compactness and nonarchimedean-group instances of `G(F)` are hypotheses, as in the published represented-parabolic interface.
+No statement about temperedness, exponents, adjunction, exactness or admissibility of the transported functors is made here. Those are separate statements. The local compactness and nonarchimedean-group instances of `G(F)` are hypotheses, as in the published represented-parabolic interface.

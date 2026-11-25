@@ -1,10 +1,10 @@
 # Hermitian representations: statements
 
-Author: Worker 6. Module `Langlands.Representation.Unitary.HermitianRepresentationStatements`, namespace `Langlands.Renard.CompactRepresentation`.
+Module `Langlands.Representation.Unitary.HermitianRepresentationStatements`, namespace `Langlands.Renard.CompactRepresentation`.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*, French edition dated 9 July 2026, IV.2.1, Definition and Remarks 1–2, printed pp.96–97 / PDF pp.102–103. The registered source ID is `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 
-This is a statement unit: nothing is proved.
+This is a statement module: nothing is proved.
 
 ## The source
 

@@ -1,7 +1,5 @@
 # Local vanishing of simply connected cocycles from the Galois-stable chamber
 
-Authors: Worker 5015.
-
 This module states the reduction proposition
 `Langlands.GroupScheme.LocalSimplyConnectedCocycleVanishingChamberReductionStatement.{u}` and
 proves it with the theorem

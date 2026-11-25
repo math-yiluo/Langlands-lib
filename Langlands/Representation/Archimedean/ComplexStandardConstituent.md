@@ -17,7 +17,7 @@ at zero. Induction on the list permutation applies the adjacent result at
 any prefix and composes the transfers for successive permutations.
 
 This proves the occurrence comparison for complex standard modules used in
-Task 7042. The source comparison comes from Badulescu and Renard (2010),
+the proof of `CuspidalIsobaricSupportStatement`. The source comparison comes from Badulescu and Renard (2010),
 Remark 2.3 on p. 1123 (PDF p. 10) and Proposition 2.4 on p. 1124 (PDF p. 11).
 The implemented proof uses affine specialization and the Library's unlinked
 swap theorem. Tadić (2009), §3 (author's PDF p. 11), describes the linkage

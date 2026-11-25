@@ -1,7 +1,5 @@
 # Composition and inner comparisons for actual conjugation transport
 
-Worker 55, task `fc414cb1-5832-4033-a2aa-d7c27f5e4691`, revision 1.
-
 This is an internal construction derived from the published
 `Langlands.Aubert.General.conjugationEquiv` and `conjugationFunctor` in
 `Langlands.Representation.Aubert.General.Parabolic`. It implements the algebraic

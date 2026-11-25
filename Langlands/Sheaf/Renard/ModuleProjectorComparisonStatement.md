@@ -22,9 +22,7 @@ projector sheaf with components `χ_U · m` on compact opens `U`.
 The source's identification is therefore asserted through this canonical
 map, not through an arbitrary isomorphism. The universe is `Type`, as for
 the published `CompactSupport`. This file states the proposition only. Its
-proof is the obligation of a later `lean.proof@1` task. It needs injectivity
+proof is `moduleComparisonIsIso` in `ModuleProjectorComparisonProof`. It needs injectivity
 (`χ_K · m = m` for a compact open `K`, so the component at `K` recovers `m`).
 It also needs surjectivity (a compactly supported section is determined by
 its component on a compact open containing its support).
-
-Worker 184 implements this statement for Task 5338.

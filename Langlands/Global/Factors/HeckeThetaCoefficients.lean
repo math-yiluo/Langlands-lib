@@ -113,7 +113,7 @@ end Langlands.LocalFactor.PadicAbelian
 namespace Langlands.Global.HeckeTheta
 
 open Langlands.LocalFactor.PadicAbelian Langlands.Global.CompletionPadic
-open Langlands.ClassField.Global Langlands.Global.HeckeDivisor
+open Langlands.ClassFieldTheory.Global Langlands.Global.HeckeDivisor
 open Langlands.Global.HeckeDivisorEulerProduct
 open Langlands.HarmonicAnalysis Langlands.LocalFactor.Archimedean
 open Langlands.Global.HeckeFunctionalEquation

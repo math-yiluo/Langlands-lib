@@ -39,9 +39,13 @@ trivialization of the actual pulled-back weight space.
 `weightSpace_line_baseChange_iff` reflects the line to the original field.
 Thus no perfectness or characteristic restriction is added.
 
-Worker 1333 authored this derived assembly from the cited imported
-constructions and proved comparisons. The two structural proposition
-arguments remain obligations; this module proves neither of them and
+This derived assembly is built from the cited imported
+constructions and proved comparisons. The two structural propositions
+remain arguments here; this module proves neither of them (the Library
+proves them as `dynamicCentralizerReductive` in
+`Dynamic.CentralizerReductiveProof` and `maximalTorusBaseChange` in
+`Torus.MaximalBaseChangeProof`, and `splitRootLieLine` in
+`Reductive.SplitRootLieLineProof` applies the last theorem to them) and
 does not assert unconditional root lines, pinning existence, quasi-split
 inner-form existence, or Steinberg quasi-splitness. The last theorem gives
 the pointwise conclusion requested by `SplitRootLieLineStatement`, with

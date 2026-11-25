@@ -29,11 +29,12 @@ in characteristic `p`.
 
 This is internal derived infrastructure for Nagata's component-order necessity.
 It treats a supplied componentwise constant rational quotient over an
-algebraically closed field. Identifying the canonical component quotient and
-obtaining the full arbitrary-ground-field statement are separate obligations.
-The stable-complement infrastructure was authored by Worker 539 and is reused
-unchanged; the component algebraization and regular representation are Worker
-544's constructions.
+algebraically closed field. Identifying the canonical component quotient (done
+in `CanonicalComponentRegular`) and obtaining the full arbitrary-ground-field
+statement are not part of this module.
+The stable-complement infrastructure of `StableComplements` is reused
+unchanged; the component algebraization is `ofComponentConstantRationalMatrix`
+(`ComponentConstant`), and the regular representation is constructed here.
 
 The source motivation is J. S. Milne, *Algebraic Groups*, corrected reprint
 (2022), Definition 4.15, Proposition 4.17 and the converse immediately following

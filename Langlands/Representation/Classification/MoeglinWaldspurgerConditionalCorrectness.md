@@ -1,7 +1,7 @@
 # Aubert correctness of the MW recursion from the two interfaces
 
 Module `Langlands.Representation.Classification.MoeglinWaldspurgerConditionalCorrectness`,
-namespace `Langlands.MoeglinWaldspurger.Derivation`. Author: Worker 5735.
+namespace `Langlands.MoeglinWaldspurger.Derivation`.
 
 * `derivativeFacts_LDrel hL hLS F T ρ x : DerivativeFacts F T ρ x (LDrel F T ρ x)`: the concrete
   highest left derivative relation `LDrel` satisfies the five derivative facts:

@@ -1,7 +1,5 @@
 # Deligne-torus points and the scalar-extended Shimura homomorphism
 
-Author: Worker 57.
-
 This module constructs the functor of points of the Deligne torus on
 commutative real algebras, identifies its quadratic coordinates with the
 actual scalar extension of the complex numbers, and extends the published
@@ -116,12 +114,12 @@ are not equated by notation.
 
 ## Scope and provenance
 
-This is a construction of group functors and a natural transformation on
-all commutative real algebras. It does not construct an affine scheme
-representing the Deligne torus, prove the torus axioms, or construct the
-Shimura varieties. Those geometric steps remain required in the host task.
-The construction also does not supply a global algebra's archimedean
-splitting, new positivity or Hodge axioms, a moduli functor, or level schemes.
+This is a construction of group functors and a natural transformation on all
+commutative real algebras. It does not construct an affine scheme representing
+the Deligne torus, prove the torus axioms, or construct the Shimura varieties.
+Those geometric steps remain separate obligations. The construction also does
+not supply a global algebra's archimedean splitting, new positivity or Hodge
+axioms, a moduli functor, or level schemes.
 
 Formal dependencies are the published `Unitary.Positivity`,
 `Unitary.Domain`, `Unitary.Similitude`, and `Unitary.Involution` modules,

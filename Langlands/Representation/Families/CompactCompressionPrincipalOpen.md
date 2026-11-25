@@ -1,8 +1,8 @@
 # Principal irreducibility neighborhoods from compact compression
 
-Worker 452. This internal assembly combines actual compact-average
-compression and coefficient specialization with Worker 1444's localized
-determinant witness. It implements a conditional step of Renard,
+This internal assembly combines actual compact-average
+compression and coefficient specialization with the localized
+determinant witness of `LocalizedMatrixPrincipalOpen`. It implements a conditional step of Renard,
 *Représentations des groupes réductifs p-adiques* (9 July 2026),
 VI.8.4 Proposition proof, printed pp. 192–193, PDF pp. 198–199.
 The registered source is
@@ -51,7 +51,7 @@ in the published canonical coordinates. Its principal open set
 `rationalUnramifiedPrincipalOpen M hM p`, the form used in the published
 VI.8.4 statement, contains the initial character, and every fiber over it
 is irreducible. The proof applies the regular theorem above and replaces
-the regular witness by Worker 1444's `rationalRegularPolynomial`, whose
+the regular witness by `rationalRegularPolynomial` (`UnramifiedPolynomialWitness`), whose
 principal open set is exactly the nonvanishing locus of that witness.
 The smooth fibers may be representations of any topological group; here
 they are not required to be representations of `M(F)` or its induced
@@ -65,4 +65,5 @@ requirements, and it does not prove the closed
 `InducedIrreducibilityOpenStatement`. Its provenance is the imported
 compact-compression, fixed-vector scalar-extension and localized
 determinant proofs. The latter's polynomial supporting construction
-retains Worker 1664's original monomial-clearing attribution.
+adapts the monomial-clearing argument of
+`Plancherel.finiteLaurent_exists_zero_eval_ne_zero`.

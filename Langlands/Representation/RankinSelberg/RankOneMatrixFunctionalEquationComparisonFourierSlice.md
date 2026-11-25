@@ -1,7 +1,5 @@
 # Fourier inversion on complementary affine coordinate slices
 
-Author: Worker 623.
-
 This internally derived helper proves partial Fourier inversion with the actual
 supplied scalar Haar measure. It works over a locally compact Hausdorff totally
 disconnected topological field with its Borel measurable space. The supplied

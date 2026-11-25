@@ -1,7 +1,7 @@
 # Weak association of contragredients, presented form
 
 This module proves the presented form
-`Langlands.ClassField.Global.RelativeWeilGroup.PresentedContragredientAssociationStatement.{u, uV, uP, uQ}`
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.PresentedContragredientAssociationStatement.{u, uV, uP, uQ}`
 of [AssociatedContragredientStatement](../AssociatedContragredientStatement.md).
 The statement concerns a finite-dimensional complex representation `S` of the
 class-indexed extension `RelativeWeilGroup c F E`, for any class family `c`, and
@@ -17,8 +17,7 @@ association is preserved by the two contragredients. The route indicated there
 is inversion of the Frobenius and Satake parameters. The Weil-side lemmas below
 are elementary linear algebra. The automorphic side is the inverse-spectrum
 theorem of the companion helper module
-[ContragredientSphericalSpectrum](../ContragredientSphericalSpectrum.md), submitted
-with this proof.
+[ContragredientSphericalSpectrum](../ContragredientSphericalSpectrum.md).
 
 ## Topology of the class-indexed extension
 
@@ -123,8 +122,10 @@ for every `F : Type u` with `Field F`, `NumberField F` and
 `T'.realization.IsContragredientOf T.realization`, a presentation
 `CuspidalSpectralPresentation.{u, uP} T` gives
 `Nonempty (CuspidalSpectralPresentation.{u, uQ} T')`. It has no unitarity
-premise. This theorem does not prove the class form unconditionally; a proof of
-that statement is the subject of task 38e20519-c46d-4ada-8c60-a8037975fae1.
+premise. This theorem does not prove the class form unconditionally; the
+hypothesis `hex` is proved as `cuspidalDualPresentationExistence`
+(`CuspidalDualPresentationExistenceProof`), and the two are combined in
+`ContragredientAssociationProof` (`associatedContragredient`).
 
 Proof: choose representatives `T` of `π` and `T'` of `π'`
 (`IsoClass.exists_representative`). The published

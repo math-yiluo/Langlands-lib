@@ -1,6 +1,6 @@
 # The represented completion theorem from global structural inputs
 
-Author: Worker 1775. The derived internal proposition
+The derived internal proposition
 `LeviCompletionStructureStatement : Prop` states that parabolic dynamics and
 uniform compression stabilization imply the exact published
 `LeviCompletionOppositeJacquetStatement`. The accompanying theorem
@@ -67,5 +67,7 @@ index with the required ambient image. Naturality follows from
 The normalization, Levi topology and component formulas are those of the
 published statement. The first parabolic's multiplication isomorphism and
 the test element's centrality are available hypotheses but are not needed
-by this final assembly. The two retained global propositions remain the
-separately owned structural and VI.9.1 obligations.
+by this final assembly. The two retained global propositions are the
+structural and VI.9.1 premises; `GroupScheme.ParabolicDynamicStatement` is
+proved by `parabolicDynamic` (module
+`Langlands.GroupScheme.Absolute.ParabolicDynamicProof`).

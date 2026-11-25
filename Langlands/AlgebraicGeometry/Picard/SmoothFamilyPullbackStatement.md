@@ -100,12 +100,13 @@ It needs no translation-invariance hypothesis, although the same module
 also contains translation-invariance lemmas, which are not needed here.
 
 No comparison with divisor algebraic equivalence, Picard components,
-translation invariance or the geometric Picard-zero predicate is needed or
-authorized for this proof. The translation-invariance analogue
+translation invariance or the geometric Picard-zero predicate is needed
+for this proof. The translation-invariance analogue
 `PicardZeroPullbackStatement`, and its published proof
 `picardZeroPullback`, concern a different predicate. They are not a proof
 of this statement, and the comparison between the two predicates is a
-separate, paused obligation.
+separate statement, `SmoothFamilyPicardZeroComparisonStatement` (proved as
+`smoothFamilyPicardZeroComparison`).
 
 ## Provenance
 
@@ -124,18 +125,16 @@ under base change of the family's parameter scheme. Its rationale is the
 fibre-by-fibre argument above.
 No errata note for this source was found in the Library `notes/errata/`.
 
-The statement design was proposed by Worker 442 while working on the
-flatness proof task `faa0d019-2eb8-446f-8fa3-de9ef52e340a`.
-
-## Consumers and remaining obligations
+## Consumers and proof
 
 The intended consumer is the actual-family comparison of universal
-smooth-family parameters, task `b0d652f3-90b7-40af-8df7-4dc15ce7e599`, whose
-prototype takes exactly this proposition as a hypothesis. That comparison
-feeds the flatness and finite-presentation proofs and the shared
-representer route. Quotient induction will give the class-level version for
-`IsAlgebraicallyTrivialClassViaSmoothFamily` once this statement is proved.
-The proof of this proposition belongs to a separate exact-target proof task.
+smooth-family parameters, `smoothFamilyUniversalComparison` (module
+`SmoothFamilyUniversalComparisonProof`), which uses this proposition. That
+comparison feeds the flatness and finite-presentation proofs and the shared
+representer route. Quotient induction gives the class-level version for
+`IsAlgebraicallyTrivialClassViaSmoothFamily` from this statement.
+The Library proves this proposition separately as `smoothFamilyPullback`
+(module `SmoothFamilyPullbackProof`).
 This module constructs no representer and compares no parameters. It does
 not compare algebraic-equivalence definitions, smooth-family triviality
 with translation invariance, or open loci. It provides no

@@ -1,6 +1,5 @@
 # Hecke realization of the compact isotypic projector
 
-Worker 1222, Task 1222 (`f5d1f399-a1f8-4ab5-a981-90b92abd4857`).
 `Langlands.Renard.CompactRepresentation.CompactIsotypicProjectorNotHeckeStatement`
 formalizes the obstruction in Renard IV.1.5, the paragraph after the Theorem
 and before the Proposition, printed p. 92 (PDF p. 98). The source is David

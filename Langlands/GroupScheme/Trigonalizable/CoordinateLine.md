@@ -1,6 +1,6 @@
 # Trigonalizable group schemes and semi-invariant lines in coordinate bialgebras
 
-Worker 904 wrote this module. It is an internal helper for the proof of
+This module is an internal helper for the proof of
 `Langlands.GroupScheme.TrigonalizableBaseChangeStatement` (Milne, *Algebraic Groups* (2017),
 Corollary 16.4). Milne proves that corollary by embedding `G` in the group `T_n` of upper
 triangular matrices. This module does not follow that route. Instead it adapts the published

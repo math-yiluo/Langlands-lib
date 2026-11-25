@@ -1,7 +1,6 @@
 # Noetherian unitized actions on actual endomorphism localization
 
-Author: Worker 709. This is a statement-only internal derived unit under
-whole-book Renard task `f5d1f399-a1f8-4ab5-a981-90b92abd4857`, revision 2.
+This is statement-only internal derived content.
 Its module is
 `Langlands.Algebra.RenardCompatibleLocalizationNoetherianStatements`, in
 namespace `Langlands.Renard.AlgebraActionLocalization`.
@@ -20,7 +19,7 @@ The final C.II proposition (printed 279 / PDF 285) assumes a commutative
 Noetherian complex algebra B, a finite-type B-module L, an endomorphism a,
 and a finite-type localization L_a. It concludes eventual stability and
 identifies the localization with the image for every positive stable power.
-Worker 709 reread this page, including its rendered image, for this unit.
+This page was reread, including its rendered image, for these statements.
 C.II's definition (printed 276 / PDF 282) requires both kernel and image
 equalities for stability, and a positive power for eventual stability.
 The actual localization is A.III.1, example 5 and the following lemma and
@@ -29,8 +28,8 @@ corollary (printed 252–253 / PDF 258–259).
 The conventions (printed 6 / PDF 12) allow nonunital rings and actions,
 even actions of unital rings whose unit does not act as the identity.
 I.2.1 (printed 14 / PDF 20) describes adjoining a unit and gives the Hom
-comparison for complex-linear intertwiners. Worker 709 reread both passages.
-The local unitized module here is the already published implementation of
+comparison for complex-linear intertwiners. Both passages were reread.
+The local unitized module here is the Library's implementation of
 that construction, not an assumed action on a replacement localization.
 
 These targets are **internal derived content**, not a formal restatement
@@ -40,18 +39,23 @@ define nor identify the source's finite-type or Noetherian conventions.
 They remove commutativity of B under these explicit hypotheses. They assert
 surjectivity and a common positive kernel/stability exponent, leaving the
 canonical stable-image identification to its separate existing statement
-and proof branch. The source convention question and the whole final C.II
-proposition remain parent obligations.
+and proof (`RenardCompatibleStableImageStatements` and
+`RenardCompatibleStableImageProof`). The source convention question and the
+whole final C.II proposition lie outside these targets;
+`RenardSourceFiniteLocalizationStatements` states that proposition under each
+candidate finiteness reading, without deciding the convention, and
+`RenardSourceFiniteLocalizationProof` proves those statements.
 
 The older registered supplementary source
 `renard-2010-corrections-complements`, SHA256
 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`, has
-relevant Appendix C errata on PDF 18–19. Worker 709 reread both pages;
+relevant Appendix C errata on PDF 18–19. Both pages were reread;
 they contain no correction to the final C.II proposition or replacement of
 the nonunital conventions. They do not replace the 2026 source. The dedicated
-project and current-Library source errata file
+source errata file
 `notes/errata/renard-2026-representations-groupes-reductifs-padiques.md`
-is absent (checked 29 October 2026).
+was absent when checked on 29 October 2026; the Library's file now concerns
+chapters V–VII and has no entry for these passages.
 
 ## Actual data and local action selection
 
@@ -136,15 +140,16 @@ is a transparent Prop-valued definition. This file proves none of them.
 
 ## Derivation rationale and dependencies
 
-A future proof can convert `f`, `iotaIntertwiner`,
+A proof, such as the one in
+`Langlands.Algebra.RenardCompatibleLocalizationNoetherianProof`, can convert `f`, `iotaIntertwiner`,
 `localizedEndIntertwiner` and `localizedInvIntertwiner` into actual U-linear
 maps with `CompatibleUnitization.ofLinearIntertwiner`. The inverse identities
 of the actual localized operators give a U-linear automorphism. The public
 actual localization fraction and kernel lemmas supply inverse-power
 exhaustion and local nilpotence of the canonical-map kernel. These are
-construction theorems, not extra premises of this unit.
+construction theorems, not extra premises of these statements.
 
-Apply the published ordinary, possibly noncommutative-ring
+Apply the ordinary, possibly noncommutative-ring
 `NoetherianLocalizationCore.exhaustion_surjective` and `localization_core`
 to those actual carriers and maps. Equality of the U-linear kernels and
 ranges yields equality of their underlying sets; the same functions and
@@ -156,17 +161,15 @@ derivation route, not a claim that this statement file implements a proof.
 The statement module imports only the public actual action construction,
 `CompatibleSubmodule`, `CompatibleUnitization`, the existing stability
 predicate module and Mathlib's Noetherian module definitions. It does not
-import a proof draft or the separate compatible stable-image statement.
+import a proof or the separate compatible stable-image statement.
 It supplies no replacement localization, no new action/power constructor,
-no global module instance and no new axiom. Compilation and statement
-inspection are development evidence only; independent semantic review and
-Library publication are required before a proof successor.
+no global module instance and no new axiom.
 
 
 ## Development verification
 
 The canonical module and closed aggregate were recompiled on 29 October
-2026 in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, with zero errors
+2026, with zero errors
 or warnings. The service confirmed a Prop-valued definition, independent
 level parameters `uB` and `uV`, and only the standard assumptions
 `propext`, `Classical.choice` and `Quot.sound`.

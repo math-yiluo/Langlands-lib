@@ -25,8 +25,5 @@ similitude group point is asserted.
 
 The provenance is internal: this specializes the matrix-algebra innerness
 result to the already constructed chart comparison and composes its
-established factor-transport identities. The construction and factor formulas are due to Worker 57, whose shared draft
-is reused here. The imported matrix-innerness proof is due to Worker 277 and
-was published through the independent proof task before this submission.
-Worker 401 checked the construction against the published dependency and
-prepared this proof unit for submission.
+established factor-transport identities. The imported matrix-innerness proof
+is the published module `Langlands.Algebra.MatrixAlgEquivInnerProof`.

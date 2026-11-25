@@ -1,6 +1,6 @@
 # Restricting the centralizer valuation to the actual torus
 
-This internal definition unit connects the normalized valuation on actual
+This module gives an internal definition connecting the normalized valuation on actual
 centralizer points to the valuation on actual torus points. It uses the
 published positive character normalization and character-restriction laws.
 It constructs no apartment action or geometric subgroup.
@@ -46,7 +46,7 @@ printed pp.102–103/PDF133–134, with the positive valuation correction in
 *Corrections and additions*, 1 November 2024, PDF24–25. These passages
 motivate the normalization; no new source theorem is asserted here.
 
-This unit supplies a torus normalization comparison for later full V 6
+This module supplies a torus normalization comparison for later full V 6
 interfaces. It does not identify an apartment translation with the positive
 valuation: the corrected translation comparison uses its negative projection
 to the effective translation space. Full V 6, existence of actual building

@@ -1,7 +1,5 @@
 # A local Whittaker functional on an embedded cuspidal local component
 
-Author: Worker 1709.
-
 This is internal infrastructure for the proof of
 `Langlands.Automorphic.CuspidalUnitaryLocalGenericityStatement`. It turns the global
 Whittaker coefficient of `WhittakerCoefficient` into a nonzero local functional on an actual

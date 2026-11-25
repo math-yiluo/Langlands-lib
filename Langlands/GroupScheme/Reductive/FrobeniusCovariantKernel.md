@@ -1,6 +1,7 @@
 # Invariant vectors in actual covariant Frobenius restriction kernels
 
-This is an internal derived construction for the Steinberg proof task.
+This is an internal derived construction for the proof of
+`SteinbergBigCellStatement`.
 It uses the published affine Hopf/Lie comparison, actual Frobenius quotient
 coalgebra, regular translations, dynamic polynomial coordinates and augmentation
 nilpotence. It asserts no new result from external literature.

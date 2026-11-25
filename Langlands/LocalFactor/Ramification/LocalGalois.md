@@ -1,6 +1,6 @@
 # Finite local ramification and conductor expressions in every characteristic
 
-Worker 845 generalizes the published integer-ring action and lower filtration
+This module generalizes the published integer-ring action and lower filtration
 from `Ramification.Galois`. The declarations are in
 `Langlands.Ramification.Local`. They use a supplied
 `T : Langlands.LocalField.TopologicalData K₀ L`, a field `K` and a scalar tower
@@ -116,4 +116,4 @@ by `rfl`; this checks both their full types and their defining values.
 The finite source and these checks compile. The companion
 [`Herbrand/GeneralFinite`](Herbrand/GeneralFinite.md) describes the direct
 Mathlib-local-field realization, characteristic audit and broader consumer
-checks. Independent review and publication remain separate.
+checks.

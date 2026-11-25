@@ -59,18 +59,22 @@ fields by the arguments above. The auxiliary StarRing is bound
 explicitly before all dependent endpoint inputs, so their field
 projections use precisely the same constructed involution.
 
-The provenance is internal: Worker 57 combines the existing
+The provenance is internal: the construction combines the existing
 actual action pullback and canonical integral dual transport
 with the conditional involution theorem, named whole
 polarization stability and the proved pointed Harris
 faithfulness argument. The naturality and polarization
-statements remain separate proof obligations, not new axioms.
+statements are explicit inputs, not new axioms; the Library proves
+them as `dualAbelianBaseChangeNaturality`
+(`Langlands.AlgebraicGeometry.Picard.DualAbelianBaseChangeNaturalityProof`)
+and `polarizationBaseChange`
+(`Langlands.AlgebraicGeometry.Picard.PolarizationBaseChangeProof`).
 
 This construction supplies no frame existence, endpoint dual
 existence or geometry theorem, identity or successive-base
 comparison of polarized objects, level transport, rational-isogeny
 quotient functor, moduli representability, coefficient descent or
-scheme level. Those require the additional owned comparisons
+scheme level. Those require additional comparisons
 and existence results. The output object is concretely
 constructed under the displayed premises; it is not a completed
 varying-base PEL moduli functor.

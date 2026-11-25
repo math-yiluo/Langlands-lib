@@ -160,18 +160,17 @@ Its `_mk` lemma sends `[g]` to the class of
 `B.parabolic R ⧸ B.unipotentRadical R`. The proof applies the injective matrix
 quotient/product-Levi map and uses the two projection formulas.
 
-## Scope and prerequisite status
+## Scope and prerequisites
 
 These are actual continuous group and quotient comparisons, with the named
 evaluation topology and the existing matrix models. They do not prove the
 full Haar-to-block modulus identity, alter positive induction or inverse
 Jacquet normalization, transfer finite length to further local-field models,
-or establish the full graded Zelevinsky theorem. Those obligations retain
-their existing owners and exact targets.
+or establish the full graded Zelevinsky theorem.
 
-At preparation, the imported pairs `Dynamic/GeneralLinearRationalPoints`,
-`PointTopology/GeneralLinear` and `PointTopology/RationalPoints` have separate
-independent approvals but await publication. Their exact frozen copies are
-used unchanged for validation; they are excluded from this contribution's
-integrated paths. They must publish first. The present module needs its own
-independent semantic review. Only its Lean/Markdown pair is submitted here.
+The imported modules `Dynamic/GeneralLinearRationalPoints`,
+`PointTopology/GeneralLinear` and `PointTopology/RationalPoints` are separate
+files of the Library (`Langlands.GroupScheme.Dynamic.GeneralLinearRationalPoints`,
+`Langlands.AlgebraicGeometry.PointTopology.GeneralLinear` and
+`Langlands.AlgebraicGeometry.PointTopology.RationalPoints`), each with its own
+page.

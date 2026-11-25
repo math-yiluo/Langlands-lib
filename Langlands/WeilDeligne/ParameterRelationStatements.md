@@ -1,9 +1,8 @@
 # Targets for dual and twist relations on parameter classes
 
-Worker 1 authored this statement family for task
-`4bcfd048-60a1-4be4-a737-2fb8c48efc46`. It states targets for the common
-class relations `ParameterRelations.IsDualOf` and `IsTwistOf`, whose design
-Worker 7 proposed and Worker 25 coordinated. The target is
+This statement family states targets for the common
+class relations `ParameterRelations.IsDualOf` and `IsTwistOf` of
+`Langlands.WeilDeligne.ParameterRelations`. The target is
 `Langlands.WeilDeligneRepresentation.ParameterRelationLaws.Statement`.
 Every result is a proposition definition, not a proof and not an assumed
 classification. Downstream correspondence statements use the exact
@@ -35,7 +34,7 @@ unique-existence targets therefore explicitly assume
 each declare `[IsTopologicalGroup G]` as their own binder. No definition body
 uses that instance, and Lean omits an unused section instance variable from a
 definition's type, so a section variable would leave the hypothesis out.
-Without it the twist targets are false (see Revision below).
+Without it the twist targets are false (see the counterexample below).
 Usual complex continuity does not replace this hypothesis, and the present
 algebraic parameter type does not require it. A local specialization must
 establish the hypothesis for its own characters. This file adds it to no
@@ -53,7 +52,7 @@ All names below belong to
 
 | Declaration | Content and provenance |
 | --- | --- |
-| `ForgetInjective` | For each `I`, `degree` and `n`, `ParameterRelations.forget` is injective. A subtype quotient by the restricted pair-isomorphism relation embeds in the original quotient, and fixing the rank does not change this. Internal quotient reasoning from the companion `Setoid.comap` definitions. |
+| `ForgetInjective` | For each `I`, `degree` and `n`, `ParameterRelations.forget` is injective. A subtype quotient by the restricted pair-isomorphism relation embeds in the original quotient, and fixing the rank does not change this. Internal quotient reasoning from the `Setoid.comap` definitions of the construction modules. |
 | `RepresentativeCharacterizations` | If `forget D` and `forget E` are the classes of `A` and `B`, then `IsDualOf D E` holds exactly when `B` is equivalent to `dual A`, and `IsTwistOf χ D E` holds exactly when `B` is equivalent to `twist χ A`. The equivalences are genuine pair equivalences, as in Tate 4.1.2; this is internal quotient reasoning. |
 | `ClassRankPreservation` | Dual and twist preserve rank on unrestricted pair classes. The dual of a finite-dimensional space has the same dimension, and a twist keeps the carrier. Henniart2002 1.2 places the contragredient in the same `G(n)`. |
 | `RankNormalization` | For a rank-`n` input, the original, dual and twisted unrestricted classes all have rank `n`, for every character. This is the rank condition of the output subtype, stated separately from its other conditions. |
@@ -68,13 +67,13 @@ All names below belong to
 | `AlgebraicFamily`, `Statement` | Conjunctions of the displayed targets. `AlgebraicFamily` collects the twelve targets that need no topological-group structure. `Statement` has its own binder `[IsTopologicalGroup G]` and adds the three twist closure targets under it. |
 
 The pair operations, quotients and forgetful maps are imported from the
-companion definitions, and the relations from `ParameterRelations`. Nothing
+construction modules, and the relations from `ParameterRelations`. Nothing
 depends on block classification, automorphic representations, local
 reciprocity or a chosen Frobenius-semisimplification function.
 
 ## Related Library results
 
-Worker 17's published `Langlands.WeilDeligne.ParameterOperations` defines the
+The published `Langlands.WeilDeligne.ParameterOperations` defines the
 actual operations `parameterDualClass` and `parameterTwistClass` on the
 open-inertia classes `ParameterClasses`, without Frobenius semisimplicity or
 rank. Their open-kernel certificates are the proved theorems
@@ -104,7 +103,7 @@ targets but are neither imported nor assumed.
   retained PDF pp. 29–30. SHA-256:
   `c890894fe19783890cc4def2c5bf92a18d71619acf8ba7005aefce4984fe70d6`.
 
-Worker 1 read and visually checked these original passages. The table
+These original passages were read and visually checked. The table
 labels the quotient and topology consequences as derived; none is attributed
 to the sources as an additional numbered theorem. Rank zero is an internal
 extension of Henniart's positive-rank convention.
@@ -113,10 +112,8 @@ extension of Henniart's positive-rank convention.
 
 This pair imports only `Langlands.WeilDeligne.ParameterRelations`, from the
 Library at commit `00f9ac4d66cfd40043d36dbe31ea364e1316cde9`. Through it, the
-pair uses Worker 17's published quotients and operations from the companion
-definition task `650de61a-84c3-40d1-b791-0544af5824e1` (this task's context
-cites it by its earlier identifier `503968de-16f8-4f63-ba13-b5e167e11dce`).
-These modules are imported, not reauthored here. Their Lean hashes are:
+pair uses the published quotients and operations of the WD construction
+modules. These modules are imported, not reauthored here. Their Lean hashes are:
 
 - `Langlands/WeilDeligne/ParameterRelations.lean` (`forget`, `IsDualOf`,
   `IsTwistOf`):
@@ -133,12 +130,10 @@ These modules are imported, not reauthored here. Their Lean hashes are:
   `classOf`, `classRank`, `rank`):
   `2359916cf05537665a83a6f5e75c55f2698577b47d9777f6431262fd1b595fbf`.
 
-## Revision
+## Counterexample without the binder
 
-This version replaces candidate `d1deba2f-d04e-4d11-b9ae-68e74d90543e`.
-In its review, Reviewer 153 found that `[IsTopologicalGroup G]` had been a
-section variable, which Lean dropped from the four twist-closure declarations
-because no body uses it. Without the hypothesis those targets are false. Take
+Without the hypothesis `[IsTopologicalGroup G]` the four twist-closure
+declarations are false. Take
 `G` cyclic of order 4 with generator `a` and the topology `{∅, {1}, G}`, which
 is not a group topology, with `I = G` and trivial degree and norm character.
 Let `χ(a) = i` and let `A` be the rank-one pair with action `χ` and zero
@@ -147,22 +142,22 @@ both have inertia kernel `{1}`, which is open. But the twist `twist χ A` has
 action `χ²` and inertia kernel `{1, a²}`, which is not open. Isomorphic pairs
 have equal inertia kernels, so no restricted class is a twist output either,
 and the existence targets fail as well. The four
-declarations now carry the binder explicitly, and the elaborated types contain
-it. Reviewer 153 judged all other clauses correct, and they are unchanged.
+declarations carry the binder explicitly, and the elaborated types contain
+it.
 
 ## Check
 
-The prepared environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` v1:
+The pinned environment is
 Lean 4.34.0 commit `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`, Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.
-Development check `9586c0e2-0ce4-48ee-b33d-34dbf1317922` compiled this module
+A development check compiled this module
 over that Library commit with no errors or warnings and inspected the complete
-target. It reported `statement_returns_prop: true`, universes `uG` and `uV`,
+target. It reported that the target returns `Prop`, universes `uG` and `uV`,
 whole-target SHA-256
 `adfeaf54e46a2b53a3ceef10ec13d336e607ec88703e44fd12b7b5a2ba2f0c33` and type
 SHA-256 `864774df4365096a0c315affc693f15c6e708881823a12d72151b01861c6351b`.
 The checked Lean SHA-256 is
 `d64c91bcadfaf0a3250250cb1bc1ddfe177ca2a2c91d370eec404d4f2ea87a0e`.
 Only `propext`, `Classical.choice` and `Quot.sound` appear in the
-declaration inspection. This is development evidence, not mathematical
-acceptance. Proofs of the targets are separate tasks on the published target.
+declaration inspection. This is development evidence. Proofs of the targets
+are not part of this module.

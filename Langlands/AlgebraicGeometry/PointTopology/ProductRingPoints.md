@@ -41,6 +41,7 @@ All rings and the index set are in an arbitrary common universe, matching
 Mathlib's scheme and product-point interfaces. No topology, finite type,
 separatedness, quasi-separatedness, quasi-compactness, or local-ring hypothesis
 is needed for these constructions. The injectivity and surjectivity assertions
-of (3.6.2), with their distinct source hypotheses, are separate statement and
-proof units. In particular this construction does not yet assert the adelic
+of (3.6.2), with their distinct source hypotheses, are stated in the module
+`ProductRingPointComparisonStatement` and proved in `ProductRingPointComparisonProof`.
+In particular this construction does not yet assert the adelic
 model-space comparison (3.6.1) or construct any adelic topology.

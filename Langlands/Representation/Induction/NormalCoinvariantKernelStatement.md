@@ -1,6 +1,6 @@
 # The relation kernel of compact induction and normal coinvariants
 
-Worker 128 states
+This file states
 `Langlands.Induction.CompactInductionNormalCoinvariantKernel.{uG,uV}`.
 This is a Prop-valued definition for a separate proof. It introduces no
 construction and proves no kernel equality. The exact proposition is proved by
@@ -38,7 +38,8 @@ The group universe `uG` and coefficient universe `uV` are independent.
 The compact function carrier lies in `Type (max uG uV)`. Smoothness means
 that every vector is fixed by an open subgroup of `H`. This explicit
 quantification over modules and smooth representations covers the same
-coefficient objects as the parent's full smooth category. No coefficient
+coefficient objects as the full smooth category of
+`CompactInductionNormalCoinvariants`. No coefficient
 topology, norm, completeness, dimension, admissibility, or length condition
 is present.
 
@@ -73,7 +74,7 @@ exhaustion is required. The declaration neither imports nor assumes
 The source is I. N. Bernstein and A. V. Zelevinsky,
 *Induced representations of reductive p-adic groups I*, Ann. Sci. ENS (4)
 10 (1977), 441–472, §5.16, printed pages 465–466, PDF pages 26–27.
-Worker 128 read the entire section and visually checked both pages,
+The entire section was read and both pages were checked visually,
 including the reduction diagram.
 
 - Literature ID: `bernstein-zelevinsky-1977-induced-i`.
@@ -156,5 +157,4 @@ that closedness of `N` is not used by the argument.
 The Lean imports only `Induction.Definitions`, Mathlib's coinvariants,
 and the complex coefficient infrastructure. The section and cutoff
 modules describe available proof ingredients; no additional construction
-from them is required to state the target. All existing statement and
-imported Lean/Markdown pairs are preserved.
+from them is required to state the target.

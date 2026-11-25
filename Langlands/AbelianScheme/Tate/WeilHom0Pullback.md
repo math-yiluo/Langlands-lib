@@ -1,6 +1,6 @@
 # Actual rational dual pullback and the Weil similitude equation
 
-Worker 142. The definition `rationalDualPullbackHom0` constructs
+The definition `rationalDualPullbackHom0` constructs
 `f^vee composed with lamB composed with f`, in the existing rational Hom
 category of actual abelian schemes. Both dual schemes are the existing
 Picard-zero constructions, and `f^vee` is the constructed `dualHom0`.
@@ -17,7 +17,7 @@ The second lemma substitutes the geometric multiplier equation and applies
 linearity in `lam` from `WeilAlongHom0`. Thus it derives
 `E_lamB(V(f)x,V(f)y)=q E_lamA(x,y)` without taking this pairing equation as
 input. The named rational-functoriality target is a separate mathematical
-obligation; this unit does not prove it.
+obligation; this module does not prove it.
 
 Every dual-constructor coherence input, inverse Poincare evaluation, dual
 geometry, finite Weil transition proposition, and dual-map additivity
@@ -39,4 +39,4 @@ The all-test-scheme rational extension is explicitly the named theorem
 dependency rather than an assertion attributed literally to the field passage.
 
 No compatible-frame equivalence, level-orbit transport, polarization
-existence, alternation or nondegeneracy is established by this unit.
+existence, alternation or nondegeneracy is established by this module.

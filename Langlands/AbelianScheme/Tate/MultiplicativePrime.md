@@ -109,5 +109,5 @@ limits.
 The construction works over arbitrary test schemes and arbitrary base
 schemes. It assumes no invertibility of `p`, finite étaleness, rank, or
 finiteness of torsion. It constructs no twist trivialization, Weil pairing,
-monodromy action, or rational/full/away comparison. Those remain separate
-integration obligations in the parent task.
+monodromy action, or rational/full/away comparison. Those lie outside this
+module.

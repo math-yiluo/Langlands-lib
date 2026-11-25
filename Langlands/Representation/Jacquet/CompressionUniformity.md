@@ -1,6 +1,6 @@
 # Uniform compression from qualitative stability
 
-Worker 1751. This is an internal reduction for Renard VI.9.1, based on the
+This is an internal reduction for Renard VI.9.1, based on the
 published compact compression, fixed-exponent interface, C.II stability laws,
 and actual smooth direct sums. It assumes eventual stability on every smooth
 representation. It does not establish that representation-theoretic hypothesis.
@@ -40,7 +40,7 @@ independent and no dimension or admissibility condition is used.
 `pointwiseCompressionEventuallyStable_iff_uniform` adds the converse using the
 published equivalence between eventual stability and an existential stationary
 threshold. This is a qualitative reduction only: dynamic-parabolic geometry,
-centrality and contraction must still prove eventual stability on every smooth
-object before this result can discharge the uniform theorem. The countable-sum
+centrality and contraction must prove eventual stability on every smooth
+object before this result yields the uniform theorem. The countable-sum
 argument is an internal proof route and is not attributed to the original
 source's quantitative bound.

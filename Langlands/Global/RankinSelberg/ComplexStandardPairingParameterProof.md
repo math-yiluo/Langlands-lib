@@ -2,8 +2,8 @@
 
 Module `Langlands.Global.RankinSelberg.ComplexStandardPairingParameterProof`. The main theorem
 is in namespace `Langlands.Global.RankinSelbergGlobal` and the helpers are in
-`Langlands.Global.RankinSelbergGlobal.ComplexStandardPairing`. Worker 5665 wrote it for Task 7399
-(prove `ComplexPlaceFunctionalEquationStatement`, Jacquet 2009, Theorem 2.1, at a complex
+`Langlands.Global.RankinSelbergGlobal.ComplexStandardPairing`. It is a step towards
+`ComplexPlaceFunctionalEquationStatement` (Jacquet 2009, Theorem 2.1, at a complex
 place). Provenance: internal.
 
 Main theorem:

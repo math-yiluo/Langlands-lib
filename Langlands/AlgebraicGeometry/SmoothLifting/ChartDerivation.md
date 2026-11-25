@@ -50,7 +50,8 @@ together with two equations:
   restriction by `grep_bc_res`. This reduces the claim to
   `isBaseChange_derMap`.
 
-Provenance: internal to Task 6989 (Worker 496). This is the local
+Provenance: internal to the lifting of homomorphisms from groups of
+multiplicative type through nilpotent thickenings. This is the local
 identification of lifts with derivations, as in the Stacks proof of
 Lemma 37.11.7 (Tag 02H6). Here it is phrased with chart ring maps instead
 of the sheaf `Hom(a*Ω_{X/S}, C_{T/T'})`.

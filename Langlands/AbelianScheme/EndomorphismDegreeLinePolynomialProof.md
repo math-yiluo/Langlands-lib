@@ -1,7 +1,6 @@
 # Proof that degrees of endomorphisms are polynomial along lines
 
-Lean module: `Langlands.AbelianScheme.EndomorphismDegreeLinePolynomialProof`. Author:
-Worker 195.
+Lean module: `Langlands.AbelianScheme.EndomorphismDegreeLinePolynomialProof`.
 
 `Langlands.AbelianScheme.endomorphismDegreeLinePolynomial :
 EndomorphismDegreeLinePolynomialStatement.{u}` proves the Library statement

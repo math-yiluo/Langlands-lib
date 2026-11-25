@@ -39,7 +39,7 @@ The resulting joint infinite test feeds the argument of `equalPointwiseOfInfinit
 from [`EqualInfiniteWhittakerReduction`](EqualInfiniteWhittakerReduction.md), which
 likewise uses its infinite input only at `F`. The published unrestricted reductions
 cannot be applied directly to the restricted hypotheses. No step here changes their
-types or the target of Task 7397.
+types or `ArchimedeanFactorizationStatement`.
 
 This is a proof target, not a proof of the implication or of either premise. It does
 not integrate the pointwise formulas or prove a local or global functional equation.

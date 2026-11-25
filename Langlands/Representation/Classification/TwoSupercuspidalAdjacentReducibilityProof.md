@@ -1,7 +1,5 @@
 # Reducibility of adjacent two-supercuspidal products (proof)
 
-Authors: Worker 1023.
-
 ## Statement proved
 
 ```lean
@@ -134,11 +132,11 @@ described above are public. All other helpers are private.
 
 | Input | Lean name | Status |
 | --- | --- | --- |
-| unitarizability continuation | `Langlands.unitarizabilityContinuation` (`Langlands.Representation.Unitary.UnitarizabilityContinuationProof`) | published (task `7071b052`, artifact `ec26db35`) |
-| large-exponent non-unitarizability | `Langlands.Classification.twoBlockLargeExponentNonUnitarizable` (`Langlands.Representation.Classification.TwoBlockExponentNonUnitarizabilityProof`) | published (task `a0b83fd9`, artifact `ee4360e4`) |
+| unitarizability continuation | `Langlands.unitarizabilityContinuation` (`Langlands.Representation.Unitary.UnitarizabilityContinuationProof`) | published |
+| large-exponent non-unitarizability | `Langlands.Classification.twoBlockLargeExponentNonUnitarizable` (`Langlands.Representation.Classification.TwoBlockExponentNonUnitarizabilityProof`) | published |
 | irreducible product swap | `Langlands.Classification.irreducibleTwoFactorProductSwap` | published |
-| nonadjacent irreducibility | `Langlands.Classification.twoSupercuspidalNonadjacentProductIrreducible` (`Langlands.Representation.Classification.TwoSupercuspidalNonadjacentIrreducibilityProof`) | published (task `3c9849a4`, artifact `98cc1114`, Worker 745) |
-| real unitarization | `Langlands.supercuspidalRealUnitarization` (`Langlands.Representation.Unitary.SupercuspidalRealUnitarizationProof`) | published (task `733b7c5a`, artifact `ad033912`) |
+| nonadjacent irreducibility | `Langlands.Classification.twoSupercuspidalNonadjacentProductIrreducible` (`Langlands.Representation.Classification.TwoSupercuspidalNonadjacentIrreducibilityProof`) | published |
+| real unitarization | `Langlands.supercuspidalRealUnitarization` (`Langlands.Representation.Unitary.SupercuspidalRealUnitarizationProof`) | published |
 | exponent family and compact pairing | `exponentHeight`, `exponentFamilyEquiv`, `normalizedIntegralForm_family_neg`, `familyZeroForm`, `glParabolicCompactScalarIntegral` | published |
 | twist freeness | `IntegralTwistFreeness.exponent_eq_zero_of_equiv` | published |
 | character twist of products | `twistedProductCharacterTwist` | published |
@@ -160,11 +158,10 @@ recursive scan of the `import` lines over Library commit
 included. Without the nonadjacent theorem the closure has 363 modules. The
 other 375, mostly the derivative, mirabolic and Whittaker modules, enter only
 through the published proof of `twoSupercuspidalNonadjacentProductIrreducible`.
-The closure was checked against the task's Independence list as follows.
+The closure was checked for independence from the later results that this
+proof must not use, as follows.
 
-- *Excluded tasks and declarations.* No Lean file in the closure contains the
-  ID of any task on the Independence list (scan for the 22 task-ID prefixes and
-  for `8e5b4563`). No Lean file mentions `SegmentFullJacquetFormula`,
+- *Excluded declarations.* No Lean file mentions `SegmentFullJacquetFormula`,
   `SegmentHeadJacquetFormula`, `SegmentSocleJacquetFormula`,
   `SegmentSpecialJacquetExponentNormFormula`,
   `SegmentSocleProductIrreducibility`, `MultisegmentSocleExhaustion`,
@@ -194,10 +191,10 @@ The closure was checked against the task's Independence list as follows.
   is unitarizable (`squareIntegrableUnimodularUnitarity`). It comes in only
   through the published `supercuspidalRealUnitarization` and the
   `leviCuspidalRealUnitarization` it specializes (supercuspidal
-  representations are unitarizable after a real twist). It is not on the
-  Independence list and uses no segment, Ze80 9.3 or classification result.
+  representations are unitarizable after a real twist). It is not one of the
+  excluded results and uses no segment, Ze80 9.3 or classification result.
 - *Mathematical dependencies.* The proof uses only the inputs in the table
-  above. None of them is, or uses, a result of the listed tasks. The proof
+  above. None of them is, or uses, one of the excluded results. The proof
   uses no segment product irreducibility criterion (Ze80 4.2 or 9.7), no
   analytic or square-integrability classification (Ze80 9.3) and no
   classification or exhaustion theorem. In particular Ze80 4.2's linked-pair
@@ -209,13 +206,10 @@ The closure was checked against the task's Independence list as follows.
 
 ### Derivative route of the nonadjacent input
 
-The Independence section forbids assuming a derivative formula (Ze80 §3.5 or
+The independence requirements forbid assuming a derivative formula (Ze80 §3.5 or
 §9.6, or BZ77 derivative results). The nonadjacent theorem is proved with
-Bernstein–Zelevinsky derivatives. The trusted operator's decision on request
-`a8463ee15d57588c8de10306748b2538` (correspondence file
-`/home/taskhub/pilot/correspondence/bd71b9185aab5d6eafffb7891bd3a3ca.md`,
-`sender_role: operator`, reproduced in this task's context) allows a fully
-proved derivative route under five conditions. They hold condition by
+Bernstein–Zelevinsky derivatives. A fully proved derivative route is admissible
+under five conditions. They hold condition by
 condition:
 
 1. *Only BZ77's general derivative theory.* The derivative inputs in the
@@ -228,30 +222,28 @@ condition:
    Lean file contains a segment derivative statement. In particular
    `SegmentSocleDerivatives` (Ze80 3.5) does not occur, and no Ze80 §9.6
    formula is stated or used.
-2. *Every derivative result proved, accepted and published.* The exactness
-   (task `44f58b77`), detection, BZ77 3.8 (task `a925b519`), BZ77 4.4 (task
-   `2e5183b1`) and Leibniz (task `4e10058b`) proofs listed in the nonadjacent
-   proof's Markdown are in the Library at the base commit. So is the
-   nonadjacent proof itself (artifact `98cc1114`, task `3c9849a4`). This
+2. *Every derivative result proved and published.* The exactness,
+   detection, BZ77 3.8, BZ77 4.4 and Leibniz proofs listed in the nonadjacent
+   proof's Markdown are in the Library at the audited commit. So is the
+   nonadjacent proof itself. This
    module uses all of them only through the theorem
    `twoSupercuspidalNonadjacentProductIrreducible`, which has no premises. No
    derivative statement is a hypothesis of any theorem here.
-3. *Excluded tasks.* By the scans above, the closure contains none of
-   `ed48ae06`, `b95105c6`, `55ad1e10`, `92aea10f`, `2ae5cbe5`, `8364e73f` or
-   any other Independence task, nor their named declarations. Task `8e5b4563`:
-   its segment-socle statements (b)–(f) (`SegmentSocleDerivatives`,
+3. *Excluded results.* By the scans above, the closure contains none of the
+   excluded results, nor their named declarations. Of the segment derivative
+   statements, the segment-socle statements (b)–(f) (`SegmentSocleDerivatives`,
    `HighestDerivativeSupportShift`, `NonjuxtaposedSegmentSocleConstituentLevel`
    and the two later statements) and the exact rank transport `castRank` occur
-   in no closure Lean file. Only its cuspidal part enters, as the proposition
+   in no closure Lean file. Only the cuspidal part enters, as the proposition
    `SupercuspidalDerivatives` in its own module
    `Classification.SupercuspidalDerivativesStatement` with its separate proof
-   (task `2e5183b1`). The scan of the whole closure covers that proof's
-   closure too.
+   (`Classification.SupercuspidalDerivativesProof`). The scan of the whole
+   closure covers that proof's closure too.
 4. *Reuse of the derivative infrastructure.* The nonadjacent proof uses the
-   published functors `Derivative.generalLinearDerivative` (task `d3e94f0f`)
-   and `level` (task `dfae49d8`, `Derivative.Homogeneity`). The
-   Gelfand–Kazhdan realization (`Smooth.Contragredient.GelfandKazhdanProof`,
-   task `2206daa6`) enters through the proof of BZ77 4.4. No derivative
+   published functors `Derivative.generalLinearDerivative`
+   and `level` (`Derivative.Homogeneity`). The
+   Gelfand–Kazhdan realization (`Smooth.Contragredient.GelfandKazhdanProof`)
+   enters through the proof of BZ77 4.4. No derivative
    functor is redefined, here or in the nonadjacent proof.
 5. *Audit recorded.* This section records it. The nonadjacent proof's
    Markdown records the same audit for its own closure in more detail.

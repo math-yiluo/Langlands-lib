@@ -1,6 +1,6 @@
 # Vanishing of ramified Gauss integrals off the conductor shell
 
-Worker 1248. Internal lemmas, derived from the published definitions. For a
+Internal lemmas, derived from the published definitions. For a
 quasicharacter `χ` of positive conductor `a` and an additive character `ψ`, the
 Gauss integral of `χ⁻¹(x) |x|^(-s) ψ(x)` over the shell of order `-d` vanishes
 unless `d = n + a`, where `n` is the conductor of `ψ`. This is the standard

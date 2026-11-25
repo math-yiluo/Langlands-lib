@@ -1,7 +1,5 @@
 # Fibrewise ampleness over a noetherian affine base
 
-Author: Worker 833.
-
 `Langlands.AlgebraicGeometry.Picard.ProperAffineFibrewiseAmpleStatement.{u}`
 quantifies over schemes `X` and `S` in any universe `u`, an affine locally
 noetherian base `S`, a proper morphism `f : X ⟶ S`, and a specified actual

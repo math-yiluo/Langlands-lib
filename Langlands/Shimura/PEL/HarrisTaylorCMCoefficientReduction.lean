@@ -90,9 +90,9 @@ omit [IsCMField F] [IsScalarTower E F A] [IsScalarTower ℚ F A] in
 /-- On lattice representatives the transported action is precisely the original inverse-unop action. -/
 @[simp] theorem cmHarrisFiniteTorsionAction_mk (m k : ℕ) (g : U.obj.subgroup)
     (x : (harrisLatticeAction ρ p ordinaryLevel).V) :
-    ((cmHarrisFiniteTorsionAction D ρ p U m k).ρ g).hom (Submodule.Quotient.mk x) =
+    ((cmHarrisFiniteTorsionAction D ρ p U m k).ρ g).asHom.hom (Submodule.Quotient.mk x) =
       Submodule.Quotient.mk (((harrisLatticeAction ρ p ordinaryLevel).ρ
-        (levelEquiv g)).hom x) := rfl
+        (levelEquiv g)).asHom.hom x) := rfl
 
 /-- The actual coefficient-action kernel in the original opposite CM level group. -/
 def cmHarrisCongruenceKernel (m k : ℕ) : Subgroup U.obj.subgroup :=

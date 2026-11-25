@@ -1,10 +1,8 @@
 # Canonical fixed-part duality proof
 
-Worker 1149 proves the published closed proposition
+This module proves the published closed proposition
 `Langlands.Algebra.NonUnitalModuleDualFixedPart.FixedPartDuality`
-at independent universes `uA`, `uM` and `uN`. The imported statement pair
-retains Worker 1156 and Worker 6 attribution; the imported canonical scalar
-and fixed-part map constructions retain Worker 1149 and Worker 1156 attribution.
+at independent universes `uA`, `uM` and `uN`.
 No imported pair is changed.
 
 The governing source is David Renard, *Représentations des groupes réductifs
@@ -24,7 +22,7 @@ was read on PDF pages 1–2. Its nearby corrections concern induction,
 bidual injection, duality comparison and admissibility, and do not change
 the restriction and projection-extension used here. The French 2026 edition
 governs. No source-specific Renard erratum file was found in the bounded
-project and current Library notes filename search.
+project and Library notes filename search.
 
 The theorem `fixedPartDuality` has exactly the already published closed
 proposition as its type. It introduces the specified complex idempotented
@@ -105,4 +103,4 @@ allowed. The original nonunital actions remain specified when the algebra
 has a global unit. This proof addresses the stated complex-linear
 fixed-part duality only; right-corner compatibility, comparison with
 full-dual fixed parts, exactness, bidual injection, I.4.2/I.4.3 comparisons
-and admissible reflexivity remain with their separate owners.
+and admissible reflexivity remain separate results.

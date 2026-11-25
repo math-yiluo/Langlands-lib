@@ -1,7 +1,5 @@
 # The relative dimension of an abelian variety is at most `dim H¹(A, 𝒪_A)`
 
-Author: Worker 372.
-
 This internal helper module proves the lower bound `g ≤ finrank_k H¹(A, 𝒪_A)` for an abelian
 scheme `A` of relative dimension `g` over `Spec k`, `k` an arbitrary field (`le_finrank`). Here
 `H¹(A, 𝒪_A)` is `(DerivedSections.relativeCohomology A.X.hom 1).obj (structureSheaf A.X.left)`.

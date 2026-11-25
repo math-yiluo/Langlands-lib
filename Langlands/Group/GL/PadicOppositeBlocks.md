@@ -1,6 +1,6 @@
 # P-adic opposite Levi decomposition
 
-Author: Worker 6. This module pairs with `Langlands.Group.GL.OppositeBlocks`
+This module pairs with `Langlands.Group.GL.OppositeBlocks`
 and imports the independently published `Langlands.Group.GL.PadicBlocks`.
 
 For every prime `p`, every algebraic `PadicField p`, every supplied
@@ -24,7 +24,7 @@ certificate specializes continuous conjugation by that same common Levi section.
 All multiplication, inverse, subgroup, and factorization proofs are inherited from
 `OppositeBlocks`, whose paired Markdown gives their implementation.
 
-The canonical abbreviations apply these constructions to the accepted
+The canonical abbreviations apply these constructions to the published
 `F.canonicalTopologicalData`. They cover topology, group continuity, separation,
 local compactness, projection, section, decomposition and action continuity for
 every supplied algebraic p-adic field. Local instance installation preserves the

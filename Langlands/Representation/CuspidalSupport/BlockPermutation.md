@@ -1,7 +1,5 @@
 # Reordering blocks and block maps of Levi-conjugating permutations
 
-Authors: Worker 242, with two helper proofs from Worker 165.
-
 This module provides the combinatorics needed to reduce statements about an
 arbitrary Levi-conjugating permutation `w` between two standard block shapes to
 statements about reorderings of blocks. It imports the published
@@ -100,5 +98,5 @@ published `index_strictMono` and `exists_index_of_blockIndex_eq`.
 The theorems `levi_mem_iff` (membership in the embedded Levi is vanishing of
 every entry between different blocks) and `conjugatesLevi_inv` (the inverse
 permutation conjugates the target Levi back) are imported from
-`MinimalConjugatingCosetsProof` by Worker 165. Their original proofs are now
-public, so this module reuses them directly.
+`MinimalConjugatingCosetsProof`. Their proofs there are public, so this
+module reuses them directly.

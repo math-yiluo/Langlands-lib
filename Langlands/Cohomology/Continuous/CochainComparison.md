@@ -1,7 +1,5 @@
 # The canonical continuous-to-ordinary cohomology map
 
-Author: Worker 22. Task `c6ea3f74-2826-48db-9ab1-46587ae2dd92`, revision 1.
-
 Let `k` be a commutative ring with a topology, let `G` be a topological
 group, and let `A : TopRep k G`. All three carriers lie in arbitrary `Type u`.
 The selected definition `Langlands.Continuous.continuousToOrdinary A q`
@@ -54,11 +52,11 @@ module of continuous cohomology with the homology of the forgotten complex.
 Composing with the homology map of `continuousToOrdinaryCochains` defines
 `continuousToOrdinary`.
 
-This contribution defines the canonical maps with their intrinsic
+This module defines the canonical maps with their intrinsic
 linearity, equivariance and differential certificates. It does not claim
 that these maps are isomorphisms. Invertibility for discrete groups,
 compatibility with change of group and coefficients, the profinite
-finite-quotient comparison, and transfer remain separate proof obligations.
+finite-quotient comparison, and transfer are not proved in this module.
 The more general `TopRep` hypotheses are sufficient for this map; they do
 not replace the joint continuity hypothesis on the discrete modules used
 in the profinite comparison.
@@ -76,9 +74,8 @@ Content SHA-256:
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`.
 Retained original: `C:/Central-Library/Serre--Local Fields--1979.pdf`.
 
-The only project artifact dependency is environment
-`2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, version 1:
+The module imports no project module. The environment is
 Lean 4.34.0, commit `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`, and
 Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
 The source imports Mathlib's continuous and ordinary cohomology
-functoriality modules. No unpublished project construction is imported.
+functoriality modules.

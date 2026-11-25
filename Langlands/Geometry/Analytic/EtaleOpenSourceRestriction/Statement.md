@@ -13,7 +13,9 @@ all-affinoid-pieces predicate of [EtaleSite](../EtaleSite.lean).
 and the subset.
 
 The proposition is an internal prerequisite for whole-site point-fibre
-joint faithfulness in Task 7282. Its intended deduction uses étaleness of
+joint faithfulness, `AnalyticEtalePointFibersJointlyFaithfulStatement`
+(module `Cohomology/AnalyticEtaleRestrictedInjectiveAcyclic/GodementReduction`).
+Its intended deduction uses étaleness of
 the canonical open-domain inclusion and closure of localized étale
 morphisms under composition.
 [Open-domain étaleness](../EtaleOpenDomains/Proof.lean) and

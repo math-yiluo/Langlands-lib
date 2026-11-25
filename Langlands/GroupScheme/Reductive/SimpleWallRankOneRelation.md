@@ -40,7 +40,7 @@ factors with the stated rank-one products. Thus the proof uses actual
 dynamic subgroup membership and all-test equalities, without detecting
 equalities by field points.
 
-This unit reduces a full cell relation to a rank-one relation. It does
-not yet prove equality of the torus coordinates after the coroot
+This module reduces a full cell relation to a rank-one relation. It does
+not prove equality of the torus coordinates after the coroot
 quotient, a rank-one Bruhat formula, or the relative derived-group
 existence statement.

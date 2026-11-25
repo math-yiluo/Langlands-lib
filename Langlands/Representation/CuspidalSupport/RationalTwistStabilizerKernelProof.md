@@ -1,6 +1,6 @@
 # The group `T` of an irreducible representation (Renard VI.4.4, proof)
 
-Worker 114. This module proves the published proposition
+This module proves the published proposition
 `Langlands.CuspidalSupport.RationalTwistStabilizerKernelStatement`
 as the theorem `Langlands.CuspidalSupport.rationalTwistStabilizerKernel`,
 with the statement's universes `uF` and `uV`. It adds no hypothesis. The statement's
@@ -10,8 +10,7 @@ Source: David Renard, *Représentations des groupes réductifs p-adiques*, regis
 `renard-2026-representations-groupes-reductifs-padiques` (SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`). The source is VI.4.4,
 the paragraph defining `T` and the Remark after it (printed pp.156–157 / PDF pp.162–163), as
-cited by the task and the statement. The Lean proof follows the route in the task context. It
-uses the published finiteness lemma V.2.7 (`rationalTwistStabilizerFinite`) and does not
+cited by the statement. The Lean proof uses the published finiteness lemma V.2.7 (`rationalTwistStabilizerFinite`) and does not
 follow the book's wording line by line.
 
 ## Notation

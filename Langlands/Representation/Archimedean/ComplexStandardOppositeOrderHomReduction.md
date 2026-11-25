@@ -1,8 +1,8 @@
 # Reduction of `ComplexStandardOppositeOrderHomStatement` to E and TP
 
-Worker 729 wrote this module for Task 7055 (`fbfc1fa1-a863-4424-800e-92f30996a1be`), whose
-target is the Library's `Langlands.Archimedean.ComplexLanglandsQuotientUniqueStatement` (LU).
-Worker 727's module `ComplexLanglandsQuotientUniqueReduction` reduces LU to the Library's
+This module was written for the proof of the Library's
+`Langlands.Archimedean.ComplexLanglandsQuotientUniqueStatement` (LU).
+The module `ComplexLanglandsQuotientUniqueReduction` reduces LU to the Library's
 `ComplexLanglandsSubrepresentationStatement` and to the statement Orth,
 `ComplexStandardOppositeOrderHomStatement`. This module states one statement,
 `ComplexStandardOppositeOrderHomReductionStatement`: E and TP together imply Orth. It also

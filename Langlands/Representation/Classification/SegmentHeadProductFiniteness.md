@@ -1,6 +1,5 @@
 # Finite composition series for products of supplied segment heads
 
-Author: Worker 357.
 Provenance: internal construction from published Library proofs.
 
 `Langlands.PadicField.TopologicalData.SegmentProductDatum.compositionSeriesOfHeads`

@@ -1,6 +1,6 @@
 # Actual prime extraction from Harris local frame coordinates
 
-This internal unit specializes `localFrameToPrime` to the underlying actual
+This module specializes `localFrameToPrime` to the underlying actual
 adelic frame of a compatible Harris Weil frame, with the regular rational module
 `A`. It retains the original datum, signature charts, geometric prerequisites,
 field-valued point and positive polarized action object.
@@ -19,8 +19,9 @@ witness from local smallness and the explicit finite-order premise on the actual
 rational self-isogeny. It concludes that actual prime extraction of each full
 rational Tate section is fixed by the self-isogeny.
 
-The finite-order premise remains essential. This unit does not establish
+The finite-order premise remains essential. This module does not establish
 surjectivity of prime extraction, its naturality for rational homomorphisms,
 one-prime faithfulness, positivity, finite order, or the exact CM small-level
-rigidity theorem. It is derived solely from the imported actual constructions
+rigidity theorem (proved separately as `cmSmallLevelRigidity` in
+`HarrisTaylorCMSmallLevelRigidityProof`). It is derived solely from the imported actual constructions
 and their proved identities; no external literature claim is added.

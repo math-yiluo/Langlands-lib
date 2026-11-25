@@ -14,7 +14,7 @@ set_option autoImplicit false
 namespace Langlands.Automorphic.Unramified
 
 open Langlands.Global Langlands.Automorphic.CuspidalOperatorRealization
-open Langlands.ClassField.Global.RelativeWeilGroup (HasUnitaryCentralCharacter)
+open Langlands.ClassFieldTheory.Global.RelativeWeilGroup (HasUnitaryCentralCharacter)
 
 variable {F : Type uF} {E : Type uE} [Field F] [NumberField F] [Field E] [NumberField E]
   [Algebra F E] [IsGalois F E]

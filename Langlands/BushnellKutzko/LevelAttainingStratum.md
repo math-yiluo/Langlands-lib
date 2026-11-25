@@ -1,12 +1,10 @@
 # A stratum contained at a level-attaining lattice chain is fundamental
 
-Lean proof by Worker 408 for Task 7683.
-
 Module `Langlands.BushnellKutzko.LevelAttainingStratum`. It imports
 `Langlands.BushnellKutzko.MoyReduction` and the published modules
-`Langlands.BushnellKutzko.FundamentalStratumDual` (Task 7681) and
+`Langlands.BushnellKutzko.FundamentalStratumDual` and
 `Langlands.BushnellKutzko.NormalizedLevel`. It is an internal step of the proof of T2
-(Task 7683).
+(`SupercuspidalSwanLevelStatement`).
 
 ## Main results
 
@@ -91,4 +89,4 @@ Choose a uniformizer `ϖ`.
 - The `p`-adic section declares the canonical instances as named local instances
   (`lvlAttTopologicalSpace`, `lvlAttValuativeRel`, `lvlAttLocalField`, `lvlAttTopologicalSpaceGL`).
   This avoids clashes with automatically named instances when the module is imported next to the
-  Library's normalized-level statement modules (compare Task 7696).
+  Library's normalized-level statement modules.

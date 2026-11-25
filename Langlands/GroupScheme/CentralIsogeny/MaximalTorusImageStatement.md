@@ -1,11 +1,10 @@
 # Statement: central isogenies carry maximal tori onto maximal tori
 
-Authors: Worker 1428, Worker 1531.
-
-This module states one unproved proposition, the `Prop`-valued `def`
+This module states one proposition, the `Prop`-valued `def`
 `Langlands.GroupScheme.CentralIsogenyMaximalTorusImageStatement` with one
 universe parameter `u`. Nothing is proved here, and no other declaration is
-introduced.
+introduced; the proof is `centralIsogenyMaximalTorusImage` in
+`CentralIsogeny/MaximalTorusImageProof`.
 
 The module imports `Langlands.GroupScheme.Torus.Maximal` and
 `Langlands.GroupScheme.CentralIsogeny.Basic`. It reuses by name the Library
@@ -100,8 +99,11 @@ for printed pp.99, 353, 357-358 or 379, nor for 5.5, 17.20 or 17.82.
 
 ## Use
 
-This statement is meant to supply maximality of the torus `i'' : T' ⟶ Q` in a
-proof of the planned `SplitCentralTorusQuotientStatement` (statement task
-`2ea05a8b-453e-49c8-8d20-9b2ad61ac047`, not yet in the Library). There `π` is the
+This statement supplies maximality of the torus `i'' : T' ⟶ Q` in the
+proof of `SplitCentralTorusQuotientStatement`
+(`Reductive/CentralTorusQuotientStatement.lean`): `splitCentralTorusQuotient`
+in `Reductive/CentralTorusQuotientProof.lean` passes
+`centralIsogenyMaximalTorusImage`, with two other prerequisites, to
+`splitCentralTorusQuotient_of_prerequisites'`. There `π` is the
 quotient `G → G / Ker(t)`, `f` is the isogeny `t` of split tori, and the
 maximality is required among all tori.

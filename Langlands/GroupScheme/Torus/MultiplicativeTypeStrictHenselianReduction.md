@@ -1,12 +1,12 @@
 # The two strict-Henselian fibral branches from clopen lifting
 
-Worker 508.
-
 These internal constructions take
 `MultiplicativeTypeStrictHenselianLiftStatement` as an explicit input. The
 commutative construction also takes
 `MultiplicativeTypeTorsionDeterminationStatement` explicitly. Neither
-proposition is asserted or supplied by an unpublished sibling proof.
+proposition is asserted or supplied here; the Library proves them in
+`MultiplicativeTypeStrictHenselianLiftProof` and
+`MultiplicativeTypeTorsionDeterminationProof`.
 
 Let `A` be any strictly Henselian local ring, and let `H` be a flat, locally
 finitely presented affine group scheme over `Spec A` with every geometric

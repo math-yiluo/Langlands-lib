@@ -125,6 +125,8 @@ include hG hmax hP in
 centralizers and use their actual normalizer reflections. -/
 theorem source_roots_subset [P.IsReduced] : roots i ⊆ roots D.envelope.torusLift := by
   let : IsAddTorsionFree (characterLattice T) := isAddTorsionFree_of_rootDatum P
+  have : HasUniqueDiv (characterLattice T) := ⟨fun _ hn a b hab =>
+    eq_of_nsmul_eq_nsmul_of_addCommute hn (AddCommute.all a b) hab⟩
   have hpos := positive_induction hP D.split D.directions.generic
     (fun ψ => (ψ ∈ roots i → ψ ∈ roots D.envelope.torusLift) ∧
       (-ψ ∈ roots i → -ψ ∈ roots D.envelope.torusLift))

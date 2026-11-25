@@ -1,6 +1,6 @@
 # Bijectivity of the compact-induction quotient integral
 
-Worker 86 states
+This module states
 `Langlands.Induction.CompactCoinvariantIntegralBijective.{uG,uV}`.
 It is a closed, universally quantified `Prop` definition. This module proves
 no bijectivity result and constructs no new integral.
@@ -87,8 +87,10 @@ proves `Langlands.QuotientIntegration.compatibleMeasureExists` under the
 specified regular two-sided Haar hypotheses. Scalar measure existence does
 not prove this vector-valued bijectivity target. The present statement
 quantifies the compatible quotient measure rather than choosing one.
-Its bijectivity proof and any normalizer-equivariance or normalized orbit
-comparison remain separate obligations.
+Its bijectivity proof is `compactCoinvariantIntegralBijective`, in the
+separate module `CompactCoinvariantBijectivityProof`; any
+normalizer-equivariance or normalized orbit comparison is not part of this
+statement.
 
 ## Original source and provenance
 

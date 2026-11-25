@@ -2,7 +2,7 @@
 
 Let `R` be a commutative ring and `G` a finite group, with the common universe
 parameter used by the Library's actual representations and Tate cohomology.
-Worker 1736 constructs the scalar-multiplication map from a tensor coefficient
+The module constructs the scalar-multiplication map from a tensor coefficient
 sequence to its original sequence. Naturality of the actual Tate connecting
 map and the published first-variable tensor cup boundary law show that scalar
 cup commutes with the first connecting map. The explicit-degree variant records
@@ -38,9 +38,7 @@ that middle Tate group zero. This gives
 `scalarDoubleBoundary_middle_isZero` for `B` in every integer degree.
 
 This is an internal consequence of the Library's actual Tate cup, boundary
-and exactness constructions. Worker 1607 contributed the splitting-module
-strategy and two-row interface; Worker 1736 implemented these constructions
-and proofs. No external source assertion or additional axiom is introduced.
+and exactness constructions. No external source assertion or additional axiom is introduced.
 The module does not assert that any particular extension cocycle equals the
 double-boundary class, or that an extension transfer has already been
 identified with a norm. Those are separate inputs to the intended application.

@@ -1,7 +1,5 @@
 # Ordinary smooth duality of twisted block products: proof
 
-Worker 264 wrote the Lean proof and this account of it.
-
 This is internal derived content of the project: it assembles published
 Library results on normalized parabolic induction, finite external tensor
 products, smooth contragredients and determinant twists. No external literature

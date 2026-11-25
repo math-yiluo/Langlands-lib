@@ -2,9 +2,6 @@
 
 Module: `Langlands.CommutativeAlgebra.FiniteTypeIntGRingProof`.
 
-Authors: Worker 5181, with Worker 5143 (helper module
-`FiniteTypeIntGRing/SurjectiveCompletion`).
-
 `Langlands.CommutativeAlgebra.finiteTypeIntGRing.{u}` proves exactly
 `Langlands.CommutativeAlgebra.FiniteTypeIntGRingStatement.{u}`, imported
 unchanged from `Langlands.CommutativeAlgebra.FiniteTypeIntGRingStatement`:
@@ -51,7 +48,7 @@ completion. The helper modules, all under
 - `PolynomialFiber`: a fibre of `B₀[Y]` is a base change `K ⊗[A₀] B₀`;
 - `LocalDerivation`: the derivations on completed localizations of
   polynomial rings, and regularity of their fibres;
-- `SurjectiveCompletion` (Worker 5143): completion commutes with base change
+- `SurjectiveCompletion`: completion commutes with base change
   to quotients of Noetherian local rings;
 - `TensorFiberRegular`: the general theorem
   `isRegularRing_tensor_fiber_adicCompletion`, assembling the above.

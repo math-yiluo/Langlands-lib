@@ -1,7 +1,6 @@
 # Orthogonal involutions are adjoint to hermitian division forms
 
-Author: Worker 1383, for Task 6507 (`f0045927-f50c-4853-9944-3c98c7ea5daf`), in collaboration
-with Worker 74. This module is the orthogonal counterpart of the published
+This module is the orthogonal counterpart of the published
 `SymplecticInnerForm/SymplecticInvolutionAntihermitian` and reuses its auxiliary results.
 
 ## Main result

@@ -1,7 +1,5 @@
 # Topology of actual affine base change
 
-Author: Worker 208.
-
 `affineBaseChangeTopology` proves the exact proposition
 `AffineBaseChangeTopologyStatement`: for a compatible tower of commutative
 algebras `C → D → A`, a topological ring `A`, and an arbitrary actual affine

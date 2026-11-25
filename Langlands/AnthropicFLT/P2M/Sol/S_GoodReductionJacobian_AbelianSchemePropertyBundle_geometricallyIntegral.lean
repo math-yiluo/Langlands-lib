@@ -7,7 +7,7 @@ Modified: FLT module names are prefixed by `Langlands.AnthropicFLT`; the FLT lak
 are set after the imports; the import of `P2M.Util` is dropped; the `p2m_reactivate` commands
 are replaced by `open scoped`. The paired Markdown file lists the changes.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_JacJ1Iface
 import Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_isIntegral_of_isLocallyNoetherian_of_connectedSpace_of_forall_isDomain_stalk
 import Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_Smooth_isRegularLocalRing_stalk
@@ -35,8 +35,8 @@ theorem isIntegral_of_smooth_of_connectedSpace {K : Type u} [Field K] {X : Schem
   haveI : IsLocallyNoetherian X := LocallyOfFiniteType.isLocallyNoetherian t
   exact AlgebraicGeometry.isIntegral_of_isLocallyNoetherian_of_connectedSpace_of_forall_isDomain_stalk
     X fun x => by
-      haveI := AlgebraicGeometry.Smooth.isRegularLocalRing_stalk (f := t) x
-      exact IsRegularLocalRing.isDomain _
+      haveI := AlgebraicGeometry.Smooth.isRegularLocalRing_stalkFLT (f := t) x
+      exact IsRegularLocalRing.isDomainFLT _
 
 scoped instance subsingleton_spec_field (K : Type u) [Field K] :
     Subsingleton ↥(Spec (CommRingCat.of K)) :=
@@ -158,7 +158,7 @@ theorem solution
   haveI : GeometricallyIntegral (pullback.snd f (bc k K)) :=
     AlgebraicGeometry.geometricallyIntegral_of_isAlgClosed _
   haveI : GeometricallyConnected (pullback.snd f (bc k K)) :=
-    AlgebraicGeometry.GeometricallyIrreducible.geometricallyConnected _
+    AlgebraicGeometry.GeometricallyIrreducible.geometricallyConnectedFLT _
   haveI : MorphismProperty.DescendsAlong (@GeometricallyConnected : MorphismProperty Scheme.{u})
       @Surjective :=
     AlgebraicGeometry.GeometricallyConnected.descendsAlong_surjective

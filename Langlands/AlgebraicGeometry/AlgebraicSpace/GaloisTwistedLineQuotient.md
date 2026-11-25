@@ -1,7 +1,5 @@
 # The Galois-twisted line as an algebraic space
 
-Author: Worker 105.
-
 This module constructs the algebraic space `X` of Conrad's Example 5.13 (printed p.20): the
 quotient `L'/G` of the affine `K'`-line by the étale relation of `GaloisTwistedLine.relation`.
 It is support for the proof of `HenselianExtensionPointNotClosedStatement`.

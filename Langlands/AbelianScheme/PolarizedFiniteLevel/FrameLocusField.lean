@@ -299,7 +299,7 @@ theorem Datum.exists_frameLocus_eq_top [IsAlgClosed K] (hL : CubicFieldEmbedding
       apply hs0
       have hF0 : F = 0 := Subtype.ext h
       have h2 := congrArg (basisHyperplaneSectionEquiv a.abelian.X.hom β) hF0
-      simpa only [F, LinearEquiv.apply_symm_apply, map_zero] using h2
+      simpa only [F, LinearEquiv.apply_symm_apply, LinearEquiv.map_zero] using h2
     have hsF : (show GlobalSections a.cubicBundle.obj from s) =
         linComb a.abelian.X.hom (fun i ↦ β i) ((degreeOneBasis K _).equivFun F) := by
       rw [← basisHyperplaneSectionEquiv_eq_linComb]

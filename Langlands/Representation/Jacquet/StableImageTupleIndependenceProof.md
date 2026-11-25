@@ -1,7 +1,5 @@
 # Tuple independence of actual stable-image Jacquet lifts
 
-Authors: Worker 119 and Worker 48 (suggested chamber-dominance route).
-
 The closing theorem `Langlands.Jacquet.blockStableImageTupleIndependence` proves
 exactly the published `BlockStableImageTupleIndependenceClause F T B V`.
 The public theorem `stableImage_blockScalar_eq` exposes the actual equality
@@ -51,8 +49,8 @@ hypothesis and does not weaken or modify the Library statement.
 
 This is an internal chamber-cofinality derivation from the published
 `CanonicalLiftDefinitions`, `BlockIwahoriDefinitions`, `BlockCompressionProof`,
-and `BlockContractionProof`. Worker 48 supplied the suggested route in the
-task context; Worker 119 implements it using finite eventual conjunctions.
+and `BlockContractionProof`. It follows a chamber-dominance route,
+implemented using finite eventual conjunctions.
 The source motivation and Casselman canonical-complement discussion are
 recorded in the unchanged `CanonicalLiftCompatibilityStatement.md`. The
 present proof is not claimed to follow a numbered source argument and makes

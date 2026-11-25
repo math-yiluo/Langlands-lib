@@ -19,7 +19,7 @@ variable (F : Type u) [Field F] [NumberField F]
   [LocallyOfFiniteType G.X.hom] (U : Langlands.GroupScheme.SubgroupFunctor G)
   [hclosed : IsClosed (adelicPoints F G U : Set (AdelicGroupPoints F G))]
 
-local instance : LocallyCompactSpace (adelicPoints F G U) := hclosed.locallyCompactSpace
+private local instance : LocallyCompactSpace (adelicPoints F G U) := hclosed.locallyCompactSpace
 
 /-- The existing intrinsic mass-one quotient measure is exactly canonical Borel-domain
 normalization of the unscaled actual subgroup Haar measure. -/

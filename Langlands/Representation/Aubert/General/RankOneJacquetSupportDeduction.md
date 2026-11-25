@@ -1,8 +1,6 @@
 # Fixed-Levi Jacquet nonvanishing from associated support detection
 
-Author: Worker 64.
-
-This internal conditional construction identifies the detected subset with the
+This conditional construction identifies the detected subset with the
 required subset before applying the published rank-one assembly. It has
 independent index, ambient-group and carrier parameters `uI`, `uG`, `uV`.
 The group is locally compact and nonarchimedean; the finite index type may be
@@ -64,7 +62,7 @@ propagation uses `jacquetFunctor_map_isShortExact`, which applies
 composition-factor and conjugation dependencies are documented in its
 [paired explanation](RankOneJacquetAssembly.md).
 
-This unit supplies no instance of the irreducible support detector, no
+This module supplies no instance of the irreducible support detector, no
 geometric middle sequence, no other-proper middle vanishing theorem and no
 existence theorem for finite-length constituents. It uses no adjointness,
 character-independence or Langlands-classification theorem to fill these

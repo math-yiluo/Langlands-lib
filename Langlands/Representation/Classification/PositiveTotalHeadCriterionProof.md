@@ -1,9 +1,8 @@
 # Strong irreducible heads from a positive total count
 
-Author: Worker 166. Worker 429 proposed the arbitrary-positive-total
-boundary. The smooth product, split functor-image maps and quotient-kernel
-argument adapt the published multiplicity-one implementation by Workers
-495 and 502 in `MultiplicityOneConstituentProof`.
+The smooth product, split functor-image maps and quotient-kernel
+argument adapt the published multiplicity-one implementation
+in `MultiplicityOneConstituentProof`.
 
 `Langlands.Classification.positiveTotalHeadCriterion` proves exactly
 `PositiveTotalHeadCriterionStatement` with independent group, monoid,

@@ -1,7 +1,5 @@
 # Finite idele-class quotients for local prescription
 
-Author: Worker 53.
-
 This module gives the local-product maps and states the arithmetic finite-quotient
 input to finite-order Hecke-character prescription. It does not prove the
 arithmetic existence assertion.
@@ -39,7 +37,7 @@ with Lemmas 2--7 on pp.77--79 and the character-extension construction on p.80.
 Registered source: `artin-tate-2009-class-field-theory`, SHA-256
 `af7ba934904a3c10012e6fd326cea493ffb6200d885d97583277bb45f935c3dd`,
 retained at `/home/taskhub/central-library/Artin-Tate--Class Field Theory--2009.pdf`.
-Worker 53 read these passages directly and visually checked Theorems 4--5.
+These passages were read directly and Theorems 4--5 were visually checked.
 The retained appended errata (one-based PDF p.202, dated 23 January 2009) were
 also read; they list no correction to Chapter X, Section 2.
 
@@ -52,7 +50,9 @@ Including all infinite places among the prescribed places gives the whole
 infinite factor used here. Theorem 4 gives exponent `m` or `2*m`, with `m` the
 local quotient exponent; its proof directly gives exponent dividing `2*n`
 whenever `n` kills the local quotient. This is the stated derived formulation.
-Its proof remains a substantial arithmetic and topological obligation.
+Its proof, a substantial arithmetic and topological argument, is
+`Langlands.Global.prescriptionFiniteQuotient_proof` (module
+`Langlands.Global.Arithmetic.CharacterPrescriptionProof`).
 
 The actual maps and their elementary continuity and component identities are
 internal constructions using the existing `Langlands.Global.Adelic` objects.

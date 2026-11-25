@@ -1,6 +1,6 @@
 # Properness of surjective maps constant on Borel cosets
 
-Worker 708. This is an internal consequence of the Library's proper Borel
+This is an internal consequence of the Library's proper Borel
 quotients and Borel conjugacy, over an algebraically closed field in any
 universe. Let `G` be an actual smooth connected affine group scheme and
 `b : B → G` an actual Borel subgroup. Let `q : G → Q` be surjective, with

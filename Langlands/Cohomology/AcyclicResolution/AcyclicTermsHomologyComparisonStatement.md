@@ -1,12 +1,9 @@
 # Homology comparison for acyclic terms and acyclic homology
 
-Authors: Worker 595; Worker 360 supplied the statement specification and
-dimension-shifting rationale in the task.
-
 `Langlands.Cohomology.AcyclicTermsHomologyComparisonStatement` is a
 proposition definition. This pair states a comparison and contains no proof
-of that proposition. Its proof is a separate exact-proof obligation after
-independent statement acceptance and Library publication.
+of that proposition. Its proof is `acyclicTermsHomologyComparisonStatement` in
+`Langlands.Cohomology.AcyclicResolution.AcyclicTermsHomologyComparisonProof`.
 
 ## Statement and conventions
 
@@ -83,7 +80,7 @@ the left terms make the two sequences remain short exact after applying
 F. The resulting kernel and quotient identifications yield the displayed
 homology isomorphism, including in degree zero.
 
-The current Library's
+The Library's
 [RightDerivedSequence](../RightDerivedSequence.md) supplies
 `Langlands.Cohomology.DerivedPlus.rightDerived_exact₂`,
 `rightDerived_exact₁`, `rightDerived_exact₃` and
@@ -98,8 +95,7 @@ The category and universe conventions agree with
 
 The Lean file imports only
 `Mathlib.CategoryTheory.Abelian.RightDerived`; no additional construction
-is needed to express this proposition. It uses the project's environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, with Lean 4.34.0 and Mathlib
+is needed to express this proposition. It uses Lean 4.34.0 and Mathlib
 commit `5ed2965256430c3649e86755f9576b54eca72435`.
 
 ## Intended finite-support Leray application
@@ -112,7 +108,7 @@ has two separate inputs: injective-pushforward acyclicity for the terms
 of K, and a geometric acyclicity theorem for its homology objects when
 they have finite closed support.
 
-Once those inputs and a proof of this comparison are available, it would
+Once those inputs are available, this comparison would
 identify the homology of global sections of K with global sections of
 each higher direct image. If the former vanishes in the required degrees,
 finite-support detection could then force those higher direct images to

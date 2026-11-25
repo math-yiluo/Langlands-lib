@@ -1,6 +1,6 @@
 # Compact-coefficient classes under topological group equivalences
 
-Worker 202 constructs the contravariant equivalence of the existing actual
+This module constructs the contravariant equivalence of the existing actual
 compact-coefficient irreducible smooth representation classes. For a continuous
 multiplicative equivalence `e : H ≃ₜ* G`, a representation `ρ` of `G` pulls back
 to `ρ.comp e.toMonoidHom`, with action
@@ -161,11 +161,11 @@ published `Classes.md`. This module transports the existing predicate without
 altering it. It claims no new extension of the source's representation-theoretic
 theorems to arbitrary groups with a topology.
 
-All mathematics is imported by Lean names from the current Library. Besides
+All mathematics is imported by Lean names from the Library. Besides
 `Classes`, the module imports `CuspidalSupport.GroupTransport` for smooth
 pullback and subgroup transport, and `CuspidalTensorAssociationProof` to reuse
 its general algebraic irreducibility and representation-equivalence pullback
 lemmas. The shared dual and smoothness identities retain their original
-statements and proofs in `Smooth.Transfer.GroupEquivalence`. This unit constructs no
+statements and proofs in `Smooth.Transfer.GroupEquivalence`. This module constructs no
 isotypic projector, transports no intrinsic isotypic or annihilator subspace,
 and proves no product-Levi decomposition or induction theorem from §2.27.

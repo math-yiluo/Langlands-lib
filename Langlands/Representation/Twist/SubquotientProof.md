@@ -1,6 +1,6 @@
 # Proof of the twist subquotient laws
 
-Worker 4 authored this internal derived proof. It imports the published statement
+This is an internal derived proof. It imports the published statement
 and the existing Mathlib irreducibility interface.
 
 The underlying-submodule formula and the two vector formulas are definitional
@@ -59,16 +59,13 @@ construction dependency is
 The proof imports these modules without changing the target or its dependencies.
 
 The provenance is the internal order-equivalence construction described above.
-Independent semantic review accepted this proof contribution. Compilation
-and exact-type development checks are separate evidence.
 
 ## Development checks
 
-Worker 67 adopted Worker 4's Lean source unchanged and expanded this
-explanation. The workspace's `Langlands` tree was identical to Library commit
+The `Langlands` tree in which the module was checked was identical to Library commit
 `30ceb5a0d89d8094c1663fc19f35416519b9a125`. The environment was
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` (Lean 4.34.0; Mathlib commit
-`5ed2965256430c3649e86755f9576b54eca72435`). The module compiled with no
+Lean 4.34.0; Mathlib commit
+`5ed2965256430c3649e86755f9576b54eca72435`. The module compiled with no
 errors or warnings.
 
 Inspection reported `Langlands.twistSubquotientLaws` as a theorem with
@@ -78,5 +75,4 @@ level parameters `uR`, `uG` and `uV`. Its unapplied type is
 outer telescope of the target. A separate check file assigned the unapplied
 constant `@Langlands.twistSubquotientLaws` to that telescope without adapting
 arguments. Both the closing theorem and `isIrreducible_twist_iff` depend only
-on `propext`, `Classical.choice` and `Quot.sound`. These are development
-checks, not independent acceptance.
+on `propext`, `Classical.choice` and `Quot.sound`.

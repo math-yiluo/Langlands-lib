@@ -1,7 +1,5 @@
 # The rank-one Levi factor dichotomy: proof
 
-Authors: Worker 180.
-
 The theorem `Langlands.GroupScheme.rankOneLeviFactorDichotomy` has type
 `RankOneLeviFactorDichotomyStatement.{u}` (module
 `SimplyConnected.RankOneLeviDerivedGenerationReduction`), at arbitrary

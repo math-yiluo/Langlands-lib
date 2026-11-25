@@ -1,7 +1,5 @@
 # Flatness of polynomial algebras in strict Tate algebras
 
-Author: Worker 387 (Task 7655).
-
 This helper module proves that the polynomial map
 `polynomialMap n : K[T₁, …, Tₙ] → K⟨T₁, …, Tₙ⟩` (`MvPolynomial.aeval` of the
 Tate coordinates `StrictTateAlgebra.X`) is flat (`flat_polynomialMap`). Here

@@ -108,7 +108,7 @@ back by `t⁻¹` (`conj_mem_filtration`, with `t⁻¹ · x = x`) recovers `gp j`
 
 ## Provenance
 
-Internal derived unit. The core statement is the algebraic form of the fact that
+The core statement is the algebraic form of the fact that
 `U⁺ x ∩ U⁻ x = {x}` in the Bruhat–Tits building, used in the displayed equation in the proof of
 Kaletha–Prasad, *Bruhat–Tits theory: a new approach* (2023), Proposition 8.4.15 (printed p. 307 /
 PDF p. 338; source `kaletha-prasad-2023-bruhat-tits-new-approach`). The rank-one fold is the
@@ -117,5 +117,5 @@ Proposition 7.3.3 (printed p. 165 / PDF p. 162; source
 `bruhat-tits-1972-reductive-local-groups-i`). The length induction follows the idea of
 Bruhat–Tits Lemma 7.3.6 and 7.3.8 (printed pp. 166–170), but replaces their reductive-quotient
 argument with the strictly decreasing root form above. KP and BT state these facts for
-building data satisfying their axioms. This unit proves the core statement for every supplied
+building data satisfying their axioms. This module proves the core statement for every supplied
 `KPApartmentData` of a maximal split torus of a connected reductive group over any field.

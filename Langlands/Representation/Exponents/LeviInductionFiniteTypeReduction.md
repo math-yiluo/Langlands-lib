@@ -122,7 +122,7 @@ The reduction is derived. The mathematical steps are Renard's VI.1.3, VI.5.1, VI
 VI.7.5 Proposition, combined in the order described above. Renard's own proof of the
 VI.7.5 Theorem goes through VI.7.2 instead. The finite family, its joint reflection of
 isomorphisms, the supercuspidality-test statement and the dimension induction are reused
-from `Exponents/SmoothRepNoetherianReduction.lean` (Worker 1582). For this reuse, the
+from `Exponents/SmoothRepNoetherianReduction.lean`. For this reuse, the
 declarations `PointGroup`, `pointGroups`, `familyFunctor`,
 `familyFunctor_preservesMonomorphisms` and `familyFunctor_jointlyReflectsMonoIsos` of that
 module are made public; their statements and proofs are unchanged.

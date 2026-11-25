@@ -14,8 +14,7 @@ groupes p-adiques (d'après Harish-Chandra)* (2003), I.1, printed page 240
 I.1 fixes Haar mass one on the compact subgroup; II.1 defines the spherical
 function by its integral on that subgroup. The equality here is a deduction
 from uniqueness of Haar probability, rather than a separately asserted theorem
-in the source. The connection to the spherical integral was proposed by
-Worker 249; Worker 200 implemented this comparison.
+in the source.
 
 ## Measures and hypotheses
 
@@ -105,4 +104,4 @@ probability. Identification of a supplied `K` with the source's special
 compact subgroup, realization of the displayed structural inputs,
 independence of `K`, the Levi coefficient estimates, uniformity in unitary
 unramified families, the remaining assembly of VI.2.2, and the Plancherel
-theorem remain separate obligations.
+theorem are not part of this module.

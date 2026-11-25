@@ -1,6 +1,6 @@
 # Universal chart invariance of coaction-invariant elements
 
-Worker 632. Internal lemma for finite étale chart descent. A universal
+Internal lemma for finite étale chart descent. A universal
 coaction-invariant element of the original chart algebra is fixed by every
 original chart-transition isomorphism. The proof tests on the original
 base-changed chart algebra itself, transports the universal coefficient

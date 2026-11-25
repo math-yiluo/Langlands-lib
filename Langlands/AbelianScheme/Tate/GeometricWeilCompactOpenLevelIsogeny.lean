@@ -74,8 +74,8 @@ local notation "fixedAB" => Tate.weilAdelicLevelIsogeny preservation composition
 /-- Actual geometric full tower isogeny, with finite-fibre and finite-etale witnesses proved. -/
 def weilAdelicCompactOpenLevelIsogeny (q : ℚˣ)
     (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hqe : multipleAB (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB)) : TowerA ≅ TowerB :=
   genericAB q e he hqe
@@ -87,8 +87,8 @@ local notation "isogenyBC" => weilAdelicCompactOpenLevelIsogeny preservation com
 /-- The forward component is the actual fixed-level rational-isogeny equivalence. -/
 @[simp] theorem weilAdelicCompactOpenLevelIsogeny_hom_app (q : ℚˣ)
     (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hqe : multipleAB (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB))
     (K : LevelIndex) (x : (TowerA).obj K) :
@@ -97,8 +97,8 @@ local notation "isogenyBC" => weilAdelicCompactOpenLevelIsogeny preservation com
 /-- The inverse component is the inverse actual fixed-level equivalence. -/
 @[simp] theorem weilAdelicCompactOpenLevelIsogeny_inv_app (q : ℚˣ)
     (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hqe : multipleAB (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB))
     (K : LevelIndex) (x : (TowerB).obj K) :
@@ -108,8 +108,8 @@ local notation "isogenyBC" => weilAdelicCompactOpenLevelIsogeny preservation com
 /-- Isogeny transport commutes with every transporter arrow, including level forgetting. -/
 theorem weilAdelicCompactOpenLevelIsogeny_arrow (q : ℚˣ)
     (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hqe : multipleAB (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB))
     {K L : LevelIndex} (f : K ⟶ L) (x : (TowerA).obj K) :
@@ -123,8 +123,8 @@ variable [Module.Finite ℚ V]
 /-- Isogeny transport commutes with the first actual compact-open Hecke leg. -/
 theorem weilAdelicCompactOpenLevelIsogeny_heckeLeft (q : ℚˣ)
     (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hqe : multipleAB (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB))
     (K L : LevelIndex) (g : G)
@@ -138,8 +138,8 @@ theorem weilAdelicCompactOpenLevelIsogeny_heckeLeft (q : ℚˣ)
 /-- Isogeny transport commutes with the second actual compact-open Hecke leg. -/
 theorem weilAdelicCompactOpenLevelIsogeny_heckeRight (q : ℚˣ)
     (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hqe : multipleAB (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB))
     (K L : LevelIndex) (g : G)
@@ -163,10 +163,10 @@ end Hecke
 def weilAdelicCompactOpenLevelIsogenyComp (q r : ℚˣ)
     (e : Rationalization.of A ≅ Rationalization.of B)
     (f : Rationalization.of B ≅ Rationalization.of C)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
-    (hf : ∀ d, Rationalization.comp B B C (iB d) f.hom =
-      Rationalization.comp B C C f.hom (iC d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
+    (hf : ∀ d, Rationalization.comp B B C (iB d).asHom f.hom =
+      Rationalization.comp B C C f.hom (iC d).asHom)
     (hqe : multipleAB (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB))
     (hrf : multipleBC (r : ℚ) f.hom
@@ -179,10 +179,10 @@ local notation "isogenyComp" => weilAdelicCompactOpenLevelIsogenyComp preservati
 theorem weilAdelicCompactOpenLevelIsogenyComp_eq_trans (q r : ℚˣ)
     (e : Rationalization.of A ≅ Rationalization.of B)
     (f : Rationalization.of B ≅ Rationalization.of C)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
-    (hf : ∀ d, Rationalization.comp B B C (iB d) f.hom =
-      Rationalization.comp B C C f.hom (iC d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
+    (hf : ∀ d, Rationalization.comp B B C (iB d).asHom f.hom =
+      Rationalization.comp B C C f.hom (iC d).asHom)
     (hqe : multipleAB (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB))
     (hrf : multipleBC (r : ℚ) f.hom
@@ -194,8 +194,8 @@ theorem weilAdelicCompactOpenLevelIsogenyComp_eq_trans (q r : ℚˣ)
 /-- Direct inverse transport uses the geometrically derived reciprocal multiplier. -/
 def weilAdelicCompactOpenLevelIsogenyInverse (q : ℚˣ)
     (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hqe : multipleAB (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB)) : TowerB ≅ TowerA :=
   Tate.weilAdelicCompactOpenLevelIsogenyInverse preservation composition unitCoherence associativity comparison symmetry stability hA geometryA MA evaluationA lamA hB geometryB MB evaluationB lamB additivityAB additivityBA additivityBB compatibility h iA iB V ψ s (geometricFiberFinite s) torsionFiniteEtale hunit (hμfin := μfin) (hμet := μet) q e he hqe
@@ -205,8 +205,8 @@ local notation "isogenyInverse" => weilAdelicCompactOpenLevelIsogenyInverse pres
 /-- Reversing an actual rational isogeny inverts the natural tower comparison. -/
 theorem weilAdelicCompactOpenLevelIsogeny_symm (q : ℚˣ)
     (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hqe : multipleAB (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB)) :
     (isogenyAB q e he hqe).symm = isogenyInverse q e he hqe :=
@@ -235,8 +235,8 @@ local notation "fixedAB" => Tate.weilPrimeToAdelicLevelIsogeny preservation comp
 /-- Actual geometric away tower isogeny, with finite-fibre and finite-etale witnesses proved. -/
 def weilPrimeToAdelicCompactOpenLevelIsogeny (q : ℚˣ)
     (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hqe : multipleAB (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB)) : TowerA ≅ TowerB :=
   genericAB q e he hqe
@@ -248,8 +248,8 @@ local notation "isogenyBC" => weilPrimeToAdelicCompactOpenLevelIsogeny preservat
 /-- The forward component is the actual fixed-level rational-isogeny equivalence. -/
 @[simp] theorem weilPrimeToAdelicCompactOpenLevelIsogeny_hom_app (q : ℚˣ)
     (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hqe : multipleAB (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB))
     (K : LevelIndex) (x : (TowerA).obj K) :
@@ -258,8 +258,8 @@ local notation "isogenyBC" => weilPrimeToAdelicCompactOpenLevelIsogeny preservat
 /-- The inverse component is the inverse actual fixed-level equivalence. -/
 @[simp] theorem weilPrimeToAdelicCompactOpenLevelIsogeny_inv_app (q : ℚˣ)
     (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hqe : multipleAB (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB))
     (K : LevelIndex) (x : (TowerB).obj K) :
@@ -269,8 +269,8 @@ local notation "isogenyBC" => weilPrimeToAdelicCompactOpenLevelIsogeny preservat
 /-- Isogeny transport commutes with every transporter arrow, including level forgetting. -/
 theorem weilPrimeToAdelicCompactOpenLevelIsogeny_arrow (q : ℚˣ)
     (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hqe : multipleAB (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB))
     {K L : LevelIndex} (f : K ⟶ L) (x : (TowerA).obj K) :
@@ -284,8 +284,8 @@ variable [Module.Finite ℚ V]
 /-- Isogeny transport commutes with the first actual compact-open Hecke leg. -/
 theorem weilPrimeToAdelicCompactOpenLevelIsogeny_heckeLeft (q : ℚˣ)
     (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hqe : multipleAB (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB))
     (K L : LevelIndex) (g : G)
@@ -299,8 +299,8 @@ theorem weilPrimeToAdelicCompactOpenLevelIsogeny_heckeLeft (q : ℚˣ)
 /-- Isogeny transport commutes with the second actual compact-open Hecke leg. -/
 theorem weilPrimeToAdelicCompactOpenLevelIsogeny_heckeRight (q : ℚˣ)
     (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hqe : multipleAB (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB))
     (K L : LevelIndex) (g : G)
@@ -324,10 +324,10 @@ end Hecke
 def weilPrimeToAdelicCompactOpenLevelIsogenyComp (q r : ℚˣ)
     (e : Rationalization.of A ≅ Rationalization.of B)
     (f : Rationalization.of B ≅ Rationalization.of C)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
-    (hf : ∀ d, Rationalization.comp B B C (iB d) f.hom =
-      Rationalization.comp B C C f.hom (iC d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
+    (hf : ∀ d, Rationalization.comp B B C (iB d).asHom f.hom =
+      Rationalization.comp B C C f.hom (iC d).asHom)
     (hqe : multipleAB (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB))
     (hrf : multipleBC (r : ℚ) f.hom
@@ -340,10 +340,10 @@ local notation "isogenyComp" => weilPrimeToAdelicCompactOpenLevelIsogenyComp pre
 theorem weilPrimeToAdelicCompactOpenLevelIsogenyComp_eq_trans (q r : ℚˣ)
     (e : Rationalization.of A ≅ Rationalization.of B)
     (f : Rationalization.of B ≅ Rationalization.of C)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
-    (hf : ∀ d, Rationalization.comp B B C (iB d) f.hom =
-      Rationalization.comp B C C f.hom (iC d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
+    (hf : ∀ d, Rationalization.comp B B C (iB d).asHom f.hom =
+      Rationalization.comp B C C f.hom (iC d).asHom)
     (hqe : multipleAB (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB))
     (hrf : multipleBC (r : ℚ) f.hom
@@ -355,8 +355,8 @@ theorem weilPrimeToAdelicCompactOpenLevelIsogenyComp_eq_trans (q r : ℚˣ)
 /-- Direct inverse transport uses the geometrically derived reciprocal multiplier. -/
 def weilPrimeToAdelicCompactOpenLevelIsogenyInverse (q : ℚˣ)
     (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hqe : multipleAB (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB)) : TowerB ≅ TowerA :=
   Tate.weilPrimeToAdelicCompactOpenLevelIsogenyInverse preservation composition unitCoherence associativity comparison symmetry stability hA geometryA MA evaluationA lamA hB geometryB MB evaluationB lamB additivityAB additivityBA additivityBB compatibility h iA iB V ψ s (geometricFiberFinite s) torsionFiniteEtale hAway hunit (hμfin := μfin) (hμet := μet) q e he hqe
@@ -366,8 +366,8 @@ local notation "isogenyInverse" => weilPrimeToAdelicCompactOpenLevelIsogenyInver
 /-- Reversing an actual rational isogeny inverts the natural tower comparison. -/
 theorem weilPrimeToAdelicCompactOpenLevelIsogeny_symm (q : ℚˣ)
     (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hqe : multipleAB (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB)) :
     (isogenyAB q e he hqe).symm = isogenyInverse q e he hqe :=

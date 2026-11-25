@@ -1,6 +1,6 @@
 # Unipotent corepresented group schemes and their coordinate bialgebras
 
-Worker 1395 wrote this module. It connects the Library's `IsUnipotent` (every nonzero
+This module connects the Library's `IsUnipotent` (every nonzero
 finite-dimensional matrix representation has a nonzero fixed vector) with the internal
 coordinate predicate `OneMemStable` from `Langlands.GroupScheme.Unipotent.HopfFixed`. It does so
 for a group scheme `Corepresented.groupScheme F e` over a field `k`, where

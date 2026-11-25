@@ -190,7 +190,7 @@ theorem coefficient_eq_product
     (ψ : HarmonicAnalysis.UnitaryAdditiveCharacter (Adeles F))
     (hψF : ∀ x : F, ψ (algebraMap F (Adeles F) x) = 1)
     (ψv : ∀ v : S, Correspondence.NontrivialAdditiveCharacter (CompletionPadic.padicField v.1))
-    (hψv : ∀ v, ClassField.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent ψ v.1 (ψv v))
+    (hψv : ∀ v, ClassFieldTheory.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent ψ v.1 (ψv v))
     (ℓ : ∀ v : S, FactorFunctionals P v.1 (ψv v))
     (a₀ : ∀ v : S, P.localFactor v) (ha₀ : ∀ v, (ℓ v).val (a₀ v) = 1)
     (g : Points F (r + 1)) (hg : ∀ v : S, finiteComponent F (r + 1) v g = 1)
@@ -236,7 +236,7 @@ theorem translated_coefficient_eq_product
     (ψ : HarmonicAnalysis.UnitaryAdditiveCharacter (Adeles F))
     (hψF : ∀ x : F, ψ (algebraMap F (Adeles F) x) = 1)
     (ψv : ∀ v : S, Correspondence.NontrivialAdditiveCharacter (CompletionPadic.padicField v.1))
-    (hψv : ∀ v, ClassField.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent ψ v.1 (ψv v))
+    (hψv : ∀ v, ClassFieldTheory.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent ψ v.1 (ψv v))
     (ℓ : ∀ v : S, FactorFunctionals P v.1 (ψv v))
     (a₀ : ∀ v : S, P.localFactor v) (ha₀ : ∀ v, (ℓ v).val (a₀ v) = 1)
     (g : Points F (r + 1)) (hg : ∀ v : S, finiteComponent F (r + 1) v g = 1)
@@ -283,7 +283,7 @@ def FiniteWhittakerSeparationStatement : Prop :=
     (ψ : HarmonicAnalysis.UnitaryAdditiveCharacter (Adeles K)),
     (∀ x : K, ψ (algebraMap K (Adeles K) x) = 1) →
     ∀ (ψv : ∀ v : S, Correspondence.NontrivialAdditiveCharacter (CompletionPadic.padicField v.1)),
-    (∀ v, ClassField.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent ψ v.1 (ψv v)) →
+    (∀ v, ClassFieldTheory.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent ψ v.1 (ψv v)) →
     ∀ (ℓ : ∀ v : S, FactorFunctionals P v.1 (ψv v)),
     (∀ v, (ℓ v).val ≠ 0) →
     ∃ a₀ : ∀ v : S, P.localFactor v,

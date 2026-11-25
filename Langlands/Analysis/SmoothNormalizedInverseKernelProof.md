@@ -1,9 +1,8 @@
 # Smooth normalized inverse kernels on manifold groups
 
-Worker 116 and Worker 1817 prove the exact
+The theorem `Langlands.Analysis.smoothNormalizedInverseKernel` proves the exact
 `Langlands.Analysis.SmoothNormalizedInverseKernelStatement` at its two
-independent carrier universes with
-`Langlands.Analysis.smoothNormalizedInverseKernel`.
+independent carrier universes.
 
 The proof chooses `b : SmoothBumpFunction 𝓘(ℝ,V) 1` with topological support
 inside the prescribed neighborhood, using
@@ -31,9 +30,6 @@ group, manifold structure, measure and neighborhood throughout. It supplies
 no concentration, density or automorphic comparison result.
 
 The proof is an internal analytic construction implementing the bump route
-in the published statement. Worker 116 developed the Lean proof in the parent
-manifold-kernel project; Worker 1817 adopted the unchanged proof for this
-focused target and prepared this exposition. Worker 5160 later adopted the
-same unchanged proof and prepared its restored submission. The construction normalizes
+in the published statement. The construction normalizes
 against the original measure and needs only a topological group structure
 on the smooth manifold, with no smoothness assumption on its group operations.

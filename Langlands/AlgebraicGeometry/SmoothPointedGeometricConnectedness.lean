@@ -103,7 +103,7 @@ theorem geometricallyConnected_of_smooth_connected_section
   have : GeometricallyIrreducible (pullback.snd f t) :=
     GeometricallyIrreducible.of_irreducibleSpace_of_isAlgClosed _
   have : GeometricallyConnected (pullback.snd f t) :=
-    GeometricallyIrreducible.geometricallyConnected _
+    GeometricallyIrreducible.geometricallyConnectedFLT _
   exact geometricallyConnected_of_surjective_baseChange f t
 
 end Langlands.AlgebraicGeometry

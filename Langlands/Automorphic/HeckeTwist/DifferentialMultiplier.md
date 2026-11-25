@@ -1,7 +1,5 @@
 # Determinant multiplication by any Hecke character and adelic differential operators
 
-Author: Worker 5136.
-
 This internal module computes how the multiplier
 `FiniteSmoothRationalFunctions.heckeDeterminantMultiplier n χ` (module
 `Langlands.Automorphic.HeckeTwist.SmoothMultiplier`), multiplication by

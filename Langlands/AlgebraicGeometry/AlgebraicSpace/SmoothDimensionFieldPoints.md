@@ -1,6 +1,6 @@
 # Actual field points in the finite dimension decomposition
 
-This internal supporting unit uses the actual point-selected open subspaces in
+This internal supporting module uses the actual point-selected open subspaces in
 `SmoothDimensionRestrictions`. It assumes a `SmoothTargetPointDimensions f`
 and works over any coefficient ring and any field with that coefficient action;
 the field need not be finite.
@@ -23,4 +23,4 @@ underlying equality of sections.
 The provenance is the actual source and target subfunctor construction, the
 finite index from `SmoothDimensionOpenSubspaces`, and the singleton spectrum of
 a field. No estimate, Henselian lifting assertion, or adelic openness result is
-assumed or proved in this unit.
+assumed or proved in this module.

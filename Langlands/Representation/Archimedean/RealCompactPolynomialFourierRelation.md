@@ -48,7 +48,7 @@ The actual-map corollaries are also proved:
 rank-three equivalence for all common degree bounds, functions and
 polynomials. `realCompactPolynomialFourierRelation` proves it.
 
-This unit proves no polynomial braid, equality between a chosen interlaced
+This module proves no polynomial braid, equality between a chosen interlaced
 equivalence and a prescribed word, or filtration kernel-image containment.
 The differential-sign hypothesis on `tail_operator` is explicit; a tail
 with the other symmetry is not identified with that polynomial operator.

@@ -1,6 +1,6 @@
 # Uniform scalar torsion on represented kernels
 
-This internal unit supplies two elementary inputs to the construction of
+This module supplies two elementary inputs to the construction of
 integral scalar-power dual isogenies for the local quasi-isogeny inverse
 problem. It uses actual formal-module points on all coefficient
 algebras and the existing affine fppf lifting condition.

@@ -30,8 +30,8 @@ local notation "Q[" D "]" => RationalQuotient F G D
 local notation "Γ[" D "]" => rationalSubgroup F G D
 local notation "μ[" D "]" => normalizedRationalQuotientHaarMeasure F G D
 
-local instance : LocallyCompactSpace G[V] := hV.locallyCompactSpace
-local instance : LocallyCompactSpace G[W] := hW.locallyCompactSpace
+private local instance : LocallyCompactSpace G[V] := hV.locallyCompactSpace
+private local instance : LocallyCompactSpace G[W] := hW.locallyCompactSpace
 local instance : BorelSpace Q[V] := rationalQuotientBorelSpace F G V
 local instance : BorelSpace Q[W] := rationalQuotientBorelSpace F G W
 

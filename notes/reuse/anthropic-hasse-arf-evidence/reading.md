@@ -11,7 +11,7 @@ The following is the audit’s contemporaneous reading record. Private path refe
 SHA256 of the exact UTF-8 block: `48a51c0fed8da4becd336379c2ee03d33b67e021489323da548cf0e25b087eea`.
 
 ````markdown
-# Reading notes, Worker 25
+# Reading notes
 
 Closure ordinals refer to closure.json. Fully read: ALL 1–53. Ordinal 17's initially truncated lines 125–180 were subsequently read at lines 115–190. All 8,170 original source lines have now been read across the two activations.
 
@@ -32,9 +32,9 @@ Closure ordinals refer to closure.json. Fully read: ALL 1–53. Ordinal 17's ini
 
 ## Private successful bridge
 
-HasseArfAudit.lean in .private/drafts/hasse-arf-adapted passes as a complete private experiment. Source root and final adapter both have only propext, Classical.choice, Quot.sound. Source root check 4fe27a02-ebbe-447c-9d2a-43b91b2b8117; adapter a6772f3b-634c-4fad-92ec-3c7760dc0f24. The latter supplies #check @ types with pp.universes and #print axioms, retained in 08-bridge-check-output.txt. Its checker did not perform exact-target receipt validation: target_matches false is the no-statement-inspection default, not evidence of mismatched type. No publication or semantic acceptance yet.
+HasseArfAudit.lean passes as a complete private experiment. Source root and final adapter both have only propext, Classical.choice, Quot.sound. Both were checked; the adapter check supplies #check @ types with pp.universes and #print axioms, retained in 08-bridge-check-output.txt. That check did not compare the result with an exact target statement: target_matches false is the default when no statement is inspected, not evidence of a mismatched type.
 
-The faithful action proof adapts Worker 40's private Galois.lean argument using fraction-ring hom extensionality. No need to identify the fixed subring with K's integers: the source theorem only requires its intrinsic fixed ring. FixedPoints.maximalIdeal_subring_eq_comap directly gives LiesOver. A finite target residue field, injective map from the fixed residue field and explicit Ideal.Quotient.field instances supply both field perfectness and separability. The raw quotient and IsLocalRing.ResidueField alias require explicit types in typeclass inference; terminal failed checks 05–07 record this. groups_eq is ext/rfl for every natural index. Both source and host use Nat.card, so Fintype.card conversion is unnecessary at this boundary. Source proof internals use Nat.card_eq_fintype_card where appropriate. phi_nat converts shifted range to Icc by induction, floor at natural i is i and the fractional term vanishes; i=0 is included without an extra hypothesis. Final cancellation uses lowerGroupOrder_pos 0 and produces n:Nat cast to Int.
+The faithful action proof adapts a private Galois.lean argument using fraction-ring hom extensionality. No need to identify the fixed subring with K's integers: the source theorem only requires its intrinsic fixed ring. FixedPoints.maximalIdeal_subring_eq_comap directly gives LiesOver. A finite target residue field, injective map from the fixed residue field and explicit Ideal.Quotient.field instances supply both field perfectness and separability. The raw quotient and IsLocalRing.ResidueField alias require explicit types in typeclass inference; terminal failed checks 05–07 record this. groups_eq is ext/rfl for every natural index. Both source and host use Nat.card, so Fintype.card conversion is unnecessary at this boundary. Source proof internals use Nat.card_eq_fintype_card where appropriate. phi_nat converts shifted range to Icc by induction, floor at natural i is i and the fractional term vanishes; i=0 is included without an extra hypothesis. Final cancellation uses lowerGroupOrder_pos 0 and produces n:Nat cast to Int.
 
 ## Current upstream errata check
 

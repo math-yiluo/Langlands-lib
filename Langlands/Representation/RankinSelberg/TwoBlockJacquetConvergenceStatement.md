@@ -1,7 +1,6 @@
 # Ordinary absolute convergence of the two-block Jacquet integral
 
-Author: Worker 814. Worker 484 specified the unit as a statement prerequisite
-for the dominant-rank joint gamma/L task `d7ca9f6d`.
+The statement is a prerequisite of the dominant-rank joint gamma/L argument.
 
 Source: H. Jacquet, I. I. Piatetskii-Shapiro, J. A. Shalika, *Rankin-Selberg
 convolutions*, Amer. J. Math. 105 (1983), registered as
@@ -159,8 +158,8 @@ the nested finite `Measure.pi` of copies of the supplied scalar Haar measure
 `ν.val.measure`, one per matrix entry. It is the source's additive Haar measure
 `dx` on `M(t₁ × t₂)`. Changing `ν` rescales the measure by a positive finite
 constant, so the assertion does not depend on the normalization. The
-statement keeps the supplied self-dual measure because the consumer task uses
-it. No other measure appears: the Iwasawa decomposition and the measures on
+statement keeps the supplied self-dual measure because the dominant-rank
+argument uses it. No other measure appears: the Iwasawa decomposition and the measures on
 `N̄`, `A` and `K` belong to the source's proof, not to its assertion.
 
 ## Ordinary absolute integrability
@@ -283,7 +282,8 @@ twists representations realized in Whittaker models.
 ## Not claimed
 
 The module proves no convergence; `TwoBlockJacquetConvergenceStatement` is a
-proposition for a later proof task. It contains no nonzero induced Whittaker
+proposition, proved by `twoBlockJacquetConvergence` in
+`TwoBlockJacquetConvergenceProof`. It contains no nonzero induced Whittaker
 functional, Whittaker equivariance of the Jacquet integral,
 coefficient-image spanning, quotient unfolding, functional equation, analytic
 deformation or multiplicativity claim. It does not state the source's claim

@@ -1,7 +1,5 @@
 # Renard A.IX: proof of finite closure and abelianness of supported objects
 
-Author: Worker 1052.
-
 This module proves `Langlands.Renard.simpleSupportFiniteClosure`, whose
 entire type is
 
@@ -22,8 +20,8 @@ hypotheses `IsSourceGrothendieck.{w} C`, `SourceAB6 C` and
 `S : Set (ObjectClass C)`. The published statement pair and everything it
 imports are unchanged. Besides the statement module, the proof imports the
 published `Langlands.CategoryTheory.Renard.SimpleSubquotientSubobjectQuotient`
-and Mathlib's `Mathlib.CategoryTheory.Preadditive.LeftExact`. No new file
-besides this pair is added. The approved Lean service reported the axioms `propext`,
+and Mathlib's `Mathlib.CategoryTheory.Preadditive.LeftExact`. A development
+check reported the axioms `propext`,
 `Classical.choice` and `Quot.sound`; there are no proof holes.
 
 ## Source and provenance
@@ -32,11 +30,11 @@ The governing source is David Renard, *Représentations des groupes réductifs
 p-adiques*, French edition dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1052 read A.IX, printed page 268 / PDF page 274, as extracted text
+A.IX, printed page 268 / PDF page 274, was read as extracted text
 from that file. Renard states without proof that `M_S`, the full subcategory
 of objects whose irreducible subquotients lie in `S`, is an abelian
-subcategory stable under subquotients, extensions and colimits. Worker 1052
-also read A.VI.3, printed pages 263–264 / PDF pages 269–270. There Renard
+subcategory stable under subquotients, extensions and colimits. A.VI.3,
+printed pages 263–264 / PDF pages 269–270, was also read. There Renard
 defines `JH(M)` as the set of simple subquotients and proves
 `JH(M) = JH(M') ∪ JH(M/M')` for a subobject `M' ⊂ M` (Lemma (i)) and
 `JH(M) = ∅` if and only if `M = 0` (Lemma (ii)).
@@ -50,7 +48,7 @@ Finite-product closure, the identification of the abelian structure with the
 inherited preadditive structure, and exactness of the inclusion are the
 internal realization clauses of the published target. They are obtained
 from Mathlib's full-subcategory machinery, not from Renard. Colimit closure
-is not part of this unit.
+is not part of this module.
 
 None of the three source hypotheses is used. Every proved closure property
 holds for every set `S` of object classes in every abelian category. The
@@ -137,7 +135,7 @@ the actual published predicate and inclusion, with no extra parameters.
 ## Reused work
 
 The mono/epi transport lemmas and `simpleSubquotientClasses_subset_union`
-are Worker 695's published module
+are in the published module
 `Langlands.CategoryTheory.Renard.SimpleSubquotientSubobjectQuotient`. The
 support predicate, full subcategory and inclusion are the published
 `Langlands.CategoryTheory.Renard.SimpleSupport`. From Mathlib, the proof uses
@@ -152,4 +150,4 @@ Himmel and Jakob von Raumer).
 
 Closure under arbitrary coproducts or colimits, the supported sums `E_S`
 and their maximality, Hom orthogonality, splitting and product
-decomposition are outside this unit.
+decomposition are outside this module.

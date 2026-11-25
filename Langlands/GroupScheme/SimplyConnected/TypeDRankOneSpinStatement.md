@@ -1,7 +1,5 @@
 # Actual quaternionic spin covers from rank-one type-D indices
 
-Author: Worker 5442.
-
 `Langlands.GroupScheme.TypeDRankOneSpinStatement.{u}` is an unproved
 identification statement. It supplies the forward type-D case needed
 after the enumeration `LocalRankOneTitsIndexStatement` of the actual

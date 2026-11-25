@@ -38,7 +38,9 @@ then uses `IsTorus.exists_extensionSection` for arbitrary tori.
 The provenance is an internal deduction from the imported vector-group,
 affine torsor and arbitrary-torus extension constructions. No characteristic,
 perfection, cardinality or splitness restriction is imposed. The original
-scheme section is now constructed from the flat-surjective affine quotient;
+scheme section is constructed from the flat-surjective affine quotient;
 existence of scalar-linear coordinates for the ambient conjugation remains an
 explicit hypothesis. Constructing those coordinates from a torus quotient and
-assembling maximal-torus conjugacy are further obligations of the host task.
+assembling maximal-torus conjugacy are not done in this module; maximal-torus
+conjugacy (`SolvableMaximalTorusConjugacyStatement`) is proved in
+`Rational.SolvableMaximalTorusConjugacyProof`.

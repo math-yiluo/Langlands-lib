@@ -1,6 +1,7 @@
 # Finite adelic factors and archimedean multiplicity spaces
 
-This internal construction for Task 7294 separates the finite adelic action
+This internal construction for the cuspidal contragredient of dual cusp forms
+(`CuspidalTransposeInverseContragredientStatement`) separates the finite adelic action
 from the compact and genuine enveloping actions on an actual operator
 realization `S`. Its inputs are the existing concrete operators, the
 published full-operator generator stability theorem, Jacobson density and

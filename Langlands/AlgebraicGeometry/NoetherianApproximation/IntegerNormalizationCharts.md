@@ -19,5 +19,7 @@ quasi-finiteness criterion in algebraic Zariski's Main Theorem gives
 quasi-finiteness at the original prime.
 
 Both lemmas are internal derivations from Mathlib. The exact proof theorem
-packages them as the two conjuncts of the statement. This contribution proves
-these auxiliary tools; the global finite-normalization target is separate.
+packages them as the two conjuncts of the statement. This module proves
+these auxiliary tools; the global finite-normalization statement
+`IntegerFiniteTypeNormalizationStatement` is separate, and the Library proves
+it in `IntegerFiniteTypeNormalizationProof`.

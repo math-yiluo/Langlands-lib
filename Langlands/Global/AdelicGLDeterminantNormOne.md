@@ -11,5 +11,5 @@ determinant. The proof includes the case `n = 0`.
 `GeneralLinearGroupPoints.normOneAdelicHomeomorph` restricts the published
 adelic matrix homeomorphism to these subgroups with their original subtype
 topologies. This is a derived comparison between the general algebraic
-character convention and the matrix convention used for the adelic
-centralizers in Task 7799.
+character convention and the matrix convention used for the adelic twisted
+centralizers of rational points of `Res_{L/K} GL_n`.

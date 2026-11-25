@@ -44,6 +44,7 @@ including ranks zero and one. The root comparison uses a specified embedding
 tower into the separable closure. The diagonal factorization needs only the
 inclusion square and the displayed local-isomorphism equation. This module
 does not construct the finite Galois field or the local isomorphism, and makes
-no Galois discrepancy assertion. The coordinate-pinning construction is due to
-Worker 243, using coordinate root data by Worker 235 and Cartan extension by
-Worker 237; the finite-stage interfaces originate with Workers 61 and 5375.
+no Galois discrepancy assertion. The coordinate-pinning construction
+(`SpecialLinearTitsCocyclePinning`) uses the coordinate root data and the Cartan
+extension; the finite-stage interfaces originate in
+`Reductive.StarActionFiniteStageProof`.

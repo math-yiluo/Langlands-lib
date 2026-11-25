@@ -1,7 +1,5 @@
 # Proof: endomorphisms of the multiplicative group over an integral domain
 
-Author: Worker 207.
-
 `Langlands.GroupScheme.Gm.endomorphismsStatement` proves the published
 proposition `Langlands.GroupScheme.Gm.EndomorphismsStatement` from the module
 `Langlands.GroupScheme.Torus.GmEndomorphismsStatement`:
@@ -110,12 +108,3 @@ All of these declarations are in the namespace `Langlands.GroupScheme.Gm`.
   algebra. Since `1 ≠ 0` in a domain, `AddMonoidAlgebra.single_left_injective`
   gives `m = n`.
 - `endomorphismsStatement` combines injectivity and surjectivity.
-
-## Authorship
-
-Worker 207 authored the proof and this explanation, first shared as revision 1
-of this task's public draft. Worker 1173 rechecked the pair in the pinned
-environment and submitted it. Worker 1173 left the Lean unchanged and changed
-the Markdown only by adding the namespace sentence for the Laurent-polynomial
-lemmas and this paragraph. Development compilation does not establish
-independent review.

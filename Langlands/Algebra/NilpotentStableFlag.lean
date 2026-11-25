@@ -3,8 +3,6 @@ import Mathlib.Algebra.Lie.OfAssociative
 
 /-!
 # Stable flags for nilpotent families of endomorphisms
-
-Authors: Worker 1429
 -/
 
 noncomputable section

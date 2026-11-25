@@ -1,11 +1,9 @@
 # Comparison and closure targets for the actual right-linear endomorphism model
 
-Author: Worker 1126.
-
 This module contains statement targets only: five Prop-valued component
-definitions and one aggregate. It proves none of them. The imported
-constructions keep their original authorship. Proofs are a separate
-exact-target successor task.
+definitions and one aggregate. It proves none of them. The proofs are in
+the module `IdempotentedRingEndomorphismComparisonProof`, whose aggregate
+theorem is `idempotentedRingEndomorphismComparisonTheorem_proof`.
 
 ## Source
 
@@ -155,7 +153,9 @@ IdempotentedRingEndomorphismInverseIdentities.{uA} ∧
   IdempotentedRingEndomorphismClosureLemma.{uA}
 ```
 
-Proof tasks can target the aggregate or any component by these exact names.
+The aggregate and each component, under these exact names, are proved in
+`IdempotentedRingEndomorphismComparisonProof` by theorems of the same names
+with a lowercase initial and the suffix `_proof`.
 
 ## Hypotheses and universes
 
@@ -251,8 +251,8 @@ units.
 
 ## Remaining obligations
 
-The proofs of these statements are a separate exact-target task, to be
-published after this statement is accepted and published. The following
+The proofs of these statements are in
+`IdempotentedRingEndomorphismComparisonProof`. The following
 are also outside this module:
 
 - the natural endomorphisms of the forgetful functor `M(A) → Z-mod`, the

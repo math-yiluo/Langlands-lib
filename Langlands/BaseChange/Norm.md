@@ -46,7 +46,7 @@ powers `σ^i` are taken in the group `E ≃ₐ[F] E`, where `(σ * τ) x = σ (�
    same construction for `σ.symm`; `entrywiseAut_toMonoidHom` records (by `rfl`) that
    the underlying monoid homomorphism is `Matrix.GeneralLinearGroup.map (σ : E →+* E)`.
    It is HL's `δ ↦ δ^σ` (I.1.2, I.2.1), and it is intended as the input automorphism of
-   `GL_n(E)` for the generic twisted-conjugacy definitions of package (G) of Task 7340.
+   `GL_n(E)` for the generic twisted-conjugacy definitions of `Langlands.TraceFormula.TwistedOrbital`.
 2. `baseChange F E n : GeneralLinear n F →* GeneralLinear n E` is
    `Matrix.GeneralLinearGroup.map (algebraMap F E)`, entrywise application of the
    structure map. When `algebraMap F E` is injective (for instance for a cyclic algebra
@@ -91,7 +91,7 @@ powers `σ^i` are taken in the group `E ≃ₐ[F] E`, where `(σ * τ) x = σ (�
 
 ## Proved facts
 
-The four identities required by the task:
+The four identities:
 
 8. `cyclicNorm_twistedConj σ l x δ`: for all `x δ : GeneralLinear n E`,
    `cyclicNorm σ l (x⁻¹ * δ * entrywiseAut σ n x) =
@@ -136,6 +136,37 @@ Auxiliary declarations: `entrywiseAut_apply_apply` and `baseChange_apply_apply` 
   `orderOf σ = 1 ≠ 0`. This matches HL's `l ≥ 1`.
 - `isCyclicAlgebra_one`: nonvacuity check, `IsCyclicAlgebra (1 : F ≃ₐ[F] F) 1` for every
   field `F`.
+
+For rational elements and their norms:
+
+- `cyclicNorm_mul_baseChange σ l δ s (hs : Commute δ (baseChange F E n s)) :
+  cyclicNorm σ l (δ * baseChange F E n s) = cyclicNorm σ l δ * baseChange F E n s ^ l`
+  (any commutative `F`, `E`): `N(δ s_E) = N(δ) s_E^l` when `s_E` commutes with `δ`. Proof:
+  induction on `l`; `s_E` is fixed by every `σ^i` (identity 10), so it commutes with every
+  `δ^{σ^i}`. With `δ = 1` it gives `N(s_E) = s_E^l`.
+
+## Rational points and regular semisimple elements over fields
+
+For fields `K`, `L` with `[Algebra K L]` (and `F`, `E` with `[Algebra F E]`):
+
+- `exists_baseChange_eq_of_entrywiseAut_eq {σ : L ≃ₐ[K] L}
+  (hfix : ∀ a : L, σ a = a → a ∈ (algebraMap K L).range) {x : GeneralLinear n L}
+  (hx : entrywiseAut σ n x = x) : ∃ y : GeneralLinear n K, baseChange K L n y = x`: an
+  entrywise fixed invertible matrix is rational when the fixed scalars are. Proof: the
+  entries are images of elements of `K`; the matrix of these has nonzero determinant, since
+  its image is `det x`.
+- `IsCyclicAlgebra.exists_baseChange_eq_of_entrywiseAut_eq (hσ : IsCyclicAlgebra σ l)
+  {g : GeneralLinear n E} (hg : entrywiseAut σ n g = g) : ∃ x : GeneralLinear n F,
+  baseChange F E n x = g` (`E` a field): the case of a cyclic algebra, whose last condition
+  is `hfix` (the other half of HL's remark in I.2.1).
+- `isRegularSemisimple_baseChange {γ : GeneralLinear n F} (hγ : IsRegularSemisimple γ) :
+  IsRegularSemisimple (baseChange F E n γ)`, and the same statement under the name
+  `Langlands.JacquetLanglands.IsRegularSemisimple.baseChange` (for dot notation): the
+  characteristic polynomial of `γ_E` is the image of that of `γ` (`Matrix.charpoly_map`),
+  and the image of a separable polynomial is separable.
+- `isRegularSemisimple_conj_iff (y γ : GeneralLinear n F) :
+  IsRegularSemisimple (y⁻¹ * γ * y) ↔ IsRegularSemisimple γ`: conjugate matrices have the
+  same characteristic polynomial (`Matrix.charpoly_units_conj`).
 
 ## Statement
 
@@ -236,11 +267,12 @@ splits completely. In Lean only the degenerate example `isCyclicAlgebra_one`
 ## Scope
 
 - Twisted conjugacy classes, twisted centralizers and (twisted) orbital integrals are
-  not defined here; they belong to the generic twisted-conjugacy definitions of package
-  (G) of Task 7340, which take `entrywiseAut σ n` as input. σ-conjugacy appears only as
+  not defined here; they belong to the generic twisted-conjugacy definitions of
+  `Langlands.TraceFormula.TwistedOrbital`, which take `entrywiseAut σ n` as input. σ-conjugacy appears only as
   the explicit expression `x⁻¹ * δ * entrywiseAut σ n x`.
 - No Library module is changed. `GeneralLinear`, `IsRegularSemisimple`,
   `IsRegularElliptic` and `Matrix.GeneralLinearGroup.map` are reused.
 - `CyclicNormLemmaStatement` is only stated; its proof (Arthur–Clozel's argument through
   Hilbert's Theorem 90 for `GL_n`, then HL's reduction from cyclic algebras to fields) is
-  a separate task.
+  separate: the Library proves the statement as `cyclicNormLemma` (module
+  `Langlands.BaseChange.CyclicNormLemma`).

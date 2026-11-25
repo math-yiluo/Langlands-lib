@@ -1,6 +1,6 @@
 # Tensor-dual preservation and actual-part restrictions
 
-Workers 321 and 702. This pair is derived internal infrastructure for David
+This pair is derived internal infrastructure for David
 Renard, *Représentations des groupes réductifs p-adiques*, French version of
 9 July 2026, I.4.1–I.4.2, printed pp.22–24 / PDF28–30, especially the
 tensor-Hom argument on PDF30. The original additive module and recovered
@@ -130,7 +130,7 @@ This pair supplies preservation, same-idempotent restriction, original-action
 inclusion identities and coefficient-linear refinements of the actual ambient
 maps. Its source-derived proof route is the evaluation and nondegenerate-image
 argument of I.4.2 with an explicit sufficient coefficient input. The complete
-interface and concrete-example checks are a separate focused pair in this
-task. Inverse identities, a comparison equivalence, categorical naturality,
+interface and concrete-example checks are in the separate pair
+`NonUnitalTensorDualMapsChecks`. Inverse identities, a comparison equivalence, categorical naturality,
 actual F/P specialization and the full-source coefficient-convention
-obligation remain separate work; none is concluded by this pair.
+obligation are outside this pair; none is concluded by this pair.

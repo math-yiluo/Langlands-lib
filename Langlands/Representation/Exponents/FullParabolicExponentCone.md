@@ -1,7 +1,8 @@
 # The positive-cone clause for full represented parabolics
 
-This internal unit supports the proof task on the unitarizable-constituent step of
-Renard, Théorème VII.1.3. Casselman's criterion in the Library,
+This module supports the proof of the unitarizable-constituent step of
+Renard, Théorème VII.1.3 (`MaximalLeviSupercuspidalUnitarizableConstituentStatement`,
+reduced to its inputs in `MaximalLeviUnitarizableConstituentReduction`). Casselman's criterion in the Library,
 `HasPositiveRepresentedJacquetExponents`, also tests full parabolics. This module
 proves that test for a representation with a unitary central character. The
 published identity-parabolic clause `IdentityParabolicCasselmanConeStatement`

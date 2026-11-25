@@ -1,6 +1,6 @@
 # Combinatorics of the rectangle `a(n,d)` (helper for Tadić's Proposition 3.8)
 
-Author: Worker 4021. Module
+Module
 `Langlands.Representation.Classification.TadicRectanglePrimeCombinatorics`, namespace
 `Langlands.Classification.TadicRectanglePrime`. It is a helper module of the proof
 `Langlands.Classification.TadicRectanglePrime.tadicRectangleSoclePrime` of

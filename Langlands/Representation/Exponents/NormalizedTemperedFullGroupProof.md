@@ -1,6 +1,6 @@
 # Unitarity of full-group normalized exponents
 
-Worker 1590 proves the published proposition
+This module proves the published proposition
 `Langlands.Aubert.General.RepresentedParabolic.NormalizedTemperedFullGroupExponentStatement`
 by the theorem `normalizedTemperedFullGroupExponent` in the same namespace.
 
@@ -59,10 +59,11 @@ on `q^(-s)` and later writes the raw natural logarithm of the modulus. In the
 published positive-valuation convention these parameters differ by
 `rawLogRealPart = (-log q) • normalizedRealPart`, with `q > 1`. This proof
 uses the normalized predicate and does not identify their same-cone
-conditions. The separate consistent corrected-source comparison remains a
-separate obligation. The full-center scalar-central-character consequence,
+conditions. The consistent corrected-source comparison is the separate
+`NormalizedTemperedLogarithmicComparisonStatement`, proved as
+`normalizedTemperedLogarithmicComparison`. The full-center scalar-central-character consequence,
 Casselman implication, standard reduction, and later induction and
 classification assertions are not proved here. General presentation
-existence and root-convention comparisons retain their separate owners;
+existence and root-convention comparisons are separate results;
 this proof uses the presentation existence already present in its actual
 temperedness premise and the published central-root restriction theorem.

@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AlgebraicGeometry.ProperOfFibres.LocalZariski
 import Langlands.AlgebraicGeometry.ProperOfFibres.MonoNormalization
 import Langlands.AlgebraicGeometry.ClosedFibreOpenIntegrality

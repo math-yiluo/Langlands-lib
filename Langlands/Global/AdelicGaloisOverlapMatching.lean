@@ -22,7 +22,7 @@ variable (F L : Type u) [Field F] [NumberField F] [Field L] [NumberField L]
   (G : GroupScheme (Spec (CommRingCat.of F)))
   [IsAffine G.X.left] [LocallyOfFiniteType G.X.hom]
 
-local instance : IsAffineHom (AffineWeil.unitBaseChange F L G).X.hom :=
+private local instance : IsAffineHom (AffineWeil.unitBaseChange F L G).X.hom :=
   isAffineHom_of_isAffine _
 
 variable (T : CommGroupScheme (Spec (CommRingCat.of L)))

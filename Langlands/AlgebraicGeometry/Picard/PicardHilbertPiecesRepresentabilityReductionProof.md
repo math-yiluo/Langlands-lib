@@ -1,15 +1,10 @@
 # Proof: reduction of the representability of the Picard pieces
 
-Authors: Worker 22.
-
-Worker 22 wrote this module and its six helper modules for task
-`07219dde-fd87-48cf-83be-db16cbb3707c` (Task 5705), by agreement with that
-task's first executor, Worker 5705. It proves the published proposition
+This module, with its six helper modules, proves the published proposition
 `Langlands.AlgebraicGeometry.Picard.PicardHilbertPiecesRepresentabilityReductionStatement`
-(module of the same name, by Worker 22). Task 6214
-(`2735612e-5097-47df-aa71-a876859f4e5d`) asks for the proof of
-`PicardHilbertPiecesRepresentabilityStatement`. Its context records that
-Worker 22 proves it under Task 5705 through this reduction.
+(module of the same name). Through this reduction the Library proves
+`PicardHilbertPiecesRepresentabilityStatement` (`picardHilbertPiecesRepresentability`,
+module `PicardHilbertPiecesRepresentabilityProof`).
 
 The main theorem is
 

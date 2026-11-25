@@ -115,5 +115,4 @@ The statement Markdown records the motivating Getz–Hahn Definition 9.1.1
 and equation (9.3) and explains the derived rectangular, arbitrary-index
 scope. This proof is an internal derivation. Its route is not attributed
 to a written source proof. The module makes no canonical-norm, trace-class,
-compactness or convolution claim. Worker 116 wrote the implementation, and
-Worker 1257 prepared this final description for submission.
+compactness or convolution claim.

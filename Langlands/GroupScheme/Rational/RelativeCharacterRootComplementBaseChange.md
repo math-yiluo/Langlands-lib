@@ -1,7 +1,5 @@
 # Scalar extension of the intrinsic character/root complement
 
-Author: Worker 1278.
-
 This internal construction and its accompanying lemmas supply the scalar-extension step for the intrinsic character/root complement. They prove that the rational complement implies the real complement in the existing full character space. They do not prove the geometric rational complement or the complete `RelativeCharacterRootComplementStatement`.
 
 ## Tensor-space construction

@@ -1,6 +1,6 @@
 # Renard's seven abelian-category axioms
 
-This construction unit represents Renard 2026 A.VI.1, printed page 261 / PDF
+This construction module represents Renard 2026 A.VI.1, printed page 261 / PDF
 page 267, and obtains the additive Hom structure in A.VI.2(6), printed page
 262 / PDF page 268, by reusing Mathlib's nonpreadditive construction.
 The short equivalences and compatibility laws are intrinsic consequences of
@@ -115,13 +115,13 @@ intrinsic uniqueness consequence, not an additional source hypothesis.
 
 Mathlib at commit `5ed2965256430c3649e86755f9576b54eca72435`,
 `Mathlib/CategoryTheory/Abelian/NonPreadditive.lean`, implements the substantive
-proof, by Markus Himmel (Apache 2.0). Its full source was read for this unit.
+proof, by Markus Himmel (Apache 2.0). Its full source was read for this module.
 After developing images/coimages and normality consequences, it constructs a
 subtraction morphism using the cokernel of the diagonal `A → A × A`. It defines
 subtraction on morphisms from this map, negation from subtraction from zero,
 and addition from subtraction of a negative. The proved identities supply
 additive commutative groups and bilinearity of composition.
-This unit reuses that implementation; it does not supply a new proof of the
+This module reuses that implementation; it does not supply a new proof of the
 substantial construction or assume an additive structure to obtain it.
 
 `AbelianAxioms.homGroup h X Y` exposes the resulting actual
@@ -141,8 +141,9 @@ Mathlib's conversion and uniqueness constructions.
 
 ## Scope
 
-This unit covers the seven-axiom bridge and A.VI.2(6) only. It does not
+This module covers the seven-axiom bridge and A.VI.2(6) only. It does not
 formalize the false subquotient-closure claim preceding AB0; that claim has a
-separate correction and task. Module and sheaf examples, the other A.VI.2
+separate correction, stated in `Langlands.CategoryTheory.AbelianSubcategoryStatement`.
+Module and sheaf examples, the other A.VI.2
 properties, and the later AB4/AB4*, AB5/Grothendieck and AB6 conventions remain
 outside this construction.

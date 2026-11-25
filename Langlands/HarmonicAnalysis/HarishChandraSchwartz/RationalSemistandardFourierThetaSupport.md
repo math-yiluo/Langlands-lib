@@ -1,9 +1,8 @@
 # Support of the actual Fourier family in `Theta^H` (Waldspurger VIII.1.3)
 
 This module applies the fixed-level support interfaces to the actual full
-Fourier family `psi_f`, which is `rationalSemistandardFourierFamily` of Task
-7260 on the full intrinsic index `RationalSemistandardTheta a ha muM` of Task
-7229. It contains:
+Fourier family `psi_f`, which is `rationalSemistandardFourierFamily` on the
+full intrinsic index `RationalSemistandardTheta a ha muM`. It contains:
 
 - a proof of the support inclusion of Remark VIII.1.3;
 - exact Prop targets for the full and proper forms of VIII.1.3(ii), with
@@ -33,15 +32,17 @@ J.-L. Waldspurger, *La formule de Plancherel pour les groupes p-adiques
 
 ## Imported interfaces
 
-- From Task 7260 (`RationalSemistandardFourierTransform`,
-  `RationalSemistandardFourierFamily`): `rationalSemistandardFourierFamily`, its
+- From `RationalSemistandardFourierTransform` and
+  `RationalSemistandardFourierFamily`: `rationalSemistandardFourierFamily`, its
   evaluation lemma `rationalSemistandardFourierFamily_apply`,
   `rationalSemistandardInducedFourierTransform_eq_inducedFourierTransform`, the
   smoothness target `RationalSemistandardFourierFamilySmoothnessStatement` with
   `RationalSemistandardFourierAnalyticInputs`, the standard comparison target
   `RationalSemistandardFourierStandardComparisonStatement` and its normalization
   `RationalSemistandardStandardFourierNormalization`.
-- From this task: `rationalSemistandardThetaFixed` (`Theta^H`),
+- From `RationalSemistandardThetaFixed`, `RationalSemistandardThetaParts` and
+  `RationalSemistandardThetaFixedSupport`:
+  `rationalSemistandardThetaFixed` (`Theta^H`),
   `rationalSemistandardThetaProper`, the proper part and proper restriction, the
   conditional constructors of `RationalSemistandardThetaParts`, and the
   submodules `rationalSemistandardThetaFixedSupported`,
@@ -68,7 +69,7 @@ induced temperedness. Two local instances supply a compact open subgroup of
   `f` is right invariant under a subgroup `H` and `t ∉ Theta^H`, then
   `psi_f[t] = 0`.
   Proof: each value `psi_f[t](A)` at a member `A` of the unitary unramified
-  orbit is, by Task 7260's evaluation lemma, the published induced Fourier
+  orbit is, by the evaluation lemma `rationalSemistandardFourierFamily_apply`, the published induced Fourier
   transform at `A`. The published `inducedFourierTransform_eq_zero_of_fixedVectors_eq_bot`
   (Lemma VII.1.1(i)) makes it vanish once `I_P^G A` has no nonzero `H`-fixed
   vector. If `I_P^G A` had one, `mk_mem_inducedDiscreteSeriesFixedOrbits_of_representative`
@@ -118,7 +119,7 @@ produce exactly these sets.
 ## Componentwise smoothness
 
 `rationalSemistandardFourierFamily_mem_componentSpace_of_smoothness` puts every
-component of `psi_f` in its coherent smooth space. It takes Task 7260's
+component of `psi_f` in its coherent smooth space. It takes
 `RationalSemistandardFourierFamilySmoothnessStatement` and, at every index,
 some Haar measures and weights satisfying `RationalSemistandardFourierAnalyticInputs`.
 It gives the premise `hsm` used below. The smoothness itself is not proved.
@@ -171,8 +172,8 @@ semistandard quotient data.
   the finite-support family with the published `rationalStandardFullSmoothRestrict`
   gives the existing standard family `rationalFourierThetaFamily f`. The
   restriction keeps its own model-smoothness comparison premise `hsmc`. The
-  result is conditional on Task 7260's standard comparison target and its
-  normalization, which are explicit premises. The standard hypotheses `hrho`,
+  result is conditional on the standard comparison target of
+  `RationalSemistandardFourierFamily` and its normalization, which are explicit premises. The standard hypotheses `hrho`,
   `hKrho`, `hM` and `hTA` are those of the existing standard family and are not
   strengthened.
 
@@ -183,5 +184,4 @@ VIII.1.3(i) transcribe the remark and the argument after it on printed p.321.
 The vanishing argument is the source's "il est clair", made precise through
 Lemma VII.1.1(i) in the published induced transform. The linear maps, the
 proper-supported shape and the standard comparisons are derived interfaces.
-They are required by the task contract (units 3 and 4) and use the imported
-constructors and support laws.
+They use the imported constructors and support laws.

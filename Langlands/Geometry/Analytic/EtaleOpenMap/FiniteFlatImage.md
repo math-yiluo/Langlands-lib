@@ -1,7 +1,5 @@
 # The image of a finite Banach map at a flat point
 
-Author: Worker 786.
-
 These internal lemmas supply the finite local step in the proof of the étale
 specialization of Berkovich (1993), Proposition 3.2.7, printed p.59. They are
 derived from the Library definition of pointwise flatness and the finite Banach

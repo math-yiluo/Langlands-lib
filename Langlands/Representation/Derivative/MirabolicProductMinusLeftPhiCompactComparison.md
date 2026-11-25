@@ -1,14 +1,12 @@
 # Actual normalized left identity compact-induction comparison
 
-Author: Worker 499.
-
 This module constructs `leftPhiCompactSourceEquiv` in
 `Langlands.Derivative.MirabolicProductMinus`. Compact induction of the entire
 normalized identity-orbit stages coefficient is representation-equivalent to
 compact induction of the actual lower source-Phi coefficient, pulled back
 along the proved continuous mirabolic rank map. The equivalence is natural
 in both inputs across four independent carrier universes. This is an internal
-step toward BZ77 §4.13(b); it does not prove the host compatibility or identify
+step toward BZ77 §4.13(b); it does not prove `LeftPhiCompatibility` or identify
 the localized mixed product with the stages induction.
 
 ## Source and provenance
@@ -27,8 +25,8 @@ induction comparisons. Sections 3.1–3.2, printed pp.450–451 (PDF pages
 printed pp.456–457 (PDF pages 17–18), defines the left mixed product;
 §4.13(b), printed p.458 (PDF page 19), states its natural compatibility.
 Section 7.2, printed p.471 (PDF page 32), describes the two left orbit
-representatives. These passages and relevant page images were read during
-this task. The bounded supplied-source and public-note errata search found
+representatives. These passages and relevant page images were read for
+this construction. The bounded supplied-source and public-note errata search found
 no applicable BZ77 entry; no global absence is asserted.
 
 The continuous rank adapter and this compact-function equivalence are
@@ -38,8 +36,9 @@ nested stages interfaces. This module applies the published
 coefficient equivalence; it does not introduce a second generic transport
 construction. The latter theorem's inverse gives the desired direction.
 The naturality proof is pointwise, using the published full coefficient
-naturality. No peer draft or unpublished construction supplies a proof
-body; the pending ambient-normalization unit is not imported.
+naturality. No unpublished construction supplies a proof body; the
+ambient-normalization module `MirabolicProductMinusLeftPhiInductionNormalization`
+is not imported.
 
 ## Generality and actual ranks
 
@@ -219,9 +218,8 @@ Langlands.Representation.Derivative.MirabolicProductRestrictionTransport
 The full project closure contains 94 imported modules, excluding this
 entry. All 188 imported Lean/Markdown files are nonempty, byte-identical to
 the published Library, and verified against its manifest at commit
-`31d47a6f0dabd6dff6c65e1b78f4821ddedc9bc8`. No pending module or peer draft
-is imported. In particular the stages compact-induction and ambient
-induction normalization units are not inputs.
+`31d47a6f0dabd6dff6c65e1b78f4821ddedc9bc8`. In particular the stages
+compact-induction and ambient induction normalization modules are not inputs.
 
 The direct mathematical inputs are the published actual stages comap
 identity, actual identity-section membership characterization, actual
@@ -239,7 +237,7 @@ representation finiteness hypothesis or consumer conclusion.
 
 | Condition | Actual dependency finding |
 | --- | --- |
-| Six host conclusions | The host statement and proof modules are absent. No mixed-minus compatibility or boundary conclusion supplies an input. This unit proves compact induction of the normalized identity coefficient with its actual rank pullback. |
+| Six conclusions of the statement | The statement module `MirabolicProductMinusCompatibilityStatement` and the proofs of its clauses are absent. No mixed-minus compatibility or boundary conclusion supplies an input. This module proves compact induction of the normalized identity coefficient with its actual rank pullback. |
 | Plus functors, adjunction and §4.13(d) | None supplies an input. The plus subgroup, projection and successor are elementary matrix constructions. |
 | General Leibniz and derivative formulas | No Leibniz theorem, unproved BZ77 comparison, Ze80 §3.5 or §9.6 formula, or segment derivative formula is used. |
 | Individual head and socle existence | Neither individual special-head/reverse-socle nor segment-socle/reverse-head existence supplies an input. |
@@ -249,26 +247,24 @@ representation finiteness hypothesis or consumer conclusion.
 | Special-head criterion and generic uniqueness | Neither special-head product irreducibility nor generic segment-product uniqueness is used. |
 | Ordered existence, coverage and exhaustion | No ordered multisegment-socle or strong-head existence, socle or special-head exhaustion, quotient coverage or ordered conversion is used. |
 | Analytic, tempered and square-integrable classification | No analytic segment classification, forward special essential square-integrability, tempered uniqueness, square-integrable Langlands classification, square-integrable or regular exhaustion, or Ze80 9.3 conclusion is used. |
-| Two-supercuspidal consumers | Neither nonadjacent-product irreducibility, two-supercuspidal product structure nor full-product assembly is used. No parent six-statement conclusion (b),(d),(e),(f) is used. |
+| Two-supercuspidal consumers | Neither nonadjacent-product irreducibility, two-supercuspidal product structure nor full-product assembly is used. |
 | Supercuspidal and all-character finiteness | No supercuspidal, all-character single-block or arbitrary-character coinvariant-finiteness theorem or downstream consequence is used. |
 | Other Whittaker finiteness | No irreducible or Levi-cuspidal coinvariant-finiteness conclusion or prohibited mirabolic finite-length route supplies an input. |
 | Generality and normalization | All `k,r`, arbitrary supplied `T`, positive GL input rank and entire carriers are retained. Only the actual source-Phi input is required smooth. Both the ambient inverse-half character and the lower source normalization are present in the compared actions. |
-| Published-input requirement | Every imported pair is published and unchanged. Prop-valued statement definitions, source formulas, drafts, pending constructions and consumer tasks provide no unproved comparison premise. |
-| Separate owners and controls | This compact-induction unit does not duplicate the separate restriction-sequence or exactness work. Worker 127's operator pause, Worker 8's suspension, Worker 114's hold and current suspensions remain binding. |
+| Published-input requirement | Every imported pair is published and unchanged. Prop-valued statement definitions and source formulas provide no unproved comparison premise. |
+| Separate results | This compact-induction module does not duplicate the separate restriction-sequence or exactness results. |
 | Actual compact induction | Both complete covariant uniformly smooth compact-supported carriers are retained. Support transport and its inverse are proved in the published generic theorem. |
 | Actual subgroup and rank map | The exact subgroup membership equivalence is proved for every ambient element. The continuous inverse rank cast is present in the target action and the evaluation formula. |
 
 A scan of this module and its complete project closure finds no Lean-code
-occurrence of the host's 38 excluded task identifiers or 24 named consumer
-declarations, and no proof holes, new axioms or unsafe evaluation commands.
-Excluded names in explanatory Markdown are audit prose. Development
-compilation is separate from independent semantic acceptance and
-publication.
+occurrence of 24 excluded consumer declarations, and no proof holes, new
+axioms or unsafe evaluation commands. Excluded names in explanatory
+Markdown are audit prose.
 
 ## Complete project import closure
 
 Every direct and transitive project import, excluding this entry, is
-listed below. The authorized environment supplies unchanged Lean and
+listed below. The environment supplies unchanged Lean and
 Mathlib, pinned respectively to commits
 `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b` and
 `5ed2965256430c3649e86755f9576b54eca72435`.

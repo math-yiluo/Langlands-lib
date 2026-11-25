@@ -22,7 +22,7 @@ variable {F : Type uF} [Field F] [TopologicalSpace F]
   (i : T.toGrp ⟶ G) (ν : cocharacterLattice T)
 
 local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
-local instance : TopologicalSpace (rationalPoints G) := pointTopology
+local instance standardLeviBernsteinSupportTopologicalSpace : TopologicalSpace (rationalPoints G) := pointTopology
 local instance (I : Finset (SimpleRoot i ν)) :
     IsClosedImmersion (Standard.leviHom i ν (rootSet i ν I)).hom.hom.left :=
   Standard.isClosedSubgroup_leviHom i ν (rootSet i ν I)

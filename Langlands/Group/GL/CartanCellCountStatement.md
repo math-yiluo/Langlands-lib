@@ -1,7 +1,5 @@
 # Counting left cosets in an antidominant Cartan double coset
 
-Author: Worker 246.
-
 This pair defines one closed proposition,
 `Langlands.GeneralLinear.CartanQuotient.CartanCellCountStatement.{uF}`, using
 the published definitions of
@@ -55,11 +53,11 @@ For any left Haar measure, `r a(lam) K` has the same measure as `K`, so the
 statement bounds the (outer) measure of the Cartan double coset
 `K a(lam) K`, and of its image cell in `GL_n(F)/Z`, by
 `c * mes(K) * delta(lam)⁻¹`. This is the upper half of Waldspurger's estimate
-quoted below. The product-Levi tempered sufficiency proof of task
-`ea9d1814-a777-42a1-9bf7-29b9b44dc87e` uses the statement in this
+quoted below. The product-Levi tempered sufficiency proof
+(`Langlands.Representation.Classification.ProductLeviTemperedSufficiencyProof`) uses the statement in this
 left-translate form, which needs no measure-theoretic statement about
-double cosets. The upper half of the two-sided volume statement anticipated
-by task `9f05c6f1-4c4f-4469-b8ee-5290c73fc9ce` should also follow from it.
+double cosets. The upper half of the two-sided volume statement
+`CartanQuotientVolumeStatement` should also follow from it.
 
 ## Provenance (derived specialization)
 
@@ -92,7 +90,7 @@ restriction to the standard integral subgroup of `GL_n`, and the
 left-translate covering form are derived specializations; Waldspurger states
 the measure inequality for a general connected reductive group.
 
-## Remaining proof obligation
+## Proof route
 
 A proof may take `H` to be the principal congruence subgroup
 `1 + ϖ M_n(O_F)`. It has finite index in `K`, and its Iwahori factorization
@@ -103,5 +101,6 @@ into itself, while conjugation by `a` maps `H ∩ N` into itself. Hence
 `[H : H ∩ aHa⁻¹] = [H ∩ N : a(H ∩ N)a⁻¹]`. Conjugation by `a` multiplies the
 upper entry `(i, j)`, `i < j`, by `ϖ^(lam i - lam j)`, so the last index is
 `∏_{i<j} q^(lam i - lam j) = q^(degree lam)`. These index computations, the
-Iwahori factorization and the finiteness of `[K : H]` are not assumed here
-and remain to be proved.
+Iwahori factorization and the finiteness of `[K : H]` are not assumed here.
+The statement is proved as `cartanCellCount` in
+`Langlands.Group.GL.CartanCellCountProof`.

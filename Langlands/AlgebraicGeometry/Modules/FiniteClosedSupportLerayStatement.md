@@ -1,13 +1,11 @@
 # A finite-support Leray comparison for actual scheme modules
 
-Authors: Worker 360 (statement specification, draft pair and proof-route
-rationale); Worker 894 (Markdown revision, checks and submission).
-
 `Langlands.AlgebraicGeometry.Modules.FiniteClosedSupportLerayStatement.{u}`
 is a proposition definition. This file defines a proposition and does not
-prove it. Proving this exact proposition is a separate obligation, and so are
-the exact proofs of the module-acyclicity and generic-comparison inputs
-described below.
+prove it. The theorem `finiteClosedSupportLeray` (module
+`Langlands.AlgebraicGeometry.Modules.FiniteClosedSupportLerayProof`) proves it.
+The module-acyclicity and generic-comparison inputs described below are proved
+separately.
 
 ## Statement
 
@@ -102,7 +100,7 @@ Let `I` be Mathlib's chosen injective resolution of `M`, and let
    finite closed support. Finite closed support is invariant under
    isomorphism by `hasFiniteClosedSupport_iff_of_iso`. The actual-module
    acyclicity implication then makes `(F.rightDerived (r + 1)).obj
-   (K.homology i)` zero. That implication is scoped by the separate task for
+   (K.homology i)` zero. That implication is the separate statement
    `Langlands.AlgebraicGeometry.Modules.FiniteClosedSupportCohomologyStatement`,
    whose argument goes through flasqueness of the underlying abelian sheaf.
    The elementary flasqueness statement is the published
@@ -127,21 +125,26 @@ Let `I` be Mathlib's chosen injective resolution of `M`, and let
 
 Composing steps 5 and 4 gives the asserted isomorphism.
 
-## Separate obligations
+## Separate proofs
 
 The proposition definitions named in steps 3 and 4 cannot establish this
-statement by themselves. A proof of this statement must use accepted proofs
-of those inputs, or another unconditional argument. The proof of the generic
-comparison, the module-acyclicity statement and its proof, the elementary
-abelian-sheaf proof, and the exact proof of this proposition are all separate
-obligations.
+statement by themselves. A proof of this statement must use proofs of those
+inputs, or another unconditional argument. The proofs are in separate modules:
+`acyclicTermsHomologyComparisonStatement`
+(`Langlands.Cohomology.AcyclicResolution.AcyclicTermsHomologyComparisonProof`)
+for the generic comparison, `finiteClosedSupportCohomology`
+(`FiniteClosedSupportCohomologyProof`) for the module-acyclicity statement,
+`finiteClosedSupportSheaf` (`Langlands.Cohomology.FiniteClosedSupportSheafProof`)
+for the elementary abelian-sheaf statement, and `finiteClosedSupportLeray`
+(`FiniteClosedSupportLerayProof`) for this proposition.
 
 ## Intended use
 
-The second-projection finite-support detection argument is the intended
+The second-projection finite-support detection argument
+(`Picard.SquareSecondProjectionFiniteSupportDetectionProof`) is the intended
 consumer. There, total cohomology vanishes by hypothesis, and a geometric
-argument must supply the finite-support premise. Once this statement is
-proved, it makes `Γ(Y, Rⁿ f_* M)` zero for every `n`. Finite-support zero
+argument must supply the finite-support premise. This statement, proved by
+`finiteClosedSupportLeray`, then makes `Γ(Y, Rⁿ f_* M)` zero for every `n`. Finite-support zero
 detection would then make each `Rⁿ f_* M` zero. The present statement supplies
 neither the geometric finite-support premise nor proper base change to fibre
 cohomology.

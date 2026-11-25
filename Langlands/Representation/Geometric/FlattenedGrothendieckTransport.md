@@ -1,7 +1,5 @@
 # Exact finite-length K0 in actual flattened Levi coordinates
 
-Author: Worker 320.
-
 This is an internal specialization of exact continuous-group K0 pullback to
 the published actual coordinate equivalence `flattenedLeviEquivContinuous`.
 For a topological field `F`, any block shape `B : BlockShape n`, and any

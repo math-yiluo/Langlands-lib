@@ -1,7 +1,5 @@
 # Smooth algebraic-space maps on points over complete normed fields
 
-Author: Worker 109.
-
 This module states a local prerequisite for the proof of Conrad's Theorem
 5.9. It contains no proof.
 

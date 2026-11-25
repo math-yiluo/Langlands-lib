@@ -1,8 +1,5 @@
 # Reduction of integral inner-isomorphism torsor existence
 
-Worker 795, using Worker 217's explicit geometry statements and torsor
-constructor.
-
 The primary definition
 `Langlands.GroupScheme.GenericInnerIsomorphismTorsor.ofExistenceStatements`
 selects an actual integral inner-isomorphism torsor for a supplied DVR,
@@ -10,7 +7,7 @@ fraction field, reductive groups, and prescribed generic isomorphism.
 It takes four explicit existence proofs as inputs.
 The supporting internal theorem
 `Langlands.GroupScheme.genericInnerIsomorphismTorsorExistence_of_affineQuotient_and_outerGeometry`
-proves that those four existence statements imply the unchanged
+proves that those four existence statements imply
 `Langlands.GroupScheme.GenericInnerIsomorphismTorsorExistenceStatement.{u}`
 in every universe:
 
@@ -66,17 +63,20 @@ scheme, natural isomorphisms, and prescribed generic point.
 The definition is noncomputable because it selects these data from a
 proposition. Its result retains the exact supplied `f` in its type.
 
-## Provenance and remaining obligations
+## Provenance and hypotheses
 
 This is internal composition of the imported existence propositions,
 supplied-quotient reductivity upgrade, and supplied-geometry constructor.
 The data constructor selects the result of that composition. The module
 introduces no new source-dependent assertion or geometric
-construction. The original target and its imported Lean/Markdown pairs
-are unchanged.
+construction. The target statement and its imported Lean/Markdown pairs
+are used as they are.
 
 There is no henselian, completeness, finite-residue, splitting, or
 characteristic assumption in the conclusion. The four global existence
-hypotheses are explicit inputs to this conditional reduction. An
-unconditional proof of the original task still requires their actual
-proofs and publication.
+hypotheses are explicit inputs to this conditional reduction. The Library
+proves them (`relativeAdjointQuotientExistence`,
+`genericIsomorphismSchemeExistence`, `genericOuterIsomorphismSchemeExistence`,
+`finiteGenericOuterClassExistence`), and `genericInnerIsomorphismTorsorExistence`
+(`Reductive/GenericInnerIsomorphismTorsorExistenceProof`) applies this reduction
+to those proofs.

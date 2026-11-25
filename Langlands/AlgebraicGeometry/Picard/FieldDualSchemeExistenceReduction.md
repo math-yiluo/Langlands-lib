@@ -1,7 +1,5 @@
 # The actual Picard-zero restriction of an ambient universal family
 
-Worker 603.
-
 This derived construction takes an actual rigidified family on an abelian
 scheme and constructs an open parameter scheme and its actual restricted
 rigidified family. If the original family is universal for all rigidified
@@ -78,7 +76,7 @@ added to the published field target.
 This is an internal composition and choice construction from published
 Library results, following the proof route already implemented in
 `FiniteTypePicardZeroOpenLocusProof` without its unused restriction on
-the base. No unreviewed draft is used. The parameter and universal
+the base. The parameter and universal
 bundle are obtained by actual open restriction, rather than by a
 replacement class functor or a bijection only on geometric points.
 
@@ -96,9 +94,11 @@ the Library's published Mumford criterion and geometric detection;
 it does not reconstruct the source's identity-component proof.
 
 The remaining hypothesis is the exact full rigidified representability
-statement. Its separate proof must provide a scheme and actual universal
+statement. Its separate proof, `fieldRigidifiedPicardRepresentability` in
+`FieldRigidifiedPicardRepresentabilityProof`, provides a scheme and actual universal
 rigidified bundle over arbitrary fields, on all test schemes, without
-assuming dual existence. This conditional construction is a prerequisite
-for the parent proof and does not satisfy its unconditional acceptance
-condition by itself. It supplies no group structure, properness,
+assuming dual existence. The theorem `fieldDualSchemeExistence` in
+`FieldDualSchemeExistenceProof` combines the two to prove
+`FieldDualSchemeExistenceStatement`; this conditional construction does
+not prove it by itself. It supplies no group structure, properness,
 smoothness, projectivity, or dimension assertion for the new parameter.

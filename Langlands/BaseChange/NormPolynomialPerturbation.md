@@ -10,8 +10,8 @@ induction automorphe pour GL_n en caractéristique non nulle*, Mém. SMF 124
 The base change of an invertible matrix `s` is fixed by every power of `σ`. When
 it commutes with `δ`, it also commutes with every image of `δ` under those
 powers. Induction on the length of the ordered norm product then gives
-`N(δ s_E) = N(δ) s_E^l`. With `δ = 1`, this shows that `s^l` is a norm with
-witness `s_E`.
+`N(δ s_E) = N(δ) s_E^l` (`cyclicNorm_mul_baseChange` of `Langlands.BaseChange.Norm`).
+With `δ = 1`, this shows that `s^l` is a norm with witness `s_E` (`isNorm_pow`).
 
 For a norm `γ`, association gives `x` with `x⁻¹ N(δ₀) x = γ_E`. The
 twisted conjugate `δ = x⁻¹ δ₀ σ(x)` has norm `γ_E` because `σ^l = 1`. The

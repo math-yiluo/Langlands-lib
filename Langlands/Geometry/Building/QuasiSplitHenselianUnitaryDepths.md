@@ -1,6 +1,6 @@
 # Henselian unitary depths from coherent algebraic coordinates
 
-Worker 244. This internal bridge proves
+This internal bridge proves
 `AlgebraicRankOneIndivisibleLiftsReductionStatement` at every universe `u`.
 The statement is the implication from
 `AlgebraicRankOneCoordinatesExistenceStatement` to the unchanged published
@@ -48,9 +48,9 @@ every full-V6 compatible apartment in the published target. No field or
 residue characteristic or residue-perfection restriction is added.
 
 The provenance is internal composition of the named published root,
-centralizer and henselian valuation results with the separately reviewed
+centralizer and henselian valuation results with the separate
 coherent coordinate and apartment-depth constructions. No new
-literature-level assertion is claimed. This unit does not prove the
+literature-level assertion is claimed. This module does not prove the
 algebraic coordinate-existence premise and therefore does not complete the
 unconditional host proof. It uses no local anisotropic classification or
 local Kneser–Tits input.

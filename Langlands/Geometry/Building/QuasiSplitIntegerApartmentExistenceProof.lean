@@ -112,12 +112,12 @@ theorem torusFieldRestrictedRootFunctionFamily_opposite_of_two_mem
     MorphismProperty.baseChange_obj (P := @LocallyOfFiniteType) b G.X inferInstance
   have hjcK : IsClosedSubgroup j_K := hjK.2.1
   have hjKmax : IsMaximalSplitTorus (T := T_K) j_K := hjK.isMaximalSplitTorus hT
-  have : IsAddTorsionFree (ℚ ⊗[ℤ] characterLattice T_K) := IsAddTorsionFree.of_module_rat _
-  have : IsAddTorsionFree (characterLattice T_K) :=
-    Function.Injective.isAddTorsionFree toRat hT.character_toRat_injective
-  have : IsAddTorsionFree (ℚ ⊗[ℤ] characterLattice S_K) := IsAddTorsionFree.of_module_rat _
-  have : IsAddTorsionFree (characterLattice S_K) :=
-    Function.Injective.isAddTorsionFree toRat hSK.character_toRat_injective
+  have : HasUniqueDiv (ℚ ⊗[ℤ] characterLattice T_K) := HasUniqueDiv.of_module_rat _
+  have : HasUniqueDiv (characterLattice T_K) :=
+    Function.Injective.hasUniqueDiv toRat hT.character_toRat_injective
+  have : HasUniqueDiv (ℚ ⊗[ℤ] characterLattice S_K) := HasUniqueDiv.of_module_rat _
+  have : HasUniqueDiv (characterLattice S_K) :=
+    Function.Injective.hasUniqueDiv toRat hSK.character_toRat_injective
   -- structural facts about the centralizer torus
   have : IsAffine T.X.left := isAffine_of_isAffineHom T.toGrp.X.hom
   have : IsClosedImmersion jT.hom.hom.left := hjc

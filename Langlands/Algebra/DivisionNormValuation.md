@@ -94,7 +94,7 @@ to §17 in the 2012 edition, a valuation letter, the vector-space
 dimension to `n²`, and a grammatical error. They do not alter the
 triangle-inequality argument used here.
 
-This contribution constructs the valuation and proves its stated
+This module constructs the valuation and proves its stated
 normalization. It does not construct a normalized discrete valuation,
 identify the residue division algebra, construct an unramified cyclic
 maximal subfield, prove local SK1 vanishing, or prove

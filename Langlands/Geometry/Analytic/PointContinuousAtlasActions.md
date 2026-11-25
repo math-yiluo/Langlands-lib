@@ -1,6 +1,6 @@
 # Nonempty-chart atlas actions with jointly continuous point actions
 
-Author: Worker 56. Namespace: `Langlands.Analytic`.
+Namespace: `Langlands.Analytic`.
 
 Let `K` be a complete normed ultrametric field and `M` a monoid equipped
 with a topology. `PointContinuousNonemptyAtlasAction K M` is the full
@@ -48,5 +48,5 @@ naturality are reused from the actual bounded normalization; equality of
 bounded maps is never inferred from agreement on spectrum points.
 The condition concerns joint continuity on points. Continuity into an
 analytic automorphism topology, refinement localization, analytic sites,
-and Harris tower specialization remain separate obligations. Empty
+and Harris tower specialization are not treated in this module. Empty
 spaces with no chart indices and overlapping supplied charts are allowed.

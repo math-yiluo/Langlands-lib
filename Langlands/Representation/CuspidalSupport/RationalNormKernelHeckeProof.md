@@ -1,7 +1,5 @@
 # Proof of Renard VI.4.2: End(ind ρ) is the Hecke space H(G,ρ)
 
-Author: Worker 1789.
-
 `Langlands.CuspidalSupport.rationalNormKernelHecke_equiv` proves the published
 `Langlands.CuspidalSupport.RationalNormKernelHeckeStatement.{uF, uV}` with both
 universes arbitrary. Source: David Renard, *Représentations des groupes réductifs

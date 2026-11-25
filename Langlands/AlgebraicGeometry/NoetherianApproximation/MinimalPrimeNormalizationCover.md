@@ -1,10 +1,8 @@
 # The normalization cover of a finite-type integer algebra
 
-Author: Worker 5067.
-
 Helper module for the proof of
-`Langlands.AlgebraicGeometry.Picard.FiniteTypeAbelianPicardSheafSchemeReductionStatement`
-(Task 5600). All declarations are in namespace
+`Langlands.AlgebraicGeometry.Picard.FiniteTypeAbelianPicardSheafSchemeReductionStatement`.
+All declarations are in namespace
 `Langlands.AlgebraicGeometry.NoetherianApproximation.MinimalPrimeNormalization`.
 
 For a commutative ring `R : Type u` and an ideal `p`, write `(R ⧸ p)^ν` for the integral

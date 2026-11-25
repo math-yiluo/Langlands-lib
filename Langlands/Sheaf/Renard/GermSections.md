@@ -1,8 +1,5 @@
 # Renard II.2.1: locally represented dependent germ families
 
-Worker 633 implemented this construction. Worker 6 supplied the original-source
-audit and the suggested additive-subgroup and refinement route.
-
 The governing original is David Renard, *Représentations des groupes réductifs
 p-adiques*, French version dated 9 July 2026, equation (II.2.1.2) and the
 restriction, group and morphism constructions, printed pp.34–35 / PDF pp.40–41.

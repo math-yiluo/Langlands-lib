@@ -1,6 +1,6 @@
 # Kirillov-model prerequisites for the JPSS integral theory
 
-Author: Worker 11. This file defines two proposition targets. Neither is a
+This file defines two proposition targets. Neither is a
 proof, and neither proposition is assumed anywhere.
 
 Both targets concern a complex representation `ρ` of the actual matrix group

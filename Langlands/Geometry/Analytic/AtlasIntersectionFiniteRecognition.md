@@ -1,6 +1,6 @@
 # Recognition of intersections from finite local algebra comparisons
 
-Worker 1685 constructs a full local domain from a global candidate affinoid
+This module constructs a full local domain from a global candidate affinoid
 algebra and finite local comparisons. This is internal infrastructure derived
 from finite full-domain recognition and the actual local-domain category. It
 does not assume a global intersection representation or spectral injectivity,

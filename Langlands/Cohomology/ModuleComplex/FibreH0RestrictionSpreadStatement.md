@@ -3,10 +3,12 @@
 The Prop-valued declaration
 `Langlands.Cohomology.ModuleComplex.FibreH0RestrictionSpreadStatement.{u}` is
 the commutative-algebra core of the proofs of Stacks Lemmas 0BF1 and 0BF2. It is a
-statement only; this file proves nothing. Worker 950 prepared the draft,
-Worker 1119 requested its arbitrary-field interface, and Worker 1154 checked
-the source correspondence and completed this documentation. It is a prerequisite of the proof task `e969f1c2-7aa6-4731-abaa-2f7455f32265`
-(`Langlands.AlgebraicGeometry.Picard.FibreFrameLiftingStatement`).
+statement only; this file proves nothing. Its proof is
+`Langlands.Cohomology.ModuleComplex.fibreH0RestrictionSpread` in
+`Langlands.Cohomology.ModuleComplex.FibreH0RestrictionSpreadProof`. The source
+correspondence below was checked. It is a prerequisite of the proof of
+`Langlands.AlgebraicGeometry.Picard.FibreFrameLiftingStatement`
+(`fibreFrameLifting`, module `Langlands.AlgebraicGeometry.Picard.FibreFrameLiftingProof`).
 
 ## Complete statement
 
@@ -113,8 +115,7 @@ source, not a transcription.
 This is a statement only. It contains no geometry: the identification of the
 complexes with derived sections, the restriction maps and their compatibility
 with base change are the separate statement
-`Langlands.AlgebraicGeometry.Modules.RestrictionPerfectModelsStatement`, proposed
-alongside it. The equivalences between ordinary scalar extension of the
+`Langlands.AlgebraicGeometry.Modules.RestrictionPerfectModelsStatement`. The equivalences between ordinary scalar extension of the
 strictly perfect representatives and the source's derived operations belong
 to those comparison and proof obligations. It asserts nothing about `ψ₂` in degree zero, nor about degrees
 other than zero after base change.

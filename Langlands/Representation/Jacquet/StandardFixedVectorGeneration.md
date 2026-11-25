@@ -1,6 +1,6 @@
 # Standard-parabolic factorization and Jacquet fixed-vector generation
 
-Worker 1635. This is a supporting unit for Renard VI.9.4, derived from the
+This is a supporting module for Renard VI.9.4, derived from the
 published actual-standard subgroup definitions, unconditional root comparisons,
 dynamic decomposition, and the algebraic VI.6.3 fixed-vector generation lemma.
 It proves neither the VI.9.4 subquotient-generation statement nor the Hecke

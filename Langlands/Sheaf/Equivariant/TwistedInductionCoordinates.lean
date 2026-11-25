@@ -36,7 +36,7 @@ theorem index_eq (U : TwistedOver P ρ)
 def factor (U : TwistedOver P ρ) (d : StructuredArrow (op U) (ι P ρ).op) :
     d.right.unop ⟶ (translate P ρ (Hom.twist d.hom.unop)⁻¹).obj U.obj :=
   MorphismProperty.Over.homMk (Hom.left d.hom.unop) (by
-    change Hom.left d.hom.unop ≫ (U.hom ≫ (ρ (Hom.twist d.hom.unop)⁻¹).hom) = _
+    change Hom.left d.hom.unop ≫ (U.hom ≫ (ρ (Hom.twist d.hom.unop)⁻¹).asIso.hom) = _
     rw [← Category.assoc, Hom.w, Category.assoc, rho_hom_inv_hom, Category.comp_id]
     rfl)
 

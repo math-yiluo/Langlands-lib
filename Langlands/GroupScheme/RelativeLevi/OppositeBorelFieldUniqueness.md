@@ -1,9 +1,6 @@
 # Uniqueness of an opposite Borel through a maximal torus over a field
 
-Worker 608.
-
-This is a private auxiliary proof draft for the relative opposite Borel
-task. It has not been accepted or published.
+This is an auxiliary proof for the relative opposite Borel theorem.
 
 `oppositeBorel_range_eq_of_isSplitTorus` works over every field and assumes
 that the fixed maximal torus is split. For two Borel subgroups whose

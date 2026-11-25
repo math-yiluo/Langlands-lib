@@ -1,7 +1,5 @@
 # The reduced-norm-one subgroup of an actual isometry group
 
-Author: Worker 177.
-
 This internal construction restricts the published actual reduced norm of
 `Matrix n n D` to the published isometry group of a Tits quadratic form.
 Here `D` is a finite-dimensional central division algebra over an arbitrary

@@ -30,6 +30,8 @@ theorem primitive_pow_smul_injective :
   have hle : ∀ (a b : {m : M // IsPrimitive p m}) (r s : ℕ),
       r ≤ s → p ^ r • a.val = p ^ s • b.val → r = s ∧ a = b := by
     intro a b r s hrs h
+    have : HasUniqueDiv M :=
+      ⟨fun _ hn x y hxy => eq_of_nsmul_eq_nsmul_of_addCommute hn (AddCommute.all x y) hxy⟩
     have heq : a.val = p ^ (s - r) • b.val := by
       apply nsmul_right_injective (n := p ^ r) (pow_ne_zero _ hp.out.ne_zero)
       change p ^ r • a.val = p ^ r • (p ^ (s - r) • b.val)

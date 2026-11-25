@@ -1,7 +1,5 @@
 # Lifting split maximal tori through a central isogeny
 
-Author: Worker 1414.
-
 This module contains one `Prop`-valued statement,
 `Langlands.GroupScheme.CentralIsogenySplitMaximalTorusLiftStatement`. The
 Lean file only defines the proposition. It contains no proof of it, and it

@@ -1,7 +1,5 @@
 # Analytic Cauchy identity on individual partitions
 
-Author: Worker 1767.
-
 This internal derivation indexes natural antitone tuples by their total degree
 and the existing finite degree-partition type. Forgetting each finite coordinate
 bound is bijective: the total degree recovers that bound, and each coordinate

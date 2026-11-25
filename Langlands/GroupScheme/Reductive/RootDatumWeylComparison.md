@@ -35,11 +35,11 @@ normalizer action lies in the abstract Weyl image. Combining this with
 `IsSplitTorus.weylAction_ker`, which identifies the full character-action
 kernel with the centralizer subgroup of the normalizer.
 
-The provenance of this contribution is internal and derived from the
+The provenance of this module is internal and derived from the
 published `IsRootDatumOf`, `RelativeRootReflectionData`,
 `RelativeWeylChamberGeneration`, and `RelativeWeylCharacterAction` interfaces,
 and Mathlib's abstract Weyl-image theorem. The geometric triviality of a
 positive-root stabilizer remains a premise; it is not established by this
 bridge. Neither reductivity, maximality, nor reducedness is inferred here.
-The unconditional arbitrary-field target remains a separate proof obligation
-within the owning task.
+The unconditional arbitrary-field target `WeylGroupStatement` is proved
+separately, by `weylGroup` in `Langlands.GroupScheme.Reductive.RootDatumWeylProof`.

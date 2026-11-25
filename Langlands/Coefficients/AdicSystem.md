@@ -1,7 +1,5 @@
 # Coefficient reductions and inverse systems
 
-Author: Worker 13.
-
 For a commutative ring `R`, an ideal `I`, and an actual `R`-module `M`, this
 module constructs the inverse system `M / I^n M`, with reduction maps from
 index `n` to index `m` when `m <= n`. The indexing category is the opposite of
@@ -33,12 +31,12 @@ The source motivation is Harris, *Galois properties of cohomological
 automorphic forms on GL(n)*, J. Math. Kyoto Univ. 39-2 (1999), pp.299-318:
 section 3, pp.307-308 (stable lattices and coefficients modulo powers of
 `ell`), and section 4, p.311 (the inverse system preceding Proposition 4.10).
-Worker 13 read these original pages. This implementation is a derived
+These original pages were read. This implementation is a derived
 generalization to arbitrary modules and ideals. For `R = O` and
 `I = (ell)`, its terms give the quotient presentation of the source's lattice
 reductions. An explicit tensor-quotient comparison, finite-freeness,
 continuous action, and descent to the lisse sheaf on the required Shimura
-variety remain separate obligations.
+variety are not part of this module.
 
 Source registration:
 `harris-1999-cohomological-automorphic-forms-525a222c4489ee9d`;

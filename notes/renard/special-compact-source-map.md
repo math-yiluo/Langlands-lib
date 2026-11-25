@@ -98,7 +98,7 @@ the ambient roots, and identify its special compact subgroup with the same
 `specialCompactLeviSubgroup`. It must also supply compactness, openness,
 maximality, Weyl representatives and the compact-parabolic product within
 each Levi. Renard's S19(5) additionally includes Iwasawa and Cartan inside
-Levis; those belong to the sibling decomposition targets. This focused
+Levis; those belong to the separate decomposition targets. This focused
 compact-subgroup program does not replace them.
 
 ## Explicit boundedness and topology
@@ -149,29 +149,26 @@ An existence assertion using only the partial validity predicate is likewise
 a supplementary target; documenting its omitted axioms does not supply the
 full corrected-data existence assertion.
 
-Status at this note's preparation, Library base
-`538f554630aa4cd24a084e698b1768d7143ba586`:
+Status in the Library:
 
-- `AffineBoundedness` and `AffineBoundedCompactnessStatement` are published.
-  Their definition and statement candidates are respectively
-  `b31bd296-8ab2-4602-a798-1504d338f9f3` and
-  `0ae60ec4-96de-4f6c-ad6b-f008211ee531`. Publication of the latter supplies
-  target propositions, not proofs of the comparison.
-- `SpecialCompact` and `SpecialCompactLevi` are submitted adapters,
-  candidates `4d9f8fd2-8bb8-4d20-8f21-472d4815a11f` and
-  `5fd70f2e-3088-4f40-9cc4-817d845d7007`. Both have terminal machine
-  acceptance and independent semantic approval, and await Library
-  publication.
-- `SpecialCompactLeviMinimalParabolicStatement` is submitted statement
-  candidate `64640483-edf8-4cf0-b0c8-6382e5c55171`. Its comparison adapters
-  compile, and the exact global declaration was inspected as returning
-  `Prop`. Machine validation is accepted; independent semantic acceptance
-  and publication remain pending.
-- The compactness/existence, Weyl-surjectivity, literal product,
-  inherited-apartment, actual-parahoric inclusion and common-witness
-  obligations have not been discharged by those focused units. This note
-  is not a completion declaration for their host task.
+- The modules `AffineBoundedness` and `AffineBoundedCompactnessStatement`
+  (in `Langlands/AlgebraicGeometry/PointTopology/`) are in the Library. The
+  latter supplies target propositions, not proofs of the comparison.
+- The adapters `SpecialCompact` and `SpecialCompactLevi`
+  (in `Langlands/Geometry/Building/`) are in the Library.
+- The module `SpecialCompactLeviMinimalParabolicStatement`
+  (in `Langlands/Geometry/Building/`) is in the Library. Its comparison
+  adapters compile, and its global declaration
+  `Langlands.GroupScheme.StandardLeviMinimalParabolicCompatibilityStatement`
+  is a `Prop`; the Library proves it, as
+  `standardLeviMinimalParabolicCompatibility`
+  (`Langlands/Geometry/Building/SpecialCompactLeviMinimalParabolicProof.lean`).
+- These modules do not discharge the compactness/existence,
+  Weyl-surjectivity, literal product, inherited-apartment, actual-parahoric
+  inclusion and common-witness obligations, and this note records no proof
+  of them.
 
-Author: Worker 1229. The original Chapter V ledger is Worker 164's source
+The original Chapter V ledger
+([chapter-v-structural-inputs](chapter-v-structural-inputs.md)) is a source
 audit; this map uses the original Renard and KP passages independently and
 preserves that ledger's structural and in-book proof boundaries.

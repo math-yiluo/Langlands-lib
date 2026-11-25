@@ -1,15 +1,15 @@
 # The endomorphism ring of the induced progenerator, from the joint special-compact basis
 
-Author: Worker 5226. This is a derived reduction for task `03c64afa` (Renard VI.10.4–VI.10.5). Reference: David Renard, *Représentations des groupes réductifs p-adiques*, French version dated 9 July 2026, registered as `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. The first Lemma of VI.10.4 is on printed pp.209–210 / PDF pp.215–216.
+This is a derived reduction for Renard VI.10.4–VI.10.5. Reference: David Renard, *Représentations des groupes réductifs p-adiques*, French version dated 9 July 2026, registered as `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. The first Lemma of VI.10.4 is on printed pp.209–210 / PDF pp.215–216.
 
 The module proves that the published Library proposition
-`BruhatTits.SpecialCompact.JointSpecialCompactBasisExistenceStatement.{u}` implies the published statement `InducedProgeneratorEndFreeStatement.{u, v}`, the Lean form of the first Lemma of Renard VI.10.4. It does not prove `InducedProgeneratorEndFreeStatement` outright. The joint special-compact basis existence is still open in the Library; task `8c39faa0-2a70-4fc4-a027-914987aba924` owns it. It is the only premise, and it is used for one fact only: `Π_D` is projective.
+`BruhatTits.SpecialCompact.JointSpecialCompactBasisExistenceStatement.{u}` implies the published statement `InducedProgeneratorEndFreeStatement.{u, v}`, the Lean form of the first Lemma of Renard VI.10.4. It does not prove `InducedProgeneratorEndFreeStatement` outright. The joint special-compact basis existence is still open in the Library. It is the only premise, and it is used for one fact only: `Π_D` is projective.
 
 ## Relation to Renard
 
 In Renard, `Π_D` is the progenerator of `M(M)_D` constructed in VI.4.1 (VI.10.1, printed p.207 / PDF p.213), so its projectivity comes from VI.4.1. In the Library, VI.4.1 for `Π_D` is available only through compact coefficients. The published Renard VI.2.1, (a) implies (c) (`compactRestriction_of_isSupercuspidal`) shows that a supercuspidal `π` has compact coefficients on `⁰M(F)`. That result needs the joint special-compact basis existence as a hypothesis. Its three other structural hypotheses are proved in the Library: `parabolicDynamic`, `standardCocharacter` and `relativeRootSystem`. Compact coefficients pass to the subrepresentation `ρ₀`, and then `c-ind_{⁰M}^{M} ρ₀` is projective (`CuspidalSupport.rationalNormKernelSummandInduction_projective`).
 
-The free-module part of the Lemma is the construction `inducedProgeneratorEndBasis` (`InducedProgeneratorEndBasis.lean`). That construction follows a route of the author's own: the first adjunction `r_P ⊣ i_P` and the geometric-lemma filtration, instead of Renard's second adjointness and block projection `r_D`. Its Markdown describes the route. This module only discharges the construction's two hypotheses on `Π_D` and assembles the four conjuncts.
+The free-module part of the Lemma is the construction `inducedProgeneratorEndBasis` (`InducedProgeneratorEndBasis.lean`). That construction follows its own route: the first adjunction `r_P ⊣ i_P` and the geometric-lemma filtration, instead of Renard's second adjointness and block projection `r_D`. Its Markdown describes the route. This module only discharges the construction's two hypotheses on `Π_D` and assembles the four conjuncts.
 
 ## Setting
 
@@ -33,4 +33,4 @@ The free-module part of the Lemma is the construction `inducedProgeneratorEndBas
 
 ## Use
 
-Once task `8c39faa0` proves `JointSpecialCompactBasisExistenceStatement`, the proof of `InducedProgeneratorEndFreeStatement` is `inducedProgeneratorEndFree_of_jointSpecialCompact` applied to that proof. No other open input remains for this statement.
+Once `JointSpecialCompactBasisExistenceStatement` is proved, the proof of `InducedProgeneratorEndFreeStatement` is `inducedProgeneratorEndFree_of_jointSpecialCompact` applied to that proof. No other open input remains for this statement.

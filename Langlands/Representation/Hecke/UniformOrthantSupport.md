@@ -1,6 +1,6 @@
 # Common compact coefficient envelopes from positive orthant charts
 
-This internal supporting unit implements the finite-box step of Renard,
+This internal module implements the finite-box step of Renard,
 *Représentations des groupes réductifs p-adiques* (2026), VI.2.4, printed
 pp.141–142 / PDF pp.147–148. It combines the existing fixed-level compression
 bound with finite positive charts and the central-cover compactness lemma.
@@ -55,5 +55,8 @@ kernel can supply the central compactness inputs through
 `RationalNormKernelCentralCover`, but constructing the other actual geometric
 data, proving the class-uniform dimension and Jacquet-zero inputs, and
 transporting all tested kernel representations and their full smooth duals
-remain obligations of the exact uniform-support target. Its premises and
-imported Lean/Markdown pairs are unchanged.
+are obligations of the exact uniform-support target
+`RationalNormKernelUniformSupportStatement`, not discharged here. The Library
+proves that target from `JointSpecialCompactBasisExistenceStatement`
+(`rationalNormKernelUniformSupport_of_joint`, module
+`RationalNormKernelSupportGeometry`) without this module.

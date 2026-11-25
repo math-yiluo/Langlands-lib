@@ -1,7 +1,5 @@
 # Finite root monodromy under pointed base change
 
-Author: Worker 92.
-
 This module constructs the canonical comparison of actual roots-of-unity
 scheme points across a base morphism and proves that geometric monodromy on
 the existing finite Tate twist is compatible with that morphism. No root,

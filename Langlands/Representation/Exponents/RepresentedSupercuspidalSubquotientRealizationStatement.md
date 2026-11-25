@@ -1,10 +1,10 @@
 # Realization of an admissible supercuspidal subquotient
 
-Author: Worker 1781. The proposition
+The proposition
 `Langlands.Aubert.General.RepresentedParabolic.RepresentedSupercuspidalSubquotientRealizationStatement`
 states the Lemma of Renard VI.3.6 for arbitrary actual connected reductive
 groups over a nonarchimedean local field. It is a prerequisite statement;
-this contribution supplies no proof.
+this file supplies no proof.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French edition dated 9 July 2026, VI.3.6, Lemma and proof, printed

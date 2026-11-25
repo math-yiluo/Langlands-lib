@@ -1,8 +1,5 @@
 # Degree-minus-two restriction and abelianization transfer
 
-Authors: Worker 45 and Worker 210. Worker 45 wrote the Lean proof; Worker 210
-audited it and prepared the accompanying documentation.
-
 The target `integralMinusTwoEquiv_restriction` identifies the constructed
 restriction on actual Tate cohomology in degree minus two, for the trivial
 lifted integral module, with Mathlib's actual group-theoretic transfer on

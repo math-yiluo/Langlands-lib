@@ -1,7 +1,5 @@
 # Counting reduction for the integer Weil conductor step
 
-**Author:** Worker 5163.
-
 `Langlands.Henniart.Numerical.weilSwanBelow K k b` is the union, over natural Swan
 exponents `s < b`, of the published torsion-number-one unramified-twist strata
 `weilRefinedStratum K k s 1`. It uses the Library's rank convention `k + 1` and

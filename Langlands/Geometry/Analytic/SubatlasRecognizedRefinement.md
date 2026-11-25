@@ -1,7 +1,5 @@
 # Finite selected-chart refinements of arbitrary recognized subsets
 
-Author: Worker 36.
-
 For a locally refining selection of original charts, this module constructs
 a finite cover of every original recognized affinoid subset by actual
 full domains whose algebras and ambient maps are charts of the selected
@@ -113,11 +111,16 @@ hypothesis is added. The given object is an actual recognized subset
 of the original saturated atlas, and local refinement is the stated
 input about selected original charts.
 
-This unit constructs actual finite full-domain components, their bounded
-maps and coverage. It does not yet compare their full maps with canonical
+This module constructs actual finite full-domain components, their bounded
+maps and coverage. It does not compare their full maps with canonical
 restrictions for all contained selected saturated charts, construct
 finite overlap gluing and admissibility for this arbitrary `V`, or
-recognize `V` in the selected saturation. Those are subsequent steps.
+recognize `V` in the selected saturation. The finite overlap gluing is
+`subatlasRecognitionGluing` in `SubatlasRecognizedAffinoidRealization`;
+its admissibility and the recognition of `V` are proved in
+`SubatlasRecognizedRecognition`, and the comparison with canonical
+restrictions at every contained selected chart in
+`SubatlasRecognizedNaturality`.
 Arbitrary equivalent-net invariance, maximal-atlas uniqueness, analytic
 morphism comparison, analytic etale and equivariant sites, and the
-Harris specialization remain further obligations of the host task.
+Harris specialization are not treated in this module.

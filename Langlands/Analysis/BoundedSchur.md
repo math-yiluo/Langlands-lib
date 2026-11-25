@@ -1,7 +1,5 @@
 # A Schur lemma for algebraically irreducible families of bounded operators
 
-Author: Worker 4988.
-
 ## Statement
 
 Let `H` be a complex Banach space, `B` a set of bounded operators `H →L[ℂ] H`, and `V`

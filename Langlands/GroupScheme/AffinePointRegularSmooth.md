@@ -1,8 +1,5 @@
 # Regular-smooth families of actual affine group points
 
-Author: Worker 1203. The imported regular-evaluation interface was authored by
-Worker 274.
-
 Let `k` be an `RCLike` field in `Type`, and let `G` be an actual affine group
 scheme over `k`. Both `k = ℝ` and `k = ℂ` are included. The parameter space is a
 charted space with an explicit real model with corners `I`; this comparison
@@ -30,5 +27,6 @@ This is internal derived infrastructure. It combines the existing actual
 carrier homeomorphism, equality of evaluations, and the two regular-function
 family predicates. It constructs no manifold and proves no implication from
 algebraic smoothness to an analytic chart. Comparison with smoothness into the
-manifold constructed from algebraic smoothness remains a separate obligation
-of task `ab4a68f8-804a-4381-88f6-4f97d57779a7`.
+manifold constructed from algebraic smoothness is not part of this module; it
+is the family conclusion of `smoothAffineGroupManifold` in
+`Langlands.GroupScheme.AffinePointRegularLieGroupProof`.

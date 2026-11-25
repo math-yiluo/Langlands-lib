@@ -1,6 +1,6 @@
 # Closed subgroups of `GL_n` and the opposite cell
 
-This internal unit contains the algebraic heart of the opposite-cell proof, phrased purely in
+This module contains the algebraic heart of the opposite-cell proof, phrased purely in
 terms of polynomial ideals. Let `k` be a field, `n` a finite index type and `e : n → ℤ` a weight
 vector. Let `J` be an ideal of the polynomial ring `k[x_{ij}, y_{ij}]` of the coordinates of
 `GL_n`, as in `GeneralLinearTranslation`. For a `k`-algebra `S`, `zeroLocus S J` is the set of

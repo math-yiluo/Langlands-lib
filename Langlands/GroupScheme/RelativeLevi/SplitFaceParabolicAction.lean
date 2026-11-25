@@ -105,7 +105,7 @@ variable {R : Type u} [CommRing R] [Nontrivial R]
   (hP : IsFibrewiseRootDatumOf I G i P)
   (hfam : ∀ a, IsRootParametrization i (P.root a) (fam a))
 
-local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
+private local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
 
 include hG hmax hP hfam in
 /-- Every original unscaled face-weight term is normalized by the ORIGINAL

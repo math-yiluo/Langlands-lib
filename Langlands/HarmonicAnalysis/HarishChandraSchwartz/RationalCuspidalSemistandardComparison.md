@@ -1,6 +1,6 @@
 # Actual semistandard constant terms and the cuspidal kernel
 
-Worker 279, Task 7252. Source: Waldspurger (2003), I.1, printed p.238,
+Source: Waldspurger (2003), I.1, printed p.238,
 III.6, printed p.272, and VIII.2.1, printed pp.321–322, registered source
 `waldspurger-2003-plancherel`, DOI 10.1017/S1474748003000082.
 The normalization and source condition below follow those passages.

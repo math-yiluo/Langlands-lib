@@ -1,7 +1,5 @@
 # Statement: strictly local limits of affine etale neighbourhoods exist
 
-Worker 875.
-
 `Langlands.AlgebraicGeometry.StrictLocalEtaleLimitExistenceStatement.{u}` is a
 `Prop`-valued definition. It asserts that for every affine scheme `S` in universe
 `u` and every point `s`, there is an actual `StrictLocalEtaleLimit S s`.
@@ -31,8 +29,10 @@ embeddings. Apply spectra to obtain a cofiltered affine diagram and its limit;
 its closed point maps to `s`. A small skeleton of the finitely presented
 etale algebras and their pointed data provides an index category in universe
 `u`. Transport along an affine scheme's spectrum identification handles the
-stated affine base. These constructions are proof obligations, not implemented
-results of this module.
+stated affine base. These constructions are not implemented results of this
+module. The statement is proved as
+`Langlands.AlgebraicGeometry.strictLocalEtaleLimitExistence` in
+`StrictLocalEtaleLimitProof`.
 
 The eight comments on the source section
 [10.155, tag 0BSK](https://stacks.math.columbia.edu/tag/0BSK) were read. They

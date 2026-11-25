@@ -1,7 +1,5 @@
 # Smoothness of compactly supported cohomology of smooth equivariant sheaves
 
-Author: Worker 3.
-
 This module defines two propositions and their conjunction
 `Langlands.Cohomology.SmoothCompactCohomology.SmoothCompactCohomologyStatements`.
 The setting is a topological group acting on a topological space, with a
@@ -29,7 +27,7 @@ the published ones:
 - `Langlands.Sheaf.Equivariant.TopologicalSheaf G X (ModuleCat R)` is the
   category of equivariant sheaves of `R`-modules on the ordinary open-set
   transport site.
-- `Langlands.Sheaf.Equivariant.IsSmoothSheaf R G X F`, from Worker 13's
+- `Langlands.Sheaf.Equivariant.IsSmoothSheaf R G X F`, from
   `Langlands.Sheaf.Equivariant.Smooth`, says that `F` is smooth. For every
   open `U`, every section `s` of `F` over `U` and every point `x` of `U`,
   there are an open `V` with `x ∈ V ⊆ U` and an open subgroup `H` of `G` with
@@ -41,11 +39,11 @@ the published ones:
   object of Mathlib's `Rep R G`. The support of a global section is the set
   of points where its germ is nonzero.
 - `Langlands.Cohomology.EquivariantGodementCohomology.compactCohomology R G X q`
-  is Worker 13's compactly supported cohomology in degree `q`, with its
+  is the Library's compactly supported cohomology in degree `q`, with its
   `G`-action. It is the `q`-th cohomology of the compactly supported global
-  sections of Worker 61's equivariant Godement complex
+  sections of the equivariant Godement complex
   (`Langlands.Sheaf.Equivariant.Godement.complexFunctor`), as an object of
-  `Rep R G`. Worker 61's published `underlyingComplexIso`, in
+  `Rep R G`. The published `underlyingComplexIso`, in
   `Langlands.Sheaf.Equivariant.Godement.Underlying`, shows that after
   forgetting the action, this complex is the ordinary Godement complex over
   the points of `X`. So the underlying module is the usual compactly
@@ -138,7 +136,7 @@ induces `t` on `K`.
 By Proposition 3.3.2 and its Corollary, both `D^•` and `C^•(F)` are
 resolutions of `F` by `Γ_c`-acyclic sheaves. So `Γ_c` of the map
 `D^• → C^•(F)` induces an isomorphism on cohomology, which is compatible
-with the action of `G`. Worker 61's published `underlyingComplexIso`, in
+with the action of `G`. The published `underlyingComplexIso`, in
 `Langlands.Sheaf.Equivariant.Godement.Underlying`, identifies the complex
 underlying the equivariant Godement complex with `C^•(F)`. Hence
 `compactCohomology q F` is the `q`-th cohomology of `Γ_c(D^•)`, with its
@@ -147,7 +145,7 @@ and subquotients of smooth representations are smooth.
 
 ## A false variant
 
-Worker 13's `EquivariantGodementCohomology` also defines
+`EquivariantGodementCohomology` also defines
 `smoothCompactCohomology q`. It is the cohomology of the smooth parts of the
 compactly supported Godement sections. `forgetSmooth q` maps it to
 `compactCohomology q`. For smooth `F`, `forgetSmooth 0` at `F` is an
@@ -181,7 +179,7 @@ Berkovich, *Etale equivariant sheaves on p-adic analytic spaces*, unfinished
   `G_U` acts discretely on `F(U)` for every such `U`. The remark that follows
   characterizes étale `G`-sheaves: for every étale `U → X` and every
   `f ∈ F(U)`, each point of `U` has a distinguished open neighbourhood on
-  which the stabilizer of the restriction of `f` is open. Worker 13's
+  which the stabilizer of the restriction of `f` is open.
   `IsSmoothSheaf` transcribes this characterization to the ordinary open-set
   site. The neighbourhoods stabilized by open subgroups, which the Key Lemma
   supplies on analytic spaces, are part of that hypothesis here.
@@ -278,38 +276,36 @@ in the ordinary-topology analogue.
 
 ## Formal dependencies and checks
 
-The direct project imports are both by Worker 13 and are byte-identical to
+The direct project imports are byte-identical to
 Library commits `196ceda926c7cfe1fdbe5ae57c08133d83bbf940`,
 `9a1bc5f8b8379aa4fe176f3af65ec4c9d96fc715`,
 `9a0767626050f3346ad5f25e37cef39f38a5c0dc` and
 `3afe6f3ba5efc4d00cccb18dba321ef341bbaf68`:
 
-| Module | Author | Lean SHA-256 | Markdown SHA-256 |
-| --- | --- | --- | --- |
-| `Langlands.Cohomology.EquivariantGodementCohomology` | Worker 13 | `d8e9978c4ff9fe11a14d39f62f186f9de896125332b12d55f086d451fa5035b2` | `7d4af4966241481da61efb6fbf53fb0bb9e52b89c8805af6eb1d47576a38d1ae` |
-| `Langlands.Sheaf.Equivariant.Smooth` | Worker 13 | `efa99fe81a49bada1ae4e3f600c916293f224e19bbeb2e3ca2288f561e7bafc5` | `d0201fd9f4c461197409189fdcbee05ec5564993bf8f4d8264729ceb101b30af` |
+| Module | Lean SHA-256 | Markdown SHA-256 |
+| --- | --- | --- |
+| `Langlands.Cohomology.EquivariantGodementCohomology` | `d8e9978c4ff9fe11a14d39f62f186f9de896125332b12d55f086d451fa5035b2` | `7d4af4966241481da61efb6fbf53fb0bb9e52b89c8805af6eb1d47576a38d1ae` |
+| `Langlands.Sheaf.Equivariant.Smooth` | `efa99fe81a49bada1ae4e3f600c916293f224e19bbeb2e3ca2288f561e7bafc5` | `d0201fd9f4c461197409189fdcbee05ec5564993bf8f4d8264729ceb101b30af` |
 
 From the first the module uses `compactCohomology`. From the second it uses
-`IsSmoothSheaf`. Through these imports it also uses Worker 13's
+`IsSmoothSheaf`. Through these imports it also uses
 `TopologicalSheaf` (`Langlands.Sheaf.Equivariant.Topological`) and
 `CompactSections.functor` (`Langlands.Sheaf.Equivariant.CompactSupport`),
-Worker 61's `Langlands.Sheaf.Equivariant.Godement.complexFunctor`, which
+`Langlands.Sheaf.Equivariant.Godement.complexFunctor`, which
 `compactCohomology` is built from, and `Langlands.IsSmooth` from
 `Langlands.Representation.Smooth.Definitions`. The comparison in degree zero
-mentioned above is Worker 13's `compactCohomologyZeroIso`; it is not used by
+mentioned above is `compactCohomologyZeroIso`; it is not used by
 a proof in this module.
 
-The environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`: Lean 4.34.0,
+The environment is Lean 4.34.0,
 Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
 
-Checks `9060f031-ab99-403f-a09a-c037565dddc4`,
-`9329ae0d-5220-4c58-912a-5d8eb3e8fdb1` and
-`94f8bca0-f4b4-46b4-8337-86712c24d958` built this module with Lake
+Three checks built this module with Lake
 against the published imports, with no errors or warnings. Each inspected
 `SmoothCompactCohomologyStatements` as a `Prop`-valued definition with the
 single universe parameter `u`, depending only on `propext`,
-`Classical.choice` and `Quot.sound`. Check
-`154a10d2-6f29-4fc9-b09c-d40e74394a31` compiled a test file against the
+`Classical.choice` and `Quot.sound`. A fourth check
+compiled a test file against the
 module and its output was read. It printed the three definitions with
 universe annotations, the axioms of the conjunction (`propext`,
 `Classical.choice`, `Quot.sound`), the type of `compactCohomologyZeroIso`

@@ -1,7 +1,5 @@
 # Proof of spectrum identification for a Weierstrass presentation
 
-Author: Worker 36.
-
 `WeierstrassPresentation.spectrumIdentification` proves the separate
 `SpectrumIdentificationStatement`. Its three conclusions are dense range
 of the constructed base map, equality of its spectrum image with the

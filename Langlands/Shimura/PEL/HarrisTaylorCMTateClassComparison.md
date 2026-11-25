@@ -1,7 +1,5 @@
 # Full Tate-normalized models and the original Harris CM classes
 
-Author: Worker 344.
-
 This internal comparison works over an existing admissible connected CM test
 base, at a fixed original Harris level and a geometric point. It uses the
 actual `TateNormalizedCMRepresentative` from the normalization construction:

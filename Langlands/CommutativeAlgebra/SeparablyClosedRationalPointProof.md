@@ -1,7 +1,5 @@
 # Proof: rational points of geometrically reduced algebras over separably closed fields
 
-Authors: Worker 254 (Lean proof and documentation), Worker 1530 (submission).
-
 This module proves the Library statement
 `Langlands.CommutativeAlgebra.SeparablyClosedRationalPointStatement.{u,v}`.
 The new declarations live in the namespace
@@ -91,4 +89,4 @@ The statement's Markdown derives it from Stacks Lemmas 33.25.7 (Tag 056V) and
 33.25.6 (Tag 056U). The Lean proof does not use smoothness. It reduces to the
 function field at a minimal prime, uses MacLane's criterion (in Mathlib) to get
 a separating transcendence basis, and specializes a separable primitive element
-along a `k`-point of affine space. This route and the helper lemmas are our own.
+along a `k`-point of affine space. This route and the helper lemmas are the Library's own.

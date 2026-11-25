@@ -1,6 +1,6 @@
 # Actual full-centre characters and the D4 leaf relation
 
-This internal unit constructs the centre used by the character relation,
+This internal module constructs the centre used by the character relation,
 using the imported full-centre, maximal-torus, and base-change results. It does
 not assume a supplied centre or its torus factorization.
 

@@ -1,9 +1,5 @@
 # Proof: central isogenies carry maximal tori onto maximal tori
 
-Authors: Worker 1428, Worker 1531. Worker 1428 wrote the proof; Worker 1531
-replaced its surjectivity helper by the Library lemma
-`IsTorus.flat_and_surjective_multiplication` and rechecked it.
-
 `Langlands.GroupScheme.centralIsogenyMaximalTorusImage` proves the
 proposition `Langlands.GroupScheme.CentralIsogenyMaximalTorusImageStatement.{u}`
 (module `CentralIsogeny/MaximalTorusImageStatement`). Let `π : G ⟶ H` be a
@@ -70,8 +66,9 @@ The statement's Markdown gives the source argument (Milne, *Algebraic
 Groups*, 2017, source `milne-2017-algebraic-groups`): pass to an algebraic
 closure by Theorem 17.82 (printed p.379), apply Proposition 17.20 (printed
 pp.357–358) to the quotient map `π`, and descend by 17.82 again. The Lean
-proof does not follow that route, because the Library has no proof of the
-base-change criterion 17.82 (`MaximalTorusBaseChangeStatement` is unproved).
+proof does not follow that route and does not use the base-change criterion
+17.82 (`MaximalTorusBaseChangeStatement`, proved separately as
+`maximalTorusBaseChange` in `Torus/MaximalBaseChangeProof`).
 It implements instead the in-Library sketch given in the statement's
 Markdown: the kernel exponent, the power lift and the closed image of a
 torus, all over `k`. It does not base-change maximality. Supporting proofs
@@ -80,7 +77,7 @@ splitting extensions. This finite-kernel argument is the image-direction
 counterpart of the proof of `CentralIsogenySplitMaximalTorusLiftStatement`
 (`CentralIsogeny/SplitMaximalTorusLiftProof`).
 
-Checked with `lean_check` in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`
+Checked with `lean_check`
 over Library commit `ee0c0dd6da0a631f199c2bc0aa6040eece98f41d`
-(diagnostic `eb3a7e01-134c-41a3-ba75-72e901c7807c`, Lake build): 0 errors,
+(Lake build): 0 errors,
 0 warnings, axioms `propext`, `Classical.choice`, `Quot.sound`.

@@ -1,6 +1,6 @@
 # Local Weil groups along an embedding of p-adic fields
 
-Author: Worker 53. This is a definition and construction contribution.
+This is a definition and construction module.
 
 ## Content
 
@@ -21,11 +21,11 @@ Residue comparison.
   proves that the published closure isomorphism `extensionClosureEquiv` (the
   bijective lift of `f` to algebraic closures) maps the actual closure integer
   ring of `F` exactly onto that of `E`. Both directions use integrality over
-  the integer rings, via Worker 9's `closureIntegers_integral`.
+  the integer rings, via the published `closureIntegers_integral`.
 - `extensionClosureIntegerEquiv` is the resulting ring isomorphism of closure
   integer rings. `extensionClosureResidueEquiv` is the induced isomorphism of
   their residue fields. `extensionResidueClosureEquiv` transports it, through
-  Worker 9's `localResidueClosureEquiv` for `F` and for `E`, to an isomorphism
+  the published `localResidueClosureEquiv` for `F` and for `E`, to an isomorphism
   `AlgebraicClosure k_F ≃+* AlgebraicClosure k_E`.
   `extensionResidueClosureEquiv_algebraMap` proves that it lies over the
   published residue map `extensionResidueMap F E f : k_F → k_E`.
@@ -37,7 +37,7 @@ Residue comparison.
   `res_F ∘ ι = extensionResidueGaloisMap ∘ res_E`: the actual residue actions
   of `G_E` and `G_F` (from the published `Assembly`) commute with the Galois
   maps along `f`. The proof evaluates both sides on residues of closure
-  integers with Worker 9's `absoluteResidueHom_residue` and the published
+  integers with the published `absoluteResidueHom_residue` and the published
   `extensionClosureLift_galoisMap`.
 - `extensionResidueGaloisMap_arithmetic` and `extensionResidueGaloisMap_geometric`
   prove that the arithmetic and geometric Frobenius of `k_E` map to the `r`-th
@@ -92,7 +92,7 @@ Image, index and topology.
   The theorem `localProjection_denseRange` from `AssemblyProof` proves that
   the actual projection `W_F → G_F` has dense image: its range is the
   inverse image of `ℤ` under the open map
-  `G_F → Ẑ`, which is open by Worker 9's `absoluteResidueHom_isOpenMap`.
+  `G_F → Ẑ`, which is open by the published `absoluteResidueHom_isOpenMap`.
   A private lemma proves that pulling back an open subgroup along a
   homomorphism with dense image preserves the index. The published
   `extensionGaloisMap_range_index` then gives `n`.
@@ -161,7 +161,7 @@ ring over that of `Q_p`), published at Library commit
 `0fbab0ee36b0ab602b6d43bc3d60ada813fcedbf`. The direct
 `Langlands.Weil.Local.AssemblyProof` import supplies `Assembly` transitively
 and the shared `localProjection_denseRange` theorem. These dependencies
-transitively supply Worker 9's
+transitively supply
 `Langlands.Galois.Local.AbsoluteProof` (`closureIntegers_integral`,
 `localResidueClosureEquiv`, `absoluteResidueHom_residue`,
 `absoluteResidueHom_isOpenMap`), the finite-field comparison and Frobenius
@@ -173,5 +173,4 @@ from `Langlands.Weil.AlgebraicProof`. These upstream results are used by Lean
 name; their proofs are not copied. Pinned Mathlib supplies `Field.absoluteGaloisGroup.mapOfAlgebra`,
 `AlgEquiv.restrictNormal_commutes`, `ResidueField.mapEquiv` and
 `ProfiniteGrp.ProfiniteCompletion.denseRange`. The environment is Lean 4.34.0
-with Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`. All new
-declarations and proofs in this module are by Worker 53.
+with Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.

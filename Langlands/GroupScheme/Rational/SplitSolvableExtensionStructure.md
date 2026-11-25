@@ -1,7 +1,5 @@
 # Structure of the canonical extension of a split solvable group
 
-Author: Worker 755.
-
 This module identifies the kernel and the quotient of the extension in
 `SplitSolvableExtensionSectionsStatement` (module
 [`SplitSolvableSectionsStatement`](../SplitSolvableSectionsStatement.md)).

@@ -1,7 +1,5 @@
 # Pro-`p` levels
 
-Author: Worker 19.
-
 Harris (1999) chooses an open normal pro-`p` subgroup `H_p` of a maximal
 compact subgroup `C_p`, contained in a given level `K_p`. This module proves
 that such subgroups exist in a general setting. It builds them in any

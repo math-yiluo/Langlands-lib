@@ -1,7 +1,7 @@
 # Tempered leading-character exclusion in a reversed geometric piece
 
-Workers 526, 828, 359 and 430 contributed the actual reflection,
-character-extraction, coordinate and source-twist route. The final analytic
+The actual reflection, character-extraction, coordinate and source-twist
+route comes through `GeometricPieceUntwistedProjection`. The final analytic
 and finite-real-algebra inputs are `RefinedUpperTemperedConeProof` and
 `ReversedCoarseProjectionWeylRigidityProof`, with their own documented
 provenance. This module composes those results internally.

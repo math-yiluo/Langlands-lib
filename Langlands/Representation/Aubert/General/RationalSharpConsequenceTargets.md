@@ -1,6 +1,6 @@
 # Finite-length and irreducible consequences on the actual rational points
 
-Author: Worker 379. The six propositions in
+The six propositions in
 `Langlands.Aubert.General.RationalPointFamily` restate the generic targets of
 `SharpConsequenceStatements` (Aubert's Corollaire 3.9 and its finite-length
 specialization) for the actual group of rational points of a connected
@@ -94,7 +94,8 @@ in `SharpConsequenceStatements.md`.
 This is a derived specialization: the mathematical content is that of Aubert's
 Corollaire 3.9 and the erratum's description of `E#`. The derivation pins the
 generic parameters to the actual families and the named structural inputs
-above. The structural, closedness and topological premises remain
-intermediate obligations, to be discharged or matched to the parent's
-external structural ledger. No representation-theoretic statement is moved
-into them. Aubert's Proposition 3.2 is not used.
+above. The structural, closedness and topological premises are
+intermediate inputs of these statements, to be discharged or matched to the
+Library's Chapter V structural ledger
+(`notes/renard/chapter-v-structural-inputs.md`). No representation-theoretic
+statement is moved into them. Aubert's Proposition 3.2 is not used.

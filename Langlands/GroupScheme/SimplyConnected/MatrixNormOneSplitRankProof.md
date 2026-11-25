@@ -1,7 +1,5 @@
 # Split rank of `SL_m(D)`: proof
 
-Authors: Worker 161, Worker 31.
-
 `Langlands.GroupScheme.CentralSimpleUnits.matrixNormOneSplitRank` proves the unchanged
 published `Langlands.GroupScheme.CentralSimpleUnits.MatrixNormOneSplitRankStatement.{u}`
 from `Langlands.GroupScheme.SimplyConnected.MatrixNormOneSplitRankStatement`. It holds for
@@ -18,10 +16,10 @@ any characteristic and may be finite. The cases `m = 1` and `D = K` are included
 ## Implemented proof
 
 After introducing `K`, `D`, their instances and `m`, the proof is `le_antisymm` of two
-inequalities, each proved in its own helper module of this contribution.
+inequalities, each proved in its own helper module, ported together with this module.
 
 1. **Upper bound**, `Langlands.GroupScheme.MatrixNormOneSplitRank.splitRank_le` in
-   `Langlands.GroupScheme.SimplyConnected.MatrixNormOneSplitRankUpper` (Worker 161):
+   `Langlands.GroupScheme.SimplyConnected.MatrixNormOneSplitRankUpper`:
    `splitRank (normOne K (Matrix (Fin m) (Fin m) D)) ≤ m - 1`. Let `𝔾ₘ^I` be a closed
    split torus in `SL_m(D)`. The inverse of its universal point over `K[ℤ^I]` is
    `∑ₘ Xᵐ ⊗ eₘ`, where `m` runs over the weights of the inverse-right-regular
@@ -33,7 +31,7 @@ inequalities, each proved in its own helper module of this contribution.
    uses the universal point rather than rational points, so finite fields are covered.
 
 2. **Lower bound**, `Langlands.GroupScheme.CentralSimpleUnits.sub_one_le_splitRank_normOne`
-   in `Langlands.GroupScheme.SimplyConnected.MatrixNormOneSplitRankLower` (Worker 31):
+   in `Langlands.GroupScheme.SimplyConnected.MatrixNormOneSplitRankLower`:
    `m - 1 ≤ splitRank (normOne K (Matrix (Fin m) (Fin m) D))`. The diagonal torus
    `t ↦ diag((t₁ ⋯ t_{m-1})⁻¹, t₁, …, t_{m-1})` has reduced norm one, by a
    permutation-conjugation argument. It is a monomorphism, hence a closed subgroup, of

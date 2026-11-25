@@ -1,7 +1,5 @@
 # The closed locus of conjugation into a closed subgroup
 
-Author: Worker 1438.
-
 This internal construction uses the published universal closed-factorization
 locus to construct the inverse-conjugation transporter needed in the proof of
 Milne's centralizer and Borel intersection theorem.

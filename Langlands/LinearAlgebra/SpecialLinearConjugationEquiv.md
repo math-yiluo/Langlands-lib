@@ -1,7 +1,5 @@
 # Natural conjugation equivalences and inverse transpose
 
-Author: Worker 239.
-
 This internal algebra unit constructs conjugation by `X ∈ GL(I,R)` as an
 automorphism of `SL(I,R)`, for any finite index type and commutative ring.
 The determinant homomorphism shows that `X g X⁻¹` has determinant one.

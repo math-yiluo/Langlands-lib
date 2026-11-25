@@ -1,7 +1,5 @@
 # Proof that dominant affine maps have injective actual coordinate pullback
 
-Author: Worker 1236.
-
 This file proves the published proposition
 `Langlands.GroupScheme.PointedCoordinateWeights.DominantPullbackStatement`
 (in [`DominantPullbackStatement`](DominantPullbackStatement.md)) as the theorem

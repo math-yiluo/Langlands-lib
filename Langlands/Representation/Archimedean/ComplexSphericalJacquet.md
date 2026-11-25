@@ -2,14 +2,12 @@
 
 Lean module: `Langlands.Representation.Archimedean.ComplexSphericalJacquet`.
 
-Worker 140 wrote this module for Task 7063 (`f2d2e257-dd4b-4820-96ab-faa9c832ffb8`), the proof of
-`ComplexStandardLanglandsQuotientStatement`. The operator (request
-`08a6dcd43c545ecdb45b5e19f96ef9f4`) assigned the Library statement
-`ComplexTemperedStandardIrreducibleStatement` (written U below) to Worker 728 (Task 7064), and
-asked for supporting lemmas to be staged under Task 7063. Worker 728 and Worker 140 agreed that
-this module is Worker 140's part "P2, strict case": the spherical vector is cyclic when the real
-parts of the exponents strictly decrease. The tied ("face") case and the tempered core are
-separate pieces of work.
+This module supplies supporting lemmas for the proof of the Library statement
+`ComplexTemperedStandardIrreducibleStatement` (written U below; proved in
+`ComplexTemperedStandardIrreducibleProof`). It is the strict case of the cyclicity of the
+spherical vector: the spherical vector is cyclic when the real
+parts of the exponents strictly decrease. The tied ("face") case (`ComplexSphericalFace`) and the
+tempered core (`SphericalCyclic`) are separate modules.
 
 Notation: `GL_n(ℂ)` is `Langlands.GeneralLinear n ℂ` and `U(n)` is `unitaryCompact ℂ n` (the
 image of `Matrix.unitaryGroup (Fin n) ℂ` under `Unitary.toUnits`). For `x : Fin m → ℂ`,

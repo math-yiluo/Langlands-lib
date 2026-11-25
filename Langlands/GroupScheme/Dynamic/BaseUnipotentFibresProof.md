@@ -1,7 +1,5 @@
 # Proof: dynamic unipotent subgroups have unipotent fibres over any base scheme
 
-Worker 3483 (proof), Worker 282 (verification and submission), 13 November 2026.
-
 `Langlands.GroupScheme.dynamicBaseUnipotentFibres.{u}` proves the exact target
 `Langlands.GroupScheme.DynamicBaseUnipotentFibresStatement.{u}`, already
 published in the Library. The proof specializes the published field theorem

@@ -1,7 +1,5 @@
 # Finite covers by relative Noether-normalization pieces
 
-Author: Worker 90.
-
 This module defines geometric data and states their existence. It contains no
 existence proof or point-count estimate.
 

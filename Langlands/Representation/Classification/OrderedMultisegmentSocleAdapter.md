@@ -1,15 +1,14 @@
 # Conditional assembly of the actual ordered-product socle
 
-Author: Worker 864. Worker 700 updated the final assembly and audit documentation.
-
-This supporting module is submitted with the exact proof of
+This supporting module is ported together with the exact proof of
 `OrderedMultisegmentSocleExistence`. It proves finite length and Artinianity
 of the supplied segment-socle product at positive rank, specializes the
 published generic socle bridge, and transfers the published mirabolic
 highest-derivative criterion to the full general-linear action. The final
 adapter still assumes nontriviality, homogeneity of the actual mirabolic
 restriction, and strong indecomposability of its actual highest derivative.
-It does not prove the unconditional parent statement.
+It does not prove the unconditional statement
+`OrderedMultisegmentSocleExistence`.
 
 The lemmas retain arbitrary primes, `F : PadicField.{uF} p`, the supplied
 compatible topology `T` and independent `uF,uV`. The product lemmas retain every actual
@@ -96,20 +95,20 @@ Its proof uses general derivative detection, the actual highest-layer
 subrepresentation and its full interval order isomorphism, and the
 essential-interval strong-indecomposability criterion. This adapter leaves
 actual-product homogeneity and its highest-derivative premise explicit. The
-paired parent proof discharges them by total-rank induction and the published
-homogeneity theorem.
+final proof `OrderedMultisegmentSocleExistenceProof` discharges them by
+total-rank induction and the published homogeneity theorem.
 
 At Library base `538f554630aa4cd24a084e698b1768d7143ba586`, this module and
-its final parent compile with zero errors and warnings in development Lake
-check `bc94ac9e-c6a5-49c8-be43-47201242d78a`. Inspection of the final parent
+the final proof compile with zero errors and warnings in a development Lake
+check. Inspection of the final proof
 retains independent `uF,uV` and only `propext`, `Classical.choice` and
-`Quot.sound`. The complete unapplied-parent check and transitive declaration
-audit also pass. These checks supply development evidence; independent
-acceptance and publication apply to the submitted exact parent proof.
+`Quot.sound`. The complete unapplied check of the final proof and the
+transitive declaration audit also pass. These checks supply development
+evidence.
 
-The [parent proof documentation](OrderedMultisegmentSocleExistenceProof.md)
+The [documentation of the final proof](OrderedMultisegmentSocleExistenceProof.md)
 records the complete 1,248-module published import inventory and fingerprints,
-independently accepted proof inputs, permitted generic infrastructure and
+published proof inputs, permitted generic infrastructure and
 mathematical exclusions. All imported pairs match that public base. In
 particular the generic socle bridge uses an actual atom of the Artinian
 subrepresentation lattice, the finite-length theorem uses the supplied

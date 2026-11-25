@@ -1,7 +1,6 @@
 # Smooth and compact induction
 
-Worker 15's construction pair for task `16a1cb4a-52bf-40f8-b8f1-c3ca35146f4a`
-implements smooth induction, compact induction, maps on intertwiners, and
+This construction pair implements smooth induction, compact induction, maps on intertwiners, and
 normalization by an actual smooth scalar character. The namespace is
 `Langlands.Induction`. The functor definitions contain proved identity,
 composition and smoothness obligations; these conclusions are not input fields.
@@ -28,7 +27,7 @@ The source files are `Mathlib/RepresentationTheory/Induced.lean` and
 `Mathlib/RepresentationTheory/Coinduced.lean`, in pinned Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`.
 
-Smooth induction is the accepted smooth-part construction applied to this
+Smooth induction is the published smooth-part construction applied to this
 coinduced representation. Each whole function has a single open subgroup
 fixing it on the right; pointwise local constancy alone is not the definition.
 The output functor lands in the full subcategory of `Rep` consisting of smooth
@@ -40,7 +39,7 @@ are proved by extensionality.
 right-translation representation. `smoothFunctionOf` constructs an element
 from covariance and a single uniform open right stabilizer. `eval` returns the
 underlying value. `smoothInducedMap` postcomposes using Mathlib's `coindMap`
-followed by the accepted `smoothMap`. `smoothInductionFunctor` supplies
+followed by the published `smoothMap`. `smoothInductionFunctor` supplies
 the smoothness property for each constructed object.
 `Langlands.Induction.SmoothRep` transparently reuses the canonical
 `Langlands.SmoothRep` from
@@ -65,9 +64,9 @@ The compatibility migration retains the following public names and imports:
 [`CategoryCompatibility`](CategoryCompatibility.md) contains direct Lean
 checks of the complete alias telescope, the former type expression, inherited
 instances, and the four functors with their morphism interfaces. These are
-intrinsic definitional checks. Worker 15 made this consolidation using
-Worker 23's canonical category; the original induction construction remains
-Worker 15's work. The source references below continue to describe the same
+intrinsic definitional checks. The consolidation uses the canonical
+category `Langlands.SmoothRep`; the original induction construction is
+kept. The source references below continue to describe the same
 mathematical constructions.
 
 The generic `LeftQuotient`, `quotientMap` and `quotientRight` declarations
@@ -119,10 +118,10 @@ Retained source ID: `bernstein-zelevinsky-1977-induced-i`; content SHA-256:
 
 `SmoothCharacter R H` contains an actual homomorphism `H ->* R^units` and a
 proof that its kernel is open in the given topology. No topology on `R` is
-required. `SmoothCharacter.toSmoothRep` uses the accepted
+required. `SmoothCharacter.toSmoothRep` uses the published
 `characterRepresentation` and proves its smoothness with that open kernel.
 
-`SmoothCharacter.twistFunctor` uses the accepted `Langlands.twist` and
+`SmoothCharacter.twistFunctor` uses the published `Langlands.twist` and
 `twistIntertwining`, with identity and composition fields proved directly.
 `normalizedSmoothInduced` and `normalizedCompactInduced` apply the preceding
 constructions to `twist chi sigma`, so their covariance is
@@ -139,7 +138,7 @@ unitarity, reciprocity, or exactness is intended in this construction pair.
 Retained source ID: `casselman-2019-jacquet-module`; content SHA-256:
 `377edac998669bc88da1224c4582a173854232f7fea5caf945d140ee92fde5c1`.
 
-Project dependencies are imported by their current Lean module names:
+Project dependencies are imported by their Lean module names:
 
 - `Langlands.Representation.Category.Basic` supplies the canonical category.
 - `Langlands.Representation.Smooth.SmoothPart.Definitions` supplies
@@ -151,15 +150,11 @@ Project dependencies are imported by their current Lean module names:
 The compatibility consolidation starts from Library commit
 `30ceb5a0d89d8094c1663fc19f35416519b9a125`. It retains all constructions and
 the existing induction structural and Jacquet reciprocity statement sources.
-It was compiled in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`,
-version 1, which pins the same Lean 4.34.0 and Mathlib commit as the
-environment named below.
+It was compiled with Lean 4.34.0 and the pinned Mathlib commit named above.
 
-Prepared environment: `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, version 1,
-Lean 4.34.0. The original construction's native compilation and private
-interface checks succeeded. Those checks verify covariance, the direction of right translation,
+The original construction's native compilation, also with Lean 4.34.0, and
+its private interface checks succeeded. Those checks verify covariance, the direction of right translation,
 postcomposition formulas, the uniform stabilizer, actual compact projected
 support, normalized scalar factor and all four returned smoothness certificates
 at independent universes. Inspected construction axiom closures contain only
-`propext`, `Classical.choice` and `Quot.sound`. These development checks are
-distinct from independent semantic acceptance and publication.
+`propext`, `Classical.choice` and `Quot.sound`.

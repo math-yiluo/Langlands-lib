@@ -1,10 +1,8 @@
 # Totally complex form of the partial equation of cuspidal pairs with integral gammas
 
-Module `Langlands.Global.Factors.CuspidalPairPartialGammaEquationTCStatement`. Author:
-Worker 382. Part of the supporting work of Task 6190 (`f4660bce-a3cb-416c-89bf-9f0cb2004c8e`),
-whose target is the unrestricted statement. It follows the operator's answer
-`81ed24709e7050068786116ca6613260` (Option A), which restricts the global statements on the
-route to the local correspondence to totally complex base fields.
+Module `Langlands.Global.Factors.CuspidalPairPartialGammaEquationTCStatement`. It belongs to
+the restriction of the global statements on the route to the local correspondence to totally
+complex base fields (`CuspidalPairFunctionalEquationTCStatement.md` §4).
 
 **Scope.** The module defines one proposition and proves nothing:
 `Langlands.Global.CuspidalPairPartialGammaEquationTCStatement.{u, uQ}`. It is the published
@@ -52,11 +50,11 @@ complex number fields exist (for example `ℚ(i)`, or any CM field; Mathlib
 
 ## 4. Use
 
-The name is the one announced by Worker 5210 for the totally complex form of (G'). It is
-defined once here so that the totally complex completed equation (Task 5721) and the
-totally complex reduction of Task 6190 import the same proposition. Task 6190 derives it,
-in a separate module, from the global Rankin–Selberg statements with totally complex
-semi-local equations (`Langlands.Global.RankinSelbergGlobal.UnequalSemilocalEquationTCStatement`
+It is defined once here so that the totally complex completed equation
+(`CuspidalPairPartialGammaTCReduction`) and the totally complex global reduction
+(`CuspidalPairPartialGammaGlobalTCReduction`) import the same proposition. The latter derives
+it from the global Rankin–Selberg statements with totally complex semi-local equations
+(`Langlands.Global.RankinSelbergGlobal.UnequalSemilocalEquationTCStatement`
 and `EqualSemilocalEquationTCStatement`, module
 `Langlands.Global.RankinSelberg.SemilocalEquationTCStatements`).
 

@@ -6,4 +6,4 @@
 
 `Langlands.exists_subquotient_of_tensorProduct` applies this construction to an irreducible `J`. The invariant range is nonzero and contained in `J`, so it equals `J`.
 
-This is the algebraic extraction used in Task 7041. The finite support argument is a variant of the finite-stage step in R. P. Langlands, *On the notion of an automorphic representation* (1979), Lemma 1, printed p. 203, PDF p. 198 of the registered Corvallis Part I (`langlands-1979-notion-automorphic-representation`). The source uses a restricted tensor product over the places. The space `M` collects the multiplicity away from one place.
+This is the algebraic extraction used for `CuspidalSupportEveryPlaceStatement`, through `Langlands.Global.Factors.CuspidalSupportArchimedeanTensor`. The finite support argument is a variant of the finite-stage step in R. P. Langlands, *On the notion of an automorphic representation* (1979), Lemma 1, printed p. 203, PDF p. 198 of the registered Corvallis Part I (`langlands-1979-notion-automorphic-representation`). The source uses a restricted tensor product over the places. The space `M` collects the multiplicity away from one place.

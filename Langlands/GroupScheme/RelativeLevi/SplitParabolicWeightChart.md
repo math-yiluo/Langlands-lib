@@ -1,6 +1,6 @@
 # Split charts adapted to a supplied cocharacter
 
-This derived unit constructs actual root chart and weight data over any
+This derived module constructs actual root chart and weight data over any
 commutative ring. The inputs are a reductive group, a fibrewise maximal
 coordinate split torus, a finite fibrewise root datum, actual parametrizations
 of every root, and any integral coordinate cocharacter `wt`.
@@ -28,7 +28,7 @@ and their all-test commutator sum bound. Its definitions give the retained
 ambient root formulas and exact pairing values.
 
 Zero weights and an empty root set are allowed. The full regular chart
-can include Levi roots with zero `wt` weight. This unit does not identify
+can include Levi roots with zero `wt` weight. This module does not identify
 its positive-weight subgroup with the dynamic subgroup of `wt` or an
 arbitrary supplied radical, establish choice compatibility, or descend
 the filtration. Its provenance is the existing coweight-face, split-cell,

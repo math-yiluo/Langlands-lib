@@ -1,7 +1,5 @@
 # Relative-root signs determine the dynamic subgroup functors
 
-Author: Worker 1269.
-
 `Langlands.GroupScheme.RelativeRootSignsDetermineDynamicStatement` is an
 unproved proposition target. It quantifies over every field `k : Type u`,
 connected reductive group scheme `G` over `Spec k`, maximal split torus

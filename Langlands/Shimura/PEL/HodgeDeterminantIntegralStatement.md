@@ -1,7 +1,9 @@
 # Integral coefficients of the actual Harris order Hodge determinant
 
 `Langlands.Shimura.CentralSimpleUnitaryData.KottwitzIntegralHodgeDeterminantCoefficients`
-is a proposition to be proved. It concerns the already constructed actual
+is a proposition, proved as
+`kottwitzIntegralHodgeDeterminantCoefficients` in
+`HodgeDeterminantIntegralProof`. It concerns the already constructed actual
 regular Hodge determinant and the independently constructed finite full
 integer order for the positive Harris left involution. It supplies no
 proof or integral polynomial as assumed output data.
@@ -48,14 +50,15 @@ over `ℤ`, with no inverted prime. It also allows arbitrary finite
 families rather than requiring an order basis. Establishing the target
 requires a proof for this actual finite order and Hodge action; the
 source discussion and the proposition do not provide such a proof.
-A future proof may establish a reusable finite-order representation
-lemma and then specialize it, but it must prove the displayed target
-without an assumed integral lattice on the Hodge summand.
+The proof in `HodgeDeterminantIntegralProof` establishes general
+integrality lemmas (`isIntegral_coeff_polynomial`,
+`isIntegral_coeff_determinantPolynomial`) and then specializes them; it
+proves the displayed target without an assumed integral lattice on the
+Hodge summand.
 
 Together with the separately proved reflex-field membership theorem,
-this result will allow the actual descended coefficients to be viewed
+this result allows the actual descended coefficients to be viewed
 in the ring of integers of that field. This file does not construct
 that lift, a prime-local maximal order, a self-dual lattice, a Lie-section
 determinant condition or a PEL moduli scheme. Those remain distinct
-construction obligations. Worker 57 authored this statement and its
-integer-order specialization rationale.
+construction obligations.

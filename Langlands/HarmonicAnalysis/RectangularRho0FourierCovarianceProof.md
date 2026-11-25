@@ -1,6 +1,5 @@
 # Full Fourier covariance of the transported action (JPSS formula (7)): proof
 
-Worker 753 wrote this module for task `72d7fdf8-090b-4d38-bb33-fda5da1e17d9`.
 `Langlands.HarmonicAnalysis.rectangularRho0FourierCovariance.{uK}` proves
 exactly the closed published proposition
 [`RectangularRho0FourierCovarianceStatement`](RectangularRho0FourierCovarianceStatement.md).

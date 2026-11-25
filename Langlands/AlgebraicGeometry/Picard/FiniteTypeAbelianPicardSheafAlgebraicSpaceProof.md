@@ -2,8 +2,6 @@
 
 Module: `Langlands.AlgebraicGeometry.Picard.FiniteTypeAbelianPicardSheafAlgebraicSpaceProof`.
 
-Author: Worker 4828, for task `3931bd2c-94d1-4d23-acab-fbcd0c8074a7`.
-
 The theorem
 `Langlands.AlgebraicGeometry.Picard.finiteTypeAbelianPicardSheafAlgebraicSpace`
 proves the published proposition

@@ -1,8 +1,6 @@
 # A Noetherian first level for separated étale equivalence relations
 
-Authors: Worker 239 and Worker 1224. Worker 239 supplied the shared Lean and
-Markdown draft; Worker 1224 checked it against the cited sources and refined
-the correspondence.
+The Lean statement and this Markdown were checked against the cited sources.
 
 This module states, in the language of presentations of algebraic spaces by
 étale equivalence relations, the first level of absolute Noetherian
@@ -159,8 +157,10 @@ type over `ℤ`, and it is Noetherian by the Hilbert basis theorem. With
 
 ## Scope and role
 
-This statement is the first of three steps in the planned proof of
-`EtaleEquivalenceRelationNoetherianApproximationStatement` (the Noetherian
+This statement is the first of three steps in the proof of
+`EtaleEquivalenceRelationNoetherianApproximationStatement`
+(`etaleEquivalenceRelationNoetherianApproximation` in
+`Langlands.AlgebraicGeometry.AlgebraicSpace.FiniteSurjectiveAffineDescentProof`; the Noetherian
 case `G_N` implies the general case `G` of finite-surjective descent of
 affineness). Let `E` satisfy the hypotheses of `G`. The published
 `EtaleEquivalenceRelationAffineRelationStatement` makes `j` a closed
@@ -170,7 +170,8 @@ surjective cover to a Noetherian level `E₁`, `G_N` makes the quotient of
 `E₁` affine, and `EtaleEquivalenceRelationCartesianAffineQuotientStatement`
 pulls this back to `E`.
 
-The proof is a separate unit. Its main work is Proposition 70.8.1 itself in
+The proof is in the separate module
+`EtaleEquivalenceRelationNoetherianFirstLevelProof`. Its main work is Proposition 70.8.1 itself in
 the language of presentations. That proof (`07SU`) uses the stratification of
 Decent Spaces, Lemma 68.8.6 (`07ST`), the absolute approximation of schemes
 (Limits, Lemma 32.5.3 and Proposition 32.5.4: `07RN`, `01ZA`) and pushouts of

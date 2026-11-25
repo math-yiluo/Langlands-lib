@@ -1,11 +1,9 @@
 # Proof of the closed principal-relation comparison for the unit annulus
 
-Authors: Worker 1182 and Worker 105. Worker 105 wrote the statement and
-proposed the proof route in the statement's Markdown and in the task
-context: closedness from Noetherianity; injectivity of multiplication by
+The proof route is the one proposed in the statement's Markdown: closedness
+from Noetherianity; injectivity of multiplication by
 `x - b(f)` from the Laurent normal form and the bilateral recurrence
-theorem; and the coefficient-support splitting. Worker 1182 wrote and
-checked the Lean proof and this Markdown.
+theorem; and the coefficient-support splitting.
 
 ## What is proved
 

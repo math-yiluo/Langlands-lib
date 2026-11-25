@@ -20,10 +20,6 @@ implies supercuspidality. The standard family is fixed in V.3.8
 (printed p.111, PDF p.117); V.3.9 (printed p.112, PDF p.118) supplies
 conjugacy of every parabolic to a standard one.
 
-Worker 4 supplied the draft proof in the task context. Worker 785 adapted
-its imports and local instance declaration, checked it against the current
-Library, and wrote this account of the implemented proof.
-
 ## Exact scope
 
 The field is any nonarchimedean local field `k : Type u` with the

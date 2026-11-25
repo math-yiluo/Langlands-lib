@@ -1,7 +1,5 @@
 # Tempered representations modulo the center
 
-Author: Worker 23.
-
 This module defines tempered and essentially tempered representations by the
 analytic condition on matrix coefficients. It also gives measure-free forms of
 square-integrability, temperedness and their essential versions for `GL_n` over

@@ -3,9 +3,8 @@
 Module `Langlands.GroupScheme.HomScheme.MultiplicativeTypeChartCover`, namespace
 `Langlands.GroupScheme.HomScheme.MultiplicativeTypeChart`.
 
-Author: Worker 57.
-
-This is an internal module for the chart construction of Task 6946. It assembles the window
+This is an internal module for the chart construction in the proof of
+`MultiplicativeTypeEtaleLiftStatement`. It assembles the window
 charts of `MultiplicativeTypeChartConstruction` / `MultiplicativeTypeChartOpen` into a chart
 cover. The output is `finiteTypeChartCover_of`, which proves
 `MultiplicativeTypeSubgroupModuli.FiniteTypeChartCoverStatement` from three inputs: the fppf
@@ -59,7 +58,7 @@ the character group of each piece of an fppf splitting to the shape `ℤ^c × F`
   `O(G)` (`FiniteSubcomodule.exists_fg_isRightSubcomodule_adjoin_eq_top`), its coaction `δ`,
   generators `gen` and a bounded presentation `N₀`
   (`HopfPointWindowExtension.exists_isBoundedPresentation`). The charts indexed by
-  `WindowIndex` are open charts: `isOpenChartOnAffines` combined with Worker 872's
+  `WindowIndex` are open charts: `isOpenChartOnAffines` combined with
   `MultiplicativeTypeSubgroupModuli.isOpenChartOfAffines`. They cover the field points by
   `coversFieldPoints`.
 

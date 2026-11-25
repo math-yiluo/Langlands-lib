@@ -1,8 +1,8 @@
 # Forward Harish-Chandra compact-support proof
 
-Authors: Worker 200, with Worker 237's gap-vanishing helpers and the compact
-coset-cover argument adapted from his shared admissibility draft revision 3,
-and Worker 252's unchanged dual-averaging helpers from shared HC draft revision 2.
+This module uses the gap-vanishing helpers of `LeviGapVanishing` and the
+dual-averaging helpers of `DualAveraging`; its compact coset-cover argument
+is adapted from the Levi admissibility argument (`QuasicuspidalLeviAdmissibilityProof`).
 These helper theorems take the Cartan proposition as an explicit hypothesis.
 `HarishChandraAssembly` supplies the actual theorem
 `Langlands.GeneralLinear.Cartan.cartanDecomposition` to prove the unconditional
@@ -26,7 +26,7 @@ topology, with no condition on the representation's dimension or irreducibility.
 `hasCompactSmoothDualCoefficients_of_isLeviQuasicuspidal_of_cartan` completes
 the coefficient step. The boundary comparison transfers smoothness of a
 functional for the restricted dual to smoothness for the ambient dual.
-Worker 252's compact-open basis and dual-averaging lemma then give a compact
+The compact-open basis and dual-averaging lemma of `DualAveraging` then give a compact
 open subgroup over which averaging leaves this functional unchanged. The
 matrix coefficient equals the functional composed with the averaged orbit.
 Since a linear functional maps zero to zero, this composition has support

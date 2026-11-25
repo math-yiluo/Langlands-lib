@@ -1,7 +1,5 @@
 # Conjugation covariance of actual algebraic coefficient differentials
 
-Author: Worker 2.
-
 This module evaluates an actual morphism of general linear group schemes on
 invertible matrices over each test algebra. It proves naturality and conjugation
 covariance of the existing linear dual-number differential. The principal

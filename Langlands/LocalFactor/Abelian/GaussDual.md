@@ -1,6 +1,6 @@
 # The dual epsilon identity, nonvanishing and the unitary central value
 
-Worker 1248. Internal lemmas, derived from the published definitions and from
+Internal lemmas, derived from the published definitions and from
 the Library's Fourier normalization (`LocalFactors.padicFourierNormalization`) and
 Fourier closure (`HarmonicAnalysis.padicFourierClosure`) theorems.
 

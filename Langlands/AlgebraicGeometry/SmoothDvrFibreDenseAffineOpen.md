@@ -1,7 +1,5 @@
 # An actual fibre-dense affine open over an arbitrary DVR
 
-Author: Worker 219.
-
 For every universe `u`, let `R : Type u` be a commutative domain which
 is a discrete valuation ring, and let `X : Scheme.{u}` with structural
 morphism `p : X ⟶ Spec R`. Assume `p` is smooth, quasi-compact and

@@ -38,8 +38,7 @@ Let `K` be a number field and `v : Global.FinitePlace K`. Closure
 embeddings `ι` are elements of
 `ClosureEmbedding (NumberField.FinitePlace.embedding v)`.
 
-The module `Langlands.Shimura.DecompositionGroupAction` (candidate
-`24e3f602-b5d7-4c07-8a1d-4d8b67948758`, accepted and awaiting publication)
+The published module `Langlands.Shimura.DecompositionGroupAction`
 provides `localRestriction v ι`, the restriction functor
 `atFinitePlace V v ι`, `mapActionResIso`, the predicate
 `IsUnramifiedAlong V v M ι` (every element of the actual inertia subgroup
@@ -48,8 +47,8 @@ endomorphism `geometricFrobenius V v M ι` (the action of the chosen lift
 `geometricFrobeniusLift v` after restriction), and
 `geometricFrobenius_naturality`.
 
-The module `Langlands.Shimura.IsotypicGaloisAction` (candidate
-`06482d9c-709f-449e-bd42-538102e24d51`, staged) provides `isotypicObj`,
+The published module `Langlands.Shimura.IsotypicGaloisAction` provides
+`isotypicObj`,
 `isotypicMap`, `isotypicFunctor`, `isotypicι`, `isotypicActionFunctor`,
 `isotypicActionι`, `multiplicityFunctor`, `multiplicityActionFunctor`,
 `multiplicityRepresentation`, `isotypicEvaluation` and

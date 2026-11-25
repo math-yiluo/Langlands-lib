@@ -40,5 +40,6 @@ preservation of semisimplicity under every actual group-scheme homomorphism.
 
 All results allow an arbitrary field universe, empty coordinate sets, and
 closed subgroups that are not smooth or reduced. No finite-type, connectedness,
-infinitude, perfection, or splitting hypothesis is imposed. This contribution
-does not prove the host Cartan-generation theorem.
+infinitude, perfection, or splitting hypothesis is imposed. This module
+does not prove the Cartan-generation theorem `CartanGenerationStatement` that
+it serves.

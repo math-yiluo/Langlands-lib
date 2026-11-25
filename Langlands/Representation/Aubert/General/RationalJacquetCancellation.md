@@ -55,8 +55,7 @@ universes remain independent, and representation carriers lie in
 
 Provenance is internal: the assembly uses the named normalized stages,
 fine-Levi conjugation, common-term, survivor and finite cancellation results.
-Worker 1186 supplied the reused standard-intersection/common-term adapter.
 No new external assertion is used. The only unproved representation equation
 in this module is the explicitly supplied `rationalIntersectionExpansion`;
-deriving it from the geometric lemma and actual intersection geometry remains
-an obligation of the host task.
+deriving it from the geometric lemma and actual intersection geometry lies
+outside this module.

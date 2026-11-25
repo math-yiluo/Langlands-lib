@@ -1,7 +1,5 @@
 # Algebraic boundedness of every split apartment filtration
 
-Author: Worker 312.
-
 This is an internal consequence of the actual Chevalley coordinate bounds,
 cross-torus transport, split realization and uniqueness of split apartment classes.
 It introduces no new assertion from external literature.

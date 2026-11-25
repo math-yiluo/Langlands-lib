@@ -1,6 +1,6 @@
 # Normalization of finite rational transport coverings
 
-Author: Worker 36, adapting the open-set normalization method of Worker 61
+This module adapts the open-set normalization method
 in the published `Langlands/Sheaf/Equivariant/Site.lean`.
 
 Fix an ultrametric normed field `K : Type u` and a presented strict affinoid
@@ -70,7 +70,7 @@ keep the same finite index type. Empty index types, empty loci, trivial
 scalar valuations and degenerate quotient algebras remain allowed.
 
 This is derived categorical infrastructure. Its factorization and
-sieve-membership method adapts Worker 61's
+sieve-membership method adapts
 `ActionOpens.exists_translationIso_comp_inclusionHom` and
 `ActionOpens.translationIso_inv_comp` from the published open-set site.
 Here the objects are actual chosen rational presentations, and the

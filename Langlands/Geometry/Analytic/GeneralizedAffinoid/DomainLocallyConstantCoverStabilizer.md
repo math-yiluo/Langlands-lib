@@ -1,6 +1,6 @@
 # Open stabilizers and locally constant descent on actual finite covers
 
-Worker 56 connects the direct spectrum-input locally constant descent to the
+This module connects the direct spectrum-input locally constant descent to the
 constructed open function stabilizers. The input is an actual invariant
 represented domain, an actual finite domain cover, and locally constant
 functions on the entire representing spectra of the components. Coefficients

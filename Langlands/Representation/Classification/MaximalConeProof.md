@@ -1,7 +1,5 @@
 # Proof of the maximal-cone selection
 
-Author: Worker 23.
-
 This module proves
 
 ```text

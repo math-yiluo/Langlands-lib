@@ -20,8 +20,9 @@ This is internal packaging for the two descending inductions of JPSS (1983),
 section 7, printed 438–442. It discharges no analytic existence, symmetry, base
 case, or type-preservation input. No source normalization comparison is
 assumed: the induction and all premises use the published upper convention.
-The actual lower-to-upper source reversal remains an obligation of the
-separately owned analytic base proofs. This module is not the requested
+The actual lower-to-upper source reversal belongs to the analytic base
+proofs, not to this module; `TwoBlockDominantRankProof` carries it out for the
+dominant-rank bases. This module is not the
 closed multiplicativity theorem.
 
 The representation instantiation converts each base statement's finite-product

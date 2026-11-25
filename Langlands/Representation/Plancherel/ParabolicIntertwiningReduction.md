@@ -1,8 +1,6 @@
 # Reduction of the conditional intertwining theorem to its remaining inputs
 
-Author: Worker 1615.
-
-This module is a supporting construction for the host task proving
+This module is a supporting construction for
 `Langlands.Plancherel.ConditionalParabolicIntertwiningStatement`. It states
 precisely what remains to be proved and proves that this suffices.
 
@@ -62,7 +60,7 @@ re-established in the proof, and separatedness comes from `hG.isSeparated`.
 ## Scope and provenance
 
 The module does not prove squared-modulus compatibility, convergence or
-domination. It does not prove the host theorem, and it adds no premise to it.
-The inputs proposition records exactly the obligations still open. All steps
+domination. It does not prove `ConditionalParabolicIntertwiningStatement`, and it adds no premise to it.
+The inputs proposition records exactly the obligations left by this reduction. All steps
 are compositions of the published declarations named above and of
 `CompactIntegralSaturation`; no literature theorem replaces a proof.

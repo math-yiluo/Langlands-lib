@@ -7,7 +7,7 @@ Modified: FLT module names are prefixed by `Langlands.AnthropicFLT`; the FLT lak
 are set after the imports; the import of `P2M.Util` is dropped; the `p2m_reactivate` commands
 are replaced by `open scoped`. The paired Markdown file lists the changes.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_ModulesTensorPowV2
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_ModulesProjPresentation
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_ModulesSectionsTensorV2
@@ -135,7 +135,7 @@ noncomputable abbrev Uc (i : Fin (N + 1)) : X.Opens := pullbackChart 𝔓.toProj
 theorem isFrameOn_σ (i : Fin (N + 1)) : IsFrameOn (𝔓.σ i) (Uc 𝔓 i) :=
   fun W hWU hWV => 𝔓.frame i W hWV
 
-noncomputable abbrev τ (i : Fin (N + 1)) : Γ(L.tensorPow m, ⊤) := tensorPowSection (𝔓.σ i) m
+noncomputable abbrev τ (i : Fin (N + 1)) : Γ(L.tensorPowFLT m, ⊤) := tensorPowSectionFLT (𝔓.σ i) m
 
 theorem isFrameOn_τ (i : Fin (N + 1)) : IsFrameOn (τ 𝔓 m i) (Uc 𝔓 i) :=
   (isFrameOn_σ 𝔓 i).tensorPowSection_monoidalV2 m
@@ -145,44 +145,44 @@ theorem σ_rel (i j : Fin (N + 1)) :
   (𝔓.app_ratio_smul i j).symm
 
 theorem τ_rel (i j : Fin (N + 1)) :
-    rM (L.tensorPow m) (le_top : Uc 𝔓 i ≤ ⊤) (τ 𝔓 m j) =
-      frameUnit 𝔓.toProj i j ^ m • rM (L.tensorPow m) (le_top : Uc 𝔓 i ≤ ⊤) (τ 𝔓 m i) := by
-  show (L.tensorPow m).presheaf.map (homOfLE le_top).op (tensorPowSection (𝔓.σ j) m) =
-    frameUnit 𝔓.toProj i j ^ m • (L.tensorPow m).presheaf.map (homOfLE le_top).op (tensorPowSection (𝔓.σ i) m)
+    rM (L.tensorPowFLT m) (le_top : Uc 𝔓 i ≤ ⊤) (τ 𝔓 m j) =
+      frameUnit 𝔓.toProj i j ^ m • rM (L.tensorPowFLT m) (le_top : Uc 𝔓 i ≤ ⊤) (τ 𝔓 m i) := by
+  show (L.tensorPowFLT m).presheaf.map (homOfLE le_top).op (tensorPowSectionFLT (𝔓.σ j) m) =
+    frameUnit 𝔓.toProj i j ^ m • (L.tensorPowFLT m).presheaf.map (homOfLE le_top).op (tensorPowSectionFLT (𝔓.σ i) m)
   rw [map_tensorPowSection, map_tensorPowSection, ← tensorPowSection_smul_monoidalV2]
-  exact congrArg (fun s => tensorPowSection s m) (σ_rel 𝔓 i j)
+  exact congrArg (fun s => tensorPowSectionFLT s m) (σ_rel 𝔓 i j)
 
 theorem τ_rel_on (i j : Fin (N + 1)) {W : X.Opens} (hW : W ≤ Uc 𝔓 i) :
-    rM (L.tensorPow m) (le_top : W ≤ ⊤) (τ 𝔓 m j) =
-      rO hW (frameUnit 𝔓.toProj i j) ^ m • rM (L.tensorPow m) (le_top : W ≤ ⊤) (τ 𝔓 m i) := by
-  rw [← rM_rM (L.tensorPow m) hW le_top (τ 𝔓 m j), τ_rel, rM_smul, rO_pow, rM_rM]
+    rM (L.tensorPowFLT m) (le_top : W ≤ ⊤) (τ 𝔓 m j) =
+      rO hW (frameUnit 𝔓.toProj i j) ^ m • rM (L.tensorPowFLT m) (le_top : W ≤ ⊤) (τ 𝔓 m i) := by
+  rw [← rM_rM (L.tensorPowFLT m) hW le_top (τ 𝔓 m j), τ_rel, rM_smul, rO_pow, rM_rM]
 
-noncomputable def gcoef (U : X.Opens) (x : Γ(L.tensorPow m, U)) (i : Fin (N + 1)) : Γ(X, U ⊓ Uc 𝔓 i) :=
-  coef (isFrameOn_τ 𝔓 m i) (le_top : U ⊓ Uc 𝔓 i ≤ ⊤) inf_le_right (rM (L.tensorPow m) inf_le_left x)
+noncomputable def gcoef (U : X.Opens) (x : Γ(L.tensorPowFLT m, U)) (i : Fin (N + 1)) : Γ(X, U ⊓ Uc 𝔓 i) :=
+  coef (isFrameOn_τ 𝔓 m i) (le_top : U ⊓ Uc 𝔓 i ≤ ⊤) inf_le_right (rM (L.tensorPowFLT m) inf_le_left x)
 
-theorem gcoef_spec (U : X.Opens) (x : Γ(L.tensorPow m, U)) (i : Fin (N + 1)) :
-    gcoef 𝔓 m U x i • rM (L.tensorPow m) (le_top : U ⊓ Uc 𝔓 i ≤ ⊤) (τ 𝔓 m i) = rM (L.tensorPow m) inf_le_left x :=
+theorem gcoef_spec (U : X.Opens) (x : Γ(L.tensorPowFLT m, U)) (i : Fin (N + 1)) :
+    gcoef 𝔓 m U x i • rM (L.tensorPowFLT m) (le_top : U ⊓ Uc 𝔓 i ≤ ⊤) (τ 𝔓 m i) = rM (L.tensorPowFLT m) inf_le_left x :=
   coef_smul _ _ _ _
 
-theorem rO_gcoef_eq (U : X.Opens) (x : Γ(L.tensorPow m, U)) (i j : Fin (N + 1)) {W : X.Opens}
+theorem rO_gcoef_eq (U : X.Opens) (x : Γ(L.tensorPowFLT m, U)) (i j : Fin (N + 1)) {W : X.Opens}
     (hi : W ≤ U ⊓ Uc 𝔓 i) (hj : W ≤ U ⊓ Uc 𝔓 j) :
     rO hi (gcoef 𝔓 m U x i) = rO (hi.trans inf_le_right) (frameUnit 𝔓.toProj i j) ^ m * rO hj (gcoef 𝔓 m U x j) := by
   rw [gcoef, gcoef, rO_coef, rO_coef, rM_rM, rM_rM, mul_comm]
   exact coef_eq_mul_coef (isFrameOn_τ 𝔓 m i) (isFrameOn_τ 𝔓 m j) _ _ _ _ _
     (τ_rel_on 𝔓 m i j (hi.trans inf_le_right)) _
 
-theorem gcoef_compat (U : X.Opens) (x : Γ(L.tensorPow m, U)) : TwistCompat 𝔓.toProj m U (gcoef 𝔓 m U x) :=
+theorem gcoef_compat (U : X.Opens) (x : Γ(L.tensorPowFLT m, U)) : TwistCompat 𝔓.toProj m U (gcoef 𝔓 m U x) :=
   fun i j => rO_gcoef_eq 𝔓 m U x i j _ _
 
-theorem gcoef_add (U : X.Opens) (x y : Γ(L.tensorPow m, U)) (i : Fin (N + 1)) :
+theorem gcoef_add (U : X.Opens) (x y : Γ(L.tensorPowFLT m, U)) (i : Fin (N + 1)) :
     gcoef 𝔓 m U (x + y) i = gcoef 𝔓 m U x i + gcoef 𝔓 m U y i := by
   rw [gcoef, rM_add, coef_add]; rfl
 
-theorem gcoef_smul (U : X.Opens) (a : Γ(X, U)) (x : Γ(L.tensorPow m, U)) (i : Fin (N + 1)) :
+theorem gcoef_smul (U : X.Opens) (a : Γ(X, U)) (x : Γ(L.tensorPowFLT m, U)) (i : Fin (N + 1)) :
     gcoef 𝔓 m U (a • x) i = rO inf_le_left a * gcoef 𝔓 m U x i := by
   rw [gcoef, rM_smul, coef_mul_smul]; rfl
 
-noncomputable def eMap (U : X.Opens) : Γ(L.tensorPow m, U) →ₗ[Γ(X, U)] twistObj f 𝔓.toProj m U where
+noncomputable def eMap (U : X.Opens) : Γ(L.tensorPowFLT m, U) →ₗ[Γ(X, U)] twistObj f 𝔓.toProj m U where
   toFun x := ⟨gcoef 𝔓 m U x, gcoef_compat 𝔓 m U x⟩
   map_add' x y := twistObj.ext (funext fun i => by
     show gcoef 𝔓 m U (x + y) i = gcoef 𝔓 m U x i + gcoef 𝔓 m U y i
@@ -191,64 +191,64 @@ noncomputable def eMap (U : X.Opens) : Γ(L.tensorPow m, U) →ₗ[Γ(X, U)] twi
     show gcoef 𝔓 m U (a • x) i = restrictFun inf_le_left a * gcoef 𝔓 m U x i
     exact gcoef_smul 𝔓 m U a x i)
 
-@[scoped simp] theorem eMap_val (U : X.Opens) (x : Γ(L.tensorPow m, U)) : (eMap 𝔓 m U x).val = gcoef 𝔓 m U x := rfl
+@[scoped simp] theorem eMap_val (U : X.Opens) (x : Γ(L.tensorPowFLT m, U)) : (eMap 𝔓 m U x).val = gcoef 𝔓 m U x := rfl
 
-theorem eMap_res (U U' : X.Opens) (h : U ≤ U') (x : Γ(L.tensorPow m, U')) :
-    eMap 𝔓 m U (rM (L.tensorPow m) h x) = twistRes f 𝔓.toProj m h (eMap 𝔓 m U' x) := by
+theorem eMap_res (U U' : X.Opens) (h : U ≤ U') (x : Γ(L.tensorPowFLT m, U')) :
+    eMap 𝔓 m U (rM (L.tensorPowFLT m) h x) = twistRes f 𝔓.toProj m h (eMap 𝔓 m U' x) := by
   refine twistObj.ext (funext fun i => ?_)
   rw [twistRes_val]
-  show gcoef 𝔓 m U (rM (L.tensorPow m) h x) i = rO _ (gcoef 𝔓 m U' x i)
+  show gcoef 𝔓 m U (rM (L.tensorPowFLT m) h x) i = rO _ (gcoef 𝔓 m U' x i)
   rw [gcoef, gcoef, rO_coef, rM_rM, rM_rM]
 
 theorem eMap_bijective (U : X.Opens) (i₀ : Fin (N + 1)) (hU : U ≤ Uc 𝔓 i₀) : Function.Bijective (eMap 𝔓 m U) := by
   have hUU : U ≤ U ⊓ Uc 𝔓 i₀ := le_inf le_rfl hU
-  have hres := rM_bijective_of_ge (L.tensorPow m) (inf_le_left : U ⊓ Uc 𝔓 i₀ ≤ U) hUU
+  have hres := rM_bijective_of_ge (L.tensorPowFLT m) (inf_le_left : U ⊓ Uc 𝔓 i₀ ≤ U) hUU
   constructor
   · intro x y hxy
     have h0 : gcoef 𝔓 m U x i₀ = gcoef 𝔓 m U y i₀ := by
       have := congrArg (fun t => twistObj.val t i₀) hxy
       simpa using this
     apply hres.1
-    show rM (L.tensorPow m) inf_le_left x = rM (L.tensorPow m) inf_le_left y
+    show rM (L.tensorPowFLT m) inf_le_left x = rM (L.tensorPowFLT m) inf_le_left y
     rw [← gcoef_spec 𝔓 m U x i₀, ← gcoef_spec 𝔓 m U y i₀, h0]
   · intro t
 
-    refine ⟨rM (L.tensorPow m) hUU (t.val i₀ • rM (L.tensorPow m) (le_top : U ⊓ Uc 𝔓 i₀ ≤ ⊤) (τ 𝔓 m i₀)), ?_⟩
+    refine ⟨rM (L.tensorPowFLT m) hUU (t.val i₀ • rM (L.tensorPowFLT m) (le_top : U ⊓ Uc 𝔓 i₀ ≤ ⊤) (τ 𝔓 m i₀)), ?_⟩
     refine twistObj.ext (funext fun i => ?_)
     show gcoef 𝔓 m U _ i = t.val i
 
     have hW : U ⊓ Uc 𝔓 i ≤ (U ⊓ Uc 𝔓 i) ⊓ Uc 𝔓 i₀ := le_inf le_rfl (inf_le_left.trans hU)
-    have hinj := (rM_bijective_of_ge (L.tensorPow m) (inf_le_left : (U ⊓ Uc 𝔓 i) ⊓ Uc 𝔓 i₀ ≤ U ⊓ Uc 𝔓 i) hW).1
+    have hinj := (rM_bijective_of_ge (L.tensorPowFLT m) (inf_le_left : (U ⊓ Uc 𝔓 i) ⊓ Uc 𝔓 i₀ ≤ U ⊓ Uc 𝔓 i) hW).1
     symm
     apply coef_unique
     apply hinj
-    show rM (L.tensorPow m) inf_le_left (t.val i • rM (L.tensorPow m) le_top (τ 𝔓 m i)) =
-      rM (L.tensorPow m) inf_le_left (rM (L.tensorPow m) inf_le_left
-        (rM (L.tensorPow m) hUU (t.val i₀ • rM (L.tensorPow m) le_top (τ 𝔓 m i₀))))
+    show rM (L.tensorPowFLT m) inf_le_left (t.val i • rM (L.tensorPowFLT m) le_top (τ 𝔓 m i)) =
+      rM (L.tensorPowFLT m) inf_le_left (rM (L.tensorPowFLT m) inf_le_left
+        (rM (L.tensorPowFLT m) hUU (t.val i₀ • rM (L.tensorPowFLT m) le_top (τ 𝔓 m i₀))))
 
     have h₁ : (U ⊓ Uc 𝔓 i) ⊓ Uc 𝔓 i₀ ≤ U ⊓ Uc 𝔓 i := inf_le_left
     have h₂ : (U ⊓ Uc 𝔓 i) ⊓ Uc 𝔓 i₀ ≤ U ⊓ Uc 𝔓 i₀ := le_inf (inf_le_left.trans inf_le_left) inf_le_right
     have hWi : (U ⊓ Uc 𝔓 i) ⊓ Uc 𝔓 i₀ ≤ Uc 𝔓 i := inf_le_left.trans inf_le_right
-    have e1 : rM (L.tensorPow m) h₁ (t.val i • rM (L.tensorPow m) le_top (τ 𝔓 m i)) =
-        rO h₁ (t.val i) • rM (L.tensorPow m) (le_top : (U ⊓ Uc 𝔓 i) ⊓ Uc 𝔓 i₀ ≤ ⊤) (τ 𝔓 m i) := by
+    have e1 : rM (L.tensorPowFLT m) h₁ (t.val i • rM (L.tensorPowFLT m) le_top (τ 𝔓 m i)) =
+        rO h₁ (t.val i) • rM (L.tensorPowFLT m) (le_top : (U ⊓ Uc 𝔓 i) ⊓ Uc 𝔓 i₀ ≤ ⊤) (τ 𝔓 m i) := by
       rw [rM_smul, rM_rM]
-    have e2 : rM (L.tensorPow m) h₁ (rM (L.tensorPow m) inf_le_left
-        (rM (L.tensorPow m) hUU (t.val i₀ • rM (L.tensorPow m) le_top (τ 𝔓 m i₀)))) =
-        rO h₂ (t.val i₀) • rM (L.tensorPow m) (le_top : (U ⊓ Uc 𝔓 i) ⊓ Uc 𝔓 i₀ ≤ ⊤) (τ 𝔓 m i₀) := by
+    have e2 : rM (L.tensorPowFLT m) h₁ (rM (L.tensorPowFLT m) inf_le_left
+        (rM (L.tensorPowFLT m) hUU (t.val i₀ • rM (L.tensorPowFLT m) le_top (τ 𝔓 m i₀)))) =
+        rO h₂ (t.val i₀) • rM (L.tensorPowFLT m) (le_top : (U ⊓ Uc 𝔓 i) ⊓ Uc 𝔓 i₀ ≤ ⊤) (τ 𝔓 m i₀) := by
       rw [rM_rM, rM_rM, rM_smul, rM_rM]
     have e3 := τ_rel_on 𝔓 m i i₀ hWi
     have hc' : rO h₁ (t.val i) = rO hWi (frameUnit 𝔓.toProj i i₀) ^ m * rO h₂ (t.val i₀) := t.compat i i₀
     rw [e1, e2, e3, ← mul_smul, hc', mul_comm]
 
 theorem main :
-    ∃ e : ∀ U : X.Opens, Γ(L.tensorPow m, U) →ₗ[Γ(X, U)] twistObj f 𝔓.toProj m U,
-      (∀ (U : X.Opens) (x : Γ(L.tensorPow m, U)) (i : Fin (N + 1)),
+    ∃ e : ∀ U : X.Opens, Γ(L.tensorPowFLT m, U) →ₗ[Γ(X, U)] twistObj f 𝔓.toProj m U,
+      (∀ (U : X.Opens) (x : Γ(L.tensorPowFLT m, U)) (i : Fin (N + 1)),
           ((e U x).val i) •
-              (L.tensorPow m).presheaf.map (homOfLE (le_top : U ⊓ pullbackChart 𝔓.toProj i ≤ ⊤)).op
-                (tensorPowSection (𝔓.σ i) m) =
-            (L.tensorPow m).presheaf.map (homOfLE (inf_le_left : U ⊓ pullbackChart 𝔓.toProj i ≤ U)).op x) ∧
-      (∀ (U U' : X.Opens) (h : U ≤ U') (x : Γ(L.tensorPow m, U')),
-          e U ((L.tensorPow m).presheaf.map (homOfLE h).op x) = twistRes f 𝔓.toProj m h (e U' x)) ∧
+              (L.tensorPowFLT m).presheaf.map (homOfLE (le_top : U ⊓ pullbackChart 𝔓.toProj i ≤ ⊤)).op
+                (tensorPowSectionFLT (𝔓.σ i) m) =
+            (L.tensorPowFLT m).presheaf.map (homOfLE (inf_le_left : U ⊓ pullbackChart 𝔓.toProj i ≤ U)).op x) ∧
+      (∀ (U U' : X.Opens) (h : U ≤ U') (x : Γ(L.tensorPowFLT m, U')),
+          e U ((L.tensorPowFLT m).presheaf.map (homOfLE h).op x) = twistRes f 𝔓.toProj m h (e U' x)) ∧
       (∀ (U : X.Opens) (i : Fin (N + 1)), U ≤ pullbackChart 𝔓.toProj i → Function.Bijective (e U)) :=
   ⟨eMap 𝔓 m, fun U x i => gcoef_spec 𝔓 m U x i, fun U U' h x => eMap_res 𝔓 m U U' h x,
     fun U i hU => eMap_bijective 𝔓 m U i hU⟩
@@ -260,13 +260,13 @@ open S1Sketch in
 theorem solution
     {A : Type u} [CommRing A] {N : ℕ} {X : Scheme.{u}} {f : X ⟶ Spec (CommRingCat.of A)} {L : X.Modules}
     (𝔓 : L.ProjPresentation f N) (m : ℕ) :
-    ∃ e : ∀ U : X.Opens, Γ(L.tensorPow m, U) →ₗ[Γ(X, U)] ProjSpace.twistObj f 𝔓.toProj m U,
-      (∀ (U : X.Opens) (x : Γ(L.tensorPow m, U)) (i : Fin (N + 1)),
+    ∃ e : ∀ U : X.Opens, Γ(L.tensorPowFLT m, U) →ₗ[Γ(X, U)] ProjSpace.twistObj f 𝔓.toProj m U,
+      (∀ (U : X.Opens) (x : Γ(L.tensorPowFLT m, U)) (i : Fin (N + 1)),
           ((e U x).val i) •
-              (L.tensorPow m).presheaf.map (homOfLE (le_top : U ⊓ ProjSpace.pullbackChart 𝔓.toProj i ≤ ⊤)).op
-                (Scheme.Modules.tensorPowSection (𝔓.σ i) m) =
-            (L.tensorPow m).presheaf.map (homOfLE (inf_le_left : U ⊓ ProjSpace.pullbackChart 𝔓.toProj i ≤ U)).op x) ∧
-      (∀ (U U' : X.Opens) (h : U ≤ U') (x : Γ(L.tensorPow m, U')),
-          e U ((L.tensorPow m).presheaf.map (homOfLE h).op x) = ProjSpace.twistRes f 𝔓.toProj m h (e U' x)) ∧
+              (L.tensorPowFLT m).presheaf.map (homOfLE (le_top : U ⊓ ProjSpace.pullbackChart 𝔓.toProj i ≤ ⊤)).op
+                (Scheme.Modules.tensorPowSectionFLT (𝔓.σ i) m) =
+            (L.tensorPowFLT m).presheaf.map (homOfLE (inf_le_left : U ⊓ ProjSpace.pullbackChart 𝔓.toProj i ≤ U)).op x) ∧
+      (∀ (U U' : X.Opens) (h : U ≤ U') (x : Γ(L.tensorPowFLT m, U')),
+          e U ((L.tensorPowFLT m).presheaf.map (homOfLE h).op x) = ProjSpace.twistRes f 𝔓.toProj m h (e U' x)) ∧
       (∀ (U : X.Opens) (i : Fin (N + 1)), U ≤ ProjSpace.pullbackChart 𝔓.toProj i → Function.Bijective (e U)) :=
   main 𝔓 m

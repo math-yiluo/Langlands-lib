@@ -1,7 +1,5 @@
 # Harris's levels `K_p × K^p` and their opposite levels
 
-Author: Worker 19.
-
 Harris indexes the Shimura varieties of §4 of Harris (1999) by levels of the
 form `K(N, m) = K(N)_p × K(m)^p ⊂ GG(A_f)`. The first factor is the `p`-adic
 level `K(N)_p` (published as `SecondKindInvolution.harrisLevel` in

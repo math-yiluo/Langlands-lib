@@ -8,7 +8,7 @@ are set after the imports; the import of `P2M.Util` is dropped; the proof `by
 p2m_exact_reverting @_root_.S.solution` is replaced by the term `S.solution` applied to the
 explicit arguments. The paired Markdown file lists the changes.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_Patching_SystemTypes
 import Langlands.AnthropicFLT.P2M.Sol.S_Module_depth_quotient_eq_depth
 set_option maxHeartbeats 4000000

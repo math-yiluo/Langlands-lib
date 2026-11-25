@@ -1,7 +1,5 @@
 # Actual algebra descent on arbitrary topological open covers
 
-Author: Worker 36.
-
 Let `K` be a complete ultrametric normed field and `A` an actual presented
 positive-polyradius affinoid `K`-algebra. This module constructs
 `openAlgebraSheaf K A` on the ordinary topological opens of the actual

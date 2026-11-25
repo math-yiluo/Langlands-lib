@@ -1,11 +1,9 @@
 # Definite signatures give positive involutions
 
-Author: Worker 19.
-
 Let `σ` be an involution of the second kind on an algebra `A` over a CM
 field `K` with totally real subfield `E`. Suppose `σ` has the definite
 signature `(n, 0)` at every real embedding of `E`, as expressed by the
-published predicate `HasDefiniteSignature σ n` of Worker 57. This module
+published predicate `HasDefiniteSignature σ n` (`Signature`). This module
 proves that the restriction of `σ` to `ℚ` becomes a positive involution after
 extending scalars to `ℝ`. This is the positivity hypothesis used by
 `PositiveArithmeticFinite` and the modules built on it, now derived for
@@ -21,8 +19,8 @@ this algebraically. At every real embedding `τ` it requires a real algebra
 isomorphism `ℝ ⊗_{E,τ} A ≃ M_n(ℂ)` carrying `σ ⊗ ℝ` to the adjoint for the
 Hermitian form of signature `(n, 0)`.
 
-Positivity is the published `AlgebraInvolution.IsPositive` (Worker 57,
-`Positivity`). It follows Milne, *Introduction to Shimura varieties*,
+Positivity is the published `AlgebraInvolution.IsPositive`
+(`Positivity`). It follows Milne, *Introduction to Shimura varieties*,
 Proposition 8.10(c) and Definition 8.11: `Tr_{C/ℝ}(c* c) > 0` for every
 nonzero `c`.
 
@@ -70,13 +68,13 @@ nonzero `c`.
   not done.
 - **Only positivity.** The module does not combine this with the finiteness
   and small-level results (`PositiveArithmeticFinite`, `HarrisSmallLevels`),
-  which are separate candidates.
+  which are separate modules.
 
 ## Provenance
 
 The source is Harris (1999), Section 1, printed p. 301, read in the original
-(rendered page), through Worker 57's published `HasDefiniteSignature`. The
-positivity predicate and its transport lemma are Worker 57's published
+(rendered page), through the published `HasDefiniteSignature`. The
+positivity predicate and its transport lemma are the published
 `Positivity` and `RealPositivity`. The identification of the definite
 adjoint with conjugate transposition and the assembly are written for this
 module.

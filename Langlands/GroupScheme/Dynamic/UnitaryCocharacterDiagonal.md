@@ -1,7 +1,5 @@
 # Unitary diagonalization of Hermitian cocharacter weight projectors
 
-Author: Worker 1655.
-
 This internal construction gives a unitary diagonalizer for a general linear
 cocharacter whose Laurent weight projectors are Hermitian in the given
 coordinates. The coefficient field is any `RCLike` field in universe `u`.

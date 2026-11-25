@@ -1,6 +1,6 @@
 # Finite epsilon tests on actual supercuspidal classes
 
-Author: Worker 78. This module supplies proposition definitions; it does not
+This module supplies proposition definitions; it does not
 prove the stated separation and lifting results.
 
 The module defines the proposition
@@ -90,7 +90,7 @@ candidate-first order is that of Henniart 1993; Henniart 2000 prints the
 test-first order in its later formulas, whose use requires a separate
 symmetry/comparison result.
 
-The owner relation fixes the actual residue cardinality and normalized
+The relation `RankinSelberg.IsClassEpsilonFactor` fixes the actual residue cardinality and normalized
 absolute value, descends from actual JPSS equations via representation
 equivalence, and includes existence of a compatible test-rank quotient
 measure and nonzero Whittaker functionals. It requires the equation for
@@ -98,8 +98,8 @@ every such measure and pair of functionals; the additive block measures
 are derived from the fixed `ν`. No missing measure or functional is treated
 as an epsilon witness. The helper `Agree` asserts existence of a common
 witness, rather than a vacuous implication between nonexistent witnesses.
-The owner supplies intrinsic invariance and uniqueness; factor existence
-and the local converse remain separate obligations.
+Its module `RankinSelberg/EpsilonFactor` supplies intrinsic invariance and
+uniqueness; factor existence and the local converse are not part of this module.
 
 ## The three components
 
@@ -118,7 +118,8 @@ same finite separation for
 `GeneralLinear.SupercuspidalClass.centralLevelStratum χ b`.
 Here `χ` is a character of the actual center of `GL_(k+2)(F)` and `b` bounds
 the first nonzero last-row fixed level. The stratum and finiteness
-declarations are the existing owner interfaces. The first-level invariant
+declarations are the existing interfaces of `SupercuspidalStrata` and
+`SupercuspidalFinitenessStatement`. The first-level invariant
 takes values in `WithTop ℕ`; it is not identified with an epsilon conductor.
 This wrapper uses the published finiteness proposition as a hypothesis,
 not as a proved result.
@@ -148,7 +149,7 @@ epsilon factors. Its conclusion evaluates only at the supplied images.
 Rank-one reciprocity, finite-order normalization by unramified twists,
 conductor-to-first-level comparison, local finiteness proofs, arithmetic
 factor comparison, common Galois enlargement, independence of global
-choices, and numerical/rank induction remain outside this unit. In
+choices, and numerical/rank induction remain outside this module. In
 particular, the unrestricted lower-rank surjections used here are those
 of the 1993 formulation; the extra finite-order normalization in
 Henniart 2000 Section 4.3 is not silently included.

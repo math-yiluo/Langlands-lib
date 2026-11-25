@@ -28,7 +28,7 @@ elaborated statement:
 * `[(distinguishedLiftSystem ρ).HasAdmissibleRefinements (twistedEtaleTopology ρ)]`:
   admissible refinements for the lifts on distinguished étale objects.
 
-## Scope relative to the target of Task 7634
+## Scope relative to `AnalyticEtaleSmoothPointProductLocalAcyclicCorrectedStatement`
 
 The module imports
 `Langlands.Cohomology.AnalyticEtaleSmoothPointProductLocalAcyclicCorrected`. Its

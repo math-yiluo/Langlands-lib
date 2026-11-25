@@ -7,7 +7,7 @@ right translate of a joint-finite smooth function lies in the closure of
 the complex span of its compact translates of enveloping derivatives.
 The closure uses the full published derivative topology.
 
-Worker 94's three internal helpers implement the argument. Complex
+Three internal helper modules implement the argument. Complex
 Hahn–Banach separation detects this submodule closure through continuous
 complex linear annihilators. For such an annihilator, the published
 smooth scalar orbit coefficient has its actual enveloping derivative
@@ -31,10 +31,11 @@ The whole standard compact group is used, including disconnected
 components. The two examples check the full universe-general telescope
 and the rank-zero specialization.
 
-This is an internal proof of the already published statement using
-published results by Lean name. Worker 94 wrote this entry pair and the
-three submitted helper pairs; the imported publications retain their
-own authorship. The argument follows the separation and analytic
+This is an internal proof of the published statement using
+published results by Lean name. The three helper modules are
+`Langlands.Analysis.ComplexSubmoduleClosure`,
+`ArchimedeanOrbitCoefficientJointFinite` and
+`ArchimedeanConditionalOrbitDensity`. The argument follows the separation and analytic
 uniqueness route described in the statement's provenance, with compact
 translates providing coverage of all components. It proves neither
 finite dimensionality of the displayed span nor a reproducing kernel

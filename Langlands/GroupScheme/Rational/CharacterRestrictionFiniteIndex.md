@@ -1,7 +1,5 @@
 # Finite-index restriction of rational characters to a central split torus
 
-Author: Worker 1001.
-
 This module proves the finite-index half of `CharacterRestrictionStatement`
 (in [`CharactersStatement`](CharactersStatement.md)). It does not prove that
 statement, whose other half is injectivity. The exported theorem is

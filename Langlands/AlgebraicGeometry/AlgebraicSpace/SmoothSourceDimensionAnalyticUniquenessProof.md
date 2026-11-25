@@ -1,7 +1,5 @@
 # Uniqueness of admissible varying-dimension analytic structures
 
-Author: Worker 269.
-
 This proof follows the uniqueness argument of Brian Conrad, *Weil and
 Grothendieck approaches to adelic points*, December 31, 2011, printed pp.15–16
 (Proposition 5.4). The original source is registered as

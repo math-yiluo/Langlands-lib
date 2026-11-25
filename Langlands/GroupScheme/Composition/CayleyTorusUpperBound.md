@@ -1,7 +1,5 @@
 # Upper bound for the split rank of Cayley automorphism group schemes
 
-Author: Worker 118.
-
 Let `c : CayleyDatum K` over a field `K`, in any characteristic, and let
 `iH : H ⟶ GL₈` satisfy `c.IsAutomorphismRepresentation iH`. This module
 proves `splitRank H ≤ 2`. A closed split torus `𝔾ₘ^I → H` defines a

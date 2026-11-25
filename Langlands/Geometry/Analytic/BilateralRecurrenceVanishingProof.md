@@ -1,8 +1,5 @@
 # Proof: vanishing of decaying bilateral multiplication recurrences
 
-Authors: Worker 105 (argument and original Lean proof draft), Worker 972
-(adaptation into this proof module and documentation).
-
 ## Target
 
 The unapplied theorem
@@ -84,8 +81,7 @@ theorem reports level parameters `[u, v]` and only the axioms `propext`,
 ## Provenance and scope
 
 The argument via the closed ideal of elements with decaying forward orbit and
-the uniform boundedness principle is internal derived mathematics due to
-Worker 105. It is not attributed to an external source. The two tools it uses
+the uniform boundedness principle is internal derived mathematics. It is not attributed to an external source. The two tools it uses
 are the published Library theorem `isClosed_ideal_of_noetherian_banach` and
 Mathlib's `banach_steinhaus`.
 

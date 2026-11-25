@@ -1,7 +1,5 @@
 # The split-centre subgroup from a rational torus in the Weil restriction
 
-Author: Worker 112.
-
 Getz--Hahn (2.20), p. 68, define `A_G` for a number field `F`. It is the
 neutral component of the real points of the greatest `ℚ`-split torus in
 `Res_{F/ℚ} Z_G`, viewed inside `G(F_∞) < G(A_F)`. Display (2.21), p. 69, then

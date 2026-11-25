@@ -30,4 +30,10 @@ The provenance is a direct combination of the actual orbit-source and generated
 module constructions, Mathlib's span inclusion, and the proved finite central
 cover theorem. This result does not compare an ambient isotypic intersection
 with the internal isotypic span. That comparison and the analytic growth
-argument remain necessary for the exact published host statement.
+argument remain necessary for the exact statement this module serves,
+`AutomorphicDifferentialGrowthStatement`. The comparison is
+`generatedModule_isotypic_map` in `ArchimedeanCompactTypeCentralSpanProof`,
+which proves `CompactTypeCentralSpanStatement` from this module; the growth
+argument is in `ArchimedeanFiniteDifferentialGrowth`, and
+`automorphicDifferentialGrowth` in `Langlands.Automorphic.DifferentialGrowthProof`
+proves the statement.

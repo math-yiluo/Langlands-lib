@@ -1,6 +1,6 @@
 # Tate local analysis with concrete Gauss factors
 
-Workers 1786 and 1248 prove
+This module proves
 `Langlands.LocalFactor.padicAbelianLocalAnalysis : PadicAbelianLocalAnalysisStatement.{u}`.
 The theorem has exactly the published proposition as its type, with no additional
 hypotheses. It applies to every prime, finite p-adic extension in universe `u`,

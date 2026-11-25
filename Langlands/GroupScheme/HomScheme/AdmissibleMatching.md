@@ -1,7 +1,5 @@
 # Matching actual admissible families
 
-Author: Worker 1726.
-
 This internal helper transfers membership between actual admissible subgroup
 families when their restrictions to a common parameter scheme are equal.
 It constructs the common original group-valued point over the identity test of

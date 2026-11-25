@@ -60,7 +60,7 @@ other imported definitions are unchanged.
 ## Provenance
 
 Internal and derived. Both targets are combinatorial lemmas of the proof of the
-published `MoeglinWaldspurger.UniversalAubertCorrectness` (Task 5735). There, `unmatched a x`
+published `MoeglinWaldspurger.UniversalAubertCorrectness`. There, `unmatched a x`
 is the combinatorial description of the highest left derivative with respect to the
 cuspidal `ν^x ρ` of the Langlands quotient attached to `a` (the matching rule of Jantzen,
 *Jacquet modules of p-adic general linear groups*, Represent. Theory 11 (2007),

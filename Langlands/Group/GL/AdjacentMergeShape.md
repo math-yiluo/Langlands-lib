@@ -1,7 +1,5 @@
 # Merging two adjacent blocks
 
-Author: Worker 379.
-
 This module constructs the finite ordered coordinates for merging two
 neighbouring blocks of an ordered positive `B : GeneralLinear.BlockShape n`.
 The merged slots are `j` and `j + 1`, where `j : ℕ` and
@@ -106,7 +104,8 @@ length `adjacentInnerLength B j m`. Its inner block `k` has size
 ```
 
 It is `adjacentLabelEquiv`, stated on the outer and inner label types of
-the refinement. These declarations give the data that the parent task needs:
+the refinement. These declarations give the data that the Levi and parabolic
+comparisons of `Langlands.Group.GL.AdjacentMerge` need:
 
 | Declaration | Statement |
 | --- | --- |

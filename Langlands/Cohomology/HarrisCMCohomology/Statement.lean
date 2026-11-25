@@ -6,7 +6,7 @@ import Mathlib.FieldTheory.KrullTopology
 /-!
 # Finiteness and Galois smoothness of geometric CM torsion cohomology
 
-Fix a small CM level `U` and Worker 57's original stable-lattice torsion
+Fix a small CM level `U` and the original stable-lattice torsion
 coefficient system on the geometric level `X̄_U = X_U ×_{Spec F} Spec F̄`,
 where `F̄ = AlgebraicClosure F`. The first statement says that every
 étale cohomology module of every coefficient stage is finite. The second says

@@ -1,7 +1,5 @@
 # Translation of the étale site along isomorphisms
 
-Author: Worker 21.
-
 The Library's `EtaleSite` defines the étale site `Ét(X)` of an analytic space
 `X` and the translation `EtaleSite.translate e : EtaleSite X ≌ EtaleSite Y`
 along an isomorphism `e : X ≅ Y`, which composes structure morphisms with `e`.
@@ -112,5 +110,5 @@ allowed), and `X`, `Y` are objects of `LocalizedCategory.{u, v, v}`.
 
 This module does not define sheaves with group actions, the twisted category
 in which group elements act on objects of `Ét(X)`, or the equivariant
-sheaves of Berkovich's §1.4; these belong to the equivariant sheaf branch of
-the parent task. It does not treat the quasi-étale site.
+sheaves of Berkovich's §1.4; these belong to equivariant sheaf theory. It
+does not treat the quasi-étale site.

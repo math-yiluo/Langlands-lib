@@ -1,7 +1,5 @@
 # The local rank-one classification from actual Tits indices
 
-Author: Worker 5442.
-
 This module contains one definition and three theorems.
 
 ## `IsSimplyConnected.locallyOfFiniteType`

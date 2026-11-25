@@ -1,6 +1,6 @@
 # Finite coefficient separation on an actual p-adic lattice
 
-Author: Worker 84. This internal statement is
+This internal statement is
 `Langlands.HarmonicAnalysis.PadicFiniteCoefficientSeparationStatement.{u}`.
 
 For every prime \(p\), finite extension \(F/\mathbf Q_p\) in an arbitrary
@@ -51,7 +51,8 @@ in the annihilator lattice of level \(n-m\), forcing
 A common sufficiently large natural \(N\) contradicts these finitely many
 inequalities. The zero coefficient gives the trivial character directly.
 This paragraph explains the derivation; this module supplies only the
-proposition target, with its proof a separate deliverable.
+proposition target; its proof is in
+[PadicFiniteCoefficientSeparationProof](PadicFiniteCoefficientSeparationProof.md).
 
 The intended consumer is the auxiliary-character route of
 `Langlands.Global.Arithmetic.AuxiliaryCharacterStatement`: finite

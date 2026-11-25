@@ -1,6 +1,6 @@
 # Rational irreducibility under duality and coordinate changes
 
-This internal derived unit works on the original coordinate space of a finite
+This module, internal and derived, works on the original coordinate space of a finite
 matrix representation of an actual group scheme over an arbitrary field. It
 identifies the rational-point action of its actual dual with the full module
 dual and identifies a change of coordinates with conjugation by the same
@@ -40,7 +40,7 @@ fields. The equivalence argument follows the module comparison in
 `Langlands/Representation/Filtration/CentralEigenspaceSplitting.lean`.
 These elementary lattice and equivalence helpers remain private.
 
-This unit concerns the rational actions of the existing scheme
+This module concerns the rational actions of the existing scheme
 representations and supplies no group or highest-weight existence theorem,
 induced-space dimension estimate or proof of `SteinbergBigCellStatement`.
 The existing separate rational-to-actual irreducibility theorem remains

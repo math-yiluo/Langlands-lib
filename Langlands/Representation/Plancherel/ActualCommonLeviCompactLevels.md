@@ -21,7 +21,7 @@ these presentations for an arbitrary compact open subgroup.
 
 No splitness, characteristic-zero, quasi-splitness, positive-rank,
 admissibility, irreducibility or unitary-character assumption is imposed on
-these algebraic adapters. In particular this unit does not assert that the
+these algebraic adapters. In particular this module does not assert that the
 subgroup-fixed spaces have finite dimension without further admissibility
 input.
 
@@ -76,6 +76,6 @@ inclusion/refinement laws for any displayed intertwiner, available in particular
 when the later closed targets specify the actual standard comparison.
 
 No generic nonemptiness, denominator, rationality, unitary regularity, cocycle,
-Weyl descent or smooth coherent-section comparison is concluded by this unit.
-Those remain distinct targets of the host task. The unit exports no additional
+Weyl descent or smooth coherent-section comparison is concluded by this module.
+Those are distinct targets, outside this module. The module exports no additional
 axiom or unfinished proof.

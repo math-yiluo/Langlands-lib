@@ -1,10 +1,9 @@
 # Good points of a relation with an identity section
 
-Author: Worker 303. The predicate was agreed with Worker 101 as the interface
-between two steps of the proof of
-`Langlands.AlgebraicGeometry.SmoothEquivalenceRelationEtaleSliceStatement`
-(task `3c6168ac-543c-4dc2-a8a6-81647cb26eb6`): slicing at a good point, and
-existence of a good point in every orbit.
+The predicate is the interface between two steps of the proof of
+`Langlands.AlgebraicGeometry.SmoothEquivalenceRelationEtaleSliceStatement`:
+slicing at a good point (`GoodPointEtaleSliceProof`), and existence of a good
+point in every orbit (`SmoothRelationGoodPointExistence`).
 
 The module imports only `Mathlib` and contains one definition, in namespace
 `Langlands.AlgebraicGeometry.SmoothRelationGoodPoint`.

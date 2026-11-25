@@ -1,6 +1,6 @@
 # Finite direct sums of Weil–Deligne pairs
 
-Worker 17 authored this construction module. It imports
+This construction module imports
 `Langlands.WeilDeligne.Parameters` and `Langlands.Weil.Representation.DirectSum`.
 
 For a family `A : ι → WeilDeligneRepresentation K G ν` indexed by a finite
@@ -39,7 +39,7 @@ certificate. No Frobenius-semisimplicity, usual-continuity or
 semisimplicity preservation is asserted.
 
 This module does not import the special-block constructor, which is a
-separate contribution. Applied to a finite family of specified blocks
+separate module (`Langlands.WeilDeligne.SpecialBlocks`). Applied to a finite family of specified blocks
 `ρ_i ⊗ S_{n_i}`, `directSum` gives the actual pair of the form
 `⨁_{i∈I} ρ_i ⊗ Sp(n_i)`. No decomposition, existence or uniqueness
 assertion is made; those are statement targets elsewhere.
@@ -63,8 +63,8 @@ and quotient obligations are derived and proved here.
 
 ## Included representation module
 
-This contribution also includes `Langlands.Weil.Representation.DirectSum`,
-with paired Markdown. It constructs the finite direct sum of actual
+`Langlands.Weil.Representation.DirectSum`, with paired Markdown, is ported
+together with this module. It constructs the finite direct sum of actual
 finite-dimensional representations on `⨁ i, A i`, with componentwise
 intertwiners, functor, equivalences, rank formula, class operation and the
 open-inertia certificate used by the parameter version here.
@@ -72,4 +72,4 @@ open-inertia certificate used by the parameter version here.
 `directSumCongr`, moved unchanged from
 `Langlands.Correspondence.UnramifiedReciprocityBridge`, transports componentwise
 pair equivalences across independent carrier universes using the actual
-`DFinsupp.mapRange.linearEquiv`. Its original authorship is retained.
+`DFinsupp.mapRange.linearEquiv`.

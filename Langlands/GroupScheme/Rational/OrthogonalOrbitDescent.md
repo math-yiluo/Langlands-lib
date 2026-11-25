@@ -1,7 +1,5 @@
 # Descent of orthogonal-orbit coroot words to root-generated rational points
 
-Author: Worker 4348.
-
 Module `Langlands.GroupScheme.Rational.OrthogonalOrbitDescent`.
 
 This module completes the orthogonal-orbit case of the inclusion `Z_G(S)(k) ⊆ G(k)^+` for

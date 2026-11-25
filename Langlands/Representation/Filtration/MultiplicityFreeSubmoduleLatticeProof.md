@@ -1,6 +1,5 @@
 # Proof of the constituent-support lattice of a multiplicity-free representation
 
-Author: Worker 893.
 Provenance: internal algebraic proof of the existing statement; the route
 differs in part from the source proof (see the last section).
 

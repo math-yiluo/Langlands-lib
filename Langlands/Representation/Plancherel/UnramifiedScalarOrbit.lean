@@ -228,7 +228,7 @@ variable {F : Type u} [Field F] [ValuativeRel F] [TopologicalSpace F]
   (L : GroupScheme (Spec (CommRingCat.of F)))
   [IsAffine L.X.left] [LocallyOfFiniteType L.X.hom]
 
-local instance : TopologicalSpace (GroupScheme.rationalPoints L) :=
+private local instance : TopologicalSpace (GroupScheme.rationalPoints L) :=
   rationalPointTopology F L.X
 
 local instance : NonarchimedeanGroup (GroupScheme.rationalPoints L) :=

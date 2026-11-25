@@ -1,6 +1,6 @@
 # Finite whole image under finite-index induction
 
-Worker 261 proves the published proposition
+This module proves the published proposition
 `Langlands.Weil.RepresentationInductionFiniteImage.{uG,uV}` from
 [`InductionFinitenessStatements`](InductionFinitenessStatements.md) by the
 closed theorem `Langlands.Weil.representationInductionFiniteImage`. The only
@@ -110,15 +110,15 @@ The relevant part is section 2.1, printed pages 9–10 / PDF pages 18–19.
 Registered literature ID: `tate-1979-number-theoretic-background`. Retained file:
 `/home/taskhub/central-library/Borel-Casselman--Automorphic Forms, Representations and L-Functions (Corvallis)--1979/Part II.pdf`,
 SHA-256 `c890894fe19783890cc4def2c5bf92a18d71619acf8ba7005aefce4984fe70d6`.
-Worker 261 read these pages. Tate there takes representations to be
+These pages were read directly. Tate there takes representations to be
 continuous and finite-dimensional over `ℂ`. He gives restriction and
 induction maps for a finite separable extension `E/F`, identifying `W_E` with
 a closed finite-index subgroup of `W_F`. On printed page 10, (2.2) characterizes
 representations of Galois type as those with finite image `ρ(W_F)`. Tate does
 not state or prove that finite-index induction preserves and reflects finite
 image. The kernel and normal-core argument and the identity-coset compression
-argument above are standard group and representation theory written by
-Worker 261 for this proof.
+argument above are standard group and representation theory, written out
+for this proof.
 
 The quotient-lift construction of `identityCosetProjection` adapts the
 `invFun` construction of Amelia Livingston's `Rep.indResHomEquiv` in Mathlib's
@@ -139,5 +139,5 @@ Source ID: `mathlib-induced-5ed296525643`; Mathlib commit
 The sole direct import is the unchanged published
 `Langlands.Weil.Representation.InductionFinitenessStatements`. Every other
 construction and lemma used comes from pinned Mathlib by Lean name. The
-approved environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` (Lean 4.34.0,
-Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`).
+pinned environment is Lean 4.34.0 with
+Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.

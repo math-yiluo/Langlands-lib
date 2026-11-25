@@ -80,8 +80,9 @@ The provenance is an internal derivation from the imported actual polarized
 pullback, integral dual naturality, Weil isogeny/base-change square and the
 quotient universal property. It is not a separate translation of a numbered
 literature result. Original-source conventions are inherited from the imported
-Harris constructions. This unit does not establish identity or composition for
-successive base changes, remove the named tensor/Picard/Weil hypotheses,
-compare rational-isomorphism classes with geometric-isogeny classes, construct
-an unpointed moduli functor or its representing schemes, or provide coefficient
-descent. Those remain separate obligations of the geometric construction.
+Harris constructions. This module does not establish identity or composition
+for successive base changes (these are proved in
+`HarrisPolarizedBaseChangeIdentity` and `HarrisPolarizedBaseChangeComposition`),
+remove the named tensor/Picard/Weil hypotheses, compare rational-isomorphism
+classes with geometric-isogeny classes, construct an unpointed moduli functor
+or its representing schemes, or provide coefficient descent.

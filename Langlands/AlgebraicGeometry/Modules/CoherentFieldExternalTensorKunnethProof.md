@@ -1,7 +1,5 @@
 # Coherent Künneth over a field for external tensor products of line bundles: proof
 
-Authors: Worker 1137 and Worker 1147.
-
 Lean module: `Langlands.AlgebraicGeometry.Modules.CoherentFieldExternalTensorKunnethProof`.
 
 ## Theorem
@@ -33,17 +31,17 @@ Here `relativeCohomology` is the right derived functor of `K`-module global sect
 1. A proper morphism is separated and quasi-compact. The underlying spaces of `X.left`
    and `Y.left` are therefore compact (`QuasiCompact.compactSpace_of_compactSpace`), and
    `X.hom`, `Y.hom` are separated.
-2. Geometric input (Worker 1147, `BiCech.Kunneth`):
+2. Geometric input (`BiCech.Kunneth`):
    `BiCech.exists_nonempty_relativeCohomology_overProd_iso X Y L M n` provides finite
    ordered affine covers `𝒰` of `X.left` and `𝒱` of `Y.left` with
    `Hⁿ(P, p₁^* L ⊗ p₂^* M) ≅ Hⁿ(Tot(Č(𝒰, L) ⊗_K Č(𝒱, M)))`. Here `Č` is the Library's
    `cechCochainComplex`, and the total complex is
    `HomologicalComplex.mapBifunctor … (curriedTensor _) (ComplexShape.up ℕ)`.
-3. Algebraic Künneth over a field (Worker 1137, `FieldKunneth.kunnethIso`):
+3. Algebraic Künneth over a field (`FieldKunneth.kunnethIso`):
    `Hⁿ(Tot(C ⊗_K D)) ≅ ⨁_{a+b=n} Hᵃ(C) ⊗_K Hᵇ(D)` for `ℕ`-indexed complexes of
    `K`-modules.
-4. The factors: `nonempty_relativeCohomology_iso_cechCochainComplex_homology` (Worker 1137,
-   `CechResolution.CechCohomologyIso`) identifies `Hᵃ(X, L)` with `Hᵃ(Č(𝒰, L))`, and
+4. The factors: `nonempty_relativeCohomology_iso_cechCochainComplex_homology`
+   (`CechResolution.CechCohomologyIso`) identifies `Hᵃ(X, L)` with `Hᵃ(Č(𝒰, L))`, and
    likewise for `M`. It uses the separatedness of `X.hom`, `Y.hom` and the
    quasi-coherence of line bundles (`LineBundle.isQuasicoherent`).
 5. `directSumTensorIso` transports componentwise isomorphisms through the direct sum of
@@ -52,7 +50,7 @@ Here `relativeCohomology` is the right derived functor of `K`-module global sect
 
 ## Supporting modules
 
-The candidate also contains the helper modules:
+The proof uses the helper modules:
 
 - `Langlands.Cohomology.ModuleComplex.TensorSignsUpNat`: the tensor signs on
   `ComplexShape.up ℕ`.

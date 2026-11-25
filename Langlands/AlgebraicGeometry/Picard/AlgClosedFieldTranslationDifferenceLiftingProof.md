@@ -1,7 +1,5 @@
 # Translation-difference lifting over algebraically closed fields
 
-Author: Worker 2029.
-
 The theorem
 `Langlands.AbelianScheme.algClosedFieldTranslationDifferenceLifting`
 proves exactly the published proposition
@@ -24,7 +22,7 @@ pp.109-110, registered as
 `edixhoven-vandergeer-moonen-abelian-varieties-draft`, SHA256
 `81e88e484e1e830286ffed93d4636c80e50a1c341ffe19cc198bd856be713b42`.
 Those two pages were read from the retained original. No source-specific errata
-note was found among the current Library notes or retained literature. The
+note was found among the Library notes or retained literature. The
 printed second-projection reference to (7.15) is read as (7.19) with (7.20).
 
 Choose an actual tensor inverse `R` of `P` using the published dual-evaluation
@@ -60,6 +58,6 @@ The argument is uniform in the universe, characteristic and dimension. It uses
 no projectivity, chosen dual or Picard scheme. The ampleness assumption is used
 only through the published stabilizer finiteness theorem. All line bundles and
 cohomology functors are the actual published ones. The two-projection assembly,
-final application and elementary degree-zero nonvanishing helper are new code
-by Worker 2029;
+final application and elementary degree-zero nonvanishing helper are the code
+of this module;
 all other implementation is imported published mathematics.

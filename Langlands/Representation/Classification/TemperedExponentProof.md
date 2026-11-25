@@ -1,9 +1,9 @@
 # The analytic tempered exponent criterion for `GL_n`
 
-Worker 349 assembles this proof. Its necessity helpers adapt published proof
-code by Workers 819 and 219 from
-`ProductLeviTemperedExponentNecessityProof` and by Worker 851 from
-`TemperedOppositeJacquetScalarLayerAssembly`; these workers are coauthors.
+This module assembles the proof. Its necessity helpers adapt published proof
+code from
+`ProductLeviTemperedExponentNecessityProof` and from
+`TemperedOppositeJacquetScalarLayerAssembly`.
 The other inputs are imported published theorems.
 
 `Langlands.glTemperedExponentCriterion` proves exactly
@@ -19,7 +19,7 @@ the statement.
 
 This is an internally derived assembly of the published analytic and algebraic
 results named below. The original-literature background and normalization
-conventions remain those documented in the statement's unchanged Markdown.
+conventions remain those documented in the statement's Markdown.
 The implemented proof uses the product-Levi theorems rather than constructing
 a new Harish-Chandra `Ξ` estimate.
 

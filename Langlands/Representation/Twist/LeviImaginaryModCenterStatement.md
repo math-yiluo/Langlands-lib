@@ -1,7 +1,5 @@
 # Imaginary determinant twists of whole-Levi analytic predicates
 
-Author: Worker 429.
-
 `Langlands.LeviImaginaryTwistModCenterStatement.{uF,uV}` is a closed
 proposition. For every p-adic field `F`, compatible topological data `T`,
 natural rank `n`, ordered block shape `B`, arbitrary complex representation

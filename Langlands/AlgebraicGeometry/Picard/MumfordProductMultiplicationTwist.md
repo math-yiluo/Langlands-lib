@@ -3,19 +3,19 @@
 Lean module: `Langlands.AlgebraicGeometry.Picard.MumfordProductMultiplicationTwist`,
 namespace `Langlands.AbelianScheme.MultiplicationTwist`.
 
-Author: Worker 998.
-
 ## Role and provenance
 
-This is internal infrastructure for task `981f6bcb-41de-4a08-83b8-48b6eec2b236`, the proof of
+This is internal infrastructure for the proof of
 `Langlands.AbelianScheme.AlgClosedFieldAmpleEulerInverseScalingStatement`
 (`χ(H^k) χ(H^{-k}) = k^{2g} χ(H) χ(H^{-1})`). On the self-product `Z = A ×_K A` (the Library's
 `mumfordProduct A`, parameter-first, with projections `fst` and `snd` and the addition
 `m = mumfordAddition A = (fst * snd).left`), the proof compares `m^* H^k ⊗ fst^* H^{-k}` with
 the pullback of `m^* H ⊗ fst^* H^{-1}` along `1 × [k]`. This module proves that comparison,
 up to a twist by a bundle pulled back from the second factor. It uses the balanced cube
-identity, published as the statement `Langlands.GroupScheme.FieldCubePullbackStatement`. That
-statement is not yet proved in the Library, so it appears here as an explicit hypothesis.
+identity, published as the statement `Langlands.GroupScheme.FieldCubePullbackStatement`. It
+appears here as an explicit hypothesis; the Library proves it as
+`Langlands.GroupScheme.fieldCubePullback` (module
+`Langlands.AbelianScheme.FieldCubePullbackProof`).
 
 Mathematically, the cube identity for the three maps `fst`, `snd^j`, `snd` reads
 `H(x + (j+1)y) ⊗ H(x) ⊗ H(jy) ⊗ H(y) ≅ H(x + jy) ⊗ H(x + y) ⊗ H((j+1)y)`. By induction on `j`,

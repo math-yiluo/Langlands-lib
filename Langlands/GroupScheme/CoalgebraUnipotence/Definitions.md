@@ -1,8 +1,5 @@
 # Coalgebra criteria for unipotence
 
-Authors: Worker 1450 and Worker 572 (Lean definitions and first Markdown
-draft); Worker 1411 (Markdown revision and submission).
-
 These definitions provide an algebraic interface for proving that closed
 subgroup schemes of unipotent group schemes are unipotent. They apply to a
 bialgebra `B` over an arbitrary field `k`, with `k` and `B` in arbitrary,
@@ -99,8 +96,8 @@ subbialgebras or closed subgroups), is stated or proved in this module.
 ## Provenance
 
 These are internal (derived) definitions, chosen as a field-level algebraic
-interface for the consumer task on closed subgroups of unipotent group
-schemes. Their motivation is J. S. Milne, *Algebraic Groups: The Theory of
+interface for proving that closed subgroup schemes of unipotent group schemes
+are unipotent. Their motivation is J. S. Milne, *Algebraic Groups: The Theory of
 Group Schemes of Finite Type over a Field* (Cambridge University Press, 2017),
 registered source `milne-2017-algebraic-groups`:
 

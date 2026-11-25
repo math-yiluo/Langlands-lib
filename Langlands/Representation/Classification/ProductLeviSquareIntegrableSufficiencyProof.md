@@ -1,7 +1,5 @@
 # Proof of product-Levi square-integrability from strict upper Jacquet exponents
 
-Author: Worker 728.
-
 This module proves the core statement of
 [`ProductLeviSquareIntegrableSufficiencyStatement`](ProductLeviSquareIntegrableSufficiencyStatement.md):
 

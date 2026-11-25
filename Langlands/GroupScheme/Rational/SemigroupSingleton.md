@@ -1,6 +1,6 @@
 # The singleton semigroup ordered product
 
-This internal unit derives the one-block case of the existing
+This internal module derives the one-block case of the existing
 `SemigroupOrderedProductStatement` from the actual constructions in
 `WeightSemigroup`, the universal property in `SemigroupClosure`, and the
 all-test coordinate criterion in `OrderedProductPoints`. It uses no
@@ -36,5 +36,5 @@ The result holds over every field universe, without solvability or
 splitness assumptions. Distinct-block disjointness and cross-exclusion
 are vacuous in the singleton case and are not needed as hypotheses.
 Zero is retained whenever it occurs; the semigroup closure does not
-insert zero by a monoid convention. This unit does not prove the empty
+insert zero by a monoid convention. This module does not prove the empty
 case or the conclusion for two or more blocks.

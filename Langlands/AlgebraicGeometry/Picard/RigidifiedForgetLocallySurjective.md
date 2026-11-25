@@ -37,7 +37,7 @@ preliminary draft, Chapter VI §1, (6.2), printed pp.88–89 / PDF pp.92–93.
 The registered source is
 `edixhoven-vandergeer-moonen-abelian-varieties-draft`, SHA-256
 `81e88e484e1e830286ffed93d4636c80e50a1c341ffe19cc198bd856be713b42`.
-Worker 149 read these pages and Definition (6.1) on PDF p.91. The implemented
+These pages and Definition (6.1) on PDF p.91 were read. The implemented
 local proof does not require global normalization by an inverse bundle.
 
 This module does not prove that rigidified classes form an fppf sheaf, or

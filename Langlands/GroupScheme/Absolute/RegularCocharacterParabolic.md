@@ -1,8 +1,7 @@
 # Dynamic parabolics of regular cocharacters (conditional on structure inputs)
 
 Module `Langlands.GroupScheme.Absolute.RegularCocharacterParabolic`. It is derived
-infrastructure for clause 2 of `Langlands.GroupScheme.RegularCocharacterBorelStatement`
-(task `618cd683-cfcd-43a3-b4bf-6c8abd208b1f`).
+infrastructure for clause 2 of `Langlands.GroupScheme.RegularCocharacterBorelStatement`.
 
 Let `G` be a smooth connected affine group over a field `k`, let `j : T ⟶ G` be a
 homomorphism from a split torus, and let `ν, ν'` be regular cocharacters of `j`. The module
@@ -14,8 +13,10 @@ taken as hypotheses (listed below). Subgroup-functor equality holds on every tes
 ## Structural inputs
 
 Both theorems take the following published statements as explicit hypotheses and do not prove
-them. A final proof of the target applies these theorems to the Library proofs of the four
-statements once those proofs are published.
+them. The proof `regularCocharacterBorel` of the target (module
+`Absolute.RegularCocharacterBorelProof`) applies these theorems, through the assembly in
+`Absolute.RegularCocharacterBorel`, to the Library proofs `dynamicLie`, `dynamicSmooth`,
+`dynamicConnected` and `lieSubgroupEquality` of the four statements.
 
 - `hLie : DynamicLieStatement` (Conrad–Gabber–Prasad, *Pseudo-reductive groups*, 2nd ed.
   (2015), Proposition 2.1.8(1), printed p.53).
@@ -39,7 +40,7 @@ statement.
      `hEq`): the two parabolics are equal iff
      `⨆ n : ℕ, weightSpace (ν ≫ j) (Gm.powerHom _ n)` and the same sum for `ν'` agree. These
      sums are the Lie algebras of the two parabolics, by `hLie`.
-  2. `iSup_nat_weightSpace_cocharacter_eq_iff` (Worker 303's module
+  2. `iSup_nat_weightSpace_cocharacter_eq_iff` (module
      `Langlands.GroupScheme.Absolute.RegularCocharacterWeights`, which uses only the published
      split-torus weight decomposition): for split `T` and regular `ν, ν'`, these two sums
      agree iff every root has the same sign on `ν` and on `ν'`.

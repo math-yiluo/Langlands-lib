@@ -1,7 +1,7 @@
 import Langlands.Representation.Finite.DegreeZeroBrauerSupport
 import Langlands.Representation.Finite.DegreeZeroMonomial
 import Langlands.Representation.Finite.VirtualCharacterProof
-import Langlands.AnthropicFLT.P2M.Sol.S_BrauerInduction_exists_trace_eq_sum_zsmul_induced_linearCharacter
+import Langlands.Representation.Finite.SolomonInduction
 
 /-!
 # Finite degree-zero Brauer induction
@@ -94,7 +94,7 @@ theorem augment_monomial_mem (A : Subgroup K) [A.Normal]
     (W : Type) [AddCommGroup W] [Module ℂ W] [FiniteDimensional ℂ W]
     (σ : Representation ℂ K W) (hm : DegreeZeroMonomial.Monomial A W σ) :
     augment K σ.character ∈ characterSpan K := by
-  open P2MW.S_ClassFunction_exists_trace_eq_sum_induced_linearCharacter_of_normal_comm_of_pow_prime_pow_mem.MonomialProof in
+  open Langlands.FiniteRep.MonomialTrace in
     obtain ⟨l, hl, he⟩ := hm
     have heq : σ.character = lsum l := funext he
     rw [heq]
@@ -161,8 +161,8 @@ theorem augment_of_hyper [Nontrivial K] (p : ℕ) (hp : p.Prime)
 /-- The projection formula for a centered character. -/
 theorem ind_augment_restrict (S : Subgroup K) (V : FDRep ℂ K) (g : K) :
     ind S (augment S ((FDRep.of (V.ρ.comp S.subtype)).character)) g =
-      ClassFunction.induced S (fun _ => (1 : ℂ)) g * augment K V.character g := by
-  rw [ind_apply, ClassFunction.induced_apply]
+      inducedClassFunction S (fun _ => (1 : ℂ)) g * augment K V.character g := by
+  rw [ind_apply, inducedClassFunction_apply]
   have he : ∀ x : K,
       (if hx : x⁻¹ * g * x ∈ S then
         augment S (FDRep.of (V.ρ.comp S.subtype)).character ⟨x⁻¹ * g * x, hx⟩ else 0) =
@@ -198,8 +198,7 @@ theorem augment_native (n : ℕ) :
       intro Q _ _ hQ W
       exact ih (Nat.card Q) (hQ.trans_eq hcard) Q rfl W
     obtain ⟨k, H, a, hH, h1⟩ :=
-      P2MW.S_BrauerInduction_exists_trace_eq_sum_zsmul_induced_linearCharacter.BrauerProof.solomon_complex
-        (G := K)
+      Solomon.exists_one_eq_sum_zsmul_inducedClassFunction_one_complex (G := K)
     by_cases htop : ∃ i, H i = ⊤
     · obtain ⟨i, hi⟩ := htop
       obtain ⟨p, hp, C, _, hcyc, _, hn, hpow⟩ := hH i

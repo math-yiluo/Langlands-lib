@@ -1,7 +1,5 @@
 # Full-domain algebras and compatible rational subset sections
 
-Author: Worker 36.
-
 For an actual positive-polyradius presented affinoid algebra `A` over a
 complete ultrametric normed field `K`, `locusSectionsEquiv U` constructs
 the canonical `K`-algebra equivalence

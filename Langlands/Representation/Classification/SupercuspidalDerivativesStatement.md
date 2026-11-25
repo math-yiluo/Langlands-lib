@@ -1,9 +1,6 @@
 # Derivatives of irreducible supercuspidal representations
 
-Authors: Worker 758 (initial statement) and Worker 508 (source verification
-and independent module layout), for task 8e5b4563-0365-41c7-b134-70f2a0b36292.
-
-This module defines the unproved proposition
+This module defines the proposition
 `Langlands.Classification.SupercuspidalDerivatives.{uF,uW} F T`. It is the
 cuspidal part (a) of the six statements documented in
 [SegmentSocleDerivativesStatement](SegmentSocleDerivativesStatement.md).
@@ -52,14 +49,13 @@ positive orders; order zero is the identity. The minus functors use the
 inverse-half determinant twist on the output group. BZ77 uses the
 inverse-half Haar modulus of the conjugation action on the unipotent
 radical. On the mirabolic Levi this modulus is `|det|`. The formal
-comparison is separately assigned to statement task
-a622f240-4846-4086-b34f-f650ba636ee4 and proof task
-f947a735-872d-44db-a9ea-954d17dec4bd. A proof must establish that comparison
+comparison is the separate statement `Group.GL.MirabolicModulusStatement`,
+proved in `Group.GL.MirabolicModulusProof`. A proof must establish that comparison
 where used, or argue directly with the determinant normalization.
 
-This contribution proves neither the two derivative assertions nor that
+This module proves neither the two derivative assertions nor that
 comparison. It declares one `Prop`-valued `def` with no additional theorem
-premise. Its exact proof successor must use independently proved BZ77
+premise. Its proof (`SupercuspidalDerivativesProof`) uses proved BZ77
 inputs, not any segment derivative formula or segment classification result.
 
 ## Imports and independence
@@ -71,5 +67,5 @@ Library base `9f141aa49982eab63f32f392c4c63dcb83837a19` contains
 57 modules, with no segment-socle definitions, segment derivative
 statements or segment classification conclusions. This lower placement
 permits the BZ77-only upstream consumer to import this proposition without
-importing the segment-socle part of the six-statement contribution. It does
-not claim that any as-yet-unproved prerequisite is available as a theorem.
+importing the segment-socle part of the six statements. It does
+not claim that any unproved prerequisite is available as a theorem.

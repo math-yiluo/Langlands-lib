@@ -6,7 +6,7 @@ namespace Langlands
 
 universe uF uV uG uH
 
--- Adapted from Worker 349's helper in TemperedExponentEdgeProof.
+-- Adapted from a helper in TemperedExponentEdgeProof.
 private theorem scalarCharacter_open_kernel
     {G : Type uG} [Group G] [TopologicalSpace G]
     {H : Type uH} [Group H] [TopologicalSpace H] [IsTopologicalGroup H]
@@ -43,7 +43,6 @@ private theorem scalarCharacter_norm_eq_one
   rw [heq]
   exact c.norm_eq_one _
 
--- The scalar-centre construction is adapted from Worker 349.
 private theorem exists_unitaryCentralCharacter
     {p : ℕ} [Fact p.Prime] {F : PadicField.{uF} p} (T : F.TopologicalData)
     {n : ℕ} (hn : 0 < n)

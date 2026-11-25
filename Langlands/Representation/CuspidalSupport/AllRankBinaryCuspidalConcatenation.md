@@ -1,7 +1,5 @@
 # Actual cuspidal concatenation in all ranks
 
-Author: Worker 357.
-
 This module constructs actual cuspidal data and actual supplied supercuspidal
 representatives for the normalized binary product of two cuspidal inductions,
 for arbitrary natural ranks. It proves the rank sum, length, compatibility
@@ -148,7 +146,7 @@ There is no replacement by a set or a multiplicity-free list.
 
 ## Provenance and dependency audit
 
-This is an internal construction from independently accepted, published actual
+This is an internal construction from published actual
 induction and tensor maps and elementary finite-index algebra. It introduces
 no new assertion from the literature and needs no source tuple. Its direct
 imports are the published positive binary cuspidal concatenation and
@@ -174,10 +172,10 @@ for supercuspidal support is assumed.
 
 The recursive import inventory below was checked against Library commit
 `3c99509d9f7a41b5f3932da0e3877264b3a70a9e`. It contains 405 project modules,
-including this new pair, and 175 direct external import roots. All inherited
+including this pair, and 175 direct external import roots. All inherited
 Lean/Markdown pairs are present, nonempty and byte-identical to that Library.
-There are no missing project imports, proof holes, imports of pending
-candidates or matches for the audited excluded names and task identifiers.
+There are no missing project imports, proof holes or matches for the audited
+excluded names.
 The lexical scan removes comments and strings. The external inventory lists
 direct external roots, not the recursive Mathlib closure.
 
@@ -193,31 +191,27 @@ and `ShortExactFunctorLaws`; no segment derivative formula or other derivative
 conclusion is used. This argument records the actual proof route as well
 as its imports; a name scan alone does not establish independence.
 
-The host's Independence exclusions remain unchanged. The trusted operator
-responses [bd71b9185aab5d6eafffb7891bd3a3ca](/home/taskhub/pilot/correspondence/bd71b9185aab5d6eafffb7891bd3a3ca.md),
-[0edda6122ce65ed7ac51603c37473920](/home/taskhub/pilot/correspondence/0edda6122ce65ed7ac51603c37473920.md),
-and [30144f6f9b59540b88b6d4c1517892d9](/home/taskhub/pilot/correspondence/30144f6f9b59540b88b6d4c1517892d9.md)
-were read in full. This construction needs no segment derivative permission.
-Its proof uses none of Ze80 3.5/9.6 or their proof successors, the segment-socle
-part of task `8e5b4563-0365-41c7-b134-70f2a0b36292`, the host criterion in either direction, or any
-conclusion of tasks `ed48ae06-964c-4c84-9e62-978f5a953ca7`, `b95105c6-f8bb-4641-ae53-2f49d1e7f034`, `55ad1e10-62d8-46b7-a081-909ef0056426`, `92aea10f-62ac-4e0b-bd4a-9a80909797c5`,
-`2ae5cbe5-0701-4509-88a0-db8cbeb35be4`, `30341ae4-65f2-4a0e-9283-763db01a409e`,
-`3bfb61fa-1129-4fc9-83fd-7fcfec22106e`,
-`ebea9a8a-9b21-4208-aa31-98c2dea1f8a3`,
-`20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584`,
-`8252833d-c269-41a9-824c-5879e531b23b`,
-`52e97845-36bb-457d-b76f-70753334b88c`,
-`1cb45da2-7007-4351-a694-594fb148b8d1`,
-`cd8ab97c-0b78-4bce-97c4-d307a28159a4`, or
-`bf433f0a-921a-428c-b0c0-6475438125ac`.
+This construction uses no segment derivative result.
+Its proof uses none of Ze80 3.5/9.6 or their proofs, the segment-socle
+derivative statement `SegmentSocleDerivatives`, the special-head product
+irreducibility criterion `SegmentHeadProductIrreducibility` in either direction, or any
+conclusion of `SegmentFullJacquetFormula`, `SegmentSocleJacquetFormula`,
+`SegmentHeadJacquetFormula`, `SegmentSpecialJacquetExponentNormFormula`,
+`SegmentSocleProductIrreducibility`, `GenericSegmentProductUniqueness`,
+`MultisegmentHeadExhaustion`, `OrderedMultisegmentHeadExistence`,
+`OrderedMultisegmentQuotientExhaustion`, the ordered-conversion result,
+`TemperedBlockUniqueness`, `SquareIntegrableLanglandsClassification`,
+`SquareIntegrableLanglandsExhaustion` or `GLRegularLanglandsExhaustionStatement`.
 
 ## Remaining scope
 
 The structure provides data and an actual product comparison, including all
 rank-zero cases. It proves no irreducibility, finite length, support
 classification, support-only derivative truncation bound, product derivative
-aggregation, nonlinkage survival or linked converse. Both directions of the
-host `SegmentHeadProductIrreducibility` criterion remain to be proved.
+aggregation, nonlinkage survival or linked converse. It proves neither
+direction of the `SegmentHeadProductIrreducibility` criterion; the theorem
+`segmentHeadProductIrreducibility` in `Classification.SegmentHeadProductIrreducibilityProof`
+proves it.
 
 ## Recursive project inventory
 

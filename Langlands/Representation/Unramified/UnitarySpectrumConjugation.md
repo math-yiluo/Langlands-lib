@@ -1,14 +1,12 @@
 # Spherical spectra of unitarizable representations are closed under `α ↦ conj(α)⁻¹`
 
-Author: Worker 3657.
-
 Lean module: `Langlands.Representation.Unramified.UnitarySpectrumConjugation`,
 namespace `Langlands.Unramified` (and `Langlands.Unramified.PairedHecke` for the
 local Hecke computations). It imports
 `Langlands.Representation.Unramified.PairedHeckeScalars` and
-`Langlands.Representation.Unitary.Basic`, and changes no published file. It is a
-helper for the proof task of
-`Langlands.Global.CuspidalPairAbsoluteConvergenceReductionStatement` (Task 6822).
+`Langlands.Representation.Unitary.Basic`. It is a helper for the proof of
+`Langlands.Global.CuspidalPairAbsoluteConvergenceReductionStatement` in
+`Langlands.Global.Factors.CuspidalPairAbsoluteConvergenceProof`.
 That proof uses it for the self-pair `π × π̃`, whose coefficients are
 `tr(A ^ n) tr(Ã ^ n) = |tr(A ^ n)|²`.
 
@@ -114,6 +112,5 @@ to an invariant Hermitian form.
 
 ## Lean checks
 
-`lean_check` in environment `5c94c648-e8dc-4002-a50a-071ebf3f6096` compiles
-the module with no errors or warnings. The main theorem depends only on the
+A Lean check compiles the module with no errors or warnings. The main theorem depends only on the
 axioms `propext`, `Classical.choice` and `Quot.sound`.

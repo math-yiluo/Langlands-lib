@@ -1,6 +1,6 @@
 # Finite compact-isotypic block decomposition
 
-Worker 141 proves
+This module proves
 `finiteIsotypicSplitting : FiniteIsotypicSplittingStatement`, Renard IV.1.7's
 second display, printed page 95 / PDF page 101 of the registered French 2026
 edition. The page and the IV.1.5–IV.1.6 context were read.

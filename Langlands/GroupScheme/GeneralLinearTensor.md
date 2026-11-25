@@ -1,7 +1,5 @@
 # Tensor product of the actual general linear group schemes
 
-Author: Worker 543.
-
 This module constructs the homomorphism of group schemes
 
 ```text

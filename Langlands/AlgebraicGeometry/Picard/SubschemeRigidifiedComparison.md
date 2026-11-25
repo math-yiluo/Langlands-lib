@@ -90,4 +90,4 @@ Proof.
 
 Internal. Rigidifying along a finite subscheme and dividing by the units of `X` is the standard
 route to comparing topologies for Picard functors. The formalization uses only published Library
-results, the staged internal modules named above, and Mathlib.
+results, the internal modules named above, and Mathlib.

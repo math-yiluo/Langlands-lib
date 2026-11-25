@@ -46,12 +46,14 @@ last equation is stated on that overlap; the module does not claim an
 additional ambient-overlap comparison equation.
 
 All schemes lie in arbitrary universe `u`. There are no integrality,
-Noetherian, separatedness or finiteness assumptions. This unit supplies
+Noetherian, separatedness or finiteness assumptions. This module supplies
 binary gluing and geometric overlap transport. Local extension,
 preservation of all prior atlas transitions and the maximal-atlas
-coverage argument are further obligations of the general extension task.
+coverage argument are further steps toward the general extension proposition
+`OpenImmersionLineBundleExtensionStatement`, made in `LineBundleAtlasEnlargement`
+and `OpenImmersionLineBundleLocalToGlobal`.
 
 The local rank-one and composite-pullback comparisons reuse the published
 `IsLocallyFreeRankOne.exists_of_pullback` and `Langlands.Scheme.Modules.compIso`
-through the existing general-cover gluing import. Their hypotheses, conclusions
-and composite isomorphisms agree with the submitted helper copies.
+through the existing general-cover gluing import. The file does not define its
+own copies of them.

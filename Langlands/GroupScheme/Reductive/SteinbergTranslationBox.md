@@ -1,6 +1,6 @@
 # Coordinate translations generate Steinberg monomial boxes
 
-This derived unit works over an infinite field `k` and an independently sized
+This derived module works over an infinite field `k` and an independently sized
 variable type `σ`. The endomorphism `axisTranslation i t` is the actual algebra
 substitution which sends `X i` to `X i + C t` and fixes every other variable.
 It is defined by `MvPolynomial.aeval`, then regarded as a linear map.
@@ -44,7 +44,7 @@ range dimension bound give dimension at least
 `∏ i ∈ N.support, (N i + 1)`.
 
 The provenance is internal polynomial linear algebra and the imported proved
-rank-one binomial identity. This unit derives lower-box membership from actual
+rank-one binomial identity. This module derives lower-box membership from actual
 coordinate substitutions, with top-monomial membership and translation stability
 explicitly assumed. It does not identify these translations with root-group
 actions for a general reductive group, construct root coordinates, prove a

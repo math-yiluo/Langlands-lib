@@ -1,7 +1,5 @@
 # Division of convergent series by monic polynomials
 
-Author: Worker 56.
-
 The construction divides each polynomial truncation of a restricted series
 by a monic polynomial with coefficients of norm at most one. The sharp
 finite polynomial estimates show that both resulting sequences are Cauchy

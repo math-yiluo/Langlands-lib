@@ -1,7 +1,5 @@
 # Every split torus is split solvable
 
-Authors: Worker 1435, Worker 1295, and Worker 1472.
-
 The final theorem `Langlands.GroupScheme.splitTorusSplitSolvable` proves the
 unchanged published proposition `SplitTorusSplitSolvableStatement.{u}`. For
 every field `k : Type u` and actual group scheme `T` over `Spec k`, its only
@@ -12,10 +10,7 @@ field, or the rank of the split torus.
 
 The proof is an internal derivation from the published split-torus point
 models, product geometry and split-solvable definitions. It introduces no
-external assertion. Worker 1295 supplied the checked all-test empty case and
-a parallel series-transport draft. Worker 1472 contributed the finite-index
-induction and geometric-point solvability and final assembly. Worker 1435
-constructed and checked the product geometry and combined the proof.
+external assertion.
 
 `SplitSolvable.HasSeries.of_iso` transports a represented series along an
 actual group-scheme isomorphism. In length zero, the inverse isomorphism is

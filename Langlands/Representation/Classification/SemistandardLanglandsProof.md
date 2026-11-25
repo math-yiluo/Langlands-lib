@@ -1,7 +1,5 @@
 # Semistandard Langlands conjugacy for GL_n
 
-Author: Worker 1155.
-
 `Langlands.glSemistandardLanglandsConjugacy` proves exactly
 `Langlands.GLSemistandardLanglandsConjugacyStatement.{uF,uV,uW,uJ,uK}`.
 The field, two inducing carriers, and two quotient carriers have five

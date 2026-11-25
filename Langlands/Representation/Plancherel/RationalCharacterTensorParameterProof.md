@@ -1,15 +1,12 @@
 # Rational-character tensors identify the actual complex image dual
 
-Author: Worker 4636.
-
 Module: `Langlands.Representation.Plancherel.RationalCharacterTensorParameterProof`.
 
 `Langlands.Plancherel.rationalCharacterTensorParameterBijective` proves exactly
 the published proposition
 `Langlands.Plancherel.RationalCharacterTensorParameterStatement.{u}` (module
 [`RationalCharacterTensorParameterStatement`](RationalCharacterTensorParameterStatement.md))
-at every universe `u`, with no hypotheses. It belongs to task
-`a34dad15-286e-41e2-95c7-2ef8c2110901`.
+at every universe `u`, with no hypotheses.
 
 So for every nonarchimedean local field `F : Type u` (instances `Field`,
 `ValuativeRel`, `TopologicalSpace`, `IsNonarchimedeanLocalField`, any
@@ -65,7 +62,7 @@ The proof is a short assembly of three published Library results.
 So no step of the proof takes an unproved structural statement as a
 hypothesis. The proof does not use `CentralSplitTorusCharacterStatement`,
 `CharacterRestrictionStatement` or the split-component valuation-image
-comparison. Those remain separate obligations with their own owners.
+comparison. Those remain separate obligations.
 
 ## Relation to the literature
 
@@ -81,4 +78,4 @@ of `𝔾_m`, not from the split component.
 
 ## Axioms
 
-`lean_check` reports only `propext`, `Classical.choice` and `Quot.sound`.
+The Lean axiom check reports only `propext`, `Classical.choice` and `Quot.sound`.

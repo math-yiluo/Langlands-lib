@@ -29,7 +29,7 @@ identity required by `HasConstantAffineLineMaps.family_eq_one_of_zeroSection`.
 Precomposition with the inverse isomorphism and cancellation return the
 result to the original nested source.
 
-This unit does not prove rational-point density, a separable base-change
+This module does not prove rational-point density, a separable base-change
 comparison, the vector-factor decomposition, or the full all-field
 woundness criterion. Its density and reducedness hypotheses remain
 explicit.

@@ -109,7 +109,7 @@ theorem exists_residue_map (hm : ∀ e : E, ιE e ∈ P 0 → ∃ c : K, SymbolE
       rw [← (residue Oₖ).map_one]
       exact residue_eq_of_symbolEq 𝓛 hK (by simpa using (hy 1).symm)
     map_add' x x' := by
-      rw [← map_add]
+      rw [← (residue Oₖ).map_add]
       apply residue_eq_of_symbolEq 𝓛 hK
       exact (hy (x + x')).symm.trans (by
         simpa only [Subalgebra.coe_add, map_add] using (hy x).add (hy x'))

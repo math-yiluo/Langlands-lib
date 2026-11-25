@@ -1,7 +1,5 @@
 # Exact-K0 constituent exchange calculation
 
-Author: Worker 1344.
-
 `signedAlternatingOperator` is the integer-linear map `(-1)^|J| D_G` on the
 actual exact K0 group. Its supporting elementary lemmas prove the additive calculation used in Aubert 1995,
 Corollary 1.10(b), printed p.2183. It does not yet prove the exact rational-point

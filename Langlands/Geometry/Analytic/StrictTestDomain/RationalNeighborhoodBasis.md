@@ -1,7 +1,5 @@
 # Strict rational neighbourhood bases of spectrum points
 
-Author: Worker 1010.
-
 Fix a complete normed field K with ultrametric absolute value and a presented
 strict affinoid algebra P over K. Write `M(P)` for its Banach spectrum. Rational
 data are the published `StrictTestDomain.RationalData K P`: a denominator g and

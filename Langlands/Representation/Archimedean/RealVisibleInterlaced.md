@@ -1,6 +1,6 @@
 # Interlaced equivalences retaining their actual Frobenius formulas
 
-This internal derived unit strengthens the published construction in
+This module strengthens the published construction in
 `RealCharacterInducedInterlaced` by retaining its exact two-Frobenius function
 formula in the existence conclusion. It adapts that module's implemented
 tail-first and tail-second proofs and leaves every published pair unchanged.
@@ -55,4 +55,6 @@ The canonical signs in these formulas are preserved literally. This result
 makes no identification with a differential-sign polynomial word, no equality
 with the older chosen `interlacedEquiv`, and no formula expressing an inverse
 as a pseudo-inverse tail. It proves no full braid or GL4 kernel-image
-containment. The unrestricted two-induction-block filtration remains open.
+containment. The unrestricted two-induction-block filtration,
+`RealInducedInducedFiltrationStatement`, is not proved here; the theorem
+`realInducedInducedFiltration` of `RealInducedInducedFiltrationProof` proves it.

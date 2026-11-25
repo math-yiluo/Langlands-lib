@@ -1,7 +1,5 @@
 # Finite twisted coinvariants of irreducible cuspidal Levi representations
 
-Author: Worker 784.
-
 `Langlands.Whittaker.LeviCuspidalCoinvariantFinitenessStatement.{uF,uV}` is a
 `Prop`-valued definition. It states the finite-dimensionality part of the
 cuspidal-Levi coefficient step (5) in the proof of Bernstein–Zelevinsky (1976),
@@ -108,8 +106,9 @@ The statement does not assume any of the following:
 
 - genericity or non-degeneracy of `σ` (BZ76 §5.7) or of `η` (BZ76 §5.6);
 - the existence of a nonzero Whittaker functional;
-- any multiplicity-one result, in particular not the unproved Library
-  proposition `Langlands.Whittaker.MultiplicityOneStatement`;
+- any multiplicity-one result, in particular not the Library proposition
+  `Langlands.Whittaker.MultiplicityOneStatement` (proved as `multiplicityOne`
+  in `MultiplicityOneProof`);
 - finite dimension of the carrier of `σ`;
 - a tensor factorization of `σ` along the blocks, or a central character.
 
@@ -121,7 +120,7 @@ The field and carrier universes `uF` and `uV` are independent parameters. The
 coefficient field `ℂ` lies in `Type 0`, the first universe argument of
 `SmoothRep`.
 
-Rank `0` is excluded by `0 < n`, as the task specifies and as in
+Rank `0` is excluded by `0 < n`, as in
 `PadicLeviCuspidalFactorizationStatement`. For `n = 0` the only block shape is
 empty, `U_B` is trivial, and the coinvariant quotient is the carrier itself,
 which is one-dimensional by irreducibility. This boundary remark is not part
@@ -168,7 +167,9 @@ vacuously non-degenerate.
 ## Proof obligations (not formalized here)
 
 A proof of this target must supply the following. They are obligations, not
-premises.
+premises. The Library's proof is
+`Langlands.Whittaker.leviCuspidalCoinvariantFiniteness` in
+`Langlands.Representation.Whittaker.LeviCuspidalCoinvariantFinitenessProof`.
 
 1. **Tensor factorization.** The published theorem
    `Langlands.CuspidalSupport.padicLeviCuspidalFactorization` proves
@@ -209,13 +210,14 @@ premises.
 
 ## Consumer
 
-This is the cuspidal coefficient input for proof task
-5ab445dc-d2b4-4072-80d1-6370870a4a26 (Worker 499). That task's unchanged
-target is `Langlands.Whittaker.IrreducibleCoinvariantFinitenessStatement`.
-According to the task context, that proof uses the existing
+This is the cuspidal coefficient input for the proof of
+`Langlands.Whittaker.IrreducibleCoinvariantFinitenessStatement`
+(`irreducibleCoinvariantFiniteness`, module
+`IrreducibleCoinvariantFinitenessProof`). That proof uses the existing
 `CuspidalSupport.cuspidalEmbedding`, exactness of character localization
 (BZ76 Proposition 2.35, printed p.25), and a finite orbit filtration. A
-separate statement about preservation under normalized induction will take
+separate statement about preservation under normalized induction,
+`ParabolicInducedCoinvariantFinitenessStatement`, takes
 finiteness for arbitrary locally constant characters on the Levi as an
 explicit hypothesis. The quantification over all such `η` here is what lets
 the two interfaces compose.

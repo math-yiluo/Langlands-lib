@@ -1,7 +1,5 @@
 # Coroot inheritance for the same actual torus in a subgroup
 
-Authors: Worker 1577.
-
 This internal construction compares supplied actual integral root data for one
 commutative group scheme `T` embedded in two affine group schemes over a field.
 The subgroup torus map `iH : T.toGrp ⟶ H` factors the ambient map `i` through an

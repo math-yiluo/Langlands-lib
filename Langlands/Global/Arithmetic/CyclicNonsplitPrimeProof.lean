@@ -1,9 +1,9 @@
 import Langlands.Global.Arithmetic.CyclicNonsplitPrimeStatement
 import Langlands.Global.AdelicFunctoriality.AlmostEverywhereSplitNormProof
-import Langlands.ClassField.Global.CyclicH2NormIndexComparisonProof
-import Langlands.ClassField.Global.CyclicIdeleClassHerbrandAssembly
-import Langlands.ClassField.Global.IdeleClassGaloisDescentProof
-import Langlands.ClassField.Global.IdeleClassNormGaloisProductProof
+import Langlands.ClassFieldTheory.Global.CyclicH2NormIndexComparisonProof
+import Langlands.ClassFieldTheory.Global.CyclicIdeleClassHerbrandAssembly
+import Langlands.ClassFieldTheory.Global.IdeleClassGaloisDescentProof
+import Langlands.ClassFieldTheory.Global.IdeleClassNormGaloisProductProof
 
 /-! # Nonsplit finite primes in nontrivial cyclic number-field extensions -/
 
@@ -11,7 +11,7 @@ namespace Langlands.Global
 
 open NumberField IsDedekindDomain IsDedekindDomain.HeightOneSpectrum
 open scoped NumberField AdelicFunctoriality.FiniteExtension
-open Langlands.ClassField.Global
+open Langlands.ClassFieldTheory.Global
 
 universe u v
 

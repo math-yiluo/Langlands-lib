@@ -1,9 +1,8 @@
 # Finite-length detection by refined Jacquet modules: proof
 
-Author: Worker 185. Worker 325's published
+The published
 `JacquetDetectingFamilyLengthProof` supplies the imported generic
-successive-subquotient helpers and the adapted finite-sum length argument;
-Worker 325 is credited as a coauthor for that adaptation.
+successive-subquotient helpers and the adapted finite-sum length argument.
 
 `Langlands.CuspidalSupport.refinedJacquetFiniteLengthDetection.{uF,uV}`
 proves the closed published proposition
@@ -101,7 +100,7 @@ quotient, so no positivity or nonemptiness assumption is needed. The proof
 adds no admissibility, finite generation, irreducibility, scalar central
 character, finite-dimensional carrier, prior finite length of `A`, or
 supplied functor-exactness hypothesis. It uses no general finite-length
-induction theorem, `InducedFiniteTypeStatement`, or parent
+induction theorem, `InducedFiniteTypeStatement`, or
 `GLAdmissibleFiniteLengthStatement`.
 
 The motivating source is I. N. Bernstein and A. V. Zelevinsky,

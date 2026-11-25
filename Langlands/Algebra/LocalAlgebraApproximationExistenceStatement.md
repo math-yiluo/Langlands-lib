@@ -3,8 +3,9 @@
 The module defines
 `Langlands.Algebra.LocalAlgebraApproximationExistenceStatement.{uR,uS} : Prop`.
 It states Lemma 10.127.11 of the Stacks Project, tag
-[00QV](https://stacks.math.columbia.edu/tag/00QV). It supplies a proposition
-for a later proof; this file does not prove existence.
+[00QV](https://stacks.math.columbia.edu/tag/00QV). It supplies a proposition,
+proved by `localAlgebraApproximationExistence` in the module
+`LocalAlgebraApproximationExistenceProof`; this file does not prove existence.
 
 ## Source and reading
 
@@ -98,7 +99,7 @@ ring constructions can be formed in the universe of `R`; restricting to a
 tail containing the finite set of relation coefficients preserves that bound.
 They can then be raised to the displayed maximum without changing the target
 carriers. This is the mathematical justification for the witness size, not
-an implemented transport proof. A later exact-target proof must implement any
+an implemented transport proof. A proof of the statement must implement any
 needed `ULift` transport of the rings, actions, maps, colimit comparisons and
 prime-localization properties.
 
@@ -109,8 +110,10 @@ representing `S`, descends finitely many relation coefficients to one stage
 of a local finite-type approximation of `R`, and restricts to the directed
 tail above that stage. It takes each component algebra to be the corresponding
 polynomial quotient localized at the inverse image of the target prime.
-Verifying the four clauses, including the actual comparison maps, remains
-the later proof task.
+Verifying the four clauses, including the actual comparison maps, is the
+work of the Library proof `localAlgebraApproximationExistence`, which uses the
+construction in
+`LocalAlgebraApproximationExistence` and `LocalAlgebraApproximationTransition`.
 
 The mathematical assertion is source-derived. The proposition packaging,
 directed preorder, explicit comparison maps and maximum-universe witnesses

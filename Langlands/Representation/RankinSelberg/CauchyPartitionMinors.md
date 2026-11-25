@@ -1,7 +1,5 @@
 # Partitions and Cauchy minors
 
-Author: Worker 1767.
-
 This internal helper identifies strictly increasing natural exponent tuples
 with nonnegative antitone integral weights: reverse the tuple and subtract
 the staircase, or add the staircase and reverse in the other direction.

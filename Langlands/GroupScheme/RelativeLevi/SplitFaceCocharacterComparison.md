@@ -1,6 +1,6 @@
 # Canonical face terms for different dynamic presentations
 
-This derived unit removes the original-coordinate-cocharacter choice from
+This derived module removes the original-coordinate-cocharacter choice from
 all actual face-filtration terms for a fixed ambient coordinate torus and
 fibrewise root datum over a nontrivial commutative ring.
 
@@ -32,4 +32,4 @@ Provenance is actual split-root sign detection, the unscaled integral
 face-height formula, the proved fixed-torus comparison, and the published
 supplied-radical dynamic identification. Comparing different maximal tori,
 changing the root-datum realization, and effective global descent remain
-outside this unit's assertions.
+outside this module's assertions.

@@ -50,5 +50,3 @@ These are intrinsic comparisons of the existing constructions. Applying them
 to the published finite-separable embedding decomposition gives the usual
 embedding coordinates. This file does not construct or identify norm kernels,
 or prove a classification of subtori.
-
-Author: Worker 207.

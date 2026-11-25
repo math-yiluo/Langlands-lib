@@ -1,7 +1,5 @@
 # Rational point continuity and locally constant functions from norm orbits
 
-Author: Worker 56.
-
 This internal construction derives joint continuity on each actual rational
 quotient spectrum from norm-continuous base-algebra orbits. It then constructs
 open stabilizers of whole locally constant functions in the original parameter

@@ -4,7 +4,7 @@ Ported from `Theorems/Thm_AlgebraicGeometry_tilde_pullbackSpecIso_unit.lean` of 
 License, Version 2.0; see `licenses/Anthropic-FLT/LICENSE`, `NOTICE` and `ATTRIBUTION.md`.
 The paired Markdown file lists the changes made by the port.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_ModulesTildePullback
 import Langlands.AnthropicFLT.P2M.Sol.S_AlgebraicGeometry_tilde_pullbackSpecIso_unit
 set_option maxHeartbeats 4000000

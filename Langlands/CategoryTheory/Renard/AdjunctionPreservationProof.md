@@ -1,6 +1,6 @@
 # Renard A.V.2: proof that adjoints preserve limits and colimits
 
-Worker 1172 proves the published closed proposition
+This module proves the published closed proposition
 `Langlands.Renard.AdjunctionPreservation.AdjunctionPreservationStatements.{vA,uA,vB,uB,vI,uI}`,
 imported from `Langlands.CategoryTheory.Renard.AdjunctionPreservationStatements`.
 The final theorem is
@@ -119,5 +119,5 @@ with no errors or warnings. The statement pair and its import are unchanged.
 
 This proves only the A.V.2 preservation theorem. The Hom-bifunctor
 definition, representability criterion, uniqueness of adjoints, unit–counit
-comparisons and scalar-extension example of A.V remain separate obligations.
+comparisons and scalar-extension example of A.V are separate obligations.
 This proof does not complete A.V, Appendix A or the whole book.

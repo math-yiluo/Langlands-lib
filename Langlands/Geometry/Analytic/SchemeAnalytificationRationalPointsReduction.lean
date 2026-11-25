@@ -114,7 +114,7 @@ theorem pointSeminorm_analyticPoint {A : Type u} [CommRing A] [Algebra K A]
     AffineAnalytification.character_algebraMap]
 
 /-- The center in an affine spectrum is the image of the closed point of `Spec K`.
-This is the direct rational-center argument shared by Worker 325. -/
+This is the direct rational-center argument. -/
 theorem localCenterPoint_localAnalyticPoint (U : X.affineOpens)
     (q : RingPoint K (openOver K (Over.mk f) U.val) K) :
     localCenterPoint K f U (localAnalyticPoint K f U q) =

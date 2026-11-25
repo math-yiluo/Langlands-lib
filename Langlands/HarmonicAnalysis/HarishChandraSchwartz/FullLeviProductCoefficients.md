@@ -1,6 +1,6 @@
 # Product-induced coefficients for the group Levi
 
-This derived auxiliary unit supplies the coefficient part of the group-Levi
+This derived auxiliary module supplies the coefficient part of the group-Levi
 endpoint used in Waldspurger VIII.4.2, printed p.330 (PDF p.96), with the
 coefficient map of V.1. It builds on `FullLeviInduction` and the published actual
 compact-probability coefficient comparison.
@@ -35,6 +35,7 @@ Comparing the whole applications instead makes the kernel unfold the coercion
 and does not finish. The rational preimage theorem then uses the inverse
 equivalence exactly as in the generic case.
 
-No measure is rescaled. This unit does not compare orbit measures, identify the
+No measure is rescaled. This module does not compare orbit measures, identify the
 Plancherel density, prove packet membership or cuspidality, or prove either
-closed Task 7440 target.
+closed VIII.4.2 target (`RationalCuspidalDiscreteCoefficientStatement`,
+`RationalCuspidalFixedCoefficientLiftingStatement`).

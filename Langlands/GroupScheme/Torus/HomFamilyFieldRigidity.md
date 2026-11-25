@@ -1,7 +1,5 @@
 # Base change and rigidity of homomorphism families
 
-Worker 798, with Worker 329.
-
 This internal module pulls back natural homomorphism families parametrized by a
 group scheme and reflects equality with the identity-parameter family through a
 flat surjective base change. `HomFamily.baseChange` uses the actual point
@@ -12,7 +10,7 @@ For reflection, pull back each test scheme and use its projection to the origina
 test. Flatness and surjectivity make this projection an epimorphism. Naturality
 identifies precomposition of the original family with evaluation of the pulled
 back family; canceling the projection gives equality over the original test.
-This is the same descent argument used by Worker 329 for actions in
+This is the same descent argument used for actions in
 `MultiplicativeTypeConnectedActionReduction`, generalized to two distinct source
 and target groups and without action laws in the parameter.
 
@@ -20,7 +18,7 @@ and target groups and without action laws in the parameter.
 `DiagonalizableRigidityStatement` hypothesis through the universal natural-family
 bridge. The rational base point of the parameter group is its identity. This
 conditional result retains all finite-type, finite-generation and connectedness
-hypotheses of that rigidity proposition. The module currently proves no
+hypotheses of that rigidity proposition. The module proves no
 unconditional rigidity theorem.
 
 The constructions and proofs are derived infrastructure. The source of the

@@ -1,7 +1,5 @@
 # Actual character pullback and cocharacter annihilators
 
-Authors: Worker 1293; Worker 1435 contributed the need for the saturated-span formulation.
-
 This is an internal derived construction for the actual character-image step
 of the Levi cocenter root model. It uses actual homomorphisms of commutative
 group schemes and their integral character and cocharacter lattices. It does

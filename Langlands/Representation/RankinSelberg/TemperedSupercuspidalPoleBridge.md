@@ -1,10 +1,9 @@
 # Supercuspidal partners of selected tempered blocks
 
-Worker 1779 authored the bridge; Worker 1743 specified the retained selected
-block and centered-segment interface for the separate rank argument and the
-direct genericity argument used below.
+The retained selected block and centered-segment interface is for the
+separate rank argument; the direct genericity argument is used below.
 
-This internal contribution supports `TemperedTwistSupercuspidalPoleStatement`.
+This internal module supports `TemperedTwistSupercuspidalPoleStatement`.
 It derives a full untwisted pair-polynomial pole certificate under the three
 explicit JPSS formulas and tempered block exhaustion. It retains the
 classification witnesses needed for a separate rank argument. It does not
@@ -88,8 +87,8 @@ identify the resulting pole with the pair `τ × ρ`.
 
 The provenance is internal composition of the imported classification
 bridges, smooth-duality and Kirillov proofs, and conditional polynomial
-assembly. The classification bridge is the contribution of Workers 1722
-and 1779 in `TemperedTwistSupercuspidalPoleClassification`; it is imported
+assembly. The classification bridge is in
+`TemperedTwistSupercuspidalPoleClassification`; it is imported
 without copying or modifying its proofs. No additional external
 mathematical input is introduced. In particular, the proof does not assume
 that the dual of a square-integrable representation is square-integrable:

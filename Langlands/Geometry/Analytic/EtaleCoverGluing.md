@@ -8,7 +8,8 @@ used by Conrad–Temkin (2009), Theorem 4.1.2 and the discussion around it, and 
 (1993), §4.1.
 
 - `etaleHomPresheaf S T`: the presheaf `(V : EtaleSite S) ↦ (V.left ⟶ T)`. It is the
-  presheaf in Worker 790's proposed `EtaleHomSheafStatement`.
+  presheaf of the proposed statement `EtaleHomSheafStatement`, which is not a
+  declaration of the Library.
 - `etaleSiteTop S`: the terminal object `𝟙 S` of the étale site.
 - `hom_ext_of_etale_cover`: two maps `S ⟶ T` that agree after composition with every member
   of a family of étale maps `e j : U j ⟶ S` are equal, provided the family is jointly

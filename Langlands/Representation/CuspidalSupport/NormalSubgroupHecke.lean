@@ -245,12 +245,12 @@ variable (hH : IsOpen (H : Set G))
 /-- The value `φ_α(g) : w ↦ α(f_w)(g)` of the function attached to an endomorphism `α` of
 `ind_H^G ρ`, where `f_w` is the function supported on `H` with `f_w(1) = w`. -/
 def endValue (α : End (inducedRep H ρ)) (g : G) : Module.End ℂ ρ :=
-  (evalLinear H ρ g).comp ((SmoothRep.hom α).toLinearMap.comp
+  (evalLinear H ρ g).comp ((SmoothRep.hom α.asHom).toLinearMap.comp
     (unitMap H hH ρ.representation ρ.isSmooth).toLinearMap)
 
 theorem endValue_apply (α : End (inducedRep H ρ)) (g : G) (w : ρ) :
     endValue H ρ hH α g w = eval H ρ.representation
-      (SmoothRep.hom α (unitFunction H hH ρ.representation ρ.isSmooth w)).1 g :=
+      (SmoothRep.hom α.asHom (unitFunction H hH ρ.representation ρ.isSmooth w)).1 g :=
   rfl
 
 /-- `α(f_{ρ(h) w})(g) = α(f_w)(g h)`. -/
@@ -258,10 +258,10 @@ theorem endValue_mul_right (α : End (inducedRep H ρ)) (g : G) (h : H) (w : ρ)
     endValue H ρ hH α (g * h) w = endValue H ρ hH α g (ρ.representation h w) := by
   have h1 := Representation.IntertwiningMap.isIntertwining _ _
     (unitMap H hH ρ.representation ρ.isSmooth) h w
-  have h2 := Representation.IntertwiningMap.isIntertwining _ _ (SmoothRep.hom α) (h : G)
+  have h2 := Representation.IntertwiningMap.isIntertwining _ _ (SmoothRep.hom α.asHom) (h : G)
     (unitMap H hH ρ.representation ρ.isSmooth w)
   rw [endValue_apply, endValue_apply, ← unitMap_apply, ← unitMap_apply, h1]
-  change _ = eval H ρ.representation ((SmoothRep.hom α)
+  change _ = eval H ρ.representation ((SmoothRep.hom α.asHom)
     ((inducedRep H ρ).representation (h : G) (unitMap H hH ρ.representation ρ.isSmooth w))).1 g
   rw [h2]
   rfl
@@ -290,7 +290,7 @@ theorem endValue_finite [ρ.representation.IsIrreducible] (α : End (inducedRep 
     (QuotientGroup.mk '' Function.support (endValue H ρ hH α) : Set (G ⧸ H)).Finite := by
   obtain ⟨w₀, hw₀⟩ := exists_ne_zero_of_isIrreducible ρ.representation
   let X : Set (LeftQuotient H) := quotientSupport H (eval H ρ.representation
-    (SmoothRep.hom α (unitFunction H hH ρ.representation ρ.isSmooth w₀)).1)
+    (SmoothRep.hom α.asHom (unitFunction H hH ρ.representation ρ.isSmooth w₀)).1)
   have hX : X.Finite := quotientSupport_finite H ρ.representation hH _
   let W : Submodule ℂ ρ :=
     { carrier := {w | ∀ g, endValue H ρ hH α g w ≠ 0 → quotientMap H g ∈ X}
@@ -361,8 +361,8 @@ def heckeMap (φ : heckeSubmodule H ρ) :
 
 /-- The endomorphism `α_φ = ∑_{H x} r(x⁻¹) φ(·)(f(x))` of `ind_H^G ρ` attached to `φ`. -/
 def endOfHecke (φ : heckeSubmodule H ρ) : End (inducedRep H ρ) :=
-  SmoothRep.ofHom (cosetSum H hH (compactInduced H ρ.representation) ρ.representation
-    (heckeMap H ρ hH φ))
+  End.of (SmoothRep.ofHom (cosetSum H hH (compactInduced H ρ.representation) ρ.representation
+    (heckeMap H ρ hH φ)))
 
 theorem endValue_endOfHecke (φ : heckeSubmodule H ρ) (g : G) (w : ρ) :
     endValue H ρ hH (endOfHecke H ρ hH φ) g w = (φ : G → Module.End ℂ ρ) g w := by
@@ -375,23 +375,24 @@ theorem endValue_endOfHecke (φ : heckeSubmodule H ρ) (g : G) (w : ρ) :
 omit hN in
 /-- Every endomorphism is the coset sum of its restriction to the unit functions. -/
 theorem hom_eq_cosetSum (α : End (inducedRep H ρ)) (f : CompactFunctions H ρ.representation) :
-    SmoothRep.hom α f = cosetSum H hH (compactInduced H ρ.representation) ρ.representation
-      ((resIntertwining H _ (SmoothRep.hom α)).comp
+    SmoothRep.hom α.asHom f = cosetSum H hH (compactInduced H ρ.representation) ρ.representation
+      ((resIntertwining H _ (SmoothRep.hom α.asHom)).comp
         (unitMap H hH ρ.representation ρ.isSmooth)) f :=
-  (congrArg (SmoothRep.hom α) (cosetSum_unitMap H hH ρ.representation ρ.isSmooth f)).symm.trans
-    (cosetSum_resIntertwining_comp H hH _ ρ.representation (SmoothRep.hom α)
+  (congrArg (SmoothRep.hom α.asHom) (cosetSum_unitMap H hH ρ.representation ρ.isSmooth f)).symm.trans
+    (cosetSum_resIntertwining_comp H hH _ ρ.representation (SmoothRep.hom α.asHom)
       (unitMap H hH ρ.representation ρ.isSmooth) f).symm
 
 omit hN in
 /-- Endomorphisms agreeing on all unit functions `f_w` are equal. -/
 theorem end_ext {α β : End (inducedRep H ρ)}
     (h : ∀ g w, endValue H ρ hH α g w = endValue H ρ hH β g w) : α = β := by
-  have hu : (resIntertwining H _ (SmoothRep.hom α)).comp
+  have hu : (resIntertwining H _ (SmoothRep.hom α.asHom)).comp
       (unitMap H hH ρ.representation ρ.isSmooth) =
-      (resIntertwining H _ (SmoothRep.hom β)).comp (unitMap H hH ρ.representation ρ.isSmooth) := by
+      (resIntertwining H _ (SmoothRep.hom β.asHom)).comp (unitMap H hH ρ.representation ρ.isSmooth) := by
     ext w
     exact compactFunctions_ext H _ fun x => h x w
-  rw [← SmoothRep.ofHom_hom α, ← SmoothRep.ofHom_hom β]
+  apply End.ext
+  rw [← SmoothRep.ofHom_hom α.asHom, ← SmoothRep.ofHom_hom β.asHom]
   congr 1
   ext f
   have e := congrArg (fun T => cosetSum H hH (compactInduced H ρ.representation)
@@ -417,7 +418,7 @@ def heckeEquiv [ρ.representation.IsIrreducible] :
 theorem heckeEquiv_apply [ρ.representation.IsIrreducible] (α : End (inducedRep H ρ)) (g : G)
     (w : ρ) : (heckeEquiv H ρ hH α : G → Module.End ℂ ρ) g w =
       eval H ρ.representation
-        (SmoothRep.hom α (unitFunction H hH ρ.representation ρ.isSmooth w)).1 g :=
+        (SmoothRep.hom α.asHom (unitFunction H hH ρ.representation ρ.isSmooth w)).1 g :=
   rfl
 
 theorem heckeEquiv_symm [ρ.representation.IsIrreducible] (φ : heckeSubmodule H ρ) :
@@ -427,7 +428,7 @@ theorem heckeEquiv_symm [ρ.representation.IsIrreducible] (φ : heckeSubmodule H
 /-- The inverse formula `α_φ(v)(x) = ∑_{H g} φ(g)(v(g⁻¹ x))`. -/
 theorem eval_endOfHecke (φ : heckeSubmodule H ρ) (v : CompactFunctions H ρ.representation)
     (x : G) :
-    eval H ρ.representation (SmoothRep.hom (endOfHecke H ρ hH φ) v).1 x =
+    eval H ρ.representation (SmoothRep.hom (endOfHecke H ρ hH φ).asHom v).1 x =
       ∑ᶠ q : LeftQuotient H, (φ : G → Module.End ℂ ρ) (Quotient.out q)
         (eval H ρ.representation v.1 ((Quotient.out q)⁻¹ * x)) := by
   let Ψ : G → ρ := fun g => (φ : G → Module.End ℂ ρ) g (eval H ρ.representation v.1 (g⁻¹ * x))
@@ -466,7 +467,7 @@ theorem eval_endOfHecke (φ : heckeSubmodule H ρ) (v : CompactFunctions H ρ.re
 /-- Every endomorphism is given by the inverse formula applied to its Hecke function. -/
 theorem eval_hom_eq [ρ.representation.IsIrreducible] (α : End (inducedRep H ρ))
     (v : CompactFunctions H ρ.representation) (x : G) :
-    eval H ρ.representation (SmoothRep.hom α v).1 x =
+    eval H ρ.representation (SmoothRep.hom α.asHom v).1 x =
       ∑ᶠ q : LeftQuotient H, endValue H ρ hH α (Quotient.out q)
         (eval H ρ.representation v.1 ((Quotient.out q)⁻¹ * x)) := by
   conv_lhs => rw [← (heckeEquiv H ρ hH).symm_apply_apply α]
@@ -494,7 +495,7 @@ theorem heckeEquiv_mul [ρ.representation.IsIrreducible] (α β : End (inducedRe
     · change endValue H ρ hH α q.out * _ = 0
       rw [h0, zero_mul]
     · exact QuotientGroup.out_eq' q
-  change eval H ρ.representation ((SmoothRep.hom α) ((SmoothRep.hom β)
+  change eval H ρ.representation ((SmoothRep.hom α.asHom) ((SmoothRep.hom β.asHom)
       (unitFunction H hH ρ.representation ρ.isSmooth w))).1 x =
     ev (∑ᶠ q : G ⧸ H, endValue H ρ hH α q.out * endValue H ρ hH β (q.out⁻¹ * x))
   rw [eval_hom_eq H ρ hH α, map_finsum ev hfin]

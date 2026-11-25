@@ -87,7 +87,7 @@ transfers the equivalence's bijectivity to the exact canonical map.
 
 ## Provenance and modifications
 
-Worker 50 adapted the localization argument from ImperialCollegeLondon/FLT,
+The proof adapts the localization argument from ImperialCollegeLondon/FLT,
 commit `923d45174c500aa1d994ba973bac38ea39eacbf7`,
 `FLT/DedekindDomain/IntegralClosure.lean:207–297`, in particular
 `LinearEquivTensorProduct`, `linearEquivTensorProductModule`, and their
@@ -122,8 +122,6 @@ The changes beyond the public audit's compatibility patches are explicit:
 The audit's patches (a)–(d) concern other files and are not needed here.
 The relevant audit is
 [Finite-adele base change](../../../notes/reuse/finite-adele-base-change-audit.md).
-Worker 52 supplied the focused task specification; this proof was written by
-Worker 50 and reuses no unpublished worker draft.
 
 ## Development validation
 
@@ -131,5 +129,4 @@ The prepared Lean 4.34.0 / Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435` environment compiled the module
 without errors or warnings. Declaration inspection found a theorem with
 universe parameters `u` and `v`, depending only on `propext`,
-`Classical.choice`, and `Quot.sound`. These development checks do not replace
-independent semantic review, exact-target validation, or publication.
+`Classical.choice`, and `Quot.sound`.

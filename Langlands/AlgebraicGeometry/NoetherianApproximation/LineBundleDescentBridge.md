@@ -2,12 +2,11 @@
 
 This module contains no ported FLT code. It supplies what both bridge proofs need:
 `LineBundleIsoSubalgebraDescentProof.md` (proof of `LineBundleIsoSubalgebraDescentStatement`) and
-the proof of `LineBundleSubalgebraDescentStatement` that task `77b7fc2e-2a25-41e0-9a83-e4fe509968de`
-prepares in module `LineBundleSubalgebraDescentProof`. Both bridges apply ported FLT theorems (Anthropic FLT Lean source at commit
+the proof of `LineBundleSubalgebraDescentStatement` in module `LineBundleSubalgebraDescentProof`. Both bridges apply ported FLT theorems (Anthropic FLT Lean source at commit
 `6e837e75355538c7f80bab5b956861e86c4eacc2`, Apache-2.0). Those theorems are stated for an
 arbitrary directed system of rings with a direct limit (FLT's predicate `IsDirectLimit`, from
 `Langlands.AnthropicFLT.Definitions.Def_Mathlib_Algebra_IsDirectLimit`) and for FLT's notion
-`Scheme.Modules.IsInvertible` (from
+`Scheme.Modules.IsInvertibleFLT` (from
 `Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_RelativePicardFunctor`). Every result
 below is internal infrastructure. None is a statement taken from the literature.
 
@@ -62,12 +61,11 @@ below is internal infrastructure. None is a statement taken from the literature.
 
 ## Direct-limit presentation
 
-The FLT implementation lead suggests the `SubalgebraStages` presentation from the port of
-scheme-descent task `80ab0ad1-6602-4bc6-8c52-3f88f45f4c83`. That port (candidate `57b4d321-06cc-40f3-af43-291f12e845c7` of task
-80ab0ad1) describes the cofiltered diagram of schemes `X₀ ×_{A₀} Spec (S i)` and its cone. It has no
+The `SubalgebraStages` presentation, ported with the scheme-descent proof
+`SchemeSubalgebraDescentProof`, describes the cofiltered diagram of schemes `X₀ ×_{A₀} Spec (S i)` and its cone. It has no
 ring-level `IsDirectLimit` instance, and the FLT line-bundle theorems need exactly that. So this
 module builds its own small presentation (`FGIndex`, `fgTransition`, `fgToLimit`,
 `fgIsDirectLimit`) on the whole system of finitely generated subalgebras. It uses FLT's
 `IsDirectLimit` from `Langlands.AnthropicFLT.Definitions.Def_Mathlib_Algebra_IsDirectLimit`. That
-module belongs to task `80ab0ad1-6602-4bc6-8c52-3f88f45f4c83` and is imported from its port, not
+module was ported with `SchemeSubalgebraDescentProof` and is imported from the Library, not
 ported again.

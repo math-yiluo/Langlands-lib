@@ -15,10 +15,11 @@ function `h(s, g)` that is jointly continuous, holomorphic in `s`, left
 Proposition 6 (Lapid 2011, pp.329–330) needs these properties: it compares
 the value of a wave packet at a point `x₀` with its values on a
 neighbourhood of `x₀` in `G(F) \ G(𝔸)`, uniformly in `λ`. It is the
-prerequisite of Task 5613
-(`ccfc4843-fa56-468c-bf2f-811151ff64c8`, Lapid's Proposition 6) that the
-contract of that task describes as "the local description of the
-singularities along finitely many root hyperplanes, uniformly in `g`".
+prerequisite of Lapid's Proposition 6
+(`EisensteinImaginaryAxisHolomorphyStatement`; see the reduction in
+`AdelicEisensteinImaginaryHolomorphyReduction`) that gives the local
+description of the singularities along finitely many root hyperplanes,
+uniformly in `g`.
 
 ## Source
 
@@ -129,11 +130,11 @@ Derived. The statement combines BL Theorem 2.3 (1), Theorem 2.3 (6) and the
 Corollary of §8.6 in the local form of the published
 `EisensteinRootHyperplaneStatement`. The three added clauses come from the
 Fréchet formulation of the Corollary and from automorphy of `E(φ, λ)`.
-Worker 5550 formulated it for Task 5613.
 
 ## Scope
 
 Only Eisenstein series of one parabolic, in the number field case, are
 covered. Holomorphy on the imaginary axis for square-integrable `φ`, BL's
-footnote in §8.6 and Lapid's Proposition 6, is not stated here. It is the
-target of Task 5613.
+footnote in §8.6 and Lapid's Proposition 6, is not stated here. It is
+`EisensteinImaginaryAxisHolomorphyStatement` (module
+`AdelicEisensteinImaginaryHolomorphyStatement`).

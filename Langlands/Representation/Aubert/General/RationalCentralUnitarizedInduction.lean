@@ -248,7 +248,7 @@ theorem exists_rationalCentralUnitarizedInducingObject
       i ν hG hZ s hs hindex hK J chi hchi σ hσ).mpr ha
   · exact ⟨rationalCentralUnitarizedInductionUnitaryCentralCharacter
       i ν hG hZ s hs hindex hK J chi hchi hi hν hStandard hU σ hσ hact⟩
-  · exact rationalCentralUnitarizedInduction_isIrreducible_iff
+  · exact rationalCentralUnitarizedInduction_isIrreducible_iff.{u, v}
       i ν hG hZ s hs hindex hK J chi hchi hi hν hStandard hU σ hσ
   · exact rationalCentralUnitarizedInducingObject_isCuspidal_iff
       i ν hG hZ s hs hindex hK J chi hchi hi hν hStandard hU hInter hM σ hσ

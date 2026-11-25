@@ -1,7 +1,5 @@
 # Actual socles for one-term segments
 
-Author: Worker 494.
-
 This internal module converts a supplied actual cuspidal-product embedding into
 actual segment-socle product data. It preserves the total rank, factor order,
 each actual representation and the given full-product embedding. The segments

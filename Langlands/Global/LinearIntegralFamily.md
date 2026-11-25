@@ -1,7 +1,5 @@
 # Integral families from actual closed linear embeddings
 
-Author: Worker 1641.
-
 This internal construction is a prerequisite for the integral Iwasawa family
 proof. For a number field `F : Type u`, an actual group scheme `G` over `F`
 and an actual finite dimensional representation `ρ`, `subgroup F G ρ v`

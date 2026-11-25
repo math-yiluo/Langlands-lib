@@ -1,7 +1,5 @@
 # Fixed-Haar additive-character scaling for local-constant systems
 
-Author: Worker 46.
-
 `Langlands.LocalFactor.NonabelianSystem.AdditiveCharacterScalingStatement`
 is the following Prop-valued assertion. For every prime `p`, finite p-adic
 field `F`, supplied common-closure reciprocity family `e`, and assignment

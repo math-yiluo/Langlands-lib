@@ -133,10 +133,10 @@ noncomputable def pointFunctorCoprodIsColimit (X Y : Cover S) :
   let e := PreservesColimitPair.iso (coverToScheme S) X Y
   have hl : (coprod.inl : X ⟶ X ⨿ Y).hom.left = coprod.inl ≫ e.hom := by
     rw [PreservesColimitPair.iso_hom]
-    exact (coprodComparison_inl (coverToScheme S)).symm
+    exact (coprodComparison_inl (coverToScheme S) X Y).symm
   have hr : (coprod.inr : Y ⟶ X ⨿ Y).hom.left = coprod.inr ≫ e.hom := by
     rw [PreservesColimitPair.iso_hom]
-    exact (coprodComparison_inr (coverToScheme S)).symm
+    exact (coprodComparison_inr (coverToScheme S) X Y).symm
   refine ((Types.binaryCofan_isColimit_iff _).mpr ⟨?_, ?_, ?_⟩).some
   · intro x x' h
     have h' : x.left ≫ (coprod.inl : X ⟶ X ⨿ Y).hom.left =

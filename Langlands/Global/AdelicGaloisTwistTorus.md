@@ -1,6 +1,6 @@
 # The Galois twist on ground-field homomorphisms and on torus characters
 
-Helper module for the proof of `GaloisBorelTwistingStatement` (Task 5268). It contains no
+Helper module for the proof of `GaloisBorelTwistingStatement`. It contains no
 literature statement. Its results are internal steps of Springer's Galois-twisting argument
 (Springer 1994, §3.5): the Galois action on adelic points commutes with homomorphisms defined
 over `F`, and preserves norms of characters once the characters are also moved by Galois.

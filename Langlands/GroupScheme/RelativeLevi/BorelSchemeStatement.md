@@ -1,7 +1,5 @@
 # Statement: the scheme of Borel subgroups of a reductive group scheme
 
-Worker 75.
-
 `Langlands.GroupScheme.RelativeBorelSchemeStatement.{u} : Prop` is a statement-only,
 `Prop`-valued definition. This module does not prove it, and it adds no other definitions,
 theorems or axioms. It imports [`RelativeLevi.Borel`](Borel.md) (for

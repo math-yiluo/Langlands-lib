@@ -1,8 +1,7 @@
 # Invariant functions separate orbits of characters
 
-Worker 1800. Internal support for the proof of
-`Langlands.GroupScheme.ClassFunctions.TorusSeparationStatement` (task
-`0c854e73-f39c-45cf-9dda-31e34e1711f6`). In Steinberg's proof that class
+Internal support for the proof of
+`Langlands.GroupScheme.ClassFunctions.TorusSeparationStatement`. In Steinberg's proof that class
 functions separate semisimple conjugacy classes (R. Steinberg, *Regular
 elements of semi-simple algebraic groups*, 1965, source
 `steinberg-1965-regular-elements-semisimple-groups`, proof of Corollary 6.6,

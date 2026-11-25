@@ -1,7 +1,5 @@
 # Simple right modules separate the Hecke algebra of an open normal subgroup
 
-Author: Worker 1789.
-
 This is a supporting module for the proof of Renard's VI.4.3 Lemma
 (`RationalNormKernelEndSeparationProof`). It extends the generic development of
 `Langlands.Representation.CuspidalSupport.NormalSubgroupHecke` and

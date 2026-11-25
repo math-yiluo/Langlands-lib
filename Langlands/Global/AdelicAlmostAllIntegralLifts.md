@@ -48,10 +48,10 @@ constructor to the canonical residue quotient and the original integral
 point gives the selected exact lift. No local lifting or residue-growth
 assertion is assumed separately.
 
-This unit does not prove the uniform Lang–Weil estimate. It also does
+This module does not prove the uniform Lang–Weil estimate. It also does
 not construct compatible integral spreads of a given generic-fibre
 morphism, reduce varying fibre dimensions to the pure-dimensional case,
 prove local openness, or glue local maps into adelic openness. Those
-remain obligations for Theorem 4.5 and the whole-paper task. The base's
+are further steps toward Theorem 4.5. The base's
 finite-type-over-integers hypothesis is explicit here; its verification
 for a chosen spread is a separate application step.

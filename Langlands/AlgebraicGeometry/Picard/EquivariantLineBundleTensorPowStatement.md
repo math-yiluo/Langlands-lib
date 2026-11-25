@@ -1,7 +1,5 @@
 # Equivariant structures on tensor powers of equivariant line bundles
 
-Author: Worker 3462.
-
 `Langlands.AlgebraicGeometry.Picard.EquivariantLineBundleTensorPowStatement.{u}`
 quantifies over an actual étale equivalence relation `E` in the scheme
 universe `u`, an actual equivariant line bundle `B : EquivariantLineBundle E`

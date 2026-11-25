@@ -1,7 +1,5 @@
 # Actual compact-central reproduction
 
-Author: Worker 94.
-
 `compactFiniteCentralReproducingKernel` chooses an actual compact smooth
 kernel invariant under conjugation by the whole standard archimedean compact
 subgroup. Its inputs are a genuine derivative-topology smooth function, finite

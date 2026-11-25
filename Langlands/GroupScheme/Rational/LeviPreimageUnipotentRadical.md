@@ -1,9 +1,9 @@
 # Unipotent radicals of actual subgroup preimages
 
 This internal helper is derived from the published actual-kernel quotient,
-ground-field radical existence, and unipotent extension results. Worker 74
-implements it for the inverse-image construction in the nested-parabolic
-extension task.
+ground-field radical existence, and unipotent extension results. It serves
+the inverse-image construction of the nested-parabolic extension in
+`Langlands.Representation.Exponents.LeviParabolicExtensionProof`.
 
 For an affine fppf homomorphism with smooth connected unipotent kernel, and
 a represented radical in its target, the first theorem proves that the actual

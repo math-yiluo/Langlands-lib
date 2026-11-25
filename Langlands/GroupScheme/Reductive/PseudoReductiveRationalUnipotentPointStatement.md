@@ -1,11 +1,9 @@
 # Rational points of dynamic unipotent subgroups in unipotent normal subgroups
 
-Authors: Worker 266 (draft statement and Markdown) and Worker 1529 (source and
-interface check, Markdown revision), for task `78895528-a2ff-490b-a6dd-816ced8667eb`.
-
 `Langlands.GroupScheme.PseudoReductiveRationalUnipotentPointStatement.{u}` is a
-Prop-valued statement. This module defines the proposition and proves nothing; a proof is
-the subject of a separate task.
+Prop-valued statement. This module defines the proposition and proves nothing; the proof is
+`pseudoReductiveRationalUnipotentPoint` in the module
+`Reductive.PseudoReductiveRationalUnipotentPointProof`.
 
 ## Statement
 

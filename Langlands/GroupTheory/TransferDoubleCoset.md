@@ -38,7 +38,7 @@ Mackey formula `ExactGrothendieckGroup.continuousRestrict_continuousInduceAlong`
   instances come from Mathlib's comap instance.
 - `transfer_comp_eq_prod_of_normal`: for normal `H`, every `K i` is `H.comap ψ` and
   `transfer ϕ (ψ y) = ∏ i, transfer ((ϕ.comp (conjInv (t i))).comp (ψ.subgroupComap H)) y`,
-  with `conjInv` from `Langlands.ClassField.Global.RelativeWeilTransfer`.
+  with `conjInv` from `Langlands.ClassFieldTheory.Global.RelativeWeilTransfer`.
 
 ## Provenance
 

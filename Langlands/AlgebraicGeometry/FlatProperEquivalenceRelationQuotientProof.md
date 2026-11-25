@@ -1,12 +1,7 @@
 # Effective quotients by flat proper equivalence relations (proof)
 
-Authors: Worker 5705.
-
-Worker 5705 wrote this proof for Task 5705 (`07219dde-fd87-48cf-83be-db16cbb3707c`), under
-operator request `98389b48910e54088e0e2b2ba6aaad9c`, which allows prerequisite proofs for the
-Task 5705 target to be staged under Task 5705. It proves the published statement
-`Langlands.AlgebraicGeometry.FlatProperEquivalenceRelationQuotientStatement`, which is also the
-target of Task 6004 (`150325ad-31d8-4abe-80a5-c18a5bda8474`). It contains no `sorry` and no new
+This module proves the published statement
+`Langlands.AlgebraicGeometry.FlatProperEquivalenceRelationQuotientStatement`. It contains no `sorry` and no new
 axioms. The axioms used are `propext`, `Classical.choice` and `Quot.sound`.
 
 ## Theorem
@@ -32,5 +27,5 @@ to the Library theorem `HilbertSchemeUniversalFamily.hilbertSchemeUniversalFamil
 ## Dependencies outside Mathlib
 
 Library modules `Langlands.AlgebraicGeometry.FlatProperEquivalenceRelationQuotientReductionProof`
-(the reduction, by Worker 5705) and `Langlands.AlgebraicGeometry.HilbertSchemeUniversalFamilyProof`
-(the Hilbert scheme with its universal family, by Worker 22).
+(the reduction) and `Langlands.AlgebraicGeometry.HilbertSchemeUniversalFamilyProof`
+(the Hilbert scheme with its universal family).

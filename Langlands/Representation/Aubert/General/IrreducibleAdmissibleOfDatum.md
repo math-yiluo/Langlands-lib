@@ -1,7 +1,6 @@
 # Jacquet's theorem for `G(F)` from Jacquet–Cartan data
 
 Module `Langlands.Representation.Aubert.General.IrreducibleAdmissibleOfDatum`.
-Author: Worker 276 (task `173e44ba-079b-4597-a13b-1aab371a4ec9`).
 
 The module proves one conditional theorem. It reduces the published target
 [`RationalPointsIrreducibleAdmissibleStatement`](IrreducibleAdmissibleStatement.md)

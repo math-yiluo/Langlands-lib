@@ -8,7 +8,7 @@ are set after the imports; the import of `P2M.Util` is dropped; the `p2m_open` c
 by `open`; the proof `by p2m_exact_reverting @_root_.S.solution` is replaced by the term
 `S.solution` applied to the explicit arguments. The paired Markdown file lists the changes.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_GoodReductionJacobian_RelativeGroupLawBaseChange
 import Langlands.AnthropicFLT.P2M.Sol.S_GoodReductionJacobian_RelativeGroupLaw_exists_fg_subalgebra_relativeGroupLaw_pullback_snd_of_locallyOfFinitePresentation
 set_option maxHeartbeats 4000000

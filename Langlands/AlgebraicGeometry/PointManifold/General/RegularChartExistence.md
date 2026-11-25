@@ -14,16 +14,17 @@ smooth schemes with components of different dimensions are not assigned a
 single global model. Chart, Jacobian-rank or manifold data are not part of the
 algebraic input.
 
-`regularChartExistenceStatement_typeZero_iff` proves equivalence with the
-published `PointManifold.regularChartExistenceStatement` when `k : Type`.
+`regularChartExistenceStatement_typeZero_iff` proves equivalence with
+`PointManifold.regularChartExistenceStatement` when `k : Type`.
 Its proof converts the atlas supplied by either obligation using
 `General.RegularAtlas.typeZeroEquiv`, without changing any points or partial
-homeomorphisms. The arbitrary-universe existence statement is not proved here.
+homeomorphisms. The arbitrary-universe existence statement is not proved here;
+`regularChartExistence` in `General.RegularChartExistenceProof` proves it.
 Its exact proof needs algebraic local standard-smooth/étale presentations and
 an analytic inverse/implicit function argument, or a proved equivalent route.
 A homeomorphism alone does not discharge it.
 
-The provenance is internal: Worker 94 extends Worker 274's published Type 0
+The provenance is internal: this file extends the Type 0
 proposition to an explicit coefficient universe and adds the exact
 specialization proof. No new source theorem is transcribed, and no existing
 statement or proof is edited. Manifold assembly and the intrinsic family

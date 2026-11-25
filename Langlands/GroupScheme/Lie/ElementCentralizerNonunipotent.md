@@ -21,7 +21,7 @@ element under the composite inclusion. The first adapter then shows that this
 connected centralizer cannot be unipotent.
 
 The implementation uses the actual tangent constructions and the nilpotent
-tangent matrix result authored by Worker 1377, together with the published
+tangent matrix result of `Lie.UnipotentTangent`, together with the published
 smooth infinitesimal lifting and closed linear embedding results. This is
 a derived local step for the no-torus induction. It assumes smoothness of
 the centralizer representative and does not prove that smoothness or the

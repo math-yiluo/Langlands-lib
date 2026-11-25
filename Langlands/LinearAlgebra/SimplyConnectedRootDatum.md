@@ -1,9 +1,10 @@
 # The simply connected root datum of a root datum
 
-Module `Langlands.LinearAlgebra.SimplyConnectedRootDatum`. Author: Worker 1391.
+Module `Langlands.LinearAlgebra.SimplyConnectedRootDatum`.
 
-This module is a helper for proof task `a41119fb-a633-4b81-a979-4b08e9ddbb15`, which proves
-`SimplyConnectedCoverExistenceStatement`. That proof follows Milne, *Algebraic Groups* (2017),
+This module is a helper for the proof of `SimplyConnectedCoverExistenceStatement`
+(`simplyConnectedCoverExistence` in `Langlands.GroupScheme.SimplyConnected.CoverExistenceProof`).
+That proof follows Milne, *Algebraic Groups* (2017),
 Remark 23.60: for a split semisimple group with root datum `(X, Φ, Φ^∨)`, the universal covering
 is the central isogeny that corresponds to the isogeny of root data
 `(X, Φ, Φ^∨) → (P(Φ), Φ, Φ^∨)`. This module builds the target root datum `(P(Φ), Φ, Φ^∨)` and
@@ -91,5 +92,5 @@ restriction `X → Hom(Q(Φ^∨), ℤ)`. For a semisimple datum this is Milne's 
 `X ↪ P(Φ)` under that identification. The construction makes sense for every root datum with
 finitely many roots. For a non-semisimple datum it produces the simply connected datum of the
 semisimple part, and `toRootDatum P` then has a non-injective weight map. The injectivity lemma
-therefore assumes that `Y ⧸ L` is finite. The proofs are Worker 1391's and are internal to this
+therefore assumes that `Y ⧸ L` is finite. The proofs are internal to this
 module, except for the Mathlib lemmas named above.

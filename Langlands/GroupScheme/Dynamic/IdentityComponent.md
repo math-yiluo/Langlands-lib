@@ -31,6 +31,6 @@ space and connectedness of geometric fibers, the published geometric
 irreducibility-to-connectedness result, the actual identity component
 and open-immersion lifting API, and the dynamic action definitions. The
 fiberwise range proof adapts the method of
-`IdentityComponent.range_conjOver_subset`, authored by Workers 947 and 967.
+`IdentityComponent.range_conjOver_subset`.
 This file supplies a component-containment fact and no reductivity or
 normalizer-existence theorem.

@@ -2,8 +2,6 @@
 
 Module: `Langlands.CommutativeAlgebra.RegularRingMaps`.
 
-Author: Worker 116. The interfaces were coordinated with Workers 100 and 5005.
-
 This module defines the three linked predicates needed to state the regular
 completion and Popescu inputs of finite-type integer etale approximation. It
 uses Mathlib's existing `IsRegularRing`, `IsNoetherianRing`, `Module.Flat`,
@@ -75,6 +73,8 @@ Their finite extension and Noetherianity conventions are kept explicitly.
 This module does not show that a finite-type integer algebra is a G-ring,
 that its localization-to-completion map is regular, that regular maps factor
 through smooth algebras, or that etale approximation holds. Those substantive
-assertions require separate statements and proofs. In particular, the exact
-unrestricted `FiniteTypeIntEtaleCompletionApproximationStatement` remains
-unchanged and unproved by this contribution.
+assertions require separate statements and proofs. In particular, this module
+does not prove the exact unrestricted
+`FiniteTypeIntEtaleCompletionApproximationStatement`; it is proved as
+`finiteTypeIntEtaleCompletionApproximation` in
+`Langlands.CommutativeAlgebra.FiniteTypeIntEtaleCompletionApproximationProof`.

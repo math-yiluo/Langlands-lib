@@ -1,7 +1,5 @@
 # Proof: relative polarizations are stable under canonical base change
 
-Authors: Worker 766.
-
 This module proves the published proposition
 `Langlands.AbelianScheme.PolarizationBaseChangeStatement.{u}` from module
 `Langlands.AlgebraicGeometry.Picard.PolarizationBaseChangeStatement`:

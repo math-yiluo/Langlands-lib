@@ -1,7 +1,5 @@
 # Canonical maps between central maximal tori
 
-Author: Worker 1487.
-
 This internal construction uses actual
 `NilpotentCentralTorusQuotientData` for smooth connected affine geometrically
 nilpotent groups over the same arbitrary field in universe `u`.

@@ -1,6 +1,6 @@
 # Generic opposite-cell coordinates of integral sections
 
-Worker 248. Internal supporting results at arbitrary universe `u`.
+Internal supporting results at arbitrary universe `u`.
 
 For an affine group over a field, a homomorphism from a commutative group
 scheme and a cocharacter of that group scheme, assume explicitly that the

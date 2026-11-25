@@ -1,7 +1,7 @@
 # Strict Jacquet square integrability from one joint geometric witness
 
-Author: Worker 19. The actual chamber-cover and quotient-volume proofs used here
-are by Worker 349, credited in their own paired files.
+The actual chamber-cover and quotient-volume proofs used here are documented
+in their own paired files.
 
 `rationalStrictJacquetSquareIntegrabilityReduction` proves the complete
 `RationalStrictJacquetSquareIntegrabilityReductionStatement.{u,v}` with independent

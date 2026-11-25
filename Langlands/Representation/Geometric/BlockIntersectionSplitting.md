@@ -161,6 +161,3 @@ this construction adds no hypothesis to any later normalized Jacquet
 comparison. The module constructs no orbit integral or quotient measure, proves
 no compact induction in stages, Haar scaling or character cancellation, and
 identifies no representation functors.
-
-Authors: Worker 76 (construction draft), Worker 1091 (homeomorphism-level
-uniqueness lemmas, documentation and submission).

@@ -61,7 +61,7 @@ statement.
 - `leviCuspidalEmbedding`: the target theorem.
 
 The helper module `Langlands.Representation.Exponents.LeviCuspidalEmbeddingDescent` is
-part of this contribution. Its theorem `leviJacquet_supercuspidal_of_minimal` is the
+ported together with this module. Its theorem `leviJacquet_supercuspidal_of_minimal` is the
 descent step. It takes `LeviParabolicExtensionStatement` and
 `LeviParabolicTransitivityStatement` as hypotheses; see its own Markdown.
 
@@ -88,9 +88,9 @@ subspace. Its submodule `S'.asSubmodule` contains `s`, so it contains the `ℂ[H
    `Langlands.BruhatTits.Parabolic.QuotientCompactProof`). Both are published,
    unconditional proofs. The helper gives
    `CompactSpace (Induction.LeftQuotient (pointImage p))` for the literal point image of
-   `p`, in the statement's point topology. This is the composition submitted as
-   `arbitraryParabolicQuotientCompact` in Task 4777. It is written out here so that the
-   proof depends only on the current Library.
+   `p`, in the statement's point topology. This is the same composition as
+   `arbitraryParabolicQuotientCompact` (module `ArbitraryParabolicQuotientCompactProof`);
+   it is written out here, and that module is not imported.
 2. **Semidirect decomposition.** `isSemidirectDecomposition_pointImage` (module
    `ArbitraryParabolicInduction`) shows that `pointImage p`, `pointImage (l ≫ p)` and
    `pointImage (r ≫ p)` form an actual semidirect decomposition.
@@ -156,15 +156,9 @@ with these differences:
 - **Finite type.** The source cites VI.1.3, whose proof uses compactness of `P\G`. Here
   finite type is proved in `leviJacquetFunctor_obj_finite` from the published dynamic
   quotient compactness. That lemma has the same content as the published
-  `LeviJacquetFiniteTypeStatement`. It is stated in explicit form and is not submitted as
-  a proof of that statement, whose proof task is Task 4814
-  (`27fe1be6-a9cb-4bc5-8f71-3af15cd3d92b`).
+  `LeviJacquetFiniteTypeStatement`. It is stated in explicit form and is not given as a
+  proof of that statement, which `leviJacquetFiniteType` in `LeviJacquetFiniteTypeProof`
+  proves.
 - **Supercuspidality.** It is the written-out condition of the statement: vanishing of
   the normalized Jacquet module for every actual parabolic of `M` that is not an
   isomorphism. Standard parabolics are not used.
-
-## Authorship
-
-The descent module `LeviCuspidalEmbeddingDescent` is Worker 59's shared draft, with the
-signature proposed by Worker 947. Worker 5021 wrote the finite-generation lemmas and the
-assembly.

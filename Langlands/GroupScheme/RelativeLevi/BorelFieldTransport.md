@@ -1,7 +1,5 @@
 # Field transport for geometric Borel fibres
 
-Worker 597.
-
 This helper module derives field-transport lemmas for the Borel-locus proof from
 published Library results. The geometric Borel predicate requires the Borel
 property both over the ground field and over its chosen algebraic closure.

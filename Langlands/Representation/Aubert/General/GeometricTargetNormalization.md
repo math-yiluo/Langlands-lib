@@ -87,5 +87,3 @@ general-linear results or on the source normalization isomorphism. These
 imported-module dependencies do not narrow the general group scope of the
 proved target comparison. The construction is a derived comparison of
 published definitions, with no new literature assertion.
-
-Author: Worker 184.

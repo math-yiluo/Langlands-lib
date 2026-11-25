@@ -1,8 +1,6 @@
 # Renard A.IV.2: concrete products and direct sums of abelian groups
 
-Authors: Worker 709 and Worker 937.
-
-This statement unit uses the existing Cartesian product, `DirectSum`,
+This statement module uses the existing Cartesian product, `DirectSum`,
 single-coordinate inclusions and coordinate embedding. It states their
 categorical universal properties and identifies the direct sum with the
 finite-support subgroup of the full product. It also states that for a
@@ -30,20 +28,20 @@ that its coproduct is the direct sum; that for finite indices this is
 the full product with the single-coordinate inclusions; and that for
 infinite indices it is the subgroup of functions with finitely many
 nonzero coordinates, with the same inclusions. PDF263–265 were read
-in full during the source audit; PDF263–264 were reread when authoring
-and again before submission. The printed projections read
+in full during the source audit; PDF263–264 were reread twice when this
+module was written. The printed projections read
 `p_i : ∏ G_i → G`; the target is evidently the factor `G_i`, which is
 how the Lean fan reads them.
 
 The supplementary author errata for the older 2010 edition are registered
 as `renard-2010-corrections-complements`, SHA256
 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`.
-Their PDF18–19 were checked in the Appendix A audit and reread before
-submission. They contain no correction to this product/direct-sum
+Their PDF18–19 were checked in the Appendix A audit and reread for this
+module. They contain no correction to this product/direct-sum
 example; the nearby entry for old p.298, l.6 replaces "limilte" by
 "colimite" in the preceding inductive-limit sentence, and the 2026 text
 already reads "colimite". The 2026 original governs. The published note `notes/renard/appendix-a-corrections.md`
-explains the general limit/colimit arrow errors; the present unit uses
+explains the general limit/colimit arrow errors; the present module uses
 actual Mathlib fans, cofans and their universal properties.
 
 The four named propositions, their ordered conjunction, the use of
@@ -158,22 +156,18 @@ applicable. The file contains no proof of any component.
 
 ## Verification
 
-All checks used approved environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` and the present Lean file. They
-are development checks: they supply neither independent acceptance nor a
-proof.
+All checks used one Lean environment and the present Lean file. They
+are development checks: they supply no proof.
 
-- Worker 709's aggregate check `9f146950-fa1a-4ef3-8667-f98948ec697d`
-  and full-definition check `68363382-5216-44b5-b3de-1219d42c7b0a`
-  passed with zero errors and warnings.
-- Worker 937's aggregate check `df102d2d-48f4-48b6-a109-27687dd3bb52`
-  passed with zero errors and warnings. Its inspection reports a
-  `Prop`-valued definition with level parameters `[uI, uG]` and only the
-  axioms `propext`, `Classical.choice` and `Quot.sound`.
-- Worker 937's probe `366c8fdb-1ca7-423e-bb50-be1f56f55751` printed all
-  five definitions with `pp.universes` and `pp.funBinderTypes`. It checked
-  by `rfl` that each component equals the corresponding contract term
-  written out directly, with the explicit diagram
+- An aggregate check and a full-definition check passed with zero errors
+  and warnings.
+- A second, independent aggregate check passed with zero errors and
+  warnings. Its inspection reports a `Prop`-valued definition with level
+  parameters `[uI, uG]` and only the axioms `propext`, `Classical.choice`
+  and `Quot.sound`.
+- A probe printed all five definitions with `pp.universes` and
+  `pp.funBinderTypes`. It checked by `rfl` that each component equals the
+  corresponding specified term written out directly, with the explicit diagram
   `fun i => AddCommGrpCat.of.{max uI uG} (ULift.{uI} (G i))` and classical
   index equality. It also checked that the aggregate is the
   right-associated conjunction, and instantiated the aggregate at the
@@ -185,12 +179,14 @@ The construction data come from Mathlib's
 `Algebra/Category/Grp/Biproducts.lean`, `Algebra/DirectSum/Basic.lean`,
 `Algebra/Group/Pi/Lemmas.lean` and `Algebra/Group/ULift.lean`, inspected
 at the pinned project Mathlib version. These are reuse routes for the
-eventual proof. This statement unit makes no claim that a proof of the
-closed aggregate has been published.
+proof, `abelianGroupLimitStatements` in
+`Langlands.CategoryTheory.Renard.AbelianGroupLimit`. This statement module
+contains no proof of the closed aggregate.
 
 The next source paragraph, the concrete filtered-colimit quotient and
-its eventual-vanishing consequence, remains a separate unit. General
-cone/cocone comparisons, elementary limit diagrams, ordered systems,
-subobject intersections/unions and products of original nonunital
-modules also retain their existing owners and scope. This unit does
-not complete A.IV, Appendix A or the whole-book program.
+its eventual-vanishing consequence, is in separate modules
+(`Langlands.CategoryTheory.Renard.FilteredColimitStatements` and its
+companions). General cone/cocone comparisons, elementary limit diagrams,
+ordered systems, subobject intersections/unions and products of original
+nonunital modules also keep their existing modules and scope. This module
+does not complete A.IV, Appendix A or the formalization of the whole book.

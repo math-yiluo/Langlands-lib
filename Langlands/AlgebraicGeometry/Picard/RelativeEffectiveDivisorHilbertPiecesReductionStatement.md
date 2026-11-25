@@ -1,15 +1,12 @@
 # Reduction of the representability of relative effective divisors to the Hilbert scheme and the relative effective Cartier locus
 
-Authors: Worker 22.
-
-Worker 22 wrote the Lean file and this description for task
-`07219dde-fd87-48cf-83be-db16cbb3707c` (Task 5705). Task 5705 is the host, and
-the statement is one of its prerequisites. The operator's answer to request
-`98389b48910e54088e0e2b2ba6aaad9c` allows such prerequisites to stay under
-Task 5705. The proposition reduces the published
+The statement is one of the prerequisites of the Library's proof of Kleiman's
+Theorem 4.8 (`NoetherianIntegralFibrePicardSheafAFSchemeProof`). The
+proposition reduces the published
 `Langlands.AlgebraicGeometry.Picard.RelativeEffectiveDivisorHilbertPiecesStatement`
-("(a)", the target of proof Task 6002, `c0a0bd7d-2608-4337-8a93-f97e3b6308cd`)
-to two statements by Worker 22:
+("(a)", proved as `relativeEffectiveDivisorHilbertPieces` in
+`RelativeEffectiveDivisorHilbertPiecesProof`)
+to two statements:
 
 - `Langlands.AlgebraicGeometry.HilbertSchemeUniversalFamilyStatement` ("HGP"),
   the Hilbert scheme with its universal closed subscheme and H-projective
@@ -90,6 +87,11 @@ statements allow arbitrary test schemes `T`, and their own Markdown files
 derive this extension.
 
 ## Intended proof
+
+The Library proves the implication as
+`RelativeEffectiveDivisorHilbertPiecesReduction.relativeEffectiveDivisorHilbertPiecesReduction`
+(module `RelativeEffectiveDivisorHilbertPiecesReductionProof`); its Markdown
+describes the implemented proof.
 
 1. `f` is proper, because `ClosedImmersionBySections 𝓛X f` factors `f`
    through a closed immersion into projective space, which is proper over

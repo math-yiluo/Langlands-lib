@@ -1,6 +1,6 @@
 # Coefficient descent on recovered special fibres
 
-This internal unit compares canonical coefficient transport with an actual
+This module compares canonical coefficient transport with an actual
 integral-model recovery. It uses the published coefficient base change,
 commuting-square comparisons and generic rigidity, in arbitrary universe and
 either characteristic.

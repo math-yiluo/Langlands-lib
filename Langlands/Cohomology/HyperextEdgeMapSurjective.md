@@ -1,11 +1,11 @@
 # Surjectivity of the hyperext edge map
 
-Author: Worker 61. Built on the Library modules
-`Langlands.Cohomology.HyperextAbutmentFiltration` (`edgeMap_comp`; Worker 61),
+Built on the Library modules
+`Langlands.Cohomology.HyperextAbutmentFiltration` (`edgeMap_comp`),
 `Langlands.Cohomology.HyperextSecondPage` (`isoSingleHomology`,
-`heartPieceIso`, `secondPageExtAddEquiv`; Worker 61) and
+`heartPieceIso`, `secondPageExtAddEquiv`) and
 `Langlands.Cohomology.HyperextDegeneration.Statement` (`edgeMap`,
-`HyperextDegenerationStatement`; Worker 3), and on Mathlib's canonical
+`HyperextDegenerationStatement`), and on Mathlib's canonical
 t-structure on derived categories, its truncation triangles, the long exact
 cohomology sequences of distinguished triangles, and `Ext` groups.
 
@@ -21,10 +21,11 @@ every `i > 0`.
 This module proves that under these hypotheses the edge map is
 **surjective** (`edgeMap_surjective_of_ext`). Injectivity under the same
 hypotheses is `edgeMap_injective_of_ext` of the module
-`Langlands.Cohomology.HyperextGradedVanishing` (candidate c91ec78b, not
+`Langlands.Cohomology.HyperextGradedVanishing` (not
 imported here). This module does not import it, does not state the
 bijectivity, and does not prove `HyperextDegenerationStatement`. The
-combination is left to a separate proof of that statement.
+combination is `hyperextDegenerationStatement_proof` in
+`Langlands.Cohomology.HyperextDegeneration.Proof`.
 
 ## Conventions
 
@@ -154,11 +155,11 @@ proved here corresponds to the vanishing of the differentials leaving
 `Ext^r(H^{r - n - 1} K, W) = 0` for `r ≥ 2`. Here the argument is carried out
 directly with truncation triangles and a dévissage over the cohomology
 objects of `τ_{≥ 1 - n} τ_{≥ -n} K`, without the spectral sequence. The
-scope of the unit (surjectivity in a definition module, the statement
-`HyperextDegenerationStatement` unchanged, its proof left to a separate
-focused proof task) follows the plan agreed with Worker 13.
+module proves surjectivity only and leaves the statement
+`HyperextDegenerationStatement` unchanged; its proof is in
+`Langlands.Cohomology.HyperextDegeneration.Proof`.
 
-For this module Worker 61 reread the following passages of Harris 1999 in
+For this module the following passages of Harris 1999 were reread in
 the text layer of the PDF:
 
 - Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
@@ -201,8 +202,8 @@ formalized here.
 Source registration: Harris 1999,
 `harris-1999-cohomological-automorphic-forms-525a222c4489ee9d`, SHA-256
 `525a222c4489ee9d3fe86a52c6c17ffb30fcc7c31f24c16a64669e9615085b26`, printed
-pp.311-312 reread in the text layer of the PDF for the module
-`Langlands.Cohomology.HyperextGradedVanishing` in the same session.
+pp.311-312 reread in the text layer of the PDF for this module and for the
+module `Langlands.Cohomology.HyperextGradedVanishing`.
 
 Dependencies: `Langlands.Cohomology.HyperextAbutmentFiltration` and
 `Langlands.Cohomology.HyperextSecondPage`, with Mathlib pinned to Lean 4.34.0

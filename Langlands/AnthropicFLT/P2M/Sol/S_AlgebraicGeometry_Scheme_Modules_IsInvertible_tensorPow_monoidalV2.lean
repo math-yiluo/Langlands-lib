@@ -7,7 +7,7 @@ Modified: FLT module names are prefixed by `Langlands.AnthropicFLT`; the FLT lak
 are set after the imports; the import of `P2M.Util` is dropped and its commands are replaced
 by standard Lean commands. The paired Markdown file lists the changes.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_RelativePicardFunctor
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_ModulesTensorPowV2
 import Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_Scheme_Modules_IsInvertible_tensor_monoidalV2
@@ -25,11 +25,11 @@ universe u
 open _root_.CategoryTheory _root_.CategoryTheory.MonoidalCategory _root_.AlgebraicGeometry
 
 theorem solution {X : Scheme.{u}} {L : X.Modules}
-    (hL : Scheme.Modules.IsInvertible L) (n : ℕ) : Scheme.Modules.IsInvertible (L.tensorPow n) := by
+    (hL : Scheme.Modules.IsInvertibleFLT L) (n : ℕ) : Scheme.Modules.IsInvertibleFLT (L.tensorPowFLT n) := by
   induction n with
   | zero =>
 
-    simpa only [Scheme.Modules.tensorPow_zero, Scheme.Modules.tensorUnit_eq] using
+    simpa only [Scheme.Modules.tensorPowFLT_zero, Scheme.Modules.tensorUnit_eq] using
       Scheme.Modules.isInvertible_unit X
   | succ n ih =>
-    simpa only [Scheme.Modules.tensorPow_succ] using ih.tensor_monoidalV2 hL
+    simpa only [Scheme.Modules.tensorPowFLT_succ] using AlgebraicGeometry.Scheme.Modules.IsInvertible.tensor_monoidalV2 ih hL

@@ -1,6 +1,6 @@
 # Equivariant functionals and the localized quotient dual
 
-Author: Worker 127. This module is an intrinsic algebraic universal-property
+This module is an intrinsic algebraic universal-property
 construction from the published `Whittaker.Algebraic` and
 `Jacquet.Localization` modules. It is not an additional theorem attributed to
 JPSS or another external source. Both imported pairs remain unchanged.
@@ -35,5 +35,6 @@ These formulas are definitional for this construction.
 
 Specializing to complex coefficients and the character in the companion
 `Whittaker.EntrywiseCharacter` supplies the localized functional-dual
-interface requested by the induced Whittaker-type task. The equivalence
+interface used for induced representations of Whittaker type (module
+`InducedWhittakerTypeReductionProof`). The equivalence
 makes no induction, tensor-dual, uniqueness, or heredity assertion.

@@ -1,8 +1,5 @@
 # Derivative supports of a special head: orders `0` and `deg Δ`, and segments of length one and two
 
-Author: Worker 256 (task `65a3925f-2cf6-464e-8486-d823160921a1`, shared with
-Worker 890).
-
 Module `Langlands.Representation.Classification.SegmentHeadDerivativeSupportLengthTwo`,
 namespace `Langlands.Classification.SegmentHeadDerivativeSupportLengthTwo`.
 
@@ -13,8 +10,8 @@ It covers derivative orders `0` and `deg Δ` for segments of any length, and eve
 derivative order for segments of length one and two. It does not prove the
 target statement. The step for segments of length at least three
 (`SegmentHeadSupportStep`) and the final assembly
-(`SegmentHeadDerivativeSupportTruncationProof`) are separate modules by
-Worker 890 and are not described here. The step module does not import this
+(`SegmentHeadDerivativeSupportTruncationProof`) are separate modules and
+are not described here. The step module does not import this
 module: it takes the length-one and length-two cases as hypotheses. Only the
 final assembly imports this module, and it supplies `lengthOne_support` and
 `lengthTwo_support` for those hypotheses.
@@ -181,11 +178,10 @@ deliberately does not import:
 - Section `BinaryProducts`, and `binary_eq_twoBlocks`,
   `normalizedProductInductionFunctor_obj_congr` and
   `binaryNormalizedProductFunctor_obj_eq_twoBlocks`, are adapted from
-  `Classification.TwoSupercuspidalBinaryProductBridge` (Worker 745, task
-  `3c9849a4`).
+  `Classification.TwoSupercuspidalBinaryProductBridge`.
 - Section `Leibniz` (the Leibniz-piece case analysis and the top-order
-  dimension) is adapted from `Classification.NonadjacentLeibnizPieces`
-  (Worker 745, task `3c9849a4`). The index information for the pieces `(0, b)`
+  dimension) is adapted from `Classification.NonadjacentLeibnizPieces`.
+  The index information for the pieces `(0, b)`
   and `(a, 0)`, and the two-step filtration, are new here.
 - `rankZeroProductLinearEquiv` is adapted from
   `rankZeroNormalizedProductLinearEquiv` in
@@ -195,78 +191,70 @@ deliberately does not import:
 The copied arguments are general facts: binary products with zero or rank-zero
 factors, Leibniz pieces of products of factors with the BZ77 4.4 pattern, and
 the rank-zero normalized product. They contain no conclusion of Ze80 1.11 or of
-any excluded task. The two Worker 745 modules are in this module's closure only
+any excluded result. The two modules `TwoSupercuspidalBinaryProductBridge` and
+`NonadjacentLeibnizPieces` are in this module's closure only
 through the authorized reducibility import (below). They are not imported
 directly, and none of their declarations is used. `OrderedMultisegmentHeadReduction`
 is not in the closure.
 
 ## Authorization
 
-The operator responses below govern the target task. Each is cited in full at
-its path in `/home/taskhub/pilot/correspondence/`.
+The independence conditions of the target allow the following inputs.
 
-- [30144f6f9b59540b88b6d4c1517892d9](/home/taskhub/pilot/correspondence/30144f6f9b59540b88b6d4c1517892d9.md)
-  (request `7bd9e666c60d53469eff04b2962e1acf`) authorizes a new proof of exactly
+- A new proof of exactly
   the support-only statement from published general derivative theory and
   the permitted individual-head constructions.
-- [bd71b9185aab5d6eafffb7891bd3a3ca](/home/taskhub/pilot/correspondence/bd71b9185aab5d6eafffb7891bd3a3ca.md)
-  (request `a8463ee15d57588c8de10306748b2538`) permits a fully proved route
-  through BZ77's general derivative theory and excludes Ze80 3.5/9.6.
-- [0edda6122ce65ed7ac51603c37473920](/home/taskhub/pilot/correspondence/0edda6122ce65ed7ac51603c37473920.md)
-  (request `d910ee3b12f2515f9568a4f2f2f1442f`) admits BZ77 4.11, Ze80 3.7(b)
+- A fully proved route
+  through BZ77's general derivative theory; Ze80 3.5/9.6 are excluded.
+- BZ77 4.11, Ze80 3.7(b)
   through the Lemma 4.7(b) closure, Ze80 5.3 and the nine generic modules.
-- [09565d9017ef55faa68ad9890c242aed](/home/taskhub/pilot/correspondence/09565d9017ef55faa68ad9890c242aed.md)
-  (request `f489243c6b4e5a93a776216687d56d51`) admits
-  `cuspidalProductMirabolicSupportShift` with its whole closure as general
-  derivative theory. It is incorporated by 0edda612.
-- [2b33898bdd0a5ff1b9031be5155a06f0](/home/taskhub/pilot/correspondence/2b33898bdd0a5ff1b9031be5155a06f0.md)
-  (request `64f1e681367a5c0d9de435c691ff88dc`, from this author) permits
-  task `65a3925f` to import `twoSupercuspidalAdjacentProductReducible` (proof
-  task `0988a3e0`) with its published closure, including the Ze80 1.11(a)
-  conclusion of `3c9849a4` used inside it, solely to obtain the reducibility
+- `cuspidalProductMirabolicSupportShift` with its whole closure as general
+  derivative theory.
+- An import of `twoSupercuspidalAdjacentProductReducible` (in
+  `TwoSupercuspidalAdjacentReducibilityProof`) with its published closure,
+  including the Ze80 1.11(a) conclusion
+  (`TwoSupercuspidalNonadjacentIrreducibilityProof`) used inside it, solely to
+  obtain the reducibility
   of `ρ × νρ`. Nothing else from Ze80 1.11 may be used, in particular not
   `TwoSupercuspidalProductStructureProof` or its length-two and Jacquet parts.
   The Whittaker modules inside that closure are covered only as part of it.
 
-The ruling is needed because the target implies this reducibility. Suppose
+This last permission is needed because the target implies this reducibility. Suppose
 `ρ × νρ` were irreducible for `Δ = [ρ, νρ]`. Then it would be its own special
 head, and its derivative of order `rank ρ` would have the Leibniz piece
 `ρ × (νρ)^(rank ρ) ≅ ρ` as an irreducible subquotient. Its support `{ρ}` is not
 the support of any terminal truncation of `Δ`.
 
-Permission is not proof. Each input below is an independently accepted
+Permission is not proof. Each input below is a proved
 theorem in the published Library.
 
 ## Published input verification
 
 The audit base is Library commit `df7769b33f1b2e786f8bb0ac3ff1a6fd8a49020e`.
-The module was compiled with `lean_check` in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` against that Library with zero errors
-and zero warnings. The final checks `4d72b3a0`, `0f55d7ae`, `787ea759` and
-`c6e61513` inspected `lengthOne_support`, `topOrder_support`,
+The module was compiled against that Library with zero errors
+and zero warnings. The final checks inspected `lengthOne_support`, `topOrder_support`,
 `orderZero_support` and `lengthTwo_support`. Each has level parameters exactly
 `uF, uV` and depends only on the axioms `propext`, `Classical.choice` and
-`Quot.sound`. The module has no `sorry`, `admit` or new axiom. Compilation is
-preparation evidence, not acceptance.
+`Quot.sound`. The module has no `sorry`, `admit` or new axiom.
 
 Recheck at Library commit `7a2e42fd31831029d34cafb155ffad911920df25`: all 1,163
 published modules in the closure are byte-identical (`.lean` and `.md`) to
 `df7769b3`. The audit script reproduces the same counts, and the module
-recompiles there with zero errors and zero warnings (`lean_check` `6244c86f`).
+recompiles there with zero errors and zero warnings.
 The counts and listings below therefore hold for both commits.
 
 All 1,163 project modules in the closure (including the 19 direct imports) are published
 Lean/Markdown pairs. The workspace copies used for compilation are
 byte-identical to the audit Library, and no paired Markdown is missing. The
 reducibility theorem is `Langlands.Classification.twoSupercuspidalAdjacentProductReducible`
-in `Classification.TwoSupercuspidalAdjacentReducibilityProof` (Worker 1023). Its
+in `Classification.TwoSupercuspidalAdjacentReducibilityProof`. Its
 type is exactly the published proposition
 `TwoSupercuspidalAdjacentProductReducible.{uF,uV} F T`. Its route (Ze80 1.11(b),
 printed p.175) uses the published nonadjacent irreducibility, the irreducible
 product swap, unitarizability continuation, large-exponent non-unitarizability
 and real unitarization of supercuspidals. It has no segment, head, socle,
-Jacquet-formula, 3.5/9.6 or classification input, as its own Markdown audit and
-ruling 2b33898b record.
+Jacquet-formula, 3.5/9.6 or classification input, as its own Markdown audit
+records.
 
 ## Complete import closure
 
@@ -287,7 +275,7 @@ the appendix.
 | `Derivative.GeneralLinearDerivativeLeibnizFiltrationProof` | 324 | BZ77 Corollary 4.14(c) Leibniz filtration, with `leibnizPiece` and `leibnizIndices` |
 | `Derivative.GeneralLinearDerivativeExactnessProof` | 73 | Exactness of the general-linear derivative functors |
 | `Derivative.RestrictionBridge` | 86 | Mirabolic versus general-linear derivatives; nontriviality transport through rank casts |
-| `Classification.SupercuspidalDerivativesProof` | 304 | BZ77 4.4 `supercuspidalDerivatives`, the cuspidal-derivative part of `8e5b4563` |
+| `Classification.SupercuspidalDerivativesProof` | 304 | BZ77 4.4 `supercuspidalDerivatives`, the cuspidal part of the derivative statements (`SupercuspidalDerivativesStatement`) |
 | `Classification.CuspidalProductMirabolicSupportShiftProof` | 607 | BZ77 Lemma 4.7(b) `cuspidalProductMirabolicSupportShift` |
 | `Classification.SegmentHeadTopDerivative` | 1,095 | `segmentHeadTopDerivativeNontrivial` |
 | `Classification.CuspidalIntegralTwistFreenessProof` | 55 | `cuspidalIntegralTwistFreeness` (`ν^2 ρ ≠ ρ`) |
@@ -299,11 +287,11 @@ the appendix.
 | `Filtration.FunctorLengthTwoDetection` | 12 | `FunctorLengthTwo.subtypeMap`; brings `LengthCriterionProof` and `LengthTwoMatching` |
 | `Classification.SegmentCuspidalContent` | 51 | `Segment.cuspidalContent` and `Segment.mem_cuspidalContent` |
 | `Derivative.OrderedCuspidalProductHeadShift` | 612 | `irreducible_support_of_injective`; brings `OrderedCuspidalProductTwistOne` |
-| `Classification.TwoSupercuspidalAdjacentReducibilityProof` | 739 | `twoSupercuspidalAdjacentProductReducible`, authorized by 2b33898b |
+| `Classification.TwoSupercuspidalAdjacentReducibilityProof` | 739 | `twoSupercuspidalAdjacentProductReducible`, authorized for the reducibility of `ρ × νρ` only |
 
 Closure sizes overlap and are not additive. `SegmentHeadTopDerivative` alone
 reaches 1,095 modules. Its complete closure and proof routes are audited in its
-published Markdown (Worker 357), under response 0edda612.
+published Markdown, under the third permission of the Authorization section.
 
 The 53 modules reached only through the authorized import, with prefix
 `Langlands.Representation.` except where fully written, are:
@@ -347,7 +335,7 @@ A private compiled probe listed the external constants used directly by this
 module's declarations (859 constants, of which the project ones are grouped
 below by module). It also attributed every reachable constant from a sensitive
 module to the direct constant that reaches it. The probe was compiled with the
-module and deleted afterwards. Its output is preparation evidence.
+module and deleted afterwards.
 
 | Module (prefix `Langlands.`) | Declarations used directly |
 | --- | --- |
@@ -387,29 +375,31 @@ The probe's attribution of reachable constants:
 1. **BZ77 derivative theory.** The Leibniz filtration, exactness of
    derivatives, the restriction bridge, levels and the cuspidal-derivative
    theorem 4.4 are published general BZ77 results. They are the foundations
-   named in bd71b918 and 30144f6f. `supercuspidalDerivatives` is the isolated,
-   independently proved cuspidal-derivative part of `8e5b4563`, which those
-   rulings permit. Its proof uses Gelfand–Kazhdan multiplicity one. That is the
+   named in the first two permissions above. `supercuspidalDerivatives` is the
+   isolated, independently proved cuspidal part of the derivative statements
+   (`SupercuspidalDerivativesStatement`), which those permissions allow. Its proof uses Gelfand–Kazhdan multiplicity one. That is the
    reason for the Whittaker Bruhat-cell and multiplicity-one modules in the
    closure.
 2. **BZ77 Lemma 4.7(b).** `cuspidalProductMirabolicSupportShift` is used once,
    in `no_shifted_embedding`, for the kernel `K ⊂ A0 × A1`. Its closure, which
    includes the Ze80 3.7(b) comparison `PartialDerivativeJacquetComparisonProof`,
    `CuspidalProductDerivativeQuotientSupport` and the Whittaker prerequisite and
-   character-change modules, is admitted by 09565d90 and 0edda612.
+   character-change modules, is admitted by the third and fourth permissions
+   above.
 3. **The top derivative of the head.** `segmentHeadTopDerivativeNontrivial`
    is the published composition of BZ77 4.11 with the individual decreasing-socle
-   embedding. Its published Markdown audits its route and closure under
-   0edda612. Its closure carries the individual constituent existence, the
+   embedding. Its published Markdown audits its route and closure under the
+   third permission above. Its closure carries the individual constituent existence, the
    head-finiteness interface and cuspidal Jacquet multiplicity modules. None of
    them supplies a full, head, socle or exponent Jacquet formula of a segment
    representation. This module uses only the nonvanishing of `D_{2r} π`.
 4. **Twist freeness and supports.** `cuspidalIntegralTwistFreeness` and
    `twist_one_ne_self` are central-character arguments.
-   `irreducible_support_of_injective` (from the BZ77 4.11 publication `bfc08f82`,
-   admitted by 0edda612) gives the support of the rank cast of a supercuspidal.
+   `irreducible_support_of_injective` (from the published BZ77 4.11 modules,
+   admitted by the third permission above) gives the support of the rank cast of a supercuspidal.
 5. **Reducibility.** `twoSupercuspidalAdjacentProductReducible` is used once,
-   in `not_isIrreducible_binary`, to show `K ≠ 0`, as ruling 2b33898b permits.
+   in `not_isIrreducible_binary`, to show `K ≠ 0`, as the last permission above
+   allows.
    The module uses neither `TwoSupercuspidalProductStructureProof` (it is not
    in the closure) nor any length-two, unique-submodule or Jacquet statement of
    Ze80 1.11(b). Ze80 1.11(a) enters only inside the published reducibility proof.
@@ -419,7 +409,7 @@ The probe's attribution of reachable constants:
 
 ## Authorized general infrastructure and retained exclusions
 
-The closure contains the nine generic modules of response 0edda612
+The closure contains the nine permitted generic modules
 (`Filtration.ObjectTransport`, `Tensor.FiniteFiltration`,
 `Tensor.ExternalFiltration`, `Tensor.ExternalSubrepresentation`,
 `Parabolic.InductionSubrepresentation`,
@@ -442,27 +432,27 @@ reached through `Exponents.WeylBranchPiecesSubquotient` and
 proof of a tempered, essentially square-integrable or relative classification
 statement is used.
 
-| Excluded conclusion (target task Independence) | Dependency check |
+| Excluded conclusion (independence conditions of the target) | Dependency check |
 | --- | --- |
-| Parent `GenericSegmentProductUniqueness`, `30341ae4-65f2-4a0e-9283-763db01a409e` | No import or proof use |
-| Multisegment exhaustion, `3bfb61fa-1129-4fc9-83fd-7fcfec22106e` | No import or proof use |
-| Ordered strong-head existence, `ebea9a8a-9b21-4208-aa31-98c2dea1f8a3` | No import or proof use; the individual-segment constructions inside `SegmentHeadTopDerivative` are a different, permitted result |
-| Quotient coverage, `20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584` | No import or proof use |
-| Ordered conversion, `8252833d-c269-41a9-824c-5879e531b23b` | No import or proof use |
-| Tempered uniqueness, `52e97845-36bb-457d-b76f-70753334b88c` | No import or proof use |
-| `SquareIntegrableLanglandsClassification`, `1cb45da2-7007-4351-a694-594fb148b8d1` | No import or proof use; `Unitary.SquareIntegrable*` (unitarity from square-integrable coefficients) enters only through the authorized reducibility closure |
-| Square-integrable exhaustion, `cd8ab97c-0b78-4bce-97c4-d307a28159a4` | No import or proof use |
-| Regular exhaustion, `bf433f0a-921a-428c-b0c0-6475438125ac` | No import or proof use |
-| Full `SegmentHeadProductIrreducibility`, either direction, host `8364e73f-14ec-4d14-8f2b-1555a7c1ce95` | Neither its statement module nor any proof of it is imported; the target statement module is not imported either |
-| Ze80 3.5 and 9.6, their proofs and successors; segment-socle part of `8e5b4563-0365-41c7-b134-70f2a0b36292` | No import or proof use; only the isolated cuspidal-derivative theorem `supercuspidalDerivatives` is used |
-| `SegmentFullJacquetFormula` `ed48ae06-964c-4c84-9e62-978f5a953ca7`, `SegmentHeadJacquetFormula` `55ad1e10-62d8-46b7-a081-909ef0056426`, `SegmentSocleJacquetFormula` `b95105c6-f8bb-4641-ae53-2f49d1e7f034`, `SegmentSpecialJacquetExponentNormFormula` `92aea10f-62ac-4e0b-bd4a-9a80909797c5` | No statement or proof module of these formulas is in the closure |
-| Socle exhaustion `f3a69bc8-7312-4f82-8a7d-ea3c8188cb63`, ordered multisegment socle existence `23189526-80b0-4828-a6d4-7ebec2cbeef5` | No excluded conclusion imported or used; the generic modules introduced under `f3a69bc8` are those authorized by 0edda612 |
-| Segment-socle product irreducibility `2ae5cbe5-0701-4509-88a0-db8cbeb35be4`; unlinked or linked socle structure `23e98d90-6055-4e35-91a9-b0f5d8a84961`, `a55c4267-7e3a-43f6-8bb1-ce319e1d0aa9`, `8fa9f68b-fa1b-431a-97f6-5b163964d1fc`, `7ff2a1e9-89dc-439e-a861-a567b3db92bf` | No import or proof use |
-| Adjacent and two-segment socle commutation `e3634665-571b-4852-9f4c-bab8a1053434`, `cded83f3-df9c-4018-bc61-dc54f5c1f9ab`, `426911b4-6620-413f-8065-04b25287f3bd`, `66e3b87c-647e-41e4-af18-df4d436765f0`; linked socle gluing `c84cd52c-3ff3-4024-be50-8b84dd480888`, `6780b79c-9526-46aa-b8b4-00377d68b1ea`; downstream swaps | No import or proof use; `LeibnizPositiveGluing` and `LeibnizRankZeroGluing` are parts of the general Leibniz filtration proof, not socle gluing; the `LinkedSegment*` modules are not in the closure |
-| Analytic segment classification `aca8805b-054f-4d56-8045-12db7f623404`; forward special-segment essential square-integrability `5eece9e8-7f6b-4ea9-abea-a1f9f1b8c807` | No import or proof use; `SegmentSpecialEssentialSquareIntegrabilityProof` is not in the closure |
-| Two-supercuspidal product irreducibility or structure, including `3c9849a4-a6c0-43ac-9982-d15ed76bf1e9` | Only `twoSupercuspidalAdjacentProductReducible` and its published closure (which contains the 1.11(a) proof), solely for reducibility, under ruling 2b33898b; `TwoSupercuspidalProductStructureProof` is not in the closure |
+| Parent `GenericSegmentProductUniqueness` | No import or proof use |
+| Multisegment exhaustion | No import or proof use |
+| Ordered strong-head existence | No import or proof use; the individual-segment constructions inside `SegmentHeadTopDerivative` are a different, permitted result |
+| Quotient coverage | No import or proof use |
+| Ordered conversion | No import or proof use |
+| Tempered uniqueness | No import or proof use |
+| `SquareIntegrableLanglandsClassification` | No import or proof use; `Unitary.SquareIntegrable*` (unitarity from square-integrable coefficients) enters only through the authorized reducibility closure |
+| Square-integrable exhaustion | No import or proof use |
+| Regular exhaustion | No import or proof use |
+| Full `SegmentHeadProductIrreducibility`, either direction | Neither its statement module nor any proof of it is imported; the target statement module is not imported either |
+| Ze80 3.5 and 9.6, their proofs and successors; segment-socle derivative statements of `SegmentSocleDerivativesStatement` | No import or proof use; only the isolated cuspidal-derivative theorem `supercuspidalDerivatives` is used |
+| `SegmentFullJacquetFormula`, `SegmentHeadJacquetFormula`, `SegmentSocleJacquetFormula`, `SegmentSpecialJacquetExponentNormFormula` | No statement or proof module of these formulas is in the closure |
+| Socle exhaustion, ordered multisegment socle existence | No excluded conclusion imported or used; the generic modules introduced with socle exhaustion are the nine permitted generic modules |
+| Segment-socle product irreducibility; unlinked or linked socle structure | No import or proof use |
+| Adjacent and two-segment socle commutation; linked socle gluing; downstream swaps | No import or proof use; `LeibnizPositiveGluing` and `LeibnizRankZeroGluing` are parts of the general Leibniz filtration proof, not socle gluing; the `LinkedSegment*` modules are not in the closure |
+| Analytic segment classification; forward special-segment essential square-integrability | No import or proof use; `SegmentSpecialEssentialSquareIntegrabilityProof` is not in the closure |
+| Two-supercuspidal product irreducibility or structure | Only `twoSupercuspidalAdjacentProductReducible` and its published closure (which contains the 1.11(a) proof), solely for reducibility, as permitted above; `TwoSupercuspidalProductStructureProof` is not in the closure |
 | Whittaker coinvariant-finiteness conclusions | No such module is in the closure; the Whittaker modules present are Gelfand–Kazhdan multiplicity one, Iwasawa integration, Bruhat-cell distributions and character-change helpers, on the routes listed above |
-| Unproved statements, drafts and pending candidates | None is used as a proof; every theorem applied is a published proof |
+| Unproved statements | None is used as a proof; every theorem applied is a published proof |
 
 ## Scope
 

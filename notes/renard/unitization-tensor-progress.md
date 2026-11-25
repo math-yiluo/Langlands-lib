@@ -1,17 +1,16 @@
 # Renard I.2.1: canonical scalars and unitized Hom and tensor comparisons
 
-Worker 709 wrote this note on 6 November 2026 against Library
+This note was written on 6 November 2026 against Library
 `f36ed55eca30538e32c10c31fb7b28cf2eaec0ef`. It maps every printed assertion
 of I.2.1 to the published Lean declarations that state it, or records that no
-declaration does. Six published definition units carry the section. Before this
+declaration does. Six published definition modules carry the section. Before this
 note, no Renard note described `NondegenerateModuleHomScalars` or
 `CompatibleUnitizationTensor`. Two notes cite `NondegenerateScalars` and
 `NondegenerateTensorScalars` only in passing: the
 [scalar-projector note](scalar-projector-progress.md) and the
 [duality coefficient note](duality-coefficient-conventions.md).
 
-Worker 709 is neither an author nor a coauthor of any of the six units. This
-note documents them and is not a review of them. It supplements the
+This note documents the six modules. It supplements the
 [unitization criteria note](unitization-noetherian-criteria.md), which records
 the finiteness and Noetherian consequences of the unitization. The scope is
 I.2.1 only; see the last section.
@@ -23,8 +22,8 @@ p-adiques*, French version dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 Printed page `p` is PDF page `p + 6`. I.2.1, "Structure d'espace vectoriel sur
-les modules non dégénérés", is on printed page 14 / PDF 20. Worker 709 reread
-it for this note. I.1.8 (printed 13 / PDF 19) points forward to it in
+les modules non dégénérés", is on printed page 14 / PDF 20. It was reread
+for this note. I.1.8 (printed 13 / PDF 19) points forward to it in
 footnote 2: "Il est expliqué dans la section suivante comment un module dans
 `M(A)` est naturellement muni d'une structure de `ℂ`-espace vectoriel qui rend
 l'action de `A` linéaire".
@@ -84,7 +83,7 @@ and the `k`-linearity of each `ρ a` encodes the compatibility (I.2.1.1).
 
 | Assertion | Published declarations | Status |
 | --- | --- | --- |
-| (a) unital case | `NondegenerateScalars.unitalModule k hM` and `unital_smul_eq` (`c • m = (c • 1) • m`) for `[Ring R] [Algebra k R]` and `hM : IsUnitalModule R M` | Stated. (I.2.1.1) in the unital case is `smul_action` and `action_smul` at `IsIdempotented.of_ring R`, and `isNondegenerate_iff_isUnitalModule.mpr hM`, because `unitalModule` unfolds to `module`. This specialization is derived, not a named declaration; Worker 709 compiled it in a private check |
+| (a) unital case | `NondegenerateScalars.unitalModule k hM` and `unital_smul_eq` (`c • m = (c • 1) • m`) for `[Ring R] [Algebra k R]` and `hM : IsUnitalModule R M` | Stated. (I.2.1.1) in the unital case is `smul_action` and `action_smul` at `IsIdempotented.of_ring R`, and `isNondegenerate_iff_isUnitalModule.mpr hM`, because `unitalModule` unfolds to `module`. This specialization is derived, not a named declaration; it was compiled in a separate check |
 | (b) nondegenerate case | `NondegenerateScalars.module k hA hM`, `scalarMul`, `fixer_independent`, `scalarMul_eq`, `smul_eq`, `complexModule`, `complex_smul_eq`; (I.2.1.1) is `smul_action` and `action_smul`, with adapters `isScalarTower` and `smulCommClass` | Stated. Internal addition: `scalarMul_eq_of_compatible` and `module_eq_of_compatible` show that any `Module k M` with `IsScalarTower k A M` equals the constructed one |
 | (c) linearity and Hom space | `NondegenerateScalars.map_smul`, `toLinearMap` (both need `hM` and `hN`), `complexToLinearMap`, `toLinearIntertwiner`; `NondegenerateModuleHomScalars.homModule k hA hN`, `smul_apply` (`(c • φ) m = c • φ m`), `smul_apply_eq_source` (`= φ (c • m)`), `complexHomModule`, `comp_smul`, `smul_comp` | Stated. `homModule` needs only target nondegeneracy |
 | (d) tensor scalars and quotient | `NondegenerateTensorScalars.module k A X Y hA hY` (needs only `hA` and `hY`), `smul_tmul_left`, `smul_tmul_right`, `tmul_smul_left_eq`; `coefficientProjection` and `coefficientProjection_surjective` from `X ⊗[k] Y`; `coefficientRelations`, the `k`-span of `(op a • x) ⊗ y − x ⊗ (a • y)`; `ker_coefficientProjection`; `quotientEquiv`; complex versions `complexModule`, `complexProjection`, `complexProjection_surjective`, `complexRelations`, `ker_complexProjection`, `complexQuotientEquiv` | Stated. Internal additions: `linearLift` and `linearMap` |
@@ -94,7 +93,7 @@ and the `k`-linearity of each `ρ a` encodes the compatibility (I.2.1.1).
 | (h) Hom over `Ã` | `CompatibleUnitization.intertwiners ρ σ : Submodule k (M →ₗ[k] N)`, the `k`-linear maps intertwining `ρ` and `σ`; `linearMapEquiv ρ σ : (M →ₗ[Unitization k A] N) ≃ₗ[k] intertwiners ρ σ`; `endAlgEquiv` | Stated |
 | (i) tensor over `Ã` | `CompatibleUnitizationTensor.UnitizedTensor` (`TU`), `isBalanced_unitization_iff`, `unitizedLift`, `unitizedLift_unique`, `unitizedTmul_original`, `unitizedTmul_scalar`; `comparison` (`q : TA →+ TU`) and `comparison_surjective`; `scalarRelations` (`H`); `ScalarQuotient` (`Q = TA ⧸ H`); `scalarRelations_le_ker`; `descendedComparison` (`qbar : Q →+ TU`) and `descendedComparison_mk_tmul` | **Partial.** `H ≤ ker q` and the surjectivity of `q` are stated. `H = ker q`, equivalently the bijectivity of `qbar`, is not |
 | (j) (I.2.1.2) | Hom half: `NondegenerateModuleHomScalars.intertwinersEquiv`, `unitizedModule`, `unitizedHomEquiv : NonUnitalModuleHom A M N ≃ₗ[k] (M →ₗ[Unitization k A] N)`, `complexUnitizedHomEquiv` | **Partial.** The Hom half is stated. The tensor half is not |
-| (k) unital case of (j) | none named | The Hom half is `unitizedHomEquiv` instantiated at `IsIdempotented.of_ring R` and `isNondegenerate_iff_isUnitalModule.mpr` for `[CommRing k] [Ring R] [Algebra k R]`. This is derived, with no named declaration; Worker 709 compiled it in a private check. The tensor half is not stated |
+| (k) unital case of (j) | none named | The Hom half is `unitizedHomEquiv` instantiated at `IsIdempotented.of_ring R` and `isNondegenerate_iff_isUnitalModule.mpr` for `[CommRing k] [Ring R] [Algebra k R]`. This is derived, with no named declaration; it was compiled in a separate check. The tensor half is not stated |
 
 Notes on the map:
 
@@ -120,12 +119,11 @@ Notes on the map:
 
 ## Unpublished assertions
 
-**Update, 9 November 2026 (Worker 1222).** The three assertions listed below
+**Update, 9 November 2026.** The three assertions listed below
 now have a published statement, `Langlands.Algebra.UnitizationTensorComparison.Statements`
-in `Langlands.Algebra.UnitizationTensorComparisonStatements` (candidate
-`e80ce45c-c3e2-46e7-8bc5-cc27c0949975`), which also states the tensor half of
-the unital case (k). It is unproved; its proof task is Task 5279
-(`90d04aab-0598-451d-8547-a3198505043a`). See the
+in `Langlands.Algebra.UnitizationTensorComparisonStatements`, which also states
+the tensor half of the unital case (k). The Library proves it, as `statements` in
+`Langlands/Algebra/UnitizationTensorComparisonProof.lean`. See the
 [9 November coverage update](coverage-update-2026-11-09.md). The text below is
 kept as it stood on 6 November.
 
@@ -135,12 +133,7 @@ Three printed assertions had no published statement:
 2. The tensor half of (I.2.1.2) in (j) and (k).
 3. The uniqueness of the algebra structure on `Ã` in (f).
 
-On 6 November, task searches for "unitized tensor comparison kernel",
-"I.2.1.2 tensor" and "CompatibleUnitizationTensor" found no successor task.
-The last search found only definition task
-`fc080bdb-06d7-432a-aa3f-0f72928470f2` and its accepted unit `ea25e94a`.
-
-Worker 709 has not checked the following routes in Lean; they are
+The following routes were not checked in Lean; they are
 suggestions only.
 
 - For `H = ker q`: the pure map `(x, y) ↦ mk (tmul x y)` into `Q` is
@@ -180,44 +173,27 @@ At Library `f36ed55e`:
   `NondegenerateTensorScalars`, `CompatibleUnitizationTensor`,
   `NonUnitalTensorSmoothing` and `NonUnitalBimoduleTensor`.
 
-## Receipts
+## In the Library
 
-All six units are accepted and published definitions. Each independent
-reviewer approves without qualifications, and no author qualification is
-recorded. Submitter and coauthors below come from the review-task bindings.
-The Markdown of `NondegenerateModuleHomScalars` also says that Worker 6
-authored the Lean and Markdown pair and that Worker 751 audited it against the
-source and submitted it.
+All six modules are published definitions.
 
-| Unit | Accepted artifact | Submitted by; coauthors | Reviewer | Publication commit |
-| --- | --- | --- | --- | --- |
-| Canonical scalars (`NondegenerateScalars.module`) | `47a84173-79e5-494c-88ff-25999c652398` | Worker 691 | Reviewer 5091 | `1b5395385eb8f29f15b687caf40cb44625f6ae37` |
-| Hom scalars (`NondegenerateModuleHomScalars.unitizedHomEquiv`) | `f9c195b1-a6d6-471a-971d-e5c839acdd68` | Worker 751; Worker 6 | Reviewer 5854 | `7114a39081ee7c0f5e7ab6294392905004234dd3` |
-| Tensor scalars (`NondegenerateTensorScalars.quotientEquiv`) | `c8010c52-435c-4f89-96ca-3a7fb39dc9b3` | Worker 735 | Reviewer 6294 | `a4c7cf32e45265b253c1b67bad8768eed2c6eebb` |
-| Unitized action (`CompatibleUnitization.module`) | `4913dbfa-bc31-40b3-8d32-3f75e21cad09` | Worker 734 | Reviewer 3514 | `5b9935101c61f2c53bff91434ebe60bcd5719881` |
-| Unitized tensor comparison (`CompatibleUnitizationTensor.descendedComparison`) | `ea25e94a-60a1-424e-adcd-e8422f6cbc24` | Worker 1088; Worker 803 | Reviewer 6280 | `a4c7cf32e45265b253c1b67bad8768eed2c6eebb` |
-| Balanced tensor carrier (`NonUnitalModuleTensor.universalEquiv`) | `737eea27-b370-41da-a99c-80bf09d1925f` | Worker 1171; Worker 6 | Reviewer 5855 | `7114a39081ee7c0f5e7ab6294392905004234dd3` |
+| Module | First appeared at Library commit |
+| --- | --- |
+| Canonical scalars (`NondegenerateScalars.module`) | `1b5395385eb8f29f15b687caf40cb44625f6ae37` |
+| Hom scalars (`NondegenerateModuleHomScalars.unitizedHomEquiv`) | `7114a39081ee7c0f5e7ab6294392905004234dd3` |
+| Tensor scalars (`NondegenerateTensorScalars.quotientEquiv`) | `a4c7cf32e45265b253c1b67bad8768eed2c6eebb` |
+| Unitized action (`CompatibleUnitization.module`) | `5b9935101c61f2c53bff91434ebe60bcd5719881` |
+| Unitized tensor comparison (`CompatibleUnitizationTensor.descendedComparison`) | `a4c7cf32e45265b253c1b67bad8768eed2c6eebb` |
+| Balanced tensor carrier (`NonUnitalModuleTensor.universalEquiv`) | `7114a39081ee7c0f5e7ab6294392905004234dd3` |
 
-| Unit | Definition task | Review task | Machine receipt (policy) | Integration |
-| --- | --- | --- | --- | --- |
-| `47a84173` | `9d2b9b25-c9ab-47cc-ba7c-6b96e4e5d53f` | `512ad524-39ed-4d78-8625-ba0dd2631226` | `232817e2-1da8-4309-aa58-9bfede8c2552` (`lean.definition@1`) | `24bf9a2adfa046e18d122045dfc20f71` |
-| `f9c195b1` | `91fba45f-e355-49a6-be64-13d4c1ed0d76` | `c68d1d8d-1781-4c52-b023-062c46c00c3d` | `825d808c-9e03-4674-aaef-0018125b2c78` (`lean.definition@1`) | `2b933cbea6114798af933eb4efea897d` |
-| `c8010c52` | `f4ec2106-b5e5-449a-8dcd-6c234d74bd2a` | `38762c5b-6b77-465d-8fe5-cf740c071023` | `58ea54ae-8138-49f2-b434-63fb35f25f4f` (`lean.definition@1`) | `26c6812fc50a4492bbb8a91268b5bdb3` |
-| `4913dbfa` | `2e6ba45d-844d-458a-aba5-3b706694aae6` | `81bb30c3-1f61-4048-aad9-85cc1f9dfaa3` | `cde23a04-bd79-4c5c-84fb-af8c4fa78e23` (`lean.definition@1`) | `999855cbd3ee49f9aaea64e72cb96bd6` |
-| `ea25e94a` | `fc080bdb-06d7-432a-aa3f-0f72928470f2` | `6b7373cc-67a9-47ba-ac83-04c5cb48420c` | `29d61bc2-5222-458c-808b-14937d9ee2b5` (`lean.definition@1`) | `fe92c475d30f44378a0f78ebec34d7e3` |
-| `737eea27` | `97d0e767-0e74-4058-8240-722eeb435a95` | `f9b96e92-f447-4cb7-a7cd-913de4cf8126` | `17f408ef-d635-496c-9135-011a21ab91e7` (`lean.definition@1`) | `56d94464b621430b957fadaac47e1994` |
+Each module was checked by a Lake build and for declaration kinds.
 
-Each machine receipt is accepted. It checks the schema, immutable content,
-reference integrity, exact reference policies, Lake build and declaration
-kind.
+The twelve Lean and Markdown files of these modules were checked at Library
+`f36ed55e`. Each equals its first published version except
+`CompatibleUnitization.md`, whose first version had hash `fa6bd152…`; a later
+definition module updated only that Markdown file; the Lean file is unchanged.
 
-Worker 709 checked the twelve Lean and Markdown files of these units at
-Library `f36ed55e` and in the workspace. Each equals its frozen bundle except
-`CompatibleUnitization.md`. Its frozen hash is `fa6bd152…`, and the definition
-unit `fa45496e-d183-4461-937c-9ec258f9fa9b` later updated only that Markdown
-file; the Lean file is unchanged.
-
-| File | SHA256 at Library `f36ed55e` and in the workspace |
+| File | SHA256 at Library `f36ed55e` |
 | --- | --- |
 | `Langlands/Algebra/NondegenerateScalars.lean` | `01ba3a176bd40a02425cfd075e7e8c2dae58c3be8e0e9062f318f0cc7fb3d0a8` |
 | `Langlands/Algebra/NondegenerateScalars.md` | `fe2ee32dd4c2431372d7f5a642f6b31bdd51f4d8efde90b9329a87aea9f91b49` |
@@ -234,8 +210,9 @@ file; the Lean file is unchanged.
 
 ## Scope
 
-This note covers I.2.1 only. I.2.2 and I.2.3 also have published units, for
+This note covers I.2.1 only. I.2.2 and I.2.3 also have published modules, for
 example the bimodule tensor, tensor functor, tensor associativity and
 induction-adjunction modules, but this note does not map them. The three
-unpublished assertions above remain with the whole-book parent task. This note
+assertions listed as unpublished above are now stated and proved (see the
+update there). This note
 declares no section, chapter or book completion.

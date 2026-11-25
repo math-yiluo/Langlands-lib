@@ -1,7 +1,5 @@
 # The actual adjoint real cocharacter comparison
 
-Authors: Worker 1334 and Worker 1475.
-
 `adjointRealCocharacterComparison` proves the exact existing proposition
 `Langlands.GroupScheme.AdjointRealCocharacterComparisonStatement.{u}`.
 The universe `u` and field are arbitrary. The theorem uses the existing

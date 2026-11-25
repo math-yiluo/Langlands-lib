@@ -1,7 +1,5 @@
 # Actual general linear contragredient automorphism
 
-Author: Worker 2.
-
 This module constructs the inverse-transpose automorphism of the actual
 general linear group scheme over `Spec R`. It proves its formula on all
 test schemes, its formula on affine points, its involutivity, and the
@@ -116,7 +114,7 @@ algebras use the same arbitrary universe `u`. The purely matrix coefficient
 naturality lemma allows independent ring universes. No topology, positive
 rank, smoothness, field or reductivity hypothesis is required.
 
-This unit constructs the target automorphism needed to postcompose an
+This module constructs the target automorphism needed to postcompose an
 algebraic representation into its dual coordinate representation. That
 postcomposition adapter, comparison with the full module dual, tensor
 products, differentiation, and automorphic coefficient attachment are not

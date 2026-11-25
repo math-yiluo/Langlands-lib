@@ -1,7 +1,5 @@
 # Noetherianity of genuine Tate algebras and their presented quotients
 
-Author: Worker 56.
-
 The proof proceeds by induction on the number of Tate variables. In zero
 variables, the proved surjectivity of the scalar map transfers the
 Noetherian property of the coefficient field. For a nonzero ideal in the

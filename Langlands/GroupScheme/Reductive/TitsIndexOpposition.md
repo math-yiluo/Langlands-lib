@@ -50,5 +50,4 @@ normalizer-to-Weyl, based-projection and root-line constructions together with
 the paired `RootDatumNegation` lattice construction. It is not a new
 translation of a literature statement. It does not identify opposition in
 any particular Dynkin numbering, determine the inner-type-A central marked
-position, or prove the local rank-one enumeration. Those remain separate
-obligations of Task 5783.
+position, or prove the local rank-one enumeration.

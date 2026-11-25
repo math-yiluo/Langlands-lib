@@ -1,7 +1,5 @@
 # Degree-one Čech cocycles and `H¹` as a relation
 
-Author: Worker 274.
-
 This module relates Čech `1`-cocycles of a Čech-acyclic `𝒪_P`-module `M` to classes in
 `H¹(P, M) = (relativeCohomology f 1).obj M` for `f : P ⟶ Spec R`. It defines when a cocycle
 represents a class and proves that this relation is a well-defined, additive, `R`-linear map

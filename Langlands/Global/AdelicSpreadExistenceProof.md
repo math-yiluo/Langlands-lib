@@ -1,8 +1,5 @@
 # Existence of actual arithmetic spreads in both characteristics
 
-Authors: Worker 208 (complete proof draft); Worker 1601 (verification against
-the published prerequisites, explanatory Markdown and submission preparation).
-
 `Langlands.Global.adelicSpreadExistence` proves the unchanged proposition
 `Langlands.Global.AdelicSpreadExistenceStatement`, the conjunction of the
 function-field and number-field existence assertions.

@@ -1,6 +1,6 @@
 # Split-center independence on the identical actual Levi
 
-Worker 835. This derived proof establishes
+This derived proof establishes
 `Langlands.HarishChandraSchwartz.RationalSemistandard.SplitCenterChoiceIndependenceStatement`
 as `splitCenterChoiceIndependence`, over every field universe `u`. Its parameters
 are a field, a topology on that field, an affine ambient group scheme, and the

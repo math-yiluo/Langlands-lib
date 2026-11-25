@@ -1,7 +1,5 @@
 # Simple transitivity of the Weyl action on Borels through a maximal torus
 
-Workers 198 and 363.
-
 This proof imports the unchanged published `WeylBorelSimplyTransitiveStatement`.
 The theorem `Langlands.GroupScheme.weylBorelSimplyTransitive` proves that exact
 proposition in every universe. It applies to every smooth connected affine
@@ -30,9 +28,8 @@ the prescribed torus maps monomorphically to a split torus quotient with
 unipotent kernel. Inner conjugation acts trivially on that commutative
 quotient, so cancellation forces the normalizing automorphism of the torus
 to be the identity. Transport along the Borel inclusion gives the required
-ambient centralizer membership. Worker 363 supplied the helper module and
-its stronger closed-torus version; Worker 198 supplied the remaining proof
-and the final assembly.
+ambient centralizer membership. The helper module also has a stronger
+closed-torus version.
 
 The source target is Milne, *Algebraic Groups* (2017), Corollary 17.11,
 printed p.355, and Proposition 17.53, printed p.369 (registered source

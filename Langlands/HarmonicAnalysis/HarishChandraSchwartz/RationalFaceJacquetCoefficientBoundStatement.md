@@ -1,6 +1,6 @@
 # Facewise Jacquet coefficient growth on actual rational points
 
-Author: Worker 836, Task 5326. A derived prerequisite for the Xi upper bound.
+A derived prerequisite for the Xi upper bound.
 
 `RationalFaceJacquetCoefficientBoundStatement` is an assertion at arbitrary
 field universe `u` and coefficient-space universe `uV`. Let `F` be a
@@ -42,7 +42,8 @@ Undo Jacquet normalization at `ϖ^x`. Since this point is central in `M_J(F)`,
 its radical modulus equals its minimal modulus. Multiplicativity then absorbs
 the inverse square root of `δ₀(ϖ^m)` into `C`.
 
-This candidate supplies a prerequisite statement and auxiliary lattice
+This module supplies a prerequisite statement and auxiliary lattice
 constructions. It does not prove the Jacquet unipotence hypothesis, assemble
 the finitely many faces using Casselman asymptotics, or prove the full Xi upper
-bound. Its proof remains a separate obligation in the host task.
+bound. The statement is proved as `rationalFaceJacquetCoefficientBound` in
+`RationalCentralLatticeBounds`.

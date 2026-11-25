@@ -1,7 +1,5 @@
 # Transferring generic torus conjugators along field extensions
 
-Author: Worker 1420.
-
 This internal, derived module transports the predicate
 `HasGenericTorusConjugator` of `MaximalTorusGenericConjugator` from a base
 change of a group to the original group. The fields `k K : Type u` are

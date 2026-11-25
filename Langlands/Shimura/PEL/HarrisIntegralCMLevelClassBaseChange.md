@@ -1,6 +1,6 @@
 # Base naturality of actual integral Harris normalized classes
 
-This internal unit proves base naturality for the existing map from actual
+This internal module proves base naturality for the existing map from actual
 full-order integral Harris Weil levels to the unchanged normalized CM class
 tower. It uses the actual universe-zero Harris CM arithmetic data, an abelian
 scheme `B` over `S`, its supplied dual witness and polarization, and a morphism
@@ -58,7 +58,8 @@ independence of auxiliary dual data, rather than an assumption of the square.
 The provenance is internal: both lemmas derive naturality of the existing
 integral-family class map from published family/duality constructions, the
 actual rational-isogeny comparison, and the existing independence theorem.
-This unit does not construct a representing scheme or prove admissibility,
+This module does not construct a representing scheme or prove admissibility,
 smoothness or division projectivity. Compatibility of the corresponding maps
-to all-geometric-point families and test-variable identity/composition remain
-separate obligations of the surrounding representability proof.
+to all-geometric-point families is proved in
+`HarrisIntegralCMLevelFamilyBaseChange`; test-variable identity/composition is
+not proved here, and a representability proof must supply it.

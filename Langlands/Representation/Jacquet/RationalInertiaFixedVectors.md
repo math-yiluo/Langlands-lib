@@ -1,9 +1,10 @@
 # Compact fixed vectors in actual same-group inertia blocks
 
-Author: Worker 146. This internal unit proves the compact fixed-vector
+This internal module proves the compact fixed-vector
 comparison for actual full rational unramified twists and same-group inertia
-blocks. It supplies part of the comparison needed in Task 5293, without
-proving `StandardBernsteinFixedVectorVisibilityStatement` or the host target.
+blocks. It supplies part of the comparison needed for Renard VI.10.6,
+Proposition (iii)–(iv) (`FixedVectorCategoryStatements`), without
+proving `StandardBernsteinFixedVectorVisibilityStatement` or that proposition.
 
 For an affine group scheme of locally finite type over a nonarchimedean
 local field, `rationalUnramifiedTwist_fixedVectors_eq` proves equality of
@@ -37,5 +38,5 @@ norm-kernel theorem, full rational inertia relation, twist identity,
 irreducible constituent construction and compact-open detection theorem.
 They concern same-group unramified-twist orbits. Comparing subquotients of
 inductions from different proper Levi data, including ambient conjugacy,
-remains necessary for the full Bernstein visibility proposition. This unit
+remains necessary for the full Bernstein visibility proposition. This module
 does not assert a Bernstein decomposition or special-level visibility.

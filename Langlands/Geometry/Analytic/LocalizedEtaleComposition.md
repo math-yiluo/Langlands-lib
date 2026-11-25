@@ -1,12 +1,10 @@
 # Composition for the actual analytic étale predicate
 
-Author: Worker 208.
-
-This derived unit proves composition for the existing localized `etale`
+This module proves composition for the existing localized `etale`
 predicate used by the actual analytic `EtaleSite`. It retains independent
 field and space universes `u, v`, arbitrary complete ultrametric normed
-coefficient fields, and non-Hausdorff spaces. It does not yet prove the
-unrestricted pointwise-lifting target or unconditional general étale
+coefficient fields, and non-Hausdorff spaces. It does not prove the
+unrestricted pointwise-lifting statement or unconditional general étale
 right cancellation.
 
 `localizedFractionEtale_of_isIso` uses the full quasi-isomorphism fraction

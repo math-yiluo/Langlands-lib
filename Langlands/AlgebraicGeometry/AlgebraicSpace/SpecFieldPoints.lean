@@ -213,7 +213,7 @@ theorem fst_invariant_of_galois_stable {F : Presheaf (Spec (CommRingCat.of k))}
     obtain ⟨σ, hσ⟩ := exists_galois_of_hom s x.2.down y.2.down
     have hy : y = (extProd.mapRight (specOverMap σ.toAlgHom)).app _ x := by
       refine Prod.ext hxy.symm ?_
-      exact ULift.ext _ _ hσ
+      exact ULift.ext hσ
     rw [hy]
     exact hstab σ _ x hx
   apply OpenSubfunctorPoints.invariant_of_field_tests hW extProd.fst

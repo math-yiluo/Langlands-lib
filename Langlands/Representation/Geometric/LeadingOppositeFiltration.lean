@@ -60,14 +60,11 @@ def leadingOppositeFiltrationOfUpper
       (f.monotone A) (f.zero A) (f.top A)
   refine ⟨⟨P, Q, hP, hQ, m, δ.trans e, oppositeFiltrationOfReverse T B I s, ?_⟩⟩
   intro j
+  rw [Equiv.trans_apply]
   obtain ⟨ψ⟩ := hf j
-  let g : (s.gradedRepresentation j).ρ.Equiv
-      ((geometricPieceFunctor T B B.reverse (e (δ j)).val
-        (P (e (δ j))) (Q (e (δ j)))
-        (hP (e (δ j))).2.1 (hQ (e (δ j))).2.1).obj A).ρ :=
-    Representation.equivOfIso (ψ.app A)
-  exact ⟨(oppositeFiltrationOfReverseGradedEquiv T B I s j).symm.trans
-    (FiniteTensorFiltration.compCongr g (leviReverseEquiv B).toMonoidHom)⟩
+  refine ⟨(oppositeFiltrationOfReverseGradedEquiv T B I s j).symm.trans
+    (FiniteTensorFiltration.compCongr ?_ (leviReverseEquiv B).toMonoidHom)⟩
+  exact Representation.equivOfIso (ψ.app A)
 
 /-- The raw inverse reversal is a minimal representative from B to B.reverse. -/
 def inverseReversalMinimal : MinimalRepresentatives B B.reverse :=

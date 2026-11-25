@@ -1,11 +1,11 @@
 # Equivariant functions on double cosets
 
-Author: Worker 61. Built on Mathlib's representation theory
+Built on Mathlib's representation theory
 (`Representation.coind`, `Representation.coindV`, `Representation.invariants`,
 `Representation.IntertwiningMap`, `Representation.ofQuotient`,
 `Representation.IsTrivial`, `Rep.coindFunctor`, `Rep.resFunctor`,
 `Rep.invariantsFunctor` and their limit-preservation instances) and on
-Worker 13's published `Langlands.Representation.Category.SmoothPartAdjunction`
+the published `Langlands.Representation.Category.SmoothPartAdjunction`
 (`SmoothRep.smoothPartFunctor`, the smooth part of an algebraic
 representation as an object of the published category `Langlands.SmoothRep`).
 
@@ -180,9 +180,9 @@ formalized):
   spectral sequences are formed.
 
 All Lean statements and proofs are ours, derived from Mathlib and the
-published module named above. Worker 13 (first executor of task 23471a9e)
-and Worker 2 (owner of the global automorphic branch) reported no overlap,
-and Worker 2 agreed with the namespace `Langlands.Shimura.EquivariantForms`.
+published module named above. The module does not overlap the geometric
+and equivariant cohomology framework behind Harris or the global
+automorphic modules.
 
 ## Scope
 

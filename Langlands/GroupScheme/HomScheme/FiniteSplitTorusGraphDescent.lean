@@ -115,6 +115,7 @@ theorem existsUnique_hom_of_finite_graph_image
     (e.inv.hom.hom.left ≫ a.toImage) (0 < ·)
     (fun n => ⟨n + 1, Nat.zero_lt_succ n, Nat.lt_succ_self n⟩) htor
   have hg₀ : p ≫ g = a.toImage := by
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
     apply (cancel_epi e.inv.hom.hom.left).mp
     rwa [← Category.assoc, baseChangeIso_inv_fst]
   let g₀ := g ≫ a.imageι ≫ (snd (H) G).hom.hom.left

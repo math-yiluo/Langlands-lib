@@ -1,9 +1,9 @@
 # Existence of the essential vector from the JPSS inputs
 
-This internal unit proves the existence half of Jacquet 2012, Theorem 1 (printed page
+This module proves the existence half of Jacquet 2012, Theorem 1 (printed page
 517), conditional on three analytic inputs. Jacquet takes these from Jacquet,
 Piatetski-Shapiro and Shalika 1983 in sections 1-2 of the correction (printed pages
-518-522). They are explicit hypotheses of the final theorem; this unit claims no
+518-522). They are explicit hypotheses of the final theorem; this module claims no
 instance of them. Everything else in Jacquet's existence argument is proved here or in
 published modules, over an arbitrary nonarchimedean local field. Uniqueness is a
 separate matter (`Conductor/EssentialUniquenessReduction`).

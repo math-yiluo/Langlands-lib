@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 
 /-! # Common affine neighbourhoods of finitely many points of codimension at most one -/
 

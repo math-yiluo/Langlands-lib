@@ -1,6 +1,5 @@
 # Proof of the VII.2.6 uniqueness assertion
 
-Author: Worker 4772, for proof task `225f7d3d-bb91-4746-9084-ea6b91241e41`.
 The module proves the published proposition
 `Langlands.Aubert.General.RepresentedParabolic.TemperedIrreducibleDiscreteSeriesUniquenessStatement`.
 This is the second assertion of the Theorem of Renard, *Représentations des groupes
@@ -22,12 +21,12 @@ square-integrable modulo the center for every Haar measure. Then there are
 
 The published `temperedIrreducibleDiscreteSeriesUniqueness_of_inputs`
 (`TemperedIrreducibleDiscreteSeriesUniquenessReduction.lean`) derives the target from
-seven published propositions. Six of them now have published proofs, which this
+seven published propositions. Six of them have published proofs, which this
 module imports:
 
 | Input | Published proof |
 | --- | --- |
-| VII.2.1 Remark 2, `SquareIntegrableNormalizedTemperedStatement` | `squareIntegrableNormalizedTempered` (Worker 4713) |
+| VII.2.1 Remark 2, `SquareIntegrableNormalizedTemperedStatement` | `squareIntegrableNormalizedTempered` |
 | VII.2.2, `LeviInductionNormalizedTemperedStatement` | `leviInductionNormalizedTempered` |
 | quotient compactness, `ArbitraryParabolicQuotientCompactStatement` | `arbitraryParabolicQuotientCompact` |
 | VII.2.5, `TemperedGeometricLemmaStatement` | `temperedGeometricLemma` |
@@ -35,7 +34,7 @@ module imports:
 | `StandardCocharacterStatement` | `standardCocharacter` |
 
 The seventh input, the VII.2.4 Lemma `TemperedSquareIntegrableUnitaryPartStatement`,
-is an equivalence. Its proof is open (task `f0ff1d42-b2ac-439b-a08d-8e2d120a78fa`).
+is an equivalence. It is not proved in the Library.
 Its reverse direction needs the sufficiency half of Casselman's criterion. The
 reduction uses only its forward direction, in two places:
 `NonzeroUnitaryPieceMap.isIso_left_of_squareIntegrable` (`ActualUnitaryPieceFullness.lean`)
@@ -64,7 +63,7 @@ That statement also assumes temperedness and a central character; this theorem d
 
 Proof. The published `parabolicRootPresentationExistence` gives a
 `ParabolicRootPresentation p l a`. The published `arbitraryParabolicCasselmanNecessity`
-(Worker 4712) puts the real part of every normalized Jacquet exponent of `π` in the
+puts the real part of every normalized Jacquet exponent of `π` in the
 strictly positive cone of that presentation. The published
 `unitaryJacquetPart_eq_bot_of_positive_exponents` concludes. It uses
 `unitaryJacquetPart_eq_bot_iff`, and the fact that `0` is not in the strictly positive
@@ -157,7 +156,7 @@ module for the two fullness steps:
 
 The entry theorem, of type exactly
 `TemperedIrreducibleDiscreteSeriesUniquenessStatement.{u, v}`. It applies the previous
-theorem to Worker 4713's published `squareIntegrableNormalizedTempered`.
+theorem to the published `squareIntegrableNormalizedTempered`.
 
 ## Scope
 

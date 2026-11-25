@@ -1,7 +1,5 @@
 # Rational conjugacy of minimal pseudo-parabolic subgroups
 
-Author: Worker 1335.
-
 `Langlands.GroupScheme.MinimalPseudoParabolicConjugacyStatement.{u}` states
 Theorem C.2.5 of Conrad–Gabber–Prasad, *Pseudo-reductive groups*, second edition
 (2015), printed p.595 (PDF p.621). The registered source is

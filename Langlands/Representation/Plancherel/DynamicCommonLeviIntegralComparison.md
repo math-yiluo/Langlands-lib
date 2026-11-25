@@ -2,7 +2,8 @@
 
 This internal adapter extends the published
 `DynamicCommonLeviStructuralComparison` maps. It is a derived formal transport
-unit for Task 7511, rather than an additional source theorem. The source context
+module for the actual common-Levi presentation reduction from Waldspurger IV.1.1,
+rather than an additional source theorem. The source context
 is Waldspurger (2003), IV.1, printed pp.276–278, registered as
 `waldspurger-2003-plancherel`. It proves no analytic convergence theorem.
 

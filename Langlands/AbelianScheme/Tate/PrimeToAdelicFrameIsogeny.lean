@@ -28,16 +28,16 @@ variable {S : Scheme.{u}} {A B C : AbelianScheme S}
 
 /-- Postcompose actual Tate frames with an intertwining rational isogeny. -/
 def primeToAdelicFrameIsogeny (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d)) :
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom) :
     PrimeToAdelicFrame A m hAway iA V s ≃ PrimeToAdelicFrame B m hAway iB V s := by
   letI := primeToFiniteAdeleAlgebraModule A (Over.mk s) hAway iA
   letI := primeToFiniteAdeleAlgebraModule B (Over.mk s) hAway iB
   exact LinearFrame.postcomp (primeToFiniteAdeleAlgebraIso (Over.mk s) hAway iA iB e he)
 
 @[simp] theorem primeToAdelicFrameIsogeny_apply (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d)) (eta : PrimeToAdelicFrame A m hAway iA V s) (x : V) :
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom) (eta : PrimeToAdelicFrame A m hAway iA V s) (x : V) :
     primeToAdelicFrameIsogeny m hAway iA iB V s e he eta x =
       rationalHomMap (Over.mk s) (fun n => Nat.Coprime n m) e.hom (eta x) := rfl
 
@@ -50,10 +50,10 @@ def primeToAdelicFrameIsogeny (e : Rationalization.of A ≅ Rationalization.of B
 theorem primeToAdelicFrameIsogeny_trans (iC : D →ₐ[ℚ] Rationalization.End C)
     (e : Rationalization.of A ≅ Rationalization.of B)
     (f : Rationalization.of B ≅ Rationalization.of C)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
-    (hf : ∀ d, Rationalization.comp B B C (iB d) f.hom =
-      Rationalization.comp B C C f.hom (iC d)) (eta : PrimeToAdelicFrame A m hAway iA V s) :
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
+    (hf : ∀ d, Rationalization.comp B B C (iB d).asHom f.hom =
+      Rationalization.comp B C C f.hom (iC d).asHom) (eta : PrimeToAdelicFrame A m hAway iA V s) :
     primeToAdelicFrameIsogeny m hAway iA iC V s (e.trans f)
         (rationalIntertwines_comp iA iB iC e.hom f.hom he hf) eta =
       primeToAdelicFrameIsogeny m hAway iB iC V s f hf (primeToAdelicFrameIsogeny m hAway iA iB V s e he eta) := by
@@ -62,8 +62,8 @@ theorem primeToAdelicFrameIsogeny_trans (iC : D →ₐ[ℚ] Rationalization.End 
   exact LinearMap.congr_fun (rationalHomMap_comp (Over.mk s) (fun n => Nat.Coprime n m) e.hom f.hom) (eta x)
 
 theorem primeToAdelicFrameIsogeny_symm (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d)) :
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom) :
     (primeToAdelicFrameIsogeny m hAway iA iB V s e he).symm =
       primeToAdelicFrameIsogeny m hAway iB iA V s e.symm (rationalIntertwines_inverse iA iB e he) := by
   apply Equiv.ext
@@ -81,8 +81,8 @@ variable {G : Type z} [Group G]
 /-- Rational-isogeny transport on fixed right orbits for the same geometric point. -/
 def primeToAdelicFrameOrbitIsogeny (U : Subgroup G)
     (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d)) :
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom) :
     PrimeToAdelicFrameOrbit A m hAway iA V s ρ hs htor hu U ≃
       PrimeToAdelicFrameOrbit B m hAway iB V s ρ hs htor hu U := by
   letI := primeToFiniteAdeleAlgebraModule A (Over.mk s) hAway iA
@@ -120,10 +120,10 @@ def primeToAdelicFrameOrbitIsogeny (U : Subgroup G)
 theorem primeToAdelicFrameOrbitIsogeny_trans (iC : D →ₐ[ℚ] Rationalization.End C) (U : Subgroup G)
     (e : Rationalization.of A ≅ Rationalization.of B)
     (f : Rationalization.of B ≅ Rationalization.of C)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
-    (hf : ∀ d, Rationalization.comp B B C (iB d) f.hom =
-      Rationalization.comp B C C f.hom (iC d)) :
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
+    (hf : ∀ d, Rationalization.comp B B C (iB d).asHom f.hom =
+      Rationalization.comp B C C f.hom (iC d).asHom) :
     primeToAdelicFrameOrbitIsogeny m hAway iA iC V s ρ hs htor hu U (e.trans f)
         (rationalIntertwines_comp iA iB iC e.hom f.hom he hf) =
       (primeToAdelicFrameOrbitIsogeny m hAway iA iB V s ρ hs htor hu U e he).trans
@@ -150,8 +150,8 @@ theorem primeToAdelicFrameOrbitIsogeny_trans (iC : D →ₐ[ℚ] Rationalization
 
 theorem primeToAdelicFrameOrbitIsogeny_symm (U : Subgroup G)
     (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d)) :
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom) :
     (primeToAdelicFrameOrbitIsogeny m hAway iA iB V s ρ hs htor hu U e he).symm =
       primeToAdelicFrameOrbitIsogeny m hAway iB iA V s ρ hs htor hu U e.symm
         (rationalIntertwines_inverse iA iB e he) := by
@@ -175,8 +175,8 @@ theorem primeToAdelicFrameOrbitIsogeny_symm (U : Subgroup G)
 
 theorem primeToAdelicFrameOrbitIsogeny_translate {U U' : Subgroup G}
     (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d)) (g : G)
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom) (g : G)
     (hg : ∀ u ∈ U, g⁻¹ * u * g ∈ U')
     (x : PrimeToAdelicFrameOrbit A m hAway iA V s ρ hs htor hu U) :
     primeToAdelicFrameOrbitIsogeny m hAway iA iB V s ρ hs htor hu U' e he
@@ -201,8 +201,8 @@ theorem primeToAdelicFrameOrbitIsogeny_translate {U U' : Subgroup G}
 
 theorem primeToAdelicFrameOrbitIsogeny_forget {U U' : Subgroup G}
     (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d)) (hU : U ≤ U')
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom) (hU : U ≤ U')
     (x : PrimeToAdelicFrameOrbit A m hAway iA V s ρ hs htor hu U) :
     primeToAdelicFrameOrbitIsogeny m hAway iA iB V s ρ hs htor hu U' e he
         (primeToAdelicFrameOrbitForget A m hAway iA V ρ htor hu hU x) =
@@ -214,8 +214,8 @@ variable {t : Spec (.of Ω') ⟶ S} {ht : ∀ Y : Cover S, Finite (Fiber t Y)}
 
 /-- Rational-isogeny transport commutes with geometric path transport on frames. -/
 theorem primeToAdelicFrameIsogeny_transport (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (p : fiberFunctor s hs ≅ fiberFunctor t ht) (eta : PrimeToAdelicFrame A m hAway iA V s) :
     primeToAdelicFrameTransport B m hAway iB V htor hu p (primeToAdelicFrameIsogeny m hAway iA iB V s e he eta) =
       primeToAdelicFrameIsogeny m hAway iA iB V t e he (primeToAdelicFrameTransport A m hAway iA V htor hu p eta) := by
@@ -226,8 +226,8 @@ theorem primeToAdelicFrameIsogeny_transport (e : Rationalization.of A ≅ Ration
 /-- The isogeny/path square on geometrically fixed right-orbit classes. -/
 theorem primeToAdelicFrameOrbitIsogeny_transport (U : Subgroup G)
     (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (p : fiberFunctor s hs ≅ fiberFunctor t ht)
     (x : PrimeToAdelicFrameOrbit A m hAway iA V s ρ hs htor hu U) :
     primeToAdelicFrameOrbitTransport B m hAway iB V ρ htor hu U p

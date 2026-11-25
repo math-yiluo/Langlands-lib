@@ -1,7 +1,5 @@
 # Nonzero invariants for Noetherian affine étale equivalence relations
 
-Authors: Worker 424, Worker 122, Worker 101, Worker 1203, Worker 239.
-
 The theorem `Langlands.AlgebraicGeometry.groupoidCoactionNonzeroInvariant.{u}`
 proves exactly the published
 `Langlands.AlgebraicGeometry.GroupoidCoactionNonzeroInvariantStatement.{u}`.

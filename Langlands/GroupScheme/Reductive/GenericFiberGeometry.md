@@ -1,6 +1,6 @@
 # Actual field fibres and generic connectedness
 
-This internal, derived unit constructs comparisons for actual field-valued fibres and proves generic spreading of connectedness for smooth affine groups. All rings, fields and schemes use an arbitrary universe `u`. The construction preserves each supplied coefficient map and group scheme.
+This internal, derived module constructs comparisons for actual field-valued fibres and proves generic spreading of connectedness for smooth affine groups. All rings, fields and schemes use an arbitrary universe `u`. The construction preserves each supplied coefficient map and group scheme.
 
 For a specified morphism `b : Spec k ⟶ S`, `fieldPointResidueMap` is the canonical field map from the residue field at the image of the closed point into `k`. Mathlib's `Scheme.descResidueField_stalkClosedPointTo_fromSpecResidueField` proves its factorization of `b`. `fieldPointFiberIso` combines that equality with `baseChangeCompIso` to identify the actual group pullback along `b` with the residue-field fibre followed by extension along this map. This is an isomorphism of group schemes, preserving all the group structure. `fieldReductive_of_residueReductive` applies `connectedReductiveFieldExtensionStatement` to this particular field embedding and transfers the result along this isomorphism. Its premise is connected reductivity of the residue fibres at the specified set of points.
 

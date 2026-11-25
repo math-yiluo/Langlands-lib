@@ -1,9 +1,6 @@
 # All-test self-normalization from an open cell and geometric points
 
-Authors: Worker 1297, with the geometric assembly direction contributed
-by Worker 1346.
-
-This internal unit gives a conditional assembly theorem for actual subgroup
+This internal module gives a conditional assembly theorem for actual subgroup
 functors over an arbitrary base scheme `S`. Let `iU : U → G` and `iP : P → G`
 be group-scheme homomorphisms. Suppose multiplication
 `m : U ×_S P → G` is an open immersion, the subgroup `range iU` meets
@@ -52,8 +49,10 @@ functor definitions, Mathlib's residue-field maps and open-immersion
 universal property, and the Library's represented-point equivalence.
 No external structural theorem is invoked.
 
-The hypotheses are explicit inputs. This unit does not prove opposite
+The hypotheses are explicit inputs. This module does not prove opposite
 open-cell existence, geometric pointwise parabolic self-normalization,
 or identification of arbitrary parabolics with dynamic parabolics.
-Those remain obligations when using this bridge for
-`ParabolicSelfNormalizerStatement`.
+The bridge is used for `ParabolicSelfNormalizerStatement` through
+`Absolute/ParabolicNormalizerReduction`; that statement is proved as
+`parabolicSelfNormalizer` (module `Rational/ParabolicNormalizerProof`),
+where those inputs come from other modules.

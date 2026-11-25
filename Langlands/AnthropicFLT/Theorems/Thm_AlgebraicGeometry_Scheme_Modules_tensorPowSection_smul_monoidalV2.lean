@@ -8,7 +8,7 @@ are set after the imports; the import of `P2M.Util` is dropped; the proof `by
 p2m_exact_reverting @_root_.S.solution` is replaced by the term `S.solution` applied to the
 explicit arguments. The paired Markdown file lists the changes.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_PresheafOfModules_InternalHom
 import Langlands.AnthropicFLT.Theorems.Thm_PresheafOfModules_isMonoidal_inverseImage_W_toPresheaf
 import Langlands.AnthropicFLT.Definitions.Def_SheafOfModules_MonoidalV2
@@ -25,6 +25,6 @@ open CategoryTheory MonoidalCategory AlgebraicGeometry
 
 theorem AlgebraicGeometry.Scheme.Modules.tensorPowSection_smul_monoidalV2
     {X : AlgebraicGeometry.Scheme.{u}} {L : X.Modules} {U : X.Opens} (g : Γ(X, U)) (s : Γ(L, U)) (n : ℕ) :
-    AlgebraicGeometry.Scheme.Modules.tensorPowSection (g • s) n =
-      g ^ n • AlgebraicGeometry.Scheme.Modules.tensorPowSection s n :=
+    AlgebraicGeometry.Scheme.Modules.tensorPowSectionFLT (g • s) n =
+      g ^ n • AlgebraicGeometry.Scheme.Modules.tensorPowSectionFLT s n :=
   P2MW.S_AlgebraicGeometry_Scheme_Modules_tensorPowSection_smul_monoidalV2.solution g s n

@@ -112,7 +112,7 @@ def torsionBracketMap_of_cubicFieldEmbedding (hL : CubicFieldEmbeddingStatement.
     exact b.exists_bracketChart ρ hρ
   choose chart hchart using hcharts
   have hcov : ∀ x, ∃ i, x ∈ (chart i).W := fun x => ⟨x, hchart x⟩
-  let τ : ∀ r, ((Scheme.Modules.pullback (b.torsionPoint r)).obj b.cubicBundle.obj).tensorPow n ≅
+  let τ : ∀ r, ((Scheme.Modules.pullback (b.torsionPoint r)).obj b.cubicBundle.obj).tensorPowFLT n ≅
       𝟙_ T.obj.Modules := fun r =>
     Langlands.AlgebraicGeometry.Modules.TensorPowerGauge.tensorPowComparison _ n ≪≫
       b.torsionEvaluationLinePowerIso r

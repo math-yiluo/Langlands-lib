@@ -63,6 +63,6 @@ composition and identity preservation transport their inverse equations.
 `Iso.baseChange_onPoints` and `Iso.baseChange_fromPoints` specialize the two
 squares to the induced `D`-linear equivalences.
 
-This unit does not construct base change for different-cover refinements or
+This module does not construct base change for different-cover refinements or
 comparisons, a varying-base quotient moduli functor, framing, heights or
 representability.

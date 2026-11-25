@@ -26,7 +26,7 @@ stable subcoaction exhaustion, and applies the existing cocycle criterion
 for acyclicity. The source algebra is flat because it is étale.
 
 Provenance is internal composition of the actual finite effective cover
-construction by Worker 239 and the generic-support, quotient-induction,
+construction (`GroupoidCoactionFiniteEffectiveCover`) and the generic-support, quotient-induction,
 exhaustion and cocycle-to-acyclicity results. The helper retains its explicit
 quotient-cover premise. The final scheme theorem in
 `EtaleEquivalenceRelationComodulesAcyclicProof` supplies that premise using

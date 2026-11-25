@@ -1,19 +1,17 @@
 # Rational rank-one Jacquet pattern from maximal Jacquet detection
 
-Author: Worker 3917.
-
-This module reduces the exact host target
+This module reduces the exact target
 `RationalRankOneJacquetModulesStatement.{u, v}` of
 [RationalCorollaryTargets](RationalCorollaryTargets.md) to one
 representation-theoretic input: the published proposition
 `RationalMaximalCuspidalJacquetDetectionStatement.{u, v}` of
 [RationalRankOneLengthInputsStatement](RationalRankOneLengthInputsStatement.md).
 Through the published reduction of that proposition to factor extraction, it
-also reduces the host target to
+also reduces the target to
 `RationalCuspidalJacquetFactorExtractionStatement.{u, v}` of
 [RationalCuspidalJacquetFactorTarget](RationalCuspidalJacquetFactorTarget.md).
 The module proves implications only. Neither the detection proposition nor the
-extraction proposition is proved here, so the host target is not proved here.
+extraction proposition is proved here, so the target is not proved here.
 
 The earlier reduction in
 [RationalRankOneJacquetReduction](RationalRankOneJacquetReduction.md) needed
@@ -26,7 +24,7 @@ This module derives the length-two conclusion and the nonvanishing of both
 constituents' Jacquet modules from maximal detection and that geometric
 theorem. It therefore needs neither `RationalRankOneLengthTwoStatement` nor
 `RationalMaximalCuspidalJacquetBudgetStatement`. That budget proposition
-quantifies over every maximal `J`. The host target only concerns a maximal `J`
+quantifies over every maximal `J`. The target only concerns a maximal `J`
 normalized by the lift `n`, and for such `J` the geometric theorem computes the
 budget.
 
@@ -41,7 +39,7 @@ Both sides are published propositions with independent universe parameters
 `u` (field) and `v` (carrier, at universe `max (u + 1) v`). The implication
 adds no premise and changes neither proposition.
 
-Provenance: derived. This is an internal step on the proof route of the host
+Provenance: derived. This is a step on the proof route of the
 target. It introduces no new mathematical assertion from the literature. Its
 inputs and its conclusion are already-published propositions, whose sources are
 documented in their own Markdown. The underlying source argument is Aubert's
@@ -51,7 +49,7 @@ p. 2183), as documented in
 
 ## The proof `rationalRankOneJacquetModules_of_maximalDetection`
 
-The proof introduces exactly the binders of the host target: the nonarchimedean
+The proof introduces exactly the binders of the target: the nonarchimedean
 local field `k`, the connected reductive `G`, the maximal split torus `i`, the
 canonical `pointTopology` and its instance premises, the generic cocharacter
 `ν`, the structural statements, the closed radicals and Levis, the
@@ -103,9 +101,9 @@ a limit of compact subgroups by
    applied to these nonvanishings, the exact sequence and vanishing of step 1,
    and the same `n` and `hself`, returns the ordered pair `(ρ₊, ρ₋)` with
    `HasTwoConstituents (i_J σ) ρ₊ ρ₋` and `RankOneJacquetPattern`. This is the
-   witness the host target asks for.
+   witness the target asks for.
 
-The lift `n` and the witness `hself` supplied by the host target are passed
+The lift `n` and the witness `hself` supplied by the target are passed
 unchanged. So the actual isomorphisms `r_J ρ₊ ≅ σ` and `r_J ρ₋ ≅ Ad(n⁻¹) σ`
 hold for that lift. The proof does not compare Grothendieck classes. Every
 length is an actual module length, and every isomorphism is an actual
@@ -123,9 +121,8 @@ RationalCuspidalJacquetFactorExtractionStatement.{u, v} →
 It composes the main theorem with the published
 `rationalMaximalCuspidalJacquetDetectionFromExtraction` of
 [RationalMaximalCuspidalDetectionProof](RationalMaximalCuspidalDetectionProof.md).
-Once the extraction proposition is proved (its proof task is
-`e6add7c5-44c5-45ea-afe9-7f48c98fb927`), this theorem applied to that proof
-proves the host target.
+Applied to a proof of the extraction proposition, which the Library does not
+prove, this theorem proves the target.
 
 ## Dependencies
 
@@ -160,8 +157,8 @@ Transitive dependencies of note:
 
 ## What remains
 
-The host target is proved as soon as either
+The target is proved as soon as either
 `RationalMaximalCuspidalJacquetDetectionStatement.{u, v}` or
 `RationalCuspidalJacquetFactorExtractionStatement.{u, v}` is proved. An empty
-simple-root type has no maximal standard subset, so the host target is then
+simple-root type has no maximal standard subset, so the target is then
 vacuous; no nonemptiness premise is added.

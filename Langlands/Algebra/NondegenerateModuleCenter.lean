@@ -46,23 +46,24 @@ theorem mul_app_toAddMonoidHom (z w : NondegenerateModuleCenter.{uA, uM} A)
 /-- Apply the actual forgetful functor to every original component. -/
 def forget (z : NondegenerateModuleCenter.{uA, uM} A) :
     NondegenerateModuleNaturalEnd.{uA, uM} A where
-  app M := (nondegenerateModuleForgetful A).map (z.app M)
-  naturality M N f := by
-    simpa only [Functor.map_comp] using
-      congrArg (fun g : M ⟶ N => (nondegenerateModuleForgetful A).map g) (z.naturality f)
+  asHom :=
+  { app M := (nondegenerateModuleForgetful A).map (z.app M)
+    naturality M N f := by
+      simpa only [Functor.map_comp] using
+        congrArg (fun g : M ⟶ N => (nondegenerateModuleForgetful A).map g) (z.naturality f) }
 
 @[simp] theorem forget_app_hom (z : NondegenerateModuleCenter.{uA, uM} A)
     (M : NondegenerateModuleCat.{uA, uM} A) :
-    ((forget z).app M).hom = (z.app M).hom.toAddMonoidHom := rfl
+    ((forget z).asHom.app M).hom = (z.app M).hom.toAddMonoidHom := rfl
 
 theorem forget_app_coe (z : NondegenerateModuleCenter.{uA, uM} A)
     (M : NondegenerateModuleCat.{uA, uM} A) :
-    (fun m : M.obj => (forget z).app M m) =
+    (fun m : M.obj => (forget z).asHom.app M m) =
       ((z.app M).hom.toAddMonoidHom : M.obj → M.obj) := rfl
 
 @[simp] theorem forget_app_apply (z : NondegenerateModuleCenter.{uA, uM} A)
     (M : NondegenerateModuleCat.{uA, uM} A) (m : M.obj) :
-    (forget z).app M m = (z.app M).hom.toAddMonoidHom m := rfl
+    (forget z).asHom.app M m = (z.app M).hom.toAddMonoidHom m := rfl
 
 /-- Forgetting the original scalar-linearity preserves all inherited ring operations.
 Both ring structures in the type are the named ones, given explicitly. -/
@@ -71,10 +72,10 @@ def forgetRingHom :
       (ring.{uA, uM} A).toNonAssocSemiring
       (NondegenerateModuleNaturalEnd.ring.{uA, uM} A).toNonAssocSemiring where
   toFun := forget
-  map_zero' := by apply NatTrans.ext; funext M; rfl
-  map_one' := by apply NatTrans.ext; funext M; rfl
-  map_add' := by intro z w; apply NatTrans.ext; funext M; rfl
-  map_mul' := by intro z w; apply NatTrans.ext; funext M; rfl
+  map_zero' := by apply End.ext; apply NatTrans.ext; funext M; rfl
+  map_one' := by apply End.ext; apply NatTrans.ext; funext M; rfl
+  map_add' := by intro z w; apply End.ext; apply NatTrans.ext; funext M; rfl
+  map_mul' := by intro z w; apply End.ext; apply NatTrans.ext; funext M; rfl
 
 theorem forgetRingHom_coe :
     (forgetRingHom.{uA, uM} (A := A) : NondegenerateModuleCenter.{uA, uM} A →
@@ -89,7 +90,7 @@ theorem forgetRingHom_injective :
   apply ObjectProperty.hom_ext
   apply NonUnitalModuleHom.ext
   intro m
-  exact congrArg (fun θ : NondegenerateModuleNaturalEnd.{uA, uM} A => θ.app M m) h
+  exact congrArg (fun θ : NondegenerateModuleNaturalEnd.{uA, uM} A => θ.asHom.app M m) h
 
 /-- The actual centralizer of the canonical original-ring image. -/
 def commutantSubring (hA : IsIdempotented A) :
@@ -205,13 +206,14 @@ theorem component_original_smul (hA : IsIdempotented A) (x : Commutant hA)
 /-- The actual identity natural transformation from the original commutant action. -/
 def commutantCenter (hA : IsIdempotented A) (x : Commutant hA) :
     NondegenerateModuleCenter.{uA, uM} A where
-  app M := ObjectProperty.homMk (component hA x M)
-  naturality M N f := by
-    apply ObjectProperty.hom_ext
-    apply NonUnitalModuleHom.ext
-    intro m
-    exact congrArg (fun g : M.obj →+ N.obj => g m)
-      (IdempotentedRingRightLimit.actionAddHom_naturality hA M.property N.property f.hom x.val).symm
+  asHom :=
+  { app M := ObjectProperty.homMk (component hA x M)
+    naturality M N f := by
+      apply ObjectProperty.hom_ext
+      apply NonUnitalModuleHom.ext
+      intro m
+      exact congrArg (fun g : M.obj →+ N.obj => g m)
+        (IdempotentedRingRightLimit.actionAddHom_naturality hA M.property N.property f.hom x.val).symm }
 
 @[simp] theorem commutantCenter_app_hom (hA : IsIdempotented A) (x : Commutant hA)
     (M : NondegenerateModuleCat.{uA, uM} A) :
@@ -305,15 +307,15 @@ theorem forgetRingHom_comp_fromCommutantRingHom (hA : IsIdempotented A) :
 /-- The whole composite at every component, with the published family action. -/
 theorem forget_fromCommutantRingHom_app_hom (hA : IsIdempotented A) (x : Commutant hA)
     (M : NondegenerateModuleCat.{uA, uM} A) :
-    ((forgetRingHom.{uA, uM} (A := A) (fromCommutantRingHom.{uA, uM} hA x)).app M).hom =
+    ((forgetRingHom.{uA, uM} (A := A) (fromCommutantRingHom.{uA, uM} hA x)).asHom.app M).hom =
       IdempotentedRingRightLimit.actionAddHom hA M.property x.val := rfl
 
 /-- The same component, through the published family map and the actual inclusion. -/
 theorem forget_fromCommutantRingHom_app_hom_eq_family (hA : IsIdempotented A)
     (x : Commutant hA) (M : NondegenerateModuleCat.{uA, uM} A) :
-    ((forgetRingHom.{uA, uM} (A := A) (fromCommutantRingHom.{uA, uM} hA x)).app M).hom =
+    ((forgetRingHom.{uA, uM} (A := A) (fromCommutantRingHom.{uA, uM} hA x)).asHom.app M).hom =
       ((IdempotentedRingRightLimit.toNaturalEndRingHom.{uA, uM} hA
-        (commutantInclusion hA x)).app M).hom := rfl
+        (commutantInclusion hA x)).asHom.app M).hom := rfl
 
 /-- The component of a named commutant product, right factor first. -/
 theorem component_mul_toAddMonoidHom (hA : IsIdempotented A) (x y : Commutant hA)
@@ -354,13 +356,14 @@ example (A : Type uA) [NonUnitalRing A] :
     IsMulCommutative (NondegenerateModuleCenter.{uA, uM} A) := inferInstance
 
 example (z w : NondegenerateModuleCenter.{uA, uM} A) :
-    @HMul.hMul _ _ _ (@instHMul _ (ring.{uA, uM} A).toMul) z w = w ≫ z := rfl
+    @HMul.hMul _ _ _ (@instHMul _ (ring.{uA, uM} A).toMul) z w = End.of (w.asHom ≫ z.asHom) := rfl
 
 example (z w : NondegenerateModuleCenter.{uA, uM} A) :
     @HAdd.hAdd _ _ _ (@instHAdd _ (ring.{uA, uM} A).toAdd) z w = z + w := rfl
 
 example : @OfNat.ofNat (NondegenerateModuleCenter.{uA, uM} A) 1
-      (@One.toOfNat1 _ (ring.{uA, uM} A).toOne) = 𝟙 (𝟭 (NondegenerateModuleCat.{uA, uM} A)) :=
+      (@One.toOfNat1 _ (ring.{uA, uM} A).toOne) =
+        End.of (𝟙 (𝟭 (NondegenerateModuleCat.{uA, uM} A))) :=
   rfl
 
 example : @OfNat.ofNat (NondegenerateModuleCenter.{uA, uM} A) 0
@@ -396,12 +399,12 @@ example : {A : Type uA} → [NonUnitalRing A] →
 
 example : {A : Type uA} → [NonUnitalRing A] →
     (z : NondegenerateModuleCenter.{uA, uM} A) → (M : NondegenerateModuleCat.{uA, uM} A) →
-    ((forget z).app M).hom = (z.app M).hom.toAddMonoidHom :=
+    ((forget z).asHom.app M).hom = (z.app M).hom.toAddMonoidHom :=
   @forget_app_hom.{uA, uM}
 
 example : {A : Type uA} → [NonUnitalRing A] →
     (z : NondegenerateModuleCenter.{uA, uM} A) → (M : NondegenerateModuleCat.{uA, uM} A) →
-    (fun m : M.obj => (forget z).app M m) =
+    (fun m : M.obj => (forget z).asHom.app M m) =
       ((z.app M).hom.toAddMonoidHom : M.obj → M.obj) :=
   @forget_app_coe.{uA, uM}
 
@@ -543,7 +546,7 @@ example : {A : Type uA} → [NonUnitalRing A] → (hA : IsIdempotented A) →
 
 example : {A : Type uA} → [NonUnitalRing A] → (hA : IsIdempotented A) →
     (x : Commutant hA) → (M : NondegenerateModuleCat.{uA, uM} A) →
-    ((forgetRingHom.{uA, uM} (A := A) (fromCommutantRingHom.{uA, uM} hA x)).app M).hom =
+    ((forgetRingHom.{uA, uM} (A := A) (fromCommutantRingHom.{uA, uM} hA x)).asHom.app M).hom =
       IdempotentedRingRightLimit.actionAddHom hA M.property x.val :=
   @forget_fromCommutantRingHom_app_hom.{uA, uM}
 
@@ -555,7 +558,7 @@ example : {A : Type uA} → [NonUnitalRing A] →
 
 example : {A : Type uA} → [NonUnitalRing A] →
     (z : NondegenerateModuleCenter.{uA, uM} A) → (M : NondegenerateModuleCat.{uA, uM} A) →
-    (m : M.obj) → (forget z).app M m = (z.app M).hom.toAddMonoidHom m :=
+    (m : M.obj) → (forget z).asHom.app M m = (z.app M).hom.toAddMonoidHom m :=
   @forget_app_apply.{uA, uM}
 
 example : {A : Type uA} → [NonUnitalRing A] → (hA : IsIdempotented A) →
@@ -599,9 +602,9 @@ example : {A : Type uA} → [NonUnitalRing A] → (hA : IsIdempotented A) →
 
 example : {A : Type uA} → [NonUnitalRing A] → (hA : IsIdempotented A) →
     (x : Commutant hA) → (M : NondegenerateModuleCat.{uA, uM} A) →
-    ((forgetRingHom.{uA, uM} (A := A) (fromCommutantRingHom.{uA, uM} hA x)).app M).hom =
+    ((forgetRingHom.{uA, uM} (A := A) (fromCommutantRingHom.{uA, uM} hA x)).asHom.app M).hom =
       ((IdempotentedRingRightLimit.toNaturalEndRingHom.{uA, uM} hA
-        (commutantInclusion hA x)).app M).hom :=
+        (commutantInclusion hA x)).asHom.app M).hom :=
   @forget_fromCommutantRingHom_app_hom_eq_family.{uA, uM}
 
 /-! The scalar universe is smaller than the module-carrier universe. -/
@@ -633,12 +636,12 @@ example : {A : Type 0} → [NonUnitalRing A] →
 
 example : {A : Type 0} → [NonUnitalRing A] →
     (z : NondegenerateModuleCenter.{0, 1} A) → (M : NondegenerateModuleCat.{0, 1} A) →
-    ((forget z).app M).hom = (z.app M).hom.toAddMonoidHom :=
+    ((forget z).asHom.app M).hom = (z.app M).hom.toAddMonoidHom :=
   @forget_app_hom.{0, 1}
 
 example : {A : Type 0} → [NonUnitalRing A] →
     (z : NondegenerateModuleCenter.{0, 1} A) → (M : NondegenerateModuleCat.{0, 1} A) →
-    (fun m : M.obj => (forget z).app M m) =
+    (fun m : M.obj => (forget z).asHom.app M m) =
       ((z.app M).hom.toAddMonoidHom : M.obj → M.obj) :=
   @forget_app_coe.{0, 1}
 
@@ -780,7 +783,7 @@ example : {A : Type 0} → [NonUnitalRing A] → (hA : IsIdempotented A) →
 
 example : {A : Type 0} → [NonUnitalRing A] → (hA : IsIdempotented A) →
     (x : Commutant hA) → (M : NondegenerateModuleCat.{0, 1} A) →
-    ((forgetRingHom.{0, 1} (A := A) (fromCommutantRingHom.{0, 1} hA x)).app M).hom =
+    ((forgetRingHom.{0, 1} (A := A) (fromCommutantRingHom.{0, 1} hA x)).asHom.app M).hom =
       IdempotentedRingRightLimit.actionAddHom hA M.property x.val :=
   @forget_fromCommutantRingHom_app_hom.{0, 1}
 
@@ -792,7 +795,7 @@ example : {A : Type 0} → [NonUnitalRing A] →
 
 example : {A : Type 0} → [NonUnitalRing A] →
     (z : NondegenerateModuleCenter.{0, 1} A) → (M : NondegenerateModuleCat.{0, 1} A) →
-    (m : M.obj) → (forget z).app M m = (z.app M).hom.toAddMonoidHom m :=
+    (m : M.obj) → (forget z).asHom.app M m = (z.app M).hom.toAddMonoidHom m :=
   @forget_app_apply.{0, 1}
 
 example : {A : Type 0} → [NonUnitalRing A] → (hA : IsIdempotented A) →
@@ -836,9 +839,9 @@ example : {A : Type 0} → [NonUnitalRing A] → (hA : IsIdempotented A) →
 
 example : {A : Type 0} → [NonUnitalRing A] → (hA : IsIdempotented A) →
     (x : Commutant hA) → (M : NondegenerateModuleCat.{0, 1} A) →
-    ((forgetRingHom.{0, 1} (A := A) (fromCommutantRingHom.{0, 1} hA x)).app M).hom =
+    ((forgetRingHom.{0, 1} (A := A) (fromCommutantRingHom.{0, 1} hA x)).asHom.app M).hom =
       ((IdempotentedRingRightLimit.toNaturalEndRingHom.{0, 1} hA
-        (commutantInclusion hA x)).app M).hom :=
+        (commutantInclusion hA x)).asHom.app M).hom :=
   @forget_fromCommutantRingHom_app_hom_eq_family.{0, 1}
 
 /-! The scalar universe is larger than the module-carrier universe. -/
@@ -870,12 +873,12 @@ example : {A : Type 1} → [NonUnitalRing A] →
 
 example : {A : Type 1} → [NonUnitalRing A] →
     (z : NondegenerateModuleCenter.{1, 0} A) → (M : NondegenerateModuleCat.{1, 0} A) →
-    ((forget z).app M).hom = (z.app M).hom.toAddMonoidHom :=
+    ((forget z).asHom.app M).hom = (z.app M).hom.toAddMonoidHom :=
   @forget_app_hom.{1, 0}
 
 example : {A : Type 1} → [NonUnitalRing A] →
     (z : NondegenerateModuleCenter.{1, 0} A) → (M : NondegenerateModuleCat.{1, 0} A) →
-    (fun m : M.obj => (forget z).app M m) =
+    (fun m : M.obj => (forget z).asHom.app M m) =
       ((z.app M).hom.toAddMonoidHom : M.obj → M.obj) :=
   @forget_app_coe.{1, 0}
 
@@ -1017,7 +1020,7 @@ example : {A : Type 1} → [NonUnitalRing A] → (hA : IsIdempotented A) →
 
 example : {A : Type 1} → [NonUnitalRing A] → (hA : IsIdempotented A) →
     (x : Commutant hA) → (M : NondegenerateModuleCat.{1, 0} A) →
-    ((forgetRingHom.{1, 0} (A := A) (fromCommutantRingHom.{1, 0} hA x)).app M).hom =
+    ((forgetRingHom.{1, 0} (A := A) (fromCommutantRingHom.{1, 0} hA x)).asHom.app M).hom =
       IdempotentedRingRightLimit.actionAddHom hA M.property x.val :=
   @forget_fromCommutantRingHom_app_hom.{1, 0}
 
@@ -1029,7 +1032,7 @@ example : {A : Type 1} → [NonUnitalRing A] →
 
 example : {A : Type 1} → [NonUnitalRing A] →
     (z : NondegenerateModuleCenter.{1, 0} A) → (M : NondegenerateModuleCat.{1, 0} A) →
-    (m : M.obj) → (forget z).app M m = (z.app M).hom.toAddMonoidHom m :=
+    (m : M.obj) → (forget z).asHom.app M m = (z.app M).hom.toAddMonoidHom m :=
   @forget_app_apply.{1, 0}
 
 example : {A : Type 1} → [NonUnitalRing A] → (hA : IsIdempotented A) →
@@ -1073,9 +1076,9 @@ example : {A : Type 1} → [NonUnitalRing A] → (hA : IsIdempotented A) →
 
 example : {A : Type 1} → [NonUnitalRing A] → (hA : IsIdempotented A) →
     (x : Commutant hA) → (M : NondegenerateModuleCat.{1, 0} A) →
-    ((forgetRingHom.{1, 0} (A := A) (fromCommutantRingHom.{1, 0} hA x)).app M).hom =
+    ((forgetRingHom.{1, 0} (A := A) (fromCommutantRingHom.{1, 0} hA x)).asHom.app M).hom =
       ((IdempotentedRingRightLimit.toNaturalEndRingHom.{1, 0} hA
-        (commutantInclusion hA x)).app M).hom :=
+        (commutantInclusion hA x)).asHom.app M).hom :=
   @forget_fromCommutantRingHom_app_hom_eq_family.{1, 0}
 
 /-! The original scalar-ring argument remains explicit under competition. -/

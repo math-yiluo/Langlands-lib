@@ -23,24 +23,26 @@ section Action
 
 variable {P : MorphismProperty (LocalizedCategory.{u, v, v} (K := K))}
 variable (U : P.Over ⊤ X) (σ : G →* Aut U.left)
-variable (hσ : ∀ g : G, (σ g).hom ≫ U.hom = U.hom ≫ (ρ g).hom)
+variable (hσ : ∀ g : G, (σ g).asIso.hom ≫ U.hom = U.hom ≫ (ρ g).asIso.hom)
 
 /-- A full equivariant analytic action gives the global lift used to normalize
 the ordinary representable. Continuity is not needed for this construction. -/
 def actionGlobalLift : GlobalLift (P := P) (ρ := ρ) where
   obj := U
   action :=
-    { toFun g := MulOpposite.op (homMk g⁻¹ (σ g⁻¹).hom (hσ g⁻¹))
+    { toFun g := MulOpposite.op (CategoryTheory.End.of (homMk g⁻¹ (σ g⁻¹).asIso.hom (hσ g⁻¹)))
       map_one' := by
         apply MulOpposite.unop_injective
+        apply CategoryTheory.End.ext
         refine hom_ext inv_one ?_
-        change (σ 1⁻¹).hom = 𝟙 _
+        change (σ 1⁻¹).asIso.hom = 𝟙 _
         rw [inv_one, map_one]
         rfl
       map_mul' g h := by
         apply MulOpposite.unop_injective
+        apply CategoryTheory.End.ext
         refine hom_ext (mul_inv_rev g h) ?_
-        change (σ (g * h)⁻¹).hom = (σ g⁻¹).hom ≫ (σ h⁻¹).hom
+        change (σ (g * h)⁻¹).asIso.hom = (σ g⁻¹).asIso.hom ≫ (σ h⁻¹).asIso.hom
         rw [mul_inv_rev, map_mul]
         rfl }
   twist _ := rfl
@@ -48,7 +50,7 @@ def actionGlobalLift : GlobalLift (P := P) (ρ := ρ) where
 omit [TopologicalSpace G] in
 @[simp]
 theorem actionGlobalLift_action_left (g : G) :
-    Hom.left ((actionGlobalLift U σ hσ).action g).unop = (σ g⁻¹).hom := rfl
+    Hom.left ((actionGlobalLift U σ hσ).action g).unop.asHom = (σ g⁻¹).asIso.hom := rfl
 
 /-- A continuous full action, viewed as a local lift with subgroup top. -/
 def fullActionLift (hcont : IsContinuousAction σ) : ActionLift ρ U.hom where
@@ -84,7 +86,7 @@ theorem hasCompatibleCompactQuasiEtaleLifts_subgroup (H : OpenSubgroup G)
   exact hf (g : G) hg
 
 variable (U : QuasiEtaleSite X) (σ : G →* Aut U.left)
-variable (hσ : ∀ g : G, (σ g).hom ≫ U.hom = U.hom ≫ (ρ g).hom)
+variable (hσ : ∀ g : G, (σ g).asIso.hom ≫ U.hom = U.hom ≫ (ρ g).asIso.hom)
 
 /-- Compatibility of compact analytic lifts gives eventual equivariance of
 the actual globally lifted ordinary representable. -/

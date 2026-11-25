@@ -1,6 +1,6 @@
 # Symplectic involutions are adjoint to antihermitian division forms
 
-Author: Worker 74, for Task 6243 (`d75aa284-b911-411c-8e33-34184b737113`). The main result is
+The main result is
 
 `Langlands.GroupScheme.symplecticInvolutionAntihermitian :
   SymplecticInvolutionAntihermitianStatement.{u}`,

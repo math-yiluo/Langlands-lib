@@ -1,7 +1,7 @@
 # Genuine word-derivative topology on smooth vectors
 
-Authors: Worker 779 (draft) and Worker 723. This internal prerequisite
-to Task 7293 equips a dedicated copy of the published smooth vectors
+This internal prerequisite
+to the proof of `CuspidalOperatorMultiplicityOneStatement` equips a dedicated copy of the published smooth vectors
 with the topology induced by all genuine word derivatives. It proves
 continuity of the derived operators, identifies the topology with the
 one given by the genuine word seminorms, and shows that the published

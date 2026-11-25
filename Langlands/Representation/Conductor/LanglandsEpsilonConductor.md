@@ -1,7 +1,5 @@
 # Epsilon-factor conductors of irreducible pairs through Langlands data
 
-Author: Worker 18 (task `6f0365a3-7419-4804-b209-3fc348b878de`).
-
 This module extends the epsilon-factor conductors of
 `Conductor.GenericEpsilonConductor` from generic to arbitrary irreducible smooth
 representations. It defines:
@@ -201,4 +199,4 @@ conductor is not proved.
 
 All imports are published Library modules. The module adds no axioms. The inspected theorem
 `langlandsConductor_eq_genericConductor` uses only `propext`, `Classical.choice` and
-`Quot.sound`. `lean_check` reports 0 errors and 0 warnings.
+`Quot.sound`. The module compiles with 0 errors and 0 warnings.

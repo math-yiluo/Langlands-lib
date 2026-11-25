@@ -5,8 +5,9 @@ import Langlands.Representation.Plancherel.RationalNormKernelTopology
 /-! # The diagonal of the VIII.4.1 kernel as conjugation pairings
 
 The diagonal `α_χ(x, x)` of Waldspurger's kernel is a finite combination of the bilinear
-conjugation pairings `(E, 1_{H a})(x⁻¹)` of Task 7256 when `E` vanishes outside a normal
-subgroup `N ⊇ H` whose intersection with `A` is compact, and `χ` is trivial on `A ∩ H`.
+conjugation pairings `(E, 1_{H a})(x⁻¹)` of `RationalConjugationPairing` when `E` vanishes
+outside a normal subgroup `N ⊇ H` whose intersection with `A` is compact, and `χ` is trivial on
+`A ∩ H`.
 -/
 
 noncomputable section

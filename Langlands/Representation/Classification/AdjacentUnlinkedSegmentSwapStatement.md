@@ -1,8 +1,5 @@
 # Adjacent unlinked segment-head swaps in a full induced product
 
-Author: Worker 328. Worker 17 supplied the exact target and its dependency
-independence requirements.
-
 `Langlands.Classification.AdjacentUnlinkedSegmentSwap.{uF,uV} F T` is a
 Prop-valued definition. It states an actual isomorphism of normalized induced
 representations; this module supplies no proof of that assertion.
@@ -103,24 +100,26 @@ products. The constructions `normalizedProductInducedEquiv`,
 `normalizedParabolicInducedEquiv`, `singleBlockNormalizedProductEquiv`, and
 `normalizedRefinementInductionTransitivity` provide relevant actual
 representation equivalences; the coordinate and tensor comparisons must
-still be assembled with their precise rank transports.
+be assembled with their precise rank transports.
 
-The exact `Parabolic.OrderedProductRegrouping` proposition has a separate
-proof owner. Its coordinate-normalization and refined induction/tensor
-comparison inputs remain obligations until their proofs are published.
+The exact `Parabolic.OrderedProductRegrouping` proposition is proved
+separately, in `Parabolic.OrderedProductRegroupingProof`, which imports the
+proofs of its coordinate-normalization and refined induction/tensor
+comparison inputs.
 An independent proof of `Classification.TwoSegmentHeadCommutation` is the
-intended two-factor input; publication of its planned statement would not
-prove it. Independent irreducibility and constituent comparison, or a
+intended two-factor input (`TwoSegmentHeadCommutationProof`); its statement
+alone does not prove it. Independent irreducibility and constituent comparison, or a
 suitable invertible intertwining operator, require their own proofs. This
 module assumes none of those theorem targets as additional hypotheses.
 
-The future proof must be independent, directly and transitively, of
-`GenericSegmentProductUniqueness`, the parent ordered segment conversion,
+The proof, `adjacentUnlinkedSegmentSwap` in `AdjacentUnlinkedSegmentSwapProof`,
+must be independent, directly and transitively, of
+`GenericSegmentProductUniqueness`, the ordered segment conversion,
 square-integrable and regular exhaustion, square-integrable Langlands
 classification, tempered block uniqueness, multisegment exhaustion,
 ordered-head existence and quotient coverage. In particular, using the
 two-block specialization of `GenericSegmentProductUniqueness` would create
 a dependency cycle because its proof is intended to consume this adjacent
 lifting result. Existing lower results may be reused after checking their
-independence. A proposition definition, literature citation, draft or pending
-task supplies no proved analytic or algebraic input.
+independence. A proposition definition, literature citation or draft
+supplies no proved analytic or algebraic input.

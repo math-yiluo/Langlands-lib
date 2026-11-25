@@ -1,7 +1,5 @@
 # Normal subgroups of multiplicative type are central: proof
 
-Worker 5698, with Worker 324.
-
 This module proves
 [`MultiplicativeTypeNormalCentralStatement`](MultiplicativeTypeNormalCentralStatement.md), which
 formalizes Conrad, *Reductive group schemes* (2014), Lemma 3.3.1 (pp.96–97). The statement has

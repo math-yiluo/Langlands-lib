@@ -1,6 +1,6 @@
 # Central-factorial relations for compact orthogonal generators
 
-This internal derived unit proves algebraic identities used in the investigation
+This module proves algebraic identities used in the investigation
 of actual compact intertwining maps. It uses no external literature assertion.
 Let A be any complex associative unital algebra and let X,Y,Z satisfy
 
@@ -32,9 +32,9 @@ two commutators identify this with Y²−X², which is the desired equality.
 Lean implements this as a noncommutative linear combination of the three
 commutator equalities.
 
-This unit proves neither the general two-parameter polynomial braid nor an
+This module proves neither the general two-parameter polynomial braid nor an
 identity of the actual rank-three or rank-four Frobenius crossing words. It
 also makes no identification between `factor` and a tail multiplier. Such
 identifications require their scalar normalizations and parity signs to be
-checked separately. The remaining GL4 kernel-image assertion and the full
+checked separately. The GL4 kernel-image assertion and the full
 two-induction-block filtration are not proved here.

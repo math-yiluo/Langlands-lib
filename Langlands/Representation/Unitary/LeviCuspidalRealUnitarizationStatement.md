@@ -68,7 +68,9 @@ positive, ordered, or has a zero weighted sum. It is not a cone or support
 theorem and makes no square-integrability or classification claim.
 
 The statement also does not assert that the twisted representation is again
-irreducible or cuspidal. Those transports are owned separately; the existing
+irreducible or cuspidal. Those transports are proved separately, as
+`isIrreducible_leviRealPowerTwist_iff` and `isLeviCuspidal_leviRealPowerTwist_iff`
+in `Langlands.Representation.Classification.FineTwistRegularityProof`; the existing
 `isSmooth_leviRealPowerTwist_iff` only records smoothness.
 
 ## Provenance (derived specialization)

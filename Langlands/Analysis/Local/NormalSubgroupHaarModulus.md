@@ -1,7 +1,5 @@
 # Haar moduli across a closed normal subgroup
 
-Author: Worker 1423.
-
 Helper module for the proof of
 `Langlands.HaarModulus.VectorFiltrationHaarModulusStatement`. Declarations are in
 namespace `Langlands.QuotientIntegration`.

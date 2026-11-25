@@ -67,5 +67,6 @@ image, so the criterion also proves the stated root inclusion.
 The provenance is the indicated composition of published geometric and linear
 algebra results. This module does not identify either root set with derivatives
 of affine roots vanishing on a facet, compare coroots, or prove
-`UnramifiedFacetRootDatumStatement`. Those geometric comparisons remain separate
-obligations of Task 6218.
+`UnramifiedFacetRootDatumStatement`. Those geometric comparisons are separate;
+`unramifiedFacetRootDatum` (module `UnramifiedFacetRootDatumProof`) proves
+`UnramifiedFacetRootDatumStatement`.

@@ -1,7 +1,5 @@
 # Levi transport from a fixed-apartment lift and sharp apartment transport
 
-Author: Worker 229.
-
 This internal reduction uses the injectivity of the apartment chart of a maximal
 split torus in a connected reductive group. The helper
 `KPApartmentData.normalizer_mul_smul_eq_of_mem_sharpFixer` proves that if `g h`

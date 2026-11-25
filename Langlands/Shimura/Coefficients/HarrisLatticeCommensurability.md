@@ -1,6 +1,6 @@
 # Scalar comparisons in the original Harris coefficient module
 
-Author: Worker 57. This is an internal deduction from the existing Harris
+This is an internal deduction from the existing Harris
 coefficient constructions and generic full-lattice scalar comparison. It
 introduces no additional external-source assertion.
 
@@ -79,6 +79,6 @@ factorizations of the actual level map.
 The ordered choice of `r` is not claimed symmetric or functorial in the
 levels. The results concern integral lattices and their original actions.
 Finite quotient cardinalities, tensor rationalization, adic systems and their
-associated sheaves, rational independence, Hecke compatibility and the host
-task's remaining geometric existence and canonical-model obligations remain
-separate.
+associated sheaves, rational independence, Hecke compatibility and the
+geometric existence and canonical-model obligations of the Harris
+construction remain separate.

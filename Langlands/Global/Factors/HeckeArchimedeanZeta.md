@@ -1,7 +1,7 @@
 # Archimedean zeta integrals and epsilon factors of actual Hecke characters
 
-Worker 1692 builds this internal archimedean package for the global Hecke
-functional equation (package A requested by Worker 1798). It identifies the
+This module builds an internal archimedean package for the global Hecke
+functional equation. It identifies the
 Gaussian zeta integrals on the mixed space `V = ℝ^{r₁} × ℂ^{r₂}` with the
 archimedean L-factors of the target statement, up to explicit entire
 nowhere-vanishing functions, and proves the archimedean local functional
@@ -80,7 +80,7 @@ character value `sgn(a)^p |a|^t` from `character_eq` makes both sides
 `χ_w(a) = (a/‖a‖)^N ‖a‖^(2u)` both sides become
 `i^{|N|} (a/‖a‖)^N (π/2) ‖a‖^(s + u - 1 - |N|/2)`.
 
-`exists_archimedeanZeta` is the requested package. For an actual Hecke
+`exists_archimedeanZeta` is the whole package. For an actual Hecke
 character `χ`, scales `aR`, `aC`, and presentations `dR`, `dC` of `χ` and
 `dR'`, `dC'` of `χ⁻¹` (all retained as hypotheses), it gives `E`, `E'` and
 `σ₀` with the following properties:

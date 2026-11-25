@@ -1,7 +1,5 @@
 # The relation scheme of a finitely covered étale equivalence relation
 
-Authors: Worker 239, Worker 712.
-
 This module states that, under the hypotheses of
 `EtaleEquivalenceRelationAffineDescentStatement`, the relation scheme `E.R`
 is affine and `j = (t, s) : E.R ⟶ E.U × E.U` is a closed immersion. In the

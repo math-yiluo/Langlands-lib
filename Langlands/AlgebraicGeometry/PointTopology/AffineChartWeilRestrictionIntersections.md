@@ -9,7 +9,7 @@ separatedness or of the full adelic comparison.
 Let `A → B` be a finite projective extension of commutative rings, and let `Y`
 be an actual scheme locally of finite type over `Spec B`. For original affine
 opens `U` and `V` of `Y`, assume explicitly that their original intersection
-`U ∩ V` is affine. No separatedness hypothesis on `Y` is required for this unit.
+`U ∩ V` is affine. No separatedness hypothesis on `Y` is required for this module.
 
 `affineChartWeilRestrictionIntersection_isPullback` proves that the existing
 Weil restrictions of the two inclusion maps from `U ∩ V` form a cartesian

@@ -13,7 +13,7 @@ The governing registered source is
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`,
 at
 `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`.
-Worker 709 reread PDF282–284 and visually inspected the diagrams on PDF283–284
+PDF282–284 were reread and the diagrams on PDF283–284 visually inspected
 while preparing the compatible-action adapter.
 
 ## Actual objects and scope
@@ -88,7 +88,7 @@ is supplied as an additional assumption.
 
 ## Source and errata correspondence
 
-This unit specializes the vector-space assertions to compatible
+This module specializes the vector-space assertions to compatible
 self-intertwiners and actual invariant complex subspaces. It does not
 identify all additive invariant subgroups with complex subspaces.
 The original proof's final paragraph on printed278/PDF284 repeats `I_k`
@@ -96,29 +96,30 @@ when comparing the two chains. The targets follow the coherent common-index
 assertion of Lemma (iv), as does the existing complex-linear statement
 family, rather than reproducing that prose typo.
 
-Worker 709 also reread PDF18–19 of the registered supplementary
+PDF18–19 of the registered supplementary
 `renard-2010-corrections-complements`, SHA256
-`fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`.
+`fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`, were also
+reread.
 Its correction to the old printed321 image formula uses `N_(k+2)`;
 that correction is already present in the governing 2026 printed278/PDF284.
-The older errata do not change these targets. No project errata note for
-the governing registered source was present when this unit was prepared.
+The older errata do not change these targets. The Library's errata notes for
+the governing registered source (`notes/errata/renard-*.md`) concern Chapter VII,
+not C.II.
 The 2026 edition governs all source numbering and correspondence.
 
 ## Status and separate obligations
 
 These definitions state propositions and provide no substantive proofs of
 the power-chain assertions. Compilation and complete declaration inspection
-establish elaboration and quantifier structure; independent statement review
-and Library publication remain required.
+establish elaboration and quantifier structure.
 
-A later proof may transport the existing complex-linear assertions through
-`CompatibleSubmodule.toSubmoduleHom` and its injectivity, after proving the
-underlying-map identity. This is an implementation route, not a proof
-included here, and requires checking the actual public proof API.
+The proofs, `compatiblePowerStabilization` and its components in
+`Langlands.Algebra.CompatiblePowerStabilizationProofs`, transport the existing
+complex-linear assertions to compatible submodules after proving the
+underlying-map identity.
 
 The compatible kernel/range-square and complement criteria, both exact-row
 stability implications, the source's auxiliary quotient spaces and exact
 sequences, source finite-generation and Noetherian comparisons, and the
-final general C.II localization proposition remain separate obligations.
+final general C.II localization proposition are separate from this module.
 This module assumes none of those results or their desired conclusions.

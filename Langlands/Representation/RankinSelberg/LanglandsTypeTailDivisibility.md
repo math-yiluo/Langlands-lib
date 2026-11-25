@@ -1,7 +1,5 @@
 # Actual standard-module tail divisibility
 
-Author: Worker 111.
-
 This internal adapter transfers the published closed tail-divisibility theorem
 from its literal two lifted carriers to an arbitrary actual two-block shape.
 It uses actual representation equivalences for both the carrier lifts and the

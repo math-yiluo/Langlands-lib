@@ -1,9 +1,6 @@
 # Contragredient maps from highest-derivative pairings
 
-Author: Worker 1166.
-
-This internal helper pair belongs to task
-`0b3bf4c1-9878-444f-899e-ba29d7679c29`, the proof of
+This internal helper pair belongs to the proof of
 `Langlands.Classification.CuspidalProductMirabolicSupportShift` (BZ77 Lemma
 4.7(b), mirabolic form). It formalizes steps 3 to 5 of the source proof (BZ77
 §4.8, printed pp. 455–456), for an arbitrary representation `π` of `GL_(N+1)`:
@@ -15,7 +12,7 @@ This internal helper pair belongs to task
   intertwiner from the order-`k` derivative `π'^(k)` to the smooth contragredient
   `σ̃`. The published BZ77 Proposition 3.8 supplies the pairing of derivatives.
 
-The module does not prove the task target, and uses nothing about cuspidal
+The module does not prove that target, and uses nothing about cuspidal
 products. All declarations are in the namespace
 `Langlands.Classification.MirabolicDerivativeContragredient`. The pair introduces
 one definition (`pairingContragredientHom`), no proposition definitions, no
@@ -148,8 +145,7 @@ by `pairingContragredientHom_ne_zero`, since `σ` has a nonzero vector.
   required by the published `MirabolicHighestDerivativePairingStatement`, whose
   Markdown identifies it with the source's `Δ`-pairing on `P`. So no
   Haar-modulus comparison enters here; the comparison of the Library's
-  determinant normalization with the source's (statement task
-  `a622f240-4846-4086-b34f-f650ba636ee4`) is neither used nor needed.
+  determinant normalization with the source's is neither used nor needed.
 - The derivatives are the Library's determinant-normalized
   `mirabolicDerivativeOfOrder` and `generalLinearDerivative`, unchanged.
 - An "invariant" pairing has covariance `fun _ => 1`, as in the conclusion of
@@ -163,7 +159,7 @@ pairing of `ω^(k)` and `π̄^(k)` nondegenerate in `ω^(k)`; "from the existenc
 of non-zero pairing of `σ` and `π̄^(k)` it follows that `σ̃ ∈ JH(π̄^(k))`."
 This module implements the first two steps exactly, and replaces the last one
 by the nonzero intertwiner `π̄^(k) → σ̃` (the pairing restricted to `σ`). Its
-consumer, the proof of the task target, uses Lemma 4.7(a) in quotient form, so
+consumer, the proof of `CuspidalProductMirabolicSupportShift`, uses Lemma 4.7(a) in quotient form, so
 it never needs a Jordan–Hölder series or finite length of `π̄^(k)`. Here `ω` is
 `W`, which is embedded in `π|P` by an injective intertwiner instead of being a
 subrepresentation.
@@ -179,8 +175,7 @@ universe-polymorphic in `uG`, `uV`, `uW`, as explained above.
 
 The module is internal. It formalizes steps of BZ77 §4.8 (printed pp.
 455–456) and uses BZ77 Proposition 3.8 (printed p. 453) only through its
-published proof `Derivative.mirabolicHighestDerivativePairing` (proof task
-`a925b519-9bb9-4927-873e-ad322d41328e`). The definition
+published proof `Derivative.mirabolicHighestDerivativePairing`. The definition
 `pairingContragredientHom` only names the map `σ ↦ σ̃` induced by a pairing.
 
 ## Import closure and exclusion audit
@@ -219,7 +214,7 @@ closure has 144 modules (not counting this module):
 The derivative, Rankin–Selberg (compact-orbit and cutoff integrals), Whittaker
 (basic Gelfand–Kazhdan definitions) and matrix-coefficient modules all enter
 through the published BZ77 3.8 proof `Derivative.MirabolicHighestDerivativePairingProof`,
-which the task admits as an input. Its closure also contains the published
+which is admitted as an input. Its closure also contains the published
 proof of `MirabolicDerivativeDetection` (`Derivative.MirabolicDerivativeVanishing`).
 
 The mathematical proof dependencies used directly are:
@@ -228,41 +223,39 @@ The mathematical proof dependencies used directly are:
 (definitional facts about the derivative functors and the level),
 `smoothDualPairing_invariant`, `smoothBidual_injective_of_compact_cofinal`,
 `compactOpen_cofinal`, `smoothLift`, `coe_realPowerCharacter` (smooth duality,
-smooth parts and real powers). Condition by condition, against the exclusions
-of the task contract (`context.md` of task `0b3bf4c1`):
+smooth parts and real powers). Condition by condition, against the results
+excluded from the proof of `CuspidalProductMirabolicSupportShift`:
 
-- `HighestDerivativeSupportShift`, task `f81d9b36` and its candidates and
+- `HighestDerivativeSupportShift` and its proofs and
   helpers (`HighestDerivativeSupportShiftBoundary`,
   `CuspidalProductDerivativeQuotientSupport`), and
   `CuspidalSupport.WholeLeviTransport`: none of these names occurs in any
   closure module.
-- Items (b), (d), (e), (f) of task `8e5b4563` (`SegmentSocleDerivatives`,
+- Items (b), (d), (e), (f) of `Classification.SegmentSocleDerivativesStatement`
+  (`SegmentSocleDerivatives`,
   `NonjuxtaposedSegmentSocleConstituentLevel`,
   `NonjuxtaposedSegmentSocleDerivativeStrictMono`,
   `SegmentSocleProductHighestDerivative`) and the other statements of that
-  contribution: none occurs. No closure module mentions `Segment`; the only
+  module: none occurs. No closure module mentions `Segment`; the only
   mention of `Socle` is the general definition `IsIrreducibleSocle` in
   `Classification.ConstituentRelations`, which is not used.
-- Two-supercuspidal product conclusions (`TwoSupercuspidal*`, tasks `3c9849a4`,
-  `ab61f565`): none occurs.
+- Two-supercuspidal product conclusions (`TwoSupercuspidal*`): none occurs.
 - Segment derivative, Jacquet and product formulas, segment-socle/head
   existence, exhaustion, irreducibility criteria, linked and juxtaposed
   segment results, ordered-socle existence, socle commutation and gluing,
   special-head criteria, quotient coverage, ordered conversion, tempered
   uniqueness, `SquareIntegrableLanglandsClassification`,
   `GenericSegmentProductUniqueness`, square-integrable and regular exhaustion,
-  special-segment square-integrability, Ze80 6.1(a) and later results of task
-  `b711af72`: none occurs (the only word "Exhaustion" is a section name in
+  special-segment square-integrability, Ze80 6.1(a) and later results: none
+  occurs (the only word "Exhaustion" is a section name in
   `Jacquet.CharacterAveraging`, about compact open exhaustions of a unipotent
   group).
 - Leibniz filtration (BZ77 4.5/4.6) and exactness of derivatives
   (`MirabolicMinusExactnessStatement`, `GeneralLinearDerivativeExactnessStatement`):
-  no closure module mentions `Leibniz` or `Exactness`. The operator-paused task
-  `b65bc667` is untouched.
+  no closure module mentions `Leibniz` or `Exactness`.
 - Whittaker coinvariant finiteness (`SupercuspidalCoinvariantFiniteness`,
-  `IrreducibleCoinvariantFiniteness`, `LeviCuspidalCoinvariantFiniteness`,
-  tasks `62de5903`, `5ab445dc`, `3ff5c8fb`) and `Whittaker.MirabolicFiniteLength`
-  (task `5428fe2c`): none occurs.
+  `IrreducibleCoinvariantFiniteness`, `LeviCuspidalCoinvariantFiniteness`)
+  and `Whittaker.MirabolicFiniteLength`: none occurs.
 - Derivatives of supercuspidal representations (BZ77 §4.4): not used.
 - `UnitaryGenericCompatibilityStatement`, `TwistedProduct*`,
   `TwoSupercuspidalProductDualTwist`: absent.

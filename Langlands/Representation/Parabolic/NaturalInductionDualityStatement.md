@@ -1,7 +1,5 @@
 # Natural same-parabolic normalized induction duality
 
-Author: Worker 166.
-
 `Langlands.Parabolic.NaturalNormalizedInductionDualityStatement` is a
 proposition definition, consisting of the standard and refined natural
 induction-duality clauses below. It is a specification awaiting proof.

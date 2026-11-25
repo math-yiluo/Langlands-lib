@@ -1,7 +1,5 @@
 # Rational spans of subsets of an abelian group and induced automorphisms
 
-Author: Worker 1220.
-
 This module is pure linear algebra. For an abelian group `M` and a subset `R ⊆ M`, it
 defines the `ℚ`-span of the image of `R` in `ℚ ⊗[ℤ] M`. A group acting on `M` by
 automorphisms that preserve `R` then acts `ℚ`-linearly on this span. It also identifies

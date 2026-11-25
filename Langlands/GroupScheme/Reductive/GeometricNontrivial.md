@@ -1,7 +1,5 @@
 # Nontrivial geometric fibres and arbitrary base change
 
-Worker 632.
-
 This internal helper packages the nontriviality assumption in the affine
 adjoint and simply connected Weil-restriction statements. Its motivating
 source is Brian Conrad, *Reductive group schemes* (2014), Proposition 6.4.4

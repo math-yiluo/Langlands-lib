@@ -20,7 +20,7 @@ attribute [local instance] coordinateOriginAlgebra
 variable {R : CommRingCat.{u}} (G : GroupScheme (Spec R)) [IsAffineHom G.X.hom]
     {A : Type u} [CommRing A] [Algebra R A]
 
-local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
+private local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
 
 local notation "B" => hopfAlgebra G
 local notation "D" => coordinateAlgebra G

@@ -1,7 +1,5 @@
 # Separation of distinct normalized real valuation prolongations
 
-Author: Worker 1651.
-
 `normalizedRealProlongationSeparator` is a chosen separating field element
 for a finite injective family of normalized real prolongations of a
 nontrivial base valuation. Its valuation properties are proved by

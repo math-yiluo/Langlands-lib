@@ -1,6 +1,6 @@
 # Literal semistandard Levi Weyl transporters and finite sums
 
-This unit constructs Weyl transporter carriers from literal subgroup functors,
+This module constructs Weyl transporter carriers from literal subgroup functors,
 their left target-Weyl quotients, and elementary finite sums. It also states
 three geometric comparison targets needed to use these carriers with the full
 semistandard spectral family. The spectral action, normalized operators,
@@ -157,12 +157,13 @@ law. The representative sum identity uses `Quotient.out_eq` and finite-sum
 congruence. Empty-quotient and zero-sum proofs use the actual rational-conjugacy
 witness just described.
 
-This is a derived algebraic prerequisite within Task 7263. It reuses Task 7229's
-published intrinsic indices and leaves full spectral families and smooth
-coherent sections with that owner. Task 7257 retains the construction and
-descent laws of the particular normalized comparisons and rational-point
-translations. The present file constructs none of those operators. Source
-packets, density and orbit measure remain with Task 7258, and the full Fourier
-family remains with Task 7260. In particular, the finite-sum utility here is not
+This is a derived algebraic prerequisite of the Waldspurger VII.2.1–VII.2.3
+wave-packet Fourier and pairing targets. It reuses the published intrinsic
+indices of `SemistandardSpectralIndex`; full spectral families and smooth
+coherent sections, and the construction and descent laws of the particular
+normalized comparisons and rational-point translations, are not part of this
+file. The present file constructs none of those operators. Source packets,
+density and orbit measure, and the full Fourier family, are not part of this
+file either. In particular, the finite-sum utility here is not
 the substantive VII.2.1 or VII.2.2 spectral formula; those subsequent targets
 must supply the actual spectral summands and representative transports.

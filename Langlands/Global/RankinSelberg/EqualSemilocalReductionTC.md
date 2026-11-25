@@ -1,6 +1,6 @@
 # Totally complex form of the equal-rank semi-local reduction
 
-Module `Langlands.Global.RankinSelberg.EqualSemilocalReductionTC`. Author: Worker 5557.
+Module `Langlands.Global.RankinSelberg.EqualSemilocalReductionTC`.
 
 ## 1. Content and status
 
@@ -21,9 +21,8 @@ This module contains, in the namespace `Langlands.Global.RankinSelbergGlobal`:
 
 The theorem is a **conditional reduction**. Its premise is an open statement, proved nowhere
 in the Library, and the theorem does not prove `EqualSemilocalEquationTCStatement`. It is an
-intermediate result of Task 7054 (`62d3c62a-387d-4a5a-8958-991b68ffc982`) in the sense of the
-"Intermediate results" section of that task's revision 1. The task's required result, an
-unconditional proof of `EqualSemilocalEquationStatement`, stays open.
+intermediate result towards `EqualSemilocalEquationStatement`, whose unconditional proof
+stays open.
 
 ## 2. Provenance
 
@@ -31,14 +30,12 @@ The content is **derived**. Both propositions in this module are the published p
 with one more instance argument. The proof is the published proof of
 `equalSemilocalReduction` with one more binder in its `intro`.
 
-The restriction to totally complex base fields was adopted by the operator in answer
-`81ed24709e7050068786116ca6613260` (Option A) to request
-`9b5f630f11af591aae45e2157df43d94`. The Library's route to the local correspondence uses the
+The restriction to totally complex base fields follows the Library's route to the local
+correspondence, which uses the
 global Rankin–Selberg results only over the CM field produced by the globalization of
 Henniart (2000, §3) and Harris (1998, §4), and over its finite extensions. All these fields
 are totally complex (`NumberField.IsCMField.isTotallyComplex`,
-`NumberField.isTotallyComplex_of_algebra`). Worker 0 (Task 0) asked for this module in
-message `b35793951088558b8ab82f97391ea271`.
+`NumberField.isTotallyComplex_of_algebra`).
 
 The mathematical sources are those of the published module, unchanged: J. W. Cogdell,
 *Analytic theory of L-functions for GL_n* (2004), registered as
@@ -116,7 +113,9 @@ The single open premise is `EqualSemilocalFactorizationTCStatement.{u, uQ}`. A p
 or of the general `EqualSemilocalFactorizationStatement.{u, uQ}` (which implies it), gives
 `EqualSemilocalEquationTCStatement.{u, uQ}` through `equalSemilocalReductionTC` (for the
 general premise, after `equalSemilocalFactorizationTCStatement_of_general`). The general
-premise is the target of Task 7124 (`8847443a-b337-4ae6-ae3b-05422d6c8d68`). Its missing
-inputs (the archimedean local theory, the factorization over `S ∪ ∞` and the central sign)
-are being stated in Task 7136 (`7f50af3d-3370-4706-b274-15a86b643c8c`). Over a totally
+premise is reduced by `equalSemilocalFactorizationReduction` (module
+`EqualSemilocalFactorizationReduction`) to its missing inputs (the archimedean local theory,
+the factorization over `S ∪ ∞` and the central sign), which are stated in
+`ArchimedeanSemilocalTheoryStatement` and its statement modules; the central sign is proved
+(`archimedeanCentralSign`, module `ArchimedeanCentralSignProof`). Over a totally
 complex field only the complex places need the archimedean theory.

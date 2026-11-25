@@ -1,18 +1,16 @@
 # Orbit sections, coefficients and wave packets for actual dynamic parabolics
 
-Author: Worker 131, task `b2eba110-082e-4b07-9076-f64b90cd0dc3` (Task 7454, revision 1).
-
 Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.DynamicInducedOrbitWavePacket`,
 namespace `Langlands.HarishChandraSchwartz.DynamicInducedOrbit`.
 
 ## Purpose
 
-Task 7454 states Waldspurger's expansion (Proposition V.1.1, Corollary V.2.3) of weighted weak
-constant terms into wave packets of a *lower* Levi group `M'`. On `M'` these packets are induced
+Waldspurger's expansion (Proposition V.1.1, Corollary V.2.3) of weighted weak constant terms is
+an expansion into wave packets of a *lower* Levi group `M'`. On `M'` these packets are induced
 from the parabolic `M' ∩ s·P`, which is in general only *semistandard* in `M'`. The published
 constructions in `RationalInducedOrbitWavePacket` cover only actual *standard* parabolics `P_I`.
-The objective (item 2) allows either extending the section, coefficient and wave-packet
-constructions to semistandard parabolics or a transport to standard data. This module does the
+Either the section, coefficient and wave-packet constructions are extended to semistandard
+parabolics, or the data are transported to standard ones. This module does the
 extension. It works for any parabolic of the form `P(χ)`, the dynamic parabolic of a cocharacter.
 This covers every semistandard parabolic, `M' ∩ s·P` included: such a parabolic is `P(χ')` for a
 suitable cocharacter `χ'` of the maximal split torus.
@@ -120,5 +118,6 @@ It only provides the constructions for every `P(χ)`. The caller supplies the co
   `inducedOrbitCoefficientMap`, `inducedOrbitWavePacket`.
 - New proved lemmas: `leviUnitaryCoordinates_hasLaurent`, `leviNormCharacters_continuous`,
   `parabolic_modularCharacter_eq`, `inducedOrbitWavePacket_apply`.
-- No targets are stated here. The task's targets use these constructions with `H = M'` and the
-  cocharacter of `M' ∩ s·P`, in later modules of Task 7454.
+- No targets are stated here. The targets of the weighted weak-constant-term expansion use these
+  constructions with `H = M'` and the cocharacter of `M' ∩ s·P`, in the `RationalWeakExpansion`
+  modules (among them `RationalWeakExpansionCFamily`, which imports this module).

@@ -1,6 +1,6 @@
 # Invariant ideals and coaction filtrations
 
-Worker 148. This is internal algebra derived from the existing coaction, regular
+This is internal algebra derived from the existing coaction, regular
 coaction, Hom coaction, and stable-submodule constructions. It makes no use of a
 geometric descent or acyclicity theorem. The coefficient rings have arbitrary
 universe `u`; the module has independent universe `v`.
@@ -52,4 +52,5 @@ gives stability of every `I^n • M`.
 
 These results provide invariant ideals and stable filtration terms. They do
 not assert vanishing for the associated quotients, exactness of invariants for
-the geometric relation, or the host task's acyclicity conclusion.
+the geometric relation, or the acyclicity conclusion of
+`EtaleEquivalenceRelationComodulesAcyclicStatement`.

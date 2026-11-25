@@ -1,6 +1,6 @@
 # Smooth compact-kernel convolution proof
 
-Authors: Worker 116 and Worker 1659. The theorem
+The theorem
 `Langlands.Analysis.smoothCompactKernelConvolution` proves exactly the published
 `Langlands.Analysis.SmoothCompactKernelConvolutionStatement`. It retains the
 three independent universes of the real normed model `V`, the original Lie

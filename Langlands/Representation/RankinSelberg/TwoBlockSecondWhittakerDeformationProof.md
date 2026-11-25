@@ -2,8 +2,7 @@
 
 Module `Langlands.Representation.RankinSelberg.TwoBlockSecondWhittakerDeformationProof`.
 
-Authors: Worker 831 and Worker 15. The proof implements the transport rationale
-that Worker 15 wrote in the statement's Markdown.
+The proof implements the transport rationale given in the statement's Markdown.
 
 The theorem `Langlands.RankinSelberg.twoBlockSecondWhittakerDeformation.{uF,uW}`
 proves exactly the published proposition

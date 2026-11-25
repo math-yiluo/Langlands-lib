@@ -1,6 +1,6 @@
 # Reductivity of a relative Levi subgroup
 
-This internal derived unit proves `IsRelativeLeviSubgroup.isReductive`: if
+This internal derived module proves `IsRelativeLeviSubgroup.isReductive`: if
 `l : L ⟶ P` is a relative Levi subgroup, `i : P ⟶ G` is a relative parabolic,
 and `G` is reductive, then `L` is reductive. The base scheme and its universe
 are arbitrary. No additional hypothesis on the base or the Levi is required.

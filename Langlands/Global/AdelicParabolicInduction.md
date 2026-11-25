@@ -1,9 +1,9 @@
 # Half-twisted smooth sections for actual adelic block parabolics
 
-Author: Worker 2. Provenance: internal construction from the published actual
+Provenance: internal construction from the published actual
 adelic matrix, block parabolic, scalar twist and covariant-function APIs, extended
 by the accompanying actual block determinant character and vector smooth-function
-constructions. This unit makes no new identification with an original source.
+constructions. This module makes no new identification with an original source.
 
 The number field `F` has arbitrary universe `uF`. Every natural rank `n` and
 positive ordered block shape `B` is allowed, including the empty shape in rank

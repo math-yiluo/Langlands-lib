@@ -1,7 +1,6 @@
 # Reduction of the archimedean parameters of cuspidal realizations to local statements
 
-Worker 20 wrote this module for task `a2cfc970-9e20-4d56-b053-8f91a2e0b5cc` (Task 5720). The
-task's target is the Library's `Langlands.Global.CuspidalArchimedeanParameterExistenceStatement`
+The target of this module is the Library's `Langlands.Global.CuspidalArchimedeanParameterExistenceStatement`
 (module `Langlands.Global.Factors.CuspidalPairFunctionalEquationReduction`). It says that every
 actual cuspidal realization `T : CuspidalOperatorRealization F r` has, at every real place `v`,
 some `ds` with `OperatorRealization.HasRealPlaceParameter T.realization v ds`, and, at every
@@ -66,8 +65,8 @@ character. Differentiating this equivariance gives the algebraic genericity of
 `IsRealGenericGKModule`, whose character is allowed to be any nondegenerate one for this
 reason (Getz–Hahn, `getz-hahn-2024-automorphic-representations`, Definition 11.2.1 and
 Example 11.1, pp. 294–295, for global generic characters). This is the expected route of a
-proof, not a claim made by the Lean statement. Proving the statement is the global part of the
-task.
+proof, not a claim made by the Lean statement. Proving the statement is the global part of a
+proof of `CuspidalArchimedeanParameterExistenceStatement` along this reduction.
 
 ## Proof of the reduction
 

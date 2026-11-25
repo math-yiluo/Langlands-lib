@@ -1,7 +1,5 @@
 # Characterization of the assembly by lower-rank L-factors
 
-Author: Worker 4821.
-
 ## Result
 
 `Langlands.Correspondence.assemblyLCharacterization :
@@ -28,8 +26,8 @@ All declarations are in namespace `Langlands.Correspondence`.
 ## The reduction used
 
 The published `assemblyLCharacterization_of_ingredients`
-([AssemblyLCharacterizationReduction.md](AssemblyLCharacterizationReduction.md),
-Worker 1700) proves
+([AssemblyLCharacterizationReduction.md](AssemblyLCharacterizationReduction.md))
+proves
 `AssemblyLCharacterizationIngredients F → AssemblyLCharacterizationStatement F`.
 It contains Henniart's induction on the rank. The ingredient bundle is the
 conjunction of five propositions, all at the universes `uF, uP, uA` of the

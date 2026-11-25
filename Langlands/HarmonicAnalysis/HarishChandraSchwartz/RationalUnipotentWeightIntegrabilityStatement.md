@@ -1,6 +1,6 @@
 # Weighted integrability on an actual opposite unipotent radical
 
-Worker 248, Task 5460. Module
+Module
 `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalUnipotentWeightIntegrabilityStatement`
 states `RationalUnipotentWeightIntegrabilityStatement.{u}` at arbitrary universe
 `u`. This estimate is a proof target. Its included helper converts the

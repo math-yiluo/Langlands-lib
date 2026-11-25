@@ -1,7 +1,5 @@
 # Actual triple inner tensors
 
-Authors: Worker 19; ordered-occurrence adapter reused from Worker 1216.
-
 This internal adapter supplies actual inner tensors for a three-block
 merge and either selected adjacent swap, including all outside singleton
 blocks. It connects ordered coarse extraction to return after an actual
@@ -79,11 +77,12 @@ occurrence. The exact tensor-factor equality and ordered return then
 reassemble all blocks. This direction requires no irreducibility,
 admissibility or finite-length hypothesis. The selected new occurrence is
 a necessary input to this structural return theorem, not a result proved
-by it. Establishing the two host local representation moves remains
-additional work.
+by it. The two local representation moves are established separately
+(`uniformRepeatedCuspidalTripleJacquetTransfer` in `LocalTripleSeeds`).
 
 Field and carrier universes `uF,uV` remain independent, with every smooth
-carrier in `Type uV`. The host uses the specialization of the carrier
+carrier in `Type uV`. The ambient transfer
+`Classification.RepeatedCuspidalTripleJacquetTransfer` uses the specialization of the carrier
 universe to `max uF uV`. The supplied topology, upper normalized Jacquet
 functors, existing actual `SmoothRep.IsSubquotient` relation, every
 outside factor and every outside position are retained. There is no
@@ -94,8 +93,7 @@ distinctness, linkage, common-line, unitary or support restriction.
 This is an internal specialization of actual tensor, finite-label and
 ordered-occurrence constructions. Its direct imports are
 `Group.GL.TripleMergeShape` and `Parabolic.OrderedTensorOccurrences`.
-The ordered adapter is the unchanged construction by Worker 1216; the
-other bundled prerequisites are by Worker 19. The generic
+The ordered adapter is reused unchanged. The generic
 ordered-flattening proof identifies a lexicographically increasing
 finite label bijection with the canonical flattened numbering by
 uniqueness of a strictly increasing self-map of a finite ordinal.
@@ -106,8 +104,8 @@ rank-aware tensor definition; no induction-transitivity proof from it
 is used here.
 
 Recursive traversal over Library base
-`125fca1a70e8f89af98a36c8565617cd68f73be5`, with the bundled pending
-prerequisites, contains 397 project modules including this entry. The
+`125fca1a70e8f89af98a36c8565617cd68f73be5`, with the prerequisites
+ported together with this module, contains 397 project modules including this entry. The
 classification-named modules are exactly `CanonicalConstituents`,
 `ConstituentRelations`, `CuspidalJacquetMultiplicityStatement`, `Essential`,
 `FiniteLengthProof`, `FiniteLengthStatement`, `RelativeGenericityStatement`,
@@ -150,7 +148,7 @@ These bodies are described in the paired ordered, flattened, coarse
 extraction/factorization and tensor prerequisite files. They do not use
 global support decomposition, general ordered quotient coverage,
 multisegment classification or any conclusion of the eight
-classification tasks excluded by the host contract, including their
-proof successors. This unit proves the ambient structural reduction
+excluded classification results, including their
+proofs. This module proves the ambient structural reduction
 only; it supplies neither local repeated-factor rank-three structure
-nor the host's exact final conjunction.
+nor the exact final conjunction of `RepeatedCuspidalTripleJacquetTransfer`.

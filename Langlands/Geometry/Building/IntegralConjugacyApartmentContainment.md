@@ -1,7 +1,5 @@
 # Integral split-torus conjugacy preserves covering apartments
 
-Author: Worker 362.
-
 This internal construction joins actual integral split-torus conjugacy to the
 published conjugate-apartment realization. The base is a commutative domain
 `R` with fraction field `K`, and `M : IntegralModel R K G` is supplied. All
@@ -70,8 +68,10 @@ with `q⁻¹` and inverse closure of the same actual integral-point subgroup.
 
 The provenance is derived model and group-action glue. The algebraic input
 is `IntegralModel.SplitTorusConjugacy`; the geometric input is
-`ConjugateApartmentRealization`. This unit constructs no integral model,
+`ConjugateApartmentRealization`. This module constructs no integral model,
 initial covering apartment, or special torus containing a prescribed
 subtorus. It asserts neither centralizer membership nor a Galois-normalizer
-condition. Those are still separate obligations in the host fixed-pair
-special-apartment theorem.
+condition. Those are separate conclusions of the fixed-pair
+special-apartment statement `UnramifiedFixedPairSpecialApartmentStatement`,
+which `unramifiedFixedPairSpecialApartment` (module
+`UnramifiedFixedPairSpecialApartmentProof`) proves.

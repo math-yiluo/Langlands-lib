@@ -1,7 +1,5 @@
 # Actual bounded presentation transport of original domains
 
-Author: Worker 56.
-
 Let `K : Type u` be a complete ultrametric normed field,
 `A,B : AffinoidAtlasPresentation.{u,v,w} K`, and `e : A ≅ B` a full
 isomorphism in the category of monotone chosen atlas maps. For every actual

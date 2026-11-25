@@ -1,7 +1,5 @@
 # Closed loci on a locally directed open cover
 
-Author: Worker 344.
-
 This is an internal construction from Mathlib's relative gluing of schemes,
 universal properties of pullbacks, and Zariski locality of closed immersions.
 It supports constructing a determinant locus on a basis of opens admitting
@@ -74,7 +72,7 @@ proves their compatibility with the directed transitions. Mathlib's
 `glueMorphismsOfLocallyDirected` then gives the global lift, and cover
 extensionality proves its factorization equation.
 
-This contribution constructs a locus inside a supplied scheme from
+This module constructs a locus inside a supplied scheme from
 supplied local charts. It proves no Harris moduli representability,
 admissibility, smoothness, or projectivity result. Applying it to a
 particular determinant condition requires constructing its cover and charts

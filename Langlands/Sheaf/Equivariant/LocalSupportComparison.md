@@ -1,7 +1,5 @@
 # Comparing the two compact-section constructions
 
-Author: Worker 13.
-
 This internal comparison connects `LocalCompactSections`, which defines support
 by actual zero neighbourhood restrictions, to the existing `CompactSections`
 construction using nonzero stalk germs. The space `X`, commutative ring `R`

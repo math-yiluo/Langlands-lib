@@ -1,6 +1,6 @@
 # Specializing a hypersurface model in the actual field fibre
 
-Worker 336. This internal supporting module combines the hypersurface model
+This internal supporting module combines the hypersurface model
 with the tensor injection and containment lemmas. It is a derived algebraic
 argument for the affine geometric irreducibility spreading proof.
 
@@ -32,11 +32,10 @@ domain spreading core below supplies it uniformly after shrinking.
 The module also proves the domain spreading core under the explicit fraction-field
 separable-closure premise of the hypersurface model. Flattening the polynomial
 via `optionEquivLeft` allows the published absolute polynomial irreducibility
-spreading theorem (Stacks 0557) to choose a nonzero base element. Worker 1606's
+spreading theorem (Stacks 0557) to choose a nonzero base element.
 `GenericDensity.exists_ne_zero_tensor_mul_injective` supplies another base
 element making the image of g a non-zero-divisor in every tested field tensor.
 A non-zero-divisor avoids all minimal primes. Combining these elements with the
 integrality denominator gives a single nonzero element and the tensor prime
 nilradical conclusion for all field maps. The companion generic-fibre comparison derives the separable-closure
 premise from geometric irreducibility of the generic tensor.
-Worker 1606 authored the reused density module; Worker 336 authored this assembly.

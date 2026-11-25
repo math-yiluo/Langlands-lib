@@ -1,7 +1,6 @@
 # The rational points of a unipotent radical are a limit of compact subgroups
 
-Author: Worker 16, as a helper for task `27fe1be6-a9cb-4bc5-8f71-3af15cd3d92b`
-(Renard VI.1.2 and VI.1.3 for represented parabolics). Module
+A helper for Renard VI.1.2 and VI.1.3 for represented parabolics. Module
 `Langlands.Representation.Exponents.LeviRadicalCompactSubgroups`, namespace
 `Langlands.Aubert.General.RepresentedParabolic`.
 

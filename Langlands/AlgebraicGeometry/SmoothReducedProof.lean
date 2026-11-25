@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 
 open CategoryTheory AlgebraicGeometry
 open scoped TensorProduct

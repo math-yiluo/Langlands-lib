@@ -44,6 +44,6 @@ Galois field components meet the compatibility theorem's hypotheses. Fpqc
 homomorphism descent gives `r` over `k`; faithful base change reflects its
 retraction identity.
 
-This unit constructs the retraction only. A complementary quotient section
-and the final positive-power rational-point factorization remain separate
-steps of the host proof.
+This module constructs the retraction only. A complementary quotient section
+(module `TorusVectorQuotientSection`) and the final positive-power
+rational-point factorization are separate steps, not part of this module.

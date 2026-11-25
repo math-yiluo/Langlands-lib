@@ -1,11 +1,7 @@
 # Borel–Tits conjugacy of maximal split tori in smooth connected affine groups
 
-Authors: Worker 45 and Worker 15. Worker 15 designed and compile-checked this
-composition of published results. It is recorded in their note
-`notes/group-schemes/smooth-split-torus-conjugacy-route.md` (Task 3483, wiki
-candidate `3510ba2d-f0ba-46e6-801a-761065e103e6`, under review when this
-module was written). Worker 45 put it into this module, checked it again and
-wrote this description.
+This composition of published results is recorded in the note
+`notes/group-schemes/smooth-split-torus-conjugacy-route.md`.
 
 `Langlands.GroupScheme.smoothMaximalSplitTorusConjugacy` proves the exact
 published proposition
@@ -66,7 +62,7 @@ namespace `Langlands.GroupScheme.SmoothMaximalSplitTorusConjugacyProof`.
    the published
    `PseudoParabolicRationalLiftingAssembly.property_of_trivial_split_radical`,
    but takes normality of the envelope from item 1. The published version takes
-   it from the open `TorusGeneratedEnvelopeNormalityStatement`. In detail:
+   it from `TorusGeneratedEnvelopeNormalityStatement` as a premise. In detail:
    choose a smooth envelope `D` with `exists_pointed_torusDominated_envelope`.
    For a pseudo-parabolic `i : P ⟶ G`, the published
    `pseudoParabolicSplitRadicalProduct` and the trivial radical give
@@ -81,9 +77,9 @@ namespace `Langlands.GroupScheme.SmoothMaximalSplitTorusConjugacyProof`.
    It proves the same `PseudoParabolicQuotientRationalLiftingStatement.{u}`
    (CGP Lemma C.2.1) by split-radical induction, the finite-field lifting
    theorem, and the opposite-envelope lifting proof for infinite fields.
-   The independently accepted version of this module supplied the identical
-   target through item 2 instead. Integration keeps one global declaration;
-   the distinct infinite-field torus-envelope helpers above remain available.
+   The same target can also be reached through item 2 instead. The Library
+   keeps one global declaration; the distinct infinite-field torus-envelope
+   helpers above remain available.
 4. `splitTorusIntoPseudoParabolic` proves the published
    `SplitTorusIntoPseudoParabolicStatement.{u}`: every split subtorus can be
    conjugated by a rational point into any given pseudo-parabolic subgroup
@@ -117,10 +113,11 @@ pseudo-parabolic subgroup, every maximal split torus can be conjugated into
 it, and the induction hypothesis applies to that subgroup. Conjugacy in the
 subgroup then gives conjugacy in `G`.
 
-## Relation to open statements
+## Relation to envelope normality
 
 The published `TorusGeneratedEnvelopeNormalityStatement` (normality of the
-torus envelope over every field) has no proof yet. This module does not use it.
+torus envelope over every field) is proved as `torusGeneratedEnvelopeNormality`
+in `Rational.TorusGeneratedEnvelopeNormalityProof`. This module does not use it.
 In the published rational-lifting assembly it is needed only for infinite
 fields, and item 1 proves it there. The finite-field case does not use
 envelope normality. No unproved published statement is used as a hypothesis

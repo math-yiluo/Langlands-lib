@@ -185,12 +185,9 @@ theorem leftVanishPos (k : ℕ) :
       have hc : (k + 1) + r + 1 - (j + 1) =
           (k + 1) + (r + 1) + 1 - (j + 1 + 1) := by omega
       have hz' := rankCast_subsingleton T hc _ hz
-      change Subsingleton ((generalLinearRankCast T hc.symm ⋙
-          generalLinearRankCast T hc).obj
-          ((mirabolicDerivativeOfOrder T ψ ((k + 1) + (r + 1))
-            (j + 1 + 1) hi).obj
-            ((T.leftMixedProductFunctor (k + 1) (r + 1)).obj (A, B)))) at hz'
-      rw [generalLinearRankCast_symm_comp] at hz'
+      simp only [Functor.comp_obj] at hz'
+      rw [← Functor.comp_obj, generalLinearRankCast_trans, generalLinearRankCast_refl,
+        Functor.id_obj] at hz'
       exact hz'
 
 /-- Positive-rank and positive-order Leibniz gluing with every actual

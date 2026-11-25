@@ -1,7 +1,5 @@
 # Field base change for the canonical regular-class-function quotient
 
-Author: Worker 1744.
-
 This module defines the proposition
 `Langlands.GroupScheme.ClassFunctions.FieldBaseChangeStatement.{u}`.
 It states a comparison for the published actual class-function construction;

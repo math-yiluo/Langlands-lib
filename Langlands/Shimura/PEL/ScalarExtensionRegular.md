@@ -102,7 +102,7 @@ level towers when the rational source module is `A` with the form `ψ`.
 
 The provenance is internal: the new comparisons follow from the
 published tensor action, the two existing operator topologies, and the
-published Harris trace comparison. This unit does not construct a new
+published Harris trace comparison. This module does not construct a new
 PEL input, a polarization, a compatible frame or a moduli functor. It
 does not choose compact-open subgroups or assert nonemptiness of any
 level set.

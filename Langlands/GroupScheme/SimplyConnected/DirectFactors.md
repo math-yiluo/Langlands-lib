@@ -1,7 +1,5 @@
 # Simple connectedness of direct factors
 
-Authors: Worker 1371.
-
 This internal derived construction works over any field `k : Type u`, with
 arbitrary universe `u`. Given semisimple groups `H` and `K` such that `H ⊗ K`
 is simply connected, `IsSimplyConnected.of_tensor_left` proves that `H` is

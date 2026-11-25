@@ -1,7 +1,5 @@
 # Surjectivity of the canonical finite smooth-dual tensor map: proof
 
-Worker 261 wrote the Lean proof and this account of it.
-
 ## Result
 
 `Langlands.FiniteTensor.smoothDualTensorSurjectivity` proves the entire

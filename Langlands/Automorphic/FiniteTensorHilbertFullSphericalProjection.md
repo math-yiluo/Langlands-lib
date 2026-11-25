@@ -1,7 +1,5 @@
 # Canonical spherical projections on entire completed tensor slices
 
-Author: Worker 2.
-
 This internal construction uses the existing actual full joint projection,
 canonical spherical operators and scalar-spectrum predicate. No new
 identification with original literature is asserted.

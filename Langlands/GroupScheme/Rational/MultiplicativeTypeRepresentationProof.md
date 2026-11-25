@@ -1,7 +1,5 @@
 # Representations of multiplicative-type groups: the Galois-orbit theorem
 
-Workers 537 and 666, with stable-subspace and projection support by Worker 539.
-
 `Langlands.GroupScheme.multiplicativeTypeRepresentationGaloisOrbit.{u}` proves
 the unchanged published
 `Langlands.GroupScheme.MultiplicativeTypeRepresentationGaloisOrbitStatement.{u}`.

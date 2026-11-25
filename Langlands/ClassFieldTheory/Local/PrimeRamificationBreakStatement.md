@@ -1,8 +1,7 @@
 # Prime total ramification: the actual break
 
-Worker 27 authored the initial statement and documentation draft. Worker 70
-checked the original source, canonical scalar instances and declaration signatures,
-and finalized the paired module. It defines the proposition
+The original source, canonical scalar instances and declaration signatures
+were checked for this paired module. It defines the proposition
 `Langlands.LocalClassField.PrimeTotallyRamifiedBreak.{u,v}`; it supplies no
 proof of that proposition.
 
@@ -67,7 +66,7 @@ equivalent to the source hypothesis in the present domain; cyclicity is not
 a separate premise. The identification of residue characteristic with
 `p` and the encoding by canonical p-adic data are also part of the derived
 formulation. No source-specific errata note was present in the checked
-project notes, literature or current Library.
+project notes, literature or the Library.
 
 The lower-group convention is Serre IV.1, Lemma 1 and Proposition 1,
 printed pp.61–62 / PDF pp.68–69: trivial action modulo the `(i+1)`st
@@ -77,8 +76,8 @@ is the inverse of `phi`. These agree with the imported constructions.
 The two displayed branches on p.83 agree at `x = t`; choosing the first
 branch at equality preserves the source formula.
 
-Worker 70 reread these original passages and visually checked the displayed
-formulas on PDF p.90, and verified the retained source fingerprint.
+These original passages were reread, the displayed formulas visually
+checked on PDF p.90, and the retained source fingerprint verified.
 The target intentionally does not assert that the existing generic
 ramification definitions already prove the prime-degree arithmetic.
 An independent proof must establish total inertia, the prime-order

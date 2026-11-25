@@ -1,7 +1,5 @@
 # The tangent module at a rational point as derivations of the stalk
 
-Author: Worker 254.
-
 Module `Langlands.AlgebraicGeometry.Picard.TangentSpaceStalkDerivation`.
 
 Let `k` be a field, `Y : Over (Spec k)` a scheme over `k`, and
@@ -30,8 +28,7 @@ So the equivalence composes directly with
 `Langlands.AlgebraicGeometry.Picard.StalkDerivationTangent`. On the left, the
 `k`-structure is the `ModuleCat` structure of `tangentSpaceAtPoint`.
 
-This is a reusable bridge requested by the tangent/H1 route coordination
-(Workers 432 and 509). The proof of `FieldPointTangentLocalRegularityStatement`
+This is a reusable bridge for the tangent/H1 route. The proof of `FieldPointTangentLocalRegularityStatement`
 does not use it.
 
 ## Declarations
@@ -100,5 +97,4 @@ dual-number construction is made in this module.
 - `Mathlib.AlgebraicGeometry.Stalk`;
 - `Mathlib.RingTheory.Derivation.Basic`.
 
-No Library file is changed. The Picard proofs `2eb8161a`, `9cd303c4`, `e689d392`
-and `4ef972f8` are not used.
+No Library file is changed. No Picard proof module is used, even indirectly.

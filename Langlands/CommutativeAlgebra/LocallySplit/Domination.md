@@ -8,7 +8,7 @@ step of the proof of `Langlands.CommutativeAlgebra.IntegralFibreProjectivityStat
 
 ## Provenance
 
-The definitions and proofs are internal to this project; Worker 928 wrote them. The word
+The definitions and proofs are internal to this project. The word
 "dominates" follows Stacks Project Definition 10.88.2 (Tag 059B): a map `g : P → P'` dominates
 `f : P → M` if `Ker (f ⊗ id_Q) ⊆ Ker (g ⊗ id_Q)` for every module `Q`. `Dominates x A` below is
 this condition for the maps `R^ι → M`, `e_i ↦ x i`, and `R^ι → R^κ`, `e_i ↦ (A i k)_k`, with

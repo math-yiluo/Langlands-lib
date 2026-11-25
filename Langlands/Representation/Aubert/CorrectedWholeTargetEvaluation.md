@@ -1,7 +1,5 @@
 # Actual whole-target evaluation and common graded coefficients
 
-Author: Worker 194.
-
 This internal development identifies an actual corrected whole-target graded
 support quotient with a supplied common actual flattened Jacquet quotient.
 It proves that the genuine source-cut transition becomes the identity under

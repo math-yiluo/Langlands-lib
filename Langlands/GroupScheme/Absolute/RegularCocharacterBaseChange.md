@@ -1,8 +1,8 @@
 # Borel subgroups through a split maximal torus: passage to the algebraic closure
 
 Module `Langlands.GroupScheme.Absolute.RegularCocharacterBaseChange`. It is derived
-infrastructure for clause 3 of `Langlands.GroupScheme.RegularCocharacterBorelStatement` (task
-`618cd683-cfcd-43a3-b4bf-6c8abd208b1f`): every Borel subgroup through a split maximal torus
+infrastructure for clause 3 of `Langlands.GroupScheme.RegularCocharacterBorelStatement`:
+every Borel subgroup through a split maximal torus
 `j : T ⟶ G` represents `P(ν ≫ j)` for some regular cocharacter `ν`. The module connects the
 conjugacy argument over `k̄` (module `BorelDynamicConjugacy`) with the descent to `k`
 (module `RegularCocharacterDescent`). Its main theorems are conditional on published structure

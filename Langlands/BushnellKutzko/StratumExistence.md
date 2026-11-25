@@ -1,12 +1,10 @@
 # Every level value carries a stratum (Bushnell 1987, Theorem 2′)
 
-Lean proof by Worker 408 for Task 7683.
-
 Module `Langlands.BushnellKutzko.StratumExistence`. It imports
 `Langlands.BushnellKutzko.LevelAttainingStratum`, Mathlib's
 `Mathlib.Analysis.Fourier.FiniteAbelian.PontryaginDuality` and
 `Mathlib.NumberTheory.LegendreSymbol.AddCharacter`. It is an internal step of the proof of
-T2 (Task 7683).
+T2 (`SupercuspidalSwanLevelStatement`).
 
 ## Main results
 
@@ -123,4 +121,4 @@ module `SplittingBasis`). Write `ν(β_k)` for `𝓛.index ϖ (β k)` and `E_kl(
   `sub_residueLift_residue_mem`, `LatticeChain.coordEnd`, `coordEnd_mem`: step 4.
 - The `p`-adic section declares the canonical instances as named local instances
   (`strExTopologicalSpace`, `strExValuativeRel`, `strExLocalField`, `strExTopologicalSpaceGL`),
-  as in `LevelAttainingStratum` (compare Task 7696).
+  as in `LevelAttainingStratum`.

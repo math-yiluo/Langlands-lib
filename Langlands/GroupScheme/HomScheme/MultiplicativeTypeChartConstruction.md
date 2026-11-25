@@ -3,10 +3,9 @@
 Module `Langlands.GroupScheme.HomScheme.MultiplicativeTypeChartConstruction`, namespace
 `Langlands.GroupScheme.HomScheme.MultiplicativeTypeChart`.
 
-Author: Worker 57.
-
-This is an internal module for the chart construction of the task "Prove that
-multiplicative-type subgroups of a fibre lift to an étale neighbourhood" (Task 6946). It is
+This is an internal module for the chart construction in the proof of
+`MultiplicativeTypeEtaleLiftStatement` (multiplicative-type subgroups of a fibre lift to an
+étale neighbourhood). It is
 the multiplicative-type analogue of the Library module `HomScheme.TorusChartConstruction`,
 whose proofs it follows step by step. The character lattice `ℤ^r` becomes
 `Λ = ℤ^r × F`, with `F` a finite commutative group. The split torus becomes the

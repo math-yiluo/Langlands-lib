@@ -1,6 +1,6 @@
 # Actual Frobenius and spectral transport to the standalone extension
 
-Worker 40 authored this derived compatibility construction. Its namespace is
+This module is a derived compatibility construction. Its namespace is
 `Langlands.LocalFactor.CommonClosureWeilDeligne.Transport`. It extends the
 published arithmetic pair attachment to geometric Frobenius and the intrinsic
 spectral variable.
@@ -119,7 +119,7 @@ PDF pages 29–30, for `(ker N)^I`, the reciprocal Euler determinant with
 `X=q^(-s)`, and the negative determinant on `V^I/(ker N)^I`.
 Registered source: `tate-1979-number-theoretic-background`; PDF SHA-256:
 `c890894fe19783890cc4def2c5bf92a18d71619acf8ba7005aefce4984fe70d6`.
-These original pages were read directly during this unit's development.
+These original pages were read directly during this module's development.
 
 The comparison itself is derived from published Library constructions.
 `CommonClosureWeilDeligneTransport` supplies the standalone pair and its
@@ -131,11 +131,11 @@ residue-cardinality equality; `Weil.Local.AssemblyProof` and
 `CommonClosureWeilDeligne` supply the existing spectral domains and values.
 No separate cross-closure comparison theorem is attributed to Tate.
 
-The input pair remains algebraic, as in the published attachment; this unit
+The input pair remains algebraic, as in the published attachment; this module
 does not add open-inertia or continuity hypotheses to it. The identities
 are intrinsic compatibilities of the determinant constructions and hence
 hold on that larger category. They do not establish functional equations,
 epsilon-system existence or transport of a full ordinary epsilon system.
 The quotient correction alone is not a full epsilon factor. Comparison
 between different closure choices and coherence under composition of field
-embeddings remain separate. The broad host task is not completed by this unit.
+embeddings remain separate.

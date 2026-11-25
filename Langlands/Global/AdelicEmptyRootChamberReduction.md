@@ -5,10 +5,10 @@ factorization on the actual canonical subgroup schemes. It is derived from the
 published `standardParabolicEndpoints` theorem and functoriality of actual
 norm-one adelic points; it invokes no compactness or fundamental-set theorem.
 
-`HasWeakChamberReduction` is the fixed-data weak-chamber factorization in the
-host statement. For a number field, an affine group scheme, the specified torus
-maps and cocharacter, and a specified subgroup `K` of the actual adelic group,
-it asserts one positive threshold and the ordered equality
+`HasWeakChamberReduction` is the fixed-data weak-chamber factorization in
+`AdelicSiegelChamberReductionStatement`. For a number field, an affine group
+scheme, the specified torus maps and cocharacter, and a specified subgroup `K`
+of the actual adelic group, it asserts one positive threshold and the ordered equality
 
 `image(n) * image(m) * positiveMap(a) * k = rational(q) * g`.
 
@@ -43,5 +43,6 @@ the supplied structural predicates, no splitting of `G`, and no compactness
 assumption on `K` in this base-case theorem.
 
 This result covers empty relative simple-root sets only. Uniform height bounds,
-positive-rank induction and the general chamber theorem remain separate
-obligations.
+positive-rank induction and the general chamber theorem are not part of it.
+The general chamber theorem is proved in `AdelicSiegelChamberReductionProof`
+as `adelicSiegelChamberReduction`.

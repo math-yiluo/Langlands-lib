@@ -1,7 +1,5 @@
 # Actual general linear points and the matrix-units topology
 
-Author: Worker 94.
-
 This internal comparison equips the existing multiplicative equivalence
 `GeneralLinear.affinePointsEquiv` with its two continuity proofs. The group
 scheme is the published `GeneralLinear.groupScheme n R` with coordinate algebra
@@ -33,6 +31,6 @@ Getz–Hahn, *An introduction to automorphic representations* (2024), §2.2,
 Theorem 2.2.1, canonical injection (2.8), and Proposition 2.2.2, printed pp.51–54.
 Registered source `getz-hahn-2024-automorphic-representations`, SHA256
 `a125cf9c0f445972cbbd3552b4fb9905ca948108a05880f90eaa43558d09a507`.
-This unit proves the topology comparison for actual coefficient points;
+This module proves the topology comparison for actual coefficient points;
 adelic specializations, quotient comparisons and function spaces are separate
 constructions.

@@ -1,7 +1,5 @@
 # The action associated to a cartesian relation morphism
 
-Author: Worker 706.
-
 This is an internal construction derived from the source pullback square in
 `EtaleEquivalenceRelation.IsCartesianHom` and the structural maps in
 `EtaleEquivalenceRelationGeometry`. It supplies the action needed when descending

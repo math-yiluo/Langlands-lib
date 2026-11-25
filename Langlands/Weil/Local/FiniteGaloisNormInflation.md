@@ -1,7 +1,5 @@
 # Inflation of finite Galois Weil classes from the norm square
 
-Author: Worker 5095, for task `37d6d58f-e378-4630-8a8c-0f3d7212a970`.
-
 Let `F ⊂ E ⊂ L` be a tower of finite extensions of `ℚ_p` with `E/F` and `L/F` Galois.
 The tower is given by embeddings `f : F → E` and `g : E → L` such that `L → \bar F`
 extends `E → \bar F` (hypothesis `hF1`). This module proves the inflation law of
@@ -13,9 +11,11 @@ for the actual Weil pushout classes `finiteGaloisClass` of the Library
 (`Langlands.Weil.Local.FiniteGaloisPushout`).
 
 The Library already has this statement as
-`FiniteGaloisTower.relativeInflation_finiteGaloisClass` (Worker 1839,
-`Langlands.Weil.Local.FiniteGaloisTower`), but there it assumes the transfer square
-`ExtensionWeilTransferReciprocityStatement` (hypothesis `hT`), which is not proved.
+`FiniteGaloisTower.relativeInflation_finiteGaloisClass`
+(`Langlands.Weil.Local.FiniteGaloisTower`), but there it assumes the transfer square
+`ExtensionWeilTransferReciprocityStatement` (hypothesis `hT`), which the Library proves
+as `extensionWeilTransferReciprocity` (module
+`Langlands.ClassFieldTheory.Local.WeilTransferReciprocityProof`).
 Here `hT` is replaced by the norm square `reciprocityUnits_extensionWeilMap`
 (`Langlands.Weil.Local.ExtensionNormReciprocity`), which is derived from the
 single-field reciprocity relations. The cohomological input is

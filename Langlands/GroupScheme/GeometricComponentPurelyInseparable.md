@@ -1,6 +1,6 @@
 # Fixed geometric components under purely inseparable extension
 
-This unit constructs an equivalence between the full Galois-fixed geometric
+This module constructs an equivalence between the full Galois-fixed geometric
 component groups of an actual smooth affine group scheme and its pullback
 along a purely inseparable field extension. Its forward homomorphism is
 `geometricComponentCanonicalBaseChange`. The construction requires no
@@ -47,7 +47,7 @@ These supplied closure structures occur only in this fixedness comparison.
 `geometricComponentCanonicalBaseChange_purelyInseparable_surjective`
 proves surjectivity of the published canonical homomorphism, whose
 definition already makes its value independent of the closure embedding.
-The registered construction is
+The constructed equivalence is
 
 ```text
 geometricComponentFixedPurelyInseparableEquiv k K H :
@@ -119,6 +119,6 @@ from the canonical value formula at any embedding and the inverse
 laws of multiplicative equivalences. Naturality is the published
 canonical naturality theorem after unfolding the forward map.
 
-This unit does not construct a component-group scheme or a sheaf
+This module does not construct a component-group scheme or a sheaf
 quotient. It does not assert surjectivity for arbitrary field
 extensions or descend fixed components to rational points.

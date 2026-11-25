@@ -132,9 +132,10 @@ exist.
 
 This is mathematical provenance and an informal derivation. The product
 abelian-scheme structure on `G` is used only in this explanation, and no
-product construction is needed to state the proposition. This unit does not
+product construction is needed to state the proposition. This module does not
 build that structure in Lean, implement the cubical identity, or prove any
-step of the derivation. The formal proof is a separate obligation.
+step of the derivation. The formal proof is the theorem `relativeCubeTriviality`
+in `RelativeRigidifiedCubeProof`, through `FieldToRelativeCubeReduction`.
 
 ## Direct provenance through Raynaud
 
@@ -196,7 +197,7 @@ and III.2.3). Hypothesis (c) comes from Corollary III.4.6. Its proof reduces
 to a noetherian base by limit arguments (II.3.3 and III.1.5) and then applies
 Proposition III.4.5. That proposition uses formal unramifiedness (III.4.1),
 infinitesimal neighbourhoods, coherent cohomology and cohomological flatness.
-All of this is source material, and none of it is formalized in this unit.
+All of this is source material, and none of it is formalized in this module.
 Neither the Raynaud specialization nor the Moret-Bailly derivation is claimed
 here as a Lean theorem.
 
@@ -213,7 +214,7 @@ the `CubeFace` maps. It imports `Langlands.AbelianScheme.Basic` for
 
 `FieldCubeTrivialityStatement` quantifies only over spectra of fields. Even a
 proof of it would not establish the present assertion over an arbitrary
-quasi-separated base, and in particular not over a nonreduced base. This unit
+quasi-separated base, and in particular not over a nonreduced base. This module
 does not use the inference that a line bundle trivial on every geometric
 fibre is pulled back from the base. Over a nonreduced base that inference is
 false in general. Bridging from fibres to the relative statement is
@@ -225,4 +226,5 @@ The consumer is
 `triviality` hypothesis has the same body as this proposition for one fixed
 `S`, `A`, `B` and `C`, without the quasi-separatedness instance. That
 hypothesis can be supplied from a proof of this statement once the base is
-quasi-separated. Stating the criterion does not complete the parent theorem.
+quasi-separated. Stating the criterion does not by itself prove
+`RelativeRigidifiedCubeStatement`, the theorem that this consumer serves.

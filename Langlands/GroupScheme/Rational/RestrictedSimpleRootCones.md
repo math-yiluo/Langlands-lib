@@ -1,11 +1,9 @@
 # Actual restricted simple roots and positive root-combination cones
 
-Author: Worker 1416.
-
-This unit constructs the restricted simple roots `Δ(P)` of Renard V.3.14 and the
+This module constructs the restricted simple roots `Δ(P)` of Renard V.3.14 and the
 first two cones of V.3.15. They are built on the existing actual group schemes,
 character lattices, simple relative roots and full real character spaces. It is a
-definition unit with short intrinsic proofs. It does not define a new root system,
+definition module with short intrinsic proofs. It does not define a new root system,
 and it does not prove any structural theorem about reductive groups.
 
 ## Source correspondence
@@ -72,13 +70,13 @@ is decomposable, a contradiction. It does not exclude other integer multiples.
 Renard's `Δ_∅` is the set of simple roots of the reduced positive roots
 `Σ(P_∅)`, and reduced means that `α/n` is not a root for every `n ≥ 2` (V.3.4,
 printed p.110, PDF p.116; V.3.12, printed p.112, PDF p.118). In the generality
-of this unit the two conditions differ. For example, over `ℚ` take
+of this module the two conditions differ. For example, over `ℚ` take
 `G = GL_2 × GL_2`, `T = G_m`, `i(t) = (diag(t,1), diag(t^3,1))` and `ν = id`,
 and write `χ(t) = t`. The nonzero weights of `T` on `Lie(G)` are `±χ` and
 `±3χ`, so the positive relative roots are `χ` and `3χ`. Neither is a sum of two
 of them, so both are simple, although `3χ = 3 · χ`. This `T` is not a maximal
-split torus, and the unit does not require one. The example was supplied by the
-review of an earlier version of this unit and is not formalized here.
+split torus, and the module does not require one. The example is not
+formalized here.
 
 The existing target `RelativeSimpleRootBasisStatement` (in
 `Rational.RelativeRankStatement`) covers a generic `ν`. It states that these
@@ -87,7 +85,7 @@ span. Identifying them with the simple roots of the minimal parabolic determined
 by `ν`, which are indivisible by Renard's definition, is a further structural
 comparison. In particular, indivisibility of the actual simple roots for a
 maximal split `T` and generic `ν` would come from that comparison, not from the
-definition. This unit neither uses nor proves that comparison. It also does not
+definition. This module neither uses nor proves that comparison. It also does not
 claim that the result is independent of the initial minimal parabolic.
 
 ## Scope and inputs
@@ -98,7 +96,7 @@ scheme `G` with `[IsAffineHom G.X.hom]`. The other inputs are a morphism
 `i : T.toGrp ⟶ G`, a cocharacter `ν` and a morphism `f : A ⟶ T`. `J` is any set
 of characters of `T`. Only `simpleRelativeRoots i ν \ J` enters, so the source
 convention `J ⊆ simpleRelativeRoots i ν` is a special case. `J` and the simple-root
-set may be empty. The unit assumes no maximal splitness, genericity, reductivity,
+set may be empty. The module assumes no maximal splitness, genericity, reductivity,
 characteristic zero, perfectness, splitness of `G`, positive rank, `GL_n`
 structure, reducedness, or root-system property of the restricted roots.
 
@@ -120,7 +118,7 @@ No other premise is required.
 representative of `standardLevi i ν J` and `a : A.toGrp ⟶ L` a split component.
 Suppose `f : A ⟶ T` satisfies `CommGroupScheme.groupHom f ≫ i = a ≫ j`, the
 factorization in `StandardLeviSplitCentralDirectionsStatement`. Then the
-constructions apply directly to this `f`. This unit does not prove that such an
+constructions apply directly to this `f`. This module does not prove that such an
 `f` exists, nor the image equality of that statement.
 
 `eq_of_groupHom_comp_eq` proves that `f` is determined by `a` when
@@ -164,7 +162,7 @@ Mathlib's `PointedCone.hull ℝ S`. `image_positive` and `image_nonneg` show tha
 any linear map `L` carries each cone of `S` exactly onto the cone of `L '' S`.
 Injectivity is not needed, because coefficients of vectors with equal images add.
 
-**Restricted roots.** For the restricted roots the unit proves:
+**Restricted roots.** For the restricted roots the module proves:
 
 - `mem_restrictedSimpleRoots`, the image-membership law;
 - `restrictedRootVector_mem_restrictedSimpleRoots`;
@@ -173,7 +171,7 @@ Injectivity is not needed, because coefficients of vectors with equal images add
   `simpleRelativeRoots i ν ⊆ J`;
 - the comparison with `restrictedSimpleCharacters`.
 
-**Cones.** For the cones the unit proves:
+**Cones.** For the cones the module proves:
 
 - `mem_restrictedRootPositiveCone` and `mem_restrictedRootNonnegCone`, as finite
   sums in `Vstar A` over the restricted set;
@@ -202,10 +200,10 @@ Injectivity is not needed, because coefficients of vectors with equal images add
   theorems give both directions: along `e.hom` from `f'` to `f`, and along
   `e.inv` from `f` to `f'`.
 
-## Outside this unit
+## Outside this module
 
-This unit constructs only the root-positive linear-combination cones. The
-following remain separate obligations:
+This module constructs only the root-positive linear-combination cones. It
+does not construct the following:
 
 - the coroot-inequality chambers `_P^G[𝔞^*]^+` and their closures;
 - the projected coroots `β̌` and the fundamental weights `ϖ_α`;
@@ -213,7 +211,7 @@ following remain separate obligations:
 - the V.3.16 cellular decomposition and the V.3.17–18 combinatorics.
 
 Naming the nonnegative set after the source's overlined notation does not prove
-that it is the topological closure of the strict cone. The unit proves no
+that it is the topological closure of the strict cone. The module proves no
 openness or closedness. It also does not establish any of these:
 
 - independence of the initial minimal parabolic, or Weyl-conjugacy comparisons;
@@ -254,8 +252,7 @@ displays the integral character image, and `restrictedSimpleRoots_finite`
 records finiteness from the supplied finite simple-root set.
 `restrictedSimpleRoots_eq_empty_iff_sdiff` uses the conclusion
 `simpleRelativeRoots i ν \ J = ∅`; `restrictedSimpleRoots_eq_empty_iff` retains
-the equivalent subset formulation. Neither statement has been replaced by a
-different hypothesis or conclusion.
+the equivalent subset formulation.
 
 `mem_restrictedPositiveCone` and `mem_restrictedNonnegCone` express membership
 in the shared restricted cones by sums over the finiteness witness's

@@ -1,7 +1,5 @@
 # Finite twisted upper-unipotent coinvariants of irreducible supercuspidal representations
 
-Author: Worker 784.
-
 `Langlands.Whittaker.SupercuspidalCoinvariantFinitenessStatement.{uF,uV}` is a
 `Prop`-valued definition. It states that the twisted upper-unipotent
 coinvariants of an irreducible supercuspidal representation of `GL_m(F)` are
@@ -11,10 +9,9 @@ step (5), printed p.61. That step refers back to §5.18 with Proposition 5.15(a)
 and Theorem 5.16 (printed pp.49–50). The source proves the stronger
 dimension-zero-or-one claim, and only finite dimension is stated here.
 
-This module publishes a statement and nothing more. It contains no proof of
-the proposition and does not assume it anywhere. Publishing the statement does
-not establish it. A proof is a separate later contribution (see
-"Successor proof" below).
+This module states the proposition and nothing more. It contains no proof of
+the proposition and does not assume it anywhere. The proof is in a separate
+module (see "Proof and its boundaries" below).
 
 ## Exact statement
 
@@ -181,11 +178,12 @@ The statement does not assume any of the following:
 - unitarity or a central character;
 - finite dimension of the carrier of `σ`;
 - a tensor factorization;
-- any multiplicity-one result, in particular not the unproved Library
-  proposition `Langlands.Whittaker.MultiplicityOneStatement`;
+- any multiplicity-one result, in particular not the Library proposition
+  `Langlands.Whittaker.MultiplicityOneStatement` (proved as `multiplicityOne`
+  in `MultiplicityOneProof`);
 - any other theorem-valued premise.
 
-Rank `0` is excluded by `0 < m`, as the task specifies. The boundary cases are
+Rank `0` is excluded by `0 < m`. The boundary cases are
 remarks only and are not part of the statement:
 
 - **Rank one.** `upperUnipotent 1 F.Carrier` is trivial, so `η` is trivial and
@@ -246,29 +244,28 @@ source's parametrized characters `θ(a_1, …, a_{m-1})`, does not use the
 classification of §5.5. That classification is needed only to compare the
 statement with the source's case division.
 
-## Successor proof and ownership boundaries
+## Proof and its boundaries
 
-The proof is not supplied here. Worker 288 owns the exact proof successor,
-which will be published after this statement is in the Library. The following
-are obligations and boundaries for that proof. They are not premises of the
-statement.
+The proof is not supplied here. It is
+`Langlands.Whittaker.supercuspidalCoinvariantFiniteness` in
+`SupercuspidalCoinvariantFinitenessProof`, whose page records its dependency
+audit. The following are obligations and boundaries for that proof. They are
+not premises of the statement.
 
 - **Independence.** The proof must not depend, directly or transitively, on
-  `Langlands.Whittaker.IrreducibleCoinvariantFinitenessStatement` or its parent
-  proof task 5ab445dc-d2b4-4072-80d1-6370870a4a26. It must not depend on the
-  Levi target `Langlands.Whittaker.LeviCuspidalCoinvariantFinitenessStatement`
-  of task 3ff5c8fb-397c-4345-bcb3-5d98a0993d18. It must also avoid any mirabolic
-  finite-length route that uses that parent finiteness, including task
-  5428fe2c-013c-482d-aa6e-7df43e7191aa, unless an independently published route
-  is verified.
+  `Langlands.Whittaker.IrreducibleCoinvariantFinitenessStatement` or its proof.
+  It must not depend on the Levi target
+  `Langlands.Whittaker.LeviCuspidalCoinvariantFinitenessStatement` or its proof.
+  It must also avoid any mirabolic finite-length route that uses that parent
+  finiteness, unless an independently published route is verified.
 - **Derivatives.** Vanishing of the proper positive derivatives and finrank
   one of the top derivative of an irreducible supercuspidal representation are
-  the published but unproved statement
+  the published statement
   `Langlands.Classification.SupercuspidalDerivatives`
   (module `Langlands.Representation.Classification.SupercuspidalDerivativesStatement`,
-  BZ77 §4.4, Gelfand–Kazhdan). They and their eventual proof are owned by
-  task 8e5b4563-0365-41c7-b134-70f2a0b36292, clause (a). That task is not a
-  proved input, and this pair does not duplicate it.
+  BZ77 §4.4, Gelfand–Kazhdan), proved as `supercuspidalDerivatives` in
+  `SupercuspidalDerivativesProof`. It is not an input of this proof, and this
+  pair does not duplicate it.
 - **Remaining steps.** A proof along the source route still needs three steps
   that neither statement supplies:
   - normalization or conjugacy of an arbitrary locally constant `η`
@@ -276,22 +273,24 @@ statement.
   - vanishing for degenerate characters (the Proposition 5.15(a) argument,
     from the standard Jacquet vanishing given by `isSupercuspidal_iff_standard`);
   - a comparison of the non-degenerate case with the actual top derivative.
-- **Multiplicity one.** `Langlands.Whittaker.MultiplicityOneStatement` is
-  unproved and may not be cited as a theorem.
+- **Multiplicity one.** `Langlands.Whittaker.MultiplicityOneStatement` is not
+  used by the proof.
 
 ## Consumer
 
-This is a focused prerequisite of proof task
-3ff5c8fb-397c-4345-bcb3-5d98a0993d18, whose unchanged target is
-`Langlands.Whittaker.LeviCuspidalCoinvariantFinitenessStatement`. According to
-that task, the final Levi assembly will use three ingredients:
+This is a focused prerequisite of the proof of
+`Langlands.Whittaker.LeviCuspidalCoinvariantFinitenessStatement`
+(`leviCuspidalCoinvariantFiniteness`, module
+`LeviCuspidalCoinvariantFinitenessProof`). That Levi assembly uses three
+ingredients:
 
 - the published `Langlands.CuspidalSupport.padicLeviCuspidalFactorization`. It
   gives blocks `A i : GeneralLinear.SupercuspidalRep.{uF,uV}` of positive rank
   `B.size i`, which satisfy exactly this statement's hypotheses at carrier
   universe `uV`;
 - the published `Langlands.FiniteTensor.characterLocalizationEquiv`;
-- the eventual exact proof of this single-block proposition.
+- the proof `supercuspidalCoinvariantFiniteness` of this single-block
+  proposition.
 
 ## Sources and reading
 

@@ -52,8 +52,10 @@ retains two explicit premises:
 `CommonClosureDegreeZeroGenerationStatement.{uF,uV}` and
 `PadicAbelianLocalAnalysisStatement.{uF}`. Its conclusion is exactly the unchanged
 `DualFunctionalEquationStatement.{uF,uV}`, with independent representation
-universe `uV`. This module proves neither of those two premises and does not
-complete the unconditional host proof task.
+universe `uV`. This module proves neither of those two premises and is not an
+unconditional proof of `DualFunctionalEquationStatement`; the theorem
+`dualFunctionalEquation` in `Langlands.LocalFactor.NonabelianDualityProof`
+applies this composite to proofs of both premises.
 
 This is an internal interface derivation from the published statement clauses,
 the Fourier-volume adapter, the actual conductor constructions and the

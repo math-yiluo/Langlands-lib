@@ -58,7 +58,7 @@ private theorem rationalXi_eq_one_of_trivial_radical
     rationalXi hKc hPK g = 1 := by
   simp [rationalXi, xi, iwasawaWeight, minimalModulus_eq_one_of_trivial_radical hU]
 
-local instance : SecondCountableTopology (rationalPoints G) :=
+private local instance : SecondCountableTopology (rationalPoints G) :=
   rationalPoint_secondCountableTopology F G
 
 open SplitCenterHeight in

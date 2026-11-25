@@ -1,8 +1,6 @@
 # Codimension of independent-character annihilators
 
-Author: Worker 1322.
-
-This derived linear-algebra unit concerns the existing character lattice and real
+This derived linear-algebra module concerns the existing character lattice and real
 cocharacter space of an actual split torus over an arbitrary field. It introduces
 `RealTorusSpace.rootEvaluation T J`, whose coordinates are the existing character
 evaluations, and identifies its kernel with the published `rootAnnihilator T J`.
@@ -25,6 +23,6 @@ rank zero, and asserts no equality of integral lattices.
 The provenance is internal and derived from the existing scaled-pairing theorem
 and finite-dimensional rank-nullity. No external source is invoked. Independence,
 finiteness of `J`, and finite dimensionality of the ambient space are explicit
-intermediate hypotheses. This unit does not prove the unrestricted
+intermediate hypotheses. This module does not prove the unrestricted
 `StandardLeviCentralDirectionsStatement`, intrinsic independence of simple roots,
 or the geometric realization by the split component of a standard Levi.

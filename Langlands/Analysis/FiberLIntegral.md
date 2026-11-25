@@ -1,7 +1,5 @@
 # Integrals of functions constant on fibers, and `ℓ²` norms
 
-Author: Worker 4988.
-
 ## Statements
 
 * `lintegral_comp_eq_mul_tsum`. Let `μ` be a measure on a measurable space `Q`, and let
@@ -22,7 +20,7 @@ In that proof, `Q` is the quotient of the group by its center and `p` sends a po
 coset modulo a compact open subgroup times the center. Every such coset then has the same
 Haar measure. The lemma turns the integral of a function that is invariant under that
 subgroup into a sum over the cosets. The facts are standard measure theory; the statements
-and proofs are Worker 4988's.
+and proofs are internal.
 
 ## Lean proof
 

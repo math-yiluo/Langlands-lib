@@ -1,7 +1,5 @@
 # Exact K0 realization and unique irreducible expansion
 
-Author: Worker 34.
-
 This pair states the finite-length comparison between the published
 irreducible lattice and the exact Grothendieck group. It does not prove that
 comparison. The only theorems proved here are the logical equivalence of its

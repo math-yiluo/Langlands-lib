@@ -1,7 +1,6 @@
 # Corrections compatible with a partial section
 
-Author: Worker 60 (Task 7805). Module
-`Langlands.GroupScheme.Trigonalizable.RelativeCorrection`, namespace
+Module `Langlands.GroupScheme.Trigonalizable.RelativeCorrection`, namespace
 `Langlands.GroupScheme.LinearAdditiveExtension`.
 
 The Library splits an extension `q : E ⟶ D(Λ)` whose kernel is a closed

@@ -1,6 +1,6 @@
 # Centrality of a diagonalizable homomorphism through a nilpotent reduction
 
-Worker 626. This internal prerequisite combines the existing Hopf-spectrum
+This internal prerequisite combines the existing Hopf-spectrum
 point API, the scheme/Hopf centrality comparison, and character-projector
 rigidity. All rings, algebras and the character group lie in any common
 universe u. It uses no additional literature assertion.
@@ -53,8 +53,8 @@ commutative group scheme using this lifted centrality. The accompanying
 `toGrp` lemma is reflexive equality, retaining the standard source and
 all its operations.
 
-This unit handles a source already presented by its standard group
+This module handles a source already presented by its standard group
 algebra and an affine Hopf-spectrum target. It does not provide descent
 for an arbitrary multiplicative-type source, lift multiplicative type
-from a special fibre, or prove the host arbitrary-base fibrewise
+from a special fibre, or prove the arbitrary-base fibrewise
 central-isogeny criterion.

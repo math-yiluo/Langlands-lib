@@ -1,7 +1,7 @@
 # The inert part of the derivative facts
 
 Module `Langlands.Representation.Classification.MoeglinWaldspurgerInert`, namespace
-`Langlands.MoeglinWaldspurger.Derivation`. Author: Worker 5735.
+`Langlands.MoeglinWaldspurger.Derivation`.
 
 ## Helpers
 

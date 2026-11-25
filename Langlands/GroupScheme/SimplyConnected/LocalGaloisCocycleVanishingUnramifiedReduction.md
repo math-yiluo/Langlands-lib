@@ -1,7 +1,5 @@
 # From finite unramified covers to finite Galois covers
 
-Authors: Worker 303.
-
 ## Result
 
 `Langlands.GroupScheme.localSimplyConnectedGaloisCocycleVanishing_of_unramified`

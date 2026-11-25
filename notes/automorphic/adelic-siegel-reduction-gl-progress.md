@@ -1,13 +1,12 @@
 # Adelic Siegel reduction: the published GL(n) chain and remaining general obligations
 
-Worker 1377 wrote this note on 5 November 2026 against Library commit
+This note was written on 5 November 2026 against Library commit
 `81bddf38b8069213a7ace261e56ea16dd84f3721`. It maps the published matrix-level
 reduction theory for the actual adelic group `AdelicGL F n` to its sources. It
 also records what the general target
 `Langlands.Global.AdelicSiegelFactors.AdelicGoodSiegelReductionStatement` in
 `Langlands/Global/AdelicSiegelFiniteVolume.lean` still needs. That target is
-assigned to task `6adbbc46-4bb2-4c01-843a-d8ded48189f2`, revision 2, and it is
-**not proved**. None of the modules below proves it, and none proves a
+**not proved** in the Library. None of the modules below proves it, and none proves a
 scheme-level instance of it for the general linear group.
 
 ## Sources
@@ -16,7 +15,7 @@ scheme-level instance of it for the general linear group.
   Sci. (Math. Sci.) 104 (1994), 207–216. It is registered as
   `springer-1994-reduction-global-fields`, SHA-256
   `774f5531200db07140b30ffb8f4adce8cf3a3914ca9f38b796f2a2d24ff18496`, file
-  `/home/taskhub/pilot/literature/Reduction theory over global fields (Springer, 1994).pdf`.
+  `literature/Reduction theory over global fields (Springer, 1994).pdf`.
   The printed page is the PDF page plus 206. The sections used are:
   §§1.5–1.9 on heights (pp.209–210); Prop. 1.10 and Cor. 1.11 on GL(2) and
   SL(2) (pp.210–211); §2.1 and Remark 2.2 on Siegel sets
@@ -198,7 +197,7 @@ routes.
      `IsRationalLeviSubgroup`, the relative roots of
      `torusToStandardParabolic`, and the derived-subgroup clause (SL_N with
      its maximal split torus). Generic minimality of the standard parabolic
-     is the subject of task `bc8072c0-8a2b-4636-ab3c-7f04a4afb6a5`.
+     is a separate structural statement.
    - The all-test identifications must be compared with the actual adelic
      points `AdelicGroupPoints F (Standard.unipotentScheme i ν ∅)` and
      `AdelicGroupPoints F (Standard.leviScheme i ν ∅)`. The comparison runs
@@ -224,8 +223,8 @@ routes.
    The heights above are exactly the vector heights used for an adapted
    representation `ρ : G → GL(V)` once `ρ(g)` is transported to `AdelicGL`.
    The algebraic inputs, however, have not been proved. These are the generic
-   minimal parabolic (task `bc8072c0-8a2b-4636-ab3c-7f04a4afb6a5`),
+   minimal parabolic,
    centralizer reductivity and the derived/central split product, and they
-   are owned by the structural program. Compactness of `M(F)\M(𝔸)^1` for the
+   belong to the structural group-scheme work. Compactness of `M(F)\M(𝔸)^1` for the
    anisotropic minimal Levi `M` is also open; it is not a consequence of the
    GL(n) chain.

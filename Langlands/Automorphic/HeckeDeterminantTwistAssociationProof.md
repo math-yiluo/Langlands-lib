@@ -1,10 +1,8 @@
 # Proof that weak association passes to twists by every Hecke character
 
-Author: Worker 5137.
-
-`Langlands.ClassField.Global.RelativeWeilGroup.presentedDeterminantMultipleAssociation`
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.presentedDeterminantMultipleAssociation`
 proves the published proposition
-`Langlands.ClassField.Global.RelativeWeilGroup.PresentedDeterminantMultipleAssociationStatement`
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.PresentedDeterminantMultipleAssociationStatement`
 of `Langlands.Automorphic.HeckeDeterminantTwistStatement`. The theorem's type is exactly
 `PresentedDeterminantMultipleAssociationStatement.{u, uV, uP, uQ}`, with all four
 universes independent. No hypothesis is added: the arithmetic class family, the Galois
@@ -24,7 +22,7 @@ presentation `P'` of `T'`.
 
 ## Proof
 
-The proof composes two results proved in the helper modules of this contribution.
+The proof composes two results proved in the helper modules listed below.
 
 1. Weil side (`RelativeWeilUnramifiedTwist`): `IsWeaklyAssociated.twist_scale` uses the
    `FundamentalClass.Restriction c` component of `IsArithmeticClassFamily c` and shows
@@ -48,11 +46,11 @@ Weak association depends only on Euler polynomials outside a finite set
 
 - `Langlands/GroupTheory/TransferCyclicQuotient.lean`: the transfer to the subgroup of
   elements of degree divisible by `f`, at an element of degree one.
-- `Langlands/ClassField/Global/LocalRelativeWeilUnramified.lean`: images of local Weil
+- `Langlands/ClassFieldTheory/Global/LocalRelativeWeilUnramified.lean`: images of local Weil
   groups and inverse images of `C_E` at ramification index one.
-- `Langlands/ClassField/Global/RelativeWeilUnramifiedTransfer.lean`: the transfer of the
+- `Langlands/ClassFieldTheory/Global/RelativeWeilUnramifiedTransfer.lean`: the transfer of the
   image of an element of degree one is the inverse class of an element of order one.
-- `Langlands/ClassField/Global/RelativeWeilUnramifiedTwist.lean`: values of `χ ∘ τ_F`
+- `Langlands/ClassFieldTheory/Global/RelativeWeilUnramifiedTwist.lean`: values of `χ ∘ τ_F`
   and the twisted association.
 - `Langlands/Representation/Unramified/TwistedHeckeScalars.lean`: standard Hecke
   scalars of character twists of smooth representations.

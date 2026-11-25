@@ -7,7 +7,7 @@ Modified: FLT module names are prefixed by `Langlands.AnthropicFLT`; the FLT lak
 are set after the imports; the import of `P2M.Util` is dropped and its commands are replaced
 by standard Lean commands. The paired Markdown file lists the changes.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_OModulePresheafEulerChar
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_OModulePresheafOfModules
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_ModulesTensorPowV2
@@ -45,10 +45,10 @@ variable {R : Type u} [CommRing R] {V : Scheme.{u}} (π : V ⟶ Spec (.of R))
 theorem isInvertible_tensorPow (L : V.Modules)
     (hL : ∀ x : V, ∃ (U : V.Opens), x ∈ U ∧
       Nonempty ((Scheme.Modules.pullback U.ι).obj L ≅ SheafOfModules.unit U.toScheme.ringCatSheaf)) (n : ℕ) :
-    Scheme.Modules.IsInvertible (L.tensorPow n) := by
+    Scheme.Modules.IsInvertibleFLT (L.tensorPowFLT n) := by
   induction n with
   | zero => exact Scheme.Modules.isInvertible_unit V
-  | succ n ih => exact ih.tensor_monoidalV2 ⟨hL⟩
+  | succ n ih => exact AlgebraicGeometry.Scheme.Modules.IsInvertible.tensor_monoidalV2 ih ⟨hL⟩
 
 section Compare
 
@@ -125,13 +125,13 @@ theorem main {k : Type u} [Field k] {V : Scheme.{u}} (π : V ⟶ Spec (.of k)) [
     (hL : ∀ x : V, ∃ (U : V.Opens), x ∈ U ∧
       Nonempty ((Scheme.Modules.pullback U.ι).obj L ≅ SheafOfModules.unit U.toScheme.ringCatSheaf)) :
     ∃ p : Polynomial ℚ, p.natDegree ≤ d ∧
-      ∀ n : ℕ, ((OModulePresheaf.ofModules π (M ⊗ L.tensorPow n)).eulerChar K : ℚ) = p.eval (n : ℚ) := by
+      ∀ n : ℕ, ((OModulePresheaf.ofModules π (M ⊗ L.tensorPowFLT n)).eulerChar K : ℚ) = p.eval (n : ℚ) := by
   obtain ⟨p, hp, hpn⟩ :=
     OModulePresheaf.exists_polynomial_forall_eulerChar_twist_tensorPow_eq_monoidalV2 π K (ofModules π M) hc hq Y hY d hd L hL
   refine ⟨p, hp, fun n => ?_⟩
-  have hqn : (ofModules π (L.tensorPow n)).IsQuasicoherent :=
-    isQuasicoherent_ofModules_of_locallyTrivial π (L.tensorPow n) (isInvertible_tensorPow L hL n).1
-  rw [eulerChar_ofModules_tensor_eq π K M (L.tensorPow n) hq hqn]
+  have hqn : (ofModules π (L.tensorPowFLT n)).IsQuasicoherent :=
+    isQuasicoherent_ofModules_of_locallyTrivial π (L.tensorPowFLT n) (isInvertible_tensorPow L hL n).1
+  rw [eulerChar_ofModules_tensor_eq π K M (L.tensorPowFLT n) hq hqn]
   exact hpn n
 
 end P2mChiSheaf
@@ -148,5 +148,5 @@ theorem solution
     (hL : ∀ x : V, ∃ (U : V.Opens), x ∈ U ∧
       Nonempty ((Scheme.Modules.pullback U.ι).obj L ≅ SheafOfModules.unit U.toScheme.ringCatSheaf)) :
     ∃ p : Polynomial ℚ, p.natDegree ≤ d ∧
-      ∀ n : ℕ, ((OModulePresheaf.ofModules π (M ⊗ L.tensorPow n)).eulerChar K : ℚ) = p.eval (n : ℚ) :=
+      ∀ n : ℕ, ((OModulePresheaf.ofModules π (M ⊗ L.tensorPowFLT n)).eulerChar K : ℚ) = p.eval (n : ℚ) :=
   P2mChiSheaf.main π K M hc hq Y hY d hd L hL

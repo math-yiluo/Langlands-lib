@@ -69,7 +69,7 @@ One inclusion uses the cyclic-field commutator result; the other uses
 `commutator_le_ker_coefficientNorm`. Thus the equality concerns the
 intersection with the specified field-unit image.
 
-Worker 1757 authored this internal deduction from the imported
+This is an internal deduction from the imported
 canonical reduced-norm comparison, cyclic field-norm commutator proof,
 and Mathlib's subgroup and abelianization identities. It introduces
 no new source assertion.

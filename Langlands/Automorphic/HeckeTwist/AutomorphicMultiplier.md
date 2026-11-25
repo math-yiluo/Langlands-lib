@@ -1,7 +1,5 @@
 # Determinant multiplication by any Hecke character on automorphic forms
 
-Author: Worker 5136.
-
 This internal module shows that multiplication by `χ ∘ det`, for an arbitrary
 Hecke character `χ` of a number field `F` (no finite-order hypothesis), maps
 the automorphic forms on `GL_n(𝔸_F)` (the Library's

@@ -1,6 +1,6 @@
 # Positive multiples of dominant characters are realized
 
-Worker 1161. This module proves the positive-multiple step of actual dominant
+This module proves the positive-multiple step of actual dominant
 highest-weight existence for split connected reductive groups. It is internal and
 derived; the mathematical background is Milne, *Algebraic Groups* (2017),
 Chapter 22, especially Theorem 22.20 and Lemmas 22.24–22.26 (printed pp.468–470,
@@ -59,5 +59,5 @@ Write `P` for the supplied root datum, `b` for its base and `S` for
    `S`.
 
 The result is intended to be combined with the separate saturation step and the
-big-cell glue of the dominant highest-weight existence task. It does not by itself
+big-cell glue of the dominant highest-weight existence proof. It does not by itself
 construct an irreducible representation.

@@ -134,7 +134,7 @@ end Langlands.Global
 namespace Langlands.Global.PoleComparison
 
 open Langlands.VirtualRepresentation Langlands.VirtualRepresentation.RelativeGlobal
-open Langlands.Global.CompletionPadic Langlands.ClassField.Global
+open Langlands.Global.CompletionPadic Langlands.ClassFieldTheory.Global
 open Langlands.Global.AdelicFunctoriality Langlands.Weil.Local
 
 variable {F E : Type uF} [Field F] [NumberField F] [Field E] [NumberField E]

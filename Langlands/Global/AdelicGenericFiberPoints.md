@@ -51,7 +51,7 @@ for these pullback identities or for transporting a topology.
 
 The construction of the specified-model topology follows the source;
 the categorical packaging and the displayed broader scope are derived.
-This definition unit does not prove that a spread exists, that stage
+This module of definitions does not prove that a spread exists, that stage
 points exhaust all full-adele points, that two spreads give equal
 topologies, or that this topology agrees with the independent affine
-evaluation topology. Those remain separate obligations.
+evaluation topology.

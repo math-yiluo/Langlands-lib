@@ -4,7 +4,7 @@ This is the number-field fixed-integral-model assembly in Brian Conrad,
 *Weil and Grothendieck approaches to adelic points* (2011), Example 4.2,
 printed pp.9–10. Conrad keeps one pair of integral models over the
 initial rings, compares their points at every enlarged support and its
-full upper preimage, and passes to the direct limit. This derived unit
+full upper preimage, and passes to the direct limit. This module
 performs that passage on the actual full adele rings. It uses the actual
 level homeomorphisms and their proved support naturality.
 
@@ -70,9 +70,9 @@ the separatedness and quasi-separatedness instances derived from j,
 so these do not become extra hypotheses. The proof specializes the
 stage law of `finalCoconeHomeomorph`.
 
-This unit concerns the original fixed models on full adeles. Identifying
+This module concerns the original fixed models on full adeles. Identifying
 their generic fibers with the original field-level Weil restriction,
 and comparing the fixed-model final topology with the spread topology
-on those generic fibers, remain separate host obligations. The
+on those generic fibers, are not part of this module. The
 function-field case is also separate; no whole-paper completion is
 claimed here.

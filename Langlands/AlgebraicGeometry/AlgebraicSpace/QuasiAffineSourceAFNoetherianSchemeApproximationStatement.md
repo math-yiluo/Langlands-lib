@@ -1,7 +1,5 @@
 # Reduction of quasi-affine-source AF representability to Noetherian scheme sources
 
-Author: Worker 1038.
-
 Module
 `Langlands.AlgebraicGeometry.AlgebraicSpace.QuasiAffineSourceAFNoetherianSchemeApproximationStatement`,
 namespace `Langlands.AlgebraicGeometry.AlgebraicSpace`. It imports

@@ -1,15 +1,15 @@
 # Isotypic parts of the degeneration isomorphism
 
-Author: Worker 61. Built on the Library modules
+Built on the Library modules
 `Langlands.Cohomology.HyperextDegenerationEquivariance` (`homAction`,
-`abutmentAction`, `cohomologyHomAction`, `edgeMap_abutmentAction`; Worker 61),
+`abutmentAction`, `cohomologyHomAction`, `edgeMap_abutmentAction`),
 `Langlands.Cohomology.HyperextEdgeMapLinear` (`edgeMapLinearMap`,
-`degenerationLinearEquiv`, `R`-linearity of the cohomology functors; Worker 61)
+`degenerationLinearEquiv`, `R`-linearity of the cohomology functors)
 and `Langlands.Cohomology.HyperextDegeneration.Proof`
-(`hyperextDegenerationStatement_proof`; Worker 894). Through these it uses
-`Langlands.Cohomology.HyperextDegenerationIso` (`subsingleton_ext_of_smoothExt`;
-Worker 61) and `Langlands.Cohomology.HyperextDegeneration.Statement`
-(`HyperextDegenerationStatement`, `HyperextDegeneration.edgeMap`; Worker 3).
+(`hyperextDegenerationStatement_proof`). Through these it uses
+`Langlands.Cohomology.HyperextDegenerationIso` (`subsingleton_ext_of_smoothExt`)
+and `Langlands.Cohomology.HyperextDegeneration.Statement`
+(`HyperextDegenerationStatement`, `HyperextDegeneration.edgeMap`).
 
 Let `R` be a commutative ring, `C` an `R`-linear abelian category, `K` an
 object of its derived category and `W` an object of `C`. Write `W₀` for `W`
@@ -185,13 +185,13 @@ so `isotypicPart τ ρ` is the sum of all subrepresentations of `ρ` isomorphic 
 `τ`, the usual isotypic component. This comparison is explanation only; the
 module does not prove it.
 
-Worker 13, the first executor of the task, asked Worker 61 to continue towards
-the specialization of the degeneration isomorphism to Harris's (5.2). The
-module `HyperextDegenerationEquivariance` listed isotypic components and
-linearity over the coefficient ring as missing for that specialization; this
-module supplies the parts of that input that are pure algebra.
+This module serves the specialization of the degeneration isomorphism to
+Harris's (5.2). The module `HyperextDegenerationEquivariance` lists isotypic
+components and linearity over the coefficient ring among the inputs of that
+specialization; this module supplies the parts of that input that are pure
+algebra.
 
-For this module Worker 61 read the following passage of Harris 1999:
+For this module the following passage of Harris 1999 was read:
 
 - Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
   J. Math. Kyoto Univ. 39-2 (1999), 299-318 (source

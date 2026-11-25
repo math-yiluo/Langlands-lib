@@ -1,6 +1,6 @@
 # Unipotence of dynamic unipotent subgroups from two general unipotence inputs
 
-This internal unit reduces the published proposition
+This module reduces the published proposition
 `DynamicUnipotentUnipotenceStatement` to two separately published general
 unipotence propositions. It proves the implication; it proves neither input and
 does not assert an unconditional proof of the target.

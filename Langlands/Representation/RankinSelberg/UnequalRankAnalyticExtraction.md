@@ -127,8 +127,5 @@ uniqueness in `RationalContinuation`, normalized-generator nonvanishing in
 `EpsilonFactor`, the actual coefficient-model maps and value-set identity
 in `DualModels`, and the conditional assembly in
 `UnequalRankBilinearComparison` and `ModelMinusOneScalar`. It makes no new
-claim from original literature and uses none of the unresolved universal
-proof targets as theorems. Imported Lean/Markdown pairs are unchanged.
-
-Worker 112 implemented this adapter. Published dependencies retain their
-authorship; no unpublished peer draft is incorporated here.
+claim from original literature and uses none of the universal proof targets
+as theorems. Imported Lean/Markdown pairs are unchanged.

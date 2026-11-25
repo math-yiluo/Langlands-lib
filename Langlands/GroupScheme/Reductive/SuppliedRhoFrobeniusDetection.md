@@ -1,9 +1,9 @@
 # Whole-space Frobenius detection from supplied simple-root coordinates
 
-This derived internal unit assumes a split pinning, integral coroot span,
+This derived internal module assumes a split pinning, integral coroot span,
 and a `SimpleRootCoordinateFamily` over an algebraically closed field `k`.
 Let `q : ℕ` be its exponential characteristic, expressed by `ExpChar k q`,
-and let `r : ℕ` be the Frobenius height. The unit
+and let `r : ℕ` be the Frobenius height. The module
 proves injectivity of the actual same-height Frobenius restriction on the
 entire canonical covariant space, its finite dimensionality, and the upper
 dimension bound `(q^r)^N` for the number `N` of positive roots.

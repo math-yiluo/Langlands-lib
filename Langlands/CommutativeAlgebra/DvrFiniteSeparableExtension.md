@@ -1,7 +1,5 @@
 # Finite separable extensions of a complete DVR
 
-Worker 519.
-
 Let `R` be a complete DVR and `L` a finite separable extension of its
 fraction field. `DvrFiniteSeparableExtension.isDiscreteValuationRing_and_isAdicComplete`
 gives the DVR and completeness properties of the actual integral closure
@@ -10,9 +8,9 @@ gives the DVR and completeness properties of the actual integral closure
 The proof identifies `R` with the valuation ring for the maximal-ideal
 valuation of its fraction field. Completeness transfers under this
 isomorphism. Integrality of the isomorphism and transitivity of integrality
-identify the two integral closures in `L`. The Library's finite separable
-extension theorems for a complete discrete valuation field give the DVR and
-completeness properties, which transfer across this identification.
+identify the two integral closures in `L`. NYLL’s finite separable extension theorems apply to its `CompleteDVF` bundle.
+The adapters in `Langlands.CommutativeAlgebra.FiniteIntegralClosure` take the two fields
+explicitly. Their DVR and completeness conclusions transfer across this identification.
 
 `DvrFiniteSeparableExtension.faithfullyFlat` uses integrality of the inclusion
 and flatness of a torsion-free module over a DVR.

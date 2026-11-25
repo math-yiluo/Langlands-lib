@@ -1,7 +1,5 @@
 # Central characters on coefficient images
 
-Author: Worker 64.
-
 `Langlands.Whittaker.CoefficientCentralCharacterStatement.{uG,uV} G`
 is a proposition definition, not a proof. For every topological group `G`,
 subgroup `N`, character `θ : N →* ℂˣ`, and smooth complex representation `ρ`

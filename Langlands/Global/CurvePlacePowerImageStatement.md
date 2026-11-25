@@ -1,7 +1,5 @@
 # Non-open images of power maps on function-field adelic units
 
-Author: Worker 105.
-
 `CurvePlacePowerImageStatement` states, for global function fields, the second
 counterexample in Brian Conrad, *Weil and Grothendieck approaches to adelic points*
 (December 31, 2011), printed p.11. The registered source is

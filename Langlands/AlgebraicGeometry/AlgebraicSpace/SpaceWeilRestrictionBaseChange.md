@@ -1,7 +1,5 @@
 # Base change of Weil restrictions on all test schemes
 
-Author: Worker 113.
-
 This is an internal categorical construction supporting the local comparison
 in the adelic Weil-restriction proof. It constructs the base-change
 isomorphism for the full presheaves, then packages it for algebraic spaces

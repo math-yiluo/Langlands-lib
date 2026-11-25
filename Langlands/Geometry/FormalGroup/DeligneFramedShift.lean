@@ -66,13 +66,13 @@ theorem rationalShiftIso_naturality {M N : LatticePiSheaf d π X}
 
 /-- Powers of the actual total rational automorphism are rationalized integral powers. -/
 theorem rationalPiAut_pow_hom (n : ℕ) :
-    (rationalPiAut F X d π M.sheaf hπ ^ n).hom =
-      (rationalSheafFunctor F X).map (End.of (latticePi d π X M.sheaf) ^ n) := by
-  change (Aut.toEnd _) (rationalPiAut F X d π M.sheaf hπ ^ n) = _
+    (rationalPiAut F X d π M.sheaf hπ ^ n).asIso.hom =
+      (rationalSheafFunctor F X).map (End.of (latticePi d π X M.sheaf) ^ n).asHom := by
+  change (Aut.toEnd (rationalPiAut F X d π M.sheaf hπ ^ n)).asHom = _
   rw [map_pow]
-  change End.of (rationalPiAut F X d π M.sheaf hπ).hom ^ n = _
+  change (End.of (rationalPiAut F X d π M.sheaf hπ).asIso.hom ^ n).asHom = _
   rw [rationalPiAut_hom]
-  exact ((Functor.mapEnd _ (rationalSheafFunctor F X)).map_pow
+  exact congrArg End.asHom ((Functor.mapEnd _ (rationalSheafFunctor F X)).map_pow
     (End.of (latticePi d π X M.sheaf)) n).symm
 
 /-- The constructed component path is exactly the restriction of the actual total power. -/
@@ -80,7 +80,7 @@ theorem rationalPiAut_pow_hom (n : ℕ) :
 theorem rationalShiftIso_inclusion (i : ZMod d) (n : ℕ) :
     (M.rationalShiftIso F hπ i n).hom ≫
         M.rationalInclusion F (i + (n : ZMod d)) =
-      M.rationalInclusion F i ≫ (rationalPiAut F X d π M.sheaf hπ ^ n).hom := by
+      M.rationalInclusion F i ≫ (rationalPiAut F X d π M.sheaf hπ ^ n).asIso.hom := by
   dsimp only [rationalShiftIso, rationalInclusion]
   rw [M.rationalPiIterateIso_hom F hπ, ← Functor.map_comp, M.piIterate_inclusion,
     Functor.map_comp, M.rationalPiAut_pow_hom F hπ]
@@ -91,13 +91,14 @@ end LatticePiSheaf
 theorem rationalPiStalkAut_natCast_hom
     (M : X.Sheaf (ModuleCat.{u} (PiAlgebra d π)))
     (hπ : algebraMap O F π ≠ 0) (n : ℕ) (x : X) :
-    (rationalPiStalkAut F X d π M hπ x ^ (n : ℤ)).hom =
+    (rationalPiStalkAut F X d π M hπ x ^ (n : ℤ)).asIso.hom =
       (TopCat.Presheaf.stalkFunctor (ModuleCat.{u} F) x).map
-        (rationalPiAut F X d π M hπ ^ n).hom.hom := by
+        (rationalPiAut F X d π M hπ ^ n).asIso.hom.hom := by
   rw [zpow_natCast]
   let G := (sheafToPresheaf (Opens.grothendieckTopology X) (ModuleCat.{u} F)) ⋙
     TopCat.Presheaf.stalkFunctor (ModuleCat.{u} F) x
-  exact congrArg Iso.hom ((G.mapAut _).map_pow (rationalPiAut F X d π M hπ) n).symm
+  exact congrArg (fun a => a.asIso.hom)
+    ((G.mapAut _).map_pow (rationalPiAut F X d π M hπ) n).symm
 
 namespace FramedLatticePiSheaf
 
@@ -131,7 +132,7 @@ def shiftNatFunctor (n : ℕ) :
 by the actual total Pi power. -/
 theorem frameToTotal_shiftNat (n : ℕ) :
     (M.shiftNat F hπ n).frameToTotal F =
-      M.frameToTotal F ≫ (rationalPiAut F X d π M.lattice.sheaf hπ ^ n).hom := by
+      M.frameToTotal F ≫ (rationalPiAut F X d π M.lattice.sheaf hπ ^ n).asIso.hom := by
   change (M.frame.hom ≫ (M.lattice.rationalShiftIso F hπ 0 n).hom) ≫
       M.lattice.rationalInclusion F (0 + (n : ZMod d)) = _
   rw [Category.assoc, M.lattice.rationalShiftIso_inclusion F hπ, ← Category.assoc]
@@ -141,7 +142,7 @@ theorem frameToTotal_shiftNat (n : ℕ) :
 theorem frameStalkMap_shiftNat (n : ℕ) (x : X) :
     (M.shiftNat F hπ n).frameStalkMap F x =
       M.frameStalkMap F x ≫
-        (rationalPiStalkAut F X d π M.lattice.sheaf hπ x ^ (n : ℤ)).hom := by
+        (rationalPiStalkAut F X d π M.lattice.sheaf hπ x ^ (n : ℤ)).asIso.hom := by
   unfold frameStalkMap
   rw [M.frameToTotal_shiftNat F hπ n]
   simp only [ObjectProperty.FullSubcategory.comp_hom, NatTrans.comp_app, Category.assoc]
@@ -153,7 +154,7 @@ theorem frameStalkMap_shiftNat (n : ℕ) (x : X) :
 theorem integralFrameStalkMap_shiftNat (n : ℕ) (x : X) :
     (M.shiftNat F hπ n).integralFrameStalkMap F x =
       (((ModuleCat.restrictScalars (algebraMap O F)).map
-        (rationalPiStalkAut F X d π M.lattice.sheaf hπ x ^ (n : ℤ)).hom).hom).comp
+        (rationalPiStalkAut F X d π M.lattice.sheaf hπ x ^ (n : ℤ)).asIso.hom).hom).comp
           (M.integralFrameStalkMap F x) := by
   apply LinearMap.ext
   intro v
@@ -173,9 +174,9 @@ theorem translatedFrameStalkLattice_shiftNat (n : ℕ) (i : ℤ) (x : X) :
     (M.shiftNat F hπ n).translatedFrameStalkLattice F hπ i x =
       M.translatedFrameStalkLattice F hπ (i + (n : ℤ)) x := by
   have hp :
-      (rationalPiStalkAut F X d π M.lattice.sheaf hπ x ^ (i + (n : ℤ))).hom =
-        (rationalPiStalkAut F X d π M.lattice.sheaf hπ x ^ (n : ℤ)).hom ≫
-          (rationalPiStalkAut F X d π M.lattice.sheaf hπ x ^ i).hom := by
+      (rationalPiStalkAut F X d π M.lattice.sheaf hπ x ^ (i + (n : ℤ))).asIso.hom =
+        (rationalPiStalkAut F X d π M.lattice.sheaf hπ x ^ (n : ℤ)).asIso.hom ≫
+          (rationalPiStalkAut F X d π M.lattice.sheaf hπ x ^ i).asIso.hom := by
     rw [zpow_add]
     rfl
   unfold translatedFrameStalkLattice

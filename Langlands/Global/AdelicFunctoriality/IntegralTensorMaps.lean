@@ -3,7 +3,7 @@ Copyright (c) 2025 Kevin Buzzard. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Kevin Buzzard, Andrew Yang, Matthew Jasper
 
-Modified by Worker 230 (2026): adapt the canonical integral tensor maps from
+Modified in Langlands-lib (2026): adapt the canonical integral tensor maps from
 Imperial FLT, commit 923d45174c500aa1d994ba973bac38ea39eacbf7,
 FLT/DedekindDomain/Completion/BaseChange.lean:364-376, :810-821 and :836-844. Use the
 Library's FinitePlacesAbove, finiteTensorMap and scoped FiniteExtension completion

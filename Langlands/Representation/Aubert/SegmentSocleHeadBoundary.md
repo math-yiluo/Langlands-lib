@@ -1,7 +1,5 @@
 # Algebraic and supercuspidal boundary cases of segment duality
 
-Author: Worker 165.
-
 These are derived helper results for the segment socle–head task. They do
 not assert the general segment exchange or the existence of any constituent.
 They keep independent field and carrier universes and use the existing exact

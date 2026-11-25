@@ -31,7 +31,7 @@ integer-indexed complex. No flatness or noetherianity of `A` is assumed. The ela
 scalar-extension definitions, permits reduction of their induced scalar
 actions when identifying the tensor maps; it adds no mathematical premise.
 
-Worker 137 assembled this internal adapter from the named algebraic and
+This internal adapter is assembled from the named algebraic and
 indexing prerequisites. Their separate paired documentation records the
 external algebraic provenance. This proof uses actual Mathlib complexes
 and derived objects in arbitrary carrier universe `u`. It does not

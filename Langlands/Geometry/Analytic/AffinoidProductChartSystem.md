@@ -1,7 +1,5 @@
 # The chart system of the product of two analytic spaces
 
-Author: Worker 36.
-
 This module builds the gluing data of the product of two spaces with indexed
 affinoid atlases. The charts are indexed by pairs of charts. Each pair carries
 the affinoid coproduct (completed tensor product over the ground field) of the

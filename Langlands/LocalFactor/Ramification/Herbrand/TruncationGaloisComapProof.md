@@ -10,7 +10,7 @@ for `-1 ≤ x ≤ μ`, the preimage of the absolute upper group `G_F^x` under
 `intermediateGaloisMap F E` is the absolute upper group `G_E^x` of
 `E.asPadicField`.
 
-The proof applies `herbrandPsiTruncation` (Task 7501) to the transitivity
+The proof applies `herbrandPsiTruncation` (module `Herbrand.KummerTruncationProof`) to the transitivity
 hypothesis and both bounds on `x`. This gives `relativeHerbrandPsi E x = x`.
 By `Subgroup.ext` and `Subgroup.mem_comap`, it suffices to compare membership
 for each element `τ` of the absolute Galois group of `E`. The published

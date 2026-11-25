@@ -1,6 +1,6 @@
 # Central translation of actual model coefficients
 
-This internal unit derives change of variables under the actual coefficient
+This module derives change of variables under the actual coefficient
 model action of `diag(ϖᵗ, …, ϖᵗ, 1)`. The scalar determinant weight is
 multiplicative because both determinant norms are positive real numbers.
 

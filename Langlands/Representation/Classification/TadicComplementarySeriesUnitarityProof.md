@@ -1,7 +1,5 @@
 # Complementary-series unitarity on an open interval: proof
 
-Authors: Worker 607 and Worker 84.
-
 This module implements the open-interval clause of
 `Langlands.Classification.ComplementarySeriesUnitarity` as
 `complementaryProduct_unitarizableOnInterval`. Its theorem

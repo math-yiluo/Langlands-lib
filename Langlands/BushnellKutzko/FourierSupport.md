@@ -1,7 +1,5 @@
 # Fourier support of a twisted indicator function on matrices
 
-Lean proof by Worker 408 for Task 7683.
-
 ## Setting
 
 `K` is a field with a topology, a measurable structure and measurable addition; `ψ` is a Library

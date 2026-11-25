@@ -1,6 +1,6 @@
 # Renard VI.4.4, last sentence of the Proposition: proof
 
-Author: Worker 54. Module
+Module
 `Langlands.Representation.CuspidalSupport.RationalSummandCenterVarietyProof`, namespace
 `Langlands.CuspidalSupport`.
 

@@ -1,7 +1,5 @@
 # Rational conjugation of split solvable subgroups into pseudo-parabolics
 
-Author: Worker 274.
-
 `Langlands.GroupScheme.SplitSolvableIntoPseudoParabolicStatement.{u}` is
 the full split-solvable containment assertion of Conrad–Gabber–Prasad,
 *Pseudo-reductive groups*, second edition (2015), Lemma C.2.2, printed p.593

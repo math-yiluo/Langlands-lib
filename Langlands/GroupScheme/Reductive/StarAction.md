@@ -1,8 +1,5 @@
 # The star action on a based root datum
 
-Author: Worker 15, for the algebraic and reductive group-scheme program
-`2b5e4a00-9d44-49a4-9c89-979fb5b6233e` (Task 3483).
-
 This module constructs the star action of `E ≃ₐ[k] E` on a based root datum of a
 reductive group `G` over a field `k`. It is built from a torus of `G` defined over
 `k`, by correcting the ordinary Galois action on the torus lattices with the Weyl
@@ -98,8 +95,8 @@ Each lemma is the corresponding published property of
 group. No finiteness, separability or Galois hypothesis is used. For the absolute
 based root datum take `E` to be a separable closure of `k`. Then `E ≃ₐ[k] E` is the
 absolute Galois group, and the construction gives the star action on the based root
-datum `(X^*(T_E), Δ, X_*(T_E), Δ^∨)`. The following are separate statement
-obligations: independence of the choices of `T` and of the pinning (up to the
+datum `(X^*(T_E), Δ, X_*(T_E), Δ^∨)`. The following are separate
+statements: independence of the choices of `T` and of the pinning (up to the
 isomorphisms induced by `G(E)`-conjugation), continuity for the Krull topology, and
 existence of the data. This module asserts none of them.
 

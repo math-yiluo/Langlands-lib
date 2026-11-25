@@ -28,7 +28,7 @@ no tower compatibility for newly chosen class fields. It uses the proved
 compatibility of transitions with reduction, and the fact that the
 matching predicate is preserved by postcomposition.
 
-For the limit, use `Langlands.ClassField.Global.isAdicComplete_adicCompletionIntegers`
+For the limit, use `Langlands.ClassFieldTheory.Global.isAdicComplete_adicCompletionIntegers`
 and the identification of an adically complete ring with its compatible
 residue sequences. Passing to units uses the compatible sequences of
 values and of their inverses. The completed integer units are compact

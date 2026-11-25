@@ -1,6 +1,6 @@
 # The totally complex partial equation of cuspidal pairs from the global Rankin–Selberg theory
 
-Module `Langlands.Global.Factors.CuspidalPairPartialGammaGlobalTCReduction`. Author: Worker 382.
+Module `Langlands.Global.Factors.CuspidalPairPartialGammaGlobalTCReduction`.
 
 ## 1. Content and provenance
 
@@ -29,11 +29,11 @@ The module contains:
     `EqualPackageTCStatement`, and the theorems `unequalPackageTC` and `equalPackageTC`, which
     prove them from the premises (Section 4).
 
-The theorem is a reduction: it does not prove the totally complex form of (G'). Most of its
-premises are open statements of the Library (Section 6). It is supporting work of Task 6190 under the operator's
-answer `81ed24709e7050068786116ca6613260` (Option A), which restricts the global statements on
-the route to the local correspondence to totally complex base fields. Task 6190's required
-result, an unconditional proof of the unrestricted (G'), stays open.
+The theorem is a reduction: it does not prove the totally complex form of (G'). Section 6
+says which of its premises the Library proves. It belongs to the restriction of the global
+statements on the route to the local correspondence to totally complex base fields
+(`CuspidalPairFunctionalEquationTCStatement.md` §4). It gives no unconditional proof of the
+unrestricted (G').
 
 **Why only the semi-local premises change.** Of the ten premises of the published reduction,
 only `UnequalSemilocalEquationStatement` and `EqualSemilocalEquationStatement` involve real
@@ -51,7 +51,7 @@ are a special case.
 
 **Provenance (internal).** The split of the argument into premises is that of the published
 reduction. Restricting the two semi-local premises and the conclusion to totally complex
-fields is ours, following Option A.
+fields is ours.
 
 ## 2. The statement
 
@@ -136,11 +136,22 @@ does.
 
 ## 6. The retained premises
 
-The proof uses no hypothesis other than the ten premises. When this module was written, two
-premises were proved in the Library: `UnequalAnalyticStatement`, by
+The proof uses no hypothesis other than the ten premises. The Library proves the eight
+unrestricted ones: `UnequalAnalyticStatement`, by
 `Langlands.Global.RankinSelbergGlobal.UnequalAnalytic.unequalAnalyticStatement_proof`, and
 `EqualAnalyticStatement`, by
-`Langlands.Global.RankinSelbergGlobal.EqualAnalytic.equalAnalyticStatement_proof`. The other
-eight were open. A proof of the totally complex (G') by this route needs proofs of the six other
-unrestricted premises and of the two totally complex semi-local equations, or of their
-unrestricted forms (Section 3).
+`Langlands.Global.RankinSelbergGlobal.EqualAnalytic.equalAnalyticStatement_proof`;
+`UnequalUnfoldingStatement` and `EqualUnfoldingStatement`, by
+`unequalUnfoldingStatement_proof` and `equalUnfoldingStatement_proof` (modules
+`Langlands.Global.RankinSelberg.UnequalUnfoldingProof` and `…EqualUnfoldingProof`);
+`UnequalEulerFactorizationStatement` and `EqualEulerFactorizationStatement`, by
+`unequalEulerFactorization` and `equalEulerFactorization` (modules
+`…UnequalEulerFactorizationProof` and `…EqualEulerFactorizationProof`); and
+`UnequalDualEulerFactorizationStatement` and `EqualDualEulerFactorizationStatement`, by
+`unequalDualEulerFactorization` and `equalDualEulerFactorization` (modules
+`…UnequalDualEulerFactorizationProof` and `…EqualDualEulerFactorizationProof`). A proof of
+the totally complex (G') by this route needs proofs of the two totally complex semi-local
+equations, or of their unrestricted forms (Section 3). The Library derives the two totally
+complex semi-local equations from further premises in
+`Langlands.Global.RankinSelberg.UnequalSemilocalEquationTCReduction` and
+`Langlands.Global.RankinSelberg.EqualSemilocalFactorizationReductionTC`.

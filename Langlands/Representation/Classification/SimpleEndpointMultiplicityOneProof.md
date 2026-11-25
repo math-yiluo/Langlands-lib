@@ -1,6 +1,5 @@
 # A multiplicity-one detector identifies simple endpoints
 
-Author: Worker 502.
 `simpleEndpointMultiplicityOne` has exactly
 `SimpleEndpointMultiplicityOneStatement` as its type and applies the complete
 explicit-telescope core `simpleEndpointMultiplicityOneCore`, importing the

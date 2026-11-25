@@ -1,7 +1,5 @@
 # The inverse-right-regular representation of a finite algebra's units
 
-All-test construction: Worker 118. The corepresented presentation is an independently reviewed supporting contribution.
-
 Let `A` be a possibly noncommutative algebra over a field `k : Type u`, with
 a supplied finite basis `b : Basis (Fin d) k A`. This internal construction
 defines an actual faithful group-scheme representation

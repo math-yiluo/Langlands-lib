@@ -1,6 +1,6 @@
 # Elementary central-character reductions for square-integrability
 
-Worker 19 states `Langlands.GLSquareIntegrableCentralCharacterStatement`.
+This module states `Langlands.GLSquareIntegrableCentralCharacterStatement`.
 This is a proposition definition, not a proof of the reductions or of the strict
 Jacquet-exponent criterion.
 
@@ -43,14 +43,14 @@ scalar embedding is injective. Transport of a unitary `ω` across that group
 isomorphism supplies the centre character; its open kernel is obtained from
 smoothness again. Conversely, comparison of the two scalar actions on a nonzero
 vector determines `ω`. The open-kernel argument and this centre construction
-are adapted from Worker 349's private helper proofs in
-`TemperedExponentEdgeProof`; Worker 349 is credited as a coauthor.
+are adapted from private helper proofs in
+`TemperedExponentEdgeProof`.
 
 Clause 3 additionally uses the published existence of a Haar measure on the
 actual central quotient, so its analytic hypothesis is not used vacuously.
 Clause 4 uses `UnitaryCentralCharacter.coefficientNorm_eq`, which identifies the
 descended coefficient norms for different witnesses. These are intended proof
-routes and remain obligations of the proof successor.
+routes; the proof is in `SquareIntegrableCentralCharacterProof`.
 
 The sole direct import is `Langlands.Representation.Classification.Tempered`.
 No exponent criterion, segment classification, multisegment exhaustion,

@@ -1,7 +1,5 @@
 # Rigidity of normal idempotent endomorphisms of a Weil restriction, from two inputs
 
-Worker 47.
-
 This module proves
 
 ```lean
@@ -137,8 +135,9 @@ afterwards. Examples are `pointsEquiv_affinePointMap_res`, `mulMap_lT_tmul` and
 
 ## Provenance
 
-Provenance: derived. This is a formal deduction written for Task 6492; it is not taken from a
-source. It isolates, in the setting of Brian Conrad, *Reductive group schemes* (2014),
+Provenance: derived. This is a formal deduction, used in the proof of
+`AffineSimplyConnectedWeilRestrictionStatement` (`AffineSimplyConnectedWeilRestrictionProof`);
+it is not taken from a source. It isolates, in the setting of Brian Conrad, *Reductive group schemes* (2014),
 Proposition 6.4.4 and its proof, pp.232–233 (registered as
 `conrad-2014-reductive-group-schemes`), two separate inputs to the identification of the
 factors of `R_{B/A}(G')`:

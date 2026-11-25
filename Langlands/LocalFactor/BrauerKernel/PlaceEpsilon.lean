@@ -29,20 +29,20 @@ def LocalPlaceRelation : Prop :=
   ∑ j : (Σ j, FinitePlacesAbove (K j) z), r j.1 •
       ExactGrothendieckGroup.continuousInduceAlong
         (Weil.Local.extensionWeilMap (padicField z) (towerPadicField z j.2.1)
-          (ClassField.Global.RelativeWeilGroup.completionPadicAlgHom z j.2.1))
+          (ClassFieldTheory.Global.RelativeWeilGroup.completionPadicAlgHom z j.2.1))
         (Weil.Local.extensionWeilMap_isOpenEmbedding _ _ _)
         (ExactGrothendieckGroup.characterClass.{u, w}
             (LocalFactor.RankOne.weilCharacter (towerPadicField z j.2.1)
               (LocalClassField.extensionReciprocityCandidate (padicField z)
                 (towerPadicField z j.2.1)
-                (ClassField.Global.RelativeWeilGroup.completionPadicAlgHom z j.2.1) eC)
+                (ClassFieldTheory.Global.RelativeWeilGroup.completionPadicAlgHom z j.2.1) eC)
               (quasicharacterAt j.2.1 (residuePrime_eq z j.2.1)
                 ((Λ₁ j.1).finiteComponent j.2.1))) -
           ExactGrothendieckGroup.characterClass.{u, w}
             (LocalFactor.RankOne.weilCharacter (towerPadicField z j.2.1)
               (LocalClassField.extensionReciprocityCandidate (padicField z)
                 (towerPadicField z j.2.1)
-                (ClassField.Global.RelativeWeilGroup.completionPadicAlgHom z j.2.1) eC)
+                (ClassFieldTheory.Global.RelativeWeilGroup.completionPadicAlgHom z j.2.1) eC)
               (quasicharacterAt j.2.1 (residuePrime_eq z j.2.1)
                 ((Λ₂ j.1).finiteComponent j.2.1)))) = 0
 
@@ -55,14 +55,14 @@ def placeEpsilonRatioProduct (ψz : NontrivialAdditiveCharacter (padicField z))
     (PadicAbelian.epsilon (towerPadicField z j.2.1).canonicalTopologicalData
         (quasicharacterAt j.2.1 (residuePrime_eq z j.2.1) ((Λ₁ j.1).finiteComponent j.2.1))
         (Weil.Local.SystemEpsilon.standaloneTraceCharacter (padicField z) (towerPadicField z j.2.1)
-          (ClassField.Global.RelativeWeilGroup.completionPadicAlgHom z j.2.1) ψz)
+          (ClassFieldTheory.Global.RelativeWeilGroup.completionPadicAlgHom z j.2.1) ψz)
         (@HarmonicAnalysis.AdditiveHaarMeasure.measure _ _
           (towerPadicField z j.2.1).canonicalTopologicalData.topology
           (@borel _ (towerPadicField z j.2.1).canonicalTopologicalData.topology) (μ j)) 0 /
       PadicAbelian.epsilon (towerPadicField z j.2.1).canonicalTopologicalData
         (quasicharacterAt j.2.1 (residuePrime_eq z j.2.1) ((Λ₂ j.1).finiteComponent j.2.1))
         (Weil.Local.SystemEpsilon.standaloneTraceCharacter (padicField z) (towerPadicField z j.2.1)
-          (ClassField.Global.RelativeWeilGroup.completionPadicAlgHom z j.2.1) ψz)
+          (ClassFieldTheory.Global.RelativeWeilGroup.completionPadicAlgHom z j.2.1) ψz)
         (@HarmonicAnalysis.AdditiveHaarMeasure.measure _ _
           (towerPadicField z j.2.1).canonicalTopologicalData.topology
           (@borel _ (towerPadicField z j.2.1).canonicalTopologicalData.topology) (μ j)) 0) ^ r j.1
@@ -78,13 +78,13 @@ theorem quasicharacterAt_normComp_mul (α : HeckeCharacter k) {M : IntermediateF
         quasicharacterBase z (α.finiteComponent z) (Units.map
           (@Algebra.norm (padicField z).Carrier (towerPadicField z u.1).Carrier _ _
             (Weil.Local.extensionAlgebra (padicField z) (towerPadicField z u.1)
-              (ClassField.Global.RelativeWeilGroup.completionPadicAlgHom z u.1))) x) := by
+              (ClassFieldTheory.Global.RelativeWeilGroup.completionPadicAlgHom z u.1))) x) := by
   have : u.1.asIdeal.LiesOver z.asIdeal := u.2
   change ((HeckeCharacter.normComp α * Φ).finiteComponent u.1) x =
     (Φ.finiteComponent u.1) x * (α.finiteComponent z) (Units.map
       (@Algebra.norm (padicField z).Carrier (towerPadicField z u.1).Carrier _ _
         (Weil.Local.extensionAlgebra (padicField z) (towerPadicField z u.1)
-          (ClassField.Global.RelativeWeilGroup.completionPadicAlgHom z u.1))) x)
+          (ClassFieldTheory.Global.RelativeWeilGroup.completionPadicAlgHom z u.1))) x)
   rw [HeckeCharacter.finiteComponent_mul, ContinuousMonoidHom.mul_apply,
     HeckeCharacter.normComp_finiteComponent α z u x, localUnitNorm_eq_units_map_norm, mul_comm]
 
@@ -112,7 +112,7 @@ theorem placeEpsilonRatioProduct_eq_one_of_unramified
   let η₂ : ∀ j, Correspondence.QuasiCharacter (E j) := fun j =>
     quasicharacterAt j.2.1 (residuePrime_eq z j.2.1) ((Λ₂ j.1).finiteComponent j.2.1)
   refine prod_epsilon_ratio_eq_one_of_unramified (padicField z) eC heC E
-    (fun j => ClassField.Global.RelativeWeilGroup.completionPadicAlgHom z j.2.1)
+    (fun j => ClassFieldTheory.Global.RelativeWeilGroup.completionPadicAlgHom z j.2.1)
     η₁ η₂ (fun j => r j.1) hrel (quasicharacterBase z (α.finiteComponent z)) (fun j => ?_) ψz μ
   have : j.2.1.asIdeal.LiesOver z.asIdeal := j.2.2
   refine ⟨ramificationIndex_towerPadicField_eq z j.2.1 (hram j.1 j.2),
@@ -160,7 +160,7 @@ theorem exists_bound_placeEpsilonRatioProduct_eq_one
           placeEpsilonRatioProduct r K Λ₁ Λ₂ z ψz μ = 1 := by
   obtain ⟨B, hB⟩ := exists_bound_prod_epsilon_ratio_eq_one_of_ramified (padicField z) eC heC
     (fun j : (Σ j, FinitePlacesAbove (K j) z) => towerPadicField z j.2.1)
-    (fun j => ClassField.Global.RelativeWeilGroup.completionPadicAlgHom z j.2.1) ψz Kb
+    (fun j => ClassFieldTheory.Global.RelativeWeilGroup.completionPadicAlgHom z j.2.1) ψz Kb
   refine ⟨B, fun α hα Λ₁ Λ₂ Φ₁ Φ₂ hrel hΛ₁ hΛ₂ hcond μ => ?_⟩
   refine hB (quasicharacterBase z (α.finiteComponent z)) hα
     (fun j => quasicharacterAt j.2.1 (residuePrime_eq z j.2.1) ((Λ₁ j.1).finiteComponent j.2.1))

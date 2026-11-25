@@ -4,8 +4,9 @@
 internal support interface for the proof of
 `Langlands.Algebra.NoetherianLocalFiberInjectivityStatement` (Stacks
 Project, Commutative Algebra, Lemma 10.99.1, tag 00ME). It defines a
-proposition and supplies no proof. The proposition remains unproved
-until an exact proof of it is independently accepted.
+proposition and supplies no proof. The proposition is proved as
+`Langlands.Algebra.noetherianAdicTensorInjectivity` in
+`Langlands.Algebra.NoetherianAdicTensorInjectivity`.
 
 ## Statement
 
@@ -42,8 +43,10 @@ The universes of `R`, `S`, `A` and `B` are independent. There is no
 Noetherian hypothesis on `R`, flatness hypothesis on `A` or `B`,
 `S`-action or finiteness hypothesis on `B`, `S`-linearity hypothesis on
 `f`, finite-presentation hypothesis, or properness hypothesis on `I`.
-The module imports the parent statement module for its Mathlib
-prerequisites; the proposition does not refer to the parent proposition.
+The module imports the statement module
+`Langlands.Algebra.NoetherianLocalFiberInjectivityStatement` for its Mathlib
+prerequisites; the proposition does not refer to
+`NoetherianLocalFiberInjectivityStatement`.
 
 ## Provenance
 
@@ -63,11 +66,9 @@ arbitrary ideal `I`. It takes the injectivity modulo `I + m^n` as a
 hypothesis, so it omits the flatness of the target that the source uses
 to obtain that injectivity.
 
-The intended proof route, which this file does not supply, applies
+The proof route, which this file does not supply, applies
 Krull's intersection theorem to the finite `S`-module `A/IA` and the
 extended ideal `mS`, which lies in the maximal ideal of `S` because
 `R → S` is local, and uses canonical quotient-tensor comparisons.
 
-The Lean statement and an initial Markdown draft were written by
-Worker 666 for exact proof task `90c1db03-0049-445e-9845-423d7fb17ea0`.
-Worker 735 checked them against the source and revised the Markdown.
+The Lean statement and this Markdown were checked against the source.

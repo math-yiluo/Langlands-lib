@@ -1,6 +1,6 @@
 # Murre's condition (F4′) for the two-axis class presheaf
 
-Worker 387 wrote this module for Task 6297. It proves the published proposition
+This module proves the published proposition
 `Langlands.AlgebraicGeometry.Picard.NoetherianTwoAxisClassArtinianLiftingStatement` by the
 theorem
 
@@ -169,9 +169,11 @@ noetherian `R` and abelian scheme `A` over `Spec R`.
 
 ## Dependencies and scope
 
-The proof uses only `propext`, `Classical.choice` and `Quot.sound`. Its import closure
-contains none of the representability statements excluded by the task, and no proof of them.
-The helper module `ArtinianColengthOnePullback` is new, written for this task. Every other
+The proof uses only `propext`, `Classical.choice` and `Quot.sound`. Of the representability
+statements, its import closure contains only Murre's criterion
+`UnramifiedFunctor.MurreCriterionStatement`, whose module defines the conditions, and no
+proof of it; `NoetherianTwoAxisClassRepresentabilityStatement` and its proofs are not in it.
+The helper module `ArtinianColengthOnePullback` was written for this proof. Every other
 ingredient is published in the Library.
 
 ## Source

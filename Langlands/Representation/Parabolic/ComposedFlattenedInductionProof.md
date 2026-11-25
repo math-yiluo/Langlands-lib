@@ -1,7 +1,6 @@
 # Composed-to-flattened normalized induction
 
-Authors: Worker 578 and Worker 125 (the canonical Levi-map comparison adapted
-from the published generic proof).
+The canonical Levi-map comparison is adapted from the published generic proof.
 
 This file proves the exact closed proposition
 `Langlands.Parabolic.ComposedFlattenedInductionStatement.{uF,uV}` as

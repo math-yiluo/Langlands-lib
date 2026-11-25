@@ -1,6 +1,6 @@
 # Fppf reduction of infinitesimal rigidity to diagonalizable sources
 
-Worker 642. This is an internal reduction toward the published
+This is an internal reduction toward
 `Langlands.GroupScheme.MultiplicativeTypeInfinitesimalRigidityStatement`.
 It does not itself prove the proposition: `of_diagonalizable` retains the
 corresponding rigidity premise for diagonalizable sources over every
@@ -16,7 +16,7 @@ pullback comparisons transports triviality along this square. The retained
 rigidity premise now makes the homomorphism trivial on every affine
 splitting chart. Equality of actual homomorphisms descends along the open
 covers and then along the original fppf splitting cover, using the
-published `hom_ext_of_baseChange_fppfCover` theorem. There is no
+Library's `hom_ext_of_baseChange_fppfCover` theorem. There is no
 quasi-compactness or smoothness hypothesis, and the target group scheme is
 arbitrary.
 
@@ -30,6 +30,5 @@ argument.
 
 The provenance is the existing Library definitions of relative
 multiplicative type and actual base change, together with elementary
-properties of ideals and fppf descent of equality. The source target and
-all its imported Lean/Markdown pairs are unchanged. This file does not
+properties of ideals and fppf descent of equality. This file does not
 supply the diagonalizable rigidity argument from Conrad's Corollary B.2.7.

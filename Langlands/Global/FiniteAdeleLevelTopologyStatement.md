@@ -1,7 +1,5 @@
 # Topology of actual finite-adelic level rings
 
-Author: Worker 208.
-
 `FiniteAdeleLevelTopologyStatement` quantifies a Dedekind domain `R`, its
 fraction field `K` and all finite sets of height-one primes, in an arbitrary
 common universe `u`. It has four conclusions about the existing actual

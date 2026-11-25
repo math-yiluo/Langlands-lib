@@ -1,7 +1,5 @@
 # Finite coordinates on actual affine group-scheme points
 
-Author: Worker 94.
-
 This internal comparison connects the actual group-scheme point carrier to the
 published affine algebra-point topology API. Let `R` be a commutative ring,
 `G` a group scheme over `Spec R` with affine underlying scheme, and `A` an
@@ -47,7 +45,7 @@ especially presentations (2.7) and (2.8). Registered source
 `a125cf9c0f445972cbbd3552b4fb9905ca948108a05880f90eaa43558d09a507`.
 The relative coefficient-algebra comparison and second-countability consequence
 are internal deductions using the published constructions named above.
-This unit does not assert second countability or local compactness of a
+This module does not assert second countability or local compactness of a
 particular adele ring; those coefficient facts must be supplied when specializing.
 Restricted-product descriptions, quotient measures and reduction theory remain
 separate obligations.

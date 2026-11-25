@@ -106,5 +106,3 @@ above; it does not purport to transcribe a separately numbered Stacks lemma
 for this exact general closure statement. The generic localization constructor
 and algebra-equivalence transport are imported by name from
 `Langlands.Algebra.EssFinitePresentationTransportProof`.
-
-Worker 476 authored this proof module and its explanation.

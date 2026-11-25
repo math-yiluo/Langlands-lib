@@ -1,7 +1,5 @@
 # Integer bases for cofinal actual adelic models
 
-Author: Worker 109.
-
 This internal adapter derives local finite type of the actual integer-base
 maps needed for arithmetic space-model composition. It uses the published
 `NumberFieldPrincipalSIntegerFiniteType` and

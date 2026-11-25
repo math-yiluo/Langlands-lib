@@ -1,7 +1,5 @@
 # Isotropic planes in the symmetric component
 
-Worker 863, Task 7498.
-
 Use quaternion coordinates `Q` for a skew-hermitian pairing `B` over `F`,
 with embedded quadratic field `E`. Let `R` be a field extending `E`. Assume that
 vectors `t,s` in the scalar extension over `F` satisfy `B_R(t,t) = 0` and

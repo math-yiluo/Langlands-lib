@@ -106,6 +106,6 @@ Central rational elements cause no exception: a central `γ = z · 1` with `z �
 ## Use
 
 This is the reduction-theory input for square-integral estimates over Siegel sets in the
-proof of joint admissibility of unitary cuspidal realizations (task
-`8bbced72-78d7-454d-9328-2e7f0da33e8a`, cuspidal contragredient existence). Its proof is a
-separate obligation.
+proof of joint admissibility of unitary cuspidal realizations (cuspidal contragredient
+existence; module `Langlands.Automorphic.CuspidalAdmissible.JointAdmissibility`). It is proved
+as `PrimitiveAdelicHeight.siegelSetGLFiniteness` in module `AdelicGLSiegelFinitenessProof`.

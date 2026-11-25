@@ -1,7 +1,5 @@
 # Proof of finite-surjective descent of finite-set affine neighborhoods
 
-Author: Worker 5045.
-
 Module `Langlands.AlgebraicGeometry.AlgebraicSpace.FiniteSurjectiveFiniteAffineNeighborhoodsDescentProof`.
 
 ## Statement

@@ -1,8 +1,7 @@
 # Proof: source axioms for Renard's full module categories
 
-Worker 709 wrote this proof. Worker 937 rechecked it and edited this
-Markdown for submission. The module
-`Langlands.Algebra.RenardFullModuleAxiomProof` proves the published closed
+The module
+`Langlands.Algebra.RenardFullModuleAxiomProof` proves the closed
 target
 `Langlands.Algebra.RenardFullModuleAxiomStatements.FullModuleAxiomsStatement`
 as the theorem `fullModuleAxioms`. Its level parameters `uA`, `uI` and `uM`
@@ -33,8 +32,8 @@ claim about products (source AB4) or Mathlib's `AB5OfSize`, which the
 statement does not include.
 
 Every comparison between categorical subobjects and submodules used here is
-either already published (Mathlib's `ModuleCat.subobjectModule`,
-`Subobject.subobjectOrderIso` and `Submodule.mapIic`, and the published
+either already in Mathlib or the Library (Mathlib's `ModuleCat.subobjectModule`,
+`Subobject.subobjectOrderIso` and `Submodule.mapIic`, and the Library's
 `NonUnitalModuleFiniteness.subobjectExtendOrderIso`) or constructed in this
 file from those (`iicOrderIso`, `subobjectSubmoduleOrderIso` and the
 composite inside `finiteType_of_fg`). None is assumed.
@@ -57,7 +56,7 @@ hypothesis, a ring `R` and an `R`-module `V`.
   gives `e N ⊓ ⨆ i, e (F i) = ⨆ i, e N ⊓ e (F i)`, and `isLUB_iSup` is
   transported back through `OrderIso.isLUB_image'`.
 - `finiteType_of_fg e P hP`: let `e : Subobject X ≃o Submodule R V`. If
-  `e P` is finitely generated, then `(P : C)` satisfies the published source
+  `e P` is finitely generated, then `(P : C)` satisfies the source
   predicate `Langlands.Renard.IsFiniteTypeObject`. The proof composes
   Mathlib's `Subobject.subobjectOrderIso P` (subobjects of `(P : C)` are the
   interval `Set.Iic P`), `iicOrderIso e P`, the inverse of
@@ -65,14 +64,14 @@ hypothesis, a ring `R` and an `R`-module `V`.
   `ModuleCat.subobjectModule (ModuleCat.of R (e P))`. The result is an order
   isomorphism from `Subobject (P : C)` to the subobjects of the module
   `ModuleCat.of R (e P)`. That module is finite by `Module.Finite.iff_fg`.
-  Hence it is source finite type by the published
-  `Langlands.Renard.ModuleFiniteType.finiteType_iff_finite`. The published
+  Hence it is source finite type by
+  `Langlands.Renard.ModuleFiniteType.finiteType_iff_finite`. The lemma
   `Langlands.Renard.finiteTypeFiniteSubcover` turns this into the
   finite-subcover property, which
   `NonUnitalModuleFiniteness.hasFiniteSubcoverProperty_of_orderIso`
   transports to `(P : C)`. `finiteTypeFiniteSubcover` then turns it back.
 - `locallyFiniteType_of_orderIso e`: if `e : Subobject X ≃o Submodule R V`,
-  then `X` satisfies the published
+  then `X` satisfies
   `Langlands.Renard.IsLocallyFiniteTypeObject`, so `⊤` is the least upper
   bound of the finite-type subobjects. `⊤` is an upper bound by `le_top`.
   Let `Q` be any upper bound and `x : V`. The subobject
@@ -85,9 +84,9 @@ hypothesis, a ring `R` and an `R`-module `V`.
 
 For a nonunital ring `A : Type uA` and `M : NonUnitalModuleCat.{uA, uM} A`,
 `subobjectSubmoduleOrderIso M` is an order isomorphism from `Subobject M` to
-the submodules of the published integer-unitized module
-`IntegerUnitization.extendObj A M` over `Unitization ℤ A`. It composes the
-published `NonUnitalModuleFiniteness.subobjectExtendOrderIso M` with
+the submodules of the integer-unitized module
+`IntegerUnitization.extendObj A M` over `Unitization ℤ A`. It composes
+`NonUnitalModuleFiniteness.subobjectExtendOrderIso M` with
 Mathlib's `ModuleCat.subobjectModule`. The subobjects here are those of the
 category `NonUnitalModuleCat`. They do not depend on the abelian instance
 that the statements select.
@@ -99,8 +98,8 @@ that the statements select.
   `HasColimitsOfShape (Discrete J)` in
   `NonUnitalModuleCat.{uA, max uI uM} A`. Mathlib's
   `Adjunction.hasColimitsOfShape_of_equivalence` pulls these back along the
-  published equivalence `IntegerUnitization.extendFunctor A`, whose
-  `IsEquivalence` instance is published. Mathlib's colimit instance supplies
+  equivalence `IntegerUnitization.extendFunctor A`, whose
+  `IsEquivalence` instance is in the Library. Mathlib's colimit instance supplies
   the coproducts in `ModuleCat.{max uI uM} (Unitization ℤ A)`.
 - `nonUnitalSourceAB6` applies `locallyFiniteType_of_orderIso` to
   `subobjectSubmoduleOrderIso M`.
@@ -127,20 +126,16 @@ triples `0, 1, 0`, `1, 0, 2` and `2, 1, 0`.
 
 ## Checks
 
-Diagnostic `84b19b6a-0671-4f01-acdb-dfa8acc27639` (Worker 709) compiled the
-module with a Lake build in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, with zero errors and zero warnings.
+A diagnostic check compiled the
+module with a Lake build, with zero errors and zero warnings.
 It inspected `fullModuleAxioms`, a theorem with level parameters `uA`, `uI`
 and `uM`. Its axioms are only `propext`, `Classical.choice` and `Quot.sound`.
 There is no `sorry` and no new axiom.
 
-Worker 937 repeated the build and inspection against Library commit
-`83773f62c5adf54634640cbfaf89822a74b44700` (diagnostic
-`d9e5ac61-abac-45a4-9dbe-25d23ce7f267`, same results), and again on the
-submitted workspace (diagnostic `2ec28662-911a-4136-9e2f-d0e0650bc9d4`,
-same results). A separate private
-probe, not part of this unit (diagnostic
-`c92d54bb-db30-4cee-aafe-16cc4c2f43b1`), checked
+A second reader repeated the build and inspection against Library commit
+`83773f62c5adf54634640cbfaf89822a74b44700` (same results), and again on the
+final version of the files (same results). A separate private
+probe, not part of this module, checked
 `type_of% fullModuleAxioms.{uA, uI, uM} = FullModuleAxiomsStatement.{uA, uI, uM}`
 by `rfl`. It also instantiated the theorem at permuted and mixed levels and
 extracted three unfolded components: source AB6 for

@@ -6,7 +6,7 @@ namespace `Langlands.HarishChandraSchwartz`. It imports:
 - `Langlands.HarmonicAnalysis.HarishChandraSchwartz.InducedCoefficientXi`:
   `inducedIntegrandKernel`, `inducedIntegrandKernel_mul` and `norm_inducedIntegrandKernel_le`
   (the pointwise bound in the proof of Lemma VI.2.2). Through its imports it also supplies
-  Worker 200's `productInducedCoefficientObject` (`L(ω, P)`), `CompactInduction.integrand`,
+  `productInducedCoefficientObject` (`L(ω, P)`), `CompactInduction.integrand`,
   `CompactInduction.measure` with `CompactInduction.measure_eq_normalizedHaar`,
   `Induction.eval_isLocallyConstant`, the spherical function `xi` with `xi_pos` and
   `continuous_xi`, `iwasawaWeight_nonneg`, `normalizedHaar`, `leviXiWeight`, `LeviData` with
@@ -37,7 +37,7 @@ Harish-Chandra*, J. Inst. Math. Jussieu 2 (2003), 235–333, DOI 10.1017/S147474
 
 The integrand and the convergence statement are source content (the double integral and its
 absolute convergence). The Lean proof follows the route the source indicates. The integral over
-`P\G` is the integral over `K` with its Haar probability, as in Worker 200's
+`P\G` is the integral over `K` with its Haar probability, as in
 `CompactInduction.coefficientMap`. `nu_zero_ofReal_le_one`, `continuous_integrand_uncurry` and
 `lintegral_leviXiWeight_mul` are derived.
 
@@ -106,7 +106,7 @@ absolute convergence). The Lean proof follows the route the source indicates. Th
 - `integrable_coefficientPairingIntegrand`: `coefficientPairingIntegrand h hU A K ψ f` is
   integrable on `G × K` for `μ × CompactInduction.measure K hK`. This is the absolute
   convergence asserted in the proof of Lemma VII.1.2, and it is the hypothesis `hint` of
-  `inducedFourierTransform_eq_constantTermInducedFourierTransform` (staged module
+  `inducedFourierTransform_eq_constantTermInducedFourierTransform` (module
   `InducedConstantTermFourier`) for `Ξ = xi hP₀K δ₀`.
 
 ## Proof notes
@@ -132,8 +132,8 @@ absolute convergence). The Lean proof follows the route the source indicates. Th
 - `InducedCoefficientXi` proves Lemma VI.2.2 for one coefficient, `|E_P^G ψ(g)| ≤ c Ξ(g)`. This
   module integrates the same pointwise bound before integrating over `K`, which gives the absolute
   convergence of the double integral.
-- The staged module `InducedConstantTermFourier` (Lemma VII.1.2) takes this convergence as its
-  hypothesis `hint`. Combining the two for `Ξ = xi` is left to a later module.
+- The module `InducedConstantTermFourier` (Lemma VII.1.2) takes this convergence as its
+  hypothesis `hint`. The two are combined for `Ξ = xi` in `InducedConstantTermFourierXi`.
 
 ## Open obligations
 

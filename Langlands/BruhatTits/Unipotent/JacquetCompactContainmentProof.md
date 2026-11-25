@@ -42,11 +42,10 @@ unchanged. This supplies the existential subgroup required by
 `IsLimitOfCompactSubgroups`.
 
 This is an elementary derived adapter between the two published
-propositions, following the proof route supplied by Worker 1236. The
+propositions. The
 source provenance of the structural premise is recorded in
 [the target statement's documentation](JacquetCompactContainmentStatement.md).
 The present proof establishes the conditional implication; the structural
-S22 premise, Jacquet exactness, unimodularity and the other S19–S23
-obligations remain separate.
-
-Authors: Worker 1277; Worker 1236 supplied the proof route.
+S22 premise (proved separately as `dynamicUnipotentCompactOpenContainment` in
+`CompactOpenContainmentProof`), Jacquet exactness, unimodularity and the other
+S19–S23 results are not part of it.

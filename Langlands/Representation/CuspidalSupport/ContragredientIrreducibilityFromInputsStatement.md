@@ -1,6 +1,6 @@
 # Irreducibility and supercuspidality of contragredients from their remaining inputs
 
-Author: Worker 154. Module
+Module
 `Langlands.Representation.CuspidalSupport.ContragredientIrreducibilityFromInputsStatement`,
 namespace `Langlands.CuspidalSupport`, universe parameters `u, v`.
 
@@ -98,11 +98,10 @@ They are the published results the proof uses that the Library does not yet prov
 ## Provenance
 
 Derived. The statement records which published inputs the proof of Renard VI.2.2,
-Corollary, needs in the represented-parabolic interface. Revision 2 of task
-`33346af6-9886-4285-8d36-128d671ab6b8` (Task 5629) lists this statement and its proof
-under "Intermediate conditional result". The premises are owned by the proof tasks
-`173e44ba-079b-4597-a13b-1aab371a4ec9` (Jacquet's theorem) and
-`c0fa1878-6cee-4435-8484-2fc15ea04a17` (VI.9.6). Combining a proof of this statement with
+Corollary, needs in the represented-parabolic interface; it is an intermediate
+conditional result, proved in
+[`ContragredientIrreducibilityFromInputsProof`](ContragredientIrreducibilityFromInputsProof.md).
+The premises are Jacquet's theorem and VI.9.6. Combining a proof of this statement with
 proofs of the two premises gives the target.
 
 ## Imports

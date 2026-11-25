@@ -207,14 +207,15 @@ satisfy the added hypothesis.
 
 ## Provenance
 
-The draft was written by Worker 315 for Task 6219, with a source audit of the torus factor
-and the descent route by Worker 321. This publication keeps the Lean statement unchanged
-and rewrites the documentation.
+The statement was formulated for the proof of positive-radical inclusion for descended
+unramified facet models (KP 4.1.22(7)). The torus factor and the descent route were audited
+against the source.
 
 ## Intended consumer
 
 This statement is a prerequisite for the incidence proof of the published
-`UnramifiedFacetPositiveRadicalStatement` (Task 6219). That proof combines it with
+`UnramifiedFacetPositiveRadicalStatement`. That proof combines it with
 `IntegerValuationBuildingData.affineRoot_mem_or_two_smul_mem` and
-`KPApartmentData.filtration_comparison_of_mem_facetClosure`. Until a proof of this
-statement is accepted and published, it is not an accepted proof input.
+`KPApartmentData.filtration_comparison_of_mem_facetClosure`. The statement is proved as
+`unramifiedRadicalRootGeneration` (module `UnramifiedRadicalRootGenerationProof`), which
+`unramifiedFacetPositiveRadical` uses.

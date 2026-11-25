@@ -1,7 +1,5 @@
 # Reduction of the classical type D Hasse kernel to quaternionic spin groups
 
-Worker 863, Task 7498.
-
 `NumberFieldQuaternionicSpinHasseStatement` concerns an actual spin cover of a
 nondegenerate quadratic class of rank at least four over a central quaternion division
 algebra. Its orthogonal involution has symmetric subspace of dimension three. For any

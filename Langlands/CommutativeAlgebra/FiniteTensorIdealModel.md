@@ -1,6 +1,6 @@
 # Finite coefficient models of finitely generated tensor ideals
 
-Worker 105. This internal construction implements the finite-coefficient step
+This internal construction implements the finite-coefficient step
 in the proof of Stacks Project Lemma 33.8.15 (04KZ). It uses the existing Library
 single-tensor finite-stage lemma in `DVRAlgebraicBaseChange`; none of its DVR
 hypotheses are present on that lemma or on this construction.
@@ -33,7 +33,7 @@ paragraph from the choice of the finitely generated prime ideal through the
 choice of a finite subextension containing all generator coefficients.
 The finite-family and arbitrary-`A` packaging here is a derived algebraic
 construction. The source's component descent additionally uses Galois
-invariance and other geometric arguments. This unit constructs no component
+invariance and other geometric arguments. This module constructs no component
 scheme and proves neither full 04KZ nor finite separable component splitting
 054R. It does not assert separability of `E/K` for an arbitrary algebraic `L/K`.
 The retained lemma page has no comments; no applicable project errata file

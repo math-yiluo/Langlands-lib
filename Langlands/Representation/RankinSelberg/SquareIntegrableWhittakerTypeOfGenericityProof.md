@@ -1,7 +1,5 @@
 # Full Whittaker type from supplied square-integrable genericity
 
-Author: Worker 192.
-
 `Langlands.RankinSelberg.squareIntegrableWhittakerType_of_genericity`
 proves the closed conditional proposition
 `SquareIntegrableWhittakerTypeOfGenericityStatement.{uF,uV}` from
@@ -47,7 +45,7 @@ equivalence of the full functional space with `ℂ`. The positive standard
 character is preserved throughout.
 
 The proof is internal assembly of these published declarations, adapted
-from Worker 192's earlier private pole-freeness assembly helper. It reuses
+from an earlier private pole-freeness assembly helper. It reuses
 the existing genericity-to-Whittaker-type construction by Lean name.
 No source assertion or classification statement is used as a proof of
 genericity, and no original literature theorem is newly asserted.

@@ -1,8 +1,8 @@
 # Polynomial inclusion and distinguished restricted series
 
-Author: Worker 56. The underlying restricted-series construction and
-coefficient continuous linear map are imported from the Tate algebra
-foundations authored by Worker 36 and generalized by Worker 56.
+The underlying restricted-series construction and coefficient continuous
+linear map are imported from the Tate algebra foundations
+(`TateSeries.Definitions`).
 
 `RestrictedSeries.Algebra A` is the actual Tate algebra with the single
 variable type `Unit`. `coeff A n` extracts its degree-`n` coefficient as a

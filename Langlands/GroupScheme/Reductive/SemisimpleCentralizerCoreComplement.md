@@ -1,7 +1,8 @@
 # Semisimple centralizer-core complements from almost-simple generation
 
-Worker 1783, with Worker 1616's proposed reduced-centralizer construction and
-normal-subgroup semisimplicity interface.
+The module uses a reduced-centralizer construction (the reduced identity
+component `ReducedSubgroup.identityCore` of the full centralizer) and the
+normal-subgroup semisimplicity of `Reductive.NormalSemisimpleProof`.
 
 Over an algebraically closed field of arbitrary universe and characteristic,
 let `G` be semisimple and `j : H ⟶ G` a smooth connected closed normal subgroup.
@@ -45,5 +46,5 @@ The provenance is internal composition of the published full-centralizer,
 almost-simple dichotomy, reduced-subgroup, identity-component, schematic-image,
 and multiplication interfaces. It refines the older full-centralizer
 construction by using the smooth connected reduced identity component and
-retains the unproved generation premise explicitly. No smoothness is asserted
+retains the generation premise explicitly. No smoothness is asserted
 for the full centralizer, the full centres, or the multiplication kernel.

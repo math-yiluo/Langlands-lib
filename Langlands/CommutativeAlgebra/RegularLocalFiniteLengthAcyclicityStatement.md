@@ -1,7 +1,5 @@
 # Finite-length acyclicity over a regular local ring
 
-Author: Worker 1015.
-
 `Langlands.CommutativeAlgebra.RegularLocalFiniteLengthAcyclicityStatement.{u}`
 is a proposition definition. It states a supporting acyclicity assertion,
 and supplies no proof.

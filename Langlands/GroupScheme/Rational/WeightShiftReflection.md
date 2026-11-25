@@ -19,5 +19,6 @@ identifies actual adjoint weight with weight shift in a faithful
 representation. No characteristic-zero or character-formula premise is
 needed.
 
-This is an internal derived helper for Task 7128's group-side Lie-weight
-input to Freudenthal's formula.
+This is an internal derived helper for the group-side Lie-weight input to
+Freudenthal's formula in the proof of the Weyl character formula for a split
+reductive group in characteristic zero.

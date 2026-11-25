@@ -1,6 +1,6 @@
 # Every fine Hom factors through a coarse real block
 
-Author: Worker 526. The namespace is
+The namespace is
 `Langlands.FineHomRealBlockFactorization`. This internal deduction uses
 actual normalized refined second adjointness and its target naturality.
 The field and all representation-carrier universes remain independent.

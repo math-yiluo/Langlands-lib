@@ -17,7 +17,7 @@ variable {k : Type u} [Field k]
   {G : GroupScheme (Spec (CommRingCat.of k))} [IsAffineHom G.X.hom]
   (p : SplitPinning G) {n : ℕ}
 
-local instance : IsAffineHom p.torus.toGrp.X.hom := p.isSplitTorus.isAffineHom
+private local instance : IsAffineHom p.torus.toGrp.X.hom := p.isSplitTorus.isAffineHom
 
 /-- The tangent image intersected with the degree-`chi` endomorphisms. -/
 def representationTangentWeightSpace (r : MatrixRepresentation G (Fin n))

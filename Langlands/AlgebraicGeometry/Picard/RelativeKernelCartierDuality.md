@@ -1,7 +1,5 @@
 # Relative Cartier kernel duality as group-valued functors
 
-Author: Worker 195.
-
 This internal construction packages the published proposition
 `RelativeDualKernelCharacterBijectiveStatement` as an explicit theorem
 dependency `duality`. It retains all seven tensor/Picard propositions,

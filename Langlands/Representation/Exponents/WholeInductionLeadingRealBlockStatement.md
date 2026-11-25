@@ -1,15 +1,12 @@
 # The inducing layer in the whole opposite Jacquet module
 
-Workers 526, 359, 430 and 1114.
-
 `Langlands.Exponents.WholeInductionLeadingRealBlockStatement` is an internal
 proposition definition. This file supplies no proof.
 
-Worker 526 implemented this statement and source audit. Worker 359 contributed
-the full-center, open-kernel formulation and size-weighted coordinates.
-Worker 430 contributed the actual retraction and projector formulation used
-to control every later fine Hom map. Worker 1114 rechecked the statement
-against the imported files and sources and revised this explanation.
+The statement uses the full-center, open-kernel formulation and size-weighted
+coordinates, and the actual retraction and projector formulation used to
+control every later fine Hom map. It was rechecked against the imported files
+and sources.
 
 ## Statement
 
@@ -99,7 +96,7 @@ the retraction `r_σ`, which is surjective so that `↪` becomes `→` (p.270,
 l.15), modular-character reasoning (p.275), the Weyl pairings and scalar
 products (pp.277–278), and later opposite-Jacquet indices (pp.279–280).
 Those page locators refer to the 2010 edition. The corrected 2026 text
-above governs this proposal; no unverified equality between the two
+above governs this statement; no unverified equality between the two
 editions is used.
 
 ## Convention adapter required by a proof
@@ -129,7 +126,7 @@ A proof must translate Renard's conventions to the Lean constructions.
 
 ## Proof obligations
 
-A later proof must construct the actual identity layer in `E` for these
+A proof must construct the actual identity layer in `E` for these
 Lean constructions. It must derive the tempered exponent cone bound from the
 analytic predicate `IsLeviTempered` (a Casselman-criterion step). It must
 also prove the strict exclusion of the real part `size * t` from the

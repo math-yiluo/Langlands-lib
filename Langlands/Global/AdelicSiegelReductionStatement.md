@@ -1,7 +1,5 @@
 # Actual algebraic setup and adelic Siegel coverage
 
-Author: Worker 112.
-
 This module states the connected number-field case of Getz–Hahn §2.7,
 including existence of its algebraic setup in the Library's canonical
 standard subgroup models. All three declarations are definitions returning

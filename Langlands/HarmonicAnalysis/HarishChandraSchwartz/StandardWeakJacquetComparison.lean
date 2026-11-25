@@ -19,7 +19,7 @@ variable {F : Type u} [Field F] [ValuativeRel F] [TopologicalSpace F]
   [IsNonarchimedeanLocalField F] [T2Space F]
   {G P M U : GroupScheme (Spec (CommRingCat.of F))} [IsAffineHom G.X.hom]
 
-local instance : TopologicalSpace (rationalPoints G) := RationalPointFamily.pointTopology
+private local instance : TopologicalSpace (rationalPoints G) := RationalPointFamily.pointTopology
 
 variable [LocallyCompactSpace (rationalPoints G)] [NonarchimedeanGroup (rationalPoints G)]
   (p : P ⟶ G) (l : M ⟶ P) (r : U ⟶ P) (hp : IsParabolicSubgroup p)

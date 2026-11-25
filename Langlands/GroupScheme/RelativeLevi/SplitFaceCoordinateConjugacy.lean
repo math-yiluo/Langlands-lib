@@ -105,7 +105,7 @@ variable {R : Type u} [CommRing R] [Nontrivial R]
   (hg : g ∈ (Dynamic.parabolic (AffineRegularBorel.cocharacter i wt)).carrier _)
   (hsquare : i ≫ (G.innerIso g).hom = precompTorus E j)
 
-local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
+private local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
 
 include hG hmax hmax' hP hQ hfam hfam' hU hg hsquare in
 /-- Actual parabolic conjugacy with the specified coordinate-torus matrix

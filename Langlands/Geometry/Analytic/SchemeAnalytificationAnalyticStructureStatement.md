@@ -8,7 +8,7 @@ the space of a saturated presentation `S`, and the affine analytification of
 every affine open `U` is isomorphic, in the Library's localized category, to an
 analytic domain of `S` over the canonical map `ι K f U`. These isomorphisms are
 compatible with the morphisms of affine analytifications induced by inclusions
-of affine opens. It is a `Prop`-valued definition; this unit supplies no proof.
+of affine opens. It is a `Prop`-valued definition; this module supplies no proof.
 
 ## Provenance
 
@@ -121,8 +121,9 @@ point. Take `φ U` to be the image under `localizationFunctor` of the strong map
 from the saturated affine analytification of `U` to `S.domain (D U)` whose
 underlying map is `e⁻¹ ∘ ι K f U`. This strong map is a quasi-isomorphism. Assertion 3 then holds because both sides are images of
 strong maps with the same underlying map whose bounded pullbacks are induced by
-the same restriction maps of affinoid algebras. The topological input is the
-published but unproved `SchemeAnalytificationGluingStatement`.
+the same restriction maps of affinoid algebras. The topological input is
+`SchemeAnalytificationGluingStatement`, proved as `schemeAnalytificationGluing`
+in `SchemeAnalytificationGluingProof`.
 
 ## Scope
 

@@ -1,7 +1,5 @@
 # Algebraically finite étale affinoid algebras under a fixed base
 
-Author: Worker 36.
-
 This derived construction fixes an actual presented strict affinoid algebra
 `P` and constructs a category of specified bounded algebraically finite étale
 maps `P → Q`. Its arrows are all compatible bounded algebra maps between the

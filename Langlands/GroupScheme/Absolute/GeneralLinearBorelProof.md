@@ -1,10 +1,10 @@
 # Proof of the `GL_N` Borel statement
 
-Authors: Worker 1234 and Worker 308. Worker 1234 wrote this module and the
-coordinate module `Langlands.GroupScheme.Absolute.GeneralLinearBorelCoordinates`.
-Worker 308 wrote the point-group modules `Langlands.Group.GL.UpperTriangularSolvable`,
+This module uses the coordinate module
+`Langlands.GroupScheme.Absolute.GeneralLinearBorelCoordinates` and the point-group
+modules `Langlands.Group.GL.UpperTriangularSolvable`,
 `Langlands.Group.GL.OppositeRootNonsolvable` and
-`Langlands.Group.GL.UpperTriangularMaximalSolvable` used here.
+`Langlands.Group.GL.UpperTriangularMaximalSolvable`.
 
 `Langlands.GroupScheme.generalLinearBorel` proves the published proposition
 `Langlands.GroupScheme.GeneralLinearBorelStatement` (module
@@ -26,7 +26,7 @@ Borel subgroups of `GL_V`) and Proposition 21.29 (printed p.433, PDF p.449:
 algebraically closed field and uses the Lie–Kolchin theorem. The Lean proof
 below takes a different, internal route: maximality over `k` is reduced to
 `k̄`-points of a reduced scheme, and on `k̄`-points to the abstract group theory
-of Worker 308's modules. The proof has no restriction on the characteristic, and
+of the point-group modules. The proof has no restriction on the characteristic, and
 `N = 0` is allowed.
 
 All helper declarations are in the namespace
@@ -49,7 +49,7 @@ invertible matrices (`Langlands.GeneralLinear`).
   `blockParabolicScheme (Fin N) R e` is solvable. The published
   `isRepresentedBy_blockParabolic` identifies it with the points of the functor,
   hence by the previous item with a subgroup of
-  `upperTriangularSubgroup N Γ(T, ⊤)`. That group is solvable by Worker 308's
+  `upperTriangularSubgroup N Γ(T, ⊤)`. That group is solvable by
   `UpperTriangularSolvable.isSolvable` (any commutative ring), and the
   injective homomorphism transfers solvability
   (`Group.isSolvable_of_isSolvable_injective`).
@@ -68,7 +68,7 @@ isomorphism to an infinite field and `H` a solvable subgroup of `GL (Fin N) A`
 containing the upper triangular matrices. Then `H` consists of upper
 triangular matrices. Map `H` to `GL (Fin N) F` along `ψ`; the image is
 solvable and contains the upper triangular group, so it equals that group by
-Worker 308's `UpperTriangularMaximalSolvable.eq_upper_of_isSolvable` (which
+`UpperTriangularMaximalSolvable.eq_upper_of_isSolvable` (which
 needs `Infinite F`). Pulling back along `ψ` keeps entries zero. This is used
 with `A = Γ(Spec k̄, ⊤)` and `F = k̄ = AlgebraicClosure k`, via the published
 `Scheme.ΓSpecIso`.

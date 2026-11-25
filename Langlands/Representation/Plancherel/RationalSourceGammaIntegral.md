@@ -53,7 +53,9 @@ components is not assumed.
 Bochner integral and identifies it with the original gamma's real value.
 These are convergence and exact-scale results for actual rational subgroups
 under the stated premises. They do not use or establish conullness of the
-whole cell. A global integration formula still needs the independently
-owned conullness proof. Special-compact existence, general ambient and Levi
+whole cell. A global integration formula needs, in addition, the separate
+conullness theorem `rationalDynamicOpenCellConull` of
+`RationalOpenCellConullProof`, which `RationalSourceGammaGlobal` uses for
+that formula. Special-compact existence, general ambient and Levi
 unimodularity, arbitrary same-Levi independence and the main Plancherel
 conclusions remain separate obligations.

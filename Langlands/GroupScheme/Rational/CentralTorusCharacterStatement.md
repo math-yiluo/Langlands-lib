@@ -1,7 +1,5 @@
 # Central tori detect nonzero rational characters
 
-Author: Worker 1110.
-
 The universe-polymorphic proposition
 `Langlands.GroupScheme.CentralTorusCharacterStatement` says that, over every
 field `k`, every nonzero rational character `χ ∈ X^*(G)_k` of a connected

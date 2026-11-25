@@ -180,7 +180,7 @@ Under `[CompactSpace (AdeleQuotient F)]`, for `T : CuspidalOperatorRealization F
 
 ## Unitary central characters
 
-- `Langlands.ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter.conjugate`:
+- `Langlands.ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter.conjugate`:
   if `T` has a unitary central character, then so does `T.conjugate`. If `χ` is a
   unitary central character of `T`, then `conjCharacter χ` is a central character of
   `T.conjugate`, and it is unitary by `norm_conjCharacter`.

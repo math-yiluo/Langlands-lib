@@ -52,7 +52,7 @@ scheme `Q.left`; it puts no topology on the set of rational points.
 Only neighbourhoods of rational points are asserted, which is the form
 needed for a rational fixed point in an orbit closure.
 
-## Provenance and remaining proof
+## Provenance and proof
 
 This is a derived consequence of J. S. Milne, *Algebraic Groups* (2017),
 Theorem 17.65 and the covering argument immediately after it, printed
@@ -85,5 +85,4 @@ Source: `milne-2017-algebraic-groups`, SHA256
 `899b0f44f3c3ccfbaf5ed1cf9c180be7a8016b1c0e9709ca0c206304e5bd1cd0`.
 The registered official errata snapshot
 `milne-2017-algebraic-groups-errata-2026-11-02` has no correction to these
-passages. Worker 1489 formulated this interface in coordination with
-Worker 1460's orbit-closure proof.
+passages.

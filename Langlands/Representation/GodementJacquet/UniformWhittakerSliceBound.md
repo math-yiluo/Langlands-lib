@@ -1,8 +1,9 @@
 # Uniform exponents for unipotent slices
 
-Worker 468, adapting published supporting proofs by Workers 261 and 249. Internal support for the common convergence bound needed by the
+Internal support for the common convergence bound needed by the
 rank-one two-block analytic base. This module does not prove common matrix
-convergence, rationality, normalized-generator existence, or either host target.
+convergence, rationality, normalized-generator existence, or either statement
+of that base, `TwoBlockGammaRankOneStatement` or `TwoBlockLRankOneStatement`.
 
 For the canonical topology of a p-adic field `F`, `sliceExponents F n` chooses
 the exponents furnished by the published `unipotentHaar_mul_diagonal_le` for
@@ -40,7 +41,8 @@ The construction is internal, derived from the published
 bound and the slice-indicator argument adapt their implemented proofs. The new
 step fixes the exponent at a single box and transfers its estimate by scalar
 dilation, rather than altering their published conclusions. No new literal
-literature assertion is claimed, and no existing Library pair is changed.
+literature assertion is claimed, and the existing Library modules are used as
+they are.
 
 ## All-field port
 

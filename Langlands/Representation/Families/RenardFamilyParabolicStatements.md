@@ -1,6 +1,6 @@
 # Renard VI.8.2–VI.8.3: base change commutes with induction; Jacquet modules of finite type
 
-Author: Worker 709. Module
+Module
 `Langlands.Representation.Families.RenardFamilyParabolicStatements`, namespace
 `Langlands.Renard.AlgebraicFamily`. It contains two **statements**, the closed
 `Prop`-valued definitions `InductionBaseChangeStatement` (universe parameters
@@ -23,9 +23,9 @@ dated **9 July 2026**:
   PDF p. 142.
 
 Literature ID `renard-2026-representations-groupes-reductifs-padiques`, file
-`/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`,
+`Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`,
 SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 709 read PDF pages 142 and 193–198.
+PDF pages 142 and 193–198 were read for these statements.
 
 The VI.1.3 Proposition (PDF p. 142) reads: "Soit `(π, V)` une représentation
 lisse de type fini de `G`. Alors `(π_N, V_N)` est de type fini. Il en est de même
@@ -128,8 +128,7 @@ The functors are the published definitions of
    `[IsScalarTower ℂ B C]`, as when `B → C` is a morphism of `ℂ`-algebras. The
    normalizing character of `i_P^G(C ⊗_B E)` is the Levi half modulus
    `c_U^{1/2}` (Renard's `δ_P^{-1/2}`) with values in `C`, so this
-   compatibility is what makes it the image of the one of `i_P^G(E)`. The
-   reading is Worker 709's.
+   compatibility is what makes it the image of the one of `i_P^G(E)`.
 3. "`(B, M)`-module" is the source's misprint for `(M, B)`-module (reading
    note 2 of the VI.8 note). By the VI.8.1 definition it is smooth and flat, and
    the statement assumes both.
@@ -138,7 +137,7 @@ The functors are the published definitions of
    (VI.8.2.2) on pure tensors. Naturality in `E` is not stated. Because the
    pure tensors `c ⊗ f` generate `C ⊗[B] i_P^G(E)` additively, the formula
    determines `e`, and naturality for a morphism of `(M, B)`-modules follows
-   from it; this remark is Worker 709's and is not checked in Lean. The
+   from it; this remark is not checked in Lean. The
    statement does not assert that `C ⊗[B] E` is `C`-flat, which the source
    derives before the Proposition.
 5. "`B`-modules de type fini" in VI.8.3. Every quotient of a finitely generated
@@ -150,7 +149,7 @@ The functors are the published definitions of
    `ρ.asModule` over the group algebra `MonoidAlgebra B (rationalPoints G)`,
    and over `MonoidAlgebra B (rationalPoints M)` for the Jacquet module. This
    is reading note 3 of the VI.8 note, and it is the convention of the
-   published VI.1.3 statement for `B = ℂ`. The reading is Worker 709's.
+   published VI.1.3 statement for `B = ℂ`.
 6. Normalization. Only the normalized Jacquet module is stated. The
    unnormalized module `V_N` has the same carrier, and the two actions of
    `m` differ by the unit `c_U(m)^{-1/2} · 1_B` (Renard's `δ_P^{1/2}(m)`), so
@@ -182,12 +181,16 @@ published statement at Library `8b14de0b`. Results a proof can use:
   `RationalNormalizedInducedSpecializationStatement`. It is a different object
   and is not derived from this module.
 
-This module asserts none of them. Proofs of the two statements are separate
-obligations, each of which must prove its declaration unchanged.
+This module asserts none of them. The proofs of the two statements are
+`inductionBaseChange`
+([RenardFamilyInductionBaseChangeProof](RenardFamilyInductionBaseChangeProof.md))
+and `jacquetFiniteType`
+([RenardFamilyJacquetFiniteTypeProof](RenardFamilyJacquetFiniteTypeProof.md)),
+each of which proves its declaration unchanged.
 
 ## Environment
 
-Environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`: Lean 4.34.0 at
+Lean 4.34.0 at
 `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`, Mathlib at
 `5ed2965256430c3649e86755f9576b54eca72435`. The project imports are
 `Langlands.Representation.Families.RenardFamilyParabolicFunctors` (the functors)

@@ -1,8 +1,8 @@
 # Gamma relations over general nonarchimedean local fields
 
-Worker 99 adapts Worker 11's published p-adic rank-order interface to the
+This module adapts the published p-adic rank-order interface to the
 already published general-field JPSS relation. All declarations are in
-`Langlands.RankinSelberg`. This is a derived definition unit; it does not prove
+`Langlands.RankinSelberg`. This is a derived definition module; it does not prove
 analytic existence of gamma factors or the Shahidi comparison.
 
 ## Setting and definitions

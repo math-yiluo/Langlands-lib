@@ -1,14 +1,13 @@
 # Renard C.I: monotonicity of the nilpotent-generated dimension maximum
 
-Worker 709 authored the draft of the closed Prop-valued declaration
+This module states the closed Prop-valued declaration
 `Langlands.Renard.NilpotentDimensionMonotonicityStatement.{u,v}` for the
 unnumbered assertion that `φ_l` is increasing in David Renard,
 *Représentations des groupes réductifs p-adiques*, French edition dated
 9 July 2026, Appendix C.I, printed p.275 / one-based PDF281. It occurs
 immediately before the displayed floor recurrence. This pair states the
 assertion and its carrier-independent formulation; it contains no proof.
-Worker 16 checked the source correspondence and prepared the focused pair
-for submission, retaining Worker 709's formulation.
+A second reader checked the source correspondence.
 
 The governing registered original is
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
@@ -24,7 +23,7 @@ in the older numerical proof; the 2026 original governs this assertion.
 
 ## Actual maximum and quantifiers
 
-The published import `Langlands.Algebra.RenardNilpotentDimensionMaximum`
+The import `Langlands.Algebra.RenardNilpotentDimensionMaximum`
 defines `nilpotentGeneratedMaxDimension l V` as the natural supremum of the
 actual dimensions of
 `Algebra.adjoin ℂ (Set.range a)`, where
@@ -52,8 +51,9 @@ The second conjunct says, for every `l`, that
 nondecreasing, not strictly increasing. The first conjunct makes explicit
 the source's independence of the choice of a dimension-`k` carrier; it is
 a derived formulation of the same comparison, not a separately numbered
-claim in the book. The carrier-transport statement and proof remain
-separate published results.
+claim in the book. The carrier-transport statement and proof are
+separate results, `RenardNilpotentDimensionTransportStatement` and
+`RenardNilpotentDimensionTransportProof`.
 
 The generator count is fixed in each comparison. The assertion includes
 every natural tuple length, zero-dimensional spaces, and zero, repeated or
@@ -78,12 +78,13 @@ algebra onto the original generated algebra, so its dimension cannot
 decrease. Carrier transport then identifies the canonical specialization.
 The identity on the added summand still belongs to the enlarged unital
 algebra; no equality of the two generated-algebra dimensions is presumed.
-This paragraph describes a prospective proof route, not implemented Lean.
+This paragraph describes a proof route, not Lean implemented in this pair;
+`RenardNilpotentDimensionMonotonicityProof` implements it.
 
 The ideal filtration endpoint, complement generation, restriction
 injectivity, algebra splitting, first-level comparison, floor recurrence,
-and final contradiction remain separate obligations. In particular,
+and final contradiction are separate results. In particular,
 monotonicity alone supplies neither the source's bound on `φ_l(k)` using a
 complement of an attaining tuple nor its floor recurrence. Numerical base
-cases, carrier transport, C.III results and the rest of the whole-book
-program retain their existing owners.
+cases, carrier transport, C.III results and the rest of the book
+are also separate.

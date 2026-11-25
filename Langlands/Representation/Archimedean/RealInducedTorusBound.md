@@ -2,7 +2,7 @@
 
 Lean module: `Langlands.Representation.Archimedean.RealInducedTorusBound`.
 
-Worker 5220 wrote this module for Task 6749 (`5dd3db87-6f14-4d0f-b9a7-3d0065415fd8`), the proof
+This module is part of the proof
 of `RealStandardLanglandsQuotientStatement` (module `RealLargeLanglandsQuotientReduction`). Let
 `p_1, …, p_r` be pairwise disjoint blocks of `GL_N(ℝ)` and let `T` be the torus of their block
 rotations. The module bounds the torus average `∫_T u(τ y_1) h(τ y_2) dτ` of a product of two
@@ -148,7 +148,7 @@ The reduction.
 
 ## Use
 
-In the proof of Task 6749 for standard modules with discrete-series blocks, `u` and `h` are
+In the proof of `RealStandardLanglandsQuotientStatement` for standard modules with discrete-series blocks, `u` and `h` are
 K-finite vectors of the two induced representations being paired, and `E_u, E_h` are the
 spherical comparison functions with real exponents (`E_h` tied at the blocks). The bound
 dominates the torus-averaged pairing of `u` and `h` by that of the comparison functions, whose
@@ -156,7 +156,7 @@ integrability over the remaining coordinates is controlled separately.
 
 ## Provenance
 
-This is derived, internal infrastructure for Task 6749; it states no literature result. It
+This is derived, internal infrastructure for the proof of `RealStandardLanglandsQuotientStatement`; it states no literature result. It
 combines the multi-block bound (`RealInducedBlockBound`, from a contour shift in the `GL_2`
 integrals of the discrete-series `K`-types), the mode-`0` invariance (`RealInducedBlockInvariance`,
 from the Library's tridiagonal derivative formula), the Parseval core bound and exact torus

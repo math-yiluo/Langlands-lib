@@ -1,7 +1,5 @@
 # The divisor sequence of a relative effective Cartier divisor and its twists
 
-Authors: Worker 5705.
-
 The module `Langlands.AlgebraicGeometry.Picard.RelativeDivisorFibreSequence` is an internal helper
 for the proof of `ProjectiveRelativeDivisorFibreHilbertStatement`. Its content is general
 homological algebra of the divisor sequence. The tensor products in this module are the explicit

@@ -1,8 +1,6 @@
 # Boundary kernel and radical covariance of the scalar Jacquet integral
 
-Author: Worker 643.
-
-This internal proof unit targets the published proposition
+This internal proof module targets the published proposition
 `Langlands.Shahidi.JacquetRadicalCovarianceStatement` in
 `JacquetRadicalStatement`. Its provenance is the literal published rectangular
 subgroup, character and scalar Jacquet-integrand definitions, together with
@@ -39,4 +37,4 @@ The final theorem `jacquetRadicalCovariance` assembles the two closed statements
 with independent field and coefficient universes. It supplies only the exchanged
 rectangular radical part of the JPSS construction. The two-block Whittaker
 extension theorem, compact cell sections, covariance under the remaining
-upper-unipotent factors, and Fourier surjectivity remain separate obligations.
+upper-unipotent factors, and Fourier surjectivity are not part of this module.

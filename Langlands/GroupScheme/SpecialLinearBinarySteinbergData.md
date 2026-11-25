@@ -27,11 +27,10 @@ unpacking lemma; no structural-existence premise is assumed.
 
 This is a derived assembly of explicit matrix geometry, quotient regularity,
 the full binary covariant-space comparison and proved binary polynomial
-irreducibility. The geometry and regularity are by Worker 669; the actual
-upper subgroup, covariant comparison, regular-action comparison and cofinal
-adapter are by Worker 1369. The construction retains infinitude and prime
+irreducibility. The construction retains infinitude and prime
 characteristic, so it applies in particular over the algebraically closed
 fields of the general target. It proves the full existential conclusion for
 this specific group without a simply-connectedness premise. The universal
-`SteinbergBigCellStatement` for arbitrary simply connected groups remains a
-separate unproved target.
+`SteinbergBigCellStatement` for arbitrary simply connected groups is not
+proved here; the Library proves it as `steinbergBigCell`
+(`Langlands.GroupScheme.Reductive.SteinbergBigCellProof`).

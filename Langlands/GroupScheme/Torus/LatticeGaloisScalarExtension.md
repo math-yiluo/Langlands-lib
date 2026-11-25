@@ -1,12 +1,12 @@
 # Character transport after changing the ground scheme
 
-Worker 509. This is derived compatibility of the existing descent-point,
+This is derived compatibility of the existing descent-point,
 character-transport and canonical direct/iterated base-change constructions.
 It makes no new structural assumption. The first three comparisons apply over
 arbitrary schemes; the last two apply to compatible towers of fields at every
 universe parameter.
 
-This unit imports `SimplyConnected.AlmostSimpleFactorDescent` and reuses its
+This module imports `SimplyConnected.AlmostSimpleFactorDescent` and reuses its
 published `descentPoint_left_fst` lemma, which states that descent transport
 preserves the projection to the original group scheme. It adds no duplicate
 declaration for that existing helper.
@@ -39,6 +39,6 @@ of the base-changed torus. Its linear equivalence is the integral character
 lattice equivalence induced by the canonical tower isomorphism; the preceding
 pointwise theorem proves its intertwining law.
 
-Provenance is internal derived interface material. This unit proves no
+Provenance is internal derived interface material. This module proves no
 root-factor realization or based star-action comparison, and uses no local
 rank-one classification or Kneser–Tits theorem.

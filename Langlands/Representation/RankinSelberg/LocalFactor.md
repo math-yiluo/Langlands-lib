@@ -1,6 +1,6 @@
 # JPSS zeta-value sets and normalized L-factors
 
-Worker 31 implements the objects named in Theorem 2.7 of Jacquet,
+This module implements the objects named in Theorem 2.7 of Jacquet,
 Piatetski-Shapiro and Shalika, *Rankin–Selberg Convolutions* (1983), printed
 pages 390–391, with the conventions of §2.1, printed pages 385–386. Both pages
 were read directly from the original scan. The source is registered as
@@ -35,7 +35,7 @@ If `π` has no nonzero functional, its Whittaker set is contained in `{0}`
 `1 < q`, every zeta value below is `0` and no L-polynomial exists; see the
 section on pairs without functionals. So for `1 < q` these definitions attach no
 factor to such a representation. The factors from Langlands data (JPSS §§8–9)
-are separate later work.
+are defined separately, in `LanglandsQuotientLFactorStatement`.
 
 ## Zeta values
 
@@ -44,7 +44,7 @@ spectral variable for which some `W ∈ S`, `W' ∈ S'` and Schwartz–Bruhat `�
 give an equal-rank integral that converges absolutely on a right half-plane
 and, on a right half-plane, equals `R` evaluated at `q^(-s)`. The integral,
 its convergence predicate and its measure are those of the published
-`QuotientIntegrals` module. Continuation is Worker 11's published
+`QuotientIntegrals` module. Continuation is the published
 `HasRationalContinuation` from `RationalContinuation`, so the spectral point is
 its `spectralPoint q s = q^(-s)`. `unequalRankValuesOf` is the same construction
 for the block integral `Ψ(s, W, W'; j)` with fixed `j` and `k`. The ranks are
@@ -129,8 +129,8 @@ continuation of the zero function is `0`. It applies the published
 `HasRationalContinuation.unique` to `0`, whose denominator is `1`.
 `exists_ne_zero_hasRationalContinuation_one` shows that the hypothesis cannot
 be dropped: at `q = 1` every spectral point is `1`, so `X - 1` continues the
-zero function. This is Reviewer 232's counterexample to the unqualified
-statement in an earlier version of this module.
+zero function. This is a counterexample to the statement without the
+hypothesis `1 < q`.
 
 With `1 < q`, `equalRankValuesOf_subset_zero` and
 `unequalRankValuesOf_subset_zero` give values in `{0}` when one of the two sets
@@ -171,7 +171,7 @@ proved here.
 
 ## Character twists and the standard factor
 
-`rankOneCharacter χ` is the published `characterRepresentation` of Worker 4's
+`rankOneCharacter χ` is the published `characterRepresentation` of
 `Twist/Definitions`, applied to `χ ∘ det` on `GL_1`; it acts on `ℂ`. JPSS note
 on page 386 that for rank one, `𝒲(π; ψ) = ℂπ`. Here the inverse Whittaker set
 of this representation consists of the multiples of `χ ∘ det`, since the
@@ -212,7 +212,7 @@ These definitions need `IsTopologicalRing F` because `ψ.scale` does.
 The proofs below use that the standard character of `ψ.scale (-1)` is the
 inverse standard character of `ψ`. This is checked pointwise from the published
 `scaledStandardCharacter_neg_one` inside each proof. No public lemma is
-declared, because Worker 11's published `FunctionalEquationStatement` declares
+declared, because the published `FunctionalEquationStatement` declares
 it under the names `standardCharacter_scale` and
 `standardCharacter_scale_neg_one` in the same namespace.
 `functionalsCongr` moves a functional between equal characters without changing
@@ -228,5 +228,6 @@ In the unequal-rank equation (2) of page 391, the dual integral has index
 along `n + (j + k + 1) + 1 = n + (k + j + 1) + 1`; by the source's independence
 of `j` it gives the same factor. JPSS also identify `π^ι` with the contragredient
 for irreducible `π` (page 386); that identification is not made here. The
-epsilon factor is not defined in this module. It is to be built on Worker 11's
-functional-equation relations, a separate later module.
+epsilon factor is not defined in this module. It is built on the
+functional-equation relations of `FunctionalEquationStatement` in the separate
+module `EpsilonFactor`.

@@ -1,8 +1,7 @@
 # Matrix functional equation on a Whittaker model ⇒ rank-one JPSS gamma factor
 
-Authors: Worker 901 (Lean statement and Markdown) and Worker 704 (independent
-source audit of JPS 1979 and audit of this Markdown against the Lean and the
-source).
+The source JPS 1979 was audited independently, and this Markdown was audited
+against the Lean and the source.
 
 This module defines one proposition,
 `Langlands.RankinSelberg.RankOneMatrixFunctionalEquationComparisonStatement.{uF,uV}`.
@@ -64,7 +63,7 @@ IsPadicSymmetricGammaFactor F ψ ν σ
   (rationalGammaExpression (LocalFactor.residueReflection F) c a P PDual).
 ```
 
-The contract writes `psi`, `nu`, `sigma`, `ell`; the Lean binders are `ψ`,
+In ASCII these are written `psi`, `nu`, `sigma`, `ell`; the Lean binders are `ψ`,
 `ν`, `σ`, `ℓ`.
 
 ## The representation premise
@@ -393,10 +392,10 @@ the trivial rank-one test.
 
 ## Compilation record
 
-`lean_check` in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` with
+A Lean check with
 modules `GodementJacquet.AnalyticData`, `RankinSelberg.PadicPairFactors`,
-`RankinSelberg.PairFactors`, `LocalFactor.ResidueReflection` and this module
-(diagnostic `56046e04-3a30-48eb-a23c-4dfbb3a0498d`): no errors or warnings;
+`RankinSelberg.PairFactors`, `LocalFactor.ResidueReflection` and this module:
+no errors or warnings;
 the declaration is a definition with `statement_returns_prop: true`, level
 parameters `[uF, uV]`, and axioms `propext`, `Classical.choice`,
 `Quot.sound` only.

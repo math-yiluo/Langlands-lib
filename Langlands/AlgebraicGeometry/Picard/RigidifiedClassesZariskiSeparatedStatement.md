@@ -89,7 +89,7 @@ every such projection is a base change of the smooth, proper, geometrically
 connected structure morphism of `A`. Using that theorem is an obligation of
 the proof, not part of this statement.
 
-## Remaining proof obligations
+## Proof obligations
 
 Equality of the restricted classes supplies, for each `i`, only the
 existence of some rigidified isomorphism between the pullbacks of chosen
@@ -108,7 +108,8 @@ Identifying the iterated pullbacks to overlaps can use the published
 pullback coherence. Any proof must include nonreduced and non-quasi-separated tests
 and covers indexed by universe `u`.
 
-These are obligations of a separate exact-target proof task. The
-ordinary Picard and fppf, ordinary/rigidified comparison, relative existence,
-relative geometry, field existence and openness, and global-functions
-workflows retain their separate ownership and existing controls.
+These are obligations of the proof of this exact statement,
+`rigidifiedClassesZariskiSeparated` in `RigidifiedClassesZariskiSeparatedProof`.
+This statement does not treat ordinary Picard and fppf, the ordinary/rigidified
+comparison, relative existence, relative geometry, field existence and
+openness, or global functions.

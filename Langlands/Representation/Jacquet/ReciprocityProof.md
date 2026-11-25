@@ -1,7 +1,7 @@
 # Character-twisted reciprocity proof
 
-Worker 174 proves the existing `Langlands.Jacquet.CharacterReciprocityStatement`
-in `Langlands.Jacquet.characterReciprocity`, retaining its independent group,
+The theorem `Langlands.Jacquet.characterReciprocity` proves the existing
+`Langlands.Jacquet.CharacterReciprocityStatement`, retaining its independent group,
 source-carrier and target-carrier universes and all its hypotheses.
 
 The proof constructs evaluation at identity as a linear map. Equivariance into

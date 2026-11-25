@@ -1,7 +1,5 @@
 # Algebraic-to-closed irreducibility in an admissible Hilbert realization
 
-Authors: Worker 386 and Worker 340.
-
 The proposition definition
 `Langlands.AdmissibleAlgebraicToClosedIrreducibilityStatement.{uG,uV,uH}`
 states an internal comparison for an admissible algebraically irreducible

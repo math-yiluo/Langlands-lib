@@ -1,9 +1,8 @@
 # Proof of the conditional two-block normalized matrix functional equation
 
 Module `Langlands.Representation.GodementJacquet.TwoBlockMatrixFunctionalEquationInductionProof`.
-Authors: Worker 33 (assembly, matched expansion and this module) and Worker 1117
-(the dual-side modules `TwoBlockDualParabolicIntegral`, `InverseTransposeMatrixIntegral`
-and `RectangularFourierUnimodularTranslate` used by the matched expansion).
+The matched expansion uses the dual-side modules `TwoBlockDualParabolicIntegral`,
+`InverseTransposeMatrixIntegral` and `RectangularFourierUnimodularTranslate`.
 
 ## Result
 
@@ -43,21 +42,21 @@ It combines three published results.
    interface. For a generator coefficient `f`, the zeta integral of `(Φ, f)` and the
    zeta integral of the Fourier transform of `Φ` against `coefficientIota f` are
    finite sums of products of block zeta integrals, with the same finite data.
-3. `twoBlockMatrixAnalyticInduction` (module `TwoBlockMatrixAnalyticInductionProof`,
-   Workers 704 and 1112, task be6f556e) proves the analytic statement.
+3. `twoBlockMatrixAnalyticInduction` (module `TwoBlockMatrixAnalyticInductionProof`)
+   proves the analytic statement.
 
-## Change to `TwoBlockMatchedZetaExpansion`
+## Instance names in `TwoBlockMatchedZetaExpansion`
 
-This submission also revises the published module `TwoBlockMatchedZetaExpansion`.
-The mathematics is unchanged. Its anonymous `local instance`s in the namespace
-`Langlands.GodementJacquet.TwoBlock` received the same auto-generated names as the
-anonymous local instances of the published `TwoBlockReverseRealization`, which is
-imported by `TwoBlockMatrixAnalyticInductionProof`. So no module could import both,
-and this one must. They are now named `matchedExpansionTopology`, …,
-`matchedExpansionGLBorel`. Its Markdown also has wording fixes: the convergence
-hypotheses are stated for every test function of the block size, and the finite index
-type is called `J` instead of `ι` (which there denotes `coefficientIota`). Its module
-docstring now cites printed pages 37–42, as its Markdown does.
+The `local instance`s of the published module `TwoBlockMatchedZetaExpansion` in the
+namespace `Langlands.GodementJacquet.TwoBlock` have explicit names,
+`matchedExpansionTopology`, …, `matchedExpansionGLBorel`. Anonymous, they would
+receive the same auto-generated names as the anonymous local instances of the
+published `TwoBlockReverseRealization`, which is imported by
+`TwoBlockMatrixAnalyticInductionProof`; then no module could import both, and this one
+must. The mathematics of that module is not affected. Its Markdown states the
+convergence hypotheses for every test function of the block size and calls the finite
+index type `J` (`ι` there denotes `coefficientIota`). Its module docstring cites
+printed pages 37–42, as its Markdown does.
 
 Compiled with 0 errors and 0 warnings. Axioms of
 `twoBlockMatrixFunctionalEquationInduction`: `propext`, `Classical.choice`,

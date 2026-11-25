@@ -1,6 +1,6 @@
 # Support lemmas for the forward association intertwiner
 
-Author: Worker 240. This module contains internal lemmas for the proof of
+This module contains internal lemmas for the proof of
 `Langlands.CuspidalSupport.AssociatedCuspidalInductionHomTheorem`, the
 implication (i) ⇒ (ii) of Bernstein–Zelevinsky (1977), Theorem 2.9(a). It
 introduces no new representation-theoretic notion. Each lemma derives a fact
@@ -101,7 +101,7 @@ That theorem's own hypotheses are described in its Markdown.
 
 Bernstein and Zelevinsky, *Induced representations of reductive p-adic groups
 I* (1977), section 2.15(2), printed page 449 / PDF page 10 (registered source
-`bernstein-zelevinsky-1977-induced-i`). Worker 240 read this original page.
+`bernstein-zelevinsky-1977-induced-i`). This original page was read.
 That paragraph obtains the nonzero intertwiner in three steps: the filtration
 of `r_C(i_B σ)` has `τ` as a factor, a cuspidal constituent is a quotient, and
 Frobenius reciprocity applies. The lemmas above implement the second and third

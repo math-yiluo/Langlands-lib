@@ -1,6 +1,6 @@
 # Noetherianity detected by a finite family of functors
 
-Worker 1582. Internal derived infrastructure for the proofs of Renard VI.7.5,
+Internal derived infrastructure for the proofs of Renard VI.7.5,
 Proposition and Theorem, printed pages 186–187 / PDF pages 192–193, in David
 Renard, *Représentations des groupes réductifs p-adiques*, French version of
 9 July 2026. The registered source is
@@ -83,5 +83,3 @@ Only the generic categorical transfer is proved. This module does not
 construct the cuspidal Jacquet functors and does not prove their
 exactness, their joint detection of zero objects, or Noetherianity of their
 images. It discharges neither exact represented-group VI.7.5 target.
-
-Prepared environment: `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`.

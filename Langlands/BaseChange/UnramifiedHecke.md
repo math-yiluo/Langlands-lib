@@ -146,7 +146,8 @@ Library objects used (none is redefined):
   `SphericalHeckeAlgebra F r` are the characteristic functions of `K_E` and `K` (HL:
   `b(φ_e) = f_e`). It is stated separately because HL (after Kottwitz) and Arthur-Clozel
   prove it first, by a different argument, and deduce the general case from it.
-- Statements 8 and 9 use `IsCyclicAlgebra` (Task 7405) and `AreConcordant` (Task 7416);
+- Statements 8 and 9 use `IsCyclicAlgebra` (`Langlands.BaseChange.Norm`) and `AreConcordant`
+  (`Langlands.BaseChange.OrbitalIntegral`);
   they are published in their own modules, not in this one.
 
 ## Sources

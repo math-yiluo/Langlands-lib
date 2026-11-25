@@ -1,7 +1,5 @@
 # Uniqueness of minimal block Weyl representatives
 
-Author: Worker 175.
-
 `Langlands.Geometric.weylMinimalRepresentativeUniqueness` proves the published
 closed proposition `Langlands.Geometric.WeylMinimalRepresentativeUniquenessTheorem`.
 

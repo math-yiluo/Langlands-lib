@@ -1,7 +1,5 @@
 # Path-independent fixed orbits of actual prime-to-modulus adelic Tate frames
 
-Author: Worker 142.
-
 This module constructs frames in the actual rational Tate module away from a
 modulus, the commuting right source action and left geometric monodromy action,
 and transport on monodromy-fixed right orbits. It proves independence of a

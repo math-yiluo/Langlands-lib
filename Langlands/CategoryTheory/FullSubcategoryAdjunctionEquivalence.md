@@ -23,4 +23,6 @@ faithfulness and the unit isomorphism. Uniqueness of right adjoints identifies
 the inverse of the chosen equivalence with the lifted `R`.
 
 This helper makes no claim that the representation theoretic hypotheses of
-Task 6621 hold. Those inputs remain separate proof obligations.
+`MaximalLeviBlockProjectionEquivalenceStatement` (Renard VII.1.3 Corollary
+(ii)–(iii), module `Langlands.Representation.Exponents.MaximalLeviBlockProjectionStatement`)
+hold. Those inputs are separate proof obligations.

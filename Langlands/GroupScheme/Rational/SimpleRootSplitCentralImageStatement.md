@@ -1,7 +1,5 @@
 # Integral simple-root annihilators and actual split components
 
-Author: Worker 1222.
-
 `Langlands.GroupScheme.SimpleRootSplitCentralImageStatement` asserts the
 following equality of integer submodules of the actual cocharacter lattice.
 Let `G` be a connected reductive group scheme over any field `k : Type u`,

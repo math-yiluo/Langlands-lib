@@ -1,7 +1,5 @@
 # Proof of the uniform polynomial denominator for linear recurrence series
 
-Author: Worker 740.
-
 ## Result
 
 `Langlands.Analysis.linearRecurrenceGeneratingSeriesStatement_proof` proves

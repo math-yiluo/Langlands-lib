@@ -1,6 +1,6 @@
 # Simultaneous coefficient and radius transport of scalar rational quotients
 
-Worker 56 derives this construction from the published scalar rational
+This construction is derived from the published scalar rational
 transport, radius restriction and coefficient-equivalence APIs. The new map
 changes the coefficient presentation and decreases the newly adjoined radii
 at the same time. Its values determine it uniquely among bounded maps, and

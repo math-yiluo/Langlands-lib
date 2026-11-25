@@ -17,7 +17,7 @@ The implementation is split into three supporting paired modules:
   level to classify every invariant algebraic distribution by a single complex
   scalar. It gives left Haar existence and the comparison with actual Mathlib
   Haar integration.
-- `RenardHaarConsequencesProof`, contributed by Worker 140, transports the
+- `RenardHaarConsequencesProof` transports the
   original test and distribution spaces through unweighted inversion to prove
   the right Haar assertion. Evaluation on a nonzero nonnegative compact-open
   subgroup indicator forces the scalar relating positive invariant

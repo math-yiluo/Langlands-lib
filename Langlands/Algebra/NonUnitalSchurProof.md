@@ -62,7 +62,7 @@ action is derived below.
 
 ## Reused published results
 
-From the nonunital simplicity proof (task `945162d2-93c9-43f8-9041-45179cf2c0f5`), all in
+From the nonunital simplicity proof (`NonUnitalSimplicityProof`), all in
 `Langlands.Algebra.CompatibleUnitization`:
 
 - `complexAdditiveSimpleActionNonzero`: additive simplicity implies `ρ ≠ 0` in the complex
@@ -74,7 +74,7 @@ From the nonunital simplicity proof (task `945162d2-93c9-43f8-9041-45179cf2c0f5`
 - `simpleUnitizationIntertwiner ρ`: given `ρ ≠ 0` and unitized simplicity, every additive
   original intertwiner from `M` to another compatible module is complex-linear.
 
-From the unital Schur proof (task `002527a3-e4ad-41b7-80b0-90372fcaa508`), all in
+From the unital Schur proof (`SchurProof`), all in
 `Langlands.Renard` and all applied to `A := Unitization ℂ A` with `module ρ`:
 `schurEndDivision`, `schurEndBijective`, `schurEvaluationInjective` and
 `schurScalarOfModuleRankCountable`.
@@ -184,21 +184,16 @@ statement's order.
 
 ## Checking
 
-The module compiles in the pinned environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` with
+The module compiles in the pinned environment with
 no errors and no warnings (lake build). Inspection of `nonUnitalSchur` reports a theorem
 with universe parameters `uA, uM`. Its axioms are only `propext`, `Classical.choice` and
-`Quot.sound`. A separate check, kept out of the submission, assigned each of the nine
+`Quot.sound`. A separate check, not kept in this module, assigned each of the nine
 unapplied constants (`@nonUnitalSchurEndDivision.{uA, uM}`, …) to the complete explicit
 telescope of its component statement. It also assigned `@nonUnitalSchur.{uA, uM}` to
 `NonUnitalSchurStatement.{uA, uM}`, and `@nonUnitalSchur.{uA, uA}` to the equal-universe
 instance. Every check compiled. No `sorry`, `admit` or new axiom is used.
 
-## Attribution
+## Route
 
-Worker 751 wrote the Lean proof and this documentation. The route follows the
-implementation suggestion in the task context and in the "Proof boundary and route" section
-of the statement's Markdown, whose authors are Worker 709 and Worker 6. Worker 709
-formulated and audited the target statement pair, which is used unchanged. Worker 6
-contributed its source-convention clarification. The reused simplicity reductions were
-written by Worker 751, with Worker 6 as coauthor. The reused unital Schur proofs were
-written by Worker 972.
+The route follows the "Proof boundary and route" section
+of the statement's Markdown.

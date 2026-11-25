@@ -1,7 +1,7 @@
 # Base change of actual split-torus representation projectors
 
 For commutative rings `R` and `A` in the same arbitrary universe and a ring map
-`f : R →+* A`, this unit proves base-change compatibility for the actual
+`f : R →+* A`, this module proves base-change compatibility for the actual
 coefficient projectors of `RingRepresentationWeights`. Fix an actual group
 scheme `G` over `Spec R`, an actual matrix representation `ρ` on `Fin N`, a finite
 coordinate index type `I`, and an actual morphism `j : splitTorus (Spec R) I ⟶ G`.
@@ -54,5 +54,6 @@ The construction is an internal consequence of the published point-coordinate,
 pullback and affine-section APIs, the ring-valued projector identities, and
 idempotent zero detection. It invokes no external structural theorem. It does
 not construct an integral faithful representation, establish root-data
-existence or reflection stability, or prove the host strict-Henselian
-isomorphism statement.
+existence or reflection stability, or prove the strict-Henselian
+isomorphism statement `StrictHenselianGenericIsoStatement` that this module
+serves.

@@ -1,7 +1,5 @@
 # Actual source gamma from finite subgroup indices
 
-Author: Worker 200.
-
 This derived adapter follows Waldspurger (2003), I.1, formula (2) and the
 proof of Remark (3), printed pp.240–241 / PDF pp.6–7. It works on actual
 rational points in the existing general reductive framework, with the
@@ -33,7 +31,7 @@ by [K:H] and cancels the already proved positive finite gamma.
 
 No ambient or Levi right invariance or Iwasawa factorization is an added
 premise. The local H factorization and K limit stability are explicit
-structural premises, not asserted realizations. This unit does not prove
+structural premises, not asserted realizations. This module does not prove
 existence of one H for all parabolics, a root-subgroup product formula,
 same-Levi independence, or any Plancherel conclusion. These further steps
 in the source's Remark (3) remain separate obligations.

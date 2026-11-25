@@ -1,7 +1,5 @@
 # Natural forgetting from pointed polarized CM towers
 
-Author: Worker 57.
-
 This derived construction makes forgetting the actual polarization and Weil
 level natural in the pointed base as well as in the Harris level. Its target
 is the restriction of the existing joint normalized CM action presheaf,

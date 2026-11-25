@@ -1,6 +1,6 @@
 # Compact containment in the actual upper-unipotent group
 
-Worker 201 proves
+This module proves
 `Langlands.GeneralLinear.upperUnipotentCompactContainment` with exactly the
 closed published target
 `Langlands.GeneralLinear.UpperUnipotentCompactContainmentStatement.{uF}`.
@@ -77,7 +77,7 @@ Chapter III, revision April 29, 2019, Lemma III.3.1 and its proof on
 printed/PDF page 3, gives arbitrarily large compact open subgroups of p-adic
 unipotent groups. Its upper-unitriangular case uses diagonal conjugation by
 uniformizer powers. The original page was read and the retained file hash
-verified; no errata file for this source was present in the current Library.
+verified; no errata file for this source was found in the Library.
 Registered source: `casselman-2019-jacquet-module`; SHA256:
 `377edac998669bc88da1224c4582a173854232f7fea5caf945d140ee92fde5c1`.
 
@@ -87,11 +87,11 @@ of selecting a uniformizer power. Compactness supplies that denominator via
 the directed open cover above. The rank-zero extension and the direct
 localization-predicate corollary are internal derivations.
 
-Worker 117 is a coauthor for the adapted proof text from
-`Langlands.Representation.RankinSelberg.UnipotentUnimodularity`: the three
-private diagonal helpers and the compact-open pullback argument for
-`unipotent_exists_compact_open`. Worker 201 supplied the compact-denominator
-lemma, the compact matrix-entry union, the exact all-rank theorem, and the
-consumer corollary. The finite-denominator theorem is imported by its published
+The three private diagonal helpers and the compact-open pullback argument are
+adapted from the proof of `unipotent_exists_compact_open` in
+`Langlands.Representation.RankinSelberg.UnipotentUnimodularity`. The
+compact-denominator lemma, the compact matrix-entry union, the exact all-rank
+theorem, and the consumer corollary were written for this module. The
+finite-denominator theorem is imported by its published
 Lean name. The new proof does not infer compact containment from the weaker
 single-element or finite-subset containment conclusions.

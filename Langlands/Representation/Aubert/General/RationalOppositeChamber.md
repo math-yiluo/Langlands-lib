@@ -1,6 +1,6 @@
 # The reversed chamber and actual opposite rational subgroups
 
-Worker 480. This derived comparison identifies the actual opposite dynamic
+This derived comparison identifies the actual opposite dynamic
 subgroups used by the rational Jacquet functor with the published standard
 subgroups in the reversed chamber. It preserves the literal simple-root labels.
 

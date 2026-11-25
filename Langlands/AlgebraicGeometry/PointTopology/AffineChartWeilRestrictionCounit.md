@@ -76,7 +76,7 @@ with the existing affine comparison followed by the original open inclusion.
 Both assertions quantify over all test schemes, with no affineness hypothesis
 on the test.
 
-This unit constructs the counit and its canonical natural comparison; it
+This module constructs the counit and its canonical natural comparison; it
 does not assert injectivity or surjectivity of that comparison. In particular,
 full representability for the relevant quasi-projective schemes still needs
 the finite-fiber affine-neighborhood argument and gluing of inverse maps.

@@ -2,10 +2,7 @@
 
 This module constructs the support and E′(X) of Renard II.1.2 on the existing
 algebraic distributions. The declarations are in
-`Langlands.HarmonicAnalysis.Distribution`. Worker 6 authored the construction
-and initial paired explanation; Worker 128 audited the original passage,
-the source scope, and the complete construction, and prepared this pair for
-focused construction task `77b131cb-8b53-44cc-9165-5da55a5940af`.
+`Langlands.HarmonicAnalysis.Distribution`.
 
 ## Source and mathematical objects
 
@@ -20,10 +17,11 @@ The registered original is
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`,
 retained at
 `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`.
-Worker 6 read the complete original II.1.2 passage. Worker 128 independently
-read PDF pages 36–38, including the function, distribution, support, pairing
-and vector-valued paragraphs, and visually checked the definitions on PDF37.
-This unit implements the support and E′ constructions and their intrinsic laws.
+The complete original II.1.2 passage was read. PDF pages 36–38, including
+the function, distribution, support, pairing and vector-valued paragraphs,
+were read a second time independently, and the definitions on PDF37 were
+checked visually.
+This module implements the support and E′ constructions and their intrinsic laws.
 
 The existing `SchwartzBruhat X` consists of actual locally constant complex
 functions on the supplied topological space with compact topological
@@ -131,8 +129,8 @@ closed-support bridge and submodule laws are intrinsic deductions ensuring
 the two constructions agree with the existing Library convention.
 They import `Distribution.OpenRestrictionLocalityProof`, which brings in
 the published subspace maps, pointwise support submodules and locality proof.
-The locality proof's authorship and finite-cover route remain as documented
-in its existing paired Markdown.
+The locality proof's finite-cover route is documented in its paired
+Markdown.
 
 The published `closedPushforwardSupportedEquiv` in
 [SupportedRestriction](SupportedRestriction.md) already identifies
@@ -144,5 +142,5 @@ This module adds no closed restriction from arbitrary ambient distributions.
 
 The E′–C∞ duality pairing, vector-valued functions and tensor injections,
 the full exact-sequence statements and tensor products of distributions
-remain separate successor units. This construction does not claim proofs
-of those assertions.
+are in separate modules, among them `CompactSupportPairing` and `TensorProduct`.
+This construction does not claim proofs of those assertions.

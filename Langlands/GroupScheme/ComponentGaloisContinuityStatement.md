@@ -1,7 +1,5 @@
 # Krull continuity of the coefficient action on actual components
 
-Author: Worker 1107.
-
 `ComponentGaloisKrullContinuityStatement` is a proposition target for the
 published coefficient action on actual connected components. It is a derived
 statement over `ComponentGaloisImage`; this module supplies no proof of the

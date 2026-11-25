@@ -1,7 +1,7 @@
 # Smooth induction across a continuous split quotient
 
-Worker 438 adapts Worker 777's published compact split-quotient construction to
-actual smooth induction, and proves equivariance for the full ambient group
+This module adapts the published compact split-quotient construction of
+`SplitQuotientProof` to actual smooth induction, and proves equivariance for the full ambient group
 after inflation along the retraction. The entry construction is
 `Langlands.Induction.smoothSplitQuotientEquiv`.
 
@@ -39,5 +39,5 @@ registered source `bernstein-zelevinsky-1977-induced-i`, SHA256
 The explicit arbitrary-ring split-quotient formulation is internal, rather than
 a separately numbered assertion there. It uses no geometric lemma,
 classification, character independence, adjointness or cuspidal-support result.
-The normalized standard-parabolic and exact Aubert comparisons remain further
-obligations.
+The normalized standard-parabolic and exact Aubert comparisons are not part of
+this module.

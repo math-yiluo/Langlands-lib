@@ -1,7 +1,5 @@
 # Harris's pro-`p` levels `H_p` and `H(m)`
 
-Author: Worker 19.
-
 This module constructs Harris's level `H_p`: an open normal pro-`p` subgroup
 of a compact open `C_p`, contained in a level `K_p`. It works for the
 similitude points of an algebra with involution at a finite place of a

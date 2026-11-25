@@ -1,7 +1,5 @@
 # From etale-local ambient conjugators to radical conjugators
 
-Worker 593.
-
 This internal algebraic reduction defines `EtaleLocallyRangeConjugate l l' T`
 as existence of actual points of the ambient group on an etale cover of `T`
 which satisfy the all-test range conjugator predicate. The cover index

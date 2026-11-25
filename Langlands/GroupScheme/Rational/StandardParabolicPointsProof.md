@@ -1,7 +1,5 @@
 # Proof: standard parabolics on rational points
 
-Author: Worker 3790.
-
 `Langlands.GroupScheme.standardParabolicPointsStatement_proof :
 StandardParabolicPointsStatement.{u}` proves the published statement
 `StandardParabolicPointsStatement` of

@@ -1,7 +1,5 @@
 # Domain representations with strict affinoid tests
 
-Author: Worker 36.
-
 `HasImageIn K φ U` means that every bounded multiplicative seminorm on the
 actual target algebra pulls back into the subset U. The bounded algebra map
 φ goes from P to Q, while its continuous spectrum map goes from M(Q) to M(P).

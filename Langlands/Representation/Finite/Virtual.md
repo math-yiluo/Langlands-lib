@@ -111,7 +111,7 @@ restriction and induction. Section 10.5, printed pages 78–79, Theorem 20 and
 its following parenthetical definition identify monomial characters as those
 induced from degree-one subgroup characters. These original passages were read.
 
-This contribution implements the objects and the intrinsic descent just
+This module implements the objects and the intrinsic descent just
 described. It **does not prove or assume Theorem 20**. Nor does it import
 Serre's nearby irreducible-basis description or identification with a
 Grothendieck group as an unexplained axiom. The split construction, its
@@ -124,13 +124,12 @@ freeness argument are explicit derived implementations.
   `C:/Central-Library/Serre--Linear Representations of Finite Groups--1977.pdf`.
 - Published project dependency: `Langlands.FiniteRep.RepClass` and the proved
   operations in `Langlands.Representation.Finite.Classes`, imported from the
-  Library at workspace base
+  Library at commit
   `1804f2a6d98d21c2bbfa3c73ccf807df74c484bb`.
 - The paired `Langlands.Representation.Finite.Induction` construction is
-  supplied in the same coherent contribution.
+  supplied together with this module.
 
-The environment is `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d` version 1:
-Lean 4.34.0 at `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`, Mathlib at
+The environment is Lean 4.34.0 at `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`, Mathlib at
 `5ed2965256430c3649e86755f9576b54eca72435`. Additional Mathlib imports are
 `GroupTheory.MonoidLocalization.GrothendieckGroup`,
 `RingTheory.RootsOfUnity.Basic`, and `LinearAlgebra.FreeModule.PID`.
@@ -155,6 +154,6 @@ character faithfulness, or Brauer spanning are used.
 
 Brauer spanning, character faithfulness, irreducible-basis identifications and
 identification with exact-sequence K-theory are not construction prerequisites
-here and are not proved or assumed. The existing separately owned Brauer
-statement task can state the required spanning conclusion using these concrete
-objects after publication.
+here and are not proved or assumed. The Brauer statement module
+`Langlands.Representation.Finite.BrauerStatement` states the required spanning
+conclusion using these concrete objects.

@@ -50,7 +50,13 @@ def transport (D : RelativeRootReflectionData i) (e : T ≅ T') (f : G ≅ H)
         (characterLattice.congr e χ) =
       characterLattice.congr e χ - latticePairing T' (characterLattice.congr e χ)
         (cocharacterLattice.congr e (D.coroot a)) • characterLattice.congr e a.val
-    rw [weylAction_transport, D.action, latticePairing_congr, map_sub, map_zsmul]
+    have hsub : ∀ y z : characterLattice T, characterLattice.congr e (y - z) =
+        characterLattice.congr e y - characterLattice.congr e z :=
+      fun y z => (characterLattice.congr e).toAddMonoidHom.map_sub y z
+    have hzsmul : ∀ (n : ℤ) (y : characterLattice T), characterLattice.congr e (n • y) =
+        n • characterLattice.congr e y :=
+      fun n y => (characterLattice.congr e).toAddMonoidHom.map_zsmul n y
+    rw [weylAction_transport, D.action, latticePairing_congr, hsub, hzsmul]
 
 variable (D : RelativeRootReflectionData i) (e : T ≅ T') (f : G ≅ H)
   (h : i ≫ f.hom = CommGroupScheme.groupHom e.hom ≫ j)

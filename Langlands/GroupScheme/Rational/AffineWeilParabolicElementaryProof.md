@@ -1,7 +1,5 @@
 # Parabolic radical generation under affine Weil restriction: proof
 
-Author: Worker 111.
-
 `Langlands.GroupScheme.affineWeilParabolicElementarySubgroup` proves exactly
 `Langlands.GroupScheme.AffineWeilParabolicElementarySubgroupStatement.{u}`
 for an arbitrary universe `u`.

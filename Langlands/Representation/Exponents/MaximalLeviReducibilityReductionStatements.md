@@ -1,6 +1,6 @@
 # The unitary-central-character reduction of Renard VII.1.3
 
-Author: Worker 1507. Module `Langlands.Representation.Exponents.MaximalLeviReducibilityReductionStatements`, namespace `Langlands.Aubert.General.RepresentedParabolic`.
+Module `Langlands.Representation.Exponents.MaximalLeviReducibilityReductionStatements`, namespace `Langlands.Aubert.General.RepresentedParabolic`.
 
 The module contains one definition, two small theorems about it, and two derived statements (`Prop`-valued definitions). Neither statement is proved here.
 
@@ -43,7 +43,7 @@ Why it holds (the argument of VI.8.5, for orientation only): `Z(G(F))` lies in t
 
 ## Faithfulness notes
 
-- **Placement of the extra premise.** The unitary statement adds a hypothesis to the target. It is not the target, and it is not used to change the target. The target follows from the two statements together with the Mackey isomorphism and the transfer of irreducibility, supercuspidality, reducibility and the conclusion across the twist. A separate module will prove that implication.
+- **Placement of the extra premise.** The unitary statement adds a hypothesis to the target. It is not the target, and it is not used to change the target. The target follows from the two statements together with the Mackey isomorphism and the transfer of irreducibility, supercuspidality, reducibility and the conclusion across the twist. The separate module `MaximalLeviTwistReduction` proves that implication (`maximalLeviSupercuspidalReducibility_of_unitary`).
 - **Central character of `π` versus `ρ`.** The source speaks of the central character of `π`. The statements use the center of `G(F)` acting on the induced representation, as in the source. They do not use the center of `M(F)`.
 - **Unramified characters of `G`.** Renard's unramified characters of `G` are the characters trivial on `⁰G`. The published group `Plancherel.unramifiedCharacters` consists of continuous characters of `G(F)` trivial on the common kernel of the normalized absolute values of all rational characters of `G`, which is `⁰G`.
 - **Weaker hypotheses in the twist statement.** Properness and maximality of `P` play no role in the twist argument and are omitted, so the statement is stronger. It keeps irreducibility and supercuspidality of `ρ`, which the reduction has available.

@@ -1,6 +1,7 @@
 # Cyclic detection by the actual top Frobenius distribution
 
-This derived unit first treats any algebra representation on a vector space.
+This module, derived rather than taken from a source, first treats any algebra
+representation on a vector space.
 Evaluation at a vector gives a linear cyclic map. Its kernel is a left ideal
 because the representation preserves multiplication in the original factor
 order. If an algebra element belongs to every nonzero left ideal and acts
@@ -24,6 +25,6 @@ dimension at most this number, the span equals that whole representation.
 The provenance is the original convolution action, the proved socle detection
 result, and ordinary finite dimensional linear algebra. All eigen-coordinate,
 split-torus, positive-height, nonzero-top-action and whole-space dimension-bound
-hypotheses remain explicit. The unit constructs neither a Steinberg vector with
+hypotheses remain explicit. The module constructs neither a Steinberg vector with
 nonzero top action nor an upper bound for the entire covariant induced space.
 It does not establish the general Steinberg big-cell statement.

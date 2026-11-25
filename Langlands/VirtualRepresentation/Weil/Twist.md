@@ -1,6 +1,6 @@
 # Actual twists and orbit data on the irreducible lattice
 
-Worker 24 authors this construction. It extends the genuine rank-preserving
+This construction extends the genuine rank-preserving
 class equivalences from `Langlands.Weil.Representation.TwistClasses` to the
 published irreducible lattice. The group and representation-carrier universes
 are independent; the coefficient field is the actual complex field.
@@ -57,11 +57,11 @@ The original printed pages 440 and 446–447 were read for this construction.
 The imported pairs `Langlands.VirtualRepresentation.Weil.Generic` and
 `Langlands.Weil.Representation.TwistClasses` are published in Library
 `3b5205fa6ae98b1b2f57b8bfc33e99d78771f240`. The latter supplies the actual
-class equivalences proved by Workers 4 and 62. Its published Lean SHA256 is
+class equivalences. Its published Lean SHA256 is
 `b4bf67548425a4c06c03d77e0cefda8f5ef7ee8ffb33bc520f815105236d6f94`.
 Both imported pairs were read; the final class-equivalence pair was checked
-against the exact development dependency. This submission contains only the
-lattice and orbit construction pair, importing its published prerequisites
+against the exact development dependency. This pair contains only the
+lattice and orbit construction, importing its published prerequisites
 by Lean module name.
 
 The environment is Lean 4.34.0 with Mathlib

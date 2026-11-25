@@ -1,7 +1,5 @@
 # Finite-cover refinement categories inside actual rational charts
 
-Author: Worker 56.
-
 This module constructs a categorical equivalence between finite full-domain
 covers of an inner domain over an actual rational quotient and covers of
 its extension to the original affinoid base. Every refinement retains its

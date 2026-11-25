@@ -22,7 +22,7 @@ def CyclicWeakBaseChangeComplexPlaceStatement : Prop :=
     (Module.finrank F E).Prime →
       (∀ (r : ℕ) (S : CuspidalOperatorRealization F r)
         (T : CuspidalOperatorRealization E r),
-        ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter S →
+        ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter S →
         IsoClass.IsWeakBaseChangeOf.{uF,uE,uV,uW} T.isoClass S.isoClass →
         ∀ (v : {v : NumberField.InfinitePlace F // v.IsComplex})
           (w : InfinitePlacesAbove E v.1) (ds : List ComplexCharacterData),
@@ -31,7 +31,7 @@ def CyclicWeakBaseChangeComplexPlaceStatement : Prop :=
               (complexPlaceParameterTransport v w ds)) ∧
       (∀ (r m : ℕ) (S : CuspidalOperatorRealization F r)
         (T : CuspidalOperatorRealization E m),
-        ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T →
+        ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T →
         (∀ σ : E ≃ₐ[F] E, σ ≠ 1 → ¬ T.isoClass.IsGaloisStable σ) →
         IsoClass.IsWeakInductionOf.{uF,uE,uV,uW} S.isoClass T.isoClass →
         ∀ (v : {v : NumberField.InfinitePlace F // v.IsComplex})
@@ -58,7 +58,7 @@ def CyclicWeakBaseChangeComplexPlaceTCStatement : Prop :=
     (Module.finrank F E).Prime →
       (∀ (r : ℕ) (S : CuspidalOperatorRealization F r)
         (T : CuspidalOperatorRealization E r),
-        ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter S →
+        ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter S →
         IsoClass.IsWeakBaseChangeOf.{uF,uE,uV,uW} T.isoClass S.isoClass →
         ∀ (v : {v : NumberField.InfinitePlace F // v.IsComplex})
           (w : InfinitePlacesAbove E v.1) (ds : List ComplexCharacterData),
@@ -67,7 +67,7 @@ def CyclicWeakBaseChangeComplexPlaceTCStatement : Prop :=
               (complexPlaceParameterTransport v w ds)) ∧
       (∀ (r m : ℕ) (S : CuspidalOperatorRealization F r)
         (T : CuspidalOperatorRealization E m),
-        ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T →
+        ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T →
         (∀ σ : E ≃ₐ[F] E, σ ≠ 1 → ¬ T.isoClass.IsGaloisStable σ) →
         IsoClass.IsWeakInductionOf.{uF,uE,uV,uW} S.isoClass T.isoClass →
         ∀ (v : {v : NumberField.InfinitePlace F // v.IsComplex})

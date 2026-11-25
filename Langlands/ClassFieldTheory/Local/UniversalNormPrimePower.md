@@ -1,6 +1,6 @@
 # Prime-power divisibility of actual universal norms
 
-This derived support unit defines `Langlands.LocalClassField.universalNormSubgroup
+This module defines `Langlands.LocalClassField.universalNormSubgroup
 K` for any field `K : Type u`. Its elements are exactly the units that lie in
 `normSubgroup K E` for every actual intermediate field
 `E : IntermediateField K (AlgebraicClosure K)` with finite-dimensional and abelian
@@ -42,10 +42,14 @@ contradicting its choice.
 
 The mathematical provenance is Serre, *Local Fields* (1979), XIV §2, the corollary
 to Proposition 7 on printed page 209: with the roots of unity in the base, the
-intersection of cyclic norm groups is the group of powers. This unit implements
+intersection of cyclic norm groups is the group of powers. This module implements
 the prime-order direction needed for separation. It derives norm-quotient
 nontriviality from the already proved local relative invariant, and uses the
 explicit carry-class norm symmetry rather than introducing a Hilbert symbol.
 It does not assert unrestricted divisibility without roots of unity, preservation
-of universality for a chosen root, or unconditional norm separation. Those remain
-separate arithmetic and topological obligations.
+of universality for a chosen root, or unconditional norm separation. Those are
+proved elsewhere: `universalNorm_all_roots` and `universalNorm_prime_root_mem` in
+`Langlands.ClassFieldTheory.Local.UniversalNormFiniteIndex` give roots of every
+order that are again universal norms, and `normSubgroupsSeparatePoints` in
+`Langlands.ClassFieldTheory.Local.NormSubgroupsSeparatePointsProof` is the
+unconditional norm separation.

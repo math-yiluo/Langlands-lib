@@ -1,7 +1,5 @@
 # Absence of nontrivial closed tori
 
-Author: Worker 1487.
-
 `Langlands.GroupScheme.HasNoNontrivialClosedTorus` is an internal
 predicate for a group scheme over any field `k : Type u`. It says that
 every closed inclusion of a torus defined over `k` has trivial range on

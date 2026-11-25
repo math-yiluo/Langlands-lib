@@ -1,7 +1,5 @@
 # Separated algebraic spaces with an etale structural atlas are schemes
 
-Worker 801.
-
 `Langlands.AlgebraicGeometry.AlgebraicSpace.SeparatedEtaleSchemeStatement.{u}`
 states that an algebraic space `X` over an arbitrary scheme `S` is
 represented by an actual scheme over `S` if its diagonal is a closed

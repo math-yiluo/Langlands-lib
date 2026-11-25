@@ -17,23 +17,23 @@ variable {K : Type u} [NormedField K] [IsUltrametricDist K] [CompleteSpace K]
 continuous target action back to a set preserved by the source action. -/
 theorem IsContinuousAction.eventually_preimage_eq_of_equivariant
     (hU : IsContinuousAction σU) (p : P ⟶ U)
-    (hp : ∀ a, (σ a).hom ≫ p = p ≫ (σU a).hom)
+    (hp : ∀ a, (σ a).asIso.hom ≫ p = p ≫ (σU a).asIso.hom)
     (i : (presentationOf U).presentation.atlas.Index) :
-    ∀ᶠ a in 𝓝 (1 : G), localizedSpaceFunctor.map (σ a).hom ⁻¹'
+    ∀ᶠ a in 𝓝 (1 : G), localizedSpaceFunctor.map (σ a).asIso.hom ⁻¹'
       (localizedSpaceFunctor.map p ⁻¹' range ((presentationOf U).presentation.atlas.chart i)) =
       localizedSpaceFunctor.map p ⁻¹' range ((presentationOf U).presentation.atlas.chart i) := by
   let τ : TestTriple (presentationOf U) := ⟨i, 0, 1, zero_lt_one⟩
   filter_upwards [hU τ] with a ha
-  have hchart := (show IsNear τ (σU a).hom (𝟙 U) from ha).preimage_eq
+  have hchart := (show IsNear τ (σU a).asIso.hom (𝟙 U) from ha).preimage_eq
   rw [CategoryTheory.Functor.map_id, TopCat.coe_id] at hchart
   change _ = τ.locus at hchart
-  change localizedSpaceFunctor.map (σ a).hom ⁻¹' (localizedSpaceFunctor.map p ⁻¹' τ.locus) =
+  change localizedSpaceFunctor.map (σ a).asIso.hom ⁻¹' (localizedSpaceFunctor.map p ⁻¹' τ.locus) =
     localizedSpaceFunctor.map p ⁻¹' τ.locus
   calc
-    _ = localizedSpaceFunctor.map ((σ a).hom ≫ p) ⁻¹' τ.locus := by
+    _ = localizedSpaceFunctor.map ((σ a).asIso.hom ≫ p) ⁻¹' τ.locus := by
       rw [CategoryTheory.Functor.map_comp]
       rfl
-    _ = localizedSpaceFunctor.map (p ≫ (σU a).hom) ⁻¹' τ.locus :=
+    _ = localizedSpaceFunctor.map (p ≫ (σU a).asIso.hom) ⁻¹' τ.locus :=
       congrArg (fun k : P ⟶ U => localizedSpaceFunctor.map k ⁻¹' τ.locus) (hp a)
     _ = localizedSpaceFunctor.map p ⁻¹' τ.locus := by
       rw [CategoryTheory.Functor.map_comp]
@@ -44,13 +44,13 @@ neighbourhood, from the two factor actions and their projection equations. -/
 theorem eventually_preimage_eq_pullback_patch
     (hU : IsContinuousAction σU) (hV : IsContinuousAction σV)
     (p : P ⟶ U) (q : P ⟶ V)
-    (hp : ∀ a, (σ a).hom ≫ p = p ≫ (σU a).hom)
-    (hq : ∀ a, (σ a).hom ≫ q = q ≫ (σV a).hom)
+    (hp : ∀ a, (σ a).asIso.hom ≫ p = p ≫ (σU a).asIso.hom)
+    (hq : ∀ a, (σ a).asIso.hom ≫ q = q ≫ (σV a).asIso.hom)
     (i : (presentationOf U).presentation.atlas.Index)
     (j : (presentationOf V).presentation.atlas.Index) :
     let patch := (localizedSpaceFunctor.map p ⁻¹' range ((presentationOf U).presentation.atlas.chart i)) ∩
       (localizedSpaceFunctor.map q ⁻¹' range ((presentationOf V).presentation.atlas.chart j))
-    ∀ᶠ a in 𝓝 (1 : G), localizedSpaceFunctor.map (σ a).hom ⁻¹' patch = patch := by
+    ∀ᶠ a in 𝓝 (1 : G), localizedSpaceFunctor.map (σ a).asIso.hom ⁻¹' patch = patch := by
   dsimp only
   filter_upwards [hU.eventually_preimage_eq_of_equivariant p hp i,
     hV.eventually_preimage_eq_of_equivariant q hq j] with a hi hj

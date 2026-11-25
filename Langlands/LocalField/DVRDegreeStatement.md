@@ -44,8 +44,7 @@ ring or field is complete, or that the field extension is separable.
 No equality of degrees or instance of the desired inequality is a
 hypothesis.
 
-This is internal derived project content, specified by Worker 107 and
-formalized by Worker 109 as a prerequisite for
+This is internal derived project content, formalized as a prerequisite for
 `Langlands.Global.AdelicFunctoriality.CompletedLocalDegreeLowerBound`.
 It isolates the general DVR inequality needed for the completed local
 degree argument, where finite dimensionality of the fraction-field
@@ -54,6 +53,7 @@ not been established. It is not a transcription of a separately cited
 literature result. The definitions of the invariants are imported from
 Mathlib's `RingTheory.RamificationInertia.Ramification` and
 `RingTheory.RamificationInertia.Inertia` modules in the pinned environment.
-A separate proof must establish this proposition. Comparisons between
+The proof is `Langlands.LocalField.dvrDegreeLowerBound` in
+`Langlands.LocalField.DVRDegreeProof`. Comparisons between
 completed and global ramification and inertia invariants belong to the
-parent completed-local-degree task and are outside this statement.
+completed-local-degree argument and are outside this statement.

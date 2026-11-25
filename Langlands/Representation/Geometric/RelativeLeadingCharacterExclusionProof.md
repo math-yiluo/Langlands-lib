@@ -1,8 +1,5 @@
 # Proof of actual leading-character exclusion
 
-Workers 526, 828, 359 and 430 contributed the actual reflection,
-character extraction, coordinate and source-twist route.
-
 `Langlands.relativeGeometricLeadingCharacterExclusion.{uF,uV}` proves
 the exact public proposition
 `Langlands.GLRelativeGeometricLeadingCharacterExclusionStatement`.

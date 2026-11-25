@@ -129,7 +129,7 @@ variable {k : Type u} [Field k]
 
 /-- On an actual integral endomorphism, the rational action is its actual Tate map. -/
 theorem rationalEndAction_homToHom0 (p : ℕ) [Fact p.Prime] (α : A ⟶ A) :
-    Tate.PrimeAdic.rationalEndAction (Over.mk (𝟙 _)) p A (homToHom0 α) =
+    Tate.PrimeAdic.rationalEndAction (Over.mk (𝟙 _)) p A (CategoryTheory.End.of (homToHom0 α)) =
       Tate.PrimeAdic.rationalMap (Over.mk (𝟙 _)) p α := by
   rw [Tate.PrimeAdic.rationalEndAction_apply, homToHom0_apply,
     Tate.PrimeAdic.rationalHomMap_tmul, one_smul]
@@ -180,6 +180,8 @@ theorem trace_rationalMap_mem_range (hS1 : IsogenyDegreeTateDeterminantStatement
           Tate.PrimeAdic.rationalMap (Over.mk (𝟙 _)) 2 (n • 𝟙 A + α) := by
       rw [← rationalEndAction_homToHom0 A 2 (n • 𝟙 A + α), map_add homToHom0,
         map_nsmul homToHom0, homToHom0_id,
+        show (CategoryTheory.End.of (n • id0 A + homToHom0 α) : End0 A) =
+          n • CategoryTheory.End.of (id0 A) + CategoryTheory.End.of (homToHom0 α) from rfl,
         map_add (Tate.PrimeAdic.rationalEndAction (Over.mk (𝟙 _)) 2 A),
         map_nsmul (Tate.PrimeAdic.rationalEndAction (Over.mk (𝟙 _)) 2 A),
         rationalEndAction_homToHom0, Algebra.algebraMap_eq_smul_one, Nat.cast_smul_eq_nsmul]
@@ -201,10 +203,10 @@ endomorphism is rational. -/
 theorem primeEndomorphismTrace_mem_range (hS1 : IsogenyDegreeTateDeterminantStatement.{u})
     [IsAlgClosed k] [CharZero k] (g : ℕ) (hA : A.HasRelativeDimension g) (a : End0 A) :
     primeEndomorphismTrace A 2 a ∈ Set.range (algebraMap ℚ ℚ_[2]) := by
-  obtain ⟨N, hN, α, hα⟩ := Rationalization.exists_integral_multiple a
+  obtain ⟨N, hN, α, hα⟩ := Rationalization.exists_integral_multiple a.asHom
   obtain ⟨q, hq⟩ := trace_rationalMap_mem_range A hS1 g hA α
-  have hα' : homToHom0 α = N • a := hα
-  have htr : primeEndomorphismTrace A 2 (homToHom0 α) =
+  have hα' : (CategoryTheory.End.of (homToHom0 α) : End0 A) = N • a := CategoryTheory.End.ext hα
+  have htr : primeEndomorphismTrace A 2 (CategoryTheory.End.of (homToHom0 α)) =
       (N : ℚ_[2]) * primeEndomorphismTrace A 2 a := by
     rw [hα', map_zsmul, zsmul_eq_mul]
   rw [primeEndomorphismTrace_eq, rationalEndAction_homToHom0, ← hq] at htr
@@ -246,8 +248,9 @@ abbrev dualMap (f : A ⟶ A) : W.dual P ⟶ W.dual P :=
     W.evaluation f
 
 theorem dual0_homToHom0 (f : A ⟶ A) :
-    W.dual0 P hadd (homToHom0 f) = homToHom0 (dualMap P W f) :=
-  dualHom0_homToHom0 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ f
+    W.dual0 P hadd (CategoryTheory.End.of (homToHom0 f)) =
+      CategoryTheory.End.of (homToHom0 (dualMap P W f)) :=
+  congrArg CategoryTheory.End.of (dualHom0_homToHom0 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ f)
 
 variable [HasRationalInverse P W lam]
 
@@ -281,14 +284,19 @@ theorem exists_integral_inverse [CharZero k] :
 /-- The rational class of `(n • lam + f ≫ lam ≫ f^∨) ≫ μ`. -/
 theorem homToHom0_comp_inverse (N : ℤ) (μ : W.dual P ⟶ A)
     (hμ : homToHom0 μ = N • polarizationInverse P W lam) (f : A ⟶ A) (n : ℕ) :
-    homToHom0 ((n • lam + (f ≫ lam ≫ dualMap P W f : A ⟶ W.dual P)) ≫ μ) =
-      (N : ℚ) • ((n : End0 A) + involution P W hadd lam (homToHom0 f) * endToEnd0 A f) := by
+    CategoryTheory.End.of (homToHom0 ((n • lam + (f ≫ lam ≫ dualMap P W f : A ⟶ W.dual P)) ≫ μ)) =
+      (N : ℚ) • ((n : End0 A) + involution P W hadd lam (CategoryTheory.End.of (homToHom0 f)) *
+        endToEnd0 A (CategoryTheory.End.of f)) := by
+  apply CategoryTheory.End.ext
+  rw [end0_mul, involution_apply, dual0_homToHom0 P W hadd, endToEnd0_apply,
+    show (n : End0 A) = n • CategoryTheory.End.of (id0 A) from (nsmul_one n).symm]
+  dsimp only [CategoryTheory.End.smul_asHom, CategoryTheory.End.add_asHom]
   rw [← comp0_homToHom0, hμ, map_add homToHom0, map_nsmul homToHom0, ← comp0_homToHom0,
-    ← comp0_homToHom0, ← dual0_homToHom0 P W hadd, end0_mul, involution_apply,
+    ← comp0_homToHom0,
     map_zsmul (comp0 _ _ _ _), map_add (comp0 _ _ _), LinearMap.add_apply,
     map_nsmul (comp0 _ _ _), LinearMap.smul_apply, polarization_comp_inverse,
-    endToEnd0_apply, ← comp0_assoc, ← comp0_assoc, comp0_assoc (homToHom0 f) (homToHom0 lam),
-    Int.cast_smul_eq_zsmul, show (n : End0 A) = n • id0 A from (nsmul_one n).symm]
+    ← comp0_assoc, ← comp0_assoc, comp0_assoc (homToHom0 f) (homToHom0 lam),
+    Int.cast_smul_eq_zsmul]
 
 /-- Determinant of the Tate map of `(n • lam + f ≫ lam ≫ f^∨) ≫ μ`. -/
 theorem det_rationalMap_comp_inverse (g : ℕ)
@@ -300,7 +308,8 @@ theorem det_rationalMap_comp_inverse (g : ℕ)
         ((n • lam + (f ≫ lam ≫ dualMap P W f : A ⟶ W.dual P)) ≫ μ)) =
       (N : ℚ_[2]) ^ (2 * g) * (LinearMap.charpoly
         (-Tate.PrimeAdic.rationalEndAction (Over.mk (𝟙 _)) 2 A
-          (involution P W hadd lam (homToHom0 f) * endToEnd0 A f))).eval (n : ℚ_[2]) := by
+          (involution P W hadd lam (CategoryTheory.End.of (homToHom0 f)) *
+            endToEnd0 A (CategoryTheory.End.of f)))).eval (n : ℚ_[2]) := by
   rw [← rationalEndAction_homToHom0, homToHom0_comp_inverse P W hadd lam N μ hμ f n, map_smul,
     map_add, map_natCast, eval_charpoly_neg, map_natCast (algebraMap ℚ_[2] _), ← hrank,
     ← LinearMap.det_smul]
@@ -459,7 +468,8 @@ theorem key_identity (hS1 : IsogenyDegreeTateDeterminantStatement.{u})
       algebraMap ℚ ℚ_[2] ((coherentEulerPolynomial A.X.hom
         ((LineBundle.pullback (hom f)).obj L).obj (hasFiniteAffineSections_lineBundle _)
           L g).coeff g) *
-        primeEndomorphismTrace A 2 (involution P W hadd lam (homToHom0 f) * endToEnd0 A f) := by
+        primeEndomorphismTrace A 2 (involution P W hadd lam (CategoryTheory.End.of (homToHom0 f)) *
+          endToEnd0 A (CategoryTheory.End.of f)) := by
   obtain ⟨hfin, hrank⟩ := rational_two_finrank A g hA
   obtain ⟨N, μ, hNpos, hμ, hμiso⟩ := exists_integral_inverse P W lam
   have hn₀ := hS2 P k A W lam L B evaluationB M evaluation hL hpres f
@@ -479,7 +489,8 @@ theorem key_identity (hS1 : IsogenyDegreeTateDeterminantStatement.{u})
         (hasFiniteAffineSections_lineBundle _) L g).map (algebraMap ℚ ℚ_[2])) ^ 2 =
       C ((N : ℚ_[2]) ^ (2 * g)) * LinearMap.charpoly
         (-Tate.PrimeAdic.rationalEndAction (Over.mk (𝟙 _)) 2 A
-          (involution P W hadd lam (homToHom0 f) * endToEnd0 A f)) := by
+          (involution P W hadd lam (CategoryTheory.End.of (homToHom0 f)) *
+            endToEnd0 A (CategoryTheory.End.of f))) := by
     apply Polynomial.eq_of_infinite_eval_eq
     apply Set.infinite_of_injective_forall_mem
       (f := fun m : ℕ => ((n₀ + m : ℕ) : ℚ_[2]))
@@ -539,10 +550,11 @@ theorem mumfordMixedEulerTraceReduction : MumfordMixedEulerTraceReductionStateme
   obtain ⟨-, htopf, hmixf⟩ := euler_facts A.X.hom g hA L ((LineBundle.pullback (hom f)).obj L)
   obtain ⟨-, htop1, hmix1⟩ :=
     euler_facts A.X.hom g hA L ((LineBundle.pullback (hom (𝟙 A))).obj L)
-  have hβ1 : involution P W hadd lam (homToHom0 (𝟙 A)) * endToEnd0 A (𝟙 A) = 1 := by
-    rw [show endToEnd0 A (𝟙 A) = 1 from map_one (endToEnd0 A), mul_one, homToHom0_id,
-      involution_apply]
-    have hd : W.dual0 P hadd (id0 A) = id0 (W.dual P) :=
+  have hβ1 : involution P W hadd lam (CategoryTheory.End.of (homToHom0 (𝟙 A))) *
+      endToEnd0 A (CategoryTheory.End.of (𝟙 A)) = 1 := by
+    rw [show endToEnd0 A (CategoryTheory.End.of (𝟙 A)) = 1 from map_one (endToEnd0 A), mul_one,
+      homToHom0_id, involution_apply]
+    have hd : (W.dual0 P hadd (CategoryTheory.End.of (id0 A))).asHom = id0 (W.dual P) :=
       dualHom0_id _ _ _ _ _ _ _ _ _ _ _ hadd
     rw [hd, comp0_id0, polarization_comp_inverse]
     rfl
@@ -566,9 +578,11 @@ theorem mumfordMixedEulerTraceReduction : MumfordMixedEulerTraceReductionStateme
     linarith
   rw [traceForm_apply, geometricEndomorphismTrace_mul_comm A, hmixf, hp, sub_zero]
   have htr := algebraMap_geometricEndomorphismTrace A hS1 g hA
-    (involution P W hadd lam (homToHom0 f) * endToEnd0 A f)
+    (involution P W hadd lam (CategoryTheory.End.of (homToHom0 f)) *
+      endToEnd0 A (CategoryTheory.End.of f))
   have key : algebraMap ℚ ℚ_[2] (geometricEndomorphismTrace A
-      (involution P W hadd lam (homToHom0 f) * endToEnd0 A f) *
+      (involution P W hadd lam (CategoryTheory.End.of (homToHom0 f)) *
+        endToEnd0 A (CategoryTheory.End.of f)) *
         (lineBundleEulerPolynomial A.X.hom L g).coeff g) =
       algebraMap ℚ ℚ_[2] (2 * (coherentEulerPolynomial A.X.hom
         ((LineBundle.pullback (hom f)).obj L).obj (hasFiniteAffineSections_lineBundle _)

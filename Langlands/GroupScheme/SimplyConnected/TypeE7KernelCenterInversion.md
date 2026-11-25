@@ -18,5 +18,5 @@ It does not yet assert that inversion moves a central point.
 The entry proposition `Langlands.GroupScheme.TitsIndexData.E7GeometricKernelCenterInversionStatement` records the precise scope of
 `exists_normalizer_inverts_geometric_kernel_center_of_E7`: its explicit hypotheses are universally quantified in a
 Prop-valued definition. The implemented theorem and proof are retained.
-This unit is submitted as a statement because its mathematical entry is
+This module is given as a statement because its mathematical entry is
 a proposition, rather than a data construction.

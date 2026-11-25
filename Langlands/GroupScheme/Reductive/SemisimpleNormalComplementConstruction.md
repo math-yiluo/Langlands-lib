@@ -1,7 +1,7 @@
 # Normal complements from almost-simple generation
 
-Worker 1454, using Worker 1466's full-centralizer and commuting-multiplication
-constructions.
+This module uses the full-centralizer and commuting-multiplication constructions of
+`Reductive.NormalCentralizer` and `Reductive.CommutingMultiplication`.
 
 `semisimpleNormalComplementOfAlmostSimpleGeneration` chooses a
 `CommutingNormalComplement j` for a smooth connected closed normal subgroup

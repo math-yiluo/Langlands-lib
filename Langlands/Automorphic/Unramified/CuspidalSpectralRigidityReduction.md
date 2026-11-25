@@ -1,7 +1,6 @@
 # Constituent recovery from Jacquet–Shalika trace independence
 
 Lean module `Langlands.Automorphic.Unramified.CuspidalSpectralRigidityReduction`.
-The proof is adapted from Worker 3657’s shared draft for Task 6446, revision 7.
 
 `CuspidalSpectralRigidityReductionStatement.{uF, uV}` is the implication from the
 published `CuspidalPowerTraceIndependenceStatement` to the published conjunction

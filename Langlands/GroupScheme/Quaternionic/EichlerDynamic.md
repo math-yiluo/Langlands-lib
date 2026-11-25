@@ -86,7 +86,9 @@ Internal. The underlying fact is standard: the parts of an Eichler transformatio
 have weights `1` and `2` for the hyperbolic torus, so the torus contracts it to the identity.
 See the dynamic description of `U(λ)` in Conrad–Gabber–Prasad, *Pseudo-reductive groups*,
 §2.1. The Lean proofs are direct computations with the Library's hyperbolic
-cocharacter (Task 5397, `HyperbolicTorus`) and the contracting points of
-`FiniteAlgebraIdempotentDynamic`. This module is a helper for Task 5398, where it is used to lift the Eichler
+cocharacter (module `HyperbolicTorus`) and the contracting points of
+`FiniteAlgebraIdempotentDynamic`. This module is a helper for the proof of the Kneser–Tits
+property of quaternionic spin groups of Witt index one (`LocalSpinKneserTitsStatement`), where
+it is used to lift the Eichler
 generators of the rational orthogonal group into the parabolic elementary subgroup of a spin
 cover.

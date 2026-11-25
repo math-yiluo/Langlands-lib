@@ -1,6 +1,6 @@
 # Affine tests for the actual universal comparison
 
-Worker 105 derives the agreement between the canonical comparison defined by
+This module derives the agreement between the canonical comparison defined by
 the universal morphism and the existing tensor-valued affine-test point
 equivalence. This is construction infrastructure for Conrad, *Weil and
 Grothendieck approaches to adelic points* (December 31, 2011), Example 2.4,
@@ -11,9 +11,10 @@ printed page 3, registered as
 The coefficient algebra `B` is finite projective over an arbitrary commutative
 ring `A`, and `X` is an actual affine scheme of finite type over `Spec B`.
 Test algebras are arbitrary commutative `A`-algebras. No topology, finite
-presentation, Noetherianity or faithfulness is assumed. This unit constructs
+presentation, Noetherianity or faithfulness is assumed. This module constructs
 the equivalence on relative spectra; extension to arbitrary test schemes
-remains a separate obligation.
+is proved separately, by `weilRestrictionRepresentabilityProperties` in
+`WeilRestrictionRepresentabilityProof`.
 
 Coordinate points commute with maps of value algebras, by contravariance of
 the fully faithful spectrum functor. Every point of a relative spectrum

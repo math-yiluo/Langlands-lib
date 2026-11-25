@@ -2,8 +2,8 @@
 
 Module `Langlands.Global.RankinSelberg.ComplexPlaceParameterIrreducibleProof`. The main
 results are in namespace `Langlands.Global.RankinSelbergGlobal` and the helpers are in
-`Langlands.Global.RankinSelbergGlobal.ComplexPlaceIrreducible`. Worker 5665 wrote it for
-Task 7399 (prove `ComplexPlaceFunctionalEquationStatement`, Jacquet 2009, Theorem 2.1, at a
+`Langlands.Global.RankinSelbergGlobal.ComplexPlaceIrreducible`. It is a step towards
+`ComplexPlaceFunctionalEquationStatement` (Jacquet 2009, Theorem 2.1, at a
 complex place). Provenance: internal.
 
 Main theorem:
@@ -23,7 +23,9 @@ The theorem has no premise. It uses only the axioms `propext`, `Classical.choice
 Along the way, `isIrreducibleGKModule_of_parameter` proves the `(𝔤, K)`-module form
 `IsIrreducibleGKModule (complexStandardRep (r+1) d) (complexStandardLie (r+1) d)`. This is the
 complex-place conjunct of the Library statement
-`Automorphic.CuspidalArchimedeanStandardIrreducibleStatement`, whose proof is Task 7004.
+`Automorphic.CuspidalArchimedeanStandardIrreducibleStatement`, which the Library proves as
+`Automorphic.cuspidalArchimedeanStandardIrreducible` (module
+`CuspidalArchimedeanComponentIrreducibleProof`).
 
 ## Proof
 
@@ -66,7 +68,7 @@ multiplicity one, from the Library's `complexLowestKTypeMultOne` via
 
 ## Provenance
 
-Internal. The route is the multiplicity-one argument in step 3 of Task 7004's objective:
+Internal. The route is the multiplicity-one argument:
 isotypy at `w` plus a `U(n)`-type of multiplicity one. It is carried out from Library results.
 For the mathematical background (local components of cuspidal representations are irreducible),
 see Getz–Hahn (2024), displays (11.14)–(11.17), as cited in

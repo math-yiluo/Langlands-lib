@@ -1,14 +1,11 @@
 # Simultaneous good reductive and parabolic spreading: proof
 
-Worker 4668, for task `8b53f86e-c91d-47ab-b631-e30de865fbbe`.
-
 `Langlands.GroupScheme.IntegralModel.ReductiveParabolicSpreading.existence`
 proves the Library proposition
 `Langlands.GroupScheme.IntegralModel.ReductiveParabolicSpreading.ExistenceStatement.{u}`
 of `Langlands.GroupScheme.IntegralModel.ReductiveParabolicSpreadingStatement`.
 The theorem's type is exactly that proposition. The universe `u` is arbitrary,
-and the theorem has no premises. The statement module and its companion are
-unchanged.
+and the theorem has no premises.
 
 For every number field `F : Type u`, every actual group scheme `G` over
 `Spec F` with `IsConnectedReductive G`, and every actual homomorphism
@@ -40,9 +37,9 @@ theorem existence : ExistenceStatement.{u} :=
   `Absolute.ParabolicDynamicProof`) proves `ParabolicDynamicStatement.{u}`
   unconditionally.
 
-`lean_check` in environment `bb168ec3-1031-46d9-816b-5c2ed7bbe1a6` compiled
-the module with no errors or warnings. It reported only the axioms
-`propext`, `Classical.choice` and `Quot.sound` for `existence`.
+When checked, the module compiled with no errors or warnings, and the only
+axioms reported for `existence` were `propext`, `Classical.choice` and
+`Quot.sound`.
 
 ## How the models and fibres are constructed
 

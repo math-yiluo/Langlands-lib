@@ -3,7 +3,7 @@ Copyright (c) 2025 Kevin Buzzard. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Kevin Buzzard, Andrew Yang, Matthew Jasper
 
-Modified by Worker 50 (2026): specialize the localization argument of Imperial FLT,
+Modified in Langlands-lib (2026): specialize the localization argument of Imperial FLT,
 commit 923d45174c500aa1d994ba973bac38ea39eacbf7,
 FLT/DedekindDomain/IntegralClosure.lean:207-297 to number fields in independent
 universes and prove bijectivity of the Library's actual integralTensorTransport.

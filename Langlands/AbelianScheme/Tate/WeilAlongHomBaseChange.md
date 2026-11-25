@@ -80,7 +80,7 @@ basis, or twist trivialization is chosen.
 
 ## Provenance and scope
 
-This unit is derived from the Library's
+This module is derived from the Library's
 [DualAbelianBaseChange](../../AlgebraicGeometry/Picard/DualAbelianBaseChange.md),
 [DualAbelianBaseChangeProof](../../AlgebraicGeometry/Picard/DualAbelianBaseChangeProof.md),
 [FiniteWeilBaseChange](../../AlgebraicGeometry/Picard/FiniteWeilBaseChange.md),
@@ -95,7 +95,7 @@ they are not new existence results quoted from the field-level source.
 Harris–Taylor (2001), printed p.18 / PDF p.26, gives the full and away Tate rationalizations;
 Section III.1, printed p.91 / PDF p.99, supplies their pointed PEL motivation.
 
-The map `lam` is any actual dual-valued homomorphism; this unit asserts neither that it
+The map `lam` is any actual dual-valued homomorphism; this module asserts neither that it
 is a polarization nor that the constructed map preserves a polarization predicate.
 Alternation, nondegeneracy, rank, finite-level perfectness, compact-open topology,
 compatible-frame transport, and unpointed canonicity are separate obligations. All named

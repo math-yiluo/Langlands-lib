@@ -1,7 +1,5 @@
 # The Borel normalizer theorem on algebraically closed points
 
-Worker 1369.
-
 `Langlands.GroupScheme.borelNormalizer.{u}` proves the unchanged published
 `Langlands.GroupScheme.BorelNormalizerStatement.{u}`. For every algebraically
 closed field `k`, smooth connected affine group scheme `G` over `k`, and
@@ -10,7 +8,7 @@ image of `B(k)` equals that image. The universe and characteristic are
 unrestricted. All structural inputs in the proof are imported published
 theorems and are supplied internally.
 
-The implemented proof adapts the author's published conditional
+The implemented proof adapts the published conditional
 `borelNormalizer_of_structuralInputs` assembly. It uses strong induction on
 the Lie dimension of the ambient group. For the supplied Borel, the height
 construction supplies a maximal torus of `B`. The proved
@@ -52,7 +50,7 @@ original point, and the induction yields the stated normalizer equality.
 This is an internal composition of the imported Library constructions and
 proofs. The target pair records its original-source correspondence with
 Milne, *Algebraic Groups* (2017), Theorem 17.48, printed p.367 / PDF p.383.
-This module proves precisely its published point form. The proof reuses the
-author's assembly and surjective quotient mechanics, together with the
+This module proves precisely its published point form. The proof reuses that
+assembly and its surjective quotient mechanics, together with the
 published structural proofs; it introduces no new source-backed statement.
 The original statement and its imports are unchanged.

@@ -34,5 +34,5 @@ the identity and composition laws `quotientMap_refl` and `quotientMap_comp`.
 are the canonical projection and the transition for `n ≤ k`. In
 particular, degree zero uses `I ^ 0 = ⊤`. These are derived implementations
 of the source notation, using Mathlib's actual module presheaves,
-sheafification and categorical cokernels. This unit makes no cohomology
+sheafification and categorical cokernels. This module makes no cohomology
 stabilization or lifting claim.

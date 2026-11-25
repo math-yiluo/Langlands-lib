@@ -1,7 +1,5 @@
 # Kneser–Tits for quaternionic symplectic groups of rank one over local fields
 
-Authors: Worker 5197.
-
 `Langlands.GroupScheme.Quaternionic.LocalSymplecticKneserTitsStatement.{u}` is a proposition
 definition with arbitrary universe `u`. It states the Kneser–Tits property `G(K)^+ = G(K)`
 for the symplectic groups in family (iii) of Prasad–Raghunathan (1985), §2. This module does

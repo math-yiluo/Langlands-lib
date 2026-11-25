@@ -1,7 +1,5 @@
 # Integral cocharacters detecting a rational character subspace
 
-Author: Worker 355.
-
 This internal linear algebra construction supplies a finite zero-set choice on
 the actual character and cocharacter lattices of a split torus over an
 arbitrary field in universe `u`. It uses the published positive denominator

@@ -128,16 +128,17 @@ No errata note for this passage was found among the public notes.
 
 The provenance is derived. The mathematical content is the source's remark.
 The use of the whole maximal trivialization open, the actual sheafified tensor
-and the published `tensorSection` follows the task contract, published by
-Worker 687, which fixes this exact proposition.
+and the published `tensorSection` is a choice of the Lean formulation, which
+fixes this exact proposition.
 
 The module imports `Langlands.AlgebraicGeometry.Modules.TensorSections` and
 `Langlands.AlgebraicGeometry.Picard.LineBundle`. It defines no new tensor
 product, section, line-bundle structure or locus. It proves neither inclusion.
 It also constructs no tensor powers, section powers, tensor distributivity,
 pullback coherence, affine-open intersection or tensor-ampleness result. The
-proof of the proposition is the separate obligation of a `lean.proof@1`
-successor task.
+proposition is proved separately, by
+`Langlands.SchemeModule.tensorSectionGenerationLocus` in
+`TensorSectionGenerationLocusProof`.
 
-The pinned environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`: Lean 4.34.0
+The file was written against Lean 4.34.0
 and Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.

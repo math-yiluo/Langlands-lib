@@ -52,12 +52,13 @@ ordered divided-power images of that vector. All these comparisons
 retain nonreduced and zero test algebras and require no infinitude or
 perfection assumption on the field.
 
-This unit is derived from the Library's actual ordered coordinate,
+This module is derived from the Library's actual ordered coordinate,
 Frobenius quotient, polynomial coefficient and divided-power interfaces.
 It supplies a basis of the actual quotient dual; it does not assert
 linear independence of that basis's images in a particular
 representation. It does not construct a multiplication on the quotient
 dual or a group scheme Frobenius kernel. Existence of the required
-bijective ordered coordinate map, existence of root subgroups, comparison
-with an entire induced representation, and the host Steinberg big-cell
-statement remain separate obligations.
+bijective ordered coordinate map, existence of root subgroups and comparison
+with an entire induced representation remain separate obligations; the
+Steinberg big-cell statement is not proved here, and the Library proves it as
+`steinbergBigCell` (`Reductive.SteinbergBigCellProof`).

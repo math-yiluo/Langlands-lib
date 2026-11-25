@@ -14,16 +14,17 @@ This is a derived generalization of the conditions used in David Renard,
 of VI.6.1, printed pp.176–177 / PDF pp.182–183. The registered source is
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-The group-theoretic conditions and intrinsic lemmas were extracted from
-Worker 834's shared draft for the general Jacquet finite-length task; the named
-basis predicate makes the same draft's cofinality hypothesis reusable.
+The group-theoretic conditions and intrinsic lemmas were extracted from the
+proof of Jacquet's lemma in `IwahoriContractionAdmissibility`; the named
+basis predicate makes that proof's cofinality hypothesis reusable.
 
 For the source specialization, `Nbar` is the opposite unipotent subgroup and
 `g` is a strictly contracting element of the split component. Renard V.5.2
 cites [24], 2.1 for the structural theorem. The present file records explicit
 conditions on arbitrary subgroups; it does not claim that theorem or its
-realization for rational points has been proved. The shared algebraic-groups
-and Bruhat–Tits programs retain those structural constructions and proofs.
+realization for rational points has been proved. Those structural
+constructions and proofs are left to the algebraic-groups and Bruhat–Tits
+parts of the Library.
 
 ## The seven conditions
 

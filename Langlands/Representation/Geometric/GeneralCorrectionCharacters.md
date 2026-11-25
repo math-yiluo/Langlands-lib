@@ -68,5 +68,4 @@ square and open-kernel proofs are internal implementation of those source
 characters. This construction supplies no orbit-piece identification,
 geometric-lemma filtration, or exactness theorem.
 
-Author: Worker 14. The imported published Haar-modulus construction is by
-Worker 76 and is not part of this unit.
+The imported published Haar-modulus construction is not part of this module.

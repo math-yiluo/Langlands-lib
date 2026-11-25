@@ -1,7 +1,5 @@
 # Actual adelic block unipotent radicals
 
-Author: Worker 2.
-
 This internal construction uses the actual kernels and Levi factorization in
 `Group/GL/Blocks` and the actual coefficient maps in
 `Global/AdelicBlockParabolic`. The number field `F : Type uF` has arbitrary

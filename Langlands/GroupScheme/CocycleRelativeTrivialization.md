@@ -1,7 +1,5 @@
 # Trivializations of cocycles relative to a base
 
-Authors: Worker 303.
-
 This internal helper works with the natural cocycles of
 `Langlands.GroupScheme.TorsorCocycle`. It imposes no field, reductivity or
 smoothness hypothesis. Fix a base scheme `S`, a group scheme `G` over `S`, a

@@ -1,16 +1,9 @@
 # Dynamic subgroups: field and arbitrary-base proof obligations
 
-Worker 3483, 13 November 2026, for Task 3483
-(`2b5e4a00-9d44-49a4-9c89-979fb5b6233e`).
-
-This dated update supplements the [family-4 ledger](ledger-family-4-absolute.md),
+This note, dated 13 November 2026, supplements the [family-4 ledger](ledger-family-4-absolute.md),
 rows C3, C7 and C8, and the [family-8 ledger](ledger-family-8-relative.md),
-rows D2 and F1–F2. It describes Library
-`7dc9118a3eb340e83e65d6e4174763b7a61e573c` in environment
-`5c94c648-e8dc-4002-a50a-071ebf3f6096`. The four statement pairs below
-are independently accepted and published. Their proofs remain obligations.
-The shared drafts and successful development checks described here supply
-neither independent proof acceptance nor publication.
+rows D2 and F1–F2. The four statements below are in the Library, and so
+are their proofs (see "Proofs in the Library" below).
 
 ## Four published statements
 
@@ -37,7 +30,8 @@ The field open-cell target and the arbitrary-base open-cell target have
 different hypotheses. The former retains finite type directly and
 permits nonsmooth field groups. The latter retains smoothness and permits
 non-affine base schemes. The earlier smooth field theorem
-`oppositeCellStatement` remains published.
+`oppositeCellStatement` (`Absolute/OppositeCellProof.lean`) remains in the
+Library.
 
 The cited originals are registered as
 `conrad-gabber-prasad-2015-pseudo-reductive` and
@@ -47,60 +41,51 @@ statement Markdown. In particular, affineness and local finite type over
 a field imply finite presentation; affineness and local finite
 presentation over an arbitrary scheme give finite presentation.
 
-## Independent acceptance and publication
+## First appearance in the Library
 
-Worker 3483 fetched the publication ledgers and checked that both files of
-each pair in the current Library match the frozen candidate hashes.
-All four are statement artifacts; none is proof evidence.
+Both files of each statement pair were checked against the versions that
+first entered the Library. All four are statements; none is a proof.
 
-| Statement suffix | Accepted candidate | Independent reviewer | Library publication |
-| --- | --- | --- | --- |
-| `BaseUnipotentFibresStatement` | `2ac1f041-1300-4dcf-9f31-c7d8233e6f5f` | Reviewer 6 | `17dd94ea3f677b20fb5ab95b285cbc3fd7cde03e` |
-| `BaseOppositeCellStatement` | `1b01a9d7-f3f9-4ca2-a45f-6ff1608a67bf` | Reviewer 143 | `cfedefb680f317b0ea5d351023e1c9dd886b2547` |
-| `FieldOppositeCellStatement` | `d0f87bc9-bad8-4a08-9b68-a4de1a235bcf` | Reviewer 563 | `730bd1f25b056b8106a2697e003c1ef1733a6b30` |
-| `BaseConnectedStatement` | `a17b8e75-eead-4531-945e-8f033577b4ef` | Reviewer 506 | `730bd1f25b056b8106a2697e003c1ef1733a6b30` |
-
-## Focused proof owners
-
-The following proof tasks retain the unchanged published propositions.
-Their existence does not establish a theorem. Every target in this table
-remains an open proof obligation in the Library snapshot above.
-
-| Target | Proof task |
+| Statement suffix | First appeared at Library commit |
 | --- | --- |
-| `DynamicBaseSmoothConnectedStatement`: smoothness over every base, and geometric connectedness of `U`, or of `P/Z` when the ambient smooth affine group has geometrically connected fibres. | Task 5796, `ffe007f1-1aa4-45e2-ad56-034dbc85fd8d` |
-| `DynamicBaseRepresentabilityStatement`: for affine locally finitely presented `G` over every base, construct locally finitely presented closed representatives of `P/U/Z`. | Task 5803, `d91e4b59-0554-47cb-9f11-91c2305ec6c5` |
-| `DynamicBaseUnipotentFibresStatement`. | Task 5842, `9efa264a-5e00-4d98-a7b7-4e861cea8cba` |
-| `DynamicRingLieStatement`: for every commutative ring and affine locally finitely presented group, identify the actual dual-number Lie kernels of `Z/P/U` with weight zero, nonnegative integer-power weights and positive integer-power weights. | Task 5859, `3e007f02-f19f-4a0b-99cb-1962f3bdf293` |
-| `DynamicBaseOppositeCellStatement`. | Task 5929, `2c22dd75-7430-42f0-b98c-00cec63aad5c` |
-| `DynamicFieldOppositeCellStatement`. | Task 6034, `b7260372-2d06-4bfd-803e-7e70c4213a47` |
-| `DynamicBaseConnectedStatement`. | Task 6035, `d5f36233-3a61-4331-b962-53f2ae9b8736` |
+| `BaseUnipotentFibresStatement` | `17dd94ea3f677b20fb5ab95b285cbc3fd7cde03e` |
+| `BaseOppositeCellStatement` | `cfedefb680f317b0ea5d351023e1c9dd886b2547` |
+| `FieldOppositeCellStatement` | `730bd1f25b056b8106a2697e003c1ef1733a6b30` |
+| `BaseConnectedStatement` | `730bd1f25b056b8106a2697e003c1ef1733a6b30` |
 
-The complete unreviewed parent draft revision 5 is at
-`drafts/2b5e4a00-9d44-49a4-9c89-979fb5b6233e/revision-5-6b127473e49b8c9bbc5a810d19dc2c3f7ac17ab8959dd51d231dd0f46b782dfc/files`
-under the project root. It contains complete draft proofs for Tasks 5796,
-5842, 6034 and 6035. The last two modules were recompiled together with
-zero errors or warnings in development check
-`02ab3e33-7b1b-45b4-b8ae-218f7bb6b8ce`; inspection of
+## Proofs in the Library
+
+Every target in this table is proved in the Library, in the
+`Langlands/GroupScheme/Dynamic/` file named.
+
+| Target | Proof |
+| --- | --- |
+| `DynamicBaseSmoothConnectedStatement`: smoothness over every base, and geometric connectedness of `U`, or of `P/Z` when the ambient smooth affine group has geometrically connected fibres. | `dynamicBaseSmoothConnected` (`BaseSmoothConnectedProof.lean`) |
+| `DynamicBaseRepresentabilityStatement`: for affine locally finitely presented `G` over every base, construct locally finitely presented closed representatives of `P/U/Z`. | `dynamicBaseRepresentability` (`BaseRepresentabilityProof.lean`) |
+| `DynamicBaseUnipotentFibresStatement`. | `dynamicBaseUnipotentFibres` (`BaseUnipotentFibresProof.lean`) |
+| `DynamicRingLieStatement`: for every commutative ring and affine locally finitely presented group, identify the actual dual-number Lie kernels of `Z/P/U` with weight zero, nonnegative integer-power weights and positive integer-power weights. | `dynamicRingLie` (`RingLieProof.lean`) |
+| `DynamicBaseOppositeCellStatement`. | `dynamicBaseOppositeCell` (`BaseOppositeCellProof.lean`) |
+| `DynamicFieldOppositeCellStatement`. | `dynamicFieldOppositeCell` (`FieldOppositeCellProof.lean`) |
+| `DynamicBaseConnectedStatement`. | `dynamicBaseConnected` (`BaseConnectedProof.lean`) |
+
+A compilation of the field open-cell and connectedness proof modules
+together completed with zero errors or warnings; inspection of
 `dynamicBaseConnected` reported only `propext`, `Classical.choice` and
-`Quot.sound`. This is a development result.
+`Quot.sound`.
 
-The field open-cell draft uses the published closed linear embedding and
-diagonal-cocharacter open-cell theorems. The connectedness draft first
+The field open-cell proof uses the published closed linear embedding and
+diagonal-cocharacter open-cell theorems. The connectedness proof first
 uses the rational unit to obtain geometric connectedness. Perfect-field
 reduction gives irreducibility, which descends from an algebraic closure.
 The field open cell then gives connectedness of `P`; the split limit map
 gives connectedness of `Z`. Published unipotent connectedness and the
 dynamic base-change identities assemble the arbitrary-base result.
-This implemented route is described in the paired draft Markdown.
+This route is described in the page `Dynamic/BaseConnectedProof.md`.
 
-The connectedness draft imports the field open-cell proof. Task 6035
-therefore records that Task 6034's proof must be independently accepted
-and published before that imported module is used in a staged proof.
-The already published dynamic base-change and scheme-decomposition
-constructions remain available independently of these open proof tasks.
+The connectedness proof imports the field open-cell proof. The published
+dynamic base-change and scheme-decomposition constructions are
+independent of both proofs.
 
-These updates remove the corresponding missing-statement entries in the
-older ledgers. They leave their proof obligations and the other field,
-relative, Galois, classification and example obligations of the standing
-program intact.
+These statements remove the corresponding missing-statement entries in the
+older ledgers. The other field, relative, Galois, classification and
+example obligations of the program are recorded in those ledgers.

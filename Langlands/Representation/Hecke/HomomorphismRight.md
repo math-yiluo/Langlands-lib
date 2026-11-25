@@ -42,6 +42,7 @@ Together with `HomomorphismLeft.F/I` these are all four Hecke-side functors
 of III.2.1. Their targets use the original additive module convention
 of Chapter I, and their output universe is `max uG v`.
 
-This definition unit does not assert their adjunctions or their comparisons
-with functors on smooth representations; those are subsequent proposition
-targets.
+This module does not assert their adjunctions or their comparisons with
+functors on smooth representations; those are stated
+in `HomomorphismStatements` (`ContinuousHomomorphismStatements`) and proved in
+`HomomorphismProof` (`continuousHomomorphismStatements`).

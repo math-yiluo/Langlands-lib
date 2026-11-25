@@ -83,9 +83,7 @@ adding any hypothesis or relating `w` and `w'` to each other or to `u`.
 
 ## Verification
 
-Development check `eec569c6-9ba3-482a-baff-f9fd37867f8e` in environment
-`bb168ec3-1031-46d9-816b-5c2ed7bbe1a6` compiled the complete proof with zero
-errors and warnings. Declaration inspection reports a theorem with level
+A development check compiled the complete proof with zero errors and
+warnings. Declaration inspection reports a theorem with level
 parameters `w`, `w'`, `u` and only `propext`, `Classical.choice`, and
-`Quot.sound` among its axioms. Formal acceptance additionally requires the
-submission's exact-target validation and independent review.
+`Quot.sound` among its axioms.

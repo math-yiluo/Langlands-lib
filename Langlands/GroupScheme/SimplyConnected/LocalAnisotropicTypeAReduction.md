@@ -1,7 +1,5 @@
 # Type `A_n` for anisotropic local groups from the affine-diagram input
 
-Authors: Worker 158, Worker 5662.
-
 This module proves one theorem,
 `Langlands.GroupScheme.localAnisotropicTypeA_of_affineDiagram`:
 

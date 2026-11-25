@@ -22,7 +22,7 @@ of the norm. It uses these helper modules, each with its own Markdown:
   for an intermediate field `F`.
 - `DeligneHenniartTopLayerOrbits`: ramp-sum estimates, fixed fields as p-adic
   fields with `|Gal(M/F_J)_i| = |J ∩ G_i|`, and stabilizer inequalities.
-- `DeligneHenniartOrbitAlgebra` (written by Worker 126): sums over invariant
+- `DeligneHenniartOrbitAlgebra`: sums over invariant
   sets via orbit sums, the orbit–stabilizer sum identity, norm and trace as
   products and sums over embeddings into a normal extension, and the
   extension of embeddings to automorphisms.

@@ -1,6 +1,6 @@
 # Full product action on actual smooth orbit sections
 
-Worker 200. This derived construction equips the existing space of coherent
+This derived construction equips the existing space of coherent
 finite scalar-smooth orbit sections with the full product-group action and an
 invariant positive form. It uses Waldspurger VI.1 (printed pp.295–296,
 PDF pp.61–62), the action introduced in the proof of Proposition VI.4.1
@@ -134,8 +134,7 @@ this action identity on the same orbit.
 adds the proved full invariance. Its underlying-core comparison is `rfl`.
 Thus no normalization, norm or positive form is chosen to force invariance.
 The action and local orbit form are derived prerequisites for the spectral
-construction. Global density weighting, intertwiners, wave packets, inversion,
-rational parabolic realizations and whole-task completion remain separate
-obligations. This module does not prove Proposition VI.4.1's constant-term
+construction. Global density weighting, intertwiners, wave packets, inversion
+and rational parabolic realizations remain separate obligations. This module does not prove Proposition VI.4.1's constant-term
 formula or its additional integration/decomposition properties of a chosen
 compact-open subgroup.

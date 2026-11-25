@@ -1,7 +1,5 @@
 # Finite-order Hecke-character prescription with doubled exponent
 
-Authors: Worker 53 and Worker 1232.
-
 `Langlands.Global.finiteOrderCharacterPrescription_proof.{u}` proves the
 unchanged proposition
 `Langlands.Global.FiniteOrderCharacterPrescriptionStatement.{u}` from

@@ -9,7 +9,8 @@ integral models:
 - the Prop-valued existence target `IntegralModel.SmootheningStatement.{u}`.
 
 It contains **no existence proof**. `SmootheningStatement` is a proposition
-whose proof is left to a separate proof task.
+proved in the separate module
+`Langlands.GroupScheme.IntegralModel.SmootheningProof` (`smoothening_exists`).
 
 ## The property `IsSmoothening`
 

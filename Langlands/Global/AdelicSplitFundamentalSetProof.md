@@ -1,7 +1,5 @@
 # Exact proof of Springer's split adelic fundamental-set statement
 
-Author: Worker 306.
-
 `Langlands.Global.AdelicSiegelFactors.splitAdelicFundamentalSetProof` proves
 exactly `SplitAdelicFundamentalSetStatement.{u}`, defined in
 `Langlands.Global.AdelicSplitFundamentalSet`, for arbitrary universe `u`.

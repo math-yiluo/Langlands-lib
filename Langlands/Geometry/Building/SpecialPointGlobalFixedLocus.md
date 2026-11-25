@@ -46,7 +46,7 @@ modules, normality of `Plancherel.rationalCommonNormKernel`, the existing
 special-point definition, and group-action identities. No external source
 assertion or extra rational-point surjectivity is used.
 
-This unit does not construct the supplied building, apartment axioms,
+This module does not construct the supplied building, apartment axioms,
 opposite pairs, apartment injection, common apartments or a special point.
 In particular it does not identify any integral-model image with a stabilizer.
 The same-quotient supplied-model comparison and the unconditional

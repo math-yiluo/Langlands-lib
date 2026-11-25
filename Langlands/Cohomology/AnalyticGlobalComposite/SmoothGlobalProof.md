@@ -1,7 +1,5 @@
 # Composite comparison for injective-preserving smooth section functors
 
-Author: Worker 280.
-
 This internal generalization of the published
 `Langlands.Cohomology.EquivariantComposite.GlobalProof` replaces its specific
 section-representation functor by any additive functor

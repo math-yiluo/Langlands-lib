@@ -17,7 +17,7 @@ namespace Langlands.Global.RankinSelbergGlobal.InfiniteWhittakerResidual
 open Langlands.Automorphic Langlands.Global.FiniteAdelicGL
 open Langlands.Global.CompletionPadic
 open Langlands.Global.CuspidalPairFunctionalEquation
-open Langlands.ClassField.Global.RelativeWeilGroup
+open Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 open FiniteWhittakerTensor FiniteWhittakerSemilocal FiniteWhittakerDual
 open FiniteWhittakerPartialDomain UnipotentClass LocalPointFactorization
 
@@ -164,6 +164,7 @@ theorem exists_infiniteResidual_ne_zero_of_global
   · exact hfinite.trans (by rw [show cuspWhittaker F T ψ.complex x (infinitePoint S g) = 0 from
       hzero, mul_zero])
 
+set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
 include hψ hS in
 /-- The normalized infinite residual of every nonzero infinite tensor is
 nonzero somewhere on the partial domain. -/

@@ -1,7 +1,5 @@
 # Character functors and the Weil restriction point functor
 
-Author: Worker 112.
-
 Fix commutative rings `A` and `B`, an `A`-algebra structure on `B`, and a group
 scheme `G` over `Spec B`. The published `AffineWeil.pointFunctor A B G` sends an
 `A`-algebra `C` to the `G`-points over `B ⊗[A] C`. It needs no further

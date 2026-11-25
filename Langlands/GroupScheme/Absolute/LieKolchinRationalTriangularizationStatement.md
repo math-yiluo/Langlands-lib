@@ -1,7 +1,5 @@
 # Rational-point Lie–Kolchin triangularization
 
-Worker 1485.
-
 `LieKolchinRationalTriangularizationStatement.{u}` is a proposition about every
 actual finite matrix representation of a smooth connected affine group scheme
 over an algebraically closed field `k : Type u`. Its hypothesis is solvability

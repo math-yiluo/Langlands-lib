@@ -1,11 +1,9 @@
 # Finiteness of central subgroups with root-of-unity eigenvalues
 
-Author: Worker 1532.
-
 Namespace: `Langlands.BruhatTits.RationalPoints.CentralNormKernel`. Internal helper for the
 proof of `CentralNormKernelCompactnessStatement`. The argument is that of the published
 `GroupScheme.CentralIntersection.exists_isClosed_isOpen_singleton` (module
-`GroupScheme.Derived.CentralIntersection.AlgClosed`, Worker 1408), with its derived-subgroup input
+`GroupScheme.Derived.CentralIntersection.AlgClosed`), with its derived-subgroup input
 replaced by an explicit eigenvalue hypothesis, and with the closed embedding supplied by the
 caller instead of chosen inside the proof.
 

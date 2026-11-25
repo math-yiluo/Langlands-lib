@@ -5,9 +5,10 @@ orbit with parameter and evaluation point both in ambient matrix coordinates.
 `matrixDerivativeRightOrbitValue_contDiffOn` proves joint smoothness on the
 product of the open units domains by the same finite adjoint expansion.
 
-Authors: Worker 94; Worker 348 (the covariance expansion adapted from the
-published continuity proof); Worker 566 (the underlying finite coefficient
-induction, upgraded in the imported smooth coefficient helper).
+The covariance expansion is adapted from the published continuity proof
+(`ArchimedeanSmoothActionContinuityProof`); the underlying finite coefficient
+induction is upgraded in the imported smooth coefficient helper
+(`ArchimedeanSmoothAdjointCoefficients`).
 
 This internal helper uses the genuine derivative topology, smooth functions
 and positive right action. On the open set of invertible mixed matrices it
@@ -17,8 +18,8 @@ of the completion-based group.
 
 The proof expands `D(a) R(g) f` as the finite sum
 `sum_i c_i(g^-1) * (D(b_i)f)(x*g)`. The expansion follows from published
-covariance, as in Worker 348's continuity proof, with the smooth coefficients
-constructed from Worker 566's algebraic argument. In ambient matrix
+covariance, as in the continuity proof, with the smooth coefficients
+constructed from the algebraic argument of `ArchimedeanAdjointCoefficientsProof`. In ambient matrix
 coordinates each summand is jointly smooth in the translating matrix and
 the evaluation matrix on the product of their open unit domains.
 The compact-family calculus helper then gives smoothness in the supremum

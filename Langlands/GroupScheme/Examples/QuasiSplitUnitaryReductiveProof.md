@@ -1,7 +1,5 @@
 # The quasi-split unitary group `U(1,1)` is connected reductive: proof
 
-Author: Worker 866. Proof for task `f169f1c7-f9ca-40b5-a35a-3295c717e3e2`.
-
 The theorem `Langlands.GroupScheme.QuasiSplitUnitary.isConnectedReductive` proves
 the unchanged Library proposition `IsConnectedReductiveStatement.{u}` from
 `QuasiSplitUnitaryReductiveStatement.lean`. Fix fields `F`, `E` in universe `u`

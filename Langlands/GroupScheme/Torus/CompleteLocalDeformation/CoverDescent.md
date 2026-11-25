@@ -1,7 +1,5 @@
 # Descent of homomorphisms along a finite étale local splitting cover
 
-Worker 748, for Task 6952 (with Worker 356).
-
 Module `Langlands.GroupScheme.Torus.CompleteLocalDeformation.CoverDescent`, namespace
 `Langlands.GroupScheme.CompleteLocalDeformation`.
 
@@ -9,8 +7,8 @@ Module `Langlands.GroupScheme.Torus.CompleteLocalDeformation.CoverDescent`, name
 
 `exists_descent_of_specialFibre`. Let `A` be a noetherian local ring, and let `H` and `G` be
 group schemes over `Spec A` with `G → Spec A` an affine morphism. Let
-`d : LocalSplittingData A H` be a local splitting cover from Worker 356's
-`CompleteLocalSimultaneousSplitting`. Then `B := d.Carrier` is local, finite and étale over
+`d : LocalSplittingData A H` be a local splitting cover from
+`Torus.CompleteLocalSimultaneousSplitting`. Then `B := d.Carrier` is local, finite and étale over
 `A` with a local structure map, and `H_B` is diagonalizable. Assume also that the special
 fibre `(G_B)_{k_B}` is diagonalizable (hypothesis `hG`). Let `f₀ : H_k ⟶ G_k` be a homomorphism
 of special fibres and `fB : H_B ⟶ G_B` a homomorphism. Assume
@@ -24,7 +22,7 @@ residue fields.
 
 `exists_descent_of_specialHomTransport` states the same result with the hypothesis
 `(baseChange spB).map fB = specialHomTransport f₀`. This is the form of the descent hypothesis
-`hdesc` in Worker 356's `specialFibre_hom_bijective_of_cover`. The instance
+`hdesc` in `specialFibre_hom_bijective_of_cover` (module `Torus.SpecialFibreHomDescentAssembly`). The instance
 `LocalSplittingData.specFlat` records that `Spec B → Spec A` is flat.
 
 Completeness of `A` is not needed here.
@@ -45,7 +43,7 @@ These use `Descent.pullHom` and `Descent.pullbackComparison` from the published
   agree, then `f` is compatible with the canonical descent data.
 - `baseChange_map_injective`: base change along a flat, surjective, quasi-compact morphism is
   injective on homomorphisms. It follows from `FpqcHomDescent.unique`.
-- `specialFibreBaseChangeIso_eq`: Worker 356's special-fibre comparison is the composite of two
+- `specialFibreBaseChangeIso_eq`: the special-fibre comparison `specialFibreBaseChangeIso` is the composite of two
   `pullbackComparison` isomorphisms.
 
 ## Proof

@@ -1,6 +1,6 @@
 # Finite stages in subgroup tower coordinates
 
-Worker 22. This construction supplies the finite-stage coordinate map required
+This construction supplies the finite-stage coordinate map required
 to compare direct and iterated transfer. It does not assert a transfer law.
 
 Let `K ≤ H` be open subgroups of a topological group `G`, let `N` be an

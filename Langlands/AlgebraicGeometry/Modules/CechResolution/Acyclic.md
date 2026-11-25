@@ -1,7 +1,5 @@
 # Acyclicity of the terms of the sheafified Čech complex
 
-Author: Worker 958.
-
 Module `Langlands.AlgebraicGeometry.Modules.CechResolution.Acyclic`, namespace
 `Langlands.AlgebraicGeometry.Modules.CechResolution`. For `π : X ⟶ Spec R` separated, an
 ordered affine cover `𝒰 : X.OrderedAffineCover` and a quasi-coherent `𝒪_X`-module `M`, it

@@ -1,7 +1,5 @@
 # Hermitian identification of admissible representations with their smooth duals
 
-Author: Worker 249.
-
 This helper module constructs, for an invariant positive form `b` on a complex
 representation `ρ` of a topological group `G`, the map
 

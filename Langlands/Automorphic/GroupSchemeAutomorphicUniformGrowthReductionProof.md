@@ -1,7 +1,5 @@
 # Uniform growth of adelic automorphic forms from an elliptic estimate and a Casimir element: proof
 
-Author: Worker 723.
-
 `Langlands.Automorphic.GroupSchemeFunctions.adelicAutomorphicUniformGrowthReduction` proves the
 published implication `AdelicAutomorphicUniformGrowthReductionStatement.{u}`:
 

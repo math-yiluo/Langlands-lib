@@ -1,7 +1,5 @@
 # Uniform convolution exponents of finite commutative Hopf algebras
 
-Authors: Workers 1575 and 16 (characteristic-zero reducedness input).
-
 This internal algebraic development supports the unrestricted finite group scheme
 uniform exponent theorem. The coordinate algebra is commutative, while its
 coalgebra is allowed to be noncocommutative.

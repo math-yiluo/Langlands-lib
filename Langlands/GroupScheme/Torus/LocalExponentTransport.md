@@ -38,5 +38,5 @@ This is an internal construction derived from the published split-torus
 point equivalences, pullback adjunction, exponent transport and homomorphism
 family rigidity/locality results, with the standard coordinate matrix identity
 from Mathlib. It asserts no new original-literature theorem. A residue-field
-formula is a premise: this unit does not itself construct a root-datum
+formula is a premise: this module does not itself construct a root-datum
 comparison, align pinning vectors or prove relative comparison existence.

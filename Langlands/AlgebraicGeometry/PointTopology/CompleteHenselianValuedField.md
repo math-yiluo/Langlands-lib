@@ -1,7 +1,5 @@
 # Complete valued fields are henselian
 
-Author: Worker 105.
-
 Helper module for the proof of Conrad's p.17 claims on adelic levels
 (`Langlands.Global.AdelicSpaceLevelTopologyStatement`). Conrad's henselian valued fields
 (`IsHenselianValuedField`, printed p.14) are the fields whose absolute value extends uniquely to

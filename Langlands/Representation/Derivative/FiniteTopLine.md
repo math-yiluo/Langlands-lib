@@ -74,30 +74,32 @@ The provenance is derived composition of the existing general
 `topProductTensorEquiv`, ordered first/tail induction, singleton evaluation,
 equality transport, carrier lifts, and elementary tensor equivalences.
 The binary comparison in turn uses the proved general derivative Leibniz
-filtration. This unit introduces no additional literature assertion or
+filtration. This module introduces no additional literature assertion or
 individual segment derivative formula.
 
 The import audit against Library
 `dac2bb9e83346876770fced17af26f0cba7f4c98` records 395 project modules including
 this new module and 143 external import roots. Of these, 392 inherited
 Lean/Markdown pairs match that Library exactly. The remaining two prerequisite
-modules, `Derivative.TopProduct` and `Filtration.SingletonIso`, match the frozen
-bytes of their separately reviewed supporting construction. The closure is
-the union of that general binary-comparison closure and the previously
+modules, `Derivative.TopProduct` and `Filtration.SingletonIso`, form a separate
+supporting construction, audited on its own. The closure is
+the union of that general binary-comparison closure and the separately
 inspected published `HeadTailProductInduction` closure, with this module added.
 The audit has no missing module, unpaired Lean file, proof hole, or
-excluded-conclusion name hit.
+hit on the name of a classification conclusion.
 
 The only inherited classification modules are `Supercuspidal`,
 `SupercuspidalContragredientAux`, `SupercuspidalContragredientStatement`, and
 `SupercuspidalTwist`; they provide general predicate, duality, lift, and twist
-infrastructure. No prohibited classification or exhaustion conclusion,
+infrastructure. No classification or exhaustion conclusion,
 partial-Jacquet consumer, Zelevinsky 1980 segment derivative formula, or
 segment-socle assertion is imported. This is an import and byte audit combined
 with the existing prerequisite audits, not a claim to have reread every
 inherited module body.
 
-This supporting constructor leaves individual special-head top-derivative
-nonvanishing and both directions of `SegmentHeadProductIrreducibility` open.
+This supporting constructor does not prove individual special-head
+top-derivative nonvanishing or either direction of
+`SegmentHeadProductIrreducibility`; the latter is proved in
+`Classification.SegmentHeadProductIrreducibilityProof`.
 Its explicit factor-equivalence inputs must be established separately before
 applying it to those products.

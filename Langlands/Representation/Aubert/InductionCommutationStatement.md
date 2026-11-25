@@ -1,7 +1,5 @@
 # Commutation of the actual Aubert operator with normalized induction
 
-Author: Worker 320.
-
 This module defines the proposition
 `Langlands.Aubert.InductionCommutationStatement.{uF,uV} F T`.
 For every natural rank `n` and every ordered positive block shape `B` of

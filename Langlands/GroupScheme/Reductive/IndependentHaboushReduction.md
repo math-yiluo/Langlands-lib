@@ -1,11 +1,10 @@
 # Conditional Haboush assembly with split-cover and Steinberg inputs
 
-Worker 589, with Worker 169's cover helper, Task 7298. Helper module of
-`IndependentGeometricReductivityProof`, which discharges both premises.
+Helper module of `IndependentGeometricReductivityProof`, which discharges both premises.
 
 The module proves a conditional implication from the existing Library
 propositions `SplitSimplyConnectedCoverExistenceStatement.{u}` and
-`SteinbergBigCellStatement.{u}` to the unchanged
+`SteinbergBigCellStatement.{u}` to
 `ReductiveGeometricReductivityStatement.{u}`, at every universe `u`.
 It also proves
 `IndependentHaboush.reductiveGeometricReductivity_of_rootDatum_and_bigCell`:
@@ -33,24 +32,23 @@ nonaffine tests.
 
 This is an internal derived assembly of existing generic reductions. Its
 positive-characteristic structure parallels the existing Haboush assembly,
-but its formerly excluded cover and canonical-rho calls are explicit premises;
-there is no invocation of the old `reductiveGeometricReductivity` or its
+but the cover and canonical-rho calls that the independent route excludes are
+explicit premises here; there is no invocation of the Library's other proof
+`reductiveGeometricReductivity` (`Reductive/GeometricReductivityProof`) or its
 structural arguments. A full type/value dependency audit passed on 17 November 2026, reaching
 23,386 project constants and no excluded statement or known contaminated
-implementation name (diagnostic `3ab3d04c-d36a-4ef5-8a0f-691b652860eb`).
-The mathematical module compiled successfully in diagnostic
-`3042b0e5-a1ee-4fae-8630-3221dc7ee351`. These private compiler diagnostics do
-not supply independent semantic acceptance or prove the two premises.
-The root-datum premise comes from Task 7458's reducedness theorem and the
-Steinberg premise from Task 7459's structural inputs, both applied to the
+implementation name. The mathematical module compiled successfully. These checks
+do not prove the two premises.
+The root-datum premise comes from the reducedness theorem
+`rankOneRootReducedness_of_centralCover` and the Steinberg premise from the
+structural inputs `IndependentSteinbergInputs`, both applied to the
 rank-one central cover in `IndependentGeometricReductivityProof`.
 
-The root-datum version composes the original assembly with Worker 169's
-`splitSimplyConnectedCoverExistence_of_rootDatumExistence`. That helper applies
+The root-datum version composes the original assembly with
+`splitSimplyConnectedCoverExistence_of_rootDatumExistence`
+(`SimplyConnected/SplitCoverOfRootDatum`). That helper applies
 the existing minimal-lattice cover reduction with the Library proofs of
 central-isogeny root-datum transport and semisimple perfectness. These inputs
-have separately passed a type-and-value dependency audit (diagnostic
-`67e07da0-f706-4b94-b7de-feb9cf64f46a`). This composition is a derived
+have separately passed a type-and-value dependency audit. This composition is a derived
 conditional theorem; it proves neither premise.
-The helper and the composed assembly compiled together in diagnostic
-`d164944e-c18d-4605-881f-5d6dd69346f2` on 17 November 2026.
+The helper and the composed assembly compiled together on 17 November 2026.

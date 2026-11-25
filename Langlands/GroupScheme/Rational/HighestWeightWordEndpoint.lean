@@ -91,7 +91,11 @@ theorem reflectionWordLoweringMaps_equivariant
   | cons i l ih =>
     refine List.Forall₂.cons ?_ ih
     have h := (hxm i).conjugateMap (p.reflectionWordPoint_normalizes s l)
-    rw [p.characterAut_reflectionWordTorusAut s l, map_neg] at h
+    have hneg (x : characterLattice p.torus) :
+        (Langlands.PositiveRootWord.wordAut p.rootDatum p.base l).weightEquiv (-x) =
+          -(Langlands.PositiveRootWord.wordAut p.rootDatum p.base l).weightEquiv x :=
+      (Langlands.PositiveRootWord.wordAut p.rootDatum p.base l).weightEquiv.toLinearMap.map_neg x
+    rw [p.characterAut_reflectionWordTorusAut s l, hneg] at h
     convert h using 1
     exact congrArg Neg.neg (RootPairing.Equiv.root_indexEquiv_eq_smul
       p.rootDatum (i : p.rootIndex)

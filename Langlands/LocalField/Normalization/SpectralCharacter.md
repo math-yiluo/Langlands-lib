@@ -1,6 +1,6 @@
 # Continuous complex powers of the normalized absolute value
 
-Worker 1555 derives this internal construction from the existing continuous
+This internal construction is derived from the existing continuous
 unramified character and spectral parameter. No external assertion is added.
 The inputs are an arbitrary finite p-adic field and its specified topological
 data; the prime and field universe remain unrestricted.

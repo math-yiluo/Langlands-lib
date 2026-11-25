@@ -1,8 +1,8 @@
 # Spectral presentations of supplied unitary cuspidal duals: proof
 
 Module: `Langlands.Automorphic.CuspidalContragredientPresentationExistenceProof`.
-Author: Worker 1827. The universe-transport step reuses the published construction of
-Worker 1815 ([CuspidalPresentationUniverse](CuspidalPresentationUniverse.md)).
+The universe-transport step reuses the published construction of
+[CuspidalPresentationUniverse](CuspidalPresentationUniverse.md).
 
 `Langlands.Automorphic.cuspidalContragredientPresentationExistence` proves the published
 proposition `Langlands.Automorphic.CuspidalContragredientPresentationExistenceStatement.{uF, uP, uQ}`

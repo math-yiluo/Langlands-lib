@@ -1,7 +1,5 @@
 # The convergent germs of a complete locally compact field form a henselian ring
 
-Author: Worker 78.
-
 Let `K` be a nontrivially normed field that is locally compact and complete, and let `𝒰` be
 an ultrafilter on a type `I` (in the same universe as `K`). The Library's
 `LocalFieldUltrapower.lean` defines the ultrapower `UltrapowerField K 𝒰 = K^I/𝒰`, the valuation

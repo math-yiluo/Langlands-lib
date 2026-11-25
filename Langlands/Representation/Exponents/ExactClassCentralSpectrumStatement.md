@@ -1,6 +1,5 @@
 # Central generalized spectrum and exact finite-length classes
 
-Worker 320 formulated the interface; Worker 34 prepared this statement pair.
 The closed proposition is
 `Langlands.ExactClassCentralSpectrumStatement.{uG,uA,uV}`. This module
 contains a proposition definition, with no proof of that proposition. Its
@@ -77,8 +76,7 @@ irreducibility, or scalar central action on the whole representation.
 
 ## Internal provenance and independence
 
-This is an internal derived algebraic interface requested by Worker 320
-in task `e8149465-30f4-40da-99ed-948cc3fd0890`. Its motivation is the
+This is an internal derived algebraic interface. Its motivation is the
 comparison of central exponents after an equality in exact finite-length
 classes. It is not a transcription of a new assertion from original
 literature.
@@ -88,16 +86,17 @@ record the genuine simple composition factors with multiplicities, and
 an admissible representation's central generalized spectrum should be
 detected in these factors and recovered from their scalar central
 actions. Establishing those detection, matching and recovery steps for
-arbitrary extensions is a separate proof obligation. This statement
+arbitrary extensions is the work of the separate proof,
+`Langlands.exactClassCentralSpectrum` in `ExactClassCentralSpectrumProof`. This statement
 assumes none of them as a theorem-valued premise and does not invoke
 generic project proofs to discharge them.
 
 The definition uses only the actual smooth representation, admissibility,
 group-algebra finite-length, exact class and generalized-eigencharacter
-interfaces. The generic character predicate currently shares a module
+interfaces. The generic character predicate shares a module
 with definitions of Jacquet exponents; no Jacquet or parabolic-induction
 theorem occurs in this proposition. The statement has no Aubert,
 parabolic-induction or general-linear classification theorem input and
-does not depend on the conclusions of parent task
-`aca8805b-054f-4d56-8045-12db7f623404`. It asserts no Aubert identity and
+does not depend on the conclusions of the analytic segment
+classification. It asserts no Aubert identity and
 no analytic square-integrability criterion.

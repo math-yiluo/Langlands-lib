@@ -1,7 +1,5 @@
 # Generalized eigencharacters detected by actual graded quotients
 
-Author: Worker 573.
-
 `Langlands.GeneralizedEigencharacterFiltrationStatement` is a closed
 proposition about a supplied actual `RepFunctorFiltration F n`. At each
 object `X`, this is a finite increasing chain of invariant submodules that

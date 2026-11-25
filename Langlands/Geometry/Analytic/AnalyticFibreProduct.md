@@ -1,7 +1,5 @@
 # Fibre products of saturated presentations and of analytic spaces
 
-Author: Worker 21.
-
 This module transfers the fibre product of compatible strong maps
 (`FibreProductAtlas`, `FibreProductProjections`) to the Library's category of
 saturated presentations, and from there to the localized category

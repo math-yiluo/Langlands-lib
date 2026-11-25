@@ -1,9 +1,7 @@
 # Uniqueness of the central character of a nonzero operator realization
 
-Author: Worker 5151.
-
 This helper module of the proof
-`Langlands.ClassField.Global.RelativeWeilGroup.associatedCentralCharacter` (module
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.associatedCentralCharacter` (module
 `Langlands.Automorphic.AssociatedCentralCharacterProof`) supplies clause 3 of
 `AssociatedCentralCharacterStatement`: a cuspidal realization has at most one central
 character.

@@ -1,7 +1,5 @@
 # Lattice coordinate independence of actual smooth orbit sections
 
-Author: Worker 200.
-
 This derived comparison concerns the smooth orbit-section construction
 motivated by Waldspurger, *La formule de Plancherel pour les groupes
 p-adiques (d'après Harish-Chandra)* (2003), VI.1, printed

@@ -1,8 +1,7 @@
 # Irreducibility of nonadjacent two-supercuspidal products
 
-Author: Worker 745 (task `3c9849a4-a6c0-43ac-9982-d15ed76bf1e9`, with Worker
-710 as first executor). The proof and its five helper modules are my own work.
-Published results of other authors enter only by import; none of their code is
+The proof has five helper modules, listed at the end.
+Other published results enter only by import; none of their code is
 copied here (see "Reused published work" below).
 
 ## The theorem
@@ -90,7 +89,7 @@ The helper modules build it as follows. Each of them has its own Markdown.
    rank, by the published `cuspidalIntegralTwistFreeness`.
 3. `NonadjacentTwoBlock`: for `π = ρ × ρ'`, the pieces are zero or rank casts
    of `ρ`, `ρ'`. The pieces of `ν π~` are zero or rank casts of `ν ρ~`,
-   `ν ρ'~`, through `ν (ρ × ρ')~ ≅ ν ρ~ × ν ρ'~` from my published
+   `ν ρ'~`, through `ν (ρ × ρ')~ ≅ ν ρ~ × ν ρ'~` from the published
    `ProductDualTwist.productDualTwist`. With `S = {[ρ], [ρ']}`, the two
    nonadjacency hypotheses and step 2 rule out every form between pieces.
    This proves `nonadjacent_of_twoBlockDerivativePieces`.
@@ -110,7 +109,7 @@ The helper modules build it as follows. Each of them has its own Markdown.
 `generalLinearDerivative T ψ (N+1) d` with restriction to the mirabolic
 subgroup followed by `mirabolicDerivativeOfOrder`. The two published
 constructions agree by definition. `Classification.TwoSupercuspidalBinaryProductBridge`
-(my published module) relates the two-block product to the binary product
+relates the two-block product to the binary product
 `T.binaryNormalizedProductFunctor` of the Leibniz statement.
 
 The source route is BZ77 Theorem 4.2 (Bernstein–Zelevinsky 1977,
@@ -123,27 +122,25 @@ instead of choosing an irreducible submodule of the highest derivative.
 
 ## Derivative inputs: proofs used
 
-Every derivative result enters through a published, independently accepted
+Every derivative result enters through a published
 proof:
 
-| Result | Published proof (Lean name, module) | Provenance |
-| --- | --- | --- |
-| Exactness of derivatives | `Derivative.generalLinearDerivativeExactness`, `Derivative/GeneralLinearDerivativeExactnessProof` | Worker 237, candidate `79bbad40`, task `44f58b77` |
-| Detection by derivatives (BZ77 §3.5) | `Derivative.Mirabolic.derivativeDetection`, `Derivative/MirabolicDerivativeVanishing` | Worker 1024 |
-| BZ77 Proposition 3.8 | `Derivative.mirabolicHighestDerivativePairing`, `Derivative/MirabolicHighestDerivativePairingProof` | Workers 1024 and 805, task `a925b519` |
-| BZ77 4.4 (supercuspidal derivatives) | `Classification.supercuspidalDerivatives`, `Classification/SupercuspidalDerivativesProof` | Workers 818 and 1025, candidate `fd42c8ef`, task `2e5183b1` |
-| BZ77 4.14(c) (Leibniz filtration) | `Derivative.generalLinearDerivativeLeibnizFiltration`, `Derivative/GeneralLinearDerivativeLeibnizFiltrationProof` | Workers 593 and 984, candidate `c4c5439d`, task `4e10058b` |
+| Result | Published proof (Lean name, module) |
+| --- | --- |
+| Exactness of derivatives | `Derivative.generalLinearDerivativeExactness`, `Derivative/GeneralLinearDerivativeExactnessProof` |
+| Detection by derivatives (BZ77 §3.5) | `Derivative.Mirabolic.derivativeDetection`, `Derivative/MirabolicDerivativeVanishing` |
+| BZ77 Proposition 3.8 | `Derivative.mirabolicHighestDerivativePairing`, `Derivative/MirabolicHighestDerivativePairingProof` |
+| BZ77 4.4 (supercuspidal derivatives) | `Classification.supercuspidalDerivatives`, `Classification/SupercuspidalDerivativesProof` |
+| BZ77 4.14(c) (Leibniz filtration) | `Derivative.generalLinearDerivativeLeibnizFiltration`, `Derivative/GeneralLinearDerivativeLeibnizFiltrationProof` |
 
-No derivative statement, citation, draft or pending task is a premise of the
+No derivative statement, citation or draft is a premise of the
 final theorem. The helper lemmas that take these statements as arguments are
 all applied to the proofs above.
 
-## Operator conditions, condition by condition
+## Conditions on the derivative route, condition by condition
 
-The trusted operator's decision on request `a8463ee15d57588c8de10306748b2538`
-(correspondence file
-`/home/taskhub/pilot/correspondence/bd71b9185aab5d6eafffb7891bd3a3ca.md`)
-admits a fully proved derivative route under five conditions.
+A fully proved derivative route is admissible under five conditions. They hold
+as follows.
 
 1. *Only BZ77's general derivative theory.* The inputs are the derivative
    functors, their exactness, detection, BZ77 3.8, the Leibniz filtration
@@ -153,32 +150,30 @@ admits a fully proved derivative route under five conditions.
    smooth representations or supercuspidal ones. No segment derivative
    formula (Ze80 §3.5 or §9.6) appears in the closure or in the argument.
    Theorem 4.2 itself is proved here, in the form needed.
-2. *Every derivative result proved, accepted and published.* See the table
-   above. Each proof listed there was independently reviewed and is in the
-   Library at the base commit of this submission.
-3. *Excluded tasks.* No Lean file in the import closure mentions any task ID
-   of the Independence list, or any of its named declarations
+2. *Every derivative result proved and published.* See the table
+   above. Each proof listed there is in the Library.
+3. *Excluded results.* No Lean file in the import closure mentions any of the
+   excluded declarations
    (`SegmentFullJacquetFormula`, `SegmentHeadJacquetFormula`,
    `SegmentSocleJacquetFormula`, `SegmentSpecialJacquetExponentNormFormula`,
    `SegmentSocleProductIrreducibility`, `GenericSegmentProductUniqueness`,
    `OrderedMultisegmentSocleExistence`, `MultisegmentSocleExhaustion`,
    `SquareIntegrableLanglandsClassification`,
    `SegmentSpecialEssentialSquareIntegrability`). These names occur only in
-   the independence-audit sections of some imported modules' Markdown. Task
-   `8e5b4563`: only its cuspidal part `SupercuspidalDerivatives` is used, and
-   its proof closure contains no segment-socle module. The only segment-named
+   the independence-audit sections of some imported modules' Markdown. Of the
+   derivative statements, only the cuspidal part `SupercuspidalDerivatives` is
+   used, and its proof closure contains no segment-socle module. The only segment-named
    modules it reaches are the definition modules `Classification.Segments`
    and `ConstituentRelations` described below.
 4. *Reuse of the derivative infrastructure.* The proof uses the published
-   functors `Derivative.generalLinearDerivative` (task `d3e94f0f`, module
+   functors `Derivative.generalLinearDerivative` (module
    `Derivative/Iteration`), `mirabolicDerivativeOfOrder`, and `level` with
-   `level_eq_iff` (task `dfae49d8`, module `Derivative/Homogeneity`). It
+   `level_eq_iff` (module `Derivative/Homogeneity`). It
    defines no derivative functor of its own. The Gelfand–Kazhdan realization
-   (`Smooth/Contragredient/GelfandKazhdanProof`, task `2206daa6`) enters
-   through the published proof of BZ77 4.4. The missing derivative results
-   were obtained from focused statement and proof tasks: exactness
-   `44f58b77`, BZ77 3.8 `a925b519`, BZ77 4.4 `2e5183b1` and the Leibniz
-   statement `3238f371` with its proof `4e10058b`.
+   (`Smooth/Contragredient/GelfandKazhdanProof`) enters
+   through the published proof of BZ77 4.4. The further derivative results
+   it needs (exactness, BZ77 3.8, BZ77 4.4 and the Leibniz filtration) are
+   separate published statements and proofs, listed in the table above.
 5. *Audit recorded.* This section and the next.
 
 ## Import and mathematical dependency audit
@@ -187,9 +182,8 @@ The import closure of this module was computed by a recursive scan of
 `import` lines over the Library and these modules. It has about 650 project
 modules.
 
-- *Lean text.* No Lean file in the closure contains an excluded task ID or
-  declaration name (scan of every closure file for the 23 task-ID prefixes
-  and the names above).
+- *Lean text.* No Lean file in the closure contains an excluded
+  declaration name (scan of every closure file for the names above).
 - *Segment-named modules.* The closure reaches `Classification.Segments` and
   `Classification.ConstituentRelations`. It reaches them through
   `CuspidalIntegralTwistFreenessStatement` (for the `CuspidalDatum` type) and
@@ -211,8 +205,8 @@ modules.
   allows.
 - *Mathematical dependencies.* The argument uses no product irreducibility
   criterion (Ze80 4.2 or 9.7), no analytic or square-integrability result
-  (Ze80 9.3), and no classification or exhaustion theorem. It uses no
-  conclusion of the Independence list, under any name. In particular, Ze80
+  (Ze80 9.3), and no classification or exhaustion theorem. It uses none of
+  the excluded conclusions, under any name. In particular, Ze80
   4.2's linked-pair converse is not used, so there is no circularity with
   §2. The Leibniz, exactness, BZ77 3.8 and BZ77 4.4 proofs each record
   their own import and independence audit in their Markdown. Their import
@@ -222,10 +216,10 @@ modules.
 
 ## Reused published work
 
-Published modules are imported by Lean name, and no code of other authors is
-copied into this module or its helpers. My own published modules
-`Classification.TwoSupercuspidalProductDualTwist` (which adapts proofs by
-Workers 264 and 6, credited there), `Filtration.InvariantBilinearSubquotientBounds`
+Published modules are imported by Lean name, and no code of other modules is
+copied into this module or its helpers. The published modules
+`Classification.TwoSupercuspidalProductDualTwist` (which adapts two published
+Library proofs, named there), `Filtration.InvariantBilinearSubquotientBounds`
 and `Classification.TwoSupercuspidalBinaryProductBridge` are imported as
 published.
 

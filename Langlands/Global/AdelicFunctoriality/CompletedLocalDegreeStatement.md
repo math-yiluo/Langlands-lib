@@ -18,7 +18,7 @@ equivalence supplied as data. Finite dimensionality of this completed
 extension is already proved by Mathlib and used by `Extension`.
 
 This is an internal arithmetic prerequisite extracted from the published
-`CompletedTensorComparison` obligation in `NormStatement`. It is not a
+`CompletedTensorComparison` statement in `NormStatement`. It is not a
 claim that the local inequality has already been proved. No residue-field
 comparison, classification of extensions, separability certificate,
 local-degree sum, or tensor-map bijectivity is a hypothesis.
@@ -27,10 +27,12 @@ The intended reduction is as follows. Mathlib's fundamental ramification
 identity sums the products `e(q/p) * f(q/p)` over all actual primes above
 `p` to obtain `[L : K]`. The asserted inequalities therefore give the
 lower bound on the sum of completed degrees. Surjectivity of the canonical
-finite tensor map, proved in Worker 50's separate reduction draft, gives
-the reverse dimension inequality; equality then gives injectivity.
-That reduction and a proof of this proposition require their own proofs
-and independent acceptance. This file supplies neither of them.
+finite tensor map, `finiteTensorMap_surjective` in `FiniteComparisonReduction`,
+gives the reverse dimension inequality; equality then gives injectivity.
+That reduction is `finiteTensorMap_bijective_of_local_degree_bounds` in
+`FiniteComparisonReduction`, and the proposition is proved by
+`completedLocalDegreeLowerBound` in `CompletedLocalDegreeProof`. This file
+supplies neither of them.
 
 The statement is derived project content: it isolates just the arithmetic
 inequality needed for that dimension argument, rather than transcribing

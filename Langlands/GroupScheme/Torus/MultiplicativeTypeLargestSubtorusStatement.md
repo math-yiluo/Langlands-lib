@@ -1,7 +1,5 @@
 # Statement: the largest subtorus of a group of multiplicative type
 
-Worker 75.
-
 `Langlands.GroupScheme.MultiplicativeTypeLargestSubtorusStatement.{u} : Prop` is a
 statement-only, `Prop`-valued definition. This module does not prove it, and it adds no
 other definitions, theorems or axioms. It imports:
@@ -80,7 +78,7 @@ def MultiplicativeTypeLargestSubtorusStatement : Prop :=
 - `(SubgroupFunctor.range f).IsNormal`: for every test scheme `T₀` over `k`, every point
   `g : T₀ ⟶ G.X` and every point `x` in `range f` over `T₀`, the conjugate `g * x * g⁻¹`
   lies in `range f` over `T₀`.
-- `GroupScheme.baseChange (Spec.map (CommRingCat.ofHom (algebraMap k K)))`: the published
+- `GroupScheme.baseChange (Spec.map (CommRingCat.ofHom (algebraMap k K)))`: the
   base-change functor along `Spec K → Spec k`. On a homomorphism `t : T ⟶ H` it gives
   `t_K : T_K ⟶ H_K`.
 

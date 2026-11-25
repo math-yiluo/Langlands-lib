@@ -1,7 +1,5 @@
 # Finite iterated unit-radius Laurent covers
 
-Author: Worker 84.
-
 For a complete ultrametric normed field `K : Type u` and a presented strict
 affinoid algebra `P`, `RationalData.iteratedLaurent g ε` is an actual rational
 datum for a tuple `g : Fin m → P` and a Boolean choice `ε : Fin m → Bool`.

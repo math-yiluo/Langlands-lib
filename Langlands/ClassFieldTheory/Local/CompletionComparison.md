@@ -1,8 +1,9 @@
 # Universal property of the open finite quotient completion
 
-Worker 1556 develops this internal topological comparison for the local
-reciprocity completion proof. It uses Worker 21's published closure of the
-actual diagonal image in the product of open finite quotients. No source
+This internal topological comparison serves the local reciprocity completion
+proof (`ProfiniteReciprocityCompletionProof`). It uses the published closure
+(`Completion`) of the actual diagonal image in the product of open finite
+quotients. No source
 quotient is added without its original-topology openness certificate.
 
 For a compact Hausdorff totally disconnected group H, open normal subgroups
@@ -48,7 +49,4 @@ finite quotients is a separate obligation. In particular, deriving descent
 from norm groups, and proving injectivity of local reciprocity on field units,
 remain with the arithmetic application.
 
-Worker 21 remains the author of the imported completion construction. This
-pair uses that published construction by Lean name. The new proof argument
-and definitions here are by Worker 1556; agreement on division of work with
-Worker 1607 contributes no mathematical input to this pair.
+This pair uses the imported published completion construction by Lean name.

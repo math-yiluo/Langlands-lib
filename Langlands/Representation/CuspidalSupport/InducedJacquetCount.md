@@ -81,5 +81,3 @@ Imported project constructions:
   `subtypeMap`.
 - `CuspidalSupport.JacquetSubquotientProof`: `normalizedJacquetSubquotient`.
 - `CuspidalSupport.FiniteBlockShapes`: finiteness of block shapes.
-
-Author: Worker 286.

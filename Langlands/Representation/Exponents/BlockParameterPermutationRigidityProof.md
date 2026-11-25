@@ -1,7 +1,5 @@
 # Rigidity of strictly decreasing block parameters
 
-Author: Worker 385.
-
 `Langlands.Exponents.blockParameterPermutationRigidity` proves exactly the
 published closed proposition
 `Langlands.Exponents.BlockParameterPermutationRigidityStatement`. The proof

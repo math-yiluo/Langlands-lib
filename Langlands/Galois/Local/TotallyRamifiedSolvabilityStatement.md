@@ -1,7 +1,5 @@
 # Solvability of totally ramified finite local Galois groups
 
-Author: Worker 109.
-
 `Langlands.PadicField.TotallyRamifiedGaloisSolvability.{u}` is a
 `Prop`-valued definition. For every natural number `p` with `[Fact p.Prime]`,
 every `F : PadicField.{u} p`, and every
@@ -64,7 +62,7 @@ Jean-Pierre Serre, *Local Fields*, translated by Marvin Jay Greenberg,
 Springer GTM 67 (1979), registered source `serre-1979-local-fields`, retained
 at `/home/taskhub/central-library/Serre--Local Fields--1979.pdf`, SHA256
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`.
-Worker 109 read the following original passages; PDF page numbers count
+The following original passages were read; PDF page numbers count
 from one:
 
 - I.4, printed pages 14–15 / PDF pages 22–23: relative ramification and
@@ -97,12 +95,13 @@ not an implemented Lean proof.
 
 ## Statement and proof boundary
 
-This module only defines the proposition. A subsequent proof must establish
+This module only defines the proposition; it is proved by
+`totallyRamifiedGaloisSolvability` in
+`Langlands.Galois.Local.TotallyRamifiedSolvabilityProof`. A proof must establish
 the canonical arithmetic comparison, identify the actual finite inertia
 subgroup with the full automorphism group under the stated equality, and
 obtain solvability from genuine ramification-filtration and group-theoretic
 results. It must use proved comparisons with the existing constructions;
 none of these bridges may be supplied as a new hypothesis of this target.
 Existing residue exactness or the canonical unramified criterion by itself
-does not prove inertia solvability. Independent acceptance of this statement
-will establish its fidelity as a theorem target, not its truth in Lean.
+does not prove inertia solvability.

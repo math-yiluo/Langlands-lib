@@ -1,7 +1,5 @@
 # Mapping proofs for actual affine scheme points
 
-Author: Worker 105.
-
 This file proves `AffineSchemeMapProperties`, the derived actual-scheme
 formulation of the affine mapping assertions in Brian Conrad, *Weil
 and Grothendieck approaches to adelic points* (December 31, 2011),

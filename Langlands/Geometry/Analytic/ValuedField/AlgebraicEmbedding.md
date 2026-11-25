@@ -1,7 +1,5 @@
 # Isometric embeddings of algebraic extensions
 
-Author: Worker 265.
-
 This internal helper combines the Library's uniqueness of the extension of an
 ultrametric absolute value with Mathlib's algebraic embedding theorem. Its
 purpose is to extend a prescribed geometric-point character through an algebraic

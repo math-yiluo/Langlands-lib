@@ -1,7 +1,5 @@
 # Invariant generating sections along a cartesian étale relation
 
-Author: Worker 3462.
-
 `Langlands.AlgebraicGeometry.Picard.EquivariantInvariantSectionStatement.{u}`
 quantifies, in the scheme universe `u`, over:
 

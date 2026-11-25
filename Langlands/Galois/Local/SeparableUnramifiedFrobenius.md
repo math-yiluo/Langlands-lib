@@ -1,7 +1,7 @@
 # Frobenius on the actual inertia fixed field
 
-Worker 220 derived this internal arithmetic adapter for the twisted chamber
-quotient construction from the imported Library and Mathlib results. It is not
+This internal arithmetic adapter for the twisted chamber quotient
+construction is derived from the imported Library and Mathlib results. It is not
 a separate assertion attributed to the Bruhat–Tits literature.
 
 Let `F` be any nonarchimedean local field in universe `u`, with its specified

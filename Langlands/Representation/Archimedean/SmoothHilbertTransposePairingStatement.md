@@ -1,6 +1,6 @@
 # Smooth Hilbert inverse-transpose pairing targets
 
-Worker 322. The three declarations in this module are unproved `Prop` definitions
+The three declarations in this module are unproved `Prop` definitions
 in `Langlands.Archimedean`. They formulate the analytic pairing prerequisite for
 the algebraic `ArchimedeanTransposePairingStatement`, using the vocabulary of
 [SmoothHilbert](SmoothHilbert.md). No smooth duality or character-rigidity theorem
@@ -107,4 +107,4 @@ The source theorem applies to smooth continuous duality; replacing it with the
 full algebraic dual would lose the required continuity claim. Nonarchimedean
 locally constant character theory supplies no archimedean category comparison.
 The present module imports no such theorem, global multiplicity-one theorem,
-or Rankin–Selberg argument. Analytic proofs of the targets are follow-on work.
+or Rankin–Selberg argument. Analytic proofs of the targets are not given here.

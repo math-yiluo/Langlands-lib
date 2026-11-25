@@ -1,7 +1,8 @@
 # Standard fixed-vector detection without fixed-dimension bounds
 
-Worker 1635, with Worker 1649's structural, category and universe transport
-adapters. This internal assembly constructs a chosen nonzero fixed vector in
+This internal assembly, which uses structural, category and universe transport
+adapters (among them `StandardFixedVectorStructure` and `FixedVectorUniverseLift`),
+constructs a chosen nonzero fixed vector in
 an actual nonzero subquotient and proves a conditional reduction to the unchanged
 `StandardFixedVectorSubquotientGenerationStatement`. It retains four global
 prerequisites and does not prove either unconditional VI.9.4 target.
@@ -73,10 +74,10 @@ or equivariance.
 All constructions use the published actual smooth representations, standard
 subgroups, normalized Jacquet functor, genuine subquotient relation and canonical
 rational-point topology. There is no admissibility, finite length, finite
-generation or fixed-space dimension premise. The remaining geometric,
-root-system, generalized-Jacquet and norm-kernel proof obligations retain their
-existing owners. This unit is an internal composition of the cited Lean results;
+generation or fixed-space dimension premise. The geometric,
+root-system, generalized-Jacquet and norm-kernel prerequisites are not proved
+here. This module is an internal composition of the cited Lean results;
 its declaration-level provenance does not assert a new translation from a source.
 
-Integration uses module-specific names for local instances. Their types, values,
-and local instance scopes are unchanged.
+Local instances have module-specific names. The naming leaves their types,
+values, and local instance scopes unchanged.

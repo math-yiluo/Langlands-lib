@@ -50,7 +50,7 @@ def continuousOrbitsObjects (hA : HasContinuousOrbits A) : Objects.{uF, uM, uV} 
 variable (hA : HasContinuousOrbits A)
 
 theorem continuousOrbitsObjects_representation_apply (g : Field.absoluteGaloisGroup F) :
-    (continuousOrbitsObjects A hA).val.representation g = (A.ρ g).hom :=
+    (continuousOrbitsObjects A hA).val.representation g = (A.ρ g).asHom.hom :=
   rfl
 
 /-- The dimension of the Galois representation is that of the space of the action. -/
@@ -122,8 +122,8 @@ theorem isotypicFixedVectorsι_comm (g : Field.absoluteGaloisGroup F)
     (x : fixedVectors (isotypicObj τ X.V).representation H) :
     (isotypicFixedVectorsι τ H X).hom.hom
         ((((fixedVectorsActionFunctor M (Field.absoluteGaloisGroup F) H).obj
-          ((isotypicActionFunctor τ (Field.absoluteGaloisGroup F)).obj X)).ρ g).hom x) =
-      (((fixedVectorsActionFunctor M (Field.absoluteGaloisGroup F) H).obj X).ρ g).hom
+          ((isotypicActionFunctor τ (Field.absoluteGaloisGroup F)).obj X)).ρ g).asHom.hom x) =
+      (((fixedVectorsActionFunctor M (Field.absoluteGaloisGroup F) H).obj X).ρ g).asHom.hom
         ((isotypicFixedVectorsι τ H X).hom.hom x) :=
   rfl
 
@@ -160,7 +160,7 @@ variable (hX : HasContinuousOrbits ((fixedVectorsActionFunctor M (Field.absolute
 theorem coe_isotypicFixedVectorsObjects_representation_apply (g : Field.absoluteGaloisGroup F)
     (x : fixedVectors (isotypicObj τ X.V).representation H) :
     ((isotypicFixedVectorsObjects τ H X hX).val.representation g x).1.1 =
-      SmoothRep.hom (X.ρ g) x.1.1 :=
+      SmoothRep.hom (X.ρ g).asHom x.1.1 :=
   rfl
 
 variable [NumberField F] {v : Global.FinitePlace F}
@@ -218,8 +218,8 @@ def multiplicityEvaluation (u : fixedVectors τ H) :
 theorem multiplicityEvaluation_comm (u : fixedVectors τ H) (g : Field.absoluteGaloisGroup F)
     (φ : τ.IntertwiningMap X.V.representation) :
     multiplicityEvaluation τ H X u
-        ((((multiplicityActionFunctor τ (Field.absoluteGaloisGroup F)).obj X).ρ g).hom φ) =
-      (((fixedVectorsActionFunctor M (Field.absoluteGaloisGroup F) H).obj X).ρ g).hom
+        ((((multiplicityActionFunctor τ (Field.absoluteGaloisGroup F)).obj X).ρ g).asHom.hom φ) =
+      (((fixedVectorsActionFunctor M (Field.absoluteGaloisGroup F) H).obj X).ρ g).asHom.hom
         (multiplicityEvaluation τ H X u φ) :=
   rfl
 
@@ -296,7 +296,7 @@ def multiplicityObjects : Objects.{uF, uM, max uU uV} F M :=
 /-- A Galois element acts on an intertwining map by composition with its action on `X`. -/
 theorem multiplicityObjects_representation_apply (g : Field.absoluteGaloisGroup F)
     (φ : τ.IntertwiningMap X.V.representation) :
-    (multiplicityObjects τ H X hgen hX).val.representation g φ = (SmoothRep.hom (X.ρ g)).comp φ :=
+    (multiplicityObjects τ H X hgen hX).val.representation g φ = (SmoothRep.hom (X.ρ g).asHom).comp φ :=
   rfl
 
 /-- The dimension of the Galois representation is that of the multiplicity space. -/
@@ -346,8 +346,8 @@ def heckeMultiplicityEvaluation (t : T) :
 theorem heckeMultiplicityEvaluation_comm (t : T) (g : Field.absoluteGaloisGroup F)
     (φ : T →ₗ[LevelHeckeAlgebra M H] fixedVectors X.V.representation H) :
     heckeMultiplicityEvaluation H T X t
-        ((((heckeMultiplicityActionFunctor H T (Field.absoluteGaloisGroup F)).obj X).ρ g).hom φ) =
-      (((fixedVectorsActionFunctor M (Field.absoluteGaloisGroup F) H).obj X).ρ g).hom
+        ((((heckeMultiplicityActionFunctor H T (Field.absoluteGaloisGroup F)).obj X).ρ g).asHom.hom φ) =
+      (((fixedVectorsActionFunctor M (Field.absoluteGaloisGroup F) H).obj X).ρ g).asHom.hom
         (heckeMultiplicityEvaluation H T X t φ) :=
   rfl
 
@@ -388,7 +388,7 @@ def heckeMultiplicityContinuousObjects : Objects.{uF, uM, max uT uV} F M :=
 theorem heckeMultiplicityContinuousObjects_representation_apply (g : Field.absoluteGaloisGroup F)
     (φ : T →ₗ[LevelHeckeAlgebra M H] fixedVectors X.V.representation H) :
     (heckeMultiplicityContinuousObjects H T X hX).val.representation g φ =
-      (HeckeMultiplicityGaloisRepresentation.fixedVectorsHeckeMap H (X.ρ g)).comp φ :=
+      (HeckeMultiplicityGaloisRepresentation.fixedVectorsHeckeMap H (X.ρ g).asHom).comp φ :=
   rfl
 
 /-- The dimension of the Galois representation is that of the Hecke multiplicity space. -/

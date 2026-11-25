@@ -35,7 +35,7 @@ Picard-zero universal property. The resulting isomorphism has target
 structure sheaf. The lemma
 `smooth_dualScheme_iff_of_openLocus` transports smoothness in both
 directions, and `smooth_dualScheme_of_smooth_openLocus` specializes the
-direction used in the eventual field-dual smoothness proof.
+direction from the open locus to the chosen dual.
 
 These comparisons retain the existing universal properties on **every**
 test scheme, including nonreduced schemes. The scheme isomorphism is
@@ -69,7 +69,8 @@ The constructions and lemmas do not establish ambient Picard
 representability, existence of a Picard-zero open, the geometric-family
 comparison, or smoothness of the identity component. In particular,
 they do not prove `FieldDualSchemeSmoothStatement`. That exact theorem
-remains the parent task's obligation.
+is proved separately, as `fieldDualSchemeSmooth` in
+`FieldDualSchemeSmoothProof`.
 
 The provenance is internal and derived: the new definitions specialize
 published universal-property constructions, and the accompanying lemmas
@@ -77,9 +78,6 @@ use those constructions and Mathlib's scheme, residue-field and
 smooth-morphism APIs. No original-source mathematical theorem beyond
 the imported Library results is claimed here.
 
-The transport proofs and the last two helpers are adapted from the
-carried shared draft of Workers 511 and 515 of the previous instance for task
-`4ef972f8-8ae6-4f1a-b440-857530de2ca6`, revision 1.
-Worker 1383 exposes the actual parameter isomorphisms and their family
-compatibility, adds the smoothness equivalence for an open locus, and
-prepares this focused module and explanation for review.
+This module exposes the actual parameter isomorphisms and
+their family compatibility, and adds the smoothness equivalence for an
+open locus.

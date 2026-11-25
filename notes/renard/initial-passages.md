@@ -4,8 +4,10 @@ This companion to [the coverage ledger](coverage.md) records the first source
 reading. Locators refer to the registered 9 July 2026 French edition identified
 there. Every row below remains open as a Renard correspondence or proof
 obligation unless its status explicitly says otherwise. Related short
-assertions are grouped for planning; later submission rows must identify their
-individual Lean declarations and acceptance/publication evidence.
+assertions are grouped for planning; the item ledgers ([Chapter I](item-ledger-i.md)
+and the following chapters) identify their individual Lean declarations and proof
+status. The statuses below are those of this first reading; they were not
+re-checked against the Library.
 
 “In-book” describes the source's argument, not a Lean proof already supplied.
 No proof-route correspondence is claimed for an unimplemented row. “External”
@@ -28,24 +30,24 @@ the completed module itself need not be nondegenerate. In the adjunction,
 | ID and source locator | Printed / PDF | Assertion or construction | Route and current obligation |
 | --- | --- | --- | --- |
 | I-open-finite | 5 / 11 | Finite-group complex representations correspond to unital modules over the group algebra. | Motivating assertion; cross-reference a checked general equivalence. No coverage claimed. |
-| I-open-actions | 5–6 / 11–12 | Left/right module categories, commuting bimodule actions, algebraic dual and evaluation; unital modules form a full subcategory. | Actual actions/categories needed. Left/right ambient categories are assigned to module task `de5a8c55-bfa0-4ff5-8110-c3a8696ed2f1`; bimodules and duality remain successors. |
+| I-open-actions | 5–6 / 11–12 | Left/right module categories, commuting bimodule actions, algebraic dual and evaluation; unital modules form a full subcategory. | Actual actions/categories needed. Left/right ambient categories belong to the module formalization; bimodules and duality are separate. |
 | I-open-splitting | 6 / 12 | As abelian groups, `M = eM ⊕ {m − e m}`; `e` acts as identity on the first summand and zero on the second. | Elementary splitting with actual maps remains open. The symbol `1` in `(1−e)M` is not an ambient ring unit. |
-| I-open-corner-action | 6 / 12 | `eAe` has unit `e`, and `eM` is a unital module over it. | Ring part is in Worker 323's candidate; the actual corner action/splitting bridge remains open. |
-| I.1.1-corner | 6 / 12 | Idempotents, corner `eAe`, membership iff `eae=a`, and equality with `eA ∩ Ae`. | Ring candidate `d68b4d83-2484-40a5-888e-368d81d825b0`; independent acceptance/publication pending. Verify the intersection assertion separately against its eventual names. |
+| I-open-corner-action | 6 / 12 | `eAe` has unit `e`, and `eM` is a unital module over it. | Ring part is in the ring formalization; the actual corner action/splitting bridge was open at this reading. |
+| I.1.1-corner | 6 / 12 | Idempotents, corner `eAe`, membership iff `eae=a`, and equality with `eA ∩ Ae`. | Ring formalization. Verify the intersection assertion separately against its Lean names. |
 | I.1.1-order | 6 / 12 | Order by corner inclusion; equivalence with `e∈fAf` and `e=fef`; then `ef=fe=e`. | In-book lemma (i). Candidate proposes `Idempotent.le_iff_sandwich` and `le_iff_mul`; publication pending. |
 | I.1.1-absorption | 6 / 12 | If `e≤f` and `ea=a`, then `fa=a`. | In-book lemma (ii); included in the same ring candidate. |
 | I.1.2-ring | 7 / 13 | Every finite family lies in one idempotent corner. | Candidate definition `Langlands.Algebra.IsIdempotented`; no accepted import yet. |
 | I.1.2-directed | 7 / 13 | Every finite family of idempotents has a common upper bound. | In-book elementary lemma; ring candidate. |
 | I.1.2-ring-union | 7 / 13 | The ring is the union of its corners. | Ring candidate includes the set-theoretic equality. |
 | I.1.2-ring-colimit | 7 / 13 | The ring is the directed colimit of the corner inclusions. | Separate open universal-property obligation, with nonunital transition maps; Appendix A.IV.2 cited. Union equality alone does not discharge it. |
-| I.1.2-module | 7 / 13 | Nondegeneracy means every vector is fixed by some idempotent. | Definition and actual full subcategory assigned to module task. |
+| I.1.2-module | 7 / 13 | Nondegeneracy means every vector is fixed by some idempotent. | Definition and actual full subcategory in the module formalization. |
 | I.1.2-module-colimit | 7 / 13 | Nondegeneracy is equivalent to the displayed directed-colimit description by `eM`. | Open categorical correspondence; identify the correct ambient category, since `eM` is not generally an ambient `A`-submodule. |
-| I.1.2-unital | 7 / 13, Remark 1 | A unital ring is idempotented; its unital modules are exactly the nondegenerate modules. | Ring assertion in ring candidate; elementwise module comparison in module task. |
+| I.1.2-unital | 7 / 13, Remark 1 | A unital ring is idempotented; its unital modules are exactly the nondegenerate modules. | Ring assertion in the ring formalization; elementwise module comparison in the module formalization. |
 | I.1.2-cofinal | 7 / 13, Remark 2 | A subsystem dominating every finite family of ambient idempotents suffices; the ring and module colimits can be taken over it. | Open definition/cofinality and colimit obligations. The source's condition is stronger than merely being directed internally. |
 | I.1.2-relative | 7 / 13, Remark 3 | Nondegeneracy relative to an internally directed family of idempotents. | Open relative definition and exact scope of its claimed generalization. |
-| I.1.2-part | 7 / 13 | Largest nondegenerate submodule `M_A`, described by the union of `eM`. | Actual submodule, maximality and nondegeneracy in module task; colimit description remains separate. |
+| I.1.2-part | 7 / 13 | Largest nondegenerate submodule `M_A`, described by the union of `eM`. | Actual submodule, maximality and nondegeneracy in the module formalization; colimit description remains separate. |
 | I.1.2-abelian | 7 / 13 | Nondegenerate modules are closed under submodules and quotients; their category is abelian. | Open statement/proof and Appendix A.VI.2 correspondence; fullness alone is insufficient. |
-| I.1.2-functor | 8 / 14 | An intertwiner restricts to nondegenerate parts, defining a functor. | Intrinsic maps and functor laws in module task. |
+| I.1.2-functor | 8 / 14 | An intertwiner restricts to nondegenerate parts, defining a functor. | Intrinsic maps and functor laws in the module formalization. |
 | I.1.2-exact | 8 / 14, Proposition | The nondegenerate-part functor is exact. | In-book lift-and-apply-idempotent proof; separate statement/proof after the categories and maps publish. |
 | I.1.3-topology | 8 / 14 | `A=A(1−e)⊕Ae`; `A(1−e)={a : ae=0}` is the left annihilator of `e`, equivalently the kernel of right multiplication by `e`. These subgroups give a translation-invariant uniformity and neighborhood basis; the zero/one pseudometrics give the same topology. | Open actual uniformity, basis, pseudometric and comparison constructions. Source cites [10] and [26] for general topology. |
 | I.1.3-limit | 8–9 / 14–15 | Transition `Af→Ae`, `b↦be`; inverse-limit compatible families; canonical continuous embedding of `A`. | Open constructions and universal-property/topology proofs. |
@@ -58,10 +60,9 @@ the completed module itself need not be nondegenerate. In the adjunction,
 | I.1.5-functor | 10 / 16 | Completion `M(A)→A-mod` acts on morphisms by coordinatewise extension. | Open actual functor, independent of the exactness theorem. |
 | I.1.5-adjunction | 10 / 16, Proposition and (I.1.5.1–2) | For nondegenerate `M`, the nondegenerate part of its completion recovers `M`; completion `M(A)→A-mod` is faithful and right adjoint to nondegenerate-part formation `A-mod→M(A)`. | Statement and opening proof read; proof continues on PDF 17. Do not claim the proof has been fully audited in this initial pass. |
 
-The cited ring candidate was rejected by independent review for an order-instance
-conflict in its transparent idempotent subtype; the current evidence and
-correction boundary are in the coverage ledger. Its proposed names below
-remain navigation leads, with no accepted import.
+The first ring formalization cited here had an order-instance conflict in its
+transparent idempotent subtype; the correction is recorded in the coverage
+ledger. Its proposed names below are navigation leads only.
 
 The completed ring in I.1.3 uses the right regular module. The subsequent
 module completion uses left modules. This orientation must remain visible in
@@ -78,7 +79,7 @@ ones.
 
 | ID and source locator | Printed / PDF | Assertion or construction | Route and current obligation |
 | --- | --- | --- | --- |
-| II.1.1-space | 30 / 36 | Exact t.d.-space predicate. | Definition/Mathlib correspondence task `09579afe-1e74-4559-ab2a-f6e74051da6a`; no candidate at publication. |
+| II.1.1-space | 30 / 36 | Exact t.d.-space predicate. | Definition/Mathlib correspondence; none recorded at this reading. |
 | II.1.1-group | 30 / 36 | Underlying t.d. topological group; equivalence with a compact-open subgroup basis at the identity. | Van Dantzig remains separate. Existing `Langlands.compactOpenSubgroupBasis` starts from `NonarchimedeanGroup` and weak local compactness; Hausdorffness must be accounted for in the source bridge. |
 | II.1.1-subspace | 30 / 36, Lemma (i) | A locally closed subspace is t.d. | In-book local compact-open restriction proof; open exact target/reuse audit. |
 | II.1.1-refinement | 30 / 36, Lemma (ii) | A compact set's open cover has a finite subordinate cover by pairwise disjoint compact opens. | In-book compactness and clopen refinement proof; open exact target/reuse audit. Cover members need not be contained in the compact set. |
@@ -117,7 +118,7 @@ propagated to unrelated rows or dropped from its own row.
 | V.1-valuation | 103 / 109 | Surjective additive valuation into `ℤ∪{∞}`; integer ring, maximal ideal and valuation-zero units. | Source refers to [21]. Reuse `Langlands.FML.ord`, `ord_nonneg_iff_mem_integer`, `ringOfIntegers` and `unitGroup`; surjectivity and remaining exact characterizations need checked bridges. |
 | V.1-uniformizer | 103 / 109 | Uniformizer of order one and unique unit-times-uniformizer-power expression for every nonzero element. | Source refers to [21]. Uniformizer API planned with normalization; unique decomposition remains a separate statement/proof or exact reuse bridge. |
 | V.1-residue | 103 / 109 | Actual finite residue field with prime-power cardinality. | Source refers to [21]. Audit Mathlib's actual residue field; do not replace it with an arbitrary finite field of a stipulated cardinality. |
-| V.1-absolute-value | 103 / 109 | Residue-normalized absolute value `q^(−v(x))`, with zero value at zero. | Definition/adapter task `36c76186-09b4-4977-a59f-e14ff6f85fcf`, explicitly reusing FML order. No construction accepted by this program yet. |
+| V.1-absolute-value | 103 / 109 | Residue-normalized absolute value `q^(−v(x))`, with zero value at zero. | Definition/adapter, explicitly reusing FML order. No construction recorded at this reading. |
 | V.1-topology | 104 / 110 | Absolute-value metric gives the field topology; powers of the maximal ideal give a compact-open additive neighborhood basis. | Open topology and ideal/lattice bridges, including depth conventions. Existing `FML.lattice` alone is not this theorem. |
 | V.1-Haar | 104 / 110 | Additive Haar measure, unit volume for the integer ring, and the integral change of variables by `|a|⁻¹`. | Reuse lead: `Langlands.HarmonicAnalysis.generalScalarHaarScalingStatement`; it assumes the normalization certificates and states a measure map. Exact source integral specialization remains open. |
 | V.1-algebraic-data | 104 / 110 | Algebraic/separable closures and the multiplicative algebraic group with its field points. | Actual definitions or checked existing models remain to be identified. |
@@ -143,8 +144,7 @@ books or registered their entire contents as required formalization work.
 
 ## Evidence still required
 
-For every open row, future updates must record the exact Lean construction or
-Prop-valued target, complete hypotheses, actual implemented proof route, task
-owner, independent review and current publication evidence. A definition task,
-an inspected module name, a successful local compile, or this reviewed planning
+For every open row, coverage requires the exact Lean construction or
+Prop-valued target, complete hypotheses and the actual proof in the Library.
+An inspected module name, a successful local compile, or this planning
 note cannot stand in for those mathematical results.

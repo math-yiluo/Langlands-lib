@@ -14,7 +14,8 @@ This is a derived interface to the actual constructions in
 `Langlands.AbelianScheme.Tate.PrimeAdic`. It uses the underlying group scheme
 `A.toGrp` and the actual homomorphism `AbelianScheme.groupHom f`; it introduces
 no independent choice of torsion groups or maps. The accessor and additivity
-pattern follows Worker 143's bundled integral Tate-module wrapper.
+pattern follows the bundled integral Tate-module wrapper (module
+`Langlands.AbelianScheme.Tate.AbelianScheme`).
 
 The mathematical source for the underlying construction is B. Edixhoven,
 G. van der Geer and B. Moonen, *Abelian Varieties*, preliminary draft built
@@ -121,5 +122,5 @@ definitions, and no comparison between different point fields is asserted.
 The module supplies the bundled abelian-scheme interface to the prime-adic
 construction. Finite étaleness, compactness, rank and freeness, joint scalar
 continuity, rational topology, monodromy, Weil pairings, and base-change
-comparison theorems remain separate obligations. The geometric conditions
+comparison theorems are not proved in this module. The geometric conditions
 stored by `AbelianScheme` are not used to infer any of these properties.

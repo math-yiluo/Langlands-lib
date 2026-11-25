@@ -1,7 +1,7 @@
 # Flattened normalized upper Jacquet comparison
 
-Authors: Worker 485 (proof draft), adapting Worker 429's published opposite
-comparison proof; Worker 1027 (submission and audit).
+The proof adapts the published opposite comparison proof
+(`Parabolic.FlattenedOppositeJacquetComparisonProof`).
 
 `Langlands.Parabolic.flattenedJacquetComparison` proves the published
 `FlattenedJacquetComparisonStatement.{uK,uF,uV}` from
@@ -68,7 +68,7 @@ published statement module, `Parabolic.FlattenedRefinementModulusCalculation`
 and 58 further published modules. Both files of each of the 60 dependency pairs
 agree byte for byte with Library commit
 `ced4d7320042961d7464496781184a2ce8f9a762`. A scan of the closure's Lean and
-Markdown files for the excluded task IDs and result names found no forward
+Markdown files for the excluded result names found no forward
 special square-integrability, ordered conversion, square-integrable or regular
 exhaustion, Langlands or strong-head analytic classification, tempered-block
 uniqueness, multisegment exhaustion, ordered strong-head existence, quotient

@@ -1,6 +1,6 @@
 # Cuspidal operator multiplicity one from comparison of actual Whittaker functions
 
-Worker 805. This is an internal reconstruction reduction for
+This is an internal reconstruction reduction for
 `Langlands.Automorphic.CuspidalOperatorMultiplicityOneStatement`, retaining the
 unproved `CuspidalWhittakerModelComparisonStatement`.
 
@@ -26,6 +26,10 @@ as `cogdell-2004-analytic-theory-gln`, `getz-hahn-2024-automorphic-representatio
 and `shalika-1974-multiplicity-one`. The registered October 2026 Getz–Hahn errata,
 pp.1–3, contain no change to Theorem 11.4.3.
 
-The exact unconditional target remains open. The analytic comparison premise must
-still account for the passage from the Library's finite, compact and differential
+The Library proves the exact target as `cuspidalOperatorMultiplicityOne`
+(module `Langlands.Automorphic.CuspidalOperatorMultiplicityOneProof`) without this reduction's
+premise: `cuspidalWhittakerBandReduction` compares the Whittaker functions only for unitary
+central characters, from band premises, and then applies this module's reconstruction lemma
+`CuspidalMultiplicityOne.realization_eq_of_whittaker_comparison`. A proof of the analytic
+comparison premise must account for the passage from the Library's finite, compact and differential
 operators to continuous Whittaker functionals on a suitable smooth completion.

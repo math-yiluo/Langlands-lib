@@ -1,7 +1,5 @@
 # Saturation after full recognition preserves the domain site
 
-Author: Worker 36.
-
 This module proves a further closure property of the constructed domain site.
 Starting with an actual indexed affinoid atlas `a`, put
 `R = a.saturatedAtlas`, `F = a.fullRecognitionAtlas = R.recognitionAtlas`
@@ -55,7 +53,7 @@ locus and this actual full-domain witness as an index of `R`.
 `range_fullRecognitionDomainPieceIndex` identifies the constructed
 saturated chart's range with precisely that piece locus. Its chosen
 saturated chart algebra need not be definitionally the refinement's
-quotient algebra; this unit uses its literal range, while the refinement
+quotient algebra; this module uses its literal range, while the refinement
 module retains the quotient algebras and bounded maps explicitly.
 
 `fullRecognitionDomainLocus_isOriginalChartDomain` applies the finite
@@ -109,7 +107,7 @@ are independent; no sheafification, limits or abelian hypothesis is needed.
 The field, ambient-space and original-index universes remain independent.
 The field is complete and ultrametric, including trivial valuations.
 Empty domains, empty finite covers, zero algebras and nonreduced algebras
-are allowed. The unit proves domain-site invariance under the specified
+are allowed. The module proves domain-site invariance under the specified
 additional saturation. It does not establish equality of maximal affinoid
 chart families, recognition of the new domains' entire section algebras,
 structure-sheaf comparison, unrestricted analytic factorization or the

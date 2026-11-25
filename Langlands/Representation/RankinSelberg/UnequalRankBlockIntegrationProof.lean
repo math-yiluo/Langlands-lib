@@ -8,8 +8,7 @@ import Mathlib.MeasureTheory.Integral.Prod
 /-!
 # Block matrix and integration helpers for unequal-rank JPSS integrals
 
-Worker 180 authored the nine helper proofs in the adjacent-block draft.
-Worker 52 extracted them into this focused module and assembled the exact
+This module collects nine helper proofs and assembles the exact
 published aggregate. The representation carrier stays algebraic, support
 remains an explicit premise, and every measure is the supplied measure.
 -/

@@ -1,12 +1,11 @@
 # The Hecke characters of a Galois type decomposition and their global relation
 
-Author: Worker 5093. This is a supporting unit for task
-`92a3d086-a5ad-476f-9fd9-aa9d4eaa3778`, which must prove
+This is a supporting module for the proof of
 `Langlands.LocalFactor.NonabelianBrauer.KernelCompatibilityStatement`. In Deligne's global
 argument (1973, proof of Lemma 4.12) the local relation among the characters `χ_g` of the
 generators is lifted to a relation among Hecke characters `Λ_g` of global fields `𝕃_g`. For this
 lift, each `Λ_g` is twisted by a global character `α` of the base field `k`, so that its local
-behaviour can be controlled at finitely many auxiliary places. This unit puts the published
+behaviour can be controlled at finitely many auxiliary places. This module puts the published
 global relation `globalRelation` (module `Langlands.LocalFactor.BrauerKernel.GlobalRelation`) into
 that Hecke-character form.
 
@@ -28,7 +27,7 @@ Everything is in `Langlands.LocalFactor.NonabelianBrauer`. Throughout, `D` is a
   `continuousReciprocityCharacter_comp_restrictionInclusion` applies, because
   `transferNormCompatibilityStatement` (proved in the Library) holds for every tower. Then
   `continuousReciprocityCharacter_mul` is used, together with `normComp_normPower`
-  (`‖·‖^t ∘ N = ‖·‖^t`, from the unit `PlaceNorm`).
+  (`‖·‖^t ∘ N = ‖·‖^t`, from the module `PlaceNorm`).
 - `globalRelation_generatorHecke`: let `gs : Fin n ≃ z.support` enumerate the support of `z`.
   Suppose Hecke characters `Θ₁ g`, `Θ₂ g` have as reciprocity characters the inflated characters
   `globalCharacter D c k K' θ h g (D.θ_i g)`. Then for every Hecke character `α` of `k`,
@@ -51,7 +50,7 @@ Everything is in `Langlands.LocalFactor.NonabelianBrauer`. Throughout, `D` is a
   component (`HasPrescribedInfinityComponent 1`), and let the reciprocity character of `Θ` be an
   inflated character. Then `generatorHecke D k K' θ g α t Θ` has the archimedean components of
   `‖·‖^t`. Proof: the archimedean components are multiplicative. The component of `α ∘ N` is
-  trivial (`normComp_infiniteComponent_eq_one`). The component of `Θ` is trivial by the unit
+  trivial (`normComp_infiniteComponent_eq_one`). The component of `Θ` is trivial by the module
   `ArchimedeanTrivial` (`infiniteComponent_eq_one_of_isTotallyReal`), whose hypothesis is the
   previous item.
 

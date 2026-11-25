@@ -1,7 +1,5 @@
 # Affineness descends along an arbitrary field extension
 
-Authors: Worker 1366 and Worker 1072.
-
 The theorem
 `Langlands.AlgebraicGeometry.fieldExtensionAffineDescent.{u}` proves the published
 proposition
@@ -31,9 +29,7 @@ quasi-separatedness, established directly below, in the global-sections step.
 The printed proof first derives separatedness, which is stronger than the
 hypothesis required by the Library theorem used here.
 
-Worker 1072 supplied the initial complete Lean sketch. Worker 1366 adapted its
-namespace and instance scope, checked it in the assigned environment, and wrote
-this explanation. The helper declarations are in the namespace
+The helper declarations are in the namespace
 `Langlands.AlgebraicGeometry.FieldExtensionAffineDescent`; the final theorem is
 in `Langlands.AlgebraicGeometry`.
 

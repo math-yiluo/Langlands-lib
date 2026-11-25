@@ -1,6 +1,6 @@
 # A basis of the endomorphisms of the induced progenerator
 
-Author: Worker 5226. This is an internal construction with supporting results. It was derived for the third conjunct (the free-module conjunct) of `InducedProgeneratorEndFreeStatement`, the first Lemma of Renard VI.10.4 (printed pp.209–210 / PDF pp.215–216). Reference: David Renard, *Représentations des groupes réductifs p-adiques*, French version dated 9 July 2026, registered as `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
+This is an internal construction with supporting results. It was derived for the third conjunct (the free-module conjunct) of `InducedProgeneratorEndFreeStatement`, the first Lemma of Renard VI.10.4 (printed pp.209–210 / PDF pp.215–216). Reference: David Renard, *Représentations des groupes réductifs p-adiques*, French version dated 9 July 2026, registered as `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 
 The main definition `inducedProgeneratorEndBasis` and the theorem `inducedProgeneratorEnd_expansion` take two hypotheses that are not proved in this file: `Π_D` is projective, and `Π_D` is supercuspidal. See "Hypotheses not proved here" below.
 
@@ -12,7 +12,7 @@ Renard's Lemma says that `R_Ω = End_G(i_P Π_D)` is a free right module of rank
 2. By (V.4.3.3), VI.5.3(iii) and the definition of `W(D)`, `r_D i_P Π_D` has a filtration with successive quotients `w·Π_D`, `w ∈ W(D)`.
 3. All `w·Π_D` are projective, so the filtration splits. Renard then asserts that `w·Π_D ≃ Π_D` for `w ∈ W(D)`, so `R_Ω ≃ R_D^{|W(D)|}`.
 
-This file reaches the same conclusion by a different route, devised by the author. It is not a formalization of Renard's argument.
+This file reaches the same conclusion by a different route. It is not a formalization of Renard's argument.
 
 1. It uses the first adjunction `r_P ⊣ i_P` (`leviFirstAdjunction`) instead of second adjointness. This identifies `R_Ω` with `Hom_M(r_P i_P Π_D, Π_D)`: the Jacquet functor is taken along `P`, not `P̄`, and the Hom arguments are reversed. The transport is `inducedEndBasis` (`Langlands/Representation/Filtration/InducedEndBasis.lean`).
 2. It does not use the block projection `r_D`. It filters the whole functor `r_P ∘ i_P` by the geometric lemma, with one step for every double coset in `P(F)\G(F)/P(F)`: `leviJacquetSupportFiltration`, with graded pieces from `representedGeometricLemmaSupportGraded_of_orbitComparison`. For the double cosets of `W(D)`, the representatives are chosen to be points of `W(D)` themselves.

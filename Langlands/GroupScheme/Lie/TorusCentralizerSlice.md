@@ -1,14 +1,12 @@
 # A dense adjoint slice through the centralizer of a torus Lie algebra
 
-Author: Worker 1630.
-
 This derived helper module proves the following. Let `G` be a smooth affine
 group over a field `k` and `T₀ ⟶ G` a homomorphism from a torus. Take the
 centralizer `𝔷` of `Lie(T₀)` in `Lie(G)`. Then the adjoint slice map
 `G × 𝔷 ⟶ Lie(G)`, `(g, Z) ↦ Ad(g) Z`, has dense range. The project's route
 to unirationality of the scheme of maximal tori (SGA 3, Exposé XIV) uses this
-dominance statement. Worker 1420 requested the existential form
-`exists_torusCentralizerSlice` for that route. The proof combines
+dominance statement. The existential form
+`exists_torusCentralizerSlice` is stated for that route. The proof combines
 `TorusRegularElement`, which gives a regular element over a splitting field,
 with `AdjointSliceExtension`, which gives tangent-space dominance from a point
 over a field extension. No external theorem is asserted.

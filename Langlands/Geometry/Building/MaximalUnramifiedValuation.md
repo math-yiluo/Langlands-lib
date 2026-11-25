@@ -1,6 +1,6 @@
 # Integer normalization on the actual maximal unramified field
 
-Worker 60. This derived adapter uses the existing actual
+This derived adapter uses the existing actual
 `LocalGalois.Separable.inertiaFixedField F` and its published induced spectral
 valuation. The base field has arbitrary universe and characteristic, with the
 existing nonarchimedean local-field structures. No local-field, completeness,
@@ -50,7 +50,7 @@ The value-group construction here is derived from the published arithmetic
 and Mathlib's intrinsic value-group APIs, rather than a claimed transcription
 of a separate source theorem.
 
-This unit constructs the valuation and comparison maps. It supplies no
+This module constructs the valuation and comparison maps. It supplies no
 root-datum apartment or V6 data and asserts no inhabitance of building data,
 AS5, V7, building existence, compactness, integral-model existence, or
 unramified descent.

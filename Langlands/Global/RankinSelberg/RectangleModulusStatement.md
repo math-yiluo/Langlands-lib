@@ -1,7 +1,8 @@
 # The modulus of right multiplication on adelic rectangular matrices
 
 `Langlands.Global.RankinSelbergGlobal.RectangleMeasureModulusStatement.{u}`
-is a Prop-valued statement. No proof is supplied.
+is a Prop-valued statement. No proof is supplied in this module; the Library proves it as
+`rectangleMeasureModulus` (module `RectangleModulusProof`).
 
 Provenance: derived. It is the special case `E = M_{k×m}(F)`,
 `a = (x ↦ x g)` of Weil's computation of the module of an adelic linear
@@ -21,9 +22,9 @@ where `g` is turned into a matrix through
 
 `ENNReal.ofReal ((detNorm F m g ^ k)⁻¹) • rectangleMeasure F k m`.
 
-Here `detNorm F m g` is the idelic norm `|det g|_𝔸 > 0` (published module
+Here `detNorm F m g` is the idelic norm `|det g|_𝔸 > 0` (module
 `UnequalIntegrals`), and `rectangleMeasure F k m` is the additive Haar
-measure on `M_{k×m}(𝔸)` of the published module `WhittakerIntegrals`,
+measure on `M_{k×m}(𝔸)` of the module `WhittakerIntegrals`,
 transported from the Library's covolume-one two-block unipotent Haar
 measure. The matrices carry the Borel σ-algebra, as in `WhittakerIntegrals`.
 
@@ -51,8 +52,8 @@ applies to the Library's normalization `rectangleMeasure`.
 
 ## Role
 
-Task 6838 needs this Jacobian to prove the dual expansion E'
-(`DualProjectionWhittakerExpansion`, published module `UnfoldingDual`).
+The proof of the dual expansion E' for actual unequal-rank cuspidal pairs
+(`DualProjectionWhittakerExpansion`, module `UnfoldingDual`) needs this Jacobian.
 There, the change of variables `x ↦ x γ h` on `M_{k×m}(𝔸)`, with
 `k = n - m - 1`, produces the factor `|det h|^k` that matches the exponent
 `|det h|^{k/2}` of the dual projection against the normalization of the

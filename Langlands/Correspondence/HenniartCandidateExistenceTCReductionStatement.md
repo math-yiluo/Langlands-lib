@@ -1,10 +1,5 @@
 # Henniart's candidate existence from its global inputs over totally complex fields
 
-Author: Worker 0. Statement contribution to Task 0
-(`69dd20b3-6a77-44aa-b779-32391843c8dd`), revision 1, as decided in the
-operator's answer `81ed24709e7050068786116ca6613260` (Option A) to request
-`9b5f630f11af591aae45e2157df43d94`.
-
 This module declares the **statement**
 `Langlands.Henniart.CandidateExistenceTCReductionStatement`, with universe parameters
 `uK uW uP uE uQ`. It is a proposition definition, and the file contains no proof of
@@ -20,7 +15,7 @@ The proposition is an implication with five hypotheses:
 
 1. `Global.Harris.Proposition48Statement.{uK, 0, 0, 0, uP}`: Harris (1998),
    Proposition 4.8. Unchanged.
-2. `ClassField.Global.RelativeWeilGroup.AssociatedSupercuspidalInductionTCStatement.{0, uW, uP, uP}`:
+2. `ClassFieldTheory.Global.RelativeWeilGroup.AssociatedSupercuspidalInductionTCStatement.{0, uW, uP, uP}`:
    Henniart (2000), Théorème 2.4, for totally complex number fields in `Type`
    (`Langlands.Automorphic.AssociatedFactorTCStatement`). It replaces
    `AssociatedSupercuspidalInductionStatement.{0, uW, uP, uP}`.
@@ -53,7 +48,7 @@ Each totally complex hypothesis follows from the corresponding unrestricted one 
 paired Markdown of `AssociatedFactorTCStatement` and `PoleComparisonTCStatement`, §3).
 So this statement implies the published `CandidateExistenceReductionStatement` at the
 same universe levels: given the unrestricted inputs, restrict hypotheses 2, 4 and 5
-and apply this statement. A private development check of Worker 0 compiled that
+and apply this statement. A development check outside the Library compiled that
 implication. The converse is not claimed. In the program of Henniart's global
 construction this statement can therefore take the place of the published reduction:
 its conclusion is the same, and its inputs are needed only over totally complex
@@ -62,8 +57,8 @@ fields.
 ## 3. Why the restriction is harmless
 
 The globalization of Henniart (2000) §2.7 and Théorème 3.1, which uses Harris (1998)
-§4, produces a CM base field `F` and a finite Galois extension `E/F`. In the expected
-proof below the global inputs are applied only at this pair. A CM field is totally
+§4, produces a CM base field `F` and a finite Galois extension `E/F`. In the
+route below the global inputs are applied only at this pair. A CM field is totally
 complex (Mathlib `NumberField.IsCMField.isTotallyComplex`), and so is every finite
 extension of a totally complex field (`NumberField.isTotallyComplex_of_algebra`).
 Inside the published proof of the globalization step, the Théorème 2.4 hypothesis is
@@ -74,12 +69,12 @@ applied only in `exists_witnessedGenerator_realizeExact`
 `[NumberField.IsTotallyComplex F]` is already an instance argument. So the totally
 complex hypotheses suffice.
 
-## 4. The expected proof
+## 4. A route of proof
 
 The route is that of `HenniartCandidateExistenceReductionStatement.md` §4, with one
 change. The published `RelativeGaloisGlobalization` returns `F`, `E`, `v`, `h` and `f`
-by an existential, and does not record that `F` is totally complex. So the
-proof needs:
+by an existential, and does not record that `F` is totally complex. So this
+route needs:
 
 - a variant of `RelativeGaloisGlobalization` whose existential also records
   `NumberField.IsTotallyComplex F` (the base field produced is CM, so this costs
@@ -96,8 +91,10 @@ proof needs:
   otherwise unchanged; the last one proves the variant of the globalization.
 
 With the instance for `F` in hand, steps 1–5 of the original route apply verbatim,
-with hypotheses 2, 4 and 5 used at the totally complex field `F`. The variant and the
-lemma copies can stay internal to the proof task. This unit proves nothing.
+with hypotheses 2, 4 and 5 used at the totally complex field `F`. This module proves
+nothing. The Library proves the statement as `candidateExistenceTCReduction`
+(`HenniartCandidateExistenceTCReductionProof`), which imports the proof of the
+exact-stabilizer form (`HenniartCandidateExistenceExactStabilizerTCReductionProof`).
 
 ## 5. Source correspondence
 
@@ -120,7 +117,7 @@ p-adic field, n < p*, Invent. Math. 134 (1998), 177–210
 ## 6. Scope
 
 - Hypotheses 1 and 3 are unchanged. The proof of hypothesis 1 from Harris's inputs is
-  a separate question; the operator's answer `81ed2470` asks first whether its
+  a separate question; one point of it is whether its
   rigidity input can be proved without archimedean clauses.
 - The conclusion concerns candidates only. Independence of choices and the final
   correspondence are separate targets.

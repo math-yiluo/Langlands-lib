@@ -1,7 +1,5 @@
 # Explicit skew symmetry of Kummer carry classes
 
-Author: Worker 1691.
-
 `KummerCarry.skewCochain` constructs the degree-one cochain
 `r_chi(g) beta + r_psi(g) alpha + r_chi(g) r_psi(g) zeta`, where
 `r_chi(g)` and `r_psi(g)` are the integer standard representatives of the two

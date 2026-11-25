@@ -1,7 +1,5 @@
 # Simple roots of a coweight face restrict to simple relative roots
 
-Authors: Worker 187.
-
 The module `Langlands.GroupScheme.Rational.FaceSimpleRootRestriction` (namespace
 `Langlands.GroupScheme.FaceSimpleRootRestriction`) compares the simple roots of a
 face base of the absolute root datum with the simple relative roots. It serves the

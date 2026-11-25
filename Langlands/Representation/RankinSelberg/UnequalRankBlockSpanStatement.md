@@ -1,7 +1,7 @@
 # Equality of adjacent unequal-rank JPSS Laurent spans
 
-Author: Worker 46. Worker 12 specified the focused interface for the
-common-generator proof. The module defines
+The interface is focused on its use in the common-generator proof
+(`UnequalRankCommonGeneratorProof`). The module defines
 `Langlands.RankinSelberg.UnequalRankAdjacentBlockSpanStatement.{uF,uV,uW} F T n r`,
 a proposition target, using only the published definitions imported through
 [AnalyticStatement](AnalyticStatement.md). It supplies no proof of the target.
@@ -163,5 +163,6 @@ denominator, normalized-generator existence or a functional equation.
 It assumes none of the analytic-existence or common-generator targets.
 The source's compact-support, smoothness, averaging and Fourier arguments,
 and the normalization transport just explained, remain proof obligations
-for a later exact-target proof. No supporting analytic definitions or
+for the exact-target proof, `unequalRankAdjacentBlockSpan` in
+`UnequalRankBlockSpanProof`. No supporting analytic definitions or
 proofs are introduced here.

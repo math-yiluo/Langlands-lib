@@ -75,14 +75,9 @@ Stacks constructs it in the proof of Lemma 99.3.9. That proof first chooses
 an approximation `P → M` of the arbitrary coherent source by a perfect
 complex (Derived Categories of Spaces, Theorem 75.14.7). It then uses the
 perfectness and base-change property of
-`Rf_* R𝓗om(P, N)`. The Library has no derived Hom of complexes of module
-sheaves, no perfect complexes on schemes and no approximation theorem. The
-project operator has ruled (request `61bdc800790e52ebb9afb4f41711657e`,
-confirming request `8c746399` of 2026-11-02) that this foundation chain is
-not to be started now. The general case stays a tracked goal.
+`Rf_* R𝓗om(P, N)`.
 
-The following routes were examined while working on task
-`a304cfdd-31dc-4177-bd36-9565e2239a7a` and do not give a proof for an
+The following routes were examined and do not give a proof for an
 arbitrary finitely presented source without new foundations:
 
 - **Global locally free presentation.** EGA III 7.7.8 represents

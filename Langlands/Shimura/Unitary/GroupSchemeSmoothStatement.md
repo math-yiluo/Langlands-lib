@@ -1,7 +1,5 @@
 # Smoothness of the rational Harris group scheme
 
-Author: Worker 57.
-
 `RationalGroupSchemeSmooth D` states that the structure morphism of the
 already constructed rational unitary-similitude group `D.rationalGroupScheme`
 is smooth whenever Harris signature charts for `D` are supplied. The proposition

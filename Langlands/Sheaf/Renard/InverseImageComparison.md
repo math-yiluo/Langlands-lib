@@ -1,6 +1,6 @@
 # Ordinary inverse image underlying action-sheaf inverse image
 
-Worker 151, Task 5297. Derived comparison construction supporting Renard
+Derived comparison construction supporting Renard
 III.3.2, printed p.84 / PDF p.90, the restriction-functor paragraph and its
 point-restriction sentence, French edition dated 9 July 2026. Registered source:
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
@@ -9,7 +9,7 @@ point-restriction sentence, French edition dated 9 July 2026. Registered source:
 Renard uses ordinary restriction of the underlying complex sheaf. The existing
 `SectionActions.actionInverseImage` implements equivariant inverse image by
 left Kan extension and sheafification on the published transport sites. This
-unit constructs a natural comparison with Mathlib's ordinary sheaf inverse
+module constructs a natural comparison with Mathlib's ordinary sheaf inverse
 image. It is an internal comparison of those existing constructions, rather
 than a separately printed assertion or a replacement inverse-image object.
 
@@ -62,7 +62,7 @@ naturally isomorphic to ordinary inverse image of the original underlying
 sheaf. The comparison applies to general continuous equivariant maps and
 hence to the subgroup-space inclusions used for restriction in III.3.2,
 after the existing subgroup restriction. Smoothness of the entire inverse
-image is supplied separately by `SmoothInverseImage`. This unit does not yet
+image is supplied separately by `SmoothInverseImage`. This module does not
 construct the ordinary inverse-image stalk isomorphism or its compatibility
 with the original stabilizer representation, the singleton equivalence,
 induction or coinvariant sheaves, or any of the main III.3 theorem statements.

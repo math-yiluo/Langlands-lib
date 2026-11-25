@@ -1,7 +1,5 @@
 # Local Kneser–Tits in terms of rational parabolic radicals
 
-Authors: Worker 1756.
-
 `Langlands.GroupScheme.LocalKneserTitsStatement.{u}` is a proposition
 definition, with arbitrary universe `u`. It states the local Kneser–Tits
 theorem for an isotropic almost-simple simply connected group, expressed

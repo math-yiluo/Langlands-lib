@@ -115,7 +115,7 @@ A threshold depending on `Ï‰` is therefore never used: `t` is produced from `Kâ‚
 
 ## Check
 
-`lean_check` with environment `5c94c648-e8dc-4002-a50a-071ebf3f6096` (Lake build of the five
+`lean_check` (Lake build of the five
 modules over Library `ecb96e554fed652972a5c0308d69b041f6bc54e4`): 0 errors, 0 warnings; the
 theorem has level parameters `u, uV` and axioms `propext`, `Classical.choice`, `Quot.sound`.
 

@@ -1,6 +1,6 @@
 # Steinberg irreducibility on binary homogeneous polynomials
 
-This internal derived unit constructs `binaryHomogeneousEquiv m`, an actual
+This internal derived module constructs `binaryHomogeneousEquiv m`, an actual
 `Representation.Equiv` from the special-linear action on the entire submodule
 `MvPolynomial.homogeneousSubmodule (Fin 2) R m` to `binaryRepresentation m`,
 for every commutative ring `R` and natural degree `m`. Its underlying linear

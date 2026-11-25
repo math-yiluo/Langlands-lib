@@ -1,6 +1,6 @@
 # The exponent theorem from Jacquet admissibility and quotient compactness
 
-Author: Worker 1670. This is an internal conditional assembly of the published
+This is an internal conditional assembly of the published
 represented-parabolic exponent results. It uses the existing statements and
 constructions without changing them.
 

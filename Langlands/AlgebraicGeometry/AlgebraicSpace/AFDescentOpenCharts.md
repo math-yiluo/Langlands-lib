@@ -1,7 +1,5 @@
 # Open AF models conditional on quasi-affine-source AF descent
 
-Author: Worker 133.
-
 This internal module proves a conditional reduction from a finite surjection
 with AF scheme source to scheme representability of the target. Every
 construction and theorem takes the explicit premise

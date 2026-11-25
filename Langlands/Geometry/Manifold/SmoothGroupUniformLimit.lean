@@ -148,12 +148,12 @@ theorem contMDiff_of_tendstoLocallyUniformly_invariantDerivatives
         ContinuousLinearMap.id ℝ (TangentSpace 𝓘E (e 1)) := hide
     rw [hide'] at hc
     change mvfderiv 𝓘E (v ∘ e.symm) (e 1) X = mvfderiv 𝓘E v 1 X at hc
-    rw [← mvfderiv_eq_fderiv]
+    rw [mvfderiv_eq_fderiv, ContinuousLinearMap.comp_apply] at hc
     exact hc
   have hfAt (i : ι) : fderiv ℝ (f i a ∘ ψ) (e 1) X = f i (step X a) x :=
     (htrans (f i a) (hs i a)).trans (congrFun (hder i a X) x)
   have ht := (hD a).1.tendsto_at he
-  have htX := ((ContinuousLinearMap.apply (E := E) ℝ ℂ X).continuous.tendsto _).comp ht
+  have htX := ((ContinuousLinearMap.apply (E' := E) ℝ ℂ X).continuous.tendsto _).comp ht
   have hDx := ((hD a).2 (e 1) he).fderiv
   have htarget : (∑ j, (L j (e 1)).smulRight (g (step (Y j) a) (ψ (e 1)))) (X : E) =
       groupDirectionalValue 𝓘E X (g a) x :=

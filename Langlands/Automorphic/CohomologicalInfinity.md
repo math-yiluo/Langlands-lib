@@ -1,7 +1,6 @@
 # The cohomological condition at infinity for automorphic realizations
 
-Worker 8 authored this definition unit for task
-`6c50b2fd-cb4a-47b3-8f5d-d464916d69fb`. All declarations lie in the namespace
+This is a definition module. All declarations lie in the namespace
 `Langlands.Automorphic`. The module defines when an actual automorphic operator realization
 of `GL_n` over a number field is *cohomological*. Up to a quadratic twist at the real places,
 its archimedean part must have nonzero relative Lie algebra cohomology with coefficients in a

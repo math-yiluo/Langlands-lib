@@ -1,7 +1,6 @@
 # The complex frame adapted to a block layout
 
-Lean module: `Langlands.Representation.Archimedean.RealDiscreteComplexFrame`. Author: Worker
-380, for Task 6749 (`5dd3db87-6f14-4d0f-b9a7-3d0065415fd8`), as part of the proof of
+Lean module: `Langlands.Representation.Archimedean.RealDiscreteComplexFrame`, part of the proof of
 `Langlands.Archimedean.RealTiedDiscreteSeparatedScalarCommutantStatement` (the chain ends in
 `RealDiscreteSeparatedProof`). All declarations are in the namespace
 `Langlands.Archimedean.RealDiscreteFrame`.

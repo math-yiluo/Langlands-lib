@@ -1,7 +1,5 @@
 # Elementary tools for quaternionic forms and their Witt indices
 
-Author: Worker 118.
-
 This internal helper module develops the actual definitions in
 `Langlands.GroupScheme.Quaternionic.Forms`. It works over any division algebra
 with a first-kind involution, for a finite index type, in arbitrary universes.

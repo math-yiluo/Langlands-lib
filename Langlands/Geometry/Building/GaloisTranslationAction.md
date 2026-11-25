@@ -1,7 +1,7 @@
 # Actual Galois actions on reduced translations
 
 For fields `k` and `K` of the same universe and an algebra structure, this
-internal unit extends the published ordinary Galois action on the
+module extends the published ordinary Galois action on the
 cocharacter lattice of a scalar-extended commutative group scheme `T`.
 The original `T` need not be split, and the coefficient extension need
 not be finite or Galois.
@@ -33,7 +33,7 @@ existing `rootForm` under the constructed root and translation actions.
 
 This is derived linear and quotient algebra from the named published
 lattice pairing and actual-root transport results. No external
-existence theorem is claimed. In particular, the unit chooses no
+existence theorem is claimed. In particular, the module chooses no
 stable maximal torus, origin, root-function valuation class or
 apartment. It constructs no normalizer transport, root-subgroup
 transport, metric, model fixed point or descent preimage. Those remain

@@ -1,7 +1,5 @@
 # Structural premises of Proposition II.4.5 at the joint special compact subgroup
 
-Author: Worker 762, task `79ac4c17-fe39-4c1c-bb7f-f0d531569c87` (Task 7438, revision 1).
-
 Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalSpecialCompactConstantTermPremises`,
 namespace `Langlands.HarishChandraSchwartz`.
 

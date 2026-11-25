@@ -1,6 +1,6 @@
 # Smooth-vector density in the original full cusp L2 space
 
-Worker 116 states
+This module states
 `Langlands.Automorphic.GroupSchemeFunctions.GroupSchemeFullAEL2SmoothDensityStatement`
 for a number field in arbitrary universe `u` and an actual connected
 reductive group scheme. It keeps the affine locally finite-type hypotheses,

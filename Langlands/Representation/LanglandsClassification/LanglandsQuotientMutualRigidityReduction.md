@@ -1,6 +1,6 @@
 # Langlands quotient injectivity from two-sided opposite intertwining rigidity
 
-Worker 63, Task 5295. Module
+Module
 `Langlands.Representation.LanglandsClassification.LanglandsQuotientMutualRigidityReduction`,
 namespace `Langlands.Aubert.General.RepresentedParabolic`.
 
@@ -99,7 +99,8 @@ run for both triplets.
 ## Qualifications
 
 The rigidity proposition, `LeviSecondAdjointnessStatement` and
-`LanglandsTripletOppositeKernelStatement` remain unproved here. A proof of the
-rigidity proposition is planned by Worker 63 for Task 5295. It will use the
+`LanglandsTripletOppositeKernelStatement` remain unproved here. The rigidity
+proposition is proved as `langlandsTripletMutualOppositeIntertwiningRigidity`
+(module `LanglandsQuotientMutualRigidityProof`). Its proof uses the
 geometric lemma, the tempered exponent cone, a Weyl-invariant form comparison of
 dominant parameters, and the identity support piece.

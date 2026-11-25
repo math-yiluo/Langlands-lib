@@ -1,7 +1,5 @@
 # Statement: connected fibres of dynamic subgroups without smoothness
 
-Worker 3483.
-
 `Langlands.GroupScheme.DynamicBaseConnectedStatement.{u} : Prop` is a
 statement-only proposition definition. This module proves no theorem and
 introduces no axiom. It imports the actual dynamic subgroup functors from

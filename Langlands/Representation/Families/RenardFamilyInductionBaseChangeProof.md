@@ -1,7 +1,6 @@
 # Renard VI.8.2: base change commutes with induction of families
 
-Authors: Worker 1812 (the compact-quotient reduction, from the shared draft of
-Task 5188, revision 1) and Worker 5188 (the unconditional assembly). Module
+Module
 `Langlands.Representation.Families.RenardFamilyInductionBaseChangeProof`,
 namespace `Langlands.Renard.AlgebraicFamily`.
 
@@ -31,7 +30,7 @@ is clearly an isomorphism. The VI.8.3 remark (PDF p. 197, "le point crucial est
 la compacité de `P\G`, et donc la finitude de `P\G/K`") names the ingredient
 that makes `Ω` finite. The implemented argument below follows this route; the
 details (VI.8.1 averaging for the fixed vectors of a tensor product, injectivity
-of evaluation on a transversal) are the authors' implementation.
+of evaluation on a transversal) are this module's implementation.
 
 ## Proof
 

@@ -1,7 +1,7 @@
 # Closed normal restriction zero detection: proof
 
 The module `Langlands.Cohomology.Continuous.ClosedSubgroupDescentProof` proves
-the published proposition
+the proposition
 `Langlands.Continuous.ClosedNormalRestrictionZeroDetection.{u}` from
 `Langlands.Cohomology.Continuous.ClosedSubgroupDescentStatement`. The final
 theorem `Langlands.Continuous.closedNormalRestrictionZeroDetection` has exactly
@@ -11,7 +11,7 @@ imports.
 It imports three modules:
 
 - `Langlands.Cohomology.Continuous.ClosedSubgroupTopologyProof`, for the
-  published topology helpers `exists_closedSubgroup_tuple_extension` and
+  topology helpers `exists_closedSubgroup_tuple_extension` and
   `exists_openNormal_tuple_agreement`. Through that module it also reaches
   `Langlands.Cohomology.Continuous.FiniteQuotientComparisonProof`, which
   supplies `exists_covariant_quotient_factor`, `continuous_nestedEval` and the
@@ -31,7 +31,7 @@ proposition and does not use it.
 
 Subgroups carry the subspace topology. Tuple spaces `Fin n → G` carry the
 product topology. For `A : DiscreteModule k G` and `K : Subgroup G`, the
-restricted module is the published `A.restrict K`, whose representation is
+restricted module is the Library's `A.restrict K`, whose representation is
 `TopRep.res K.subtype A.toTopRep`.
 
 The cochain complex used throughout is
@@ -40,12 +40,12 @@ The cochain complex used throughout is
 `forget₂ (TopModuleCat k) (ModuleCat k)`. A degree-`q` cochain is an invariant
 element of `TopRep.resolutionX A.toTopRep (q + 1)`. `nestedEval` evaluates such
 an element on `(q + 1)`-tuples, and it is injective (`nestedEval_injective`).
-Restriction cochains are the published `continuousRestrictionCochains A K`. This
+Restriction cochains are the Library's `continuousRestrictionCochains A K`. This
 is the forgetful image of
 `ContinuousCohomology.cochainsMap (subgroupInclusion K) (𝟙 _)`.
 
 The file sets `backward.isDefEq.respectTransparency false`. Several `change`
-steps unfold the published definitions to the Mathlib maps they abbreviate.
+steps unfold the Library's definitions to the Mathlib maps they abbreviate.
 
 ## Cochains, tuple functions and restriction
 
@@ -191,7 +191,7 @@ applied to `continuousRestriction A H q x`, equals
 to `e.inv x`. It is Mathlib's `ShortComplex.mapHomologyIso_inv_naturality` for
 the short-complex map induced by
 `ContinuousCohomology.cochainsMap (subgroupInclusion H) (𝟙 _)`, evaluated at `x`
-with `ConcreteCategory.congr_hom`. The published `continuousRestriction` is
+with `ConcreteCategory.congr_hom`. The Library's `continuousRestriction` is
 `ContinuousCohomology.map` along that same cochain map.
 
 `exists_openNormal_continuousRestriction_zero` assumes compactness and total
@@ -203,7 +203,7 @@ isomorphism for `A.restrict U.toSubgroup` sends
 `continuousRestriction A U.toSubgroup q x` to zero. This inverse is injective,
 since it is a monomorphism in `ModuleCat` (`ModuleCat.mono_iff_injective`), so
 `continuousRestriction A U.toSubgroup q x = 0`. The conclusion uses the
-published `continuousRestriction`, not a replacement map.
+Library's `continuousRestriction`, not a replacement map.
 
 `closedNormalRestrictionZeroDetection` introduces the quantified ring, group,
 eight instances (including the unused `T2Space G`), module, subgroup, normality
@@ -222,16 +222,11 @@ also records the expected locally-constant cochain route, which this module
 implements in the form described above. The proof itself cites no literature.
 It uses only:
 
-- the published Library cochain-evaluation, finite-quotient and cycle-class
+- the Library's cochain-evaluation, finite-quotient and cycle-class
   lemmas named above;
-- the published topology helpers;
+- the topology helpers of `ClosedSubgroupTopologyProof`;
 - Mathlib's homological algebra.
 
 It proves or assumes no arithmetic vanishing theorem, Brauer-group
 identification, inflation–restriction exactness or field lifting. Those are
 separate inputs to the intended local unramified H² application.
-
-Worker 102 wrote the Lean proof in a shared draft for task `3263cf33`. The draft
-file is byte-identical across revisions 4–6, and it is submitted unchanged.
-Worker 284 rewrote this Markdown for submission, replacing the draft's
-development-status wording with a description of the submitted proof.

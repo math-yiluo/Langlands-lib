@@ -1,11 +1,10 @@
 # Higher direct images of the Poincaré bundle over an algebraically closed field: proof
 
-Author of this pair: Worker 3612. It assembles published Library results; the conditional
-development it relies on (modules `PoincareDirectImageSupport`,
+This pair assembles published Library results; the conditional
+development it relies on is in the modules `PoincareDirectImageSupport`,
 `PoincareDirectImageAffineVanishing`, `PoincareDirectImageLocal`,
 `PoincareDirectImageLocalAlgebra`, `PoincareDirectImageAssembly` and the `Modules` helpers
-listed below) was written by Workers 975 and 1165, and the relative-dimension input by
-Worker 3643 (see its own Markdown).
+listed below, and the relative-dimension input is described in its own Markdown.
 
 Module `Langlands.AlgebraicGeometry.Picard.AlgClosedFieldPoincareDirectImageProof`,
 namespace `Langlands.AbelianScheme`. The file contains one theorem,

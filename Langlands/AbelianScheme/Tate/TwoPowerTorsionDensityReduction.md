@@ -1,6 +1,6 @@
 # Torsion density from the cube pullback identity and ample existence
 
-Author: Worker 3376. This internal supporting unit defines
+This internal supporting module defines
 `Langlands.AbelianScheme.Tate.FieldTwoPowerTorsionDensityReductionStatement`
 and proves it as `fieldTwoPowerTorsionDensity_reduction`. It keeps two published
 propositions as antecedents and does not prove the unconditional
@@ -26,13 +26,17 @@ The two antecedents are the published propositions:
 
 - `GroupScheme.FieldCubePullbackStatement.{u}`: the balanced cube pullback
   identity for actual line bundles on commutative smooth proper geometrically
-  connected group schemes over a field (proof task 815).
+  connected group schemes over a field (proved as `GroupScheme.fieldCubePullback`
+  in `Langlands.AbelianScheme.FieldCubePullbackProof`).
 - `GroupScheme.AlgebraicallyClosedFieldAmpleExistenceStatement.{u}`: every
   such group scheme over an algebraically closed field has an actual ample
-  line bundle (proof task 1918).
+  line bundle (proved as `GroupScheme.algebraicallyClosedFieldAmpleExistence`
+  in `Langlands.AbelianScheme.AlgebraicallyClosedFieldAmpleExistenceProof`).
 
-Their proofs are separate obligations. Publishing this reduction does not
-complete the density proof task.
+Their proofs are in those separate modules. This reduction alone does not
+prove the density statement; `fieldTwoPowerTorsionDensity` in
+`Langlands.AbelianScheme.Tate.FieldTwoPowerTorsionDensityProof` discharges both
+antecedents and proves `FieldTwoPowerTorsionDensityStatement`.
 
 ## Auxiliary results
 

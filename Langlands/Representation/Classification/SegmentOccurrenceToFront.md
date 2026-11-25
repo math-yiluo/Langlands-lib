@@ -1,6 +1,6 @@
 # Actual transport of one original segment occurrence
 
-Worker 320's internal conditional theorem `segmentOccurrenceToFront` assumes
+The internal conditional theorem `segmentOccurrenceToFront` assumes
 `TwoSegmentHeadCommutation` for the supplied prime, field, topology and
 independent universes. It does not prove that two-factor input. Given actual
 strong heads in a segment-product datum, it moves a specified original

@@ -11,12 +11,12 @@ O, R and S are arbitrary commutative rings with supplied O-algebra structures
 on R and S. R and S have the same universe v; coefficient tests have universe v
 and compatible families have universe v+1. Coordinates are finite and covers
 may be infinite. The map f need not be injective or flat. Formal atlas maps in
-this unit have equal source and target principal-generator sets, with possibly
+this module have equal source and target principal-generator sets, with possibly
 different finite coordinate types.
 
 The construction combines `AtlasAlgebraTransport` with
 `AtlasBaseChangeMorphism` and its full compatible-family comparison. These are
-internal consequences of the existing definitions. This unit asserts no
+internal consequences of the existing definitions. This module asserts no
 additional theorem from the literature; the localization-gluing convention
 underlying the atlas is documented in `BasicAtlas.md`.
 

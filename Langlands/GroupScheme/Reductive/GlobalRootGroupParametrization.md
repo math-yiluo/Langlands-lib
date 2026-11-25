@@ -46,4 +46,5 @@ pairing, an explicit free actual root-weight trivialization, and fixed
 torus-equivariant additive-group fibres. The base is any commutative ring in
 universe u, including the zero ring; it need not be connected, reduced,
 local or a field. Deriving the fibre data from reductivity and the root datum
-is a separate specialization step of the host task.
+is a separate specialization step, carried out in
+`GlobalSplitRootParametrization`.

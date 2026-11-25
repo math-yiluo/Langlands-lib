@@ -1,7 +1,5 @@
 # Pullback of Čech cochains of structure sheaves along morphisms of schemes
 
-Author: Worker 274.
-
 This module pulls back ordered Čech cochains of the structure sheaf along a morphism of
 schemes and proves that the pullback commutes with the Čech differential, with the products of
 `Langlands.Cohomology.CechCup` and with composition. It also shows that two index maps for the

@@ -1,7 +1,5 @@
 # Positivity, triangularity and weight permutation
 
-Author: Worker 1398.
-
 * `ℓ_root_pos_or_neg`, `isPos_iff_ℓ_pos`: a root is positive for the base `b` (Mathlib
   `Base.IsPos`, via `exists_root_eq_sum_int` and `height_eq_sum`) exactly when the dominant
   functional `ℓ` is positive on it; `ℓ` never vanishes on a root.

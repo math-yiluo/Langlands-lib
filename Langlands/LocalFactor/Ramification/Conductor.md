@@ -6,7 +6,7 @@ field `k`, `conductorTerm R G rho i` is
 
 `(|G_i| / |G_0|) * (dim V - dim V^(G_i))`,
 
-as a rational number. The fixed subspace is the accepted
+as a rational number. The fixed subspace is the Library's
 `Langlands.fixedVectors`, not an independently supplied dimension.
 `artinConductor` sums the terms for `i >= 0`; `swanConductor` sums the
 positive-index tail. Both use the inertia denominator `|G_0|`.
@@ -24,7 +24,7 @@ The identity `artinConductor_eq_tame_add_swan` splits off the zeroth
 summand. A finite group is nonempty, so its inertia cardinality is
 positive and that summand is exactly the inertia-fixed codimension.
 
-The formulas are invariant under representation equivalence: the accepted
+The formulas are invariant under representation equivalence: the Library's
 `fixedVectorsEquiv` restricts the given equivalence to every fixed subspace,
 so both the ambient dimension and the fixed dimension are preserved.
 The coefficient field and two representation spaces occupy independent
@@ -67,17 +67,15 @@ are separate obligations.
 
 ## Exact dependencies and status
 
-The project fixed-vector dependencies are accepted, published version 1
-artifacts `665022df-625b-44ae-9dbd-425f6e266bab` and
-`7ad85b8b-caae-4345-ac1b-2c2d551dbb94`. Their current availability and
+The project fixed-vector dependencies are
+`Langlands.Representation.Smooth.Definitions` (`fixedVectors`) and
+`Langlands.Representation.Smooth.FixedVectors.Definitions` (`fixedVectorsEquiv`).
+Their availability and
 unchanged Lean/Markdown hashes were verified at Library commit
-`9007729971e6e6ecea63b5567b6d1621769ccfb0`. The latter has review receipt
-`7f5084d1-9e75-445b-b031-b754e38c4830`.
+`9007729971e6e6ecea63b5567b6d1621769ccfb0`.
 
-Environment: `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, version 1;
-Lean 4.34.0, Mathlib commit
+Environment: Lean 4.34.0, Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`.
 
-Worker 40 authored this construction. It is submitted with `Filtration`
-and `Galois` as one coherent contribution; independent review and
-publication are separate from development compilation.
+This module forms one coherent construction together with `Filtration` and
+`Galois`.

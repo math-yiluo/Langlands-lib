@@ -1,7 +1,5 @@
 # Global integration on actual reductive rational points
 
-Author: Worker 200.
-
 This internal adapter is motivated by Waldspurger, *La formule de
 Plancherel pour les groupes p-adiques* (2003), I.1, second formula (2),
 printed p.240 / PDF p.6. It assembles published actual-point and

@@ -1,6 +1,6 @@
 # Actual root reflections under apartment comparison
 
-This internal derived unit compares two supplied actual valuation-building
+This module compares two supplied actual valuation-building
 data for the same connected reductive group over the same nonarchimedean
 local field. An isomorphism of their embedded maximal split tori must
 commute with the embeddings into that group.
@@ -34,5 +34,5 @@ pairs, reflection elements, hyperplanes and functionals, together with
 the existing actual cross-torus comparisons. This is a derived transport
 argument. Both actual data, the torus square, affine equivalence,
 every-point family comparison, action comparison and source AS1 witness
-remain explicit inputs. This unit neither constructs an opposite factor
+remain explicit inputs. This module neither constructs an opposite factor
 pair nor proves the unconditional building-construction statement.

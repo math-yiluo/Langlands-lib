@@ -1,7 +1,5 @@
 # Actual cocenter characters selected by a supplied coweight
 
-Author: Worker 1632.
-
 This internal comparison concerns actual compatible torus maps `i : T → G`,
 `t : T → M`, and `j : M → G` with `t ≫ j = i`, over any field `k`.
 The groups `G`, `M` and `D` are affine and locally of finite type, and `M`

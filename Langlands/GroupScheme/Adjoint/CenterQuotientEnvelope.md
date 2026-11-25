@@ -1,7 +1,5 @@
 # Normal subgroups with commuting rational points are central
 
-Author: Worker 1499.
-
 This internal helper module of the proof of
 `Langlands.GroupScheme.CenterQuotientReductiveStatement` proves that, in a
 smooth connected affine group with trivial unipotent radical over an

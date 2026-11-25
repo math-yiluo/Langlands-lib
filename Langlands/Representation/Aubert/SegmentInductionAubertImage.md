@@ -1,7 +1,5 @@
 # Actual Aubert images on segment induction support
 
-Author: Worker 165.
-
 This is an internal derivation on the genuine exact finite-length
 Grothendieck group and its proved composition-factor lattice. It applies
 to every actual irreducible subquotient of the increasing induction

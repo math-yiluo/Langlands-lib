@@ -140,8 +140,8 @@ abbrev JacquetClassAction (σ : Representation ℂ (parabolicLeviPointSubgroup p
     (Langlands.Jacquet.Localization.mk (inducedRepresentation r h hU σ) _ 1 f) =
       (UnramifiedNormalized.jacquetCharacter (parabolicLeviRationalNormCharacters r)
         _ _ hU h.levi_le_normalizer).toMonoidHom m •
-        Langlands.Jacquet.Localization.mk (inducedRepresentation r h hU σ) _ 1
-          (inducedRepresentation r h hU σ m f)
+        Langlands.Jacquet.Localization.mk (inducedRepresentation r h hU σ)
+          (UnipotentPoints (p := p) n) 1 (inducedRepresentation r h hU σ m f)
 
 /-- Continuity of the supplied projection gives a smooth normalized inducing action. -/
 theorem isSmooth_inducingRepresentation

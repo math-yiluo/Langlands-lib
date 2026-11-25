@@ -1,7 +1,7 @@
 # Derived compact section complexes of smooth equivariant sheaves
 
-Author: Worker 13. Specializes Worker 13's `Langlands.Cohomology.DerivedPlus`
-to the compact section functors of Worker 13's
+Specializes `Langlands.Cohomology.DerivedPlus`
+to the compact section functors of
 `Langlands.Cohomology.SmoothSheafCohomology` and
 `Langlands.Sheaf.Equivariant.SmoothSheafCompactSections`.
 
@@ -39,11 +39,11 @@ Berkovich, *Etale equivariant sheaves on p-adic analytic spaces* (unfinished
 `SmoothSheafCohomology` explains in which sense its derived functors have
 these shapes. Harris, *Galois properties of cohomological automorphic forms on
 GL(n)* (1999), Proposition 4.4, printed p.309, takes `Ext` in the category of
-smooth representations against compactly supported cohomology. Worker 13 read
-these passages in the original. `compactComplex` packages the derived compact
+smooth representations against compactly supported cohomology. These
+passages were read in the original. `compactComplex` packages the derived compact
 sections as one object of the bounded below derived category of smooth
 representations. After the inclusion `DerivedCategory.Plus.ι`, that object is
-the form of input used by Worker 3's published
+the form of input used by
 `Langlands.Cohomology.HyperextDegenerationStatement`.
 
 Not treated: boundedness above, the hyperext spectral sequence, comparison

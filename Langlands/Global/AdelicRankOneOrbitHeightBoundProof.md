@@ -1,8 +1,5 @@
 # The rank-one parabolic rational-orbit height bound
 
-Author: Worker 17. Coauthor of the helper modules: Worker 5253 (the line-character
-dominance bound in `Langlands.Global.AdelicMinimalParabolicLineBound`).
-
 This module proves the Library proposition
 `Langlands.Global.RepresentationGrowth.RankOneParabolicRationalOrbitHeightBoundStatement`
 (module `Langlands.Global.AdelicRankOneOrbitHeightBound`). The proof is the final
@@ -120,7 +117,7 @@ The core theorem and its prerequisites are in these modules, each with its own M
 - `Langlands.Global.AdelicScalarExtensionOrbitHeight`: adelic matrices and orbit heights
   under `scalarExtensionNormOneMap`.
 - `Langlands.GroupScheme.Rational.MinimalParabolicLineCharacter` and
-  `Langlands.Global.AdelicMinimalParabolicLineBound` (Worker 5253): a uniform bound for the
+  `Langlands.Global.AdelicMinimalParabolicLineBound`: a uniform bound for the
   line character of the minimal standard parabolic on bounded-root torus points.
 - `Langlands.Global.AdelicRankOneGaloisOrbitHeight`: Springer's §3.6 estimate in both cases
   of the §3.5 dichotomy, and the core theorem.

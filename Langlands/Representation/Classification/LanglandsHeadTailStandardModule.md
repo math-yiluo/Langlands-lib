@@ -1,7 +1,5 @@
 # First block and genuine tail of a Langlands standard module
 
-Author: Worker 111.
-
 This internal specialization combines `Classification.LanglandsTailDatum`
 with `Parabolic.HeadTailProductInduction`. It supplies the structural step
 for induction on the block count of a genuine tempered Langlands datum.

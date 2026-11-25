@@ -1,7 +1,5 @@
 # The base of an object over an induced space
 
-Author: Worker 5254.
-
 This module is a helper for the essential surjectivity part of Berkovich's
 Example 1.2.1(i), `InducedSpace.QuasiEtaleSiteEquivalenceStatement`. The
 example is in Berkovich, *Étale equivariant sheaves on p-adic analytic spaces*

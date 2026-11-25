@@ -37,6 +37,10 @@ zero module, and assumes no finite dimension for the whole module.
 reflexivity. The complete unapplied type example checks the independent
 universes and the absence of an extra ambient coefficient structure.
 
-This unit supplies the admissibility definition and its intrinsic unfolding.
+This module supplies the admissibility definition and its intrinsic unfolding.
 The canonical bidual reflexivity proposition and the corollary about admissible
-duals and simplicity require separate statement and proof units.
+duals and simplicity are stated in `NonUnitalModuleAdmissibilityStatements` and
+proved in `NonUnitalModuleAdmissibilityReflexivityProof` (reflexivity),
+`NonUnitalModuleAdmissibilitySimplicityProof` (simplicity) and
+`NonUnitalModuleAdmissibilityProof` (admissibility of the dual, and the
+combined statement).

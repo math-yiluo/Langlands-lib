@@ -1,8 +1,8 @@
 # Weil and Weil–Deligne parameters: declaration coverage
 
-This note maps the objects and constructions required by the task "Implement
-the Weil and Weil-Deligne parameter definition framework" (task `650de61a`,
-Workers 17 and 53) to Library declarations. It is a map, not a theorem: no
+This note maps the objects and constructions of the Weil and Weil–Deligne
+parameter definition framework to Library declarations. It is a map, not a
+theorem: no
 comparison between continuity conventions, no classification, no chosen
 Frobenius semisimplification and no part of the local Langlands bijection is
 claimed below. Each module's paired Markdown gives its exact sources,
@@ -15,51 +15,51 @@ Namespaces: `Langlands.FiniteRepresentation` (finite representations),
 
 ## Modules
 
-| Module | Author | Content |
-| --- | --- | --- |
-| [`Langlands.Weil.Representation.Basic`](../../Langlands/Weil/Representation/Basic.md) | Worker 17 | Category of finite representations, equivalences, rank, genuine isomorphism classes |
-| [`Langlands.Weil.Representation.Predicates`](../../Langlands/Weil/Representation/Predicates.md) | Worker 17 | Separate continuity, open-inertia, finite-image, irreducibility, semisimplicity, unramifiedness, unitarity and Galois-type predicates |
-| [`Langlands.Weil.Representation.Invariants`](../../Langlands/Weil/Representation/Invariants.md) | Worker 17 | Invariant subspaces and invariant representations |
-| [`Langlands.Weil.Representation.Restriction`](../../Langlands/Weil/Representation/Restriction.md) | Worker 17 | Restriction along homomorphisms |
-| [`Langlands.Weil.Representation.SumsTensor`](../../Langlands/Weil/Representation/SumsTensor.md) | Worker 17 | Sums and tensor products |
-| [`Langlands.Weil.Representation.DirectSum`](../../Langlands/Weil/Representation/DirectSum.md) | Worker 17 | Finite direct sums |
-| [`Langlands.Weil.Representation.Dual`](../../Langlands/Weil/Representation/Dual.md) | Worker 17 | Duals |
-| [`Langlands.Weil.Representation.DualClasses`](../../Langlands/Weil/Representation/DualClasses.md) | Worker 17 | Double dual, dual class involution, continuous irreducible dual involution |
-| [`Langlands.Weil.Representation.Twist`](../../Langlands/Weil/Representation/Twist.md) | Worker 17 | Character twists |
-| [`Langlands.Weil.Representation.Determinant`](../../Langlands/Weil/Representation/Determinant.md) | Worker 17 | Determinant characters |
-| [`Langlands.Weil.Representation.InertiaOperations`](../../Langlands/Weil/Representation/InertiaOperations.md) | Worker 17 | Open-inertia certificates and constructors |
-| [`Langlands.Weil.Representation.Induction`](../../Langlands/Weil/Representation/Induction.md) | Worker 17 | Finite-index induction by equivariant functions |
-| [`Langlands.Weil.Representation.InductionTopology`](../../Langlands/Weil/Representation/InductionTopology.md) | Worker 17 | Open-inertia induction |
-| [`Langlands.Weil.Representation.InductionContinuity`](../../Langlands/Weil/Representation/InductionContinuity.md) | Worker 17 | Usual-topology continuity of restriction and induction |
-| [`Langlands.WeilDeligne.Basic`](../../Langlands/WeilDeligne/Basic.md) | Worker 17 | Weil–Deligne pairs, maps, equivalences, classes, Frobenius semisimplicity, zero monodromy |
-| [`Langlands.WeilDeligne.Parameters`](../../Langlands/WeilDeligne/Parameters.md) | Worker 17 | Parameter conditions and parameter classes |
-| [`Langlands.WeilDeligne.Kernels`](../../Langlands/WeilDeligne/Kernels.md) | Worker 17 | Weil representations on the monodromy kernel `ker N` and on `(ker N)^I` of a pair, with functors and class maps |
-| [`Langlands.WeilDeligne.Restriction`](../../Langlands/WeilDeligne/Restriction.md) | Worker 17 | Restriction of pairs |
-| [`Langlands.WeilDeligne.SumsTensor`](../../Langlands/WeilDeligne/SumsTensor.md) | Worker 17 | Sums and tensors of pairs |
-| [`Langlands.WeilDeligne.DirectSum`](../../Langlands/WeilDeligne/DirectSum.md) | Worker 17 | Finite direct sums of pairs |
-| [`Langlands.WeilDeligne.SpecialBlocks`](../../Langlands/WeilDeligne/SpecialBlocks.md) | Worker 17 | Special blocks and block data |
-| [`Langlands.WeilDeligne.Dual`](../../Langlands/WeilDeligne/Dual.md) | Worker 17 | Dual pairs |
-| [`Langlands.WeilDeligne.Twist`](../../Langlands/WeilDeligne/Twist.md) | Worker 17 | Twisted pairs |
-| [`Langlands.WeilDeligne.Determinant`](../../Langlands/WeilDeligne/Determinant.md) | Worker 17 | Determinant of pairs |
-| [`Langlands.WeilDeligne.Invariants`](../../Langlands/WeilDeligne/Invariants.md) | Worker 17 | Invariants of pairs |
-| [`Langlands.WeilDeligne.Induction`](../../Langlands/WeilDeligne/Induction.md) | Worker 17 | Induction of pairs |
-| [`Langlands.WeilDeligne.ParameterInduction`](../../Langlands/WeilDeligne/ParameterInduction.md) | Worker 17 | Induction of parameters |
-| [`Langlands.WeilDeligne.ParameterRestriction`](../../Langlands/WeilDeligne/ParameterRestriction.md) | Worker 17 | Restriction of parameters |
-| [`Langlands.WeilDeligne.ParameterOperations`](../../Langlands/WeilDeligne/ParameterOperations.md) | Worker 17 | Operations on parameters and their classes |
-| [`Langlands.WeilDeligne.InductionAlong`](../../Langlands/WeilDeligne/InductionAlong.md) | Worker 17 | Induction along injective homomorphisms |
-| [`Langlands.Weil.Local.DegreeCharacters`](../../Langlands/Weil/Local/DegreeCharacters.md) | Worker 53 | Unramified and norm characters from a continuous degree |
-| [`Langlands.Weil.Local.ResidueCharacters`](../../Langlands/Weil/Local/ResidueCharacters.md) | Worker 53 | Norm characters with the actual residue cardinality |
-| [`Langlands.Weil.Local.ExtensionResidue`](../../Langlands/Weil/Local/ExtensionResidue.md) | Worker 53 | Residue degree and cardinality of an extension |
-| [`Langlands.Weil.Local.ExtensionGalois`](../../Langlands/Weil/Local/ExtensionGalois.md) | Worker 53 | Absolute Galois map of an extension |
-| [`Langlands.Weil.Local.Assembly`](../../Langlands/Weil/Local/Assembly.md) | Worker 53 | Actual local Weil group, degree, inertia, Frobenius, characters |
-| [`Langlands.Weil.Local.AssemblyStatement`](../../Langlands/Weil/Local/AssemblyStatement.md) | Worker 53 | Statement of the properties of the local assembly |
-| [`Langlands.Weil.Local.AssemblyProof`](../../Langlands/Weil/Local/AssemblyProof.md) | Worker 100, Worker 53 | Proof `localAssembly : LocalAssemblyStatement` |
-| [`Langlands.Weil.Local.Parameters`](../../Langlands/Weil/Local/Parameters.md) | Worker 53 | Local Weil and Weil–Deligne classes and parameters |
-| [`Langlands.Weil.Local.ParameterOperations`](../../Langlands/Weil/Local/ParameterOperations.md) | Worker 53 | Local parameter operations and special blocks |
-| [`Langlands.Weil.Local.ExtensionWeil`](../../Langlands/Weil/Local/ExtensionWeil.md) | Worker 53 | Weil map of a finite extension |
-| [`Langlands.Weil.Local.ExtensionWeilRange`](../../Langlands/Weil/Local/ExtensionWeilRange.md) | Worker 53 | Image of `W_E` as an open finite-index subgroup |
-| [`Langlands.Weil.Local.ExtensionParameters`](../../Langlands/Weil/Local/ExtensionParameters.md) | Worker 17 | Restriction and induction along an extension |
-| [`Langlands.Weil.Local.ExtensionContinuity`](../../Langlands/Weil/Local/ExtensionContinuity.md) | Worker 17 | Continuity along an extension |
+| Module | Content |
+| --- | --- |
+| [`Langlands.Weil.Representation.Basic`](../../Langlands/Weil/Representation/Basic.md) | Category of finite representations, equivalences, rank, genuine isomorphism classes |
+| [`Langlands.Weil.Representation.Predicates`](../../Langlands/Weil/Representation/Predicates.md) | Separate continuity, open-inertia, finite-image, irreducibility, semisimplicity, unramifiedness, unitarity and Galois-type predicates |
+| [`Langlands.Weil.Representation.Invariants`](../../Langlands/Weil/Representation/Invariants.md) | Invariant subspaces and invariant representations |
+| [`Langlands.Weil.Representation.Restriction`](../../Langlands/Weil/Representation/Restriction.md) | Restriction along homomorphisms |
+| [`Langlands.Weil.Representation.SumsTensor`](../../Langlands/Weil/Representation/SumsTensor.md) | Sums and tensor products |
+| [`Langlands.Weil.Representation.DirectSum`](../../Langlands/Weil/Representation/DirectSum.md) | Finite direct sums |
+| [`Langlands.Weil.Representation.Dual`](../../Langlands/Weil/Representation/Dual.md) | Duals |
+| [`Langlands.Weil.Representation.DualClasses`](../../Langlands/Weil/Representation/DualClasses.md) | Double dual, dual class involution, continuous irreducible dual involution |
+| [`Langlands.Weil.Representation.Twist`](../../Langlands/Weil/Representation/Twist.md) | Character twists |
+| [`Langlands.Weil.Representation.Determinant`](../../Langlands/Weil/Representation/Determinant.md) | Determinant characters |
+| [`Langlands.Weil.Representation.InertiaOperations`](../../Langlands/Weil/Representation/InertiaOperations.md) | Open-inertia certificates and constructors |
+| [`Langlands.Weil.Representation.Induction`](../../Langlands/Weil/Representation/Induction.md) | Finite-index induction by equivariant functions |
+| [`Langlands.Weil.Representation.InductionTopology`](../../Langlands/Weil/Representation/InductionTopology.md) | Open-inertia induction |
+| [`Langlands.Weil.Representation.InductionContinuity`](../../Langlands/Weil/Representation/InductionContinuity.md) | Usual-topology continuity of restriction and induction |
+| [`Langlands.WeilDeligne.Basic`](../../Langlands/WeilDeligne/Basic.md) | Weil–Deligne pairs, maps, equivalences, classes, Frobenius semisimplicity, zero monodromy |
+| [`Langlands.WeilDeligne.Parameters`](../../Langlands/WeilDeligne/Parameters.md) | Parameter conditions and parameter classes |
+| [`Langlands.WeilDeligne.Kernels`](../../Langlands/WeilDeligne/Kernels.md) | Weil representations on the monodromy kernel `ker N` and on `(ker N)^I` of a pair, with functors and class maps |
+| [`Langlands.WeilDeligne.Restriction`](../../Langlands/WeilDeligne/Restriction.md) | Restriction of pairs |
+| [`Langlands.WeilDeligne.SumsTensor`](../../Langlands/WeilDeligne/SumsTensor.md) | Sums and tensors of pairs |
+| [`Langlands.WeilDeligne.DirectSum`](../../Langlands/WeilDeligne/DirectSum.md) | Finite direct sums of pairs |
+| [`Langlands.WeilDeligne.SpecialBlocks`](../../Langlands/WeilDeligne/SpecialBlocks.md) | Special blocks and block data |
+| [`Langlands.WeilDeligne.Dual`](../../Langlands/WeilDeligne/Dual.md) | Dual pairs |
+| [`Langlands.WeilDeligne.Twist`](../../Langlands/WeilDeligne/Twist.md) | Twisted pairs |
+| [`Langlands.WeilDeligne.Determinant`](../../Langlands/WeilDeligne/Determinant.md) | Determinant of pairs |
+| [`Langlands.WeilDeligne.Invariants`](../../Langlands/WeilDeligne/Invariants.md) | Invariants of pairs |
+| [`Langlands.WeilDeligne.Induction`](../../Langlands/WeilDeligne/Induction.md) | Induction of pairs |
+| [`Langlands.WeilDeligne.ParameterInduction`](../../Langlands/WeilDeligne/ParameterInduction.md) | Induction of parameters |
+| [`Langlands.WeilDeligne.ParameterRestriction`](../../Langlands/WeilDeligne/ParameterRestriction.md) | Restriction of parameters |
+| [`Langlands.WeilDeligne.ParameterOperations`](../../Langlands/WeilDeligne/ParameterOperations.md) | Operations on parameters and their classes |
+| [`Langlands.WeilDeligne.InductionAlong`](../../Langlands/WeilDeligne/InductionAlong.md) | Induction along injective homomorphisms |
+| [`Langlands.Weil.Local.DegreeCharacters`](../../Langlands/Weil/Local/DegreeCharacters.md) | Unramified and norm characters from a continuous degree |
+| [`Langlands.Weil.Local.ResidueCharacters`](../../Langlands/Weil/Local/ResidueCharacters.md) | Norm characters with the actual residue cardinality |
+| [`Langlands.Weil.Local.ExtensionResidue`](../../Langlands/Weil/Local/ExtensionResidue.md) | Residue degree and cardinality of an extension |
+| [`Langlands.Weil.Local.ExtensionGalois`](../../Langlands/Weil/Local/ExtensionGalois.md) | Absolute Galois map of an extension |
+| [`Langlands.Weil.Local.Assembly`](../../Langlands/Weil/Local/Assembly.md) | Actual local Weil group, degree, inertia, Frobenius, characters |
+| [`Langlands.Weil.Local.AssemblyStatement`](../../Langlands/Weil/Local/AssemblyStatement.md) | Statement of the properties of the local assembly |
+| [`Langlands.Weil.Local.AssemblyProof`](../../Langlands/Weil/Local/AssemblyProof.md) | Proof `localAssembly : LocalAssemblyStatement` |
+| [`Langlands.Weil.Local.Parameters`](../../Langlands/Weil/Local/Parameters.md) | Local Weil and Weil–Deligne classes and parameters |
+| [`Langlands.Weil.Local.ParameterOperations`](../../Langlands/Weil/Local/ParameterOperations.md) | Local parameter operations and special blocks |
+| [`Langlands.Weil.Local.ExtensionWeil`](../../Langlands/Weil/Local/ExtensionWeil.md) | Weil map of a finite extension |
+| [`Langlands.Weil.Local.ExtensionWeilRange`](../../Langlands/Weil/Local/ExtensionWeilRange.md) | Image of `W_E` as an open finite-index subgroup |
+| [`Langlands.Weil.Local.ExtensionParameters`](../../Langlands/Weil/Local/ExtensionParameters.md) | Restriction and induction along an extension |
+| [`Langlands.Weil.Local.ExtensionContinuity`](../../Langlands/Weil/Local/ExtensionContinuity.md) | Continuity along an extension |
 
 ## (1) Finite-dimensional complex Weil representations
 
@@ -157,12 +157,12 @@ Parameter versions: `specialBlockParameter`, `blockParameter`
 
 ## (5) Actual local specialization
 
-Worker 53's module `Weil/Local/Assembly`, for every prime `p` and
-`F : PadicField p`, assembles upstream constructions. Worker 9 built the
-absolute residue action, Worker 28 the finite-field comparison
-`Galois.FiniteField.toProfiniteIntegers` (it sends arithmetic Frobenius to
-`-1`, hence the geometric normalization), and Worker 2 the generic pullback
-`Weil.Pullback`.
+The module `Weil/Local/Assembly`, for every prime `p` and
+`F : PadicField p`, assembles upstream constructions: the absolute residue
+action (`Galois/Local/AbsoluteProof`), the finite-field comparison
+`Galois.FiniteField.toProfiniteIntegers` (`Galois/FiniteField/ComparisonProof`;
+it sends arithmetic Frobenius to `-1`, hence the geometric normalization), and
+the generic pullback `Weil.Pullback` (`Weil/Pullback`).
 
 - `localWeilGroup F := Pullback (localResidueDegree F)`, the existing generic
   pullback (`Weil/Pullback`), no rival Weil group; `localProjection` to the
@@ -178,11 +178,10 @@ absolute residue action, Worker 28 the finite-field comparison
 - characters `localUnramifiedCharacter` and `localNormCharacter`
   (`canonicalResidueNormCharacter`), both built from `unramifiedCharacter`
   (`Weil/Local/DegreeCharacters`), the norm character through
-  `residueNormCharacter` (`Weil/Local/ResidueCharacters`); both modules are
-  Worker 53's.
+  `residueNormCharacter` (`Weil/Local/ResidueCharacters`).
 
-Proved interface, modules `Weil/Local/AssemblyStatement` (Worker 53) and
-`Weil/Local/AssemblyProof` (Worker 100 with Worker 53):
+Proved interface, modules `Weil/Local/AssemblyStatement` and
+`Weil/Local/AssemblyProof`:
 `LocalAssemblyProperties F` and `LocalAssemblyStatement` (for every prime `p`
 and every `F`), proved as `localAssemblyProperties` and `localAssembly`.
 Components: `localResidueCardinality_eq` (`q = Nat.card (localResidueField F)`),
@@ -201,7 +200,7 @@ compatible with the projection), `localWeilGroup_nonarchimedean`,
 `localUnramifiedCharacter_on_inertia`,
 `localUnramifiedCharacter_geometricFrobenius`.
 
-Field-extension inputs (Worker 53), for `F : PadicField.{u} p`,
+Field-extension inputs, for `F : PadicField.{u} p`,
 `E : PadicField.{v} p` and `f : F.Carrier →ₐ[Padic p] E.Carrier`:
 `Weil/Local/ExtensionResidue` (`extensionResidueMap`,
 `extensionResidueDegree`, `extensionResidueDegree_pos`,
@@ -212,7 +211,7 @@ Field-extension inputs (Worker 53), for `F : PadicField.{u} p`,
 (`= extensionDegree`), `extensionGaloisMap_isClosedEmbedding`,
 `extensionGaloisEquivRange`).
 
-Local classes (Worker 53), module `Weil/Local/Parameters`:
+Local classes, module `Weil/Local/Parameters`:
 `LocalWeilRepresentation`, `LocalWeilClasses(OfRank)`,
 `LocalContinuousWeilObjects`, `LocalOpenInertiaWeilObjects`,
 `LocalContinuousIrreducibleWeilClasses`, `LocalSemisimpleWeilClasses`,
@@ -222,7 +221,7 @@ Local classes (Worker 53), module `Weil/Local/Parameters`:
 `LocalFrobeniusSemisimpleParameterClassesOfRank`, `localZeroMonodromyFunctor`,
 `localZeroMonodromyFullyFaithful`, `localZeroMonodromyParameter`.
 
-Finite-extension Weil map (Worker 53), module `Weil/Local/ExtensionWeil`.
+Finite-extension Weil map, module `Weil/Local/ExtensionWeil`.
 Write `ι = extensionWeilMap F E f : W_E →ₜ* W_F` and
 `r = extensionResidueDegree F E f`: `extensionWeilMap_injective`,
 `extensionWeilMap_isEmbedding`, `extensionWeilMap_isOpenEmbedding`,
@@ -235,7 +234,7 @@ lemmas `localProjection_extensionWeilMap` and `localDegree_extensionWeilMap`,
 `localDegreeInt_extensionWeilMap` (`deg_F (ι w) = r · deg_E w`),
 `localNormCharacter_extensionWeilMap` (`ν_F (ι w) = ν_E w`),
 `localUnramifiedCharacter_extensionWeilMap` (`χ_z (ι w) = χ_{z^r} w`).
-Its image as a subgroup (Worker 53), module `Weil/Local/ExtensionWeilRange`:
+Its image as a subgroup, module `Weil/Local/ExtensionWeilRange`:
 `extensionWeilRange`, `extensionWeilRangeEquiv` (`W_E ≃ₜ*` image) with simp
 lemmas `extensionWeilRangeEquiv_apply` and
 `extensionWeilMap_extensionWeilRangeEquiv_symm`, `extensionWeilOpenSubgroup`,
@@ -244,7 +243,7 @@ lemmas `extensionWeilRangeEquiv_apply` and
 (compatibility with `extensionGaloisMap`),
 `localNormCharacter_extensionWeilRange`.
 
-Restriction and induction along it (Worker 17), module
+Restriction and induction along it, module
 `Weil/Local/ExtensionParameters`:
 restriction `F → E`: `extensionRestrict(Functor, Class, ClassOfRank)`,
 `rank_extensionRestrict`, `isContinuous_extensionRestrict`,
@@ -258,7 +257,7 @@ induction `E → F`: `extensionInduce(Functor, Equiv, Class, ClassOfRank)`,
 `extensionWDInduce(Functor, Equiv, Class, ClassOfRank)`,
 `rank_extensionWDInduce`, `extensionParameterInduce(Class, ClassOfRank)`.
 
-Local operations (Worker 53), module `Weil/Local/ParameterOperations`:
+Local operations, module `Weil/Local/ParameterOperations`:
 `localNormCharacter_on_inertia`, the unramified certificate
 `localUnramifiedCharacter_inertiaKernel_isOpen`; local sum, tensor, dual,
 twist, unramified twist, determinant and invariant parameters (the invariant
@@ -274,7 +273,7 @@ isomorphism classes (`FiniteRepresentation.IsomorphismClassesWith`);
 `localSpecialBlock_kernel` and `localSpecialBlock_monodromy_ne_zero`
 (nonzero monodromy for `m ≥ 2`), and the block constructor.
 
-Continuity along the extension (Worker 17), module
+Continuity along the extension, module
 `Weil/Local/ExtensionContinuity`: `extensionContinuousRestrictClass`,
 `isContinuous_extensionInduce`, `extensionContinuousInduce(Class)`,
 `isContinuous_extensionWDRestrict`, `isContinuous_extensionWDInduce`.

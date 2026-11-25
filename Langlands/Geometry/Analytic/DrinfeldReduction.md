@@ -1,7 +1,5 @@
 # Norms on coefficient vectors and the reduction map of Drinfeld's upper half space
 
-Author: Worker 21.
-
 This module constructs the reduction map `Res : Ω → BT` from Drinfeld's upper
 half space to the space of norms on `F^{d+1}` up to homothety. It proves that
 the map is continuous and `GL_{d+1}(F)`-equivariant. It contains:

@@ -12,16 +12,13 @@ proves nothing:
 - `BernsteinCentralIdempotentFunctionStatement`: Remark 2 after the Theorem;
 - `BernsteinCenterFunctionsStatements`: their conjunction.
 
-Worker 1222 wrote this statement unit under the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`.
-
 ## Source and provenance
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French edition dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1222 read VI.10.4, printed pp.209–212 / PDF pp.215–218. The Theorem
+VI.10.4, printed pp.209–212 / PDF pp.215–218, was read. The Theorem
 and the Remarks are on printed p.212 / PDF p.218:
 
 > **Théorème.** Soit `Ω` une composante connexe de la variété `Ω(G)`. Alors le
@@ -42,10 +39,10 @@ and the Remarks are on printed p.212 / PDF p.218:
 > caractéristiques des composantes connexes `Ω` de `Ω(G)`.
 
 The Corollary and Remark 3 are the published
-`BernsteinBlockCenterStatements` (Worker 6), whose Markdown records the
+`BernsteinBlockCenterStatements`, whose Markdown records the
 Theorem as not stated. The earlier steps of VI.10.4 are the published
 `InducedProgeneratorEndFreeStatement` and
-`InducedProgeneratorCenterInclusionStatement` (Worker 6); their Markdown also
+`InducedProgeneratorCenterInclusionStatement`; their Markdown also
 lists the Theorem as not stated.
 
 The provenance is source: the statements are the Theorem and Remarks 1–2, in
@@ -54,7 +51,7 @@ the formal reading described below.
 ## Framework and published objects
 
 All objects are published; this file constructs nothing. The setting is the
-standard-family framework of Worker 1153 (modules `BernsteinData`,
+standard-family framework (modules `BernsteinData`,
 `BernsteinBlock`, `BernsteinSupportComparison`), with the same binders as
 `BernsteinBlockCenterStatements`.
 
@@ -94,11 +91,11 @@ The component `Ω` of `a` is the image of `X(M_a) → Ω(G)`,
 `ω ↦ (M_a, ρ_a ⊗ ω)_G`; two characters have the same image exactly when the
 twisted data are associated. Its polynomial functions are the elements of
 `ℂ[X(M_a)]` constant on the association classes. This is the encoding of the
-statement unit for the VI.7.1 Theorem (`BernsteinComponentVarietyStatement`,
-candidate `64e71122-0633-4798-a645-a27268500947`), which states that these
+statement of the VI.7.1 Theorem (`BernsteinComponentVarietyStatement`,
+module `BernsteinCuspidalDataVarietyStatements`), which states that these
 functions form the finitely generated coordinate algebra of `X(M_a)/W` and
 that they do not depend on the representative `a`. This module does not
-import that unit; it repeats the definition inline.
+import that module; it repeats the definition inline.
 
 A function on `Ω(G)` that is polynomial on every component is a family `f`
 indexed by all data `a`, with `f a` a complex function on the characters
@@ -171,8 +168,8 @@ otherwise. That is, `e_Ω` corresponds to the characteristic function of `Ω`.
   `M(G)_Ω` is recorded in `BernsteinBlock`.
 - **Variety of `Ω`.** The coordinate algebra `O(Ω)` is written inline as the
   association-invariant elements of `ℂ[X(M_a)]`; its identification with the
-  regular functions of the variety `X(M_a)/W` is the VI.7.1 statement unit
-  named above, not repeated here.
+  regular functions of the variety `X(M_a)/W` is the VI.7.1 statement
+  `BernsteinComponentVarietyStatement` named above, not repeated here.
 - **The centre of `M(G)`.** Stated by the three properties of `z ↦ f` rather
   than by constructing the ring of functions on `Ω(G)`.
 - **Carriers.** All representations have carriers in `Type (max uF uV)`, the
@@ -181,9 +178,12 @@ otherwise. That is, `e_Ω` corresponds to the characteristic function of `Ω`.
   `ℨ_Ω = ℨ_D^{W(D)}`, the centralizer lemma for bimodules with a filtration,
   and the equivalence of (VI.10.4.1) with `i_P^G` through (VI.10.4.2).
 
-## Remaining obligations
+## Status of the proofs
 
-The proofs are separate obligations. They need the VI.10.4 lemmas (published
+The proofs are not in this file. The Library derives the statements conditionally:
+`BernsteinBlockCenterFunctionsReduction` (first sentence),
+`BernsteinCenterFunctionsReduction` (second sentence) and
+`BernsteinCentralIdempotentFunctionReduction` (Remark 2). The proofs need the VI.10.4 lemmas (published
 statements), the VI.4.4–VI.4.5 description of `ℨ_D`, the Bernstein
 decomposition (VI.7.2) and VI.7.4 idempotents, and the association invariance
 of supports (VI.5.4).

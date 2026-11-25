@@ -1,8 +1,6 @@
 # Truncations of the standard integral and Casselman compression
 
-Author: Worker 1615.
-
-This module is a supporting construction for the host task proving
+This module is a supporting construction for the statement
 `Langlands.Plancherel.ConditionalParabolicIntertwiningStatement`. It works with
 the existing general standard integral of `StandardIntertwiningIntegral`. The
 data are a nonarchimedean locally compact group `G`, an actual semidirect
@@ -154,8 +152,8 @@ All group, measure and representation inputs are explicit hypotheses or
 published constructions. The intended application takes `H` with an Iwahori
 factorization relative to the opposite of the target parabolic, and `a` a
 Levi-central contracting point. The published opposite Iwahori basis results
-supply such data for dynamic subgroups. Producing these data for the host's
-supplied radicals, identifying the compression with a polynomial family on a
+supply such data for dynamic subgroups. Producing these data for the radicals
+supplied in `ConditionalParabolicIntertwiningStatement`, identifying the compression with a polynomial family on a
 finite-dimensional compact-picture space, and the resulting uniform regular
 denominator remain separate obligations.
 

@@ -25,5 +25,5 @@ statement is general and does not require a type-D hypothesis.
 
 The result identifies the existing opposition permutation. The imported
 opposition theorems give its preservation of the actual distinguished subset
-and its commutation with every absolute Galois element. This unit does not yet
+and its commutation with every absolute Galois element. This module does not
 assert the central marked position or the full local rank-one enumeration.

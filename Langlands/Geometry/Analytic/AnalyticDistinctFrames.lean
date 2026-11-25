@@ -179,9 +179,9 @@ theorem mem_distinctLocus_iff_fieldPoint_injective (hY : IsCompactSpace Y) (hp :
 /-- Permuting the coordinates preserves the distinct locus. -/
 theorem permutations_mem_distinctLocus (σ : Equiv.Perm (Fin (n + 1)))
     {z : localizedSpaceFunctor.obj P.obj} (hz : z ∈ P.distinctLocus h) :
-    localizedSpaceFunctor.map (P.permutations σ).hom z ∈ P.distinctLocus h := by
+    localizedSpaceFunctor.map (P.permutations σ).asIso.hom z ∈ P.distinctLocus h := by
   intro i j hij
-  have he : (P.permutations σ).hom ≫ P.pair h i j = P.pair h (σ.symm i) (σ.symm j) := by
+  have he : (P.permutations σ).asIso.hom ≫ P.pair h i j = P.pair h (σ.symm i) (σ.symm j) := by
     apply h.hom_ext <;> simp only [Category.assoc, pair_fst, pair_snd, permutations_coord]
   have he' := congrArg (fun f : P.obj ⟶ R => localizedSpaceFunctor.map f z) he
   rw [localizedSpaceFunctor.map_comp, TopCat.comp_app] at he'

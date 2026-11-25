@@ -62,7 +62,7 @@ then `P(j,m^*M,n)`, then `H_X(n)` of the forward component of
 The coefficient isomorphism is the published composite of
 `pullbackComp j.left m.left`, `pullbackCongr` for the equality of
 underlying scheme maps induced by `w`, and `pullbackId X.left`.
-Consequently, a future proof of this statement supplies a left inverse
+Consequently, a proof of this statement supplies a left inverse
 to `P(m,M,n)`, and hence its categorical monomorphism. The statement
 itself asserts the explicit retraction equation.
 
@@ -74,7 +74,8 @@ defines propositions and proves none of them. It leaves the published
 pullback construction, its elementary helpers and all their imports
 unchanged.
 
-The statement interface and original explanatory draft were supplied by
-Worker 100. This module supplies no proof of the separate vanishing host;
-that host's cohomological retraction requires a future exact proof of
-these laws.
+This module supplies no proof of the separate vanishing statement
+`AlgClosedFieldTranslationInvariantCohomologyVanishingStatement`; its proof
+(`Picard.TranslationInvariantCohomologyVanishingProof`) takes its
+cohomological retraction from the proved split-retraction law
+`relativeCohomologyPullbackSplitRetractionStatement`.

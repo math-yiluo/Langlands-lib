@@ -1,7 +1,5 @@
 # Proof of the six decompositions for actual block subgroups
 
-Author: Worker 76.
-
 This module proves the proposition
 `Langlands.Geometric.BlockParabolicSixDecomposable.{uR}` from
 `Langlands.Representation.Geometric.BlockSixDecomposableStatement`.

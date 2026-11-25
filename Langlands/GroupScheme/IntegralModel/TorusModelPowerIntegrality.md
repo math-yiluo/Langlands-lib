@@ -8,7 +8,7 @@ the special fibre of `Z` is a torus, then a rational point of `L` is integral as
 soon as some positive power of it is integral. The proof shows that over the
 maximal unramified integers the model contains a closed split torus whose generic
 fibre is all of the generic group, and then applies the companion module
-`UnramifiedTorusPowerIntegrality`, which is part of the same contribution.
+`UnramifiedTorusPowerIntegrality`, which was ported together with this module.
 
 ## No roots in a commutative group
 

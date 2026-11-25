@@ -1,7 +1,5 @@
 # Actual compatible rational algebra sections on topological opens
 
-Author: Worker 36.
-
 This internal construction starts with the actual positive-polyradius
 presented affinoid algebra `A` over an ultrametric normed field `K`. For a
 subset `U` of `BanachSpectrum A`, `OpenSections.ChartIn U` consists of all

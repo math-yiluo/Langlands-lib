@@ -1,7 +1,5 @@
 # Complex determinant characters under actual Levi conjugation
 
-Author: Worker 429.
-
 `Langlands.LeviComplexPowerConjugationStatement.{uF,uV}` is a closed
 proposition definition. It asks for compatibility of the published complex
 product-Levi character and twist with the published, actual Levi conjugation.

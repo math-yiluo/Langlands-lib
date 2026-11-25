@@ -1,7 +1,5 @@
 # Field base change for the actual class-function algebra and quotient
 
-Author: Worker 1729.
-
 This module proves
 `Langlands.GroupScheme.ClassFunctions.fieldBaseChange : FieldBaseChangeStatement.{u}`
 from `Langlands.GroupScheme.Rational.ClassFunctionsBaseChangeStatement`.

@@ -2,8 +2,8 @@
 
 This is an internal supporting result for
 `UnramifiedFacetParabolicOrderStatement` at arbitrary universe `u`.
-`UnramifiedFacetParabolicSurjectivityStatement` retains the complete host
-premises: the seven building hypotheses, the eight apartment-descent
+`UnramifiedFacetParabolicSurjectivityStatement` retains the complete premises
+of that statement: the seven building hypotheses, the eight apartment-descent
 hypotheses, the actual unramified zero datum, and a supplied family of models
 at every downstairs facet. Each neutral model is smooth and its integral
 points after base change to maximal-unramified integers are the intersection
@@ -20,7 +20,7 @@ source-model existence premise and no residual conjugation in the result.
 
 This is the surjectivity part of the desired order bijection. It does not
 assert that the image of every incident facet is parabolic, that the map is
-injective, or that the full host proposition holds.
+injective, or that the full proposition `UnramifiedFacetParabolicOrderStatement` holds.
 
 The provenance is internal composition of the actual facet-translation
 action, generic rigidity, special-fibre quotient transport, and the direct

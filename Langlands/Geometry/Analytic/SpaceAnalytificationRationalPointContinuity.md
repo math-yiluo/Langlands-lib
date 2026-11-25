@@ -1,12 +1,15 @@
 # Continuity of the space-analytification rational-point map
 
-Author: Worker 309. This internal unit proves continuity of the existing
+This internal module proves continuity of the existing
 `rationalPoint` map for the étale-chart topology. It does not prove
-Hausdorffness, injectivity, the inducing property, or the full task target.
+Hausdorffness, injectivity, the inducing property, or the full
+`SpaceAnalytificationRationalPointsStatement`;
+`SpaceAnalytificationRationalPointsProof` proves that statement using the
+continuity proved here.
 
 Work over a complete ultrametric nontrivially normed field `K : Type u`,
 an arbitrary algebraic space `X` over `Spec K`, a localized analytic space
-`Y` in the same universe as in the task, and `p : PointFamily K X Y` with
+`Y` in the same universe as in `SpaceAnalytificationRationalPointsStatement`, and `p : PointFamily K X Y` with
 `hp : IsAnalytification K X Y p`. No separatedness or locally finite type
 hypothesis on `X` is needed.
 

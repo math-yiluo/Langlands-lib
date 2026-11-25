@@ -1,6 +1,6 @@
 # Proof of relative affineness descent
 
-Worker 105 proves the exact proposition
+This module proves the exact proposition
 `Langlands.AlgebraicGeometry.AffineLimit.RelativeAffinenessDescent`
 with `relativeAffinenessDescent`, in arbitrary universe `u`. This is the
 derived relative-affineness clause of Brian Conrad, *Weil and Grothendieck
@@ -20,7 +20,7 @@ and locality at the target recovers relative affineness from affine
 chart sources.
 
 The helper `exists_isAffine_level` applies Mathlib's
-`Scheme.exists_isAffine_of_isLimit` to the published target base-change
+`Scheme.exists_isAffine_of_isLimit` to the target base-change
 diagram and its proved `isLimitCone`. Its objects are qcqs by base
 change of the structural morphism; its transitions are affine by the
 Cartesian transition squares, since both coefficient schemes are
@@ -43,6 +43,6 @@ limit morphism and the given affine stage morphism identifies the
 former as a base change of the latter. Stability of `IsAffineHom` under
 base change finishes the proof.
 
-This unit proves only relative-affineness descent. It does not prove
+This module proves only relative-affineness descent. It does not prove
 the other properties in Conrad 3.4(2), initial-model existence, a
 spectral or arithmetic adapter, or any statement about point topologies.

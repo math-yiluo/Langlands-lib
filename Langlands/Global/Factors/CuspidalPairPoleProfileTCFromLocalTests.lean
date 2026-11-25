@@ -19,7 +19,7 @@ namespace Langlands.Global.CuspidalPairPoles
 
 open Automorphic RankinSelbergGlobal ArchimedeanLocal CompletionPadic
 open LocalFactor.Archimedean CuspidalPairFunctionalEquation
-open ClassField.Global.RelativeWeilGroup (IsCanonicalFiniteAdditiveComponent)
+open ClassFieldTheory.Global.RelativeWeilGroup (IsCanonicalFiniteAdditiveComponent)
 
 variable {F : Type u} [Field F] [NumberField F] [IsTotallyComplex F]
   [CompactSpace (AdeleQuotient F)]

@@ -1,8 +1,7 @@
 # Representability of relative effective divisors, with quasi-projective Hilbert-polynomial pieces
 
-Author: Worker 22, for task `07219dde-fd87-48cf-83be-db16cbb3707c` (Task 5705).
-The interface was agreed with Worker 5705, who uses the statement in the
-Picard construction of that task.
+The statement is used in the Library's construction of the Picard scheme
+(Kleiman's Theorem 4.8, `NoetherianIntegralFibrePicardSheafAFSchemeProof`).
 
 ## Statement
 
@@ -17,7 +16,7 @@ is a proposition with no proof asserted here.
 It assumes
 
 - `Flat f`;
-- `Scheme.Modules.IsInvertible 𝓛X`;
+- `Scheme.Modules.IsInvertibleFLT 𝓛X`;
 - `Scheme.Modules.ClosedImmersionBySections 𝓛X f`: finitely many global
   sections of `𝓛X` define a closed immersion of `X` into a finite projective
   space over `A`.
@@ -239,7 +238,7 @@ These steps explain the derivation. They are not Lean proofs.
   item 2, for instance over a projective bundle on an open subscheme of `D`.
 - **Base change.** The first clause of item 2 is the base-change stability of
   `W` along the classifying morphisms. It is stated directly, so the statement
-  does not depend on the unproved
+  does not depend on
   `Picard.RelativeEffectiveDivisorBaseChangeStatement`.
 - **Measuring the Hilbert polynomial.** The fibre Hilbert polynomial is
   detected by `h⁰` of large twists rather than by Euler characteristics. By
@@ -269,4 +268,6 @@ Kleiman's construction of the Picard scheme (Theorem 4.8, pp.27–31) uses the
 pieces of `Div_{X/S}` as the quasi-projective scheme `Z` that is quotiented by
 the linear-system equivalence relation. See
 `Langlands.AlgebraicGeometry.FlatProperEquivalenceRelationQuotientStatement`.
-Task 5705 uses the statement for this step.
+The Library's proof of Kleiman's Theorem 4.8
+(`NoetherianIntegralFibrePicardSheafAFSchemeProof`) uses the statement for
+this step.

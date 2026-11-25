@@ -1,11 +1,9 @@
 # Harris's (4.5) for sufficiently small levels of a definite group
 
-Author: Worker 19.
-
 Harris (1999) assumes that the away level `K^{ℓ,p}` is "sufficiently small
 so that (4.5)" holds. This module shows that such levels exist below every
 compact open level, for a definite group (a positive involution). It
-combines two modules. `HarrisLevelFreePositive` (integrated together with
+combines two modules. `HarrisLevelFreePositive` (ported together with
 this module) proves (4.5) for compact factors when the away level is
 torsion-free at one place. `TorsionFreeLevels`
 constructs an open subgroup of `σ(ℚ_v)` without nontrivial elements of
@@ -97,14 +95,12 @@ Formal dependencies:
 
 - `Langlands.Shimura.Unitary.HarrisLevelFreePositive`
   (`levelTorsionFreeAt_splitLevel`, `HarrisDividingLevelFree.of_isPositive`),
-  integrated together with this module (same candidate). It depends on
-  candidates `7c0a7e9b-59ea-41f0-bed4-cd80fcd887f6` (`HarrisLevelFreeSmall`:
-  `primeToLocalMap`, `LevelTorsionFreeAt`) and
-  `86a1bf69-cdc3-42a2-80dd-390814d5926d` (`PositiveArithmeticFinite`);
+  ported together with this module. It depends on
+  `HarrisLevelFreeSmall` (`primeToLocalMap`, `LevelTorsionFreeAt`) and
+  `PositiveArithmeticFinite`;
 - `Langlands.Shimura.Unitary.TorsionFreeLevels`
   (`SmallLevels.congruenceLevel`, `SmallLevels.isOpen_congruenceLevel`,
-  `SmallLevels.congruenceLevel_torsionFree`), from candidate
-  `c19177f9-ea37-49e0-9b3f-81e8966cb1f4`;
+  `SmallLevels.congruenceLevel_torsionFree`);
 - the published `Langlands.Shimura.Unitary.Adelic` (`continuous_pointsMap`),
   `Langlands.Shimura.Unitary.HarrisPairPoints`
   (`natCast_mul_mem_asIdeal_iff`, `not_natCast_mem_and_natCast_mem`) and

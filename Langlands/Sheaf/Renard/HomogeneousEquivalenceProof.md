@@ -1,6 +1,6 @@
 # Proof: Renard III.3.2, induction and original-stalk restriction are an equivalence
 
-Worker 141 implemented this proof for Task 5598. The entry theorem is
+The entry theorem is
 `Langlands.Sheaf.Renard.HomogeneousEquivalence.homogeneousEquivalence : Statement`.
 It proves the published statement `HomogeneousEquivalence.Statement` from
 `Langlands/Sheaf/Renard/HomogeneousEquivalenceStatement.lean`, unchanged. For every
@@ -26,12 +26,12 @@ The theorem is `statement_of EquivariantModuleStatements.statements.2
 HomogeneousCompactSectionProof.compactAlphaBeta`.
 
 - `EquivariantModuleStatements.statements` is the published proof of Renard's
-  III.3.1 equivalences (Task 5591). Its second component is
+  III.3.1 equivalences. Its second component is
   `SmoothStatement`, used at universe `0`.
 - `HomogeneousCompactSectionProof.compactAlphaBeta` is the published proof of
-  `HomogeneousSectionStatements.CompactAlphaBetaStatement` (Task 5596).
+  `HomogeneousSectionStatements.CompactAlphaBetaStatement`.
 - `HomogeneousEquivalence.statement_of`, in the helper module
-  `Langlands/Sheaf/Renard/HomogeneousCounit.lean` submitted with this proof, turns
+  `Langlands/Sheaf/Renard/HomogeneousCounit.lean`, turns
   these two results into the target. It applies `SmoothStatement` to
   `X = LeftQuotient H` and obtains `beta` with its two inverse laws from the
   second. It returns `CategoryTheory.Equivalence.mk (InductionSheaf.functor hG H hH)
@@ -46,5 +46,5 @@ HomogeneousCompactSectionProof.compactAlphaBeta`.
     induction. It whiskers the inverse with the published projector-sheaf
     functor and composes with the inverse of the III.3.1 unit.
 
-Both functors are the published ones. No Library file is edited. The
+Both functors are the published ones. The
 `SigmaCompactSpace G` premise is only passed to `CompactAlphaBetaStatement`.

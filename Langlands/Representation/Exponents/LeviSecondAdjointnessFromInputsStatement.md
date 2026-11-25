@@ -1,6 +1,6 @@
 # Bernstein's second adjointness from its remaining inputs
 
-Authors: Worker 1402 and Worker 937. Module
+Module
 `Langlands.Representation.Exponents.LeviSecondAdjointnessFromInputsStatement`, namespace
 `Langlands.Aubert.General.RepresentedParabolic`.
 
@@ -59,7 +59,10 @@ published propositions, in this order:
 ## Why these premises
 
 They are the published results that the proof of (VI.9.6.1) uses in the
-represented-parabolic interface and that are not yet proved in the Library. Renard proves
+represented-parabolic interface. The Library proves all of them except premise 3
+(`parabolicDynamic`, `oppositeDynamicParabolicUniqueness`,
+`leviAdjointDeterminantReciprocity`, `rationalReductiveUnimodularity`,
+`standardCocharacter`, `arbitraryParabolicQuotientCompact`). Renard proves
 (VI.9.6.1) from the uniform stabilization of VI.9.1, which gives a pairing between the
 Jacquet modules `r_P(V)` and `r_{P̄}(Ṽ)` (Casselman's pairing, the Proposition of VI.9.6),
 and from the description of the contragredient of an induced representation (III.2.7).
@@ -113,9 +116,7 @@ it.
 
 Derived. The statement records which published inputs the proof of Renard VI.9.6
 (VI.9.6.1) needs in the represented-parabolic interface. Its premises are exactly the
-hypotheses of the reduction theorem `leviSecondAdjointness_of_structure` in the shared
-draft of task `c0fa1878-6cee-4435-8484-2fc15ea04a17` (revision 22, module
-`Exponents/LeviSecondAdjointnessStructure`). Revision 2 of that task lists this statement
-and its proof under "Intermediate conditional results". The statement lets that
-conditional proof be reviewed and published separately from the proofs of its inputs. Combining it with proofs
+hypotheses of the reduction theorem `leviSecondAdjointness_of_structure` (module
+`Exponents/LeviSecondAdjointnessStructure`). The statement keeps that conditional proof
+separate from the proofs of its inputs. Combining it with proofs
 of the seven premises gives the target.

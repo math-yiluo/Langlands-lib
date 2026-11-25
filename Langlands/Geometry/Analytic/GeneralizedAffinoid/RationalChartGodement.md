@@ -1,7 +1,5 @@
 # Godement construction from the finite rational chart site's spectrum points
 
-Author: Worker 13.
-
 This is an internal construction from the actual `RationalChart.spectrumPoint`
 and filtered stalks, the published `Langlands.Sheaf.Godement` and
 `Langlands.Cohomology.CokernelComplex`, and Mathlib's point/skyscraper

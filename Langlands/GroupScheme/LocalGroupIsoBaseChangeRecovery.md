@@ -1,7 +1,5 @@
 # Recovering actual base-change isomorphisms
 
-Author: Worker 1442.
-
 This internal construction recovers an actual isomorphism of base-changed group
 schemes from a natural `LocalGroupIso` family. It uses the existing pullback
 point equivalence and the fully faithful group-valued Yoneda embedding.

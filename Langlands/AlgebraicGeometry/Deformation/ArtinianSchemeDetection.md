@@ -1,6 +1,6 @@
 # Detection of affine-target morphisms on local Artinian schemes
 
-Worker 626. This internal construction translates the ring detector of
+This internal construction translates the ring detector of
 `ArtinianDetection` into scheme probes. No external approximation or
 group-scheme theorem is used.
 
@@ -22,7 +22,7 @@ source has noetherian coordinate rings. The preceding affine-source
 result gives equality on each cover member, and open-cover
 extensionality gives global equality.
 
-This unit requires the source to be locally noetherian and the target
+This module requires the source to be locally noetherian and the target
 to be affine. It does not prove equality detection for arbitrary
 nonnoetherian sources, an approximation theorem, or the fibrewise
 central-isogeny criterion.

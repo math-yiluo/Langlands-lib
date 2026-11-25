@@ -27,6 +27,33 @@ first coordinate and identity matrices in the rest. This gives the equivalence
 of `IsNorm` in `cyclicProductGLCoordinates_isNorm_iff`, as well as the
 fixed-element `IsNormAssociated` equivalence.
 
+Two consequences for orbital integrals follow, for `F` a nonarchimedean
+local field (`[Field F] [ValuativeRel F] [TopologicalSpace F]
+[IsNonarchimedeanLocalField F]`), `L` a field, Borel σ-algebras on the
+general linear groups, and `κ = cyclicProductGLCoordinates (n := n) c hc hc'`:
+
+- `vanishesOffNorms_cyclicProduct_iff c hc hc' hshift hwrap
+  (hσ : σ ^ ((m + 1) * d) = 1) (μF : Measure (GeneralLinear n F))
+  (f : GeneralLinear n F → ℂ) :
+  VanishesOffNorms σ ((m + 1) * d) μF f ↔ VanishesOffNorms τ d μF f`:
+  the regular non-norms are the same for `(σ, (m + 1) d)` and `(τ, d)` by
+  `cyclicProductGLCoordinates_isNorm_iff`.
+- `IsAssociatedMeasure.cyclicProduct c hc hc' hshift hwrap` (with
+  `[IsTopologicalRing E] [IsModuleTopology F E] [IsTopologicalRing L]`)
+  `{δ : GeneralLinear n E} {γ : GeneralLinear n F}
+  {μδ : Measure (sigmaCentralizer σ n δ)} {μγ : Measure (glCentralizer γ)}
+  {μZ : Measure (sigmaCentralizer τ n (List.ofFn (κ δ)).prod)}
+  (hZ : Measure.map Subtype.val μZ = Measure.map (fun z : sigmaCentralizer σ n δ => κ z.val 0) μδ)
+  (h : IsAssociatedMeasure σ ((m + 1) * d) δ γ μδ μγ) :
+  IsAssociatedMeasure τ d (List.ofFn (κ δ)).prod γ μZ μγ`. If `μδ` is
+  associated through `a`, then `μZ` is associated through `b = κ(a)₀`:
+  `b⁻¹ N_τ(β) b = γ` by the zeroth-coordinate norm identity and
+  `cyclicProductGLCoordinates_baseChange`, and the measure identity of the
+  association of `μδ`, pushed forward by `z ↦ κ(z)₀`, gives that of `μZ`.
+  The hypothesis `hZ` holds for the image of `μδ` under
+  `cyclicProductCentralizerEquiv`, which is `z ↦ κ(z)₀` on the
+  σ-centralizer.
+
 These internal lemmas give the norm calculation for the unit comparison
 in Henniart–Lemaire, I.2.1–I.2.2, printed pp. 10–12 (PDF pp. 18–20).
 The product coordinates and their shift laws are supplied as input.

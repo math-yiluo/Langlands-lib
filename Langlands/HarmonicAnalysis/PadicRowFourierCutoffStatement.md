@@ -1,10 +1,9 @@
 # Simultaneous normalized p-adic row Fourier cutoffs
 
-Worker 234 authored this derived statement and its documentation. The
-interface was specified by Worker 623 for the paired complementary-block
-transfer proof (task `60e55e09-11c3-4f2f-bd81-5011f07445f7`). Worker 110
-proposed the normalized-pair design: one Fourier pair whose small member has
-mass one, rather than two cutoffs normalized independently. The instance
+This is a derived statement. Its interface is the one needed by the paired
+complementary-block transfer proof. Its design is a normalized pair: one
+Fourier pair whose small member has mass one, rather than two cutoffs
+normalized independently. The instance
 setup and the valuative-topology helper are adapted from the
 published `Langlands.RankinSelberg.UnequalRankComplementaryTransferStatement`.
 
@@ -21,7 +20,7 @@ The definition installs exactly `T.topology`, `T.valuativeRel` and
 topology, its uniform additive group certificate, and a nonarchimedean
 additive group certificate. The helper `rowFourierCutoff_nonarchimedean`
 derives the last from Mathlib's basis of open submodules for the valuative
-topology. Integration exposes this existing helper for reuse by the proof
+topology. The helper is exposed for reuse by the proof
 module, without changing its type, proof or the statement's meaning.
 Finally it installs the
 Borel measurable space of the supplied topology and its Borel certificate.
@@ -159,23 +158,28 @@ and
 `/home/taskhub/central-library/Jacquet-Piatetski-Shapiro-Shalika--Rankin-Selberg Convolutions--1983.pdf`
 (SHA256 `d9feed6388ca5acf02ecc6a8cce984871a7c28f062ff441e45a71fa2d8962245`).
 
-Errata check (bounded): I found no erratum for either article. I checked the
-project literature index, the Central Library listing and the Library notes.
+Errata check (bounded): no erratum was found for either article. The check
+covered the project literature index, the Central Library listing and the
+Library notes.
 The only located Jacquet correction (2012) concerns the 1981 *Conducteur*
 article, not these pages. This records the extent of the check; it does not
 claim that no errata exist elsewhere.
 
 ## Intended proof (not part of this module)
 
-A later proof task owns the construction. Here is the suggested route.
+The construction is carried out in
+[PadicRowFourierCutoffProof](PadicRowFourierCutoffProof.md). Here is the
+suggested route.
 Choose a compact open additive subgroup `L` of rows inside `U` with
 `ψ(rowPairing x z) = 1` for all `x ∈ C`, `z ∈ L`. Such an `L` exists because
 `ψ` is trivial near zero, the pairing is continuous and `C` is compact. Set
 `κ = 1_L / vol(L)` and `Φ = F κ`. Then `Φ = 1` on `C`, and row closure,
 inversion and evenness give `IsRowFourierPair ψ ν Φ κ`. No
 annihilator-volume product formula and no second Haar measure are needed.
-Existing owners cover the ingredients: row closure and inversion from scalar
-`IsSelfDual` (task `ba6361ff-1c19-432b-82b1-9d246273d780`), scalar Fourier
-closure (task `66e7ba59-db37-4c91-afde-b1f13c86022c`) and compact-open
-annihilator compactness (task `969ca422-a29a-4f92-ab24-beeeafb941d2`). This
+The ingredients are separate Library results: row closure and inversion from
+scalar `IsSelfDual`
+([RowFourierCompatibilityProof](RowFourierCompatibilityProof.md)), scalar
+Fourier closure ([ScalarFourierClosureProof](ScalarFourierClosureProof.md)) and
+compact-open annihilator compactness
+([CompactOpenAnnihilatorProof](CompactOpenAnnihilatorProof.md)). This
 module proves none of these steps.

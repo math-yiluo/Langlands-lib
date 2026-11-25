@@ -1,6 +1,6 @@
 # Entire products for an orthogonal-finite square test in the real equal-rank unfolding
 
-This module is the real counterpart of the published complex module
+This module is the real counterpart of the complex module
 `ComplexLocalEqualFiniteSquareNormalized`, together with the matched compact expansion of
 `ComplexLocalMatchedMatrixExpansion`. Let `m = t + 1` and `n = t + 2`, and let `O` be the real
 orthogonal group `Matrix.unitaryGroup (Fin n) ℝ` with its Haar measure.
@@ -13,7 +13,7 @@ orthogonal group `Matrix.unitaryGroup (Fin n) ℝ` with its Haar measure.
   vector of the block list `es`, included into the smooth position principal series of
   `expand es` by `RealPrincipalSeries.expandedSmoothInclusion`. `π(g)` is the right translation
   `RealPrincipalSeries.translate`, and `ℓ` is a linear form. These are the matrix coefficients
-  produced by Worker 771's `RealStandardCompactBanach.exists_compactProjection_coefficients`.
+  produced by `RealStandardCompactBanach.exists_compactProjection_coefficients`.
 * `realWeightedMatrixIntegral μ e Ψ b w = ∫ Ψ(g) sgn(det g)^e |det g|^(w + m/2) b(g) dμ(g)`, the
   matrix integral of `RealLocalEqualShiftedProducts`, with the weighted test
   `realWeightedMatrixTest (charData e 0) Ψ (w + m/2)`.
@@ -70,12 +70,12 @@ The thresholds `τ, σ, τ_d, σ_d` may depend on `Ψ` and `f`.
 1. `realOrthogonalMatchedWeight` (from `RealLocalCompactFourierWeight`) gives one continuous
    weight `κ ∈ finiteWeights` on `O`. With the parity character `charData e 0`, it reproduces both
    `Ψ` and `Ψ̂`.
-2. Worker 771's `exists_compactProjection_coefficients` for `B`, `L` and `κ` gives vectors `u_j`
+2. `exists_compactProjection_coefficients` (from `RealWhittakerCompactProjection`) for `B`, `L` and `κ` gives vectors `u_j`
    and bounded linear forms `ℓ_j` with
    `∫ κ(k) (B f)(x k g) dk = ∑_j (B u_j)(x) b_j(g)`, where `b_j = realStandardMatrixCoefficient es ℓ_j f`.
    `dualFunction_compactExpansion` turns this into the dual expansion with the duals of
    `B u_j` and `b_j ∘ (inverse transpose)`.
-3. The published finite-product theorem `realLocalEqualShiftedProducts` (from
+3. The Library's finite-product theorem `realLocalEqualShiftedProducts` (from
    `RealLocalEqualShiftedProducts`) is applied twice, with `K = O` and `ι = Unitary.toUnits`
    (orthogonal matrices have `|det| = 1` by `MaximalParabolicIntegration.abs_det_unitary`).
    * The primal application uses `ds, es, a, W, B f, Ψ` and the matrix integrals
@@ -107,7 +107,7 @@ This is Jacquet, *Archimedean Rankin–Selberg integrals* (2009), §8.2, pp. 56�
 `K_n`-finite square test. There the unfolded integral (8.1) becomes a finite sum of products of
 corank-one integrals and matrix integrals on both sides of the functional equation. The
 product of the two functional equations then continues the sum. The Lean statement follows
-the published complex module and keeps three explicit inputs:
+the complex module and keeps three explicit inputs:
 
 * the continuous Whittaker evaluation of `B`, an explicit hypothesis (the Library's
   `realSmoothWhittakerEvaluation` provides it only for irreducible standard modules, under the
@@ -115,10 +115,9 @@ the published complex module and keeps three explicit inputs:
 * the normalized corank-one equation for every coefficient of the larger model, which is the
   induction hypothesis;
 * the normalized matrix equation for bounded matrix coefficients of the larger principal
-  series. Worker 823's planned `RealMatrixPairNormalizedGrowthStatement` is designed to supply
-  it; it is not yet in the Library.
+  series. The Library does not prove it.
 
 The module proves no statement about non-finite square tests, uniform chambers, the actual
 equal-rank integrals, or `RealLocalUniformPositiveEqualContinuationStatement`.
-`HasRealPairNormalizedGrowth` is Worker 1050's accepted predicate from
-`RealLocalNormalizedGrowth`, whose unchanged pair accompanies this candidate.
+`HasRealPairNormalizedGrowth` is the predicate of the module
+`RealLocalNormalizedGrowth`.

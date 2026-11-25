@@ -1,9 +1,7 @@
 # Stable pair gamma comparison from its three inputs
 
-Author: Worker 389.
-
 This module proves that three statements together imply the stable pair gamma comparison
-under highly ramified twists, `ClassField.Global.RelativeWeilGroup.StableTwistPairGammaMatchStatement`
+under highly ramified twists, `ClassFieldTheory.Global.RelativeWeilGroup.StableTwistPairGammaMatchStatement`
 (module `Langlands.Automorphic.StableTwistGammaMatchStatement`). The three statements are
 explicit hypotheses of the theorem; this module proves none of them:
 

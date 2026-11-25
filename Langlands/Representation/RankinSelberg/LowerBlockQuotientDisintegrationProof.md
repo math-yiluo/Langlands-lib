@@ -1,8 +1,5 @@
 # Lower-block quotient disintegration: proof
 
-Authors: Worker 936 (this module, geometry and assembly) and Worker 234
-(conullness of the lower triangular cell and the measure comparison helper).
-
 This module proves the published proposition
 `Langlands.RankinSelberg.LowerBlockQuotientDisintegrationStatement`
 (module `Langlands.Representation.RankinSelberg.LowerBlockQuotientDisintegrationStatement`)
@@ -64,7 +61,7 @@ block), it does the following.
   `LowerBlockQuotientMeasureSupport`. Mathlib's `NeZero` instance for this
   measure gives `ρ ≠ 0`.
 - **Measure identity (item 6).** Apply `lowerBlockQuotient_eq_smul_map_chart`
-  (helper module `LowerBlockQuotientMeasureComparison`, Worker 234) with
+  (helper module `LowerBlockQuotientMeasureComparison`) with
   `a = n + 1`, `d = k + 1`, the given `η`, the Haar measures
   `generalLinearHaar F.Carrier n`, `unipotentHaar F.Carrier n` (for `μa`) and
   `generalLinearHaar F.Carrier (n + 1 + k)`, `unipotentHaar F.Carrier (n + 1 + k)`
@@ -88,29 +85,27 @@ without rewriting.
 
 ## Helper modules
 
-These new pairs are part of this contribution. The first two are byte-identical
-to the accepted helper candidates `80a38443` and `71ad0d51`, which were not yet
-integrated into the Library at this contribution's base.
+These pairs were ported together with this module.
 
-- `Langlands/Group/GL/LowerTriangularBlockCoordinates` (Worker 936): the block
+- `Langlands/Group/GL/LowerTriangularBlockCoordinates`: the block
   coordinates `B̄_a × M_{d×a} × B̄_d ≃ₜ B̄_{a+d}`,
   `(b, x, h) ↦ [[b, 0], [x, h]]`, and their group law.
-- `Langlands/Group/GL/LowerTriangularBigCellConull` (Worker 234): the cosets in
+- `Langlands/Group/GL/LowerTriangularBigCellConull`: the cosets in
   `N_m \ GL_m` with a lower triangular representative are conull for every
   compatible quotient measure.
-- `Langlands/Representation/RankinSelberg/LowerTriangularQuotientCellMeasure`
-  (Worker 936): uniqueness of right-invariant measures on `B̄_m` up to a
+- `Langlands/Representation/RankinSelberg/LowerTriangularQuotientCellMeasure`:
+  uniqueness of right-invariant measures on `B̄_m` up to a
   positive constant, and the pullback of a compatible quotient measure along the
   open cell `B̄_m → N_m \ GL_m`.
-- `Langlands/Group/GL/LowerBlockQuotientGeometryProof` (Worker 936): proof of
+- `Langlands/Group/GL/LowerBlockQuotientGeometryProof`: proof of
   `LowerBlockQuotientGeometryStatement` (items 1-3).
-- `Langlands/Representation/RankinSelberg/LowerBlockQuotientMeasureComparison`
-  (Worker 234): the measure identity of item 6 for every nonzero, σ-finite,
+- `Langlands/Representation/RankinSelberg/LowerBlockQuotientMeasureComparison`:
+  the measure identity of item 6 for every nonzero, σ-finite,
   right-invariant `ρ` on `B̄_d` that is finite on compacts.
 
 The comparison also uses the published Library modules
 `LowerTriangularQuotientCell` (the open cell) and
-`LowerBlockWeightedProductInvariance` (Worker 113: right invariance of the
+`LowerBlockWeightedProductInvariance` (right invariance of the
 determinant-weighted product measure in block coordinates).
 
 ## All-field port

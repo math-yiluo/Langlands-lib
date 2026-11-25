@@ -62,7 +62,7 @@ abbrev DiscreteCompatibleFamily (C : Type w) :=
 
 variable {G : Type v} [Group G] [TopologicalSpace G] [IsTopologicalGroup G]
   (ρ : G →* Aut A)
-  (hρ : ∀ a : A, Continuous (fun g : G => (ρ g).hom.toAlgHom a))
+  (hρ : ∀ a : A, Continuous (fun g : G => (ρ g).asIso.hom.toAlgHom a))
 
 /-- The largest open subgroup inside U preserving the target and every component. -/
 def normOpenSubgroup (U : OpenSubgroup G) : OpenSubgroup G :=
@@ -131,10 +131,10 @@ theorem normComponentToLocus_equivariant (U : OpenSubgroup G)
     c.toDomainCover.componentMap i
         (ConcreteCategory.hom
           (((normInvariantSpectrumFunctor ρ hρ (c.normOpenSubgroup ρ hρ U)).obj
-            (c.normInvariantComponent ρ hρ U i)).obj.ρ g) x) =
+            (c.normInvariantComponent ρ hρ U i)).obj.ρ g).asHom x) =
       ConcreteCategory.hom
         (((normInvariantLocusFunctor ρ hρ (c.normOpenSubgroup ρ hρ U)).obj
-          (c.normInvariantTarget ρ hρ U)).obj.ρ g)
+          (c.normInvariantTarget ρ hρ U)).obj.ρ g).asHom
         (c.toDomainCover.componentMap i x) :=
   congrArg (fun f => f x) ((c.normComponentToLocus ρ hρ U i).hom.comm g)
 
@@ -161,7 +161,7 @@ def normCompatibleSmul (U : OpenSubgroup G) (C : Type w)
     exact (c.normComponentToLocus_equivariant ρ hρ U g⁻¹ i x).trans
       ((congrArg (ConcreteCategory.hom
         (((normInvariantLocusFunctor ρ hρ (c.normOpenSubgroup ρ hρ U)).obj
-          (c.normInvariantTarget ρ hρ U)).obj.ρ g⁻¹)) h).trans
+          (c.normInvariantTarget ρ hρ U)).obj.ρ g⁻¹).asHom) h).trans
         (c.normComponentToLocus_equivariant ρ hρ U g⁻¹ j y).symm)⟩
 
 @[simp]
@@ -171,7 +171,7 @@ theorem normCompatibleSmul_apply (U : OpenSubgroup G) {C : Type w}
     (c.normCompatibleSmul ρ hρ U C g f).val i x =
       f.val i (BanachSpectrum.comap
         ((normInvariantSectionAction ρ hρ (c.normOpenSubgroup ρ hρ U)
-          (c.normInvariantComponent ρ hρ U i)).actionAut g⁻¹).inv.toBoundedRingHom x) := rfl
+          (c.normInvariantComponent ρ hρ U i)).actionAut g⁻¹).asIso.inv.toBoundedRingHom x) := rfl
 
 /-- The compatible families carry the inherited finite product topology and
 a jointly continuous action of the original common open subgroup. -/
@@ -180,9 +180,10 @@ def normCompatibleAction (U : OpenSubgroup G) (C : Type w) :
   let act : Action TopCat.{max u w} (c.normOpenSubgroup ρ hρ U) :=
     { V := TopCat.of (c.DiscreteCompatibleFamily C)
       ρ :=
-        { toFun := fun g => TopCat.ofHom
-            ⟨c.normCompatibleSmul ρ hρ U C g, continuous_of_discreteTopology⟩
+        { toFun := fun g => End.of (TopCat.ofHom
+            ⟨c.normCompatibleSmul ρ hρ U C g, continuous_of_discreteTopology⟩)
           map_one' := by
+            apply End.ext
             apply TopCat.ext
             intro f
             apply Subtype.ext
@@ -190,6 +191,7 @@ def normCompatibleAction (U : OpenSubgroup G) (C : Type w) :
             exact one_smul _ (f.val i)
           map_mul' := by
             intro g h
+            apply End.ext
             apply TopCat.ext
             intro f
             apply Subtype.ext

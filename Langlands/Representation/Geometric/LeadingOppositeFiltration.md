@@ -1,7 +1,6 @@
 # Actual opposite filtration and same-character scalar restriction
 
-Worker 526 adapts Worker 514's public reversed-filtration assembly, with
-the character and reversal design guidance of Workers 359 and 430, retaining
+This module adapts the public reversed-filtration assembly, retaining
 the actual coarse opposite Jacquet module of the actual induction. The upper
 geometric lemma remains an explicit input. Evaluation at a smooth source and
 the public normalized reversal equivalence produce a finite filtration indexed

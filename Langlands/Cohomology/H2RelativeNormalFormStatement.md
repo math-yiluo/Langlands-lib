@@ -1,7 +1,5 @@
 # Relative degree-two cocycle normal form and inflation injectivity
 
-Authors: Worker 145, with the mathematical interface supplied by Worker 138.
-
 This module defines two proposition targets. It proves neither proposition.
 Both quantify a commutative ring `k : Type u`, a group `G : Type u`,
 a representation `A : Rep.{u} k G`, and a normal subgroup `S : Subgroup G`,
@@ -65,7 +63,7 @@ Its first map `.f` is induced by the quotient homomorphism
 `QuotientGroup.mk' S` and the inclusion of invariant coefficients into `A`.
 The quotient representation is `A.quotientToInvariants S`.
 The target asserts injectivity of this actual map; exactness at the middle
-term remains part of the parent target.
+term is part of `H2InflationRestrictionExactness`.
 
 ## Source correspondence and internal provenance
 
@@ -75,7 +73,7 @@ pages 117–118 / PDF pages 123–124. Registered source:
 `serre-1979-local-fields`, SHA256
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`,
 retained at `/home/taskhub/central-library/Serre--Local Fields--1979.pdf`.
-Worker 145 read these original pages. No project errata entry for this
+These original pages were read. No project errata entry for this
 source was present when checked.
 
 Serre's normal subgroup `H` is named `S` here. Proposition 5 gives
@@ -92,9 +90,13 @@ does not impose an additional cohomological hypothesis.
 `H2RelativeCocycleNormalForm` is an internal derived normal-form lemma
 supporting Serre VII.6 Proposition 5, not a verbatim theorem in that source.
 Serre proves his result by dimension shifting. The internal target instead
-isolates an explicit-cochain step for a subsequent proof of the parent
-exactness statement: adjust a cocycle with coboundary restriction until
+isolates an explicit-cochain step for a proof of the exactness statement
+`H2InflationRestrictionExactness`: adjust a cocycle with coboundary restriction until
 both mixed restrictions vanish, then descend the adjusted cocycle to the
 quotient with invariant coefficients. This intended use explains the
 target's provenance; no proof of the adjustment or descent is asserted in
-this statement module. Proofs of both targets are separate obligations.
+this statement module. The two targets are proved by
+`Langlands.Cohomology.h2RelativeCocycleNormalForm` (module
+`Langlands.Cohomology.H2RelativeNormalForm`) and
+`Langlands.Cohomology.h2InflationInjectivity` (module
+`Langlands.Cohomology.H2InflationInjectivityProof`).

@@ -1,7 +1,5 @@
 # Norm-continuous actions on presented strict affinoid algebras
 
-Author: Worker 36.
-
 This derived local construction uses the actual quotient algebras of
 `PresentedStrictAffinoidAlgebra K`. Its full category contains every action
 whose forward orbit of each algebra element is continuous in the quotient

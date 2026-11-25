@@ -42,7 +42,7 @@ The proof also uses proved results of the modules
 (`exists_partialEulerFactor_convergence`, `exists_hasSatakeBound_presentation`),
 `Langlands.Global.RankinSelberg.PartialIntegralExhaustion`
 (`integral_eq_hasProd_mul_setIntegral`, `measurableSet_unipotentIntegralClasses`),
-`Langlands.Global.RankinSelberg.LocalPointFactorization` (Worker 5130's lemmas on the points
+`Langlands.Global.RankinSelberg.LocalPointFactorization` (lemmas on the points
 `ι_v(h)`, the uniformizer `placeUniformizer v` and determinants) and
 `Langlands.Representation.Whittaker.RectangularSupport` (the support lemma for spherical
 Whittaker functions on `[[g,0,0],[x,I,0],[0,0,1]]`).
@@ -63,7 +63,7 @@ of an adelic point, `w = unfoldingWeyl F h = diag(I_(t+1), w_(r-t))`,
   propositional helper `imp_or_imp`: `(p → a) ∨ (¬p → b)`).
 - Local facts: `rectGL_torus` (`diag(ϖ^λ, I) = ϖ^(λ,0)`, with the weight `padZeroWeight`
   of `UnramifiedUnequalLocalSum`), and `modulusExponent_eq`
-  (`∑_(i<j)(λ_i-λ_j) = ∑_i (t-2i)λ_i`; the computation is that of Worker 5130's
+  (`∑_(i<j)(λ_i-λ_j) = ∑_i (t-2i)λ_i`; the computation is that of
   `EqualEulerLocal.sum_sub_of_lt_eq`).
 - The place `v`: `integer_trivial_of_conductor` and `exists_ne_one_of_conductor`. If the
   component `ψ_v` has additive conductor `0`, then `ψ_v = 1` on `𝒪_v`, and for `z ∉ 𝒪_v`
@@ -138,7 +138,7 @@ the same argument without the rectangular block, and `|det|` is multiplicative
 
 ## Provenance
 
-The reduction is the author's formulation of the proof of Cogdell 2004, §4.1, printed
+The reduction is an internal formulation of the proof of Cogdell 2004, §4.1, printed
 p.220 (J. W. Cogdell, *Analytic theory of L-functions for GL_n*, registered as
 `cogdell-2004-analytic-theory-gln`, PDF page = printed page + 3): the dual global integral
 `Ĩ(1-s; φ̃, φ̃')` factors as the product over `v ∈ S` of the dual local integrals times

@@ -157,7 +157,7 @@ def stageCover {T : Opens (localizedSpaceFunctor.obj X)} (hT : T ≤ E.baseOpen)
 theorem stageDeck_comp_inclusion {T : Opens (localizedSpaceFunctor.obj X)} (hT : T ≤ E.baseOpen)
     (γ : E.Γ) :
     ((E.stageCover hT).deck γ).left ≫ restrictEtaleInclusion X T E.source.obj =
-      restrictEtaleInclusion X T E.source.obj ≫ (E.geometry.deck γ).hom :=
+      restrictEtaleInclusion X T E.source.obj ≫ (E.geometry.deck γ).asIso.hom :=
   congrArg (fun a => a.left)
     ((etaleOpenRestrictionInclusion X T).naturality (E.siteCover.deck γ))
 
@@ -208,7 +208,7 @@ def germDatum :
   locally_free := by
     intro i U f γ h
     rcases (E.stageCover i.property.1).locally_free f γ.down h with hγ | he
-    · exact Or.inl (ULift.ext _ _ hγ)
+    · exact Or.inl (ULift.ext hγ)
     · exact Or.inr he
 
 variable (R : Type (max u (v + 1) uL)) [CommRing R]

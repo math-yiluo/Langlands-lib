@@ -1,7 +1,5 @@
 # Pair factors of spherical representations
 
-Author: Worker 4891.
-
 This module computes the Rankin–Selberg pair L-polynomial and pair epsilon factor of
 two spherical (unramified) irreducible representations of `GL_(r+1)(F)` and
 `GL_(t+1)(F)` over a `p`-adic field `F`. The factors are the Library's

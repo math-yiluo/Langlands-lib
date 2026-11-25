@@ -16,7 +16,7 @@ namespace Langlands.BaseChange
 open Automorphic Correspondence Global Global.CompletionPadic Global.AdelicFunctoriality
 open Global.CuspidalPairFunctionalEquation Global.FunctionalEquationComparison
 open Global.HeckeFunctionalEquation Automorphic.CuspidalWhittaker
-open ClassField.Global.RelativeWeilGroup RankinSelberg Unramified
+open ClassFieldTheory.Global.RelativeWeilGroup RankinSelberg Unramified
 open scoped NumberField FiniteExtension
 
 section DualData

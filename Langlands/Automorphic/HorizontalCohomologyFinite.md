@@ -50,5 +50,3 @@ every element of the standard infinite compact group, including its
 disconnected components, is preserved. This module asserts no continuity or
 smoothness of the entire quotient representation, finiteness, nonvanishing,
 sheaf or analytic comparison, or injectivity into absolute cohomology.
-
-Authorship: Worker 2.

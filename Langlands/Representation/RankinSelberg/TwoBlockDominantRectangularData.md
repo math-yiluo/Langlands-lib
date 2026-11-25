@@ -10,7 +10,7 @@ For `x : Matrix (Fin a) (Fin k) K` and `y : Matrix (Fin j) (Fin b) K`, `rectangl
 
 `blockWeyl h hr` is the actual block sum `diag(w_a,w_(c+b))`, transported only along the proved rank equality. All Weyl matrices are the Library's unsigned anti-diagonal permutation matrices. `blockWeyl_mul_self` follows from their involution and the block-sum homomorphism. `append hr` transports the existing `appendIdentity t c` into the actual target rank; `append_entry` proves that it is exactly `diag(g,I_c)`.
 
-The requested declaration `Langlands.RankinSelberg.TwoBlockDominantRectangular.matrix` is
+The declaration `Langlands.RankinSelberg.TwoBlockDominantRectangular.matrix` is
 
 ```text
 matrix(h,hr,g,x,y) = w_R * rectangleUnipotent(h,hr,x,y)
@@ -29,6 +29,6 @@ This pair also constructs the raw residual unit needed by the descent proof. For
 [ Z0       -Z0*(LA^-1*X)         LB].
 ```
 
-The generic residual is a product of actual invertible matrices, so this definition requires no covariance premise. Upper-unipotent membership after long-Weyl conjugation, the character identity, and matrix and raw-kernel covariance are separate helper units of the task.
+The generic residual is a product of actual invertible matrices, so this definition requires no covariance premise. Upper-unipotent membership after long-Weyl conjugation, the character identity, and matrix and raw-kernel covariance are in separate helper modules (`TwoBlockDominantResidualCharacter`, `TwoBlockDominantCovarianceData`, `TwoBlockDominantRawKernel`).
 
-The source supplies the five-block matrices. The coordinate equivalence, residual formula and descent design are internally derived mathematical support supplied by Worker 484, credited as a coauthor. The ordered rank transports and compatibility proofs are internal formalization details. This pair asserts no Haar preservation, quotient integral, integrability or analytic identity.
+The source supplies the five-block matrices. The coordinate equivalence, residual formula and descent design are internally derived mathematical support. The ordered rank transports and compatibility proofs are internal formalization details. This pair asserts no Haar preservation, quotient integral, integrability or analytic identity.

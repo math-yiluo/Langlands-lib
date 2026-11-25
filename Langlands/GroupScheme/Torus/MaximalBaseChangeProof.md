@@ -1,7 +1,5 @@
 # Maximality of tori under field extension: proof
 
-Authors: Worker 1379, Worker 1395.
-
 `Langlands.GroupScheme.maximalTorusBaseChange` proves the published
 `Langlands.GroupScheme.MaximalTorusBaseChangeStatement.{u}`
 (`Langlands.GroupScheme.Torus.MaximalBaseChangeStatement`). Take fields

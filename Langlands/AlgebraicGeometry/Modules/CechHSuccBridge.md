@@ -1,7 +1,5 @@
 # Čech groups of the FLT port and actual cohomology
 
-Authors: Worker 5705.
-
 The module `Langlands.AlgebraicGeometry.Modules.CechHSuccBridge` (namespace
 `Langlands.AlgebraicGeometry.Modules.CechBridge`) connects the Čech cohomology of presheaves of
 modules in the Library's port of the Anthropic FLT formalization (`OModulePresheaf`, with groups

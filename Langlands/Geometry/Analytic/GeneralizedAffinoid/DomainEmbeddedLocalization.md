@@ -1,7 +1,5 @@
 # Full-domain localization along a specified embedded domain
 
-Author: Worker 36.
-
 This module constructs
 `Domain.localizationEquivalenceOfInjective U hU :
 Domain K U.algebra ≌ Over U`.

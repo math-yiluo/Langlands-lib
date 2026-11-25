@@ -1,6 +1,6 @@
 # The largest split part and the invariant quotient
 
-Worker 679. Internal supporting construction for the anisotropic-part theorem.
+Internal supporting construction for the anisotropic-part theorem.
 
 `IsInvariantQuotient k E q` asserts that pullback of actual characters along
 `q` after scalar extension to `E` is injective and has exactly the invariant
@@ -24,4 +24,4 @@ by the Galois-group order or restriction on the field characteristic occurs.
 Finally, the actual multiplication morphism `A × ker(q) → T` is a pullback of
 `A → Q` by `T → Q`, using `KernelSubgroupMultiplication.isPullback_scheme`.
 Finiteness and surjectivity therefore pass to precisely this multiplication
-morphism. The kernel's torus and anisotropy properties are separate obligations.
+morphism. The kernel's torus and anisotropy properties are proved separately, in `TorusAnisotropicKernel`.

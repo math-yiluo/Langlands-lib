@@ -33,13 +33,12 @@ The target supplies the exact source provenance. This implementation follows the
 model replacement in the first paragraph of Conrad's proof, then reuses the
 fixed-model adelic properness theorem instead of reproving its local-field and
 finite-level arguments. Imported predecessors are reused by Lean name and are
-not part of this proof unit. Worker 208 authored the proof and its explanation;
-Worker 1557 checked the proof against the published prerequisites and prepared
-this proof-only pair for independent review.
+not part of this module. The proof was checked against the published
+prerequisites.
 
 The registered original is `conrad-2011-weil-grothendieck-adelic-points`,
 SHA-256 `fe4a9193aff4ef575665b40971f3da32f850a74d87b3f2d0fa28bba26b9cbabb`.
 The model replacement is supported by printed pp.5–6, Theorem 3.4(1)–(3)
 and Remark 3.5. The proof establishes only the proper-map assertion of
-Proposition 4.4. Compactness, eventual stabilization and the remaining
-five-section conclusions are separate obligations.
+Proposition 4.4. Compactness, eventual stabilization and the other
+conclusions of Conrad's paper are separate statements.

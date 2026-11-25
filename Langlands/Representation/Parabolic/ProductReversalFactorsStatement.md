@@ -1,12 +1,12 @@
 # Composition-factor commutativity of two-factor normalized products
 
-Author: Worker 757.
-
 This pair defines one proposition,
 `Langlands.Parabolic.TwoBlockProductReversalFactors.{uF, uV}`. It states
 Zelevinsky (1980), Theorem 1.9, for two smooth factors of finite length. The
-declaration is a `Prop`-valued `def`. This contribution does not prove it: the
-theorem is unproved here, and its proof is a separate task.
+declaration is a `Prop`-valued `def`. This module does not prove it: the
+theorem is unproved here. Its proof is
+`Langlands.Parabolic.twoBlockProductReversalFactors`, in the separate module
+`Parabolic.ProductReversalFactorsProof`.
 
 ## Exact statement
 
@@ -107,12 +107,13 @@ Both products are representations of the same group `GL_(a+b)(F)`, because
 `a + b = b + a` occurs. `BlockShape.binary b a hb ha` would live over `b + a`
 and is not used. The entries of the table hold by `rfl`.
 
-This is the shape convention of task 1b2016bd-4fd3-4ec6-a1b4-ec0788046ed9,
-which owns the irreducible two-factor case for any `B` with `B.length = 2`.
+This is the shape convention of the irreducible two-factor case
+`Langlands.Classification.TwoFactorProductConstituentCommutativity`, which
+covers any `B` with `B.length = 2`.
 By the published `normalizedProductInductionFunctor_obj`, which holds by `rfl`,
 the conclusion is definitionally
 `HaveSameJordanHolderFactors (Rep.of ((T.normalizedProductInductionFunctor B).obj A).representation) (Rep.of ((T.normalizedProductInductionFunctor (B.permute σ)).obj fun i => A (σ i)).representation)`,
-the functor form of that task, specialized to `B = BlockShape.binary a b ha hb`.
+the functor form of that statement, specialized to `B = BlockShape.binary a b ha hb`.
 
 ## Universes and quantifier form
 
@@ -129,7 +130,7 @@ the common universe then applies to the lifted factors. The published
 `normalizedProductInducedUniverseLiftEquiv`
 (`Langlands.Representation.RankinSelberg.TwoBlockUniverseTransport`)
 identifies products along such lifts when all factors already share a
-universe. The irreducible case of task 1b2016bd and the published
+universe. The irreducible case `TwoFactorProductConstituentCommutativity` and the published
 `Langlands.Classification.IrreducibleProductFiniteLength` also use one factor
 universe. Both product carriers lie in `Type (max uF uV)`.
 
@@ -145,8 +146,8 @@ A. V. Zelevinsky, *Induced representations of reductive p-adic groups. II.
 On irreducible representations of GL(n)*, Ann. Sci. ENS (4) 13 (1980),
 165–210. Registered source ID `zelevinsky-1980-induced-ii`; PDF SHA-256
 `663c79f2ee236626385d242d83107410c1a3291ba5584d4b8abee9cf8af428ac`, verified
-by Worker 757 on 2026-10-28. Worker 757 read printed pp.169–174 (zero-based PDF
-pages 5–10; Theorem 1.9 is on zero-based page 10). There is no errata note for
+on 2026-10-28. Printed pp.169–174 (zero-based PDF
+pages 5–10; Theorem 1.9 is on zero-based page 10) were read. There is no errata note for
 this source in the Library notes.
 
 - §1.1 (printed p.170): `G_n = GL(n, F)`, the standard block subgroups, and the
@@ -186,17 +187,19 @@ which uses (b), (a), 1.1(d) and (b) again.
 BZ77 is I. N. Bernstein and A. V. Zelevinsky, *Induced representations of
 reductive p-adic groups I*, Ann. Sci. ENS (4) 10 (1977), 441–472. Registered
 source ID `bernstein-zelevinsky-1977-induced-i`; PDF SHA-256
-`8424600228ab72c5937e45edceefcae410a2a0b8f5ebf282185691542aa89092`, verified by
-Worker 757 on 2026-10-28. It is cited for normalized induction (§2.3) and for
+`8424600228ab72c5937e45edceefcae410a2a0b8f5ebf282185691542aa89092`, verified
+on 2026-10-28. It is cited for normalized induction (§2.3) and for
 Theorem 2.5 (printed p.447, zero-based PDF page 7): every irreducible
 representation embeds in a representation induced from a cuspidal one, "in
 particular, ω is admissible".
 
-## Planned proof (not part of this contribution)
+## Planned proof (not part of this module)
 
-The exact proof successor proves exactly this proposition. The irreducible
-two-factor case is owned by task 1b2016bd-4fd3-4ec6-a1b4-ec0788046ed9
-(statement `Langlands.Classification.TwoFactorProductConstituentCommutativity`).
+The proof `twoBlockProductReversalFactors` proves exactly this proposition, by
+a route through filtrations and graded refinement that differs from the plan
+below (see `ProductReversalFactorsProof.md`). The irreducible
+two-factor case is the statement
+`Langlands.Classification.TwoFactorProductConstituentCommutativity`.
 The planned route derives the finite-length case from the published proof of
 that statement and does not repeat the Gelfand–Kazhdan route:
 
@@ -209,17 +212,13 @@ that statement and does not repeat the Gelfand–Kazhdan route:
 2. Match summands by the irreducible case. Finite length of the products of
    irreducible factors is the statement
    `Langlands.Classification.IrreducibleProductFiniteLength`, whose proof is
-   task 0717fd42-d711-4f42-8269-f6ae4c8da1e9.
+   in `Classification/IrreducibleProductFiniteLengthProof`.
 3. Combine with additivity and transitivity of `HaveSameJordanHolderFactors`
    (`Filtration/JordanHolderComparisonProof`, `Filtration/LengthTwoMatching`).
 
-Only if task 1b2016bd is withdrawn or abandoned, or its current revision stops
-owning the analytic irreducible case, does the successor follow Ze80's
-involution route itself. That route uses
-`Langlands.Parabolic.InverseTransposeProductStatement` (proof task
-fc1a5e69-5e8e-4fcd-ad69-c3d3d1384e91) for Lemma (a) and
-`GelfandKazhdanContragredientStatement` (proof task
-2206daa6-e219-4ed6-9ad1-4f4d47efed93) for Lemma (b).
+Ze80's involution route itself uses
+`Langlands.Parabolic.InverseTransposeProductStatement` for Lemma (a) and
+`GelfandKazhdanContragredientStatement` for Lemma (b).
 
 ## Independence
 
@@ -228,7 +227,5 @@ segment and classification work. Its proof must not use any segment,
 multisegment or classification conclusion. The excluded results include
 `SegmentSocleProductIrreducibility`, `SegmentHeadProductIrreducibility`,
 `OrderedMultisegmentSocleExistence`, `SquareIntegrableLanglandsClassification`
-and `GenericSegmentProductUniqueness`, together with their tasks, proof
-successors and transitive proof dependencies. The full list of excluded tasks is
-in task bd34fb90-1c0d-4f74-aed4-ef6af4d9e5af and is carried to the proof
-successor unweakened.
+and `GenericSegmentProductUniqueness`, together with their proofs and
+transitive proof dependencies.

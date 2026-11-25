@@ -6,23 +6,23 @@ target `Langlands.AbelianScheme.RelativeRigidifiedCubeStatement.{u}`, from
 three explicit geometric hypotheses:
 
 * `hF : FieldCubeTrivialityStatement.{u}`, the published theorem of the cube
-  over an arbitrary field (statement only; its proof is owned by task
-  `43f34b60-51af-49af-a39f-c17180f99b48`);
+  over an arbitrary field (a statement; the Library proves it as
+  `Langlands.AlgebraicGeometry.Picard.fieldCubeTriviality` in module
+  `Langlands.AlgebraicGeometry.Picard.FieldCubeTrivialityProof`);
 * `hL`, local two-axis triviality for smooth proper geometrically connected
   families over an arbitrary scheme. Its body is written out in full as a
-  hypothesis. It is exactly the proposition requested by statement task
-  `39e84a50-12a4-4e68-a013-c5e551c531c5`
-  (`LocalTwoAxisTrivialityStatement`, Worker 606's interface), with the bound
-  variables renamed. That statement is now published as
+  hypothesis. It is exactly the proposition
   `Langlands.AlgebraicGeometry.Picard.LocalTwoAxisTrivialityStatement` in
-  module `Langlands.AlgebraicGeometry.Picard.LocalTwoAxisTrivialityStatement`
-  (statement only; no proof of it is published). Since the two propositions
+  module `Langlands.AlgebraicGeometry.Picard.LocalTwoAxisTrivialityStatement`,
+  with the bound variables renamed. The Library proves that proposition as
+  `Langlands.AlgebraicGeometry.Picard.localTwoAxisTriviality` in module
+  `Langlands.AlgebraicGeometry.Picard.LocalTwoAxisTrivialityProof`. Since the two propositions
   agree up to the names of bound variables, a term of
   `LocalTwoAxisTrivialityStatement.{u}` can be passed for `hL` unchanged; a
   development check of exactly this application compiles. This module does not
   import that statement;
 * `hZ : RigidifiedClassesZariskiSeparatedStatement.{u}`, the published
-  Zariski separatedness of actual rigidified classes. It is now proved, with
+  Zariski separatedness of actual rigidified classes. It is proved, with
   no further hypotheses, as
   `Langlands.AbelianScheme.rigidifiedClassesZariskiSeparated` in module
   `Langlands.AlgebraicGeometry.Picard.RigidifiedClassesZariskiSeparatedProof`.
@@ -33,8 +33,13 @@ Tensor preservation is not a hypothesis: the published proved theorem
 `Langlands.Scheme.Modules.pullbackTensorComparisonIsIso` is used directly.
 None of `hF`, `hL` or `hZ` is proved here. Therefore this module does not
 prove the relative theorem of the cube. It reduces it to these three inputs.
-Of the three, only `hZ` has a published proof, so the relative theorem of the
-cube still depends on the unproved `hF` and `hL`.
+All three are proved elsewhere in the Library (see above): the module
+`Langlands.AlgebraicGeometry.Picard.FieldToRelativeCubeReduction` applies the
+three-face criterion of this module to the proofs of `hL` and `hZ`, keeping
+`hF` as a hypothesis, and `Langlands.AbelianScheme.relativeRigidifiedCube`
+(module `Langlands.AlgebraicGeometry.Picard.RelativeRigidifiedCubeProof`)
+supplies `fieldCubeTriviality` for `hF` and proves
+`RelativeRigidifiedCubeStatement`.
 
 ## Main declarations
 
@@ -158,7 +163,7 @@ proof writes `X ×_S Y ×_S Z → Z` as `(X ×_S Z) ×_Z (Y ×_S Z) → Z`, appl
 Lemma `lemma-pic-of-product` (tag 0BF3) with the sections induced by `x` and
 `y` at points of `Z`, and finally pulls back along `x × y × id_Z`. Step 2
 corresponds to the first two parts. `hL` is the specialization of 0BF3
-requested by task `39e84a50-12a4-4e68-a013-c5e551c531c5`.
+stated as `LocalTwoAxisTrivialityStatement`.
 
 The implemented route differs from the source in two ways. First, Stacks
 obtains fibrewise triviality on a "universal" locally closed subscheme from
@@ -184,5 +189,4 @@ includes nonreduced and non-noetherian bases. The quasi-separatedness
 assumption of the target is not used. The abelian-scheme structure enters
 only through `hZ`, the published adapter and the unit sections. Steps 1 and 2
 apply to arbitrary pointed smooth proper geometrically connected objects of
-`Over S`. The module adds no statement and changes no published
-Lean/Markdown pair.
+`Over S`. The module adds no statement.

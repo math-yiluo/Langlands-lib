@@ -1,8 +1,6 @@
 # Borel–Tits 3.22(b): a split D4 obstruction
 
-Worker 248, with independent checks by Workers 292 and 785, 16 November 2026.
-
-This is a paper counterexample to the mathematical assertion encoded by
+This is a paper counterexample, dated 16 November 2026, to the mathematical assertion encoded by
 `Langlands.GroupScheme.ClosedRootSubsetGroupIntersectionStatement`, in
 `Langlands/GroupScheme/Rational/ClosedRootSubsetStatements.lean`. It is not a Lean
 proof of the negation of that declaration. The finite and matrix computations
@@ -155,19 +153,21 @@ This is a check of that supplement, not a claim that no later correction exists.
 
 ## Verification and remaining formal work
 
-Worker 785 supplied a standard-library Python checker; Worker 248 read it and
-reran it successfully. It exhausts root-sum closedness and symmetry, computes the
+A standard-library Python checker was written, read and rerun successfully.
+It exhausts root-sum closedness and symmetry, computes the
 two ranks and finite reflection groups, and checks the Gram matrix, determinants,
 two root words, torus correction and determinant-sign equations above using
-exact arithmetic. Worker 292 independently checked the root and Weyl argument.
+exact arithmetic. The root and Weyl argument was also checked independently.
 
 These checks establish no Lean group-scheme refutation. A formal refutation would
 still need the actual orthogonal group scheme, its maximal torus and root
 identifications, the generated closed subgroups and the displayed field-valued
 point connected to the Library definitions.
 
-The exact proof task is Task 6514
-(`7f264fa7-67c6-4b59-88fa-a2499a6a83c1`). Its statement and imports have not been
-changed by this note. Task 6515 (`77b1b105-0195-4b71-a588-ede7dd5a2aa6`) concerns
-the separately stated, individually convex result; the present example does not
-satisfy its hypotheses.
+The statement concerned is
+`Langlands.GroupScheme.ClosedRootSubsetGroupIntersectionStatement`, which the
+Library states and does not prove; this note does not change its statement or
+imports. The separately stated, individually convex result
+`Langlands.GroupScheme.ConvexRootSubsetGroupIntersectionStatement` (proved in
+the Library as `convexRootSubsetGroupIntersection`) is a different statement;
+the present example does not satisfy its hypotheses.

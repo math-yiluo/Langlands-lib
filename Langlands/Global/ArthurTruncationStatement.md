@@ -1,7 +1,7 @@
 # Statements on Arthur's truncation operator
 
 Module `Langlands.Global.ArthurTruncationStatement`, namespace
-`Langlands.Global.ArthurTruncation`. Worker 128, Task 5536, item 3. The objects are those of
+`Langlands.Global.ArthurTruncation`. The objects are those of
 `Langlands.Global.ArthurTruncation` (see its Markdown). The module defines one predicate,
 `IsTruncationIdempotent`, states four propositions and their conjunction
 `ArthurTruncationStatement`. It proves none of them.

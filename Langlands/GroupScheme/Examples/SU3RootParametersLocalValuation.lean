@@ -14,7 +14,7 @@ namespace Langlands.GroupScheme.SU3Root
 variable (F : Type u) (L : Type v) [Field F] [Field L] [Algebra F L]
   [IsQuadraticExtension F L] [Algebra.IsSeparable F L]
 
-local instance : FiniteDimensional F L :=
+private local instance : FiniteDimensional F L :=
   .of_finrank_pos (by rw [IsQuadraticExtension.finrank_eq_two F L]; decide)
 
 /-- The trace kernel of an actual separable quadratic extension is nonzero,

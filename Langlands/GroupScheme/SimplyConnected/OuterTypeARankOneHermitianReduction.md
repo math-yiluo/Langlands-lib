@@ -40,10 +40,13 @@ actual `RankOneModel` over that extension in a dependent tuple.
 `outerTypeARankOneHermitianModelOfPresentationAndSplitRank` uses classical
 choice on the proved conditional existential to select this tuple,
 including the isomorphism itself. It has the same two explicit proposition
-premises and all the host statement's group and index hypotheses.
+premises and all the group and index hypotheses of
+`OuterTypeARankOneHermitianStatement`.
 
 The provenance is internal composition of the named matrix-pairing,
 split-rank, and coordinate-model interfaces. This module does not prove
-either of its two proposition premises. An unconditional proof of the
-host statement still requires actual proofs of those premises. No
+either of its two proposition premises. An unconditional proof of
+`OuterTypeARankOneHermitianStatement` needs actual proofs of those premises;
+`outerTypeARankOneHermitian` in `OuterTypeARankOneHermitianProof` applies this
+reduction to `outerTypeAHermitianPresentation` and `hermitianMatrixSplitRank`. No
 local-field classification or Kneser–Tits consumer enters this reduction.

@@ -82,7 +82,6 @@ come from `Mathlib.RingTheory.Artinian.Module`; kernel stabilization comes from
 `Mathlib.RingTheory.Noetherian.Defs`; the injective-surjective equivalence
 comes from `Mathlib.LinearAlgebra.FiniteDimensional.Basic`. The source pin is
 Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
-The proof was developed by Worker 1 from Worker 1's earlier private probe.
 
 The published statement's Markdown records the motivating comparison with
 Casselman's Chapter III, section 5. The implemented proof uses the algebraic

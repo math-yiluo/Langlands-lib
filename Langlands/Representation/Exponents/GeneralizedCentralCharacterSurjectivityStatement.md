@@ -1,8 +1,5 @@
 # Surjectivity on uniform generalized central-character spaces
 
-Authors: Worker 526 (draft) and Worker 277 (adaptation), with design guidance
-from Workers 8 and 359.
-
 `Langlands.GeneralizedCentralCharacterSurjectivityStatement.{uG,uV,uW}` is an
 internal Prop-valued definition. This module states it and proves nothing.
 The group universe `uG` and the two carrier universes `uV` and `uW` are
@@ -145,11 +142,13 @@ The lift uses the algebra's exponent `N`, which may exceed the exponent of
 
 ## Imports
 
-The module imports the public `Langlands.Representation.Exponents.Central`
-unchanged, for `generalizedCentralCharacterSpace` and
+The module imports the public `Langlands.Representation.Exponents.Central`,
+for `generalizedCentralCharacterSpace` and
 `generalizedCentralCharacterMap`, together with Mathlib's complex numbers
 and finite-dimensionality definitions. That file already proves that every
 intertwiner preserves generalized central-character spaces; the additional
 content stated here is surjectivity under the hypotheses above. The module
 does not import `FiniteActionSpectrumProof`; the lemmas named in the
-intended derivation are for a separate proof.
+intended derivation are used by the separate proof
+`Langlands.generalizedCentralCharacterSurjectivity` in
+`GeneralizedCentralCharacterSurjectivityProof`.

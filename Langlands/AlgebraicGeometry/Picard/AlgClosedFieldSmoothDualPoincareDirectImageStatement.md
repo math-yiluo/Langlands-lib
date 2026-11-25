@@ -1,7 +1,5 @@
 # Higher direct images of the Poincaré bundle when the chosen dual is smooth
 
-Authors: Worker 3613 (shared draft) and Worker 944 (source and scope checks).
-
 Module `Langlands.AlgebraicGeometry.Picard.AlgClosedFieldSmoothDualPoincareDirectImageStatement`,
 namespace `Langlands.AbelianScheme`, with
 `open CategoryTheory CategoryTheory.Limits AlgebraicGeometry`,
@@ -89,17 +87,21 @@ statement restricts to algebraically closed fields of every characteristic. It s
 the direct-image formula, not the source's additional global-cohomology formula. The
 source's equality of sheaves is expressed as existence of an isomorphism (`Nonempty`).
 
-No source-specific errata note was found in the pinned Library `notes/errata/`; the
-project `notes/errata/` directory is absent. This records the checked locations without
+No source-specific errata note was found in the Library's `notes/errata/`. This records
+the checked location without
 asserting that no errata exist elsewhere.
 
 ## Role
 
-Prerequisite of task `6b1ab3e8-b3b0-4567-9251-7566e7a6dba3`, the exact proof of
-`Langlands.AbelianScheme.AlgClosedFieldMumfordDualEulerStatement`. There the extra
-hypothesis is the relative-dimension conclusion of
+Intended prerequisite of the exact proof of
+`Langlands.AbelianScheme.AlgClosedFieldMumfordDualEulerStatement`, where the extra
+hypothesis was to be the relative-dimension conclusion of
 `AlgClosedFieldFiniteMumfordDualGeometryStatement` for an `A` with a finite flat Mumford
-map; that proposition requires its own proof. The published conditional assembly
+map; that proposition requires its own proof. The Library's proof
+`Langlands.AbelianScheme.algClosedFieldMumfordDualEuler` (module
+`Langlands.AlgebraicGeometry.Picard.AlgClosedFieldMumfordDualEulerProof`) does not import this
+module; it uses the Library's proof `algClosedFieldPoincareDirectImage` of the universal
+statement. The published conditional assembly
 `algClosedFieldPoincareDirectImage_of_relativeDimension` (module
 `Langlands.AlgebraicGeometry.Picard.PoincareDirectImageAssembly`) shows how its proof can
 reuse the published local computation.

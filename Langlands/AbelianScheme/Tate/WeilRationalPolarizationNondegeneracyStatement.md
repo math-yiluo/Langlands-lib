@@ -1,8 +1,8 @@
 # Geometric-point nondegeneracy of full and away polarization Weil pairings
 
-`RationalPolarizationWeilNondegeneracyStatement` is an unproved
-proposition definition for the existing polarization Weil pairings at a
-characteristic-zero geometric point.
+`RationalPolarizationWeilNondegeneracyStatement` is a proposition
+definition, not proved in this file, for the existing polarization Weil
+pairings at a characteristic-zero geometric point.
 
 The quantified base S is quasi-separated, and A is an actual abelian
 scheme over S. The statement retains the chosen relative dual, its
@@ -107,7 +107,8 @@ For a relative abelian scheme evaluated at s the proof further needs
 the comparisons of its constructed dual, torsion/Tate modules and
 Poincare-derived Weil pairing with those on the geometric fibre.
 The field citations do not prove these Library identifications.
-All of these steps remain obligations for a separate proof task;
+The statement is proved by `rationalPolarizationWeilNondegeneracy`
+in the module `WeilRationalPolarizationNondegeneracyProof`;
 no nondegeneracy theorem is proved here. There is no assertion of
 integral perfectness for a nonprincipal polarization or of
 nondegeneracy on arbitrary test schemes.

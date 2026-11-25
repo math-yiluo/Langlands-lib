@@ -50,16 +50,16 @@ def ComponentRecovery (hA : IsIdempotented A) : Prop :=
   ∀ (θ : NondegenerateModuleNaturalEnd.{uA, max uA uM} A)
     (M : NondegenerateModuleCat.{uA, max uA uM} A),
     ((IdempotentedRingRightLimit.toNaturalEndRingHom.{uA, max uA uM} hA
-      (NondegenerateModuleNaturalEndEvaluation.toFamilyRingHom.{uA, uM} hA θ)).app M).hom =
-      (θ.app M).hom
+      (NondegenerateModuleNaturalEndEvaluation.toFamilyRingHom.{uA, uM} hA θ)).asHom.app M).hom =
+      (θ.asHom.app M).hom
 
 /-- The component reconstruction evaluated at every original module element. -/
 def ComponentPointRecovery (hA : IsIdempotented A) : Prop :=
   ∀ (θ : NondegenerateModuleNaturalEnd.{uA, max uA uM} A)
     (M : NondegenerateModuleCat.{uA, max uA uM} A) (m : M.obj),
     (IdempotentedRingRightLimit.toNaturalEndRingHom.{uA, max uA uM} hA
-      (NondegenerateModuleNaturalEndEvaluation.toFamilyRingHom.{uA, uM} hA θ)).app M m =
-      θ.app M m
+      (NondegenerateModuleNaturalEndEvaluation.toFamilyRingHom.{uA, uM} hA θ)).asHom.app M m =
+      θ.asHom.app M m
 
 /-- Evaluation recovers every coordinate at an actual original idempotent. -/
 def CoordinateRecovery (hA : IsIdempotented A) : Prop :=
@@ -221,8 +221,8 @@ example : @ComponentRecovery.{uA, uM} A originalRing =
       ∀ (θ : NondegenerateModuleNaturalEnd.{uA, max uA uM} A)
         (M : NondegenerateModuleCat.{uA, max uA uM} A),
         ((IdempotentedRingRightLimit.toNaturalEndRingHom.{uA, max uA uM} hA
-          (NondegenerateModuleNaturalEndEvaluation.toFamilyRingHom.{uA, uM} hA θ)).app M).hom =
-          (θ.app M).hom) := rfl
+          (NondegenerateModuleNaturalEndEvaluation.toFamilyRingHom.{uA, uM} hA θ)).asHom.app M).hom =
+          (θ.asHom.app M).hom) := rfl
 
 example : @ComponentPointRecovery.{uA, uM} A originalRing =
     (fun hA : @IsIdempotented A originalRing =>
@@ -230,8 +230,8 @@ example : @ComponentPointRecovery.{uA, uM} A originalRing =
       ∀ (θ : NondegenerateModuleNaturalEnd.{uA, max uA uM} A)
         (M : NondegenerateModuleCat.{uA, max uA uM} A) (m : M.obj),
         (IdempotentedRingRightLimit.toNaturalEndRingHom.{uA, max uA uM} hA
-          (NondegenerateModuleNaturalEndEvaluation.toFamilyRingHom.{uA, uM} hA θ)).app M m =
-          θ.app M m) := rfl
+          (NondegenerateModuleNaturalEndEvaluation.toFamilyRingHom.{uA, uM} hA θ)).asHom.app M m =
+          θ.asHom.app M m) := rfl
 
 example : @CoordinateRecovery.{uA, uM} A originalRing =
     (fun hA : @IsIdempotented A originalRing =>

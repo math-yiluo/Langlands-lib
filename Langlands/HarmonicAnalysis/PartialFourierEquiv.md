@@ -1,6 +1,6 @@
 # Chosen partial Fourier equivalence and JPSS transported action
 
-Worker 455 packages the already published last-column Fourier theorem and
+This module packages the already published last-column Fourier theorem and
 right Schwartz action into named definitions. The module imports
 [`PartialFourierCompatibilityProof`](PartialFourierCompatibilityProof.md)
 by Lean name and leaves that proof, its statement, and the underlying
@@ -126,7 +126,7 @@ Shalika, *Rankin-Selberg Convolutions*, American Journal of Mathematics
 pp.62–63). The registered original is `jpss-1983-rankin-selberg` at
 `/home/taskhub/central-library/Jacquet-Piatetski-Shapiro-Shalika--Rankin-Selberg Convolutions--1983.pdf`,
 SHA-256 `d9feed6388ca5acf02ecc6a8cce984871a7c28f062ff441e45a71fa2d8962245`.
-Worker 455 verified the hash and visually read both scanned pages.
+The hash was verified and both scanned pages were read visually.
 The registered pointer lists no erratum, and no source-specific
 `notes/errata/jpss-1983-rankin-selberg.md` was found in the workspace,
 project notes or current Library notes.
@@ -148,7 +148,7 @@ separate verbatim theorems of JPSS. The generic field telescope,
 arbitrary universe and inclusion of `n = 0` are inherited from the
 published theorem.
 
-This unit supplies no diagonal, unipotent or scalar covariance formulas,
+This module supplies no diagonal, unipotent or scalar covariance formulas,
 commutation with the full Fourier transform, formula (7), vector-valued
 Whittaker integrals, spanning or star transforms, analytic gamma/L base
 theorems, or square-matrix analytic comparisons. Those require separate

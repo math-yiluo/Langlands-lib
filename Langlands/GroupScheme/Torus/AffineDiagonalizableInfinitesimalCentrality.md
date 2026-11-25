@@ -1,6 +1,6 @@
 # Nilpotent centrality for diagonalizable sources and affine targets
 
-Worker 626. This internal transport unit derives its assertions from
+This internal transport module derives its assertions from
 `DiagonalizableInfinitesimalCentrality`, the affine-coordinate Hopf
 presentation, and existing invariance of centrality under isomorphisms.
 It introduces no additional literature assertion.
@@ -40,6 +40,6 @@ centrality and the existing `IsCentral.commGroupScheme` construction.
 The accompanying `toGrp` equality is reflexive: the entire source group
 scheme and its operations are retained.
 
-This unit does not yet descend along a splitting fppf cover for a general
+This module does not descend along a splitting fppf cover for a general
 multiplicative-type source, lift multiplicative type from a special
-fibre, or prove the host fibrewise central-isogeny criterion.
+fibre, or prove the fibrewise central-isogeny criterion.

@@ -63,7 +63,9 @@ actual global functions along the inverse coefficient equivalence.
 The basic comparisons and module need no properness, separatedness or
 quasi-compactness assumption. Arbitrary universe `u`, imperfect fields
 and empty schemes are retained. No splitting or `K`-algebra structure is
-required of general Artinian tests. This contribution computes
+required of general Artinian tests. This module computes
 automorphisms in the particular actual dual-number pointed fibre.
 Formal versality, effectivity, algebraization, openness of versality
-and existence of the smooth scheme atlas remain further obligations.
+and existence of the smooth scheme atlas are not part of this module; the
+Library proves formal versality in `FiniteTypeFormalVersalBundleProof` and the
+atlas in `FieldPicardStackAtlasProof` and `FiniteTypePicardStackAtlasProof`.

@@ -12,7 +12,7 @@ proof and all-degree infinitesimal insertion proof, as required by
 The additional input is a `K`-linear map in every degree between these
 existing cochain modules, with an explicit equation commuting with the two
 actual horizontal differentials. This is a conditional generic construction.
-Actual full operator maps are later specializations.
+Actual full operator maps are specializations of it.
 
 `map_mem_cycles` proves kernel preservation from the commutation equation
 and preservation of zero. `map_mem_boundaries` treats degree zero using its
@@ -43,5 +43,3 @@ restriction and quotient descent using the published horizontal complex and
 Mathlib's quotient construction. No external literature identification,
 topology, smoothness, finiteness, nonvanishing or comparison with absolute,
 analytic or sheaf cohomology is asserted.
-
-Authorship: Worker 2.

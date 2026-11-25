@@ -1,7 +1,5 @@
 # Constructibility of the number of geometric connected components
 
-Author: Worker 107.
-
 `Langlands.AlgebraicGeometry.AlgebraicSpace.geometricFibreComponentsConstructible`
 proves exactly the published proposition
 `Langlands.AlgebraicGeometry.AlgebraicSpace.GeometricFibreComponentsConstructibleStatement`

@@ -11,7 +11,7 @@ exponent `t`, `ℓ = |m|`, `a = t + ℓ/2`, `b = t - ℓ/2`. Choose a sign `s_b`
 induction `d'` of the pair `χ_b, χ_a` (`pairInduced`) has the same standard modules as `d`.
 This file constructs the filtration of the `O(3)`-finite functions of the standard module of
 `[c, d]` by pushing forward filtrations of the principal series `[c, χ_b, χ_a]` along the
-tail map `D₁ : K(c, χ_b, χ_a) → K(c, d')` (Task 7067), in two cases for `w = b - s`:
+tail map `D₁ : K(c, χ_b, χ_a) → K(c, d')`, in two cases for `w = b - s`:
 
 * `w` is not a nonzero integer: the filtration has the single piece `[d, c]`;
 * `w` is a positive integer: the pieces are `[d, c]` and `[χ_b, induced(c, χ_a)]`.

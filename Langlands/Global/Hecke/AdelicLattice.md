@@ -64,7 +64,7 @@ chosen for the internal assembly and is not taken from the literature.
 
 - `latticeIdeal m : (FractionalIdeal (𝓞 K)⁰ K)ˣ` for a finitely supported level vector
   `m : FinitePlace K →₀ ℤ` is the fractional ideal `∏ 𝔭_v^{-m v}`, defined as
-  `ClassField.Global.finiteDivisorFractionalIdeal K (-m)`.
+  `ClassFieldTheory.Global.finiteDivisorFractionalIdeal K (-m)`.
 - `latticeMass T ψ μ k : ℝ`, for local-field data `T` of a `p`-adic field, an additive
   character `ψ`, a self-dual Haar measure `μ : SelfDualHaar T ψ` and `k : ℤ`, is the real mass
   `(μ (L(k))).toReal` of the valuation lattice `L(k) = T.additiveLattice k`.

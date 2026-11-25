@@ -1,7 +1,5 @@
 # Smooth connected unipotent groups over perfect fields are split
 
-Worker 1448.
-
 `Langlands.GroupScheme.PerfectFieldUnipotentSplitStatement.{u}` is a
 proposition definition. For every perfect field `k : Type u` and actual
 group scheme `U` over `Spec k`, it assumes smoothness, an affine structure

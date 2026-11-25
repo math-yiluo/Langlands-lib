@@ -1,5 +1,5 @@
 import Langlands.Algebra.LocalFlatnessCriterion
-import Mathlib
+import Langlands.MathlibBase
 
 /-! # Tools for the unit enlargement of flat Artinian approximations -/
 

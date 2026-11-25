@@ -54,23 +54,27 @@ induction on natural-number rank can supply this restricted finiteness premise
 from its induction hypotheses for smaller ranks. At rank zero the premise is
 proved without any analytic input. The emptiness of the proper parabolic part
 itself is the separate conditional result
-`isEmpty_properSemistandard_of_rank_zero` in the rank unit. These statements do
+`isEmpty_properSemistandard_of_rank_zero` in `GroupScheme.Rational.SemistandardProperLeviRank`. These statements do
 not identify split rank zero with semisimple rank zero.
 
 ## Dependency boundary
 
-The local predicate is owned by Task 7275; this module imports it and does not
+The local predicate `RationalLocalDiscreteSeriesOrbitFinitenessStatement` is
+defined in `RationalLocalOrbitFiniteness`; this module imports it and does not
 redefine either its full-Levi or proper-Levi restrictions. The pointwise
-proper-Levi conclusions are exactly that local predicate, ready for the owner's
-`ProperLeviOrbitFiniteness` adapter once its interface is published.
-The strict proper-Levi rank comparison remains an explicitly unproved
-structural target. Its elementary torus and boundary adapters are reused.
+proper-Levi conclusions are exactly that local predicate, the input of
+`RationalSemistandard.ProperLeviOrbitFiniteness` (module `RationalSemistandardThetaFixed`);
+the module `RationalStrictlyLowerRankProperLeviFiniteness` packages them into that premise.
+The strict proper-Levi rank comparison is the explicit structural premise
+`SemistandardProperLeviRankStatement` here; it is proved as `semistandardProperLeviRank`
+in `GroupScheme.Rational.SemistandardProperLeviRankProof`. Its elementary torus and
+boundary adapters are reused.
 The actual full semistandard index, literal Levi models and rank definitions
 are imported. No new spectral index, orbit measure or representation model is
 introduced here.
 
 Neither local synthesis reconstruction, same-rank VIII.1.1 or VIII.1.2, full
 Fourier support, an inverse, nor a projector is assumed or constructed in this
-unit. Lower-rank finiteness will be used only for proper support. Detection of
-zero induced constant terms requires the separate lower-rank reconstruction
-input in the later comparison unit.
+module. Lower-rank finiteness is used only for proper support. Detection of
+zero induced constant terms requires a separate lower-rank reconstruction
+input, not treated here.

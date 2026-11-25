@@ -1,6 +1,6 @@
 # The contragredient formula from second adjointness
 
-Author: Worker 138. Namespace `Langlands.SmoothRep`.
+Namespace `Langlands.SmoothRep`.
 
 This is the forward implication of David Renard, *Représentations des groupes réductifs
 p-adiques*, French version dated 9 July 2026, VI.9.6, printed pp.201–202 / PDF pp.207–208.

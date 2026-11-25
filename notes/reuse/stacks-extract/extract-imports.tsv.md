@@ -1,0 +1,22 @@
+# `extract-imports.tsv`
+
+This page holds the table `extract-imports.tsv` as it is, in the code block below. To use it, save the content of the block under that name.
+
+```text
+file	change	module	reason
+StacksFrontier/AlgebraicGeometry/Morphisms/CohenMacaulay/FibrewiseDenseRelativeDimension.lean	not written	Mathlib	import Mathlib
+StacksFrontier/AlgebraicGeometry/Morphisms/CohenMacaulay/FibrewiseDenseRelativeDimension.lean	added	Mathlib.AlgebraicGeometry.Morphisms.WeaklyEtale	term: AlgebraicGeometry.WeaklyEtale.flat (in AlgebraicGeometry.exists_open_relativeDimension_fiberwise_dense)
+StacksFrontier/RingTheory/DiscreteValuationRing/Abhyankar/ResidueFieldTensor.lean	not written	Mathlib	import Mathlib
+StacksFrontier/RingTheory/DiscreteValuationRing/Abhyankar/ResidueFieldTensor.lean	added	Mathlib.RingTheory.Coalgebra.IsFrobenius	term: Coalgebra.IsFrobenius.instFinite (in IsDiscreteValuationRing.residueTensorMap_surjective)
+StacksFrontier/RingTheory/DiscreteValuationRing/Abhyankar/ResidueFieldTensor.lean	added	Mathlib.RingTheory.HopfAlgebra.Basic	term: HopfAlgebraStruct.toBialgebra (in IsDiscreteValuationRing.residueTensorMap_surjective)
+StacksFrontier/RingTheory/DiscreteValuationRing/Abhyankar/AdjoinRootExtensions.lean	added	Mathlib.RingTheory.Smooth.IntegralClosure	term: TensorProduct.toIntegralClosure (in _private.StacksFrontier.RingTheory.DiscreteValuationRing.Abhyankar.AdjoinRootExtensions.0.IsDiscreteValuationRing.isIntegrallyClosedIn_tensorProduct_of_smooth)
+StacksFrontier/RingTheory/DiscreteValuationRing/EppSolution.lean	not written	Mathlib	import Mathlib
+StacksFrontier/RingTheory/DiscreteValuationRing/EppSolution.lean	added	Mathlib.RingTheory.Flat.Domain	term: TensorProduct.map_injective_of_flat_flat_of_isDomain (in _private.StacksFrontier.RingTheory.DiscreteValuationRing.EppSolution.0.IsDiscreteValuationRing.targetClosureTensor_ker_le_nilradical)
+StacksFrontier/RingTheory/DiscreteValuationRing/EppAlgClosedResidue/CompleteIntegralClosure.lean	added	Mathlib.Algebra.Azumaya.Basic	term: IsAzumaya.id (in IsDiscreteValuationRing.isDiscreteValuationRing_and_finite_integralClosure_of_isAdicComplete)
+StacksFrontier/RingTheory/DiscreteValuationRing/EppAlgClosedResidue/CompleteIntegralClosure.lean	added	Mathlib.Algebra.Order.Star.Rat	term: Rat.instStarOrderedRing (in IsDiscreteValuationRing.induction_on_level)
+StacksFrontier/RingTheory/DiscreteValuationRing/EppAlgClosedResidue/SolvableInertia.lean	added	Mathlib.GroupTheory.Nilpotent	term: Group.IsNilpotent (in IsDiscreteValuationRing.isSolvable_inertia)
+StacksFrontier/RingTheory/DiscreteValuationRing/SolutionTower.lean	not written	Mathlib	import Mathlib
+StacksFrontier/RingTheory/DiscreteValuationRing/EliminateRamificationSolution/AlgClosedResidueExtension.lean	not written	Mathlib	import Mathlib
+StacksFrontier/RingTheory/DiscreteValuationRing/EliminateRamificationSolution/FiniteIntegralClosure.lean	added	Mathlib.RingTheory.Finiteness.Descent	term: Module.Finite.of_finite_tensorProduct_of_faithfullyFlat (in _private.StacksFrontier.RingTheory.DiscreteValuationRing.EliminateRamificationSolution.FiniteIntegralClosure.0.Stacks.EliminateRamification.finite_integralClosure_of_faithfullyFlat)
+StacksFrontier/RingTheory/DiscreteValuationRing/EliminateRamificationSolution/FiniteIntegralClosure.lean	added	Mathlib.RingTheory.LocalProperties.Semilocal	term: Module.Finite.of_isLocalized_maximal (in Stacks.EliminateRamification.finite_integralClosure_of_isLocalized_maximal)
+```

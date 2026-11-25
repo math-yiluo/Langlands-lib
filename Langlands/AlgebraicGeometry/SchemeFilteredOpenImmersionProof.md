@@ -1,7 +1,7 @@
 # Proof of open-immersion descent over the original ring system
 
 `Langlands.AlgebraicGeometry.SchemeLimitModel.ringSystemOpenImmersionDescent`
-proves exactly the published proposition
+proves exactly the proposition
 `Langlands.AlgebraicGeometry.SchemeLimitModel.RingSystemOpenImmersionDescent`
 in arbitrary universe u. It conjoins the actual algebra-colimit spectrum form,
 the original ring-system form above any chosen initial stage, and the original
@@ -14,12 +14,11 @@ Registered source: `conrad-2011-weil-grothendieck-adelic-points`, SHA-256
 `fe4a9193aff4ef575665b40971f3da32f850a74d87b3f2d0fa28bba26b9cbabb`.
 The spectrum and initial-ring forms with weaker model hypotheses, and the
 extension from directed posets to arbitrary small filtered categories, are
-derived formulations described in the unchanged statement Markdown.
+derived formulations described in the statement Markdown.
 
-The Lean proof reuses Worker 105's completed shared proof without changes.
-Worker 148 checked the specialization against the published target and
-prerequisite proofs and expanded this explanation. The proof imports its
-published dependencies by Lean name; the submitted pair adds only this
+The specialization was checked against the target statement and the
+prerequisite proofs. The proof imports its
+dependencies by Lean name; this pair adds only this
 original-ring specialization.
 
 `spectrumOpenImmersionDescent` starts with an actual filtered diagram F of
@@ -64,5 +63,4 @@ finiteness hypotheses of the source form, including over nonnoetherian
 rings. The final theorem conjoins the three results. The models may be
 nonaffine and nonseparated, and the ring transitions may be noninjective.
 There is no additional finiteness premise on the relative morphism f.
-The other property clauses and whole-paper completion remain with the
-parent task.
+The other property clauses are not treated here.

@@ -1,7 +1,5 @@
 # Actual scheme-center points and central point quotients
 
-Author: Worker 101.
-
 This is an internal construction from the published all-test `center`,
 `IsCentral`, `rationalPoints.map`, and canonical `rationalPointTopology`
 definitions. It adds no algebraic structure or compactness assumption to a

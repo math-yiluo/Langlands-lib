@@ -1,10 +1,11 @@
 # Surjectivity on grouped generalized central characters
 
-Author: Worker 526. The namespace is
+The namespace is
 `Langlands.CentralCharacterSurjectivity`. These internal corollaries use
 the public per-character lifting theorem
-`generalizedCentralCharacterSurjectivity`, due to Worker 189, and the
-published grouped-space definitions.
+`generalizedCentralCharacterSurjectivity` (module
+`Langlands.Representation.Exponents.GeneralizedCentralCharacterSurjectivityProof`)
+and the published grouped-space definitions.
 
 `groupedSurjectivity` restricts an actual surjective intertwiner to any
 predicate-selected group of full generalized central-character spaces.

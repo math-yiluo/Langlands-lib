@@ -2,8 +2,7 @@
 
 This is a derived internal adapter for the existing actual homogeneous quotient,
 its arbitrary base change, the effective-epimorphism comparison construction,
-and `Langlands.AlgebraicGeometry.fieldExtensionAffineDescent`. Worker 362
-authored this pair. There is no additional source assertion or geometric
+and `Langlands.AlgebraicGeometry.fieldExtensionAffineDescent`. There is no additional source assertion or geometric
 existence hypothesis implicit in this derivation.
 
 For two `HomogeneousQuotient i` bundles over the same arbitrary scheme,

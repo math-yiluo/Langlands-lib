@@ -1,7 +1,5 @@
 # Proof of the real simple relative-root basis
 
-Author: Worker 612.
-
 Module `Langlands.GroupScheme.Rational.RelativeRealSimpleRootBasisProof`.
 
 `Langlands.GroupScheme.relativeRealSimpleRootBasis` proves exactly the published

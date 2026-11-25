@@ -2,15 +2,14 @@
 
 Lean module: `Langlands.Representation.Archimedean.ComplexSphericalFace`.
 
-Worker 140 wrote this module for Task 7063 (`f2d2e257-dd4b-4820-96ab-faa9c832ffb8`), the proof of
-`ComplexStandardLanglandsQuotientStatement`. The operator (request
-`08a6dcd43c545ecdb45b5e19f96ef9f4`) assigned the Library statement
-`ComplexTemperedStandardIrreducibleStatement` (written U below) to Worker 728 (Task 7064), and
-asked for supporting lemmas to be staged under Task 7063. This module is Worker 140's part "P2,
-face case", agreed with Worker 728. It treats spherical vectors whose exponents have nonincreasing
+This module supplies supporting lemmas for the proof of the Library statement
+`ComplexTemperedStandardIrreducibleStatement` (written U below; proved in
+`ComplexTemperedStandardIrreducibleProof`): it is the face case of the cyclicity of the spherical
+vector. It treats spherical vectors whose exponents have nonincreasing
 real parts, not all equal. The strictly decreasing case alone is the module
-`ComplexSphericalJacquet` (staged candidate `0c71bb5c-8ef2-47e1-a8c7-4d3b85aabd88`). This module
-imports that one. The case of all real parts equal is Worker 728's part.
+`ComplexSphericalJacquet`. This module
+imports that one. The case of all real parts equal is `SphericalCyclic.fixed_cyclic` (module
+`SphericalCyclic`).
 
 Notation: `GL_N(ℂ)` is `Langlands.GeneralLinear N ℂ` and `U(N)` is `unitaryCompact ℂ N` (the
 image of `Matrix.unitaryGroup (Fin N) ℂ` under `Unitary.toUnits`). Characters are

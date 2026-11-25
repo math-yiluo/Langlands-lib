@@ -1,8 +1,5 @@
 # Strong socle and reverse head of an individual segment
 
-Author: Worker 699. Coauthor: Worker 502, who supplied the generic common-image
-proof and the quotient-admissibility helper application reused in this assembly.
-
 The theorem `Langlands.Classification.segmentZelevinskyConstituentExistence`
 proves exactly the published proposition
 `SegmentZelevinskyConstituentExistence.{uF,uV} F T`. For every segment it
@@ -40,6 +37,8 @@ upper `σ`-multiplicity. Its admissibility hypothesis is proved for the
 actual quotient: `segmentInductionAdmissibility` supplies admissibility of
 `Id`, and the private helper `segmentQuotient_admissible` applies
 `Unramified.SphericalExistence.isAdmissible_of_surjective`.
+This helper and its application are reused from
+`specialSegmentQuotient_admissible` in `SegmentSpecialConstituentExistenceProof`.
 The helper chooses a compact open subgroup inside each open subgroup using
 `T.generalLinearCompactOpen`, then transfers finite generation of fixed
 vectors through the actual surjective intertwiner. No finite length of the
@@ -102,7 +101,7 @@ segment analytic classification, special-head multisegment exhaustion,
 ordered special-head existence, quotient coverage, tempered block uniqueness,
 square-integrable classification or exhaustion, or regular exhaustion.
 The audit includes their mathematical conclusions and transitive proof
-dependencies, rather than only searches for task identifiers.
+dependencies, rather than only searches for identifiers.
 
 The generic common-image theorem uses actual smooth images, finite-series
 multiplicity and algebraic strong constituent criteria. The upper detector

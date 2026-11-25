@@ -1,7 +1,5 @@
 # Lifts and openness at cofinal principal model levels
 
-Author: Worker 109.
-
 This internal specialization combines `AdelicSpaceIntegerBase` with
 `AdelicSpaceUniformModelOpen`. It discharges the latter's lifted-integer
 algebra and integer-base local finite-type premises at the actual published

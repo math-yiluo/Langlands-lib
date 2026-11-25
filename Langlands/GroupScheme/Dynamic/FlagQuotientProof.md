@@ -7,11 +7,10 @@ reductive group scheme and rational cocharacter, it constructs one scheme
 right-coset fibers on every relative test scheme, and algebraic sections
 near every rational point. The theorem has no additional premises.
 
-The assembly and quotient-cell descent are by Worker 424. The rational-lift
-and translated-section adapters are by Worker 1275, using the categorical
-action constructor by Worker 1293. The proof uses Worker 1162's dynamic
-connectedness theorem and Worker 1131's coaction-grading helper through their
-published modules.
+The rational-lift and translated-section adapters use the categorical
+action constructor `schemeActionOfPointLaws`. The proof uses the dynamic
+connectedness theorem and the coaction-grading helper through their
+published modules `Dynamic.ConnectedProof` and `Dynamic.CoactionGrading`.
 
 ## The subgroup and the same proper quotient
 

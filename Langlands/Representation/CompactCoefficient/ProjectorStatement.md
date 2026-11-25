@@ -150,8 +150,8 @@ intertwiner. Its image \(M\) is an algebraic direct sum of copies of \(D\).
 Theorem 2.44(a) identifies its kernel \(Q\) and gives
 \(A=M\oplus Q\), where \(Q\) has no subfactor isomorphic to \(D\).
 The source defines these subspaces by its projector, rather than by the
-intrinsic supremum and infimum. Their identification here is part of the new
-theorem obligation; the published `Isotypic` module does not prove it.
+intrinsic supremum and infimum. Their identification here is part of what a
+proof must establish; the published `Isotypic` module does not prove it.
 
 **Range.** The summand inclusions \(D\to M\to A\), composed with the
 equivalences identifying each summand with \(D\), show \(M\subseteq I_c(A)\).
@@ -218,11 +218,11 @@ its `Classes` and `SubrepresentationLattice` dependencies.
 Mathlib supplies Haar measure classes, open subgroups, actual intertwiners,
 their invariant ranges and kernels, and the restricted action
 `Subrepresentation.toRepresentation`. It uses no unproved Library statement
-as an assumption. The compilation environment is
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` (Lean 4.34.0, Mathlib commit
-`5ed2965256430c3649e86755f9576b54eca72435`).
+as an assumption. The compilation environment was Lean 4.34.0, Mathlib commit
+`5ed2965256430c3649e86755f9576b54eca72435`.
 
-The existence proof remains separate. The statement does not assert
+The existence proof is separate: `Langlands.compactCoefficientProjector` in
+`CompactCoefficient.ProjectorProof`. The statement does not assert
 pointwise finite support over all compact-coefficient classes for arbitrary
 `G`; the product-Levi fixed-level finiteness input is separate. It does not
 assert total compact-object exhaustion, general outer-conjugation covariance,
@@ -231,6 +231,3 @@ final Levi decomposition. These are not hypotheses used here either.
 The already published conditional projection construction supplies useful
 algebra only when complementarity is given; it does not establish this
 existence proposition.
-
-Authored by Worker 46. Worker 173 supplied the theorem interface and its
-independent-universe and intrinsic-identification requirements.

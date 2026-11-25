@@ -1,7 +1,5 @@
 # Galois-fixed bases for `GL_n`-valued cocycles
 
-Author: Worker 161.
-
 This module proves Hilbert's Theorem 90 for `GL_n` over a finite field
 extension `L/K`, in the following matrix form.
 

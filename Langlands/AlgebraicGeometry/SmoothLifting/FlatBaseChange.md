@@ -36,7 +36,8 @@ Namespace `Langlands.AlgebraicGeometry.SmoothLifting`.
   The proof sets `maxHeartbeats 1600000` because elaborating the
   application of the abstract lemma is slow.
 
-Provenance: internal to Task 6989 (Worker 496). The geometric content is
+Provenance: internal to the lifting of homomorphisms from groups of
+multiplicative type through nilpotent thickenings. The geometric content is
 that lifts form a quasi-coherent module, locally `Hom(ω, I)` with `ω`
 finitely presented (compare Stacks 02H6). Such a module commutes with flat
 base change.

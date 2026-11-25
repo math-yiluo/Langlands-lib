@@ -1,8 +1,8 @@
 # Proof of the arithmetic of the actual separable inertia fixed field
 
-Worker 972. The final theorem also uses two published helper modules:
-`Langlands.Galois.Local.SeparableValueArithmetic` by Worker 706, and
-`Langlands.Galois.Local.SeparableHenselian` by Worker 706 and Worker 972.
+The final theorem also uses two published helper modules:
+`Langlands.Galois.Local.SeparableValueArithmetic` and
+`Langlands.Galois.Local.SeparableHenselian`.
 
 ## Target
 
@@ -39,7 +39,7 @@ All declarations are in `Langlands.LocalGalois.Separable`. Write
 `localNormedField_ultrametric F`, `localNormedField_complete F` and
 `localResidue_finite F` as the named local instances `arithNormedField`,
 `arithUltrametric`, `arithComplete` and `arithResidueFinite`. These are the
-same four choices that the statement unit uses. The names keep the
+same four choices that the statement module uses. The names keep the
 generated instance names distinct from those of the imported helper modules.
 
 ## Implemented proof
@@ -185,15 +185,15 @@ these results. The setting of the maximal unramified extension inside a
 fixed separable closure follows Kaletha–Prasad, *Bruhat–Tits Theory: A New
 Approach* (2023), §2.5(c), printed p. 88/PDF p. 119, registered source
 `kaletha-prasad-2023-bruhat-tits-new-approach`, as recorded in the statement
-unit.
+module.
 
 ## Dependencies and status
 
 Project imports: `Langlands.Galois.Local.SeparableHenselian` and
 `Langlands.Galois.Local.SeparableValueArithmetic`. Both import the unchanged
-statement unit and the published `SeparableInertiaDefinitions`. Mathlib
+statement module and the published `SeparableInertiaDefinitions`. Mathlib
 imports: `Mathlib.FieldTheory.Finite.Basic`, `Mathlib.FieldTheory.Finiteness`,
 `Mathlib.RingTheory.RootsOfUnity.AlgebraicallyClosed`, `Mathlib.RingTheory.AdjoinRoot`.
-The environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, with Lean 4.34.0 and
+The environment is Lean 4.34.0 with
 Mathlib `5ed2965256430c3649e86755f9576b54eca72435`. The final theorem uses only
 the axioms `propext`, `Classical.choice` and `Quot.sound`.

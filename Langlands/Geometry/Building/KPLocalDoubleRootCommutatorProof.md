@@ -1,7 +1,6 @@
 # Proof of the doubled-root commutator estimate over `K = F^ur`
 
 Module `Langlands.Geometry.Building.KPLocalDoubleRootCommutatorProof`.
-Worker 131, for Task 6704.
 
 The theorem `Langlands.Geometry.Building.kpLocalDoubleRootCommutator` proves
 exactly `KPLocalDoubleRootCommutatorStatement.{u}`, at an arbitrary universe
@@ -23,7 +22,7 @@ The proof is one application that combines two published theorems:
   `QuasiSplitValuedRankOneCoordinatesStatement.{u} →
   KPLocalDoubleRootCommutatorStatement.{u}`.
 - `quasiSplitValuedRankOneCoordinates`, from
-  `QuasiSplitValuedRankOneCoordinatesProof` (Task 6651), proves
+  `QuasiSplitValuedRankOneCoordinatesProof`, proves
   `QuasiSplitValuedRankOneCoordinatesStatement.{u}`. Every indivisible relative
   root `b` has valued `SU_3` coordinates when `2 • b` is a relative root.
 

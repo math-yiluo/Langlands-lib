@@ -1,10 +1,10 @@
 # Coefficients, smooth endomorphisms and the formal degree: statements
 
-Author: Worker 6. Module `Langlands.Representation.CompactCoefficient.CompactFormalDegreeStatements`, namespace `Langlands.Renard.CompactRepresentation`.
+Module `Langlands.Representation.CompactCoefficient.CompactFormalDegreeStatements`, namespace `Langlands.Renard.CompactRepresentation`.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*, French edition dated 9 July 2026, IV.1.4, printed pp.90–92 / PDF pp.96–98: the construction after the Theorem, (IV.1.4.1)–(IV.1.4.3), the Proposition, the definition of the formal degree and its Remarks. The registered source ID is `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 
-This is a statement unit: nothing is proved.
+This module contains statements only: nothing is proved.
 
 ## The source
 
@@ -56,7 +56,7 @@ Part 2 says that the scalar `κ(τ)` of the previous statement is `(dim τ)⁻¹
 
 ## Remarks
 
-- Remark 1, the dependence of `d(τ)` on the Haar measure, is stated separately in [`CompactFormalDegreeHaarScalingStatement`](CompactFormalDegreeHaarScalingStatement.md); that statement remains unproved. Replacing `μ` by `c μ` multiplies every `τ(f)` by `c`, so it multiplies `κ(τ)` by `c` and divides `d(τ)` by `c`. For square-integrable representations, the published `representationFormalDegree_smul_measure` (module `Plancherel/FormalDegreeHaarScaling`) records the corresponding scaling of the Schur formal degree.
-- Remark 3 refers to IV.3.3. Applying a smooth functional `λ'` to part 3 gives `∫ λ(τ(g⁻¹) w) λ'(τ(g) x) dμ(g) = κ(τ) λ(x) λ'(w)`, which is a Schur orthogonality relation on `G` with formal degree `κ(τ)⁻¹`. The IV.3.3 relations are stated on `G / Z(G)` in Worker 6's `SchurOrthogonalityStatement` (module `UnitarySquareIntegrableStatements`), and a Schur degree for a central subgroup is published as `HarishChandraSchwartz.formalDegree`. Comparing these degrees with `κ(τ)⁻¹` requires matching the Haar measures on `G` and on the quotient. That comparison is not formalized here.
+- Remark 1, the dependence of `d(τ)` on the Haar measure, is stated separately in [`CompactFormalDegreeHaarScalingStatement`](CompactFormalDegreeHaarScalingStatement.md); that statement is proved by `compactFormalDegreeHaarScaling` in `CompactFormalDegreeHaarScalingProof`. Replacing `μ` by `c μ` multiplies every `τ(f)` by `c`, so it multiplies `κ(τ)` by `c` and divides `d(τ)` by `c`. For square-integrable representations, the published `representationFormalDegree_smul_measure` (module `Plancherel/FormalDegreeHaarScaling`) records the corresponding scaling of the Schur formal degree.
+- Remark 3 refers to IV.3.3. Applying a smooth functional `λ'` to part 3 gives `∫ λ(τ(g⁻¹) w) λ'(τ(g) x) dμ(g) = κ(τ) λ(x) λ'(w)`, which is a Schur orthogonality relation on `G` with formal degree `κ(τ)⁻¹`. The IV.3.3 relations are stated on `G / Z(G)` in `SchurOrthogonalityStatement` (module `UnitarySquareIntegrableStatements`), and a Schur degree for a central subgroup is published as `HarishChandraSchwartz.formalDegree`. Comparing these degrees with `κ(τ)⁻¹` requires matching the Haar measures on `G` and on the quotient. That comparison is not formalized here.
 - The Theorem of IV.1.4 (`V = V(τ) ⊕ V(τ)^⊥`) is the published `CompactCoefficientProjectorStatement` (Bernstein–Zelevinsky 2.42–2.44). The idempotents `e_{K,τ} = d(τ) ψ(τ(e_K))` of IV.1.5 are stated in `CompactProjectionDistributionStatement`.
-- The proofs (the dimension count (IV.1.4.3), Schur's lemma for the irreducible `G × G`-representation `W ⊗ W̃` of III.1.14, and the completeness lemma III.1.11) are not formalized here.
+- The proofs (the dimension count (IV.1.4.3), Schur's lemma for the irreducible `G × G`-representation `W ⊗ W̃` of III.1.14, and the completeness lemma III.1.11) are not formalized here. The statements are proved by `compactFormalDegree` in `CompactFormalDegreeProof`.

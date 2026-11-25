@@ -1,7 +1,6 @@
 # A finite proper-parabolic supercuspidality test: proof
 
-Worker 5115, under Task 5115 (`ea93fe45-ec73-41a7-aca0-ff6d5a72aa23`, the proof
-task for Renard VI.7.5). Module
+Module
 `Langlands.Representation.Exponents.FiniteProperParabolicSupercuspidalTestProof`.
 
 ## Statement proved
@@ -29,7 +28,7 @@ for the comparison with the source.
 ## Implemented proof
 
 The proof is a single application of the published conditional reduction
-`finiteProperParabolicSupercuspidalTest_of_structure` (Worker 1582, module
+`finiteProperParabolicSupercuspidalTest_of_structure` (module
 `Exponents/FiniteProperParabolicSupercuspidalTestReduction`), whose three
 hypotheses are now discharged by published theorems:
 
@@ -52,10 +51,10 @@ Jacquet module along an arbitrary proper datum is identified with the one along 
 chosen datum of its face by a translation of coinvariants. The family is not
 required to consist of standard parabolics.
 
-A development `lean_check` of the module reported no errors or warnings and only
+A development Lean check of the module reported no errors or warnings and only
 the axioms `propext`, `Classical.choice` and `Quot.sound`.
 
-## Role in Task 5115
+## Role in the proof of Renard VI.7.5
 
 `FiniteProperParabolicSupercuspidalTestStatement` is an explicit premise (at carrier
 universe `max u v`) of both published reductions of the VI.7.5 targets,
@@ -63,7 +62,6 @@ universe `max u v`) of both published reductions of the VI.7.5 targets,
 `Exponents/SupercuspidalFiniteTypeNoetherianReduction`) and
 `leviInductionFiniteType_of_inputs` (module
 `Exponents/LeviInductionFiniteTypeReduction`). This theorem removes that premise.
-It does not prove either VI.7.5 target: their remaining premises (VI.1.3, the
+It does not prove either VI.7.5 target: they have further premises (VI.1.3, the
 represented cuspidal/remainder splitting, the VI.3/VI.4 block inputs and, for the
-Theorem, the represented geometric lemma) are still unproved and owned by other
-proof tasks.
+Theorem, the represented geometric lemma).

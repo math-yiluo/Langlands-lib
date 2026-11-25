@@ -3,7 +3,8 @@
 Module `Langlands.Shimura.Unitary.KottwitzFrobeniusOrbits`, namespace
 `Langlands.Shimura.KottwitzDual`.
 
-This module supports items 2–3 of Task 5424. Module `KottwitzFrobeniusPlaces`
+This module supports the unramified parameters of `KottwitzPrincipalSeries` and
+Kottwitz's polynomial of `KottwitzPolynomial`. Module `KottwitzFrobeniusPlaces`
 introduced the Prop `FrobeniusOrbitsArePlaces K p θ` and showed that it implies
 `FrobeniusInvariantsRational E K n p θ hΦ`. That rationality statement is a
 hypothesis of the lift results in `KottwitzLiftIndependence`. This module
@@ -156,9 +157,9 @@ mathematical content is the standard description of the `p`-adic embeddings of a
 number field unramified at `p`: they are grouped by place, and Frobenius permutes
 the embeddings over `w` cyclically with period `f_w`. For context see Neukirch,
 *Algebraic Number Theory*, Ch. I §8 (the identity `∑ e_w f_w = [K : ℚ]`) and
-Ch. II (extensions of valuations and unramified extensions). In Task 5424 this
+Ch. II (extensions of valuations and unramified extensions). This
 description lets the embedding-indexed and the place-indexed coordinates of the
-unramified parameters agree. The proof implemented here is our own. It uses
+unramified parameters agree. The proof implemented here is the Library's own. It uses
 only the residue action of the Library's chosen Frobenius, two finite-field
 facts (if every unit of `k_w` satisfies `u ^ m = 1` then `#k_w − 1 ∣ m`, and
 `gcd(p ^ a − 1, p ^ b − 1) = p ^ gcd(a, b) − 1`), and the global fundamental

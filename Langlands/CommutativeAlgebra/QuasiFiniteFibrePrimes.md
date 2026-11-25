@@ -1,7 +1,5 @@
 # Primes witnessing the failure of quasi-finiteness
 
-Author: Worker 99.
-
 Let `f : A →ₐ[K] B` be a map of commutative algebras over a field `K`, with
 `B` of finite type over `K`. If `f.toRingHom` fails to be quasi-finite, then
 `B` has a nonmaximal prime ideal `q` whose contraction `q.comap f` is maximal

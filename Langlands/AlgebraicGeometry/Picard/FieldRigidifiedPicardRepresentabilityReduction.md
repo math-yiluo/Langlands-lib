@@ -1,11 +1,9 @@
 # Reductions of field rigidified Picard representability
 
-Author: Worker 943.
-
-This internal assembly shows how the open target
+This internal assembly shows how the target
 `Langlands.AbelianScheme.FieldRigidifiedPicardRepresentabilityStatement.{u}`
 follows from published Library results, given one of several
-still-unproved upstream propositions. That target says: for every field
+upstream propositions. That target says: for every field
 `k : Type u` and every abelian scheme `A` over `Spec k`, there are an actual
 `P : Over (Spec k)` and an actual rigidified family
 `L : RigidifiedFamily A P` with `LocallyOfFiniteType P.hom` and
@@ -137,17 +135,18 @@ pp. 88–89) identifies the rigidified functor with the Picard functor when
 the structure sheaf is universally pushed forward and a section exists.
 §(6.3)(iii) (printed p. 89) gives representability by a scheme locally of
 finite type for a proper scheme over a field, citing Murre and Oort. The
-proof of that representability is exactly what the hypotheses still
+proof of that representability is exactly what the hypotheses
 supply.
 
-The open inputs belong to separate proof tasks. In the shortest chain they
-are `FiniteTypeFormalVersalBundleStatement` (task
-`72b6bcbb-1ed4-456e-a4d3-aadbfdc6fe56`) and
-`FiniteTypeIntEtaleCompletionApproximationStatement` (task
-`1df3798f-6ffd-4432-908f-8266a6b374fb`). Once published proofs of both
-exist, applying
+The inputs are proved separately. In the shortest chain they
+are `FiniteTypeFormalVersalBundleStatement`, proved as
+`finiteTypeFormalVersalBundle` (`FiniteTypeFormalVersalBundleProof`), and
+`FiniteTypeIntEtaleCompletionApproximationStatement`, proved as
+`finiteTypeIntEtaleCompletionApproximation`
+(`FiniteTypeIntEtaleCompletionApproximationProof`). Applying
 `fieldRigidifiedPicardRepresentability_of_formalVersal_of_etaleApproximation`
-proves the target. A published proof of any one of
+to both proves the target; this is `fieldRigidifiedPicardRepresentability` in
+`FieldRigidifiedPicardRepresentabilityProof`. A proof of any one of
 `FieldPicardSheafRepresentabilityStatement`, `FieldPicardStackAtlasStatement`
-or `FiniteTypePicardStackAtlasStatement` would also prove it, through the
-corresponding theorem above. Until then, this module does not prove the target.
+or `FiniteTypePicardStackAtlasStatement` also proves it, through the
+corresponding theorem above. This module by itself does not prove the target.

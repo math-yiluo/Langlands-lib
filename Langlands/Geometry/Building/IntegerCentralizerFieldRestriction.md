@@ -62,5 +62,6 @@ valuation, followed by the existing full root-valuation and apartment
 field-restriction constructions. These are internal derived results.
 No initial compatible upstairs valuation or apartment, larger-torus
 restriction, building geometry, or supplied integral-model comparison is
-constructed here. In particular this module does not prove the host task's
-unconditional `BuildingComparisonStatement`.
+constructed here. In particular this module does not prove the unconditional
+`BuildingComparisonStatement` (module
+`Langlands.GroupScheme.IntegralModel.BuildingComparison`), which it serves.

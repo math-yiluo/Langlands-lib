@@ -25,7 +25,7 @@ variable {G : Type z} [Group G] [TopologicalSpace G]
 /-- By continuity of a lift, its elements near `1` are near the identity for a test triple. -/
 theorem ActionLift.eventually_isNear {X U : LocalizedCategory.{u, v, v} (K := K)}
     {ρ : G →* Aut X} {p : U ⟶ X} (a : ActionLift ρ p) (τ : TestTriple (presentationOf U)) :
-    {g : G | ∃ hg : g ∈ a.subgroup, IsNear τ (a.action ⟨g, hg⟩).hom (𝟙 U)} ∈ 𝓝 (1 : G) := by
+    {g : G | ∃ hg : g ∈ a.subgroup, IsNear τ (a.action ⟨g, hg⟩).asIso.hom (𝟙 U)} ∈ 𝓝 (1 : G) := by
   have h := a.isContinuousAction τ
   have himg := (a.isOpen_subgroup.isOpenMap_subtype_val).image_mem_nhds h
   refine Filter.mem_of_superset himg ?_
@@ -48,13 +48,13 @@ theorem exists_open_subgroup_intertwining [IsTopologicalGroup G]
       ∀ φ : V ⟶ V, (∀ σ ∈ E, IsNear σ φ (𝟙 V)) → IsNear τ (φ ≫ f) f)
     (a : ActionLift ρ p) (b : ActionLift ρ q) :
     ∃ N : Subgroup G, IsOpen (N : Set G) ∧ ∃ (ha : N ≤ a.subgroup) (hb : N ≤ b.subgroup),
-      ∀ (g : G) (hg : g ∈ N), (b.action ⟨g, hb hg⟩).hom ≫ f = f ≫ (a.action ⟨g, ha hg⟩).hom := by
+      ∀ (g : G) (hg : g ∈ N), (b.action ⟨g, hb hg⟩).asIso.hom ≫ f = f ≫ (a.action ⟨g, ha hg⟩).asIso.hom := by
   classical
   obtain ⟨E, hE⟩ := hrigid
   choose Ep hEp using hpost
   let N : Subgroup G :=
     { carrier := {g | ∃ (ha : g ∈ a.subgroup) (hb : g ∈ b.subgroup),
-        (b.action ⟨g, hb⟩).hom ≫ f = f ≫ (a.action ⟨g, ha⟩).hom}
+        (b.action ⟨g, hb⟩).asIso.hom ≫ f = f ≫ (a.action ⟨g, ha⟩).asIso.hom}
       one_mem' := by
         refine ⟨a.subgroup.one_mem, b.subgroup.one_mem, ?_⟩
         have h1 : a.action ⟨1, a.subgroup.one_mem⟩ = 1 := map_one a.action
@@ -69,8 +69,8 @@ theorem exists_open_subgroup_intertwining [IsTopologicalGroup G]
         have h2 : b.action ⟨g * h, b.subgroup.mul_mem hgb hhb⟩ =
             b.action ⟨g, hgb⟩ * b.action ⟨h, hhb⟩ := map_mul b.action ⟨g, hgb⟩ ⟨h, hhb⟩
         rw [h1, h2]
-        change ((b.action ⟨h, hhb⟩).hom ≫ (b.action ⟨g, hgb⟩).hom) ≫ f =
-          f ≫ ((a.action ⟨h, hha⟩).hom ≫ (a.action ⟨g, hga⟩).hom)
+        change ((b.action ⟨h, hhb⟩).asIso.hom ≫ (b.action ⟨g, hgb⟩).asIso.hom) ≫ f =
+          f ≫ ((a.action ⟨h, hha⟩).asIso.hom ≫ (a.action ⟨g, hga⟩).asIso.hom)
         rw [Category.assoc, hg, ← Category.assoc, hh, Category.assoc]
       inv_mem' := by
         rintro g ⟨hga, hgb, hg⟩
@@ -80,14 +80,14 @@ theorem exists_open_subgroup_intertwining [IsTopologicalGroup G]
         have h2 : b.action ⟨g⁻¹, b.subgroup.inv_mem hgb⟩ = (b.action ⟨g, hgb⟩)⁻¹ :=
           map_inv b.action ⟨g, hgb⟩
         rw [h1, h2]
-        change (b.action ⟨g, hgb⟩).inv ≫ f = f ≫ (a.action ⟨g, hga⟩).inv
-        rw [← Category.comp_id ((b.action ⟨g, hgb⟩).inv ≫ f),
-          ← (a.action ⟨g, hga⟩).hom_inv_id, Category.assoc, ← Category.assoc f, ← hg]
+        change (b.action ⟨g, hgb⟩).asIso.inv ≫ f = f ≫ (a.action ⟨g, hga⟩).asIso.inv
+        rw [← Category.comp_id ((b.action ⟨g, hgb⟩).asIso.inv ≫ f),
+          ← (a.action ⟨g, hga⟩).asIso.hom_inv_id, Category.assoc, ← Category.assoc f, ← hg]
         rw [Category.assoc]
-        exact Iso.inv_hom_id_assoc (b.action ⟨g, hgb⟩ : V ≅ V) _ }
+        exact Iso.inv_hom_id_assoc (b.action ⟨g, hgb⟩).asIso _ }
   let W : Set G := (a.subgroup : Set G) ∩ (b.subgroup : Set G) ∩
-    ((⋂ τ ∈ E, {g : G | ∃ hg : g ∈ a.subgroup, IsNear τ (a.action ⟨g, hg⟩).hom (𝟙 U)}) ∩
-      ⋂ τ ∈ E, ⋂ σ ∈ Ep τ, {g : G | ∃ hg : g ∈ b.subgroup, IsNear σ (b.action ⟨g, hg⟩).hom (𝟙 V)})
+    ((⋂ τ ∈ E, {g : G | ∃ hg : g ∈ a.subgroup, IsNear τ (a.action ⟨g, hg⟩).asIso.hom (𝟙 U)}) ∩
+      ⋂ τ ∈ E, ⋂ σ ∈ Ep τ, {g : G | ∃ hg : g ∈ b.subgroup, IsNear σ (b.action ⟨g, hg⟩).asIso.hom (𝟙 V)})
   have hW : W ∈ 𝓝 (1 : G) := by
     refine Filter.inter_mem (Filter.inter_mem a.subgroup_mem_nhds b.subgroup_mem_nhds)
       (Filter.inter_mem ((Filter.biInter_finset_mem E).2 fun τ _ => a.eventually_isNear τ)
@@ -96,11 +96,11 @@ theorem exists_open_subgroup_intertwining [IsTopologicalGroup G]
   have hWN : W ⊆ (N : Set G) := by
     rintro g ⟨⟨hga, hgb⟩, hgE, hgEp⟩
     refine ⟨hga, hgb, ?_⟩
-    have hgE' : ∀ τ ∈ E, IsNear τ (a.action ⟨g, hga⟩).hom (𝟙 U) := by
+    have hgE' : ∀ τ ∈ E, IsNear τ (a.action ⟨g, hga⟩).asIso.hom (𝟙 U) := by
       intro τ hτ
       obtain ⟨_, h⟩ := Set.mem_iInter₂.mp hgE τ hτ
       exact h
-    have hgEp' : ∀ τ ∈ E, ∀ σ ∈ Ep τ, IsNear σ (b.action ⟨g, hgb⟩).hom (𝟙 V) := by
+    have hgEp' : ∀ τ ∈ E, ∀ σ ∈ Ep τ, IsNear σ (b.action ⟨g, hgb⟩).asIso.hom (𝟙 V) := by
       intro τ hτ σ hσ
       obtain ⟨_, h⟩ := Set.mem_iInter₂.mp (Set.mem_iInter₂.mp hgEp τ hτ) σ hσ
       exact h

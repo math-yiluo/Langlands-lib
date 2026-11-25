@@ -1,7 +1,7 @@
 # The unblocked case of the derivative facts
 
 Module `Langlands.Representation.Classification.MoeglinWaldspurgerUnblocked`, namespace
-`Langlands.MoeglinWaldspurger.Derivation`. Author: Worker 5735.
+`Langlands.MoeglinWaldspurger.Derivation`.
 
 ## Combinatorics
 

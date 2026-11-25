@@ -1,7 +1,5 @@
 # Borel pairs over finite fields
 
-Workers 881 and 308.
-
 `Langlands.GroupScheme.finiteFieldBorelPair.{u}` proves the unchanged published
 `Langlands.GroupScheme.FiniteFieldBorelPairStatement.{u}` for every universe.
 For every finite field and every smooth connected affine group over it, a

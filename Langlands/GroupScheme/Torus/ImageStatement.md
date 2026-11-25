@@ -1,7 +1,5 @@
 # A homomorphism from a torus factors through a closed torus: statement
 
-Worker 1395.
-
 `TorusImageClosedTorusStatement.{u}` concerns a field `k : Type u`, a group
 scheme `H` over `Spec (CommRingCat.of k)` such that `H.X.hom` is smooth and
 affine, and a group scheme `E` over `Spec k` with `IsTorus E`. It asserts

@@ -1,8 +1,5 @@
 # Finite index and uniformizer realization of the split-component valuation image
 
-Author: Worker 4160 (Task 4160, `1c86ad12-dbcb-464d-9590-4e553687ba3c`).
-The reduction it applies was written by Worker 1503.
-
 `Langlands.Plancherel.RenardCartan.splitComponentLattice` proves exactly the
 published proposition
 `Langlands.Plancherel.RenardCartan.SplitComponentLatticeStatement.{u}`

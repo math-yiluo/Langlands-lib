@@ -1,8 +1,6 @@
 # Renard A.IX: canonical splitting by simple support
 
-Authors: Worker 6 (construction design and original Lean/Markdown draft) and
-Worker 1014 (independent source and import checks, adoption, declaration
-inspection and submission). This definition unit gives the actual canonical
+This definition module gives the actual canonical
 maps and the subset/partition splitting predicates. It proves only their short
 intrinsic defining laws. It proves no object splits, no splitting theorem
 for subquotients, and no category equivalence.
@@ -13,20 +11,21 @@ on printed268/PDF274. The registered original is
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`,
 at `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`.
-Worker 6 read the complete page as extracted text and inspected it visually.
-Worker 1014 independently recomputed the source hash, read PDF274–275
-(printed268–269) in full and visually checked PDF274, including the preceding
-supported sums, the boxed definition and the subsequent subquotient lemma.
+The complete page was read as extracted text and inspected visually.
+In an independent check the source hash was recomputed, PDF274–275
+(printed268–269) were read in full and PDF274 was visually checked, including
+the preceding supported sums, the boxed definition and the subsequent
+subquotient lemma.
 That lemma is a separate statement and proof obligation. PDF275 begins A.X.
 
 The supplementary registered `renard-2010-corrections-complements`, SHA256
 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
-is a different edition. Worker 1014 recomputed its hash and read PDF18–19
+is a different edition. Its hash was recomputed and PDF18–19 were read
 in full, confirming the preceding audit: the supported-sum letter correction
 is already incorporated in the 2026 text. No new correction to the splitting
-definition is claimed. On 29 October 2026, Worker 1014 checked the live
+definition is claimed. On 29 October 2026, the live
 [author books page](https://perso.pages.math.cnrs.fr/users/david.renard/) and
-its linked errata. Their bytes match the registered snapshot
+its linked errata were checked. Their bytes match the registered snapshot
 `renard-author-page-2026-10-26` (SHA256
 `143092e92be11be1b9c5a03bfc1e9e4538edb45f9a67d5fc8cc474b7b6dcd580`)
 and the registered 2010 errata, respectively. The books section links the
@@ -135,21 +134,17 @@ result for the supported sums.
 The source assertions about support and maximality of `E_S`, closure and
 abelianness of the supported full subcategories, Hom orthogonality,
 disjoint intersections, splitting of subquotients, and categorical
-product equivalence remain separate obligations with their existing
-owners. This construction unit discharges none of them.
+product equivalence remain separate obligations. This construction module
+discharges none of them.
 
 ## Development verification
 
-Worker 1014 checked the adopted module and a private declaration-printing
-probe in approved environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`.
-Diagnostic `6f65c2cf-ba26-4ee5-91b1-500da7d75c2f` completed successfully
-with zero errors and warnings. It printed all eight unapplied definitions
+The module and a private declaration-printing probe were checked; the
+check completed successfully with zero errors and warnings. It printed all eight unapplied definitions
 and the five predicate axiom lists. The principal predicate was inspected
 as a definition returning `Prop`, with independent level parameters
 `w, v, u` and exactly `propext`, `Classical.choice` and `Quot.sound`.
 The bodies use the actual `biprod.desc` and `Sigma.desc` maps and existentially
-bind the required coproduct proofs. The original supplied Lean code was
-adopted without changes. The entire five-module project import closure
-and its paired Markdown were compared byte for byte with the current Library
-and remain unchanged. The diagnostic probe stays private. These development
-checks do not supply independent semantic acceptance or publication.
+bind the required coproduct proofs. The entire five-module project import
+closure and its paired Markdown were compared byte for byte with the Library
+and remain unchanged. The diagnostic probe is not part of this module.

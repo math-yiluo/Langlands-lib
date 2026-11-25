@@ -50,7 +50,7 @@ theorem levelRepresentation_kernel (g : FundamentalGroup s)
     levelRepresentation s A n hn hu g (kernelLevelEquiv A (Over.mk s) n x) =
       kernelLevelEquiv A (Over.mk s) n
         (Additive.ofMul
-          (g.hom.app (torsionCover torsionFiniteEtale A n hn hu) x.toMul)) :=
+          (g.asIso.hom.app (torsionCover torsionFiniteEtale A n hn hu) x.toMul)) :=
   levelMonodromy_kernel s
     (FiniteEtale.geometricFiberFinite s) torsionFiniteEtale A n hn hu g x
 

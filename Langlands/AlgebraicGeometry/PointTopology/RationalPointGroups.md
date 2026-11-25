@@ -1,6 +1,6 @@
 # Group operations on identity-test rational points
 
-This derived host adapter equips the already published canonical rational-point
+This derived adapter equips the already published canonical rational-point
 homeomorphism with its actual group compatibility. It does not introduce a group
 law or a topology. Both point carriers carry Mathlib's existing Hom group of the
 same group scheme.
@@ -13,7 +13,7 @@ pages 2–3. The registered source is
 `conrad-2011-weil-grothendieck-adelic-points`, SHA256
 `fe4a9193aff4ef575665b40971f3da32f850a74d87b3f2d0fa28bba26b9cbabb`.
 The group topology theorem is already proved on the actual `RingPoint` carrier
-in `AffineGroupProofs`. The present unit derives its identity-test convention
+in `AffineGroupProofs`. The present module derives its identity-test convention
 from `RationalPoints`, so its comparisons are internal consequences rather than
 additional claims attributed to the paper.
 
@@ -31,7 +31,7 @@ All declarations are in `Langlands.AlgebraicGeometry.PointTopology`.
 `rationalPointGroupEquiv R G` upgrades `rationalPointEquiv R G.X` to a
 multiplicative equivalence. Its forward function and inverse are the existing
 identity-test comparison. Reducing the identity-test isomorphism and the existing Hom operations
-proves multiplication compatibility by definitional equality. Thus the unit preserves both underlying scheme morphisms and
+proves multiplication compatibility by definitional equality. Thus the module preserves both underlying scheme morphisms and
 existing group operations.
 
 `rationalPointGroupHomeomorph R G` combines this multiplicative equivalence
@@ -58,4 +58,5 @@ exactly the named rational-point topology.
 This comparison does not assert compactness of proper-scheme points,
 surjectivity of an actual flag-orbit map, compactness of a parabolic quotient,
 nonarchimedean subgroup bases or a scheme-GL/matrix topology comparison. Those
-remain separate obligations.
+are not part of this module; the scheme-GL/matrix topology comparison is in
+`GeneralLinear`.

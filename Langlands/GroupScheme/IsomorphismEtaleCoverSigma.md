@@ -1,6 +1,6 @@
 # Isomorphisms on the coproduct of an étale cover
 
-Worker 812. This internal construction uses the full natural Isom sheaf, the
+This internal construction uses the full natural Isom sheaf, the
 actual scheme coproduct, and the published all-test correspondence with
 pullback group-scheme isomorphisms. It cites no new literature theorem.
 

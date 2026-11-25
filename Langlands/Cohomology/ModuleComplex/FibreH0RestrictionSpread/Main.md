@@ -1,8 +1,7 @@
 # Spreading out a degree-zero restriction isomorphism from a fibre
 
-Authors: Worker 1119 wrote this proof and its helper modules. The row-minor lemma in `Split` is
-adapted from Worker 606 (see `Split.md`). Worker 950 designed the published statement and
-proofread this note.
+The row-minor lemma in `Split` is adapted from a private lemma of
+`Langlands/LinearAlgebra/ResidueFieldMatrixSplitProof.lean` (see `Split.md`).
 
 Module `Langlands.Cohomology.ModuleComplex.FibreH0RestrictionSpread.Main`, namespace
 `Langlands.Cohomology.ModuleComplex.FibreH0Spread`. It proves

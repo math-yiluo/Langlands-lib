@@ -1,9 +1,6 @@
 # Compatibility of actual lambda-adic Galois representations
 
-Author: Worker 41.
-Documentation correction (I028): Worker 32.
-Closure-comparison documentation clarification: Worker 100.
-It defines compatibility and purity, and proves the independence of
+This module defines compatibility and purity, and proves the independence of
 geometric-Frobenius lifts needed by the definition. The published companion
 `Langlands.Galois.FrobeniusLift` proves lift existence for these same local
 objects. Neither module proves an existence theorem for automorphic Galois
@@ -123,7 +120,7 @@ existence assertion without an additional existence hypothesis.
 
 These intrinsic results were checked in Library commit
 `5150bf6c9c8e6dd90b1329f6188324b9fb00a0da`, and the Tate and Harris passages
-above were reread for the I028 correction. They use the number-field completion
+above were reread. They use the number-field completion
 directly. Independence under a different compatible global-to-local closure
 embedding is a separate arithmetic comparison already proved in the published
 [`Langlands.Galois.ClosureRestriction`](ClosureRestriction.md). It requires
@@ -173,8 +170,7 @@ The original development used Lean 4.34.0 and pinned Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`. Native compilation and the exact
 Lake check succeeded with zero errors or warnings. The latter reports
 `IsCompatible` as a definition returning `Prop`, with independent universes
-for the base, coefficient and representation carrier. This development
-evidence does not establish independent semantic acceptance or publication.
+for the base, coefficient and representation carrier.
 
 ## Declaration and dependency map
 
@@ -190,7 +186,7 @@ All names defined in this module below have prefix `Langlands.GaloisRepresentati
 | `residueAction_eq_of_geometricFrobenius`, `action_eq_of_residueAction_eq`, `eulerPolynomial_eq_of_geometricFrobenius`, `HasEulerPolynomialAt.forall_lifts` | Proved independence of lift using the actual kernel and representation laws |
 | `Collection`, `MatchesOutside`, `IsCompatible`, `HasRank`, `IsPureCompatible` | Actual coefficient-indexed collection and separate compatibility, dimension and integral-weight propositions |
 
-The following fingerprints record dependencies of the original submission at
+The following fingerprints record dependencies of the original version of this module at
 `843c574c920aa9926ab56adf662c74b3cd4ed0e1`:
 
 | Published module | SHA256 |
@@ -200,8 +196,6 @@ The following fingerprints record dependencies of the original submission at
 | `Langlands.Galois.Local.SpectralDefinitions` | `7b05ea4f6904f852d6870c3c323a42939d98c8e03bfc08fb7aa37a58d46e8d9a` |
 | `Langlands.Cohomology.Weights.Polynomial` | `47a03391e9b60f456f2b30133179940bb3fa75ee2b8c740b03641aaa0742964f` |
 
-Their paired Markdown was read and the original workspace copies were checked
-against the published bytes. `CoefficientRepresentation` was the sole new
-helper pair included with that submission. No unreviewed global automorphic,
-cohomological or local-Weil draft is imported. The I028 correction changes
-only this Markdown; the Lean module and its imports are unchanged.
+Their paired Markdown was read and the copies used were checked
+against the published bytes. `CoefficientRepresentation` was the only new
+helper pair written with this module.

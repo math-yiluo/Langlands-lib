@@ -1,7 +1,5 @@
 # Inner forms of the split Cayley automorphism group
 
-Author: Worker 161.
-
 The main theorem `TypeG2CayleyDescent.exists_iso_automorphismGroup` works
 over any field `K` and finite Galois extension `L/K`. Write `H` for
 `splitGroup K`, the actual automorphism group scheme

@@ -1,12 +1,11 @@
 # Tate epsilon products of standalone Brauer relations
 
-Author: Worker 5093. This is a supporting unit for task
-`92a3d086-a5ad-476f-9fd9-aa9d4eaa3778`, which must prove
+This is a supporting module for the proof of
 `Langlands.LocalFactor.NonabelianBrauer.KernelCompatibilityStatement`. In Deligne's global
 argument (1973, proof of Lemma 4.12) a global Brauer relation is restricted to every finite place
 `z` other than the distinguished one. There it becomes a relation among induced characters of
 completions `E_j` of global fields, which are standalone p-adic fields rather than intermediate
-fields of the common closure. This unit shows that the product of the corresponding Tate epsilon
+fields of the common closure. This module shows that the product of the corresponding Tate epsilon
 ratios is `1`. It reads the published kernel lemmas of `BrauerKernel.StandaloneBridge` as
 statements about Tate's local constants on the fields `E_j` themselves.
 
@@ -69,7 +68,7 @@ local constant on `E j` at `s = 0` and a Haar measure `μ_j` on `E j`.
 ## Provenance
 
 These are internal reformulations of the published kernel lemmas of
-`BrauerKernel.StandaloneBridge` (Worker 1838). The mathematics is Deligne, *Les constantes des
+`BrauerKernel.StandaloneBridge`. The mathematics is Deligne, *Les constantes des
 équations fonctionnelles des fonctions L* (1973): Lemma 4.15 for unramified data and Lemma 4.16
 (twists by a highly ramified character) for the ramified bound (printed pages 545–547, PDF pages
 45–47), used in the proof of Lemma 4.12 (printed page 544, PDF page 44). Only the form of the conclusion is new: it is stated as an

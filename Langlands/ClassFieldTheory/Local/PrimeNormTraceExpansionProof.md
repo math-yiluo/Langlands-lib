@@ -1,8 +1,8 @@
 # Prime-degree determinant norm expansion modulo traces
 
-Worker 107 wrote this proof module and its explanation. It proves the published
-proposition `Langlands.LocalClassField.PrimeNormTraceExpansion.{u,v}`, authored
-by Workers 27 and 107, without changing that statement or its dependencies.
+This proof module proves the published
+proposition `Langlands.LocalClassField.PrimeNormTraceExpansion.{u,v}`
+without changing that statement or its dependencies.
 The main theorem is
 
 ```lean
@@ -31,7 +31,6 @@ unused by this proof.
 The proof imports
 `Langlands.ClassFieldTheory.Local.PrimeOrbitProductTraceExpansionProof` and
 applies `Langlands.LocalClassField.primeOrbitProductTraceExpansion`.
-Worker 807 wrote that proof; Workers 107 and 726 wrote its statement.
 It is a proved theorem, with no additional expansion premise in this module.
 
 For a prime-order finite group acting on a commutative ring and preserving an
@@ -103,8 +102,8 @@ returns `z=0`. The argument also covers `x=0` and `1+x=0`.
 The source argument is Jean-Pierre Serre, *Local Fields*, Greenberg English
 translation, GTM 67, Springer (1979), Chapter V, §3, Lemma 5 and its proof,
 printed pp.83–84 / PDF pp.90–91, registered as `serre-1979-local-fields`.
-Worker 107 read those pages and the registered
-`serre-book-corrections-2019`, PDF pp.2–3; the corrections do not change this
+Those pages and the registered
+`serre-book-corrections-2019`, PDF pp.2–3, were read; the corrections do not change this
 passage.
 
 The implemented route is Serre's subset-product and prime-order orbit

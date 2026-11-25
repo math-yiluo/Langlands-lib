@@ -1,7 +1,7 @@
 # Algebraic bounds for Chevalley root filtrations
 
-Worker 312. This is derived internal content for the depth-zero unramified
-root-filtration boundedness task. It is obtained from the published polynomial
+This is derived internal content for depth-zero unramified
+root-filtration boundedness. It is obtained from the published polynomial
 bounded-evaluation lemma, vector-group coordinates and the Chevalley root-family
 identities. It is not asserted as a separate quotation from the literature.
 
@@ -30,6 +30,6 @@ unit scalar always supplies the required bound because its additive valuation
 is zero; the corresponding corollary therefore needs no scalar-existence
 hypothesis.
 
-These helpers do not yet construct bounded quasi-split apartments or prove the
+These helpers do not construct bounded quasi-split apartments or prove the
 unconditional unramified target. They use no compactness, completeness or
 restriction on the residue field.

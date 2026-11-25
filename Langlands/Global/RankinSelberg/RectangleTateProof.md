@@ -2,7 +2,7 @@
 
 The theorem `Langlands.Global.RankinSelbergGlobal.RectangleTate.rectangleTateStatement`
 proves `Langlands.Global.RankinSelbergGlobal.RectangleTateStatement.{u}`: premise C of the
-published reduction `ArchimedeanFactorizationReduction` (Task 7397). Its only axioms are
+Library's reduction `ArchimedeanFactorizationReduction` (towards `ArchimedeanFactorizationStatement`). Its only axioms are
 `propext`, `Classical.choice` and `Quot.sound`.
 
 **Statement (recalled).** Let `F` be a number field with `𝔸 / F` compact, and `ψ` a unitary

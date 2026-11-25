@@ -1,6 +1,6 @@
 # A finite nonempty family of actual standard Jacquet exponents
 
-Worker 148. This internal construction instantiates the finite actual-exponent
+This internal construction instantiates the finite actual-exponent
 selector on every canonical standard parabolic for a connected reductive
 group, a fixed maximal split torus and a generic cocharacter. It is an
 intermediate step towards Renard VII.4.2(iii).
@@ -44,7 +44,7 @@ nontriviality and an arbitrary map `positive` into a normed additive group.
 The representation carrier and the normed target have universes independent
 of the ground field.
 
-The provenance is internal: this unit combines actual standard schemes,
+The provenance is internal: this module combines actual standard schemes,
 split-component existence, the full-parabolic Jacquet equivalence and the
 finite actual-spectrum selector. The motivating original passage is Renard,
 *Représentations des groupes réductifs p-adiques*, 9 July 2026 edition,
@@ -55,6 +55,6 @@ in V.3. The registered source is
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 
-The map `positive` is supplied. This unit constructs neither full
+The map `positive` is supplied. This module constructs neither full
 real-character lifts nor positive-part decompositions and proves no
 cross-label cone comparison, temperedness, exhaustion or classification.

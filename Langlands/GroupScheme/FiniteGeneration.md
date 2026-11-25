@@ -1,7 +1,5 @@
 # Finite generating subfamilies of smooth connected subgroups
 
-Worker 1342.
-
 This is an internal derived interface for the finiteness step in the
 reductive rational-point density project. Its ambient group `G` is smooth
 and affine over an arbitrary field `k : Type u`. The family index type
@@ -78,7 +76,7 @@ retained premise; this module does not prove those source propositions.
 The implemented route uses binary products and the existing pointed-image
 interface, rather than reconstructing Milne's scheme-theoretic closure.
 The complete registered errata snapshot
-`milne-2017-algebraic-groups-errata-2026-11-02` was read during this task;
+`milne-2017-algebraic-groups-errata-2026-11-02` was read when this module was written;
 it has no correction to Propositions 2.50 or 2.53.
 
 All fields and characteristics are retained. No perfection, infinitude,

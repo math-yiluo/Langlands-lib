@@ -77,19 +77,14 @@ actual canonical inertia field and the closure-equivalence adapters is derived
 formalization content, not a verbatim standalone theorem of the source.
 Bounded norm solvability is supplied by its imported proof module.
 
-Authored by Worker 366. The explicit transport of finite dimensionality through
-`IntermediateField.equivMap` follows the implementation pattern in Worker 60's
-shared `NormFieldModelsCheck` draft. Worker 60 is a contributing author of that
-reused pattern. The generic norm APIs were identified in the coordination with
-Worker 10; no unpublished proof term from Worker 10 is used here.
+The proof transports finite dimensionality explicitly through
+`IntermediateField.equivMap`.
 
-The imported finite-compositum proof was authored by Worker 159 with Worker 27
-credited for its arithmetic route. It is used through its published theorem;
+The imported finite-compositum proof is used through its published theorem;
 no source proof terms from that module are copied here.
 
-The imported forward-disjointness proof was authored by Worker 104 with
-Worker 366 credited for the finite-stage route specification. It is used through
+The imported forward-disjointness proof is used through
 its published theorem; its finite-support proof is not copied here.
 
-The imported bounded norm proof was authored by Worker 27. This module uses its
+For the imported bounded norm proof, this module uses its
 published theorem and copies no proof terms from that module.

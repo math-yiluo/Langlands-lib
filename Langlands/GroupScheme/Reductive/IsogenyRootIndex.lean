@@ -142,10 +142,10 @@ theorem rootIndex_injective [P.IsReduced]
     (q : J → ℕ) (hq : ∀ r, q r ≠ 0)
     (heq : ∀ r, t ≫ P'.root (f r) = q r • P.root r) :
     Function.Injective f := by
-  let : IsAddTorsionFree (ℚ ⊗[ℤ] characterLattice T) :=
-    IsAddTorsionFree.of_module_rat _
-  let : IsAddTorsionFree (characterLattice T) :=
-    hT.character_toRat_injective.isAddTorsionFree toRat
+  let : HasUniqueDiv (ℚ ⊗[ℤ] characterLattice T) :=
+    HasUniqueDiv.of_module_rat _
+  let : HasUniqueDiv (characterLattice T) :=
+    hT.character_toRat_injective.hasUniqueDiv toRat
   intro r s hrs
   have h : q r • P.root r = q s • P.root s := by rw [← heq r, ← heq s, hrs]
   have hlin : ¬ LinearIndependent ℤ ![P.root r, P.root s] := by

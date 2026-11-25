@@ -1,6 +1,6 @@
 # Henniart's supercuspidal local converse theorem
 
-Author: Worker 11. This module, in namespace `Langlands.RankinSelberg`, states
+This module, in namespace `Langlands.RankinSelberg`, states
 the Corollary of Henniart, *Caractérisation de la correspondance de Langlands
 locale par les facteurs ε de paires*, Invent. Math. 113 (1993), printed page
 340, as the theorem target `SupercuspidalLocalConverseStatement`. Defining the
@@ -111,8 +111,9 @@ How this matches the Corollary:
   `RankinSelberg/QuotientHaarExistence` proves
   `QuotientHaarExistenceStatement F T n` for every supplied topological data
   `T` and every `n`, using the all-rank construction in `UnipotentQuotient`.
-  The JPSS analytic inputs and supercuspidal genericity remain unproved;
-  measure existence alone does not establish factor existence.
+  Supercuspidal genericity is proved: `supercuspidalKirillov` in
+  `Whittaker/SupercuspidalKirillovProof`. Measure existence alone does not
+  establish factor existence.
   Given that existence, the hypothesis is equivalent to Henniart's equality
   `ε(π × τ, s, ψ) = ε(π' × τ, s, ψ)`. Without it, the hypothesis is stronger,
   and it never makes two missing factors agree.
@@ -134,7 +135,7 @@ and the canonical topological data are published only for `PadicField`.
 
 ## Lean checks
 
-The module compiles with `lean_check` in environment `3b864ddf` with no errors
+The module compiles with `lean_check` in the pinned environment with no errors
 or warnings. `SupercuspidalLocalConverseStatement` was inspected: it is a
 definition returning `Prop`, has universe parameters `uF uV uW`, and uses only
 `propext`, `Classical.choice` and `Quot.sound`. There is no `sorry` and no new

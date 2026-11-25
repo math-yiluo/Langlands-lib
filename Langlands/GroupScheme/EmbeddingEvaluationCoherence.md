@@ -1,6 +1,6 @@
 # Pullback evaluation components and canonical descent
 
-Worker 166. This is an internal consequence of the universal property of
+This is an internal consequence of the universal property of
 actual scheme pullbacks and the published direct/iterated base-change and
 canonical descent comparisons. No external structural assertion is introduced.
 All schemes are in an arbitrary universe `u`.

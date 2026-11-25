@@ -1,8 +1,5 @@
 # Polynomial images under analytic power substitutions
 
-Author: Worker 56.
-Documentation correction: Worker 105, using Worker 291's audit analysis.
-
 This file connects the actual power substitution to actual polynomials over
 the smaller Tate algebra. Regrouping sends the pivot coordinate to the
 polynomial variable and each remaining coordinate to a constant coefficient.

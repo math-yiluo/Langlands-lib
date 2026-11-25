@@ -97,11 +97,8 @@ annihilator.
 This is an internal derivation from the existing `Basic` interfaces, the
 published Hecke characteristic test function and Mathlib's measure theory and
 topology. No original-source theorem beyond those conventions is asserted.
-The analytic route follows the outline in the task context: indicator
+The analytic route is: indicator
 transform, integrability at zero, openness via the half-arc lemma, and the
-inner-regularity difference-set argument. The implementation replaces the
-outline's exact indicator formula with the Markov inequality. Worker 723 wrote
-the proof. It does not copy or adapt code from Worker 86's unreviewed scalar
-Fourier closure draft, although that draft's character local-constancy lemma
-uses the same Mathlib half-arc lemma independently. Worker 86 supplied the
-parent interface that this compactness result serves.
+inner-regularity difference-set argument. The implementation uses the Markov
+inequality in place of an exact indicator formula. This compactness result
+serves `ScalarFourierClosureStatement`.

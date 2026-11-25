@@ -72,12 +72,12 @@ variable {C : Type*} [Category C] [Preadditive C] {D : Type*} [Category D] [Prea
 /-- For an additive functor `F`, the map `F.map` on endomorphisms as a ring homomorphism. -/
 def endRingHom (F : C ⥤ D) [F.Additive] (X : C) : End X →+* End (F.obj X) :=
   { F.mapEnd X with
-    map_zero' := F.map_zero X X
-    map_add' := fun _ _ => F.map_add }
+    map_zero' := End.ext (F.map_zero X X)
+    map_add' := fun _ _ => End.ext F.map_add }
 
 @[simp]
 lemma endRingHom_apply (F : C ⥤ D) [F.Additive] (X : C) (f : End X) :
-    endRingHom F X f = F.map f :=
+    (endRingHom F X f).asHom = F.map f.asHom :=
   rfl
 
 end EndRingHom
@@ -242,27 +242,31 @@ def awayHeckeActIntertwining (K : CompactOpenLevel H') (a : LevelHeckeAlgebra R 
 homomorphism to its endomorphisms as a representation of `H`. -/
 def formsHeckeAlgebraHom (K : CompactOpenLevel H') :
     LevelHeckeAlgebra R K.subgroup →+* End ((factorFormsPresheaf R e ι V).obj (op K)) where
-  toFun a := Rep.ofHom (awayHeckeActIntertwining R e ι V K a)
+  toFun a := End.of (Rep.ofHom (awayHeckeActIntertwining R e ι V K a))
   map_one' := by
+    apply End.ext
     refine Rep.hom_ext (Representation.IntertwiningMap.ext (LinearMap.ext fun f => ?_))
     exact congrArg (awayFormsFixedEquiv R e ι V K.subgroup)
       (one_smul (LevelHeckeAlgebra R K.subgroup) ((awayFormsFixedEquiv R e ι V K.subgroup).symm f))
   map_mul' a b := by
+    apply End.ext
     refine Rep.hom_ext (Representation.IntertwiningMap.ext (LinearMap.ext fun f => ?_))
     exact congrArg (awayFormsFixedEquiv R e ι V K.subgroup)
       (mul_smul a b ((awayFormsFixedEquiv R e ι V K.subgroup).symm f))
   map_zero' := by
+    apply End.ext
     refine Rep.hom_ext (Representation.IntertwiningMap.ext (LinearMap.ext fun f => ?_))
     exact congrArg (awayFormsFixedEquiv R e ι V K.subgroup)
       (zero_smul (LevelHeckeAlgebra R K.subgroup) ((awayFormsFixedEquiv R e ι V K.subgroup).symm f))
   map_add' a b := by
+    apply End.ext
     refine Rep.hom_ext (Representation.IntertwiningMap.ext (LinearMap.ext fun f => ?_))
     exact congrArg (awayFormsFixedEquiv R e ι V K.subgroup)
       (add_smul a b ((awayFormsFixedEquiv R e ι V K.subgroup).symm f))
 
 /-- The element `[K g K]` of the Hecke algebra acts by the double-coset operator. -/
 lemma formsHeckeAlgebraHom_doubleCoset (K : CompactOpenLevel H') (g : H') :
-    formsHeckeAlgebraHom R e ι V K (doubleCoset K g) = factorHeckeHom R e ι V K K g := by
+    (formsHeckeAlgebraHom R e ι V K (doubleCoset K g)).asHom = factorHeckeHom R e ι V K K g := by
   refine Rep.hom_ext (Representation.IntertwiningMap.ext (LinearMap.ext fun f => ?_))
   exact congrArg (awayFormsFixedEquiv R e ι V K.subgroup)
     (doubleCoset_smul (awayTranslation R e ι V) K g
@@ -301,9 +305,10 @@ def smoothHeckeAlgebraHom (K : CompactOpenLevel H') :
 
 /-- The element `[K g K]` of the Hecke algebra acts by the double-coset operator. -/
 lemma smoothHeckeAlgebraHom_doubleCoset (K : CompactOpenLevel H') (g : H') :
-    smoothHeckeAlgebraHom R e ι V K (doubleCoset K g) = factorSmoothHeckeHom R e ι V K K g := by
+    (smoothHeckeAlgebraHom R e ι V K (doubleCoset K g)).asHom =
+      factorSmoothHeckeHom R e ι V K K g := by
   change (SmoothRep.smoothPartFunctor.{uR, uH, max uG t} R H).map
-    (formsHeckeAlgebraHom R e ι V K (doubleCoset K g)) = _
+    (formsHeckeAlgebraHom R e ι V K (doubleCoset K g)).asHom = _
   rw [formsHeckeAlgebraHom_doubleCoset]
   rfl
 
@@ -344,8 +349,9 @@ def extHeckeAlgebraHom (W : SmoothRep.{u, u, u} R H) (i : ℕ) (K : CompactOpenL
 /-- The element `[K g K]` of the Hecke algebra acts on `Ext^i` by the double-coset operator. -/
 lemma extHeckeAlgebraHom_doubleCoset (W : SmoothRep.{u, u, u} R H) (i : ℕ)
     (K : CompactOpenLevel H') (g : H') :
-    extHeckeAlgebraHom R e ι V W i K (doubleCoset K g) = factorExtHecke R e ι V W i K K g := by
-  change (SmoothExt.ext R H W i).map (smoothHeckeAlgebraHom R e ι V K (doubleCoset K g)) = _
+    (extHeckeAlgebraHom R e ι V W i K (doubleCoset K g)).asHom =
+      factorExtHecke R e ι V W i K K g := by
+  change (SmoothExt.ext R H W i).map (smoothHeckeAlgebraHom R e ι V K (doubleCoset K g)).asHom = _
   rw [smoothHeckeAlgebraHom_doubleCoset]
   rfl
 
@@ -433,10 +439,11 @@ def abutmentHeckeAlgebraHom (X : DerivedCategory (SmoothRep.{u, u, u} R H)) (n :
 operator. -/
 lemma abutmentHeckeAlgebraHom_doubleCoset (X : DerivedCategory (SmoothRep.{u, u, u} R H))
     (n : ℤ) (K : CompactOpenLevel H') (g : H') :
-    abutmentHeckeAlgebraHom R e ι V X n K (doubleCoset K g) =
+    (abutmentHeckeAlgebraHom R e ι V X n K (doubleCoset K g)).asHom =
       factorAbutmentHecke R e ι V X n K K g := by
   change (singleFunctor (SmoothRep.{u, u, u} R H) 0 ⋙ shiftFunctor _ n ⋙
-    preadditiveCoyoneda.obj (op X)).map (smoothHeckeAlgebraHom R e ι V K (doubleCoset K g)) = _
+    preadditiveCoyoneda.obj (op X)).map
+      (smoothHeckeAlgebraHom R e ι V K (doubleCoset K g)).asHom = _
   rw [smoothHeckeAlgebraHom_doubleCoset]
   rfl
 
@@ -585,7 +592,7 @@ def dividingExtHeckeAlgebraHom (W : SmoothRep.{u, u, u} R (σ.DividingPoints p))
 /-- The element `[K g K]` of the Hecke algebra acts on `Ext^i` by the double-coset operator. -/
 lemma dividingExtHeckeAlgebraHom_doubleCoset (W : SmoothRep.{u, u, u} R (σ.DividingPoints p))
     (i : ℕ) (K : CompactOpenLevel (σ.PrimeToPoints p)) (g : σ.PrimeToPoints p) :
-    dividingExtHeckeAlgebraHom σ p hp R V W i K (doubleCoset K g) =
+    (dividingExtHeckeAlgebraHom σ p hp R V W i K (doubleCoset K g)).asHom =
       dividingExtHecke σ p hp R V W i K K g :=
   extHeckeAlgebraHom_doubleCoset R _ _ V W i K g
 

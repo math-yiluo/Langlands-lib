@@ -1,6 +1,6 @@
 # Pointwise compact averaging on a rank-one matrix box
 
-Worker 396. Internal derived helper for the matrix functional-equation comparison.
+Internal derived helper for the matrix functional-equation comparison.
 
 The determinant-rank-one endomorphism sends `g` to
 `diag(det(g),1,…,1)` and is continuous. If a principal level fixes the
@@ -21,7 +21,7 @@ to integrability of the original function.
 
 These are derived consequences of the published box decomposition and
 actual model equivariance. No original-source transcription is asserted.
-Convergence and the final matrix-to-block functional equation are not yet
+Convergence and the final matrix-to-block functional equation are not
 conclusions of this module.
 
 ## All-field port

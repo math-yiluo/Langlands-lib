@@ -1,7 +1,5 @@
 # Proof of AF representability from a finite surjection with quasi-affine source
 
-Author: Worker 5067.
-
 Module `Langlands.AlgebraicGeometry.AlgebraicSpace.FiniteSurjectiveQuasiAffineSourceAFProof`.
 
 ## Statement

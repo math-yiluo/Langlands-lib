@@ -4,7 +4,7 @@ This derived algebraic construction supports the finite-level product
 comparison in Conrad, *Weil and Grothendieck approaches to adelic points*
 (2011), Example 4.2, printed pages 9–10. The actual S-integer extension there
 is finite locally free, whereas an adelic level contains an infinite product
-of original local coefficient rings. This unit specializes an existing
+of original local coefficient rings. This module specializes an existing
 Library tensor comparison and packages its canonical map as an algebra
 equivalence.
 
@@ -16,10 +16,11 @@ The proof works with additive groups and the specified module actions.
 
 Mathlib's `Module.finitePresentation_of_projective` supplies finite
 presentation from the finite and projective hypotheses. The published
-`RestrictedProduct.tensorPiComparison_proof`, imported from
+`Langlands.LinearAlgebra.RestrictedProduct.tensorPiComparison_proof` (named
+`RestrictedProduct.tensorPiComparison_proof` until 22 November 2026), imported from
 `Langlands.LinearAlgebra.RestrictedProduct.TensorPiProof`, then proves
 bijectivity of exactly this map. That general result applies to arbitrary
-finitely presented modules and arbitrary product index types. This unit
+finitely presented modules and arbitrary product index types. This module
 reuses it without reconstructing its finite-presentation or finite-free
 argument.
 
@@ -35,4 +36,6 @@ factors may inhabit independent arbitrary universes. There are no field,
 domain, Noetherian or topological hypotheses. This is generic derived
 coefficient infrastructure for the source's finite locally free extension;
 its actual adelic-level arithmetic instantiation and point homeomorphisms
-remain obligations of the host task.
+are left to the proof of the statement this module serves,
+`AdelicProjectiveWeilComparisonStatement` (Example 4.2), which the Library
+proves as `adelicProjectiveWeilComparison` in `AdelicProjectiveWeilComparisonProof`.

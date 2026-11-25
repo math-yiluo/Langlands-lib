@@ -1,7 +1,5 @@
 # Small diagrams of pointed affine étale neighbourhoods
 
-Worker 252.
-
 Fix a scheme `S` and a morphism `g : Spec Ω ⟶ S` from a field. An object of
 the category of elements used here is an affine scheme `Spec A` étale over
 `S` together with a lift of `g`. Its morphisms commute with the maps to `S`

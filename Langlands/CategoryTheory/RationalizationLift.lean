@@ -65,23 +65,27 @@ def inclusionLiftIso : inclusion ⋙ lift F ≅ F :=
 
 /-- The induced algebra map on actual rational endomorphism rings. -/
 def liftEnd (X : C) : End X →ₐ[ℚ] CategoryTheory.End (F.obj X) where
-  toFun := liftHom F
-  map_zero' := map_zero (liftHom F)
-  map_one' := (lift F).map_id (of X)
-  map_add' := map_add (liftHom F)
-  map_mul' f g := liftHom_comp F g f
+  toFun f := CategoryTheory.End.of (liftHom F f.asHom)
+  map_zero' := by apply CategoryTheory.End.ext; exact map_zero (liftHom F)
+  map_one' := by apply CategoryTheory.End.ext; exact (lift F).map_id (of X)
+  map_add' f g := by apply CategoryTheory.End.ext; exact map_add (liftHom F) f.asHom g.asHom
+  map_mul' f g := by apply CategoryTheory.End.ext; exact liftHom_comp F g.asHom f.asHom
   commutes' q := by
-    rw [algebraMap_eq, liftHom_tmul, F.map_id]
+    apply CategoryTheory.End.ext
+    rw [algebraMap_eq]
+    change liftHom F (q ⊗ₜ[ℤ] 𝟙 X) = _
+    rw [liftHom_tmul, F.map_id]
     rfl
 
 @[simp]
 lemma liftEnd_ofEnd (X : C) (f : CategoryTheory.End X) :
-    liftEnd F X (ofEnd X f) = F.map f := by
-  change liftHom F (ofHom f) = _
+    liftEnd F X (ofEnd X f) = CategoryTheory.End.of (F.map f.asHom) := by
+  apply CategoryTheory.End.ext
+  change liftHom F (ofHom f.asHom) = _
   simp
 
 @[simp]
 lemma liftEnd_endTensor (X : C) (q : ℚ) (f : CategoryTheory.End X) :
-    liftEnd F X (endTensor X q f) = q • F.map f := rfl
+    liftEnd F X (endTensor X q f) = CategoryTheory.End.of (q • F.map f.asHom) := rfl
 
 end Langlands.Rationalization

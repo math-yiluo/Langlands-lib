@@ -177,8 +177,9 @@ theorem finrank_weightSpace_eq_one (hne : weightSpace i α ≠ ⊥) :
 /-- A linear trivialization of the nonzero weight space from the supplied cell. -/
 def lineEquiv (hne : weightSpace i α ≠ ⊥) :
     k ≃ₗ[k] weightSpace i α :=
-  Classical.choice (Module.nonempty_linearEquiv_of_finrank_eq_one
-    (finrank_weightSpace_eq_one hT i hα xp xm hp hm hopen hne))
+  Classical.choice (haveI : Module.Free k (weightSpace i α) := Module.Free.of_divisionRing k _
+    Module.nonempty_linearEquiv_of_finrank_eq_one
+      (finrank_weightSpace_eq_one hT i hα xp xm hp hm hopen hne))
 
 end Weight
 end RootCellLie

@@ -1,7 +1,5 @@
 # Noetherianity of the actual arithmetic S-integer rings
 
-Author: Worker 208.
-
 `AdelicSIntegersNoetherianStatement` combines two arithmetic targets,
 each asserting that the actual S-integer ring is Noetherian and has
 Krull dimension at most one. `Ring.DimensionLEOne` expresses the latter

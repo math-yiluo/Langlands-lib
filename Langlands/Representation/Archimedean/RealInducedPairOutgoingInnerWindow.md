@@ -47,7 +47,7 @@ or middle multipliers.
 
 This is a derived internal consequence of the published endpoint arithmetic,
 four-crossing landing, Fourier kernel criterion and adjacent uncertainty
-theorem. It reuses Worker 765's signed multiplier construction and the
+theorem. It reuses the signed multiplier construction and the
 support formulas in `RealInducedPairIncomingKernel`. No new literature claim
 or classification assumption is introduced.
 

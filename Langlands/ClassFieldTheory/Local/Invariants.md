@@ -47,7 +47,7 @@ local class field theory.
 
 The base fields have arbitrary universe `u`; the finite relative
 extensions have independent universe `v`. The absolute restriction API
-currently relates base fields in the same arbitrary universe, matching
+relates base fields in the same arbitrary universe, matching
 the concrete closure map used by `Cohomology`. There is no restriction to
 `Type 0`, nor any implicit resizing of fields.
 
@@ -97,13 +97,10 @@ quotient `Q/Z` and absolute restriction. `CyclicClass` supplies the explicit
 cocycle and class; neither defines the invariant by choosing an unproved
 existence theorem.
 
-The published local-field inputs are `LocalField.Definitions`, artifact
-`ac4cb7d5-5dd1-44b6-9d56-f0ec6c70bce0` v1, and `LocalField.Canonical`,
-artifact `c342ec21-e5ee-4ba4-aec6-b4c1b1e2b629` v1. Canonical realization is
+The published local-field inputs are `LocalField.Definitions` and
+`LocalField.Canonical`. Canonical realization is
 therefore constructed for every `PadicField`, not assumed. Canonical order
-comes from `LocalField.Normalization.Definitions`, artifact
-`e3d7bbd4-f2b9-4970-a60f-bf6aa0b34bb2` v1. Actual residue action comes from
-`Galois.Local.SpectralDefinitions`, artifact
-`82bd181d-11b1-4000-afb6-1acdb762dd32` v1. The latter two effective pairs
-were checked unchanged and current at Library commit
+comes from `LocalField.Normalization.Definitions`. Actual residue action comes from
+`Galois.Local.SpectralDefinitions`. The latter two pairs
+were checked unchanged at Library commit
 `5bc58c2525e0499012801c80f17b6a9c04d57263`.

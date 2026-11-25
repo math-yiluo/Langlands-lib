@@ -75,9 +75,9 @@ theorem rationalRosatiBasisEquations_iff_integral
   · intro h k
     apply Tate.ofHom_injective hu B DB
     have hk := h k
-    change comp0 B B DB (homToHom0 (a (basisO k))) (homToHom0 lam) =
+    change comp0 B B DB (homToHom0 (a (basisO k)).asHom) (homToHom0 lam) =
       comp0 B DB DB (homToHom0 lam)
-        (dual0 (homToHom0 (a (tauO (basisO k))))) at hk
+        (dual0 (homToHom0 (a (tauO (basisO k))).asHom)) at hk
     rw [dualHom0_homToHom0, comp0_homToHom0, comp0_homToHom0] at hk
     exact hk
   · exact IntegralRosatiBasisEquations.rationalize D C preservation composition unitCoherence

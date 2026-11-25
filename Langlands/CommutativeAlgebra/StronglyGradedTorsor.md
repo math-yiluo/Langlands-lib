@@ -1,6 +1,7 @@
 # Faithful flatness and the tensor comparison of a strongly graded ring
 
-Worker 644. Internal derived algebra for Task 7326, continuing `StronglyGraded`.
+Internal derived algebra for affine quotients by central multiplicative-type
+subgroups, continuing `StronglyGraded`.
 For a coaction grading of a commutative ring A by any abelian group M, the
 zero-coefficient map takes values in the degree-zero subring and splits its
 inclusion. If each degree has a finite dual family, projectivity gives flatness;

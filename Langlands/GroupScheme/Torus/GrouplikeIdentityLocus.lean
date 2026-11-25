@@ -72,7 +72,7 @@ theorem exists_idempotent_identity_locus [AddGroup.FG M]
     {s : Multiplicative M →* (algebra (M := M) B)ˣ} (hs : IsGrouplikeHom s) :
     HasIdempotentIdentityLocus s := by
   classical
-  obtain ⟨T, hT⟩ := Group.FG.out (G := Multiplicative M)
+  obtain ⟨T, hT⟩ := Group.exists_of_isMulFG (Multiplicative M)
   let e : B := ∏ m ∈ T, (s m : AddMonoidAlgebra B M).coeff m.toAdd
   have he : IsIdempotentElem e := by
     clear hT

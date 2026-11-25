@@ -1,7 +1,5 @@
 # Dual-number coordinates at the identity of the general linear group scheme
 
-Author: Worker 518.
-
 This module identifies finite matrices with the kernel of reduction to the
 identity in dual-number points of the published general linear group scheme.
 The principal bundled construction is
@@ -159,7 +157,7 @@ the compatibilities for the bundled equivalence. The corresponding
 `pointKernelEquiv_symm_naturality` and `pointKernelEquiv_symm_scale` give the
 recovery equations for every element of the actual scheme-point kernel.
 
-This unit is the algebraic identity-kernel calculation needed for later
+This module is the algebraic identity-kernel calculation needed for later
 representation differentiation. Comparison with a cotangent-sheaf Lie module,
 analytic tangent spaces, Lie brackets, differentiation of arbitrary
 representations, and archimedean cohomology remain separate work. It does not

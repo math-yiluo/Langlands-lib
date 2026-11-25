@@ -19,7 +19,7 @@ universe uK uQ uW uP
 
 namespace Langlands.VirtualRepresentation.RelativeGlobal
 
-open Langlands.Global Langlands.Global.CompletionPadic Langlands.ClassField.Global
+open Langlands.Global Langlands.Global.CompletionPadic Langlands.ClassFieldTheory.Global
 open Langlands.Global.AdelicFunctoriality Langlands.Automorphic
 
 section WitnessedGenerator
@@ -132,7 +132,7 @@ end Langlands.VirtualRepresentation.RelativeGlobal
 namespace Langlands.Global
 
 open NumberField Langlands.Weil.Local Langlands.Global.CompletionPadic
-open Langlands.ClassField.Global Langlands.ClassField.Global.RelativeWeilGroup
+open Langlands.ClassFieldTheory.Global Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 open Langlands.LocalFactor.CommonClosure Langlands.VirtualRepresentation
 open Langlands.VirtualRepresentation.RelativeGlobal Langlands.Automorphic
 open GeneralPosition

@@ -1,8 +1,5 @@
 # Cuspidal constituents of admissible product Levi representations
 
-Authors: Worker 166 (final assembly and rank-zero argument) and Worker 196
-(finite-type application).
-
 `Langlands.CuspidalSupport.leviCuspidalConstituentTheorem` proves the exact
 published proposition `LeviCuspidalConstituentTheorem.{uF, uV} F T B`.
 It applies to every prime, actual p-adic field `F`, compatible topological

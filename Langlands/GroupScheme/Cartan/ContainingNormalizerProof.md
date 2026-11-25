@@ -1,6 +1,6 @@
 # Normalizers of smooth subgroups containing a torus centralizer
 
-Workers 615 and 218. This proof develops the Lie algebra argument for Milne,
+This proof develops the Lie algebra argument for Milne,
 *Algebraic Groups* (2017), Lemma 17.47, printed p.366. The registered official
 2017 errata snapshot (2026-11-02) contains no correction to that lemma.
 

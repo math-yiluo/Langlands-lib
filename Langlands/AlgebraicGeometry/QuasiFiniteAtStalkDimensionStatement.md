@@ -126,6 +126,7 @@ the 00QF proof uses them.
 
 ## Scope and formal proof boundary
 
-This unit states the proposition only. It proves no special case, assumes no
-dimension comparison, and introduces no axioms. A separate proof task must
-prove this exact published proposition.
+This module states the proposition only. It proves no special case, assumes no
+dimension comparison, and introduces no axioms. The module
+`QuasiFiniteAtStalkDimensionProof` proves this exact published proposition
+(`quasiFiniteAtStalkDimension`).

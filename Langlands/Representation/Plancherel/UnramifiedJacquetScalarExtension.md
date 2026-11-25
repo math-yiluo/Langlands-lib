@@ -1,6 +1,6 @@
 # Universal unramified twists and proper rational Jacquet vanishing
 
-Worker 1759. This internal construction applies the tensor universal property
+This internal construction applies the tensor universal property
 from `Jacquet.ScalarExtension` to the existing actual universal unramified action.
 It is a prerequisite of the coefficient geometric-lemma proof of Renard VI.9.2,
 rather than a separate assertion attributed to the source.
@@ -36,6 +36,6 @@ over the complete native coefficient algebra without an added kernel,
 finiteness or filtration premise. The field/group and inducing-carrier
 universes remain independent.
 
-This unit does not construct the Jacquet filtration of the induced family or
+This module does not construct the Jacquet filtration of the induced family or
 prove its compact-open fixed-module finiteness. Those remain obligations of
 the full VI.9.2 proof.

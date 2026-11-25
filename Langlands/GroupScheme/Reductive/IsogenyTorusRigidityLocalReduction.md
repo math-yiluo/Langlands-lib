@@ -20,7 +20,7 @@ conclusion is the existence of an fppf cover with all-test torus conjugators.
 Each coordinate package is aligned with its own supplied inclusion; the two
 root data need not be identified, and compatibility of the isogenies with
 those data is not supplied as an additional premise.
-No proof of this local existence proposition is asserted in this unit.
+No proof of this local existence proposition is asserted in this module.
 
 `fppfLocallyTorusConjugate_of_splitAffine` assumes that local existence
 proposition. For the two supplied relative maximal tori over an arbitrary
@@ -44,6 +44,6 @@ base-change conjugator transport, isogeny stability and the previously proved
 descent and uniqueness implications. These are formal consequences of those
 results; no new external source is used. The affine existence premise remains
 an explicit proof obligation, so this reduction is conditional and does not
-by itself finish the full rigidity task. All constructions preserve the
+by itself prove the full `ReductiveIsogenyTorusRigidityStatement`. All constructions preserve the
 universe and apply to arbitrary base schemes, including nonreduced and empty
 bases.

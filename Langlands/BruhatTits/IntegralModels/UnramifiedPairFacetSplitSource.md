@@ -39,13 +39,14 @@ The implemented proof uses these published inputs:
   which gives the asserted fixation of every maximal-unramified torus unit.
 
 This derives a model comparison and a torus lift from explicit reference
-inputs. Construction of those reference inputs and the final host theorem
-remain separate obligations; this contribution makes no new independent
-literature assertion.
+inputs. Construction of those reference inputs and the final theorem this
+module serves, `UnramifiedFixedPointSplitTorusStatement` (proved as
+`unramifiedFixedPointSplitTorus` in
+`Langlands.Geometry.Building.UnramifiedFixedPointSplitTorusProof`), are not
+part of this module; this module makes no new independent literature
+assertion.
 
 The local arithmetic instances use explicit names, and the companion
-`UnramifiedPairTorusImages` module now gives its eight local instances
-unique names. This repairs generated declaration-name collisions when the
-pair and recovered-apartment source modules are imported together. Their
-instance definitions and all mathematical declarations and proof bodies
-remain unchanged.
+`UnramifiedPairTorusImages` module gives its eight local instances
+unique names. This avoids generated declaration-name collisions when the
+pair and recovered-apartment source modules are imported together.

@@ -22,5 +22,6 @@ matrix injective, and the spanning condition makes it surjective.
 This is derived coordinate linear algebra over any field, with no smoothness,
 reducedness, finite-type, or highest-weight hypothesis. The affine-group
 hypothesis is used in the stable-coordinate restriction and operator-module
-decomposition. The module supports semisimple descent in Task 7109 but does not
+decomposition. The module supports semisimple descent for
+`SplitHighestWeightBaseChangeStatement` but does not
 assert descent or classification.

@@ -1,7 +1,5 @@
 # Assembling coherent comparisons from unique normalized representatives
 
-Worker 561.
-
 This internal reduction does not prove existence of pinned normalization or
 `RelativePinnedComparisonExistenceStatement`. It specifies a sufficient input
 and constructs a `RelativePinnedComparison` from that supplied input.
@@ -30,7 +28,7 @@ full-centre fppf quotient with every supplied compatible conjugation action,
 by `IsFppfLocallyInner.existsUnique_adjointPoint`. These sections and the
 normalization's geometric properties construct `toRelativePinnedComparison`.
 The theorem `relativePinnedComparisonExistence_of_normalization` therefore
-proves the unchanged target conditionally on the supplied normalization data.
+proves the target conditionally on the supplied normalization data.
 
 All statements and constructions are derived from the local-innerness
 calculus, actual comparison pullbacks, and uniqueness of representatives.

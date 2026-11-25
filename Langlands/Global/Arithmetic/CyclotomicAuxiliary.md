@@ -4,9 +4,9 @@ This module builds two auxiliary extensions of a number field `F` from one prime
 They live inside the cyclotomic field `F(ζ_q)`. The first is a cyclic extension of `F` of
 any given degree `n > 0`. The second is `F(ζ_q)` itself, a Galois extension of `F` with a
 finite place whose ramification index is divisible by `n`. Both lie in the universe of
-`F`, as the predicates of `Langlands.ClassField.Global.FundamentalClassStatement` require.
+`F`, as the predicates of `Langlands.ClassFieldTheory.Global.FundamentalClassStatement` require.
 The uniqueness of global fundamental classes uses the second (module
-`Langlands.ClassField.Global.FundamentalClassProof`). Artin–Tate's uniqueness argument
+`Langlands.ClassFieldTheory.Global.FundamentalClassProof`). Artin–Tate's uniqueness argument
 uses a cyclic extension of the given degree instead, the first result here.
 
 ## Definition

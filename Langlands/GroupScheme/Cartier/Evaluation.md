@@ -1,7 +1,5 @@
 # Section evaluation for actual relative homomorphisms
 
-Author: Worker 51.
-
 For arbitrary commutative group schemes `G` and `H` over a scheme `S`, and an
 arbitrary test scheme `T : Over S`, `RelativeHom G H T` is the actual categorical
 Hom from the pullback of `G` to the pullback of `H`. The category

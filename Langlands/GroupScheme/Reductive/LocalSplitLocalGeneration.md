@@ -87,13 +87,13 @@ packaged proposition asserts both conclusions for every supplied enumeration.
 
 ## Provenance and scope
 
-This is an internal derived unit; it does not quote an external source statement.
+This is an internal derived module; it does not quote an external source statement.
 Its inputs are the published coordinate model, arbitrary-base big-cell theorem,
 separably closed field argument and elementary local-ring lifting of units.
 It replaces the Henselian section-lifting step of `LocalSplitIntegralGeneration`
 with the explicit coordinate lift above, thereby removing that theorem's
 Henselian and domain assumptions.
 
-The unit proves generation and factorization, not relations or comparisons
+The module proves generation and factorization, not relations or comparisons
 between two groups. It does not construct torus/root-matching point-group
 equivalences, and it does not prove `LocalSplitIsomorphismTheoremStatement`.

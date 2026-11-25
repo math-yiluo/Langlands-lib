@@ -1,13 +1,11 @@
 # Rank transport, restriction and actual derivatives
 
-Authors: Worker 593 and Worker 984.
-
 This internal algebraic pair records natural compatibility of the published
 equality-based smooth rank transports with the actual general-linear and
 mirabolic derivatives. It preserves independent field and carrier universes.
 Every order is within its original source rank; mirabolic orders are positive.
 
-`generalLinearRankCastDerivativeIso`, proposed by Worker 984, and
+`generalLinearRankCastDerivativeIso` and
 `mirabolicRankCastDerivativeIso` eliminate the supplied rank equality. Both
 composites then identify with the same derivative by the identity-functor laws.
 `generalLinearRankCastRestrictionIso` proves the corresponding restriction
@@ -29,7 +27,7 @@ Leibniz filtration, tensor-commutation theorem, or mixed-product formula.
 
 The only direct project import is `Derivative.Homogeneity`. At Library base
 `b22e185743f7c318f709e14e422801f4360105d5`, the complete recursive project
-import closure has 55 modules, including this new entry. The exact list is:
+import closure has 55 modules, including this module. The exact list is:
 
 ```text
 Langlands.Group.GL.Basic
@@ -96,18 +94,17 @@ natural isomorphism, the published rank equation, and the positive-order
 definition of the derivative. In particular, the imported `Homogeneity`
 module's level and homogeneity assertions are not proof hypotheses.
 
-| Inherited condition or exclusion | Check for this pair |
+| Condition or exclusion | Check for this pair |
 | --- | --- |
 | Actual functors and natural maps; independent field and carrier universes | All four constructions are natural isomorphisms between composites of the unchanged smooth functors, at independent `uF,uV`. Nothing is proved merely objectwise. |
 | All boundary ranks and valid orders; arbitrary carriers | General-linear rank transport allows order zero and rank zero. Mirabolic derivative orders are positive and bounded by `n+1`, including `n=0` and top order. No `P_0`, chosen vector, finite dimension, admissibility, genericity or finite length is assumed. |
-| Accepted general upstream inputs; no conditional consumer replacement | Only existing actual constructors and their definition-level laws are used. No exactness, product filtration, tensor commutation or positive-order derivative theorem is assumed. |
+| General upstream inputs; no conditional consumer replacement | Only existing actual constructors and their definition-level laws are used. No exactness, product filtration, tensor commutation or positive-order derivative theorem is assumed. |
 | Segment derivative, existence, Jacquet and exponent formulas; analytic classification and Ze80 segment formulas or criteria | No segment module is in the closure and no such conclusion occurs in the proof terms. |
 | Unlinked, linked or juxtaposed segment structures, reducibility, reverse quotients, adjacent swaps, two-segment commutation, gluing and ordered socle existence or exhaustion | No corresponding module is imported and none of these conclusions is a proof input. |
 | Special-head criterion, generic segment product uniqueness, multisegment exhaustion, strong-head existence, quotient coverage, ordered conversion and tempered uniqueness | No head, socle, multisegment, classification or exhaustion result supplies an input. |
 | Square-integrable Langlands classification, square-integrable or regular exhaustion, and forward special essential square-integrability | No square-integrability or classification module is imported; the proofs are the equality and functor laws described above. |
 | Two-supercuspidal nonadjacent irreducibility and full-product structure/assembly; no consumer proving its own upstream input | No supercuspidal or product-consumer result is imported or used. |
 | Irreducible, Levi-cuspidal and supercuspidal Whittaker finiteness, all-character single-block finiteness and dependent mirabolic finite length | The two Whittaker imports construct characters, functionals and models. They contain no prohibited finiteness result; no finiteness or mirabolic finite-length input is used here. |
-| Preserve the target and imported Lean/Markdown pairs | Only `RankCastCompat` is new. The target and every imported pair remain unchanged. |
 
 A recursive import scan and a bounded text scan of all 55 project modules
 found no excluded consumer module or named excluded conclusion. The complete

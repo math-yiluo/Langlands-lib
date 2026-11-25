@@ -86,7 +86,7 @@ def heckeMultiplicityRepresentation (X : Action (SmoothRep.{uR, uG, uV} R G) Γ)
 
 @[simp] theorem heckeMultiplicityRepresentation_apply (X : Action (SmoothRep.{uR, uG, uV} R G) Γ)
     (γ : Γ) (φ : T →ₗ[LevelHeckeAlgebra R H] fixedVectors X.V.representation H) :
-    heckeMultiplicityRepresentation H T Γ X γ φ = (fixedVectorsHeckeMap H (X.ρ γ)).comp φ :=
+    heckeMultiplicityRepresentation H T Γ X γ φ = (fixedVectorsHeckeMap H (X.ρ γ).asHom).comp φ :=
   rfl
 
 end Functor
@@ -151,7 +151,7 @@ vectors. -/
 theorem heckeMultiplicityObjects_representation_apply (g : Field.absoluteGaloisGroup K)
     (φ : T →ₗ[LevelHeckeAlgebra L H] fixedVectors X.V.representation H) :
     (heckeMultiplicityObjects H T X hX).val.representation g φ =
-      (fixedVectorsHeckeMap H (X.ρ g)).comp φ :=
+      (fixedVectorsHeckeMap H (X.ρ g).asHom).comp φ :=
   rfl
 
 /-- The dimension of the Galois representation is that of the Hecke multiplicity space. -/
@@ -185,10 +185,11 @@ theorem isUnramifiedAlong_heckeMultiplicity
     IsUnramifiedAlong (ModuleCat.{max uT uV} L) v
       ((heckeMultiplicityActionFunctor H T (Field.absoluteGaloisGroup K)).obj X) ι := by
   intro i
+  apply End.ext
   refine ModuleCat.hom_ext (LinearMap.ext fun
     (φ : T →ₗ[LevelHeckeAlgebra L H] fixedVectors X.V.representation H) =>
       LinearMap.ext fun t => ?_)
-  exact congrArg (fun f => f.hom (φ t)) (hu i)
+  exact congrArg (fun f => f.asHom.hom (φ t)) (hu i)
 
 omit [Module.Finite (LevelHeckeAlgebra L H) T]
   [Module.Finite L (T →ₗ[LevelHeckeAlgebra L H] fixedVectors X.V.representation H)]

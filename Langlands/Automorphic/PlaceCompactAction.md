@@ -56,6 +56,5 @@ realization carriers have explicit names (`placeCompact…AddCommGroup`).
 Unnamed local instances receive automatically generated global names, and
 these coincided with the names generated in
 `Langlands.Automorphic.CuspidalOperatorRealization`, so that no module could
-import both. Worker 8 named the instances in task
-`6c50b2fd-cb4a-47b3-8f5d-d464916d69fb`. Every instance is still
+import both; the explicit names remove this clash. Every instance is still
 `Submodule.addCommGroup _`, and no other declaration changed.

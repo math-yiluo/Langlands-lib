@@ -1,7 +1,5 @@
 # Labelled multiplicity removal and completion-valued descent
 
-Author: Worker 773.
-
 `TaylorLabelledMultiplicityRemovalStatement` takes a continuous
 `L_λ`-representation of the absolute Galois group of a number field `E`.
 Its geometric Frobenius characteristic polynomials at the good places are

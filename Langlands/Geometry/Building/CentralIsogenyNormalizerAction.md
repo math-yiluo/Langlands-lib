@@ -1,8 +1,6 @@
 # Actual normalizer derivatives in a central-isogeny square
 
-Author: Worker 1631.
-
-This internal derived unit works over any field `k`, in arbitrary universe `u`.
+This module works over any field `k`, in arbitrary universe `u`.
 Supply a commuting square `i ≫ q = groupHom t ≫ j` from split acting tori
 `S`, `T` into ambient groups `C`, `G`. The actual map `t` is an isogeny and
 the target embedding `j` is a monomorphism on underlying schemes.
@@ -31,5 +29,5 @@ actions; no action is introduced as an extra input.
 The provenance is the existing Library split-torus finite-presentation theorem
 and normalizer descent argument, together with the internally derived generic
 fppf normalizer transport and translation comparison. Cover tori and their embeddings remain supplied geometric data.
-This unit constructs no map of valuation apartments and asserts no apartment
+This module constructs no map of valuation apartments and asserts no apartment
 axioms or final normalizer-image theorem.

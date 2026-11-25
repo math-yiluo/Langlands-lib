@@ -3,8 +3,8 @@
 `Langlands.Global.RankinSelbergGlobal.UnequalSemilocalFactorizationStatement.{u, uQ}` is
 a Prop-valued statement. It is the open premise of the conditional proof of
 `UnequalSemilocalEquationStatement` in the module `UnequalSemilocalEquationReduction`,
-and nothing here proves it. It collects the parts of Cogdell's proof of Theorem 4.1 that
-the Library does not yet contain:
+and nothing here proves it. It collects the following parts of Cogdell's proof of
+Theorem 4.1:
 
 * the factorization of the partial integrals `Ψ_(S∪∞)` and `Ψ̃_(S∪∞)` of suitable vectors
   into local integrals;
@@ -166,8 +166,8 @@ Markdown of `UnequalSemilocalEquationStatement`.
 
 ## Provenance
 
-Internal premise of Task 7053 (proof of `UnequalSemilocalEquationStatement`), derived from
+Internal premise of the proof of `UnequalSemilocalEquationStatement`, derived from
 Cogdell 2004, proof of Theorem 4.1 (pp.219–220), with §3.2 (pp.216–217). The split is
-ours. The premise keeps the global factorization and the archimedean theory, which are
-absent from the Library. It drops the nonarchimedean functional equation, which the
+ours. The premise keeps the global factorization and the archimedean theory, which the
+Library does not prove. It drops the nonarchimedean functional equation, which the
 Library proves.

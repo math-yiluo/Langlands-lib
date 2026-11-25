@@ -2,8 +2,6 @@ import Langlands.GroupScheme.Torus.LatticeGaloisScalarExtension
 import Langlands.GroupScheme.Reductive.RootDatumExistence
 import Langlands.GroupScheme.Reductive.PinningConstruction
 import Langlands.GroupScheme.Reductive.RootPinningFromSplitTorus
-import Langlands.GroupScheme.Reductive.RootDatumExistence
-import Langlands.GroupScheme.Reductive.PinningConstruction
 import Langlands.GroupScheme.Dynamic.CentralizerReductiveTransport
 import Langlands.GroupScheme.GaloisPointTowerBaseChange
 

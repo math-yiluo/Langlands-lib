@@ -1,0 +1,847 @@
+/-
+Copyright (c) 2026 Bin Wu. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Bin Wu
+-/
+module
+
+public import WeilConjectures.AlgebraicGeometry.ConstantCompletionKoszulReflector
+public import Mathlib.CategoryTheory.Sites.LeftExact
+public import Mathlib.CategoryTheory.Sites.ConstantSheaf
+public import Mathlib.CategoryTheory.Sites.Limits
+public import Mathlib.Algebra.Category.Ring.Limits
+public import Mathlib.Algebra.Category.Ring.Colimits
+public import Mathlib.Algebra.Category.Ring.FilteredColimits
+public import Mathlib.RingTheory.Ideal.Quotient.PowTransition
+public import Mathlib.RingTheory.Noetherian.Defs
+public import Mathlib.RingTheory.Ideal.Quotient.Operations
+public import WeilConjectures.CategoryTheory.Flat.FlatRingedIdealCompleteEquivalenceSupplement
+public import WeilConjectures.CategoryTheory.RingedKoszulSystem
+public import WeilConjectures.CategoryTheory.RingedExtendedCech
+public import WeilConjectures.CategoryTheory.RingedSectionLocalization
+public import Mathlib.Algebra.Category.ModuleCat.Presheaf.Sheafification
+public import Mathlib.RingTheory.Localization.Away.Basic
+public import WeilConjectures.Algebra.Homology.DerivedInternalHom
+public import Mathlib.Algebra.Category.ModuleCat.Sheaf.PushforwardContinuous
+public import WeilConjectures.Algebra.Category.ModuleCat.Sheaf.TensorClosed
+public import Mathlib.Algebra.Homology.Monoidal
+public import WeilConjectures.Algebra.Homology.HomComplex
+public import WeilConjectures.CategoryTheory.RingedCompletionUnit
+public import WeilConjectures.CategoryTheory.RingedDerivedRestriction
+public import WeilConjectures.CategoryTheory.RingedSiteModules
+public import Mathlib.Algebra.Category.ModuleCat.Sheaf.Abelian
+public import Mathlib.Algebra.Homology.DerivedCategory.ExactFunctor
+public import WeilConjectures.Mathlib.CategoryTheory.Sites.Continuous
+public import WeilConjectures.Mathlib.Algebra.Category.ModuleCat.Presheaf.Sheafification
+public import WeilConjectures.Algebra.Homology.HomComplexUnitEvaluationIsIso
+public import WeilConjectures.Algebra.Homology.HomComplexUnitEvaluationComm
+public import WeilConjectures.Algebra.Homology.HomComplexComponents
+public import WeilConjectures.Algebra.Homology.HomComplexUnitEvaluationNaturality
+public import WeilConjectures.CategoryTheory.RingedStrictTowerHomotopyLimit
+public import WeilConjectures.CategoryTheory.RingedSiteGrothendieckAbelian
+public import WeilConjectures.CategoryTheory.Triangulated.DerivedLimit
+public import Mathlib.Algebra.Homology.DerivedCategory.Basic
+public import Mathlib.CategoryTheory.Triangulated.Functor
+public import Mathlib.Algebra.Homology.Functor
+public import Mathlib.Algebra.Homology.HomotopyCategory.KInjective
+public import Mathlib.Algebra.Category.ModuleCat.Sheaf.Limits
+public import Mathlib.CategoryTheory.Functor.Derived.RightDerived
+public import Mathlib.CategoryTheory.Whiskering
+public import Mathlib.CategoryTheory.Functor.OfSequence
+public import Mathlib.CategoryTheory.Limits.Shapes.Countable
+public import Mathlib.Algebra.Homology.DerivedCategory.ShortExact
+public import WeilConjectures.Algebra.Homology.KInjectiveProductsTermwise
+public import Mathlib.Algebra.Homology.HomologicalComplexLimits
+public import Mathlib.Algebra.Homology.DerivedCategory.KInjective
+public import WeilConjectures.Algebra.Homology.HomotopyCategory.Products
+public import WeilConjectures.Mathlib.CategoryTheory.Limits.Shapes.Products
+public import WeilConjectures.Algebra.Homology.TowerEvaluationKInjective
+public import WeilConjectures.CategoryTheory.GrothendieckAbelian.KInjectiveResolutionInjective
+public import WeilConjectures.Mathlib.Algebra.Category.ModuleCat.Sheaf.Abelian
+public import Mathlib.CategoryTheory.Abelian.GrothendieckAxioms.FunctorCategory
+public import Mathlib.CategoryTheory.Adjunction.Evaluation
+public import WeilConjectures.CategoryTheory.DerivedCategory.RightDerivedFunctor.Triangulated
+public import Mathlib.CategoryTheory.Localization.DerivabilityStructure.Derives
+public import Mathlib.Algebra.BigOperators.Ring.Finset
+public import WeilConjectures.CategoryTheory.Ringed.RingedInternalHomExactRestrictionSupplement
+public import Mathlib.Algebra.Homology.Double
+public import Mathlib.CategoryTheory.Endomorphism
+public import WeilConjectures.CategoryTheory.AlgebraicInverseImage
+public import Mathlib.Algebra.Category.ModuleCat.Sheaf
+public import Mathlib.Algebra.Category.Grp.Limits
+public import Mathlib.CategoryTheory.Sites.Whiskering
+public import Mathlib.CategoryTheory.Sites.Equivalence
+public import WeilConjectures.AlgebraicGeometry.RingedSiteIdeal
+public import Mathlib.RingTheory.Ideal.Maps
+public import Mathlib.CategoryTheory.Sites.Subsheaf
+public import Mathlib.Algebra.Category.Grp.FilteredColimits
+public import Mathlib.Algebra.Category.ModuleCat.Sheaf.Generators
+public import Mathlib.CategoryTheory.Sites.Over
+public import WeilConjectures.CategoryTheory.LocallyDerivedRingedIdealComplete
+public import WeilConjectures.CategoryTheory.RingedIdealGenerators
+public import WeilConjectures.Algebra.Homology.SmoothPurity.KFlatSupplement
+public import Mathlib.Algebra.Category.ModuleCat.Sheaf.ChangeOfRings
+public import Mathlib.Algebra.Homology.BifunctorShift
+public import Mathlib.CategoryTheory.Limits.HasLimits
+public import Mathlib.CategoryTheory.Functor.Derived.LeftDerived
+public import WeilConjectures.AlgebraicGeometry.ConstantCompletionCore
+public import WeilConjectures.CategoryTheory.NatTransFromResolvingClass
+public import WeilConjectures.Algebra.Homology.QuasiIsoSaturatedTriangulated
+public import WeilConjectures.AlgebraicGeometry.KFlatRingedToposPullback
+public import WeilConjectures.Algebra.Category.ModuleCat.Sheaf.TensorProduct
+public import WeilConjectures.Algebra.Homology.KFlatIndependentCoefficients
+public import WeilConjectures.Algebra.Homology.KFlatCoefficientUniverse
+public import WeilConjectures.Algebra.Category.ModuleCat.Sheaf.Monoidal
+public import Mathlib.Algebra.Category.ModuleCat.Sheaf.Colimits
+public import Mathlib.Algebra.Homology.QuasiIso
+public import Mathlib.CategoryTheory.Comma.StructuredArrow.Small
+public import Mathlib.CategoryTheory.Limits.EssentiallySmall
+public import WeilConjectures.FromJoel.CategoryTheory.Monoidal.KFlat
+public import WeilConjectures.Algebra.Category.ModuleCat.Sheaf.FlatOnSite
+public import WeilConjectures.Algebra.Category.ModuleCat.Sheaf.TensorProductOfUniverses
+public import Mathlib.CategoryTheory.Limits.ExactFunctor
+public import WeilConjectures.FromJoel.CategoryTheory.Abelian.Flat.Basic
+public import Mathlib.Algebra.Homology.HomologicalComplex
+public import Mathlib.Algebra.Homology.Additive
+public import WeilConjectures.Algebra.Category.ModuleCat.Sheaf.RingedToposFlatPullback
+public import WeilConjectures.CategoryTheory.AlgebraicInverseImageOfUniverses
+public import Mathlib.CategoryTheory.Types.Basic
+public import WeilConjectures.Algebra.Category.ModuleCat.Sheaf.FlatAlgebraicInverseImageOfUniverses
+public import WeilConjectures.Algebra.Category.ModuleCat.Sheaf.FlatEquationalCriterionOfUniverses
+public import WeilConjectures.Algebra.Category.ModuleCat.Sheaf.FlatLocalRelationsOfUniverses
+public import WeilConjectures.Algebra.Category.ModuleCat.Sheaf.TensorSheafificationOfUniverses
+public import WeilConjectures.CategoryTheory.Sites.WeakSheafifyAddCommGrpLeftExact
+public import Mathlib.Algebra.Category.ModuleCat.Presheaf.Submodule
+public import Mathlib.LinearAlgebra.TensorProduct.Vanishing
+public import Mathlib.RingTheory.TensorProduct.DirectLimitFG
+public import Mathlib.LinearAlgebra.TensorProduct.Finiteness
+public import Mathlib.Algebra.Category.ModuleCat.Presheaf.EpiMono
+public import Mathlib.Algebra.Homology.ShortComplex.ExactFunctor
+public import WeilConjectures.CategoryTheory.Sites.InverseImageLocalFamilies
+public import Mathlib.CategoryTheory.Sites.Sheaf
+public import Mathlib.CategoryTheory.Sites.LocallyBijective
+public import Mathlib.CategoryTheory.Adjunction.Limits
+public import Mathlib.CategoryTheory.Limits.Types.Pullbacks
+public import Mathlib.CategoryTheory.Functor.EpiMono
+public import Mathlib.CategoryTheory.Limits.Types.Equalizers
+public import Mathlib.CategoryTheory.Limits.Preserves.Shapes.Equalizers
+public import Mathlib.CategoryTheory.Limits.Preserves.Shapes.Products
+public import WeilConjectures.Algebra.Category.ModuleCat.Sheaf.ScalarTensorComparisonOfUniverses
+public import Mathlib.CategoryTheory.Abelian.GrothendieckAxioms.Basic
+public import Mathlib.Algebra.Homology.HomotopyCategory.MappingCone
+public import Mathlib.Algebra.Homology.HomotopyCategory.Acyclic
+public import WeilConjectures.FromJoel.Algebra.Homology.BifunctorMappingCone
+public import WeilConjectures.Mathlib.Algebra.Homology.HomotopyCategory.Acyclic
+public import WeilConjectures.Algebra.Homology.TensorColimitsIndependentCoefficients
+public import Mathlib.CategoryTheory.Adjunction.FullyFaithfulLimits
+public import Mathlib.CategoryTheory.Preadditive.AdditiveFunctor
+public import WeilConjectures.Algebra.Homology.RingedToposAdaptedFlatResolution
+public import WeilConjectures.Algebra.Homology.RingedToposPullbackFilteredColimits
+public import Mathlib.CategoryTheory.Sites.PreservesSheafification
+public import Mathlib.CategoryTheory.Limits.Preserves.Limits
+public import WeilConjectures.FromJoel.CategoryTheory.Abelian.Flat.KFlat
+public import Mathlib.Algebra.Category.ModuleCat.Presheaf.Free
+public import Mathlib.RingTheory.Flat.CategoryTheory
+public import Mathlib.CategoryTheory.ObjectProperty.ColimitsOfShape
+public import Mathlib.Algebra.Homology.Embedding.CochainComplex
+public import Mathlib.CategoryTheory.Abelian.GrothendieckAxioms.Sheaf
+public import Mathlib.Algebra.Category.Grp.AB
+public import WeilConjectures.Algebra.Homology.RingedToposAcyclicKFlatPullback
+public import WeilConjectures.Algebra.Homology.BoundedFlatIndependentCoefficients
+public import Mathlib.CategoryTheory.Monoidal.Preadditive
+public import WeilConjectures.Algebra.Homology.KFlatResolutionIndependentCoefficients
+public import Mathlib.CategoryTheory.Monoidal.Closed.Basic
+public import WeilConjectures.CategoryTheory.Abelian.Flat.Basic
+public import WeilConjectures.Algebra.Homology.ChangeOfRingsKFlatIndependentCoefficients
+public import WeilConjectures.FromJoel.Algebra.Homology.TotalComplexMap
+public import WeilConjectures.Algebra.Homology.SmoothPurity.ChangeOfRingsTensorCancellationIndependentCoefficientsSupplement
+public import WeilConjectures.Algebra.Homology.FlatScalarRestrictionKFlat
+public import WeilConjectures.Algebra.Category.ModuleCat.Sheaf.CochainTensorUniverses
+public import WeilConjectures.Algebra.Homology.Site.SiteTensorFunctorialitySupplement
+public import WeilConjectures.Mathlib.Algebra.Homology.Monoidal
+public import Mathlib.CategoryTheory.Adjunction.Additive
+public import Mathlib.RingTheory.Ideal.Span
+public import Mathlib.RingTheory.Finiteness.Defs
+public import WeilConjectures.AlgebraicGeometry.RingedTopoiTensorSections
+public import WeilConjectures.Algebra.Category.ModuleCat.Sheaf.MonoidalClosed
+public import WeilConjectures.Algebra.Homology.Module.ModulePullbackPushforwardAdjunctionSupplement
+public import WeilConjectures.Algebra.Homology.ProperBaseChange.ExtensionTensorComparisonSupplement
+public import WeilConjectures.CategoryTheory.Ringed.RingedTowerPushforwardLimitComparison
+public import Mathlib.CategoryTheory.Adjunction.Whiskering
+public import WeilConjectures.AlgebraicGeometry.RingedTopoiDerivedPullback
+public import WeilConjectures.Algebra.Category.ModuleCat.Sheaf.Flat
+public import WeilConjectures.Algebra.Homology.KFlatResolution
+public import WeilConjectures.Algebra.Homology.ChangeOfRingsKFlatQuasiIso
+public import WeilConjectures.CategoryTheory.DerivedCategory.LeftDerivedFromResolvingClass
+public import Mathlib.CategoryTheory.Sites.EpiMono
+public import Mathlib.Algebra.Category.Grp.EpiMono
+public import Mathlib.Algebra.Category.Grp.Abelian
+public import Mathlib.CategoryTheory.Sites.Abelian
+public import WeilConjectures.Algebra.Homology.DerivedChangeOfRingsCochainModel
+public import WeilConjectures.Algebra.Homology.DerivedChangeOfRingsIndependentCoefficients
+public import Mathlib.CategoryTheory.Functor.Derived.PointwiseLeftDerived
+public import WeilConjectures.FromJoel.Algebra.Homology.BifunctorSingle
+public import WeilConjectures.FromJoel.Algebra.Homology.ShortComplex.HomologicalComplex
+public import Mathlib.CategoryTheory.Limits.Final
+public import Mathlib.CategoryTheory.Limits.Preserves.FunctorCategory
+public import WeilConjectures.AlgebraicGeometry.ConstantCompletionFlatAndQuotients
+public import WeilConjectures.AlgebraicGeometry.ConstantCompletionBasic
+public import WeilConjectures.AlgebraicGeometry.ConstantCompletionFlatAndQuotientsFlatness
+public import WeilConjectures.AlgebraicGeometry.ConstantModuleSectionProperties
+public import Mathlib.Algebra.Category.ModuleCat.Limits
+public import Mathlib.Algebra.Category.ModuleCat.FilteredColimits
+public import Mathlib.Algebra.Module.FinitePresentation
+public import Mathlib.RingTheory.Flat.Basic
+public import Mathlib.RingTheory.Flat.Tensor
+public import Mathlib.LinearAlgebra.TensorProduct.RightExactness
+public import Mathlib.Algebra.Homology.ShortComplex.ModuleCat
+public import Mathlib.CategoryTheory.Linear.FunctorCategory
+public import Mathlib.CategoryTheory.Linear.LinearFunctor
+public import WeilConjectures.AlgebraicGeometry.SectionwiseAdicAlgebraLimit
+public import Mathlib.CategoryTheory.Limits.Over
+public import Mathlib.Algebra.Category.CommAlgCat.Basic
+public import WeilConjectures.RingTheory.LimitFlatModules
+public import Mathlib.RingTheory.Flat.EquationalCriterion
+public import Mathlib.RingTheory.TensorProduct.Quotient
+public import Mathlib.RingTheory.Ideal.Quotient.Noetherian
+public import WeilConjectures.AlgebraicGeometry.ConstantCompletionFlatAndQuotientsProjection
+public import WeilConjectures.AlgebraicGeometry.ConstantCompletionFiniteSystemModules
+public import WeilConjectures.AlgebraicGeometry.ConstantCompletionFiniteSystemProperties
+public import WeilConjectures.AlgebraicGeometry.ConstantCompletionFiniteSystemFlatAndReduction
+public import WeilConjectures.AlgebraicGeometry.ConstantCompletionFlatAndQuotientsQuotient
+public import WeilConjectures.AlgebraicGeometry.ConstantCompletionQuotientKernel
+public import WeilConjectures.AlgebraicGeometry.ConstantCompletionProjectionKernel
+public import WeilConjectures.CategoryTheory.RingedKoszulCompletionReflector
+public import WeilConjectures.CategoryTheory.RingedCechKoszulComparisonOnSite
+public import WeilConjectures.CategoryTheory.RingedCechKoszulDualKFlat
+public import WeilConjectures.Algebra.Homology.BoundedAboveFlatSheafKFlat
+public import WeilConjectures.Algebra.Homology.FiniteFreeZeroHomologyEvaluationIso
+public import WeilConjectures.Algebra.Category.ModuleCat.Sheaf.InternalHomFree
+public import WeilConjectures.CategoryTheory.RingedCechKoszulHomLimitComparison
+public import WeilConjectures.CategoryTheory.RingedCechKoszulColimitIso
+public import WeilConjectures.Algebra.Homology.InternalHom
+public import Mathlib.CategoryTheory.Filtered.Final
+public import Mathlib.CategoryTheory.Limits.Preserves.Bifunctor
+public import WeilConjectures.CategoryTheory.RingedKoszulFactorColimit
+public import WeilConjectures.RingTheory.ModuleLocalizationFilteredColimit
+public import Mathlib.Algebra.Category.ModuleCat.Colimits
+public import Mathlib.Algebra.Module.LocalizedModule.Basic
+public import Mathlib.CategoryTheory.Limits.ConcreteCategory.Basic
+public import Mathlib.Algebra.Module.LocalizedModule.IsLocalization
+public import Mathlib.Algebra.Category.ModuleCat.Presheaf.Colimits
+public import WeilConjectures.CategoryTheory.RingedKoszulColimitHomOrdinaryLimit
+public import WeilConjectures.CategoryTheory.RingedHomComplexColimitCone
+public import Mathlib.CategoryTheory.Monoidal.Closed.Braided
+public import Mathlib.CategoryTheory.Limits.Preserves.Opposites
+public import WeilConjectures.CategoryTheory.RingedKoszulFiniteEvaluation
+public import WeilConjectures.CategoryTheory.RingedKoszulDualizable
+public import WeilConjectures.CategoryTheory.Monoidal.Instances.CochainComplex
+public import WeilConjectures.Mathlib.CategoryTheory.Monoidal.Rigid.Basic
+public import WeilConjectures.Algebra.Homology.Monoidal.Dual
+public import WeilConjectures.CategoryTheory.Monoidal.Dualizable
+public import WeilConjectures.CategoryTheory.RingedHomTensorUnitNormalization
+public import WeilConjectures.CategoryTheory.RingedComplexTensorEvaluation
+public import WeilConjectures.Algebra.Homology.HomComplexInternalHomComparison
+public import Mathlib.CategoryTheory.Monoidal.Rigid.Braided
+public import WeilConjectures.Mathlib.CategoryTheory.Monoidal.Closed.Basic
+public import WeilConjectures.CategoryTheory.RingedKoszulTensorTowerLimitAcyclic
+public import WeilConjectures.CategoryTheory.RingedKoszulRoosInclusion
+public import WeilConjectures.CategoryTheory.ExactProductsRoos.ExactProductsRoosComparisonSupplement
+public import WeilConjectures.CategoryTheory.RingedKoszulFiniteHomTower
+public import WeilConjectures.Algebra.Homology.TelescopeHomRoosArrow
+public import WeilConjectures.Algebra.Homology.TelescopeColimit
+public import WeilConjectures.CategoryTheory.SignedDoubleHomCone.SignedDoubleHomConeSupplement
+public import WeilConjectures.Algebra.Category.ModuleCat.Sheaf.InternalHomCoproduct
+public import WeilConjectures.Algebra.Homology.QuasiIsoHomComplexMap
+public import WeilConjectures.Algebra.Homology.SplitPerfectTensorKInjective
+public import WeilConjectures.CategoryTheory.Monoidal.Rigid.Flat
+public import WeilConjectures.FromJoel.Algebra.Homology.HomotopyCategory.Monoidal
+public import WeilConjectures.Algebra.Category.ModuleCat.Sheaf.MonoidalFree
+public import WeilConjectures.Mathlib.CategoryTheory.Monoidal.Rigid.OfEquivalence
+public import WeilConjectures.CategoryTheory.RingedStrictTowerHomotopyLimitIndependentCoefficients
+public import WeilConjectures.CategoryTheory.Ringed.RingedStrictTowerHomotopyLimitOfUniverses
+public import WeilConjectures.CategoryTheory.GrothendieckAbelian.KInjectiveResolution
+public import WeilConjectures.CategoryTheory.ProperBaseChange.ExtendedCechCompletionModelSupplement
+public import WeilConjectures.CategoryTheory.RingedAugmentedCechRestriction
+public import WeilConjectures.CategoryTheory.RingedLocalizationFactorRestriction
+public import WeilConjectures.CategoryTheory.LocalizationRHom.RingedLocalizationRestrictionSupplement
+public import WeilConjectures.Algebra.Homology.SliceTensorNatural
+public import WeilConjectures.Algebra.Homology.SliceModuleSheafification
+public import Mathlib.Topology.Sheaves.Abelian
+public import Mathlib.Algebra.Category.ModuleCat.Presheaf.PushforwardZeroMonoidal
+public import WeilConjectures.Mathlib.Algebra.Homology.Bifunctor
+public import Mathlib.Algebra.Homology.DerivedCategory.FullyFaithful
+public import WeilConjectures.AlgebraicGeometry.ConstantCompletionKoszulQuotientComparison
+public import WeilConjectures.AlgebraicGeometry.ConstantKoszulQuotientAugmentationIsIso
+public import WeilConjectures.AlgebraicGeometry.ConstantKoszulQuotientAugmentation
+public import WeilConjectures.AlgebraicGeometry.ConstantKoszulAugmentationConstruction
+public import WeilConjectures.CategoryTheory.TensorQuotientAugmentation
+public import Mathlib.CategoryTheory.Abelian.Basic
+public import WeilConjectures.CategoryTheory.RingedNegativeKoszulLowDegrees
+public import WeilConjectures.Algebra.Category.ModuleCat.Sheaf.HomModule
+public import Mathlib.CategoryTheory.Limits.Shapes.Biproducts
+public import WeilConjectures.CategoryTheory.SignedKoszulCompletionModel
+public import WeilConjectures.CategoryTheory.SignedKoszulFiniteCoordinates
+public import WeilConjectures.CategoryTheory.SignedKoszulTensorCoordinates
+public import WeilConjectures.CategoryTheory.SignedKoszulTensorCoproduct
+public import WeilConjectures.CategoryTheory.SignedKoszulTensorAssembly
+public import WeilConjectures.CategoryTheory.SignedKoszulBasisCoproduct
+public import WeilConjectures.CategoryTheory.SignedKoszulSummandDifferential
+public import WeilConjectures.CategoryTheory.SignedKoszulSummandTermTransport
+public import WeilConjectures.CategoryTheory.RingedNegativeKoszulDuality
+public import WeilConjectures.CategoryTheory.RingedNegativeKoszulTransitions
+public import WeilConjectures.CategoryTheory.RingedNegativeKoszulFactorHomTensor
+public import WeilConjectures.AlgebraicGeometry.OrderedKoszulHomologyTorsion
+public import WeilConjectures.Algebra.Homology.LocalizationCech.FlatLocalizationKoszulHomotopySupplement
+public import Mathlib.Algebra.Homology.BifunctorHomotopy
+public import WeilConjectures.AlgebraicGeometry.ConstantExactCoefficientRealization
+public import WeilConjectures.CategoryTheory.CommutativeSiteDerivedConstantModuleFunctor
+public import WeilConjectures.CategoryTheory.Site.SiteDerivedConstantModuleFunctor
+public import WeilConjectures.AlgebraicGeometry.Constant.ConstantCompletionInverseImageSupplement
+public import WeilConjectures.CategoryTheory.ConstantScalarRealization.ConstantRealizationDerivedScalarExtensionSupplement
+public import WeilConjectures.AlgebraicGeometry.ConstantKoszulCoefficientConeComparison
+public import WeilConjectures.AlgebraicGeometry.KoszulComplex
+public import Mathlib.LinearAlgebra.ExteriorPower.Basic
+public import Mathlib.Algebra.Homology.Embedding.Extend
+public import WeilConjectures.CategoryTheory.ExteriorKoszulScalarRealization
+public import WeilConjectures.CategoryTheory.ExteriorKoszulBasisDifferential
+public import Mathlib.LinearAlgebra.ExteriorPower.Basis
+public import WeilConjectures.CategoryTheory.RingedKoszulDualBasis
+public import WeilConjectures.CategoryTheory.RingedNegativeKoszulExteriorDifferential
+public import WeilConjectures.CategoryTheory.RingedNegativeKoszulSignedDifferential
+public import WeilConjectures.CategoryTheory.RingedNegativeKoszulBasisUnitor
+public import WeilConjectures.CategoryTheory.AdditiveConeFamilyComparison
+public import Mathlib.Algebra.Homology.HomotopyCategory.Pretriangulated
+public import WeilConjectures.FromJoel.Algebra.Homology.HomologicalComplexFunctorEquiv
+public import WeilConjectures.CategoryTheory.Flat.FlatConstantTensorProZeroConesSupplement
+public import Mathlib.Algebra.Homology.Single
+public import WeilConjectures.AlgebraicGeometry.ConstantKoszulTensorConeComparison
+public import WeilConjectures.AlgebraicGeometry.TensorConeTowerIso
+public import WeilConjectures.AlgebraicGeometry.ConstantKoszulTensorSquare
+public import WeilConjectures.AlgebraicGeometry.ConstantKoszulTensorIdentifications
+public import WeilConjectures.AlgebraicGeometry.ConstantReductionTensorModel
+public import WeilConjectures.AlgebraicGeometry.ConstantScalarTensorModel
+public import WeilConjectures.CategoryTheory.TwistedActionRingedSite.TensorRestriction.TwistedActionTensorRestrictionSupplement
+public import WeilConjectures.Algebra.Homology.Ringed.RingedTensorComplexConstraintsSupplement
+public import WeilConjectures.AlgebraicGeometry.ConstantTensorNormalization
+public import WeilConjectures.AlgebraicGeometry.ConstantTensorSingle
+public import WeilConjectures.Algebra.Homology.BifunctorSingleComparison
+public import WeilConjectures.AlgebraicGeometry.ConstantKoszulTensorLevel
+public import WeilConjectures.RingTheory.NoetherianKoszulAugmentationProZero
+public import WeilConjectures.RingTheory.KoszulGeneratorChainMap
+public import WeilConjectures.RingTheory.KoszulProjectiveResolution
+public import WeilConjectures.RingTheory.KoszulPowerHomologyProZero
+public import Mathlib.RingTheory.Filtration
+public import WeilConjectures.RingTheory.KoszulConeHomologyProZero
+public import Mathlib.RingTheory.Finiteness.Ideal
+public import Mathlib.Algebra.Homology.Embedding.ExtendHomology
+public import WeilConjectures.Algebra.Homology.BoundedDerivedTowerProZero
+public import Mathlib.Algebra.Homology.DerivedCategory.HomologySequence
+public import Mathlib.Algebra.Homology.DerivedCategory.TStructure
+public import Mathlib.CategoryTheory.Triangulated.TStructure.TruncLEGT
+public import WeilConjectures.CategoryTheory.Triangulated.ProZeroMiddle
+public import Mathlib.CategoryTheory.Triangulated.Triangulated
+import all WeilConjectures.AlgebraicGeometry.ConstantCompletionKoszulReflector
+import all Mathlib.CategoryTheory.Sites.LeftExact
+import all Mathlib.CategoryTheory.Sites.ConstantSheaf
+import all Mathlib.CategoryTheory.Sites.Limits
+import all Mathlib.Algebra.Category.Ring.Limits
+import all Mathlib.Algebra.Category.Ring.Colimits
+import all Mathlib.Algebra.Category.Ring.FilteredColimits
+import all Mathlib.RingTheory.Ideal.Quotient.PowTransition
+import all Mathlib.RingTheory.Noetherian.Defs
+import all Mathlib.RingTheory.Ideal.Quotient.Operations
+import all WeilConjectures.CategoryTheory.Flat.FlatRingedIdealCompleteEquivalenceSupplement
+import all WeilConjectures.CategoryTheory.RingedKoszulSystem
+import all WeilConjectures.CategoryTheory.RingedExtendedCech
+import all WeilConjectures.CategoryTheory.RingedSectionLocalization
+import all Mathlib.Algebra.Category.ModuleCat.Presheaf.Sheafification
+import all Mathlib.RingTheory.Localization.Away.Basic
+import all WeilConjectures.Algebra.Homology.DerivedInternalHom
+import all Mathlib.Algebra.Category.ModuleCat.Sheaf.PushforwardContinuous
+import all WeilConjectures.Algebra.Category.ModuleCat.Sheaf.TensorClosed
+import all Mathlib.Algebra.Homology.Monoidal
+import all WeilConjectures.Algebra.Homology.HomComplex
+import all WeilConjectures.CategoryTheory.RingedCompletionUnit
+import all WeilConjectures.CategoryTheory.RingedDerivedRestriction
+import all WeilConjectures.CategoryTheory.RingedSiteModules
+import all Mathlib.Algebra.Category.ModuleCat.Sheaf.Abelian
+import all Mathlib.Algebra.Homology.DerivedCategory.ExactFunctor
+import all WeilConjectures.Mathlib.CategoryTheory.Sites.Continuous
+import all WeilConjectures.Mathlib.Algebra.Category.ModuleCat.Presheaf.Sheafification
+import all WeilConjectures.Algebra.Homology.HomComplexUnitEvaluationIsIso
+import all WeilConjectures.Algebra.Homology.HomComplexUnitEvaluationComm
+import all WeilConjectures.Algebra.Homology.HomComplexComponents
+import all WeilConjectures.Algebra.Homology.HomComplexUnitEvaluationNaturality
+import all WeilConjectures.CategoryTheory.RingedStrictTowerHomotopyLimit
+import all WeilConjectures.CategoryTheory.RingedSiteGrothendieckAbelian
+import all WeilConjectures.CategoryTheory.Triangulated.DerivedLimit
+import all Mathlib.Algebra.Homology.DerivedCategory.Basic
+import all Mathlib.CategoryTheory.Triangulated.Functor
+import all Mathlib.Algebra.Homology.Functor
+import all Mathlib.Algebra.Homology.HomotopyCategory.KInjective
+import all Mathlib.Algebra.Category.ModuleCat.Sheaf.Limits
+import all Mathlib.CategoryTheory.Functor.Derived.RightDerived
+import all Mathlib.CategoryTheory.Whiskering
+import all Mathlib.CategoryTheory.Functor.OfSequence
+import all Mathlib.CategoryTheory.Limits.Shapes.Countable
+import all Mathlib.Algebra.Homology.DerivedCategory.ShortExact
+import all WeilConjectures.Algebra.Homology.KInjectiveProductsTermwise
+import all Mathlib.Algebra.Homology.HomologicalComplexLimits
+import all Mathlib.Algebra.Homology.DerivedCategory.KInjective
+import all WeilConjectures.Algebra.Homology.HomotopyCategory.Products
+import all WeilConjectures.Mathlib.CategoryTheory.Limits.Shapes.Products
+import all WeilConjectures.Algebra.Homology.TowerEvaluationKInjective
+import all WeilConjectures.CategoryTheory.GrothendieckAbelian.KInjectiveResolutionInjective
+import all WeilConjectures.Mathlib.Algebra.Category.ModuleCat.Sheaf.Abelian
+import all Mathlib.CategoryTheory.Abelian.GrothendieckAxioms.FunctorCategory
+import all Mathlib.CategoryTheory.Adjunction.Evaluation
+import all WeilConjectures.CategoryTheory.DerivedCategory.RightDerivedFunctor.Triangulated
+import all Mathlib.CategoryTheory.Localization.DerivabilityStructure.Derives
+import all Mathlib.Algebra.BigOperators.Ring.Finset
+import all WeilConjectures.CategoryTheory.Ringed.RingedInternalHomExactRestrictionSupplement
+import all Mathlib.Algebra.Homology.Double
+import all Mathlib.CategoryTheory.Endomorphism
+import all WeilConjectures.CategoryTheory.AlgebraicInverseImage
+import all Mathlib.Algebra.Category.ModuleCat.Sheaf
+import all Mathlib.Algebra.Category.Grp.Limits
+import all Mathlib.CategoryTheory.Sites.Whiskering
+import all Mathlib.CategoryTheory.Sites.Equivalence
+import all WeilConjectures.AlgebraicGeometry.RingedSiteIdeal
+import all Mathlib.RingTheory.Ideal.Maps
+import all Mathlib.CategoryTheory.Sites.Subsheaf
+import all Mathlib.Algebra.Category.Grp.FilteredColimits
+import all Mathlib.Algebra.Category.ModuleCat.Sheaf.Generators
+import all Mathlib.CategoryTheory.Sites.Over
+import all WeilConjectures.CategoryTheory.LocallyDerivedRingedIdealComplete
+import all WeilConjectures.CategoryTheory.RingedIdealGenerators
+import all WeilConjectures.Algebra.Homology.SmoothPurity.KFlatSupplement
+import all Mathlib.Algebra.Category.ModuleCat.Sheaf.ChangeOfRings
+import all Mathlib.Algebra.Homology.BifunctorShift
+import all Mathlib.CategoryTheory.Limits.HasLimits
+import all Mathlib.CategoryTheory.Functor.Derived.LeftDerived
+import all WeilConjectures.AlgebraicGeometry.ConstantCompletionCore
+import all WeilConjectures.CategoryTheory.NatTransFromResolvingClass
+import all WeilConjectures.Algebra.Homology.QuasiIsoSaturatedTriangulated
+import all WeilConjectures.AlgebraicGeometry.KFlatRingedToposPullback
+import all WeilConjectures.Algebra.Category.ModuleCat.Sheaf.TensorProduct
+import all WeilConjectures.Algebra.Homology.KFlatIndependentCoefficients
+import all WeilConjectures.Algebra.Homology.KFlatCoefficientUniverse
+import all WeilConjectures.Algebra.Category.ModuleCat.Sheaf.Monoidal
+import all Mathlib.Algebra.Category.ModuleCat.Sheaf.Colimits
+import all Mathlib.Algebra.Homology.QuasiIso
+import all Mathlib.CategoryTheory.Comma.StructuredArrow.Small
+import all Mathlib.CategoryTheory.Limits.EssentiallySmall
+import all WeilConjectures.FromJoel.CategoryTheory.Monoidal.KFlat
+import all WeilConjectures.Algebra.Category.ModuleCat.Sheaf.FlatOnSite
+import all WeilConjectures.Algebra.Category.ModuleCat.Sheaf.TensorProductOfUniverses
+import all Mathlib.CategoryTheory.Limits.ExactFunctor
+import all WeilConjectures.FromJoel.CategoryTheory.Abelian.Flat.Basic
+import all Mathlib.Algebra.Homology.HomologicalComplex
+import all Mathlib.Algebra.Homology.Additive
+import all WeilConjectures.Algebra.Category.ModuleCat.Sheaf.RingedToposFlatPullback
+import all WeilConjectures.CategoryTheory.AlgebraicInverseImageOfUniverses
+import all Mathlib.CategoryTheory.Types.Basic
+import all WeilConjectures.Algebra.Category.ModuleCat.Sheaf.FlatAlgebraicInverseImageOfUniverses
+import all WeilConjectures.Algebra.Category.ModuleCat.Sheaf.FlatEquationalCriterionOfUniverses
+import all WeilConjectures.Algebra.Category.ModuleCat.Sheaf.FlatLocalRelationsOfUniverses
+import all WeilConjectures.Algebra.Category.ModuleCat.Sheaf.TensorSheafificationOfUniverses
+import all WeilConjectures.CategoryTheory.Sites.WeakSheafifyAddCommGrpLeftExact
+import all Mathlib.Algebra.Category.ModuleCat.Presheaf.Submodule
+import all Mathlib.LinearAlgebra.TensorProduct.Vanishing
+import all Mathlib.RingTheory.TensorProduct.DirectLimitFG
+import all Mathlib.LinearAlgebra.TensorProduct.Finiteness
+import all Mathlib.Algebra.Category.ModuleCat.Presheaf.EpiMono
+import all Mathlib.Algebra.Homology.ShortComplex.ExactFunctor
+import all WeilConjectures.CategoryTheory.Sites.InverseImageLocalFamilies
+import all Mathlib.CategoryTheory.Sites.Sheaf
+import all Mathlib.CategoryTheory.Sites.LocallyBijective
+import all Mathlib.CategoryTheory.Adjunction.Limits
+import all Mathlib.CategoryTheory.Limits.Types.Pullbacks
+import all Mathlib.CategoryTheory.Functor.EpiMono
+import all Mathlib.CategoryTheory.Limits.Types.Equalizers
+import all Mathlib.CategoryTheory.Limits.Preserves.Shapes.Equalizers
+import all Mathlib.CategoryTheory.Limits.Preserves.Shapes.Products
+import all WeilConjectures.Algebra.Category.ModuleCat.Sheaf.ScalarTensorComparisonOfUniverses
+import all Mathlib.CategoryTheory.Abelian.GrothendieckAxioms.Basic
+import all Mathlib.Algebra.Homology.HomotopyCategory.MappingCone
+import all Mathlib.Algebra.Homology.HomotopyCategory.Acyclic
+import all WeilConjectures.FromJoel.Algebra.Homology.BifunctorMappingCone
+import all WeilConjectures.Mathlib.Algebra.Homology.HomotopyCategory.Acyclic
+import all WeilConjectures.Algebra.Homology.TensorColimitsIndependentCoefficients
+import all Mathlib.CategoryTheory.Adjunction.FullyFaithfulLimits
+import all Mathlib.CategoryTheory.Preadditive.AdditiveFunctor
+import all WeilConjectures.Algebra.Homology.RingedToposAdaptedFlatResolution
+import all WeilConjectures.Algebra.Homology.RingedToposPullbackFilteredColimits
+import all Mathlib.CategoryTheory.Sites.PreservesSheafification
+import all Mathlib.CategoryTheory.Limits.Preserves.Limits
+import all WeilConjectures.FromJoel.CategoryTheory.Abelian.Flat.KFlat
+import all Mathlib.Algebra.Category.ModuleCat.Presheaf.Free
+import all Mathlib.RingTheory.Flat.CategoryTheory
+import all Mathlib.CategoryTheory.ObjectProperty.ColimitsOfShape
+import all Mathlib.Algebra.Homology.Embedding.CochainComplex
+import all Mathlib.CategoryTheory.Abelian.GrothendieckAxioms.Sheaf
+import all Mathlib.Algebra.Category.Grp.AB
+import all WeilConjectures.Algebra.Homology.RingedToposAcyclicKFlatPullback
+import all WeilConjectures.Algebra.Homology.BoundedFlatIndependentCoefficients
+import all Mathlib.CategoryTheory.Monoidal.Preadditive
+import all WeilConjectures.Algebra.Homology.KFlatResolutionIndependentCoefficients
+import all Mathlib.CategoryTheory.Monoidal.Closed.Basic
+import all WeilConjectures.CategoryTheory.Abelian.Flat.Basic
+import all WeilConjectures.Algebra.Homology.ChangeOfRingsKFlatIndependentCoefficients
+import all WeilConjectures.FromJoel.Algebra.Homology.TotalComplexMap
+import all WeilConjectures.Algebra.Homology.SmoothPurity.ChangeOfRingsTensorCancellationIndependentCoefficientsSupplement
+import all WeilConjectures.Algebra.Homology.FlatScalarRestrictionKFlat
+import all WeilConjectures.Algebra.Category.ModuleCat.Sheaf.CochainTensorUniverses
+import all WeilConjectures.Algebra.Homology.Site.SiteTensorFunctorialitySupplement
+import all WeilConjectures.Mathlib.Algebra.Homology.Monoidal
+import all Mathlib.CategoryTheory.Adjunction.Additive
+import all Mathlib.RingTheory.Ideal.Span
+import all Mathlib.RingTheory.Finiteness.Defs
+import all WeilConjectures.AlgebraicGeometry.RingedTopoiTensorSections
+import all WeilConjectures.Algebra.Category.ModuleCat.Sheaf.MonoidalClosed
+import all WeilConjectures.Algebra.Homology.Module.ModulePullbackPushforwardAdjunctionSupplement
+import all WeilConjectures.Algebra.Homology.ProperBaseChange.ExtensionTensorComparisonSupplement
+import all WeilConjectures.CategoryTheory.Ringed.RingedTowerPushforwardLimitComparison
+import all Mathlib.CategoryTheory.Adjunction.Whiskering
+import all WeilConjectures.AlgebraicGeometry.RingedTopoiDerivedPullback
+import all WeilConjectures.Algebra.Category.ModuleCat.Sheaf.Flat
+import all WeilConjectures.Algebra.Homology.KFlatResolution
+import all WeilConjectures.Algebra.Homology.ChangeOfRingsKFlatQuasiIso
+import all WeilConjectures.CategoryTheory.DerivedCategory.LeftDerivedFromResolvingClass
+import all Mathlib.CategoryTheory.Sites.EpiMono
+import all Mathlib.Algebra.Category.Grp.EpiMono
+import all Mathlib.Algebra.Category.Grp.Abelian
+import all Mathlib.CategoryTheory.Sites.Abelian
+import all WeilConjectures.Algebra.Homology.DerivedChangeOfRingsCochainModel
+import all WeilConjectures.Algebra.Homology.DerivedChangeOfRingsIndependentCoefficients
+import all Mathlib.CategoryTheory.Functor.Derived.PointwiseLeftDerived
+import all WeilConjectures.FromJoel.Algebra.Homology.BifunctorSingle
+import all WeilConjectures.FromJoel.Algebra.Homology.ShortComplex.HomologicalComplex
+import all Mathlib.CategoryTheory.Limits.Final
+import all Mathlib.CategoryTheory.Limits.Preserves.FunctorCategory
+import all WeilConjectures.AlgebraicGeometry.ConstantCompletionFlatAndQuotients
+import all WeilConjectures.AlgebraicGeometry.ConstantCompletionBasic
+import all WeilConjectures.AlgebraicGeometry.ConstantCompletionFlatAndQuotientsFlatness
+import all WeilConjectures.AlgebraicGeometry.ConstantModuleSectionProperties
+import all Mathlib.Algebra.Category.ModuleCat.Limits
+import all Mathlib.Algebra.Category.ModuleCat.FilteredColimits
+import all Mathlib.Algebra.Module.FinitePresentation
+import all Mathlib.RingTheory.Flat.Basic
+import all Mathlib.RingTheory.Flat.Tensor
+import all Mathlib.LinearAlgebra.TensorProduct.RightExactness
+import all Mathlib.Algebra.Homology.ShortComplex.ModuleCat
+import all Mathlib.CategoryTheory.Linear.FunctorCategory
+import all Mathlib.CategoryTheory.Linear.LinearFunctor
+import all WeilConjectures.AlgebraicGeometry.SectionwiseAdicAlgebraLimit
+import all Mathlib.CategoryTheory.Limits.Over
+import all Mathlib.Algebra.Category.CommAlgCat.Basic
+import all WeilConjectures.RingTheory.LimitFlatModules
+import all Mathlib.RingTheory.Flat.EquationalCriterion
+import all Mathlib.RingTheory.TensorProduct.Quotient
+import all Mathlib.RingTheory.Ideal.Quotient.Noetherian
+import all WeilConjectures.AlgebraicGeometry.ConstantCompletionFlatAndQuotientsProjection
+import all WeilConjectures.AlgebraicGeometry.ConstantCompletionFiniteSystemModules
+import all WeilConjectures.AlgebraicGeometry.ConstantCompletionFiniteSystemProperties
+import all WeilConjectures.AlgebraicGeometry.ConstantCompletionFiniteSystemFlatAndReduction
+import all WeilConjectures.AlgebraicGeometry.ConstantCompletionFlatAndQuotientsQuotient
+import all WeilConjectures.AlgebraicGeometry.ConstantCompletionQuotientKernel
+import all WeilConjectures.AlgebraicGeometry.ConstantCompletionProjectionKernel
+import all WeilConjectures.CategoryTheory.RingedKoszulCompletionReflector
+import all WeilConjectures.CategoryTheory.RingedCechKoszulComparisonOnSite
+import all WeilConjectures.CategoryTheory.RingedCechKoszulDualKFlat
+import all WeilConjectures.Algebra.Homology.BoundedAboveFlatSheafKFlat
+import all WeilConjectures.Algebra.Homology.FiniteFreeZeroHomologyEvaluationIso
+import all WeilConjectures.Algebra.Category.ModuleCat.Sheaf.InternalHomFree
+import all WeilConjectures.CategoryTheory.RingedCechKoszulHomLimitComparison
+import all WeilConjectures.CategoryTheory.RingedCechKoszulColimitIso
+import all WeilConjectures.Algebra.Homology.InternalHom
+import all Mathlib.CategoryTheory.Filtered.Final
+import all Mathlib.CategoryTheory.Limits.Preserves.Bifunctor
+import all WeilConjectures.CategoryTheory.RingedKoszulFactorColimit
+import all WeilConjectures.RingTheory.ModuleLocalizationFilteredColimit
+import all Mathlib.Algebra.Category.ModuleCat.Colimits
+import all Mathlib.Algebra.Module.LocalizedModule.Basic
+import all Mathlib.CategoryTheory.Limits.ConcreteCategory.Basic
+import all Mathlib.Algebra.Module.LocalizedModule.IsLocalization
+import all Mathlib.Algebra.Category.ModuleCat.Presheaf.Colimits
+import all WeilConjectures.CategoryTheory.RingedKoszulColimitHomOrdinaryLimit
+import all WeilConjectures.CategoryTheory.RingedHomComplexColimitCone
+import all Mathlib.CategoryTheory.Monoidal.Closed.Braided
+import all Mathlib.CategoryTheory.Limits.Preserves.Opposites
+import all WeilConjectures.CategoryTheory.RingedKoszulFiniteEvaluation
+import all WeilConjectures.CategoryTheory.RingedKoszulDualizable
+import all WeilConjectures.CategoryTheory.Monoidal.Instances.CochainComplex
+import all WeilConjectures.Mathlib.CategoryTheory.Monoidal.Rigid.Basic
+import all WeilConjectures.Algebra.Homology.Monoidal.Dual
+import all WeilConjectures.CategoryTheory.Monoidal.Dualizable
+import all WeilConjectures.CategoryTheory.RingedHomTensorUnitNormalization
+import all WeilConjectures.CategoryTheory.RingedComplexTensorEvaluation
+import all WeilConjectures.Algebra.Homology.HomComplexInternalHomComparison
+import all Mathlib.CategoryTheory.Monoidal.Rigid.Braided
+import all WeilConjectures.Mathlib.CategoryTheory.Monoidal.Closed.Basic
+import all WeilConjectures.CategoryTheory.RingedKoszulTensorTowerLimitAcyclic
+import all WeilConjectures.CategoryTheory.RingedKoszulRoosInclusion
+import all WeilConjectures.CategoryTheory.ExactProductsRoos.ExactProductsRoosComparisonSupplement
+import all WeilConjectures.CategoryTheory.RingedKoszulFiniteHomTower
+import all WeilConjectures.Algebra.Homology.TelescopeHomRoosArrow
+import all WeilConjectures.Algebra.Homology.TelescopeColimit
+import all WeilConjectures.CategoryTheory.SignedDoubleHomCone.SignedDoubleHomConeSupplement
+import all WeilConjectures.Algebra.Category.ModuleCat.Sheaf.InternalHomCoproduct
+import all WeilConjectures.Algebra.Homology.QuasiIsoHomComplexMap
+import all WeilConjectures.Algebra.Homology.SplitPerfectTensorKInjective
+import all WeilConjectures.CategoryTheory.Monoidal.Rigid.Flat
+import all WeilConjectures.FromJoel.Algebra.Homology.HomotopyCategory.Monoidal
+import all WeilConjectures.Algebra.Category.ModuleCat.Sheaf.MonoidalFree
+import all WeilConjectures.Mathlib.CategoryTheory.Monoidal.Rigid.OfEquivalence
+import all WeilConjectures.CategoryTheory.RingedStrictTowerHomotopyLimitIndependentCoefficients
+import all WeilConjectures.CategoryTheory.Ringed.RingedStrictTowerHomotopyLimitOfUniverses
+import all WeilConjectures.CategoryTheory.GrothendieckAbelian.KInjectiveResolution
+import all WeilConjectures.CategoryTheory.ProperBaseChange.ExtendedCechCompletionModelSupplement
+import all WeilConjectures.CategoryTheory.RingedAugmentedCechRestriction
+import all WeilConjectures.CategoryTheory.RingedLocalizationFactorRestriction
+import all WeilConjectures.CategoryTheory.LocalizationRHom.RingedLocalizationRestrictionSupplement
+import all WeilConjectures.Algebra.Homology.SliceTensorNatural
+import all WeilConjectures.Algebra.Homology.SliceModuleSheafification
+import all Mathlib.Topology.Sheaves.Abelian
+import all Mathlib.Algebra.Category.ModuleCat.Presheaf.PushforwardZeroMonoidal
+import all WeilConjectures.Mathlib.Algebra.Homology.Bifunctor
+import all Mathlib.Algebra.Homology.DerivedCategory.FullyFaithful
+import all WeilConjectures.AlgebraicGeometry.ConstantCompletionKoszulQuotientComparison
+import all WeilConjectures.AlgebraicGeometry.ConstantKoszulQuotientAugmentationIsIso
+import all WeilConjectures.AlgebraicGeometry.ConstantKoszulQuotientAugmentation
+import all WeilConjectures.AlgebraicGeometry.ConstantKoszulAugmentationConstruction
+import all WeilConjectures.CategoryTheory.TensorQuotientAugmentation
+import all Mathlib.CategoryTheory.Abelian.Basic
+import all WeilConjectures.CategoryTheory.RingedNegativeKoszulLowDegrees
+import all WeilConjectures.Algebra.Category.ModuleCat.Sheaf.HomModule
+import all Mathlib.CategoryTheory.Limits.Shapes.Biproducts
+import all WeilConjectures.CategoryTheory.SignedKoszulCompletionModel
+import all WeilConjectures.CategoryTheory.SignedKoszulFiniteCoordinates
+import all WeilConjectures.CategoryTheory.SignedKoszulTensorCoordinates
+import all WeilConjectures.CategoryTheory.SignedKoszulTensorCoproduct
+import all WeilConjectures.CategoryTheory.SignedKoszulTensorAssembly
+import all WeilConjectures.CategoryTheory.SignedKoszulBasisCoproduct
+import all WeilConjectures.CategoryTheory.SignedKoszulSummandDifferential
+import all WeilConjectures.CategoryTheory.SignedKoszulSummandTermTransport
+import all WeilConjectures.CategoryTheory.RingedNegativeKoszulDuality
+import all WeilConjectures.CategoryTheory.RingedNegativeKoszulTransitions
+import all WeilConjectures.CategoryTheory.RingedNegativeKoszulFactorHomTensor
+import all WeilConjectures.AlgebraicGeometry.OrderedKoszulHomologyTorsion
+import all WeilConjectures.Algebra.Homology.LocalizationCech.FlatLocalizationKoszulHomotopySupplement
+import all Mathlib.Algebra.Homology.BifunctorHomotopy
+import all WeilConjectures.AlgebraicGeometry.ConstantExactCoefficientRealization
+import all WeilConjectures.CategoryTheory.CommutativeSiteDerivedConstantModuleFunctor
+import all WeilConjectures.CategoryTheory.Site.SiteDerivedConstantModuleFunctor
+import all WeilConjectures.AlgebraicGeometry.Constant.ConstantCompletionInverseImageSupplement
+import all WeilConjectures.CategoryTheory.ConstantScalarRealization.ConstantRealizationDerivedScalarExtensionSupplement
+import all WeilConjectures.AlgebraicGeometry.ConstantKoszulCoefficientConeComparison
+import all WeilConjectures.AlgebraicGeometry.KoszulComplex
+import all Mathlib.LinearAlgebra.ExteriorPower.Basic
+import all Mathlib.Algebra.Homology.Embedding.Extend
+import all WeilConjectures.CategoryTheory.ExteriorKoszulScalarRealization
+import all WeilConjectures.CategoryTheory.ExteriorKoszulBasisDifferential
+import all Mathlib.LinearAlgebra.ExteriorPower.Basis
+import all WeilConjectures.CategoryTheory.RingedKoszulDualBasis
+import all WeilConjectures.CategoryTheory.RingedNegativeKoszulExteriorDifferential
+import all WeilConjectures.CategoryTheory.RingedNegativeKoszulSignedDifferential
+import all WeilConjectures.CategoryTheory.RingedNegativeKoszulBasisUnitor
+import all WeilConjectures.CategoryTheory.AdditiveConeFamilyComparison
+import all Mathlib.Algebra.Homology.HomotopyCategory.Pretriangulated
+import all WeilConjectures.FromJoel.Algebra.Homology.HomologicalComplexFunctorEquiv
+import all WeilConjectures.CategoryTheory.Flat.FlatConstantTensorProZeroConesSupplement
+import all Mathlib.Algebra.Homology.Single
+import all WeilConjectures.AlgebraicGeometry.ConstantKoszulTensorConeComparison
+import all WeilConjectures.AlgebraicGeometry.TensorConeTowerIso
+import all WeilConjectures.AlgebraicGeometry.ConstantKoszulTensorSquare
+import all WeilConjectures.AlgebraicGeometry.ConstantKoszulTensorIdentifications
+import all WeilConjectures.AlgebraicGeometry.ConstantReductionTensorModel
+import all WeilConjectures.AlgebraicGeometry.ConstantScalarTensorModel
+import all WeilConjectures.CategoryTheory.TwistedActionRingedSite.TensorRestriction.TwistedActionTensorRestrictionSupplement
+import all WeilConjectures.Algebra.Homology.Ringed.RingedTensorComplexConstraintsSupplement
+import all WeilConjectures.AlgebraicGeometry.ConstantTensorNormalization
+import all WeilConjectures.AlgebraicGeometry.ConstantTensorSingle
+import all WeilConjectures.Algebra.Homology.BifunctorSingleComparison
+import all WeilConjectures.AlgebraicGeometry.ConstantKoszulTensorLevel
+import all WeilConjectures.RingTheory.NoetherianKoszulAugmentationProZero
+import all WeilConjectures.RingTheory.KoszulGeneratorChainMap
+import all WeilConjectures.RingTheory.KoszulProjectiveResolution
+import all WeilConjectures.RingTheory.KoszulPowerHomologyProZero
+import all Mathlib.RingTheory.Filtration
+import all WeilConjectures.RingTheory.KoszulConeHomologyProZero
+import all Mathlib.RingTheory.Finiteness.Ideal
+import all Mathlib.Algebra.Homology.Embedding.ExtendHomology
+import all WeilConjectures.Algebra.Homology.BoundedDerivedTowerProZero
+import all Mathlib.Algebra.Homology.DerivedCategory.HomologySequence
+import all Mathlib.Algebra.Homology.DerivedCategory.TStructure
+import all Mathlib.CategoryTheory.Triangulated.TStructure.TruncLEGT
+import all WeilConjectures.CategoryTheory.Triangulated.ProZeroMiddle
+import all Mathlib.CategoryTheory.Triangulated.Triangulated
+import all WeilConjectures.CategoryTheory.AdicSites.CompletionFiniteReductionSupplement
+import all WeilConjectures.CategoryTheory.AdicSites.Morphism.CompletionMateComparison
+import WeilConjectures.CategoryTheory.RingedSiteCompleteElementsIdeal
+import WeilConjectures.CategoryTheory.RingedSiteCompleteElement
+import WeilConjectures.CategoryTheory.RingedSiteLocalization
+import WeilConjectures.CategoryTheory.RingedSiteDerivedRestriction
+import WeilConjectures.Algebra.Homology.RhomIntoKInjectiveLocal
+import WeilConjectures.CategoryTheory.RingedSiteCompleteElementMultiplication
+import Mathlib.CategoryTheory.Monoidal.Limits.Colimits
+import Mathlib.CategoryTheory.Monoidal.Limits.Preserves
+import Mathlib.CategoryTheory.Abelian.GrothendieckAxioms.Colim
+import WeilConjectures.Algebra.Homology.HomTensorTotal
+import WeilConjectures.Algebra.Homology.SmoothPurity.KFlatSupplement
+import WeilConjectures.Algebra.Homology.HomComplex
+import Mathlib.Algebra.Homology.HomotopyCategory.KInjective
+import WeilConjectures.Algebra.Homology.KInjectiveHomComplex
+import WeilConjectures.CategoryTheory.RingedSiteCompleteElementAddition
+import WeilConjectures.CategoryTheory.RingedSiteLocalizationCech
+import Mathlib.Algebra.Homology.ShortComplex.ShortExact
+import Mathlib.CategoryTheory.Preadditive.Biproducts
+import Mathlib.Algebra.Category.ModuleCat.Biproducts
+import WeilConjectures.RingTheory.TwoLocalizationExact
+import Mathlib.RingTheory.Coprime.Lemmas
+import Mathlib.Algebra.Exact.Basic
+import Mathlib.Tactic.LinearCombination
+import Mathlib.Tactic.Ring
+import Mathlib.Algebra.Homology.ShortComplex.PreservesHomology
+import Mathlib.CategoryTheory.Limits.Preserves.Shapes.Biproducts
+import Mathlib.Algebra.Homology.DerivedCategory.SingleTriangle
+import WeilConjectures.CategoryTheory.RingedSiteCompleteElementsLocal
+
+/-! # Finite reduction of the completion unit over either coefficient ring
+
+Source: Stacks Tags 099M and 091N.
+(blueprint: lem-weil-pbc-completed-coefficient-finite-unit).
+-/
+
+@[expose] public noncomputable section
+set_option autoImplicit false
+set_option synthInstance.maxSize 2048
+universe u
+open CategoryTheory CategoryTheory.Limits Opposite
+namespace CategoryTheory.ConstantCompletion
+variable {C : Type u} [SmallCategory C] (J : GrothendieckTopology C)
+variable (A : Type u) [CommRing A] [IsNoetherianRing A] (I : Ideal A)
+
+private theorem finiteRestriction_complete (b : Bool) (n : ℕ)
+    (M : D (finite J A I n)) :
+    IsComplete (finiteMap J A I b 0) ((dres (finiteMap J A I b n)).obj M) := by
+  let R := coefficients J A I b
+  let B := finite J A I n
+  let φ := finiteMap J A I b n
+  let : HasDerivedCategory.{u + 1} (Mod R) := HasDerivedCategory.standard _
+  let : HasDerivedCategory.{u + 1} (Mod B) := HasDerivedCategory.standard _
+  let : ∀ U : C, HasDerivedCategory.{u + 1}
+      (SheafOfModules.{u} ((siteModuleRings R).over U)) :=
+    fun _ ↦ HasDerivedCategory.standard _
+  let : ∀ U : C, HasDerivedCategory.{u + 1}
+      (SheafOfModules.{u} ((siteModuleRings B).over U)) :=
+    fun _ ↦ HasDerivedCategory.standard _
+  let P := DerivedCategory.Q.objPreimage M
+  let L := (Q R).obj (((res φ).mapHomologicalComplex (.up ℤ)).obj P)
+  obtain ⟨r, a, ha⟩ := Submodule.fg_iff_exists_fin_generating_family.mp
+    (IsNoetherian.noetherian I)
+  have hL : IsComplete (finiteMap J A I b 0) L := by
+    intro U f ⟨y, hy⟩
+    apply (localCompleteness_models_iff J R L U f).mpr
+    obtain ⟨S, hS, _, _, _⟩ := ringedSite_complete_elements_ideal J R L
+    apply (hS U f).mp
+    have hle : (kernelIdeal (finiteMap J A I b 0)).sections U ≤ S U := by
+      have hk : (kernelIdeal (finiteMap J A I b 0)).sections U =
+          RingHom.ker ((finiteMap J A I b 0).hom.app (op U)).hom :=
+        (kernelIdeal_existsUnique (finiteMap J A I b 0)).exists.choose_spec U
+      rw [hk, finite_kernel_span J A I b r a ha U]
+      apply Ideal.span_le.mpr
+      rintro _ ⟨i, rfl⟩
+      apply (hS U _).mpr
+      apply (restrictScalars_completeElement_iff J R B φ M U _).mpr
+      apply CategoryTheory.AdicSites.completeElement_nilpotent J B M U _ (n + 1)
+      rw [← map_pow]
+      apply RingHom.mem_ker.mp
+      have hi : a i ∈ I := ha ▸ Ideal.subset_span (Set.mem_range_self i)
+      cases b with
+      | false =>
+        change (algebraSection (baseMap J A I false) (a i)).val (op U) ^ (n + 1) ∈
+          RingHom.ker ((quotient J A I n).hom.app (op U)).hom
+        rw [((flat_and_quotients J A I).2.2 n U).2]
+        apply Ideal.subset_span
+        exact ⟨⟨a i ^ (n + 1), Ideal.pow_mem_pow hi (n + 1)⟩, by
+          simp only [algebraSection, baseMap, constantSection, map_pow]
+          rfl⟩
+      | true =>
+        change (algebraSection (baseMap J A I true) (a i)).val (op U) ^ (n + 1) ∈
+          RingHom.ker ((projection J A I n).hom.app (op U)).hom
+        rw [((flat_and_quotients J A I).2.1 n U).2]
+        apply Ideal.subset_span
+        exact ⟨⟨a i ^ (n + 1), Ideal.pow_mem_pow hi (n + 1)⟩, by
+          simp only [algebraSection, baseMap, constantSection, map_pow]
+          rfl⟩
+    apply hle
+    change y.val = f at hy
+    exact hy ▸ y.property
+  let e : L ≅ (dres φ).obj M :=
+    (resFactors φ).app P ≪≫ (dres φ).mapIso (DerivedCategory.Q.objObjPreimageIso M)
+  exact complete_of_iso J (finiteMap J A I b 0) e hL
+
+private def scalarAdjunction {R B : Sheaf J CommRingCat.{u}} (φ : R ⟶ B) :
+    extend φ ⊣ dres φ := by
+  let : HasDerivedCategory (Mod R) := HasDerivedCategory.standard _
+  let : HasDerivedCategory (Mod B) := HasDerivedCategory.standard _
+  let W := HomologicalComplex.quasiIso (Mod R) (.up ℤ)
+  let W' := HomologicalComplex.quasiIso (Mod B) (.up ℤ)
+  let α := extendComparison φ
+  let β := (resFactors φ).hom
+  let P (X : Cx R) := X.IsAcyclicTensorKFlat ∧ ∀ q : ℤ, (X.X q).IsFlat
+  have : (extend φ).IsLeftDerivedFunctor α W := (derivedExtension φ).universal
+  have : (dres φ).IsRightDerivedFunctor β W' :=
+    Functor.isRightDerivedFunctor_of_inverts W' _ (resFactors φ).symm
+  have : (extend φ ⋙ dres φ).IsLeftDerivedFunctor
+      ((Functor.associator _ _ _).inv ≫ Functor.whiskerRight α (dres φ)) W := by
+    apply AdicSites.resolving_left_universal _ _ P
+      (module_flat_kFlat_resolution (J := J))
+    intro X hX
+    have : IsIso (α.app X) := (derivedExtension φ).computation X hX.1
+    dsimp only [NatTrans.comp_app, Functor.associator_inv_app, Functor.whiskerRight_app]
+    infer_instance
+  have : (dres φ ⋙ extend φ).IsRightDerivedFunctor
+      (Functor.whiskerRight β (extend φ) ≫ (Functor.associator _ _ _).hom) W' :=
+    Functor.isRightDerivedFunctor_of_inverts W' _
+      ((Functor.isoWhiskerRight (resFactors φ) (extend φ)) ≪≫
+        Functor.associator _ _ _).symm
+  let adj : change φ ⊣ res φ := SheafOfModules.RingedTensor.tensorAdjunction φ
+  exact (adj.mapHomologicalComplex (.up ℤ)).derived W W' α β
+
+/-- Finite scalar extension inverts the quotient-completion unit, for constant or
+completed coefficients. Source: Stacks Tags 099M and 091N.
+(blueprint: lem-weil-pbc-completed-coefficient-finite-unit).
+Proof: ideal generators act nilpotently in each finite quotient, so its restricted
+objects are derived complete. The reflector gives bijective precomposition into
+these objects. Scalar adjunction transports these bijections to finite coefficients;
+coyoneda detects that finite scalar extension of the unit is invertible. -/
+theorem finite_completionUnit_isIso (b : Bool)
+    (N : D (coefficients J A I b)) (n : ℕ) :
+    IsIso ((extend (finiteMap J A I b n)).map ((completionUnit J A I b).app N)) := by
+  obtain ⟨r, a, ha⟩ := Submodule.fg_iff_exists_fin_generating_family.mp
+    (IsNoetherian.noetherian I)
+  obtain ⟨_, _, _, hh, _⟩ := koszul_quotient_reflector J A I b r a ha
+  apply isIso_of_coyoneda_map_bijective
+  intro M
+  have hbij := hh N ((dres (finiteMap J A I b n)).obj M)
+    (finiteRestriction_complete J A I b n M)
+  let adj := scalarAdjunction J (finiteMap J A I b n)
+  constructor
+  · intro x y hxy
+    apply (adj.homEquiv _ _).injective
+    apply hbij.injective
+    change (completionUnit J A I b).app N ≫ (adj.homEquiv _ _) x =
+      (completionUnit J A I b).app N ≫ (adj.homEquiv _ _) y
+    rw [← adj.homEquiv_naturality_left, ← adj.homEquiv_naturality_left]
+    exact congrArg (adj.homEquiv _ _) hxy
+  · intro y
+    obtain ⟨x, hx⟩ := hbij.surjective ((adj.homEquiv _ _).toFun y)
+    refine ⟨(adj.homEquiv _ _).symm x, ?_⟩
+    apply (adj.homEquiv _ _).injective
+    rw [adj.homEquiv_naturality_left, Equiv.apply_symm_apply]
+    exact hx
+
+end CategoryTheory.ConstantCompletion

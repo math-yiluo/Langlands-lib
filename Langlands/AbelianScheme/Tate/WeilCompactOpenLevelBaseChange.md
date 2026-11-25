@@ -94,7 +94,7 @@ implement the same construction and proof for the away tower. The
 modulus need not be prime; at a prime the construction gives the
 prime-to-that-prime version.
 
-This unit constructs naturality in the compact-open level variable for
+This module constructs naturality in the compact-open level variable for
 a specified pointed base change. It does not construct an unpointed
 moduli functor, establish independence of a geometric point, or supply
 identity and composition comparisons between the resulting tower

@@ -1,35 +1,29 @@
 # Forms with `K_ℓ`-coefficients as smooth `GJ_p`-modules and their `Ext` groups (Proposition 4.10)
 
-Author: Worker 61. Built on two modules of Worker 61 that have been
-independently accepted but are not yet in the Library (commit 568f1cff):
-`Langlands.Shimura.DefiniteFormsSmoothExt` (candidate
-`687f402a-30ce-4e91-8e37-a5c30bf357a6`: `awayLevel`, `splitLevel`,
+Built on the published
+`Langlands.Shimura.DefiniteFormsSmoothExt` (`awayLevel`, `splitLevel`,
 `awayLevelForms`, `mem_awayLevel`, `awayHom_mem_awayLevel`,
 `factorHom_mul_awayLevel`, `mem_splitLevel`, `factorHom_mem_splitLevel`,
 `awayLevel_le_splitLevel`) and
-`Langlands.Cohomology.HyperextAbutmentFunctor` (candidate
-`8e1ba75f-07ac-4edf-8a61-c381b99cc033`:
-`HyperextAbutment.filtrationFunctor`, `gradedFunctor`, `filtrationι`,
-`filtrationMapOfLE`, `gradedπ`). Both are included unchanged in this
-candidate's workspace and must be integrated first. It is also built on the
-published `Langlands.Shimura.EquivariantForms` (Worker 61: `forms`,
+`Langlands.Cohomology.HyperextAbutmentFunctor`
+(`HyperextAbutment.filtrationFunctor`, `gradedFunctor`, `filtrationι`,
+`filtrationMapOfLE`, `gradedπ`). It is also built on the
+published `Langlands.Shimura.EquivariantForms` (`forms`,
 `rightTranslation`),
-`Langlands.Shimura.EquivariantFormsHecke` (Worker 61: `transport`),
-`Langlands.Shimura.DefiniteFormsDoubleCoset` (Worker 61: `localLevel`,
+`Langlands.Shimura.EquivariantFormsHecke` (`transport`),
+`Langlands.Shimura.DefiniteFormsDoubleCoset` (`localLevel`,
 `ellModuleForms`),
-`Langlands.Cohomology.SmoothHyperextSecondPage` (Worker 61:
-`SmoothHyperext.secondPageAddEquiv`) and
-`Langlands.Cohomology.HyperextSpectralSequence` (Worker 61:
-`hyperextSpectralObject`, `hyperextSpectralSequence`, `abutmentIso`); on
-Worker 13's published `Langlands.Shimura.SplitLevelTower` (`factorHom`,
+`Langlands.Cohomology.SmoothHyperextSecondPage` (`SmoothHyperext.secondPageAddEquiv`) and
+`Langlands.Cohomology.HyperextSpectralSequence` (`hyperextSpectralObject`, `hyperextSpectralSequence`, `abutmentIso`); on
+the published `Langlands.Shimura.SplitLevelTower` (`factorHom`,
 `awayHom`, `factorHom_commute_awayHom`, `factorHom_mul_awayHom`),
 `Langlands.Shimura.Unitary.PointsSplit` (`DividingPoints`, `PrimeToPoints`,
 `finiteAdelicPointsSplit`, `dividingLocalMap_finiteAdelicPointsSplit`),
 `Langlands.Representation.Category.SmoothPartAdjunction`
 (`SmoothRep.smoothPartFunctor`) and `Langlands.Cohomology.SmoothExt`
-(`SmoothExt.ext`); on Worker 0's published
+(`SmoothExt.ext`); on the published
 `Langlands.Representation.Smooth.SmoothPart.FixedVectorsDefinitions`
-(`smoothPartFixedVectorsEquiv`); and on Worker 57's published
+(`smoothPartFixedVectorsEquiv`); and on the published
 `Langlands.Shimura.Levels` (`CompactOpenLevel` and its arrows) and
 `Langlands.Shimura.Unitary.Adelic` (`FiniteAdelicPoints`,
 `finiteAdelicDiagonal`, `finiteLocalMap`). From Mathlib it uses
@@ -37,7 +31,7 @@ representations and `Rep`, derived categories with their canonical
 t-structure (`DerivedCategory.TStructure.t`, `singleFunctor`,
 `homologyFunctor`, shifts) and `preadditiveCoyoneda`.
 
-The accepted `DefiniteFormsSmoothExt` treats Harris's Proposition 4.4, whose
+The published `DefiniteFormsSmoothExt` treats Harris's Proposition 4.4, whose
 coefficients `𝓛` carry the trivial action. This module treats
 Proposition 4.10, whose coefficients are a representation `ρ` of `K_ℓ`. The
 second argument `𝒜_ℓ(GJ, ρ, H)` of Harris's `E₂` term is constructed as a
@@ -58,7 +52,7 @@ groups, `ι : Γ →* G`, and `G`, `H`, `H'` carry topologies.
 `e : G ≃ₜ* H × H'` is an isomorphism of topological groups. The published
 `factorHom e h = e⁻¹ (h, 1)` and `awayHom e h' = e⁻¹ (1, h')` embed the two
 factors in `G`; they commute elementwise, and
-`g = e⁻¹ ((e g).1, 1) * e⁻¹ (1, (e g).2)`. The accepted `awayLevel e K'` is
+`g = e⁻¹ ((e g).1, 1) * e⁻¹ (1, (e g).2)`. The published `awayLevel e K'` is
 the subgroup `e⁻¹ (1 × K')` of `G`, and `splitLevel e U K'` is
 `e⁻¹ (U × K')`.
 
@@ -183,12 +177,12 @@ derived category of `SmoothRep R H`:
   `coefficientGradedPresheaf R e ι ρ X n p`: the step `F^p` of the published
   abutment filtration of `Hom(X, A(K')[n])` and its graded piece
   `gr^p = F^p / F^{p+1}`, as presheaves of abelian groups in `K'`: the
-  accepted `HyperextAbutment.filtrationFunctor` and `gradedFunctor` composed
+  published `HyperextAbutment.filtrationFunctor` and `gradedFunctor` composed
   with `coefficientSmoothPresheaf ⋙ singleFunctor _ 0`.
 - `coefficientFiltrationι R e ι ρ X n p : F^p ⟶ abutment`,
   `coefficientFiltrationMapOfLE R e ι ρ X n hpq : F^q ⟶ F^p` for `p ≤ q`, and
   `coefficientGradedπ R e ι ρ X n p : F^p ⟶ gr^p`: the inclusions and the
-  projection as natural transformations of presheaves (the accepted
+  projection as natural transformations of presheaves (the published
   `filtrationι`, `filtrationMapOfLE` and `gradedπ`, whiskered on the left).
 
 ## Harris's case
@@ -228,7 +222,7 @@ Section `LocalCoefficients` (universes arbitrary except that `A` is in `u`):
   published `dividingLocalMap_finiteAdelicPointsSplit`),
   `dividingCoefficientDomain_eq_top`, and
   `coefficientForms_eq_awayLevelForms` (the forms with these coefficients are
-  the accepted `awayLevelForms`, the forms with trivial coefficients). This
+  the published `awayLevelForms`, the forms with trivial coefficients). This
   case is not Harris's; the definitions do not need `ℓ ∤ p`.
 
 Section `DividingExt`: `R`, `V` and `A` lie in one universe `u`. The
@@ -258,8 +252,8 @@ declarations are the generic ones of the previous sections for this `e`,
 ## Provenance and interpretation
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
-J. Math. Kyoto Univ. 39-2 (1999), §4. Worker 61 read the rendered scanned
-pages.
+J. Math. Kyoto Univ. 39-2 (1999), §4. The rendered scanned pages were
+read.
 
 - Printed p.310 (one-based PDF page 12): "To continue, we fix a compact open
   subgroup `K_p ⊂ GJ_p` contained in a fixed maximal compact subgroup `C_p`.
@@ -344,8 +338,8 @@ How the module relates to Harris (an explanation, not formalized):
 
 ## Related declarations
 
-- `Langlands.Shimura.EquivariantForms.factorSmoothPresheaf`
-  (`Shimura/DefiniteFormsSmoothExt`, accepted, not yet in the Library): the trivial-coefficient case on all
+- Library `Langlands.Shimura.EquivariantForms.factorSmoothPresheaf`
+  (`Shimura/DefiniteFormsSmoothExt`): the trivial-coefficient case on all
   compact open levels of `H'`. In Harris's case with `ℓ ∣ p`,
   `coefficientForms_eq_awayLevelForms` shows that the forms agree; a general
   comparison of the presheaves is not formalized.
@@ -379,5 +373,5 @@ Source registration: Harris 1999,
 `harris-1999-cohomological-automorphic-forms-525a222c4489ee9d`, SHA-256
 `525a222c4489ee9d3fe86a52c6c17ffb30fcc7c31f24c16a64669e9615085b26`.
 
-Dependencies are Mathlib and the published and accepted modules named above, pinned to
+Dependencies are Mathlib and the published modules named above, pinned to
 Lean 4.34.0 and Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.

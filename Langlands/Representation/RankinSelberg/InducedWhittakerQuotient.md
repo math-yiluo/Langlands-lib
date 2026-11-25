@@ -8,9 +8,9 @@ rank-one-test multiplicativity proposition.
 The normalized parabolic and product map surjectivity lemmas extend the
 published adapters in
 [InducedMapSurjectivity](../Parabolic/InducedMapSurjectivity.md) to independent
-source and target carrier universes and unbundled representations. Worker 181
-located those adapters and their precise universe restriction. The parabolic
-proof follows the existing proof of Worker 328: the closed actual parabolic,
+source and target carrier universes and unbundled representations. The
+parabolic proof follows the existing proof of `normalizedParabolicMap_surjective`
+in that module: the closed actual parabolic,
 cofinal compact open subgroups of the actual p-adic general linear group, and
 smoothness of the half-modulus twisted Levi inflations discharge the published
 smooth-induction surjectivity theorem. The product proof applies the existing

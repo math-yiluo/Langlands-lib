@@ -142,6 +142,7 @@ theorem hasTower_of_affine_image_and_normal_quotient
             (ih A)
     have hid : RelativeRoot.IsFppfQuotient
         (SubgroupFunctor.range (seriesHom ρ (N * N))) (𝟙 H) := by
+      set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
       refine ⟨inferInstance, inferInstance, inferInstance, ?_⟩
       rw [range_seriesHom_last]
       ext T x

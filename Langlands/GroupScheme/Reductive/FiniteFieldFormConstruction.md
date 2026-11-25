@@ -1,7 +1,5 @@
 # Constructing a finite-field form with prescribed class
 
-Author: Worker 187.
-
 Let `k : Type u` be a finite field, `p` a split pinning of an affine
 group `G₀` over `k`, and `θ ∈ p.basedRootDatumAut` a finite-order
 element.

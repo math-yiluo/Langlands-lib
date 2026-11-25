@@ -2,7 +2,7 @@
 
 This is internal construction infrastructure. It extends the existing actual
 coefficient and tensor Hom maps to the genuinely sheafified rational Hom.
-No original-literature theorem is attributed to this unit.
+No original-literature theorem is attributed to this module.
 
 Let `O` be a commutative ring, let `R` and `S` be commutative `O`-algebras,
 and let `F` be an `O`-algebra field. The rings `R`, `S` and `F` occupy the same
@@ -39,5 +39,5 @@ on `ofRational`. The coefficient-square law on extended global tensors
 then gives the formulas on `ofGlobalOn` and global integral `ofHom`.
 
 No nilpotence, domain, fraction-field or isogeny hypothesis is required.
-This unit asserts no invertibility of the sheaf morphism, no comparison
+This module asserts no invertibility of the sheaf morphism, no comparison
 isomorphism, and no preservation of the local scalar-isogeny condition.

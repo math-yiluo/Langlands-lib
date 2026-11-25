@@ -1,7 +1,5 @@
 # Pointed etale torus lifting from a supplied universal family
 
-Author: Worker 606.
-
 `Langlands.GroupScheme.TorusSubgroupModuli.pointedTorusLift.{u}` constructs
 actual pointed etale lift data for a closed relative torus in a residue fibre
 of an arbitrary group scheme `G/S`. Its input includes an actual parameter

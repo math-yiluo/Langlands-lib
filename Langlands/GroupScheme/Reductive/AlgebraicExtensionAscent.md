@@ -75,7 +75,3 @@ interfaces and Mathlib's algebraic-closure comparison. The mathematical
 source correspondence is documented in the unchanged target statement's
 paired Markdown. The implemented route is the algebraic-closure
 isomorphism route described above.
-
-The three helper proofs adapt Worker 1347's algebraic-ascent prototype;
-the closing exact-target theorem follows Worker 1398's supplied assembly.
-Worker 1483 prepared this pair for independent proof review.

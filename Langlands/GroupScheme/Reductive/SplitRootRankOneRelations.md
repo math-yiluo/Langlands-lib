@@ -1,6 +1,6 @@
 # Rank-one relations for every root of a supplied split root datum
 
-This internal derived unit constructs linked additive maps for each root of
+This internal derived module constructs linked additive maps for each root of
 an actual supplied split maximal torus and root datum in a connected reductive
 group over an arbitrary field. It retains the supplied torus and root datum;
 it asserts no existence theorem for these data.

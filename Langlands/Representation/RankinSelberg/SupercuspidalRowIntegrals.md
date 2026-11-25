@@ -1,6 +1,6 @@
 # Compact and positive supercuspidal row integrals
 
-This internal derived unit uses the canonical topology of a supplied p-adic
+This internal module, with derived provenance, uses the canonical topology of a supplied p-adic
 field, with independent field and representation-carrier universes.
 `HasCompactSupercuspidalRowIntegrands` asserts compact support of the actual
 equal-rank quotient integrand for every vector of the first representation,
@@ -33,5 +33,5 @@ coefficient constructions. The full Kirillov statement and the weighted
 coefficient package remain explicit premises. No rational continuation, pole,
 root of a normalized generator, or L-factor identity is concluded here.
 
-Integration uses module-specific names for local instances. Their types, values,
+Local instances have module-specific names. Their types, values,
 and local instance scopes are unchanged.

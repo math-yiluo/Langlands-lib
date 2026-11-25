@@ -5,7 +5,7 @@ the Apache License, Version 2.0; see `licenses/Anthropic-FLT/LICENSE`, `NOTICE` 
 Modified for this project: FLT imports are renamed to `Langlands.AnthropicFLT.*` and the FLT lakefile
 options are set after the imports; any further change is listed in the paired Markdown file.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_Mathlib_Algebra_IsDirectLimit
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_TwoAffineOpenCover
 import Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_exists_algEquiv_sections_pullback_fst_preimage_tensor_of_isAffineOpen
@@ -462,7 +462,7 @@ theorem solution
   have kA : ∀ (V V' : ↥S) y, cs.appLE _ _ (e'' V V') y =
       (Limits.pullback fX (Spec.map (CommRingCat.ofHom (algebraMap (G i) (G js.1))))).presheaf.map (homOfLE (e'' V V')).op (cs.app _ y) := fun V V' y => by
     rw [← CategoryTheory.comp_apply, Scheme.Hom.app_eq_appLE, Scheme.Hom.appLE_map]
-  have compat : TopCat.Presheaf.IsCompatible (Limits.pullback fX (Spec.map (CommRingCat.ofHom (algebraMap (G i) (G js.1))))).sheaf.val
+  have compat : TopCat.Presheaf.IsCompatible (Limits.pullback fX (Spec.map (CommRingCat.ofHom (algebraMap (G i) (G js.1))))).sheaf.obj
       (fun V : ↥S => (Limits.pullback.fst fX (Spec.map (CommRingCat.ofHom (algebraMap (G i) (G js.1))))) ⁻¹ᵁ ((V : X.affineOpens) : X.Opens)) τ := by
     intro V V'
     change (Limits.pullback fX (Spec.map (CommRingCat.ofHom (algebraMap (G i) (G js.1))))).presheaf.map (homOfLE inf_le_left).op (τ V) = (Limits.pullback fX (Spec.map (CommRingCat.ofHom (algebraMap (G i) (G js.1))))).presheaf.map (homOfLE inf_le_right).op (τ V')
@@ -520,7 +520,7 @@ theorem solution
         (((homOfLE ((Limits.pullback.fst fX (Spec.map (CommRingCat.ofHom (algebraMap (G i) R)))).preimage_mono (hSle V))).op.unop.le).trans e.le) x := fun x => by
     rw [← CategoryTheory.comp_apply, Scheme.Hom.map_appLE]
   erw [← k2 t]
-  change c.appLE _ _ eV' ((Limits.pullback fX (Spec.map (CommRingCat.ofHom (algebraMap (G i) (G js.1))))).sheaf.val.map (homOfLE ((Limits.pullback.fst fX (Spec.map (CommRingCat.ofHom (algebraMap (G i) (G js.1))))).preimage_mono (hSle V))).op t) = _
+  change c.appLE _ _ eV' ((Limits.pullback fX (Spec.map (CommRingCat.ofHom (algebraMap (G i) (G js.1))))).sheaf.obj.map (homOfLE ((Limits.pullback.fst fX (Spec.map (CommRingCat.ofHom (algebraMap (G i) (G js.1))))).preimage_mono (hSle V))).op t) = _
   rw [ht V, hτ V, appLE_appLE_of_comp_eq c cs c₀ hccs _ _ _ (eV V) eV' (e₁ V) (tV V), htV V]
 
 end

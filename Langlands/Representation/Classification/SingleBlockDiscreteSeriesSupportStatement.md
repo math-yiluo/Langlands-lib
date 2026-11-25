@@ -1,7 +1,5 @@
 # Unitary cuspidal support for square-integrable GL representations
 
-Author: Worker 320.
-
 `Langlands.GLSingleBlockDiscreteSeriesSupportStatement.{uF,uV}` is a
 proposition definition for the GL specialization of the published
 [`GLDiscreteSeriesPositiveRootSupportStatement`](DiscreteSeriesPositiveRootSupportStatement.md).

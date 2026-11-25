@@ -77,7 +77,7 @@ nonbottom actual invariant subspace, equipped with
 uses the restricted action on `S.toSubmodule`, with smoothness transferred
 along the actual injective inclusion.
 
-## Original-source rationale and remaining analytic proof
+## Original-source rationale and the analytic proof
 
 This existential interface is derived from the following registered originals;
 it is not a verbatim theorem statement from either article.
@@ -88,18 +88,20 @@ it is not a verbatim theorem statement from either article.
   Literature ID `zelevinsky-1980-induced-ii`, SHA256
   `663c79f2ee236626385d242d83107410c1a3291ba5584d4b8abee9cf8af428ac`.
   Retained original:
-  `/home/taskhub/central-library/Zelevinsky--Induced representations of reductive p-adic groups II, irreducible representations of GL(n)--1980.pdf`.
+  `Zelevinsky--Induced representations of reductive p-adic groups II, irreducible representations of GL(n)--1980.pdf`
+  in the central library.
 - I. N. Bernstein and A. V. Zelevinsky, *Induced representations of reductive
   p-adic groups I* (1977), §3.3(a), printed p.451, PDF page 12,
   and the derivative/filtration construction of §3.5, printed p.452,
   PDF page 13. Literature ID `bernstein-zelevinsky-1977-induced-i`, SHA256
   `8424600228ab72c5937e45edceefcae410a2a0b8f5ebf282185691542aa89092`.
   Retained original:
-  `/home/taskhub/central-library/Bernstein-Zelevinsky--Induced representations of reductive p-adic groups I--1977.pdf`.
+  `Bernstein-Zelevinsky--Induced representations of reductive p-adic groups I--1977.pdf`
+  in the central library.
 
-Worker 658 read and visually checked these three original pages on
-2026-10-31 and verified both complete PDF fingerprints against the registered
-sources. The literature index was checked; no source-specific errata note
+These three original pages were read and visually checked on
+2026-10-31, and both complete PDF fingerprints were verified against the
+registered sources. The literature index was checked; no source-specific errata note
 was present in the project or public `notes/errata` locations.
 
 With source rank `n=N+1`, Bernstein–Zelevinsky §3.5 filters a representation
@@ -116,44 +118,35 @@ The abstract existential packaging, the `Nonempty` wrapper, the explicit
 valid-order proof, independent Lean universes and zero-default convention
 are internal interface choices.
 
-The analytic proof must construct the genuine plus layer and its embedding
-in `A`, compare the determinant normalization to the source Haar-modulus
-normalization, prove nonzeroness, prove the full submodule-lattice comparison,
-and establish the homogeneity/essentiality equivalence. All remain substantive
-proof obligations; none is supplied or assumed by this proposition definition.
+The analytic proof, `Langlands.Derivative.mirabolicHighestLayer` in
+`MirabolicHighestLayerProof`, constructs the genuine plus layer and its embedding
+in `A`, compares the determinant normalization to the source Haar-modulus
+normalization, proves nonzeroness, proves the full submodule-lattice comparison,
+and establishes the homogeneity/essentiality equivalence. These are
+substantive proof obligations; none is supplied or assumed by this proposition
+definition.
 The nearby Zelevinsky §5.4 strong-indecomposability conclusion and subsequent
 classification results are not inputs to this prerequisite. Source references
 do not supply Lean proofs. A constructor for a plus or minus functor alone
 also does not establish adjunction, exactness, filtration or this endpoint.
 
-## Authorship and controlled boundaries
+## Boundaries
 
-Worker 440 authored the reused statement draft and prepared its contract.
-Worker 658 completed the companion, source verification and dependency audit.
-Workers 864/700 supplied parent planning; their generic lattice unit is separate
-and no private draft from it is used here. The public generic lattice statement
-and its exact proof task `a2baddab-056b-4503-865e-74d58ecb3812` are not
-duplicated or assumed proved.
+The generic lattice transport statement
+`Langlands.Classification.StrongIndecomposabilityLatticeTransferStatement` and
+its proof are separate; they are not used, duplicated or assumed proved here.
 
-This statement does not resume or replace the operator-paused minus exactness
-task `b65bc667-6951-4bd5-82af-10fb7046df7f` or Worker 127's controls.
-Worker 157's finite-length scope
-`0717fd42-d711-4f42-8269-f6ae4c8da1e9`, Worker 357's
-mixed-product/restriction/Leibniz and raw tensor/partial-derivative scope,
-and Worker 288's order-zero adapter remain separately controlled.
-Any later substantial split must first search and coordinate the existing
-plus-functor, adjunction, exactness and filtration owners. Lower statements
-must be public before their exact proof successors are published.
+This statement does not use or replace minus exactness. It does not touch the
+finite-length, mixed-product, restriction, Leibniz, raw tensor or
+partial-derivative results, or the order-zero adapter.
 
 ## Validation and dependency audit
 
-The statement compiled and was inspected in approved environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` on 2026-10-31, diagnostic
-`170fb8f4-a0fe-4b40-b4a8-c4b1750d4b3d`: successful Lake build,
+The statement compiled and was inspected on 2026-10-31: successful Lake build,
 zero errors and warnings, `statement_returns_prop = true`, and level
 parameters exactly `[uF,uV]`. The only foundational axioms reported were
-`propext`, `Classical.choice` and `Quot.sound`. This development diagnostic
-is neither independent acceptance nor a proof of the proposition.
+`propext`, `Classical.choice` and `Quot.sound`. This check is not a proof of
+the proposition.
 
 The sole direct project import is
 `Langlands.Representation.Derivative.Homogeneity`.
@@ -162,15 +155,14 @@ The following audit uses public Library commit
 enumeration found 54 existing project modules, including `Homogeneity`;
 the new statement makes 55 project modules in the complete closure.
 Every imported Lean file and its same-stem Markdown was compared byte for
-byte with that public tree. All 108 comparisons matched, and this candidate
+byte with that public tree. All 108 comparisons matched, and this statement
 changes none of those pairs.
 
 For declaration-level independence, a private diagnostic traversed
 `ConstantInfo.getUsedConstantsAsSet` recursively from the new definition,
 including types, opaque proof values, constructors and recursors. It visited
 26,851 constants in total and 272 project constants in 25 project modules,
-including the new root. Diagnostic
-`9b1fe246-e923-43e6-9d68-bfdf9e0c8a27` completed successfully with no errors
+including the new root. The traversal completed with no errors
 or warnings. No project axiom was present. The complete project constant
 list appears below, including generated and private names rather than
 silently dropping proof dependencies.
@@ -192,8 +184,9 @@ for example it loads elementary Whittaker-character, matrix-coefficient and
 twist/admissibility infrastructure. Those modules introduce no excluded
 classification or consumer dependency. No new theorem-valued parameter
 is added to the telescope to compensate for an absent analytic proof.
-The future exact proof must make a fresh mathematical proof-dependency and
-complete project import/declaration audit of its additional prerequisites.
+The proof `mirabolicHighestLayer` records its own mathematical proof-dependency
+and complete project import/declaration audit of its additional prerequisites
+(`MirabolicHighestLayerProof.md`).
 
 ### Complete imported project pairs
 
@@ -661,92 +654,76 @@ Langlands.isSmoothVector_twist_iff
 Langlands.isSmooth_twist_iff
 ```
 
-## Inherited independence controls for the proof successor
+## Independence conditions of the proof
 
-These controls preserve the complete mathematical exclusion set. They are
-restrictions on the future proof route and any lower splits, not additional
-Lean hypotheses. The scoped detection restrictions below apply to detection
-and its prerequisite closure; the separately authorized Ze80 §5.1 analytic
-route of this layer statement remains available.
+These conditions keep the complete mathematical exclusion set. They are
+restrictions on the proof route and on any lower prerequisites, not
+additional Lean hypotheses. The proof `Langlands.Derivative.mirabolicHighestLayer`
+(`MirabolicHighestLayerProof`) follows them; its page carries the import and
+declaration audit. The detection restrictions below apply to detection and its
+prerequisite closure; the Ze80 §5.1 analytic route of this layer statement is
+not restricted by them.
 
-Do not use the mathematical conclusion `Langlands.Derivative.MirabolicStrongIndecomposabilityReduction`, its proof task `08fe06ea-e64e-4f3a-b899-3e0acacf61db`, or their proof successors or transitive proof consequences to establish this analytic prerequisite. Exclude an assumed strong-indecomposability conclusion as a substitute for the actual highest layer. The generic lattice transport/essential-interval unit is already owned separately by Workers 864/700: statement artifact `ec62132d-2b17-4cbd-bd75-d5fd43de7cde` is public, and exact proof task `a2baddab-056b-4503-865e-74d58ecb3812` exists; do not duplicate that algebraic unit. It does not provide this actual layer or its analytic comparisons.
+The mathematical conclusion `Langlands.Derivative.MirabolicStrongIndecomposabilityReduction`, its proof (`mirabolicStrongIndecomposabilityReduction` in `MirabolicStrongIndecomposabilityProof`), and their transitive proof consequences are not used to establish this analytic prerequisite. An assumed strong-indecomposability conclusion is excluded as a substitute for the actual highest layer. The generic lattice transport/essential-interval result (`Langlands.Classification.StrongIndecomposabilityLatticeTransferStatement` and its proof) is separate and not duplicated. It does not provide this actual layer or its analytic comparisons.
 
-This is a lower input to ordered-socle existence task 23189526-80b0-4828-a6d4-7ebec2cbeef5. Exclude that conclusion and socle exhaustion f3a69bc8-7312-4f82-8a7d-ea3c8188cb63, analytic segment classification aca8805b-054f-4d56-8045-12db7f623404, segment-socle product irreducibility 23e98d90-6055-4e35-91a9-b0f5d8a84961, final segment-socle irreducibility criterion 2ae5cbe5-0701-4509-88a0-db8cbeb35be4, AdjacentUnlinkedSegmentSocleSwap, TwoSegmentSocleCommutation, special-head product criterion 8364e73f-14ec-4d14-8f2b-1555a7c1ce95, special-head exhaustion 3bfb61fa-1129-4fc9-83fd-7fcfec22106e, ordered special-head existence ebea9a8a-9b21-4208-aa31-98c2dea1f8a3, quotient coverage 20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584, tempered block uniqueness 52e97845-36bb-457d-b76f-70753334b88c, SquareIntegrableLanglandsClassification / 1cb45da2-7007-4351-a694-594fb148b8d1, square-integrable exhaustion cd8ab97c-0b78-4bce-97c4-d307a28159a4, regular exhaustion bf433f0a-921a-428c-b0c0-6475438125ac, GenericSegmentProductUniqueness / 30341ae4-65f2-4a0e-9283-763db01a409e, ordered special-segment conversion 8252833d-c269-41a9-824c-5879e531b23b, and forward special-segment essential square-integrability 5eece9e8-7f6b-4ea9-abea-a1f9f1b8c807. These exclusions cover the mathematical conclusions, their proof successors and transitive proof dependencies. Check shared lower inputs for independence and record the complete import/declaration audit in the paired proof Markdown. Preserve this exclusion set in any lower splits.
+This is a lower input to ordered-socle existence (`OrderedMultisegmentSocleExistence`). Excluded are that conclusion and socle exhaustion, analytic segment classification, segment-socle product irreducibility, final segment-socle irreducibility criterion, AdjacentUnlinkedSegmentSocleSwap, TwoSegmentSocleCommutation, special-head product criterion, special-head exhaustion, ordered special-head existence, quotient coverage, tempered block uniqueness, SquareIntegrableLanglandsClassification, square-integrable exhaustion, regular exhaustion, GenericSegmentProductUniqueness, ordered special-segment conversion, and forward special-segment essential square-integrability. These exclusions cover the mathematical conclusions, their proofs and transitive proof dependencies. Shared lower inputs are checked for independence, and the complete import/declaration audit is recorded in the paired proof Markdown. The exclusion set holds for every lower prerequisite.
 
-The complete parent context is carried verbatim below as inherited context. Its detection-specific restrictions apply to detection and its prerequisite closure; they do not prohibit the separately authorized Ze80 5.1/5.4 analytic route here. Preserve every stated exclusion on any reused detection dependency, including the additional nonadjacent/full-formula consumer exclusions. Record both mathematical proof dependencies and the complete project import/declaration closure in the relevant final paired Markdown; shared lower constructions require their own independence checks.
+The detection-specific restrictions below apply to detection and its prerequisite closure; they do not prohibit the Ze80 5.1/5.4 analytic route here. Every stated exclusion holds on any reused detection dependency, including the additional exclusions for the nonadjacent product and the full-formula results. Both the mathematical proof dependencies and the complete project import/declaration closure are recorded in the relevant final paired Markdown; shared lower constructions require their own independence checks.
 
-Do not resume, replace or bypass the operator-paused minus exactness task `b65bc667-6951-4bd5-82af-10fb7046df7f` or Worker 127's controls, or treat this endpoint task as authority to replace the paused exactness work. Preserve Worker 157's finite-length scope `0717fd42-d711-4f42-8269-f6ae4c8da1e9`, Worker 357's mixed-product/restriction/Leibniz and raw tensor/partial-derivative scope, and Worker 288's k=0 adapter. Search and coordinate existing plus-functor, adjunction, exactness and filtration owners before splitting further substantial prerequisites; lower definitions and statements must be accepted/public before exact proof successors. Reuse accepted/public constructions by Lean name after checking their precise guarantees; constructors alone do not prove adjunction, exactness or the endpoint. Worker 710's message read by the publisher disclaims ownership of the actual layer, lattice comparison, homogeneity-essentiality and adjunction endpoints. No pause is waived by this publication.
+Minus exactness is not used or replaced. The finite-length, mixed-product, restriction, Leibniz, raw tensor and partial-derivative results and the `k=0` adapter are not touched. Published constructions are reused by Lean name after checking their precise guarantees; constructors alone do not prove adjunction, exactness or the endpoint.
 
 
-### Inherited detection-specific restrictions
+### Detection-specific restrictions
 
-The shared general detection prerequisites have stricter independence conditions from their nonadjacent-product consumer. The following is the complete inherited ownership/independence extract from that detection contract. In this extract, “this” means the general detection unit, not this successor's whole target. Preserve these restrictions on detection and its prerequisite closure. They do not prohibit the separately specified Ze80 5.4/6.2 arguments in their respective consumers.
+The shared general detection prerequisites have stricter independence conditions, coming from the nonadjacent two-supercuspidal product that uses them. In this subsection, "detection" means the general detection result, not this statement's whole target. These restrictions apply to detection and its prerequisite closure. They do not prohibit the Ze80 5.4/6.2 arguments in the results that use detection.
 
-This is the BZ77-only upstream detection clause for mirabolic strong-indecomposability statement task `ff4738d8-47e3-433b-bedc-629bc2d492a7`, ordered-socle proof task `23189526-80b0-4828-a6d4-7ebec2cbeef5`, and nonadjacent two-supercuspidal product task `3c9849a4-a6c0-43ac-9982-d15ed76bf1e9`. It does not duplicate or replace the combined Ze80 section 5.4 reduction statement. Do not use that combined reduction or its strong-indecomposability conclusion to prove detection. Do not use either the nonadjacent product conclusion or the full two-supercuspidal product-structure conclusion of `ab61f565-1427-4746-ba77-46097563e962`, including its adjacent composition/Jacquet conjuncts. The proof route must be general BZ77 derivative theory and independent of these consumers.
+Detection is the BZ77-only upstream input for mirabolic strong indecomposability, ordered-socle existence and the nonadjacent two-supercuspidal product `TwoSupercuspidalNonadjacentProductIrreducible`. It does not duplicate or replace the combined Ze80 section 5.4 reduction statement. That combined reduction and its strong-indecomposability conclusion are not used to prove detection. Neither the nonadjacent product conclusion nor the full two-supercuspidal product-structure conclusion `TwoSupercuspidalProductStructure`, including its adjacent composition/Jacquet conjuncts, is used. The proof route is general BZ77 derivative theory and independent of these consumers.
 
-The trusted operator conditions recorded for the nonadjacent consumer are in `/home/taskhub/pilot/correspondence/bd71b9185aab5d6eafffb7891bd3a3ca.md` (sender_role operator); read that file completely. They allow a fully proved BZ77 derivative route and forbid using Ze80 segment derivative formulas or circular results. Every lower derivative result later used must have an independently accepted and published proof. A citation, unproved proposition, draft or pending task is not a proof input. Preserve the following full union of exclusion sets, including mathematical conclusions, exact proof successors and transitive dependencies, in all later proof and lower prerequisite tasks.
+The conditions of the nonadjacent product allow a fully proved BZ77 derivative route and forbid using Ze80 segment derivative formulas or circular results. Every lower derivative result used has a published proof. A citation, unproved proposition or draft is not a proof input. The following full union of exclusion sets holds, including mathematical conclusions, the modules that prove them and transitive dependencies, for all proofs and lower prerequisites.
 
-Do not use conclusions, proof successors or transitive proof dependencies of ordered-socle existence `23189526-80b0-4828-a6d4-7ebec2cbeef5`, socle exhaustion `f3a69bc8-7312-4f82-8a7d-ea3c8188cb63`, analytic segment classification `aca8805b-054f-4d56-8045-12db7f623404`, unlinked segment-socle product irreducibility `23e98d90-6055-4e35-91a9-b0f5d8a84961`, the final segment-socle irreducibility criterion `2ae5cbe5-0701-4509-88a0-db8cbeb35be4`, `AdjacentUnlinkedSegmentSocleSwap`, `TwoSegmentSocleCommutation`, the special-head product irreducibility criterion `8364e73f-14ec-4d14-8f2b-1555a7c1ce95`, special-head exhaustion `3bfb61fa-1129-4fc9-83fd-7fcfec22106e`, ordered special-head existence `ebea9a8a-9b21-4208-aa31-98c2dea1f8a3`, quotient coverage `20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584`, tempered block uniqueness `52e97845-36bb-457d-b76f-70753334b88c`, `SquareIntegrableLanglandsClassification` / `1cb45da2-7007-4351-a694-594fb148b8d1`, square-integrable exhaustion `cd8ab97c-0b78-4bce-97c4-d307a28159a4`, regular exhaustion `bf433f0a-921a-428c-b0c0-6475438125ac`, `GenericSegmentProductUniqueness` / `30341ae4-65f2-4a0e-9283-763db01a409e`, ordered special-segment conversion `8252833d-c269-41a9-824c-5879e531b23b`, or forward special-segment essential square-integrability `5eece9e8-7f6b-4ea9-abea-a1f9f1b8c807`. Preserve this full exclusion set in later proof tasks and lower splits. Shared lower inputs need their own independence audit.
+Conclusions, proofs and transitive proof dependencies of ordered-socle existence, socle exhaustion, analytic segment classification, unlinked segment-socle product irreducibility, the final segment-socle irreducibility criterion, `AdjacentUnlinkedSegmentSocleSwap`, `TwoSegmentSocleCommutation`, the special-head product irreducibility criterion, special-head exhaustion, ordered special-head existence, quotient coverage, tempered block uniqueness, `SquareIntegrableLanglandsClassification`, square-integrable exhaustion, regular exhaustion, `GenericSegmentProductUniqueness`, ordered special-segment conversion and forward special-segment essential square-integrability are not used. This full exclusion set holds for later proofs and lower prerequisites. Shared lower inputs need their own independence audit.
 
-Additional nonadjacent-consumer exclusions (the references to "this proof" mean that consumer and every prerequisite, including detection):
+Additional exclusions for the nonadjacent product (they concern that product and every prerequisite, including detection):
 
-Neither this
-proof nor any prerequisite may depend directly or transitively on the following
-tasks, their mathematical conclusions, proof successors or downstream
+Neither that
+proof nor any prerequisite depends directly or transitively on the following
+results, their mathematical conclusions, the modules that prove them or downstream
 consequences:
 
-- Individual special-head/reverse-socle existence
-  `67279e36-f3c2-42e3-9302-11729784042e`.
-- Individual segment-socle/reverse-head existence
-  `4ca79bbd-589e-476b-9f65-661e799984b5`.
-- Analytic segment classification
-  `aca8805b-054f-4d56-8045-12db7f623404`.
+- Individual special-head/reverse-socle existence.
+- Individual segment-socle/reverse-head existence.
+- Analytic segment classification.
 - Forward special square-integrability,
-  `SegmentSpecialEssentialSquareIntegrability`, and
-  `5eece9e8-7f6b-4ea9-abea-a1f9f1b8c807`.
-- Multisegment special-head exhaustion
-  `3bfb61fa-1129-4fc9-83fd-7fcfec22106e`.
-- Ordered strong-head existence
-  `ebea9a8a-9b21-4208-aa31-98c2dea1f8a3`.
-- Quotient coverage `20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584`.
-- Ordered conversion `8252833d-c269-41a9-824c-5879e531b23b`.
-- Tempered uniqueness `52e97845-36bb-457d-b76f-70753334b88c`.
-- `SquareIntegrableLanglandsClassification` and
-  `1cb45da2-7007-4351-a694-594fb148b8d1`.
-- Square-integrable exhaustion
-  `cd8ab97c-0b78-4bce-97c4-d307a28159a4`.
-- Regular exhaustion `bf433f0a-921a-428c-b0c0-6475438125ac`.
-- Special-head product irreducibility
-  `8364e73f-14ec-4d14-8f2b-1555a7c1ce95`.
-- `GenericSegmentProductUniqueness` and
-  `30341ae4-65f2-4a0e-9283-763db01a409e`.
-- `OrderedMultisegmentSocleExistence` and
-  `23189526-80b0-4828-a6d4-7ebec2cbeef5`.
-- `MultisegmentSocleExhaustion` and
-  `f3a69bc8-7312-4f82-8a7d-ea3c8188cb63`.
-- `SegmentSocleProductIrreducibility` and
-  `2ae5cbe5-0701-4509-88a0-db8cbeb35be4`.
-- Adjacent socle commutation
-  `e3634665-571b-4852-9f4c-bab8a1053434`.
-- `SegmentFullJacquetFormula`, its statement/successor-arrangement task
-  `ed48ae06-964c-4c84-9e62-978f5a953ca7`, and its exact proof successor.
-- `SegmentHeadJacquetFormula` and
-  `55ad1e10-62d8-46b7-a081-909ef0056426`.
-- `SegmentSocleJacquetFormula` and
-  `b95105c6-f8bb-4641-ae53-2f49d1e7f034`.
-- `SegmentSpecialJacquetExponentNormFormula` and
-  `92aea10f-62ac-4e0b-bd4a-9a80909797c5`.
+  `SegmentSpecialEssentialSquareIntegrability`.
+- Multisegment special-head exhaustion.
+- Ordered strong-head existence.
+- Quotient coverage.
+- Ordered conversion.
+- Tempered uniqueness.
+- `SquareIntegrableLanglandsClassification`.
+- Square-integrable exhaustion.
+- Regular exhaustion.
+- Special-head product irreducibility.
+- `GenericSegmentProductUniqueness`.
+- `OrderedMultisegmentSocleExistence`.
+- `MultisegmentSocleExhaustion`.
+- `SegmentSocleProductIrreducibility`.
+- Adjacent socle commutation.
+- `SegmentFullJacquetFormula`, its statement and its proof (`segmentFullJacquetFormula`
+  in `Classification.SegmentFullJacquetProof`).
+- `SegmentHeadJacquetFormula`.
+- `SegmentSocleJacquetFormula`.
+- `SegmentSpecialJacquetExponentNormFormula`.
 
-Preserve also the full-formula consumer's additional restrictions: do not
-use Ze80's segment derivative formulas (§3.5 or §9.6), and do not assume any
-derivative result (including BZ77's) without a proof accepted and published
-under the operator conditions above; do not assume a segment product
-irreducibility criterion (Ze80 4.2 or 9.7), an analytic or
-square-integrability result (Ze80 9.3), or a classification or exhaustion
-theorem. Ze80 Theorem 4.2's linked-pair converse rests on §2 and cannot
-prove Proposition 1.11 circularly. Carry these exclusions unweakened to every
-prerequisite and document the import and mathematical proof-dependency audit
-in the final proof Markdown. Shared lower constructions may be reused only
-after their independence is checked.
+The full-formula results add these restrictions: Ze80's segment derivative
+formulas (§3.5 or §9.6) are not used, and no derivative result (including
+BZ77's) is assumed without a published proof; no segment product
+irreducibility criterion (Ze80 4.2 or 9.7), analytic or
+square-integrability result (Ze80 9.3), or classification or exhaustion
+theorem is assumed. Ze80 Theorem 4.2's linked-pair converse rests on §2 and cannot
+prove Proposition 1.11 circularly. These exclusions hold unweakened for every
+prerequisite, and the import and mathematical proof-dependency audit is
+documented in the final proof Markdown. Shared lower constructions are reused
+only after their independence is checked.
 
-Audit the full transitive project import closure against the public Library and record it completely in the paired Markdown. Do not use Ze80 section 3.5 or 9.6, or the segment-socle part of task `8e5b4563-0365-41c7-b134-70f2a0b36292`; this detection assertion requires no segment or cuspidal derivative formula at all. Shared lower constructions may be reused only after independence checks.
+The full transitive project import closure is audited against the public Library and recorded completely in the paired Markdown. Ze80 section 3.5 or 9.6 and the segment-socle statements of `Classification.SegmentSocleDerivativesStatement` are not used; detection requires no segment or cuspidal derivative formula at all. Shared lower constructions are reused only after independence checks.

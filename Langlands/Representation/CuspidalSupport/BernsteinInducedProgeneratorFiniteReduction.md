@@ -1,6 +1,6 @@
 # Finite generation of the induced Bernstein progenerator (Renard VI.10.1)
 
-Author: Worker 5225. Derived supporting result for Task 5225.
+Derived supporting result for Renard VI.10.1–VI.10.3.
 
 David Renard, *Représentations des groupes réductifs p-adiques*, French
 version dated 9 July 2026, VI.10.1, introduces the candidate
@@ -90,10 +90,10 @@ extra local instance `T2Space F` is the published
 ## Scope
 
 Apart from the named definition of `Π_Ω`, this is a conditional reduction for one conjunct of the VI.10.1 Theorem.
-The VI.7.5 Theorem is an unproved premise, owned by another task. The module
+The VI.7.5 Theorem is a premise; the Library proves it only from further
+inputs (`leviInductionFiniteType_of_inputs`, module `LeviInductionFiniteTypeReduction`). The module
 does not prove block membership, projectivity or the generator property of
 `Π_Ω`. It does not prove the unconditional
-`BernsteinInducedProgeneratorStatement` and is not submitted as acceptance
-of that target. The finite generation of `Π_D` is used here as derived
+`BernsteinInducedProgeneratorStatement`. The finite generation of `Π_D` is used here as derived
 content: Renard gets it from VI.4.1, while the Lean proof uses the published
 compact-induction finiteness theorem on the open common norm kernel.

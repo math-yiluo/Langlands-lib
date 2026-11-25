@@ -7,8 +7,7 @@ The module contains four **statements**, the `Prop`-valued definitions
 `LeviParabolicFiniteStatement` and their conjunction `LeviSplitComponentRecallStatements`. It
 proves nothing.
 
-Worker 1222 wrote this statement unit under the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`. Renard recalls these facts from Borel–Tits and
+Renard recalls these facts from Borel–Tits and
 Springer without proof. The Chapter V item ledger lists them as recalled assertions not stated
 in the Library.
 
@@ -28,7 +27,7 @@ The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French edition dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1222 read V.3, V.3.1 and V.3.5, printed pp.109–111 / PDF pp.115–117:
+V.3, V.3.1 and V.3.5, printed pp.109–111 / PDF pp.115–117, were read:
 
 > Nous renvoyons le lecteur à [7] ou [42] pour la démonstration des résultats énoncés dans
 > cette section. Soit `G` un groupe algébrique connexe, réductif, défini sur `F` et posons
@@ -47,7 +46,7 @@ Worker 1222 read V.3, V.3.1 and V.3.5, printed pp.109–111 / PDF pp.115–117:
 > Le groupe de Weyl (V.3.5.1) `W(A) = N_G(A)/Z_G(A) = N_G(A)/M = N_G(M)/M` […]
 
 [7] is A. Borel and J. Tits, *Groupes réductifs*, Publ. Math. IHÉS 27 (1965). [42] is T. A.
-Springer, *Linear algebraic groups*, 2nd ed. Worker 1222 did not consult them.
+Springer, *Linear algebraic groups*, 2nd ed. They were not consulted.
 
 ## Published objects used
 
@@ -113,9 +112,12 @@ split torus, which by maximality is `A_M`.
 `P(M)` is in bijection with the set of parabolic subsets of the finite relative root system
 `Σ(A_M)` determined by chambers of `𝔞_M` ([7]), hence finite.
 
-## Remaining obligations
+## Proofs
 
-The proofs are a separate obligation.
+The proofs are not part of this module. `leviSplitComponentRecall` (module
+`LeviSplitComponentRecallStatementsProof`) proves the conjunction from
+`leviSplitComponentCentralizer`, `leviSplitComponentNormalizer` and
+`leviParabolicFinite`.
 
 ## Imports
 

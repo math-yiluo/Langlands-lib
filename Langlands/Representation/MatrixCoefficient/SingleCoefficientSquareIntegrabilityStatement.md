@@ -1,10 +1,10 @@
 # Renard IV.3.2: one square-integrable coefficient, without assumed admissibility
 
-Author: Worker 1222. The module
+The module
 `Langlands.Representation.MatrixCoefficient.SingleCoefficientSquareIntegrabilityStatement`
 defines the proposition
 `Langlands.Renard.CompactRepresentation.SingleCoefficientSquareIntegrabilityStatement`.
-This is a statement unit; it supplies no proof of the criterion.
+This is a statement module; it supplies no proof of the criterion.
 
 ## Source and scope
 
@@ -22,7 +22,7 @@ a unitary central character and square-integrability of every smooth matrix
 coefficient. Its Remark asserts that, for an irreducible smooth representation
 with a unitary central character, one nonzero square-integrable coefficient
 suffices. It does not assume admissibility. Renard leaves this assertion to the
-reader; it is a proof obligation of the whole-book program.
+reader.
 
 The Lean statement uses the same quotient-measure formulation as the published
 IV.3 statements: the specified Haar measure on the actual quotient `G / Z(G)`
@@ -67,7 +67,8 @@ admissibility nor hides it inside the premise. The existing proof uses
 admissibility to obtain irreducibility of the smooth dual before spanning that
 dual by translates of `ℓ`; it does not prove this new proposition.
 
-After the new criterion is proved, the published
+With the new criterion, which `singleCoefficientSquareIntegrability` proves in
+`SingleCoefficientSquareIntegrabilityProof`, the published
 `essentiallySquareIntegrableAdmissible` theorem can be applied with the trivial
 twist to deduce admissibility. The all-coefficients conclusion can then be
 packaged as `IsSquareIntegrableModCenter`. This is a consequence to derive,
@@ -75,11 +76,11 @@ not an assumed admissibility input or a proof supplied by this module.
 The general t.d.-group obligation cannot be discharged merely by invoking
 admissibility of irreducibles of reductive local-field groups.
 
-## Dependencies and remaining work
+## Dependencies and proof
 
 The statement imports the existing smooth representation category and the
 actual central-character and quotient-norm construction by Lean module name.
 It introduces no replacement representation, dual, quotient or predicate.
-Independent review and publication of this statement, followed by an exact
-proof in a separate proof task, remain required. This statement alone does not
+The proof is `singleCoefficientSquareIntegrability`, in the separate module
+`SingleCoefficientSquareIntegrabilityProof`. This statement alone does not
 close clarification C3 in the Chapter IV item ledger or complete Chapter IV.

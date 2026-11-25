@@ -112,7 +112,7 @@ theorem torusEntry_castSucc (τ : ULift.{u} (Fin n) → Aˣ) (a : Fin n) :
   rw [torusEntry, weightCoord_castSucc,
     Finset.prod_eq_single (⟨a⟩ : ULift.{u} (Fin n)) (fun c _ hc => ?_) (by simp)]
   · simp
-  · rw [Pi.single_eq_of_ne (fun h => hc (ULift.ext _ _ h)), zpow_zero]
+  · rw [Pi.single_eq_of_ne (fun h => hc (ULift.ext h)), zpow_zero]
 
 theorem torusEntry_mulSingle (c : ULift.{u} (Fin n)) (U : Aˣ) (p : Fin (n + 1)) :
     torusEntry (Pi.mulSingle c U) p = U ^ weightCoord n p c.down :=

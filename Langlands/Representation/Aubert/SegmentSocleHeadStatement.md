@@ -1,7 +1,5 @@
 # Aubert duality from the segment socle to its special head
 
-Author: Worker 320.
-
 `Langlands.Aubert.SegmentSocleHeadStatement F T` states the segment case of
 Aubert's Theorem 2.3 for the existing unadjusted alternating operator. It is
 a proposition definition. The module supplies no proof of the duality

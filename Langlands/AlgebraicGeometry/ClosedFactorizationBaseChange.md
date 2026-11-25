@@ -1,6 +1,6 @@
 # Base change of full-product factorization
 
-Worker 445. This is internal categorical infrastructure for the universal
+This is internal categorical infrastructure for the universal
 closed-factorization locus. It derives its constructions from Mathlib's chosen
 pullbacks, the adjunction `Over.mapPullbackAdj`, and the monoidal structure on
 `Over.pullback`; it does not assert an additional literature theorem.

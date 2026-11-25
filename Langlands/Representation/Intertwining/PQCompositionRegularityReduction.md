@@ -1,6 +1,6 @@
 # Renard VII.3.5 (i): inheritance of regularity, reduced to Bruhat-order geometry
 
-Author: Worker 102. Module
+Module
 `Langlands.Representation.Intertwining.PQCompositionRegularityReduction`, namespace
 `Langlands.Aubert.General.RepresentedParabolic`. Universe parameters `u` (the field) and `v`
 (the representation).
@@ -9,12 +9,13 @@ This is a conditional reduction. It proves `PQCompositionRegularityStatement` (t
 part of clause 2 of the published `PQIntertwiningCompositionStatement`, stated on its own in
 `Langlands.Representation.Intertwining.PQIntertwiningCompositionReduction`) from one new
 proposition about double cosets, `PQCompositionBruhatStatement`. That proposition is not
-proved here, so `PQCompositionRegularityStatement` is not yet proved unconditionally.
+proved here; it is proved by `pqCompositionBruhat` in `PQCompositionLeviIntersection`, which
+also proves `PQCompositionRegularityStatement` unconditionally (`pqCompositionRegularity`).
 
-The recorded declaration is the definition `pqCompositionRegularityOfBruhat`, of type
+The reduction is recorded as the definition `pqCompositionRegularityOfBruhat`, of type
 `PQCompositionBruhatStatement.{u} → PQCompositionRegularityStatement.{u, v}`. It follows the
 Library pattern for conditional reductions. The module also uses the helper modules
-`PQRegularityPerClass` and `PieceKernelFaithful`, submitted with it.
+`PQRegularityPerClass` and `PieceKernelFaithful`, ported together with it.
 
 ## Notation
 
@@ -123,7 +124,7 @@ Assume `σ` is `P₁P₃`-regular. By `isPQRegular_iff_forall_piece` (`PQRegular
 
 `pqCompositionRegularityOfBruhat` is `pqCompositionRegularity_of_bruhat` as a definition.
 
-## How the Bruhat statement is expected to be proved (not part of this unit)
+## A proof route for the Bruhat statement (not part of this module)
 
 Item 1 and the first part of item 2 have two parts. The closure inclusions come from
 `P₂P₃ ⊆ P₁P₃`. This holds because `P₂ ⊆ P₁ (N̄₁ ∩ N₂)` and `N̄₁ ∩ N₂ ⊆ N₃` under the root

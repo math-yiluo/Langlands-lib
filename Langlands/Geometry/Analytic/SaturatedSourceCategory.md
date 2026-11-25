@@ -117,12 +117,11 @@ original-source quotient providing the size bound.
 
 ## Scope
 
-This unit supplies the category with actual source-subatlas quotient Homs,
+This module supplies the category with actual source-subatlas quotient Homs,
 its representative operations, comparison equivalence, localization
 universal property and literal-space formulas. It does not assert
 injectivity of source restrictions or faithfulness of `strongFunctor`.
 Identification with a separately specified full analytic-space category,
 actual analytic etale and quasi-etale morphisms and sites, equivariant
 sites, compact/distinguished domains and Harris tower specializations
-remain obligations of the surrounding task. Every predecessor retains
-its independent acceptance and publication gate.
+lie outside this module.

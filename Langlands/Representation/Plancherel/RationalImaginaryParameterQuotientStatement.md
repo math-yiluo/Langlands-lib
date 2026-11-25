@@ -3,7 +3,7 @@
 `RationalImaginaryParameterQuotientStatement` specifies the discreteness
 of the original periods and the compact imaginary quotient in Renard
 2026 V.3.20, printed p.116/PDF p.122. This file supplies a proposition,
-not a proof. Worker 6 authored this statement.
+not a proof.
 
 The registered source is David Renard, *Représentations des groupes
 réductifs p-adiques*, French version dated 9 July 2026,
@@ -75,7 +75,7 @@ its exact period fibers give the commuting homeomorphism. Compactness follows
 from the existing compactness of the actual-image unitary character
 group. The canonical unitary character homeomorphism transports the
 last two assertions to actual rational points. This paragraph is a proof
-plan, not accepted proof evidence.
+plan, not a proof.
 
 Algebraic torus representability and algebraic structure, the smooth
 real submanifold assertion, the character tensor-space and split-center

@@ -1,7 +1,5 @@
 # Continuous finite-cover gluing inside actual rational charts
 
-Author: Worker 56.
-
 This module transports continuous maps on actual finite full-domain covers
 through the constructed rational-chart locus homeomorphisms. The coefficient
 field is complete and ultrametric. Affinoid algebras retain their chosen

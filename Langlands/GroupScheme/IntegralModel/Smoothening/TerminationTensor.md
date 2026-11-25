@@ -1,6 +1,6 @@
 # Termination of the smoothening sequence: tensor density for the maximal locus
 
-Author: Worker 348. Internal helper module for Kaletha–Prasad, Theorem A.6.2. The route is internal
+Internal helper module for Kaletha–Prasad, Theorem A.6.2. The route is internal
 to this project: it is used to show that the comultiplication of `B = integralFunctions R K A`
 maps each member of the smoothening sequence into the span of its tensor square
 (`TerminationChain`).

@@ -18,7 +18,7 @@ variable {S : Scheme.{u}} {I : Type u} [Fintype I]
 
 /-- Restrict every endomorphism to the actual integer torsion scheme. -/
 abbrev maps (i : I) : GroupScheme.torsion A.toGrp n ⟶ GroupScheme.torsion A.toGrp n :=
-  GroupScheme.torsionMap (groupHom (f i)) n
+  GroupScheme.torsionMap (groupHom (f i).asHom) n
 
 variable [IsFinite (GroupScheme.torsion A.toGrp n).X.hom]
   [Etale (GroupScheme.torsion A.toGrp n).X.hom]
@@ -45,11 +45,11 @@ def component (i : I) :
 @[reassoc (attr := simp)]
 theorem component_inclusion (i : I) :
     component A n f i ≫ (subgroup A n f).inclusion =
-      (CommGroupScheme.torsionInclusion n).app A.toCommGroupScheme ≫ commHom (f i) := by
+      (CommGroupScheme.torsionInclusion n).app A.toCommGroupScheme ≫ commHom (f i).asHom := by
   change Additive.ofMul
     (GroupScheme.FiniteEtaleSum.component (maps A n f) i ≫
       (GroupScheme.FiniteEtaleSum.inclusion (maps A n f) ≫ GroupScheme.torsionι A.toGrp n)) =
-    Additive.ofMul (GroupScheme.torsionι A.toGrp n ≫ groupHom (f i))
+    Additive.ofMul (GroupScheme.torsionι A.toGrp n ≫ groupHom (f i).asHom)
   congr 1
   rw [← Category.assoc, GroupScheme.FiniteEtaleSum.component_inclusion,
     GroupScheme.torsionMap_ι]
@@ -59,12 +59,12 @@ theorem inclusion_comp_eq_zero_iff {H : CommGroupScheme S}
     (g : A.toCommGroupScheme ⟶ H) :
     (subgroup A n f).inclusion ≫ g = 0 ↔
       ∀ i, (CommGroupScheme.torsionInclusion n).app A.toCommGroupScheme ≫
-        commHom (f i) ≫ g = 0 := by
+        commHom (f i).asHom ≫ g = 0 := by
   change
     (GroupScheme.FiniteEtaleSum.inclusion (maps A n f) ≫
         GroupScheme.torsionι A.toGrp n) ≫ CommGroupScheme.groupHom g = 1 ↔
       ∀ i, GroupScheme.torsionι A.toGrp n ≫
-        groupHom (f i) ≫ CommGroupScheme.groupHom g = 1
+        groupHom (f i).asHom ≫ CommGroupScheme.groupHom g = 1
   simpa only [maps, ← Category.assoc, GroupScheme.torsionMap_ι] using
     (GroupScheme.FiniteEtaleSum.inclusion_comp_eq_one_iff (maps A n f)
       (GroupScheme.torsionι A.toGrp n ≫ CommGroupScheme.groupHom g))

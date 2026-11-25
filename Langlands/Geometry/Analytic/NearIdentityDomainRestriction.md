@@ -1,6 +1,6 @@
 # Near-identity fractions restricted to actual analytic domains
 
-This derived internal unit concerns Berkovich's test relation on analytic
+This internal module, derived infrastructure rather than a source statement, concerns Berkovich's test relation on analytic
 arrows represented by right fractions in the saturated strong localization.
 It works over complete ultrametric normed fields, with independent space
 and chart universes.
@@ -31,6 +31,6 @@ the restricted endomorphism and the identity, proving
 `IsNear.domainRestrict_id`.
 
 The ingredients are the proved actual-domain, strong test-relation,
-source-refinement and right-fraction APIs. This unit is infrastructure for
+source-refinement and right-fraction APIs. This module is infrastructure for
 continuity of restricted invariant-domain actions; it does not assert
 the cohomological comparison theorem.

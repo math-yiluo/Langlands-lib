@@ -1,6 +1,6 @@
 # Usual-topology continuity of restriction and finite-index induction
 
-Worker 17 authored this module. It proves that restriction and finite-index
+This module proves that restriction and finite-index
 induction preserve the usual-topology predicate `IsContinuous`. That predicate
 asks for continuity of the action into complex endomorphisms with Mathlib's
 module topology, which is the usual topology of a finite-dimensional complex
@@ -70,5 +70,3 @@ through it `Induction` and `Predicates`) and `Langlands.WeilDeligne.InductionAlo
 `5ed2965256430c3649e86755f9576b54eca72435` supplies `IsModuleTopology`, its
 finite-product instance, `IsModuleTopology.continuous_of_linearMap`,
 `IsModuleTopology.isTopologicalRing` and `continuous_of_continuousAt_one`.
-Compilation alone does not establish independent semantic acceptance or
-publication.

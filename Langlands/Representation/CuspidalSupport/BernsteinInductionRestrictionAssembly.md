@@ -5,7 +5,7 @@ from `BernsteinDecompositionStatement` at carrier universe `max uF uV` and
 `BernsteinBlockCharacterizationStatement` at the independent universes `uF`,
 `uV` to the exact published `BernsteinInductionRestrictionStatement`.
 `bernsteinInductionRestriction_of_decomposition_and_characterization` proves
-this implication. The original target pair and all its imports are unchanged.
+this implication.
 Neither global premise is proved by this module.
 
 The assembly first removes a separate support-uniqueness premise. An actual
@@ -39,6 +39,6 @@ registered as `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 Its proof composes the Library's actual normalized functors, support
 presentations, block orthogonality and the published arbitrary-input
-reduction by Worker 4822. The two explicit global hypotheses remain
-necessary inputs to this proof; it is not an unconditional proof receipt
-for the host task.
+reduction (`BernsteinInductionFromRestriction`). The two explicit global hypotheses remain
+necessary inputs to this proof; it is not an unconditional proof of
+`BernsteinInductionRestrictionStatement`.

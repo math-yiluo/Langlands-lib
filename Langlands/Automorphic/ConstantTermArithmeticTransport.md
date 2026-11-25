@@ -1,6 +1,6 @@
 # Arithmetic covariance of actual normalized constant terms
 
-Worker 2. Internal derived construction from `AdeleQuotientTransport`,
+Internal derived construction from `AdeleQuotientTransport`,
 `ConstantTerm`, and `AmbientArithmeticTransport`, with the probability
 uniqueness theorem for additive Haar measures in pinned Mathlib. There is no
 new identification with original literature.

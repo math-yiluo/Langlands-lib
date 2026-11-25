@@ -2,9 +2,9 @@
 
 Module `Langlands.Representation.RankinSelberg.TwoBlockFirstBlockQuotientAnalysis`.
 Namespace `Langlands.RankinSelberg.TwoBlockFirstBlockQuotient`.
-Author: Worker 117. The analytic organization follows the published helper
-`TwoBlockUnipotentQuotientAnalysis` by Worker 235; all group data used here are
-the first-block data by Worker 823.
+The analytic organization follows the published helper
+`TwoBlockUnipotentQuotientAnalysis`; all group data used here are the
+first-block data of `TwoBlockFirstBlockQuotientData`.
 
 This is an internal helper for the proof of the existing
 `TwoBlockFirstBlockQuotientIntegrationStatement`. For an arbitrary canonical

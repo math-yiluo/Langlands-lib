@@ -147,9 +147,9 @@ def scaleStalkLattice (a : F) (V : ModuleCat.{u} F)
 def rationalPiStalkAut (M : X.Sheaf (ModuleCat.{u} (PiAlgebra d π)))
     (hπ : algebraMap O F π ≠ 0) (x : X) :
     Aut (rationalLatticeStalk F X d π M x) :=
-  (TopCat.Presheaf.stalkFunctor (ModuleCat.{u} F) x).mapIso
+  Aut.of ((TopCat.Presheaf.stalkFunctor (ModuleCat.{u} F) x).mapIso
     ((sheafToPresheaf (Opens.grothendieckTopology X) (ModuleCat.{u} F)).mapIso
-      (rationalPiAut F X d π M hπ))
+      (rationalPiAut F X d π M hπ).asIso))
 
 namespace FramedLatticePiSheaf
 
@@ -161,7 +161,7 @@ def translatedFrameStalkLattice (hπ : algebraMap O F π ≠ 0) (n : ℤ) (x : X
       (rationalLatticeStalk F X d π M.lattice.sheaf x)) :=
   (M.frameStalkLattice F x).map
     (((ModuleCat.restrictScalars (algebraMap O F)).map
-      ((rationalPiStalkAut F X d π M.lattice.sheaf hπ x ^ n).hom)).hom)
+      ((rationalPiStalkAut F X d π M.lattice.sheaf hπ x ^ n).asIso.hom)).hom)
 
 /-- The source's literal pi^(-n) wedge^d(Pi^n r O^d) in total rational eta. -/
 def normalizedFrameDeterminant (hπ : algebraMap O F π ≠ 0) (n : ℤ) (x : X) :

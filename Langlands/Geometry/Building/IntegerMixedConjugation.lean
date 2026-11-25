@@ -105,6 +105,8 @@ theorem conjugate_double_opposite_mem_root_centralizer_block
   let n : normalizerPoints B.i := ⟨p.1 * u * p.2, hp.2.2⟩
   have hnflip : weylAction B.i n a = -a :=
     hp.weylAction_eq_neg B.i hT ha.1 hu.1 hu1
+  have : AddMonoidHomClass (characterLattice B.S ≃ₗ[ℤ] characterLattice B.S) _ _ :=
+    SemilinearMapClass.instAddMonoidHomClass _
   have hnflipNeg : weylAction B.i n (-a) = a := by
     rw [map_neg, hnflip, neg_neg]
   obtain ⟨W, hW⟩ := KPApartmentData.exists_smul_val_eq_vadd n x

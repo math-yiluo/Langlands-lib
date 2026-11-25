@@ -1,6 +1,6 @@
 # Geometric-fibre and étale-local reductions for the Borel locus
 
-Workers 597 and 647. The internal proposition
+The internal proposition
 `RelativeBorelLocusClopenReductionStatement` states that affine étale split
 maximal-torus charts imply clopenness of the Borel locus. The supporting lemmas
 combine the Borel-locus transport and weight-recognition interfaces. The final
@@ -10,8 +10,9 @@ theorem proves the exact
 the chart-existence statement.
 
 This is a derived logical reduction from the stated Library interfaces, with
-no additional literature assertion. Acceptance of this unit leaves the
-unconditional host target open until the chart-existence premise is proved.
+no additional literature assertion. The unconditional target is proved in
+`BorelLocusProof` (`relativeBorelLocusClopen`), from the chart-existence theorem
+`relativeParabolicSplitMaximalTorusCharts` of `SplitMaximalTorusChartProof`.
 
 `isGeometricBorelSubgroup_residueFiber_iff` identifies the residue-field
 geometric Borel condition with Borelness on the actual chosen geometric fibre.

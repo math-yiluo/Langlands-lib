@@ -1,7 +1,5 @@
 # Trigonalizable groups and stable flags (Milne 16.2, (a) ⇔ (b))
 
-Author: Worker 158.
-
 This helper module proves the first equivalence of
 `Langlands.GroupScheme.TrigonalizableCharacterizationStatement` (see
 [`CharacterizationStatement`](CharacterizationStatement.md)): an affine group

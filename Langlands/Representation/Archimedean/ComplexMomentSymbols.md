@@ -36,7 +36,7 @@ Polynomials `Pol n` in the coordinates `v_p` (`vV p`) and the dual coordinates `
 
 ## Provenance
 
-Internal infrastructure of Task 7064 for the proof of `ComplexStandardHolomorphicGrowthStatement`
+Internal infrastructure for the proof of `ComplexStandardHolomorphicGrowthStatement`
 (Library module `ComplexLinkedLanglandsQuotientGrowth`); see
 `ComplexStandardHolomorphicGrowthProof.md` for the overall argument. The module introduces no
 statement from the literature, and all its results are proved here.

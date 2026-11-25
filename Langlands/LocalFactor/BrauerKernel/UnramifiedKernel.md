@@ -1,7 +1,6 @@
 # Brauer relations among unramified twists over unramified extensions
 
-Author: Worker 1838. This is a supporting unit for task
-`92a3d086-a5ad-476f-9fd9-aa9d4eaa3778`, which must prove
+This is a supporting module for the proof of
 `Langlands.LocalFactor.NonabelianBrauer.KernelCompatibilityStatement`. It proves the
 kernel identity for one special class of actual relations: those in which every
 generator lives over an extension with the base absolute ramification index, and
@@ -46,7 +45,7 @@ representation universe `uV` are independent.
 The hypothesis that `n(ψ ∘ Tr) + a(β)` is the same for every generator is explicit.
 When the generator fields are unramified over `E` and `β` is the norm pullback of
 one character of `E`, it follows from `n(ψ ∘ Tr_{L/E}) = n(ψ)` and
-`a(α ∘ N_{L/E}) = a(α)`. Those two facts are a separate unit.
+`a(α ∘ N_{L/E}) = a(α)`. Those two facts are proved in a separate module.
 
 ## Provenance
 

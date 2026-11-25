@@ -1,6 +1,6 @@
 # Refinement of special formal division-order atlases
 
-This derived unit restricts a supplied special formal division-order atlas
+This module restricts a supplied special formal division-order atlas
 to an actual finer principal-open cover. It retains specialness, preserves
 the supplied height certificates in the forward direction, and constructs
 the natural equivalence on complete compatible families.
@@ -23,7 +23,7 @@ integer-ring algebra R. Put d = `CentralSimple.reducedDegree K D`.
 The supplied `SpecialAtlas` has coordinate type `Fin d`, its actual
 division-order action, the explicit unramified full-degree subfield
 certificate, and geometric tangent-character certificates. These are the
-existing hypotheses of `SpecialAtlas`; this unit proves neither subfield
+existing hypotheses of `SpecialAtlas`; this module proves neither subfield
 existence nor specialization to Hasse invariant 1/d.
 
 The supplied `q : BasicAtlas.CoverRefinement X.atlas` includes an actual

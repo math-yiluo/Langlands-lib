@@ -1,13 +1,11 @@
 # The closed-immersion locus of a Hopf point is open
 
-Author: Worker 1421.
-
 For a Hopf point `α : A →ₐ[R] C[M]` (`HopfPointExtension.IsHopfPoint`), the
 homomorphism `D(M) → Spec A` over `Spec C` is a closed immersion exactly when
 the `C`-linear extension `C ⊗[R] A → C[M]` is surjective. This module shows
 that this surjectivity spreads from a residue field to a principal open
-neighbourhood. It is an internal module for the chart construction of task
-`45ac6e52-a4d8-4414-91f1-03c3be35223e`. The Library has a version for
+neighbourhood. It is an internal module for the chart construction for the
+closed torus subgroup functor. The Library has a version for
 bialgebra maps over the base ring,
 `CommutativeAlgebra.DiagonalCoalgebraLocus.exists_away_surjective`; this module
 adapts its certificate argument to Hopf points over an arbitrary coefficient

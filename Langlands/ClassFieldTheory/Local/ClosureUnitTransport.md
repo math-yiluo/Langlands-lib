@@ -1,7 +1,5 @@
 # Unit coefficients for compatible closure transport
 
-Author: Worker 134.
-
 `absoluteRestrictionCoefficientsIso K E` upgrades the existing
 `absoluteRestrictionCoefficients K E` to an isomorphism of topological
 representations. Its source is `absoluteUnits K` restricted along the actual
@@ -47,7 +45,7 @@ This is a derived internal construction from the preceding
 and Mathlib's unit and linear equivalence constructions. It implements the
 compatible group/coefficient maps described by Serre, *Local Fields* (1979),
 Chapter X, section 4, printed page 156 / PDF page 162, immediately before
-Proposition 5. Worker 134 read this source directly, together with section 3
+Proposition 5. This source was read directly, together with section 3
 on continuous cochains. The registered source is `serre-1979-local-fields`,
 SHA256 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`,
 at `/home/taskhub/central-library/Serre--Local Fields--1979.pdf`. No project

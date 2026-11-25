@@ -1,7 +1,5 @@
 # Minimal pseudo-parabolic subgroups over a field
 
-Author: Worker 1335.
-
 This module defines `Langlands.GroupScheme.IsMinimalPseudoParabolicSubgroup`
 for an actual homomorphism `i : P ⟶ G` of group schemes over
 `Spec (CommRingCat.of k)`, for any field `k : Type u` and arbitrary universe

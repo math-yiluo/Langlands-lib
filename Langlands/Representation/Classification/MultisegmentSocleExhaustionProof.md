@@ -1,7 +1,5 @@
 # Independent Zelevinsky multisegment socle exhaustion
 
-Author: Worker 494.
-
 This module proves the unchanged proposition
 `Langlands.Classification.MultisegmentSocleExhaustion.{uF,uV} F T` from
 `Langlands.Representation.Classification.MultisegmentClassificationStatement`.
@@ -74,24 +72,18 @@ The direct representation-theoretic proof modules are
 `OrderedMultisegmentSocleExistenceProof`,
 `SegmentSocleEmbeddingExistence`, and `CuspidalIntegralTwistFreenessProof`.
 The last embedding module and the conditional combinatorial and actual-data
-adapters were separately published as supporting constructions for this task.
+adapters were separately published as supporting constructions for this proof.
 Every conditional premise used by those adapters is discharged here by a
 proved theorem.
 
-In particular, the exact linked reduction was independently approved by
-Reviewer 11702 under review `b5c282b5-fcc4-4f72-8fc2-3c5900ff455e` and
-published as artifact `668c8c0c-020f-4fac-b8ce-0df8f954a145` at Library
-commit `1fddae33727cfcfcc52ed326c69373200a28ff87`. Its original validator
-`80dbd988-6f88-44cf-a251-d80fa41b10c4` passed Lake build, exact-target,
-unchanged-statement and frozen-input checks. The adjacent-swap theorem was
-independently approved under `7764f636-00f0-49e0-bf03-e76a7f7b1696` and
-published as `1e21b958-60f9-48ee-85b5-e8c69928e016`. Ordered strong-socle
-existence was independently approved under
-`3fc37caf-af93-467a-8264-a0ba10b03378` and published as
-`987cfe05-0662-4431-a4fa-40156b59a263`. Their complete unapplied types have
+In particular, the exact linked reduction was published at Library
+commit `1fddae33727cfcfcc52ed326c69373200a28ff87`, after Lake build,
+exact-target, unchanged-statement and frozen-input checks. The adjacent-swap
+theorem and ordered strong-socle existence are published Library theorems as
+well. Their complete unapplied types have
 only the stated prime, field and topology arguments, with independent universe
-parameters. These receipts establish the input publication boundary; they
-are not mathematical hypotheses of this theorem.
+parameters. These facts about the inputs are not mathematical hypotheses of
+this theorem.
 
 The implemented proof is the direct socle argument of Zelevinsky,
 *Induced representations of reductive p-adic groups II* (1980), Theorem
@@ -115,8 +107,8 @@ exhaustion (`MultisegmentHeadExhaustion`), ordered special-head existence
 (`OrderedMultisegmentQuotientExhaustion`), `TemperedBlockUniqueness`,
 `SquareIntegrableLanglandsClassification`,
 `SquareIntegrableLanglandsExhaustion`, and
-`GLRegularLanglandsExhaustionStatement`. The exclusion includes proof
-successors and their transitive proof dependencies.
+`GLRegularLanglandsExhaustionStatement`. The exclusion includes their
+proofs and the transitive proof dependencies of those.
 
 Each substantive input was checked through its implemented proof and its
 transitive declarations before use. The initial cuspidal embedding uses
@@ -169,8 +161,6 @@ the complete unapplied theorem to the required independent-universe telescope.
 The declaration audit supplements the substantive proof-route checks above;
 a name scan alone does not establish mathematical independence.
 
-The theorem is checked in approved environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`. Its only axioms are `propext`,
-`Classical.choice` and `Quot.sound`. No target statement or imported pair is
-modified by this contribution. Development compilation does not replace
-independent semantic review, exact-target validation or publication.
+The theorem was checked in the Lean environment in which it was written. Its
+only axioms are `propext`, `Classical.choice` and `Quot.sound`. No target
+statement or imported pair is modified by this module.

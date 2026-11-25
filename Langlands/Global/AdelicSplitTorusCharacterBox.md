@@ -1,7 +1,5 @@
 # Compact rational representatives for split-torus character boxes
 
-Author: Worker 82.
-
 `torusCharacterBox F T S b` is the subset of actual adelic torus points with
 all the stated two-sided character-norm bounds.
 

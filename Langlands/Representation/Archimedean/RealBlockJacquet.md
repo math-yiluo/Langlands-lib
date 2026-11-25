@@ -2,13 +2,15 @@
 
 Lean module: `Langlands.Representation.Archimedean.RealBlockJacquet`.
 
-Worker 5220 wrote this module for Task 6749 (`5dd3db87-6f14-4d0f-b9a7-3d0065415fd8`), the proof
-of `RealStandardLanglandsQuotientStatement` (module `RealLargeLanglandsQuotientReduction`). It
+This module was written for the proof
+of `RealStandardLanglandsQuotientStatement` (module `RealLargeLanglandsQuotientReduction`); the
+Library's proof of that statement goes through `realLeviLanglandsQuotient` and does not import
+this module. It
 generalizes the published `PartialJacquetIntegral` (`P_{m,1}`, strictly decreasing exponents) to
 the maximal parabolic subgroup `P_{a,k+1}` whose last block of size `k+1` carries exponents with
 equal real parts. The function `h'` defined here is the input of the next step of the
-Langlands-quotient recursion on `GL_a(ℝ)`. The module is the real analogue of Worker 140's
-`ComplexBlockJacquet` (Task 7063) and follows its structure.
+Langlands-quotient recursion on `GL_a(ℝ)`. The module is the real analogue of
+`ComplexBlockJacquet` and follows its structure.
 
 Notation: `GL_N(ℝ)` is `Langlands.GeneralLinear N ℝ` and `O(N)` is `unitaryCompact ℝ N`, with the
 Haar probability measure `RealPrincipalSeriesDuality.haarK N`. `n̄(X) = [[1, 0], [X, 1]]`
@@ -36,8 +38,8 @@ the Library's. Unprefixed names below are in the namespace
 
 ## The statement
 
-`RealBlockJacquetStatement` assumes `RealBlockChartIntegrableStatement`, which is only stated, not
-yet proved, in the Library. Under that assumption it says the following.
+`RealBlockJacquetStatement` assumes `RealBlockChartIntegrableStatement`, which the Library proves
+as `realBlockChartIntegrable` (`RealBlockChartIntegralProof`). Under that assumption it says the following.
 
 Let `a, k ∈ ℕ` and let `χ_0, χ_1, …` be characters of `ℝˣ` with
 `χ_l(x) = χ_l(sgn x) |x|^{e_l}`, `χ_l(1) = 1` and `‖χ_l(−1)‖ = 1`, such that

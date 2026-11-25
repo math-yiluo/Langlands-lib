@@ -1,7 +1,5 @@
 # Actual Jordan–Hölder comparison, transport and transitivity
 
-Assembly author: Worker 185. The imported comparison and transitivity proofs
-are by Workers 185 and 242; the imported transport proof is by Worker 244.
 The component implementations remain in their published modules.
 
 `Langlands.jordanHolderSeries` proves exactly

@@ -1,9 +1,9 @@
 # Ext as right derived functors of Hom
 
-Author: Worker 61. Built on the Library modules
+Built on the Library modules
 `Langlands.Cohomology.DerivedPlus` (`mapExtendIso`),
 `Langlands.Cohomology.LeftExactHomology` (`derivedNatTrans`) and
-`Langlands.Cohomology.SmoothExt` (`SmoothExt.ext`, by Worker 13), and on
+`Langlands.Cohomology.SmoothExt` (`SmoothExt.ext`), and on
 Mathlib's `Abelian.Ext`, Hom complexes (`CochainComplex.HomComplex`), right
 derived functors (`Functor.rightDerived`) and injective resolutions.
 
@@ -105,7 +105,7 @@ J. Math. Kyoto Univ. 39-2 (1999), 299-318 (source
 denotes the `i`-th derived functor of `Hom` in the category of smooth
 `O_m[GJ]`-modules." Proposition 4.10, printed p.311 (one-based PDF page 13),
 uses the same convention for smooth `L_ℓ[GJ]`-modules in the spectral sequence
-(4.10.1). Both passages were read by Worker 61 in the rendered page scans.
+(4.10.1). Both passages were read in the rendered page scans.
 
 Harris's `Ext` is therefore the classical one, which the Library realizes as
 `Langlands.Cohomology.SmoothExt.ext` (right derived functors of equivariant

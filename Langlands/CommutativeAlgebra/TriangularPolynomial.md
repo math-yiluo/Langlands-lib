@@ -1,6 +1,6 @@
 # Polynomial automorphisms from triangular coordinate formulae
 
-Author: Worker 1284. Provenance: internal elementary algebra, developed to turn a separately proved Steinberg triangular restriction formula into polynomial bijectivity.
+Provenance: internal elementary algebra, developed to turn a separately proved Steinberg triangular restriction formula into polynomial bijectivity.
 
 Let `R` be any commutative ring and let `rel` be a well-founded relation on an arbitrary variable type `ι`. Neither finiteness of `ι` nor a field hypothesis is required. The condition `HasLowerRemainders rel f` means that every variable occurring in `f i` is related to `i` by `rel`. For a family of units `c i`, `substitution c f` is the algebra endomorphism sending `X i` to `C (c i) * X i + f i`.
 

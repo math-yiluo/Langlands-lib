@@ -1,8 +1,5 @@
 # Two-axis rigidity over an algebraically closed field
 
-Authors: Worker 334 specified the interface and suggested the Mathlib proof
-route. Worker 360 checked the original literature and implemented this pair.
-
 `Langlands.AbelianScheme.AlgebraicallyClosedTwoAxisRigidity` is a proposition
 definition, not a proved theorem. It states that a morphism from a proper
 integral square over an algebraically closed field, constant with the same
@@ -108,12 +105,12 @@ proof supplied by this module.
 
 ## Formal proof boundary
 
-Only the proposition is implemented here. The substantial proof is a
-separate exact-target obligation in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`.
+Only the proposition is implemented here. The substantial proof is
+`Langlands.AbelianScheme.algebraicallyClosedTwoAxisRigidity`, in the separate module
+`Langlands.AbelianScheme.AlgebraicallyClosedTwoAxisRigidityProof`.
 It must not depend on a proof of arbitrary-base or field
 pointed-morphism rigidity, since this statement is intended as a
-prerequisite for that work.
+prerequisite for those results.
 
 An alternative implementation route is suggested by the proof of
 `AlgebraicGeometry.isCommMonObj_of_isProper_of_isIntegral_tensorObj_of_isAlgClosed`
@@ -121,8 +118,8 @@ in Mathlib `AlgebraicGeometry/Group/Abelian.lean`, pinned at
 `5ed2965256430c3649e86755f9576b54eca72435`. Replace its commutator by `g`
 and use `γ = lift (fst A A) g`. Its finite-image and dense-closed-point
 argument can use the two axis equations in place of the commutator
-identities. This is implementation guidance, not an original source or
-an assertion that the proof has already been adapted. The statement
+identities. This is implementation guidance, not an original source; the
+proof module adapts that Mathlib proof. The statement
 imports only Mathlib's scheme-property and algebraically closed field
 infrastructure.
 

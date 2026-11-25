@@ -1,7 +1,5 @@
 # Recovery and uniqueness of actual admissible descent
 
-Author: Worker 1726.
-
 This internal construction defines `matchingSubgroup` by applying all-test
 subgroup descent to the local admissible families after the actual ambient
 pullback comparison. Under `IsMatchingAdmissible`, its ordinary base change

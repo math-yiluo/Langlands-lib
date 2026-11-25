@@ -1,7 +1,5 @@
 # Algebraic helpers for the persistence of the inducing exponent
 
-Author: Worker 5120.
-
 This module proves general facts about generalized eigencharacters, finite length and
 divisibility. They are used by the persistence modules
 `InducedTwistPersistence{Endpoints,Wall,Pieces,Genericity}`. All declarations are in

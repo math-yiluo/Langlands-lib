@@ -1,7 +1,5 @@
 # Actual affine group points and the general affine point carrier
 
-Author: Worker 1203.
-
 This is an internal comparison of two published constructions, with no new
 algebraic or analytic hypotheses. `G` is an actual group scheme over `Spec R`
 and `A` is an `R`-algebra. `G.affinePoints A` and
@@ -34,7 +32,8 @@ preserves the group law.
 The provenance is internal: the two existing homeomorphisms use the same
 `affineSchemePointEquiv`, and `affineSchemePointEquiv_evaluation` already
 identifies that equivalence with group-point evaluation. The proof uses their
-inverse identities and the definitional group-object law. This unit constructs
+inverse identities and the definitional group-object law. This module constructs
 no manifold and proves no smoothness assertion. The algebraic smoothness to
-manifold construction and the smooth-family comparison remain separate
-obligations in task `ab4a68f8-804a-4381-88f6-4f97d57779a7`.
+manifold construction and the smooth-family comparison are proved separately,
+by `smoothAffineGroupManifold` in
+`Langlands.GroupScheme.AffinePointRegularLieGroupProof`.

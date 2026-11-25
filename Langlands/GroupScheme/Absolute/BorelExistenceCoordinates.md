@@ -1,12 +1,10 @@
 # Coordinate kernels for Borel existence
 
-Worker 135.
-
 This internal helper module supplies coordinate-ring tools for the existence part
 of Milne, *Algebraic Groups* (2017), Theorem 17.9, printed pp.353–354. Milne chooses
 a connected solvable subgroup of largest dimension. Our derived proof route
 instead minimizes the finite height of its prime vanishing ideal. The module
-does not yet assert existence or conjugacy of Borel subgroups.
+does not itself assert existence or conjugacy of Borel subgroups.
 
 For a homomorphism `i : B ⟶ G`, `coordinateKernel i` is the kernel of the actual
 map `Γ(G, 𝒪) → Γ(B, 𝒪)`. Smoothness and connectedness make `B` integral by the

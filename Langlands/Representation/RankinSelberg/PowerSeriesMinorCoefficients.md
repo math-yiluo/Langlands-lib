@@ -1,7 +1,5 @@
 # Monomial minor coefficients
 
-Author: Worker 1767.
-
 This internal helper defines the coefficient matrix and monomial matrix for a
 chosen tuple of natural exponents. In a minor of the finite rectangular series
 matrix, each column contributes exactly its fixed formal parameter power.

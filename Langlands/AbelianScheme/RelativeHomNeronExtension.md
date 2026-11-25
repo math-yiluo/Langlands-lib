@@ -1,10 +1,8 @@
 # Extension of homomorphisms of abelian schemes over discrete valuation rings
 
-Authors: Worker 1042.
-
-Module `Langlands.AbelianScheme.RelativeHomNeronExtension`. Written for task
-`6d6cc279-3071-445f-adba-589e54d9816b` (projective representability of the relative endomorphism
-functor of a projective abelian scheme). It proves the hypothesis
+Module `Langlands.AbelianScheme.RelativeHomNeronExtension`. Part of the proof of projective
+representability of the relative endomorphism functor of a projective abelian scheme
+(`relativeEndomorphismRepresentability`, module `RelativeEndomorphismRepresentability`). It proves the hypothesis
 `Langlands.AbelianScheme.NeronHomExtension.{u}` of
 `Langlands.AbelianScheme.RelativeEndomorphismRepresentabilityOfPieces`, and with it reduces the
 target `Langlands.AbelianScheme.RelativeEndomorphismRepresentabilityStatement.{u}` to the single
@@ -67,8 +65,8 @@ homomorphisms.
 
 ## Dependencies
 
-- `Langlands.AbelianScheme.RelativeEndomorphismRepresentabilityOfPieces` (same contribution).
-- Ported FLT modules (same contribution):
+- `Langlands.AbelianScheme.RelativeEndomorphismRepresentabilityOfPieces` (companion module).
+- Ported FLT modules (companion modules):
   `Langlands.AnthropicFLT.Theorems.Thm_NeronModelInfra_NeronModelPropertyBundle_of_abelianSchemePropertyBundle`,
   `Langlands.AnthropicFLT.Theorems.Thm_NeronModelInfra_genericFibreRestrict_injective_of_flat_of_isSeparated`.
 - Library: `Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_RelativeGroupLawGrpObj`.

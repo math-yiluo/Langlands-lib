@@ -1,16 +1,12 @@
 # Renard II.2.2: local vanishing and relative support closedness
 
-Worker 633 authored these statement definitions. Worker 6 supplied the
-original-source audit, focused interface specification and intended local
-vanishing route.
-
 The governing original is David Renard, *Représentations des groupes réductifs
 p-adiques*, French version dated 9 July 2026, II.2.2, printed p.37 /
 one-based PDF p.43: the support definition, proposition and its proof. The
 registered source is `renard-2026-representations-groupes-reductifs-padiques`,
 SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 PDF pp.43–44 were read in full; the beginning of printed p.38 / PDF p.44
-places the later compact-section definition outside this statement unit.
+places the later compact-section definition outside this statement module.
 
 The supplementary 2010-edition *Corrections et compléments*, registered as
 `renard-2010-corrections-complements`, SHA256
@@ -103,5 +99,5 @@ domain has no point to quantify.
 The exact proof of the published aggregate, compact-section additive
 structures and maps, arbitrary-open compact restriction issues,
 original-section support comparisons, canonical-unit invertibility,
-clopen zero extension and II.2.4 exhaustion remain separate units.
+clopen zero extension and II.2.4 exhaustion are not part of this module.
 This statement family does not complete II.2.2.

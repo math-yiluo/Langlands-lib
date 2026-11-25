@@ -1,7 +1,5 @@
 # Exactness of the mirabolic minus functors
 
-Author: Worker 749.
-
 This module states that the four published mirabolic minus functors of
 `Langlands.Representation.Derivative.MirabolicMinus` preserve short exact
 sequences. These are unnormalized `Ψ⁻`, unnormalized `Φ⁻`, normalized `Ψ⁻`

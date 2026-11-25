@@ -1,6 +1,6 @@
 # Rational normalizer representatives for descended rank-one fixed cosets
 
-This internal unit constructs rational normalizer representatives for fixed
+This internal module constructs rational normalizer representatives for fixed
 cosets in the descended-conjugation setting. It works over every field
 `k : Type u`, with all scheme tests. Let `i : T.toGrp → G` be an actual maximal
 split torus of a smooth affine group scheme. Let `a` be a nonzero character of
@@ -69,10 +69,12 @@ and set `n = g*u`. Membership `u ∈ U ⊆ P` and the exact fiber condition give
 The argument is derived internally from the actual local parabolic conjugacy
 theorem, the published all-test fixed-coset range inclusion, character power
 maps and fpqc equality descent. It does not translate a further literature
-assertion or call general rational Bruhat, a Tits-system result or the host
-rank-one factorization theorem.
+assertion or call general rational Bruhat, a Tits-system result or the
+rank-one factorization theorem that this module serves.
 
 The quotient morphism and the rational lift `g` of the fixed coset are supplied.
-The unit constructs neither a proper flag quotient, an orbit limit or its
-rational lift, a nontrivial Weyl element, nor a two-cell covering. The host
-`RootRankOneFactorizationStatement` remains a separate proof obligation.
+The module constructs neither a proper flag quotient, an orbit limit or its
+rational lift, a nontrivial Weyl element, nor a two-cell covering. The statement
+`RootRankOneFactorizationStatement`, which this module serves, is proved
+separately, as `rootRankOneFactorization` (module
+`Rational.RootRankOneFactorizationProof`).

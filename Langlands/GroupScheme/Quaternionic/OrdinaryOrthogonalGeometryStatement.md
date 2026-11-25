@@ -1,11 +1,10 @@
 # Smoothness and absolute almost-simplicity of even orthogonal groups
 
-Authors: Worker 5196.
-
 Module `Langlands.GroupScheme.Quaternionic.OrdinaryOrthogonalGeometryStatement`, namespace
 `Langlands.GroupScheme.Quaternionic`. This module states, without proof, the geometric facts
-about ordinary even-dimensional orthogonal groups that Task 5397 needs. It is a statement
-only; its proof is a separate task.
+about ordinary even-dimensional orthogonal groups that the proof of `LocalSpinRankOneStatement`
+needs. It is a statement only; its proof is `ordinaryOrthogonalGeometry` in the module
+`OrdinaryOrthogonalGeometryProof`.
 
 ## Statement
 
@@ -51,8 +50,9 @@ The objects used are all published:
   alternating of odd size, so it is never invertible and the hypothesis would be empty.
   Moreover `O(q)` is not smooth in odd rank in characteristic `2` (Conrad, Theorem C.1.5).
 - **No characteristic hypothesis.** The statement quantifies over every field `K : Type u`.
-- **Index type `Fin (2 * m)`** follows the task specification. The published constructions
-  take `n : Type`.
+- **Index type `Fin (2 * m)`** is the index type of the scalar form produced by
+  `QuaternionicMoritaIsometryStatement`, to which this statement is applied. The published
+  constructions take `n : Type`.
 
 ## Ordinary quadratic-form interpretation
 
@@ -101,7 +101,7 @@ Proposition 24.1). The base change of the identity component is the identity com
 the base change (published `identityComponent` base-change isomorphism `baseChangeIso`). Over
 `K`, `O(q)⁰` is semisimple because its base change to `L` is. It is almost simple because a
 smooth connected closed normal `K`-subgroup base-changes to such a subgroup over `L`. These
-are the facts the proof task has to formalize.
+are the facts a proof has to formalize.
 
 - B. Conrad, *Reductive group schemes*, in *Autour des schémas en groupes I*, Panoramas et
   Synthèses 42–43, SMF, 2014 (`conrad-2014-reductive-group-schemes`); printed page = PDF
@@ -134,6 +134,6 @@ are the facts the proof task has to formalize.
 - Motivation: Tits, Bourbaki exposé 505 (1977), 1.1.6, printed p. 220 / PDF p. 4
   (`tits-1977-whitehead-bourbaki-505`), and Tits 1966, Table II, printed pp. 56–57 / PDF
   pp. 61–62 (`tits-1966-classification-algebraic-semisimple`). Over a splitting field, the
-  quaternionic groups of type `D` that Task 5397 studies become even orthogonal groups. This
+  quaternionic groups of type `D` of `LocalSpinRankOneStatement` become even orthogonal groups. This
   statement supplies the split-side geometry, and the Morita comparison is a separate
   statement (`QuaternionicMoritaIsometryStatement`).

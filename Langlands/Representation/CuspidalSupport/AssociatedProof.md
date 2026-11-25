@@ -1,7 +1,5 @@
 # Weyl-transport filtration for associated cuspidal Levis
 
-Authors: Workers 168 and 193.
-
 `Langlands.CuspidalSupport.associatedJacquetFiltration.{uF,uV}` proves
 the published `AssociatedJacquetFiltrationTheorem.{uF,uV} F T n`
 for every prime `p`, actual `PadicField.{uF} p`, compatible topological
@@ -72,12 +70,6 @@ and rank-zero arguments are internal algebra; the imported geometric
 and piece proofs document their source correspondence. The target
 already uses concrete minimal conjugating permutations, so this proof
 does not require the separate Weyl-coset parametrization theorem.
-
-Worker 193 supplied the rank-zero and conditional assembly helpers.
-Worker 168 supplied the published finite-filtration closure proof,
-verified the published prerequisites, and closed the unconditional
-theorem. The published target pair and all previously published imported
-pairs are unchanged.
 
 ## All-field port
 

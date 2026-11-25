@@ -1,6 +1,6 @@
 # Coefficient pullback of section composition, inverses and local isogenies
 
-This internal unit derives structural laws and actual isogeny constructions
+This module derives structural laws and actual isogeny constructions
 from the coefficient pullback of the genuine rational Hom sheaf. It claims
 no separately sourced theorem.
 
@@ -44,7 +44,9 @@ inverses and composition, and agrees with the existing coefficient maps on
 integral isomorphisms and global tensor quasi-isogenies. Only the last
 comparison additionally assumes that `O` is a domain and `F` its fraction field.
 
-This unit does not construct an inverse for an arbitrary local quasi-isogeny,
+This module does not construct an inverse for an arbitrary local quasi-isogeny,
 prove finite-kernel composition, or identify local quasi-isogenies with
 all invertible rational sections. The identity and composition laws for
-successive changes of the coefficient ring remain further coherence work.
+successive changes of the coefficient ring are proved in
+`RationalSectionCoefficientCoherence` (`RationalSection.baseChange_identity_transport`
+and `RationalSection.baseChange_composite_transport`).

@@ -1,6 +1,6 @@
 # Smooth connected maps on actual adelic levels
 
-This derived unit assumes the exact `SpaceUniformLangWeilStatement` and
+This module assumes the exact `SpaceUniformLangWeilStatement` and
 specializes `SmoothDimensionUniformLifts` to actual rings of S-integers. Both
 spaces are separated and finite type. Their map is smooth with nonempty
 geometrically connected fibres; its relative dimension need not be constant.
@@ -31,4 +31,4 @@ openness requires S to be nonempty.
 All provenance is internal: uniform lifting across the actual finite dimension
 strata, residue-cardinality finiteness, complete-valuation-ring Henselianity,
 and the coordinate openness reduction. The Lang–Weil premise remains explicit;
-this unit does not prove the unconditional adelic smooth-openness statement.
+this module does not prove the unconditional adelic smooth-openness statement.

@@ -1,7 +1,5 @@
 # Actual function witnesses for a corrected filtration step
 
-Author: Worker 1312, task `277860be-2aeb-4a85-8ccb-f1e2e5c573b9`.
-
 This internal reduction works with the published `CorrectedFiltration.step`
 itself. It introduces `IsStepWitness`, a proposition about an actual function
 in `term P M U h hclosed A s`. The function is supported in the upper modified

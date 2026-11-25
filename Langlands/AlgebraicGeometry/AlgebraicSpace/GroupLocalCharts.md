@@ -7,7 +7,7 @@ field. Write `F := G ⋙ forget`. Assume `F` is an fppf sheaf with closed-immers
 It has an etale map `a : Y(U) ⟶ F` from a scheme `U` locally of finite type over `k`.
 
 This module uses the dense affine open proposition `SeparatedDenseAffineOpenLFTProp` (the
-published dense affine open statement together with local finite type of the affine open;
+dense affine open statement together with local finite type of the affine open;
 proved in `SeparatedDenseAffineOpenReduction`) as a hypothesis `hS1`. It uses the affine
 quotient statement (Stacks 03BM) through `GaloisAffineDescent`. All affine opens are tracked as
 `IsLFTAffineOpen`, so the final chart is locally of finite type.
@@ -31,7 +31,7 @@ Data: an affine nonempty `U₀` locally of finite type over `k`, an etale chart
    needed.
 2. `b` is etale by `CoproductChart.isEtale_of_forall_ι`.
 3. The sheafified image `Q` of `b` is a separated algebraic space with the affine etale
-   surjective atlas `V`. This uses Worker 1150's `OpenSubfunctorImages`.
+   surjective atlas `V`. This uses `OpenSubfunctorImages`.
 4. `hS1` gives an affine open `A ⊆ Q`, represented by a scheme locally of finite type, whose
    preimage in `V` is dense.
 5. The preimages in `U₀` of the `τ`-th components are dense opens. Their finite intersection

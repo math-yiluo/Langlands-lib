@@ -1,6 +1,6 @@
 # Naturality and nested images of clopen zero extension
 
-Downstream laws: Worker 865, using Worker 6's core construction.
+Downstream laws, using the core construction of `Langlands.Sheaf.ClopenExtension`.
 
 For an actual Mathlib sheaf of abelian groups, with independent space and group
 universes, this module proves that its clopen zero extension commutes with actual

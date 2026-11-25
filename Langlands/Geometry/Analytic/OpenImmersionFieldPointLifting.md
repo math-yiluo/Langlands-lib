@@ -1,9 +1,10 @@
 # Field-valued point lifting along analytic open immersions
 
-Author: Worker 309. This internal helper supplies exact lifts of full
+This internal helper supplies exact lifts of full
 field-valued points along analytic open immersions, using the actual
-analytic-domain restriction construction. It is an input to the rational
-inverse comparison in Task 7247, not a proof of that task's full target.
+analytic-domain restriction construction. It was written for the rational
+inverse comparison of `SpaceAnalytificationRationalPointsStatement` and does
+not prove that statement.
 
 Let `K : Type u` be a complete ultrametric normed field and let `L : Type uL`
 be any normed field with a normed `K`-algebra structure. Space and chart-index
@@ -64,4 +65,3 @@ It translates no additional external mathematical statement. The theorem
 concerns actual analytic open immersions and exact full field-valued point
 maps. It proves no lifting theorem for general étale maps, no residue-field
 descent, and no local-isomorphism theorem for étale maps at rational points.
-The latter remains a separate proposed prerequisite for the consumer.

@@ -1,6 +1,6 @@
 # Underlying supports and equality of translated global sections
 
-Worker 627. This internal construction uses the published point-support,
+This internal construction uses the published point-support,
 analytic support-descent, global-germ and twisted-action interfaces. It assumes
 no additional literature assertion.
 

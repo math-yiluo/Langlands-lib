@@ -1,7 +1,5 @@
 # Canonical heads and socles
 
-Author: Worker 23. Generalization of the head to an arbitrary field: Worker 375.
-
 The published relations `IsIrreducibleHead ρ π` and `IsIrreducibleSocle ρ π`
 (`Classification/ConstituentRelations`) say that `π` is the unique irreducible
 quotient, or the unique irreducible subrepresentation, of `ρ`. They make no

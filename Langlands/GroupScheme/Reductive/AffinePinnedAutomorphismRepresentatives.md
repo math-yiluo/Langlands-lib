@@ -1,7 +1,5 @@
 # Exact pinned representatives from supplied pinned full faithfulness
 
-Author: Worker 588.
-
 This internal conversion uses
 `AffinePinnedIsomorphismTheoremStatement` as an explicit hypothesis. It does
 not prove that statement or assert unconditional existence of representatives.

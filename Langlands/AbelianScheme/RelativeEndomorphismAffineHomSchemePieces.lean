@@ -50,7 +50,7 @@ theorem propertyBundle : AbelianSchemePropertyBundle R A.X.hom where
 /-- An H-projective abelian scheme carries an invertible module whose sections give a closed
 immersion into projective space, in the sense of FLT. -/
 theorem exists_lineBundle (h : Langlands.AlgebraicGeometry.IsHProjective A.X.hom) :
-    ∃ L : A.X.left.Modules, Scheme.Modules.IsInvertible L ∧
+    ∃ L : A.X.left.Modules, Scheme.Modules.IsInvertibleFLT L ∧
       Scheme.Modules.ClosedImmersionBySections L A.X.hom := by
   obtain ⟨n, i, hi, hcomp⟩ := h
   obtain ⟨L, 𝔓, h𝔓, hloc⟩ :=
@@ -311,7 +311,7 @@ theorem affineHomSchemePieces : AffineHomSchemePiecesStatement.{u} := by
       (groupLaw_isCommutative A) (propertyBundle A) (propertyBundle A) L hL₁ hL₂ L hL₁ hL₂
   refine ⟨Over.mk πH, hsep, hlft, hfu, ⟨natIso (pt := pt) hnat hsurj hinj⟩,
     ULift.{u} (Polynomial ℚ), fun P => U P.down, fun P => (hU P.down).1,
-    fun P => (hU P.down).2.1, fun P Q h => hdisj fun h' => h (ULift.ext _ _ h'), ?_⟩
+    fun P => (hU P.down).2.1, fun P Q h => hdisj fun h' => h (ULift.ext h'), ?_⟩
   rw [← hcov]
   exact Equiv.ulift.surjective.iSup_comp U
 

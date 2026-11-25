@@ -108,21 +108,25 @@ continuity of addition or negation, the Hausdorff property, local compactness,
 an embedding or open-embedding property of the chart `x ↦ 1 ⊗ₜ x`, that
 multiplication by a nonzero rational is a homeomorphism, or joint continuity of
 any group action or of the scalar action with any topology on `ℚ`. The
-hypothesis of the parent task 9be1dc18 that multiplication by each positive
-natural number is an open embedding `M → M` is not used here. These results,
-and the action assembly, belong to that parent task, and the actual geometric
-monodromy action belongs to task 74795b53. Without further hypotheses on `M`
-the topology can be degenerate. For example, the charts need not be injective,
-and the topology need not be Hausdorff. No such property is claimed.
+hypothesis that multiplication by each positive natural number is an open
+embedding `M → M` is not used here. Under that hypothesis, with Hausdorffness
+or compactness of `M` where the conclusion needs it,
+`Langlands.Topology.Rationalization.Lattice` proves these results, except joint
+continuity of the scalar action, together with the action assembly; the actual
+geometric monodromy action is constructed in
+`Langlands.AbelianScheme.Tate.RationalMonodromy`. Without further hypotheses on
+`M` the topology can be degenerate. For example, the charts need not be
+injective, and the topology need not be Hausdorff. No such property is claimed.
 
 ## Provenance
 
 This is internal project mathematics. The construction is the general notion of
 the final topology of a family of maps, which Mathlib expresses as a supremum of
 coinduced topologies. Here it is applied to the family of tensor charts
-`x ↦ q ⊗ₜ x`. The lemmas are elementary consequences of the definition. They
-are not quoted from a literature source, and no literature theorem is claimed.
-The construction was requested by task 5bf0c35e, which is a prerequisite of the
-generic rationalization topology task 9be1dc18. The algebraic ingredients come
-from Mathlib's `TensorProduct`: the carrier `ℚ ⊗[ℤ] M`, the left `ℚ`-action,
-`LinearMap.baseChange` and `AddMonoidHom.toIntLinearMap`.
+`x ↦ q ⊗ₜ x`. The lemmas are elementary consequences of the definition. They are
+not quoted from a literature source, and no literature theorem is claimed. The
+construction is a prerequisite of the generic rationalization topology in
+`Langlands.Topology.Rationalization.Lattice`, which imports this module. The
+algebraic ingredients come from Mathlib's `TensorProduct`: the carrier
+`ℚ ⊗[ℤ] M`, the left `ℚ`-action, `LinearMap.baseChange` and
+`AddMonoidHom.toIntLinearMap`.

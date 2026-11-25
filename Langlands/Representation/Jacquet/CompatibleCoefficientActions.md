@@ -1,7 +1,6 @@
 # Compatible coefficient actions on actual compact and Jacquet fixed vectors
 
-Worker 1755, with interface and reuse guidance from Worker 1751. Internal
-constructions for the coefficient-linear application of Renard 2026 VI.9.2,
+Internal constructions for the coefficient-linear application of Renard 2026 VI.9.2,
 printed p.199 / PDF p.205. Registered source
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
@@ -63,4 +62,4 @@ Finiteness is assumed only in that last corollary, and it remains an
 obligation for applications to universal families. None of the constructions
 asserts that compatible coefficient actions or finite coefficient modules
 exist for arbitrary smooth representations. No representation-uniform
-exponent or unconditional instance of the host theorem is proved here.
+exponent or unconditional instance of the uniform stabilization theorem is proved here.

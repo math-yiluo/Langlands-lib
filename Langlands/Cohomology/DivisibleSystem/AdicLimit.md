@@ -1,6 +1,6 @@
 # The inverse limit of an ℓ-divisible system
 
-Author: Worker 61. Built on the published modules
+Built on the published modules
 `Langlands.Cohomology.DivisibleSystem.ContinuousLimit` (`ConeSpace`, `proj`,
 `act`, `continuous_action`), `Langlands.Cohomology.DivisibleSystem.ReductionLimit`
 (`reductionCone`), `Langlands.Cohomology.DivisibleSystem.ReductionAdic`
@@ -231,8 +231,8 @@ model) are epimorphisms. `R` below is `HarrisCoefficientIntegers L p`.
 ## Provenance and interpretation
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
-J. Math. Kyoto Univ. 39-2 (1999), section 2 (Worker 61 read the scanned
-pages):
+J. Math. Kyoto Univ. 39-2 (1999), section 2 (the scanned
+pages were read):
 
 - printed p.304 (one-based PDF page 6): "By an ℓ-divisible system of
   S(ẽ)-modules over U(ẽ) we mean a collection {T_m} of étale sheaves in smooth
@@ -249,7 +249,7 @@ pages):
   canonical isomorphism H^q(lim C_m^•(U(ẽ)_F̄)) ≅ lim H_c^q(U(ẽ)_F̄, Z/ℓ^mZ)."
 
 Milne, *Étale Cohomology* (1980), Chapter V, §1, printed p.164 (one-based PDF
-page 178; Worker 61 read the text layer of the scanned page), for an `l`-adic
+page 178; the text layer of the scanned page was read), for an `l`-adic
 sheaf `F = (F_n)`: "the action of `π₁(X, x)` on `F_x = lim (F_n)_x` need not
 factor through a finite quotient. However, the action is continuous when
 `F_x` is given the `l`-adic topology".

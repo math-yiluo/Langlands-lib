@@ -1,10 +1,10 @@
 # Godement constructions on a twisted site
 
-Author: Worker 26. Uses the published twisted category
-`Langlands.Sheaf.Equivariant.TwistedOver` (Worker 26), Worker 13's Godement
+Uses the published twisted category
+`Langlands.Sheaf.Equivariant.TwistedOver`, the Godement
 construction on a site with points `Langlands.Sheaf.Godement` and iterated-cokernel
 complexes `Langlands.Cohomology.CokernelComplex`, and the discrete part of module
-sheaves `Langlands.Sheaf.Equivariant.LocalActionDiscretePart` (Worker 26). From
+sheaves `Langlands.Sheaf.Equivariant.LocalActionDiscretePart`. From
 Mathlib it uses right Kan extensions, the pushforward of sheaves along a cocontinuous
 functor (`Functor.sheafPushforwardCocontinuous`), and its adjunction with the
 pushforward along a continuous functor (`Functor.sheafAdjunctionCocontinuous`).
@@ -54,21 +54,21 @@ factors uniquely through the object `g⁻¹U`. So the pointwise formula gives
 
 Let `points : I → J.Point.{w}` be a family of Mathlib points of `J`, with
 `I : Type wI`, and assume `A` has products of sizes `w` and `wI` and colimits of
-size `w` (the hypotheses of Worker 13's module).
+size `w` (the hypotheses of `Langlands.Sheaf.Godement`).
 
 - `twistedZeroFunctor ρ J points A` is
   `restriction ⋙ Godement.zeroFunctor points A ⋙ induction`. It sends `F` to the
   induction of `∏ᵢ skyscraperᵢ(fiberᵢ(F|_X))`, where `F|_X` is the restriction.
 - `twistedCoaugmentation ρ J points A : 𝟭 ⟶ twistedZeroFunctor`. Its component at
-  `F` is the unit of `restrictionAdjunction`, followed by the induction of Worker
-  13's coaugmentation of `F|_X` (`twistedCoaugmentation_app`). The coaugmentation
+  `F` is the unit of `restrictionAdjunction`, followed by the induction of the
+  coaugmentation `Godement.coaugmentation` of `F|_X` (`twistedCoaugmentation_app`). The coaugmentation
   of `J` is the product of the units of the fiber–skyscraper adjunctions. So this
   is the unit of the composite adjunction, from the fibers of `F|_X` at the points
   to the twisted site.
 - `mono_twistedCoaugmentation_of_jointlyFaithful`: if the sheaf fiber functors of
   the points are jointly faithful, then each component is a monomorphism. The
-  proof composes the monic unit with the induction of Worker 13's monic
-  coaugmentation; induction preserves monomorphisms as a right adjoint.
+  proof composes the monic unit with the induction of the monic
+  coaugmentation `Godement.coaugmentation`; induction preserves monomorphisms as a right adjoint.
 - With `[Abelian A]` and `[HasSheafify (twistedTopology ρ J) A]`, the sheaves on
   the twisted site form an abelian category. `twistedComplexFunctor` is the cochain
   complex of iterated cokernels (`CokernelComplex.functor`) of the twisted
@@ -106,7 +106,7 @@ Berkovich, *Etale equivariant sheaves on p-adic analytic spaces* (unfinished
 (folder SHA-256
 `e046cadfb9dcec4b0cf6624f80d6316bf532416153b82023f5100bd1ab0726cd`, member
 `Berkovich--Etale equivariant sheaves on p-adic analytic spaces (unfinished manuscript)--1996.pdf`),
-§1.5, printed p.10 = PDF p.10, read in the original (rendered page) by Worker 26:
+§1.5, printed p.10 = PDF p.10, read in the original (rendered page):
 
 > Suppose we are given a set `I` and a surjective map `I → X : i ↦ xᵢ`. We endow
 > `I` with the discrete topology and fix for each `i ∈ I` a geometric point `x̄ᵢ`
@@ -142,10 +142,11 @@ construction.
 - Berkovich's properties of `𝒞^m(F)` (flabbiness, exactness of `F ↦ 𝒞^m(F)`, split
   fibers), Proposition 1.5.1 (softness) and the acyclicity for `RΓ_c` used by
   Harris are not proved here. Nor is the identification of the restriction of the
-  twisted complex with Worker 13's complex of `J`.
+  twisted complex with the Godement complex `Godement.complex` of `J`.
 
 ## Not formalized here
 
-Analytic instances need families of geometric points of Worker 21's étale sites
-(open). The comparison with Berkovich's site `X(G)_ét` and any acyclicity
+Analytic instances need families of geometric points of the analytic étale sites;
+`AnalyticEtaleGodement` applies the construction to the point family
+`etaleGodementPoints`. The comparison with Berkovich's site `X(G)_ét` and any acyclicity
 statement are also not formalized.

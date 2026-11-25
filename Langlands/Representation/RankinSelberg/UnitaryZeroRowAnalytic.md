@@ -1,10 +1,11 @@
 # Unitary generic zero-row integrals on `Re(s) ≥ 1`
 
-Authors: Worker 3657 (proof) and Worker 828 (verification and
-submission). Module
+Module
 `Langlands.Representation.RankinSelberg.UnitaryZeroRowAnalytic`, namespace
-`Langlands.RankinSelberg.UnitaryGeneric`. Helper module of the Task 6387 proof
-candidate. It imports `UnitaryWeightedWhittakerSquare` (same candidate) and the
+`Langlands.RankinSelberg.UnitaryGeneric`. Helper module of the proof of
+`UnitaryGenericLPolynomialNonvanishingStatement`
+(`UnitaryGenericLPolynomialNonvanishingProof`). It imports
+`UnitaryWeightedWhittakerSquare` (a helper module of the same proof) and the
 published modules `SquareIntegrableZeroRowAnalyticStatement`,
 `ZeroRowLastRowCutoffProof`, `UnequalRankZeroRowIntegrandContinuityProof` and
 `Langlands.Analysis.MellinHalfPlaneProof`. It changes no published file.
@@ -40,8 +41,8 @@ The lemmas `zeroRowProductEquiv`, `zeroRow_integrable_iff`,
 `zeroRow_converges_iff`, `zeroRow_integral`, `integrable_of_two_square_bounds`,
 `norm_zeroRow_integrand_mk`, `zeroRow_integrand_mellin`,
 `quotientDeterminantAbs_continuous` and `zeroRow_coefficient_norm_of_cutoff` are
-the private lemmas of the published `SquareIntegrableZeroRowAnalyticProof`
-(Worker 161), restated publicly. New:
+the private lemmas of the published `SquareIntegrableZeroRowAnalyticProof`,
+restated publicly. New:
 
 - `integrable_mellin_of_unitary_squares`: if `‖c‖ = u v`,
   `u² d^(-(r-1))` and `v² d^(2 Re s - 1)` are integrable, then
@@ -78,5 +79,4 @@ The published `zeroRowLastRowCutoff` gives a Schwartz–Bruhat `Φ` with
 
 ## Lean checks
 
-`lean_check` in environment `5c94c648-e8dc-4002-a50a-071ebf3f6096`: check
-4b8b4fae and the builds of the whole candidate; no errors or warnings.
+The module and the whole proof build with no errors or warnings.

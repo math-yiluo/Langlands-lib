@@ -23,7 +23,7 @@ In namespace `Langlands.Geometry.Building`:
 | `ParahoricBuildingData.UnramifiedComparisonTorus.ApartmentLift` | structure (data) | definition |
 | `ParahoricBuildingData.UnramifiedComparisonTorus.ApartmentLift.buildingData` | abbrev | definition |
 | `ParahoricBuildingData.UnramifiedComparisonTorus.ApartmentLift.centralizer_isTorus` | theorem | proved, unconditional |
-| `exists_unramifiedApartmentLift` | theorem | proved, **conditional on two unproved premises** |
+| `exists_unramifiedApartmentLift` | theorem | proved, **conditional on two premises** (both proved in the Library) |
 
 A private instance, `unramifiedApartmentLiftAffineHom`, records that the structure morphism
 of `G_K` is affine (a base change of an affine morphism). This is the same private-instance
@@ -102,7 +102,7 @@ theorem exists_unramifiedApartmentLift
     ∃ t : P.UnramifiedComparisonTorus, Nonempty t.ApartmentLift
 ```
 
-It depends on exactly two hypotheses, the published unproved proposition targets
+It depends on exactly two hypotheses, the published propositions
 `SpecialTorusExistenceStatement` (KP Proposition 9.3.4) and
 `UnramifiedValuationDescentStatement` (KP Construction 9.6.1, Lemma 9.6.3,
 Theorem 9.6.5). **It proves neither of them.** Every other result it uses is a published
@@ -123,8 +123,9 @@ theorem. The proof:
    `UnramifiedBuildingDescent.descentPoint`, `.descentPoint_fixed`, `.descentPoint_val` and
    `.descentPoint_normalizer'`. The map `e` is chosen; it is not canonical.
 
-The construction does not use `P.SatisfiesApartmentAxioms`. Existing proof tasks for the two
-premises are Task 5514 (special torus) and Task 5553 (valuation descent).
+The construction does not use `P.SatisfiesApartmentAxioms`. The Library proves the two
+premises: `specialTorusExistence` (module `SpecialTorusExistenceProof`) and
+`unramifiedValuationDescent` (module `UnramifiedValuationDescentProof`).
 
 ## Provenance
 

@@ -61,7 +61,7 @@ omit [P.IsCrystallographic] in
 /-- Proportional roots give the same reflection. -/
 private lemma ofIdx_eq_of_root_eq_smul {i j : ι} {t : R} (h : P.root j = t • P.root i) :
     RootPairing.weylGroup.ofIdx P j = RootPairing.weylGroup.ofIdx P i := by
-  have : IsAddTorsionFree N := .of_isTorsionFree R N
+  have : HasUniqueDiv N := .of_isTorsionFree R N
   have hc := RootPairing.smul_coroot_eq_of_root_eq_smul i j t h
   refine weyl_ext P fun m => ?_
   rw [ofIdx_smul', ofIdx_smul', P.reflection_apply, P.reflection_apply, h]

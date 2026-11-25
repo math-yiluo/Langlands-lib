@@ -13,7 +13,7 @@ are identified with the points of `H` over `T`, regarded as a `C`-algebra throug
 For an algebra map `ρ : B → X` over `R` with graph idempotent `ε ∈ B ⊗[R] X`, `ker_graphMul`
 says that the kernel of the multiplication map `graphMul ρ : B ⊗[R] X → X` is the ideal generated
 by `1 - ε`. `graphMul_surjective` says that this map is surjective. The argument is the same as
-Worker 47's `WeilFactor.ker_mulMap`, stated for an arbitrary algebra map.
+`WeilFactor.ker_mulMap` (module `WeilFactorUniquenessReduction`), stated for an arbitrary algebra map.
 
 ## The chart description
 
@@ -30,7 +30,7 @@ The test object is `T` over itself, `Under.mk (𝟙 T)`, with its `A'`-structure
   and it sends `chartEps` to `1` (`chartMu_chartEps`).
 - `chartFactorEquiv`: the points `h` of `H` over `C ⊗[A'] T` whose restriction to the factor
   `(C ⊗[A'] T)/(chartEps)` is trivial correspond to the points of `H` over `chartObj`. This is the
-  Library's `IdempotentPoints.factorEquiv` (from Worker 47's module
+  Library's `IdempotentPoints.factorEquiv` (from the module
   `Langlands.GroupScheme.AffineIdempotentPoints`) for `chartMu`.
 - `affinePointMap_chartMu_proj`: pushing forward along `chartMu` kills the factor projection,
   because `chartMu (chartEps) = 1`.

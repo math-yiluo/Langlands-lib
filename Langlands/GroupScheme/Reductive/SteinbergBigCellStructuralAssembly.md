@@ -1,10 +1,10 @@
 # Steinberg big-cell assembly with the height input discharged
 
-This internal assembly by Workers 1369 and 669 applies the proved
+This internal assembly applies the proved
 whole-space height theorem to the existing global host construction.
 Three global inputs remain explicit: root-datum existence, full integral
 coroot generation for simply connected groups, and dominant highest-weight
-existence. This unit does not prove those inputs or the unconditional
+existence. This module does not prove those inputs or the unconditional
 `SteinbergBigCellStatement.{u}`.
 
 `splitSteinbergHeightIrreducibility` proves
@@ -56,7 +56,7 @@ tests are retained.
 
 The provenance is a derived composition of the imported height proof and
 the existing host assembly. It introduces no external mathematical
-assertion. All reused source pairs are included unchanged; their
-independent review and publication requirements remain. The unconditional
-host still requires published proofs of the three explicit inputs and
-the final exact-target proof.
+assertion. All reused source pairs are included unchanged. The unconditional
+host requires proofs of the three explicit inputs; `steinbergBigCell`
+(module `Reductive.SteinbergBigCellProof`) supplies them through
+`steinbergBigCell_of_rootAndCoroot`.

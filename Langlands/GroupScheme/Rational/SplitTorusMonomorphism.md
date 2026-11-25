@@ -1,6 +1,6 @@
 # Monomorphisms of actual finite split tori
 
-Worker 1274. This internal derivation uses the published character
+This internal derivation uses the published character
 lattices and the actual algebra-valued points of split tori.
 
 `characterMap` transports pullback along a group-scheme homomorphism to the

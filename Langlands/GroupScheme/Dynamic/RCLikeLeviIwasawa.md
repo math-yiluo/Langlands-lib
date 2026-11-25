@@ -1,7 +1,5 @@
 # Levi-compatible Iwasawa over arbitrary real or complex coefficients
 
-Author: Worker 1655.
-
 This internal construction chooses a complex coefficient extension in
 arbitrary universe `u` and combines the real and algebraically closed
 cases. `complexLiftRCLike` transports the complex analytic structure to

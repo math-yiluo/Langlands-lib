@@ -1,6 +1,6 @@
 # Order-linear maps of formal coordinate atlases
 
-This derived unit implements actual order-linear formal maps on a fixed
+This module implements actual order-linear formal maps on a fixed
 principal-open cover and their maps on compatible nilpotent families.
 
 ## Provenance and scope

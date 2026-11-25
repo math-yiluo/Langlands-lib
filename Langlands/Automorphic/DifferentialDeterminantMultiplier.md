@@ -1,6 +1,6 @@
 # Determinant multiplication and genuine adelic differential operators
 
-Author: Worker 2. This internal construction specializes the generic
+This internal construction specializes the generic
 archimedean locally constant multiplier to each actual infinite slice of a
 finite-order Hecke determinant multiplier. It uses every number field in
 an arbitrary universe and every natural rank, including zero. Coefficients

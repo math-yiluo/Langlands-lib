@@ -1,13 +1,13 @@
 # Usual-topology continuity along an extension of p-adic fields
 
-Worker 17 authored this module. It imports Worker 17's
+This module imports
 `Langlands.Weil.Local.ExtensionParameters` and
 `Langlands.Weil.Representation.InductionContinuity`.
 
 Notation is as in `ExtensionParameters`. Fix a prime `p`, p-adic fields `F`
 and `E` in independent universes, and an algebra homomorphism
 `f : F.Carrier →ₐ[Padic p] E.Carrier`. Write `ι = extensionWeilMap F E f :
-W_E → W_F` for Worker 53's actual map of local Weil groups. Continuity here
+W_E → W_F` for the actual map of local Weil groups. Continuity here
 always means the usual-topology predicate `IsContinuous`. That predicate asks
 for continuity of the action into complex endomorphisms with Mathlib's module
 topology, and it is not the open-inertia-kernel convention.
@@ -24,9 +24,9 @@ statement. It also adds continuity of induction from `W_E` to `W_F`, which
   `continuousRestrictClass` along `ι`, which applies because `ι` is
   continuous.
 - `isContinuous_extensionInduce` proves that `extensionInduce` keeps
-  continuity. `extensionInduce` is the published `induceAlong ι`. Worker 53's
+  continuity. `extensionInduce` is the published `induceAlong ι`. The published
   `extensionWeilMap_isOpenEmbedding` says `ι` is an open embedding, and
-  Worker 53's instance `extensionWeilRange_finiteIndex` says its range has
+  the published instance `extensionWeilRange_finiteIndex` says its range has
   finite index. With these, the published `isContinuous_induceAlong` applies.
 - `extensionContinuousInduce` acts on continuous objects, from
   `LocalContinuousWeilObjects E` in carrier universe `w` to

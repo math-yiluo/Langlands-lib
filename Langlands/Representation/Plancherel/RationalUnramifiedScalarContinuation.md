@@ -1,6 +1,6 @@
 # Scalar extraction and continuation for actual unramified families
 
-This derived unit supplies an algebraic step toward Waldspurger IV.3, printed
+This module, whose provenance is derived, supplies an algebraic step toward Waldspurger IV.3, printed
 p.285 / PDF p.51 of the registered original `waldspurger-2003-plancherel`
 (SHA256 `4b6a6162cd0b3863703fb2f65d1698f926caf813114917f2084c16e38f2e30f7`).
 There the opposite-intertwiner composite is scalar on a nonempty generic
@@ -91,11 +91,11 @@ does not identify its abstract family with Waldspurger's composite.
 
 The generic scalarity hypothesis can later be supplied using Schur on an
 appropriate generic irreducibility locus. It is an explicit mathematical
-premise of this continuation lemma, not a permitted structural hypothesis
-for the main Plancherel program. No irreducibility of general tempered
+premise of this continuation lemma, not a structural hypothesis that the
+main Plancherel results may keep. No irreducibility of general tempered
 parabolic induction is imposed or proved. Construction and rational
 continuation of the actual standard intertwiners, existence of the generic
 locus, descent to the representation orbit, comparison of different
 parabolics, nonvanishing and the IV.3 identities for `j`, and the V.2 density
-`mu` remain separate obligations. This unit constructs no value at a pole
-and makes no Plancherel completion claim.
+`mu` remain separate obligations. This module constructs no value at a pole
+and asserts no Plancherel formula.

@@ -1,9 +1,6 @@
 # Actual cuspidal Jacquet-factor extraction target
 
-Authors: Worker 76, with the extraction formulation and consumer reconciliation
-of Workers 55 and 379, and the convention and consumer checks of Workers 6, 8
-and 14. The rational wrapper follows Worker 379's published support-target
-wrapper.
+The rational wrapper follows the published support-target wrapper.
 
 `RationalCuspidalJacquetFactorExtractionStatement.{u, v}` in
 `Langlands.Aubert.General.RationalPointFamily` is a proposition definition.
@@ -64,8 +61,8 @@ obtains the ambient and inside-Levi semidirect decompositions through the
 published standard-cocharacter and intersection adapters. It installs
 `simpleRelativeRootFintype` exactly as the existing consumer does. It uses
 no new endpoint, compactness, compact-limit, finiteness or representation-
-theoretic hypothesis. These displayed structural inputs remain obligations
-under the parent program's external-input ledger.
+theoretic hypothesis. These displayed structural inputs remain obligations,
+to be matched to the allowed external structural inputs.
 
 ## Source and derivation of the target
 
@@ -83,7 +80,7 @@ quotients. The VI.5.4 paragraph applies actual Jacquet exactness to a
 subquotient of the induction before extracting its cuspidal datum.
 
 This target combines those source consequences with a specified translation
-to the parent's actual-root convention. A proof must pass both actual
+to the Library's actual-root convention. A proof must pass both actual
 subquotient relations through exact Jacquet restriction, implement the
 geometric-filtration and proper-induction exclusion arguments, extract the
 irreducible factor, and produce the actual torus-normalizer representative
@@ -107,13 +104,13 @@ admissibility restriction from VI.5.2. They are supplementary context; the
 corrected 2026 edition governs the target and any eventual proof. This
 statement does not certify a formal implementation of either proof route.
 
-## Retained dependencies and ownership
+## Retained dependencies
 
 This is a narrow prerequisite for the published association and detection
-consumers. It leaves the general BZ geometric-filtration/framework work
-with Workers 8 and 14, the actual normalized functors with their owners,
-the K0 expansion with its owners, conjugation/cuspidality transport with
-Worker 55, inverse/product root-association work with Worker 78, and
-localization with Worker 499. It supplies neither the full VI.5.3 filtration
-nor the VI.5.4 finite-length result. An exact proof successor can target this
-proposition only after its independent acceptance and publication.
+consumers. It leaves to other modules the general BZ
+geometric-filtration/framework work, the actual normalized functors, the K0
+expansion, conjugation/cuspidality transport, inverse/product
+root-association work, and localization. It supplies neither the full VI.5.3
+filtration nor the VI.5.4 finite-length result. Conditional proofs of this
+proposition are in `RationalCuspidalExtractionInputs` and
+`RationalCuspidalExtractionFromSpecialVertex`.

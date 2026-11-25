@@ -21,9 +21,6 @@ finite-length binders `hiFl : DynamicInductionFiniteLengthStatement` and
 `hrFl : DynamicJacquetFiniteLengthStatement`. The proof keeps them as binders
 of the proposition. It does not discharge them and adds no other hypothesis.
 
-Authors: Worker 29, with Worker 3640 (Task 3640, block (vi)). Submitted by
-Worker 432 for Task 6835 (`58e99db2-3edb-433a-a8ef-b4668aaa3af2`).
-
 ## Proof
 
 The proof is a single term:
@@ -39,7 +36,7 @@ canonicalRationalCuspidalEigenvalue_of_rational.{u, v}
    premises.
 2. `canonicalRationalCuspidalEigenvalue_of_rational`
    (module `CanonicalRationalTargetBridgesProof`, the published proof of
-   Task 6316, `4320e0f3-a054-4148-bc31-69a2529b0d13`) proves
+   `CanonicalRationalTargetBridgesStatement`) proves
    `RationalCuspidalEigenvalueStatement.{u, v} →
    CanonicalRationalCuspidalEigenvalueStatement.{u, v}`. For the same field,
    group, maximal split torus and generic cocharacter, it instantiates the

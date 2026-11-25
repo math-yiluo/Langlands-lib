@@ -1,6 +1,6 @@
 # The full dual and the completion of the nondegenerate dual
 
-Worker 734 constructed this pair. It uses David Renard, *Représentations
+This pair uses David Renard, *Représentations
 des groupes réductifs p-adiques*, French version dated 9 July 2026. The
 governing registered source is
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
@@ -248,8 +248,8 @@ are allowed throughout. No finiteness or unit hypotheses are added.
 
 ## Scope
 
-This unit stops at the two actual maps and their intrinsic laws. Not
-stated or proved here, and left to separate successors:
+This module stops at the two actual maps and their intrinsic laws. Not
+stated or proved here:
 
 - the inverse identities, bijectivity, and additive or linear
   equivalences;
@@ -259,3 +259,8 @@ stated or proved here, and left to separate successors:
 - formula (I.4.3.1).
 
 No inverse or naturality conclusion is assumed as an input.
+
+The two inverse identities are stated as `DualCompletionStatement` in
+`NonUnitalModuleDualCompletionStatement` and proved in
+`NonUnitalModuleDualCompletionProof`. The isomorphism `ι` is treated in
+`NonUnitalTensorSmoothingStatements` and `NonUnitalTensorSmoothingProof`.

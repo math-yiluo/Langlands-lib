@@ -1,6 +1,6 @@
 # Continuous finite-cover gluing under bounded base equivalences
 
-Worker 56 constructs transport of compatible continuous families along the
+This module constructs transport of compatible continuous families along the
 actual component locus homeomorphisms induced by a bounded equivalence of
 ambient presented affinoid algebras. The construction gives an equivalence
 with an explicit inverse and commutes with restriction and continuous gluing.
@@ -106,4 +106,4 @@ It requires an actual bounded equivalence of the ambient algebras.
 It constructs transport and gluing for continuous maps on supplied
 represented loci. Algebra-section descent, pullbacks along arbitrary
 analytic morphisms, rational-domain existence, analytic structure
-sheaves, atlas completion and etale sites remain separate obligations.
+sheaves, atlas completion and etale sites lie outside this module.

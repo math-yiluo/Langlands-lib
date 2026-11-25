@@ -1,7 +1,5 @@
 # Actual adjacent inner inductions from the supplied binary product
 
-Author: Worker 289.
-
 This internal adapter constructs
 `Langlands.CuspidalSupport.adjacentInnerInductionIso` and proves
 `Langlands.CuspidalSupport.adjacentInnerInductions_irreducible_iso`. They compare
@@ -11,11 +9,11 @@ binary product and an actual categorical isomorphism from that product to the
 reversed product transported by
 `Derivative.generalLinearRankCast T (Nat.add_comm b a)`. It introduces no
 additional classification or commutation premise. It does not itself assert
-an occurrence in a Jacquet module or the host Jacquet interchange theorem.
+an occurrence in a Jacquet module or the Jacquet interchange theorem it serves.
 
 The field universe `uF` and original factor-carrier universe `uV` are independent.
 For `A : ∀ i, SupercuspidalRep.{uF,uV}` on a block shape `B`, inner induction has
-carrier universe `max uF uV`. The host can instantiate `uV` with `max uF uV`.
+carrier universe `max uF uV`. A consumer can instantiate `uV` with `max uF uV`.
 The supplied prime, field `F`, topological data `T`, normalized upper induction,
 positive half-modulus covariance and right translation are retained.
 
@@ -100,23 +98,15 @@ The four direct imports are `CuspidalSupport.AdjacentMergedTensor`,
 `Derivative.Iteration`. A recursive import audit at Library base
 `8d926c3850083c700afa54adc0d07240e27fe799` found 178 project modules including this
 entry, with 98 distinct direct imports from Mathlib or Lean across that closure.
-None of the project modules contains the excluded classification targets or
-their named proof successors: `SegmentEssentialSquareIntegrableClassification`,
+None of the project modules contains the excluded classification statements or
+their named proofs: `SegmentEssentialSquareIntegrableClassification`,
 `MultisegmentHeadExhaustion`, `OrderedMultisegmentHeadExistence`,
 `OrderedMultisegmentQuotientExhaustion`, `TemperedBlockUniqueness`,
 `SquareIntegrableLanglandsClassification`, `SquareIntegrableLanglandsExhaustion`
 or `GLRegularLanglandsExhaustionStatement`. Their lower-case closing theorem
-names are absent as well. The corresponding excluded tasks are
-`aca8805b-054f-4d56-8045-12db7f623404`,
-`3bfb61fa-1129-4fc9-83fd-7fcfec22106e`,
-`ebea9a8a-9b21-4208-aa31-98c2dea1f8a3`,
-`20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584`,
-`52e97845-36bb-457d-b76f-70753334b88c`,
-`1cb45da2-7007-4351-a694-594fb148b8d1`,
-`cd8ab97c-0b78-4bce-97c4-d307a28159a4` and
-`bf433f0a-921a-428c-b0c0-6475438125ac`.
+names are absent as well.
 The implemented dependency route above also uses none of their conclusions or
 any disjoint-support decomposition. The imported association reduction is used
 only for its proved single-block induction lemma. This audit concerns this
-adapter's closure; the host must also audit its other inputs and establish the
-actual subquotient transfer.
+adapter's closure; a proof that uses it must also audit its other inputs and
+establish the actual subquotient transfer.

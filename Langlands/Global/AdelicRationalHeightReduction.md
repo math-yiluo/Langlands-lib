@@ -1,7 +1,5 @@
 # Rational height reduction from Siegel coverage, norm minimality and central factors
 
-Author: Worker 5152.
-
 This module proves that three propositions together imply the published target
 `Langlands.Global.RepresentationGrowth.AdelicRationalHeightReductionStatement`
 (module `AdelicRationalHeightReductionStatement`):
@@ -112,11 +110,12 @@ smoothness field `hG.smooth` of `IsConnectedReductive`.
 
 The slice-to-global comparison now reduces to the three propositions above.
 
-- `AdelicSiegelReductionStatement` is the Siegel covering. Its proof is the
-  open task `6adbbc46-4bb2-4c01-843a-d8ded48189f2`, through the good Siegel
-  reduction and `adelicSiegelReductionStatement_of_good`.
-- `SiegelNormMinimalityStatement` is MW I.2.2 (vii); its Markdown sketches the
-  proof.
+- `AdelicSiegelReductionStatement` is the Siegel covering. It follows from the good
+  Siegel reduction `AdelicGoodSiegelReductionStatement` by
+  `adelicSiegelReductionStatement_of_good` (module `AdelicSiegelFiniteVolume`); the
+  Library has no proof of either statement.
+- `SiegelNormMinimalityStatement` is MW I.2.2 (vii); it is proved as
+  `siegelNormMinimalityStatement` (module `AdelicSiegelNormMinimalityProof`).
 - `CentralNormOneHeightFactorStatement` is the central factorization, published
-  through `adelicPositiveDecompositionStatement`, plus a height bound; its Markdown
-  sketches the proof.
+  through `adelicPositiveDecompositionStatement`, plus a height bound; it is proved
+  as `centralNormOneHeightFactorStatement` (module `AdelicCentralPositiveHeightProof`).

@@ -11,10 +11,6 @@ imports that statement module unchanged and adds no hypothesis. The theorem
 depends only on the standard axioms `propext`, `Classical.choice` and
 `Quot.sound`.
 
-Worker 142 wrote this proof under the proof task
-`74deb29a-d3ac-470e-a0c4-392f0fab8397` (Task 5606), following the route
-suggested in that task's context by Worker 1222.
-
 ## What is proved
 
 Let `A` be a commutative ring and `M` a module over `R = A ⊗[ℕ] Aᵐᵒᵖ`, i.e. an
@@ -30,8 +26,8 @@ every `R`-linear map `Q_i → Q_j` is zero, where
 David Renard, *Représentations des groupes réductifs p-adiques*, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`, VI.10.4,
-the Lemma on printed pp.211–212 (PDF pp.217–218); Worker 142 read both PDF
-pages for this proof. Renard proves the Lemma by induction on `n`, splitting
+the Lemma on printed pp.211–212 (PDF pp.217–218); both PDF
+pages were read for this proof. Renard proves the Lemma by induction on `n`, splitting
 off `0 → M_1 → M → Q_0 → 0`, and states without detail that the hypothesis
 forces the morphism `Q_0 → M_1` to vanish. The Lean proof below
 uses the same two ingredients (the commutator map `m ↦ βm − mβ` is a bimodule

@@ -1,8 +1,5 @@
 # Vanishing of a one-cell open restriction: proof
 
-Authors: Worker 634 (relative-cell transport implementation) and Worker 1079
-(production port onto the public covariance theorem and documentation).
-
 `Langlands.Whittaker.bruhatCellRestrictionVanishing` proves the published
 proposition `Langlands.Whittaker.BruhatCellRestrictionVanishingStatement.{u}`
 from `Langlands.Representation.Whittaker.BruhatCellRestrictionVanishingStatement`,
@@ -11,9 +8,8 @@ proof introduces all quantifiers and premises of the statement and applies the
 local theorem `RelativeCellTransport.restriction_zero_of_cellwise`, whose
 hypotheses are exactly those premises.
 
-The file is a port of Worker 634's private
-`RelativeCellTransportCore` (shared draft of task
-`f79ca82c-d050-4ffa-821b-c347b60e36e0`, revision 8). The only mathematical
+The file is a port of a private module
+`RelativeCellTransportCore`, which is not part of the Library. The only mathematical
 change is that both covariance steps now apply the public theorem
 `Langlands.HarmonicAnalysis.Distribution.supportedDescentCovariance`, imported
 from `Langlands.HarmonicAnalysis.Distribution.SupportedDescentCovarianceProof`;

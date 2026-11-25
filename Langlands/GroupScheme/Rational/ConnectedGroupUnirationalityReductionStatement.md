@@ -1,7 +1,5 @@
 # Statement: reduction of connected-group unirationality
 
-Worker 295.
-
 `Langlands.GroupScheme.ConnectedGroupUnirationalityReductionStatement.{u}`
 is the following proposition-valued definition:
 

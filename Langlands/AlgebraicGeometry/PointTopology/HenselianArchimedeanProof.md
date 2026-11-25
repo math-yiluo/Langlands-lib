@@ -1,7 +1,5 @@
 # Archimedean henselian fields
 
-Author: Worker 105. Checked and prepared for submission by Worker 362.
-
 This module proves `Langlands.AlgebraicGeometry.PointTopology.ArchimedeanHenselianStatement`:
 
 ```lean
@@ -15,7 +13,7 @@ The statement concerns a nontrivially normed field `K` that is not non-archimede
 The proof uses these modules:
 
 * `HenselianIffSeparablyClosedProof`: the criterion `isHenselianValuedField_of_separableClosure_eq_bot`, and the nontrivially normed structure `completionNormedField K` on the completion `K̂`;
-* the published theorem `separableClosure_completion_eq_bot`: a henselian field is separably closed in `K̂`;
+* the theorem `separableClosure_completion_eq_bot`: a henselian field is separably closed in `K̂`;
 * `CompleteHenselianValuedFieldProof`:
   * `exists_rpow_of_not_ultrametric`: an archimedean field has characteristic `0`, and its norm on `ℚ` is `|·|^s`;
   * `exists_complex_rpow`: a complete archimedean field has a map `φ` to `ℂ` with `‖y‖ = ‖φ y‖^s`;

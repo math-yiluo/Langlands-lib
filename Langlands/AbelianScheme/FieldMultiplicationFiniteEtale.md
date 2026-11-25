@@ -39,9 +39,11 @@ stable under base change (`MorphismProperty.of_isPullback`).
 ## Provenance
 
 This is derived infrastructure for the geometric-point nondegeneracy of the finite Weil
-pairing (task c063e112), where it supplies the isogeny and the finite étale `n`-torsion
-inputs over an algebraically closed field. It adapts Worker 989's draft module
-`AlgClosedMultiplicationIsogeny` to the published étaleness and surjectivity results and drops
+pairing (module `Langlands.AbelianScheme.Tate.WeilFiniteGeometricNondegeneracyFromField`), where
+it supplies the isogeny and the finite étale `n`-torsion
+inputs over an algebraically closed field. It adapts a draft module
+`AlgClosedMultiplicationIsogeny`, which is not in the Library, to the published étaleness and
+surjectivity results and drops
 its algebraic-closure hypothesis. The mathematical content is the case "characteristic does
 not divide `n`" of J. S. Milne, *Abelian Varieties* (1986 article, author revision January 2,
 2022; registered source `milne-abelian-varieties-1986-author-2022`), Theorem 8.2, p.13:

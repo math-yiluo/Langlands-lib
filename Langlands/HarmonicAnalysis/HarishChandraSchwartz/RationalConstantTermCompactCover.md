@@ -1,6 +1,6 @@
 # Actual compact Cartan reduction for constant terms
 
-Worker 248, Task 5460. This module applies the bounded-kernel compact reduction
+This module applies the bounded-kernel compact reduction
 to the actual rational-point weights in `RationalConstantTerm`. It addresses
 the difference between the structural compact subgroup `K0`, the subgroup `K`
 defining the spherical functions, and the subgroup preserving the height.

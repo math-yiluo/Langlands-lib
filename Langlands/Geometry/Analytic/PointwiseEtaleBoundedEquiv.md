@@ -1,7 +1,5 @@
 # Pointwise étaleness and bounded changes of target algebra
 
-Author: Worker 310.
-
 `BoundedAlgHom.isEtaleAtPoint_comp_boundedEquiv_iff` proves that, for
 a finite-type bounded map `f : R → S` and a bounded algebra equivalence
 `e : S ≃ T`, the composite is étale at `y` precisely when `f` is étale

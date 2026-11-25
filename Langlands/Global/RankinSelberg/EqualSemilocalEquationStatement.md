@@ -120,7 +120,9 @@ and its normalization of `ε_∞`.
 
 ## Provenance
 
-Internal premise of Task 6190 (proof of `CuspidalPairPartialGammaEquationStatement`). It
+Internal premise for `CuspidalPairPartialGammaEquationStatement`: it is one of the premises
+of the reduction `cuspidalPairPartialGammaGlobalReduction` (module
+`Langlands.Global.Factors.CuspidalPairPartialGammaGlobalReduction`). It
 transcribes the equal-rank form of the step "by the local functional equations, for each
 `v ∈ S`" of Cogdell p.220, multiplied over `S ∪ ∞`, onto the Library's partial integrals,
 the Schwartz–Bruhat space and its Fourier transform, the target's archimedean factors and

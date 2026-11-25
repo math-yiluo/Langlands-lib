@@ -1,6 +1,6 @@
 # From shifted functions on points to a contradiction with geometric reductivity
 
-Author: Worker 1502. Internal helper for the proof of
+Internal helper for the proof of
 `AffineHomogeneousQuotientReductiveStatement`. It is derived from the Library's corepresented
 models (`AffineCoordinates.groupSchemeIso`), its unipotent primitive-coordinate results
 (`Unipotent.oneMemStable_of_isUnipotent`, `Unipotent.exists_nonzero_primitive_of_oneMemStable`,

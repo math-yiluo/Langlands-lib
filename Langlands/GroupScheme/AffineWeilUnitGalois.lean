@@ -79,6 +79,7 @@ def unitGaloisAction (σ : L ≃ₐ[F] L) :
   Corepresented.groupSchemeMap (corepresentableBy F L (unitBaseChange F L G))
     (corepresentableBy F L (unitBaseChange F L G)) (unitGaloisTransformation F L G σ)
 
+set_option maxRecDepth 4000 in
 /-- The actual morphism recovers coefficient conjugation on every affine test. -/
 theorem unitGaloisAction_groundPoints (σ : L ≃ₐ[F] L)
     (A : CommAlgCat.{u} (CommRingCat.of F))
@@ -90,6 +91,9 @@ theorem unitGaloisAction_groundPoints (σ : L ≃ₐ[F] L)
   have h := Corepresented.groupSchemeMap_affinePoints
     (corepresentableBy F L (unitBaseChange F L G))
     (corepresentableBy F L (unitBaseChange F L G)) (unitGaloisTransformation F L G σ) q
+  rw [show Corepresented.groupSchemeMap (corepresentableBy F L (unitBaseChange F L G))
+      (corepresentableBy F L (unitBaseChange F L G)) (unitGaloisTransformation F L G σ) =
+      unitGaloisAction F L G σ from rfl, ← affinePointsTarget_apply] at h
   change pointsEquiv F L (unitBaseChange F L G) A
     ((groupScheme F L (unitBaseChange F L G)).affinePointsTarget
       (unitGaloisAction F L G σ) A q) = unitGaloisPointHom F L G σ A

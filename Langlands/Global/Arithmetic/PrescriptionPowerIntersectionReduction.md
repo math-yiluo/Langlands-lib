@@ -1,7 +1,5 @@
 # The actual local-product power intersection from global half-power descent
 
-Author: Worker 1232.
-
 This module implements the algebraic reduction in Artin and Tate, *Class Field
 Theory* (AMS Chelsea, 2009), Chapter X, Section 2, Lemma 2, printed p.77
 (one-based PDF p.86). The registered source is

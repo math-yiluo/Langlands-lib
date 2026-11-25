@@ -1,8 +1,8 @@
 # Rational transport with actual open operator subgroups
 
-Worker 36 constructed the subgroup and quotient-spectrum interfaces. The
-labelled category pattern adapts Worker 13's published `ActionOpens`, as in
-`RationalTransport`; both workers are credited in the contribution.
+This module constructs the subgroup and quotient-spectrum interfaces. The
+labelled category pattern adapts the published `ActionOpens`, as in
+`RationalTransport`.
 
 The hypotheses are a complete ultrametric normed field `K`, a presented strict
 affinoid algebra `P`, a topological group `G`, and a `RationalSpectralAction G P`.
@@ -115,4 +115,4 @@ faithful-action, nontrivially-valued or same-universe assumption. It constructs
 no Grothendieck topology on the varying-subgroup category. Full analytic
 atlases, arbitrary-radius domains, etale and quasi-etale sites, induced analytic
 spaces, structure-sheaf descent, cohomology and Harris towers remain separate
-obligations of the broader task.
+obligations.

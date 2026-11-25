@@ -335,16 +335,16 @@ theorem actionMap_exhaustionChartMap_selfPullback (V : ExhaustionIndex F K d)
 the pullback along `γ⁻¹`, so that the assignment is a group homomorphism. -/
 def memberAut (V : ExhaustionIndex F K d) (γ : memberStabilizer K V) :
     Aut ((exhaustionChart F K d V.level).algebra) where
-  hom := selfPullback K V (γ⁻¹ : memberStabilizer K V).1 (γ⁻¹).2
-  inv := selfPullback K V γ.1 γ.2
-  hom_inv_id := by
+  asIso.hom := selfPullback K V (γ⁻¹ : memberStabilizer K V).1 (γ⁻¹).2
+  asIso.inv := selfPullback K V γ.1 γ.2
+  asIso.hom_inv_id := by
     change (selfPullback K V γ.1 γ.2).comp (selfPullback K V (γ⁻¹ : memberStabilizer K V).1
       (γ⁻¹).2) = BoundedAlgHom.id K _
     rw [selfPullback_comp]
     rw [selfPullback_congr K V (show (γ⁻¹ : memberStabilizer K V).1 * γ.1 = 1 by
       rw [Subgroup.coe_inv, inv_mul_cancel]) _ (memberStabilizer K V).one_mem]
     exact selfPullback_one K V _
-  inv_hom_id := by
+  asIso.inv_hom_id := by
     change (selfPullback K V (γ⁻¹ : memberStabilizer K V).1 (γ⁻¹).2).comp
       (selfPullback K V γ.1 γ.2) = BoundedAlgHom.id K _
     rw [selfPullback_comp]
@@ -353,16 +353,17 @@ def memberAut (V : ExhaustionIndex F K d) (γ : memberStabilizer K V) :
     exact selfPullback_one K V _
 
 theorem memberAut_hom (V : ExhaustionIndex F K d) (γ : memberStabilizer K V) :
-    (memberAut K V γ).hom = selfPullback K V (γ⁻¹ : memberStabilizer K V).1 (γ⁻¹).2 := rfl
+    (memberAut K V γ).asIso.hom = selfPullback K V (γ⁻¹ : memberStabilizer K V).1 (γ⁻¹).2 := rfl
 
 theorem memberAut_inv (V : ExhaustionIndex F K d) (γ : memberStabilizer K V) :
-    (memberAut K V γ).inv = selfPullback K V γ.1 γ.2 := rfl
+    (memberAut K V γ).asIso.inv = selfPullback K V γ.1 γ.2 := rfl
 
 /-- The action of the stabilizer of `V` on the chart algebra of `V`. -/
 def memberAction (V : ExhaustionIndex F K d) :
     memberStabilizer K V →* Aut ((exhaustionChart F K d V.level).algebra) where
   toFun := memberAut K V
   map_one' := by
+    apply Aut.ext
     apply Iso.ext
     change selfPullback K V ((1 : memberStabilizer K V)⁻¹).1 ((1 : memberStabilizer K V)⁻¹).2 =
       BoundedAlgHom.id K _
@@ -370,6 +371,7 @@ def memberAction (V : ExhaustionIndex F K d) :
       _ (memberStabilizer K V).one_mem]
     exact selfPullback_one K V _
   map_mul' γ γ' := by
+    apply Aut.ext
     apply Iso.ext
     change selfPullback K V ((γ * γ')⁻¹ : memberStabilizer K V).1 ((γ * γ')⁻¹).2 =
       (selfPullback K V (γ⁻¹ : memberStabilizer K V).1 (γ⁻¹).2).comp
@@ -378,20 +380,20 @@ def memberAction (V : ExhaustionIndex F K d) :
     exact selfPullback_congr K V (by simp [mul_inv_rev]) _ _
 
 theorem memberAction_hom (V : ExhaustionIndex F K d) (γ : memberStabilizer K V) :
-    (memberAction K V γ).hom = selfPullback K V (γ⁻¹ : memberStabilizer K V).1 (γ⁻¹).2 := rfl
+    (memberAction K V γ).asIso.hom = selfPullback K V (γ⁻¹ : memberStabilizer K V).1 (γ⁻¹).2 := rfl
 
 theorem memberAction_inv (V : ExhaustionIndex F K d) (γ : memberStabilizer K V) :
-    (memberAction K V γ).inv = selfPullback K V γ.1 γ.2 := rfl
+    (memberAction K V γ).asIso.inv = selfPullback K V γ.1 γ.2 := rfl
 
 /-! ## Norm continuity of the orbits -/
 
 omit [CompleteSpace K] in
 theorem aut_mul_hom {A : PresentedAffinoidAlgebra K} (a b : Aut A) :
-    (a * b).hom = a.hom.comp b.hom := rfl
+    (a * b).asIso.hom = a.asIso.hom.comp b.asIso.hom := rfl
 
 omit [CompleteSpace K] in
 theorem aut_one_hom_apply {A : PresentedAffinoidAlgebra K} (x : A) :
-    (1 : Aut A).hom.toAlgHom x = x := rfl
+    (1 : Aut A).asIso.hom.toAlgHom x = x := rfl
 
 omit [CompleteSpace K] [NeZero d] in
 theorem norm_baseMap_coordinate_le (N : ℕ) (i : Fin d) :
@@ -406,10 +408,10 @@ theorem continuous_val_inv (H : Subgroup (Matrix.GeneralLinearGroup (Fin (d + 1)
 
 theorem continuousAt_memberAction_baseMap (V : ExhaustionIndex F K d) (a : disc K d V.level) :
     ContinuousAt (fun γ : memberStabilizer K V =>
-      (memberAction K V γ).hom.toAlgHom ((exhaustionChart F K d V.level).baseMap a)) 1 := by
+      (memberAction K V γ).asIso.hom.toAlgHom ((exhaustionChart F K d V.level).baseMap a)) 1 := by
   let φ : memberStabilizer K V → BoundedAlgHom K (disc K d V.level)
       (exhaustionChart F K d V.level).algebra :=
-    fun γ => ((memberAction K V γ).hom).comp (exhaustionChart F K d V.level).baseMap
+    fun γ => ((memberAction K V γ).asIso.hom).comp (exhaustionChart F K d V.level).baseMap
   change ContinuousAt (fun γ => φ γ a) 1
   apply continuousAt_map_of_coordinates φ
   · intro i
@@ -417,7 +419,7 @@ theorem continuousAt_memberAction_baseMap (V : ExhaustionIndex F K d) (a : disc 
         (fun γ : memberStabilizer K V => actionTuple K (entries (γ⁻¹ : memberStabilizer K V).1)
           (entries_row_zero_ne_zero _) V.level i) := by
       funext γ
-      show (memberAction K V γ).hom.toAlgHom ((exhaustionChart F K d V.level).baseMap
+      show (memberAction K V γ).asIso.hom.toAlgHom ((exhaustionChart F K d V.level).baseMap
         (coordinate K (disc K d V.level) i)) = _
       rw [memberAction_hom]
       exact selfPullback_isActionPullback K V (γ⁻¹ : memberStabilizer K V).1 (γ⁻¹).2 i
@@ -425,7 +427,7 @@ theorem continuousAt_memberAction_baseMap (V : ExhaustionIndex F K d) (a : disc 
     exact ((continuous_actionTuple K V.level i).comp
       (continuous_val_inv (memberStabilizer K V))).continuousAt
   · intro i
-    change ‖(memberAction K V 1).hom.toAlgHom ((exhaustionChart F K d V.level).baseMap
+    change ‖(memberAction K V 1).asIso.hom.toAlgHom ((exhaustionChart F K d V.level).baseMap
       (coordinate K (disc K d V.level) i))‖ ≤ _
     rw [map_one, aut_one_hom_apply]
     exact norm_baseMap_coordinate_le K V.level i
@@ -434,19 +436,19 @@ theorem continuousAt_memberAction_baseMap (V : ExhaustionIndex F K d) (a : disc 
 the quotient norm. -/
 theorem continuous_memberAction (V : ExhaustionIndex F K d)
     (a : (exhaustionChart F K d V.level).algebra) :
-    Continuous (fun γ : memberStabilizer K V => (memberAction K V γ).hom.toAlgHom a) := by
+    Continuous (fun γ : memberStabilizer K V => (memberAction K V γ).asIso.hom.toAlgHom a) := by
   have hm (g h : memberStabilizer K V) :
-      (memberAction K V (g * h)).hom = ((memberAction K V g).hom).comp
-        (memberAction K V h).hom := by
+      (memberAction K V (g * h)).asIso.hom = ((memberAction K V g).asIso.hom).comp
+        (memberAction K V h).asIso.hom := by
     rw [map_mul, aut_mul_hom]
-  apply continuous_map_of_continuousAt_one (fun g => (memberAction K V g).hom) hm
+  apply continuous_map_of_continuousAt_one (fun g => (memberAction K V g).asIso.hom) hm
   intro b
-  apply continuousAt_map_of_coordinates (fun g => (memberAction K V g).hom)
+  apply continuousAt_map_of_coordinates (fun g => (memberAction K V g).asIso.hom)
   · intro i
     exact (exhaustionChart F K d V.level).continuousAt_map_coordinates
-      (fun g => (memberAction K V g).hom) (continuousAt_memberAction_baseMap K V) i
+      (fun g => (memberAction K V g).asIso.hom) (continuousAt_memberAction_baseMap K V) i
   · intro i
-    show ‖(memberAction K V 1).hom.toAlgHom (coordinate K _ i)‖ ≤ _
+    show ‖(memberAction K V 1).asIso.hom.toAlgHom (coordinate K _ i)‖ ≤ _
     rw [map_one, aut_one_hom_apply]
     exact norm_coordinate_le K _ i
 

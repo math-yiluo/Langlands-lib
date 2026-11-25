@@ -1,8 +1,6 @@
 # Recovered models along fixed descended translation lines
 
-Author: Worker 200.
-
-This internal supporting unit constructs actual recovered models and comparison
+This module constructs actual recovered models and comparison
 maps along every descended translation of a coefficient-fixed apartment point.
 It combines `UnramifiedFixedSubsetRecovery` and
 `UnramifiedFixerModelComparison`; it is not a new literature transcription.
@@ -54,5 +52,5 @@ all the root inequalities required by
 `ParabolicRootComparisonsNearDescentTranslations`.
 
 The five global input theorems and the nearby parabolic geometric condition are
-not proved here. This unit does not assert the unconditional fixed-point
+not proved here. This module does not assert the unconditional fixed-point
 depth-zero opposite-factor theorem.

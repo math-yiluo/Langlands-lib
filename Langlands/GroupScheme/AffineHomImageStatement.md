@@ -116,9 +116,8 @@ over `B`, which include these.
 ## Provenance and relation to the Library
 
 This statement is a direct formalization of the affine case of Milne's
-homomorphism theorem. It is published as a prerequisite for the actual
-diagonal-kernel geometry task `d1fee1c3-e435-49e7-a1d4-8b431470d790` and the
-structural splitting statement task `4fe37606-9ed8-4910-a71b-9e0e8ae0a63f`.
+homomorphism theorem. It is a prerequisite for the actual
+diagonal-kernel geometry and the structural splitting statement.
 Those arguments need images of homomorphisms between affine algebraic group
 schemes that may be nonsmooth and disconnected.
 

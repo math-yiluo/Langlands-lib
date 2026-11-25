@@ -1,7 +1,5 @@
 # Filtered colimits of central closed torus subgroups
 
-Author: Worker 668.
-
 For a quasi-compact, separated, locally finitely presented group over
 a locally noetherian scheme, the small central torus-subgroup
 presheaf sends filtered colimits of algebras over each affine open

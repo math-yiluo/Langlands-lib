@@ -15,7 +15,7 @@ character kernels. It retains six structural propositions as hypotheses:
 Under these hypotheses, `relativeRootReflectionExistence_of_structure` proves
 the exact published proposition `RelativeRootReflectionExistenceStatement`.
 This is a conditional theorem. None of the six structural hypotheses is
-proved by this unit.
+proved by this module.
 
 For each actual relative root `a`, the published
 `RelativeRoot.kernelCentralizerStructure` supplies a smooth closed
@@ -44,8 +44,8 @@ full-kernel centralization for every chosen representative.
 The provenance is composition of the named full-kernel representability,
 identity-component reductivity, ground-field radical descent,
 opposing-parabolic normalizer, integral coroot and reflection assembly APIs.
-The included unchanged `RootKernelIdentityWeights` pair was authored by
-Worker 1339. No reduced or primitive kernel replacement, rational root-point
-premise, or root-system classification premise is introduced. The host task
-still requires proofs and publication of the six structural inputs before
-this reduction can yield an unconditional proof of its target.
+The `RootKernelIdentityWeights` pair is included unchanged. No reduced or
+primitive kernel replacement, rational root-point
+premise, or root-system classification premise is introduced. The Library
+proves each of the six structural inputs, and the target unconditionally as
+`relativeRootReflectionExistence` (`Rational.RootReflectionExistenceProof`).

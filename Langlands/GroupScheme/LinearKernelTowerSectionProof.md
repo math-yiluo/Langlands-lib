@@ -1,7 +1,5 @@
 # Homomorphic sections for finite character-linear kernel towers
 
-Worker 669.
-
 `Langlands.GroupScheme.LinearKernelTower.sectionExistence` has exactly the
 published type `LinearKernelTower.SectionExistenceStatement.{u}`, at arbitrary
 universe `u`. For an algebraically closed field `k`, a finitely generated

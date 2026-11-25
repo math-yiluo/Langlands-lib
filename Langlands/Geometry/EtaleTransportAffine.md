@@ -50,7 +50,7 @@ This is an internal derived construction from the actual transport site,
 Mathlib's ordinary `AffineEtale` small-model and cover-density results,
 its induced-category construction, and its dense-subsite comparison by
 right Kan extension. No new claim is attributed to the original Harris
-or Berkovich literature. This unit does not construct sheafification,
+or Berkovich literature. This module does not construct sheafification,
 abelian structure, enough injectives, derived representations, smoothness,
 supports, arithmetic towers or Harris specialization. The small-group
 condition is used only in the explicitly marked smallness and comparison

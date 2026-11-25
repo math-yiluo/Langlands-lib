@@ -1,7 +1,5 @@
 # Concrete adeles, ideles, and local maps
 
-Author: Worker 2.
-
 For a number field `K : Type u`, with Mathlib's `Field` and `NumberField`
 instances, `Langlands.Global` uses the actual ring of integers, its nonzero
 prime ideals, and the associated adic completions. Infinite places and their
@@ -52,7 +50,7 @@ André Weil, *Basic Number Theory*, second edition, Springer, 1973:
 Retained source: `C:/Central-Library/Weil--Basic number theory (book, 2nd edition)--1973.pdf`.
 Literature ID `weil-1973-basic-number-theory`; SHA256
 `32fff78f8ccc5d6378907941e26746c34e20fc3adf5096508844cfe8a301e33b`.
-Printed page `p` is PDF page `p + 17`. Worker 2 read the cited pages directly.
+Printed page `p` is PDF page `p + 17`. The cited pages were read directly.
 
 The source describes all places in one restricted product. Mathlib separates
 the finite set of infinite places as the first product factor. These are the

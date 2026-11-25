@@ -1,6 +1,6 @@
 # Actual derived-cover lifts and root intersections of unramified zero fixers
 
-This internal unit constructs actual rational lifts of relative-root points
+This internal module constructs actual rational lifts of relative-root points
 through a supplied simply connected derived cover over an arbitrary field.
 It then proves the root part of the neutral/zero-fixer comparison for every
 supplied unramified zero datum, independently of its chosen maximal torus.

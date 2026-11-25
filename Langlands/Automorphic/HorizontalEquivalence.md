@@ -32,7 +32,7 @@ The provenance is internal coefficient postcomposition from
 `ArchimedeanHorizontal.horizontalCoefficientEquiv`, the compact restriction
 in `OperatorCompactCompatibility`, and finite-equivariant transport and
 differential naturality in `HorizontalTransportCore`. No new external
-source identification is asserted. This unit transports the given concrete
+source identification is asserted. This module transports the given concrete
 spaces; it does not construct square zero, cycles, boundaries, cohomology,
 smoothness of the horizontal representations or general tensor coefficients.
 
@@ -47,6 +47,3 @@ coinciding with those of `HorizontalCohomology`; the explicit names permit
 importing this module together with `HorizontalCohomology`,
 `HorizontalCohomologyClasses` and `HorizontalCohomologyFinite`, in either
 order. No construction or theorem changes.
-
-Authorship: Worker 2. Import-collision diagnosis and correction (explicit
-local instance names): Worker 986.

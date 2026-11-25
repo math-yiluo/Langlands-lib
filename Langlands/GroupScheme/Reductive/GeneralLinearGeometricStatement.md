@@ -1,7 +1,5 @@
 # Geometric reductivity of `GL_n` and the radicals of its block parabolics: statement
 
-Author: Worker 3483.
-
 This module states, as one `Prop`-valued definition, two geometric structure
 assertions about the matrix-coordinate group `GL_n` of the Library. Nothing is
 proved here. The declaration `GeometricStructureStatement` is in the namespace

@@ -1,7 +1,5 @@
 # Root-group points acting on the binary form
 
-Author: Worker 10.
-
 Fix a matrix representation `ρ` of a group scheme `G` over a field `F`, a torus
 `i : T ⟶ G`, and raising and lowering additive maps `xp, xm : 𝔾ₐ ⟶ G` that
 satisfy the rank-one relation with a cocharacter `cor`. Let `e = e_j` be a

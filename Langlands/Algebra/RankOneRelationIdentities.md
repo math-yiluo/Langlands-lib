@@ -1,7 +1,5 @@
 # Identities from the rank-one open-cell relation
 
-Author: Worker 4348.
-
 Module `Langlands.Algebra.RankOneRelationIdentities`, namespace
 `Langlands.Algebra.RankOneRelation`.
 

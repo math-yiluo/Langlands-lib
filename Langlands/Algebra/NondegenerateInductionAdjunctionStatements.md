@@ -6,7 +6,7 @@ modules. Its namespace is
 `Langlands.Algebra.NondegenerateInductionAdjunction`. The principal declarations
 are proposition definitions, with the actual adjunctions and their canonical
 additive Hom correspondences existentially quantified in their conclusions.
-They are unproved theorem targets. The implemented helper laws only package
+They are theorem targets, not proved in this module. The implemented helper laws only package
 evaluation, intrinsic balancing, the published quotient lift, and additive
 composition on actual morphisms.
 
@@ -77,7 +77,7 @@ Thus they compose on the stated categories without a change of carrier.
 The ring universe `uA` remains independent and may be strictly larger than w.
 There is no smallness hypothesis or replacement by a functor on lifted
 carriers. The independent-universe general unbundled tensor-Hom family is
-outside this unit.
+outside this module.
 
 The left functor in `CanonicalFInductionAdjunction` is precisely
 `NondegenerateTensorFunctor.F hA hAB hnd`, specialized to carrier universe w
@@ -238,9 +238,12 @@ that the targets express the intended data; they assume no proof of either
 closed target. Zero rings and trivial nondegenerate modules are allowed. A
 zero action on a nonzero module is not asserted to be nondegenerate.
 
-A later exact-target proof must establish the two closed propositions, possibly
-using a published nondegenerate tensor-Hom refinement. The general tensor-Hom
+The two closed propositions are proved in `NondegenerateFInductionAdjunction`
+(`nondegenerateFInductionAdjunction`) and `NondegeneratePInductionAdjunction`
+(`nondegeneratePInductionAdjunction`), both using the published nondegenerate
+tensor-Hom refinement `NonUnitalTensorHomAdjunction.Left.refinedEquivalence`.
+The general tensor-Hom
 equivalences, complex coefficient and unitization bridges, completion and
 regular-Hom comparisons, equality of the A- and B-Hom parts, scalar restriction,
 I.2.4 exactness and preservation of injectives remain separate obligations.
-This statement unit does not complete I.2.3 or the whole book.
+This module does not complete I.2.3 or the whole book.

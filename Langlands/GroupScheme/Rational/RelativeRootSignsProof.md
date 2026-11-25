@@ -1,7 +1,5 @@
 # Actual relative-root signs determine dynamic subgroup functors
 
-Author: Worker 1309.
-
 `Langlands.GroupScheme.relativeRootSignsDetermineDynamic` proves exactly
 `Langlands.GroupScheme.RelativeRootSignsDetermineDynamicStatement.{u}` from
 [`RelativeRootSignsStatement`](RelativeRootSignsStatement.md). It retains every

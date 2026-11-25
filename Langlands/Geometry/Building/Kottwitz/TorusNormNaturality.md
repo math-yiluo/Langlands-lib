@@ -12,7 +12,7 @@ All declarations are in `Langlands.Geometry.Building.Kottwitz`. The main
 naturality theorem assumes `TorusKottwitzExistenceStatement`; it does not prove
 existence of the torus Kottwitz homomorphism. The final cocenter reduction
 retains this premise and five comparison statements, so it does not prove the
-unconditional host statement.
+unconditional `SimplyConnectedDerivedKottwitzStatement`.
 
 `relativeNorm_natural` concerns commutative affine group schemes over `k` and a
 compatible tower `k → K → L` with `L/K` finite Galois. Every actual morphism
@@ -81,6 +81,6 @@ remaining explicit premises are:
 The imported cocenter reduction supplies unique existence for all actual
 cocenter squares, the selected-map specification and surjectivity, bijectivity
 of every cocenter target map, and uniqueness from each individual square once
-these premises hold. This module discharges the previously separate torus
-naturality premise. It does not discharge any of the six statements listed
-above and does not change the existing target or any of its imported pairs.
+these premises hold. This module discharges the torus naturality premise of
+that reduction. It does not discharge any of the six statements listed
+above.

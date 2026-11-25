@@ -3,8 +3,8 @@
 Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalOrbitWavePacketInner`,
 namespace `Langlands.HarishChandraSchwartz`. It imports:
 
-- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalOrbitWavePacketPairing` (Worker 249,
-  accepted candidate `98f5e360`): the wave packet `rationalOrbitWavePacket` (`f_ψ` for `M = G`)
+- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalOrbitWavePacketPairing`: the wave
+  packet `rationalOrbitWavePacket` (`f_ψ` for `M = G`)
   with `rationalOrbitWavePacket_apply`, the pairings
   `integral_conj_mul_rationalOrbitWavePacket_eq_zero` and
   `integral_conj_mul_rationalOrbitWavePacket_of_mem` (`(E^G_G ψ', f_ψ)_G`),
@@ -74,7 +74,7 @@ computation in the proof of Proposition VII.2.1 before its comparison with Lemma
   `d(ω)⁻¹`, `d(ω) = discreteSeriesFormalDegree … ω`. The definition uses a chosen `b` (one
   exists by `isUnitarizable_of_isSquareIntegrable`); `discreteSeriesCoefficientForm_eq` is the
   independence of the choice stated in V.2. The Library's `formalDegreeProductForm` and
-  `formalDegreeInducedTensorForm` (Worker 200) are the analogous products on induced
+  `formalDegreeInducedTensorForm` are the analogous products on induced
   representations from a proper parabolic; this module does not use them.
 - Part (ii) for `O' ≠ O` is stated as `omega' ∉ O` for the base point `omega'` of `O'`
   (orbits are equal or disjoint, `notMem_discreteSeriesOrbit_of_mem`). Part (ii) for `O' = O`

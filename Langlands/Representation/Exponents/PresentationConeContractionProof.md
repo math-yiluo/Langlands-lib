@@ -1,7 +1,5 @@
 # Uniform contraction of compact subsets of `N(F)` by `C_A^+(ε)`: proof
 
-Author: Worker 74.
-
 Module: `Langlands.Representation.Exponents.PresentationConeContractionProof`.
 
 This module proves the published proposition

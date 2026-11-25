@@ -10,7 +10,7 @@ noncomputable section
 
 namespace Langlands.AbelianScheme
 
-local instance : Fact (Nat.Prime 2) := ⟨Nat.prime_two⟩
+private local instance : Fact (Nat.Prime 2) := ⟨Nat.prime_two⟩
 
 variable {k K : Type u} [Field k] [Field K]
   (A : AbelianScheme (Scheme.Spec.obj (Opposite.op (CommRingCat.of k))))

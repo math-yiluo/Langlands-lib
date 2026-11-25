@@ -1,6 +1,6 @@
 # Finiteness of the full Weyl groups of supplied fibrewise root data
 
-This derived unit proves full integral Weyl-group finiteness for actual
+This derived module proves full integral Weyl-group finiteness for actual
 supplied fibrewise coordinate root data over a nontrivial base ring. It does
 not assume that the roots span the entire character lattice.
 
@@ -22,7 +22,7 @@ original coordinate datum, including its central lattice directions.
 ring and uses its quotient field as that fibre. It requires no local,
 noetherian or reducedness hypothesis. `finite_zeroReflectionSubgroup` then
 applies the published inclusion of each zero-root reflection subgroup into
-the full Weyl group. The nontrivial-ring premise is explicit; this unit does
+the full Weyl group. The nontrivial-ring premise is explicit; this module does
 not assert an existence of field fibres for the zero ring.
 
 Provenance is the existing actual root-datum Weyl-image containment and

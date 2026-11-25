@@ -1,11 +1,9 @@
 # A reduction of actual regular square-integrable Jacquet multiplicity
 
-Author: Worker 1597.
-
 This internal assembly reduces the Prop target
-`RegularSquareIntegrableJacquetMultiplicityStatement`, which was submitted for
-the same task, to five Prop statements
-already in the Library, none of them proved there:
+`RegularSquareIntegrableJacquetMultiplicityStatement`, stated in
+`RegularJacquetMultiplicityStatement`, to five Prop statements
+already in the Library:
 
 - `RepresentedGeometricLemmaStatement` (Renard VI.5.1 for represented
   parabolics): a finite enumeration of double cosets, representatives,
@@ -23,13 +21,23 @@ already in the Library, none of them proved there:
 - `ArbitraryParabolicJacquetAdmissibilityStatement`: the represented Jacquet
   functor preserves admissibility.
 
+Four of them are proved in the Library, by `representedGeometricLemma`,
+`arbitraryParabolicQuotientCompact`, `squareIntegrableNormalizedTempered` and
+`arbitraryParabolicJacquetAdmissibility` (each in the `…Proof` module beside
+its statement); the Library does not prove
+`TemperedSquareIntegrableUnitaryPartStatement`.
+
 `RegularSquareIntegrableJacquetMultiplicityReductionStatement` is the
 Prop-valued definition of the implication from these five propositions, at
 the universes `u` (field and groups) and `uV` (inducing carrier), to the
 unchanged `RegularSquareIntegrableJacquetMultiplicityStatement.{u, uV}`.
 The companion theorem `regularSquareIntegrableJacquetMultiplicity_of_statements`
 proves the implication. Nothing here proves any of the five inputs, and this
-module is not a proof of the target or of the generic-irreducibility task.
+module is not a proof of the target or of
+`ConditionalParabolicGenericIrreducibilityStatement`; `ParabolicGenericIrreducibilityReduction`
+uses this reduction in its reduction of that statement. The target is proved
+by `regularSquareIntegrableJacquetMultiplicity` in
+`RegularSquareIntegrableJacquetMultiplicityProof`.
 
 The motivating source is the multiplicity consequence of Waldspurger 2003,
 Corollary III.7.3 (printed p.276), registered as
@@ -44,8 +52,7 @@ at most the sum of the Hom lengths of the graded pieces.
 Besides published Library modules, the module imports the supporting
 modules `ParabolicRepresentedComparison`, `ParabolicJacquetUnitaryRestriction`,
 `ParabolicSquareIntegrableModCenter`, `SelfUnitaryPieceMultiplicity`,
-`LeviUnitaryGluedHomBound` and the target `RegularJacquetMultiplicityStatement`,
-submitted for the same task.
+`LeviUnitaryGluedHomBound` and the target `RegularJacquetMultiplicityStatement`.
 
 ## Helper results
 
@@ -74,8 +81,8 @@ submitted for the same task.
 
 ## The bound
 
-`jacquetInductionHom_rank_le_one_of_statements` works in the host target's
-structural context, given the five inputs, connected reductivity, Hausdorff
+`jacquetInductionHom_rank_le_one_of_statements` works in the structural context
+of `RegularSquareIntegrableJacquetMultiplicityStatement`, given the five inputs, connected reductivity, Hausdorff
 `G(F)` and continuity of the literal Levi projection. Let `π` be an
 irreducible representation of the literal Levi that is square-integrable
 modulo the split-component image `C` and normalizer-regular. Then the literal

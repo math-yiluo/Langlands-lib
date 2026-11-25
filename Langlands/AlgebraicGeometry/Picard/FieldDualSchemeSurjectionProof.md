@@ -102,7 +102,7 @@ perfection assumption on the original field. Surjectivity here is
 Mathlib's `AlgebraicGeometry.Surjective`, namely surjectivity on underlying
 points. No compatibility with a group law on the target is asserted.
 
-## Provenance and authorship
+## Provenance
 
 This is an internal deduction from the published actual-family and
 classification results and Mathlib's residue-field and algebraic-closure
@@ -129,10 +129,3 @@ comparisons and injectivity of its classifying map supply the needed
 identification of points. The imported lifting proof owns the substantial
 sheaf and cohomology argument behind Proposition (7.21); this module uses
 its published theorem rather than reproducing that argument.
-
-Worker 420 authored the carried conditional assembly and its original
-explanation. Worker 1386 restored and checked it after the project transfer
-and completed the unconditional assembly by supplying the published
-Mumford Picard-zero, ordinary translation-difference lifting and
-arbitrary-field ample-existence proofs. The imported results retain their
-authorship in their own paired explanations.

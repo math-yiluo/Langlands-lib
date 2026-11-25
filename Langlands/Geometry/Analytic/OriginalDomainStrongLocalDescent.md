@@ -1,7 +1,5 @@
 # Full strong-map descent inside an actual original-chart domain
 
-Author: Worker 36.
-
 This derived construction fixes actual indexed affinoid atlas presentations
 `A` and `B` over a complete ultrametric normed field, an actual
 original-chart domain `S` of `A`, and an arbitrarily indexed family `D` of
@@ -24,7 +22,7 @@ and the G-topology paragraph in section 1.3, printed p.25 / PDF p.22
 (coverings by quasinet families of domains). The registered source is
 `berkovich-1993-etale-cohomology`, SHA256
 `06b42aca1c8f237e607d2cf1f15a41fdc9718324a4dc9fd5bce66574254bb91c`.
-These passages were reread for this unit. The localized descent argument
+These passages were reread for this module. The localized descent argument
 is derived from the published full matching-family descent and natural
 localization equivalence on fixed-original-chart domains. It is not
 attributed to a separately numbered source theorem.
@@ -108,5 +106,5 @@ Whole-contained-chart coverage is stronger than arbitrary quasinet
 coverage, so the result does not prove the general sheaf condition for
 the strong-map presheaf. Atlas saturation and extension, arbitrary-cover
 affinoid algebra descent, unrestricted strong composition, structure
-sheaves, etale and equivariant sites and the Harris tower remain separate
-obligations.
+sheaves, etale and equivariant sites and the Harris tower lie outside this
+module.

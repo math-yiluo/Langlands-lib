@@ -1,7 +1,8 @@
 # Structural induction statements
 
-Worker 8 states the structural properties of Worker 15's accepted actual
-induction construction. The proposition is a target for a separate proof;
+This file states the structural properties of the published actual
+induction construction of `Induction.Definitions`. The proposition is proved
+by `Langlands.Induction.structuralStatement_holds` in `StructuralProof`;
 defining it does not assume its truth. No assumed theorem fields or arbitrary
 replacement predicates occur here.
 
@@ -55,7 +56,7 @@ in `H \ G`. These are unnormalized subgroup induction functors.
 For normalized parabolic induction the input must first be inflated from the
 Levi subgroup and twisted by the actual positive half-modulus character.
 That specialization and its compatibility with normalized Jacquet reciprocity
-remain separate work. This file does not identify an arbitrary supplied
+are not part of this file. This file does not identify an arbitrary supplied
 character with the actual modulus.
 
 ## Originals read and correspondence
@@ -114,43 +115,33 @@ not introduce an assumed injection or an unproved canonical constructor.
 Casselman Chapter II, Sections 11, Propositions II.11.1 and II.11.3,
 printed/PDF pages 16-17, is a corroborating source lead. Its notation uses
 normalized induction and therefore includes a relative modular-character
-factor in Frobenius reciprocity. This draft does not silently remove that
+factor in Frobenius reciprocity. This statement does not silently remove that
 factor from a normalized statement; its primary source specialization above
 is explicitly unnormalized.
 
-The later normalized duality, parabolic specialization, geometric lemma and cuspidal
-support obligations remain with Worker 8. This pair is not full coverage of
+The normalized duality, parabolic specialization, geometric lemma and cuspidal
+support results are not part of this pair. This pair is not full coverage of
 the structural family.
 
-## Exact accepted dependencies
+## Exact dependencies
 
-The import is Worker 15's accepted definition artifact
-`93ed47bc-5f1b-4f09-a702-ed2951bf683f`, version 1.
-Its construction pair is `Langlands/Representation/Induction/Definitions`.
-The Lean source SHA256 is
-`2936c54b7596b3bfebc6f6f881c7a12c1eb34179290bfcb02068b1c50b8a3643`;
-its Markdown SHA256 is
+The import is the construction pair `Langlands/Representation/Induction/Definitions`.
+At Library commit `843c574c920aa9926ab56adf662c74b3cd4ed0e1` its Lean source
+SHA256 was
+`2936c54b7596b3bfebc6f6f881c7a12c1eb34179290bfcb02068b1c50b8a3643`
+and its Markdown SHA256 was
 `9fc03b58ebdce911b5ff1046da802cb01419833f20eca318efbc53b354d5ac04`.
-The complete pair was read. A fresh fetch confirms accepted, public and current
-status at Library commit `843c574c920aa9926ab56adf662c74b3cd4ed0e1`,
-with no missing or changed files and no unavailable dependencies. Its effective
-bundle snapshot is
-`42106411fcd47bace4b6e12d64b234b7564303775ee7b633bd3341e60208dd4b`.
-The implementation remains Worker 15's; this pair authors only the new proposition.
+The complete pair was read. This pair adds only the new proposition.
 
-The construction's recorded exact prerequisites are smooth predicates
-`665022df-625b-44ae-9dbd-425f6e266bab` version 1, smooth-part definitions
-`9fb5627f-6e8c-48a5-a92f-a4ddcf319b2d` version 1, and scalar-twist definitions
-`c83db975-8b79-4fbb-9901-2db836910a0a` version 1. Fresh fetches of all three
-confirm accepted, public and current status at that same Library commit.
-The local Lean and Markdown hashes match their accepted effective bundles.
-The environment is `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d` version 1,
+At that commit the construction's prerequisites were the smooth predicates
+(`Smooth.Definitions`), the smooth-part definitions
+(`Smooth.SmoothPart.Definitions`) and the scalar-twist definitions
+(`Twist.Definitions`). The environment is
 Lean 4.34.0, Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.
-All theorem proofs remain separate obligations.
+The theorem proofs are in `StructuralProof`.
 
 The complete seven-clause proposition compiled successfully with the pinned native Lean
 executable on October 16, 2026, with no diagnostics. A subsequent `#check` and
 `#print` inspection confirmed the four independent universes, the complex
 module hypotheses, the topology assumptions inside the proposition, and every
-clause's premises and conclusion. Compilation and inspection are development
-evidence; independent semantic acceptance and publication remain separate.
+clause's premises and conclusion.

@@ -75,7 +75,8 @@ Internal. These are the classical constructions for isotropic quadratic or hermi
 (the hyperbolic Levi factor, Eichler–Siegel transformations, Weyl elements built from
 them, and generation by reflections). Here they are written for Tits's `σ`-quadratic forms
 over a division algebra, with an arbitrary characteristic. They serve the proof of the
-Kneser–Tits property for quaternionic spin groups of Witt index one (Task 5398).
+Kneser–Tits property for quaternionic spin groups of Witt index one
+(`LocalSpinKneserTitsStatement`).
 
 * `mem_sup_of_vecMul_eq_smul` describes, at the level of rational points, the centralizer of
   the cocharacter `t ↦ ℓ(t)` modulo the Eichler subgroup.

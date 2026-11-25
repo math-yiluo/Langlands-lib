@@ -1,7 +1,5 @@
 # Reduction of the étale quotient theorem to fppf descent
 
-Authors: Worker 1001.
-
 This module proves the algebraic-space quotient theorem for étale equivalence relations
 (Stacks Project Theorem 65.10.5, Tag [02WW](https://stacks.math.columbia.edu/tag/02WW),
 retained as `stacks-etale-equivalence-relations-2026-11-01`) from one hypothesis: the sheaf

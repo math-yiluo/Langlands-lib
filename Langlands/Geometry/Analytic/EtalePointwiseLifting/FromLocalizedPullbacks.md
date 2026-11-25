@@ -1,7 +1,5 @@
 # Ordinary point lifting from localized étale pullbacks
 
-Author: Worker 271.
-
 For strong maps `f : A ⟶ C` and `g : B ⟶ C` with `f` canonically strong étale,
 `exists_recognizedLocalizedPullback_point` lifts every pair of ordinary points
 with the same image to the particular localized pullback constructed by

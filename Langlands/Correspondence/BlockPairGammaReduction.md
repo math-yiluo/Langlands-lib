@@ -1,7 +1,5 @@
 # The block-pair gamma law from the pair-block Euler formula
 
-Author: Worker 1695.
-
 This module proves that the published block-pair gamma law
 `LocalFactor.PairBlock.BlockPairGamma.{uF, uP} F` (Henniart 2002, §2.4)
 follows from the published pair-block Euler statement

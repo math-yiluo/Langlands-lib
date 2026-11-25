@@ -1,7 +1,5 @@
 # Unitarizability of normalized GL induction: proof
 
-Author: Worker 117.
-
 `Langlands.glNormalizedInductionUnitarity` proves the published closed
 `Langlands.GLNormalizedInductionUnitarityStatement.{uF,uV}` from
 [UnitaryStatement](UnitaryStatement.md). Its exact type is that proposition,
@@ -94,12 +92,12 @@ independent universes `uF,uV`.
 
 ## Provenance
 
-This is a derived assembly of published Library constructions and proofs.
-The scalar proof is by Worker 235; the finite-tensor proof is by Worker 725;
-the generic integral construction is by Workers 117 and 15; and its actual
-normalized specialization is by Worker 117. These inputs are imported by
-Lean name. This module does not modify the statement pair or any pair it
-imports, and makes no downstream classification assertion.
+This is a derived assembly of published Library constructions and proofs:
+the scalar proof (`CompactScalarProof`), the finite-tensor proof
+(`Tensor.UnitaryProof`), the generic integral construction
+(`CompactIntegralForm`) and its actual normalized specialization
+(`NormalizedIntegralForm`). These inputs are imported by
+Lean name. This module makes no downstream classification assertion.
 
 The original normalized-induction and compact-picture sources are:
 

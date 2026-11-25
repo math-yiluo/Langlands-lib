@@ -1,7 +1,5 @@
 # Every point of a nilpotent group normalizes every torus
 
-Author: Worker 1531.
-
 The module proves three theorems in namespace `Langlands.GroupScheme` and
 records the third as the proposition
 `Langlands.GroupScheme.NilpotentTorusNormalizerStatement`, proved by
@@ -58,7 +56,5 @@ This is a derived result that only combines Library results. Its
 mathematical content is the standard fact that tori in a connected nilpotent
 group are central. The module makes no new external assertion.
 
-Checked with `lean_check` in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`
-over Library commit `dd78edadc914cf56ca81c595cee581a3570d415c`
-(diagnostic `b92d315f-5900-461b-b728-535ccbcb61dd`, Lake build): 0 errors,
+Checked with a Lake build: 0 errors,
 0 warnings, axioms `propext`, `Classical.choice`, `Quot.sound`.

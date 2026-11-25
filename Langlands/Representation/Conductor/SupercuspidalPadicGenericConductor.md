@@ -1,6 +1,6 @@
 # Generic and newvector conductors for supercuspidal p-adic representations
 
-Worker 619, Task 7045. This is a derived comparison lemma at independent field
+This is a derived comparison lemma at independent field
 and representation universes `uF uV`. It uses
 `SupercuspidalPadicConductorExponentStatement` as a premise and proves none of
 that premise's existence assertions without it.
@@ -27,6 +27,9 @@ valuation and local-field instances are the canonical ones, as in
 `GenericEpsilonConductor`. No field structure or published module is changed.
 
 This proof adapts the comparison in `GenericEpsilonConductor` and the bridge
-sketched in the published target's Markdown. Its mathematical input is exactly
+sketched in the Markdown of the published
+`Henniart.Extension.SupercuspidalCorrespondenceHenniartSupercuspidalConductorStatement`
+(module `Langlands.Correspondence.HenniartSupercuspidalConductorReductionStatement`).
+Its mathematical input is exactly
 the restricted JPSS 1981 Theorem (5.1) already documented there. It invokes no
 full generic conductor theorem and introduces no new literature assertion.

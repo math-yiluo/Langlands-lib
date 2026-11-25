@@ -75,7 +75,7 @@ second argument above.
 4. A central point of `G` therefore lies in both `M` and `G` inside `H`. So it lies in
    their intersection `T₀`.
 
-This route does not use conjugacy of maximal tori. Worker 1334 proposed it.
+This route does not use conjugacy of maximal tori.
 
 ## Axioms
 

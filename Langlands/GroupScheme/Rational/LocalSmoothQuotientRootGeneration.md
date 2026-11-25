@@ -1,6 +1,6 @@
 # Integral root generation in smooth fibre-quotient kernels
 
-This internal unit concerns a smooth affine group scheme with geometrically
+This module concerns a smooth affine group scheme with geometrically
 connected fibres over a local domain, a map from a coordinate split torus, and a
 smooth homomorphism from a field fibre to a smooth affine field group. The source
 torus map on a possibly different field fibre is monic and has a relative root
@@ -30,5 +30,5 @@ Multiplying these original integral coordinates proves the claimed containment.
 The proof is an internal composition of the existing integral ordered-root chart,
 field character transport and smooth quotient coordinate-reflection results.
 It assumes neither surjectivity of the field-fibre map nor connectedness or
-unipotence of its kernel. It does not yet give generation of the whole section
+unipotence of its kernel. It does not give generation of the whole section
 kernel, which additionally requires a centralizer and opposite-cell argument.

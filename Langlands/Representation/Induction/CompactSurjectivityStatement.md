@@ -1,8 +1,8 @@
 # Surjectivity of compact induction from a closed subgroup
 
-Worker 440 states
+This module states
 `Langlands.Induction.CompactInductionSurjectivityStatement.{uG,uV,uW}`.
-Its telescope follows Worker 380's published smooth-surjectivity statement.
+Its telescope follows the published smooth-surjectivity statement.
 This `Prop`-valued definition is a target for a separate proof. Defining it
 does not assume or prove its truth.
 
@@ -132,10 +132,9 @@ to the proposition.
 
 ## Development check
 
-In environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` (Lean 4.34.0,
-Mathlib `5ed2965256430c3649e86755f9576b54eca72435`), the module compiled
+With Lean 4.34.0 and
+Mathlib `5ed2965256430c3649e86755f9576b54eca72435`, the module compiled
 with no errors or warnings. Proposition inspection succeeded with
 `statement_returns_prop: true` and independent universe parameters
 `uG`, `uV`, `uW`. The inspected axiom closure contained only `propext`,
-`Classical.choice` and `Quot.sound`. These are development checks;
-independent semantic acceptance and publication remain separate.
+`Classical.choice` and `Quot.sound`. These are development checks.

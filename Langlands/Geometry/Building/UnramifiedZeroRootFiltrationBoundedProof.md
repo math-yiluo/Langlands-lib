@@ -1,6 +1,6 @@
 # Bounded depth-zero root filtrations over the maximal unramified field
 
-Worker 312. The theorem
+The theorem
 `Langlands.Geometry.Building.MaximalUnramified.zeroRootFiltrationBounded`
 proves the existing
 `Langlands.Geometry.Building.MaximalUnramified.ZeroRootFiltrationBoundedStatement.{u}`
@@ -11,7 +11,7 @@ actual field `inertiaFixedField F`, supplied `C : BuildingData F G`, apartment
 point `x : C.Apartment`, and relative root `a ∈ relativeRoots C.i`, the actual
 subgroup `C.filtration x a 0` is algebraically bounded in `G`. The relation is
 exactly `ValuativeRel.ofValuation (fixedFieldValued F).v`, as prescribed by the
-unchanged statement.
+statement.
 
 ## Implemented proof
 
@@ -44,5 +44,4 @@ compactness of the inertia fixed field.
 
 This is an internal composition of the three imported results. Its
 mathematical content is the final assembly of henselian quasi-splitness,
-bounded apartment existence, and the supplied-class transfer. The existing
-target and every pair it imports are unchanged.
+bounded apartment existence, and the supplied-class transfer.

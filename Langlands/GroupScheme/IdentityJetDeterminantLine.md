@@ -1,6 +1,6 @@
 # Actual jet determinant lines from affine cotangent frames
 
-This internal unit constructs a tensor-power isomorphism for the existing
+This module constructs a tensor-power isomorphism for the existing
 actual identity-jet determinant line. Let `G` be a smooth affine group
 scheme over an arbitrary scheme `S`. Supply a cover of `S` by affine
 opens and actual free sheaf frames of `G.cotangentAtIdentity` on those
@@ -35,8 +35,10 @@ affine cotangent frame cover.
 
 The provenance is internal: the isomorphism is assembled from the
 actual sheaf frames, their determinant transitions, and the two generic
-presentation comparisons in this unit. The fixed-index affine cover is
+presentation comparisons in this module. The fixed-index affine cover is
 a retained hypothesis. Variable global rank, comparison with the
 actual Lie determinant dual, stabilizing base-line factors and
-geometric ampleness remain separate obligations toward the parent
-task. This module proves no ampleness theorem.
+geometric ampleness are separate obligations toward
+`FiniteAffineParabolicDeterminantDualAmpleStatement`, the statement this module
+serves, which `Langlands.GroupScheme.RelativeLevi.ParabolicDeterminantDualAmpleProof`
+proves. This module proves no ampleness theorem.

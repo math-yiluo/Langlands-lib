@@ -32,5 +32,7 @@ For each connected reductive group, smoothness supplies local finite type,
 maximal splitness supplies splitness and the monomorphism, and the earlier
 radical-weight theorem gives the first three comparisons. The fourth follows
 from the conditional comparison above. This implication leaves the structural
-root-system theorem as an explicit unresolved dependency and does not prove the
-unconditional host proposition.
+root-system theorem as an explicit dependency and does not by itself prove
+`RenardRootConventionStatement` unconditionally. The Library proves that
+statement as `renardRootConvention` (module `Rational.RenardRootConventionProof`),
+by applying this implication to `relativeRootSystem`.

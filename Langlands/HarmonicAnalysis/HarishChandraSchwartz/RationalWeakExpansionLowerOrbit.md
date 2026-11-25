@@ -1,7 +1,5 @@
 # The conjugated representation `sπ`, its orbit `sO` and the lower density `µ^{M'}`
 
-Author: Worker 131, task `b2eba110-082e-4b07-9076-f64b90cd0dc3` (Task 7454, revision 1).
-
 Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalWeakExpansionLowerOrbit`,
 namespace `Langlands.HarishChandraSchwartz.WeakExpansion`. Four generic declarations about `X`
 and `Im X` (`unitaryUnramifiedCharacters_congr`, `unitaryUnramifiedCharactersCongr`,
@@ -10,13 +8,15 @@ and `Im X` (`unitaryUnramifiedCharacters_congr`, `unitaryUnramifiedCharactersCon
 
 ## Purpose
 
-Item 2 of Task 7454 asks, for each `s ∈ W(M'|G|M)`, for the conjugated representation `sπ` of
-`(s·M)(F)` and its orbit `sO`. Item 3 asks for the lower densities `µ^{M'}` on `sO`. The packet
+The weighted weak-constant-term expansion (Waldspurger V.1.1 and V.2.3, stated in
+`RationalWeakExpansionTargets`) needs, for each `s ∈ W(M'|G|M)`, the conjugated representation `sπ`
+of `(s·M)(F)` and its orbit `sO`, and the lower densities `µ^{M'}` on `sO`. The packet
 identity also needs the transport of measures along `χ ↦ sχ`. This module provides all of these on
 the actual groups, for a fixed representative `n ∈ N_G(S)(F)` of `s`:
 
 - `M = M_I`, with `M_I(F)` written `𝐌`, the literal subgroup `standardLeviPoints i ν I` of
-  `G(F)`. This is the same presentation as `standardLeviPlancherelWeight` (`µ^G`) and Task 7452.
+  `G(F)`. This is the same presentation as `standardLeviPlancherelWeight` (`µ^G`) and
+  `rationalOrbitWeakConstantTerm` (module `RationalOrbitPositiveConstantTerm`).
 - `M' = Standard.leviScheme i ν I'`, the actual standard Levi scheme of `I'`.
 - `s·M` is the literal Levi `levi χ_s` of the cocharacter `χ_s = lowerCocharacter i ν I' ζ n` of
   `M'`. Here `ζ` is a standard cocharacter of `I` and `χ_s = (n·ζ) ∘ leviTorusHom`. The module
@@ -38,8 +38,8 @@ parabolic of `χ_s`, as in the source.
   M'`). For a Weyl index `s`, `Representatives.normalizer s` and `Representatives.levi_le s` of
   `RationalWeakExpansionWeyl` supply them.
 - `C`, a normal central subgroup of `𝐌`, and a Haar measure `μ` on `𝐌/C`. Here **`𝐌/C` is
-  assumed to carry its Borel σ-algebra (`[BorelSpace (𝐌 ⧸ C)]`)**. Task 7452 and `µ^G` take an
-  arbitrary `MeasurableSpace` instance. The Borel condition is needed to carry the Haar measure
+  assumed to carry its Borel σ-algebra (`[BorelSpace (𝐌 ⧸ C)]`)**. `rationalOrbitWeakConstantTerm`
+  and `µ^G` take an arbitrary `MeasurableSpace` instance. The Borel condition is needed to carry the Haar measure
   to `(s·M)(F)/sC` (Mathlib's `ContinuousMulEquiv.isHaarMeasure_map`). Haar measures are Borel
   measures, so this narrows only the formal generality, not the source situation.
 - `π`, an irreducible admissible representation of `𝐌` that is square integrable modulo `C`
@@ -104,8 +104,7 @@ parabolic of `χ_s`, as in the source.
 - `lowerRepresentation` is `sπ = π ∘ e⁻¹`, that is `sπ(m') = π(n⁻¹ m' n)` on the space of `π`,
   made with the published `IrreducibleAdmissibleRep.pullback`.
   `lowerRepresentation_isSquareIntegrable` is proved from the published
-  `isSquareIntegrableModCentralSubgroup_comp_iff`. So `hsq` is the only representation premise,
-  as the task requires.
+  `isSquareIntegrableModCentralSubgroup_comp_iff`. So `hsq` is the only representation premise.
 - `lowerClass` is `ω ↦ sω`, the published `DiscreteSeriesClass.pullback`.
   `lowerClass_smul` states `s(ω ⊗ z) = sω ⊗ sz`, and `lowerClass_discreteSeriesClass` states
   that the class of `π` goes to the class of `sπ`.
@@ -159,8 +158,8 @@ numbers are printed pages.
 **Dependence on the representative.** Every object here depends on the chosen `n`. A different
 representative `n' = n t` with `t` in the centralizer of the torus changes `e` by an inner
 automorphism of `M_I(F)`. Then `sπ` changes to an isomorphic representation and `sO` to the same
-set of classes. This module does not prove that independence. The targets of the task are stated
-for the fixed representative system `Representatives` of `RationalWeakExpansionWeyl`.
+set of classes. This module does not prove that independence. The targets of `RationalWeakExpansionTargets` are
+stated for the fixed representative system `Representatives` of `RationalWeakExpansionWeyl`.
 
 ## Status
 
@@ -173,7 +172,7 @@ for the fixed representative system `Representatives` of `RationalWeakExpansionW
   `isSquareIntegrableModCentralSubgroup_comp_iff`, `IrreducibleAdmissibleRep.pullback`,
   `DiscreteSeriesClass.pullback`(`_injective`), `SmoothDualClass.pullback_twist`,
   `ContinuousMulEquiv.isHaarMeasure_map`, `standardLevi_isConnectedReductive`,
-  `Standard.isMaximalSplitTorus_leviTorusHom`, and from the earlier units of Task 7454 (`RationalWeakExpansionLowerGeometry`, `DynamicOrbitPlancherelWeight`)
+  `Standard.isMaximalSplitTorus_leviTorusHom`, and from `RationalWeakExpansionLowerGeometry` and `DynamicOrbitPlancherelWeight`
   `lowerCocharacter`, `lowerLeviConjugation`, `conjugatedCocharacter_dynamic`,
   `DensityPackage` and `orbitPlancherelWeight`.
 - New definitions: `unitaryUnramifiedCharactersCongr`, `unramifiedCharactersCongr`,
@@ -182,4 +181,5 @@ for the fixed representative system `Representatives` of `RationalWeakExpansionW
   `lowerCentral`, `lowerQuotientEquiv`, `lowerMeasure`, `lowerRepresentation`, `lowerClass`,
   `lowerOrbitMap`, `LowerDensityPackage`, `lowerPlancherelWeight`, `lowerCharacterMeasure`.
 - New proved lemmas: all other declarations listed above.
-- No targets are stated here. The c-family and the four targets are in later modules.
+- No targets are stated here. The c-family and the four targets are in the modules
+  `RationalWeakExpansionCFamily` and `RationalWeakExpansionTargets`.

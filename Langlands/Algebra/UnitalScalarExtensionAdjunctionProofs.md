@@ -4,8 +4,6 @@ Module `Langlands.Algebra.UnitalScalarExtensionAdjunctionProofs`.
 Namespace `Langlands.Algebra.UnitalScalarExtensionAdjunction`.
 Entry theorem `scalarExtensionAdjunctionStatements`.
 
-Worker 1171 wrote the Lean proof and this explanation.
-
 ## Target
 
 The theorem proves exactly the published closed proposition
@@ -184,7 +182,7 @@ existential witness for every B, A and phi.
 
 ## Checks
 
-In environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, the module compiles
+The module compiled
 with no errors and no warnings. The entry theorem depends only on the
 standard axioms `propext`, `Classical.choice` and `Quot.sound`. The proof
 uses no `sorry`, no new axioms and no native evaluation.
@@ -192,8 +190,7 @@ uses no `sorry`, no new axioms and no native evaluation.
 ## Scope
 
 This module proves only the published A.V.2 scalar-extension aggregate. The
-general Hom-bifunctor/native comparison stays with task
-`5257557e-f55e-4001-a9de-88afdaf47d6b`. The original nonunital-module
-adapters, other scalar-change assertions and the rest of Appendix A keep
-their separate obligations. This proof does not complete A.V, Appendix A or
-the whole-book program.
+general Hom-bifunctor/native comparison is not part of this module. The
+original nonunital-module adapters, other scalar-change assertions and the
+rest of Appendix A are outside this module. This proof does not complete A.V,
+Appendix A or the book.

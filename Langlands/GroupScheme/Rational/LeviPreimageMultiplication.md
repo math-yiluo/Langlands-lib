@@ -2,8 +2,8 @@
 
 This internal helper is a scheme-theoretic consequence of a supplied
 two-factor multiplication isomorphism and the universal property of a
-group-scheme pullback. Worker 74 implements it for the nested-parabolic
-extension task.
+group-scheme pullback. It is used for the nested-parabolic extension in
+`Langlands.Representation.Exponents.LeviParabolicExtensionProof`.
 
 Let `t : R → Q`, `n : N → Q`, `s : V → Q` and `nR : N → R` be homomorphisms
 over any base scheme, with `nR ≫ t = n`. If multiplication `N × V → Q`

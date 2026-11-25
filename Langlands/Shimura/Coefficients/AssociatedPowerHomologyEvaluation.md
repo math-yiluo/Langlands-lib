@@ -11,7 +11,7 @@ The module reuses
 `Langlands.Cohomology.mapHomologicalComplexHomologyIso` from
 `Langlands/Cohomology/DivisibleSystem/InverseLimit.lean`. Its generic first
 section needs neither a divisible system nor the conditional inverse-limit
-theorems later in that file. This contribution does not redefine that general
+theorems later in that file. This module does not redefine that general
 isomorphism or Mathlib's evaluation criteria for quasi-isomorphisms.
 
 ## Parameters and notation
@@ -161,4 +161,4 @@ by homology, Mittag-Leffler or finiteness result, invertibility of either
 canonical homology/limit map, exactness of associated sheaves, derived
 completion or derived/global cohomology comparison. Continuous or smooth
 actions, lisse-adic properties, and the actual Harris scheme, cover tower and
-coefficient specialization remain separate obligations.
+coefficient specialization are not part of this module.

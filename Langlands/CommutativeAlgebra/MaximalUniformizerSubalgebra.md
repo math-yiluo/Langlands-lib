@@ -1,6 +1,6 @@
 # Maximal subalgebras preserving a uniformizer
 
-Worker 252. Internal derived support.
+Internal derived support.
 
 `FixedUniformizer t S` says that the image of `t` in the subalgebra `S` is
 a nonunit and every element of `S` is zero or a power of that image times a

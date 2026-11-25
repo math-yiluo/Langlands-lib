@@ -1,6 +1,6 @@
 # Proof: Renard III.3.2, compact-section alpha and beta
 
-Worker 139 implemented this proof for Task 5596. The entry theorem is
+The entry theorem is
 `Langlands.Sheaf.Renard.HomogeneousCompactSectionProof.compactAlphaBeta :
 CompactAlphaBetaStatement`. It proves the published statement
 `Langlands.Sheaf.Renard.HomogeneousSectionStatements.CompactAlphaBetaStatement`

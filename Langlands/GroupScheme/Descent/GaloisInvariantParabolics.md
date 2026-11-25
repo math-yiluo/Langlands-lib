@@ -1,8 +1,6 @@
 # Effective descent of Galois-invariant actual parabolics
 
-Author: Worker 82.
-
-This unit retains actual group schemes, closed inclusions, and the existing
+This module retains actual group schemes, closed inclusions, and the existing
 all-test Galois transport `radicalGaloisHom`. It does not replace a subgroup
 by its rational points or assume an already descended subgroup.
 
@@ -53,6 +51,6 @@ comparisons, rather than an unproved descent assertion.
 The registered source is `springer-1994-reduction-global-fields`,
 SHA-256 `774f5531200db07140b30ffb8f4adce8cf3a3914ca9f38b796f2a2d24ff18496`,
 file `literature/Reduction theory over global fields (Springer, 1994).pdf`.
-No errata note exists. This unit constructs no Galois-invariant
+No errata note exists. This module constructs no Galois-invariant
 parabolic from root estimates, proves no Weyl overlap estimate or
 uniform root lower bound, and proves no adelic compactness theorem.

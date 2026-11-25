@@ -1,7 +1,5 @@
 # Actual smooth weighted compact averages
 
-Author: Worker 94.
-
 This internal construction uses the published actual standard compact
 subgroup and genuine matrix smooth functions, for every number field in
 arbitrary universe and every natural rank, including zero. It allows

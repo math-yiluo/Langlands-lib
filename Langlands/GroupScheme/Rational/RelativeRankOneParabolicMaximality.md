@@ -1,6 +1,6 @@
 # Maximality from roots on a Levi split component
 
-This internal development for Task 5515 addresses the maximality
+This internal development addresses the maximality
 condition in a rational rank-one wall. `HasProportionalRootPairings i`
 requires vanishing cross determinants for the integral pairings of every
 two actual roots of the specified split torus.

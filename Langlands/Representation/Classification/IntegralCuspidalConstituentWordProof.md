@@ -1,8 +1,5 @@
 # Actual constituent words from supercuspidal support
 
-Authors: Worker 320 (shared Lean proof and initial explanation), Worker 438
-(target verification, dependency audit and expanded explanation).
-
 `Langlands.Classification.integralCuspidalConstituentWord` proves exactly
 `Langlands.Classification.IntegralCuspidalConstituentWord.{uF,uV} F T`.
 The prime is arbitrary, the actual p-adic field and topological datum are
@@ -78,4 +75,4 @@ quotient coverage, tempered block uniqueness, square-integrable Langlands
 classification, square-integrable exhaustion, regular exhaustion or proof
 successor of these results. This theorem constructs one realizing word
 per constituent; initial integral-line existence, local word moves,
-segment extraction and analytic classification remain separate obligations.
+segment extraction and analytic classification are not proved here.

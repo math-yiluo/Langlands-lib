@@ -2,7 +2,7 @@
 
 `Langlands.HarmonicAnalysis.Distribution.OpenRestrictionLocalityStatement.{u}`
 is the proposition below. This module only defines the proposition. It
-contains no proof, and no published theorem proves it yet (see
+contains no proof; the theorem `openRestrictionLocality` proves it (see
 [Status](#status)). The module imports the published
 `Langlands.HarmonicAnalysis.Distribution.SupportedRestriction`, which brings
 in `Distribution.Basic` and `Distribution.Subspace`. None of these modules is
@@ -109,20 +109,9 @@ unchanged [ClosedSupportedDescentStatement](ClosedSupportedDescentStatement.md).
 Here neither `Z` nor any support is assumed closed, and support is replaced
 by the local vanishing hypothesis.
 
-Worker 634 designed this exact proposition as
-`Langlands.HarmonicAnalysis.Distribution.Design.OpenRestrictionLocalityStatement`
-in the private module `SupportedTransportDesign`. That module is part of the
-shared draft revision 8 of the Shalika distribution-invariance task
-`f79ca82c-d050-4ffa-821b-c347b60e36e0`. This production module moves the same
-proposition, with the same binders, hypotheses and conclusion, into the
-ordinary namespace `Langlands.HarmonicAnalysis.Distribution`. The private
-`Design` namespace and the other design interface in that module are not
-part of this unit.
+## Proof route
 
-## Intended proof route
-
-This is the intended later proof. It is not established here, and a
-separate exact proof task will follow publication of this statement.
+This route is not established here.
 
 Fix `f : SchwartzBruhat X` with `f z = 0` for all `z ∈ Z`. Every point `x`
 of the support `{x | f x ≠ 0}` then lies outside `Z`, so the hypothesis gives
@@ -151,29 +140,21 @@ is used: no continuity of `D` and no exchange of `D` with an infinite sum or
 integral. Empty support, in particular empty `X`, is the base case of the
 induction.
 
-Worker 634's private module `OpenRestrictionLocalityCore`, in the same shared
-draft revision 8, implements this route as `OpenRestrictionLocalityCore.locality`
-for the `Design` copy of the proposition. It adapts the published helper
-`exists_extension_eq`, credited to Worker 33 in this task's context, and the
-clopen-cutoff and finite-union argument that Worker 121 implemented in the
-published `LocalizationProof`. That private file is development
-material only. It is not accepted evidence, and it proves nothing about the
-production declaration defined here.
+The proof `openRestrictionLocality`, in
+[OpenRestrictionLocalityProof](OpenRestrictionLocalityProof.md), implements
+this route. It adapts the published helper `exists_extension_eq` and the
+clopen-cutoff and finite-union argument of the published `LocalizationProof`.
 
 ## Consumers
 
-The proposition is meant for the final finite-cell argument in Worker 634's
-Shalika distribution-invariance task `f79ca82c-d050-4ffa-821b-c347b60e36e0`.
-It is also meant for the Whittaker multiplicity-one work of Worker 16 (task
-`209cde88-bab8-4a85-8a9d-72b8864b6fa0`).
+The proposition is meant for the final finite-cell argument of the Shalika
+distribution-invariance work. It is also meant for the Whittaker
+multiplicity-one work.
 
 ## Status
 
-This is a statement only. No theorem of type
-`OpenRestrictionLocalityStatement.{u}` is published, and nothing in this
-module asserts that the proposition holds.
-
-## Authors
-
-Worker 634 designed the proposition. Worker 1080 wrote this production
-Lean/Markdown pair.
+The proposition is proved by the theorem
+`Langlands.HarmonicAnalysis.Distribution.openRestrictionLocality.{u}` in
+`Langlands.HarmonicAnalysis.Distribution.OpenRestrictionLocalityProof`. This
+module is a statement only, and nothing in it asserts that the proposition
+holds.

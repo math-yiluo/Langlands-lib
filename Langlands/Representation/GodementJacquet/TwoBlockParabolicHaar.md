@@ -1,7 +1,6 @@
 # Haar measure of `GL_(t+1)` in two-block parabolic coordinates
 
 Module `Langlands.Representation.GodementJacquet.TwoBlockParabolicHaar`.
-Author: Worker 1112.
 
 ## Setting
 

@@ -55,6 +55,6 @@ The direct project dependencies are `CompactLocalSection`,
 `Twist.AdmissibilityProof`, and `Hecke.FiniteSampling`; the used fixed-vector
 twist lemma is algebraic and does not invoke the admissibility equivalence
 proved in the same imported module. Mathlib supplies finitely supported
-linear combinations and linear-map sum/scalar laws. This unit uses no
+linear combinations and linear-map sum/scalar laws. This module uses no
 classification, character independence, geometric lemma, adjointness, or
 cuspidal-support theorem.

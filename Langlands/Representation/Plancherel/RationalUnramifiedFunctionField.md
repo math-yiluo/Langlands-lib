@@ -1,7 +1,5 @@
 # Scalar ring and fraction field of actual unramified families
 
-Author: Worker 1615.
-
 This is a derived algebraic construction from the published
 `rationalUnramifiedLaurentAlgebraEquiv` and Mathlib's finite-generation,
 Noetherian-ring, monoid-algebra and localization results. It supplies scalar-ring

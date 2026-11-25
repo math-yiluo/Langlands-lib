@@ -8,8 +8,8 @@ free and finite type. For every `n : ℕ`, geometric smoothness of relative
 dimension `n` gives `Modules.IsLocallyFreeOfRank (relativeDifferentials f) n`.
 There are no additional hypotheses. The proof imports the canonical affine-chart
 comparison from `Langlands.AlgebraicGeometry.RelativeDifferentialsAffineChart`.
-The existing target, the sheafification-based differential sheaf, and its
-universal derivation are unchanged.
+The target, the sheafification-based differential sheaf, and its universal
+derivation are the existing Library ones.
 
 ## Implemented neighborhood assembly
 
@@ -53,7 +53,7 @@ This argument works even over the zero ring: it uses the specified
 presentation dimension and does not invoke rank uniqueness or a nontriviality
 hypothesis.
 
-## Differential assembly and published dependencies
+## Differential assembly and dependencies
 
 For the first target clause, `Smooth.exists_isStandardSmooth` supplies an
 affine neighborhood of each point and a standard-smooth chart algebra.
@@ -62,12 +62,12 @@ For the second clause,
 supplies the corresponding prescribed-dimensional chart algebra. Both use
 exactly `(f.appLE U V e).hom.toAlgebra` as the algebra structure.
 
-The published `relativeDifferentialsAffineChartBasisIso f hU hV e I b`
+The definition `relativeDifferentialsAffineChartBasisIso f hU hV e I b`
 transports each algebraic basis to a free trivialization of the restriction
 of the actual differential sheaf. That definition composes the unconditional
 `relativeDifferentialsAffineChartIso` with
 `relativeDifferentialsAffineChartModelBasisIso`. The comparison itself uses
-the published open-immersion locality and Spec-comparison invertibility
+the open-immersion locality and Spec-comparison invertibility
 proofs. Its source is the actual restricted sheaf and its target is the tilde
 model for precisely the chart ring map. Thus no comparison, invertibility,
 quasi-coherence, or differential-rank premise remains in this theorem.
@@ -88,12 +88,12 @@ affine charts. Its relative-dimension definition uses differential rank;
 Mathlib's geometric predicate instead supplies standard-smooth presentations.
 The implemented presentation-basis argument is the bridge from that predicate
 to the required basis size. This theorem does not assert the source's additional
-pointwise fibre-dimension equality, which is not part of the assigned target.
+pointwise fibre-dimension equality, which is not part of the target.
 
 The over-category and cover packaging are internal consequences of Mathlib's
 module-sheaf equivalences and free-sheaf universal property. The algebraic
-basis is reused from Mathlib, pinned by environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`; no algebraic freeness theorem or geometric
-comparison is invented. Worker 124 authored this assembly. The chart model, unconditional comparison,
-and basis transport are imported published work by Worker 310; his
-coordination supplied their interface.
+basis is reused from the pinned Mathlib; no algebraic freeness theorem or geometric
+comparison is invented. The chart model, unconditional comparison,
+and basis transport are imported from
+`Langlands.AlgebraicGeometry.RelativeDifferentialsAffineChart` and
+`RelativeDifferentialsAffineChartMaps`.

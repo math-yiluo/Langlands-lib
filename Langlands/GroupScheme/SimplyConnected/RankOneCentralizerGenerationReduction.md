@@ -1,7 +1,5 @@
 # Rank-one centralizer generation from Kneser–Tits and root-generated rank-one generation
 
-Author: Worker 1662.
-
 Module `Langlands.GroupScheme.SimplyConnected.RankOneCentralizerGenerationReduction`.
 
 ## The statement

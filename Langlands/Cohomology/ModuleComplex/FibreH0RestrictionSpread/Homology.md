@@ -1,7 +1,5 @@
 # Homology of cochain complexes of modules with vanishing differentials
 
-Author: Worker 1119.
-
 Module `Langlands.Cohomology.ModuleComplex.FibreH0RestrictionSpread.Homology`, namespace
 `Langlands.Cohomology.ModuleComplex.FibreH0Spread`. It is a helper for the proof of
 `Langlands.Cohomology.ModuleComplex.FibreH0RestrictionSpreadStatement` (see `Main.md`). It

@@ -58,7 +58,7 @@ The four statements are defined in `RealInducedPairFiltrationReduction`.
    * Two induction blocks, on `GL₄(ℝ)` (`hII`).
 
    In each case the exponent hypothesis of the target is the one the base statement needs.
-2. **Induction in stages** (`InductionStages.realAdjacentFiltrationInStages`, Task 7068).
+2. **Induction in stages** (`InductionStages.realAdjacentFiltrationInStages`).
    Let `q j` be the maps of a filtration on `GL_r(ℝ)`. The maps on `GL_n(ℝ)` are
    `Q j = ind (avg (q j))`, with the same lists `ws j`.
    * `avg` averages `q j` over `O(r)` against the normalized Haar measure. This makes it
@@ -74,14 +74,14 @@ The four statements are defined in `RealInducedPairFiltrationReduction`.
    The helper modules are `RealInductionStagesFamily`, `RealInductionStagesAverage`,
    `RealInductionStagesSlice`, `RealInductionStagesFourier`, `RealInductionStagesInduce` and
    `RealInductionStagesDerivative`.
-3. **Base cases on `GL₃(ℝ)`** (Tasks 7133 and 7134). The two orders of a character and an
+3. **Base cases on `GL₃(ℝ)`**. The two orders of a character and an
    induction block are proved by a case analysis on the weight of the induction block and the
    difference of the exponents. The maps are block Frobenius intertwining operators. Landing
    statements, proved with an explicit chart integral and transported by a mirror symmetry,
    show that these maps send standard modules into standard modules. The resonant cases also
    use the uncertainty principle `RealOrthogonalUncertainty.realOrthogonalBlockUncertainty`
    and the `K`-type count of module `RealKTypeTransport`.
-4. **Base case on `GL₄(ℝ)`** (Task 7135). If one weight is zero, the proof uses the zero-weight
+4. **Base case on `GL₄(ℝ)`**. If one weight is zero, the proof uses the zero-weight
    theorems. These split the weight-zero block into two characters and reuse the `GL₃(ℝ)`
    filtrations through induction in stages. For nonzero weights there are two cases.
    * No linked index: the exact swap intertwiner gives the filtration.

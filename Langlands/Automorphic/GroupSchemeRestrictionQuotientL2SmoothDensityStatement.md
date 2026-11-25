@@ -1,14 +1,12 @@
 # Smooth-vector density in `L²([G])`
 
-Author: Worker 112.
-
 `Langlands.Global.RestrictionSplitCentre.QuotientL2SmoothDensityStatement`
 asks for two density results in `L²` of the restriction split-centre quotient
 `RestrictionSplitCentre.Quotient F G S j`. This quotient has the shape
 `[G] = A_G G(F) \ G(A_F)` of Getz--Hahn (2.20)--(2.21)
 (`getz-hahn-2024-automorphic-representations`, printed pp. 68--69). The space
 is `Lp ℂ 2 (quotientHaarMeasure F G S j)` with the published canonical
-quotient measure. The proposition is the `[G]` counterpart of Worker 116's
+quotient measure. The proposition is the `[G]` counterpart of the
 published positive-torus
 `Langlands.Automorphic.GroupSchemeFunctions.GroupSchemeQuotientL2SmoothDensityStatement`.
 
@@ -61,7 +59,7 @@ when its orbit map is `C^∞` on this manifold. The proposition asserts:
 ## Intended proof
 
 This module states the proposition and contains no proof. The intended proof
-transports Worker 116's positive-torus statement along the published
+transports the positive-torus statement along the published
 isometric equivalence `quotientL2Equiv F G h`, where `h` is the hypothesis
 `subgroup F G S j = imageSubgroup F T G i`. It carries the positive-torus
 infinite and finite actions to those on `L²([G])`. A linear isometric

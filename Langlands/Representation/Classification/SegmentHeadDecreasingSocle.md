@@ -72,5 +72,3 @@ closure contains no proof of the excluded multisegment, ordered-head,
 quotient-coverage, tempered-block, square-integrable, or regular
 classification conclusions. The identification uses neither full segment
 Jacquet equivalence nor Aubert irreducible preservation.
-
-Author: Worker 1186.

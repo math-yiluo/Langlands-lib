@@ -24,6 +24,7 @@ theorem matrixCoordinates_one : matrixCoordinates K n 1 = 1 := by
   simp [matrixCoordinates]
 
 theorem isOpenEmbedding_matrixCoordinates : IsOpenEmbedding (matrixCoordinates K n) := by
+  set_option synthInstance.maxSize 256 in
   have h := Units.isOpenEmbedding_val.comp
     (archimedeanGLCoordinates K n).toHomeomorph.isOpenEmbedding
   exact h
@@ -32,6 +33,7 @@ theorem isOpenEmbedding_matrixCoordinates : IsOpenEmbedding (matrixCoordinates K
 theorem ofReal_comp_matrixCoordinates_mem {b : ArchimedeanMatrix K n → ℝ}
     (hb : ContDiff ℝ ∞ b) :
     (fun g => ((b (matrixCoordinates K n g) : ℝ) : ℂ)) ∈ smoothFunctions K n := by
+  set_option synthInstance.maxSize 256 in
   change ContMDiff 𝓘(ℝ, ArchimedeanMatrix K n) 𝓘(ℝ, ℂ) ∞ _
   have h : ContMDiff 𝓘(ℝ, ArchimedeanMatrix K n) 𝓘(ℝ, ℂ) ∞
       (fun x : ArchimedeanGL K n => ((b (x : ArchimedeanMatrix K n) : ℝ) : ℂ)) :=
@@ -40,6 +42,7 @@ theorem ofReal_comp_matrixCoordinates_mem {b : ArchimedeanMatrix K n → ℝ}
 
 /-- The proof of the normalized compact-kernel statement. -/
 theorem normalizedCompactKernel : NormalizedCompactKernelStatement K n := by
+  set_option synthInstance.maxSize 256 in
   intro _ _ μ _ U hU
   have hp := isOpenEmbedding_matrixCoordinates K n
   have hpU : matrixCoordinates K n '' U ∈ 𝓝 (1 : ArchimedeanMatrix K n) := by

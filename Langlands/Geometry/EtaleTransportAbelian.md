@@ -3,7 +3,7 @@
 This internal construction uses the actual transport site of
 `EtaleTransportSite` and its genuine affine basis from `EtaleTransportAffine`.
 The inputs are `Y : Scheme.{u}`, `G : Type w`, a group structure on `G`,
-and `ρ : G →* (Aut Y)ᵐᵒᵖ`. Throughout this unit `Small.{u} G` is explicit:
+and `ρ : G →* (Aut Y)ᵐᵒᵖ`. Throughout this module `Small.{u} G` is explicit:
 the acting group has a representative in the scheme universe, while its
 given universe `w` remains independent.
 
@@ -12,7 +12,7 @@ For the general coefficient constructions, `A : Type uA` has morphisms in
 It has all limits and colimits of size `(u,u)`. Its forgetful functor
 preserves limits and filtered colimits of size `(u,u)` and reflects
 isomorphisms. These are precisely the coefficient hypotheses used for the
-small-site sheafification construction; this unit makes no assertion for
+small-site sheafification construction; this module makes no assertion for
 arbitrary coefficient universes without these hypotheses.
 
 `affineBasis_hasSheafify` applies Mathlib's sheafification on essentially
@@ -56,9 +56,10 @@ Mathlib's `AlgebraicGeometry/Sites/AffineEtale.lean` and for topological
 equivariant sheaves in `Langlands/Sheaf/Equivariant/Abelian.lean`.
 No new claim is attributed to Harris or Berkovich.
 
-This unit supplies the sheafification and injective structures needed to
+This module supplies the sheafification and injective structures needed to
 derive the already constructed section representation functor. Actual
 derived representation objects and comparison with ordinary etale derived
-sections remain successor constructions. Smoothness, compact supports,
+sections are constructed in the modules `EtaleTransportDerivedSections` and
+`EtaleTransportDerivedComparison`, which build on this one. Smoothness, compact supports,
 analytic spaces, arithmetic coefficients, level towers and Harris
 specialization remain separate obligations.

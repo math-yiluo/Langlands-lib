@@ -1,7 +1,5 @@
 # The JPSS two-block Whittaker extension formula
 
-Author: Worker 643.
-
 `Langlands.Whittaker.twoBlockWhittakerExtension.{uF,uV₁,uV₂}` proves exactly
 the closed published proposition
 [`TwoBlockWhittakerExtensionStatement`](TwoBlockExtensionStatement.md).

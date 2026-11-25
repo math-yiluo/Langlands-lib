@@ -1,7 +1,5 @@
 # Trivial radical and quotient by the radical over a perfect field: proof
 
-Author: Worker 895.
-
 The theorem `Langlands.GroupScheme.perfectFieldSemisimpleRadical` proves the
 unchanged published proposition
 `Langlands.GroupScheme.PerfectFieldSemisimpleRadicalStatement.{u}` (module

@@ -151,9 +151,8 @@ set_option linter.defProp false in
 /-- Reduction (Berkovich 1994, Lemma 3.1(ii)): if every quasi-étale arrow of the localized
 category has local domain–étale factorizations through every source point, then for
 quasi-étale `g : Y ⟶ X` and `f ≫ g : Z ⟶ X` the arrow `f : Z ⟶ Y` is quasi-étale.
-The premise is the body of the proposition `QuasiEtaleLocalDomainFactorizationsStatement`
-staged in Task 7910. It is declared with `def` (its type is a proposition) so that it can be
-recorded as a supporting definition artifact. -/
+The premise is the body of the proposition `QuasiEtaleLocalDomainFactorizationsStatement`.
+It is declared with `def` (its type is a proposition). -/
 def quasiEtaleOverMorphism_of_localDomainFactorizations
     (hloc : ∀ {U X : LocalizedCategory.{u, v, v} (K := K)} (f : U ⟶ X),
       quasiEtale f → HasLocalDomainEtaleFactorizations f) :

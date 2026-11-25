@@ -2,7 +2,7 @@
 
 ## Provenance and inputs
 
-This is an internal construction by Worker 56. It combines the actual
+This is an internal construction. It combines the actual
 chosen-atlas action and whole-section transport from
 `ChosenAtlasLocallyConstantAction` with the full function-space stabilizer
 and discrete action constructions in

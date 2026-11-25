@@ -31,7 +31,7 @@ applies `f` to every coefficient.
 - `pow_eq_pow_mapAlgHom_includeRight_lmul'`. Under the hypothesis on `L` above,
   `a ^ q = (mapAlgHom Λ μ a) ^ q` for every `a : (L ⊗[F] L)[Λ]`.
 
-The requested forms had `K`, `L` fields and `Λ` an additive commutative group.
+In the intended application, `K`, `L` are fields and `Λ` is an additive commutative group.
 The Lean statements assume only commutative rings and a commutative additive
 monoid, so they apply in that case unchanged.
 
@@ -64,7 +64,7 @@ monoid, so they apply in that case unchanged.
 
 These are elementary facts about the Frobenius map, which is additive in
 characteristic `p`. They are derived internal helpers, not quoted from a
-source. They were requested by Worker 1001 for the purely inseparable step of
+source. They serve the purely inseparable step of
 torus cocharacter detection. That step descends a cocharacter datum along a
 purely inseparable extension `L / F` of exponent `e`, using that `μ` agrees
 with the identity after taking `q`-th powers. That application is in a

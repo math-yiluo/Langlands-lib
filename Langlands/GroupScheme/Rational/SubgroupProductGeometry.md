@@ -1,6 +1,6 @@
 # Geometry and dimensions of subgroup-product orbits
 
-Worker 1556. This is an internal derivation from the imported product,
+This is an internal derivation from the imported product,
 fixed-vector, smooth-dimension, and closed-orbit interfaces. It supplies helpers
 for the finite-field product criterion and does not prove envelope normality.
 

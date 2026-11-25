@@ -1,7 +1,5 @@
 # Ideal-adic sheaf systems
 
-Author: Worker 13.
-
 The input is a genuine Grothendieck site `(C, J)`, a commutative coefficient
 ring `R`, and an ideal `I`. The displayed Mathlib sheafification instances are
 required for the indicated module categories. This module uses the existing
@@ -34,7 +32,7 @@ separate construction.
 This is a derived sheaf-theoretic infrastructure for the inverse coefficient
 systems in Harris, *Galois properties of cohomological automorphic forms on
 GL(n)*, J. Math. Kyoto Univ. 39-2 (1999), pp.307-308 and p.311, the paragraph
-preceding Proposition 4.10. Worker 13 read these original pages. The stable
+preceding Proposition 4.10. These pages were read in the original. The stable
 lattice, continuous group action, descent to the required lisse sheaf,
 Mittag-Leffler conditions, and comparison with derived cohomology remain
 separate constructions or theorem obligations. An arbitrary sheaf is not

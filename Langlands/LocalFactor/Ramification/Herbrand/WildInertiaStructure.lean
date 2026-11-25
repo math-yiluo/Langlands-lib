@@ -152,7 +152,7 @@ theorem inertia_quotient_lowerOne_cyclic_coprime :
   refine ⟨isCyclic_of_surjective f hf, ?_⟩
   have hdiv : N.index ∣ Nat.card T.ResidueFieldˣ := by
     change Nat.card (inertia T K ⧸ N) ∣ _
-    refine (Subgroup.card_dvd_of_surjective f hf).trans ?_
+    refine (Subgroup.card_dvd_of_surjective hf).trans ?_
     rw [Nat.card_congr e.toEquiv]
     exact Subgroup.card_subgroup_dvd_card θ.range
   have hchar : addOrderOf (1 : T.ResidueField) = p :=

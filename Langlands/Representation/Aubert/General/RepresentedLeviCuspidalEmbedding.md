@@ -1,7 +1,5 @@
 # Cuspidal embeddings for an actual represented dynamic Levi
 
-Author: Worker 1212.
-
 This internal construction specializes the published cuspidal embedding
 construction to a closed group-scheme representative of an actual dynamic
 centralizer. Its inputs include a connected reductive group scheme `G` over a

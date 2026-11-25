@@ -1,7 +1,5 @@
 # Regrouping source-refinement signed sums
 
-Author: Worker 76.
-
 This internal supporting module derives a finite-sum identity in an arbitrary
 abelian group from `refinementSolomonCoefficient_eq`. It introduces
 `refinementSignedSum`, the sum over every target block shape and every minimal

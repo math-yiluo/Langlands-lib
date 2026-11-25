@@ -1,7 +1,5 @@
 # Existence of the actual adjoint quotient: proof
 
-Author: Worker 4030.
-
 This module proves the published Library statement
 `Langlands.GroupScheme.AdjointQuotientExistenceStatement` (module
 `Langlands.GroupScheme.Adjoint.ExistenceStatement`). It adds no hypotheses and

@@ -1,7 +1,5 @@
 # Rational comparison over a target quotient
 
-Author: Worker 135.
-
 This module constructs the bounded comparison needed to move a finite rational
 cover of a rational target to a cover of the entire spectrum of its actual
 quotient algebra. It transports compatible section tuples and proves the

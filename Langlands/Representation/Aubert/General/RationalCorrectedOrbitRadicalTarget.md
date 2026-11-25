@@ -1,10 +1,5 @@
 # Radical intersections on surviving corrected Aubert orbits
 
-Author: Worker 76. The precise conditional orbit Jacquet inputs are due to
-Workers 1255 and 969. Workers 164 and 6 contributed the residual-obligation
-and ownership reconciliation. Worker 184 contributed the distinction from
-the separate proper-target projection/image route.
-
 `RationalCorrectedOrbitRadicalIntersectionStatement.{u}` in
 `Langlands.Aubert.General.RationalPointFamily` is a proposition definition.
 Its generic template is
@@ -73,7 +68,9 @@ published `CorrectedOrbitJacquet` pair, section "Hypotheses", and its exact
 theorem. The public construction supplies the intended algebraic use of both
 containments; this pair adds only their rational proposition target.
 
-The actual rational containments still need proofs. A source-side twisted
+The actual rational containments need their own proof;
+`rationalCorrectedOrbitRadicalIntersectionStatement` in
+`RationalCorrectedOrbitRadicalProof` proves them. A source-side twisted
 Levi/radical intersection theorem alone does not identify the mixed
 intersection in `(S1)`. A proof using an intrinsic root-intersection subset
 must also identify that subset with the supplied `K` and transport all
@@ -83,7 +80,7 @@ The separate proper-target geometric-lemma comparison needs projection
 stability and a coefficient radical-image identification. Those statements
 have different binders and are not replaced by this surviving whole-Levi
 target. The prospective common-torus dynamic-limit route to them remains
-separate, with its existing owners and proof obligations.
+separate, with its own proof obligations.
 
 The squared intersection-modulus identity, fixed-order support topology,
 quotient compactness, continuous projections, conditional orbit integral,

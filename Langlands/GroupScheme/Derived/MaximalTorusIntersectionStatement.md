@@ -1,7 +1,5 @@
 # A maximal torus intersects the actual derived subgroup in a torus
 
-Author: Worker 1435.
-
 `Langlands.GroupScheme.DerivedMaximalTorusIntersectionStatement.{u}` is a
 proposition definition. It states a geometric input for the cocenter quotient
 and contains no proof of that input.

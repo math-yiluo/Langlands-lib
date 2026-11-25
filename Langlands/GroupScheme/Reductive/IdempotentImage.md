@@ -1,7 +1,5 @@
 # Actual retract images of idempotent field-group maps
 
-Worker 632, implementing the field-step route proposed by Worker 47.
-
 For an idempotent endomorphism of a smooth connected affine group over any
 field, `idempotentImage` constructs an actual smooth connected affine closed
 image together with an inclusion and a projection. Their composite is the

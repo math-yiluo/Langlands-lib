@@ -1,7 +1,5 @@
 # Compact saturations and smooth functions
 
-Author: Worker 141.
-
 This internal helper derives continuity of the joint action from the existing
 stable-neighbourhood hypothesis and continuity of each group translation. Near
 `(g,x)`, choose an open subgroup `H` and an `H`-stable neighbourhood `V` of `x`

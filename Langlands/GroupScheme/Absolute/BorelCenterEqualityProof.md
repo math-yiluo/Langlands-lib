@@ -1,7 +1,5 @@
 # Proof: the centre of a connected group variety is the centre of a Borel subgroup
 
-Worker 384.
-
 This module proves `Langlands.GroupScheme.BorelCenterEqualityStatement.{u}`
 ([`BorelCenterEqualityStatement`](BorelCenterEqualityStatement.md); Milne, *Algebraic
 Groups* (2017), Proposition 17.45, p.365) as `Langlands.GroupScheme.borelCenterEquality`, in

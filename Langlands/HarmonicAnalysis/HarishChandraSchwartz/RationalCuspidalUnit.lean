@@ -11,7 +11,7 @@ The resulting function `°e` is the unit from which the reproducing kernel `α_�
 This module states the properties of `°e` used by the kernel step as the predicate
 `IsRationalCuspidalUnit`, and derives them from explicit laws of an arbitrary linear operator
 `P` on the actual rational Schwartz space, each law named as a separate proposition.
-No law is proved here for the actual degree-zero projection of Task 7277; that operator does
+No law is proved here for the actual degree-zero projection; that operator does
 not yet exist in the Library.
 
 Two facts about the actual group are proved: unitary unramified characters separate the points

@@ -16,9 +16,9 @@ variable (K D : Type u) [Field K] [ValuativeRel K] [TopologicalSpace K]
   [IsNonarchimedeanLocalField K] [DivisionRing D] [Algebra K D]
   [FiniteDimensional K D] [Algebra.IsCentral K D]
 
-local instance : Field (DivisionValuation.Residue (localReducedNormValuation K D)) :=
+private local instance : Field (DivisionValuation.Residue (localReducedNormValuation K D)) :=
   localDivisionResidueField K D
-local instance : Algebra 𝓀[K] (DivisionValuation.Residue (localReducedNormValuation K D)) :=
+private local instance : Algebra 𝓀[K] (DivisionValuation.Residue (localReducedNormValuation K D)) :=
   localDivisionResidueAlgebra K D
 
 variable {L : Type uL} [Field L] [Algebra K L] [FiniteDimensional K L]

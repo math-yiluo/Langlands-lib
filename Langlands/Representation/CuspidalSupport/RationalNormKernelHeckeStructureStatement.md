@@ -1,6 +1,6 @@
 # Renard VI.4.3: the structure of the convolution algebra `A = H(G, ρ)`
 
-Author: Worker 1222. Module
+Module
 `Langlands.Representation.CuspidalSupport.RationalNormKernelHeckeStructureStatement`,
 namespace `Langlands.CuspidalSupport`. Statement
 `RationalNormKernelHeckeStructureStatement : Prop` (universe parameters `uF`, `uV`); nothing is
@@ -127,9 +127,10 @@ The statement asserts that there is `ε : G(F) → End ρ` with `InF 1 ε`, `ε(
   Renard's identification of the simple right `A`-modules with `Hom_{⁰G}(ρ, Res(π ⊗ ω))`
   (proof of the Corollary) is not stated here.
 
-## Remaining obligations
+## Proof
 
-The proof is a separate obligation. Renard's argument is the direct computation sketched in the
+The proof is `rationalNormKernelHecke_structure` in
+`RationalNormKernelHeckeStructureProof`. Renard's argument is the direct computation sketched in the
 source; items 7 and 8 need, in addition, that `Λ(G)` is free abelian of finite rank (V.2.3,
 V.2.6), that a finite-index subgroup of `ℤⁿ` is free of rank `n`, and that the units of a
 twisted group algebra of `ℤⁿ` are its nonzero homogeneous elements.

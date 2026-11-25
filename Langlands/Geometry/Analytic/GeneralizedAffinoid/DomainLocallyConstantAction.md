@@ -1,6 +1,6 @@
 # Discrete continuous function actions on actual represented domains
 
-Worker 56 constructs continuous actions on the discrete spaces of locally
+This module constructs continuous actions on the discrete spaces of locally
 constant functions on an invariant represented locus and on its original
 representing spectrum. The inputs are an actual `PresentedAffinoidAlgebra`
 `P` over a complete ultrametric normed field, its `DomainSpectralAction`
@@ -42,4 +42,4 @@ continuous function-action construction. It retains positive polyradii,
 quotients by arbitrary closed ideals, nilpotents, trivially valued fields
 and empty loci or spectra. It supplies constant-coefficient compact local
 function data. Arbitrary equivariant sheaf sections, analytic site
-comparison, and Harris tower constructions remain separate obligations.
+comparison, and Harris tower constructions lie outside this module.

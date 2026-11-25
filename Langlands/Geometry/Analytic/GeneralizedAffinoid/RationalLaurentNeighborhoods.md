@@ -1,7 +1,5 @@
 # Actual positive-radius rational charts for finite Laurent neighborhoods
 
-Author: Worker 84.
-
 This internal construction turns the Library's finite Laurent inequality
 neighborhoods into actual rational quotient presentations over the original
 ambient algebra. It supplements the topological construction in

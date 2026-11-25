@@ -1,7 +1,5 @@
 # Cocharacter conclusions from an inverse up to an integer
 
-Author: Worker 1444.
-
 This internal supporting module constructs scalar-extension equivalences from
 integer quasiinverses and proves the corresponding four conclusions for actual
 split-torus cocharacters. It does not construct a quasiinverse from an isogeny.

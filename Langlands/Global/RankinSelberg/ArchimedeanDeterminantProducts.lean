@@ -32,7 +32,7 @@ theorem normalizedAbs_eq_completion_norm (v : FinitePlace F) (x : FiniteCompleti
       AdelicFunctoriality.FiniteExtension.topologicalData_discreteValuation,
       neg_neg, NumberField.FinitePlace.norm_def,
       WithZeroMulInt.toNNReal_neg_apply _ ((Valuation.ne_zero_iff _).mpr hx),
-      NNReal.coe_zpow, WithZero.toAdd_unzero_eq_log]
+      NNReal.coe_zpow]
     rfl
 
 /-- Determinants of matrices with integral entries are integral. -/

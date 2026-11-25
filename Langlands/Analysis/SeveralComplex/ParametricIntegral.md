@@ -7,9 +7,9 @@ and the lemmas below. Everything is proved; there are no premises.
 
 ## Purpose and provenance
 
-Helper for Task 5613 (Lapid 2011, Proposition 6). Mathlib at the pinned
+Helper for Lapid 2011, Proposition 6. Mathlib at the pinned
 commit proves analyticity and Cauchy estimates for holomorphic functions of
-one complex variable only. Task 5613 needs holomorphy in several variables of
+one complex variable only. The proof of Proposition 6 needs holomorphy in several variables of
 integrals such as averages `μ(N)⁻¹ ∫_N h(s, y) dμ(y)` over a set of group
 elements and Cauchy integrals along circles. This module supplies the
 standard criterion (dominated differentiation under the integral sign, with

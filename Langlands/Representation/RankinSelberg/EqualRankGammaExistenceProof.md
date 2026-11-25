@@ -1,8 +1,8 @@
 # Equal-rank JPSS gamma-factor existence
 
-Author: Worker 364. The valuative-topology instance proof and its binder
-pattern come from Worker 11's `FunctionalEquationStatement` as used in
-Worker 358's `EqualRankGammaExistenceStatement`. This module reuses the
+The valuative-topology instance proof and its binder
+pattern come from `FunctionalEquationStatement` as used in
+`EqualRankGammaExistenceStatement`. This module reuses the
 latter's shared `equalRankGamma_valuative_nonarchimedean` theorem, whose
 original proof is unchanged.
 
@@ -22,8 +22,8 @@ the second model's minus-one scalar, a nonzero original rational value,
 the actual plus-sign row Fourier partner for each test, and the original
 and dual rational continuations with `GammaFunctionalEquation` on its
 entire published denominator domain. The proof adds no hypothesis and
-preserves the target. Integration exposes the target module's existing
-instance theorem for reuse and removes its duplicate from this proof.
+preserves the target. The target module exposes its instance theorem for
+reuse, and this proof does not duplicate it.
 
 ## Implemented proof
 
@@ -71,8 +71,9 @@ set for these actual models. Its application to the invariant forms
 shows that `Bd s` is a scalar multiple of `B s` whenever `B s ≠ 0` and
 `q^(-s)` is outside that set. The final call to
 `EqualRankGammaReduction.gammaEquation_of_continuedForms` uses this
-proportionality and the evaluation formulas. The helper module, submitted
-with this proof, has the following implemented algebra:
+proportionality and the evaluation formulas. The helper module
+`EqualRankGammaExistenceReduction`, ported together with this module, has
+the following implemented algebra:
 
 1. If `B s = 0`, both sides of the cross identity vanish. Otherwise
    proportionality proves the cross identity for every two test triples.
@@ -108,8 +109,8 @@ The source is H. Jacquet, I. I. Piatetski-Shapiro and J. A. Shalika,
 `/home/taskhub/central-library/Jacquet-Piatetski-Shapiro-Shalika--Rankin-Selberg Convolutions--1983.pdf`,
 SHA256 `d9feed6388ca5acf02ecc6a8cce984871a7c28f062ff441e45a71fa2d8962245`.
 Printed pp.391, 395 and 396 (one-based PDF pages 26, 30 and 31) were read
-visually during this task. No source erratum note was found in the
-checked project, workspace or Library errata locations.
+visually for this proof. No source erratum note was found in the
+checked project or Library errata locations.
 
 Theorem 2.7(ii), printed p.391, gives the rational continuations and
 normalized reciprocal-polynomial generators. Section 2.10, p.396,

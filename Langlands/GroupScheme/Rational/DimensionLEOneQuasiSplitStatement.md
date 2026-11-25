@@ -1,7 +1,5 @@
 # Steinberg's quasi-splitness statement for fields of dimension at most one
 
-Author: Worker 1673.
-
 `Langlands.GroupScheme.DimensionLEOneQuasiSplitStatement.{u}` is an
 unproved proposition for arbitrary universe `u`. Every field `K` with
 `Langlands.FieldTheory.HasDimensionLEOne K` has the property that each

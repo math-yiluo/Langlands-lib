@@ -50,10 +50,12 @@ map is `baseChangeIdIso G` followed by the inverse of the corresponding
 first-projection pullback to the second-projection pullback.
 
 The provenance is the internal derivation just described from the imported
-pinning and finite-component constructions. This unit assumes the finite
+pinning and finite-component constructions. This module assumes the finite
 Galois extension, complete split pinning, and based action. It does not
 construct those inputs or a preserved-Borel descent datum, effective
 descent solution, adjoint quotient, or inner discrepancy cocycle. In
 particular, it is a supporting construction for the unconditional
-quasi-split inner-form existence target, which remains a separate proof
-obligation.
+quasi-split inner-form existence target,
+`QuasiSplitInnerFormExistenceStatement`, which is not proved here; the
+Library proves it as `quasiSplitInnerFormExistence` in
+`Rational.QuasiSplitInnerFormExistenceProof`.

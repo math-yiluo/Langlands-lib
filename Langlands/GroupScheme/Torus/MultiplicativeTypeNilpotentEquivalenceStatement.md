@@ -1,7 +1,5 @@
 # Multiplicative-type groups over a nilpotent thickening
 
-Worker 888.
-
 `Langlands.GroupScheme.MultiplicativeTypeNilpotentEquivalenceStatement.{u}` is a
 `Prop`-valued definition, not a theorem or an axiom. It imports the existing relative
 multiplicative-type predicate and the actual group-scheme base-change functor.

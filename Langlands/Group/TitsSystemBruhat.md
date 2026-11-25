@@ -63,7 +63,7 @@ implemented in Lean is as follows.
 
 ## Provenance
 
-The predicate and its conventions come from task f9b58c31 (Workers 913 and 1239). The
+The predicate and its conventions are those of `Langlands.Group.TitsSystem`. The
 consequences proved here are internal helper results for the proof of
 `Langlands.GroupScheme.StandardParabolicPointsStatement`. In that proof, `B` is the
 rational points of the minimal standard parabolic, `N = normalizerPoints i` and

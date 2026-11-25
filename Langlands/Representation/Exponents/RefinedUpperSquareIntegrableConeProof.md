@@ -1,13 +1,11 @@
 # Exact proof of strict upper cones for square-integrable product-Levi refinements
 
-Author: Worker 544.
-
 `Langlands.Exponents.refinedUpperSquareIntegrableCone.{uF,uV}` proves exactly
 `Langlands.Exponents.RefinedUpperSquareIntegrableConeStatement.{uF,uV}`.
 The proof is an internal application of the stronger published theorem
 `Langlands.Exponents.RefinedUpperSquareIntegrableCone.isPositiveRootCone`
-from [the upper-cone module](RefinedUpperSquareIntegrableCone.md), authored by
-Worker 953. The [closed statement](RefinedUpperSquareIntegrableConeStatement.md)
+from [the upper-cone module](RefinedUpperSquareIntegrableCone.md). The
+[closed statement](RefinedUpperSquareIntegrableConeStatement.md)
 and its original-source provenance are unchanged.
 
 ## Implemented proof and scope
@@ -79,7 +77,7 @@ uniformizer tuple independently in each original block; the norm identity then
 gives `q ^ (-sum x_i) = 1`, hence that block's sum is zero.
 
 These are existing proved Library interfaces for reuse by the whole-chamber
-criterion. This contribution adds only the exact closed theorem application;
+criterion. This module adds only the exact closed theorem application;
 it introduces no duplicate helpers or new analytic criterion. Its imports use
 the existing analytic and central-action proofs, with no downstream support,
 regular-head, exhaustion, segment-classification or joint-support premise.

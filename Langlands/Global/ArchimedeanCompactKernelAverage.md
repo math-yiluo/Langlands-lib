@@ -1,7 +1,5 @@
 # Raw convolution as an actual compact-index smooth average
 
-Author: Worker 94.
-
 This internal derivation specializes the actual compact-index average to a compact smooth kernel. The parameter space is the compact inverse image of the original kernel's topological support under inversion. Its inclusion is the continuous group-valued parameter map, its measure is the subtype comap of Haar measure restricted to this compact set, and its weight at `j` is the original kernel value at `j⁻¹`. Compact finiteness of Haar measure makes this subtype measure finite.
 
 Subtype integration and repeated restriction identify the compact-domain integrals with the corresponding full group integrals, since the kernel vanishes outside the inverse support. In particular the complex integral of the weight is exactly the inverse-kernel integral. When the original kernel has nonnegative real values, its weight has norm equal to its real part. Taking real parts under the integrable scalar integral proves that the integral of the weight norm is one whenever the inverse-kernel integral is one.

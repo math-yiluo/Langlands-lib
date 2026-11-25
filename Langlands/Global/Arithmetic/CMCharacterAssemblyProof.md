@@ -1,6 +1,6 @@
 # Proof of the CM regular unit-prescription assembly
 
-Worker 84 and Worker 1242. The theorem
+The theorem
 `Langlands.Global.cmRegularUnitPrescriptionOfInputs` proves the Library
 proposition `Langlands.Global.CMRegularUnitPrescriptionOfInputsStatement.{u,v}`
 from `Langlands.Global.Arithmetic.CMCharacterAssemblyStatement`, with the
@@ -77,5 +77,4 @@ conjugate self-dual, with the prescribed local components). Steps 1–4 follow
 that route, with `μ` in the role of `Y` and `ψ` in that of `Z`. The separated
 finite set
 and the embedding-independent weights are the generalizations documented in
-the target statement pair. The proof draft was written by Worker 84; Worker
-1242 checked it against the current Library and wrote this description.
+the target statement pair. The proof was checked against the Library.

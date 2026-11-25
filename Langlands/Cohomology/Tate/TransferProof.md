@@ -1,8 +1,7 @@
 # Proofs for the dimension-shifted subgroup maps
 
-Authors: Worker 45 and Worker 145. Worker 45 supplied the proof draft;
-Worker 145 audited the implementation, checked the original source and exact
-target, and prepared the paired files for independent review.
+The implementation was audited and checked against the original source and the
+exact target.
 
 The corestriction-after-restriction identity is proved by induction on the
 number of coefficient shifts. At degree zero the proof uses the previously
@@ -24,8 +23,9 @@ This proof uses the published constructions in `TransferDefinitions` and
 the degree-zero proof helpers in `ZeroProof`. `TransferLawsProof` assembles
 its naturality and index theorems with the scalar-split boundary formulas
 from `SplitTransfer` to prove the published `TransferLaws` proposition.
-Ordinary comparisons, tower transitivity and cup laws are separate exact
-proof obligations. This module does not assert compatibility for arbitrary
+Ordinary comparisons, tower transitivity and cup laws are proved separately,
+by `ordinaryComparisons`, `towerLaws` and `cupLaws` in `OrdinaryComparisonsProof`,
+`TowerLawsProof` and `CupLawsProof`. This module does not assert compatibility for arbitrary
 nonsplit coefficient sequences.
 
 The dimension-shifting argument is internal, following Serre, *Local Fields*

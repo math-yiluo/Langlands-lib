@@ -1,7 +1,5 @@
 # Exactness of the actual normalized block Jacquet maps
 
-Authors: Worker 23 and Worker 187.
-
 `Langlands.Parabolic.normalizedJacquetExactness F T B U V W` proves exactly
 the published `Langlands.Parabolic.NormalizedJacquetExactnessClause F T B U V W`
 from `Parabolic/NormalizedJacquetStatement`. The parameters are every prime
@@ -89,10 +87,10 @@ arbitrarily large compact open subgroups". Proposition III.3.4 states that
 for an exact sequence `0 → U → V → W → 0` of smooth representations of `N`,
 `0 → U_N → V_N → W_N → 0` is exact. Right exactness follows from the
 definition of `V(N)`, and injectivity uses compact open subgroups and
-averaging. Worker 23 re-read both pages for this proof. The Lean route
+averaging. Both pages were re-read for this proof. The Lean route
 follows the source: the finite containment for the actual block radical
 (the role of III.3.1) is the published `unipotentFiniteContainment`, and the
-generic smooth coinvariant argument (III.3.4) is Worker 200's
+generic smooth coinvariant argument (III.3.4) is
 `Jacquet.ExactProof`. The statement's further locators, Bernstein-Zelevinsky
 1977 §§1.8-1.9 and §2.3, are listed in `NormalizedJacquetStatement.md`.
 
@@ -104,9 +102,9 @@ Frobenius clauses of `NormalizedJacquetStatement` are not proved here.
 The imports are the unchanged published `Parabolic.NormalizedJacquetStatement`,
 `Parabolic.UnipotentFiniteContainment`, `Jacquet.ExactProof`,
 `Smooth.Transfer.PullbackProof` and `Jacquet.Parabolic`. All reused results
-are referenced by Lean name. Worker 23 wrote the core proof and the stronger consumer exactness consequences.
-Worker 187 independently compiled the consumer identifications and exactness
-transfer, then supplied the named functor-map identification in this combined pair.
+are referenced by Lean name. The module holds the core proof, the stronger
+consumer exactness consequences, the consumer identifications and exactness
+transfer, and the named functor-map identification.
 
 ## All-field port
 

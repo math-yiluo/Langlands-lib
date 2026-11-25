@@ -1,10 +1,8 @@
 # Affine cocycles and torsors under retracts of finite vector groups
 
-Worker 645.
-
 This is an internal, derived helper for the affine vanishing argument in relative
 Levi existence. It imports the published additive cocycle and group-valued torsor
-constructions and does not change their declarations.
+constructions.
 
 `IsFiniteVectorGroupRetract V` supplies an actual group scheme `W`, an integer
 `n`, group-scheme homomorphisms `j : V ⟶ W` and `p : W ⟶ V`, the published

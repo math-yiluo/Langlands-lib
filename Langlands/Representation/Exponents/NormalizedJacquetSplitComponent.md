@@ -1,6 +1,6 @@
 # Normalized Jacquet exponents along the actual split component
 
-Author: Worker 1507. Module
+Module
 `Langlands.Representation.Exponents.NormalizedJacquetSplitComponent`, namespace
 `Langlands.Aubert.General.RationalPointFamily`.
 

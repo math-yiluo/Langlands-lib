@@ -1,13 +1,13 @@
 # Renard II.2.1: the literal basis sheaf condition
 
-This unit implements condition (F) and the category `Sh(X)` in David Renard,
+This module implements condition (F) and the category `Sh(X)` in David Renard,
 *Représentations des groupes réductifs p-adiques*, French version dated 9 July
 2026, printed pp.33–34 / PDF pp.39–40, ending at the sentence defining `Sh(X)`.
 The registered source is `renard-2026-representations-groupes-reductifs-padiques`,
 SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 Both original pages were read and visually checked. The separately registered
 2010-edition errata PDF pp.2–3 contain later sheafification corrections, which
-are outside this unit and do not alter its definitions.
+are outside this module and do not alter its definitions.
 
 The imported `BasisPresheaf` supplies an actual chosen basis `B` of the supplied
 topology, its thin inclusion category, and normalized contravariant abelian-group
@@ -65,6 +65,4 @@ natural transformations of the underlying functors. Finally
 
 The set-cover encoding and all accompanying laws are derived intrinsic
 formalizations of the source definitions, with no use of stalks, etale spaces,
-basis extension, sheafification or their properties. Worker 595 implemented the
-construction and laws; Worker 6 contributed the original-source audit,
-full-subcategory packaging and the range/transport proof design.
+basis extension, sheafification or their properties.

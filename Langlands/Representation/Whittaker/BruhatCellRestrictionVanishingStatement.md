@@ -1,8 +1,5 @@
 # Vanishing of a one-cell open restriction: statement
 
-Authors: Worker 634 (transport design) and Worker 1005 (statement packaging
-and documentation).
-
 `Langlands.Whittaker.BruhatCellRestrictionVanishingStatement.{u}` is a
 `Prop`-valued definition. It states a conditional transport result for
 distributions on the actual matrix group and its actual upper Bruhat cells.
@@ -98,17 +95,17 @@ of extension by zero: its value on `f : SchwartzBruhat O` is
 `D (SchwartzBruhat.extendZero (isOpen_upperBruhatCellNeighborhood w) f)`.
 Thus the conclusion concerns the actual neighborhood restriction.
 
-## Intended transport and provenance
+## Proof route and provenance
 
 This is an internal derived interface assembled from the published Bruhat
 geometry, `Whittaker.Distribution`, `Whittaker.BruhatCellDistribution`, and
-`Distribution.SupportedRestriction`. It adapts Worker 634's private
-`RelativeCellTransportCore.restriction_zero_of_cellwise` design in the
-shared preparation for the global invariance argument. That preparation is
-unreviewed proof material, not an assumption or public proof of this
+`Distribution.SupportedRestriction`. It adapts the design
+`RelativeCellTransportCore.restriction_zero_of_cellwise` of a private module,
+not part of the Library, written in preparation for the global invariance
+argument. That module is not an assumption or public proof of this
 proposition. No external literature proposition is transcribed here.
 
-The intended proof uses the actual relatively closed piece
+The proof uses the actual relatively closed piece
 `P = (Subtype.val : O → G) ⁻¹' L`. Closedness of `L` makes `P` closed in
 the open space `O`. The identity `O ∩ L = C_w` gives a concrete
 homeomorphism from this nested subtype to the actual cell by forgetting the
@@ -116,7 +113,7 @@ two subtype proofs. One can therefore apply the published `descendInOpen`
 to `D` and push the result along that homeomorphism. This produces a
 distribution on the actual cell with its actual translations.
 
-A separate proof must transfer positive bi-equivariance to this descent.
+The proof transfers positive bi-equivariance to this descent.
 The first branch then makes it zero. In the second branch, the same-cell
 stability proof permits transport of global anti-invariance to the
 restricted transpose. The assumed cellwise invariance makes this descended
@@ -125,9 +122,10 @@ homeomorphism pushforward and the published
 `closedPushforward_descendInOpen` identity then yield the claimed zero open
 restriction.
 
-These paragraphs describe the intended proof route; this file introduces
-no public relative-cell constructions or covariance theorems. The cellwise
-alternative remains an explicit premise. Proving it for the relevant cells,
-proving this transport proposition, assembling the finite-layer removal
-argument, and proving global Shalika invariance or Whittaker multiplicity
+These paragraphs describe the route of the proof
+`Langlands.Whittaker.bruhatCellRestrictionVanishing` in
+`Langlands.Representation.Whittaker.BruhatCellRestrictionVanishingProof`; this
+file introduces no public relative-cell constructions or covariance theorems.
+The cellwise alternative remains an explicit premise. Proving it for the
+relevant cells, assembling the finite-layer removal argument, and proving global Shalika invariance or Whittaker multiplicity
 one are separate obligations.

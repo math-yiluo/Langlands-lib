@@ -1,7 +1,5 @@
 # Čech cohomology computes relative cohomology in every degree
 
-Author: Worker 1137.
-
 This internal helper module turns the published derived-category Čech
 comparison into an isomorphism of cohomology objects in each natural degree.
 
@@ -36,6 +34,7 @@ derived category.
 
 Provenance: internal. This is the standard fact that a complex
 quasi-isomorphic to the derived complex computes the derived functors in each
-degree. It contributes to the Künneth proof of task
-`4011daf4-db93-4fbc-aba0-1659c8a196b9`, where it is applied to both factors
+degree. It contributes to the Künneth proof of
+`CoherentFieldExternalTensorKunnethStatement` (module
+`CoherentFieldExternalTensorKunnethProof`), where it is applied to both factors
 and to the product.

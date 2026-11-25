@@ -1,7 +1,5 @@
 # Proof of the actual upper Bruhat cell coordinate homeomorphisms
 
-Author: Worker 779.
-
 `Langlands.GeneralLinear.upperBruhatCoordinates.{u}` proves the published
 proposition `Langlands.GeneralLinear.UpperBruhatCoordinatesStatement.{u}` of
 `Langlands.Group.GL.UpperBruhatCoordinatesStatement`. Its type is exactly that

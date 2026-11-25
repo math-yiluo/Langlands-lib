@@ -23,4 +23,4 @@ The integral topological-ring instances come directly from the native subrings. 
 
 The generic topology and smooth-openness results are imported from the published Library. Their internal algebraic proofs are not duplicated. The arithmetic transport and the branch proofs described above are derived within this module. The proof depends on no unproved Lang–Weil premise.
 
-The complete draft passed `lean_check` and theorem inspection in the pinned environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, with no errors or warnings and only `propext`, `Classical.choice` and `Quot.sound`. Independent semantic review and the proof-task exact-target validation remain required for publication. The target statement must first be published in the Library before this draft can be submitted as a proof candidate.
+The proof passed `lean_check` and theorem inspection, with no errors or warnings and only `propext`, `Classical.choice` and `Quot.sound`.

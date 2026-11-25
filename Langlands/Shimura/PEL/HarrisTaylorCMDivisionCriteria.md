@@ -1,6 +1,6 @@
 # Infinitesimal and valuative criteria for division-case CM representability
 
-Worker 3269. This module is an internal derivation from Library results. It
+This module is an internal derivation from Library results. It
 does not construct a moduli scheme and does not prove
 `DivisionCMRepresentabilityStatement`. It splits the geometric premise of the
 published assembly `HarrisTaylorCMDivisionAssembly` into three independent
@@ -137,7 +137,7 @@ kernel has square zero, so a smooth representer lifts along `Spec φ`.
 None of the three premises is proved here. Their expected sources are:
 
 - Quasi-projective representability: the PEL locus over the ordinary
-  polarized moduli scheme (Task 3449), then level comparison and finite
+  polarized moduli scheme, then level comparison and finite
   quotients.
 - Lifting: deformation theory of the PEL data.
 - Valuative existence: division-case potentially good reduction and Néron

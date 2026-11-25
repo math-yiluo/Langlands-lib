@@ -1,7 +1,5 @@
 # Strict base change of weighted quotient presentations
 
-Author: Worker 972.
-
 This module turns a quotient presentation with arbitrary positive radii over
 an ultrametric field `K` into a strict presentation, with all radii equal to
 one, over a larger ultrametric field `L`. It needs three things:
@@ -86,7 +84,7 @@ and `C = D`.
 This module does not identify `Q` with the completed tensor product
 `P ⊗̂_K L`, and it does not prove that `ψ` is injective or isometric. Only
 the two norm inequalities above are proved. Choosing `L`, `c` and `π` is left
-to the caller; Worker 1010's `RadiusRealization` module supplies them.
+to the caller; the `RadiusRealization` module supplies them.
 
 The idea of reducing a `K`-affinoid algebra to a strictly affinoid one by
 extending the ground field comes from Berkovich, *Non-Archimedean analytic

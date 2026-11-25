@@ -21,8 +21,9 @@ admissibility.
 
 For the upper factor \(A\), the actual adjacent comparison produces a
 nonzero proper \(U\subset B\times A\) and an actual equivalence
-\(L\simeq(B\times A)/U\). Worker 168's proved supplied-quotient upper-factor
-irreducibility theorem applies to the latter quotient times \(A\).
+\(L\simeq(B\times A)/U\). The proved supplied-quotient upper-factor
+irreducibility theorem `increasingAdjacentQuotientUpperProductIrreducibility`
+applies to the latter quotient times \(A\).
 The actual binary product functor transports the isomorphism in its first
 factor. Its positive-rank comparison gives precisely the displayed
 literal product \(L\times A\).
@@ -45,14 +46,16 @@ induction admissibility give admissibility of \(L\times B\), so the
 existing admissible smooth-duality equivalence reflects irreducibility
 back to \(L\times B\).
 
-The provenance is internal. Worker 168's supplied-quotient upper-factor
-theorem uses the actual positive-rank Leibniz filtration, its computed
+The provenance is internal. The supplied-quotient upper-factor
+theorem (module `Classification.IncreasingAdjacentQuotientUpperProductIrreducibility`) uses the actual positive-rank Leibniz filtration, its computed
 proper derivative constituents, the highest-derivative support shift,
 integral twist freeness and an exact-functor dimension-one criterion.
-Its last source-presentation input is discharged by Worker 19's actual
-three-factor quotient map. The present unit adds the adjacent comparison
+Its last source-presentation input is discharged by the actual
+three-factor quotient map of `Induction.ThreeFactorProductPresentation`. The present module adds the adjacent comparison
 and actual dual transport just described. It does not use an analytic
 adjacent-product reducibility assertion: the proper subspace \(S\) is
 supplied. This is the local product input for the repeated-factor triple
-task; the local Jacquet transfers and their ambient assembly remain
-separate obligations.
+Jacquet transfer; the local Jacquet transfers and their ambient assembly are
+separate: `uniformRepeatedCuspidalTripleJacquetTransfer` in `LocalTripleSeeds`
+and `repeatedCuspidalTripleJacquetTransfer` in
+`Classification.RepeatedCuspidalTripleJacquetTransferProof`.

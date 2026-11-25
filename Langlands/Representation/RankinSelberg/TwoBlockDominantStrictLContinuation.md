@@ -1,6 +1,6 @@
 # Continuation of the strict-rank L bound to zero
 
-This internal unit proves the complete symmetric L-polynomial bound for the
+This internal module proves the complete symmetric L-polynomial bound for the
 actual lower two-block induction at the original, undeformed parameter when
 `t < r`. The field, test carrier and dependent block carriers retain independent
 universes `uF`, `uV` and `uW`. The character is the supplied nontrivial unitary
@@ -59,8 +59,8 @@ canonical compatible quotient measure and nonzero fixed functionals.
 
 For each coefficient in the original induced model,
 `exists_oppositeWhittakerFamily` supplies an actual family with a common open
-right level, entire point values and the prescribed value at zero. The staged
-`strictSlices_entire` theorem proves entire dependence of its literal slice
+right level, entire point values and the prescribed value at zero. The
+`strictSlices_entire` theorem of `TwoBlockDominantStrictEntireSlices` proves entire dependence of its literal slice
 coefficients. Real-ray clearing holds for the family's actual coefficients by
 the preceding result. `oppositeSpectralKernel_laurent_clearing_at_zero` continues
 the finite-clearing assertion to zero.
@@ -71,16 +71,18 @@ supplies the intrinsic normalized generator. Applying
 exactly `X^e * (P₀ * P₁) = Q * P`. The conclusion retains all three complete
 symmetric L certificates and the ordinary polynomial witnesses. The actual
 lower-to-upper normalized representation transport is performed separately in
-the final exact target module.
+`TwoBlockDominantRankProof`, which proves the exact target
+`TwoBlockLDominantRankStatement`.
 
 ## Provenance
 
-The unit is an internal composition of published or separately reviewed
+The module is an internal composition of published or separately proved
 analytic, first-block, unramified transport, entire-slice, finite-specialization
 and intrinsic-generator results. It introduces no source translation and uses
 neither unrestricted multiplicativity nor any later result depending on the
-analytic bases. The closed first-block theorem discharges the formerly explicit
-analytic proposition; its definition alone is never treated as evidence.
+analytic bases. The closed first-block theorem discharges the analytic
+proposition that `exists_strictTwoBlockSymmetricLBound` takes explicitly; its
+definition alone is never treated as evidence.
 
 ## All-field port
 

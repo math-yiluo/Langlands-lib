@@ -31,6 +31,6 @@ The subgroup-equality and coefficient-postcomposition helpers are shared as
 `Representation/Induction/CompactNormalizationTransport`. These are the same
 definitions formerly private to this module, with unchanged types and bodies.
 
-Pointwise evaluation and naturality of the assembled equivalence remain
-subsequent work. This unit constructs neither the structural inputs nor the
+Pointwise evaluation and naturality of the assembled equivalence are not
+proved here. This module constructs neither the structural inputs nor the
 closed local orbit-comparison proposition.

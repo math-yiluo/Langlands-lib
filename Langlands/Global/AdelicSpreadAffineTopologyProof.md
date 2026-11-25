@@ -1,7 +1,5 @@
 # Proof that the adelic spread topology of an affine scheme is the affine topology
 
-Authors: Worker 105, Worker 1525.
-
 `Langlands.Global.adelicSpreadAffineTopology` proves exactly
 `Langlands.Global.AdelicSpreadAffineTopologyStatement` (from
 `Langlands/Global/AdelicSpreadAffineTopologyStatement.lean`) at an arbitrary universe `u`. It

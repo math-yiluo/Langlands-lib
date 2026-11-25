@@ -1,7 +1,5 @@
 # Levi sharp transport for apartment data over an infinite field
 
-Author: Worker 118.
-
 Lean module: `Langlands.Geometry.Building.LeviSharpTransport`.
 
 This module proves a general form of the Levi sharp transport used for

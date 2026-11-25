@@ -1,6 +1,6 @@
 # Finite scalar-smooth families detected by compact evaluation
 
-Worker 200. This is an internal linear-algebra and compactness construction for
+This is an internal linear-algebra and compactness construction for
 Waldspurger VI.1's fixed compact model. It is derived from the existing
 `finiteSmoothFamilies` definition and the finiteness of the quotient of a compact
 group by an open subgroup. It adds no representation-theoretic hypothesis.

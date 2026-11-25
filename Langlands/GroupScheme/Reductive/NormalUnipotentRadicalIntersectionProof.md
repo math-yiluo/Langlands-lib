@@ -1,7 +1,5 @@
 # Unipotent radicals of normal connected subgroups: proof
 
-Worker 4418.
-
 This module proves `NormalUnipotentRadicalIntersectionStatement` (module
 `Reductive.NormalUnipotentRadicalIntersectionStatement`) in every universe `u`,
 with no hypotheses.
@@ -76,5 +74,5 @@ source's multiplicative-type argument for the centre.
 
 ## Axioms
 
-`lean_check` reports only the standard axioms `propext`, `Classical.choice` and
+The axiom check reports only the standard axioms `propext`, `Classical.choice` and
 `Quot.sound`.

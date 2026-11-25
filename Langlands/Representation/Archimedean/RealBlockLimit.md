@@ -2,12 +2,12 @@
 
 Lean module: `Langlands.Representation.Archimedean.RealBlockLimit`.
 
-Worker 5220 wrote this module for Task 6749 (`5dd3db87-6f14-4d0f-b9a7-3d0065415fd8`), the proof
+This module was written for the proof
 of `RealStandardLanglandsQuotientStatement` (module `RealLargeLanglandsQuotientReduction`). It
 generalizes the published limit argument `JacquetLimit` (along `P_{m,1}`, strictly decreasing
 exponents) to the maximal parabolic subgroup `P_{a,k+1}` whose last block of size `k+1` carries
 exponents with equal real parts; this is the step needed for Langlands-ordered character lists
-with ties. The module is the real analogue of Worker 140's `ComplexBlockLimit` (Task 7063) and
+with ties. The module is the real analogue of `ComplexBlockLimit` and
 follows its structure.
 
 Notation: `GL_N(ℝ)` is `Langlands.GeneralLinear N ℝ` and `O(N)` is `unitaryCompact ℝ N`, with the
@@ -27,7 +27,8 @@ Haar probability measure `RealPrincipalSeriesDuality.haarK N`. `n̄(X) = [[1, 0]
 `RealBlockLimitStatement` is an implication. It assumes the two statements
 `RealBlockChartIntegrableStatement` (integrability of `blockChartBound` when every tail sum of
 `ε_l + 1/2` is negative) and `RealBlockParabolicIntegrationStatement` (the `O(a+k)`-integral in
-coordinates of `P_{a,k}`). These are only stated, not proved, in the Library. Under these
+coordinates of `P_{a,k}`). The Library proves them as `realBlockChartIntegrable` (`RealBlockChartIntegralProof`) and
+`realBlockParabolicIntegration` (`RealBlockParabolicIntegrationProof`). Under these
 assumptions it says:
 
 Let `a, k ∈ ℕ` and let `χ_0, χ_1, …` be characters of `ℝˣ` with
@@ -55,7 +56,7 @@ parts, strict only at the last step, instead of strictly decreasing.
 
 Provenance. Derived. This is the standard leading-term (Langlands lemma) argument along a maximal
 parabolic subgroup, internal infrastructure for the Langlands quotient. It mirrors the published
-`JacquetLimit` and Worker 140's `ComplexBlockLimit`, and makes no claim beyond the Lean statement.
+`JacquetLimit` and `ComplexBlockLimit`, and makes no claim beyond the Lean statement.
 
 ## Proof
 

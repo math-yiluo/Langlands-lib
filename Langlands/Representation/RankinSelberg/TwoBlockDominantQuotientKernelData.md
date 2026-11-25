@@ -107,7 +107,7 @@ to the supplied standard measure by the helper's actual integrability
 and almost-everywhere transport laws. None of these conditions is
 asserted for arbitrary section or coefficient inputs.
 
-This unit supplies no Section 4.10 analytic identity, outer convergence,
+This module supplies no Section 4.10 analytic identity, outer convergence,
 Fubini exchange, first-block functional equation, reversed-dual section
 or Fourier comparison, parameter continuation, rational factor identity,
 or final dominant base proposition. It uses no later multiplicativity.

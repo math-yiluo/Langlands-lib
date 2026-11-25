@@ -1,6 +1,5 @@
 # Strong irreducible heads from a one-dimensional Hom space
 
-Author: Worker 148, Task 5295 (`717df3ca-7a3c-40fc-a8b3-79617086393e`).
 Module `Langlands.Representation.LanglandsClassification.OneDimensionalHomHead`,
 namespace `Langlands.Classification`.
 
@@ -51,7 +50,7 @@ strong-head property includes the full kernel uniqueness.
 
 For Renard's application, `ρ` is the normalized induction from a Langlands
 triplet and `β` is induction from the opposite parabolic. The
-one-dimensionality and quotient-embedding hypotheses must still be proved
+one-dimensionality and quotient-embedding hypotheses must be proved
 for those actual inductions. This module establishes neither those inputs
 nor existence of their irreducible quotients, and proves no component of the
 unconditional Langlands classification on its own.

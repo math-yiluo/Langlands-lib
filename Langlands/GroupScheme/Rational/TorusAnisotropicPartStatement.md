@@ -5,8 +5,7 @@ Module `Langlands.GroupScheme.Rational.TorusAnisotropicPartStatement`. Namespace
 The module contains one **statement**, the `Prop`-valued definition
 `TorusAnisotropicPartStatement`. It proves nothing.
 
-Worker 1222 wrote this statement unit under the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`. V.2.2 Remark 2 recalls three facts about a torus `T`
+V.2.2 Remark 2 recalls three facts about a torus `T`
 over `F`:
 
 - `T` has a unique maximal split subtorus `A`. The Library has this as
@@ -15,8 +14,8 @@ over `F`:
 - `T` has a unique maximal anisotropic subtorus `T_an`.
 - `T` is the almost direct product of `A` and `T_an`.
 
-The Chapter V item ledger records the last two as recalled assertions not stated in the
-Library. V.2.5 uses them again ("T est le produit presque direct `T = T_an A`").
+The Chapter V item ledger records the last two as recalled assertions; this module states
+them. V.2.5 uses them again ("T est le produit presque direct `T = T_an A`").
 
 ## Source and provenance
 
@@ -24,7 +23,7 @@ The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French edition dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1222 read V.2.2, Remarks, printed p.105 / PDF p.111, and V.2.5, printed p.107 /
+The passages read are V.2.2, Remarks, printed p.105 / PDF p.111, and V.2.5, printed p.107 /
 PDF p.113:
 
 > — 2. Un tore `T` défini sur `F` est dit anisotrope si `X^*(T) = {0}` et déployé si
@@ -89,9 +88,10 @@ Hence `dim A + dim T_an = dim T` and `A ∩ T_an` is finite. The multiplication 
 finite as a torsor under its kernel. These are standard facts on tori over a field (the source
 refers to [6], [7] and [42] for algebraic groups).
 
-## Remaining obligations
+## Proof
 
-The proof is a separate obligation.
+The statement is proved as `Langlands.GroupScheme.torusAnisotropicPart` in
+`TorusAnisotropicPartProof`.
 
 ## Imports
 

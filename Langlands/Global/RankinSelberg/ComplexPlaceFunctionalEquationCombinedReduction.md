@@ -14,8 +14,8 @@ def ComplexPlaceFunctionalEquationCombinedReductionStatement : Prop :=
 ```
 
 `ComplexPlaceFunctionalEquationStatement` (Library module
-`Langlands.Global.RankinSelberg.ArchimedeanFunctionalEquationStatement`) is the target of the
-host task. It is the conjunction of the unequal-rank and the equal-rank functional equations of
+`Langlands.Global.RankinSelberg.ArchimedeanFunctionalEquationStatement`) is the target of this
+reduction. It is the conjunction of the unequal-rank and the equal-rank functional equations of
 Jacquet 2009, Theorem 2.1 (iii), p.6, at one complex place of a number field, for the
 archimedean restrictions of global Whittaker functions of actual cuspidal realizations.
 
@@ -57,5 +57,9 @@ irreducibility and pairing premises. It uses only the axioms `propext`, `Classic
 The statement is internal. It is `ComplexPlaceFunctionalEquationLocalReductionStatement` with the
 minus-one premise proved and the contragredient premise replaced by the two premises of
 `ComplexPlaceContragredientParameterReductionStatement`. It is an intermediate result toward the
-target. The Markdown of the three source modules explains why each open premise is expected to
-hold.
+target. The Markdown of the three source modules explains why each premise is expected to
+hold. The four premises are proved separately, as `complexLocalUnequalFunctionalEquation`
+(`ComplexPlaceUnequalFunctionalEquationProof`), `complexLocalEqualFunctionalEquation`
+(`ComplexPlaceEqualFunctionalEquationProof`), `complexPlaceParameterIrreducible`
+(`ComplexPlaceParameterIrreducibleProof`) and `complexStandardPairingParameter`
+(`ComplexStandardPairingParameterProof`).

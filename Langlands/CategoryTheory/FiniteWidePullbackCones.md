@@ -17,7 +17,9 @@ the limiting tail. `consLift` then applies the binary universal property.
 `consIsLimit` proves its factorization equations and uniqueness, first at the
 binary projections and then at every tail projection.
 
-This is an internal universal-property construction supporting Task 7491, not
+This is an internal universal-property construction supporting the proof
+`compactCompatibleTupleCones` of `CompactCompatibleTupleConesStatement` (module
+`Langlands.Cohomology.AnalyticQuasiEtaleGlobalComparison.CompactTupleConeAssembly`), not
 a geometric existence theorem. It allows repeated arrows and does not require
 any terminal object or empty wide pullback. Compactness and continuous actions
 must be supplied separately in the analytic application.

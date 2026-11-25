@@ -35,6 +35,9 @@ reduced quotient and rational-point action are unchanged.
 single-apartment predicate, including V 6, V 7 and AS 2–AS 5. This does not
 construct `ParahoricBuildingData`, its actual derived covers or zero data,
 a polysimplicial realization, an apartment splitting or the unrestricted
-five-axiom theorem. Those remain obligations of the parent task. The
+five-axiom theorem. For tori, `ParahoricBuildingData.ofTorus` (module
+`TorusParahoricBuildingConstruction`) and `torusBuildingConstructionData` (module
+`TorusFiveAxiomConstruction`) construct those data; the unrestricted five-axiom
+theorem `RootValuationBuildingConstructionStatement` remains open. The
 constructor covers split and nonsplit tori without a characteristic
 restriction.

@@ -48,19 +48,19 @@ variable {k : Type u} [Field k]
 
 /-- Actual normalizing rational points act by automorphisms of the source. -/
 def normalizerTorusAction : normalizerPoints i →* Aut T where
-  toFun n := normalizingAut i n
-  map_one' :=
-    (isNormalizingPoint_normalizingAut i 1).unique i IsNormalizingPoint.one
-  map_mul' n m :=
-    (isNormalizingPoint_normalizingAut i (n * m)).unique i
-      ((isNormalizingPoint_normalizingAut i n).mul (isNormalizingPoint_normalizingAut i m))
+  toFun n := Aut.of (normalizingAut i n)
+  map_one' := congrArg Aut.of
+    ((isNormalizingPoint_normalizingAut i 1).unique i IsNormalizingPoint.one)
+  map_mul' n m := congrArg Aut.of
+    ((isNormalizingPoint_normalizingAut i (n * m)).unique i
+      ((isNormalizingPoint_normalizingAut i n).mul (isNormalizingPoint_normalizingAut i m)))
 
 /-- Centralizing rational points act trivially on the actual source torus. -/
 theorem normalizerTorusAction_eq_one_of_mem_centralizerPoints
     {n : normalizerPoints i}
     (hn : (n : rationalPoints G) ∈ centralizerPoints i) :
     normalizerTorusAction i n = 1 :=
-  (isNormalizingPoint_normalizingAut i n).unique i hn
+  congrArg Aut.of ((isNormalizingPoint_normalizingAut i n).unique i hn)
 
 /-- The actual quotient `N(k)/Z(k)` acts on the source torus itself. -/
 def relativeWeylTorusAction : relativeWeylGroup i →* Aut T :=
@@ -68,13 +68,13 @@ def relativeWeylTorusAction : relativeWeylGroup i →* Aut T :=
     normalizerTorusAction_eq_one_of_mem_centralizerPoints i hn
 
 @[simp] theorem relativeWeylTorusAction_mk (n : normalizerPoints i) :
-    relativeWeylTorusAction i (QuotientGroup.mk n) = normalizingAut i n := rfl
+    (relativeWeylTorusAction i (QuotientGroup.mk n)).asIso = normalizingAut i n := rfl
 
 /-- Postcomposition by the actual torus action is the published cocharacter
 action of the same Weyl class. -/
 theorem comp_relativeWeylTorusAction (w : relativeWeylGroup i)
     (ν : cocharacterLattice T) :
-    ν ≫ (relativeWeylTorusAction i w).hom = relativeWeylCocharacterAction i w ν := by
+    ν ≫ (relativeWeylTorusAction i w).asIso.hom = relativeWeylCocharacterAction i w ν := by
   obtain ⟨n, rfl⟩ := QuotientGroup.mk_surjective w
   rfl
 
@@ -92,7 +92,7 @@ theorem comp_normalizingAut_hom {U : Over (Spec (CommRingCat.of k))}
 theorem relativeWeylTorusAction_eval_mem {F : SubgroupFunctor G} (hF : F.IsNormal)
     {U : Over (Spec (CommRingCat.of k))} (x : U ⟶ T.X)
     (hx : x ≫ i.hom.hom ∈ F.carrier U) (w : relativeWeylGroup i) :
-    (x ≫ (CommGroupScheme.groupHom (relativeWeylTorusAction i w).hom).hom.hom) ≫
+    (x ≫ (CommGroupScheme.groupHom (relativeWeylTorusAction i w).asIso.hom).hom.hom) ≫
       i.hom.hom ∈ F.carrier U := by
   obtain ⟨n, rfl⟩ := QuotientGroup.mk_surjective w
   rw [relativeWeylTorusAction_mk, comp_normalizingAut_hom]
@@ -110,7 +110,7 @@ variable {k : Type u} [Field k]
 /-- The sum, in the actual commutative-group-scheme Hom group, of all Weyl
 automorphisms. On points this is the product of the Weyl translates. -/
 def relativeWeylTorusNorm : T ⟶ T :=
-  ∑ w : relativeWeylGroup i, (relativeWeylTorusAction i w).hom
+  ∑ w : relativeWeylGroup i, (relativeWeylTorusAction i w).asIso.hom
 
 /-- The norm induces precisely the published integral sum on cocharacters. -/
 theorem comp_relativeWeylTorusNorm (ν : cocharacterLattice T) :

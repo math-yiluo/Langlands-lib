@@ -1,7 +1,5 @@
 # Smooth vectors in `L²([G])` and their transport along `quotientL2Equiv`
 
-Author: Worker 112.
-
 The published module `GroupSchemeRestrictionQuotientL2InfiniteAction`
 restricts the right action on `L²` of the restriction split-centre quotient
 `RestrictionSplitCentre.Quotient F G S j` to the infinite adelic points. This
@@ -95,7 +93,7 @@ and the actions are the published `haarQuotientL2InfiniteRightAction` and
   quotient `L²`. A homeomorphism maps dense sets onto dense sets.
 
 The density sets on the positive side are written exactly as in the conclusion
-of the published `GroupSchemeQuotientL2SmoothDensityStatement` of Worker 116.
+of the published `GroupSchemeQuotientL2SmoothDensityStatement`.
 With the connected-reductive atlas `reductiveChartedSpace`, these equivalences
 reduce a `[G]` density statement to the positive one. That reduction is not
 carried out here.

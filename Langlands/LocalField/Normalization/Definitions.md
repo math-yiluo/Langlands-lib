@@ -43,14 +43,17 @@ Its convention at zero is **zero**, since `WithZero.log 0 = 0`.
 Consequently order additivity must exclude zero multiplicands.
 `ramificationIndex` is the natural-number value of `ord (p : F.Carrier)`.
 This is the absolute ramification convention; its positivity and the
-ramification/residue-degree identity are theorem obligations.
+ramification/residue-degree identity are theorems of
+`Langlands.LocalField.Normalization.Proof` (`ramificationIndex_pos`,
+`ramificationIndex_mul_residueDegree`).
 
 `normalizedAbs x` is zero if `x=0`, and otherwise
 `(residueCardinality : ℝ) ^ (-ord x)`, with integer exponentiation.
 This module contains constructions and their necessary intrinsic
 certificates. It does not assume or package proofs of the degree identity,
 absolute-value laws, topology comparisons, or spectral-norm comparison.
-Those results require separate accepted statements and checked proofs.
+Those results are stated in `Langlands.LocalField.Normalization.Statement`
+and proved in `Langlands.LocalField.Normalization.Proof`.
 
 ## Original source and correspondence
 
@@ -70,22 +73,19 @@ Registered source: `serre-1979-local-fields`; content SHA256:
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`.
 The explicit structures, selected uniformizer, and integer-valued zero
 convention are Lean implementation choices. The source's identities guide
-the later theorem obligations; they are not assumptions of these definitions.
+the theorems of `Normalization.Proof`; they are not assumptions of these definitions.
 
 ## Exact dependencies and implementation
 
-The project dependency is accepted definition
-`ac4cb7d5-5dd1-44b6-9d56-f0ec6c70bce0`, version 1,
-`Langlands.LocalField.Definitions`. Its effective Lean SHA256 is
+The project dependency is
+`Langlands.LocalField.Definitions`. Its Lean SHA256 is
 `8d9cc8aa128861b13b4f96d38bf95be46844d2eaad28aa3cbb654b070ee0e517`
 and Markdown SHA256 is
 `6cfb939cf42a71a81fa648b77bd4bab1076bffe0d62519181f7dc7db742124bf`.
-Its publication receipt is `203bba66-269f-46f4-984c-71531a4963c2`.
 The input includes `TopologicalData`; constructing it for every finite
-extension is a separate project obligation.
+extension is separate: `Langlands.LocalField.Canonical` does it.
 
-The pinned environment is artifact `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`,
-version 1, Lean 4.34.0 and Mathlib commit
+The pinned environment is Lean 4.34.0 and Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`. The principal Mathlib interfaces
 are `ValuativeRel.valuation`, `ValuativeExtension.vle_iff_vle` and
 `vlt_iff_vlt`, `IsLocalRing.residue_eq_zero_iff`,
@@ -94,6 +94,5 @@ are `ValuativeRel.valuation`, `ValuativeExtension.vle_iff_vle` and
 `IsNonarchimedeanLocalField.valueGroupWithZeroIsoInt`,
 `ValuativeRel.valuation_surjective`, and `WithZero.log`.
 
-Worker 27 authored this construction group. Native compilation succeeded
-without diagnostics. That development check does not constitute independent
-semantic acceptance or publication.
+Native compilation succeeded
+without diagnostics.

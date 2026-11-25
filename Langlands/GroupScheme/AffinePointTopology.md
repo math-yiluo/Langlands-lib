@@ -30,11 +30,11 @@ morphism gives `affinePointsContinuousInv`. Naturality of `Scheme.ΓSpecIso` pro
 therefore induces a continuous point map.
 
 These are intrinsic properties of the construction. Only a topology on
-the coefficient ring is needed for this unit. Finite generation,
+the coefficient ring is needed for this module. Finite generation,
 finite-coordinate presentations, local compactness, compatibility with
 products, continuity of multiplication, the comparison with existing
 matrix topologies, and the adelic restricted-product description remain
-separate obligations. This unit asserts no reductive reduction or
+separate obligations. This module asserts no reductive reduction or
 finite-volume theorem.
 
 The topology instance is indexed directly by the actual morphism carrier

@@ -1,6 +1,6 @@
 # Chebotarev source inventory
 
-Worker 159, 25 October 2026. All 41 original modules and 18,672 lines were read in full. This import closure terminates at Lean/Mathlib and is not a minimal declaration dependency graph. The large analytic module contributes 12,126 lines. Names and module paths are unchanged across all four stages. New audit module names appear only in the bridge evidence.
+On 25 October 2026 all 41 original modules and 18,672 lines were read in full. This import closure terminates at Lean/Mathlib and is not a minimal declaration dependency graph. The large analytic module contributes 12,126 lines. Names and module paths are unchanged across all four stages. New audit module names appear only in the bridge evidence.
 
 | Order | Original module/path | Lines | Original SHA256 |
 |---|---|---:|---|
@@ -674,6 +674,8 @@ Worker 159, 25 October 2026. All 41 original modules and 18,672 lines were read 
 ```
 
 ## Stage hashes
+
+The stage hashes after the baseline are of the files as they were when the evidence was taken; the patches in [compatibility.md](compatibility.md), [universes.md](universes.md) and [cleaned.md](cleaned.md) now give their modification notices without the name of the adapter, so files rebuilt from them differ from those hashes in those lines.
 
 ```json
 {

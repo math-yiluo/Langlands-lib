@@ -1,6 +1,6 @@
 # Actual determinant twists of half-twisted adelic sections
 
-Author: Worker 2. Provenance: internal construction from the actual adelic
+Provenance: internal construction from the actual adelic
 section spaces, block Hecke characters and determinant multipliers. There is no
 new identification with original literature or Haar normalization.
 

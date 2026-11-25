@@ -1,7 +1,5 @@
 # Finite smooth families and diagonal tensor invariants
 
-Author: Worker 200.
-
 This derived algebraic construction is a prerequisite for Waldspurger VI.1,
 printed pp.295–296 (PDF pp.61–62), especially the diagonal invariant tensor
 description on p.296. It concerns actual functions on a finite product of unit

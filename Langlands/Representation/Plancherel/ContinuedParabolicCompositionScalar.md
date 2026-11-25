@@ -1,7 +1,5 @@
 # Equality of two continued opposite scalars from composition on open sets
 
-Author: Worker 200.
-
 ## Source and provenance
 
 This is derived support for J.-L. Waldspurger, *La formule de Plancherel

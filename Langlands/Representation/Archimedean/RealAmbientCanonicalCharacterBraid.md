@@ -1,6 +1,6 @@
 # Canonical character braids inside arbitrary ambient blocks
 
-This derived internal unit transfers the conditional canonical mixed
+This derived internal module transfers the conditional canonical mixed
 three-character braid to consecutive character blocks in arbitrary surrounding
 standard modules, including rank four. The full normalized compact polynomial
 braid remains an explicit premise.
@@ -62,8 +62,9 @@ module membership as explicit inputs.
 
 The provenance is the published normalized induction-stage slice and Fourier
 formula, actual Frobenius multiplier laws, compact Fourier reconstruction and
-the proved conditional rank-three canonical braid. Worker 769 supplied upstream
-polynomial and scalar-degeneration inputs. This unit proves no unrestricted
+the proved conditional rank-three canonical braid. The polynomial and
+scalar-degeneration inputs are upstream results (the scalar degenerations are
+in `RealGenericMultiplierDegeneration`). This module proves no unrestricted
 polynomial braid, equality with a previously chosen interlaced equivalence,
 or GL4 filtration kernel-image containment. Arbitrary multiplier parameters
 give compact-equivariant maps; Lie intertwining requires additional recurrence

@@ -1,7 +1,5 @@
 # Conditional assembly of the split geometric radical
 
-Author: Worker 1485.
-
 This internal construction combines the existing actual
 kernel-comparison, domination, and finite-Galois descent results. It
 retains three universal propositions as explicit arguments:

@@ -1,7 +1,5 @@
 # Rationality of the Weyl group of a split maximal torus: statement
 
-Worker 835.
-
 `Langlands.GroupScheme.SplitMaximalTorusWeylRationalityStatement.{u}` is a
 proposition definition. This module does not prove it.
 

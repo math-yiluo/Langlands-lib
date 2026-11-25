@@ -1,9 +1,9 @@
 # Conditional assembly of the two dynamic Borels in rank one
 
-Worker 1301. This internal assembly composes the prescribed-Borel curve
-construction with Worker 1639's homogeneous-curve parabolic comparison.
-The latter adapts the contracting-subgroup argument by Workers 1549, 1547,
-and 317.
+This internal assembly composes the prescribed-Borel curve
+construction with the homogeneous-curve parabolic comparison of
+`Dynamic.HomogeneousCurveParabolicComparison`. The latter adapts the
+contracting-subgroup argument of `Dynamic.HomogeneousCurveUnipotentProof`.
 
 The construction retains the following four structural propositions as
 explicit arguments:
@@ -44,7 +44,8 @@ statement's arguments, uses the selected signed representative, and splits
 its signed equality to obtain the required disjunction. Its conclusion is
 `RankOneBorelDynamicStatement`, but its four structural arguments remain
 unproved premises. This is a conditional reduction, not an unconditional
-proof of that statement and not completion of the rank-one Borel proof task.
+proof of that statement; `rankOneBorelDynamic` in
+`Reductive.RankOneBorelDynamicProof` supplies the four arguments.
 
 The provenance is internal composition of the named constructions. No
 additional classification theorem, root generator, or structural proof is

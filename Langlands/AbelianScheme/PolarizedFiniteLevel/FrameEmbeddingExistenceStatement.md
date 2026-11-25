@@ -36,6 +36,6 @@ cubic direct-image theorem (`cubicDirectImage`) and the relative Lefschetz reduc
 
 ## Use
 
-Task 7811's reduction of `FrameChartRepresentabilityStatement`
+The reduction of `FrameChartRepresentabilityStatement`
 (`frameChartRepresentability_of_frameHilbertLocus`) uses it to classify every datum with
 frame locus `⊤` by a morphism to the Hilbert scheme with sections.

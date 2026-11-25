@@ -2,7 +2,7 @@
 
 For a group scheme `N` locally of finite type over a perfect field, `ReducedCosetAffine.model N` constructs an actual affine scheme representing the canonical coset sheaf `N/N_red`. Its `Model` record retains the comparison isomorphism, local finite type, and the actual smooth surjective scheme projection from `N`, with an equation identifying its Yoneda map with the canonical quotient projection. There is no affineness, smoothness, connectedness, quasi-compactness, or anti-affineness hypothesis on `N`.
 
-This is an internal derived construction from the published reduced subgroup, smooth-relation quotient, and separated dense affine open results. Worker 856 suggested using the reduced subgroup to analyze anti-affine smoothness. The formal implementation uses the full reduction and the actual homogeneous coset sheaf; it does not require the reduction to be normal or construct a group law on the quotient.
+This is an internal derived construction from the published reduced subgroup, smooth-relation quotient, and separated dense affine open results. The formal implementation uses the full reduction and the actual homogeneous coset sheaf; it does not require the reduction to be normal or construct a group law on the quotient.
 
 The proof proceeds as follows.
 

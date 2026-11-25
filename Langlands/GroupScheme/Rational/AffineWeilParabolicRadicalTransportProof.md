@@ -1,8 +1,5 @@
 # Parabolic–radical diagrams under finite separable Weil restriction: proof
 
-Authors: Worker 207 (dynamic transport and assembly) and Worker 110 (connected
-reductivity of the restriction).
-
 `Langlands.GroupScheme.affineWeilParabolicRadicalTransport` proves exactly
 `Langlands.GroupScheme.AffineWeilParabolicRadicalTransportStatement.{u}` for an
 arbitrary universe `u`. This is the parabolic and unipotent-radical part of
@@ -76,16 +73,16 @@ preserves connected reductivity.
 
 The final theorem `affineWeilParabolicRadicalTransport` discharges the
 hypothesis by `AffineWeil.isConnectedReductive_restriction` (module
-`Reductive.AffineWeilConnectedReductive`, Worker 110).
+`Reductive.AffineWeilConnectedReductive`).
 
-## Supporting modules in this contribution
+## Supporting modules ported together with this module
 
 - `Langlands.GroupScheme.AffineWeilCounit`: counit and unit of Weil restriction
   on test schemes, and scalar points.
 - `Langlands.GroupScheme.AffineWeilDynamicTransport`: the converse Weil
   dynamics on standard tests, transport of dynamic representatives, and
   descent of cocharacters.
-- `Langlands.GroupScheme.Reductive.FiniteProducts` (Worker 110) and
+- `Langlands.GroupScheme.Reductive.FiniteProducts` and
   `Langlands.GroupScheme.Reductive.AffineWeilConnectedReductive`: connected
   reductivity of the restriction.
 

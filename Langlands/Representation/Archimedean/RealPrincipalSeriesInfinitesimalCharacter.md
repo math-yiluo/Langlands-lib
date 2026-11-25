@@ -35,7 +35,7 @@ under right derivatives (`hVX`). Then the derivative action `kFiniteLie V hV hVK
 ## Provenance
 
 This is an internal statement, introduced as a prerequisite for
-`RealLinkedLanglandsQuotientNotLargeStatement` (Task 7070). The reduction
+`RealLinkedLanglandsQuotientNotLargeStatement`. The reduction
 `realLinkedLanglandsQuotientNotLarge_of_quotientAnnihilator` (module
 `RealLinkedQuotientAnnihilator`) takes the corollary
 `realStandardLie_hasInfinitesimalCharacter` as its hypothesis `hZ`. Mathematically it is the

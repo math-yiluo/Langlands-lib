@@ -1,7 +1,5 @@
 # Top homology of the reversed dual of a punctual complex
 
-Author: Worker 1015.
-
 For a commutative ring `R : Type u`, an integer `g`, and a cochain
 complex `L` of `R`-modules supported in degrees at least zero,
 `reversedDualTopHomologyIsoCokernel` constructs

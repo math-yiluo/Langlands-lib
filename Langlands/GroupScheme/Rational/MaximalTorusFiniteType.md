@@ -11,8 +11,9 @@ finite Krull dimension of the actual global coordinate ring from
 `exists_maximalTorus_extension_of_finiteRingKrullDim`. Classical choice packages
 the resulting existence proof as data.
 
-This is an internal composition of the coordinate-dimension construction of
-Workers 1356 and 1352 with Worker 1352's maximal-torus extension construction.
+This is an internal composition of the coordinate-dimension construction
+(`globalCoordinates_finiteRingKrullDim`) with the maximal-torus extension
+construction (`exists_maximalTorus_extension_of_finiteRingKrullDim`).
 It introduces no external theorem and has no conjugacy premise. Every field,
 all characteristics and imperfect fields are allowed; smoothness,
 connectedness and solvability are unnecessary. It supplies a containment

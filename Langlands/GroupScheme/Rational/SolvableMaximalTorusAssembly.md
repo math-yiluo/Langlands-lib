@@ -1,7 +1,5 @@
 # Sectioned radical quotients and conditional maximal-torus conjugacy
 
-Worker 1333.
-
 `solvableMaximalTorusConjugacy_of_structuralStatements` concludes the exact
 published `SolvableMaximalTorusConjugacyStatement.{u}` from three explicit
 prerequisites at the same universe:

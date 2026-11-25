@@ -16,7 +16,7 @@ structure EquivariantDiagram {I : Type uI} [Category.{vI} I]
   obj : I ⥤ C
   ρ : ∀ i, D.obj i →* End (obj.obj i)
   comm : ∀ {i j} (f : i ⟶ j) (g : D.obj i),
-    ρ i g ≫ obj.map f = obj.map f ≫ ρ j ((D.map f).hom g)
+    (ρ i g).asHom ≫ obj.map f = obj.map f ≫ (ρ j ((D.map f).hom g)).asHom
 
 namespace EquivariantDiagram
 
@@ -28,7 +28,7 @@ variable {C : Type uC} [Category.{vC} C]
 structure Hom (F E : EquivariantDiagram D C) where
   hom : F.obj ⟶ E.obj
   comm : ∀ i (g : D.obj i),
-    F.ρ i g ≫ hom.app i = hom.app i ≫ E.ρ i g
+    (F.ρ i g).asHom ≫ hom.app i = hom.app i ≫ (E.ρ i g).asHom
 
 instance : Category (EquivariantDiagram D C) where
   Hom F E := Hom F E

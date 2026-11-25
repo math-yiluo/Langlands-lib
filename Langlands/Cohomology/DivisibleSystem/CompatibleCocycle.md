@@ -1,6 +1,6 @@
 # Degree zero cocycles of the complex of compatible families
 
-Author: Worker 61. Built on
+Built on
 `Langlands.Cohomology.DivisibleSystem.CompatibleHomComplex`
 (`compatibleCochains`, `compatibleδ`, `compatibleHomComplex`,
 `compatibleHomComplexIsoLimit`, `compatibleHomComplexIsoLimit_hom_π`), on

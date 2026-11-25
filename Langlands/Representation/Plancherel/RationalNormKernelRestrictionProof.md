@@ -1,7 +1,5 @@
 # `⁰A₁ = A₁ ∩ ⁰A₂` for split tori `A₁ ⊆ A₂` (Renard V.2.5)
 
-Author: Worker 103 (Task 5711, `8f1184cf-8c14-4ede-a502-96f1d8f66ec2`).
-
 Module `Langlands.Representation.Plancherel.RationalNormKernelRestrictionProof`.
 The theorem `Langlands.Plancherel.rationalNormKernelRestriction` proves exactly the
 published proposition
@@ -42,7 +40,7 @@ The proof shows both inclusions (`le_antisymm`).
 
 The first inclusion is the only one that uses the split-torus hypotheses.
 
-`lean_check` reports that the theorem depends only on the axioms `propext`,
+The Lean axiom check reports that the theorem depends only on the axioms `propext`,
 `Classical.choice` and `Quot.sound`.
 
 ## Relation to the literature

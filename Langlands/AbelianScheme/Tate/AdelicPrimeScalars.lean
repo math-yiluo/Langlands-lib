@@ -11,7 +11,7 @@ open scoped TensorProduct CategoryTheory.MonObj
 set_option autoImplicit false
 set_option maxHeartbeats 800000
 
-local instance (p : Nat.Primes) : Fact p.val.Prime := ⟨p.property⟩
+private local instance (p : Nat.Primes) : Fact p.val.Prime := ⟨p.property⟩
 
 namespace Langlands.Global
 

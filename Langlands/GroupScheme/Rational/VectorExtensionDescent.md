@@ -64,11 +64,11 @@ change and `IsLinearVectorCoordinates.coordinateAction_eq` give
 `extensionSectionOfBaseChange` and its exact quotient identity.
 
 The section-defect and promotion-to-group-map arguments adapt proof patterns
-developed by Worker 1496 in `Rational.SplitTorusVectorExtension`. Affine
+of `Rational.SplitTorusVectorExtension`. Affine
 extensionality reuses that module's `PointedCoordinateWeights.affine_hom_ext`.
 The coefficient-contraction descent and
-extension-section comparison are developed here by Worker 1459. The current
+extension-section comparison are developed here. The current
 module does not prove existence of an original scheme section, of linear
 vector coordinates, or of an extension-field group section. It therefore does
-not yet establish torus lift existence or the full solvable maximal-torus
+not establish torus lift existence or the full solvable maximal-torus
 conjugacy theorem.

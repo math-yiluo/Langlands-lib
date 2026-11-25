@@ -203,6 +203,7 @@ theorem isClosedSubgroup_weightHom (A : AddSubsemigroup (characterLattice S)) :
     IsClosedSubgroup (weightHom b e A) := by
   change IsClosedImmersion
     ((Corepresented.cutHom _).hom.hom.left ≫ (groupSchemeIso G).hom.hom.hom.left)
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   infer_instance
 
 /-- All-test range membership is exactly the original algebra-point criterion on global sections. -/

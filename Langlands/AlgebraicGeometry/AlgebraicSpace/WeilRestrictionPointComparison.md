@@ -1,7 +1,5 @@
 # Weil restriction point comparison with an explicit vector topology
 
-Original construction: Worker 111. Continuous scalar-action generalization: Worker 113.
-
 This module constructs `ringWeilRestrictionPointHomeomorph`, a canonical
 homeomorphism on rational points of a Weil restriction, under explicit geometric
 and topological hypotheses. It is an auxiliary result toward Conrad's
@@ -98,8 +96,8 @@ registered source `conrad-2011-weil-grothendieck-adelic-points`, SHA-256
 The implemented route uses continuous scheme maps and open surjective chart
 families rather than local homeomorphisms of charts. The explicit module-topology
 input is retained from `affineWeilRestrictionPointHomeomorph` and is not supplied
-by the printed statement. This auxiliary construction does not discharge the
-assigned unchanged exact target or alter its published Lean/Markdown pair.
+by the printed statement. This auxiliary construction does not prove the
+unchanged `HenselianWeilRestrictionPointHomeomorphStatement` or alter its published Lean/Markdown pair.
 
 The continuous scalar-action generalization is internal: the same implemented
 proof uses continuity of the original algebra map, not norm preservation.

@@ -1,7 +1,8 @@
 # An admissible carrier for the place actions at a complex place
 
-Module `Langlands.Automorphic.PlaceComponentCarrierComplex`. Worker 174 wrote it as a step towards
-G1 (Task 5992). Provenance: internal. It is the complex-place analogue of
+Module `Langlands.Automorphic.PlaceComponentCarrierComplex`, a step towards
+`CuspidalArchimedeanIrreducibleAdmissibleComponentStatement` (proved in `PlaceComponentExistence`).
+Provenance: internal. It is the complex-place analogue of
 `Langlands.Automorphic.PlaceComponentCarrier`, whose `factorEquiv`, `matrixRep` and `conjRep` it
 reuses. Here `v` is a complex place, `K_v = U(n)`, and the factor at `v` is the component
 `p.2 v`.

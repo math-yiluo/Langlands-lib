@@ -69,8 +69,8 @@ The `awayToPrime` theorem specializes to the away limit when
 `Nat.Coprime p m`. These identities are also definitional, since the
 finite-level comparisons and canonical section maps are the same.
 
-This unit constructs integral affine comparisons and their compatibility
+This module constructs integral affine comparisons and their compatibility
 laws only. It asserts no rational or adelic affine comparison, rational
 topology, geometric monodromy or test-scheme base-change law, torsion
 finiteness or rank, chosen trivialization of the twist, Weil pairing, or
-completion of the parent PEL task.
+invariant-orbit PEL level structure.

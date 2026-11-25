@@ -1,7 +1,5 @@
 # The literal heterogeneous pair
 
-Author: Worker 645.
-
 `PadicField.heterogeneousPair` is a name for the exact two-block construction in
 `ThreeBlockInductionAssociativityStatement`. It first conjugates the action on
 `V0` by `ULift.moduleEquiv.symm` onto `ULift.{uV1} V0` and the action on `V1`

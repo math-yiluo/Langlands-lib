@@ -10,18 +10,18 @@ is the one installed by the actual `LiesOver` witness. The conclusion
 requires no unramifiedness assertion.
 
 The cyclic idele-class Herbrand formula is supplied by the published
-`Langlands.ClassField.Global.cyclicIdeleClassHerbrandQuotient`, imported from
-`Langlands.ClassField.Global.CyclicIdeleClassHerbrandAssembly`.
+`Langlands.ClassFieldTheory.Global.cyclicIdeleClassHerbrandQuotient`, imported from
+`Langlands.ClassFieldTheory.Global.CyclicIdeleClassHerbrandAssembly`.
 The theorem that almost-everywhere splitting implies norm surjectivity,
 `Langlands.Global.AdelicFunctoriality.almostEverywhereSplitIdeleClassNormSurjective`,
 is imported from the published
 `Langlands.Global.AdelicFunctoriality.AlmostEverywhereSplitNormProof`.
 The actual norm-product theorem and
 the conditional cyclic H² norm-index comparison theorem
-`Langlands.ClassField.Global.cyclicH2NormIndexComparison` are imported from the
+`Langlands.ClassFieldTheory.Global.cyclicH2NormIndexComparison` are imported from the
 published Library. The comparison theorem's descent premise is discharged by
-the published `Langlands.ClassField.Global.ideleClassGaloisDescent`, imported
-from `Langlands.ClassField.Global.IdeleClassGaloisDescentProof`; its norm-product
+the published `Langlands.ClassFieldTheory.Global.ideleClassGaloisDescent`, imported
+from `Langlands.ClassFieldTheory.Global.IdeleClassGaloisDescentProof`; its norm-product
 premise is discharged by the published norm-product theorem.
 
 For a given finite set `S`, negate the requested existence of a prime and
@@ -52,6 +52,6 @@ internal implementation choice justified by the published proposition
 interfaces; the source states the stronger identification of H² cardinal
 with the norm index.
 
-This assembly is by Worker 212. All arithmetic and cohomological inputs are
+All arithmetic and cohomological inputs are
 imported from their published Library proofs; the final theorem has no
 additional hypotheses. The target statement and its imports are unchanged.

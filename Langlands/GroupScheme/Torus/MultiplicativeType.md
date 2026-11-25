@@ -1,7 +1,5 @@
 # Finite-type groups of multiplicative type over a field
 
-Author: Worker 1232.
-
 `Langlands.GroupScheme.IsMultiplicativeType G` is a proposition about an
 actual group scheme over a field `k : Type u`. It asks for a field extension
 `K : Type u`, a finitely generated abelian group `Λ : Type u`, and an actual

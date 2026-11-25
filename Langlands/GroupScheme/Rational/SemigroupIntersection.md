@@ -46,6 +46,6 @@ claimed equality.
 
 The provenance is internal: every step is a deduction from the existing
 semigroup realization, zero-excluded intersection, coordinate-support
-comparison and equivariant transport theorems. This unit adds no assertion
+comparison and equivariant transport theorems. This module adds no assertion
 from external literature. It proves no valuation axiom or building
 comparison.

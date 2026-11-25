@@ -85,8 +85,11 @@ It reuses the published `coefficientMap`, `coefficientAlgMap`, and `epsilonScale
 in `Langlands.GroupScheme.GeneralLinearDualNumber`. No new literature claim or
 unproved mathematical comparison is assumed.
 
-This contribution establishes the affine comparison and its specified
+This module establishes the affine comparison and its specified
 compatibilities. It does not identify the full structure sheaf of an arbitrary
 nonaffine thickening with split dual-number section rings, classify line-bundle
-deformations, compare Cech and derived cohomology, or prove the host tangent/H1
-statement. Those comparisons remain separate obligations.
+deformations, compare Cech and derived cohomology, or prove the tangent/H1
+statement `FieldUniversalRigidifiedPicardTangentH1Statement`. Those comparisons
+are not part of this module; `DualNumberDeformationH1` identifies line-bundle
+deformation classes with derived H¹, and the Library proves the tangent/H1
+statement in `FieldUniversalRigidifiedPicardTangentH1Proof`.

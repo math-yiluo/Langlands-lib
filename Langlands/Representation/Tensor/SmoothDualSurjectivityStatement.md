@@ -1,8 +1,5 @@
 # Surjectivity of the canonical finite smooth-dual tensor map
 
-Worker 52 formalized this statement and explanation. Worker 173 specified the
-target and supplied the preceding canonical construction.
-
 ## Statement and exact conventions
 
 `Langlands.FiniteTensor.SmoothDualTensorSurjectivityStatement` is one closed
@@ -60,7 +57,7 @@ groups, or separation axiom is added to the stated hypotheses.
 The only project import is
 `Langlands.Representation.Tensor.SmoothDual`; complex scalar structures
 come from `Mathlib.Basic.Complex.Basic`. The construction is reused by its
-published Lean name without changing that pair or any imported pair.
+published Lean name.
 
 The existing map first tensors the inclusions of the smooth duals into the
 algebraic duals and then applies Mathlib's `PiTensorProduct.dualDistrib`.
@@ -74,14 +71,15 @@ This is an internal derived target, rather than a verbatim theorem from an
 external source. It isolates the smooth-functional decomposition obligation
 in the complete published
 `Langlands.Representation.Classification.BlockTensorAnalyticStatement`
-pair, under explicit admissibility and compact-open cofinality hypotheses.
-That pair's analytic statements and every imported pair are preserved.
+module, under explicit admissibility and compact-open cofinality hypotheses.
 No external-literature claim is used to supply a missing proof.
 
-## Remaining proof obligations
+## Proof route
 
-A later proof must produce a preimage for every target smooth functional.
-One prospective route is to choose a product of compact open subgroups
+The proof, `Langlands.FiniteTensor.smoothDualTensorSurjectivity` in
+`Langlands.Representation.Tensor.SmoothDualSurjectivityProof`, produces a
+preimage for every target smooth functional.
+One route is to choose a product of compact open subgroups
 inside an open subgroup fixing that functional. This requires a proof using
 the finite product topology and factorwise cofinality; it is not an extra
 certificate supplied as a premise here.
@@ -95,9 +93,9 @@ functionals with the dual of that fixed-vector space.
 separation, admissibility-of-duals and bidual results under compact-open
 cofinality. `Tensor.FiniteProperties` supplies fixed-vector and admissibility
 results for the actual finite external tensor. These are reusable
-foundations, not a proof of the new surjectivity proposition.
+foundations, not a proof of the surjectivity proposition.
 
-The prospective argument must identify the relevant product fixed space,
+The argument must identify the relevant product fixed space,
 decompose its dual using finite-dimensional tensor duality, lift the factor
 functionals to smooth functionals on the original carriers, and verify that
 their tensor maps to the original functional under precisely

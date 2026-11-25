@@ -1,7 +1,5 @@
 # Statement: lifting a multiplicative-type subgroup of a fibre to an étale neighbourhood
 
-Worker 75.
-
 `Langlands.GroupScheme.MultiplicativeTypeEtaleLiftStatement.{u} : Prop` is a
 statement-only, `Prop`-valued definition. This module does not prove it, and it adds no
 other definitions, theorems or axioms. It imports:

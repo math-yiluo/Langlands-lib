@@ -6,7 +6,7 @@ polynomial in `q^(-s)`, valid for every complex `s`, whenever the restriction
 `g ↦ W(diag(g, I))` of the larger Whittaker function is compactly supported
 modulo the upper unipotent subgroup `N`. It is the input that the conditional
 supercuspidal epsilon-to-gamma assembly (`PadicBlockZeroLaurentValues` in
-`SupercuspidalEpsilonGammaReduction`, by Worker 1648) needs. Mathematically this
+`SupercuspidalEpsilonGammaReduction`) needs. Mathematically this
 is the standard observation in Jacquet–Piatetski-Shapiro–Shalika and Henniart
 (1993) that for a supercuspidal larger representation the zeta integrals are
 Laurent polynomials, so the `L`-factor gives no poles. The Lean statement is

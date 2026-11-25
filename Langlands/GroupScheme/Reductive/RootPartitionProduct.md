@@ -1,7 +1,5 @@
 # Multiplication for complementary commuting root partitions
 
-Worker 634.
-
 Let `G` be a semisimple group over an algebraically closed field and fix a
 common split maximal torus `i : T.toGrp ⟶ G`, with hypotheses
 `IsSplitSubtorus i` and `IsMaximalTorus i`. Supply

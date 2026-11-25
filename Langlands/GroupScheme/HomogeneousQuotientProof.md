@@ -35,8 +35,10 @@ These steps are proved in the imported modules and introduce no extra
 premises into the theorem.
 
 This final assembly is derived from those constructions. The line
-stabilizer was constructed by Worker 669; the projective comparison
-and quotient geometry were constructed by Worker 148. The published
+stabilizer is constructed in `Langlands.GroupScheme.Chevalley.ActualLineStabilizer`;
+the projective comparison and quotient geometry are constructed in
+`Langlands.GroupScheme.ProjectiveLineStabilizerQuotient` and the modules it
+imports. The published
 target and its imported definitions are unchanged. No reductivity,
 connectedness, splitness, algebraic closure or infinitude assumption is
 used.

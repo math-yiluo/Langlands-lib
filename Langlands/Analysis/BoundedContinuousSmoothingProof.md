@@ -1,6 +1,6 @@
 # Proof of the bounded-continuous smoothing criteria
 
-Worker 116 implements `boundedContinuousSmoothingCriteria`, the exact
+This module implements `boundedContinuousSmoothingCriteria`, the exact
 conjunction `BoundedContinuousSmoothingCriteriaStatement`, with component
 theorems `hilbertSchmidtBoundedContinuousLift` and
 `traceClassFiniteFactorizationSmoothing` at independent universes u, v, w.

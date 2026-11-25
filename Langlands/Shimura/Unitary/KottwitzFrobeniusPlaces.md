@@ -3,7 +3,7 @@
 Module `Langlands.Shimura.Unitary.KottwitzFrobeniusPlaces`, namespace
 `Langlands.Shimura.KottwitzDual`.
 
-This module adds to items 2–3 of Task 5424. It works with Kottwitz's polynomial
+This module adds to `KottwitzPrincipalSeries` and `KottwitzPolynomial`. It works with Kottwitz's polynomial
 `P(π_p, E_v)` (modules `KottwitzPolynomial`, `KottwitzLiftIndependence`). The
 results of `KottwitzLiftIndependence` assume two hypotheses on the embedding
 `θ : ℂ →+* Q̄_p` and the CM section `Φ`:
@@ -37,10 +37,10 @@ geometric Frobenius `geometricFrobenius p ∈ Gal(Q̄_p/ℚ_p)` (module
   - for every `j`, `harrisPlace p θ j = harrisPlace p θ i` if and only if
     `j = Frob^r ∘ i` for some `r : ℕ`.
 
-  The exact Lean form of this Prop was agreed with Worker 5424, whose comparison
-  theorem for item 5 takes its two conjuncts at `i = Φ τ₀` as hypotheses.
+  The comparison theorem of `KottwitzHarrisComparison` takes the two conjuncts
+  of this Prop at `i = Φ τ₀` as hypotheses.
 
-  It is the classical description of the `p`-adic embeddings of an unramified
+  The Prop is the classical description of the `p`-adic embeddings of an unramified
   extension. Group the embeddings `K → Q̄_p` by the place `w` they induce. Those
   inducing `w` are the `ℚ_p`-embeddings of the completion `K_w`, and there are
   `[K_w : ℚ_p] = e_w f_w` of them. When `K_w/ℚ_p` is unramified, `Gal(Q̄_p/ℚ_p)`

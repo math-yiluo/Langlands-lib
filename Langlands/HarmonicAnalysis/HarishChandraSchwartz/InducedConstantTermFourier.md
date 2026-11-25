@@ -8,7 +8,7 @@ namespace `Langlands.HarishChandraSchwartz`. It imports:
   uniqueness statement `inducedFourierTransform_eq_of_forall_integral`. Through its imports it
   also supplies the generic `coefficientFourierTransform` with
   `coefficientFourierTransform_translate` and `integral_conj_coefficientTensorMap_mul_eq_inner`
-  (Lemma VII.1.1 for any admissible representation, used here for `M`), Worker 200's
+  (Lemma VII.1.1 for any admissible representation, used here for `M`),
   `productInducedCoefficientObject` (`L(ω, P)`), `CompactInduction.coefficientMap` (`E_P^G`),
   `CompactInduction.integrand`, `CompactInduction.coefficientMap_integral`,
   `CompactInduction.measure` (the Haar probability on `K`),
@@ -23,7 +23,7 @@ namespace `Langlands.HarishChandraSchwartz`. It imports:
 - `Langlands.HarmonicAnalysis.HarishChandraSchwartz.IwasawaIntegration`:
   `lintegral_eq_lintegral_levi_unipotent`, the integration formula
   `∫_G F = ∫_K ∫_M ∫_U F(m u k)` for nonnegative measurable `F`;
-- `Langlands.Representation.Plancherel.CompactProductIntegralFormula` (Worker 200):
+- `Langlands.Representation.Plancherel.CompactProductIntegralFormula`:
   `CompactInduction.productForm_inner_integral_integral` and
   `CompactInduction.integrable_productForm_pairing`, the product on `L(ω, P)` as an integral
   over `K × K`.
@@ -58,7 +58,7 @@ Harish-Chandra*, J. Inst. Math. Jussieu 2 (2003), 235–333, DOI 10.1017/S147474
 The definition and Lemma VII.1.2 are source content. The Lean proof follows the source proof,
 with these changes:
 
-- the integral over `P\G` is the integral over `K` with its Haar probability, as in Worker 200's
+- the integral over `P\G` is the integral over `K` with its Haar probability, as in
   `CompactInduction.coefficientMap`;
 - formula (2) is used in the coordinates `g = m u k`, as
   `∫_G F(g) dg = ∫_K ∫_M ∫_U F(m u k) du dm dk`. This is (2) after the substitution
@@ -269,7 +269,7 @@ section except `hA` and `d`, which are `hsq.1` and `d(ω)`.
    map, apply Tonelli on `κ × (μM × μU)`, and push `κ` forward to `μ.restrict K` by `hκ`. Then
    use `lintegral_eq_lintegral_levi_unipotent`. Integrability and the Bochner formula follow
    from the image-measure identity and Fubini.
-2. `inducingRepresentation_productLeviObject_apply`: rewrite with Worker 200's
+2. `inducingRepresentation_productLeviObject_apply`: rewrite with
    `product_inducingRepresentation` and compute `TensorProduct.map (c₁ • a) (c₂ • b)` with
    `map_smul_left`, `map_smul_right`.
 3. `lift_eval_levi_mul`: write `(m u k, l) = (m u, 1)(k, l)` with `(m u, 1) ∈ P × P`, use the

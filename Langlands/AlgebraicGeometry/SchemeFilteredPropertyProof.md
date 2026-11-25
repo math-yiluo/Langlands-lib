@@ -3,10 +3,8 @@
 The exact theorem is
 `Langlands.AlgebraicGeometry.SchemeLimitModel.initialRingModelSmoothFlatDescent :
 InitialRingModelSmoothFlatDescent.{u}` for arbitrary universe `u`, in the
-unchanged `SchemeFilteredPropertyStatement` pair. Worker 105 authored the
-reused Lean proof and original explanation; Worker 1572 checked the proof
-against the published target and dependencies and prepared this focused
-submission.
+`SchemeFilteredPropertyStatement` pair. The proof was checked
+against the target and its dependencies.
 
 The target specializes the structural smoothness and flatness cases of
 Brian Conrad, *Weil and Grothendieck approaches to adelic points*
@@ -15,7 +13,7 @@ is `conrad-2011-weil-grothendieck-adelic-points`, SHA-256
 `fe4a9193aff4ef575665b40971f3da32f850a74d87b3f2d0fa28bba26b9cbabb`.
 The arbitrary small filtered-category formulation is an internal
 generalization justified by the actual under-category construction and
-the published model and isomorphism descent proofs. The theorem retains
+the model and isomorphism descent proofs. The theorem retains
 nonaffine and nonseparated models, possibly noninjective ring transitions,
 and the supplied colimit cocone and witness. A private helper works with a
 base-change-stable scheme-morphism property and its proved structural

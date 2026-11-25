@@ -1,6 +1,6 @@
 # Descent of an actual geometric Borel subgroup
 
-This supporting unit constructs an actual ground-field geometric Borel from
+This supporting module constructs an actual ground-field geometric Borel from
 an algebraic-closure Borel whose subgroup functor agrees on the canonical
 fpqc overlap. It works for every field `k : Type u` and every group scheme
 `G` affine over `Spec k`. It assumes an actual inclusion
@@ -46,6 +46,10 @@ This is an internal derivation from the Library modules
 `Absolute.SolvableFieldExtensionProof`, and their imported transport and
 base-change reflection results. It introduces no external structural
 assertion. Producing an overlap-invariant Borel over a finite field,
-including the conjugacy, Frobenius and finite-model steps, remains a
-separate obligation. This unit proves neither `FiniteFieldQuasiSplitStatement`
-nor the host `FiniteFieldCentralCocharacterSolvableStatement`.
+including the conjugacy, Frobenius and finite-model steps, is not part of
+this module. This module proves neither `FiniteFieldQuasiSplitStatement`
+nor `FiniteFieldCentralCocharacterSolvableStatement`, the statement it serves;
+they are proved as `finiteFieldQuasiSplit` in `Rational.FiniteFieldQuasiSplit`
+(through `Absolute.FrobeniusBorelDescent`) and as
+`finiteFieldCentralCocharacterSolvable` in
+`Rational.FiniteFieldCentralCocharacterSolvableProof`.

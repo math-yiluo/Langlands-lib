@@ -1,7 +1,5 @@
 # Canonical tensor reduction for adjacent cuspidal induction
 
-Author: Worker 289.
-
 This internal construction uses the published small-universe cuspidal
 factorization, canonical block-permutation tensor equivalence, normalized
 induction of an equivalence, and transport of actual Jordan–Hölder series.

@@ -146,7 +146,7 @@ section Fibers
 
 variable {X G ρ}
 variable {Γ : Type} [Group Γ] (V : TwistedOver (etale (K := K)) ρ)
-variable (deck : Γ →* Aut V.obj.left) (hdeck : ∀ γ : Γ, (deck γ).hom ≫ V.hom = V.hom)
+variable (deck : Γ →* Aut V.obj.left) (hdeck : ∀ γ : Γ, (deck γ).asIso.hom ≫ V.hom = V.hom)
 variable (Kₒ : Subgroup G) (i : ULift.{max u (v + 1) uL} ((localizedFieldPointFunctor L).obj X))
 
 /-- The coordinates of index `i` over `V`: a left coset of `Kₒ` together with a point of the
@@ -158,23 +158,23 @@ abbrev CosetFiber : Type (max z (max u (v + 1) uL)) :=
 /-- Deck transformations act on the coordinates of index `i` through the fibres. -/
 abbrev cosetFiberAction : MulAction Γ (CosetFiber L h V Kₒ i) where
   smul γ t := ⟨t.1, (etaleGodementPoints.{u, v, uL} L h i).fiber.map
-    (deckTransport V (deck γ) (hdeck γ) t.1.out) t.2⟩
+    (deckTransport V (deck γ).asIso (hdeck γ) t.1.out) t.2⟩
   one_smul t := by
     obtain ⟨c, p⟩ := t
     refine congrArg (Sigma.mk c) ?_
-    have e : deckTransport V (deck 1) (hdeck 1) c.out = 𝟙 _ := by
+    have e : deckTransport V (deck 1).asIso (hdeck 1) c.out = 𝟙 _ := by
       apply MorphismProperty.Over.Hom.ext
-      change (deck 1).hom = 𝟙 _
+      change (deck 1).asIso.hom = 𝟙 _
       rw [map_one]
       rfl
     rw [e, Functor.map_id_apply]
   mul_smul γ δ t := by
     obtain ⟨c, p⟩ := t
     refine congrArg (Sigma.mk c) ?_
-    have e : deckTransport V (deck (γ * δ)) (hdeck (γ * δ)) c.out =
-        deckTransport V (deck δ) (hdeck δ) c.out ≫ deckTransport V (deck γ) (hdeck γ) c.out := by
+    have e : deckTransport V (deck (γ * δ)).asIso (hdeck (γ * δ)) c.out =
+        deckTransport V (deck δ).asIso (hdeck δ) c.out ≫ deckTransport V (deck γ).asIso (hdeck γ) c.out := by
       apply MorphismProperty.Over.Hom.ext
-      change (deck (γ * δ)).hom = (deck δ).hom ≫ (deck γ).hom
+      change (deck (γ * δ)).asIso.hom = (deck δ).asIso.hom ≫ (deck γ).asIso.hom
       rw [map_mul]
       rfl
     change (etaleGodementPoints.{u, v, uL} L h i).fiber.map _ p = _
@@ -306,19 +306,19 @@ theorem hasCoinducedGaloisFixedSections_smoothPointProduct
     refine Function.Bijective.comp ?_ sigmaReindex_bijective
     refine coinduced_pi_bijective (fun i γ t ht => ?_) e
     obtain ⟨c, p⟩ := t
-    have hp : (points i).fiber.map (deckTransport V (deck γ) (hdeck γ) c.out) p = p :=
+    have hp : (points i).fiber.map (deckTransport V (deck γ).asIso (hdeck γ) c.out) p = p :=
       eq_of_heq (Sigma.mk.inj_iff.1 ht).2
     exact hfree γ p.down.1 (congrArg (fun q => q.down.1) hp)
   have key : (fun s : liftFixedSubmodule S V l Kₒ hK => fun γ : Γ =>
-      π ((S.obj.obj.map (deckEndomorphism V (deck γ) (hdeck γ)).op).hom s.1)) =
+      π ((S.obj.obj.map (deckEndomorphism V (deck γ).asIso (hdeck γ)).op).hom s.1)) =
       C ∘ Φ ∘ f₁ := by
     funext s γ i o
     change Langlands.Sheaf.PointProduct.sectionCoordinates.{max u (v + 1) uL, max u (v + 1) uL}
         points M _ (projection ρ F₀ V (rep i o).1.out
-          (raw.map (deckEndomorphism V (deck γ) (hdeck γ)).op (val s.1))) i (rep i o).2 =
+          (raw.map (deckEndomorphism V (deck γ).asIso (hdeck γ)).op (val s.1))) i (rep i o).2 =
       Φ (f₁ s) (rep i o).1 i
-        ((points i).fiber.map (deckTransport V (deck γ) (hdeck γ) (rep i o).1.out) (rep i o).2)
-    refine (sectionCoordinates_projection_deck L h M V (deck γ) (hdeck γ) _ (val s.1) i _).trans ?_
+        ((points i).fiber.map (deckTransport V (deck γ).asIso (hdeck γ) (rep i o).1.out) (rep i o).2)
+    refine (sectionCoordinates_projection_deck L h M V (deck γ).asIso (hdeck γ) _ (val s.1) i _).trans ?_
     rfl
   exact (congrArg Function.Bijective key).mpr (hC.comp (Φ.bijective.comp hf₁))
 

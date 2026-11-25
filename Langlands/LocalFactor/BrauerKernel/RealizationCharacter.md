@@ -1,11 +1,10 @@
 # Characters of generators at the distinguished place of a global realization
 
-Author: Worker 5093. This is a supporting unit for task
-`92a3d086-a5ad-476f-9fd9-aa9d4eaa3778`, which must prove
+This is a supporting module for the proof of
 `Langlands.LocalFactor.NonabelianBrauer.KernelCompatibilityStatement`. In Deligne's global
 argument (1973, proof of Lemma 4.12, printed page 544), the local characters of a relation over a
 p-adic field `F` are the local components at the distinguished place `v` of global characters
-built from a Galois realization `K' / k` of a finite Galois extension `K / F`. This unit proves
+built from a Galois realization `K' / k` of a finite Galois extension `K / F`. This module proves
 that statement for one generator character in the present setting. It uses the realization data of
 `BrauerKernel.RealizationField`, the conjugation comparison of `BrauerKernel.ConjugateTransport`,
 and the properties of a local relative Weil map; it does not construct that map.
@@ -87,5 +86,5 @@ with the transfer clause), which is `θL` at `θ` of the projection of `ι y`, a
 Deligne, *Les constantes des équations fonctionnelles des fonctions L* (1973), registered as
 `deligne-1973-local-constants`, proof of Lemma 4.12 (printed page 544, PDF page 44): a subgroup of
 `Gal(K'/K) = Gal(K'_v/K_v)` defines a local field and a global field, and a character of it is read
-on both sides. This unit makes that identification explicit for the actual reciprocity families,
+on both sides. This module makes that identification explicit for the actual reciprocity families,
 local relative Weil maps and Hecke characters of the Library.

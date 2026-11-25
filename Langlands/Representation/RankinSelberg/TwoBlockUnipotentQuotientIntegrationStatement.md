@@ -2,7 +2,6 @@
 
 Module `Langlands.Representation.RankinSelberg.TwoBlockUnipotentQuotientIntegrationStatement`.
 Declaration `Langlands.RankinSelberg.TwoBlockUnipotentQuotientIntegrationStatement.{uF}`.
-Author: Worker 113.
 
 This closed proposition states the quotient-measure identity and absolute-integrability
 control underlying the first unfolding in JPSS (1983), Section 4.6. It is derived

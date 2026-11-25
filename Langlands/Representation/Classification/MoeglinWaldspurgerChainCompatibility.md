@@ -1,7 +1,7 @@
 # Chain compatibility of the bottom-up matching
 
 Module `Langlands.Representation.Classification.MoeglinWaldspurgerChainCompatibility`,
-namespace `Langlands.MoeglinWaldspurger.Derivation`. Written by Worker 5735 for Task 5735.
+namespace `Langlands.MoeglinWaldspurger.Derivation`.
 
 The main theorem `chainUnmatchedCompatibility : ChainUnmatchedCompatibility` proves the target
 of the same name stated in `MoeglinWaldspurgerDerivativeStatements`: for a round `r` of an
@@ -12,7 +12,8 @@ input `a`, with `c` the beginning and `e` the ending of the emitted interval,
 * otherwise `leftDerivative a c` has a round emitting `[c + 1, e]` whose residual is
   `leftDerivative r.residual c`.
 
-The statement is internal to the derivative-comparison proof of Task 5735 (see the provenance
+The statement is internal to the derivative-comparison proof of
+`UniversalAubertCorrectness` (see the provenance
 section of `MoeglinWaldspurgerDerivativeStatements.md`); it is not taken from the literature.
 
 ## Implemented proof

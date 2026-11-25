@@ -1,8 +1,8 @@
 # Renard II.3.9: the subgroup averaging map and the invariant functional
 
 Helper module for the proof of
-`Langlands.HarmonicAnalysis.HomogeneousFunctions.Renard.Statements`
-(Worker 67, Task 5524). It proves the first two conjuncts:
+`Langlands.HarmonicAnalysis.HomogeneousFunctions.Renard.Statements`.
+It proves the first two conjuncts:
 `invariantFunctional : InvariantFunctionalStatement` and
 `averagingStatement : AveragingStatement`, at the full universe parameter
 `uG`.

@@ -1,6 +1,6 @@
 # The neighboring-rectangle constituent bound from MW correctness
 
-Worker 38. This module proves
+This module proves
 `neighborRectangleConstituentLengthBound_of_aubertCorrectness`. It assumes two
 explicit hypotheses:
 

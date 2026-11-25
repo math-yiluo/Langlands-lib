@@ -112,7 +112,7 @@ theorem linearSystemMap_basis_nondegenerate [IsReduced X]
     intro hz
     apply hF
     have hF0 : F = 0 := (basisHyperplaneSectionEquiv p basis).injective
-      (hz.trans (map_zero _).symm)
+      (hz.trans (LinearEquiv.map_zero _).symm)
     exact congrArg Subtype.val hF0
   simpa only [← degreeOneBasis_expansion] using
     exists_not_mem_hyperplane_of_linComb_ne_zero p (fun i ↦ basis i) hs _ hσ

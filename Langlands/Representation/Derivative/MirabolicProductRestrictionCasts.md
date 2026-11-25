@@ -1,7 +1,5 @@
 # Rank-cast normal forms for the mirabolic restriction sequence
 
-Author: Worker 1163.
-
 This helper module of the proof of
 `Langlands.Derivative.MirabolicProductRestrictionStatement` rewrites the three
 published helper functors of the statement into normal forms in which all three

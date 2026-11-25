@@ -3,8 +3,7 @@
 Lean module: `Langlands.Representation.Exponents.LeviParabolicModulus`, namespace
 `Langlands.Aubert.General.RepresentedParabolic`.
 
-Author: Worker 937. Planned with Worker 1402 for the second adjointness proof of Renard
-VI.9.6 (task c0fa1878), where it supplies the modulus inputs of the integral duality
+The module serves the second adjointness proof of Renard VI.9.6, where it supplies the modulus inputs of the integral duality
 `(i τ)~ ≅ i(τ~)` (`Aubert/General/CompactQuotientNaturalDuality.lean`).
 
 ## Source
@@ -16,7 +15,7 @@ unimodular. The Lemma states that, for a parabolic `P = MN` and `m ∈ M`,
 parabolic `P_∅`; Renard notes that the Cartan decomposition of `M` gives it for `m ∈ M`.
 
 This module does not reproduce Renard's proofs, which use the Cartan and Iwahori
-decompositions. It takes unimodularity of reductive rational points from the open Library
+decompositions. It takes unimodularity of reductive rational points from the Library
 statement `RationalReductiveUnimodularityStatement` and computes the modular character of
 `P(F)` with the generic semidirect-product formula
 `IsSemidirectDecomposition.modularCharacter_eq_restrictCharacter_of_unimodular`
@@ -82,14 +81,16 @@ needs no root presentation:
 
 ## Scope
 
-These are conditional helpers. `RationalReductiveUnimodularityStatement` (and
-`StandardCocharacterStatement`, which it takes as a premise) are open Library statements.
+These are conditional helpers: `RationalReductiveUnimodularityStatement` (and
+`StandardCocharacterStatement`, which it takes as a premise) are hypotheses here. The
+Library proves them as `RationalPointFamily.rationalReductiveUnimodularity`
+(`Aubert/General/RationalReductiveUnimodularityProof.lean`) and
+`GroupScheme.standardCocharacter` (`GroupScheme/Rational/StandardCocharacterProof.lean`).
 The Library reduces the first to structural inputs in
 `Aubert/General/RationalReductiveUnimodularityReductionProof.lean`. Nothing here proves
 `LeviSecondAdjointnessStatement`.
 
 ## Checks
 
-`lean_check` over Library commit 6f75b7b3 (environment `3b864ddf`): diagnostic 4cc63077
-(lake build), 0 errors and 0 warnings. `modularCharacter_pointImage_of_unimodularity` is a
+`lean_check` over Library commit 6f75b7b3 (lake build): 0 errors and 0 warnings. `modularCharacter_pointImage_of_unimodularity` is a
 theorem with universe parameter `u` and axioms `propext`, `Classical.choice`, `Quot.sound`.

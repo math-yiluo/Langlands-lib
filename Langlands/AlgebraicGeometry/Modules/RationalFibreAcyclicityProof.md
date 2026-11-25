@@ -1,7 +1,5 @@
 # Open-local rational-fibre acyclicity: proof
 
-Author: Worker 1159.
-
 The theorem
 `Langlands.AlgebraicGeometry.Modules.rationalFibreAcyclicity.{u}` has complete
 type

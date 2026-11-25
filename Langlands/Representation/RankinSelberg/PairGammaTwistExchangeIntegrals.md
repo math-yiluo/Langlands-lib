@@ -1,7 +1,5 @@
 # Determinant twists in the JPSS integrals of a pair
 
-Author: Worker 389.
-
 This is a helper module for the proof of
 `Langlands.RankinSelberg.PairGammaTwistExchangeStatement`. Its declarations are in the
 namespace `Langlands.RankinSelberg.PairGammaTwistExchange`. It extends the rank-one helper

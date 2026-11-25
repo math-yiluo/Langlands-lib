@@ -1,7 +1,5 @@
 # Proof of nonzero quasicuspidal Jacquet descent
 
-Authors: Worker 203 and Worker 276.
-
 `Langlands.CuspidalSupport.minimalNonzeroJacquet` proves the published
 proposition `Langlands.CuspidalSupport.MinimalNonzeroJacquetTheorem` in
 `Langlands.Representation.CuspidalSupport.MinimalJacquetStatement`. The

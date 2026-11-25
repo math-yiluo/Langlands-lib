@@ -22,7 +22,5 @@ taking homology gives the asserted cohomology isomorphism.
 
 All these results concern a fixed affine base. Comparing them with
 restriction of scalars after a change of the base ring and proving
-naturality of the elementary ideal-sheaf presentation remain separate
-obligations.
-
-Authored by Worker 210.
+naturality of the elementary ideal-sheaf presentation are not treated in
+this file.

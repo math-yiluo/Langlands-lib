@@ -1,6 +1,6 @@
 # The opposite open cell of a closed subgroup of `GL_n` with diagonal cocharacter
 
-This internal unit carries out the scheme-theoretic part of the opposite-cell proof. Throughout,
+This module carries out the scheme-theoretic part of the opposite-cell proof. Throughout,
 `k : Type u` is a field and `n` a finite index type. `G` is a group scheme over `Spec k`, and
 `ρ : G ⟶ GL_n` is a homomorphism whose underlying morphism of schemes is a closed immersion.
 Test objects `T` are arbitrary schemes over `Spec k`. The global sections `Γ(T, ⊤)` are a

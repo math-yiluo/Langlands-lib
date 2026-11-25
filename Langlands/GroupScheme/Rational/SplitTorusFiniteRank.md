@@ -1,6 +1,6 @@
 # A finite bound for the ranks of actual split subtori
 
-Worker 1274. This is an internal derivation from the published actual
+This is an internal derivation from the published actual
 dual-number identity kernels, their module structures, affine coordinate
 algebras, and split-torus points. It uses no conjugacy or rank-attainment
 hypothesis.

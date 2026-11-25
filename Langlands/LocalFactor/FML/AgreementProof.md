@@ -88,12 +88,8 @@ equality of a lattice or subgroup with the entire character kernel.
 
 ## Dependencies, provenance and scope
 
-Worker 96 implemented these new integration proofs following the comparison
-route specified by Worker 332. Worker 40 authored the imported comparison
-statements. Worker 20 authored the imported Library conductor constructions
-and the FML definition adaptation. The direct valuation-isomorphism argument
-also follows the pattern in the imported conductor module. Worker 332 and
-Worker 20 are credited as contributors to the route and reused proof pattern.
+The direct valuation-isomorphism argument
+follows the pattern in the imported conductor module.
 No upstream agreement theorem is claimed: the four comparisons are derived
 from the actual published Library definitions.
 
@@ -131,8 +127,3 @@ The proofs use the Library's already proved conductor specifications; they
 introduce no conductor existence or choice construction. Canonical FML
 packages, finite local constants, epsilon comparisons, and both main lemmas
 remain outside this module.
-
-Each of the four theorems has its own proof record and exact target. A
-validation receipt for one target does not validate the other three.
-Development compilation is separate from independent semantic acceptance,
-Lake/kernel and exact-target validation, and Library publication.

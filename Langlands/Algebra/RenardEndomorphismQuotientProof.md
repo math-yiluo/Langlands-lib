@@ -1,8 +1,5 @@
 # Injectivity and localization comparison for the actual power-kernel quotient
 
-Authors: Worker 490 (Lean implementation and source verification), Worker 911
-(published target and proof orientation in the task context).
-
 The module `Langlands.Algebra.RenardEndomorphismQuotientProof` proves
 
 ```lean
@@ -10,12 +7,12 @@ theorem quotientLocalizationStatements : QuotientLocalizationStatements.{u, v}
 ```
 
 in namespace `Langlands.Renard.EndomorphismLocalization`. This is exactly the
-published target from
+target from
 `Langlands.Algebra.RenardEndomorphismQuotientStatements`, imported unchanged.
-The second import is the published
-`Langlands.Algebra.RenardEndomorphismLocalizationKernelProof` by Worker 900.
+The second import is
+`Langlands.Algebra.RenardEndomorphismLocalizationKernelProof`.
 It supplies the kernel criterion and injective-case theorem used below.
-No unpublished theorem is assumed.
+No theorem outside the Library and Mathlib is assumed.
 
 ## Source and scope
 
@@ -38,12 +35,12 @@ The public Appendix A corrections and stable-quotient notes were also consulted.
 The source asserts that the induced operator on the quotient by the union of
 power kernels is injective, that its canonical localization map is injective,
 and that its localization is isomorphic to the original localization. The
-published target gives a precise derived comparison: the equivalence uniquely
+target gives a precise derived comparison: the equivalence uniquely
 carries the composite of the quotient projection and canonical map to the
 original canonical map and intertwines the localized operators. The extension
 from fields to arbitrary commutative unital rings is internal. The proof
 constructs the two maps from the universal properties, as in the source, and
-uses the published fraction-based kernel and injectivity results.
+uses the fraction-based kernel and injectivity results.
 
 All generic helpers take `R : Type u` with `[CommRing R]`, `V : Type v` with
 `[AddCommGroup V] [Module R V]`, and `a : Module.End R V`. The universes `u`
@@ -51,7 +48,7 @@ and `v` are independent. There is no finiteness, Noetherianity,
 nontriviality, stabilization, or injectivity hypothesis on `a`. Zero rings,
 zero modules and nilpotent endomorphisms are included.
 
-The objects remain exactly the published ones:
+The objects remain exactly the imported ones:
 
 | Mathematical object | Lean term |
 | --- | --- |
@@ -69,13 +66,13 @@ The new comparison maps use these types directly.
 `quotientEnd_injective a` reduces injectivity to triviality of the kernel
 using `LinearMap.ker_eq_bot` and `ker_eq_bot'`. Given a quotient element
 annihilated by `quotientEnd a`, the surjective `quotientProjection a` gives
-a representative `z`. The published `quotientEnd_projection` and
+a representative `z`. The lemmas `quotientEnd_projection` and
 `ker_quotientProjection` identify the hypothesis with `a z ∈ powerKernel a`.
 By `mem_powerKernel_iff` there is an `n` with `(a^n) (a z) = 0`.
 Composition powers give `(a^(n+1)) z = 0`, so `z` lies in the power kernel
 and its quotient class is zero.
 
-`quotientIota_injective a` applies the published `iota_injective` to
+`quotientIota_injective a` applies `iota_injective` to
 `quotientEnd a` and the preceding injectivity result. Its kernel-criterion
 proof is imported, not repeated.
 
@@ -87,7 +84,7 @@ Write `π = quotientProjection a`, `a' = quotientEnd a`, `ι = iota a`,
 `quotientIotaLift a`, denoted `d`, is the actual quotient descent
 `(powerKernel a).liftQ (iota a) ...`. The well-definedness proof sends a
 member of the power kernel to zero using `mem_powerKernel_iff` and the
-published `iota_eq_zero_iff`. Its representative law
+lemma `iota_eq_zero_iff`. Its representative law
 `quotientIotaLift_projection` is `d (π z) = ι z`, by reduction.
 `quotientIotaLift_intertwines` proves `d (a' q) = ã (d q)` by taking a
 representative of `q` and applying `iota_intertwines`.
@@ -100,7 +97,7 @@ factor (quotientEnd a) (localizedEnd a) (isUnit_localizedEnd a)
 ```
 
 Thus `F : Localized a' →ₗ[R] Localized a`. Its `_iota` and `_intertwines`
-theorems are the published `factor_comp_iota` (evaluated on an element)
+theorems are `factor_comp_iota` (evaluated on an element)
 and `factor_intertwines`: `F (ι' q) = d q` and `F (ã' z) = ã (F z)`.
 
 `quotientProjection_iota_intertwines` shows that `ι' ∘ π` intertwines
@@ -112,7 +109,7 @@ with invertible target `ã'`. Its `_iota` and `_intertwines` theorems give
 ## Inverse identities and uniqueness
 
 `quotientLocalizationMap_comp_localizationQuotientMap` proves `F ∘ G = id`
-using the published `eq_of_intertwines` for the original localization.
+using `eq_of_intertwines` for the original localization.
 Both the composite and the identity intertwine `ã` with itself; `ã` is
 injective because it is a unit. On `ι z` the representative laws give
 `F (G (ι z)) = F (ι' (π z)) = d (π z) = ι z`.
@@ -150,7 +147,8 @@ Its only axioms are `propext`, `Classical.choice` and `Quot.sound`.
 The proof uses no proof holes, new axioms or native decision procedure.
 The target pair and its imported pairs are unchanged.
 
-This unit does not establish additional inverse-power extension converses,
+This module does not establish additional inverse-power extension converses,
 surjective-canonical-map corollaries, general algebra-action comparisons,
 categorical localization packaging or the final C.II proposition. The
-kernel/exhaustion aggregate is imported as published work.
+kernel/exhaustion aggregate is imported from
+`RenardEndomorphismLocalizationKernelProof`.

@@ -41,7 +41,7 @@ a hypothesis `hH`.
   `Langlands.Analysis.SeveralComplex.exists_finset_zero_iff`.
 
 The results named in the first item are from modules `ContinuationPrincipleReduction` and
-`LocalScalarization` (Task 5431).
+`LocalScalarization`.
 
 ## Provenance
 

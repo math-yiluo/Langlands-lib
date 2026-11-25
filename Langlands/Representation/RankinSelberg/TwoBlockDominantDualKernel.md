@@ -1,6 +1,6 @@
 # Actual dominant kernels under reversed duality
 
-This internal definition and support-lemma unit compares the actual dominant
+This internal module of definitions and support lemmas compares the actual dominant
 raw, weighted, rectangle-integrated and lower-quotient kernels under reversed
 duality. Every kernel comparison has the explicit premise
 `TwoBlockDominantDualMatrixStatement`. The module does not prove that matrix
@@ -105,7 +105,7 @@ The three final lemmas are:
 Each proof is quotient induction followed by `lowerDuality_mk` and the
 corresponding representative lemma. The complex, real and Prop-valued objects
 are the existing invariant descents, so no representative is selected.
-No outer quotient measure or outer integral is used in this unit.
+No outer quotient measure or outer integral is used in this module.
 
 ## Provenance and remaining obligations
 
@@ -113,14 +113,15 @@ All new assertions are internal deductions from the imported actual Jacquet
 section equivalence, determinant and translated-test identities, signed
 rectangle measure transport, quotient-kernel definitions and lower-duality
 geometry. The matrix statement is explicitly assumed rather than discharged;
-its proof is a separate prerequisite. This module introduces no new claim from
+it is proved separately, as `twoBlockDominantDualMatrix` in
+`TwoBlockDominantDualMatrixProof`. This module introduces no new claim from
 the literature.
 
 The module proves neither slice nor whole-quotient convergence, outer measure
 transport, coefficient reflection, a Laurent functional equation, rational
 factor existence or factor comparison. It does not cover the equal-rank
-boundary. Both final dominant-rank gamma/L propositions retain their full
-original obligations.
+boundary. Both final dominant-rank gamma/L propositions are left in full to
+other modules; `TwoBlockDominantRankProof` proves them.
 
 ## All-field port
 

@@ -1,7 +1,5 @@
 # Opposite-weight Lie-image witnesses under field extension
 
-Author: Worker 1462.
-
 `Lie.MeetsOppositeWeightSpaces j i α` abbreviates the conjunction of
 `Lie.MeetsWeightSpace j i α` and `Lie.MeetsWeightSpace j i (-α)`. Thus each
 of the two opposite character weight spaces contains a nonzero vector

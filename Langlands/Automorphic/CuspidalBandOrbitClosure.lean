@@ -71,7 +71,7 @@ theorem coefficient_compact (w : BandHilbertSpace F r) (f : T.Space)
 on the source vanish on every archimedean translate. -/
 theorem coefficient_eq_zero_of_source_annihilator
     (hcoeff : CuspidalHilbertOrbitCoefficientStatement.{u})
-    (hT : Langlands.ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T)
+    (hT : Langlands.ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T)
     (w : BandHilbertSpace F r)
     (hw : ∀ f : T.Space,
       (∫ q, Inner.inner ℂ (w q)
@@ -122,7 +122,7 @@ def sourceBandClosure :
 the explicit open scalar-coefficient premise. -/
 theorem translatedToL2_mem_sourceBandClosure_of_coefficients
     (hcoeff : CuspidalHilbertOrbitCoefficientStatement.{u})
-    (hT : Langlands.ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T)
+    (hT : Langlands.ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T)
     (g : InfiniteAdelicGL F (r + 1)) (f : T.Space) :
     translatedToL2 T.realization T.cuspidal (AdelicGL.ofInfinite F (r + 1) g) f ∈
       sourceBandClosure T := by
@@ -145,7 +145,7 @@ source's Hilbert-band closure. -/
 def CuspidalBandOrbitClosureStatement : Prop :=
   ∀ (F : Type u) [Field F] [NumberField F] [CompactSpace (AdeleQuotient F)]
     (r : ℕ) (T : CuspidalOperatorRealization F r),
-    Langlands.ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T →
+    Langlands.ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T →
       ∀ (g : InfiniteAdelicGL F (r + 1)) (f : T.Space),
         OperatorDeterminantSlice.translatedToL2 T.realization T.cuspidal
           (AdelicGL.ofInfinite F (r + 1) g) f ∈ OperatorDeterminantSlice.sourceBandClosure T

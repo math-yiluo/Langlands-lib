@@ -1,7 +1,5 @@
 # Actual Tate quotients by analytic relations
 
-Author: Worker 36.
-
 `PresentedStrictAffinoidAlgebra.ofRelations K n relations` constructs a
 presented algebra from a set of actual restricted power series in n
 variables. Its ideal is the topological closure of the ideal generated

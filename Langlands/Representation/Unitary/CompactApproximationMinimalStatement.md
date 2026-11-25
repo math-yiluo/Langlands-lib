@@ -1,6 +1,6 @@
 # Minimal closed subrepresentations from compact approximations
 
-Worker 116 states `Langlands.Analysis.CompactApproximationMinimalStatement`.
+The module states `Langlands.Analysis.CompactApproximationMinimalStatement`.
 The group G and complete complex inner-product space E have independent
 universes. The actual homomorphism π sends G to the bounded complex-linear
 endomorphisms of E and preserves the inner product. Invertibility of every
@@ -53,4 +53,4 @@ the statement module contains no theorem proof.
 No Dirac sequence, integrated representation, adelic quotient, automorphic
 Hilbert space, maximal orthogonal family or Hilbert direct-sum decomposition
 is constructed. Finite representation multiplicities and the automorphic
-applications remain subsequent obligations.
+applications are not part of this statement.

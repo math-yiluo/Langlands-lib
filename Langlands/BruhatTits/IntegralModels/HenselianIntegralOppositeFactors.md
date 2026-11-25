@@ -16,7 +16,7 @@ proves that proposition. It is the general-base sufficiency interface consumed
 by the unramified positive-reduction proof, where the base ring is the actual
 maximal-unramified valuation ring.
 
-The proof adapts the sufficiency argument of Worker 246's
+The proof adapts the sufficiency argument of
 `IntegralOppositeFactorsProof` from local-field integers to this general base.
 The closedness of the integral torus is derived using
 `IntegralModel.isClosedSubgroup_of_split_generic`. Henselian specialization

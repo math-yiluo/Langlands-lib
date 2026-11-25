@@ -42,7 +42,7 @@ conditional discrete-series twist-orbit consequence.
 
 The construction adds no analytic argument, reconstruction hypothesis, or
 rank-induction step. The finite-projection and level-preserving lifting proofs,
-as well as compact-open Iwasawa existence, remain obligations of their existing
-owners. The provenance of this interface is the composition and structural
+as well as compact-open Iwasawa existence, are not given here.
+The provenance of this interface is the composition and structural
 specialization of the named published declarations; it is not a new
 translation of an original-source theorem.

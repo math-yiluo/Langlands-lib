@@ -1,7 +1,5 @@
 # Inverse characters in a dual representation
 
-Worker 1228.
-
 This internal construction takes an actual finite matrix representation of an
 affine group scheme over any field. It assumes that the sum of its rational
 character spaces is the entire coordinate space. Under this explicit premise,

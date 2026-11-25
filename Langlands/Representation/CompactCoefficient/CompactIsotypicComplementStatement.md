@@ -1,10 +1,10 @@
 # The isotypic decomposition along an irreducible compact representation: statement
 
-Author: Worker 6. Module `Langlands.Representation.CompactCoefficient.CompactIsotypicComplementStatement`, namespace `Langlands.Renard.CompactRepresentation`.
+Module `Langlands.Representation.CompactCoefficient.CompactIsotypicComplementStatement`, namespace `Langlands.Renard.CompactRepresentation`.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*, French edition dated 9 July 2026, IV.1.4, Theorem, printed p.90 / PDF p.96, together with IV.1.5, Proposition (iii) and Remark 1, printed pp.93–94 / PDF pp.99–100. The registered source ID is `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 
-This is a statement unit: nothing is proved.
+This module contains a statement only: nothing is proved.
 
 ## The source
 
@@ -38,4 +38,4 @@ The published `CompactCoefficientProjectorStatement` (Bernstein–Zelevinsky 2.4
 ## Remarks
 
 - The representations `τ`, `V` and `B` share the carrier universe `v`.
-- The proof is not formalized here. It goes through the idempotents `e_{K,τ}` of IV.1.5 (`CompactProjectionDistributionStatement`), Lemma A.VII for the direct sum, naturality of `π(e_τ)` for uniqueness, and exactness of (IV.1.5.1).
+- The proof is not formalized here. It goes through the idempotents `e_{K,τ}` of IV.1.5 (`CompactProjectionDistributionStatement`), Lemma A.VII for the direct sum, naturality of `π(e_τ)` for uniqueness, and exactness of (IV.1.5.1). The Library's proof is `compactIsotypicComplement` in `CompactIsotypicComplementProof`.

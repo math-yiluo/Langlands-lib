@@ -1,7 +1,5 @@
 # Reduction of the restriction-square estimate to the torus lattice sum
 
-Author: Worker 381.
-
 This module proves the conditional theorem
 `Langlands.RankinSelberg.SquareIntegrableWhittakerRestriction.of_torusSum`:
 

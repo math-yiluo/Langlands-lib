@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 
 /-!
 # Homogeneous symmetric polynomial 2-cocycles

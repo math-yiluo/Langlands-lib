@@ -1,7 +1,5 @@
 # Actual Levi-compatible Iwasawa for reductive dynamic pairs
 
-Author: Worker 1655.
-
 This internal construction combines the published adjoint-stable
 realization theorem with the published arbitrary-`RCLike` internal
 cocharacter conjugation and polar construction. For every `RCLike`
@@ -46,4 +44,6 @@ and polar Iwasawa theorems. No supplied realization, compact subgroup,
 decomposition or topology comparison is a premise. Existence of a
 common cocharacter for an arbitrary supplied rational parabolic and
 Levi remains a separate obligation. This module proves the dynamic-pair
-case and does not assert the unconditional archimedean host proposition.
+case and does not assert the unconditional archimedean proposition
+`Langlands.Global.InfinitePlaceGroupPoints.LeviCompatibleIwasawaStatement`,
+which is proved in `Langlands.Global.InfinitePlaceLeviIwasawaProof`.

@@ -4,10 +4,7 @@ This internal construction extends the published Cartan covector form of
 `ArchimedeanCartanSymbol` from actual units to all ambient matrices and
 makes its positivity quantitative near each unit. It holds for every
 number field `K` in an arbitrary universe and every natural rank `n`,
-including zero. Worker 94 developed the construction and its proofs.
-Worker 815 added the global analyticity form, the corollary for the
-published form and the two norm checks, and prepared the pair for
-submission.
+including zero.
 
 ## Carriers and norms
 
@@ -91,7 +88,7 @@ continuous covector `ℓ`, it gives
 `c * ‖ℓ‖² ≤ cartanCovectorForm K n h ℓ.toLinearMap`. The proof is the
 restriction identity.
 
-No power bounds are included. In particular, the pair compares no
+No power bounds are included. In particular, the module compares no
 powers of this scalar form with principal symbols of powers or
 compositions of differential operators.
 

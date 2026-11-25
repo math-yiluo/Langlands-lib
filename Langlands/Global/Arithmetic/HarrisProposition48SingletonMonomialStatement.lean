@@ -16,6 +16,7 @@ namespace Langlands.Global.Harris
 
 open Langlands.GaloisRepresentation Langlands.FiniteRepresentation
 
+attribute [local instance 1100] DivisionSemiring.to_moduleIsTorsionFree in
 /-- In the singleton case the Galois induction of the algebraic norm twist of
 `ξ` restricts to the monomial representation of the actual Mackey inducing
 field and norm character. Its raw polynomials over the step field have the

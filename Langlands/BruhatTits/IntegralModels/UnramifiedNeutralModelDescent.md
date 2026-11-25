@@ -3,7 +3,9 @@
 This internal result connects smooth full-model descent with recovery of an
 actual relative identity-component model. It retains the smooth-model descent
 assertion and the supplied upstairs models as hypotheses. The prescribed-point
-split-torus theorem remains open.
+split-torus theorem `UnramifiedFixedPointSplitTorusStatement` is not proved
+here; `unramifiedFixedPointSplitTorus` (module
+`Langlands.Geometry.Building.UnramifiedFixedPointSplitTorusProof`) proves it.
 
 Work in arbitrary universe `u` over a nonarchimedean local field `F`, in either
 characteristic. Write `K` for `inertiaFixedField F` and `A` for
@@ -55,4 +57,5 @@ construction and functoriality, actual unramified model and integral-point
 comparisons, and the coefficient-fixed stabilizer descent helper. This module
 constructs no upstairs parahoric model or fixer identification, proves no smooth
 full-model descent assertion, and supplies no residue parabolic, lifted torus or
-special apartment. Those remain prerequisites of the host theorem.
+special apartment. Those are further prerequisites of the prescribed-point
+split-torus theorem.

@@ -1,7 +1,5 @@
 # Spectral rescaling of rational continuations and Laurent generators
 
-Author: Worker 352.
-
 This module constructs substitution `X ↦ c X` for every complex unit `c` and
 proves its compatibility with the existing rational-continuation and normalized
 Laurent-generator relations. It imports `RationalContinuation` and `RationalZeta`

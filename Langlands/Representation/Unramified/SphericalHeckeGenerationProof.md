@@ -1,9 +1,5 @@
 # Generation of the spherical Hecke algebra by the standard elements up to central powers
 
-Authors: Worker 267 (this module, the assembly), Worker 257
-(`StandardMonomial`, `StandardMonomialSupport`) and Worker 202
-(`StandardMonomialTop`).
-
 The closing theorem is `Langlands.Unramified.sphericalHeckeGeneration`. Its type
 is exactly `Langlands.Unramified.SphericalHeckeGenerationStatement.{uF}`. It
 applies `sphericalHeckeGeneration_of_triangularity` to
@@ -32,8 +28,8 @@ The theorem `standardMonomialTriangularity` in `StandardMonomialTop` combines th
 two clauses. The rest of this file describes the assembly, which uses only the
 proposition `StandardMonomialTriangularity` as its input.
 
-The proof avoids the Satake transform. It follows the direct route sketched in the
-task context, which goes back to Gross, *On the Satake isomorphism* (1998), Prop. 2.6
+The proof avoids the Satake transform. It follows a direct route that goes back
+to Gross, *On the Satake isomorphism* (1998), Prop. 2.6
 and (2.7)–(2.9): double cosets `K ϖ^λ K` with `λ` dominant form a basis, and
 products of standard elements are triangular for the dominance order. Below,
 `K = sphericalOpenSubgroup F r`, `n = r + 1`, `ϖ = standardUniformizer F`, and

@@ -1,7 +1,5 @@
 # Generic maximality from a residue-maximal split torus and a reference
 
-Author: Worker 362.
-
 This internal construction transfers generic maximality between actual integral
 split tori in a supplied model. It works over a commutative domain `R` with
 fraction field `K`, with `M : IntegralModel R K G`. All types have arbitrary
@@ -50,6 +48,6 @@ The provenance is derived model and conjugacy glue. The inputs are
 `IntegralModel.SplitTorusConjugacy`, `Torus.HenselianSplitRank` and
 `Torus.UnipotentQuotientMaximalSplit`. The integral model need not be
 reductive. The existence of a closed generically maximal integral reference
-torus remains an explicit hypothesis; this unit asserts no unrestricted
+torus remains an explicit hypothesis; this module asserts no unrestricted
 converse to rank specialization. It constructs no model, residue-maximal
 torus, splitting of a nonsplit integral torus, or apartment.

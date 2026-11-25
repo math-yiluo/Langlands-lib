@@ -1,7 +1,7 @@
 # Actual filtration in the negative-inner-weight outer-square region
 
-This internal derived unit uses the actual negative-inner quotient and the
-ascending exchange construction. It reuses Worker 765's rank-one assembly and
+This internal derived module uses the actual negative-inner quotient and the
+ascending exchange construction. It reuses the rank-one assembly and
 parity helpers from `RealInducedPairDistantFiltration` and
 `RealInducedPairDistantParity`. No additional literature or image premise is used.
 

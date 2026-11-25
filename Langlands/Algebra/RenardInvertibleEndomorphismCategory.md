@@ -1,7 +1,5 @@
 # Local polynomial modules and invertible endomorphisms
 
-Author: Worker 1581.
-
 The namespace `Langlands.Renard.EndomorphismLocalization` constructs the actual
 restriction of the published polynomial-module equivalence:
 
@@ -31,7 +29,7 @@ The registered literature identifier is
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 The retained original is
 `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`.
-The author read PDF257–258 and visually inspected PDF258.
+PDF257–258 were read and PDF258 was visually inspected.
 
 Example 4 selects modules on which every denominator acts invertibly.
 Example 5 identifies unital polynomial modules over a field with vector spaces
@@ -193,8 +191,8 @@ The full subcategory selects invertible operators only and imposes no
 invertibility assumption on arbitrary source pairs in later localization
 problems.
 
-This unit does not compare the chosen lifted localization arrows, prove their
+This module does not compare the chosen lifted localization arrows, prove their
 factorization, uniqueness or initiality, or construct a chosen localization
-functor or adjunction. Those are successor obligations. The scalar universal
+functor or adjunction. Those are outside this module. The scalar universal
 property, B-module localization and PDF259 kernel and quotient results remain
 separate published interfaces and are not repeated here.

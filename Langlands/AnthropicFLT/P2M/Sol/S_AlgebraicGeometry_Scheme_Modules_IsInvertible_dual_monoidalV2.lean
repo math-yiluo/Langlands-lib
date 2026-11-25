@@ -4,7 +4,7 @@ Ported from `P2M/Sol/S_AlgebraicGeometry_Scheme_Modules_IsInvertible_dual_monoid
 License, Version 2.0; see `licenses/Anthropic-FLT/LICENSE`, `NOTICE` and `ATTRIBUTION.md`.
 The paired Markdown file lists the changes made by the port.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_RelativePicardFunctor
 import Langlands.AnthropicFLT.Definitions.Def_PresheafOfModules_InternalHom
 import Langlands.AnthropicFLT.Definitions.Def_SheafOfModules_MonoidalV2
@@ -12,6 +12,7 @@ import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_ModulesPullbackM
 set_option maxHeartbeats 4000000
 set_option synthInstance.maxHeartbeats 400000
 set_option backward.isDefEq.respectTransparency.types false
+set_option backward.isDefEq.respectTransparency.instanceSearchTypes false
 
 namespace P2MW.S_AlgebraicGeometry_Scheme_Modules_IsInvertible_dual_monoidalV2
 
@@ -305,11 +306,11 @@ end InvertibleDual
 end PresheafOfModules
 
 namespace AlgebraicGeometry
-export _root_.AlgebraicGeometry (Scheme.Hom Scheme.Opens.ι_appIso Scheme.Hom.image_preimage_eq_opensRange_inf Scheme IsSeparated Scheme.Modules Scheme.Opens Scheme.Opens.opensRange_ι Scheme.Modules.IsInvertible Scheme.Modules.pullbackUnitIso Scheme.Modules.dual Scheme.Modules.tensorIsoSheafify)
+export _root_.AlgebraicGeometry (Scheme.Hom Scheme.Opens.ι_appIso Scheme.Hom.image_preimage_eq_opensRange_inf Scheme IsSeparated Scheme.Modules Scheme.Opens Scheme.Opens.opensRange_ι Scheme.Modules.IsInvertibleFLT Scheme.Modules.pullbackUnitIso Scheme.Modules.dualFLT Scheme.Modules.tensorIsoSheafify)
 namespace Scheme
-export _root_.AlgebraicGeometry.Scheme (forget ringCatSheaf Modules.pullback Hom mk Γ Opens.ι_appIso Hom.image_preimage_eq_opensRange_inf Modules.restrictFunctor restrictFunctor Modules.pullbackCongr Modules Opens homOfLE_ι grothendieckTopology Opens.opensRange_ι PresheafOfModules Modules.pullbackComp evaluation Modules.IsInvertible Modules.pullbackUnitIso Modules.dual Modules.sheafify Modules.tensorIsoSheafify)
+export _root_.AlgebraicGeometry.Scheme (forget ringCatSheaf Modules.pullback Hom mk Γ Opens.ι_appIso Hom.image_preimage_eq_opensRange_inf Modules.restrictFunctor restrictFunctor Modules.pullbackCongr Modules Opens homOfLE_ι grothendieckTopology Opens.opensRange_ι PresheafOfModules Modules.pullbackComp evaluation Modules.IsInvertibleFLT Modules.pullbackUnitIso Modules.dualFLT Modules.sheafify Modules.tensorIsoSheafify)
 namespace Modules
-export _root_.AlgebraicGeometry.Scheme.Modules (toPresheaf pushforward pullback presheaf Hom restrictFunctor restrictFunctorIsoPullback pullbackCongr isSheaf map_smul pullbackComp IsInvertible pullbackUnitIso dual sheafify tensorIsoSheafify pullbackTensorUnitObjIso)
+export _root_.AlgebraicGeometry.Scheme.Modules (toPresheaf pushforward pullback presheaf Hom restrictFunctor restrictFunctorIsoPullback pullbackCongr isSheaf map_smul pullbackComp IsInvertibleFLT pullbackUnitIso dualFLT sheafify tensorIsoSheafify pullbackTensorUnitObjIso)
 open _root_.AlgebraicGeometry.Scheme.Modules _root_.AlgebraicGeometry.Scheme _root_.AlgebraicGeometry
 
 open TopologicalSpace Opposite PresheafOfModules.InvertibleDual
@@ -419,7 +420,7 @@ private def trivSieve (V : X.Opens) : Sieve V where
     obtain ⟨D⟩ := hf
     exact ⟨D.restrictTo g.op⟩
 
-private lemma trivSieve_mem (hL : Scheme.Modules.IsInvertible L) (V : X.Opens) :
+private lemma trivSieve_mem (hL : Scheme.Modules.IsInvertibleFLT L) (V : X.Opens) :
     trivSieve L V ∈ Opens.grothendieckTopology X V := by
   intro x hx
   obtain ⟨U, hxU, ⟨eU⟩⟩ := hL.1 x
@@ -429,7 +430,7 @@ private lemma trivSieve_mem (hL : Scheme.Modules.IsInvertible L) (V : X.Opens) :
       Scheme.{u}).ringCatSheaf := trivializationOfLE_bbe2083f inf_le_right L eU
   exact ⟨trivializationBelow L ((restrictFunctor'IsoPullback (V ⊓ U)).app L ≪≫ e')⟩
 
-private local instance isIso_sheafify_map_ev (L : X.Modules) [Fact (Scheme.Modules.IsInvertible L)] :
+private local instance isIso_sheafify_map_ev (L : X.Modules) [Fact (Scheme.Modules.IsInvertibleFLT L)] :
     IsIso ((Modules.sheafify X).map (ev (R := X.sheaf.obj) L.val)) := by
   have hW : (Opens.grothendieckTopology X).W ((PresheafOfModules.toPresheaf _).map
       (ev (R := X.sheaf.obj) L.val)) :=
@@ -443,16 +444,16 @@ private local instance isIso_sheafify_map_ev (L : X.Modules) [Fact (Scheme.Modul
     exact hW
   exact h
 
-private noncomputable def tensorDualSheafIso (L : X.Modules) [Fact (Scheme.Modules.IsInvertible L)] :
+private noncomputable def tensorDualSheafIso (L : X.Modules) [Fact (Scheme.Modules.IsInvertibleFLT L)] :
     L ⊗ dualSheaf L ≅ 𝟙_ X.Modules :=
   (Scheme.Modules.tensorIsoSheafify L (dualSheaf L)).symm ≪≫
     asIso ((Modules.sheafify X).map (ev (R := X.sheaf.obj) L.val)) ≪≫
     SheafOfModules.sheafifyUnitIso X.sheaf.obj X.ringCatSheaf.property
 
-private theorem isInvertible_dualSheaf (L : X.Modules) [Fact (Scheme.Modules.IsInvertible L)] :
-    Scheme.Modules.IsInvertible (dualSheaf L) := by
+private theorem isInvertible_dualSheaf (L : X.Modules) [Fact (Scheme.Modules.IsInvertibleFLT L)] :
+    Scheme.Modules.IsInvertibleFLT (dualSheaf L) := by
   refine ⟨fun x => ?_⟩
-  obtain ⟨U, hxU, ⟨eU⟩⟩ := (Fact.out : Scheme.Modules.IsInvertible L).1 x
+  obtain ⟨U, hxU, ⟨eU⟩⟩ := (Fact.out : Scheme.Modules.IsInvertibleFLT L).1 x
   refine ⟨U, hxU, ⟨?_⟩⟩
   exact (λ_ _).symm ≪≫ (eU.symm ⊗ᵢ Iso.refl _) ≪≫
     Functor.Monoidal.μIso (Modules.pullback U.ι) L (dualSheaf L) ≪≫
@@ -464,11 +465,11 @@ end AlgebraicGeometry.Scheme.Modules
 set_option maxHeartbeats 16000000
 
 namespace AlgebraicGeometry
-export _root_.AlgebraicGeometry (Scheme.Hom Scheme.Opens.ι_appIso Scheme.Hom.image_preimage_eq_opensRange_inf Scheme IsSeparated Scheme.Modules Scheme.Opens Scheme.Opens.opensRange_ι Scheme.Modules.IsInvertible Scheme.Modules.pullbackUnitIso Scheme.Modules.dual Scheme.Modules.tensorIsoSheafify)
+export _root_.AlgebraicGeometry (Scheme.Hom Scheme.Opens.ι_appIso Scheme.Hom.image_preimage_eq_opensRange_inf Scheme IsSeparated Scheme.Modules Scheme.Opens Scheme.Opens.opensRange_ι Scheme.Modules.IsInvertibleFLT Scheme.Modules.pullbackUnitIso Scheme.Modules.dualFLT Scheme.Modules.tensorIsoSheafify)
 namespace Scheme
-export _root_.AlgebraicGeometry.Scheme (forget ringCatSheaf Modules.pullback Hom mk Γ Opens.ι_appIso Hom.image_preimage_eq_opensRange_inf Modules.restrictFunctor restrictFunctor Modules.pullbackCongr Modules Opens homOfLE_ι grothendieckTopology Opens.opensRange_ι PresheafOfModules Modules.pullbackComp evaluation Modules.IsInvertible Modules.pullbackUnitIso Modules.dual Modules.sheafify Modules.tensorIsoSheafify)
+export _root_.AlgebraicGeometry.Scheme (forget ringCatSheaf Modules.pullback Hom mk Γ Opens.ι_appIso Hom.image_preimage_eq_opensRange_inf Modules.restrictFunctor restrictFunctor Modules.pullbackCongr Modules Opens homOfLE_ι grothendieckTopology Opens.opensRange_ι PresheafOfModules Modules.pullbackComp evaluation Modules.IsInvertibleFLT Modules.pullbackUnitIso Modules.dualFLT Modules.sheafify Modules.tensorIsoSheafify)
 namespace Modules
-export _root_.AlgebraicGeometry.Scheme.Modules (toPresheaf pushforward pullback presheaf Hom restrictFunctor restrictFunctorIsoPullback pullbackCongr isSheaf map_smul pullbackComp IsInvertible pullbackUnitIso dual sheafify tensorIsoSheafify pullbackTensorUnitObjIso)
+export _root_.AlgebraicGeometry.Scheme.Modules (toPresheaf pushforward pullback presheaf Hom restrictFunctor restrictFunctorIsoPullback pullbackCongr isSheaf map_smul pullbackComp IsInvertibleFLT pullbackUnitIso dualFLT sheafify tensorIsoSheafify pullbackTensorUnitObjIso)
 open _root_.AlgebraicGeometry.Scheme.Modules _root_.AlgebraicGeometry.Scheme _root_.AlgebraicGeometry
 
 open TopologicalSpace Opposite PresheafOfModules.InvertibleDual
@@ -487,10 +488,10 @@ private noncomputable def dualModel (L : X.Modules) : X.Modules where
   isSheaf := PresheafOfModules.isSheaf_ihomObj _ _ (SheafOfModules.unit X.ringCatSheaf).isSheaf
 
 private noncomputable def dualIsoSheafifyModel (L : X.Modules) :
-    Scheme.Modules.dual L ≅ (Modules.sheafify X).obj ((toPMod X).obj (dualModel L)) :=
+    Scheme.Modules.dualFLT L ≅ (Modules.sheafify X).obj ((toPMod X).obj (dualModel L)) :=
   Iso.refl _
 
-private noncomputable def dualIsoModel (L : X.Modules) : Scheme.Modules.dual L ≅ dualModel L :=
+private noncomputable def dualIsoModel (L : X.Modules) : Scheme.Modules.dualFLT L ≅ dualModel L :=
   dualIsoSheafifyModel L ≪≫
     SheafOfModules.sheafifyCounitIso X.sheaf.obj X.ringCatSheaf.property (dualModel L)
 
@@ -501,7 +502,7 @@ private noncomputable def _root_.P2MW.S_AlgebraicGeometry_Scheme_Modules_IsInver
   compat f g := D.compat f g
   bij f := D.bij f
 
-private local instance isIso_sheafify_map_ev_model (L : X.Modules) [Fact (Scheme.Modules.IsInvertible L)] :
+private local instance isIso_sheafify_map_ev_model (L : X.Modules) [Fact (Scheme.Modules.IsInvertibleFLT L)] :
     IsIso ((Modules.sheafify X).map (PresheafOfModules.InvertibleDual.ev (R := X.sheaf.obj) ((toPMod X).obj L))) := by
   have hW : (Opens.grothendieckTopology X).W ((PresheafOfModules.toPresheaf _).map
       (PresheafOfModules.InvertibleDual.ev (R := X.sheaf.obj) ((toPMod X).obj L))) :=
@@ -515,38 +516,38 @@ private local instance isIso_sheafify_map_ev_model (L : X.Modules) [Fact (Scheme
     exact hW
   exact h
 
-private noncomputable def tensorDualModelIso (L : X.Modules) [Fact (Scheme.Modules.IsInvertible L)] :
+private noncomputable def tensorDualModelIso (L : X.Modules) [Fact (Scheme.Modules.IsInvertibleFLT L)] :
     L ⊗ dualModel L ≅ 𝟙_ X.Modules :=
   (Scheme.Modules.tensorIsoSheafify L (dualModel L)).symm ≪≫
     asIso ((Modules.sheafify X).map (PresheafOfModules.InvertibleDual.ev (R := X.sheaf.obj) ((toPMod X).obj L))) ≪≫
     SheafOfModules.sheafifyUnitIso X.sheaf.obj X.ringCatSheaf.property
 
-private noncomputable def tensorDualIso (L : X.Modules) [Fact (Scheme.Modules.IsInvertible L)] :
-    L ⊗ Scheme.Modules.dual L ≅ 𝟙_ X.Modules :=
+private noncomputable def tensorDualIso (L : X.Modules) [Fact (Scheme.Modules.IsInvertibleFLT L)] :
+    L ⊗ Scheme.Modules.dualFLT L ≅ 𝟙_ X.Modules :=
   (Iso.refl L ⊗ᵢ dualIsoModel L) ≪≫ tensorDualModelIso L
 
-private theorem isInvertible_dual (L : X.Modules) [Fact (Scheme.Modules.IsInvertible L)] :
-    Scheme.Modules.IsInvertible (Scheme.Modules.dual L) := by
+private theorem isInvertible_dual (L : X.Modules) [Fact (Scheme.Modules.IsInvertibleFLT L)] :
+    Scheme.Modules.IsInvertibleFLT (Scheme.Modules.dualFLT L) := by
   refine ⟨fun x => ?_⟩
-  obtain ⟨U, hxU, ⟨eU⟩⟩ := (Fact.out : Scheme.Modules.IsInvertible L).1 x
+  obtain ⟨U, hxU, ⟨eU⟩⟩ := (Fact.out : Scheme.Modules.IsInvertibleFLT L).1 x
   refine ⟨U, hxU, ⟨?_⟩⟩
   exact (λ_ _).symm ≪≫ (eU.symm ⊗ᵢ Iso.refl _) ≪≫
-    Functor.Monoidal.μIso (Modules.pullback U.ι) L (Scheme.Modules.dual L) ≪≫
+    Functor.Monoidal.μIso (Modules.pullback U.ι) L (Scheme.Modules.dualFLT L) ≪≫
     (Modules.pullback U.ι).mapIso (tensorDualIso L) ≪≫
     pullbackTensorUnitObjIso U.ι
 
 end AlgebraicGeometry.Scheme.Modules
 
-namespace AlgebraicGeometry export _root_.AlgebraicGeometry (Scheme.Hom Scheme.Opens.ι_appIso Scheme.Hom.image_preimage_eq_opensRange_inf Scheme IsSeparated Scheme.Modules Scheme.Opens Scheme.Opens.opensRange_ι Scheme.Modules.IsInvertible Scheme.Modules.pullbackUnitIso Scheme.Modules.dual Scheme.Modules.tensorIsoSheafify) namespace Scheme export _root_.AlgebraicGeometry.Scheme (forget ringCatSheaf Modules.pullback Hom mk Γ Opens.ι_appIso Hom.image_preimage_eq_opensRange_inf Modules.restrictFunctor restrictFunctor Modules.pullbackCongr Modules Opens homOfLE_ι grothendieckTopology Opens.opensRange_ι PresheafOfModules Modules.pullbackComp evaluation Modules.IsInvertible Modules.pullbackUnitIso Modules.dual Modules.sheafify Modules.tensorIsoSheafify) namespace Modules export _root_.AlgebraicGeometry.Scheme.Modules (toPresheaf pushforward pullback presheaf Hom restrictFunctor restrictFunctorIsoPullback pullbackCongr isSheaf map_smul pullbackComp IsInvertible pullbackUnitIso dual sheafify tensorIsoSheafify pullbackTensorUnitObjIso) namespace IsInvertible export _root_.AlgebraicGeometry.Scheme.Modules.IsInvertible (pullback mk) end AlgebraicGeometry.Scheme.Modules.IsInvertible
+namespace AlgebraicGeometry export _root_.AlgebraicGeometry (Scheme.Hom Scheme.Opens.ι_appIso Scheme.Hom.image_preimage_eq_opensRange_inf Scheme IsSeparated Scheme.Modules Scheme.Opens Scheme.Opens.opensRange_ι Scheme.Modules.IsInvertibleFLT Scheme.Modules.pullbackUnitIso Scheme.Modules.dualFLT Scheme.Modules.tensorIsoSheafify) namespace Scheme export _root_.AlgebraicGeometry.Scheme (forget ringCatSheaf Modules.pullback Hom mk Γ Opens.ι_appIso Hom.image_preimage_eq_opensRange_inf Modules.restrictFunctor restrictFunctor Modules.pullbackCongr Modules Opens homOfLE_ι grothendieckTopology Opens.opensRange_ι PresheafOfModules Modules.pullbackComp evaluation Modules.IsInvertibleFLT Modules.pullbackUnitIso Modules.dualFLT Modules.sheafify Modules.tensorIsoSheafify) namespace Modules export _root_.AlgebraicGeometry.Scheme.Modules (toPresheaf pushforward pullback presheaf Hom restrictFunctor restrictFunctorIsoPullback pullbackCongr isSheaf map_smul pullbackComp IsInvertibleFLT pullbackUnitIso dualFLT sheafify tensorIsoSheafify pullbackTensorUnitObjIso) namespace IsInvertible export _root_.AlgebraicGeometry.Scheme.Modules.IsInvertible (pullbackFLT) end IsInvertible namespace IsInvertibleFLT export _root_.AlgebraicGeometry.Scheme.Modules.IsInvertibleFLT (mk) end IsInvertibleFLT end AlgebraicGeometry.Scheme.Modules
 namespace AlgebraicGeometry.Scheme.Modules.IsInvertible
 open scoped _root_.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme _root_.AlgebraicGeometry.Scheme.Modules _root_.AlgebraicGeometry.Scheme.Modules.IsInvertible in
 open _root_.AlgebraicGeometry _root_.P2MW.S_AlgebraicGeometry_Scheme_Modules_IsInvertible_dual_monoidalV2.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme.Modules _root_.P2MW.S_AlgebraicGeometry_Scheme_Modules_IsInvertible_dual_monoidalV2.AlgebraicGeometry.Scheme.Modules in
 
 private theorem _root_.AlgebraicGeometry.Scheme.Modules.IsInvertible.dual {X : AlgebraicGeometry.Scheme.{u}} {L : X.Modules}
-    (hL : AlgebraicGeometry.Scheme.Modules.IsInvertible L) :
-    AlgebraicGeometry.Scheme.Modules.IsInvertible (AlgebraicGeometry.Scheme.Modules.dual L) ∧
-      Nonempty (L ⊗ AlgebraicGeometry.Scheme.Modules.dual L ≅ 𝟙_ X.Modules) :=
-  haveI : Fact (Scheme.Modules.IsInvertible L) := ⟨hL⟩
+    (hL : AlgebraicGeometry.Scheme.Modules.IsInvertibleFLT L) :
+    AlgebraicGeometry.Scheme.Modules.IsInvertibleFLT (AlgebraicGeometry.Scheme.Modules.dualFLT L) ∧
+      Nonempty (L ⊗ AlgebraicGeometry.Scheme.Modules.dualFLT L ≅ 𝟙_ X.Modules) :=
+  haveI : Fact (Scheme.Modules.IsInvertibleFLT L) := ⟨hL⟩
   ⟨isInvertible_dual L, ⟨tensorDualIso L⟩⟩
 
 end AlgebraicGeometry.Scheme.Modules.IsInvertible
@@ -557,7 +558,7 @@ universe u
 open CategoryTheory _root_.CategoryTheory.MonoidalCategory in
 theorem solution
     {X : AlgebraicGeometry.Scheme.{u}} {L : X.Modules}
-    (hL : AlgebraicGeometry.Scheme.Modules.IsInvertible L) :
-    AlgebraicGeometry.Scheme.Modules.IsInvertible (AlgebraicGeometry.Scheme.Modules.dual L) ∧
-      Nonempty (L ⊗ AlgebraicGeometry.Scheme.Modules.dual L ≅ 𝟙_ X.Modules) :=
+    (hL : AlgebraicGeometry.Scheme.Modules.IsInvertibleFLT L) :
+    AlgebraicGeometry.Scheme.Modules.IsInvertibleFLT (AlgebraicGeometry.Scheme.Modules.dualFLT L) ∧
+      Nonempty (L ⊗ AlgebraicGeometry.Scheme.Modules.dualFLT L ≅ 𝟙_ X.Modules) :=
   AlgebraicGeometry.Scheme.Modules.IsInvertible.dual hL

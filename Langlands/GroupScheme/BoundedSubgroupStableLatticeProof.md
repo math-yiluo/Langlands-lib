@@ -1,7 +1,5 @@
 # Proof of the stable-lattice step of KP Proposition 2.2.13
 
-Author: Worker 132.
-
 `Langlands.GroupScheme.boundedSubgroupStableLattice.{u}` proves exactly
 `Langlands.GroupScheme.BoundedSubgroupStableLatticeStatement.{u}`. The field
 `K : Type u` has a valuative relation whose canonical valuation integer ring

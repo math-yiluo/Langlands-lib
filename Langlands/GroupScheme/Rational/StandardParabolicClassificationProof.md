@@ -1,7 +1,5 @@
 # Proof: the rational classification of standard parabolics
 
-Author: Worker 3789 (formerly Worker 28).
-
 `theorem Langlands.GroupScheme.standardParabolicClassification :
 StandardParabolicClassificationStatement.{u}` proves the published target of
 `Rational/StandardParabolicClassificationStatement` at an arbitrary universe `u`. The
@@ -34,11 +32,11 @@ uses neither. In their place it uses the rational Bruhat decomposition `rational
 (`Rational/GenericParabolicCocharacterConjugacy`) and the published trivial positive-root
 stabilizer `hasTrivialPositiveRootStabilizer`.
 
-The two Bruhat modules are by Worker 3784 and ship in this candidate as supporting modules,
-with their own Markdown. Their Lean files are byte-identical to Worker 3784's candidate
-`c49967d0-5e5e-4bde-a476-646efa96a191`. That candidate was rejected because Task 3784 also
-requires the generic-minimality identification, and these modules do not provide it. The
-review found no defect in their proofs. Minimality is not used here.
+The two Bruhat modules, `Rational/RationalBruhatProof` and
+`Rational/GenericParabolicCocharacterConjugacy`, are supporting modules with their own
+Markdown. They do not provide the generic-minimality identification
+(`GenericMinimalParabolicStatement`, proved as `genericMinimalParabolic` in
+`Rational/GenericMinimalParabolicProof`). Minimality is not used here.
 
 Other published inputs: `relativeRootSignInclusions`, `relativeRootNegation`,
 `genericCentralizer`, `standardParabolicEndpoints`, and the standard-cocharacter statement
@@ -49,8 +47,9 @@ term `relativeRootSystemStatement_of_rootRankOneFactorizationStatement
 rootRankOneFactorization`. Input 3, and the inclusion `P_∅ ≤ P_J` used in the rigidity
 step, come from the published `standardParabolic_order_of_root_comparison` applied to
 `relativeRootNegation`, the standard cocharacters and `relativeRootSignInclusions`. These two
-compositions are the same as those in the staged candidates of Worker 3783
-(`RelativeRootSystemProof`) and Worker 3787 (`StandardParabolicOrderProof`). They are
+compositions are the same as those of `relativeRootSystem`
+(`Rational/RelativeRootSystemProof`) and `standardParabolicOrder`
+(`Rational/StandardParabolicOrderProof`). They are
 written out here so that the proof depends only on published declarations and the Bruhat
 modules. The proof also uses the published chamber move
 `exists_normalizerPoint_parabolic_le_of_statements`, the face lemma

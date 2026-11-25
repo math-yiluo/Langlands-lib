@@ -2,7 +2,7 @@ import Langlands.Algebra.FiniteHopfConvolutionPower
 import Langlands.GroupScheme.AffineHopfCoordinates
 import Langlands.GroupScheme.CentralIsogeny.Basic
 import Langlands.GroupScheme.Rational.CentralSubgroupGeometry
-import Langlands.TauCeti.Algebra.AlgebraicGroup.Hopf.CentralPoint
+import Langlands.RingTheory.HopfAlgebra.CocommutativePoints
 import Mathlib.AlgebraicGeometry.Morphisms.Finite
 
 /-! # Points of kernels of central isogenies over a field are killed by a fixed power -/
@@ -41,7 +41,7 @@ lemma isCocomm_of_commute
     (h : ∀ (p q : (Spec (CommRingCat.of (A ⊗[k] A))).asOver (Spec (CommRingCat.of k)) ⟶
       (Spec (CommRingCat.of A)).asOver (Spec (CommRingCat.of k))), p * q = q * p) :
     Coalgebra.IsCocomm k A := by
-  rw [← TauCeti.HopfAlgebra.commute_includeLeft_includeRight_iff_isCocomm k A]
+  rw [← Langlands.HopfAlgebra.commute_includeLeft_includeRight_iff_isCocomm k A]
   show _ * _ = _ * _
   apply (Spec.mapMulEquiv (R := k) (S := A) (T := A ⊗[k] A)).injective
   rw [map_mul, map_mul]

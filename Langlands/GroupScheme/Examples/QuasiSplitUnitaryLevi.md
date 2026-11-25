@@ -1,8 +1,7 @@
 # The diagonal map for the quasi-split quadratic unitary group
 
-This module implements definition unit 4.
 For fields `F`, `E`, an `F`-algebra structure on `E` and
-`IsQuadraticExtension F E`, it allows every `F`-automorphism `c` of `E`.
+`IsQuadraticExtension F E`, this module allows every `F`-automorphism `c` of `E`.
 The intended quadratic-unitary specialization takes `c` nonidentity.
 It imposes no characteristic restriction.
 
@@ -45,5 +44,6 @@ maps to `diag(a,c_R(a)⁻¹)`, with `R` the global-sections algebra.
 The `homOfPoints` construction and these formulas are internal
 consequences of the represented point models.
 
-Identification with the dynamic centralizer and closedness are reserved
-for the separate `LeviRepresentedStatement` and its proof task.
+Identification with the dynamic centralizer and closedness are the two
+conjuncts of the separate `LeviRepresentedStatement`, proved as
+`leviRepresentedStatement` in `QuasiSplitUnitaryLeviRepresentedProof`.

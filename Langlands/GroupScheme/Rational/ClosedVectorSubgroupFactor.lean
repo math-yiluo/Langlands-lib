@@ -32,6 +32,7 @@ theorem exists_annihilating_polynomialRow_of_affine
   let : IsClosedImmersion i.hom.hom.left := hi
   have : IsClosedImmersion q.hom.hom.left := by
     change IsClosedImmersion (e.hom.hom.hom.left ≫ i.hom.hom.left)
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
     infer_instance
   have hq : ¬ IsIso q := by
     intro h

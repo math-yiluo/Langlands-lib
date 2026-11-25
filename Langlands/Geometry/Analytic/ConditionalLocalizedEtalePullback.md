@@ -49,8 +49,10 @@ The provenance is internal: original-domain localized universality,
 complete canonical small projection coefficient and finite-neighborhood
 assembly, actual recognition/saturation comparison isomorphisms and the
 existing strong/localized fraction reduction. The two finite algebra
-comparison proofs are reused unchanged from their published Library
-commit. This is a conditional definition and theorem, not an unconditional
-`lean.proof` of Task 7349. The missing general analytic criteria must be
-proved and independently accepted before this construction closes the
-requested target.
+comparison proofs are reused unchanged from the Library. This is a
+conditional definition and theorem, not an unconditional proof of
+`LocalizedEtalePullbackStatement`. The two general analytic criteria are
+proved in the Library by `finiteOverTargetLocality`
+(`FullRecognitionFiniteTargetLocalityProof`) and `finitePiecesEtaleAllPieces`
+(`FinitePiecesEtaleAllPiecesProof`); `SpaceAnalytificationEtaleFromSourceDescent`
+applies this theorem to them for equal field and space universes.

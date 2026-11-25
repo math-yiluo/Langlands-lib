@@ -1,7 +1,5 @@
 # Full bounded naturality of selected recognition of recognized subsets
 
-Author: Worker 36.
-
 The selected recognition construction preserves every bounded restriction
 between original recognized subsets. This module proves recovery of the
 restriction to every contained selected saturated chart and constructs a
@@ -124,8 +122,10 @@ nonempty-cover hypothesis is added. The finite covers and recognition
 comparisons used in the proof are constructed, rather than input objects.
 
 This module gives a functor and a natural isomorphism of its entire
-actual affinoid diagram. Reverse recognition and a two-sided equivalence
-of recognized inclusion categories remain subsequent work. General
-equivalent-net invariance, maximal-atlas uniqueness, the analytic morphism
-comparison, etale and equivariant sites, and the Harris specialization
-remain obligations of the host task.
+actual affinoid diagram. Reverse recognition is constructed in
+`SubatlasReverseRecognition`, and the two-sided equivalence of recognized
+inclusion categories is `subatlasRecognitionEquivalence` in
+`SubatlasRecognitionEquivalence`. General equivalent-net invariance,
+maximal-atlas uniqueness, the analytic morphism comparison, etale and
+equivariant sites, and the Harris specialization are not treated in this
+module.

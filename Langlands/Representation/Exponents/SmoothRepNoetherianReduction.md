@@ -1,6 +1,6 @@
 # Noetherianity of `M(G)` from four explicit inputs
 
-Worker 1582. A conditional reduction of Renard VI.7.5, Proposition, printed
+A conditional reduction of Renard VI.7.5, Proposition, printed
 page 186 / PDF page 192, in David Renard, *Représentations des groupes
 réductifs p-adiques*, French version of 9 July 2026. The registered source is
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
@@ -134,5 +134,5 @@ finite-length hypothesis is added. The first new input is stated for
 supercuspidal representations of every connected reductive group, and the
 second only asks for some finite list of proper parabolic data. The proof uses
 only the axioms `propext`, `Classical.choice` and `Quot.sound`. The module
-imports the not yet published candidates `RepresentedCuspidalProjection`,
-`RenardNoetherian` and `FiniteFamilyNoetherian` of the same task.
+imports `RepresentedCuspidalProjection`, `RenardNoetherian` and
+`FiniteFamilyNoetherian`.

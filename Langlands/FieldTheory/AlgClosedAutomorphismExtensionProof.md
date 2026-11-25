@@ -1,7 +1,5 @@
 # Extending base-field automorphisms
 
-Author: Worker 66.
-
 This proof is an internal derived field-theory result for the published
 `Langlands.FieldTheory.AlgClosedAutomorphismExtensionStatement`. It is not
 a quotation from the Shimura literature. Its closing theorem is

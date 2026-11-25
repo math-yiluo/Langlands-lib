@@ -1,8 +1,8 @@
 # The Picard scheme of a projective abelian scheme over a normal finite-type `ℤ`-domain (proof)
 
-Authors: Worker 5656. The proof composes two published results: the reduction
-`ampleNormalFiniteTypeAbelianPicardSheafAFScheme_of_noetherianIntegralFibre` by Worker 227, and the
-proof `noetherianIntegralFibrePicardSheafAFScheme` by Worker 5705 with Worker 22 and Worker 5656.
+The proof composes two published results: the reduction
+`ampleNormalFiniteTypeAbelianPicardSheafAFScheme_of_noetherianIntegralFibre` and the
+proof `noetherianIntegralFibrePicardSheafAFScheme`.
 
 ## Result
 
@@ -14,7 +14,7 @@ theorem ampleNormalFiniteTypeAbelianPicardSheafAFScheme :
     AmpleNormalFiniteTypeAbelianPicardSheafAFSchemeStatement.{u}
 ```
 
-This is the exact target of Task 5656 (`6db3b992-b6f6-49fc-adcc-33c09c47782e`). The theorem
+This is exactly the target statement. The theorem
 assumes nothing beyond the hypotheses of the statement. Let `R : Type u` be an integral domain
 that is integrally closed and of finite type over `ℤ`, and let `A` be a Library abelian scheme
 over `Spec R` whose total space `A.X.left` has an ample line bundle. Then there is an object
@@ -25,7 +25,7 @@ over `Spec R` whose total space `A.X.left` has an ample line bundle. Then there 
 - every finite set of points of `P.left` lies in one affine open subscheme
   (`PointTopology.HasFiniteAffineNeighborhoods`).
 
-The sources cited in the task describe this as Grothendieck's theorem for projective abelian
+The sources cited for this statement describe this as Grothendieck's theorem for projective abelian
 schemes: Faltings–Chai, *Degeneration of Abelian Varieties*, Chapter I §1 (proof of Theorem 1.9
 and Theorem 1.9(b)), and Mumford–Fogarty–Kirwan, *Geometric Invariant Theory*, Chapter 0
 §5(c),(d) and Chapter 6 §1.
@@ -67,6 +67,9 @@ The import closure contains neither the following statements nor any proof of th
 `NormalFiniteTypeAbelianPicardSheafAFSchemeStatement`,
 `FiniteTypeAbelianPicardSheafSchemeStatement`,
 `FiniteTypeSmoothFamilyAbelianRepresentabilityStatement` and
-`SmoothFamilyAbelianRepresentabilityStatement`. The Task 5656 contract forbids them. So the
-result can be used by Task 5600 (`de799868-75c2-4835-b620-f024e5969aa8`), through
-`normalFiniteTypeAbelianPicardSheafAFScheme_of_ample`, without a dependency cycle.
+`SmoothFamilyAbelianRepresentabilityStatement`. So the
+result can be used by the proof `finiteTypeAbelianPicardSheafScheme` of
+`FiniteTypeAbelianPicardSheafSchemeStatement` (module
+`Langlands.AlgebraicGeometry.Picard.FiniteTypeAbelianPicardSheafSchemeProof`), through
+`normalFiniteTypeAbelianPicardSheafAFScheme_of_ample`, without a dependency cycle; that proof
+does so.

@@ -1,7 +1,5 @@
 # Conditional fundamental-weight proof for the actual cocenter
 
-Authors: Worker 1282 and Worker 1642.
-
 This is a derived conditional assembly for the exact proposition
 `SplitTorusCentralizerCocenterInducedStatement.{u}`. It implements the
 fundamental-weight argument from the target's provenance using the actual
@@ -55,7 +53,10 @@ lattice step above concludes inducedness of the original supplied quotient.
 No quasi-splitness, perfectness or characteristic condition is introduced.
 All extension and basis index types stay in `Type u`. The structural
 propositions are explicit premises, so this module does not establish the
-unconditional target, prove root-model existence, or close the host proof task.
+unconditional target or prove root-model existence. The Library proves the
+target as `splitTorusCentralizerCocenterInduced`
+(`Rational.SplitTorusCentralizerCocenterProof`), by applying
+`splitTorusCentralizerCocenterInduced_of_inputs` to proofs of the five inputs.
 
 The implementation composes the paired modules
 `LeviCocenterRootModelStatement`, `SplitTorusCentralizerReduction`,

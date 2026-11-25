@@ -1,6 +1,6 @@
 # Upper block-unipotent matrices
 
-Author: Worker 35. These declarations were separated from the constant-term
+These declarations were separated from the constant-term
 module for use by both automorphic and local representation theory.
 Their definitions and proofs are unchanged.
 

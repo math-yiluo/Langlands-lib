@@ -107,10 +107,9 @@ The proposition is proved by the theorem
 `Langlands.HarmonicAnalysis.Distribution.finiteOrbitAntiInvariantVanishing.{uG, uX}`
 in `Langlands.HarmonicAnalysis.Distribution.FiniteOrbitVanishingProof`. Its
 type is exactly `FiniteOrbitAntiInvariantVanishingStatement.{uG, uX}`, with
-the same independent universes and no added hypothesis. The proof is artifact
-`2cc18a52-13df-4784-b7eb-a58602ee13bc` version 1. Its validation passed the
-Lake build and exact-target checks, an independent review approved it, and it
-was published at Library commit `00be69b7f127e77ee2fd0511ffe34c48595b64d4`.
+the same independent universes and no added hypothesis. The proof passed the
+Lake build and exact-target checks and was published at Library commit
+`00be69b7f127e77ee2fd0511ffe34c48595b64d4`.
 It proves only the vanishing stated here, under the finite-orbit hypotheses
 above. It is not a formalization of the constructive-action Theorems 6.9,
 6.10 or 6.13 of Bernstein–Zelevinsky.

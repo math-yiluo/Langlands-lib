@@ -4,7 +4,7 @@ import Mathlib.GroupTheory.SpecificGroups.Cyclic
 import Mathlib.Algebra.Field.ZMod
 import Langlands.Global.AdelicFunctoriality.LocalDegree
 import Langlands.Global.AdelicFunctoriality.UnramifiedUnitNorm
-import Langlands.ClassField.Global.LocalUnitPowers
+import Langlands.ClassFieldTheory.Global.LocalUnitPowers
 import Mathlib.FieldTheory.KummerPolynomial
 import Mathlib.FieldTheory.KummerExtension
 import Mathlib.NumberTheory.NumberField.Completion.Ramification
@@ -174,7 +174,7 @@ theorem exists_pow_eq_of_residue_pow_eq (v : HeightOneSpectrum (𝓞 K)) {p : �
     (ha : IsUnit a) {b : v.adicCompletionIntegers K}
     (hb : residue _ b ^ p = residue _ a) :
     ∃ c : v.adicCompletionIntegers K, c ^ p = a := by
-  have := Langlands.ClassField.Global.isAdicComplete_adicCompletionIntegers v
+  have := Langlands.ClassFieldTheory.Global.isAdicComplete_adicCompletionIntegers v
   have hp0 : p ≠ 0 := by
     rintro rfl
     rw [Nat.cast_zero] at hp
@@ -406,7 +406,7 @@ theorem exists_infinite_localNorm_eq_of_isUnramified (v : InfinitePlace K) (w : 
     [w.LiesOver v] (h : w.IsUnramified K) (u : (v.Completion)ˣ) :
     ∃ c : (w.Completion)ˣ, localNorm v w (c : w.Completion) = u := by
   refine ⟨Units.map (NumberField.LiesOver.completionMap (v := v) (w := w)).toMonoidHom u, ?_⟩
-  change localNorm v w (NumberField.LiesOver.completionMap (u : v.Completion)) = u
+  change localNorm v w (NumberField.LiesOver.completionMap v w (u : v.Completion)) = u
   rw [localNorm_algebraMap, h.finrank_eq_one v, pow_one]
 
 /-- If `K` contains a primitive `p`-th root of unity for a prime `p`, then at every infinite
@@ -420,7 +420,7 @@ theorem exists_infinite_localNorm_eq_pow {p : ℕ} [Fact p.Prime] {ζ : K}
   · exact exists_infinite_localNorm_eq_of_isUnramified v w h (u ^ p)
   · obtain rfl := eq_two_of_isReal hζ v (IsRamified.liesOver_isReal_under w v h)
     refine ⟨Units.map (NumberField.LiesOver.completionMap (v := v) (w := w)).toMonoidHom u, ?_⟩
-    change localNorm v w (NumberField.LiesOver.completionMap (u : v.Completion)) = _
+    change localNorm v w (NumberField.LiesOver.completionMap v w (u : v.Completion)) = _
     rw [localNorm_algebraMap, h.finrank_eq_two v, Units.val_pow_eq_pow_val]
 
 end Archimedean

@@ -20,9 +20,10 @@ The construction supplies the relative-flatness part of the scheme
 specialization of Stacks Project, Section 99.5 (Tag 08KA), Situation 99.5.1,
 object item (3), and Lemma 99.5.2. The original requires actual flat module
 families and uses ordinary pullback for restriction. The intrinsic lemmas here
-prove the required preservation directly. This unit does not construct the
+prove the required preservation directly. This module does not construct the
 finite-presentation/proper-support family groupoid or its coherent
-pseudofunctor; those are separate parts of the host construction.
+pseudofunctor; those are separate parts of the construction of the stack of
+coherent sheaves (`CoherentSheaves.Groupoid`, `CoherentSheaves.Pullback`).
 
 ## Implemented proof
 
@@ -70,6 +71,7 @@ action required by `IsFlatOver p`. The full-subcategory lift then gives
 The retained original is
 `Stacks Project- The stack of coherent sheaves (Section 99.5, Tag 08KA)/08KA.html`,
 Situation 99.5.1 (Tag 08KB), item (3), and Lemma 99.5.2 (Tag 08W5), including
-its proof. The source concerns algebraic spaces; this unit implements the
-scheme pullback preservation needed by the host's stated specialization.
+its proof. The source concerns algebraic spaces; this module implements the
+scheme pullback preservation needed by the scheme specialization of
+Situation 99.5.1.
 The explicit localization argument is an internal proof of that preservation.

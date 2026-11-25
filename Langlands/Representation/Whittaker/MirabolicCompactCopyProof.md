@@ -1,7 +1,5 @@
 # Proof of nonzero compact standard maps into actual mirabolic subrepresentations
 
-Author: Worker 237.
-
 This module proves `Langlands.Whittaker.mirabolicNonzeroCompactMap`, of type
 `MirabolicNonzeroCompactMapStatement.{uF}` from
 `Langlands.Representation.Whittaker.MirabolicCompactCopyStatement`. The statement
@@ -52,12 +50,11 @@ this through the derivative theory of §§5.11–5.14.
 **Implemented route.** The Lean proof uses no derivatives. It deduces the target
 from the already-published compact-minimality theorem
 `Langlands.Whittaker.mirabolicCompactMinimality` (module
-`Langlands.Representation.Whittaker.MirabolicMinimalityProof`, Worker 806). That
+`Langlands.Representation.Whittaker.MirabolicMinimalityProof`). That
 theorem proves `MirabolicCompactMinimalityStatement.{uF}`: every nonzero `W`
 contains `mirabolicCompactSubrepresentation ψ n`. Its proof is a direct induction
 on rank with explicit functions, and it does not use the present target (see the
-dependency audit below). Task revision 2 of
-`da9ca5b2-6b4d-4df3-ae19-1c7aa4b5c0d7` explicitly allows this input.
+dependency audit below).
 
 ## Lean proof
 
@@ -88,8 +85,8 @@ Section `Generic` works over a field `K` with a topological ring structure.
    step 3 is zero, so its value at `1` is zero, which is a contradiction.
 
 Steps 2 and 3 repeat a short argument that also appears in
-`MirabolicFunctionalMultiplicityProof`. They are proved again here because the
-task excludes importing that downstream functional-multiplicity module.
+`MirabolicFunctionalMultiplicityProof`. They are proved again here so that this
+module does not import that downstream functional-multiplicity module.
 
 The final theorem `mirabolicNonzeroCompactMap` introduces `p`, the prime
 certificate and `F`. It installs the canonical topology, valuative relation,

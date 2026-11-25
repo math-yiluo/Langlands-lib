@@ -1,7 +1,7 @@
 # Scalar ideles in actual adelic block parabolics
 
-Author: Worker 2. Provenance: internal construction from the published actual
-adelic scalar matrix map and actual block parabolic geometry. This unit makes
+Provenance: internal construction from the published actual
+adelic scalar matrix map and actual block parabolic geometry. This module makes
 no new identification with an original source.
 
 The number field `F : Type uF` has arbitrary universe. Every natural rank `n`

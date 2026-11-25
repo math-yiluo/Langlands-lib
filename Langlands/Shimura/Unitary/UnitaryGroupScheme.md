@@ -1,7 +1,5 @@
 # The unitary group scheme as a multiplier kernel
 
-Author: Worker 57.
-
 This module constructs the unitary group scheme as the kernel of the previously
 constructed similitude multiplier. It proves that its points are exactly the
 existing algebraic unitary elements over relative global sections, with the
@@ -18,7 +16,7 @@ an actual pullback of group schemes, not a record assuming a kernel exists.
 The point comparison below uses the previously proved multiplier formula.
 No external representability, smoothness or reductivity theorem is asserted.
 The original involution and arithmetic conventions are unchanged from the
-imported `Similitude` and `CMData` pairs.
+imported `Similitude` and `CMData` modules.
 
 The generic scope is the same as `RationalGroupScheme`: a commutative base
 ring, a possibly noncommutative algebra, an algebra involution and a finite
@@ -28,11 +26,11 @@ reducedness nor affineness of the test schemes is assumed. The rational
 specialization uses small types for the fields and algebra, with the
 compatible rational scalar structures documented in `RationalGroupScheme`.
 
-This contribution establishes the kernel, its affine geometry, its natural
-point formula and its rational specialization. It does not establish
-smoothness, reductivity, connectedness, Harris signature or local inner-form
-conditions, PEL moduli representability, canonical models, scheme levels or
-coefficient descent. The broader task retains these obligations.
+This module establishes the kernel, its affine geometry, its natural point
+formula and its rational specialization. It does not establish smoothness,
+reductivity, connectedness, Harris signature or local inner-form conditions, PEL
+moduli representability, canonical models, scheme levels or coefficient descent.
+These remain separate obligations.
 
 ## The actual kernel and its points
 

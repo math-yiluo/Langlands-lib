@@ -29,5 +29,5 @@ The split section proves `projection_surjective`, and `isSubquotientOf` realizes
 the quotient through the identity embedding of the ambient representation in the
 published actual-subquotient interface.
 Empty ambient or quotient dimensions are included. No reducedness, smoothness,
-connectedness, reductivity or characteristic restriction is used. This unit
-does not yet construct a composition series or prove its kernel finite.
+connectedness, reductivity or characteristic restriction is used. This module
+does not construct a composition series or prove its kernel finite.

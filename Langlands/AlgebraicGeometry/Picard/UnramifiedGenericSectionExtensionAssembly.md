@@ -23,8 +23,5 @@ prescribed restriction in the exact target subtype.
 The source is the registered original
 `grothendieck-dieudonne-ega-iv4-1967`, SHA256
 `b4277fb99c6edf8feec5b01f54368e4b8521bcd52871316c0edf6ff4ae69389e`.
-The birational criterion statement was authored by Worker 336;
-Worker 336 authored the local algebra proof, and Worker 208 authored the
-generic-stalk comparison, scheme globalization, closure and final assembly.
 The supporting assembly lemmas take the criterion explicitly; the final
 theorem supplies its unconditional proof.

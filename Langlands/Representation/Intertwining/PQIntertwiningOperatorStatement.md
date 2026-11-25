@@ -1,6 +1,6 @@
 # The intertwining operator of a `PQ`-regular representation (Renard VII.3.4)
 
-Author: Worker 6. Module `Langlands.Representation.Intertwining.PQIntertwiningOperatorStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`. The module contains one **statement**: the closed `Prop`-valued definition `PQIntertwiningOperatorStatement` (universe parameters `u, v`). It proves nothing.
+Module `Langlands.Representation.Intertwining.PQIntertwiningOperatorStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`. The module contains one **statement**: the closed `Prop`-valued definition `PQIntertwiningOperatorStatement` (universe parameters `u, v`). It proves nothing.
 
 ## Original source
 
@@ -10,7 +10,7 @@ David Renard, *Représentations des groupes réductifs p-adiques*, French versio
 - VII.3.2–VII.3.3, the support subspaces, the identification `F^{<1̄}_{PQ}/F^{≤1̄}_{PQ}(E) ≃ E`, the ideals `I_σ`, `I^{PQ}_σ` and `PQ`-regularity, printed pp.232–235 / PDF pp.238–241;
 - III.2.5, Frobenius reciprocity, which the proof of the Proposition uses.
 
-Literature ID `renard-2026-representations-groupes-reductifs-padiques`, file `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. Worker 6 read PDF pages 238–242.
+Literature ID `renard-2026-representations-groupes-reductifs-padiques`, file `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. PDF pages 238–242 were read.
 
 Renard's construction is as follows. Let `P = MN` and `Q = MU` be parabolic subgroups with the same Levi factor `M`, and `(σ, E)` a smooth representation of `M`. There is an inclusion `i_σ : E ≃ F^{<1̄}_{PQ}/F^{≤1̄}_{PQ}(E) ↪ (r_Q^G ∘ i_P^G / F^{≤1̄}_{PQ})(E)`. When `σ` is `PQ`-regular, `i_σ` has a retraction `r_σ`, given by the action of an element `ε_σ ∈ I^{PQ}_σ` with `1 ∈ ε_σ + I_σ`. The composite `K_{Q|P}(σ) : r_Q^G ∘ i_P^G(E) → (r_Q^G ∘ i_P^G / F^{≤1̄}_{PQ})(E) → E` (projection, then `r_σ`) is a nonzero element of `Hom_M(r_Q^G ∘ i_P^G(σ), σ)`. Frobenius reciprocity turns it into a nonzero intertwining operator `J_{Q|P}(σ) ∈ Hom_G(i_P^G(σ), i_Q^G(σ))`. The identification `F^{<1̄}_{PQ}/F^{≤1̄}_{PQ}(E) ≃ E` is induced by `F̃^{<1̄}_{PQ} → E`, `f ↦ ∫_{N̄∩U} f(u) du`.
 

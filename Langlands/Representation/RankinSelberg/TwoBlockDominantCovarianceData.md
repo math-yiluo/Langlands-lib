@@ -6,9 +6,8 @@ printed page 419. The registered original is `jpss-1983-rankin-selberg`, SHA-256
 `d9feed6388ca5acf02ecc6a8cce984871a7c28f062ff441e45a71fa2d8962245`.
 The source supplies the displayed matrix. The coordinate reflection,
 rectangle change, residual and covariance proof are internally derived
-algebraic support. Worker 484 supplied the residual and rectangle-change
-design; Worker 1209 implemented the actual matrices and factorization;
-Worker 1198 supplied the imported residual membership and character proofs.
+algebraic support. The residual membership and character proofs are
+imported from `TwoBlockDominantResidualCharacter`.
 
 The field `K : Type uF` has arbitrary universe. Retain the dependent family
 `m : Fin 2 → ℕ`, its sum equality `h`, and `hr : r=t+(j+k+1)`.
@@ -88,6 +87,6 @@ of `rectangleChange h j k u (x,y)`. Its membership and exact positive
 product character law are proved in the imported residual-character module.
 The actual matrix, the residual and the simultaneous rectangle change are
 all fixed constructions; none is an additional covariance hypothesis.
-This unit supplies matrix covariance for the raw-kernel consumer. It makes
+This module supplies matrix covariance for the raw-kernel consumer. It makes
 no assertion about fixed-rectangle quotient invariance, Haar measure,
 integration, convergence, dual sections or an analytic identity.

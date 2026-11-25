@@ -1,6 +1,6 @@
 # CM fields with the two compatible place pairs in Harris's setup
 
-Worker 84. This contribution defines the proposition
+This module defines the proposition
 `Langlands.Global.HarrisPairedPlaceRealizationStatement.{uF}`. It asserts
 arithmetic existence and supplies no proof. Its fields, primes, completions,
 maps and complex conjugations are the existing Library and Mathlib objects.
@@ -68,7 +68,7 @@ GL(n) sur un corps p-adique*, Inventiones mathematicae 139 (2000),
 439–455, §3.3, printed p.449. Registered source
 `henniart-2000-simple-proof`, SHA-256
 `be283c3e8187f1eed365537c72379c3e06e7791756954c2ac783c6beea2979de`.
-The original printed page was read directly for this contribution.
+The original printed page was read directly.
 
 That passage globalizes a finite Galois local extension by totally real
 number fields, preserving the degree and the full Galois group at one
@@ -82,7 +82,7 @@ Michael Harris, *The local Langlands conjecture for GL(n) over a p-adic
 field, n < p* (1998), §4, printed pp.200–201 (one-based PDF pages
 24–25). Registered source `harris-1998-local-langlands`, SHA-256
 `7934239ea37d0b91f741ae70c2ac157fe5d619cda4dd992ac24e39ae460c375b`.
-Both original pages were read directly for this contribution.
+Both original pages were read directly.
 
 On p.200 Harris fixes CM fields `E'/E` and the normal closure `L/E`,
 an imaginary quadratic subfield split at `p`, compatible realizations
@@ -100,8 +100,9 @@ The exact intermediate image, the explicit intermediate equivalences,
 all commuting diagrams, continuity in both directions and the common
 Galois comparison make the source's compatibility requirements explicit.
 The explicit pairwise distinctness and degree identities also retain
-consequences of the source construction. These are obligations of a
-future proof of this proposition; this file does not prove them or
+consequences of the source construction. These are obligations of the
+proof of this proposition (`harrisPairedPlaceRealization` in
+`HarrisPairedPlaceRealizationProof`); this file does not prove them or
 infer them from the existence of arbitrary ring equivalences.
 
 The supplied Harris source-folder `CORRECTION_SOURCE.md` was read. It
@@ -131,5 +132,5 @@ general-position claim, infinity type, central-character condition,
 Harris half-norm twist or automorphic representation in this statement.
 In particular it does not assert `Harris.IsProposition48Datum`,
 Harris's Proposition 4.8, or completion of the Henniart globalization.
-It isolates one arithmetic input to H2 and, later, H3 of program
-`34b81620-20d7-4059-9b08-6bedd1c1c029`.
+It isolates one arithmetic input to the Harris datum construction
+(`HenniartHarrisDatumStatement`) and, later, to the Henniart globalization.

@@ -1,7 +1,6 @@
 # The derivative of a Zelevinsky label at the top point
 
-Module `Langlands.Representation.Classification.MoeglinWaldspurgerZelevinskyTop`. Written by
-Worker 5735 for Task 5735.
+Module `Langlands.Representation.Classification.MoeglinWaldspurgerZelevinskyTop`.
 
 `zmax_LDrel` (field `zmax` of `DerivativeFacts` for `LDrel`): assuming
 `LeftCuspidalDerivativeLemma`, if every occurrence of `β` ends at most at `y`, `cls` is the label

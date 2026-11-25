@@ -9,7 +9,7 @@ The module proves it as `unequalSemilocalEquationTCReduction`, by the theorem
 `unequalSemilocalEquationTC_of_factorizationTC`.
 
 * `UnequalSemilocalEquationTCStatement` is the totally complex form of
-  `UnequalSemilocalEquationStatement`. It is defined in the published module
+  `UnequalSemilocalEquationStatement`. It is defined in the Library module
   `Langlands.Global.RankinSelberg.SemilocalEquationTCStatements`.
 * The premise `UnequalSemilocalFactorizationTCStatement` is the totally complex form of
   `UnequalSemilocalFactorizationStatement`. It is defined in the module of the same name,
@@ -28,16 +28,16 @@ printed pp.219–220. The local functional equations at the places of `S` are Th
 
 ## Proof
 
-The proof is the published proof of `unequalSemilocalEquation_of_factorization` (module
+The proof is the Library's proof of `unequalSemilocalEquation_of_factorization` (module
 `Langlands.Global.RankinSelberg.UnequalSemilocalEquationReduction`), repeated with one
 change. The target's binders now include the instance `[NumberField.IsTotallyComplex F]`,
 and the premise is applied at the same field `F`. At that point the instance is in
-context, so the totally complex premise applies. The published theorem takes the premise
+context, so the totally complex premise applies. The Library theorem takes the premise
 for every number field, so it cannot be applied to the weaker totally complex premise
 directly. That is why its proof body is repeated here, rather than the theorem being
 called.
 
-The module imports the published reduction module and uses its helper lemmas in the
+The module imports the Library's reduction module and uses its helper lemmas in the
 namespace `UnequalSemilocalReduction`:
 
 * `canonicalFiniteAdditiveComponent_unique`;
@@ -47,7 +47,7 @@ namespace `UnequalSemilocalReduction`:
 * `eventually_eval_ne_zero`, `eventually_denom_ne_zero` and
   `eventually_denom_reflected_ne_zero`.
 
-It also uses the same Library results as the published proof:
+It also uses the same Library results as the Library's proof:
 
 * `canonicalFiniteAdditiveComponent`;
 * `Correspondence.localSelfDualHaar` and `eq_localSelfDualHaar`;
@@ -56,7 +56,7 @@ It also uses the same Library results as the published proof:
 * `RankinSelberg.isPadicSymmetricGammaFactor_of_le`;
 * `HasRationalContinuation.unique`.
 
-The steps, in outline, follow. The Markdown of the published reduction gives them in
+The steps, in outline, follow. The Markdown of the Library's reduction gives them in
 detail.
 
 1. Apply the premise to the canonical finite components `ψ0` of `ψ` and their self-dual
@@ -81,7 +81,7 @@ as the targets (`GroupScheme.GeneralLinear.isAffine_groupScheme`,
 
 ## Provenance
 
-Internal intermediate result of Task 7053, under its "Intermediate results" clause.
-Worker 0 (Task 0 coordinator) asked for it after operator answer
-`81ed24709e7050068786116ca6613260` (Option A). That answer restricts Task 0's global
-chain to totally complex base fields. The argument is Cogdell's (pp.219–220).
+Internal intermediate result towards the semi-local functional equation
+`UnequalSemilocalEquationStatement`, in its totally complex form. It belongs to the
+restriction of the global chain of statements on the route to the local correspondence to
+totally complex base fields. The argument is Cogdell's (pp.219–220).

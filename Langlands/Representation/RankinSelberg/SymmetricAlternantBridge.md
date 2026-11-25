@@ -1,7 +1,5 @@
 # Complete symmetric convolution and alternant bridge
 
-Author: Worker 1767.
-
 This internal algebraic development derives a finite convolution for the complete
 symmetric polynomials from their published generating series. Removing one
 linear factor from the elementary product leaves, after multiplication by the

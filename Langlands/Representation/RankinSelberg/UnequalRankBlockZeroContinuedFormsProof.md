@@ -1,8 +1,5 @@
 # Continued unequal-rank bilinear forms at block zero
 
-Authors: Worker 822 (Lean proof and this explanation) and Worker 233 (reading
-of JPSS §2.11 and the errata check in the provenance section).
-
 The paired Lean file proves
 
 ```text
@@ -44,8 +41,8 @@ epsilon factor, comparison scalar, or generator shared between blocks.
 
 The entry module imports the target statement, `PadicRectangularHaarScalingProof`
 (rectangular Haar scaling), `Group.GL.CountabilityProof` (sigma-compactness of
-`GL_(n+1)`), and the following four helper modules. The helpers are new, ship
-in the same submission, and each has its own Markdown:
+`GL_(n+1)`), and the following four helper modules. The helpers are new, are
+ported together with this module, and each has its own Markdown:
 
 - `UnequalRankBlockCoordinates`: block coordinates `Fin (n+1) ⊕ Fin m` and the
   matrix identities behind (2.11.2) and (2.11.4).
@@ -296,8 +293,8 @@ pp.398–399. These are one-based PDF pages 33–34 of the registered scan
 `jpss-1983-rankin-selberg`,
 `/home/taskhub/central-library/Jacquet-Piatetski-Shapiro-Shalika--Rankin-Selberg Convolutions--1983.pdf`,
 SHA256 `d9feed6388ca5acf02ecc6a8cce984871a7c28f062ff441e45a71fa2d8962245`.
-The scan has no text layer, so the pages were read visually, independently by
-both authors. The printed ranks `r, t` are Lean `r+1, n+1`. So printed `r-t`
+The scan has no text layer, so the pages were read visually, in two
+independent readings. The printed ranks `r, t` are Lean `r+1, n+1`. So printed `r-t`
 is Lean `r-n`, and printed `r-t-1` is Lean `k = r-n-1`.
 
 - §2.11 assumes `t ≤ r-1` and, by the remark in (2.8), `j = 0`. Formula
@@ -344,9 +341,8 @@ is Lean `r-n`, and printed `r-t-1` is Lean `k = r-n-1`.
   supplies them for the supplied measures; compare the analogous computations
   in §2.10, pp.395–397.
 
-Errata. The current registration of `jpss-1983-rankin-selberg` in
-`/home/taskhub/pilot/literature/_central-library-pointers.md` has no erratum
-pointer. The central library has no erratum file for the 1983 paper. The
+Errata. The registration of `jpss-1983-rankin-selberg` in the literature
+pointer index has no erratum pointer. The central library has no erratum file for the 1983 paper. The
 Library and project note locations, including the audit note
 `notes/audits/external-library-2026-10-22/whittaker-rankin-selberg.md`, record
 no JPSS 1983 erratum. No registered erratum to JPSS 1983 was found. The

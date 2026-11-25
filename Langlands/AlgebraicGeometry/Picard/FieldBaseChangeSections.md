@@ -1,7 +1,5 @@
 # Global functions on base changes of a proper scheme over a field
 
-Author: Worker 766.
-
 This module is `Langlands.AlgebraicGeometry.Picard.FieldBaseChangeSections`. It
 imports `Langlands.AlgebraicGeometry.Picard.TrivialLocusComparison` and two
 theorems of the Library's port of the Anthropic FLT formalization:

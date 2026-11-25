@@ -92,12 +92,12 @@ polynomial-locus construction requires. `A` and `B` are arbitrary commutative
 and `R'` are arbitrary presented affinoid algebras, possibly nonreduced, zero or
 with empty spectrum. No reducedness, positive arity or nonemptiness is assumed.
 
-The unit supplies no proof and edits no published input. It imports
+The module supplies no proof; the proof is `affineAnalytificationAffinoidUniversal`
+in `AffineAnalytificationAffinoidUniversalProof`. The module imports
 `AffineAnalytificationAffinoidMap`, `AffineAnalytificationSeminorm` and
 `DirectedAtlasComposition`. It does not state the bijection for morphisms in the
 localized category `SaturatedAtlasPresentation.LocalizedCategory`. That needs a
 comparison of localized morphisms out of an affinoid with strong maps from its
 refinements, and the gluing of maps out of finite affinoid covers. It also does
 not state the universal property for general analytic test spaces, for schemes
-that are not affine or for algebraic spaces. These remain obligations of the
-parent task.
+that are not affine or for algebraic spaces.

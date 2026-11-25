@@ -1,7 +1,6 @@
 # Small limits under smooth carrier lifts
 
-Author: Worker 1187. Internal infrastructure for the represented-parabolic
-preservation task, derived from the published carrier lift and smooth-part
+Internal infrastructure for represented-parabolic preservation, derived from the published carrier lift and smooth-part
 adjunction.
 
 An equivalence of actual complex representations restricts to an equivalence

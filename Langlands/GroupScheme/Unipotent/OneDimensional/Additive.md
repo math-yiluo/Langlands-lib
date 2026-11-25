@@ -1,6 +1,6 @@
 # Additive polynomials and the Euclidean algorithm for them
 
-Worker 716. Internal lemmas for the proof of
+Internal lemmas for the proof of
 `Langlands.GroupScheme.PerfectFieldOneDimensionalUnipotentStatement`. The
 facts are standard (additive polynomials over a field of characteristic `p`
 are `p`-polynomials, and over a perfect field they admit a Euclidean division

@@ -1,6 +1,6 @@
 # Restriction of opposite standard exponents to a larger standard Levi: proof
 
-Worker 5295, Task 5295. This module proves
+This module proves
 `Langlands.Aubert.General.RepresentedParabolic.OppositeStandardExponentRestrictionStatement`
 (R1) as `oppositeStandardExponentRestriction`. R1 is an intermediate claim of
 the proof of Renard VII.4.2 (iii), printed p.244 / PDF p.250. The statement and

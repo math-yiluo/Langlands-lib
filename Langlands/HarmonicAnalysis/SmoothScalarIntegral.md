@@ -1,7 +1,5 @@
 # Scalar integration as an algebraic functional
 
-Author: Worker 1564.
-
 This internal construction complements `SmoothWeakIntegral`. The measurable
 integration space, topological group, and representation carrier have
 independent universes. The carrier is an algebraic complex vector space;

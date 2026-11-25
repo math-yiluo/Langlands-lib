@@ -1,7 +1,5 @@
 # Full centre character stabilizers of the leaves of D4
 
-Author: Worker 177.
-
 Let `d : TitsIndexData G` for an affine, locally finite type group scheme `G`
 over a field `K`. The stabilizer `d.centerCharacterStabilizer χ` uses the
 ordinary absolute Galois representation on the character lattice of the

@@ -1,7 +1,6 @@
 # The full-centre quotient of a connected reductive group has trivial centre
 
-Module `Langlands.GroupScheme.Adjoint.CenterQuotientCenterProof`, author
-Worker 4289.
+Module `Langlands.GroupScheme.Adjoint.CenterQuotientCenterProof`.
 
 ## Theorem
 

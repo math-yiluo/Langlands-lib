@@ -1,7 +1,5 @@
 # The Swan conductor and the normalized level in rank one
 
-Lean proof by Worker 408 for Task 7683.
-
 ## Setting
 
 `F` is a nonarchimedean local field with ring of integers `𝒪[F]`, maximal ideal `𝔭` and a
@@ -37,7 +35,7 @@ filtration `𝔓^j(𝓛)` of `End_F(F^ι)` (Library module `LatticeChain`). For 
 
 For a character `χ` of `K^×` of conductor exponent `c ≥ 1`, the normalized level (Bushnell
 1987, (3.3), printed p. 196) is `c - 1`; for an unramified character both are `0`. This is the
-rank-one convention stated in the context of Task 7683, and the rank-one case of the target T2
+rank-one convention stated with the statement T2 (`SupercuspidalSwanLevelStatement`), and the rank-one case of the target T2
 with `0 - 1 = 0`; it follows directly from the definitions, as below. The auxiliary declarations are internal steps, not numbered results of the
 literature. The proof uses only the two comparisons of subgroups of `K^×` and the definitions;
 supercuspidality enters only through the types of `π` and `firstFixedLevel`.

@@ -3,7 +3,7 @@
 `Langlands.Cohomology.InverseLimitComparisonStatements` is the conjunction of
 five actual proposition definitions. It assumes none of their truth. The
 underlying theorem and its proof have been read in the supplied EGA original;
-no Lean proof or independent acceptance of this contribution is claimed.
+no Lean proof is claimed.
 
 `Langlands.Cohomology.MittagLefflerExactSequenceStatement` states the
 Mittag-Leffler closure properties in a short exact sequence of module towers:
@@ -104,13 +104,13 @@ surjective transitions give the degreewise condition; a decreasing family of
 subgroups of a finite group stabilizes, giving the cohomological condition.
 Here `Finite` means a finite underlying set, not merely finite dimension or
 finite generation. These implications explain the derived specializations;
-their Lean proofs remain obligations.
+their Lean proofs are separate obligations.
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
 J. Math. Kyoto Univ. 39-2 (1999), pp.299-318, Section 2, especially
 Facts 1 bis and 2 on p.303, Lemmas 2.2 and 2.2 bis on pp.304-305,
 equations (2.6)-(2.7) and Lemma 2.8 on p.306, supplies the intended geometric
-application. The complete paper was read in the preceding audit and the
+application. The complete paper was read, and the
 Section 2 argument was read again for these targets.
 
 - Literature ID: `harris-1999-cohomological-automorphic-forms-525a222c4489ee9d`.
@@ -119,30 +119,25 @@ Section 2 argument was read again for these targets.
 - Retained original:
   `literature/Harris (1999), Galois properties of cohomological automorphic forms on GL(n).pdf`.
 
-Harris explicitly invokes EGA III, Chapter 0, Proposition 13.2.3. The supplied
-original resolves acquisition request `96dfdcea85445ba8b675d59631c76839`;
-the operator response is already completed and immutable. The algebraic
+Harris explicitly invokes EGA III, Chapter 0, Proposition 13.2.3. The algebraic
 propositions do not assert that any particular geometric tower satisfies
 their hypotheses.
 
 These are algebraic prerequisites, not substitutes for constructing Harris's
 complexes or establishing their stated properties. The smooth group actions,
 compact-support comparison, divisibility, and finite-dimensional geometric
-vanishing still require their own actual definitions and statements.
+vanishing require their own actual definitions and statements.
 In particular the hypotheses on the local prime, distinct coefficient prime,
 analytic space, compact open subgroup and unitary Shimura data have not been
-removed from the geometric theorem: that theorem has not yet been stated here.
+removed from the geometric theorem: that theorem is not stated here.
 
 ## Dependencies and status
 
-Only the pinned Mathlib environment is imported: environment artifact
-`2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, Lean 4.34.0, Mathlib commit
+Only the pinned Mathlib environment is imported: Lean 4.34.0, Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`. There is no project mathematical
 dependency.
 
-The registered statement target is the conjunction of the five declarations;
-all component definitions remain separately named for later use. Proofs of the
+`InverseLimitComparisonStatements` is the conjunction of the five declarations;
+all component definitions are separately named for later use. Proofs of the
 comparison and of the two specializations are separate obligations.
 Compilation and inspection do not establish these propositions.
-
-Authored by Worker 3.

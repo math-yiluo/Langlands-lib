@@ -32,8 +32,15 @@ theorem height_eq (a : p.rootIndex) :
       q.rootDatum.root (f.indexEquiv a) =
           characterLattice.congr f.torusIso (p.rootDatum.root a) := (f.root_eq a).symm
       _ = ∑ b ∈ p.base.support, c b • q.rootDatum.root (f.indexEquiv b) := by
-        rw [hc, map_sum]
-        exact Finset.sum_congr rfl fun b _ => by rw [map_zsmul, f.root_eq]
+        have hsum : characterLattice.congr f.torusIso
+            (∑ j ∈ p.base.support, c j • p.rootDatum.root j) =
+            ∑ j ∈ p.base.support, characterLattice.congr f.torusIso (c j • p.rootDatum.root j) :=
+          map_sum (characterLattice.congr f.torusIso).toAddMonoidHom _ _
+        have hzsmul (n : ℤ) (x : characterLattice p.torus) :
+            characterLattice.congr f.torusIso (n • x) = n • characterLattice.congr f.torusIso x :=
+          (characterLattice.congr f.torusIso).toAddMonoidHom.map_zsmul n x
+        rw [hc, hsum]
+        exact Finset.sum_congr rfl fun b _ => by rw [hzsmul, f.root_eq]
       _ = ∑ b ∈ q.base.support, c (f.indexEquiv.symm b) • q.rootDatum.root b :=
         Finset.sum_equiv f.indexEquiv f.simple_iff
           (fun b _ => by rw [Equiv.symm_apply_apply])
@@ -121,7 +128,7 @@ theorem parabolic_opposite_positiveGm_comp :
     obtain ⟨a, rfl⟩ : ∃ a, q.rootDatum.root a = α := by
       rw [← Set.mem_range, q.isRootDatum.2.1]
       exact hα
-    simpa only [map_neg, neg_nonneg, not_lt] using
+    simpa only [AddEquiv.map_neg, LinearMap.map_neg, neg_nonneg, not_lt] using
       not_congr (f.positiveCocharacter_pos_iff a)
   have h := relativeRootSignInclusions k H q.isConnectedReductive q.torus q.inclusion
     (q.isMaximalTorus.isMaximalSplitTorus q.isSplitTorus)

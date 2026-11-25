@@ -1,6 +1,6 @@
 # Jacquet modules of contragredients for dynamic opposite parabolics
 
-Author: Worker 937. Lean module
+Lean module
 `Langlands.Representation.Exponents.LeviJacquetContragredientDynamic`. The declarations are
 in the namespaces `Langlands.Aubert.General`, `Langlands.Aubert.General.RationalPointFamily`
 and `Langlands.Aubert.General.RepresentedParabolic`.

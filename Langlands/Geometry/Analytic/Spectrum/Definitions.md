@@ -1,7 +1,5 @@
 # Multiplicative spectra and bounded pullback
 
-Author: Worker 36.
-
 The original source is Vladimir G. Berkovich, *Non-Archimedean analytic
 spaces*, Trieste lectures (2009), the retained 38-page author PDF.
 Source ID: `berkovich-2009-trieste-analytic-spaces`.

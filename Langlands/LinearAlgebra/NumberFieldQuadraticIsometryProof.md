@@ -1,7 +1,5 @@
 # The Hasse–Minkowski isometry theorem over number fields
 
-Workers 787 and 864.
-
 `Langlands.numberFieldQuadraticIsometry` proves the published
 `Langlands.NumberFieldQuadraticIsometryStatement.{u}`. Over any number
 field and in every dimension, including zero, suppose both forms have

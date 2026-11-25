@@ -1,9 +1,9 @@
 # Gluing open charts into the smooth moduli of closed torus subgroups
 
-Author: Worker 1535. The supporting construction modules imported here are
-by Worker 1726 (`AdmissibleChartGluing`, `AdmissibleClosedRepresentability`,
-`AdmissibleDescent`, `AdmissibleSheaf` and their dependencies) and by
-Worker 1535 (`Langlands.AlgebraicGeometry.ClosedSubschemeGluing`).
+The supporting construction modules imported here are
+`AdmissibleChartGluing`, `AdmissibleClosedRepresentability`,
+`AdmissibleDescent`, `AdmissibleSheaf` and their dependencies, and
+`Langlands.AlgebraicGeometry.ClosedSubschemeGluing`.
 
 This module proves the Library statement
 `Langlands.GroupScheme.TorusSubgroupModuli.ChartGluingStatement.{u}` as the

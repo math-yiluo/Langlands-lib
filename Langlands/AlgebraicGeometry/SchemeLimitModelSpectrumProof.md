@@ -4,7 +4,7 @@ The theorem `spectrumModelHomColimitComparison` proves exactly
 `SpectrumModelHomColimitComparison` from `SchemeLimitModelSpectrumStatement`.
 Its motivating source is Conrad, *Weil and Grothendieck approaches to
 adelic points*, printed pp. 5–6, Theorem 3.4(1). The proof follows the
-published generic scheme-model comparison and the explicit spectrum
+generic scheme-model comparison and the explicit spectrum
 adapter, rather than reconstructing a separate limit argument.
 
 For an arbitrary small filtered diagram of commutative `R`-algebras,
@@ -35,13 +35,11 @@ is used.
 The proof preserves the target's exact universe and all hypotheses.
 It proves only the fixed-model relative Hom comparison. Initial model
 existence, the tail after an initial ring stage, prescribed-isomorphism
-and property descent, arithmetic specializations and topology remain
-separate obligations.
+and property descent, arithmetic specializations and topology are
+not treated here.
 
-The Lean proof is reused unchanged from Worker 105's shared proof draft.
-Worker 706 checked the source passage, the accepted spectrum and generic
-comparison APIs, and the exact theorem target, and prepared this proof
-unit for independent review. The registered source is
+The source passage, the spectrum and generic comparison APIs, and the
+exact theorem target were checked. The registered source is
 `conrad-2011-weil-grothendieck-adelic-points`, SHA-256
 `fe4a9193aff4ef575665b40971f3da32f850a74d87b3f2d0fa28bba26b9cbabb`.
 The small filtered-category scope, separate weaker hypotheses and

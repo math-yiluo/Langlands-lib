@@ -1,4 +1,4 @@
-import Langlands.ClassField.Global.ArchimedeanLocalWeilMap
+import Langlands.ClassFieldTheory.Global.ArchimedeanLocalWeilMap
 import Langlands.Automorphic.ArchimedeanPlaceParameterClasses
 import Langlands.Automorphic.Unramified.AbsoluteWeilAssociation
 
@@ -14,7 +14,7 @@ representation, presentation or parameter is constructed or asserted to exist.
 
 noncomputable section
 
-namespace Langlands.ClassField.Global
+namespace Langlands.ClassFieldTheory.Global
 
 open NumberField
 open Langlands.Weil.Archimedean Langlands.LocalFactor.Archimedean Langlands.Automorphic
@@ -178,4 +178,4 @@ end Matching
 
 end WeilMapSystem
 
-end Langlands.ClassField.Global
+end Langlands.ClassFieldTheory.Global

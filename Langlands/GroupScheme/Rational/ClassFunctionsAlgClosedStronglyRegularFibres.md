@@ -1,7 +1,5 @@
 # Strongly regular fibres of the canonical quotient over an algebraically closed field
 
-Author: Worker 1531.
-
 This module states the algebraically closed core of
 `Langlands.GroupScheme.ClassFunctions.StronglyRegularFibresStatement` and
 proves it conditionally on three explicit inputs. It also combines it with the
@@ -61,8 +59,8 @@ proposition can therefore be supplied to it directly.
   contracting subgroup `U(χ)` commutes with `t`. Then for every
   `u ∈ U(χ)(k)` there is `v ∈ U(χ)(k)` with `v * t * v⁻¹ = u * t`. This is the
   displayed interface of the Ax–Grothendieck lemma
-  `Dynamic.exists_unipotent_conj_eq_mul`, which Worker 1741 is preparing as a
-  separate unit. Here it is an explicit hypothesis.
+  `Dynamic.exists_unipotent_conj_eq_mul`, proved in the separate module
+  `Dynamic/UnipotentConjugation`. Here it is an explicit hypothesis.
 
 ## Results
 

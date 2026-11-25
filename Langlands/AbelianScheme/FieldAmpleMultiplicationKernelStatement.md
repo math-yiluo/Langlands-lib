@@ -97,10 +97,10 @@ the pullback formula. In detail, the intended geometric argument is:
    intermediate consequence as dimension zero.
 
 These steps explain the extraction; they are not proofs implemented in
-this module. In particular, proving rank one of the relevant tensor powers,
+this module. In particular, rank one of the relevant tensor powers,
 the needed tensor and pullback identifications, preservation of ampleness,
 the factorization and field trivialization, and the proper ample-trivial
-finiteness criterion remains separate work. No finiteness conclusion or
+finiteness criterion are proved outside this module. No finiteness conclusion or
 equivalent criterion has been supplied as an extra hypothesis.
 
 The group-scheme presentation agrees with Milne's Section 20 opening
@@ -134,14 +134,14 @@ It is not an arbitrarily chosen affine neighbourhood.
 In tag `01CY`, the source's `X_s` is the nonvanishing locus in the stalk
 modulo its maximal ideal, and the lemma identifies it with the open where
 the section trivializes the invertible sheaf. This is the mathematical
-comparison with the imported generation-open presentation. The current
+comparison with the imported generation-open presentation. The
 `Ample` module offers `LineBundle.isAmple_iff_nonvanishingLocus` only under
 explicit hypotheses giving the residue-open comparison and local rank
 one of every tensor power. This statement does not discharge those
 hypotheses or treat that conditional interface as an unconditional proof.
 The source comparison, including any passage from Milne's ample-invertible-
 sheaf convention to this concrete formulation, must be justified in the
-future geometric proof or its prerequisites.
+geometric proof or its prerequisites.
 
 ## Scope and proof boundary
 
@@ -151,8 +151,6 @@ even when the characteristic divides `n`, and dimension zero is included.
 There is no smoothness or reducedness assumption on the kernel and no
 additional projectivity, finite-kernel, flatness, or isogeny hypothesis.
 The statement asserts neither that multiplication is an isogeny, nor its
-degree, nor etaleness. The substantial geometric proof belongs to a
-separate exact-target proof task after this statement is published.
-
-Worker 131 specified the exact interface and the extraction from Milne;
-Worker 124 prepared this Lean statement and its source correspondence.
+degree, nor etaleness. The substantial geometric proof is
+`Langlands.GroupScheme.fieldAmpleMultiplicationKernel`, in the separate module
+`Langlands.AbelianScheme.FieldAmpleMultiplicationKernelProof`.

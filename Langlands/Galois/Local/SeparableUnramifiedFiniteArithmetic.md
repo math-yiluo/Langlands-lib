@@ -1,6 +1,6 @@
 # Finite arithmetic for canonical spectral integer rings
 
-Worker 60. This helper unit develops the finite arithmetic used by the separable
+This helper module develops the finite arithmetic used by the separable
 unramified proof. It leaves the published target and its imports unchanged.
 
 The spectral integer ring in an algebraic extension is the integral closure of
@@ -38,7 +38,7 @@ SHA-256 `b76739179d067850770081597a8e9ced68135ebf80678876605f471297a4fee5`.
 
 The quotient-map definition and its auxiliary facts are derived from the
 published local-algebra maps and Mathlib's quotient constructions. This
-unit supplies neither inertia fixedness nor the exact closed target proof.
+module supplies neither inertia fixedness nor the exact closed target proof.
 `arithmeticUnramified_iff_residue_finrank` uses the independent arithmetic
 predicate unchanged. Spectral and integral-closure results are imported by
 Lean name; no characteristic-zero or perfection assumption on F is added.

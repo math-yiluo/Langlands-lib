@@ -84,5 +84,3 @@ dynamic description of parabolics and the algebraic flag quotient. It does not
 follow Renard's route through an adapted compact subgroup. It proves no
 conjugacy, Iwasawa decomposition, Jacquet admissibility or exponent finiteness
 assertion.
-
-Author: Worker 4777.

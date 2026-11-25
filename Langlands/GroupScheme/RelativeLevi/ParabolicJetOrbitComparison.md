@@ -1,6 +1,6 @@
 # The actual stabilized quotient parabolic jet kernel
 
-Authors: Worker 593, with Worker 796's quotient positivity and faithful-base-change inputs.
+The quotient positivity and faithful-base-change inputs are those of `ParabolicQuotientJetPositivity` and `RingTheory.Grassmannian.FaithfulKernelComparison`.
 
 This internal derived comparison proves
 `ParabolicSubgroupModuli.hasStabilizedJetKernelComparison`: for an affine group

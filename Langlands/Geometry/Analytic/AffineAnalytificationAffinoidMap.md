@@ -1,15 +1,17 @@
 # Maps from affinoid spectra to a polynomial-locus analytification
 
-This unit takes a presented affinoid algebra `R` over `K` and a `K`-algebra map
+This module takes a presented affinoid algebra `R` over `K` and a `K`-algebra map
 `φ : A →ₐ[K] R`, where `A` is a presented affine `K`-algebra. It constructs the
 induced map from the affinoid spectrum `M(R)` to the polynomial-locus
-analytification of `Spec A`. The unit builds the bounded chart map, the
+analytification of `Spec A`. The module builds the bounded chart map, the
 continuous map of spaces, the chosen-chart atlas morphism from the singleton
 atlas of `M(R)` and the strong atlas map defined for every admissible chart pair.
 In the other direction, it constructs from every strong map out of the singleton
-atlas a `K`-algebra map `A → R`. The unit does not state that the two
-constructions are mutually inverse or natural; that is the successor statement
-`AffineAnalytificationAffinoidUniversalStatement`.
+atlas a `K`-algebra map `A → R`. The module does not state that the two
+constructions are mutually inverse or natural; that is the statement
+`AffineAnalytificationAffinoidUniversalStatement`, proved as
+`affineAnalytificationAffinoidUniversal` in
+`AffineAnalytificationAffinoidUniversalProof`.
 
 ## Provenance
 
@@ -26,7 +28,7 @@ to the set `Hom_k(𝒳, X)` of morphisms of `k`-ringed spaces. Step (1) of its p
 printed p.64/PDF p.78, identifies
 `Hom_k(𝒳, 𝔸^n) ≅ Γ(𝒳, 𝒪_𝒳)^n ≅ Hom_k(𝒳, Spec k[T_1, …, T_n])`. For an affinoid
 space `𝒳 = M(R)`, the global functions are `R`, so `Hom_k(M(R), Spec A)` is the
-set of `k`-algebra maps `A → R`. This unit constructs the analytic map belonging
+set of `k`-algebra maps `A → R`. This module constructs the analytic map belonging
 to such an algebra map. Remark 3.4.2, printed p.64/PDF p.78, describes
 `Spec(A)^an` as the multiplicative seminorms on `A` extending the norm of `k`.
 The registered source is
@@ -128,7 +130,8 @@ identifies its base map with `affinoidBaseMap` (definitional).
 proves that the singleton atlas of any presented affinoid spectrum, over any
 complete ultrametric normed field, has directed charts. Its unique chart contains
 every chart. This is the only declaration outside
-`Langlands.Analytic.AffineAnalytification`. The successor statement uses it to
+`Langlands.Analytic.AffineAnalytification`. The statement
+`AffineAnalytificationAffinoidUniversalStatement` uses it to
 compose strong maps out of singleton atlases.
 
 ## The algebra map of a strong map
@@ -139,18 +142,18 @@ the image of the single chart. `strongHomTarget_spec` records this containment.
 `strongHomAlgHom F : A →ₐ[K] R` is the coordinate-algebra map
 `PolynomialLocus.algebraMap` of the chosen target chart, followed by the
 underlying algebra map of the bounded pullback of `F` to that chart.
-`strongHomAlgHom_apply` records this formula. This unit does not prove that the
+`strongHomAlgHom_apply` records this formula. This module does not prove that the
 result is independent of the chosen target chart.
 
 ## Scope
 
-The unit edits no published input. It does not state the following: that
+The module does not state the following: that
 `strongHomAlgHom` is independent of the target chart, that `affinoidStrongHom`
 and `strongHomAlgHom` are mutually inverse, the seminorm formula for the image
 points, naturality in `R` or in `A`, or the analogous bijection for morphisms in
 the localized category `SaturatedAtlasPresentation.LocalizedCategory`. The
-successor statement `AffineAnalytificationAffinoidUniversalStatement` states the
+statement `AffineAnalytificationAffinoidUniversalStatement` states the
 first five for strong maps. The localized-category version needs the comparison
 of localized morphisms out of an affinoid with strong maps from its refinements.
-It remains an obligation of the parent task, as do schemes that are not affine,
-algebraic spaces and extension of the ground field.
+It is not treated here, nor are schemes that are not affine, algebraic spaces
+and extension of the ground field.

@@ -1,7 +1,5 @@
 # Discrete-series Jacquet multiplicities on the unitary central part
 
-Author: Worker 19.
-
 This document describes proposition definitions, not proved
 representation-theoretic results. The actual unitary central part and bundled
 Jacquet constructions are imported from the published Library.

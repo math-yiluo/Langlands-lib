@@ -49,8 +49,8 @@ It builds the image as a schematic image and checks the torus property on an
 are used. The local finite presentation hypothesis serves solely to give local
 finite type.
 
-## Checks and attribution
+## Checks
 
 The module compiles with 0 errors and 0 warnings. The theorem has universe
 parameter `u` and uses only the axioms `propext`, `Classical.choice` and
-`Quot.sound`. The wrapper is the one Worker 640 compile-checked for Task 7526.
+`Quot.sound`.

@@ -1,7 +1,8 @@
 # Levi decomposition of the quasi-split unitary dynamic parabolic: statement
 
 `Langlands.GroupScheme.QuasiSplitUnitary.LeviDecompositionStatement` is a
-proposition definition for a separate proof unit. Its hypotheses are fields
+proposition definition; it is proved as `leviDecompositionStatement` in
+`QuasiSplitUnitaryLeviDecompositionProof`. Its hypotheses are fields
 `F` and `E`, an `F`-algebra structure and `IsQuadraticExtension F E`, a finite
 `F`-basis `b` of `Matrix (Fin 2) (Fin 2) E`, and a nonidentity automorphism
 `c : E ≃ₐ[F] E`. There is no characteristic restriction.

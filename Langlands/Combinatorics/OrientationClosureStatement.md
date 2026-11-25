@@ -1,7 +1,5 @@
 # Finite orientation closure and its unique lattice extrema
 
-Author: Worker 245.
-
 This module states the purely combinatorial core of Zelevinsky (1980),
 §2.8, Theorem, proof step (1), and Proposition 2.10, printed pp.179–180
 (PDF16–17). The registered source is `zelevinsky-1980-induced-ii`, PDF SHA256

@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 
 /-! # Generic points: maps, finiteness and prime avoidance
 

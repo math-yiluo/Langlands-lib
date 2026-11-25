@@ -1,7 +1,5 @@
 # Division by normalized distinguished series
 
-Author: Worker 56.
-
 The predicate imported from `RestrictedSeriesDefinitions` refers only to the
 actual coefficients: the
 coefficient in degree `d` is one, every coefficient has norm at most one,

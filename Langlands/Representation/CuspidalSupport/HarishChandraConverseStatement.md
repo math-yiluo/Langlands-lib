@@ -1,7 +1,5 @@
 # Compact coefficients imply product-Levi quasicuspidality
 
-Author: Worker 180.
-
 `Langlands.CuspidalSupport.LeviHarishChandraConverseTheorem.{uF,uV}`
 is a `Prop`-valued definition of a future proof target. It states the
 (4) ⇒ (1) direction of Bernstein–Zelevinsky (1976), Theorem 3.21,

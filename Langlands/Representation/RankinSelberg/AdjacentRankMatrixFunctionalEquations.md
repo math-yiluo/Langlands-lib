@@ -1,6 +1,6 @@
 # Actual functional equations for the adjacent square factors
 
-Worker 486. This internal prerequisite applies supplied normalized matrix
+This internal prerequisite applies supplied normalized matrix
 functional-equation data to the actual determinant-twisted test coefficient
 model. It does not impose irreducibility
 on either input of the parent adjacent-rank theorem.

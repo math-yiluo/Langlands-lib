@@ -1,6 +1,6 @@
 # Splitting from injective rational root restriction
 
-This internal derived unit combines actual rational root restriction with
+This internal derived module combines actual rational root restriction with
 semisimple character rigidity and finite Galois descent. All fields and group
 schemes lie in an arbitrary universe `u`; no characteristic is excluded.
 
@@ -48,6 +48,7 @@ target predicate are stronger than this argument needs.
 This module does not assert existence or irreducibility of `Q`, choose a
 containing maximal torus or splitting extension, or prove the unrestricted
 `QuasiSplitSimplyLacedSplittingStatement`. It does not supply a stable
-chamber or the host local anisotropic affine-diagram theorem. Its provenance
+chamber or the local anisotropic affine-diagram theorem
+`LocalAnisotropicAffineDiagramStatement`, which this module serves. Its provenance
 is the composition of the cited Library and preceding internal
 constructions, with each unresolved root-system input retained explicitly.

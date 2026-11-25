@@ -2,7 +2,7 @@
 
 Module `Langlands.Correspondence.HenniartOrbitStratumFinitenessProof`. Main theorem
 `Langlands.Henniart.supercuspidalOrbitStratumFiniteness`; helper lemmas are in namespace
-`Langlands.Henniart.OrbitStratumFiniteness`. Authors: Worker 5733 (draft), Worker 408.
+`Langlands.Henniart.OrbitStratumFiniteness`.
 
 Universes: `uK` (p-adic fields) and `uV` (supercuspidal carriers), independent.
 
@@ -102,8 +102,7 @@ finite by the published
 finite (`Set.Finite.subset`, `Set.Finite.biUnion`, `Set.Finite.image`).
 `supercuspidalOrbitStratumFiniteness` applies this to every `p`, `K`, `k`, `a`.
 
-Lean check (environment `5c94c648-e8dc-4002-a50a-071ebf3f6096`, Lake build, diagnostic
-`96076307-bca6-4d11-a32d-82a06deb42ea`):
+Lean check (Lake build):
 - 0 errors and 0 warnings.
 - `supercuspidalOrbitStratumFiniteness` is a theorem with level parameters `uK, uV`.
 - Its axioms are only `propext`, `Classical.choice` and `Quot.sound`.
@@ -111,7 +110,7 @@ Lean check (environment `5c94c648-e8dc-4002-a50a-071ebf3f6096`, Lake build, diag
 ## Provenance
 
 The proof is internal. Its single deep input is the Library's p-adic form of
-Bernstein–Zelevinsky (1976), Corollary 4.15 (printed p. 41), proved by Worker 4803 as
+Bernstein–Zelevinsky (1976), Corollary 4.15 (printed p. 41), proved as
 `CompactOpenFiniteness.centralLevelStratum_finite` (see
 `PadicSupercuspidalFinitenessProof.md`). That result says that finitely many supercuspidal
 classes have a fixed central character and a nonzero vector fixed by a fixed compact open

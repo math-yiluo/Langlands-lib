@@ -90,10 +90,10 @@ abbrev coverHom : coverScheme D ⟶ S := (D.obj (SingleObj.star G)).obj.hom
 
 /-- The automorphism of the acted-on scheme induced by a group element. -/
 abbrev coverMap (g : G) : coverScheme D ⟶ coverScheme D :=
-  (D.map (SingleObj.toEnd G g)).hom.left
+  (D.map (SingleObj.toEnd G g).asHom).hom.left
 
 theorem coverMap_comp_coverHom (g : G) : coverMap D g ≫ coverHom D = coverHom D :=
-  Over.w (D.map (SingleObj.toEnd G g)).hom
+  Over.w (D.map (SingleObj.toEnd G g).asHom).hom
 
 theorem coverMap_one : coverMap D 1 = 𝟙 _ := by
   simp [coverMap]

@@ -33,6 +33,8 @@ unramified field as well.
 
 This result supplies no derived cover of a noncommutative group and no
 general semisimple cover theorem. It constructs no root valuation,
-parahoric building or five-axiom witness; those are separate constructions
-of the parent task. Its purpose here is the actual zero-data prerequisite
+parahoric building or five-axiom witness; those are separate constructions,
+and for tori `TorusParahoricBuildingConstruction` and
+`TorusFiveAxiomConstruction` make them using `commutativeDerivedCoverData`.
+Its purpose here is the actual zero-data prerequisite
 in the torus case.

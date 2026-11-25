@@ -49,6 +49,5 @@ conclusions and proves no main Aubert identity.
 
 Provenance is internal: the implementation composes published actual-root,
 actual-quotient, subgroup-functor evaluation and conjugation constructions.
-The general structural proof remains with its existing owner; the named
-root-sign realization and representation-theoretic obligations remain with
-their existing owners.
+The general structural proof, the named root-sign realization and the
+representation-theoretic statements are not part of this module.

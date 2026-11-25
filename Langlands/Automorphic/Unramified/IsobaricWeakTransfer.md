@@ -1,7 +1,6 @@
 # Galois conjugation and weak transfer of isobaric constituent data
 
-Worker 12 authored this definition unit for task
-`91266440-3276-48dc-ab77-8d1c1fa386e8`. It extends Worker 8's published
+This module extends the published
 `Langlands.Automorphic.IsobaricData` with the operations that the Arthur–Clozel
 statements of `IsobaricCyclicTransferStatement` need. The `IsobaricData` Markdown
 leaves "Galois actions and twists on isobaric data … to the statement modules that use

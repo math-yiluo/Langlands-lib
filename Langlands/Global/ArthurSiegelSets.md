@@ -1,7 +1,7 @@
 # Siegel sets, truncated Siegel sets and the functions `F^P(x, T)`
 
 Module `Langlands.Global.ArthurSiegelSets`, namespace `Langlands.Global.ArthurTruncation`.
-Worker 128, Task 5536, item 3 (second unit). The propositions about these objects are stated in
+The propositions about these objects are stated in
 `Langlands.Global.ArthurSiegelSetsStatement` (see its Markdown). The module uses the data and the
 height `H_0` of `Langlands.Global.ArthurTruncation` (see its Markdown) and the published L1
 ordered factor products of `Langlands.Global.AdelicSiegelFactors`. It proves one lemma,

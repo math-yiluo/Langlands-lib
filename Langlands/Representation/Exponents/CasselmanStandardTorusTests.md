@@ -1,7 +1,5 @@
 # Standard central-torus tests for the represented Casselman cone condition
 
-Author: Worker 1682.
-
 This internal supporting development translates actual integer character
 orders into the multiplicative-valuation inequalities of the standard
 negative chamber. The defined predicate

@@ -1,7 +1,5 @@
 # The preimage of a split-torus centralizer in a simply connected cover
 
-Authors: Worker 1512 and Worker 1532; Markdown revised by Worker 1390.
-
 `Langlands.GroupScheme.SplitTorusCentralizerCoverPreimageStatement.{u}`
 is a proposition definition, not a proof. Let `G` be connected reductive,
 `π : C → D` a central isogeny from a simply connected group onto the
@@ -216,4 +214,6 @@ kernel `ker π`.
   `(T ∩ D)_E`, and hence so is the isogenous torus `T'_E`. This gives
   clause 6.
 
-This module supplies no proof. The proof is a separate obligation.
+This module supplies no proof. The proof is
+`splitTorusCentralizerCoverPreimage` in
+[`SplitTorusCentralizerCoverPreimageProof`](SplitTorusCentralizerCoverPreimageProof.md).

@@ -100,15 +100,13 @@ theorem map_rationalElementaryRange (neg : Bool) :
       (rationalPoints.map (BinaryRoot.elementaryMap E D bD neg)).range := by
   apply le_antisymm
   · rintro _ ⟨_, ⟨x, rfl⟩, rfl⟩
-    exact ⟨AffineWeil.rationalPointsEquiv F E
-        (FiniteAlgebraUnits.BinaryRoot.additiveScheme E (d := d)) x,
-      (AffineWeil.rationalPointsEquiv_map F E (BinaryRoot.elementaryMap E D bD neg) x).symm⟩
+    rw [MulEquiv.coe_toMonoidHom, elementaryMap, AffineWeil.rationalPointsEquiv_map]
+    exact ⟨_, rfl⟩
   · rintro _ ⟨x, rfl⟩
     let y := (AffineWeil.rationalPointsEquiv F E
       (FiniteAlgebraUnits.BinaryRoot.additiveScheme E (d := d))).symm x
     refine ⟨rationalPoints.map (elementaryMap F E D bD neg) y, ⟨y, rfl⟩, ?_⟩
-    change AffineWeil.rationalPointsEquiv F E (BinaryRoot.groupScheme E D)
-      (rationalPoints.map (AffineWeil.map F E (BinaryRoot.elementaryMap E D bD neg)) y) = _
+    rw [MulEquiv.coe_toMonoidHom, elementaryMap]
     rw [AffineWeil.rationalPointsEquiv_map]
     exact congrArg (rationalPoints.map (BinaryRoot.elementaryMap E D bD neg))
       ((AffineWeil.rationalPointsEquiv F E

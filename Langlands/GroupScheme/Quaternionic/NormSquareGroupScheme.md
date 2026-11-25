@@ -1,7 +1,5 @@
 # The actual group scheme of norm-square pairs
 
-Authors: Worker 124.
-
 This internal construction uses the published actual algebra-unit group
 scheme and its reduced-norm character. Let `K` be a field and `A` a
 finite-dimensional central simple `K`-algebra, both in an arbitrary common

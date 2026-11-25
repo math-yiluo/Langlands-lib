@@ -1,7 +1,5 @@
 # Spectral bound for the actual normalized Jacquet compression
 
-Author: Worker 19.
-
 `Langlands.normalizedJacquetCompressionSpectrum` proves the complete
 unapplied `NormalizedJacquetCompressionSpectrumStatement.{uG,uV}`.
 The group and representation carrier universes remain independent.

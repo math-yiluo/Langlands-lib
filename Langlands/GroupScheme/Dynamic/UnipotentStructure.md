@@ -1,6 +1,6 @@
 # Structural reduction for dynamic geometric unipotent radicals
 
-This internal unit chooses an actual closed embedding of a represented dynamic
+This module chooses an actual closed embedding of a represented dynamic
 identity-limit group into a standard upper unitriangular group scheme. It then
 combines the existing structural results to reduce the universal dynamic
 geometric-radical proposition to three separately stated prerequisites.
@@ -60,5 +60,5 @@ adapter. Its conclusion is exactly the existing
 
 All constructions and proofs are derived internally from the imported
 definitions and results. The three prerequisite propositions remain assumptions
-of these reduction lemmas. This unit proves none of those prerequisites and does
+of these reduction lemmas. This module proves none of those prerequisites and does
 not assert an unconditional proof of the full semistandard intersection theorem.

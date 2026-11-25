@@ -1,7 +1,5 @@
 # The modular character of a standard block parabolic
 
-Author: Worker 235.
-
 This module works in `Langlands.GeneralLinear.BlockShape` for a block shape
 `B : BlockShape (n + 1)` over a field `𝕜`. Its main theorem,
 `modularCharacter_eq`, identifies Mathlib's modular character of the actual

@@ -1,7 +1,5 @@
 # Equal-rank exchange of p-adic pair-factor certificates
 
-Author: Worker 88.
-
 The module defines the proposition
 `Langlands.RankinSelberg.EqualRankFactorSwapStatement.{uF, uV, uW}`.
 It states exchange of the two actual representations in the existing L,

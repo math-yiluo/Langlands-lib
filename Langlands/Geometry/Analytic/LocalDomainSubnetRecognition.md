@@ -94,7 +94,7 @@ atlas. It is therefore an output, not an extra closure or coherence
 hypothesis on the original atlas or the selected net.
 
 `localDomainSubnetToFullRecognition` restricts this strong map to the
-selected source indices. The unit's quasi-isomorphism and coherence
+selected source indices. The module's quasi-isomorphism and coherence
 lemmas inherit the complete laws from the map just constructed.
 All target indices remain available.
 
@@ -144,11 +144,11 @@ upper cofinality, nontrivial valuation, reducedness, nonemptiness or
 global Hausdorffness premise. Local Hausdorffness is part of the original
 atlas data.
 
-This unit handles every literal net in the original local-domain
+This module handles every literal net in the original local-domain
 enlargement, with the constructed inherited presentations. A direct
 strong isomorphism between the selected and original full-recognition
 presentations, comparisons for arbitrary equivalent nets or arbitrary
 alternative algebra assignments, maximal-atlas uniqueness and
-unrestricted analytic morphism identification remain further work.
+unrestricted analytic morphism identification are not treated here.
 The analytic étale and quasi-étale sites and Harris specializations
-remain obligations of the larger task.
+lie outside this module.

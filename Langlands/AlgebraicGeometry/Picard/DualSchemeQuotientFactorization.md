@@ -1,11 +1,9 @@
 # Morphisms from affine schemes to the chosen dual factor through finitely presented quotients
 
-Author: Worker 1407.
-
 Module `Langlands.AlgebraicGeometry.Picard.DualSchemeQuotientFactorization` shows that the
 Library's chosen dual `dualScheme A hA`, for an abelian scheme `A` over an arbitrary affine base
 `Spec R`, is locally of finite presentation. No noetherian hypothesis is needed. It follows the
-published `DualSchemeSubalgebraFactorization` module (Worker 3643). That module's
+published `DualSchemeSubalgebraFactorization` module. That module's
 finitely generated subalgebras of `B` are replaced by quotients `D ⧸ J` by finitely generated
 ideals `J ≤ I`. Only the universal property recorded in `HasDualScheme` is used. All results are
 internal and derived from published Library theorems and the helper modules

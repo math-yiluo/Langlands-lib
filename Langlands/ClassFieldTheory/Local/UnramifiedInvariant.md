@@ -1,7 +1,5 @@
 # Finite unramified H2 invariants through the actual norm quotient
 
-Author: Worker 159.
-
 The module defines `unramifiedH2InvariantEquiv` and `unramifiedH2Invariant`
 in the namespace `Langlands.ClassFieldTheory.Local`. For every prime `p`, let
 `F : PadicField.{u} p` and `E : PadicField.{v} p` have a compatible algebra
@@ -151,7 +149,7 @@ This is a derived construction from the published modules
 and the rational quotient definitions in [`Cohomology`](Cohomology.md).
 It adds elementary quotient-group algebra and the explicit composition;
 all imported Lean/Markdown pairs are preserved. Imported results are used
-by Lean name, and their authors' proofs are not copied.
+by Lean name, and their proofs are not copied.
 
 The mathematical background is Jean-Pierre Serre, *Local Fields*, English
 translation by Marvin Jay Greenberg, GTM 67, Springer, 1979:
@@ -166,7 +164,7 @@ translation by Marvin Jay Greenberg, GTM 67, Springer, 1979:
   for an explicit cyclic coordinate; it does not formalize the absolute
   isomorphism or establish the Frobenius identification from that page.
 
-Worker 159 read both cited original pages. Registered source:
+Both cited original pages were read. Registered source:
 `serre-1979-local-fields`, retained at
 `/home/taskhub/central-library/Serre--Local Fields--1979.pdf`, SHA256
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`.

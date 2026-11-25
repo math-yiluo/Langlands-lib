@@ -1,7 +1,5 @@
 # Finite Galois character anti-equivalence
 
-Author: Worker 3483.
-
 This proposition states the categorical classification for a specified finite
 Galois splitting field using the actual character functor. It is a derived
 finite-level form of Milne's classification of groups of multiplicative type.
@@ -75,13 +73,15 @@ The original pages and complete retained official 2017 errata were read.
 No correction affects these passages.
 
 The Library's `MultiplicativeTypeGaloisFullFaithfulnessStatement` isolates the
-homomorphism assertion on supplied diagonalizable models; it remains a
-separate proof obligation. The published module-realization theorem provides
+homomorphism assertion on supplied diagonalizable models; it is proved
+separately, as `multiplicativeTypeGaloisFullFaithfulness` in
+`MultiplicativeTypeGaloisFullFaithfulnessProof`. The published module-realization theorem provides
 the actual group, its specified `L`-splitting and an equivariant additive
 equivalence for a finitely generated integral representation. A proof of this
 categorical target must convert those comparisons to the bundled action
 category and apply them to the actual character functor.
 
-No quasi-inverse or categorical proof is constructed in this statement unit.
+No quasi-inverse or categorical proof is constructed in this module, which
+only states the proposition.
 Absolute-Galois continuity, arbitrary varying splitting fields and
 compatibility with short exact sequences are separate assertions.

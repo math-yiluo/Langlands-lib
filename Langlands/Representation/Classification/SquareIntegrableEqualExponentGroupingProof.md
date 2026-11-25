@@ -1,7 +1,5 @@
 # Equal-exponent grouping of square-integrable Langlands blocks
 
-Author: Worker 175.
-
 `Langlands.Classification.squareIntegrableEqualExponentGrouping` proves the
 complete published proposition
 `Langlands.Classification.SquareIntegrableEqualExponentGrouping.{uF,uV} F T`
@@ -130,7 +128,7 @@ derivation, as its paired Markdown explains. Bernstein–Zelevinsky (1977),
 normalized-induction and character-compatibility convention; §2.2,
 printed p.446, fixes ordered upper GL blocks.
 
-Worker 175 read these original passages during the prerequisite development.
+These original passages were read for this proof.
 The retained registered sources and SHA-256 fingerprints are:
 
 | Source ID | Read passage | SHA-256 |

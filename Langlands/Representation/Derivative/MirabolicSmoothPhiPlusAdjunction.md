@@ -1,7 +1,5 @@
 # The adjunctions Φ⁻ ⊣ Φ̂⁺ and Ψ⁻ ⊣ Ψ⁺
 
-Author: Worker 749.
-
 This module proves two adjunctions of Bernstein–Zelevinsky (1977) §3.2. It
 uses the actual published functors: the normalized minus functors `Φ⁻`, `Ψ⁻`
 of `Langlands.Representation.Derivative.MirabolicMinus`, the normalized
@@ -248,9 +246,7 @@ modules:
 1. this module, `Langlands.Representation.Derivative.MirabolicSmoothPhiPlusAdjunction`,
    whose only direct import is the companion module;
 2. the companion module `Langlands.Representation.Derivative.MirabolicSmoothPhiPlus`,
-   submitted separately as candidate
-   `2546568e-f4b1-45e8-8b17-05a43ca7d49b` and not yet in the Library at
-   this base;
+   which is not part of the Library at this base;
 3. the following 82 published, paired Library modules at this base. The
    16 entries marked "(statement)" contain Prop-valued statement
    definitions.
@@ -393,46 +389,50 @@ through the imports of these modules.
 
 ### Condition-by-condition exclusion audit
 
-The conditions are those of the complete inherited exclusion set in the
-context of task `6bb62ea4-c7e1-4325-9eb6-b8bbee1f65c4` revision 2, from
-"Complete inherited exclusion set" to the end. A module can depend only on
+The conditions are the exclusions listed below. A module can depend only on
 declarations in its import closure, so it suffices to check that no
 excluded statement, proof or consequence lies in the 84 modules above and
 that no excluded conclusion is assumed.
 
-1. **Exclusion list of `b711af72` (objective).** Ordered-socle existence
-   `23189526`, socle exhaustion `f3a69bc8`, analytic segment classification
-   `aca8805b`, segment-socle product irreducibility `23e98d90`, the final
-   criterion `2ae5cbe5`, `AdjacentUnlinkedSegmentSocleSwap`,
-   `TwoSegmentSocleCommutation`, the special-head criterion `8364e73f`,
-   special-head exhaustion `3bfb61fa`, ordered special-head existence
-   `ebea9a8a`, quotient coverage `20e4e1c6`, tempered block uniqueness
-   `52e97845`, `SquareIntegrableLanglandsClassification` / `1cb45da2`,
-   square-integrable exhaustion `cd8ab97c`, regular exhaustion `bf433f0a`,
-   `GenericSegmentProductUniqueness` / `30341ae4`, ordered conversion
-   `8252833d` and forward special-segment square-integrability `5eece9e8`:
+1. **Segment and multisegment classification results.** Ordered-socle
+   existence, socle exhaustion, analytic segment classification,
+   segment-socle product irreducibility, the final
+   criterion, `AdjacentUnlinkedSegmentSocleSwap`,
+   `TwoSegmentSocleCommutation`, the special-head criterion,
+   special-head exhaustion, ordered special-head existence,
+   quotient coverage, tempered block uniqueness,
+   `SquareIntegrableLanglandsClassification`,
+   square-integrable exhaustion, regular exhaustion,
+   `GenericSegmentProductUniqueness`, ordered conversion
+   and forward special-segment square-integrability:
    satisfied. The inventory contains no `Classification`, segment,
    multisegment, socle, head, tempered, square-integrability or exhaustion
    module, and no such conclusion is assumed.
-2. **Operator-paused minus exactness `b65bc667`.** Satisfied. The statement
+2. **Minus exactness.** Satisfied. The statement
    module `Derivative.MirabolicMinusExactnessStatement` is not in the
-   closure, exactness of `Φ⁻` or `Ψ⁻` is neither proved nor assumed, and the
-   task is not resumed or bypassed. The adjunctions need no exactness.
-3. **Detection-unit restrictions.** The combined Ze80 §5.4 reduction, its
-   strong-indecomposability conclusion (`ff4738d8`), the nonadjacent
-   product `3c9849a4` and the full product structure `ab61f565`: satisfied.
+   closure, and exactness of `Φ⁻` or `Ψ⁻` is neither proved nor assumed.
+   The adjunctions need no exactness.
+3. **Detection restrictions.** The combined Ze80 §5.4 reduction, its
+   strong-indecomposability conclusion, the nonadjacent
+   product (`TwoSupercuspidalNonadjacentProductIrreducible`) and the full
+   product structure (`TwoSupercuspidalProductStructure`): satisfied.
    No such module is in the closure, and none of these is assumed.
-4. **Additional nonadjacent-consumer list.** `67279e36`, `4ca79bbd`,
-   `aca8805b`, `SegmentSpecialEssentialSquareIntegrability` / `5eece9e8`,
-   `3bfb61fa`, `ebea9a8a`, `20e4e1c6`, `8252833d`, `52e97845`, `1cb45da2`,
-   `cd8ab97c`, `bf433f0a`, `8364e73f`, `30341ae4`,
-   `OrderedMultisegmentSocleExistence` / `23189526`,
-   `MultisegmentSocleExhaustion` / `f3a69bc8`,
-   `SegmentSocleProductIrreducibility` / `2ae5cbe5`, adjacent socle
-   commutation `e3634665`, `SegmentFullJacquetFormula` / `ed48ae06` and its
-   proof, `SegmentHeadJacquetFormula` / `55ad1e10`,
-   `SegmentSocleJacquetFormula` / `b95105c6` and
-   `SegmentSpecialJacquetExponentNormFormula` / `92aea10f`: satisfied. The
+4. **Nonadjacent-consumer exclusions.** The individual
+   special-head/reverse-socle and segment-socle/reverse-head existence
+   results, analytic segment classification,
+   `SegmentSpecialEssentialSquareIntegrability`, special-head exhaustion,
+   ordered special-head existence, quotient coverage, ordered conversion,
+   tempered block uniqueness, `SquareIntegrableLanglandsClassification`,
+   square-integrable exhaustion, regular exhaustion, the special-head
+   criterion `SegmentHeadProductIrreducibility`,
+   `GenericSegmentProductUniqueness`,
+   `OrderedMultisegmentSocleExistence`,
+   `MultisegmentSocleExhaustion`,
+   `SegmentSocleProductIrreducibility`, adjacent socle
+   commutation, `SegmentFullJacquetFormula` and its
+   proof, `SegmentHeadJacquetFormula`,
+   `SegmentSocleJacquetFormula` and
+   `SegmentSpecialJacquetExponentNormFormula`: satisfied. The
    only Jacquet modules in the closure are `Jacquet.Coinvariants`,
    `Jacquet.Localization`, `Jacquet.PositiveCharacter` and
    `Jacquet.SmoothTwist`. They contain general coinvariant and localization
@@ -444,27 +444,30 @@ that no excluded conclusion is assumed.
    derivative result of BZ77 or anyone else is assumed. The only derivative
    inputs are the published functor constructions and character
    comparisons listed above, all with published Lean proofs. The segment-socle
-   part of task `8e5b4563` is not used.
-6. **Shared upstream scope of `3238f371` revision 2.** Satisfied.
+   part of the derivative statements of
+   `Classification.SegmentSocleDerivativesStatement` is not used.
+6. **Supercuspidal and single-block finiteness.** Satisfied.
    `Langlands.Whittaker.SupercuspidalCoinvariantFinitenessStatement`, the
-   all-character single-block conclusion `62de5903` and their consequences
+   all-character single-block conclusion and their consequences
    are not in the closure or assumed. No missing proof is replaced by a
-   consumer assumption. Worker 127 was not contacted. The parent list
-   (`30341ae4`, `3bfb61fa`, `ebea9a8a`, `20e4e1c6`, `8252833d`, `52e97845`,
-   `1cb45da2`, `cd8ab97c`, `bf433f0a`) is covered by items 1 and 4.
-7. **Independence section of `2e5183b1` revision 2.**
+   consumer assumption. The further results excluded with them
+   (generic product uniqueness, special-head exhaustion, ordered head
+   existence, quotient coverage, ordered conversion, tempered uniqueness,
+   square-integrable classification and exhaustion, regular exhaustion) are
+   covered by items 1 and 4.
+7. **Linked and unlinked segment-socle results.**
    `UnlinkedSegmentSocleProductIrreducible`,
    `LinkedSegmentSocleReverseProductStructure`,
-   `LinkedSegmentSoclePairReducible` (`23e98d90`, `a55c4267`, `8fa9f68b`),
+   `LinkedSegmentSoclePairReducible`,
    `JuxtaposedSegmentSocleReverseProductStructure`,
-   `LinkedSegmentSocleReverseProductQuotientHom` (`7ff2a1e9`),
-   `SegmentSocleProductIrreducibility` (`2ae5cbe5`),
-   `AdjacentUnlinkedSegmentSocleSwap` (`e3634665`, `cded83f3`),
-   `TwoSegmentSocleCommutation` (`426911b4`, `66e3b87c`),
-   `LinkedSegmentSocleGluing` (`c84cd52c`, `6780b79c`), the remaining tasks
-   of that list (covered by items 1 and 4) and `SegmentHeadProductIrreducibility`
-   (`8364e73f`): satisfied, none in the closure. Of the shared lower inputs
-   named there, only the derivative functor constructions `Φ⁻`, `Ψ⁻`, `Ψ⁺`
+   `LinkedSegmentSocleReverseProductQuotientHom`,
+   `SegmentSocleProductIrreducibility`,
+   `AdjacentUnlinkedSegmentSocleSwap`,
+   `TwoSegmentSocleCommutation`,
+   `LinkedSegmentSocleGluing`, the remaining results
+   of that list (covered by items 1 and 4) and `SegmentHeadProductIrreducibility`:
+   satisfied, none in the closure. Of the shared lower inputs
+   of these results, only the derivative functor constructions `Φ⁻`, `Ψ⁻`, `Ψ⁺`
    are used. Their independence is checked by this inventory, since their
    modules and closures lie in it. No exactness, Leibniz filtration,
    geometric lemma, cuspidal-support or finite-length module is in the
@@ -474,16 +477,16 @@ that no excluded conclusion is assumed.
    not the BZ77 geometric lemma.
 8. **BZ77-only upstream restrictions.** No segment derivative formula,
    segment-socle or head existence, Jacquet formula or segment
-   classification; no part (b), (d), (e), (f) of the parent six-statement
-   contribution; no `TwoSupercuspidalNonadjacentProductIrreducible`
-   (`3c9849a4`) or `TwoSupercuspidalProductStructure` (`ab61f565`):
+   classification; no part (b), (d), (e), (f) of the six derivative
+   statements of `Classification.SegmentSocleDerivativesStatement`; no
+   `TwoSupercuspidalNonadjacentProductIrreducible`
+   or `TwoSupercuspidalProductStructure`:
    satisfied, none in the closure or assumed. Its additional consumer list
    is the list of item 4.
 9. **Whittaker-finiteness independence.**
-   `Langlands.Whittaker.IrreducibleCoinvariantFinitenessStatement` and parent
-   `5ab445dc`, `LeviCuspidalCoinvariantFinitenessStatement` and proof task
-   `3ff5c8fb`, their consequences, and the mirabolic finite-length route of
-   task `5428fe2c`: satisfied. No finiteness or finite-length module is in
+   `Langlands.Whittaker.IrreducibleCoinvariantFinitenessStatement`,
+   `LeviCuspidalCoinvariantFinitenessStatement`, their proofs and
+   consequences, and the mirabolic finite-length route: satisfied. No finiteness or finite-length module is in
    the closure. The closure contains two Whittaker modules.
    `Whittaker.Algebraic` defines left-equivariant functions, equivariant
    functionals and coefficient models with their elementary laws.
@@ -499,4 +502,4 @@ that no excluded conclusion is assumed.
    here except through that character.
 
 The proofs use no `sorry`, `admit` or new axiom. This inventory and audit
-are an author audit, not independent acceptance evidence.
+were not checked independently.

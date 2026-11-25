@@ -25,11 +25,11 @@ opens `T_c`.
 
 The Library has the additive equivalence as `BasisAllOpen.equivalence`
 ([BasisAllOpenEquivalence](BasisAllOpenEquivalence.md)) and the category of module sheaves of
-II.2.3 as `BasisModuleSheaf` ([RingedBasisModules](RingedBasisModules.md)). It has no basis
+II.2.3 as `BasisModuleSheaf` ([RingedBasisModules](RingedBasisModules.md)). Neither gives a basis
 change for module sheaves. This file lifts the published additive equivalence to module sheaves
 over a ring presheaf defined on all opens. It then specializes the result to the locally
 constant scalars `𝒞^∞_X`, for an arbitrary basis and for Renard's `T_c`. Every declaration is a
-definition or a proved theorem. There is no proposition for a later proof task.
+definition or a proved theorem. There is no proposition to be proved in another file.
 
 ## Setting
 
@@ -95,7 +95,7 @@ definition or a proved theorem. There is no proposition for a later proof task.
 - `ScalarModuleSheaf B` is the category of sheaves of `𝒞^∞_X`-modules on the basis `B`: module
   sheaves over the published ring presheaf `LocallyConstantScalar.basisRingPresheaf B ℂ` of
   locally constant functions. `ScalarModuleSheaf (allOpenBasis X)` unfolds to the category
-  `ModuleSheaf X` of the II.2.5 Remark unit `VectorSheafModuleEquivalence` (a separate unit,
+  `ModuleSheaf X` of the II.2.5 Remark module `VectorSheafModuleEquivalence` (a separate module,
   not imported here).
 - `scalarEquivalence B : ScalarModuleSheaf B ≌ ScalarModuleSheaf (allOpenBasis X)` is
   `equivalence` for `R = LocallyConstantScalar.ringPresheaf X ℂ`.
@@ -104,8 +104,9 @@ definition or a proved theorem. There is no proposition for a later proof task.
 
 Composing `compactScalarEquivalence` with the all-open equivalence between complex vector
 sheaves and sheaves of `𝒞^∞_X`-modules (`VectorSheafModuleEquivalence.equivalence`) gives the
-base-`T_c` form of the II.2.5 Remark. That composite is not constructed here, because the
-all-open equivalence is not in the Library at this file's base. It is a one-line follow-up.
+base-`T_c` form of the II.2.5 Remark. That composite is not constructed here; this file does
+not import the all-open equivalence. The composite is in the module
+`CompactVectorSheafModuleEquivalence` (`basisEquivalence`, `compactEquivalence`).
 
 ## Provenance
 
@@ -113,5 +114,3 @@ The equivalence is the source's basis-change paragraph of II.2.1, for the module
 II.2.3, as used in the II.2.5 Remark. The componentwise action on families, the linearity of
 the published unit and counit maps, and the specializations are this file's construction on
 top of the published additive equivalence. The source treats the module case as evident.
-Worker 4 wrote this unit for the whole-book task `f5d1f399-a1f8-4ab5-a981-90b92abd4857`
-(Task 1222), in agreement with Worker 1222.

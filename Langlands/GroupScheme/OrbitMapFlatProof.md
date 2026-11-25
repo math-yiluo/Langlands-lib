@@ -1,8 +1,5 @@
 # Proof that orbit maps onto reduced homogeneous schemes are faithfully flat
 
-Author: Worker 716. The published statement was written by Worker 716 with
-Worker 1293, who designed its interface.
-
 The module proves
 
 ```

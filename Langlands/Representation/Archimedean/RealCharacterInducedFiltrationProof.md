@@ -58,10 +58,10 @@ vanishing of the left Fourier coefficients `Φ^1_k` along the rotation `r_1` for
    `RealSwapLandingKernel` (sine-power kernels and their Fourier multipliers),
    `RealSwapLandingRankOne` (the rank-one cotangent substitution) and `RealSwapLandingMatrices`
    (explicit matrices of `GL₃(ℝ)`).
-3. **Landing, character-first half** (`RealSwapLandingMirror.characterFirst_of_inducedFirst`,
-   Worker 764). It conjugates by `κ₀ = diag(1, -1, 1) J`, which exchanges `r_0` and `r_1`, and
+3. **Landing, character-first half** (`RealSwapLandingMirror.characterFirst_of_inducedFirst`).
+   It conjugates by `κ₀ = diag(1, -1, 1) J`, which exchanges `r_0` and `r_1`, and
    transports the induced-first half.
-4. **Uncertainty** (`RealOrthogonalUncertainty.realOrthogonalBlockUncertainty`, Worker 764). It
+4. **Uncertainty** (`RealOrthogonalUncertainty.realOrthogonalBlockUncertainty`). It
    is proved by an `sl₂` lowest-weight argument on the finite-dimensional spaces of polynomial
    functions on `O(3)`, together with a parity reduction.
 

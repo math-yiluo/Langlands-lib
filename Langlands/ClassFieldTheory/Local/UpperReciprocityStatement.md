@@ -1,6 +1,6 @@
 # Higher unit images and upper ramification
 
-Worker 10 authors this proposition family. It states the finite abelian
+This proposition family states the finite abelian
 upper-numbering consequences of local reciprocity. It does not prove
 reciprocity, Hasse-Arf or a conductor comparison.
 
@@ -22,7 +22,7 @@ The source subgroups are `T.unitFiltration n`, obtained from the actual
 maximal-ideal-power quotient kernels. At zero the filtration is the
 valuation-unit subgroup; positive levels are principal units. The target
 subgroup is `Ramification.Padic.upperRamificationGroup S F.Carrier v`.
-Worker 60 constructs it by applying the genuine inverse Herbrand
+The imported `Herbrand.Finite` constructs it by applying the genuine inverse Herbrand
 function to the existing real-indexed lower ramification groups.
 It is neither a renamed unit-image subgroup nor a supplied filtration
 certificate.
@@ -59,7 +59,7 @@ subgroup if and only if the corresponding integer upper group is trivial.
 At zero this allows precisely the unramified case. The norm subgroup is
 the image of the determinant field norm on units, imported from `Norms`.
 This is an existence-free formulation of the filtration criterion in
-Serre XV.2; an eventual proof can use the separately stated reciprocity
+Serre XV.2; a proof can use the separately stated reciprocity
 existence theorem and its exact norm kernels.
 
 `FiniteCharacterUpperConductorLevels` says that a finite Galois character
@@ -79,8 +79,8 @@ break detected by that character, not necessarily the last break of the
 whole extension.
 
 `FiniteUpperReciprocityTheorems` conjoins these five assertions. It leaves
-the absolute/abelianized infinite-filtration formulation for a separate
-pair once that construction is published. The rational Artin-sum
+the absolute/abelianized infinite-filtration formulation to the separate
+pair `AbsoluteReciprocityStatement`. The rational Artin-sum
 comparison is in `FiniteConductorStatement`; this pair uses the existing
 multiplicative conductor and does not duplicate the Artin construction.
 
@@ -97,7 +97,7 @@ Greenberg, GTM 67, Springer, 1979:
 | `FiniteCharacterUpperConductorLevels` | Derived from the real unit-image equality and the imported least-level definition of the multiplicative conductor. The source compares the least norm level with the conductor in XV.2, Corollary 2, printed page 228 / PDF 233. |
 | `FiniteCharacterLastUpperBreak` | Derived boundary formulation of the same result. VI.2, Proposition 5 and its corollary, printed page 102 / PDF 109, identifies a degree-one Artin conductor with one plus the detected upper break and treats passage to the character's cyclic quotient. |
 
-Worker 10 read these complete original pages, including VI.2 printed
+These complete original pages were read, including VI.2 printed
 100-102 / PDF 107-109 for the fixed-space formula and quotient-character
 compatibility. Registered source `serre-1979-local-fields`, retained at
 `/home/taskhub/central-library/Serre--Local Fields--1979.pdf`, SHA256
@@ -109,20 +109,21 @@ Inversion preserves every ramification subgroup and every character
 kernel, and therefore preserves these image and conductor statements.
 No Frobenius lift or inverse into a nonabelian Weil group is chosen.
 
-## Dependencies and development status
+## Dependencies and checks
 
 All imports are published in the Library:
 `Langlands.ClassFieldTheory.Local.Units`, `Langlands.HarmonicAnalysis.Conductor`,
 `Langlands.ClassFieldTheory.Local.ProfiniteReciprocityStatement` and
 `Langlands.LocalFactor.Ramification.Herbrand.Finite`.
-The Herbrand construction is imported unchanged from Worker 60's
-published work; this contribution contains only the present statement pair.
+The Herbrand construction is imported unchanged from
+`Herbrand.Finite`; this module contains only the present statement pair.
 
-The current environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`,
+The development checks used
 Lean 4.34.0, Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`.
 Development compilation and exact inspection of
 `FiniteUpperReciprocityTheorems` succeeded with zero errors or warnings
-and confirmed that it returns `Prop`. Independent semantic review and
-publication are required in addition to compilation. No theorem in this
-family is claimed as proved.
+and confirmed that it returns `Prop`. This file proves none of these
+propositions; `finiteUpperReciprocityTheorems` in
+`Langlands.ClassFieldTheory.Local.UpperReciprocityProof` proves
+`FiniteUpperReciprocityTheorems`.

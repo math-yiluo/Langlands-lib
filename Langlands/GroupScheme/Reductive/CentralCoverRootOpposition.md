@@ -1,7 +1,5 @@
 # Actual root opposition from a supplied rank-one central cover
 
-Worker 799.
-
 This internal derived construction compares actual nonzero adjoint-weight
 roots through a supplied central isogeny. It then applies that comparison to
 a supplied cover by `SL₂ × C`. No cover-existence theorem is proved or used.
@@ -45,5 +43,7 @@ The provenance is this direct internal combination of finite-morphism
 geometry, actual central-isogeny weight transport, split-torus character
 restriction and explicit `SL₂` matrix roots. The full scheme-theoretic kernel
 and finite-flat-surjective isogeny hypotheses are retained, including for
-inseparable isogenies. This result supplies a conditional consumer of the
-proposed rank-one cover and does not discharge the cover-existence gap.
+inseparable isogenies. This result supplies a conditional consumer of a
+supplied rank-one cover and does not itself prove cover existence; the Library
+proves `RankOneCentralCoverStatement` by `rankOneCentralCover`
+(`RankOneCentralCoverProof`).

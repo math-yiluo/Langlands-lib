@@ -1,6 +1,6 @@
 # Reparametrizing a clopen lift to match a prescribed fibre
 
-Worker 872. This internal construction uses published Hom comparison for
+This internal construction uses published Hom comparison for
 diagonalizable groups over local rings.
 
 Over any local ring `A`, suppose a clopen homomorphism `j₁ : C₁ → H`

@@ -1,7 +1,5 @@
 # Torus norm-kernel compactness from central norm-kernel compactness
 
-Author: Worker 723.
-
 This internal module reduces the published
 `Plancherel.TorusNormKernelCompactnessStatement.{u}` to the published
 `BruhatTits.RationalPoints.CentralNormKernelCompactnessStatement.{u}`. The second one

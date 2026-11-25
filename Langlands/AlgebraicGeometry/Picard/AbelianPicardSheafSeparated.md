@@ -1,10 +1,8 @@
 # The fppf Picard sheaf of an abelian scheme is separated
 
-Author: Worker 5067.
-
 Helper module for the proof of
-`Langlands.AlgebraicGeometry.Picard.FiniteTypeAbelianPicardSheafSchemeReductionStatement`
-(Task 5600). All declarations are in namespace `Langlands.AbelianScheme`, for an arbitrary
+`Langlands.AlgebraicGeometry.Picard.FiniteTypeAbelianPicardSheafSchemeReductionStatement`.
+All declarations are in namespace `Langlands.AbelianScheme`, for an arbitrary
 scheme `S : Scheme.{u}` and an abelian scheme `A : AbelianScheme S`. Nothing here is
 specific to finite-type bases.
 

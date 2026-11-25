@@ -8,7 +8,7 @@ The equivalence `reversedDualSectionEquiv` is fixed by the actual Jacquet transp
 
 `StrictTwoSidedFirstBlockLaws` packages the original first-block law and this reversed law for that same fixed equivalence and transported functional. `exists_strictTwoSidedFirstBlockLaws` takes the maximum of the original and reversed bounds. It supplies one nonzero ordinary Jacquet functional and both complete witness tuples, uniformly over all three compatible quotient measures. Each tuple is chosen before every complementary row pair and every section or coefficient.
 
-The independently owned closed analytic statement remains the explicit premise `H`. These theorems use actual reversal and dual transport; scalar product commutativity does not identify induced representations. This internal composition adds no literature translation and proves neither final closed dominant-rank target.
+The closed analytic statement `TwoBlockDominantFirstBlockLaurentIdentityStatement` remains the explicit premise `H` (it is proved separately, in `TwoBlockDominantFirstBlockLaurentIdentityProof`). These theorems use actual reversal and dual transport; scalar product commutativity does not identify induced representations. This internal composition adds no literature translation and proves neither final closed dominant-rank target.
 
 ## All-field port
 

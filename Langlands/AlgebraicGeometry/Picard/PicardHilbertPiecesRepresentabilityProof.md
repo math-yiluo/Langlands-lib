@@ -1,13 +1,7 @@
 # Proof: quasi-projective representability of the Hilbert-polynomial pieces of the Picard sheaf
 
-Author: Worker 22, for task `07219dde-fd87-48cf-83be-db16cbb3707c` (Task 5705),
-by agreement with that task's first executor, Worker 5705. It proves the
-published proposition
-`Langlands.AlgebraicGeometry.Picard.PicardHilbertPiecesRepresentabilityStatement`
-(the statement of Task 6214, which records that this proof is done under
-Task 5705). The operator's answer to request
-`98389b48910e54088e0e2b2ba6aaad9c` allows such prerequisite proofs to stay
-under Task 5705.
+This module proves the published proposition
+`Langlands.AlgebraicGeometry.Picard.PicardHilbertPiecesRepresentabilityStatement`.
 
 The main theorem is
 
@@ -40,7 +34,7 @@ Its four inputs are supplied by published Library theorems:
    (Kleiman, Theorem 3.7);
 2. `Langlands.AlgebraicGeometry.Picard.properFlatIntegralLinearSystem :
    ProperFlatIntegralLinearSystemStatement.{u}`: the linear system of an
-   invertible module on a proper flat family with integral fibres (Worker 5705);
+   invertible module on a proper flat family with integral fibres;
 3. the term
    `FppfQuotientLocallyNoetherianReduction.fppfQuotientLocallyNoetherianReduction
    (FlatEquivalenceRelation.flatProperEquivalenceRelationQuotient_of_hilbertScheme
@@ -49,12 +43,12 @@ Its four inputs are supplied by published Library theorems:
    from the effective quotient theorem (`FlatProperEquivalenceRelationQuotientStatement`)
    to the published proof of that theorem from the Hilbert scheme. This is the
    same term that proves `Langlands.AlgebraicGeometry.fppfQuotientLocallyNoetherian`
-   in the separately submitted module
+   in the module
    `Langlands.AlgebraicGeometry.FppfQuotientLocallyNoetherianProof`. It is
-   written out here so that this proof depends only on published modules;
+   written out here, and this proof does not import that module;
 4. `Langlands.AlgebraicGeometry.Picard.RelativeEffectiveDivisorBaseChangeProof.relativeEffectiveDivisorBaseChange :
    RelativeEffectiveDivisorBaseChangeStatement.{u}`: arbitrary base change of
-   relative effective Cartier divisors (Worker 5705).
+   relative effective Cartier divisors.
 
 The mathematical route is the one recorded in the Markdown of the reduction
 module `PicardHilbertPiecesRepresentabilityReductionProof`: Kleiman, *The

@@ -1,7 +1,7 @@
 # Local norm groups and the existence theorem
 
-Worker 10 authors this proposition family as part of the local class field
-theory statement task. The declarations are definitions returning `Prop`.
+This module states a proposition family of local class field
+theory. The declarations are definitions returning `Prop`.
 No local class field theory theorem is proved or assumed by this file.
 
 ## Exact content and scope
@@ -40,7 +40,7 @@ No extension with the desired norm subgroup is an input.
 `Langlands.LocalClassField.NormGroupTheorems` conjoins these two targets.
 Together they give the norm subgroup existence and uniqueness statement
 and the norm-index characterization. This pair is one component of the
-wider local CFT assignment; it does not yet specify the normalized Artin
+wider local CFT development; it does not specify the normalized Artin
 map, its functoriality, the topological Weil or profinite reciprocity
 isomorphisms, unit/ramification images, or character transport.
 
@@ -54,8 +54,8 @@ Retained original:
 SHA256:
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`.
 
-Worker 10 verified this full-file hash and read the following original
-passages. The PDF offsets differ between these chapters.
+This full-file hash was verified, and the following original
+passages were read. The PDF offsets differ between these chapters.
 
 | Lean content | Source and translation |
 | --- | --- |
@@ -75,12 +75,12 @@ inverting a reciprocity map does not change its norm kernel.
 ## Dependencies, audit, and validation boundary
 
 The project imports are the canonical realization definition
-`c342ec21-e5ee-4ba4-aec6-b4c1b1e2b629`, version 1, and its underlying
-`PadicField` definition `ac4cb7d5-5dd1-44b6-9d56-f0ec6c70bce0`, version 1.
-They retain all primes and arbitrary finite extensions. Both exact versions
-were checked as accepted, public, published, and currently available at
-Library commit `d0f5322f745425b08ae8e72c1031206f45cb049e`, with no missing
-files or unavailable dependencies. The local files match the effective
+(`LocalField.Canonical`) and its underlying
+`PadicField` definition (`LocalField.Definitions`).
+They retain all primes and arbitrary finite extensions. Both
+were checked as published in the Library at
+commit `d0f5322f745425b08ae8e72c1031206f45cb049e`, with no missing
+files or unavailable dependencies. The local files match the
 published source hashes:
 
 | Pair | Lean SHA256 | Markdown SHA256 |
@@ -88,16 +88,13 @@ published source hashes:
 | `LocalField/Definitions` | `8d9cc8aa128861b13b4f96d38bf95be46844d2eaad28aa3cbb654b070ee0e517` | `6cfb939cf42a71a81fa648b77bd4bab1076bffe0d62519181f7dc7db742124bf` |
 | `LocalField/Canonical` | `e702bb7808fc344bda47a3093d9438d5cda71dcb165be7110be7b393f61d7c48` | `94a7a93a2ac19a6c106542cd76530caf8244892f29b98eea8755b031ec7e872d` |
 
-The pinned environment is `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`,
-version 1: Lean 4.34.0 and Mathlib
+The pinned environment is Lean 4.34.0 and Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.
 The audit reused `Algebra.norm`, `Units.map`, `MonoidHom.range`,
 `Subgroup.index`, `Subgroup.FiniteIndex`, `IsAbelianGalois`,
 `IntermediateField`, `AlgebraicClosure`, the topology on units, and
 `IsProperMap`. No replacement norm, Galois group, quotient, or local-field
-structure is introduced. The definition companion task continues to own
-reusable reciprocity maps and related construction interfaces.
+structure is introduced. Reusable reciprocity maps and related construction
+interfaces are not defined here.
 
 Compilation and statement fingerprinting are development checks.
-Independent semantic review and current Library publication are required
-before any later exact bound proof task can rely on this target.

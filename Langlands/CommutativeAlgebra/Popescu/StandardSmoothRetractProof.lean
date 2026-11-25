@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.CommutativeAlgebra.Popescu.StandardSmoothRetractStatement
 
 /-! # Proof of Stacks 07CH: smooth algebras are retracts of standard smooth algebras -/
@@ -410,11 +410,14 @@ theorem standardSmoothRetract : StandardSmoothRetractStatement.{u} := by
     have hbij : Function.Bijective ψB := by
       refine bijective_of_isLocalizedModule g (KaehlerDifferential.map R R (Cr p) B)
         (psi R a p) ψB (fun u ↦ ?_) hgr hgk
-      simp [ψB, psi, Fintype.linearCombination_apply, map_sum, algebraMap_smul]
+      simp only [ψB, psi, Fintype.linearCombination_apply, map_sum, map_smul, map_D,
+        algebraMap_smul]
     refine Algebra.IsStandardSmooth.of_basis_kaehlerDifferential
       ((Pi.basisFun B (Fin n)).map (LinearEquiv.ofBijective ψB hbij)) ?_
     rintro _ ⟨i, rfl⟩
-    exact ⟨algebraMap (Cr p) B (zz a p i), by simp [ψB]⟩
+    exact ⟨algebraMap (Cr p) B (zz a p i), by
+      simp only [ψB, Module.Basis.map_apply, Pi.basisFun_apply, LinearEquiv.ofBijective_apply,
+        Fintype.linearCombination_apply_single, one_smul]⟩
   · rintro ⟨_, k, rfl⟩
     simp [hepsg]
 

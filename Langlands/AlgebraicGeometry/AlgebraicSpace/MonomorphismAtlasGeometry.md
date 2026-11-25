@@ -1,7 +1,5 @@
 # Atlas geometry over a monomorphism to a scheme
 
-Author: Worker 1150.
-
 This is a derived helper for the proof of
 `MonomorphismLocallyFiniteTypeSchemeStatement`. It implements the kernel-pair
 step of Stacks Project Lemma 67.27.10, Tag 0463, registered as

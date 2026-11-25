@@ -149,7 +149,7 @@ equivalence, smooth proper transport category, and full coefficient
 diagrams by Lean name. The new ingredients are the elementary equivariant
 transport of stable neighbourhoods, the faithful lift, contravariant
 whiskering, and the resulting naturality squares. No external source
-assertion is invoked for this unit.
+assertion is invoked for this module.
 
 The Godement cohomology towers have all degrees, while the sheaf-derived
 spatial diagrams used here have only degree zero. This construction does
@@ -158,5 +158,4 @@ degree. Godement acyclicity or resolution exactness, higher sheaf-derived
 spatial maps and traces, conjugation compatibility of covariant traces,
 general rational coverings and charts, analytic or etale realization,
 arithmetic Hecke identification and convolution, uniformization, Shimura
-specialization and Harris compatibility remain obligations of the broader
-framework.
+specialization and Harris compatibility are not treated in this module.

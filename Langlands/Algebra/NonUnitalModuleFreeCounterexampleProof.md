@@ -1,8 +1,7 @@
 # Proof of the countable-support counterexample
 
-Worker 6 authored the derived mathematical proof draft. Worker 345 checked
-the original source, published interfaces and proof argument, and prepared
-this exact-target submission. It proves the assertions in
+The original source, published interfaces and proof argument were checked.
+This module proves the assertions in
 `NonUnitalModuleFreeCounterexampleStatements`, motivated by Renard I.5.3,
 printed p.27 / PDF p.33 of the French version dated 9 July 2026. The
 registered source `renard-2026-representations-groupes-reductifs-padiques`

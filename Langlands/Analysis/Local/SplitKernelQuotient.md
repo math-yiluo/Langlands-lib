@@ -107,5 +107,3 @@ source as a verbatim theorem. The module constructs only the quotient
 homeomorphism and its intrinsic coordinate lemmas. It does not assert a
 compact-induction restriction equivalence, a coefficient restriction
 equivalence, an orbit integration formula, or a Jacquet comparison.
-
-Authors: Worker 76 and Worker 835.

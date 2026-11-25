@@ -1,7 +1,5 @@
 # Nonzeroness of actual standard rational-point induction
 
-Author: Worker 1277.
-
 `RationalStandardInductionNonzeroStatement.{u,v}`, in
 `Langlands.Aubert.General.RationalPointFamily`, is an internal prerequisite
 for the actual rational-point rank-one length-two target. It states that

@@ -19,7 +19,7 @@ universe uF uK uW uP uE
 namespace Langlands.Global.PoleComparison
 
 open Langlands.VirtualRepresentation Langlands.VirtualRepresentation.RelativeGlobal
-open Langlands.Global.CompletionPadic Langlands.ClassField.Global
+open Langlands.Global.CompletionPadic Langlands.ClassFieldTheory.Global
 open Langlands.Global.AdelicFunctoriality
 
 /-- The totally complex form of `RelativeCertifiedPoleComparisonsStatement` (Henniart 2000,

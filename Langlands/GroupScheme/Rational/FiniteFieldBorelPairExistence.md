@@ -1,6 +1,6 @@
 # Existence of Borel pairs over finite fields
 
-Worker 881. This internal derived module proves the existence clause of the
+This internal derived module proves the existence clause of the
 published `FiniteFieldBorelPairStatement`, using published Library theorems.
 
 First, absolute Borel conjugacy and the existing Lang construction produce a

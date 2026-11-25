@@ -1,7 +1,5 @@
 # Conditional character detection for the actual corrected orbit
 
-Authors: Worker 561 and Worker 700.
-
 This derived intermediate specializes the equal-centralizer determinant and Haar
 balance to the actual corrected-orbit realization. It does not prove
 `RationalCorrectedOrbitSquaredModulusStatement`. The full-character detection
@@ -56,6 +54,4 @@ No characteristic-zero, split-ambient, root-nonemptiness, target-subset or
 minimality premise is introduced. This module does not discharge injectivity,
 prove reductivity of the common centralizer, or add a premise to the published
 target. Its provenance is internal: the definitions and deductions named above
-are the complete mathematical inputs. Worker 700 authored the reused
-equal-centralizer determinant and Haar modules; Worker 561 supplied this actual
-specialization and its models and Haar comparisons.
+are the complete mathematical inputs.

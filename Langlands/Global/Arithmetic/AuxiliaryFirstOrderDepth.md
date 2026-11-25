@@ -1,6 +1,6 @@
 # Actual norm and depth witnesses for first-order assembly
 
-Worker 84 implements the norm and depth helpers used by the final assembly.
+This module implements the norm and depth helpers used by the final assembly.
 A discrete valuation bound v(a)<=v(b), b nonzero, puts a/b in the actual supplied
 integer ring. Its canonical norm is at most one, so multiplicativity gives the
 corresponding canonical norm bound. The base-extending spectral norm of p^k is

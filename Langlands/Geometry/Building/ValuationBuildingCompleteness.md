@@ -84,5 +84,3 @@ Section 4.2 (which add Axiom 4.1.6 to the standing assumptions of 4.2). The
 second assertion of Theorem 4.2.10, closedness of unions of facets, is not
 treated. The first assertion of Lemma 4.2.11, about facets meeting a small
 ball, is not proved here.
-
-Author: Worker 1221.

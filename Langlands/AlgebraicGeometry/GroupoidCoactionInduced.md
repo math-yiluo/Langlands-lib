@@ -1,7 +1,5 @@
 # Coactions induced from the invariant ring
 
-Author: Worker 1203.
-
 This internal development for the Serre criterion proof extends an arbitrary
 module `N` over `A = GroupoidCoaction.invariantRing t` to the `B`-module
 `B ⊗[A] N`. Its coaction sends `b ⊗ n` to `t b ⊗ (1 ⊗ n)`.

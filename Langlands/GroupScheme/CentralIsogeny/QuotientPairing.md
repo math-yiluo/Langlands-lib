@@ -1,7 +1,8 @@
 # Transferring a central product isogeny to the quotient pairing
 
-This module is an internal reduction for Task 6385, the central isogenies
-attached to a maximal central torus and a derived subgroup. It is derived from
+This module is an internal reduction for the central isogenies
+attached to a maximal central torus and a derived subgroup
+(`Z × D(G) → G` and `G → G/D(G) × G/Z` for reductive group schemes). It is derived from
 the Library's represented quotient squares, categorical products and faithfully flat
 descent; it is not a transcription of a separate external result.
 

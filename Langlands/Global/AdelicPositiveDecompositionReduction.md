@@ -1,7 +1,5 @@
 # Construct positive decomposition from central character detection
 
-Author: Worker 112.
-
 This internal construction takes the proposition
 `Langlands.GroupScheme.CentralSplitTorusCharacterStatement.{u}` as an
 explicit input. It does not prove that proposition. The input says that

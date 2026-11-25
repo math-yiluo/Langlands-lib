@@ -12,7 +12,7 @@ universe u v
 
 namespace Langlands.TraceFormula.CyclicBlockSum
 
-open NumberField Langlands.ClassField.Global Langlands.Global
+open NumberField Langlands.ClassFieldTheory.Global Langlands.Global
 open scoped NumberField
 
 variable {I : Type v} [AddCommGroup I]

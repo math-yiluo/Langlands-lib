@@ -4,9 +4,6 @@
 is a universe-polymorphic `Prop`-valued definition. This module states the
 descent result and supplies no proof.
 
-Worker 712 implemented this pair. Worker 404 supplied the specification,
-the source selection and the reuse boundaries in the task contract.
-
 ## Exact statement
 
 The proposition quantifies over:
@@ -61,7 +58,7 @@ included. `X` and `p` are arbitrary: there is no properness, finite type,
 separatedness, projectivity, reducedness, nonemptiness or dimension
 hypothesis, so dimension zero and the empty scheme are covered. There is no
 algebraic closure, separability, perfectness, norm-certificate or supplied
-descent-data premise. The norm bundle needed by the source proof is a future
+descent-data premise. The norm bundle needed by the source proof is a
 proof obligation, not an input.
 
 An intermediate field `E : IntermediateField K Ω` carries Mathlib's
@@ -105,20 +102,20 @@ Registered source `stacks-norms-field-ample-descent-2026-10-26`, directory
 SHA256 `af3256169e1d1a032cecd20fa228482bad8e1b478ccfc55a4a73c7ec187d9f5a`,
 retained at
 `literature/Stacks Project - Norms and field-extension ampleness descent (HTML snapshot 2026-10-26)`.
-Worker 712 read on October 26, 2026 the complete retained Section 31.18
+On October 26, 2026 the complete retained Section 31.18
 (`0BCX.html`: the definition of a norm of degree `d`, Lemmas 31.18.1–31.18.8,
 Proposition 31.18.9, Lemma 31.18.10, all proofs, and its two comments) and
 the complete retained Section 33.15 (`0BDB.html`: Lemmas 33.15.1–33.15.5 and
-their proofs; no comments). Comment 7175 on 0BCX (2022) asks whether `V`
+their proofs; no comments) were read. Comment 7175 on 0BCX (2022) asks whether `V`
 was defined in item (2) at the beginning of the section; the reply records
-the fix for the missing declaration of `V`. The working Library base has
+the fix for the missing declaration of `V`. The Library has
 no erratum file for this source.
 
 One typo in the retained proof of Lemma 31.18.4 does not affect the statement:
 it says the norm section "does not vanish at `x`"; the argument requires the
 point `y` of `Y` chosen there.
 
-## Proof obligations for the future exact-target proof
+## Proof obligations for the exact-target proof
 
 Following the source, a proof of this whole proposition must, with no extra
 outer hypothesis:
@@ -146,9 +143,10 @@ The source works with nonvanishing loci. The published comparison
 the tensor powers. Any use of it must establish or import those premises; it
 cannot be used as an unconditional theorem. The Stacks Properties lemmas
 cited by 0BCX are not part of the retained source and must be registered and
-read by the proof's author before use.
+read before use.
 
 Substantial norm constructions and generation-open lemmas belong in separate
-focused definition, statement and proof tasks. They must not become outer
+focused definition, statement and proof modules. They must not become outer
 assumptions of the exact theorem. This module adds no axiom and discharges
-none of these obligations.
+none of these obligations; the proof `finiteFieldExtensionAmpleExistenceDescent`
+in `FiniteFieldExtensionAmpleExistenceDescentProof` does.

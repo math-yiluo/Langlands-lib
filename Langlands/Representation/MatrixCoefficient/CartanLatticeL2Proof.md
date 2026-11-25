@@ -1,7 +1,5 @@
 # L2 assembly from finite translated lattice cells
 
-Author: Worker 19.
-
 `cartanLatticeL2` proves `CartanLatticeL2Statement` with independent universes
 for the group, representation carrier and finite coordinate type.
 

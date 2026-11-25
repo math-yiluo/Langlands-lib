@@ -1,7 +1,5 @@
 # Points of the Chevalley group: root elements and torus
 
-Author: Worker 1398.
-
 For `D : ChevalleyData P b` and a field `K`:
 * `rootHom j` and `x j s = exp_j(s) ∈ GL_n(K)`, with `x_add`, `x_zero`, `x_neg`;
 * `diagUnit f` the diagonal unit with entries `f c`, and `torusHom : (Multiplicative X →* Kˣ)

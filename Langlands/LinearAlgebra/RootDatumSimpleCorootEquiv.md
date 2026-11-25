@@ -2,8 +2,7 @@
 
 Helper module for the proof of
 `Langlands.LinearAlgebra.CorootSpanCartanEquivStatement`
-(module `Langlands.LinearAlgebra.CorootSpanCartanEquivStatement`). Author: Worker 61
-(Task 5703). It uses only Mathlib (`Mathlib.LinearAlgebra.RootSystem.Base` and
+(module `Langlands.LinearAlgebra.CorootSpanCartanEquivStatement`). It uses only Mathlib (`Mathlib.LinearAlgebra.RootSystem.Base` and
 `Mathlib.LinearAlgebra.RootSystem.Hom`). All declarations are in namespace
 `Langlands.RootDatumSimpleCorootEquiv`.
 

@@ -144,7 +144,7 @@ The input `evaluation` is passed only to `mumfordBundle`, and the proof does
 not inspect it. The rigidification of the pulled-back Mumford family is never
 computed, because `isoOfCarrierIso` accepts an arbitrary carrier isomorphism.
 
-## Provenance and authorship
+## Provenance
 
 This is a derived internal comparison, not a verbatim theorem of the source.
 Its ordinary content is the fibre formula `Λ(L)|_{{x}×X} ≅ t_x^*L ⊗ L^{-1}`
@@ -156,6 +156,3 @@ pp.88–89. The pointwise description of `φ_L` is in Chapter VI §3, printed
 p.95. The fibre restriction is used in the proof of Proposition (7.21),
 printed pp.105–106. The Lean proof is internal and follows none of these
 texts line by line.
-
-Worker 861 wrote the Lean proof and this documentation. It reuses no
-unpublished drafts.

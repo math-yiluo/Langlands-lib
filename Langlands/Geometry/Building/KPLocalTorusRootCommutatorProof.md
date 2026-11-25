@@ -1,7 +1,6 @@
 # Positive-depth torus action on root-group filtrations over `K = F^ur`
 
 Module `Langlands.Geometry.Building.KPLocalTorusRootCommutatorProof`.
-Workers 162 and 329, for Task 6194.
 
 ```
 theorem kpLocalTorusRootCommutator : KPLocalTorusRootCommutatorStatement.{u}
@@ -29,8 +28,8 @@ kpLocalTorusRootCommutator_of_valuedRankOneCoordinates quasiSplitValuedRankOneCo
 
 It uses two results.
 
-* `kpLocalTorusRootCommutator_of_valuedRankOneCoordinates`, in the new module
-  `Langlands.Geometry.Building.KPLocalTorusRootCommutatorReduction` of this submission. It
+* `kpLocalTorusRootCommutator_of_valuedRankOneCoordinates`, in the module
+  `Langlands.Geometry.Building.KPLocalTorusRootCommutatorReduction`. It
   proves `QuasiSplitValuedRankOneCoordinatesStatement.{u} → KPLocalTorusRootCommutatorStatement.{u}`.
   Its paired Markdown describes the argument. In outline:
   * every relative root is an indivisible root `b`, or the double `2b` of one
@@ -48,8 +47,7 @@ It uses two results.
     * the divisible case `a = 2b`, using `SU3Root.Parameters.scale_mul_inv_mem_centralFiltration`.
 * `quasiSplitValuedRankOneCoordinates`, the published proof of
   `QuasiSplitValuedRankOneCoordinatesStatement.{u}` (module
-  `Langlands.Geometry.Building.QuasiSplitValuedRankOneCoordinatesProof`, Task 6651, Workers 312
-  and 292). For each indivisible relative root `b` of `B` it gives valued `SL_2` coordinates
+  `Langlands.Geometry.Building.QuasiSplitValuedRankOneCoordinatesProof`). For each indivisible relative root `b` of `B` it gives valued `SL_2` coordinates
   when `2b` is not a root and valued `SU_3` coordinates when `2b` is a root.
 
 The proof adds no premise and assumes no unproved proposition. The hypothesis `0 < r` of the
@@ -58,13 +56,13 @@ used are `propext`, `Classical.choice` and `Quot.sound`.
 
 ## Provenance
 
-The module is the final composition step of Task 6194 and has no separate literature
+The module is the final composition step of the proof of
+`KPLocalTorusRootCommutatorStatement` and has no separate literature
 counterpart. The source of the target is documented in `KPLocalTorusRootCommutatorStatement.md`:
 Kaletha–Prasad, *Bruhat–Tits Theory: A New Approach* (2023), Lemma 7.2.3 and Definition
 7.3.3(1). The case split in the reduction follows the `SL_2` and `SU_3` computations in the
 proof of KP Proposition 7.1.1. The `SU_3` group law is KP (2.7.2).
 
-Worker 329 contributed the published supporting modules `SU3RootScalingCommutator` and
-`KPLocalCoordinateCharacterCongruence` in this task. Both are used by the reduction. The second
-builds on `KPLocalCoordinateValuationComparison`, which Worker 329 also contributed. Worker 162
-wrote the reduction module and this proof module.
+The supporting modules `SU3RootScalingCommutator` and
+`KPLocalCoordinateCharacterCongruence` are both used by the reduction. The second
+builds on `KPLocalCoordinateValuationComparison`.

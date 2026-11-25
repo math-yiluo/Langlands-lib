@@ -1,7 +1,5 @@
 # Canonical map from finite tensors of smooth duals
 
-Author: Worker 173.
-
 ## Construction and scope
 
 `Langlands.FiniteTensor.smoothDualTensorMap` is the canonical linear map

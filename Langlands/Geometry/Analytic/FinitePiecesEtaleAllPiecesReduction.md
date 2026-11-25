@@ -1,7 +1,5 @@
 # Finite-to-all transport reduced to full-domain flatness and tensor comparison
 
-Author: Worker 310.
-
 `finitePiecesEtaleAllPieces_of_flatness_tensor` proves the existing
 `FinitePiecesEtaleAllPiecesStatement` from two explicit prerequisites:
 `Domain.FlatnessStatement` and the finite ordinary tensor comparison

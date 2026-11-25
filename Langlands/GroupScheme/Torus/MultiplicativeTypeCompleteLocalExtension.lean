@@ -37,6 +37,7 @@ theorem flat_surjective_of_fieldBaseChange
     [Flat ((baseChange b).map f).hom.hom.left]
     [Surjective ((baseChange b).map f).hom.hom.left] :
     Flat f.hom.hom.left ∧ Surjective f.hom.hom.left := by
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   obtain ⟨g, rfl⟩ := hchar M N f
   let eM := Diagonalizable.baseChangeIso b M
   let eN := Diagonalizable.baseChangeIso b N
@@ -92,6 +93,7 @@ to an actual diagonalization of the middle group in the exact extension. -/
 theorem exists_diagonalizingIso :
     ∃ e : (Diagonalizable.groupScheme (CommRingCat.of A) M).toGrp ≅ G,
       (baseChange (Spec.algebraMap A (IsLocalRing.ResidueField A))).map e.hom = e₀.hom := by
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   let sp := Spec.algebraMap A (IsLocalRing.ResidueField A)
   let F := baseChange sp
   let D := (Diagonalizable.groupScheme (CommRingCat.of A) M).toGrp

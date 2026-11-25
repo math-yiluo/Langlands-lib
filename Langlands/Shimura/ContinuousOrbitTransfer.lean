@@ -34,7 +34,7 @@ variable {F : Type uF} [Field F] {L : Type uL} [Field L] [TopologicalSpace L]
 /-- If the orbit maps of `A` are continuous, so are those of `B` for every surjective
 equivariant linear map `A → B`: every linear map is continuous for the module topologies. -/
 theorem hasContinuousOrbits_of_surjective (f : A.V →ₗ[L] B.V)
-    (hf : ∀ (g : Field.absoluteGaloisGroup F) (x : A.V), f ((A.ρ g).hom x) = (B.ρ g).hom (f x))
+    (hf : ∀ (g : Field.absoluteGaloisGroup F) (x : A.V), f ((A.ρ g).asHom.hom x) = (B.ρ g).asHom.hom (f x))
     (hsurj : Function.Surjective f) (hA : HasContinuousOrbits A) : HasContinuousOrbits B := by
   let _ : TopologicalSpace A.V := moduleTopology L A.V
   have : IsModuleTopology L A.V := ⟨rfl⟩
@@ -43,10 +43,10 @@ theorem hasContinuousOrbits_of_surjective (f : A.V →ₗ[L] B.V)
   have : ContinuousAdd B.V := IsModuleTopology.toContinuousAdd L B.V
   intro y
   obtain ⟨x, rfl⟩ := hsurj y
-  have horbit : (fun g : Field.absoluteGaloisGroup F => (B.ρ g).hom (f x)) =
-      fun g => f ((A.ρ g).hom x) :=
+  have horbit : (fun g : Field.absoluteGaloisGroup F => (B.ρ g).asHom.hom (f x)) =
+      fun g => f ((A.ρ g).asHom.hom x) :=
     funext fun g => (hf g x).symm
-  change Continuous fun g : Field.absoluteGaloisGroup F => (B.ρ g).hom (f x)
+  change Continuous fun g : Field.absoluteGaloisGroup F => (B.ρ g).asHom.hom (f x)
   rw [horbit]
   exact (IsModuleTopology.continuous_of_linearMap f).comp (hA x)
 
@@ -79,7 +79,7 @@ finite product of copies of `B`, from which a linear retraction recovers `A` con
 theorem hasContinuousOrbits_of_forall_eq_zero [Module.Finite L A.V] {J : Type uJ}
     (f : J → (A.V →ₗ[L] B.V))
     (hf : ∀ (j : J) (g : Field.absoluteGaloisGroup F) (x : A.V),
-      f j ((A.ρ g).hom x) = (B.ρ g).hom (f j x))
+      f j ((A.ρ g).asHom.hom x) = (B.ρ g).asHom.hom (f j x))
     (hinj : ∀ x, (∀ j, f j x = 0) → x = 0) (hB : HasContinuousOrbits B) :
     HasContinuousOrbits A := by
   classical
@@ -95,16 +95,16 @@ theorem hasContinuousOrbits_of_forall_eq_zero [Module.Finite L A.V] {J : Type uJ
   let _ : TopologicalSpace B.V := moduleTopology L B.V
   have : IsModuleTopology L B.V := ⟨rfl⟩
   intro x
-  have horbit : (fun g : Field.absoluteGaloisGroup F => (A.ρ g).hom x) =
-      fun g => r fun j : s => (B.ρ g).hom (f j x) := by
+  have horbit : (fun g : Field.absoluteGaloisGroup F => (A.ρ g).asHom.hom x) =
+      fun g => r fun j : s => (B.ρ g).asHom.hom (f j x) := by
     funext g
-    have hrx := congrArg (fun φ : A.V →ₗ[L] A.V => φ ((A.ρ g).hom x)) hr
+    have hrx := congrArg (fun φ : A.V →ₗ[L] A.V => φ ((A.ρ g).asHom.hom x)) hr
     simp only [LinearMap.comp_apply, LinearMap.id_apply] at hrx
     rw [← hrx]
     congr 1
     funext j
     exact hf j g x
-  change Continuous fun g : Field.absoluteGaloisGroup F => (A.ρ g).hom x
+  change Continuous fun g : Field.absoluteGaloisGroup F => (A.ρ g).asHom.hom x
   rw [horbit]
   exact (IsModuleTopology.continuous_of_linearMap r).comp
     (continuous_pi fun j => hB (f j x))
@@ -112,7 +112,7 @@ theorem hasContinuousOrbits_of_forall_eq_zero [Module.Finite L A.V] {J : Type uJ
 /-- If the orbit maps of `B` are continuous, so are those of a finite-dimensional `A` for every
 injective equivariant linear map `A → B`. -/
 theorem hasContinuousOrbits_of_injective [Module.Finite L A.V] (f : A.V →ₗ[L] B.V)
-    (hf : ∀ (g : Field.absoluteGaloisGroup F) (x : A.V), f ((A.ρ g).hom x) = (B.ρ g).hom (f x))
+    (hf : ∀ (g : Field.absoluteGaloisGroup F) (x : A.V), f ((A.ρ g).asHom.hom x) = (B.ρ g).asHom.hom (f x))
     (hinj : Function.Injective f) (hB : HasContinuousOrbits B) : HasContinuousOrbits A :=
   hasContinuousOrbits_of_forall_eq_zero (J := PUnit.{1}) (fun _ => f) (fun _ => hf)
     (fun x hx => hinj (by rw [hx PUnit.unit, map_zero])) hB
@@ -139,7 +139,7 @@ theorem hasContinuousOrbits_baseChangeAction (hKL : Continuous (algebraMap K L))
   have : IsModuleTopology L (L ⊗[K] A.V) := ⟨rfl⟩
   have : ContinuousAdd (L ⊗[K] A.V) := IsModuleTopology.toContinuousAdd L _
   intro y
-  change Continuous fun g : Field.absoluteGaloisGroup F => ((A.ρ g).hom.baseChange L) y
+  change Continuous fun g : Field.absoluteGaloisGroup F => ((A.ρ g).asHom.hom.baseChange L) y
   induction y using TensorProduct.inductionOn with
   | tmul c x =>
     let φ : A.V →ₛₗ[algebraMap K L] L ⊗[K] A.V :=
@@ -147,8 +147,8 @@ theorem hasContinuousOrbits_baseChangeAction (hKL : Continuous (algebraMap K L))
         map_add' := fun y z => TensorProduct.tmul_add c y z
         map_smul' := fun k y => by
           rw [TensorProduct.tmul_smul, algebraMap_smul] }
-    have horbit : (fun g : Field.absoluteGaloisGroup F => ((A.ρ g).hom.baseChange L) (c ⊗ₜ x)) =
-        fun g => φ ((A.ρ g).hom x) :=
+    have horbit : (fun g : Field.absoluteGaloisGroup F => ((A.ρ g).asHom.hom.baseChange L) (c ⊗ₜ x)) =
+        fun g => φ ((A.ρ g).asHom.hom x) :=
       funext fun g => LinearMap.baseChange_tmul _ c x
     rw [horbit]
     exact (IsModuleTopology.continuous_of_linearMapₛₗ hKL φ).comp (hA x)
@@ -170,34 +170,36 @@ variable {F : Type uF} [Field F] [NumberField F] {L : Type uL} [CommRing L]
 /-- Unramifiedness at `v` along `ι` passes to the target of a surjective equivariant linear
 map. -/
 theorem isUnramifiedAlong_of_surjective (f : A.V →ₗ[L] B.V)
-    (hf : ∀ (g : Field.absoluteGaloisGroup F) (x : A.V), f ((A.ρ g).hom x) = (B.ρ g).hom (f x))
+    (hf : ∀ (g : Field.absoluteGaloisGroup F) (x : A.V), f ((A.ρ g).asHom.hom x) = (B.ρ g).asHom.hom (f x))
     (hsurj : Function.Surjective f) (hA : IsUnramifiedAlong (ModuleCat.{uV} L) v A ι) :
     IsUnramifiedAlong (ModuleCat.{uW} L) v B ι := by
   intro i
+  apply End.ext
   refine ModuleCat.hom_ext (LinearMap.ext fun y => ?_)
   obtain ⟨x, rfl⟩ := hsurj y
-  change (B.ρ (localRestriction v ι i.val)).hom (f x) = f x
-  rw [← hf, show A.ρ (localRestriction v ι i.val) = 𝟙 A.V from hA i]
+  change (B.ρ (localRestriction v ι i.val)).asHom.hom (f x) = f x
+  rw [← hf, show A.ρ (localRestriction v ι i.val) = End.of (𝟙 A.V) from hA i]
   rfl
 
 /-- Unramifiedness at `v` along `ι` passes to the source of a jointly injective family of
 equivariant linear maps. -/
 theorem isUnramifiedAlong_of_forall_eq_zero {J : Type uJ} (f : J → (A.V →ₗ[L] B.V))
     (hf : ∀ (j : J) (g : Field.absoluteGaloisGroup F) (x : A.V),
-      f j ((A.ρ g).hom x) = (B.ρ g).hom (f j x))
+      f j ((A.ρ g).asHom.hom x) = (B.ρ g).asHom.hom (f j x))
     (hinj : ∀ x, (∀ j, f j x = 0) → x = 0) (hB : IsUnramifiedAlong (ModuleCat.{uW} L) v B ι) :
     IsUnramifiedAlong (ModuleCat.{uV} L) v A ι := by
   intro i
+  apply End.ext
   refine ModuleCat.hom_ext (LinearMap.ext fun (x : A.V) => ?_)
-  change (A.ρ (localRestriction v ι i.val)).hom x = x
+  change (A.ρ (localRestriction v ι i.val)).asHom.hom x = x
   refine sub_eq_zero.1 (hinj _ fun j => ?_)
-  rw [map_sub, hf, show B.ρ (localRestriction v ι i.val) = 𝟙 B.V from hB i, sub_eq_zero]
+  rw [map_sub, hf, show B.ρ (localRestriction v ι i.val) = End.of (𝟙 B.V) from hB i, sub_eq_zero]
   rfl
 
 /-- Unramifiedness at `v` along `ι` passes to the source of an injective equivariant linear
 map. -/
 theorem isUnramifiedAlong_of_injective (f : A.V →ₗ[L] B.V)
-    (hf : ∀ (g : Field.absoluteGaloisGroup F) (x : A.V), f ((A.ρ g).hom x) = (B.ρ g).hom (f x))
+    (hf : ∀ (g : Field.absoluteGaloisGroup F) (x : A.V), f ((A.ρ g).asHom.hom x) = (B.ρ g).asHom.hom (f x))
     (hinj : Function.Injective f) (hB : IsUnramifiedAlong (ModuleCat.{uW} L) v B ι) :
     IsUnramifiedAlong (ModuleCat.{uV} L) v A ι :=
   isUnramifiedAlong_of_forall_eq_zero (J := PUnit.{1}) (fun _ => f) (fun _ => hf)

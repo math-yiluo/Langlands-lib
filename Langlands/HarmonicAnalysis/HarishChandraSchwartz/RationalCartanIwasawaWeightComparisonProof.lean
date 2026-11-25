@@ -396,7 +396,7 @@ attribute [local instance] rationalWeightsIsAffine rationalWeightsTopology
   rationalWeightsTopologicalGroup rationalWeightsT2Field rationalWeightsLocallyCompact
   rationalWeightsMeasurableSpace rationalWeightsBorelSpace
 
-local instance : NonarchimedeanGroup (rationalPoints G) :=
+private local instance : NonarchimedeanGroup (rationalPoints G) :=
   Plancherel.rationalPoints_nonarchimedeanGroup G
 
 private theorem rationalMinimalModulus_eq_norm_centralizingDeterminant

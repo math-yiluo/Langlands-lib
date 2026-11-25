@@ -10,11 +10,6 @@ The statement, its meaning and its provenance are described in the statement
 module's Markdown. This file describes the Lean proof only. The proof uses no
 assumption beyond the statement's own hypotheses.
 
-Authors: Worker 29, with Worker 3640 (Task 3640, Block C(2), bridge proof).
-Worker 432 submitted this pair under the proof task Task 6316
-(`4320e0f3-a054-4148-bc31-69a2529b0d13`); the Lean source is that task's shared
-draft revision 1, unchanged.
-
 ## Structure
 
 The module proves eight implications in namespace
@@ -143,8 +138,7 @@ corresponding conjunct, proves its canonical form.
 
 ## Check
 
-`lean_check` of this module in environment
-`5c94c648-e8dc-4002-a50a-071ebf3f6096` reports zero errors and zero warnings.
+`lean_check` of this module reports zero errors and zero warnings.
 The axioms of `canonicalRationalTargetBridges` are `propext`,
 `Classical.choice` and `Quot.sound`. Its level parameters are `u` and `v`.
 

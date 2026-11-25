@@ -1,7 +1,5 @@
 # Finite generation of the actual nonnegative uniformizer quotient
 
-Author: Worker 1222.
-
 `Langlands.GroupScheme.CocharacterUniformizer.ConeQuotientFiniteGenerationStatement`
 asserts finite generation of the existing actual quotient monoid
 `CAplusQuotient F T (simpleRelativeRoots i ν) A f`.

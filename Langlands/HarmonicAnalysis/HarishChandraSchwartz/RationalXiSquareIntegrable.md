@@ -1,7 +1,5 @@
 # Lemmas II.1.4 and II.1.5 of Waldspurger on actual rational points
 
-Author: Worker 3642, task `1ef6854b-f0e9-4d96-bbe5-cb8c4b52f927` (revision 1).
-
 Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalXiSquareIntegrable`,
 namespace `Langlands.HarishChandraSchwartz`.
 
@@ -25,7 +23,7 @@ J.-L. Waldspurger, *La formule de Plancherel pour les groupes p-adiques, d'aprè
 J. Inst. Math. Jussieu 2 (2003), 235–333, DOI 10.1017/S1474748003000082 (literature id
 `waldspurger-2003-plancherel`, SHA256
 `4b6a6162cd0b3863703fb2f65d1698f926caf813114917f2084c16e38f2e30f7`). Page numbers below are the
-printed ones; the PDF page is the printed page minus 234. The author checked the quotations
+printed ones; the PDF page is the printed page minus 234. The quotations were checked
 against the text of PDF pages 6, 8, 18 and 38.
 
 - I.1, printed p. 240: `K` is a special maximal compact subgroup, and `δ_H` "est le module du
@@ -118,8 +116,8 @@ where `Ξ = rationalXi hKc hPK` and `σ = rationalHeight ρ`.
   representation `ρ`. The conclusion remains true in this generality: `Ξ` for such a `K` is a
   coefficient `⟨π(g)e_K, e_K⟩` of `I_{P₀}^G 1` (`rationalXi_eq_sphericalCoefficient`), and the
   argument of the source (Proposition I.4.3 for the pair `(e_K, e_K)`, then Lemma II.1.1) applies
-  to it; changing `ρ` changes `1 + σ` only up to powers and constants. The proof is an
-  obligation; the statement only asserts the conclusion.
+  to it; changing `ρ` changes `1 + σ` only up to powers and constants. The proof is not in this
+  module (see "Scope"); the statement only asserts the conclusion.
 - The quantifier over Haar measures is harmless: finiteness of the integral does not depend on
   the normalization.
 - The two structural inputs are those used by the source's proof. The Cartan decomposition gives
@@ -128,8 +126,8 @@ where `Ξ = rationalXi hKc hPK` and `σ = rationalHeight ρ`.
   clause would be trivially satisfied by `K0 = G(F)`, and the cells `K0 f a K0` would not have
   finite measure.
 - The remaining inputs of the proof are published as statements or proved:
-  - the upper bound of Lemma II.1.1, `RationalXiUpperBoundStatement` (unproved; proof task Task
-    5326);
+  - the upper bound of Lemma II.1.1, `RationalXiUpperBoundStatement` (proved as
+    `rationalXiUpperBound`, module `RationalXiUpperBoundProof`);
   - upper Haar volume bounds for actual lattice cells, proved modulo the full center from the
     same basis property (`rationalLatticeQuotientVolume`, proving
     `RationalLatticeQuotientVolumeStatement`, Aubert project); its double-coset index estimates
@@ -167,8 +165,10 @@ where `Ξ = rationalXi hKc hPK` and `σ = rationalHeight ρ`.
 
 ## Scope
 
-- Lemma II.1.5 is not proved here. Its proof needs the inputs listed above, some of which are
-  unproved statements.
+- Lemma II.1.5 is not proved here. Its proof needs the inputs listed above. The module
+  `RationalXiSquareIntegrableOfUpperBound` derives the statement from the upper bound of
+  Lemma II.1.1 (`rationalXiSquareIntegrable_of_upperBound`), which is proved as
+  `rationalXiUpperBound`.
 - Lemma II.1.2 and Lemma II.1.6 on actual points are not treated.
 - The existence of a special `K` with `G(F) = P₀(F) K` and of `K0` with the two structural
   properties is not proved here. In the Library they are among the conjuncts of the unproved

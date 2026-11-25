@@ -1,7 +1,5 @@
 # Statement: rational representatives of strongly regular classes of inner forms
 
-Author: Worker 1534.
-
 This module states one proposition and proves nothing:
 `Langlands.GroupScheme.QuasiSplitSimplyConnectedRegularConjugateStatement.{u}`,
 a `Prop`-valued `def` with one universe parameter `u`. It is the core input of

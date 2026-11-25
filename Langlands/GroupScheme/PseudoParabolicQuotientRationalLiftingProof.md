@@ -1,7 +1,5 @@
 # Rational lifting for pseudo-parabolic quotients over every field
 
-Author: Worker 37.
-
 `Langlands.GroupScheme.pseudoParabolicQuotientRationalLifting` proves exactly
 the published `Langlands.GroupScheme.PseudoParabolicQuotientRationalLiftingStatement.{u}`
 at an arbitrary universe `u`. Over every field `k`, let `G` be a smooth

@@ -1,7 +1,5 @@
 # Multiplication by an invariant and the first boundary law
 
-Proof author: Worker 45. Audit and documentation preparation: Worker 211.
-
 An invariant vector `b` in `B` defines the actual equivariant coefficient
 map `a ↦ a ⊗ b`. The maps on a short coefficient sequence form a commuting
 map into its tensor with `B`. Mathlib's connecting-map naturality therefore

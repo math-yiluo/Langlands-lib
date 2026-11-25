@@ -1,6 +1,6 @@
 # Closedness of the hyperbolic unitary cocharacter
 
-Worker 37. This module constructs the affine pullback map of the hyperbolic
+This module constructs the affine pullback map of the hyperbolic
 cocharacter and proves the first conjunct of the published
 `QuasiSplitUnitary.RankStatement`. It does not prove the upper rank bound or
 construct the rank-two torus after base change.

@@ -1,6 +1,6 @@
 # Local compactness of locally finite type scheme points
 
-This unit states local compactness for actual points of arbitrary locally
+This module states local compactness for actual points of arbitrary locally
 finite type relative schemes, using the explicitly constructed affine-chart
 final topology. It preserves locally finite type, without a global finite-type
 or separatedness premise.
@@ -40,6 +40,6 @@ and the open-unit/inversion hypotheses make the chart maps open embeddings.
 These justify the relative form without requiring a topology on `R`.
 Setting `S = R` recovers the source's formulation.
 
-This contribution states the property and proves none of it. It neither
+This module states the property and proves none of it. It neither
 specializes the local-field/valuation-ring examples nor states the source's
 separate Hausdorff, uniqueness, closed-immersion or fiber-product conclusions.

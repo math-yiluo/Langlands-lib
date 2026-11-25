@@ -1,6 +1,6 @@
 # Surjectivity of the Hom transitions of ℓ-divisible systems
 
-Author: Worker 61. Built on `Langlands.Cohomology.DivisibleSystem.HomSystem`
+Built on `Langlands.Cohomology.DivisibleSystem.HomSystem`
 (`homTransition`, `homTransition_eq_iff`, `homSystem`, `towerHomEval`,
 `homSystemIsLimit`, `cochainTransition`, `cochainTransition_v`,
 `homComplexSystem`, `smoothHomComplexSystem`) and on

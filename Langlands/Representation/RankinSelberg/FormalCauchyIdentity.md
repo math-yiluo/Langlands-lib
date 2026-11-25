@@ -1,7 +1,5 @@
 # Formal Schur coefficient identity
 
-Author: Worker 1767.
-
 This internal algebraic development reindexes the finite Cauchy–Binet
 coefficient sum by partitions of the prescribed degree. The exponent staircase
 accounts for the fixed degree of the base alternant. The coefficient minors

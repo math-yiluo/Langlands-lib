@@ -1,7 +1,5 @@
 # Statement: connected reductivity and pseudo-reductivity under arbitrary field extension
 
-Worker 3483.
-
 This module defines three propositions and proves none of them:
 
 - `Langlands.GroupScheme.ConnectedReductiveFieldExtensionIffStatement.{u}`;

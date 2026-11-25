@@ -1,6 +1,6 @@
 # Realization of a constituent with compact restriction to an open normal subgroup
 
-Author: Worker 1498. Module
+Module
 `Langlands.Representation.CuspidalSupport.CompactRestrictionRealization`,
 namespace `Langlands.CuspidalSupport`.
 

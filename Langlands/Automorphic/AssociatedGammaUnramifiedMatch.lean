@@ -25,7 +25,7 @@ open Polynomial
 
 universe u uV uE
 
-namespace Langlands.ClassField.Global.RelativeWeilGroup
+namespace Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 
 open Langlands.Global Langlands.Global.CompletionPadic
 open Langlands.Global.FunctionalEquationComparison Langlands.Global.AdelicFunctoriality
@@ -158,4 +158,4 @@ theorem arithmeticPairLFactor_twist_of_unramified
   change (localEulerPolynomial S ι).comp _ = _
   rw [hs, prod_linear_comp_C_mul_X]
 
-end Langlands.ClassField.Global.RelativeWeilGroup
+end Langlands.ClassFieldTheory.Global.RelativeWeilGroup

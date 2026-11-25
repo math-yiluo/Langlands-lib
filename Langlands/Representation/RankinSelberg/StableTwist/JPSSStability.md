@@ -1,7 +1,5 @@
 # Highly ramified stability of pair gamma factors in both factors
 
-Author: Worker 389.
-
 This module proves a two-factor form of the highly ramified stability of JPSS pair gamma
 factors. The Library's stability theorem of Jacquet and Shalika
 (`highlyRamifiedGammaStability`, statement `HighlyRamifiedGammaStabilityStatement`) changes

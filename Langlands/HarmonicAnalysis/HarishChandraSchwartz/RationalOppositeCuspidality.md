@@ -1,9 +1,9 @@
 # Intrinsic cuspidality along proper opposite radicals
 
-This internal transport unit supplies the convergence and vanishing needed
+This internal transport module supplies the convergence and vanishing needed
 for the cuspidal cancellation step of the actual-point VIII.3.1 proof.
 It derives this property from the defining intrinsic standard kernel and
-published group structure. It does not assume the full semistandard-kernel
+existing group structure. It does not assume the full semistandard-kernel
 comparison, constant-term estimates, or any recursive-image comparison.
 
 `conjugationSubgroupContinuousMulEquiv` restricts ambient conjugation
@@ -45,4 +45,4 @@ measure, and the generic transport applies.
 The closed group-structure theorems, rather than their statement
 definitions, discharge the Coxeter realization and opposite transport.
 In relative rank zero there is no proper `I`, so the implication has no
-proper-index instance. This unit proves no decay estimate.
+proper-index instance. This module proves no decay estimate.

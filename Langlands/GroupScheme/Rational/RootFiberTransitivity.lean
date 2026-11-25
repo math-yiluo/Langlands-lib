@@ -62,7 +62,7 @@ theorem galoisOrbitSum_ne_zero_of_restrict_ne_zero (hS : IsSplitTorus S.toGrp)
     {χ : characterLattice T_L} (hχ : f_L ≫ χ ≠ 0) :
     CharacterAveraging.galoisOrbitSum k L T χ ≠ 0 := by
   obtain ⟨c, hc⟩ := (hS.characterLattice_baseChange_bijective b S).surjective (f_L ≫ χ)
-  have : IsAddTorsionFree (ℚ ⊗[ℤ] characterLattice S) := IsAddTorsionFree.of_module_rat _
+  have : HasUniqueDiv (ℚ ⊗[ℤ] characterLattice S) := HasUniqueDiv.of_module_rat _
   have : IsAddTorsionFree (characterLattice S) :=
     hS.character_toRat_injective.isAddTorsionFree Langlands.LinearAlgebra.RationalSpan.toRat
   have hrestrict : f_L ≫ CharacterAveraging.galoisOrbitSum k L T χ =
@@ -182,7 +182,7 @@ theorem root_restrict_ne_zero_of_torusCentralizer
     rw [hroots]
     refine ⟨β.property, ?_⟩
     rw [latticePairing_apply, cocharacterLattice.baseChange_comp, Category.assoc, hβ,
-      Limits.comp_zero, map_zero]
+      Limits.comp_zero, AddEquiv.map_zero]
   have hc : IsCentral (CommGroupScheme.groupHom (𝟙 T_L) ≫ 𝟙 (T_L).toGrp) := by
     change IsCentral (𝟙 (T_L).toGrp ≫ 𝟙 (T_L).toGrp)
     rw [Category.id_comp]

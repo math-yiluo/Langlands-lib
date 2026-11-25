@@ -21,7 +21,7 @@ namespace GeneralLinear
 
 variable {F : Type u} [Field F] [TopologicalSpace F] [IsTopologicalRing F]
 
-local instance (n : ℕ) :
+local instance unipotentCompactProPIsAffine (n : ℕ) :
     IsAffine (groupScheme (Fin n) (CommRingCat.of F)).X.left :=
   isAffine_groupScheme (Fin n) (CommRingCat.of F)
 

@@ -1,7 +1,5 @@
 # Character-change and determinant-twist adapters for compact induction
 
-Author: Worker 805.
-
 This module supplies two actual equivariant maps on compactly induced
 representations, first for a general inducing subgroup and then for the
 actual compact mirabolic model `Whittaker.mirabolicCompactInduced ψ n`

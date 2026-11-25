@@ -1,6 +1,6 @@
 # Renard A.IX: category decompositions and simple support
 
-This note maps the whole source page of A.IX to the published constructions and seven proof units, with their actual size conditions. It records verified publications, not a declaration that A.IX or the whole-book program is complete.
+This note maps the whole source page of A.IX to the published constructions and seven proof modules, with their actual size conditions. It records Library results, not a declaration that A.IX or the whole book is covered.
 
 The governing source is David Renard, *Représentations des groupes réductifs p-adiques*, French version dated 9 July 2026, A.IX, printed page 268 / PDF page 274, registered as `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. The complete page was read, including the displayed proof. The conventions and support identities are in A.VI.2–3, printed pages 263–264 / PDF pages 269–270. The supplementary 2010-edition corrections, registered as `renard-2010-corrections-complements`, were checked at PDF pages 18–19: the old-page-310 letter correction is already incorporated in the 2026 supported-sum passage. This is a bounded comparison with the older errata, not a claim that the project audit is author-issued errata. See the separate [Appendix A discrepancy audit](appendix-a-corrections.md).
 
@@ -54,37 +54,37 @@ P6 constructs the required endpoint coproducts and proves the canonical map at t
 
 P7 applies `simpleSupportSumSupport` separately to the full `S` and `T` sums, using the corresponding smallness premise in each application. It then applies `inf_eq_bot_of_hasSimpleSupport_of_disjoint` to the resulting support proofs and `Disjoint S T`. The same intersection equality supplies `mono_biprod_desc_arrow_of_inf_eq_bot`. This is the exported literal-full-sum specialization of the published P4 and P5 results.
 
-## Verified proof publications
+## Proofs in the Library
 
-All seven candidates below were directly verified accepted and public. Each has accepted machine evidence for `lake-build`, `exact-target`, `unchanged-statement` and `frozen-inputs`, together with independent semantic approval without unresolved qualifications. These receipts establish the individual targets, not completion of the parent program. Import the current modules by Lean name; the IDs are publication evidence.
+Each of the seven proofs below was checked by a Lake build against its exact target, with the statement and its inputs unchanged. They establish the individual targets, not completion of the whole book.
 
-| Key | Published proof and unchanged statement target | Candidate; proof task; independent reviewer | Publication commit |
-| --- | --- | --- | --- |
-| P1 | [CategoryDecompositionSimpleClassesProof](../../Langlands/CategoryTheory/Renard/CategoryDecompositionSimpleClassesProof.md): `CategoryDecompositionSimpleClassesProof.simpleClasses` proves `CategoryDecompositionSimpleClassesStatement` | `b6dca850-87c5-4e21-885f-21400bf1e0f3`; `815f55ef-ec74-49ec-bbee-b79aa687fa4e`; Reviewer 8063 | `b1c8a5e809be36100da09da81385a7ca6789ae80` |
-| P2 | [SimpleSupportFiniteClosureProof](../../Langlands/CategoryTheory/Renard/SimpleSupportFiniteClosureProof.md): `simpleSupportFiniteClosure` proves `SimpleSupportFiniteClosureStatement` | `b37687cf-23af-4bc7-a03a-defd0e19b2cf`; `c94c1ee2-de3a-48cd-9c83-484b5c51fc41`; Reviewer 4565 | `bc8de2287e5c24972c55277b2aa9611523dfc5dc` |
-| P3 | [SimpleSupportColimit](../../Langlands/CategoryTheory/Renard/SimpleSupportColimit.md): `simpleSupportColimitClosure` proves `SimpleSupportColimitClosureStatement` | `e85a3e2b-6faf-4548-9329-55a74c5ecc68`; `0783ae65-dcfd-41db-ba88-aa112d9c3836`; Reviewer 4568 | `bc8de2287e5c24972c55277b2aa9611523dfc5dc` |
-| P4 | [SimpleSupportSumProof](../../Langlands/CategoryTheory/Renard/SimpleSupportSumProof.md): `simpleSupportSumStatement` proves `SimpleSupportSumStatement` | `806799a6-109d-48ba-84a4-36bc8288644b`; `1b73e585-d0bd-421a-99be-1427c53ca0aa`; Reviewer 4563 | `bc8de2287e5c24972c55277b2aa9611523dfc5dc` |
-| P5 | [SimpleSupportOrthogonality](../../Langlands/CategoryTheory/Renard/SimpleSupportOrthogonality.md): `simpleSupportOrthogonality` proves `SimpleSupportOrthogonalityStatement` | `d0124223-2c3c-4ac4-8fb9-576fc5e435f6`; `fd33ed5c-3b90-4151-b22e-efedf84ad44e`; Reviewer 4555 | `bc8de2287e5c24972c55277b2aa9611523dfc5dc` |
-| P6 | [SimpleSupportSplittingSubquotients](../../Langlands/CategoryTheory/Renard/SimpleSupportSplittingSubquotients.md): `simpleSupportPartitionSubquotient` proves `SimpleSupportPartitionSubquotientStatement` | `a453a84e-1a88-4d62-95b4-e3b32f00a220`; `489d6c2a-700e-4ad5-aba1-ae13442715a2`; Reviewer 4710 | `f35c1c217068f79dff12263770d16a95f9632251` |
-| P7 | [SimpleSupportSumOrthogonality](../../Langlands/CategoryTheory/Renard/SimpleSupportSumOrthogonality.md): `simpleSupportSumOrthogonality` proves `SimpleSupportSumOrthogonalityStatement` | `db4b7a40-9bf9-48fe-a683-a6e44c218726`; `ab5a1379-de21-46ec-bfa2-bbdaac3c1804`; Reviewer 9017 | `a86e094aea00c92c9ca2ddee7f651cd64c00981d` |
-
-The P1 statement was independently accepted as `21139355-dda1-48dd-a662-65a4953114d3`, Reviewer 7992, and published at `aa1400a0eb858f7fdc607a5bb736d8f7a705fa10`. The P2–P6 published statement declarations are in their corresponding `Statements` modules. A recovery build of those first six proof modules completed successfully on 2 November 2026, diagnostic `d2530ad2-010f-45c6-aa64-8d4ec59a33f0`; a subsequent P1 recovery build `48a6bac9-fd2c-47ff-a7a7-dd50da5dd46f` also had no errors or warnings.
-
-The P7 statement in [SimpleSupportSumOrthogonalityStatements](../../Langlands/CategoryTheory/Renard/SimpleSupportSumOrthogonalityStatements.md) was independently accepted as `e0e7cadb-31b4-47de-a1cc-4a908ca8f834`, Reviewer 8660, and published at `11dedf3c6982c420e1eee5dc7a82ee37ad2dcc0e`. P7's official machine receipt is `10975d60-0a4d-4fa5-a5a8-8d4d07be827f`; unqualified independent approval is `c53d2696caac4fb0a0ba6c6f54b2dc70`, review task `781752db-55bd-4fdf-8592-c79ae09aca1d`. Integration `1dafeadb72684cef9f4b2c9f4351511b` published the proof at the table's commit. The frozen, published and current proof pair matches the submitted hashes, and the statement pair is unchanged. Worker 1006 authored the exported proof and companion using Worker 709's private composition diagnostic; both retain authorship. A recovery build of the P7 statement and proof modules on 2 November 2026, diagnostic `73663269-0f68-44e2-8529-6e22d85f6307`, had no errors or warnings and confirmed independent `w`, `v`, `u`. These development checks supplement, and do not replace, the independent receipts.
-
-## Construction publications and remaining boundaries
-
-The following construction records were also directly verified accepted and public, with independent approval.
-
-| Key | Construction publication | Reviewer; publication commit |
+| Key | Published proof and unchanged statement target | First appeared at Library commit |
 | --- | --- | --- |
-| D1 | Actual decomposition conditions, `249e2a1d-25a3-4412-bcc7-d1830804450b` | Reviewer 3258; `b9a5677e7d9363960d4c8b6705892ed2b9e28155` |
-| D2 | Actual support and full subcategory, `b6cb5c18-6984-4be9-b9d7-0ada9aa886b4` | Reviewer 3723; `83bd84354679646bd127657889be51d0b580ed3b` |
-| D3 | Supported-sum companion correction, with unchanged Lean construction, `95ec3efe-dbd2-448e-af26-dcf141355152` | Reviewer 4323; `c03d8e1daf4bdfbf4056b29e4d2e2b106b4d5500` |
-| D4 | Actual subset/partition splitting definitions, `d3641635-a258-4f0c-9a0e-ec61225f61a2` | Reviewer 4519; `3987c3d7445531c2c7f784464a3fd47061ba0865` |
+| P1 | [CategoryDecompositionSimpleClassesProof](../../Langlands/CategoryTheory/Renard/CategoryDecompositionSimpleClassesProof.md): `CategoryDecompositionSimpleClassesProof.simpleClasses` proves `CategoryDecompositionSimpleClassesStatement` | `b1c8a5e809be36100da09da81385a7ca6789ae80` |
+| P2 | [SimpleSupportFiniteClosureProof](../../Langlands/CategoryTheory/Renard/SimpleSupportFiniteClosureProof.md): `simpleSupportFiniteClosure` proves `SimpleSupportFiniteClosureStatement` | `bc8de2287e5c24972c55277b2aa9611523dfc5dc` |
+| P3 | [SimpleSupportColimit](../../Langlands/CategoryTheory/Renard/SimpleSupportColimit.md): `simpleSupportColimitClosure` proves `SimpleSupportColimitClosureStatement` | `bc8de2287e5c24972c55277b2aa9611523dfc5dc` |
+| P4 | [SimpleSupportSumProof](../../Langlands/CategoryTheory/Renard/SimpleSupportSumProof.md): `simpleSupportSumStatement` proves `SimpleSupportSumStatement` | `bc8de2287e5c24972c55277b2aa9611523dfc5dc` |
+| P5 | [SimpleSupportOrthogonality](../../Langlands/CategoryTheory/Renard/SimpleSupportOrthogonality.md): `simpleSupportOrthogonality` proves `SimpleSupportOrthogonalityStatement` | `bc8de2287e5c24972c55277b2aa9611523dfc5dc` |
+| P6 | [SimpleSupportSplittingSubquotients](../../Langlands/CategoryTheory/Renard/SimpleSupportSplittingSubquotients.md): `simpleSupportPartitionSubquotient` proves `SimpleSupportPartitionSubquotientStatement` | `f35c1c217068f79dff12263770d16a95f9632251` |
+| P7 | [SimpleSupportSumOrthogonality](../../Langlands/CategoryTheory/Renard/SimpleSupportSumOrthogonality.md): `simpleSupportSumOrthogonality` proves `SimpleSupportSumOrthogonalityStatement` | `a86e094aea00c92c9ca2ddee7f651cd64c00981d` |
 
-The proof Lean/Markdown pairs were checked against their frozen bundles and the Library. D1's current companion contains an integration clarification distinguishing the author's supplementary errata from the project discrepancy audit, as explicitly recommended in its review integration remarks; its Lean is unchanged. Thus this note does not claim every current definition companion is byte-identical to its original frozen submission.
+The P1 statement first appeared in the Library at `aa1400a0eb858f7fdc607a5bb736d8f7a705fa10`. The P2–P6 published statement declarations are in their corresponding `Statements` modules. A build of those first six proof modules completed successfully on 2 November 2026; a subsequent build of P1 also had no errors or warnings.
 
-The separately published [SimpleSupportFunctor](../../Langlands/CategoryTheory/Renard/SimpleSupportFunctor.md) is derived infrastructure: `simpleSupportSumMap`, `simpleSupportSumFunctor` and `simpleSupportSumInclusion` use the actual sums, restriction maps and inclusions. Its publication is `129d36e5-7a16-4aef-aae9-bd5d090baf8c`, Reviewer 4537, at `b58bd42aee6a565b689f0f0c008506e23b1b6560`. It requires the endpoint or objectwise supported-family coproducts. That construction unit supplies no support theorem, supported-subcategory lift, exactness, adjunction, idempotence or splitting theorem.
+The P7 statement in [SimpleSupportSumOrthogonalityStatements](../../Langlands/CategoryTheory/Renard/SimpleSupportSumOrthogonalityStatements.md) first appeared in the Library at `11dedf3c6982c420e1eee5dc7a82ee37ad2dcc0e`, the proof at the table's commit. The proof pair checked on 2 November 2026 matched the one first published, and the statement pair was unchanged. A build of the P7 statement and proof modules on 2 November 2026 had no errors or warnings and confirmed independent `w`, `v`, `u`.
 
-P7 supplies the literal full-sum specialization of P5 under both full-family smallness premises; source-sized applicability conditions remain visible above. A product-category equivalence would be a separate derived construction, not an extra theorem stated by the source's product notation. No such equivalence is claimed here. Applications requiring additional size bridges or functor properties must obtain their own verified results. This note does not reassign any existing Appendix A, B, C or chapter work; the [whole-book ledger](coverage.md) retains the wider obligations.
+## Constructions and remaining boundaries
+
+The following constructions are in the Library.
+
+| Key | Construction | First appeared at Library commit |
+| --- | --- | --- |
+| D1 | Actual decomposition conditions | `b9a5677e7d9363960d4c8b6705892ed2b9e28155` |
+| D2 | Actual support and full subcategory | `83bd84354679646bd127657889be51d0b580ed3b` |
+| D3 | Supported-sum companion correction, with unchanged Lean construction | `c03d8e1daf4bdfbf4056b29e4d2e2b106b4d5500` |
+| D4 | Actual subset/partition splitting definitions | `3987c3d7445531c2c7f784464a3fd47061ba0865` |
+
+The proof Lean/Markdown pairs were checked against the Library. D1's companion page contains a clarification, added when it entered the Library, distinguishing the author's supplementary errata from the project discrepancy audit; its Lean is unchanged. Thus this note does not claim every definition companion is byte-identical to its first version.
+
+The separately published [SimpleSupportFunctor](../../Langlands/CategoryTheory/Renard/SimpleSupportFunctor.md) is derived infrastructure: `simpleSupportSumMap`, `simpleSupportSumFunctor` and `simpleSupportSumInclusion` use the actual sums, restriction maps and inclusions. It first appeared in the Library at `b58bd42aee6a565b689f0f0c008506e23b1b6560`. It requires the endpoint or objectwise supported-family coproducts. That construction module supplies no support theorem, supported-subcategory lift, exactness, adjunction, idempotence or splitting theorem.
+
+P7 supplies the literal full-sum specialization of P5 under both full-family smallness premises; source-sized applicability conditions remain visible above. A product-category equivalence would be a separate derived construction, not an extra theorem stated by the source's product notation. No such equivalence is claimed here. Applications requiring additional size bridges or functor properties need their own results. The [whole-book ledger](coverage.md) records the wider obligations.

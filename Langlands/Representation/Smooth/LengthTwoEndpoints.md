@@ -1,7 +1,8 @@
 # Object-level deductions for a rank-one Jacquet pattern
 
-Author: Worker 64. Internal generic algebra supporting task
-`1244dad8-89c0-4c13-95f7-1942ccf77842`.
+Internal generic algebra supporting the proof of the actual Jacquet pattern
+for reducible rank-one cuspidal induction
+(`RationalRankOneJacquetModulesStatement`).
 All public declarations are in `Langlands.SmoothRep`.
 The coefficient field, group and representation-carrier universes `uR`, `uG`
 and `uV` are independent. The group has an arbitrary topology; no compatibility
@@ -63,7 +64,7 @@ numbered literature assertion is transcribed. The proof uses no Langlands
 classification, character independence, geometric lemma, adjointness or
 cuspidal-support theorem.
 
-This unit supplies generic deductions with explicit local premises. It does
+This module supplies generic deductions with explicit local premises. It does
 not establish the required actual Jacquet exact sequences, their nonzero
 endpoints, or the representation-theoretic inputs of
 `RationalRankOneJacquetModulesStatement`, and does not prove that full target.

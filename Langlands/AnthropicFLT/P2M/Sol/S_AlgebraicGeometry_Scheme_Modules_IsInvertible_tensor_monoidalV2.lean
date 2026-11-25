@@ -4,7 +4,7 @@ Ported from `P2M/Sol/S_AlgebraicGeometry_Scheme_Modules_IsInvertible_tensor_mono
 License, Version 2.0; see `licenses/Anthropic-FLT/LICENSE`, `NOTICE` and `ATTRIBUTION.md`.
 The paired Markdown file lists the changes made by the port.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_RelativePicardFunctor
 import Langlands.AnthropicFLT.Definitions.Def_PresheafOfModules_InternalHom
 import Langlands.AnthropicFLT.Theorems.Thm_PresheafOfModules_isMonoidal_inverseImage_W_toPresheaf
@@ -24,11 +24,11 @@ universe u
 open CategoryTheory CategoryTheory.MonoidalCategory AlgebraicGeometry
 
 namespace AlgebraicGeometry
-export _root_.AlgebraicGeometry (Scheme Scheme.Modules Scheme.Modules.IsInvertible Scheme.Modules.pullbackUnitIso)
+export _root_.AlgebraicGeometry (Scheme Scheme.Modules Scheme.Modules.IsInvertibleFLT Scheme.Modules.pullbackUnitIso)
 namespace Scheme
-export _root_.AlgebraicGeometry.Scheme (ringCatSheaf Modules.pullback Modules.pullbackCongr Modules Opens homOfLE_ι restrict Modules.pullbackComp Modules.IsInvertible Modules.pullbackUnitIso)
+export _root_.AlgebraicGeometry.Scheme (ringCatSheaf Modules.pullback Modules.pullbackCongr Modules Opens homOfLE_ι restrict Modules.pullbackComp Modules.IsInvertibleFLT Modules.pullbackUnitIso)
 namespace Modules
-export _root_.AlgebraicGeometry.Scheme.Modules (pullback pullbackCongr restrict pullbackComp IsInvertible pullbackUnitIso tensor pullbackTensorObjIso)
+export _root_.AlgebraicGeometry.Scheme.Modules (pullback pullbackCongr restrict pullbackComp IsInvertibleFLT pullbackUnitIso tensor pullbackTensorObjIso)
 open _root_.AlgebraicGeometry.Scheme.Modules _root_.AlgebraicGeometry.Scheme _root_.AlgebraicGeometry
 
 noncomputable def trivializationOfLE {X : Scheme.{u}} {U V : X.Opens} (h : V ≤ U) (L : X.Modules)
@@ -43,9 +43,9 @@ end AlgebraicGeometry.Scheme.Modules
 
 open _root_.AlgebraicGeometry.Scheme.Modules _root_.P2MW.S_AlgebraicGeometry_Scheme_Modules_IsInvertible_tensor_monoidalV2.AlgebraicGeometry.Scheme.Modules in
 theorem solution {X : AlgebraicGeometry.Scheme.{u}}
-    {L M : X.Modules} (hL : AlgebraicGeometry.Scheme.Modules.IsInvertible L)
-    (hM : AlgebraicGeometry.Scheme.Modules.IsInvertible M) :
-    AlgebraicGeometry.Scheme.Modules.IsInvertible (L ⊗ M) := by
+    {L M : X.Modules} (hL : AlgebraicGeometry.Scheme.Modules.IsInvertibleFLT L)
+    (hM : AlgebraicGeometry.Scheme.Modules.IsInvertibleFLT M) :
+    AlgebraicGeometry.Scheme.Modules.IsInvertibleFLT (L ⊗ M) := by
   refine ⟨fun x => ?_⟩
   obtain ⟨U, hxU, ⟨eU⟩⟩ := hL.1 x
   obtain ⟨U', hxU', ⟨eU'⟩⟩ := hM.1 x

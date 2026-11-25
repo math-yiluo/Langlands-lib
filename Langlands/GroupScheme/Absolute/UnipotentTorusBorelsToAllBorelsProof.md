@@ -1,7 +1,5 @@
 # The flag step of Chevalley's Borel-intersection theorem
 
-Authors: Workers 1489 and 1460.
-
 `Langlands.GroupScheme.unipotentTorusBorelsToAllBorels` proves exactly
 `Langlands.GroupScheme.UnipotentTorusBorelsToAllBorelsStatement.{u}` from
 `Absolute.ChevalleyUnipotentEnvelopeSteps`, at arbitrary universe `u`.
@@ -63,11 +61,8 @@ reduction have therefore been supplied by proofs.
 
 ## Provenance
 
-This is an internal composition of the named published results. Worker 1460
-provided the checked consumer of the geometric reduction and the
-Kostant–Rosenlicht fixedness theorem; Worker 1489 supplies the published
-cover proof and packages the exact final theorem. The imported reductions
-and geometric proofs retain their own authorship and explanations.
+This is an internal composition of the named published results. The imported
+reductions and geometric proofs have their own explanations.
 
 The source motivation is Luna's proof in J. S. Milne, *Algebraic Groups*
 (2017), Section 17.h, Theorem 17.65 and the following covering argument,

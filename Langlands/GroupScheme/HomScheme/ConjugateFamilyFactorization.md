@@ -27,7 +27,9 @@ iterated with direct pullbacks transport both the source isomorphism and the
 factorization to the specified groups.
 
 This is an internal consequence of the Library evaluation and pullback
-identities. In the Task 7782 valuation argument `W` is the fraction-field
-spectrum and `Q` is the graph quotient; the construction supplies both the
+identities. In the valuative lifting argument for
+`SelfCentralizingConjugacyValuationLiftStatement` (through
+`Torus/ValuationIntegralFactor`), `W` is the fraction-field spectrum and `Q`
+is the graph quotient; the construction supplies both the
 generic lift and the source isomorphism needed there. It does not extend the
 lift to `T`, require `m` to be a monomorphism, or assert that `f` is a quotient.

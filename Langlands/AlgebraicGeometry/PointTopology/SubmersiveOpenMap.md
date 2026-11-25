@@ -1,7 +1,5 @@
 # Submersive and smooth algebra maps are open on points over complete fields
 
-Author: Worker 1505.
-
 This is a derived helper module for the proof of
 [SmoothOpenMapStatement](SmoothOpenMapStatement.md). It works on the published
 algebra-point carrier `AlgPoint K A K` of [Affine](Affine.md), the set of

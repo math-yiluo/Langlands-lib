@@ -1,6 +1,6 @@
 # Weil pairings along actual rational dual-valued homomorphisms
 
-Worker 142. This derived construction extends the published second-variable
+This derived construction extends the published second-variable
 Weil pullback from integral homomorphisms to actual rational homomorphisms.
 For `lam : Hom0 A Adual`, the definition is `E_lam(x,y) = E_A(x,V(lam)y)`.
 The endpoint `Adual` is the existing dual abelian scheme constructed from the
@@ -36,7 +36,7 @@ The rational-Hom extension and relative adelic bundling here are derived from
 the published Library constructors; they are not attributed as literal
 additional assertions of that field-level passage.
 
-This unit proves no polarization, alternation, nondegeneracy, isogeny
+This module proves no polarization, alternation, nondegeneracy, isogeny
 compatibility or geometric transport assertion. It supplies the actual rational
 pullback needed to express those further properties without replacing the
 geometric map by arbitrary pairing data.

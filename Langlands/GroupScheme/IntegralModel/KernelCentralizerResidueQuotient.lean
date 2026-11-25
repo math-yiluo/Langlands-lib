@@ -33,10 +33,10 @@ variable {R K : Type u} [CommRing R] [IsDomain R] [Field K]
     (hE : (RelativeRoot.kernelCentralizer ((baseChange b).map i ≫ q)
       (characterLattice.baseChange b T a)).IsRepresentedBy jE)
 
-local instance : Smooth ((baseChange b).obj D.fullGroup).X.hom :=
+private local instance : Smooth ((baseChange b).obj D.fullGroup).X.hom :=
   inferInstanceAs (Smooth (CategoryTheory.Limits.pullback.snd D.fullGroup.X.hom b))
 
-local instance : IsAffineHom ((baseChange b).obj D.fullGroup).X.hom :=
+private local instance : IsAffineHom ((baseChange b).obj D.fullGroup).X.hom :=
   inferInstanceAs (IsAffineHom (CategoryTheory.Limits.pullback.snd D.fullGroup.X.hom b))
 
 /-- The quotient map on the actual fibre of the integral centralizer component,

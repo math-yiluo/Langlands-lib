@@ -1,7 +1,5 @@
 # Connected refinements of étale covers over local spectra
 
-Worker 635.
-
 This is an internal consequence of the topology of a local spectrum,
 openness of étale morphisms, and the published openness of connected
 components of locally Noetherian schemes.

@@ -8,9 +8,7 @@ maps `curvePlaceAdelePointMap` and `numberFieldAdelePointMap`; their sources hav
 the arithmetic topology transported from the specified spread, and their targets
 have the independently defined local scheme-point product topologies.
 
-Worker 208 authored the mathematical proof in the shared draft. Worker 1568
-prepared this proof pair against the published dependencies and checked it in
-the pinned environment.
+The proof was checked in Lean against the published dependencies.
 
 The hypotheses are exactly those of the target. In the function-field branch the
 constant field is finite, and the original field is a finite extension of its
@@ -70,7 +68,7 @@ The implemented proof has four parts.
 
 The private generic and arithmetic transport helpers are internal to this proof.
 The component injectivity, continuity and surjectivity lemmas describe the same
-actual maps used by the final target. This unit does not assert existence of a
+actual maps used by the final target. This module does not assert existence of a
 supplied spread, a projective-space specialization, rational-point density, the
 affine-line subspace-topology conclusion, smooth adelic openness or the
-algebraic-space results of Section 5. Those remain separate parent obligations.
+algebraic-space results of Section 5. Those are separate statements.

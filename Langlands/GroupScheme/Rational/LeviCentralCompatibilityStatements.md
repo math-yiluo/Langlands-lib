@@ -1,6 +1,6 @@
 # Split components of nested Levis and characters of standard Levis
 
-Worker 4, for Task 1222. Module
+Module
 `Langlands.GroupScheme.Rational.LeviCentralCompatibilityStatements`, namespace
 `Langlands.GroupScheme`, universe parameter `u` (the base field).
 
@@ -197,18 +197,21 @@ factors through every split component of `M` (published
 - `langlandsCharacterRestriction` compares `ℝ ⊗ X*(A_M)` with the annihilator
   through the split component. The present statement compares the
   characters of `M` themselves.
-- Worker 1222's `LeviSplitComponentCentralizerStatement` (`Z_G(A_M) = M`)
+- `LeviSplitComponentCentralizerStatement` (`Z_G(A_M) = M`)
   is proved by `leviSplitComponentCentralizer` (module
-  `LeviSplitComponentCentralizerProof`, Task 6918). Neither statement of
+  `LeviSplitComponentCentralizerProof`). Neither statement of
   this file restates it. The proof sketch above uses the proved
   `LeviCentralizerCharacterizationStatement`; `leviSplitComponentCentralizer`
   gives an alternative first step.
 
-## Proof obligations
+## Proofs
 
 The proofs of `LeviSplitComponentInclusionStatement`,
-`StandardLeviCharacterAnnihilatorStatement` and their conjunction are
-separate proof obligations of the whole-book task.
+`StandardLeviCharacterAnnihilatorStatement` and their conjunction are not
+part of this file. They are `leviSplitComponentInclusion` (module
+`LeviSplitComponentInclusionProof`), `standardLeviCharacterAnnihilator`
+(module `StandardLeviCharacterAnnihilatorProof`) and
+`leviCentralCompatibility` (module `LeviCentralCompatibilityProof`).
 
 ## Imports
 

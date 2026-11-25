@@ -7,7 +7,7 @@ Modified: FLT module names are prefixed by `Langlands.AnthropicFLT`; the FLT lak
 are set after the imports; the import of `P2M.Util` is dropped and its commands are replaced
 by standard Lean commands. The paired Markdown file lists the changes.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_PresheafOfModules_InternalHom
 import Langlands.AnthropicFLT.Theorems.Thm_PresheafOfModules_isMonoidal_inverseImage_W_toPresheaf
 import Langlands.AnthropicFLT.Definitions.Def_SheafOfModules_MonoidalV2
@@ -28,9 +28,9 @@ set_option autoImplicit false
 theorem solution {X : AlgebraicGeometry.Scheme.{u}} {L : X.Modules} {U V : X.Opens} {s : Γ(L, U)}
     (hs : AlgebraicGeometry.Scheme.Modules.IsFrameOn s V) (n : ℕ) :
     AlgebraicGeometry.Scheme.Modules.IsFrameOn
-      (AlgebraicGeometry.Scheme.Modules.tensorPowSection s n) V := by
+      (AlgebraicGeometry.Scheme.Modules.tensorPowSectionFLT s n) V := by
   induction n with
   | zero => exact AlgebraicGeometry.Scheme.Modules.isFrameOn_unitSection V
   | succ n ih =>
-    rw [AlgebraicGeometry.Scheme.Modules.tensorPowSection_succ]
+    rw [AlgebraicGeometry.Scheme.Modules.tensorPowSectionFLT_succ]
     exact AlgebraicGeometry.Scheme.Modules.IsFrameOn.tensorSections_monoidalV2 ih hs

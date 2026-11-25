@@ -1,6 +1,6 @@
 # Integral identities for rank-one gamma twists
 
-Worker 458. This internal helper compares the actual forward and dual
+This internal helper compares the actual forward and dual
 coefficient products, then passes those comparisons through the total Bochner
 integrals. Every unequal-rank rectangular block and every equal-rank
 Schwartz--Bruhat function is retained. The dual unequal-rank identity uses the

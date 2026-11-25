@@ -1,7 +1,5 @@
 # The unitary central part of a complex representation
 
-Author: Worker 19.
-
 `Langlands.unitaryCentralPart ρ` is the actual invariant subspace obtained
 by summing the generalized central-character spaces whose characters have
 absolute value one. This is an algebraic construction for any group `G` and

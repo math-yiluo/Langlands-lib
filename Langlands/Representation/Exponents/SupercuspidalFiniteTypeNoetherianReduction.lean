@@ -490,7 +490,7 @@ theorem smoothRepNoetherianCategory_of_universeLift
         (SmoothRep.universeLiftEquiv.{u} X).symm.toIntertwiningMap)
       (LinearMap.range_eq_top.mpr (SmoothRep.universeLiftEquiv.{u} X).symm.surjective))
 
-/-- The Proposition of VI.7.5 in every carrier universe, from Worker 1582's
+/-- The Proposition of VI.7.5 in every carrier universe, from the
 reduction `smoothRepNoetherianCategory_of_inputs` in carrier universe
 `max u v`, with its supercuspidal input supplied by
 `supercuspidalFiniteTypeNoetherian_of_inputs`. -/

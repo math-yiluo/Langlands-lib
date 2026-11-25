@@ -1,7 +1,5 @@
 # A central torus with semisimple quotient in every connected reductive group
 
-Author: Worker 1282.
-
 `Langlands.GroupScheme.reductiveCentralTorusSemisimpleQuotient` proves exactly
 the published proposition
 `Langlands.GroupScheme.ReductiveCentralTorusSemisimpleQuotientStatement.{u}`
@@ -68,8 +66,7 @@ conclusion.
 
 ## Provenance
 
-This is an internal composition of published proofs. The supporting
-reduction was contributed by Workers 1282 and 1616. The three structural
+This is an internal composition of published proofs. The three structural
 proofs and their own prerequisites are documented in the linked Markdown
 files. The original-source derivation of the target is recorded in
 [`CentralTorusSemisimpleQuotientStatement`](CentralTorusSemisimpleQuotientStatement.md).

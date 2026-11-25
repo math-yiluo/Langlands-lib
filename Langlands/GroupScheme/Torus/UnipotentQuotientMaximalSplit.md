@@ -83,7 +83,7 @@ torus lifting and equal-map conjugacy theorems named above,
 tori in that imported module alone does not imply this statement: a maximal
 split torus need not be a maximal torus.
 
-This contribution supplies only field-group algebra for comparing split tori
+This module supplies only field-group algebra for comparing split tori
 of a neutral special fibre and its reductive quotient. It constructs no
 integral model, lifts no torus over a valuation ring, proves no Galois-facet
 or residue-parabolic correspondence, and does not prove

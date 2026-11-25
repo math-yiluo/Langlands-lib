@@ -1,6 +1,6 @@
 # The ring `R` in segment-monomial coordinates (helper for Tadić's Proposition 3.8)
 
-Author: Worker 4021. Module
+Module
 `Langlands.Representation.Classification.TadicRectanglePrimeRing`, namespace
 `Langlands.Classification.TadicRectanglePrime`. It is a helper module of the proof
 `Langlands.Classification.TadicRectanglePrime.tadicRectangleSoclePrime` of

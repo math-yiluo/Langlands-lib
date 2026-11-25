@@ -1,7 +1,5 @@
 # Root operators with integral Lie brackets (`LieRootData`)
 
-Author: Worker 1398.
-
 Module `Langlands.GroupScheme.SplitExistence.LieRootData`. It is the first module of the
 derivation of the group commutator relations from the Lie relations (step P3 of the split
 existence proof, task 2132924b).

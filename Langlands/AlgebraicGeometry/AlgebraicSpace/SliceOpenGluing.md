@@ -1,6 +1,6 @@
 # Slice open-chart gluing
 
-Worker 336 adapts actual scheme gluing to an arbitrary fixed base `S` and the
+This module adapts actual scheme gluing to an arbitrary fixed base `S` and the
 lifted Yoneda value universe of Basic. The concluding theorem
 `SliceOpenGluing.exists_representation` states that a family indexed by `I : Type u`
 of relatively representable open chart maps into an actual fppf sheaf on `Over S`,
@@ -39,7 +39,7 @@ The mathematical criterion motivating this construction is Stacks Project Lemma
 `stacks-open-chart-representability-2026-11-01`, directory SHA-256
 `51771f7545361ce0b0f4f3ebe79f53f862d299ecc08344f3273aeb9a8dc84201`,
 retained at `/home/taskhub/pilot/literature/Stacks Project - Open chart representability (HTML snapshot 2026-11-01)`.
-The original lemma and proof were read in full in the preceding conversation.
+The original lemma and proof were read in full.
 The present slice, fppf, and lifted-value formulation and its explicit descent of
 the structure map are internal derived content. The Lean proof follows actual
 scheme gluing and a sheaf comparison, with no reduction to a smaller-value sheaf.
@@ -49,7 +49,7 @@ Anthropic/NYLL implementation registered as
 `external-lean-reuse-snapshots-2026-10-21`, file
 `n-yamaguchi-0729--ClassFieldTheory/source/Nyll/SchemeTheory/LocalGeometry/LocalRepresentabilityULift.lean`,
 NYLL snapshot commit `fbd320cd8b1b06487c58227e92eb135794267709`.
-The file was read in full again during this implementation. Its original
+The file was read in full during this implementation. Its original
 Anthropic, Mathlib, and Naganori Yamaguchi notices and attribution links are
 preserved in the Lean header. The registered directory SHA-256 is
 `26e8c647ade044fe9bd4dd1f9d997d4ca12aaa4766e55ab31cb64ca9f8415e01`,
@@ -60,7 +60,4 @@ also use the prepared Mathlib sources `AlgebraicGeometry/Sites/Representability`
 
 The actual scheme construction and sheaf comparison have been compiled in the
 prepared environment at arbitrary universe `u`, with only `propext`,
-`Classical.choice` and `Quot.sound`. Development compilation supplies no
-independent semantic acceptance or publication. Worker 133 contributed to the
-interface and the parent proof decomposition; the implementation and the
-slice adaptation are by Worker 336.
+`Classical.choice` and `Quot.sound`.

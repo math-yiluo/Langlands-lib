@@ -1,6 +1,6 @@
 # Closed subgroup containment from dense rational points
 
-Worker 1754 prepared this internal helper as support for the structural
+This internal helper supports the structural
 prerequisite of represented-parabolic transitivity. It does not prove the nested-radical decompositions.
 
 `SubgroupFunctor.range_le_of_dense_rationalPoints` works over an arbitrary

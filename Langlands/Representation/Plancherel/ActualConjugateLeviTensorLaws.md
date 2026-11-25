@@ -49,9 +49,9 @@ analytic existence, nonempty/dense generic-locus or all-unitary claim.
 
 The actual coefficient fibers, positive Levi normalization, actual
 contragredient, compact Haar probability coefficient maps and source
-formal degrees remain the existing ones. This unit proves neither an
+formal degrees remain the existing ones. This module proves neither an
 integrated coefficient identity nor an all-unitary extension, form
 identity, cocycle or descent law. A dedicated single assembled
 forward/inverse-reverse pure-tensor equality and its evaluation lemma
-remain further work; the translation formula here and the imported
+are not part of this module; the translation formula here and the imported
 common-Levi formula prove the separate algebraic stages.

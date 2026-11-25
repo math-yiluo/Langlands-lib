@@ -1,7 +1,5 @@
 # Fibrewise centrality for homomorphisms from groups of multiplicative type
 
-Workers 876 and 885.
-
 The theorem `Langlands.GroupScheme.multiplicativeTypeFibrewiseCentrality` proves
 `MultiplicativeTypeFibrewiseCentralityStatement.{u}` for every universe `u`. It
 uses the published `multiplicativeTypeCentralRigidity` theorem to discharge the

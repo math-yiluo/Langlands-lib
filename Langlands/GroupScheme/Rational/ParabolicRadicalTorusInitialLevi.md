@@ -1,6 +1,6 @@
 # One radical torus whose ambient centralizer is the dynamic Levi
 
-This internal derived unit constructs an initial torus and then combines it with
+This internal derived module constructs an initial torus and then combines it with
 the rational conjugacy transport. It retains the unchanged universe-general
 `ParabolicRadicalTorusCentralizerLeviStatement`. The final theorem in this module
 is conditional on exactly three existing structural propositions:
@@ -39,11 +39,14 @@ isomorphism. The preceding construction then supplies the initial maximal torus
 of the specified radical.
 
 `ParabolicRadicalTorusCentralizerLeviFromDynamicStatement` states the resulting
-three-premise reduction. Its proof applies the initial-torus theorem and Worker
-1463's proved rational conjugacy reduction, retaining the actual ambient
-centralizer and multiplication isomorphism.
+three-premise reduction. Its proof applies the initial-torus theorem and the
+proved rational conjugacy reduction
+`parabolicRadicalTorusCentralizerLevi_of_initial_torus` (module
+`Rational.ParabolicRadicalTorusCentralizerLeviReduction`), retaining the actual
+ambient centralizer and multiplication isomorphism.
 
 The provenance is this formal composition of published definitions and proved
 image, maximal-extension, dynamic decomposition, and centrality helpers, together
-with the independently submitted conjugacy transport. No rational-point density,
+with the conjugacy transport of
+`Rational.ParabolicRadicalTorusCentralizerLeviReduction`. No rational-point density,
 perfectness, split-field, or ambient maximal-torus premise is used.

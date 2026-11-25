@@ -253,7 +253,7 @@ theorem eq_one_of_forall_isPrime (hspan : Submodule.span S (Set.range y) = ⊤)
     (hfib : ∀ P : Ideal S, P.IsPrime → ∀ κ ∈ K, y κ - 1 ∈ P.map (algebraMap S B))
     {κ : Γ} (hκ : κ ∈ K) : y κ = 1 := by
   classical
-  obtain ⟨s, hs⟩ := hK
+  obtain ⟨s, hs⟩ := Subgroup.isMulFG_iff.mp hK
   let 𝔞 : Ideal B := Ideal.span ((fun κ => y κ - 1) '' (s : Set Γ))
   have h𝔞fg : (𝔞 : Submodule B B).FG := ⟨s.image (fun κ => y κ - 1), by simp [𝔞]⟩
   have hK𝔞 : K ≤ congrKer y 𝔞 := by
@@ -602,7 +602,7 @@ theorem linearIndependent_and_groupFG
       rw [e]
       exact ((f g).out).2
     have hfg : Γ.FG := (Group.fg_iff_subgroup_fg Γ).1 inferInstance
-    exact ⟨hΓ ▸ hfg⟩
+    exact Group.fg_def.mpr (hΓ ▸ hfg)
 
 /-- Over a local ring, the group-like elements of a flat finitely presented commutative Hopf
 algebra spanned by them are linearly independent. -/

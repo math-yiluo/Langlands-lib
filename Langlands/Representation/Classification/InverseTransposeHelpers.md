@@ -1,6 +1,6 @@
 # Shared inverse-transpose constructions for normalized products
 
-This module houses four existing helpers from Worker 1023's
+This module houses four existing helpers from
 `IrreducibleTwoFactorProductSwapProof`, also used by `SpehHermitian`.
 Their types and defining terms are unchanged; the formerly private names
 are exposed under the `hermitian` names used by the latter module.
@@ -16,5 +16,5 @@ are exposed under the `hermitian` names used by the latter module.
 
 These are shared implementation results. Moving them introduces no new
 mathematical assertion and does not prove the remaining Speh unitarizability
-statement. The two consuming companions retain their original source
-correspondences and authorship.
+statement. The two modules that use them retain their original source
+correspondences.

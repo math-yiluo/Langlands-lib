@@ -1,6 +1,6 @@
 # Finite coroot combinations on the split component
 
-Worker 706, Task 6451. These internal linear algebra lemmas derive finite
+These internal linear algebra lemmas derive finite
 combination descriptions from the published projected-coroot definitions.
 
 A projected coroot differs from its original coroot by an element of the span
@@ -18,4 +18,4 @@ coroot has the required original-root label.
 The nonnegative hull is the nonnegative finite-combination set, using the
 published `RootCombination` lemmas, which permit repeated vectors in an indexed
 family. The coefficient predicates and all complement and lifting hypotheses
-are explicit; no pending theorem is assumed proved.
+are explicit; no unproved theorem is assumed.

@@ -1,6 +1,6 @@
 # Base change of represented subgroup functors
 
-This internal transport unit concerns arbitrary morphisms of base schemes and
+This auxiliary transport module concerns arbitrary morphisms of base schemes and
 the existing subgroup functors on all test schemes.
 
 `SubgroupFunctor.baseChangeCarrierEquiv` restricts the pullback point equivalence
@@ -37,5 +37,5 @@ base-changed cocharacter. No cocharacter is excluded, and no affineness,
 smoothness, connectedness or reductivity assumption is imposed.
 
 All assertions are derived directly from the published definitions and the
-published pullback point equivalence. This unit does not prove the reductivity
+published pullback point equivalence. This module does not prove the reductivity
 of dynamic centralizers.

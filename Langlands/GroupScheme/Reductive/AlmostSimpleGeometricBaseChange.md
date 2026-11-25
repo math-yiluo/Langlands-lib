@@ -1,6 +1,6 @@
 # Almost-simple geometric fibres under arbitrary base change
 
-Worker 632, reusing the private internal ascent argument of Worker 96's
+This module reuses the private internal ascent argument of the
 published `SeparablyClosedAlmostSimpleAbsoluteProof`.
 
 `IsFibrewiseAlmostSimple` means that every chosen geometric fibre is almost

@@ -1,6 +1,6 @@
 # Detecting subgroup centrality on local Artinian base changes
 
-Worker 626. This internal unit applies the proved local Artinian scheme
+This internal module applies the proved local Artinian scheme
 morphism detector to the two multiplication maps on the universal product
 of a subgroup source and its ambient group. It assumes no group structure
 theorem beyond the imported definitions and base-change point comparisons.
@@ -26,6 +26,6 @@ same group scheme H and its operations and supplies commutativity via
 `IsCentral.commGroupScheme`. Its `toGrp` equality is reflexive.
 
 The hypotheses on the universal product and the ambient affine scheme
-are explicit. This unit does not prove centrality over Artinian bases
+are explicit. This module does not prove centrality over Artinian bases
 from residue-field centrality, nor any approximation or arbitrary-base
 criterion. It does not prove the fibrewise central-isogeny statement.

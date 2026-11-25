@@ -1,9 +1,8 @@
 # Openness of torus charts
 
-Author: Worker 1421.
-
-This is an internal module for the chart construction of task
-`45ac6e52-a4d8-4414-91f1-03c3be35223e`. It proves that the chart `j G d.toDatum`
+This is an internal module for the chart construction of
+`SmoothTorusSubgroupRepresentabilityProof` (smooth moduli of closed torus
+subgroups). It proves that the chart `j G d.toDatum`
 of every window datum `d` (`TorusChartExistence.WindowDatum`) satisfies the
 Library's `TorusSubgroupModuli.IsOpenChartOnAffines`. The main new condition
 is openness: for a closed torus subgroup `i` over an affine test `T`, the
@@ -20,7 +19,7 @@ points `f k : A → C k ⊗ R[ℤ^{I k}]` (with surjective linear extension). Th
 evaluation of `i` at `b k` is the range of the split-torus homomorphism of
 `f k`.
 
-This is verbatim the statement of Worker 950's published theorem
+This is verbatim the statement of the published theorem
 `HomScheme.exists_etale_splitPoints` (module
 `Langlands.GroupScheme.HomScheme.TorusSubgroupSplitting`). The final proof
 module `SmoothTorusSubgroupRepresentabilityProof` discharges `hP3` with that

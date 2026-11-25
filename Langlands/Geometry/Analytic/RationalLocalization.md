@@ -1,8 +1,5 @@
 # Rational quotients with affinoid-algebra inputs: proof
 
-Author: Worker 36 (Lean proof and original Markdown). Markdown revised by
-Worker 247.
-
 `RationalLocalization.localization` proves `LocalizationStatement` from
 `RationalLocalization.Statement`. The input is an arbitrary
 `PresentedStrictAffinoidAlgebra K` over a complete ultrametric normed
@@ -82,7 +79,7 @@ The third, under the unit-ideal hypothesis, uses
 `liftFromBase` with its two formulas. The fifth chooses `equiv` with
 its three compatibility formulas. The bounded-monomial premise stays
 explicit; it is not replaced by a spectral-image hypothesis, so the
-full analytic-domain property remains a separate obligation.
+full analytic-domain property is not proved here.
 
 ## Source
 

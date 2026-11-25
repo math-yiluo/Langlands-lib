@@ -1,7 +1,7 @@
 # Galois-compatible pinnings of quasi-split groups
 
 This module is an internal prerequisite for the quasi-split Steinberg quotient
-task. It packages, in one structure, the inputs that the published orbit-image
+theorem `QuasiSplitSteinbergQuotientStatement`. It packages, in one structure, the inputs that the published orbit-image
 descent theorem
 `SteinbergOrbitImageDescent.definingIdealDescent_of_orthogonalSimpleOrbits`
 needs from a quasi-split group:
@@ -187,7 +187,8 @@ Neither is proved in this module.
 
 This module proves no orthogonality of simple-root orbits, no Steinberg
 cross-section, no class quotient and no rational lifting. It also does not
-discharge `ParabolicDynamicStatement` or `RootDatumExistenceStatement`. These
-remain obligations of the host task and of the prerequisite tasks that own
-those statements. All theorems use only the standard axioms `propext`,
+discharge `ParabolicDynamicStatement` or `RootDatumExistenceStatement`. The
+Library proves them elsewhere, as `parabolicDynamic` (module
+`Absolute.ParabolicDynamicProof`) and `rootDatumExistence` (module
+`Reductive.RootDatumExistence`). All theorems use only the standard axioms `propext`,
 `Classical.choice` and `Quot.sound`.

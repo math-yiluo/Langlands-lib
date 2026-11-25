@@ -1,6 +1,7 @@
 # Algebraically closed maximal-torus centralizers from two structural inputs
 
-Worker 1437, adapting Worker 303's published centralizer assembly.
+This adapts the published centralizer assembly
+`AlgClosedMaximalTorusCentralizerAssembly`.
 
 `centralMaximalTorusIsoOfSolvableQuotient` constructs an actual isomorphism
 `T.toGrp ≅ M` when `M` is a connected reductive group over an algebraically
@@ -57,9 +58,9 @@ isomorphism. Its composition with the centralizer inclusion is `j`,
 and invariance of range under source isomorphism gives the claimed
 equality on every test scheme, including nonreduced tests.
 
-The provenance is internal composition and refinement of Worker 303's
-published assembly and Worker 1487's imported no-cocharacter unipotence
-proof. No new literature assertion is introduced. The original
+The provenance is internal composition and refinement of the
+published assembly and the imported no-cocharacter unipotence
+proof (`Absolute.NoCocharacterUnipotent`). No new literature assertion is introduced. The original
 assembly and all proposition targets are unchanged. This module
 proves neither remaining structural input, arbitrary-field maximal
 torus self-centralization, nor unconditional semisimple root or

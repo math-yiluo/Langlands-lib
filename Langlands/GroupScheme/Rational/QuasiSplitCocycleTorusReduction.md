@@ -1,7 +1,5 @@
 # Torus reduction for cocycles of quasi-split semisimple groups
 
-Authors: Worker 1076 and Worker 1534.
-
 Lean module: `Langlands.GroupScheme.Rational.QuasiSplitCocycleTorusReduction`, namespace
 `Langlands.GroupScheme`.
 

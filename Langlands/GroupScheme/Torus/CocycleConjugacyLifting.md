@@ -86,8 +86,7 @@ restriction of `cy`. It produces `g : Spec C ⟶ G.X` with `π ≫ g = g₀` and
    `twistedPoint_eq_iff`, the hypothesis on `g₀` and `twistedPoint_restrict`
    give the fixed equation.
 2. `C ⊗[R] A` is formally smooth over `C` by Mathlib's base-change instance. The
-   published `CharacterAction.exists_fixed_lift` of `FixedPointLifting`, by
-   Worker 1296, therefore gives a lift `y : C ⊗[R] A → C`. It is fixed after
+   published `CharacterAction.exists_fixed_lift` of `FixedPointLifting` therefore gives a lift `y : C ⊗[R] A → C`. It is fixed after
    every refinement and reduces to `x₀`.
 3. Set `g` to be `coordinatePoint y`, transported to `Spec C` by `restrictIso`.
    Naturality of `coordinatePoint` gives `π ≫ g = g₀`.

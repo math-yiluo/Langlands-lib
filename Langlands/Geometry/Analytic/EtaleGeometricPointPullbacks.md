@@ -1,7 +1,5 @@
 # Étale pullbacks and finite diagrams of geometric points
 
-Author: Worker 620.
-
 This internal categorical reduction proves the refinement and equalization
 inputs for geometric points from standard pullback properties of the actual
 localized analytic category. It does not prove those geometric properties.

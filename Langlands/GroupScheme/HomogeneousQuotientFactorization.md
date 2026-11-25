@@ -1,7 +1,5 @@
 # Factoring actual homogeneous quotients through group quotients
 
-Author: Worker 1478.
-
 This internal construction works over an arbitrary base scheme `S : Scheme.{u}`.
 Let `f : G ⟶ H` be an actual group-scheme homomorphism, let `F` be a subgroup
 functor of `G`, and let `q : G.X ⟶ Q` be an actual relative morphism whose
@@ -49,7 +47,7 @@ The argument does not assume that `f` lifts either point on the original test.
 The provenance is internal: the scheme kernel and its point equivalence,
 relative effective-epimorphism descent, fpqc pullbacks and composition,
 represented-subgroup descent, and naturality of multiplication and inverse.
-This unit supplies a factorization and all-test fiber argument for a possible
+This module supplies a factorization and all-test fiber argument for a possible
 split-radical reduction. It does not construct a split-radical quotient or
 its subgroup image, prove that an image is pseudo-parabolic, or assert
 smoothness of the descended projection. It proves no unconditional local

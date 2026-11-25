@@ -61,7 +61,7 @@ cardinalities, followed by `IsGalois.card_aut_eq_finrank` for the local and
 global extensions, proves `[E_w:F_v] = [E:F]`.
 
 The completion scalar tower is the published
-`Langlands.ClassField.Global.CompletionTower.isScalarTower_completion`.
+`Langlands.ClassFieldTheory.Global.CompletionTower.isScalarTower_completion`.
 The restriction composition and equalizer arguments are written inside this
 proof to retain independent universes; the older Library `decompositionHom`
 interface puts both number fields in the same universe. No assertion identifying

@@ -1,6 +1,6 @@
 # Exact parameters for the adjacent-rank affine slices
 
-Worker 1198. Internal coordinate adapters for the complementary anti-triangular
+Internal coordinate adapters for the complementary anti-triangular
 slices of `AdjacentRankAffineFourier`. Strict upper positions `(i,j)` map to
 `(i.rev,j)` in the right slice. In the left slice they map to `(i,n+1-j)`,
 while an additional full row supplies the first column. These maps are proved

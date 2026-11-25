@@ -1,8 +1,7 @@
 # The totally complex cuspidal-pair functional equation from its three parts
 
-Author: Worker 1009. Proof for Task 7359 (`83c0699f-0ef4-46d6-ab50-724622d702a5`),
-revision 1. This is link 1 of the totally complex chain published under Task 0 after the
-operator's answer `81ed24709e7050068786116ca6613260` (Option A).
+This proves the totally complex form of the reduction of the functional equation to its
+three parts, described in `CuspidalPairFunctionalEquationTCStatement.md` §3.
 
 ## Statement proved
 
@@ -83,7 +82,7 @@ are proved from the premises in the same way as the complex-place clauses.
 
 ## Check
 
-A private `lean_check` of this module, with declaration inspection, reported 0 errors and 0
+A compilation of this module, with declaration inspection, reported 0 errors and 0
 warnings. The theorem has universe parameters `u` and `uQ` and depends only on the axioms
 `propext`, `Classical.choice` and `Quot.sound`.
 

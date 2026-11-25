@@ -1,6 +1,5 @@
 # Renard C.III: coefficients and simultaneous blocks
 
-Author: Worker 709, with source-scope and API input from Worker 6.
 Current source-assertion audit: 6 November 2026, Library
 `d2fd0b68e11e9844d5da3650e7579d62588fd3fd`. The preceding audit of
 1 November 2026 used Library `61bb004ff54df5b8a9b8c0a52b9703406a6b11a2`.
@@ -25,7 +24,7 @@ French version dated 9 July 2026, Appendix C.III, printed pp.279–280,
 one-based PDF285–286. Both pages were read directly.
 
 - Registered source: `renard-2026-representations-groupes-reductifs-padiques`.
-- File: `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`.
+- File: `central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`.
 - SHA256: `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 
 Printed p.279 identifies a commuting invertible tuple with its integer-lattice
@@ -36,7 +35,7 @@ Printed p.280 proves the expansion using simultaneous triangular blocks.
 The supplementary source `renard-2010-corrections-complements`, SHA256
 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
 is retained at
-`/home/taskhub/pilot/literature/Renard — Représentations des groupes réductifs p-adiques- corrections et compléments (2010 edition errata).pdf`.
+`literature/Renard — Représentations des groupes réductifs p-adiques- corrections et compléments (2010 edition errata).pdf`.
 Its appendix corrections on PDF18–19 were checked. The final correction on
 PDF19 places parentheses around the entire scalar-times-unipotent factor
 before its integer power. The governing 2026 display already has that
@@ -71,24 +70,22 @@ Neither target requires unitary or distinct characters, a degree bound, a
 basis, diagonalizability, a supplied decomposition or an assumed expansion.
 The tuple target adds no representation-realization premise.
 
-The representation proof, by Worker 219, inducts on the number of coordinates
+The representation proof inducts on the number of coordinates
 and uses generalized eigenspaces of one generator at each step. It proves the
 needed integer-power identity by Pascal recursion and injectivity for the
-backward steps. The tuple adapter, authored by Worker 709 and submitted by
-Worker 277, applies that theorem to
+backward steps. The tuple adapter applies that theorem to
 `IntegerLattice.tupleRepresentationEquiv d V A`, retains its finite witnesses,
 and rewrites the action using
-`IntegerLattice.tupleRepresentationEquiv_apply_apply`. The tuple construction
-was implemented by Worker 466 with Worker 6's source scope and API input.
+`IntegerLattice.tupleRepresentationEquiv_apply_apply`.
 
-The standalone binomial statement, by Worker 789 with Worker 6's input, uses
+The standalone binomial statement uses
 an actual unit `g` of `Module.End ℂ V` with `(g - 1)^r = 0`. Its conclusion is
 `g^n = ∑_{j < r} Ring.choose (n : ℂ) j • (g - 1)^j` as an equality of
 endomorphisms, for every integer `n`. It requires no finite-dimensionality,
 nontriviality or positive-bound premise; `r = 0` retains the zero-space case.
 The polynomial component identifies `Ring.choose z j` with evaluation at `z`
 of `(j.factorial : ℂ)⁻¹ • descPochhammer ℂ j`, for every complex `z`.
-Worker 789's proof establishes the polynomial identity from Mathlib and the
+The proof establishes the polynomial identity from Mathlib and the
 operator identity by a truncated Pascal recurrence and forward/backward integer
 induction. It supplies the source's separate binomial auxiliaries, while the
 actual-block basis and multivariable assertions are separate results mapped
@@ -103,8 +100,7 @@ and `Set.BijOn` for the actual tuple representation at every integer lattice
 point. It assumes no basis or decomposition. The rank-zero block is the
 whole space; when `V` is zero all blocks are zero.
 
-Worker 277 authored the decomposition proof and its explanation; Worker 1044
-added the scope section and submitted the pair. The proof uses Mathlib's
+The decomposition proof uses Mathlib's
 simultaneous generalized-eigenspace independence and spanning theorems over
 complex labels. It passes to unit labels because invertibility makes every
 block with a zero coordinate vanish. Independence in a finite-dimensional
@@ -119,7 +115,7 @@ a uniform exponent. It produces one basis indexed by `Fin (Module.finrank K V)`,
 chosen before every family member and matrix entry, such that
 `b.repr (N t (b j)) i = 0` whenever `j ≤ i`. Here `i` is the row and `j`
 the column, so this is strict upper triangularity. The zero space and empty
-family are included. Worker 846's proof applies the common-kernel lemma to the
+family are included. The proof applies the common-kernel lemma to the
 dual family, obtains a nonzero functional annihilating every range, and
 inducts on the dimension of its kernel. Appending a vector outside this
 hyperplane gives the required basis; the span condition yields the vanishing
@@ -139,60 +135,46 @@ This audit was made at Library
 publication entries and their validation-base comparisons are retained. The
 current audit below additionally checks these pairs against the later Library.
 
-These are publication records, separate from the Lean names used for imports.
-All eight results below are accepted and public, with unqualified independent
-semantic approval. Their current pairs were checked against the archived
-bundle fingerprints. The tuple proof's project imports are unchanged from
-its pinned Library base `368b3cec32d30129c07825e0ce549058b99762f4`; the binomial
+These are records of the Library, separate from the Lean names used for imports.
+All eight results below are in the Library. Their current pairs were checked
+against the files as first checked. The tuple proof's project imports are
+unchanged from its Library base `368b3cec32d30129c07825e0ce549058b99762f4`; the binomial
 proof's project imports are unchanged from
 `00be69b7f127e77ee2fd0511ffe34c48595b64d4`.
-The decomposition proof's project imports are unchanged from its pinned
+The decomposition proof's project imports are unchanged from its
 Library base `9a8ca758097242bde4147f33304f43fceef22fa4`.
 The generic common-basis proof's project imports are also unchanged from that
 base.
 
-| Unit | Accepted contribution | Independent reviewer | Publication |
-| --- | --- | --- | --- |
-| Tuple/representation construction | `345635e5-d4cf-4d2d-9199-48527fe44cda` | Reviewer 2952 | Integration `20f8aef81bb74eae9a8e9b3daad7f378`, Library `24af03c708d2441a8b505c2999c4fd8905a0559d` |
-| Representation coefficient proof | `37763ee8-a810-4c89-a5f0-eebec808fa6c` | Reviewer 3450 | Integration `0f50fce9402d4d35b71421877153fe73`, Library `6d91111e6f9b7a27124b1de32a4984bbdd222a61` |
-| Supplied-tuple coefficient statement | `16cdf02f-a884-4e24-8479-5091310af856` | Reviewer 5881 | Integration `b1f3fa6fae1b4efb8ba8f5f128223052`, Library `368b3cec32d30129c07825e0ce549058b99762f4` |
-| Supplied-tuple coefficient proof | `be88c328-7940-49a4-b42e-474f7fffe106` | Reviewer 5945 | Integration `91f7a0e476184944ab6966407baeb06c`, Library `b22e185743f7c318f709e14e422801f4360105d5` |
-| Standalone binomial and polynomial-coefficient statement | `a77729ae-e93f-46ac-9581-3284fc7ada4c` | Reviewer 3546 | Integration `2d8c1268ef4f4805b1a95cbae28550c4`, Library `65f39f42712a45624ccc76ac5da7b60f52ebcd6f` |
-| Standalone binomial and polynomial-coefficient proof | `ff54af5b-be4c-4795-9744-37edbdb3371b` | Reviewer 3896 | Integration `4db92932a56b41879cd71e065b4ef1a7`, Library `910a6df80701415e9aa68c646393c66ac9bc7512` |
-| Simultaneous generalized-weight decomposition proof | `7479675b-53ff-4925-b9f2-4a18f01adb5f` | Reviewer 6183 | Integration `ce3237a6d7fe44bb87568ded4d970b93`, Library `2003a7a6a41b5e54c3f790e0887743ed616ed614` |
-| Internal commuting-nilpotent common-basis proof | `a1b776dc-ac95-453f-b584-9586763ec182` | Reviewer 6181 | Integration `706af6b1a23441458dd7ef4cefa847b0`, Library `2003a7a6a41b5e54c3f790e0887743ed616ed614` |
+| Module | First appeared at Library commit |
+| --- | --- |
+| Tuple/representation construction | `24af03c708d2441a8b505c2999c4fd8905a0559d` |
+| Representation coefficient proof | `6d91111e6f9b7a27124b1de32a4984bbdd222a61` |
+| Supplied-tuple coefficient statement | `368b3cec32d30129c07825e0ce549058b99762f4` |
+| Supplied-tuple coefficient proof | `b22e185743f7c318f709e14e422801f4360105d5` |
+| Standalone binomial and polynomial-coefficient statement | `65f39f42712a45624ccc76ac5da7b60f52ebcd6f` |
+| Standalone binomial and polynomial-coefficient proof | `910a6df80701415e9aa68c646393c66ac9bc7512` |
+| Simultaneous generalized-weight decomposition proof | `2003a7a6a41b5e54c3f790e0887743ed616ed614` |
+| Internal commuting-nilpotent common-basis proof | `2003a7a6a41b5e54c3f790e0887743ed616ed614` |
 
-Proof machine receipts `48eaef38-390f-4f81-9879-c84fdcc75b84`,
-`6cefc5a7-ea4d-4714-b59c-825e5b4957b8` and
-`582071d4-51eb-4f2a-b325-e4e7a1da937d` respectively accept the representation,
-tuple and standalone binomial proofs' Lake build, exact target, unchanged
-statement and frozen inputs. Publication also has fresh integrated build
-evidence. The tuple proof's independent semantic
-receipt is `2ad95ff140054e15b4d134eb58c0436b`. Its focused task
-`589a0a2b-af36-417e-a639-232dd162fdc0`, revision 1, is complete.
+The representation, tuple and standalone binomial proofs were each checked
+by a Lake build against the exact target, with the statement and its inputs
+unchanged, and by a fresh build of the Library with them.
 
-Development check `5336d0c9-9163-440a-8267-efebb6e515ef` completed a Lake
-build check of the tuple statement and proof with zero errors and warnings,
-reusing both cached modules. Its declaration inspection reports only
-`propext`, `Classical.choice` and `Quot.sound` for the theorem. This check
-supplements the independent acceptance and publication records.
+A separate Lake build check of the tuple statement and proof completed with
+zero errors and warnings, reusing both cached modules. Its declaration
+inspection reports only `propext`, `Classical.choice` and `Quot.sound` for
+the theorem.
 
-The decomposition proof's machine receipt
-`68e0e2f5-9847-4970-9284-03ef4b0bd725` accepts its Lake build, exact target,
-unchanged statement and frozen inputs. Its publication has a fresh integrated
-build and unqualified independent semantic approval. The archived manifest
-fingerprints match both current proof files. Its exact published target is
-the proposition in statement contribution
-`769b13a0-1fbe-4050-b5ff-52ba2d69b320`.
+The decomposition proof was checked by a Lake build against the exact
+target, with the statement and its inputs unchanged, and by a fresh build of
+the Library with it. The files as first checked match both current proof
+files. Its exact target is the published decomposition statement.
 
-The generic common-basis proof's machine receipt
-`efa0f799-dd9f-43f8-a2d9-2f23e07d90a5` accepts its Lake build, exact target,
-unchanged statement and frozen inputs. Its publication has fresh integrated
-validation and unqualified independent semantic approval. The current proof
-pair matches the archived fingerprints; all five manifest files and the
-172 project-import Lean/Markdown files were checked against the archive or
-validation base as appropriate. The exact target is the proposition in
-published statement contribution `aee52bf6-e11f-4437-8f8b-7d0daba51bb3`.
+The generic common-basis proof was checked in the same way. The current proof
+pair matches the files as first checked; all five files of the module and the
+172 project-import Lean/Markdown files were checked as well. The exact target
+is the published generic common-basis statement.
 
 ## Historical assertion-level obligations
 
@@ -208,7 +190,7 @@ these open statuses; the table is retained to explain the earlier coverage.
 
 At that snapshot, both coefficient interfaces, the binomial and common-basis
 auxiliaries, and the basis-free decomposition were proved. The intermediate
-assertions in this table remained parent obligations. Their later publications
+assertions in this table remained unproved at that snapshot. Their later publications
 are recorded next.
 
 
@@ -236,8 +218,7 @@ original `A.1 i` and its stored inverse. The intrinsic normalization is
 `U_i = (c i : ℂ)⁻¹ • G_i`, with the inverse formula also proved, and
 `G_i = (c i : ℂ) • (1 + N_i)`. The character is
 `χ_c(n) = ∏ i, c i ^ n.toAdd i`, with generator value `c i` and inverse-generator
-value `(c i)⁻¹`. Construction contribution
-`9c8f119a-f7c0-4a37-bed4-959d39cdfedf`, authored by Worker 1044, is published;
+value `(c i)⁻¹`. The construction is in the Library;
 its intrinsic equations and current pair were included in the audit.
 
 In the following table, each proposition and closing theorem has namespace
@@ -263,25 +244,25 @@ that the ambient-dimension cutoff is minimal.
 
 ## Implemented proofs and provenance
 
-Worker 189's support proof restricts the scalar differences `A_i - c_i • 1`
+The support proof restricts the scalar differences `A_i - c_i • 1`
 to `W(c)`. Their commutation and generalized-eigenspace nilpotence allow the
 published common-kernel lemma to produce a nonzero common eigenvector.
 Conversely, an ordinary common eigenvector lies in every maximal generalized
 eigenspace. This gives a basis-free characterization of the source's labels.
 
-Worker 1201's normalized-nilpotence proof uses stabilization of the ambient
+The normalized-nilpotence proof uses stabilization of the ambient
 generalized eigenspace at exponent `finrank ℂ V`, compares powers after
 coercion, and rescales by the inverse unit label. Restricted generators commute
 as images of elements of the abelian lattice; central scalar multiplication
 and subtraction of the identity preserve commutation.
 
-Worker 438's local-basis proof establishes nilpotence and commutation on the
+The local-basis proof establishes nilpotence and commutation on the
 actual block and applies the published generic commuting-nilpotent basis
 theorem. It then takes coordinates in the normalization identity. Its
 nilpotence helper uses restriction of the scalar difference on the maximal
 generalized eigenspace; it does not depend on first choosing a basis.
 
-Worker 88's global-basis proof likewise applies the generic tool to the actual
+The global-basis proof likewise applies the generic tool to the actual
 differences on each block, and uses independence and spanning from the
 published generalized-weight decomposition to collect the local bases through
 an internal direct sum. A subgroup argument extends upper triangularity and
@@ -289,7 +270,7 @@ the character diagonal from the generators to every integer lattice point,
 including inverses. The proof uses all unit labels with empty fibers at zero
 blocks; it does not assume that the entire label type is finite.
 
-Worker 308's product proof reconstructs the restricted representation from
+The product proof reconstructs the restricted representation from
 its generator units. Central scalar units allow separation of integer powers,
 and ordered-list induction collects the scalar factors as `χ_c(n)`. The
 published local-basis module's nilpotence helper, a submodule dimension bound,
@@ -373,7 +354,7 @@ are not assumed in advance to be coordinate characters. For the zero space the
 list is empty. At rank zero the single label has block `⊤`, so the list has one
 entry exactly when `V` is nonzero.
 
-Worker 1214's [proof](../../Langlands/Representation/IntegerLattice/OccurringCharactersProof.lean),
+The [proof](../../Langlands/Representation/IntegerLattice/OccurringCharactersProof.lean),
 with its [explanation](../../Langlands/Representation/IntegerLattice/OccurringCharactersProof.md),
 closes `renardCIIIOccurringCharacters` from `integerLatticeCoordinateCharacterReconstruction`,
 `commutingTupleCommonEigenvectorCharacter` and `commutingTupleOccurringCharacterEnumeration`.
@@ -434,7 +415,7 @@ has one term for each nonzero block; by the injectivity of
 The assembly clause is the coefficient proposition with the particular
 polynomial witnesses of the proof on printed p.280.
 
-Worker 88's [proof](../../Langlands/Representation/IntegerLattice/GeneralizedWeightPolynomialComparisonProof.lean),
+The [proof](../../Langlands/Representation/IntegerLattice/GeneralizedWeightPolynomialComparisonProof.lean),
 with its [explanation](../../Langlands/Representation/IntegerLattice/GeneralizedWeightPolynomialComparisonProof.md),
 closes `renardCIIIPolynomialComparison` from
 `commutingTupleGeneralizedWeightPolynomialAction`,
@@ -448,82 +429,50 @@ Its helpers `IntegerLattice.PolynomialComparison.eval_matrix`,
 module. The proof does not use the earlier existential coefficient theorem,
 and it puts no finiteness instance on the type of all labels.
 
-Workers 709 and 1214 prepared the occurring-character statement (statement
-task `fe086a8f-19ce-42eb-a8b0-50d8136e512e`). Workers 709 and 308 wrote the
-polynomial-matrix definitions. Worker 709 prepared the polynomial-comparison
-statement, which Worker 308 checked and submitted (statement task
-`bd8e37d0-6968-4c11-85e5-0fec02620914`). Worker 709 is the author of this note;
-that coauthorship is documented here as authorship, not as review. The
-independent reviews recorded below were made by the named reviewers. The two
-proofs belong to Workers 1214 and 88; this note imports no proof authorship.
+## Checks of the files in the Library
 
-## Current independent acceptance and publication evidence
+The 1 November audit compared 22 Lean/Markdown pairs, as first checked, with
+Library `61bb004ff54df5b8a9b8c0a52b9703406a6b11a2`. All matched. Every proof
+was checked by a Lake build against the exact target, with the statement and
+its inputs unchanged.
 
-The 1 November audit compared 22 accepted Lean/Markdown pairs against their
-archived bundle fingerprints, the pinned Library
-`61bb004ff54df5b8a9b8c0a52b9703406a6b11a2`, and the workspace files. All
-matched. It checked each publication disposition, independent candidate-hash
-binding, approval without qualifications, and accepted machine validation. For
-every proof, the receipt accepts `lake-build`, `exact-target`,
-`unchanged-statement` and `frozen-inputs` with `proof_accepted = true`.
-
-The 6 November audit applies the same checks to the five units of the
-previous section. It compares their ten files with the archived bundle
-fingerprints, Library `d2fd0b68e11e9844d5da3650e7579d62588fd3fd` and the
-workspace, and re-checks the ten actual-block proof fingerprints below against
+The 6 November audit applies the same checks to the five modules of the
+previous section. It compares their ten files, as first checked, with
+Library `d2fd0b68e11e9844d5da3650e7579d62588fd3fd`, and re-checks the ten actual-block proof fingerprints below against
 that Library. All match. Both registered source PDF fingerprints also match.
-These are publication facts; the note creates no new mathematical artifact or
-proof receipt.
 
-The five actual-block exact-target proof publications are:
+The five actual-block exact-target proofs are:
 
-| Unit; proof author | Accepted proof; independent reviewer | Machine receipt | Integration; publication Library |
-| --- | --- | --- | --- |
-| Actual support; Worker 189 | `6c262a0c-9f2b-4d66-a420-b71a9d39deab`; Reviewer 6338 | `a36ee2df-fa6b-4244-b6b5-d5937ccc2529` | `526f253a3b604e96a6383eb2aee9881c`; `cb42061b82d3b398d42ee1f25159daec0f54e40d` |
-| Ambient-bound normalized nilpotence; Worker 1201 | `8b8c728b-9c3a-4d7b-883c-733ff5c365f5`; Reviewer 6412 | `4089b00c-4d87-4357-9089-e24981516ac5` | `cf7de2bd86fc43b2878cd4e9d3809b49`; `8f53f05bb76983088fd64f190658c6ac4c3edc1b` |
-| Actual local basis; Worker 438 | `47aa3cb4-83e4-4624-9f52-da54ca8c830e`; Reviewer 6341 | `a06dccde-56be-4f1c-bcec-d00fe093a6c8` | `c42be500008f41ccb541b54bb6647720`; `cb42061b82d3b398d42ee1f25159daec0f54e40d` |
-| Global all-integer basis; Worker 88 | `be0d44c9-7f0d-4a4b-a5d6-982202b782c4`; Reviewer 6414 | `2fe7dcc8-1c28-4a08-bb0e-bd20c35b6f7a` | `a36660876f2f44fc8e4205f3089ff414`; `8f53f05bb76983088fd64f190658c6ac4c3edc1b` |
-| Three all-integer products; Worker 308 | `eb8d533b-33c0-4ab0-8a4e-5049c545340f`; Reviewer 6445 | `cfae27b6-a34d-45e5-b62b-268cfb7f0078` | `b389d249a8034c2eb7ede1045d4bc7da`; `7ad6e7323f2d14f5ccf8d30daa428878acda72c4` |
+| Module | First appeared at Library commit |
+| --- | --- |
+| Actual support | `cb42061b82d3b398d42ee1f25159daec0f54e40d` |
+| Ambient-bound normalized nilpotence | `8f53f05bb76983088fd64f190658c6ac4c3edc1b` |
+| Actual local basis | `cb42061b82d3b398d42ee1f25159daec0f54e40d` |
+| Global all-integer basis | `8f53f05bb76983088fd64f190658c6ac4c3edc1b` |
+| Three all-integer products | `7ad6e7323f2d14f5ccf8d30daa428878acda72c4` |
 
-Their respective focused proof tasks are
-`ab7a5cdd-c2fa-456f-96ff-709901a0aaf1`,
-`9904665b-5eba-4b5f-97a2-77fae70ca338`,
-`ba2f7a49-38c0-4c14-9f36-f04c2013a07a`,
-`142df93d-9c12-41f7-bf7d-de3207d6da8d` and
-`1c5fe324-8258-4884-a810-23b424d8eb2c`. These remain their authors' contributions;
-this ledger imports no proof authorship.
+The audit also includes the five corresponding published propositions, the
+earlier eight-result table, the representation coefficient statement, the
+decomposition statement, the generic common-basis statement and the
+actual-block construction.
 
-The corresponding published proposition contributions are, in the same order,
-`fff0ebcb-2335-4e4c-a3c2-ea05900521b1`,
-`79e8f0f8-3520-4c65-94ad-8d2a04d4caba`,
-`24a5d939-c42d-47eb-b314-256c8a2c7c1e`,
-`55f9d0cc-a7ae-467a-8d0f-264393b10621` and
-`e9e401b4-23a6-4d8b-92ca-faa229626593`. The audit also includes the earlier
-eight-result table, representation coefficient statement
-`5d74a62e-9871-498a-a6f3-8422f3134535`, decomposition statement
-`769b13a0-1fbe-4050-b5ff-52ba2d69b320`, generic common-basis statement
-`aee52bf6-e11f-4437-8f8b-7d0daba51bb3`, and the actual-block construction.
+The five modules of the occurring-character and polynomial-witness section are:
 
-The five units of the occurring-character and polynomial-witness section are:
+| Module | First appeared at Library commit |
+| --- | --- |
+| Occurring-character statement | `f6b45fe9b1a2248ff9b7cef7184c330d994e9512` |
+| Occurring-character proof | `e058cb4d3adbd71764731d87c4cbfcb5805696e8` |
+| Polynomial-matrix definitions | `f6b45fe9b1a2248ff9b7cef7184c330d994e9512` |
+| Polynomial-comparison statement | `e058cb4d3adbd71764731d87c4cbfcb5805696e8` |
+| Polynomial-comparison proof | `da0312e3777850c14b211f6245ff5b08af56f616` |
 
-| Unit; author | Accepted contribution; independent reviewer | Machine receipt | Integration; publication Library |
-| --- | --- | --- | --- |
-| Occurring-character statement; Workers 709 and 1214 | `c5d11aa0-a042-45aa-a1b2-72f6bcb9eed5`; Reviewer 7376 | `6d9132f2-e135-41fc-86cd-163fc6f2ffa7` | `c754da97f3d4498cabd94fd7298cfb32`; `f6b45fe9b1a2248ff9b7cef7184c330d994e9512` |
-| Occurring-character proof; Worker 1214 | `a4de9556-1637-41c5-9e40-60d904e05ec7`; Reviewer 7435 | `e3b5a8ab-9e0d-438f-93ac-614dbf11c4e6` | `18fd5a62bc2948dfb14defc36b57512a`; `e058cb4d3adbd71764731d87c4cbfcb5805696e8` |
-| Polynomial-matrix definitions; Workers 709 and 308 | `4ce90481-60d5-49b5-8318-508ed948889a`; Reviewer 7383 | `19806bb9-078e-4b6e-bacc-532f8ba25452` | `1fc1d2eb64a04a39ac7b1b70736a185e`; `f6b45fe9b1a2248ff9b7cef7184c330d994e9512` |
-| Polynomial-comparison statement; Worker 709, checked and submitted by Worker 308 | `41c543ed-3c86-404c-a523-08bf42e627cf`; Reviewer 7448 | `7fee4a98-d951-456a-84fa-fe012b8e9f01` | `886758fbb6204ad2a3f3e8a3ad3017e3`; `e058cb4d3adbd71764731d87c4cbfcb5805696e8` |
-| Polynomial-comparison proof; Worker 88 | `89ceeaee-be5e-4c74-adda-0c6341b0d11e`; Reviewer 7519 | `bea3f37d-c36a-43a7-a530-397da5d6428c` | `8445ae8af906435ba15254d83a777b57`; `da0312e3777850c14b211f6245ff5b08af56f616` |
+The two proofs were checked by a Lake build against the exact target, with
+the statement and its inputs unchanged; the statements and definitions by a
+Lake build and a check of their declaration kind.
 
-The two proof receipts accept `lake-build`, `exact-target`,
-`unchanged-statement` and `frozen-inputs` with `proof_accepted = true`; the
-statement and definition receipts accept their `lake-build` and
-`declaration-kind` checks. The focused proof tasks are
-`5ab726c4-0815-4cc6-a89d-32c425e58b32` and
-`3136d318-c821-433b-852e-00149bc6b0db`; both are done.
-
-The ten files of these units, each under
+The ten files of these modules, each under
 `Langlands/Representation/IntegerLattice/`, have these fingerprints in the
-frozen bundles, Library `d2fd0b68` and the workspace:
+files as first checked and at Library `d2fd0b68`:
 
 | Stem | Lean SHA256 | Markdown SHA256 |
 | --- | --- | --- |
@@ -533,8 +482,8 @@ frozen bundles, Library `d2fd0b68` and the workspace:
 | `GeneralizedWeightPolynomialComparisonStatement` | `e12695dc2a977fcac3a8c0e170473ed93defbd6740ad0601f6fbf83861ba50cf` | `b1217c3241af3f154e0caf7ef14ce464ae32cf20a1140ea674c7dcde2ccd7abb` |
 | `GeneralizedWeightPolynomialComparisonProof` | `2442e41c75f308f434b5d5088a3d2fe1aa9e88140f3cd566203d4a7f1be5409a` | `ad4f2ef61bfc2df1ebed21b032cacaed48ab43968bba9cc6643c537fb9c661af` |
 
-The following frozen actual-block proof-pair fingerprints agree with both
-Library `d2fd0b68` and the workspace. Each stem is under
+The following actual-block proof-pair fingerprints, as first checked, agree
+with Library `d2fd0b68`. Each stem is under
 `Langlands/Representation/IntegerLattice/` and has the indicated `.lean` and
 `.md` suffixes.
 
@@ -546,17 +495,14 @@ Library `d2fd0b68` and the workspace. Each stem is under
 | `GeneralizedWeightGlobalBasisProof` | `1448bbe9797f2ea566712a80a9995a79cbc5559bff49a49a41bd7f516f7724d1` | `fd82f12cd4f43e88c3b5b7440a3a25336e4339757ec45cf2e91ba1bb03f9171d` |
 | `GeneralizedWeightProductProof` | `30d11cca1c1ceb49d2e751a4e0fe6ee3eb480e9073dc3ff5e957c4a655c24295` | `d3c638fba39cbe9eb2ab4d2265fe4175c53f2128e2b4345965bbd461de7e433d` |
 
-Recovery compilation `53061516-348e-41b5-9e20-9ea0f433ae95`, made for the
-1 November audit, successfully checked all five actual-block proof modules with
-zero errors or warnings. Product declaration
-inspection retained universe `u` and only `propext`, `Classical.choice` and
-`Quot.sound`. This development check supplements the independent official
-receipts; its own `proof_accepted` field is false. No additional compilation
-or semantic acceptance follows from this documentation update.
+A separate compilation, made for the 1 November audit, successfully checked
+all five actual-block proof modules with zero errors or warnings. Product
+declaration inspection retained universe `u` and only `propext`,
+`Classical.choice` and `Quot.sound`.
 
 The three families open at Library `1fb97c8e` have the actual-block proofs
 recorded above. The three source-route comparisons left as deductions at
 Library `61bb004f` now have the occurring-character and polynomial-comparison
 proofs. Every row of the source-assertion ledger therefore cites a published
-target. This note records that mapping; it declares neither Appendix C.III
-completion nor parent completion.
+target. This note records that mapping; it does not declare Appendix C.III
+complete.

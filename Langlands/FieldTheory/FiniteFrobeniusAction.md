@@ -1,7 +1,5 @@
 # A finite Galois action with prescribed Frobenius
 
-Author: Worker 187.
-
 Let `k : Type u` be a finite field and let `θ` be a finite-order
 element of any group in universe `v`. `FiniteFrobeniusAction k θ`
 records an extension `K : Type u`, its field and `k`-algebra

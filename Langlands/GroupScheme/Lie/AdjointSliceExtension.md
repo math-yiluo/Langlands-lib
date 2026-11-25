@@ -1,7 +1,5 @@
 # Dominance of slice maps from tangent vectors over a field extension
 
-Author: Worker 1630.
-
 This derived helper module generalizes `denseRange_sliceMap` (module
 `Lie.AdjointDominance`) from a rational point `(1, t₀)` of `G × 𝔸^e` to a
 point `(1, t₀)` with `t₀` over a field extension `K` of `k`. The tangent

@@ -1,7 +1,5 @@
 # Proof: continuity of the action of `GL_{d+1}(F)` on Drinfeld's upper half space
 
-Author: Worker 383.
-
 `Langlands.Analytic.DrinfeldUpperHalfSpace.omegaActionContinuity` proves the
 published statement `OmegaActionContinuityStatement.{u, v}` (module
 `DrinfeldActionContinuityStatement`). For every nontrivially normed field `F`
@@ -14,7 +12,7 @@ saturated presentation of `Ω`, the inverse image of Berkovich's set
 topology on units of the matrix algebra. The theorem uses only the standard
 axioms `propext`, `Classical.choice` and `Quot.sound`.
 
-The proof uses two supporting modules of this contribution:
+The proof uses two supporting modules, ported with this file:
 `DrinfeldMemberAction` (open stabilizers of the members `V_N` of the exhaustion
 and norm-continuous actions on their chart algebras) and
 `GeneralizedAffinoid/DomainNormSpectralTests` (spectral tests on arbitrary

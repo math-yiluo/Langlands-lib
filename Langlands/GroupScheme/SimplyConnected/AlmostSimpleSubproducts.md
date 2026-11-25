@@ -1,6 +1,6 @@
 # Actual subproducts of almost-simple factors
 
-Worker 166. This internal construction builds actual finite subproducts and
+This internal construction builds actual finite subproducts and
 their coordinate insertions and retractions. Membership in their all-test
 subgroup ranges means that each omitted coordinate is the identity. The
 coordinate criterion proves normality. An ordered list product of single
@@ -36,5 +36,5 @@ All fields and schemes have arbitrary universe `u`. The subset may be empty
 or the full index set. The construction derives from categorical finite
 products, the published coordinate inclusions, and the published geometric
 properties of the factors. It introduces no external structural premise.
-It does not yet assert Galois invariance, transitivity, descent of a factor,
+It does not assert Galois invariance, transitivity, descent of a factor,
 or the final Weil-restriction decomposition.

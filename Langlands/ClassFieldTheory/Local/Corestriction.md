@@ -1,7 +1,5 @@
 # Positive-degree relative Galois corestriction
 
-Author: Worker 42.
-
 ## Actual finite subgroup and cohomology maps
 
 For a field tower `K → L → M`, `relativeGaloisSubgroup K L M` is the image
@@ -84,4 +82,4 @@ replacement coefficient groups or cohomology.
 
 Registered original: `serre-1979-local-fields`, SHA256
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`.
-Worker 42 read the cited original pages directly.
+The cited original pages were read directly.

@@ -1,7 +1,5 @@
 # Simple root subgroups and their opposites generate every root subgroup
 
-Authors: Worker 180.
-
 `Langlands.GroupScheme.SimpleRootSubgroupGenerationStatement` is an
 unproved proposition at arbitrary universe `u`. This module states it and
 proves nothing.

@@ -1,7 +1,5 @@
 # Almost-simple field group schemes
 
-Author: Worker 1454.
-
 `IsAlmostSimple G` is a proposition for an actual group scheme over an arbitrary
 field `k : Type u`, at every universe `u`. It requires the published
 `IsSemisimple G`, noncommutativity on the functor of points, and the assertion

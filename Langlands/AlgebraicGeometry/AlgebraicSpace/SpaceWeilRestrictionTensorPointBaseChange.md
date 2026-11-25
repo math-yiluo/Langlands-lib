@@ -1,6 +1,6 @@
 # Cartesian base change on tensor Weil points
 
-This internal supporting unit for Conrad's Proposition 5.14 compares the
+This internal supporting module for Conrad's Proposition 5.14 compares the
 published cartesian space isomorphism with the original-coefficient tensor
 point equivalence. It retains the algebraicity hypothesis and both original
 coefficient maps. It proves no representability or adelic endpoint assertion.

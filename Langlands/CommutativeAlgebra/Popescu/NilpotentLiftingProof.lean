@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.CommutativeAlgebra.Popescu.NilpotentLiftingStatement
 import Langlands.CommutativeAlgebra.Popescu.StandardSmoothRetractStatement
 import Langlands.CommutativeAlgebra.Popescu.StandardSmoothRetractProof

@@ -54,6 +54,5 @@ irreducibility hypothesis. The proof retains arbitrary `uF`, includes
 exact-stabilizer character-existence assertion and the rest of Harris's
 Lemma 4.7 are separate statements.
 
-Worker 34 authored the coordinate proof and the arithmetic assembly;
-Worker 60 authored the exact-stabilizer and Mackey bridge. Reuse of the
+Reuse of the
 independently published cyclic tower theorem is by its Lean name.

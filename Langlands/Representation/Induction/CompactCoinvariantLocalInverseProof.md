@@ -1,6 +1,6 @@
 # The normalized local-section map into compact-induction coinvariants
 
-Worker 270 proves the published
+This module proves the published
 `Langlands.Induction.CompactCoinvariantLocalInverseExists.{uG,uV}` from
 [`CompactCoinvariantLocalInverseStatement`](CompactCoinvariantLocalInverseStatement.md)
 as `Langlands.Induction.compactCoinvariantLocalInverseExists`. The proof
@@ -16,8 +16,7 @@ theorem compactCoinvariantLocalInverseExists :
 ```
 
 The theorem's type is the published proposition. Its universes `uG` and `uV`
-are independent. Exact declaration inspection in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` reports only the axioms `propext`,
+are independent. Exact declaration inspection reports only the axioms `propext`,
 `Classical.choice`, and `Quot.sound`.
 
 The final theorem introduces the full telescope and applies the private

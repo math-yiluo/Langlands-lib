@@ -1,7 +1,5 @@
 # Actual Jordan–Hölder factor matching from matching graded pieces
 
-Author: Worker 250. Coauthors: Worker 242, who proposed this mathematical
-interface, and Worker 34, who prepared the focused statement contract.
 Provenance: internal derived module-theoretic content (see below).
 
 The proposition definition `Langlands.GradedJordanHolderRefinementStatement`
@@ -45,8 +43,7 @@ pairs every graded piece of `f` with exactly one graded piece of `g`.
 
 Only the sole import, `Langlands.Representation.Filtration.ObjectDefinitions`,
 is used. `ObjectRepFiltration`, `gradedRepresentation` and
-`HaveSameJordanHolderFactors` are used unchanged, and no existing pair is
-modified.
+`HaveSameJordanHolderFactors` are used unchanged.
 
 ## Scope of the quantifiers
 
@@ -80,10 +77,11 @@ both filtrations. This is exactly the finiteness that a refinement of `f` and
 assumption would add nothing to it. Without the matching hypothesis there
 would be no finiteness at all.
 
-## Intended later proof, not proved here
+## Plan of the proof
 
-The following plan is recorded for the separate proof task. It is not
-evidence for the statement.
+The proof `gradedJordanHolderRefinement` in
+[GradedRefinementProof](GradedRefinementProof.md) follows this plan. The plan
+is not evidence for the statement.
 
 For each `i`, take the two series supplied by the hypothesis. Lift the series
 of `f.gradedRepresentation i` through the subobject correspondence for the
@@ -97,21 +95,21 @@ the concatenated factors comes from two ingredients: `e` permutes the blocks,
 and the per-index permutations given by the hypothesis permute the factors
 within each block.
 
-This construction differs from supplied-series comparison, the
-Jordan–Hölder uniqueness clause of the separate task
-`f20dd2de-7590-499c-9d43-feadea1982fb`. That clause compares two arbitrary
+This construction differs from supplied-series comparison, the Jordan–Hölder
+uniqueness clause of the separate `JordanHolderSeriesStatement`
+(`Filtration/JordanHolderStatement`). That clause compares two arbitrary
 composition series of one representation, which needs the Schreier or
 Jordan–Hölder argument. Here each graded piece is refined using a series
 supplied by the hypothesis, and the matching of each pair is already given.
 So the reconstruction only lifts and concatenates; it never compares two
-different series of one representation. A later proof may still import
-verified helpers from that task, such as transport of a series along an
+different series of one representation. A proof may still import
+verified helpers for that statement, such as transport of a series along an
 equivalence. This statement does not depend on them.
 
 ## Why the filtrations are not assumed simple
 
-The intended consumer is the adjacent-swap step in task
-`0ae6352d-841c-4f54-a8e2-875be492061b`. There, exactness of induction turns a
+The intended consumer is the adjacent block-swap step of the association of
+cuspidal induction factors (`CuspidalSupport/AssociationReduction`). There, exactness of induction turns a
 composition series of a two-block induced representation into a filtration
 of a larger induced representation, and that filtration's graded pieces are
 inductions of irreducible representations, which need not be irreducible.
@@ -128,7 +126,7 @@ Bernstein and Zelevinsky, *Induced representations of reductive p-adic groups
 I*, Ann. Sci. ENS (4) 10 (1977), §§2.16(2)–2.17, printed page 450 / PDF
 page 11. Source ID: `bernstein-zelevinsky-1977-induced-i`; original PDF
 SHA-256: `8424600228ab72c5937e45edceefcae410a2a0b8f5ebf282185691542aa89092`.
-Worker 250 read PDF pages 4 and 7–11 of the registered original on
+PDF pages 4 and 7–11 of the registered original were read on
 2026-10-22. Those pages contain §1.2 (JH and JH°), Proposition 2.3, the
 statements of Theorems 2.8–2.9 and §§2.14–2.17.
 
@@ -146,8 +144,8 @@ representation of `L` to a filtration of the induced representation of `G`
 whose graded pieces need not be simple. Equality of JH° for the two
 representations of `G` then follows from JH°-matching of the graded pieces.
 The chaining along Lemma 2.17 uses transitivity of factor matching. That is a
-different clause, owned by the separate task above, and is not part of this
-statement.
+different clause of the separate `JordanHolderSeriesStatement` above, and is
+not part of this statement.
 
 BZ77 does not state this principle separately, and the proposition is not a
 verbatim statement from the source. BZ77 works with smooth (algebraic) complex

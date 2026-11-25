@@ -1,7 +1,5 @@
 # Harris's levels `K(N, m)` in the actual CM tower, with constant coefficients
 
-Author: Worker 19.
-
 This module puts the levels `K_p × K^p` of `HarrisPrimeAdelicLevels` into the
 actual geometric CM scheme tower of the unitary data `D`. Harris's levels
 `K(N, m) = K(N)_p × K(m)^p` are the special case `K_p = K(N)_p`. It also

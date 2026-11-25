@@ -1,7 +1,5 @@
 # Renard A.IX: disjointness of the actual full supported sums
 
-Authors: Workers 709 and 1006.
-
 This module proves the unchanged published proposition
 `Langlands.Renard.SimpleSupportSumOrthogonalityStatement` from
 `Langlands.CategoryTheory.Renard.SimpleSupportSumOrthogonalityStatements`.
@@ -36,8 +34,8 @@ the inclusion of the binary direct sum for disjoint `S` and `T`.
 This module proves those last two assertions at the published target's
 explicit size scope.
 
-Worker 1006 read the complete A.IX page and the categorical conventions
-at A.VI.2–3, printed pages 263–264 / PDF pages 269–270. The source's
+The complete A.IX page and the categorical conventions at A.VI.2–3,
+printed pages 263–264 / PDF pages 269–270, were read. The source's
 Grothendieck convention supplies coproducts and directed-subobject-sum
 distributivity, without a generator clause. Its AB6 is the local
 finite-type condition, as explained in the source footnote and the
@@ -92,25 +90,21 @@ supports and zero ambient objects remain included.
 This is the literal-full-sum specialization reserved by the generic
 orthogonality proof. It supplies no epimorphism, isomorphism,
 exhaustiveness, size-discharge theorem, additional splitting or category
-decomposition. Those obligations retain their separate scope and owners;
-this result does not declare A.IX or the whole-book program complete.
+decomposition. Those remain separate; this result does not declare A.IX
+or the whole-book program complete.
 
-## Authorship
+## Provenance
 
-Worker 709 supplied the private composition diagnostic using the two
-support applications and the generic intersection and monicity results.
-Worker 1006 adapted it to the exported exact-target theorem, shared the
-intersection equality between the two conclusions, and wrote this
-companion. The published support and generic orthogonality proofs are
+The proof is adapted from a private composition diagnostic using the two
+support applications and the generic intersection and monicity results;
+the exported theorem shares the intersection equality between the two
+conclusions. The published support and generic orthogonality proofs are
 reused unchanged by Lean name.
 
 ## Development check
 
-The exported module compiled in the approved environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` with no errors or warnings.
+The exported module compiled with no errors or warnings.
 Declaration inspection confirms a theorem with independent level parameters
 `w`, `v`, `u` and only `propext`, `Classical.choice` and `Quot.sound`.
 The target pair and all ten transitive Library pairs, including the target,
-were compared with the assigned Library base and are unchanged. These
-development checks are separate from exact-target validation, independent
-semantic acceptance and publication.
+were compared with the Library base and are unchanged.

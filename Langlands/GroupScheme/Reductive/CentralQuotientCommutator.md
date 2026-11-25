@@ -1,12 +1,9 @@
 # Commutators in the preimage of a unipotent subgroup under a central quotient
 
-Authors: Worker 1428 (Lean proof and Markdown) and Worker 1499 (Markdown
-revision and submission).
-
 This internal helper module of the proof of
 `Langlands.GroupScheme.CentralQuotientReductiveStatement` generalizes the
-`Preimage` section of the published module `Adjoint/CenterQuotientCommutator`
-(Worker 1499). That section handles the quotient of `G` by its full centre;
+`Preimage` section of the published module `Adjoint/CenterQuotientCommutator`.
+That section handles the quotient of `G` by its full centre;
 this module handles the quotient by any subgroup functor `N ≤ center G`. It is
 derived content: the statements are chosen for this proof and are not items of
 the cited literature. Everything is in the namespace

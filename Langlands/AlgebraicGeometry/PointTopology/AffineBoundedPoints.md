@@ -1,7 +1,5 @@
 # Bounded sets of algebra points
 
-Author: Worker 105.
-
 This module contains elementary lemmas used for the total disconnectedness part of
 Proposition 5.4 of Brian Conrad, *Weil and Grothendieck approaches to adelic points*
 (December 31, 2011), printed p.15 (source `conrad-2011-weil-grothendieck-adelic-points`,

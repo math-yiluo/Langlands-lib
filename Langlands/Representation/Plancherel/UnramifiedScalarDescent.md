@@ -1,7 +1,5 @@
 # Invariant rational scalars on finite character quotients
 
-Author: Worker 200.
-
 This derived construction presents a rational scalar fixed by a finite
 subgroup of actual complex unramified characters using an invariant regular
 numerator and an invariant nonzero regular denominator. Those two regular

@@ -51,10 +51,12 @@ variable (Q : Subgroup G) (x : X) (hfix : ∀ q : Q, (q : G) • x = x)
 def fixedStalkAction (F : ActionSheaf G X) : Action (ModuleCat ℂ) Q where
   V := (CompactSections.ordinary F.obj).stalk x
   ρ :=
-    { toFun q := Godement.stalkPull F.obj (q : G)⁻¹ x x (hfix q⁻¹)
+    { toFun q := End.of (Godement.stalkPull F.obj (q : G)⁻¹ x x (hfix q⁻¹))
       map_one' := by
+        apply End.ext
         simp
       map_mul' g h := by
+        apply End.ext
         change Godement.stalkPull F.obj ((g * h : Q) : G)⁻¹ x x _ =
           Godement.stalkPull F.obj (h : G)⁻¹ x x _ ≫
             Godement.stalkPull F.obj (g : G)⁻¹ x x _
@@ -82,7 +84,7 @@ def fixedStalkFunctor : ActionSheaf G X ⥤ Rep ℂ Q :=
 
 /-- The forward action on a stalk is literally the published inverse-labelled pullback. -/
 theorem fixedStalkAction_apply (F : ActionSheaf G X) (q : Q) :
-    (fixedStalkAction Q x hfix F).ρ q =
+    ((fixedStalkAction Q x hfix F).ρ q).asHom =
       Godement.stalkPull F.obj (q : G)⁻¹ x x (hfix q⁻¹) := rfl
 
 end Langlands.Sheaf.Renard.SectionActions

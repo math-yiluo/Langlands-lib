@@ -1,7 +1,5 @@
 # Section recovery from an actual finite affinoid realization
 
-Author: Worker 36.
-
 This module constructs a full bounded equivalence between a given actual
 affinoid presentation and the Banach section equalizer of finitely many
 original charts that form a full affinoid-domain cover of that presentation.
@@ -15,7 +13,7 @@ map following Lemma 1.2.12, printed pp.20–21 / PDF pp.17–18, and the
 recognition conditions and Proposition 1.2.13(ii) on printed p.21 / PDF p.18.
 Registered source `berkovich-1993-etale-cohomology`, SHA256
 `06b42aca1c8f237e607d2cf1f15a41fdc9718324a4dc9fd5bce66574254bb91c`.
-Those original pages were read for this unit; no source-specific errata
+Those original pages were read for this module; no source-specific errata
 file was found in the available project and Library locations.
 
 This is a derived extension of the existing original-parent recovery
@@ -112,7 +110,7 @@ valuations. The ambient space need not be Hausdorff; the parent chart gives
 the required subspace topology. Empty covers and zero or nonreduced
 algebras remain allowed.
 
-This unit proves section recovery from the stated full component data.
+This module proves section recovery from the stated full component data.
 It does not construct those data for every new recognized-chart domain,
 prove specialness or tensor admissibility of arbitrary finite covers,
 transfer all three recognition conditions to arbitrary new special subsets,

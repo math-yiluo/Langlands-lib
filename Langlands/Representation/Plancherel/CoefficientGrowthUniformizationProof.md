@@ -1,7 +1,5 @@
 # Uniform coefficient degrees from finite generation
 
-Author: Worker 1564.
-
 `Langlands.Plancherel.finiteLengthCoefficientGrowthUniformization` proves
 `FiniteLengthCoefficientGrowthUniformizationStatement.{uG,uV}`. For a
 topological group with compact-open cofinality, an admissible finite-length
@@ -45,4 +43,5 @@ This is an internal algebraic proof derived from published smooth duality and
 Mathlib module finiteness. It does not prove coefficientwise growth, does not
 supply compact-open cofinality for a particular rational-point group, and does
 not prove convergence or rational continuation of standard intertwining
-integrals. Those obligations of the unchanged host theorem remain open.
+integrals. Those are obligations of
+`ConditionalParabolicIntertwiningStatement`, not discharged here.

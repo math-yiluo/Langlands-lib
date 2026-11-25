@@ -1,7 +1,5 @@
 # Asymptotics of the stable pairing (abstract Theorem I.4.1)
 
-Author: Worker 249.
-
 This module proves the asymptotic formula of Casselman's canonical pairing in the
 abstract framework of `Langlands.Representation.Jacquet.StablePairingProof`. The
 source statement is J.-L. Waldspurger, *La formule de Plancherel pour les groupes

@@ -85,8 +85,8 @@ local notation "graph" => representedCMNormalGraph D C preservation composition
 def representedCMNormalPointFiberMap (x : (schemes R).obj V)
     (g : SmallCMResidualGroup D U V) :
     {z : (schemes R).obj V // projection R U V hVU z = projection R U V hVU x} :=
-  ⟨(Scheme.Hom.toLRSHom ((quotientAction R U V hVU).ρ g)).base x, by
-    change ((quotientAction R U V hVU).ρ g ≫ projection R U V hVU) x = _
+  ⟨(Scheme.Hom.toLRSHom ((quotientAction R U V hVU).ρ g).asHom).base x, by
+    change (((quotientAction R U V hVU).ρ g).asHom ≫ projection R U V hVU) x = _
     rw [representedCMNormalProjection_invariant]
     rfl⟩
 
@@ -97,7 +97,7 @@ local notation "pointFiberMap" => representedCMNormalPointFiberMap D C preservat
 @[simp] theorem representedCMNormalPointFiberMap_val
     (x : (schemes R).obj V) (g : SmallCMResidualGroup D U V) :
     (pointFiberMap R U V hVU x g).val =
-      (Scheme.Hom.toLRSHom ((quotientAction R U V hVU).ρ g)).base x := rfl
+      (Scheme.Hom.toLRSHom ((quotientAction R U V hVU).ρ g).asHom).base x := rfl
 
 /-- Same-fiber underlying scheme points differ by an original residual translate.
 This conclusion uses neither coarse rigidity nor etaleness. -/
@@ -107,7 +107,7 @@ theorem representedCMNormalPoint_exists_translate
     (x y : (schemes R).obj V)
     (hxy : projection R U V hVU x = projection R U V hVU y) :
     ∃ g : SmallCMResidualGroup D U V,
-      (Scheme.Hom.toLRSHom ((quotientAction R U V hVU).ρ g)).base x = y := by
+      (Scheme.Hom.toLRSHom ((quotientAction R U V hVU).ρ g).asHom).base x = y := by
   obtain ⟨z, hz₁, hz₂⟩ := Scheme.Pullback.exists_preimage_pullback
     (f := projection R U V hVU) (g := projection R U V hVU) x y hxy
   obtain ⟨w, hw⟩ := representedCMNormalKernelComparison_surjective D C preservation
@@ -140,10 +140,10 @@ theorem representedCMNormalPoint_exists_translate
       _ = x := hz₁
   refine ⟨g, ?_⟩
   calc
-    (Scheme.Hom.toLRSHom ((quotientAction R U V hVU).ρ g)).base x =
-        (Scheme.Hom.toLRSHom ((quotientAction R U V hVU).ρ g)).base t :=
+    (Scheme.Hom.toLRSHom ((quotientAction R U V hVU).ρ g).asHom).base x =
+        (Scheme.Hom.toLRSHom ((quotientAction R U V hVU).ρ g).asHom).base t :=
       congrArg
-        (fun s => (Scheme.Hom.toLRSHom ((quotientAction R U V hVU).ρ g)).base s) htx.symm
+        (fun s => (Scheme.Hom.toLRSHom ((quotientAction R U V hVU).ρ g).asHom).base s) htx.symm
     _ = (graph R U V hVU g ≫
         pullback.snd (projection R U V hVU) (projection R U V hVU)) t := by
       rw [representedCMNormalGraph_snd]
@@ -179,7 +179,7 @@ theorem representedCMNormalProjection_finite_preimage_singleton
   · rw [hy]
     exact Set.finite_empty
   · apply (Set.finite_range (fun g : SmallCMResidualGroup D U V =>
-      (Scheme.Hom.toLRSHom ((quotientAction R U V hVU).ρ g)).base x)).subset
+      (Scheme.Hom.toLRSHom ((quotientAction R U V hVU).ρ g).asHom).base x)).subset
     intro z hz
     have hpx : projection R U V hVU x = y := hx
     have hpz : projection R U V hVU z = y := hz
@@ -240,7 +240,7 @@ local notation "chosenPointFiberMap" => cmNormalPointFiberMap D C preservation
 @[simp] theorem cmNormalPointFiberMap_val
     (x : (chosenSchemes q).obj V) (g : SmallCMResidualGroup D U V) :
     (chosenPointFiberMap x g).val =
-      (Scheme.Hom.toLRSHom ((chosenAction q).ρ g)).base x := rfl
+      (Scheme.Hom.toLRSHom ((chosenAction q).ρ g).asHom).base x := rfl
 
 /-- Same-fiber points in the exact chosen tower are related by its original action. -/
 theorem cmNormalPoint_exists_translate
@@ -250,7 +250,7 @@ theorem cmNormalPoint_exists_translate
     (hxy : (chosenSchemes q).map (smallCMInclusion D hVU) x =
       (chosenSchemes q).map (smallCMInclusion D hVU) y) :
     ∃ g : SmallCMResidualGroup D U V,
-      (Scheme.Hom.toLRSHom ((chosenAction q).ρ g)).base x = y :=
+      (Scheme.Hom.toLRSHom ((chosenAction q).ρ g).asHom).base x = y :=
   representedCMNormalPoint_exists_translate D C preservation composition unitCoherence
     associativity comparison symmetry stability square universality dualityNaturality
     polarizationStability compatibility h htor

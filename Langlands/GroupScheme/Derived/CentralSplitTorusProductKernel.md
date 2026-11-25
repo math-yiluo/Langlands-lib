@@ -1,7 +1,5 @@
 # The full kernel of compatible derived and central split factors
 
-Author: Worker 1482.
-
 This internal auxiliary development concerns the actual multiplication from two
 compatible split factors to a split torus. It is derived from the Library's
 published full central-intersection finiteness theorem, without a further

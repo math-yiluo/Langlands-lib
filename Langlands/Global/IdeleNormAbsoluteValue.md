@@ -19,7 +19,7 @@ This is an internal derivation from published results. In particular, it uses
 `NormOneIdeleClass.exists_isCompact_fundamentalSet`, whose proof uses finiteness
 of the ideal class group and Dirichlet's unit theorem. That result concerns
 the multiplicative group alone and is independent of the general algebraic
-group compactness theorem sought by the parent task.
+group compactness theorem.
 
 The proof proceeds as follows.
 

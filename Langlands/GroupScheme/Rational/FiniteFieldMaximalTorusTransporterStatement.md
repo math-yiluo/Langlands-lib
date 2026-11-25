@@ -1,6 +1,6 @@
 # Conjugates of a maximal torus over a finite field lie in the torus envelope
 
-Worker 1387. This module states one proposition,
+This module states one proposition,
 `FiniteFieldMaximalTorusTransporterStatement.{u}`. It is not proved here.
 
 ## Statement

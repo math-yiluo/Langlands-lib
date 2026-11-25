@@ -1,7 +1,5 @@
 # Point derivations of a local ring and the dual cotangent space
 
-Author: Worker 254.
-
 Module `Langlands.CommutativeAlgebra.PointDerivationCotangent`. This is a
 helper for the proof of
 `Langlands.Scheme.FieldPointTangentLocalRegularityStatement`

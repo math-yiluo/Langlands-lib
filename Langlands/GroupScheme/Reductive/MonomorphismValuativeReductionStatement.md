@@ -1,7 +1,5 @@
 # The noetherian/DVR reduction for reductive group monomorphisms
 
-Worker 700.
-
 `Langlands.GroupScheme.ReductiveMonomorphismValuativeReductionStatement.{u}` is a
 statement-only proposition definition. It equates two restrictions of the published
 `ReductiveMonomorphismClosedImmersionStatement`: its case over discrete valuation

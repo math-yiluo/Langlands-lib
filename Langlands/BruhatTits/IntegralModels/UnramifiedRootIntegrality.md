@@ -1,6 +1,6 @@
 # Recovered integral root points and nonnegative restricted depth
 
-This internal supporting unit compares actual lower integral root points with
+This internal supporting module compares actual lower integral root points with
 the torus-then-field restricted depth in a supplied upper KP apartment. It
 composes the full point-fixer comparison with exact integral-model recovery;
 it does not construct the required models or prove the unconditional
@@ -52,4 +52,5 @@ The construction is at arbitrary universe `u`. It does not require a
 lower root-datum valuation, a lower apartment, maximality of `S`, Galois
 fixedness of `x`, or a neutral fixer-image equality. Actual model
 existence, nearby parabolic model comparisons and radical nonvanishing
-at value zero remain separate obligations.
+at value zero are not proved here; nearby parabolic comparisons of recovered
+fixed-point models are proved in `UnramifiedNearbyParabolicComparisons`.

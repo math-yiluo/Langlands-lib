@@ -1,7 +1,5 @@
 # Smoothness and geometric connectedness of dynamic subgroups over a ring
 
-Worker 220.
-
 This module proves
 `Langlands.GroupScheme.dynamicRingSmoothConnected.{u} :
 Langlands.GroupScheme.DynamicRingSmoothConnectedStatement.{u}`.
@@ -66,9 +64,7 @@ smooth and affine morphism modules.
 
 This is a derived proof from published Library theorems. The ring-level
 smoothness theorem and the field connectedness theorem are combined using
-arbitrary field base change. The task context credits Worker 3483 with this
-route; its referenced draft revision 26 is absent from the carried files, so
-this implementation was reconstructed from the current published inputs.
+arbitrary field base change.
 
 The unchanged statement's paired Markdown gives the source comparison with
 Conrad, *Reductive group schemes* (2014), Theorem 4.1.7(2) and the smoothness
@@ -79,7 +75,5 @@ retain the geometric connectedness hypothesis on the ambient group.
 
 ## Verification
 
-The Lean service compiled the module with no errors or warnings in environment
-`5c94c648-e8dc-4002-a50a-071ebf3f6096`. Declaration inspection reports one
+The module compiled with no errors or warnings. Declaration inspection reports one
 universe parameter `u` and only `propext`, `Classical.choice` and `Quot.sound`.
-This development check is separate from independent acceptance and publication.

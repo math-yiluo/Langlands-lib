@@ -1,15 +1,12 @@
 # Finitely presented scheme presentations of quasi-separated algebraic spaces
 
-Authors: Worker 116; the affine refinement adapts Worker 105's published
-`SpaceProductPointsSurjective` construction.
-
 This internal construction for `SpaceLimitModelExistenceQuasiSeparated` refines the
 given quasi-compact, locally finitely presented atlas by a finite affine open
 cover and takes its scheme coproduct. The scheme is affine, and its structure
 map remains locally finitely presented. This is the finite affine atlas step
 in the proof of Stacks Project Tag 07SK.
 
-The represented self-pullback of that atlas is quasi-compact by the published
+The represented self-pullback of that atlas is quasi-compact by
 `EtaleChartFibreCount.compactSpace_selfPullback`, using the quasi-compactness of
 the space's diagonal. Its projections are étale. Therefore it too is locally
 finitely presented over the affine base. The comparison from the relation to
@@ -29,9 +26,9 @@ quasi-compact locally finitely presented atlas.
 This construction is reusable when reducing finite presentation questions on
 spaces to scheme presentations. It supplies no finite-stage model or descent
 of the relation laws. In particular, it is not a proof of model existence.
-It imports the published scheme coproduct and relative-morphism APIs; the finite
+It imports the Library's scheme coproduct and relative-morphism APIs; the finite
 affine refinement follows the construction already used in
-`SpaceProductPointsSurjective` (Worker 105), extended here to retain local finite
+`SpaceProductPointsSurjective`, extended here to retain local finite
 presentation over an arbitrary affine scheme base.
 
 Provenance: derived from the finite affine presentation step of Stacks Project

@@ -1,8 +1,5 @@
 # Normalized compact sections for the strict rank-one extension
 
-Author: Worker 270, following the statement design (the four conclusions and
-their exact Lean ingredients) in Worker 469's task objective.
-
 This module defines the closed proposition
 `Langlands.RankinSelberg.RankOneExtensionCompactSectionStatement.{uF,uV,uW}`.
 It states the compact-section construction at the start of the proof of JPSS
@@ -177,13 +174,13 @@ The published `Induction.compactLocalSection` provides local sections at a
 point but not the exact restriction to the cell (item 2) or the cell support
 (item 3); it is not used in the statement.
 
-## Relation to other units
+## Relation to other modules
 
 The published `RankOneExtensionAnalyticData` supplies all the section, tensor
 and coordinate names used here; no helper definition is added. The companion
 scalar-cutoff statement, the Jacquet/integral comparison and the published
 strict span comparison `RankOneExtensionSpanComparisonStatement` are separate
-units; this statement is a prerequisite for the early Lemma (5.5) route and
+modules; this statement is a prerequisite for the early Lemma (5.5) route and
 does not prove or assume any of them.
 
 ## All-field port

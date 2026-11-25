@@ -1,7 +1,5 @@
 # Finite admissible tensor factorization for standard p-adic Levis
 
-Author: Worker 278.
-
 `Langlands.CuspidalSupport.PadicLeviAdmissibleFactorizationStatement.{uF,uW}`
 is a closed proposition definition. It is a derived theorem target. This pair
 does not prove the factorization, and it assumes no two-factor theorem. The
@@ -60,7 +58,7 @@ factors lie in the same carrier universe `uW` as `σ`. This pair is the
 same-universe finite factorization. Factors in an independently prescribed
 smaller universe belong to the parent
 `Langlands.CuspidalSupport.PadicLeviCuspidalFactorizationStatement` and to the
-small-realization statement and proof task (`baca19e0-4b51-4368-9b1a-817f6d583c5f`).
+small-realization statement and its proof (`Langlands.Representation.Smooth.SmallRealizationProof`).
 Positivity of `n` excludes the empty block shape. Indeed, the block sizes are
 positive and sum to `n`, so `B.length ≥ 1`. The one-block case
 `B.length = 1` is included.
@@ -111,11 +109,10 @@ printed theorem. It is obtained by finite iteration of Flath's two-factor
 Theorem 1(1.2) along the actual product decomposition of BZ77 section 2.2.
 The two-factor input is the published
 `Langlands.AdmissibleProductFactorizationStatement.{uG₁,uG₂,uV}` in
-`Langlands.Representation.Smooth.Factorization.TwoFactorStatement` (author
-Worker 44). It is proved by the published theorem
+`Langlands.Representation.Smooth.Factorization.TwoFactorStatement`. It is
+proved by the published theorem
 `Langlands.admissibleProductFactorization` (module
-`Langlands.Representation.Smooth.Factorization.TwoFactorExistenceProof`, task
-`ea7e032e-0818-4425-9fc4-6f30126f4fc4`). Its factors lie in `ModuleCat.{uV} ℂ`
+`Langlands.Representation.Smooth.Factorization.TwoFactorExistenceProof`). Its factors lie in `ModuleCat.{uV} ℂ`
 with `uV` the source carrier universe. This is what keeps every iterated factor
 in `uW`.
 
@@ -196,13 +193,11 @@ The only import is the published
 `SmoothRep.IsIrreducible`, `SmoothRep.IsAdmissible`, `BlockShape.Levi`,
 `PadicField` and `PadicField.TopologicalData`. None of these files is
 changed. The environment is Lean 4.34.0, Mathlib commit
-`5ed2965256430c3649e86755f9576b54eca72435`, environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`.
+`5ed2965256430c3649e86755f9576b54eca72435`.
 
 The immediate consumer is `PadicLeviCuspidalFactorizationStatement`. Its
 published proof `Langlands.CuspidalSupport.padicLeviCuspidalFactorization`
-(module `LeviTensorFactorizationProof`, task
-`334e2222-c3e9-47e3-b05c-2afe12f49e94`) applies this theorem and derives
+(module `LeviTensorFactorizationProof`) applies this theorem and derives
 factorwise supercuspidality and independently smaller carriers separately.
 Neither is asserted here. Compilation and complete declaration inspection show
 only that this is a well-formed closed proposition with level parameters `uF`,

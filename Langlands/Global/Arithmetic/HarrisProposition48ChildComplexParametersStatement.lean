@@ -34,7 +34,7 @@ end Langlands.Automorphic.Unramified
 namespace Langlands.Global.Harris
 
 open Langlands.Automorphic Langlands.Automorphic.Unramified
-open Langlands.ClassField.Global.RelativeWeilGroup (HasUnitaryCentralCharacter)
+open Langlands.ClassFieldTheory.Global.RelativeWeilGroup (HasUnitaryCentralCharacter)
 
 /-- Recover the induced complex-place parameters of a supplied weak monomial
 induction in the one-place induction. The child may have the parent's parity.

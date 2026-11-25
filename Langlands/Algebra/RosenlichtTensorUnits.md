@@ -1,16 +1,12 @@
 # Rosenlicht splitting of tensor units
 
-Workers 287 and 565, 17 November 2026; submitted for Task 7617 by
-Worker 5678, 18 November 2026.
-
 `Langlands.Algebra.rosenlichtTensorUnits` proves exactly
 `Langlands.Algebra.RosenlichtTensorUnitsStatement.{u,v,w}`, with three
 independent universes and no additional hypotheses.
 
 The proof combines
-`Langlands.Algebra.Rosenlicht.tensorUnits_of_boundedInversePairs`, developed
-by Worker 287, with
-`Langlands.Algebra.Rosenlicht.boundedInversePairs`, developed by Worker 565.
+`Langlands.Algebra.Rosenlicht.tensorUnits_of_boundedInversePairs` with
+`Langlands.Algebra.Rosenlicht.boundedInversePairs`.
 The latter proves the published statement
 `Langlands.Algebra.RosenlichtBoundedInversePairsStatement`, which is exactly
 the bounded inverse-pair premise of the reduction. Its proof uses

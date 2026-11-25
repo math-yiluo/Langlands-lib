@@ -1,6 +1,6 @@
 import Langlands.ClassFieldTheory.Local.PrimeRamifiedDifferentStatement
 import Langlands.LocalFactor.Ramification.UniformizerCriterionProof
-import Langlands.ClassFieldTheory.Local.NYLL.RelativeIntegerStructureProof
+import Langlands.ClassFieldTheory.Local.UniverseZero.RelativeIntegerStructureProof
 import Langlands.ClassFieldTheory.Local.TotallyRamifiedIntegerMonogeneityProof
 import Langlands.ClassFieldTheory.Local.PrimeBreakUnramifiedBaseChangeSupport
 import Mathlib.RingTheory.Adjoin.PowerBasis
@@ -154,8 +154,8 @@ theorem different_eq_span_prod_automorphisms_of_integer_adjoin
   have := PadicField.TopologicalData.relativeIntegerFieldTower (E := L) T
   have := PadicField.TopologicalData.relativeIntegerTower T S
   have := PadicField.TopologicalData.relativeIntegerAlgebra_isTorsionFree T S
-  have := (NYLL.relativeIntegerStructure p F L T S).1
-  have := (NYLL.relativeIntegerStructure p F L T S).2
+  have := (UniverseZero.relativeIntegerStructure p F L T S).1
+  have := (UniverseZero.relativeIntegerStructure p F L T S).2
   intro x hx
   have hfield := adjoin_fractionField_eq_top_of_integer_adjoin
     (K := F.Carrier) (E := L.Carrier) x hx

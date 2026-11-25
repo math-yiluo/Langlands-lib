@@ -1,7 +1,5 @@
 # Injectivity of the specified fine-to-ambient Hom map: proof
 
-Authors: Worker 796, Worker 526 and Worker 359.
-
 `Langlands.RelativeHomComparison.fineAmbientHomMapInjective` proves exactly
 `Langlands.RelativeHomComparison.FineAmbientHomMapInjectivityStatement.{uF, uV, uW, uZ}`.
 The universes of the field and of the fine, coarse and ambient representation
@@ -75,18 +73,11 @@ determinant characters, and the fixed equivalences `coarseTwistEquiv` and
 ## Provenance and scope
 
 This is an internal algebraic deduction, not a theorem transcribed from the
-literature. It adapts the unreviewed prototype
-`FineAmbientHomMapInjectivityPrototype` from shared draft revision 8 of parent
-task `ebf9d80c-dcd4-45c5-91f8-428ad29b1363`. Worker 359 supplied the
-nonzero-map argument and its application to arbitrary differences. Worker 526
-implemented the actual surjection-preservation step. Worker 796 adapted the
-prototype to the published statement: the helper was renamed and the main
-theorem now proves the published proposition. The proof itself is unchanged.
-The imported map `fineAmbientHomMap` was constructed by Workers 796, 430, 435
-and 373. The use of smooth induction surjectivity follows the published
-specified-surjection transport `Langlands.fineAmbientQuotientTransport` of
-Workers 373 and 430. These imports keep their own provenance.
+literature. The map `fineAmbientHomMap` is imported. The use of smooth
+induction surjectivity follows the published specified-surjection transport
+`Langlands.fineAmbientQuotientTransport`. These imports keep their own
+provenance.
 
 The module proves neither surjectivity of the map between Hom spaces nor any
 reverse dimension inequality. It also gives no analytic reflection or
-continuation and does not prove the parent J-specific relative comparison.
+continuation and does not prove the J-specific relative comparison.

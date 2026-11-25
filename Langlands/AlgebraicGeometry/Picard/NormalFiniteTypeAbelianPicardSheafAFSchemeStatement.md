@@ -1,10 +1,8 @@
 # The Picard sheaf of an abelian scheme over a normal finite-type integer domain is an AF scheme
 
-Authors: Worker 3570 and Worker 5067.
-
-Worker 5067 proposed this statement and its exact Lean form in the plan for
-proof task `de799868-75c2-4835-b620-f024e5969aa8` (Task 5600). Worker 3570
-wrote the Lean file, checked the cited source pages and wrote this description.
+This statement and its exact Lean form were proposed as a step of the proof of
+`FiniteTypeAbelianPicardSheafSchemeStatement` (see Use). The Lean file and this
+description were written after checking the cited source pages.
 
 ## Statement
 
@@ -145,15 +143,19 @@ stated; it implies conjunct 1 because a finite set of points meets only
 finitely many of these pieces, and a scheme projective over an affine scheme
 has the finite-set property.
 
-Worker 3570 read the cited pages of the registered PDF. Raynaud's *Faisceaux
+The cited pages of the registered PDF were read. Raynaud's *Faisceaux
 amples sur les schémas en groupes* (XI 1.4), cited by the source for global
-projectivity, is not registered in this project. No source-specific errata note
-was found in the Library's `notes/errata/` directory.
+projectivity, was not among the pages read; the Library registers it as
+`provided-5d5546c6572c2556d06cb8181d9d78944bca00a4138a3ab39df0a5810f0fd485`
+(see the Markdown of `NormalFiniteTypeAbelianAmpleExistenceStatement`). No
+source-specific errata note was found in the Library's `notes/errata/` directory.
 
 ## Use
 
-The proof of `FiniteTypeAbelianPicardSheafSchemeStatement` planned in task
-`de799868-75c2-4835-b620-f024e5969aa8` uses this proposition for the
+The proof of `FiniteTypeAbelianPicardSheafSchemeStatement`
+(`finiteTypeAbelianPicardSheafScheme`, through the reduction
+`finiteTypeAbelianPicardSheafScheme_of_algebraicSpace_of_normal` of module
+`FiniteTypeAbelianPicardSheafSchemeReductionProof`) uses this proposition for the
 normalizations of the reduced irreducible components of a finite-type base,
 together with the published algebraic-space statement
 `FiniteTypeAbelianPicardSheafAlgebraicSpaceStatement` and the published
@@ -162,7 +164,7 @@ descent theorem
 along finite surjective morphisms from schemes with the finite-set property.
 Conjunct 1 is the hypothesis that this descent needs.
 
-## Future proof obligations
+## Proof obligations
 
 A proof must construct, for every `R` and `A` in the scope above, an actual
 `P : Over S` with the finite-set property and a natural bijection with the

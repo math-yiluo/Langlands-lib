@@ -1,8 +1,5 @@
 # P-adic block subgroup topologies
 
-Author: Worker 6.
-Shared Hausdorff-certificate extraction: Worker 26.
-
 For every prime `p`, every algebraic `PadicField p`, every supplied
 `TopologicalData`, and every ordered positive `BlockShape n`, this module
 provides explicit topologies and proofs of the topological-group, Hausdorff
@@ -32,13 +29,9 @@ absolute-value normalizations.
 This is internal specialization of `Blocks` and `Padic`, with their precise
 matrix and topology conventions and source provenance. The paired `Blocks.md`
 describes the intrinsic matrix proofs. The paired `Padic.md` identifies the
-accepted local-field construction dependencies. The core `Basic`/`Padic`
-artifact `cd1132db-8cab-4cab-bd28-0c6164b44dbe` version 1 is independently
-accepted and published at commit `843c574c920aa9926ab56adf662c74b3cd4ed0e1`,
-effective snapshot `42106411fcd47bace4b6e12d64b234b7564303775ee7b633bd3341e60208dd4b`.
-Final review receipt `7c88f2621a5047a9a85fe9ef375a8ed0` confirms the unchanged
-reviewed pairs, their current dependency closure and successful final Lake validation.
-Compact-open bases still require the separately stated intrinsic GL
+published local-field construction dependencies. The core `Basic`/`Padic`
+pairs were checked for their dependency closure, and they build with Lake.
+Compact-open bases require the separately stated intrinsic GL
 nonarchimedean prerequisite.
 
 The private `fieldT2` implementation moves to the shared

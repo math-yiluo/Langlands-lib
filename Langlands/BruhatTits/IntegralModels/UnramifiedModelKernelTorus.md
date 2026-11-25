@@ -7,13 +7,13 @@ Module `Langlands.BruhatTits.IntegralModels.UnramifiedModelKernelTorus`.
 This module specializes the torus argument of
 `Langlands.GroupScheme.IntegralModel.SpecialFibreKernelTorus` to the setting of
 Kaletha–Prasad, *Bruhat–Tits theory: a new approach* (2023), Proposition 8.4.15
-(printed pp. 306–307, PDF pp. 337–338). The host statement is
-`UnramifiedModelKernelStatement` (Task 5901). Its unipotence part is proved here
+(printed pp. 306–307, PDF pp. 337–338). The statement this module serves is
+`UnramifiedModelKernelStatement`. Its unipotence part is proved here
 under the assumption that the kernel is smooth and connected. The remaining
 smoothness and connectedness are packaged as an internal reduction target.
 
-The statements and their arrangement are internal design by Worker 4783 for
-Task 6203, which Worker 282 and Worker 4783 share. The definition
+The statements and their arrangement are internal design for the proof of
+`UnramifiedModelKernelStatement`. The definition
 `UnramifiedCompatibleModelKernelSmoothConnectedStatement` is an internal
 reduction target, not a statement from the literature. This module does not
 prove `UnramifiedModelKernelStatement`.
@@ -59,8 +59,7 @@ map `C.apartmentMap` to the reduced building, and the pointwise fixers
   split torus `C.i`, using `C.isConnectedReductive`.
 * `UnramifiedCompatibleModelKernelSmoothConnectedStatement`: the part of the
   reduction target `UnramifiedCompatibleModelKernelStatement` (module
-  `Langlands.BruhatTits.IntegralModels.UnramifiedModelKernelReduction`, approved
-  candidate `3c8c7c2b`, not yet integrated) that
+  `Langlands.BruhatTits.IntegralModels.UnramifiedModelKernelReduction`) that
   asserts only that `kernel ψ.specialFibreMap` is smooth and connected. Its
   hypotheses are exactly those of `UnramifiedCompatibleModelKernelStatement`:
   * `G` is an affine group over `F`, with base change `G_K` to `K`;
@@ -82,8 +81,9 @@ map `C.apartmentMap` to the reduced building, and the pointwise fixers
   `UnramifiedQuasiSplitStatement` and `UnramifiedZeroPointsIndependenceStatement`,
   the smooth-connected statement implies `UnramifiedModelKernelStatement`. This
   composes the previous result with
-  `unramifiedModelKernel_of_compatible` (same module). All three hypotheses are unproved
-  statements, so this theorem does not prove the host statement.
+  `unramifiedModelKernel_of_compatible` (same module). This theorem alone does not prove
+  `UnramifiedModelKernelStatement`; `unramifiedModelKernel` (module
+  `UnramifiedModelKernelProof`) proves it by supplying the three hypotheses.
 
 ## Implementation notes
 

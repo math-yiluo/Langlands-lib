@@ -350,15 +350,15 @@ variable {G : Type u} [Group G]
 def splittingProjection (T : Action S.Etale G) {t : S.Etale} (ht : IsTerminal t) (σ : t ⟶ T.V)
     (g : G) (F : Sheaf S.smallEtaleTopology (ModuleCat.{u} R)) :
     (productSheaf S.smallEtaleTopology T.V).obj F ⟶ F :=
-  coverPullback S.smallEtaleTopology (σ ≫ T.ρ g) F ≫ (productSheafTerminalIso R ht).hom.app F
+  coverPullback S.smallEtaleTopology (σ ≫ (T.ρ g).asHom) F ≫ (productSheafTerminalIso R ht).hom.app F
 
 /-- On sections over `U`, the graph projection restricts along the graph of `σ ≫ T.ρ g`. -/
 theorem splittingProjection_hom_app (T : Action S.Etale G) {t : S.Etale} (ht : IsTerminal t)
     (σ : t ⟶ T.V) (g : G) (F : Sheaf S.smallEtaleTopology (ModuleCat.{u} R))
     (U : S.Etaleᵒᵖ) :
     (splittingProjection R T ht σ g F).hom.app U =
-      F.obj.map (prod.lift (ht.from U.unop ≫ σ ≫ T.ρ g) (𝟙 U.unop)).op := by
-  change F.obj.map (prod.map (σ ≫ T.ρ g) (𝟙 U.unop)).op ≫
+      F.obj.map (prod.lift (ht.from U.unop ≫ σ ≫ (T.ρ g).asHom) (𝟙 U.unop)).op := by
+  change F.obj.map (prod.map (σ ≫ (T.ρ g).asHom) (𝟙 U.unop)).op ≫
       F.obj.map (prod.lift (ht.from U.unop) (𝟙 U.unop)).op = _
   rw [← F.obj.map_comp, ← op_comp, prod.lift_map, Category.comp_id]
 
@@ -419,9 +419,9 @@ theorem isIso_inverseImageProductSheafMap_of_section [Finite G] (T : Action S.Et
     rintro ⟨g⟩
     change inverseImageProductSheafMap f R T.V F ≫
         (coverPullback W.smallEtaleTopology ((etaleObjectPullback f).map σ ≫
-            (etaleObjectPullback f).map (T.ρ g)) ((inverseImage f R).obj F) ≫
+            (etaleObjectPullback f).map (T.ρ g).asHom) ((inverseImage f R).obj F) ≫
           (productSheafTerminalIso R ht').hom.app ((inverseImage f R).obj F)) =
-      (inverseImage f R).map (coverPullback S.smallEtaleTopology (σ ≫ T.ρ g) F ≫
+      (inverseImage f R).map (coverPullback S.smallEtaleTopology (σ ≫ (T.ρ g).asHom) F ≫
         (productSheafTerminalIso R ht).hom.app F)
     rw [← Functor.map_comp, ← inverseImageProductSheafMap_coverPullback_assoc,
       inverseImageProductSheafMap_terminal f R ht ht', CategoryTheory.Functor.map_comp]

@@ -1,7 +1,5 @@
 # Closed polydiscs of smaller radius as affinoid domains
 
-Author: Worker 21.
-
 This module shows that a closed polydisc of smaller polyradius is an affinoid
 domain of a closed polydisc of larger polyradius, represented by the
 coefficient-preserving restriction of power series. It is the gluing datum for

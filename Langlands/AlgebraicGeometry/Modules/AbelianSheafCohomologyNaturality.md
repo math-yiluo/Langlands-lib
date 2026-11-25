@@ -1,6 +1,6 @@
 # Coefficient naturality of actual module and abelian-sheaf cohomology
 
-Worker 368. This internal companion proves coefficient naturality of the
+This internal companion proves coefficient naturality of the
 existing `Modules.AbelianSheafComparison.HAddEquiv`. The actual scheme
 `X : Scheme.{u}`, its structure-sheaf modules `M` and `N`, the module
 morphism `f : M ⟶ N`, and the degree `n : ℕ` are arbitrary.
@@ -66,5 +66,5 @@ actual Ext/right-derived comparison and naturality of the existing
 Hom/global-sections derived isomorphism. No new external theorem or
 additional axiom is assumed.
 Scheme base change, compatibility with connecting homomorphisms,
-scalar stability of boundary images and Picard representability remain
-separate obligations.
+scalar stability of boundary images and Picard representability are not
+treated in this file.

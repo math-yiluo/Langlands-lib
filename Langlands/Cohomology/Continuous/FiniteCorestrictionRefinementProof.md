@@ -1,10 +1,9 @@
 # Proof of refinement compatibility for finite-stage corestriction
 
-Proof authors: Worker 258 wrote this module. Worker 222 wrote the general
-corestriction–inflation theorem
-`Langlands.Continuous.ordinaryCohomologyCorestriction_comp_map` in the module
+The general corestriction–inflation theorem
+`Langlands.Continuous.ordinaryCohomologyCorestriction_comp_map` is in the module
 `Langlands.Cohomology.Continuous.CorestrictionInflation`. This module imports
-that theorem and applies it. Worker 22 wrote the target statement, which was
+that theorem and applies it. The target statement was
 published in Library commit `15eedb12537594b6a2fc1e60d81c041b5989d6c0`. This
 proof imports the statement and its dependencies unchanged, by Lean module name.
 
@@ -116,6 +115,6 @@ The statement's provenance is derived from Serre, *Local Fields*, Greenberg
 translation (1979), Chapter VII, Sections 5 and 7, and Chapter X, Section 3. See
 the target's Markdown for page references. This proof follows the implemented
 Lean route above, not a source proof. The corestriction–inflation compatibility
-is proved in Lean in Worker 222's module, not assumed. Pinned environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`: Lean 4.34.0, Mathlib
+is proved in Lean in `CorestrictionInflation`, not assumed. Pinned environment:
+Lean 4.34.0, Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.

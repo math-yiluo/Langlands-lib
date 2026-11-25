@@ -1,7 +1,5 @@
 # Proof of real determinant exponent rigidity under unitary Weyl association
 
-Author: Worker 257.
-
 `Langlands.glUnitaryWeylRealExponentRigidity` proves the published proposition
 `Langlands.GLUnitaryWeylRealExponentRigidityStatement.{uF, uV, uW}` from
 `Langlands.Representation.Classification.UnitaryWeylRigidityStatement`. All three
@@ -156,8 +154,8 @@ continues to apply to them.
 
 ## Checks
 
-Environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` (Lean 4.34.0, Mathlib
-`5ed2965256430c3649e86755f9576b54eca72435`). Development compilation had no errors
+Lean 4.34.0, Mathlib
+`5ed2965256430c3649e86755f9576b54eca72435`. Development compilation had no errors
 and no warnings. Declaration inspection of
 `Langlands.glUnitaryWeylRealExponentRigidity` reported a theorem with level
 parameters `[uF, uV, uW]`. Its only axioms are `propext`, `Classical.choice` and

@@ -27,6 +27,6 @@ the target dual-number point fixed. Its kernel has square zero, so Mathlib's
 appropriate algebra structures. Translating the resulting coordinate map back
 to the source gives the desired kernel point.
 
-This unit proves differential surjectivity from scheme smoothness. A converse
+This module proves differential surjectivity from scheme smoothness. A converse
 criterion, smoothness or connectedness of semigroup representatives, and
 surjectivity of induced semigroup scheme morphisms remain separate obligations.

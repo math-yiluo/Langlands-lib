@@ -1,7 +1,5 @@
 # Affine realization of the Deligne-to-similitude map
 
-Author: Worker 57.
-
 This module constructs a real algebra map from the explicit similitude
 coordinate algebra to the Deligne-torus coordinate algebra, then applies
 `Spec` to obtain an actual morphism of affine real schemes. Its effect on

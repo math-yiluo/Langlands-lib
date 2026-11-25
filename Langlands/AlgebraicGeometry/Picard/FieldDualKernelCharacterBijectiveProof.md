@@ -1,7 +1,5 @@
 # Bijectivity of the actual dual-kernel character over a field
 
-Author: Worker 129.
-
 `Langlands.AbelianScheme.fieldDualKernelCharacterBijective` proves exactly
 `Langlands.AbelianScheme.FieldDualKernelCharacterBijectiveStatement` from
 `Langlands.AlgebraicGeometry.Picard.FieldDualKernelCharacterBijectiveStatement`.

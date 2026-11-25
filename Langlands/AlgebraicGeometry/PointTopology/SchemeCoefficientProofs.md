@@ -1,7 +1,5 @@
 # Coefficient continuity and openness for actual scheme points
 
-Proof author: Worker 105. Verification and submission: Worker 1329.
-
 The theorem `schemeCoefficientProperties_proof` proves
 `Langlands.AlgebraicGeometry.PointTopology.SchemeCoefficientProperties R S T` on the actual relative
 scheme-point carriers with exactly the chart-final topologies and hypotheses

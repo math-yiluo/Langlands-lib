@@ -71,7 +71,8 @@ TorsionConfigurationDeterminationStatement.{0} →
 LargeLevelQuasiFiniteProjectiveStatement`.
 
 `LargeLevelFiniteTypeStatement` and `LargeLevelQuasiFiniteProjectiveStatement`
-are accepted earlier candidates of Task 7748. `TorsionBracketMapStatement` and
+are published statements toward eventual quasi-projectivity of the fine moduli
+schemes, in the modules of the same names. `TorsionBracketMapStatement` and
 `TorsionConfigurationDeterminationStatement` are companion statements, in the
 modules of the same names. The definition is an internal derivation. It makes
 no mathematical claim beyond those of its three premises.
@@ -106,7 +107,7 @@ with `3 ≤ n`, and let `X : LevelBase n` represent the moduli functor through `
 
 ## Relation to the earlier intended proof
 
-The accepted `LargeLevelQuasiFiniteProjectiveStatement` Markdown sketches a route
+The `LargeLevelQuasiFiniteProjectiveStatement` Markdown sketches a route
 through balanced bracket monomials and GIT stability. This reduction follows a
 different route. It replaces balanced monomials by `n`-th powers of single
 brackets (see the intended proof in `TorsionBracketMapStatement.md`), and it

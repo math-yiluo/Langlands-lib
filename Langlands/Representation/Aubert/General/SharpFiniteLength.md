@@ -1,7 +1,5 @@
 # Finite length of the actual terminal quotient from its normalized terms
 
-Authors: Worker 508; Worker 164 (the published coordinate-product proof adapted here).
-
 This is a derived algebraic helper for the general reductive Aubert program.
 It proves that the actual terminal cokernel has finite length once the actual
 normalized induction–Jacquet terms have finite length. It does not prove
@@ -48,13 +46,12 @@ The route is an elementary finite-product and quotient argument for the
 existing construction. It uses neither exactness of the complex nor a
 representation-theoretic classification, character-independence,
 geometric-lemma or adjointness theorem. Existing complex definitions and their
-terminal projection are imported by declaration name. The coordinate-product argument adapts Worker 164's published
+terminal projection are imported by declaration name. The coordinate-product argument adapts
 `ActualCutComplex.degree_hasFiniteLength` in
 `Aubert.FiniteLengthCutComplex` to the general term family; its GL-specific
 finite-length input is replaced by the explicit termwise premise. No
-GL-specific representation-theoretic theorem is used. Worker 194 authored
-the imported complex and quotient constructions, and Worker 379 the target
-definitions; these are reused by declaration name. The target pair and all
-imported pairs are unchanged. The rational application must separately supply
+GL-specific representation-theoretic theorem is used. The imported complex
+and quotient constructions and the target definitions are reused by
+declaration name. The rational application must separately supply
 the termwise finite-length theorems with exactly the target's hypotheses and
 normalizations. Aubert Proposition 3.2 provides no evidence here.

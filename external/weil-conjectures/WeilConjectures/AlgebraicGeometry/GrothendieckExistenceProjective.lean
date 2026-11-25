@@ -1,0 +1,191 @@
+/-
+Copyright (c) 2026 Bin Wu. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Bin Wu
+-/
+
+module
+
+public import Mathlib.AlgebraicGeometry.IdealSheaf.Functorial
+public import Mathlib.RingTheory.AdicCompletion.Basic
+public import WeilConjectures.AlgebraicGeometry.ProjectiveSpace
+public import WeilConjectures.AlgebraicGeometry.CoherentFormalModule
+import WeilConjectures.AlgebraicGeometry.AmpleTwistGlobalGeneration
+import WeilConjectures.AlgebraicGeometry.CoherentFormalModuleEpi
+import Mathlib.Algebra.Homology.ShortComplex.ExactFunctor
+import WeilConjectures.AlgebraicGeometry.CoherentFiniteTypeLocallyNoetherian
+import WeilConjectures.AlgebraicGeometry.FormalModuleCoverFromLiftedSections
+import WeilConjectures.AlgebraicGeometry.FormalCompletionExact
+import WeilConjectures.AlgebraicGeometry.FormalCompletionFullyFaithfulProper
+import WeilConjectures.AlgebraicGeometry.ProjectiveAmpleInvertible
+import WeilConjectures.AlgebraicGeometry.VanishingProjective
+
+/-!
+# Grothendieck existence for closed subschemes of projective space
+
+Source: Stacks Project, Cohomology of Schemes, Lemma 0885
+(blueprint: lem-weil-pbc-grothendieck-existence-projective).
+-/
+
+@[expose] public section
+
+universe u
+
+open CategoryTheory CategoryTheory.Limits
+
+namespace AlgebraicGeometry
+
+private theorem exactness_independent_zero
+    {C D : Type*} [Category C] [Category D]
+    (F : C ⥤ D) (zC zC' : HasZeroMorphisms C) (zD zD' : HasZeroMorphisms D)
+    (h : @Functor.PreservesZeroMorphisms _ _ _ _ zC zD F)
+    (h' : @Functor.PreservesZeroMorphisms _ _ _ _ zC' zD' F) :
+    (∀ S : @ShortComplex C _ zC, @ShortComplex.ShortExact _ _ zC S →
+      @ShortComplex.ShortExact _ _ zD (@ShortComplex.map _ _ _ _ zC zD S F h)) ↔
+    (∀ S : @ShortComplex C _ zC', @ShortComplex.ShortExact _ _ zC' S →
+      @ShortComplex.ShortExact _ _ zD' (@ShortComplex.map _ _ _ _ zC' zD' S F h')) := by
+  cases Subsingleton.elim zC zC'
+  cases Subsingleton.elim zD zD'
+  rfl
+
+private theorem preadditive_unique_of_abelian
+    {C : Type*} [Category C] (h : Abelian C) : Subsingleton (Preadditive C) := by
+  let _ := h
+  infer_instance
+
+private theorem equivalence_of_completed_covers
+    {C D : Type*} [Category C] [Category D]
+    [Abelian C] [Abelian D] (F : C ⥤ D) [F.Full] [F.Faithful]
+    [F.Additive] [PreservesFiniteColimits F]
+    (hcover : ∀ Y : D, ∃ X : C, ∃ p : F.obj X ⟶ Y, Epi p) :
+    F.IsEquivalence := by
+  classical
+  have : F.EssSurj := ⟨fun Y ↦ by
+    obtain ⟨X, p, hp⟩ := hcover Y
+    let _ := hp
+    obtain ⟨X', q, hq⟩ := hcover (kernel p)
+    let _ := hq
+    let a : X' ⟶ X := F.preimage (q ≫ kernel.ι p)
+    have ha : F.map a = q ≫ kernel.ι p := F.map_preimage _
+    have hc := isCokernelEpiComp
+      (Abelian.epiIsCokernelOfKernel
+        (KernelFork.ofι (kernel.ι p) (kernel.condition p)) (kernelIsKernel p)) q ha
+    exact ⟨cokernel a, ⟨PreservesCokernel.iso F a ≪≫
+      (IsColimit.coconePointUniqueUpToIso (cokernelIsCokernel (F.map a)) hc)⟩⟩
+  ⟩
+  exact {}
+
+private theorem quotient_spec_kernel {A : Type u} [CommRing A] (I : Ideal A) :
+    (Spec.map (CommRingCat.ofHom (Ideal.Quotient.mk I))).ker =
+      Scheme.IdealSheafData.ofIdealTop
+        (I.map (Scheme.ΓSpecIso (CommRingCat.of A)).inv.hom) := by
+  rw [Scheme.ker_of_isAffine]
+  congr 1
+  rw [← RingHom.ker_equiv_comp _
+    (Scheme.ΓSpecIso (CommRingCat.of (A ⧸ I))).commRingCatIsoToRingEquiv]
+  rw [RingEquiv.toRingHom_eq_coe, Iso.commRingCatIsoToRingEquiv_toRingHom,
+    ← CommRingCat.hom_comp, Scheme.ΓSpecIso_naturality, CommRingCat.hom_comp,
+    ← RingHom.comap_ker]
+  change (RingHom.ker (Ideal.Quotient.mk I)).comap
+    (Scheme.ΓSpecIso (CommRingCat.of A)).hom.hom = _
+  rw [Ideal.mk_ker]
+  exact (Ideal.map_symm
+    (Scheme.ΓSpecIso (CommRingCat.of A)).commRingCatIsoToRingEquiv).symm
+
+
+/-- Completion is an equivalence for a closed subscheme of projective space over a complete
+Noetherian ring. In particular, each coherent formal module is isomorphic to the completion
+of a coherent module, by essential surjectivity. The structural map of X is the composite
+of its embedding with the projective-space projection. The ideal is the pullback of the
+kernel ideal of Spec(A/I) → Spec(A), hence precisely I O_X. Noetherianity of X is supplied
+by the finite-type and quasi-compact structural map, rather than assumed separately.
+
+Source: Stacks Project, Lemma 0885, and Morphisms Lemma 01W9
+(blueprint: lem-weil-pbc-grothendieck-existence-projective).
+
+Proof:
+1. The closed immersion supplies an ample invertible module by
+   lem-weil-pbc-projective-ample-invertible, and X is Noetherian.
+2. Projectivity implies properness. Apply
+   lem-weil-pbc-formal-completion-fully-faithful-proper to obtain full faithfulness.
+3. Apply lem-weil-pbc-vanishing-projective to obtain a uniform positive twist for which
+   H¹ of all successive kernels vanishes.
+4. Choose a sufficiently large twist of the first term generated by finitely many global
+   sections, using lem-weil-pbc-coherent-twist-global-generation.
+5. The exact sequences of successive terms and the H¹ vanishing make the transition maps
+   on global sections surjective. Lift the chosen sections compatibly through all levels.
+6. These sections define a map from the completion of a finite sum of negative twists.
+   Its first component is surjective, so lem-weil-pbc-formal-systems-surjective makes it epi.
+7. By lem-weil-pbc-coherent-formal-modules-abelian its kernel is again a coherent formal
+   module. Applying step 6 to that kernel gives a cokernel presentation by completed modules.
+8. Full faithfulness lifts the presentation map to coherent modules. Exactness from
+   lem-weil-pbc-formal-completion-exact identifies its cokernel's completion with the given
+   system. Thus completion is essentially surjective and fully faithful, an equivalence. -/
+theorem completion_isEquivalence_of_projective_embedding
+    (A : Type u) [CommRing A] [IsNoetherianRing A] (I : Ideal A) [IsAdicComplete I A]
+    (X : Scheme.{u}) (n : ℕ)
+    (i : X ⟶ ProjectiveSpace (ULift.{u} (Fin (n + 1))) (Spec (.of A)))
+    [IsClosedImmersion i] :
+    Functor.IsEquivalence (@completion X
+      { toIsLocallyNoetherian := LocallyOfFiniteType.isLocallyNoetherian
+          (i ≫ (ProjectiveSpace (ULift.{u} (Fin (n + 1))) (Spec (.of A)) ↘ Spec (.of A)))
+        toCompactSpace := QuasiCompact.compactSpace_of_compactSpace
+          (i ≫ (ProjectiveSpace (ULift.{u} (Fin (n + 1))) (Spec (.of A)) ↘ Spec (.of A))) }
+      ((Spec.map (CommRingCat.ofHom (Ideal.Quotient.mk I))).ker.comap
+        (i ≫ (ProjectiveSpace (ULift.{u} (Fin (n + 1))) (Spec (.of A)) ↘ Spec (.of A))))) := by
+  classical
+  let f := i ≫ (ProjectiveSpace (ULift.{u} (Fin (n + 1))) (Spec (.of A)) ↘ Spec (.of A))
+  let _ : IsNoetherian X := isNoetherian_of_locallyOfFiniteType f
+  change Functor.IsEquivalence
+    (completion X ((Spec.map (CommRingCat.ofHom (Ideal.Quotient.mk I))).ker.comap f))
+  rw [quotient_spec_kernel I]
+  let K := (Scheme.IdealSheafData.ofIdealTop
+    (I.map (Scheme.ΓSpecIso (CommRingCat.of A)).inv.hom)).comap f
+  change (completion X K).IsEquivalence
+  let zC : HasZeroMorphisms (CoherentModules X) := inferInstance
+  let zD : HasZeroMorphisms (CoherentFormalModule X K) := inferInstance
+  obtain ⟨hC, hD, hadd, hexact⟩ := formalCompletion_exact X K
+  let hz := @Functor.preservesZeroMorphisms_of_additive _ _ _ _ _ _
+    (completion X K) hadd
+  let _ := hC.some
+  let _ := hD.some
+  let _ := preadditive_unique_of_abelian hC.some
+  let _ := preadditive_unique_of_abelian hD.some
+  let hAdd : @Functor.Additive _ _ _ _ hC.some.toPreadditive hD.some.toPreadditive
+      (completion X K) := by
+    convert hadd using 1
+  let _ := hAdd
+  have hFF : (completion X K).FullyFaithful :=
+    ((Functor.FullyFaithful.nonempty_iff_map_bijective _).mpr
+      (fun G H ↦ formalCompletion_map_bijective_of_proper I f G H)).some
+  let _ := hFF.full
+  let _ := hFF.faithful
+  have hPres : PreservesFiniteLimits (completion X K) ∧
+      PreservesFiniteColimits (completion X K) := by
+    apply ((Functor.exact_tfae (completion X K)).out 1 4).mp
+    exact (exactness_independent_zero (completion X K) zC
+      (@Preadditive.preadditiveHasZeroMorphisms _ _ hC.some.toPreadditive) zD
+      (@Preadditive.preadditiveHasZeroMorphisms _ _ hD.some.toPreadditive) hz
+      (@Functor.preservesZeroMorphisms_of_additive _ _ _ _
+        hC.some.toPreadditive hD.some.toPreadditive (completion X K) hAdd)).mp hexact
+  let _ := hPres.2
+  obtain ⟨hL, hample, _⟩ := projective_closedImmersion_ample_invertible A n X f i rfl
+  let _ := hL
+  apply equivalence_of_completed_covers (completion X K)
+  intro F
+  obtain ⟨d₀, hvan⟩ := coherentFormalModule_kernel_twist_vanishing I f _ hample F
+  have hcoh := (Scheme.Modules.isCoherent_iff_isQuasicoherent_and_isFiniteType
+    X _).mp (F.property.1 0)
+  let _ := hcoh.1
+  let _ := hcoh.2
+  obtain ⟨d₁, hgen⟩ := Scheme.Modules.exists_finite_generatingSections_tensorPow_of_isAmple
+    X _ (F.obj.obj (Opposite.op 0)) hample
+  let d := (max d₀ d₁).toNat
+  have hd₀ : d₀ ≤ (d : ℤ) := (le_max_left _ _).trans (Int.self_le_toNat _)
+  have hd₁ : d₁ ≤ (d : ℤ) := (le_max_right _ _).trans (Int.self_le_toNat _)
+  obtain ⟨σ, hσ⟩ := hgen d hd₁
+  obtain ⟨G, α, hα⟩ := formalModule_cover_from_lifted_sections K F _ d
+    (fun k ↦ hvan (k + 1) d hd₀) σ hσ
+  exact ⟨G, α, (coherentFormalModule_epi_iff_first_component K α).mpr hα⟩
+
+end AlgebraicGeometry

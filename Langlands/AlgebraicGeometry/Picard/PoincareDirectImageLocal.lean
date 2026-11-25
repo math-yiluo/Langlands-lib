@@ -533,7 +533,7 @@ theorem homology_of_perfectModel [IsAlgClosed K]
   have : IsLocalization.AtPrime ((dualScheme A hA).left.presheaf.stalk (originPoint hA))
       (originIdeal hV hx) := hV.isLocalization_stalk ⟨originPoint hA, hx⟩
   have : IsRegularLocalRing ((dualScheme A hA).left.presheaf.stalk (originPoint hA)) :=
-    AlgebraicGeometry.Smooth.isRegularLocalRing_stalk (f := (dualScheme A hA).hom) _
+    AlgebraicGeometry.Smooth.isRegularLocalRing_stalkFLT (f := (dualScheme A hA).hom) _
   have hdim : ringKrullDim ((dualScheme A hA).left.presheaf.stalk (originPoint hA)) = g :=
     Langlands.AlgebraicGeometry.fieldSmoothClosedPointStalkDimension K _ _ g hsm _
       (isClosed_originPoint hA)

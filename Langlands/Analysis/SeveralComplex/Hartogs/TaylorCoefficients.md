@@ -4,7 +4,8 @@ Module `Langlands.Analysis.SeveralComplex.Hartogs.TaylorCoefficients`, namespace
 `Langlands.Analysis.SeveralComplex`. The module proves the extension step
 `differentiableOn_prod_ball_of_small` of Hartogs' theorem on separately holomorphic functions.
 The proof of `Langlands.Analysis.Meromorphic.MeromorphicContinuationHolomorphicStatement`
-(Task 5431) needs that theorem.
+(`meromorphicContinuationHolomorphic`, module
+`Langlands.Analysis.Meromorphic.ContinuationPrincipleHolomorphicProof`) needs that theorem.
 
 ## Provenance
 

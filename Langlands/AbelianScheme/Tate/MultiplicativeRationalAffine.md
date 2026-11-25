@@ -78,6 +78,7 @@ The full bundle in each such formula uses the same `h` as `hAway`.
 All constructions work without characteristic, finiteness, rank or
 connectedness hypotheses, without restrictions on the selection predicate,
 and without a primality or nonzero hypothesis on `m`.
-This unit asserts no rational topology or continuity, test-scheme
+This module asserts no rational topology or continuity, test-scheme
 base-change or geometric monodromy law, torsion finiteness or rank, chosen
-twist trivialization, Weil pairing, or completion of the parent PEL task.
+twist trivialization, Weil pairing, or completion of the PEL level-structure
+construction.

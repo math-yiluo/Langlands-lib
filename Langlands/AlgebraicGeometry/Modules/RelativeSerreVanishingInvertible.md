@@ -1,16 +1,14 @@
 # Relative Serre vanishing for invertible modules
 
-Authors: Worker 5705.
-
 The module `Langlands.AlgebraicGeometry.Modules.RelativeSerreVanishingInvertible` (namespace
 `Langlands.AlgebraicGeometry.Modules.CechBridge`) proves
 
 ```lean
 theorem exists_isZero_relativeCohomology_tensor_tensorPow [IsNoetherianRing A] [IsSeparated f]
-    [IsClosedImmersion 𝔓.toProj] (hL : Scheme.Modules.IsInvertible L) (F : X.Modules)
-    (hF : Scheme.Modules.IsInvertible F) :
+    [IsClosedImmersion 𝔓.toProj] (hL : Scheme.Modules.IsInvertibleFLT L) (F : X.Modules)
+    (hF : Scheme.Modules.IsInvertibleFLT F) :
     ∃ d₀ : ℕ, ∀ d : ℕ, d₀ ≤ d → ∀ i : ℕ, 0 < i →
-      IsZero ((DerivedSections.relativeCohomology f i).obj (F ⊗ L.tensorPow d))
+      IsZero ((DerivedSections.relativeCohomology f i).obj (F ⊗ L.tensorPowFLT d))
 ```
 
 for `f : X ⟶ Spec A` separated over a noetherian ring and `𝔓 : L.ProjPresentation f N` (FLT

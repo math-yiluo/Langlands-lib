@@ -1,8 +1,5 @@
 # The Mumford family is geometrically Picard zero, assuming the cube identity
 
-Author: Worker 255. P3-033 documentation correction: Worker 1054, following
-the 2026-10-29 external audit.
-
 This module reduces the target proposition
 `Langlands.AbelianScheme.MumfordBundlePicardZeroStatement` to two published
 propositions:
@@ -24,14 +21,19 @@ The module neither proves nor assumes either hypothesis anywhere else. The
 triviality proposition is proved elsewhere in the Library, as
 `Langlands.AlgebraicGeometry.Picard.fieldLineBundleTriviality` (module
 `Langlands.AlgebraicGeometry.Picard.FieldLineBundleTrivialityProof`). The
-cube-pullback proposition has no unconditional proof in the Library:
+cube-pullback proposition is proved elsewhere in the Library as
+`Langlands.GroupScheme.fieldCubePullback` (module
+`Langlands.AbelianScheme.FieldCubePullbackProof`):
 `Langlands.GroupScheme.fieldCubePullbackOfIsomorphism` (module
-`Langlands.AbelianScheme.FieldCubePullbackAssembly`) derives it only from the
+`Langlands.AbelianScheme.FieldCubePullbackAssembly`) derives it from the
 further proposition
 `Langlands.AlgebraicGeometry.Picard.FieldCubeIsomorphismStatement`, which is
-not proved. So the target is not yet proved. A proof of the cube-pullback
-proposition, passed to this theorem together with `fieldLineBundleTriviality`,
-would prove it. All declarations are in the namespace
+proved as `Langlands.AlgebraicGeometry.Picard.fieldCubeIsomorphism` (module
+`Langlands.AlgebraicGeometry.Picard.FieldCubeIsomorphismProof`). Passing
+`fieldCubePullback` and `fieldLineBundleTriviality` to this theorem proves the
+target: this is `Langlands.AbelianScheme.mumfordBundlePicardZero` (module
+`Langlands.AlgebraicGeometry.Picard.MumfordBundlePicardZeroProof`). All
+declarations are in the namespace
 `Langlands.AbelianScheme.MumfordPicardZero`.
 
 ## Tensor and pullback helpers

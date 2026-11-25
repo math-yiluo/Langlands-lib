@@ -1,7 +1,5 @@
 # Existence of a weakly minimal standard opposite-Jacquet pair
 
-Author: Worker 436.
-
 `Langlands.glWeaklyMinimalStandardPairExistence` proves exactly the published
 closed proposition `Langlands.GLWeaklyMinimalStandardPairExistenceStatement`
 from `WeakCriticalStatement`. It retains every prime `p`, supplied

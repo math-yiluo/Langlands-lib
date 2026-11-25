@@ -1,7 +1,5 @@
 # Actual torus products from integral Cartan-component coordinates
 
-Worker 634.
-
 For a supplied `RootComponentCoordinates M`, this internal module constructs
 an actual product presentation of the full coordinate maximal torus over
 every base scheme. The factors are the split tori indexed by the simple

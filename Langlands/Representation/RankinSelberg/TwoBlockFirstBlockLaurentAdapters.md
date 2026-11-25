@@ -1,7 +1,5 @@
 # Adapters for the first-block Laurent assembly
 
-Author: Worker 1037.
-
 This module collects derived auxiliary facts for the first-block Laurent proof of
 JPSS (1983), Section 4.9.
 

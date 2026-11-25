@@ -1,7 +1,5 @@
 # Actual completion base change for parabolic Iwasawa decomposition
 
-Author: Worker 1359.
-
 This internal derived construction transfers compact Iwasawa existence
 between the original completion-valued group points and the completion-rational
 points of the actual base-changed group scheme. It supplies comparisons and

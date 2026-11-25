@@ -66,7 +66,8 @@ statement does not assert anything for `γ` that is not regular elliptic.
 
 ## Use
 
-In the proof of the restricted supercuspidal descent statement (B5r) of Task 7340, the test
+In the proof of the restricted supercuspidal descent statement (B5r,
+`RestrictedCyclicWeakBaseChangeSupercuspidalStatement`), the test
 function at the σ-elliptic place on the `F` side is chosen supported on regular elliptic
 elements whose determinant lies in `N_{E/F} E^×`. The criterion shows that these elements are
 norms, so such a function vanishes off norms and has concordant partners on the `E` side.

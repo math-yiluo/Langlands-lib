@@ -78,7 +78,8 @@ Lean statement records only the retraction of cohomology, not the
 sheaf-level direct-summand decomposition, and it does not identify the
 section with a canonical map.
 
-The consumer is task `6a5c4a64-6809-4f94-b35e-87cbc8a8b432`. It applies the
+The consumer is the module
+`Langlands.AbelianScheme.AmpleLineBundleHigherCohomologyVanishingAssembly`. It applies the
 statement to `f = (GroupScheme.multiplication B.toGrp (k : ℤ)).hom.hom`, a
 morphism in `Over (Spec K)` from the abelian variety to itself. The rank
 `k^{2g}` comes from the published `polarizedFiniteFlatRank`. Finiteness
@@ -117,7 +118,10 @@ presentation come from étaleness (`multiplication_etale_of_field`).
   `Hⁱ(X, F) = Hⁱ(S, f_* F)`. This is MFK's identification
   `Hⁱ(A, ψ_{k*} ψ_k^* L) ≅ Hⁱ(A, ψ_k^* L)`.
 
-## Expected proof obligations
+## Proof obligations
+
+The proof is `finiteFlatCohomologyRetract` (module `FiniteFlatCohomologyRetractProof`);
+its Markdown describes the route taken.
 
 1. **Affine pushforward.** `IsFinite f.left` gives `IsAffineHom f.left`.
    Show that `f^* M` is quasi-coherent. The Library proves this for

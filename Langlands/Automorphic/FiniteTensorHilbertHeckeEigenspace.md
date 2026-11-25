@@ -1,7 +1,5 @@
 # Closed joint Hecke eigenspaces in completed tensor slices
 
-Author: Worker 2.
-
 This internal construction forms the actual simultaneous eigenspace of any
 specified family of compact-open corner operators on all fixed vectors of the
 actual closed tensor slice in a supplied global positive-form completion.

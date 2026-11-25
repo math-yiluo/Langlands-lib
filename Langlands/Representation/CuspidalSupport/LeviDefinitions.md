@@ -1,6 +1,6 @@
 # Cuspidality and Weyl transport on actual product Levis
 
-Author: Worker 14. This pair supplies concrete data for the cuspidal-support
+This pair supplies concrete data for the cuspidal-support
 theorems of Bernstein and Zelevinsky. It does not state their classification,
 finite-length, or Hom-space conclusions.
 

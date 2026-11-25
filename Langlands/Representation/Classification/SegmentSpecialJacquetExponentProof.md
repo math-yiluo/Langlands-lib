@@ -1,9 +1,8 @@
 # Norms of normalized Jacquet exponents of weak segment special quotients
 
-Author: Worker 561. The proof uses the published all-shape factor theorem of
-Workers 485 and 1039 and the published scalar and central-character results;
-their original modules retain their attribution. The local norm reduction and
-interval transport calculations are Worker 561's.
+The proof uses the published all-shape factor theorem and the published scalar
+and central-character results. The local norm reduction and interval transport
+calculations are this module's own.
 
 ## Declaration and scope
 
@@ -75,7 +74,7 @@ the factor theorem are retained unchanged.
 
 The all-shape input is
 `Classification.segmentQuotientJacquetFactors`, proved in
-`Classification.SegmentQuotientJacquetFactorsProof` by Workers 485 and 1039.
+`Classification.SegmentQuotientJacquetFactorsProof`.
 It independently supplies the weak-quotient upgrade, proper two-block
 vanishing and tensor formula, and normalized ordered transitivity; the
 present proof does not take any of them as a hypothesis.
@@ -96,39 +95,33 @@ full-Jacquet tensor (printed p.197, PDF p.34), Proposition 9.5 and its
 terminal-first two-block formula (printed p.198, PDF p.35), and the referenced
 route in section 3.4 (printed pp.181–182, PDF pp.18–19). The imported
 all-shape proof derives the passage to arbitrary ordered shapes using
-actual Jacquet transitivity. The original passages and current source-boundary
-notes were read in this branch. The Library uses upper block parabolics,
+actual Jacquet transitivity. The original passages and the source-boundary
+notes were read for this proof. The Library uses upper block parabolics,
 positive half-modulus normalized induction with right translation, and the
 inverse half-modulus normalized Jacquet action. All inputs use these actual
 constructions.
 
 No analytic hypothesis or conclusion is added. In particular, the weak
 quotient need not be supplied as a strong head, and no unitary, square-integrable
-or finite-length hypothesis is imposed on it or on `ω`. Dependency audit
-and exact-target validation are recorded separately during submission.
+or finite-length hypothesis is imposed on it or on `ω`.
 
 ## Dependency and independence audit
 
-The author's source audit uses Library commit
+The source audit uses Library commit
 `159d1197aca62e7ba065e111be014f24f26d0387`. Every inherited Lean/Markdown
 pair in this proof's project import closure agrees with that Library.
 The dependencies of the published all-shape factor proof are unchanged from
-its independent review base, and the previously audited full-Jacquet closure
+the base at which it was audited, and the previously audited full-Jacquet closure
 is unchanged. The norm entry is the only new module; it imports the published
 factor, central-character, scalar-detection and interval-scalar proofs by
 their Lean names. The target pair and its dependencies are unchanged.
 
-The closure excludes forward special square-integrability
-(`5eece9e8-7f6b-4ea9-abea-a1f9f1b8c807`), parent ordered conversion
-(`8252833d-c269-41a9-824c-5879e531b23b`), square-integrable exhaustion
-(`cd8ab97c-0b78-4bce-97c4-d307a28159a4`), regular exhaustion
-(`bf433f0a-921a-428c-b0c0-6475438125ac`), square-integrable Langlands
-classification (`1cb45da2-7007-4351-a694-594fb148b8d1`), strong-head
-analytic classification (`aca8805b-054f-4d56-8045-12db7f623404`),
-tempered block uniqueness (`52e97845-36bb-457d-b76f-70753334b88c`),
-multisegment exhaustion (`3bfb61fa-1129-4fc9-83fd-7fcfec22106e`),
-ordered-head existence (`ebea9a8a-9b21-4208-aa31-98c2dea1f8a3`), and
-quotient coverage (`20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584`). The inherited
+The closure excludes forward special square-integrability,
+parent ordered conversion, square-integrable exhaustion,
+regular exhaustion, square-integrable Langlands
+classification, strong-head analytic classification,
+tempered block uniqueness, multisegment exhaustion,
+ordered-head existence, and quotient coverage. The inherited
 additional exclusions on segment-head product irreducibility, generic
 segment-product uniqueness, segment-socle exhaustion and segment derivative
 formulas are also retained. No proof uses Zelevinsky 1980 section 9.3 or
@@ -136,9 +129,8 @@ formulas are also retained. No proof uses Zelevinsky 1980 section 9.3 or
 
 The upstream proof of `twoSupercuspidalNonadjacentProductIrreducible` uses the
 fully proved general Bernstein–Zelevinsky 1977 derivative theory, including
-Gelfand–Kazhdan realization and the general Leibniz rule. This is the route
-expressly allowed by the operator's answer to the source-boundary question;
-it uses independently accepted Library proofs, rather than assuming a
+Gelfand–Kazhdan realization and the general Leibniz rule. This route
+uses published Library proofs, rather than assuming a
 derivative theorem. All derivative, mirabolic, Whittaker and Gelfand–Kazhdan
 modules in the present closure belong to that general upstream closure.
 That closure contains neither the present norm target nor the later
@@ -148,16 +140,15 @@ derivatives, or the excluded classification results. In particular, the
 upstream general route does not use Zelevinsky 1980 sections 3.5 or 9.6.
 The present module adds no derivative theorem.
 
-The original frozen central-character and interval-scalar submissions have
-small integration changes. The former replaces a redundant local
+The published central-character and interval-scalar proofs differ slightly
+from their first versions. The former replaces a redundant local
 `leviModulus_scalarLevi` helper with the identical published
 `leviModulus_scalar`; its final theorem is unchanged. The latter replaces
 a private determinant scalar-norm calculation with the published
-`norm_determinantPowerCharacter_scalar`. Both integration diffs were read,
+`norm_determinantPowerCharacter_scalar`. Both differences were read,
 and the current published sources are the sources used here. The audit
-does not assert byte identity between these two frozen submissions and
-their integrated versions.
+does not assert byte identity between the first versions and the
+published ones.
 
-This is an author dependency and provenance audit, supplementing the
-independent reviews of the imported results. Compilation and this audit
-do not constitute independent acceptance of the norm proof.
+This is a dependency and provenance audit of this module; the imported
+results record their own.

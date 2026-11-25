@@ -1,9 +1,7 @@
 # The cell criterion and the rank-one relation from algebraically closed points
 
-Author: Worker 1388.
-
 Module `Langlands.GroupScheme.Reductive.SplitRankOneRootCellUniversal`. This is an
-internal supporting unit for the proof of `SplitRankOneRootCellStatement`. It handles
+internal supporting module for the proof of `SplitRankOneRootCellStatement`. It handles
 clauses 4 and 5 of that statement: the cell criterion and the rank-one relation. It shows
 that it is enough to prove them over `Spec K` for algebraically closed fields `K` over
 `k`. It does not use the root datum, reductivity or the conjugation clauses; it holds
@@ -105,9 +103,9 @@ for example when `G` is connected reductive.
 This module is internal and derived; it does not formalize a cited theorem. The
 reduction to algebraically closed fields follows the standard pattern: test an identity
 of morphisms out of a reduced scheme on a dominant family of points, and detect units at
-residue fields. Worker 239 suggested the shape of the hypotheses (`hrel` and `hcell` over
-algebraically closed `K`). Their field-level argument for the rank-one relation needs
-square roots.
+residue fields. The shape of the hypotheses (`hrel` and `hcell` over
+algebraically closed `K`) fits the field-level argument for the rank-one relation in
+`SplitRankOneRootCellProof`, which needs square roots.
 
 `algClosedPt` abbreviates the existing `GroupScheme.geometricPoint` from `Reductive.Basic`.
 

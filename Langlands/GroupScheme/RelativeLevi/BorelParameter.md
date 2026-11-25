@@ -1,7 +1,5 @@
 # The actual Borel parameter scheme inside a parabolic parameter scheme
 
-Author: Worker 633.
-
 This internal construction implements the open and closed restriction in the
 proof of Conrad, *Reductive group schemes* (2014), Theorem 5.2.11(3), p.158.
 The clopen Borel-locus statement remains an explicit premise.

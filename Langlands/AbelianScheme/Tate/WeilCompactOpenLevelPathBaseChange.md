@@ -1,7 +1,5 @@
 # Base change and geometric-point comparison of actual Weil level towers
 
-Author: Worker 142.
-
 This module assembles the actual Weil fixed-level base-change/path square
 into a square of compact-open tower morphisms. It constructs the diagonal
 natural transformation, proves path independence and component injectivity,

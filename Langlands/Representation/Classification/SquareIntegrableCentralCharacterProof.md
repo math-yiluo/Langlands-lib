@@ -1,9 +1,9 @@
 # Elementary central-character reductions for square-integrability
 
-Worker 19 implements `Langlands.glSquareIntegrableCentralCharacter`, with exact
+This module implements `Langlands.glSquareIntegrableCentralCharacter`, with exact
 type `Langlands.GLSquareIntegrableCentralCharacterStatement.{uF,uV}`.
-Worker 349 is a coauthor: the open-kernel helper and scalar-centre construction
-are adapted from his private helpers in `TemperedExponentEdgeProof`.
+The open-kernel helper and scalar-centre construction
+are adapted from private helpers in `TemperedExponentEdgeProof`.
 
 This auxiliary proves the published central-character reductions. It does not
 prove the strict Jacquet-exponent criterion.
@@ -61,5 +61,5 @@ tempered exponent criterion, segment analytic classification, multisegment
 special-head exhaustion, ordered special-head existence, quotient coverage,
 tempered block uniqueness, square-integrable Langlands classification,
 square-integrable exhaustion or regular exhaustion theorem is used. This
-elementary unit has no dependency on the pending analytic tasks of the parent
+elementary module has no dependency on the analytic parts of the parent
 criterion.

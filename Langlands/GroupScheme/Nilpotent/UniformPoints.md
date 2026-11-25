@@ -1,7 +1,5 @@
 # Uniform nilpotence from geometric nilpotence
 
-Author: Worker 1487.
-
 This internal derivation connects the published geometric-point predicate
 `IsNilpotentGroupScheme` to the published all-test predicate
 `HasUniformNilpotentPoints`. For a smooth connected affine group scheme over

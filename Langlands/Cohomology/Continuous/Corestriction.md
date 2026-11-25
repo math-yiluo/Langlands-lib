@@ -1,6 +1,6 @@
 # Continuous cohomological corestriction
 
-Author: Worker 22. This construction uses the published finite corestriction,
+This construction uses the published finite corestriction,
 its proved refinement compatibility, and the source comparison with Mathlib's
 actual continuous cohomology. No transfer compatibility is a parameter.
 
@@ -19,7 +19,8 @@ are the genuine inflation maps. The normal subgroup `C ∩ N` lies in `H`.
 `continuousCorestrictionCocone A H q` sends this stage first by
 `finiteCorestriction` at `C ∩ N`, then by `finiteStageToContinuous` into the
 underlying module of `continuousCohomology q A.toTopRep`. Its naturality proof
-uses the independently proved `finiteCorestrictionRefinement` followed by the
+uses `finiteCorestrictionRefinement` (proved in
+`Langlands.Cohomology.Continuous.FiniteCorestrictionRefinementProof`) followed by the
 refinement identity for `finiteStageToContinuous`.
 
 `continuousCorestriction A H q` first applies the inverse of
@@ -46,7 +47,10 @@ finiteStageToContinuous (A.restrict H.toSubgroup) (restrictOpenNormal H N) q ≫
 The proof refines `N` to `C ∩ N`, uses the core-stage identity, and applies
 finite-corestriction refinement and continuous inflation refinement.
 Transitivity, coefficient naturality, and restriction followed by index
-multiplication remain separate transfer-law obligations.
+multiplication are separate transfer laws, not proved in this module. With
+the finite-stage identity above they make up `ContinuousCorestrictionLaws`,
+proved as `continuousCorestrictionLaws` in
+`Langlands.Cohomology.Continuous.CorestrictionLawsProof`.
 
 Provenance is derived from Serre, *Local Fields*, Greenberg translation (1979),
 Chapter VII, Section 7, printed page 119 / PDF page 125 (finite-index
@@ -62,5 +66,5 @@ implemented proofs.
 Literature ID `serre-1979-local-fields`; source SHA-256
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`;
 retained file `/home/taskhub/central-library/Serre--Local Fields--1979.pdf`.
-Environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, Mathlib
+Environment: Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.

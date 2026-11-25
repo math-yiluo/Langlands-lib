@@ -93,10 +93,11 @@ standard outside `S`. This agrees with the indicator in the claimed formula.
 
 ## Remaining obligations
 
-`RectangleTateStatement` remains an explicit open premise. To use the finite
+`RectangleTateStatement` remains an explicit premise here; the Library proves it
+(`RectangleTate.rectangleTateStatement`, module `RectangleTateProof`). To use the finite
 factors with equal-rank local test data, their recorded `IsRowFourierPair`
 relations identify each `padicRowFourier` value with its prescribed Fourier
 partner. The representation-theoretic realization of the global and local
 Whittaker functions, the quotient measure comparison, and the nonvanishing
 claims required by `ArchimedeanFactorizationStatement` are not supplied here.
-The unconditional proof required by Task 7397 remains open.
+The unconditional proof of `ArchimedeanFactorizationStatement` remains open.

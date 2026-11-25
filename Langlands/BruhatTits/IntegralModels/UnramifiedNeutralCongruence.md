@@ -1,6 +1,6 @@
 # Strict root congruence and incident reduction preimages
 
-This internal unit concerns the actual neutral component of supplied
+This internal module concerns the actual neutral component of supplied
 unramified full fixer models. It derives strict root bounds, congruence
 containment in incident neutral models, and an exact equivalence with the
 reduction preimage of the actual special-fibre image. All results use an
@@ -77,10 +77,11 @@ premise.
 
 The provenance is internal: these are consequences of the published
 rank-one, integral opposite-necessity, facet-constancy, congruence-generation,
-centralizer-image and special-fibre-image recovery results. This unit does
+centralizer-image and special-fibre-image recovery results. This module does
 not assert geometric parabolicity of the special-fibre image. Generation
 of the whole radical preimage, existence of all full fixer models, and the
-original unconditional `UnramifiedFixedDepthZeroOppositeStatement` remain
-separate obligations.
+original unconditional `UnramifiedFixedDepthZeroOppositeStatement` are not
+proved here; the last is proved as `unramifiedFixedDepthZeroOpposite` in
+`Langlands.Geometry.Building.UnramifiedFixedDepthZeroOppositeProof`.
 
 The generic `SpecialFibreQuotientData.congruenceSubgroup_le_positivePoints` is reused from `DepthZeroCompactOpen`, preserving its existing name and general hypotheses.

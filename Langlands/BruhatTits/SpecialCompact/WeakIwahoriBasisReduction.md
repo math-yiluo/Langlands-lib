@@ -1,4 +1,4 @@
-# The remaining common normal weak-Iwahori basis construction
+# The common normal weak-Iwahori basis construction
 
 This internal derived reduction is at arbitrary universe `u`. The algebraic `StandardSplitComponentFamily` is defined over any field `F`, for an affine ambient group scheme `G` over `Spec F`, a torus map `i : S → G` and cocharacter `ν`. It fixes actual compatible split components for all subsets of the simple relative roots before any basis member is chosen. `StandardSplitComponentFamily` records those component tori, maps and compatibility proofs. For connected reductive `G`, maximal split `i` and generic `ν`, `standardSplitComponentFamily` obtains them from the published compatible-component existence theorem.
 
@@ -12,4 +12,4 @@ For a compact open subgroup, `contractionAndCofinality_of_weak` combines this no
 
 `simultaneousStandardBasisAt_of_cofinal_weakIwahoriNormalFamily` takes the supplied subgroup `K0` and the fixed component family, and assumes the concrete local construction of a member of this family in every ambient identity neighborhood. It then proves the entire `SimultaneousStandardBasisAt` property for that same `K0` and the original standard groups. The neighborhood assumption gives the compact-open normal basis directly; closedness of the represented standard Levis gives its literal inherited bases; the preceding contraction theorem gives every remaining member condition.
 
-The cofinality construction remains a hypothesis of this reduction. No valid KP datum is claimed to provide it here. This unit is not the exact available-data proof, and supplies no completion evidence for that target.
+The cofinality construction remains a hypothesis of this reduction. No valid KP datum is claimed to provide it here. This module is not the exact available-data proof (`availableSimultaneousStandardBasis`, module `AvailableBasisProof`), and does not by itself prove that statement.

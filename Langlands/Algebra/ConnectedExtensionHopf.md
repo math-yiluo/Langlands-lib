@@ -1,8 +1,9 @@
 # Extensions with connected quotient in Hopf-algebra terms
 
-Worker 603 wrote this module for Task 6776 (extensions of groups of
-multiplicative type over a field, part 1, connected case). It is the algebraic
-core of the statement "an extension of a connected diagonalizable group by a
+This module is part of the proof that extensions of groups of multiplicative
+type over a field are of multiplicative type (`multiplicativeTypeFieldExtension`
+in `Langlands.GroupScheme.Torus.MultiplicativeTypeFieldExtensionProof`); it
+treats the connected case. It is the algebraic core of the statement "an extension of a connected diagonalizable group by a
 diagonalizable group is commutative".
 
 ## Setting

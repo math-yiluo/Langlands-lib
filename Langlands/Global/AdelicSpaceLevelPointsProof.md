@@ -1,11 +1,5 @@
 # Adelic-level points of separated finite type algebraic spaces
 
-Author: Worker 105. Submission preparation and source/dependency verification: Worker 1568.
-
-The Lean proof is reused from Worker 105's shared draft for this task. Worker 1568 clarified
-the distinction between the finite free descent used here and Conrad's cyclic étale cover,
-without changing the mathematical proof.
-
 Proof of `Langlands.Global.AdelicSpaceLevelPointsStatement.{u}`, Proposition 5.2 of Brian
 Conrad, *Weil and Grothendieck approaches to adelic points* (December 31, 2011), printed
 pp.13–14, for global fields of both characteristics. The entry theorem is
@@ -40,8 +34,8 @@ Namespace `Langlands.Global.AdelicSpaceLevelPointsProof`:
 
 - `isAdicComplete_field`: a field is complete for its maximal ideal `⊥`.
 - `isAdicComplete_adicCompletionIntegers`: the completed integers at a height-one prime of a
-  Dedekind domain are complete for their maximal ideal. This is the Library's
-  `rankOneDiscreteValuationSubring_isAdicComplete`.
+  Dedekind domain are complete for their maximal ideal. This uses NYLL’s
+  `ValuationTheory.Valuations.rankOneDiscreteValuationSubring_isAdicComplete`.
 - `changeRing_bijective`: change of coefficients along an algebra isomorphism is bijective,
   with inverse change along the inverse (`ringTestMap_id`).
 - Instances: every factor `NumberFieldLevelFactor K S i` and `CurvePlaceLevelFactor k F S i` is

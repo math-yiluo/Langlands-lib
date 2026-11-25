@@ -55,5 +55,5 @@ This is an internal deduction from the actual product-facet and
 isomorphism definitions in `AbstractBuilding`, using elementary
 properties of product projections and bijections. No external assertion
 is introduced. Existence of an index permutation satisfying the fiber
-condition for an actual building action remains a geometric obligation;
-this unit supplies no actual building data or realization.
+condition for an actual building action is not proved here;
+this module supplies no actual building data or realization.

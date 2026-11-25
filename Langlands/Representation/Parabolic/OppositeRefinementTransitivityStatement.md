@@ -1,7 +1,5 @@
 # Transitivity of actual normalized opposite Jacquet quotients
 
-Author: Worker 430.
-
 `Langlands.Parabolic.NormalizedOppositeRefinementTransitivityStatement`
 is a closed proposition definition. It states a pointwise representation
 equivalence between the actual iterated opposite quotient and the actual
@@ -61,7 +59,7 @@ character is defined as the restricted outer full character times the
 inner full character, and the published positive-half product identity
 gives the corresponding product of halves.
 
-A later proof must show that the outer character is trivial on the
+A proof must show that the outer character is trivial on the
 actual inner opposite radical and factors through the actual inner
 opposite Levi projection. On the common refined Levi the outer scalar
 is its restriction; multiplying by the inner scalar then gives exactly
@@ -83,8 +81,10 @@ constructions in `OppositeRefinementDefinitions`,
 outer quotient in `CuspidalJacquetMultiplicityStatement`. The intended
 algebraic argument uses the universal property of coinvariants twice
 and the actual opposite split projection, then checks normalized
-equivariance on representatives. The equivalence is a later proof
-target; the definitions imported here do not by themselves prove it.
+equivariance on representatives. The equivalence is a separate proof
+target, proved as `Langlands.Parabolic.normalizedOppositeRefinementTransitivity`
+in `Parabolic.OppositeRefinementTransitivityProof`; the definitions imported
+here do not by themselves prove it.
 
 The source motivation is A. J. Silberger, *The Langlands quotient theorem
 for p-adic groups*, Math. Ann. **236** (1978), 95–104, section 2, printed
@@ -93,13 +93,13 @@ p.97 (PDF page 3). Source
 retained at
 `/home/taskhub/pilot/literature/Silberger (1978), The Langlands quotient theorem for p-adic groups.pdf`,
 SHA256 `4f437d7ee21c65e43ede0a34b9a6b274cf4d947c23ad7637976bd38fd72fdac5`.
-Worker 430 reread that page and its image for this contribution. It
+That page and its image were reread for this statement. It
 recalls transitivity of the Jacquet functor and records the opposite
 normalization convention. The exact Lean quotient presentations, all-rank
 scope, independent universes, and representative formula are internal
 specializations, rather than verbatim assertions in that source.
 There was no `notes/errata` directory at the Library base inspected for
-this contribution.
+this statement.
 
 This proposition supplies no flattened-coordinate comparison,
 Haar-scaling interpretation of the explicit modulus, exactness,

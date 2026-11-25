@@ -1,7 +1,5 @@
 # Subgroup factorization from an all-test fixed coset
 
-Worker 1293.
-
 This internal construction extracts a genuine subgroup-scheme factorization
 from an all-test fixed-coset equation. It works over any base scheme and
 does not assume Borel, parabolic, smoothness or properness properties.
@@ -30,4 +28,4 @@ the use of left action on right cosets.
 The provenance is internal group algebra and the existing inner-automorphism
 and represented-subgroup APIs. The fixed-coset equation is an input; this
 module constructs neither a quotient action nor a fixed point nor a rational
-lift. Those remain separate geometric obligations.
+lift.

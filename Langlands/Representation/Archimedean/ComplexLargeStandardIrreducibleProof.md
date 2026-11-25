@@ -1,8 +1,7 @@
 # Proof: Vogan's irreducibility theorem for `GL_n(ℂ)`
 
 Lean module: `Langlands.Representation.Archimedean.ComplexLargeStandardIrreducibleProof`.
-Worker 728 wrote it for Task 7064 (`e4a22cc7-0a28-44a3-afc6-38bb7c243851`), whose target is the
-Library statement `ComplexLargeStandardIrreducibleStatement`.
+Its target is the Library statement `ComplexLargeStandardIrreducibleStatement`.
 
 ## Statement proved
 

@@ -211,10 +211,11 @@ theorem RationalSemistandardFourierFiniteSupportStatement.proper
       a ha muM d hdelta hT :=
   fun f => (h f).subset Set.inter_subset_left
 
-/-! ## Componentwise smoothness from Task 7260's target -/
+/-! ## Componentwise smoothness from the full smoothness target -/
 
-/-- The componentwise smoothness consumed below, obtained from Task 7260's full
-smoothness target and its analytic inputs at every component. -/
+/-- The componentwise smoothness consumed below, obtained from the full smoothness target
+`RationalSemistandardFourierFamilySmoothnessStatement` and its analytic inputs at every
+component. -/
 theorem rationalSemistandardFourierFamily_mem_componentSpace_of_smoothness
     (hS : RationalSemistandardFourierFamilySmoothnessStatement (muG := muG) hG hi hnu hKc hPK rho
       hsw a ha muM d hdelta hT)
@@ -428,8 +429,8 @@ variable [hStdInv : ∀ I, (eta I).IsInvInvariant]
 set_option maxRecDepth 2048 in
 set_option maxHeartbeats 1000000 in
 /-- The standard restriction of the finite-support family is the existing
-standard family `rationalFourierThetaFamily f`, under Task 7260's standard
-comparison target and its normalization. -/
+standard family `rationalFourierThetaFamily f`, under the standard comparison target
+`RationalSemistandardFourierStandardComparisonStatement` and its normalization. -/
 theorem rationalStandardFullSmoothRestrict_fourierThetaSmoothFamily_val
     (hcmp : RationalSemistandardFourierStandardComparisonStatement.{u, uV} hG hi hnu hKc hPK rho
       hsw a ha muM d hdelta hT b hb eta hds hrho hKrho hM hTA)

@@ -1,11 +1,10 @@
 # Epsilon products of a global functional equation with trivial L-functions
 
-Author: Worker 5093. This is a supporting unit for task
-`92a3d086-a5ad-476f-9fd9-aa9d4eaa3778`, which must prove
+This is a supporting module for the proof of
 `Langlands.LocalFactor.NonabelianBrauer.KernelCompatibilityStatement`. In Deligne's global argument
 (1973, proof of Lemma 4.12) the global functional equation of a product of Hecke L-functions is
 used after all local L-factors have cancelled: what remains is that the product of the local
-epsilon factors over the exceptional places is `1`. This unit proves that deduction for the
+epsilon factors over the exceptional places is `1`. This module proves that deduction for the
 published package `RelativeWeilEngine.HasGlobalEquation`. It is elementary complex analysis
 (the identity theorem for meromorphic functions) and has no separate literature source.
 

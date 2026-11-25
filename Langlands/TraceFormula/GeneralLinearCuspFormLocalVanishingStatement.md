@@ -8,8 +8,8 @@ proposition definition and no proof:
 The simple trace formula for `GL_n` is applied to test functions whose component at one finite
 place `v` is a cusp form: all its constant terms along proper parabolic subgroups vanish. The
 Library expresses this local condition as `Langlands.BaseChange.HasVanishingConstantTerms`
-(Task 7457). The statements of this program that produce cuspidal image and trace class
-(Task 7577, `GeneralLinearCuspidalImageStatement`, and Task 7581,
+(module `Langlands.BaseChange.CuspForm`). The statements of this program that produce
+cuspidal image and trace class (`GeneralLinearCuspidalImageStatement` and
 `GeneralLinearRadicalIntegralVanishingStatement`) instead take as hypothesis the vanishing of
 integrals over two-block unipotent subgroups at `v`, written in matrix coordinates. This
 statement connects the two: the first condition implies the second.
@@ -52,8 +52,9 @@ to the copy `ι_v(GL_n(K_v))`) is a cusp form, then the integral of `f` over eve
 adelic translate of every upper two-block unipotent subgroup `{[[1, Z], [0, 1]]}` of
 `GL_n(K_v)`, inserted at `v`, vanishes, for every Haar measure on the matrix coordinates `Z`.
 
-The conclusion is, word for word, the local hypothesis of Task 7577 for `f`, and also the local
-hypothesis of Task 7581, which writes `F` for the number field `K`. The statement assumes
+The conclusion is, word for word, the local hypothesis of `GeneralLinearCuspidalImageStatement`
+for `f`, and also the local hypothesis of `GeneralLinearRadicalIntegralVanishingStatement`, which
+writes `F` for the number field `K`. The statement assumes
 nothing about continuity, measurability or support of `f`; it only transfers the vanishing
 integrals.
 
@@ -65,7 +66,7 @@ right translation and by multiplication by a complex constant
 (`HasVanishingConstantTerms.comp_mul_left`, `comp_mul_right`, `const_mul` in
 `Langlands.BaseChange.CuspForm`). This module neither states nor proves that deduction.
 
-## Why it is true (for the reviewer)
+## Why it is true
 
 Fix `a, b, h, ν, x, y`. Let `B` be the block shape with two blocks of sizes `a` and `b`
 (`B.length = 2`). The Library numbers block coordinates consecutively (`B.indexEquiv` is
@@ -97,28 +98,29 @@ formulations of the cusp-form condition at one place that the sources use.
   `HasVanishingConstantTerms` is this kind of condition for `GL_n`, imposed on the standard
   block parabolics, for every Haar measure on the radical and together with integrability.
   The proof of Lemma 16.4.2 (`R(f)` has cuspidal image when `f = f_v ⊗ f^v` with `f_v`
-  supercuspidal) uses this vanishing for the unipotent radicals at `v`; Task 7577 states that
-  lemma for `GL_n` with the hypothesis in the matrix coordinates of the present conclusion.
+  supercuspidal) uses this vanishing for the unipotent radicals at `v`;
+  `GeneralLinearCuspidalImageStatement` states that lemma for `GL_n` with the hypothesis in the matrix coordinates of the present conclusion.
 - Henniart–Lemaire, *Changement de base et induction automorphe pour GL_n en caractéristique
   non nulle* (2011), II.6.3, printed p. 120 (PDF p. 128): the simple trace formula is stated
   under the condition `c_{v₁}(f)`, that the component `f_{v₁}` at one place `v₁` vanishes off
   the regular elliptic elements and is a linear combination of coefficients of irreducible
   smooth cuspidal representations of `G(F_{v₁})`. The Library models the cusp-form part of this
-  condition by `HasVanishingConstantTerms` (Task 7457); the present module uses only that
+  condition by `HasVanishingConstantTerms`; the present module uses only that
   predicate and claims nothing about coefficients of cuspidal representations.
 
-The step from the cusp-form condition to the matrix-coordinate hypothesis of Tasks 7577 and
-7581, together with the choice of these exact quantifiers, is internal to this project.
+The step from the cusp-form condition to the matrix-coordinate hypothesis of
+`GeneralLinearCuspidalImageStatement` and `GeneralLinearRadicalIntegralVanishingStatement`,
+together with the choice of these exact quantifiers, is internal to this project.
 
-## Relation to other tasks
+## Relation to other statements
 
-- Task 7457 (Worker 820) published `HasVanishingConstantTerms` in the Library module
-  `Langlands.BaseChange.CuspForm`.
-- Task 7577 (`Langlands.TraceFormula.GeneralLinearCuspidalImageStatement`) and Task 7581
-  (`Langlands.TraceFormula.GeneralLinearRadicalIntegralVanishingStatement`) take the
-  conclusion of this statement as hypothesis (Task 7581 with `F` in place of `K`). This
+- `HasVanishingConstantTerms` is in the Library module `Langlands.BaseChange.CuspForm`.
+- `Langlands.TraceFormula.GeneralLinearCuspidalImageStatement` and
+  `Langlands.TraceFormula.GeneralLinearRadicalIntegralVanishingStatement` take the
+  conclusion of this statement as hypothesis (the latter with `F` in place of `K`). This
   statement imports neither.
-- The proof of this statement is a separate task.
+- The proof of this statement is `generalLinearCuspFormLocalVanishing`, in the separate module
+  `Langlands.TraceFormula.GeneralLinearCuspFormLocalVanishingProof`.
 
 ## What this module does not claim
 

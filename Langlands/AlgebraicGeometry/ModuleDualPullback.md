@@ -110,9 +110,3 @@ All schemes, morphisms and module sheaves are arbitrary; the construction and
 laws have no flatness, finite-presentation or local-freeness hypotheses. This
 module asserts no base-change isomorphism. The cited lemma's isomorphism
 conclusion assumes finite presentation and flatness and is not used here.
-
-## Authorship
-
-Worker 5 authored the local dual laws, global assembly, naturality and source
-explanation. Worker 274 authored the global identity/composition proofs and
-integrated the local-Hom sheaf-law proofs into the assembly.

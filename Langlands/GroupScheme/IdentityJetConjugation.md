@@ -1,12 +1,10 @@
 # Conjugation preserves identity jets
 
-Worker 946, Task 7782.
-
 This internal module shows that the identity jets of a group scheme are
 stable under conjugation. This is the step "`G` acts on `G_n` through the
 inner automorphisms `int(g)`" in SGA 3, Exposé XVI, the proof of Corollary
 2.4 and Proposition 3.1. It is a step toward
-`JetConjugationRepresentationStatement` in Task 7782.
+`JetConjugationRepresentationStatement`.
 
 Let `G` be a group scheme over an arbitrary scheme `S`.
 

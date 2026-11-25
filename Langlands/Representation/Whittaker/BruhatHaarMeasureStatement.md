@@ -1,13 +1,12 @@
 # Haar measure prerequisites for the Shalika argument
 
-Authors: Worker 634 (proposition design), Worker 919.
-
-`Langlands.Whittaker.BruhatHaarMeasureStatement.{uF}` is an unproved,
+`Langlands.Whittaker.BruhatHaarMeasureStatement.{uF}` is a
 closed, Prop-valued statement. It collects the facts about actual Haar
 measures on two kinds of p-adic unipotent groups that Shalika's orbital
 integration and his exchange of the two unipotent factors need. It states
-them as conclusions. This file proves nothing; a separate proof task
-proves the statement.
+them as conclusions. This file proves nothing; the statement is proved by
+`Langlands.Whittaker.bruhatHaarMeasure` in
+`Langlands.Representation.Whittaker.BruhatHaarMeasureProof`.
 
 ## Quantifiers and objects
 
@@ -138,9 +137,9 @@ Annals of Mathematics (2) **100** (1974), 171–193, registered as
 `788c5d124024c768aa47c4e8b179475fbcf5b0882a518ae60b19cdc88089f087`, file
 `/home/taskhub/central-library/Shalika--The multiplicity one theorem for GLn--1974.pdf`.
 Printed page numbers below are the journal's; PDF page numbers are
-one-based. Worker 634 read printed pp.173–179 and visually checked
-pp.176–178. Worker 919 read the extracted text of printed pp.173–178 and
-visually checked printed p.174. No
+one-based. Printed pp.173–179 were read and pp.176–178 visually
+checked; the extracted text of printed pp.173–178 was also read, and
+printed p.174 visually checked. No
 errata note for this source was found in the project literature or public
 notes.
 
@@ -169,9 +168,10 @@ quantification over every prime, every `PadicField` universe, every rank
 including `n = 0`, every permutation and every Haar measure is an internal
 choice that makes the facts reusable without normalization.
 
-## Intended proof routes
+## Proof routes
 
-The following routes are intended for the proof task only. Nothing here
+The following routes were outlined for the proof in
+`Langlands.Representation.Whittaker.BruhatHaarMeasureProof`. Nothing here
 proves them.
 
 - **Compact-open subgroups.** The published
@@ -207,11 +207,9 @@ proves them.
 
 ## Checks
 
-The Lean file reproduces the proposition fixed in the task contract,
-originally checked privately by Worker 634 in namespace
-`Langlands.Whittaker.Design`, in the production namespace
-`Langlands.Whittaker`. With environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` it compiles without errors or
+The Lean file reproduces the proposition of a design statement, first
+checked in namespace `Langlands.Whittaker.Design`, in the production
+namespace `Langlands.Whittaker`. It compiles without errors or
 warnings. Inspection of the declaration reports a definition with
 `statement_returns_prop: true` and the single universe parameter `uF`. The
 file adds no axiom, proof hole or premise and changes no imported file.

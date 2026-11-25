@@ -224,8 +224,8 @@ theorem isOpenImmersion_fibre (hG : IsReductive G)
       · exact Or.inl rfl
       · exact Or.inr (by
           rw [splitTorus.exponentCharacter_eq_characterLatticeEquiv_symm,
-            splitTorus.exponentCharacter_eq_characterLatticeEquiv_symm, map_neg])
-    · simpa only [splitTorus.exponentCharacter_eq_characterLatticeEquiv_symm, map_neg] using
+            splitTorus.exponentCharacter_eq_characterLatticeEquiv_symm, AddEquiv.map_neg])
+    · simpa only [splitTorus.exponentCharacter_eq_characterLatticeEquiv_symm, AddEquiv.map_neg] using
         (isRootParametrization_baseChangeRoot k i (-a) xm hm).represents
     · exact (isRootParametrization_baseChangeRoot k i a xp hp).represents
   have heq := standardTripleBaseChangeIso_hom_comp (R := R) k I i xm xp

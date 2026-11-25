@@ -1,7 +1,5 @@
 # Haar unimodularity of actual norm-one and connected reductive adelic groups
 
-Author: Worker 4122.
-
 `Langlands.Global.AdelicGroupPoints.adelicHaarUnimodularity` proves the
 published proposition
 `Langlands.Global.AdelicGroupPoints.AdelicHaarUnimodularityStatement.{u}`
@@ -50,8 +48,8 @@ to two unconditional arguments at the same universe `u`:
   [`CentralTorusSurjectivityProof`](../GroupScheme/Reductive/CentralTorusSurjectivityProof.md))
   is a published theorem.
 
-`lean_check` in environment `bb168ec3-1031-46d9-816b-5c2ed7bbe1a6` compiles
-the module with no errors or warnings and reports only the axioms
+The Lean check compiles the module with no errors or warnings and reports
+only the axioms
 `propext`, `Classical.choice` and `Quot.sound`.
 
 ## The imported argument
@@ -154,7 +152,7 @@ unimodular. Its surjectivity of the product map follows Milne (2017),
 12.46(b), 17.62 and 21.50, as the Markdown of
 `reductiveCentralTorusSurjectivity` records.
 
-I checked these locators against the original PDF. Source record:
+These locators were checked against the original PDF. Source record:
 `getz-hahn-2024-automorphic-representations`, SHA-256
 `a125cf9c0f445972cbbd3552b4fb9905ca948108a05880f90eaa43558d09a507`. The
 October 2026 Getz–Hahn errata (SHA-256

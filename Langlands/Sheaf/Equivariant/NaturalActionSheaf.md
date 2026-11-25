@@ -1,6 +1,6 @@
 # The sheaf of invariant sections along a natural action
 
-Author: Worker 26. Builds on the following modules:
+Builds on the following modules:
 
 - `Langlands.Sheaf.Equivariant.NaturalActionSections` (imported): natural actions
   `NaturalAction K Φ` of a monoid `K` along a functor `Φ : E ⥤ T` (fields `act` and `comm`),

@@ -1,8 +1,5 @@
 # Reduction of tensor units to bounded inverse pairs
 
-Worker 287, 17 November 2026; premise switched to the published
-statement by Worker 5678, 18 November 2026.
-
 This internally derived algebraic reduction has an explicit finiteness premise,
 the published Library statement
 `Langlands.Algebra.RosenlichtBoundedInversePairsStatement.{u,w}`: normalized
@@ -13,8 +10,8 @@ premise is a `Prop`-valued definition used as a hypothesis, not an axiom.
 `Langlands.Algebra.Rosenlicht.tensorUnits_of_boundedInversePairs` proves that
 this premise implies exactly
 `Langlands.Algebra.RosenlichtTensorUnitsStatement.{u,v,w}`. The final theorem
-`Langlands.Algebra.rosenlichtTensorUnits` supplies the premise using Worker 565's
-implemented bounded inverse-pair proof.
+`Langlands.Algebra.rosenlichtTensorUnits` supplies the premise using the
+implemented bounded inverse-pair proof `Langlands.Algebra.Rosenlicht.boundedInversePairs`.
 
 The reduction chooses an augmentation of the second algebra by the finite-type
 point-existence lemma. Evaluation of the tensor unit gives a unit of the first

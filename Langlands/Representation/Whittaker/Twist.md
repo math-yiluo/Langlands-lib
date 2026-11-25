@@ -1,10 +1,10 @@
 # Determinant twists of GL Whittaker coefficient models
 
-Worker 31 specializes the constructions from
+This module specializes the constructions from
 `Langlands.Representation.Whittaker.AlgebraicTwist` to the actual GL Whittaker
 models. The original `Langlands.twist` and its open-kernel smoothness theorem
-remain imports from Worker 4's published branch. The general linear group
-and determinant are imported from the geometry branch.
+are imported through `Langlands.Representation.Twist.SmoothProof`. The general
+linear group and determinant are imported from `Langlands.Group.GL.Basic`.
 
 For GL of rank `n + 1`, compose an actual unit-valued character of the field
 units with the actual determinant. The determinant of an upper-unipotent

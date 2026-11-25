@@ -2,7 +2,8 @@
 
 Module `Langlands.Global.ImaginaryAxisAveraging` (namespace
 `Langlands.Global.ImaginaryAxis`) proves the measure-theoretic part of
-the averaging step in the proof of Lapid's Proposition 6 (Task 5613). It
+the averaging step in the proof of Lapid's Proposition 6
+(`EisensteinImaginaryAxisHolomorphyStatement`). It
 works for a second countable topological group `H` with a discrete subgroup
 `Γ`, a measure `ν` on `H` invariant under left multiplication by `Γ` and
 finite on compact sets, and the published quotient measure

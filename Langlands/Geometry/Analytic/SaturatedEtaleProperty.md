@@ -1,7 +1,5 @@
 # A canonical étale property on saturated strong maps
 
-Author: Worker 208.
-
 The definition `SaturatedAtlasPresentation.strongEtale` is an internal
 morphism property on `SaturatedAtlasPresentation.{u, v, w} K`, for a
 complete ultrametric normed field `K : Type u`. The space and original

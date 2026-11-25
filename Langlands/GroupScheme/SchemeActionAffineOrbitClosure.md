@@ -1,7 +1,5 @@
 # Invariant affine neighborhoods and orbit closures
 
-Worker 1460.
-
 This internal derived helper is conditional. It does not construct an orbit
 closure action, prove Kostant–Rosenlicht, or assert the existence of a fixed
 point in any orbit closure.

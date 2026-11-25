@@ -1,6 +1,6 @@
 # Galois action on the adeles of a Galois extension
 
-Helper module for the proof of `GaloisBorelTwistingStatement` (Task 5268).
+Helper module for the proof of `GaloisBorelTwistingStatement`.
 
 For a finite extension `L/F` of number fields and `σ ∈ Aut(L/F)`, this module defines the
 ring automorphism `σ̃ = ringEquiv F L σ` of `𝔸_L` that corresponds to `σ ⊗ 1` on

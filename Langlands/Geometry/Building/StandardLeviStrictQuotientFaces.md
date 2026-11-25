@@ -1,7 +1,5 @@
 # Actual standard-Levi strict pieces in the common-uniformizer quotient
 
-Author: Worker 1222.
-
 `Langlands.GroupScheme.CocharacterUniformizer.standardLeviStrictQuotientFace`
 defines the actual strict piece indexed by a set `J` of characters. Its
 parameters are a nonarchimedean local field `F : Type u`, an actual commutative

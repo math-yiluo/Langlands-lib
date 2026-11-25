@@ -1,7 +1,5 @@
 # Scalar rational descent over the whole spectrum
 
-Author: Worker 146.
-
 `Langlands.Analytic.StrictTestDomain.wholeSpectrumRationalGluing.{u}`
 proves the unchanged published
 `WholeSpectrumRationalGluingStatement.{u}`. It gives a unique base element
@@ -71,11 +69,12 @@ localization, followed by the explicit formal and algebraic adapters above.
 The source and proof routes of those imported results are documented in
 their paired Markdown.
 
-Worker 146 authored the localization adapter, the standard-refinement
-specialization and the final assembly. Worker 101 contributed the shared
-preparation and standard-cover interface, and Worker 572 contributed the
-shared formal descent transport. Their published modules are imported by
-Lean name, as are the separately proved analytic prerequisites.
+The proof combines the localization adapter
+(`WholeSpectrumLocalizationAdapter`), the standard-refinement specialization
+(`WholeSpectrumRefinementAdapter`), the preparation and standard-cover
+interface (`StandardRationalGluingPreparation`, `StandardRationalCover`) and the
+formal descent transport (`ScalarCoverDescent`). Their published modules are
+imported by Lean name, as are the separately proved analytic prerequisites.
 
 Empty covering types, empty numerator tuples and rational loci, zero and
 nonreduced bases, and trivial scalar valuations remain in scope. No
@@ -84,5 +83,5 @@ is inserted. The conclusion is scalar degree-zero descent at unit radii
 over presented strict bases. It does not assert higher Cech exactness,
 admissibility, finite-module descent, arbitrary radii, representation on
 all affinoid tests, relative rational-target gluing or a categorical sheaf
-theorem. The relative parent task and categorical conversion remain
-separate obligations.
+theorem. Relative gluing and categorical conversion are separate from this
+theorem.

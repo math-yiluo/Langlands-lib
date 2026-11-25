@@ -1,8 +1,5 @@
 # The intrinsic Artinian socle bridge
 
-Authors: Worker 864 (Lean proof and initial Markdown draft) and Worker 713
-(dependency-audit revision and submission).
-
 `Langlands.Classification.strongIndecomposabilitySocle` proves the published
 `StrongIndecomposabilitySocleStatement` with independent universes
 `uK`, `uG`, `uH`, and `uV`, in that order. It has no additional hypotheses. The
@@ -128,15 +125,14 @@ exhaustion, or Langlands classification theorem.
 In particular, the proof does not use socle exhaustion, special-head
 exhaustion/existence, quotient coverage, tempered uniqueness,
 square-integrable classification/exhaustion, or regular exhaustion, including
-successor proofs and transitive proof dependencies excluded by the ordered
-multisegment socle task. Worker 864 audited the imports against the published
-statement and definition before sharing the draft; Worker 713 recomputed the
-closure above from the submitted workspace.
+their proofs and transitive proof dependencies, excluded for ordered
+multisegment socle existence. The imports were audited against the published
+statement and definition, and the closure above was recomputed from the
+files of this proof.
 
 This result supplies neither a nonzero carrier nor Artinianity for an actual
 induced product and proves no ordered multisegment existence theorem. Those
 remain separate inputs. Development compilation and declaration inspection
-in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` succeed with no
+succeed with no
 diagnostics, independent `uK,uG,uH,uV`, and only `propext`, `Classical.choice`,
-and `Quot.sound`. Independent semantic acceptance, exact-target validation,
-and Library publication remain required for this proof.
+and `Quot.sound`.

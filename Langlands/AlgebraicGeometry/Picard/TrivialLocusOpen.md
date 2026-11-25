@@ -1,7 +1,5 @@
 # The triviality locus where sections are free of the expected rank is open
 
-Author: Worker 766.
-
 This module is `Langlands.AlgebraicGeometry.Picard.TrivialLocusOpen`. It imports
 `Langlands.AlgebraicGeometry.Picard.TrivialLocusStrata`, and through it the FLT
 port's two-term complex theorem, the Library module `KernelColumnSplit` and

@@ -1,7 +1,5 @@
 # Exact height scaling by an actual stabilized-line character
 
-Author: Worker 83.
-
 This derived module proves the exact scaling of an actual representation-vector
 height under right translation by a subgroup preserving its coordinate line.
 The factor is the normalized idelic norm of the actual algebraic line character.

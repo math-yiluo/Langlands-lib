@@ -1,7 +1,5 @@
 # The actual valuation of a split torus in its cocharacter lattice and real space
 
-Author: Worker 293.
-
 Let `F : Type u` be a field with the Library's `ValuativeRel`, `TopologicalSpace` and `IsNonarchimedeanLocalField` instances, and let `I : Type u` be any finite type, possibly empty. Write `𝕋 = splitTorus.commGroupScheme (Spec (CommRingCat.of F)) I` for the actual commutative split torus and `rationalPoints 𝕋.toGrp` for its group of rational points. In the namespace `Langlands.GroupScheme.SplitTorusValuation`, the local notation `coords` denotes the existing split point-coordinate equivalence `splitTorus.affinePointsEquiv I (𝟙 (Spec (CommRingCat.of F)))`, from rational points to `I → Fˣ`. Lean variables for cocharacters are named `c`, because the scoped notation `CategoryTheory.MonObj`, which supplies the group structure on rational points, reserves `η`; below `η` and `c` mean the same thing.
 
 ## The integral embedding

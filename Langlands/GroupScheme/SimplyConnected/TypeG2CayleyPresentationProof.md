@@ -1,7 +1,5 @@
 # Actual Cayley presentations of type-`G₂` group schemes: proof
 
-Authors: Worker 161 and Worker 920.
-
 `Langlands.GroupScheme.typeG2CayleyPresentation` proves the published
 proposition `Langlands.GroupScheme.TypeG2CayleyPresentationStatement`
 exactly, at every universe `u`, with no additional premise. The proof is
@@ -10,7 +8,7 @@ one line:
 `typeG2CayleyPresentation_of_splitCayleyAutomorphismPinning splitCayleyAutomorphismPinning`.
 
 It applies the reduction theorem to the proof of the split-model statement.
-The statement is unchanged. Its scope is every field `K` in every
+Its scope is every field `K` in every
 characteristic, including two and three, and every affine, locally finite
 type, simply connected, absolutely almost-simple group scheme `G` over
 `Spec K` whose actual Cartan matrix is `G₂` under a numbering of its
@@ -28,7 +26,7 @@ local Kneser–Tits result is used.
 1. **The split model.**
    `Langlands.GroupScheme.splitCayleyAutomorphismPinning :
    SplitCayleyAutomorphismPinningStatement.{u}`, in
-   `Composition/SplitCayleyAutomorphism/Pinning.lean` (Worker 920). It
+   `Composition/SplitCayleyAutomorphism/Pinning.lean`. It
    concerns the actual automorphism group scheme of Zorn's split Cayley
    datum over every field. It shows that this group scheme has trivial
    scheme-theoretic centre and a split pinning. The pinning has full
@@ -58,7 +56,7 @@ local Kneser–Tits result is used.
    `Langlands.GroupScheme.typeG2CayleyPresentation_of_splitCayleyAutomorphismPinning :
    SplitCayleyAutomorphismPinningStatement.{u} →
    TypeG2CayleyPresentationStatement.{u}`, in
-   `SimplyConnected/TypeG2CayleyPresentationReduction.lean` (Worker 161).
+   `SimplyConnected/TypeG2CayleyPresentationReduction.lean`.
    - A finite Galois extension `L/K` splits `G`.
    - Rigidity of the `G₂` Cartan matrix makes the star action trivial.
    - A pinned isomorphism over `L` compares `G` with the split

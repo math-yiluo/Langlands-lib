@@ -63,6 +63,7 @@ private theorem isTorusCentralizer_evaluate_of_baseChange {S : Scheme.{u}} {G : 
   have ht' : IsClosedSubgroup (t ≫ e.hom) := by
     have : IsClosedImmersion t.hom.hom.left := ht
     change IsClosedImmersion (t.hom.hom.left ≫ e.hom.hom.hom.left)
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
     infer_instance
   have hh := (range_comp_iso_eq_centralizer_iff e ((baseChange a.left).map c) t).mpr he
   exact ⟨T, t ≫ e.hom, ht', hT, hh⟩
@@ -135,6 +136,7 @@ private theorem exists_lift_over_quotient (hI : IsNilpotent I)
   have ht₀' : IsClosedSubgroup t₀' := by
     have : IsClosedImmersion t₀.hom.hom.left := ht₀
     change IsClosedImmersion (t₀.hom.hom.left ≫ e₀.inv.hom.hom.left)
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
     infer_instance
   have heT : t₀' ≫ e₀.hom = t₀ := by simp [t₀']
   have hj₀ : range ((baseChange q₀).map j) = (range t₀').centralizer := by
@@ -148,6 +150,7 @@ private theorem exists_lift_over_quotient (hI : IsNilpotent I)
   have ht' : IsClosedSubgroup t' := by
     have : IsClosedImmersion t.hom.hom.left := ht
     change IsClosedImmersion (t.hom.hom.left ≫ e.inv.hom.hom.left)
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
     infer_instance
   obtain ⟨L, l, hl, hL, hred⟩ := exists_closedTorus_lift_of_affine I hI
     ((baseChange f).obj G) (range t') (isAdmissible_range t' ht' hT)

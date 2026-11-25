@@ -1,7 +1,5 @@
 # Supplied outer-isomorphism quotients and their actual fibres
 
-Worker 217.
-
 This internal interface concerns a supplied `GroupIsomorphismScheme G H`
 and an actual automorphic action of a group scheme `A` on `G`, over an
 arbitrary base. The isomorphism scheme has the canonical left action

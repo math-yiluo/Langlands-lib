@@ -1,7 +1,5 @@
 # Geometric-point openness in a universal rigidified field Picard parameter
 
-Author: Worker 1543.
-
 The theorem
 `Langlands.AbelianScheme.fieldPicardZeroGeometricOpenLocus.{u}` proves the
 unchanged published proposition

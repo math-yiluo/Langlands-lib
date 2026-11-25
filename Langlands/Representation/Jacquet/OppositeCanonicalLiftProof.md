@@ -1,7 +1,5 @@
 # Core opposite-radical canonical Jacquet lifts
 
-Author: Worker 322.
-
 The theorem `Langlands.Jacquet.blockOppositeCanonicalLift` proves exactly
 `Langlands.Jacquet.BlockOppositeCanonicalLiftStatement` from
 `Langlands.Representation.Jacquet.OppositeCanonicalLiftStatement`. It retains

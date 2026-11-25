@@ -1,7 +1,5 @@
 # Exact-cover trivialization of inverse-image CM coefficient systems
 
-Author: Worker 57.
-
 This internal construction gives invariant evaluation and exact-cover
 trivializations for the existing inverse-image CM coefficient system. A single
 source cover trivializes the complete diagram of exponents reachable from its
@@ -44,7 +42,7 @@ For any actual map `a : Z ⟶ Ybar_k`,
 L_Z(F_k) → L_Z(constantSheaf_Jbar(M_k))
 ```
 
-given by `L_Z.map(e.hom.app k)` followed by the published invariant evaluation
+given by `L_Z.map(e.hom.app k)` followed by the invariant evaluation
 `etaleAssociatedEvaluationAlong Xbar Ybar M k a` on A. Thus evaluation uses the
 same cover and coefficient action as the exact geometric associated system.
 
@@ -65,7 +63,7 @@ L_Z.map(F.map f) ≫ eval_j(a ≫ b_f)
 ```
 
 The proof combines functoriality of L_Z, naturality of e.hom at f, and the
-published evaluation transition formula for the exact geometric associated
+evaluation transition formula for the exact geometric associated
 system. Thus the result retains the specified reductions rather than choosing
 new transition maps after trivializing.
 
@@ -101,15 +99,16 @@ single diagram isomorphism in both directions. They identify every localized
 transition of F with the constant sheaf of the original lattice reduction.
 No single finite cover is claimed to trivialize all larger exponents.
 
-## Provenance and remaining scope
+## Provenance and scope
 
-This is internal composition of the published arbitrary-morphism CM comparison
+This is internal composition of the arbitrary-morphism CM comparison
 and the exact geometric associated-system evaluation and source trivialization
 from [HarrisTaylorCMGeometricAssociatedSystem](HarrisTaylorCMGeometricAssociatedSystem.md).
 It adds no external-literature assertion. The original-source provenance of
 arithmetic, covers and moduli remains in the paired imported modules.
 
-The exact representability theorem, rigidity, canonical-model geometry and
-other named prerequisites remain obligations. No new derived-category,
-cohomology, quotient-ring scalar, inverse-limit or lisse-adic theorem is
-asserted, and the host task remains incomplete.
+The exact representability theorem, canonical-model geometry and other named
+prerequisites are not proved here; rigidity at small levels follows from
+`cmSmallLevelRigidity` (`HarrisTaylorCMSmallLevelRigidityProof`). No new
+derived-category, cohomology, quotient-ring scalar, inverse-limit or lisse-adic
+theorem is asserted.

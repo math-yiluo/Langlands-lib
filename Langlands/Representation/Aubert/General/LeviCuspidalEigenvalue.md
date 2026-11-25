@@ -1,7 +1,5 @@
 # The cuspidal eigenvalue of the unadjusted operator inside a standard Levi
 
-Authors: Worker 1254 (original proof), Worker 3941 (reuse of published helpers).
-
 This module proves the inside-Levi form of Aubert, Theorem 1.7(4)
 (Trans. Amer. Math. Soc. 347 (1995), printed p.2181, PDF p.3): if `σ` is a
 representation of the standard Levi `L_J` all of whose proper Jacquet modules

@@ -1,6 +1,6 @@
 # Actual residue fibres of cubic projective evaluation
 
-This internal derived unit restricts the actual cubic projective evaluation
+This module, an internal derivation, restricts the actual cubic projective evaluation
 to the actual residue fibres of the original abelian structure map. It retains
 positive polarization index, the specified finite local rank of the actual
 cubic direct image, and intrinsic generation of its full evaluation.
@@ -37,7 +37,7 @@ surjective on stalks. The Cartesian target-fibre comparison from
 target residue fibre. The proper target-residue-fibre criterion then
 proves closed immersion on the total space.
 
-This unit neither identifies the projective target fibre with the
+This module neither identifies the projective target fibre with the
 projectivization of the full direct image on the fibre nor proves
 generation, finite local rank, fibre very ampleness, or ordinary moduli
 representability. Those remain separate geometric obligations.

@@ -42,8 +42,10 @@ the same canonical root norm.
 
 The provenance is the published actual character, cocharacter and root
 base-change comparison, literal apartment field restriction, field-order
-equality transport, and root-coordinate norm construction. This unit only
+equality transport, and root-coordinate norm construction. This module only
 adds their metric consequences and cites no additional external theorem.
 It constructs neither a building metric nor an arbitrary coefficient action,
-and asserts no coherence or finite-orbit result. Those remain obligations
-of the unramified semilinear metric-action target.
+and asserts no coherence or finite-orbit result. Those belong to the
+unramified semilinear metric-action target
+`UnramifiedSemilinearMetricActionStatement`, which the Library proves as
+`unramifiedSemilinearMetricAction` in `UnramifiedSemilinearMetricActionProof`.

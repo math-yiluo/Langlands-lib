@@ -1,7 +1,5 @@
 # Character-valuation kernels under finite Galois extension
 
-Author: Worker 706.
-
 This is a derived helper for KP Lemma 2.5.18. It concerns an affine group scheme
 `G` over an arbitrary field `k`, a finite Galois extension `L/k`, valuations
 `vk : Valuation k Γk` and `vL : Valuation L ΓL`, and `vk.HasExtension vL`.

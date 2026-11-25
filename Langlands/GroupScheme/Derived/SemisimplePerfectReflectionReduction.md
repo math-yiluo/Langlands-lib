@@ -1,12 +1,11 @@
 # Semisimple perfectness from actual reflections and torus generation
 
-Authors: Worker 1484 (assembly); Worker 1449 (reused semisimple
-reflection-to-root-datum reduction).
-
 This module proves a conditional reduction, not the unconditional
 semisimple-perfectness theorem. Its two explicit premises are the published
 `RelativeRootReflectionExistenceStatement.{u}` and
-`ReductiveFiniteTorusGenerationStatement.{u}`. They remain proof obligations.
+`ReductiveFiniteTorusGenerationStatement.{u}`. They are proved separately, by
+`relativeRootReflectionExistence` (`Rational.RootReflectionExistenceProof`) and
+`reductiveFiniteTorusGeneration` (`Reductive.TorusGenerationProof`).
 
 `SemisimplePerfectReflectionReductionStatement.{u}` names their implication
 to the unchanged published `SemisimplePerfectStatement.{u}`.
@@ -20,8 +19,8 @@ actual integral reflection data for its inclusion. The additional
 full-root-kernel centralizer property supplied by that premise is not used
 in this assembly.
 
-Worker 1449's `RelativeRootReflectionData.exists_semisimple_rootDatum`
-then constructs an actual root datum with finite integral coroot quotient,
+`RelativeRootReflectionData.exists_semisimple_rootDatum` (module
+`Derived.SemisimpleReflectionReduction`) then constructs an actual root datum with finite integral coroot quotient,
 using semisimplicity, splitness and closedness. No reducedness theorem or
 general character-complement theorem is needed. The finite-coroot-index
 containment theorem in `SemisimpleTorusContainment` places this maximal

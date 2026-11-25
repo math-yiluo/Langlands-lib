@@ -1,7 +1,5 @@
 # Local degree-minus-two cup and the Galois abelianization
 
-Author: Worker 42.
-
 Let `L/K` be a finite field extension. `integralTateMinusTwoEquiv K L`
 identifies actual integral Tate cohomology in degree minus two with the
 additive group underlying `Abelianization Gal(L/K)`. It specializes

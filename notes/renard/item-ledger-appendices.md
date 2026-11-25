@@ -1,8 +1,7 @@
 # Renard 2026, Appendices A–C: item-by-item coverage ledger
 
-Worker 1222, executor of the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`, revision 1. This note is the appendix part of the
-item ledger that the task contract requires, in the format of the chapter ledgers
+This note is the appendix part of the item ledger of the whole book, in the format of the
+chapter ledgers
 ([Chapter III](item-ledger-iii.md), [IV](item-ledger-iv.md), [V](item-ledger-v.md),
 [VI](item-ledger-vi.md), [VII](item-ledger-vii.md)). It lists the headed items of
 Appendices A, B and C and the main unheaded assertions, with printed / PDF pages
@@ -19,17 +18,16 @@ pp.275–280 / PDF pp.281–286.
 
 ## How the rows were checked
 
-The appendices have detailed published source maps, written mostly by Worker 709 under
-earlier revisions of this task. Each map gives, passage by passage, the Mathlib declaration
-or the Library statement and proof that covers it. Worker 1222 read every headed item of the
-appendices in the text extraction and located it in these maps. Worker 1222 also collected
-the statement names that the maps cite, resolved them to Library declarations, and scanned
-the Library for theorems whose type is exactly each statement. All 139 resolved statements
-have such a proof at `a54dda0d`. The rows below therefore name the maps and their principal
-declarations rather than repeat them; the maps list every component and proof receipt.
+The appendices have detailed source maps in `notes/renard/`. Each map gives, passage by
+passage, the Mathlib declaration or the Library statement and proof that covers it. Every
+headed item of the appendices was read in the text extraction and located in these maps. The
+statement names that the maps cite were collected and resolved to Library declarations, and
+the Library was scanned for theorems whose type is exactly each statement. All 139 resolved
+statements have such a proof at `a54dda0d`. The rows below therefore name the maps and their
+principal declarations rather than repeat them; the maps list every component and its proof.
 
-Status codes are those of the chapter ledgers: **P** proved; **S** statement with an open
-proof task; **D** definition or construction; **C** covered by Mathlib or by stronger or
+Status codes are those of the chapter ledgers: **P** proved; **S** statement whose proof is
+open; **D** definition or construction; **C** covered by Mathlib or by stronger or
 equivalent published results (documented correspondence); **St** proof step; **X**
 expository; **Rec** recalled from the literature; **G** gap. Names without a namespace are in
 `Langlands.Renard`.

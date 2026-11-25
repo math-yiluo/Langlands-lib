@@ -29,6 +29,6 @@ restricted space is nontrivial because its image is nonzero.
 The conclusion exposes nontriviality and the all-test stable-subspace
 alternative explicitly, so it can be folded into the actual irreducibility
 predicate without adding a second such definition. The source field is
-arbitrary and the group need only be affine. This unit does not construct a
+arbitrary and the group need only be affine. This module does not construct a
 whole composition series, prove a common kernel finite, or prove spectral
 boundedness.

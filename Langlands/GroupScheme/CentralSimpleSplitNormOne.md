@@ -1,7 +1,5 @@
 # Split reduced-norm-one groups over the original ground field
 
-Authors: Worker 124.
-
 For a finite-dimensional central simple algebra `A` over a field `K` and a
 specified splitting chart `K ⊗[K] A ≃ M_d(K)`, where `d` is the actual reduced
 degree, `CentralSimpleUnits.Splitting.groundIso` identifies the actual

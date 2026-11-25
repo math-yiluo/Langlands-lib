@@ -1,7 +1,5 @@
 # Finite-coordinate affine topology proofs
 
-Author: Worker 105.
-
 Proofs for Brian Conrad, *Weil and Grothendieck approaches
 to adelic points* (December 31, 2011), Proposition 2.1, printed page 2.
 Registered source `conrad-2011-weil-grothendieck-adelic-points`, SHA256

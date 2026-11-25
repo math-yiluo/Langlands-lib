@@ -1,7 +1,5 @@
 # Height commutator bounds inside the actual contracting group
 
-Author: Worker 591.
-
 This derived construction transports the supplied-cell height commutator
 identity from the ambient group into an actual representative `j : U → G`
 of its dynamic contracting subgroup. The base is an arbitrary commutative

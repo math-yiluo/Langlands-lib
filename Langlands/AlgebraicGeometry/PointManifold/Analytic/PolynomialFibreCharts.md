@@ -23,7 +23,7 @@ lemma, used at order `ω` with the same nonsingular derivative at all solutions,
 gives analytic inverse inclusion. Polynomial evaluation along that inclusion
 is then analytic by composition.
 
-This is an internal adaptation by Worker 115 of Worker 362's published
+This is an internal adaptation of
 `PointManifold.PolynomialFibreCharts`, retaining its polynomial derivative and
 zero-fibre helpers by import. It includes empty variable or relation index sets.
 

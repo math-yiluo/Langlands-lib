@@ -1,6 +1,6 @@
 # Compact compression on normalized inductions of actual inertia blocks
 
-Worker 1751. This internal specialization composes the actual inertia-block
+This internal specialization composes the actual inertia-block
 generator-compression bridge with the published normalized induction functor.
 
 `rationalInertiaInductionFunctor L h hU e` first pulls smooth actions of the
@@ -38,5 +38,5 @@ inertia decomposition, or prove the dynamic-parabolic stabilization endpoint.
 The local rational-point topology and topological-group instances have
 explicit module-specific names. This avoids generated-name collisions when
 the module is imported together with the rational Cartan-support branch,
-including during combined kernel replay. Their values and all mathematical
-statements are unchanged.
+including during combined kernel replay. The names do not affect their values
+or any mathematical statement.

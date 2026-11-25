@@ -1,7 +1,5 @@
 # Reconstructing chosen atlas maps from bounded chart pullbacks
 
-Author: Worker 36.
-
 For two supplied `AffinoidAtlasPresentation` objects, `ChartMapData A B`
 contains a monotone choice of target chart for each source chart and actual
 bounded algebra pullbacks satisfying the bounded restriction squares. It does
@@ -48,11 +46,11 @@ spectrum colimit, itself derived from the source's net topology in section 1.1
 and Lemma 1.1.1(i), printed pp.13-14/PDF pp.10-11. The original source is
 registered as `berkovich-1993-etale-cohomology`, SHA256
 `06b42aca1c8f237e607d2cf1f15a41fdc9718324a4dc9fd5bce66574254bb91c`.
-Original PDF pp.13-15 were reread for this unit. This categorical reconstruction
+Original PDF pp.13-15 were reread for this module. This categorical reconstruction
 is a consequence of the already implemented atlas and colimit data, rather
 than a theorem attributed verbatim to the source.
 
 The supplied atlas objects and their actual algebras remain input. General
 all-admissible strong-morphism composition, extended atlases, refinement
 localization, section-algebra gluing, structure sheaves, and analytic sites
-remain separate construction obligations.
+are not constructed here.

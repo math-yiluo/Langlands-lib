@@ -1,7 +1,6 @@
 # Actual constituent relations
 
-Worker 47 authored these definitions for the segment and multisegment statement
-branch, task `6131636b-18f8-4e15-94c2-023fb51a1970`, revision 1.
+These definitions serve the segment and multisegment statements.
 
 The input representations are actual complex linear actions of a group on
 modules in a fixed, explicit universe. Their carriers can be infinite
@@ -36,7 +35,8 @@ smooth representations in the originals. Their use for smooth representations
 does not add continuity or a topology on the representation carrier.
 They describe possible constituents; they do not construct normalized
 parabolic induction, segments, or canonical special/Langlands quotients.
-Worker 23 retains those construction responsibilities.
+Those constructions are made in other modules, for example the canonical
+heads and socles of `CanonicalConstituents`.
 
 ## Source correspondence
 
@@ -56,11 +56,10 @@ The original passages were read directly. Registered source fingerprints:
 The retained files are the Bernstein–Zelevinsky 1977 and Zelevinsky 1980
 original PDFs linked in `literature/_central-library-pointers.md`.
 These predicate definitions have no project mathematical imports.
-The environment is `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d` v1,
-Lean 4.34.0, Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.
+The definitions were checked with Lean 4.34.0 and Mathlib
+`5ed2965256430c3649e86755f9576b54eca72435`.
 All constructions inside the predicates come from Mathlib's actual
 representations, intertwiners, kernels, images, and irreducibility.
 
-This file contains definitions only. Development compilation, independent
-acceptance and publication are distinct statuses; no classification theorem
+This file contains definitions only; no classification theorem
 or constituent-existence theorem is proved here.

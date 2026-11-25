@@ -1,7 +1,5 @@
 # Proof of the character theorem for split reductive groups
 
-Author: Worker 902.
-
 This module proves the statement
 [`Rational.SplitRepresentationCharacterStatement`](SplitRepresentationCharacterStatement.md)
 (Milne, *Algebraic Groups* (2017), Theorem 22.38) as the theorem
@@ -36,7 +34,7 @@ fundamental theorem of highest weight (module
 [`Rational.SplitHighestWeightClassificationProof`](SplitHighestWeightClassificationProof.md)).
 That proof also holds over any field with no extra hypotheses.
 
-## Helper modules in this contribution
+## Helper modules ported with this file
 
 - [`MatrixRepresentation.OperatorModule`](../MatrixRepresentation/OperatorModule.md):
   a matrix representation as a module over the free algebra of its coefficient operators.

@@ -1,6 +1,5 @@
 # The actual commutator pullback on augmentation kernels
 
-Worker 1228, using Worker 1282's affine commutator coordinate construction.
 This internal construction combines `AffineCommutatorCoordinates` with
 `AugmentedTensor`. It implements the tensor-kernel step of
 Conrad–Gabber–Prasad, *Pseudo-reductive Groups*, second edition (2015),
@@ -35,5 +34,5 @@ statement.
 No field, smoothness, connectedness, or torus-action hypotheses are needed
 for this construction. Injectivity of a pullback from an image closure,
 the torus grading on coordinates, comparison with Lie weights, and generation
-of a smooth connected invariant subgroup remain separate obligations.
+of a smooth connected invariant subgroup are not treated here.
 This module does not prove the full all-test semigroup commutator bound.

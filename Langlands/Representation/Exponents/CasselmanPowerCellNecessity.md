@@ -1,8 +1,6 @@
 # Strict exponent bounds from supplied power-cell geometry
 
-Author: Worker 1680.
-
-This internal supporting unit separates the measure argument for strict
+This module separates the measure argument for strict
 Jacquet exponent bounds from the remaining geometric existence results.
 It uses the actual central quotient, the actual normalized Jacquet functor
 and its actual inverse-half Haar-modulus character. Its proof generalizes

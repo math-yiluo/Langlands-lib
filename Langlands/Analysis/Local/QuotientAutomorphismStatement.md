@@ -1,12 +1,11 @@
 # Scaling a compatible quotient measure by a group automorphism
 
-Author: Worker 787.
-
 `Langlands.QuotientIntegration.CompatibleQuotientAutomorphismScaling` is a
 proposition stating how a continuous automorphism of `G` that preserves a
 closed subgroup `H` rescales every compatible measure on the existing left
 quotient `LeftQuotient H`. This module states the proposition; it does not
-prove it. The proof is a separate later task.
+prove it. The proof is `compatibleQuotientAutomorphismScaling` in
+`Langlands.Analysis.Local.QuotientAutomorphismProof`.
 
 ## Elementary packaging
 
@@ -117,7 +116,7 @@ through `αQ`, equals `δH` times the average of `f ∘ α`. Integrating against
 
 So `map αQ ν` satisfies the Weil formula of the measure `(δH / δG) • ν`.
 To conclude that the two measures are equal requires a uniqueness argument
-for compatible measures. The proof successor must derive that internally,
+for compatible measures. A proof must derive that internally,
 for example from the existing positive lifting
 (`Langlands.Analysis.Local.QuotientPositiveLifting`) and from the
 compact-test measure extensionality in
@@ -179,7 +178,8 @@ The formalization differs from the source in the following ways.
 
 The planned use is the conjugation change of variables in the parabolic
 orbit comparison (`Langlands.Geometric.PadicParabolicOrbitJacquetComparison`,
-Worker 76). There, `α` is conjugation on the unipotent radical and `H` its
+proved in `Langlands.Representation.Geometric.ParabolicOrbitJacquetProof`).
+There, `α` is conjugation on the unipotent radical and `H` its
 intersection with the orbit stabilizer. The formal determinant normalization
-and the algebraic-integral equivariance belong to that later work, not to
+and the algebraic-integral equivariance belong to that comparison, not to
 this statement.

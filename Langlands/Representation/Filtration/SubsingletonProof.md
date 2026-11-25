@@ -1,7 +1,5 @@
 # Proof of the finite-filtration zero criterion
 
-Author: Worker 221.
-
 This pair proves the exact Library proposition
 `Langlands.ObjectRepFiltrationSubsingletonStatement` from
 `Langlands.Representation.Filtration.VanishingStatement`, as the theorem

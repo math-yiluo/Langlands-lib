@@ -1,7 +1,5 @@
 # A common extension of a finite family of finite field extensions
 
-Worker 594.
-
 `commonFiniteExtension` takes the supremum in an algebraic
 closure of the base field of the images of the family members.
 For each member, a chosen embedding into the algebraic closure

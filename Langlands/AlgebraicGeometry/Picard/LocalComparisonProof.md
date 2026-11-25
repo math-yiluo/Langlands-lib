@@ -78,6 +78,5 @@ schemes have. The imported reverse proof uses the local unit-pairing and
 cancellation route described above; the source instead uses finite
 presentation to spread a stalk basis.
 
-Worker 344 authored this logical assembly and its explanation. The
-directional proofs authored by Workers 124 and 311 are reused from the
-published Library by Lean name; no unpublished draft is used.
+The directional proofs are reused from the published Library by Lean
+name.

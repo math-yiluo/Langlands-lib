@@ -1,6 +1,6 @@
 # Indivisible central jumps in normalized quadratic coordinates
 
-Worker 244. These internal coordinate arguments combine the exact jump
+These internal coordinate arguments combine the exact jump
 characterizations with published ramified quadratic valuation arithmetic.
 `Parameters.HasIndivisibleCentralJump` means that some real central jump has its
 half absent from the ordinary quotient jump set. This condition and the first

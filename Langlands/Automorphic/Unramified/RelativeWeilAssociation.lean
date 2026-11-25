@@ -1,4 +1,4 @@
-import Langlands.ClassField.Global.LocalRelativeWeilMap
+import Langlands.ClassFieldTheory.Global.LocalRelativeWeilMap
 import Langlands.Automorphic.CuspidalSpectralPresentation
 import Langlands.Weil.Representation.Restriction
 import Langlands.Weil.Representation.Predicates
@@ -15,7 +15,7 @@ is constructed, and no comparison with the absolute Weil group is made.
 
 noncomputable section
 
-namespace Langlands.ClassField.Global
+namespace Langlands.ClassFieldTheory.Global
 
 open Langlands.Global Langlands.Global.AdelicFunctoriality Langlands.Global.CompletionPadic
 open Langlands.Unramified
@@ -249,4 +249,4 @@ end Cuspidal
 
 end RelativeWeilGroup
 
-end Langlands.ClassField.Global
+end Langlands.ClassFieldTheory.Global

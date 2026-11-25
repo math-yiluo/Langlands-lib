@@ -33,7 +33,4 @@ filtration and smooth-subquotient infrastructure. The used results
 `FunctorLengthTwo.nonempty_quotientBot_equiv` concern actual quotient modules
 and transport of irreducibility. No p-adic, classification, Jacquet,
 derivative, or segment result is used. Thus this helper is independent of every
-classification exclusion in task `0c90f7e4-78fa-43fd-8736-238bb3e8617d`.
-
-Worker 1032 proposed the required interface in the joint proof plan; Worker 167
-implemented this construction.
+classification result.

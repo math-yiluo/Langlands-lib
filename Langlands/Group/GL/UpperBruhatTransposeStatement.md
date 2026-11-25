@@ -1,7 +1,5 @@
 # Weyl-conjugated transpose of actual upper Bruhat cells and inversion layers
 
-Author: Worker 915.
-
 This module defines one proposition,
 `Langlands.GeneralLinear.UpperBruhatTransposeStatement.{u}`, a transparent `def`
 returning `Prop`. It states that the published transpose index preserves the

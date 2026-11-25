@@ -1,7 +1,5 @@
 # Conjugacy and corestriction laws from inflation and restriction laws
 
-Author: Worker 272.
-
 Lean module: `Langlands.ClassFieldTheory.Local.InvariantTransferConsequencesStatement`.
 
 This module states three conditional propositions about an arbitrary raw
@@ -65,12 +63,15 @@ clause of `RelativeClassFormation`.
 ## Intended use
 
 These propositions split generic deductions from the construction of one local
-invariant family (task `f8ddc947-2d65-4e22-a2a4-e2f4844c8e78`). Once a family is
+invariant family in the local realization proof
+(`ClassFormationAbsoluteCorestrictionProof`). Once a family is
 known to satisfy the image, inflation and restriction clauses, their proofs
 supply its `RelativeConjugacy`, `RelativeCorestriction` and
 `AbsoluteCorestriction` clauses.
 
-The intended proofs are the classical ones. Restriction from `H²(M/F)` to
+The proofs, in `InvariantRelativeConjugacyProof`,
+`InvariantRelativeCorestrictionProof` and `InvariantAbsoluteCorestrictionProof`,
+are the classical ones. Restriction from `H²(M/F)` to
 `H²(M/E)` (or between absolute groups) is surjective, because `ℚ/ℤ` is
 divisible and the invariants are injective with the stated images. The
 corestriction formulas then follow from `Cor ∘ Res = [E:F]` on `H²`, which is
@@ -99,7 +100,7 @@ conjugation `s*` is internal to one Galois group. Here it is replaced by
 transport along an arbitrary compatible pair of field equivalences between two
 p-adic fields, because the target quantifies over abstract extensions. Serre's
 proof of (iii) uses (i), the identity `s* = id` on the base field (§1, iv, via
-Chapter VII, §5, Prop. 3) and the commutation of `Res` with `s*`. The intended
+Chapter VII, §5, Prop. 3) and the commutation of `Res` with `s*`. The
 proof here uses inflation compatibility in place of passage to the limit. The
 registered source is `serre-1979-local-fields`,
 `/home/taskhub/central-library/Serre--Local Fields--1979.pdf`, SHA256

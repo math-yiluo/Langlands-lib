@@ -1,6 +1,6 @@
 # Actual rational-point central character
 
-Worker 101 constructs the central character of any irreducible smooth complex
+This module constructs the central character of any irreducible smooth complex
 representation of the actual rational points of a connected reductive group over
 any nonarchimedean local field. The field universe `u` and representation-carrier
 universe `uV` are independent. The topology is exactly

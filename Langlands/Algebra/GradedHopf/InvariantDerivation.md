@@ -1,8 +1,6 @@
 # Invariant derivations of a polynomial bialgebra
 
-Author: Worker 1389 designed and implemented this module and wrote this note, as
-part of task `90ffbd89-a3dd-4baa-84ba-332896bbbd17` (split unipotence from the
-absence of zero Lie weights). No other worker's draft was reused. Provenance: internal.
+Provenance: internal.
 This is the standard construction of left-invariant vector fields from tangent vectors at
 the identity, written for a bialgebra `A` whose underlying algebra is a polynomial algebra.
 It is used in `Langlands.Algebra.GradedHopf.Primitive` for Lemma A.

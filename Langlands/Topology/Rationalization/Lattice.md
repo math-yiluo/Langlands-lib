@@ -1,7 +1,7 @@
 # Topology and continuous actions on rationalized lattices
 
 Module `Langlands.Topology.Rationalization.Lattice`, namespace
-`Langlands.Topology.Rationalization`. Author: Worker 108.
+`Langlands.Topology.Rationalization`.
 
 ## Construction and hypotheses
 
@@ -174,11 +174,11 @@ the tensor carrier, rational scalar action, and algebraic base change are
 Mathlib's existing constructions. The proof descriptions above follow the
 implemented Lean proofs.
 
-This generic unit does not construct the finite-etale geometric monodromy
+This generic module does not construct the finite-etale geometric monodromy
 or specialize it to full or away integral Tate limits. Verifying compactness,
 Hausdorffness, positive multiplication open embeddings, and the continuous
-integral action for those geometric objects remains the responsibility of the
-parent geometric development. This module provides the conditional topology
+integral action for those geometric objects is not done in this module; it
+is left to the geometric development that uses it. This module provides the conditional topology
 and action interface once those inputs are established. It makes no assertion
 of joint scalar continuity for the usual real topology on `ℚ`, and does not
 construct or trivialize root-of-unity twists.

@@ -1,6 +1,6 @@
 # Renard II.3.13: proof of the full-distribution Hecke action laws
 
-Worker 69, Task 5528. The theorem
+The theorem
 `Langlands.HarmonicAnalysis.Distribution.RenardFullHecke.statements` proves the
 published proposition
 `Langlands.HarmonicAnalysis.Distribution.RenardFullHecke.Statements` at its full

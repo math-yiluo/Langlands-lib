@@ -80,7 +80,7 @@ theorem inclusion_section_injective
 theorem inclusion_section_exists
     (F : Action (Sheaf J (ModuleCat.{u} R)) G) (U : C)
     (s : ((productSheaf J Y.V).obj F.V).obj.obj (op U))
-    (hs : ∀ g : G, ((diagonal J Y F).ρ g).hom.app (op U) s = s) :
+    (hs : ∀ g : G, ((diagonal J Y F).ρ g).asHom.hom.app (op U) s = s) :
     ∃ t, (inclusion J Y F).hom.app (op U) t = s := by
   let E := sheafToPresheaf J (ModuleCat.{u} R) ⋙
     (evaluation Cᵒᵖ (ModuleCat.{u} R)).obj (op U) ⋙ forget (ModuleCat.{u} R)
@@ -93,7 +93,7 @@ theorem inclusion_section_exists
 /-- Restrict cover sections to the graph translated by a group element. -/
 def graphRestriction (F : Sheaf J (ModuleCat.{u} R)) (U : Over Y.V) (g : G) :
     F.obj.obj (op (Y.V ⨯ U.left)) ⟶ F.obj.obj (op U.left) :=
-  F.obj.map (prod.lift (U.hom ≫ Y.ρ g) (𝟙 U.left)).op
+  F.obj.map (prod.lift (U.hom ≫ (Y.ρ g).asHom) (𝟙 U.left)).op
 
 @[simp] theorem graphRestriction_one (F : Sheaf J (ModuleCat.{u} R))
     (U : Over Y.V) :
@@ -104,12 +104,12 @@ def graphRestriction (F : Sheaf J (ModuleCat.{u} R)) (U : Over Y.V) (g : G) :
 /-- Diagonal invariance permutes graph restrictions and acts on coefficients. -/
 theorem graphRestriction_diagonal
     (F : Action (Sheaf J (ModuleCat.{u} R)) G) (U : Over Y.V) (g h : G) :
-    ((diagonal J Y F).ρ g).hom.app (op U.left) ≫ graphRestriction J Y F.V U h =
-      graphRestriction J Y F.V U (g⁻¹ * h) ≫ (F.ρ g).hom.app (op U.left) := by
-  change F.V.obj.map (prod.map (Y.ρ g⁻¹) (𝟙 U.left)).op ≫
-      (F.ρ g).hom.app (op (Y.V ⨯ U.left)) ≫
-        F.V.obj.map (prod.lift (U.hom ≫ Y.ρ h) (𝟙 U.left)).op = _
-  rw [← (F.ρ g).hom.naturality, ← Category.assoc, ← F.V.obj.map_comp, ← op_comp]
+    ((diagonal J Y F).ρ g).asHom.hom.app (op U.left) ≫ graphRestriction J Y F.V U h =
+      graphRestriction J Y F.V U (g⁻¹ * h) ≫ (F.ρ g).asHom.hom.app (op U.left) := by
+  change F.V.obj.map (prod.map (Y.ρ g⁻¹).asHom (𝟙 U.left)).op ≫
+      (F.ρ g).asHom.hom.app (op (Y.V ⨯ U.left)) ≫
+        F.V.obj.map (prod.lift (U.hom ≫ (Y.ρ h).asHom) (𝟙 U.left)).op = _
+  rw [← (F.ρ g).asHom.hom.naturality, ← Category.assoc, ← F.V.obj.map_comp, ← op_comp]
   dsimp [graphRestriction]
   congr 2
   rw [← op_comp]
@@ -120,20 +120,20 @@ theorem graphRestriction_diagonal
 theorem invariant_section_graph
     (F : Action (Sheaf J (ModuleCat.{u} R)) G) (U : Over Y.V)
     (s : F.V.obj.obj (op (Y.V ⨯ U.left)))
-    (hs : ∀ g : G, ((diagonal J Y F).ρ g).hom.app (op U.left) s = s)
+    (hs : ∀ g : G, ((diagonal J Y F).ρ g).asHom.hom.app (op U.left) s = s)
     (g : G) :
     graphRestriction J Y F.V U g s =
-      (F.ρ g).hom.app (op U.left) ((productEvaluation J Y F.V).hom.app (op U) s) := by
+      (F.ρ g).asHom.hom.app (op U.left) ((productEvaluation J Y F.V).hom.app (op U) s) := by
   have h := ConcreteCategory.congr_hom (graphRestriction_diagonal J Y F U g g) s
-  change graphRestriction J Y F.V U g (((diagonal J Y F).ρ g).hom.app (op U.left) s) =
-    (F.ρ g).hom.app (op U.left) (graphRestriction J Y F.V U (g⁻¹ * g) s) at h
+  change graphRestriction J Y F.V U g (((diagonal J Y F).ρ g).asHom.hom.app (op U.left) s) =
+    (F.ρ g).asHom.hom.app (op U.left) (graphRestriction J Y F.V U (g⁻¹ * g) s) at h
   simpa only [hs, inv_mul_cancel, graphRestriction_one] using! h
 
 /-- The published inclusion sends each section to a diagonal-invariant section. -/
 theorem inclusion_section_invariant
     (F : Action (Sheaf J (ModuleCat.{u} R)) G) (U : C)
     (t : (associated J Y F).obj.obj (op U)) (g : G) :
-    ((diagonal J Y F).ρ g).hom.app (op U) ((inclusion J Y F).hom.app (op U) t) =
+    ((diagonal J Y F).ρ g).asHom.hom.app (op U) ((inclusion J Y F).hom.app (op U) t) =
       (inclusion J Y F).hom.app (op U) t := by
   have h := congrArg (fun f => f.hom.app (op U)) (inclusion_invariant J Y F g)
   exact ConcreteCategory.congr_hom h t
@@ -155,26 +155,26 @@ theorem associatedEvaluation_bijective
           ((inclusion J Y F).hom.app (op U.left) y) at hxy
     exact (invariant_section_graph J Y F U _
       (inclusion_section_invariant J Y F U.left x) g).trans
-        ((congrArg (fun z => (F.ρ g).hom.app (op U.left) z) hxy).trans
+        ((congrArg (fun z => (F.ρ g).asHom.hom.app (op U.left) z) hxy).trans
           (invariant_section_graph J Y F U _
             (inclusion_section_invariant J Y F U.left y) g).symm)
   · intro x
-    obtain ⟨s, hs⟩ := hsplit.2 (fun g => (F.ρ g).hom.app (op U.left) x)
+    obtain ⟨s, hs⟩ := hsplit.2 (fun g => (F.ρ g).asHom.hom.app (op U.left) x)
     have hs' (g : G) : graphRestriction J Y F.V U g s =
-        (F.ρ g).hom.app (op U.left) x := congrFun hs g
-    have hinv (g : G) : ((diagonal J Y F).ρ g).hom.app (op U.left) s = s := by
+        (F.ρ g).asHom.hom.app (op U.left) x := congrFun hs g
+    have hinv (g : G) : ((diagonal J Y F).ρ g).asHom.hom.app (op U.left) s = s := by
       apply hsplit.1
       funext h
       have hd := ConcreteCategory.congr_hom (graphRestriction_diagonal J Y F U g h) s
-      change graphRestriction J Y F.V U h (((diagonal J Y F).ρ g).hom.app (op U.left) s) =
-        (F.ρ g).hom.app (op U.left) (graphRestriction J Y F.V U (g⁻¹ * h) s) at hd
-      have hm := congrArg (fun f => f.hom.app (op U.left)) (F.ρ.map_mul g (g⁻¹ * h))
+      change graphRestriction J Y F.V U h (((diagonal J Y F).ρ g).asHom.hom.app (op U.left) s) =
+        (F.ρ g).asHom.hom.app (op U.left) (graphRestriction J Y F.V U (g⁻¹ * h) s) at hd
+      have hm := congrArg (fun f => f.asHom.hom.app (op U.left)) (F.ρ.map_mul g (g⁻¹ * h))
       have hm' := ConcreteCategory.congr_hom hm x
-      change (F.ρ (g * (g⁻¹ * h))).hom.app (op U.left) x =
-        (F.ρ g).hom.app (op U.left) ((F.ρ (g⁻¹ * h)).hom.app (op U.left) x) at hm'
-      have hm'' : (F.ρ g).hom.app (op U.left) ((F.ρ (g⁻¹ * h)).hom.app (op U.left) x) =
-          (F.ρ h).hom.app (op U.left) x := by simpa using hm'.symm
-      exact hd.trans ((congrArg (fun z => (F.ρ g).hom.app (op U.left) z)
+      change (F.ρ (g * (g⁻¹ * h))).asHom.hom.app (op U.left) x =
+        (F.ρ g).asHom.hom.app (op U.left) ((F.ρ (g⁻¹ * h)).asHom.hom.app (op U.left) x) at hm'
+      have hm'' : (F.ρ g).asHom.hom.app (op U.left) ((F.ρ (g⁻¹ * h)).asHom.hom.app (op U.left) x) =
+          (F.ρ h).asHom.hom.app (op U.left) x := by simpa using hm'.symm
+      exact hd.trans ((congrArg (fun z => (F.ρ g).asHom.hom.app (op U.left) z)
         (hs' (g⁻¹ * h))).trans (hm''.trans (hs' h).symm))
     obtain ⟨t, ht⟩ := inclusion_section_exists J Y F U.left s hinv
     refine ⟨t, ?_⟩

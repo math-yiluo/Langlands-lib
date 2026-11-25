@@ -1,12 +1,12 @@
 # Ext computed with a projective resolution of the first argument
 
-Author: Worker 61. Built on the Library modules
+Built on the Library modules
 `Langlands.Cohomology.HyperextHomComplex` (`homObjComplex`, `sign`,
 `cochainAddEquiv`, `cochainAddEquiv_toSingleMk`, `homComplexSingleIso`),
 `Langlands.Cohomology.SmoothHyperextSecondPage` (`secondPageAddEquiv`),
 `Langlands.Cohomology.ExtRightDerived` (`hasExt_smoothRep`,
-`smoothExtAddEquiv`) and `Langlands.Cohomology.SmoothExt` (`SmoothExt.ext`,
-by Worker 13), and on Mathlib's computation of `Ext` with projective
+`smoothExtAddEquiv`) and `Langlands.Cohomology.SmoothExt` (`SmoothExt.ext`),
+and on Mathlib's computation of `Ext` with projective
 resolutions (`Mathlib.CategoryTheory.Abelian.Projective.Ext`) and
 `Ext.subsingleton_of_projective`.
 
@@ -20,7 +20,9 @@ groups vanish, page 2 of the hyperext spectral sequence of smooth
 representations vanishes off the column `p = 0` when the relevant
 cohomology object is projective, and the Ext hypothesis of
 `HyperextDegenerationStatement` holds when every cohomology object is
-projective. `HyperextDegenerationStatement` itself is not proved.
+projective. `HyperextDegenerationStatement` itself is not proved here; its
+proof is `Langlands.Cohomology.hyperextDegenerationStatement_proof` in
+`Langlands.Cohomology.HyperextDegeneration.Proof`.
 
 ## Setting and notation
 
@@ -51,7 +53,7 @@ Section `Smooth` takes a commutative ring `R` and a topological group `G`,
 both in universe `u`, and the abelian category `SmoothRep.{u, u, u} R G` of
 smooth representations of `G` on `R`-modules in `Type u`.
 `SmoothExt.ext R G V n` is the `n`-th right derived functor of equivariant
-`Hom(V, -)` with values in `R`-modules (Worker 13). The last theorem also
+`Hom(V, -)` with values in `R`-modules. The last theorem also
 assumes `HasDerivedCategory.{w} (SmoothRep.{u, u, u} R G)`.
 
 ## Declarations
@@ -144,7 +146,7 @@ homological algebra. The following passages of Harris, *Galois properties of
 cohomological automorphic forms on GL(n)*, J. Math. Kyoto Univ. 39-2 (1999),
 299-318 (source
 `harris-1999-cohomological-automorphic-forms-525a222c4489ee9d`), motivate the
-module; Worker 61 read them in the rendered page scans.
+module; they were read in the rendered page scans.
 
 - Printed p.310 (one-based PDF page 12), on the proof of Lemma 6 of Harris
   1997: "There the main step is to show that `H_c^•(M̌_N, O_m)` can be
@@ -174,7 +176,7 @@ group `GJ`, space `M̌_N` or complex `Z^{i,j}` is defined in this module.
 
 ## Scope
 
-- `HyperextDegenerationStatement` is not proved. Only its `Ext` hypothesis
+- `HyperextDegenerationStatement` is not proved here. Only its `Ext` hypothesis
   is verified, and only for objects all of whose cohomology objects are
   projective.
 - Projectivity is projectivity in the abelian category in question (for

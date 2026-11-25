@@ -15,7 +15,7 @@ central-product and finite-Weyl-image hypotheses; smoothness, the derived-subgro
 condition, and local finite type of `D` are used for the subsequent root bijection.
 Centrality forces the ambient root to vanish on `c`. The actual reflection
 transport in `DerivedCorootReflection` then realizes the reflection with the
-transported source coroot by an ambient normalizer point. Worker 1577's generic
+transported source coroot by an ambient normalizer point. The generic
 normalizer-reflection uniqueness theorem identifies that cocharacter with the
 ambient coroot.
 

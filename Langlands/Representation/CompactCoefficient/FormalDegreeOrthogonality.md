@@ -1,6 +1,6 @@
 # Compact-coefficient orthogonality and nonzero formal degree
 
-Author: Worker 140. The theorem `Langlands.Renard.CompactRepresentation.compactCoefficientFormalDegree` proves exactly the published `CompactCoefficientFormalDegreeStatement` with its independent group and representation universes.
+The theorem `Langlands.Renard.CompactRepresentation.compactCoefficientFormalDegree` proves exactly the published `CompactCoefficientFormalDegreeStatement` with its independent group and representation universes.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*, French version dated 9 July 2026, IV.1.4, Proposition and definition of the formal degree, printed pp.91–92 / PDF pp.97–98. Source ID: `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 

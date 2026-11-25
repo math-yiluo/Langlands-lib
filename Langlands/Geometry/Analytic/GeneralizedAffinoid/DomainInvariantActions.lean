@@ -20,8 +20,8 @@ variable {K : Type u} [NormedField K] [IsUltrametricDist K] [CompleteSpace K]
 as an equality of full bounded maps. -/
 @[simp]
 theorem sectionAction_comp_baseMap (d : Domain K P) (g : ρ.locusOpenSubgroup d) :
-    (ρ.sectionAction d g).hom.comp d.baseMap =
-      d.baseMap.comp (ρ.toMonoidHom (g : G)).hom := by
+    (ρ.sectionAction d g).asIso.hom.comp d.baseMap =
+      d.baseMap.comp (ρ.toMonoidHom (g : G)).asIso.hom := by
   apply BoundedAlgHom.ext
   exact ρ.sectionAction_baseMap d g
 
@@ -29,8 +29,8 @@ theorem sectionAction_comp_baseMap (d : Domain K P) (g : ρ.locusOpenSubgroup d)
 element preserves both represented loci. -/
 theorem sectionAction_restriction {d e : Domain K P} (f : d ⟶ e)
     (g : G) (hd : g ∈ ρ.locusOpenSubgroup d) (he : g ∈ ρ.locusOpenSubgroup e) :
-    f.restriction.comp (ρ.sectionAction e ⟨g, he⟩).hom =
-      (ρ.sectionAction d ⟨g, hd⟩).hom.comp f.restriction :=
+    f.restriction.comp (ρ.sectionAction e ⟨g, he⟩).asIso.hom =
+      (ρ.sectionAction d ⟨g, hd⟩).asIso.hom.comp f.restriction :=
   (stabilizerSectionMap_restriction f (ρ.toMonoidHom g) hd he).symm
 
 /-- The actual structural spectrum map intertwines inverse pullback actions. -/
@@ -65,15 +65,15 @@ def invariantSectionAction (H : OpenSubgroup G) (d : ρ.InvariantDomain H) :
 @[simp]
 theorem invariantSectionAction_baseMap (H : OpenSubgroup G)
     (d : ρ.InvariantDomain H) (g : H) (a : P) :
-    (ρ.invariantSectionAction H d g).hom.toAlgHom (d.obj.baseMap a) =
-      d.obj.baseMap ((ρ.toMonoidHom (g : G)).hom.toAlgHom a) :=
+    (ρ.invariantSectionAction H d g).asIso.hom.toAlgHom (d.obj.baseMap a) =
+      d.obj.baseMap ((ρ.toMonoidHom (g : G)).asIso.hom.toAlgHom a) :=
   ρ.sectionAction_baseMap d.obj (ρ.invariantStabilizerInclusion H d g) a
 
 /-- Restriction is equivariant as an equality of full bounded algebra maps. -/
 theorem invariantSectionAction_restriction (H : OpenSubgroup G)
     {d e : ρ.InvariantDomain H} (f : d ⟶ e) (g : H) :
-    f.hom.restriction.comp (ρ.invariantSectionAction H e g).hom =
-      (ρ.invariantSectionAction H d g).hom.comp f.hom.restriction :=
+    f.hom.restriction.comp (ρ.invariantSectionAction H e g).asIso.hom =
+      (ρ.invariantSectionAction H d g).asIso.hom.comp f.hom.restriction :=
   ρ.sectionAction_restriction f.hom g _ _
 
 /-- In geometric direction the actual section algebra carries the inverse
@@ -82,7 +82,7 @@ def invariantAffinoidAction (H : OpenSubgroup G) (d : ρ.InvariantDomain H) :
     Action (PresentedAffinoidSpace K) H where
   V := Opposite.op d.obj.algebra
   ρ :=
-    { toFun := fun g => Quiver.Hom.op (ρ.invariantSectionAction H d g).inv
+    { toFun := fun g => End.of (Quiver.Hom.op (ρ.invariantSectionAction H d g).asIso.inv)
       map_one' := by
         rw [map_one]
         rfl
@@ -99,8 +99,8 @@ def invariantAffinoidActionFunctor (H : OpenSubgroup G) :
     { hom := Quiver.Hom.op f.hom.restriction
       comm := fun g => by
         apply Quiver.Hom.unop_inj
-        change (ρ.invariantSectionAction H _ g).inv.comp f.hom.restriction =
-          f.hom.restriction.comp (ρ.invariantSectionAction H _ g).inv
+        change (ρ.invariantSectionAction H _ g).asIso.inv.comp f.hom.restriction =
+          f.hom.restriction.comp (ρ.invariantSectionAction H _ g).asIso.inv
         have heq := ρ.invariantSectionAction_restriction H f g⁻¹
         rw [map_inv, map_inv] at heq
         exact heq.symm }
@@ -130,8 +130,8 @@ theorem invariantSpectrumActionFunctor_obj_apply (H : OpenSubgroup G)
     (d : ρ.InvariantDomain H) (g : H) (x : BanachSpectrum d.obj.algebra)
     (b : d.obj.algebra) :
     BanachSpectrum.toMulRingSeminorm
-      (ConcreteCategory.hom (((ρ.invariantSpectrumActionFunctor H).obj d).ρ g) x) b =
-        x ((ρ.invariantSectionAction H d g).inv.toAlgHom b) :=
+      (ConcreteCategory.hom (((ρ.invariantSpectrumActionFunctor H).obj d).ρ g).asHom x) b =
+        x ((ρ.invariantSectionAction H d g).asIso.inv.toAlgHom b) :=
   rfl
 
 @[simp]

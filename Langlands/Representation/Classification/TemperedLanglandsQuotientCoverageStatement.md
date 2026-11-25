@@ -1,7 +1,5 @@
 # Independent positive-rank tempered quotient coverage
 
-Author: Worker 171.
-
 `Langlands.Classification.TemperedLanglandsQuotientCoverage.{uF,uV} F T`
 is an internal, independent proof-decomposition target. It states existence
 of a tempered standard module surjecting onto each irreducible smooth input
@@ -27,7 +25,7 @@ The field universe `uF` and carrier parameter universe `uV` are independent.
 The blocks, standard module and input representation have carriers in
 `Type (max uF uV)`, which is closed under the actual induction construction.
 All primes, p-adic fields and supplied topological data remain arbitrary.
-Rank zero is outside this statement and remains a separate exact target.
+Rank zero is outside this statement.
 
 The sole import is the published
 [`LanglandsData`](LanglandsData.lean). Its `TemperedLanglandsDatum` contains an
@@ -59,7 +57,7 @@ The separately published theorem
 `Langlands.CuspidalSupport.cuspidalEmbedding` in
 [`CuspidalEmbeddingProof`](../CuspidalSupport/CuspidalEmbeddingProof.lean)
 supplies automatic admissibility for an irreducible smooth input, including
-the present saturated carrier universe. A future independent proof using
+the present saturated carrier universe. An independent proof using
 Jacquet exponents may obtain admissibility from that theorem. The present
 definition neither imports its proof nor adds its conclusion or the theorem
 itself as a premise.
@@ -73,7 +71,7 @@ exhaustion, square-integrable exhaustion, or regular Langlands exhaustion.
 Shared lower-level results can be used only after their dependencies have
 been checked for this independence.
 
-## Reciprocity direction and remaining proof obligations
+## Reciprocity direction and proof obligations
 
 The published `Langlands.Jacquet.characterReciprocity` in
 [`ReciprocityProof`](../Jacquet/ReciprocityProof.lean) has the direction
@@ -87,7 +85,7 @@ It identifies maps **from the input into induction**, not maps from induction
 onto the input. A quotient of an opposite Jacquet module therefore does not
 directly produce the upper-induced surjection required here.
 
-A future proof using contragredients must establish the needed analytic
+A proof using contragredients must establish the needed analytic
 dual preservation, smooth bidual/reflexivity, induction duality,
 positive-half-modulus normalization, exponent signs and block reversal,
 or give a different correct independent route. These steps are proof
@@ -97,5 +95,6 @@ principle and the conversion of a whole-Levi tempered representation into
 tempered general-linear blocks; a statement of either step is not a proof.
 
 The present module supplies no Jacquet selection, tensor temperedness,
-duality, reversal or exhaustion theorem. Its exact proof is a separate
-successor task after independent acceptance and publication of this statement.
+duality, reversal or exhaustion theorem. Its exact proof is
+`Langlands.Classification.temperedLanglandsQuotientCoverage` in
+[`TemperedLanglandsQuotientCoverageProof`](TemperedLanglandsQuotientCoverageProof.lean).

@@ -1,6 +1,6 @@
 # Actual field sections of arbitrary smooth dimension pieces
 
-This is derived host content for Brian Conrad, *Weil and Grothendieck approaches
+This is derived content for Brian Conrad, *Weil and Grothendieck approaches
 to adelic points*, December 31, 2011, printed p.15, Proposition 5.4, and the
 manifold construction on printed p.16. The source's complete-field smooth-space
 assertion allows dimensions to vary between components. It does not separately
@@ -10,7 +10,7 @@ constructions supply an algebraic bridge toward that assertion.
 Let `K` be any field, let `X` be an actual algebraic space over `Spec K`, and let
 `hX : SmoothOverBase X`. Let `L` be any field with a `K`-algebra structure.
 There is no compactness, finite-range, finite-type, separatedness, completeness,
-or valuation hypothesis in this unit. Every natural number indexes a piece,
+or valuation hypothesis in this module. Every natural number indexes a piece,
 including empty pieces.
 
 The namespace is
@@ -61,9 +61,15 @@ uses the proved injectivity of assembly. Both laws are also exported as
 between actual `RingPoints K X L` and
 `Σ n : ℕ, RingPoints K (space hX n) L`, without any finite-index interface.
 
-This unit ends with algebraic section maps and their inverse laws. It proves
+This module ends with algebraic section maps and their inverse laws. It proves
 no homeomorphism for the étale-chart rational-point topology. Functorial
 analytic assembly across target dimension pieces, étale dimension preservation,
 local analytic isomorphisms and uniqueness of a varying-dimensional analytic
-structure remain subsequent statement and proof work. The full manifold
-assertion is not claimed here.
+structure are separate statements, proved in
+`SmoothSourceDimensionAnalyticAssemblyProof`,
+`SmoothSourceDimensionAnalyticFunctorialityProof`,
+`SmoothSourceDimensionEtaleAnalyticIsoProof` and
+`SmoothSourceDimensionAnalyticUniquenessProof`; the homeomorphism is
+proved in `SmoothSourceDimensionTopologyProof`. The full manifold
+assertion is not claimed here; it is proved as `smoothSourceAnalyticManifold`
+in `SmoothSourceAnalyticManifoldProof`.

@@ -1,6 +1,7 @@
 # Irreducibility of the archimedean multiplicity space
 
-This internal result for Task 7294 equips the finite-factor multiplicity
+This internal result for the cuspidal contragredient of dual cusp forms
+(`CuspidalTransposeInverseContragredientStatement`) equips the finite-factor multiplicity
 space with the genuine complexified archimedean Lie action and proves
 irreducibility for its combined compact and Lie actions. The finite factor
 is supplied as an actual nonzero irreducible admissible subrepresentation.

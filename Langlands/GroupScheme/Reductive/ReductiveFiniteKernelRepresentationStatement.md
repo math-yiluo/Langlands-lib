@@ -124,8 +124,9 @@ stable subspace is in particular stable under the `k`-points `k′^×` of `G`,
 hence is a `k′`-subspace of `k′`, which is `0` or `k′`. (This example is not
 used by the Lean statement.)
 
-Relation to the Library. The Library has no statement of Proposition 21.60.
-Related statements:
+Relation to the Library. The Library proves this statement as
+`reductiveFiniteKernelRepresentation` (in
+`ReductiveFiniteKernelRepresentationProof`). Related statements:
 
 - `SemisimpleRepresentationUnipotentStatement` (in
   [`SemisimpleRepresentationUnipotentStatement`](SemisimpleRepresentationUnipotentStatement.md),
@@ -156,7 +157,10 @@ errata snapshot of 2026-11-04 for the 2022 reprint (source ID
 `78e5f297fb2c80c6dacf413fc5abd7f82ba3dd5e5f83b5a5205dfd93bf160d49`) has no
 entry for printed p. 442.
 
-## For the later proof (not part of this unit)
+## For the proof (not part of this module)
+
+The Library proves the statement as `reductiveFiniteKernelRepresentation` in
+`ReductiveFiniteKernelRepresentationProof`.
 
 - (⇐). Let `ρ` be semisimple with finite kernel. By
   `SemisimpleRepresentationUnipotentStatement` (first conjunct), every

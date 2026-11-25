@@ -1,6 +1,6 @@
 # The normal-coinvariant relation kernel of compact induction
 
-Worker 121 proves
+This file proves
 
 ```lean
 theorem Langlands.Induction.compactInductionNormalCoinvariantKernel :
@@ -103,7 +103,7 @@ No comparison-equivalence theorem enters the argument.
 The source motivation is I. N. Bernstein and A. V. Zelevinsky,
 *Induced representations of reductive p-adic groups I*, Ann. Sci. ENS (4)
 10 (1977), 441–472, §5.16, printed pp.465–466 / PDF pp.26–27.
-Worker 121 read the entire section and visually checked both pages,
+The entire section was read and both pages were checked visually,
 including the reduction diagram.
 
 - Registered literature ID: `bernstein-zelevinsky-1977-induced-i`.
@@ -123,7 +123,7 @@ As explained in the statement Markdown, the exact pointwise kernel
 formulation here is internal to this project. The implemented elementary
 local-section and finite-cover proof replaces the source's sheaf and
 filtered-limit argument, and introduces no complementary subgroup.
-The finite-union cutoff identity also occurs in Worker 121's published
+The finite-union cutoff identity also occurs in the published
 [`LocalizationProof`](../../HarmonicAnalysis/Distribution/LocalizationProof.md);
 here it is proved directly for the compact-induction cutoff. The section,
 cutoff and quotient-support constructions are reused from the published

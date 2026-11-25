@@ -29,10 +29,10 @@ def WeakBaseChangeUnitaryCentralCharacterStatement : Prop :=
   ∀ (F : Type uF) (E : Type uE) [Field F] [NumberField F] [Field E] [NumberField E]
     [Algebra F E] [CompactSpace (AdeleQuotient F)] [CompactSpace (AdeleQuotient E)]
     (r : ℕ) (S : CuspidalOperatorRealization F r) (T : CuspidalOperatorRealization E r),
-    ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T →
+    ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T →
     CuspidalOperatorRealization.IsoClass.IsWeakBaseChangeOf.{uF, uE, uV, uW}
       T.isoClass S.isoClass →
-    ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter S
+    ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter S
 
 def Proposition48SingletonInducedParameterStatement : Prop :=
   ∀ (Q : Proposition48Problem.{uF}) (D : IntermediateField Q.E Q.L),
@@ -57,7 +57,7 @@ def Proposition48SingletonDescentSelectionTCStatement : Prop :=
       Q.IsAuxiliaryValid → Q.IsPrimeCyclicStep D → Nat.card (Q.MackeyIndex D) = 1 →
       letI : CompactSpace (AdeleQuotient D) := compactSpace_adeleQuotient D
       ∀ [IsCMField D] (r : ℕ) (S : CuspidalOperatorRealization D r),
-        ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter S →
+        ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter S →
         S.isoClass.IsConjugateSelfDual →
         Q.IsMackeyConstituent.{uF, uV} D 1 S.isoClass →
         (∀ σ : D ≃ₐ[Q.E] D, S.isoClass.IsGaloisStable σ) →

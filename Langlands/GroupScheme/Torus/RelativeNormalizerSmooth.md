@@ -1,7 +1,8 @@
 # Smooth normalizers of relative tori over arbitrary bases
 
-Worker 594. This internal construction supplies the smooth normalizer needed
-by the smooth-affine torus Weyl quotient task.
+This internal construction supplies the smooth normalizer needed by the proof
+`smoothAffineTorusWeylQuotient` of `SmoothAffineTorusWeylQuotientStatement`
+([`SmoothAffineWeylQuotientProof`](SmoothAffineWeylQuotientProof.md)).
 
 For an arbitrary scheme `S`, a smooth relatively affine group scheme `G`, and a
 closed homomorphism `t : T.toGrp ⟶ G` from a relative torus,

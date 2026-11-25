@@ -1,7 +1,5 @@
 # Lifting Galois pinning data from a finite stage to the separable closure
 
-Author: Worker 148.
-
 Lean module: `Langlands.GroupScheme.Reductive.StarActionFiniteStageLift`. It imports
 [`Reductive.StarActionFiniteStageProof`](StarActionFiniteStageProof.md) (and through it the
 Library's Galois pinning data, star actions, tower isomorphisms and root-datum comparison
@@ -146,8 +144,7 @@ Frobenius of `k_s` restricts to that of `L`.
 ## Role in the Library
 
 Support for the proof of `FiniteFieldFormExistenceStatement` (module
-`Langlands.GroupScheme.Reductive.FiniteFieldFormExistenceStatement`, submitted separately as
-candidate `b6b8e0ed-dbdb-4f23-94b4-492ed29184b7` for Task 6547; this module does not import
-it). By `exists_frobenius_class_of_stage`, it is enough to construct the form `G_θ` with
+`Langlands.GroupScheme.Reductive.FiniteFieldFormExistenceStatement`; this module does not import
+it, and `Reductive.FiniteFieldFormConstruction` imports this module). By `exists_frobenius_class_of_stage`, it is enough to construct the form `G_θ` with
 Galois pinning data over a finite extension `L` of `k` (for example of degree a multiple of the
 order of `θ`) and to compute its star action of `Frob_L` there.

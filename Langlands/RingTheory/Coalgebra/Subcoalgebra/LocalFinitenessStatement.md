@@ -56,5 +56,6 @@ official errata snapshot `milne-2017-algebraic-groups-errata-2026-11-02` has no
 correction to Proposition 4.7, these passages of §9.d, or Theorem 12.18.
 
 This module states the proposition. The mathematical derivation explains its
-provenance; it is not a Lean proof of `LocalFinitenessStatement`. Proving that
-exact proposition is a separate proof task.
+provenance; it is not a Lean proof of `LocalFinitenessStatement`. That exact
+proposition is proved separately, as `Langlands.Subcoalgebra.localFiniteness` in
+`Langlands.RingTheory.Coalgebra.Subcoalgebra.LocalFiniteness`.

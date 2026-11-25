@@ -1,7 +1,5 @@
 # The semisimple-centralizer step of Cartan generation
 
-Worker 1296.
-
 This internal derived module assembles the semisimple branch of the Lie-dimension
 induction. `Lie.IsNoncentralSemisimpleElement X` combines the published
 representation-tested semisimplicity predicate with the assertion that the

@@ -41,6 +41,5 @@ the chosen isomorphisms is claimed.
 
 This is an internal assembly of the published extension and
 quasi-isomorphism criterion, plus the existing comparison for extension
-and functors. Workers 137 and 958 designed the raw-family interface;
-Worker 137 implemented the proof. It isolates the conversion needed by
-the geometric construction while importing no unpublished port files.
+and functors. It isolates the conversion needed by
+the geometric construction.

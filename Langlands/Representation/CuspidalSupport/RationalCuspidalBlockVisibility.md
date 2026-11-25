@@ -1,6 +1,6 @@
 # Compact visibility of actual cuspidal inertia blocks
 
-This internal supporting unit relates the published proper-standard
+This internal supporting module relates the published proper-standard
 cuspidality and actual rational inertia classes. The field universe `uF`
 and representation-carrier universe `uV` remain independent. No
 admissibility, finite length or finite-dimensionality hypothesis is used.
@@ -48,7 +48,7 @@ in an actual irreducible subquotient; block membership identifies its
 class, and the preceding comparison makes it cuspidal. The visible block
 support embeds into the supplied finite set of visible inertia classes.
 
-Worker 1751 derives this unit from the published actual compact
+This module is derived from the published actual compact
 containment, rational norm-kernel, normalized Jacquet twist, inertia
 quotient and fixed-vector constituent APIs. It is an internal comparison,
 not a new assertion attributed to literature. Compact-level inertia

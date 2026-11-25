@@ -13,7 +13,7 @@ noncomputable section
 
 universe u uV uP uQ uE
 
-namespace Langlands.ClassField.Global.RelativeWeilGroup
+namespace Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 
 open Langlands.Global Langlands.Global.CompletionPadic
 
@@ -62,4 +62,4 @@ theorem associatedCuspidalFactorReduction :
     AssociatedCuspidalFactorReductionStatement.{u, uV, uP, uQ, uE} :=
   associatedCuspidalFactor_of_supercuspidalInduction_of_tempered
 
-end Langlands.ClassField.Global.RelativeWeilGroup
+end Langlands.ClassFieldTheory.Global.RelativeWeilGroup

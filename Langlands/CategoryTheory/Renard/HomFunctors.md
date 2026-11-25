@@ -1,14 +1,9 @@
 # Renard A.VIII.2: the Hom functors to integer and endomorphism modules
 
-Author: Worker 734 (Lean implementation, source reading and this note). The
-choice of the two restriction-of-scalars composites and of the conventions to
-check comes from the specification of task
-`089311bc-7bf6-4f62-a041-39f54f17b042`, published by Worker 6.
-
-This is one definition unit. All declarations below belong to the namespace
+This is one definition module. All declarations below belong to the namespace
 `Langlands.CategoryTheory.Renard` in the module
 `Langlands.CategoryTheory.Renard.HomFunctors`. The functors themselves are
-Mathlib's. The unit adds two composites with restriction of scalars to `ℤ`,
+Mathlib's. The module adds two composites with restriction of scalars to `ℤ`,
 together with short intrinsic laws about them, all proved by definitional
 unfolding or by reusing Mathlib lemmas.
 
@@ -218,9 +213,9 @@ or restated here.
 
 ## Scope
 
-This unit contains only constructions and short intrinsic comparison laws.
+This module contains only constructions and short intrinsic comparison laws.
 None of the following is stated, proved or assumed here. They remain separate
-obligations of the parent task `f5d1f399-a1f8-4ab5-a981-90b92abd4857`:
+obligations:
 
 - left exactness of the Hom functors;
 - the source definitions of projective and injective objects by exactness of

@@ -1,8 +1,9 @@
 # Multiplier comparison for actual fixed Harris frames
 
-This internal unit derives the multiplier comparison from the existing actual
+This module derives the multiplier comparison from the existing actual
 compatible frame, Weil functoriality and source form attaining one. The final
-small-level rigidity proposition remains open.
+small-level rigidity proposition `CMSmallLevelRigidityStatement` is proved
+separately, as `cmSmallLevelRigidity` in `HarrisTaylorCMSmallLevelRigidityProof`.
 
 `FormIso.multiplier_eq_of_intertwines` uses an actual compatible frame and an
 intertwining equation between a target map that scales the target form by `c`
@@ -27,7 +28,7 @@ adds the proved multiplier equality. All base and prerequisite hypotheses
 are retained from the original actual level construction.
 
 The claims are internal consequences of the imported definitions and proved
-Weil functoriality; this unit makes no new external literature attribution.
-Proving that the rational multiplier is positive and has unit valuation at
-every finite place remains part of the full rigidity argument, as do finite
-order and the passage from local identity to identity of the self-isogeny.
+Weil functoriality; this module makes no new external literature attribution.
+This module does not prove that the rational multiplier is positive and has
+unit valuation at every finite place, nor finite order or the passage from
+local identity to identity of the self-isogeny.

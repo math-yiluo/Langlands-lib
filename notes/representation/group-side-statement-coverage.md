@@ -1,11 +1,10 @@
 # Group-side local Langlands statements: coverage, versions and obligations
 
-Author: Worker 5, for task `a2a442fc-f72b-43ea-a3f3-bcfd61415ccc` (Task 5,
-revision 1), written 9 November 2026 and rechecked on 10 November 2026
-against Library commit `e449cde988d4e97ab280b8d4d11262887ccc26e0`.
+This note, written on 9 November 2026, was checked on 10 November 2026 against Library commit
+`e449cde988d4e97ab280b8d4d11262887ccc26e0` (the pin below).
 
-This note maps every theorem family that Task 5 requires to the
-proposition definitions that state it in the current Library. The families
+This note maps every theorem family of the group-side local Langlands
+statements to the proposition definitions that state it in the Library. The families
 are: smooth and admissible representations and finite length; induction,
 compact induction and Jacquet functors (exactness, transitivity,
 adjunction); the geometric lemma and cuspidal support; finite length and
@@ -19,12 +18,12 @@ For each family the note names the actual aggregate declarations and their
 principal original source, and says whether a published theorem proves the
 aggregate. The appendix gives the SHA256 of the Lean file of every
 aggregate in the tables and of its paired Markdown at the pinned commit;
-together with the commit, these identify the exact accepted versions.
+together with the commit, these identify the exact versions.
 Declarations mentioned only in passing are identified by the commit. The note also lists the
-retained source gaps and the responsibilities that remain open.
+retained source gaps and the obligations that remain open.
 
 Every declaration cited as a statement is a `def` whose type ends in
-`Prop`. Publication of a statement accepts its formulation and its source
+`Prop`. Stating it in the Library fixes its formulation and its source
 correspondence. It does not prove the proposition, and no statement here is
 assumed true in order to state another.
 
@@ -41,32 +40,28 @@ The general reductive statements are mapped in the Renard notes, chiefly
 [parabolic functors and tempered representations](../renard/parabolic-functors-tempered-progress.md)
 and [supercuspidal induction and cuspidal support](../renard/supercuspidal-finite-length-progress.md).
 Sections 1–3 below map the foundational and structural families in
-detail; the earlier notes do not collect them in one place. The unreviewed
-coverage draft of the previous executors of this task (shared draft of
-Task 5, revision 1) was used for navigation only; every entry below was
+detail; the earlier notes do not collect them in one place. An earlier,
+unchecked coverage draft was used for navigation only; every entry below was
 rechecked against the Library files at the pinned commit.
 
 ## How the inventory was checked
 
 - **Existence and elaborated types.** All 105 aggregates in the appendix
-  were imported into one private probe module and printed with `#check` at
-  the pinned commit, in the task's Lean environment
-  `bb168ec3-1031-46d9-816b-5c2ed7bbe1a6` (Lean 4.34.0, Mathlib
-  `5ed2965256430c3649e86755f9576b54eca72435`). Lean check
-  `92e56db1-31b0-4931-a2df-1429adaee1fe` compiled with zero errors and zero
-  warnings. Every printed type has codomain `Prop`; some aggregates take
+  were imported into one probe module and printed with `#check` at the
+  pinned commit, with Lean 4.34.0 and Mathlib
+  `5ed2965256430c3649e86755f9576b54eca72435`. The probe compiled with zero
+  errors and zero warnings. Every printed type has codomain `Prop`; some aggregates take
   outer arguments such as a field `F` and its `TopologicalData`. Separate
   single-declaration inspections reported `statement_returns_prop: true` and
   only the standard axioms `propext`, `Classical.choice` and `Quot.sound` for
-  `Induction.StructuralStatement`
-  (`8cae538b-3552-4120-b26e-e432c203f787`), `AdmissibleShortExactStatement`,
+  `Induction.StructuralStatement`, `AdmissibleShortExactStatement`,
   `AdmissibleSchurStatement`, `AdmissibleCofinalStatement`,
   `FiniteLengthAdmissibilityStatement`, the Howe statement,
   `SmoothAdmissibleDualityStatement`,
   `SmoothContragredientShortExactStatement` and
   `SmoothContragredientHomDualityStatement`. These inspections were made at
   the earlier commit `18a1f10aef8ea135d90e8474439a5e6d9c130008`. The
-  inspection `a7d9d175-6699-4128-b378-07acf874334b` of
+  inspection of
   `CuspidalSupport.BernsteinDecompositionStatements`, made at the earlier
   commit `c2558dd50b1b9c025d6182938ef25351b58d7e49`, reports the same. The
   files of all these declarations are byte-identical at the pin (same
@@ -78,7 +73,17 @@ rechecked against the Library files at the pinned commit.
   Conditional reductions, whose extra hypotheses are other statements, are
   reported as conditional. "Open" means that no such theorem exists at the
   pin. Some open aggregates have published proofs of individual clauses;
-  these are named where they matter.
+  these are named where they matter. Checked again against the Library as
+  it is (search by statement name): of the aggregates marked open, or with
+  an open case, the Library now proves `OppositeDualityStatement`
+  (`oppositeDualityStatement`, `Parabolic/OppositeDualityProof`),
+  `LeviUnnormalizedParabolicStatements`
+  (`Exponents/LeviUnnormalizedParabolicProof`),
+  `Classification.SquareIntegrableEqualExponentGrouping`
+  (`Classification/SquareIntegrableEqualExponentGroupingProof`) and
+  `GLSemistandardLanglandsConjugacyStatement`
+  (`Classification/SemistandardLanglandsProof`); for the others that search
+  finds no proof.
 - **Sources.** Each paired Markdown records the source edition, its
   fingerprint and the exact pages read. Below, BZ77 is Bernstein–Zelevinsky,
   *Induced representations of reductive p-adic groups I* (1977); Ze80 is
@@ -169,7 +174,7 @@ coefficients to `ℂ`, except the cofinality and embedding statements, which
 keep a Noetherian commutative ring. They replace the ambient hypotheses by
 the explicit compact-open cofinality condition that the arguments use. The
 existing averaging, cofinality and smooth-duality targets above are reused
-by name; this task adds no duplicate of them.
+by name; the families of this note add no duplicate of them.
 
 ## 2. Induction, compact induction and Jacquet functors
 
@@ -245,7 +250,7 @@ of `M` and the refined functors.
 | `NaturalNormalizedFirstAdjointnessStatement` | The Frobenius equivalences form natural families, standard and refined. | Ca19 III, Prop. III.3.5 | open |
 | `NormalizedRefinementTransitivityStatement` | `i_M^G ∘ i_L^M ≅ i_L^G` and `r_L^M ∘ r_M^G ≅ r_L^G` as natural isomorphisms for block refinements, with prescribed formulas. | BZ77 §2.3(c) via §1.9(c) | open; both clauses are proved by `normalizedRefinementInductionTransitivity` and `normalizedRefinementJacquetTransitivity` |
 | `NaturalNormalizedInductionDualityStatement` | Natural same-parabolic duality `(i_P σ)∨ ≅ i_P(σ∨)`, standard and refined. | Ca19 III, Prop. III.1.1; BZ77 §2.3(d) via §1.9(d) | `naturalNormalizedInductionDuality` |
-| `OppositeDualityStatement` | Casselman's canonical pairing between the upper Jacquet module and the opposite Jacquet module of the smooth dual, with its asymptotic characterization, and the induced equivalence. | Ca19 III §§4–6, Thm. III.6.2 and Cor. III.6.3 | open |
+| `OppositeDualityStatement` | Casselman's canonical pairing between the upper Jacquet module and the opposite Jacquet module of the smooth dual, with its asymptotic characterization, and the induced equivalence. | Ca19 III §§4–6, Thm. III.6.2 and Cor. III.6.3 | open at the pin; now proved (`oppositeDualityStatement`) |
 | `NaturalNormalizedJacquetDualityStatement` | Natural equivalence `r_P(π∨) ≅ (r_P̄ π)∨` for admissible `π`. | Ca19 III, Thm. III.6.2 | `naturalNormalizedJacquetDuality` |
 | `NormalizedSecondAdjointnessStatement` | `Hom(i_P σ, π) ≃ Hom(σ, r_P̄ π)` for admissible inputs, standard and refined. | Ca19 III, Cor. III.6.3 | `normalizedSecondAdjointness` |
 | `NormalizedParabolicFiniteLengthStatement` | Normalized induction and Jacquet modules preserve finite length. | derived from published finite-length and admissibility theorems | `normalizedParabolicFiniteLength` |
@@ -270,7 +275,7 @@ modules `Exponents.*`):
 | `LeviParabolicTransitivityStatement` | Natural transitivity of both functors. | VI.1.4, pp.136–137 | `leviParabolicTransitivity` |
 | `LeviSecondAdjointnessStatement` | Second adjointness `i_P^G ⊣ r_P̄^G`. | VI.9.6, (VI.9.6.1) | conditional only (`leviSecondAdjointness_of_structure`) |
 | `LeviJacquetContragredientStatement` | Natural isomorphism `r_P̄^G(π∨) ≅ (r_P^G π)∨`. | VI.9.6, (VI.9.6.2) | conditional only (`leviJacquetContragredient_of_structure`) |
-| `LeviUnnormalizedParabolicStatements` | For the unnormalized functors `Ind_P^G` and `j_N`: Frobenius reciprocity `j_N ⊣ Ind_P^G`, exactness of both, `j_N` preserves colimits, and `Ind_P^G` preserves limits and colimits. | VI.1.1, Theorem, Corollary and Remark, pp.134–135 | open |
+| `LeviUnnormalizedParabolicStatements` | For the unnormalized functors `Ind_P^G` and `j_N`: Frobenius reciprocity `j_N ⊣ Ind_P^G`, exactness of both, `j_N` preserves colimits, and `Ind_P^G` preserves limits and colimits. | VI.1.1, Theorem, Corollary and Remark, pp.134–135 | open at the pin; now proved (`leviUnnormalizedParabolicStatements`) |
 | `ArbitraryParabolicQuotientCompactStatement` | `P(k)\G(k)` is compact for every rational parabolic. | V.5.1, Corollary, p.123 (compactness part) | `arbitraryParabolicQuotientCompact` |
 | `ArbitraryParabolicJacquetAdmissibilityStatement` | The normalized Jacquet module of an admissible representation is admissible. | VI.6.1, Corollary, pp.176–177 | `arbitraryParabolicJacquetAdmissibility` |
 | `ArbitraryParabolicExponentStatement` | Characteristic-space decomposition of `r_P^G π` and finiteness of its exponents; the case `P = G`; exponents of induced representations restrict from Levi exponents. | VII.1.1, pp.220–221 | `arbitraryParabolicExponent` |
@@ -287,8 +292,7 @@ follow Ca19 rather than Re26:
 | `RationalNaturalJacquetDualityStatement` | Natural opposite-Jacquet duality `r_P(π∨) ≅ (r_P̄ π)∨` for admissible `π`. | Thm. III.6.2 and Cor. III.6.3, pp.7–8 | `rationalNaturalJacquetDuality` |
 
 Section 3 gives the general geometric lemma and cuspidal support. Further
-general reductive units of the Renard whole-book task
-(`f5d1f399-a1f8-4ab5-a981-90b92abd4857`), such as
+general reductive statements of the Renard formalization, such as
 `CuspidalSupport.BernsteinCentralIdempotentStatements` (Re26 VI.7.4) and
 `Compact.CompactBlockDecompositionStatements` (Re26 IV.1.6–IV.1.7), are not
 needed by the families of this note; their paired Markdown documents them.
@@ -383,10 +387,10 @@ the [classification coverage note](../henniart/gln-classification-coverage.md).
 | --- | --- | --- | --- |
 | `GLRegularLanglandsQuotientStatement` | Unique-head existence, uniqueness of ordered inducing data, and exhaustion, for tempered blocks with strictly decreasing real exponents. | S78 Thm. 4.1(1)–(3), p.99 | open |
 | `Classification.SquareIntegrableLanglandsHeadExistence`, `…QuotientUniqueness`, `…Exhaustion`, `…Classification` (components of `PadicMultisegmentClassificationTheorems`) | The same for essentially square-integrable blocks with weakly decreasing exponents. | H02 §2.8 | open |
-| `Classification.SquareIntegrableEqualExponentGrouping` (component of `PadicTemperedBlockTheorems`) | Grouping of equal exponents into tempered blocks. | Ku94 §2.2 | open |
+| `Classification.SquareIntegrableEqualExponentGrouping` (component of `PadicTemperedBlockTheorems`) | Grouping of equal exponents into tempered blocks. | Ku94 §2.2 | open at the pin; now proved (`squareIntegrableEqualExponentGrouping`) |
 | `RootWeightConeDecompositionStatement`, `GLParabolicRootWeightConeStatement` | Root/weight cone decomposition and its block-parabolic form. | S78 Lemma 7.1; Langlands Lemma 4.4 | parabolic form proved by `glParabolicRootWeightCone` |
 | `GLRelativeGenericParameterStatement`, `GLRelativeGenericComparisonStatement`, `GLRelativeRegularComparisonStatement` | Multiplicity comparison, generic then regular parameters. | S78 Prop. 5.1, Lemmas 5.2–5.6 | comparisons proved by `glRelativeGenericComparison` and `glRelativeRegularComparison` |
-| `GLRelativeRecoveryStatement`, `GLRelativeCosocleMultiplicityStatement`, `GLRegularLanglandsTensorRecoveryStatement`, `GLSemistandardLanglandsConjugacyStatement` | Recovery of inducing data and semistandard conjugacy. | S78 Props. 5.7–5.9, 6.1, Cor. 6.2 | recovery proved by `glRelativeRecovery`, cosocle multiplicity by `relativeCosocleMultiplicity`, tensor recovery by `glRegularLanglandsTensorRecovery`; semistandard conjugacy open |
+| `GLRelativeRecoveryStatement`, `GLRelativeCosocleMultiplicityStatement`, `GLRegularLanglandsTensorRecoveryStatement`, `GLSemistandardLanglandsConjugacyStatement` | Recovery of inducing data and semistandard conjugacy. | S78 Props. 5.7–5.9, 6.1, Cor. 6.2 | recovery proved by `glRelativeRecovery`, cosocle multiplicity by `relativeCosocleMultiplicity`, tensor recovery by `glRegularLanglandsTensorRecovery`; semistandard conjugacy open at the pin, now proved by `glSemistandardLanglandsConjugacy` |
 | `GLMaximalConeJacquetQuotientStatement` | Maximal-cone Jacquet quotient used for exhaustion, with the published dominance correction. | S78 Prop. 7.2 | `glMaximalConeJacquetQuotient` |
 
 ## 8. Twist, contragredient and central-character compatibilities
@@ -454,20 +458,16 @@ None of them is a hypothesis of a statement.
 ## 11. Responsibilities and remaining obligations
 
 - **Proofs.** Every aggregate marked "open" or "conditional only" above is a
-  separate proof obligation. A proof task names its target by the full Lean
-  declaration name; search the task pool by that name. Published clause
-  proofs do not prove the aggregate.
+  separate proof obligation. A proof names its target by the full Lean
+  declaration name. Proofs of clauses do not prove the aggregate.
 - **Nontrivial characters `θ` in BZ77 §§1.8–1.9 and general §5.2.** The
-  Library has the `θ = 1` semidirect constructions (§2.3) and the `U = V = 1`
+  Library at the pin has the `θ = 1` semidirect constructions (§2.3) and the `U = V = 1`
   and parabolic geometric lemmas (§3), but no normalized induction or
   localization for a closed triple with a nontrivial character of `U`.
-  Task 149 (`82bfcc29-81a6-4092-9b9c-f089d2abfb76`, revision 1, a definition
-  task with Worker 149 as executor and no accepted artifact at the pin)
-  owns that construction. Unreviewed
-  statement drafts for BZ77 §1.9(a)–(b) in this generality are in the shared
-  draft of Task 5 (`drafts/a2a442fc-f72b-43ea-a3f3-bcfd61415ccc/`); they
-  import the unpublished constructor and are not Library dependencies. No
-  family required by Task 5 depends on this extension: Whittaker-type
+  That construction is separate work. Statement drafts for BZ77 §1.9(a)–(b)
+  in this generality were written outside the Library; they import a
+  constructor that is not in the Library and are not Library dependencies.
+  No family of this note depends on this extension: Whittaker-type
   characters belong to the representation-factor branch, and the parabolic
   theory uses `θ = 1`.
 - **Adjacent branches.** Whittaker uniqueness, Rankin–Selberg factors and the
@@ -479,7 +479,7 @@ None of them is a hypothesis of a statement.
 ## Appendix: exact versions at `e449cde988d4e97ab280b8d4d11262887ccc26e0`
 
 Modules are under `Langlands.Representation.`; the aggregate is the declaration
-that the probe check `92e56db1-31b0-4931-a2df-1429adaee1fe` printed with
+that the probe printed with
 codomain `Prop`. The hashes are the SHA256 of the Lean file and of its paired
 Markdown in the Library manifest of this commit.
 

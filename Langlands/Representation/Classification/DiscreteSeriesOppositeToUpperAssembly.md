@@ -6,18 +6,18 @@ Module `Langlands.Representation.Classification.DiscreteSeriesOppositeToUpperAss
 proves the published target
 `Langlands.GLTemperedDiscreteSeriesOppositeToUpperStatement.{uF,uV,uW}` from
 five Library propositions, taken as **explicit hypotheses**. None of them is
-proved here. As of this submission none has a published proof, so this is a
-conditional, non-completing contribution. It is not the unconditional proof
-the host task `5c6fcfcc-113f-4b4a-bf16-7008a7eeeb13` requires. The final proof
-will apply this theorem to the five published proofs once they exist.
+proved here, so this is a conditional theorem. Each hypothesis is proved
+elsewhere in the Library (last column), and the target has the unconditional
+proof `glTemperedDiscreteSeriesOppositeToUpper` in
+`DiscreteSeriesOppositeToUpperProof`.
 
-| Hypothesis | Proposition | Universes | Owning proof task |
+| Hypothesis | Proposition | Universes | Proved by |
 | --- | --- | --- | --- |
-| `h1` | `GLTemperedInductionStatement` (tempered upper induction: unitarizable, semisimple, tempered) | `{uF, uW}` | `fb462a13-96b1-4ac1-a47d-4fd7510d0ac4` |
-| `h2` | `Parabolic.StandardSecondAdjointnessClause` | `{uF, uW, uV}` | `eb76bbde-911c-4875-9611-a11b9ba0300e` |
-| `h3` | `GLTemperedDiscreteSeriesIsotypicStatement` (fixed-central isotypic projector) | `{uF, uV, uW}` | `1f2dda2f-d367-45eb-b840-80f0d253aac6` |
-| `h4` | `GLTemperedOppositeJacquetScalarLayerStatement` (scalar layers of the opposite Jacquet module are tempered) | `{uF, uV, uV}` | `b1f2539d-c6fb-4358-b989-9a13c180521c` |
-| `h5` | `Parabolic.IrreducibleOppositeJacquetFiniteLengthStatement` | `{uF, uV}` | `76126df1-ca14-4cd1-8f05-bf7014e4617c` |
+| `h1` | `GLTemperedInductionStatement` (tempered upper induction: unitarizable, semisimple, tempered) | `{uF, uW}` | `glTemperedInduction` (`TemperedInductionProof`) |
+| `h2` | `Parabolic.StandardSecondAdjointnessClause` | `{uF, uW, uV}` | first component of `Parabolic.normalizedSecondAdjointness` (`Parabolic.SecondAdjointnessProof`) |
+| `h3` | `GLTemperedDiscreteSeriesIsotypicStatement` (fixed-central isotypic projector) | `{uF, uV, uW}` | `glTemperedDiscreteSeriesIsotypic` (`TemperedDiscreteSeriesIsotypicProof`) |
+| `h4` | `GLTemperedOppositeJacquetScalarLayerStatement` (scalar layers of the opposite Jacquet module are tempered) | `{uF, uV, uV}` | `glTemperedOppositeJacquetScalarLayer` (`TemperedOppositeJacquetScalarLayerProof`) |
+| `h5` | `Parabolic.IrreducibleOppositeJacquetFiniteLengthStatement` | `{uF, uV}` | `Parabolic.irreducibleOppositeJacquetFiniteLength` (`Parabolic.IrreducibleOppositeJacquetFiniteLengthProof`) |
 
 In the target, `π` lives on `V : Type uV` and `σ` on `W : Type uW`. So
 second adjointness is used with the Levi carrier in `uW` and the ambient
@@ -25,10 +25,10 @@ carrier in `uV`. The scalar-layer statement is used with both carriers in
 `uV`, because the layers are subrepresentations of the Jacquet coinvariants of
 `π`. The conclusion keeps `uF`, `uV`, `uW` independent.
 
-No hypothesis is a version of the parent `GLTemperedDiscreteSeriesSummandStatement`,
+No hypothesis is a version of `GLTemperedDiscreteSeriesSummandStatement`,
 the regular Langlands head, regular exhaustion, the square-integrable Langlands
-classification, or tempered exhaustion. The contexts of the owning tasks of
-`h3` and `h4` explicitly forbid those inputs.
+classification, or tempered exhaustion. The proofs of `h3` and `h4` were
+required not to use those inputs.
 
 ## Proof
 

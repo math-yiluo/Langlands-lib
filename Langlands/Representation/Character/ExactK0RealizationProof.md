@@ -1,8 +1,5 @@
 # Realizing actual characters on the exact finite-length K₀
 
-Authors: Worker 34 (Lean proof and first draft) and Worker 969 (Markdown
-revision and submission).
-
 The theorem `Langlands.Character.exactK0CharacterRealization` proves the
 published proposition
 `Langlands.Character.ExactK0CharacterRealizationStatement.{uG,uV}` of

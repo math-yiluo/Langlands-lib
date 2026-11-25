@@ -123,17 +123,18 @@ unconditional source assertion.
 - `hStandard : StandardCocharacterStatement.{u}` is the named global
   standard-cocharacter existence and dynamic-comparison assertion. Its
   specialization supplies `h`, rather than assuming a decomposition family.
-  The named structural assertion remains to be discharged.
+  The Library proves the named structural assertion (`standardCocharacter`).
 - `hInter : StandardLeviIntersectionStatement.{u}` is the named global
   all-test inner-Levi decomposition and rational unipotent-product assertion.
   The adapter uses its first conjunct at the identity test, then restricts to
-  the actual Levi. The premise retains the entire named statement, whose
-  discharge is a structural obligation.
+  the actual Levi. The premise retains the entire named statement, which the
+  Library proves (`standardLeviIntersection`).
 - `hRoots : HasRelativeRootSystem i` supplies `simpleRelativeRootFintype`
   together with the split-subtorus property derived from `hi`. It must be
   established for the given maximal split torus.
 - `hU` and `hM` assert closedness of all actual standard radicals and Levis
-  in the canonical topology. These closedness assertions remain to be proved.
+  in the canonical topology. The Library proves these closedness assertions
+  (`isClosed_levi` and `isClosed_unipotent` in `StandardFamilyStructure`).
 - The three ambient topological instances described above must be established
   for the canonical point topology over the local field.
 
@@ -143,7 +144,6 @@ embedding, geometric lemma, transitivity, admissibility, detection or support
 theorem is moved into the premises.
 
 The module leaves `DynamicInductionIrreducibleFiniteLengthStatement` and
-`DynamicInductionFiniteLengthStatement` unchanged. Their proofs remain with
-tasks `02257068-4b1f-4c7d-b849-c85a24606658` and
-`174d2de0-fa21-41b4-b091-f1b86481790b`. The present proposition is an upstream
+`DynamicInductionFiniteLengthStatement` unchanged; the Library proves neither.
+The present proposition is an upstream
 statement prerequisite and establishes neither target.

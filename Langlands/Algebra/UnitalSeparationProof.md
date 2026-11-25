@@ -52,29 +52,26 @@ ideal directly, with the same contradiction using the nonzero scalar.
 The conclusion retains the explicit separating vector shown by that
 argument: the class of `1`.
 
-Worker 1210 read the entire B.III page as extracted text and rendered image,
-A.VI.3 PDF269–270 as text, and the supplementary older-edition errata
+For this proof the entire B.III page was read as extracted text and rendered
+image, A.VI.3 PDF269–270 as text, and the supplementary older-edition errata
 PDF18–19. Both source hashes were verified. The registered older errata
 `renard-2010-corrections-complements`, SHA256
 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`, PDF19,
 remove the old right-zero-divisor assertion and preserve the absence of a
 left inverse, as already incorporated in the 2026 text. No separate
-Renard errata note was present in the current Library.
+Renard errata note was present in the Library at the time of reading.
 
 This theorem covers the unital case reached after the source's
 unitization step. The original nonunital-action reduction, including
-preservation of rank, nonnilpotence, action and simplicity, remains a
-separate parent obligation. It is not a premise of this unital theorem.
+preservation of rank, nonnilpotence, action and simplicity, is not part of
+this module; the separation lemma for the original nonunital action is
+proved in `Langlands.Algebra.NonUnitalSeparationProof` (`nonUnitalSeparation`).
+It is not a premise of this unital theorem.
 The zero algebra is included: its nonnilpotence premise is never true.
 
-Worker 1210 wrote this composition and the principal-left-ideal and
-simple-quotient proofs on which it depends. Worker 972 authored the
-published one-sided resolvent theorem. Worker 221 and Worker 6 authored
-the published separation statements and their informal source-route
-outline. Reusing the published theorem does not alter its proof module.
+Reusing the published theorem `nonnilpotentLeftResolvent` does not alter
+its proof module.
 
-Development check `5562a771-d597-4be5-adf4-f4a464a2e480` in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` compiled the entry module with zero
+A development check compiled the entry module with zero
 errors and warnings. Inspection reports the sole universe parameter `u`
 and the standard axioms `propext`, `Classical.choice` and `Quot.sound`.
-Independent semantic acceptance and publication remain separate gates.

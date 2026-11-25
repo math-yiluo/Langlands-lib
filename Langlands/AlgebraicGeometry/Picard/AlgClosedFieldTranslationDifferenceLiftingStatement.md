@@ -48,7 +48,7 @@ inside `namespace Langlands.AbelianScheme`, with
 `open CategoryTheory AlgebraicGeometry` and
 `open Langlands.AlgebraicGeometry.Picard Langlands.Scheme.Modules`.
 With `pp.fieldNotation false`, `pp.proofs true` and `pp.funBinderTypes true`,
-`#print` in the approved environment reports:
+`#print` reports:
 
 ```text
 def Langlands.AbelianScheme.AlgClosedFieldTranslationDifferenceLiftingStatement.{u} : Prop :=
@@ -161,9 +161,9 @@ assembles these morphisms into the homomorphism
 The statement concerns ordinary, non-rigidified line bundles only. It
 makes no claim about the Library's rigidified families, the chosen dual
 parameter scheme or their comparison with the source's Picard scheme. Those
-comparisons belong to the separate rigidified point-formula statement task
-`d0494538-ad40-4cf9-b030-5d538865f064` and to Worker 420's parent proof
-`012915dc-316e-4c87-a08e-16730ad96609`.
+comparisons belong to a separate rigidified point-formula statement and to the
+proof `Langlands.AbelianScheme.fieldDualSchemeSurjection` (module
+`Langlands.AlgebraicGeometry.Picard.FieldDualSchemeSurjectionProof`).
 
 The provenance is derived. The algebraically closed Proposition (7.21) is
 stated for actual Library line bundles. The source condition `φ_M = 0` is
@@ -270,11 +270,13 @@ along the source route must derive from it whatever ampleness consequences
 Mumford's argument needs. Those obligations are listed in the next section.
 They are not established here.
 
-## Proof obligations for the later exact proof
+## Proof obligations for the exact proof
 
-After independent acceptance and publication, a separate exact-target proof
+A separate exact-target proof
 must have this entire named proposition as its type, with no extra outer
-hypotheses. The source proof, which the source attributes to Mumford, uses
+hypotheses. The Library's exact proof is
+`Langlands.AbelianScheme.algClosedFieldTranslationDifferenceLifting` (module
+`Langlands.AlgebraicGeometry.Picard.AlgClosedFieldTranslationDifferenceLiftingProof`). The source proof, which the source attributes to Mumford, uses
 `𝒦 = Λ(L) ⊗ p_2^*M^{-1}` on `X × X` and computes `H^n(X × X, 𝒦)` with the
 Leray spectral sequences of both projections. If no `x` works, both
 computations combine to make every `R^n p_{2,*}𝒦` vanish. This contradicts
@@ -294,7 +296,8 @@ obligations.
    `Langlands.GroupScheme.FieldCubePullbackStatement` and
    `Langlands.AlgebraicGeometry.Picard.FieldLineBundleTrivialityStatement`.
    The last is proved in the Library as `fieldLineBundleTriviality`; the
-   cube pullback statement has no published proof yet.
+   cube pullback statement is proved in the Library as
+   `Langlands.GroupScheme.fieldCubePullback`.
 3. Lemma (7.19), printed p.105: a translation-invariant line bundle that is
    not trivial has vanishing cohomology in every degree. The source proof
    uses `(-1)^*M ≅ M^{-1}`, `m^*M ≅ p_1^*M ⊗ p_2^*M` and the Künneth formula.
@@ -322,10 +325,7 @@ first spectral sequence, actually uses Lemma (7.19) together with
 Fact (7.20). This appears to be a cross-reference slip in the draft. It
 does not affect the mathematics.
 
-Any genuinely missing substantial construction must be split into
-definition, statement and proof units, in that order. Existing ampleness,
-Mumford-bundle, square-theorem, tensor and pullback work should be reused,
-not duplicated. This module discharges none of these obligations.
+This module discharges none of these obligations.
 
 ## Scope
 
@@ -339,13 +339,12 @@ Picard-zero presentation, source Picard identification or
 scheme-surjectivity premise. It introduces no Picard group, dual-existence
 axiom or abstract lifting certificate.
 
-## Role and authorship
+## Role
 
-This is a focused prerequisite of Worker 420's exact chosen-dual surjection
-proof `012915dc-316e-4c87-a08e-16730ad96609`. The parent keeps the final
+This is a focused prerequisite of the exact chosen-dual surjection
+proof `Langlands.AbelianScheme.fieldDualSchemeSurjection` (module
+`Langlands.AlgebraicGeometry.Picard.FieldDualSchemeSurjectionProof`) of
+`FieldDualSchemeSurjectionStatement`. That proof contains the final
 chosen-universal-family classification and the passage from geometric
 points to scheme surjectivity. This ordinary lifting statement does not
-prove the parent statement, and the parent is not used to justify it.
-
-Worker 299 implemented this pair. Worker 420 supplied the focused
-specification, including the binders and the conclusion.
+prove `FieldDualSchemeSurjectionStatement`, and that statement is not used to justify it.

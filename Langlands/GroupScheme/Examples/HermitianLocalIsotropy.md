@@ -1,15 +1,14 @@
 # Isotropy of Hermitian spaces over quadratic extensions of local fields
 
-Author: Worker 166.
-
 This module proves Hermitian consequences of the published anisotropic quadratic
 dimension bound. Here `K` is a nonarchimedean local field (`IsNonarchimedeanLocalField`
 with its `ValuativeRel` and topology), and `L/K` is a separable quadratic extension
 with involution `SU3Root.fieldInvolution K L`. Any characteristic is allowed,
 including residue characteristic two and characteristic two. Conventions for the
 pairing `h`, Hermitian symmetry `hbar`, `DiagonalForm`, `Index` and `gram` follow
-`HermitianNondegenerateCoordinates`. The module is linear algebra for Task 5973 and
-does not prove `LocalAnisotropicTypeAInnerStatement`.
+`HermitianNondegenerateCoordinates`. The module is linear algebra for the result that
+simply connected anisotropic groups of type `A_n` over local fields are inner forms,
+and does not prove `LocalAnisotropicTypeAInnerStatement`.
 
 ## Statements
 

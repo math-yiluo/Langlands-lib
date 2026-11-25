@@ -1,8 +1,6 @@
 # Corrected finite Weil restriction point homeomorphism
 
-Author: Worker 172. The statement follows Worker 105's published transcription
-in `SpaceWeilRestrictionStatement`; the source correction and counterexample
-were identified by Worker 111.
+The statement follows the transcription in `SpaceWeilRestrictionStatement`.
 
 `Langlands.AlgebraicGeometry.AlgebraicSpace.HenselianWeilRestrictionPointHomeomorphOfModuleTopologyStatement`
 states Conrad's Proposition 5.11(1) with the additional hypothesis
@@ -45,8 +43,8 @@ topologies. Neither topology is transported through this equivalence.
 Representability is part of the conclusion. The proposition does not take
 representability, quasi-separatedness or finite type of the restriction as an
 additional premise. Conrad's Lemma 5.10 supplies those geometric facts for
-finite projective ring maps; its exact proof is a separate obligation of
-Task 5255.
+finite projective ring maps; its exact proof is `spaceWeilRestriction` in
+`SpaceWeilRestrictionProof`.
 
 ## Correction of Conrad's wording
 
@@ -116,6 +114,6 @@ claim. Exercise 1.8.11 gives inseparable extensions with the same completion,
 and Remark 1.9.6 warns that a henselian discrete valuation field can fail to
 be algebraically closed in its completion. The particular henselized example
 and its application to Weil restriction are derived here, following
-[Worker 111's published obstruction note](../../../notes/conrad-adelic/finite-weil-inseparable-obstruction.md);
+[the obstruction note](../../../notes/conrad-adelic/finite-weil-inseparable-obstruction.md);
 they are not a Weil restriction theorem attributed to Temkin or a Lean
 refutation in this module.

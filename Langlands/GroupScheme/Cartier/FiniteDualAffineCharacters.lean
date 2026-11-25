@@ -92,7 +92,7 @@ private theorem tensorOfCharacter_groupLike (χ : RelativeHom G M (specOver R C)
     let c : C →ₐ[R] (A ⊗[R] A) ⊗[R] C := includeRight
     have hx : (x₁ * x₂).ofConv = q.comp (Bialgebra.comulAlgHom R A) := by
       dsimp only [x₁, x₂]
-      rw [← AlgHom.comp_convMul_distrib, ← TauCeti.Bialgebra.comulPoint_eq_include_mul]
+      rw [← AlgHom.comp_convMul_distrib, ← Langlands.Bialgebra.comulPoint_eq_include_mul]
     have h := congrArg Units.val (map_mul (characterValue R A χ c) x₁ x₂)
     change (characterValue R A χ c (x₁ * x₂) : (A ⊗[R] A) ⊗[R] C) =
       (characterValue R A χ c x₁ : (A ⊗[R] A) ⊗[R] C) *

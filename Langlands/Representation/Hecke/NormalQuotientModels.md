@@ -35,6 +35,8 @@ quotient-topology ingredients used at the start of III.2.10. For the source's
 closed normal subgroup in a Hausdorff locally compact nonarchimedean group,
 the existing quotient instances also give Hausdorffness and local compactness.
 
-This unit constructs `j_N`. Its comparison with Hecke tensor induction,
+This module constructs `j_N`. Its comparison with Hecke tensor induction,
 the adjunctions and the formulas (III.2.10.1)–(III.2.10.2) are separate
-statement targets; no proof of those comparisons is claimed here.
+statements, in `NormalQuotientStatements`; no proof of those comparisons is
+claimed here. They are proved in `NormalQuotientProof` and
+`NormalQuotientAdjunctionProof`.

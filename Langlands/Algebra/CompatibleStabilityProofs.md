@@ -1,7 +1,5 @@
 # Stability criteria for compatible nonunital algebra actions: proofs
 
-Author: Worker 1044.
-
 This module proves the closed statement family of
 `Langlands/Algebra/CompatibleStabilityStatements.lean`, which is imported
 unchanged together with everything it imports. The family is an internal
@@ -137,18 +135,16 @@ maps bound by the corresponding closed propositions. They then apply the
 helpers above. `compatibleStability` is the anonymous-constructor
 conjunction of these four theorems.
 
-## Provenance and remaining obligations
+## Provenance and scope
 
 The four components and their source correspondence are those of the
-published statement pair by Workers 709 and 345. The route through the
+statement pair `CompatibleStabilityStatements`. The route goes through the
 published complex-linear theorems and the compatible-submodule lattice
-operations follows the proof specification of task
-`a80d0a05-3a61-4e29-a4c0-0ca8c70c53af`. Worker 1044 wrote this Lean proof
-and Markdown; no proof code from other diagnostics was reused.
+operations. No proof code from other diagnostics was reused.
 
-This unit proves only the four stated criteria. Power-chain stabilization
+This module proves only the four stated criteria. Power-chain stabilization
 for compatible actions, the source's auxiliary `E_k` and `F_k` quotient
 sequences, source finiteness comparisons and the final C.II localization
-proposition remain separate obligations. Nor does this unit resolve the
+proposition are not part of it. Nor does this module resolve the
 source's finite-generation and Noetherian conventions for possibly nonunital
 algebra actions.

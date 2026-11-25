@@ -2,7 +2,8 @@
 
 The primary declaration is
 `Langlands.Plancherel.ActualCommonLeviCoherence.ClosedCommonLeviCoherenceStatement`.
-It is an unproved closed Prop-valued target. Its composition clause is the
+It is a closed Prop-valued target; `closedCommonLeviCoherence` in
+`Plancherel.ActualCommonLeviCoherenceProof` proves it. Its composition clause is the
 `s = t = 1` common-Levi specialization of Waldspurger, *La formule de
 Plancherel pour les groupes p-adiques* (2003), Lemma V.3.2, printed p.295 /
 PDF p.61. The actual normalized tensor is V.3 formula (1) on the same page;
@@ -53,7 +54,7 @@ of the whole tensor. They permit poles of the individual standard factors
 to cancel. The coefficient map remains precisely the compact probability
 `leviCoefficientMap`; the Hermitian form remains the actual
 `leviFormalDegreeProductForm` with its source inverse formal degree and
-unchanged central quotient Haar measure. This unit introduces no alternate
+unchanged central quotient Haar measure. This module introduces no alternate
 normalization or free coefficient-preserving equivalence.
 
 `closedV31_iff_exists` is a proved elementary repackaging: under the actual
@@ -86,7 +87,9 @@ equal. The existential presentations in the two predicates are independent:
 their starting regions, denominators, scalar-inverse witnesses and
 continuation data may differ. Both families must be regular extensions of
 the particular standard-operator germ, rather than arbitrary invariant
-maps. This is a separately named, unproved compatibility target.
+maps. This is a separately named compatibility target; under the split-center
+premise it is the last conjunct of `ClosedCommonLeviCoherenceStatement`, which
+`closedCommonLeviCoherence` proves.
 
 `ClosedCommonLeviCoherenceStatement` concludes the existence of a system
 with all the pairwise actual V.3.1 properties, the identity, composition
@@ -102,6 +105,5 @@ pairwise specifications and continued-presentation independence express
 the compatibility of those actual rational extensions. No substantive
 V.3 theorem is proved here. Rational conjugating points, the full `s,t`
 composition law, canonical transport for different Weyl representatives,
-and the intrinsic semistandard coherent-section adapter remain separate
-units of the host task. Existing analytic and representation-theoretic
-proof owners are unchanged.
+and the intrinsic semistandard coherent-section adapter are outside this
+module.

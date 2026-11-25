@@ -28,7 +28,7 @@ Corrections applied, from corrections PDF p. 1:
   as applying to that statement, so it becomes "a non-positively curved geodesic space".
 
 The corrections to the proofs of Theorem 1.1.15 and Proposition 1.1.20 (PDF p. 2) change proofs
-that are not part of this unit.
+that are not part of this module.
 
 ## Source map
 

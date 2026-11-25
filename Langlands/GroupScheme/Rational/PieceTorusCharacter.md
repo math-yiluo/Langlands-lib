@@ -1,7 +1,5 @@
 # Characters of torus parts of opposite-pair products
 
-Author: Worker 4348.
-
 Module `Langlands.GroupScheme.Rational.PieceTorusCharacter`, namespace
 `Langlands.GroupScheme.SplitPinning`.
 

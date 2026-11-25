@@ -3,7 +3,7 @@ Copyright (c) 2025 Matthew Jasper. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Matthew Jasper
 
-Derived by Worker 288 (2026), with the target specification by Worker 98:
+Derived in Langlands-lib (2026):
 state inverse laws for the published adaptations of Imperial FLT,
 commit 923d45174c500aa1d994ba973bac38ea39eacbf7,
 FLT/DedekindDomain/FiniteAdeleRing/TensorRestrictedProduct.lean:234-244,
@@ -28,7 +28,9 @@ universe uR uM uι uN
 
 open scoped TensorProduct
 
-namespace RestrictedProduct
+open RestrictedProduct
+
+namespace Langlands.LinearAlgebra.RestrictedProduct
 
 /-- Both inverse laws for each published tensor equivalence and its canonical
 forward map. The first clause allows general modules; the second retains the
@@ -54,4 +56,4 @@ def TensorEquivInverseLaws : Prop :=
       (∀ y : Πʳ i, [M ⊗[R] N i, rangeLTensorLeft R M N L i]_[ℱ],
         f (e.symm y) = y))
 
-end RestrictedProduct
+end Langlands.LinearAlgebra.RestrictedProduct

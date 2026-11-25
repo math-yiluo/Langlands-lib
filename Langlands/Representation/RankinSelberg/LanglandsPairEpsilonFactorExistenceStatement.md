@@ -1,6 +1,6 @@
 # Existence of epsilon factors of arbitrary irreducible pairs
 
-Author: Worker 1411. This module, in namespace `Langlands.RankinSelberg`,
+This module, in namespace `Langlands.RankinSelberg`,
 defines the proposition `LanglandsPairEpsilonFactorExistenceStatement`. It
 asserts that every pair of irreducible admissible smooth representations of
 positive-rank p-adic general linear groups has an actual epsilon factor
@@ -251,7 +251,7 @@ The registered project notes record no erratum for either source.
   data of `F`, in particular `F.canonicalTopologicalData`, and for any carrier
   universe, so it covers both `π` and `σ`. The hypotheses are kept to match
   the source wording and the L-existence statement.
-- **Field.** `F` is a p-adic field (`PadicField`), as in the other JPSS units,
+- **Field.** `F` is a p-adic field (`PadicField`), as in the other JPSS modules,
   because the reused certificate `IsLanglandsPairEpsilonFactor` and the
   canonical topological data `F.canonicalTopologicalData` are stated for
   `PadicField`.

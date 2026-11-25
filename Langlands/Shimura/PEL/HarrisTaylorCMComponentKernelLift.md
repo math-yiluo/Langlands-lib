@@ -1,7 +1,5 @@
 # Original CM kernel lifts on locally Noetherian scheme tests
 
-Author: Worker 57.
-
 This derived construction assembles the existing connected-source CM kernel
 lifts over the actual open connected-component schemes of any locally
 Noetherian source. Its composite with the identical original kernel comparison
@@ -139,14 +137,17 @@ CM frame-orbit moduli and the right frame action, and asserts smooth
 projective representability, finite-etale forgetting and the normal `U/V`
 Galois cover. Those are the original conventions retained by the imported
 functor and maps. This derived lift is not attributed to the book as a proof
-of its full cover assertion. The supplied publication/errata list was
-previously read in full; it lists no correction to this passage.
+of its full cover assertion. The publication/errata list was
+read in full; it lists no correction to this passage.
 
 The new lift uses no original-projection etaleness, coarse-object rigidity,
 residual freeness or comparison `IsIso`. It proves no uniqueness or naturality
 of the classical choices, equality with a separately chosen lift on a
 connected source, section of the original projection, or full kernel
-inverse. Applicable representability, source-smallness rigidity, comparison
-with the complete source moduli problem, original etaleness, canonical-model
-geometry and coefficient descent remain separate obligations. This
-conditional construction does not complete those assertions or the host task.
+inverse. Applicable representability, comparison with the complete source
+moduli problem, canonical-model geometry and coefficient descent are not proved
+in this module. Source-smallness rigidity is derived by `cmSmallLevelRigidity`
+(`HarrisTaylorCMSmallLevelRigidityProof`) and original etaleness by
+`representedCMNormalProjection_etale_of_dominantCriterion`
+(`HarrisTaylorCMNormalSmoothEtale`), under named premises. This
+conditional construction does not complete those assertions.

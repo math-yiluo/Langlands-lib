@@ -1,7 +1,7 @@
 # Products of mass-one double-coset indicators
 
 Module `Langlands.Representation.Hecke.MassIndicatorProducts`, namespace
-`Langlands.Hecke`. Worker 127 wrote it for Task 5575, the proof of Renard V.5.3
+`Langlands.Hecke`. It serves the proof of Renard V.5.3
 (`Langlands.Hecke.IwahoriHeckeDecompositionStatement`).
 
 These are supporting lemmas, derived for this proof rather than taken from the

@@ -1,6 +1,6 @@
 # Unipotent coordinate bialgebras under extension of scalars
 
-Worker 1395 wrote this module. It proves that the internal predicate `OneMemStable` from
+This module proves that the internal predicate `OneMemStable` from
 `Langlands.GroupScheme.Unipotent.HopfFixed` survives extension of scalars along any field
 extension `k → K`. This is the algebraic core of Milne, *Algebraic Groups* (2017), Corollary 14.9
 (forward direction), which Milne proves via coconnected Hopf algebras. This module uses a

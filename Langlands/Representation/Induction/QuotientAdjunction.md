@@ -1,6 +1,6 @@
 # Coinvariants, inflation and invariants for a normal subgroup
 
-Author: Worker 61. Built on the published
+Built on the published
 `Langlands.Representation.Induction.InvariantRestriction`
 (`homCoinvariantsEquiv`, `invariantsToCoinvariants`, `invariantsRestriction`,
 `invariantsRestrictionEquiv`,
@@ -119,7 +119,7 @@ index.
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
 J. Math. Kyoto Univ. 39-2 (1999), proof of Proposition 4.10, printed p.312
-(one-based PDF page 14; Worker 61 read the rendered scanned page): "We may
+(one-based PDF page 14; read on the rendered scanned page): "We may
 replace `C^j_m(ẽ)` by `C^j_m(ẽ)^{H_p}` in (4.10.2). Write
 `T_m(j, ẽ) = Hom_{𝒪/ℓ^m𝒪[S(ẽ)]}(C^j_m(ẽ)^{H_p}, Hom(𝒪_m[C_p/H_p]^M, 𝓛_m))`.
 To check the Mittag-Leffler condition, we first need to study the maps

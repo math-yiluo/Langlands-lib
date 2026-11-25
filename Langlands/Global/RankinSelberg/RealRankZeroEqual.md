@@ -1,8 +1,8 @@
 # The equal-rank real-place functional equation for `GL₁ × GL₁`
 
 Helper module for the rank-one (`r = 0`) case of
-`Langlands.Global.RankinSelbergGlobal.RealEqualFunctionalEquationStatement`. Authored by
-Worker 823. Every declaration is proved. The main theorem `realEqual_rankZero_global`
+`Langlands.Global.RankinSelbergGlobal.RealEqualFunctionalEquationStatement`.
+Every declaration is proved. The main theorem `realEqual_rankZero_global`
 assumes the Library proposition `Langlands.LocalFactor.RealArchimedeanTateStatement` as a
 hypothesis `hTate`; nothing else beyond the stated hypotheses is assumed and no axioms are
 added.

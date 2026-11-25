@@ -59,4 +59,4 @@ BL's \(V\) has one Harish-Chandra equation \(\delta(h)\phi=\phi\) and the consta
 
 ## Dependencies
 
-Besides the published Library, the module imports two unpublished pairs, each a separate candidate. `AdelicLocalFinitenessCenterStabilityStatement` is byte-identical to candidate `f0ea9a64-b6f0-489f-bd2c-6418bbaddf8e`, and `GroupSchemeEnvelopingCenterConjugationStatement` to candidate `5d74a211-ef74-4f5b-bcee-afa5d6a3fd7e`. The entry declaration for staging is the definition `envelopingTranslate`. The main result is the theorem `localFinitenessCenterStability_of`.
+Among other Library modules, the module imports the statement modules `AdelicLocalFinitenessCenterStabilityStatement` and `Langlands.Automorphic.GroupSchemeEnvelopingCenterConjugationStatement`. The main result is the theorem `localFinitenessCenterStability_of`.

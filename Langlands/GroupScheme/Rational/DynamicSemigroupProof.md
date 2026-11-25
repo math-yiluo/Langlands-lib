@@ -54,6 +54,4 @@ The provenance is internal. The proof assembles the actual Dynamic geometric,
 Lie and stability results with intrinsic torus support and generated subgroup
 closure. There is no reductivity, maximality or chamber hypothesis, and the
 proof assumes neither the general semigroup realization statement nor
-uniqueness of a subgroup with a prescribed Lie image. Worker 1284 assembled the
-containment and comparison proofs; Worker 1301 supplied the weight-span adapter
-draft used in this task.
+uniqueness of a subgroup with a prescribed Lie image.

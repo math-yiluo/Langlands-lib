@@ -17,7 +17,7 @@ The local affine embedding premise is the second clause of
 `AffineAnalytification.AffineAnalytificationRationalPointsStatement`, and
 the chart open-embedding premise is the second clause of
 `SchemeAnalytificationGluingStatement`. The helpers take these clauses
-explicitly and do not assert proofs of their unproved general statements.
+explicitly and do not assert proofs of their general statements.
 
 ## Chart independence and range
 
@@ -50,8 +50,8 @@ the image of the closed point under the relative scheme point. Applying the
 affine-open map and then `center_ι` gives
 `center K f (analyticRationalPoint K f p) = p.left (IsLocalRing.closedPoint K)`.
 
-These direct rational-center calculations adapt the freely shared draft of
-Worker 325 on Task 7097. They require no norm-extension theorem or theorem
+These direct rational-center calculations adapt calculations written for the
+proof of `AnalytificationCenterStatement`. They require no norm-extension theorem or theorem
 describing centers of arbitrary analytic points.
 
 ## Topological embedding and injectivity

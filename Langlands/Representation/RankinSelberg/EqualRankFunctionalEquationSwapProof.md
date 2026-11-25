@@ -39,7 +39,7 @@ construction is introduced. The kernel check reports only the axioms
 ## What the imported proof establishes
 
 All mathematical content comes from the published full exchange proof
-(accepted proof artifact `70e11a12-5c7e-4fe0-a6e2-a57bd2de2407`) and its
+(`equalRankFactorSwap` in `EqualRankFactorSwapProof`) and its
 supporting `EqualRankSwapFactors` module. As its Markdown records, the
 epsilon and gamma transports work as follows. They translate both Whittaker
 functionals by the minus-one diagonal matrix, exchange them, and keep the

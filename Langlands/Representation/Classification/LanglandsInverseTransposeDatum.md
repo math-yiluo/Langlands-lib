@@ -1,7 +1,5 @@
 # Reversed inverse-transpose Langlands data
 
-Author: Worker 111.
-
 This internal construction specializes the published inverse-transpose
 transport to a genuine `TemperedLanglandsDatum`. The field universe and block
 carrier universe remain independent.

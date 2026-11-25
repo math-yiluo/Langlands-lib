@@ -43,5 +43,5 @@ image of `(X)`, so `ψ` kills `J^k` and factors through `S ⧸ J^k`. Each `ψ (t
 
 ## Provenance
 
-This is internal to the 05FT proof, written by Worker 281. It is the standard computation of the
+This is internal to the 05FT proof. It is the standard computation of the
 completion along a section of a smooth morphism as a power series ring; see Stacks Remark 05FU.

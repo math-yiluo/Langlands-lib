@@ -1,7 +1,5 @@
 # Open setwise stabilizers of rational loci
 
-Author: Worker 36.
-
 `RationalLocusStabilizerOpenStatement` is a proposition definition about
 the existing actual presented strict affinoid algebras, their bounded
 spectra, and their unit-radius rational loci. This file states a target;
@@ -54,8 +52,10 @@ spectrum bound and the nonarchimedean triangle inequality preserve
 the rational inequalities. Applying the estimates to both an operator
 and its inverse gives equality of loci near the identity. The group
 action laws then yield openness of the whole stabilizer. The empty
-locus case is immediate. This paragraph describes a route for the
-separate proof task, not a proof supplied by this module.
+locus case is immediate. This paragraph describes a proof route, not a
+proof supplied by this module; the statement is proved as
+`RationalAutomorphism.rationalLocusStabilizerOpen` in
+`StrictTestDomain.RationalStabilizerProof`.
 
 The source for the rational inequalities and the no-common-zero
 condition is Berkovich, *Non-archimedean analytic spaces*, Trieste
@@ -84,7 +84,7 @@ affinoid tests.
 
 The registered source folder is
 `provided-7bb3903652336bd799aad8853b8efd7ff3bcc0c7652745417f4745a14ac08e90`,
-receipt SHA256
+folder SHA256
 `e046cadfb9dcec4b0cf6624f80d6316bf532416153b82023f5100bd1ab0726cd`.
 Its member `Berkovich--Etale equivariant sheaves on p-adic analytic spaces (unfinished manuscript)--1996.pdf`
 has SHA256

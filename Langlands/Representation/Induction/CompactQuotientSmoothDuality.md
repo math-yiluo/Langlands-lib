@@ -1,13 +1,11 @@
 # Duality of induction from a compact quotient for every smooth representation
 
-Author: Worker 937.
-
 `Langlands.Induction.exists_integralDualEquiv_of_section` identifies the smooth
 dual of the smooth induction of `twist χ (σ.comp m)` with the smooth induction
 of `twist χ ((smoothContragredient σ).comp m)`. The identification is the
 integral pairing over a measure on `K`, and it holds for every smooth `σ`. It
 is a variant of `exists_integralDualEquiv_of_pos` (module
-`CompactQuotientDuality`, Worker 805), which requires the induced
+`CompactQuotientDuality`), which requires the induced
 representation to be admissible (`hadm`). Here admissibility is replaced by
 three structural hypotheses on `P`:
 

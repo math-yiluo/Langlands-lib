@@ -79,5 +79,3 @@ the published `CompactSupport.functor`.
 
 The inverse functor, the comparison maps and the equivalence are not
 constructed or asserted here.
-
-Worker 184 implements this unit for Task 5338.

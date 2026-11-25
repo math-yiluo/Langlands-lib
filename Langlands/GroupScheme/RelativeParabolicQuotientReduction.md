@@ -39,8 +39,10 @@ constructed quotient.
 `existenceStatement_of_dynamic_and_ambient` supplies the identical normalizer
 proofs to the assembly's extraction theorem. It concludes exactly the unchanged
 published `RelativeParabolicQuotient.ExistenceStatement.{u}` from the three
-listed statement inputs. The properness criterion remains an explicit premise;
-its separate proof task is not treated as a theorem here.
+listed statement inputs. The properness criterion remains an explicit premise
+here; it is proved separately as
+`RelativeParabolicQuotient.properAmbientCriterion_holds` in
+`AlgebraicGeometry.ProperOfFibres.ProperAmbientCriterionProof`.
 
 All rings, including zero and non-Noetherian rings, arbitrary universe `u`, all
 field algebra structures, all actual subgroup maps, and all test schemes,

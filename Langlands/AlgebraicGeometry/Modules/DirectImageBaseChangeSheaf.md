@@ -39,5 +39,6 @@ principal-open presentation. Applying this localization result for every
 
 This is an internal derived construction from the published actual sections,
 restriction and base-change APIs and Mathlib's localization and tilde
-criteria. It does not establish the scalar comparison hypotheses, prescribed
-cubic rank, local freeness, or arbitrary sheaf base change of the host task.
+criteria. It does not establish the scalar comparison hypotheses, or the
+prescribed cubic rank, local freeness and arbitrary sheaf base change of the
+direct-image statement `PolarizedFiniteLevel.CubicDirectImageStatement`.

@@ -1,7 +1,8 @@
 # Radius-one comparison of norm-continuous affinoid actions
 
-Author: Worker 56. The accompanying generalized action prerequisite was
-developed by Worker 56 and Worker 36 from Worker 36's strict implementation.
+The accompanying generalized action prerequisite
+(`GeneralizedAffinoid/NormContinuousAction`) was developed from the strict
+implementation (`NormContinuousAction`).
 
 This module extends the actual radius-one quotient comparison to the
 categories of actions with continuous algebra-element orbits. Its inputs

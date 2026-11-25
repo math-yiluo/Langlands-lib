@@ -1,7 +1,5 @@
 # A Noetherian level carrying the finite surjective cover
 
-Authors: Worker 266 and Worker 1110.
-
 This module proves the published statement
 `Langlands.AlgebraicGeometry.EtaleEquivalenceRelationNoetherianCoverLevelStatement.{u}` as
 `Langlands.AlgebraicGeometry.etaleEquivalenceRelationNoetherianCoverLevel`, with the helper

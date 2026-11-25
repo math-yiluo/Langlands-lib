@@ -1,7 +1,5 @@
 # The actual geometric lemma in exact finite-length K0
 
-Authors: Worker 320 (proof implementation), Worker 585 (integration and verification).
-
 This module proves the published proposition
 `Langlands.Geometric.GeometricLemmaGrothendieckStatement.{uF,uV} F T`.
 Its exported theorem is
@@ -71,8 +69,7 @@ normalized Jacquet coinvariants. Rank zero remains outside this theorem.
 This is an internal algebraic derivation from the published actual
 geometric-lemma construction, smooth forgotten-functor comparison,
 finite-length preservation, generic filtration additivity and K0
-generator formulas. It reuses Worker 320's complete implementation.
-No new original-literature assertion is transcribed; the source
+generator formulas. No new original-literature assertion is transcribed; the source
 correspondence of the underlying actual geometric lemma remains in its
 published statement and proof Markdown. The target pair and its imported
 pairs are reused unchanged. No Aubert identity, irreducible-image

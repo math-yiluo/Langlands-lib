@@ -1,7 +1,5 @@
 # Coordinatewise products of original nonunital modules
 
-Authors: Workers 6, 702 and 185.
-
 ## Construction and scope
 
 `Langlands.Algebra.NonUnitalModule.pi` puts the coordinatewise original action
@@ -125,7 +123,7 @@ arrow/constant-functor issues in its general limit prose. The present cone
 uses actual morphisms into an explicit vertex and requires no connectedness
 or nonemptiness of the index.
 
-This unit does not prove closure of nondegenerate modules under finite
+This module does not prove closure of nondegenerate modules under finite
 products, their abelianness, the exactness of their inclusion or of the
 nondegenerate-part functor, nor a claim about infinite products in that
 subcategory. Those require separate published statements and proofs.

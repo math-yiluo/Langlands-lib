@@ -33,7 +33,7 @@ conclusion through the pullback equivalence. The generic-point proof uses the
 original integral-point homomorphism; induction proves the iterated claims.
 No smoothness, prime characteristic, finite residue field, or topological
 hypothesis is imposed. Here `p` is any natural number satisfying the stated
-maximal-ideal condition. This unit does not assert a pro-`p` conclusion; that
+maximal-ideal condition. This module does not assert a pro-`p` conclusion; that
 also requires the topological neighborhood-basis argument.
 
 The provenance is internal: it combines the actual quotient coefficients and

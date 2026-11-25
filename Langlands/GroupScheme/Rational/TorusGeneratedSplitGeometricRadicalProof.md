@@ -1,7 +1,5 @@
 # The split geometric radical of a torus-generated solvable group
 
-Authors: Worker 1376 and Worker 1485.
-
 `Langlands.GroupScheme.torusGeneratedSplitGeometricRadical.{u}` proves the
 unchanged published proposition `TorusGeneratedSplitGeometricRadicalStatement.{u}`.
 For every field `k : Type u` and every smooth connected affine solvable actual

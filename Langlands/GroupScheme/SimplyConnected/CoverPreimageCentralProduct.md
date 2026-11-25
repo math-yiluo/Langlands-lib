@@ -1,7 +1,5 @@
 # The multiplication map of a central torus and the derived subgroup
 
-Author: Worker 1413.
-
 Module `Langlands.GroupScheme.SimplyConnected.CoverPreimageCentralProduct`,
 namespace `Langlands.GroupScheme.CoverPreimage`. Internal helpers for the
 reduction

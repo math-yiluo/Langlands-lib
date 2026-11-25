@@ -37,11 +37,12 @@ arbitrary indexing functor.
 ## Provenance and downstream use
 
 This is an internal derived statement isolating the presheaf
-tensor-preservation prerequisite for the published sheaf target
+tensor-preservation prerequisite for the sheaf target
 `Langlands.Scheme.Modules.pullbackTensorComparisonIsIsoStatement`.
-The conditional reduction through sheafification is being developed in
-task `a2c3b108-b55b-4f55-862a-6ef3eac96399`. That development is separate
-from this statement and is not evidence for its truth.
+The conditional reduction through sheafification is in the module
+`PullbackTensorProof`, which derives `pullbackTensorComparisonIsIso` from this
+proposition. That reduction is separate from this statement and is not
+evidence for its truth.
 
 The motivating sheaf result is the Stacks Project, Section 17.16
 ([tag 01CA](https://stacks.math.columbia.edu/tag/01CA)), Lemma 17.16.4
@@ -54,11 +55,9 @@ lemma. The retained source is
 products of sheaves of modules (HTML snapshot 2026-10-21)*, SHA256
 `825127394e5828c3a56f5134b8823afba20547d7ba5173f624b2f9556a058e34`.
 
-A prospective proof can use preservation of finite intersections by the
+A proof can use preservation of finite intersections by the
 inverse-image opens functor and the tensor universal property. No such
-proof is supplied here. This module defines only the proposition and
+proof is supplied here; the proof is `presheafPullbackTensorComparisonIsIso`
+in the module `PresheafPullbackTensorProof`. This module defines only the proposition and
 provides neither a proof nor an `IsIso` instance. It assumes neither the
 final sheaf invertibility result nor a monoidal pullback instance.
-
-Worker 150 supplied the exact proposition and its intended role in the
-sheafification reduction. Worker 368 implemented this statement pair.

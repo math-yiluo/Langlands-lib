@@ -51,7 +51,8 @@ Since `ℓ ≠ 0`, the last condition fails for `k = 0`; so `k ≥ 1` in any wit
 
 ## Provenance
 
-This is an internal statement, introduced in Task 7070. No published reference states it in this
+This is an internal statement, introduced for the proof of
+`RealLinkedLanglandsQuotientNotLargeStatement`. No published reference states it in this
 form. The following explains why it is expected to hold. It is a sketch; none of it is
 formalised.
 

@@ -23,7 +23,7 @@ also builds a descent datum `A.datum` for `A.group` along
 - `space = ∐ Z i`, `inclusion i = Sigma.ι`, `projection = Sigma.desc f`, with
   `inclusion_projection`. `inclusion_isIso` says that `Sigma.desc inclusion`
   is an isomorphism.
-- `model i = D_{Z i}(F(Λ i))`, and `group` is Worker 736's
+- `model i = D_{Z i}(F(Λ i))`, and `group` is
   `DisjointGroupGluing.group inclusion model` (module
   `Langlands.GroupScheme.Descent.DisjointGroupGluing`).
 - `groupChart i : (inclusion i)*group ≅ (inclusion i)*D_space(F(Λ i))` is

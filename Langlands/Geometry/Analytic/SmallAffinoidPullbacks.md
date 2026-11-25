@@ -59,7 +59,10 @@ The finite Banach pushout proposition remains a premise.
 The provenance is internal: this specializes the greatest-chart pullback
 construction using the closed-quotient affinoid pushout, the small singleton
 spectrum realization, original-chart retention under saturation, and full
-localized fraction descent. No external statement is transcribed. This unit
+localized fraction descent. No external statement is transcribed. This module
 asserts no etaleness of a projection and provides no global gluing construction.
-Unrestricted localized etale pullback existence and etale base change remain
-the obligations of the host task.
+Unrestricted localized etale pullback existence is proved in
+`LocalizedEtalePullbackExistence` (`exists_localizedPullback_of_etale`), and
+etale base change, for Hausdorff saturated presentations whose space and
+index universes are the field universe `u`, as `etaleBaseChange` in
+`EtaleBaseChangeProof`.

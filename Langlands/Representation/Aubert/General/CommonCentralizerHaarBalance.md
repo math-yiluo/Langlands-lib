@@ -1,6 +1,6 @@
 # Actual Haar balance on the common split-torus image
 
-This internal deduction by Worker 184 combines the actual conjugation
+This internal deduction combines the actual conjugation
 determinant balance with the forward Haar formulas for the five subgroups
 in that balance. It defines the full dynamic-unipotent Haar character and
 proves the product, positive-half and inverse-half identities after pullback
@@ -115,8 +115,7 @@ deduce equality of characters on all of `Z(k)` from their agreement
 on torus-image points. It proves no whole-common-Levi detection result,
 normalized representation comparison, compact/full induction comparison,
 ordered filtration or exact-\(K_0\) geometric expansion. Those are
-separate remaining obligations of the host task; none is added as a
-premise to its target.
+separate results; none is added as a premise here.
 
 The local instances have explicit module-specific names to avoid generated-name
 collisions when these developments are imported together. Their types, bodies

@@ -4,7 +4,7 @@ Module: `Langlands.CategoryTheory.Renard.SemisimplicityEquivalenceStatements`.
 The single declaration
 `Langlands.Renard.SemisimplicityEquivalenceStatement` is a definition returning
 `Prop`. It states the lemma of A.VII and an internal size comparison for the
-existing semisimple-object alias. This unit supplies no proof of those
+existing semisimple-object alias. This module supplies no proof of those
 equivalences.
 
 ## Original and conventions
@@ -34,13 +34,13 @@ every object is the sum of its finite-type subobjects. The source footnote
 distinguishes this from Grothendieck's Tohoku AB6. The imported public
 `IsSourceGrothendieck` and `SourceAB6` retain these conventions.
 
-Worker 6 read PDF269–271 in full and visually inspected PDF271; Worker 1069
-independently reread PDF269–271 from the file with the SHA256 above. The
+PDF269–271 were read in full and PDF271 was visually inspected; PDF269–271
+were also independently reread from the file with the SHA256 above. The
 published `notes/renard/appendix-a-corrections.md` concerns other passages.
 The supplementary registered 2010-edition errata,
 `renard-2010-corrections-complements`, SHA256
 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
-were read at PDF18–19 by Worker 6 and at PDF17–19 by Worker 1069. Their
+were read at PDF18–19, and in a second reading at PDF17–19. Their
 nearby chain correction (for the 2010 page 305) is already incorporated in
 the 2026 proof of the preceding simple-quotient proposition, which uses an
 arbitrary chain. The next entry concerns a later functor passage. These pages
@@ -85,7 +85,7 @@ isomorphism. Binary coproducts already exist in an abelian category.
 
 The second and third conjuncts express the source's three-way equivalence
 using the existing semisimple alias for condition (i). The first conjunct is
-an internal comparison requested to connect that alias with complete
+an internal comparison that connects that alias with complete
 reducibility at the source-family size. It is additional packaging of the
 source result, not another assertion printed in the book.
 
@@ -115,7 +115,8 @@ across the coproduct isomorphism and reindexing of the colimit can reduce a
 complete-reducibility witness to size `r`. Conversely, the index of an
 `r`-sized witness injects in the same way into `Subobject X`, which lies in
 `Type (max u v)`, so that witness can be reindexed at size `max u v`. The
-first conjunct asks for this comparison as part of the future proof; the
+first conjunct asks for this comparison as part of the proof, which is in
+`Langlands.CategoryTheory.Renard.SemisimplicityEquivalence`; the
 present statement does not supply that proof.
 
 ## Source proof boundaries and remaining work
@@ -123,8 +124,9 @@ present statement does not supply that proof.
 The source proves (i) implies (ii) directly, obtains (iii) from (ii) by
 maximizing a family of simple subobjects disjoint from the specified
 subobject, and proves (iii) implies (i) by a maximal direct sum and a
-nonzero residual complement. These are proof obligations of a separate
-exact-target proof task.
+nonzero residual complement. The proof is in the separate module
+`Langlands.CategoryTheory.Renard.SemisimplicityEquivalence`, which connects
+the three conditions by a partly different route.
 
 Two reading details are already documented in the imported definition's
 Markdown. The finite-type subobject used to obtain a simple subobject must
@@ -134,10 +136,9 @@ about proper subobjects of `F` in that paragraph refers to the finite-type
 object denoted `E′`, before `F` is introduced. These internal reading
 observations do not change the lemma's statement.
 
-This unit states the lemma, with the explicit size convention and alias
+This module states the lemma, with the explicit size convention and alias
 comparison described above. The following corollary about subobjects of
 semisimple objects is a separate result. Module and representation adapters,
 category decompositions and the other whole-book obligations remain
-separate. Worker 6 authored this initial statement pair. Worker 1069
-rechecked it against the source, errata and compiled declaration, and
-revised this Markdown.
+separate. The pair was rechecked against the source, errata and compiled
+declaration.

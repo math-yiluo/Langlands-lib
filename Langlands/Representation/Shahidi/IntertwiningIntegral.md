@@ -10,7 +10,7 @@ A(s,\pi,w_{m,n})f(g)=\int_{U'} f(w_{m,n}u'g)\,du'.
 
 The registered original is `shahidi-1984-fourier`, SHA256
 `a10d5c605d94d4e85d0e5f453d6a8c233d91e3cb60d538f430d8ad900cbb6b29`.
-The author is Worker 11. It uses the published block Weyl matrix
+The module uses the published block Weyl matrix
 `blockWeyl m n F` and exchanged radical coordinates
 `intertwiningUnipotent m n F` of `Langlands.Representation.Shahidi.Geometry`.
 Here `U'` is the exchanged upper radical: an `n` by `m` matrix `a` gives
@@ -18,7 +18,7 @@ Here `U'` is the exchanged upper radical: an `n` by `m` matrix `a` gives
 `swapRank`.
 
 The source integrates an element of the induced space `I(s,π)` with values in
-the space of `π = π₁ ⊗ π₂`. This unit does not construct that induced
+the space of `π = π₁ ⊗ π₂`. This module does not construct that induced
 representation. It defines the integral for an arbitrary actual function
 `f : GL_(m+n)(F) → V`, with `V` an arbitrary complex vector space carrying an
 arbitrary representation `ρ` of an arbitrary topological group `H`. In the
@@ -27,7 +27,7 @@ is the published weak integral of
 `Langlands.HarmonicAnalysis.SmoothWeakIntegral`, tested by the smooth dual of
 `ρ`. The measure `μ` on the `n` by `m` matrices over `F` is arbitrary. No Haar
 property is assumed by the definitions. The specialization to `I(s,π)`, with
-the target `I(-s,π')` for `π' = π₂ ⊗ π₁`, is a later unit.
+the target `I(-s,π')` for `π' = π₂ ⊗ π₁`, is made in `IntertwiningInduced`.
 
 ## Two weak-integral lemmas
 
@@ -141,7 +141,7 @@ above they also hold for the operator.
 
 ## What is not claimed
 
-This unit does not claim the following:
+This module does not claim the following:
 
 - that the integral converges for `f ∈ I(s,π)` when `Re s` is large;
 - that `A(s,π,w_(m,n))` has a rational continuation in `q^(-s)`;
@@ -149,6 +149,6 @@ This unit does not claim the following:
 - any Haar normalization of `du'`.
 
 The source cites these properties to [15, 19, 22] on page 72. They are
-obligations for the later specialization to induced representations.
+obligations of the specialization to induced representations.
 The relation and operator here are the actual integral on its domain. They do
 not depend on any of these properties.

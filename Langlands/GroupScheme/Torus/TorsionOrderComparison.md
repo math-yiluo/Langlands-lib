@@ -1,7 +1,5 @@
 # Torsion comparisons from equality of coordinate orders
 
-Worker 508.
-
 `TorsionOrderComparison.finiteFieldClosedImmersionIso` constructs an actual
 isomorphism from a closed immersion between finite schemes over a field when
 their coordinate algebras have equal dimensions. The scalar structures are

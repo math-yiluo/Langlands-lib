@@ -2,7 +2,7 @@
 
 The group-Levi orbit-packet central projection formula carries the factor
 `muA(A_G(F) ∩ G¹)` when the central Haar measure is arbitrary. This
-derived unit supplies its positivity and finiteness and the corresponding
+derived module supplies its positivity and finiteness and the corresponding
 preimage normalization in the lower inclusion of Waldspurger VIII.4.2,
 printed p.330 (PDF p.96). It changes no Haar measure.
 
@@ -25,7 +25,9 @@ literal central integral without a convergence or interchange premise.
 The resulting vector is an actual raw central preimage of the desired
 function, with the original central measure.
 
-This unit proves neither the existence of the required cuspidal packet
-nor either closed Task 7440 target. Prescribed-value section extension,
-the actual group-Levi packet comparison and packet cuspidality remain
-separate lower-inclusion obligations.
+This module proves neither the existence of the required cuspidal packet
+nor either of the closed targets `RationalCuspidalDiscreteCoefficientStatement`
+and `RationalCuspidalFixedCoefficientLiftingStatement` (module
+`RationalCuspidalCentralStatements`). Prescribed-value section extension,
+the actual group-Levi packet comparison and packet cuspidality are
+separate lower-inclusion obligations, not treated here.

@@ -1,13 +1,12 @@
 # Group-like spanned flat Hopf algebras over local rings
 
-Author: Worker 5157.
-
 Module `Langlands.Algebra.GroupLikeSpanLocal`, namespace `Langlands.GroupLikeSpan`.
 
-This is an internal unit. It supplies the local algebra input for the proof of
-`Langlands.GroupScheme.RelativeMultiplicativeTypeClosedSubgroupStatement` (task 6940).
-In particular it is what Worker 323's reduction
-`FlatGroupLikeHopfMultiplicativeTypeStatement` needs over a local base. It cites no
+This is an internal module. It supplies the local algebra input for the proof of
+`Langlands.GroupScheme.RelativeMultiplicativeTypeClosedSubgroupStatement`.
+In particular it is what the reduction
+`FlatGroupLikeHopfMultiplicativeTypeStatement` (module
+`Langlands.GroupScheme.Torus.RelativeMultiplicativeTypeSubgroupReduction`) needs over a local base. It cites no
 external source. The statement is the local form of the standard fact that, over a
 local ring, a flat finitely presented commutative Hopf algebra spanned by group-like
 elements is a group algebra. The proof below was written for this development. It
@@ -159,4 +158,4 @@ The remaining auxiliary results are these.
 
 All results are local: `R` is assumed local where stated. Spreading from local rings
 to a Zariski cover, and identifying `hopfSpec A` with a group of multiplicative type,
-are not part of this unit.
+are not part of this module.

@@ -1,7 +1,5 @@
 # Unit-norm to Weil stabilizer transport: proof
 
-Author: Worker 84.
-
 The theorem `Langlands.Global.unitNormWeilStabilizerTransport.{u}` proves
 `Langlands.Global.UnitNormWeilStabilizerTransportStatement.{u}`.
 The proof retains every prime, the arbitrary carrier universe, the given

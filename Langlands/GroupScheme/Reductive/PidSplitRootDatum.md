@@ -1,8 +1,6 @@
 # Coordinate root data and root-line trivializations over principal ideal domains
 
-Worker 638.
-
-This internal derived unit constructs the data needed for integral
+This internal derived module constructs the data needed for integral
 classification from published Library inputs. It adds no axiom and takes
 no isomorphism theorem or integer-torus splitting assertion as a premise.
 
@@ -40,7 +38,7 @@ after extension. The base and coordinate types have arbitrary universe
 `u`; the root index in the root-space construction may have an independent
 universe `v`.
 
-The unit composes `exists_open_coordinateRootDatum`,
+The module composes `exists_open_coordinateRootDatum`,
 `rootDatumEquivOfFiniteOrderReflections`, the actual root-data and
 normalizing-reflection transport, `splitRootLieLine`, actual
 exponent-weight base change, and Mathlib's PID module theory. Its argument

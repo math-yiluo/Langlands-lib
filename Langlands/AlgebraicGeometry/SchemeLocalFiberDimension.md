@@ -1,6 +1,6 @@
 # Actual local fibre dimension and components
 
-Worker 105 constructs the actual pointwise relative fibre dimension
+This module constructs the actual pointwise relative fibre dimension
 used in Stacks Project Section 29.29, tag 02FW, and proves its comparison
 with the componentwise pure dimension in Conrad's Theorem 3.4(2).
 The registered sources are
@@ -63,7 +63,7 @@ of the actual source points whose relative dimension differs from `d`.
 This equality includes empty fibres, which satisfy pure dimension
 vacuously and have no source point of the exceptional image.
 
-This unit does not prove openness or retrocompactness of relative
+This module does not prove openness or retrocompactness of relative
 dimension sublevels, constructibility in a varying family, or filtered
 descent of the combined fibre property. In particular, Stacks Lemmas
 29.29.3, 29.29.4, and 29.29.6 are not claimed here.

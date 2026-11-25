@@ -1,6 +1,6 @@
 # Tensor Weil comparison with the original factor topologies
 
-This internal supporting unit constructs the local tensor Weil
+This internal supporting module constructs the local tensor Weil
 homeomorphism for actual algebraic spaces, with the original lower
 and upper coefficient maps. It retains representability and geometric
 hypotheses explicitly and proves neither general representability nor
@@ -68,7 +68,7 @@ All representability and geometry inputs are retained as premises;
 none is inferred from the desired adelic conclusion.
 
 The scalar-action premise is `Algebra C (D i)` together with
-`ContinuousSMul C (D i)`, generalized from `NormedAlgebra` by Worker 113.
+`ContinuousSMul C (D i)`, generalized from `NormedAlgebra`.
 The local Weil comparison needs continuity of the original algebra map
 and the module topology, so no equality between the independently
 specified field norms is imposed. The same proof and all point formulas

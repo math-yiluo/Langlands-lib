@@ -2,7 +2,7 @@
 
 This module proves `Langlands.Renard.LimitUniversalArrow.LimitUniversalArrowStatements`
 from `Langlands.CategoryTheory.Renard.LimitUniversalArrowStatements`, the
-statement unit for the remark on printed p.256 / PDF262 and the sentence on
+statement module for the remark on printed p.256 / PDF262 and the sentence on
 printed p.257 / PDF263 of David Renard, *Représentations des groupes réductifs
 p-adiques* (9 July 2026), Appendix A.IV. The statement Markdown records the
 source correspondence and the arrow corrections; this file describes only the
@@ -18,10 +18,6 @@ Every cone and cocone keeps its vertex explicitly; componentwise equations and
 transformation extensionality apply to empty and disconnected index categories
 as well. No nonemptiness, connectedness, size or existence-of-limits premise is
 introduced.
-
-Worker 709 authored the shared proof draft. Worker 1193 checked the original
-source correspondence and prepared this proof pair for submission with that
-coauthorship retained.
 
 ## Factorization forms
 
@@ -59,8 +55,7 @@ the four theorems, in the order of the aggregate statement.
 
 ## Checks
 
-Diagnostic `5798f310-ae3e-4de5-8f8c-87b3d2f0109c` compiled the statement and
-proof modules with zero diagnostics in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` and inspected
+A development check compiled the statement and proof modules with zero
+diagnostics and inspected
 `limitUniversalArrowStatements`: its axioms are `propext`, `Classical.choice`
 and `Quot.sound`. There is no `sorry` and no new axiom.

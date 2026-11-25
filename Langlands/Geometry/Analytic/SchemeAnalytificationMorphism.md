@@ -1,17 +1,18 @@
 # Analytifications of morphisms of schemes: local maps and the compatibility predicate
 
-This unit prepares the analytification of a morphism `g : X ⟶ Y` of schemes
+This module prepares the analytification of a morphism `g : X ⟶ Y` of schemes
 locally of finite type over a complete nonarchimedean field `K`, in the
 Library's glued model `SchemeAnalytification.Space`. For affine opens `U` of
 `X` and `V` of `Y` with `g(U) ⊆ V` it constructs the continuous map
 `Uᵃⁿ → Vᵃⁿ` of affine analytifications induced by `g`. It then defines the
 predicate saying that a continuous map `Space K f → Space K f'` restricts to
-these local maps. The unit constructs no map of glued spaces for a general
+these local maps. The module constructs no map of glued spaces for a general
 `g`. It proves no existence or uniqueness of a map satisfying the predicate,
 except for the identity morphism. The image of an affine open of `X` need not
 lie in an affine open of `Y`, so existence needs the open-covering properties
-of the glued space. Those are stated in the published
-`SchemeAnalytificationGluingStatement` and are not yet proved.
+of the glued space. Those are stated in
+`SchemeAnalytificationGluingStatement`, which `SchemeAnalytificationGluingProof`
+proves as `schemeAnalytificationGluing`.
 
 ## Provenance
 
@@ -107,10 +108,13 @@ for the same `g` agree at `ι K f U y` whenever `U` maps into some affine open
 
 ## Scope
 
-The unit does not construct a continuous map `Space K f → Space K f'` for a
-general `g`. It does not prove that such a map exists or is unique. It does
-not prove that local maps respect composition: that needs the published
-affine functoriality statement, whose proof is not yet in the Library. It
-proves no compatibility with the center map to `X`, with rational points, with
-fibre products or with immersions. Those are successor obligations of the
-parent task.
+The module does not construct a continuous map `Space K f → Space K f'` for a
+general `g`. It does not prove that such a map exists or is unique;
+`SchemeAnalytificationMorphismProof` constructs it and proves
+`existsUnique_isAnalytificationMap`. It does not prove that local maps respect
+composition: that needs the published affine functoriality statement
+`AffineAnalytificationFunctorialityStatement`, which
+`AffineAnalytificationFunctorialityProof` proves as
+`affineAnalytificationFunctoriality`. It proves no compatibility with the
+center map to `X`, with rational points, with fibre products or with
+immersions.

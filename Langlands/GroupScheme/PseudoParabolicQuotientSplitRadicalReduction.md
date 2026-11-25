@@ -1,7 +1,5 @@
 # Actual quotient maps in the split-radical reduction
 
-Author: Worker 1478.
-
 This internal application of the homogeneous quotient factorization construction
 works over every field `k : Type u`, at arbitrary universe `u`. It retains the
 published pseudo-parabolic predicate. For a supplied pseudo-parabolic inclusion
@@ -66,7 +64,7 @@ The provenance is internal: the existing ground-field radical containments,
 actual homogeneous quotient factorization and all-test fiber descent,
 continuous images of compact sets, the published smooth-kernel quotient and
 smooth source-descent theorems, and affine refinement and composition of actual algebraic sections.
-This unit does not construct the group quotient by the split radical, prove
+This module does not construct the group quotient by the split radical, prove
 that its kernel-free quotient has trivial split radical, construct a subgroup
 `j` or prove that it is pseudo-parabolic with the full preimage equality, or
 establish affine-test lifting through `f`. These structural and torsor inputs

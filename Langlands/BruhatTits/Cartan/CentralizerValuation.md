@@ -1,6 +1,6 @@
 # Character-normalized centralizer valuations and dominant sets
 
-This is a definition unit for the corrected Cartan targets. It uses actual group
+This module gives definitions for the corrected Cartan targets. It uses actual group
 schemes and their algebraic characters. To use the names as centralizer objects,
 `i : S → G` must be the chosen maximal split torus, `j : Z → G` must represent
 `torusCentralizer i`, and `s : S → Z` must satisfy `s ≫ j = i`. Those conditions
@@ -37,6 +37,6 @@ positive relative roots `positiveRelativeRoots i ν`. The Cartan targets require
 `ν` to be generic, and impose the represented-centralizer and maximal-split
 hypotheses explicitly. A choice of chamber is not a choice of affine origin.
 
-This unit defines neither `Z(F)^0` nor the geometric parahoric `P_x` or maximal
+This module defines neither `Z(F)^0` nor the geometric parahoric `P_x` or maximal
 compact `K_0`. In the subsequent targets the dominant quotient by `Z(F)^0` and
 the dominant valuation image indexing the `K_0` decomposition are distinct.

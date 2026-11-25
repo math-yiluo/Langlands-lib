@@ -1,6 +1,6 @@
 # Galois subgroup coordinates and integral corestriction
 
-This derived supporting unit identifies the published integral Tate
+This module identifies the published integral Tate
 corestriction in degree minus two with scalar restriction on the actual Galois
 abelianizations. It does not prove the norm-subgroup existence theorem.
 

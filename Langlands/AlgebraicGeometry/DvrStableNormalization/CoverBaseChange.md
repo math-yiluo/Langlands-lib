@@ -1,7 +1,5 @@
 # The affine cover over a DVR and its base change
 
-Worker 6.
-
 For `X` over `Spec R`, quasi-compact:
 
 - `compactSpace_left`: `X.left` is quasi-compact.

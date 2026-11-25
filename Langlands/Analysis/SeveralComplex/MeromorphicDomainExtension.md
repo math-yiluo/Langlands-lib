@@ -8,8 +8,8 @@ there are no premises.
 
 ## Purpose and provenance
 
-This is a helper for Task 5613 (Lapid 2011, Proposition 6:
-`Langlands.Global.EisensteinImaginaryAxisHolomorphyStatement`). Its conclusion
+This is a helper for Lapid 2011, Proposition 6
+(`Langlands.Global.EisensteinImaginaryAxisHolomorphyStatement`). Its conclusion
 has the shape of that target: a family `E λ g`, meromorphic in `λ` with one
 domain of holomorphy `D` for all `g`, is replaced by a representative `E'` of
 the same meromorphic functions whose domain of holomorphy `D'` contains a

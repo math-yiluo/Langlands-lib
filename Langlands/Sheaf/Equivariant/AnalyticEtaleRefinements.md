@@ -1,12 +1,12 @@
 # Admissible refinements on the twisted étale site
 
-Author: Worker 26. Uses the published `Langlands.Sheaf.Equivariant.AnalyticGSheaves`
+Uses the published `Langlands.Sheaf.Equivariant.AnalyticGSheaves`
 (twisted étale site `twistedEtaleTopology`, the local actions `liftAction` and
-`liftOpenSubgroup` of lifts, the local action system `distinguishedLiftSystem`,
-Worker 26) and `Langlands.Sheaf.Equivariant.LocalActionSmoothPart` (the class
+`liftOpenSubgroup` of lifts, the local action system `distinguishedLiftSystem`)
+and `Langlands.Sheaf.Equivariant.LocalActionSmoothPart` (the class
 `LocalActionSystem.HasAdmissibleRefinements`, the predicate
-`IsRestrictionEquivariant` and the sieve `fiberRefinementSieve`, Worker 26). From
-Worker 21 it uses the étale site `EtaleSite`, its topology `etaleTopology` and point
+`IsRestrictionEquivariant` and the sieve `fiberRefinementSieve`). It also uses
+the étale site `EtaleSite`, its topology `etaleTopology` and point
 functor `EtaleSite.points`, distinguished étale morphisms `IsDistinguishedEtale`,
 and lifts `ActionLift` (`Langlands.Geometry.Analytic.EtaleSite` and
 `Langlands.Geometry.Analytic.LocalActionLifts`). It also uses the twisted category
@@ -38,7 +38,7 @@ The module has three parts.
 
 ## Data and universes
 
-- `K : Type u` is a complete ultrametric normed field. `X` is an object of Worker 21's
+- `K : Type u` is a complete ultrametric normed field. `X` is an object of
   `LocalizedCategory.{u, v, v} (K := K)`.
 - `G : Type z` is a group with a topology, and `ρ : G →* Aut X`. Translates of lifts
   and the two theorems that use them also assume `[IsTopologicalGroup G]`.
@@ -120,7 +120,7 @@ theorems.
 
 1. A sieve on an object `U` of the twisted site covers for `twistedEtaleTopology ρ`
    exactly when its pullback along the inclusion `ι etale ρ` covers `U.obj` for
-   `etaleTopology X`. By Worker 21's `mem_etaleTopology_of_jointlySurjective`, it
+   `etaleTopology X`. By `mem_etaleTopology_of_jointlySurjective`, it
    suffices that every point of `U.obj` is in the image of an arrow of the pullback.
 2. For a point `x`, (A) gives a distinguished étale `V` and an arrow `f : V ⟶ U.obj`
    whose image contains `x`. (B) gives a lift `l` on `V`.

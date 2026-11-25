@@ -1,16 +1,16 @@
 # Character adapters for finite degree-zero Brauer induction
 
-Worker 1787 supplies internal derived infrastructure for the unchanged finite
+This module supplies internal derived infrastructure for the unchanged finite
 degree-zero Brauer statement. No generation conclusion is assumed or asserted.
 All groups here have arbitrary, independently chosen universes.
 
 `extend S f` extends a complex function on a subgroup by zero. `ind S` is the
 integer-linear normalized conjugation sum, using the published
-`ClassFunction.induced` convention. `ind_apply` states its explicit dependent
-sum, and `ind_character` identifies it with the trace character of the actual
-finite-dimensional induction `induceRep`. `virtualCharacter_induce` extends this
-comparison to the genuine split representation group by writing each virtual
-class as a difference of actual classes.
+`Langlands.FiniteRep.inducedClassFunction` convention (`ClassFunctionInduction`).
+`ind_apply` states its explicit dependent sum, and `ind_character` identifies it
+with the trace character of the actual finite-dimensional induction `induceRep`.
+`virtualCharacter_induce` extends this comparison to the genuine split representation
+group by writing each virtual class as a difference of actual classes.
 
 `characterSpan G` is exactly the image of `degreeZeroBrauerSpan G` under the
 actual virtual-character map. It is not a substitute ambient representation

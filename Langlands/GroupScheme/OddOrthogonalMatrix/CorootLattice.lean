@@ -26,6 +26,8 @@ theorem map_corootSpan_eq_pairLattice {J : Type u}
     (hP : IsRootDatumOf (identityTorus l K) P) :
     (P.corootSpan ℤ).map (GeneralLinear.cocharacterCoordEquiv l K).toLinearMap =
       TypeDParityLattice.pairLattice l := by
+  have : AddMonoidHomClass (cocharacterLattice 𝔗 ≃ₗ[ℤ] (l → ℤ)) (cocharacterLattice 𝔗) (l → ℤ) :=
+    SemilinearMapClass.instAddMonoidHomClass _
   change (Submodule.span ℤ (Set.range P.coroot)).map _ = _
   rw [Submodule.map_span, ← Set.range_comp]
   apply le_antisymm

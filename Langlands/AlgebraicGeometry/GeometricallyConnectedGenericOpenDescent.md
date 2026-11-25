@@ -1,6 +1,6 @@
 # Actual open-image descent of generic fibre connectedness constancy
 
-Worker 105. This derived reduction implements the first descent step in the
+This derived reduction implements the first descent step in the
 proof of Stacks Lemma 37.28.4 (055G), registered collection
 `stacks-fibre-constructibility-local-dimension-2026-11-04`, SHA256
 `1f3421cf5c5733cafdf296e8a9d38af7e4730550989a3d727d4b9a61cf1f3db3`,
@@ -44,5 +44,8 @@ properness, smoothness, separatedness or quasi-separatedness hypothesis
 is imposed on the original morphism. The Noetherian hypothesis comes from
 the earlier closure-incidence assembly and is retained explicitly.
 The unrestricted generic-constancy theorem, constructibility and the
-assumed splitting, spreading and closed-cover results remain separate
-proof obligations.
+assumed splitting, spreading and closed-cover results are not proved in
+this module. Constructibility and the three assumed results are proved in
+`GeometricallyConnectedFiberConstructibilityProof`,
+`FiniteEtaleGenericComponentSplittingProof`, `GeometricIrreducibilityProof`
+and `GeometricallyConnectedClosedCoverProof`.

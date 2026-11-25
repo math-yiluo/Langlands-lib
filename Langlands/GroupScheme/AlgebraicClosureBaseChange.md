@@ -41,6 +41,3 @@ theorem, functoriality of `Spec`, and the Library's actual group-scheme
 pullback construction. It uses no new literature assertion. It proves no
 preservation of unipotent radicals, Borel maximality, parabolicity, or
 connected reductivity; those require their own structural proofs.
-
-Worker 1359 implemented this unit. Workers 445 and 1340 contributed the
-existing comparison API, the embedding route, and the naturality requirement.

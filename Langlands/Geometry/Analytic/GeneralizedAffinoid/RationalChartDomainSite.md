@@ -1,7 +1,5 @@
 # Rational charts as a dense subsite of full represented domains
 
-Author: Worker 36.
-
 This construction uses the finite full-domain topology and the
 existing finite rational topology over one actual positive-polyradius
 presented affinoid algebra `A` over a complete ultrametric normed field `K`.

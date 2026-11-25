@@ -1,9 +1,9 @@
 # Reduction of the weighted Whittaker square estimate
 
-Author: Worker 724. The proof reuses `normalizedAbs_prod`,
+The proof reuses `normalizedAbs_prod`,
 `diagonal_abs_last` and `diagonal_abs_bound` from
-`Langlands.Representation.RankinSelberg.UnequalRankIwasawaSupportProof`, written
-by Worker 676. These helpers are public with their existing statements and proofs.
+`Langlands.Representation.RankinSelberg.UnequalRankIwasawaSupportProof`.
+These helpers are public with their existing statements and proofs.
 
 ## What this module proves
 
@@ -200,7 +200,7 @@ published statement, and Lean checks the match.
 ### `DeterminantSupport`
 
 - `normalizedAbs_prod`: `|∏ f i| = ∏ |f i|` over a finite set. Imported
-  from Worker 676's Iwasawa support module.
+  from the Iwasawa support module `UnequalRankIwasawaSupportProof`.
 - `diagonal_abs_last`: if `M` has last row `e_last` and
   `M = u · diag(a) · κ` with `u` upper unipotent and `κ` integral, then
   `|a_last| = 1`. Imported from the same module.

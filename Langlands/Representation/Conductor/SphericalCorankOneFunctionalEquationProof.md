@@ -39,13 +39,13 @@ realized in `I(x)` through `exists_glInverseFunctional_sphericalWhittaker`
 off from the gamma relation (`SphericalCorankOneSphericalEquation`, with the integral and
 algebra lemmas of `SphericalCorankOneIntegrals` and `SphericalCorankOneGammaAlgebra`).
 
-## Supporting modules in this contribution
+## Supporting modules ported together with this module
 
 - `Conductor/SphericalCorankOneGammaAlgebra`, `Conductor/SphericalCorankOneIntegrals`,
   `Conductor/SphericalCorankOneRankOneGamma`, `Conductor/SphericalCorankOneSphericalEquation`,
   `Conductor/SphericalCorankOneReduction`, `Conductor/SphericalCorankOneMultiplicativityBridge`,
   `Conductor/OrderedUnramifiedSphericalFunctional`;
-- `Conductor/UnramifiedSphericalWhittaker` (Worker 5557, Task 5680 draft, split (b)):
+- `Conductor/UnramifiedSphericalWhittaker`:
   Shintani's formula for the spherical coefficient of every inverse-character functional on
   `I(z)`, and the trivial action of `-1`;
 - `RankinSelberg/LocalFieldUnequalRankAnalyticStatement`,

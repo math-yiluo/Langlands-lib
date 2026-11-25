@@ -1,7 +1,5 @@
 # Finite invariant covers with affine quotients descend to one level
 
-Author: Worker 706.
-
 This internal construction descends a supplied finite invariant affine cover
 of the limit of a cofiltered cartesian diagram of étale equivalence relations.
 If each chart relation in that cover has an affine quotient, the same holds

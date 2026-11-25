@@ -1,7 +1,5 @@
 # Field-valued points of algebraic spaces lift to affine étale charts
 
-Author: Worker 105.
-
 Let `C` be a commutative ring, `k` a field with a `C`-algebra structure, and `X` an
 algebraic space over `Spec C` (the Library notion of
 `Langlands/AlgebraicGeometry/AlgebraicSpace/Basic.lean`). The main result,

@@ -1,9 +1,5 @@
 # Compact algebraic coefficients with derived continuity
 
-Implementation: Worker 13. The compact-coefficient interfaces were designed
-by Worker 57; the imported general algebraic orbit-continuity proof is by
-Worker 255.
-
 This is an internal specialization of published constructions. It removes
 the explicit local orbit-continuity input from the compact algebraic
 coefficient construction by supplying a published proof. It does not change

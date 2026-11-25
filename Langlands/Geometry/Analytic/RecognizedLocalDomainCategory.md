@@ -1,7 +1,5 @@
 # Actual local-domain and recognized-chart category comparison
 
-Author: Worker 36.
-
 This module constructs an equivalence between actual local full-domain
 presentations in the full recognition atlas and its recognized-chart
 inclusion category. The equivalence preserves literal ambient subsets,
@@ -117,9 +115,10 @@ No ambient Hausdorff, reducedness, nonzero-algebra or nonempty-cover
 hypothesis is added. All imported domains and local inclusions retain
 their full represented-domain universal properties.
 
-This unit identifies the domain-inclusion categories and their actual
-algebra diagrams. Equivalent-net invariance and idempotence of the full
-recognition construction, maximal-atlas uniqueness and the unrestricted
-analytic morphism-category identification remain separate. Analytic
+This module identifies the domain-inclusion categories and their actual
+algebra diagrams. Idempotence of the full recognition construction is
+proved in `FullRecognitionIdempotence`; its equivalent-net invariance,
+maximal-atlas uniqueness and the unrestricted analytic morphism-category
+identification lie outside this module. Analytic
 étale and equivariant sites and the Harris tower specialization are
 also outside this construction.

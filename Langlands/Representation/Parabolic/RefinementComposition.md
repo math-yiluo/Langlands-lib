@@ -1,6 +1,6 @@
 # Composite parabolic and normalization for an actual block refinement
 
-Author: Worker 8. This construction imports the published outer preimage,
+This construction imports the published outer preimage,
 outer character, and inner refinement definitions.
 
 For an ordered block shape `B` of rank `n` and an actual `BlockRefinement B`,
@@ -61,7 +61,7 @@ kernel, and the inflated character has open kernel by continuity of the
 projection. These are the smoothness inputs for subsequent actual induction
 and Jacquet constructions.
 
-## Source and outstanding obligations
+## Source and scope
 
 This is a derived coordinate construction motivated by Bernstein and
 Zelevinsky, *Induced representations of reductive p-adic groups I* (1977),
@@ -76,7 +76,7 @@ normalized transitivity identities that this construction will support.
 The Lean proofs here are intrinsic split-projection and character algebra;
 the module does not state or prove normalized functor transitivity. It also
 does not identify the explicit determinant product with Haar scaling.
-Those theorem obligations remain separate. No theorem truth, replacement
+Those theorems are separate. No theorem truth, replacement
 functor, quotient equivalence, or flattened-block identification is assumed.
 
 ## All-field port

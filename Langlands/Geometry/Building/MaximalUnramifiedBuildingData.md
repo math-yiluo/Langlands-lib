@@ -1,6 +1,6 @@
 # Building data over the actual maximal unramified field
 
-Worker 60 defines `MaximalUnramified.BuildingData F G` as the abbreviation
+The module defines `MaximalUnramified.BuildingData F G` as the abbreviation
 `IntegerValuationBuildingData (MaximalUnramified.valuation F) G`, where `G`
 is an affine group scheme over the actual field
 `LocalGalois.Separable.inertiaFixedField F`. The base field `F : Type u`

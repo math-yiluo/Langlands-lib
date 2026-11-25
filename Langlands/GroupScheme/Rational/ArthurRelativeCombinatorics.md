@@ -1,8 +1,8 @@
 # Arthur's parabolic combinatorics for an actual reductive group
 
 Module `Langlands.GroupScheme.Rational.ArthurRelativeCombinatorics`, namespace
-`Langlands.GroupScheme.ArthurRelative`. Worker 128, Task 5536, item 1 (the specialization of the
-abstract layer to actual groups).
+`Langlands.GroupScheme.ArthurRelative`. It is the specialization of the abstract layer to actual
+groups.
 
 The published abstract layer `Langlands.ArthurCombinatorics` (modules
 `Langlands/LinearAlgebra/ArthurCombinatorics` and `ArthurCombinatoricsStatement`) defines
@@ -160,8 +160,7 @@ The divisible roots `2α` of a `BC` system and their coroots `α^∨/2` do not o
 
 - Not done here: the comparison of `𝔞_P = aSpace T J` with `RealCharacterDual F P` (the target of
   `IsIwasawaCompact.height`) and of `𝔞_P^*` with `RealCharacterParameter F P` for the standard
-  parabolic subgroup schemes, the `(G, M)`-families and the truncation operator. These are later
-  units of Task 5536.
+  parabolic subgroup schemes, the `(G, M)`-families and the truncation operator.
 - The functions are defined for every set `J` of characters. Outside `J ⊆ Δ_0` they are formulas
   without meaning: `standardIndex` intersects with `Δ_0`. The theorems assume the intended range.
 

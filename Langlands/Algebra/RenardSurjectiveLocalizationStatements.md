@@ -1,9 +1,6 @@
 # Surjective canonical map and the actual power-kernel quotient
 
-Authors: Worker 709 (statement design and shared draft) and Worker 751
-(submission). This pair supplies the statement unit of focused task
-`1b197ef2-b9a5-4bf3-bc02-675038be24ca` revision 1 under the whole-book
-Renard parent `f5d1f399-a1f8-4ab5-a981-90b92abd4857`. It contains
+This pair contains
 statement declarations only: no proof, theorem or axiom.
 
 The module is `Langlands.Algebra.RenardSurjectiveLocalizationStatements`.
@@ -32,8 +29,8 @@ K, notes that K is stable under a, and lets a' be the endomorphism of
 L' = L/K induced by a. Example 5 on printed p. 252 / PDF p. 258 defines
 the localization (L_a, ã), with ã invertible, the canonical morphism
 ι : (L, a) → (L_a, ã), and morphisms of pairs as linear maps intertwining
-the endomorphisms. Workers 709 and 751 each re-read PDF pp. 258–259 and
-inspected the rendered PDF p. 259 for this pair.
+the endomorphisms. For this pair PDF pp. 258–259 were re-read twice,
+independently, and the rendered PDF p. 259 was inspected.
 
 The registered supplementary author errata
 `renard-2010-corrections-complements` (SHA256
@@ -138,28 +135,34 @@ internal canonical-compatibility and uniqueness strengthening above.
 
 `SurjectiveIotaQuotientStatements` is the conjunction
 `SurjectiveIotaQuotientStatement.{u, v} ∧
-FieldSurjectiveIotaQuotientStatement.{u, v}`. It is the intended target
-of a later proof task.
+FieldSurjectiveIotaQuotientStatement.{u, v}`. It is proved as
+`surjectiveIotaQuotientStatements` in
+`Langlands.Algebra.RenardSurjectiveLocalizationProof`.
 
 ## Dependencies and remaining work
 
 The only direct import is the published quotient construction
 `Langlands.Algebra.RenardEndomorphismQuotient`, which imports the
 published localization `Langlands.Algebra.RenardEndomorphismLocalization`.
-Worker 751 implemented the published localization; Workers 709 and 911
-implemented the published quotient. This pair copies neither
+This pair copies neither the localization nor the quotient
 implementation.
 
-A possible later proof uses the kernel equality
-`ker (iota a) = powerKernel a`, which must itself be proved; this
+The proof in `Langlands.Algebra.RenardSurjectiveLocalizationProof` uses
+the kernel equality `ker (iota a) = powerKernel a`, which is proved
+separately (`ker_iota_eq_iSup` in
+`Langlands.Algebra.RenardEndomorphismLocalizationKernelProof`); this
 statement does not assume it. Descending `iota a` to the actual quotient
 then gives an injective map, which is surjective by the hypothesis; its
 inverse is e. The representative law `quotientEnd_projection` and the
 published `iota_intertwines` give the operator equation, and surjectivity
 of `iota a` gives uniqueness from the canonical-map equation.
 
-The following remain separate obligations, not supplied here: the
-kernel/exhaustion statements and their proofs, the comparison between
+The following are not supplied here: the
+kernel/exhaustion statements and their proofs (they are
+`KernelExhaustionStatements` in
+`Langlands.Algebra.RenardEndomorphismLocalizationStatements`, proved as
+`kernelExhaustionStatements` in
+`Langlands.Algebra.RenardEndomorphismLocalizationKernelProof`), the comparison between
 the localization of L and that of L/K, the inverse-power extension
 converse, general possibly nonunital algebra actions, categorical
 packaging, localization exactness, and the final C.II
@@ -167,16 +170,15 @@ finite-localization proposition.
 
 ## Development checks
 
-In environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, against the public
-Library at commit `c76b7751d5e9d82df7a4e5d57684adcee5d41cb7`, check
-`b0a63078-7bce-4a43-87ad-bfc5f595dc27` compiled this module with no
+Against the public
+Library at commit `c76b7751d5e9d82df7a4e5d57684adcee5d41cb7`, a check
+compiled this module with no
 errors or warnings. Inspection of the aggregate reports a definition
 returning Prop, level parameters u and v, and only the axioms `propext`,
-`Classical.choice` and `Quot.sound`. Private diagnostic
-`e111fd1e-d50b-450b-88ae-7fd994e38118` printed the complete bodies of
+`Classical.choice` and `Quot.sound`. A diagnostic
+printed the complete bodies of
 all three declarations and the signatures of the seven imported
 constructions. It also checked, by `Iff.rfl`, that the ring statement is
 definitionally the same proposition with the codomain written as
 `V ⧸ ⨆ n : ℕ, LinearMap.ker (a ^ n)` and the projection as its `mkQ`.
-These are development checks only; they supply no independent semantic
-acceptance and no proof.
+These are development checks only; they supply no proof.

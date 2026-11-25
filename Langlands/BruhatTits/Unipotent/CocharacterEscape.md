@@ -2,8 +2,8 @@
 
 This internal geometric lemma uses the published intrinsic cocharacter
 evaluation and the closed-embedding theorem for rational-point maps.
-Worker 485 supplied the character-detection route in the norm-kernel geometry
-audit; the present unit implements it.
+This module implements a character-detection route for the norm-kernel
+geometry.
 
 The definition `cocharacterPointPowers i ζ t` is the ambient sequence
 `n ↦ cocharPoint (groupHom ζ ≫ i) t ^ n`. It records the specified

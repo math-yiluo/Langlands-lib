@@ -1,8 +1,7 @@
 # Generic degree-two inflation–restriction exactness
 
-Author: Worker 138. The module imports the published relative normal-form
-proof by Worker 10 and Worker 138. The injectivity proof and the assembly
-in this contribution are by Worker 138.
+The module imports the published relative normal-form
+proof `Langlands.Cohomology.H2RelativeNormalForm`.
 
 `Langlands.Cohomology.h2InflationRestrictionExactness` proves exactly
 `Langlands.Cohomology.H2InflationRestrictionExactness.{u}`.
@@ -18,7 +17,7 @@ and equality of its linear range with the linear kernel of
 is exact at the first two cohomology terms. These are Mathlib's actual
 cohomology objects and inflation and restriction maps. The final theorem
 has no outer hypotheses; in particular, the normal form is supplied by
-its proof. The target and its imported files remain unchanged.
+its proof. The statement and its imported files are used unchanged.
 
 The supporting `H2InflationInjectivityProof` module proves injectivity by
 descending a primitive of an inflated two-cocycle. Subgroup H1 vanishing

@@ -2,8 +2,8 @@
 
 Module `Langlands.BaseChange.UnramifiedBaseChangeHomStatement`.
 `Langlands.BaseChange.UnramifiedBaseChangeHomStatement.{u, v}` is a proposition-valued
-definition (statement 7 of Task 7424). It states an unproved obligation; it is neither
-proved nor assumed in this module.
+definition. It is neither proved nor assumed in this module; the theorem
+`unramifiedBaseChangeHom` of `Langlands.BaseChange.UnramifiedBaseChangeHom` proves it.
 
 ## Statement
 

@@ -1,10 +1,10 @@
 # Compactly supported sections of étale `G`-sheaves on analytic spaces
 
-Author: Worker 26. Uses the published `Langlands.Sheaf.PointSupport` and
+Uses the published `Langlands.Sheaf.PointSupport` and
 `Langlands.Sheaf.Equivariant.TwistedCompactSupport` (supports and compactly
-supported sections for a family of points of a site, Worker 26), and
+supported sections for a family of points of a site), and
 `Langlands.Sheaf.Equivariant.AnalyticGSheaves` (twisted étale site and étale
-`G`-sheaves, Worker 26). From Worker 21 it uses the `L`-valued points of analytic spaces
+`G`-sheaves). It also uses the `L`-valued points of analytic spaces
 (`Langlands.Geometry.Analytic.FieldValuedPoints`), the points of the étale
 site that they define (`EtaleGeometricPoints`), the action of `G` on them
 (`EtaleGeometricPointEquivariance`) and the étale site `EtaleSite`.
@@ -32,15 +32,15 @@ All declarations are in `Langlands.Sheaf.Equivariant.Analytic`.
 ## Data and universes
 
 - `K : Type u` is a complete ultrametric normed field and `X` an object of
-  Worker 21's `LocalizedCategory.{u, v, v} (K := K)` of `K`-analytic spaces.
+  `LocalizedCategory.{u, v, v} (K := K)` of `K`-analytic spaces.
 - `L : Type uL` is a normed field with `[NormedAlgebra K L]`. Write
   `P = localizedFieldPointFunctor L`, so that `P.obj X` is the type of
   `L`-valued points of `X`, and `|X| = localizedSpaceFunctor.obj X`.
 - `G : Type z` is a group and `ρ : G →* Aut X`. The smooth parts use
   `[TopologicalSpace G] [IsTopologicalGroup G]`.
 - `h : ∀ x : P.obj X, EtaleSite.PointAxioms L x`: every `L`-valued point
-  satisfies Worker 21's point axioms. This is a hypothesis of the
-  constructions below. Worker 21's separate statement module
+  satisfies the point axioms of `EtaleGeometricPoints`. This is a hypothesis of the
+  constructions below. The separate statement module
   `EtaleGeometricPointStatement` asserts it for complete algebraically closed
   `L`; it is not used here.
 - Coefficients: `R : Type (max u (v + 1) uL)` is a commutative ring and sheaves
@@ -51,7 +51,7 @@ All declarations are in `Langlands.Sheaf.Equivariant.Analytic`.
 ## Topology on the `L`-valued points
 
 - `pointProjection L X : P.obj X → |X|` sends an `L`-valued point to its
-  underlying point. It is the component at `X` of Worker 21's natural map
+  underlying point. It is the component at `X` of the natural map
   `localizedFieldPointProjection L`, with the `ULift` removed.
 - `pointTopology L X` is the topology on `P.obj X` induced by
   `pointProjection L X` (an `abbrev`, not a global instance, since `P.obj X`
@@ -71,7 +71,7 @@ All declarations are in `Langlands.Sheaf.Equivariant.Analytic`.
   lies in a compact set exactly when its image lies in a compact subset of
   `|X|`.
 - `continuousConstSMul_pointAction L ρ`: with `pointTopology L X` and
-  Worker 21's action `EtaleSite.pointAction L ρ` (`g • x = P.map (ρ g).hom x`),
+  the action `EtaleSite.pointAction L ρ` (`g • x = P.map (ρ g).hom x`),
   each `g` acts continuously. By `pointProjection_map`, the projection of
   `g • x` is the image of the projection of `x` under the homeomorphism of `|X|`
   given by `ρ g`, and a map into an induced topology is continuous when its
@@ -91,7 +91,7 @@ All declarations are in `Langlands.Sheaf.Equivariant.Analytic`.
 
 ## Supports
 
-- `etalePoints L h x`, for an `L`-valued point `x`, is Worker 21's point
+- `etalePoints L h x`, for an `L`-valued point `x`, is the point
   `EtaleSite.toPoint L x (h x)` of the étale topology, in universe
   `max u (v + 1) uL`. Its fibre over an étale `U → X` is the set of
   `L`-valued points of `U` over `x`.
@@ -110,7 +110,7 @@ All declarations are in `Langlands.Sheaf.Equivariant.Analytic`.
 In all the following, the topology `pointTopology L X`, the action
 `EtaleSite.pointAction L ρ`, its continuity `continuousConstSMul_pointAction`
 and the local smallness `etaleSite_locallySmall_points` are supplied locally.
-The family of points is `etalePoints L h`, and Worker 21's
+The family of points is `etalePoints L h`, and
 `EtaleSite.pointEquivariance L ρ h` supplies the published
 `TwistedOver.PointEquivariance` (the fibre of `gU` at `g • x` is identified
 with the fibre of `U` at `x`).
@@ -156,7 +156,7 @@ Berkovich, *Etale equivariant sheaves on p-adic analytic spaces* (unfinished
 The stalks `F_x` are those of Berkovich, *Étale cohomology for
 non-Archimedean analytic spaces* (1993), registered as
 `berkovich-1993-etale-cohomology`, §4.2, printed p.87, where `F_x` is a discrete
-`G_ℋ(x)`-set. Worker 21's `EtaleGeometricPoints` quotes that passage, reads the
+`G_ℋ(x)`-set. The module `EtaleGeometricPoints` quotes that passage, reads the
 underlying set of `F_x` as the stalk at a geometric point over `x`, and models
 geometric points as `L`-valued points.
 
@@ -178,7 +178,7 @@ This module specializes derived infrastructure. The choices below are ours:
   space this is compactness of the support. This module proves neither the
   surjectivity, nor the closedness of supports, nor that the stalks at
   `L`-valued points over `x` are Berkovich's stalk `F_x`.
-- The point axioms `h` are a hypothesis, as in Worker 21's
+- The point axioms `h` are a hypothesis, as in
   `EtaleSite.pointEquivariance`.
 - `Γ_{c,X{G}}` is the smooth part of the compactly supported global sections,
   as in `TwistedCompactSupport`. Sheaves on the twisted étale site model
@@ -196,4 +196,6 @@ for the twisted étale site, and the étale `G`-sheaves `EtaleGSheaf` are not
 known to form an abelian category with enough injectives. Berkovich's
 quasi-étale `G`-sheaves (`QuasiEtaleGSheaf`) are discrete sheaves for the
 compact quasi-étale objects; their compactly supported cohomology needs points
-of the quasi-étale site, which are not available in the Library.
+of the quasi-étale site, which this module does not use (they are
+`QuasiEtaleSite.toPoint` in `Langlands.Geometry.Analytic.OverSitePoints`, used by
+`Langlands.Sheaf.Equivariant.AnalyticQuasiEtaleCompactCohomology`).

@@ -1,9 +1,6 @@
 # Renard A.VIII.1: additive functors and sequence exactness
 
-Authors: Worker 595 (implementation and direct source checks), Worker 6
-(mathematical specification and Mathlib reuse route).
-
-This definition unit implements the sequence conditions in David Renard,
+This definition module implements the sequence conditions in David Renard,
 *Représentations des groupes réductifs p-adiques*, French edition dated
 9 July 2026, A.VIII.1, printed pages 265–266 / PDF pages 271–272.
 Registered source: `renard-2026-representations-groupes-reductifs-padiques`.
@@ -18,11 +15,11 @@ checked on 26 October 2026, links the corrected 2026 French edition and labels
 the separate errata as belonging to the 2010 edition. Its retained snapshot is
 registered as `renard-author-page-2026-10-26`. No separate 2026 errata link was
 found in that book section, and no `notes/errata` directory was present in the
-workspace or its Library base. These are bounded observations. The available
+Library when this module was written. These are bounded observations. The available
 2010 errata, `renard-2010-corrections-complements`, were checked on PDF18–19,
 including the correction on old printed page 308 from “faithful” to “exact”.
 The governing 2026 text already uses “exact” in that argument. Those later
-faithfulness arguments are outside this unit.
+faithfulness arguments are outside this module.
 
 ## Additivity is reused from Mathlib
 
@@ -159,7 +156,7 @@ Reversing arrows to express these inputs in `C` is a separate translation,
 not an implicit change in convention. These aliases are internal interface
 packaging of the source's stated convention.
 
-## Boundary with later theorem units
+## Boundary with later theorem modules
 
 Mathlib's `CategoryTheory.leftExactFunctor`, `rightExactFunctor` and
 `exactFunctor` use preservation of finite limits, finite colimits, or both.
@@ -175,9 +172,8 @@ one-sided conditions used above. Their first entries use short exact
 inputs, as do the convenient `preservesFiniteLimits_iff_forall_exact_map_and_mono`
 and `preservesFiniteColimits_iff_forall_exact_map_and_epi` wrappers.
 `Functor.exact_tfae F` is a further reuse route for the two-sided comparisons.
-These are navigation leads for subsequent theorem units.
+These are navigation leads for subsequent theorem modules.
 
 Preservation of limits, colimits, all exact complexes or homology, reflection
-of zero morphisms, the faithfulness criteria and A.VIII.2 remain separate
-obligations in the parent whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`.
+of zero morphisms, the faithfulness criteria and A.VIII.2 are separate
+obligations of the formalization of Renard's book, outside this module.

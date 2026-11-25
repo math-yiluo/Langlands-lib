@@ -1,7 +1,7 @@
 # Filtered colimits and cohomology of module complexes
 
-Author: Worker 3. These are theorem-statement definitions, not proofs.
-Every component remains a separate theorem obligation.
+These are theorem-statement definitions, not proofs.
+No component is proved in the Library.
 
 The five propositions concern actual modules over an arbitrary ring, actual
 integer-graded cochain complexes, and their categorical colimits:
@@ -41,7 +41,7 @@ category. Applying the two functors, respectively cohomology then colimit and
 colimit then cohomology, constructs the two action objects. The target demands
 an isomorphism of those actions and identifies its underlying morphism.
 It supplies no continuity, smoothness, moving-index action or Galois action.
-Those remain separate geometric and representation-theoretic obligations.
+Those are separate geometric and representation-theoretic obligations.
 
 ## Original sources and derived scope
 
@@ -104,10 +104,9 @@ Registered source:
 PDF SHA-256
 `525a222c4489ee9d3fe86a52c6c17ffb30fcc7c31f24c16a64669e9615085b26`.
 
-Worker 3 read CE Chapter V pp.75-105 and IV.1-5 pp.53-64, EGA III.0
-11.2.1-4 pp.27-29, and Harris 1999 in full. The actual source hashes were
-verified, and CE p.100, EGA p.29 and Harris p.306 were visually inspected
-for this contribution. The EGA citation does not claim a filtered-colimit
+CE Chapter V pp.75-105 and IV.1-5 pp.53-64, EGA III.0
+11.2.1-4 pp.27-29, and Harris 1999 in full were read. The actual source hashes were
+verified, and CE p.100, EGA p.29 and Harris p.306 were visually inspected. The EGA citation does not claim a filtered-colimit
 theorem without its printed exactness premise for a general abelian category;
 the unconditional targets here concern modules specifically.
 
@@ -125,9 +124,8 @@ The only formal dependency is the pinned Mathlib commit
 - `QuasiIso`, `ShortComplex.ShortExact`, and `Action` are Mathlib's actual
   predicates and action objects.
 
-In the project environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`
-(Lean 4.34.0, the Mathlib commit above), development check
-`dcb65e39-6f6f-4f88-a796-77c07e119740` passed the Lake build of this module
+In Lean 4.34.0 with the Mathlib commit above, a development check
+passed the Lake build of this module
 with no errors or warnings and inspected
 `Langlands.Cohomology.FilteredColimitComparisonStatements` as a definition
 returning `Prop`, with universe parameters `u`, `v`, `w`, target fingerprint
@@ -137,11 +135,10 @@ The checked Lean source has SHA-256
 `4e6f262535e1f8a7eb226e2536542bc9d291c8f6549c425a936eedc79c98c95c`.
 
 All five component definitions and the conjunction were separately printed
-with universe annotations in that environment (check
-`13323b0b-b557-4aea-8405-aa840490f4d6`) and read. The printed expressions retain the
+with universe annotations in that environment and read. The printed expressions retain the
 arbitrary ring, the actual small filtered index, the integer grading, the
 specified `colimit.post` map, and the action isomorphism with that underlying
 map. The naturality component has no filteredness premise. There are no
-project axioms, placeholder theorem proofs, or pending project imports.
+project axioms, placeholder theorem proofs, or project imports.
 These checks establish well-formed statements; they do not prove their truth
 or complete the Harris geometric, smooth-equivariant or Shimura application.

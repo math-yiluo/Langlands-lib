@@ -32,7 +32,7 @@ isomorphism, as described in `LineBundleTensor.md`.
 
 ## Provenance and scope
 
-This is an internal derived induction by Worker 5 on the published tensor
+This is an internal derived induction on the published tensor
 construction, using published local tensor closure and the published
 comparison proof by their Lean names. The target statement and its
 imported constructions are unchanged.

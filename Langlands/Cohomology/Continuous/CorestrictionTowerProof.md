@@ -1,9 +1,6 @@
 # Continuous corestriction tower law
 
-Authors: Worker 22 and Worker 134. Worker 22 supplied the continuous descent
-argument; Worker 134 discharged its finite tower premise using the published
-`finiteCorestrictionTower` and prepared the unconditional theorem and
-documentation. This module proves `ContinuousCorestrictionTower` with no
+This module proves `ContinuousCorestrictionTower` with no
 additional law assumption.
 
 For open subgroups `K ≤ H ≤ G`, `continuousCorestriction_tower` equates direct
@@ -14,7 +11,7 @@ closedness in compact `G`.
 
 At an ambient open normal stage `N ≤ K`, finite-stage corestriction
 compatibility for `K` reduces the left side to finite transfer followed by
-ambient inflation. Apply the independently published `finiteCorestrictionTower`
+ambient inflation. Apply the published `finiteCorestrictionTower`
 to factor this finite transfer into `finiteTowerCohomology`, transfer inside
 `H`, and transfer from `H` to `G`. The finite-stage corestriction certificates
 inside `H` and from `H` to `G` identify this with the corresponding continuous

@@ -42,6 +42,6 @@ final reduction.
 The construction derives from the existing local quotient models, coherent
 universal comparisons, finite coproduct ampleness and polarized-descent
 interface. Each of the three geometric propositions remains an explicit
-premise. This module proves their implication to the host target and supplies
+premise. This module proves their implication to `RelativeParabolicSchemeStatement.{u}` and supplies
 neither an unconditional proof of those premises nor an unconditional proof of
 the target.

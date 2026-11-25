@@ -3,7 +3,7 @@
 This internal helper module adapts the Library's `MoyPrasadDoubleRootConjugation`
 and the root-classification step of `MoyPrasadCovarianceReduction` to
 `B : MaximalUnramified.BuildingData F H`, with `K = UnramifiedClosure F` and
-`hZ : IsTorus B.centralizer.Z`. It concerns D1's actual groups
+`hZ : IsTorus B.centralizer.Z`. It concerns the actual groups of `KPLocalMoyPrasadGroups`
 `B.moyPrasad hZ x r`, with their unchanged torus filtration. All declarations are
 at arbitrary universe `u` and for every characteristic of `F`.
 
@@ -13,19 +13,22 @@ hypotheses below are explicit and have not been discharged here.
 
 ## Exact inputs
 
-`LocalTorusDoubleRootCommutatorFriendly B hZ` is the pointwise estimate requested
-in Task 6543: for nonidentity opposite root elements with positive sum `d` of
+`LocalTorusDoubleRootCommutatorFriendly B hZ` is the pointwise form of the estimate
+stated in `KPLocalDoubleRootCommutatorStatement`: for nonidentity opposite root elements with positive sum `d` of
 the two ordinary-root valuations, if either input lies in its doubled-root
 group, every middle coordinate of the specified opposite-root decomposition
 of `u'⁻¹ u u' u⁻¹` belongs to `B.centralizerTorusFiltration hZ (2 * d)`.
 The predicate includes both possible doubled inputs. This module uses the
-second-input case. It neither proves nor assumes any S2 clause to obtain it.
+second-input case. It neither proves nor assumes any clause of
+`LocalMoyPrasadGroupPropertiesStatement` to obtain it.
 
-`LocalTorusRootCompatible B hZ` is precisely S1's root compatibility clause:
+`LocalTorusRootCompatible B hZ` is precisely the root compatibility clause of
+`QuasiSplitLocalTorusFiltrationStatement`:
 the commutator of a torus-image element of depth `r` and a root element of depth
 `s` lies in the root block of depth `r+s`. The other input,
 `LocalTorusCommutatorFriendly B hZ`, is defined in
-`KPLocalMoyPrasadRootConjugation` and is precisely S1's first clause at `B,hZ`.
+`KPLocalMoyPrasadRootConjugation` and is precisely the first clause of
+`QuasiSplitLocalTorusFiltrationStatement` at `B,hZ`.
 
 ## Implemented proof
 
@@ -60,7 +63,7 @@ the commutator of a torus-image element of depth `r` and a root element of depth
    the group, and the root cases handle the remaining generators.
 6. `localMoyPrasadEquivariance_of_torus_commutator_bounds` proves both forms of
    clause 2 conditionally. The unconditional theorem
-   `B.centralizerTorusImage_isNormalizerStable` (Worker 119's
+   `B.centralizerTorusImage_isNormalizerStable` (module
    `KPLocalCentralizerFiltrationNormalizerStable`) gives normalizer covariance.
    `localMoyPrasadEquivariance_of_normality` then uses the actual reduced
    building quotient relation and clause 1 to prove building covariance.
@@ -80,5 +83,5 @@ postulated as apartment axioms.
 The module transports the published F-level algebraic proof route to the
 integer-valued building data over `K`, whose residue field is infinite, so it
 does not instantiate `ParahoricBuildingData` over `K`. It claims neither
-unconditional normality nor the full S2 theorem until the three explicit
-rank-one inputs have independent proofs.
+unconditional normality nor the full `LocalMoyPrasadGroupPropertiesStatement`:
+the three explicit rank-one inputs remain hypotheses here.

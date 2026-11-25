@@ -1,6 +1,6 @@
 # Induction quotients from nonzero opposite Jacquet maps
 
-Worker 148. This internal assembly step converts a supplied nonzero map from
+This internal assembly step converts a supplied nonzero map from
 an actual smooth Levi representation into an actual Jacquet module to a
 surjection from induction onto an irreducible ambient representation. It uses
 a supplied second adjunction for the displayed induction and Jacquet functors.

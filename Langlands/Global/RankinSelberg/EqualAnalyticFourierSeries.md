@@ -3,7 +3,7 @@
 Module `Langlands.Global.RankinSelberg.EqualAnalyticFourierSeries`, namespace
 `Langlands.Global.RankinSelbergGlobal.EqualAnalytic`.
 
-A generic supporting unit for Poisson summation on `𝔸^n` and for the classification of additive
+A generic supporting module for Poisson summation on `𝔸^n` and for the classification of additive
 characters of `𝔸/F`. It does not mention number fields.
 
 ## Provenance

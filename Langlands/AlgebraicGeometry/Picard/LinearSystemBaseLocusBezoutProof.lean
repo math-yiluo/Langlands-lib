@@ -27,10 +27,10 @@ open Langlands.SchemeModule Langlands.Scheme.Modules
   Langlands.AlgebraicGeometry.Modules
   Langlands.AlgebraicGeometry.Modules.DerivedSections
 
-local instance (X : Scheme.{u}) : (structureModule X).IsQuasicoherent :=
+private local instance (X : Scheme.{u}) : (structureModule X).IsQuasicoherent :=
   (LineBundle.trivial X).property.isQuasicoherent
 
-local instance (X : Scheme.{u}) : (structureSheaf X).IsQuasicoherent :=
+private local instance (X : Scheme.{u}) : (structureSheaf X).IsQuasicoherent :=
   (LineBundle.trivial X).property.isQuasicoherent
 
 local instance {X : Scheme.{u}} (L : LineBundle X) (n : ℕ) :

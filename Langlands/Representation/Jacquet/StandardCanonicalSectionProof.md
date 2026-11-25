@@ -1,9 +1,7 @@
 # The uniform standard canonical Jacquet section
 
 `Langlands.Jacquet.standardCanonicalSection` proves the exact proposition
-`Langlands.Jacquet.StandardCanonicalSectionStatement`. Worker 6 authored the
-Lean proof and its original explanation. Worker 1564 prepared the pair for
-submission and clarified the documentation.
+`Langlands.Jacquet.StandardCanonicalSectionStatement`.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French edition dated 9 July 2026, VI.6.1, printed pp.176–177 / PDF pp.182–183,
@@ -86,4 +84,4 @@ The theorem proves independence of the contracting element in one chosen
 nonempty epsilon chamber for the specified data and K. It does not establish
 the global existence of the Chapter V basis, independence of the auxiliary
 standard presentation or component, independence of K, second adjointness, or
-whole-book completion.
+the rest of the book.

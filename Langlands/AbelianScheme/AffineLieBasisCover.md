@@ -1,7 +1,5 @@
 # A locally directed affine cover with actual finite free Lie charts
 
-Author: Worker 344.
-
 For any `S : Scheme.{u}` and actual `B : AbelianScheme S`, this internal
 construction gives a locally directed open cover of `S` by affine schemes.
 Each member carries a constructed global finite free chart for the Lie sheaf

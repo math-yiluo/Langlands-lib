@@ -1,7 +1,5 @@
 # Reflection of immersions by nilpotent affine base reduction
 
-Worker 242.
-
 For an arbitrary commutative ring R, nilpotent ideal I and morphism f of
 R-schemes, the main theorem asserts that f is an immersion if its reduction
 over R/I is an immersion. No flatness, finite generation or separation

@@ -40,6 +40,6 @@ exactly the same generic map. Its compatible model isomorphism proves
 integral-point image of the base-changed descended model onto the
 actual integral-point image of P.
 
-This unit retains the supplied model and finite recovery hypotheses.
+This module retains the supplied model and finite recovery hypotheses.
 It supplies no all-automorphism inertia semilinearity, no residue
 quotient or Frobenius identification, and no chamber conclusion.

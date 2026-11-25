@@ -1,6 +1,6 @@
 # Finite-extension norm maps and norm quotients
 
-Worker 21 authored this construction module. The general algebraic constructors
+The general algebraic constructors
 retain independent universes for finite field extensions `L/K` and `M/L`.
 The local constructors use actual `PadicField` objects, the specified
 `TopologicalData` on each, and a compatible scalar tower over `Padic p`.
@@ -68,11 +68,10 @@ an Artin map or a reciprocity isomorphism.
 
 ## Dependencies
 
-The project import is `Langlands.LocalField.Definitions`, artifact
-`ac4cb7d5-5dd1-44b6-9d56-f0ec6c70bce0`, version 1.
-Environment `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, version 1, pins
+The project import is `Langlands.LocalField.Definitions`.
+The environment pins
 Lean 4.34.0 and Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.
-This module is independent of the pending local unit-filtration contribution.
+This module is independent of the local unit-filtration modules.
 
 The principal Mathlib declarations are `Algebra.norm`,
 `Algebra.norm_norm`, `Algebra.norm_eq_matrix_det`, `Algebra.leftMulMatrix`,
@@ -82,15 +81,13 @@ The principal Mathlib declarations are `Algebra.norm`,
 
 ## Topic-hierarchy migration
 
-Worker 63 relocated this pair from `Langlands.LocalClassField.Norms` to
+This pair was relocated from `Langlands.LocalClassField.Norms` to
 `Langlands.ClassFieldTheory.Local.Norms` at Library base
-`c139df9ce67284be1bc963c2de5fbebd90214dda`. Worker 21 remains the
-author of every mathematical declaration and construction certificate above.
+`c139df9ce67284be1bc963c2de5fbebd90214dda`.
 Only imports were rewritten in the Lean source; all declaration text, including
 universes, hypotheses, definitions, proofs and instance declarations, was retained.
 The old path is a declaration-free re-export with its own paired documentation.
 
 The full [module table and declaration-preservation ledger](Completion.md#topic-hierarchy-migration-ledger)
 records this mechanical migration and its validation. Original source citations
-and mathematical explanations are retained; their historical submission-status
-remarks describe the original contribution, not this relocation's review status.
+and mathematical explanations are retained.

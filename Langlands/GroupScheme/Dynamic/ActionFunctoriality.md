@@ -34,7 +34,7 @@ field, smoothness, connectedness, or representability hypothesis is used.
 The provenance is internal: these are consequences of the published actual
 action and affine-line extension constructions in `Dynamic.Action` and
 `Dynamic.ClosedSubgroup`. The proof follows the latter module's closed-subgroup
-lifting argument with the orbit identity supplied by equivariance. This unit
+lifting argument with the orbit identity supplied by equivariance. This module
 supplies a transfer interface for an abstract action embedded into conjugation;
 it asserts neither existence of such an embedding nor the cyclic root
 comparison or geometric structure of the dynamic functors.

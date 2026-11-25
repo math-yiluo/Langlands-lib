@@ -1,7 +1,5 @@
 # Intrinsic identification of almost-simple product factors
 
-Author: Worker 166.
-
 This internal construction identifies every actual almost-simple closed
 normal subgroup with a unique factor of a supplied
 `SimplyConnectedAlmostSimpleProduct`. The ambient field group is smooth

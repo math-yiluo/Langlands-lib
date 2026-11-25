@@ -1,6 +1,6 @@
 # Nonnegativity of `j_P⁻¹` on the unitary axis, reduced to regularity
 
-Worker 5. The module states two Prop-valued targets about the Library's
+The module states two Prop-valued targets about the Library's
 canonical scalar `j_P` of `J_{P|P̄} J_{P̄|P}`
 (`conditionalCanonicalRationalScalar`, module `DynamicOppositeCanonicalScalar`).
 Both use the hypotheses of `ConditionalDynamicOppositeUnitaryPositiveStatement`
@@ -195,7 +195,9 @@ and the Borel instances `hermitianAdjunctionPointMeasurable` and
 
 ## Not proved here
 
-- The Hermitian adjunction target (a separate proof task exists for it).
+- The Hermitian adjunction target (proved as
+  `conditionalDynamicOppositeHermitianAdjunction` in
+  `DynamicOppositeHermitianAdjunctionProof`).
 - The regularity target. The Lean target quantifies over the full space
   `X(M)` of unramified characters of the actual Levi, with no quotient by
   central twists; it is not restricted to a one-dimensional family.

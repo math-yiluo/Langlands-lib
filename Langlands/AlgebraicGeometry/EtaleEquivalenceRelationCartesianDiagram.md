@@ -1,7 +1,5 @@
 # Cofiltered diagrams of cartesian relation morphisms
 
-Author: Worker 706.
-
 This is an internal categorical interface for the action descent step in
 Stacks Project Proposition 70.8.1, Tag 07SU, registered as
 `stacks-noetherian-approximation-2026-11-01`. It organizes supplied data;

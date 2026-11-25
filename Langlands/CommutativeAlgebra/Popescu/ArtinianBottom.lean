@@ -3,7 +3,7 @@ import Langlands.CommutativeAlgebra.Popescu.RegularSequenceFlatStatement
 import Langlands.CommutativeAlgebra.Popescu.CharZeroFieldFactorizationStatement
 import Langlands.CommutativeAlgebra.Popescu.NilpotentLiftingStatement
 import Langlands.CommutativeAlgebra.Popescu.RegularParameterTools
-import Mathlib
+import Langlands.MathlibBase
 
 /-! # The Artinian bottom of the proof of Stacks Lemma 10.3 (07FE) -/
 

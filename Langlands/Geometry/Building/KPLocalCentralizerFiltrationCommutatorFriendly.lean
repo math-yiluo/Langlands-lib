@@ -5,7 +5,7 @@ import Langlands.Geometry.Building.KPLocalCorootComponentStatement
 
 Clause 1 of KP Lemma 7.2.3 over `K = F^ur`, for D1's filtration
 `Z(K)_r = B.centralizerTorusFiltration hZ r`, derived from the `K`-level `Z`-component
-formula `KPLocalCorootComponentStatement` (KP Proposition 7.1.1 over `K`, Task 5911).
+formula `KPLocalCorootComponentStatement` (KP Proposition 7.1.1 over `K`).
 -/
 
 noncomputable section

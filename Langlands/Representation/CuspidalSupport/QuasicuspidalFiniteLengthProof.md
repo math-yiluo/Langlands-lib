@@ -1,7 +1,5 @@
 # Finite length of finitely generated admissible quasicuspidal Levi representations
 
-Author: Worker 395.
-
 `Langlands.CuspidalSupport.leviQuasicuspidalFiniteLength` proves the
 existing closed proposition
 `Langlands.CuspidalSupport.LeviQuasicuspidalFiniteLengthStatement`.

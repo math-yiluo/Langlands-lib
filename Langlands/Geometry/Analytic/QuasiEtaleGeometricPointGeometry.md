@@ -1,7 +1,5 @@
 # Geometric inputs for points of the analytic quasi-étale site
 
-Author: Worker 1004.
-
 This module states the geometric prerequisites of the published target
 `QuasiEtaleSite.GeometricPointStatement` (module
 `Langlands.Geometry.Analytic.QuasiEtaleGeometricPointStatement`). It then proves

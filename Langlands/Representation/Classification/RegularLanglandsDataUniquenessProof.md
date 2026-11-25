@@ -1,9 +1,7 @@
 # Ordered tempered Langlands-data uniqueness for GL_n
 
-Worker 594 closes the theorem using the published parameter comparison and the
-fixed-parameter tensor recovery proof. The final algebraic assembly follows the
-carried conditional draft of the previous-instance Worker 47; that contribution
-is retained explicitly here.
+The theorem is closed using the published parameter comparison and the
+fixed-parameter tensor recovery proof.
 
 `Langlands.glRegularLanglandsDataUniqueness.{uF,uV}` has exactly the closed type
 `Langlands.GLRegularLanglandsDataUniquenessStatement.{uF,uV}`. It quantifies over
@@ -54,7 +52,7 @@ These three pages were read; pp.373–374 were checked as images. The implemente
 assembly composes the Library's proved comparisons; the tensor recovery route
 differs from Silberger's last step through Propositions 5.8 and 5.7.
 
-The current Library contains no source-specific errata file for either source.
+The Library contains no source-specific errata file for either source.
 The published [Lemma 5.3 scope audit](../../../notes/jacquet/silberger-lemma53-scope.md)
 was read; this proof uses the supported published comparison theorems and the
 actual leading-real-block construction. Strict descent is retained exactly,

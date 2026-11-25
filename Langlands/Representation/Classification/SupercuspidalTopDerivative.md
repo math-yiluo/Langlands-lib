@@ -1,7 +1,5 @@
 # The top derivative of a supercuspidal representation
 
-Author: Worker 818.
-
 This module proves two unconditional facts about the top derivative
 `Ψ⁻ (Φ⁻)^n (A|P)` of a smooth complex representation `A` of `GL_(n+1)`, for
 the actual published derivative functors. Both are ingredients of BZ77 §4.4.
@@ -21,8 +19,9 @@ The module has no hypotheses beyond those stated in each declaration. In
 particular it does not assume Whittaker multiplicity one and does not import
 `Whittaker.MultiplicityOneStatement`. It does not prove the target proposition
 `Langlands.Classification.SupercuspidalDerivatives`, whose top-derivative
-clause is the equality `finrank = 1`. It is an internal unit of task
-`2e5183b1-01e9-44fb-b26c-f4521a25c7c7`. The final proof of that task combines
+clause is the equality `finrank = 1`. That proposition is proved by
+`Langlands.Classification.supercuspidalDerivatives` in
+`Classification.SupercuspidalDerivativesProof`, which combines
 part 1 with the published proof of multiplicity one to get `finrank ≤ 1`, and
 part 2 to get `finrank ≥ 1`.
 
@@ -43,7 +42,7 @@ representations of reductive p-adic groups I* (1977),
 The source states the result without proof, so the two facts proved here and
 their Lean arguments were written for this module. The source's "cuspidal" is
 represented by the published `IsSupercuspidal`. It is used only through
-unit 1 of this task: the vanishing of the intermediate derivatives and the
+`Classification.SupercuspidalDerivativeVanishing`: the vanishing of the intermediate derivatives and the
 rank transport `isSupercuspidal_rankCast`. No
 errata entry for BZ77 is registered in the project literature index, the
 central library or the public notes.
@@ -134,7 +133,7 @@ twisted coinvariants of the upper unipotent group.
   `A`, which is zero by the published
   `subsingleton_generalLinearDerivativePositive` (`m + 1 > 0`). The published
   lemma `Derivative.Mirabolic.subsingleton_of_psiMinus_phiMinus` (module
-  `Derivative.MinusVanishing`, Worker 1025) says that a smooth representation
+  `Derivative.MinusVanishing`) says that a smooth representation
   of `mirabolic (m + 1)` with zero `Ψ⁻` and zero `Φ⁻` is zero. So `Φ⁻ Z` is
   nonzero.
 - `psiMinusQuotient_zero_injective` (l.340): `Ψ⁻` at `P_1` is injective,
@@ -159,29 +158,30 @@ twisted coinvariants of the upper unipotent group.
 
 The module imports
 `Langlands.Representation.Classification.SupercuspidalDerivativeVanishing`
-(published, unit 1 of this task),
-`Langlands.Representation.Derivative.MinusVanishing` (published, Worker 1025,
-unit 2 of this task) and `Langlands.Representation.Whittaker.GeneralLinear`
+(published, the vanishing of the intermediate derivatives),
+`Langlands.Representation.Derivative.MinusVanishing` (published, the joint
+vanishing lemma) and `Langlands.Representation.Whittaker.GeneralLinear`
 (published standard Whittaker character and `glFunctionals`). Its Library
 import closure has 81 modules. It contains no segment, socle, head,
 multisegment, Langlands-classification, square-integrability, tempered,
 product-irreducibility, Leibniz/filtration, Whittaker multiplicity-one,
 Shalika, Gelfand–Kazhdan, Whittaker-finiteness or coinvariant-finiteness
 module. The only `Classification` modules in it are the definition module
-`Classification.Supercuspidal` and unit 1.
+`Classification.Supercuspidal` and `Classification.SupercuspidalDerivativeVanishing`.
 
 The mathematical inputs used are the derivative functors and their quotient
 maps (`MirabolicMinus`, `Iteration`), the mirabolic radical and successor
 embedding, the published standard Whittaker character and `glFunctionals`,
 `IsSupercuspidal`, the published vanishing of intermediate derivatives
-(unit 1) and the joint vanishing lemma `subsingleton_of_psiMinus_phiMinus`
-(unit 2).
+(`SupercuspidalDerivativeVanishing`) and the joint vanishing lemma
+`subsingleton_of_psiMinus_phiMinus` (`Derivative.MinusVanishing`).
 
 ## Scope
 
 - Nothing is claimed about the dimension of the top derivative. Its
   finiteness and the bound `finrank ≤ 1` need Whittaker multiplicity one and
-  are left to the final proof of the task.
+  are left to the final proof `supercuspidalDerivatives`
+  (`Classification.SupercuspidalDerivativesProof`).
 - The nonvanishing results assume `Nontrivial A`, not irreducibility.
   `nontrivial_of_isIrreducible` converts irreducibility to this hypothesis.
   `IsSupercuspidal` enters only through

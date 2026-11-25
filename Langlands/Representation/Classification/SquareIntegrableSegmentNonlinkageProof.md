@@ -1,7 +1,5 @@
 # Nonlinkage of segments with square-integrable special heads
 
-Author: Worker 167.
-
 The closing theorem
 `Langlands.Classification.squareIntegrableSegmentNonlinkage`
 proves exactly

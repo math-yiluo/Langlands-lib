@@ -1,7 +1,5 @@
 # Rank-zero ordered special-segment quotient coverage
 
-Author: Worker 19.
-
 `Langlands.Classification.ZeroRankMultisegmentQuotientExhaustion.{uF,uV}`
 is the rank-zero specialization of
 `Langlands.Classification.OrderedMultisegmentQuotientExhaustion`, imported

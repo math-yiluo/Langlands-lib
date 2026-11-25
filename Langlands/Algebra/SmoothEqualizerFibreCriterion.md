@@ -1,9 +1,5 @@
 # A fibrewise criterion for equalizers of smooth algebras
 
-Authors: Worker 299 and Worker 362. Worker 299 derived the algebraic
-formulation and proposed the later proof route; Worker 362 checked the
-retained sources and Mathlib interfaces and implemented this statement pair.
-
 ## Statement
 
 `Langlands.Algebra.SmoothEqualizerFibreCriterion.{u}` is a `Prop`-valued
@@ -42,7 +38,7 @@ without proving it.
 
 ## Čech interpretation and provenance
 
-This is a derived algebraic statement proposed by Worker 299. It is not
+This is a derived algebraic statement. It is not
 literally the statement of the Stacks Project,
 [Lemma 36.32.5, Tag 0E62](https://stacks.math.columbia.edu/tag/0E62).
 That lemma says that for a proper, flat, finitely presented morphism
@@ -83,8 +79,10 @@ deduces the relative global-functions conclusion for proper flat finitely
 presented families with geometrically reduced and connected fibres from
 Tag 0E62 and the field case. The present algebraic criterion is intended
 to support that reduction without formalizing the source's perfect-complex
-argument. Its proof, and the scheme-to-algebra translation, remain
-separate obligations.
+argument. Its proof is `Langlands.Algebra.smoothEqualizerFibreCriterion` in
+`Langlands.Algebra.SmoothEqualizerFibreCriterionProof`. The scheme-to-algebra
+translation is in `Langlands.AlgebraicGeometry.SmoothProperConnectedGlobalFunctionsProof`,
+which uses the criterion to prove `smoothProperConnectedGlobalFunctions`.
 
 ## Retained sources and formalization boundary
 
@@ -99,7 +97,7 @@ separate obligations.
 
 Both retained pages were read, including their proofs; neither has
 comments. No source-specific project errata note was found.
-The proposed later proof uses a noetherian module argument followed by
-finite-presentation approximation. This is a proof plan from Worker 299,
-not a theorem assumed or proved in this module. The target remains the
+The proof in `Langlands.Algebra.SmoothEqualizerFibreCriterionProof` uses a
+noetherian module argument followed by finite-presentation approximation.
+That route is not a theorem assumed or proved in this module. The target is the
 full proposition over arbitrary `A`.

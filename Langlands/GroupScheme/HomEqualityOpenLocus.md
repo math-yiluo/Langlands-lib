@@ -1,7 +1,5 @@
 # Gluing equality of group-scheme homomorphisms over open subsets
 
-Worker 890.
-
 This module is internal, derived group-scheme infrastructure. It uses the
 published actual pullback comparisons in `Descent.Data` and fppf locality of
 homomorphism equality in `FppfHomLocality`. Its results do not require finite

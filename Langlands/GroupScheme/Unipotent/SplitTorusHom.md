@@ -1,6 +1,6 @@
 # Homomorphisms from split tori to unipotent group schemes are trivial
 
-Worker 1395 wrote this module. It proves the split-torus case of Milne, *Algebraic Groups* (2017),
+This module proves the split-torus case of Milne, *Algebraic Groups* (2017),
 Corollary 14.18(b): there are no nontrivial homomorphisms from a group of multiplicative type to a
 unipotent group. The case covered here is a split torus mapping to an affine unipotent group scheme
 over a field `k`. Milne derives 14.18 from 14.16 (complete reducibility of multiplicative groups).

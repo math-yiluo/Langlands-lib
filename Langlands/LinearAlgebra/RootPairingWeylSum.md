@@ -25,6 +25,6 @@ span because it permutes the roots. Therefore `weylSum P` vanishes on that
 entire span.
 
 The construction is general in all four type universes. It is an algebraic
-ingredient for the averaging argument in the host task. It does not construct
+ingredient for an averaging argument. It does not construct
 the root pairing of an algebraic group, compare a central torus with a root
 annihilator, or prove unipotent-weight positivity or a centralizer equality.

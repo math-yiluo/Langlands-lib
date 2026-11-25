@@ -1,6 +1,6 @@
 # Gauss integrals over valuation lattices
 
-Worker 1248. Internal lemmas, derived from the published definitions, the
+Internal lemmas, derived from the published definitions, the
 Library lattice-character integrals (`subgroup_character_integral_of_trivial`,
 `subgroup_character_integral_of_nontrivial`) and the lemmas above.
 

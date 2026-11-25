@@ -1,6 +1,6 @@
 # Transferring centrally normalized heights to original torus roots
 
-This derived unit constructs the torus-coordinate adjustment needed after
+This module constructs the torus-coordinate adjustment needed after
 central normalization of a parabolic factor. It uses actual adelic points,
 actual group-scheme homomorphisms, intrinsic norm-one membership and normalized
 idele norms throughout. It does not prove an arithmetic height bound, construct

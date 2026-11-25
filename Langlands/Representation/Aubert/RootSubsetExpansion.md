@@ -1,8 +1,6 @@
 # Root-subset expansion of the existing GL Aubert operator
 
-Author: Worker 585.
-
-This internal indexing construction reuses `BlockShape.cutEquiv`,
+This indexing construction reuses `BlockShape.cutEquiv`,
 `BlockShape.uncuts_card`, and `Aubert.alternatingOperator_eq_sum`.
 It leaves the existing actual normalized induction and Jacquet maps in every
 summand. The construction has no additional representation-theoretic input.
@@ -33,12 +31,12 @@ positive-rank hypothesis.
 The normalized functors retain their existing conventions: induction uses
 the positive half-modulus, and Jacquet restriction the inverse half-modulus.
 All representation-theoretic prerequisites remain those of the unchanged
-`AlternatingOperator` module and its actual K0 functor maps. This unit neither
+`AlternatingOperator` module and its actual K0 functor maps. This module neither
 reproves their finite-length or exactness properties nor asserts their
 classification independence.
 
 The root positions here are an explicit combinatorial convention. This
-unit does not construct a general reductive datum or prove its relative-root
+module does not construct a general reductive datum or prove its relative-root
 subgroups equal to the actual GL subgroups. It supplies the GL index and sign
 conversion needed after those structural and normalized-functor comparisons.
 In particular, the displayed sum is a formula for the existing GL operator;

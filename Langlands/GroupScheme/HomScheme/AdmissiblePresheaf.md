@@ -1,7 +1,5 @@
 # The small presheaf of actual closed torus subgroups
 
-Author: Worker 1726.
-
 For an actual group scheme over `Scheme.{u}`, `AdmissibleSubgroup` consists
 of its all-test subgroup functors satisfying the published `IsAdmissible`
 condition. `AdmissibleRepresentative` packages an actual closed torus

@@ -1,6 +1,6 @@
 # Gluing affine normal quotients over an open base cover
 
-This internal unit constructs a global affine group quotient from supplied local
+This auxiliary module constructs a global affine group quotient from supplied local
 affine fppf quotients. The base scheme and universe are unrestricted. The ambient
 group is affine and locally of finite type over the base, the represented subgroup
 is monomorphic and smooth, and its all-test range is normal.
@@ -39,8 +39,11 @@ The auxiliary `RelativeRoot.IsFppfQuotient.fibers` rewrites equality of quotient
 images as membership of the difference in its full kernel. This concerns all
 test schemes, not merely field-valued points.
 
-This unit is derived solely from existing Library results and introduces no
+This module is derived solely from existing Library results and introduces no
 external-source assertion. It is part of the quotient existence proof for
 relative parabolics. Supplying the local quotients, descending them from étale
 neighborhoods, proving reductivity of the glued target, and the universal
-factorization property remain separate obligations.
+factorization property are not part of this module: étale descent is in
+`NormalQuotientEtaleGluing`, reductivity of the glued target in
+`NormalQuotientReductiveGluing`, and the complete quotient theorem is
+`relativeParabolicReductiveQuotient` in `RelativeLevi.ReductiveQuotientProof`.

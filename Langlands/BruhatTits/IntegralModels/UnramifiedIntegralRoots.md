@@ -1,6 +1,6 @@
 # Integral apartment tori and root models in a full unramified fixer model
 
-This derived unit constructs the integral split torus and root-filtration
+This module constructs the integral split torus and root-filtration
 models inside a supplied full one-fixer integral model. It uses the exact
 `MaximalUnramified.BuildingData` of the parahoric-model target, with no extra
 apartment axioms or local-field structure on the inertia fixed field.
@@ -56,6 +56,6 @@ identity.
 The provenance is internal: the construction composes published bounded
 split-torus extension, torus-unit fixation, actual maximal-unramified
 arithmetic and the integral root-filtration construction. The full ambient
-integral model and its one-fixer point equality remain supplied. The unit
+integral model and its one-fixer point equality remain supplied. The module
 constructs no full ambient model, no maximal torus Iwahori model, no
 zero-subgroup comparison and no final parahoric-model proof.

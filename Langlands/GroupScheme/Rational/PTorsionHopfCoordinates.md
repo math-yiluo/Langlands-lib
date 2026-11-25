@@ -1,7 +1,5 @@
 # Cocommutativity and torsion in affine Hopf coordinates
 
-Worker 1552, task `f02d1dea-6430-41df-bf80-bd95f132e32f`.
-
 This internal adapter connects the actual-scheme hypotheses of
 `RelativeRoot.SmoothCommutativePTorsionVectorEmbeddingStatement` to the algebraic
 primitive-generation route for the embedding assertion of CGP B.1.10.

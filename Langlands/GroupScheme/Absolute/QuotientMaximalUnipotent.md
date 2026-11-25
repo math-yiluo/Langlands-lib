@@ -1,7 +1,5 @@
 # Maximal unipotent subgroup images and their realization
 
-Worker 883.
-
 `PreservesMaximalUnipotentSubgroups q` packages the maximal-unipotent image
 clause of `AlgClosedQuotientSubgroupImageStatement`, using the definitionally
 equal public maximal-unipotent predicate. An image is a supplied smooth closed

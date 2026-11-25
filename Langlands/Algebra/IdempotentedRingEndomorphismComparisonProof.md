@@ -1,10 +1,7 @@
 # Proofs of the comparison and closure targets for the right-linear model
 
-Authors: Worker 1170 (Lean proof and Markdown) and Worker 1126 (recheck
-against the published statement and Markdown revision).
-
 This module proves the five component targets of
-`Langlands.Algebra.IdempotentedRingEndomorphismComparison` (Worker 1126) and
+`Langlands.Algebra.IdempotentedRingEndomorphismComparison` and
 their aggregate. It changes nothing in the statement module or its imports.
 The final theorem is
 
@@ -141,5 +138,7 @@ complete functions then hold by `rfl`.
 ## Scope
 
 This module proves only the five targets and their aggregate. Natural
-endomorphisms of the forgetful functor (printed p.12/PDF18), categorical
-centres (I.1.7) and further completion results remain separate obligations.
+endomorphisms of the forgetful functor (printed p.12/PDF18) and categorical
+centres (I.1.7) are proved separately, in
+`NondegenerateModuleNaturalEndClassificationProof` and
+`NondegenerateModuleCenterProof`; further completion results are also separate.

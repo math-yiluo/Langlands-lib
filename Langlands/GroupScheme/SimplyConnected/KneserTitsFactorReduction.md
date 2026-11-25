@@ -1,11 +1,9 @@
 # Conditional assembly of the local Kneser–Tits factor inclusion
 
-Assembly author: Worker 1331, with the arithmetic interface supplied by
-Worker 1756 and the normal-factor interface supplied by Worker 1371.
 All imported modules are published Library modules. Dynamic-centralizer
 reductivity is imported from its published proof.
 
-This is an internal construction and conditional reduction. It does not prove the task's
+This is an internal construction and conditional reduction. It does not prove the
 unconditional `SimplyConnectedKneserTitsFactorStatement`.
 
 `rationalPoints_range_le_of_localKneserTits` assumes
@@ -40,8 +38,9 @@ global premises:
 The proof derives disjoint positive root rays from rank-one factorization,
 chooses an actual generic integral cocharacter, and uses rational Bruhat
 decomposition to prove normality of the ambient root-generated subgroup.
-Worker 1371's adapter applies the normal-complement premise to the actual
-closed normal factor. Almost simplicity gives its smoothness and connectedness.
+The adapter `IsSimplyConnected.normalSubgroup_of_normalIsogenyComplement`
+(module `SimplyConnected.NormalFactors`) applies the normal-complement premise
+to the actual closed normal factor. Almost simplicity gives its smoothness and connectedness.
 The central-isogeny multiplication to the simply connected ambient group is an
 isomorphism, and the direct-factor theorem then proves that this factor is
 simply connected. The parabolic-radical comparison puts the images of all
@@ -50,8 +49,8 @@ published `dynamicCentralizerReductive` proof, so centralizer reductivity is
 no longer a premise of this assembly. The preceding inverse-image argument
 then supplies the desired factor inclusion.
 
-Every premise above remains an obligation of the main task until discharged
-by an actual published proof. This module preserves the existing statement
+Every premise above remains an explicit hypothesis here; no unconditional proof of
+`SimplyConnectedKneserTitsFactorStatement` is in the Library. This module preserves the existing statement
 and its imports and makes no claim of unconditional completion.
 
 The provenance is internal: the inverse-image universal property and

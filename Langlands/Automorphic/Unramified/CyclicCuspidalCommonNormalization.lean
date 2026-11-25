@@ -21,7 +21,7 @@ open scoped NumberField NNReal
 namespace Langlands.Automorphic.Unramified
 
 open Langlands.Global Langlands.Global.AdelicFunctoriality Langlands.Unramified
-open Langlands.ClassField.Global.RelativeWeilGroup (HasUnitaryCentralCharacter)
+open Langlands.ClassFieldTheory.Global.RelativeWeilGroup (HasUnitaryCentralCharacter)
 
 variable {F : Type uF} [Field F] [NumberField F]
 

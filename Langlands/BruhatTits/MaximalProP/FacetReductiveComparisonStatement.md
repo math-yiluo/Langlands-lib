@@ -34,7 +34,8 @@ a nonarchimedean local field `F`, an affine group scheme `G` over `F`, and a
 supplied `KPBuildingDatum G`. Its sole additional premise is
 `D.SatisfiesGroupAxioms`. Connected reductivity and the building, integral
 model and quotient data are already part of this datum. This premise is
-provided by availability in the host proposition; global `IsValid` is not
+provided by availability in `AvailableMaximalProPStatement`, the statement this
+one serves; global `IsValid` is not
 required. No extra maximal-subgroup or normalizer conclusion is included.
 
 The statement is derived from the following original-source ingredients in
@@ -56,7 +57,7 @@ verbatim from the book. Its proof must derive the comparisons from the
 single-group axioms and use the finite residue field, in particular the
 quasi-splitness of connected reductive groups over finite fields. The chapter
 8 construction alone does not assert descent for arbitrary supplied models.
-The order-bijection clause in the current Library records a bijection with
+The order-bijection clause in the Library records a bijection with
 one-way reversal of incidence; it must not be silently treated as an order
 isomorphism. The radical-preimage equality also requires a comparison through
 the represented quotients, beyond the positive-subgroup monotonicity clause.

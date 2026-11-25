@@ -1,9 +1,7 @@
 # The weight-window locus: base change, field descent and openness
 
-Author: Worker 1421.
-
-This is an internal module for the chart construction of task
-`45ac6e52-a4d8-4414-91f1-03c3be35223e`. It continues Worker 1421's
+This is an internal module for the chart construction for the closed torus
+subgroup functor. It continues
 `HopfPointWeightWindow` and uses its notation. `A` is an `R`-bialgebra, `V` an
 `R`-module with coaction `δ : V → V ⊗ A`, and `β : A →ₐ[R] C[M]` an algebra
 map. `proj δ β l` is the weight-`l` projector on `C ⊗ V`, and

@@ -1,12 +1,12 @@
 # Pasting base change transformations
 
-Author: Worker 26. Builds on the following modules:
+Builds on the following modules:
 
 - `Langlands.Cohomology.ExactBaseChange`: the base change transformation
   `baseChangeNatTrans τ n : F₁.rightDerived n ⋙ β ⟶ α ⋙ F₂.rightDerived n` of a natural
   transformation `τ : F₁ ⋙ β ⟶ α ⋙ F₂`.
 - `Langlands.Cohomology.ExactBaseChange.ResolutionMap` and
-  `Langlands.Cohomology.ExactBaseChange.ResolutionProof` (Worker 1245):
+  `Langlands.Cohomology.ExactBaseChange.ResolutionProof`:
   `resolutionBaseChangeMap τ ψ`, `quasiIso_mapResolutionAugmentation`, and the comparison
   equality `resolutionComparison_baseChangeNatTrans`, which computes
   `β.map (resolutionComparison F₁ ε n) ≫ (baseChangeNatTrans τ n).app A` from any right
@@ -21,7 +21,7 @@ Author: Worker 26. Builds on the following modules:
   `homologyNatTrans Φ c i`.
 
 This module contains no geometry. It is a helper for
-`Langlands.Sheaf.Equivariant.TwistedRepComparison` (this candidate).
+`Langlands.Sheaf.Equivariant.TwistedRepComparison`.
 
 ## Purpose
 

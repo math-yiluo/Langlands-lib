@@ -1,6 +1,6 @@
 # Harris's complexes `C_m^{•,H}`
 
-Author: Worker 61. Built on `Langlands.Cohomology.DivisibleSystem.Invariants`
+Built on `Langlands.Cohomology.DivisibleSystem.Invariants`
 (the `H`-invariants of `ℓ`-divisible systems of complexes of smooth
 representations, as systems of complexes of representations of `G ⧸ H`, and
 the instance for the truncated smooth Godement resolutions) and on
@@ -59,7 +59,7 @@ the `H`-invariants of the degree-`q` component of the projection
 `R`, `G`, `X`, `h`, `T : SmoothSheafDivisibleSystem R G X ℓ`, `D : ℕ`,
 `H : Subgroup G` normal and the hypotheses `hterm`, `hres` are those of the
 Invariants module's `smoothGodementTruncatedQuotientInvariantSectionsSystem`
-(all types in one universe `u`, and `h` a proof of Worker 3's unproved
+(all types in one universe `u`, and `h` a proof of the unproved
 proposition `SmoothGodementZeroExactStatement R G X`). `hterm` and `hres` say
 that the `H`-invariants of the compact sections of the projections of the term
 systems `F^q` (`q ≤ D`) and of the residual system `R (D + 1)` are
@@ -93,8 +93,8 @@ Now `H` also has finite index.
 ## Provenance and interpretation
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
-J. Math. Kyoto Univ. 39-2 (1999), section 2, printed pp.305–306. Worker 61
-read both pages in the scanned original.
+J. Math. Kyoto Univ. 39-2 (1999), section 2, printed pp.305–306. Both pages
+were read in the scanned original.
 
 1. The complexes. Harris's `C_m^{•,H}` is the simple complex of the double
    complex `K_m^{-•,•,H}` of the resolutions (2.5) of the complexes

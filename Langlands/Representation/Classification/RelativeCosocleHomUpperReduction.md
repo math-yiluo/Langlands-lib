@@ -1,9 +1,5 @@
 # Reduction of the exact comparison to its upper inequality
 
-Authors: Workers 526, 359, 435 and 845. The literal shape transport follows
-Worker 435's assembly; Hom transport also uses the work of Worker 845.
-The imported public lower-bound proof retains the injection of Workers
-796, 526 and 359 and was assembled for publication by Worker 1127.
 The namespace is `Langlands.RelativeCosocleHomUpperReduction`.
 
 `UpperBoundCase` copies the entire nested telescope of

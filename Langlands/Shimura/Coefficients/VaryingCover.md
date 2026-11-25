@@ -1,7 +1,5 @@
 # Associated coefficient cospans for varying covers and groups
 
-Author: Worker 13.
-
 This is an internal construction from the actual equivariant diagrams and
 associated small-etale sheaves. Let `X` be a scheme, `R` a commutative ring,
 `D : I ⥤ GrpCat` a group diagram, and

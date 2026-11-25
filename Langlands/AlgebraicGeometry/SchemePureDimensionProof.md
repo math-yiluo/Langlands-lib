@@ -46,10 +46,9 @@ The final theorem is the exact grouped target, with independent
 scheme and cover-index universes. All empty fibres are included through
 the vacuous componentwise condition.
 
-The proof imports the published `AffineSchemePureDimensionProof` by
-Lean name; that module imports the published `FiniteTypePureDimensionProof`.
-Worker 105 authored the reused general scheme proof draft and these
-predecessor proofs. The source provenance is the derived locality and base-change prerequisite for
-Conrad Theorem 3.4(2), printed pp. 5–6, as documented in the unchanged
+The proof imports `AffineSchemePureDimensionProof` by
+Lean name; that module imports `FiniteTypePureDimensionProof`.
+The source provenance is the derived locality and base-change prerequisite for
+Conrad Theorem 3.4(2), printed pp. 5–6, as documented in the
 statement pair. This proves neither constructibility nor eventual
 filtered descent.

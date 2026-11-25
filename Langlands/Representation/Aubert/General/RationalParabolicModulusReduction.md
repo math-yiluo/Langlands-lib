@@ -1,7 +1,5 @@
 # The actual parabolic modulus comparison from Levi unimodularity
 
-Author: Worker 53. The imported closedness helper is by Worker 103.
-
 This internal reduction specializes the semidirect modular-character
 calculation to the literal standard rational-point subgroups of the
 published `RationalParabolicModulusStatement`. It is a conditional helper,

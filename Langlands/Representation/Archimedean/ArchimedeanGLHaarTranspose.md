@@ -1,6 +1,6 @@
 # Haar measure and smooth Weyl transpose on archimedean GL
 
-This is an internal adapter for the transpose reduction in Task 7525. It works on the actual unit group of the square matrix algebra of size `n + 1` over an `RCLike` field `F`. The continuous multiplicative equivalence `weylTransposeInvMulEquiv F n` is `x ↦ (τ x)⁻¹`, where `τ` is the Library's Weyl-conjugated transpose. Both transpose and inversion reverse multiplication, so their composite preserves it. This definition packages that composite for the representation-theoretic reduction; it does not define a new group or measure.
+This is an internal adapter for the transpose reduction in the proof of continuous unitary Whittaker multiplicity one for `GL_n` (module `UnitaryWhittakerMultiplicityOneProof`). It works on the actual unit group of the square matrix algebra of size `n + 1` over an `RCLike` field `F`. The continuous multiplicative equivalence `weylTransposeInvMulEquiv F n` is `x ↦ (τ x)⁻¹`, where `τ` is the Library's Weyl-conjugated transpose. Both transpose and inversion reverse multiplication, so their composite preserves it. This definition packages that composite for the representation-theoretic reduction; it does not define a new group or measure.
 
 The Weyl-conjugated transpose and its inverse are smooth for the real matrix model of the group. The units embed openly into the matrix space, where the transpose is a real continuous linear equivalence. Composing with the unit embedding gives the smoothness of `τ`, and involutivity identifies the inverse with `τ` itself.
 

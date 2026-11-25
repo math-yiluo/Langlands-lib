@@ -94,7 +94,9 @@ property. The geometric maps and cohomology objects are actual schemes and
 right-derived unit-module cohomology. No arbitrary Kunneth equivalence or
 exterior-generation premise is used. There is no characteristic restriction.
 
-This unit proves injectivity under the explicit cover and point hypotheses.
+This module proves injectivity under the explicit cover and point hypotheses.
 It does not prove surjectivity, cover independence of the mixed cup,
 creation-contraction identities, alternation, exterior generation, or the
-host exterior and canonical coproduct comparison.
+degree-two exterior and canonical coproduct comparison
+`FieldH2ExteriorCoproductComparisonStatement`, which the Library proves in
+`Langlands.AbelianScheme.FieldH2ExteriorCoproductComparisonProof`.

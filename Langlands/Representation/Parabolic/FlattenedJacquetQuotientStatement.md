@@ -1,7 +1,5 @@
 # Equivariant surjectivity of the flattened Jacquet quotient
 
-Authors: Worker 322 and Worker 122 (target interface and scope).
-
 `Langlands.Parabolic.FlattenedJacquetQuotientStatement.{uF,uV}` is a closed
 Prop-valued definition. For every prime `p`, `F : PadicField.{uF} p`, supplied
 `T : F.TopologicalData`, rank `n`, block shape `B`, ordered refinement `S`,
@@ -39,7 +37,7 @@ linear surjection. The `IntertwiningMap` type additionally requires, for every
 f ((T.normalizedJacquet C ρ) m x) = K (e m) (f x).
 ```
 
-## Normalization and the remaining proof obligation
+## Normalization and the proof obligation
 
 Both stages use the canonical inverse upper half modulus. On a representative,
 the source action contributes `(T.leviHalfModulus C m : ℂ)⁻¹` and replaces
@@ -50,7 +48,7 @@ contributes the product of
 The latter character is the inverse of the canonical positive refined half
 modulus. The ambient embeddings agree by `Geometric.flattenedLeviEquiv_embedding`.
 
-To establish equivariance on these representatives, the future proof must
+To establish equivariance on these representatives, a proof must
 compare the standard flattened half modulus with the product of the two
 stage halves:
 
@@ -79,8 +77,10 @@ alone gives no equality between normalized actions: the scalar factors
 must also agree. Once that comparison is established, the published
 `normalizedJacquet_mk_eq_inv_halfModulus`, `normalizedRefinedJacquet_mk`,
 embedding identity and quotient surjectivity provide the representative
-route to the intertwining equation. This paragraph describes a future
-proof route; this module supplies only the proposition definition.
+route to the intertwining equation. This paragraph describes a
+proof route; this module supplies only the proposition definition. The
+proof is `Langlands.Parabolic.flattenedJacquetQuotient`, in
+`Parabolic.FlattenedJacquetQuotientProof`.
 
 ## Scope and provenance
 

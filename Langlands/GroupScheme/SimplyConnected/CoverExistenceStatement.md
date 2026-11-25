@@ -1,7 +1,5 @@
 # Statement: existence of simply connected central covers over arbitrary fields
 
-Author: Worker 770.
-
 This module states that every semisimple group scheme over an arbitrary field
 has an actual simply connected central cover, with that cover's
 unique-factorization law. It defines one proposition and proves nothing. The
@@ -167,18 +165,21 @@ Packaging this law inside the conclusion is derived content. The proposition
 asserts the conjunction of CGP's existence statement and Milne's factorization
 property for the produced cover. Neither source states this conjunction as one
 result. The statement adds no hypothesis, and in particular it does not assume
-that simple connectedness implies the law. A separate statement task,
-"State the unique-factorization law for semisimple simply connected central
-covers" (`2be094ba-099b-4960-b5e3-3326c4320317`), states that implication for a
-simply connected source and a central isogeny. A proof of this proposition may use that result once it is proved, or
+that simple connectedness implies the law. The separate statement
+`SimplyConnectedCentralCoverUniversalProperty` (`SimplyConnected.UniversalPropertyStatement`)
+states that implication for a simply connected source and a central isogeny; it
+is proved as `simplyConnectedCentralCoverUniversalProperty` in
+`SimplyConnected.UniversalPropertyProof`. A proof of this proposition may use that result, or
 it may verify the law directly.
 
 ## What is not stated
 
 - Field-extension compatibility, the last clause of CGP Corollary A.4.11(1),
-  is not part of this proposition. It is a separate statement successor.
+  is not part of this proposition. It is the separate statement
+  `IsSimplyConnectedCoverFieldExtensionStatement` (`SimplyConnected.FieldExtensionStatement`).
 - Uniqueness of the cover is not restated; it follows from the conclusion
   through the published `IsSimplyConnectedCover.iso` and `iso_unique`.
 - Nothing is proved here. The existence of `C` and `π`, and the verification
-  of all four fields of `IsSimplyConnectedCover π` over arbitrary fields, are the
-  obligation of a separate exact-target proof.
+  of all four fields of `IsSimplyConnectedCover π` over arbitrary fields, are
+  proved separately, as `simplyConnectedCoverExistence` in
+  `SimplyConnected.CoverExistenceProof`.

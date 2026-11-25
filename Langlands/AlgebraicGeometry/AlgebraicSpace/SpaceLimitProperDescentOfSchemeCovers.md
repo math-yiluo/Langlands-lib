@@ -1,11 +1,13 @@
 # Properness descent reduced to independent proper scheme covers
 
-This internally derived unit proves the full properness limit clause with one
+This internally derived module proves the full properness limit clause with one
 explicit foundational input, `ProperSchemeCoverStatement`. It also assembles
 all eight original clauses conditional on that input and
 `RepresentedAtlasEffectivityStatement`. Neither foundational proposition is
-proved by this unit, so the unchanged host statement remains unproved until
-those inputs are supplied by independent proofs.
+proved by this module, so the unchanged statement
+`SpaceLimitPropertyDescentStatement` is not proved here; the Library proves
+both inputs in separate modules, and with them the statement, as
+`spaceLimitPropertyDescent` in `SpaceLimitPropertyDescentProof`.
 
 The preliminary lemmas transport separatedness and properness through actual
 isomorphisms of arrows. For separatedness, the proof uses isomorphism invariance
@@ -53,14 +55,17 @@ Finally, `spaceLimitPropertyDescent_of_foundations` has conclusion exactly
 the uniqueness inputs of the four represented-property reductions, the
 conditional properness clause above, and the independently published full
 separatedness, smoothness and nonempty-geometrically-connected-fibre clauses.
-There is no extra host hypothesis or alteration of the original target pair.
-This conditional reduction does not constitute an unconditional host proof.
+There is no extra hypothesis or alteration of the original target pair.
+This conditional reduction does not constitute an unconditional proof of
+`SpaceLimitPropertyDescentStatement`.
 
 The provenance is internal: actual target-family topology comparisons,
 scheme-cover descent, scheme base-change coherence, the published separatedness
 clause and finite-type reductions, and the existing represented-property and
-connected-fibre results. Integration follows `ProperSchemeCoverDescent` and
+connected-fibre results. The module imports `ProperSchemeCoverDescent` and
 `AffineTargetFamilyUniversallyClosedBaseChange` and their dependencies. The
-foundational proofs belong to Task5472 (effective represented-property descent)
-and Task5586 (proper scheme covers). Their acceptance and publication, followed
-by an independently reviewed exact host proof, remain required.
+foundational proofs are separate: effective represented-property descent is
+`representedAtlasEffectivity` in `RepresentedAtlasEffectivityProof`, and proper
+scheme covers are `properSchemeCover` in `ProperSchemeCoverProof`.
+`spaceLimitPropertyDescent` applies `spaceLimitPropertyDescent_of_foundations`
+to these two proofs.

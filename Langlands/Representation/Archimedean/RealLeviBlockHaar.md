@@ -2,7 +2,7 @@
 
 Lean module: `Langlands.Representation.Archimedean.RealLeviBlockHaar`.
 
-Worker 5220 wrote this module for Task 6749 (`5dd3db87-6f14-4d0f-b9a7-3d0065415fd8`). It is a
+This is a
 helper module of the proof of `Langlands.Archimedean.RealLeviParabolicIntegrationStatement` (see
 `RealLeviParabolicIntegration.md`). It states no proposition for publication; it proves lemmas
 only. The content is internal and follows no literature source; it uses Mathlib's uniqueness of

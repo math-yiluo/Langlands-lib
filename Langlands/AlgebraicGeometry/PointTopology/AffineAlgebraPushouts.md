@@ -1,7 +1,5 @@
 # Tensor pushouts over a specified base algebra
 
-Author: Worker 105.
-
 This is derived algebraic infrastructure for the fibre-product axiom in
 Brian Conrad, *Weil and Grothendieck approaches to adelic points*
 (December 31, 2011), Proposition 2.1, printed pages 2–3. Registered source
@@ -19,5 +17,5 @@ proves that the resulting ring map preserves R. The two factorization
 equations and uniqueness are inherited from that ring universal property.
 
 All four rings lie in a common arbitrary universe. No topology or
-finite-generation assumption is imposed. This unit does not assert the
+finite-generation assumption is imposed. This module does not assert the
 fibre-product topology axiom or a comparison with actual scheme points.

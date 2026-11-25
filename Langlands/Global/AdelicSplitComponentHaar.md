@@ -1,7 +1,5 @@
 # Normalized Haar comparison between actual split components
 
-Author: Worker 112.
-
 This internal construction uses `AdelicLogSection` and
 `AdelicNormOneDecomposition` for the actual character-log equivalences,
 `AdelicSplitComponentIndependence` for equality of actual images, and

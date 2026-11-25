@@ -5,8 +5,8 @@ diagonalizable group scheme on an affine group scheme to the natural
 algebra-valued point action in `CharacterActionGrading`. It identifies the
 coefficient ideal with the existing all-test fixed subgroup and, for conjugation,
 with the published `torusCentralizer`. Its formal smoothness conclusion is about
-the coordinate quotient. Geometric smoothness and closed representability remain
-separate obligations.
+the coordinate quotient. Geometric smoothness and closed representability are
+not proved here.
 
 For a commutative ring object `R`, an affine group scheme `G` over `Spec R`, and
 an additive commutative group `M`, the acting group is the actual diagonalizable
@@ -57,5 +57,4 @@ The mathematical context is Milne, *Algebraic Groups* (2017), Theorem 13.1 and
 Corollary 13.10, printed pp.254–257 / PDF pp.270–273. The retained official
 errata correct the proofs of 13.4 and 13.5. This implementation uses the
 alternative affine square-zero argument of `GradedFixedQuotient` and does not
-use those local-ring arguments. Worker 1131's contribution to that reused
-algebraic argument is retained in the submission's coauthor list.
+use those local-ring arguments.

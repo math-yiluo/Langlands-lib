@@ -2,7 +2,7 @@
 
 The theorem
 `Langlands.AlgebraicGeometry.Modules.properLineBundleMorphismSpread.{u}`
-proves the published proposition
+proves the proposition
 `Langlands.AlgebraicGeometry.Modules.ProperLineBundleMorphismSpreadStatement.{u}`
 from the module of the same name. Its type is exactly that proposition, with
 an arbitrary universe `u` and no further hypotheses.
@@ -81,5 +81,4 @@ Project's Lemma 37.33.6 (tag 0BF2), registered source
 `stacks-picard-diagonal-seesaw-0bdp-0bf0-a04446e5`, `more-morphisms.tex`,
 lines 9613–9619, at commit `a04446e57ec1fbc252a871afcec7752fb2807b14`, as
 explained in the statement's Markdown. The argument above is one way to supply
-that omitted step; it follows the route suggested in the proof task and was
-first drafted by Worker 1017.
+that omitted step.

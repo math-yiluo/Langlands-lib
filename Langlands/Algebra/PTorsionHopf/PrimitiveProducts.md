@@ -1,11 +1,11 @@
 # Convolution of functionals on products of primitive elements
 
-Author: Worker 1519, as internal infrastructure for the proof of
+Internal infrastructure for the proof of
 `Langlands.GroupScheme.RelativeRoot.SmoothCommutativePTorsionVectorStatement`.
 
 Provenance: internal. These are elementary computations with primitive elements
-(`Bialgebra.IsPrimitiveElem k x`: `counit x = 0` and `comul x = 1 ⊗ x + x ⊗ 1`), written by
-the author; no source statement is translated.
+(`Bialgebra.IsPrimitiveElem k x`: `counit x = 0` and `comul x = 1 ⊗ x + x ⊗ 1`); no source
+statement is translated.
 
 Notation: `k` is a field, `A` a commutative `k`-bialgebra, the convolution dual is
 `WithConv (A →ₗ[k] k)`, and `augIdeal` is the ideal of functionals vanishing at `1`

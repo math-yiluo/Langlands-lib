@@ -1,6 +1,6 @@
 # Full star-action comparison under extension of the ground field
 
-Worker 509. This is derived interface material for actual Galois pinning data
+This is derived interface material for actual Galois pinning data
 over arbitrary fields and at every universe parameter. It uses the existing
 root-datum existence and torus-compatible group-isomorphism comparison, the
 character scalar-extension comparison, and uniqueness of the Weyl-corrected
@@ -50,7 +50,7 @@ four fields from `ScalarExtension`. The separable-closure comparison uses
 `rootDatumScalarExtension` to choose a witness of this four-field record.
 
 The provenance is internal derived compatibility of published constructions.
-This unit changes the ground field while keeping the common splitting field.
+This module changes the ground field while keeping the common splitting field.
 It does not identify a chosen Cartan component with an actual almost-simple
 factor, and does not prove `SemisimpleTitsComponentFactorStatement`. It uses no
 local rank-one classification or Kneser–Tits theorem.

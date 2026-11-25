@@ -1,10 +1,8 @@
 # Canonical rho big-cell geometric data from opposite root pairs
 
-Author: Worker 1407.
-
 Module `Langlands.GroupScheme.Reductive.CanonicalRhoOppositePairCovering`. The helper module
-`Langlands.GroupScheme.Rational.OppositePairBruhatCovering` is submitted in the same
-candidate. Its Markdown documents its six theorems and their proofs.
+`Langlands.GroupScheme.Rational.OppositePairBruhatCovering` is ported together with this
+module. Its Markdown documents its six theorems and their proofs.
 
 ## Setting
 
@@ -16,7 +14,7 @@ Let `P` be a root datum of `j` (`hP : IsRootDatumOf j P`, finite index type `J`)
 `ν₀ = P.Polarization (IntegralWeylVector.rho P b hspan)` and `λ₀ = groupHom ν₀ ≫ j`.
 
 The rank-one input is `AlgClosedOppositeFactorPairsStatement.{u}`. This separate statement
-(candidate `36dc664a-2fbe-4ceb-b39e-f1b87813556a`) asserts
+(module `Langlands.GroupScheme.Rational.AlgClosedOppositeFactorPairsStatement`) asserts
 `RelativeRoot.HasOppositeFactorPairs i` for every maximal split torus `i` of every
 connected reductive group over every algebraically closed field in universe `u`.
 
@@ -67,7 +65,7 @@ instantiated at `(k, G, hG, T, j)` with this maximal split torus.
 
 ## Independence
 
-Task 7459 excludes the following inputs:
+The construction is independent of the following inputs:
 
 - `ParabolicDynamic*`, `RegularCocharacterBorel*`, `RankOneSolvableObstruction*`,
   `RankOneBorelDynamic*`, `RankOnePositiveRootUniqueness*`;
@@ -97,7 +95,7 @@ The remaining hypotheses are explicit inputs, not consequences of this module:
 
 ## Provenance
 
-This is an internal assembly of Library constructions with the staged helper module. It
+This is an internal assembly of Library constructions with the helper module. It
 introduces no new mathematical assertion. Mathematically, the covering is the Tits-system
 Bruhat decomposition (Borel–Tits 1965, Théorème 5.15, Library literature id
 `borel-tits-1965-groupes-reductifs`) for the parabolic of a generic cocharacter.

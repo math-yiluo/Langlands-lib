@@ -1,10 +1,9 @@
 # Statement: injective character and cocharacter maps give an isogeny of split tori
 
-Authors: Worker 1428, Worker 1520.
-
-This module states one unproved proposition, the `Prop`-valued `def`
+This module states one proposition, the `Prop`-valued `def`
 `Langlands.GroupScheme.SplitTorusIsogenyOfLatticeMapsStatement` with one
-universe parameter `u`. Nothing is proved here, and no other declaration is
+universe parameter `u`; `splitTorusIsogenyOfLatticeMaps` in
+`Rational/SplitTorusIsogenyOfLatticeMapsProof` proves it. Nothing is proved here, and no other declaration is
 introduced.
 
 The module imports `Langlands.GroupScheme.CentralIsogeny.Basic`,
@@ -91,9 +90,11 @@ or printed p.484.
 
 ## Use
 
-This statement is meant to supply the isogeny property of `t` in a later
-proof of `SplitCentralTorusQuotientStatement` (statement task
-`2ea05a8b-453e-49c8-8d20-9b2ad61ac047`; not yet in the Library), whose
-hypotheses on `t` are exactly the two injectivity conditions. There the
+This statement is meant to supply the isogeny property of `t` in the
+proof of `SplitCentralTorusQuotientStatement` (module
+`Reductive.CentralTorusQuotientStatement`), whose
+hypotheses on `t` are exactly the two injectivity conditions; that proof is
+`splitCentralTorusQuotient` in `Reductive.CentralTorusQuotientProof`, which
+uses `splitTorusIsogenyOfLatticeMaps`. There the
 isogeny property is to be used for finiteness of the kernel of `t` and for
 descending homomorphisms along `t`. This module itself proves none of this.

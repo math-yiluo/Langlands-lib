@@ -1,7 +1,5 @@
 # Strict scalar rational descent with an independent finite index universe
 
-Author: Worker 146.
-
 The supporting theorem
 `StrictTestDomain.wholeSpectrumRationalGluing_finiteIndex`
 extends the indexing interface of the published

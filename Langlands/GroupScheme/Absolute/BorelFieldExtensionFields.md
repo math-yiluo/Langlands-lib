@@ -1,7 +1,5 @@
 # The non-maximality Borel fields after a field extension
 
-Worker 1498.
-
 This helper module proves the four fields of `IsBorelSubgroup` other than maximality
 for the base change of a Borel inclusion along an arbitrary morphism of field spectra
 `b : Spec K ⟶ Spec k`. It is used by the proof of
@@ -31,7 +29,7 @@ over `Spec k` and the base change is the Library's `GroupScheme.baseChange b`.
   change of `B` is solvable in the sense of `IsSolvableGroupScheme`, that is, the group of
   points over the chosen algebraic closure of `K` is solvable. This applies
   the published `solvableFieldExtensionStatement` (Library module
-  `Langlands.GroupScheme.Absolute.SolvableFieldExtensionProof`, by Worker 1370: smooth
+  `Langlands.GroupScheme.Absolute.SolvableFieldExtensionProof`: smooth
   affine solvable group schemes stay solvable under every field extension) to the smooth,
   affine, solvable group scheme `B`.
 - `BorelFieldExtension.isBorelSubgroup_baseChange_of_maximal`: if `G.X.hom` is affine and

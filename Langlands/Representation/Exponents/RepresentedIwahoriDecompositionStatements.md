@@ -16,12 +16,11 @@ The module contains three `Prop`-valued definitions and nothing else:
 
 None of them is proved here. There are no new objects.
 
-Worker 4 wrote this unit under the whole-book task `f5d1f399-a1f8-4ab5-a981-90b92abd4857`,
-with the agreement of Worker 1222. It addresses the framework comparison **F2** of the
+This module addresses the framework comparison **F2** of the
 Chapter VI item ledger (`notes/renard/item-ledger-vi.md`). The ledger records that the
 published VI.6.1 Theorem and VI.9.1 Theorem statements use dynamic parabolics and a compact
 open `K` that is given together with an `M`-central contracting element. The source instead
-allows every `K` with an Iwahori decomposition along an arbitrary parabolic. Before this unit,
+allows every `K` with an Iwahori decomposition along an arbitrary parabolic. Before this module,
 no statement said that such a `K` has a contracting element, and no statement covered the
 source's hypothesis.
 
@@ -219,8 +218,7 @@ the source's proofs take from V.5.2.
 ## Relation to published statements
 
 - `Langlands.Aubert.General.RationalPointFamily.GeneralizedJacquetLemmaStatement` (module
-  `Langlands.Representation.Exponents.UniformCompressionStabilizationStatement`, proof task
-  `cac6f709`) is VI.9.1 for the dynamic parabolic of a cocharacter `χ` and for those `K` that
+  `Langlands.Representation.Exponents.UniformCompressionStabilizationStatement`) is VI.9.1 for the dynamic parabolic of a cocharacter `χ` and for those `K` that
   are given together with an `M`-central `g` satisfying `Jacquet.IsIwahoriContraction`.
   `RepresentedGeneralizedJacquetLemmaStatement` has the source's scope: actual parabolics and
   every `K` with an Iwahori decomposition.
@@ -233,12 +231,16 @@ the source's proofs take from V.5.2.
   compact subsets of `N(F)` and `N̄(F)`. `RepresentedIwahoriContractionStatement` is a
   consequence of it together with the centrality of `A` in `M`.
 - `Langlands.Jacquet.StandardCanonicalSectionStatement` (VI.6.1 Proposition) and the VI.9.4 statements still
-  assume the V.5.2 basis-member conditions (framework comparison F3). This unit does not change
+  assume the V.5.2 basis-member conditions (framework comparison F3). This module does not change
   them.
 
 ## Proof obligations
 
-Nothing is proved here. The intended routes are as follows.
+Nothing is proved here. The Library proves `RepresentedIwahoriContractionStatement`
+(`representedIwahoriContraction`, module `RepresentedIwahoriContractionProof`) and
+`RepresentedJacquetLemmaStatement` (`representedJacquetLemma`, module
+`RepresentedJacquetLemmaProof`); `RepresentedGeneralizedJacquetLemmaStatement` is not proved.
+The intended routes are as follows.
 
 - `RepresentedIwahoriContractionStatement`.
   - *Existence of `t₀`.* The restrictions `Δ(P)` are linearly independent in `X^*(A) ⊗ ℚ`.

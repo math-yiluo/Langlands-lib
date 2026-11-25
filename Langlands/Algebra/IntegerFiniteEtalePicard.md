@@ -1,7 +1,5 @@
 # Finite étale algebras over `ℤ` have trivial Picard groups
 
-Worker 4699.
-
 This internal algebraic helper supplies the arithmetic Picard-group input for the
 `Spec ℤ` case of Conrad, *Reductive group schemes* (2014), Remark 7.2.13 (page 259 of
 the cited PDF, source `conrad-2014-reductive-group-schemes`). The remark says that the

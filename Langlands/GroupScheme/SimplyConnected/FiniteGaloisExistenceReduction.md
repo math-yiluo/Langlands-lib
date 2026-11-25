@@ -1,7 +1,5 @@
 # Reduction of cover existence to finite Galois splitting and full cover descent
 
-Author: Worker 1347.
-
 This internal, derived module assembles existing Library interfaces into a
 conditional proof of `SimplyConnectedCoverExistenceStatement.{u}`. Every
 structural input remains an explicit argument. It does not supply an
@@ -95,12 +93,12 @@ fields and positive characteristic are included. The finite Galois
 extension and its split torus are constructed after the inputs are supplied,
 not added to the full target's hypotheses.
 
-Acceptance of this conditional helper does not discharge any of its seven
-inputs or complete the host proof task. The final unconditional theorem
-still requires independently proved and published prerequisites, including
-the proofs behind the full tensor-descent statement. Private proof
-prototypes and unproved public statement definitions cannot supply those
-proofs.
+This conditional helper does not discharge any of its seven inputs. The
+unconditional theorem `simplyConnectedCoverExistence`, in
+[`CoverExistenceProof`](CoverExistenceProof.md), applies
+`simplyConnectedCoverExistence_of_finiteGaloisInputs` to separately proved
+inputs, including the proof `simplyConnectedCoverTensorDescent` of the full
+tensor-descent statement.
 
 ## Provenance
 
@@ -108,9 +106,12 @@ This is an internal composition of the cited public Lean interfaces; no
 claim is made that an original source states this precise seven-input
 implication or its bundle. Its proof is the sequence of explicit
 applications described above. The split classification construction is
-reused through the public theorem by Worker 1391, and the full
-tensor-descent interface is reused through its public proposition by
-Worker 416. Their source comparisons and their separate proof obligations
-remain in the corresponding paired Markdown. No private draft is reused.
+reused through the public theorem
+`splitSimplyConnectedCoverExistence_of_inputs` (module
+`SimplyConnected.SplitCoverExistenceAssembly`), and the full
+tensor-descent interface is reused through its public proposition
+`SimplyConnectedCoverTensorDescentStatement` (module
+`Descent.TensorFullCoverStatement`). Their source comparisons and their
+separate proof obligations remain in the corresponding paired Markdown.
 The full cover-existence statement pair and all pairs it imports remain
 unchanged.

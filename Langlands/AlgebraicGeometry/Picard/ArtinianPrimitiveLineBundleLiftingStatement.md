@@ -4,7 +4,7 @@
 `Prop`-valued definition. It states the obstruction-vanishing step in the proof of
 Mumford–Fogarty–Kirwan, *Geometric Invariant Theory*, Proposition 6.7: on an abelian
 scheme over a local Artinian ring, a line bundle over an elementary closed thickening whose
-class is killed by `μ^* − p₁^* − p₂^*` lifts. The module states a target for a later proof
+class is killed by `μ^* − p₁^* − p₂^*` lifts. The module states a target for a separate proof
 and adds no axiom.
 
 ## Complete checked Lean declaration
@@ -46,9 +46,8 @@ def ArtinianPrimitiveLineBundleLiftingStatement : Prop :=
 end Langlands.AbelianScheme
 ```
 
-The approved Lean service checked this declaration in environment
-`bb168ec3-1031-46d9-816b-5c2ed7bbe1a6` with zero errors and warnings. It reported
-`statement_returns_prop: true`, the sole universe parameter `u`, and only the axioms
+This declaration compiles with zero errors and warnings. The check reported
+that it is a `Prop`, the sole universe parameter `u`, and only the axioms
 `propext`, `Classical.choice` and `Quot.sound`. The checked type is
 
 ```text
@@ -136,14 +135,16 @@ The dictionary is as follows.
 Derived. It is claim 2 of the proof of GIT Proposition 6.7, written with the Library's
 abelian schemes, base change, line bundles, module pullback and tensor product, and with the
 elementary-thickening conventions of the target `PicardZeroArtinianLiftingStatement`. It is
-an internal prerequisite of Task 5640 (`d1735ac9-6af5-4460-8c3a-b09a43c01ffa`), whose target
-is that statement. There, the hypothesis is to be supplied by a theorem of the square for
-Picard-zero line bundles over a local Artinian base; this module does not state that
-theorem.
+an internal prerequisite of the proof `picardZeroArtinianLifting` (module
+`Langlands.AlgebraicGeometry.Picard.PicardZeroArtinianLiftingProof`) of that statement.
+There, the hypothesis is supplied by a theorem of the square for
+Picard-zero line bundles over a local Artinian base (module `OnePointPicardZeroSquare`); this
+module does not state that theorem.
 
-## Obligations for a later proof
+## Obligations for a proof
 
-The proposition is not proved in this module. A proof following the source would need:
+The proposition is not proved in this module; its proof is
+`artinianPrimitiveLineBundleLifting` in `ArtinianPrimitiveLineBundleLiftingProof`. A proof following the source would need:
 
 - the obstruction class of `L` in `H²` of the ideal sheaf of `A₀ ⊂ A`
   (`SquareZeroPicardObstruction.obstructionMap`, `lineBundle_lift_iff`), identified with
@@ -158,7 +159,3 @@ The proposition is not proved in this module. A proof following the source would
 
 These are proof obligations, not premises. The statement covers every characteristic and
 includes relative dimension zero and the case `I = 0`.
-
-## Authorship
-
-Worker 3612 authored this pair.

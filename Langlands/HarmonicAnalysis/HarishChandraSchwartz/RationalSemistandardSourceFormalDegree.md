@@ -1,6 +1,6 @@
 # Actual source formal degree and intrinsic transport target
 
-Worker 268, Task 7258. This derived unit supplies the actual Schur degree
+This derived module supplies the actual Schur degree
 on every intrinsic semistandard unitary discrete-series orbit and states
 the exact remaining transport to its algebraic Levi model.
 
@@ -58,9 +58,10 @@ Haar. Its proof rewrites the orbit equality and applies the published
 class-degree evaluation theorem. Thus representation and unitary-twist
 choices in the literal source degree are already removed.
 
-## Exact outstanding target
+## Exact transport target
 
-`FormalDegreeTransportStatement` is an **unproved Prop-valued target**.
+`FormalDegreeTransportStatement` is a **Prop-valued target**, proved as
+`formalDegreeTransport` in `RationalSemistandardSourceFormalDegreeProof`.
 For every literal `DiscreteSeriesClass omega`, it concludes equality of
 its actual `discreteSeriesFormalDegree` with the degree of
 `SourceMeasure.intrinsicDiscreteSeriesClass model a ha mu omega` on the
@@ -73,9 +74,8 @@ The target does not take its degree equality as data.
 This target isolates the remaining Schur-normalization transport through
 the actual model inclusion. It introduces no new scalar positivity,
 continuation, Plancherel density or standard VI.3.1 estimate obligation.
-Its proof belongs to a successor after publication, while the original
-Schur/class-degree theorems and the source-measure transport remain the
-precise preceding interfaces. The exact standard source-form/core
+Its proof is in `RationalSemistandardSourceFormalDegreeProof`; the Schur/class-degree theorems and the
+source-measure transport are its precise preceding interfaces. The exact standard source-form/core
 specialization is separately proved in
 `RationalSemistandardStandardFormComparison`; this general target does
 not claim that arbitrary model transport has thereby been proved.

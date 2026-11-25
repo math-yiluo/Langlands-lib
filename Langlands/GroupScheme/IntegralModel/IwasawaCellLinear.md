@@ -1,7 +1,5 @@
 # Opposite-cell integrality from an integral diagonal matrix representation
 
-Author: Worker 4686.
-
 This internal module proves the published
 `Langlands.GroupScheme.IntegralModel.DynamicCellIntegralityStatement` (from
 `IwasawaCellDynamic.lean`) from a new proposition,

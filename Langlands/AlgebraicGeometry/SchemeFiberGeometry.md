@@ -1,6 +1,6 @@
 # Pure-dimensional residue-field fibres of actual scheme morphisms
 
-This unit gives the concrete predicate needed for the last property in Brian
+This module gives the concrete predicate needed for the last property in Brian
 Conrad, *Weil and Grothendieck approaches to adelic points* (December 31,
 2011), printed p. 5, Theorem 3.4(2); the proof reference appears on p. 6.
 Registered source `conrad-2011-weil-grothendieck-adelic-points`, SHA-256
@@ -34,7 +34,7 @@ separatedness or affineness. Under finite presentation, the fibres are
 finite-type schemes over fields, where this is the usual pure dimension
 condition. The predicate itself also makes sense for arbitrary morphisms.
 
-The short intrinsic lemmas are proved in this construction unit:
+The short intrinsic lemmas are proved in this construction module:
 
 - `HasPureDimension.of_homeomorph` pulls an irreducible component back
   along a homeomorphism, uses the induced homeomorphism of that component,
@@ -52,6 +52,7 @@ The short intrinsic lemmas are proved in this construction unit:
   connected morphisms.
 
 These constructions translate the source property and supply internal
-host comparisons. Descent along filtered colimits and invariance under
+comparisons for its statement (module `SchemeFilteredFiberGeometryStatement`).
+Descent along filtered colimits and invariance under
 arbitrary field extension are separate mathematical obligations; this
-unit does not assert either of them.
+module does not assert either of them.

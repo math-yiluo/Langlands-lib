@@ -1,7 +1,5 @@
 # Special representations and square-integrability for GL_n
 
-Author: Worker 47.
-
 This module states the segment classification of essentially square-integrable
 irreducible representations, uniqueness of its parameter, the square-integrability
 criterion for special representations, their centered normalization, and uniqueness

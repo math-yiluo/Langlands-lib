@@ -1,6 +1,6 @@
 # Graded exact K0 of actual rational-point general linear groups
 
-This is an internal transport construction in
+This is a transport construction in
 `Langlands.Aubert.General.RationalPointFamily.GL`. It reuses the current
 matrix-group constructions by their Lean names, along the published canonical
 continuous group equivalence
@@ -108,11 +108,13 @@ comparisons directly. None of these intrinsic transport laws discharges
 
 ## Scope
 
-This definition unit makes no unconditional Theorem 2.3 claim. A separate
-Prop-valued target must identify the literal rational standard-family operator,
+This module of definitions makes no unconditional Theorem 2.3 claim. A separate
+Prop-valued target, `RationalTheorem23Statement` in
+`GeneralLinearRationalTheorem23Statement`, must identify the literal rational standard-family operator,
 give the support-sign formula on actual irreducible modules, and prove
 multiplicativity, unit preservation, involutivity and equality with the
-transported Zelevinsky endomorphism on the whole graded group. Its exact proof
-requires its own publication and independent review. Completion of the parent
-program still requires the representation-theoretic prerequisites and their
-declaration-level dependency ledger.
+transported Zelevinsky endomorphism on the whole graded group. Its proof is
+`rationalTheorem23` in `GeneralLinearRationalTheorem23Proof`. The matrix-side
+prerequisites `hx`, `hl` and `hp` are proved separately, by
+`binaryProductExactness`, `gradedInductionRingLaws` and
+`segmentPolynomialComparison`.

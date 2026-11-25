@@ -1,7 +1,5 @@
 # Algebraic descent and prime-power assembly for local powers
 
-Author: Worker 384.
-
 This module supplies elementary arithmetic helpers for the half-power target,
 in namespace `Langlands.Global.Arithmetic.PowerDescent`. It implements the
 exponent assembly and norm descent in Artin and Tate, *Class Field Theory*

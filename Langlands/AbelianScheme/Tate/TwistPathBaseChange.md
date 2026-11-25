@@ -1,7 +1,5 @@
 # Base change and path transport on the actual Tate twist
 
-Author: Worker 142.
-
 This companion to `PathBaseChange` proves the base-change/path square for
 actual root-of-unity kernel points and their Tate twists. On root coordinates
 the vertical base-change comparisons are the identity. The result extends to

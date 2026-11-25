@@ -1,9 +1,8 @@
 # Ranges of homomorphisms from two different split tori
 
-Author: Worker 1421.
-
-This is an internal module for the chart construction of task
-`45ac6e52-a4d8-4414-91f1-03c3be35223e`. The Library's
+This is an internal module for the chart construction of
+`SmoothTorusSubgroupRepresentabilityProof` (smooth moduli of closed torus
+subgroups). The Library's
 `Langlands.GroupScheme.HomScheme.SplitTorusHopfPoint` compares the ranges of
 two homomorphisms from the same Hopf spectrum (the same split torus
 `D(ℤ^I)`) into an affine group `G` over `Spec R`. This module allows two

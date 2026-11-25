@@ -1,6 +1,6 @@
 # Relative parabolic subgroups are closed
 
-Worker 589, with the local comparison development by Worker 636.
+The local comparison development is in `LocalDynamicComparison`.
 
 `Langlands.GroupScheme.relativeParabolicClosed.{u}` proves exactly the published
 `Langlands.GroupScheme.RelativeParabolicClosedStatement.{u}`. For every scheme

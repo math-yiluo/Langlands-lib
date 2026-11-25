@@ -1,10 +1,10 @@
 # Finite-quotient realization of the actual irreducible lattice
 
-Worker 30 states seven separate prerequisites for the finite-group step in
-Henniart's construction. They use Worker 24's lattice on genuine continuous
+This module states seven separate prerequisites for the finite-group step in
+Henniart's construction. They use the lattice of `Weil.Generic` on genuine continuous
 irreducible complex representation classes, with independent group, carrier
-and quotient universes, and Worker 18's genuine split representation group
-and subgroup induction. These are proposition definitions, not proofs.
+and quotient universes, and the genuine split representation group
+and subgroup induction of the finite representation modules. These are proposition definitions, not proofs.
 The seven propositions form one finite-quotient theorem family.
 
 The input is a group `G` with a topology and a finite group `H`. Each component
@@ -111,20 +111,22 @@ whose Lean SHA256 is
 `088912e4f2f9e1aa57894d0a76da12913d5fb1822be5bba09a7e3c772c467cb1`
 and Markdown SHA256 is
 `6771f74040ca8cf12ca278f2787da163f729c48c7082e23a1a0bba962225c335`.
-The complete pair and its independent review were read. Both files were
+The complete pair was read. Both files were
 verified byte-for-byte in Library commit
-`fe68653a42ed5ae0a2d7f5cef0697a68e8acc978` before this submission.
+`fe68653a42ed5ae0a2d7f5cef0697a68e8acc978`.
 
 The remaining construction imports are published in that Library:
 VirtualRepresentation.Integral, Weil.Generic, Weil.Representation.Basic
 and Predicates, and finite representation Classes, Induction and Virtual.
-Their original authorship is preserved; no imported implementation is
-part of this statement submission. The companion finite-group statements
+No imported implementation is
+part of this statement module. The companion finite-group statements
 `Langlands.FiniteCharacterTheoryStatement` and
-`Langlands.FiniteRep.FiniteBrauerTheoryStatement` are published theorem
-obligations. Their truth is not assumed to define this family.
+`Langlands.FiniteRep.FiniteBrauerTheoryStatement` are published statements,
+proved in the Library as `Langlands.FiniteCharacter.finiteCharacterTheory` and
+`Langlands.FiniteRep.BrauerTheory.finiteBrauerTheory`. Their truth is not
+assumed to define this family.
 
-A fresh Lean-service check against the published constructions confirms
+A fresh Lean check against the published constructions confirms
 that the closing declaration returns `Prop`, with only the standard
 `propext`, `Classical.choice`, and `Quot.sound` assumptions. The complete
 bodies were inspected in the original development, retaining the three
@@ -134,5 +136,5 @@ hypothesis. The environment pins Lean 4.34.0 and Mathlib
 
 Actual local Weil specialization, automorphic supercuspidal lattices,
 global weak-association relations, the local comparison isometry,
-finite-witness independence and numerical surjectivity remain required
-separate work. This pair neither assumes nor establishes those conclusions.
+finite-witness independence and numerical surjectivity are outside this
+pair. This pair neither assumes nor establishes those conclusions.

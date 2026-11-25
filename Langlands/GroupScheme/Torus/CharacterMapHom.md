@@ -1,7 +1,5 @@
 # Homomorphisms into split tori from additive maps of character lattices
 
-Author: Worker 277.
-
 This module works over `Spec k` for a commutative ring `k` that is an
 integral domain. `T` is an arbitrary commutative group scheme over `Spec k`,
 and `T'` is a split torus there (`IsSplitTorus T'.toGrp`). Characters are the

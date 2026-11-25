@@ -1,6 +1,6 @@
 # An exact reversed-source presentation of the outer replacement kernel
 
-This internal derived unit turns the pulled-back inner-binomial kernel of
+This module turns the pulled-back inner-binomial kernel of
 `RealInducedPairNegativeOuterQuotient` into the range of an actual exact
 intertwiner from a mixed standard module.
 
@@ -41,4 +41,5 @@ mixed-source filtration map sends this kernel into the earlier swapped-pair
 range and does not identify either full crossing composite. When comparing
 positive and negative crossed pairs, the actual endpoint parities must be
 checked separately; exponent reversal alone is insufficient. The unrestricted
-two-induction-block filtration remains open.
+two-induction-block filtration is proved separately, as
+`realInducedInducedFiltration` in `RealInducedInducedFiltrationProof`.

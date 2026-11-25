@@ -57,11 +57,11 @@ private theorem geometricExpansion_toMonoidHom {H : Type*} [Group H]
     SimpleTraceGeometricExpansion R θ.toMonoidHom μH f t r :=
   @h
 
-local instance (K : Type u) [Field K] (n : ℕ) :
+private local instance (K : Type u) [Field K] (n : ℕ) :
     IsAffine (GroupScheme.GeneralLinear.groupScheme (Fin n) (CommRingCat.of K)).X.left :=
   GroupScheme.GeneralLinear.isAffine_groupScheme (Fin n) (CommRingCat.of K)
 
-local instance (K : Type u) [Field K] (n : ℕ) :
+private local instance (K : Type u) [Field K] (n : ℕ) :
     Smooth (GroupScheme.GeneralLinear.groupScheme (Fin n) (CommRingCat.of K)).X.hom :=
   GroupScheme.GeneralLinear.smoothStatement (Fin n) (CommRingCat.of K)
 
@@ -83,7 +83,7 @@ def GeneralLinearSingleOrbitTwistedTraceStatement : Prop :=
     (hi : Function.Injective (characterRestrict i)) [(characterRestrict i).range.FiniteIndex]
     (I : Type u) [Fintype I] (e : T.toGrp ≅ splitTorus (Spec (CommRingCat.of K)) I)
     (hc : IsCentral i) [(Measure.haar : Measure (normOneSubgroup K Wₙ)).IsMulRightInvariant],
-    i ≫ (unitGaloisAut K L GLₙ σ).hom = i →
+    i ≫ (unitGaloisAut K L GLₙ σ).asIso.hom = i →
     let H := normOneSubgroup K Wₙ
     let R := rationalNormOneSubgroup K Wₙ
     let μG : Measure (AdelicGroupPoints K Wₙ) := Measure.haar

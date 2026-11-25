@@ -309,7 +309,8 @@ def cmNormalTransportDatum {V U : SmallCMLevel D} (b : V ⟶ U)
     (M' : Action (ModuleCat Rcoeff) (SmallCMResidualGroup D V V'))
     (c : M.V ⟶ M'.V)
     (hc : ∀ v : V.obj.subgroup,
-      M.ρ (QuotientGroup.mk (smallCMTransporterConj D b v)) ≫ c = c ≫ M'.ρ (QuotientGroup.mk v)) :
+      (M.ρ (QuotientGroup.mk (smallCMTransporterConj D b v))).asHom ≫ c =
+        c ≫ (M'.ρ (QuotientGroup.mk v)).asHom) :
     EtaleTransportDatum (R := Rcoeff) φ (normalTorsor U U' hU').val (normalTorsor V V' hV').val
       M M' where
   group := SmallCMResidualGroup D V T
@@ -344,7 +345,7 @@ def cmNormalTransportDatum {V U : SmallCMLevel D} (b : V ⟶ U)
       · rw [Category.assoc, cmNormalTransportToSource_snd, Category.assoc]
         erw [etaleObjectPullback_map_snd]
         rw [cmNormalTransportToSource_snd]
-        exact ((normalTorsor V T hT).val.ρ (QuotientGroup.mk v)).w
+        exact ((normalTorsor V T hT).val.ρ (QuotientGroup.mk v)).asHom.w
   toTarget := MorphismProperty.Over.homMk ((schemes).map (smallCMInclusion D hTV')) (by
     change (schemes).map (smallCMInclusion D hTV') ≫ (schemes).map (smallCMInclusion D hV') =
       (schemes).map (smallCMInclusion D hT)

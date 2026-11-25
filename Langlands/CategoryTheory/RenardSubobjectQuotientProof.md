@@ -142,5 +142,4 @@ requests, the proof adds no further lemmas identifying these constructions.
 This proves only A.VI.2(2–3) as stated by the imported target. It does not
 cover the passage from Renard's AB0–AB3* axioms to Mathlib's `Abelian`
 structure, images and coimages, A.VI.2(4–8), arbitrary meets and joins, or the
-well-powered opposite-category instance. Those keep their existing scopes and
-owners.
+well-powered opposite-category instance.

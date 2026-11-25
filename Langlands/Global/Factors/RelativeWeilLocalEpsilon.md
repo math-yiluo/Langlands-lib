@@ -88,7 +88,7 @@ L-factor theorem, and `universeMap` moves it.
   trivial character line changes nothing, and restriction of a character line is the
   line of the composite character. The first gives a carrier-universe lift of any
   `V ⊗ W` to which the main theorem applies. The suffix `_comp` keeps the last name
-  distinct from a lemma with the same statement in Worker 1795's
+  distinct from a lemma with the same statement in the
   `RelativeWeilBrauer` module, because the final assembly imports both modules.
 
 ## Epsilon values (`Langlands.Weil.Local.SystemEpsilon`)

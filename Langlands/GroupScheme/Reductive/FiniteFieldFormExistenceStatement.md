@@ -1,7 +1,5 @@
 # Statement: every finite-order based automorphism is the class of a form over a finite field
 
-Author: Worker 148.
-
 This module contains one `Prop`-valued statement,
 `Langlands.GroupScheme.FiniteFieldFormExistenceStatement.{u}`. The Lean file only defines
 the proposition. It contains no proof of it and adds no other declarations or axioms. It has
@@ -19,8 +17,8 @@ The proposition is, word for word, clause 1 (*existence*) of the Library stateme
 ([`Reductive.FiniteFieldFormClassificationStatement`](FiniteFieldFormClassificationStatement.md)).
 The only difference is that the local predicate `HasClass G d θ` of that statement is
 written out. The binders, hypotheses and conventions are the same, so the explanations in
-that statement's Markdown apply unchanged. It is stated on its own so that a proof task can
-target it separately. The module
+that statement's Markdown apply unchanged. It is stated on its own so that it can be proved
+separately. The module
 [`Reductive.FiniteFieldFormClassificationReduction`](FiniteFieldFormClassificationReduction.md)
 proves that it and `InnerFormStarActionStatement` together imply
 `FiniteFieldFormClassificationStatement`.
@@ -106,8 +104,8 @@ and apply verbatim here.
 
 ## Role in the Library
 
-This is an intermediate statement for the proof of `FiniteFieldFormClassificationStatement`
-(Task 6547). A possible route: twist the Frobenius action on `G₀` over a finite extension
+This is an intermediate statement for the proof of `FiniteFieldFormClassificationStatement`.
+A possible route: twist the Frobenius action on `G₀` over a finite extension
 `k'/k` of degree a multiple of the order of `θ` by the pinned automorphism lifting `θ`
 (`SplitPinning.basedRootDatumAutLift`), descend with the Library's pinned Galois descent
 (`Reductive.PinnedGaloisDatum`, `Reductive.PinnedGaloisBorel`), and compute the star action

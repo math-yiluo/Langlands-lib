@@ -1,7 +1,7 @@
 # Cyclic block identity for determinant Euler polynomials
 
-Worker 1820 proves the published proposition
-`Langlands.LocalFactor.EulerCyclicBlockStatement.{u,v}` as
+The published proposition
+`Langlands.LocalFactor.EulerCyclicBlockStatement.{u,v}` is proved as
 `Langlands.LocalFactor.eulerCyclicBlock`, in the module
 `Langlands.LocalFactor.Euler.CyclicBlockProof`.
 
@@ -80,10 +80,7 @@ groups and inertia invariants use their separately constructed operators.
 
 ## Development validation
 
-The proof compiled without errors or warnings in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` (Lean 4.34.0, Mathlib commit
-`5ed2965256430c3649e86755f9576b54eca72435`). Theorem inspection reports
+The proof compiled without errors or warnings in Lean 4.34.0, Mathlib commit
+`5ed2965256430c3649e86755f9576b54eca72435`. Theorem inspection reports
 universe parameters `u,v` and only `propext`, `Classical.choice`, and
-`Quot.sound`. These are development checks; independent semantic review,
-exact-target validation, and publication are supplied by the submission
-workflow.
+`Quot.sound`. These are development checks.

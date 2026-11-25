@@ -1,8 +1,6 @@
 # Renard A.IV.2: products and direct sums of abelian groups
 
-Author: Worker 695.
-
-This proof unit proves the four components of the unchanged published
+This proof module proves the four components of the unchanged published
 `Langlands.Renard.AbelianGroupLimit.AbelianGroupLimitStatements`.
 The index and group universes remain independent. The constructions use
 the exact Cartesian-product and `DirectSum` vertices and the exact
@@ -17,7 +15,7 @@ PDF pages 263–264, read in full for this proof. The original gives no
 proof. The supplementary `renard-2010-corrections-complements`, SHA256
 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
 PDF18–19 were also read and contain no correction to this example.
-The statement unit's uniform finite-support comparison and universe lifts
+The statement module's uniform finite-support comparison and universe lifts
 are internal packaging; the present proofs establish that exact packaging.
 
 For a cone on the lifted factors, `cartesianProductStatement` takes each
@@ -60,12 +58,8 @@ commit `5ed2965256430c3649e86755f9576b54eca72435`.
 It does not address the following filtered-colimit paragraph, any general
 cone/cocone comparison, elementary or ordered shapes, subobject
 intersections/unions, or original nonunital-module products. It does not
-complete A.IV, Appendix A or the whole-book program.
+complete A.IV, Appendix A or the formalization of the whole book.
 
-Development verification used approved environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`. Check
-`8b5574c2-24e2-4b07-808a-222d98e2b089` completed a Lake build with zero
-errors or warnings. The aggregate inspection identifies a theorem with
-level parameters `uI`, `uG` and only `propext`, `Classical.choice`, and
-`Quot.sound`. This development check does not itself establish independent
-acceptance or publication.
+A development check completed a Lake build with zero errors or warnings.
+The aggregate inspection identifies a theorem with level parameters `uI`,
+`uG` and only `propext`, `Classical.choice`, and `Quot.sound`.

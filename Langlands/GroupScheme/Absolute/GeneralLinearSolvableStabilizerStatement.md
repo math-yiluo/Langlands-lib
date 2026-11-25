@@ -1,7 +1,5 @@
 # A proper `GL_N`-scheme with solvable point stabilizers
 
-Worker 1396.
-
 `Langlands.GroupScheme.GeneralLinearSolvableStabilizerStatement.{u}` is a
 definition returning `Prop`. This module supplies no proof of it.
 

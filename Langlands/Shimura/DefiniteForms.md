@@ -1,11 +1,11 @@
 # Harris's spaces of automorphic forms on the similitude group of an algebra with involution
 
-Author: Worker 61. Built on the published
-`Langlands.Shimura.EquivariantForms` (Worker 61: `forms`),
-`Langlands.Shimura.EquivariantFormsHecke` (Worker 61: `levelTransport`,
+Built on the published
+`Langlands.Shimura.EquivariantForms` (`forms`),
+`Langlands.Shimura.EquivariantFormsHecke` (`levelTransport`,
 `levelPresheaf`, `heckeOperator`),
-`Langlands.Shimura.EquivariantFormsTwist` (Worker 61: `twistedForms`,
-`twistEquiv`, `twistEquiv_heckeOperator`), and on Worker 57's published
+`Langlands.Shimura.EquivariantFormsTwist` (`twistedForms`,
+`twistEquiv`, `twistEquiv_heckeOperator`), and on the published
 `Langlands.Shimura.Unitary.Adelic` (`Points`, `FiniteAdelicPoints`,
 `finiteAdelicDiagonal`, `finiteLocalMap`, `diagonalPoints`),
 `Langlands.Shimura.Coefficients.Algebraic` (`AlgebraicRepresentation`,
@@ -14,7 +14,7 @@ Author: Worker 61. Built on the published
 
 The module specializes the generic equivariant forms of
 `Langlands.Shimura.EquivariantForms` and `Langlands.Shimura.EquivariantFormsTwist`
-to Worker 57's actual similitude group of an algebra with involution, its
+to the actual similitude group of an algebra with involution, its
 finite adelic points and its algebraic coefficient representations. The
 result is the spaces (3.2) and (3.3) of Harris 1999 and the isomorphism (3.5)
 between them, as presheaves on compact open levels with Hecke operators. No
@@ -23,19 +23,19 @@ new groups, levels or coefficients are defined.
 ## Conventions
 
 `A` is a `ℚ`-algebra (`[Ring A] [Algebra ℚ A]`) and
-`σ : AlgebraInvolution ℚ A` is an involution. Worker 57's
+`σ : AlgebraInvolution ℚ A` is an involution. The published
 `σ.similitudes` is its group of rational similitudes (Harris's `GJ(ℚ)`).
 `σ.Points S` is the group of similitudes of `S ⊗[ℚ] A` for a commutative
 `ℚ`-algebra `S`. `σ.FiniteAdelicPoints = σ.Points (FiniteAdeles ℚ)` is the
-finite adelic group (Harris's `GJ(𝔸^f)`), with the topology Worker 57
-transports from the finite adeles. `σ.finiteAdelicDiagonal` is the diagonal
+finite adelic group (Harris's `GJ(𝔸^f)`), with the topology
+transported from the finite adeles. `σ.finiteAdelicDiagonal` is the diagonal
 embedding of the rational points into it. For a finite place `ℓ` of `ℚ`,
 `σ.finiteLocalMap ℓ` (which needs `[Module.Finite ℚ A]`) is the continuous
 homomorphism `g ↦ g_ℓ` to the points over the completion `ℚ_ℓ`.
 
 `L` is a field with `[Algebra ℚ L]`, `W` is an `L`-vector space, and
 `ρ : (σ.baseChange L).AlgebraicRepresentation W` is an algebraic
-representation of the similitude group over `L`. In Worker 57's
+representation of the similitude group over `L`. In the published
 functor-of-points form it is an action `ρ.act S` of the points over every
 commutative `L`-algebra `S` in the universe of `L` on `S ⊗[L] W`, natural in
 `S`. Its restriction to the rational points over `L` is
@@ -71,7 +71,7 @@ coerced silently below.
   invariance follows from `x * k * g = x * g * (g⁻¹ * k * g)`.
 - `finiteFormsPresheaf σ ρ S : (CompactOpenLevel σ.FiniteAdelicPoints)ᵒᵖ ⥤ ModuleCat S`:
   a compact open level `K` goes to `finiteForms σ ρ S K.subgroup`, and an
-  arrow `a : K ⟶ K'` of Worker 57's category of levels (an element
+  arrow `a : K ⟶ K'` of the published category of levels (an element
   `a.element` with `a.element⁻¹ * k * a.element ∈ K'` for all `k ∈ K`) goes to
   `finiteTranslate` along `a.element`
   (`finiteFormsPresheaf_map_apply_coe`). The functor laws are
@@ -80,7 +80,7 @@ coerced silently below.
   `f ∈ finiteForms σ ρ S K`, then `f` is locally constant, since it is
   constant on each open coset `x K` (the preimage of `K` under
   `y ↦ x⁻¹ * y`). Here `[Module.Finite ℚ A]` is assumed, because the proof
-  uses continuity of multiplication, which comes from Worker 57's
+  uses continuity of multiplication, which comes from the published
   topological group instance on the adelic points (stated under that
   hypothesis).
 
@@ -96,12 +96,12 @@ universe restriction comes from `ρ.act`, which is given on algebras in the
 universe of `L`.
 
 - `ellAdicRep σ ρ ℓ φ : Representation S σ.FiniteAdelicPoints (S ⊗[L] W)`:
-  the action `g ↦ ρ(g_ℓ)` through the `ℓ`-component. It is Worker 57's
+  the action `g ↦ ρ(g_ℓ)` through the `ℓ`-component. It is the published
   `ρ.finiteAdelicVia ℓ φ`, which sends `g` to `ρ.act S` of the image of
   `σ.finiteLocalMap ℓ g` under `φ` (`ellAdicRep_apply`).
 - `ellAdicRep_diagonal`: on rational points the `ℓ`-adic action is the
   rational one, `ellAdicRep σ ρ ℓ φ (finiteAdelicDiagonal γ) = rationalRep σ ρ S γ`
-  (Worker 57's `finiteAdelicVia_diagonal`).
+  (the published `finiteAdelicVia_diagonal`).
 - `ellAdicRep_eq_one`: an element `g` with `σ.finiteLocalMap ℓ g = 1` acts
   as the identity.
 - `ellAdicForms σ ρ ℓ φ K` (an abbreviation): the generic
@@ -177,7 +177,7 @@ How the module relates to this passage (an explanation, not formalized):
 - Groups. Harris's `GJ = GU(𝒥, *)` is the similitude group of a central
   simple algebra `𝒥` with an involution of the second kind (§1, printed
   p.301, one-based PDF page 3), and §3 is titled "The totally definite
-  case". We take Worker 57's similitude
+  case". We take the published similitude
   group of an arbitrary involution `σ` of a `ℚ`-algebra, finite-dimensional
   from (3.3) on. Definiteness is used by Harris for the archimedean space
   (3.1) and for the finiteness of `_K S(GJ)` (our reading). None of the
@@ -188,9 +188,9 @@ How the module relates to this passage (an explanation, not formalized):
 - Coefficients. Harris's `L` is the number field `L(ρ)`; we allow any field
   `L` with `[Algebra ℚ L]`. Harris's `W(L')` is `L' ⊗_L W`, and his `ρ(γ)` on
   it is `rationalRep`. For (3.3), Harris's `ρ` on `W(L_ℓ)` (and on `W(L')`
-  for an `L_ℓ`-algebra `L'`) evaluated at `k_ℓ` is Worker 57's
+  for an `L_ℓ`-algebra `L'`) evaluated at `k_ℓ` is the published
   `ρ.finiteAdelicVia ℓ φ k`. For `S = L ⊗_ℚ ℚ_ℓ` and `φ` the inclusion of
-  `ℚ_ℓ`, this is Worker 57's `ρ.harrisLocal ℓ` evaluated at the
+  `ℚ_ℓ`, this is the published `ρ.harrisLocal ℓ` evaluated at the
   `ℓ`-component. We read Harris's printed target `W(L'_ℓ)` in (3.3) as
   `W(L')`, since `L'` is already an `L_ℓ`-algebra.
 - (3.2). `finiteForms` has exactly the functional equations of (3.2): `f` is
@@ -234,7 +234,7 @@ How the module relates to this passage (an explanation, not formalized):
   1999.
 - `rationalRep`, `finiteForms`, `finiteTranslate`, `finiteFormsPresheaf`,
   `ellAdicRep`, `ellAdicForms` and `resEll` are internal specializations of
-  the published generic constructions named above to Worker 57's groups and
+  the published generic constructions named above to the published groups and
   coefficients. All Lean statements and proofs are ours, derived from
   Mathlib and the published modules named above.
 

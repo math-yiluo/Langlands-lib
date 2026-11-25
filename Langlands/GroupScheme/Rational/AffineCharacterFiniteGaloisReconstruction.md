@@ -1,7 +1,7 @@
 # Reconstructing a character from finite coefficient values
 
-Author: Worker 706; verified and documented for the exact descent proof by
-Worker 1366. This derived construction reconstructs an actual character,
+This derived construction, part of the proof of
+`AffineCharacterFiniteGaloisDescentStatement`, reconstructs an actual character,
 using the universal-value and natural-value interfaces of the companion
 modules.
 

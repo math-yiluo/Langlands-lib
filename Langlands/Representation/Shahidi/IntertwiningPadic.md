@@ -12,7 +12,6 @@ A(s,\pi,w_{m,n})f(g)=\int_{U'} f(w_{m,n}u'g)\,du'.
 
 The registered original is `shahidi-1984-fourier`, SHA256
 `a10d5c605d94d4e85d0e5f453d6a8c233d91e3cb60d538f430d8ad900cbb6b29`.
-The author is Worker 11.
 
 The general module builds the operator from four hypotheses: a source
 covariance law, a target covariance law, a Jacobian law for the measure `du'`,
@@ -23,7 +22,7 @@ the p-adic `I(s, π₁ ⊗ π₂)` to the p-adic `I(-s, π₂ ⊗ π₁)`. Value
 from `V₁ ⊗ V₂` to `V₂ ⊗ V₁` by the tensor flip, as in `IntertwiningInduced`,
 whose Markdown explains why this reading is needed.
 
-The unit builds on these published modules:
+The module builds on these published modules:
 
 - `IntertwiningInduced`: `IsSourceCovariance`, `IsTargetCovariance`,
   `IsModulusScaling`, `convergenceDomain`, `smoothInduced_mem_convergenceDomain`,
@@ -138,10 +137,10 @@ fields are covered only by the general layer of `IntertwiningInduced`.
 
 ## What is not claimed
 
-This unit does not claim the following:
+This module does not claim the following:
 
 - that the integral converges for `f ∈ I(s,π)` when `Re s` is large. The
-  domain `shahidiSourceDomain` is defined by convergence, and this unit does
+  domain `shahidiSourceDomain` is defined by convergence, and this module does
   not show that it is all of `I(s,π)` for any `s`;
 - that `A(s,π,w_{m,n})` has a rational continuation in `q^(-s)`;
 - any Haar normalization of `du'`. Every additive Haar measure is allowed;
@@ -149,7 +148,7 @@ This unit does not claim the following:
   smooth induction, which `Induction` also leaves open;
 - a comparison of `shahidiIntertwining` with the general
   `intertwiningInduced` for `T.shahidiAbsoluteValue`. The two use different
-  but equal inducing data, as explained in `Induction`; this unit proves the
+  but equal inducing data, as explained in `Induction`; this module proves the
   hypotheses of `swappedOperator` directly for the p-adic data.
 
-These remain obligations for later units of the parent task.
+These are obligations outside this module.

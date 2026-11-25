@@ -1,7 +1,5 @@
 # Renard A.III.1: statements for the separated uniform completion
 
-Author: Worker 709.
-
 This file supplies four closed proposition definitions and their conjunction,
 `Langlands.Renard.UniformCompletion.UniformCompletionStatements`.
 It supplies statements only. All spaces, maps, completions and categories are
@@ -23,7 +21,7 @@ mentions completion more generally for spaces endowed with a uniform structure.
 The present statements give a precise version of that uniform generalization:
 morphisms are **uniformly continuous**, and complete targets are **separated**.
 These conventions are mathematical restrictions, not alternative spellings of
-continuity or completeness. This unit does not assert the literal
+continuity or completeness. This module does not assert the literal
 continuous-map vector-space formulation, construct vector-space operations on
 the completion, or prove a comparison with a category of continuous linear
 maps.
@@ -82,7 +80,7 @@ The categorical statements use a common arbitrary carrier universe `u`,
 as do Mathlib's actual bundled categories and forgetful functor. Their object
 types live in `Type (u + 1)` and their morphisms in `Type u`. The independent
 target universe `v` occurs in the concrete extension statement only; this
-unit does not assert a categorical functor between different carrier universes.
+module does not assert a categorical functor between different carrier universes.
 Empty uniform spaces are allowed. There is no compactness, metrizability,
 countability, normed-space, scalar-field, or finite-dimensionality restriction.
 
@@ -102,10 +100,10 @@ forgetful functor, the completion and extension morphisms, and their adjunction;
 `Mathlib/Topology/UniformSpace/Completion.lean` defines the actual completion,
 coercion and extension and supplies their density, embedding and uniqueness
 theorems. `Mathlib/CategoryTheory/Comma/StructuredArrow/Basic.lean` supplies the
-right-universal-arrow witness. This unit imports those definitions directly
+right-universal-arrow witness. This module imports those definitions directly
 and introduces no parallel objects or assumed completion certificates.
 
-The exact proof of the aggregate requires its own independently reviewed
-publication after this statement pair is accepted and published. The
+The aggregate is proved as `uniformCompletionStatements_proof` in
+`Langlands.CategoryTheory.Renard.UniformCompletionProof`. The
 continuous-map wording, precise topological-vector-space comparison,
-linear operations and other A.III examples remain separate obligations.
+linear operations and other A.III examples are outside this module.

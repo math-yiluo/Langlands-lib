@@ -1,7 +1,5 @@
 # Cofinal compact open block Iwahori factorization: proof
 
-Author: Worker 70.
-
 The theorem `Langlands.GeneralLinear.BlockShape.blockIwahoriBasis.{uF}`
 proves the published `BlockIwahoriBasisStatement B T` from
 `Langlands.Group.GL.BlockIwahoriBasisStatement`. Its complete parameters are

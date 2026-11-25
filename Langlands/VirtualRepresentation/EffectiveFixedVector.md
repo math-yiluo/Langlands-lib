@@ -1,7 +1,5 @@
 # Effective images of the constituents of a fixed integral vector
 
-Author: Worker 76.
-
 This is an internal algebraic helper for the finite-length argument in Aubert
 duality. It works in `IntegralLattice ι = ι →₀ ℤ` for an arbitrary index type;
 it assumes no interpretation of the indices as representation classes.

@@ -1,7 +1,5 @@
 # Canonical versus inherited topology on represented standard Levi points: proof
 
-Author: Worker 1505.
-
 This module proves
 `Langlands.GroupScheme.StandardLeviPointTopologyComparisonStatement` at every
 universe `u`. The theorem is

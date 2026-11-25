@@ -1,7 +1,5 @@
 # Rank-one reducedness from the actual central-cover statement
 
-Worker 799.
-
 This internal derived reduction connects the published
 `Langlands.GroupScheme.RankOneCentralCoverStatement.{u}` to the published
 rank-one reducedness propositions. Its provenance is the actual-root
@@ -13,9 +11,8 @@ The proposition definition
 `RankOneRootReducednessFromCentralCoverStatement.{u}` names the conditional
 implication `RankOneCentralCoverStatement.{u} →
 RankOneRootReducednessStatement.{u}`. The companion theorems implement this
-internal derived reduction. This statement contribution supplies no
-exact-target proof receipt for unconditional reducedness or root-datum
-existence.
+internal derived reduction. This module supplies no proof of
+unconditional reducedness or root-datum existence.
 
 `rankOneAlgClosedRootReducedness_of_centralCover` proves
 `RankOneCentralCoverStatement.{u} →
@@ -37,7 +34,7 @@ proposition by composing the algebraically closed implication with
 `rankOneRootReducedness_of_algClosed`. That published descent transports
 the actual roots and their pairwise integral dependence to an algebraic
 closure and reflects equality or negation through injective character
-pullback. The resulting conclusion is the unchanged
+pullback. The resulting conclusion is
 `RankOneRootReducednessStatement.{u}` over arbitrary fields, with no
 restriction on characteristic or universe.
 

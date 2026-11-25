@@ -1,6 +1,6 @@
 # Canonical Galois compatibility of the original Weil-product comparison
 
-Author: Worker 166. Internal derivation from actual coordinate morphisms,
+Internal derivation from actual coordinate morphisms,
 canonical product transport and pullback evaluation coherence.
 
 For fields `k`, `E`, and `L` with the given algebra structures and a finite

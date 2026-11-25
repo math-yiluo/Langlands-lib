@@ -1,6 +1,6 @@
 # Actual source Jacquet decomposition, preservation and K0 reduction
 
-This internal unit continues `SourceJacquetComparison`. It transports supplied
+This module continues `SourceJacquetComparison`. It transports supplied
 structural subgroup identities and existing restricted-standard preservation
 to the actual geometric source. It does not prove the structural identities
 or the final rational-point Aubert induction-compatibility statement.
@@ -57,6 +57,6 @@ preservation premises can be extracted from the literal Levi-family
 `ParabolicFiniteLength` assumptions already present in the final target. The
 structural subgroup identities, scheme-to-point index transport, target
 intersection induction comparison, normalized stages, Weyl conjugacy and
-geometric expansion still require their own proofs. No new premise is added
+geometric expansion require their own proofs. No new premise is added
 to the final compatibility proposition and no classification or external
 literature theorem is invoked.

@@ -1,7 +1,5 @@
 # First-factor and singleton equivalences for finite external tensors
 
-Author: Worker 321.
-
 This module constructs actual equivalences for the dependent external tensor
 representation `Langlands.FiniteTensor.external`. It is an internal construction
 from product coordinates and tensor universal properties. It does not assume

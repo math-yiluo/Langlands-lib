@@ -47,4 +47,4 @@ Internal. The subgroup is the set of rational points of Tits's isometry group wr
 directly in matrix terms; the lemmas are elementary linear algebra used to verify that
 explicit matrices (Eichler transformations, reflections, hyperbolic scalings in
 `EichlerTransformations`) are isometries. They serve the proof of the Kneser–Tits property
-for quaternionic spin groups (Task 5398).
+for quaternionic spin groups (`LocalSpinKneserTitsStatement`).

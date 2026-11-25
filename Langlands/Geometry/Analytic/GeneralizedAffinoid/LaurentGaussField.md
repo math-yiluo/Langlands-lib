@@ -1,7 +1,5 @@
 # Completed Gauss-normed Laurent polynomials at a positive radius
 
-Author: Worker 1010.
-
 This helper module builds the field extension that the arbitrary-radius
 spectral power proof uses for a radius `t > 0` none of whose nonzero integral
 powers is the norm of an element of `K`. Throughout, `K` is a normed field

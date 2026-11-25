@@ -1,7 +1,5 @@
 # The global Whittaker coefficient of a cusp form
 
-Author: Worker 1709.
-
 This is internal infrastructure for the proof of
 `Langlands.Automorphic.CuspidalUnitaryLocalGenericityStatement`. It iterates the column
 coefficients of `Columns`. Starting from a continuous, rational-left-invariant, cuspidal

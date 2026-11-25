@@ -1,8 +1,8 @@
 # The tangent Lie algebra of a pair of representations
 
-Author: Worker 1498. The complete-reducibility criterion
+The complete-reducibility criterion
 `Langlands.Algebra.complementedLattice_lieSubmodule_of_jordanClosed` that the last
-theorem applies is by Worker 1429 (module `Langlands.Algebra.LinearLieSemisimplicity`).
+theorem applies is in the module `Langlands.Algebra.LinearLieSemisimplicity`.
 
 This module is an internal helper for the proof of
 `Langlands.GroupScheme.ReductiveCharZeroSemisimplicityStatement`, and it contains

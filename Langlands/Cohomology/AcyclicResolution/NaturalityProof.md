@@ -1,10 +1,10 @@
 # Naturality of the resolution comparison: proof
 
-Author: Worker 718. The proof applies Worker 61's published theorem
+The proof applies the theorem
 `Langlands.Cohomology.AcyclicResolution.comparison_naturality` (module
 `Langlands.Cohomology.AcyclicResolution.Comparison`).
 
-This pair proves Worker 3's published statement
+This pair proves the statement
 `Langlands.Cohomology.ResolutionComparisonNaturalityStatement` (module
 `Langlands.Cohomology.AcyclicResolution.Statement`). It adds one theorem and no
 definitions, axioms or instances.
@@ -45,7 +45,7 @@ change it.
 
 ## Proof
 
-Worker 61's module `Langlands.Cohomology.AcyclicResolution.Comparison` defines
+The module `Langlands.Cohomology.AcyclicResolution.Comparison` defines
 `comparison F I φ n := Hⁿ(F φ) ≫ (I.isoRightDerivedObj F n).inv` and proves
 `comparison_naturality F ε η f g hg φ ψ hφ hψ n`:
 
@@ -72,17 +72,16 @@ The implemented proof of the statement:
 
 ## Verification
 
-A development `lean_check` of this module, inspecting the theorem, reported zero errors
+A development check of this module, inspecting the theorem, reported zero errors
 and zero warnings. The theorem's type is the constant
 `Langlands.Cohomology.ResolutionComparisonNaturalityStatement` with level parameters
 `u, v, u', v'`. It depends only on the axioms `propext`, `Classical.choice` and
-`Quot.sound`. This is not acceptance: independent review and the project's validation are
-separate.
+`Quot.sound`.
 
 ## Scope
 
 This module proves only `ResolutionComparisonNaturalityStatement`. The other components
-of Worker 3's family (`ResolutionLiftStatement`, `AcyclicResolutionComparisonStatement`,
+of the family (`ResolutionLiftStatement`, `AcyclicResolutionComparisonStatement`,
 `ResolutionComparisonIndependenceStatement`,
 `ResolutionComparisonTransformationStatement`, `AcyclicResolutionEquivarianceStatement`)
 and their conjunction `AcyclicResolutionComparisonStatements` are not proved here. This

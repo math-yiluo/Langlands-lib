@@ -153,19 +153,19 @@ theorem rationalInertiaBlockIndecomposable :
   let Q : RationalInertiaBlock G (rationalInertiaBaseLift G π) := ⟨_, hmem⟩
   have : IsDomain (End Q.obj) := rationalNormKernelEnd_isDomain F G hG ρ hρ
   let z := Renard.decompositionIdem hP
-  let eQ : End Q.obj := (z.app Q).hom
+  let eQ : End Q.obj := End.of (z.app Q).hom
   have hidem : IsIdempotentElem eQ := by
     have h1 := congrArg (fun c : CatCenter (RationalInertiaBlock G
       (rationalInertiaBaseLift G π)) => (c.app Q).hom)
       (Renard.decompositionIdem_isIdempotentElem hP)
     change (z.app Q ≫ z.app Q).hom = (z.app Q).hom at h1
-    exact h1
+    exact congrArg End.of h1
   rcases IsIdempotentElem.iff_eq_zero_or_one.mp hidem with h0 | h1
   · refine ⟨true, fun X hX => isZero_of_catCenter_app_eq_id G hG π hπ ρ hρ
       (restrictionSummandι _ π W) (restrictionSummandι_injective _ π W) hmem z ?_ X
       (Renard.decompositionIdem_app_of_true hP hX)⟩
     intro u
-    change SmoothRep.hom eQ u = 0
+    change SmoothRep.hom eQ.asHom u = 0
     rw [h0]
     rfl
   · refine ⟨false, fun X hX => isZero_of_catCenter_app_eq_id G hG π hπ ρ hρ
@@ -173,7 +173,7 @@ theorem rationalInertiaBlockIndecomposable :
     · intro u
       change SmoothRep.hom ((1 - z).app Q).hom u = 0
       rw [CatCenter.app_sub]
-      change SmoothRep.hom ((1 : End Q.obj) - eQ) u = 0
+      change SmoothRep.hom ((1 : End Q.obj) - eQ).asHom u = 0
       rw [h1]
       change u - u = 0
       exact sub_self u

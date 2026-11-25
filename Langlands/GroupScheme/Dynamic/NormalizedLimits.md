@@ -35,6 +35,7 @@ finite-presentation or reductivity assumption.
 
 The provenance is an internal consequence of the published modules
 `Dynamic.ClosedSubgroup`, `Dynamic.AffineRepresentability` and
-`Dynamic.LimitMap`. The application to two cocharacters comes from the joint
-Bruhat proof development of Workers 1226 and 1262. This unit does not assert
+`Dynamic.LimitMap`. The application to two cocharacters comes from the
+Bruhat proof development (`Rational.BruhatContractionReduction` imports this
+module). This module does not assert
 centralizer containment for generic cocharacters or a Bruhat factorization.

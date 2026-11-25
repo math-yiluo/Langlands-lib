@@ -1,6 +1,6 @@
 # The ordinary flag variety in semisimple rank one
 
-Internal helper module of the Task 7586 proof of
+Internal helper module of the proof of
 `Langlands.GroupScheme.RankOneCentralCoverStatement`. Notation: `k` is a field, `G` a group
 scheme over `Spec k`, `T` a commutative group scheme and `i : T.toGrp ⟶ G`.
 

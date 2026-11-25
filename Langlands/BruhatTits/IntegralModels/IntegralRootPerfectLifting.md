@@ -1,6 +1,6 @@
 # Integral root lifts over a perfect residue field
 
-This internal supporting unit extends the earlier integral root lift and
+This module extends the earlier integral root lift and
 higher-multiple witness from an algebraically closed residue field to a perfect
 residue field. The integral base remains a Henselian local domain with the
 specified fraction field. The smooth neutral component model, integral split
@@ -33,6 +33,6 @@ section with generic root membership, membership in the actual quotient-root
 group, and exclusion from the higher-multiple group both generically and in
 quotient reduction. Perfection is used only for rational root-map lifting;
 the root witness itself works over every field. The construction composes the
-named Library and separately submitted internal results, without a new external
+named Library and internal results, without a new external
 source assertion. It supplies no facet-depth vanishing or final derivative
 root-datum proof.

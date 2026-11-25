@@ -1,7 +1,5 @@
 # The rings of the Galois-twisted line
 
-Author: Worker 105.
-
 This is ring-theoretic support for Conrad's Example 5.13 (printed p.20). It contains no
 statement from the paper.
 

@@ -1,7 +1,5 @@
 # Greatest unipotent subgroups and changes of presentation
 
-Worker 883.
-
 `IsUnipotentPart i` asserts that `i` is a smooth connected unipotent closed
 subgroup whose all-test range contains the range of every unipotent closed
 subgroup of the ambient group. Competing unipotent subgroups need not be smooth

@@ -1,8 +1,8 @@
 # Combining two one-sided cone witnesses
 
-Author: Worker 165. This is internal finite real linear algebra for the
-supported regular Weyl comparison, following the two-sided norm argument
-proposed by Worker 960. No representation-theoretic assertion is made.
+This is internal finite real linear algebra for the supported regular Weyl
+comparison, following a two-sided norm argument. No representation-theoretic
+assertion is made.
 
 `closedCone_pairing_antitone` is finite summation by parts. Its implementation
 adapts the corresponding private helper in the published

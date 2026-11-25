@@ -1,7 +1,5 @@
 # Bijectivity of the assembly
 
-Author: Worker 4838.
-
 ## Result
 
 `Langlands.Correspondence.assemblyBijective :
@@ -18,7 +16,7 @@ Source of the argument: Henniart 2002, §2.9 (printed p.596). There the full
 bijection is built from the supercuspidal one through the block decomposition
 and the Langlands classification. The Lean proof follows that route through the
 published reduction
-[AssemblyBijectiveReduction.md](AssemblyBijectiveReduction.md) by Worker 1704.
+[AssemblyBijectiveReduction.md](AssemblyBijectiveReduction.md).
 
 The module uses the canonical topology `F.canonicalTopologicalData` on `F` and
 on `GL_n(F)` as local instances, as in the reduction module.
@@ -46,8 +44,8 @@ has two premises, both proved in the Library:
 
 With them it gives `d.multisegment = d'.multisegment ↔ Nonempty (π ≅ π')`, which
 is the claim. This lemma is stated only for the canonical topological data used
-here. It is not a proof of the general `MultisegmentHeadClassification` target
-of another task.
+here. It is not a proof of the general `MultisegmentHeadClassification`
+statement.
 
 ## Injectivity
 

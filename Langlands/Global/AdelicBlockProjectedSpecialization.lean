@@ -82,7 +82,7 @@ theorem blockSectionOperatorAction_finite_at_zero (g : FiniteAdelicGL F n) :
     blockSectionOperatorAction F r B S 0 (FreeAlgebra.ι ℂ (Sum.inl (Sum.inl g))) =
       smoothCompactFiniteAction F B S g := by
   simp only [blockSectionOperatorAction, sectionOperatorAction, FreeAlgebra.lift_ι_apply,
-    Sum.elim_inl, map_zero, deformedSmoothFiniteAction_zero]
+    Sum.elim_inl, LinearEquiv.map_zero, deformedSmoothFiniteAction_zero]
 
 theorem blockSectionOperatorAction_finiteIntegral (t : E) (g : FiniteAdelicGL F n)
     (hg : g ∈ FiniteAdelicGL.standardIntegral F n) :
@@ -100,7 +100,7 @@ theorem blockSectionOperatorAction_enveloping_at_zero (a : ArchimedeanGL.Envelop
     blockSectionOperatorAction F r B S 0 (FreeAlgebra.ι ℂ (Sum.inr a)) =
       sectionEnvelopingAction F B S a := by
   simp only [blockSectionOperatorAction, sectionOperatorAction, FreeAlgebra.lift_ι_apply,
-    Sum.elim_inr, map_zero, deformedSmoothSectionEnvelopingAction_zero]
+    Sum.elim_inr, LinearEquiv.map_zero, deformedSmoothSectionEnvelopingAction_zero]
 
 /-- Injectivity on the projected seed space in the sufficiently regular
 convergence region, for the actual block-parabolic family. -/

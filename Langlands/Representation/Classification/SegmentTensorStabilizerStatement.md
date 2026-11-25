@@ -1,7 +1,5 @@
 # Stabilizer counts and cuspidality of actual segment tensors
 
-Author: Worker 495.
-
 `Langlands.Classification.SegmentTensorStabilizerAndCuspidality.{uF,uV} F T`
 is an internal proposition grouping the finite tensor premises used for
 individual segment constituent existence. Its outer telescope is

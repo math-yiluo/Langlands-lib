@@ -31,5 +31,5 @@ and the two directions of the image characterization.
 ## Provenance
 
 Internal: the standard translation between a universal family and a representing object
-(fine moduli), for the frame-chart subfunctor. Part of Task 7811's reduction
-(`FrameChartRepresentabilityReduction`).
+(fine moduli), for the frame-chart subfunctor. Part of the reduction of
+`FrameChartRepresentabilityStatement` (`FrameChartRepresentabilityReduction`).

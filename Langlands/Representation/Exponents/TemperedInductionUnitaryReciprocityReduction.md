@@ -20,7 +20,9 @@ The target `TemperedInductionUnitaryReciprocityStatement` has independent carrie
 universes `w` for `π` and `v` for `σ`. This module proves the target from the two
 statements. The restriction step is used at the carrier universe `max v w`, through
 universe lifts. The module proves neither step. It is a supporting development for
-the VII.2.4 proof task, and the module does not assert the target outright.
+the proof of the VII.2.4 Proposition, and the module does not assert the target
+outright; that proof is `temperedInductionUnitaryReciprocity`
+(`TemperedInductionUnitaryReciprocityProof`), which applies this reduction.
 
 ## Declarations
 

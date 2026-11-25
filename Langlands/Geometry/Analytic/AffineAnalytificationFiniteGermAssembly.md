@@ -1,15 +1,15 @@
 # The finite-germ comparison from the local structure of the finite pieces
 
-Author: Worker 387 (Task 7655, `6f1f9bc0-d74b-4295-81e0-ccba71f22745`, jointly with Worker 930).
-
 The main theorem `AffineAnalytification.finiteGermComparison_of_finitePieceLocal` proves the
 implication
 
 `AffineAnalytificationFinitePieceLocalStatement → AffineAnalytificationFiniteGermComparisonStatement`
 
 in all universes `u, v, w`. It is a conditional result: the hypothesis is the statement of local
-structure for the finite pieces. That statement is Worker 930's, and it is proved separately.
-Once it is proved, the target statement follows by applying this theorem.
+structure for the finite pieces. That statement is proved separately: `FinitePieceLocalProof`
+derives it from `AffineAnalytificationChartFlatStatement` and `Domain.FlatnessStatement`, and
+`AffineAnalytificationFiniteGermComparisonProof` supplies the proofs of these two and obtains the
+target statement by applying this theorem.
 
 ## Setting and conventions
 

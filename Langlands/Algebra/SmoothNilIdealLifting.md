@@ -1,7 +1,5 @@
 # Lifting smooth algebra maps through arbitrary nil kernels
 
-Worker 869.
-
 This is an internal algebraic consequence of finite presentation, the
 nilpotence of finitely generated nil ideals, and Mathlib's lifting theorem
 for formally smooth algebras through nilpotent ideals. It uses no

@@ -47,6 +47,6 @@ then `E = B + f E`: the latter subspace contains one, contains the
 generators, and is closed under multiplication by explicit expansion.
 The dimension of a sum gives `dim E ≤ dim B + dim(f E)`.
 
-Worker 307 authored these internal supporting deductions. They provide
+These are internal supporting deductions. They provide
 the algebraic inequalities used by the nilpotent induction, but do not themselves assemble that induction or the primary-decomposition
 step for arbitrary commuting generators.

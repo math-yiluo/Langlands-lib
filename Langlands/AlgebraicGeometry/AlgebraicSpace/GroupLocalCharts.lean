@@ -311,7 +311,7 @@ theorem exists_open_chart_of_field_point
         ULift.up (specOverMap j)) : (extProd F Λ).obj (op (specOver k L'))) ∈
           A.obj (op (specOver k L')) := by
     intro τ
-    have hz : z = (z.1, ULift.up (specOverMap j)) := Prod.ext rfl (ULift.ext _ _ hj)
+    have hz : z = (z.1, ULift.up (specOverMap j)) := Prod.ext rfl (ULift.ext hj)
     have h := hρ τ
     change (translate G (G.map (specOverMap τ.toAlgHom).op gL)).app _ z ∈ _ at h
     rw [hz] at h

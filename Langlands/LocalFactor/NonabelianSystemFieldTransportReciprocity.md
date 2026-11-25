@@ -1,6 +1,6 @@
 # Common-closure reciprocity families along an isomorphism of p-adic fields
 
-Worker 5130, Task 5230. Internal derived infrastructure; no external source beyond
+Internal derived infrastructure; no external source beyond
 the published Library results named below.
 
 For `g : F ≃ₐ[ℚ_p] E` and a reciprocity family `eE` on the common closure of `E`,

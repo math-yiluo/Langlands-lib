@@ -71,8 +71,11 @@ along `levelFactorAlgHom`. The proof composes the actual test-spectrum
 maps and applies the original product Weil coordinate law. Thus the
 homeomorphism preserves the original local counits and projections.
 
-This unit supplies the enlarged fixed-base comparison for function
-fields. Regrouping its target into the actual upper enlarged level,
-compatibility with support inclusions, and passage to full adelic points
-remain further host obligations. It does not claim the full Example 4.2
+This module supplies the enlarged fixed-base comparison for function
+fields. Regrouping its target into the actual upper enlarged level
+(`CurvePlacePrincipalSIntegerFixedLevelRegroup`), compatibility with support
+inclusions (`CurvePlaceFixedLevelWeilEvaluation`), and passage to full adelic
+points (`CurvePlaceFixedModelWeilHomeomorph`) are further steps of the proof of
+Example 4.2, which the Library completes as `adelicProjectiveWeilComparison` in
+`AdelicProjectiveWeilComparisonProof`. It does not claim the full Example 4.2
 conclusion.

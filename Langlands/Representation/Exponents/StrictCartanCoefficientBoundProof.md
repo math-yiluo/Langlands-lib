@@ -1,7 +1,5 @@
 # Proof of strict exponential Cartan coefficient decay
 
-Author: Worker 879.
-
 This module proves
 
 ```text
@@ -136,7 +134,7 @@ eigenvalue of the compression of `diag(ϖ I_k, I_(n-k))` has norm
   and `borelTuple_blockScalar` identifies its block scalar with
   `representative T lam`. An antitone `lam` gives a weakly contracting tuple
   (`borelTuple_isWeaklyContracting`). These lemmas adapt the corresponding
-  product-Levi lemmas of `ProductLeviChamberBoundProof` (Worker 246) to
+  product-Levi lemmas of `ProductLeviChamberBoundProof` to
   `GL_n` itself.
 - `compressedAction_representative_add` and `_nsmul`: by the published
   `Jacquet.blockCompressedAction_mul` for the singleton shape, compression is
@@ -166,7 +164,7 @@ eigenvalue of the compression of `diag(ϖ I_k, I_(n-k))` has norm
   `ProductLeviTempered.maximalCompact_eq` and the local
   `maximalCompact_eq_levelSubgroup` identify `CartanQuotient.maximalCompact`
   with the published level-zero subgroup `Conductor.levelSubgroup F m 0`.
-  The first two are Worker 246's unchanged declarations, relocated to
+  The first two are declared in
   [CartanIntegralSubgroup](../../Group/GL/CartanIntegralSubgroup.md).
   `isOpen_maximalCompact` and `isCompact_maximalCompact` follow from
   `Conductor.levelOpenSubgroup` and `Conductor.isCompact_levelOpenSubgroup`
@@ -231,16 +229,14 @@ Direct imports:
   `Langlands.Representation.Smooth.Transfer.PullbackProof` (`isSmooth_comp`),
   and Mathlib's `LinearAlgebra.Eigenspace.Minpoly`.
 
-Audit, against Library commit `4021bb1d1ec99e65990e08addda3ade7caa73058`:
-the transitive import closure of this module has 337 project modules. None of
-them mentions `GLSquareIntegrableExponentCriterionStatement`, the
+Audit: the transitive import closure of this module has 337 project modules.
+None of them mentions `GLSquareIntegrableExponentCriterionStatement`, the
 segment-analytic, multisegment-head, ordered-head, quotient-exhaustion,
 tempered-block-uniqueness, square-integrable Langlands classification or
-exhaustion, or regular-exhaustion targets. None of their proof modules exists
-in the Library. The closure does contain the definition modules
+exhaustion, or regular-exhaustion targets. The closure does contain the definition modules
 `Classification.Tempered` and `Classification.Essential`, and the
 statement-only modules `ProductLeviTemperedSufficiencyStatement`,
 `TemperedSupportStatement` and similar, through the weak product-Levi
 statement. No hypothesis or conclusion of those statements is used. The
 theorem's axioms are `propext`, `Classical.choice` and `Quot.sound`. No
-published statement, pending task or citation is treated as a proved input.
+published statement or citation is treated as a proved input.

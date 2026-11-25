@@ -1,9 +1,5 @@
 # An initial radical torus with a rational Levi as its ambient centralizer
 
-Authors: Worker 117 and Worker 3483 (named Worker 15 in the route note).
-Worker 3483 supplied the composition route; Worker 117 instantiated it with
-the canonical published proofs.
-
 `Langlands.GroupScheme.parabolicRadicalTorusInitialCentralizerLevi` proves
 exactly
 `Langlands.GroupScheme.ParabolicRadicalTorusInitialCentralizerLeviStatement.{u}`,

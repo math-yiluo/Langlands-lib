@@ -1,10 +1,10 @@
 # Properness of the actual intersection quotient
 
-Internal supporting construction by Worker 1438 for the centralizer–Borel
+Internal supporting construction for the centralizer–Borel
 intersection argument. This specializes `HomogeneousClosedImmersion` to the
 actual comparison constructed in `CentralizerProductQuotient`. The included
-unchanged homogeneous helper credits Worker 716 for its adapted generic-flatness
-covering argument.
+unchanged homogeneous helper uses the adapted generic-flatness covering
+argument of `OrbitMapFlatProof`.
 
 For actual group-scheme maps `j : M → G` and `b : B → G`, the supplied quotient
 maps are `q : G → Q` and `r : M → R`. Their exact fiber hypotheses hold on every

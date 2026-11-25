@@ -1,6 +1,6 @@
 # Irreducibility and unitarizability of the shifted highest derivative
 
-Author: Worker 4876. This module proves the published proposition
+This module proves the published proposition
 `Langlands.Classification.BernsteinShiftedHighestDerivativeUnitarity.{uF, uV} F T`
 (module `BernsteinUnitaryStatement`; Bernstein 1984 §7.4, Tadić 1986 Theorem
 2.5(iii)). For every `N > 0`, every unitary additive character `ψ`, every

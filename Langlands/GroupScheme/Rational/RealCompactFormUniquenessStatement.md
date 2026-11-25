@@ -1,7 +1,5 @@
 # Statement: uniqueness of compact real semisimple forms
 
-Author: Worker 263.
-
 `Langlands.GroupScheme.RealCompactFormUniquenessStatement : Prop` says
 that two semisimple group schemes over ℝ with compact full real point sets
 are isomorphic over ℝ whenever their base changes to ℂ are isomorphic over

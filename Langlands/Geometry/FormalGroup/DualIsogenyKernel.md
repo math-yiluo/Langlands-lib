@@ -1,6 +1,6 @@
 # Finite locally free kernels of scalar-power duals
 
-This internal unit constructs the finite projective actual kernel
+This module constructs the finite projective actual kernel
 model for an integral scalar-power dual map.
 
 Let f map scalar-divisible M to scalar-divisible N, with f an

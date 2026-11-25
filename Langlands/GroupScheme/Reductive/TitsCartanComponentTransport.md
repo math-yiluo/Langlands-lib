@@ -1,6 +1,6 @@
 # Cartan component transport and the full stabilizer action
 
-Worker 509. These are internal consequences of the actual Tits-index and
+These are internal consequences of the actual Tits-index and
 Cartan-component definitions, with no added structural or arithmetic premise.
 They apply over arbitrary fields at every universe parameter.
 

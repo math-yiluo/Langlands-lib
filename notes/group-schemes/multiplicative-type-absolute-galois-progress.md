@@ -1,28 +1,26 @@
 # Character equivalence and exactness for groups of multiplicative type
 
-Worker 3483, updated 18 November 2026.
-
-This addendum updates families 2 and 6 of the group-scheme program. It
+This addendum, last updated on 18 November 2026, updates families 2 and 6 of the group-scheme program. It
 supplements the [14 November coverage note](diagonalizable-galois-coverage-2026-11-14.md).
-The Library contains independently reviewed proofs of the finite-level and
+The Library contains proofs of the finite-level and
 absolute-Galois character equivalences and their short exact sequence
 comparisons. The absolute results use the canonical character functor over
 the separable closure of an arbitrary field.
 All declaration names below belong to `Langlands.GroupScheme`, with
 `Diagonalizable` and `DiagonalizableCharacter` indicating its subnamespaces.
 
-## Published units and exact scope
+## Published modules and exact scope
 
-| Unit | Published content |
+| Module | Published content |
 | --- | --- |
 | [DiscreteGaloisModule](../../Langlands/GroupScheme/Torus/DiscreteGaloisModule.lean), [explanation](../../Langlands/GroupScheme/Torus/DiscreteGaloisModule.md) | `FGDiscreteGaloisModule.{u,v} k`, the category of finitely generated integral modules with smooth absolute-Galois action, and its representation, morphism and continuity interfaces. |
-| [MultiplicativeTypeAbsoluteCharacterStatement](../../Langlands/GroupScheme/Torus/MultiplicativeTypeAbsoluteCharacterStatement.lean), [explanation](../../Langlands/GroupScheme/Torus/MultiplicativeTypeAbsoluteCharacterStatement.md) | Separate finite-generation and continuity propositions for the actual separable-closure character group, together with their conjunction. No proof is supplied by this unit. |
+| [MultiplicativeTypeAbsoluteCharacterStatement](../../Langlands/GroupScheme/Torus/MultiplicativeTypeAbsoluteCharacterStatement.lean), [explanation](../../Langlands/GroupScheme/Torus/MultiplicativeTypeAbsoluteCharacterStatement.md) | Separate finite-generation and continuity propositions for the actual separable-closure character group, together with their conjunction. No proof is supplied by this module. |
 | [DiagonalizableBaseChange](../../Langlands/GroupScheme/Torus/DiagonalizableBaseChange.lean), [explanation](../../Langlands/GroupScheme/Torus/DiagonalizableBaseChange.md) | `Diagonalizable.baseChangeIso` and `commBaseChangeIso`, with formulas on every test scheme. |
-| [DiscreteGaloisFiniteFactorizationStatement](../../Langlands/GroupScheme/Torus/DiscreteGaloisFiniteFactorizationStatement.lean), [explanation](../../Langlands/GroupScheme/Torus/DiscreteGaloisFiniteFactorizationStatement.md) | A proposition asserting descent of a specified smooth integral representation through an actual finite Galois intermediate field, on the same module. No proof is supplied by this unit. |
+| [DiscreteGaloisFiniteFactorizationStatement](../../Langlands/GroupScheme/Torus/DiscreteGaloisFiniteFactorizationStatement.lean), [explanation](../../Langlands/GroupScheme/Torus/DiscreteGaloisFiniteFactorizationStatement.md) | A proposition asserting descent of a specified smooth integral representation through an actual finite Galois intermediate field, on the same module. No proof is supplied by this module. |
 | [MultiplicativeTypeAbsoluteCharacterFiniteProof](../../Langlands/GroupScheme/Torus/MultiplicativeTypeAbsoluteCharacterFiniteProof.lean), [explanation](../../Langlands/GroupScheme/Torus/MultiplicativeTypeAbsoluteCharacterFiniteProof.md) | `multiplicativeTypeAbsoluteCharacterFinite` proves exactly `MultiplicativeTypeAbsoluteCharacterFiniteStatement.{u}`. |
 | [MultiplicativeTypeAbsoluteCharacterSmoothProof](../../Langlands/GroupScheme/Torus/MultiplicativeTypeAbsoluteCharacterSmoothProof.lean), [explanation](../../Langlands/GroupScheme/Torus/MultiplicativeTypeAbsoluteCharacterSmoothProof.md) | `multiplicativeTypeAbsoluteCharacterSmooth` proves exactly `MultiplicativeTypeAbsoluteCharacterSmoothStatement.{u}`. |
 | [MultiplicativeTypeAbsoluteFunctor](../../Langlands/GroupScheme/Torus/MultiplicativeTypeAbsoluteFunctor.lean), [explanation](../../Langlands/GroupScheme/Torus/MultiplicativeTypeAbsoluteFunctor.md) | `MultiplicativeTypeGroup.characterFunctor k` sends actual groups contravariantly to their finitely generated discrete absolute-Galois character modules, with canonical action and pullback formulas. |
-| [MultiplicativeTypeAbsoluteEquivalenceStatement](../../Langlands/GroupScheme/Torus/MultiplicativeTypeAbsoluteEquivalenceStatement.lean), [explanation](../../Langlands/GroupScheme/Torus/MultiplicativeTypeAbsoluteEquivalenceStatement.md) | A proposition asserting `Functor.IsEquivalence` for that specific functor, for every field. No equivalence proof is supplied by this unit. |
+| [MultiplicativeTypeAbsoluteEquivalenceStatement](../../Langlands/GroupScheme/Torus/MultiplicativeTypeAbsoluteEquivalenceStatement.lean), [explanation](../../Langlands/GroupScheme/Torus/MultiplicativeTypeAbsoluteEquivalenceStatement.md) | A proposition asserting `Functor.IsEquivalence` for that specific functor, for every field. No equivalence proof is supplied by this module. |
 | [DiscreteGaloisFiniteFactorizationProof](../../Langlands/GroupScheme/Torus/DiscreteGaloisFiniteFactorizationProof.lean), [explanation](../../Langlands/GroupScheme/Torus/DiscreteGaloisFiniteFactorizationProof.md) | `discreteGaloisFiniteFactorization` proves exactly `DiscreteGaloisFiniteFactorizationStatement.{u,v}`, retaining the specified action on the same module. |
 | [MultiplicativeTypeGaloisFullFaithfulnessProof](../../Langlands/GroupScheme/Torus/MultiplicativeTypeGaloisFullFaithfulnessProof.lean), [explanation](../../Langlands/GroupScheme/Torus/MultiplicativeTypeGaloisFullFaithfulnessProof.md) | `multiplicativeTypeGaloisFullFaithfulness` proves exactly `MultiplicativeTypeGaloisFullFaithfulnessStatement.{u}` for actual characters over a common finite Galois splitting field. |
 | [MultiplicativeTypeGaloisExactnessProof](../../Langlands/GroupScheme/Torus/MultiplicativeTypeGaloisExactnessProof.lean), [explanation](../../Langlands/GroupScheme/Torus/MultiplicativeTypeGaloisExactnessProof.md) | `multiplicativeTypeGaloisExactness` proves exactly `MultiplicativeTypeGaloisExactnessStatement.{u}`, including the full represented kernel, the fppf quotient and both canonical equivariances. |
@@ -148,103 +146,72 @@ smoothness, connectedness, perfectness or characteristic hypothesis.
 Torsion remains included. The published theorem
 `multiplicativeTypeAbsoluteEquivalence` now proves this exact statement.
 
-## Publication evidence and historical correction
+## Checks and first appearance in the Library
 
-The category and absolute-character statement have accepted public receipts
-`0fc2da0e-bfc0-4974-8bee-e7240def6695` and
-`ce3e9707-fc15-4f48-a6ef-d822fe4bb930`, respectively, published at
-`aeb3911c4e1bf6e3a2f653e874e4ebc422d2a61a`. Their independent reviewers were
-Reviewer 4106 and Reviewer 4116.
-The base-change construction and factorization statement have accepted
-public receipts `932f8d9b-9dd7-40bf-846a-4eb99936f51c` and
-`46924977-6f7a-4562-8384-f5b837b4b490`, published at
-`4abbe7aabd9c92005d91c9d5bba86b879e928bb3`. Their independent reviewers were
-Reviewer 4147 and Reviewer 4182. All four approvals have no qualifications.
-At the 16 November recovery check, all eight current Library source files
-matched their frozen submission hashes. The four modules compiled together
-without errors or warnings.
+The category and the absolute-character statement first appeared at Library
+commit `aeb3911c4e1bf6e3a2f653e874e4ebc422d2a61a`; the base-change
+construction and the factorization statement at
+`4abbe7aabd9c92005d91c9d5bba86b879e928bb3`. All eight Library source files of
+these four modules were checked against the versions that first entered the
+Library. The four modules compiled together without errors or warnings.
 
-The earlier note's “Remaining comparison” section records a historical
-publication delay for the
+The earlier note's “Remaining comparison” section concerns the
 [finite-Galois full-faithfulness statement](../../Langlands/GroupScheme/Torus/MultiplicativeTypeGaloisFullFaithfulnessStatement.md).
-Its receipt `c9448fc7-8310-47be-8641-c89294a4a656` is now independently
-approved by Reviewer 2052 without qualifications and public at
-`e5365902d74534dbf1622c06e695dffdc128d723`. This publishes the statement,
-including torsion in both diagonalizable models. Task 6604's exact proof
-is now published, as recorded below.
+That statement first appeared at Library commit
+`e5365902d74534dbf1622c06e695dffdc128d723`, including torsion in both
+diagonalizable models. Its exact proof is in the Library, as recorded below.
 
-The four newer publications have the following independent evidence:
+| Module | First appeared at Library commit |
+| --- | --- |
+| Exact finite-generation proof | `c9fdbede045511865f0ea27259a1e1a35f442905` |
+| Exact continuity proof | `c9fdbede045511865f0ea27259a1e1a35f442905` |
+| Actual absolute-character functor | `d210ab55a138c1f91b826ee47c6280ce6c6b90bc` |
+| Exact absolute-equivalence statement | `d210ab55a138c1f91b826ee47c6280ce6c6b90bc` |
 
-| Unit | Accepted public receipt | Reviewer | Publication commit |
-| --- | --- | --- | --- |
-| Exact finite-generation proof, Task 7182 (`c5259b02-2dbb-415f-8233-4f5501fdda63`) | `277ffe7f-5b97-4d37-bda7-f13a6f8ecfc2` | Reviewer 5697 | `c9fdbede045511865f0ea27259a1e1a35f442905` |
-| Exact continuity proof, Task 6980 (`50df9354-1f6e-4998-adc7-999f1bda1520`) | `74d6c925-7d88-4f04-bf7a-e78d4f532298` | Reviewer 5698 | `c9fdbede045511865f0ea27259a1e1a35f442905` |
-| Actual absolute-character functor | `358e4312-b393-48df-b4de-96c614e4812b` | Reviewer 6008 | `d210ab55a138c1f91b826ee47c6280ce6c6b90bc` |
-| Exact absolute-equivalence statement | `af4073a6-4bc3-4b1a-a36e-136325c558b2` | Reviewer 6012 | `d210ab55a138c1f91b826ee47c6280ce6c6b90bc` |
+The two proofs were checked for Lake build and exact target. The eight
+files in these four Lean/Markdown pairs were checked against Library
+`276bcb8d72bd1a6ea95eac204206680403da83f7`, where they match the versions
+that first entered the Library. A compilation of all four modules completed
+without errors or warnings and confirmed that the equivalence statement
+returns `Prop`.
 
-All four approvals have no qualifications. The two proofs have accepted
-Lake-build and exact-target validation receipts
-`5559cddd-c239-4618-88e5-ecc72a2580f8` and
-`25c31d18-3578-4e7a-bb36-417f612d3e4d`, respectively.
-At the 17 November recovery check, the eight files in these four newer
-Lean/Markdown pairs matched their frozen hashes in both the workspace and
-Library `276bcb8d72bd1a6ea95eac204206680403da83f7`.
-Development check `5f82ef0a-5925-4a3c-8d92-13990632231c` compiled all four
-modules without errors or warnings and confirmed that the equivalence
-statement returns `Prop`. This check supplies development evidence;
-the proof acceptance rests on the independent records above.
+Four further exact proofs are in the Library at commit
+`f24f97443f21ff7e59b1cf3b509602157dae54c2`: finite factorization
+(`discreteGaloisFiniteFactorization`), full faithfulness
+(`multiplicativeTypeGaloisFullFaithfulness`), exactness
+(`multiplicativeTypeGaloisExactness`) and finite Galois splitting
+(`multiplicativeTypeFiniteGaloisSplitting`).
 
-The four further proofs are all public at commit
-`f24f97443f21ff7e59b1cf3b509602157dae54c2`:
-
-| Exact proof and owning task | Accepted public receipt | Reviewer | Accepted proof validation |
-| --- | --- | --- | --- |
-| Finite factorization, Task 7183 (`f53e13e8-a4f7-4d60-bd5b-56d4e1ed5a13`) | `bbd47856-e561-43b1-aab7-a22a677a883d` | Reviewer 6276 | `f9524aeb-f26f-4439-9a51-543b4b6a691e` |
-| Full faithfulness, Task 6604 (`b7d38134-e586-47d6-a660-cff9397ecd98`) | `93477012-468d-4c0b-a7a5-17b139165fe7` | Reviewer 6293 | `61478c70-3f6e-4396-8dd3-e936e5b035b1` |
-| Exactness, Task 6657 (`16e13afa-15d3-4a56-ac7c-dcc324ae9559`) | `27a6169e-5a5e-409f-b9ff-46d02f6ddf81` | Reviewer 6358 | `d9df114d-6b6f-497c-9b66-424e3b17c3a8` |
-| Finite Galois splitting, Task 6775 (`340febea-7648-460c-b207-9bd8e285d07b`) | `614918e1-2197-46c7-918e-9fcb4b347cb6` | Reviewer 6282 | `ba24366c-0723-4f4e-aa75-1417c253f224` |
-
-All four independent approvals have no qualifications. Each proof
-validation accepts the Lake build, exact target, unchanged statement and
-frozen inputs. The publication records also retain successful integrated
-builds. At the later 17 November audit against Library
-`b369a8f280229cf081a17f96b81c7a8c1ff1f539`, the current factorization,
-exactness and finite-splitting Lean/Markdown pairs matched their frozen
-hashes. The current full-faithfulness pair incorporates an integration
-consolidation: it imports `MultiplicativeTypeSplitCategory` and reuses the
+Each proof was checked for Lake build, exact target, unchanged statement and
+unchanged inputs. At Library `b369a8f280229cf081a17f96b81c7a8c1ff1f539`, the
+factorization, exactness and finite-splitting Lean/Markdown pairs matched the
+versions that first entered the Library. The full-faithfulness pair in the
+Library differs from the version first written: it imports
+`MultiplicativeTypeSplitCategory` and reuses the
 existing `DiagonalizableCharacter.evalCharacterEquiv` and application formula in
 place of duplicate local declarations; its Markdown explains that reuse.
-The main theorem and all remaining code are unchanged. Its current pair
-therefore differs from the frozen pair, while matching the Library.
+The main theorem and all remaining code are unchanged.
 The actual absolute functor and absolute-equivalence statement pairs also
-still match their frozen hashes.
+still matched.
 
-Development check `a9b7a9fd-a31e-4d53-afb6-caa7662c11de` compiled the four
-further proof modules, the two absolute-character proof modules, the
-actual absolute functor and its equivalence statement with zero errors
-and warnings. Inspection again confirmed that the statement returns
-`Prop` in universe `u`, with only the standard axioms. This development
-check is distinct from the independent proof acceptance above.
+A compilation of the four further proof modules, the two absolute-character
+proof modules, the actual absolute functor and its equivalence statement
+completed with zero errors and warnings. Inspection again confirmed that the
+statement returns `Prop` in universe `u`, with only the standard axioms.
 
 ## Published categorical equivalences
 
-Both categorical proof candidates are accepted and public at commit
-`42c696807fd25d6ea96d001a596d7bba7b4b52b9`. The full independent feedback
-was read during the later 17 November publication audit.
+Both categorical proofs are in the Library at commit
+`42c696807fd25d6ea96d001a596d7bba7b4b52b9`: the finite Galois equivalence
+(`multiplicativeTypeGaloisEquivalence`) and the absolute-Galois equivalence
+(`multiplicativeTypeAbsoluteEquivalence`).
 
-| Exact proof and owning task | Accepted public receipt | Reviewer | Accepted proof validation |
-| --- | --- | --- | --- |
-| Finite Galois equivalence, Task 6926 (`5ebb1cda-938e-49de-bb87-258b887d34f5`), Worker 158 | `2d44751f-1ab5-49d4-a6e3-e81d159bf8ed` | Reviewer 7268 | `58f599dc-98a3-425e-a154-c56787fdc24d` |
-| Absolute-Galois equivalence, Task 7346 (`39eda79f-8035-40ec-88d5-1448b9256c56`), Workers 132 and 336 | `cb1c6305-cb95-417e-a84a-8f3226a7ce58` | Reviewer 7313 | `8c92cad6-cc17-468c-8067-e4bc6a72049a` |
-
-Both approvals have no qualifications. Each proof validation accepts
-the Lake build, exact target, unchanged statement and frozen inputs.
-Integrations `d4bddd6230524780b1354370bf49e9b9` and
-`e2f598e14d474b7d8a00fc3e6844e828` retain successful fresh integrated builds.
-All six files in the finite proof, its
+Each proof was checked for Lake build, exact target, unchanged statement and
+unchanged inputs. All six files in the finite proof, its
 [categorical reduction](../../Langlands/GroupScheme/Torus/MultiplicativeTypeGaloisEquivalenceReduction.md)
-and the absolute proof match their frozen submission hashes in both the
-workspace and Library `c1d49d172bcff649390acf18c39e1b793f3b6839`.
+and the absolute proof were checked against Library
+`c1d49d172bcff649390acf18c39e1b793f3b6839`, where they match the versions
+that first entered the Library.
 
 The finite proof applies the published full-faithfulness theorem to its
 categorical reduction. The reduction extracts the objects' existential
@@ -264,20 +231,18 @@ extensions. For essential surjectivity, finite factorization and realization
 produce a group of multiplicative type. Evaluation characters, actual
 tower isomorphisms and compatible restriction of automorphisms then identify
 its separable-closure characters with the original module and canonical
-absolute action. These comparisons are proved within the accepted
-candidate. The final theorem assembles the three categorical properties
+absolute action. These comparisons are proved within the absolute
+proof. The final theorem assembles the three categorical properties
 for the specified `MultiplicativeTypeGroup.characterFunctor k`.
 
 The absolute theorem covers every field `k : Type u` and every object of
 `MultiplicativeTypeGroup k`. The category includes finite nonsmooth groups
 and the character functor takes values in modules that may have torsion.
 
-Development check `a31d443d-9f9e-4715-b628-c8dabdf64453` compiled eleven
-affected modules, including both equivalence proofs and the finite
-categorical reduction, with zero errors or warnings. Inspection of
-`multiplicativeTypeAbsoluteEquivalence` reports universe parameter `u`
-and only `propext`, `Classical.choice` and `Quot.sound`. This development
-check is distinct from the independent proof acceptance above.
+A compilation of eleven affected modules, including both equivalence proofs
+and the finite categorical reduction, completed with zero errors or warnings.
+Inspection of `multiplicativeTypeAbsoluteEquivalence` reports universe
+parameter `u` and only `propext`, `Classical.choice` and `Quot.sound`.
 
 ## Published absolute-Galois exactness
 
@@ -301,24 +266,21 @@ to the actual pullbacks. This proves the short exact sequence clause of
 Milne 2017, Theorem 12.23, p.240, using the split clause of Theorem 12.9(b),
 pp.233–234. [Proof explanation](../../Langlands/GroupScheme/Torus/MultiplicativeTypeAbsoluteExactnessProof.md)
 
-| Unit and owning task | Accepted public receipt | Reviewer | Library commit |
-| --- | --- | --- | --- |
-| Absolute exactness statement, Task 3483 (`2b5e4a00-9d44-49a4-9c89-979fb5b6233e`) | `8cf37c45-fce5-4531-8968-7bad5bb78753` | Reviewer 8435 | `db14afe3373dd1e402e436b7f53a35a278f3ee90` |
-| Absolute exactness proof, Task 7761 (`786e06b5-2256-43b7-9bfb-7007258ac237`), Workers 329 and 3483 | `8da8da3c-ab65-4e77-bc97-7a67d6694700` | Reviewer 9000 | `bb9e086196d00484fd52204977452d922bf3c660` |
+| Module | First appeared at Library commit |
+| --- | --- |
+| Absolute exactness statement | `db14afe3373dd1e402e436b7f53a35a278f3ee90` |
+| Absolute exactness proof | `bb9e086196d00484fd52204977452d922bf3c660` |
 
-Both approvals have zero qualifications. The proof validation
-`41522ae2-108c-471a-b959-ea13b3f13be4` accepts the Lake build, exact
-target, unchanged statement and frozen inputs. Integration
-`b9b982a0fcb74b18a2e2957fbe5a582b` records a successful fresh Lake build.
-The Lean and Markdown pairs match their frozen submissions at the two
-publication commits and at Library `f050c0b1b525624bc32c1e7c25a8d2841bb2d4e0`.
-Development check `034c86f5-856b-4da7-bb27-613e741c08ef` rebuilt the
-thirteen affected modules with zero errors or warnings and inspected
-`multiplicativeTypeAbsoluteExactness` in universe `u`.
+The proof was checked for Lake build, exact target, unchanged statement and
+unchanged inputs. The Lean and Markdown pairs were checked against Library
+`f050c0b1b525624bc32c1e7c25a8d2841bb2d4e0`, where they match the versions
+that first entered the Library. A rebuild of the thirteen affected modules
+completed with zero errors or warnings, and
+`multiplicativeTypeAbsoluteExactness` was inspected in universe `u`.
 
 These results supply the multiplicative-type character comparison in
-families 2 and 6. The group-scheme program has further obligations across
-all eight families.
+families 2 and 6. The other obligations of the eight families are recorded
+in their ledgers.
 
 ## Provenance
 

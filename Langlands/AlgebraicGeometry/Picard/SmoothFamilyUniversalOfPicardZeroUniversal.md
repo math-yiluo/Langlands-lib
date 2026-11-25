@@ -1,10 +1,7 @@
 # Smooth-family universal pairs from universal Picard-zero families
 
-Author: Worker 3233.
-
 Module `Langlands.AlgebraicGeometry.Picard.SmoothFamilyUniversalOfPicardZeroUniversal`.
-Written for the finite-type existence task `90a7704e-771a-4107-a91a-c67873dd035e`
-(Task 3233), whose exact target is
+Its target is the finite-type existence statement
 `Langlands.AbelianScheme.FiniteTypeSmoothFamilyAbelianRepresentabilityStatement.{u}`.
 This module is part of that target's final assembly. It proves two conditional
 theorems over an arbitrary base scheme and adds no axioms. It does not prove the
@@ -83,20 +80,20 @@ actual rigidified family on `B.X`. Its universal property
 
 ## Role in the finite-type assembly
 
-The exact target of task `90a7704e-771a-4107-a91a-c67873dd035e` quantifies over
+The exact target `FiniteTypeSmoothFamilyAbelianRepresentabilityStatement` quantifies over
 commutative rings `R` of finite type over `ℤ` and abelian schemes over
 `Spec R`. By the second theorem, that target follows from the published
 comparison proof `smoothFamilyPicardZeroComparison` together with, for each
 such `A`, a proof `hA` of `HasDualScheme A` and a proof of
 `DualSchemeGeometry A hA`. Those two inputs over finite-type bases are the
-remaining existence and geometry obligations of the task. They are not proved
+remaining existence and geometry obligations of that target. They are not proved
 here. The companion module
 `Langlands.AlgebraicGeometry.Picard.FiniteTypeSmoothFamilyAbelianRepresentabilityAssembly`
 derives them from the premises `FiniteTypeAbelianPicardSheafSchemeStatement`
 and `FiniteTypeDualSchemeGeometryStatement`. The relative statements
 `RelativeDualSchemeExistenceStatement` and
-`RelativeDualSchemeGeometryStatement` are not used, because their current
-proof routes depend on the general-base representer, which consumes this task.
+`RelativeDualSchemeGeometryStatement` are not used, because their proof
+routes depend on the general-base representer, which takes this target as an input.
 
 The Library's smooth-family condition is an explicit geometric-fibre witness
 condition; its relation to translation invariance is exactly the premise

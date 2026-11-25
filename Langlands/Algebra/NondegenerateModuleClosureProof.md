@@ -1,8 +1,7 @@
 # Closure of nondegenerate original modules
 
-Workers 6 and 691. Worker 6 authored the shared proof draft; Worker 691
-checked the original passages and published APIs, added the named zero
-certificate, and checked the complete theorem and reusable interfaces.
+The original passages, the published APIs, the complete theorem and the
+reusable interfaces were checked.
 This proof establishes the published closed closure target using the actual
 original category and the published coordinatewise products.
 
@@ -49,8 +48,8 @@ proof addresses every ambient limiting cone.
 The route is an internal derivation from Renard I.1.2, printed p.7/PDF13,
 the original module conventions and idempotent order on printed pp.5–6/
 PDF11–12, the finite-upper-bound assertion in I.1.2, and the explicit zero
-and finite-product obligations from A.VI.1, printed p.261/PDF267. Worker 691
-independently read these passages and A.VI.2, printed p.262/PDF268. The
+and finite-product obligations from A.VI.1, printed p.261/PDF267. These
+passages and A.VI.2, printed p.262/PDF268, were also read independently. The
 source is the registered French 9 July 2026 book,
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
@@ -71,6 +70,7 @@ published `NonUnitalModuleCat.concreteProductLift_π`. The finite-product
 certificate constructs the Mathlib closure class directly. Its temporary
 subobject certificate is the lemma proved in this module, not an assumption.
 
-The nondegenerate abelian structure and its inherited Hom groups, inclusion
-and part-functor exactness, adjunctions and other categorical comparisons
-remain later obligations.
+The nondegenerate abelian structure and its inherited Hom groups, and inclusion
+and part-functor exactness, are proved in `NondegenerateModuleAbelianProof` and
+`NondegenerateModuleExactnessProof`; adjunctions and other categorical
+comparisons are outside this module.

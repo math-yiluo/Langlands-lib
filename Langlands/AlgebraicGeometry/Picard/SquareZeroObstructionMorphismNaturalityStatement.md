@@ -1,13 +1,12 @@
 # Naturality of square-zero Picard obstructions under morphisms of thickenings
 
-Authors: Worker 225 (original statement and exposition), Worker 2057 (adoption for Task 5704 and source documentation).
-
 `Langlands.AlgebraicGeometry.Picard.SquareZeroObstructionMorphismNaturalityStatement.{u}` is a
 `Prop`-valued definition. It states that the Library's square-zero Picard obstruction
 `SquareZeroPicardObstruction.obstructionMap` is natural under an arbitrary commutative square
 of thickenings, not only under the nested closed immersions treated by
 `SquareZeroPicardObstructionNaturality` and `SquareZeroAmbientObstructionNaturality`. The
-module states a target for a later proof and adds no axiom.
+module states a target, proved as `squareZeroObstructionMorphismNaturality` in
+`SquareZeroObstructionMorphismNaturalityProof`, and adds no axiom.
 
 ## The proposition
 
@@ -54,8 +53,7 @@ where
   f^* I ⟶ I'` is the adjoint of `k`, and `H²(c)` its image under
   `DerivedSections.relativeCohomology X'.hom 2`.
 
-The approved Lean service checked the declaration in environment
-`bb168ec3-1031-46d9-816b-5c2ed7bbe1a6` with zero errors and warnings. It reported
+The Lean service checked the declaration with zero errors and warnings. It reported
 `statement_returns_prop: true`, the sole universe parameter `u`, and only the axioms
 `propext`, `Classical.choice` and `Quot.sound`.
 
@@ -66,7 +64,8 @@ In the proof of `ArtinianPrimitiveLineBundleLiftingStatement`, take `R = B'`, `X
 the projections `p₁`, `p₂`, with `g` the corresponding maps `m`, `p1`, `p2` on `A₀ ×_B A₀`.
 The premise `m^*L ≅ p1^*L ⊗ p2^*L` and additivity of `o_{i'}` then give
 `H²(c_μ) μ^*(ρ o(L)) = H²(c_{p₁}) p₁^*(ρ o(L)) + H²(c_{p₂}) p₂^*(ρ o(L))`. Injectivity of the
-resulting combination on `H²(A, I)` remains a separate obligation.
+resulting combination on `H²(A, I)` is the separate statement
+`ArtinianH2PrimitiveInjectivityStatement` (proved in `ArtinianH2PrimitiveInjectivityProof`).
 
 ## Source and provenance
 
@@ -79,12 +78,10 @@ choices made here to fit the Library API. The registered original is
 `provided-ec58cb66687d0d54d9e39b6ec21281b651fe3a6d039f9b5d099c79791671233f`,
 file `Mumford, Fogarty, Kirwan - Geometric Invariant Theory, 3rd edition (1994), Chapter 6.pdf`,
 SHA-256 `3eed7c31fd64936e20a41d85c85ebaeebc3f2631b01f561417b85bdf33b1af16`.
-Worker 2057 read printed pp.117–118 (PDF pp.130–131) and visually checked p.118.
-No source-specific errata note was found in the project or current Library.
+Printed pp.117–118 (PDF pp.130–131) were read and p.118 was checked visually.
+No source-specific errata note was found in the project or the Library.
  It is an internal prerequisite for the proof of
-`ArtinianPrimitiveLineBundleLiftingStatement`, adopted for Task 5704
-(`60cd926c-5964-46c0-ad0e-111a8faf6631`) from Worker 225's shared draft of Task 5640
-(`d1735ac9-6af5-4460-8c3a-b09a43c01ffa`).
+`ArtinianPrimitiveLineBundleLiftingStatement`.
 
 ## Expected proof route (not part of the statement)
 

@@ -1,7 +1,5 @@
 # Geometric-fibre reduction for relative Levi self-normalization
 
-Worker 644.
-
 This internal construction and its transport lemmas retain the original relative
 Levi multiplication decomposition on the canonical geometric fibres. For a
 reductive group scheme, a relative parabolic and a relative Levi subgroup, the

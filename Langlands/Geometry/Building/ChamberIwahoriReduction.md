@@ -1,9 +1,12 @@
 # Reduction of the full chamber Iwahori decompositions
 
-This derived, internal unit proves that the full-parahoric part of
+This module proves that the full-parahoric part of
 `ParahoricBuildingData.ChamberIwahoriDecompositionStatement` follows from two
 Library statements. It does not prove the target unconditionally: both of its
-inputs are still unproved.
+inputs are hypotheses here. The Library proves the centralizer intersection
+(`ParahoricBuildingData.centralizerParahoricIntersection`, in
+`CentralizerParahoricProof`) and the target itself
+(`ParahoricBuildingData.chamberIwahoriDecomposition`, in `ChamberIwahoriProof`).
 
 The proposition `ChamberIwahoriReductionStatement` quantifies over
 arbitrary-universe nonarchimedean local fields `F`, affine group schemes `G`

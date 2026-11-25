@@ -1,6 +1,6 @@
 # The hyperbolic unitary group of a quadratic field extension
 
-Worker 399 constructs the group scheme using the Library's existing unitary
+This module constructs the group scheme using the Library's existing unitary
 model. Let F and E be fields in an arbitrary universe, with E quadratic over F,
 and let c be an F-algebra automorphism. The intended unitary specialization has
 c different from the identity; the constructions themselves also allow the
@@ -45,5 +45,5 @@ Its proof composes the existing `unitaryPointsEquiv_naturality` with that tensor
 calculation. Thus no affineness or reducedness assumption is added to the test
 scheme.
 
-This construction does not yet assert the dynamic subgroup identifications,
+This construction does not assert the dynamic subgroup identifications,
 splitting, rank or reductivity.

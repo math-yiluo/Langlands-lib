@@ -4,7 +4,7 @@ Lean module: `Langlands.AlgebraicGeometry.LangWeil.CurvePlaneRadicialPoints`, na
 `Langlands.AlgebraicGeometry.LangWeil.CurvePlane`.
 
 This module is a helper for the proof of
-`Langlands.AlgebraicGeometry.LangWeil.FamilyCurvePlaneComparisonStatement` (Task 5581).
+`Langlands.AlgebraicGeometry.LangWeil.FamilyCurvePlaneComparisonStatement`.
 Provenance: internal. It is the standard fact that a universal homeomorphism (here, an
 injective map that is purely inseparable after a localization) induces a bijection on
 rational points over a perfect field. No cited statement of the literature is formalized.

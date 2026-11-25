@@ -1,7 +1,5 @@
 # Statement: maximal tori of a normal subgroup variety
 
-Worker 75.
-
 `Langlands.GroupScheme.NormalSubgroupMaximalTorusStatement.{u} : Prop` is a statement-only,
 `Prop`-valued definition. This module does not prove it, and it adds no other definitions,
 theorems or axioms. It imports [`Torus.Maximal`](Maximal.md), for `IsMaximalTorus` and,

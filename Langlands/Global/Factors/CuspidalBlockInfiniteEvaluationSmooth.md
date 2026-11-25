@@ -6,4 +6,4 @@
 
 For a fixed local input, the evaluations lie in the image of its finite-dimensional compact orbit span under evaluation at one. The proof extends the coordinate functionals of a finite basis to the full local coefficient space and obtains a smooth extension for each coordinate. Multilinearity gives a finite sum of products of these scalar extensions for a pure infinite tensor. Linearity handles a general tensor.
 
-This is an internal verification of smooth compact slices for Task 6553. Getz and Hahn (2024), §10.1, pp. 270–271 (PDF 282–283), give the scalar compact picture. The Lean proof uses the Library's local block evaluation formulas and their finite-dimensional orbit spans.
+This is an internal verification of smooth compact slices for `CuspidalIsobaricAutomorphyStatement`. Getz and Hahn (2024), §10.1, pp. 270–271 (PDF 282–283), give the scalar compact picture. The Lean proof uses the Library's local block evaluation formulas and their finite-dimensional orbit spans.

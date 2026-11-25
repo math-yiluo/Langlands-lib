@@ -1,6 +1,6 @@
 # The Bernstein component of a non-self-associate supercuspidal of a maximal Levi
 
-Author: Worker 6. Module `Langlands.Representation.Exponents.MaximalLeviBlockStatements`,
+Module `Langlands.Representation.Exponents.MaximalLeviBlockStatements`,
 namespace `Langlands.Aubert.General.RepresentedParabolic`. It contains one **statement**,
 the closed `Prop`-valued definition `MaximalLeviBlockStatements` (universe parameters
 `u, v`), a conjunction of three parts. It proves nothing.
@@ -17,8 +17,8 @@ David Renard, *Représentations des groupes réductifs p-adiques*, French versio
 
 Literature ID `renard-2026-representations-groupes-reductifs-padiques`, file
 `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`,
-SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. Worker 6 read
-PDF pages 187–188 and 230–232.
+SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. PDF pages
+187–188 and 230–232 were read.
 
 The Corollary reads: "Soit `P = MN`, avec `M` sous-groupe de Levi maximal de `G`. Posons
 `W(M, *) = {1, w}` et soit `D` une classe d'inertie de représentations supercuspidales de
@@ -105,7 +105,7 @@ The three parts:
    `LeviSupercuspidalInductionAssociationStatement` (VI.5.4, Theorem), recorded in the
    [supercuspidal finite-length progress note](../../../notes/renard/supercuspidal-finite-length-progress.md);
    this module does not prove it. The same encoding by induction occurrence is used for
-   actual standard families in Worker 1153's
+   actual standard families in
    [BernsteinBlock](../CuspidalSupport/BernsteinBlock.md).
 3. **Part (i).** The source's "dans les représentations irréductibles de `M(G)_Ω`" has two
    halves. Membership in `M(G)_Ω` holds by the definition of `InBlockG`, since an
@@ -136,11 +136,11 @@ The three parts:
 
 At Library commit `7e84f6ad`:
 
-- the VII.1.3 Theorem is the published `MaximalLeviSupercuspidalReducibilityStatement`
-  (Worker 6), with proof task `004e00e1-5995-4dc1-884e-a5f512150d0c`; it is not proved.
+- the VII.1.3 Theorem is the published `MaximalLeviSupercuspidalReducibilityStatement`;
+  it is not proved.
   Part (i) follows from it as in the source: if `i_P^G σ` were reducible for some `σ ∈ D`,
   the Theorem would give `w · M = M` and `σ^w ≃ σψ`, hence `w · D = D`;
-- Worker 1153's `BernsteinBlock` defines full Bernstein blocks for actual standard families
+- `BernsteinBlock` defines full Bernstein blocks for actual standard families
   by the same induction-occurrence relation, over all cuspidal data at once. No comparison
   between that block and `InBlockG` is stated or proved.
 

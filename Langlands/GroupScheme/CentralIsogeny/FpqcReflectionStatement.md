@@ -1,7 +1,5 @@
 # Statement: fpqc reflection of central isogenies
 
-Author: Worker 1467.
-
 `Langlands.GroupScheme.CentralIsogenyFpqcReflectionStatement.{u}` states
 reflection of the existing central-isogeny predicate along an fpqc morphism
 of bases. It defines one proposition and supplies no proof.
@@ -91,9 +89,10 @@ cannot be applied to the centre without an additional justification.
 
 For the geometric conditions, Mathlib's `Morphisms.FlatDescent` implements
 surjectivity and isomorphism descent, and `Morphisms.LocalFlatDescent`
-implements local finite presentation descent. A proof successor must also
+implements local finite presentation descent. A proof must also
 establish or locate the necessary finite and flat descent results in the
-pinned Lean environment. Mathematical fpqc descent of those properties
+pinned Lean environment (the module `CentralIsogeny.FpqcReflection` proves
+this proposition as `centralIsogenyFpqcReflection`). Mathematical fpqc descent of those properties
 does not by itself supply Lean instances. Any substantial missing geometric
 descent lemma remains a proof obligation, with no additional premise added
 to this proposition.

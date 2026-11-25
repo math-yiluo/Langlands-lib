@@ -129,12 +129,12 @@ therefore gives equality of the two localized arrows.
 
 ## Scope
 
-This unit constructs complete strong restriction along nested selections and
+This module constructs complete strong restriction along nested selections and
 proves exact equality of source-subatlas fraction representatives. It does
-not yet assemble their Hom quotient, prove its colimit universal property,
-or prove injectivity of restriction transitions. It makes no claim that
+not assemble their Hom quotient or prove its colimit universal property
+(`SaturatedSourceHomColimit` does both), or prove injectivity of restriction
+transitions. It makes no claim that
 continuous ambient maps determine bounded pullbacks. Identification with a
 separately defined analytic category, actual analytic etale, quasi-etale and
 equivariant sites, compact/distinguished domains and Harris tower
-specializations remain obligations of the surrounding task. Every
-predecessor retains its independent acceptance and publication gate.
+specializations lie outside this module.

@@ -1,7 +1,5 @@
 # Bounded-below derived global sections of the full Harris coefficient system
 
-Author: Worker 13.
-
 This internal construction applies the actual bounded-below derived section
 functor of
 [`EtaleDerivedSectionsPlus`](../../Geometry/EtaleDerivedSectionsPlus.md)

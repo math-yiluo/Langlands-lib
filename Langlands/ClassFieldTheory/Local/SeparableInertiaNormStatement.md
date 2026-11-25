@@ -1,8 +1,7 @@
 # Norm surjectivity on units over the separable inertia fixed field
 
-Authors: Worker 1512 and Worker 1237. Worker 1512 wrote the shared draft
-of the Lean declaration and this file. Worker 1237 checked it against the
-imported interfaces and the original sources and revised this file.
+This file was checked against the
+imported interfaces and the original sources.
 
 `Langlands.ClassFieldTheory.Local.SeparableInertiaUnitNormSurjectivity.{u}`
 is a proposition definition, not a proof. It states the form of KP
@@ -147,4 +146,5 @@ with `E` finite separable over `K`. This statement records only the unit
 form that KP Remark 2.5.11 and Lemma 2.5.12 need. It does not claim the
 multiplicative form.
 
-The statement supplies no proof. A proof is a separate obligation.
+The statement supplies no proof. The proof is
+`separableInertiaUnitNormSurjectivity` in `SeparableInertiaNormProof`.

@@ -1,8 +1,6 @@
 # Renard A.V.1: the Hom bifunctors
 
-Authors: Worker 709 and Worker 1151. Worker 709 supplied the construction;
-Worker 1151 verified the source correspondence and complete declarations and
-prepared the focused submission.
+The source correspondence and the complete declarations were verified.
 
 This construction implements the two actual Hom bifunctors and the first
 definition of adjoint functors in David Renard, *Représentations des groupes

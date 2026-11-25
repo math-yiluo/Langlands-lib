@@ -1,7 +1,5 @@
 # Orbital integration onto test functions on an upper Bruhat cell: proof
 
-Author: Worker 1011.
-
 This module proves `Langlands.Whittaker.bruhatOrbitalIntegration.{uF}`, whose type is
 exactly the published proposition
 `Langlands.Whittaker.BruhatOrbitalIntegrationStatement.{uF}` of
@@ -176,9 +174,8 @@ gives the statement for every `μ`.
 The proposition is Shalika's Lemma 1.10 together with formula (1.11), J. A. Shalika,
 *The multiplicity one theorem for GL_n*, Ann. of Math. (2) **100** (1974), 171–193,
 printed p.176, registered as `shalika-1974-multiplicity-one`. The statement's Markdown
-records the source comparison. The proof route follows the outline in the task context
-(integration along `P` in the published coordinates, then a compact-open normalized
-tensor for surjectivity). The section and plus-coordinate argument, the tube-lemma proof
+records the source comparison. The proof route is integration along `P` in the
+published coordinates, then a compact-open normalized tensor for surjectivity. The
+section and plus-coordinate argument, the tube-lemma proof
 of local constancy and the generic formulation are internal to this module. They are
-not quotations of the source. This module was written by Worker 1011 alone and reuses
-no draft by another author.
+not quotations of the source.

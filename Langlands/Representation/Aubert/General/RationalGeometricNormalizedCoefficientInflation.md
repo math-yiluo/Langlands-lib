@@ -1,6 +1,6 @@
 # Inflation of the original normalized coefficient from the common Levi
 
-This internal contribution extends the actual coefficient-character
+This module extends the actual coefficient-character
 factorization from the literal common Levi to the full target intersection.
 Its entry definition is `geometricNormalizedCompactInflatedCharacter`, and
 `geometricNormalizedCompactCharacter_eq_inflated` identifies it with the
@@ -99,8 +99,10 @@ universe constraint.
 The provenance is internal: the existing literal-intersection compact-limit,
 open-kernel, semidirect projection and common-Levi character results imply
 these claims by subgroup restriction and multiplicative character algebra.
-No new translation from literature is claimed. This contribution does not
+No new translation from literature is claimed. This module does not
 prove whole-common-Levi balance, remove either epsilon, identify the
 normalized representation endpoints, compare compact and full induction,
 construct the ordered filtration or prove
-`RationalGeometricK0ExpansionStatement`. Those host-task obligations remain.
+`RationalGeometricK0ExpansionStatement`. Those are obligations of the proof
+of that statement, `rationalGeometricK0Expansion` in
+`RationalGeometricK0Expansion`.

@@ -1,7 +1,5 @@
 # The first-block slice fiber kernel
 
-Author: Worker 27.
-
 This internal module constructs the actual measurable fiber kernel for the
 published first-block quotient data. Given an s-finite measure `νA` on
 `N_a \ GL_a` with the published `NormOneRightInvariant` property, its

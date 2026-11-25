@@ -60,4 +60,4 @@ restriction lemma and public `parabolicLeviPointHomeomorph_apply_coe` the height
 
 The moderate-growth statement is a hypothesis; the Library proves it only conditionally on
 further structural statements. No convergence of intertwining integrals, no cone estimate and
-no part of the host theorem is proved here.
+no part of `ConditionalParabolicIntertwiningStatement` is proved here.

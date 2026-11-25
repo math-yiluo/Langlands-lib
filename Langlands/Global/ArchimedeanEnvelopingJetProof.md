@@ -5,8 +5,8 @@ The theorem `envelopingZeroJet` proves the published statement
 `Langlands.Global.ArchimedeanEnvelopingJetStatement`, for every number
 field `K : Type u` and every `n : ℕ`. The statement pair and its
 imports remain unchanged. This module imports the published statement
-and Mathlib's `Mathlib.Analysis.Calculus.ContDiff.Bounds`. Worker 94
-developed the argument as an internal local calculus proof.
+and Mathlib's `Mathlib.Analysis.Calculus.ContDiff.Bounds`. The argument
+is an internal local calculus proof.
 
 Write `x` for the underlying mixed-coordinate matrix of `x₀`, which
 lies in the open range of `Units.val`. The implementation proves,

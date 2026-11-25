@@ -66,6 +66,3 @@ cohomological triviality and hence ordinary degree-two vanishing for
 `Gal(L/K)`. This explains the derived formulation; it is not a Lean proof
 in this module. Neither a Brauer-group comparison nor a hypothesis about
 all finite extensions of `K` is required by this formulation.
-
-Worker 84 authored the Lean/Markdown pair following the statement and source
-localization specified by Worker 37.

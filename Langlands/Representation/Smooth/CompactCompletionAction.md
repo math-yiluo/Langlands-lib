@@ -1,6 +1,6 @@
 # The group action on the compact-open completion
 
-Author: Worker 1775. Namespaces: `Langlands.CompactCompletion` and
+Namespaces: `Langlands.CompactCompletion` and
 `Langlands.HarishChandraSchwartz.CompactOpenSubgroup`.
 
 This is derived infrastructure for the completion model of Renard 2026,
@@ -49,4 +49,4 @@ and the two definitions of fixedness.
 This supplies the action and invariant-space interpretation used in
 VI.9.7. It does not identify the stable-image limit with the radical-fixed
 completion, establish the specific parabolic cofinality or prove either
-exact target of the task.
+VI.9.6 or VI.9.7.

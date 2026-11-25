@@ -157,7 +157,7 @@ and the order of the two factors.
 
 ## Remaining scope
 
-This unit constructs the product comparison for the Library's actual normalized
+This module constructs the product comparison for the Library's actual normalized
 induction functor. Specialization to reductive rational points retains the
 structural, closedness, second countability and quotient compactness obligations
 of that framework, and the comparison of full-parabolic Haar normalization with

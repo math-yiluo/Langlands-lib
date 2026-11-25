@@ -1,7 +1,5 @@
 # The norm kernel of a split component (Renard V.2.6, Lemma, proof)
 
-Author: Worker 114 (Task 5679, `cce59833-87fe-4fa2-bd38-c532167817a0`).
-
 `Langlands.Plancherel.RenardCartan.splitComponentKernel` proves exactly the
 published proposition
 `Langlands.Plancherel.RenardCartan.SplitComponentKernelStatement.{u}`
@@ -45,13 +43,14 @@ The module contains three theorems.
   4. `N • v(t)(α) = 0` in `ℤ` with `N ≠ 0` gives `v(t)(α) = 0`
      (`smul_eq_zero`).
 - `comap_rationalCommonNormKernel_eq_of_finiteIndex` combines this with the
-  published `rationalCommonNormKernel_le_comap s` (Worker 200), which gives the
+  published `rationalCommonNormKernel_le_comap s` (module
+  `Langlands.Representation.Plancherel.RationalUnramifiedRestriction`), which gives the
   reverse inclusion for every morphism.
 - `splitComponentKernel` introduces `F`, `Z`, `hZ`, `T`, `s`, `hs` and applies the
   previous theorem. Finite index of the restriction range is the published
   `IsSplitComponent.finiteIndex_range_characterRestrict hZ`
-  (module `Langlands.GroupScheme.Rational.CharacterRestrictionFiniteIndex`,
-  Worker 1001), which uses connected reductivity of `Z` and the split-component
+  (module `Langlands.GroupScheme.Rational.CharacterRestrictionFiniteIndex`),
+  which uses connected reductivity of `Z` and the split-component
   property of `s`.
 
 The inspected axioms are `propext`, `Classical.choice` and `Quot.sound`.

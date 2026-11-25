@@ -2,10 +2,9 @@
 
 This module states the clauses of KP Axiom 4.1.1 that concern a single group `G`. They are
 stated on the actual reduced building of the Library's valuation building data. It is the first
-building-side unit of the full corrected Definition 4.1.26 predicate (task
-`129deca1-ce21-411b-9b79-7e94545fe26d`). It contains definitions, one structure of validity
-clauses and short intrinsic lemmas. It does not assert that the clauses hold for any data, or
-that data exist.
+building-side module of the full corrected Definition 4.1.26 predicate. It contains
+definitions, one structure of validity clauses and short intrinsic lemmas. It does not assert
+that the clauses hold for any data, or that data exist.
 
 Ambient setting: `F` is a nonarchimedean local field in an arbitrary universe `u`
 (`[Field F] [ValuativeRel F] [TopologicalSpace F] [IsNonarchimedeanLocalField F]`), in mixed or
@@ -49,7 +48,7 @@ Validity clauses: `B.SatisfiesBuildingAxiom R`, a structure with five fields, an
 | "equipped with an action of `G(k)` by polysimplicial automorphisms" (PDF 188) | Field `polysimplicialAction : R.IsPolysimplicialAction`. For each `g ∈ G(F)` there is a polysimplicial automorphism `e` of `K` (`AbstractBuilding.IsPolysimplicialAutomorphism`, KP Definition 1.5.1(13), PDF 86) such that `e` maps a facet `F` to `F'` exactly when `g` maps the realized facet of `F` onto that of `F'`. The action on `B(G)` is the Library action of `G(F)` on the reduced building. |
 | "The apartments of this building are in bijective `G(k)`-equivariant correspondence with the maximal split tori of `G`" (PDF 188) | Field `torusApartmentCorrespondence : B.HasTorusApartmentCorrespondence`, explained below. |
 | "In particular, the stabilizer in `G(k)` of an apartment `A = A(S)` … is `N(k)`" (PDF 188) | Field `normalizerApartmentStabilizer : B.HasNormalizerApartmentStabilizer`. This is the Library clause `MulAction.stabilizer (rationalPoints G) B.apartmentImage = normalizerPoints B.i`. KP derives it from the correspondence, but it is kept as a field. It is also a field of the Library's partial bundle `ParahoricBuildingData.SatisfiesPartialBuildingAxioms`. |
-| "A surjective homomorphism `G → G'` with central kernel induces an equivariant isomorphism `B(G) → B(G')`. In particular, the buildings of `G`, `G_ad`, `G_der`, and `G_sc` are canonically identified, and the action of `G(k)` on its building factors through `G_ad(k)`." (PDF 189) | Not in this module. These sentences compare the buildings of two groups. A later unit of this task states them on families of building data over all groups. |
+| "A surjective homomorphism `G → G'` with central kernel induces an equivariant isomorphism `B(G) → B(G')`. In particular, the buildings of `G`, `G_ad`, `G_der`, and `G_sc` are canonically identified, and the action of `G(k)` on its building factors through `G_ad(k)`." (PDF 189) | Not in this module. These sentences compare the buildings of two groups. The module `FullValidity.Assignment` states them on families of building data over all groups. |
 
 ## The torus–apartment correspondence
 
@@ -101,7 +100,7 @@ Axiom 4.1.4 (A 2) uses to read the apartment of an arbitrary maximal split torus
   `faceCompatible` on the face relation, by `polysimplicialAction` on the group action and by
   `R.apartments` on apartments.
 * Facets and their order are the Library's `IntegralModels.BuildingFacet` and
-  `IntegralModels.FacetPrecedes` (Worker 384's published module). So the facets indexing the
+  `IntegralModels.FacetPrecedes` (module `Langlands.BruhatTits.IntegralModels.FacetParabolicOrder`). So the facets indexing the
   integral models of Axioms 4.1.20 and 4.1.22 are those of Axiom 4.1.1.
 * The stabilizer clause is the existing `ValuationBuildingData.HasNormalizerApartmentStabilizer`,
   unchanged.

@@ -24,9 +24,9 @@ indecomposable blocks. Second, §2.8 (printed p.596) states that the class of
 `J(π_1, …, π_r)` does not depend on the order of the `π_i`, as long as that order
 satisfies the exponent condition (*). Here both facts come from published Library
 theorems. The
-proof is adapted, with Worker 1703's permission, from their unpublished
+proof is adapted from an unpublished
 reduction `isAssembledFrom_unique_of` and `nonempty_iso_of_isLanglandsHead`
-(task 922def19, `AssemblyWellDefinedReduction.lean`); Worker 1703 is a coauthor. There the block
+(`AssemblyWellDefinedReduction.lean`, not part of the Library). There the block
 decomposition uniqueness was a hypothesis. Here it is discharged by its published
 proof.
 

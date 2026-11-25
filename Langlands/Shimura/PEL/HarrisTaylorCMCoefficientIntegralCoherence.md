@@ -1,7 +1,5 @@
 # Integral coherence for original CM normal coefficient covers
 
-Author: Worker 57.
-
 Construct comparisons between the integral coefficient sheaves independently
 descended on two original CM normal covers below the full coefficient kernel.
 Prove identity, composition, normalization by actual cover restriction, and
@@ -71,7 +69,7 @@ C₀  = (constantSheaf J (ModuleCat R)).obj M.V.
 ```
 
 `R` retains the full product over coefficient places of `K` above `p`.
-The published stable-lattice reduction, inverse-unop coefficient action,
+The stable-lattice reduction, inverse-unop coefficient action,
 and inverse-right deck convention are retained. The exponent may be zero.
 No freeness or nonzero assertion about a reduction module is added.
 
@@ -109,7 +107,7 @@ When `hZY : Z.obj.subgroup ≤ Y.obj.subgroup`, let
 aᵧ𝓏 = cmHarrisSuccessiveRefinementCover ... Y Z hY hZ hZY.
 ```
 
-The published cover map `aᵧ𝓏` is equivariant for `φᵧ𝓏`. Its underlying
+The cover map `aᵧ𝓏` is equivariant for `φᵧ𝓏`. Its underlying
 scheme map is exactly `S.map (smallCMInclusion D hZY)` and is over `Spec F`.
 This file reuses that construction.
 
@@ -131,7 +129,7 @@ then remains.
 iᵧ.inv ≫ ι₀ ≫ coverPullback J bᵧ.hom C₀ = ιᵧ.
 ```
 
-It uses the published forward inclusion normalization and inverse
+It uses the forward inclusion normalization and inverse
 cancellation. The new comparison is
 
 ```text
@@ -202,7 +200,7 @@ Write `Qᵧ` for `cmHarrisRefinementCoefficientSheaf ... Y hY`,
 sᵧ = cmHarrisRefinementSheafRestrictIso ... Y hY : r.obj Qᵧ ≅ Bᵧ.
 ```
 
-These objects and scalar comparisons come from published constructions.
+These objects and scalar comparisons come from the imported constructions.
 `cmHarrisSuccessiveRefinementScalar_square` proves
 
 ```text
@@ -211,9 +209,9 @@ r.map dᵥ𝑤.hom ≫ s𝑤.hom = sᵥ.hom ≫ eᵥ𝑤.hom.
 
 The levels need not be nested. To prove it, precompose with the invertible
 `r.map qᵥ.hom`. The quotient comparison triangle replaces
-`qᵥ.hom ≫ dᵥ𝑤.hom` by `q𝑤.hom`. The published scalar/refinement
+`qᵥ.hom ≫ dᵥ𝑤.hom` by `q𝑤.hom`. The scalar/refinement
 square at `W₁` replaces the resulting composite by the coarse scalar map
-followed by `i𝑤.hom`. The integral comparison triangle and the published
+followed by `i𝑤.hom`. The integral comparison triangle and the same
 square at `V` rewrite this as the precomposed right side. Cancellation of
 the invertible precomposition proves the equation.
 
@@ -229,7 +227,7 @@ comparison; the proof does not replace it by an identity.
 
 ## Integral comparison through the actual common cover
 
-Reuse `T = smallCMCommonLevel D V W₁`, the published identity-Hecke
+Reuse `T = smallCMCommonLevel D V W₁`, the identity-Hecke
 intersection level, with
 
 ```text
@@ -319,25 +317,25 @@ compatible coefficient/cover maps and their composition. Registered
 source: `harris-taylor-2001-geometry-cohomology-simple-shimura`, SHA-256
 `5be28164b61d6f6cc28dd9e6b990d669504f3470860b230ebbc97e3da10af56b`.
 
-The supplied five-page Harris *Publication with errata* list was checked;
+The five-page Harris *Publication with errata* list was checked;
 it contains no correction to these coefficient passages. This observation
-is limited to that supplied list.
+is limited to that list.
 
 The sources supply the arithmetic, geometric and coefficient conventions.
 The new integral comparison formulas, their normalization and coherence,
 and the scalar/common-cover equations are internal deductions from the
-published original CM torsors, integral refinement and scalar squares,
+original CM torsors, integral refinement and scalar squares,
 quotient refinement coherence and actual identity-Hecke intersection.
 They are not attributed as printed formulas in either source. The
 integral action proof reduces representatives to the original torsion
 action; the sheaf-map identification uses invariant inclusions; the
 remaining equations follow from the established comparisons and
-categorical cancellation. All imported dependencies are published. The
-separate integral refinement-evaluation module is not imported.
+categorical cancellation. All imported dependencies are modules of the
+Library. The separate integral refinement-evaluation module is not imported.
 
 ## Scope
 
-This focused unit establishes independence of the two normal covering
+This module establishes independence of the two normal covering
 levels at fixed coarse level, algebraic representation, chosen stable
 lattice, scalar and exponent, together with actual common-cover
 restriction normalization and quotient-ring scalar compatibility.
@@ -348,8 +346,9 @@ canonical-model geometry, or identification of the invariant sheaf with
 the source's component-function sheaf. Variation of coarse level,
 representation, lattice, scalar or exponent, extension of scalars,
 arbitrary scheme inverse-image compatibility, integral evaluation
-compatibility on the common cover, and completion to a lisse adic sheaf
-remain separate obligations. The source uses rational-prime powers;
+compatibility on the common cover (proved in
+`HarrisTaylorCMCoefficientIntegralEvaluation`), and completion to a lisse adic
+sheaf are not treated in this module. The source uses rational-prime powers;
 allowing any nonzero natural scalar and exponent zero is an internal
 extension of this torsion stage, not an extra source claim.
 

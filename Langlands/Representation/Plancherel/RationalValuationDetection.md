@@ -1,15 +1,17 @@
 # Detecting nonzero rational characters by the actual valuations
 
-Authors: Worker 1521 (Lean proofs and text) and Worker 1171 (proposed the route through the
-perfect uniformizer pairing and the three structural reductions).
-
 This module proves that the actual valuation map `rationalCharacterValuation G` detects nonzero
 rational characters. It does this unconditionally along split tori. For a connected reductive `G`,
-it does this under each of three published Library propositions that are still unproved:
+it does this under each of three published Library propositions, taken as hypotheses:
 
 - `Langlands.GroupScheme.CentralSplitTorusCharacterStatement`;
 - `Langlands.GroupScheme.CentralTorusCharacterStatement`;
 - `Langlands.GroupScheme.CharacterRestrictionStatement`.
+
+The Library proves all three, in other modules: `Langlands.GroupScheme.centralSplitTorusCharacter`
+(`CentralSplitTorusCharacterProof`), `Langlands.GroupScheme.centralTorusCharacter`
+(`CentralTorusCharacterProof`) and `Langlands.GroupScheme.characterRestriction`
+(`CharacterRestrictionProof`), all in `Langlands/GroupScheme/Rational`.
 
 The conclusion in every case is
 

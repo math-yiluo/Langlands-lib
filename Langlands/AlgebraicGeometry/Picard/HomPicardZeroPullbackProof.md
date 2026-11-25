@@ -7,7 +7,7 @@ scheme and actual rigidified family in the stated universe. It imports the
 published statement without changing it or its dependency closure.
 
 The proof reuses `Langlands.GroupScheme.isTranslationInvariant_pullback`
-from the published `PicardZeroPullbackComparison` module, authored by Worker 151.
+from the published `PicardZeroPullbackComparison` module.
 That lemma uses the group-homomorphism identity intertwining translation by
 `x` with translation by its image, then pulls back the given invariance
 isomorphism using the actual line-bundle pullback functors.

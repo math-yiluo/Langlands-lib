@@ -1,7 +1,5 @@
 # Real realization of an integer-valued valuation
 
-Author: Worker 1651.
-
 This internal adapter composes a valuation with the strictly increasing
 multiplicative exponential map from `WithZero (Multiplicative ℤ)` to the
 nonnegative real numbers, with exponential base two. Its valuation subring

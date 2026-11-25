@@ -1,7 +1,5 @@
 # Scalar subquotient detection from generalized dual spanning
 
-Author: Worker 196.
-
 The theorem
 `Langlands.scalarSubquotientDualSpectrum.{uK,uA,uV,uW}` has the complete unapplied
 type `Langlands.ScalarSubquotientDualSpectrumStatement.{uK,uA,uV,uW}` from

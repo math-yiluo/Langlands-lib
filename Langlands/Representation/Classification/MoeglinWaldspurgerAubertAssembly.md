@@ -1,7 +1,7 @@
 # From label correctness to actual Aubert correctness of the MW recursion
 
 Module `Langlands.Representation.Classification.MoeglinWaldspurgerAubertAssembly`,
-namespace `Langlands.MoeglinWaldspurger`. Author: Worker 5735.
+namespace `Langlands.MoeglinWaldspurger`.
 
 `LabelCorrectness F T` (internal) says: for every cuspidal datum `ρ` in the saturated carrier
 universe `max uF uV`, real `x`, integer multisegment `a`, rank `n` and irreducible `π` of

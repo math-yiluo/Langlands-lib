@@ -6,7 +6,7 @@ Lean module: `Langlands.Representation.Archimedean.RealSwapLandingRankOne`, name
 ## Role and provenance
 
 This module is an internal step in the proof of
-`Langlands.Archimedean.RealCharacterInducedFiltrationStatement` (Task 7133). It supplies two
+`Langlands.Archimedean.RealCharacterInducedFiltrationStatement`. It supplies two
 tools for proving the hypothesis `SpecialLanding` of the module `RealSwapLandingAlgebra`:
 
 - a rank-one integral `∫_ℝ F(n̄(y) s g) dy` equals a constant times the sine-power kernel

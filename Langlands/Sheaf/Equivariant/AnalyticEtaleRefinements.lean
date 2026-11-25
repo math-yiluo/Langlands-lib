@@ -108,14 +108,14 @@ theorem coe_translateHom (l : ActionLift ρ f) (g : G) (y : l.translateSubgroup 
 /-- The translate of a lift by `g`: a lift to `f ≫ ρ g` of the action, by the
 conjugate subgroup `g H g⁻¹`, where `y` acts as `g⁻¹ y g` acts for the given lift.
 It is the lift to the translate `gU` of the object. -/
-def translate (l : ActionLift ρ f) (g : G) : ActionLift ρ (f ≫ (ρ g).hom) where
+def translate (l : ActionLift ρ f) (g : G) : ActionLift ρ (f ≫ (ρ g).asIso.hom) where
   subgroup := l.translateSubgroup g
   isOpen_subgroup := l.isOpen_subgroup.preimage
     ((continuous_const.mul continuous_id).mul continuous_const)
   action := l.action.comp (l.translateHom g).toMonoidHom
   isContinuousAction := l.isContinuousAction.comp (l.translateHom g)
   equivariant y := by
-    change (l.action (l.translateHom g y)).hom ≫ f ≫ (ρ g).hom = _
+    change (l.action (l.translateHom g y)).asIso.hom ≫ f ≫ (ρ g).asIso.hom = _
     rw [← Category.assoc, l.equivariant, Category.assoc, Category.assoc,
       ← Langlands.Sheaf.Equivariant.TwistedOver.rho_mul_hom,
       ← Langlands.Sheaf.Equivariant.TwistedOver.rho_mul_hom, coe_translateHom]
@@ -163,7 +163,7 @@ def HasCompatibleDistinguishedEtaleLifts : Prop :=
     ∀ (a : ActionLift ρ U.hom) (b : ActionLift ρ V.hom),
       ∃ N : Subgroup G, IsOpen (N : Set G) ∧ ∃ (ha : N ≤ a.subgroup) (hb : N ≤ b.subgroup),
         ∀ (g : G) (hg : g ∈ N),
-          (b.action ⟨g, hb hg⟩).hom ≫ f.left = f.left ≫ (a.action ⟨g, ha hg⟩).hom
+          (b.action ⟨g, hb hg⟩).asIso.hom ≫ f.left = f.left ≫ (a.action ⟨g, ha hg⟩).asIso.hom
 
 end Conditions
 
@@ -204,7 +204,7 @@ theorem isRestrictionEquivariant_distinguishedLiftSystem [IsTopologicalGroup G]
   obtain ⟨hV', l', hH', rfl⟩ := ha'
   set g := Hom.twist p with hg
   have hV'' : IsDistinguishedEtale ((translate etale ρ g).obj V'.obj).hom :=
-    hV'.comp_iso (ρ g)
+    hV'.comp_iso (ρ g).asIso
   obtain ⟨N, hN, hNl, hNl', hNp⟩ :=
     hC (untwist g p hg.symm) hV hV'' l (l'.translate g)
   intro K' hK'
@@ -226,10 +226,10 @@ theorem isRestrictionEquivariant_distinguishedLiftSystem [IsTopologicalGroup G]
   · simp only [comp_left]
     have hx : (g * h * g⁻¹)⁻¹ ∈ N := inv_mem hkN
     have key := hNp _ hx
-    change (l'.action (l'.translateHom g ⟨_, hNl' hx⟩)).hom ≫ Hom.left p =
-      Hom.left p ≫ (l.action ⟨_, hNl hx⟩).hom at key
-    change (l'.action (Subgroup.inclusion hH' h)⁻¹).hom ≫ Hom.left p =
-      Hom.left p ≫ (l.action (Subgroup.inclusion hH ⟨g * h * g⁻¹, hK' hkK⟩)⁻¹).hom
+    change (l'.action (l'.translateHom g ⟨_, hNl' hx⟩)).asIso.hom ≫ Hom.left p =
+      Hom.left p ≫ (l.action ⟨_, hNl hx⟩).asIso.hom at key
+    change (l'.action (Subgroup.inclusion hH' h)⁻¹).asIso.hom ≫ Hom.left p =
+      Hom.left p ≫ (l.action (Subgroup.inclusion hH ⟨g * h * g⁻¹, hK' hkK⟩)⁻¹).asIso.hom
     have e₁ : (Subgroup.inclusion hH' h)⁻¹ =
         l'.translateHom g ⟨(g * h * g⁻¹)⁻¹, hNl' hx⟩ := by
       apply Subtype.ext

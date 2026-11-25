@@ -1,6 +1,6 @@
 # The ring pullback of an artinian colength-one extension
 
-Worker 387 wrote this supporting module for Task 6297, which proves Murre's
+This is a supporting module for the proof, in `TwoAxisClassArtinianLiftingProof`, of Murre's
 condition (F4′) for the two-axis class presheaf. The module is pure commutative
 algebra and imports only Mathlib. Everything is in the namespace
 `Langlands.AlgebraicGeometry.Picard.ArtinianColengthOne`, in every universe `u`.

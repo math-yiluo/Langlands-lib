@@ -1,7 +1,5 @@
 # Local closedness of actual upper Bruhat cells: proof
 
-Author: Worker 176.
-
 `Langlands.GeneralLinear.upperBruhatLocalClosedness.{u}` in
 `Langlands.Group.GL.UpperBruhatLocalClosednessProof` proves exactly the existing
 proposition `Langlands.GeneralLinear.UpperBruhatLocalClosednessStatement.{u}`:
@@ -98,7 +96,7 @@ quantifiers, then specializes the algebraic premise.
 
 The final theorem discharges that premise with the published theorem
 `Langlands.GeneralLinear.upperBruhatRankCharacterization` from
-`Langlands.Group.GL.UpperBruhatRankProof`, authored by Worker 957. The final
+`Langlands.Group.GL.UpperBruhatRankProof`. The final
 theorem has no rank-characterization hypothesis. All imported pairs,
 including the target statement pair, are unchanged.
 

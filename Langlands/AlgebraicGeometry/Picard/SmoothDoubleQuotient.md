@@ -55,7 +55,11 @@ when forgetting the additional fppf sheaf property.
 The provenance is this internal composition of the named interfaces.
 The construction assumes the generic quotient proposition in full and
 does not replace its proof with representability of the desired sheaf.
-An exact proof of the host target must separately discharge that input,
-smooth-source descent and local surjectivity, using accepted Library
-proofs. No descent of line bundles is inferred or needed in this
+An exact proof of `SmoothAutomorphismEtaleAtlasStatement`, which this
+construction serves, must separately discharge that input, smooth-source
+descent and local surjectivity, using proved Library results;
+`SmoothAutomorphismQuotientReduction` supplies the last two, and
+`SmoothAutomorphismEtaleAtlasProof` supplies the quotient theorem
+`AlgebraicSpace.smoothRelationQuotient` of `SmoothRelationQuotientProof`.
+No descent of line bundles is inferred or needed in this
 conditional construction once the stated presentation data is given.

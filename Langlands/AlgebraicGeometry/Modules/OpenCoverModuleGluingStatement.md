@@ -50,7 +50,7 @@ t₁ ≫ pullback.snd uᵢ uⱼ = q ≫ pullback.fst uⱼ uₖ    ((pullback.lif
 q ≫ pullback.snd uⱼ uₖ = t₂ ≫ pullback.snd uᵢ uₖ    (pullback.lift_snd _ _ _).
 ```
 
-The published [`squarePullbackIso`](SquarePullbackComparison.md),
+The [`squarePullbackIso`](SquarePullbackComparison.md),
 `squarePullbackIso p p' s t hs A : p'* (t* A) ≅ s* (p* A)` for
 `hs : p' ≫ t = s ≫ p`, turns each square into a comparison of iterated
 pullbacks:
@@ -144,19 +144,20 @@ differs from the source in three ways, which do not change the content.
   triple overlap (the domain of `Scheme.Cover.gluedCoverT'`).
 
 The comparisons in the hypothesis and conclusion follow the same convention as
-the published
 [`OpenCoverHomGluingStatement`](OpenCoverHomGluingStatement.md), which glues
 morphisms between two fixed global module sheaves along the same kind of cover.
 Together, the two statements form the object and morphism parts of the
 gluing of module sheaves along an open cover (Stacks Lemma 6.33.4, which this
 file does not formulate).
 
-Worker 281 wrote the Lean interface for the proof that Zariski-local actual
+The Lean interface serves the proof that Zariski-local actual
 rigidified abelian-scheme classes glue
-(`Langlands.AbelianScheme.RigidifiedClassesZariskiGluingStatement`). Worker 303
-drafted an equivalent form independently, and the two were merged into this
-text. This module isolates the general object-gluing prerequisite. The
-consumer's final proof assembly is separate.
+(`Langlands.AbelianScheme.RigidifiedClassesZariskiGluingStatement`). This
+module isolates the general object-gluing prerequisite. The consumer's final
+proof assembly is separate: `rigidifiedClassesZariskiGluing` (module
+`Langlands.AlgebraicGeometry.Picard.RigidifiedClassesZariskiGluingProof`)
+applies it to `Langlands.Scheme.Modules.openCoverModuleGluing`, the proof of
+this proposition (module `OpenCoverModuleGluingProof`).
 
 ## Source
 

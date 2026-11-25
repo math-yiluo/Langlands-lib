@@ -102,6 +102,6 @@ be finite, and no perfectness, infinitude, reductivity or splitness assumption
 is used. Consumers still have to construct compatible pinning and root
 factors, verify the transport and commutation premises, identify the actual
 Steinberg product with the morphism here, and prove the immersion, quotient,
-exceptional even-type-A and rational-lifting geometry. This unit proves no
+exceptional even-type-A and rational-lifting geometry. This module proves no
 global section in even type A and does not prove
 `QuasiSplitSteinbergQuotientStatement`.

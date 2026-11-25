@@ -1,6 +1,6 @@
 # Split-component factors through an intermediate group
 
-Worker 17. This internal construction starts with a compatible root presentation
+This internal construction starts with a compatible root presentation
 of a fine ambient parabolic and its original Levi `M`, a closed intermediate
 group `L` containing that Levi, and a central map from a commutative group scheme
 `A` to `L`. The defining cocharacter supplied by the presentation lies in `M`.

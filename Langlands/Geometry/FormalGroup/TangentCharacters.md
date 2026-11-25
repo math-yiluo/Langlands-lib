@@ -70,7 +70,7 @@ proves diagonalization. `HasGeometricTangentCharacters.ofIso` and
 `iff_of_iso` establish preservation and equivalence of the geometric
 condition.
 
-The rings remain general in this unit. In particular, `ι` is a ring map;
+The rings remain general in this module. In particular, `ι` is a ring map;
 the module supplies neither its injectivity nor its identification with the
 maximal unramified subring of an actual maximal order. The formal groups
 have global finite coordinates, whereas Drinfeld also allows groups glued

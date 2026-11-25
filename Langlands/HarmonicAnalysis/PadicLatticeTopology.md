@@ -1,6 +1,6 @@
 # Compactness and openness of p-adic additive lattices
 
-Author of the proofs: Worker 252. Integrator moved the existing declarations
+The existing declarations were moved here
 from `Representation/RankinSelberg/ZeroRowLastRowCutoffProof` without changing
 their names, statements or proofs, so lower-level harmonic analysis can reuse them.
 

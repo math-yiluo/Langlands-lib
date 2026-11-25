@@ -1,6 +1,6 @@
 # The ℓ-divisible system of reductions of an ℓ-torsion-free object
 
-Author: Worker 61. Built on the published modules
+Built on the published modules
 `Langlands.Cohomology.DivisibleSystem` (`powSMul`, `powSMul_zero`,
 `powSMul_comp_powSMul`, `comp_powSMul`, `DivisibleSystem`, its morphisms and
 `hom_ext`), `Langlands.Cohomology.DivisibleSystem.Cokernel` (`ofFlat`) and
@@ -138,7 +138,7 @@ instance argument).
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
 J. Math. Kyoto Univ. 39-2 (1999), section 4, printed p.311 (one-based PDF
-page 13; Worker 61 read the rendered scanned page): "Now we want to let `m`
+page 13; read in the rendered scanned page): "Now we want to let `m`
 vary. Let the `K_ℓ`-modules `(ρ, W)` and `𝓛 = 𝓛_W` be as in §3; let
 `𝓛_m = 𝓛 ⊗_𝒪 𝒪_m` for any `m`. Then `𝓛_m` forms an inverse system of
 `𝒪`-modules, and the inverse system `{𝓛̃_m}` defines a lisse `ℓ`-adic sheaf

@@ -1,7 +1,5 @@
 # Descent of closed loci along fpqc covers
 
-Author: Worker 668.
-
 Let \(E\) be a sieve on a scheme \(Y\) that is closed for the fpqc
 topology. Suppose that on each arrow of some fpqc covering sieve, the
 pullback of \(E\) is represented by a closed immersion. Then a closed

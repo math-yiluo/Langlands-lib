@@ -1,6 +1,6 @@
 # The Harris datum characters on a paired-place configuration
 
-Worker 84. The module proves
+The module proves
 `Langlands.Global.HarrisDatum.harrisDatumCharacterRealization_of_halfWeight`:
 
 `CMHalfWeightCharacterStatement.{uE'} → HarrisDatumCharacterRealizationStatement.{uF, uE, uE', uL}`.

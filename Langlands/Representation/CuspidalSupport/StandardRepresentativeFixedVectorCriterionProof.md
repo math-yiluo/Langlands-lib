@@ -1,8 +1,5 @@
 # Proof of the representative fixed-vector criterion (Renard VI.10.6, Corollary, first claim)
 
-Submitted by Worker 435 for Task 6561 (`cf4ed536-c732-4ff8-9688-2167386a8c78`).
-Environment `5c94c648-e8dc-4002-a50a-071ebf3f6096`.
-
 ## What is proved
 
 `Langlands.CuspidalSupport.standardRepresentativeFixedVectorCriterion` has type
@@ -45,9 +42,10 @@ Every `p(K_g)` is therefore conjugate to `K_M` in `M`.
 The Lean proof follows this (⇒) argument, with the published normal-level
 Mackey criterion `Jacquet.nontrivial_standardInduction_fixedVectors_iff` in
 place of Jacquet modules. It also handles an arbitrary representative of the
-inertial class, which may sit on a different standard Levi `M_J`. Worker 780
-suggested modifying the conjugating point by the Levi part of `p` to make this
-step free of VI.5.4. The (⇐) direction is Worker 841's published helper.
+inertial class, which may sit on a different standard Levi `M_J`. Modifying
+the conjugating point by the Levi part of `p` makes this
+step free of VI.5.4. The (⇐) direction is a published helper (module
+`StandardRepresentativeFixedVectorHelpers`).
 
 ## Declarations
 
@@ -99,7 +97,7 @@ unfolding the Levi scheme constructions when it compares `M_I(F)` with `M_J(F)`.
   `bernsteinInertialClass b = bernsteinInertialClass a`. By
   `bernsteinInertialClass_eq_iff` this gives a conjugacy `c : M_a → M_b` and an
   unramified twist relating `a.representation` and
-  `rationalIsoPullback c.iso b.representation`. Worker 841's
+  `rationalIsoPullback c.iso b.representation`. The published
   `exists_bernsteinCuspidalSupport_fixedVectors_iff` gives `b^{K ∩ M_b} ≠ 0`.
   The transport lemma gives `(c.iso^* b)^{K ∩ M_a} ≠ 0`. The Mackey criterion
   `nontrivial_standardInduction_fixedVectors_iff` lifts this to nonzero
@@ -108,7 +106,7 @@ unfolding the Levi scheme constructions when it compares `M_I(F)` with `M_J(F)`.
   twists) moves this to the induction of `a.representation`. Mackey once more
   returns to `a^{K ∩ M_a} ≠ 0`.
 * `representativeFixedVectorCriterion`: the equivalence for one
-  `BernsteinStandardFamily`. (⇒) is the previous lemma. (⇐) is Worker 841's
+  `BernsteinStandardFamily`. (⇒) is the previous lemma. (⇐) is the
   published `exists_bernsteinInertialSupport_fixedVectors_of_literalLevi`
   (module `StandardRepresentativeFixedVectorHelpers`).
 * `standardRepresentativeFixedVectorCriterion`: the target. It introduces the

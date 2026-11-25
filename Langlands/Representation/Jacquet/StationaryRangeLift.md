@@ -1,6 +1,6 @@
 # Jacquet lifts from stationary compression ranges
 
-Worker 1587 developed the stationary-range cancellation argument. The averaging argument in `exists_pow_fixedJacquetMap_preimage_of_iwahoriContraction` reuses Worker 834's published proof in `IwahoriContractionAdmissibility`, with its finiteness-free part extracted as a separate theorem.
+The averaging argument in `exists_pow_fixedJacquetMap_preimage_of_iwahoriContraction` reuses the published proof in `IwahoriContractionAdmissibility`, with its finiteness-free part extracted as a separate theorem.
 
 This module works with an arbitrary topological group `G : Type uG`, an independently sized complex module `V : Type uV`, a smooth representation `ρ`, a compact open subgroup `K`, actual subgroups `N`, `M`, `Nbar`, and an element `g` satisfying `IsIwahoriContraction K N M Nbar g`. The Levi normalizer condition `hMN : M ≤ Subgroup.normalizer N` is explicit. There is no admissibility or finite-dimensionality hypothesis.
 

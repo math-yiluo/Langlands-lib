@@ -1,6 +1,6 @@
 # Duality adjunction of two opposite standard intertwining integrals
 
-Worker 5, Task 6641. Supporting module for the proof of
+Supporting module for the proof of
 `Langlands.Plancherel.ConditionalDynamicOppositeDualAdjunctionStatement`
 (module `DynamicOppositeDualAdjunctionProof`). It proves the bilinear duality
 adjunction between two standard intertwining integrals. The integrals go
@@ -143,9 +143,9 @@ decompositions with a common Levi and trivially intersecting radicals. It has
 hypotheses in place of the group-theoretic facts about `P_G(χ)` and
 `P_G(χ⁻¹)`: `hrec`, unimodularity of `M` via `μM`, and the splittings of `K`.
 The characters `χa`, `χb` with `χa χb = 1` match the target's `z` and `z⁻¹`.
-The route (pointwise integrals of `Θ`, `M`-invariance, exchange of the two
-Iwasawa integrals) follows the context of Task 6641. It shares the exchange
-identity `integral_exchange` with the Hermitian adjunction of Task 6449.
+The route is: pointwise integrals of `Θ`, `M`-invariance, exchange of the two
+Iwasawa integrals. It shares the exchange identity `integral_exchange` with
+the Hermitian adjunction (module `OppositeIntertwiningHermitianAdjunction`).
 
 ## Axioms
 

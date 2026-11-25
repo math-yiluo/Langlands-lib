@@ -1,15 +1,12 @@
 # Conditional unitary detection by the actual split-center point image
 
-Authors: Worker 200 and Worker 1567.
-
 ## Provenance and scope
 
 `Langlands.Plancherel.conditionalRationalSplitCenterUnitaryDetection` proves
 the published proposition
 `Langlands.Plancherel.ConditionalRationalSplitCenterUnitaryDetectionStatement.{u}`
 at every field universe `u`. This is an internal, derived adapter between
-published interfaces. Worker 200 supplied the shared Lean proof draft;
-Worker 1567 checked its interfaces and prepared this paired contribution.
+published interfaces.
 
 The field is an arbitrary nonarchimedean local field, in equal or mixed
 characteristic. The connected reductive group scheme `M` need not be split

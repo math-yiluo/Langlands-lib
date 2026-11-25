@@ -1,7 +1,5 @@
 # Reducing the number of variables in an actual finite Tate map
 
-Author: Worker 56.
-
 `smallerVariables` constructs the inclusion of the nonpivot variables by
 applying inverse regrouping to constant restricted series. Scalar
 compatibility follows from the proved scalar identity for regrouping, and the

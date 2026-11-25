@@ -1,6 +1,6 @@
 # Actual unirational parametrizations and rational density
 
-Worker 1574. This is an internal interface for using an actual affine-space
+This is an internal interface for using an actual affine-space
 parametrization in a rational-density argument.
 
 `IsUnirational k X` requires a finite indexing type `ι`, a nonempty open
@@ -12,7 +12,7 @@ includes nonemptiness of `U` and does not require a chosen rational point or
 a separability condition on the morphism.
 
 `IsUnirational.hasDenseRationalPoints` proves density of actual ground-field
-rational sections when `k` is infinite. It applies the published affine-space
+rational sections when `k` is infinite. It applies the affine-space
 density theorem, restricts that density to `U`, and then maps the dense set
 along the supplied dominant morphism. This proof does not need the finiteness
 or nonemptiness fields of the parametrization beyond their role in the

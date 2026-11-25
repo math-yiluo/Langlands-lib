@@ -1,13 +1,12 @@
 # Conditional assembly of the prime graded norm
 
-Author: Worker 96.
-
 `PrimeGradedNormFromArithmetic.{u,v}` states that proofs of the published
 `PrimeRamifiedTraceIdeals.{u,v}` and `PrimeNormTraceExpansion.{u,v}` imply
 the entire published `PrimeRamifiedGradedNorm.{u,v}` proposition. It is an
 internal assembly target. The two arithmetic propositions remain explicit
 hypotheses; neither this statement nor a proof of it alone proves the closed
-graded-norm theorem required by the host task.
+graded-norm theorem, which is proved as `primeRamifiedGradedNorm` in
+`Langlands.ClassFieldTheory.Local.PrimeRamifiedGradedNormProof`.
 
 The conclusion is the existing proposition itself, with no clause changed or
 omitted. In particular, it retains independent field universes, the supplied

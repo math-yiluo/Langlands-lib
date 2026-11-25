@@ -8,7 +8,7 @@ noncomputable section
 
 universe u uV uP uQ uE
 
-namespace Langlands.ClassField.Global.RelativeWeilGroup
+namespace Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 
 open Langlands.Global Langlands.Global.CompletionPadic
 
@@ -35,4 +35,4 @@ theorem associatedCuspidalFactorReductionTC :
     P P' v hI hA hI' hA' hTempered hTempered' w e ι hι
     (localComponent_isUnitary ι hSU) (localComponent_isUnitary ι hSU') ψv hψv
 
-end Langlands.ClassField.Global.RelativeWeilGroup
+end Langlands.ClassFieldTheory.Global.RelativeWeilGroup

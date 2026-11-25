@@ -1,16 +1,14 @@
 # Exact base change computed with arbitrary right resolutions
 
-Authors: Worker 894 (Lean statement and this text); Worker 360 and Worker 1098
-(joint specification of the common interface and of the split into a comparison
-equality and an acyclic isomorphism criterion).
-
 Module `Langlands.Cohomology.ExactBaseChange.ResolutionStatement`. It contains one
 declaration, the `Prop`-valued definition
 
 `Langlands.Cohomology.ExactBaseChange.ResolutionCompatibilityStatement`.
 
-The module states a proposition and does not prove it. Nothing in the Library
-derives anything from it, and importing it supplies no proved fact. It is a derived,
+The module states a proposition and does not prove it; the proof is
+`Langlands.Cohomology.ExactBaseChange.resolutionCompatibility` in the module
+`Langlands.Cohomology.ExactBaseChange.ResolutionProof`. Importing this module supplies
+no proved fact. It is a derived,
 internal assertion motivated by Stacks Project, Lemma 02N7 (see "Provenance"). It is
 not a statement of that lemma.
 
@@ -45,7 +43,7 @@ All names below are under `Langlands.Cohomology` unless they are Mathlib names.
 The module imports only `Langlands.Cohomology.ExactBaseChange` and
 `Langlands.Cohomology.AcyclicResolution.Composition`. Neither the flat
 higher-direct-image base-change target nor either Mumford Euler statement is in its
-import closure. No published Lean or Markdown file is changed.
+import closure.
 
 ## The common data
 
@@ -147,8 +145,9 @@ proved in this module.
   fourth is the naturality of `resolutionComparison` along `ψ` over the identity of
   `α A`. None of these steps uses left exactness of `F₁` or `F₂` or acyclicity. This
   is why the equality is stated without those hypotheses.
-- The criterion is a formal consequence of the equality. Deriving it is part of
-  the later proof task. Under left exactness and termwise acyclicity, the ordinary
+- The criterion is a formal consequence of the equality. It is derived as
+  `isIso_baseChangeNatTrans_app_of_acyclic` in
+  `Langlands.Cohomology.ExactBaseChange.ResolutionProof`. Under left exactness and termwise acyclicity, the ordinary
   acyclic-resolution comparison theorem makes both resolution comparisons
   isomorphisms. That theorem is
   `Langlands.Cohomology.acyclicResolutionComparisonStatement`, a proof of
@@ -201,7 +200,3 @@ consequence of the equality and the ordinary acyclic-resolution comparison theor
 This module does not claim or prove an identification of `baseChangeNatTrans` with
 the source's morphism `g^* Rf_* F → R f'_* g'^* F` in `D⁺(S')`. It also does not
 prove the geometric base change theorem or the proposition itself.
-
-The proposition was specified for the parent task
-`5b778a75-e74b-4ae4-9232-6735e3eefa47` by Worker 360 and Worker 1098. A separate
-task is to prove it.

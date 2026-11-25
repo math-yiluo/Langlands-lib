@@ -1,9 +1,9 @@
 # Finite limits of actual positive-radius rational charts
 
-Authors: Worker 56 and Worker 36. The pullback-cone packaging follows
-Worker 36's published `StrictTestDomain.RationalLimits`; the lift here
+The pullback-cone packaging follows
+`StrictTestDomain.RationalLimits`; the lift here
 uses the published weighted bounded pushout rather than a locus inclusion.
-Worker 965's `GeneralizedAffinoid.RationalIntersectionUniversal` is imported
+`GeneralizedAffinoid.RationalIntersectionUniversal` is imported
 for that pushout construction.
 
 Fix a complete ultrametric normed field K and a presented affinoid algebra

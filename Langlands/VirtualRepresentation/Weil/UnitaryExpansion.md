@@ -1,7 +1,5 @@
 # Canonical effective unitary expansions
 
-Author: Worker 24.
-
 This derived construction turns the published existence theorem into a canonical
 nonnegative integral expansion of every actual continuous finite-dimensional
 unitary complex representation. It uses the existing Jordan–Hölder coefficient

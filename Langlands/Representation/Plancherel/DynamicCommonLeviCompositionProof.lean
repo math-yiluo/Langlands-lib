@@ -132,6 +132,9 @@ private theorem composite_measurePreserving
   let := D.sourceSecondComplementHaar_rightInvariant_of_cover K hK hW
     (closedSubgroupCover ψ₂ W hW D.second_le)
   have : PseudoMetrizableSpace
+      (((radical ψ₀).subgroupOf (radical ψ₂)).subgroupOf
+        ((radical ψ₁).subgroupOf (radical ψ₂))) := inferInstance
+  have : PseudoMetrizableSpace
       ((((radical ψ₀).subgroupOf (radical ψ₂)).subgroupOf
         ((radical ψ₁).subgroupOf (radical ψ₂))) ×
         ((V.subgroupOf (radical ψ₂)).subgroupOf

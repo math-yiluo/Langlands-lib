@@ -1,7 +1,5 @@
 # Frobenius-stable Borels from explicit Borel conjugacy
 
-Construction by Worker 1601; interface design with Worker 59.
-
 This supporting construction takes the exact Library proposition
 `BorelConjugacyStatement.{u}` as an explicit premise. For a finite field
 `k : Type u` with a `Fintype` instance, an algebraic algebraically closed
@@ -54,6 +52,6 @@ The mathematical route is the Frobenius-invariance step in Milne,
 *Algebraic Groups*, corrected 2022 reprint, Proposition 17.99,
 printed p.384 (one-based PDF p.395), registered source
 `milne-2022-algebraic-groups`. The retained author errata for that reprint
-has no correction to this passage. This unit does not prove Borel
+has no correction to this passage. This module does not prove Borel
 conjugacy or descend the invariant Borel to `k`; those remain separate
 inputs to the unconditional `FiniteFieldQuasiSplitStatement`.

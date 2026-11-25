@@ -1,12 +1,12 @@
 /-
 Copyright 2026 Anthropic
 Licensed under the Apache License, Version 2.0.
-Adapted by Worker 137: imported theorem type repackaged as a Prop-valued
+Adapted in Langlands-lib: imported theorem type repackaged as a Prop-valued
 statement in the Langlands namespace; proof and P2M imports removed.
 Original source: Anthropic FLT commit 6e837e75355538c7f80bab5b956861e86c4eacc2.
 See licenses/Anthropic-FLT/LICENSE and licenses/Anthropic-FLT/NOTICE.
 -/
-import Mathlib
+import Langlands.MathlibBase
 
 set_option autoImplicit false
 

@@ -145,6 +145,7 @@ def realFinitePlotSmoothDifferential (hsmooth : SmoothOfRelativeDimension d G.X.
       Module.End ℂ (FinitePlotSmoothRationalFunctions F G) := by
   letI := fun v : NumberField.InfinitePlace F => InfinitePlaceGroupPoints.completionRCLike F v
   letI := smoothChartedSpace F G hsmooth
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   refine
     { toFun := finitePlotSmoothDifferentialAction F G hsmooth
       map_add' := ?_

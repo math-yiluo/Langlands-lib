@@ -38,8 +38,7 @@ and high-ramification vanishing as explicit hypotheses.
 
 ## Deviation from the original: rank-one high-ramification input
 
-This deviation was made by Worker 394 (Task 6539), after Worker 5220's port. The last
-hypothesis of `twoBlockLFactorMultiplicativity_of_remainingInputs` has type
+The last hypothesis of `twoBlockLFactorMultiplicativity_of_remainingInputs` has type
 `Langlands.AllField.RankinSelberg.WhittakerTypeHighlyRamifiedRankOneLVanishingStatement.{uF, 0, max uF uV uW}`
 instead of `WhittakerTypeHighlyRamifiedLVanishingStatement.{uF, 0, max uF uV uW}`:
 JPSS 1983, Proposition (2.13), only when the first member is a representation of

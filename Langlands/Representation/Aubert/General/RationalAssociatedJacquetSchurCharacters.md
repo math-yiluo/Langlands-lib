@@ -1,6 +1,6 @@
 # Schur characters from the actual associated Jacquet isomorphism
 
-This derived supporting construction transports admissibility and identifies
+This construction transports admissibility and identifies
 the full-center scalar characters of the actual associated Jacquet module.
 It takes an actual smooth isomorphism from that module to the inverse
 longest-conjugation pullback of the inducing object. Existence of this
@@ -65,7 +65,7 @@ No local-field valuation, characteristic-zero, split or quasisplit
 restriction, maximality of `I`, nonempty root type or non-self-association
 assumption is needed for these consequences of the supplied isomorphism.
 
-This unit is derived from the named published transport, scalar-comparison
+This module is derived from the named published transport, scalar-comparison
 and admissible-Schur proofs. It invokes no classification, character
 independence, geometric-lemma existence, adjointness or cuspidal-support
 theorem to establish the retained isomorphism. It does not discharge the

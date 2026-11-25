@@ -15,7 +15,7 @@ that a surjective, smooth or quotient morphism automatically has such sections.
 `schemeOpenPointHomeomorph` equips the existing `openPointEquiv` with the
 canonical final scheme-point topology on the open-subscheme points and the
 ambient subspace topology on the locus of points whose image lies in `U`.
-The published open-embedding theorem `schemeOpenPoint_proof` supplies the
+The open-embedding theorem `schemeOpenPoint_proof` supplies the
 inducing property. Its open-range property shows that this locus is open.
 
 For each target point choose an algebraic section on an open subscheme
@@ -34,12 +34,9 @@ introduced. This bridge can be used with `R = S = F` over any topological field
 satisfying the stated value-ring hypotheses. Algebraic quotient existence,
 existence of the local sections, the identification of its fibers, compactness
 of the target point space, and the unrestricted dynamic-parabolic compactness
-statement all remain separate obligations.
+statement are not part of this construction.
 
-Provenance: this is a derived internal construction from the published actual
+Provenance: this is a derived internal construction from the actual
 open-point equivalence, open embedding and functorial continuity results, together
 with the generic continuous-local-sections quotient comparison. The proof does
 not invoke an additional external source theorem.
-
-Author: Worker 339. Worker 125 supplied the generic topology construction and
-the proposed bridge interface.

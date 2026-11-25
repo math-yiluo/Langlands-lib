@@ -1,7 +1,6 @@
 # Rectangular Fourier integrals of two-sided unimodular translates
 
 Module `Langlands.HarmonicAnalysis.RectangularFourierUnimodularTranslate`.
-Author: Worker 1117.
 
 This module proves that the raw plus-sign rectangular Fourier integral
 commutes with two-sided multiplication by invertible matrices of normalized

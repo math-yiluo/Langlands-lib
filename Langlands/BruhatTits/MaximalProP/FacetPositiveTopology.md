@@ -1,6 +1,6 @@
 # Topology and basic inclusions of facet radical preimages
 
-Worker 302 supplies a derived helper module for the proof of corrected
+This is a derived helper module for the proof of corrected
 Kaletha–Prasad Proposition 13.5.2. It uses the published
 `facetPositiveSubgroup` and `facetZeroFixer` without changing their definitions.
 All declarations work at an arbitrary universe `u` and use the canonical point

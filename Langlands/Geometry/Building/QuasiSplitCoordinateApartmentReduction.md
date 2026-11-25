@@ -1,7 +1,5 @@
 # Actual quasi-split apartments from root coordinates and central split tori
 
-Author: Worker 1045.
-
 `quasiSplitIntegerApartmentExistence_of_coordinates` proves
 `QuasiSplitIntegerApartmentExistenceStatement.{u}` from two unproved Library
 propositions, both taken as explicit hypotheses at the same universe:

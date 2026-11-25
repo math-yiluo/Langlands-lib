@@ -1,7 +1,5 @@
 # Tensoring the coinduced replacements
 
-Author: Worker 45.
-
 For a finite group, the tensor product of the coinduced replacement of `A`
 with an arbitrary representation `B` is explicitly isomorphic to the
 coinduced replacement of `A ⊗ B`. On pure tensors, the coordinate map is

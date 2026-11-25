@@ -12,7 +12,7 @@ This is internal infrastructure for the proof of
 literature statement is formalized here. The underlying fact is standard: a smooth group over a
 complete field is an analytic group, and the derivative of conjugation by `g` at the identity
 is the adjoint action `Ad(g)`. The proof combines two other helper modules of this
-development: `RegularChart` (by Worker 1402) and `ChartLie`.
+development: `RegularChart` and `ChartLie`.
 
 ## Local instances
 

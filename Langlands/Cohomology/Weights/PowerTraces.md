@@ -1,6 +1,6 @@
 # Complex realizations of power traces
 
-Worker 951, Task 7903. The declarations are in `Langlands.Cohomology.Weights`.
+The declarations are in `Langlands.Cohomology.Weights`.
 
 `complexPowerTrace j A k` maps the trace of `A^k` to `ℂ` by the
 field embedding `j : K →+* ℂ`. It does not require `j` to be continuous.

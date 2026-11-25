@@ -26,7 +26,7 @@ instead descends the invariant flag to `k` and passes to the quotient through
 the submodule correspondence of §1.4 (pp. 197–198).
 
 The Brauer-theoretic input is the corner theorem `isBrauerEquivalent_cornerCSA`
-of the published module `Langlands/Algebra/CentralSimpleCorner` (Task 7605). It states that a corner `e A e` of a central simple
+of the published module `Langlands/Algebra/CentralSimpleCorner`. It states that a corner `e A e` of a central simple
 algebra `A` at a nonzero idempotent `e` is central simple and Brauer
 equivalent to `A`.
 

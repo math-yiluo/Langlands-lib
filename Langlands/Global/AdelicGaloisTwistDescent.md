@@ -1,6 +1,6 @@
 # Canonical descent of Galois-twisted adelic points
 
-Helper module for the proof of `GaloisBorelTwistingStatement` (Task 5268).
+Helper module for the proof of `GaloisBorelTwistingStatement`.
 
 `adeleTest L` is `Spec 𝔸_L` as a scheme over `Spec L`; its morphisms to `H.X` are the adelic
 points of an `L`-group `H`. `adeleTestIso F L σ` is the isomorphism over `Spec L` between the

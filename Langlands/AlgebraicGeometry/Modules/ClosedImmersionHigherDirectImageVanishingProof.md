@@ -1,7 +1,5 @@
 # Higher direct images along a closed immersion vanish: proof
 
-Author: Worker 727.
-
 This module proves the published proposition
 `Langlands.AlgebraicGeometry.Modules.ClosedImmersionHigherDirectImageVanishingStatement.{u}`
 from `Langlands.AlgebraicGeometry.Modules.ClosedImmersionHigherDirectImageVanishingStatement`,

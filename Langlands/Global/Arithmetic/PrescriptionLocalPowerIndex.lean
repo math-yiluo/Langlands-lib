@@ -1,5 +1,5 @@
 import Langlands.Global.Arithmetic.PrescriptionFiniteQuotientStatement
-import Langlands.ClassField.Global.LocalPowerIndex
+import Langlands.ClassFieldTheory.Global.LocalPowerIndex
 import Langlands.Global.Arithmetic.SUnitIdelePowerQuotient
 import Mathlib.Algebra.Group.Pi.Units
 
@@ -11,7 +11,7 @@ universe u v
 
 namespace Langlands.Global
 
-open Langlands.ClassField.Global
+open Langlands.ClassFieldTheory.Global
 
 set_option maxHeartbeats 800000 in
 /-- A finite product of abelian groups with finite power quotients has a finite

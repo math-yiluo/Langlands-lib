@@ -95,7 +95,7 @@ omit [IsCMField F] [IsScalarTower E F A] [IsScalarTower ℚ F A] in
 /-- A nonzero natural scalar acts injectively on the actual full Harris lattice. -/
 theorem cmHarrisLattice_nsmul_injective (r : ℕ) (hr : r ≠ 0) :
     Function.Injective (fun x : lattice => r • x) := by
-  have : IsAddTorsionFree ((K ⊗[ℚ] Global.FiniteCompletion ℚ p) ⊗[K] W) :=
+  have : HasUniqueDiv ((K ⊗[ℚ] Global.FiniteCompletion ℚ p) ⊗[K] W) :=
     .of_isTorsionFree K _
   intro x y hxy
   apply Subtype.ext

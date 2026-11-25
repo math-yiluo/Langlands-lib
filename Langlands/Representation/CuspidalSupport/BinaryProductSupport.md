@@ -1,7 +1,5 @@
 # Actual cuspidal presentations and support addition for binary products
 
-Author: Worker 357.
-
 This internal construction combines two supplied actual cuspidal-product
 occurrences into an actual occurrence of the binary product in the concatenated
 cuspidal induction. Its grouped corollary gives the sum of two supplied
@@ -172,12 +170,12 @@ does not assert that a constituent exists.
 ## Provenance and independence audit
 
 This pair is an internal construction and grouped elementary corollary
-from independently accepted, published actual maps and subquotient
+from published actual maps and subquotient
 algebra. It introduces no additional literature assertion and has an
 empty source list. Its three direct imports are
 `CuspidalSupport.AllRankBinaryCuspidalConcatenation`,
 `Induction.BinaryProductSubquotients`, and
-`Filtration.SubquotientAlgebraProof`. They remain unchanged.
+`Filtration.SubquotientAlgebraProof`.
 
 The actual new proof dependencies are exactly the all-rank concatenation
 constructor and its fields, the binary product-subquotient theorem,
@@ -193,11 +191,8 @@ structure or classification conclusion.
 
 The recursive inventory below was checked at Library commit
 `df7769b33f1b2e786f8bb0ac3ff1a6fd8a49020e`. It has 412 project modules
-including this new pair, and 175 direct external import roots. All
-inherited Lean/Markdown pairs are present, their Markdown is nonempty,
-and both files are byte-identical to that Library. There are no missing
-project imports, proof-hole or new-axiom matches, pending candidate
-imports, or matches for the audited excluded names and task identifiers.
+including this pair, and 175 direct external import roots. There are no missing
+project imports, proof-hole or new-axiom matches.
 The lexical scan strips comments and strings. The external list records
 direct external roots rather than the recursive Mathlib closure.
 
@@ -231,29 +226,10 @@ Neither this pair nor its used proof route invokes a derivative
 conclusion. These observations supplement the lexical scan; a scan
 alone would not establish semantic independence.
 
-The trusted operator responses
-[bd71b9185aab5d6eafffb7891bd3a3ca](/home/taskhub/pilot/correspondence/bd71b9185aab5d6eafffb7891bd3a3ca.md),
-[0edda6122ce65ed7ac51603c37473920](/home/taskhub/pilot/correspondence/0edda6122ce65ed7ac51603c37473920.md),
-and [30144f6f9b59540b88b6d4c1517892d9](/home/taskhub/pilot/correspondence/30144f6f9b59540b88b6d4c1517892d9.md)
-were read in full. This pair needs no segment derivative permission.
-It uses none of Ze80 3.5/9.6 or their proofs or proof successors,
-the segment-socle part of task
-`8e5b4563-0365-41c7-b134-70f2a0b36292`, the host criterion in either
-direction, or the excluded conclusions of tasks
-`ed48ae06-964c-4c84-9e62-978f5a953ca7`,
-`b95105c6-f8bb-4641-ae53-2f49d1e7f034`,
-`55ad1e10-62d8-46b7-a081-909ef0056426`,
-`92aea10f-62ac-4e0b-bd4a-9a80909797c5`,
-`2ae5cbe5-0701-4509-88a0-db8cbeb35be4`,
-`30341ae4-65f2-4a0e-9283-763db01a409e`,
-`3bfb61fa-1129-4fc9-83fd-7fcfec22106e`,
-`ebea9a8a-9b21-4208-aa31-98c2dea1f8a3`,
-`20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584`,
-`8252833d-c269-41a9-824c-5879e531b23b`,
-`52e97845-36bb-457d-b76f-70753334b88c`,
-`1cb45da2-7007-4351-a694-594fb148b8d1`,
-`cd8ab97c-0b78-4bce-97c4-d307a28159a4`, or
-`bf433f0a-921a-428c-b0c0-6475438125ac`.
+This pair needs no segment derivative result.
+It uses none of Ze80 3.5/9.6 or their proofs or results proved from them,
+the segment-socle results, or the special-head product irreducibility
+criterion in either direction.
 
 ## Remaining scope
 
@@ -263,7 +239,7 @@ does not prove the support-only terminal-truncation derivative bound,
 the corresponding dual initial bound, product-derivative support
 aggregation or equality, nonlinkage survival or the linked converse.
 Both directions of the full repeated-segment special-head product
-irreducibility criterion remain unproved by this contribution.
+irreducibility criterion are not proved by this pair.
 
 ## Recursive project inventory
 

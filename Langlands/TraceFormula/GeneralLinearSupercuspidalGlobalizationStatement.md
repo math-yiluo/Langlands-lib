@@ -79,7 +79,7 @@ The distribution character is the trace of the finite-rank action of the locally
 compactly supported test `fv`, integrated against `μv`. The quantifier order lets `C` depend
 on the earlier choices, including both measures, and uses that same `C` for all test pairs.
 The trace identity is the untwisted clause of the project target
-`GroupSchemeCuspidalLocalTraceFactorizationStatement` (Task 7701), with the local representation
+`GroupSchemeCuspidalLocalTraceFactorizationStatement`, with the local representation
 identified with `ρ` and transported across `eᵥ v`.
 
 ## Why the unramified twist is needed

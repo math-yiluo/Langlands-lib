@@ -1,7 +1,5 @@
 # Group-isomorphism schemes under change of base
 
-Worker 220.
-
 This internal construction transports natural local group-isomorphism families and their actual representing schemes along arbitrary morphisms of base schemes. It is derived from the published all-test `LocalGroupIso` interface, `GroupIsomorphismScheme` and the multiplicative pullback adjunction `baseChangePointsEquiv`. No reductivity, field, flatness or finiteness hypothesis is required.
 
 For `b : S' ⟶ S` and a parameter `U` over `S'`, `LocalGroupIso.baseChangeFamily` restricts a family on the underlying `S`-parameter to tests over `S'`, transporting source and target points by the pullback adjunction. Conversely, `fromBaseChangeFamily` equips an `S`-test with an `S'`-structure using its point of `U`, applies the family there, and forgets that extra structure. The intermediate constructions in `ChangeOfBase` record these induced tests and prove their point correspondences natural under every refinement.

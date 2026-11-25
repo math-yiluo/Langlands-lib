@@ -1,10 +1,10 @@
 # Complex-place parameters of cyclic weak transfers
 
-Worker 230 authored the proposition definitions
+The proposition definitions
 `Langlands.Automorphic.Unramified.CyclicWeakBaseChangeComplexPlaceStatement`
 and
-`Langlands.Automorphic.Unramified.CyclicWeakBaseChangeComplexPlaceTCStatement`.
-They formulate B7 of the registered operator plan in the Library's actual
+`Langlands.Automorphic.Unramified.CyclicWeakBaseChangeComplexPlaceTCStatement`
+formulate B7 of the registered operator plan in the Library's actual
 complex-place parameter vocabulary, together with the unitary-isobaric
 base-change clause used along standard-B6 chains. The universe order of
 both declarations is `uF uE uV uW`.
@@ -177,7 +177,7 @@ cuspidal class has parameters, that they determine an infinitesimal
 character, or that a numerical integral/regular condition is equivalent
 to the Library's regular-algebraicity predicate. Universal parameter
 existence, infinitesimal-character determination and the Clozel
-integral/regular criterion belong to the separate authorized archimedean
+integral/regular criterion belong to the separate archimedean
 bridge, normalized against `ArchimedeanGL.IsRegularAlgebraicCharacter`.
 Downstream statements must retain that bridge as separately named
 premises when deriving regular-algebraicity conclusions.

@@ -1,10 +1,9 @@
 # Local finite type of actual nondegenerate modules
 
-Authors: Workers 6 and 633. Worker 6 supplied the complete shared draft.
-Worker 633 compared it with the original passages and published
-interfaces, checked its closed targets, and prepared this submission.
+The statement was compared with the original passages and published
+interfaces, and its closed targets were checked.
 
-This statement unit records Renard I.6's assertion that the original
+This statement module records Renard I.6's assertion that the original
 nondegenerate module category is locally of finite type. It supplies
 Prop-valued definitions, with no proof of the new assertions.
 
@@ -24,10 +23,12 @@ from Grothendieck's AB6. The published
 `Langlands.CategoryTheory.Renard.LocallyFiniteType` follows A.VI.3,
 printed p.263 / PDF p.269, with the actual finite-type convention of
 A.I.3. Its paired Markdown documents that source reading and convention.
-This unit reuses those predicates unchanged. The published
+This module reuses those predicates unchanged. The published
 `notes/renard/appendix-a-corrections.md` concerns other passages and
-was consulted. A bounded lookup in the workspace and current published
-notes found no dedicated errata note for the governing source. The
+was consulted. A bounded lookup in the published notes, made when this
+module was written, found no dedicated errata note for the governing source;
+the note `notes/errata/renard-2026-representations-groupes-reductifs-padiques.md`
+that now exists concerns VII.1.2, not I.6. The
 registered supplementary `renard-2010-corrections-complements`, SHA256
 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
 was read at PDF pp.18–19. Those pages concern the earlier edition and
@@ -56,12 +57,13 @@ says that top is the least upper bound of the set of all finite-type
 subobjects of each object. It does not add AB5, a generator or
 Noetherianity as a premise. Source finite type is the published
 `IsFiniteTypeObject`, including arbitrary subobject unions and the
-nonempty proper-chain condition. This unit does not redefine finite
+nonempty proper-chain condition. This module does not redefine finite
 type as finite generation or finite presentation.
 
 The source assumes an idempotented complex algebra. These targets
 explicitly extend to arbitrary nonunital idempotented rings with original
-additive actions and intertwiners. The intended argument generates the
+additive actions and intertwiners. The argument, implemented in
+`NondegenerateModuleLocallyFiniteTypeProof`, generates the
 stable additive subgroup of each finite subset and uses the existing
 source finite-generation comparison; closure under submodules supplies
 nondegeneracy. These steps require neither complex coefficients nor a
@@ -73,6 +75,8 @@ needed to form submodules of the fixed object.
 `LocallyFiniteTypeAssertions` conjoins the explicit cover and the
 canonical category assertion. Unapplied proposition examples and both
 unequal coefficient/carrier universe specializations are included, as
-is a reflexive unfolding check of the full canonical target. Proofs,
-filtered-colimit exactness, and completion of I.6 or the whole book
-remain separate obligations.
+is a reflexive unfolding check of the full canonical target. The proofs
+are in `NondegenerateModuleLocallyFiniteTypeProof` (`locallyFiniteTypeAssertions`),
+and filtered-colimit exactness is proved in
+`NondegenerateModuleFilteredColimitsProof`; the rest of I.6 and the whole
+book are outside this module.

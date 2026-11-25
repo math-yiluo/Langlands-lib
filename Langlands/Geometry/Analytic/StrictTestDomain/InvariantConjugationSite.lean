@@ -80,8 +80,8 @@ theorem invariantTransport_restriction (g : G) {U V : OpenSubgroup G}
     (h : V ≤ conjugateOpenSubgroup U g) {d e : ρ.InvariantRationalDomain U}
     (f : d ⟶ e) (a : e.obj.algebra) :
     ((ρ.invariantTransportFunctor g h).map f).hom.restriction
-        (e.obj.comparison (ρ.toMonoidHom g).hom a) =
-      d.obj.comparison (ρ.toMonoidHom g).hom (f.hom.restriction a) :=
+        (e.obj.comparison (ρ.toMonoidHom g).asIso.hom a) =
+      d.obj.comparison (ρ.toMonoidHom g).asIso.hom (f.hom.restriction a) :=
   restriction_transport f.hom (ρ.toMonoidHom g) a
 
 private theorem conjugation_hom_unique {U : OpenSubgroup G}

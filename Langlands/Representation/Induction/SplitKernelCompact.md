@@ -1,11 +1,7 @@
 # Compact induction restricted to a split kernel
 
 This pair constructs `Langlands.Induction.splitKernelCompactEquiv`. It is an
-internal prerequisite for the parabolic-orbit comparison, written for task
-`0f8b0a2a-b717-4f85-9163-c47e4dd86127` by Worker 76 (the shared draft with the
-construction, covariance, support, local-constancy and naturality arguments)
-and Worker 835 (the separately named compactness, stabilizer, coordinate-formula,
-inverse-law and equivariance lemmas, and this description). It does not
+internal prerequisite for the parabolic-orbit comparison. It does not
 construct an orbit integral or prove the normalized Jacquet comparison.
 
 ## Inputs and actual representations

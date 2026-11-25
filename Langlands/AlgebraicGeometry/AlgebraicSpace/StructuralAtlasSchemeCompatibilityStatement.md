@@ -1,8 +1,5 @@
 # Structural atlas geometry agrees with scheme geometry on actual schemes
 
-Authors: Worker 840, with Worker 139 (author of the task objective, which
-specifies the proposition body used verbatim here).
-
 This module states the compatibility obligation between the published
 one-atlas predicates of
 `Langlands.AlgebraicGeometry.AlgebraicSpace.StructuralAtlasGeometry` and
@@ -104,16 +101,16 @@ The direction from the scheme property to the atlas predicate is already
 published for each conjunct: `SmoothOverBase.of_scheme`,
 `LocallyOfFinitePresentationOverBase.of_scheme` and
 `LocallyOfFiniteTypeOverBase.of_scheme` use `U` itself with the identity
-transformation as atlas. A private development check confirmed that these
+transformation as atlas. A development check confirmed that these
 three lemmas give the right-to-left implications of the statement.
 
 The converse, from some surjective etale atlas `a` with the property on
-`W.hom` to the property of `U.hom`, is the substantive remaining obligation.
+`W.hom` to the property of `U.hom`, is the substantive obligation.
 It is an etale descent argument: `a` comes from a morphism of schemes
 `w : W ⟶ U` that is etale and surjective, and the property descends from
-`W.hom = w.left ≫ U.hom` to `U.hom`. This unit states that obligation and
-proves nothing. Its proof is a separate later exact-target proof task for
-this unchanged proposition.
+`W.hom = w.left ≫ U.hom` to `U.hom`. This module states that obligation and
+proves nothing. Its proof is `structuralAtlasSchemeCompatibility`, in the
+module `StructuralAtlasSchemeCompatibilityProof`.
 
 ## Original sources and translation
 
@@ -181,9 +178,8 @@ The proposition is an internal, derived compatibility statement between the
 Library's existential chart definitions, its actual scheme embedding and
 Mathlib's scheme geometry. No cited source states this exact Lean
 proposition. Its mathematical content is the representable (scheme) case of
-the chart criteria above, specialized to a scheme base. The form with three
-independent conjuncts, all scheme bases and an arbitrary universe was
-requested by the task contract and by its consumer feedback.
+the chart criteria above, specialized to a scheme base. The proposition has three
+independent conjuncts, all scheme bases and an arbitrary universe.
 
 ## Source reading record
 
@@ -212,6 +208,9 @@ predicate from `SmoothOverBase`.
 
 ## Intended use
 
-This statement is a focused prerequisite of the finite-type smooth-family
-representability task `90a7704e-771a-4107-a91a-c67873dd035e` (Worker 139).
-That task retains the finite-type existence argument and the final assembly.
+This statement was formulated as a focused prerequisite of the finite-type
+smooth-family representability result
+`FiniteTypeSmoothFamilyAbelianRepresentabilityStatement`, whose finite-type
+existence argument and final assembly lie outside it. The proof of that
+result, `finiteTypeSmoothFamilyAbelianRepresentability`, does not import this
+module.

@@ -1,6 +1,6 @@
 # The irreducible-existence assertions of Renard III.1.4
 
-Worker 6. `Langlands.SmoothRep.RenardIrreducibleExistenceStatement` states the
+`Langlands.SmoothRep.RenardIrreducibleExistenceStatement` states the
 three assertions at the end of III.1.4 using the existing actual smooth
 representation category and Renard's source categorical finiteness predicates.
 
@@ -43,7 +43,7 @@ simple successive cokernels from
 Neither predicate is replaced by finite dimension, finite presentation,
 admissibility or a condition on the size of fixed spaces. The comparison with
 group-algebra finite generation and the existing `A.HasFiniteLength` predicate
-is a separate interface obligation.
+is not made here.
 
 ## Source and the nonzero qualification
 
@@ -75,7 +75,7 @@ printed summary, without a claim of an author-issued erratum.
 
 The imported predicates already document their source repairs, including
 nonempty chains for finite type and the successive-factor index range for
-composition chains. The current unit preserves those predicates unchanged.
+composition chains. This module preserves those predicates unchanged.
 
 ## Generality and proof boundary
 
@@ -84,13 +84,15 @@ the t.d. convention of II.1.1, printed page 30 / PDF36. The current target
 deliberately generalizes to every coefficient field and topological group.
 The rationale is algebraic: invariant submodules and their quotients inherit
 smoothness, and their order is the submodule order of the actual group-algebra
-module. Proving the existence assertions at this generality remains required.
+module. The existence assertions are proved at this generality by
+`Langlands.SmoothRep.renardIrreducibleExistence`
+(`Langlands.Representation.Smooth.RenardIrreducibleExistenceProof`).
 
 No local compactness, total disconnectedness, countability, finite dimension,
 admissibility, algebraic closedness or characteristic restriction is imposed.
 No topology is supplied on the representation carrier. No Grothendieck, AB6,
 finiteness-comparison or Hecke-equivalence premise is assumed: any use of such
-results must be justified for the actual smooth category in the later proof.
+results must be justified for the actual smooth category in the proof.
 
 The published `Langlands.SmoothRep.exists_irreducible_subquotient` in
 `Langlands.Representation.Smooth.ConstituentSupport` assumes
@@ -99,11 +101,9 @@ conjunct here has no finiteness hypothesis. The generic categorical
 `SimpleQuotient` and finite-length results are also reuse leads with their
 actual hypotheses and comparisons retained.
 
-This file contains one proposition definition and no proof of it.
-Independent statement review and publication must precede an exact-target
-proof task. The Hecke-module equivalence and the rest of Chapter III retain
-their separate obligations.
+This file contains one proposition definition and no proof of it. The
+Hecke-module equivalence and the rest of Chapter III are not part of this file.
 
-Prepared environment: `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, Lean 4.34.0 at
+Environment: Lean 4.34.0 at
 `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`, Mathlib at
 `5ed2965256430c3649e86755f9576b54eca72435`.

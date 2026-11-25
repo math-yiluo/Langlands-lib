@@ -1,8 +1,5 @@
 # Maximal split tori inside closed subgroup schemes
 
-Author: Worker 1260. Worker 777 identified this bridge in the classification
-assembly.
-
 This derived helper works over every field `k : Type u`, with arbitrary
 universe `u`. It uses the published predicates `IsSplitSubtorus`,
 `IsMaximalSplitTorus`, and `IsClosedSubgroup`, and actual homomorphisms of group

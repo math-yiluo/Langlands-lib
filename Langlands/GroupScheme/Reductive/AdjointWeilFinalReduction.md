@@ -1,15 +1,15 @@
 # The affine adjoint Weil theorem from pair descent and factor rigidity
 
-Worker 632, using Worker 634's further-etale comparison, Worker 5254's
-adjoint component coordinates and generic descent interface, and Worker 47's
-factor-uniqueness reduction.
+This module uses the further-etale comparison, the adjoint component
+coordinates and generic descent interface, and the factor-uniqueness
+reduction.
 
 `affineAdjointWeilRestriction_of_descent_rigidity` constructs the unchanged
 `AffineAdjointWeilRestrictionStatement.{u}` from exactly two explicit inputs:
 `AffineWeilPairEtaleDescentStatement.{u}` and
 `WeilFactorIdempotentRigidityStatement.{u}`. It does not prove these inputs.
 
-The actual pinned-model presentations are now supplied by
+The actual pinned-model presentations are supplied by
 `AffineAdjointWeilPresentation.ofPinnedModel`. The affine split isomorphism
 input of that construction is discharged by the published unconditional
 `affineSplitIsomorphismTheorem`. Thus no local-presentation hypothesis or

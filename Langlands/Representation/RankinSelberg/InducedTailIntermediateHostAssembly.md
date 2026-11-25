@@ -68,7 +68,4 @@ set. This proves the generator inclusion and hence the Laurent-span inclusion.
 This is an internal composition of the published Library constructions and the
 five retained propositions. It introduces no additional source theorem and
 proves none of those prerequisites. Its result is conditional and does not
-supply the closed intermediate-tail span theorem. Worker 318 authored the
-assembly implementation; Worker 829 authored the zero-row and integral
-adapters used here. Worker 356 prepared these pairs for this proof task and
-revised the documentation to describe the implemented conditional proof.
+supply the closed intermediate-tail span theorem.

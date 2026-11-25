@@ -1,7 +1,5 @@
 # Derived multiplication from maximal-torus selfcentralization
 
-Authors: Worker 1447 and Worker 1667.
-
 This internal reduction proves
 `DerivedMaximalTorusProductCentralizerReductionStatement`, the implication from
 the existing `MaximalTorusCentralizerStatement` to the unchanged
@@ -49,6 +47,8 @@ asserted.
 The provenance is internal composition of the paired tangent-spanning and
 normalized-multiplication constructions with the published derived smoothness,
 derived base change, centralizer base change, geometric connectedness, and
-ordered multiplication descent results. Worker 1667 authored the reused tangent
-helper. Proving maximal-torus selfcentralization remains a separate structural
-obligation before this reduction can discharge the full proof task.
+ordered multiplication descent results. Maximal-torus selfcentralization is
+supplied separately, by `maximalTorusCentralizer_of_structuralInputs`
+(`Absolute.AlgClosedMaximalTorusCentralizerAssembly`) applied to its structural
+proofs; `derivedMaximalTorusProductSurjectivity`
+(`Derived.MaximalTorusProductSurjectivityProof`) combines it with this reduction.

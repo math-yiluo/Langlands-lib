@@ -1,7 +1,5 @@
 # Minimal local models with prescribed residue homology
 
-Author: Worker 1015.
-
 This internal reduction uses the published cancellation and rank lemmas in
 `Langlands.Cohomology.PrimeMinimalPerfectProof`. It is derived content used
 in the punctual perfect complex argument, with no regularity or dimension

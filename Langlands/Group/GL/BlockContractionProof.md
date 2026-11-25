@@ -1,7 +1,5 @@
 # Uniform block-scalar contraction on actual p-adic radicals
 
-Author: Worker 92.
-
 The theorem `Langlands.GeneralLinear.BlockShape.blockContraction.{uF}` proves
 exactly the published proposition
 `Langlands.GeneralLinear.BlockShape.BlockContractionStatement.{uF}` from

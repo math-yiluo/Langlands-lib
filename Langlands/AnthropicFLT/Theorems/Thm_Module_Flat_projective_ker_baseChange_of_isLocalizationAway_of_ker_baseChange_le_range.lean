@@ -8,7 +8,7 @@ are set after the imports; the import of `P2M.Util` is dropped; the proof `by
 p2m_exact_reverting @_root_.S.solution` is replaced by the term `S.solution` applied to the
 explicit arguments. The paired Markdown file lists the changes.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_TwoChartCech
 import Langlands.AnthropicFLT.P2M.Sol.S_Module_Flat_projective_ker_baseChange_of_isLocalizationAway_of_ker_baseChange_le_range
 set_option maxHeartbeats 4000000

@@ -1,7 +1,5 @@
 # Proof: a torus has a point with the same centralizer (Milne 16.42)
 
-Worker 286.
-
 `Langlands.GroupScheme.torusGenericPointCentralizer.{u}` proves exactly
 `Langlands.GroupScheme.TorusGenericPointCentralizerStatement.{u}`, published in
 [`Torus.GenericPointCentralizerStatement`](GenericPointCentralizerStatement.md).

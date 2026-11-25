@@ -11,7 +11,7 @@ namespace `Langlands.HarishChandraSchwartz`. It imports:
   (`Representation.Plancherel.CentralSubgroupCoefficients`) and the Hermitian dual
   `InvariantPositiveForm.toSmoothDual`, `InvariantPositiveForm.smoothDualEquiv`
   (`Representation.Unitary.HermitianDual`);
-- the published `Representation.Plancherel.CoefficientTensorForm` (Worker 200):
+- the published `Representation.Plancherel.CoefficientTensorForm`:
   `coefficientTensorInvariantForm` and `coefficientTensorInvariantForm_inner_tmul`; through it
   `CoefficientTensor P = P ⊗ P̃`, `coefficientTensorMap` with `coefficientTensorMap_tmul`, and
   the transport `coefficientTensorCongr` along an equivalence with `coefficientTensorMap_congr`

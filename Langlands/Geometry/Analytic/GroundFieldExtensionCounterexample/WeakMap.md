@@ -9,22 +9,22 @@ not extend along a ground field extension. All declarations are in the namespace
 `Langlands.Analytic.GroundFieldExtensionCounterexample`.
 
 This module contains only the construction. The statement that `weakMap` does not
-extend will be a separate artifact. It needs the ground field extension of
-affinoid atlas presentations from Task 7100, item 3, which is not yet in the
-Library. In outline, that statement says that the two atlas presentations
+extend is `NonExtensionStatement`, proved by `nonExtension` in
+`GroundFieldExtensionCounterexample/NonExtensionProof`. It uses the ground field
+extension of affinoid atlas presentations from module `GroundFieldExtensionAtlas`.
+In outline, that statement says that the two atlas presentations
 extended to `F₄` admit no `StrongHom` whose pullbacks are the ground field
 extensions of the pullbacks of `weakMap`. Nothing about `F₄`-base change is
 stated or proved here.
 
 ## Provenance
 
-This is an internal construction requested by the project operator in Task 7100:
-"Put your counterexample into the Library as a theorem with its Markdown (K = F2
-with the trivial norm, L = F = F4, the two incomparable triple charts, Frobenius
-on one of them): it is the reason for the restriction, and it records that a weak
-StrongHom need not extend along a ground field extension." The "restriction"
-is that item 3 of Task 7100 extends only `CompatibleStrongHom`s, not arbitrary
-`StrongHom`s, along a ground field extension. There is no literature source. The
+This is an internal construction: the counterexample with K = F2 with the
+trivial norm, L = F = F4, the two incomparable triple charts, and Frobenius on
+one of them. It is the reason why the ground field extension of atlas maps in
+`GroundFieldExtensionMaps` extends only `CompatibleStrongHom`s, not arbitrary
+`StrongHom`s, and it records that a weak `StrongHom` need not extend along a
+ground field extension. There is no literature source. The
 Library notions used are:
 
 - `StrongHom` (module `StrongAtlasMaps`);

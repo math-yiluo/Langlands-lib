@@ -1,7 +1,7 @@
 # The ultrametric projective tensor seminorm is a norm
 
-Author: Worker 1010. The module builds on Worker 972's published ultrametric
-projective tensor seminorm in `Langlands.Geometry.Analytic.ValuedField.TensorSeminorm`.
+The module builds on the published ultrametric projective tensor seminorm in
+`Langlands.Geometry.Analytic.ValuedField.TensorSeminorm`.
 
 ## Result and scope
 
@@ -27,7 +27,8 @@ The tensor-specific helpers are in the namespace
 instance is imported from [UltrametricCompletion](UltrametricCompletion.md)
 as `Langlands.Analytic.completion_isUltrametricDist`. `seminormFun`,
 `Representation`, `le_seminormFun`, `seminormFun_le`, `seminormFun_add_le` and
-`ultrametricTensorSeminorm_tmul_le` come from Worker 972's module: `seminormFun t`
+`ultrametricTensorSeminorm_tmul_le` come from
+`Langlands.Geometry.Analytic.ValuedField.TensorSeminorm`: `seminormFun t`
 is the infimum, over finite representations `t = ∑ i, a i ⊗ₜ b i`, of
 `max_i ‖a i‖ * ‖b i‖`.
 
@@ -38,7 +39,7 @@ on the left and a normed `F`-space `Y` on the right. It proves by strong inducti
 on the number of terms that every sum `∑ i, a i ⊗ₜ b i` with all
 `‖a i‖ * ‖b i‖ ≤ M` can be rewritten as a sum `∑ j, a' j ⊗ₜ b' j` with linearly
 independent right factors `b'` and all `‖a' j‖ * ‖b' j‖ ≤ M`. This generalizes the
-elimination step in Worker 972's private `one_le_aux`
+elimination step in the private `one_le_aux`
 (`TensorSeminorm.lean`, original lines 267–321), which invokes
 `one_le_of_linearIndependent`.
 
@@ -94,7 +95,7 @@ scaling the left factors of each representation.
 
 Now `E` and `E'` are commutative.
 
-- `tensorRingNorm F E E'` is Worker 972's `ultrametricTensorSeminorm F E E'`, a ring
+- `tensorRingNorm F E E'` is `ultrametricTensorSeminorm F E E'`, a ring
   seminorm, upgraded to a `RingNorm` by `seminormFun_pos`.
 - `NormedTensor F E E'` is a type synonym for `E ⊗[F] E'`. It gets the
   `NormedCommRing` instance from `RingNorm.toNormedRing (tensorRingNorm F E E')`, the

@@ -1,7 +1,5 @@
 # Polynomial charts near the closed fibre of a DVR
 
-Worker 594.
-
 `ClosedFibrePolynomialChart` records an injective polynomial algebra
 map over the base and quasi-finiteness of the map at the specified
 prime. The proof constructs the chart for a finite-type domain over

@@ -1,11 +1,9 @@
 # Complete filtrations and cohomological triviality
 
-Author: Worker 226.
-
 This module proves an abstract successive-approximation principle for multiplicative
 group cohomology in degrees one and two. It also gives explicit cochains that make
 coinduced modules satisfy the approximation hypothesis modulo a subgroup.
-`Langlands.ClassField.Global.LocalUnitLattice` uses both to find an open subgroup of the
+`Langlands.ClassFieldTheory.Global.LocalUnitLattice` uses both to find an open subgroup of the
 units of a local field whose first and second cohomology vanish.
 
 ## Setting and conventions

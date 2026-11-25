@@ -1,7 +1,5 @@
 # Ambient unramified invariance of the actual opposite scalar
 
-Author: Worker 359.
-
 This internal prerequisite proves invariance under ambient unramified
 characters for the Library's actual opposite standard integrals and their
 conditional canonical rational scalar. It derives the comparison from

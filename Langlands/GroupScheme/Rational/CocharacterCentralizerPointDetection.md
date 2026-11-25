@@ -1,6 +1,6 @@
 # Rational points detect common-torus cocharacter centralizers
 
-This internal deduction by Worker 561 compares actual cocharacter-centralizer
+This internal deduction compares actual cocharacter-centralizer
 subgroup functors through their rational-point subgroups. It uses the existing
 relative-root subgroup and dynamic-centralizer theorems, with no new
 literature assertion.
@@ -62,7 +62,7 @@ functors, which already encode commutation after every refinement; they
 are not centralizers computed only in the abstract group of rational
 points.
 
-This unit supplies a point-to-functor comparison needed in the rational
+This module supplies a point-to-functor comparison needed in the rational
 corrected-orbit modulus proof. It does not itself prove that modulus
 identity, extend the published torus Haar balance to every Levi point,
 or prove a rational-character detection theorem.

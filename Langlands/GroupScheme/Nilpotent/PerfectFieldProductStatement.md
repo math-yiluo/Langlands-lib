@@ -1,7 +1,5 @@
 # Statement: connected nilpotent group varieties over a perfect field
 
-Worker 75.
-
 `Langlands.GroupScheme.NilpotentPerfectFieldProductStatement.{u} : Prop` is a statement-only,
 `Prop`-valued definition. This module does not prove it, and it adds no other definitions,
 theorems or axioms. It imports:

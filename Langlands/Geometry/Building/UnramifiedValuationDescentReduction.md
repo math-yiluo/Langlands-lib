@@ -1,7 +1,5 @@
 # Reduction of the unramified valuation descent to the Galois-fixed locus
 
-Author: Worker 4707 (with Worker 4356, whose modules it uses); restructured by Worker 5553.
-
 Lean module: `Langlands.Geometry.Building.UnramifiedValuationDescentReduction`.
 
 This module proves that four statements about the Galois-fixed points of the special
@@ -18,7 +16,8 @@ Theorem 9.6.5). The four statements are:
   `UnramifiedFixedLocusStatement`): V 6 on `Z(F)` at the Galois-fixed points;
 - `UnramifiedFixedOppositeStatement` (same module): V 5 at the Galois-fixed points.
 
-None of them is proved here. Task 5513 proves the first one; its proof module is not imported
+None of them is proved here. The first one is proved as `unramifiedGaloisFixedApartment`
+(module `UnramifiedGaloisFixedApartmentProof`); that module is not imported
 here, so this module depends only on published statements. Notation is as in the Markdown of
 `UnramifiedValuationDescentStatement`: `fixed x` is invariance of `x : D.Apartment` under
 `RootFunctionFamily.galoisAction F K T G σ` for every `σ : K ≃ₐ[F] K`, and `φ x` is
@@ -54,8 +53,8 @@ smooth instances, `S`, `iS`, `hiS`, `T`, `iT`, `f`, `hf`, `hiT`, the monomorphis
 Its conclusion is the conclusion of the target for this data. The proof:
 
 1. `hfix` gives a fixed point `x0`.
-2. Shifts. For `n ∈ N(F)`, `hB` gives a fixed `y` with `φ y = n • φ x0`. Worker 4356's
-   `unramified_exists_descent_vadd_of_galoisFixed` writes `y = descentCocharacterMap v + x0`
+2. Shifts. For `n ∈ N(F)`, `hB` gives a fixed `y` with `φ y = n • φ x0`.
+   `unramified_exists_descent_vadd_of_galoisFixed` (module `UnramifiedApartmentDescentTorsor`) writes `y = descentCocharacterMap v + x0`
    for some `v ∈ V(S)`, so `n • φ x0 = v +ᵥ φ x0` by the helper lemma.
 3. Valuation. The published constructor `torusFieldRestrictedValuationOfOriginalPointShifts`
    turns `φ x0` into a valuation of the root datum of `(G, S)`. It is applied with
@@ -74,19 +73,19 @@ Its conclusion is the conclusion of the target for this data. The proof:
    `RootFunctionFamily.galoisAction_vadd` and the first helper lemma. Conversely, every
    fixed `x` is such a translate by the torsor lemma.
 7. Clause 1 is `hC` at `x0`, propagated to the class by
-   `KPApartmentData.isCentralizerCompatible_iff_of_mem`. Clause 3 is Worker 4356's
-   `unramified_eq_of_torusFieldRestricted_eq`. Clause 4 is `hB`.
+   `KPApartmentData.isCentralizerCompatible_iff_of_mem`. Clause 3 is
+   `unramified_eq_of_torusFieldRestricted_eq` (same module). Clause 4 is `hB`.
 
 ## Bridges and the final reduction
 
 `UnramifiedValuationDescentFixedLocusReductionStatement` is an internal closed `Prop`
 definition of the four-premise implication below. It packages the supporting reduction
-for a native statement contribution. The theorem retains its explicit four-premise type,
+as a statement of the Library. The theorem retains its explicit four-premise type,
 which is definitionally this proposition. This packaging adds no premise and does not
 prove any of the three new fixed-locus statements.
 
 - `unramifiedGaloisFixedApartment_apply` restates `UnramifiedGaloisFixedApartmentStatement`
-  for fixed explicit data. Its stability hypothesis is supplied by Worker 4356's
+  for fixed explicit data. Its stability hypothesis is supplied by
   `unramifiedGaloisStable_of_isOmegaCompatible` (module `UnramifiedApartmentGaloisStability`):
   a class with full V 6 is stable under `Aut(K/F)`.
 - `unramifiedFixedCentralizerCompatibility_apply` and `unramifiedFixedOpposite_apply` restate
@@ -94,8 +93,9 @@ prove any of the three new fixed-locus statements.
 - `unramifiedValuationDescent_of_fixedLocus`: `UnramifiedGaloisFixedApartmentStatement →
   UnramifiedFixedLeviTransportStatement → UnramifiedFixedCentralizerCompatibilityStatement →
   UnramifiedFixedOppositeStatement → UnramifiedValuationDescentStatement`. It introduces the
-  target's data and applies the core. `hfix` comes from the first bridge, `hB` from Worker
-  4356's `unramifiedFixedNormalizerTransport_of_leviTransport`, and `hC`, `hD` from the other
+  target's data and applies the core. `hfix` comes from the first bridge, `hB` from
+  `unramifiedFixedNormalizerTransport_of_leviTransport` (module
+  `UnramifiedFixedNormalizerTransportReduction`), and `hC`, `hD` from the other
   two bridges.
 
 ## Elaboration cost

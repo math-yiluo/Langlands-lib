@@ -92,7 +92,10 @@ The provenance is derived for three reasons:
 3. Both fields lie in one universe `u`. This is a formalization convention that
    the source does not impose.
 
-## For the later proof (not part of this unit)
+## For the proof (not part of this module)
+
+The Library proves the proposition as `separableAlgebraicSolvableRadical` in
+[`Rational.SeparableSolvableRadicalProof`](SeparableSolvableRadicalProof.md).
 
 Milne's proof, printed p. 397: "Let k′/k be a finite separable extension. As
 R(G)_{k′} is connected, normal, and solvable it is contained in R(G_{k′}). It

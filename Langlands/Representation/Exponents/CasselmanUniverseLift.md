@@ -1,7 +1,5 @@
 # Arbitrary carrier universes in the strict Jacquet criterion
 
-Author: Worker 1682.
-
 This internal supporting module removes a carrier-universe restriction
 when applying the published strict Jacquet sufficiency statement. It
 retains that statement as an explicit hypothesis and does not prove it

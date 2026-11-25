@@ -43,7 +43,7 @@ variable [CompactSpace (AdeleQuotient F)] {r : ℕ}
 /-- The central character of an actual unitarizable cuspidal realization is unitary. -/
 theorem CuspidalOperatorRealization.hasUnitaryCentralCharacter_of_isUnitarizable
     (S : CuspidalOperatorRealization F r) (hS : S.realization.IsUnitarizable) :
-    ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter S := by
+    ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter S := by
   obtain ⟨χ, hχ⟩ : ∃ χ : HeckeCharacter F, S.HasCentralCharacter χ :=
     (S.realization.existsUnique_hasCentralCharacter S.irreducible).exists
   obtain ⟨b⟩ := hS

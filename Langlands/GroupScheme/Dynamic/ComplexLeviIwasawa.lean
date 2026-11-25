@@ -41,7 +41,7 @@ theorem HasClosedStarRealization.hasHermitianStarLeviRealization
   have hσ : IsClosedSubgroup σ := by
     let : IsClosedImmersion ρ.hom.hom.left := hρ
     change IsClosedImmersion (ρ.hom.hom.left ≫ _)
-    infer_instance
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in infer_instance
   have hr := ρ.conjugate_baseOfMatrix_range_eq_of_mem g hg
   have hσs : ∀ q ∈ (σ.affineMatrix (CommAlgCat.of 𝕜 𝕜)).range,
       star q ∈ (σ.affineMatrix (CommAlgCat.of 𝕜 𝕜)).range := by

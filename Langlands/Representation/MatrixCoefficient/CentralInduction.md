@@ -1,7 +1,5 @@
 # Matrix coefficients in actual smooth induction from the center
 
-Author: Worker 386.
-
 This internal construction is an algebraic precursor to a regular
 representation with a prescribed central character. It places actual matrix
 coefficients in the existing smooth induced function space. It constructs no

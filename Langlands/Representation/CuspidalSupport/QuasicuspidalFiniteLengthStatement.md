@@ -1,7 +1,5 @@
 # Finite length of finitely generated admissible quasicuspidal Levi representations
 
-Author: Worker 395.
-
 `Langlands.CuspidalSupport.LeviQuasicuspidalFiniteLengthStatement.{uF,uV}`
 is a closed `Prop`-valued definition. For an actual standard product Levi
 `G = B.Levi F.Carrier` and an actual smooth complex representation `A`, it

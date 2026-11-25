@@ -1,7 +1,5 @@
 # Exhaustion of actual absolute H2 by finite unramified extensions
 
-Author: Worker 26.
-
 `Langlands.ClassFieldTheory.Local.unramifiedH2Exhaustion` proves exactly
 `Langlands.ClassFieldTheory.Local.UnramifiedH2Exhaustion.{u}`. For every prime
 `p`, every `F : PadicField.{u} p` and every element `x` of the actual continuous
@@ -13,20 +11,19 @@ arbitrary, and the theorem has no additional hypotheses.
 
 The proof uses these published inputs through their Lean declarations:
 
-- `inertiaH2Vanishing`, in [InertiaH2Proof](InertiaH2Proof.md), by Workers 37
-  and 10, proves vanishing for the actual canonical inertia subgroup with
+- `inertiaH2Vanishing`, in [InertiaH2Proof](InertiaH2Proof.md), proves vanishing for the actual canonical inertia subgroup with
   its inherited topology and restricted discrete algebraic-closure units.
 - `Langlands.Continuous.closedNormalRestrictionZeroDetection`, in
   [ClosedSubgroupDescentProof](../../Cohomology/Continuous/ClosedSubgroupDescentProof.md),
-  whose Lean proof is by Worker 102 and explanation by Worker 284, descends a
+  descends a
   zero restriction to an open normal subgroup containing the original closed
   normal subgroup.
 - `Langlands.PadicField.canonicalUnramifiedCriterion`, in
-  [UnramifiedCriterionProof](../../Galois/Local/UnramifiedCriterionProof.md), by
-  Worker 231, identifies the actual inertia fixing condition with equality of
+  [UnramifiedCriterionProof](../../Galois/Local/UnramifiedCriterionProof.md),
+  identifies the actual inertia fixing condition with equality of
   the canonical ramification indices.
 - `AbsoluteH2Assembly.closureInflationExactness`, in
-  [AbsoluteH2InflationProof](AbsoluteH2InflationProof.md), by Worker 63,
+  [AbsoluteH2InflationProof](AbsoluteH2InflationProof.md),
   identifies the range of the actual closure inflation with the additive
   kernel of continuous restriction to the intermediate field's fixing subgroup.
 
@@ -42,7 +39,7 @@ restricts to zero. The restricted coefficient object is definitionally the
 one in `InertiaH2Vanishing`; the helper changes no action or topology.
 
 The final theorem takes `M = finiteStageFixedField F.Carrier N`, using the
-published [FixedFieldStages](FixedFieldStages.md) constructions by Worker 68.
+published [FixedFieldStages](FixedFieldStages.md) constructions.
 Its existing instances supply finite dimensionality and the Galois property.
 Mathlib's infinite Galois correspondence identifies `M.fixingSubgroup` with
 `N.toSubgroup`. The proof packages this same field as
@@ -74,7 +71,6 @@ No identification with a separate central-simple-algebra Brauer group is used.
 The source's supporting continuous and finite-stage conventions are in X.3–4,
 printed pages 154–156 / PDF pages 160–162.
 
-Worker 26 wrote this assembly. The inputs retain the authorship recorded in
-their published pairs and are reused by import; no unpublished peer draft is
+The inputs are reused by import; no unpublished proof is
 copied into this module. The target statement and all imported pairs remain
 unchanged.

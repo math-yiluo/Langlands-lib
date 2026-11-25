@@ -22,16 +22,23 @@ II §2.3, p. II-12. The specific statement is derived for the Library's
 residue action and completion-to-global map. It is a Galois and residue
 comparison independent of class field existence.
 
-Use the prime induced by the closure embedding, the known comparison of
-completed and global ramification indices, and the existing decomposition
-homomorphism for the actual finite completion. Reduction commutes with
-restriction of the local action, and reduction of the finite unramified
-completion action is injective. Compare the exponent in
-`IsGeometricFrobeniusLift` with the residue-field cardinality using
-`CompletionResidue.residueEquiv` and `residueArithmeticFrobenius_apply`.
-This gives the assertions at the induced prime. Transport to any other
-prime above the same place by Galois prime conjugacy. In the abelian group,
-conjugation acts trivially on the result.
+The statement is proved by `finiteUnramifiedGaloisRestriction` in
+`Langlands.Galois.FiniteUnramifiedGaloisRestrictionProof`. At the prime
+`inducedPrime v E` induced by the completion embedding, the inverse of the
+image of a geometric Frobenius lift restricts to an arithmetic Frobenius
+(`arithmeticFrobeniusAt_inducedPrime`, module
+`Langlands.Galois.FrobeniusDensity`). The primes of `E` above `v` are
+conjugate under `E ≃ₐ[K] E`, and conjugation moves an arithmetic Frobenius
+at a prime to one at the conjugate prime; in the abelian group it does not
+change the element. So the restriction is an arithmetic Frobenius at every
+prime above `v`, without the unramifiedness hypothesis
+(`finiteGaloisRestriction_localToGlobalGalois_inv_isArithFrobAt`). A
+geometric Frobenius lift times an element of local inertia is again one
+(`isGeometricFrobeniusLift_mul_of_mem_localInertia`), and an arithmetic
+Frobenius at an unramified prime is unique
+(`Langlands.ClassFieldTheory.Global.Artin.eq_of_isArithFrobAt_mapAlgHom`);
+so local inertia restricts to one
+(`finiteGaloisRestriction_localToGlobalGalois_of_mem_localInertia`).
 
 Milne source ID `milne-2020-class-field-theory` (SHA-256
 `50d79af78250a9f1117ad9d337e0b231704a533fc707966ed1bfa52e13d498f5`).

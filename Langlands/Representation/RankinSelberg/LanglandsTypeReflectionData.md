@@ -1,7 +1,5 @@
 # Reflected residuals for genuine Langlands data
 
-Author: Worker 111.
-
 This internal construction retains certified polynomial data for two original
 positive-rank tempered Langlands data and for their reversed inverse-transpose
 data. The latter uses the inverse additive character and the same Haar measure,

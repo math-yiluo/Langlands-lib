@@ -1,6 +1,6 @@
 # The split quotient of a torus determined by invariant characters
 
-Worker 714. Internal construction for the anisotropic part.
+Internal construction for the anisotropic part.
 
 For a torus split by a finite Galois extension, its integral character lattice
 is finite free. Its invariant submodule is finite free over the integers.

@@ -3,8 +3,8 @@ import Langlands.LocalFactor.FML.AgreementProof
 /-!
 # Canonical FML packages from the Library conductors
 
-Derived Library integration definitions by Worker 455, using the construction
-formulas specified by Worker 332 and the published conductor agreements.
+Derived Library integration definitions, using the construction
+formulas and the published conductor agreements.
 They adapt the role of Fukuhiro Ueda's canonical character packages in
 epsilon_FML, commit 0b4159be50e1bd45ddff1de4280399576a3e2024 (Apache-2.0).
 Modifications: supplied p-adic instances, existing Library conductors instead

@@ -1,7 +1,5 @@
 # Auxiliary parity normalization from arithmetic and local transport
 
-Author: Worker 998.
-
 `Langlands.Global.Harris.proposition48AuxiliaryParityNormalizationReduction`
 proves the unchanged Library proposition
 `Langlands.Global.Harris.Proposition48AuxiliaryParityNormalizationReductionStatement.{uF}`.

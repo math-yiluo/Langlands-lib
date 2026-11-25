@@ -1,7 +1,5 @@
 # Changing the carriers of Langlands blocks
 
-Author: Worker 1748.
-
 This internal construction transports the two kinds of actual Langlands data
 along pointwise representation equivalences. It preserves the block shape and
 the real exponents, and constructs equivalences of the actual normalized upper
@@ -34,4 +32,5 @@ The provenance is internal and derived. The imported `LanglandsData`,
 `SmallRealizationProof`, `BlockEquivalence` and `UniverseLiftPadic` modules
 supply all constructions and transport results. No external assertion is
 introduced. This module proves no classification, equal-exponent grouping or
-Rankin–Selberg factor formula; those remain prerequisites of the host task.
+Rankin–Selberg factor formula; those are separate prerequisites of the
+statement this module serves.

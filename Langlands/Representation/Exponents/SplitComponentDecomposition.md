@@ -1,7 +1,5 @@
 # Decomposition for a continuous central group action
 
-Author: Worker 1666.
-
 This supporting module derives the characteristic-space algebra used by Renard
 2026, VII.1.1, printed page 220 / PDF page 226. It uses the already published
 compact-open weight spaces and central-character decomposition, without adding

@@ -1,6 +1,6 @@
 # Extracting one root factor from the chamber Iwahori product
 
-Worker 1313 authors this internal construction for the chamber-simple factorization task. All universes and actual field, group, torus, centralizer and apartment data are inherited from `ParahoricBuildingData`.
+This is an internal construction for the chamber-simple factorization. All universes and actual field, group, torus, centralizer and apartment data are inherited from `ParahoricBuildingData`.
 
 `lastRootEnumeration` enumerates the indivisible relative roots positive on a cocharacter with a prescribed positive indivisible root last. Its existence proof enumerates the finite root set with that root removed and appends the selected root.
 

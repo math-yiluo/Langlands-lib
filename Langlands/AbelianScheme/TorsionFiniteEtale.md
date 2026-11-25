@@ -1,7 +1,5 @@
 # Finite etale torsion of abelian schemes: proof
 
-Author: Worker 268.
-
 Module `Langlands.AbelianScheme.TorsionFiniteEtale`. This module proves the
 Library statement `Langlands.AbelianScheme.TorsionFiniteEtaleStatement`
 (module `Langlands.AbelianScheme.TorsionFiniteEtaleStatement`).
@@ -19,7 +17,7 @@ morphism `(GroupScheme.torsion A.toGrp (n : ℤ)).X.hom` is `IsFinite` and
 the conclusion. The proof uses only the axioms `propext`, `Classical.choice`
 and `Quot.sound`.
 
-The proof imports two helper modules, also part of this contribution:
+The proof imports two helper modules, ported together with this module:
 `Langlands.AlgebraicGeometry.AffineChartPoints` (points `testObj hS₀ C ⟶ Y` over
 `S` with values in `Spec C` for algebras `C` over the sections of an affine
 open `S₀`, and affine charts `Chart S₀ Y`) and
@@ -43,9 +41,10 @@ Below, `π := (torsion A.toGrp (n : ℤ)).X.hom`, `ι := (torsionι A.toGrp (n :
   `RingHom.FinitePresentation.of_comp_finiteType`.
 - `locallyQuasiFinite_of_etale`, imported from
   `Langlands.AlgebraicGeometry.AlgebraicSpace.EtaleQuasiFinite`: an etale morphism is
-  locally quasi-finite. The declaration retains its original full name and proof. On
-  affine opens, `f.appLE U V e` is etale, so the algebra is
-  `Algebra.QuasiFinite` by Mathlib's instance for etale algebras
+  locally quasi-finite. Its full name is
+  `Langlands.AlgebraicGeometry.locallyQuasiFinite_of_etale`. On affine opens,
+  `f.appLE U V e` is etale, so the algebra is `Algebra.QuasiFinite` by
+  Mathlib's instance for etale algebras
   (`Mathlib.RingTheory.Unramified.LocalStructure`). Then
   `HasRingHomProperty.iff_appLE` concludes.
 

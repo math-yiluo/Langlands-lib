@@ -1,6 +1,6 @@
 # The uniform Lang–Weil estimate over a scheme chart of the base
 
-Author: Worker 75. A helper module of the proof of
+A helper module of the proof of
 `Langlands.AlgebraicGeometry.LangWeil.SpaceUniformLangWeilOfFamilyStatement`. Provenance:
 internal.
 

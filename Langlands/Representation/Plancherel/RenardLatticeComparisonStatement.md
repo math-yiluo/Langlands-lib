@@ -1,7 +1,5 @@
 # Actual split-component lattice and full representatives
 
-Author: Worker 454.
-
 This module states propositions for every nonarchimedean local field `F`
 with the Library's field, valuation and topology instances, in both
 characteristics. Let `Z` be an actual connected reductive group scheme

@@ -1,6 +1,6 @@
 # Standard rational refinement transfer
 
-Author: Worker 146. This is a conditional consequence for the unchanged
+This is a conditional consequence for the unchanged
 whole-spectrum scalar gluing proof. It imports the published
 `ScalarCoverDescent` and `StandardRationalCover` modules.
 
@@ -18,10 +18,9 @@ Applying the standard-cover premise to that quotient base and the published
 `ScalarCoverDescent.separated` gives precisely the required local separation.
 This step is essential for recovering every original section.
 
-The common-target compatibility and general refinement arguments originated
-in Worker 146's earlier private adapter. Worker 572 extracted them into the
-published `ScalarCoverDescent`, adding explicit predicates and other formal
-transport results; both workers are credited in its paired Markdown.
+The common-target compatibility and general refinement arguments are in
+`ScalarCoverDescent`, together with explicit predicates and other formal
+transport results.
 This module imports those proofs by their published Lean names and retains
 only the standard-cover specialization. The implemented general transfer
 and its internal provenance are described in

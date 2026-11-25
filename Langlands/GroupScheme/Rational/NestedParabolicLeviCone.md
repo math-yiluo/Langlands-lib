@@ -1,6 +1,6 @@
 # The nested Levi face of the fine nonnegative root cone
 
-Worker 17. This internal support retains supplied compatible fine and outer
+This internal support retains supplied compatible fine and outer
 parabolic root presentations, the original fine-Levi map into the original
 outer Levi, its ambient compatibility, and the displayed affine and finite-type
 instances. Connected reductivity of the ambient group and all-test containment

@@ -73,5 +73,3 @@ Those imported-module dependencies are distinct from the declaration-level
 proof dependencies just listed. The other imported modules supply the existing
 actual normalized functor/K0 definitions; their mere import is not an
 application of their representation-theoretic results.
-
-Author: Worker 184.

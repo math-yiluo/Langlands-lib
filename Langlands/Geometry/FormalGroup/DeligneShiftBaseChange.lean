@@ -46,11 +46,11 @@ theorem inverseImageRationalLatticeIso_zpow (f : X ⟶ Y)
     (M : Y.Sheaf (ModuleCat.{u} (PiAlgebra d π))) (hπ : algebraMap O F π ≠ 0)
     (n : ℤ) :
     (TopCat.Sheaf.pullback (ModuleCat.{u} F) f).map
-        (rationalPiAut F Y d π M hπ ^ n).hom ≫
+        (rationalPiAut F Y d π M hπ ^ n).asIso.hom ≫
           (inverseImageRationalLatticeIso F f M).hom =
       (inverseImageRationalLatticeIso F f M).hom ≫
         (rationalPiAut F X d π
-          ((TopCat.Sheaf.pullback (ModuleCat.{u} (PiAlgebra d π)) f).obj M) hπ ^ n).hom := by
+          ((TopCat.Sheaf.pullback (ModuleCat.{u} (PiAlgebra d π)) f).obj M) hπ ^ n).asIso.hom := by
   let P := TopCat.Sheaf.pullback (ModuleCat.{u} F) f
   let e := inverseImageRationalLatticeIso F f M
   let T := (Aut.autMulEquivOfIso e).toMonoidHom.comp
@@ -59,12 +59,13 @@ theorem inverseImageRationalLatticeIso_zpow (f : X ⟶ Y)
       rationalPiAut F X d π
         ((TopCat.Sheaf.pullback (ModuleCat.{u} (PiAlgebra d π)) f).obj M) hπ := by
     apply Aut.ext
-    change e.inv ≫ P.map (rationalPiAut F Y d π M hπ).hom ≫ e.hom = _
+    apply Iso.ext
+    change e.inv ≫ P.map (rationalPiAut F Y d π M hπ).asIso.hom ≫ e.hom = _
     rw [inverseImageRationalLatticeIso_pi, Iso.inv_hom_id_assoc]
   have h := map_zpow T (rationalPiAut F Y d π M hπ) n
   rw [hT] at h
-  have hh := congrArg Iso.hom h
-  change e.inv ≫ P.map (rationalPiAut F Y d π M hπ ^ n).hom ≫ e.hom = _ at hh
+  have hh := congrArg (fun a => a.asIso.hom) h
+  change e.inv ≫ P.map (rationalPiAut F Y d π M hπ ^ n).asIso.hom ≫ e.hom = _ at hh
   have hhh := congrArg (fun t => e.hom ≫ t) hh
   simpa only [← Category.assoc, Iso.hom_inv_id, Category.id_comp] using hhh
 
@@ -96,7 +97,7 @@ theorem frameToTotal_inverseImage_shiftInt :
     Category.assoc]
   change (TopCat.Sheaf.pullback (ModuleCat.{u} F) f).map (M.frameToTotal F) ≫
       (TopCat.Sheaf.pullback (ModuleCat.{u} F) f).map
-        (rationalPiAut F Y d π M.lattice.sheaf hπ ^ k).hom ≫
+        (rationalPiAut F Y d π M.lattice.sheaf hπ ^ k).asIso.hom ≫
           (inverseImageRationalLatticeIso F f M.lattice.sheaf).hom = _
   erw [inverseImageRationalLatticeIso_zpow]
   rw [← Category.assoc, frameToTotal_pullback, Category.assoc]

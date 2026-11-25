@@ -42,17 +42,17 @@ def baseChange (d : IntegralActionInverseData a a') (c : S' ⟶ S) :
       (AbelianScheme.baseChange c).map_id]
   hom_intertwines := by
     intro x
-    change (AbelianScheme.baseChange c).map (a x) ≫
+    change (AbelianScheme.baseChange c).map (a x).asHom ≫
         (AbelianScheme.baseChange c).map d.hom =
       (AbelianScheme.baseChange c).map d.hom ≫
-        (AbelianScheme.baseChange c).map (a' x)
+        (AbelianScheme.baseChange c).map (a' x).asHom
     rw [← Functor.map_comp, ← Functor.map_comp, d.hom_intertwines]
   inv_intertwines := by
     intro x
-    change (AbelianScheme.baseChange c).map (a' x) ≫
+    change (AbelianScheme.baseChange c).map (a' x).asHom ≫
         (AbelianScheme.baseChange c).map d.inv =
       (AbelianScheme.baseChange c).map d.inv ≫
-        (AbelianScheme.baseChange c).map (a x)
+        (AbelianScheme.baseChange c).map (a x).asHom
     rw [← Functor.map_comp, ← Functor.map_comp, d.inv_intertwines]
 
 @[simp] theorem baseChange_multiple (d : IntegralActionInverseData a a') (c : S' ⟶ S) :

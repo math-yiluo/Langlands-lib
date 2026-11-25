@@ -1,7 +1,5 @@
 # Charts over which near lifts exist
 
-Authors are Worker 57 and Worker 786.
-
 `IsLiftChart g c` packages a local lifting property for the formalization of
 Berkovich, *Vanishing cycles for formal schemes* (1994), §7, Key Lemma 7.2.
 The strong map `g` maps the chart `c` into a target chart `w`. Finite tests

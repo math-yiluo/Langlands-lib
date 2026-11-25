@@ -1,7 +1,5 @@
 # Restricting actual height minima through a fixed right factor
 
-Author: Worker 83.
-
 This derived prerequisite proves the representation identities used to restrict
 successive height minima to a subgroup in Godement section 9.3, printed p.215
 (PDF page 16). Its objects are the Library's actual group-scheme

@@ -38,6 +38,8 @@ Notation: `G = Spec B` is corepresented over a field `k`, `Ω` a field with
     of `u` is the image of `y`, so `hc` gives `u = 1`;
   - comparing classifying maps (`pointRing_one`) gives `a = ε`.
   In the C.1.6 argument `hc` is an instance of the statement
-  `PseudoReductiveRationalUnipotentPointStatement` proposed in TaskHub
-  statement task `78895528-a2ff-490b-a6dd-816ced8667eb` (not yet in the
-  Library), for `U` the unipotent radical of `G_Ω`.
+  `PseudoReductiveRationalUnipotentPointStatement` (module
+  `Reductive.PseudoReductiveRationalUnipotentPointStatement`, proved as
+  `pseudoReductiveRationalUnipotentPoint` in
+  `Reductive.PseudoReductiveRationalUnipotentPointProof`), for `U` the
+  unipotent radical of `G_Ω`.

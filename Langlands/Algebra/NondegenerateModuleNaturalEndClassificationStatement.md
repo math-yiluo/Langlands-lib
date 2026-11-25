@@ -2,8 +2,8 @@
 
 This module declares propositions for Renard I.1.6. It supplies no proof of a
 classification assertion. All eight constituent assertions and their aggregate
-`NondegenerateModuleNaturalEndClassificationStatement.Classification` remain
-proof obligations.
+`NondegenerateModuleNaturalEndClassificationStatement.Classification` are
+proved in `NondegenerateModuleNaturalEndClassificationProof`.
 
 ## Source and provenance
 
@@ -145,5 +145,5 @@ assertions.
 Arbitrary noncommutative and nonunital rings, including zero rings, remain
 within the quantifiers. There is no `Nontrivial`, original unit-action,
 finite-dimensionality or `Small` assumption. Topology, closure, categorical
-centres, arbitrary smaller carrier universes and the separately owned
-right-linear comparison results are outside this statement unit.
+centres, arbitrary smaller carrier universes and the
+right-linear comparison results are outside this module.

@@ -1,7 +1,5 @@
 # Dynamic presentations after a trivial split-radical reduction
 
-Author: Worker 1478.
-
 This internal adapter constructs actual dynamic-parabolic presentation data for
 a supplied pseudo-parabolic inclusion, conditional on an exact replacement
 of its ordinary-radical product and triviality of the replacement factor.

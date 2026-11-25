@@ -17,7 +17,7 @@ namespace Langlands.Automorphic.Unramified
 
 open Langlands.Global Langlands.Global.AdelicFunctoriality
 open CuspidalOperatorRealization HarmonicAnalysis
-open ClassField.Global.RelativeWeilGroup (HasUnitaryCentralCharacter)
+open ClassFieldTheory.Global.RelativeWeilGroup (HasUnitaryCentralCharacter)
 open scoped NumberField FiniteExtension
 
 variable {K : Type*} [Field K] [NumberField K] {n : ℕ}

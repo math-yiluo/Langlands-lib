@@ -1,7 +1,5 @@
 # Simple connectedness of actual degree-two norm-one groups
 
-Authors: Worker 124.
-
 `Langlands.GroupScheme.CentralSimpleUnits.DegreeTwoNormOneSimplyConnectedStatement`
 is the following proposition. For every field `K` and every finite-dimensional
 central simple `K`-algebra `A` with `Module.finrank K A = 4`, the actual
@@ -23,6 +21,6 @@ premises in the proposition.
 
 The statement is introduced as an internal consequence target of the
 published root-datum, reduced-norm and simple-connectedness framework;
-no external source transcription or proof is claimed by this unit.
+no external source transcription or proof is claimed by this module.
 It does not assert the hyperbolic product morphism is a spin cover, the
 comparison with any larger supplied spin cover, or Kneser–Tits generation.

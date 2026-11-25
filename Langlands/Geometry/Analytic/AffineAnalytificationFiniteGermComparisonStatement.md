@@ -1,8 +1,5 @@
 # Statement: flatness and unramifiedness at a point where the analytification is finite
 
-Authors: Worker 554 (proposal and Lean form), Worker 3519 (review, Markdown and
-submission through parent Task 3519).
-
 `AffineAnalytificationFiniteGermComparisonStatement` compares analytic and
 algebraic flatness and unramifiedness at one point. It applies at points where
 the analytified map is finite.
@@ -29,9 +26,9 @@ Every point of `Space K Q` has the form `chart K Q m s`, because the charts
 cover the space (`AffineAnalytificationGluing`). So the statement covers every
 point at which `g` is finite.
 
-This is a statement only; its proof is a separate successor. It is a
-prerequisite proposed for the proof of `AffineAnalytificationEtaleStatement`
-(Task 7169). Together with `AffineAnalytificationQuasiFiniteStatement` and the
+This is a statement only; its proof is
+`AffineAnalytificationFiniteGermComparisonProof`. It is a prerequisite for the
+proof of `AffineAnalytificationEtaleStatement`. Together with `AffineAnalytificationQuasiFiniteStatement` and the
 surjectivity of the center map (`AnalytificationCenterStatement`, part (1)),
 it reduces the three equivalences of that statement to algebra.
 

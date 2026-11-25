@@ -27,7 +27,7 @@ variable {R : Type u} [CommRing R]
   {fam : J → (Ga R ⟶ G)} {wt : I → ℤ}
   {i : P ⟶ G} (r : U ⟶ P)
 
-local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
+private local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
 
 variable (hG : IsReductive G)
   (hmax : IsFibrewiseMaximalTorus

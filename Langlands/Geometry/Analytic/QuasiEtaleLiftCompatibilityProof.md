@@ -1,7 +1,5 @@
 # Proof: lifts of a continuous action are compatible with morphisms over the base
 
-Author: Worker 931.
-
 The theorem
 `Langlands.Analytic.SaturatedAtlasPresentation.quasiEtaleLiftCompatibility`
 proves the unchanged published statement

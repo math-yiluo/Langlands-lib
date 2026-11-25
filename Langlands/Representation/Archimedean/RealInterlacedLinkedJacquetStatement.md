@@ -50,7 +50,7 @@ There `realInducedInducedLinkedJacquetFunctional_of_interlaced` derives II from 
 
 ## Provenance and why the statement is expected to be true
 
-The statement is internal to Task 7070. It is the case `ds = [RealBlock.induced d, RealBlock.induced e]`
+The statement is internal. It is the case `ds = [RealBlock.induced d, RealBlock.induced e]`
 of S2 for the interlaced pairs. This list has rank `4`. It is Langlands-ordered (`Re t ≤ Re s`),
 and its two Mœglin data are linked. So S2 implies Interlaced by specialization.
 

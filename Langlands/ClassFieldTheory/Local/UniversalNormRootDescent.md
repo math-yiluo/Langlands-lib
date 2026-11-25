@@ -1,6 +1,6 @@
 # Removing roots of unity using a universal-norm lift
 
-This is a derived arithmetic support unit in arbitrary field universe `u`.
+This module is derived arithmetic support in arbitrary field universe `u`.
 For a characteristic-zero field `K` and nonzero natural number `n`,
 `rootOfUnityUnit K n` chooses a primitive unit of order `n` in the actual finite
 intermediate field `radicalField K n 1`. That field is the splitting field
@@ -21,7 +21,7 @@ explicit lift: for every actual finite intermediate field `E/F.Carrier`,
 there is a unit `b` in `E` with determinant norm `a`, and `b` belongs to every
 norm subgroup of an actual finite abelian intermediate extension of `E`.
 The theorem concludes that `a` is a `q`th power of a unit of `F.Carrier`.
-The lift is an input here; this unit does not prove its existence.
+The lift is an input here; this module does not prove its existence.
 
 The proof selects `E = radicalField F.Carrier q 1`, packages that same finite
 intermediate field as a `PadicField`, and takes a universal-norm lift `b` to it.

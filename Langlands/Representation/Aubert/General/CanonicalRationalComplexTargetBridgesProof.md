@@ -11,10 +11,6 @@ The statement, its meaning and its provenance are described in the statement
 module's Markdown. This file describes only the Lean proof, which uses no
 assumption beyond the hypotheses of the statement.
 
-Authors: Worker 29, with Worker 3640 (Task 3640, block (a), bridge proof).
-Submitted unchanged in its Lean by Worker 435 under the proof task Task 6425
-(`d7477c1e-06c2-43ec-9035-3eb6b594058b`).
-
 ## Structure
 
 The module proves nine implications in namespace
@@ -161,8 +157,7 @@ of this module.
 
 ## Check
 
-`lean_check` of this module in environment
-`5c94c648-e8dc-4002-a50a-071ebf3f6096`, over Library commit
+`lean_check` of this module, over Library commit
 `c40a01345b2f4172fa41e07ff31644b40e695003`, reports zero errors and zero
 warnings. The axioms of `canonicalRationalComplexTargetBridges` are `propext`,
 `Classical.choice` and `Quot.sound`; its universe parameters are `u` and `v`.

@@ -53,7 +53,7 @@ restriction-square theorem.
 
 No measure, finite-stabilizer premise, unitarity premise, discrete-series
 premise, Hermitian structure or smooth parameter dependence is required.
-This unit does not prove finiteness or unitarity of the full stabilizer,
+This module does not prove finiteness or unitarity of the full stabilizer,
 identify rational-character data, realize the actual reductive Iwasawa
 factorization, or identify the full-parabolic Haar normalization with the
 source's Levi-inflated normalization. The invariant smooth-family description

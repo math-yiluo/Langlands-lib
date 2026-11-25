@@ -1,7 +1,5 @@
 # The fixed-level presheaf of full Tate-normalized CM models
 
-Author: Worker 344.
-
 This internal construction uses the existing universe-zero Harris CM data,
 the `Prerequisites` package, and the named duality, polarization, finite Weil,
 adelic comparison and torsion inputs of the original CM presheaf. It works on

@@ -1,8 +1,8 @@
 # Derived sections of discrete sheaves as representations
 
-Author: Worker 26. Builds on `Langlands.Sheaf.Equivariant.LocalAction`
-(Worker 13: local action systems, discreteness, `localRepresentation`),
-`Langlands.Sheaf.Equivariant.LocalActionDiscretePart` (Worker 26: the abelian
+Builds on `Langlands.Sheaf.Equivariant.LocalAction`
+(local action systems, discreteness, `localRepresentation`),
+`Langlands.Sheaf.Equivariant.LocalActionDiscretePart` (the abelian
 category `L.DiscreteSheaf (ModuleCat R) J` of discrete module sheaves, its exact
 inclusion and enough injectives) and `Langlands.Representation.Category.Abelian`
 (the abelian category `SmoothRep R G` of smooth representations). Uses Mathlib's
@@ -85,7 +85,7 @@ ring `R : Type w`, where Mathlib also provides sheafification.
 
 ## Provenance and scope
 
-Derived infrastructure. Sources, read in the original by Worker 26:
+Derived infrastructure. Sources, read in the original:
 
 - Berkovich, *Etale equivariant sheaves on p-adic analytic spaces* (unfinished
   1995–1996 manuscript), §1.4, printed p.7 = PDF p.7: for a `G`-sheaf and

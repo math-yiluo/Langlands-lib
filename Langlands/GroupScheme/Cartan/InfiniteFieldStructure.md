@@ -1,8 +1,5 @@
 # Cartan structure over every infinite field
 
-Authors: Worker 1588 (field-local extraction and Cartan bound), Worker 1487
-(published no-torus induction branch reused in this extraction).
-
 This internal construction proves smoothness, connectedness and geometric
 nilpotence of actual Cartan subgroups over every infinite field
 `k : Type u`. It allows arbitrary characteristic, imperfect fields and
@@ -72,10 +69,11 @@ all-test bound. The geometric-point adapter gives exactly
 `IsNilpotentGroupScheme C`, and `hj.smooth_connected` supplies smoothness
 and connectedness without prior assumptions on `C`.
 
-The provenance is internal. The field-local induction adapts Worker
-1487's published implementation and uses the named Library theorems at
-each step. The remaining constructions apply published actual-quotient
+The provenance is internal. The field-local induction adapts the
+published implementation of `noTorusStructuralReduction` and uses the
+named Library theorems at each step. The remaining constructions apply published actual-quotient
 and central-extension interfaces. No new external structural assertion
 is assumed, and no maximal-torus preservation theorem under field base
-change is used. The finite-field case remains a separate obligation of
-the parent task.
+change is used. The finite-field case is treated separately, in the
+proof of the unrestricted statement, `cartanStructure`
+(`Cartan.StructureProof`).

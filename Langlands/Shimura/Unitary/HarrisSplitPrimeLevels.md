@@ -1,12 +1,10 @@
 # Harris's levels at a prime split in the imaginary quadratic field
 
-Author: Worker 19.
-
 This module constructs the `p`-adic level subgroups of Harris (1999), (4.1),
 for the unitary similitude group of the published Harris setup, through the
 identification `GG(ℚ_p) ≅ (ℚ_p ⊗_{F, u} A)ˣ × ℚ_pˣ` of
 `HarrisSplitPrimePoints`, which it upgrades to an isomorphism of topological
-groups using `ImaginaryQuadraticSplitTopology` (submitted together with this
+groups using `ImaginaryQuadraticSplitTopology` (ported together with this
 module). It then places these levels in the finite adelic points, as the
 levels `K_p × K^p`, and identifies the Harris level tower at such levels, with
 `K_p` fixed, with the published Harris tower away from `p`.
@@ -36,9 +34,8 @@ of `∏_j (𝒟_j)ˣ = (ℚ_p ⊗_{𝒦₀} 𝒟)ˣ`, which this module keeps un
 
 ## Inputs
 
-- `HarrisSplitPrimePoints` (submitted with `ImaginaryQuadraticSplitPoints` and
-  `CentralExchangeSplitting` in candidate
-  `da0b2727-b785-4787-9b7e-37ce24a50276`): `imaginaryQuadraticAlgebra ι`,
+- `HarrisSplitPrimePoints` (ported together with `ImaginaryQuadraticSplitPoints`
+  and `CentralExchangeSplitting`): `imaginaryQuadraticAlgebra ι`,
   `SecondKindInvolution.isConjugationOn` and
   `SecondKindInvolution.splitPrimePoints`.
 - `ImaginaryQuadraticSplitTopology`: `FactorUnits` and `pointsHomeomorph`.

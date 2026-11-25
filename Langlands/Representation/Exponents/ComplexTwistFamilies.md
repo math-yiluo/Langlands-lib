@@ -1,8 +1,6 @@
 # Actual complex-twist induced families and opposite Jacquet occurrence loci
 
-Author: Worker 264.
-
-This internal definition unit extends the published real-family packaging
+This module of definitions extends the published real-family packaging
 [`RealTwistFamilies`](RealTwistFamilies.md) to complex determinant exponents.
 It reuses the published actual induction, the complex product-Levi twist of
 [`LeviComplexPower`](../Twist/LeviComplexPower.md), the inverse-conjugation
@@ -210,19 +208,19 @@ formalization of the source's general Lie-algebra map is claimed.
 Printed p.102 (PDF page 8, inspected as an image) states, inside
 Proposition 5.8,
 `ω_{i s v₀ + ν''} ∈ 𝔇_{I(P'',σ''_{ν''})}(P,A)` for all `ν''`. The ambient
-induction varies by `σ''_{ν''}`; this unit keeps that visible by allowing a
+induction varies by `σ''_{ν''}`; this module keeps that visible by allowing a
 separate ambient map `b`, with `unitaryAmbient` as the canonical choice.
 The candidate coordinate `-s v₀ + i ν''`, with the coarse parameter
 restricted, has the shape of `refinedMixedAffine B S r` for an offset `r`
 that a consumer would still have to identify with `-s v₀`. That
 identification, any general compatibility of the character with Weyl
 conjugation, and any source-specific shape equality or `flattenedLeviEquiv`
-comparison belong to later adapters; none follows from a parameter formula
+comparison lie outside this module; none follows from a parameter formula
 alone and none is asserted here.
 
 The continuation passages in Lemma 5.6 (p.101), Proposition 5.8 (p.102) and
 the proof of Proposition 6.1 (pp.102–103) motivate later consumers but are
-not proved or encoded in this pair. This unit proves no analytic
+not proved or encoded in this pair. This module proves no analytic
 continuation, almost-all-to-zero passage, fixed-label selection, collision
 persistence, multiplicity or Hom comparison, arbitrary-quotient extraction,
 or classification theorem. Occurrence in the entire induction is distinct

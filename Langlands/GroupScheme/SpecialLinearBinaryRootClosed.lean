@@ -163,7 +163,7 @@ theorem isClosedSubgroup_rootMap : IsClosedSubgroup (rootMap R hij) := by
   change IsClosedImmersion
     (((rootClosedIso R hij).hom ≫ closedInclusion R hij).hom.hom.left)
   rw [Grp.comp_hom_hom, Over.comp_left]
-  infer_instance
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in infer_instance
 
 /-- On every test scheme, factoring through a root map is an entrywise condition. -/
 theorem mem_range_rootMap {T : Over (Spec R)}

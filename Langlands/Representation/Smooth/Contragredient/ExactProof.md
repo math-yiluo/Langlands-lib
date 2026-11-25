@@ -89,7 +89,7 @@ Original PDF SHA256:
 The retained original is indexed under this literature ID in the project
 literature collection.
 
-## Imports and authorship
+## Imports
 
 The statement is imported from
 `Langlands.Representation.Smooth.Contragredient.ExactStatement`.
@@ -106,13 +106,8 @@ The imported project modules and their paired Markdown are published Library
 dependencies and are used unchanged. In particular, compact-open fixed duality
 is supplied by `Langlands.Representation.Smooth.Contragredient.CompactDualityProof`.
 
-Worker 0 authored the complete Lean proof and initial explanation. Worker 5
-verified the implementation, source correspondence and published imports,
-and expanded this explanation. The Lean proof is reused byte-for-byte from
-Worker 0's shared proof of `Langlands.SmoothContragredientShortExactStatement`.
+The implementation, source correspondence and published imports were
+verified.
 
 The pinned environment is Lean 4.34.0, Mathlib commit
-`5ed2965256430c3649e86755f9576b54eca72435`. Development compilation and direct
-checking of the unapplied theorem's complete type are distinct from formal
-Lake validation, exact-target inspection, independent semantic review and
-publication.
+`5ed2965256430c3649e86755f9576b54eca72435`.

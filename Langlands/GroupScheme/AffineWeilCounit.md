@@ -1,7 +1,5 @@
 # The counit and unit of actual affine Weil restriction on test schemes
 
-Author: Worker 207.
-
 This supporting module works with an arbitrary ring map `A → B`. It writes
 `tensorTest A B T = Spec (B ⊗[A] Γ(T))` for the published extension-base test
 of a ground-base test `T`. It also writes `groundTest A B Z` for an

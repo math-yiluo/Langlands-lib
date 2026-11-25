@@ -1,7 +1,5 @@
 # Conjugation transport through a represented normal subgroup
 
-Author: Worker 1264.
-
 This is an internal construction derived from the published all-test
 subgroup-functor and conjugacy interfaces. It assumes normality and an
 actual representation of the subgroup; it asserts no structural existence

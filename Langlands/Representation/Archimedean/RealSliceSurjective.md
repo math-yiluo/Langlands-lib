@@ -9,7 +9,7 @@ This module is internal infrastructure for the proof of
 `RealLinkedJacquetInStagesProof`). There it gives the nonvanishing of `ℓ' ∘ Res`.
 
 Let `pre`, `ds`, `post` be lists of real blocks, with `a = realRank pre`, `r = realRank ds`,
-`a + r ≤ n` and `n = realRank (pre ++ ds ++ post)`. Worker 109's slice at the identity
+`a + r ≤ n` and `n = realRank (pre ++ ds ++ post)`. The slice at the identity
 (module `RealInductionStagesSlice`) is
 
 `sliceK h ha hr 1 : KFin n (pre ++ ds ++ post) →ₗ[ℂ] KFin r ds`,
@@ -26,8 +26,9 @@ the statements listed below and makes no other literature claim.
 
 All declarations are in the namespace `Langlands.Archimedean.RealSliceSurjective`.
 `IsMid a r i` (`a ≤ i < a + r`), `idx h j = a + j`, `midBlock n a r κ` (the middle `r × r`
-block of `κ`), `blockMat`, `kRep`, `ind` and `sliceK_ind` are Worker 109's
-(`RealInductionStagesSlice`, `RealInductionStagesAverage`, `RealInductionStagesInduce`).
+block of `κ`), `blockMat`, `kRep`, `ind` and `sliceK_ind` are from the modules
+`RealInductionStagesSlice`, `RealInductionStagesAverage`, `RealInductionStagesInduce` and
+`RealInductionStagesDerivative` (`midBlock`).
 `zp`, `zm`, `bf`, `IsSignEq` and `exists_KF` are from `RealBlockTestVector`.
 
 ## Declarations
@@ -141,5 +142,6 @@ in the same principal series, so they are equal
 
 `sliceK_one_surjective`. Let `ψ ∈ KFin r ds`. Apply the previous case to `M = charList ds`
 and `incl ds ψ`, which gives `G` with `σ₁ G = incl ds ψ`. Take the retraction `T` of
-`exists_retraction`. Worker 109's `ind h ha hr hr' hn T hT G` lies in
+`exists_retraction`. The function `ind h ha hr hr' hn T hT G` (module `RealInductionStagesInduce`)
+lies in
 `KFin n (pre ++ ds ++ post)`, and `sliceK_ind` gives `σ₁ (ind T G) = T (σ₁ G) = T (incl ψ) = ψ`.

@@ -1,6 +1,9 @@
 # Differential compatibility of finite tuple-cone presentations
 
-This is an internal construction for the finite Čech proof route in Task 6200.
+This is an internal construction for the finite Čech route to Berkovich's
+comparison `H^q(X{G}, F) ≅ H^q(X, b^*F)` for compact `X` in the quasi-étale case
+(`AnalyticQuasiEtaleGlobalComparisonStatement`, module
+`Langlands.Cohomology.AnalyticQuasiEtaleGlobalComparison.Statement`).
 It extends `FiniteCechPresentation`: the canonical decomposition supplied by
 limiting tuple cones identifies the actual presheaf nerve maps and the actual
 free-sheaf differentials with explicit maps between finite coproducts.
@@ -53,7 +56,7 @@ three-term model.
 
 No equivariant action, compatibility with an action, existence of tuple cones,
 exactness, fixed coefficient sections, or cohomological comparison is proved
-by this module. These remain separate inputs or obligations. The provenance is
+by this module. These are separate inputs or obligations. The provenance is
 internal: the construction follows only from the imported canonical finite
 presentation, universal properties, functoriality and the definition of the
 alternating face differential; no additional external source is used.

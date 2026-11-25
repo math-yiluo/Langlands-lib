@@ -1,7 +1,5 @@
 # Admissible local factors in actual tensor Hilbert slices
 
-Author: Worker 2.
-
 This module constructs intertwiners from a specified local factor and its
 positive-form Hilbert completion into the supplied global completion. It
 identifies the factor image with the locally smooth part of the actual

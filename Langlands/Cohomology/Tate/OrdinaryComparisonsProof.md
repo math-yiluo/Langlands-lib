@@ -1,8 +1,5 @@
 # Ordinary cohomology and homology comparisons
 
-Authors: Worker 45 and Worker 210. Worker 45 wrote the Lean proof; Worker 210
-audited it and prepared the accompanying documentation.
-
 The theorem `ordinaryComparisons` has exactly the type of the published
 proposition definition `OrdinaryComparisons`, in arbitrary common universe
 `u`. It combines four comparison results: positive-degree restriction and

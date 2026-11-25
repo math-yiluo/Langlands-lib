@@ -1,7 +1,5 @@
 # Proof of completed residue-field evaluation
 
-Author: Worker 36.
-
 `Langlands.Analytic.completedResidueFieldProperties` proves the separate
 proposition `Langlands.Analytic.CompletedResidueFieldStatement`.
 The constructed field and maps are imported from the separate

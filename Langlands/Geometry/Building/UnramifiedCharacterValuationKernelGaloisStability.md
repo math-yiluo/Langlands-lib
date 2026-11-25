@@ -1,6 +1,6 @@
 # Galois stability of the maximal-unramified character-valuation kernel
 
-This derived unit proves clause 1 of
+This module proves clause 1 of
 `Langlands.Geometry.Building.UnramifiedZeroDescentStatement`, strengthened
 to an equivalence. For every nonarchimedean local field `F : Type u`, in
 either characteristic, every group scheme `G` over `Spec F`, every
@@ -24,6 +24,6 @@ by the preceding theorem. The implication from original membership to
 conjugate membership is the first clause of the full descent target.
 
 The provenance is internal and derived from these named Library results;
-this unit makes no new interpretation of original literature. It proves
+this module makes no new interpretation of original literature. It proves
 the character-kernel clause only. The zero-subgroup stability and descent
 clauses remain separate obligations of the full target.

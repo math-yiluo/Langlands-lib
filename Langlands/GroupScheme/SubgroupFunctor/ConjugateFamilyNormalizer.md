@@ -31,6 +31,6 @@ condition on points over `M`.
 
 `range_conjugateFamily_eq_iff` combines this converse with the existing
 invariance theorem: two actual conjugate families are equal if and only if
-`g₁⁻¹ * g₂` belongs to the full normalizer of `range i` on `M`. This unit does
+`g₁⁻¹ * g₂` belongs to the full normalizer of `range i` on `M`. This module does
 not construct a quotient scheme or assert representability of the parabolic
 functor.

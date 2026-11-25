@@ -1,6 +1,6 @@
 # Tate's `ε₁` over coefficient fields of characteristic zero
 
-Worker 33 wrote this module for task `e534647a`. It covers Tate 1979, the
+This module covers Tate 1979, the
 paragraph after (3.6.11), in the nonarchimedean case. Here Tate extends the
 local constant `ε₁(V, ψ)` of (3.6.10) from complex coefficients to every
 coefficient field of characteristic 0. The main declaration is

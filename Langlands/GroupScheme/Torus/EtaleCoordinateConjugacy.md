@@ -8,6 +8,6 @@ The proof follows the established etale-local maximal-torus conjugacy constructi
 
 `EtaleCoordinateConjugacyData` records the actual neighborhood ring and projection, etaleness, coverage of the chosen point, the fixed integral equivalence, the conjugator, and the exact square. `etaleCoordinateConjugacyAt` chooses these proved data; existence of the conjugator or a constant coordinate map is not a premise.
 
-This unit gives a local existence theorem and data. It does not combine the neighborhoods into a finite cover, apply the construction inside a specified parabolic, compare base-changed filtration terms, or perform global descent.
+This module gives a local existence theorem and data. It does not combine the neighborhoods into a finite cover, apply the construction inside a specified parabolic, compare base-changed filtration terms, or perform global descent.
 
 Provenance: internal strengthening of the published etale-local maximal-torus conjugacy construction, preserving the fixed integral coordinates already used by its field-extension and transporter-lifting proof.

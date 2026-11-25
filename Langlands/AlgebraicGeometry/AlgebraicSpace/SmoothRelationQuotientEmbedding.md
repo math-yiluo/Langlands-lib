@@ -1,7 +1,5 @@
 # Scheme quotients from maps with exact relation fibers
 
-Author: Worker 148.
-
 This derived internal module combines the published canonical smooth-relation
 quotient, its elementary descent maps, and the published scheme-representability
 theorem for algebraic spaces with a locally finite type monomorphism into a

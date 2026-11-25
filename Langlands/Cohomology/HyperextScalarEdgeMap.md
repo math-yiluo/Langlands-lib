@@ -1,22 +1,22 @@
 # Edge maps and extension of scalars
 
-Author: Worker 61. Built on the Library modules
+Built on the Library modules
 `Langlands.Cohomology.HyperextScalarExtension` (`abutmentMap`,
 `cohomologyHomMap`, `IsSemilinear`, the base-change maps and their smooth
-specializations; Worker 61), `Langlands.Cohomology.HyperextEdgeMapLinear`
-(`HyperextAbutment.edgeMapLinearMap`, `HyperextAbutment.degenerationLinearEquiv`;
-Worker 61), `Langlands.Cohomology.HyperextEdgeMap`
-(`HyperextEdgeMap.homologyFunctorFactors_inv_app_singleFunctorCompHomologyFunctorIso`;
-Worker 61), `Langlands.Cohomology.DerivedExactComposition`
-(`DerivedPlus.homologyπ_mapHomologyIso_hom`; Worker 727) and
+specializations), `Langlands.Cohomology.HyperextEdgeMapLinear`
+(`HyperextAbutment.edgeMapLinearMap`, `HyperextAbutment.degenerationLinearEquiv`),
+`Langlands.Cohomology.HyperextEdgeMap`
+(`HyperextEdgeMap.homologyFunctorFactors_inv_app_singleFunctorCompHomologyFunctorIso`),
+`Langlands.Cohomology.DerivedExactComposition`
+(`DerivedPlus.homologyπ_mapHomologyIso_hom`) and
 `Langlands.Cohomology.HyperextDegeneration.Proof`
-(`hyperextDegenerationStatement_proof`; Worker 894). Through these imports it
+(`hyperextDegenerationStatement_proof`). Through these imports it
 also uses `exactDerivedHomologyIso` of
-`Langlands.Cohomology.ExactDerivedHomology` (Worker 13),
+`Langlands.Cohomology.ExactDerivedHomology`,
 `mapHomologicalComplexHomologyIso` of
-`Langlands.Cohomology.DivisibleSystem.InverseLimit` (Worker 61) and the edge map
+`Langlands.Cohomology.DivisibleSystem.InverseLimit` and the edge map
 `HyperextDegeneration.edgeMap` of
-`Langlands.Cohomology.HyperextDegeneration.Statement` (Worker 3).
+`Langlands.Cohomology.HyperextDegeneration.Statement`.
 
 Let `F : C ⥤ D` be an exact functor of abelian categories, `K` an object of the
 derived category of `C`, `W` an object of `C`, `W₀` the complex `W` placed in
@@ -250,13 +250,13 @@ Proofs.
 ## Provenance and interpretation
 
 The statements and proofs are ours, assembled from Mathlib and the Library.
-Worker 13, the first executor of the task, asked Worker 61 for the change of
-coefficients from `𝒪` to `L_ℓ` and for the maps it induces on the degeneration
-of Harris's spectral sequence. The Library's `HyperextScalarExtension`
+The subject is the change of coefficients from `𝒪` to `L_ℓ` and the maps it
+induces on the degeneration of Harris's spectral sequence. The Library's
+`HyperextScalarExtension`
 supplies the comparison maps; this module supplies their compatibility with the
 edge maps and hence with the degeneration isomorphisms.
 
-For this module Worker 61 read the following passages of Harris 1999, in the
+The following passages of Harris 1999 were read for this module, in the
 rendered scans (the text layer of this scan is unreliable):
 
 - Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
@@ -304,11 +304,11 @@ are bijective in Harris's situation.
   not deduced from the vanishing over `R` (`hW`).
 - Group actions, the Hecke and `Z_v` actions of Harris and isotypic parts are
   not treated. In particular, no statement relates the isotypic parts of a
-  representation over `R` to those of its extension of scalars to `S`; this
-  remains an open obligation.
+  representation over `R` to those of its extension of scalars to `S`; that
+  relation is treated in `Langlands.Cohomology.HyperextIsotypicBaseChange` and
+  `Langlands.Cohomology.HyperextIsotypicLocalization`.
 - The geometric inputs of Proposition 4.10 and the identifications needed to
-  apply the module to Harris's (4.10.1), (4.10.4) and (5.2) are not formalized;
-  Worker 13 lists them as planned obligations.
+  apply the module to Harris's (4.10.1), (4.10.4) and (5.2) are not formalized.
 - `HasExt` and `HasDerivedCategory` are hypotheses; the results hold for each
   such instance.
 

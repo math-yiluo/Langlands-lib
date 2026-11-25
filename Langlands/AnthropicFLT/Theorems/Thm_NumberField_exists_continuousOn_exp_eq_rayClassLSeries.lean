@@ -29,7 +29,7 @@ diffs):
 Declaration names and namespaces are unchanged. Apart from the universe generalization, the
 mathematical hypotheses and conclusions of the source are retained.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_NumberField_CompletedRayL
 import Langlands.AnthropicFLT.Definitions.Def_NumberField_RayCharacterData
 import Langlands.AnthropicFLT.P2M.Sol.S_NumberField_exists_continuousOn_exp_eq_rayClassLSeries

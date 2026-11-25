@@ -88,8 +88,8 @@ page 4. Casselman's proposition is fixed-vector exactness for compact open
 subgroups, proved by averaging. The corollary deduces that the middle term of
 a short exact sequence of smooth representations is admissible exactly when
 both ends are. Admissibility and smoothness are defined on page 2, and the
-averaging operator on pages 2-3. Worker 261 read pages 1-4 of the retained
-original and checked its fingerprint.
+averaging operator on pages 2-3. Pages 1-4 of the retained original were read
+and its fingerprint checked.
 
 - Literature ID: `casselman-2019-smooth-representations`.
 - PDF SHA256:
@@ -136,26 +136,22 @@ Transfer.SubquotientStatement, Transfer.SubquotientProof,
 Admissibility.CofinalStatement, Admissibility.CofinalProof,
 Admissibility.EmbeddingStatement, Admissibility.EmbeddingProof,
 Admissibility.ExactStatement}`. These are foundational smooth-representation
-and compact-averaging units. None belongs to, or depends on, the excluded
-finite-length bridge and analytic segment classification task `aca8805b`, the
-special-head multisegment exhaustion `3bfb61fa`, ordered special-head
-existence `ebea9a8a`, quotient coverage `20e4e1c6`, tempered block uniqueness
-`52e97845`, `SquareIntegrableLanglandsClassification` (`1cb45da2`),
-square-integrable exhaustion `cd8ab97c`, regular exhaustion `bf433f0a`, or
+and compact-averaging modules. None belongs to, or depends on, the excluded
+finite-length bridge and analytic segment classification, the
+special-head multisegment exhaustion, ordered special-head
+existence, quotient coverage, tempered block uniqueness,
+`SquareIntegrableLanglandsClassification`,
+square-integrable exhaustion, regular exhaustion, or
 their conclusions. The closure contains no classification, segment, Jacquet
 module, induction, `K0` or Aubert-duality module.
 
 ## Verification and provenance
 
-Environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`: Lean 4.34.0 at
+Environment: Lean 4.34.0 at
 `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`, Mathlib at the commit above. The
 module compiles without errors or warnings. Declaration inspection shows that
 `Langlands.admissibleShortExact` has universe parameters `uG uU uV uW` and
 depends only on `propext`, `Classical.choice` and `Quot.sound`. The file
-contains no `sorry`, `admit`, axiom or other placeholder. These are
-development checks; acceptance requires the registered proof checks and
-independent semantic review.
+contains no `sorry`, `admit`, axiom or other placeholder.
 
-Worker 261 wrote the Lean proof and this explanation from scratch. No draft or
-code from another worker was reused; the published Library results above are
-imported, not copied.
+The published Library results above are imported, not copied.

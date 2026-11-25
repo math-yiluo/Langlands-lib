@@ -1,6 +1,6 @@
 # Cell boundary length from simple parabolic products
 
-This internal module derives strict Coxeter length decrease on actual
+This module derives strict Coxeter length decrease on actual
 base-cell boundaries from a compact base quotient, closed monotone
 parabolics, the base-cell cover, and parabolic double-coset comparisons.
 It then proves the full generic fixed-order surviving-support target.
@@ -64,7 +64,9 @@ The provenance is internal: the new deductions are elementary group,
 finite-word and topological arguments built on the existing Library
 interfaces and Mathlib Coxeter results. No additional literature
 assertion or Tits-system axiom is assumed. The actual rational cover,
-parabolic comparisons and quotient compactness remain to be proved or
-supplied by other results; this conditional supporting unit does not
-prove `RationalCorrectedSurvivingSupportStatement`. The exact rational
+parabolic comparisons and quotient compactness are not proved here; this
+conditional module does not prove
+`RationalCorrectedSurvivingSupportStatement`. `RationalCorrectedSupportAssembly`
+applies it, and `rationalCorrectedSurvivingSupport` in
+`RationalCorrectedSurvivingSupportProof` proves that statement. The exact rational
 target and all its imported Lean/Markdown pairs are preserved.

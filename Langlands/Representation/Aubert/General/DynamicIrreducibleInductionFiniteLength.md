@@ -1,7 +1,5 @@
 # Finite-length embeddings for actual dynamic induction from standard inputs
 
-Author: Worker 1212.
-
 This internal construction retains the universal cuspidal-induction
 finite-length statement at the enlarged coefficient universe, the
 standard-cocharacter and standard-Levi-intersection statements, the relative

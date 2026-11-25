@@ -2,7 +2,7 @@
 
 This module states KP Axiom 4.1.9 (the Iwahori–Tits system) and KP Axiom 4.1.16 (the Iwahori
 decomposition) for the Library's parahoric building data. It is part of the full corrected
-Definition 4.1.26 predicate (task `129deca1-ce21-411b-9b79-7e94545fe26d`). It contains
+Definition 4.1.26 predicate. It contains
 definitions of subgroups and product maps, two validity predicates with their whole-apartment
 forms `HasTitsSystem` and `HasIwahoriDecomposition`, and lemmas that unfold or follow directly
 from these predicates. Nothing here asserts that the predicates hold for given data, or that
@@ -196,6 +196,6 @@ and every chamber `Ca` of `A(S)`.
 
 ## Use
 
-The assembled Definition 4.1.26 predicate (a later unit of the same task) uses `HasTitsSystem`
+The assembled Definition 4.1.26 predicate (module `FullValidity.Assignment`) uses `HasTitsSystem`
 for Axiom 4.1.9 and `HasIwahoriDecomposition` for Axiom 4.1.16. Axioms 4.1.2, 4.1.6 and 4.1.8 are
 taken from the fields of the Library's `SatisfiesPartialBuildingAxioms`.

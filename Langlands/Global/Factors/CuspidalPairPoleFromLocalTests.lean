@@ -20,7 +20,7 @@ namespace Langlands.Global.CuspidalPairPoles
 
 open Automorphic RankinSelbergGlobal ArchimedeanLocal CompletionPadic
 open LocalFactor.Archimedean CuspidalPairFunctionalEquation
-open ClassField.Global.RelativeWeilGroup (IsCanonicalFiniteAdditiveComponent)
+open ClassFieldTheory.Global.RelativeWeilGroup (IsCanonicalFiniteAdditiveComponent)
 
 /-- The normalized strip growth needed for ordinary real local tests with the
 compatible quotient measures chosen in the global construction. -/

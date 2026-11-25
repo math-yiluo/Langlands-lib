@@ -6,8 +6,10 @@ that is invertible in `K`. Then every nontrivial `K`-point of `G` is detected by
 actual Cartier character of `G`. Here a Cartier character is an element of the
 Library's character functor `Langlands.GroupScheme.Cartier.characters G`, taken at
 the identity test scheme `Over.mk (𝟙 (Spec K))`. The module is one input to the
-finite-level geometric Weil nondegeneracy proof (task `c063e112`), and it has the
-interface agreed with Worker 989 for that assembly.
+finite-level geometric Weil nondegeneracy proof: in
+`Langlands.AbelianScheme.Tate.WeilFiniteGeometricNondegeneracyFromField`, the theorem
+`finiteEtaleCharacterSeparation` proves `FiniteEtaleCharacterSeparationStatement`
+directly from the main theorem below.
 
 This is the standard fact that a finite étale group scheme over an algebraically
 closed field is constant, and that the Cartier dual of a constant finite abelian

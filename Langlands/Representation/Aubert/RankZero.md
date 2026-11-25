@@ -1,7 +1,5 @@
 # The actual Aubert operators in rank zero
 
-Author: Worker 165.
-
 This is an internal elementary construction supporting the all-rank
 `Langlands.Aubert.InductionCommutationStatement`. Its intended exported result
 `inductionCommutation_rankZero` proves the actual map equality when the ambient

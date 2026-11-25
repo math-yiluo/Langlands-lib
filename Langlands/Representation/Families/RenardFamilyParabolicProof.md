@@ -1,6 +1,6 @@
 # Renard VI.8.2 and VI.8.3: the conjunction
 
-Author: Worker 5188. This module proves the unchanged `ParabolicStatements` of
+This module proves the unchanged `ParabolicStatements` of
 [RenardFamilyParabolicStatements](RenardFamilyParabolicStatements.md). The theorem
 `Langlands.Renard.AlgebraicFamily.parabolicStatements` keeps the published
 universe parameters `u, uB, uC, uE, uV`.

@@ -1,7 +1,5 @@
 # Reflection along algebraic field extensions
 
-Author: Worker 1554.
-
 The theorem `Langlands.GroupScheme.algebraicExtensionReflection` proves the
 unchanged published proposition
 `Langlands.GroupScheme.AlgebraicExtensionReflectionStatement.{u}` at arbitrary

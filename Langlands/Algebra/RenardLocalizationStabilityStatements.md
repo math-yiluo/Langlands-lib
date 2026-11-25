@@ -1,7 +1,6 @@
 # Actual localization, stable powers, and the canonical stable image
 
-Authors: Worker 709 (Lean file and first Markdown) and Worker 977 (source
-check and Markdown revision). This is a statement-only, internal derived unit
+This is statement-only, internal derived content
 for ordinary unital modules. It proves none of its propositions. Its
 namespace is `Langlands.Renard.EndomorphismLocalization`.
 
@@ -9,7 +8,7 @@ namespace is `Langlands.Renard.EndomorphismLocalization`.
 
 David Renard, *Représentations des groupes réductifs p-adiques*, French
 edition dated 9 July 2026, Appendix C.II, final proposition and proof,
-printed page 279 / PDF page 285, motivates this unit. The stability
+printed page 279 / PDF page 285, motivates these statements. The stability
 definition is on printed page 276 / PDF page 282. The actual endomorphism
 localization and its following lemma and corollary are in Appendix A.III.1,
 example 5, printed pages 252–253 / PDF pages 258–259. The registered source
@@ -65,12 +64,14 @@ source's conventions. The relations to the source are as follows.
 None of these extensions is attributed verbatim to Renard; hence the
 provenance is derived.
 
-Worker 709 read the original passages above and visually checked PDF page
-285. Worker 977 independently read PDF pages 285 (also rendered as an image),
+The original passages above were read and PDF page
+285 visually checked. A second reader independently read PDF pages 285 (also rendered as an image),
 282, 258–259 and 12 after confirming the source SHA256. Public notes
 `notes/renard/stable-quotients.md` and `notes/renard/appendix-a-corrections.md`
-record the relevant source boundaries. The current Library has no separate
-errata note for this source. Worker 977 also read PDF pages 18–19 of the
+record the relevant source boundaries. The Library's errata note for this
+source, `notes/errata/renard-2026-representations-groupes-reductifs-padiques.md`,
+concerns chapters V–VII and has no entry for these passages. The second
+reader also read PDF pages 18–19 of the
 registered older supplementary author errata,
 `renard-2010-corrections-complements`, SHA256
 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
@@ -101,8 +102,10 @@ are allowed.
 `Mathlib.RingTheory.Noetherian.Basic` supplies the ordinary
 `IsNoetherian`, `IsNoetherianRing` and `Module.Finite` interfaces used to
 write the hypotheses. No proof of the Noetherian core or of the actual
-localization kernel and exhaustion is imported. Their future proofs are
-separate obligations, not assumptions of these statements.
+localization kernel and exhaustion is imported. Their proofs are
+separate (`NoetherianLocalizationCoreProof` and
+`RenardEndomorphismLocalizationKernelProof`), not assumptions of these
+statements.
 
 ## Exact propositions
 
@@ -181,7 +184,7 @@ no theorem and no proof.
 
 The possibly nonunital B-action construction, compatible complex-linearity,
 the unitization and finite-generation/Noetherian comparisons, and the full
-source-facing C.II proposition remain parent obligations. This unit also
+source-facing C.II proposition are outside this module. This module also
 does not state the distinct A.III.1 power-kernel-union quotient comparison
 or its surjective-canonical-map corollary, and it imports neither
 construction. The separate C.II successive-quotient exact sequence is
@@ -189,15 +192,13 @@ unchanged.
 
 ## Development checks
 
-In the pinned Lean service, environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, Worker 709 and Worker 977 each
+In the pinned Lean service, two readers each
 compiled this module and inspected `ActualLocalizationStabilityStatements`:
 zero errors and warnings, `statement_returns_prop` true, level parameters
 `uR uV`, and only the standard assumptions `propext`, `Classical.choice`
-and `Quot.sound`. Private diagnostic modules, excluded from this unit,
+and `Quot.sound`. Private diagnostic modules, excluded from this module,
 printed all five complete declaration bodies and checked the unapplied
 types, swapped universe instantiations, the common positive witness, both
 equations inside unique existence, and the every-positive-stable-exponent
-conclusion. These checks inspect the proposition definitions; no proof
-acceptance is claimed. Compilation does not establish independent semantic
-acceptance or publication.
+conclusion. These checks inspect the proposition definitions; they are not a
+proof.

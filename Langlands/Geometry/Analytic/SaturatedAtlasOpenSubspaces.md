@@ -43,6 +43,6 @@ subspace.
 
 These are local topology and finite covering helpers. They do not construct
 the analytic pullback presentation or prove the localized categorical or
-etale conclusions of Task 7349. No external statement is transcribed.
+etale conclusions of `LocalizedEtalePullbackStatement`. No external statement is transcribed.
 
 The open-domain theorem is reused from `InvariantAnalyticDomains`; this module keeps the chart refinements, finite-cover results and `openSubspaceAtlas` construction.

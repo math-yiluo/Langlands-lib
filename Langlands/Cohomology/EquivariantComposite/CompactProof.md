@@ -1,7 +1,5 @@
 # The compact-group composite-functor identification
 
-Author: Worker 141.
-
 `compactGroupCompactCompositeStatement_proof` proves the published proposition
 `CompactGroupCompactCompositeStatement.{w,w',u}`. It retains the independent
 universes of both supplied derived-category models and of the original ring,

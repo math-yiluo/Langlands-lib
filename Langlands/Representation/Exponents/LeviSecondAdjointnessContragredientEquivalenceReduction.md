@@ -1,12 +1,14 @@
 # The pointwise VI.9.6 equivalence from uniform compression stabilization
 
-Author: Worker 151. Module
+Module
 `Langlands.Representation.Exponents.LeviSecondAdjointnessContragredientEquivalenceReduction`,
 namespace `Langlands.Aubert.General.RepresentedParabolic`.
 
 This is an internal conditional reduction. It does not prove the unconditional
-`LeviSecondAdjointnessContragredientEquivalenceStatement` required by Task 5457.
-The additional premise remains an independent proof obligation.
+`LeviSecondAdjointnessContragredientEquivalenceStatement`, which
+`leviSecondAdjointnessContragredientEquivalence` in
+`LeviSecondAdjointnessContragredientEquivalenceProof` proves.
+The additional premise is an independent proof obligation.
 
 ## Source and provenance
 

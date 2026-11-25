@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 
 /-!
 # Pointwise bounds from local `L²` bounds of derivatives
@@ -314,6 +314,7 @@ theorem measure_ball_rpow_mul_enorm_le_sum_eLpNorm {u : E → G} {x : E} {ρ : �
         · exact Finset.sum_congr rfl (fun k _ => mul_left_comm _ _ _)
         · exact mul_left_comm _ _ _
 
+attribute [local instance 1100] ESeminormedAddMonoid.toContinuousENorm in
 /-- **Local Sobolev estimate for derivatives.**  The `j`-th derivative at the centre is controlled
 by the `L²(B)` norms of the derivatives of orders `j, …, j + n + 1`. -/
 theorem measure_ball_rpow_mul_enorm_iteratedFDeriv_le {u : E → G} {x : E} {ρ : ℝ} (hρ : 0 < ρ)
@@ -379,7 +380,7 @@ theorem exists_norm_iteratedFDeriv_le_factorial_of_eLpNorm_le {u : E → G} {x�
   have hR' : ∑ k ∈ Finset.range (d + 1), ENNReal.ofReal (ρ ^ k / k !) *
         eLpNorm (iteratedFDeriv ℝ (k + j) u) 2 (μ.restrict (ball y ρ)) +
       ENNReal.ofReal (ρ ^ (d + 1) / d !) *
-        eLpNorm (iteratedFDeriv ℝ (d + 1 + j) u) 2 (μ.restrict (ball y ρ)) ≤
+        eLpNorm (iteratedFDeriv ℝ (d + 1 + j :) u) 2 (μ.restrict (ball y ρ)) ≤
       ENNReal.ofReal (∑ k ∈ Finset.range (d + 1),
           ρ ^ k / k ! * (|C| * |A| ^ (k + j) * (k + j) !) +
         ρ ^ (d + 1) / d ! * (|C| * |A| ^ (d + 1 + j) * (d + 1 + j) !)) := by

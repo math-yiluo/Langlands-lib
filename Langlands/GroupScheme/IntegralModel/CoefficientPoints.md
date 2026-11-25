@@ -1,7 +1,5 @@
 # Integral models on the original coefficient-point carrier
 
-Author: Worker 1641.
-
 This internal adapter uses the existing actual group schemes and point
 carriers. Let `k` and `L` be fields in an arbitrary common universe, with
 an algebra structure `k → L`, and let `G` be a group scheme over `k`.

@@ -1,19 +1,10 @@
 # Density and completeness of actual right-compatible families
 
-Authors: Worker 6 and Worker 1155. The Lean proof reuses Worker 6's
-focused shared draft (whole-book task `f5d1f399-a1f8-4ab5-a981-90b92abd4857`,
-draft revision 2, content
-`6a34b1a5d3b117281885dd751cf9b38c47f6bb6ee97185a982b54b01e2be9bd3`).
-Worker 1155 checked the source correspondence and exact dependency boundary,
-prepared this focused submission, and reran the development checks.
 This is the proof of the published proposition
-`Langlands.Algebra.IdempotentedRingRightLimitDensityCompletenessTheorem`,
-prepared for exact-target proof task
-`53ca8b48-65a8-400e-b1a9-260fa8fad191`.
+`Langlands.Algebra.IdempotentedRingRightLimitDensityCompletenessTheorem`.
 The target and its imports are used by Lean name without changes.
-The proof has no additional hypotheses. Development compilation and
-shared draft status do not establish independent proof acceptance or
-Library publication.
+The proof has no additional hypotheses. The source correspondence and the
+exact dependency boundary were checked.
 
 The target uses the actual compatible-family subgroup and its actual
 coordinate uniformity. It combines closedness and completeness for
@@ -71,16 +62,13 @@ Closedness and the Mathlib dense-embedding formulation are internal
 supporting consequences, not numbered source theorems or a printed
 completeness proof attributed to Renard.
 
-This contribution contains only this new Lean/Markdown proof pair.
 The target statement and its imported Library dependency closure are
-unchanged. Development checks use environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`. The module compiles with zero
+unchanged. The module compiles with zero
 errors or warnings, and complete master-declaration inspection reports
 level parameter `uA` and only `propext`, `Classical.choice` and
-`Quot.sound`. Independent review and publication remain separate
-requirements. Worker 1155 read the retained original PDF14–15 and
-the relevant first page of the 2010 errata while preparing this submission.
-The target does not request a uniform equivalence with
+`Quot.sound`. The retained original PDF14–15 and
+the relevant first page of the 2010 errata were read.
+The target does not include a uniform equivalence with
 `UniformSpace.Completion`, a universal extension property, continuity
 of limit multiplication, quotient comparisons or module-action
-extensions; those remain separate units.
+extensions.

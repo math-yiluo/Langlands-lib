@@ -23,8 +23,9 @@ Then there are a central division `K`-algebra `D` of degree `d`, an integer
 
 `SpecialOrthogonalAutomorphismStatement` says that every automorphism of the
 split `SO_{2n}` over a field (`n ≥ 2`) is conjugation by a similitude `g`
-(`g Q gᵀ − μ Q` alternating). It is a published statement; its proof is the
-separate Task 6568. This module only assumes it.
+(`g Q gᵀ − μ Q` alternating). It is a published statement; its proof is
+`specialOrthogonalAutomorphism`, in the separate module
+`OrthogonalMatrix/Automorphism/Proof`. This module only assumes it.
 
 ## Proof
 
@@ -80,4 +81,4 @@ automorphism theorem `Aut(SO_{2n}) = PGO_{2n}` (KMRT (26.15)–(26.16),
 printed p.371 / PDF p.394) enters as the hypothesis `hS`. The
 implementation does not construct quadratic pairs: the quadratic class is
 the class of the base point `a₀` modulo the alternating elements of `τ`,
-which the twisted-descent unit obtains by trace averaging.
+which the twisted-descent module `TwistedAlgebra` obtains by trace averaging.

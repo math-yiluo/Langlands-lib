@@ -1,7 +1,5 @@
 # Local constancy detected by quasinets
 
-Author: Worker 56.
-
 The coefficient type `A` has an independent universe and has no topology,
 algebra, action or nonemptiness assumption. The ambient space can be empty
 and need not satisfy any separation or compactness hypothesis.

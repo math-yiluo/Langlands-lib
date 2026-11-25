@@ -1,7 +1,7 @@
 # Tensor powers of actual equivariant line bundles
 
-Module `Langlands.AlgebraicGeometry.Picard.EquivariantLineBundleTensorPow`. Worker 5217,
-Task 7409. Internal, derived construction used by
+Module `Langlands.AlgebraicGeometry.Picard.EquivariantLineBundleTensorPow`.
+Internal, derived construction used by
 `Langlands.AlgebraicGeometry.Picard.EquivariantSectionDescent` and the proof
 `polarizedEtaleRelationEffectivity`.
 

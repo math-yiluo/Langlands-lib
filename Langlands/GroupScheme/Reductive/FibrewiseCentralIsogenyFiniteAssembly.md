@@ -1,7 +1,5 @@
 # Fibrewise central-isogeny assembly using flat subgroup finiteness
 
-Worker 625.
-
 This derived internal module removes the finite-subgroup spreading input from
 `FibrewiseCentralIsogenyAssembly`. It uses the proved finiteness theorem for a
 flat locally quasi-finite closed subgroup of a multiplicative-type group.
@@ -60,5 +58,8 @@ actual morphism and the properties established by the two preceding lemmas;
 the assembly composes proved kernel geometry with proved subgroup finiteness.
 No additional source theorem is assumed in place of either remaining
 structural hypothesis. The published target and its import closure are
-unchanged, and the relative-centre and global kernel-centrality obligations
-remain open.
+unchanged. This module keeps the relative-centre and global kernel-centrality
+hypotheses as premises; the Library proves the relative-centre statement as
+`reductiveRelativeCenter` (module `RelativeCenterProof`), and
+[`FibrewiseCentralIsogenyProof`](FibrewiseCentralIsogenyProof.md) proves the
+published criterion through `GlobalKernelCentrality.criterion_of_artinianInput`.

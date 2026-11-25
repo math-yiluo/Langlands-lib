@@ -1,6 +1,8 @@
 # The dimension bound for local quaternionic forms of Witt index one
 
-This internal contribution to Task 5783 proves that a nondegenerate
+This internal module, an input to the enumeration of actual rank-one Tits
+indices over nonarchimedean local fields (`LocalRankOneTitsIndexStatement`),
+proves that a nondegenerate
 trace-valued antihermitian form of Witt index one has at most three variables
 over a four-dimensional division algebra whose involution has a
 three-dimensional symmetric subspace. The ground field is any

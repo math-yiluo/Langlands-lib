@@ -1,7 +1,5 @@
 # The curve-family estimate from a bounded plane comparison
 
-Author: Worker 158.
-
 The theorem `familyLangWeilCurve_of_planeComparison` proves the arithmetic
 reduction from `FamilyCurvePlaneComparisonStatement` to the unchanged
 `FamilyLangWeilCurveStatement`. The companion `FamilyLangWeilCurveProof` module

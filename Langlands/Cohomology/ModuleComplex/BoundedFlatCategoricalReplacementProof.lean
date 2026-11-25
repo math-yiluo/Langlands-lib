@@ -18,6 +18,7 @@ namespace Langlands.Cohomology.ModuleComplex
 
 attribute [local instance] HasDerivedCategory.standard
 
+set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
 /-- A single finite projective replacement computes every scalar extension. -/
 theorem boundedFlatCategoricalReplacement : BoundedFlatCategoricalReplacementStatement.{u} := by
   intro R _ _ C _ n hbound hfin0 hfin

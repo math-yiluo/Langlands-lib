@@ -6,7 +6,7 @@ import Langlands.ClassFieldTheory.Local.CommonClosureExistenceProof
 import Langlands.ClassFieldTheory.Local.CommonClosureGeometricProof
 import Langlands.ClassFieldTheory.Local.DenseTransferNaturality
 import Langlands.Correspondence.BaseReciprocityCandidate
-import Langlands.ClassField.Global.RelativeWeilTransfer
+import Langlands.ClassFieldTheory.Global.RelativeWeilTransfer
 
 /-!
 # The local Weil transfer/inclusion square along embeddings of p-adic fields

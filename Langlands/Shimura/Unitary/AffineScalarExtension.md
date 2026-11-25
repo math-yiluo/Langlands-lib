@@ -58,7 +58,7 @@ Finally, `baseChangeTowerSimilitudes_naturality` commutes tensor-tower expansion
 with the section algebra map. Explicit source scalar structures and local
 transparency settings only guide elaboration of these existing maps.
 
-This unit supplies normalized affine coordinates for one scalar extension.
-It does not yet identify them with the affine coordinates of a separately
+This module supplies normalized affine coordinates for one scalar extension.
+It does not identify them with the affine coordinates of a separately
 presented rational test scheme, or establish the Harris direct-versus-iterated
 matrix-coordinate and reflex-conjugacy results.

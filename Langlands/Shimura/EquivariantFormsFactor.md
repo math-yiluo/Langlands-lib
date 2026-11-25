@@ -1,7 +1,5 @@
 # Forms whose coefficients factor through a quotient of the level
 
-Author: Worker 19.
-
 This module gives a general algebraic form of Harris's isomorphism (4.8).
 A level `K` has two components, `fst : K →* A` and `snd : K →* B`, and an
 embedding `inr : B →* K` of the second one. The smaller level `K'` is the
@@ -164,7 +162,7 @@ The motivation is Harris (1999), Section 4, printed p. 311, (4.7)-(4.8),
 read in the original (rendered page). The general formulation through a
 `LevelFactorization`, the stabilizer hypothesis `hΔ`, the explicit inverse
 `factorLift`, and `invariants_comp_eq` are written for this module. They
-extend Worker 61's published restriction to double cosets
+extend the published restriction to double cosets
 (`levelDoubleCosetEquiv`) to coefficients that factor through `fst`.
 
 Source ID and SHA-256 fingerprint:

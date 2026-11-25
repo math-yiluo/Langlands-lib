@@ -10,7 +10,7 @@ Langlands.AbelianScheme.SubalgebraDescentStatement.{u} →
 ```
 
 in module `Langlands.AlgebraicGeometry.Picard.AbelianSchemeNoetherianModelReductionStatement`,
-with `open Langlands.AlgebraicGeometry.NoetherianApproximation`. This unit only defines the
+with `open Langlands.AlgebraicGeometry.NoetherianApproximation`. This module only defines the
 proposition. It proves nothing, in particular none of the four named propositions. It says
 only that the last follows from the first three.
 
@@ -43,8 +43,9 @@ universe `u`.
 
 ## Provenance
 
-Internal. The implication is a decomposition step of proof task
-`a825ba6f-ac5b-43b7-8794-52b2039388f7` and adds no mathematics of its own. It is the standard
+Internal. The implication is a decomposition step of the proof of
+`RigidifiedClassesNoetherianApproximationStatement` (module
+`RigidifiedClassesNoetherianApproximationProof`) and adds no mathematics of its own. It is the standard
 assembly behind the conclusion's Markdown. Descend `A` to a finitely generated subring. Then
 descend each line bundle with the second hypothesis, enlarging the subring each time. Finally
 descend, with the third hypothesis applied on the base, the isomorphism between the pullback of
@@ -52,4 +53,5 @@ each descended bundle along the unit section and the structure sheaf. That isomo
 after base change to `Spec R` because `M₁` and `M₂` are rigidified. Finitely generated
 `ℤ`-algebras are noetherian. The geometric input is in the three hypotheses, whose Markdown
 cites the Stacks Project, Chapter 32 *Limits of Schemes* (tags 01ZM, 01ZR, 0B8W and the property
-descents). A Lean proof of the implication is a separate unit.
+descents). The Lean proof of the implication is `abelianSchemeNoetherianModelReduction` in
+`AbelianSchemeNoetherianModelProof`.

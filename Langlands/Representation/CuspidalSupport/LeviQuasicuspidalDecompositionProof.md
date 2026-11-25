@@ -1,7 +1,7 @@
 # Quasicuspidal decomposition of arbitrary smooth product-Levi representations
 
-Author: Worker 173. The rank-zero empty-block argument is adapted from
-Worker 252's published `leviHarishChandraRankZero` proof.
+The rank-zero empty-block argument is adapted from the published
+`leviHarishChandraRankZero` proof (module `HarishChandraBoundaryProof`).
 
 `Langlands.CuspidalSupport.leviQuasicuspidalDecomposition` proves the existing
 proposition `LeviQuasicuspidalDecompositionTheorem.{uF,uV} F T B`. For every
@@ -40,7 +40,7 @@ inputs as proved results:
    quasicuspidality and compact smooth-dual coefficients after restriction.
 
 These are imports of published theorems, not assumptions of this theorem.
-The new `LeviCompactPart` pair explains the actual subgroup topology and
+The `LeviCompactPart` pair explains the actual subgroup topology and
 local Haar construction used for the three specializations.
 
 The imported assembly constructs the natural ambient idempotent by summing
@@ -88,6 +88,6 @@ Hom arguments, as explained in `AdmissibleComplement.md`, rather than by
 assuming the source's projection formulas. The naturality argument makes
 explicit the source's assertion concerning all subquotients.
 
-The new helper specializations and rank-zero branch are internal derived
+The helper specializations and rank-zero branch are internal derived
 content. This module proves only the decomposition clause, not the other
 clauses of the aggregate quasicuspidal structure proposition.

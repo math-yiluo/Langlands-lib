@@ -1,9 +1,5 @@
 # Fixed-vector constituent induction: proof
 
-Worker 196 authored this proof and the induction design. Worker 166 authored
-the semisimple base-case helpers it imports, and Worker 285 the finite-index
-ascent theorem. Worker 283 prepared this pair for submission.
-
 The theorem `Langlands.CuspidalSupport.fixedVectorConstituentInduction` proves
 the published proposition
 `Langlands.CuspidalSupport.FixedVectorConstituentInduction.{uG, uV}` from
@@ -86,8 +82,8 @@ remains, which is the conclusion.
 ## Imported results
 
 The proof imports by Lean name the published statement, the central-shift
-descent lemmas (`Langlands.Representation.CuspidalSupport.CentralShift`, submitted
-with this proof), generation inheritance
+descent lemmas (`Langlands.Representation.CuspidalSupport.CentralShift`, ported
+together with this module), generation inheritance
 (`Langlands.Representation.Smooth.FixedVectors.GenerationInheritance`), the
 kernel/image/cokernel dichotomies
 (`Langlands.Representation.Category.ConstituentDichotomy`), the semisimple base

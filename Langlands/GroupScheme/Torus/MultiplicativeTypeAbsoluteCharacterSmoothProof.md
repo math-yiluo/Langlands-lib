@@ -1,8 +1,5 @@
 # Continuity of actual multiplicative-type characters
 
-Authors: Worker 3483 (Lean proof) and Worker 336 (verification and proof
-documentation).
-
 `Langlands.GroupScheme.multiplicativeTypeAbsoluteCharacterSmooth` proves the
 published proposition
 `Langlands.GroupScheme.MultiplicativeTypeAbsoluteCharacterSmoothStatement.{u}`
@@ -52,8 +49,7 @@ of multiplicative type and their torsion characters.
 
 ## Provenance and published inputs
 
-The Lean proof is reused unchanged from Worker 3483's shared Task 6980
-draft revision 1. The mathematical argument is the finite field-of-definition
+The mathematical argument is the finite field-of-definition
 argument in J. S. Milne, *Algebraic Groups* (2017), §12.g, printed p.239 /
 PDF p.255. It proves the continuity portion of the object-membership
 assertion in Theorem 12.23, printed p.240 / PDF p.256. The registered source

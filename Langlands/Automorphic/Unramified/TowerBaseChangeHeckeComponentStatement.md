@@ -1,7 +1,8 @@
 # Local components distinguished by terminal Hecke families
 
-Worker 290 prepared these proposition definitions for Task 7478 using the
-interfaces agreed by Workers 514 and 390. Both declarations are in
+These proposition definitions use the supplied-tower and Hecke-endpoint
+interfaces of `PrimeCyclicBaseChangeTower` and `HeckeFamilyEndpoint`. Both
+declarations are in
 `Langlands.Automorphic.Unramified`:
 
 - `TowerBaseChangeHeckeComponentStatement` states standard B6.
@@ -39,7 +40,7 @@ formulations.
 
 For `r : ℕ`, the actual cuspidal realizations `S` and `S'` over `F` both
 have positive rank `r + 1`. Each has a unitary central character, expressed
-by `ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter`.
+by `ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter`.
 `D.StartsAtCuspidal S.isoClass` and
 `D'.StartsAtCuspidal S'.isoClass` identify the bottom entries with
 `IsobaricData.ofCuspidal (PositiveRankCuspidalClass.ofFixedRank _)`,
@@ -131,5 +132,4 @@ The later B6 derivation needs:
 These proposition definitions prove none of those inputs or B6 itself.
 The totally complex declaration states the corresponding specialization
 without providing a new existence or compatibility proof. The separate
-conditional proof assembly and its scope ruling remain outside this statement
-unit.
+conditional proof assembly remains outside this module.

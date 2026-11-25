@@ -6,7 +6,7 @@ Apply this diff after the preceding stage, with zero fuzz. It contains the actua
 --- Definitions/Def_NumberField_NormResidueCharacter.lean
 +++ Definitions/Def_NumberField_NormResidueCharacter.lean
 @@ -1,3 +1,5 @@
-+/- Modified by Worker 159, 25 October 2026: Mathlib 4.34 compatibility probe.
++/- Modified 25 October 2026: Mathlib 4.34 compatibility probe.
 +Copyright 2026 Anthropic, PBC. Apache-2.0; retained LICENSE/NOTICE/ATTRIBUTION apply. -/
  import Mathlib
  import Definitions.Def_LanglandsTunnell_NormClass
@@ -24,7 +24,7 @@ Apply this diff after the preceding stage, with zero fuzz. It contains the actua
 --- Definitions/Def_FrobeniusDensity_BadPrimes.lean
 +++ Definitions/Def_FrobeniusDensity_BadPrimes.lean
 @@ -1,3 +1,5 @@
-+/- Modified by Worker 159, 25 October 2026: Mathlib 4.34 compatibility probe.
++/- Modified 25 October 2026: Mathlib 4.34 compatibility probe.
 +Copyright 2026 Anthropic, PBC. Apache-2.0; retained LICENSE/NOTICE/ATTRIBUTION apply. -/
  import Definitions.Def_FrobeniusDensity_DegOneAsymptotic
  import Mathlib.RingTheory.DedekindDomain.Factorization
@@ -43,7 +43,7 @@ Apply this diff after the preceding stage, with zero fuzz. It contains the actua
 --- P2M/Sol/S_M4aTorus_completedRayL_fe.lean
 +++ P2M/Sol/S_M4aTorus_completedRayL_fe.lean
 @@ -1,3 +1,5 @@
-+/- Modified by Worker 159, 25 October 2026: Mathlib 4.34 compatibility probe.
++/- Modified 25 October 2026: Mathlib 4.34 compatibility probe.
 +Copyright 2026 Anthropic, PBC. Apache-2.0; retained LICENSE/NOTICE/ATTRIBUTION apply. -/
  import Definitions.Def_NumberField_CompletedRayL
  import Definitions.Def_NumberField_RayCharacterData
@@ -105,7 +105,7 @@ Apply this diff after the preceding stage, with zero fuzz. It contains the actua
 --- P2M/Sol/S_FrobeniusDensity_primeSum_toReal_add_log_isBigO.lean
 +++ P2M/Sol/S_FrobeniusDensity_primeSum_toReal_add_log_isBigO.lean
 @@ -1,3 +1,5 @@
-+/- Modified by Worker 159, 25 October 2026: Mathlib 4.34 compatibility probe.
++/- Modified 25 October 2026: Mathlib 4.34 compatibility probe.
 +Copyright 2026 Anthropic, PBC. Apache-2.0; retained LICENSE/NOTICE/ATTRIBUTION apply. -/
  import Theorems.Thm_FrobeniusDensity_tendsto_sub_one_mul_idealSum_test
  import Theorems.Thm_FrobeniusDensity_idealSum_ne_top
@@ -129,7 +129,7 @@ Apply this diff after the preceding stage, with zero fuzz. It contains the actua
 --- P2M/Sol/S_NumberField_ncard_primesOver_eq_finrank_of_isCyclotomicExtension_of_absNorm_modEq_one.lean
 +++ P2M/Sol/S_NumberField_ncard_primesOver_eq_finrank_of_isCyclotomicExtension_of_absNorm_modEq_one.lean
 @@ -1,3 +1,5 @@
-+/- Modified by Worker 159, 25 October 2026: Mathlib 4.34 compatibility probe.
++/- Modified 25 October 2026: Mathlib 4.34 compatibility probe.
 +Copyright 2026 Anthropic, PBC. Apache-2.0; retained LICENSE/NOTICE/ATTRIBUTION apply. -/
  import Mathlib
  import Definitions.Def_LanglandsTunnell_NormClass
@@ -156,7 +156,7 @@ Apply this diff after the preceding stage, with zero fuzz. It contains the actua
 
 ## Original preparation script
 
-The original experiment used the following script. For a clean reproduction use the procedure in reproduce.md; the historical script assumes its named private input tree already exists.
+The original experiment used the following script; it assumes that its named private input tree already exists.
 
 ```python
 from pathlib import Path
@@ -182,7 +182,7 @@ patches=[]
 for p in dest.rglob('*.lean'):
  orig=(base/p.relative_to(dest)).read_text();new=p.read_text()
  if orig!=new:
-  new='/- Modified by Worker 159, 25 October 2026: Mathlib 4.34 compatibility probe.\nCopyright 2026 Anthropic, PBC. Apache-2.0; retained LICENSE/NOTICE/ATTRIBUTION apply. -/\n'+new
+  new='/- Modified 25 October 2026: Mathlib 4.34 compatibility probe.\nCopyright 2026 Anthropic, PBC. Apache-2.0; retained LICENSE/NOTICE/ATTRIBUTION apply. -/\n'+new
   p.write_text(new)
   p.with_suffix('.md').write_text(p.with_suffix('.md').read_text().replace('copied this file unchanged','adapted this file with the exact compatibility edits in `.private/notes/chebotarev/compatibility.patch`; the original has been retained unchanged in chebotarev-baseline'))
   patches+=difflib.unified_diff(orig.splitlines(True),new.splitlines(True),fromfile=str(p.relative_to(dest)),tofile=str(p.relative_to(dest)))

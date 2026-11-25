@@ -1,7 +1,5 @@
 # Adjacent unlinked segment-socle swaps in a full induced product
 
-Author: Worker 769. The lifting module it uses was written with Worker 584.
-
 `Langlands.Classification.adjacentUnlinkedSegmentSocleSwap` proves exactly
 `Langlands.Classification.AdjacentUnlinkedSegmentSocleSwap.{uF,uV} F T` from
 [AdjacentUnlinkedSegmentSocleSwapStatement](AdjacentUnlinkedSegmentSocleSwapStatement.md).
@@ -91,28 +89,27 @@ The direct imports are:
 
 - `Classification.AdjacentUnlinkedSegmentSocleSwapStatement`, the unchanged
   target statement;
-- `Classification.TwoSegmentSocleCommutationProof`, the accepted proof of
-  `TwoSegmentSocleCommutation` from task 66e3b87c-647e-41e4-af18-df4d436765f0
-  (lean.proof `7db3cad5-2050-4607-bce8-6df4f8a68206`). Its Markdown records
+- `Classification.TwoSegmentSocleCommutationProof`, the proof of
+  `TwoSegmentSocleCommutation`. Its Markdown records
   its own dependency audit. The proof uses the published
   `unlinkedSegmentSocleProductIrreducible` and
   `twoFactorProductConstituentCommutativity`, together with a generic
   Jordan–Hölder bridge between irreducible representations with the same
   factors;
-- `Classification.AdjacentSegmentSwapLifting`, the accepted generic lifting
-  construction (lean.definition `119b1c0f-6a96-499d-852f-8de042228a3b`). It
+- `Classification.AdjacentSegmentSwapLifting`, the generic lifting
+  construction. It
   imports only `Classification.SegmentProductPermutation` and
   `Parabolic.OrderedProductRegroupingProof`. It assumes no head, socle, linkage,
   irreducibility or commutation result.
 
-Both theorem inputs were accepted and published before this proof used them.
+Both theorem inputs are proved in their own modules.
 Neither takes a theorem-valued hypothesis. The two-factor input is not
 obtained from the present full-product conclusion or its two-block
 specialization. The import closure of `TwoSegmentSocleCommutationProof` has
 1,315 `Langlands` modules. It contains neither this module, its statement nor
 the lifting module.
 
-The audit used the workspace over Library commit
+The audit was run over Library commit
 `83afd4553e9b793a825b53a9504028c880852999`.
 
 - **Imports.** Following imports recursively from this module reaches 1,318
@@ -159,11 +156,14 @@ that the proof does not reach them. The only constants of
 the nonzero-product lemma `RegularHeadExistence.nontrivial_normalizedProductInduction`,
 which the irreducibility input uses.
 
-Hence the proof is independent, directly and transitively, of the conclusions,
-proof successors and proof dependencies of the excluded tasks. These are
-independent socle exhaustion (f3a69bc8), segment analytic classification
-(aca8805b), special-head multisegment exhaustion (3bfb61fa), ordered
-special-head existence (ebea9a8a), quotient coverage (20e4e1c6), tempered block
-uniqueness (52e97845), `SquareIntegrableLanglandsClassification` (1cb45da2),
-square-integrable exhaustion (cd8ab97c), regular exhaustion (bf433f0a) and
-`OrderedMultisegmentSocleExistence` (23189526).
+Hence the proof is independent, directly and transitively, of the excluded
+conclusions, their proofs and the dependencies of those proofs. These are
+independent socle exhaustion (`MultisegmentSocleExhaustion`), segment analytic
+classification (`SegmentEssentialSquareIntegrableClassification`), special-head
+multisegment exhaustion (`MultisegmentHeadExhaustion`), ordered special-head
+existence (`OrderedMultisegmentHeadExistence`), quotient coverage
+(`OrderedMultisegmentQuotientExhaustion`), tempered block uniqueness
+(`TemperedBlockUniqueness`), `SquareIntegrableLanglandsClassification`,
+square-integrable exhaustion (`SquareIntegrableLanglandsExhaustion`), regular
+exhaustion (`GLRegularLanglandsExhaustionStatement`) and
+`OrderedMultisegmentSocleExistence`.

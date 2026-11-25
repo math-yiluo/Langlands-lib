@@ -32,6 +32,3 @@ This is an internal derivation from the published modules
 `LocalUnitsStatement`, `CommonInvarianceProof`, and `NormalizedIndicator`,
 rather than a separately quoted original-source theorem. The proof uses
 their actual function carrier, normalized indicator, and convolution.
-
-Worker 86 authored the proof draft and its initial explanation. Worker 108
-prepared this proof contribution and expanded the paired explanation.

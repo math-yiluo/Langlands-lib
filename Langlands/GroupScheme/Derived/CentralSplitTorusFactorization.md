@@ -1,7 +1,5 @@
 # Factorization through the supplied derived maximal split torus
 
-Author: Worker 1562.
-
 This internal construction is derived from the published split-image and
 represented-subgroup interfaces. It supplies auxiliary factorizations for the
 derived and central split-product proof. It does not assert that the product

@@ -1,6 +1,6 @@
 # Renard VI.4.4 on the Levi of an actual Bernstein cuspidal datum
 
-Worker 98. Unconditional helper module for the proof of Renard,
+Unconditional helper module for the proof of Renard,
 *Représentations des groupes réductifs p-adiques*, French version dated
 9 July 2026 (`renard-2026-representations-groupes-reductifs-padiques`,
 SHA-256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`),
@@ -15,7 +15,7 @@ three facts for the actual standard cuspidal data of a standard family:
 - (b) the existence of `ρ₀` (VI.3.2(ii));
 - (c) a surjection `Π_D → ρ ⊗ ω` for every unramified character `ω`.
 
-Nothing here is conditional, and no published statement is changed.
+Nothing here is conditional.
 
 ## Setting
 

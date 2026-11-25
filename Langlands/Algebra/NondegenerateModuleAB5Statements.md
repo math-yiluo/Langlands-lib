@@ -1,10 +1,9 @@
 # Source AB5 for original nondegenerate modules
 
-Authors: Worker 6 and Worker 695. Worker 6 authored the shared statement
-draft. Worker 695 checked the original passages and public dependencies,
-finalized the explanation, and checked the complete universe interfaces.
+The original passages, the public dependencies and the complete universe
+interfaces of this statement were checked.
 
-This statement unit records the AB5 assertion of Renard I.6 for the published
+This statement module records the AB5 assertion of Renard I.6 for the published
 actual category `NondegenerateModuleCat A`, with its original additive
 intertwiners and named abelian structure
 `NondegenerateModuleCat.abelian A hA`. It supplies proposition definitions
@@ -16,11 +15,11 @@ printed pp.27–28 / PDF pp.33–34, especially the displayed AB5 formula on
 printed p.28 / PDF p.34. The registered source is
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 695 read both pages in full and visually checked PDF p.34.
+Both pages were read in full and PDF p.34 was visually checked.
 Appendix A.VI.2,
 printed p.263 / PDF p.269, fixes the source's AB5 convention, represented by
-the published `Langlands.Renard.SourceAB5` predicate. Worker 695 read and
-visually checked that page as well and recomputed the original PDF's hash.
+the published `Langlands.Renard.SourceAB5` predicate. That page was also
+read and visually checked, and the original PDF's hash was recomputed.
 The existing predicate's paired Markdown documents the terminology.
 
 No separate project errata note for the registered 2026 source was present
@@ -37,7 +36,7 @@ an arbitrary nonunital idempotented ring. This is an explicit extension of
 the source setting: the directed-union argument in I.6 uses stable additive
 subgroups and their actual underlying sets, while finite common local units
 prove nondegeneracy of the actual direct sum. Neither step requires complex
-coefficients, a unit or finite dimension. The task does not replace the
+coefficients, a unit or finite dimension. The targets do not replace the
 original action by a unital action as an input.
 
 `DirectedSubobjectDistributivity` says that for every actual object M,
@@ -62,7 +61,7 @@ is independent and contributes no carrier bound. Source AB5 here means
 cocompleteness in Renard's sense together with the directed-subobject law;
 it is not defined to be Mathlib's filtered-colimit exactness class
 `CategoryTheory.AB5OfSize`. No comparison theorem between these conventions
-is supplied by this unit.
+is supplied by this module.
 
 `AB5Assertions` conjoins those two universally quantified targets.
 Reflexive unfolding checks pin the first target to both actual least-upper-
@@ -74,5 +73,9 @@ three distinct levels `0,1,2`.
 
 The actual subobject comparison, the directed-union and coproduct proofs,
 source AB6 (local finite type, as distinguished in I.6 footnote 3), and
-filtered-colimit exactness remain separate obligations. This pair does not
-assert completion of I.6 or the whole-book program.
+filtered-colimit exactness are separate from this pair: they are in
+`NondegenerateModuleSubobject` (`NondegenerateModuleCat.subobjectOrderIso`),
+`NondegenerateModuleAB5Proof` (`ab5Assertions`),
+`NondegenerateModuleLocallyFiniteTypeProof` and
+`NondegenerateModuleFilteredColimitsProof`. This pair does not
+assert completion of I.6 or of the whole book.

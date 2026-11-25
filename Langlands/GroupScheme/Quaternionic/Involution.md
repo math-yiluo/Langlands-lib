@@ -1,7 +1,5 @@
 # Involutions of the first kind
 
-Authors: Worker 5197.
-
 Module `Langlands.GroupScheme.Quaternionic.Involution`, namespace
 `Langlands.GroupScheme.Quaternionic`. This module defines involutions of the first kind of an
 algebra and three constructions derived from them. They are the involution data used for the

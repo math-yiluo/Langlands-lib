@@ -1,7 +1,5 @@
 # Scalar comparison with a positive invariant form
 
-Author: Worker 89.
-
 `Langlands.invariantSesquilinearScalar` proves exactly
 `Langlands.InvariantSesquilinearScalarStatement.{uG,uV}`.
 

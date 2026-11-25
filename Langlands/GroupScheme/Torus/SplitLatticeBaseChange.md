@@ -1,8 +1,5 @@
 # Actual lattice base change for split tori
 
-Worker 146. The imported cocharacter-lattice base-change construction and its
-finite-Galois descent development are by Worker 1272.
-
 For commutative integral domains `k` and `K`, a scheme map
 `b : Spec K ⟶ Spec k`, and a commutative group scheme `T` over `Spec k` whose
 underlying group is a split torus, this module constructs canonical additive

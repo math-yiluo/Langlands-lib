@@ -1,12 +1,14 @@
 # Integral conjugacy of split tori with maximal residue fibres
 
-This internal unit constructs a conjugator between two supplied split integral
+This internal module constructs a conjugator between two supplied split integral
 tori from maximality of their residue maps. Its provenance is the composition
 of the published integral character-coordinate maps, exact Henselian transporter
 lifting, and maximal-torus conjugacy over algebraically closed fields. It does
 not transcribe a new external result or assert an integral torus existence
-theorem. The construction supports the integral conjugacy step in an eventual
-proof of apartment containment for supplied integral models.
+theorem. The construction supports the integral conjugacy step in the
+proof of apartment containment for supplied integral models,
+`integralModelSplitTorusApartment` in
+`Geometry.Building.IntegralModelSplitTorusApartment`.
 
 ## Statement
 
@@ -104,9 +106,11 @@ additional inputs.
 
 ## Scope
 
-This unit does not construct an integral torus or an integral model, derive
+This module does not construct an integral torus or an integral model, derive
 residue maximality from generic maximal splitness, descend models or tori,
 or locate a prescribed building point in an apartment. Those are separate
-obligations in the application. In particular,
-`UnramifiedFixedPointSplitTorusStatement` remains open. The unit neither imports
-nor uses the barred unramified building-descent statements.
+obligations in the application. In particular, this module does not prove
+`UnramifiedFixedPointSplitTorusStatement`, which is proved by
+`unramifiedFixedPointSplitTorus` in
+`Geometry.Building.UnramifiedFixedPointSplitTorusProof`. The module neither
+imports nor uses the unramified building-descent statements.

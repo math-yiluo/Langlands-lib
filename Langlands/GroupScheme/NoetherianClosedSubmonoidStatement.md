@@ -1,7 +1,8 @@
 # Noetherian affine closed submonoids are subgroups
 
 This internal prerequisite target isolates the closed-submonoid argument in
-pointed-image generation. It follows Worker 1378's shear construction design
+pointed-image generation. It follows the shear construction of
+`Langlands.GroupScheme.ImageGenerationSubgroup`
 on the project's actual group schemes and representability-transfer interface.
 It is not a transcription of a numbered literature assertion.
 

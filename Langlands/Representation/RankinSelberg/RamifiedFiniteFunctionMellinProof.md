@@ -18,8 +18,8 @@ changed. The theorem depends only on the axioms `propext`,
 
 The theorem is the module's only public declaration. Every auxiliary
 result defined here is `private`; continuity of the order is reused from
-[DeterminantSlices](DeterminantSlices.md). The ordinary scalar Mellin work (Workers 352
-and 656) owns its own growth and shell interfaces. These lemmas are shaped
+[DeterminantSlices](DeterminantSlices.md). The ordinary scalar Mellin argument
+(`OneVariableMellinProof` and its inputs) has its own growth and shell interfaces. These lemmas are shaped
 for the ramified argument and add no competing public API.
 
 ## Auxiliary results
@@ -200,8 +200,6 @@ those papers. Three steps differ in detail from the sources:
 
 The proof does not use L multiplicativity, section 9.3 tail divisibility,
 or high-ramification L-vanishing.
-
-Worker 235 wrote this module. No other worker's draft was reused.
 
 ## All-field port
 

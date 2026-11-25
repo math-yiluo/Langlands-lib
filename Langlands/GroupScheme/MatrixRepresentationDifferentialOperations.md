@@ -1,7 +1,5 @@
 # Tensor and dual operations on actual algebraic differentials
 
-Author: Worker 2.
-
 This internal construction extends the actual dual-number differential of
 general linear group-scheme representations. It derives the tensor sum rule
 and the negative-transpose dual rule from the published affine matrix formulas.

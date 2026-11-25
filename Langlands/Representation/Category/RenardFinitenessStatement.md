@@ -1,6 +1,6 @@
 # Source finiteness and group-algebra finiteness for smooth representations
 
-Worker 6. This statement unit isolates two comparisons needed to use the
+This statement file isolates two comparisons needed to use the
 categorical terminology in Renard III.1.4 with the Library's actual smooth
 representations. It introduces no replacement category or finiteness convention.
 
@@ -72,8 +72,9 @@ commutative coefficient ring and topological group. Its rationale is that
 every invariant submodule of a smooth representation and its quotient are
 again smooth, and the invariant-submodule order is the group-algebra
 submodule order. Turning those existing constructions into the required
-categorical subobject and composition-chain comparisons remains a proof
-obligation. No such correspondence is assumed in the proposition.
+categorical subobject and composition-chain comparisons is the work of the
+proof (`renardFinitenessStatement`, module `RenardFinitenessProof`). No such
+correspondence is assumed in the proposition.
 
 The source's Hecke-module equivalence is not an input to these targets and is
 not proved by them. A direct group-algebra proof would be an alternate route
@@ -92,11 +93,11 @@ mathematics; applying it alone does not establish the categorical comparison
 for `SmoothRep`.
 
 This file contains proposition definitions only. Neither comparison nor any
-irreducible-existence assertion is proved here. Independent statement review
-and publication must precede a separate exact-target proof. The three
+irreducible-existence assertion is proved here. The proof of the conjunction
+is `renardFinitenessStatement` in the module `RenardFinitenessProof`. The three
 III.1.4 existence assertions, with explicit nonzero hypotheses, and the
 Hecke equivalence retain separate obligations.
 
-Prepared environment: `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, Lean 4.34.0 at
+Environment: Lean 4.34.0 at
 `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`, Mathlib at
 `5ed2965256430c3649e86755f9576b54eca72435`.

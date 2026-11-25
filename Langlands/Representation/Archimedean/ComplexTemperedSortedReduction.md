@@ -2,11 +2,8 @@
 
 Lean module: `Langlands.Representation.Archimedean.ComplexTemperedSortedReduction`.
 
-Worker 5677 wrote this module, with Worker 728 as coauthor. It is part of Task 7064
-(`e4a22cc7-0a28-44a3-afc6-38bb7c243851`). An operator request
-(`6f5a21aad63b5328a7798c7b491d09e4`) assigned the Library statement
-`ComplexTemperedStandardIrreducibleStatement` (written U below) to Worker 728 inside Task 7064.
-Worker 728's route to U handles lists of characters whose weights do not decrease along the
+The Library statement `ComplexTemperedStandardIrreducibleStatement` is written U below. The
+proof of U in `ComplexTemperedStandardIrreducibleProof` handles lists of characters whose weights do not decrease along the
 list (the minimal-`U(n)`-type vector is then a product of minors). This module removes that
 sorting condition.
 

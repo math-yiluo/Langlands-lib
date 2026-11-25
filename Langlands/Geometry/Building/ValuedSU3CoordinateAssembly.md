@@ -18,12 +18,12 @@ quadratic conjugation. No algebraic coordinate existence is asserted here.
 The implemented proof uses `SU3Root.opposite_factorization`,
 `KPApartmentData.val_eq_half_centralizer_of_pair`,
 `AlgebraicSU3RootCoordinates.eval_corootPoint`, and the full apartment normalizer action.
-This is an internal consequence of those published or separately reviewed components;
+This is an internal consequence of those components;
 it does not introduce an additional literature assertion.
 
 For a multipliable root, axiom V4 and the literal central-subgroup identification
 in each supplied coordinate record give both doubled-root formulas. The negative
 root memberships follow from the already proved common Weyl action on the root
 and its double. The finite/top calculation identifies twice `depthA` with
-`depthDouble`. This short argument follows the V4 bridge shared by Worker 358,
-without requiring the separate affine-jump constructions.
+`depthDouble`. This short argument does not require the separate affine-jump
+constructions.

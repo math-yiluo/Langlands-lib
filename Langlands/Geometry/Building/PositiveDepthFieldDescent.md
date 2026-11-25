@@ -32,6 +32,6 @@ reflection, together with the algebraic subgroup closure universal property.
 No downstairs valuation or commutator axiom is assumed to reflect membership
 in the generated subgroup.
 
-The positive-cone depth and coverage hypotheses remain explicit. This unit
-does not yet establish V3 of the restricted family, construct a valuation or
+The positive-cone depth and coverage hypotheses remain explicit. This module
+does not establish V3 of the restricted family, construct a valuation or
 an apartment, or prove the supplied-model building comparison.

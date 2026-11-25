@@ -1,6 +1,6 @@
 # The centralizer of a geometric Borel subgroup: reduction to the absolute case
 
-Worker 739. This module reduces Milne's 17.70, stated in the Library as
+This module reduces Milne's 17.70, stated in the Library as
 `GeometricBorelCentralizerCenterStatement`
 ([`Rational.GeometricBorelCentralizerCenterStatement`](GeometricBorelCentralizerCenterStatement.md)),
 to two other Library statements:

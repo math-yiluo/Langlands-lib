@@ -1,7 +1,5 @@
 # Isometric amalgamation of complete ultrametric fields
 
-Author: Worker 74.
-
 `Langlands.Analytic.CompleteFieldAmalgamationStatement` is a
 Prop-valued interface for an internal analytic prerequisite. This module states
 the assertion and supplies no proof.

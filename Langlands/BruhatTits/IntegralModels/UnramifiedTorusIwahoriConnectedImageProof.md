@@ -1,8 +1,5 @@
 # Proof: the torus Iwahori subgroup is the image of a connected smooth model
 
-Authors: Worker 33, with Worker 340 (module
-`Langlands.GroupScheme.Torus.WeilRestrictionIntegralModel`).
-
 The theorem
 `Langlands.BruhatTits.IntegralModels.unramifiedTorusIwahoriConnectedImage`
 proves `UnramifiedTorusIwahoriConnectedImageStatement.{u}` at an arbitrary
@@ -35,18 +32,18 @@ finite type `I` and an isomorphism `σ : T_L ≅ 𝔾ₘ^I`. The witness is
 
 ## Supporting modules
 
-- `Langlands.GroupScheme.Torus.WeilRestrictionGeometricallyConnected`
-  (Worker 33): `WeilGm.geometricallyConnected A B`, every fibre of
+- `Langlands.GroupScheme.Torus.WeilRestrictionGeometricallyConnected`:
+  `WeilGm.geometricallyConnected A B`, every fibre of
   `Res_{B/A} 𝔾ₘ` over a field is connected, for `B` finite projective over a
   commutative ring `A`.
-- `Langlands.BruhatTits.IntegralModels.ConnectedImage.Integers` (Worker 33):
+- `Langlands.BruhatTits.IntegralModels.ConnectedImage.Integers`:
   `O_L` is the integral closure of `O` in `L`, finite and free over `O`;
   `piTensorEquiv F L I : K ⊗[O] (I → O_L) ≃ₐ[K] (I → L)`; units of `O_L` are
   the elements of valuation one.
-- `Langlands.GroupScheme.Torus.WeilRestrictionSplitNorm` (Worker 33):
+- `Langlands.GroupScheme.Torus.WeilRestrictionSplitNorm`:
   `splitWeilHom`, its value on rational points, and the character-valuation
   kernel in split coordinates.
-- `Langlands.GroupScheme.Torus.WeilRestrictionIntegralModel` (Worker 340):
+- `Langlands.GroupScheme.Torus.WeilRestrictionIntegralModel`:
   `WeilGm.integralModel R K B₀ B e`, the model `Res_{B₀/R} 𝔾ₘ` of
   `Res_{B/K} 𝔾ₘ` for `e : K ⊗[R] B₀ ≃ₐ[K] B`; its smoothness
   `WeilGm.integralModel_isSmooth`; and

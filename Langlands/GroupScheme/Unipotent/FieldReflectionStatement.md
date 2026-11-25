@@ -1,7 +1,5 @@
 # Unipotence descends along a field extension: statement
 
-Author: Worker 1487.
-
 `UnipotentFieldReflectionStatement.{u}` states that for fields `k K : Type u`,
 an algebra structure `Algebra k K`, and an affine group scheme `G` over
 `Spec k`, unipotence of the actual pullback of `G` along `Spec K → Spec k`

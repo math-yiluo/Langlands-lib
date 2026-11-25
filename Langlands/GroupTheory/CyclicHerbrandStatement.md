@@ -54,7 +54,7 @@ not finite generation or finite dimension over `k`.
 
 ## Trivial integers
 
-`CyclicHerbrandTrivialIntegers` uses the published
+`CyclicHerbrandTrivialIntegers` uses
 `Langlands.Tate.integralTrivial G`, namely
 `Rep.trivial (ULift.{u} ℤ) G (ULift.{u} ℤ)`. It asserts:
 
@@ -98,21 +98,22 @@ Property 3's quotient alone; it is not an additional claim quoted from that
 property. No source erratum affecting these passages was found in the project's
 source-specific errata notes.
 
-## Existing implementation and exact proof follow-up
+## Existing implementation and proof
 
-The published module `Langlands.Cohomology.HerbrandQuotient` supplies the matching
+The module `Langlands.Cohomology.HerbrandQuotient` supplies the matching
 implementation in namespace `Langlands.Cohomology.Herbrand`:
 
 - `natCard_of_shortExact_mid`, `natCard_of_shortExact_left`, and
   `natCard_of_shortExact_right` match the three short-exact clauses;
 - `natCard_two_eq_natCard_one_of_finite` matches finite coefficients;
 - `groupCohomology_trivialIntegers` matches the integer statement using the
-  same published `integralTrivial` representation.
+  same `integralTrivial` representation.
 
-A subsequent exact proof unit can assemble these into
+The module `Langlands.GroupTheory.CyclicHerbrandProof` assembles these into
+`cyclicHerbrandCalculus`, a proof of
 `Langlands.GroupTheory.CyclicHerbrandCalculus.{u}`, with its three components
 available by conjunction projection. The existing core already supplies the
 compatible-endomorphism exact hexagon and the periodic-resolution comparison;
 these do not need to be duplicated in this statement module. Neither these
-statements nor their intended adapter use an idele-class vanishing theorem,
+statements nor that proof use an idele-class vanishing theorem,
 an idele-class order theorem, or an unproved global arithmetic conclusion.

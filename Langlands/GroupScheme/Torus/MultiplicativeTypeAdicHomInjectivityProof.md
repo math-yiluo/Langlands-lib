@@ -1,7 +1,5 @@
 # Adic determination of homomorphisms from isotrivial groups of multiplicative type
 
-Worker 517.
-
 The theorem `Langlands.GroupScheme.multiplicativeTypeAdicHomInjectivity.{u}` proves the unchanged published proposition `Langlands.GroupScheme.MultiplicativeTypeAdicHomInjectivityStatement.{u}`. It has no additional parameters or hypotheses:
 
 ```lean
@@ -34,4 +32,4 @@ The reduction helper proves equality after precomposition with `q`. Cancel the i
 
 ## Dependencies and verification
 
-The module imports the published target, `Torus.DiagonalizableBaseChange`, and Mathlib's `RingTheory.AdicCompletion.Noetherian`. The target and every file it imports are unchanged. The proof uses the Library's actual base-change functor, actual pullback projections and actual group algebra; it introduces no axioms or replacement statement. Compilation and exact declaration inspection are performed with the task's prepared Lean environment. Independent semantic review and official validation are required for acceptance.
+The module imports the published target, `Torus.DiagonalizableBaseChange`, and Mathlib's `RingTheory.AdicCompletion.Noetherian`. The target and every file it imports are unchanged. The proof uses the Library's actual base-change functor, actual pullback projections and actual group algebra; it introduces no axioms or replacement statement. Compilation and exact declaration inspection were performed in a prepared Lean environment.

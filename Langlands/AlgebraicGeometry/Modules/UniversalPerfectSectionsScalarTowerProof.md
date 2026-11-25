@@ -1,7 +1,5 @@
 # Universal perfect representatives under a scalar tower: proof
 
-Author: Worker 137.
-
 The theorem `universalPerfectSectionsScalarTower.{u}` proves the named
 `UniversalPerfectSectionsScalarTowerStatement.{u}`. It retains the given
 complex and chooses its ordinary scalar extension as the representative

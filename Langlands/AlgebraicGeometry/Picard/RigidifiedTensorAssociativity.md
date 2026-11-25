@@ -2,8 +2,8 @@
 
 This module constructs an associator between the two iterated tensor products
 of rigidified line bundles and proves associativity on their isomorphism classes
-and on the geometric Picard-zero subtype. It is a derived construction by
-Worker 144 using the Library's fixed sheaf tensor and its associator.
+and on the geometric Picard-zero subtype. It is a derived construction using
+the Library's fixed sheaf tensor and its associator.
 
 ## Source and scope
 

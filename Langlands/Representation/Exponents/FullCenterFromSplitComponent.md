@@ -1,7 +1,5 @@
 # Extending a scalar character to the full point-group center
 
-Author: Worker 1597.
-
 This internal derived module specializes the compact-quotient norm argument
 to the actual full center of a connected reductive group over a
 nonarchimedean local field. It uses the published equality between scheme-center

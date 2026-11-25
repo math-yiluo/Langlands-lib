@@ -1,7 +1,7 @@
 # Global assembly of the associated tempered factor comparison
 
 This internal helper assembles the exact conclusion
-`Langlands.ClassField.Global.RelativeWeilGroup.AssociatedTemperedFactorStatement`
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.AssociatedTemperedFactorStatement`
 from three explicitly supplied propositions: the associated gamma statement,
 common-closure normalized reciprocity existence, and existence of a
 local-constant system for each normalized reciprocity family. It does not
@@ -35,8 +35,7 @@ the unchanged published statement, but the theorem itself is conditional.
 In particular, it is not an exact-target proof of the corollary until all
 three supplied propositions have unconditional Library proofs.
 
-The global composition and choice construction are by Worker 454. The
-imported pole-region helper is by Worker 454 and the imported local assembly
-and dual-transport helper are by Worker 1820. These two helper modules are
-included unchanged in this contribution because they are not yet in the
-workspace's Library base.
+The imported pole-region helper is the module
+`Langlands.Global.Factors.TemperedPoleRegions`, and the imported local assembly
+and dual-transport helper is the module
+`Langlands.Automorphic.AssociatedTemperedLocalProof`.

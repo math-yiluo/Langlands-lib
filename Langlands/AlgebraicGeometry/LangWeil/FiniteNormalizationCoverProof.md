@@ -1,7 +1,5 @@
 # Proof: finite normalization covers over Noetherian bases
 
-Author: Worker 185.
-
 This module proves the published statement
 `Langlands.AlgebraicGeometry.LangWeil.FiniteNormalizationCoverStatement` with the theorem
 `Langlands.AlgebraicGeometry.LangWeil.finiteNormalizationCover`. The statement's Lean/Markdown

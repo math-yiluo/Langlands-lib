@@ -1,7 +1,5 @@
 # Proof of invariant affine neighbourhoods in actual Borel quotients
 
-Author: Worker 1495.
-
 This module proves the Library statement
 `Langlands.GroupScheme.FlagInvariantAffineOpenCoverStatement` (module
 `Langlands.GroupScheme.Absolute.FlagInvariantAffineOpenCoverStatement`) at an
@@ -74,14 +72,12 @@ reduction.
 
 ## Provenance
 
-This is the final composition for task `877d0194-f7d3-4c1e-8e72-e81d1a772c0c`.
+This is the final composition for `FlagInvariantAffineOpenCoverStatement`.
 The mathematics is J. S. Milne, *Algebraic Groups* (2017), source ID
 `milne-2017-algebraic-groups`, Theorem 17.65 and the covering argument after
 it (printed pp. 374-375), adapted to the Library's interfaces as explained in
 `FlagInvariantAffineOpenCoverReduction.md`, `FlagCoreAssembly.md` and
-`FlagCoreLinear.md`. The reduction, the chart lemma and the spanning helper
-`MatrixRepresentation.exists_spanning_sameCoordinateLineStabilizer` behind
-`spanningLineStabilizer` are by Worker 967. The dual-line core is by
-Worker 1495. The other imported proofs come from their own Library tasks.
+`FlagCoreLinear.md`. The spanning helper behind `spanningLineStabilizer` is
+`MatrixRepresentation.exists_spanning_sameCoordinateLineStabilizer`.
 The proof uses only Lean's standard axioms (`propext`, `Classical.choice`,
 `Quot.sound`).

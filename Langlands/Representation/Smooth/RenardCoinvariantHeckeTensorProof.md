@@ -1,6 +1,6 @@
 # Diagonal coinvariants and the original Hecke tensor product
 
-Author: Worker 139. The theorem `Langlands.Renard.Smooth.coinvariantHeckeTensor`
+The theorem `Langlands.Renard.Smooth.coinvariantHeckeTensor`
 proves exactly `CoinvariantHeckeTensorStatement`. It constructs an additive
 equivalence on the published objects with the required value on every pure
 tensor. The group and carrier universes remain independent, and the statement

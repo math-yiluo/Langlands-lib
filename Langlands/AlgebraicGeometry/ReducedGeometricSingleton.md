@@ -1,8 +1,5 @@
 # Effective descent for a reduced geometric singleton
 
-Authors: Worker 1490 (original proof draft) and Worker 1604 (final module,
-proof documentation and submission).
-
 The module `Langlands.AlgebraicGeometry.ReducedGeometricSingleton` proves
 
 ```lean
@@ -10,8 +7,8 @@ Langlands.AlgebraicGeometry.reducedGeometricSingleton :
   Langlands.AlgebraicGeometry.ReducedGeometricSingletonStatement.{u}
 ```
 
-It imports the independently published proposition without changing its
-Lean or Markdown. For arbitrary fields `K Ω : Type u`, an `Algebra K Ω`
+It imports the proposition from the statement module
+`Langlands.AlgebraicGeometry.ReducedGeometricSingletonStatement`. For arbitrary fields `K Ω : Type u`, an `Algebra K Ω`
 instance, `IsAlgClosed Ω`, and a locally finite type morphism
 `f : X ⟶ Spec (CommRingCat.of K)`, the theorem says that reducedness,
 nonemptiness and the singleton point property of the actual pullback
@@ -70,7 +67,7 @@ that this projection is an isomorphism. Finally,
 `MorphismProperty.of_pullback_snd_of_descendsAlong` applies Mathlib's fpqc
 descent of isomorphisms, whose instance is
 `descendsAlong_isomorphisms_surjective_inf_flat_inf_quasicompact`, to obtain
-`IsIso f`. The closing theorem unfolds the published proposition and passes
+`IsIso f`. The closing theorem unfolds the proposition and passes
 its ordinary premises to this helper.
 
 ## Provenance and scope
@@ -79,10 +76,7 @@ This is an internal derived algebraic-geometric proof of the statement
 whose source motivation is documented in
 [ReducedGeometricSingletonStatement.md](ReducedGeometricSingletonStatement.md).
 The implemented argument uses coordinate fields, Zariski's lemma and fpqc
-descent; it does not invoke a rational-conjugacy conclusion. The original
-Lean proof was supplied by Worker 1490 in the parent task's shared draft
-revision 2; the final module preserves that argument and renames its public
-descent helper and exact-target wrapper.
+descent; it does not invoke a rational-conjugacy conclusion.
 
 The universe `u` is arbitrary. No algebraicity, separability, characteristic,
 infinitude or perfectness assumption is added to `K` or `Ω/K`. In particular,

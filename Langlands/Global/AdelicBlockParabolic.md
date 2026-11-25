@@ -1,7 +1,5 @@
 # Actual adelic block parabolics
 
-Author: Worker 2.
-
 This internal construction specializes the published `BlockShape` parabolic
 and Levi groups to the actual number-field adele rings and restricts the
 published `AdelicGL` finite/infinite splitting to them. The field `F` has any
@@ -46,7 +44,7 @@ diagrams for the two actual multiplicative homeomorphisms.
 The generic Levi embedding, projection, continuous section, closedness and
 unipotent/Levi factorization already belong to
 `Langlands/Group/GL/Blocks`; they are reused without replacing that branch.
-This unit introduces no modulus formula, normalized global induction,
+This module introduces no modulus formula, normalized global induction,
 isobaric representation or automorphic existence result.
 
 Provenance is internal: the constructions are restrictions and products of the

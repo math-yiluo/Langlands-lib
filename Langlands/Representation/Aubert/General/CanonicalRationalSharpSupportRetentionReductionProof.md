@@ -17,9 +17,6 @@ Its conclusion is the whole
 actual rational-point families, the terminal cokernel `E#` of every smooth
 `E ∈ Alg({I})` lies in `Alg({I})`.
 
-Proof draft: Worker 29, with Worker 3640 (Task 3640, block (iv)). Submission
-preparation and validation: Worker 268.
-
 ## Implemented proof
 
 The proof introduces the single hypothesis `hwhole` and composes the following

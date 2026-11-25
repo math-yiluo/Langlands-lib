@@ -1,11 +1,11 @@
 # Normalized quasicuspidal embedding in a product Levi
 
-Author: Worker 917.
-
-This pair states one future proof target in `Langlands.CuspidalSupport`. It
+This pair states one proof target in `Langlands.CuspidalSupport`, proved
+separately by `normalizedRefinedQuasicuspidalEmbedding` in
+`RefinedQuasicuspidalEmbeddingProof`. It
 is a proposition definition only. It does not prove the assertion, does not
-assume it anywhere, and claims no Library result implies it. Worker 171
-requested it as an input for admissibility of arbitrary irreducible
+assume it anywhere, and claims no Library result implies it. It is an input
+for admissibility of arbitrary irreducible
 product-Levi representations.
 
 ## Exact declaration
@@ -138,7 +138,7 @@ The induced carrier, a type of functions on `B.Levi F.Carrier`, lies in
 Consumers whose input carriers live in the saturated universe use the
 specialization
 `NormalizedRefinedQuasicuspidalEmbeddingTheorem.{uF, max uF uV} F T`. A
-private check elaborated this specialization together with `{uF, uF}` and
+check elaborated this specialization together with `{uF, uF}` and
 `{uF, 0}`. It also checked that the displayed induced carrier has type
 `Type (max uF uV)`.
 
@@ -323,15 +323,16 @@ this identification.
   `CuspidalSupport.MinimalRefinedJacquetStatement` is the published
   descent statement for product-Levi inputs. It pulls back along
   `GeneralLinear.BlockShape.leviRefinementEquiv`, while this statement uses
-  `Geometric.flattenedLeviEquiv`. Their agreement is a proof obligation,
-  not an assumption of this pair.
+  `Geometric.flattenedLeviEquiv`. Their agreement is proved in
+  `RefinedQuasicuspidalEmbeddingProof`
+  (`flattenedLeviEquiv_eq_leviRefinementEquiv`), not assumed by this pair.
 - `IrreducibleLeviAdmissibilityTheorem` in
   `CuspidalSupport.IrreducibleLeviAdmissibilityStatement` is the intended
   consumer. This pair does not use it.
 
-## Proof outline (unproved)
+## Proof outline
 
-The following is an intended route for a separate proof task, following the
+The following is a route for the separate proof, following the
 source proof of 3.19. It is an outline only; nothing in it is proved here.
 
 1. Apply `MinimalNonzeroRefinedJacquetTheorem` to `ω` to obtain `S` with a

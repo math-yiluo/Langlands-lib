@@ -1,7 +1,5 @@
 # Finiteness of definite double cosets for open levels
 
-Author: Worker 19.
-
 Let `σ` be an involution of a finite-dimensional `ℚ`-algebra `A` whose real
 scalar extension is positive, and `GJ` its similitude group. This module
 proves that the double coset space `GJ(ℚ) \ GJ(𝔸_f) / K` is finite for every
@@ -22,11 +20,10 @@ are functions on the finite set `GJ(ℚ) \ GJ(𝔸_f) / K` ((3.9)). Harris's
 levels `K` are compact open subgroups of `GJ(𝔸_f)`. This module proves the
 finiteness for every open `K`.
 
-The proof is derived and written for this module. It is not taken from
-Harris. The finiteness for lattice levels is proved in the module
-`DefiniteDoubleCosets` (candidate 312bef8a, not yet integrated). This module
-adds compactness and openness of those levels and the standard finite-index
-argument.
+The proof is derived and written for this module. It is not taken from Harris.
+The finiteness for lattice levels is proved in the module
+`DefiniteDoubleCosets`. This module adds compactness and openness of those
+levels and the standard finite-index argument.
 
 ## Setting
 
@@ -100,6 +97,5 @@ argument.
   stabilizers are computed.
 - `K` is required to be open; compactness of `K` is not needed for
   finiteness.
-- Depends on the not yet integrated candidates `DefiniteDoubleCosets`
-  (312bef8a) and, through it, `DefiniteTraceForm` (a991e036),
-  `HermiteReduction` (58a77643) and `RationalAdelicLattice` (536f38d2).
+- Depends on the module `DefiniteDoubleCosets` and, through it,
+  `DefiniteTraceForm`, `HermiteReduction` and `RationalAdelicLattice`.

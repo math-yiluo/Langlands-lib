@@ -1,6 +1,7 @@
 # Original canonical quotient comparison under coordinate conjugacy
 
-This internal adapter for Task 7200 proves scalar equivariance and
+This internal adapter for the finite vector-bundle filtrations of supplied
+relative radicals proves scalar equivariance and
 linearity of the original ambient-compatible `sameParabolicQuotientIso`.
 It combines actual root-transport comparison with actual parabolic
 conjugation. The original quotient comparison is retained throughout.
@@ -115,8 +116,10 @@ original canonical quotient comparison on all tests. The further consumer
 quotients on arbitrary common affine restrictions, retaining the actual ambient,
 step and full fppf quotient squares, including empty overlaps. These are the
 specific transitions needed to descend vector-bundle quotients of the actual
-finite face series. This pair is an intermediate transition result. The host
-objective remains the unchanged arbitrary-universe
+finite face series. This pair is an intermediate transition result towards
+the unchanged arbitrary-universe
 `RelativeUnipotentRadicalFiltrationStatement`: actual descent of the quotient
 modules and final assembly of the finite series on every supplied radical are
-separate consumers, and no whole-task completion is claimed here.
+separate consumers, and this module does not prove that statement (it is
+proved as `relativeUnipotentRadicalFiltration` in
+`RelativeUnipotent.RadicalFiltrationProof`).

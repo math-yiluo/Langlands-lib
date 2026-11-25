@@ -77,8 +77,9 @@ and numerical tests on the same representative. An actual equivariant
 rational self-isogeny with a valid rational-unit polarization multiplier,
 fixing its compatible coarse orbit, must equal the identity. The
 condition does not supply action freeness, a fiber inverse or a scheme
-isomorphism. Its derivation from Harris's smallness condition remains a
-separate obligation. All schemes and field tests here have universe zero.
+isomorphism. Its derivation from Harris's smallness condition is
+`CMSmallLevelRigidityStatement`, proved as `cmSmallLevelRigidity` in
+`HarrisTaylorCMSmallLevelRigidityProof`. All schemes and field tests here have universe zero.
 
 ## Implemented torsor deduction
 
@@ -173,12 +174,12 @@ source. The representing witnesses, named infrastructure and two
 relative-dual assertions remain explicit inputs. Applicable
 representability under the source's division and global hypotheses,
 comparison with the complete source moduli functor, etaleness of
-original forgetting, and rigidity from Harris smallness remain
-obligations. Canonical-model comparisons, uniformization and actual
-coefficient local systems and their descent comparison remain open.
-This conditional torsor input does not complete the source cover
-theorem or the host task.
+original forgetting, and rigidity from Harris smallness are not
+proved here. Canonical-model comparisons, uniformization and actual
+coefficient local systems and their descent comparison are not
+constructed here. This conditional torsor input does not complete the
+source cover theorem.
 
-All code and prose in this pair are by Worker 57. The pinned environment
+The pinned environment
 is Lean 4.34.0 with Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.

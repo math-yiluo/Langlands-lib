@@ -38,6 +38,8 @@ private theorem toRat_mem_span_singleton_of_dependent
     intro hn
     have hn' : n = 0 := by exact_mod_cast hn
     rw [hn, zero_smul, add_zero] at hrat
+    have : Module.IsTorsionFree ℚ (ℚ ⊗[ℤ] characterLattice T) :=
+      DivisionSemiring.to_moduleIsTorsionFree
     have hm : (m : ℚ) = 0 := (smul_eq_zero.mp hrat).resolve_right hαrat
     have hm' : m = 0 := by exact_mod_cast hm
     exact hne hm' hn'

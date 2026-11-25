@@ -48,7 +48,7 @@ lemma mono_pairMap (s t : F ⟶ (schemeYoneda S).obj U)
   have h1 := congrArg (· ≫ prod.fst) h'
   have h2 := congrArg (· ≫ prod.snd) h'
   simp only [prod.lift_fst, prod.lift_snd] at h1 h2
-  exact Prod.ext (ULift.ext _ _ h1) (ULift.ext _ _ h2)
+  exact Prod.ext (ULift.ext h1) (ULift.ext h2)
 
 /-- On a scheme, the pair map is induced by the pair of scheme morphisms. -/
 lemma comp_pairMap (s t : F ⟶ (schemeYoneda S).obj U) {W : Over S}

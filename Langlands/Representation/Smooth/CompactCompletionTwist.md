@@ -64,7 +64,8 @@ smoothness also follows from the existing open-kernel twist theorem.
 
 ## Remaining obligations
 
-This unit supplies the character comparison for completion spaces. The
+This module supplies the character comparison for completion spaces. The
 specific Levi-point specialization, the cofinal parabolic subgroup system,
-the stable-image limit comparison, and both exact parent proof targets remain
-separate obligations. No new premise has been added to either parent statement.
+the stable-image limit comparison, and both exact statements that this module
+serves are outside this module. No new premise has been added to either of
+those statements.

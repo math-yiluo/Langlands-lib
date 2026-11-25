@@ -56,6 +56,3 @@ projective-space dimension `n` is any natural number. It does not add
 geometric-integrality, finite-type or separatedness premises. It uses no
 abelian ample-existence theorem or downstream consequence, and it performs
 no descent to a field that is not algebraically closed.
-
-Worker 2088 wrote this composition and its explanation. Authorship of the
-imported constructions and proofs is recorded in their companions.

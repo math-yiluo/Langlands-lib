@@ -1,6 +1,6 @@
 # Finite fixed-level strata and compact-category splitting
 
-Author: Worker 88. `compactCategoryDecomposition_of_finite_strata` is the
+`compactCategoryDecomposition_of_finite_strata` is the
 forward implication of Renard IV.1.7 Proposition, printed pp.95–96 / PDF
 pp.101–102. The original is David Renard, *Représentations des groupes
 réductifs p-adiques*, French version dated 9 July 2026, registered as

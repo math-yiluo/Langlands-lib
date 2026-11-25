@@ -90,7 +90,7 @@ the separate unbounded-conductor existence statement.
 
 ## Derived provenance and original-source reading
 
-This is a derived local-field prerequisite formulated for Worker 394's
+This is a derived local-field prerequisite formulated for the
 JPSS high-ramification work. It is not an exact transcription of JPSS
 Proposition 2.13. In root coordinates
 `diag(a₁⋯aᵣ, a₂⋯aᵣ, …, aᵣ)`, the determinant is
@@ -127,12 +127,9 @@ Library conductor. No source-specific errata note for either registered
 source was present in the current Library or shared `notes/errata`
 locations when this pair was authored.
 
-Worker 615 authored this pair from Worker 394's statement specification and
-conductor derivation. No Whittaker expansion, Mellin integration theorem,
+No Whittaker expansion, Mellin integration theorem,
 L-factor vanishing theorem, or proof of power cofinality is supplied in this
-module. Compilation and proposition inspection were development checks. The
-statement pair was later independently accepted and published as artifact
-`166fbe28-b98c-4910-b486-b36f766ad4e6`.
+module. Compilation and proposition inspection were development checks.
 
 ## Status
 
@@ -145,10 +142,8 @@ field universe and no added hypothesis. It pairs the public theorems
 (power cofinality) and
 `Langlands.PadicField.TopologicalData.exists_conductor_bound_pow_ne_one`
 (the uniform conductor threshold). All positive `m`, including multiples of
-`p`, and all levels `b` are covered. The proof is artifact
-`fef59053-24ac-46e0-8c9f-2182a2ac3d3f` version 1. Its validation passed the
-Lake build and exact-target checks, an independent review approved it, and it
-was published at Library commit `2ae54bcc0a7e682d7ed288b2dfc5e9071e3e2e3f`.
+`p`, and all levels `b` are covered. The proof passed the
+Lake build and exact-target checks and was published at Library commit `2ae54bcc0a7e682d7ed288b2dfc5e9071e3e2e3f`.
 It proves only the two clauses stated here. It does not prove conductor
 equality for character powers, construct a character of large conductor,
 or prove any Mellin or L-factor statement.

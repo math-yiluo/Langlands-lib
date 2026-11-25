@@ -1,6 +1,6 @@
 import Langlands.AlgebraicGeometry.DvrAffineReducedFibre.FiniteNormalization
 import Langlands.CommutativeAlgebra.DvrFiniteSeparableExtension
-import Langlands.NYLL.ValuedFieldTheory.Valuation.DiscreteValuationField.AdicPowerCompletenessProof
+import Langlands.CommutativeAlgebra.AdicCompleteness
 import Mathlib.FieldTheory.PurelyInseparable.Tower
 import Mathlib.RingTheory.DedekindDomain.IntegralClosure
 
@@ -9,7 +9,7 @@ import Mathlib.RingTheory.DedekindDomain.IntegralClosure
 open IsLocalRing
 open Langlands.CommutativeAlgebra.DvrFiniteSeparableExtension
   (isDiscreteValuationRing_and_isAdicComplete)
-open Langlands.NYLL.ValuationTheory.DiscreteValuationField
+open Langlands.CommutativeAlgebra.AdicCompleteness
   (isAdicComplete_of_isAdicComplete_pow)
 
 noncomputable section

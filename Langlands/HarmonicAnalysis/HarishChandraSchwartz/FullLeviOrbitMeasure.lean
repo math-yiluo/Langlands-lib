@@ -35,7 +35,7 @@ local notation "νG" => (fun ψ => (rationalNormCharacters G ψ).toMul)
 set_option hygiene false in
 local notation "νM" => RationalPointFamily.leviRationalNormCharacters i ν Finset.univ
 
-local instance : NonarchimedeanGroup (rationalPoints G) :=
+private local instance : NonarchimedeanGroup (rationalPoints G) :=
   rationalPoints_nonarchimedeanGroup G
 local instance : IsAffineHom
     (Standard.leviScheme i ν (RationalPointFamily.rootSet i ν Finset.univ)).X.hom :=

@@ -1,8 +1,8 @@
 # Comparison of right resolutions with right derived functors
 
-Author: Worker 61. The module imports my `Langlands.Cohomology.AcyclicResolution.Lift`
+The module imports the Library's `Langlands.Cohomology.AcyclicResolution.Lift`
 (`lift`, `comp_lift`, `homotopyOfComp`, `f_zero_comp_d`, `isLimitKernelFork`) and
-Worker 3's `Langlands.Cohomology.AcyclicResolution.Statement` (only for the hypothesis
+`Langlands.Cohomology.AcyclicResolution.Statement` (only for the hypothesis
 of `comparisonNatIso`). From Mathlib it uses `InjectiveResolution.isoRightDerivedObj`,
 `InjectiveResolution.isoRightDerivedObj_inv_naturality`, `InjectiveResolution.desc`,
 `Functor.mapHomotopy`, `Homotopy.homologyMap_eq`, `Functor.toRightDerivedZero`,
@@ -35,7 +35,7 @@ injective resolution `I` of `A` is a cochain map `φ : K ⟶ I.cocomplex` with
 - `comparison F I φ n : Hⁿ(F K) ⟶ (F.rightDerived n).obj A`, for an injective resolution
   `I` of `A`, any cochain map `φ : K ⟶ I.cocomplex` and `n : ℕ`, is the homology map of
   `F φ` followed by `(I.isoRightDerivedObj F n).inv`. No compatibility of `φ` is required
-  to define it. This is the formula of Worker 3's statements: the comparison in
+  to define it. This is the formula of the Library's statements: the comparison in
   `AcyclicResolutionComparisonStatement` and `ResolutionComparisonIndependenceStatement`,
   and `SmoothGodementComparison.comparisonMap`.
 - `comp_lift_id ε I : ε ≫ lift ε (𝟙 A) I.ι = I.ι`: the lift of `ε` over the identity of
@@ -118,7 +118,7 @@ With `[PreservesFiniteLimits F]`:
   `isIso_comparisonNatTrans_zero` records that it is an isomorphism.
 - `comparisonNatIso F 𝒦 e he hcomp hacyc n :
   𝒦 ⋙ F.mapHomologicalComplex _ ⋙ homologyFunctor D _ n ≅ F.rightDerived n` takes two
-  hypotheses: `hcomp : AcyclicResolutionComparisonStatement.{u, v, u', v'}`, Worker 3's
+  hypotheses: `hcomp : AcyclicResolutionComparisonStatement.{u, v, u', v'}`, the
   statement that acyclic resolutions compute right derived functors, and
   `hacyc : ∀ A i n, IsZero ((F.rightDerived (n + 1)).obj ((𝒦.obj A).X i))`, the
   `F`-acyclicity of every term. Under these, every component of `comparisonNatTrans` is an
@@ -170,10 +170,10 @@ cohomology of a functorial resolution, such as the smooth Godement complex
 derived functors. Its components are pinned to the comparison maps of all
 augmentation-compatible lifts by `comparisonNatTrans_app`.
 
-## Relation to other modules and tasks
+## Relation to other modules
 
-- `comparison_eq` and `comparison_naturality` contain the mathematical content of Worker
-  3's `ResolutionComparisonIndependenceStatement` and
+- `comparison_eq` and `comparison_naturality` contain the mathematical content of
+  `ResolutionComparisonIndependenceStatement` and
   `ResolutionComparisonNaturalityStatement`. This module does not prove the statement
   propositions themselves, which quantify over all categories at fixed universes. They are
   proved, as direct applications of these two theorems, by
@@ -188,7 +188,7 @@ augmentation-compatible lifts by `comparisonNatTrans_app`.
   `resolutionComparisonTransformationStatement` in `AcyclicResolution.TransformationProof`
   and `acyclicResolutionComparisonStatement` in `AcyclicResolution.ComparisonProof`. The
   Library has no proof of `AcyclicResolutionEquivarianceStatement`.
-- Worker 3's `SmoothGodementComparison.comparisonMap R G X I φ q` is `comparison` for
+- `SmoothGodementComparison.comparisonMap R G X I φ q` is `comparison` for
   `F := smoothSheafCompactSections R G X`, by definition.
 
 ## Scope

@@ -126,7 +126,7 @@ theorem hasNonzeroTransposeGKPairing_of_matched_standard
     apply hJ0
     ext v : 1
     apply (transposeDualEquiv n ds hn).injective
-    rw [LinearMap.zero_apply, map_zero]
+    rw [LinearMap.zero_apply, LinearEquiv.map_zero]
     apply Subtype.ext
     ext f
     have h := congrArg (fun w : kDual ρ => (w : Module.Dual ℂ V) v)

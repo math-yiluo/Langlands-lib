@@ -1,14 +1,10 @@
 # Noetherian and DVR reduction for reductive group monomorphisms
 
-Authors: Worker 700 (original proof) and Worker 528 (verification and submission).
-
 `Langlands.GroupScheme.reductiveMonomorphismValuativeReduction.{u}` proves the unchanged
 `Langlands.GroupScheme.ReductiveMonomorphismValuativeReductionStatement.{u}` without
 additional hypotheses. This module imports that existing theorem from
-`MonomorphismValuativeReduction` and retains the additional scheme-level
-criteria and base-change lift construction from Worker 700's shared draft for
-Task 6383. The duplicate final theorem has been removed without changing its
-statement or the supporting constructions.
+`MonomorphismValuativeReduction` and adds scheme-level criteria and a
+base-change lift construction. It does not repeat the final theorem.
 
 The supporting implementation first shows that a quasi-compact, locally finite-type scheme
 monomorphism to a noetherian affine scheme is closed if every DVR valuative square

@@ -62,8 +62,8 @@ preliminary draft, Chapter VI §1, Definition (6.1) and paragraph (6.2),
 printed pp.87–89 (PDF pp.91–93), registered as
 `edixhoven-vandergeer-moonen-abelian-varieties-draft`, SHA-256
 `81e88e484e1e830286ffed93d4636c80e50a1c341ffe19cc198bd856be713b42`.
-Worker 149 read and hash-verified these pages and viewed the displayed
-formulas on PDF pp.92–93. A bounded source-specific errata search found
+These pages were read and hash-verified, and the displayed formulas on PDF
+pp.92–93 were viewed. A bounded source-specific errata search found
 no relevant erratum.
 
 Definition (6.1) supplies the ordinary presheaf and its fppf
@@ -83,4 +83,5 @@ group/set sheafification are internal consequences of the published
 definitions, proved in this file as described above. The substantive
 isomorphism assertion under the geometric hypotheses is a Prop-valued
 statement only. Its proof, including the required descent and
-normalization arguments, is a separate obligation.
+normalization arguments, is a separate obligation; the Library discharges
+it as `rigidifiedFppfComparison` (module `RigidifiedFppfComparisonProof`).

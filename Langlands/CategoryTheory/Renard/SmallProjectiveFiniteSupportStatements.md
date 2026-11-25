@@ -1,10 +1,6 @@
 # Renard A.VIII.2: small projectives and finite-subcoproduct factorization
 
-Authors: Worker 6 (statement design, implementation and documentation);
-Worker 923 (independent source and errata reread, Markdown additions,
-compilation and inspection).
-
-This statement unit supplies
+This module supplies
 `Langlands.Renard.SmallProjectiveFiniteSupportStatement` in module
 `Langlands.CategoryTheory.Renard.SmallProjectiveFiniteSupportStatements`.
 It states the characterization for arbitrary abelian categories with
@@ -18,7 +14,7 @@ p-adiques*, French edition dated 9 July 2026, registered as
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 The retained original is
 `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`.
-Complete PDF pages 272–273 (printed 266–267) were reread for this unit.
+Complete PDF pages 272–273 (printed 266–267) were reread for this module.
 
 On printed page 267 / PDF page 273, A.VIII.2 first fixes a cocomplete
 abelian category and defines smallness for a projective object `P` by
@@ -36,12 +32,12 @@ on both sides; the finite-factorization property alone is not called
 projectivity.
 
 The source uses “si” in this sentence following its announcement of
-equivalent characterizations, so the sentence is read as a biconditional,
-as the contract's objective also states. It gives no proof of this particular
+equivalent characterizations, so the sentence is read as a biconditional.
+It gives no proof of this particular
 characterization on the consulted page. The nearby citations to
 Pareigis [37], 4.11, explicitly accompany the separate finite-type
 comparison and the equivalence with right modules. Pareigis has not
-been read for this unit, and no proof from it is claimed to have been
+been read for this module, and no proof from it is claimed to have been
 checked.
 
 The supplementary author errata for the 2010 edition,
@@ -53,8 +49,9 @@ printed page 309, line 2, replaces the fixed object `X` by `P` in
 two errata pages give no correction to the finite-factorization sentence;
 this is a bounded observation about the consulted pages and edition.
 The public `notes/renard/appendix-a-corrections.md` concerns other
-Appendix A passages. No `notes/errata` directory is present in the
-inspected Library.
+Appendix A passages. The Library's
+`notes/errata/renard-2026-representations-groupes-reductifs-padiques.md`
+concerns VII.1.2, not Appendix A.
 
 ## Complete statement
 
@@ -115,7 +112,7 @@ Chosen coproducts express the source assertion about any coproduct
 via the canonical isomorphisms supplied by their universal properties.
 This convention does not restrict the source's arbitrary families.
 No theorem constructing or proving those transports is asserted by
-this statement unit.
+this module.
 
 ## Imported Hom predicates
 
@@ -162,46 +159,44 @@ generator, enough projectives, Noetherianity, finite dimension or
 module specialization. Projectivity is part of the proposition's
 comparison, not an added ambient assumption.
 
-## Verification and remaining obligations
+## Verification and scope
 
-Development checks use the approved environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` and prepared Mathlib commit
+Development checks use Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`. The statement module
 compiled with no errors or warnings, and inspection reported
 `statement_returns_prop: true` with exactly the universe parameters
 `w`, `v`, `u`.
 
-A separate private diagnostic printed the declaration and its axioms,
+A separate private check printed the declaration and its axioms,
 checked the full unapplied type with the actual coproduct instance
 binder, and checked equality with the complete lambda body above by
 `rfl`. The full type also checked at `(w, v, u) = (0, 1, 2)` and
 `(2, 0, 1)`. It checked that the finite-subset family has its required
 coproduct and verified the displayed canonical inclusion's defining
-equation using Mathlib's `Sigma.ι_comp_desc`. That diagnostic also
+equation using Mathlib's `Sigma.ι_comp_desc`. That check also
 compiled with no errors or warnings. Axiom inspection reported only
 `propext`, `Classical.choice` and `Quot.sound`. These are development
 checks of the statement and its terms; they do not prove the
 characterization.
 
-Worker 923 repeated these checks on this exact pair. The workspace
-statement check (diagnostic `3d337bab-5eb2-4324-a2d8-05785a09a01e`)
+These checks were repeated on this exact pair. The
+statement check
 reported no errors or warnings, `statement_returns_prop: true`, level
 parameters `w`, `v`, `u`, and only the axioms `propext`,
 `Classical.choice` and `Quot.sound`. A private inspection module
-(diagnostic `e067d51c-5d84-4636-a51c-fcc5da06bce0`, no errors or
+(no errors or
 warnings) printed the fully explicit declaration, which shows both
 coproduct instances derived from the `[HasCoproducts.{w} C]` binder,
 checked the unapplied telescope and the body by `Iff.rfl`, checked that
 the finite-subset index type is the subtype `{x : I // x ∈ s}`, typed the
 canonical inclusion and its injection equation, and instantiated the
 statement at `(w, v, u) = (0, 1, 2)`, `(3, 0, 1)` and `(2, 0, 1)` and for
-`ModuleCat.{0} ℤ`. Worker 923 also checked the truth of the
-characterization informally at arbitrary universes, as a sanity check
+`ModuleCat.{0} ℤ`. The truth of the
+characterization was also checked informally at arbitrary universes, as a sanity check
 only; no proof is claimed.
 
-Independent statement review and publication remain required.
-The characterization proof is a separate exact-target successor
-after statement publication. The separate finite-type comparison,
+The characterization is proved as `smallProjectiveFiniteSupport` in
+`Langlands.CategoryTheory.Renard.SmallProjectiveFiniteSupport`. The separate finite-type comparison,
 presentations by sums of copies of a progenerator, regular-module
-converse and actual equivalence with right modules remain distinct
-source obligations. This pair contains no proof of any of them.
+converse and actual equivalence with right modules are distinct
+source assertions. This pair contains no proof of any of them.

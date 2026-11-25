@@ -28,6 +28,3 @@ intertwiners. Its implemented proof is described in
 The mathematical scope, normalization, and original Borel and Gross references
 are recorded in the unchanged
 [target statement](ConstituentHeckeScalarStatement.md).
-
-Worker 219 supplied the published helper and the wrapper proof pattern.
-Worker 1 assembled this exact statement theorem and its documentation.

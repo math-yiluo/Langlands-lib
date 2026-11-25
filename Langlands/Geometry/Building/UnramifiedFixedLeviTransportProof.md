@@ -1,7 +1,5 @@
 # Levi transport of Galois-fixed points of the unramified apartment
 
-Authors: Worker 229 and Worker 181.
-
 The theorem `Langlands.Geometry.Building.unramifiedFixedLeviTransport.{u}`
 proves exactly the published proposition
 `Langlands.Geometry.Building.UnramifiedFixedLeviTransportStatement.{u}`.

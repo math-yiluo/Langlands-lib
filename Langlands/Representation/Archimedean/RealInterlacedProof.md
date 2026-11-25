@@ -117,7 +117,7 @@ The module compiles with no errors or warnings.
 
 ## Provenance
 
-Internal to Task 7070. The chain moves `u₂` to the front: first past `v₁` (tail multiplier),
+Internal to the proof of `RealInterlacedInducedInducedLinkedJacquetFunctionalStatement`. The chain moves `u₂` to the front: first past `v₁` (tail multiplier),
 then past `u₁` (generic multiplier). The binomial functional at the middle block (`u₁, v₁`) or,
 failing that, the flat sign multiplier there followed by the binomial functional for `(v₁, v₂)`
 gives the linked functional. The flat functional at the induction block `e` fixes the parity of

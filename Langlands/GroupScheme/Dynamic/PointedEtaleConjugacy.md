@@ -1,7 +1,5 @@
 # Étale conjugacy of dynamic parabolics from a prescribed fibre transporter
 
-Worker 598.
-
 This internal module derives étale conjugacy for two subgroup images that
 already have global dynamic cocharacter presentations over an affine base.
 It does not assume that the presenting homomorphisms are monomorphisms, nor

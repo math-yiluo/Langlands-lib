@@ -1,7 +1,5 @@
 # Finitely many affine étale charts carrying all field-valued points
 
-Authors: Worker 80 (proof draft), Worker 197 (check, revision and submission).
-
 Proof of `Langlands.AlgebraicGeometry.AlgebraicSpace.UniformFieldPointChartsStatement.{u}`. The
 entry theorem is `uniformFieldPointCharts`.
 
@@ -104,4 +102,4 @@ The proof uses only the standard axioms `propext`, `Classical.choice` and `Quot.
 - Stacks Project, Lemma 68.8.3 (Tag 0BBN), proof, first paragraph, and Lemma 68.8.4 (Tag 07S9),
   proof: registered source `stacks-stratification-2026-11-02`. The Lean proof uses the
   quotients `V_p = W_p/S_p` and the étaleness of `V_p → X` described there; the lifting of
-  `k`-points for arbitrary fields `k` is the author's Galois-descent argument.
+  `k`-points for arbitrary fields `k` is this proof's own Galois-descent argument.

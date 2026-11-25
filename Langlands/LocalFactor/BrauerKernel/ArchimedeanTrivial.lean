@@ -11,7 +11,7 @@ universe u
 
 namespace Langlands.LocalFactor.NonabelianBrauer
 
-open NumberField ClassField.Global ClassField.Global.RelativeWeilGroup
+open NumberField ClassFieldTheory.Global ClassFieldTheory.Global.RelativeWeilGroup
 open Langlands.Global Langlands.Global.AdelicFunctoriality
 open scoped NumberField.LiesOver
 
@@ -25,7 +25,7 @@ theorem exists_localUnitNorm_eq {F E : Type u} [Field F] [Field E] [Algebra F E]
   refine ⟨Units.map (NumberField.LiesOver.completionMap (v := v) (w := w)).toMonoidHom y,
     Units.ext ?_⟩
   rw [InfiniteExtension.localUnitNorm_val]
-  change InfiniteExtension.localNorm v w (NumberField.LiesOver.completionMap (y : v.Completion)) =
+  change InfiniteExtension.localNorm v w (NumberField.LiesOver.completionMap v w (y : v.Completion)) =
     (y : v.Completion)
   rw [InfiniteExtension.localNorm_algebraMap, hw.finrank_eq_one v, pow_one]
 

@@ -1,7 +1,5 @@
 # Compactness of finite extensions of anisotropic tori
 
-Authors: Worker 1232 and Worker 1567.
-
 `AnisotropicTorusFiniteQuotientCompactnessStatement.{u}` asserts that an
 actual affine group scheme `G` over a nonarchimedean local field has compact
 rational points whenever `HasAnisotropicTorusFiniteQuotient G` holds. Its

@@ -1,10 +1,5 @@
 # Compatible root presentations of specified rational parabolics
 
-Author: Worker 6.
-
-Interface feedback: Workers 1107 and 1220 clarified reuse and the retained
-actual-object, root-convention and presentation-independence obligations.
-
 This is a derived construction on the shared `Langlands.GroupScheme` objects.
 It records actual choices and their correctness for specified maps
 `p : P ⟶ G`, `l : M ⟶ P` and `a : A.toGrp ⟶ M`, and attaches the existing
@@ -124,8 +119,10 @@ No split-component existence assertion is used to obtain this transport.
 Existence of a compatible presentation for every specified actual `p,l,a`,
 independence across maximal split tori, generic cocharacters and minimal
 parabolics, and the comparison of the derived `simpleRelativeRoots` with
-Renard's simple indivisible roots of the chosen minimal parabolic remain
-separate exact Chapter V statement/proof obligations.
+Renard's simple indivisible roots of the chosen minimal parabolic are
+separate exact Chapter V assertions, not proved in this module; existence
+is proved as `parabolicRootPresentationExistence` (module
+`Rational.ParabolicRootPresentationProof`).
 The minimality field and standard-cocharacter realization do not prove that
 root-convention comparison. They also do not assert the real-cocharacter
 root-annihilator image equality in `StandardLeviSplitCentralDirectionsStatement`.
@@ -134,8 +131,8 @@ The published `StandardCocharacterStatement`,
 `GenericMinimalParabolicStatement`, standard classification and standard-Levi
 central-direction statements are possible structural inputs or proof targets,
 not automatically available proofs of these remaining assertions.
-The eventual all-parabolic definition of VII.2.1 must retain actual coverage
+An all-parabolic definition of VII.2.1 must retain actual coverage
 and these comparisons. A universal condition over possibly absent
-presentations alone cannot establish the source definition. This unit defines
+presentations alone cannot establish the source definition. This module defines
 no temperedness predicate, admissibility condition, induction theorem or
 representation-theoretic equivalence.

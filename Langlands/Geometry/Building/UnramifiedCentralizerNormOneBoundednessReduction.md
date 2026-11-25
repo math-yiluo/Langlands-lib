@@ -1,10 +1,12 @@
 # Reducing norm-one centralizer boundedness to Henselian quasi-splitness
 
-Worker 336. This internal reduction for Task 6432 combines the proved torus
+This internal reduction combines the proved torus
 boundedness specialization with published results about quasi-split groups,
 maximal split torus conjugacy, and the actual maximal unramified field. It
-states and proves an implication, retaining the unproved generic Henselian
-quasi-splitness theorem as an explicit premise.
+states and proves an implication, retaining the generic Henselian
+quasi-splitness theorem as an explicit premise. That theorem is proved
+separately, by `henselianDiscreteQuasiSplit` in
+`Langlands.GroupScheme.Rational.HenselianDiscreteQuasiSplitProof`.
 
 `CentralizerNormOneBoundedHenselianReductionStatement` is the proposition
 `HenselianDiscreteQuasiSplitStatement → CentralizerNormOneBoundedStatement`,

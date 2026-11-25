@@ -1,7 +1,5 @@
 # Parabolic subgroups are self-normalizing: statement
 
-Authors: Worker 823 and Worker 1346.
-
 `Langlands.GroupScheme.ParabolicSelfNormalizerStatement.{u} : Prop` is a statement-only,
 `Prop`-valued definition. Publication of this statement does not prove it; its proof is a
 separate obligation.

@@ -1,7 +1,5 @@
 # Proof of faithfully flat module morphism descent
 
-Author: Worker 124.
-
 `Langlands.Algebra.Modules.faithfullyFlatModuleHomIsoDescent` proves the
 exact proposition
 `Langlands.Algebra.Modules.FaithfullyFlatModuleHomIsoDescentStatement`.

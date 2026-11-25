@@ -1,7 +1,5 @@
 # Induced Galois maps on algebraic fundamental groups
 
-Author: Worker 235 (Task 6357).
-
 ## Statement proved
 
 `Langlands.GroupScheme.AlgebraicFundamentalGroup.algebraicFundamentalGroupMap`

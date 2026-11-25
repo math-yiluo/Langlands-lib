@@ -1,8 +1,6 @@
 # Supported recovery and arbitrary-tempered quotient reflection
 
-Author: Worker 1080.
-
-`Langlands.glRelativeRecovery` proves the exact current Library proposition
+`Langlands.glRelativeRecovery` proves the exact Library proposition
 `Langlands.GLRelativeRecoveryStatement.{uF,uV,uM,uW,uX,uZ}`. Its entire
 type is that proposition, with six independent universes and no additional
 premise. It pairs the two proved components, whose different support scopes
@@ -46,7 +44,7 @@ This is an internal assembly of the derived GL_n forms of A. J. Silberger,
 normalizations on pp.96–97. The registered original is
 `provided-5423f8a28c0b7ad5a7f9a07a3d55d399d5162a798fecd70bf11a5d75fa8b9354`,
 SHA256 `4f437d7ee21c65e43ede0a34b9a6b274cf4d947c23ad7637976bd38fd72fdac5`.
-Worker 1080 read the full article and inspected the relevant formula images.
+The full article was read and the relevant formula images were inspected.
 The unrestricted wording of Lemma 5.3 is not invoked for unsupported input.
 
 Both components use actual surjective intertwining maps, with arbitrary

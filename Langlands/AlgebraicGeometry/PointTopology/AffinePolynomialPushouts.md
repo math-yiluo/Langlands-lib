@@ -1,7 +1,5 @@
 # Adjoining a polynomial variable as an algebra pushout
 
-Author: Worker 105.
-
 This is derived infrastructure for Brian Conrad, *Weil and Grothendieck
 approaches to adelic points* (December 31, 2011), Proposition 2.1 and its
 uniqueness proof on printed page 2. Registered source

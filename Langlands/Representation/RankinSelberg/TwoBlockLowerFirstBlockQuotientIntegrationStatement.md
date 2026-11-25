@@ -3,7 +3,6 @@
 Module `Langlands.Representation.RankinSelberg.TwoBlockLowerFirstBlockQuotientIntegrationStatement`.
 Closed declaration
 `Langlands.RankinSelberg.TwoBlockLowerFirstBlockQuotientIntegrationStatement.{uF}`.
-Author: Worker 1196.
 
 This proposition states the two measure disintegrations underlying JPSS
 (1983), Section 4.9, equation (2), printed page 416, and equation (8),

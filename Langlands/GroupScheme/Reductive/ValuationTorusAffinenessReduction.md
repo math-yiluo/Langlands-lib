@@ -1,7 +1,5 @@
 # Fibrewise affineness from universal torus families and the Weyl criterion
 
-Authors: Worker 606 and Worker 640.
-
 This internal assembly reduces the exact proposition
 `Langlands.GroupScheme.ReductiveFiberAffinenessStatement.{u}` to two explicit
 mathematical inputs, over every base scheme and in every universe:
@@ -14,7 +12,7 @@ mathematical inputs, over every base scheme and in every universe:
 
 Neither input is proved by this module. The first has the exact intended type of
 `TorusSubgroupModuli.SmoothAffineFiberTorusSubgroupRepresentabilityStatement`;
-it is written out to avoid depending on an unpublished statement. The Weyl
+it is written out here, so that this module does not import that statement. The Weyl
 criterion is an existing Library proposition. In particular, this module is
 a conditional reduction and does not prove the target unconditionally.
 
@@ -44,7 +42,5 @@ proposition, with the two remaining inputs explicit. Connected reductivity is
 used on the actual residue fibres; global affineness is a conclusion.
 
 The provenance is internal composition of the imported constructions and proved
-valuation affineness. Worker 640 provided the arbitrary-base finite-Weyl
-construction and the actual model structure; Worker 606 proved the valuation
-input and assembled it with the pointed torus neighbourhoods and etale descent.
-No external-source result is newly transcribed by this pair.
+valuation affineness.
+No external-source result is newly transcribed by this module.

@@ -1,7 +1,5 @@
 # Necessary whole-chamber bounds for square-integrable product Levis
 
-Author: Worker 19.
-
 This module proves the already published
 `Langlands.GLProductLeviSquareIntegrableExponentNecessityStatement.{uF,uV}`
 as `Langlands.glProductLeviSquareIntegrableExponentNecessity`.

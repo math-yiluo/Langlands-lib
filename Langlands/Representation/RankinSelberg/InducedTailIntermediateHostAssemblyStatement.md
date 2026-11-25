@@ -1,7 +1,7 @@
 # Exact prerequisites for the intermediate-tail span assembly
 
 `InducedTailIntermediateHostAssemblyStatement` is an internal implication
-collecting the five separately owned inputs used to assemble the unchanged
+collecting the five separately stated inputs used to assemble the unchanged
 `InducedTailIntermediateRankSpanStatement`. This proposition does not prove
 any of its inputs or the closed intermediate-tail span theorem.
 
@@ -39,6 +39,9 @@ extension to the canonical two-block induction, use inverse-character equality
 to obtain the reversed tail integrability and continuation witnesses, specialize
 actual disintegration to the intermediate lower-block chart, and apply the
 conditional span input. Equality of ranks and the zero-row rectangular product
-transport the result back to the unchanged canonical value sets. A proof of
-this composition remains a separate contribution, and the five prerequisite
-proofs remain separate from that contribution.
+transport the result back to the unchanged canonical value sets. The
+composition is proved separately, by `inducedTailIntermediateHostAssembly` in
+`InducedTailIntermediateHostAssemblyProof`, and the five prerequisites have
+their own proofs, separate from that one: `inducedTailIntermediateDiagonalExtensionSpan`,
+`twoBlockWhittakerExtension`, `normalizedProductWhittakerType`,
+`lowerBlockQuotientDisintegration` and `inducedTailIntermediateInverseCharacter`.

@@ -58,7 +58,7 @@ Indeed, van Dantzig's theorem supplies a compact open subgroup inside any open
 subgroup; its finite-dimensional fixed space contains the fixed space of the
 larger subgroup. The reverse implication is immediate. Product compact open
 subgroups form an identity-neighborhood basis in the product group. These
-standard bridges are part of the future proof work, not extra hypotheses or
+standard bridges belong to the proofs, not extra hypotheses or
 assumed fields.
 
 ## Original source and translation
@@ -97,10 +97,10 @@ target; they do not insert a Lean proof.
 
 ## Dependencies and remaining scope
 
-The only project import is the currently published
+The only project import is the published
 `Langlands.Representation.Smooth.Definitions`, inspected in Library
 `30ceb5a0d89d8094c1663fc19f35416519b9a125`. The source pair is unchanged from
-its published version 1: Lean SHA256
+its published version: Lean SHA256
 `435abfa2c0b05c1b6ea8107e3278687e7091e481540508d6647befc0f515aabb`,
 Markdown SHA256
 `4b7364038949eb59db10c95354f290fcba77110c1ed33a227a2b6c92f4afd569`.
@@ -108,18 +108,18 @@ Mathlib supplies `Representation`,
 `Representation.tprod`, `Representation.Equiv`, `Representation.IsIrreducible`,
 `TensorProduct.map`, `ModuleCat`, and the actual topological-group classes.
 The environment is Lean 4.34.0, Mathlib commit
-`5ed2965256430c3649e86755f9576b54eca72435`, environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`.
+`5ed2965256430c3649e86755f9576b54eca72435`.
 
 This finite-product prerequisite does not assert Flath's infinite-product
 Theorem 2, which requires spherical Hecke-algebra commutativity almost
 everywhere, or his number-field Theorem 3, whose archimedean factors are
 admissible `(g,K)`-modules. The Hilbert tensor completion of Theorem 4 is
-also outside this pair. Worker 58 retains the separate restricted-tensor
-constructions, and Worker 2 retains actual global automorphic realizations,
+also outside this pair, and so are the separate restricted-tensor
+constructions, actual global automorphic realizations,
 local-component assembly, and spherical Hecke/Satake definitions. The
-general Jacquet–Shalika and Arthur–Clozel target families remain outstanding.
+general Jacquet–Shalika and Arthur–Clozel target families are not part of
+this pair.
 
-Worker 44 authored this statement pair. Compilation and inspection establish
-well-formed propositions only; independent semantic review and publication
-are required, and mathematical proofs remain separate obligations.
+Compilation and inspection establish
+well-formed propositions only. The proofs are separate: `flathTwoFactor` in
+`TwoFactorProof` proves `FlathTwoFactorStatement`.

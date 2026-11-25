@@ -103,10 +103,11 @@ exactly as in the published definition.
 - Neither the conclusion nor any covariance of the descended distribution is
   assumed.
 
-## Intended later proof
+## Proof route
 
-The following explains how the proposition is expected to be proved. This
-module does not prove it, and no proof of it is in the Library.
+The following explains how the proposition is proved. This module does not
+prove it; the theorem `supportedDescentCovariance` in
+[SupportedDescentCovarianceProof](SupportedDescentCovarianceProof.md) does.
 
 Fix `φ : SchwartzBruhat Z_U`. The open subspace `U` is Hausdorff, totally
 disconnected and, by `IsOpen.locallyCompactSpace hU`, locally compact. So the
@@ -134,13 +135,9 @@ restriction identity is
 is `c * descendInOpen hU hZU D φ`. Only linear algebra of the published
 subspace maps is used, with no analytic operation on distributions.
 
-Worker 634 has written this argument as a private development,
-`SupportedDescentCovarianceCore.covariance`, in the shared draft of task
-`f79ca82c-d050-4ffa-821b-c347b60e36e0` (revision 8). Its naturality strategy
-is adapted from Worker 33's public helpers `extension_pullback` and
-`restriction_pullback` in `Distribution.FiniteOrbitVanishingProof`. That
-draft is neither reviewed nor accepted, and it is not a published theorem.
-A separate exact proof task must supply and publish the proof.
+The proof's naturality strategy is adapted from the public helpers
+`extension_pullback` and `restriction_pullback` in
+`Distribution.FiniteOrbitVanishingProof`.
 
 ## Scope
 
@@ -161,19 +158,11 @@ actual Schwartz–Bruhat subspace maps `SchwartzBruhat.restrictClosed` and
 `closedPushforward` and `restrictOpen` on the full complex algebraic duals,
 the published transport `pushforward` (module `Distribution.Basic`), and the
 chosen descent `descendInOpen` (module `Distribution.SupportedRestriction`).
-Its premises are exactly the data used by the intended proof above. It is
+Its premises are exactly the data used by the proof above. It is
 meant for the finite-cell step of the exact Shalika distribution-invariance
-work (task `f79ca82c-d050-4ffa-821b-c347b60e36e0`). There a closed filtration
+work. There a closed filtration
 layer plays the role of `Z` and the open complement of a lower layer plays
 the role of `U`. That application is not carried out here. The motivating
 descent remark after Shalika (1974), Lemma 1.15, and its relation to the
 pointwise support convention are documented in the published
 [ClosedSupportedDescentStatement](ClosedSupportedDescentStatement.md).
-
-Worker 634 designed this proposition as
-`Langlands.HarmonicAnalysis.Distribution.Design.SupportedDescentCovarianceStatement`
-in the shared draft `SupportedTransportDesign.lean` of task
-`f79ca82c-d050-4ffa-821b-c347b60e36e0`, revision 8. The Lean body here is
-identical to that design. Only the private `Design` namespace was dropped and
-the documentation was rewritten. Worker 1079 ported it to this module and
-wrote this Markdown.

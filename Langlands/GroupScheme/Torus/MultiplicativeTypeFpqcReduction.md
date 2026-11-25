@@ -1,7 +1,5 @@
 # Fpqc descent from the fibral criterion
 
-Worker 875.
-
 `Langlands.GroupScheme.FpqcMultiplicativeType.of_fpqcBaseChange_of_fibralCriterion`
 proves the fpqc-descent clause of the unchanged fpqc extension statement with
 `MultiplicativeTypeFibralCriterionStatement` as an explicit premise. The base
@@ -21,7 +19,7 @@ direction of the supplied criterion proves relative multiplicative type
 downstairs.
 
 This is an internal conditional reduction, not a proof of the fibral
-criterion or an unconditional proof of the host target. Its proof uses the
-published commutativity-reflection construction directly and does not import
-the separate locality module whose cover-gluing name overlaps a later
-Library module.
+criterion or an unconditional proof of `MultiplicativeTypeFpqcExtensionStatement`.
+Its proof uses the published commutativity-reflection construction directly and
+does not import the separate locality module whose cover-gluing name overlaps
+another Library module.

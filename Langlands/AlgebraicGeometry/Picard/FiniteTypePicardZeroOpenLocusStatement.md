@@ -162,10 +162,12 @@ This statement adopts the Library convention only. Any proof must derive the
 geometric-fibre open locus. It may not replace the predicate by the source
 predicate or assume that the two agree.
 
-## Obligations of a later proof
+## Proof obligations
 
-Statement publication proves nothing. A separate proof of this proposition
-must, among other things:
+The statement proves nothing. Its proof is the theorem
+`Langlands.AbelianScheme.finiteTypePicardZeroOpenLocus` in the module
+`Langlands.AlgebraicGeometry.Picard.FiniteTypePicardZeroOpenLocusProof`. A
+proof of this proposition must, among other things:
 
 - Compare the source's residue-field algebraic equivalence with the exact
   geometric-fibre translation-invariance predicate. This includes invariance
@@ -184,22 +186,19 @@ must, among other things:
   tests. A bijection on geometric points alone does not prove this. The
   published `picardZeroGeometricDetection : PicardZeroGeometricDetectionStatement.{u}`
   (module `Langlands.AlgebraicGeometry.Picard.PicardZeroGeometricDetectionProof`)
-  reduces the family predicate to geometric points. Worker 390's generic bridge
-  `Langlands.AbelianScheme.isPicardZeroOpenLocus_of_geometricPoints`, in the
-  unreviewed shared draft (revision 2) of task
-  `36b1e8df-b124-45f9-bdb3-fb9e4668b55f`, would then give the all-test
-  criterion from an open with the exact geometric-point criterion. That draft
-  is Worker 390's work and is not accepted mathematics. A proof should reuse it
-  only after its independent acceptance, and should check the exact current
-  declarations.
+  reduces the family predicate to geometric points. The generic bridge
+  `Langlands.AbelianScheme.isPicardZeroOpenLocus_of_geometricPoints` (module
+  `Langlands.AlgebraicGeometry.Picard.PicardZeroGeometricOpenLocusBridgeProof`)
+  then gives the all-test criterion from an open with the exact
+  geometric-point criterion.
 
-The field openness workflows (`36b1e8df-b124-45f9-bdb3-fb9e4668b55f` and
-`62f404d2-11a6-4bc9-a050-066d12b3bfd4`) and the geometric component comparison
-workflows (`3f328056-1296-4cf4-a9c4-5e9a4acd84bb` and
-`58fe8476-5045-4662-9a48-c3b2a2616489`) are owned separately. Their
-dependency direction is kept: this statement, any open locus it supplies,
-and any adapter from openness are not to be used as inputs to those
-comparisons.
+The field openness results and the geometric component comparison results
+are separate from this statement, and their dependency direction is kept:
+this statement, any open locus it supplies, and any adapter from openness
+are not to be used as inputs to those comparisons. In the Library, the
+modules `FieldPicardZeroOpenLocusProof`,
+`FieldPicardZeroGeometricComponentComparisonProof` and
+`FieldPicardZeroComponentConstancyProof` do not import this statement.
 
 ## What is not asserted
 
@@ -214,8 +213,11 @@ following:
 
 Openness for each actual supplied family does not by itself classify every
 section of an ordinary Picard sheaf. A section that is not induced by an
-actual rigidified family on the test scheme is outside its scope. Worker 139's
-finite-type existence task `90a7704e-771a-4107-a91a-c67873dd035e` uses this
-statement as one geometric prerequisite. That task keeps its exact
-finite-type representability target. The general-base reduction stays in task
-`e9fb02f6-3fec-4e98-84cf-fcbd2b47f407`.
+actual rigidified family on the test scheme is outside its scope. The proof of
+the finite-type representability statement
+`FiniteTypeSmoothFamilyAbelianRepresentabilityStatement` (module
+`FiniteTypeSmoothFamilyAbelianRepresentabilityProof`, through
+`FiniteTypeSmoothFamilyAbelianRepresentabilityAssembly`) uses this statement as
+one geometric prerequisite. The general-base reduction is
+`smoothFamilyAbelianRepresentabilityOfFiniteType` (module
+`SmoothFamilyAbelianRepresentabilityOfFiniteTypeProof`).

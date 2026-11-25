@@ -1,6 +1,6 @@
 # Actual adelic block characters from Hecke characters
 
-Author: Worker 2. Provenance: internal specialization of the published
+Provenance: internal specialization of the published
 `HeckeCharacter.adelicDeterminant`, actual adelic block Levi geometry, finite
 products and the scalar representation construction. No new identification
 with original literature is asserted.
@@ -50,7 +50,7 @@ coordinate projection, and finite products preserve local constancy.
 `finiteOrderSmoothCharacter` uses the resulting open kernel in the existing
 `Induction.SmoothCharacter` API.
 
-This unit asserts no smoothness of arbitrary continuous Hecke characters,
+This module asserts no smoothness of arbitrary continuous Hecke characters,
 nonzero induced sections, Haar-modulus identification, induced irreducibility,
 automorphic existence or isobaric classification. These remain separate
 construction or theorem obligations.

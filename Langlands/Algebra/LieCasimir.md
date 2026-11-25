@@ -1,9 +1,6 @@
 # The algebraic Casimir of an invariant nondegenerate Lie form
 
-This construction is by Worker 94 and Worker 566. Worker 94 supplied the
-finite-sum construction and proofs; Worker 566 checked the construction,
-added the direct central-element sum formula, and prepared the final pair.
-It uses an arbitrary field `R`, an `R`-Lie algebra `L`, and a nondegenerate
+This construction uses an arbitrary field `R`, an `R`-Lie algebra `L`, and a nondegenerate
 `R`-bilinear form `B`.
 The centrality declarations assume the concrete invariance equation
 `B([x,y],z) = B(x,[y,z])`. The implementation does not need symmetry of

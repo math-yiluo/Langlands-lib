@@ -1,7 +1,5 @@
 # Finite-map rigidity for a closed subscheme
 
-Author: Worker 1482.
-
 This internal helper is derived from integral incomparability in Mathlib. For
 an integral ring map `A → B` with `A` nontrivial and `B` a domain, a following
 map `B → C` is injective whenever the composite is injective: its kernel

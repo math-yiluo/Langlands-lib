@@ -2,7 +2,7 @@
 
 Supporting evidence for the [audit note](../anthropic-hasse-arf-audit.md). These records are development evidence, not mathematical acceptance.
 
-Exact private diagnostic record: `a6772f3b-634c-4fad-92ec-3c7760dc0f24`.
+The `source_sha256` values in the results are the hashes of the submitted source files as they were when the check was made.
 
 <!-- evidence-file: 08-bridge-check-output.txt -->
 

@@ -1,8 +1,6 @@
 # A uniform regular numerator for the actual standard compact operator
 
-Author: Worker 1615.
-
-This module is a supporting construction for the host task proving
+This module is a supporting construction for
 `Langlands.Plancherel.ConditionalParabolicIntertwiningStatement`. Its main
 theorem `exists_uniform_standardCompactOperator_numerator` supplies the
 numerator hypothesis `hpoly` of the published
@@ -88,9 +86,10 @@ continuity theorems.
 
 The opposite subgroups, contracting elements, Iwahori bases, admissibility,
 finite length and full convergence are explicit hypotheses. The module does not
-construct these data for the host's rational-point radicals. It proves neither
+construct these data for the rational-point radicals of
+`ConditionalParabolicIntertwiningStatement`. It proves neither
 domination, nor nonvanishing of `b` on `Ω`, nor `StandardCompactRationalOn`, nor
-the host theorem. All steps are internal compositions of the published Library
+that statement itself. All steps are internal compositions of the published Library
 declarations named above, of `CompactInductionGeneration` and of
 `CompactIntertwiningCompression`; no literature theorem replaces a proof.
 Waldspurger, *La formule de Plancherel pour les groupes p-adiques d'après

@@ -1,8 +1,8 @@
 # The rank-one case of the equal-rank real-place functional equation
 
-Intermediate result for Task 7400 (the proof of
-`Langlands.Global.RankinSelbergGlobal.RealPlaceFunctionalEquationStatement`). Authored by
-Worker 823. The module splits the published
+Intermediate result towards the proof of
+`Langlands.Global.RankinSelbergGlobal.RealPlaceFunctionalEquationStatement`. The module
+splits the Library statement
 `RealEqualFunctionalEquationStatement` by the rank index `r` and proves the case `r = 0`
 (`GL₁ × GL₁`) from the Library proposition
 `Langlands.LocalFactor.RealArchimedeanTateStatement` (Tate's local theory at the real
@@ -80,7 +80,7 @@ hypotheses of `realEqual_rankZero`, and `ω'_v(-1)^0 = 1`.
 
 ## Provenance
 
-Internal intermediate result of Task 7400. The case `n = n' = 1` of Jacquet,
+Internal intermediate result towards `RealPlaceFunctionalEquationStatement`. The case `n = n' = 1` of Jacquet,
 *Archimedean Rankin–Selberg integrals* (2009), Theorem 2.1, at a real place is Tate's
 local functional equation at `ℝ` (Tate's thesis; Cassels–Fröhlich 1967, Chapter XV,
 §2.4–2.5), which the Library states as `RealArchimedeanTateStatement`. The split by rank

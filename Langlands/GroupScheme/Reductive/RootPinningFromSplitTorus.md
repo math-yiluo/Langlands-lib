@@ -1,7 +1,5 @@
 # Root pinnings for split maximal tori
 
-Author: Worker 1472.
-
 `RootPinning.ofSplitMaximalTorus` constructs simple-root trivializations
 from a split maximal torus and a supplied realized root datum and base.
 For any field `k : Type u`,
@@ -47,4 +45,5 @@ this module makes no new literature assertion. It proves existence of
 the trivializations for supplied realized root data. Its companion
 theorem still assumes root-datum existence, and neither theorem
 constructs pinned isomorphisms, automorphism sections, descent data,
-adjoint quotients or the quasi-split inner form of the host task.
+adjoint quotients or the quasi-split inner form of
+`QuasiSplitInnerFormExistenceStatement`.

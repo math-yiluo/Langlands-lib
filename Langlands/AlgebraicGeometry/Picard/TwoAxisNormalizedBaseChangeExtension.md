@@ -1,6 +1,6 @@
 # Actual extensions with two trivial total-space axes
 
-Worker 513 authored this internal specialization of the ordinary two-axis
+This is an internal specialization of the ordinary two-axis
 normalization construction. It applies to an existing actual extension
 along the canonical self-product base-change map. Combining it with the
 published Noetherian valuation extension produces an extension whose two
@@ -55,4 +55,6 @@ respect the two generic trivializations used as inputs. Consequently these
 constructions do not assert extension of preselected compatible
 rigidifications or surjectivity of the compatible-rigidified class
 presheaf. They do not construct a correspondence representation or prove
-the host extension theorem over arbitrary valuation domains.
+the extension theorem over arbitrary valuation domains (in the Library,
+`ValuationRingTwoAxisExtensionStatement`, proved in
+`ValuationRingTwoAxisExtensionProof` without these constructions).

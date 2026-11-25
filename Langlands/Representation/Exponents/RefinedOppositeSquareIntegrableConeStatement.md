@@ -1,8 +1,5 @@
 # Strict blockwise cones for opposite exponents of square-integrable product Levis
 
-Author: Worker 544. Worker 510 isolated this interface and supplied its exact
-formulation for task `9c51235f-6d67-440b-b1e3-9da4fd02c67c`, revision 1.
-
 `Langlands.Exponents.RefinedOppositeSquareIntegrableConeStatement.{uF,uV}`
 is a closed Prop-valued definition. It states a derived analytic necessity and
 proves nothing. Neither this definition nor another proposition definition
@@ -154,7 +151,7 @@ These are scalar real-part coordinates. Fine sizes already enter when a
 determinant character is restricted to scalar matrices; no size factors
 occur in the stated cone. The separate identity relating `x` to negative
 size times a determinant parameter, and the numerical theorem
-`Langlands.Exponents.positiveRootParameterCone`, are outside this unit.
+`Langlands.Exponents.positiveRootParameterCone`, are outside this module.
 
 ## Original motivation and derived provenance
 
@@ -189,8 +186,8 @@ coincide; Silberger's PDF page number is the printed number plus six.
   removed. The passage concerns its own functions, exponents and chambers.
 
 No source-specific errata file for either retained original was found in
-the checked project/public-note errata locations or the source-name searches
-recorded during authoring. This is a report of those checks, not a claim
+the checked project/public-note errata locations or by source-name searches.
+This is a report of those checks, not a claim
 that the sources have no errata.
 
 This interface is a derived specialization to the Library's product Levi,
@@ -198,9 +195,12 @@ actual normalized opposite quotient, ordered scalar coordinates, and
 separate block-center removal. Neither original literally states this
 Lean proposition. No source transport is asserted as a proved theorem.
 
-## Remaining proof obligations and ownership
+## Proof obligations
 
-A future proof must obtain the lower analytic criterion from independently
+The Library proves the statement as
+`Langlands.Exponents.refinedOppositeSquareIntegrableCone` (module
+`Langlands.Representation.Exponents.RefinedOppositeSquareIntegrableConeProof`).
+A proof must obtain the lower analytic criterion from independently
 proved Library results and prove every transport it uses. In particular:
 
 1. It must compare the actual quotient topology, Borel Haar measures,
@@ -227,10 +227,10 @@ proved Library results and prove every transport it uses. In particular:
    generalized-character occurrence and the real-part identity back to
    the original carrier. The independent `uF,uV` quantifiers must remain.
 
-Worker 19's upper-`GL_n` strict-criterion proof, Worker 158's analytic
+The upper-`GL_n` strict-criterion proof, the analytic
 square-integrable tensor comparison, and the existing adjointness, pairing,
 duality, quotient, unitarization, opposite-filtration and cosocle/head work
-retain their separate ownership. The definition
+are separate results. The definition
 `Langlands.GLSquareIntegrableExponentCriterionStatement` is not a proof and
 its upper exponent cannot simply be relabeled as this opposite product-Levi
 occurrence.
@@ -240,7 +240,7 @@ The separate
 obtaining the occurrence from an upper refined quotient; its statement alone
 does not supply that occurrence. Here occurrence and a real part are
 hypotheses. No support quotient, scalar-action witness, supplied analytic
-criterion, tensor presentation or upper exponent is assumed. This unit does
+criterion, tensor presentation or upper exponent is assumed. This module does
 not construct real parts, unitarize inducing data, or prove
 `Langlands.GLDiscreteSeriesPositiveRootSupportStatement`. Downstream
 regular-head, exhaustion, classification and joint-support results

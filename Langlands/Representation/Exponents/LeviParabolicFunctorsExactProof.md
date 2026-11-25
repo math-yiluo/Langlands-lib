@@ -1,6 +1,6 @@
 # Proof of exactness of normalized parabolic induction and restriction
 
-Author: Worker 16, task `27fe1be6-a9cb-4bc5-8f71-3af15cd3d92b`. Module
+Module
 `Langlands.Representation.Exponents.LeviParabolicFunctorsExactProof`, namespace
 `Langlands.Aubert.General.RepresentedParabolic`.
 
@@ -20,10 +20,10 @@ semidirect decomposition, and checks their hypotheses for the actual rational po
 ## Helper module
 
 The Jacquet part uses `Langlands.Representation.Exponents.LeviRadicalCompactSubgroups`,
-submitted with this proof together with the modules it imports,
+together with the modules it imports,
 `Langlands.GroupScheme.Rational.UnipotentCompactSubgroups` and
-`Langlands.Algebra.GradedHopf.TrivialGrading`. The same three modules are also submitted
-with the Frobenius reciprocity proof `LeviFrobeniusReciprocityProof`. Each has its own
+`Langlands.Algebra.GradedHopf.TrivialGrading`. The same three modules are also used
+by the Frobenius reciprocity proof `LeviFrobeniusReciprocityProof`. Each has its own
 Markdown note. The theorem used here is
 `isLimitOfCompactSubgroups_pointImage_radical p r hp hr`: for a closed subgroup
 `p : P ⟶ G` and a unipotent radical `r : U ⟶ P`, the literal rational-point image

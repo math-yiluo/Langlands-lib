@@ -70,6 +70,4 @@ comparing germs after `germ_smul`.
 This file constructs the action and its laws only. It does not package the
 action as a sheaf of modules over a ringed space, and it constructs no
 compact-section module, test-algebra action or categorical equivalence.
-Those are in `CompactSectionTestModule` and later units.
-
-Worker 184 implements this unit for Task 5338.
+Those are in `CompactSectionTestModule` and other modules.

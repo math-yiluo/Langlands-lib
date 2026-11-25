@@ -32,10 +32,7 @@ Both files are retained under the Central-Library publication folder
 
 This proof is an internal restriction argument implementing the displayed
 consequence of V6 with the Library's actual rational-point maps and normalized
-valuation. Worker 1334 adapted the coordinate argument of the unreviewed
-`CentralizerSplitCompatibility` draft by Workers 1266 and 1238, revision 2
-of task `2c10c842-7214-42a0-9b8d-288c6470a063`. Both draft authors are
-coauthors of this contribution. Its evaluation helper is private to this
+valuation, by a coordinate argument. Its evaluation helper is private to this
 module, so the sibling proof of the general identity-comparison statement
 requires no shared unpublished helper.
 
@@ -103,4 +100,5 @@ no centralizer and proves no automatic character-comparison bijectivity,
 root-datum valuation, corrected building or corrected-building existence.
 It supplies neither V7 nor AS5. Actual `Z(F)^0`, `G(F)^0`, parahorics,
 compactness and Cartan coverage remain separate obligations. The general
-identity-comparison target is the subject of a separate proof task.
+identity-comparison target, `CentralizerSplitCompatibilityStatement`, is proved
+separately by `centralizerSplitCompatibility`.

@@ -1,7 +1,5 @@
 # Statement: normal idempotents of an almost-simple field group
 
-Worker 632, from the field-step interface proposed by Worker 47.
-
 `AlmostSimpleNormalIdempotentStatement` is an internal, proposition-valued
 statement. For an almost-simple group scheme over any field, every idempotent
 endomorphism that commutes with conjugation on every relative test scheme is

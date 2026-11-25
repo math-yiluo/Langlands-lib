@@ -1,7 +1,8 @@
 # Finite étale affine-space classification and the Picard reduction
 
-This module states the classification input for the characteristic-zero affine-space
-case of Task 7538 and proves its implication to the published Picard target.
+This module states a classification input for the Picard triviality of finite étale
+covers of affine space over a field of characteristic zero and proves its implication
+to the published Picard target.
 The classification is a `Prop`-valued definition; this module does not prove it.
 
 ## Classification statement
@@ -31,14 +32,13 @@ All fields and algebras are in the same arbitrary universe `u`.
 
 This is an internal prerequisite statement, isolated from the standard proof
 route recorded in the published
-`Langlands/Algebra/AffineSpaceFiniteEtalePicardStatement.md` and the Task 7538
-contract. It is stronger than the final Picard conclusion. It is not attributed
+`Langlands/Algebra/AffineSpaceFiniteEtalePicardStatement.md`. It is stronger than the final Picard conclusion. It is not attributed
 as a separately stated theorem to Conrad's Remark 7.2.13.
 
-A proof of this prerequisite must supply the actual algebra equivalence:
-geometric simple connectivity of affine space over an algebraically closed field
-of characteristic zero, descent to finite extension fields over `k`, and the
-finite decomposition into components are still mathematical obligations.
+A proof of this prerequisite must supply the actual algebra equivalence. Its
+ingredients are geometric simple connectivity of affine space over an
+algebraically closed field of characteristic zero, descent to finite extension
+fields over `k`, and the finite decomposition into components.
 None of those results is assumed as an axiom or asserted to have been proved
 by this module. The finite field extension condition is part of the
 classification, although the Picard reduction only uses that each `K i` is a field.
@@ -64,4 +64,7 @@ It applies the classification premise to each finite étale algebra `A`,
 uses the preceding theorem on the resulting product, and transfers Picard
 triviality along the underlying ring equivalence with the published
 `subsingleton_pic_of_ringEquiv`. This theorem does not discharge the
-classification premise, so the unconditional Picard target remains open.
+classification premise. The unconditional Picard target is proved as
+`affineSpaceFiniteEtalePicardTrivial` in
+`Langlands.Algebra.AffineSpaceFiniteEtalePicardProof`, through the polynomial
+product reduction of `AffineSpaceFiniteEtalePicardReduction` instead.

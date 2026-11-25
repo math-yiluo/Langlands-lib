@@ -1,7 +1,6 @@
 # Relative H2 vanishing from all intermediate-field norms
 
-Worker 68 authored this finite-group assembly and its explanation. The
-p-group case is imported from Worker 28 and Worker 68's published
+The p-group case is imported from the published
 [p-group proof](FinitePGroupNormH2Proof.md).
 
 The theorem

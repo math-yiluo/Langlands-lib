@@ -1,6 +1,6 @@
 # Actual base-change framing squares on arbitrary further refinements
 
-This internal unit constructs the actual full-order target isomorphism and
+This module constructs the actual full-order target isomorphism and
 proved framing square between any specified new and original further-refined
 charts on a new quotient test ring. The original test is restricted along the
 actual reduced Nilp scalar map. Each supplied chart has its actual unit evidence;

@@ -1,6 +1,6 @@
 # Renard II.1.1: locally profinite space and group statements
 
-This statement-only unit records the four results following Renard's definition
+This statement-only module records the four results following Renard's definition
 of a t.d. space. Every target is a transparent `Prop`-valued `def` in
 `Langlands.Topology.LocallyProfiniteStatements`. No proof of a target is supplied.
 The imported, published `Langlands.Topology.IsLocallyProfinite` means exactly a
@@ -23,13 +23,13 @@ The registered source is
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`,
 retained at
 `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`.
-Worker 6 read the entire governing page and its proof paragraphs.
+The entire governing page and its proof paragraphs were read.
 
 The supplementary registered source
 `renard-2010-corrections-complements`, SHA256
 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
 is retained at
-`/home/taskhub/pilot/literature/Renard — Représentations des groupes réductifs p-adiques- corrections et compléments (2010 edition errata).pdf`.
+`literature/Renard — Représentations des groupes réductifs p-adiques- corrections et compléments (2010 edition errata).pdf`.
 Its PDF page 2 corrects the older edition's Baire wording. The governing 2026
 page already has the corrected density assertion. This supplementary check
 does not replace the 2026 statement.
@@ -96,14 +96,15 @@ universally quantified in each target.
 
 The public project import is `Langlands.Topology.LocallyProfinite`; the
 additional Mathlib import is `Mathlib.Topology.LocallyClosed`. This pair
-introduces no new objects, replacement topology or axioms. The approved
-environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, with Mathlib commit
+introduces no new objects, replacement topology or axioms. The
+environment is Lean 4.34.0 with Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`.
 
 The source proves the subspace and refinement lemmas directly, cites Van
 Dantzig for the subgroup necessity, and cites [26], Theorem XI.10.1, for Baire.
-A proof successor must prove the unchanged published targets. The existing
+The unchanged published targets are proved in
+`Langlands.Topology.LocallyProfiniteProof` (`locallyProfiniteAssertions`). The existing
 definition module's subgroup-basis lemma retains a `NonarchimedeanGroup`
 assumption, so it does not discharge the forward Van Dantzig target here.
 No Chapter II completion, function/distribution construction or theorem proof
-is claimed by this statement unit.
+is claimed by this statement module.

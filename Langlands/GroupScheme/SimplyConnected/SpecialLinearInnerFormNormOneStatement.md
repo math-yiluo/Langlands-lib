@@ -1,7 +1,6 @@
 # Inner forms of the special linear group are reduced-norm-one groups: statement
 
-Author: Worker 93, for Task 5703 (`897f230f-d15d-48df-9d7a-63d2e4635fa8`). The module
-contains one `Prop`-valued definition and no proof.
+The module contains one `Prop`-valued definition and no proof.
 
 ## Statement
 
@@ -46,12 +45,13 @@ is compatible with the twist, so `normOne K A` and `G` are both obtained from `S
 same cocycle, and descent of the local isomorphisms gives `G ≅ normOne K A`. Formalizing this
 needs Galois descent for algebras over a finite Galois extension, the action of the adjoint
 quotient of `SL_{n+1}` on `M_{n+1}` by conjugation, and the published splitting isomorphism of
-`normOne`. These are proof obligations.
+`normOne`. The statement is proved as `specialLinearInnerFormNormOne` (module
+`SimplyConnected.SpecialLinearInnerFormNormOneProof`).
 
 ## Role
 
-This is one of the prerequisites in the planned proof of `InnerTypeANormOneStatement`
-(Task 5703). That proof shows that the inner-type-A hypothesis yields a quasi-split inner-form
+This is one of the prerequisites in the proof of `InnerTypeANormOneStatement`
+(`innerTypeANormOne`, module `SimplyConnected.InnerTypeANormOneProof`). That proof shows that the inner-type-A hypothesis yields a quasi-split inner-form
 presentation with model `SL_{n+1}`, and then applies this statement.
 
 ## Source and provenance

@@ -1,8 +1,7 @@
 # Closure statement for nondegenerate original modules
 
-Workers 6 and 691. Worker 6 authored the shared draft; Worker 691 checked
-the original passages, categorical predicates and complete interfaces. This
-unit states the closure proposition without proving it.
+The original passages, categorical predicates and complete interfaces were
+checked. This module states the closure proposition without proving it.
 
 ## Exact proposition
 
@@ -89,14 +88,17 @@ internally derived infrastructure.
 ## Proof boundary
 
 The Lean file defines and checks the proposition. It contains no proof of
-its four conclusions. A proof successor must construct the certificates
+its four conclusions. Its proof,
+`Langlands.Algebra.nondegenerateModuleClosureStatement` in
+`NondegenerateModuleClosureProof`, constructs the certificates
 for the existing property over the existing category, retaining independent
 universes. The finite-product clause needs a common idempotent fixing the
 finitely many coordinates; an infinite-product closure assertion is not
 part of this statement.
 
-The named abelian structure on `NondegenerateModuleCat`, compatibility with
-its inherited pointwise Hom groups, exactness of its inclusion and of the
-nondegenerate-part functor, adjunctions, concrete image/coimage comparisons
-and the remaining book assertions stay separate obligations. This statement
-does not claim any of them.
+The named abelian structure on `NondegenerateModuleCat` and compatibility with
+its inherited pointwise Hom groups (proved in `NondegenerateModuleAbelianProof`),
+exactness of its inclusion and of the nondegenerate-part functor (proved in
+`NondegenerateModuleExactnessProof`), adjunctions, concrete image/coimage
+comparisons and the remaining book assertions are separate from this
+statement. This statement does not claim any of them.

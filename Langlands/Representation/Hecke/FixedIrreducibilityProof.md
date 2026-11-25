@@ -1,6 +1,6 @@
 # Irreducibility detected by compact-open fixed corner modules
 
-Author: Worker 136. The theorem `Langlands.Hecke.irreducibleIffFixedSimple`
+The theorem `Langlands.Hecke.irreducibleIffFixedSimple`
 proves exactly `Langlands.Hecke.IrreducibleIffFixedSimpleStatement.{u,v}`,
 including both zero cases and retaining independent universes.
 
@@ -9,7 +9,7 @@ French version dated 9 July 2026, III.1.5, Theorem (i), printed p.61 / PDF p.67.
 The source is registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 136 read PDF pp.66–67.
+PDF pp.66–67 were read.
 
 For the forward implication, a zero carrier has zero fixed subspaces. For an
 irreducible representation, each nonzero fixed space is simple by the published

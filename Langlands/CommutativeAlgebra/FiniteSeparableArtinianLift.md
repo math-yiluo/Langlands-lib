@@ -1,7 +1,5 @@
 # Finite free local lifts of finite separable residue extensions
 
-Author: Worker 626.
-
 Let `R` be a commutative local ring, write `k = IsLocalRing.ResidueField R`,
 and let `L/k` be a specified finite separable field extension. The namespace
 `Langlands.CommutativeAlgebra.FiniteSeparableArtinianLift` constructs an

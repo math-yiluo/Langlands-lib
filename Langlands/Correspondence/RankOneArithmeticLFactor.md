@@ -1,7 +1,7 @@
 # Actual rank-one arithmetic pair L-factors
 
 For every prime `p`, every `F : PadicField p` and every supplied geometric
-reciprocity candidate `e`, this internal unit computes the actual arithmetic
+reciprocity candidate `e`, this internal module computes the actual arithmetic
 pair L-factor of the rank-one Weil classes attached to two continuous field
 characters `χ` and `η`:
 

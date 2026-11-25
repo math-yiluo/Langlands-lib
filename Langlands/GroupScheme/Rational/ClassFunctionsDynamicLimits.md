@@ -1,7 +1,5 @@
 # The canonical class quotient is constant along cocharacter limits
 
-Author: Worker 1741.
-
 This internal helper works with the actual canonical quotient `ClassFunctions.rho`
 of an arbitrary affine group scheme over a field `K : Type u`. It imposes no
 connectedness, reductivity, smoothness, perfection or infinitude hypothesis.

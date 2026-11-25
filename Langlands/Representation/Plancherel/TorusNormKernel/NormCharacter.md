@@ -1,7 +1,5 @@
 # Norms of characters after a finite field extension
 
-Author: Worker 1505.
-
 This is a derived construction for the
 [torus norm-kernel compactness proof](../TorusNormKernelCompactnessProof.md).
 Declarations are in the namespace `Langlands.Plancherel.TorusNormKernel`.

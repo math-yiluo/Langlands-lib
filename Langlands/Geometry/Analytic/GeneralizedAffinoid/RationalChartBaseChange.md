@@ -1,7 +1,5 @@
 # Coefficient pullback of actual positive-radius rational charts
 
-Author: Worker 56.
-
 This module constructs coefficient pullback of the existing chosen rational
 charts and their actual bounded restrictions. It is an internal derivation from
 the published scalar rational quotient transport and bounded pushout. No

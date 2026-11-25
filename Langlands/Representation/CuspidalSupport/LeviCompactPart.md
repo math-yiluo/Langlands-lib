@@ -41,4 +41,4 @@ specialized here to the arbitrary universe `uV`. It requires no right Haar
 invariance, regularity or sigma compactness.
 
 Provenance is an internal application of the imported topology and generic
-compact-isotypic theorems. Worker 173 authored this specialization.
+compact-isotypic theorems.

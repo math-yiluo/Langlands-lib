@@ -1,6 +1,6 @@
 # Second adjointness from explicit structure statements
 
-Author: Worker 1402. Lean module
+Lean module
 `Langlands.Representation.Exponents.LeviSecondAdjointnessStructure`. The first lemma is in
 namespace `Langlands.Aubert.General`, the others in
 `Langlands.Aubert.General.RepresentedParabolic`.
@@ -32,8 +32,12 @@ Notation on rational points:
 
 ## Open inputs
 
-The last four theorems assume some of the following Library statements. When this was last
-checked (Library commit 6f75b7b3), only the second one was proved in the Library:
+The last four theorems assume some of the following Library statements. The Library proves
+all of them except `UniformCompressionStabilizationStatement` (`parabolicDynamic`,
+`oppositeDynamicParabolicUniqueness`, `leviAdjointDeterminantReciprocity`,
+`relativeRootReflectionExistence`, `centralSplitTorusCharacter`,
+`rationalReductiveUnimodularity`, `standardCocharacter`,
+`arbitraryParabolicQuotientCompact`), but the theorems here take them as hypotheses:
 
 - `ParabolicDynamicStatement` (`GroupScheme/Absolute/BorelStatement.lean`);
 - `OppositeDynamicParabolicUniquenessStatement`
@@ -144,7 +148,7 @@ point image identities come from `pointImage_radical_eq_dynamic`,
 `ArbitraryParabolicQuotientCompactStatement`. Unimodularity of `G(k)` is
 `rationalPoints_modularCharacter_eq_one`, and the modular character of `P(k)` is
 `modularCharacter_pointImage_of_unimodularity` (both in
-`Exponents/LeviParabolicModulus.lean`, by Worker 937). Then apply
+`Exponents/LeviParabolicModulus.lean`). Then apply
 `nonempty_leviSecondAdjunction_of_dynamic`.
 
 ### `leviSecondAdjointness_of_structure`

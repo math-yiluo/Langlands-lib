@@ -37,4 +37,3 @@ These results do not prove the full chamber product decomposition or the
 exact chamber-simple parahoric factorization.
 `ChamberSimpleFiltrationStatement` is the Prop-valued bundle of the three
 comparisons, with AS 4 explicit, and `chamberSimpleFiltration` proves it.
-Author: Worker 1647.

@@ -59,7 +59,7 @@ root-movement theorem. It proves that the constructed normalizer does not fix
 `a`. The proof uses an actual nonzero Lie vector and requires no nonidentity
 ground-field point in a root subgroup.
 
-This unit is an internal deduction from the named Library APIs and the included
+This module is an internal deduction from the named Library APIs and the included
 contracting-action and cyclic-minimality helpers. The torus-unipotence,
 maximal-split-torus-conjugacy and minimal-pseudo-parabolic-conjugacy propositions
 are explicit inputs, not proved here. It does not establish full root-kernel

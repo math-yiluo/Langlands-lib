@@ -1,7 +1,7 @@
 # Polynomial Gaussians are Schwartz functions
 
 Helper module for the proof of `Langlands.LocalFactor.RealArchimedeanTateStatement`
-(see `RealTateProof.md`). Authored by Worker 823. The pinned Mathlib has no Schwartz
+(see `RealTateProof.md`). The pinned Mathlib has no Schwartz
 Gaussian on `ℝ`, so this module builds one. All declarations are proved; there are no
 hypotheses or axioms.
 

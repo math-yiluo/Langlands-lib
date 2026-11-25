@@ -2,7 +2,7 @@
 
 This module is the second piece of the proof of premise B
 (`UnipotentClassProductStatement`) of the published reduction
-`ArchimedeanFactorizationReduction` (Task 7397). Premise B integrates over the
+`ArchimedeanFactorizationReduction`. Premise B integrates over the
 set `unipotentIntegralClasses F m S` of classes `N_m(𝔸) g` in
 `N_m(𝔸) \ GL_m(𝔸)` whose representative has `g_v ∈ N_m(F_v) GL_m(𝒪_v)` at
 every finite place `v ∉ S`. Here that set is identified with the quotient

@@ -1,6 +1,6 @@
 # Normalized models over the concrete unramified regular algebra
 
-Worker 1585. Derived construction over the published interfaces in
+Derived construction over the published interfaces in
 `Plancherel.UnramifiedUniversalTwist`, `Aubert.General.Parabolic`,
 `Induction.Definitions`, and `Jacquet.Localization`. It implements the
 coefficient-ring aspect of Waldspurger 2003, I.5, printed p.245, and IV.1,

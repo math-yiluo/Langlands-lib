@@ -60,6 +60,6 @@ The provenance is internal: the proof composes the Library's analytic
 pointwise definitions and actual affinoid tensor comparison with the tensor
 localization lemmas and Mathlib's localization and finite type interfaces.
 No external-source correspondence is claimed. Bijectivity is an explicit
-premise here; this unit does not prove the general finite tensor comparison,
+premise here; this module does not prove the general finite tensor comparison,
 construct a small analytic base-change witness, or prove unrestricted
 analytic étale pointwise lifting.

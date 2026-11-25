@@ -1,7 +1,5 @@
 # The generic linear form and the field-theoretic Bertini lemma
 
-Author: Worker 205.
-
 This internal helper module is the first step of the proof of
 `Langlands.AlgebraicGeometry.LangWeil.BertiniGenericHyperplaneStatement`. It works with a
 field `K` over a field `k`, a family `g : Fin N → K`, the polynomial ring `K[x_0, …, x_{N-1}]`,

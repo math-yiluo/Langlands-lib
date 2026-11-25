@@ -1,7 +1,5 @@
 # Conditional field-extension assembly using proved preservation and splitting
 
-Author: Worker 416.
-
 This internal assembly supplies four published theorems to the existing
 cover-existence and simple-connectedness reductions:
 

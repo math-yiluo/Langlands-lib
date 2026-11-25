@@ -6,9 +6,9 @@ import Langlands.LocalFactor.BrauerKernel.RealizationPlace
 import Langlands.LocalFactor.NonabelianBrauerKernelStatement
 import Langlands.Global.Arithmetic.FieldRealizationProof
 import Langlands.ClassFieldTheory.Local.ClassFormationAbsoluteCorestrictionProof
-import Langlands.ClassField.Global.FundamentalClassProof
-import Langlands.ClassField.Global.RelativeWeilCharacterFactorization
-import Langlands.ClassField.Global.LocalRelativeWeilMapExistenceProof
+import Langlands.ClassFieldTheory.Global.FundamentalClassProof
+import Langlands.ClassFieldTheory.Global.RelativeWeilCharacterFactorization
+import Langlands.ClassFieldTheory.Global.LocalRelativeWeilMapExistenceProof
 import Langlands.ClassFieldTheory.Local.CommonClosureExistenceProof
 import Langlands.Correspondence.RankOneEpsilonFieldTransport
 import Langlands.ClassFieldTheory.Local.WeilTransferReciprocityProof
@@ -25,7 +25,7 @@ namespace Langlands.LocalFactor.NonabelianBrauer
 
 open NumberField IsDedekindDomain IsDedekindDomain.HeightOneSpectrum
 open Langlands.Global Langlands.Global.CompletionPadic Langlands.Global.AdelicFunctoriality
-open ClassField.Global ClassField.Global.RelativeWeilGroup CommonClosure Correspondence
+open ClassFieldTheory.Global ClassFieldTheory.Global.RelativeWeilGroup CommonClosure Correspondence
 open scoped NumberField
 
 attribute [local instance] relativeGaloisTopology

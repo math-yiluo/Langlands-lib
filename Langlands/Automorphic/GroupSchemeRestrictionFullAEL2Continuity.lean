@@ -98,6 +98,8 @@ variable (ν : Measure (AdelicGroupPoints F G))
 /-- Cuspidal orbits are strongly measurable for every supplied group measure. -/
 theorem quotientFullAEL2CuspidalOrbit_aestronglyMeasurable (φ : Sq) :
     AEStronglyMeasurable (fun a => πc a φ) ν :=
+  haveI : SecondCountableTopologyEither (AdelicGroupPoints F G) Sq :=
+    secondCountableTopologyEither_of_left _ _
   (quotientFullAEL2CuspidalOrbitMap F G hPD hG h hi hc hT hInv' φ).continuous.stronglyMeasurable
     |>.aestronglyMeasurable
 

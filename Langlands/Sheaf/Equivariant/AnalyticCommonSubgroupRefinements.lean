@@ -22,7 +22,7 @@ theorem exists_openSubgroup_intertwines_of_isLocallyEquivariant
     (hf : IsLocallyEquivariant a b f) :
     ∃ (N : OpenSubgroup G) (hNH : N ≤ H) (hNH' : N ≤ H'),
       ∀ (g : G) (hg : g ∈ N),
-        (b ⟨g, hNH' hg⟩).unop ≫ f = f ≫ (a ⟨g, hNH hg⟩).unop := by
+        (b ⟨g, hNH' hg⟩).unop.asHom ≫ f = f ≫ (a ⟨g, hNH hg⟩).unop.asHom := by
   obtain ⟨M, hMH, hM⟩ := hf H' le_rfl
   refine ⟨M ⊓ H', inf_le_left.trans hMH, inf_le_right, fun g hg => ?_⟩
   obtain ⟨k, -, hk⟩ := hM ⟨g, hMH hg.1⟩ hg.1
@@ -62,18 +62,18 @@ theorem exists_openSubgroup_intertwines_untwist
       (hNm : (N : Subgroup G) ≤ (m.translate (Hom.twist f)).subgroup),
       ∀ (g : G) (hg : g ∈ N),
         (liftAction (U := (ι P ρ).obj ((translate P ρ (Hom.twist f)).obj V))
-          (m.translate (Hom.twist f)) ⟨g, hNm hg⟩).unop ≫
+          (m.translate (Hom.twist f)) ⟨g, hNm hg⟩).unop.asHom ≫
             (ι P ρ).map (untwist (Hom.twist f) f rfl) =
-        (ι P ρ).map (untwist (Hom.twist f) f rfl) ≫ (a ⟨g, hNQ hg⟩).unop := by
+        (ι P ρ).map (untwist (Hom.twist f) f rfl) ≫ (a ⟨g, hNQ hg⟩).unop.asHom := by
   obtain ⟨M, hMQ, hM⟩ := hf T le_rfl
   have hk (g : G) (hg : g ∈ M) :
       ∃ k : (T : Subgroup G), (k : G) = (Hom.twist f)⁻¹ * g * Hom.twist f ∧
-        (liftAction m (Subgroup.inclusion hT k)).unop ≫ f =
-          f ≫ (a ⟨g, hMQ hg⟩).unop := by
+        (liftAction m (Subgroup.inclusion hT k)).unop.asHom ≫ f =
+          f ≫ (a ⟨g, hMQ hg⟩).unop.asHom := by
     obtain ⟨k, -, he⟩ := hM ⟨g, hMQ hg⟩ hg
     refine ⟨k, ?_, he⟩
     have et := congrArg Hom.twist he
-    change Hom.twist f * (k : G)⁻¹ = Hom.twist (a ⟨g, hMQ hg⟩).unop * Hom.twist f at et
+    change Hom.twist f * (k : G)⁻¹ = Hom.twist (a ⟨g, hMQ hg⟩).unop.asHom * Hom.twist f at et
     rw [ha] at et
     have ei : (k : G)⁻¹ = (Hom.twist f)⁻¹ * g⁻¹ * Hom.twist f := by
       calc
@@ -91,7 +91,7 @@ theorem exists_openSubgroup_intertwines_untwist
   refine ⟨M, hMQ, hMm, fun g hg => ?_⟩
   obtain ⟨k, he, heq⟩ := hk g hg
   apply hom_ext
-  · change 1 * g⁻¹ = Hom.twist (a ⟨g, hMQ hg⟩).unop * 1
+  · change 1 * g⁻¹ = Hom.twist (a ⟨g, hMQ hg⟩).unop.asHom * 1
     rw [ha]
     simp only [one_mul, mul_one]
   · have e := congrArg Hom.left heq
@@ -103,8 +103,8 @@ theorem exists_openSubgroup_intertwines_untwist
       change (Hom.twist f)⁻¹ * g⁻¹ * Hom.twist f = (k : G)⁻¹
       rw [he]
       group
-    change (m.action (m.translateHom (Hom.twist f) ⟨g⁻¹, inv_mem (hMm hg)⟩)).hom ≫
-        Hom.left f = Hom.left f ≫ Hom.left (a ⟨g, hMQ hg⟩).unop
+    change (m.action (m.translateHom (Hom.twist f) ⟨g⁻¹, inv_mem (hMm hg)⟩)).asIso.hom ≫
+        Hom.left f = Hom.left f ≫ Hom.left (a ⟨g, hMQ hg⟩).unop.asHom
     rw [eh]
     exact e
 
@@ -125,9 +125,9 @@ structure CommonSubgroupRefinement
   mem : ∀ i, S (arrow i)
   covering : Sieve.ofArrows obj arrow ∈ J U
   equivariant : ∀ i (g : G) (hg : g ∈ subgroup),
-    (liftAction (U := (ι P ρ).obj (obj i)) (lift i) ⟨g, le_lift i hg⟩).unop ≫
+    (liftAction (U := (ι P ρ).obj (obj i)) (lift i) ⟨g, le_lift i hg⟩).unop.asHom ≫
         (ι P ρ).map (arrow i) =
-      (ι P ρ).map (arrow i) ≫ (a ⟨g, le_target hg⟩).unop
+      (ι P ρ).map (arrow i) ≫ (a ⟨g, le_target hg⟩).unop.asHom
 
 /-- Finite local equivariant refinements yield plain refinement data on one
 common open subgroup, by translating sources and intersecting finitely many

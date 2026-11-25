@@ -1,17 +1,15 @@
 # Group schemes: published transport, dynamics and fpqc reflection
 
-This focused progress ledger records eight transport construction units and three
-exact-statement proofs for the algebraic and reductive group-scheme program
-`2b5e4a00-9d44-49a4-9c89-979fb5b6233e`, revision 2. Worker 1107 verified their
-independent acceptance, publication and entry-file hashes on 3 November 2026.
-The eight construction units contribute to several thematic families; they do
-not constitute eight completed families. The standing program remains incomplete.
-The [initial reuse ledger](../reuse/algebraic-groups-reuse-ledger.md) preserves
-the earlier outside-source audit and port experiments.
+This focused progress ledger records eight transport construction modules and three
+exact-statement proofs for the algebraic and reductive group-scheme program, with the hashes of
+their entry files, checked on 3 November 2026.
+The eight construction modules contribute to several thematic families; they do
+not constitute eight completed families. The program is not complete.
+The note [Algebraic and reductive group schemes: what Mathlib provides](../reuse/algebraic-groups-reuse-ledger.md)
+lists what Mathlib supplies for these constructions.
 
 All Lean names below are in `Langlands.GroupScheme` unless qualified otherwise.
-Use the current Library modules by name. Artifact and receipt identifiers below
-record publication evidence; they are not mathematical inputs to Lean imports.
+Use the Library modules by name.
 Each module link leads to its implemented declarations, and its paired Markdown
 explains provenance, conventions, hypotheses and the proof route.
 
@@ -40,7 +38,7 @@ scheme-theoretic structure.
 
 ## Eight published transport constructions
 
-| Unit and implementation | Exported comparison | Exact scope and retained inputs |
+| Module and implementation | Exported comparison | Exact scope and retained inputs |
 | --- | --- | --- |
 | [Restricted standard conjugation](../../Langlands/GroupScheme/Rational/StandardRestrictedConjugation.lean) ([Markdown](../../Langlands/GroupScheme/Rational/StandardRestrictedConjugation.md)) | `restrictedStandardSubgroups_eq_comap_of_character_images`, `restrictedStandardParabolicConjEquiv`, `restrictedStandardUnipotentConjEquiv` | Any field; affine ambient group; monomorphic underlying map `i`; finite `simpleRelativeRoots i ν`; `I₀ ⊆ J₀`, `I₁ ⊆ J₁`; standard cocharacters for both `J` sets; one normalizer point with both specified character-image equations. Gives all-test comparisons of `L_J ∩ P_I` and `L_J ∩ U_I`, including both ambient conjugation formulas. |
 | [Associated standard conjugation](../../Langlands/GroupScheme/Rational/StandardAssociatedConjugation.lean) ([Markdown](../../Langlands/GroupScheme/Rational/StandardAssociatedConjugation.md)) | `associatedStandardSubgroups_eq_comap`, `associatedStandardParabolicConjEquiv`, `associatedStandardUnipotentConjEquiv` | Any field; affine ambient group; monomorphic underlying map `i`; finite enumerations of `SimpleRoot i ν` and `relativeWeylGroup i`; supplied Coxeter system and `IsRelativeWeylCoxeterRealization`; a normalizer point representing `longestRep cs J`. Specializes the preceding comparisons to every subset of `associatedSubset cs J`, including empty subsets. The realization remains an input. |
@@ -53,14 +51,12 @@ scheme-theoretic structure.
 
 For the orbit and Weyl results, quotients of groups of points have exactly the
 meanings stated above. No comparison with points of a sheaf quotient is supplied.
-The standard-family units retain finite-root and standard-cocharacter or Coxeter
-realization inputs. The cross-torus units retain the isomorphisms and their square.
+The standard-family modules retain finite-root and standard-cocharacter or Coxeter
+realization inputs. The cross-torus modules retain the isomorphisms and their square.
 None of these inputs is an unconditional reductive structure theorem.
 
-Worker 1107 authored the eight units. Workers 76 and 165 contributed the
-restricted/associated standard-family interfaces, and Worker 118 contributed
-the transporter and cross-torus consumer interfaces; the immutable submissions
-retain their coauthorship. These units provide algebraic comparisons for later
+The eight modules include the restricted and associated standard-family interfaces and the
+transporter and cross-torus consumer interfaces. These modules provide algebraic comparisons for later
 consumers; building, topology and valuation assertions are outside their scope.
 
 ## Published dynamic smoothness and connectedness proofs
@@ -112,36 +108,33 @@ No smoothness of a centre or kernel and no representable-centre hypothesis is
 added. This descent result does not construct a derived group, adjoint quotient
 or simply connected cover.
 
-## Independent acceptance and publication evidence
+## Checks and first appearance in the Library
 
-Every row below was fetched as accepted and public. The eight construction rows
-carry `lean.definition@1` receipts with Lake-build and declaration-kind checks;
-they include their intrinsic lemmas. The three proof rows carry `lean.proof@1`
-receipts with Lake-build, exact-target, unchanged-statement and frozen-input
-checks. Each also has independent semantic acceptance by the named reviewer.
-All eleven entry Lean/Markdown pairs matched their frozen hashes and Library
-commit `83afd4553e9b793a825b53a9504028c880852999` when checked. Publication
-commits below identify the respective integration, rather than a new proof claim
-made by this note.
+Every row below is in the Library. The eight construction rows were checked for Lake build and
+declaration kind; they include their intrinsic lemmas. The three proof rows were checked for
+Lake build, exact target, unchanged statement and unchanged inputs.
+All eleven entry Lean and Markdown files matched Library
+commit `83afd4553e9b793a825b53a9504028c880852999` when checked. The commits
+below are those at which each module first appeared in the Library.
 
-| Module | Candidate | Accepted machine receipt | Independent reviewer | Publication commit |
-| --- | --- | --- | --- | --- |
-| `StandardRestrictedConjugation` | `6ce4961e-9d15-4cff-a3f8-4ab583c8f9d2` | `276cbe5a-9941-40c9-adb8-cbdbad40db2f` | Reviewer 10940 | `25b91125ea94e88d741b206d633e82eb0d87c3e5` |
-| `StandardAssociatedConjugation` | `15727b4d-a1a1-439d-b163-d464a4cf1877` | `0648a199-1562-4401-a0a4-8f152a4f554e` | Reviewer 11016 | `25b91125ea94e88d741b206d633e82eb0d87c3e5` |
-| `TorusTransporterOrbit` | `8a4f0462-9c26-43d1-a71a-bec849f74e9f` | `ac91dde0-746a-4976-a2c9-b357a727d40f` | Reviewer 11071 | `25b91125ea94e88d741b206d633e82eb0d87c3e5` |
-| `CrossTorusRootTransport` | `df1718d4-80dc-46f5-af44-ee8473a5cf3c` | `c856e705-37ad-4e17-863f-4424595174fe` | Reviewer 11109 | `25b91125ea94e88d741b206d633e82eb0d87c3e5` |
-| `CrossTorusLieTransport` | `39545723-a4eb-447d-9a7c-831da24fa822` | `b9cc27e3-ba2f-40c6-be9c-f2dab8fc4c02` | Reviewer 11165 | `25b91125ea94e88d741b206d633e82eb0d87c3e5` |
-| `CrossTorusKernelCentralizer` | `c1b65ef8-4593-41e0-8608-ed40177c12b2` | `f83fa381-e8da-4f95-9906-ff068ab5e418` | Reviewer 11190 | `25b91125ea94e88d741b206d633e82eb0d87c3e5` |
-| `RepresentedCrossTorusTransport` | `e5ea7da2-c72e-4cb5-967f-a5798f6c6b3a` | `821e1765-9ec9-4edf-8d1e-5dab678824b4` | Reviewer 11221 | `25b91125ea94e88d741b206d633e82eb0d87c3e5` |
-| `CrossTorusWeylTransport` | `e344068c-f210-43b2-b74e-49bf9ccb5c67` | `f1965208-ca75-4cc6-8481-f439212d1861` | Reviewer 11262 | `25b91125ea94e88d741b206d633e82eb0d87c3e5` |
-| `SmoothProof` | `e9a3c1f3-ca63-4651-b2ee-9a98900e265e` | `23858ee8-98d3-45b4-9093-0cb6c00c6708` | Reviewer 9948 | `405ff58c5df69766419c9941161444531c1979ae` |
-| `ConnectedProof` | `54f1fc10-177b-4be0-a8b6-a1975ccaf646` | `b3c13199-4aab-4672-8236-1dc42b54726d` | Reviewer 10887 | `f799bd3b181a5ac1fb60bf3bb48f384b5be31d01` |
-| `FpqcReflection` | `b4561344-76b4-4641-9e55-3e442184adbc` | `6c3822e0-d073-4ffc-b10f-6e07da5d4548` | Reviewer 11026 | `25b91125ea94e88d741b206d633e82eb0d87c3e5` |
+| Module | First appeared at Library commit |
+| --- | --- |
+| `StandardRestrictedConjugation` | `25b91125ea94e88d741b206d633e82eb0d87c3e5` |
+| `StandardAssociatedConjugation` | `25b91125ea94e88d741b206d633e82eb0d87c3e5` |
+| `TorusTransporterOrbit` | `25b91125ea94e88d741b206d633e82eb0d87c3e5` |
+| `CrossTorusRootTransport` | `25b91125ea94e88d741b206d633e82eb0d87c3e5` |
+| `CrossTorusLieTransport` | `25b91125ea94e88d741b206d633e82eb0d87c3e5` |
+| `CrossTorusKernelCentralizer` | `25b91125ea94e88d741b206d633e82eb0d87c3e5` |
+| `RepresentedCrossTorusTransport` | `25b91125ea94e88d741b206d633e82eb0d87c3e5` |
+| `CrossTorusWeylTransport` | `25b91125ea94e88d741b206d633e82eb0d87c3e5` |
+| `SmoothProof` | `405ff58c5df69766419c9941161444531c1979ae` |
+| `ConnectedProof` | `f799bd3b181a5ac1fb60bf3bb48f384b5be31d01` |
+| `FpqcReflection` | `25b91125ea94e88d741b206d633e82eb0d87c3e5` |
 
 ## Contribution to the eight thematic families
 
 This table locates only the results verified in this note. The remaining column
-names obligations of the standing contract that these units do not discharge;
+names obligations of the standing contract that these modules do not discharge;
 it is not an exhaustive assertion about every other published module.
 
 | Contract family | Contribution recorded here | Obligations outside this note's evidence |
@@ -152,10 +145,10 @@ it is not an exhaustive assertion about every other published module.
 | 4. Absolute structure over fields | Transport of actual root functors and Lie weights, with scheme isomorphisms when representatives are supplied. | Existence of maximal tori/Borels, root datum and root subgroup realizations, structural conjugacy and Bruhat results. |
 | 5. Rational structure | Standard-family conjugation with its explicit finite-root/realization inputs; transport of relative roots, positivity and `N(k)/Z(k)`. | Unconditional realization, maximal split torus existence/conjugacy, rational structural decompositions and the noncommutative non-split example. |
 | 6. Galois and central structure | Full character-kernel transport and arbitrary-base fpqc reflection of central isogenies. | Finite-Galois effectivity, star-action comparisons, derived/adjoint and cover constructions and their root-data bridges. |
-| 7. Split realization and classification | No realization or classification result is established by these units. | Actual split realization, pinning, classification and morphism/isogeny comparisons. |
+| 7. Split realization and classification | No realization or classification result is established by these modules. | Actual split realization, pinning, classification and morphism/isogeny comparisons. |
 | 8. Relative structure over general bases | Arbitrary-base transport, supplied-representative comparisons and fpqc reflection. | Unrestricted-base dynamic smoothness, relative existence/descent and locality-qualified structural comparisons. |
 
 The GL and Deligne first milestone, the subsequent unitary example, and the full
 source-to-declaration ledger require their own verified evidence. The present
-note adds focused publication records and usable algebraic interfaces without
-changing those obligations or existing task ownership.
+note records usable algebraic interfaces without
+changing those obligations.

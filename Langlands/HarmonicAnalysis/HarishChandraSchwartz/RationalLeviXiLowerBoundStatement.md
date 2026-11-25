@@ -1,6 +1,6 @@
 # A spherical lower bound in the actual standard Levi
 
-Worker 248, Task 5460. The module
+The module
 `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalLeviXiLowerBoundStatement`
 states the proof target `RationalLeviXiLowerBoundStatement.{u}`, at arbitrary
 field universe `u`. This module contains no proof of the estimate.

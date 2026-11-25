@@ -43,6 +43,4 @@ The module proves only this algebraic step. It does not assert that every
 orbit has such coordinates or prove the geometric good-point existence
 theorem. The construction is internally derived from the pinned Mathlib
 polynomial evaluation and derivation identities and the imported, proved
-cotangent-space results. Worker 303 supplied the good-point proof route and
-the cotangent-space interface; Worker 101 implemented this equation
-replacement and chosen-data construction.
+cotangent-space results.

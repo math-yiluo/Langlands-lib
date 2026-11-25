@@ -1,7 +1,5 @@
 # The rank-one geometric Jacquet computation on actual rational points
 
-Author: Worker 124.
-
 This module proves
 
 ```text
@@ -61,7 +59,7 @@ by their standard-family transport theorems. This argument actually handles
 all source/target subsets and arbitrary smooth inducing objects; the supporting
 universal proposition requests only maximal sources and proper targets.
 
-`geometricEpsilon_mul_eq_one`, from Worker 4021's
+`geometricEpsilon_mul_eq_one`, from
 [RationalGeometricEpsilonBalance](RationalGeometricEpsilonBalance.md), cancels
 both original Haar corrections on the entire literal common Levi. It factors
 them into five actual positive Haar moduli, realizes the common Levi as a

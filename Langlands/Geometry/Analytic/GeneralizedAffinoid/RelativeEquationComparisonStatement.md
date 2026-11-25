@@ -1,8 +1,5 @@
 # Relative weighted series with additional equations: comparison target
 
-Author: Worker 56.
-Documentation correction (P3-062): Worker 1057.
-
 Let `K` be a complete normed field with an ultrametric norm, let
 `A : PresentedAffinoidAlgebra K`, let `m : ℕ`, and let
 `s : PositivePolyradius (Fin m)`. Let `L` be any set of scalar weighted

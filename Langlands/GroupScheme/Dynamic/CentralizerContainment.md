@@ -1,6 +1,6 @@
 # Tangent containment for cocharacter centralizers
 
-Worker 146. This is an internal derived helper for the absolute Borel-overgroup cocharacter proof. It introduces no external mathematical premise.
+This is an internal derived helper for the absolute Borel-overgroup cocharacter proof. It introduces no external mathematical premise.
 
 `Dynamic.centralizer_le_range_of_tangentSubmodule_le` works over an arbitrary field. Let `G` be smooth, connected and affine, let `i : P ⟶ G` be a closed subgroup with `P` smooth and connected, and let `χ` be a cocharacter of `P`. If the actual tangent submodule of the ambient cocharacter centralizer `Z_G(χ ≫ i)` lies in the actual tangent submodule of `range i`, then `Z_G(χ ≫ i) ≤ range i` as subgroup functors on every test scheme.
 

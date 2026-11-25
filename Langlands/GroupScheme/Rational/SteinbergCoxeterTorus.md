@@ -1,6 +1,6 @@
 # Faithful flatness of the actual Coxeter torus commutator
 
-Worker 1317. This is internal support for the split Steinberg quotient proof,
+This is internal support for the split Steinberg quotient proof,
 derived from the actual normalizer action, the abstract Coxeter fixed-space
 result, semisimple finite root index, and the published character criterion for
 faithful flatness of split-torus maps. It has no external source claim.
@@ -34,7 +34,7 @@ of two characters. The actual split-torus character criterion then proves
 `coxeterTorusEnd_flat_and_surjective`: the underlying scheme morphism is flat
 and surjective over any field, including finite and imperfect fields. The
 hypothesis is only semisimplicity, so the result applies in particular to the
-simply connected groups in the host task.
+simply connected groups of the split Steinberg quotient proof.
 
 The conclusion is geometric faithful flatness. It does not assert surjectivity
 on rational points, construct a cyclic gauge or field extension, construct

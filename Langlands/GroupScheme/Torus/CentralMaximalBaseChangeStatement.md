@@ -1,7 +1,5 @@
 # Central maximal tori under field extension: statement
 
-Worker 1379.
-
 `CentralMaximalTorusBaseChangeStatement.{u}` concerns a field extension
 `K/k` with both fields in `Type u` and `Algebra k K`, a smooth affine
 group scheme `H` over `Spec k`, a commutative group scheme `Z`, and a

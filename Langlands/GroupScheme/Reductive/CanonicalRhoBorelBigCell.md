@@ -1,6 +1,6 @@
 # The canonical rho Borel pair and big-cell geometric data
 
-This internal construction by Worker 1369 discharges the Borel-pair and Bruhat
+This internal construction discharges the Borel-pair and Bruhat
 covering inputs of the canonical rho big-cell construction using the published
 `regularCocharacterBorel` and `absoluteBruhatCovering` proofs. The resulting
 six-law geometric data still take a supplied split pinning, full integral
@@ -66,9 +66,10 @@ No cyclic subspace replaces the entire space.
 The provenance is an internal derivation from the imported Library
 proofs and constructions; no external source is cited. Structural existence,
 full integral coroot span for simply connected groups, highest-weight
-existence, and the whole-space seventh law remain obligations for the
-exact host target. The general Borel-pair and covering lemmas do not
+existence, and the whole-space seventh law are further inputs, on this route,
+to the exact `SteinbergBigCellStatement`, which the Library proves by
+`steinbergBigCell` (`SteinbergBigCellProof`). The general Borel-pair and covering lemmas do not
 require algebraic closedness until the covering step.
 
-Integration gives the local instances used here module-specific names to permit
+The local instances used here have module-specific names to permit
 joint imports. Their types, values, and local scopes are unchanged.

@@ -1,7 +1,5 @@
 # A standard additive character of `𝔸_K / K`
 
-Author: Worker 1709.
-
 This is internal infrastructure for the proof of
 `Langlands.Automorphic.CuspidalUnitaryLocalGenericityStatement`. It constructs the
 standard additive character of the adeles of a number field `K` explicitly and proves what the

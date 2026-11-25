@@ -77,6 +77,8 @@ global sections evaluated on `unitModule`, the structure sheaf.
 cocycle-class formula to these actual cohomology objects.
 
 The cover data and the cochain functional remain explicit arguments.
-This unit does not construct `l` from an arbitrary cohomology dual, prove
+This module does not construct `l` from an arbitrary cohomology dual, prove
 independence of the covers, establish a creation-contraction relation, or
-prove alternation, exterior generation, or the host degree-two comparison.
+prove alternation, exterior generation, or the degree-two exterior/coproduct
+comparison `FieldH2ExteriorCoproductComparisonStatement`, which the Library
+proves in `Langlands.AbelianScheme.FieldH2ExteriorCoproductComparisonProof`.

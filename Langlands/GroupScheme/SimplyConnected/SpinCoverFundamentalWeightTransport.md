@@ -1,7 +1,5 @@
 # Transport of fundamental weights trivial on a kernel
 
-Author: Worker 237.
-
 This internal, derived module constructs the full-kernel comparison
 `kernelPostcompIso` for a group-scheme homomorphism postcomposed by a
 monomorphism and proves transport rules for the published

@@ -2,8 +2,9 @@
 
 Module `Langlands.Representation.RankinSelberg.TwoBlockFirstBlockKernelShift`.
 Namespace `Langlands.RankinSelberg.TwoBlockFirstBlockQuotient`.
-Worker 117 authored the transport proofs. They use Worker 27's fiber kernel
-construction and the separately submitted normalized mixed-quotient shift.
+The transport proofs use the fiber kernel construction of
+`TwoBlockFirstBlockFiberKernel` and the normalized mixed-quotient shift of
+`TwoBlockFirstBlockSliceShift`.
 
 This internal helper proves the exact transport identity
 
@@ -15,7 +16,7 @@ It then proves `FirstBlockKernelShiftStatement` by `firstBlockKernelShift`:
 if the zero kernel composed with the outer slice k equals the total slice k
 for every integer k, the k-th kernel composed with the fixed outer zero slice
 equals the total slice k. The normalized zero-kernel disintegration premise
-remains outside this unit. This conditional result does not establish the
+remains outside this module. This conditional result does not establish the
 complete first-block integration theorem.
 
 ## Objects and hypotheses
@@ -94,7 +95,7 @@ The motivating original is Jacquet, Piatetski-Shapiro and Shalika,
 The retained PDF SHA-256 is
 `d9feed6388ca5acf02ecc6a8cce984871a7c28f062ff441e45a71fa2d8962245`.
 Printed page 412 is zero-based PDF index 46 / one-based page 47, visually checked
-in the earlier source audit; no source erratum note was found there.
+in a source audit; no source erratum note was found there.
 
 JPSS equation (6) has the fixed zero outer determinant slice, inner slice k,
 and the fiber point `[diag(u,1)g]_H`, with no displayed scalar. It does not
@@ -103,7 +104,7 @@ internal: they combine the existing actual groups, slice formulas, compatible
 quotient right invariance, normalized mixed shift and measurable fiber kernel
 with elementary measure pushforward and integration identities.
 
-This unit does not prove the normalized zero-kernel quotient-measure tower,
+This module does not prove the normalized zero-kernel quotient-measure tower,
 its restriction to equal determinant slices, kernel s-finiteness, or the
 Tonelli and Bochner consequences of the complete target. Its final equality
 is conditional on the zero-kernel slice identities described above.

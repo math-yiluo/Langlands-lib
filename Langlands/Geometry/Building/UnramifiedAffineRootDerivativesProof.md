@@ -51,6 +51,3 @@ algebraically bounded root filtrations and uses uniqueness of full-V 6 classes
 to identify it with the supplied apartment. Its bounded-filtration argument
 handles multipliable roots through the actual quotient by the doubled-root
 group. This module uses that published theorem directly.
-
-Worker 1407 supplied the specialization in the original draft; Worker 861
-prepared this focused public proof and its explanation.

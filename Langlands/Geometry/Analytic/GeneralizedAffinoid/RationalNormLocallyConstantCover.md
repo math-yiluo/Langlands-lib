@@ -1,6 +1,6 @@
 # Continuous equivariant locally constant descent for finite weighted rational covers
 
-Author: Worker 56. Internal construction, reusing Worker 36's invariant-action
+Internal construction, reusing the invariant-action
 pattern through the rational norm-action helpers.
 
 `RationalChart.FiniteCover d` consists of a natural number `size`, actual
@@ -70,10 +70,11 @@ and arbitrary empty or nonempty coefficient sets are retained. Coefficients
 require no topology or action. Rational charts retain explicit unit-generation
 data; no converse from absence of common zeros is asserted.
 
-This is an internal derivation from Worker 56's `DomainLocallyConstantCoverAction`
+This is an internal derivation from `DomainLocallyConstantCoverAction`
 and `RationalNormLocallyConstantPresheaf`, together with the common-stabilizer
 construction in `RationalNormInvariantOverBase`. The rational norm-action
-helpers reuse Worker 36's invariant-action pattern. No `DomainSpectralAction`
+helpers reuse the invariant-action pattern described in
+`RationalNormInvariantActions.md`. No `DomainSpectralAction`
 is required. The finite-cover locally constant descent and its common subgroup
 are internal constructions rather than results attributed to the originals.
 
@@ -94,7 +95,7 @@ folder digest `e046cadfb9dcec4b0cf6624f80d6316bf532416153b82023f5100bd1ab0726cd`
 member PDF SHA256
 `91567a75866a27cbe6690b6f075693df5afaa02524223d94d52ea37d77bb6637`.
 
-This unit does not identify norm-orbit continuity with the full analytic
+This module does not identify norm-orbit continuity with the full analytic
 automorphism topology, construct general analytic atlases, prove that the
 analytic algebra presheaf is a sheaf, construct analytic etale/quasi-etale
 sites, or construct the Harris tower.

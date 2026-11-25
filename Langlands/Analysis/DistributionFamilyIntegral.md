@@ -1,6 +1,6 @@
 # Integrals of smooth test families
 
-This is an internal analysis construction for the open Bruhat cell argument in Task 7525. It packages differentiation under the integral sign and a continuity argument for distributions; it does not state or prove Shalika's open-cell proposition or multiplicity-one theorem.
+This is an internal analysis construction for the open Bruhat cell argument of unitary archimedean Whittaker multiplicity one for `GL_n` (Shalika 1974, Theorem 3.1; `UnitaryWhittakerMultiplicityOneStatement`). It packages differentiation under the integral sign and a continuity argument for distributions; it does not state or prove Shalika's open-cell proposition or multiplicity-one theorem.
 
 `SmoothCompactFamily Φ` says that each slice `Φ m : A → E` is smooth, that all its iterated derivatives are jointly continuous in `(m, x)`, and that the slices are zero outside one compact set of parameters. The integration lemmas use a measure finite on compact sets and a finite-dimensional real normed space `A`. On the product of the compact parameter set and a closed ball about the differentiation point, the derivative is bounded. This gives a local integrable dominating function, with value zero off the compact parameter set. The derivative theorem for dominated integrals and the curry isometries for continuous multilinear maps give the iterated derivative identity. Applying the one-derivative argument to every order gives smoothness of the integral.
 

@@ -1,7 +1,5 @@
 # Unipotent Haar character-change conjugation modulus
 
-Author: Worker 318.
-
 The theorem `Langlands.RankinSelberg.unipotentCharacterChangeModulus` has exactly
 the type `Langlands.RankinSelberg.UnipotentCharacterChangeModulusStatement.{uF}`.
 It proves the published statement without any additional hypothesis, for every

@@ -1,7 +1,5 @@
 # Diagonal coordinates for quadratic isotropy
 
-Worker 787.
-
 `Langlands.NumberFieldDiagonalQuadraticIsotropyStatement` is the coefficient
 version of the nondegenerate local-to-global isotropy theorem. Its local
 forms have the same finite coordinate set and coefficients mapped into the
@@ -30,7 +28,7 @@ A Lean type-and-value closure scan of
 `Langlands.numberFieldQuadraticIsotropy_of_diagonal` visited 36,175
 constants, including the 25 project constants below. It found none of
 the three excluded group-cohomology statements or the corresponding
-proof prefixes. Diagnostic `cdd5d531-62b4-4fe0-b8bf-2218299b1f7e`.
+proof prefixes.
 
 ```text
 Langlands.Global.FiniteCompletion

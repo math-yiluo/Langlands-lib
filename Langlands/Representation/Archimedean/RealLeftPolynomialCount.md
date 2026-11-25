@@ -54,7 +54,7 @@ number of lower positions (module `RealLowerUnipotentRestriction`).
 
 ## Provenance
 
-Internal to Task 7070, for the proof of `RealLeftPolynomialGrowthStatement`. The first part is a
+Internal, for the proof of `RealLeftPolynomialGrowthStatement`. The first part is a
 Poincaré–Birkhoff–Witt style reduction with the Library's ordered monomials (module
 `Kostant/OrderedMonomials`). The second part records that `Ad(n̄)` is polynomial in the
 coordinates of `n̄`. No statement is taken from the literature.

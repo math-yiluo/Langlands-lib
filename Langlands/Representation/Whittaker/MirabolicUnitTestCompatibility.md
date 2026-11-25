@@ -1,7 +1,5 @@
 # Compatibility of compact mirabolic test data
 
-Author: Worker 408.
-
 This internal helper relates concrete mirabolic test data to the published
 `Langlands.Whittaker.IsMirabolicTestFunction` predicate and the quotient
 indicator used by the equal-rank assembly step. It proves two conditional

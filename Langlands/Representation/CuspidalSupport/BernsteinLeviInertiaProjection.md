@@ -1,12 +1,11 @@
 # Projection of a standard Levi representation onto one cuspidal inertia block
 
-Worker 76. Supporting reduction for proof task
-`2a804ec7-6b5f-4bbe-93ab-39527f9b50a9` (Renard VI.7.2 Proposition,
-`Langlands.CuspidalSupport.BernsteinBlockCharacterizationStatement`). This
+Supporting reduction for Renard VI.7.2 Proposition
+(`Langlands.CuspidalSupport.BernsteinBlockCharacterizationStatement`). This
 module reduces the Levi-side projection step of the fixed-Levi embedding
-argument to one published proposition that is not yet proved: Renard VI.3.3.1,
-`Langlands.CuspidalSupport.RationalCuspidalInertiaDecompositionStatement`
-(proof task `5c59bed4-0f33-47e1-aaa6-1d1145b8b25f`). It does not prove
+argument to one published proposition without an unconditional proof in the
+Library: Renard VI.3.3.1,
+`Langlands.CuspidalSupport.RationalCuspidalInertiaDecompositionStatement`. It does not prove
 VI.3.3.1, and every Bernstein-side result below keeps it as an explicit
 hypothesis `hSplit`.
 
@@ -24,14 +23,12 @@ following (VI.3.3.1) and uses the component `W_D`. The proposition proved here
 records the part of that decomposition the fixed-Levi embedding uses: a map
 `p : W → W_D` that does not kill any nonzero map from an object of the block
 `M(M)_D`. Its conclusion is, word for word, the body of the proposition
-`BernsteinLeviBlockProjection` in Worker 5352's module
-`Langlands.Representation.CuspidalSupport.BernsteinFixedLeviEmbeddingReduction`
-(staged as candidate `f43d37f5-0f82-4414-9079-dc0b0e7ed49d`, not yet
-published). This module cannot import an unpublished candidate, so it states
-that body inline. Once both modules are published, the conclusion is supplied
-by `bernsteinLeviBlockProjectionOfRationalInertiaDecomposition.{uF, uV} i ν family hSplit`.
-A private compilation test with a copy of that definition and the same local
-instances checked this.
+`BernsteinLeviBlockProjection` in the module
+`Langlands.Representation.CuspidalSupport.BernsteinFixedLeviEmbeddingReduction`.
+This module does not import that module, so it states
+that body inline. A module importing both obtains `BernsteinLeviBlockProjection i ν family`
+as `bernsteinLeviBlockProjectionOfRationalInertiaDecomposition.{uF, uV} i ν family hSplit`;
+`BernsteinBlockCharacterizationStatementInputs` does so.
 
 ## Declarations
 
@@ -113,14 +110,12 @@ at universes `uF, max uF uV`.
 5. The last two declarations apply step 4 to every `a` and `W`. The universes
    are given explicitly, as `.{uF, uV}`.
 
-`lean_check` reports no errors or warnings.
-
 ## Scope
 
-The only unproved input is VI.3.3.1 (`hSplit`). No admissibility,
+The only input not proved here is VI.3.3.1 (`hSplit`). No admissibility,
 finite-length, finite-generation or Jacquet-module hypothesis is added. VI.10.3
 and VI.4.1 are not used here; they enter only on the group side of the
-fixed-Levi embedding, in Worker 5352's module. The local instances have names
+fixed-Levi embedding, in `BernsteinFixedLeviEmbeddingReduction`. The local instances have names
 specific to this module. The Levi point topology is
 `rationalPointTopology F (bernsteinLeviScheme i ν I).X`, as in
 `BernsteinBlockCharacterizationReduction`. The local compactness and

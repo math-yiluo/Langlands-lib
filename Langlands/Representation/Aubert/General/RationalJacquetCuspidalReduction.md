@@ -9,8 +9,8 @@ follows from the published proposition
 `RationalSupportCategoryTargets`). It is a **conditional** reduction:
 `rationalJacquetCuspidal_of_jacquetVanishing` takes that vanishing statement
 as its only hypothesis. It does not prove `RationalJacquetCuspidalStatement`
-on its own. That target is proved only once the vanishing statement has an
-accepted proof (its focused owner is task bc64458d).
+on its own. That target follows from this reduction together with a proof
+of the vanishing statement.
 
 The hypothesis and the conclusion are quantified at the same independent
 universes `u` (field and group) and `v` (extra carrier universe; complex

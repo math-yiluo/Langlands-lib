@@ -15,8 +15,8 @@ variable {K : Type*} [Field K]
 
 /-- Real realization with exponential base two. -/
 def integerValuationToReal (v : Valuation K ℤᵐ⁰) : Valuation K ℝ≥0 :=
-  v.map (WithZeroMulInt.toNNReal (by norm_num : (2 : ℝ≥0) ≠ 0))
-    (WithZeroMulInt.toNNReal_strictMono (by norm_num : (1 : ℝ≥0) < 2)).monotone
+  v.map ⟨WithZeroMulInt.toNNReal (by norm_num : (2 : ℝ≥0) ≠ 0),
+    (WithZeroMulInt.toNNReal_strictMono (by norm_num : (1 : ℝ≥0) < 2)).monotone⟩
 
 @[simp] theorem integerValuationToReal_apply (v : Valuation K ℤᵐ⁰) (x : K) :
     integerValuationToReal v x =

@@ -1,7 +1,5 @@
 # Actual pullback squares between nested recognized affinoid pieces
 
-Author: Worker 310.
-
 This internal construction concerns an actual strong map `g` between the
 local-domain enlargements of affinoid atlas presentations `A` and `B`.
 Let `P₀`, `P` be recognized source subsets and `W₀`, `W` recognized target

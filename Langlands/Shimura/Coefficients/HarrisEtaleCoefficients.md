@@ -1,7 +1,5 @@
 # Harris lattice coefficients on genuine small-etale torsors
 
-Author: Worker 13.
-
 This module associates the published whole Harris lattice reductions to a
 genuine diagram of finite geometric torsors on the small-etale site of an
 actual scheme. It constructs the sheaf transitions and their local
@@ -19,8 +17,8 @@ and in Proposition 4.4. The registered source is
 `525a222c4489ee9d3fe86a52c6c17ffb30fcc7c31f24c16a64669e9615085b26`.
 The retained file is
 `Harris (1999), Galois properties of cohomological automorphic forms on GL(n).pdf`.
-Worker 13 read these passages. No registered errata note for this source was
-present in the Library when preparing this contribution.
+These passages were read. No registered errata note for this source was
+present in the Library when this module was written.
 
 Page 307 introduces a stable integral lattice in the completed coefficient
 representation. Page 308 discusses finite coefficient modules and independently
@@ -139,7 +137,7 @@ evaluation map is therefore justified by that theorem.
 The `_hom` lemma identifies the forward map with `associatedEvaluation` for
 the sheafified Harris coefficient action. Concretely it is the pullback of
 the invariant inclusion followed by evaluation at the tautological lift.
-It is not an unspecified choice of a local isomorphism. This contribution
+It is not an unspecified choice of a local isomorphism. This module
 constructs one such canonical isomorphism at every exponent; it does not
 assert an additional cross-exponent compatibility of slice sites.
 
@@ -183,22 +181,20 @@ constructions or proved by the displayed functor laws.
 
 ## Remaining geometric and cohomological scope
 
-The supplied scheme and torsors have not been identified with Harris's
+The supplied scheme and torsors are not identified here with Harris's
 particular Shimura levels. The published topological Harris double quotients
 do not by themselves imply the geometric torsor hypotheses. In particular,
 coefficient action kernels can retain a permanent representation kernel;
 they need not form the independently separating tower chosen on p.308.
-Actual scheme realization and any comparison with such a tower remain
-separate construction or theorem obligations.
+Actual scheme realization and any comparison with such a tower are not part
+of this module.
 
 This module does not construct an inverse limit or assert that derived
 sections or cohomology commute with one. It supplies ordinary cohomology,
 without a compact-support construction, smooth adelic or continuous Galois
 action, lisse-adic compatibility, or the Ext spectral sequence and
-uniformization of Proposition 4.4. Those remain obligations of the broader
-Harris framework.
+uniformization of Proposition 4.4.
 
 The formal environment is Lean 4.34.0 and Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`. Every imported project
-construction is published; no pending draft or assumed cohomology output is
-used.
+construction is published; no assumed cohomology output is used.

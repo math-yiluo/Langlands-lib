@@ -38,12 +38,12 @@ variable {Γ : Type uΓ} [Group Γ]
 `Action (SmoothRep R G) Γ`: an element acts by the underlying linear map of its action. -/
 def galoisRepresentation (X : Action (SmoothRep.{uR, uG, uV} R G) Γ) :
     Representation R Γ X.V where
-  toFun γ := (SmoothRep.hom (X.ρ γ)).toLinearMap
+  toFun γ := (SmoothRep.hom (X.ρ γ).asHom).toLinearMap
   map_one' := by rw [X.ρ.map_one]; rfl
   map_mul' γ δ := by rw [X.ρ.map_mul]; rfl
 
 @[simp] theorem galoisRepresentation_apply (X : Action (SmoothRep.{uR, uG, uV} R G) Γ) (γ : Γ)
-    (v : X.V) : galoisRepresentation X γ v = SmoothRep.hom (X.ρ γ) v :=
+    (v : X.V) : galoisRepresentation X γ v = SmoothRep.hom (X.ρ γ).asHom v :=
   rfl
 
 /-- The two actions on an object of `Action (SmoothRep R G) Γ` commute. -/
@@ -51,7 +51,7 @@ theorem galoisRepresentation_commutes (X : Action (SmoothRep.{uR, uG, uV} R G) �
     (g : G) (v : X.V) :
     galoisRepresentation X γ (X.V.representation g v) =
       X.V.representation g (galoisRepresentation X γ v) :=
-  Representation.IntertwiningMap.isIntertwining _ _ (SmoothRep.hom (X.ρ γ)) g v
+  Representation.IntertwiningMap.isIntertwining _ _ (SmoothRep.hom (X.ρ γ).asHom) g v
 
 /-- A morphism of `Action (SmoothRep R G) Γ` intertwines the underlying `Γ`-representations. -/
 theorem galoisRepresentation_naturality {X Y : Action (SmoothRep.{uR, uG, uV} R G) Γ}
@@ -130,13 +130,13 @@ def isotypicActionFunctor :
   rfl
 
 theorem isotypicActionFunctor_obj_ρ (X : Action (SmoothRep.{uR, uG, uV} R G) Γ) (γ : Γ) :
-    ((isotypicActionFunctor τ Γ).obj X).ρ γ = isotypicMap τ (X.ρ γ) :=
+    (((isotypicActionFunctor τ Γ).obj X).ρ γ).asHom = isotypicMap τ (X.ρ γ).asHom :=
   rfl
 
 /-- The inclusion of the `τ`-isotypic part, equivariant for both groups and natural. -/
 def isotypicActionι :
     isotypicActionFunctor.{uR, uG, uU, uV} τ Γ ⟶ 𝟭 (Action (SmoothRep.{uR, uG, uV} R G) Γ) where
-  app X := ⟨(isotypicι τ).app X.V, fun γ => (isotypicι τ).naturality (X.ρ γ)⟩
+  app X := ⟨(isotypicι τ).app X.V, fun γ => (isotypicι τ).naturality (X.ρ γ).asHom⟩
   naturality _ _ f := Action.hom_ext _ _ ((isotypicι τ).naturality f.hom)
 
 @[simp] theorem isotypicActionι_app_hom (X : Action (SmoothRep.{uR, uG, uV} R G) Γ) :
@@ -193,7 +193,7 @@ def multiplicityRepresentation (X : Action (SmoothRep.{uR, uG, uV} R G) Γ) :
 
 @[simp] theorem multiplicityRepresentation_apply (X : Action (SmoothRep.{uR, uG, uV} R G) Γ)
     (γ : Γ) (φ : τ.IntertwiningMap X.V.representation) :
-    multiplicityRepresentation τ Γ X γ φ = (SmoothRep.hom (X.ρ γ)).comp φ :=
+    multiplicityRepresentation τ Γ X γ φ = (SmoothRep.hom (X.ρ γ).asHom).comp φ :=
   rfl
 
 end Multiplicity

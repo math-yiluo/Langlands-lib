@@ -3,9 +3,7 @@
 `Langlands.Geometry.Building.AffineChamberWallComparisonStatement` is an
 internal geometric prerequisite for using gallery generation in the actual
 affine Iwahori–Tits theorem. It compares two existing definitions, without
-changing either one. Worker 455 identified the need for this adapter and
-suggested the image-equality interface; Worker 1565 supplied the statement
-and supporting proofs.
+changing either one.
 
 The vector space `V : Type uV` and torsor `A : Type uA` have independent
 universes. The instances are `AddCommGroup V`, `Module ℝ V` and

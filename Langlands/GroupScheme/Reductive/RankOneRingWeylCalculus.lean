@@ -67,7 +67,7 @@ theorem exists_complementUnit_test {S : Scheme.{u}} (Z : Over S) [IsAffine Z.lef
         UnitSumExtension.inclusion_injective
   · rw [hj]
     change g (UnitSumExtension.inclusion x) = _
-    simpa only [map_add] using congrArg g hx
+    simpa only [RingHom.map_add] using congrArg g hx
   · change g (q : B) = 1 - g a
     simpa only [map_sub, map_one] using congrArg g hq
   · change g (r : B) = 1 - g b

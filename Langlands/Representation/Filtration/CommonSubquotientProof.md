@@ -1,7 +1,5 @@
 # Common irreducible subquotient from matching factors
 
-Author: Worker 120.
-
 This module proves `SameFactorsCommonSubquotientStatement`. A length-zero
 filtration would have its unique step both zero and full, contradicting the
 nonzero source representation. The proof therefore chooses the first factor.

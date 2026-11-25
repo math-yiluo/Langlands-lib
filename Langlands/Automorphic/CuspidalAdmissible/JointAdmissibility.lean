@@ -19,7 +19,7 @@ open MeasureTheory
 
 namespace Langlands.Automorphic.CuspidalAdmissible
 
-open Langlands.Global Langlands.ClassField.Global.RelativeWeilGroup
+open Langlands.Global Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 
 /-- **Joint admissibility**, given Siegel finiteness. -/
 theorem isJointlyAdmissible_of_siegelFiniteness

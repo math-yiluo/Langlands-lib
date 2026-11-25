@@ -8,12 +8,14 @@ adds the explicit hypothesis
 `∀ R : PresentedAffinoidAlgebra K, Small.{v} (BanachSpectrum R)`. Without it, the
 pair chart of a pullback need not be an object of `LocalizedCategory.{u,v,v}`
 when the field `K : Type u` is not `v`-small; the replacement's Markdown gives the
-trivially valued example. This proposition is neither proved nor refuted, and its
-Lean text is left unchanged. The replacement was made at the operator's ruling on
-request `a87ede08952355398eb14c6ddc2957c0`, by the procedure of standing ruling 8.
+trivially valued example. In general this proposition is neither proved nor
+refuted; under `UnivLE.{u, v}` it is proved by
+`compactPullbackActionContinuityStatement_of_univLE` in
+`Langlands.Geometry.Analytic.CompactPullbackContinuityOfSmall`. Its Lean text is
+left unchanged.
 
 `CompactPullbackActionContinuityStatement` is an internal analytic prerequisite
-for the tuple-cone construction of Task 7491. It defines a proposition and does
+for the finite tuple-cone construction. It defines a proposition and does
 not prove continuity.
 
 Fix a complete ultrametric normed field `K : Type u` and a group `G : Type z`

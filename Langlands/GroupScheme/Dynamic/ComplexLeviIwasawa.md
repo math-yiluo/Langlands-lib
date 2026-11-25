@@ -1,7 +1,5 @@
 # Complex Levi-compatible Iwasawa from ambient star realization
 
-Author: Worker 1655.
-
 This internal construction shows that over an algebraically closed `RCLike`
 field, an ambient closed star-stable realization suffices to accommodate a
 specified dynamic parabolic and Levi. Star stability of the specified Levi

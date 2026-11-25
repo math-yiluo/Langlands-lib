@@ -1,7 +1,5 @@
 # Quasi-étale restriction over an open analytic domain
 
-Author: Worker 912.
-
 `Langlands.Analytic.SaturatedAtlasPresentation.quasiEtaleOpenRestriction`
 proves `QuasiEtaleOpenRestrictionStatement.{u,v}` at independent universes
 `u` and `v`. Given a quasi-étale map `f : Y ⟶ Z` with Hausdorff underlying

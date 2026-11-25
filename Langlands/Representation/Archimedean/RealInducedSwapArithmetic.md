@@ -1,6 +1,6 @@
 # Arithmetic and parameter transport for two induced real blocks
 
-This internal helper module derives consequences of the published definitions in
+This helper module derives consequences of the published definitions in
 `RealUnlinkedSwapReduction`, `RealLargeStandardIrreducibleReduction` and `StandardModule`.
 Its namespace is `Langlands.Archimedean.RealInducedSwapArithmetic`. It does not prove
 `RealInducedSwapStatement` in full.
@@ -9,7 +9,7 @@ Its namespace is `Langlands.Archimedean.RealInducedSwapArithmetic`. It does not 
 weight and the complex exponent visible to an induced real block. It forgets the sign of
 the weight of the original complex character. `inducedParameter_eq_iff` expands equality
 of these pairs into equality of their components. The parameter map is the selected
-definition of this contribution.
+definition of this module.
 
 For nonzero weights, `unlinked_iff` expands the Mœglin data of two induced blocks and gives
 the two forbidden exponent differences, indexed by positive natural numbers. In

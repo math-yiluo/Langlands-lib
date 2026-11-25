@@ -16,7 +16,7 @@ Printed page 72, equation (0.2) and the display following (0.3), defines the two
 functionals. Printed page 78, equation (1.1) and the paragraph following it,
 explains their interpretation by sufficiently large compact open truncations,
 after right translation by the inverse Weyl element. Both pages were reread
-visually for this unit.
+visually for this module.
 
 This is a derived restriction construction. It uses `JacquetIntegral` for the
 integrands and stable scalar integrals, `Induction` for the actual carriers
@@ -29,7 +29,7 @@ or proving this restriction.
 The induction convention and the documented twice-halved printed exponent
 issue are inherited from `Induction`: normalized induction twists the factors
 by `|det|^(s/2)` and `|det|^(-s/2)`, producing covariance exponents
-`(s+n+1)/2` and `-(s+m+1)/2` for the ranks used here. This unit does not alter
+`(s+n+1)/2` and `-(s+m+1)/2` for the ranks used here. This module does not alter
 that documented interpretation of the source.
 
 ## Two actual realizations
@@ -122,4 +122,4 @@ Stabilization means integrability on every sufficiently large compact open
 additive subgroup and equality of all such truncated integrals. It never
 asserts absolute integrability on the full noncompact radical. The analytic
 stabilization, Whittaker and local-coefficient existence statements are
-separate obligations following this definition unit.
+separate; `JacquetStatements`, which imports this module, states them.

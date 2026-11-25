@@ -1,7 +1,5 @@
 # Compatible residue coordinates on the actual prime-adic Tate module
 
-Author: Worker 3366.
-
 The construction is pure algebra about the existing inverse system, carried out in namespace
 `Langlands.GroupScheme.Tate.PrimeAdic.GeometricRank` for an arbitrary
 commutative group object `G` over `S`, base object `T`, rank `r` and prime `p`.

@@ -1,6 +1,6 @@
 # Rigidity of the numbered E₈ Cartan matrix
 
-This internal unit proves that every self-map preserving all entries of
+This module proves that every self-map preserving all entries of
 Mathlib's actual E₈ Cartan matrix fixes every vertex.
 
 Diagonal entries first imply injectivity, hence bijectivity on the finite

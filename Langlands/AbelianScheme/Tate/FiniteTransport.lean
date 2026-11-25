@@ -108,8 +108,8 @@ theorem groupPathTransport_monodromy (p : fiberFunctor s hs ≅ fiberFunctor t h
     (g : FundamentalGroup s hs) (x : Additive (Over.mk s ⟶ G.X)) :
     groupPathTransport p G (groupMonodromy s hs G g x) =
       groupMonodromy t ht G (pathConjugation p g) (groupPathTransport p G x) := by
-  change p.hom.app (ofOver G.X) (g.hom.app (ofOver G.X) x) =
-    p.hom.app (ofOver G.X) (g.hom.app (ofOver G.X)
+  change p.hom.app (ofOver G.X) (g.asIso.hom.app (ofOver G.X) x) =
+    p.hom.app (ofOver G.X) (g.asIso.hom.app (ofOver G.X)
       (p.inv.app (ofOver G.X) (p.hom.app (ofOver G.X) x)))
   have hx : p.inv.app (ofOver G.X) (p.hom.app (ofOver G.X) x) = x :=
     ConcreteCategory.congr_hom (p.hom_inv_id_app (ofOver G.X)) x
@@ -159,7 +159,7 @@ theorem finiteLevelTransport_symm (p : fiberFunctor s hs ≅ fiberFunctor t ht) 
 
 /-- A path that is an automorphism gives exactly the existing geometric monodromy. -/
 theorem finiteLevelTransport_aut (g : FundamentalGroup s hs) :
-    finiteLevelTransport G n g = finiteLevelMonodromy G s hs n g := rfl
+    finiteLevelTransport G n g.asIso = finiteLevelMonodromy G s hs n g := rfl
 
 theorem continuous_finiteLevelTransport (p : fiberFunctor s hs ≅ fiberFunctor t ht) :
     Continuous (finiteLevelTransport G n p) := continuous_of_discreteTopology
@@ -183,7 +183,7 @@ theorem finiteLevelTransport_monodromy (p : fiberFunctor s hs ≅ fiberFunctor t
 theorem finiteLevelTransport_change_path (p q : fiberFunctor s hs ≅ fiberFunctor t ht)
     (x : Level G (Over.mk s) n) :
     finiteLevelTransport G n q x =
-      finiteLevelMonodromy G t ht n (p.symm ≪≫ q) (finiteLevelTransport G n p x) := by
+      finiteLevelMonodromy G t ht n (Aut.of (p.symm ≪≫ q)) (finiteLevelTransport G n p x) := by
   rw [← finiteLevelTransport_aut, ← finiteLevelTransport_trans]
   simp
 
@@ -267,7 +267,7 @@ theorem levelTransport_symm (p : fiberFunctor s hs ≅ fiberFunctor t ht) :
   exact GroupScheme.Tate.finiteLevelTransport_symm A.toGrp n p
 
 theorem levelTransport_aut (g : FundamentalGroup s hs) :
-    levelTransport htor A n hn hu g = levelMonodromy s hs htor A n hn hu g := rfl
+    levelTransport htor A n hn hu g.asIso = levelMonodromy s hs htor A n hn hu g := rfl
 
 theorem continuous_levelTransport (p : fiberFunctor s hs ≅ fiberFunctor t ht) :
     Continuous (levelTransport htor A n hn hu p) := continuous_of_discreteTopology
@@ -292,7 +292,7 @@ theorem levelTransport_monodromy (p : fiberFunctor s hs ≅ fiberFunctor t ht)
 theorem levelTransport_change_path (p q : fiberFunctor s hs ≅ fiberFunctor t ht)
     (x : Level A (Over.mk s) n) :
     levelTransport htor A n hn hu q x =
-      levelMonodromy t ht htor A n hn hu (p.symm ≪≫ q)
+      levelMonodromy t ht htor A n hn hu (Aut.of (p.symm ≪≫ q))
         (levelTransport htor A n hn hu p x) := by
   have := torsionKernel_isFinite htor A n hn hu
   have := torsionKernel_etale htor A n hn hu

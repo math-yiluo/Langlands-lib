@@ -1,7 +1,5 @@
 # Reduction of the refined chamber bound to test elements
 
-Author: Worker 819.
-
 This module is a helper for the proof of
 `Langlands.GLProductLeviTemperedExponentNecessityStatement`
 (see [`ProductLeviTemperedExponentNecessityStatement`](ProductLeviTemperedExponentNecessityStatement.md)).

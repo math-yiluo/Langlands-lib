@@ -19,8 +19,8 @@ The statement quantifies over:
   reductive group `G = H` over `K`, a maximal `K`-split torus `S` (`B.i`), the actual
   centralizer `Z = Z_G(S)` (`B.centralizer`), and the ω-compatible equipollence class of
   valuations of the root datum (`B.apartment`, KP Axiom V 6);
-- `hZ : IsTorus B.centralizer.Z`. This is D1's binder convention (Task 5875, Library
-  module `Langlands.Geometry.Building.KPLocalMoyPrasadGroups`): `Z` is a torus, and
+- `hZ : IsTorus B.centralizer.Z`. This is the binder convention of the Library
+  module `Langlands.Geometry.Building.KPLocalMoyPrasadGroups`: `Z` is a torus, and
   `B.centralizerTorus hZ` is `Z` viewed as a commutative group scheme. Its commutativity
   comes from `IsTorus.isCommMonObj`, so no structure is chosen. Over `K = F^ur` every
   connected reductive group is quasi-split, so `Z = T` is a maximal torus (KP §7.2:
@@ -128,18 +128,20 @@ characters of `T_a` over `Ω` form the free abelian group on the `K`-embeddings
 `K` to `Ω` is unique, so `ω(σ(γ) - 1) = ω(σ(γ - 1)) = ω(γ - 1) ≥ r`. For `r > 0` the set
 `{y ∈ Ω^× : ω(y - 1) ≥ r}` is a group, so `ω(χ(c) - 1) ≥ r` for every character `χ`.
 
-## Use: clause 1 of S1
+## Use: clause 1 of `QuasiSplitLocalTorusFiltrationStatement`
 
-Clause 1 (commutator friendliness, KP Definition 7.2.1) of S1 (Task 5890, KP Lemma 7.2.3
-over `K`) follows from this statement with `mem_localTorusFiltration_of_induced` and
+Clause 1 (commutator friendliness, KP Definition 7.2.1) of
+`QuasiSplitLocalTorusFiltrationStatement` (KP Lemma 7.2.3 over `K`) follows from this statement with `mem_localTorusFiltration_of_induced` and
 `map_localTorusFiltration_le` (module
 `Langlands.Geometry.Building.KPLocalTorusCharacterFiltration`). Given the data of
 clause 1, obtain `T_a`, `f` and `c` from this statement. The congruence on `c` is the
 right-hand side of `mem_localTorusFiltration_of_induced` (for the induced torus `T_a` and
 `r > 0`), so `c ∈ localTorusFiltration F T_a hT_a r`. Then `map_localTorusFiltration_le`
 for `f` gives `z = f(c) ∈ localTorusFiltration F (B.centralizerTorus hZ) hZ r`, which is
-`B.centralizerTorusFiltration hZ r = Z(K)_r` in D1's notation. This derivation compiles
-against the pinned environment. It is not part of this unit.
+`B.centralizerTorusFiltration hZ r = Z(K)_r` in the notation of `KPLocalMoyPrasadGroups`.
+This derivation is not part of this module; it is
+`centralizerTorusFiltration_isCommutatorFriendly_of_coroot` in the module
+`KPLocalCentralizerFiltrationCommutatorFriendly`.
 
 ## Notes for a proof (not part of the statement)
 
@@ -148,7 +150,7 @@ against the pinned environment. It is not part of this unit.
   `IntegerOmegaApartmentRigidity`, `QuasiSplitApartmentAssembly` and the rank-one
   coordinate modules `QuasiSplitR1RootFieldCoordinatesStatement`,
   `QuasiSplitR2RootUnitaryCoordinatesStatement` and `QuasiSplitMultipliableFactorization`.
-  This unit does not check which of these are proved.
+  This page does not check which of these are proved.
 
 ## Sources
 
@@ -170,9 +172,8 @@ against the pinned environment. It is not part of this unit.
   Proposition 7.3.12(6). None of them changes Proposition 7.1.1, Definition 7.1.3 or
   Lemma 7.2.3.
 
-## Credits
+## Binders
 
-This statement adapts the draft `KPLocalCorootComponentStatement` by Worker 119 (Task 5552
-shared draft, revision 3). The draft used the binders `T`, `hT`, `e : T ≅ Z`. This version
-uses D1's binder `hZ : IsTorus B.centralizer.Z` and `f : T_a ⟶ B.centralizerTorus hZ`, as
-the task requires.
+The statement uses the binder `hZ : IsTorus B.centralizer.Z` of `KPLocalMoyPrasadGroups`
+and `f : T_a ⟶ B.centralizerTorus hZ`, not a presentation of `Z` by binders `T`, `hT`,
+`e : T ≅ Z`.

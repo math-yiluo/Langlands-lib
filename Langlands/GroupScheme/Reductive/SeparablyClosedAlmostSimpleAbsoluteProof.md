@@ -1,7 +1,5 @@
 # Almost-simple groups over separably closed fields are absolutely almost-simple
 
-Author: Worker 96.
-
 `Langlands.GroupScheme.separablyClosedAlmostSimpleAbsolute.{u}` proves exactly
 the published `SeparablyClosedAlmostSimpleAbsoluteStatement.{u}`. For every
 separably closed field `k : Type u`, an almost-simple group scheme over
@@ -87,4 +85,5 @@ Finally, separable closedness supplies a split maximal torus by
 with `K = AlgebraicClosure k` and pair the result with the given
 ground-field almost-simplicity. No descent of an arbitrary inseparable
 normal subgroup is needed. The theorem and its imports do not use the
-Weil-restriction host theorem or a Local Kneser–Tits consumer.
+almost-simple Weil-restriction theorem that this theorem serves
+(`SimplyConnectedAlmostSimpleWeilRestrictionStatement`) or a Local Kneser–Tits consumer.

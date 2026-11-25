@@ -7,22 +7,22 @@ Harris 1998, Proposition 4.8 (printed p.201) is stated in the Library as the
 unproved `Proposition48Statement`. Its planned proof is a recursion on the
 degree of the normal closure, with one-place validity predicates for the
 problems of the recursion (`Proposition48Problem`). This recursion is not
-carried out in Lean: its steps are published as unproved statements, among
+carried out in Lean: its steps are stated as separate statements, among
 them the explicitly conditional `Proposition48ReductionStatement`, whose
-input statements are hypotheses and whose own proof is an open task. The
-proof obligations that remain open are listed in the published
-`HarrisProposition48Statement.md` (section "Reduction, translation
-obligations and proof owners"). This module states two
+input statements are hypotheses and which is proved as `proposition48Reduction`
+in `HarrisProposition48ReductionProof`. The
+proof obligations that remain open are listed in
+`HarrisProposition48Statement.md`. This module states two
 facts that are needed to run that recursion under Harris's condition (4.12)
 (proof of Lemma 4.7, printed p.204) in place of general position. The
 condition passes from a problem to each of its Mackey children, and to its
-parity-corrected problem. In both statements the published (general-position)
+parity-corrected problem. In both statements the general-position
 validity of the new problem is a hypothesis. The conclusion upgrades it to
 exact-stabilizer validity. **Neither statement is proved here.**
 
 The predicates used are those of the sibling module
 `HarrisProposition48ExactStabilizerData`:
-`IsAuxiliaryExactStabilizerValidAtParity` is the published
+`IsAuxiliaryExactStabilizerValidAtParity` is the existing
 `IsAuxiliaryValidAtParity` with its one conjunct
 `IsInGeneralPosition Q.F Q.F' (weilCharacter Q.F Q.e Q.F' Q.χs)` replaced by
 `GeneralPosition.HasExactWeilStabilizer Q.F Q.F' (weilCharacter Q.F Q.e Q.F' Q.χs)`,
@@ -42,7 +42,7 @@ R.IsAuxiliaryExactStabilizerValidAtParity c
 
 `D` is any intermediate field of `L/E`, not only a cyclic step of prime
 degree, and the parities `b`, `c` are arbitrary. The child's general-position
-validity `R.IsAuxiliaryValidAtParity c` is a hypothesis. The published Mackey
+validity `R.IsAuxiliaryValidAtParity c` is a hypothesis. The existing Mackey
 step `Proposition48MackeyStepStatement` produces children with exactly this
 validity, so it can be used unchanged and its children upgraded afterwards.
 The conclusion differs from that hypothesis only in the stabilizer conjunct.
@@ -129,7 +129,7 @@ Q.IsAuxiliaryParityNormalization b ν χs →
 (Q.withCharacters (Q.correctedCharacter ν) χs χs).IsAuxiliaryExactStabilizerValid
 ```
 
-The published `IsAuxiliaryParityNormalization` is kept unchanged. It contains
+The existing `IsAuxiliaryParityNormalization` is kept unchanged. It contains
 the general-position validity `IsAuxiliaryValid` of the corrected problem,
 whose global character is `ξ · (ν ∘ N_{E'/E})` and whose auxiliary character is
 the new `χs`. The conclusion upgrades the corrected problem to the
@@ -157,8 +157,12 @@ conjuncts of the corrected problem's `IsAuxiliaryValid`.
 
 ## What is not claimed
 
-- Neither inheritance statement is proved here. Their proofs are separate
-  proof tasks. The arguments above explain why the statements are expected
+- Neither inheritance statement is proved here. They are proved as
+  `proposition48ExactStabilizerMackeyInheritance` in
+  `HarrisProposition48ExactStabilizerMackeyProof` and
+  `proposition48ExactStabilizerParityInheritance` in
+  `HarrisProposition48ExactStabilizerParityInheritanceProof`. The arguments
+  above explain why the statements are expected
   to be true; they are not Lean proofs.
 - Neither `Proposition48Statement` nor the restated
   `Proposition48ExactStabilizerStatement` (sibling module
@@ -167,7 +171,7 @@ conjuncts of the corrected problem's `IsAuxiliaryValid`.
   `Proposition48Statement`: its datum hypothesis
   `IsProposition48ExactStabilizerDatum` is stronger than
   `IsProposition48Datum`, and the rest is identical. `Proposition48Statement`
-  implies it through the published theorem
+  implies it through the theorem
   `Langlands.Global.generalPositionOfExactStabilizer`
   (`HasExactWeilStabilizer F F' χ → IsInGeneralPosition F F' χ`); the sibling
   module proves this implication as
@@ -176,8 +180,8 @@ conjuncts of the corrected problem's `IsAuxiliaryValid`.
   argument and Harris's (4.12). Harris does not state these inheritance
   facts. The plan note says that its Remark 4.2 "is an argument written here,
   not one taken from the literature".
-- No published declaration is changed. The general-position formulation, the
-  published Mackey step and parity statements, and their open tasks stay as
+- No existing declaration is changed. The general-position formulation and
+  its Mackey step and parity statements stay as
   the fallback.
 
 ## Sources

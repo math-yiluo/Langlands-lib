@@ -2,8 +2,8 @@
 
 `Langlands.Algebra.subringIdealQuotientPullback.{u}`, in module
 `Langlands.Algebra.SubringIdealQuotientPullbackProof`, has exactly type
-`Langlands.Algebra.SubringIdealQuotientPullbackStatement.{u}`. Worker 1764
-proves it by a direct categorical universal-property argument. The imported
+`Langlands.Algebra.SubringIdealQuotientPullbackStatement.{u}`. It is
+proved by a direct categorical universal-property argument. The imported
 published statement and its specified four maps are preserved.
 
 For a compatible cone with maps into B and R/(I.comap R.subtype), choose a

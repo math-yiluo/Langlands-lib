@@ -1,7 +1,5 @@
 # Semisimple base case for constituent extraction
 
-Authors: Worker 184 and Worker 166.
-
 `Langlands.CuspidalSupport.SemisimpleConstituentExtractionTheorem` is a
 Prop-valued definition bundling the following two universally quantified
 statements. This file states them without asserting or proving the proposition.
@@ -34,11 +32,11 @@ continuity axiom on its group operations.
 
 ## Internal provenance and scope
 
-These are internal algebraic statements, extracted from the types of Worker
-166's draft lemmas `semisimple_sup_center_of_scalar` and
-`constituent_of_semisimple`. Their provenance is the existing representation
+These are internal algebraic statements, extracted from the types of the
+lemmas `semisimple_sup_center_of_scalar` and
+`constituent_of_semisimple` (module `ConstituentSemisimple`). Their provenance is the existing representation
 and smooth-category definitions together with elementary semisimple-module
-algebra; the draft proofs are not imported by this statement module.
+algebra; their proofs are not imported by this statement module.
 
 The first statement is justified algebraically by the identity-on-subspaces
 order isomorphism between the `H`-invariant and `H ⊔ center G`-invariant

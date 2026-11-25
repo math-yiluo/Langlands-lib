@@ -9,7 +9,9 @@ conjugator from `T` to `S` if `l` is a unit in `T` and the derivative of the
 image of `p` evaluates to an invertible matrix at the reduced norm of `δ`.
 
 This derived lifting input is intended for the integral part of the
-adelic orbit argument in Task 7799. At a good finite place `S` is an
+adelic orbit argument in the proof of
+`GeneralLinearTwistedEllipticCentralizerStatement` (module
+`Langlands.TraceFormula.GeneralLinearTwistedEllipticCentralizerStatement`). At a good finite place `S` is an
 integral coefficient algebra, `T` is its reduction, and a separable
 residue polynomial gives the derivative condition by Bézout and
 Cayley–Hamilton.

@@ -1,7 +1,5 @@
 # Continuity from the actual finite Banach presentation
 
-Author: Worker 56.
-
 Let K be a nontrivially normed field, A and B complete normed
 K-algebras, and B a finite A-algebra with continuous structure map.
 For a normed A-algebra C with continuous structure map, the implemented

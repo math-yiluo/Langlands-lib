@@ -1,6 +1,6 @@
 # Unequal-rank gamma with its universal JPSS relation
 
-Worker 31. `Langlands.RankinSelberg.unequalRankGammaFactor` constructs a unit
+`Langlands.RankinSelberg.unequalRankGammaFactor` constructs a unit
 rational function together with a proof of the published `IsPairGammaFactor`
 relation for ranks `r+1 > n+1`. It covers every rectangular block
 `r = n + (j+k+1)`. The underlying unit is the existing ratio

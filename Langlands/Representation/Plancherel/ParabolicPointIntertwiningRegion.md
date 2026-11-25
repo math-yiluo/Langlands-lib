@@ -1,6 +1,6 @@
 # Canonical character regions on the literal supplied Levi subgroup
 
-Worker 200. This is an internal, derived adapter between the canonical
+This is an internal, derived adapter between the canonical
 identity-test rational points of a specified Levi scheme and their literal
 subgroup in the ambient point group. It composes the existing represented
 closed-subgroup point homeomorphism, full-family unramified-character

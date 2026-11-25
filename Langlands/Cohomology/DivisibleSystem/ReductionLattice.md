@@ -1,18 +1,18 @@
 # Harris's stable coefficient lattices as `ℓ`-divisible systems
 
-Author: Worker 61. Built on the published modules
+Built on the published modules
 `Langlands.Cohomology.DivisibleSystem.ReductionAdic` (`reductionCompIso`,
 `map_reductionπ_reductionCompIso_hom`, `reductionTowerCompIso`,
 `reductionAdicIso`, `reductionπ_reductionAdicIso_hom`,
 `powSMul_moduleCat_hom_apply`) and
-`Langlands.Shimura.Coefficients.HarrisLattice` (Worker 57: `harrisLattice`,
+`Langlands.Shimura.Coefficients.HarrisLattice` (`harrisLattice`,
 `harrisLattice_stable`, `harrisLatticeAction`, `HarrisCoefficientIntegers`).
 Through their imports it uses `powSMul` and `map_powSMul`
 (`Langlands.Cohomology.DivisibleSystem`), `reductionTower`, `reductionπ`,
 `reductionπ_map` and `reductionSystem`
-(`Langlands.Cohomology.DivisibleSystem.Reduction`), Worker 13's
+(`Langlands.Cohomology.DivisibleSystem.Reduction`),
 `Langlands.Coefficients.AdicSystem` (`quotientMap`,
-`quotientMap_transition`), and Worker 57's
+`quotientMap_transition`), and
 `Langlands.Shimura.Coefficients.Lattice` (`IsStable`, `latticeAction`,
 `torsionSystem`, `torsionAction`, `torsionQuotientMap`, `CoefficientIntegers`,
 `StableCoefficientLattice` with `carrier`, `stable`, `action` and `system`).
@@ -37,7 +37,7 @@ tower `reductionTower ℓ X`.
 
 `R : Type u` is a commutative ring, `G : Type v` a group, and `M` is in
 `Action (ModuleCat.{w} R) G`, an action of `G` on an `R`-module `M.V`. For an
-ideal `I` of `R`, Worker 57's published `torsionSystem I M` is the inverse
+ideal `I` of `R`, the published `torsionSystem I M` is the inverse
 system in `Action (ModuleCat R) G` whose level `m` is
 `torsionAction I M m`, the quotient `M.V / I ^ m M.V` with the induced action,
 and `torsionQuotientMap I M m : M ⟶ torsionAction I M m` is the equivariant
@@ -100,12 +100,12 @@ quotient map. Here always `I = (ℓ) = Ideal.span {(ℓ : R)}`.
 - `isUnit_natCast_of_ratAlgebra ℓ K`: a nonzero natural number is a unit in
   every `ℚ`-algebra `K`, as the image of a nonzero rational number.
 
-For the Harris section, `A` is a finite-dimensional `ℚ`-algebra with Worker
-13's involution `σ : AlgebraInvolution ℚ A`, `L` a number field, `W` an
+For the Harris section, `A` is a finite-dimensional `ℚ`-algebra with an
+involution `σ : AlgebraInvolution ℚ A`, `L` a number field, `W` an
 `L`-module and `ρ` an algebraic representation of `σ.baseChange L` on `W`, as
 in the published `HarrisLattice`; `p` is a finite place of `ℚ` and `ℓ` a
 nonzero natural number (`[NeZero ℓ]`). With `W` finite over `L` and a compact
-open level `U` of `σ.FiniteAdelicPoints`, Worker 57's `harrisLattice ρ p U` is
+open level `U` of `σ.FiniteAdelicPoints`, `harrisLattice ρ p U` is
 a submodule over `HarrisCoefficientIntegers L p`, the product of the
 valuation rings at the places of `L` above `p`, of Harris's coefficient module
 `(L ⊗_ℚ ℚ_p) ⊗_L W`; it is a full lattice for `L ⊗_ℚ ℚ_p` and stable under the
@@ -125,7 +125,7 @@ action `ρ.harrisAdelic p` of the subgroup `U.subgroup`.
 ## One place of the coefficient field
 
 Here `l` is a finite place of `L` above `p`, `U` a subgroup of
-`σ.FiniteAdelicPoints`, and `Λ` is Worker 57's
+`σ.FiniteAdelicPoints`, and `Λ` is a
 `StableCoefficientLattice ρ p l U`: a full lattice over the valuation ring
 `CoefficientIntegers l` in `L_l ⊗_L W`, where `L_l` is the completion
 `FiniteCompletion L l`, stable under `U`.
@@ -146,7 +146,7 @@ Here `l` is a finite place of `L` above `p`, `U` a subgroup of
 ## Provenance and interpretation
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
-J. Math. Kyoto Univ. 39-2 (1999) (Worker 61 read the rendered scanned pages):
+J. Math. Kyoto Univ. 39-2 (1999) (read in the rendered scanned pages):
 
 - §3, printed p.306 (one-based PDF page 8): "`L_v = L ⊗_ℚ ℚ_v`" for a place
   `v` of `ℚ`, so `L_ℓ` is in general a finite product of finite extensions of
@@ -167,7 +167,7 @@ coefficients is the place `ℓ` of `ℚ`; here `p` is any finite place of `ℚ` 
 `ℓ` any nonzero natural number, and the constructions do not require `p` to
 be the place of `ℓ`. (If `ℓ` is a unit in the coefficient ring, every level
 `m ≥ 1` is zero; this remark is not formalized.) Harris's level `K_ℓ` and
-coefficient ring `𝒪` are represented by Worker 57's level `U` and
+coefficient ring `𝒪` are represented by the level `U` and
 `HarrisCoefficientIntegers L p`, as in the published `HarrisLattice`; this
 module adds no modelling choice beyond taking the ideal `(ℓ)`.
 
@@ -185,7 +185,7 @@ proofs, are ours. The module is derived.
 
 The module compares the cokernel towers with the published quotient towers
 and builds `ℓ`-divisible systems from the published lattices; it does not
-construct lattices or prove their existence (Worker 57's `harrisLattice`
+construct lattices or prove their existence (the published `harrisLattice`
 supplies one). `stableLatticeReductionSystem` treats one place `l` of `L`;
 the reductions of `harrisLattice` are not compared with the product of those
 at the places above `p`. The module does not construct the sheaves `𝓛̃_m` or

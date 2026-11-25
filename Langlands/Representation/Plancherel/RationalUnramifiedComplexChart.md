@@ -1,13 +1,11 @@
 # Basis charts on actual unramified characters (Renard V.3.20)
 
-Author: Worker 4.
-
 This file gives the group `X(G)` of unramified characters of `G(F)` a single global complex
 chart. It is the chart determined by an integer basis of the lattice `Λ(G)`. It also names the
 inclusion of the unitary subgroup `Im X(G)` in `X(G)`. These are the objects needed to state
 the remaining assertions of Renard V.3.20: that `X(G)` is a complex torus and that `Im X(G)` is
-a real submanifold of it. Those assertions are not made here; they belong to a separate statement
-unit. This file contains definitions and the facts their construction needs: that the basis
+a real submanifold of it. Those assertions are not made here; they are stated in the separate
+module `RationalUnramifiedComplexTorusStatement`. This file contains definitions and the facts their construction needs: that the basis
 evaluation is an open embedding, and some evaluation lemmas.
 
 ## Sources and provenance
@@ -33,8 +31,9 @@ values of a character on a basis of the lattice `Λ(M)`. The same identification
 quoted proof of surjectivity uses ("les valeurs prises sur une base de ce réseau"). The chart
 depends on the basis. A change of basis acts on the coordinates by a monomial map with integer
 exponents, which is holomorphic with holomorphic inverse on `(ℂ×)^r`. That the resulting complex
-structure does not depend on the basis is therefore a statement to be proved; it is part of the
-planned statement unit, not of this file. Provenance: derived. The definitions are this file's
+structure does not depend on the basis is therefore a statement to be proved; it is
+`RationalUnramifiedBasisChartIndependenceStatement` in `RationalUnramifiedComplexTorusStatement`,
+not part of this file. Provenance: derived. The definitions are this file's
 encoding of the source's implicit structure, built from published Library objects.
 
 ## Actual objects and hypotheses
@@ -143,7 +142,10 @@ This file proves no statement about the complex or real structure beyond the ope
 property needed to define the chart. In particular it does not assert that multiplication is
 holomorphic, that the chart is independent of the basis, that the complex exponential
 `𝔞*_ℂ → X(G)` is a local biholomorphism, or that `Im X(G)` is a real submanifold isomorphic to
-`i𝔞*/(2iπ/ln q)R` as a Lie group. These are the assertions of the planned statement unit. The
+`i𝔞*/(2iπ/ln q)R` as a Lie group. These are the assertions of
+`RationalUnramifiedComplexTorusStatement`, proved by `rationalUnramifiedComplexTorus` in
+`RationalUnramifiedComplexTorusProof`, except the Lie group isomorphism with
+`i𝔞*/(2iπ/ln q)R`, which that statement does not include. The
 topological quotient descriptions `𝔞*_ℂ/(2iπ/ln q)R ≃ X(G)` and
 `i𝔞*/(2iπ/ln q)R ≃ Im X(G)` are already published statements
 (`RationalComplexParameterQuotientStatement` and `RationalImaginaryParameterQuotientStatement`).

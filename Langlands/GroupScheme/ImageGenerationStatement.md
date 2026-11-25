@@ -55,7 +55,9 @@ the positive power supplied by generation. It does not prove either geometric
 premise.
 
 `ImageGenerationSourceStatement` collects the remaining group-integrality,
-pointed-generation and envelope-stability obligations. Each is intended for a
-focused proof successor after publication. The special commutator weight bound
-and semigroup realization are outside these targets and stay with their
-existing consumer proof tasks.
+pointed-generation and envelope-stability obligations. The Library proves this
+conjunction as `imageGenerationSource` in `ImageGenerationSourceProof`. The special
+commutator weight bound and semigroup realization are outside these targets; they
+are `SemigroupCommutatorStatement` and `SemigroupRealizationStatement` in
+`Rational.WeightSemigroupStatement`, proved as `RelativeRoot.semigroupCommutator`
+and `RelativeRoot.semigroupRealization`.

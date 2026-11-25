@@ -1,6 +1,6 @@
 # Witnessed generators from Harris's automorphic induction
 
-Author: Worker 5134. Module `Langlands.Global.Arithmetic.HenniartInducedGenerator`. It is
+Module `Langlands.Global.Arithmetic.HenniartInducedGenerator`. It is
 a helper for the reduction `HenniartGlobalizationReductionStatement`
 (`Langlands.Global.Arithmetic.HenniartGlobalizationReduction`) of
 `HenniartGlobalizationStatement` (Henniart 2000, §3.4). It contains no definitions.
@@ -45,7 +45,9 @@ Hypotheses: the published propositions `LocalRelativeWeilMapExistenceStatement` 
 `CuspidalAllLocalIrreduciblePresentationExistenceStatement` (`hcalip`),
 `AssociatedCentralCharacterStatement` (`hacc`), `AssociatedSupercuspidalInductionStatement`
 (`hasi`) and `LocalTransferReciprocityStatement` (`htransfer`). `hlrm` and `hcalip` are
-now proved in the Library; the reduction module supplies those proofs.
+proved in the Library; the reduction module supplies those proofs. `hlir`, `hacc` and
+`htransfer` are also proved in the Library (see the Markdown of
+`HenniartGlobalizationReduction`) and stay hypotheses here.
 
 Proof.
 

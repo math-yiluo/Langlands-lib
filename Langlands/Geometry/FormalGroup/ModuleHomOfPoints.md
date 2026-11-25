@@ -1,6 +1,6 @@
 # Formal module homomorphisms from actual point maps
 
-This internal construction, implemented by Worker 921, upgrades the
+This internal construction upgrades the
 nilpotent-point reconstruction to formal O-module homomorphisms. O is
 a commutative ring, R is a commutative O-algebra, their universes may
 differ, and both coordinate types are finite. Test R-algebras have the

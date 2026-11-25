@@ -1,9 +1,8 @@
 # Exactness of the actual dynamic normalized induction
 
-Authors: Worker 717, with Worker 117 (who proposed the statement), for task
-174d2de0-fa21-41b4-b091-f1b86481790b. This module declares one proposition
+This module declares one proposition
 definition and no theorem. It does not prove the proposition. The proof is
-a separate unit, in the planned module
+the separate theorem `dynamicInductionExactness` in the module
 `Langlands.Representation.Aubert.General.DynamicInductionExactness`.
 
 ## The declaration
@@ -30,7 +29,7 @@ Only the conclusion differs. Here it is
 
 `SmoothRep.PreservesFiniteLengthShortExact (normalizedInductionFunctor.{u, uV} (dynamic_isSemidirectDecomposition χ (Over.mk (𝟙 (Spec (CommRingCat.of F))))) hU)`.
 
-The functor is the same as in the target: Worker 23's normalized induction
+The functor is the same as in the target: the normalized induction
 `SmoothRep.{0, u, uV} ℂ Z(χ)(F) ⥤ SmoothRep.{0, u, max u uV} ℂ G(F)` of
 the published decomposition `P(χ)(F) = Z(χ)(F) ⋉ U(χ)(F)`
 (`Aubert/General/Parabolic`, `Aubert/General/DynamicParabolic`). It inflates
@@ -82,9 +81,10 @@ For the pinned topology on `G(F)` each input is a true fact.
    morphism of schemes `P(χ) → Z(χ)` (CGP, Lemma 2.1.5 and Proposition
    2.1.8(2)), and the point topology is functorial, so it is continuous.
 
-The expected proof derives 3 and 4 for this topology and then applies the
-published theorem. At this module's Library base, the point-set forms of
-inputs 3 and 4 for the pinned topology are not yet proved.
+The proof derives 3 and 4 for this topology and then applies the
+published theorem. The point-set forms of inputs 3 and 4 for the pinned
+topology are proved in `DynamicInductionExactness`, as
+`isClosed_dynamic_parabolic` and `continuous_dynamic_projection`.
 
 ## Provenance
 
@@ -100,24 +100,26 @@ This module specializes that exactness in three ways.
   reductive `G` the subgroups `P(χ)` are exactly the parabolic subgroups
   (CGP, Proposition 2.2.9), as the Markdown of
   `Aubert/General/PrerequisiteStatements` explains.
-- The functor is Worker 23's normalization, not Renard's. When `U(χ)(F)` is
+- The functor uses the normalization of `Aubert/General/Parabolic`, not
+  Renard's. When `U(χ)(F)` is
   unimodular the two differ by a twist by a character of the Levi subgroup
   (see `Aubert/General/PrerequisiteStatements.md`, item "Normalization").
   Exactness does not depend on the twist: the published theorem above proves
-  it for Worker 23's normalization directly.
+  it for that normalization directly.
 - Exactness is asserted only for sequences of finite-length objects. That
   is what `SmoothRep.FiniteLengthInductionStatement` consumes. Renard proves
   exactness on all sequences, and the published
   `normalizedInductionFunctor_map_isShortExact` has that stronger form
   under inputs 1-4.
 
-## Relation to the task
+## Relation to the finite-length target
 
-The exact target of task 174d2de0 is
+The finite-length target is
 `DynamicInductionFiniteLengthStatement`, which is `PreservesFiniteLength`
 of the same functor with the same binders. This proposition is one input of
-the planned reduction through `SmoothRep.FiniteLengthInductionStatement`
-(module `Smooth/FiniteLengthInductionStatement`): exactness on finite-length
+the reduction through `SmoothRep.FiniteLengthInductionStatement`
+(module `Smooth/FiniteLengthInductionStatement`, proved as
+`finiteLengthInduction` in `Smooth/FiniteLengthInduction`): exactness on finite-length
 sequences together with finite length of the induced representations of
 irreducible representations of `Z(χ)(F)` gives the target. The second input
 is the Lemma of Renard VI.6.2 (printed page 178), and this module does not

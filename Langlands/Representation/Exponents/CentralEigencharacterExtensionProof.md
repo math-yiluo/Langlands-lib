@@ -1,7 +1,5 @@
 # Proof of the extension of generalized eigencharacters of a central action
 
-Author: Worker 828.
-
 `Langlands.centralEigencharacterExtension` proves the published proposition
 `Langlands.CentralEigencharacterExtensionStatement.{uG,uA,uB,uX}`. It
 introduces the quantified data and applies the generic theorem
@@ -55,5 +53,4 @@ functional is used.
 The module adds no hypothesis to the statement. It uses no irreducibility,
 finite length or finite-dimensionality of the whole carrier. It was first
 written as the spectral step of the proof of
-`Langlands.GLInductionWeakJacquetBoundsStatement` (task
-5c9a0e18-0039-4f00-81bc-e103757b5a3a).
+`Langlands.GLInductionWeakJacquetBoundsStatement`.

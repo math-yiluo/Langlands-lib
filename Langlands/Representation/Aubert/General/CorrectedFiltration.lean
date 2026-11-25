@@ -5,7 +5,7 @@ import Langlands.Group.RelativeWeylMinimalUniqueProof
 /-!
 # The corrected support filtration of the general Aubert complex
 
-For the terms `E_J = i_J r_J E` of Worker 194's standard complex and a source
+For the terms `E_J = i_J r_J E` of the standard complex and a source
 index `I`, this module constructs the support filtration of the normalized
 Jacquet modules `r_I(E_J)` used in the 1996 erratum (pp. 4687–4689), with the
 two-sided modified supports of Ban–Jantzen (2016, Section 4):

@@ -1,7 +1,5 @@
 # Higher derivatives of left mixed products
 
-Author: Worker 1190.
-
 This internal helper supplies the positive-rank induction and the all-rank
 isomorphism conjunct of `LeftMixedProductDerivative`, with
 `hPhi : MirabolicProductMinus.LeftPhiCompatibility.{uF,uV} F T` explicit.

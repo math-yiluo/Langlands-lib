@@ -1,7 +1,7 @@
 # Getz–Hahn Chapter 9: cuspidal proof dependencies and source boundaries
 
 This note records the source route for the cuspidal part of the general
-automorphic library, task `34b81620-20d7-4059-9b08-6bedd1c1c029`.
+automorphic library.
 It supplements the [program coverage ledger](global-program-coverage.md).
 It is a reading and dependency note, not a proof of closedness, trace class,
 rapid decay, or spectral existence.
@@ -69,19 +69,19 @@ positive **left** modulus `sqrt(A A*)`; it must not silently be replaced by
 linear in its second argument gives the complex diagonal
 `inner ℂ (b i) (A (b i))`.
 
-As checked against Library base `0ebc0efd383ff160084af3b33ab2b7806f7a1dde`
-on 2 November 2026, Worker 116 has staged the following focused units:
+At Library commit `0ebc0efd383ff160084af3b33ab2b7806f7a1dde` (2 November 2026) the following
+modules were prepared outside the Library; both are in the Library now:
 
-| Lean module and declaration | Exact scope | Submission status at this check |
+| Lean module and declaration | Exact scope | Status |
 | --- | --- | --- |
-| `Langlands.Analysis.OperatorIdeals`: `IsHilbertSchmidt`, `leftModulus`, `IsTraceClass`, `hilbertSchmidtNormIn`, `traceNormIn`, `traceIn` in namespace `Langlands.Analysis.OperatorIdeals` | Actual bounded operators, existential Hilbert-basis summability, CFC left square root, and explicitly basis-indexed sums | Candidate `8283e313-e66e-48a7-9b7a-117328293c44`; machine validation passed, independent semantic review and publication pending. |
-| `Langlands.Analysis.HilbertSchmidtBasisStatement`: `Langlands.Analysis.OperatorIdeals.HilbertSchmidtBasisIndependenceStatement` | Any two domain Hilbert bases give equivalent squared-image summability and, when summable, equal real sums | Candidate `4a7c53eb-5adb-4834-8c28-3c8e658221ec`; development compilation, proposition inspection and official machine validation passed, independent semantic review and publication pending. |
+| `Langlands.Analysis.OperatorIdeals`: `IsHilbertSchmidt`, `leftModulus`, `IsTraceClass`, `hilbertSchmidtNormIn`, `traceNormIn`, `traceIn` in namespace `Langlands.Analysis.OperatorIdeals` | Actual bounded operators, existential Hilbert-basis summability, CFC left square root, and explicitly basis-indexed sums | In the Library (`Langlands/Analysis/OperatorIdeals.lean`). |
+| `Langlands.Analysis.HilbertSchmidtBasisStatement`: `Langlands.Analysis.OperatorIdeals.HilbertSchmidtBasisIndependenceStatement` | Any two domain Hilbert bases give equivalent squared-image summability and, when summable, equal real sums | In the Library; proved as `hilbertSchmidtBasisIndependence` (`HilbertSchmidtBasisProof`). |
 
-Neither row is counted here as an accepted-public theorem. The second
+At that commit neither row was a theorem of the Library. The second
 module imports Mathlib directly and states the prerequisite in basis sums.
 Its extension from separable endomorphisms to arbitrary-index rectangular
-operators is explicitly derived content. After the statement is published,
-its proof belongs in an exact-target proof child. Trace independence,
+operators is explicitly derived content. The statement is now in the Library
+and is proved by `hilbertSchmidtBasisIndependence` (`HilbertSchmidtBasisProof`). Trace independence,
 absolute convergence of the trace diagonal, ideal laws, Hilbert–Schmidt
 composition into trace class, and compactness remain separate obligations.
 
@@ -182,7 +182,7 @@ be checked in the rendered formulas when implementing the period proof.
 The §9.5 errata corrects the claim that `R(f)φ ≠ 0` makes the input
 `φ` fixed by `K`. The operator preserves the `K`-fixed cusp space
 and maps the entire cusp space into it. Support control applies to
-this image. Although the present task's primary scope is number fields,
+this image. Although the present program's primary scope is number fields,
 the function-field argument must retain this corrected direction if reused.
 
 Theorem 9.7.3 supplies several conclusions: dense embedding of algebraic

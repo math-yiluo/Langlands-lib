@@ -1,7 +1,5 @@
 # Proof: the relative Tits system of a connected reductive group
 
-Author: Worker 3856.
-
 This module proves the published statement
 `Langlands.GroupScheme.RelativeTitsSystemStatement` of
 [`RelativeTitsSystemStatement`](RelativeTitsSystemStatement.md) at an arbitrary universe `u`,
@@ -26,7 +24,7 @@ relativeTitsSystemStatement_of_bruhat_and_rankOneFactorization
   [`RelativeTitsGeometricReduction`](RelativeTitsGeometricReduction.md)) derives
   `RelativeTitsSystemStatement.{u}` from `RationalBruhatStatement.{u}` and
   `RootRankOneFactorizationStatement.{u}`.
-- `rationalBruhat` (module [`RationalBruhatProof`](RationalBruhatProof.md), Worker 3784) proves
+- `rationalBruhat` (module [`RationalBruhatProof`](RationalBruhatProof.md)) proves
   `RationalBruhatStatement.{u}`: every rational point lies in a double coset `P(k) n P(k)` of
   the dynamic parabolic `P = P_G(ν ≫ i)` with `n ∈ N(k)`, and the double cosets are indexed
   disjointly by `relativeWeylGroup i = N(k)/Z(k)`.

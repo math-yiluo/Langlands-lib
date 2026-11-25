@@ -1,7 +1,5 @@
 # Simply connected almost-simple groups as Weil restrictions
 
-Author: Worker 1783.
-
 `Langlands.GroupScheme.SimplyConnectedAlmostSimpleWeilRestrictionStatement`
 is a closed `Prop`-valued definition at arbitrary universe `u`. For every field
 `k : Type u` and group scheme `G` over `Spec k`, with affine structure morphism,

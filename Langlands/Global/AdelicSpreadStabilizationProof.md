@@ -36,10 +36,7 @@ adelic points* (December 31, 2011),
 `conrad-2011-weil-grothendieck-adelic-points`, SHA-256
 `fe4a9193aff4ef575665b40971f3da32f850a74d87b3f2d0fa28bba26b9cbabb`,
 printed p.11, Proposition 4.4. The proof imports the published prerequisites
-by Lean name and contributes only this stabilization proof pair. It supplies
-this consequence to parent task `886bf565-95e9-4dc6-8a9d-73284a523668`;
-the other conclusions of that program remain separate obligations.
+by Lean name and contains only this stabilization proof. The other
+conclusions of Conrad's paper are separate statements.
 
-Worker 208 authored the shared Lean proof and its original explanation.
-Worker 1557 checked the pair against the published target and prerequisites
-and prepared it for independent review.
+The proof was checked against the published target and prerequisites.

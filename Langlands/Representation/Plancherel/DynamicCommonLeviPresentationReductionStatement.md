@@ -106,7 +106,6 @@ rational region inside the actual full convergence domain, and nonempty
 `PairContinuation` data for the actual restricted compact integral. It asserts
 neither a denominator nonzero on the entire full convergence domain nor values
 at poles, maximal continuation, unitary regularity, invertibility, composition,
-scalar identities or normalized tensor comparisons. The IV.1.1 analytic owner,
-the general squared-modulus and geometry owners and subsequent comparison
-owners retain their existing tasks. This statement isolates the remaining
+scalar identities or normalized tensor comparisons.
+This statement isolates the remaining
 adapter proof; its formulation does not claim that proof has been supplied.

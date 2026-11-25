@@ -1,7 +1,5 @@
 # The all-test centralizer of a section of a group scheme
 
-Worker 1296.
-
 This helper module defines the centralizer of a single section of a group
 scheme as a subgroup functor, shows that it is closed and representable over a
 separated group, and records how it behaves under base change and under

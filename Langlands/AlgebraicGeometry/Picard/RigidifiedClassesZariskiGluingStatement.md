@@ -3,7 +3,8 @@
 `Langlands.AbelianScheme.RigidifiedClassesZariskiGluingStatement.{u}` states
 the gluing half of the Zariski sheaf property for actual rigidified
 isomorphism classes on an abelian scheme. It defines a proposition only;
-the proof is a separate obligation.
+the proof is `rigidifiedClassesZariskiGluing` in
+`RigidifiedClassesZariskiGluingProof`.
 
 ## Exact interface
 
@@ -86,7 +87,7 @@ class represented by an actual global rigidified family. The interface
 is deliberately parallel to the published separatedness statement.
 It asserts no representability or universality theorem itself.
 
-## Remaining proof obligations
+## Proof obligations
 
 Choose representatives of the local classes. Equality of their classes
 on each overlap supplies only some rigidified isomorphism there.
@@ -104,4 +105,5 @@ between supplied objects; they do not alone construct this object.
 One must also glue its rigidification, verify the local rigidified
 identifications and pass to the actual quotient class `q₀`.
 This construction must retain all the schemes and covers quantified
-above. These are obligations of the separate exact-target proof task.
+above. These are obligations of the proof of this exact statement,
+which `RigidifiedClassesZariskiGluingProof` carries out.

@@ -111,7 +111,7 @@ theorem pullbackActionChainMap_cohomology (F : EquivariantSheaf R ρ) (g : G)
 /-- The canonical comparison with right-derived sections intertwines the
 existing translation action with geometric pullback and the coefficient map. -/
 theorem cohomologyIso_comm (F : EquivariantSheaf R ρ) (q : ℕ) (g : G) :
-    TranslationAction.homologyAction (sectionsTop R) F (injectiveResolution F.obj) q g ≫
+    (TranslationAction.homologyAction (sectionsTop R) F (injectiveResolution F.obj) q g).asHom ≫
         (cohomologyIso R ρ F q).hom =
       (cohomologyIso R ρ F q).hom ≫
         cohomologyMapWithCoefficients (aut ρ g).hom R q (F.act g) := by
@@ -145,10 +145,10 @@ def pullbackCohomologyAction (F : EquivariantSheaf R ρ) (q : ℕ) :
 /-- Each group element acts by geometric pullback followed by its coefficient
 structure map. -/
 theorem pullbackCohomologyAction_ρ (F : EquivariantSheaf R ρ) (q : ℕ) (g : G) :
-    (pullbackCohomologyAction R ρ F q).ρ g =
+    ((pullbackCohomologyAction R ρ F q).ρ g).asHom =
       cohomologyMapWithCoefficients (aut ρ g).hom R q (F.act g) := by
   change (cohomologyIso R ρ F q).inv ≫
-    (TranslationAction.homologyAction (sectionsTop R) F (injectiveResolution F.obj) q g ≫
+    ((TranslationAction.homologyAction (sectionsTop R) F (injectiveResolution F.obj) q g).asHom ≫
       (cohomologyIso R ρ F q).hom) = _
   rw [cohomologyIso_comm]
   simp only [Iso.inv_hom_id_assoc]

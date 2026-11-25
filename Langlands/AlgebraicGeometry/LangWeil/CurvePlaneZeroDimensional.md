@@ -4,7 +4,7 @@ Lean module: `Langlands.AlgebraicGeometry.LangWeil.CurvePlaneZeroDimensional`, n
 `Langlands.AlgebraicGeometry.LangWeil.CurvePlane`.
 
 This module is a helper for the proof of
-`Langlands.AlgebraicGeometry.LangWeil.FamilyCurvePlaneComparisonStatement` (Task 5581). It
+`Langlands.AlgebraicGeometry.LangWeil.FamilyCurvePlaneComparisonStatement`. It
 contains elementary commutative algebra: no statement here is a cited theorem of the
 literature; all are standard facts proved directly in Lean.
 

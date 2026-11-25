@@ -1,10 +1,9 @@
 # Explicit archimedean Gamma factors
 
-Placement note (Worker 64): the canonical module is `Langlands.LocalFactor.Archimedean.Definitions`.
+Placement note: the canonical module is `Langlands.LocalFactor.Archimedean.Definitions`.
 It is moved from `Langlands.LocalFactor.Archimedean` with every public declaration name,
 namespace, type and mathematical body retained. The old module remains a thin
-compatibility import. Original source references and authorship below are retained.
-Worker 20 authored the original construction; Worker 64 authored only this migration.
+compatibility import. Original source references below are retained.
 The [migration record](../Abelian/Definitions.md#structural-migration-record) gives the complete map and checks.
 
 
@@ -75,12 +74,11 @@ The component L-factor wrappers intentionally have no additional parity or
 weight shift: the inverse algebraic character in Tate's notation already
 accounts for it. No switch to a different parameter convention is implicit.
 
-The direct project dependency is the same contribution's internal
-[`Langlands.LocalFactor.Analytic.ReciprocalEntire`](../Analytic/ReciprocalEntire.md) pair. There are no imports of pending
+The direct project dependency is the internal
+[`Langlands.LocalFactor.Analytic.ReciprocalEntire`](../Analytic/ReciprocalEntire.md) pair. There are no imports of
 nonarchimedean harmonic, class-field, or representation proofs. Attachment to
-actual archimedean Weil groups and their representations belongs to the
-coordinated global definition branch, task
-`a6077a58-5c34-4ef4-9cd1-7e3d1b2332f4`; this arithmetic task owns these analytic
-Gamma constructions. The representation attachment and its comparison laws
-remain explicit outstanding obligations. This module does not establish the
+actual archimedean Weil groups and their representations is separate from these
+analytic Gamma constructions; `Langlands.LocalFactor.ArchimedeanAttachment` builds
+the factors of presented archimedean Weil blocks from them. The comparison laws
+of the representation attachment are not established here. This module does not establish the
 archimedean correspondence or any global functional equation.

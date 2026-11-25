@@ -1,6 +1,6 @@
 # Actual rational dynamic measures at the common compact scale
 
-Worker 200. This is a derived specialization of the published dynamic
+This is a derived specialization of the published dynamic
 subgroups, rational-point topology, compact-open containment, and existing
 generic source Haar constructions. It compares their original objects and measures.
 

@@ -1,6 +1,6 @@
 # Reduction of the finite-field maximal-torus transporter to the central-cocharacter case
 
-Worker 1387. This module proves the conditional theorem
+This module proves the conditional theorem
 `finiteFieldMaximalTorusTransporter_of` and two supporting lemmas, all in
 `Langlands.GroupScheme`.
 

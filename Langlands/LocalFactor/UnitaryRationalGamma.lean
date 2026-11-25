@@ -135,7 +135,7 @@ theorem IsArithmeticPairGammaFactor.order_nonpos_of_isUnitary
 
 end Langlands.Correspondence
 
-namespace Langlands.ClassField.Global.RelativeWeilGroup
+namespace Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 
 open Langlands.Global Langlands.Global.AdelicFunctoriality Langlands.Global.CompletionPadic
 open LocalFactor LocalFactor.CommonClosure
@@ -186,4 +186,4 @@ theorem localSelfPairGamma_real_positive_order_only_zero
   exact (not_lt_of_ge
     (localSelfPairGamma_order_nonpos ι hS hR t (by simpa using ht0))) ht
 
-end Langlands.ClassField.Global.RelativeWeilGroup
+end Langlands.ClassFieldTheory.Global.RelativeWeilGroup

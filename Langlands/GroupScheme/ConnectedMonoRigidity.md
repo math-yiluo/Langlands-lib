@@ -3,7 +3,8 @@
 This internal construction proves that a monomorphic homomorphism between
 smooth affine group families with geometrically connected fibres over a
 connected scheme is an isomorphism if it is so on one supplied field fibre.
-It is intended for the global dynamic Borel presentation in Task 6490.
+It is intended for the global dynamic Borel presentation in
+`Langlands.GroupScheme.Dynamic.ConnectedPresentation`.
 
 The existing open isomorphism locus detects invertibility on every actual
 field fibre: a field-fibre isomorphism extends to a base open by the

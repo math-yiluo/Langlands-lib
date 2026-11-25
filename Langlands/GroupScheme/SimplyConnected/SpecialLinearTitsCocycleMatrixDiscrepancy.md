@@ -4,7 +4,7 @@ This internal helper identifies the Galois discrepancy of an actual
 base-change isomorphism with its automorphism of the special-linear model
 over the extension field. It uses the published cover-point and
 special-linear model comparisons, together with the categorical discrepancy
-construction of Worker 243.
+construction `GaloisDiscrepancy.groupIso` of `Rational.TorusCompatibleGaloisDiscrepancy`.
 
 `matrixDiscrepancyIso E σ` transports `GaloisDiscrepancy.groupIso E σ`
 through `SpecialLinear.baseChangeModelIso`. It is an actual automorphism

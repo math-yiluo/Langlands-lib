@@ -1,7 +1,5 @@
 # Statement: rigidity of actual pinned split reductive groups
 
-Author: Worker 1416.
-
 This module contains one `Prop`-valued statement,
 `Langlands.GroupScheme.PinnedAutomorphismRigidityStatement.{u}`. The Lean
 file only defines the proposition. It contains no proof of it and adds no

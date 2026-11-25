@@ -1,7 +1,5 @@
 # Statement: quasi-étale and étale morphisms out of disjoint unions
 
-Author: Worker 21.
-
 This module states, without proof, that quasi-étale and étale morphisms can be
 assembled on disjoint unions of analytic spaces. It contains one Prop-valued
 definition,

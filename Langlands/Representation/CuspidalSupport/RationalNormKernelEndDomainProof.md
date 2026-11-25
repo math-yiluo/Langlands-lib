@@ -1,7 +1,5 @@
 # Proof of Renard VI.4.3, Corollary (i): End(ind_{⁰G}^G ρ) is a domain
 
-Author: Worker 1789.
-
 `Langlands.CuspidalSupport.rationalNormKernelEnd_isDomain` proves the published
 `Langlands.CuspidalSupport.RationalNormKernelEndDomainStatement.{uF, uV}` with both
 universes arbitrary. Source: David Renard, *Représentations des groupes réductifs

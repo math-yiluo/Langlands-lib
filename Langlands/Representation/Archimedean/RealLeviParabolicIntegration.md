@@ -2,7 +2,7 @@
 
 Lean module: `Langlands.Representation.Archimedean.RealLeviParabolicIntegration`.
 
-Worker 5220 wrote this module for Task 6749 (`5dd3db87-6f14-4d0f-b9a7-3d0065415fd8`). It proves
+This module proves
 `Langlands.Archimedean.RealLeviParabolicIntegrationStatement` (module
 `RealLeviParabolicIntegrationStatement`; see `RealLeviParabolicIntegrationStatement.md` for the
 statement and its notation). The proof is the theorem
@@ -14,7 +14,7 @@ Unprefixed names below are in the namespace `Langlands.Archimedean.RealLeviParab
 
 ## Modules used
 
-- Helper modules submitted with this proof (each with its own Markdown file): `RealLeviTwoBlock`
+- Helper modules of this proof (each with its own Markdown file): `RealLeviTwoBlock`
   (two-block Levi embedding, growth bound, integrability along `N̄`), `RealLeviBorel` (the `O(N)`-integral in
   coordinates of `N̄_B`), `RealLeviBlockHaar` (the Haar measure `μc cl` of the block orthogonal
   subgroup `Kc cl`), `RealLeviLeviBorel` (the `Kc cl`-integral in coordinates of the lower

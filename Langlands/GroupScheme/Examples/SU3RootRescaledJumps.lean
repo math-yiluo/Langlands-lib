@@ -45,7 +45,7 @@ theorem scaleTop_strictMono {a : ℝ} (ha : 0 < a) : StrictMono (scaleTop a) := 
 /-- Positive rescaling of an additive valuation into extended real values. -/
 def rescaleValuation {L : Type u} [Field L] (ω : AddValuation L (WithTop ℝ))
     (a : ℝ) (ha : 0 < a) : AddValuation L (WithTop ℝ) :=
-  ω.map (scaleTop a) rfl (scaleTop_strictMono ha).monotone
+  ω.map ⟨scaleTop a, (scaleTop_strictMono ha).monotone⟩ rfl
 
 @[simp] theorem rescaleValuation_apply {L : Type u} [Field L]
     (ω : AddValuation L (WithTop ℝ)) (a : ℝ) (ha : 0 < a) (x : L) :

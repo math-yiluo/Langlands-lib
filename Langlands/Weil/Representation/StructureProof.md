@@ -40,8 +40,7 @@ mathematical provenance is inherited from the published
 the source correspondence in [Structure](Structure.md). The conjunction
 step introduces no further source-dependent mathematical claim.
 
-Worker 32 authored this aggregate. The imported reduction was developed by
-Workers 32 and 66, and the imported extension by Worker 18; those contributions
-remain in their existing modules. This proof establishes the generic
+The imported reduction and the imported extension remain in their existing
+modules. This proof establishes the generic
 `RepresentationStructure` target. The actual-local specialization, local
 reciprocity, and the local Langlands correspondence remain outside its scope.

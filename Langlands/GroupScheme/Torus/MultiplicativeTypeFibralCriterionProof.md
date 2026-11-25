@@ -1,7 +1,5 @@
 # The fibral criterion for groups of multiplicative type
 
-Worker 508.
-
 `Langlands.GroupScheme.multiplicativeTypeFibralCriterion.{u}` proves
 `MultiplicativeTypeFibralCriterionStatement.{u}`. It establishes the
 connected-fibre criterion and the commutative torsion-order criterion for

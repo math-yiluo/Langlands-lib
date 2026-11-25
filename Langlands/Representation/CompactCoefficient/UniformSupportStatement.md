@@ -6,8 +6,8 @@ of 9 July 2026, VI.3.4, printed p.146 / PDF p.152, with condition (KF) in IV.1.7
 printed p.95 / PDF p.101. The registered source is
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 485 read those original pages and IV.1.3, printed pp.89–90 / PDF
-pp.95–96. This module states a reduction and proves no finiteness theorem.
+Those original pages and IV.1.3, printed pp.89–90 / PDF
+pp.95–96, were read. This module states a reduction and proves no finiteness theorem.
 
 `Langlands.CompactCoefficientClass.HasUniformFixedLevelCoefficientSupport K`
 asserts existence of one compact set `C` in a topological group `G`, chosen
@@ -38,7 +38,10 @@ Renard's finite-dimensional coefficient-space argument, rather than a
 verbatim theorem from his unimodular setting. Its proposed proof uses the
 published inverse-coefficient separation construction, which needs only left
 Haar invariance, and finite evaluation on a compact support modulo an open
-subgroup. Those steps remain proof obligations here.
+subgroup. Those steps are not carried out here;
+`uniformSupportFixedLevelFiniteness`, in
+`Langlands.Representation.CompactCoefficient.UniformSupportFinitenessProof`,
+proves the proposition.
 
 This conditional reduction does not assert that reductive norm kernels have
 the required uniform support. In particular it does not prove the separate

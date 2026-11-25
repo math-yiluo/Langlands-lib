@@ -1,7 +1,5 @@
 # The actual shifted highest-product comparison
 
-Author: Worker 103.
-
 `Derivative.HighestProduct.shiftedHighestProductIso T ψ A B r s hr hs hA hB hrs`
 constructs an actual smooth isomorphism
 

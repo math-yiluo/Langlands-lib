@@ -1,7 +1,5 @@
 # Changes of base presentation for rational quotients
 
-Author: Worker 36.
-
 `RationalPresentation.transport` proves the separate
 `TransportStatement`: unique transport with prescribed base and coordinate
 formulas, and bounded equivalence transport compatible with spectrum maps.

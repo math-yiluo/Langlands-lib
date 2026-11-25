@@ -1,7 +1,5 @@
 # Transport of derived-torus witnesses between actual derived-subgroup inclusions
 
-Author: Worker 1464.
-
 This internal module supplies a comparison isomorphism and proved transport
 lemmas for the first existential layer of
 `SimplyConnectedDerivedCoverSplitTorusStatement`. It does not prove the

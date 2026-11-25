@@ -1,7 +1,5 @@
 # Geometric solvable radicals of connected reductive groups
 
-Author: Worker 1378.
-
 `ReductiveGeometricSolvableRadicalExistsStatement.{u}` is a proposition
 target over every field `k : Type u`. Given an actual group scheme `G`
 over `Spec k` with `IsConnectedReductive G`, it asserts the existence of

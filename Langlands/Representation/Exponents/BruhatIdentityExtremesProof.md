@@ -1,6 +1,6 @@
 # Proof that the identity double coset is Bruhat-extreme (Renard VII.3.1)
 
-Author: Worker 128. Module
+Module
 `Langlands.Representation.Exponents.BruhatIdentityExtremesProof`.
 
 The theorem `Langlands.Aubert.General.RepresentedParabolic.bruhatIdentityExtremes` has exactly

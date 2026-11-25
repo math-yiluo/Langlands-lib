@@ -1,8 +1,6 @@
 # Actual strong isomorphisms are full quasi-isomorphisms
 
-Author: Worker 208.
-
-This derived internal unit proves that inverse strong morphisms in the
+This internal module proves that inverse strong morphisms in the
 actual saturated category satisfy the full affinoid-test
 quasi-isomorphism property. The field, ambient-space and atlas-index
 universes `u, v, w` remain independent. `K` is a complete ultrametric

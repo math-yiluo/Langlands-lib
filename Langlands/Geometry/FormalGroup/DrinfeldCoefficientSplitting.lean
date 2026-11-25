@@ -20,7 +20,7 @@ variable {K D : Type u} [Field K] [ValuativeRel K] [TopologicalSpace K]
   [FiniteDimensional K D] [Algebra.IsCentral K D]
 variable {L : Type s} [Field L] [Algebra K L] {ι : L →ₐ[K] D}
 
-local instance : IsLocalHom (algebraMap 𝒪[K] (SubfieldIntegerRing K D ι)) :=
+private local instance : IsLocalHom (algebraMap 𝒪[K] (SubfieldIntegerRing K D ι)) :=
   subfieldIntegerAlgebra_isLocalHom ι
 
 variable {κ : Type u} [Field κ] [Algebra 𝒪[K] κ] [Algebra 𝓀[K] κ]

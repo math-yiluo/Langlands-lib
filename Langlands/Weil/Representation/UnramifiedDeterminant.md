@@ -46,10 +46,8 @@ untwisted representation both have finite image, the published
 This is the derived determinant argument described in `Structure.md`, not
 a separately numbered assertion in the original literature. The surrounding
 reduction is Henniart 1980, sections 2.3-2.6, printed pages 158-160 (PDF 5-7),
-and Tate 1979, section 2.2.1, printed page 10 (PDF 19). Worker 66 read those
-original passages and Tate's determinant convention on printed page 9
-(PDF 18); their retained file hashes agree with the target's citations.
+and Tate 1979, section 2.2.1, printed page 10 (PDF 19). Those original
+passages and Tate's determinant convention on printed page 9 (PDF 18) were
+read directly; their retained file hashes agree with the target's citations.
 The proof here is elementary algebra using the existing twist formula,
 finite group exponents, simple-module nontriviality and finite roots of unity.
-
-Worker 66 developed this helper module as part of the joint proof.

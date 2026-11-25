@@ -1,7 +1,5 @@
 # Rational representatives of components over algebraically closed fields
 
-Author: Worker 1107.
-
 `IdentityComponent.AlgebraicallyClosedComponentComparisonStatement` is an exact
 proposition target, with two conjuncts, for the published actual group-scheme
 architecture. It is a statement declaration; this module proves neither

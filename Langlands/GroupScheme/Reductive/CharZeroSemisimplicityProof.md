@@ -1,9 +1,5 @@
 # Proof of complete reducibility for reductive groups in characteristic zero
 
-Authors: Worker 1498 (group-side argument and assembly) and Worker 1429
-(complete reducibility of Jordan-closed linear Lie algebras, Weyl's theorem, and
-the stable-flag lemma).
-
 ## Statement proved
 
 `Langlands.GroupScheme.reductiveCharZeroSemisimplicityStatement` proves
@@ -30,9 +26,8 @@ of subrepresentations is complemented.
 
 ## Overall route
 
-The proof is a Lie-algebra argument. The group-only routes, through Levi
-decompositions or vector-group extensions, depend on statements that are not yet
-proved in the Library.
+The proof is a Lie-algebra argument, not one of the group-only routes, through Levi
+decompositions or vector-group extensions.
 
 - `CharZeroSemisimplicity.LieImage`: the tangent matrices of every representation
   are closed under commutators, through one bracket element `kernelBracket X Y`
@@ -50,13 +45,13 @@ proved in the Library.
 - `CharZeroSemisimplicity.NilpotentIdeal`: for a closed embedding `σ` of a group
   with trivial unipotent radical, a nilpotent family of tangent endomorphisms
   normalized by all tangent endomorphisms consists of zero tangent vectors. The
-  family gives a stable flag (Worker 1429's
-  `Langlands.Algebra.exists_stable_flag_of_isNilpotent`). In adapted coordinates
+  family gives a stable flag
+  (`Langlands.Algebra.exists_stable_flag_of_isNilpotent`). In adapted coordinates
   it defines a closed normal unipotent subgroup whose identity component must be
   trivial.
 - `CharZeroSemisimplicity.PairLieAlgebra`: the tangent Lie algebra of the pair
   `(σ, ρ)` acting on `(Fin N → k) × (n → k)` is Jordan-closed and has no nonzero
-  nilpotent ideal. By Worker 1429's
+  nilpotent ideal. By
   `Langlands.Algebra.complementedLattice_lieSubmodule_of_jordanClosed` (module
   `Langlands.Algebra.LinearLieSemisimplicity`, built on Weyl's theorem in
   `Langlands.Algebra.WeylCompleteReducibility`), its Lie submodules are

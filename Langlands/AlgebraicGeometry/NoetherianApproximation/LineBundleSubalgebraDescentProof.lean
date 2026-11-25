@@ -26,10 +26,10 @@ generated `A₀`-subalgebras of `A`. -/
 theorem exists_fg_isInvertible_nonempty_pullback_iso (T : FGIndex A₀ A) {Y : Scheme.{u}}
     (fY : Y ⟶ Spec (CommRingCat.of (FGStage T))) [QuasiCompact fY] [QuasiSeparated fY]
     (L : (pullback fY (Spec.map (CommRingCat.ofHom (fgToLimit T)))).Modules)
-    (hL : Scheme.Modules.IsInvertible L) :
+    (hL : Scheme.Modules.IsInvertibleFLT L) :
     ∃ (U : FGIndex A₀ A) (hTU : T ≤ U)
       (LU : (pullback fY (Spec.map (CommRingCat.ofHom (fgTransition T U hTU)))).Modules),
-      Scheme.Modules.IsInvertible LU ∧
+      Scheme.Modules.IsInvertibleFLT LU ∧
       ∀ cX : pullback fY (Spec.map (CommRingCat.ofHom (fgToLimit T))) ⟶
           pullback fY (Spec.map (CommRingCat.ofHom (fgTransition T U hTU))),
         cX ≫ pullback.fst fY (Spec.map (CommRingCat.ofHom (fgTransition T U hTU))) =
@@ -76,7 +76,7 @@ theorem lineBundleSubalgebraDescent : LineBundleSubalgebraDescentStatement.{u} :
   -- Descend the pullback of `M` along `e` to a stage `j`.
   obtain ⟨j, hij, Lj, hLj, hj⟩ := exists_fg_isInvertible_nonempty_pullback_iso i
     (pullback.snd f₀ ι₀) ((Scheme.Modules.pullback e).obj M)
-    ((isInvertible_of_isLocallyFreeRankOne hM).pullback e)
+    (Scheme.Modules.IsInvertible.pullbackFLT (hL := isInvertible_of_isLocallyFreeRankOne hM) e)
   -- `u` from the chosen base change of `X₀` to `Spec j` to the base change of `X₀ ×_{A₀} Spec i`.
   have hu : pullback.fst f₀ (Spec.map (CommRingCat.ofHom (algebraMap A₀ (FGStage j)))) ≫ f₀ =
       (pullback.snd f₀ (Spec.map (CommRingCat.ofHom (algebraMap A₀ (FGStage j)))) ≫
@@ -91,7 +91,7 @@ theorem lineBundleSubalgebraDescent : LineBundleSubalgebraDescentStatement.{u} :
     ⟨pullback.lift _ _ (pullback.lift_snd _ _ _), pullback.lift_fst _ _ _,
       pullback.lift_snd _ _ _⟩
   refine ⟨j.1, j.2, fun x hx => hij (Algebra.subset_adjoin hx),
-    (Scheme.Modules.pullback u).obj Lj, isLocallyFreeRankOne_of_isInvertible (hLj.pullback u), ?_⟩
+    (Scheme.Modules.pullback u).obj Lj, isLocallyFreeRankOne_of_isInvertible (Scheme.Modules.IsInvertible.pullbackFLT (hL := hLj) u), ?_⟩
   intro c hc₁ hc₂
   have h₁ : (e ≫ c ≫ u) ≫
       pullback.fst (pullback.snd f₀ ι₀) (Spec.map (CommRingCat.ofHom (fgTransition i j hij))) =

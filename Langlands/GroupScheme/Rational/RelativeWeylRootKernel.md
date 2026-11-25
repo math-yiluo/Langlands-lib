@@ -1,7 +1,5 @@
 # Root-span kernels and restrictions of rational characters
 
-Author: Worker 37.
-
 This is an internal derivation from the published definitions of rational
 characters, inner automorphisms, normalizing points, rationalization and the
 relative-root span. No root-system existence result is assumed or proved.

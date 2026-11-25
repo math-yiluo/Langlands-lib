@@ -1,6 +1,6 @@
 # Restricted tensor representations of finite adelic general linear groups
 
-This internal construction specializes the published restricted tensor action to
+This internal construction specializes the existing restricted tensor action to
 `FiniteAdelicGL F n`, the actual matrix-unit group over the finite adeles of the
 number field `F`, with its existing topology. It uses the proved continuous
 multiplicative equivalence `restrictedProductEquiv F n` with the restricted
@@ -50,13 +50,13 @@ spaces, finite-dimensionality, or admissibility hypothesis is used.
 `tensorIntertwiner` takes genuine component intertwiners, allowed between
 families with different carrier universes and exceptional sets. It assumes that
 their reference vectors agree after applying these maps at all but finitely many
-places. Its underlying map is the published restricted tensor map. The generic
+places. Its underlying map is the existing restricted tensor map. The generic
 `map_intertwines` identity, evaluated at the adelic element's restricted family,
 proves that it intertwines the actual finite adelic actions.
 
 ## Provenance and remaining obligations
 
-This unit is an internal specialization of the published modules
+This module is an internal specialization of the modules
 `Global.FiniteAdelicGL.RestrictedProduct`, `Representation.RestrictedTensor.Action`,
 `Representation.RestrictedTensor.Smooth`, and
 `Representation.Smooth.Transfer.PullbackProof`. It introduces no new assertion

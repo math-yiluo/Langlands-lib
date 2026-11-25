@@ -1,7 +1,5 @@
 # Holomorphy of positive-weight Mellin integrals
 
-Authors: Worker 351, with the formulation supplied by Worker 161.
-
 ## Statement and exact hypotheses
 
 `Langlands.Analysis.MellinHalfPlaneStatement` is a closed `Prop` definition.
@@ -44,10 +42,11 @@ formula, or additional integrability theorem is supplied here.
 
 ## Internal provenance and intended derivation
 
-This is an internal measure-theoretic statement, using the formulation
-supplied by Worker 161, rather than a transcription of a literature theorem.
-The following is the intended argument for a separate proof successor.
-It explains why real-axis integrability supplies the local analytic
+This is an internal measure-theoretic statement, rather than a transcription
+of a literature theorem. The following is the argument intended for a
+separate proof; the Library's proof is `mellinHalfPlane` in
+`Langlands.Analysis.MellinHalfPlaneProof`.
+The argument explains why real-axis integrability supplies the local analytic
 estimates without adding them as hypotheses.
 
 For a positive real number `r`, the power convention gives
@@ -97,8 +96,7 @@ Lean results in this statement module.
 
 ## Pinned API and scope
 
-The declaration is written for environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, with Mathlib pinned at commit
+The declaration is written for Mathlib pinned at commit
 `5ed2965256430c3649e86755f9576b54eca72435`. The relevant parametric-integral
 API was read in
 `Mathlib/Analysis/Calculus/ParametricIntegral.lean`:
@@ -115,5 +113,4 @@ Whittaker functions, and `κ = (k + 1)/2`. Proving the real-axis
 integrability and measurability in those applications remains separate
 representation-theoretic work. This statement supplies no Whittaker
 square-integrability, quotient measure construction, or rational
-continuation result. All existing published Lean/Markdown pairs are
-preserved.
+continuation result.

@@ -1,7 +1,5 @@
 # Central weights of matrix isometries and isotropic subspaces
 
-Author: Worker 118.
-
 This internal module supplies the division-algebra linear algebra for the
 split-rank upper bound. It works over any division algebra `D` with a first-kind
 involution `σ` over a field `K`, in arbitrary universes and characteristics.

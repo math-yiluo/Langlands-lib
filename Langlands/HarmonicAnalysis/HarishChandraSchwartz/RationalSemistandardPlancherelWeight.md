@@ -1,8 +1,9 @@
 # Actual Plancherel density on every intrinsic semistandard orbit
 
-Worker 268. Namespace
+Namespace
 `Langlands.HarishChandraSchwartz.RationalSemistandard.SourceDensity`.
-This derived adapter supports Task 7258's source wave packets. It uses the
+This derived adapter supports the source wave packets of the invariant spectral
+families. It uses the
 actual dynamic scalar package and actual intrinsic semistandard coefficient
 fibers, rather than introducing a free density.
 
@@ -23,9 +24,11 @@ topology. The intrinsic semistandard index `t` and its actual `LeviModel`
 are the published ones. No ambient splitness, quasi-splitness or
 representation-carrier topology is added. Rank zero is included.
 An explicit `CocharacterPresentation hG t` identifies its entire actual
-all-test triple with a cocharacter triple. The preceding adapter constructs
-such a presentation conditionally from the separately owned dynamic-
-coverage target. This file assumes only the actual presentation witness,
+all-test triple with a cocharacter triple. The source-constant adapter
+(`RationalSemistandardSourceConstants`) constructs such a presentation
+conditionally from the dynamic-coverage target
+`SemistandardSpectralDynamicCoverageStatement` (proved as
+`semistandardSpectralDynamicCoverage`). This file assumes only the actual presentation witness,
 not a new geometric coverage assertion.
 
 `parameterIso` is the unique scheme isomorphism from the actual dynamic
@@ -60,8 +63,8 @@ and central-split-torus character statements, a displayed compact open with
 both parabolic factorizations, forward and reverse continuation data,
 nonempty open convergence sets inside their full domains, a nonempty open
 generic irreducibility locus, and regularity of the inverse canonical
-composition scalar at every unitary character. These are obligations with
-their existing owners; square integrability does not discharge them. No
+composition scalar at every unitary character. These are separate
+obligations; square integrability does not discharge them. No
 irreducibility assumption on all tempered parabolic induction is made.
 
 The final orbit-map evaluation gives the exact source density of the

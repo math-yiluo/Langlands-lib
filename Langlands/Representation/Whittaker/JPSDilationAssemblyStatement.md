@@ -1,6 +1,6 @@
 # JPS decomposition assembly from uniform coordinate dilations (statement)
 
-Author: Worker 942. This unit states an internal conditional assembly step
+This module states an internal conditional assembly step
 for JPS (1979), Lemma (2.2.1), printed p.182. It is a proposition definition
 only. Nothing here proves the assembly, the decomposition, or any of the
 hypotheses, and no proof is claimed.
@@ -10,8 +10,8 @@ printed in JPS. It isolates one step: passing from uniform small-coordinate
 dilation formulas to the global Schwartz–Bruhat expansion. Its two family
 hypotheses are premises of this helper only. They are not hypotheses of
 `Langlands.Whittaker.JPSDecompositionStatement`, which is unchanged and still
-unconditional. Accepting or publishing this statement, or a later proof of it,
-does not prove that main target.
+unconditional. Neither this statement nor a proof of it proves that main
+target.
 
 ## Declaration
 
@@ -163,8 +163,8 @@ GL(3) I*, Ann. of Math. (2) 109 (1979), 169–212. Registered source
 `jps-1979-gl3-i`, file
 `/home/taskhub/central-library/Jacquet-Piatetski-Shapiro-Shalika--Automorphic Forms on GL(3) I--1979.pdf`,
 SHA256 `6446822f267f9f95156ce7a193409209e56ce7858ed6d3d350480e73f35b1aa5`.
-Printed pp.181–183 are one-based PDF pp.14–16. Worker 942 read their text and
-visually checked rendered images of all three pages on 2026-10-28. No errata
+Printed pp.181–183 are one-based PDF pp.14–16. Their text was read and
+rendered images of all three pages were checked visually on 2026-10-28. No errata
 note for this source exists in the project or Library notes, and the
 registered collection lists no correction to this article.
 
@@ -201,19 +201,22 @@ rather than by induction on `n`.
 - The source's further properties of the operators (membership in the span of
   bounded dilations, the quotient congruence modulo `𝒱_n`) are deliberately
   omitted. The assembly is intended to use only hypotheses 1 and 2.
-- The separate statement task 62c2957e-ecec-416d-ae03-cd4bc01cef89, the
-  uniform small-coordinate dilation step from local constancy and finite
-  coordinate operator span, is intended to supply both family hypotheses for
-  each coordinate. Its eventual theorem, together with this helper, would then
-  give the main decomposition without new hypotheses. This is a plan. Neither
-  that statement nor its proof is asserted or imported here.
+- The separate statement `Langlands.Whittaker.JPSUniformDilationStatement`,
+  the uniform small-coordinate dilation step from local constancy and finite
+  coordinate operator span, supplies both family hypotheses for each
+  coordinate. Its theorem `jpsUniformDilation` (module
+  `JPSUniformDilationProof`), together with this helper, gives the main
+  decomposition without new hypotheses: this is `jpsDecomposition` in
+  `Langlands.Representation.Whittaker.JPSDecompositionProof`. Neither that
+  statement nor its proof is asserted or imported here.
 
-### Proposed proof route (unproved)
+### Proposed proof route
 
-The following route, proposed in the task description by Worker 625, is
-recorded only to explain why the hypotheses were chosen. It is not
-established mathematics, Lean evidence or part of the statement. Every
-topological and linear-algebra step in it requires proof.
+The following route is recorded only to explain why the hypotheses were
+chosen. It is not part of the statement. The proof is
+`Langlands.Whittaker.jpsDilationAssembly` in
+`Langlands.Representation.Whittaker.JPSDilationAssemblyProof`, whose page
+describes the argument as implemented.
 
 - Enlarge each `Y i` to a fixed basis of the sum of the translation spans of
   its members. This absorbs the translates `η(a_i / c_i)` into one finite
@@ -245,7 +248,8 @@ quotients separately.
 
 ## Statement versus proof
 
-This is a statement unit. Its proof is a separate obligation, which must not
+This is a statement module. Its proof, `jpsDilationAssembly`, is in the separate
+module `JPSDilationAssemblyProof`; it does not
 assume or use `JPSDecompositionStatement` or either Whittaker asymptotic
 parent, `Langlands.WhittakerLastEntryOneAsymptoticStatement` or the
 full-torus `Langlands.WhittakerTypeAsymptoticStatement`. The imported pairs

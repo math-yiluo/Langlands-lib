@@ -1,8 +1,8 @@
 # The actual finite epsilon product as an entire nonvanishing function
 
-This internal derived unit makes the finite epsilon product callable without
+This module makes the finite epsilon product callable without
 choosing an exceptional set. Its factors are precisely `finiteEpsilon`, hence
-the expressions in the published `HeckeGlobalFunctionalEquationStatement`,
+the expressions in the existing `HeckeGlobalFunctionalEquationStatement`,
 with the supplied actual finite additive components and supplied self-dual
 Haar measures. The number field has arbitrary universe `u`.
 
@@ -27,7 +27,7 @@ combines the finitely many exponentials into the exponential of the sum.
 The global results take the original continuous nontrivial global additive
 character trivial on the diagonal, every supplied actual finite component,
 every supplied self-dual local measure, and every supplied nonzero real and
-complex scale satisfying the published component predicates.
+complex scale satisfying the existing component predicates.
 `exists_finset_finiteEpsilon_eq_one` derives the needed finite exceptional
 set from these global data. Finite conductor support is a proved input,
 not a new assumption of these results.
@@ -45,6 +45,6 @@ at every parameter, centered at zero.
 The provenance is direct composition of the existing local Gauss-epsilon
 spectral and nonvanishing theorems, Mathlib's finite-product calculus, and
 the actual global conductor-support theorem. No new assertion from the
-literature is required. This unit proves properties of the finite epsilon
+literature is required. This module proves properties of the finite epsilon
 factor. It does not prove continuation of the Hecke Euler products or the
 global functional equation.

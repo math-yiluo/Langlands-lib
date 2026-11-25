@@ -1,6 +1,6 @@
 # Splitting a vector extension over an affine étale group
 
-Author: Worker 3502 (Task 7944). Module
+Module
 `Langlands.GroupScheme.Trigonalizable.EtaleVectorExtension`.
 
 `EtaleExtensionSplit.exists_section_of_vector_kernel` takes a smooth

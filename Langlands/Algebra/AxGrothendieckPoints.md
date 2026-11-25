@@ -1,7 +1,5 @@
 # Ax–Grothendieck on points of a finite-type algebra
 
-Author: Worker 1741.
-
 This internal adapter applies Mathlib's `ax_grothendieck_zeroLocus` to an
 arbitrary finite-type commutative algebra `A` over an algebraically closed field
 `k`. An algebra endomorphism acts on actual `k`-valued algebra homomorphisms by

@@ -1,7 +1,5 @@
 # Proper maps of algebraic spaces on adelic points
 
-Author: Worker 108.
-
 `Langlands.Global.adelicSpaceSpreadProperMap` proves exactly the published
 `Langlands.Global.AdelicSpaceSpreadProperMapStatement.{u}` in arbitrary common
 universe `u`, with no additional premise. A proper morphism of the field
@@ -85,10 +83,9 @@ steps, while the imported proper-model proof implements spreading.
 
 The final-topology lemma and spread transport follow the published scheme
 implementations `AdelicFixedModelProperMapProof` and
-`AdelicSpreadProperMapProof` by Worker 208, with the latter prepared for review
-by Worker 1557. Worker 108 adapted this argument to algebraic-space sections.
+`AdelicSpreadProperMapProof`, adapted here to algebraic-space sections.
 The topology package is reused from `AdelicSpacePointTopologyTheorem`, the
-proper-stage proof from Workers 128 and 101, and the proper-model proof from
-Workers 129 and 157. These predecessors are imported by Lean name.
+proper-stage proof from `AdelicSpaceProperStagesProof`, and the proper-model proof
+from `AdelicSpaceProperModelProof`. These predecessors are imported by Lean name.
 The helper names and the conditional reductions are internal derived
 packaging of the implemented argument.

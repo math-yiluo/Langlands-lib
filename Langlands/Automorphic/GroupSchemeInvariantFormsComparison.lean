@@ -23,7 +23,7 @@ variable (F : Type u) [Field F] [NumberField F]
 local notation "A" => FinitePlotSmoothRationalFunctions F G
 local notation "Points" => AdelicGroupPoints F G
 
-local instance : AddCommGroup A := Module.addCommMonoidToAddCommGroup ℂ
+private local instance : AddCommGroup A := Module.addCommMonoidToAddCommGroup ℂ
 
 /-- A rational-invariant smooth scalar function determines an element of
 the original finite plot-smooth carrier by the same function. -/

@@ -26,23 +26,25 @@ variable {S : Scheme.{u}} {A : AbelianScheme S}
 /-- The actual forward isogeny's rationalization intertwines every element of the
 original rational algebra, not only its full integer order. -/
 theorem rationalExtension_intertwines (x : R) :
-    comp0 A A M.B (α x) (homToHom0 M.inverseData.hom) =
+    comp0 A A M.B (α x).asHom (homToHom0 M.inverseData.hom) =
       comp0 A M.B M.B (homToHom0 M.inverseData.hom)
-        (integralActionRationalExtension M.B b M.action x) := by
+        (integralActionRationalExtension M.B b M.action x).asHom := by
   let L : R →ₗ[ℚ] Hom0 A M.B :=
-    ((comp0 A A M.B).flip (homToHom0 M.inverseData.hom)).comp α.toLinearMap
+    ((comp0 A A M.B).flip (homToHom0 M.inverseData.hom)).comp
+      (CategoryTheory.End.linearEquiv.toLinearMap.comp α.toLinearMap)
   let Q : R →ₗ[ℚ] Hom0 A M.B :=
     ((comp0 A M.B M.B) (homToHom0 M.inverseData.hom)).comp
-      (integralActionRationalExtension M.B b M.action).toLinearMap
+      (CategoryTheory.End.linearEquiv.toLinearMap.comp
+        (integralActionRationalExtension M.B b M.action).toLinearMap)
   have h : L = Q := by
     apply (b.extendOfIsLattice (M := O.toSubmodule) ℚ).ext
     intro i
     change comp0 A A M.B
-        (α (b.extendOfIsLattice (M := O.toSubmodule) ℚ i))
+        (α (b.extendOfIsLattice (M := O.toSubmodule) ℚ i)).asHom
         (homToHom0 M.inverseData.hom) =
       comp0 A M.B M.B (homToHom0 M.inverseData.hom)
         (integralActionRationalExtension M.B b M.action
-          (b.extendOfIsLattice (M := O.toSubmodule) ℚ i))
+          (b.extendOfIsLattice (M := O.toSubmodule) ℚ i)).asHom
     simp only [Basis.extendOfIsLattice_apply, integralActionRationalExtension_coe]
     exact (M.intertwines (b i)).symm
   exact DFunLike.congr_fun h x

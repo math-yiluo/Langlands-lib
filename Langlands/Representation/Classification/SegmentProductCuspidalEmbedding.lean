@@ -110,7 +110,7 @@ theorem embedsCuspidal_induced {n : ℕ} (d : T.SegmentProductDatum.{uV, uF} n)
     SmoothRep.ofHom (T.normalizedProductInducedMap d.shape ι)
   refine ⟨J ≫ e.inv, ?_⟩
   exact (SmoothRep.hom_hom_injective e.symm).comp
-    (normalizedProductInducedMap_injective d.shape ι hι)
+    (normalizedProductInducedMap_injective d.shape ι hι : _)
 
 /-- An irreducible representation with such an embedding has the multiset as a
 supercuspidal support. -/

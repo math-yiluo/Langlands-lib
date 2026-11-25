@@ -1,6 +1,6 @@
 # Comparisons of supplied root-filtration models
 
-This internal supporting unit compares actual supplied models of one relative
+This module compares actual supplied models of one relative
 root subgroup. It constructs no root models and proves no special-fibre kernel
 geometry. The homomorphism-extension criterion remains an explicit premise.
 
@@ -31,5 +31,6 @@ models proves equality of the integral composites.
 
 These constructions are derived from the published representability,
 root-filtration and integral-model interfaces. They form a comparison input to
-the host kernel argument; neither the extension criterion nor any unproved
+the kernel argument for `UnramifiedModelKernelStatement` (KP Proposition 8.4.15);
+neither the extension criterion nor any unproved
 kernel statement is established here.

@@ -1,8 +1,5 @@
 # Finiteness of actual fine opposite-Jacquet Hom spaces
 
-Authors: Worker 508 and Worker 526. Worker 526 authored the shared proof
-prototype; Worker 508 adapted it to the exact published closed statement.
-
 `Langlands.fineOppositeJacquetHomFinite` proves precisely
 `Langlands.FineOppositeJacquetHomFinitenessStatement.{uF,uV,uW,uZ}`.
 The theorem has no external parameters: the prime, its primality instance,
@@ -31,7 +28,7 @@ through evaluation on finitely many source generators, into a finite product
 of admissible target fixed-vector spaces.
 
 This is an internal deduction from the three imported published proof
-interfaces, using Worker 526's prototype. It is not a transcription of a
+interfaces. It is not a transcription of a
 statement or proof in Silberger. The existing fine twist, its character
 signs, the actual refined group, the quotient carriers, and both opposite
 normalizations are used unchanged.

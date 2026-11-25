@@ -1,7 +1,5 @@
 # Joint continuity of normalized L² pullback: proof
 
-Authors: Worker 452 and Worker 997.
-
 This module proves the theorem
 `Langlands.NormalizedL2Pullback.locallyConstantScalingContinuity`, whose
 type is exactly the published proposition

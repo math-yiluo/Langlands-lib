@@ -14,8 +14,9 @@ with V.5.2(ii)–(iv), printed p.123 / PDF p.129, for the structural conditions.
 The registered source ID is `renard-2026-representations-groupes-reductifs-padiques`,
 SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 These are derived conditional generalizations of the source assertions. They
-extract the statement types from Worker 834's shared Jacquet proof draft; the
-proofs themselves are separate work.
+extract the statement types from the Jacquet proof in
+`IwahoriContractionAdmissibility` and `Aubert.General.JacquetAdmissibility`;
+the proofs themselves are in `IwahoriContractionProof`.
 
 ## Actual data and hypotheses
 
@@ -64,8 +65,8 @@ trivial character followed by the inverse half Haar-modulus twist. It is not
 an abstract replacement functor. The semidirect notation `jacquetFunctor h hN`
 is an abbreviation of this normalized functor; its version follows by
 specialization with `h.levi_le_normalizer`. A statement about rational points
-with their pinned topology still requires the shared structural programs to
-supply `HasIwahoriContractionBasis` for those actual subgroups.
+with their pinned topology requires `HasIwahoriContractionBasis` for those
+actual subgroups.
 
 ## Source correspondence and remaining claims
 
@@ -76,7 +77,7 @@ unnormalized and normalized clauses of its corollary.
 
 The second and third propositions use the generalized kernel and stable image
 of powers of one compression operator. These are derived refinements for the
-proof route in the shared draft. Renard instead first chooses a sufficiently
+proof route of `IwahoriContractionAdmissibility`. Renard instead first chooses a sufficiently
 contracting element that annihilates the fixed-vector quotient kernel
 (VI.6.1.2), and uses the image of that single compression. Equality with those
 source single-operator subspaces and independence of the chamber element are

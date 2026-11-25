@@ -3,7 +3,7 @@
 Namespace `Langlands.GroupScheme.WeilChart`. This internal construction is the first step of
 the proof of `AffineWeilPairSingleChartDescentStatement` (descent of a Weil-restriction
 presentation along one étale cover). It describes the normal idempotent endomorphisms of a
-group `G` over `Spec A` through a chart, using Worker 47's factor rigidity, and compares two
+group `G` over `Spec A` through a chart, using factor rigidity, and compares two
 chart maps. The construction works with points only and never base-changes a Weil restriction.
 
 ## Setting
@@ -17,7 +17,7 @@ an affine group scheme `H` locally of finite type over `Spec C`, and a chart
   equivalence `affinePointsBaseChangeMulEquiv`, the chart `P`, and `AffineWeil.pointsEquiv`.
   `chartPointsEquiv_naturality` gives naturality.
 - `chartProj P X e`: the factor projection of `G(X)` attached to `e ∈ C ⊗[A'] X`. It is
-  Worker 47's `IdempotentPoints.proj H e` transported by `chartPointsEquiv`, and is natural
+  `IdempotentPoints.proj H e` transported by `chartPointsEquiv`, and is natural
   (`chartProj_naturality`).
 
 ## Chart factor projections over a test algebra
@@ -49,8 +49,8 @@ compares the two settings:
 - `transportEnd P f ψ` transports an endomorphism of `GFun G T` to the group functor of
   `R_{C/A'}(H)` over `chartTest f`. It is natural, multiplicative (`transportEnd_comp`) and
   preserves normality (`pt_transportEnd_conj`).
-- `transportEnd_chartFactor`: the transported chart factor projection is Worker 47's
-  `WeilFactor.factorProjection`. The comparison is definitional on objects of the form
+- `transportEnd_chartFactor`: the transported chart factor projection is
+  `WeilFactor.factorProjection` (module `WeilFactorProjection`). The comparison is definitional on objects of the form
   `extObj f X`, and `app_eq_of_iso` together with `extResIso` extends it to all objects.
 
 From these, with `[Algebra.Etale A' C]`, `IsReductive H` and almost simple geometric fibres of `H`:

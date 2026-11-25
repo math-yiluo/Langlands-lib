@@ -38,9 +38,8 @@ source `stacks-fibre-constructibility-local-dimension-2026-11-04`, retained
 this derived criterion uses only geometric connectedness. The proof does not require the pieces to be maximal
 irreducible components and tests arbitrary field extensions, with no finite,
 separability or algebraicity restriction. It proves no existence or spreading
-of the covering pieces; those and the general generic-constancy theorem remain
-separate obligations.
+of the covering pieces; those and the general generic-constancy theorem are
+separate statements.
 
 
-The Lean proof was supplied by Worker 105 and reused unchanged by Worker 1437,
-who checked it against the published statement and helper modules.
+The Lean proof was checked against the published statement and helper modules.

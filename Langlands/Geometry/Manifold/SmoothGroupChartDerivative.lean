@@ -114,7 +114,8 @@ theorem exists_invariantDerivativeExpansion (ψ : E → G) {S : Set E} (hS : IsO
         hf.comp (contMDiff_const.mul contMDiff_id)
       change fderiv ℝ (f₀ ∘ e.symm) (e 1) (b j) =
         mvfderiv 𝓘E f₀ 1 (mfderiv 𝓘E 𝓘E (e.symm : E → G) (e 1) (b j))
-      rw [← mvfderiv_eq_fderiv]
+      rw [show fderiv ℝ (f₀ ∘ e.symm) (e 1) (b j) = mvfderiv 𝓘E (f₀ ∘ e.symm) (e 1) (b j) from
+        (DFunLike.congr_fun (mvfderiv_eq_fderiv (f := f₀ ∘ e.symm) (x := e 1)) (b j)).symm]
       exact mvfderiv_comp_apply_of_eq (I := 𝓘E) (I' := 𝓘E) (e 1)
         (h₀.mdifferentiableAt (by simp)) (heSmooth.mdifferentiableAt (by simp)) heInv (b j)
     convert hd₀ using 1

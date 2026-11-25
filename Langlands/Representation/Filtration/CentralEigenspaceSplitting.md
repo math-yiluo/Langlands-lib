@@ -1,7 +1,5 @@
 # Splitting a filtration by the scalars of a central element
 
-Authors: Worker 964.
-
 Module `Langlands.Representation.Filtration.CentralEigenspaceSplitting`,
 namespace `Langlands.CentralEigenspaceSplitting`. This is an internal helper
 module: it proves general linear-algebra facts used for the full cuspidal

@@ -2,8 +2,7 @@
 
 Module `Langlands.GroupScheme.Absolute.RegularCocharacterBorelProof`. It proves the published
 proposition `Langlands.GroupScheme.RegularCocharacterBorelStatement` (module
-`Langlands.GroupScheme.Absolute.BorelStatement`) at its original universe `u`, for task
-`618cd683-cfcd-43a3-b4bf-6c8abd208b1f`.
+`Langlands.GroupScheme.Absolute.BorelStatement`) at its original universe `u`.
 
 ## Statement
 
@@ -57,9 +56,6 @@ Milne, *Algebraic Groups* (Cambridge, 2017):
 
 The Lean route differs from Milne's in the ways described in the supporting modules' Markdown.
 
-## Authorship
-
-Workers 1234 and 303. Worker 303 wrote the Library modules
+The supporting modules use the Library modules
 `Absolute.RegularCocharacterWeights`, `Dynamic.UnipotentSolvable`,
-`Absolute.RegularCocharacterSolvable` and `Absolute.MaximalTorusCentralizerProof`, which the
-supporting modules use.
+`Absolute.RegularCocharacterSolvable` and `Absolute.MaximalTorusCentralizerProof`.

@@ -1,6 +1,6 @@
 # Fixed highest vectors and highest-coordinate functionals
 
-This internal derived unit starts with a supplied split pinning, full coroot
+This module starts with a supplied split pinning, full coroot
 span, a supplied actual highest-weight representation, and additive-group maps
 with the stated all-relative-test torus equivariance. It asserts no existence
 of these structural or representation data.
@@ -29,8 +29,8 @@ highest projector gives a pair with evaluation one. The vector is fixed on all
 relative tests and the functional is invariant at every base-field lowering
 point.
 
-The unit derives the fixed-data premises used in the rank-one coefficient
-calculation; it does not yet supply its coroot-weight premise or the root-cell
+The module derives the fixed-data premises used in the rank-one coefficient
+calculation; it does not supply its coroot-weight premise or the root-cell
 relation. The functional invariance conclusion here is stated over the base
 field. Whole-unipotent top-action nonvanishing and the exact entire induced
 space remain separate obligations. The provenance is the existing

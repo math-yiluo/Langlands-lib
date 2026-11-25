@@ -15,7 +15,8 @@ namespace Langlands.Analysis
 variable {d r : ℕ}
 local notation "E" => EuclideanSpace ℝ (Fin d)
 
-private theorem derivWordNorm_le_opNorm_times_card (m : ℕ) (u : E → ℂ) (x : E) :
+/-- The ordered word norm of the `m`-th derivative is at most `d ^ m` times its operator norm. -/
+theorem derivWordNorm_le_opNorm_times_card (m : ℕ) (u : E → ℂ) (x : E) :
     derivWordNorm m u x ≤ (d : ℝ) ^ m * ‖iteratedFDeriv ℝ m u x‖ := by
   let T := iteratedFDeriv ℝ m u x
   let a (w : Fin m → Fin d) := ‖T (fun j => EuclideanSpace.basisFun (Fin d) ℝ (w j))‖
@@ -61,7 +62,9 @@ private theorem weightedDerivative_le_of_pointwise {u : E → ℂ} {x₀ : E} {R
       rw [ENNReal.ofReal_mul (by positivity), ENNReal.ofReal_mul (by positivity)]
       ac_rfl
 
-private theorem eLpNorm_half_ball_le_weightedDerivative {u : E → ℂ} {x₀ : E} {R : ℝ} (hR : 0 < R)
+/-- On the half ball, the `L²` norm of the `m`-th derivative is controlled by the weighted
+seminorm of its ordered word norm, divided by the weight `(R - R / 2) ^ m`. -/
+theorem eLpNorm_half_ball_le_weightedDerivative {u : E → ℂ} {x₀ : E} {R : ℝ} (hR : 0 < R)
     (hu : ContDiffOn ℝ ∞ u (ball x₀ R)) (m : ℕ) :
     eLpNorm (iteratedFDeriv ℝ m u) 2 (volume.restrict (ball x₀ (R / 2))) ≤
       (ENNReal.ofReal ((R - R / 2) ^ m))⁻¹ * ballWeightedSeminorm (derivWordNorm m u) x₀ R m := by

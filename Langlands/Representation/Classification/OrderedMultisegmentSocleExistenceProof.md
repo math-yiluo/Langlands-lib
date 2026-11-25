@@ -1,8 +1,5 @@
 # Independent unique socles of ordered segment products
 
-Authors: Worker 700 (total-rank induction, boundary inputs and final assembly)
-and Worker 864 (the actual-product, mirabolic and Artinian socle adapter).
-
 ## Exact result and conventions
 
 `Langlands.Classification.orderedMultisegmentSocleExistence` proves exactly
@@ -148,49 +145,40 @@ public source notes during the source audits.
 
 ## Published inputs
 
-All mathematical imports below are used by Lean name. The identifiers record
-independent acceptance and publication evidence, rather than mathematical
-assumptions. Original exact-proof validation and integrated compilation were
-checked separately for the substantive inputs.
+All mathematical imports below are used by Lean name. Exact-proof validation
+and integrated compilation were checked separately for the substantive inputs.
 
-| Published theorem or module | Proof publication checked |
+| Published theorem or module | Module and content |
 | --- | --- |
-| `orderedMultisegmentSocleBoundary`, including rank zero, nonzeroness and the conditional endpoint implication | `58f5a9ff-d5bb-43d8-a73d-d7e7192d973c`, Reviewer 7009; commit `31d47a6f0dabd6dff6c65e1b78f4821ddedc9bc8`; exact-proof receipt `0e38c4cc-c89a-416d-a413-aefdcf41b76f`. |
-| `segmentSocleProductHighestDerivative` | `cf12542e-ed32-4ef1-b46d-48e47a342d5e`, Reviewer 9304; commit `286dd3b743f0437d22db0e793222073b9424e3eb`; exact-proof receipt `7fcef6cf-6811-47fa-b8d8-9def13c12a75`. It constructs the actual derivative/product isomorphism and higher vanishing. |
-| `segmentSocleProductHomogeneity` | `30904fa3-919e-4557-b2d2-6dfc03e5abb4`, Reviewer 9587; commit `9d1720cbedcfd184cf48bf36249fc3029583cafa`; exact-proof receipt `8bd98996-c650-401b-b42f-417f84024315`. Its replacement proof has independent universes. |
-| `segmentInitialTruncationOrder` | `20bbbe79-e549-416d-bf1a-e1d36b2b2979`, Reviewer 4402; commit `e40be87d4e73ac457e91929eddf904bd95d12d2f`; exact-proof receipt `22ffb488-565e-406c-9fb6-6754a27c449f`. Freeness remains an explicit premise of that input. |
-| `cuspidalIntegralTwistFreeness` | `a7545313-ab91-4eaf-881e-2ad0d4c58e56`, Reviewer 2793; commit `f2f4a196a2ec57cae218f1368dade88282ce7207`; exact-proof receipt `5c315ec9-05f4-4907-9853-e87873f7dd2d`. This is a central-character/uniformizer proof. |
-| `Derivative.mirabolicStrongIndecomposabilityReduction` | `18d68bc4-10a3-4b37-a079-7a4b2e3009d8`, Reviewer 6839; commit `6096ab5ac4bb214693970d29c770af26cb4cea48`; integration `6edc2ad58f754991a2a5d65a1048b08f`. This is the exact proved reduction, not the older conditional assembly. |
-| `irreducibleProductFiniteLength` | `41a8585c-a5c2-4d05-a095-e31d28518609`; commit `ddf3850e87ef10e9eabe230b50f772e4890d71bd`; exact-proof receipt `4eda11e7-bf56-4f38-96f4-377c13a6c866`. It embeds the supplied product into regrouped cuspidal induction and transfers finite length through the injection. |
-| `strongIndecomposabilitySocle` | `36ef633f-8d13-40cc-b44e-1452c44987d3`; commit `4e6ed28ccc687ea7e0123318bc2516e1f4b79d11`; exact-proof receipt `83d01672-ba3f-4b32-8b5d-48df432e497d`. It gives an actual atom and equality of images. |
-| `HarmonicAnalysis.padicUnitaryAdditiveCharacterExists` | `72e1678f-3dcb-4058-8013-da81aa39cf3c`, Reviewer 4231; commit `caf30c941a7a27d8a483e65bbeb61b1c2f5f7675`; exact-proof receipt `ce6406e4-38fe-42e7-8197-82c3713b527e`. Its character of `ℚ_p/ℤ_p` is pulled back by trace to the supplied field realization. |
+| `orderedMultisegmentSocleBoundary`, including rank zero, nonzeroness and the conditional endpoint implication | `Langlands.Representation.Classification.OrderedMultisegmentSocleBoundaryProof`. |
+| `segmentSocleProductHighestDerivative` | `Langlands.Representation.Classification.SegmentSocleProductHighestDerivativeProof`. It constructs the actual derivative/product isomorphism and higher vanishing. |
+| `segmentSocleProductHomogeneity` | `Langlands.Representation.Classification.SegmentSocleProductHomogeneityProof`. Its proof has independent universes. |
+| `segmentInitialTruncationOrder` | `Langlands.Representation.Classification.SegmentInitialTruncationOrderProof`. Freeness remains an explicit premise of that input. |
+| `cuspidalIntegralTwistFreeness` | `Langlands.Representation.Classification.CuspidalIntegralTwistFreenessProof`. This is a central-character/uniformizer proof. |
+| `Derivative.mirabolicStrongIndecomposabilityReduction` | `Langlands.Representation.Derivative.MirabolicStrongIndecomposabilityProof`. This is the exact proved reduction, not the older conditional assembly. |
+| `irreducibleProductFiniteLength` | `Langlands.Representation.Classification.IrreducibleProductFiniteLengthProof`. It embeds the supplied product into regrouped cuspidal induction and transfers finite length through the injection. |
+| `strongIndecomposabilitySocle` | `Langlands.Representation.Classification.StrongIndecomposabilitySocleProof`. It gives an actual atom and equality of images. |
+| `HarmonicAnalysis.padicUnitaryAdditiveCharacterExists` | `Langlands.HarmonicAnalysis.PadicUnitaryAdditiveCharacterExistsProof`. Its character of `ℚ_p/ℤ_p` is pulled back by trace to the supplied field realization. |
 
-The full acceptance reports used in these audits have no unresolved
-qualifications. The character proof and all five of its project modules match
+The character proof and all five of its project modules match
 its original and integrated source hashes. Twist-freeness's primary pair is
-unchanged; its original 52-module closure matches both canonical machine
-reports. The current 55-module closure only adds generic quotient/twist
+unchanged; its original closure had 52 modules. The 55-module closure used
+here only adds generic quotient/twist
 extractions, elementary block arithmetic and compact-character facts. Those
 pairs also occur unchanged in the audited homogeneity closure. No theorem of
 special-head existence is used to obtain freeness.
 
 ## Independence audit
 
-This proof is an input to socle exhaustion
-`f3a69bc8-7312-4f82-8a7d-ea3c8188cb63` and analytic segment classification
-`aca8805b-054f-4d56-8045-12db7f623404`. Neither conclusion, its proof successor,
-nor a transitive mathematical consequence is used. The proof also excludes
-special-head exhaustion `3bfb61fa-1129-4fc9-83fd-7fcfec22106e`, ordered
-special-head existence `ebea9a8a-9b21-4208-aa31-98c2dea1f8a3`, quotient coverage
-`20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584`, tempered block uniqueness
-`52e97845-36bb-457d-b76f-70753334b88c`,
-`SquareIntegrableLanglandsClassification` /
-`1cb45da2-7007-4351-a694-594fb148b8d1`, square-integrable exhaustion
-`cd8ab97c-0b78-4bce-97c4-d307a28159a4`, and regular exhaustion
-`bf433f0a-921a-428c-b0c0-6475438125ac`.
+This proof is an input to socle exhaustion and analytic segment classification.
+Neither conclusion, its proof, nor a transitive mathematical consequence is
+used. The proof also excludes special-head exhaustion, ordered special-head
+existence, quotient coverage, tempered block uniqueness,
+`SquareIntegrableLanglandsClassification`, square-integrable exhaustion, and
+regular exhaustion.
 
-The consumer audit traversed every constant reachable from the complete parent
-theorem through declaration types and values, including opaque theorem
+The consumer audit traversed every constant reachable from the complete
+theorem `orderedMultisegmentSocleExistence` through declaration types and values, including opaque theorem
 bodies. At the checked sources it found 93,362 constants, 15,301 project
 declarations and 1,053 project modules. The only axioms were `propext`,
 `Quot.sound` and `Classical.choice`. No reachable name component was any of the
@@ -245,63 +233,56 @@ UnlinkedSegmentSocleProductIrreducible
 ZeroRankMultisegmentQuotientExhaustion
 ```
 
-The parent's own proposition and new proof are intentionally the root of this
+This theorem's own proposition and proof are intentionally the root of this
 check; they are not treated as an excluded conclusion. Earlier lower-input
-audits also excluded the parent, so the induction does not return through an
+audits also excluded this theorem, so the induction does not return through an
 upstream input to itself. The check supplements the semantic audits of the
 used proofs; name matching alone would not establish mathematical independence.
 
-### Generic modules from excluded-task workspaces
+### Generic modules published with excluded results
 
 The following modules are generic infrastructure, even where first published
-inside a task whose later conclusion is excluded. This distinction was
-explicitly authorized by the trusted operator responses
-`2b34e4035a5b5dafad7ad84d5a8c0dd8` and
-`10df3136f50c5901b1061d52c6b92e07`, read in full. The former permits the disclosed
-generic modules after checking their contents and project imports; the latter
-permits the published BZ77 4.7(b) closure, including the quotient form of
-4.7(a), and expressly forbids the later (c) theorem. The table records the
-modules, artifacts, publishing tasks and checked contents. Paths are relative
-to `Langlands.Representation`, except `Combinatorics`.
+together with a result whose later conclusion is excluded. The generic modules
+are used after checking their contents and project imports; the published
+BZ77 4.7(b) closure, including the quotient form of 4.7(a), is used, and the
+later (c) theorem is excluded. The table records the modules and their checked
+contents. Paths are relative to `Langlands.Representation`, except
+`Combinatorics`.
 
-| Module (relative to `Langlands.Representation`, except `Combinatorics`) | Artifact / publishing task | Actual scope |
-| --- | --- | --- |
-| `Classification.TrivialGroupQuotient` | `1e56ed7e-1297-4655-9b05-0b7e49883863` / `20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584` | Quotient algebra for trivial groups, in the fixed statement chain. |
-| `Classification.SegmentProductPermutation` | `0095a4c4-eb6a-411f-8c24-e46a92b21b2b` / `8252833d-c269-41a9-824c-5879e531b23b` | Permutation transport for supplied product data, in the statement chain. The final induction preserves the original order. |
-| `Classification.OrderedMultisegmentHeadReduction` | `6529dc85-0346-4e15-9152-54cb47d3528f` / `ebea9a8a-9b21-4208-aa31-98c2dea1f8a3` | Supplied-data reduction and definitions, in the statement chain; no special-head existence theorem. |
-| `Classification.SegmentSocleProductData` | `29cea4fd-c41f-4137-8e97-14ab0cdf8d71` / `f3a69bc8-7312-4f82-8a7d-ea3c8188cb63` | Segment-product data, in the statement chain. |
-| `Classification.SingletonSegmentSocle` | `8aac8ad9-4364-4514-af9e-e52f99707dfd` / `f3a69bc8-7312-4f82-8a7d-ea3c8188cb63` | The one-segment socle comparison, in the statement chain. |
-| `Combinatorics.RelationInversions` | `9e971abc-0144-4575-8205-89a2ae397e63` / `f3a69bc8-7312-4f82-8a7d-ea3c8188cb63` | Finite list-inversion counting used by earlier independent inputs. |
-| `Filtration.ObjectTransport` | `68054cb0-7541-498d-bd52-0414519d5815` / `f3a69bc8-7312-4f82-8a7d-ea3c8188cb63` | Pullback and inverse-image transport of supplied actual filtrations. |
-| `Classification.CuspidalProductDerivativeQuotientSupport` | `bf38b454-70f8-4bf4-83b2-0def96b608a0` / `f81d9b36-2615-4fec-abc2-50ef93d880bf` | Quotient form of BZ77 4.7(a), used inside the permitted BZ77 4.7(b) proof; no later support-shift theorem. |
-| `Tensor.FiniteFiltration` | `1529e866-4b41-41d6-9510-5b00eacdd1c7` / `f3a69bc8-7312-4f82-8a7d-ea3c8188cb63` | Generic indexed tensor/slot-filtration algebra; its independently reviewed 19-module closure has no exhaustion theorem. |
-| `Filtration.SingletonIso` | `3ee88231-270b-4cee-8670-915e76b64f12` / `8364e73f-14ec-4d14-8f2b-1555a7c1ce95` | Only imports `QuotientFirstIso`; its zero/full endpoint argument uses no special-head criterion. Reviewer 7943, commit `aa1400a0eb858f7fdc607a5bb736d8f7a705fa10`, integration `2e375c7827024fd992865fca143991fd`. The bundled `TopProduct` module is not imported. |
-| `Induction.EmptyProductUnit` | `273c225f-7fb3-4cf4-852c-88d7816b0bae` / `8364e73f-14ec-4d14-8f2b-1555a7c1ce95` | Actual full-subgroup evaluation and empty tensor unit; no special-head conclusion. Reviewer 8857, commit `e530d1eb7e66b0d2b988684aaaa90a729bda10e2`, integration `351b5bc54d374bde88313e8e0d414501`. |
-| `Classification.RegularLanglandsHeadReduction` | `1c0aecf1-f57e-400f-8a13-1cf65809f4df` (definition) | Only generic nonzeroness of actual normalized induction is used by the lower derivative chain. No head or exhaustion conclusion is used. |
+| Module (relative to `Langlands.Representation`, except `Combinatorics`) | Actual scope |
+| --- | --- |
+| `Classification.TrivialGroupQuotient` | Quotient algebra for trivial groups, in the fixed statement chain. |
+| `Classification.SegmentProductPermutation` | Permutation transport for supplied product data, in the statement chain. The final induction preserves the original order. |
+| `Classification.OrderedMultisegmentHeadReduction` | Supplied-data reduction and definitions, in the statement chain; no special-head existence theorem. |
+| `Classification.SegmentSocleProductData` | Segment-product data, in the statement chain. |
+| `Classification.SingletonSegmentSocle` | The one-segment socle comparison, in the statement chain. |
+| `Combinatorics.RelationInversions` | Finite list-inversion counting used by earlier independent inputs. |
+| `Filtration.ObjectTransport` | Pullback and inverse-image transport of supplied actual filtrations. |
+| `Classification.CuspidalProductDerivativeQuotientSupport` | Quotient form of BZ77 4.7(a), used inside the permitted BZ77 4.7(b) proof; no later support-shift theorem. |
+| `Tensor.FiniteFiltration` | Generic indexed tensor/slot-filtration algebra; its 19-module closure has no exhaustion theorem. |
+| `Filtration.SingletonIso` | Only imports `QuotientFirstIso`; its zero/full endpoint argument uses no special-head criterion. The bundled `TopProduct` module is not imported. |
+| `Induction.EmptyProductUnit` | Actual full-subgroup evaluation and empty tensor unit; no special-head conclusion. |
+| `Classification.RegularLanglandsHeadReduction` (definition) | Only generic nonzeroness of actual normalized induction is used by the lower derivative chain. No head or exhaustion conclusion is used. |
 
-In this parent, `OrderedMultisegmentHeadReduction` also supplies the elementary
+In this proof, `OrderedMultisegmentHeadReduction` also supplies the elementary
 rank-zero irreducibility chain used by the published boundary proof. Its
 conditional head-assembly lemmas are unused. `SegmentSocleProductData` and
 `SingletonSegmentSocle` supply actual datum, rank-cast and singleton comparison
-constructions; they supply no socle exhaustion theorem. The parent uses no
+constructions; they supply no socle exhaustion theorem. This proof uses no
 permutation to change the supplied ordering.
 
-`MultisegmentClassificationStatement`, artifact
-`0baefc8e-7352-469a-af38-5437d0696f7c`, contains the target and other
+`MultisegmentClassificationStatement` contains the target and other
 Prop-valued statement definitions. The final theorem uses the target
 definition, not any proof of the neighboring classification or exhaustion
 propositions. The complete declaration traversal above excludes their use.
-The later support-shift (c) proof
-`61c4254f-2ae6-4ac5-8419-2f53c0d78589` is absent; the allowed BZ77 4.7(b)
+The later support-shift (c) proof is absent; the allowed BZ77 4.7(b)
 input does not import it.
 
 ### Detection remains BZ77-only
 
-The trusted response `bd71b9185aab5d6eafffb7891bd3a3ca` governs the separate
-general detection and nonadjacent-consumer branch. Its prohibition on Ze80
-segment derivative formulas is retained in that branch. The exact published
-`mirabolicDerivativeDetection`, proof
-`3ace613e-7e47-46fc-aea5-dcd84efc51ec`, uses the general BZ77 minus-vanishing
+The separate general detection and nonadjacent-consumer branch uses no Ze80
+segment derivative formula. The exact published
+`mirabolicDerivativeDetection` uses the general BZ77 minus-vanishing
 argument and iteration, with no segment or cuspidal derivative formula,
 finite-length premise, homogeneity premise, two-supercuspidal product theorem,
 or consumer strong-indecomposability conclusion. Its complete import and
@@ -312,21 +293,19 @@ the actual highest-layer lattice correspondence; it does not prove detection
 from its own conclusion.
 
 The independently specified Ze80 §5.4 and §6.2 consumer arguments are retained.
-In particular this parent uses the independently proved single-segment Ze80
+In particular this proof uses the independently proved single-segment Ze80
 3.5 formula through `segmentSocleProductHighestDerivative` and the published
 homogeneity proof. Their semantic and declaration audits identify the
 single-segment Jacquet and existence inputs and show that none uses this
-parent, socle exhaustion, analytic segment classification, linked-pair
+theorem, socle exhaustion, analytic segment classification, linked-pair
 commutation, or a segment-product irreducibility criterion. This use does not
 move those segment formulas into the BZ77-only detection proof. Section 9.6
 is not used. The distinct nonadjacent proof has its own preserved restrictions;
 the generic freeness theorem in its closure is a central-character result,
 not the excluded special-head existence conclusion.
 
-The operator-paused minus-exactness and finite-length tasks have not been
-reopened or duplicated. Already accepted and published lower inputs remain
-the ones used; no pending task, draft or citation is substituted for a proof.
-The full imported/mathematical distinction is also explained in
+The lower inputs used are the published ones described above; no draft or
+citation is substituted for a proof. The full imported/mathematical distinction is also explained in
 [the highest-product derivative proof](SegmentSocleProductHighestDerivativeProof.md)
 and [the homogeneity proof](SegmentSocleProductHomogeneityProof.md).
 
@@ -335,26 +314,22 @@ and [the homogeneity proof](SegmentSocleProductHomogeneityProof.md).
 At Library base `538f554630aa4cd24a084e698b1768d7143ba586`, the module closure
 contains 1,250 project modules: the two new pairs and 1,248 published pairs.
 Every imported Lean/Markdown pair matches the public tree and every Markdown
-file is nonempty. There are 316 distinct direct external import roots, fixed
-by approved environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`.
+file is nonempty. There are 316 distinct direct external import roots.
 The entire previously audited 1,227-module homogeneity closure is unchanged.
 The 21 additional published modules are the boundary, initial-truncation,
 strong-socle and exact mirabolic highest-layer/reduction inputs described above.
 
-Development Lake check `bc94ac9e-c6a5-49c8-be43-47201242d78a` compiled the
-adapter and parent with zero errors and warnings and inspected the parent with
-independent `uF,uV` and only the three standard axioms. Private diagnostic
-`f1b47df8-da1b-4e50-9dc7-c13cea61e308` additionally assigned the complete
-unapplied theorem to the exact telescope, printed its complete type and
-performed the transitive declaration check reported above. These are development
-checks. The submitted exact proof still requires its own machine validation,
-independent semantic acceptance and Library publication.
+A Lake check compiled the adapter and this module with zero errors and
+warnings and inspected the theorem with independent `uF,uV` and only the three
+standard axioms. A further diagnostic assigned the complete unapplied theorem
+to the exact telescope, printed its complete type and performed the transitive
+declaration check reported above.
 
 The table below lists all 1,248 published project dependencies, with their
 checked Lean and Markdown SHA256 fingerprints. It omits only this pair and
-`OrderedMultisegmentSocleAdapter`, which are submitted together. Import edges
-are the unchanged imports of the named modules; traversing the parent and
-adapter imports reproduces exactly this inventory. Mathematical uses and the
+`OrderedMultisegmentSocleAdapter`, which is ported together with this module.
+Import edges are the unchanged imports of the named modules; traversing this
+module's and the adapter's imports reproduces exactly this inventory. Mathematical uses and the
 allowed generic modules are described above, including imports whose
 propositions or other declarations are unused by the theorem.
 

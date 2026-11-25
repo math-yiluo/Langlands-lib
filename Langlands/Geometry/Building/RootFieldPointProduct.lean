@@ -77,7 +77,7 @@ local notation "i" => CommGroupScheme.groupHom f ≫ j
 local notation "i_L" => CategoryTheory.Functor.map (GroupScheme.baseChange b) i
 local notation "a_L" a => characterLattice.baseChange b S a
 
-local instance : IsAffineHom (G_L).X.hom := by
+private local instance : IsAffineHom (G_L).X.hom := by
   change IsAffineHom (CategoryTheory.Limits.pullback.snd G.X.hom b)
   infer_instance
 

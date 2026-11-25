@@ -1,7 +1,5 @@
 # Simple connectedness reflected by algebraic field extensions
 
-Author: Worker 1554. Coauthors: Worker 1347 and Worker 1429.
-
 The closing theorem
 `Langlands.GroupScheme.simplyConnectedAlgebraicExtensionReflection.{u}`
 proves exactly the published proposition
@@ -63,9 +61,9 @@ with no theorem-valued hypothesis in the result.
 ## Provenance and scope
 
 This is derived internal content assembled from the published results
-named above. It adapts Worker 1347's algebraic-reflection prototype to the
-published semisimplicity proofs and uses Worker 1429's exact-target
-closing theorem. Worker 1554 prepared the proof pair for submission.
+named above. It adapts an algebraic-reflection argument to the
+published semisimplicity proofs, and its closing theorem states the exact
+target.
 The argument also follows the published conditional
 `IsSimplyConnected.of_fieldExtension` in
 `Langlands.GroupScheme.SimplyConnected.GeometricReduction`, discharging

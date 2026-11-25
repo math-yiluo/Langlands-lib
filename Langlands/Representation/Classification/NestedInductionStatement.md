@@ -1,7 +1,5 @@
 # Normalized induction in stages inside a product Levi
 
-Authors: Worker 519 and Worker 156.
-
 `Langlands.NormalizedNestedInductionStatement.{uF,uV,uM,uW}` is the conjunction
 of `Langlands.NestedInduction.Comparison.{uF,uV}` and
 `Langlands.NestedInduction.QuotientTransport.{uF,uV,uM,uW}`. All three
@@ -145,7 +143,8 @@ or tensor-presentation premise on the representations. In particular, the
 first comparison concerns constructed smooth parts even when `ω` is not
 smooth. For the quotient clause, the fine induced source is smooth by its
 construction, and surjectivity of `qFineMiddle` transfers smoothness to
-`σ`; establishing and using these facts belongs to the later proof.
+`σ`; establishing and using these facts belongs to the proof
+(`Classification.NestedInductionProof`).
 Neither transitivity, exactness, a modulus identity, another comparison,
 nor a section of a surjection is assumed as theorem-valued input.
 
@@ -168,8 +167,8 @@ the following paragraph explicitly requires compatibility of the
 normalizing factors. Section 2.2, p.446, identifies standard GL Levis
 with ordered partitions and nested refinements. Proposition 2.3(a,c)
 gives the corresponding exactness and transitivity for standard Levis.
-No applicable source errata file was found in the current Library or
-project notes in this task's bounded native search.
+No applicable source errata file was found in the Library or project notes
+by a bounded native search.
 
 The source theorem concerns smooth inducing representations. The present
 arbitrary-input smooth-part formulation, exact ordered finite-coordinate
@@ -189,11 +188,12 @@ product-Levi induction to `qFineMiddle`, proving its induced map is
 surjective, comparing the nested and direct induction, checking the
 `h`-transport compatibility of `fineTwist`, and composing with
 `qMiddleCoarse`. Those proof obligations, including the needed
-product-Levi exactness specialization, remain open here. No shared
+product-Levi exactness specialization, are not discharged here; both clauses
+are proved by `Langlands.normalizedNestedInduction` in
+`Classification.NestedInductionProof`. No shared
 normalization, composed-to-flat, tensor, general exactness, analytic
 support, or regular-head theorem is proved in this module.
 
-Worker 156 supplied the elaborated interface scaffold reused for the two
-clauses. Worker 519 checked the retained source and existing interfaces,
-adapted the scaffold to the public names, and wrote this companion
-explanation. Existing Library pairs are unchanged.
+The retained source and the existing interfaces were checked, and the
+interface for the two clauses was adapted to the public names. Existing
+Library pairs are unchanged.

@@ -1,7 +1,5 @@
 # The Lang–Weil estimate, uniformly in families over the integers
 
-Author: Worker 69.
-
 This module states the uniform Lang–Weil estimate for families of geometrically irreducible
 varieties over the integers. It is the common generalization through which the Library's route
 proves Conrad's Lemma 4.6 (`Langlands.AlgebraicGeometry.UniformLangWeilStatement`) and its
@@ -102,5 +100,14 @@ integral.
 
 ## Status
 
-Open. None of these statements is proved here; each is to be proved through its own focused
-proof task.
+None of these statements is proved here; each is proved in its own module:
+`familyPointUpperBound` (`FamilyPointUpperBoundProof`), `planeCurveHasseWeil`
+(`PlaneCurveHasseWeilProof`), `BertiniGenericHyperplane.bertiniGenericHyperplaneStatement`
+(`BertiniGenericHyperplaneProof`), `familyLangWeilZero` (`FamilyLangWeilZeroProof`),
+`familyLangWeilCurve` (`FamilyLangWeilCurveProof`), `familyLangWeilSlicing`
+(`FamilyLangWeilSlicingProof`), `spaceUniformLangWeilOfFamily`
+(`SpaceUniformLangWeilOfFamilyProof`) and `uniformLangWeilOfFamily`
+(`UniformLangWeilOfFamilyProof`). `FamilyLangWeilStatement` itself is
+`familyLangWeilOfPlaneCurve planeCurveHasseWeil` (`FamilyLangWeilOfPlaneCurveProof`), the
+term through which `uniformLangWeil` (`UniformLangWeilProof`) and `spaceUniformLangWeil`
+(`SpaceUniformLangWeilProof`) prove the two forms of Lemma 4.6.

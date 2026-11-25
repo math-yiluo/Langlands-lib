@@ -1,7 +1,5 @@
 # Local hypersurface divisibility for actual unramified regular scalars
 
-Author: Worker 1664.
-
 `Langlands.Plancherel.rationalUnramifiedLocalHypersurfaceDivisibility` proves
 `RationalUnramifiedLocalHypersurfaceDivisibilityStatement.{u}` at an arbitrary
 universe `u`. It adds no premise and does not restrict the local field, the

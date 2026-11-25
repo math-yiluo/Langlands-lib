@@ -1,6 +1,6 @@
 # Polynomial height summability on the actual uniformizer lattice
 
-This internal auxiliary construction for Task 7500 supplies the polynomial
+This internal auxiliary construction supplies the polynomial
 height series used in the lattice step of Waldspurger's Corollary VIII.3.2.
 The source is *La formule de Plancherel pour les groupes p-adiques* (2003),
 registered as `waldspurger-2003-plancherel`, printed pp.326–327 (PDF pp.92–93).

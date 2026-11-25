@@ -67,14 +67,14 @@ arbitrary-topological-space version are internal formal generalizations of
 the definition in this chapter on totally disconnected spaces. They require
 only the supplied topology and its actual chosen basis, with no separation,
 compactness, size, intersection-closure or nonemptiness assumptions.
-Empty spaces and empty basis objects are included. This unit defines objects
+Empty spaces and empty basis objects are included. This module defines objects
 satisfying the sheaf axiom; it does not assert that every module presheaf
 is a sheaf.
 
-Worker 633 implemented this unit, reusing the published basis framework and
-Mathlib module presheaves. Worker 6 contributed the source audit and the
-actual-module-presheaf/full-subcategory interface design recorded in the task.
+This module reuses the published basis framework and
+Mathlib module presheaves.
 Construction from a basis sheaf with supplied module structures and the
-remaining intrinsic gluing/all-open interfaces follow in a separate unit.
+remaining intrinsic gluing/all-open interfaces are in the separate modules
+`RingedBasisModuleAdapter` and `RingedBasisModuleGluing`.
 Locally constant scalars, their actions, restriction along constants,
-basis-change equivalences and the II.2.5 equivalences retain separate successors.
+basis-change equivalences and the II.2.5 equivalences are not constructed here.

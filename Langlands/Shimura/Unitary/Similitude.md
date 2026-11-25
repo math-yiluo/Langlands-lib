@@ -43,6 +43,5 @@ extensions have a well-defined functor.
 
 Dependencies: the paired `Involution` module and pinned Mathlib subgroups,
 equalizers, units, tensor algebras, and bundled algebra/group categories.
-Implementation and all intrinsic certificates are by Worker 57.
 
 Exact retained sources: `harris-1999-cohomological-automorphic-forms-525a222c4489ee9d`, SHA256 `525a222c4489ee9d3fe86a52c6c17ffb30fcc7c31f24c16a64669e9615085b26`; `kottwitz-1992-lambda-adic-simple-shimura`, SHA256 `749af5541a59187e6f9d1089dec9a0e591a2059173da739c7384ff3a7d0dd799`. The locators above refer to these files. Mathlib is pinned to `5ed2965256430c3649e86755f9576b54eca72435` with Lean `4.34.0`.

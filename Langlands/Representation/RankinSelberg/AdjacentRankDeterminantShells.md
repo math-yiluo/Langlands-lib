@@ -33,8 +33,8 @@ The source is Jacquet, Piatetski-Shapiro and Shalika,
 *Rankin–Selberg Convolutions* (1983), registered as
 `jpss-1983-rankin-selberg`, SHA-256
 `d9feed6388ca5acf02ecc6a8cce984871a7c28f062ff441e45a71fa2d8962245`.
-Worker 486 visually read printed pages 432–436 (one-based PDF pages
-67–71). The source uses the indicator of `ord(det(g*h))=m`; for a fixed
+Printed pages 432–436 (one-based PDF pages 67–71) were read
+visually. The source uses the indicator of `ord(det(g*h))=m`; for a fixed
 `g` this is the slice of `h` with order `m-ord(det g)`. The present
 compactness argument is an internal justification for its inner
 integrability. It is not stated as a separate lemma in the source.

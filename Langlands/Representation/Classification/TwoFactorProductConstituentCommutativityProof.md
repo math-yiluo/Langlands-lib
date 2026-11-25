@@ -1,7 +1,5 @@
 # Proof of constituent commutativity for two irreducible GL factors
 
-Author: Worker 763.
-
 This module proves the irreducible two-factor case of Zelevinsky (1980),
 Theorem 1.9. The target is the published proposition
 `Langlands.Classification.TwoFactorProductConstituentCommutativity.{uF,uV} F T`
@@ -241,14 +239,14 @@ contains no classification conclusion. Other modules in the closure that
 mention "exhaustion" concern compact-open exhaustions of groups and compact
 isotypic parts, not exhaustion of irreducible representations.
 
-The closure contains none of the tasks excluded by the target statement's
-Independence section, nor their proof successors. It contains no
+The closure contains none of the results excluded by the target statement's
+Independence section, nor any proofs of them. It contains no
 finite-length form of Theorem 1.9 and no adjacent block-swap result.
 
 
 The generic `equivComp`, `haveSameJordanHolderFactors_comp` and
 `haveSameJordanHolderFactors_of_comp` interfaces reuse the existing finite-tensor
-pullback helpers, now shared in
+pullback helpers, shared in
 [`FactorMatchingPullback`](../Filtration/FactorMatchingPullback.md). Their
 declaration types are unchanged. The helper module imports only the published
 Jordan–Hölder transport and cuspidal-support association infrastructure.

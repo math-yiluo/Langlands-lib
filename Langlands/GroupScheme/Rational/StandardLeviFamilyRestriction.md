@@ -1,6 +1,6 @@
 # Standard families restricted to a canonical standard Levi
 
-Worker 83 derives these comparisons for the chamber reduction task from the
+This module derives these comparisons for the chamber reduction from the
 published standard-cocharacter, dynamic Lie, standard-Levi family, and
 connected-reductivity proofs. The indices are arbitrary subsets `J` and `K` of
 the ambient simple relative roots, without a nesting condition.

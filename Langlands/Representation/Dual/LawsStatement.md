@@ -26,13 +26,11 @@ hypothesis. Neither injectivity nor surjectivity of evaluation is asserted.
 These are internally derived laws of the explicit constructions, not the
 reflexivity or Hom-space isomorphism theorems in Casselman.
 
-The sole project import is the accepted `Dual.Definitions` pair,
-artifact `079d7c1a-8b96-4917-997a-536d6954d55b`, version 1. It was independently
-accepted and published at Library commit
-`10a8e5eac875b7248fff44f875873354d7d3e9e8`, with receipt
-`2b7a1194-a2fd-4aad-bbb5-871370bbfa8b`. The effective Lean SHA is
-`53959e3b6cd0faad27f2566cbc9275fd537e5ab59d800f453bcbd61d05415ae5`;
-the paired Markdown SHA is
+The sole project import is the `Dual.Definitions` pair. It entered the
+Library at commit
+`10a8e5eac875b7248fff44f875873354d7d3e9e8`, with Lean SHA
+`53959e3b6cd0faad27f2566cbc9275fd537e5ab59d800f453bcbd61d05415ae5`
+and paired Markdown SHA
 `bf9972bb15d854ff605ed825fdcdf90734dc924ad0ae33efb6bb4e55a882845a`.
 
 Source context: `casselman-2019-smooth-representations`, content SHA
@@ -40,5 +38,5 @@ Source context: `casselman-2019-smooth-representations`, content SHA
 Chapter II, Section 3, page 6, opening paragraphs and the paragraph following
 Corollary II.3.3. See [Definitions](Definitions.md) for the precise source file,
 construction-field proofs, and prepared environment.
-This pair defines a proposition target; it does not prove the laws. A proof
-requires a separately bound task against the accepted, currently published target.
+This pair defines a proposition target; it does not prove the laws. The
+proof is `Langlands.algebraicDualLaws` in `Dual.LawsProof`.

@@ -25,6 +25,7 @@ def smulPresheaf (a : R) (P : X.PresheafOfModules) : P ⟶ P where
       (LinearMap.lsmul (X.ringCatSheaf.obj.obj U) (P.obj U) (scalar f U.unop a))
   naturality {U V} i := by
     ext m
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
     change scalar f V.unop a • P.map i m = P.map i (scalar f U.unop a • m)
     rw [P.map_smul]
     change _ = X.presheaf.map i (scalar f U.unop a) • P.map i m

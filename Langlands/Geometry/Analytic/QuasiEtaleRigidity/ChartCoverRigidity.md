@@ -1,7 +1,5 @@
 # Rigidity from rigidity on the charts of a finite chart cover
 
-Author: Worker 931.
-
 This is a helper module of `QuasiEtaleLiftCompatibilityProof`. It is internal.
 
 ## Helpers

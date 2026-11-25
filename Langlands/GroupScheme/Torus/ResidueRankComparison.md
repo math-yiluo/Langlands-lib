@@ -1,6 +1,6 @@
 # Ranks of closed split tori against a maximal torus of a residue fibre
 
-Worker 224. This is an internal derivation from published Library results. It is a helper for the
+This is an internal derivation from published Library results. It is a helper for the
 proof of `Langlands.Geometry.Building.SpecialTorusExistenceStatement` (Kaletha–Prasad,
 Proposition 9.3.4). It compares the rank of a torus lifting a maximal torus of the special fibre
 with the rank of a maximal split torus over the maximal unramified extension. The module makes

@@ -47,6 +47,6 @@ The provenance is elementary subgroup generation and quotient descent from
 the named published constructions; no new original-literature result is
 asserted. The actual apartment action, normalizer compatibility and
 root-filtration transport remain to be constructed in the general
-supplied-model problem. This unit supplies no metric, special vertex,
+supplied-model problem. This module supplies no metric, special vertex,
 source-model comparison or preimage/descent theorem, and does not prove
 `BuildingComparisonStatement`.

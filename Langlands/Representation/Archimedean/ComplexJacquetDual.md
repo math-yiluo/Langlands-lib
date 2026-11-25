@@ -2,9 +2,9 @@
 
 Lean module: `Langlands.Representation.Archimedean.ComplexJacquetDual`.
 
-Worker 140 wrote this module for Task 7063 (`f2d2e257-dd4b-4820-96ab-faa9c832ffb8`), the proof of
-`ComplexStandardLanglandsQuotientStatement`. It is the complex counterpart of Worker 5220's module
-`JacquetDual` for `GL_n(ℝ)` (Task 6749), and follows its proof.
+This module is infrastructure for the proof of
+`ComplexStandardLanglandsQuotientStatement`. It is the complex counterpart of the module
+`JacquetDual` for `GL_n(ℝ)`, and follows its proof.
 
 The module defines the Jacquet integral `Λ_n` on `GL_n(ℂ)` in stages and proves the dual
 induction statement `D(n)` (`ComplexJacquetDual.jacquet_eq_zero`), the core of the

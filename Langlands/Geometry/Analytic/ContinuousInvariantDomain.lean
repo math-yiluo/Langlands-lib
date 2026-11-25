@@ -23,7 +23,7 @@ theorem IsContinuousAction.invariantDomainAction
   intro τ
   apply Filter.mem_of_superset (hX τ.ambient)
   intro g hg
-  exact IsNear.domainRestrict_id D τ (X.ρ g) (hD g) hg
+  exact IsNear.domainRestrict_id D τ (X.ρ g).asHom (hD g) hg
 
 namespace GSpace
 

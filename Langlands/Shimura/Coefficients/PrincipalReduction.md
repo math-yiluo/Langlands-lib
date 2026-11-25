@@ -1,7 +1,5 @@
 # Principal reductions of local coefficient lattices
 
-Author: Worker 57.
-
 ## Construction and hypotheses
 
 For a number field `L`, a finite place `l`, and a natural number `m`,
@@ -64,7 +62,7 @@ The registered sources are:
 - `harris-1999-cohomological-automorphic-forms-525a222c4489ee9d`, SHA-256
   `525a222c4489ee9d3fe86a52c6c17ffb30fcc7c31f24c16a64669e9615085b26`.
 
-This unit does not prove continuity of an algebraic representation, openness
+This module does not prove continuity of an algebraic representation, openness
 of its congruence kernels, finite quotient cardinalities, or geometric
 coefficient descent. It applies to a given open integral submodule; constructing
 an open stable lattice and applying the congruence-kernel theorem are separate

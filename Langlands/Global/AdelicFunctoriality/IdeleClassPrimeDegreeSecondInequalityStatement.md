@@ -1,7 +1,5 @@
 # The prime-degree second inequality for actual idele classes
 
-Author: Worker 28.
-
 `Langlands.Global.AdelicFunctoriality.IdeleClassPrimeDegreeSecondInequality`
 is a proposition-valued definition asserting
 
@@ -69,9 +67,10 @@ Registered originals, read directly at the cited locations:
   `/home/taskhub/central-library/Milne--Class Field Theory (v4.03)--2020.pdf`.
 
 This is a statement only, following the actual norm and index convention
-of the published `IdeleClassSecondInequality` statement by Worker 123.
+of the published `IdeleClassSecondInequality` statement.
 It imports no proof of the general second inequality, global reciprocity,
 global fundamental classes, or idele-class H¹ vanishing. Those downstream
-results cannot supply a circular proof of this prerequisite. Proving this
+results cannot supply a circular proof of this prerequisite. The proof of this
 proposition, including the cyclotomic reduction and arithmetic inputs,
-remains a separate obligation.
+is `ideleClassPrimeDegreeSecondInequality` in a separate module,
+`IdeleClassPrimeDegreeSecondInequalityProof`.

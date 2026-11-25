@@ -1,14 +1,14 @@
 # The gauge estimate for uniformly regular real Whittaker functions
 
-Helper module for the convergence part of the real local Rankin–Selberg theory (Task 7400,
-towards `Langlands.Global.RankinSelbergGlobal.RealPlaceFunctionalEquationStatement`).
-Authored by Worker 823. Every declaration is proved. The module uses no axioms beyond
+Helper module for the convergence part of the real local Rankin–Selberg theory (towards
+`Langlands.Global.RankinSelbergGlobal.RealPlaceFunctionalEquationStatement`).
+Every declaration is proved. The module uses no axioms beyond
 Lean's standard ones (`propext`, `Classical.choice`, `Quot.sound`).
 
 All declarations are in the namespace
 `Langlands.Global.RankinSelbergGlobal.RealWhittakerGauge`. Throughout, `G = GL_(r+1)(ℝ)`,
 `a ∈ ℝˣ` is an additive parameter, `regularFunctions r a` and `iteratedRightDerivative r Xs W`
-are the accepted definitions of the module `RealLocalWhittakerProperties`, and
+are the definitions of the module `RealLocalWhittakerProperties`, and
 `realMatrixHeight g = ∑_(i,j) (|g_ij|² + |(g⁻¹)_ij|²)` comes from `RealLocalWhittakerModel`.
 `torus y = diag(exp y_0, …, exp y_r)` is from the module `RealIwasawa`, and `k` ranges over the
 orthogonal group `unitaryCompact ℝ (r+1)`.
@@ -28,10 +28,10 @@ Then there is `N'` (in fact `N' = 2N`) such that for every `M : ℕ` there is `C
 
 for all `y ∈ ℝ^(r+1)` and all orthogonal `k`.
 
-The two hypotheses have the same shape as the two conjuncts in Worker 771's statement
+The two hypotheses have the same shape as the two conjuncts in the statement
 `RealUniformWhittaker.HasUniformDerivativeGrowth` and the regularity part of
-`realUniformWhittakerRegularity` (candidate 660d932e). This module states them as explicit
-hypotheses and does not depend on that candidate.
+`realUniformWhittakerRegularity` (module `RealUniformWhittakerModel`). This module states them
+as explicit hypotheses and does not import `RealUniformWhittakerModel`.
 
 This is the real case of the gauge estimate of Jacquet, *Archimedean Rankin–Selberg
 integrals* (2009), Proposition 3.1 (pp. 15–16): a Whittaker function decays rapidly in each

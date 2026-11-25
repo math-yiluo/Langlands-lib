@@ -5,9 +5,10 @@ closed published `Langlands.Algebra.NondegenerateFInductionExactnessTheorem`.
 It gives the full `SequenceExact` of `NondegenerateTensorFunctor.F` and the
 full `SequenceLeftExact` of `RenardHomFunctors.I`, including the appropriate
 boundary monomorphism and epimorphism for every tested one-sided exact sequence.
-Workers 595 and 695 developed the proof together; Worker 595 supplies the
-concrete categorical criteria, F argument and final assembly, and Worker 695
-the direct I argument in the companion `NondegenerateILeftExactness`.
+The concrete categorical criteria are in the companion
+`NondegenerateModuleExactnessConcrete`, the F argument and the final assembly
+are in this module, and the direct I argument is in the companion
+`NondegenerateILeftExactness`.
 
 Renard I.2.4 states exactness of F and left exactness of I in the complex-algebra
 setting. This result is the published internal arbitrary-ring additive

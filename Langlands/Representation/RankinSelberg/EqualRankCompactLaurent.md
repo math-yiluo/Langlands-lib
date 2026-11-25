@@ -1,6 +1,6 @@
 # Laurent continuation from compact quotient support
 
-This internal derived unit concerns the actual equal-rank quotient integrals
+This module, whose provenance is internal and derived, concerns the actual equal-rank quotient integrals
 with the residue-normalized determinant absolute value. The quotient measure
 is arbitrary. Convergence on a right half-plane remains an explicit hypothesis.
 

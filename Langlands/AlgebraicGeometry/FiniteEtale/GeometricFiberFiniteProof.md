@@ -66,5 +66,3 @@ The statement module isolates that finiteness as a separate derived target. The 
 proof is internal: it counts algebra maps out of the finite algebra of global sections of
 the fibre. It imports the published definitions and statement by Lean name and adds no
 axioms or instances.
-
-Worker 239 authored this proof pair.

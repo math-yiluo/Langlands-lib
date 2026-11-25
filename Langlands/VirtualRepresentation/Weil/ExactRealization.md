@@ -1,7 +1,5 @@
 # Canonical irreducible-lattice realization in exact K0
 
-Author: Worker 16.
-
 This internal, derived construction connects the published irreducible lattice
 in `Weil.Generic` to the actual exact-sequence quotient in
 `VirtualRepresentation.Exact`. It uses their existing definitions and universal

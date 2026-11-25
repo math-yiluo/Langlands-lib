@@ -1,6 +1,6 @@
 # Proof of Frobenius reciprocity for normalized parabolic induction
 
-Author: Worker 16, task `27fe1be6-a9cb-4bc5-8f71-3af15cd3d92b`. Module
+Module
 `Langlands.Representation.Exponents.LeviFrobeniusReciprocityProof`, namespace
 `Langlands.Aubert.General.RepresentedParabolic`.
 
@@ -15,7 +15,7 @@ used. In particular the unimodularity of the radical is proved, not assumed.
 
 ## Helper modules
 
-The proof uses three helper modules, submitted with it:
+The proof uses three helper modules, ported together with this module:
 
 - `Langlands.Algebra.GradedHopf.TrivialGrading`: ungraded unitriangular matrix coefficients
   of a unipotent Hopf algebra of finite type over a field.

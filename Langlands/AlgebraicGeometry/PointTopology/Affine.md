@@ -1,7 +1,5 @@
 # Evaluation topology on affine points
 
-Author: Worker 105.
-
 This construction implements the intrinsic topology in Brian Conrad,
 *Weil and Grothendieck approaches to adelic points* (December 31, 2011),
 Proposition 2.1, printed page 2, and the composition maps used in

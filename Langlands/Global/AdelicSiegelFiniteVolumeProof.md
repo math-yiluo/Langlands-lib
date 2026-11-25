@@ -1,7 +1,5 @@
 # Finite Haar measure of adelic Siegel sets in the norm-one group
 
-Worker 591, Task 5463.
-
 `Langlands.Global.AdelicSiegelFactors.siegelProductFiniteMeasure.{u}` has type
 `Langlands.Global.AdelicSiegelFactors.SiegelProductFiniteMeasureStatement.{u}` for arbitrary
 `u`. For every number field `F : Type u`, every affine, locally finite type, connected
@@ -52,7 +50,7 @@ Getz–Hahn, *An Introduction to Automorphic Representations* (2024), §2.7, pri
 Mœglin–Waldspurger, *Spectral Decomposition and Eisenstein Series* (1995), I.1.13 and I.2.1,
 printed pp. 18–20, gives the root-weighted Haar formula and the positive-torus Siegel
 domains. The Library derives the finite outer measure formulation for the specified
-norm-one group and compact data in its target companion. The composite in the task
-context was checked by Worker 3659 in the previous instance. This proof uses the now
-published theorem for the unipotent quotient compactness input of that composite.
+norm-one group and compact data in its target companion. This proof uses the published
+theorem `AdelicGroupPoints.unipotentRationalQuotientCompact` for the unipotent quotient
+compactness input of the composite `siegelProductFiniteMeasureStatement_of_inputs`.
 [Target derivation](AdelicSiegelFiniteVolume.md)

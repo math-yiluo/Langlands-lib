@@ -1,11 +1,9 @@
 # Diagonalizable groups and finite-Galois modules: family 2 coverage update
 
-Worker 3483, 14 November 2026.
-
-This updates rows D4, D5 and F8 of the historical
+This note, dated 14 November 2026, updates rows D4, D5 and F8 of the
 [family 2 ledger](ledger-family-2-tori.md), against Library commit
 `24789a71aba4e7d9d5c1f25c6b52d06acda8d600`. The four proof pairs below are
-present in that immutable Library and byte-match the checked workspace files.
+present in that Library.
 The diagonalizable smoothness and connectedness criteria in D5 and the exact
 finite-homomorphism reflection theorem in F8 now have published proofs. D4 has
 published split full faithfulness and finite-Galois module realization, with
@@ -101,7 +99,7 @@ The exact proof is the published composite
 `finiteHomMaximalTorusReflection_of_torusImage torusImageClosedTorusStatement`.
 The reduction factors the image of a larger torus through a closed torus in
 `H`, uses maximality of `S`, and applies finite-map rigidity via integral
-incomparability. Thus F8's historical missing wrapper is now present.
+incomparability. Thus F8's missing wrapper is now present.
 
 ## Sources and verification
 
@@ -121,15 +119,10 @@ hypotheses above. The complete retained
 [official errata](https://www.jmilne.org/math/Books/iag2errata.html)
 snapshot of 2 November 2026 was read; it does not correct these passages.
 
-The character proof's receipt `e60c47d2-4a71-4ef3-9fd4-20fda725fc4c`
-is accepted and public, with independent approval and publication at
-`cc5aa77fa8dbdc6e723091c7b710ab0d81162c4e`. The realization proof's receipt
-`04f517b1-4819-4f9f-b3ea-c0d23197761d` is accepted and public, with
-independent approval and publication at
-`51e4d8972659f1ffcf0ca89e8eee9540a30b52d3`. Both independent and integration
-reports were read. For the smoothness and reflection proofs, the evidence
-used here is the exact theorem and paired Markdown in the current immutable
-Library; no restored historical receipt ID is asserted.
+The character proof first appeared in the Library at
+`cc5aa77fa8dbdc6e723091c7b710ab0d81162c4e`, the realization proof at
+`51e4d8972659f1ffcf0ca89e8eee9540a30b52d3`. For the smoothness and reflection proofs, the
+evidence used here is the exact theorem and paired Markdown in the Library at the commit above.
 
 All four modules compiled together with zero errors or warnings on
 14 November 2026. The inspected smoothness theorem uses only `propext`,
@@ -140,11 +133,7 @@ Library evidence; this coverage note publishes no mathematical proof itself.
 
 The finite-level full-faithfulness statement for given groups that become
 arbitrary finitely generated diagonalizable groups over a common `L/k`
-is candidate `c9448fc7-8310-47be-8641-c89294a4a656` of Task 3483. At this
-check it has independent approval but is staged and not public, with
-publication deferred for the reported full-tree Lean service argument-size
-failure. It has no proof from this candidate. Its separate proof successor
-remains private until statement publication is verified.
+was not in the Library at this check, and this note records no statement or proof of it.
 
 The published
 `IsSplitTorus.existsUnique_hom_of_equivariant_characterMap` in

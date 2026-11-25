@@ -52,23 +52,21 @@ different choices.
 The two bases are arbitrary schemes in one universe. No flatness,
 noetherian, quasi-separated or field hypothesis is imposed beyond the
 explicit premises giving the existing constructions. Additivity in `f`
-is not required for this integral square. A later rational extension
-will also need pointwise additivity at the original and changed
+is not required for this integral square. The rational extension in
+`DualRationalBaseChange` also needs pointwise additivity at the original and changed
 endpoints. The Mumford square theorem is not used in these dual-map
 constructions.
 
-The provenance is internal. Worker 57 formulated the exact target
-following Worker 144's comparison and ownership analysis. The expected
-proof compares the Poincare families obtained by first pulling back
+The provenance is internal. The
+proof `dualAbelianBaseChangeNaturality` (module
+`Langlands.AlgebraicGeometry.Picard.DualAbelianBaseChangeNaturalityProof`) compares the
+Poincare families obtained by first pulling back
 along `f` and then changing the base with those obtained in the reverse
 order, and applies uniqueness of classification on every test scheme.
-The resulting equality of underlying scheme maps must then be lifted
-to the actual constructed abelian-scheme homomorphisms. These family
-and classifier comparisons remain proof obligations.
+The resulting equality of underlying scheme maps is then lifted
+to the actual constructed abelian-scheme homomorphisms.
 
 This statement supplies no naturality proof, rationalized square,
 involution transport, identity or successive-base coherence for the
 dual comparisons, preservation of a polarization, or polarized
-Weil-level pullback. Those are separate downstream results; the
-statement does not resume any paused representability or
-ample-bundle-existence task.
+Weil-level pullback. Those are separate downstream results.

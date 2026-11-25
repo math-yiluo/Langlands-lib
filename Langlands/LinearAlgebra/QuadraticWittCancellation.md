@@ -1,7 +1,5 @@
 # Cancellation of a nonzero quadratic line
 
-Worker 864.
-
 `Langlands.quadraticForm_equivalent_of_prod_smul_sq` proves one-dimensional
 Witt cancellation over a field in which 2 is invertible. An isometry between
 orthogonal products with the common summand `a • QuadraticMap.sq`, for `a ≠ 0`,

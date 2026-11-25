@@ -1,7 +1,5 @@
 # L-factors of genuine Langlands standard modules
 
-Author: Worker 111.
-
 `Langlands.RankinSelberg.langlandsTypeLFactor` proves exactly the closed
 `Langlands.RankinSelberg.LanglandsTypeLFactorStatement.{uF,uV,uW}`.
 For every prime, canonical p-adic field, unitary additive character, supplied

@@ -1,6 +1,6 @@
 # Density of conjugators onto ground-field maximal tori
 
-Worker 1523. This module states one proposition,
+This module states one proposition,
 `RationalMaximalTorusConjugateDensityStatement.{u}`. It is not proved here.
 
 ## Statement

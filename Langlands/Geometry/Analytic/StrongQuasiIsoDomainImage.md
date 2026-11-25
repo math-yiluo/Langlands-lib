@@ -121,7 +121,7 @@ category, and original-chart comparison construction. The equations and
 universal properties just described construct all new objects and arrows.
 No new external-literature assertion or source quotation is made.
 
-This unit does not prove essential surjectivity of the image functor,
+This module does not prove essential surjectivity of the image functor,
 construct Ore squares for arbitrary target quasi-isomorphisms, identify the
 full analytic morphism category, or define the analytic and equivariant sites
-and Harris tower specializations. Those obligations of the host task remain.
+and Harris tower specializations.

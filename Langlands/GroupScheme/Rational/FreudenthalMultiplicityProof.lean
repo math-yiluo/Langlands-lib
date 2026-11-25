@@ -133,7 +133,7 @@ theorem freudenthalMultiplicityStatement : FreudenthalMultiplicityStatement.{u} 
     pairLieWeightDataStatement k G p N n σ r hσ
   obtain ⟨hfree, hfin⟩ := TorusSurjectionIsogenySection.characterLattice_free_finite
     p.isSplitTorus
-  have : IsAddTorsionFree (characterLattice p.torus) := .of_isTorsionFree ℤ _
+  have : HasUniqueDiv (characterLattice p.torus) := .of_isTorsionFree ℤ _
   obtain ⟨I, hI, ⟨e⟩⟩ := p.isSplitTorus.exists_cocharacterCoordinates
   let _ : Fintype I := Fintype.ofFinite I
   classical

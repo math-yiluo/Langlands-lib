@@ -1,7 +1,5 @@
 # Comparing the map and actual-class forms of induced Weyl conjugacy
 
-Author: Worker 168.
-
 This internal comparison is derived from the published exact-K0 generator
 formulas. It proves that the generic map and actual-class targets express
 equivalent identities, and specializes both implications to the whole

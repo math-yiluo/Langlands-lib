@@ -1,6 +1,6 @@
 # Normalizer shifts on original field points
 
-This internal unit isolates the exact normalizer-shift input needed after
+This module isolates the exact normalizer-shift input needed after
 restriction of a root-function family along a field extension. It uses the
 existing rational points, character pullback, normalizer-point extension and
 literal `RootFunctionFamily.fieldRestrict`. No complete valuation over the
@@ -54,9 +54,9 @@ root-group and nonidentity quantifiers.
 These are internal consequences of the existing family actions and field
 restriction interfaces. The pointwise shift formula is an explicit premise,
 equivalent to the desired original-family shift; it is not established for
-a new class of groups. In particular this unit neither constructs an
+a new class of groups. In particular this module neither constructs an
 adapted upper apartment nor imposes covariance on every point of a
 nonmaximal torus centralizer over `K`. Initial and adapted existence,
 opposite V5, the metric building and the original supplied-model
-special-vertex comparison remain open. The unchanged
+special-vertex comparison are not proved here. The unchanged
 `IntegralModel.BuildingComparisonStatement` is not proved here.

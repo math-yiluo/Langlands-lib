@@ -1,10 +1,8 @@
 # Proof of the supplied-integer quadratic norm–trace expansion
 
-Worker 84 implements `Langlands.LocalClassField.quadraticNormTrace.{u,v}`
-with exact type `QuadraticNormTraceStatement.{u,v}`. Worker 27 supplied
-the determinant-identity and localization route. Worker 1651 adopts their
-unchanged Lean implementation and prepares this paired explanation for
-independent review.
+This module implements `Langlands.LocalClassField.quadraticNormTrace.{u,v}`
+with exact type `QuadraticNormTraceStatement.{u,v}`, by a
+determinant-identity and localization route.
 
 For every prime `p`, finite compatible extension of supplied p-adic fields
 `E/F` in independent universes `u` and `v`, arbitrary supplied topological
@@ -21,7 +19,7 @@ the supplied field algebra, and `i` is its algebra map.
 The proof installs both supplied topologies, valuations and local-field
 certificates, then the published named relative integer and field
 algebras, their field tower and integer-inclusion tower.
-`NYLL.relativeIntegerStructure` gives integral closure and relative
+`UniverseZero.relativeIntegerStructure` gives integral closure and relative
 finiteness. Injectivity of the actual relative field map gives
 torsion-freeness on integer rings, and the existing principal-ideal
 structure gives module freeness. `IsIntegralClosure.isLocalization`
@@ -39,7 +37,7 @@ arithmetic puts the factors in the target's order.
 This is an internal adaptation of pinned Mathlib and public Library
 results listed in the target Markdown, using Lean 4.34.0 and Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`.
-The named integer structures and `NYLL.relativeIntegerStructure` are
+The named integer structures and `UniverseZero.relativeIntegerStructure` are
 imported from their public modules; the proof imports no private helper.
 The argument retains every prime including two, arbitrary finite degree
 and ramification, and zero or nonunit choices of `a` and `y`.

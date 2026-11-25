@@ -1,7 +1,5 @@
 # Transposed maps and homotopies on reversed duals
 
-Authors: Worker 975 (Lean construction), Worker 1015 (documentation and integration).
-
 This internal construction extends `FiniteFreeReversedDual` to maps and
 homotopies. Despite the inherited module name, its declarations apply to all
 integer cochain complexes of modules over a commutative ring `R : Type u`;
@@ -31,6 +29,6 @@ gives `reversedDualHomologyIsoOfHomotopyEquiv` in every integer degree.
 `reversedDualIsoOfIso` similarly transposes an isomorphism of complexes.
 
 The provenance is a direct derivation from the existing reversed-dual
-definition, linear dual maps, and the cochain homotopy identities. This unit
+definition, linear dual maps, and the cochain homotopy identities. This module
 supplies homotopy compatibility; it does not assert that dualizing an arbitrary
 quasi-isomorphism preserves quasi-isomorphisms.

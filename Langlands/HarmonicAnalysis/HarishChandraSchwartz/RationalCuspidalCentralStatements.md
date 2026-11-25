@@ -113,4 +113,4 @@ The targets are derived realizations of the cited source statements
 on the Library's actual integrable kernel and canonical coefficient
 spaces. The analytic VIII.4 proofs, the positive translation
 representation, the VIII.2 symmetries and convolution identities,
-and the VIII.3 estimates remain open work of their existing owners.
+and the VIII.3 estimates are not provided by this module.

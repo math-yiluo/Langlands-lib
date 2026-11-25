@@ -1,12 +1,10 @@
 # Reductions for the relative derived group
 
-Author: Worker 672.
-
 `RelativeDerivedReductionStatement` states that
 `RelativeDerivedGroupExistenceStatement` and
 `RelativeSemisimpleFppfPerfectStatement` together imply the unchanged
 `RelativeDerivedGroupStatement`, uniformly in the universe. The theorem
-`relativeDerivedGroup_of_inputs` proves this implication. This contribution
+`relativeDerivedGroup_of_inputs` proves this implication. This module
 does not prove either input or the unconditional derived-group theorem.
 
 This is an internal reduction from the published statements and constructions

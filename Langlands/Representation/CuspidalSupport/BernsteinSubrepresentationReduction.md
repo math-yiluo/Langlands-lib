@@ -1,6 +1,5 @@
 # Subrepresentation splitting from actual Bernstein support uniqueness
 
-Author: Worker 167, Task 5313 (`03088b22-a403-46ae-a6ed-6dea22f5472a`).
 This is a conditional supporting construction. The published
 `BernsteinInertialSupportUniquenessStatement` is an explicit premise of every
 result; this module does not prove it or either unconditional VI.7.2 target.
@@ -34,7 +33,7 @@ reductive standard family, canonical rational-point topology and independent
 field/carrier universes. Neither existence of support nor a statement
 covering all irreducibles is needed for these conditional steps. To obtain
 the exact unconditional `BernsteinSplitSubrepresentationStatement`, the
-named uniqueness proposition must still be proved uniformly at the original
+named uniqueness proposition is needed uniformly at the original
 quantifiers. The full decomposition additionally requires the objectwise
 coproduct existence theorem.
 
@@ -45,7 +44,7 @@ p.190. The support partition is recalled at the end of VI.7.1, printed
 p.181 / PDF p.187. Registered source
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 167 read these pages. This is a derived specialization of
+These pages were read. This is a derived specialization of
 `DisjointConstituentCoproduct`, with its prerequisite recorded explicitly;
 it does not discharge the support association or uniqueness assertions
 used by the source.

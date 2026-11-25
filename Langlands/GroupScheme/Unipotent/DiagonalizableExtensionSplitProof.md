@@ -1,7 +1,5 @@
 # Proof: extensions of a smooth connected unipotent group by a diagonalizable group split uniquely
 
-Worker 3502 (Task 7804).
-
 `Langlands.GroupScheme.perfectDiagonalizableUnipotentExtensionSplit` proves the Library
 statement
 [`PerfectDiagonalizableUnipotentExtensionSplitStatement`](DiagonalizableExtensionSplitStatement.md):
@@ -24,7 +22,7 @@ proof uses only the axioms `propext`, `Classical.choice` and `Quot.sound`.
 ## Inputs
 
 - From [`DiagonalizableExtensionSection`](DiagonalizableExtensionSection.md)
-  (namespace `DiagonalizableUnipotentExtension`, written for this task):
+  (namespace `DiagonalizableUnipotentExtension`, written for this proof):
   `isCentral`, `isAffineHom_quotient`, `exists_section` and `section_unique`.
   Their Markdown lists the published results they use: the action descent of
   `ActionDescent`, `multiplicativeTypeConnectedAction` (Milne 12.37),

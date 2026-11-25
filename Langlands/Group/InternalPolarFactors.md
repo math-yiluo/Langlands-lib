@@ -1,7 +1,5 @@
 # Internal polar factors and maximal compact subgroups
 
-Author: Worker 1571.
-
 This internal auxiliary module combines `AlgebraicPolar.exists_positive_sqrt`
 with the compactness and maximality results of `ClosedPolarCompact`. The field
 is any `RCLike` field in universe `u`. Matrix factors are constructed for every

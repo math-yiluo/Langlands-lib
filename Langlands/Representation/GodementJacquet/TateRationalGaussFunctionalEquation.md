@@ -1,6 +1,6 @@
 # Concrete Gauss equation for rational scalar Mellin continuations
 
-Worker 357 transports the published additive Tate functional equation to
+This module transports the published additive Tate functional equation to
 the existing rational scalar Mellin convention. The p-adic field has its
 canonical topological data, the prime and field universe are arbitrary,
 and the additive Haar measure is supplied. The multiplicative character

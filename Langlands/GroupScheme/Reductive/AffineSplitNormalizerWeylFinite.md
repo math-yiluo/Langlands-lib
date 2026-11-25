@@ -1,7 +1,5 @@
 # A finite subgroup of normalizer points inducing the Weyl group
 
-Worker 4348 (Task 6589).
-
 This module works in the namespace `Langlands.GroupScheme.AffineSplitNormalizerWeyl`. It proves
 the finiteness half of clause 4 of
 [`Reductive.AffineSplitNormalizerWeylStatement`](AffineSplitNormalizerWeylStatement.md)

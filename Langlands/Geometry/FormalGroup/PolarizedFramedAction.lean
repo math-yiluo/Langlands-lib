@@ -82,7 +82,7 @@ theorem IsomorphismClass.smul_baseChange
 def frameActionHom (frame : PolarizedOrderModule A star (ResidueRing W π) (prime : ℤ_[prime])) :
     PolarizedOrderModule.RationalSimilitudeIso.Automorphism frame ⊤ →*
       Aut (classFunctor frame) where
-  toFun g := changeFrameNatIso g.toIso
+  toFun g := Aut.of (changeFrameNatIso g.toIso)
   map_one' := by
     apply Aut.ext
     ext T q
@@ -96,7 +96,7 @@ def frameActionHom (frame : PolarizedOrderModule A star (ResidueRing W π) (prim
 theorem frameActionHom_hom_app
     (g : PolarizedOrderModule.RationalSimilitudeIso.Automorphism frame ⊤)
     (q : IsomorphismClass (frame := frame) (T := T)) :
-    (frameActionHom frame g).hom.app T q = g • q := rfl
+    (frameActionHom frame g).asIso.hom.app T q = g • q := rfl
 
 end Langlands.FormalGroup.PolarizedFramedAffinePoint
 
@@ -169,7 +169,7 @@ def splitSpecialChangeFrameNatIso
 def splitSpecialFrameActionHom (frame : SplitPolarizedFrame prime K D W ϖ) :
     PolarizedOrderModule.RationalSimilitudeIso.Automorphism frame ⊤ →*
       Aut (splitSpecialAffineFunctor ι frame) where
-  toFun g := splitSpecialChangeFrameNatIso ι g.toIso
+  toFun g := Aut.of (splitSpecialChangeFrameNatIso ι g.toIso)
   map_one' := by
     apply Aut.ext
     ext T q
@@ -186,14 +186,15 @@ omit wTower in
 theorem splitSpecialFrameActionHom_hom_app
     (g : PolarizedOrderModule.RationalSimilitudeIso.Automorphism frame ⊤)
     (q : (splitSpecialAffineFunctor ι frame).obj T) :
-    (splitSpecialFrameActionHom ι frame g).hom.app T q = g • q := rfl
+    (splitSpecialFrameActionHom ι frame g).asIso.hom.app T q = g • q := rfl
 
 omit wTower in
 /-- The inclusion of the split-special locus intertwines the two natural actions. -/
 theorem splitSpecialFrameActionHom_inclusion
     (g : PolarizedOrderModule.RationalSimilitudeIso.Automorphism frame ⊤) :
-    (splitSpecialFrameActionHom ι frame g).hom ≫ splitSpecialToPolarized ι frame =
-      splitSpecialToPolarized ι frame ≫ (PolarizedFramedAffinePoint.frameActionHom frame g).hom :=
+    (splitSpecialFrameActionHom ι frame g).asIso.hom ≫ splitSpecialToPolarized ι frame =
+      splitSpecialToPolarized ι frame ≫
+        (PolarizedFramedAffinePoint.frameActionHom frame g).asIso.hom :=
   rfl
 
 end Langlands.FormalGroup.Harris

@@ -8,7 +8,7 @@ The registered original is `renard-2026-representations-groupes-reductifs-padiqu
 SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`,
 retained at
 `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`.
-PDF281–282 were read and visually checked by Workers 709 and 1201. The 2026 edition
+PDF281–282 were read and visually checked by two readers. The 2026 edition
 governs. The registered 2010 supplementary corrections,
 `renard-2010-corrections-complements`, SHA256
 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
@@ -70,11 +70,10 @@ These are internal construction laws implementing the source notation.
 They do not prove the source's substantive nilpotence assertion
 `V_(dim V) = 0`. That assertion, generation by a complement, quotient
 surjectivity, restriction injection and dimension estimates, algebra splitting,
-carrier transport, maximum monotonicity and the floor recurrence require
+carrier transport, maximum monotonicity and the floor recurrence have
 separate statements and proofs. No such assertion is a hypothesis of these
 constructions. This module neither constructs a maximizing tuple nor changes
-the already published maximum definition.
+the maximum definition in `RenardNilpotentDimensionMaximum`.
 
-Worker 709 authored the reused construction and intrinsic-law draft. Worker 1201
-verified the originals, the construction laws and the compiled final pair, and
-prepared this contribution.
+A second reader verified the originals, the construction laws and the
+compiled final pair.

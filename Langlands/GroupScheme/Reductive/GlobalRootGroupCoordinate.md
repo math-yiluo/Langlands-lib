@@ -1,8 +1,8 @@
 # Global root-group coordinates from a free actual root weight
 
 This internal construction combines the actual root Lie comparison, explicit
-corepresentation cotangent duality and global graded-line polynomiality for
-Task 6700. No new external source assertion is used.
+corepresentation cotangent duality and global graded-line polynomiality.
+No new external source assertion is used.
 
 The quotient augmentation is the actual corepresentation counit: pullback
 along the actual contracting-group inclusion is the quotient map and
@@ -28,4 +28,5 @@ hypothesis is added to the base.
 `rootCoordinateDegreeEquiv` constructs the degree trivialization and
 `exists_coordinate_of_free_weight` constructs the actual polynomial
 coordinate. Establishing its weight under the whole torus and assembling the
-actual root parametrization remain separate steps of the host task.
+actual root parametrization are done in `Reductive/GlobalRootGroupParametrization`
+(`exists_isRootParametrization_of_free_weight_of_fibres`).

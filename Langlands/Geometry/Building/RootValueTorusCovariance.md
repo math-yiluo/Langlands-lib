@@ -1,6 +1,6 @@
 # Torus covariance and V0 for actual restricted scalar root functions
 
-This internal prerequisite proves the exact split-torus covariance of the
+This module proves the exact split-torus covariance of the
 canonical proper-torus filtration and of its constructed scalar family. With a
 nontrivial additive unit character, it also proves V0. All points and products
 belong to the original ambient group `rationalPoints G`.
@@ -95,8 +95,13 @@ unit of nonzero additive value. Integer powers of the corresponding torus point
 produce pairwise distinct root values. Infinitude gives the V0 bound.
 
 The lower normalizer/reflection, commutator, double-root and opposite valuation
-laws remain open. An arbitrary proper subtorus need not itself supply a root
+laws are not proved here. The Library proves the commutator law as
+`torusRestrictedRootFunctionFamily_commutator` (module `RootValueTorusCommutator`),
+the double-root law as `torusRestrictedRootFunctionFamily_double` (module
+`RootValueTorusDouble`), and the reflection law from common upper reflecting
+lifts as `torusRestrictedRootFunctionFamily_reflection_of_common_lifts` (module
+`RootValueTorusReflection`). An arbitrary proper subtorus need not itself supply a root
 datum, so these hypotheses do not assert a full lower `IsRootDatumValuation`.
-This unit supplies no initial valuation, metric building, supplied-model special
+This module supplies no initial valuation, metric building, supplied-model special
 vertex, or unique-fixation comparison. The unchanged
 `BuildingComparisonStatement` remains unproved.

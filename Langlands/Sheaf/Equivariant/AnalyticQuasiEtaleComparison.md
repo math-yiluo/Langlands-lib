@@ -1,6 +1,6 @@
 # Equivariant and plain compactly supported cohomology on the quasi-étale site
 
-Author: Worker 26. Uses Worker 26's published modules
+Uses the published modules
 `Langlands.Sheaf.Equivariant.AnalyticQuasiEtaleCompactCohomology` (essential smallness,
 sheafification, the points `quasiEtalePoints L h`, and `Γ_{c,X{G}}`, `H^q_c(X{G}, F)` and
 `RΓ_c(X{G}, F)` on quasi-étale `G`-sheaves),
@@ -14,8 +14,8 @@ sheafification, the points `quasiEtalePoints L h`, and `Γ_{c,X{G}}`, `H^q_c(X{G
 `Langlands.Cohomology.DiscreteSheafDerivedComparison` (`discreteRestriction`, the
 exactness of restriction, `compactComplexComparison`) and
 `Langlands.Cohomology.DiscreteSheafDerivedComparisonHomology`
-(`compactComplexForgetHomologyIso`, `compactComplexComparison_homology`). From Worker 21
-it uses the quasi-étale site `QuasiEtaleSite`, its topology `quasiEtaleTopology`, the
+(`compactComplexForgetHomologyIso`, `compactComplexComparison_homology`). It also
+uses the quasi-étale site `QuasiEtaleSite`, its topology `quasiEtaleTopology`, the
 action `EtaleSite.pointAction` of `G` on `L`-valued points and
 `QuasiEtaleSite.pointEquivariance`.
 
@@ -39,7 +39,7 @@ defines:
   complexes, and their compatibility on cohomology.
 
 That the comparison maps are isomorphisms is not proved. On the Library's quasi-étale model
-they are not isomorphisms in general. Worker 16's example in the coverage note
+they are not isomorphisms in general. The example in the coverage note
 `notes/henniart/harris-cohomology-coverage.md` (section "Retained source gaps and scope
 decisions") gives a quasi-étale `G`-sheaf on a noncompact `X`, with `G = ℤ_p`, for which
 the degree-zero inclusion `quasiEtaleCompactInclusion` is not surjective. So, through the
@@ -47,10 +47,10 @@ identification of `H^0` with sections (not formalized here), the degree-zero com
 map is not an isomorphism. The reason is that supports are taken in the `L`-valued points,
 and a section whose germs at all `L`-valued points vanish counts as compactly supported.
 These are mathematical remarks. They are not formalized. Whether the maps are isomorphisms
-for compact `X` has not been checked. For compact `X`, Berkovich's Theorem 1.6.1(ii)
+for compact `X` is not addressed here. For compact `X`, Berkovich's Theorem 1.6.1(ii)
 compares the ordinary cohomology instead, `H^q(X{G}, F) → H^q(X, b^*F)`, which involves no
 supports. That map is `quasiEtaleComparison` in the published module
-`AnalyticQuasiEtaleCohomology` (Worker 26). That it is an isomorphism is not stated there.
+`AnalyticQuasiEtaleCohomology`. That it is an isomorphism is not stated there.
 
 All declarations are in `Langlands.Sheaf.Equivariant.Analytic`.
 
@@ -58,11 +58,11 @@ All declarations are in `Langlands.Sheaf.Equivariant.Analytic`.
 
 As in `AnalyticQuasiEtaleCompactCohomology`:
 
-- `K : Type u` is a complete ultrametric normed field and `X` an object of Worker 21's
+- `K : Type u` is a complete ultrametric normed field and `X` an object of
   `LocalizedCategory.{u, v, v} (K := K)`.
 - `L : Type uL` is a normed field with `[NormedAlgebra K L]`, and
   `h : ∀ x, QuasiEtaleSite.PointAxioms L x` is the hypothesis that every `L`-valued
-  point of `X` satisfies Worker 21's point axioms.
+  point of `X` satisfies the point axioms `QuasiEtaleSite.PointAxioms`.
 - `G : Type z` is a group with `ρ : G →* Aut X`. From the section on comparison on,
   `[TopologicalSpace G] [IsTopologicalGroup G]`.
 - `R : Type w` is a commutative ring, `w = max u (v + 1) uL`, and sheaves take values in
@@ -128,11 +128,11 @@ supplied locally.
 
 ## Invariant cohomology and the comparison maps
 
-In this section `G` is a topological group. The topology on `L`-valued points, Worker
-21's action `EtaleSite.pointAction L ρ` with `continuousConstSMul_pointAction`, local
+In this section `G` is a topological group. The topology on `L`-valued points, the
+action `EtaleSite.pointAction L ρ` with `continuousConstSMul_pointAction`, local
 smallness, sheafification on both sites, enough injectives on both sites and the right
 Kan extensions are supplied locally. The `TwistedOver.PointEquivariance` used throughout
-is Worker 21's `QuasiEtaleSite.pointEquivariance L ρ h`, and the local action system is
+is `QuasiEtaleSite.pointEquivariance L ρ h`, and the local action system is
 `compactLiftSystem ρ`.
 
 - `quasiEtaleCompactInclusion L ρ h R`: the inclusion

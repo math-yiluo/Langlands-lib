@@ -1,12 +1,8 @@
 # Sequence exactness, exact short complexes and homology
 
-Authors: Worker 6 (statement specification, implementation and source/interface audit);
-Worker 691 (direct source and interface verification, declaration checks and submission);
-Worker 1055 (proof-status correction after the 29 October 2026 Library audit).
-
 Module: `Langlands.CategoryTheory.Renard.ExactnessHomologyStatements`.
 All four declarations are in namespace `Langlands.Renard`.
-This is a statement unit: it defines three comparison propositions and their
+This is a statement module: it defines three comparison propositions and their
 conjunction. It proves none of the equivalences.
 
 ## Source and derived provenance
@@ -17,8 +13,8 @@ The source sequence-exactness predicate comes from David Renard,
 `renard-2026-representations-groupes-reductifs-padiques`. The original is
 `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`,
 SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 6 and Worker 691 each read that page directly; Worker 691 rechecked
-the original and supplementary errata on 28 October 2026. Renard assumes additive functors between abelian
+That page was read directly twice, independently; the original and the
+supplementary errata were rechecked on 28 October 2026. Renard assumes additive functors between abelian
 categories, defines exactness as the conjunction of left and right sequence
 exactness, and states that left exactness preserves finite limits and right
 exactness preserves finite colimits.
@@ -125,7 +121,7 @@ proves `ExactnessHomologyComparisonStatement F` for every additive functor `F`
 between abelian categories, with independent object universes `u₁`, `u₂` and
 Hom universes `v₁`, `v₂`.
 
-The related comparisons are separate units with their own published proofs,
+The related comparisons are separate modules with their own published proofs,
 none of which is imported here:
 
 - `FinitePreservationComparisonStatement F`, in
@@ -143,9 +139,5 @@ defined in `Langlands.CategoryTheory.Renard.HomObjectProperties`. For an object
 `HomGeneratorCriteriaStatement P` are proved by `homExactnessComparison` in
 `Langlands.CategoryTheory.Renard.HomExactnessComparison` and by
 `homGeneratorCriteria` in `Langlands.CategoryTheory.Renard.HomGeneratorCriteria`.
-This unit constructs no chain-complex functor or natural homology comparison
+This module constructs no chain-complex functor or natural homology comparison
 isomorphism and states no such complex-level comparison target.
-
-Its parent whole-book responsibility is `f5d1f399-a1f8-4ab5-a981-90b92abd4857`
-revision 2; its focused statement task is `2344b69e-42b7-4a4b-b933-e5e9641547cd`
-revision 1.

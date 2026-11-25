@@ -2,7 +2,7 @@
 
 Let `k : Type u` be a field, let `D : Type u` be an associative unital
 `k`-algebra, and let `m : Type` be finite with decidable equality.
-This internal unit identifies actual points of the finite-algebra unit
+This module identifies actual points of the finite-algebra unit
 group of `Matrix m m D` with invertible matrices over the appropriate
 coefficient tensor algebra. The algebra `D` may be noncommutative.
 No division-ring or central-simple-algebra hypothesis is used.

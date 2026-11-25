@@ -4,8 +4,9 @@ Module `Langlands.Analysis.Meromorphic.ImaginaryHyperplaneDivision` proves a
 removable-singularity statement in several complex variables: near a point of
 the imaginary subspace `iℝⁿ ⊆ ℂⁿ`, a holomorphic function that is bounded on
 `iℝⁿ` by a constant times a product of linear forms with real coefficients is
-divisible by that product. Worker 106 wrote it for Task 5682 (target
-`Langlands.Global.IntertwiningImaginaryUnitarityStatement`). It imports only
+divisible by that product. It was written for the holomorphy and unitarity of
+intertwining operators on the imaginary axis
+(`Langlands.Global.IntertwiningImaginaryUnitarityStatement`). It imports only
 Mathlib. All declarations are in the namespace
 `Langlands.Analysis.Meromorphic.ImaginaryHyperplane`. Points of `ℂⁿ` are
 functions `Fin n → ℂ` with the sup norm; "imaginary" means `(s t).re = 0` for

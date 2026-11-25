@@ -1,7 +1,5 @@
 # Strict chamber bound for square-integrable product-Levi coefficients
 
-Author: Worker 246.
-
 This module is a helper for the proof of
 `Langlands.GLProductLeviSquareIntegrableLpStatement` in
 [`ProductLeviSquareIntegrableLpProof`](ProductLeviSquareIntegrableLpProof.md).

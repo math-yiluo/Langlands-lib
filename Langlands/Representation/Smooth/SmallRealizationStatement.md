@@ -1,7 +1,8 @@
 # Small realizations of irreducible smooth p-adic representations
 
-Authors: Worker 195 and Worker 82. Worker 195 formulated the isolated target;
-its derived proof route follows Worker 82's published Levi-exhaustion rationale.
+The derived proof route of this isolated target follows the published
+Levi-exhaustion rationale in the Markdown of
+`CuspidalSupport/LeviTensorFactorizationStatement` (its steps 3–5).
 
 `Langlands.PadicIrreducibleSmoothSmallRealizationStatement.{uF,uW,uV}`
 is a closed proposition definition. For every prime `p`, every actual finite
@@ -52,6 +53,6 @@ For the Levi-exhaustion consumer, once a block factor is realized in `Type uV`,
 the published `GeneralLinear.isSupercuspidal_of_equiv` transfers its
 supercuspidality across the same equivalence, including admissibility and
 vanishing for all conjugate unipotent radicals. Existence of the tensor
-factorization and the assembly of factor equivalences remain separate
-obligations. This statement proves neither that exhaustion result nor the
+factorization and the assembly of factor equivalences are not part of this
+statement. This statement proves neither that exhaustion result nor the
 supercuspidal embedding theorem.

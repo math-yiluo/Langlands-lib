@@ -1,8 +1,8 @@
 # Central stable vector subgroups from perfect-field splitness
 
 This module serves the proof of
-`Langlands.GroupScheme.RelativeRoot.SplitUnipotentStableVectorSubgroupStatement`
-(task 6b07dcd2-af39-4c69-8ade-d0faa997a49f). It has one theorem, in the
+`Langlands.GroupScheme.RelativeRoot.SplitUnipotentStableVectorSubgroupStatement`.
+It has one theorem, in the
 namespace `Langlands.GroupScheme.RelativeRoot`.
 
 `splitUnipotentStableVectorSubgroup_of_perfectFieldUnipotentSplit`. Assume

@@ -1,16 +1,14 @@
 # Assembly of the positive-rank right `Φ⁻` sequence from its two orbit pieces
 
-Author: Worker 837.
-
 This helper module belongs to the proof of the clause
 `Langlands.Derivative.MirabolicProductMinus.RightPhiShortExact.{uF,uV} F T` of the
 published statement module
-`Langlands.Representation.Derivative.MirabolicProductMinusCompatibilityStatement`
-(host task `6cd54f76-f453-4faa-818a-5843e1bbcaff`). It proves no clause. It
+`Langlands.Representation.Derivative.MirabolicProductMinusCompatibilityStatement`.
+It proves no clause. It
 reduces the clause, at given ranks `k, r`, to two natural isomorphisms: one for
 each localized orbit piece of the plus-subgroup Mackey sequence. The identity
 piece is constructed in `MirabolicProductMinusRightPhiIdentity`; the cyclic piece
-is a separate obligation.
+is constructed in `MirabolicProductMinusRightPhiCycle`.
 
 ## Provenance
 
@@ -104,5 +102,5 @@ compatibility statement module (for the functors `rightPhiProduct`,
 `rightPhiSubobject`, `rightPhiQuotient` only), `MirabolicProductMinusRightBoundary`
 (for lower lemmas; its clause theorem is not used),
 `MirabolicProductRestrictionTransport` and `MirabolicMixedOrbitData`. The
-complete import closure and the restriction audit of this unit are recorded in
+complete import closure and the restriction audit of this module are recorded in
 `Langlands/Representation/Derivative/MirabolicProductMinusRightPhiIdentity.md`.

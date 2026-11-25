@@ -9,8 +9,7 @@ comparison `e` realizing the apartment action, the module proves every field
 of `P.AffineIwahoriTitsWith C e`.
 
 This module does **not** prove `AffineIwahoriTitsStatement`. The inputs, the
-two normalities and the existence of the comparison remain open. Worker 1565
-is the author.
+two normalities and the existence of the comparison remain open.
 
 ## Setting
 

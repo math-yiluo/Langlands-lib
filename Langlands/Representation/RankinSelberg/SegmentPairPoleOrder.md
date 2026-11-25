@@ -6,21 +6,23 @@ segments `Δ` and `Δ'` in the same universe. Here `St(Δ)` is any
 representation in the Library relation `IsSegmentHead Δ`, that is, the
 irreducible head of `i(ρ, νρ, …, ν^(m-1) ρ)`. The pole order is `1` if
 `SegmentPoleLink Δ Δ'^∨` holds and `0` otherwise. `SegmentPoleLink` is the
-link relation of the module `PoleOrderSegmentCombinatorics` (accepted
-candidate f6e935c5 of Worker 1702).
+link relation of the module `PoleOrderSegmentCombinatorics`.
 
 The pole-order result is conditional. It takes four hypotheses:
 
-- the Library's unproved `SegmentHeadLFactorStatement`, which states
-  Henniart 2002, §2.6;
+- the Library's `SegmentHeadLFactorStatement`, which states
+  Henniart 2002, §2.6 (proved as `segmentHeadLFactor` in
+  `SegmentHeadFactorProof`);
 - `SupercuspidalUnequalRankLFactorStatement`, which states JPSS 1983,
   Proposition (8.1)(i);
 - `SupercuspidalEqualRankLFactorStatement`, which states JPSS 1983,
   Proposition (8.1)(ii);
 - the Whittaker type of every irreducible supercuspidal representation.
 
-The Library has no statement of the last fact, so it is an explicit hypothesis
-`hW`.
+The last fact is an explicit hypothesis `hW`. In the Library it is
+`isOfWhittakerType_of_supercuspidalKirillov` (module
+`SupercuspidalProductGamma`) applied to `supercuspidalKirillov` (module
+`Whittaker.SupercuspidalKirillovProof`).
 
 ## Provenance
 
@@ -43,7 +45,7 @@ Derived.
 - JPSS 1983, Proposition (8.1), printed page 443. It computes each factor
   `L(s, ν^c ρ × ρ')`. The factor is `1` if the ranks differ ((8.1)(i)). For
   equal ranks it has a simple pole at `s = 0` exactly when `ν^c ρ ≃ ρ'^∨`
-  ((8.1)(ii), through the accepted module `SupercuspidalPairPoleOrder`).
+  ((8.1)(ii), through the module `SupercuspidalPairPoleOrder`).
 
 The rewriting of the `j`-condition as `SegmentPoleLink Δ Δ'^∨` uses the
 integral-twist freeness of supercuspidal classes
@@ -57,7 +59,7 @@ formalization. Henniart instead rewrites the condition through the differences
 
 - `dual Δ`: the segment with beginning `dualDatum Δ.last` (the cuspidal datum
   of the contragredient of the end `ν^(m-1) ρ` of `Δ`) and the same length
-  `m`. It is the selected declaration of the candidate.
+  `m`.
 - `dual_length`, `dual_rank`, `dual_degree`, `dual_base`: the length, rank and
   degree of `Δ^∨` are those of `Δ`, and its beginning is `dualDatum Δ.last`
   (all by `rfl`).
@@ -100,7 +102,7 @@ formalization. Henniart instead rewrites the condition through the differences
   is invariant under representation equivalences of either argument, by
   `IsPadicSymmetricLPolynomial.congr_equiv`. The pole-order theorem does not
   use this lemma. It is included for the summation over the blocks of a
-  Langlands datum in the later step of the task.
+  Langlands datum.
 
 ### Supercuspidal pairs and segment pairs
 
@@ -137,12 +139,10 @@ formalization. Henniart instead rewrites the condition through the differences
 
 No unconditional analytic claim is made.
 
-## Dependencies outside the Library
+## Dependencies
 
-The module imports `SupercuspidalPairPoleOrder` and `PoleOrderAtZeroArithmetic`
-(accepted candidate 8eef2702), and `PoleOrderSegmentCombinatorics` (accepted
-candidate f6e935c5 of Worker 1702). These were not yet merged at Library commit
-87e695f5. The workspace holds unchanged copies of them.
+The module imports `SupercuspidalPairPoleOrder`, `PoleOrderAtZeroArithmetic`
+and `PoleOrderSegmentCombinatorics`, all Library modules.
 
 The definition `Segment.dual` and its length, rank, degree, endpoint and
 involution lemmas are reused from

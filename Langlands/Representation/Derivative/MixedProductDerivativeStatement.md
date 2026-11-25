@@ -1,8 +1,5 @@
 # Minus functors and derivatives of mirabolic mixed products
 
-Authors: Worker 999 (the supplied Lean draft) and Worker 1012 (independent source,
-rank and import audit, paired English statement, and validation).
-
 This module defines four propositions about the actual smooth mixed products,
 minus functors and derivatives already in the Library. It proves none of these
 propositions. In particular, stating either natural isomorphism or nonvanishing
@@ -42,8 +39,8 @@ Printed page numbers are one-based PDF page numbers plus 439.
   geometric-lemma argument is in §7.2 on printed p.471. These are proof
   locators, not proofs implemented in this module.
 
-The author independently read PDF pp.11–13, 18–19 and 32 and visually checked
-pp.18–19 and 32, including the product directions and normalization. A bounded
+PDF pp.11–13, 18–19 and 32 were read and pp.18–19 and 32 visually checked,
+including the product directions and normalization. A bounded
 search of the project/Library source-specific notes found no applicable BZ77
 erratum; this is no claim about all possible errata. The rank/order splitting,
 `Nonempty` packaging and conjunction below are internal formal packaging of
@@ -100,8 +97,8 @@ functors, not their unnormalized counterparts.
 These explicit determinant characters are the inherited Library convention.
 The imported construction pairs do not prove their comparison with an actual
 Haar-measure modulus in the source normalization. This module neither assumes
-nor proves that comparison. Any future proof using such an identification
-must justify it independently; it cannot remove a residual twist by citation.
+nor proves that comparison. Any proof using such an identification
+must justify it; it cannot remove a residual twist by citation.
 
 ## Right mixed product detection: 4.13(d)
 
@@ -192,7 +189,7 @@ The two direct project imports are
 `Langlands.Representation.Mirabolic.MixedProducts` and
 `Langlands.Representation.Derivative.Homogeneity`. The following is the
 complete transitive project import graph at Library commit
-`c5eebf94883144ce00adc4e252995c28082f08a7`, excluding this new module and
+`c5eebf94883144ce00adc4e252995c28082f08a7`, excluding this module and
 Mathlib: 73 modules and their 146 Lean/Markdown files. Each imported pair
 was checked byte-for-byte against that Library tree; none is changed.
 An empty right column means no further project import, not no Mathlib
@@ -291,23 +288,21 @@ socle/head existence, product irreducibility, classification, exhaustion,
 Whittaker coinvariant-finiteness statement, or a proof of those conclusions.
 No theorem-valued premise appears in any of the four definitions. The only
 local proof terms establish natural-number rank equalities and valid-order
-bounds; the mathematical contents of 4.13(d) and 4.14(a) remain unproved.
+bounds; the mathematical contents of 4.13(d) and 4.14(a) are not proved
+here (they are proved in `RightMixedProductPhiMinusDetectionProof` and
+`LeftMixedProductDerivativeProof`).
 There is therefore no mathematical proof of either assertion in this pair
 whose dependencies could be supplied by an excluded consumer.
 
-Both complete exclusion sets of task
-`f9454f68-5916-40af-9970-3425330b4a97` revision 2 bind every future proof
-and prerequisite: the inherited Ze80 6.2 scope and the shared upstream
-scope of task `3238f371-e9a2-42ce-8b5d-9c4d3400ff55` revision 2,
-including its additional Whittaker-finiteness restrictions. Their proof
-dependency audit must be performed afresh on actual proofs, directly and
-transitively. A proposition definition, draft, citation, conditional
-assembly or pending task supplies no proved input. Operator-paused minus
-exactness task `b65bc667-6951-4bd5-82af-10fb7046df7f` remains under its
-existing controls; Worker 127 is not contacted or resumed by this work.
+Two exclusion sets bind every proof of these propositions and its
+prerequisites: the exclusions that apply to the Ze80 6.2 homogeneity result
+`SegmentSocleProductHomogeneity`, and the upstream exclusions shared with the
+GL Leibniz rule, including its additional Whittaker-finiteness restrictions.
+Their proof dependency audit must be performed on actual proofs, directly
+and transitively. A proposition definition, citation or conditional
+assembly supplies no proved input.
 
-The separate tasks for 4.13(a), 4.13(b,c), 4.14(b), GL Leibniz filtrations,
-homogeneity, supercuspidal or segment results are outside this statement
-unit. The future 4.14(a) proof may use 4.13(b) only after the corresponding
-exact proof is independently accepted and published. No such proof is
-asserted by these declarations.
+The results 4.13(a), 4.13(b,c), 4.14(b), GL Leibniz filtrations,
+homogeneity, supercuspidal or segment results are outside this module. A
+proof of 4.14(a) may use 4.13(b) only through a published proof of it. No
+such proof is asserted by these declarations.

@@ -1,7 +1,6 @@
 # The induced-pair filtration from `GL₃(ℝ)`, `GL₄(ℝ)` and induction in stages
 
-Worker 109 wrote this module for Task 7068 (`1d696208-beed-4afe-9c69-a3458ae9366c`). That task's
-target is the Library's `Langlands.Archimedean.RealInducedPairFiltrationStatement` (module
+The target of this module is the Library's `Langlands.Archimedean.RealInducedPairFiltrationStatement` (module
 `RealRankOneStepFiltration`, see `RealRankOneStepFiltration.md`). This module splits the target
 into four statements and proves that they imply it (`realInducedPairFiltration_of_base`):
 
@@ -94,10 +93,10 @@ The truth argument is step 1 of "Why the statements should hold" in
 - finite length of standard modules and linear independence of the distribution characters of
   irreducible representations (Harish-Chandra).
 
-None of these is in the Library. The classification for `GL₃(ℝ)` and `GL₄(ℝ)` is the case
-`n = 3, 4` of `RealLanglandsFromPrincipalSeriesStatement`. That is the target of Task 6747,
-whose proof uses the present statements, so a proof of a base statement cannot go through that
-target. It has to describe the composition series explicitly (for example by a Speh–Vogan-type
+The classification for `GL₃(ℝ)` and `GL₄(ℝ)` is the case
+`n = 3, 4` of `RealLanglandsFromPrincipalSeriesStatement`. The proof of that statement (module
+`RealLanglandsFromPrincipalSeriesProof`) uses the present statements, so a proof of a base
+statement cannot go through it. It has to describe the composition series explicitly (for example by a Speh–Vogan-type
 analysis of `O(3)`- and `O(4)`-types and block intertwining operators) or take another
 independent route.
 
@@ -111,10 +110,9 @@ Remarks for a proof. They are not checked on a page here and are not part of any
   exponents are complex: an induction block of weight `m` and exponent `t` contributes
   `(Re t + |m|/2)² + (Re t - |m|/2)² = 2 (Re t)² + m²/2` to the first sum and `2 (Re t)²` to
   the left side.
-- The mirror case `[D, χ]` of `[χ, D]` on `GL₃(ℝ)`: Worker 32 suggests deriving it through the
+- The mirror case `[D, χ]` of `[χ, D]` on `GL₃(ℝ)` could be derived through the
   outer automorphism `g ↦ w₀ (gᵀ)⁻¹ w₀`, which reverses the block order and negates the
-  exponents. That needs a transport lemma for `realStandardModule` that the Library does not
-  have; this is an option only.
+  exponents. That needs a transport lemma for `realStandardModule`; this is an option only.
 - Twisting by `sgn(det)`. In Knapp 1994 (2.1a), printed p. 399, PDF p. 409, `D_ℓ` is induced
   from `SL₂(ℝ)` to `SL₂^±(ℝ)`; since `sgn(det)` is trivial on `SL₂(ℝ)`, this gives
   `D_ℓ ⊗ sgn(det) ≅ D_ℓ`. Tensoring a standard module of `GL₃(ℝ)` with `sgn(det)` therefore
@@ -123,8 +121,8 @@ Remarks for a proof. They are not checked on a page here and are not part of any
   the twist carries the composition factors for one parity to those for the other. Any
   explicit description of the composition series used in a proof has to respect this.
 
-Uniqueness of the factor `J(y, x)` is the subject of Worker 5220's Task 6749
-(`RealStandardLanglandsQuotientStatement`), which may help with the `ws j = [y, x]` piece.
+Uniqueness of the factor `J(y, x)` is the subject of
+`RealStandardLanglandsQuotientStatement`, which may help with the `ws j = [y, x]` piece.
 
 ## The reduction: `realInducedPairFiltration_of_base`
 

@@ -37,7 +37,8 @@ def MumfordMixedEulerTraceStatement : Prop :=
         mumfordSchemeMapOfLineBundle P.preservation A L B evaluationB M evaluation
           P.square W.hasDual →
       ∀ (f : A ⟶ A),
-        traceForm P W hadd lam (homToHom0 f) (homToHom0 f) *
+        traceForm P W hadd lam (CategoryTheory.End.of (homToHom0 f))
+            (CategoryTheory.End.of (homToHom0 f)) *
             (lineBundleEulerPolynomial A.X.hom L g).coeff g =
           2 * mixedLineBundleEulerCoefficient A.X.hom L
             ((LineBundle.pullback (hom f)).obj L) g

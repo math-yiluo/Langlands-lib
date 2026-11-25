@@ -8,7 +8,7 @@ import Langlands.CommutativeAlgebra.Popescu.CharPParameters
 import Langlands.CommutativeAlgebra.Popescu.CharPBottom
 import Langlands.CommutativeAlgebra.Popescu.LocalLifting
 import Langlands.AnthropicFLT.Theorems.Thm_isRegularLocalRing_localization_atPrime_mvPolynomial
-import Mathlib
+import Langlands.MathlibBase
 
 /-! # Assembly of Stacks Lemma 16.11.4 (07FJ): resolution in positive characteristic -/
 

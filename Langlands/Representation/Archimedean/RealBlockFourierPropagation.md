@@ -19,7 +19,7 @@ Let `φ` be smooth with `IsExpEquivariant α φ` (module `RealBlockLeftDerivativ
 difference `|m| + 1`.
 
 This module is internal infrastructure for the proof of
-`Langlands.Archimedean.RealCharacterPairFiltrationStatement` (Task 7067). The argument is an
+`Langlands.Archimedean.RealCharacterPairFiltrationStatement`. The argument is an
 elementary ODE uniqueness argument along paths in the Borel subgroup. It is derived here,
 and the module makes no literature assertion, so it has no literature sources. The
 definition `window` is internal notation.

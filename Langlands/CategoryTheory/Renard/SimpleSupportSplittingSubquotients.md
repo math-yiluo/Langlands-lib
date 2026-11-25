@@ -1,7 +1,5 @@
 # Renard A.IX: a support partition splits every subquotient of a split object
 
-Author: Worker 1074.
-
 This module proves the unchanged public
 `Langlands.Renard.SimpleSupportPartitionSubquotientStatement` from
 `Langlands.CategoryTheory.Renard.SimpleSupportSplittingSubquotientsStatements`.
@@ -28,7 +26,7 @@ Registered source: `renard-2026-representations-groupes-reductifs-padiques`,
 retained at
 `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`,
 SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1074 read PDF274 in full. The lemma says that if
+PDF274 was read in full. The lemma says that if
 `Irr(M) = ⨆_α S_α` splits `E`, then every subquotient of `E` is split
 by the same decomposition.
 
@@ -196,21 +194,17 @@ zero-detection theorems. The intersection decomposition
 `L = ⨁_α (E_α ∩ L)` of the source proof is not stated or proved; the
 proof establishes the target splitting of `Y` directly.
 
-Reused by Lean name: the target statement (Workers 6 and 713), the
+Reused by Lean name: the target statement, the
 splitting definitions, the supported sums and their laws, and the
 published proofs `simpleSupportSumSupport`,
 `simpleSubquotientClasses_sigma_subset`, `simpleSubquotientEmpty`,
 `simpleSubquotientClasses_subset_of_mono`/`_of_epi` and
-`HasSimpleSupport.of_mono`/`.of_epi`, each by its recorded authors.
-Worker 1074 authored the two helper lemmas and the main proof.
+`HasSimpleSupport.of_mono`/`.of_epi`. The two helper lemmas and the main
+proof are new in this module.
 
 ## Verification
 
-The approved Lean service (environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`) compiled the module with zero
-errors and warnings. Inspection of
+A development check compiled the module with zero errors and warnings. Inspection of
 `Langlands.Renard.simpleSupportPartitionSubquotient` reported a theorem
 with level parameters `r, w, v, u` whose only axioms are `propext`,
-`Classical.choice` and `Quot.sound`. These development checks are
-separate from exact-target validation, independent semantic review and
-publication.
+`Classical.choice` and `Quot.sound`.

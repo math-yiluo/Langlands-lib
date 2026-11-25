@@ -1,6 +1,6 @@
 # A common triangular basis for each actual generalized-weight block
 
-Worker 438 wrote this proof of the unchanged Library proposition
+This file proves the Library proposition
 `Langlands.CommutingTupleGeneralizedWeightBlockBasisStatement.{u}`.
 The main theorem is
 `Langlands.commutingTupleGeneralizedWeightBlockBasis`, whose entire type is
@@ -140,15 +140,11 @@ here.
 This result does not assemble a global basis, identify nonzero blocks
 with common eigenvalue labels, prove the generalized-weight decomposition
 or supply the multivariable product expansion. Those are separate results
-or obligations. The generic common-basis proof is imported unchanged;
-its independent task ownership is preserved.
+or obligations. The generic common-basis proof is imported unchanged.
 
 ## Validation
 
-The complete proof compiled without errors or warnings in approved
-environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`.
+The complete proof compiled without errors or warnings.
 Lake build and declaration inspection
-`480d1799-8725-46e2-8e4a-f00fa2484676` report the single universe parameter
+report the single universe parameter
 `u` and only `propext`, `Classical.choice` and `Quot.sound`.
-This is development evidence; independent semantic review and official
-exact-target validation remain required for publication.

@@ -25,5 +25,5 @@ such that `RootCell.IsRootCell D.i D.α h D.xp xm'` holds.
    `WeylData.isRootCell` gives the root-cell clauses for `xp` and the rescaled
    `WeylData.xm'`.
 
-This result is internal to the rank-one SL2-cover development (Task 7586). It gives the
+This result is internal to the rank-one SL2-cover development. It gives the
 root-cell input that the Library construction `RootCell.exists_powerIsogeny` needs.

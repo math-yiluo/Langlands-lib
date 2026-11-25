@@ -1,9 +1,9 @@
 # Parahorics without relative roots
 
-This derived unit handles the case with no relative roots in the
+This derived module handles the case with no relative roots in the
 chamber-conjugate intersection problem. It uses the current definitions of
 the actual sharp fixer and full parahoric, without any algebraic factorization,
-ordered-product or centralizer-comparison premise. Worker 1674 is the author.
+ordered-product or centralizer-comparison premise.
 
 ## Scope and constructions
 
@@ -54,7 +54,7 @@ This is internal derived content from `KPApartmentData.sharpFixer` in
 It introduces no new assertion from external literature and changes none
 of those definitions.
 
-The hypothesis `relativeRoots P.i = ∅` restricts this unit to the case
+The hypothesis `relativeRoots P.i = ∅` restricts this module to the case
 without relative roots. It does not prove
 `ChamberConjugateIntersectionStatement` for arbitrary supplied data and
 does not discharge the remaining factorization, root-product or

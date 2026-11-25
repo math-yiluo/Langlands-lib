@@ -1,6 +1,6 @@
 # Fixed vectors detected by irreducible actual subquotients
 
-Worker 1751. This internal strengthening of the Library's cyclic-subquotient
+This internal strengthening of the Library's cyclic-subquotient
 argument retains a selected fixed vector. It uses the actual orbit-span,
 maximal-subrepresentation and smooth-quotient constructions already used by
 [`IrreducibleSubquotientExistence`](IrreducibleSubquotientExistence.md).
@@ -39,7 +39,7 @@ no actual inertia quotient, block decomposition or fixed-level finiteness is
 constructed or assumed to exist globally. In the intended rational cuspidal
 application those parameters must be the published actual inertia quotient and
 proper-standard cuspidality, and the finite-class hypothesis must be proved by
-the actual compact-level finiteness theorem. This unit does not discharge those
+the actual compact-level finiteness theorem. This module does not discharge those
 inputs or establish compression stability.
 
 Both statements hold for any group with any topology and arbitrary smooth

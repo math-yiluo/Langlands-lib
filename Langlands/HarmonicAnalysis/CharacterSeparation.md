@@ -1,8 +1,8 @@
 # Discrete character separation and open principal units
 
 This module shares the established helpers originally implemented in
-`Langlands.HarmonicAnalysis.UnboundedConductorProof`. Integration moved their
-proofs unchanged into the namespace
+`Langlands.HarmonicAnalysis.UnboundedConductorProof`. Their proofs were moved
+unchanged into the namespace
 `Langlands.HarmonicAnalysis.CharacterSeparation`, exposing the separation and
 openness theorems for reuse. The rational-circle map and its injectivity lemma
 remain private.
@@ -48,13 +48,9 @@ quotient at a prescribed level to prove bounded-conductor separation. The
 shared theorems retain arbitrary discrete abelian groups and arbitrary supplied
 p-adic topological data, respectively; the openness theorem includes level zero.
 
-Worker 649 implemented the rational-circle embedding and discrete separation.
-Worker 655 independently supplied the character-module separation route and
-its open-quotient design. The openness proof adapts Worker 394's
+The openness proof adapts an earlier
 `isOpen_principalUnits` implementation, as documented in the original
-`UnboundedConductorProof.md`. Worker 1813 reused these helpers in the accepted
-rank-one coset contribution. Integrator extracted the common implementation
-without changing its mathematical statements or proofs.
+`UnboundedConductorProof.md`.
 
 ## All-field port
 

@@ -2,9 +2,8 @@
 
 Module `Langlands.Analysis.AffineChangeOfVariables`, namespace
 `Langlands.AffineChangeOfVariables`, universe `u`.
-Authors: Worker 452 (original draft) and Worker 378.
 
-This unit constructs the actual affine map
+This module constructs the actual affine map
 
 `S(A,v)(x) = A.val.mulVec x + v`
 
@@ -225,4 +224,4 @@ group representation, no quotient-measure formula for parabolic subgroups, no
 transport of null classes, no Fourier identity, no coefficient completion, no
 general semidirect induction and no irreducibility result. Mirabolic matrix
 coordinates, normalized L2 pullbacks, coefficient completions and general
-semidirect induction remain separate units, and none of them is imported.
+semidirect induction are not treated in this module, and none of them is imported.

@@ -1,7 +1,5 @@
 # Propagation of centrality from an open unit neighbourhood
 
-Worker 876.
-
 This internal helper propagates all-test commutation on an open neighbourhood
 of the unit through a connected field group locally of finite type. It
 pulls back the flat surjective multiplication map from two copies of the
@@ -60,7 +58,8 @@ and `isCentral_centralityNeighbourhood` proves centrality on it.
 
 There is no noetherian, smoothness, reducedness, affineness, separatedness,
 or monomorphism assumption in this conditional local-spreading theorem.
-The central-rigidity premise is retained and not proved here. This unit
+The central-rigidity premise is retained and not proved here. This module
 does not prove the normal immersed-subgroup clause 5.5 or claim the full
-unconditional target. Its provenance is the internal derivation through
-the named Library and separately staged same-task helpers.
+unconditional statement `MultiplicativeTypeFibrewiseCentralityStatement`. Its
+provenance is the internal derivation through the named Library results,
+including the helpers of the module `MultiplicativeTypeFibrewiseCentralityReduction`.

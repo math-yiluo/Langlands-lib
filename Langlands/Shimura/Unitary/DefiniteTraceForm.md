@@ -1,7 +1,5 @@
 # The trace form of an involution and its Gram matrices
 
-Author: Worker 19.
-
 For an involution `τ` of an algebra `B` over a commutative ring `R`, this
 module defines the symmetrized trace form
 
@@ -26,7 +24,7 @@ Harris (1999), Section 1, printed p. 301, assumes `J_∞ = ∏ U(n)`: the
 unitary group is compact at every real place. Section 3, printed pp.
 306–308, uses that for such a definite group the double coset space
 `GJ(ℚ)\GJ(𝔸_f)/K` is finite (the list (3.9)). The published predicate
-`AlgebraInvolution.IsPositive` (Worker 57, `Positivity`) is the algebraic
+`AlgebraInvolution.IsPositive` (`Positivity`) is the algebraic
 form of this compactness, `tr(L_{τ(x) x}) > 0` for `x ≠ 0` (Milne,
 *Introduction to Shimura varieties*, Proposition 8.10(c), Definition 8.11).
 Positivity for Harris's definite group is the published

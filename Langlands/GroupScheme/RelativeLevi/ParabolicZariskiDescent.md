@@ -1,6 +1,6 @@
 # Effective Zariski descent of actual parabolics
 
-Worker 610. This derived internal construction descends matching actual
+This derived internal construction descends matching actual
 relative parabolic subgroup functors of a reductive group over a base open
 cover. It works over any base scheme and in every universe. The matching
 hypothesis is the published all-test condition `SubgroupFunctor.IsMatching`;
@@ -32,5 +32,5 @@ The construction is derived from the generic subgroup descent in
 predicate is the unchanged one from `RelativeLevi.Basic`; the ambient group
 is explicitly assumed reductive where parabolicity descends. This module
 does not construct a parameter scheme or prove smooth proper
-representability. Ordinary presheaf matching still has to be connected to
-the all-test matching hypothesis used here.
+representability. The connection of ordinary presheaf matching to the
+all-test matching hypothesis used here is made in `ParabolicMatching`.

@@ -53,7 +53,7 @@ generic inner twist by `d σ`. Thus the comparison intertwines
 canonical Galois transport on the descended generic group with the
 specified inner-twisted Galois transport on `G_E`.
 
-This unit supplies actual smooth effective descent from the retained
+This module supplies actual smooth effective descent from the retained
 finite recovery and stability inputs. It does not supply the upstairs
 model, choose common coefficients, identify a residue quotient or
 Frobenius map, or prove any chamber conclusion.

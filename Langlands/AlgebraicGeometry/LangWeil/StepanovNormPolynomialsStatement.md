@@ -1,7 +1,5 @@
 # Auxiliary norm polynomials in Schmidt's method
 
-Author: Worker 96.
-
 `StepanovNormPolynomialsStatement` isolates the algebraic construction needed for
 the plane-curve point estimate. It is a proposition awaiting proof.
 

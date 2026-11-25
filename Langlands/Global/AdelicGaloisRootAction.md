@@ -1,6 +1,6 @@
 # Galois action on the simple roots of a split Borel pair (Lemma Q)
 
-Statement-only draft module for the proof of `GaloisBorelTwistingStatement` (Task 5268). It
+Statement-only module for the proof of `GaloisBorelTwistingStatement`. It
 imports only the Library module `Langlands.Global.AdelicGaloisBorelTwisting`.
 
 Setting: `G` connected reductive over a field `F`, `L/F` finite Galois, `T₀ ⊂ G` a maximal

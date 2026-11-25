@@ -58,10 +58,9 @@ theorem unramifiedRationalMoyPrasad_of_unramifiedComparison
 `UnramifiedComparisonExistenceStatement.{u}` and a proof of
 `MaximalUnramified.LocalMoyPrasadGroupPropertiesStatement.{u}` therefore give
 `UnramifiedRationalMoyPrasadStatement.{u}` by
-`unramifiedRationalMoyPrasad_of_unramifiedComparison hS2 hC`. The author checked this
-application by compiling it in a private draft against this module (environment
-`5c94c648-e8dc-4002-a50a-071ebf3f6096`; 0 errors, 0 warnings). The check is not part of the
-module. With the published reduction
+`unramifiedRationalMoyPrasad_of_unramifiedComparison hS2 hC`. This
+application was checked by compiling it against this module (0 errors, 0 warnings). The
+check is not part of the module. With the published reduction
 `ParahoricBuildingData.exists_doubleRootFriendly_filtration_of_rationalMoyPrasadFamily`
 (module `KPRationalMoyPrasadFamily`), that statement in turn gives KP Lemma 9.8.1 in the form
 `CentralizerFiltrationDoubleRootExistenceStatement`.
@@ -98,7 +97,7 @@ roots of `(G_K, T_K)` restricting to `a` or `2a`, and `ν` is a generic point of
 | `filtration_mem` | `ι(U_{a,y,s}) ⊆ ⟨U_{b,e y,s} ∣ b ∈ Ψ⟩` for `s ≥ 0`. | Lemma 9.6.3, inclusion `⊆`, via `A(S) ⊂ A(T_K)` (§9.8.2). |
 | `block_mem` | `g ∈ U_a(F)` and `ι g ∈ ⟨U_{b,e y,t} ∣ b ∈ Ψ⟩` imply `g ∈ U_{a,y,t} U_{2a,y,t}`. | Proposition 9.8.3(1) and its proof (printed pp. 375–376, PDF pp. 406–407), with §9.8.2 and Definition 7.3.3(1). |
 
-The groups `G(K)_{x,r}` are D1's `MaximalUnramified.BuildingData.moyPrasad`
+The groups `G(K)_{x,r}` are `MaximalUnramified.BuildingData.moyPrasad`
 (module `KPLocalMoyPrasadGroups`). The `K`-side spans are those of
 `KPLocalMoyPrasadGroupProperties` (`rootGroupSpan`, `rootFiltrationSpan`, `pairingLeviSpan`,
 `negativePairingRoots`, `zeroPairingRoots`, `IsClosedRootSet`).
@@ -111,15 +110,17 @@ statement.
 1. Choose a special `F`-torus `T ⊇ S`, i.e. `T_K` is a maximal `K`-split torus of `G_K`
    (Proposition 9.3.4, printed p. 332, PDF p. 363). Library:
    `SpecialTorusExistenceStatement` (module `UnramifiedSpecialApartmentStatement`), published
-   as a statement; its proof is Task 5514.
+   as a statement; the Library proves it as `specialTorusExistence` (module
+   `SpecialTorusExistenceProof`).
 2. Take for `B` building data of `G_K` relative to `T_K`, with its V 6 class. Library: the
    proved theorem `quasiSplitIntegerApartmentExistence`
    (`QuasiSplitIntegerApartmentExistenceProof`). `G_K` is quasi-split (Steinberg), so the
    centralizer of `T_K` is a torus, which gives `hZ`.
 3. Descend the valuation class: KP Construction 9.6.1, Lemma 9.6.3 and Theorem 9.6.5
    (printed pp. 364–366, PDF pp. 395–397). Library: `UnramifiedValuationDescentStatement`
-   (module `UnramifiedValuationDescentStatement`), published as a statement; its proof is
-   Task 5553. Its last clause is the building-form normalizer relation that
+   (module `UnramifiedValuationDescentStatement`), published as a statement; the Library
+   proves it as `unramifiedValuationDescent` (module `UnramifiedValuationDescentProof`). Its
+   last clause is the building-form normalizer relation that
    `apartmentMap_smul` asks for. The proved theorem `omegaCompatibleApartmentUniqueness`
    (`OmegaCompatibleApartmentUniquenessProof`, KP Proposition 6.2.6) identifies the descended
    class with `P.apartment` (printed p. 216, PDF p. 247). `e` is the inverse of this identification, i.e. the inclusion
@@ -128,9 +129,10 @@ statement.
    `∏_b U_b(K)` (proof of Lemma 9.6.3, Proposition 9.8.3(1)). `levi` follows from the affine
    structure of `A(S)` over `V(S)`.
 
-Points a proof will need beyond the Library's present content (as far as the author can see):
+Points a proof needs beyond the results named above:
 
-- **Depth zero (`comap_zero`).** D1's zero term of the centralizer filtration is the norm
+- **Depth zero (`comap_zero`).** The zero term of the centralizer filtration of
+  `KPLocalMoyPrasadGroups` is the norm
   Iwahori subgroup `torusNormIwahori` of `Z(K)`, and `P.centralizerZero` is defined through
   `ZeroSubgroupDatum.centralizerZero` (module `KPZeroSubgroups`). Comparing
   `ι⁻¹(G(K)_{e y,0}) ∩ j(Z(F))` with `Z(F)^0 = Z(K)^0 ∩ Z(F)` (Definition 2.6.23(2)) may need

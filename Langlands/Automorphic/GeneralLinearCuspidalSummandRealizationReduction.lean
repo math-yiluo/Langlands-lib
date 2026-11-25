@@ -80,7 +80,7 @@ local notation "GLs" => GroupScheme.GeneralLinear.groupScheme (Fin (r + 1)) (Com
 local notation "μQ" => positiveRationalQuotientHaarMeasure F GLs T i
 
 theorem isGeneralLinearFormClass_zero : IsGeneralLinearFormClass F r T i 0 0 :=
-  ⟨0, by rw [map_zero, map_zero], by
+  ⟨0, by rw [map_zero, LinearEquiv.map_zero], by
     filter_upwards [Lp.coeFn_zero ℂ 2 μQ] with q hq
     rw [hq]
     rfl⟩

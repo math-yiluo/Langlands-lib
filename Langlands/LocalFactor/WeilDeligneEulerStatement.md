@@ -1,13 +1,15 @@
 # Euler-factor statements on actual Weil--Deligne kernels
 
-Worker 46 authors this statement family for task
-`e534647a-77a5-4c12-91d7-8a00fe104fc4`. Its nine components and closing
+This is a statement family. Its nine components and closing
 `Langlands.LocalFactor.WeilDeligneEulerStatement` are definitions returning
-`Prop`; no theorem proof is supplied. The module imports Worker 17's
-actual parameter constructions, Worker 20's actual Euler polynomial, and
-Worker 1's explicit Frobenius-semisimplification relation.
-Those owners retain construction authorship. All imports are published in the
-Library. No imported construction is changed by this statement contribution.
+`Prop`; no theorem proof is supplied. The module imports the
+actual parameter constructions of `Langlands.WeilDeligne.Kernels`,
+`Langlands.WeilDeligne.SumsTensor`, `Langlands.WeilDeligne.SpecialBlocks` and
+`Langlands.WeilDeligne.Dual`, the actual Euler
+polynomial of `Langlands.LocalFactor.Euler`, and the explicit
+Frobenius-semisimplification relation of `Langlands.WeilDeligne.FrobeniusStatements`.
+All imports are published in the
+Library. No imported construction is changed by this statement module.
 
 ## Mathematical content and scope
 
@@ -28,7 +30,7 @@ retain arbitrary fields. Block lengths are `n+1` and `m+1`, so positivity
 is enforced without discarding any positive length. Weil factors can have
 rank zero.
 
-This is a general algebraic part of the requested arithmetic theorem family.
+This is a general algebraic part of the arithmetic theorem family.
 An arithmetic use must supply the actual local Weil group, its inertia and
 geometric Frobenius, and the actual norm character. It must instantiate
 `nu(Phi)=q^-1` with q the residue-field cardinality. No arbitrary number is
@@ -98,7 +100,7 @@ compatibilities remain distinct obligations.
    Tate 4.1.3--4.1.6. The statement neither chooses a Frobenius
    semisimplification nor assumes factor-invariance in a definition
    of semisimplification.
-9. `WDEulerSemisimplificationStatement` consumes Worker 1's actual
+9. `WDEulerSemisimplificationStatement` consumes the actual
    `Frobenius.IsSemisimplification` relation. The supplied integer degree
    has inertia `degree.ker`, and Phi has degree one. The relation supplies
    an actual carrier identification transporting N and a commuting
@@ -110,7 +112,8 @@ compatibilities remain distinct obligations.
    therefore unchanged. This is the precise application of component 8
    to Deligne (8.5.1), 8.6(i), and Tate 4.1.3--4.1.6.
    The relation contains no factor-invariance clause. Its existence,
-   uniqueness, or any of Worker 1's theorem targets are not hypotheses
+   uniqueness, or any of the theorem targets of
+   `Langlands.WeilDeligne.FrobeniusStatements` are not hypotheses
    of this component. Nor does the component select a semisimplification.
    Since it is an implication for actually related pairs, the finite
    inertia and surjectivity assumptions needed to prove existence are
@@ -119,8 +122,9 @@ compatibilities remain distinct obligations.
 
 The dimension identities and the arbitrary-field versions where stated
 are derived algebraic formulations of the displayed constructions, not
-literal additional claims of the cited articles. Worker 33's separate
-generic Euler family concerns arbitrary endomorphisms; this family
+literal additional claims of the cited articles. The separate
+generic Euler family `EulerFactorStructureStatement` (module
+`Langlands.LocalFactor.Euler.Statement`) concerns arbitrary endomorphisms; this family
 concerns the concrete parameter kernels, block constructions and their
 inertia actions.
 
@@ -150,9 +154,7 @@ inertia actions.
   SHA-256
   `40c0ed7c7bfb05f1415fd66642d0b1984052f0af7cb5f3061b328216e2d24306`.
 
-The direct originals were read. The companion development note
-`NONABELIAN-INTERFACES.md` records the broader factor conventions and
-remaining objects; it is not proof or acceptance evidence.
+The direct originals were read.
 
 ## Validation and import provenance
 
@@ -165,9 +167,8 @@ and `Langlands.WeilDeligne.Dual` by their Lean names. The published sum,
 special-block and dual sources agree byte for byte with the sources used
 in the development checks.
 
-Normal-workspace check `0b87c721-5af3-4d58-9b0b-e8d4e3367fde` on 2026-10-20
-completed the Lake build and exact declaration inspection with zero errors
-and warnings in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`.
+A check on 2026-10-20 completed the Lake build and exact declaration
+inspection with zero errors and warnings.
 The complete definition returns `Prop` at four independent universe levels
 `uK`, `uG`, `uV`, and `uW`, using only `propext`, `Classical.choice`, and
 `Quot.sound`. Its whole-target fingerprint is
@@ -175,6 +176,6 @@ The complete definition returns `Prop` at four independent universe levels
 The Lean source hash is
 `95e024156958f2350cffee2877908a1a8218e1d2448b9e022d0c9bfd4203beb7`.
 
-Compilation establishes well-formedness, not a proof or independent semantic
-acceptance. Each proposition remains a separate proof responsibility after
-statement publication.
+Compilation establishes well-formedness, not a proof. Each proposition needs
+its own proof; `WDEulerPairBlockStatement` is proved by `wdEulerPairBlock` in
+`Langlands.LocalFactor.WeilDeligneEulerPairBlockProof`.

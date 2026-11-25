@@ -36,7 +36,7 @@ local notation "BC" => baseChangeFunctor R S p
 /-- An actual polarized order-linear target isomorphism that preserves the rigidifier. -/
 structure Iso (X Y : PolarizedFramedTower (R := R) a) where
   targetIso : X.target ≅ Y.target
-  order : ∀ t, X.order t ≫ targetIso.hom = targetIso.hom ≫ Y.order t
+  order : ∀ t, (X.order t).asHom ≫ targetIso.hom = targetIso.hom ≫ (Y.order t).asHom
   pairing : ∀ (n : ℕ) (T : Over (Spec (CommRingCat.of R))) (x y : T ⟶ (X.target.inclusions.obj n).X),
     let f := (targetIso.hom.app n).toMul.hom.hom
     Y.polarization.evaluate n T (x ≫ f) (y ≫ f) = X.polarization.evaluate n T x y
@@ -62,14 +62,14 @@ def refl (X : PolarizedFramedTower (R := R) a) : Iso X X where
 def symm (e : Iso X Y) : Iso Y X where
   targetIso := e.targetIso.symm
   order t := by
-    change Y.order t ≫ e.targetIso.inv = e.targetIso.inv ≫ X.order t
+    change (Y.order t).asHom ≫ e.targetIso.inv = e.targetIso.inv ≫ (X.order t).asHom
     apply (cancel_mono e.targetIso.hom).mp
     rw [Category.assoc, e.targetIso.inv_hom_id, Category.comp_id, Category.assoc,
       e.order t, ← Category.assoc, e.targetIso.inv_hom_id, Category.id_comp]
   pairing n T x y := by
     let f := (e.targetIso.hom.app n).toMul.hom.hom
     let g := (e.targetIso.inv.app n).toMul.hom.hom
-    have h : g ≫ f = 𝟙 _ := congrArg (fun m : End Y.target => (m.app n).toMul.hom.hom)
+    have h : g ≫ f = 𝟙 _ := congrArg (fun m : Y.target ⟶ Y.target => (m.app n).toMul.hom.hom)
       e.targetIso.inv_hom_id
     have he := e.pairing n T (x ≫ g) (y ≫ g)
     change Y.polarization.evaluate n T ((x ≫ g) ≫ f) ((y ≫ g) ≫ f) = _ at he
@@ -84,7 +84,7 @@ def symm (e : Iso X Y) : Iso Y X where
 def trans (e : Iso X Y) (f : Iso Y Z) : Iso X Z where
   targetIso := e.targetIso.trans f.targetIso
   order t := by
-    change X.order t ≫ (e.targetIso.hom ≫ f.targetIso.hom) = (e.targetIso.hom ≫ f.targetIso.hom) ≫ Z.order t
+    change (X.order t).asHom ≫ (e.targetIso.hom ≫ f.targetIso.hom) = (e.targetIso.hom ≫ f.targetIso.hom) ≫ (Z.order t).asHom
     rw [← Category.assoc, e.order t, Category.assoc, f.order t, Category.assoc]
   pairing n T x y := by
     let i := (e.targetIso.hom.app n).toMul.hom.hom

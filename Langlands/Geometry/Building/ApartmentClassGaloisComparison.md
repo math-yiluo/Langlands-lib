@@ -1,6 +1,6 @@
 # Coefficient-stable ordinary chambers under apartment class comparison
 
-Worker 352. This is derived interface content for the existing actual valuation
+This is derived interface content for the existing actual valuation
 apartments. No new existence assertion is assumed or proved here.
 
 `IntegerValuation.IsOmegaCompatible.eq_of_isMaximalSplitTorus_of_centralizers`

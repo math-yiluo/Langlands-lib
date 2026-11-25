@@ -10,8 +10,5 @@ ideal with the specified ideal sheaf's global ideal.
 coefficient-stable tensor ideal over an arbitrary Galois extension. The result
 is actual `DefiningIdealDescent` data. No finite-dimensionality, smoothness or
 reducedness assumption is used here. The coordinate-square equality and
-coefficient stability are explicit premises; this adapter does not yet prove
+coefficient stability are explicit premises; this adapter does not prove
 them for a unipotent radical.
-
-Worker 1359 authored this adapter; Worker 1370 authored the reused tensor-ideal
-and invariant-submodule descent proofs.

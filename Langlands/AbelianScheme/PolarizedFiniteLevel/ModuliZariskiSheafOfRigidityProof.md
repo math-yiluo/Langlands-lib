@@ -25,7 +25,7 @@ Namespace `Langlands.AbelianScheme.PolarizedFiniteLevel`.
   : EventualModuliZariskiSheafStatement` (proved definition). It is
   `eventualModuliZariskiSheaf_of_rigidity hL moduliZariskiSheafOfRigidity`. As a `def`
   whose type is a proposition, it records that Lefschetz's theorem implies the eventual
-  Zariski sheaf property. It does not prove `CubicFieldEmbeddingStatement` (Task 7747).
+  Zariski sheaf property. It does not prove `CubicFieldEmbeddingStatement`.
 
 ## Proof
 
@@ -60,7 +60,7 @@ classes `s i` over `U i` that agree on overlaps. Choose representatives
 `a i := (s i).out`. Agreement of the classes on overlaps gives isomorphic restrictions
 (`Quotient.exact`), so `hex` gives `b` on `S` with `b.pullback (U i).ι ≅ a i`. Hence the
 class of `b` restricts to `s i` (`Quotient.sound`). Uniqueness of a class with these
-restrictions is `moduliFunctor_separated` (Worker 5600's `ZariskiSeparation`), which
+restrictions is `moduliFunctor_separated` (module `ZariskiSeparation`), which
 uses the rigidity hypothesis.
 
 `moduliZariskiSheafOfRigidity`. Given the rigidity hypothesis `hrig` at level `n`,

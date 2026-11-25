@@ -1,6 +1,6 @@
 # Natural graded functors under precomposition
 
-Worker 593 adds natural graded comparisons and gluing interfaces to the existing
+This module adds natural graded comparisons and gluing interfaces to the existing
 `RepFunctorFiltration.precomp` construction in `Filtration.Transport`. This is
 an internal transport of already constructed filtration data.
 
@@ -79,10 +79,9 @@ theorem is imported.
 | Irreducible, Levi-cuspidal and supercuspidal Whittaker finiteness, all-character single-block finiteness and dependent mirabolic finite length | No Whittaker or mirabolic module is imported; none of these conclusions supplies a proof step. |
 
 A recursive import and hash audit checked the complete closure and unchanged
-dependency pairs. A bounded scan for inherited excluded task identifiers and
-conclusion names found no matches in its Lean files. Reading the new terms
+dependency pairs. A bounded scan for inherited excluded conclusion names found no matches in its Lean files. Reading the new terms
 and the actual quotient and precomposition definitions gives the stronger
 mathematical dependency check described above.
 
-This focused helper leaves the all-rank actual GL derivative Leibniz theorem
-open. Environment: `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`.
+This focused helper does not prove the all-rank actual GL derivative Leibniz
+theorem.

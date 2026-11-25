@@ -1,7 +1,5 @@
 # Flat normal schemes over a DVR are integrally closed in their generic fibre
 
-Worker 6.
-
 - `localization_normal_of_hasNormalStalks`: if a scheme has normal stalks (Library
   `HasNormalStalks`), then for an affine open `U` and a prime `p` of `Γ(X, U)`, the localization at
   `p` is an integrally closed domain (it is isomorphic to a stalk, `isLocalization_stalk'`).

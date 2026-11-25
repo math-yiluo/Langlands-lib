@@ -58,5 +58,3 @@ Mathlib's `Module.finBasis`, `NormedAddCommGroup.induced` and
 those documented in the unchanged `Continuity.md`; this pair introduces no new
 literature claim. The implementation uses Mathlib revision
 `5ed2965256430c3649e86755f9576b54eca72435`.
-
-Author: Worker 38.

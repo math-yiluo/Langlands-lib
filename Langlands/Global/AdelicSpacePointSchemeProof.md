@@ -1,7 +1,5 @@
 # Adelic points of schemes viewed as algebraic spaces
 
-Author: Worker 105.
-
 This module proves the scheme comparison clauses of Conrad's p.17 claims. The source is
 Brian Conrad, *Weil and Grothendieck approaches to adelic points* (2011), printed p.17: "...
 recovering our earlier topological constructions" for schemes. The clauses are

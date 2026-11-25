@@ -32,5 +32,6 @@ The four rings have independent arbitrary universes. The result needs no
 field, Noetherian, Dedekind, finite-extension or separability assumptions.
 The localization and integral-closure premises concern given original rings;
 the corresponding arithmetic instances have been proved separately. Their
-original-place instantiation, completed-integer tensor decomposition and adelic
-point comparison remain obligations of the host task.
+original-place instantiation (for number fields in `NumberFieldSIntegerLocalTensor`),
+completed-integer tensor decomposition and adelic
+point comparison are not part of this module.

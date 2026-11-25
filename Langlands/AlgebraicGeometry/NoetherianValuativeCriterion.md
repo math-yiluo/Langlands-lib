@@ -1,10 +1,8 @@
 # Discrete valuation ring criterion for universal closedness over a noetherian affine base
 
-Authors: Worker 1042.
-
-Module `Langlands.AlgebraicGeometry.NoetherianValuativeCriterion`. Written for task
-`6d6cc279-3071-445f-adba-589e54d9816b` (projective representability of the relative endomorphism
-functor of a projective abelian scheme). The main theorem is
+Module `Langlands.AlgebraicGeometry.NoetherianValuativeCriterion`. Written for the projective
+representability of the relative endomorphism functor of a projective abelian scheme (module
+`Langlands.AbelianScheme.RelativeEndomorphismRepresentabilityOfPieces`). The main theorem is
 `Langlands.AlgebraicGeometry.universallyClosed_of_forall_isDiscreteValuationRing_hasLift`; the
 auxiliary lemmas are in namespace
 `Langlands.AlgebraicGeometry.NoetherianValuativeCriterion`. The module adds no axioms. It sets
@@ -138,7 +136,7 @@ discrete valuation ring come from those of `f` (`hasLift_baseChange`). By
 ## Dependencies
 
 - Library: `Langlands.AnthropicFLT.Theorems.Thm_IsLocalRing_exists_valuationSubring_isDiscreteValuationRing_dominates`.
-- Ported in the same contribution:
+- Ported together with this module:
   `Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_universallyClosed_of_forall_finite_isClosedMap_pullback_snd_mvPolynomial`,
   `Langlands.AnthropicFLT.Theorems.Thm_IsLocalRing_exists_isPrime_not_mem_ringKrullDim_quotient_eq_one`,
   `Langlands.AnthropicFLT.Theorems.Thm_ValuationSubring_exists_isDiscreteValuationRing_dominates_of_finiteDimensional`.

@@ -1,10 +1,8 @@
 # Proof of the local data statement for cuspidal pairs
 
-Author: Worker 4891.
-
 `Langlands.Global.cuspidalPairLocalData.{u, uQ}` proves the unchanged proposition
 `Langlands.Global.CuspidalPairLocalDataStatement.{u, uQ}` of
-`CuspidalPairFunctionalEquationReduction.lean` (Worker 5013), for independent
+`CuspidalPairFunctionalEquationReduction.lean`, for independent
 universes `u` and `uQ`. That proposition is the local-data input of the reduction of
 `CuspidalPairGlobalFunctionalEquationStatement`. Under the target's hypotheses it
 asserts that a finite pair factor choice exists, that `ψ` has an additive component

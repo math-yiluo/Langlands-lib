@@ -1,8 +1,6 @@
 # Actual-root adapters for the rank-one Bruhat word argument
 
-Authors: Worker 1325 and Worker 1226 (normalizer-separation composition).
-
-This internal supporting unit connects the group word argument in
+This internal supporting module connects the group word argument in
 `Langlands.Group.RankOneBruhatCovering` with the actual rational-point root
 groups. It does not prove `RootGeneratedCentralizerRankOneStatement`.
 Every root subgroup is the Library's character-orbit-extension subgroup,

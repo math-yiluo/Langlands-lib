@@ -1,12 +1,12 @@
 # Recovering subset equality from actual normalization
 
-This supporting unit proves that normalization by one lift of the specified
+This module proves that normalization by one lift of the specified
 longest representative recovers equality of the associated simple-index subset,
 provided the actual Levi Weyl identification and associated-Levi conjugation
 comparisons hold. It also proves the converse and the resulting existence
 equivalence. All declarations are in `Langlands.Aubert.General`.
 
-The unit is an internal deduction from published group and Coxeter declarations.
+The module is an internal deduction from published group and Coxeter declarations.
 It introduces no assertion from original literature. The representation-theoretic
 implication from reducibility of cuspidal induction to normalization remains
 unproved here, as does the full rational rank-one self-association target.
@@ -39,7 +39,7 @@ The comparisons used in the theorems are precisely:
 
 Both comparisons are visible hypotheses. An arbitrary subgroup family need
 not satisfy them. No topology, representation, maximality condition on `J`,
-or nonempty-index hypothesis occurs in this unit.
+or nonempty-index hypothesis occurs in this module.
 
 ## Definition and proved declarations
 
@@ -119,10 +119,11 @@ simplification. The injectivity lemma uses only the standard-subgroup
 injectivity result from the Solomon module, not its alternating
 cancellation theorem.
 
-The new unit depends only on published modules. In particular, it can be
+This module depends only on published modules. In particular, it can be
 used without importing the separate equality-only rational self-association
-reduction. To obtain the required rational rank-one theorem by this route,
+reduction. To obtain the rational rank-one theorem
+`RationalRankOneSelfAssociationStatement` by this route,
 one must still prove that the actual reducible normalized induction in the
 published target produces such a normalizing lift, or prove the associated
 subset equality directly. Neither implication is assumed or discharged by
-this supporting unit.
+this module.

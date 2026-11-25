@@ -81,6 +81,7 @@ theorem open_and_closed_of_diagonalSourceCoordinates
     IsClosedImmersion
       ((Diagonalizable.hopfSpecIso R M).inv.hom.hom.left ≫ Spec.map φ ≫
         (AffineCoordinates.hopfSpecIso G).hom.hom.hom.left)
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   constructor <;> infer_instance
 
 end Langlands.GroupScheme.CompleteLocalDeformation

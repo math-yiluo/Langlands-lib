@@ -1,7 +1,5 @@
 # Rigidity of conjugation by torus-normalizing points
 
-Author: Worker 1122.
-
 This module proves two facts about the published normalizer and centralizer subgroup
 functors `torusNormalizer i` and `torusCentralizer i` of
 `Langlands.GroupScheme.Rational.TorusNormalizer`:
@@ -22,7 +20,7 @@ functors `torusNormalizer i` and `torusCentralizer i` of
 Both are inputs of the target `RelativeWeylGroupRestrictStatement`. Its maximal split tori
 satisfy the hypotheses: `IsSplitSubtorus` gives `IsSplitTorus T.toGrp`, and
 `IsClosedSubgroup.mono` gives the monomorphism. The surjectivity reduction
-`RelativeWeylSurjective.relativeWeylGroupRestrict_surjective_of_rigid` (Worker 823) takes
+`RelativeWeylSurjective.relativeWeylGroupRestrict_surjective_of_rigid` (module `Rational.RelativeWeylSurjectiveReduction`) takes
 the rigidity conclusion as its hypothesis `hrig`.
 
 ## Unit coordinates of conjugation

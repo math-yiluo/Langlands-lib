@@ -1,8 +1,6 @@
 # Noetherian actual localization of additive nonunital actions
 
-Authors: Worker 709 and Worker 735. Worker 709 prepared this statement
-unit under the whole-book Renard program; Worker 735 rechecked it and
-submitted it for task `bd5e27f7-5edf-44f4-80ea-521409c4c32b`. It imports
+This statement module was independently rechecked. It imports
 the published
 `Langlands.Algebra.IntegerCompatibleNonUnitalAction` by Lean name and
 reuses the existing actual localization and compatible unitization.
@@ -25,13 +23,13 @@ finite-type actual endomorphism localization. C.II, printed 276 / PDF 282,
 defines stability by both kernel and image equalities and eventual
 stability by a positive power. The actual localization comes from
 A.III.1, example 5 and the following lemma/corollary, printed 252–253 /
-PDF 258–259. Worker 709 has directly read these passages for the parent
-localization branch. The conventions on printed 5–6 / PDF 11–12 and the
+PDF 258–259. These passages were read directly for the localization
+construction. The conventions on printed 5–6 / PDF 11–12 and the
 Hom distinction in I.2.1, printed 14 / PDF 20, with PDF 21 as context,
 allow original additive nonunital actions without complex-linearity of
-all morphisms. Worker 709 reread those conventions for the integer
-compatibility dependency. Worker 735 independently read all of these
-pages (PDF 285, 282, 258–259, 11–12 and 20–21) for this submission.
+all morphisms. Those conventions were reread for the integer
+compatibility dependency. All of these pages (PDF 285, 282, 258–259,
+11–12 and 20–21) were also read independently for this module.
 
 These targets are derived internal content. They use ordinary module
 Noetherianity or finite generation over the actual integer unitization
@@ -39,13 +37,13 @@ Noetherianity or finite generation over the actual integer unitization
 finite-type or Noetherian terminology, impose no complex vector-space
 structure, and do not claim the complete final C.II proposition. The
 source convention and the canonical action-compatible stable-image
-identification remain separate obligations.
+identification are separate from these targets.
 
 The registered supplementary `renard-2010-corrections-complements`,
 SHA256 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
-is the older-edition corrections file in project literature. Workers 709
-and 735 each read its Appendix C corrections on PDF 18–19, and Worker 735
-rechecked its hash. These pages do not correct the final C.II proposition
+is the older-edition corrections file in project literature. Its
+Appendix C corrections on PDF 18–19 were read twice, independently, and
+its hash was rechecked. These pages do not correct the final C.II proposition
 or settle the nonunital finiteness conventions. They do not supersede the
 2026 original. On 30 October 2026, Library commit `9330fa8d` had no
 Renard errata note covering C.II. Its `notes/renard/appendix-a-corrections.md`
@@ -98,7 +96,7 @@ range(a^n) = range((a^n)^2).
 
 All kernels and ranges here are actual integer submodules of the
 original V. The same positive n occurs in each equality. This avoids
-applying the current complex-specific `Stable` predicate to integers.
+applying the complex-specific `Stable` predicate to integers.
 The target does not assume surjectivity, stability or a decomposition.
 
 `UnitizedNoetherianSurjectivityStatement` requires only ordinary
@@ -124,7 +122,9 @@ is proved in this file.
 
 ## Derivation rationale
 
-A future proof uses the automatic integer intertwiner, the existing
+The proof, `additiveLocalizationNoetherian` in
+`RenardAdditiveLocalizationNoetherianProof`, uses the automatic integer
+intertwiner, the existing
 actual canonical/localized/inverse intertwiners, and their conversion by
 `CompatibleUnitization.ofLinearIntertwiner` into ordinary U-linear maps.
 The actual localized operator and inverse supply an automorphism of the
@@ -135,28 +135,28 @@ Apply `NoetherianLocalizationCore.exhaustion_surjective` and
 of their U-linear kernel/range submodules gives equality of the same
 underlying sets for the original canonical integer-linear maps and
 powers. Finite modules over a Noetherian ring supply both Noetherian
-module instances for the third target. These are intended proof steps,
+module instances for the third target. These are proof steps,
 not additional premises or a proof implemented by this statement pair.
 
-The complex-compatible Noetherian statement task
-`699274ce-fd8e-4479-8659-02921d984da9` requires complex-linear data and
-is distinct. Ordinary localization-stability statements require
+The complex-compatible Noetherian statement
+(`RenardCompatibleLocalizationNoetherianStatements`) requires complex-linear
+data and is distinct. Ordinary localization-stability statements require
 Noetherianity over the localization coefficient ring itself. Here the
 coefficient ring for localization is ℤ while the explicit Noetherian
 hypotheses concern U; those earlier hypotheses cannot simply be
-specialized to discharge these targets. Existing owners are preserved.
+specialized to discharge these targets.
 
 ## Development checks
 
-Worker 709 inspected all five complete unapplied declaration types and bodies.
+All five complete unapplied declaration types and bodies were inspected.
 They retain independent acting-ring and carrier universes, the original ambient
 action, canonical integer scalars and linearization, the actual localized scalar
 module, and exactly the source and target unitized modules described above.
 The aggregate compiles and returns `Prop`; its inspected assumptions are only
 `propext`, `Classical.choice` and `Quot.sound`.
 
-Worker 735 repeated these checks in the pinned Lean service for this
-submission. The aggregate and `AdditiveLocalizationStabilizationAt` compile with
+These checks were repeated independently in the pinned Lean environment.
+The aggregate and `AdditiveLocalizationStabilizationAt` compile with
 no errors or warnings, report `statement_returns_prop: true` and level parameters
 `uA uV`, and use only those three axioms. Explicitly elaborated bodies confirm:
 `IsNoetherian U V` and `Module.Finite U V` use
@@ -166,7 +166,7 @@ is the generic Ore-localization module at coefficient ring ℤ. The elaborator
 records the binding of `σ` as a non-dependent `have`. Since `σ` is used only
 in the target module argument, this does not change the proposition.
 
-Separate private diagnostics checked the converted canonical map with its exact
+Separate diagnostics checked the converted canonical map with its exact
 source and target unitized module arguments, the actual endomorphism and inverse,
 their powers, kernel and range sets, and the resulting target automorphism.
 Universe probes checked the closed declarations at both `(0,1)` and `(1,0)`.
@@ -175,5 +175,4 @@ integer-linear identity, sending one to one. Both the original and localized
 ambient actions stayed zero, while the unitization's scalar coordinate retained
 canonical integer scalars on each module. These checks prove only the stated
 map and scalar coherence facts, and the diagnostic modules are excluded from
-this pair. They are development evidence, not independent semantic acceptance
-or proofs of the three targets.
+this pair. They are development evidence, not proofs of the three targets.

@@ -1,6 +1,6 @@
 # Euler tests and their finite-place Fourier transforms
 
-Worker 1692 constructs `PadicAbelian.eulerTest` for every supplied p-adic
+This module constructs `PadicAbelian.eulerTest` for every supplied p-adic
 topological field realization and every actual quasicharacter. This is internal
 derived support for the global Hecke functional equation, using the published
 local Euler-test, lattice Fourier and Gauss-transform results.

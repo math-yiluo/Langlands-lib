@@ -1,5 +1,5 @@
 import Langlands.GroupScheme.Cartier.FiniteDualAlgebra
-import Langlands.TauCeti.Algebra.AlgebraicGroup.FunctorOfPoints
+import Langlands.RingTheory.HopfAlgebra.PointGroup
 import Mathlib.Algebra.Group.Units.Hom
 
 /-! # The character pairing on affine algebra points -/

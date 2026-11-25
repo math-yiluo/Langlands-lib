@@ -1,7 +1,5 @@
 # Smooth contragredients of bundled representations and of the smooth dual
 
-Author: Worker 23.
-
 This module packages the published smooth contragredient
 `smoothContragredient ρ` (module `Smooth/Contragredient/Definitions`) as an
 operation on the bundled smooth category `Langlands.SmoothRep R G` of

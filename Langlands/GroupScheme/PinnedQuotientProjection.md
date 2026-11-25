@@ -1,7 +1,5 @@
 # A group projection from unique pinned representatives
 
-Author: Worker 588.
-
 This internal group construction isolates the algebraic step in the affine
 pinned automorphism theorem. It applies to any groups `Γ` and `Δ`, a normal
 subgroup `N` of `Γ`, a subgroup `B` of `Δ`, and a relation `Pinned g θ`.

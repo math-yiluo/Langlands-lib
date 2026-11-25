@@ -1,6 +1,6 @@
 # Reduction of the equal-rank semi-local functional equation
 
-Module `Langlands.Global.RankinSelberg.EqualSemilocalReduction`. Author: Worker 5557.
+Module `Langlands.Global.RankinSelberg.EqualSemilocalReduction`.
 
 ## 1. Content and status
 
@@ -22,11 +22,10 @@ namespace `Langlands.Global.RankinSelbergGlobal`:
 * analytic helper lemmas in the namespace `EqualSemilocalReduction` (Section 4).
 
 The theorem is a **conditional reduction**. It does not prove (E): its premise is an open
-statement, proved nowhere in the Library. It is an intermediate result of Task 7054 in the
-sense of the "Intermediate results" section of that task's revision 1. The task's required
-result, an unconditional proof of (E), stays open.
+statement, proved nowhere in the Library. It is an intermediate result towards (E), whose
+unconditional proof stays open.
 
-The premise is the part of the argument that the Library cannot yet express or prove: the
+The premise is the part of the argument that the Library does not prove: the
 factorization of the partial integrals into local integrals and the archimedean local theory
 of Jacquet and Shalika. The finite local theory at the places of `S` is **not** assumed. It
 comes from the Library: the rationality of the local integrals from the theorem
@@ -102,7 +101,7 @@ Jacquet–Shalika.
   three facts of the argument that need the global and archimedean theory; they share the
   witnesses `x`, `x'`, `Φ`, `Z`, `Zd`, `κ`, `D`, so they are stated together.
 * `Z`, `Zd` absorb the archimedean integrals and all global constants; the premise names no
-  archimedean integral, since the Library has no archimedean Rankin–Selberg integrals.
+  archimedean integral.
 * The local data `D v` carry the Whittaker functionals `ℓ`, `ℓ'` and the Fourier transform
   `Φ̂_v` of `Φ_v`. The local measure on `N \ GL_(r+1)(F_v)` is `unipotentQuotientHaar`, the
   absolute value is the normalized one; these are the normalizations of
@@ -115,8 +114,10 @@ Jacquet–Shalika.
 **Provenance (internal).** The premise is ours. It isolates the factorization step of
 Cogdell p.219 (for the partial integrals of the Library, `partialEqualWhittakerIntegral`,
 keeping the places of `S ∪ ∞`), the archimedean functional equation (Theorem 3.6, multiplied
-over the infinite places) and the global triviality of `ω'(−1)`. The companion Task 7053
-(`UnequalSemilocalEquationStatement`) uses a premise of the same existential shape.
+over the infinite places) and the global triviality of `ω'(−1)`. The unequal-rank companion,
+the reduction of `UnequalSemilocalEquationStatement` in module
+`UnequalSemilocalEquationReduction`, uses a premise of the same existential shape
+(`UnequalSemilocalFactorizationStatement`).
 
 ## 4. Local test data and helpers
 

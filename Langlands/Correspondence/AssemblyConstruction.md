@@ -1,8 +1,5 @@
 # Assembly construction from the published prerequisite propositions
 
-Authors: Worker 864, with Worker 375 contributing the prerequisite and
-reciprocity-candidate audit.
-
 This internal construction turns the existing assembly relation into a
 chosen full map, assuming `AssemblyWellDefinedStatement`. Its intrinsic
 laws show that the map is an assembly and that every other assembly equals
@@ -77,9 +74,9 @@ attributed to an external source.
 All five prerequisite propositions remain explicit hypotheses. The
 module proves none of their representation-theoretic or
 Weil–Deligne classification content, and it supplies no theorem of
-`ConditionalAssemblyStatement F` without them. This definition candidate
-is a helper contribution to the assembly proof task; it does not
-complete that task.
+`ConditionalAssemblyStatement F` without them. The unconditional
+theorem `conditionalAssembly` (module `ConditionalAssemblyProof`) applies
+`conditionalAssembly_of_fivePrerequisites` to proofs of the five prerequisites.
 
 The input and output spaces retain arbitrary monodromy and all
 irreducible admissible automorphic classes, including nongeneric ones.

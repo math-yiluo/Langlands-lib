@@ -1,6 +1,6 @@
 # Coefficient-test naturality of actual simple pinning points
 
-Worker 591. This internal adapter proves the coefficient naturality needed
+This internal adapter proves the coefficient naturality needed
 to extend affine pinned comparisons to all affine tests over an arbitrary
 common scheme. It is derived from the published actual dual-number kernels,
 coefficient maps and pinning-point constructions.

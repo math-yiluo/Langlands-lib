@@ -1,8 +1,6 @@
 # Finite abelian reciprocity and actual idele norms
 
-Author: Worker 35. Statement contribution to task
-`91266440-3276-48dc-ab77-8d1c1fa386e8`, revision 1.
-Its declarations are proposition definitions; none supplies a proof of
+This module's declarations are proposition definitions; none supplies a proof of
 class-field theory.
 
 ## The actual norm image
@@ -13,8 +11,8 @@ The number-field structures imply finite relative dimension.
 The four assertions below also require `IsGalois K L` and explicit
 commutativity of the actual automorphism group `L ≃ₐ[K] L`.
 
-`AdelicFunctoriality.ideleNorm` is Worker 50's constructed continuous
-homomorphism from the ideles of `L` to the ideles of `K`. At each base
+`AdelicFunctoriality.ideleNorm` is the continuous homomorphism constructed
+in `Langlands.Global.AdelicFunctoriality.Norm`, from the ideles of `L` to the ideles of `K`. At each base
 place its value is the product of the determinant norms from all
 completed fields above that place. The infinite and finite factors
 are both included. It is not an extension-of-scalars embedding, a
@@ -129,7 +127,7 @@ local consequences apply at finite and infinite places. The Lean
 inverse-image equality is its formulation on the actual continuous
 local insertion and actual local determinant norm. Its proof is a
 global product-formula argument; it is not supplied by the local
-norm construction and remains a separate theorem obligation.
+norm construction and is not proved here.
 
 The character equivalence is an explicit derived consequence:
 the kernel theorem turns triviality on norms into triviality on
@@ -137,7 +135,7 @@ the kernel theorem turns triviality on norms into triviality on
 uniqueness. The quotient is a finite discrete group, so continuity of
 `θ` introduces no extra hypothesis. Conversely, a factorization kills
 the norm subgroup by the kernel theorem. This explanation justifies
-the statement's provenance; it is not a submitted Lean proof.
+the statement's provenance; it is not a Lean proof.
 
 The use of an idele norm followed by the class quotient is another
 explicit reformulation. Artin–Tate's class norm has this image by
@@ -166,13 +164,13 @@ import closure is published at Library commit
 `68e8013fc4fed0de284fd849695676aca2e0c32d`, and the compiled sources are
 byte-identical to the Library files:
 
-| Module | Author | Lean SHA256 |
-| --- | --- | --- |
-| `Langlands.Global.Adelic` | Worker 2 | `b1b7213c47725ac26e0ce09b0e483e548c8a4e1f3fd4a4972cedb64b7ce8258e` |
-| `Langlands.Global.HeckeCharacter` | Worker 2 | `68525fbd6a536afefdb696f83491c0ddd60d506390cf7dcb9682c7688c3de18f` |
-| `Langlands.Global.Arithmetic.ClassFieldStatement` | Worker 35 | `d4f5888bc7dded26d3f7efdd8cfbdcfcc619ceece6770134fa8dc72400436055` |
-| `Langlands.Global.AdelicFunctoriality.Extension` | Worker 50 | `d80b486975f4272cf442044e647b123ab9c16e1a42d39b3090a7a668bc623a4a` |
-| `Langlands.Global.AdelicFunctoriality.Norm` | Worker 50 | `22cca7bbbdf85f7ed70b4c9a8efe8b4b917609fd868621a56c91115100433b38` |
+| Module | Lean SHA256 |
+| --- | --- |
+| `Langlands.Global.Adelic` | `b1b7213c47725ac26e0ce09b0e483e548c8a4e1f3fd4a4972cedb64b7ce8258e` |
+| `Langlands.Global.HeckeCharacter` | `68525fbd6a536afefdb696f83491c0ddd60d506390cf7dcb9682c7688c3de18f` |
+| `Langlands.Global.Arithmetic.ClassFieldStatement` | `d4f5888bc7dded26d3f7efdd8cfbdcfcc619ceece6770134fa8dc72400436055` |
+| `Langlands.Global.AdelicFunctoriality.Extension` | `d80b486975f4272cf442044e647b123ab9c16e1a42d39b3090a7a668bc623a4a` |
+| `Langlands.Global.AdelicFunctoriality.Norm` | `22cca7bbbdf85f7ed70b4c9a8efe8b4b917609fd868621a56c91115100433b38` |
 
 The complete `Norm` source and its paired explanation were read before
 writing this consumer. It constructs the required idele norm without
@@ -180,8 +178,7 @@ assuming its separate `NormCompatibility` target, and this pair uses
 neither that target nor any conditional idele-class norm.
 
 The module compiled with no errors or warnings under Lean 4.34.0 and
-Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`, in the project
-environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`. All five complete
+Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`. All five complete
 elaborated definitions were printed with explicit universe parameters.
 They return `Prop`; the closing conjunction retains `u` and `v`.
 The inspected character factor has type
@@ -189,8 +186,7 @@ The inspected character factor has type
 both actual finite and infinite lies-over relations.
 The closing definition's axiom report contains only `propext`,
 `Classical.choice` and `Quot.sound`.
-These are development checks, not independent semantic acceptance
-or a proof of any asserted theorem.
+These are development checks, not a proof of any asserted theorem.
 
 The global Weil-group construction, its local-global maps, and
-automorphic applications remain further obligations of the broad task.
+automorphic applications are outside this module.

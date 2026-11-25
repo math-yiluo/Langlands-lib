@@ -9,16 +9,18 @@ generic cocharacter. For every cocharacter `ξ` of the torus, some normalizing
 rational point `n` moves `ξ` into the closed dominant chamber of `ν`, and then
 `P(groupHom ν ≫ i) ≤ P((groupHom ξ ≫ i) ≫ Int(n))`.
 
-The unit is conditional. In its first part it assumes that the actual relative
+The module is conditional. In its first part it assumes that the actual relative
 roots realize the published root system (`HasRelativeRootSystem i`) and that the
 torus is split. The parabolic consequence also assumes one direction of the
 root-sign criterion for dynamic parabolics. The statement-level theorem takes
-the published, still unproved statements `RelativeRootSystemStatement.{u}` and
-`RelativeRootSignInclusionsStatement.{u}` as explicit premises. The unit proves
+the published statements `RelativeRootSystemStatement.{u}` and
+`RelativeRootSignInclusionsStatement.{u}` as explicit premises; the Library
+proves them in `Rational/RelativeRootSystemProof` and
+`Rational/RelativeRootSignInclusionsProof`. The module proves
 no published `…Statement`.
 
 Moving an arbitrary cocharacter `ζ` of `G` to a cocharacter of `i` is the
-separate unit `Rational/ParabolicCocharacterConjugacy`; this unit does not
+separate module `Rational/ParabolicCocharacterConjugacy`; this module does not
 import it.
 
 ## Setting and premises
@@ -128,7 +130,7 @@ criterion then gives the inclusion.
 
 ## Provenance
 
-The unit is derived. Milne, *Algebraic Groups* (2017), 25.22 (printed p. 550,
+The module is derived. Milne, *Algebraic Groups* (2017), 25.22 (printed p. 550,
 PDF p. 566), states the corresponding classical facts for a maximal split torus
 `S`: any two minimal parabolic subgroups are `G(k)`-conjugate; the minimal
 parabolics containing `S` are indexed by the Weyl chambers of the relative root
@@ -157,4 +159,4 @@ entries do not affect these citations:
 - The entry for p. 549 says that the classical proofs that the relative root
   system of 25.16 is a root system are incomplete, and points to CGP, C.2.15.
   That fact is the premise `RelativeRootSystemStatement` here, not something
-  this unit proves.
+  this module proves.

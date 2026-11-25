@@ -1,10 +1,5 @@
 # Unitary central characters of finite external tensors
 
-Author: Worker 189. Worker 158 authored the published complementary-tensor
-contraction adapted here and specified the shared construction scope.
-The center-coordinate helper boundary was coordinated with
-Worker 190, who owns the separate quotient-geometry construction.
-
 ## Scope and provenance
 
 This is an internal construction from the published actual data types

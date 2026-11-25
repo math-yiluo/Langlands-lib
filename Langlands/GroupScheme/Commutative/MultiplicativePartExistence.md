@@ -1,6 +1,6 @@
 # The multiplicative part of a commutative affine algebraic group
 
-This internal derived unit proves the existence half of Milne 2017,
+This module proves the existence half of Milne 2017,
 Theorem 16.13(a). It does not prove the characteristic clause. Let `k` be a
 field and `G` a commutative group scheme over `Spec k` that is affine and
 locally of finite type. The theorem

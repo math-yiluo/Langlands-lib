@@ -1,7 +1,7 @@
 # Actual Jacquet tensor occurrences with ordered labels
 
-Author: Worker 1216. The bundled flattened-occurrence prerequisites are by
-Worker 19.
+The flattened-occurrence prerequisites are bundled in
+`Parabolic.FlattenedTensorOccurrences` and its helper modules.
 
 This internal adapter specializes the actual flattened tensor extraction and
 return interfaces to a supplied increasing labeling of the fine blocks. For
@@ -52,7 +52,7 @@ the label, order and size data common to this module. It requires no
 irreducibility, admissibility, finite length or positive total rank.
 
 Both lemmas use `SmoothRep.IsSubquotient` on actual smooth representations.
-The field universe `uF` and carrier universe `uV` are independent; the host
+The field universe `uF` and carrier universe `uV` are independent; a consumer
 can instantiate the latter with `max uF uV`. The supplied topology and upper
 normalized Jacquet functors are retained. Every fine factor and coarse slot
 is present in both the extraction and return conclusions.
@@ -82,11 +82,11 @@ coarse occurrence through the exact refined functor.
 
 At Library base `8d926c3850083c700afa54adc0d07240e27fe799`, recursive traversal
 contains 395 project modules including this entry and the five bundled
-Worker 19 helper modules, with 170 distinct direct external imports across
+helper modules, with 170 distinct direct external imports across
 the closure. There are no unresolved project imports, changed imported
 Library Lean/Markdown pairs, or missing Markdown companions. The closure
 contains none of the eight excluded classification targets or their named
-proof successors: analytic segment classification, multisegment exhaustion,
+proofs: analytic segment classification, multisegment exhaustion,
 ordered strong-head existence, ordered quotient coverage, tempered block
 uniqueness, square-integrable classification, square-integrable exhaustion,
 and regular exhaustion.
@@ -103,6 +103,5 @@ these reused bodies use global disjoint-support decomposition, ordered
 quotient coverage or multisegment classification. Their detailed arguments
 are recorded in the paired extraction, factorization and tensor helper files.
 
-Development compilation of both occurrence lemmas succeeds in approved
-environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`. This compilation is not
-independent semantic acceptance or publication.
+Development compilation of both occurrence lemmas succeeded with Lean 4.34.0
+and Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.

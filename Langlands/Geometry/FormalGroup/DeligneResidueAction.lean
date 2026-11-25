@@ -42,8 +42,8 @@ def nilpDeligneResidueFunctor : FormalGroup.Nilp.{u, u} O π ⥤ Type (u + 1) wh
 /-- A natural automorphism on Deligne points and inverse precomposition on residue maps. -/
 def nilpDeligneResidueAut (e : Aut (nilpSheafClassFunctor d π F hπ)) (a : κ ≃ₐ[O] κ) :
     Aut (nilpDeligneResidueFunctor (d := d) κ hπ) :=
-  NatIso.ofComponents (fun B => Equiv.toIso
-    ((e.app B).toEquiv.prodCongr {
+  Aut.of <| NatIso.ofComponents (fun B => Equiv.toIso
+    ((e.asIso.app B).toEquiv.prodCongr {
       toFun := fun ψ => ψ.comp a.symm.toAlgHom
       invFun := fun ψ => ψ.comp a.toAlgHom
       left_inv := fun ψ => by
@@ -62,15 +62,15 @@ def nilpDeligneResidueAut (e : Aut (nilpSheafClassFunctor d π F hπ)) (a : κ �
     apply ConcreteCategory.hom_ext
     intro x
     apply Prod.ext
-    · exact ConcreteCategory.congr_hom (e.hom.naturality f) x.1
+    · exact ConcreteCategory.congr_hom (e.asIso.hom.naturality f) x.1
     · rfl)
 
 @[simp]
 theorem nilpDeligneResidueAut_hom_app (e : Aut (nilpSheafClassFunctor d π F hπ))
     (a : κ ≃ₐ[O] κ) (B : FormalGroup.Nilp.{u, u} O π)
     (x : (nilpDeligneResidueFunctor (d := d) κ hπ).obj B) :
-    (nilpDeligneResidueAut κ hπ e a).hom.app B x =
-      (e.hom.app B x.1, x.2.comp a.symm.toAlgHom) := rfl
+    (nilpDeligneResidueAut κ hπ e a).asIso.hom.app B x =
+      (e.asIso.hom.app B x.1, x.2.comp a.symm.toAlgHom) := rfl
 
 /-- The two independent actions commute and act naturally on the paired points. -/
 def nilpDeligneResidueAutHom :
@@ -79,6 +79,7 @@ def nilpDeligneResidueAutHom :
   toFun x := nilpDeligneResidueAut κ hπ x.1 x.2
   map_one' := by
     apply Aut.ext
+    apply Iso.ext
     apply NatTrans.ext
     funext B
     apply ConcreteCategory.hom_ext
@@ -89,6 +90,7 @@ def nilpDeligneResidueAutHom :
       exact AlgHom.comp_id _
   map_mul' e f := by
     apply Aut.ext
+    apply Iso.ext
     apply NatTrans.ext
     funext B
     apply ConcreteCategory.hom_ext
@@ -122,8 +124,8 @@ theorem residueFrobenius_apply (a : κ) :
 
 private abbrev localScalarOrder : Kˣ →* Multiplicative ℤ :=
   FormalGroup.Harris.valuationUnitOrder
-    ((valuation K).map (IsNonarchimedeanLocalField.valueGroupWithZeroIsoInt K).toMonoidWithZeroHom
-      (IsNonarchimedeanLocalField.valueGroupWithZeroIsoInt K).toOrderIso.monotone)
+    ((valuation K).map ⟨(IsNonarchimedeanLocalField.valueGroupWithZeroIsoInt K).toMonoidWithZeroHom,
+      (IsNonarchimedeanLocalField.valueGroupWithZeroIsoInt K).toOrderIso.monotone⟩)
 
 /-- The exponent in Drinfeld's residue action is the sum of the determinant
 and division reduced-norm orders. -/
@@ -155,7 +157,7 @@ def nilpDeligneDivisionAction (hπ : Irreducible π) :
 theorem nilpDeligneDivisionAction_residue (hπ : Irreducible π) (g : GL (Fin d) K × Dˣ)
     (B : FormalGroup.Nilp.{u, u} 𝒪[K] π)
     (x : (nilpDeligneResidueFunctor (d := d) κ (coefficientUniformizer_ne_zero (F := K) hπ)).obj B) :
-    ((nilpDeligneDivisionAction κ hπ g).hom.app B x).2 =
+    ((nilpDeligneDivisionAction κ hπ g).asIso.hom.app B x).2 =
       x.2.comp ((residueFrobenius κ ^ (-(residueActionOrder g).toAdd : ℤ)).toAlgHom) := by
   change x.2.comp ((residueFrobenius κ ^ (residueActionOrder g).toAdd).symm.toAlgHom) = _
   rw [zpow_neg]
@@ -165,8 +167,8 @@ theorem nilpDeligneDivisionAction_residue (hπ : Irreducible π) (g : GL (Fin d)
 theorem nilpDeligneDivisionAction_deligne (hπ : Irreducible π) (g : GL (Fin d) K × Dˣ)
     (B : FormalGroup.Nilp.{u, u} 𝒪[K] π)
     (x : (nilpDeligneResidueFunctor (d := d) κ (coefficientUniformizer_ne_zero (F := K) hπ)).obj B) :
-    ((nilpDeligneDivisionAction κ hπ g).hom.app B x).1 =
-      (nilpSheafProjectiveLeftHom hπ (Matrix.ProjGenLinGroup.mk g.1)).hom.app B x.1 := rfl
+    ((nilpDeligneDivisionAction κ hπ g).asIso.hom.app B x).1 =
+      (nilpSheafProjectiveLeftHom hπ (Matrix.ProjGenLinGroup.mk g.1)).asIso.hom.app B x.1 := rfl
 
 omit [NeZero d] in
 /-- A scalar matrix and its inverse central division unit have total order zero. -/

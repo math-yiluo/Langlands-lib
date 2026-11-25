@@ -1,6 +1,6 @@
 # Dimension of quotients by smooth connected kernel cores
 
-Worker 1569, extending the Library construction to perfect fields.
+This module extends the Library construction to perfect fields.
 
 The construction retains the actual kernel, its reduced identity core, the
 represented smooth quotient by that core, and the descended group homomorphism

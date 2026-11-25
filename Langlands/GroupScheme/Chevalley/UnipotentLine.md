@@ -1,8 +1,7 @@
 # Coordinate lines in representations of unipotent groups
 
 This is an internal consequence of the published matrix representation,
-multiplicative group, Yoneda, and `Torus.UnipotentHom` constructions. Worker 362
-authored the new constructions and proofs.
+multiplicative group, Yoneda, and `Torus.UnipotentHom` constructions.
 
 `MatrixRepresentation.PreservesCoordinateLine` asks that every matrix of the
 representation, on every scheme test, send the chosen standard basis vector to
@@ -24,7 +23,7 @@ this actual character. The multiplicative group is the split torus of rank
 one. Every line scalar is therefore one, so every test matrix fixes the basis
 vector. Smoothness, affineness, connectedness, and reducedness are not premises.
 
-This unit supplies a step from a Chevalley line stabilizer to a vector
+This module supplies a step from a Chevalley line stabilizer to a vector
 stabilizer for a subgroup that is already known to be unipotent. It does not
 construct a subgroup quotient or prove its affineness.
 

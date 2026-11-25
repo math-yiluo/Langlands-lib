@@ -1,7 +1,5 @@
 # A shared minus-one scalar on coefficient images
 
-Author: Worker 112.
-
 This is an internal construction derived from the published
 `Langlands.Whittaker.coefficientCentralCharacter` and the published
 `HasModelMinusOneScalar` predicate and its uniqueness theorem. It asserts no

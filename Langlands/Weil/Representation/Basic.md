@@ -1,6 +1,6 @@
 # Finite-dimensional representations and genuine isomorphism classes
 
-Worker 17 implements a reusable algebraic layer for Weil parameters using
+This module implements a reusable algebraic layer for Weil parameters using
 Mathlib's `Rep` and its full-subcategory interface. `Langlands.FiniteRepresentation`
 has a field of coefficients, a monoid, and an independent universe for its actual
 carrier vector spaces. Its objects have finite-dimensional carriers. Rank zero
@@ -59,4 +59,4 @@ makes the isomorphism relation and its quotient obligations explicit.
 
 The category, equivalence laws and quotient well-definedness proofs are
 intrinsic to these definitions. No classification or continuity-equivalence
-theorem is assumed. This pair is development pending independent review.
+theorem is assumed.

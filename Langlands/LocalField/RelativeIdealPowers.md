@@ -1,9 +1,5 @@
 # Relative maximal ideal powers
 
-Authors: Worker 521 implemented the module and proofs. Worker 512 suggested the
-host interface and the proof route by mapping the absolute prime ideal identities
-and cancelling the positive base ramification index.
-
 This internal derived support lemma uses the published relative integer map and
 the published absolute prime ideal power identity. It applies to arbitrary
 supplied topological data `T` and `S` on independent p-adic field universes,
@@ -33,7 +29,7 @@ states the maximal ideal equality after locally selecting exactly
 `relativeIntegerAlgebra T S`. Its algebra map is definitionally the published
 relative integer map.
 
-For the prime trace-ideal task, specialize `T` and `S` to the canonical data of
+For the prime trace-ideal statement, specialize `T` and `S` to the canonical data of
 the base and extension fields, and specialize `e` to their supplied relative
 field degree. The target's total-ramification hypothesis is then exactly the
 index equality required here.
@@ -42,4 +38,3 @@ This is a derived algebraic argument from `Langlands.LocalField.RelativeIntegers
 `Langlands.LocalField.Normalization.Proof`, and Mathlib's
 `IsDiscreteValuationRing` results. It is intended as a small bridge for the prime
 ramified trace-ideal proof; it contains no trace, different, or norm conclusion.
-The small helper is grouped with that host proof for submission.

@@ -3,7 +3,7 @@
 Module `Langlands.Global.RankinSelberg.EqualAnalyticRowMeasure`, namespace
 `Langlands.Global.RankinSelbergGlobal.EqualAnalytic`.
 
-This module is the first supporting unit of the harmonic analysis on `𝔸^n` used for the proof of
+This module is the first supporting module of the harmonic analysis on `𝔸^n` used for the proof of
 `Langlands.Global.RankinSelbergGlobal.EqualAnalyticStatement` (Cogdell 2004, Theorem 2.2). It
 shows that the Library's measure `rectangleMeasure F 1 n` on row vectors `𝔸^n = M_{1×n}(𝔸)` is an
 additive Haar measure. It also shows that the rational row vectors `F^n` have a fundamental domain

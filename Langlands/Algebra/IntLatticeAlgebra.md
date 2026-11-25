@@ -1,6 +1,6 @@
 # Group algebras of finite integer lattices
 
-Worker 1395 wrote this module. It proves three facts about the group algebra
+This module proves three facts about the group algebra
 `AddMonoidAlgebra R (I → ℤ)` of a finite integer lattice: the ring of Laurent
 polynomials over `R` in variables indexed by a finite type `I`. The module is
 an internal helper for the proof of

@@ -85,9 +85,9 @@ private def infinitePlacesAboveConj (p : InfinitePlace E) :
 omit [NumberField E] [NumberField E'] [IsCMField E] [IsCMField E'] in
 private theorem infiniteCompletionMap_algebraMap (p : InfinitePlace E) (q : InfinitePlace E')
     [q.LiesOver p] (a : E) :
-    LiesOver.completionMap (algebraMap E p.Completion a) =
+    LiesOver.completionMap p q (algebraMap E p.Completion a) =
       algebraMap E' q.Completion (algebraMap E E' a) := by
-  change LiesOver.completionMap ((WithAbs.toAbs p.1 a : WithAbs p.1) : p.Completion) =
+  change LiesOver.completionMap p q ((WithAbs.toAbs p.1 a : WithAbs p.1) : p.Completion) =
     ((WithAbs.toAbs q.1 (algebraMap E E' a) : WithAbs q.1) : q.Completion)
   rw [LiesOver.completionMap_coe]
   rfl

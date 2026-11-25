@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 
 /-! # A section of the conormal sequence after inverting a smooth element -/
 

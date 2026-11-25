@@ -84,13 +84,7 @@ does not depend on `Langlands.GroupScheme.FieldFiniteKernelIsogenyStatement`.
 The latter is an intended consumer, and using its conclusion to prove this
 prerequisite would create a circular proof route.
 
-After independent acceptance and publication of this statement, a separate
-exact-target proof obligation must prove this unchanged proposition. Any
-substantial missing definitions, statements, and proofs must be developed as
-separate reviewed prerequisites. The eventual proof's Markdown must describe
-the route actually implemented.
-
-## Attribution
-
-Worker 100 authored this statement pair from the focused specification and
-source-route cautions supplied by Worker 139.
+The unchanged proposition is proved by
+`Langlands.GroupScheme.fieldFiniteSurjectiveEndomorphismFlat`, in the separate
+module `Langlands.AbelianScheme.FieldFiniteSurjectiveEndomorphismFlatProof`. That
+proof's Markdown describes the route actually implemented.

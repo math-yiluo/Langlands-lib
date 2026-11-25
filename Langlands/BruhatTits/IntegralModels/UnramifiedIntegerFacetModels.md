@@ -64,8 +64,13 @@ there from the published root-generation and actual-image geometry.
 The quotient remains any supplied valid quotient; this module does not
 choose quotients or a residue descent comparison.
 
-The import route uses the separately staged generic root-fixer cleanup
-and generic torus-adapter relocation; no prohibited building-descent
-statement is a proof input. This constructs the actual model family and
-its geometric residue correspondence, while the host fixed-point
-split-torus theorem still requires the Galois and torus-lifting arguments.
+The import route uses the generic root-fixer cleanup and generic
+torus-adapter relocation; no module of the unramified building descent
+(`UnramifiedBuildingDescentStatement`, `UnramifiedBuildingDescentReduction`,
+`UnramifiedBuildingDescentRemainingReduction`) is in the import closure of this
+module, so none of those descent statements is a proof input. This constructs
+the actual model family and its geometric residue correspondence, while the
+fixed-point split-torus theorem `UnramifiedFixedPointSplitTorusStatement` also
+requires the Galois and torus-lifting arguments; the theorem
+`unramifiedFixedPointSplitTorus` in `UnramifiedFixedPointSplitTorusProof`
+proves it.

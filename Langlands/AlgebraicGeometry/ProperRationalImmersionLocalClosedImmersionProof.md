@@ -85,7 +85,7 @@ hypothesis is used through `h₂`. The construction never shrinks only the
 source. The conclusion uses Mathlib's scheme-theoretic closed immersion,
 including surjectivity on all stalks of the final restriction.
 
-## Provenance and authorship
+## Provenance
 
 This is an internal assembly of the four published supporting results and
 Mathlib's restriction isomorphisms. The unchanged target companion documents
@@ -96,10 +96,6 @@ extraction described there; it introduces no line bundle or projectivity
 premise. No downstream global closed-immersion or ample-existence result
 is used.
 
-Worker 898 wrote the conditional Lean assembly and its original explanation.
-Worker 487 supplied the four interfaces and their geometric route. Worker 362
-reused that assembly, imported the independently published proofs, added the
-unconditional theorem, and prepared this companion and submission. The
-conditional helper remains available, while the final theorem supplies all
+The conditional helper remains available, while the final theorem supplies all
 four of its premises. The proof uses only `propext`, `Classical.choice`, and
 `Quot.sound`.

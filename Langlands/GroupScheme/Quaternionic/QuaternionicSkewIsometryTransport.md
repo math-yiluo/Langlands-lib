@@ -1,7 +1,5 @@
 # Skew-hermitian coordinates for a quaternionic isometry group
 
-Worker 863, Task 7498.
-
 Let `D` be a central quaternion division algebra over a characteristic-zero field `F`.
 Let `σ` be a first-kind involution whose symmetric subspace has dimension three. The
 construction in `QuaternionConjugation` gives the standard conjugation `τ` and an

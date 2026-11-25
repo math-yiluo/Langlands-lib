@@ -1,7 +1,5 @@
 # L-factors of square-integrable block inductions
 
-Author: Worker 40.
-
 `Langlands.RankinSelberg.temperedLFactor` proves exactly the published
 `Langlands.RankinSelberg.TemperedLFactorStatement.{uF,uV,uW}`. For two finite
 families of irreducible analytically square-integrable blocks, it constructs

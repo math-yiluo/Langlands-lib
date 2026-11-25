@@ -1,9 +1,11 @@
 # Real product sequences and their canonical completion maps
 
 This internal construction fixes the scalar field to `ℝ` and the index set to
-`ℕ`. Every carrier is in `Type 0`. It supplies concrete objects for a later
-investigation of the usual completion with the morphisms printed in Renard;
-it asserts no density, properness, convergence or nonextension result.
+`ℕ`. Every carrier is in `Type 0`. It supplies concrete objects for the
+investigation, in `RenardRealSequenceCompletionStatements` and
+`RenardRealSequenceCompletionProof`, of the usual completion with the morphisms
+printed in Renard; it asserts no density, properness, convergence or
+nonextension result.
 
 ## Provenance
 
@@ -19,7 +21,7 @@ The real sequences, finite truncations, chosen metric and reciprocal function
 below are internal constructions motivated by that passage; they do not occur
 there as definitions. Fixing `ℝ` gives an ordinary complete separated scalar
 field and a real-valued distance and reciprocal, without any carrier-universe
-transport. This unit makes no assertion that the printed universal problem is
+transport. This module makes no assertion that the printed universal problem is
 solved, fails, or has no possible reflection.
 
 ## The actual spaces and structures
@@ -113,7 +115,9 @@ The construction assumes no dense inclusion, alternative complete model,
 completion equivalence, inverse, or nonextension certificate. Density,
 properness, convergence of truncations, reciprocal continuity, comparison with
 the product, joint scalar continuity on the completion and failure of continuous
-extension remain separate statement/proof or general-completion obligations.
+extension are not proved here: they are stated in
+`RenardRealSequenceCompletionStatements` and proved in
+`RenardRealSequenceCompletionProof`.
 
 ## Mathlib implementation sources
 

@@ -1,6 +1,6 @@
 # Commutative derived subgroups and perfect triviality
 
-This internal unit works over an arbitrary base scheme in universe `u`.
+This internal module works over an arbitrary base scheme in universe `u`.
 It derives the results directly from the published full scheme-theoretic
 derived-subgroup intersection and the represented identity subgroup. No
 field, finite type, smoothness, connectedness or reductivity hypothesis is used.
@@ -30,6 +30,3 @@ These are elementary prerequisites for an argument that a quotient which
 is both commutative and perfect is trivial. This file does not construct
 such a quotient, prove perfectness of semisimple groups, or assert central
 generation for a reductive group.
-
-Authorship: Worker 1367. Worker 1044 suggested the commutative-perfect
-quotient application as a focused prerequisite.

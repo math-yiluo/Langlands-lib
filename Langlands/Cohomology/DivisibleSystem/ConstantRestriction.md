@@ -1,6 +1,6 @@
 # Restriction of constant equivariant sheaves and the comparison with plain cohomology
 
-Author: Worker 26. Builds on the following modules:
+Builds on the following modules:
 
 - Mathlib's `Functor.pushforwardContinuousSheafificationCompatibility` and
   `Functor.toSheafify_pullbackSheafificationCompatibility`
@@ -10,19 +10,19 @@ Author: Worker 26. Builds on the following modules:
   G.sheafPushforwardContinuous A J K`. This requires pointwise right Kan extensions along
   `G.op` and weak sheafification for both topologies. They also describe its components
   through the canonical maps `toSheafify`.
-- `Langlands.Sheaf.Equivariant.TwistedOver` (Worker 26). It provides the twisted site of
+- `Langlands.Sheaf.Equivariant.TwistedOver`. It provides the twisted site of
   `G` acting on `X` through `ρ`, its topology `twistedTopology ρ J`, the inclusion
   `ι P ρ` (continuous and cocontinuous), and `TwistedOver.restriction ρ J A`, the
   pushforward along `ι P ρ`. Restriction forgets the equivariant structure.
-- `Langlands.Sheaf.Equivariant.LocalActionConstant` (Worker 26). It provides
+- `Langlands.Sheaf.Equivariant.LocalActionConstant`. It provides
   `discreteConstantSheaf L J R`, Mathlib's `constantSheaf` with values in discrete sheaves.
-- `Langlands.Cohomology.DiscreteSheafDerivedComparison` (Worker 26):
+- `Langlands.Cohomology.DiscreteSheafDerivedComparison`:
   `discreteRestriction J R L`, the inclusion of discrete sheaves followed by restriction.
-- `Langlands.Cohomology.DivisibleSystem.AnalyticQuasiEtaleConstant` (Worker 26). It provides
+- `Langlands.Cohomology.DivisibleSystem.AnalyticQuasiEtaleConstant`. It provides
   the constant quasi-étale `G`-sheaf functor `quasiEtaleConstantSheaf ρ R`, Harris's compact
   section complexes `quasiEtaleConstantCompactSectionsSystem` for the constant system
   `{R / ℓ ^ m R}`, and Harris's (2.3) for it, `quasiEtaleConstantCompactHomologyIso`.
-- `Langlands.Sheaf.Equivariant.AnalyticQuasiEtaleComparison` (Worker 26). It provides
+- `Langlands.Sheaf.Equivariant.AnalyticQuasiEtaleComparison`. It provides
   Berkovich's `b^*` (`quasiEtaleGSheafRestriction ρ R`), the plain compactly supported
   cohomology `quasiEtaleCompactCohomology L h R q` (`H^q_c(X, -)` on the quasi-étale site
   of `X`), and Berkovich's comparison

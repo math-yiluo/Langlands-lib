@@ -1,6 +1,6 @@
 # Homomorphisms from the Jacquet module to a tempered representation
 
-Author: Worker 6. Module `Langlands.Representation.Exponents.TemperedJacquetUnitaryRestrictionStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`. Statement `TemperedJacquetUnitaryRestrictionStatement : Prop`; nothing is proved here.
+Module `Langlands.Representation.Exponents.TemperedJacquetUnitaryRestrictionStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`. Statement `TemperedJacquetUnitaryRestrictionStatement : Prop`; nothing is proved here.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*, French edition dated 9 July 2026, VII.2.4, Proposition, printed p.229 / PDF p.235. The registered source ID is `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. The Proposition says: let `P = MN` be a parabolic subgroup of `G`; for every tempered representation `(σ, E)` of `M` and every tempered representation `(π, V)` of `G` there is a natural isomorphism
 
@@ -34,10 +34,10 @@ The carrier universes of `π` and `σ` are both `v`, since the transported Jacqu
 
 The source proposition composes this bijection with Frobenius reciprocity VI.1.1. The statement here omits that step for two reasons:
 
-- No represented-parabolic Frobenius reciprocity exists yet for `leviInductionFunctor` and `leviJacquetFunctor`. The published `Langlands.Aubert.General.FirstAdjointness.equiv` gives `Hom(A, i σ) ≃ Hom(r A, σ)` for an abstract semidirect decomposition of subgroups, under the explicit premise `IsUnimodularModulus` on the radical. Applying it here needs that unimodularity for the rational points of an actual unipotent radical, which follows from V.5.2(iii) (the radical is a union of compact open subgroups), and the transport of morphisms between the Levi image and `M(F)`.
+- Represented-parabolic Frobenius reciprocity for `leviInductionFunctor` and `leviJacquetFunctor` is the separate statement `LeviFrobeniusReciprocityStatement` (proved in `LeviFrobeniusReciprocityProof`). The published `Langlands.Aubert.General.FirstAdjointness.equiv` gives `Hom(A, i σ) ≃ Hom(r A, σ)` for an abstract semidirect decomposition of subgroups, under the explicit premise `IsUnimodularModulus` on the radical. Applying it here needs that unimodularity for the rational points of an actual unipotent radical, which follows from V.5.2(iii) (the radical is a union of compact open subgroups), and the transport of morphisms between the Levi image and `M(F)`.
 - With those inputs, the proposition is the composite of `FirstAdjointness.equiv` with the bijection stated here. Its naturality in `π` and `σ` follows from the naturality of both maps.
 
-So this statement covers exactly the representation-theoretic content that VII.2.4 adds to VI.1.1. A statement of the composite isomorphism is a separate unit, once represented-parabolic Frobenius reciprocity is available.
+So this statement covers exactly the representation-theoretic content that VII.2.4 adds to VI.1.1. A statement of the composite isomorphism is the separate statement `TemperedInductionUnitaryReciprocityStatement`.
 
 ## Faithfulness notes
 
@@ -45,9 +45,9 @@ So this statement covers exactly the representation-theoretic content that VII.2
 - No hypotheses beyond the source's temperedness of `σ` and `π` are added. Irreducibility, finite length and central characters are not assumed. Temperedness includes admissibility.
 - The local-compactness and nonarchimedean-group instances of `G(F)` are hypotheses, as in the published temperedness predicate. Those of `M(F)` are derived from them.
 
-## Remaining obligations
+## Proof obligations
 
-The proof is a separate obligation. A proof along the source route needs:
+The proof is separate, in `TemperedJacquetUnitaryRestrictionProof`. A proof along the source route needs:
 
 - the decomposition `r_P^G π = (r_P^G π)_0 ⊕ (r_P^G π)_+` into `M(F)`-subrepresentations, from (VII.1.1.1) for the admissible `π` (published statement `ArbitraryParabolicExponentStatement`). This gives surjectivity, by extending by zero on `(r_P^G π)_+`;
 - that an `M(F)`-intertwiner maps the characteristic space of a character `χ` of the split component into the characteristic space of `χ` in `σ`, since the split component acts centrally in `M(F)`;

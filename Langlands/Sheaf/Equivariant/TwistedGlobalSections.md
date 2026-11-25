@@ -1,6 +1,6 @@
 # Equivariant global sections and their cohomology on a twisted site
 
-Author: Worker 26. Builds on the following modules:
+Builds on the following modules:
 
 - `Langlands.Sheaf.Equivariant.LocalActionCohomology`: `sheafSectionsRep R J a`, the
   sections over an object `U` of module sheaves as a representation of a monoid `K`

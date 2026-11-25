@@ -1,6 +1,8 @@
 # Compact-open products for common-Levi composition
 
-Worker 360, supporting Task 7002.
+Supporting module for `conditionalDynamicCommonLeviComposition` (module
+`DynamicCommonLeviCompositionProof`), the proof of the common-Levi composition
+of actual standard integrals.
 
 This internal helper proves the three local compact-open product identities used by
 `StandardIntertwining.DynamicSource.comp_hasIntegral` for three actual dynamic radicals.

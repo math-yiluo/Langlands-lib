@@ -1,7 +1,5 @@
 # Complete valued fields are henselian: proof
 
-Author: Worker 105.
-
 Proof of `Langlands.AlgebraicGeometry.PointTopology.CompleteHenselianValuedFieldStatement.{u}`:
 every complete nontrivially normed field is a henselian valued field
 (`IsHenselianValuedField`). This is the fact presupposed by Conrad's remark on printed p.14 of

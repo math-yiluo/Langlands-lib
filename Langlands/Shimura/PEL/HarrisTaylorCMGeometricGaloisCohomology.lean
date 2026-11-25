@@ -175,7 +175,7 @@ local notation "sectionsAction" => cmHarrisGeometricGaloisSectionsAction D C
 /-- Every derived Galois operator is geometric pullback along the actual
 raw Galois map with precisely the original coefficient comparison. -/
 theorem cmHarrisGeometricGaloisDerivedAction_obj_ρ (r : ℕᵒᵖ) (σ : Galois) :
-    ((derivedAction).obj r).ρ σ =
+    (((derivedAction).obj r).ρ σ).asHom =
       sheafDerivedPullbackWithCoefficients (g σ) Rcoeff
         (((coefficientIso) σ).hom.app r) := by
   simpa only [cmHarrisGeometricGaloisDerivedAction,
@@ -190,7 +190,7 @@ theorem cmHarrisGeometricGaloisDerivedAction_obj_ρ (r : ℕᵒᵖ) (σ : Galois
 and the unchanged finite-stage coefficient comparison. -/
 theorem cmHarrisGeometricGaloisCohomologyAction_obj_ρ
     (degree : ℕ) (r : ℕᵒᵖ) (σ : Galois) :
-    (((cohomologyAction) degree).obj r).ρ σ =
+    ((((cohomologyAction) degree).obj r).ρ σ).asHom =
       cohomologyPullbackWithCoefficients (g σ) Rcoeff degree
         (((coefficientIso) σ).hom.app r) := by
   simpa only [cmHarrisGeometricGaloisCohomologyAction,
@@ -204,7 +204,7 @@ theorem cmHarrisGeometricGaloisCohomologyAction_obj_ρ
 /-- The section Galois operator uses the actual raw geometric pullback
 with the original coefficient comparison. -/
 theorem cmHarrisGeometricGaloisSectionsAction_obj_ρ (r : ℕᵒᵖ) (σ : Galois) :
-    ((sectionsAction).obj r).ρ σ =
+    (((sectionsAction).obj r).ρ σ).asHom =
       sectionsPullbackWithCoefficients (g σ) Rcoeff
         (((coefficientIso) σ).hom.app r) := by
   simpa only [cmHarrisGeometricGaloisSectionsAction,

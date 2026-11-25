@@ -1,6 +1,6 @@
 # Nondegenerate dual comparison under double-opposite transport
 
-Worker 1149 completes and extends Worker 6's feasibility construction. This is a
+This is a
 derived internal comparison supporting the two dual functors of Renard I.4.1,
 printed pages 22–23 / PDF pages 28–29. The governing source is David Renard,
 *Représentations des groupes réductifs p-adiques*, French version 9 July 2026,

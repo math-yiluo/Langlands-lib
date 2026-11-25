@@ -1,7 +1,5 @@
 # Splitting of simply connected cocycles by finite unramified extensions
 
-Authors: Worker 303.
-
 `Langlands.GroupScheme.LocalSimplyConnectedUnramifiedSplittingStatement.{u}` is a
 proposition definition at arbitrary universe `u`. This module states it and
 proves nothing.

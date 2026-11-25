@@ -17,7 +17,7 @@ def TorsorSectionSplitting
   ∀ (F : Sheaf J (ModuleCat.{u} R)) (U : Over Y.V),
     Function.Bijective
       (fun (s : F.obj.obj (op (Y.V ⨯ U.left))) (g : G) =>
-        F.obj.map (prod.lift (U.hom ≫ Y.ρ g) (𝟙 U.left)).op s)
+        F.obj.map (prod.lift (U.hom ≫ (Y.ρ g).asHom) (𝟙 U.left)).op s)
 
 /-- The finite geometric torsor condition implies section splitting for every
 module sheaf on the small etale site. This is a target, not a proved theorem. -/

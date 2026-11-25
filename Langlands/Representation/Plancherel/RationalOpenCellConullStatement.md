@@ -1,9 +1,8 @@
 # Haar conullness of the actual rational dynamic open cell
 
-Author: Worker 200.
-
-`RationalDynamicOpenCellConullStatement` is a focused unproved proposition
-definition. It isolates the geometric-measure obligation needed to apply the
+`RationalDynamicOpenCellConullStatement` is a focused proposition
+definition, proved separately by `rationalDynamicOpenCellConull` in
+`RationalOpenCellConullProof`. It isolates the geometric-measure obligation needed to apply the
 existing source open-cell integration theorem to actual reductive rational
 points. Compilation establishes that the target is well formed; no proof,
 conullness instance or completed rational-point integration formula is supplied.
@@ -33,7 +32,7 @@ set is substituted. No right-invariance or normalization premise on `mu` is
 needed for the null-set assertion. In particular, no compact subgroup or Haar
 scale is selected to make the result hold.
 
-## Proven prerequisite and remaining proof
+## Proven prerequisite and the additional assertion
 
 The published `OpenCellPoints.isOpenEmbedding_openCellMap_rationalPoint`
 already proves that this exact dynamic map is an open embedding when the
@@ -50,21 +49,20 @@ The paper states integration over the actual open cell. The present proposition
 is an internal extracted prerequisite for the Library's implementation of
 that formula; it is not a separately numbered source theorem. In the existing
 `OpenCellIntegration` and `ParabolicHaar` engines it is precisely the `hnull`
-premise. Together with the actual embedding theorem it will discharge the
-geometric premises of `SemidirectSourceGamma` after the actual subgroup
+premise. Together with the actual embedding theorem it discharges the
+geometric premises of `SemidirectSourceGamma` once the actual subgroup
 identifications and remaining measure hypotheses are verified.
 
-A proof successor must prove this exact target independently of the desired
-open-cell integration formula or gamma identities whose realization uses it.
-It must not assume an unproved general measure-zero algebraic-boundary or
-analytic-chart theorem. Such substantial missing prerequisites need their
-own independently published proofs. Existing open-cell and subgroup owners,
-including operator-paused radical and root-product work, retain their scope
-and run controls. GL-specific conullness results do not establish this general
+`rationalDynamicOpenCellConull` proves this exact target without using the
+open-cell integration formula or the gamma identities whose realization uses it.
+Its general measure-zero and density inputs are proved in
+`Langlands.MeasureTheory.Group.NoetherianNullProof` and
+`Langlands.AlgebraicGeometry.PointTopology.RationalLocalDensityProof`.
+GL-specific conullness results do not establish this general
 target without a verified general comparison.
 
-The statement alone closes none of the standing Plancherel completion
-conditions. Source compact-intersection measures, all semistandard/opposite
+The statement alone establishes none of the other ingredients of the
+Plancherel formula. Source compact-intersection measures, all semistandard/opposite
 comparisons, gamma dependence only on the Levi, root-factor index formulas,
 spectral normalization and all representation/analysis conclusions remain
 separate obligations.

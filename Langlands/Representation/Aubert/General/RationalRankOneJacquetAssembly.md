@@ -1,8 +1,6 @@
 # Actual rational-point rank-one assembly from support detection
 
-Author: Worker 64.
-
-This internal conditional construction specializes
+This conditional construction specializes
 [`rankOneJacquetConstituentsOfSupportDetection`](RankOneJacquetSupportDeduction.md)
 to the actual rational points of every connected reductive group scheme over a
 nonarchimedean local field. It retains independent universes `u` and `v`;
@@ -77,7 +75,8 @@ character independence, adjointness or geometric lemma.
 The support detector, constituent existence,
 geometric sequence and other-proper middle vanishings remain supplied
 obligations. An empty simple-root type admits no proper `J`, consistently with
-the maximal-standard condition in the host target; no nonemptiness instance is
+the maximal-standard condition in the target
+`RationalRankOneJacquetModulesStatement`; no nonemptiness instance is
 added. This construction does not prove
 `RationalRankOneJacquetModulesStatement`, and its additional premises do not
 change that exact target or count as its proof.

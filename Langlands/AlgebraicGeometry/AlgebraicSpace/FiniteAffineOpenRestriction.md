@@ -1,7 +1,5 @@
 # Quasi-affine sources over compact universal-open restrictions
 
-Author: Worker 133.
-
 This internal module constructs the actual scheme source of an open
 restriction of a finite map and proves the quasi-affineness needed for
 the finite-surjective AF descent reduction. The base scheme is arbitrary.

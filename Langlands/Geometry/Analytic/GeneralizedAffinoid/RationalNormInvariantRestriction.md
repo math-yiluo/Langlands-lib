@@ -1,7 +1,5 @@
 # Subgroup restriction of continuous weighted rational diagrams
 
-Author: Worker 56.
-
 This internal construction compares the actual weighted rational diagrams
 under passage from an open subgroup `J` to an open subgroup `H ≤ J`.
 Its entry point is `normInvariantSpectrumLocusRestrictionIso`. The setting
@@ -62,7 +60,7 @@ proved obligations of the imported modules.
 
 ## Provenance and scope
 
-The subgroup-change pattern follows Worker 56's published
+The subgroup-change pattern follows
 `DomainInvariantSubgroupRestriction`; the current module applies it to the
 norm-continuous rational diagrams. Its input is norm-continuity of the
 base-algebra orbits, with no identification with the full analytic

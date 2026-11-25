@@ -1,7 +1,5 @@
 # Positive diagonal powers inside polynomially defined matrix subgroups
 
-Author: Worker 1571.
-
 This auxiliary construction implements the polynomial part of Borel's
 section 6.3, printed pages 42–43, for a matrix subgroup whose membership is
 explicitly given by polynomial equations. The source is registered as

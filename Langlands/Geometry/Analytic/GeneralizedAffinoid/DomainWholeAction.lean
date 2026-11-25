@@ -42,6 +42,7 @@ theorem sectionAction_whole (g : G) :
     ρ.sectionAction (Domain.whole K P) (ρ.wholeStabilizerHom g) =
       ρ.toMonoidHom g := by
   apply Aut.ext
+  apply Iso.ext
   apply BoundedAlgHom.ext
   intro a
   exact ρ.sectionAction_baseMap (Domain.whole K P) (ρ.wholeStabilizerHom g) a
@@ -50,15 +51,17 @@ theorem sectionAction_whole (g : G) :
 def globalSpectrumAction : Action TopCat.{u} G where
   V := TopCat.of (BanachSpectrum P)
   ρ :=
-    { toFun := fun g => TopCat.ofHom
-        (BanachSpectrum.comapContinuous (ρ.toMonoidHom g).inv.toBoundedRingHom)
+    { toFun := fun g => End.of (TopCat.ofHom
+        (BanachSpectrum.comapContinuous (ρ.toMonoidHom g).asIso.inv.toBoundedRingHom))
       map_one' := by
+        apply End.ext
         apply TopCat.ext
         intro x
         change ρ.toMonoidHom 1 • x = x
         simp
       map_mul' := by
         intro g h
+        apply End.ext
         apply TopCat.ext
         intro x
         change ρ.toMonoidHom (g * h) • x =
@@ -68,7 +71,7 @@ def globalSpectrumAction : Action TopCat.{u} G where
 @[simp]
 theorem globalSpectrumAction_apply (g : G) (x : BanachSpectrum P) (a : P) :
     BanachSpectrum.toMulRingSeminorm
-      (ConcreteCategory.hom (ρ.globalSpectrumAction.ρ g) x) a =
-        x ((ρ.toMonoidHom g).inv.toAlgHom a) := rfl
+      (ConcreteCategory.hom (ρ.globalSpectrumAction.ρ g).asHom x) a =
+        x ((ρ.toMonoidHom g).asIso.inv.toAlgHom a) := rfl
 
 end Langlands.Analytic.PresentedAffinoidAlgebra.DomainAutomorphism.DomainSpectralAction

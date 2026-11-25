@@ -2,11 +2,11 @@
 
 ## Source and scope
 
-This unit implements the ring portion of David Renard, *Représentations des groupes réductifs p-adiques*, French version dated **9 July 2026**, I.1.1–I.1.2, printed pages 6–7 / PDF pages 12–13. The registered source is `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`, retained at `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`. The title and cited original pages were read. No project errata entry was present when this unit was prepared. The adjacent 2020 edition is not used.
+This module implements the ring portion of David Renard, *Représentations des groupes réductifs p-adiques*, French version dated **9 July 2026**, I.1.1–I.1.2, printed pages 6–7 / PDF pages 12–13. The registered source is `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`, retained at `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`. The title and cited original pages were read. No project errata entry was present when this module was prepared. The adjacent 2020 edition is not used.
 
 All declarations live in `Langlands.Algebra`, with the corner API in its `Idempotent` namespace. The ambient type `A : Type u` carries Mathlib's associative `NonUnitalRing` structure. There is no commutativity, characteristic, nontriviality, topology, dimension, or scalar-field assumption. An ambient ring may have a unit, but none is required or chosen. In particular, the corner of the zero idempotent is allowed to be the trivial unital ring. The construction uses Mathlib's actual `IsIdempotentElem`, `NonUnitalSubring`, and `NonUnitalRingHom` infrastructure.
 
-This unit contains concrete definitions and their intrinsic laws. It does not construct module categories, nondegenerate parts, adjunctions, or categorical filtered colimits. The union theorem below is solely an equality of sets; it does not assert a categorical universal property.
+This module contains concrete definitions and their intrinsic laws. It does not construct module categories, nondegenerate parts, adjunctions, or categorical filtered colimits. The union theorem below is solely an equality of sets; it does not assert a categorical universal property.
 
 ## Corners: I.1.1, printed page 6
 
@@ -57,7 +57,7 @@ This matches Renard's definition for every finite set of ambient elements. The d
 
 `IsIdempotented.iff_two_sided_local_units` is the derived equivalent formulation with `e * a = a` and `a * e = a`, retaining the same idempotent and quantifier order. It applies `sandwich_eq_iff` under the quantifiers. `iff_finite_set` gives the same condition for `s : Set A` with `s.Finite`, using Mathlib's conversions between finite sets and finsets. This shows the use of `Finset` does not impose extra mathematical data on Renard's definition.
 
-`of_ring R` proves the first ring assertion of I.1.2 Remark 1: every unital ring is idempotented. It chooses the actual identity of `R` for every finite set. The remark's assertions about modules are outside this unit.
+`of_ring R` proves the first ring assertion of I.1.2 Remark 1: every unital ring is idempotented. It chooses the actual identity of `R` for every finite set. The remark's assertions about modules are outside this file.
 
 `finite_family` extends the predicate to any family `a : ι → A` with `[Finite ι]`. The index type has an independent universe `v`, while `A` has universe `u`. It applies the finite-set condition to the image of a finite enumeration. This is an internal reformulation of the finite-set definition, not an additional hypothesis.
 

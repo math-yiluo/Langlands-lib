@@ -1,7 +1,5 @@
 # Necessity in the actual cocharacter stabilizer comparison
 
-Author: Worker 57. Prepared for submission with Worker 401.
-
 For the actual Harris datum and a compatible CM section, this proof shows
 that conjugacy of the Galois-transported first-factor Kottwitz scheme cocharacter
 to the original forces preservation of the real Hodge function. At the embedding

@@ -1,7 +1,5 @@
 # The nonnegative cocharacter and actual split-central quotients
 
-Author: Worker 1222.
-
 `Langlands.GroupScheme.CocharacterUniformizer.ConeQuotientComparisonStatement`
 compares two actual monoids over any nonarchimedean local field `F : Type u`.
 Let `G` be a connected reductive group scheme over `F`, let `i : T → G`

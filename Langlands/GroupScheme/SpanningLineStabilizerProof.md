@@ -1,7 +1,5 @@
 # Proof of the spanning representation reduction preserving a line stabilizer
 
-Author: Worker 1038.
-
 The theorem `Langlands.GroupScheme.spanningLineStabilizer` proves
 `Langlands.GroupScheme.SpanningLineStabilizerStatement.{u}`, stated in the
 unchanged Library module `Langlands.GroupScheme.SpanningLineStabilizerStatement`,
@@ -46,7 +44,7 @@ conjunction.
 
 ## The construction behind the cited theorem
 
-The published module builds `σ` as the task context suggests. This section
+The published module builds `σ` as follows. This section
 describes those Library proofs; the present file does not reprove them.
 
 - Smoothness over the field gives that `G.X.left` is reduced
@@ -79,7 +77,7 @@ describes those Library proofs; the present file does not reprove them.
 
 ## Checks
 
-`lean_check` (diagnostic `708d2734-f341-4421-867b-c4210a1afcc4`): lake build
+Lake build
 with zero errors and zero warnings. The theorem has level parameter `u` and
 depends only on the axioms `propext`, `Classical.choice` and `Quot.sound`.
 

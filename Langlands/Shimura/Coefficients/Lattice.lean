@@ -91,17 +91,18 @@ def latticeAction (Λ : Submodule R V) (hΛ : IsStable ρ Λ) :
     Action (ModuleCat.{w} R) G where
   V := ModuleCat.of R Λ
   ρ :=
-    { toFun := fun g => ModuleCat.ofHom (((ρ g).toLinearMap.restrictScalars R).restrict (hΛ g))
-      map_one' := by apply ModuleCat.hom_ext; ext x; simp
+    { toFun := fun g => End.of (ModuleCat.ofHom (((ρ g).toLinearMap.restrictScalars R).restrict (hΛ g)))
+      map_one' := by apply End.ext; apply ModuleCat.hom_ext; ext x; simp
       map_mul' := by
         intro g h
+        apply End.ext
         apply ModuleCat.hom_ext
         ext x
         change ρ (g * h) x = ρ g (ρ h x)
         simp [LinearEquiv.mul_apply] }
 
 @[simp] theorem latticeAction_apply (Λ : Submodule R V) (hΛ : IsStable ρ Λ)
-    (g : G) (x : Λ) : Λ.subtype (((latticeAction ρ Λ hΛ).ρ g).hom x) = ρ g x := rfl
+    (g : G) (x : Λ) : Λ.subtype (((latticeAction ρ Λ hΛ).ρ g).asHom.hom x) = ρ g x := rfl
 
 end Stable
 
@@ -116,7 +117,7 @@ def torsionSystem : ℕᵒᵖ ⥤ Action (ModuleCat.{w} R) G where
   map f :=
     { hom := (Langlands.Coefficients.AdicSystem.transition I (leOfHom f.unop)).app M.V
       comm := fun g =>
-        (Langlands.Coefficients.AdicSystem.transition I (leOfHom f.unop)).naturality (M.ρ g) }
+        (Langlands.Coefficients.AdicSystem.transition I (leOfHom f.unop)).naturality (M.ρ g).asHom }
   map_id n := by
     apply Action.Hom.ext
     exact congrArg (fun e => e.app M.V)
@@ -131,8 +132,8 @@ def torsionSystem : ℕᵒᵖ ⥤ Action (ModuleCat.{w} R) G where
 abbrev torsionAction (n : ℕ) := (torsionSystem I M).obj (op n)
 
 @[simp] theorem torsionAction_mk (n : ℕ) (g : G) (x : M.V) :
-    ((torsionAction I M n).ρ g).hom (Submodule.Quotient.mk x) =
-      Submodule.Quotient.mk ((M.ρ g).hom x) := rfl
+    ((torsionAction I M n).ρ g).asHom.hom (Submodule.Quotient.mk x) =
+      Submodule.Quotient.mk ((M.ρ g).asHom.hom x) := rfl
 
 /-- Canonical equivariant quotient map from the lattice module to its reduction. -/
 def torsionQuotientMap (n : ℕ) : M ⟶ torsionAction I M n where
@@ -156,13 +157,14 @@ instance congruenceKernel_normal (n : ℕ) : (congruenceKernel I M n).Normal :=
 
 theorem mem_congruenceKernel (n : ℕ) (g : G) :
     g ∈ congruenceKernel I M n ↔
-      ∀ x : M.V, (Submodule.Quotient.mk ((M.ρ g).hom x) : (torsionAction I M n).V) =
+      ∀ x : M.V, (Submodule.Quotient.mk ((M.ρ g).asHom.hom x) : (torsionAction I M n).V) =
         Submodule.Quotient.mk x := by
   change (torsionAction I M n).ρ g = 1 ↔ _
   constructor
   · intro h x
-    exact congrArg (fun f : End (torsionAction I M n).V => f.hom (Submodule.Quotient.mk x)) h
+    exact congrArg (fun f : End (torsionAction I M n).V => f.asHom.hom (Submodule.Quotient.mk x)) h
   · intro h
+    apply End.ext
     apply ModuleCat.hom_ext
     ext x
     obtain ⟨y, rfl⟩ := Submodule.Quotient.mk_surjective _ x

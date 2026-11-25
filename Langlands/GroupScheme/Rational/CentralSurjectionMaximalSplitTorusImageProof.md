@@ -1,7 +1,5 @@
 # Maximality of split-torus images under central fppf surjections: proof
 
-Author: Worker 1387.
-
 The theorem `Langlands.GroupScheme.centralSurjectionMaximalSplitTorusImage`
 proves `Langlands.GroupScheme.CentralSurjectionMaximalSplitTorusImageStatement.{u}`,
 imported unchanged from
@@ -76,8 +74,7 @@ with `f ≫ j' = j`; we must show that `f` is an isomorphism.
 
 ## Dependencies
 
-The helper modules are in `Langlands.GroupScheme.CentralSurjectionImage`, all by
-Worker 1387:
+The helper modules are in `Langlands.GroupScheme.CentralSurjectionImage`:
 
 - [`GroupAlgebraCoeff`](../CentralSurjectionImage/GroupAlgebraCoeff.md):
   coefficient formulas in `S[Λ × Λ]`.

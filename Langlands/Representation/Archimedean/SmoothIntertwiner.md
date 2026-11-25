@@ -98,6 +98,7 @@ coordinate of the induced map is `L` composed with the continuous source
 coordinate `derivativeCLM I π Xs`, which gives continuity of `derivativeMap` and
 of both directions of `derivativeEquiv`.
 
-The module was prepared for the analytic comparison in Task 7293. The Lean
+The module was prepared for the analytic comparison in the proof of
+`CuspidalOperatorMultiplicityOneStatement`. The Lean
 file sets `backward.isDefEq.respectTransparency false` for the chain-rule
 proof, as the published `SmoothDerivative` does for its analogous proofs.

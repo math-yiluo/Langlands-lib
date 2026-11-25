@@ -1,7 +1,5 @@
 # Algebraic-closure automorphisms of the geometric CM scheme tower
 
-Author: Worker 57.
-
 This module constructs an action of the F-algebra automorphisms of
 `AlgebraicClosure F` on the existing geometric CM scheme tower. The maps
 are actual fiber-product morphisms. Their naturality, original projection
@@ -195,8 +193,7 @@ The module constructs the scheme action conditional on q and the named
 premises. It does not prove representability, coarse rigidity, coefficient
 descent, coefficient equivariance, a cohomological action or its
 continuity, commutation with Hecke actions on cohomology, level or adic
-limits, or analytic comparisons. The full unitary-geometry task retains
-those applicable construction and proof obligations.
-Only published imported constructions are used; no unreviewed draft is
-reused. The new Lean and English prose are by Worker 57 in Lean 4.34.0
-and Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.
+limits, or analytic comparisons. Those applicable construction and proof
+obligations lie outside this module.
+Only published imported constructions are used. The pinned environment is
+Lean 4.34.0 and Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.

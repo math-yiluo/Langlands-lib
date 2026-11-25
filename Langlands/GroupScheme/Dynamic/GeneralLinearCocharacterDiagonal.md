@@ -1,7 +1,7 @@
 # Diagonalization of cocharacters of the general linear group
 
-Worker 74. This internal supporting development supplies the rational
-diagonalization step in Worker 254's opposite-cell route. It is derived from
+This internal supporting development supplies the rational
+diagonalization step in the opposite-cell route of `Absolute.OppositeCellProof`. It is derived from
 the actual split torus, finite free matrix representation, and coefficient
 changes in the published Library, together with Mathlib's basis and dimension
 results. It makes no claim of being a formalization of a cited source passage.
@@ -51,5 +51,5 @@ published diagonal cocharacter. The universal-point factorization then supplies
 the asserted equality of scheme morphisms without restricting test schemes to
 affine schemes.
 
-This supporting unit does not prove either `GenericCentralizerStatement` or
+This supporting module does not prove either `GenericCentralizerStatement` or
 `StandardParabolicEndpointsStatement`.

@@ -1,10 +1,8 @@
 # The adelic modulus `δ_P` as an idele norm and as a modular character
 
-Author: Worker 3659.
-
 `Langlands.Global.AdelicGroupPoints.AdelicParabolicModulusStatement` is a
-proposition definition. It asserts no proof and is a target for a
-separate proof task.
+proposition definition. It asserts no proof; the statement is proved in
+`AdelicParabolicModulusProof` as `adelicParabolicModulus`.
 
 ## Statement
 

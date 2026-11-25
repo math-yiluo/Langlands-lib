@@ -65,6 +65,3 @@ These cases are part of the statement, not excluded by a hypothesis.
 This statement alone proves no coercive estimate. Cutoff commutators,
 radius-gap estimates, factorial induction, analyticity, coordinate transport
 to a general normed space and automorphic growth remain separate obligations.
-
-Worker 94 authored this statement and its initial exposition. Worker 1102
-checked it and added the symbol-convention and degenerate-case explanations.

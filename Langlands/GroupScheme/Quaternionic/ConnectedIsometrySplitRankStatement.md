@@ -1,7 +1,5 @@
 # Split rank of `O(q)⁰` equals the Witt index
 
-Author: Worker 73.
-
 Module `Langlands.GroupScheme.Quaternionic.ConnectedIsometrySplitRankStatement`, namespace
 `Langlands.GroupScheme.Quaternionic`. It contains one `Prop`-valued definition,
 `ConnectedIsometrySplitRankStatement`, with universe parameter `u`, and proves nothing. Its

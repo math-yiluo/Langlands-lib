@@ -1,7 +1,5 @@
 # Relative roots as restrictions of absolute roots: statement
 
-Worker 3483.
-
 `Langlands.GroupScheme.RelativeRootAbsoluteRestrictionStatement.{u}` is a
 proposition definition. This module does not prove it.
 
@@ -96,5 +94,5 @@ no maximality. The present statement packages Milne's assertion as a closed
 proposition with Milne's hypotheses. The published family-5 ledger
 (`notes/group-schemes/ledger-family-5-rational.md`, row I1) records the
 theorem as D and lists such a closed proposition as an open obligation. A
-proof by specialization of that theorem has been checked privately; it will be
-submitted to a proof task.
+proof by specialization of that theorem is `relativeRootAbsoluteRestriction`
+(module `Langlands.GroupScheme.Rational.RelativeRootAbsoluteRestrictionProof`).

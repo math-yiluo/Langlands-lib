@@ -1,6 +1,6 @@
 # The represented-parabolic assembly for Renard VI.6.2
 
-Author: Worker 4950. This internal supporting unit defines
+This internal supporting module defines
 `Langlands.Aubert.General.RepresentedParabolic.LeviInductionFiniteLengthReductionStatement`
 and proves it as `leviInductionFiniteLength_reduction`. It keeps two published
 propositions as antecedents and does not prove the unconditional
@@ -19,8 +19,7 @@ The two antecedents are the published propositions:
   Theorem). Only its first conjunct is used: finite length of `i_R^G ρ` for an
   irreducible supercuspidal `ρ`.
 
-Their proofs are separate obligations. Publishing this reduction does not
-complete the host proof task.
+Their proofs are separate obligations.
 
 ## Proof
 

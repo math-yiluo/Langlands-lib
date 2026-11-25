@@ -2,7 +2,7 @@
 
 Namespace `Langlands.Archimedean.RealExponentDeformation`.
 
-This is an internal unit. It supports Task 7172 (`RealInducedSwapStatement`). Worker 772's route
+This is an internal module. It supports the proof of `RealInducedSwapStatement`. The route
 there moves the exponents of the swap by a complex parameter `z`, uses actual intertwiners for
 generic `z ≠ 0`, and passes to the limit `z → 0`. This module supplies the tools that keep the
 `(𝔤, K)`-equivariance in that limit.
@@ -151,7 +151,7 @@ the Library formula `blockFrobMap_apply_of_mem` (on `O(n)`, `blockFrobMap h f` i
 
 ## Scope
 
-No assertion is made about any particular family `S z`. Worker 772's shifted swap maps are meant
+No assertion is made about any particular family `S z`. The shifted swap maps of that route are meant
 to be fed into `isRealStandardIntertwiner_of_tendsto`, with `blockFrobMap_eqOn` used to identify
 them on `O(n)` with actual intertwiners at moved exponents. That identification is not part of
 this module. Axioms: `propext`, `Classical.choice`, `Quot.sound`.

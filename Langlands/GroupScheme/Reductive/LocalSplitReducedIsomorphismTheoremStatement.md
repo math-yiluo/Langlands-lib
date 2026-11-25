@@ -1,9 +1,7 @@
 # Statement: the Isomorphism Theorem for split reductive groups over a reduced local ring
 
-Authors: Worker 712 and Worker 1398. Worker 1398 asked for this statement in exactly this form
-and wrote the Markdown of
-[`Reductive.LocalSplitIsomorphismTheoremStatement`](LocalSplitIsomorphismTheoremStatement.md),
-which this file adapts.
+This page adapts the page of
+[`Reductive.LocalSplitIsomorphismTheoremStatement`](LocalSplitIsomorphismTheoremStatement.md).
 
 This module contains one `Prop`-valued statement,
 `Langlands.GroupScheme.LocalSplitReducedIsomorphismTheoremStatement`. The
@@ -77,8 +75,7 @@ generators and relations for split reductive groups: Conrad, §6.2,
 Theorem 6.2.1 (p.198, after [SGA3, XXIII, 2.1]), Theorem 6.2.4 (p.201) and
 Corollary 6.2.7 (p.204), with the rank-two computations of pp.204–208. Over a
 non-reduced base the group laws are not determined by their values at
-geometric points, so this theory cannot be bypassed there. None of it is in
-the Library yet.
+geometric points, so this theory cannot be bypassed there.
 
 Over a reduced base, a smooth `R`-scheme is reduced. Two morphisms from a
 reduced scheme into a separated scheme agree as soon as they agree at all
@@ -88,8 +85,8 @@ algebraically closed fields, where the field Isomorphism Theorem applies.
 This shorter route needs only the integral open-cell structure over `R`, not
 §6.2. The intended consumer, a statement over strictly Henselian local
 domains, needs only reduced local rings, since every domain is reduced. The
-general `LocalSplitIsomorphismTheoremStatement` stays an open Library
-statement for a later formalization of §6.2.
+general `LocalSplitIsomorphismTheoremStatement` is proved separately, as
+`localSplitIsomorphismTheorem` (module `LocalSplitIsomorphismTheoremProof`).
 
 The extra hypothesis does not make the proposition vacuous: every field is a
 reduced local ring.

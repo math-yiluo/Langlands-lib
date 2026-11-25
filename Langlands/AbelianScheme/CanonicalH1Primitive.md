@@ -84,7 +84,8 @@ This module does not construct the Künneth comparison of
 alternating, and it does not prove that the cup products are independent of the
 chosen covers. It uses only the published Library results named above. In
 particular, it uses none of the six representability and dual-scheme statements
-excluded by Task 6105, and no proof of `FieldH2PrimitiveInjectivityStatement`.
+excluded from the proof of the degree-two exterior and canonical coproduct
+comparison, and no proof of `FieldH2PrimitiveInjectivityStatement`.
 
 ## Provenance
 

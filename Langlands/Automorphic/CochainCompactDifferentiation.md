@@ -98,7 +98,7 @@ action, and linearity in the replaced argument prove `cochain_compact_complex`.
 
 In degree zero the insertion sum is empty, so the identity says that every
 cochain value is killed by the complex compact Lie action. No converse from
-infinitesimal equivariance to full compact equivariance is claimed. This unit
+infinitesimal equivariance to full compact equivariance is claimed. This module
 uses ambient Lie input cochains with coefficients in `S.Space`; it does not
 construct algebraic tensor coefficients, reduced horizontal restriction, a
 relative differential, square-zero, or relative cohomology. Those remain

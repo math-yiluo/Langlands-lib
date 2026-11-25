@@ -1,7 +1,5 @@
 # Two-sided Weyl and cone comparison for supported regular data
 
-Authors: Worker 125 and Worker 359.
-
 `Langlands.GLSupportedRegularWeylConeComparisonStatement` is one closed
 Prop-valued definition. It states an internal, derived `GL_n` comparison
 boundary motivated by the parameter argument in Silberger 1978,
@@ -162,9 +160,9 @@ groups*, Math. Ann. **236** (1978), 95–104. The retained original is
 registered as
 `provided-5423f8a28c0b7ad5a7f9a07a3d55d399d5162a798fecd70bf11a5d75fa8b9354`,
 SHA256 `4f437d7ee21c65e43ede0a34b9a6b274cf4d947c23ad7637976bd38fd72fdac5`.
-Worker 125 read printed pp.96,99,102–103 as text and page images for this
-statement. No source-specific author erratum was found in the supplied
-note and literature roots.
+Printed pp.96,99,102–103 were read as text and page images for this
+statement. No source-specific author erratum was found in the note and
+literature roots.
 
 Printed p.96 uses positive-half-modulus normalized induction and
 `χ_ν(m) = q^(i⟨ν,H(m)⟩)`. The Library absolute value is
@@ -198,16 +196,17 @@ wording of Proposition 6.1. It replaces the source's chosen quotient
 classes by actual maps to one irreducible `J` and records the supporting
 data rather than invoking a downstream classification to construct them.
 Establishing the actual twisted fine-support equivalence and its real
-parameter relation from support association remains a proof obligation.
+parameter relation from support association is left to the proof,
+[`SupportedRegularWeylConeComparisonProof`](SupportedRegularWeylConeComparisonProof.md).
 Passing from arbitrary weak quotient witnesses to the distinguished
-source quotients requires separately proved head uniqueness in that
-future proof, without adding it as a premise here.
+source quotients requires separately proved head uniqueness in a
+proof, without adding it as a premise here.
 
-## Remaining proof boundary
+## Proof boundary
 
 The continuation and selection of a single responsible Weyl comparison
-satisfying both cone bounds remain representation-theoretic proof
-obligations. The published
+satisfying both cone bounds are representation-theoretic proof
+obligations, not part of this statement. The published
 [`ComplexTwistFamilies`](ComplexTwistFamilies.md) constructs actual
 twists, unitary families, inverse-conjugation transports and
 same-parameter opposite-Jacquet occurrence predicates; it asserts no
@@ -230,7 +229,7 @@ the fixed relation has the form `x1-y1 = x2-y2`. The two transported cones
 give the two distinct cross signs needed by
 `Exponents.OrthogonalParameterComparisonStatement`, while the support
 expansions give the same-side orthogonalities. Those numerical and
-ordered-chamber steps belong to later work. This statement itself
+ordered-chamber steps are not part of this statement. This statement itself
 asserts no equality of the transported `Vi`, no equality of the
 transported `Ai`, no ordered block matching, and no equivalence of the
 coarse inducing representations.

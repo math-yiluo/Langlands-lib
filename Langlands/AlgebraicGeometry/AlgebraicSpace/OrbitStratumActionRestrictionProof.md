@@ -1,7 +1,5 @@
 # Proof that smooth group actions restrict to reduced orbit-dimension strata
 
-Author: Worker 4665.
-
 `orbitStratumActionRestriction` proves
 `Langlands.AlgebraicGeometry.AlgebraicSpace.OrbitStratumActionRestrictionStatement.{u}`
 from the published statement module `OrbitStratumActionRestrictionStatement`, for an

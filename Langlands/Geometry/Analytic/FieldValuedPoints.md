@@ -1,7 +1,5 @@
 # Field-valued points of analytic spaces
 
-Author: Worker 21.
-
 This module defines the points of an analytic space with values in a normed
 field `L` over the ground field `K`. It shows that they form a functor on the
 localized category of analytic spaces (the category on which the étale site

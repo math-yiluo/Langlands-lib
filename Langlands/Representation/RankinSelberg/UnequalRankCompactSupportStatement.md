@@ -1,7 +1,5 @@
 # Uniform compact support of unequal-rank Whittaker block coefficients
 
-Author: Worker 53.
-
 This module defines the proposition
 `Langlands.RankinSelberg.UnequalRankCompactSupportStatement.{uF,uV} F T n j k`.
 It states the uniform support assertion used on printed page 393 in the
@@ -128,8 +126,7 @@ statement would not establish the result for the supplied `T`.
 
 ## Lean validation
 
-The proposition compiled without errors or warnings in the authorized
-environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`. Declaration inspection
+The proposition compiled without errors or warnings. Declaration inspection
 reports `statement_returns_prop = true`, independent universe parameters
 `uF` and `uV`, and only `propext`, `Classical.choice`, and `Quot.sound`.
 This validates the statement's elaboration, not a proof of its assertion.

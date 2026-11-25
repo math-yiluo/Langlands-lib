@@ -1,12 +1,10 @@
 # The cyclic orbit piece of the right `Φ⁻` sequence
 
-Author: Worker 837.
-
 This helper module belongs to the proof of the clause
 `Langlands.Derivative.MirabolicProductMinus.RightPhiShortExact.{uF,uV} F T` of the
 published statement module
-`Langlands.Representation.Derivative.MirabolicProductMinusCompatibilityStatement`
-(host task `6cd54f76-f453-4faa-818a-5843e1bbcaff`). Its main theorem is
+`Langlands.Representation.Derivative.MirabolicProductMinusCompatibilityStatement`.
+Its main theorem is
 
 ```lean
 theorem Langlands.Derivative.MirabolicProductMinus.rightPhiCyclePiece_iso

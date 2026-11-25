@@ -1,7 +1,5 @@
 # Tempered factorization of arbitrary whole-Levi inputs
 
-Author: Worker 403.
-
 `Langlands.glWholeLeviTemperedFactorization` proves the exact closed proposition
 `Langlands.GLWholeLeviTemperedFactorizationStatement.{uF,uV}` from
 [WholeLeviTemperedFactorizationStatement](WholeLeviTemperedFactorizationStatement.md).

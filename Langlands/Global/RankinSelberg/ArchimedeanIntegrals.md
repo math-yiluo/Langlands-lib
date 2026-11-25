@@ -124,4 +124,4 @@ The statements assert integrability on a right half-plane separately.
 Source definitions: Jacquet 2009, (2.4)–(2.6), p.6, in the coordinates and conventions of the
 Library's global integrals (`Langlands.Global.RankinSelberg.WhittakerIntegrals`,
 `UnequalIntegrals`, `EqualIntegrals`, `SchwartzBruhat`). `QuotientMeasureData` and the
-wrappers at a place are internal packaging of Task 7136.
+wrappers at a place are internal packaging for the archimedean statements.

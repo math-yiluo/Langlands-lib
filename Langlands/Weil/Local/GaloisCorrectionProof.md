@@ -1,6 +1,6 @@
 # Actual local Galois type and commuting unramified correction
 
-Worker 32 proves the existing `LocalWeilGaloisTypeFor` and
+This module proves the existing `LocalWeilGaloisTypeFor` and
 `LocalWeilUnramifiedCorrectionFor` in `Langlands.Weil.Local`. Both proofs retain
 all primes, all actual finite p-adic fields in universe `u`, and an independent
 representation-carrier universe `v`. The original statement pair is unchanged.

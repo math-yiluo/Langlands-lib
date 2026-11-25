@@ -1,7 +1,5 @@
 # Proof: subgroups containing a Borel subgroup are connected and self-normalizing
 
-Worker 3566.
-
 This module proves
 [`BorelContainingSubgroupSelfNormalizerStatement`](BorelContainingSubgroupSelfNormalizerStatement.md)
 (Milne, Theorem 17.48 and Corollary 17.49, over any field) as

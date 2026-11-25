@@ -1,7 +1,5 @@
 # Admissibility of actual normalized opposite Jacquet representations
 
-Author: Worker 166.
-
 This module states
 `Langlands.Parabolic.NormalizedOppositeJacquetAdmissibilityStatement.{uF,uV}`.
 It is a closed proposition defined as the conjunction of five closed

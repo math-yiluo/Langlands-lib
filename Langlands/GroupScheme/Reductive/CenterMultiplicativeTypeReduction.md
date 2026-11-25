@@ -1,7 +1,5 @@
 # Full-center multiplicative type from maximal-torus self-centralization
 
-Author: Worker 1232.
-
 `CenterMultiplicativeTypeCentralizerReductionStatement.{u}` is the implication
 from the existing `AlgClosedMaximalTorusCentralizerStatement.{u}` to
 `CenterMultiplicativeTypeStatement.{u}`. The theorem

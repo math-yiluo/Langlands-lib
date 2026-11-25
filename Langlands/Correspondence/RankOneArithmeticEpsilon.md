@@ -1,6 +1,6 @@
 # Arithmetic epsilon certificates of actual rank-one Weil classes
 
-This internal unit connects the explicit common-closure character-pair epsilon
+This internal module connects the explicit common-closure character-pair epsilon
 formula to the actual quotient classes and arithmetic certificate used by the
 correspondence. It retains an explicitly supplied standalone reciprocity
 candidate, a supplied common-closure reciprocity family and a supplied

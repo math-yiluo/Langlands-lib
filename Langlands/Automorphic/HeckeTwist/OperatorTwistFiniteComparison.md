@@ -1,7 +1,5 @@
 # Finite and compact representations of Hecke-twisted realizations
 
-Author: Worker 5136.
-
 For an operator realization `S` and an arbitrary Hecke character `χ`, this
 internal module identifies the finite adelic and standard compact
 representations of the twist `S.heckeDeterminantTwist χ` (module

@@ -1,6 +1,6 @@
 # Character twists of Weil–Deligne pairs
 
-Worker 17 authored this construction. `twist chi A` retains the actual
+`twist chi A` retains the actual
 carrier and monodromy while multiplying the Weil action by `chi(g)`.
 Nilpotence is inherited unchanged. The covariance proof moves the two
 character scalars through linear maps and cancels `chi(g) chi(g⁻¹)=1`,
@@ -31,6 +31,5 @@ and `tate-1979-number-theoretic-background`,
 `c890894fe19783890cc4def2c5bf92a18d71619acf8ba7005aefce4984fe70d6`.
 
 This pair imports `Langlands.WeilDeligne.Basic` and
-`Langlands.Weil.Representation.Twist`. The latter imports Worker 4's
-unchanged `Langlands.Representation.Twist.Definitions`. No earlier draft
-code is copied.
+`Langlands.Weil.Representation.Twist`. The latter imports the
+unchanged `Langlands.Representation.Twist.Definitions`.

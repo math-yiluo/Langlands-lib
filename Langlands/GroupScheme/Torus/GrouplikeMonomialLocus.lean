@@ -50,7 +50,7 @@ theorem exists_idempotent_monomial_locus [AddGroup.FG Λ]
     (hs : ∀ m, IsGrouplike (M := Γ) (s m : AddMonoidAlgebra B Γ)) (p : Λ →+ Γ) :
     HasIdempotentMonomialLocus s p := by
   classical
-  obtain ⟨T, hT⟩ := Group.FG.out (G := Multiplicative Λ)
+  obtain ⟨T, hT⟩ := Group.exists_of_isMulFG (Multiplicative Λ)
   let e : B := ∏ m ∈ T, (s m : AddMonoidAlgebra B Γ).coeff (p m.toAdd)
   have he : IsIdempotentElem e := by
     clear hT

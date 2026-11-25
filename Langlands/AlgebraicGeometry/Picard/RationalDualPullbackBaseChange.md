@@ -56,8 +56,7 @@ comparison group compatibility and existence, geometry,
 inverse-bundle/evaluation data for all four dual endpoints remain
 explicit. The construction uses the same endpoint choices in every
 occurrence. This is internal algebraic compatibility of the imported
-constructions, following Worker 144's canonical-dual square analysis
-and implemented by Worker 57.
+constructions.
 
 The integral naturality theorem remains a named hypothesis. This
 module does not prove preservation of the whole polarization

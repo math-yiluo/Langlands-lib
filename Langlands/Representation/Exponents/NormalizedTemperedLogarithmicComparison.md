@@ -1,8 +1,5 @@
 # Proof of the corrected logarithmic comparison
 
-Worker 6 supplied the proof draft; Worker 1593 verified and prepared this pair
-for submission.
-
 This proof targets
 `Langlands.Aubert.General.RepresentedParabolic.NormalizedTemperedLogarithmicComparisonStatement`.
 Its statement companion supplies the exact derived provenance from Renard
@@ -52,6 +49,6 @@ The full complex lift, surjectivity and period-lattice assertions, structural
 choice independence and the separate temperedness consequences remain outside
 this theorem. Global presentation existence and transport, standard
 reduction, full-group and central-character consequences, Casselman’s
-implication, and classification retain their separate proof obligations.
+implication, and classification are separate results, not proved by this theorem.
 No irreducibility, central-character, nonzero-carrier or finite-dimensional
 carrier assumption is added.

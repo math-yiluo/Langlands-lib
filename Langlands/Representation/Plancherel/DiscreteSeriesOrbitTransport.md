@@ -1,6 +1,6 @@
 # Actual discrete-series orbit measures under equivalences
 
-This derived unit extends the published group-pullback comparison to norm
+This derived module extends the published group-pullback comparison to norm
 families with different index types and to the actual orbit measures. It is
 used for the group-Levi comparison in Waldspurger VIII.4.2, printed p.330
 (PDF p.96), keeping the I.1 and VI.3 finite-fiber normalization.
@@ -25,4 +25,5 @@ The orbit-map identity and equality of stabilizer cardinalities prove its
 transport to the orbit measure of the pushed-forward character measure.
 Neither character measure is assumed to be probability or rescaled.
 
-No packet membership, cuspidality or closed Task 7440 target is proved here.
+No packet membership, cuspidality, or cuspidal coefficient equality or
+same-level coefficient lifting of Waldspurger VIII.4.2 is proved here.

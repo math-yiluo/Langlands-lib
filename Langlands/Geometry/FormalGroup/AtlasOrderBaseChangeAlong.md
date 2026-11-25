@@ -13,14 +13,14 @@ structures and the same universe v. D is a possibly noncommutative ring with
 an O-algebra structure, in an independent universe w. Coordinates are finite;
 principal-generator covers may be infinite. Test algebras have universe v
 and complete compatible families have universe v+1. No injectivity or flatness
-of f is required. The formal maps in this unit have equal source and target
+of f is required. The formal maps in this module have equal source and target
 principal-generator sets, with possibly different finite coordinate types.
 
 This is an internal consequence of the existing actual atlas, formal order
 action and coefficient-extension constructions. It combines
 `AtlasBaseChangeAlong` with `AtlasOrderBaseChangeMorphism`. Equality elimination
 transports the formal order action; the earlier order-linear coefficient
-extension then gives extension to supplied scalars. This unit claims no
+extension then gives extension to supplied scalars. This module claims no
 additional theorem from the literature. The localization-gluing convention is
 documented in `BasicAtlas.md`, and the formal order action in
 `AtlasOrderAction.md`.

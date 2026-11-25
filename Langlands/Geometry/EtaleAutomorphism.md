@@ -1,6 +1,6 @@
 # Automorphisms of a scheme acting on its small étale site
 
-Author: Worker 13. Built on Mathlib's small étale site `Y.Etale` with
+Built on Mathlib's small étale site `Y.Etale` with
 `Y.smallEtaleTopology`, Mathlib's `MorphismProperty.Over.map`, and Mathlib's
 equivalence of sheaf categories induced by an equivalence of sites
 (`Equivalence.sheafCongr`).
@@ -68,7 +68,7 @@ preservation of injective objects by equivalences.
 This is derived infrastructure. Harris, *Galois properties of cohomological
 automorphic forms on GL(n)*, J. Math. Kyoto Univ. 39-2 (1999), Theorem 5.7,
 printed p.313, uses the action of `Gal(F̄/F)` on étale cohomology of Shimura
-varieties `S_K(N)` with coefficients. Worker 13 read this passage in the
+varieties `S_K(N)` with coefficients. This passage was read in the
 original. Such actions arise from automorphisms of a base-changed scheme. This
 module supplies the action of a single automorphism on the étale site and on
 étale sheaves. Not treated here: group actions, equivariant sheaves,

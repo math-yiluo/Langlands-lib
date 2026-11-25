@@ -1,9 +1,8 @@
 # Natural induction duality on the actual rational-point group
 
-Author: Worker 196.
-
 `Langlands.Aubert.General.RationalPointFamily.RationalNaturalInductionDualityStatement`
-is a proposition definition awaiting proof. It specifies a coherent family of
+is a proposition definition; `rationalNaturalInductionDuality` in
+`RationalInductionDualityProof` proves it. It specifies a coherent family of
 same-parabolic induction-duality isomorphisms on admissible objects. It supplies
 no proof of those isomorphisms or of Aubert commutation.
 
@@ -110,8 +109,9 @@ formulation but does not prove this general reductive target.
 This target isolates one prerequisite for
 `RationalContragredientCommutationStatement`. Using its admissible-input family
 on a finite-length Jacquet object still requires an actual proof that that
-object is admissible. The separately owned dynamic-Levi finite-length
-admissibility task remains responsible for that input. No admissibility or
+object is admissible. That input is the separate dynamic-Levi finite-length
+admissibility statement `DynamicLeviFiniteLengthAdmissibleStatement` (in
+`PrerequisiteStatements`), which the Library does not prove. No admissibility or
 duality premise is added to the final commutation proposition.
 
 This statement establishes no finite-length preservation, opposite-Jacquet

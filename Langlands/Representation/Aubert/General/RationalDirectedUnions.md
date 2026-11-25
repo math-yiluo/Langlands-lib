@@ -1,6 +1,6 @@
 # Directed covers for actual standard rational-point induction-Jacquet
 
-Worker 194 supplies this internal construction and specialization of the published directed-cover
+This is an internal construction and specialization of the published directed-cover
 and rational unipotent-regularity theorems. The ambient group is literally
 `RationalPoint k G.X`, with its canonical evaluation topology `pointTopology`.
 The standard index is a finite subset `K` of the actual subtype `SimpleRoot i ν`;

@@ -1,7 +1,5 @@
 # Cartan structure over algebraically closed fields and the remaining input
 
-Author: Worker 1588.
-
 This internal construction combines published Cartan centralizer,
 central-torus quotient and no-torus results. It supplies a uniform
 nilpotence bound for Cartan subgroups over algebraically closed fields and
@@ -55,4 +53,5 @@ is an imported Library theorem, and the only new data is the chosen
 bound. This module introduces no additional external structural
 assertion. The algebraically closed conclusion is unconditional within
 its stated field hypotheses. The arbitrary-field conclusion is a
-reduction and is not a proof of the parent task.
+reduction and is not a proof of the arbitrary-field
+`CartanStructureStatement.{u}`.

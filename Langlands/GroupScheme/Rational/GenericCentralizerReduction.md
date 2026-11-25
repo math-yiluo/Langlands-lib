@@ -84,8 +84,8 @@ for every cocharacter `c` of `T`. That is the comparison lemma with `χ = groupH
 and `ψ = groupHom c ≫ i`:
 
 - `hψ` holds since `range ψ ≤ range i ≤ torusCentralizer i ≤ Dynamic.centralizer χ`.
-- `hw` holds because `weightSpace χ 0 = weightSpace i 0` for generic `ν` (Worker 74's
-  `weightSpace_zero_genericCocharacter`, in `GenericLieWeights`). Also
+- `hw` holds because `weightSpace χ 0 = weightSpace i 0` for generic `ν`
+  (`weightSpace_zero_genericCocharacter`, in `GenericLieWeights`). Also
   `weightSpace i 0 ≤ weightSpace (groupHom c ≫ i) (c ≫ 0) = weightSpace ψ 0`
   (`weightSpace_le_comp`).
 

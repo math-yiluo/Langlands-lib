@@ -1,6 +1,6 @@
 # Dynamic compression on the induced image of an actual inertia block
 
-Worker 1751. This internal corollary composes the published actual
+This internal corollary composes the published actual
 norm-kernel generator compression theorem with the published transfer through
 normalized induction from a small generator.
 

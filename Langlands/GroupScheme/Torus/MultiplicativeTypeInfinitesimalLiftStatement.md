@@ -1,7 +1,5 @@
 # Statement: lifting homomorphisms from groups of multiplicative type through nilpotent thickenings
 
-Worker 75.
-
 `Langlands.GroupScheme.MultiplicativeTypeInfinitesimalLiftStatement.{u} : Prop` is a
 statement-only, `Prop`-valued definition. This module does not prove it, and it adds no
 other definitions, theorems or axioms. It imports:
@@ -136,10 +134,10 @@ smoothness of `G` to lift the conjugating element. This is explanation only.
 - Not stated here: SGA 3, IX, Théorème 3.2 (`J² = 0`, conjugacy for an arbitrary
   group scheme `G`, not necessarily smooth); Corollaire 3.3 with an arbitrary conjugating
   `g₀ ∈ G₀(S₀)`; Corollaire 3.4; and the subgroup versions 3.2 bis to 3.5 bis.
-  Théorème 3.6 bis is the subject of the separate candidate statement
+  Théorème 3.6 bis is the subject of the separate statement
   `MultiplicativeTypeSubgroupInfinitesimalLiftStatement`.
   SGA 3, IX, Corollaire 3.5 (a homomorphism `u` with `u₀` trivial is trivial) holds for
   every `S`-group `G`; for smooth `G` it follows from part 2 applied to `u` and the trivial
   homomorphism. The general case is Conrad's Corollary B.2.7, p.287, the subject of the
-  separate candidate statement `MultiplicativeTypeInfinitesimalRigidityStatement`, which is
-  not yet in the Library and is not imported here.
+  separate statement `MultiplicativeTypeInfinitesimalRigidityStatement`, which is not
+  imported here.

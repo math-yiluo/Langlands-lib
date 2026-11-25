@@ -1,7 +1,5 @@
 # Affine coordinates for the assembled varying-dimension analytic atlas
 
-Author: Worker 255.
-
 This proof implements the affine normalization transfer in
 `SmoothSourceDimensionAffineAgreementStatement`, a derived part of the analytic
 manifold assertion in Conrad, *Weil and Grothendieck approaches to adelic

@@ -1,7 +1,5 @@
 # Finite counting from two auxiliary polynomials
 
-Author: Worker 96.
-
 `StepanovCountingStatement` states the counting and integer parameter step
 of Schmidt's method independently of any plane curve. This module states
 the proposition and does not prove it.

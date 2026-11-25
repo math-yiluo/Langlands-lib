@@ -84,7 +84,7 @@ interpretation of an original source is claimed.
 
 The finite cyclic extension, its specified generator and, in the
 commutator consequence, the specified algebra map and conjugating unit
-remain explicit hypotheses. This unit does not construct local
+remain explicit hypotheses. This module does not construct local
 unramified maximal subfields, prove existence of the conjugating unit,
 compare the subfield norm with reduced norm, or move arbitrary
 division-algebra norm-one elements into such a subfield. It therefore

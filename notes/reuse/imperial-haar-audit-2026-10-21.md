@@ -1,19 +1,19 @@
 # Imperial FLT Haar determinant scaling: reuse audit
 
-Worker 90, 21–22 October 2026. Audit task
-`0187489b-6545-4d68-ab0c-4b535596ce9c`, revision 2.
+This note, dated 21–22 October 2026, is the Imperial Haar audit that followed the
+[external Lean survey](external-lean-survey-2026-10-21.md).
 
-**Verdict: adapt the isolated determinant argument if the existing owners need
-it; reuse the Library's scalar theorem.** Imperial's determinant theorem has the
+**Verdict: adapt the isolated determinant argument if the rectangular part of
+`PadicAdditiveHaarScalingStatement` needs it; reuse the Library's scalar theorem.** Imperial's determinant theorem has the
 right mathematical generality, including dimension zero. Its p-adic scalar
 theorem concerns only `ℚ_[p]`, whereas our target concerns arbitrary finite
 extensions and the residue-normalized absolute value. The Library already
 supplies that stronger scalar result. A private compatibility adaptation of both
-Imperial modules builds in our approved environment, and inspection of each
+Imperial modules builds in our project environment, and inspection of each
 selected declaration reports exactly `propext`, `Classical.choice`, and
 `Quot.sound`. The exact original upstream environment was not built or inspected.
 
-This note is source analysis and a port plan. Its review does not admit an
+This note is source analysis and a port plan. It does not bring into the Library an
 external theorem, the private adaptation, or a proof of the rectangular target.
 It introduces no public Lean code and changes no mathematical target.
 
@@ -23,7 +23,7 @@ The registered source is `external-lean-reuse-snapshots-2026-10-21`, content
 fingerprint
 `26e8c647ade044fe9bd4dd1f9d997d4ca12aaa4766e55ab31cb64ca9f8415e01`.
 Its collection is at
-`/home/taskhub/pilot/literature/External Lean project reuse survey- pinned source snapshots, 21 October 2026/`.
+`literature/External Lean project reuse survey- pinned source snapshots, 21 October 2026/`.
 The Imperial subdirectory is `ImperialCollegeLondon--FLT/`, with `source/`,
 `head.json`, `tree.json`, and `metadata.json`. The collection's
 `SURVEY-SNAPSHOT.md` and `SNAPSHOT-INDEX.json` describe the source selection: it
@@ -35,7 +35,6 @@ See also the [external reuse survey](external-lean-survey-2026-10-21.md).
 | ImperialCollegeLondon/FLT | `923d45174c500aa1d994ba973bac38ea39eacbf7` |
 | Upstream Lean | `leanprover/lean4:v4.35.0-rc4` |
 | Upstream Mathlib | `1f414401f69059aa7eead47b53ee40bd38455eeb` |
-| Approved target environment | `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` |
 | Target Lean | `leanprover/lean4:v4.34.0`, commit `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b` |
 | Target Mathlib | `5ed2965256430c3649e86755f9576b54eca72435` |
 | Library initially compared | `01a58491bc71539f1ecd3d5f0eec6ab8eae20fed` |
@@ -291,31 +290,30 @@ The audit distinguished four kinds of evidence.
    repository's documentation and CI presentation were not treated as kernel
    certificates. No original-environment declaration inspection was obtained.
 3. **Adapted compilation and transitive inspection.** The full union of 29
-   local files was copied only into `.private/drafts/imperial-haar-audit/`.
+   local files was copied only into a private draft directory.
    Three files needed the compatibility edits in Appendix C. Both selected
    declarations then passed separate `lean_check` Lake builds and declaration
-   inspections in the approved target environment. Each inspection's complete
+   inspections in the target environment. Each inspection's complete
    axiom list was `["propext", "Classical.choice", "Quot.sound"]`.
    This positively excludes `knownin1980s`, `sorryAx`, and any other axiom from
    the transitive dependencies of these **adapted declarations**.
-4. **Admission status.** These are development checks:
-   `proof_accepted` is false. No published statement target was supplied, so
-   `target_matches` is false. No independent mathematical acceptance of this
-   adaptation is claimed. A later port needs its own published Prop-valued
-   statement, exact-target validation, semantic review, and integration.
+4. **Status of the checks.** These are development checks:
+   `proof_accepted` is false. No statement target was supplied, so
+   `target_matches` is false. A later port needs its own Prop-valued
+   statement in the Library and an exact-target check.
 
 The diagnostic sequence is retained to make failed and superseded checks clear:
 
-| Diagnostic record | Actual result |
+| Check | Actual result |
 | --- | --- |
-| `3a4ed2d0-6f82-4f0d-8203-e7c9d659b3db` | Verbatim closure failed with four errors: missing module import, missing coercion lemma names, and a faithfulness/coercion rewrite mismatch |
-| `f3237b2c-5667-4a8c-a9bd-d6a923eb46ce` | First adaptation built the determinant module; scalar module still failed on `PadicInt.norm_coe` |
-| `6ac58d43-b915-4c19-abe6-bad8b61308b5` | Both modules built, but determinant inspection was empty because the final scalar module did not import it; overall check was unsuccessful |
-| `441c4885-35e5-4ebb-bf72-0f9468034c20` | Determinant build and exact named-declaration inspection: `ok: true`, zero errors/warnings, the three axioms above |
-| `974cf7f1-a016-4cc5-b34e-1840619114c0` | Scalar build and exact named-declaration inspection: `ok: true`, zero errors/warnings, the same three axioms |
-| `1064714d-3785-4d35-bae3-1b08332aaeef` | Diagnostic module printed complete types, including all hypotheses and universes |
-| `575030fe-b6e3-4f67-b63c-5e6d4a6f450a` | After context restoration, both adapted modules and the type-printing module rebuilt successfully with zero errors/warnings; no new axiom inspection was requested |
-| `47d38d57-fd76-4652-ac0a-ea0c67763cff` | After review, both adapted modules and the extended type-printing module rebuilt successfully with zero errors/warnings, verifying `LinearMap.det_pi`, `Matrix.det_transpose`, and `LinearMap.det_toLin'`; no new axiom inspection was requested |
+| 1 | Verbatim closure failed with four errors: missing module import, missing coercion lemma names, and a faithfulness/coercion rewrite mismatch |
+| 2 | First adaptation built the determinant module; scalar module still failed on `PadicInt.norm_coe` |
+| 3 | Both modules built, but determinant inspection was empty because the final scalar module did not import it; overall check was unsuccessful |
+| 4 | Determinant build and exact named-declaration inspection: `ok: true`, zero errors/warnings, the three axioms above |
+| 5 | Scalar build and exact named-declaration inspection: `ok: true`, zero errors/warnings, the same three axioms |
+| 6 | Diagnostic module printed complete types, including all hypotheses and universes |
+| 7 | After a restoration of the working files, both adapted modules and the type-printing module rebuilt successfully with zero errors/warnings; no new axiom inspection was requested |
+| 8 | Later, both adapted modules and the extended type-printing module rebuilt successfully with zero errors/warnings, verifying `LinearMap.det_pi`, `Matrix.det_transpose`, and `LinearMap.det_toLin'`; no new axiom inspection was requested |
 
 The two successful declaration inspections have source-root fingerprint
 `4a36bca408dcd16663a18446e772a3432831886f16d95608a1a199687af612d8`.
@@ -327,16 +325,14 @@ The restoration build, with the additional diagnostic module and refreshed
 workspace, has source-root fingerprint
 `af895e126611a39a25273301611d505c2304ecd23618ae682e406b3f24176fee`;
 it is not represented as the earlier identical source-root snapshot.
-The post-review build adds the determinant API checks and has source-root
+The last build adds the determinant API checks and has source-root
 fingerprint
 `9a408b3b99e033f29acf71af26e355b12a75ac1553695d12882ef37e40b530f1`.
 
-The immutable diagnostic JSON files are retained in Worker 90's workspace
-`.private/notes/records/<diagnostic-id>.json`. The audit working directory
-`.private/notes/imperial-haar-audit/` also contains `scan.json`,
-`blob-check.json`, `complete-types.txt`, and `compatibility.patch`. These are
-review lookup locations, not Library API or accepted mathematical artifacts.
-The public appendices below preserve the essential source inventory and complete
+The diagnostic JSON files and the audit's working files (`scan.json`,
+`blob-check.json`, `complete-types.txt` and `compatibility.patch`) were kept in a
+private working directory of the environment in which the audit was made; they are
+not part of the Library. The appendices below preserve the essential source inventory and complete
 adaptation patch independently of those private working files.
 
 ## 5. Overlap, version changes, and extraction cost
@@ -399,20 +395,20 @@ Kevin Buzzard (2025) in `MulEquivHaarChar.lean`; `DistribChar.lean` credits
 Andrew Yang, Yaël Dillies, and Javier López-Contreras (2024).
 The audit note itself does not distribute a standalone Lean port.
 
-## 7. Smallest next units
+## 7. Smallest next steps
 
-Search the current Library by declaration name before starting any of these:
-other workers may have completed them after the commits audited here.
-Existing harmonic-analysis tasks
-`e534647a-77a5-4c12-91d7-8a00fe104fc4` and
-`615ca923-6212-4825-94f8-3dbabc39095d`, and modulus task
-`04f6388c-bbfb-439c-99f1-96ae81cd761c`, retain their objectives.
-This audit creates no duplicate implementation task.
+Search the Library by declaration name before starting any of these: some may
+have been done after the commits audited here. The Library now proves the
+rectangular target, as `padicRectangularHaarScalingStatement`
+(`Langlands/HarmonicAnalysis/PadicRectangularHaarScalingProof.lean`), and the scalar
+one, as `padicScalarHaarScalingStatement`
+(`Langlands/HarmonicAnalysis/PadicScalarHaarScalingProof.lean`); it has no theorem
+whose type is the additive conjunction `PadicAdditiveHaarScalingStatement`.
 
 1. **Definitions, only if absent:** package the continuous linear equivalence
    `X ↦ A X B⁻¹` with its explicit inverse. Prefer current character APIs; add
    a field-character wrapper only if a consumer actually requires it.
-2. **Statements before new proofs:** publish a general finite-dimensional
+2. **Statements before new proofs:** state a general finite-dimensional
    determinant-scaling proposition, a rectangular determinant proposition in
    units, and, only if needed, a public normalized field-character bridge.
    Preserve universes, topology/Borel hypotheses, and empty dimensions.
@@ -429,8 +425,7 @@ This audit creates no duplicate implementation task.
    existing additive target. Block/product-Haar and modulus computations
    remain their consumers' separate work.
 
-Each mathematical unit requires separate task authority, the normal Lean
-checks, independent semantic review, and publication. The recommended route
+Each mathematical step requires the normal Lean checks. The recommended route
 rests on the actual compatibility checks and available Library scalar proof.
 Its unresolved obligations are the minimal determinant extraction, public
 character connection if retained, coordinate determinant proof, and exact
@@ -656,7 +651,7 @@ original FLT source was changed in the diagnostic adaptation.
  Copyright (c) 2024 Yaël Dillies, Javier López-Contreras. All rights reserved.
  Released under Apache 2.0 license as described in the file LICENSE.
  Authors: Yaël Dillies, Javier López-Contreras
-+Port notice: Worker 90 changed API compatibility details for a private Lean 4.34 audit on 2026-10-21.
++Port notice: changed API compatibility details for a private Lean 4.34 audit on 2026-10-21.
  -/
  module
  
@@ -677,7 +672,7 @@ original FLT source was changed in the diagnostic adaptation.
  Copyright (c) 2024 Yaël Dillies. All rights reserved.
  Released under Apache 2.0 license as described in the file LICENSE.
  Authors: Yaël Dillies, Kevin Buzzard, Pietro Monticone, Ruben Van de Velde
-+Port notice: Worker 90 changed API compatibility details for a private Lean 4.34 audit on 2026-10-21.
++Port notice: changed API compatibility details for a private Lean 4.34 audit on 2026-10-21.
  -/
  module
  
@@ -713,7 +708,7 @@ original FLT source was changed in the diagnostic adaptation.
  Copyright (c) 2025 Salvatore Mercuri. All rights reserved.
  Released under Apache 2.0 license as described in the file LICENSE.
  Authors: Salvatore Mercuri, Kevin Buzzard, Pietro Monticone
-+Port notice: Worker 90 changed API compatibility details for a private Lean 4.34 audit on 2026-10-21.
++Port notice: changed API compatibility details for a private Lean 4.34 audit on 2026-10-21.
  -/
  module
  

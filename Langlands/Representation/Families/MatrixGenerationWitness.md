@@ -1,6 +1,6 @@
 # Determinant witnesses for generation of a specialized matrix algebra
 
-Worker 1444. This is an internal construction for the determinant step in
+This is an internal construction for the determinant step in
 Renard VI.8.4. It works over any commutative complex coefficient algebra `B`,
 with an arbitrary type of matrix generators and a finite matrix index type.
 
@@ -37,7 +37,7 @@ derived algebraic construction, not a representation of a Hecke algebra.
 It imports Burnside through
 `Langlands.Plancherel.FiniteMatrixOpenness.matrix_irreducible_iff_adjoin_eq_top`.
 
-This unit supplies neither a detecting compact open subgroup for induced
+This module supplies neither a detecting compact open subgroup for induced
 unramified twists, a coefficient matrix model for their fixed vectors, nor
 the conversion from a regular function to a polynomial in the canonical
 torus coordinates. It does not prove

@@ -1,7 +1,5 @@
 # Geometric monodromy on actual integral Tate limits
 
-Author: Worker 142.
-
 This module constructs the continuous action of the actual finite geometric-fibre
 functor's automorphism group on the existing integral Tate limit of an abelian
 scheme. It proves compatibility with the full and away residue scalar actions,
@@ -32,7 +30,7 @@ of the imported finite-level geometric action to coherent families. Neither
 source is claimed to contain this exact generalized API or its Lean proof.
 The selected-index formulation and the conditional scope below are internal
 generalizations. The cited rational invariant-orbit constructions motivate
-this integral prerequisite; this module does not yet construct those orbits.
+this integral prerequisite; this module does not construct those orbits.
 
 ## Actual objects and hypotheses
 
@@ -147,5 +145,5 @@ invertibility evidence. Both sides read the same selected coordinates, so its
 proof is definitional equality.
 
 Rational and adelic monodromy, prime-power comparison compatibility, pairings,
-pointed base change, and independence from the base point are subsequent
-obligations. This unit proves none of the still-explicit geometric hypotheses.
+pointed base change, and independence from the base point lie outside this
+module. This module proves none of the explicit geometric hypotheses.

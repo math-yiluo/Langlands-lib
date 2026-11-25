@@ -1,8 +1,6 @@
 # Assembly of the direct-limit equivalences
 
-Worker 606, with the fibre-locus comparisons of Worker 634.
-
-This internal derived unit assembles the direct-limit equivalences from
+This internal derived module assembles the direct-limit equivalences from
 `DirectLimitGeometry` and `FibreLocusComparisons`. It proves whole-group
 reductivity descent without further hypotheses. Its two semisimple descent
 lemmas explicitly assume that the initial semisimple identity-component locus
@@ -35,5 +33,8 @@ openness from its explicit premise, and assembles these four equivalences.
 All indices, rings and schemes remain in the arbitrary universe `u`, with no
 restriction on ring maps and no Noetherian or nontriviality assumption. This
 is a derivation from the cited Library interfaces; it introduces no additional
-literature assertion. The exact unconditional proof still requires a separately
-proved and published semisimple-openness statement.
+literature assertion. The exact unconditional proof also requires a proof of the
+semisimple-openness statement; the Library has it as
+`identityComponentSemisimpleLocusOpen` (module
+`IdentityComponentSemisimpleLocusProof`), and `directLimitReductive` in
+[`DirectLimitReductiveProof`](DirectLimitReductiveProof.md) combines the two.

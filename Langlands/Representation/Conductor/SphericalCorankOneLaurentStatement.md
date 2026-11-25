@@ -1,6 +1,6 @@
 # Convergence and Laurent numerators of the corank-one spherical integrals
 
-Author: Worker 8. This module defines one proposition,
+This module defines one proposition,
 `Langlands.Conductor.SphericalCorankOneLaurentStatement` (universes `uF`,
 `uV`). It is a statement only: nothing in this module proves it. The theorem
 `Langlands.Conductor.sphericalCorankOneLaurent`, in the separate module

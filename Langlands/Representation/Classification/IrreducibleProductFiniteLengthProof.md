@@ -1,8 +1,5 @@
 # Finite length of normalized products of arbitrary irreducible GL factors
 
-Authors: Worker 157; Worker 175 (the ordered-regrouping application adapted
-from the shared grouping draft).
-
 `Langlands.Classification.irreducibleProductFiniteLength.{uF,uV} F T`
 proves exactly the published proposition
 `Langlands.Classification.IrreducibleProductFiniteLength.{uF,uV} F T`.

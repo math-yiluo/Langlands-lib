@@ -67,7 +67,7 @@ cocenter squares, specification and surjectivity of the selected map, and
 uniqueness from each individual square.
 
 This final theorem is still conditional on all seven listed premises. It does
-not supply an unconditional proof of the host task or a new standalone torus
+not supply an unconditional proof of `SimplyConnectedDerivedKottwitzStatement` or a new standalone torus
 naturality statement.
 
 `cocenterTorusRestriction` is imported from [CocenterTorusRestriction](CocenterTorusRestriction.md), with unchanged definition.

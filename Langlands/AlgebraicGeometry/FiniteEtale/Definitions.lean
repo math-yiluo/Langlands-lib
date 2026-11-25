@@ -116,7 +116,7 @@ instance fiberMulAction (Y : Cover S) : MulAction (FundamentalGroup s hfin) (Fib
 
 @[simp]
 theorem smul_eq (Y : Cover S) (g : FundamentalGroup s hfin) (x : Fiber s Y) :
-    g • x = g.hom.app Y x := rfl
+    g • x = g.asIso.hom.app Y x := rfl
 
 /-- Every map of covers intertwines the evaluation actions. -/
 theorem smul_naturality {Y Z : Cover S} (f : Y ⟶ Z)

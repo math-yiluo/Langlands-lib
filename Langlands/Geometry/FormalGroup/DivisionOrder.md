@@ -49,7 +49,7 @@ cancels the factors of `g` and `g⁻¹`.
 With `K` equipped locally with `LocalGalois.localNormedField`,
 `integerRing_eq_levelIntegerRing` identifies this subring with
 `Shimura.LocalDivision.integerRing K D`, the integer ring used by the
-published division-level definitions. The proof is subring
+division-level definitions. The proof is subring
 extensionality and `localDivisionNorm_le_one_iff`. This is an equality
 of the underlying subrings; no level or congruence subgroup is
 redefined.
@@ -95,7 +95,7 @@ these equations in the actual formal endomorphism ring. The two
 inverse identities follow from the two unit identities. The
 `twistUnitIso_hom` and `twistUnitIso_inv` lemmas expose the two maps.
 
-This contribution imposes no special tangent or height condition.
+This module imposes no special tangent or height condition.
 It supplies no construction of a framing object, no general-base
 gluing, no group action on framed moduli classes and no
 representability assertion.

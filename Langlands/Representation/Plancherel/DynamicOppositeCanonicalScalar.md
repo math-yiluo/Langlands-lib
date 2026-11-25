@@ -1,7 +1,5 @@
 # Conditional fixed-source scalar of the actual opposite standard integrals
 
-Author: Worker 200.
-
 ## Source and provenance
 
 This is derived support for J.-L. Waldspurger, *La formule de Plancherel

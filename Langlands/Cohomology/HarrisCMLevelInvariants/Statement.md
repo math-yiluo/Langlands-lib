@@ -1,8 +1,5 @@
 # Level invariants of CM cohomology at finite level
 
-Author: Worker 3, for the Harris and Berkovich cohomological
-theorem-statement framework (task `b91b0934-0122-4c05-b359-4e7ed64bbe3d`).
-
 This module states one proposition, `HarrisCMLevelInvariantsStatement`. It is
 about the cohomology of the Library's geometric CM tower `U ↦ X̄_U` (module
 `Langlands.Shimura.PEL.HarrisTaylorCMSmallLevelCohomology`) with
@@ -50,8 +47,8 @@ The Lean definition keeps every premise as an explicit hypothesis, as the
 Library's modules do. A premise being a parameter does not mean that it is
 unproved. In Library commit `eec7519b852f9097606377425625fd5794c87f71`,
 fourteen premise types have published proofs, so a user can pass these
-theorems as the corresponding arguments. Check `88f571ea` (see the checks
-below) confirms that each theorem, at universe zero, has the premise type.
+theorems as the corresponding arguments. The third of the checks
+below confirms that each theorem, at universe zero, has the premise type.
 
 | Premise | Type | Library theorem | Module |
 | --- | --- | --- | --- |
@@ -87,6 +84,14 @@ added between that commit and `eec7519b`; the added
 - `hRigid`, coarse rigidity at every small level. This is a condition on the
   levels, not a general theorem: the docstring of `CMGeometricCoarseRigidity`
   says that it "is not inferred from sufficiently small level".
+
+In the Library as it is now, `square`, `existence` and `geometry` are proved as
+well: `Langlands.AbelianScheme.mumfordBundlePicardZero` (module
+`Langlands.AlgebraicGeometry.Picard.MumfordBundlePicardZeroProof`),
+`Langlands.AbelianScheme.relativeDualSchemeExistence` (module
+`Langlands.AlgebraicGeometry.Picard.RelativeDualSchemeExistenceProof`) and
+`Langlands.AbelianScheme.relativeDualSchemeGeometry` (module
+`Langlands.AlgebraicGeometry.Picard.RelativeDualSchemeGeometryProof`).
 
 Since `q` is unproved, the proposition is a statement about the objects that
 any witness `q` produces. A proof must work for every such witness.
@@ -129,7 +134,7 @@ subgroup `U.obj.subgroup` of `G` that is sufficiently small
 - `H^d(X̄_U, coeff_U) = (cmSmallLevelCohomology ... R coeff d).obj (op U)`.
   This is the `d`-th right derived functor of global sections on
   `Sheaf (Scheme.smallEtaleTopology X̄_U) (ModuleCat.{0} R)`, computed with
-  injective resolutions (Worker 13's `EtaleDerivedSections`). For an arrow
+  injective resolutions (`EtaleDerivedSections`). For an arrow
   `a`, `(cmSmallLevelCohomology ... R coeff d).map a.op` is
   `cohomologyMapWithCoefficients f_a R d (coeff.map a.op)`: the pullback map
   `cohomologyMap f_a R d` followed by the map induced by `coeff.map a.op`.
@@ -178,7 +183,7 @@ There are three hypotheses on the coefficients:
   The arrows satisfy `⟨g⁻¹⟩_V ≫ incl = incl ≫ ⟨g⁻¹⟩_U` (both have element
   `g⁻¹`), so `T_g ∘ res` is `res` composed with the operator of the self-arrow
   `⟨g⁻¹⟩_U` on `H^d(X̄_U, coeff_U)`. Level triviality makes that operator the
-  identity. Check `6773df61` (below) proves this inclusion of the image in
+  identity. The second check below proves this inclusion of the image in
   the invariants in Lean.
 - *Cartesian transition along `V ≤ U`.* Without it, `coeff_V` is not
   determined by `coeff_U`, and the invariants of `H^d(X̄_V, coeff_V)` have no
@@ -195,12 +200,12 @@ Library facts; neither source states it in this form. Fix `coeff`, `U`, `V`,
 `d` as in the proposition. Let `Γ = U/V`, the Library's
 `SmallCMResidualGroup D U V`, of order `N = [U : V]`, a unit of `R`.
 
-1. *`π` is a finite étale `Γ`-torsor with deck maps `σ_g`.* Worker 57's
+1. *`π` is a finite étale `Γ`-torsor with deck maps `σ_g`.* The
    module `Langlands.Shimura.PEL.HarrisTaylorCMGeometricNormalActions` defines
    the action `cmGeometricNormalQuotientAction ... U V hVU` of `Γ` on `X̄_V`.
    `cmGeometricNormalQuotientAction_mk` proves, by `rfl`, that the class of
    `g ∈ U` acts by `σ_g`, the tower map of `smallCMNormalInverseArrow D U V hVU g`.
-   `cmGeometricNormalProjection_invariant` gives `σ_g ≫ π = π`. Worker 57's
+   `cmGeometricNormalProjection_invariant` gives `σ_g ≫ π = π`. The
    theorem `cmGeometricNormalEtaleAction_isFiniteGeometricTorsor_of_dominantCriterion`
    (module `Langlands.Shimura.PEL.HarrisTaylorCMGeometricNormalTorsor`) proves,
    from the premises above, `IsFiniteGeometricTorsor` for this action
@@ -216,7 +221,7 @@ Library facts; neither source states it in this form. Fix `coeff`, `U`, `V`,
    an isomorphism by hypothesis. By definition, `res` is the pullback
    `π^♯ : H^d(X̄_U, F) ⟶ H^d(X̄_V, π^* F)` followed by `H^d(φ)`. In the level
    category, `⟨g⁻¹⟩_V ≫ incl = incl ≫ ⟨g⁻¹⟩_U` (the Lean lemma
-   `inverseArrow_comp_inclusion` of check `6773df61`). The composition law of
+   `inverseArrow_comp_inclusion` of the second check below). The composition law of
    `coeff` for both factorizations, together with level triviality at `U`,
    gives `coeff.map ⟨g⁻¹⟩_V.op ∘ σ_g^*(φ) = φ ∘ c_g`. Here
    `c_g : σ_g^* π^* F ≅ (σ_g ≫ π)^* F = π^* F` is the canonical isomorphism
@@ -301,9 +306,9 @@ The statement does not cover:
 - the sheaves `L_ξ`, ℓ-adic coefficients or limits over torsion coefficients;
 - Hecke operators, compact supports, admissibility, or local-global
   compatibility;
-- a proof of any premise. The open premises `square`, `q`, `existence`,
-  `geometry` and `hRigid` stay open, and the proved ones are not
-  instantiated here.
+- a proof of any premise. The premises `q` and `hRigid` are not proved in
+  the Library; the others are proved there (see "Proof status of the
+  premises") but are not instantiated here.
 
 ## Registered sources
 
@@ -329,40 +334,38 @@ The statement does not cover:
 ## Formal dependencies and checks
 
 Direct project imports, in Library commit
-`eec7519b852f9097606377425625fd5794c87f71` and the workspace:
+`eec7519b852f9097606377425625fd5794c87f71`:
 
-| Module | Author | Lean SHA-256 | Markdown SHA-256 |
-| --- | --- | --- | --- |
-| `Langlands.Shimura.PEL.HarrisTaylorCMSmallLevelCohomology` | Library (no Author line) | `9348395d2f5acbdf1856b569010a2aa79c1fcfd7395a88f2b36e7b93ab560af8` | `13c08eb11012cbe385fd3a316fafa8fb12d7ef3a819a86389b6250f324e41e61` |
-| `Langlands.Shimura.PEL.HarrisTaylorCMNormalActions` | Library (no Author line) | `e9433447a4a96d4f4c287ef26be0ab1752bed20b8c7e2737a4db002d652174d2` | `82b0dbc1e512aab98c7912dbace2eb087dd99357dcb375384dd86900394e9910` |
+| Module | Lean SHA-256 | Markdown SHA-256 |
+| --- | --- | --- |
+| `Langlands.Shimura.PEL.HarrisTaylorCMSmallLevelCohomology` | `9348395d2f5acbdf1856b569010a2aa79c1fcfd7395a88f2b36e7b93ab560af8` | `13c08eb11012cbe385fd3a316fafa8fb12d7ef3a819a86389b6250f324e41e61` |
+| `Langlands.Shimura.PEL.HarrisTaylorCMNormalActions` | `e9433447a4a96d4f4c287ef26be0ab1752bed20b8c7e2737a4db002d652174d2` | `82b0dbc1e512aab98c7912dbace2eb087dd99357dcb375384dd86900394e9910` |
 
 Through these imports the module uses `HarrisTaylorCMSmallLevelIndex`
-(Author: Worker 57) for `SmallCMLevel`; `EtaleDerivedSections` (Author:
-Worker 13) for the cohomology; and the Library modules
+for `SmallCMLevel`; `EtaleDerivedSections` for the cohomology; and the Library modules
 `HarrisTaylorCMHeckeSchemes` (`smallCMInclusion`), `EtaleCohomologyDiagram`
 (`CoefficientDiagram`), `RestrictedLevelTowerCohomology`
 (`IsLevelTrivialCoefficients`) and `EtaleDerivedPullback`
-(`cohomologyMapWithCoefficients`), whose Markdown files have no Author line.
+(`cohomologyMapWithCoefficients`).
 The truth argument cites `HarrisTaylorCMGeometricNormalActions` and
-`HarrisTaylorCMGeometricNormalTorsor` (Author: Worker 57), which are not in
-the import closure of this module, and `Langlands.Shimura.Coefficients.Etale`
-(Author: Worker 57), which is.
+`HarrisTaylorCMGeometricNormalTorsor`, which are not in
+the import closure of this module, and `Langlands.Shimura.Coefficients.Etale`,
+which is.
 
-The environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`: Lean 4.34.0,
+The environment is Lean 4.34.0,
 Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
 
 Checks against Library `eec7519b`, all on the final Lean file (SHA-256
 `12ae07052e246441424ca1578519b405baf8d2fa5874bc23d61a419ace54f3b3`). None reported errors or warnings.
 
-- `97938dd2-0df7-4490-bbfb-651027237eaf` built the file from a draft
-  directory and inspected `HarrisCMLevelInvariantsStatement`: a
+- The first built the file and inspected `HarrisCMLevelInvariantsStatement`: a
   `Prop`-valued definition with no universe parameters, depending only on
   `propext`, `Classical.choice` and `Quot.sound` (type hash
   `3ad5af95f6f5d54ad0235fee8d51eec72df261e55ca929c4d0ecc590ca9703b8`).
-- `6773df61-f66e-4af8-83b3-8c34c0f0f376` compiled a test file
+- The second compiled a test file
   (`Langlands/Inspect/CMLevelInvariantsPrint.lean`, SHA-256
   `0a2bf3ffa1d7e1a5adc2dfc5a6e6a478caa7a4f3a21f76d26d506ea048b04134`), not part
-  of the candidate, against this file and the companion statement. It printed
+  of the Library, against this file and the companion statement. It printed
   both definitions with universes and proved two lemmas, both depending only on
   the three standard axioms:
   - `inverseArrow_comp_inclusion`:
@@ -371,14 +374,14 @@ Checks against Library `eec7519b`, all on the final Lean file (SHA-256
   - `restrict_invariant`: for level-trivial `coeff`, `T_g (res x) = res x`
     for every `x` and every `g ∈ U`. This is the inclusion of the image of
     `res` in the invariants.
-- `88f571ea-ab8f-40d6-8edd-403fa3f86d75` compiled a test file
+- The third compiled a test file
   (`Langlands/Inspect/CMLevelInvariantsPremises.lean`, SHA-256
   `b7bcb2ead3df306593f0fdd14577c0cfed3eaf7e7fcd8ca3489cc706b3fa1809`)
   against this file. For each of the fourteen proved premises in the table
   above, an `example` with the premise type at universe zero is closed by the
   cited theorem. `#print axioms` shows that each theorem depends only on
   `propext`, `Classical.choice` and `Quot.sound`.
-- `633ed74f-b170-4256-a7c1-a5500f464416` built the file with Lake from the workspace and inspected
+- The fourth built the file with Lake and inspected
   `HarrisCMLevelInvariantsStatement`, with the same result and the same type hash.
 
 This establishes a well-formed statement. It does not prove it.

@@ -2,7 +2,7 @@
 
 Supporting evidence for the [audit note](../anthropic-hasse-arf-audit.md). These records are development evidence, not mathematical acceptance.
 
-Exact private diagnostic record: `061dada8-7c26-41f2-a7c6-7e2263048344`.
+The `source_sha256` values in the results are the hashes of the submitted source files as they were when the check was made.
 
 <!-- evidence-file: 05-bridge-first-result.json -->
 
@@ -918,14 +918,14 @@ SHA256 of the exact UTF-8 block: `d998de8f75c983a28999e6ae9dc4a01d3d5dbcccd38eda
 
 ## 05-bridge-first.lean.txt
 
-SHA256 of the exact UTF-8 block: `5440e0ee3087c81a924fd77b692ecb86dedc39d279d3e1ba76b57f5f90b72a49`.
+SHA256 of the exact UTF-8 block: `dc4068776154750495fd6d889a7cd3a60c45141a89ae7ed932d101fe1c1d4026`.
 
 ````lean
 import Theorems.Thm_IsDiscreteValuationRing_hasseArfChain_lowerRamificationGroup_of_isMulCommutative
 import Langlands.LocalFactor.Ramification.Herbrand.ArithmeticStatement
 
-/-! Private feasibility experiment by Worker 25. The faithfulness argument is
-adapted from Worker 40's Library Galois.lean. The remaining adapters are derived
+/-! Private feasibility experiment. The faithfulness argument is
+adapted from the Library's Galois.lean. The remaining adapters are derived
 from the displayed source and host definitions; this file is not a publication. -/
 noncomputable section
 namespace HasseArfAudit

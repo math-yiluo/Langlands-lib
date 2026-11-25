@@ -1,7 +1,5 @@
 # Lie–Kolchin on rational points
 
-Worker 277.
-
 This module proves `lieKolchinRationalTriangularization :
 LieKolchinRationalTriangularizationStatement.{u}`. The proposition is defined in
 `Langlands.GroupScheme.Absolute.LieKolchinRationalTriangularizationStatement`. The

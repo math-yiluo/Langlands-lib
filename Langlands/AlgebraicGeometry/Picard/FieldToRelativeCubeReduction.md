@@ -1,7 +1,5 @@
 # Relative cube criteria reduced to the field cube theorem
 
-Author: Worker 2057.
-
 This derived helper module specializes published Library results. It proves
 three implications in every universe `u`:
 

@@ -1,7 +1,5 @@
 # Finite-type comparison for actual adelic-level model points
 
-Author: Worker 208.
-
 `AdelicFiniteTypeLevelModelComparisonStatement` has a function-field
 clause and a number-field clause, each in an arbitrary common universe.
 Each uses the original point map in `AdelicLevelModelPoints`: its domain

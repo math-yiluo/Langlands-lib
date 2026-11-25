@@ -1,7 +1,5 @@
 # Actual conjugate subgroup inclusions and overlap invariance
 
-Worker 655, Task 6339.
-
 This is an internal construction from published group-scheme base change,
 inner automorphisms, normalizers, and actual Čech comparison isomorphisms.
 It generalizes the subgroup-independent part of
@@ -48,6 +46,7 @@ their conjugate subgroups equivalent. This follows the already published
 torus overlap proof, with its unused torus restriction removed.
 
 These results supply an invariant actual inclusion for the local
-quotient-chart construction in the parabolic-scheme task. They neither
+quotient-chart construction of the scheme of parabolic subgroups. They neither
 descend that inclusion nor prove it parabolic, construct a universal
-family, classify parabolics, or prove the host representability theorem.
+family, classify parabolics, or prove that the functor of parabolic
+subgroups is representable.

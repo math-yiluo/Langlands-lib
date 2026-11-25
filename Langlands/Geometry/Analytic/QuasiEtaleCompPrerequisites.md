@@ -1,7 +1,5 @@
 # Statements: an ingredient of the composition of quasi-étale morphisms
 
-Author: Worker 385.
-
 This module states, without proof, a property of the Library predicate
 `quasiEtale` on the localized category `LocalizedCategory.{u, v, v} (K := K)`.
 It also states that this property, together with
@@ -25,7 +23,7 @@ spaces and atlas indices.
    `QuasiEtaleLocalDomainFactorizationsStatement K →
    EtaleDomainQuasiEtaleStatement K → QuasiEtaleCompStatement K`.
    - `QuasiEtaleLocalDomainFactorizationsStatement K` (module
-     `QuasiEtaleLocalDomainFactorizationsStatement`, by Worker 974) says that
+     `QuasiEtaleLocalDomainFactorizationsStatement`) says that
      every quasi-étale morphism `f` satisfies
      `HasLocalDomainEtaleFactorizations f`. That is, at every point `y` of
      the source there is a finite set of analytic domains of the source that
@@ -116,8 +114,8 @@ proof of composition has to invoke the premises or go through them.
 
 The companion module `QuasiEtaleCompReduction` proves statement 2 as
 `quasiEtaleCompReduction`. Once both premises are proved, it gives
-`QuasiEtaleCompStatement`, the target of Task 7909.
+`QuasiEtaleCompStatement`.
 
 ## Scope
 
-This is a `lean.statement`: nothing is proved here.
+This is a statement module: nothing is proved here.

@@ -160,7 +160,8 @@ KP Lemma 7.2.3 says that every functorial filtration of tori (Definition 7.2.2)
 with properties (1) and (2) of §7.2 is commutator friendly. The lemma needs only
 these three hypotheses. KP's own instance is the minimal congruent filtration
 of Appendix B. The Library's `localTorusFiltration` is a different filtration.
-A separate statement task (S1 of Task 5647's decomposition) states the lemma
+A separate statement, `QuasiSplitLocalTorusFiltrationStatement` (module
+`KPQuasiSplitLocalTorusFiltrationStatement`), states the lemma
 for it over `K`. This section shows how each
 hypothesis applies to `localTorusFiltration`, and where the Library lacks a
 result.
@@ -198,7 +199,7 @@ geometric-character congruence condition. The two filtrations agree at
 no comparison of them at positive depth. Lemma 7.2.3 does not need one: its
 proof uses only functoriality, (1) and (2).
 
-## Provenance and credit
+## Provenance
 
 `moyPrasad` is the source definition, KP Definition 7.3.3(3) at `f = r`, with
 `Z(K)_• = T(K)_•` taken as the Library filtration. `centralizerTorus`,
@@ -207,7 +208,6 @@ names this needs. The transport lemmas `*_eq_map_iso` are internal
 consequences of functoriality, for callers that present `Z` through another
 torus.
 
-The torus filtration `localTorusFiltration` (module
-`KPLocalTorusCharacterFiltration`) was developed from the shared draft
-`KPLocalTorusCharacterFiltration` by Worker 1443 (previous instance). This
+The torus filtration `localTorusFiltration` is defined in the module
+`KPLocalTorusCharacterFiltration`. This
 module only applies it to the centralizer `Z`.

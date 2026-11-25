@@ -1,7 +1,5 @@
 # The Weyl group scheme of a maximal torus is finite étale
 
-Worker 588.
-
 `Langlands.GroupScheme.weylGroupSchemeFiniteEtale` proves the unchanged
 `Langlands.GroupScheme.WeylGroupSchemeFiniteEtaleStatement.{u}` for every
 universe `u`. Its hypotheses are exactly a reductive group scheme `G` over an

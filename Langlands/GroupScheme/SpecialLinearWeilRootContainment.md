@@ -1,7 +1,7 @@
 # Full Weil-restricted special-linear images in subgroups containing ambient roots
 
 For a finite field extension `E/F` in arbitrary universe `u` and a finite
-index type `n : Type`, this internal unit proves containment of the entire
+index type `n : Type`, this auxiliary module proves containment of the entire
 actual rational-point image of `Res(E/F) SLₙ` in a subgroup of an ambient
 group. It combines the proved ordinary generation by actual restricted
 coordinate-root images with their explicit all-test contractions.
@@ -29,7 +29,7 @@ The theorem `rationalPoints_range_le_of_iso_coordinate_dynamics` gives
 the same criterion for an actual group scheme `A` with a supplied
 group-scheme isomorphism `e : A ≅ Res(E/F) SLₙ`.
 It applies the first criterion to `e.inv ≫ a` and transports each actual
-point through `e.hom`. The isomorphism is a visible input; the unit does
+point through `e.hom`. The isomorphism is a visible input; the module does
 not construct a model for an arbitrary group.
 
 The ambient-root specialization
@@ -56,4 +56,4 @@ generation, explicit contraction, dynamic functoriality and existing
 ambient-root containment theorem. No parabolic decomposition or source
 radical-containment premise is used. The ambient structural inputs,
 general factor-model classification, and the unrestricted local
-Kneser–Tits theorem are not proved by this unit.
+Kneser–Tits theorem are not proved by this module.

@@ -1,7 +1,5 @@
 # Unconditional Steinberg tensor embeddings
 
-Author: Worker 165. Worker 3483 supplied the composite term in Task 5311's context.
-
 `Langlands.GroupScheme.steinbergTensorEmbedding` has exactly the type
 `Langlands.GroupScheme.SteinbergTensorEmbeddingStatement.{u}`, defined in
 `Langlands.GroupScheme.Reductive.SteinbergTensorEmbeddingStatement`, for arbitrary

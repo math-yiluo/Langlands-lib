@@ -329,7 +329,7 @@ theorem cmPrimeToCohomologyComparison_translate_of_mem
         comparison symmetry stability square universality dualityNaturality
         polarizationStability compatibility h htor q m hm K₀ existence geometry hRigid
         criterion R coeff) d).V) :
-    ((smallColimitCohomology coeff d).ρ (factorHom (cmPrimeToSplit D m hm) k)).hom
+    ((smallColimitCohomology coeff d).ρ (factorHom (cmPrimeToSplit D m hm) k)).asHom.hom
         ((cmPrimeToCohomologyComparison D C preservation composition unitCoherence
           associativity comparison symmetry stability square universality dualityNaturality
           polarizationStability compatibility h htor q m hm K₀ existence geometry hRigid

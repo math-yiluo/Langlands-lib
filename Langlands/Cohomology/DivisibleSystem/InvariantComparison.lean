@@ -18,7 +18,7 @@ vanishing in degrees `q ≥ N`, and `H` normal of finite index, it builds a morp
 (`quotientInvariantsTotalSystem`) to the underlying complexes of representations of `K` extended
 to `ℤ`. It is a quasi-isomorphism at every level `m` at which `H` acts trivially on the
 cohomology of the complex of representations (not identified here with a geometric
-cohomology), given Worker 3's unproved `ProPInvariantSubcomplexStatement` (a hypothesis `hS`), for
+cohomology), given the unproved `ProPInvariantSubcomplexStatement` (a hypothesis `hS`), for
 `H` pro-`p` and `p` invertible in the coefficients. The surjectivity on `H`-invariants is the
 explicit hypothesis `hK`, or follows from `ProPInvariantsExactStatement` (a hypothesis `hP`).
 

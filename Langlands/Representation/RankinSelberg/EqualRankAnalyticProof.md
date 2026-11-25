@@ -1,7 +1,5 @@
 # Equal-rank JPSS convergence, rationality and normalized generator
 
-Author: Worker 64.
-
 `Langlands.RankinSelberg.equalRankAnalytic` proves exactly
 `Langlands.RankinSelberg.EqualRankAnalyticStatement.{uF,uV,uW} F T n`
 from `Langlands.Representation.RankinSelberg.AnalyticStatement`.

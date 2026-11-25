@@ -1,7 +1,5 @@
 # Coordinates for actual affine base change
 
-Author: Worker 208.
-
 This derived infrastructure concerns the actual affine base changes used by
 Brian Conrad, *Weil and Grothendieck approaches to adelic points* (December 31,
 2011), printed page 6, immediately before Theorem 3.6 and in (3.6.1).

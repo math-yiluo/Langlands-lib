@@ -1,19 +1,17 @@
 # Transpose invariance of bi-equivariant distributions on compatible Bruhat cells: proof
 
-Authors: Worker 634, Worker 1011 and Worker 1087. Worker 634 wrote the complete private
-proof `BruhatCellInvarianceCore.invariance_of_factorization` of the identical private
-design statement, shared in parent draft revision 8 of task
-`f79ca82c-d050-4ffa-821b-c347b60e36e0`
+The proof was first written as `BruhatCellInvarianceCore.invariance_of_factorization`
+of an identical design statement, in a file that is not part of the Library
 (`Langlands/Representation/Whittaker/BruhatCellInvarianceCore.lean`). Its zero-preserving
-orbital lift (`exists_orbitalLift_preserving_zeros` below) adapts Worker 1011's
-published surjectivity construction in
-`Langlands.Representation.Whittaker.BruhatOrbitalIntegrationProof`, so Worker 1011 is a
-coauthor. Worker 1087 ported the preparation into this module. The helpers moved to the
+orbital lift (`exists_orbitalLift_preserving_zeros` below) adapts the published
+surjectivity construction in
+`Langlands.Representation.Whittaker.BruhatOrbitalIntegrationProof`. This module ports
+that preparation. The helpers moved to the
 namespace `Langlands.Whittaker.BruhatCellInvariance`. `invariance_of_factorization` was
 renamed `Langlands.Whittaker.bruhatCellInvariance_of_factorization` and now takes the
 published `BruhatCellFactorizationStatement`. The final theorem applies it to the
 published proof `bruhatCellFactorization`. The unused private cell-vanishing import was
-removed. Worker 1087 also wrote the docstrings and this Markdown.
+removed.
 
 This module proves `Langlands.Whittaker.bruhatCellInvariance.{uF}`, whose type is exactly
 the published proposition `Langlands.Whittaker.BruhatCellInvarianceStatement.{uF}` of
@@ -155,7 +153,7 @@ plus coordinate of `BruhatOrbitalIntegrationProof`.
   compact, open and nonempty. Let `ν` be a Haar measure on `P` and `I` a complex-linear
   map with the evaluation formula `I α (π m) = bruhatFiberAverage ν α m`. Then every
   cell test function `f` has a preimage `α` with `I α = f` and `α m = 0` whenever
-  `f (π m) = 0`. The construction is Worker 1011's: `φ` is the indicator of `K₀` with
+  `f (π m) = 0`. The construction is that of `BruhatOrbitalIntegrationProof`: `φ` is the indicator of `K₀` with
   value `(ν.real K₀)⁻¹`, which is defined because `ν.real K₀ ≠ 0` (`K₀` is compact and
   nonempty open), and `α m = f (π m) * φ (plusCoordinate e m)`. `α` is locally
   constant because `f ∘ π` and `φ ∘ plusCoordinate e` are (`K₀` is clopen). Its support
@@ -257,7 +255,7 @@ with the published factorization theorem. The proof introduces `p`, `hp`, `F`, i
 ## Provenance
 
 The proof route is internal. It realizes, with the corrections noted above, the steps
-outlined in the statement's Markdown (intended steps 1–5). These are motivated by the
+outlined in the statement's Markdown (steps 1–5 of its outline). These are motivated by the
 proof of Proposition 1.8 in the nonempty-`H_χ` case on printed p.178 of J. A. Shalika,
 *The multiplicity one theorem for GL_n*, Ann. of Math. (2) **100** (1974), 171–193
 (registered `shalika-1974-multiplicity-one`). They use properties (1.3)–(1.5) of θ on
@@ -273,4 +271,4 @@ This proves only `BruhatCellInvarianceStatement` (and the auxiliary
 torus. It does not establish the empty-compatible-torus vanishing case, stability of
 arbitrary cells, global transpose invariance of distributions on `GL_{n+1}` (Shalika's
 Theorem 1.6), the finite-filtration assembly or Whittaker multiplicity one; those are
-separate tasks.
+separate results.

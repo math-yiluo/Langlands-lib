@@ -6,12 +6,12 @@ finite extension `F` of `Q_p`, every positive integer `n`, and every complex
 representation `rho` of `GL_n(F)`, admissibility and finite generation as a
 group module imply finite length as a group module.
 
-This file supplies a proposition definition. The theorem's proof remains a
-separate obligation.
+This file supplies a proposition definition. The theorem is proved
+separately, by `glAdmissibleFiniteLength` in `FiniteLengthProof`.
 
 ## Objects, hypotheses and quantifiers
 
-The field is the accepted `PadicField p`, with an arbitrary carrier universe
+The field is the existing `PadicField p`, with an arbitrary carrier universe
 `uF`. Its specified finite-dimensional `Padic p`-algebra structure includes no
 Galois, unramifiedness or degree restriction. The statement installs
 `F.canonicalTopology`, namely `moduleTopology (Padic p) F.Carrier`. It does
@@ -34,7 +34,7 @@ and need not be finite-dimensional over the complex numbers.
 `Representation Complex G V` is the actual homomorphism into linear
 endomorphisms.
 
-`IsAdmissible rho` is the accepted predicate: every vector has an open
+`IsAdmissible rho` is the existing predicate: every vector has an open
 fixing subgroup, and the fixed-vector space for every open subgroup is
 finite-dimensional over the complex numbers. Silberger's convention tests
 compact open subgroups; on `GL_n(F)` this agrees with the all-open convention,
@@ -107,22 +107,19 @@ or real-exponent ordering occurs in this proposition.
 | Mathlib `RingTheory/FiniteLength.lean`, definition `IsFiniteLength` and `isFiniteLength_iff_exists_compositionSeries` | Actual finite-length conclusion and its composition-series interpretation |
 | Mathlib `RepresentationTheory/Basic.lean`, `asModule`, its group-algebra instance, and `asAlgebraHom_single` | Group translates and group-algebra scalar multiplication are the same action |
 
-Exact accepted project dependencies, both version 1 and current at Library
+Exact project dependencies, as at Library
 commit `5bc58c2525e0499012801c80f17b6a9c04d57263` when checked:
 
-- `ac4cb7d5-5dd1-44b6-9d56-f0ec6c70bce0`,
-  `Langlands.LocalField.Definitions`. Accepted Lean SHA-256
+- `Langlands.LocalField.Definitions`. Lean SHA-256
   `8d9cc8aa128861b13b4f96d38bf95be46844d2eaad28aa3cbb654b070ee0e517`;
-  accepted Markdown SHA-256
+  Markdown SHA-256
   `6cfb939cf42a71a81fa648b77bd4bab1076bffe0d62519181f7dc7db742124bf`.
-- `665022df-625b-44ae-9dbd-425f6e266bab`,
-  `Langlands.Representation.Smooth.Definitions`. Accepted Lean SHA-256
+- `Langlands.Representation.Smooth.Definitions`. Lean SHA-256
   `435abfa2c0b05c1b6ea8107e3278687e7091e481540508d6647befc0f515aabb`;
-  accepted Markdown SHA-256
+  Markdown SHA-256
   `4b7364038949eb59db10c95354f290fcba77110c1ed33a227a2b6c92f4afd569`.
 
-The environment is `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, version 1:
-Lean 4.34.0 and Mathlib commit
+The checks used Lean 4.34.0 and Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`. The remaining imports are existing
 Mathlib complex numbers, matrix general linear groups, finite-length modules,
 and matrix/units topology. No unpublished project definition is imported.
@@ -134,13 +131,12 @@ modules, filters by generalized central action, uses the scalar-character
 splitting of Lemma 5.4.1.4, bounds the cuspidal part by admissibility, and
 then uses maximal-parabolic Jacquet modules and induction on rank. Its final
 length comparison invokes Jacquet exactness, Lemma 5.4.1.2. These earlier
-passages were read, but this contribution does not claim their Lean proofs.
+passages were read, but this statement does not claim their Lean proofs.
 The source attributes an earlier result to Howe; the statement here is
 supported by Silberger's retained statement and proof, without assuming
 identity with another edition of a cited manuscript.
 
 This finite-length prerequisite does not itself provide the exponent
 criteria, cuspidal multiplicities, projectivity, tempered induction, or
-Langlands quotient classification. Those remain separate parts of the
-assigned theorem families. The module declares one `Prop` definition,
+Langlands quotient classification. Those are separate results. The module declares one `Prop` definition,
 introduces no project axiom or placeholder, and does not prove that `Prop`.

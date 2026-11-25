@@ -1,8 +1,5 @@
 # Poles and vertical-strip bounds of completed cuspidal pair L-functions
 
-Author: Worker 3657. Statement contribution to task
-`34b81620-20d7-4059-9b08-6bedd1c1c029`, revision 1.
-
 **Scope.** This module states one proposition, uses eight auxiliary
 declarations (one structure and seven definitions), and proves nothing:
 
@@ -32,14 +29,14 @@ is rebuilt.
 
 **Why it is here.** `CuspidalPairFunctionalEquationStatement.md` §6 says that
 poles and boundedness in vertical strips are not stated there and "belong to
-other tasks". The program ledger `notes/automorphic/global-program-coverage.md`
-(section "13 November 2026 carry-over") lists this pole part of GH Thm 11.7.1
-as an L4 target of this program with no public statement. It is the input for
+other statements". The program ledger `notes/automorphic/global-program-coverage.md`
+lists this pole part of GH Thm 11.7.1 as an L4 target with no public statement.
+It is the input for
 the pole-order formula of GH Lemma 11.8.1 and for strong multiplicity one
 (GH Thm 11.7.2, which GH p.309 calls a consequence of Thms 11.5.2 and
 11.7.1).
 
-**Proof target.** A later proof task should prove the Library statement
+**Proof target.** The proof target is the Library statement
 `Langlands.Global.CuspidalPairPoleStatement`. Its universe parameters are `u`
 (the number field) and `uQ` (the factor universe of the spectral presentations).
 
@@ -277,7 +274,7 @@ free.
   partial L-function on `Re s = 1` (`CuspidalPairBoundaryNonvanishingStatement`),
   isobaric pairs, and Lemma 11.8.1 are not stated here.
 
-## 6. Proof routes (for the proof task)
+## 6. Proof routes
 
 Cog04 §4 (pp.219–222) proves the theorem through global Rankin–Selberg
 integrals. As recalled on p.221 from Cog04 §2, for `m < n` the global
@@ -294,8 +291,12 @@ for `m = n - 1, n` (pp.220–221), and in general from Gelbart–Shahidi. This n
 - the Eisenstein series of `GL_n` with Schwartz data and its poles;
 - the local theory at all places, including the archimedean theory of Jacquet
   (2009);
-- the Whittaker expansion of cusp forms, published in the Library as the
-  unproved `Langlands.Global.WhittakerExpansionStatement`.
+- the Whittaker expansion of cusp forms, published in the Library as
+  `Langlands.Global.WhittakerExpansionStatement` and proved as
+  `Langlands.Global.whittakerExpansion`.
 
-None of these is proved in the Library. The proof task may choose another
-established route, and it must record the route it uses.
+In the Library, `Langlands.Global.cuspidalPairPole_of_covering_normalized_products`
+(module `Langlands.Global.Factors.CuspidalPairPoleEqualCover`) derives this
+statement from `CuspidalPairGlobalFunctionalEquationStatement`,
+`EqualCoveringNormalizedProductStatement` and `UnequalNormalizedProductStatement`.
+None of these three premises is proved in the Library.

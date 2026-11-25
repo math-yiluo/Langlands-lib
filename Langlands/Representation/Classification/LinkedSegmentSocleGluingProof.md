@@ -1,7 +1,5 @@
 # Proof of the gluing of the forward product of two linked segment socles
 
-Author: Worker 773.
-
 This module proves
 `Langlands.Classification.linkedSegmentSocleGluing :
 LinkedSegmentSocleGluing.{uF,uV} F T`, with outer arguments
@@ -17,8 +15,8 @@ theorem applies them to the published proofs. It has no extra hypotheses.
 ## Target
 
 `Langlands.Classification.LinkedSegmentSocleGluing.{uF,uV} F T` from
-`Langlands.Representation.Classification.LinkedSegmentSocleGluingStatement`
-(statement candidate c84cd52c-3ff3-4024-be50-8b84dd480888). Take a datum
+`Langlands.Representation.Classification.LinkedSegmentSocleGluingStatement`.
+Take a datum
 `d : T.SegmentProductDatum.{max uF uV, uF} n` of length two with segment socle
 blocks `⟨Δ'⟩, ⟨Δ⟩`, where `Δ' = d.segments 0` precedes `Δ = d.segments 1`. The
 statement asks for:
@@ -36,25 +34,22 @@ statement asks for:
 
 - Ze80 Proposition 4.6:
   `Langlands.Classification.linkedSegmentSocleReverseProductStructure`
-  (module `LinkedSegmentSocleReverseProductStructureProof`, lean.proof
-  37c0363b-6771-4aca-bd32-e00cc4d81ee1, task a55c4267-7e3a-43f6-8bb1-ce319e1d0aa9,
-  Worker 219). It proves the statement `LinkedSegmentSocleReverseProductStructure`
-  from `SegmentSocleCriterionHalvesStatement` (candidate
-  05b27752-ea74-478e-b16d-43a92a59833b). It is used at universes
+  (module `LinkedSegmentSocleReverseProductStructureProof`). It proves the
+  statement `LinkedSegmentSocleReverseProductStructure` from
+  `SegmentSocleCriterionHalvesStatement`. It is used at universes
   `uF, max uF uV`.
 - Ze80 Theorem 1.9, two-factor case:
   `Langlands.Classification.twoFactorProductConstituentCommutativity`
-  (module `TwoFactorProductConstituentCommutativityProof`, lean.proof
-  016ebb10-d2e9-4e71-8948-3f051e6fafb9, task afd5ae37-9c4e-44fe-897a-623bb2c92d91).
-  It proves the statement `TwoFactorProductConstituentCommutativity` (candidate
-  32426f28-fdb1-44b3-8f12-bc80de4ffc1c). It is used at universes `uF, max uF uV`.
+  (module `TwoFactorProductConstituentCommutativityProof`).
+  It proves the statement `TwoFactorProductConstituentCommutativity`. It is used
+  at universes `uF, max uF uV`.
 - Library: `jordanHolderSeriesComparison`
   (`Filtration/JordanHolderComparisonProof`), `LengthCriterionProof.quotientRep`
   and `lower`, `ObjectRepFiltration` and `HaveSameJordanHolderFactors`
   (`Filtration/ObjectDefinitions`), and `SegmentProductDatum.permute` with
   `permute_induced`.
 
-Both proofs are accepted and public at Library commit
+Both proofs are public at Library commit
 25b91125ea94e88d741b206d633e82eb0d87c3e5.
 
 ## Implemented proof
@@ -107,23 +102,23 @@ Both proofs are accepted and public at Library commit
 
 ## Dependency audit
 
-The task excludes the following, with their conclusions, proof successors and
+The proof excludes the following, with their conclusions, the files proving them and
 transitive proof dependencies:
 
-- linked full-product reduction 0f459af5 and `LinkedSegmentSocleEmbeddingReduction`;
-- socle exhaustion f3a69bc8 (`MultisegmentSocleExhaustion`);
-- ordered socle existence 23189526 (`OrderedMultisegmentSocleExistence`);
-- adjacent unlinked socle swap e3634665 (`AdjacentUnlinkedSegmentSocleSwap`);
-- two-segment socle commutation 426911b4 (`TwoSegmentSocleCommutation`);
-- segment analytic classification aca8805b
+- linked full-product reduction (`LinkedSegmentSocleEmbeddingReduction`);
+- socle exhaustion (`MultisegmentSocleExhaustion`);
+- ordered socle existence (`OrderedMultisegmentSocleExistence`);
+- adjacent unlinked socle swap (`AdjacentUnlinkedSegmentSocleSwap`);
+- two-segment socle commutation (`TwoSegmentSocleCommutation`);
+- segment analytic classification
   (`SegmentEssentialSquareIntegrableClassification`);
-- multisegment special-head exhaustion 3bfb61fa (`MultisegmentHeadExhaustion`);
-- ordered special-head existence ebea9a8a (`OrderedMultisegmentHeadExistence`);
-- quotient coverage 20e4e1c6 (`OrderedMultisegmentQuotientExhaustion`);
-- tempered block uniqueness 52e97845 (`TemperedBlockUniqueness`);
-- `SquareIntegrableLanglandsClassification` (1cb45da2);
-- square-integrable exhaustion cd8ab97c (`SquareIntegrableLanglandsExhaustion`);
-- regular exhaustion bf433f0a (`GLRegularLanglandsExhaustionStatement`).
+- multisegment special-head exhaustion (`MultisegmentHeadExhaustion`);
+- ordered special-head existence (`OrderedMultisegmentHeadExistence`);
+- quotient coverage (`OrderedMultisegmentQuotientExhaustion`);
+- tempered block uniqueness (`TemperedBlockUniqueness`);
+- `SquareIntegrableLanglandsClassification`;
+- square-integrable exhaustion (`SquareIntegrableLanglandsExhaustion`);
+- regular exhaustion (`GLRegularLanglandsExhaustionStatement`).
 
 Checks:
 

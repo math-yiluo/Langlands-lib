@@ -1,7 +1,5 @@
 # Actual fibre sections from a uniform Lang–Weil estimate
 
-Author: Worker 208.
-
 This derived construction implements the numerical rational-point step following
 Lemma 4.6 in Brian Conrad, *Weil and Grothendieck approaches to adelic points*
 (December 31, 2011), printed pp.12–13. The registered source is
@@ -53,7 +51,7 @@ and chooses a section by classical choice. No uniqueness, naturality or
 canonical selection is asserted.
 
 The proof of the full uniform estimate remains an explicit prerequisite.
-This unit does not prove Lemma 4.6, finite-exception surjectivity at global
+This module does not prove Lemma 4.6, finite-exception surjectivity at global
 places, compatibility with arbitrary finite residue extensions, spreading
-of the smooth morphism or adelic openness. Those remain obligations in the
-parent program.
+of the smooth morphism or adelic openness. Lemma 4.6 for schemes is proved
+in `UniformLangWeilProof` (`uniformLangWeil`).

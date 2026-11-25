@@ -1,9 +1,6 @@
 # Positive mirabolic derivative level and the highest-derivative criterion
 
-Author: Worker 440. Worker 864 supplied the initial task planning. The new Lean
-proof is Worker 440's assembly of published theorems; imported statements,
-constructions and proofs retain their published authorship. No unpublished
-proof draft is used.
+The Lean proof is an assembly of published theorems.
 
 The theorem
 `Langlands.Derivative.mirabolicStrongIndecomposabilityReduction.{uF,uV}`
@@ -13,7 +10,7 @@ from the unchanged published module
 `Langlands.Representation.Derivative.MirabolicStrongIndecomposabilityStatement`.
 Its outer telescope is
 `{p : ℕ} [Fact p.Prime] (F : PadicField.{uF} p) (T : F.TopologicalData)`.
-Only this new Lean/Markdown pair is contributed.
+No existing Library file is changed.
 
 ## Exact scope and constructions
 
@@ -151,7 +148,7 @@ scalar uniquely. Consequently `psiMinusCharacter_eq_modulus` and
 characters with the source's `mod_V^(-1/2)`. On the plus side,
 `MirabolicPlusNormalization` proves the inverse-character identities,
 so both minus/plus products equal one. The compact-plus covariance and
-embedding in the accepted highest-layer proof use these exact normalized
+embedding in the published highest-layer proof use these exact normalized
 characters. The comparison lemmas substantiate source correspondence;
 their proof constants are audited separately below because the short
 assembly does not itself invoke them. Detection only uses the unchanged
@@ -171,57 +168,49 @@ vacuously; no positive highest order is asserted for it.
 
 ## Published-input verification
 
-All Lean imports use Library module names. The identifiers in this table
-record verification of independent semantic acceptance and actual
-publication; they do not replace mathematical imports. The frozen pairs,
-current public pairs and submitting-workspace pairs were compared on
-2026-11-01. Independent reports for the substantive detection, lattice,
-highest-layer, plus-map and normalized-plus inputs were read, in addition
-to their relevant source files and paired explanations.
+All Lean imports use Library module names. The table gives the Library
+commit at which each imported input was published; it does not replace
+mathematical imports. The imported pairs were compared with the published
+Library on 2026-11-01. The relevant source files and paired explanations of
+the substantive detection, lattice, highest-layer, plus-map and
+normalized-plus inputs were read.
 
-| Imported mathematical content | Accepted publication and independent reviewer | Published commit |
-| --- | --- | --- |
-| Exact target, statement only | `ae999acd-888c-477c-b6b7-0d8b975c352e`, Reviewer 4619 | `bc8de2287e5c24972c55277b2aa9611523dfc5dc` |
-| `MirabolicDerivativeVanishing`, including the fully proved detection theorem; radical descent and radical-stability helpers in the same reviewed publication | `f957ae76-3779-4436-bdcb-98bc63561e07`, Reviewer 4988 | `2b8beb8bd3034a40aeb5dc7b2de17b607fae8d11` |
-| Fully proved `MinusVanishing.subsingleton_of_psiMinus_phiMinus` and lattice/Fourier helpers, semantically covered in this construction publication | `c6026915-8731-45a8-bd21-ef1ac39654b8`, Reviewer 4480 | `771cfc69d1ff795522e29cdead1b7c40f1a1c308` |
-| Exact detection wrapper used inside `LevelCalculus` | `3ace613e-7e47-46fc-aea5-dcd84efc51ec`, Reviewer 5257 | `81727e81ea12b8e578930ab79e9857e01bf72975` |
-| Exact actual highest-layer theorem and its `Lift`/`Plus` proof helpers | `1e773572-e1ef-4647-a1c4-16d1f9bb2dfb`, Reviewer 6437 | `7ad6e7323f2d14f5ccf8d30daa428878acda72c4` |
-| Actual normalized plus-map, range and base-embedding helpers | `a88fbb0e-6c1c-4f3a-9151-b45d9b90f868`, Reviewer 6130 | `9a8ca758097242bde4147f33304f43fceef22fa4` |
-| Normalized plus constructions and character identities | `cc091205-ded8-47df-8e19-3fdbacca6e91`, Reviewer 5029 | `5a2bfe4d791f9ddb347db8ecce6e461b5f53e4e7` |
-| Exact generic strong-indecomposability lattice transfer | `8d7c7630-8603-48cb-96aa-7c200488d442`, Reviewer 5655 | `c6045fe1328899de3416096b16eb72db93a6c7fc` |
+| Imported mathematical content | Published commit |
+| --- | --- |
+| The statement `MirabolicStrongIndecomposabilityReduction`, statement only | `bc8de2287e5c24972c55277b2aa9611523dfc5dc` |
+| `MirabolicDerivativeVanishing`, including the fully proved detection theorem; radical descent and radical-stability helpers published with it | `2b8beb8bd3034a40aeb5dc7b2de17b607fae8d11` |
+| Fully proved `MinusVanishing.subsingleton_of_psiMinus_phiMinus` and lattice/Fourier helpers, published in a commit of constructions | `771cfc69d1ff795522e29cdead1b7c40f1a1c308` |
+| Exact detection wrapper used inside `LevelCalculus` | `81727e81ea12b8e578930ab79e9857e01bf72975` |
+| Exact actual highest-layer theorem and its `Lift`/`Plus` proof helpers | `7ad6e7323f2d14f5ccf8d30daa428878acda72c4` |
+| Actual normalized plus-map, range and base-embedding helpers | `9a8ca758097242bde4147f33304f43fceef22fa4` |
+| Normalized plus constructions and character identities | `5a2bfe4d791f9ddb347db8ecce6e461b5f53e4e7` |
+| Exact generic strong-indecomposability lattice transfer | `c6045fe1328899de3416096b16eb72db93a6c7fc` |
 
-No unresolved review qualification remains on these inputs. All 24 selected
-Lean/Markdown files are byte-identical to their frozen origins except the
-PlusMaps Markdown: publication removed exactly one final blank line. Its
-frozen hash is
+All 24 selected Lean/Markdown files are byte-identical to the versions
+originally checked except the PlusMaps Markdown: publication removed exactly
+one final blank line. Its original hash is
 `30da2151c5ab65594b3859ffa54ac6a6bfdf5be337b5b3af3390cdfc4d8031ca`,
 and its current hash is
 `39a5b7ea8ff2b1692067197cc15f30cdf40303730b8db0b54570be02de7aa573`.
-Every imported workspace pair, including that current Markdown, matches the
-supplied public Library unchanged. Only the new proof pair is submitted.
+Every imported pair, including that current Markdown, matches the
+published Library unchanged.
 
-The original candidate and integrated-build report contents were decoded
-from the eight archives and their uncompressed SHA256 fingerprints checked.
-For the exact proof publications, original acceptance includes Lake build,
-exact-target, unchanged-statement and frozen-input checks. A construction
-publication is used only for its implemented and independently reviewed
-constructions/lemmas, not as proof of a separate pending statement. Fresh
-integration compilation is distinct from the original semantic approval
-and proof-validation receipt.
+A module of constructions is used only for its implemented constructions and
+lemmas, not as proof of a separate statement.
 
 ## Mathematical dependency and independence audit
 
-The complete import traversal below was recomputed against public Library
+The complete import traversal below was recomputed against Library commit
 `f731c98e996e50a63c6431bd18cbbe3298a87530`. It has 139 imported project
 modules, plus this entry module. All 278 imported Lean/Markdown files are
-nonempty and byte-identical to that public tree. This includes the exact
-target's entire protected import closure. The actual declaration traversal
+nonempty and byte-identical to that tree. This includes the entire import
+closure of the statement module. The actual declaration traversal
 starts from the final theorem and recursively follows
 `ConstantInfo.getUsedConstantsAsSet`, which includes each declaration's
 type and its value with `allowOpaque := true`. Thus opaque theorem proofs
 are traversed rather than treated as independent assumptions. Every
-referenced constant was found. The private diagnostic ran only through
-`lean_check`; no diagnostic command is in the submitted Lean module.
+referenced constant was found. The diagnostic was run separately; no
+diagnostic command is in the Lean module.
 
 The final closure contains 40,861 constants in total, of which 927 are
 project constants in 69 project modules. The detection theorem separately
@@ -232,7 +221,7 @@ comparison roots have 93 project constants in 11 modules and 99 in 12,
 respectively. Every traversal has only `propext`, `Classical.choice` and
 `Quot.sound` as axioms. The complete project declaration inventories,
 including generated/private constants, are reproduced below. Mathlib and
-Lean infrastructure are pinned to the approved environment: Lean commit
+Lean infrastructure are pinned: Lean commit
 `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b` and Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`.
 
@@ -263,16 +252,13 @@ The substantive proof routes and shared branches were checked as follows:
   `MirabolicMinusExactnessStatement` occur in its import branch, but neither
   contributes any constant to the final theorem's recursive declaration
   closure. In particular `MirabolicMinusExactness` and the conditional
-  `mapsShortExact_*`/exactness-dependent level lemmas are not used. No proof
-  from operator-paused task `b65bc667-6951-4bd5-82af-10fb7046df7f` is used,
-  replaced, duplicated or requested for resumption.
+  `mapsShortExact_*`/exactness-dependent level lemmas are not used. No
+  mirabolic minus exactness proof is used.
 - The Rankin–Selberg import branch supplies elementary last-row topology,
   lifts, orbit sets, compact/open supports, quotient definitions and the
   scalar lattice annihilator. The declaration inventory contains these
   concrete helpers, with no Rankin–Selberg analytic, factor-existence,
   functional-equation, trilinear-uniqueness or classification conclusion.
-  The arithmetic support helpers and their extraction provenance were
-  also checked in the independent detection and highest-layer reviews.
 - The remaining layers are group/rank maps, supplied p-adic topology,
   conductor and Haar arithmetic, smooth actions and subquotients, compact
   means, explicit induction function spaces and scalar twists. The generic
@@ -280,96 +266,82 @@ The substantive proof routes and shared branches were checked as follows:
   predicate, order operations and its proved transfer lemmas.
 
 Absence of a spelling alone is not the independence argument: the concrete
-proof uses, proof bodies, source routes and independent input reviews above
+proof uses, proof bodies and source routes above
 explain the mathematical dependencies; the exhaustive import and recursive
 constant inventories make their boundaries checkable. Statement definitions
 in the import graph supply no assumed theorem.
 
 ### Preserved exclusions
 
-The following exclusions cover the mathematical conclusions, their exact
-proof successors and transitive proof dependencies throughout this proof:
+The following exclusions cover the mathematical conclusions, their
+proofs and transitive proof dependencies throughout this proof:
 
-- Ordered-socle existence `23189526-80b0-4828-a6d4-7ebec2cbeef5`;
-  socle exhaustion `f3a69bc8-7312-4f82-8a7d-ea3c8188cb63`;
-  analytic segment classification `aca8805b-054f-4d56-8045-12db7f623404`;
-  segment-socle product irreducibility `23e98d90-6055-4e35-91a9-b0f5d8a84961`;
-  final segment-socle irreducibility criterion
-  `2ae5cbe5-0701-4509-88a0-db8cbeb35be4`;
+- Ordered-socle existence;
+  socle exhaustion;
+  analytic segment classification;
+  segment-socle product irreducibility;
+  final segment-socle irreducibility criterion;
   `AdjacentUnlinkedSegmentSocleSwap`; `TwoSegmentSocleCommutation`.
-- Special-head product criterion `8364e73f-14ec-4d14-8f2b-1555a7c1ce95`;
-  special-head exhaustion `3bfb61fa-1129-4fc9-83fd-7fcfec22106e`;
-  ordered special-head existence `ebea9a8a-9b21-4208-aa31-98c2dea1f8a3`;
-  quotient coverage `20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584`;
-  tempered block uniqueness `52e97845-36bb-457d-b76f-70753334b88c`.
-- `SquareIntegrableLanglandsClassification` /
-  `1cb45da2-7007-4351-a694-594fb148b8d1`;
-  square-integrable exhaustion `cd8ab97c-0b78-4bce-97c4-d307a28159a4`;
-  regular exhaustion `bf433f0a-921a-428c-b0c0-6475438125ac`;
-  `GenericSegmentProductUniqueness` / `30341ae4-65f2-4a0e-9283-763db01a409e`;
-  ordered special-segment conversion `8252833d-c269-41a9-824c-5879e531b23b`;
-  forward special-segment essential square-integrability
-  `5eece9e8-7f6b-4ea9-abea-a1f9f1b8c807`.
+- Special-head product criterion;
+  special-head exhaustion;
+  ordered special-head existence;
+  quotient coverage;
+  tempered block uniqueness.
+- `SquareIntegrableLanglandsClassification`;
+  square-integrable exhaustion;
+  regular exhaustion;
+  `GenericSegmentProductUniqueness`;
+  ordered special-segment conversion;
+  forward special-segment essential square-integrability.
 
-Detection and its full prerequisite closure additionally preserve the
-trusted operator's complete nonadjacent/full-formula restrictions. The
-trusted `sender_role=operator` correspondence
-`bd71b9185aab5d6eafffb7891bd3a3ca` was read in full. The permitted route is
-fully proved general BZ77 derivative theory, independently accepted and
-published. In that closure the following are also excluded:
+Detection and its full prerequisite closure are further restricted to fully
+proved general BZ77 derivative theory published in the Library. In that
+closure the following are also excluded:
 
 - The present combined strong-indecomposability reduction and its consumers;
   the nonadjacent two-supercuspidal product conclusion and the entire
   two-supercuspidal product-structure conclusion
-  `ab61f565-1427-4746-ba77-46097563e962`, including its adjacent
+  `TwoSupercuspidalProductStructure`, including its adjacent
   composition/Jacquet conjuncts, and their downstream consequences.
-- Individual special-head/reverse-socle existence
-  `67279e36-f3c2-42e3-9302-11729784042e`; individual
-  segment-socle/reverse-head existence `4ca79bbd-589e-476b-9f65-661e799984b5`;
+- Individual special-head/reverse-socle existence; individual
+  segment-socle/reverse-head existence;
   `SegmentSpecialEssentialSquareIntegrability`;
   `OrderedMultisegmentSocleExistence`; `MultisegmentSocleExhaustion`;
-  `SegmentSocleProductIrreducibility`; adjacent socle commutation
-  `e3634665-571b-4852-9f4c-bab8a1053434`.
-- `SegmentFullJacquetFormula`, statement/successor-arrangement task
-  `ed48ae06-964c-4c84-9e62-978f5a953ca7` and its exact proof successor;
-  `SegmentHeadJacquetFormula` / `55ad1e10-62d8-46b7-a081-909ef0056426`;
-  `SegmentSocleJacquetFormula` / `b95105c6-f8bb-4641-ae53-2f49d1e7f034`;
-  `SegmentSpecialJacquetExponentNormFormula` /
-  `92aea10f-62ac-4e0b-bd4a-9a80909797c5`.
+  `SegmentSocleProductIrreducibility`; adjacent socle commutation.
+- `SegmentFullJacquetFormula` and its proof;
+  `SegmentHeadJacquetFormula`;
+  `SegmentSocleJacquetFormula`;
+  `SegmentSpecialJacquetExponentNormFormula`.
 - Ze80 segment derivative formulas §§3.5 and 9.6, its segment product
   irreducibility criteria 4.2 and 9.7, analytic/square-integrability result
   9.3, all classification and exhaustion theorems, and the segment-socle
-  part of `8e5b4563-0365-41c7-b134-70f2a0b36292`. In particular the linked-pair
+  part of the derivative statements of
+  `Classification.SegmentSocleDerivativesStatement`. In particular the linked-pair
   converse in 4.2 is not used to prove an upstream statement circularly.
 
 No excluded result occurs in the inspected mathematical dependency chain.
-The separate Ze80 §§5.1/5.4 source route for clause 2 is the route expressly
-assigned by this task; it is not used to establish detection. No new lower
-split was needed in this assembly. Other owned work and operator controls,
-including Worker 157's finite-length task and the distinct product/tensor
-branches, are preserved.
+Clause 2 follows the separate Ze80 §§5.1/5.4 source route; it is not used to
+establish detection.
 
-## Development validation
+## Validation
 
-In approved environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`,
-`lean_check` compiled and inspected the new exact theorem with zero errors
+A Lean check compiled and inspected the theorem with zero errors
 and warnings, level parameters exactly `uF`, `uV`, and only `propext`,
 `Classical.choice`, `Quot.sound`. The theorem's source annotates exactly the
-published target, with no further hypotheses. The companion's import,
-paired-hash and recursive declaration audits were then recomputed as
-recorded here. These are development checks; independent semantic
-acceptance, exact-target/frozen-input validation and actual publication of
-this new proof remain the submission procedure's separate requirements.
+published statement, with no further hypotheses. The import,
+paired-hash and recursive declaration audits of this page were then
+recomputed as recorded here.
 
 ## Complete project import graph and paired hashes
 
 Each row gives a full project module name and all its direct project imports,
 using the row identifiers. Replacing dots by slashes and appending `.lean`
 or `.md` gives its repository pair. Hashes are SHA256 over exact file bytes.
-The two hash columns agree between the workspace and the pinned public
-Library. `new` marks this contribution; its pair is frozen by staging.
+The two hash columns agree with the pinned Library commit. `new` marks this
+module.
 `—` means no direct project import. All external imports are listed after
-the table; their transitive infrastructure is fixed by the environment pins.
+the table; their transitive infrastructure is fixed by the pinned Lean and
+Mathlib commits.
 
 | ID | Module | Direct project imports | Lean SHA256 | Markdown SHA256 |
 | --- | --- | --- | --- | --- |

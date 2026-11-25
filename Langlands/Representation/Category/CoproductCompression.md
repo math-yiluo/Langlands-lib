@@ -1,6 +1,6 @@
 # Actual coproduct carriers and compact compression
 
-This internal unit compares an arbitrary supplied coproduct in the smooth
+This internal module compares an arbitrary supplied coproduct in the smooth
 category with the actual algebraic direct sum of its carriers. The group,
 component-carrier and index universes `uG`, `uV` and `uI` are independent.
 In particular, the index universe can exceed the carrier universe of the
@@ -43,7 +43,7 @@ compact-level finite support and stability of its components remain
 explicit premises. There is no admissibility, finite length or finite
 dimension hypothesis on a component or on the vertex.
 
-Worker 1751 derives the unit from the actual smooth quotient and
+The module is derived from the actual smooth quotient and
 direct-sum constructions, the supplied coproduct universal property,
 and the published compact-compression naturality and finite-support
 propagation results. No new assertion is attributed to literature,

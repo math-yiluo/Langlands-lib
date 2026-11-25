@@ -58,11 +58,11 @@ section OrbitLift
 variable {F : Type*} [Field F] [ValuativeRel F] [TopologicalSpace F]
   [IsNonarchimedeanLocalField F]
 
-local instance (n : ℕ) : T2Space (GeneralLinear n F) :=
+private local instance (n : ℕ) : T2Space (GeneralLinear n F) :=
   LocalFieldTopology.generalLinear_t2Space F n
-local instance (n : ℕ) : LocallyCompactSpace (GeneralLinear n F) :=
+private local instance (n : ℕ) : LocallyCompactSpace (GeneralLinear n F) :=
   LocalFieldTopology.generalLinear_locallyCompactSpace F n
-local instance (n : ℕ) : TotallyDisconnectedSpace (GeneralLinear n F) :=
+private local instance (n : ℕ) : TotallyDisconnectedSpace (GeneralLinear n F) :=
   LocalFieldTopology.generalLinear_totallyDisconnectedSpace F n
 
 variable {K : Type uK} [NontriviallyNormedField K] [CompleteSpace K] [CharZero K]

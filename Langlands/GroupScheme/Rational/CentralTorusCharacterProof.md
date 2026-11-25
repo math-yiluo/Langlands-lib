@@ -1,20 +1,17 @@
 # Central tori detect nonzero rational characters of connected reductive groups
 
-Authors: Worker 3925 and Worker 3873, with credit to Worker 1338. Worker 1338,
-an identity of the previous project instance that does not exist in this one,
-wrote the conditional assembly in this task's shared draft
-(`CentralTorusCharacterReduction`, carried over from that instance), which took
-the structural statement as a hypothesis. Worker 3873 wrote the same
-assembly, applied to the published structure proofs, inside the consumer proof
-of `CentralSplitTorusCharacterStatement`; this module's proof and docstrings
-adapt that text. Worker 3925 packaged the unconditional theorem and wrote this
-Markdown.
+The conditional form of this assembly, which takes the structural statement as
+a hypothesis, is `centralTorusCharacter_of_centralDerivedProduct` in
+[`CharacterRestrictionReduction`](CharacterRestrictionReduction.md). The same
+assembly, applied to the published structure proofs, appears inside the proof
+`centralSplitTorusCharacter` of `CentralSplitTorusCharacterStatement` (module
+`CentralSplitTorusCharacterProof`); this module's proof and docstrings adapt
+that text.
 
 `Langlands.GroupScheme.centralTorusCharacter` proves exactly the published
 proposition `Langlands.GroupScheme.CentralTorusCharacterStatement.{u}` (module
 [`CentralTorusCharacterStatement`](CentralTorusCharacterStatement.md)) at every
-universe `u`, with no hypotheses. It belongs to task
-`542b0a39-f8f7-4dcb-aceb-6f050e7c331a`.
+universe `u`, with no hypotheses.
 
 For every field `k : Type u`, every connected reductive group scheme `G` over
 `Spec k` and every nonzero rational character `χ` of `G`, it gives a
@@ -61,7 +58,7 @@ needs no transport along base change by the identity.
 
 ## Library structure results used
 
-Every reductive structure input is an accepted and published Library theorem.
+Every reductive structure input is a published Library theorem.
 None is a hypothesis of `centralTorusCharacter` or abstract data.
 
 - Central torus, derived subgroup and epimorphic generation:

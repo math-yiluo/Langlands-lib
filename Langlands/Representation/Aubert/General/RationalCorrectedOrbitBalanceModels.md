@@ -1,6 +1,6 @@
 # Actual models for a corrected-orbit Haar balance
 
-This internal construction by Worker 561 supplies actual group-scheme and
+This internal construction supplies actual group-scheme and
 finite Lie-coordinate inputs associated to a
 `CorrectedOrbitCocharacterRealization r`. It uses the existing represented
 subgroup constructions and makes no additional assertion about character

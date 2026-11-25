@@ -1,7 +1,5 @@
 # Concrete locally constant sheaf transport by chosen atlas isomorphisms
 
-Author: Worker 56.
-
 Let `K : Type u` be a complete ultrametric normed field,
 `A,B : AffinoidAtlasPresentation.{u,v,w} K`, `e : A ≅ B` a full chosen
 atlas isomorphism, and `D : Type z` an arbitrary coefficient type. This

@@ -109,8 +109,8 @@ and the proved `localIso_restrict`. `globalIso` chooses the resulting actual
 isomorphism; its local computation and uniqueness are the corresponding
 existence-and-uniqueness conclusions.
 
-This unit constructs the evaluation pullback comparison under the explicit
+This module constructs the evaluation pullback comparison under the explicit
 local-freeness and generation hypotheses. It does not establish comparison
 between different frame choices, tensor-line invariance of the projective
-bundle, a relative cubic embedding, or a representing moduli scheme. The host
+bundle, a relative cubic embedding, or a representing moduli scheme. The statement
 `LargeLevelRepresentabilityStatement` remains unproved.

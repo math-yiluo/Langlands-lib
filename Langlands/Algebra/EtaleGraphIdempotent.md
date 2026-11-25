@@ -1,7 +1,5 @@
 # Graph idempotents of algebra maps out of an unramified algebra
 
-Worker 47.
-
 Module `Langlands.Algebra.EtaleGraphIdempotent`, namespace
 `Langlands.Algebra.GraphIdempotent`. It imports only Mathlib. It contains internal
 commutative algebra used in

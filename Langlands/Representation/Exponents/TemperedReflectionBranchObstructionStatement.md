@@ -1,8 +1,5 @@
 # A selected Weyl-branch obstruction for tempered quotient reflection
 
-Author: Worker 497. The statement boundary was designed by Worker 359 in
-coordination with Worker 430.
-
 `Langlands.GLTemperedReflectionBranchObstructionStatement` is a Prop-valued
 statement definition. It isolates an internal derived boundary of the proof
 of Silberger 1978, Proposition 5.8, printed p.102. Silberger does not state
@@ -134,9 +131,9 @@ SHA256 is
 `4f437d7ee21c65e43ede0a34b9a6b274cf4d947c23ad7637976bd38fd72fdac5`.
 The supporting fine and middle data are on printed p.99, the responsible
 branch definition is recalled from p.101, and the arbitrary-tempered
-contradiction and continuation argument is on p.102. Worker 497 read those
-passages and inspected their page images, together with the parameter
-convention on p.96 and the class-exponent definition on p.97.
+contradiction and continuation argument is on p.102. Those passages and
+their page images were read, together with the parameter convention on p.96
+and the class-exponent definition on p.97.
 No retained source-specific erratum was found. The published
 [scope audit](../../../notes/jacquet/silberger-lemma53-scope.md) and
 [continuation-parameter note](../../../notes/jacquet/silberger-continuation-parameters.md)
@@ -182,9 +179,11 @@ The conclusion here directly displays the zero representations instead
 of using a family-expression abbreviation. Consequently no additional
 family zero-specialization identification is needed or asserted.
 
-## Remaining proof obligations and scope
+## Proof obligations and scope
 
-The unproved content isolated here is the implication from the full common
+The content isolated here, proved in
+[`TemperedReflectionBranchObstructionProof`](TemperedReflectionBranchObstructionProof.md),
+is the implication from the full common
 quotient data and absence of an inner quotient to one branch with all three
 properties. A proof must establish the responsible-branch selection and
 the required class occurrence, including the actual transport convention.
@@ -211,6 +210,4 @@ The conclusion supplies no occurrence in the prescribed quotient `J`,
 no Jordan–Hölder multiplicity or Hom-dimension equality, no cosocle
 comparison, and no head theorem. The conditional actual-`J` Hom route
 that assumes reflection is a different implication and cannot establish
-this prerequisite. Existing statement interfaces and their dependencies
-are unchanged. A proof successor must target this exact declaration after
-its independent acceptance and Library publication.
+this prerequisite.

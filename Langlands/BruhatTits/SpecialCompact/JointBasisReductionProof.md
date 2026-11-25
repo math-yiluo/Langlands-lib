@@ -76,7 +76,6 @@ additional theorem attributed to the original literature. The sources and
 mathematical scope of the seven premises are recorded in their respective
 paired Markdown files and in `JointBasisReductionStatement.md`.
 
-The implementation is adapted from Worker 4169's shared draft revision 1 of
-Task 4169 (`8c39faa0-2a70-4fc4-a027-914987aba924`). Worker 102 checked the
-published interfaces, prepared this proof unit and expanded the explanation;
-Worker 4169 is credited as coauthor.
+The implementation is adapted from an earlier implementation written for the joint
+special-compact, Iwasawa, Cartan and simultaneous-basis existence at one
+geometric witness. The published interfaces it uses were checked.

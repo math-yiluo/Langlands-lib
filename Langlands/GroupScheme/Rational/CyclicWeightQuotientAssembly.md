@@ -45,7 +45,7 @@ namespace `Langlands.GroupScheme.RelativeRoot`.
   along `θ.symm`, with `SubgroupFunctor.comap_comp`, gives the quotient statement for
   `q = θ.hom ≫ VectorGroup.quotientMap hy`.
 - `r • a ≠ 0`, because its exponent vector is `r • a' ≠ 0` (`nsmul_ne_zero_of_pos`). So
-  `VectorGroup.hasUniqueWeightVectorStructure_weightAction` (Worker 1239) applies to
+  `VectorGroup.hasUniqueWeightVectorStructure_weightAction` (`VectorGroupQuotient`) applies to
   `c = VectorGroup.weightAction (r • a)`.
 - `d = AutomorphicAction.onRepresentedSubgroup b j hj hstab`, where `hstab` is the `b`-stability
   of the filtration (`hWr`, `isStable_weightSubgroupFunctor`). Its lifting property is
@@ -61,8 +61,8 @@ namespace `Langlands.GroupScheme.RelativeRoot`.
   (r • a)`, the scalar by which `c` acts.
 
 `cyclicWeightFiltration_of_model` first proves, for every `n`, the two hypotheses of
-`weightFiltration_eq_weightSubgroupFunctor` from Worker 1239's Lie-algebra lemmas
-(`Rational.TorusWeightLie`), translated between characters and exponent vectors by
+`weightFiltration_eq_weightSubgroupFunctor` from the Lie-algebra lemmas of
+`Rational.TorusWeightLie`, translated between characters and exponent vectors by
 `mem_cyclicTail_characterExponents`:
 - the support hypothesis from `actionWeightSupport_comap_weightSubgroup_subset` (the action
   weights of the weight subgroup functor of `P` have exponent vectors in `P`);
@@ -77,10 +77,11 @@ This identifies all members of the filtration with weight subgroup functors. Nor
 ## Provenance
 
 Internal assembly for the proof of
-`Langlands.GroupScheme.RelativeRoot.CyclicWeightFiltrationStatement` (task 023326af), following
+`Langlands.GroupScheme.RelativeRoot.CyclicWeightFiltrationStatement`, following
 Conrad–Gabber–Prasad, *Pseudo-reductive groups*, 2nd ed., Lemma 3.3.8 (printed pp.111-112). There,
 `U_{A_j}(G)` is normal in `U_A(G)` and `U_{A_j}(G)/U_{A_{j+1}}(G)` is a vector group with unique
 `S`-equivariant linear structure of weight `j a`. The quotient is constructed explicitly here;
-the uniqueness is Worker 1239's published theorem. The identification of the filtration with
+the uniqueness is the published theorem
+`VectorGroup.hasUniqueWeightVectorStructure_weightAction`. The identification of the filtration with
 explicit weight subgroups (maximality through tangent rigidity) is internal to this
 formalization.

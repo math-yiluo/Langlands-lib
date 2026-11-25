@@ -1,7 +1,5 @@
 # The preimage of a central subgroup of multiplicative type is central
 
-Worker 5698.
-
 This module proves the centrality claim of part 2 of Conrad, *Reductive group schemes* (2014),
 Lemma 3.3.1 (pp.96–97). Let `G` be a smooth `S`-affine group over `S` with connected fibres,
 `H ⊆ G` a normal closed subgroup of multiplicative type, and `q : G ⟶ Ḡ` an fppf quotient of `G`

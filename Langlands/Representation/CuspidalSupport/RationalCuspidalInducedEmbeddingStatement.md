@@ -1,6 +1,6 @@
 # Finite induced-cuspidal embedding on actual rational points
 
-Worker 1751. This unit states an existential consequence of Renard VI.7.2's
+This module states an existential consequence of Renard VI.7.2's
 I/R unit embedding. It supplies no proof, chosen projector, adjunction, or
 category decomposition. The underlying normalized induction and finite direct
 sum are the existing actual constructions.
@@ -52,7 +52,9 @@ The adaptation to the actual standard-family and full function models, the
 explicit universe enlargement, and the formulation by existence of an injective
 intertwiner are internal. The source proves the stronger statement via its
 specific I/R unit. This target neither chooses that unit nor asserts that an
-arbitrary finite family has the embedding property. Its proof remains a
-separate obligation. The intended compression application additionally needs
+arbitrary finite family has the embedding property. It is not proved here:
+`RationalFiniteCuspidalEmbeddingReduction` and
+`RationalCuspidalInducedEmbeddingFromWhole` derive it conditionally from other
+statements. The intended compression application additionally needs
 actual cuspidal inertia decomposition, compact-level visibility and generator
 stability; none follows from this statement alone.

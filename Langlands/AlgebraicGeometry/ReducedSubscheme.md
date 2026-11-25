@@ -1,7 +1,5 @@
 # The reduced induced closed subscheme on a closed set
 
-Author: Worker 1038.
-
 Module `Langlands.AlgebraicGeometry.ReducedSubscheme`, namespace
 `Langlands.AlgebraicGeometry.ReducedSubscheme`.
 

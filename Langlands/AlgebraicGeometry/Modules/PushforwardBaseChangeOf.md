@@ -1,9 +1,5 @@
 # The degree-zero base-change comparison for a module map into a pushforward
 
-Author: Worker 950. The definitions and lemma statements follow the specification
-of task `ee369beb-e857-47d5-8ed0-5aeb6f432bf6` (published by Worker 360 and
-Worker 1098 for the parent task `5b778a75-e74b-4ae4-9232-6735e3eefa47`).
-
 Module `Langlands.AlgebraicGeometry.Modules.PushforwardBaseChangeOf`, namespace
 `Langlands.AlgebraicGeometry.Modules.DerivedSections`. It imports only
 `Langlands.AlgebraicGeometry.Modules.AffineDirectImageBaseChange`.
@@ -13,15 +9,15 @@ unit `P ⟶ p_* p^* P` of the pullback–pushforward adjunction. This module rep
 that unit by an arbitrary morphism `a : P ⟶ p_* N` and defines the resulting
 comparison `b^* f_* P ⟶ f'_* N`, together with its ordinary-sections,
 scalar-linear and tilde versions over spectra. It proves that the unit recovers
-the published maps, that the published map followed by a pushforward is an
-instance of the new one, and the evaluation and tilde formulas of the published
+the Library's maps, that the Library's map followed by a pushforward is an
+instance of the new one, and the evaluation and tilde formulas of the Library's
 affine comparison, now for arbitrary `a`.
 
 Nothing else is assumed or claimed. The square need not be cartesian. No morphism
 is assumed flat, affine, quasi-compact or separated, and `X` and `X'` need not be
 affine. No module is assumed quasi-coherent, and no comparison is claimed to be
-an isomorphism. A criterion for invertibility is a separate later statement and is
-not part of this module. The file has no proof holes and no axioms. It sets the
+an isomorphism. A criterion for invertibility is a separate statement
+(`PushforwardBaseChangeOfIsoStatement`) and is not part of this module. The file has no proof holes and no axioms. It sets the
 same three `backward.*` elaboration options as its sibling
 `AffineDirectImageBaseChange`.
 
@@ -79,7 +75,7 @@ For `P : X.Modules`,
 
 `pushforwardBaseChangeOf f b f' p w (η^p_P) = pushforwardBaseChange b f f' p w P`,
 
-where the right side is the Library's published map (module `DerivedRestriction`).
+where the right side is the Library's map (module `DerivedRestriction`).
 It is the inverse `homEquiv` of `f_*.map (η^p_P) ≫ σ.app (p^* P)`. Here
 `N = p^* P`. The two sides are the same term, so the proof is `rfl`.
 
@@ -93,7 +89,7 @@ For `P : X.Modules`, `N : X'.Modules` and `ψ : p^* P ⟶ N`,
 Proof. Apply the injective `homEquiv` for `b`. Mathlib's
 `Adjunction.homEquiv_naturality_right` turns the left side into
 `homEquiv (pushforwardBaseChange …) ≫ b_*.map (f'_*.map ψ)`. Rewriting the
-published map as `pushforwardBaseChangeOf` of the unit and using
+Library's map as `pushforwardBaseChangeOf` of the unit and using
 `pushforwardBaseChangeOf_homEquiv` on both sides, it remains to show
 
 `(f_*.map η^p_P ≫ σ.app (p^* P)) ≫ b_*.map (f'_*.map ψ) =
@@ -159,7 +155,7 @@ The morphism of `Spec T`-modules
 given by `tilde.map (scalarSectionsBaseChangeMapOf φ f f' g w a)`, then the counit
 `(f'_* N).fromTildeΓ`.
 
-### Recovery of the published maps (`…Of_unit`)
+### Recovery of the Library's maps (`…Of_unit`)
 
 For `M : X.Modules` and `a = η^g_M`:
 
@@ -169,7 +165,7 @@ For `M : X.Modules` and `a = η^g_M`:
   `scalarSectionsBaseChangeMap`;
 - `affineDirectImageTildeMapOf_unit`: the same for `affineDirectImageTildeMap`.
 
-The right sides are the published maps (modules `CohomologyBaseChangeZero` and
+The right sides are the Library's maps (modules `CohomologyBaseChangeZero` and
 `AffineDirectImageBaseChange`). In each case the two sides are the same term, so
 the proofs are `rfl`.
 
@@ -199,7 +195,7 @@ For `m : (relativeGlobalSections f).obj P`, the top-section component of the
 
 where `homEquiv` is that of `(Spec.map φ)^* ⊣ (Spec.map φ)_*`. Proof: by
 `pushforwardBaseChangeOf_homEquiv` the left side is
-`(σ.app N).app ⊤ (a.app ⊤ m)`. The published
+`(σ.app N).app ⊤ (a.app ⊤ m)`. The lemma
 `pushforwardSquareIso_hom_app_top` (module `AffineDirectImageBaseChange`) says
 `σ.app N` is the identity on top sections. The right side is `a.app ⊤ m` by
 `sectionsBaseChangeMapOf_apply`.
@@ -218,7 +214,7 @@ Both sides are morphisms `(Spec.map φ)^* (tilde Γ(X, P)) ⟶ f'_* N`. The sour
 `fromTildeΓ` is the counit for `f_* P`. The `@[reassoc]` attribute also generates
 `pullback_fromTildeΓ_comp_pushforwardBaseChangeOf_assoc`.
 
-Proof. It follows the published `pullback_fromTildeΓ_comp_pushforwardBaseChange`,
+Proof. It follows `pullback_fromTildeΓ_comp_pushforwardBaseChange`,
 with `a` in place of the unit. By `tildePullback_hom_ext` it suffices to compare
 the two adjoints on the global generators `tilde.toOpen _ ⊤ m` for
 `m ∈ Γ(X, P)`. Mathlib's `Adjunction.homEquiv_naturality_left` and
@@ -235,7 +231,7 @@ left side by `sectionsBaseChangeMapOf_apply`.
 ## Provenance
 
 Internal. The source does not state these definitions or lemmas. They are a
-formal adjunction generalization of the Library's published degree-zero base
+formal adjunction generalization of the Library's degree-zero base
 change map `DerivedSections.pushforwardBaseChange`: the unit `η^p_P` of
 `p^* ⊣ p_*` becomes an arbitrary morphism `a : P ⟶ p_* N`. The unit case is
 `pushforwardBaseChangeOf_unit`, and the spectra-layer `…Of_unit` lemmas recover
@@ -261,11 +257,12 @@ resolutions, with `f_* g'_* = g_* f'_*`, and takes the adjunct under
 Here the first arrow may be any `a : P ⟶ p_* N`. No flatness or other
 hypothesis of the source is used.
 
-The parent task needs an arbitrary `a`. In the flat affine case it plans to apply
-the comparison to the components of the Library chain map
+The proof of flat base change for higher direct images needs an arbitrary `a`. In
+the flat affine case (module `FlatBaseChange.AffineCase`) it applies the comparison
+to the components of the Library chain map
 `CechResolution.cechPullback` (module `CechResolution.BaseChange`). That chain map
 is `cechPushforward` of the unit of `g^* ⊣ g_*`. Its components
 `cechTermPushforward` are morphisms `P ⟶ g_* N` between Čech terms, and they are
 not given as units of the adjunction. The lemma
 `pushforwardBaseChange_comp_pushforward_map` connects a unit followed by a
-pushforward with the published map.
+pushforward with the Library's map.

@@ -95,7 +95,8 @@ proposition uses the same closedness, invariance, irreducibility, and
 intertwining conditions. Instantiating it with `Q` as the source and `P`
 as the target gives `Q = P`. [Cuspidal multiplicity one for GL_n](../Automorphic/GeneralLinearCuspidalMultiplicityOneStatement.md)
 
-For the twisted spectral expansion of Task 7698, suppose the twist `I_Θ`
+For the twisted spectral expansion of
+`GroupSchemeTwistedCuspidalSpectralExpansionStatement`, suppose the twist `I_Θ`
 restricts to a unitary on `S` and intertwines `πc` with its twist by the
 group automorphism `Θ`. The image `I_Θ(P)` of a nonzero summand is then
 nonzero, closed, invariant, and irreducible. Clause 2 and multiplicity one

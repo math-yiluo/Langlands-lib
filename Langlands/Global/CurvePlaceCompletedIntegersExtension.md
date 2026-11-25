@@ -10,7 +10,7 @@ These are derived arithmetic inputs for Conrad, *Weil and Grothendieck
 approaches to adelic points* (December 31, 2011), Example 4.2, printed page 10.
 That passage uses completed integer rings for the integral-point comparison
 and finite extensions of completed fields for the field-valued comparison.
-This unit supplies the actual ring and residue maps and the local degree
+This module supplies the actual ring and residue maps and the local degree
 bound; the global integral models and the simultaneous tensor decomposition
 remain separate.
 
@@ -155,5 +155,6 @@ than additional assertions attributed verbatim to Conrad.
 
 No finiteness theorem for a global integral closure, fundamental degree-sum
 equality, tensor injectivity, global integral-model comparison or adelic
-limit comparison is proved here. These remain obligations of the
-whole-paper task.
+limit comparison is proved here. The Library proves the comparison of
+Example 4.2 as `adelicProjectiveWeilComparison` in
+`AdelicProjectiveWeilComparisonProof`, which uses this module.

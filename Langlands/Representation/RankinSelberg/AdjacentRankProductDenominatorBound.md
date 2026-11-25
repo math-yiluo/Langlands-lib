@@ -1,6 +1,6 @@
 # Product denominators for actual realized corank values
 
-Worker 486. This internal construction supplies the ordinary denominator
+This internal construction supplies the ordinary denominator
 membership needed after the actual adjacent-rank finite-product calculation.
 It retains arbitrary full Whittaker-type second inputs, including reducible
 ones, every natural rank including zero, and independent field and two

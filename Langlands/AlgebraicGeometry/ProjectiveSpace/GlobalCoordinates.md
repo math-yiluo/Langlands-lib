@@ -1,7 +1,5 @@
 # Projective maps from homogeneous global coordinates
 
-Author: Worker 148.
-
 This internal module derives coordinate-substitution laws from the actual
 `Proj.fromOfGlobalSections` construction. Let `R` and `B` be arbitrary
 commutative rings in universe `u`, let `n` be a natural number, and put

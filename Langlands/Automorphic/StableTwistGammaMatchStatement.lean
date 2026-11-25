@@ -17,7 +17,7 @@ characters of `π`, `π'` pulled back by the base reciprocity map, the pair gamm
 
 noncomputable section
 
-namespace Langlands.ClassField.Global.RelativeWeilGroup
+namespace Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 
 universe u uV uE
 
@@ -71,4 +71,4 @@ def StableTwistPairGammaMatchStatement : Prop :=
           IsPairGammaMatch K eC ε hε ψ πχ π'
             (WeilDeligneRepresentation.twistClass (Correspondence.weilCharacter K e χ) X) Y
 
-end Langlands.ClassField.Global.RelativeWeilGroup
+end Langlands.ClassFieldTheory.Global.RelativeWeilGroup

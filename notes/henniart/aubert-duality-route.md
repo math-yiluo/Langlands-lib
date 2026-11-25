@@ -1,7 +1,5 @@
 # Aubert duality: corrected sources and the upstream classification boundary
 
-Author: Worker 320.
-
 The duality route to the segment classification needs both the formal
 Grothendieck-group identities and preservation of irreducibility. These have
 different proof dependencies. The original Aubert irreducibility argument
@@ -108,8 +106,8 @@ classification**, and the geometric lemma. Theorem 4.2 uses Proposition
 used on p.2182.
 
 Consequently, reading the corrected complex is insufficient to certify the
-entire route as an independent input to the present upstream classification
-task. This is a source-dependency finding, not evidence of an already formed
+entire route as an independent input to the upstream classification. This is a
+source-dependency finding, not evidence of an already formed
 Lean dependency cycle. The actual transitive proof dependencies must be
 checked, and any prohibited classification input replaced.
 
@@ -177,13 +175,12 @@ existing finite-dimensional virtual-representation construction is not that
 category. A free abelian group on irreducible labels cannot substitute for it
 without the Jordan–Holder identification.
 
-Subsequent units must supply the actual induction and Jacquet maps on this
+The route also needs the actual induction and Jacquet maps on this
 group, including exactness, finite-length preservation and universe
 comparisons; the alternating operator and its formal identities; an
 independently justified irreducible-image theorem; and the segment
-socle-to-special-quotient and reversed-Levi formulas. Definitions must be
-published before statement units, and statement targets before their exact
-proofs. None of these obligations is discharged by this note.
+socle-to-special-quotient and reversed-Levi formulas. None of these
+obligations is discharged by this note.
 
 The analytic classification also still requires Casselman's strict
 square-integrability criterion, admissibility, character normalization and
@@ -207,9 +204,9 @@ Source registration records identity and access, not mathematical acceptance.
 | [Zelevinsky 1980][ze80] | `zelevinsky-1980-induced-ii`; `663c79f2ee236626385d242d83107410c1a3291ba5584d4b8abee9cf8af428ac` | Theorem 1.9, printed p.174, PDF p.11, text and image; surrounding pp.173–175 read. Other reading extents are in the companion source note. |
 | [Retained audit][audit] | `aubert-duality-audit-2026-08-13`; `a1b7f421c6e2f0096dfd15f681448c6b8668a205d3e959d36b49b37c8d1082e1` | Complete secondary guide dated 2026-08-13; attribution for the correction map and the erratum circularity diagnosis. |
 
-[aubert]: </home/taskhub/central-library/Aubert--Dualite dans le groupe de Grothendieck des representations lisses de longueur finie--1995/Aubert--Dualite dans le groupe de Grothendieck des representations lisses de longueur finie--1995.pdf>
-[erratum]: </home/taskhub/central-library/Aubert--Dualite dans le groupe de Grothendieck des representations lisses de longueur finie--1995/Aubert--Erratum a Dualite dans le groupe de Grothendieck des representations lisses--1996.pdf>
-[bj]: </home/taskhub/central-library/Ban-Jantzen--The Langlands quotient theorem for finite central extensions of p-adic groups II--2016.pdf>
-[ss]: </home/taskhub/central-library/Schneider-Stuhler--Representation theory and sheaves on the Bruhat-Tits building--1997.pdf>
-[ze80]: </home/taskhub/central-library/Zelevinsky--Induced representations of reductive p-adic groups II, irreducible representations of GL(n)--1980.pdf>
-[audit]: </home/taskhub/central-library/Aubert--Dualite dans le groupe de Grothendieck des representations lisses de longueur finie--1995/Aubert--Dualite dans le groupe de Grothendieck des representations lisses de longueur finie--1995--audit-and-citation-guide.md>
+[aubert]: <central-library/Aubert--Dualite dans le groupe de Grothendieck des representations lisses de longueur finie--1995/Aubert--Dualite dans le groupe de Grothendieck des representations lisses de longueur finie--1995.pdf>
+[erratum]: <central-library/Aubert--Dualite dans le groupe de Grothendieck des representations lisses de longueur finie--1995/Aubert--Erratum a Dualite dans le groupe de Grothendieck des representations lisses--1996.pdf>
+[bj]: <central-library/Ban-Jantzen--The Langlands quotient theorem for finite central extensions of p-adic groups II--2016.pdf>
+[ss]: <central-library/Schneider-Stuhler--Representation theory and sheaves on the Bruhat-Tits building--1997.pdf>
+[ze80]: <central-library/Zelevinsky--Induced representations of reductive p-adic groups II, irreducible representations of GL(n)--1980.pdf>
+[audit]: <central-library/Aubert--Dualite dans le groupe de Grothendieck des representations lisses de longueur finie--1995/Aubert--Dualite dans le groupe de Grothendieck des representations lisses de longueur finie--1995--audit-and-citation-guide.md>

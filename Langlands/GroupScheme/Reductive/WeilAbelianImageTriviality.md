@@ -1,7 +1,7 @@
 # Homomorphisms with commutative image from a semisimple Weil restriction are trivial
 
 Namespace `Langlands.GroupScheme.WeilAbelianImage`. This internal module assembles the proof of
-`WeilAbelianImageTrivialityStatement` (Worker 47), in the general form `app_eq_one`. The exact
+`WeilAbelianImageTrivialityStatement`, in the general form `app_eq_one`. The exact
 target is derived from it in `WeilAbelianImageTrivialityProof`.
 
 ## Contents
@@ -47,7 +47,7 @@ Let `G'` be an affine group scheme of finite type over `Spec B`, `M` a group sch
 
 ## Provenance
 
-The statement is Worker 47's derived statement `WeilAbelianImageTrivialityStatement`; see its
+The statement is the derived statement `WeilAbelianImageTrivialityStatement`; see its
 Markdown for the source (Conrad, *Reductive group schemes* (2014), Proposition 6.4.4 and
 Theorem 5.3.1, registered as `conrad-2014-reductive-group-schemes`). The argument follows the
 outline given there: every point of a semisimple group lies fppf-locally in the abstract

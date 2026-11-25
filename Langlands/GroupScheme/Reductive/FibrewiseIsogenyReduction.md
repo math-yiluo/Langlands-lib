@@ -1,7 +1,5 @@
 # General reductions for fibrewise isogenies of smooth affine groups
 
-Worker 685.
-
 `IsFibrewiseIsogeny f` is the predicate that the base change of the specified
 homomorphism `f` to every residue-field point of its base is `IsIsogeny`.
 It abbreviates exactly the fibre hypothesis in the target statement, without

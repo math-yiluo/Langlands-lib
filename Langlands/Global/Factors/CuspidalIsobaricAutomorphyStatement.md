@@ -1,8 +1,5 @@
 # Automorphy of isobaric sums of cuspidal representations, at every place
 
-Author: Worker 3657. Statement contribution to task
-`34b81620-20d7-4059-9b08-6bedd1c1c029`, revision 1.
-
 **Scope.** This module states one proposition and proves nothing:
 
 - `Langlands.Global.CuspidalIsobaricAutomorphyStatement`.
@@ -15,7 +12,7 @@ cuspidal automorphic representations `π_1, …, π_k` of `GL_(n_i)(𝔸_F)` wit
 and complex place. "Isobaric sum at every place" is the predicate
 `IrreducibleOperatorSubquotient.IsCuspidalIsobaricSum` of the definition
 module `Langlands.Global.Factors.IsobaricAutomorphicRepresentation`, which is
-part of the same contribution (`IsobaricAutomorphicRepresentation.md` §4).
+ported together with this module (`IsobaricAutomorphicRepresentation.md` §4).
 The statement module imports only that module and defines no instances.
 Library vocabulary in the statement itself:
 
@@ -26,15 +23,14 @@ Library vocabulary in the statement itself:
 - `Automorphic.IrreducibleOperatorSubquotient`
   (`Langlands/Automorphic/IrreducibleOperatorSubquotient.lean`).
 
-**Why it is here.** Getz–Hahn 10.7.5 is in the L4 list of this task's
-contract. The Library states it only at the finite places
-(`CuspidalIsobaricRealizationStatement`, which says nothing at the infinite
+**Why it is here.** `CuspidalIsobaricRealizationStatement` states
+Getz–Hahn 10.7.5 only at the finite places (it says nothing at the infinite
 places). This statement adds the real and complex places. It is the
 existence half of the isobaric theory whose uniqueness half is
-`IsobaricStrongMultiplicityOneStatement` (GH Corollary 11.7.3), in the same
-contribution.
+`IsobaricStrongMultiplicityOneStatement` (GH Corollary 11.7.3), ported
+together with this module.
 
-**Proof target.** A later proof task should prove the Library statement
+**Proof target.** The proof target is the Library statement
 `Langlands.Global.CuspidalIsobaricAutomorphyStatement`. Its universe
 parameters are `u` (the number field, every local carrier and the
 multisegments) and `uQ` (the factor universe of the spectral presentations).
@@ -132,8 +128,8 @@ place `v`:
 
 ## 4. Relation to other statements
 
-- **`CuspidalIsobaricRealizationStatement`** (GH 10.7.5 at the finite places,
-  accepted by review). Neither statement implies the other as stated. That
+- **`CuspidalIsobaricRealizationStatement`** (GH 10.7.5 at the finite places).
+  Neither statement implies the other as stated. That
   one adds, at each finite place, that `A` is a subquotient of the normalized
   induced representation `i(σ_(1,v), …, σ_(k,v))` (`IsSubquotientOf`); this
   one drops that condition and adds the real and complex places. Given the
@@ -149,20 +145,18 @@ place `v`:
   `CuspidalIsobaricAutomorphyStatement.{u, u}` implies it. This is not proved
   in Lean.
 - **`CuspidalInducedConstituentAutomorphyStatement`** (GH 10.7.1, first
-  half, at the finite places; proof Task 6519
-  `7853bc94-5997-47b3-a5b2-c1607f7c07c9`): it prescribes the constituents at
+  half, at the finite places): it prescribes the constituents at
   the finite places only, and so gives no control at the infinite places.
-- **`IsobaricStrongMultiplicityOneStatement`** (GH Corollary 11.7.3, same
-  contribution): if two isobaric `Q` agree at almost all finite places they
+- **`IsobaricStrongMultiplicityOneStatement`** (GH Corollary 11.7.3, ported
+  together with this module): if two isobaric `Q` agree at almost all finite places they
   are equivalent. With it, the `Q` of this statement is unique up to
   equivalence. This is not stated here.
 
-## 5. Proof route (for the proof task; not part of the statement)
+## 5. Proof route (not part of the statement)
 
 GH's route, place by place:
 
-- **Finite places.** As for `CuspidalIsobaricRealizationStatement` (proof
-  Task 6523 `dab321bc-8fad-40cc-bb66-d16b658b075a`): the local isobaric sum is
+- **Finite places.** As for `CuspidalIsobaricRealizationStatement`: the local isobaric sum is
   a constituent of `i(σ_(1,v), …, σ_(k,v))` (GH Theorem 10.6.4) and is
   spherical for almost all `v` (GH Theorem 10.6.3).
 - **Infinite places.** The parameters `ds i` exist
@@ -174,11 +168,14 @@ GH's route, place by place:
 - **Global step.** Langlands' theorem (GH Theorem 10.7.1; Langlands 1979,
   Proposition 2 and Lemma 1), at all places: a restricted tensor product of
   local constituents, unramified almost everywhere, is a constituent of the
-  global induced representation and therefore automorphic. The Library states
-  this only at the finite places
-  (`CuspidalInducedConstituentAutomorphyStatement`). An all-places form, with
-  prescribed `(𝔤_v, K_v)`-constituents at the infinite places, is not in the
-  Library; the proof task needs it, or a substitute.
+  global induced representation and therefore automorphic.
+  `CuspidalInducedConstituentAutomorphyStatement` states this at the finite
+  places. A proof needs an all-places form, with prescribed
+  `(𝔤_v, K_v)`-constituents at the infinite places, or a substitute; the module
+  `Langlands.Global.Factors.CuspidalIsobaricTensorRealization` derives this
+  statement from `CuspidalIsobaricTensorRealizationStatement` (an all-places
+  form of this step, not proved in the Library),
+  `CuspidalIsobaricFiniteFamilyStatement` and real-place inputs.
 
 ## 6. Not asserted
 
@@ -207,7 +204,7 @@ to this formalization:
   read through spectral presentations (as in
   `CuspidalIsobaricRealizationStatement`).
 
-The Lean files were checked with `lean_check` in environment
-`5c94c648-e8dc-4002-a50a-071ebf3f6096`, with no errors and no warnings. The
+The Lean files were checked in the Lean environment in which they were
+written, with no errors and no warnings. The
 declaration is a `def` returning `Prop`, with universe parameters `u` and
 `uQ`.

@@ -1,7 +1,5 @@
 # Rational lattices of finite adelic matrices
 
-Author: Worker 19.
-
 Let `𝔸_f` be the finite adeles of `ℚ` (`FiniteAdeles ℚ`), `Ẑ ⊆ 𝔸_f` the
 integral finite adeles (`integralFiniteAdeles ℚ`), and `ϕ : ℚ → 𝔸_f` the
 diagonal embedding. This module proves two decompositions:

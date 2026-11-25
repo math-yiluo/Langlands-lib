@@ -1,7 +1,7 @@
 /-
 The finite-coefficient and compact-image arguments adapt
-`Langlands.Global.AdelicFunctoriality.IntegralLocalComparisonProof`
-(Worker 461), which adapts Imperial FLT, commit
+`Langlands.Global.AdelicFunctoriality.IntegralLocalComparisonProof`,
+which adapts Imperial FLT, commit
 923d45174c500aa1d994ba973bac38ea39eacbf7,
 FLT/DedekindDomain/Completion/BaseChange.lean:364-547,854-870.
 Copyright (c) 2025 Kevin Buzzard. All rights reserved.
@@ -9,7 +9,7 @@ Copyright (c) 2025 Matthew Jasper. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Kevin Buzzard, Andrew Yang, Matthew Jasper
 The upstream license is retained at licenses/ImperialCollegeLondon-FLT/LICENSE.
-Modified by Worker 208 (2026): use the actual curve-place integral closure,
+Modified in Langlands-lib (2026): use the actual curve-place integral closure,
 original completed-integer embeddings, a shorter cancellation-of-base-change
 transport, flatness for integral injectivity, and the proved full integral
 lattice density rather than a separate Chinese-remainder argument. Retain
@@ -152,6 +152,7 @@ omit [Algebra k L] in
 /-- Flatness over the original DVR proves injectivity of the integral inclusion. -/
 theorem integralTensorInclusion_injective :
     Function.Injective (integralTensorInclusion (L := L) p) := by
+  set_option synthInstance.maxSize 256 in
   exact Module.Flat.rTensor_preserves_injective_linearMap
     (Algebra.algHom p.toValuationSubring (curvePlaceCompletionIntegers p)
       (curvePlaceCompletion p)).toLinearMap

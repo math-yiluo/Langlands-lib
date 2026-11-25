@@ -1,8 +1,7 @@
 # Direct-rank Laurent spans for the tail of upper induction
 
-Author: Worker 318. Worker 53 contributed the decomposition and the canonical
-character/measure interface. The common induction and quantifier conventions
-reuse Worker 82's published `InducedTailLFactorStatement`.
+The common induction and quantifier conventions reuse the published
+`InducedTailLFactorStatement`.
 
 This module defines three closed propositions and their conjunction. It proves
 none of the span inclusions. All names below are in
@@ -166,7 +165,7 @@ For `T<B`, the source chooses a Schwartz cutoff `Φ` equal to one wherever
 `W₂(diag(g,1_(B-T)))` contributes, referring to §8.3 for the tail support
 input. Proposition 9.1 then gives the first displayed integral identity
 on printed 456. Combining `|det g|^(A/2)` with the full exponent leaves
-`s-(B-T)/2`, the tail zero-row exponent. The successor must prove the
+`s-(B-T)/2`, the tail zero-row exponent. The proof must establish the
 required support/cutoff assertion and extension for the actual coefficient
 sets, together with convergence and measure transport. The statement
 does not assume the cutoff or a transfer operator.
@@ -185,7 +184,7 @@ that the test Whittaker function is invariant under the required right
 translations. This uses smooth right invariance. Integrating the localized
 variables gives a positive, finite, **nonzero volume scalar**. The printed
 calculation suppresses it before identifying the reversed tail integral.
-The successor must retain and justify the scalar with the actual measures;
+The proof must retain and justify the scalar with the actual measures;
 a nonzero complex constant is a unit in the Laurent coefficient ring, so
 it can be removed at the span level. An appropriate tail-support cutoff
 then removes `Φ`, as in the previous case. The resulting determinant
@@ -214,14 +213,14 @@ transports in `UnequalRankCharacterTransport` and
 premises of these propositions or a claim that the needed span bridge is
 already proved. If a formal localization route produces a nonzero
 rectangular row count, an actual theorem relating that span to the
-zero-row span must be proved or applied in the successor. No such span
+zero-row span must be proved or applied in the proof. No such span
 comparison is inserted as a hypothesis here.
 
 ## Analytic and representation-theoretic obligations
 
 For all three cases the displayed identities must first be established on
 a common half-plane of convergence, with the actual quotient and product
-measures. The successor must prove the required integrability and then use
+measures. The proof must establish the required integrability and then use
 uniqueness of rational continuation at the canonical `q>1` to transfer the
 identity, including any constant multiplier, to `RatFunc ℂ`. Linearity
 and closure under Laurent coefficients then give the stated inclusion.
@@ -248,10 +247,9 @@ it does not assume its proposition.
 
 ## Development validation
 
-The module compiled with no errors or warnings in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`. Separate declaration inspections
+The module compiled with no errors or warnings in the pinned environment.
+Separate declaration inspections
 reported `statement_returns_prop: true` for all four definitions and the
 independent universe parameters `uF`, `uV₁`, `uV₂`, `uW`. Their only axioms
 are the standard `propext`, `Classical.choice`, and `Quot.sound`.
-These checks establish well-formed statements, not proofs of the inclusions
-or independent semantic acceptance.
+These checks establish well-formed statements, not proofs of the inclusions.

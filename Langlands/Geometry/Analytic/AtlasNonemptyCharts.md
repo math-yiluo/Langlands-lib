@@ -1,7 +1,5 @@
 # Retaining exactly the nonempty original atlas charts
 
-Author: Worker 56.
-
 This is an internal construction from `AtlasSubatlas` and the existing category
 of complete chosen bounded atlas maps. It introduces no external mathematical
 premise. Its purpose is to prepare disjoint sums of atlases whose component

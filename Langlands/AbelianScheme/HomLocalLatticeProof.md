@@ -47,7 +47,7 @@ for `A`.
   `d!` times an actual mixed Euler coefficient is an integer.
 - `Langlands.AbelianScheme.HomPullbackMixedEulerCube`: the cube identity for
   `f ↦ c_{LA}(f^* LB)` and the reduction to positivity.
-- `Langlands.AbelianScheme.HomPullbackMixedEulerPositive` (Worker 501):
+- `Langlands.AbelianScheme.HomPullbackMixedEulerPositive`:
   positivity of `c_{LA}(f^* LB)` for nonzero `f` and ample `LA`, `LB`.
 
 ## Provenance

@@ -1,7 +1,7 @@
 # Canonical subobject decompositions and lattice complements
 
 Module: `Langlands.CategoryTheory.Renard.SubobjectComplementComparisonStatements`.
-All declarations are in `Langlands.Renard`. This is an internal statement unit:
+All declarations are in `Langlands.Renard`. This is a module of internal statements:
 it defines three propositions and proves none of the comparison assertions.
 
 ## Source and provenance
@@ -13,8 +13,7 @@ p-adiques*, French edition dated 9 July 2026, registered source
 The original is retained at
 `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`.
 PDF269–271 were read directly; PDF269 and PDF271 were also checked visually.
-The file's SHA256 was rechecked and the extracted text of PDF269–271 reread
-before submission.
+The file's SHA256 was rechecked and the extracted text of PDF269–271 reread.
 
 A.VI.2(9), printed263/PDF269, concludes that subobjects with zero intersection
 and full sum give a direct-sum decomposition:
@@ -48,7 +47,7 @@ have appendix entries on PDF18–19, which were read. Those entries give no
 correction to these two source passages; a bounded search of their full
 extracted text for Noether, complement and semisimplicity terms found no
 correction to them. This is a limited observation about a different edition.
-No current-edition errata file for this source was found at the workspace's or
+No current-edition errata file for this source was found at the project's or
 pinned Library's `notes/errata` locations. The registered snapshot of Renard's
 author page (26 October 2026) links only the 2010-edition erratum; it lists no
 separate erratum for the 2026 edition.
@@ -146,15 +145,19 @@ independent indexing universe or size restriction. The imported
 
 ## Proof and coverage boundary
 
-The existing Noether aggregate proof task
-`d0241956-6d80-41a2-8ca8-88db6bad7b32` retains the
-lattice-equalities-to-canonical-map direction. This unit neither duplicates
-nor discharges that obligation. A later proof of the comparison may consume
-its accepted public proof and add the converse and the global logical
-packaging. It must target this exact aggregate after publication.
+The lattice-equalities-to-canonical-map direction is
+`complementarySubobjectsSum`, part of the Noether aggregate proof in
+`Langlands.CategoryTheory.RenardNoetherIsomorphisms`. This module neither duplicates
+nor discharges it. The comparison is proved as `subobjectComplementComparison`
+in `Langlands.CategoryTheory.Renard.SubobjectComplementComparison`, which reuses
+`complementarySubobjectsSum` and adds the converse and the global logical
+packaging.
 
 The source's three-way semisimplicity lemma assumes its Grothendieck and local
-finite-type hypotheses. That lemma, its subobject corollary, the arbitrary-sum
-arguments, AB5/AB6 reasoning, and module or representation adapters remain
-separate obligations. A statement of this binary comparison alone supplies
+finite-type hypotheses. That lemma is proved as `semisimplicityEquivalence` in
+`Langlands.CategoryTheory.Renard.SemisimplicityEquivalence`, and its subobject
+corollary as `semisimpleSubobject` in
+`Langlands.CategoryTheory.Renard.SemisimpleSubobject`. The arbitrary-sum
+arguments, AB5/AB6 reasoning, and module or representation adapters are outside
+this module. A statement of this binary comparison alone supplies
 none of those proofs.

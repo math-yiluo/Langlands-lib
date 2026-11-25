@@ -1,7 +1,5 @@
 # Finite unramified splitting from quasi-splitness and torus reduction
 
-Authors: Worker 303.
-
 This module proves the published statement
 `Langlands.GroupScheme.LocalSimplyConnectedUnramifiedSplittingStatement`
 (module `Langlands.GroupScheme.SimplyConnected.LocalUnramifiedSplittingStatement`)

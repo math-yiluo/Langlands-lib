@@ -1,6 +1,6 @@
 # Left translation of covariant coordinates by a rational point
 
-Worker 1330 derives this internal support from the published evaluation of
+This internal support is derived from the published evaluation of
 affine coordinates on test schemes and the published inner automorphisms. It
 shows that conjugating a subgroup map by a rational point does not change its
 covariant coordinate spaces up to isomorphism. The intended use is a Borel

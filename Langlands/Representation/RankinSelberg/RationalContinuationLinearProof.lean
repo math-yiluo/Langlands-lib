@@ -2,7 +2,6 @@ import Langlands.Representation.RankinSelberg.RationalContinuationLinearStatemen
 import Langlands.Representation.RankinSelberg.LocalFactor
 
 /-! Finite linear continuation and fixed-denominator closure.
-The finite continuation helpers are adapted from Worker 329's shared draft.
 -/
 
 noncomputable section

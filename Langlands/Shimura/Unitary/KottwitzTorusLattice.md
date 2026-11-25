@@ -1,16 +1,16 @@
 # The torus at a good prime: cocharacter points times integral points
 
-Author: Worker 8. Module `Langlands.Shimura.Unitary.KottwitzTorusLattice`, namespace
-`Langlands.Shimura.KottwitzUnramified`. This is a supplement to item 2 of Task 5424
-(`KottwitzPrincipalSeries`). It proves one of the well-definedness properties that item 2
-lists as an obligation.
+Module `Langlands.Shimura.Unitary.KottwitzTorusLattice`, namespace
+`Langlands.Shimura.KottwitzUnramified`. This is a supplement to
+`KottwitzPrincipalSeries`. It proves one of the well-definedness properties of the
+definitions of `KottwitzPrincipalSeries`.
 
 At a good prime, every point of the diagonal torus `T(ℚ_p)` of a standard unramified chart
 is the point `λ(p)` of a `ℚ_p`-rational cocharacter `λ` times a point of `T ∩ K_p`.
 Consequently an unramified character of `T(ℚ_p)` is determined by its values at the
 points `λ(p)`. Equivalently, its restriction to the lattice of rational cocharacters,
 `latticeCharacter`, is injective on unramified characters. The principal-series
-parameters of item 2, the Weyl equivalence and the base-change parameters of item 4 are
+parameters of `KottwitzPrincipalSeries`, the Weyl equivalence and the base-change parameters of `KottwitzBaseChange` are
 all read through these values. They therefore depend only on the unramified character
 itself, and the identification
 `Hom_unr(T(ℚ_p), Ωˣ) ↪ Hom(X_*(T)^{Frob}, Ωˣ)` is injective.
@@ -57,7 +57,7 @@ unramified completions; it is not transcribed from Cartier.
   valuation one lies in the units of the integral matrices `Π_w M_n(O_w)`. The inverse is
   diagonal, with inverse entries.
 - `UnramifiedChart.exists_cocharHom_mul_level`: assume `IsUnramifiedAt p K`, the
-  good-prime hypothesis of item 1. Then every point `t` of the torus of a standard chart
+  good-prime hypothesis of `KottwitzChart`. Then every point `t` of the torus of a standard chart
   is `t = λ(p) · u`, with `λ` a rational cocharacter and `u` a point of the torus in the
   level `K_p`. The proof sets `λ w k = -log v(t_{w,k})` for the diagonal entries
   `t_{w,k}` of the matrix coordinates of `t`, and `λ_c = -log v(c)` for the multiplier
@@ -76,11 +76,11 @@ unramified completions; it is not transcribed from Cartier.
 ## Scope
 
 The surjectivity half (every character of the lattice comes from an unramified character
-of `T(ℚ_p)`) is not proved here. Item 2's parameters never need it. The module adds no
-hypothesis to item 2's definitions; it proves a property of them.
+of `T(ℚ_p)`) is not proved here. The parameters of `KottwitzPrincipalSeries` never need it. The module adds no
+hypothesis to the definitions of `KottwitzPrincipalSeries`; it proves a property of them.
 
 Formal dependencies: `Langlands.Shimura.Unitary.KottwitzPrincipalSeries` and
-`Langlands.Shimura.Unitary.KottwitzChart` (items 1 and 2),
+`Langlands.Shimura.Unitary.KottwitzChart`,
 `Langlands.Global.AdelicFunctoriality.CompletedRamification`
 (`valuation_completionMap`), and Mathlib (`HeightOneSpectrum.intValuation_singleton`,
 `valuedAdicCompletion_eq_valuation`, `Rat.HeightOneSpectrum.span_natGenerator`,

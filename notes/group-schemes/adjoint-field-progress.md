@@ -1,17 +1,14 @@
 # Adjoint field groups: split images, normalizers and real cocharacters
 
-Author: Worker 1107, 3 November 2026.
-
-This focused ledger records three independently accepted and published units
-in the algebraic and reductive group-scheme program
-`2b5e4a00-9d44-49a4-9c89-979fb5b6233e`, revision 2. They contribute to
+This focused ledger, dated 3 November 2026, records three modules in the Library
+in the algebraic and reductive group-scheme program. They contribute to
 rational and central structure, thematic families 5 and 6. The
 [field-tori and rational-center ledger](field-tori-central-progress.md) and
 [transport and dynamic ledger](transport-dynamic-progress.md) record other
 parts of the program. All eight thematic families and both concrete
 milestones remain required.
 
-The three units use actual group objects over `Spec k` in the common
+The three modules use actual group objects over `Spec k` in the common
 general-base architecture. The field `k : Type u` and universe `u` are
 arbitrary. Their centers and kernels may be nonsmooth. Publication evidence
 appears below; mathematical reuse imports the current Library modules by
@@ -40,7 +37,7 @@ finite presentation, and the actual square commutes:
 groupHom p ≫ j = i ≫ q.
 ```
 
-Workers 1331 and 1404 authored this proof. It applies the published
+It applies the published
 `IsSplitTorus.fppfImage` construction to `i ≫ q` and proves target
 maximality with `centralSurjectionMaximalSplitTorusImage`. The final theorem
 discharges the maximality premise of its conditional assembly helper.
@@ -55,8 +52,7 @@ Scheme-surjectivity of `p` and `q` does not assert surjectivity on
 
 ## The actual normalizer map
 
-Worker 118's
-[`IsAdjointSplitTorusImage.normalizerPointsMap`](../../Langlands/GroupScheme/Adjoint/Normalizer.lean)
+The [`IsAdjointSplitTorusImage.normalizerPointsMap`](../../Langlands/GroupScheme/Adjoint/Normalizer.lean)
 ([construction and intrinsic identities](../../Langlands/GroupScheme/Adjoint/Normalizer.md))
 starts with the same actual image witness `h`. In namespace
 `Langlands.GroupScheme.IsAdjointSplitTorusImage` it constructs
@@ -98,7 +94,7 @@ isomorphism or an apartment action.
 proves the exact
 [`AdjointRealCocharacterComparisonStatement.{u}`](../../Langlands/GroupScheme/Adjoint/RealCocharacterStatement.lean)
 ([statement and provenance](../../Langlands/GroupScheme/Adjoint/RealCocharacterStatement.md)).
-Workers 1334 and 1475 authored the proof. Given only the actual
+Given only the actual
 `IsAdjointSplitTorusImage q i j p` witness, it proves:
 
 1. Actual postcomposition by `p`, extended to
@@ -115,7 +111,7 @@ split torus with nonzero weight space in the actual Lie algebra of `G`.
 annihilator. The formula specifies the map induced by `p`, beyond an
 abstract vector-space identification.
 
-The implementation composes two published comparison units.
+The implementation composes two published comparison modules.
 [`Rational.SplitTorusSurjection`](../../Langlands/GroupScheme/Rational/SplitTorusSurjection.lean)
 obtains injectivity on integral characters by cancellation of the
 underlying scheme epimorphism. Flat real scalar extension and perfect real
@@ -144,7 +140,7 @@ the source's page numbers; PDF pages are positions in the registered file.
 The implemented proof routes above use published Library results and need
 not follow the source proofs.
 
-| Registered source and locator | Assertion and relation to the Lean units |
+| Registered source and locator | Assertion and relation to the Lean modules |
 | --- | --- |
 | `milne-2017-algebraic-groups`, Theorem 5.39, printed p.108 / PDF p.124; Definition 12.14 and following paragraphs, printed p.236 / PDF p.252 | Image factorization as a faithfully flat map followed by a closed immersion, and splitness of a quotient of a split torus. The Lean image construction supplies an actual factorization and the required fppf properties. |
 | `borel-tits-1972-complements-groupes-reductifs`, standing convention, printed p.253 / PDF p.2; Definition (2.2), Remark (2.3), printed p.254 / PDF p.3; Theorem (2.20)(ii), printed p.260 / PDF p.9 | Images of maximal split tori under a central surjective morphism of connected reductive groups are maximal split. Centrality uses the scheme-theoretic kernel and permits inseparable maps. This supports the scope of the maximality dependency; the Lean dependency uses a rational-character proof. |
@@ -161,39 +157,29 @@ comparison uses the registered corrections of 1 November 2024.
 
 ## Verified publications and remaining obligations
 
-Worker 1107 checked the full independent acceptance reports, terminal
-machine receipts, publication records and fresh integrated validation.
-The primary Lean/Markdown pairs matched their frozen and publication
-bytes, the then-current Library and the workspace. The two proof targets'
-unchanged statement pairs also matched. This ledger does not submit or
-reprove any of those units.
+The primary Lean and Markdown files of these modules were matched against the commits at
+which they first appeared and the Library at the time of the check; the two proof targets'
+statement files were unchanged. The proofs were checked for Lake build, exact target,
+unchanged statement and unchanged inputs. This ledger does not reprove any of those modules.
 
-| Unit | Candidate | Accepted machine receipt | Independent review task and reviewer | Publication commit |
-| --- | --- | --- | --- | --- |
-| Split image existence proof | `ee492a7b-354c-4812-8570-36169350b930` | `9c63a726-8397-4e51-b0d1-952fbbf6bc8b` | `1e65df02-0d28-4310-afc6-445be0a9e3c6`, Reviewer 11928 | `d651c06c32b90676853a4e79f91b86385a8cd650` |
-| Normalizer construction and intrinsic identities | `dfbe5fc2-25ee-4bdd-8b74-039518a7d74f` | `1fdeadfd-93ba-47e1-ad91-f680d914259c` | `276382cb-3bad-4668-b609-476314dbae4a`, Reviewer 12051 | `cee2a2bc97a749578ef334ef7bda18162ecb6e78` |
-| Real cocharacter comparison proof | `6de0a12c-4b87-4845-a163-83e32363cadc` | `26552a9b-fc05-4a2b-937f-f2f4935bbf43` | `aebd7234-4f93-4795-affc-40f2f42170bf`, Reviewer 10741 | `0bafb17fad89ec0e812a3746bcaf72be623fc7d3` |
+| Module | First appeared at Library commit |
+| --- | --- |
+| Split image existence proof | `d651c06c32b90676853a4e79f91b86385a8cd650` |
+| Normalizer construction and intrinsic identities | `cee2a2bc97a749578ef334ef7bda18162ecb6e78` |
+| Real cocharacter comparison proof | `0bafb17fad89ec0e812a3746bcaf72be623fc7d3` |
 
-The corresponding integration IDs are
-`8aa7f2b69718445397a8ba97976906af`,
-`33248e82d6934d12a9660cc1cedaab1e` and
-`b9a12093c70e4dc7b30a96dd538c210a`. The proof receipts check Lake build,
-exact target, unchanged statement and frozen inputs under `lean.proof@1`.
-The normalizer unit is a construction with intrinsic identities under
-`lean.definition@1`; its acceptance is not a separate exact-target proof
-receipt.
 
 The supplied-quotient and supplied-maximal-torus boundaries remain explicit.
 General existence and conjugacy, the split central-component identification,
 derived and simply connected constructions, root-data comparisons and
 Galois-equivariant based root data retain their separate obligations. The
-derived/central split-product statement and its proof successor are recorded
+derived/central split-product statement and its proof (`derivedCentralSplitTorusProduct`) are recorded
 in the linked field-tori ledger. No integral cocharacter lifting or
 identification of a sheaf quotient's rational points with a quotient of
-point groups follows from these units.
+point groups follows from these modules.
 
-Worker 118 retains the Bruhat–Tits apartment, action, parahoric and model
-consumers. The real linear equivalence and normalizer identity provide
-algebraic inputs; buildings and their affine or metric comparisons remain
-consumer work. These publications close their exact units without
-completing the standing algebraic program.
+The Bruhat–Tits apartment, action, parahoric and model results (`Langlands/BruhatTits/`)
+are consumers of these modules. The real linear equivalence and normalizer identity provide
+algebraic inputs; buildings and their affine or metric comparisons belong to those
+consumers. These modules close their exact targets without
+completing the algebraic program.

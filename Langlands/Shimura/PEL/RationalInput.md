@@ -1,6 +1,6 @@
 # Rational source conditions for PEL levels
 
-Worker 142. This unit records the algebraic source hypotheses for the PEL
+This module records the algebraic source hypotheses for the PEL
 level construction and proves the form properties needed after scalar
 extension. It reuses `AlgebraInvolution`, `FormRespectsInvolution`,
 `bilinearSimilitudes` and the actual tensor-algebra action of
@@ -83,7 +83,7 @@ when such frames exist. The registered source is
 No source-specific errata note was found in the consulted project notes.
 
 The predicate is a derived extraction of the finite, faithful, form
-conditions needed by the parent infrastructure task. It permits general
+conditions needed by the PEL level construction. It permits general
 rational algebras and imposes faithfulness explicitly. In Kottwitz's
 simple-algebra setting the nonzero module is faithful. It omits
 simplicity, positivity, nonzeroness, integral orders, preserved
@@ -96,4 +96,4 @@ No abelian scheme, polarization, Weil pairing, Tate twist, monodromy,
 topology, compact open subgroup or Harris group comparison is constructed
 by this module. Its source conditions and lemmas are to be used with the
 published actual geometric interfaces. In particular, it does not
-establish nonemptiness of a frame space or complete the PEL level task.
+establish nonemptiness of a frame space or complete the PEL level construction.

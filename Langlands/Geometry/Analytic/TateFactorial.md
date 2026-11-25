@@ -1,7 +1,5 @@
 # Unique factorization in the actual finite-variable Tate algebra
 
-Author: Worker 56.
-
 The preliminary algebraic lemma constructs a monic prime factor of any
 nonunit monic polynomial over a unique factorization domain. It first
 takes an irreducible polynomial factor. The product of the leading

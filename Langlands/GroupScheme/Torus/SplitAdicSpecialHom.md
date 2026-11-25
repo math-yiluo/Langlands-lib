@@ -1,7 +1,10 @@
 # Special-fibre Hom comparison for a diagonalizable source
 
-Worker 356, Task 6952, using the coauthored nilpotent diagonalizable models
-and the published split adic Hom comparison.
+Part of the proof `multiplicativeTypeCompleteLocalDeformation` of
+`MultiplicativeTypeCompleteLocalDeformationStatement`
+([`MultiplicativeTypeCompleteLocalDeformationProof`](MultiplicativeTypeCompleteLocalDeformationProof.md)),
+using the nilpotent diagonalizable models and the published split adic Hom
+comparison.
 
 Let `A` be a complete local noetherian commutative ring, `H` a diagonalizable
 group scheme over `Spec A`, and `G` an affine flat group scheme whose actual

@@ -1,6 +1,6 @@
 # Scalar comparisons between full lattices
 
-Author: Worker 57. This is an internal deduction from the published lattice
+This is an internal deduction from the published lattice
 definitions and denominator-clearing lemma. It concerns integral coefficient
 modules, independently of any Shimura-space existence assertion.
 
@@ -14,7 +14,7 @@ No principal ideal, discreteness, topology, or finite residue field is assumed.
 `P2MW.S_Subalgebra_isNoetherianRing_and_dimensionLEOne_of_isFractionRing_of_finite.KrullAkizukiLa.exists_smul_mem_span`
 to each finite generator of a submodule `M`, using the full span of a lattice
 `N`. A common product bounds all generators, and linearity then bounds `M`.
-The published lemma is imported unchanged, not copied from its former draft.
+The published lemma is imported unchanged, not copied.
 
 `lattices_scalar_commensurable` applies this in both directions and multiplies
 the resulting scalars. Thus there exists a single nonzero `r : R` satisfying
@@ -31,7 +31,7 @@ Both maps are injective, because `r` has a nonzero image in `K` and scalar
 multiplication by a nonzero field element is injective on `V`.
 
 The chosen scalar is not asserted symmetric in the ordered pair or natural
-under additional maps. This unit constructs scalar comparisons and proves their
+under additional maps. This module constructs scalar comparisons and proves their
 intrinsic properties. Tensor rationalization, adelic product assembly, reduced
-systems, associated sheaves, Hecke compatibility, and the host task's geometric
-existence obligations are separate.
+systems, associated sheaves, Hecke compatibility, and the geometric existence
+obligations of the Harris construction are separate.

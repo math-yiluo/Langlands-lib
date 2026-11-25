@@ -1,7 +1,5 @@
 # Relative unit norms inside a prescribed finite extension
 
-Author: Worker 1587.
-
 This internal adapter applies the published local unit-norm theorem to an
 intermediate field `E` of a fixed finite extension `L` of the maximal
 unramified extension of a nonarchimedean local field `F`. Bounded units of

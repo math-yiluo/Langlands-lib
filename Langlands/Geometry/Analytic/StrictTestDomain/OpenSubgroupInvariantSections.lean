@@ -23,7 +23,7 @@ namespace OpenSubgroupTransport
 def sectionOperator (X : ρ.OpenSubgroupTransport) (k : X.subgroup) :
     BoundedAlgHom K X.domain.obj.algebra X.domain.obj.algebra :=
   (ρ.sectionAction X.domain.obj
-    (ρ.invariantStabilizerInclusion X.subgroup X.domain k)).hom
+    (ρ.invariantStabilizerInclusion X.subgroup X.domain k)).asIso.hom
 
 /-- The K-subalgebra of actual quotient sections fixed by every element of the
 object's chosen open subgroup. -/

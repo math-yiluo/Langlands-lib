@@ -25,8 +25,8 @@ def EtalePullbackGSpaceStatement
     T2Space (localizedSpaceFunctor.obj Y) →
     ∀ (σ : G →* Aut P) (σA : G →* Aut A) (σB : G →* Aut B),
       IsContinuousAction σA → IsContinuousAction σB →
-      (∀ a, (σ a).hom ≫ p = p ≫ (σA a).hom) →
-      (∀ a, (σ a).hom ≫ q = q ≫ (σB a).hom) →
+      (∀ a, (σ a).asIso.hom ≫ p = p ≫ (σA a).asIso.hom) →
+      (∀ a, (σ a).asIso.hom ≫ q = q ≫ (σB a).asIso.hom) →
       T2Space (localizedSpaceFunctor.obj P) ∧ IsContinuousAction σ
 
 end Langlands.Analytic.SaturatedAtlasPresentation

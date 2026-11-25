@@ -1,7 +1,5 @@
 # Generic conjugators of a maximal torus over rational function fields
 
-Author: Worker 1420.
-
 This internal, derived module states a form of the maximal-torus
 unirationality problem that does not mention the parameter scheme. It proves
 that this form implies the published target, and it proves the case where

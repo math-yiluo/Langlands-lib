@@ -1,6 +1,6 @@
 # Proper-induction exclusion and cuspidal extraction from one special vertex
 
-Worker 4358. This module reduces the rational cuspidal Jacquet-factor
+This module reduces the rational cuspidal Jacquet-factor
 extraction target
 `Langlands.Aubert.General.RationalPointFamily.RationalCuspidalJacquetFactorExtractionStatement.{u, v}`
 to one published proposition:
@@ -15,9 +15,11 @@ through the published `rationalSpecialVertexCompactInputs_of_jointBasis`.
 
 The published route through Renard VI.3.5
 (`rationalCuspidalExtractionInputs_of_wholeStatement`, module
-`RationalLeviInductionExclusionFromWhole`) needs the whole-category splitting.
-Its proof, in the draft of Task 4386, needs both the special-vertex inputs and
-the fixed-level finiteness (KF) of Renard VI.3.4. The route here needs only the
+`RationalLeviInductionExclusionFromWhole`) needs the whole-category splitting,
+which the Library does not prove. Its reduction of the first step of Renard's
+proof, `representedCuspidalRemainderSplitting_of_fixedLevelFiniteness` (module
+`RepresentedCuspidalRemainderSplittingReduction`), assumes both the joint basis
+existence and the fixed-level finiteness (KF) of Renard VI.3.4. The route here needs only the
 special-vertex inputs. It does not use (KF), the whole-category splitting or the
 compact-restriction category decomposition.
 
@@ -129,8 +131,9 @@ nontriviality.
 
 - `rationalCuspidalExtractionInputs_of_specialVertexInputs` proves the
   published `RationalCuspidalExtractionInputsStatement.{u, v}` from `hSV`. It
-  has the binders of the target. Its first conjunct is Worker 174's published
-  unconditional `exists_pointInducedJacquetGeometricFiltration`. The second
+  has the binders of the target. Its first conjunct is the published
+  unconditional `exists_pointInducedJacquetGeometricFiltration` (module
+  `RationalInducedJacquetGeometricFiltration`). The second
   conjunct is the exclusion above.
 - `rationalCuspidalJacquetFactorExtraction_of_specialVertexInputs` composes it
   with the published `rationalCuspidalJacquetFactorExtraction_of_inputs`. It
@@ -148,7 +151,7 @@ The field universe `u` and the carrier universe `v` are independent. No
 characteristic, rank, admissibility, finite-length or finite-generation
 restriction is added. No published statement or imported pair is changed. The
 special-vertex inputs (equivalently, for this purpose, the joint basis
-existence of Task 4169, `8c39faa0-2a70-4fc4-a027-914987aba924`) remain the only
+existence `JointSpecialCompactBasisExistenceStatement`) remain the only
 unproved input. Once one of them is proved, the target is a direct application
 of `rationalCuspidalJacquetFactorExtraction_of_specialVertexInputs` or
 `rationalCuspidalJacquetFactorExtraction_of_jointBasis`. Development

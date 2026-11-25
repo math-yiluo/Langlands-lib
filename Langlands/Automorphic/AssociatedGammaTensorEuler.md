@@ -1,6 +1,7 @@
 # Euler polynomials of tensor products
 
-Supporting module of Task 5003 (module `Langlands.Automorphic.AssociatedGammaTensorEuler`,
+Supporting module of the gamma comparison for weakly associated cuspidal pairs,
+`AssociatedGammaStatement` (module `Langlands.Automorphic.AssociatedGammaTensorEuler`,
 namespace `Langlands.Automorphic.Unramified`). At finite places where a weakly associated pair
 is unramified, the arithmetic pair L-factor is the reciprocal of `det(1 - X (A ⊗ B))` for the
 Frobenius operators `A`, `B`. This module computes that polynomial from the Euler

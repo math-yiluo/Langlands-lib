@@ -1,13 +1,13 @@
 # Pulling back the compact induction of a norm-kernel summand along an automorphism
 
-Author: Worker 5226. This is an internal construction with supporting results. It was derived for the planned proof of the free-module conjunct of the Lemma of Renard VI.10.4 (printed pp.209–212 / PDF pp.215–218). Reference: David Renard, *Représentations des groupes réductifs p-adiques*, French version dated 9 July 2026, registered as `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
+This is an internal construction with supporting results. It was derived for the proof of the free-module conjunct of the Lemma of Renard VI.10.4 (`InducedProgeneratorEndBasis`) (printed pp.209–212 / PDF pp.215–218). Reference: David Renard, *Représentations des groupes réductifs p-adiques*, French version dated 9 July 2026, registered as `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 
 ## Relation to Renard
 
 In the proof of the Lemma (printed p.210 / PDF p.216), Renard filters `r_D i_P^G(Π_D)` with successive quotients `w·Π_D` for `w ∈ W(D)`, and then writes "Or, si `w ∈ W(D)`, `w·Π_D ≃ Π_D`" without further proof. Here `Π_D = ind_{⁰M}^M(ρ₀)` with `ρ₀` an irreducible summand of the restriction of an irreducible supercuspidal `π` to `⁰M`.
 
-- `nonempty_pullback_rationalNormKernelSummandInduction_iso` proves that assertion for an actual automorphism `e` of the rational points that preserves `⁰M`. The proof is the author's; it uses Renard VI.3.2.
-- `exists_pullback_iso_twist_of_hom_ne_zero` is not in Renard. Renard removes the pieces with `w ∉ W(D)` by the block projection `r_D` (with (V.4.3.3) and VI.5.3(iii)). The author's planned proof works with all pieces of the geometric-lemma filtration instead. It needs to know that a piece `w·Π_D` with `w ∉ W(D)` has no nonzero map to `Π_D`, and this theorem gives the contrapositive.
+- `nonempty_pullback_rationalNormKernelSummandInduction_iso` proves that assertion for an actual automorphism `e` of the rational points that preserves `⁰M`. The proof is not Renard's; it uses Renard VI.3.2.
+- `exists_pullback_iso_twist_of_hom_ne_zero` is not in Renard. Renard removes the pieces with `w ∉ W(D)` by the block projection `r_D` (with (V.4.3.3) and VI.5.3(iii)). The proof in `InducedProgeneratorEndBasis` works with all pieces of the geometric-lemma filtration instead. It needs to know that a piece `w·Π_D` with `w ∉ W(D)` has no nonzero map to `Π_D`, and this theorem gives the contrapositive.
 
 The other declarations are general facts about compact induction from an open normal subgroup. Renard does not state them.
 
@@ -63,4 +63,4 @@ Fix a nonarchimedean local field `F`, a connected reductive group scheme `G` ove
 
 ## Hypotheses and use
 
-The automorphism condition `he` is assumed. In the planned application `e` is the map on rational points of an automorphism `φ : M ≅ M` of a Levi subgroup, and `he` comes from `mem_rationalCommonNormKernel_mapIso_iff` (`Geometry/Building/ValuationBuildingIsoTransport.lean`). That application is not part of this file.
+The automorphism condition `he` is assumed. In the application in `InducedProgeneratorEndBasis`, `e` is the map on rational points of an automorphism `φ : M ≅ M` of a Levi subgroup, and `he` comes from `mem_rationalCommonNormKernel_mapIso_iff` (`Geometry/Building/ValuationBuildingIsoTransport.lean`). That application is not part of this file.

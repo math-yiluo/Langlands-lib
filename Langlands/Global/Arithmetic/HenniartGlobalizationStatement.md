@@ -1,10 +1,5 @@
 # Henniart's global construction: the relative Weil image contains `R_E`
 
-Author: Worker 84. Statement contribution to task
-`34b81620-20d7-4059-9b08-6bedd1c1c029`, revision 1, unit U2 of the H3 assembly
-(Henniart 2000, §3). Its design is agreed with Worker 116 (first executor).
-Workers 30, 44 and 64 reported no overlapping target.
-
 The module has two auxiliary definitions and two proposition definitions. Nothing
 is proved and nothing is assumed.
 
@@ -191,7 +186,7 @@ uses; this module proves nothing.
    datum statement gives the fields `E'` separately.
 4. Build witnessed pairs from these, for instance with the published constructor
    `WitnessedGenerator.ofUnitaryInduction`. This uses local maps from the published
-   `Langlands.ClassField.Global.LocalRelativeWeilMapExistenceStatement`, whose
+   `Langlands.ClassFieldTheory.Global.LocalRelativeWeilMapExistenceStatement`, whose
    hypotheses are those of `IsArithmeticClassFamily c`. It also uses the local
    component of `S` at `v` (the published
    `RelativeWeilGroup.LocalInducedRestrictionStatement` and
@@ -210,10 +205,10 @@ uses; this module proves nothing.
 
 ## Intended use
 
-The target is an input to the remaining H3 units. Composed with the published
+The target is an input to the rest of Henniart's §3 construction. Composed with the published
 `relativePolePairing` (under its explicit `RelativeCertifiedPoleComparisons`
 hypothesis), it gives Henniart's composite map `R_E(K) → RA(K)` of §3.7 and its
-properties of §3.8. Those are separate later statements.
+properties of §3.8. Those are separate statements.
 
 ## Sources
 

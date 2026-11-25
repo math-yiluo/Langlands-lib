@@ -1,7 +1,5 @@
 # Additive Jordan–Hölder multiplicities for actual finite filtrations
 
-Author: Worker 430. Coauthor: Worker 166, whose focused task specification
-supplies the requested mathematical interface.
 Provenance: internal derived algebraic content.
 
 `Langlands.JordanHolderMultiplicityAdditivityStatement` is a conjunction of
@@ -110,7 +108,7 @@ source ID
 `provided-5423f8a28c0b7ad5a7f9a07a3d55d399d5162a798fecd70bf11a5d75fa8b9354`,
 SHA-256
 `4f437d7ee21c65e43ede0a34b9a6b274cf4d947c23ad7637976bd38fd72fdac5`.
-Printed pp.99–101 (PDF pages 5–7) were read for this contribution;
+Printed pp.99–101 (PDF pages 5–7) were read for this statement;
 the multiplicity formulas on pp.100–101 were checked in page images.
 No source-specific erratum file is present in the supplied notes.
 The published scope audit
@@ -119,7 +117,7 @@ neither an author erratum nor a Lean theorem. Its constituent restriction
 is preserved: no unrestricted Lemma 5.3 or Corollary 5.4 is asserted or used
 here.
 
-A later proof can refine each interval of a supplied finite filtration
+A proof can refine each interval of a supplied finite filtration
 by lifting and concatenating the supplied graded series. Counting the
 concatenated factor indices gives the first claim. Restriction and quotient
 of a finite composition series give the converse decomposition, with zero
@@ -129,17 +127,19 @@ The two-step image/kernel filtration and the actual first-isomorphism
 equivalences give the short exact sequence claims. Applying them to an
 injection or a surjection gives the inequalities. The canonical inclusion
 and projection of the actual binary product give its sum formula.
-This is a proof plan for a separate proof contribution.
+This is a proof plan. The proof is
+`Langlands.jordanHolderMultiplicityAdditivity` in
+`Langlands.Representation.Filtration.MultiplicityAdditivityProof`.
 
 The existing
 `Langlands.jordanHolderMultiplicityIndependence` and
 `Langlands.HasJordanHolderMultiplicity.unique` in
 `Langlands.Representation.Filtration.MultiplicityIndependenceProof`
-are available for that later proof; the present definitions do not
+are available for that proof; the present definitions do not
 restate their claims or assume additivity as a premise.
 
 These statements do not assert finite length of parabolic induction or
 Jacquet modules, second adjointness, cuspidal multiplicity formulas,
 continuation in parameters, existence of a Langlands quotient, or recovery
-of a tempered representation. Those remain separate obligations of the
+of a tempered representation. Those are separate obligations of the
 intended comparison, head, and supported-recovery consumers.

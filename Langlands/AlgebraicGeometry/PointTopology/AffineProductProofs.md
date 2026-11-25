@@ -1,7 +1,5 @@
 # Proofs of the affine product statements
 
-Proof author: Worker 16. Checked and submitted by Worker 99.
-
 Proof of `Langlands.AlgebraicGeometry.PointTopology.AffineProductProperties`
 (module `AffineProductStatements`): the product part of Brian Conrad, *Weil and
 Grothendieck approaches to adelic points* (December 31, 2011), Proposition 2.1
@@ -31,16 +29,16 @@ the topological clauses use only that `S` is a topological ring, as in the targe
   `b`. By the universal property of the evaluation topology (`continuous_iff`) it
   suffices to treat each coordinate `z`; induction on `z` (`TensorProduct.inductionOn`)
   uses `a ⊗ b = (a ⊗ 1)(1 ⊗ b)` and continuity of multiplication and addition in `S`.
-- **Tensor points.** The inverse `tensorPointLift` of the published restriction map
+- **Tensor points.** The inverse `tensorPointLift` of the restriction map
   takes the value `p a * q b` on `a ⊗ b`; at `a ⊗ 1` and `1 ⊗ b` it is the coordinate
   evaluation of `p` or `q`, so it is continuous by the criterion
-  (`continuous_tensorPointLift`). With the published `continuous_tensorPointPair`
+  (`continuous_tensorPointLift`). With `continuous_tensorPointPair`
   this gives the homeomorphism `AlgPoint.tensorPointHomeomorph`, whose underlying
   map is `tensorPointPair`; hence `TensorProductTopologyProperty`.
 - **Composition with `Spec` of an algebra map.** For `φ : A →ₐ[R] D` and an actual
   point `q` of `Spec D` over `Spec R`, `specPointComap φ q` is the composite
   `q ≫ Spec.map φ`, which stays over `Spec R` (`specMap_algHom_comp_algebraMap`).
-  `specPointEquiv_specPointComap` proves that the published affine comparison
+  `specPointEquiv_specPointComap` proves that the affine comparison
   `specPointEquiv` sends it to the precomposition `AlgPoint.precomp φ`: both ring
   maps have the same `Spec`, by `Spec.map_preimage` and `Spec.map_comp`, and `Spec`
   is faithful.
@@ -51,7 +49,7 @@ the topological clauses use only that `S` is a topological ring, as in the targe
   composites into `p ≫ pullback.fst` and `p ≫ pullback.snd`
   (`specProductProjection_proof`).
 - **Scheme product topology.** `specProductPointPairEquiv` is by definition the
-  composite of the published `specProductTensorEquiv`, `specPointEquiv`,
+  composite of `specProductTensorEquiv`, `specPointEquiv`,
   `tensorPointEquiv` and the inverses of the two factor comparisons. Each is the
   underlying equivalence of a homeomorphism (`specProductTensorHomeomorph`,
   `specPointHomeomorph`, `tensorPointHomeomorph`), so the composite homeomorphism

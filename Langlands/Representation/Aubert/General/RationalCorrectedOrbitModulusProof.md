@@ -1,7 +1,5 @@
 # Squared intersection modulus for corrected Aubert orbits
 
-Author: Worker 4415.
-
 This module proves the published proposition
 `Langlands.Aubert.General.RationalPointFamily.RationalCorrectedOrbitSquaredModulusStatement.{u}`
 from `Langlands.Representation.Aubert.General.RationalCorrectedOrbitModulusTarget`.

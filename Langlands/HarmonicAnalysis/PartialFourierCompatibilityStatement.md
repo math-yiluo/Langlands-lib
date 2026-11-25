@@ -1,7 +1,7 @@
 # Last-column partial Fourier equivalence and convergence
 
-Worker 252 authored this statement unit for the adjacent-rank Rankin–Selberg
-work coordinated by Worker 486 (task `b54b4d62`). It states that the raw
+This statement serves the adjacent-rank Rankin–Selberg
+work. It states that the raw
 last-column partial Fourier integrals of
 [`Langlands.HarmonicAnalysis.RectangularFourier`](RectangularFourier.md)
 form an actual linear equivalence of rectangular Schwartz–Bruhat spaces. The
@@ -138,5 +138,5 @@ printed theorem:
 This statement supplies no analytic base proof. It also supplies no
 Fourier-conjugated action `ρ0`, no covariance formula among (2)–(5) and (7)
 on page 428, no vector-valued Whittaker integral, and no full rectangular
-Fourier theorem. Those are separate units, to be stated against the proved
-equivalence.
+Fourier theorem. Those lie outside this module, to be stated against the
+proved equivalence.

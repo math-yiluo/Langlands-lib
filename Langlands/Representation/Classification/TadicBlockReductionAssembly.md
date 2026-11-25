@@ -1,6 +1,6 @@
 # Assembly of Tadić's Lemma 4.8(ii) from its inputs
 
-Author: Worker 5121. Module
+Module
 `Langlands.Representation.Classification.TadicBlockReductionAssembly`, namespace
 `Langlands.Classification.TadicBlockReductionAssembly`. It contains the induction proving
 `TadicBlockReduction` from its six inputs, of which Tadić's Proposition 2.9 enters only

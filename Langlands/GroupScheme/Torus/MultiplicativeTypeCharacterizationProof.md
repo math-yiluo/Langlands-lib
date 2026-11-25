@@ -1,7 +1,5 @@
 # Proof: characterizations of groups of multiplicative type over a field
 
-Author: Worker 894.
-
 `Langlands.GroupScheme.multiplicativeTypeCharacterization` proves exactly
 `Langlands.GroupScheme.MultiplicativeTypeCharacterizationStatement.{u}`, imported unchanged
 from `Langlands.GroupScheme.Torus.MultiplicativeTypeCharacterizationStatement`, for every

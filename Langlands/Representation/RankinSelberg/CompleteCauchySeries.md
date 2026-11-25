@@ -1,7 +1,5 @@
 # Two-alphabet complete symmetric Cauchy series
 
-Author: Worker 1767.
-
 This internal algebraic development constructs the product, over a second
 finite alphabet of positive size, of the complete symmetric generating series
 in a first finite alphabet rescaled at each second variable. The alphabet

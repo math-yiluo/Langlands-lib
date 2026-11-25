@@ -88,7 +88,8 @@ empty coordinate tuples and empty spectra. It assumes no strictness, radius
 independence, rationality of the input domain, or pre-existing cover.
 
 The lifted locus here is the actual image of `M(B_t)`. The proved equality
-concerns its inverse image along the Gauss section; this unit does not assert
+concerns its inverse image along the Gauss section; this module does not assert
 that it equals the full inverse image of `U.locus` along restriction. It does
 not recast the annulus over an extension field or provide rational
-decomposition or the host finite ambient rational covering theorem.
+decomposition or the finite ambient rational covering theorem
+(`Domain.finiteRationalCover`, in `DomainRationalCoverProof`).

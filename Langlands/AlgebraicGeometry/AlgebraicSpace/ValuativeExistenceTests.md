@@ -1,7 +1,5 @@
 # Spectra of algebras over a valuation ring as test schemes
 
-Author: Worker 198.
-
 Helper module for the proof of `SpaceValuativeExistenceStatement` (Stacks Project, Lemma
 67.42.3, Tag 0A3Y, (1) ⇒ (3)), given in `SpaceValuativeExistenceProof.lean`. It contains no
 statement from the literature. It sets up the test schemes `Spec R` for `A`-algebras `R`, the

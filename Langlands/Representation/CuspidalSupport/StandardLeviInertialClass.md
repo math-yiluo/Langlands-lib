@@ -1,7 +1,5 @@
 # Inertial classes of a standard Levi and the map to the ambient classes
 
-Author: Worker 4.
-
 Source: David Renard, *Représentations des groupes réductifs p-adiques*, French version of 9 July 2026, VI.7.1, printed pp. 180–181 / PDF pp. 186–187 (definition of inertial equivalence), and VI.7.3, printed p. 185 / PDF p. 191 (second display for `i_{MG}`). VI.10.6, printed p. 215 / PDF p. 221, uses the map on a standard Levi and writes its input as a class of a standard cuspidal datum inside that Levi. Registered source: `renard-2026-representations-groupes-reductifs-padiques`, SHA-256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 
 ## Standard cuspidal data and the relative quotient

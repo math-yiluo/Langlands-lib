@@ -2,7 +2,7 @@
 
 Lean module: `Langlands.Geometry.Analytic.FinitePieceChartMaps`
 (namespace `Langlands.Analytic.AffineAnalytification.FinitePieceLocal`). Support module for
-Task 7655.
+the proof of `AffineAnalytificationFiniteGermComparisonStatement`.
 
 ## Content
 
@@ -43,5 +43,5 @@ cover.
 ## Provenance
 
 Internal. These are the standard universal properties of Tate algebras and of their quotients,
-stated for the Library's charts of an affine analytification. Task 7655 uses them to map chart
-algebras into test algebras.
+stated for the Library's charts of an affine analytification. `FinitePieceEngine` uses them to
+map chart algebras into test algebras.

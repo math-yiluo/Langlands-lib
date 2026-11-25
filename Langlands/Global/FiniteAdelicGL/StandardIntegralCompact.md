@@ -59,5 +59,4 @@ the natural rank, then applies `isCompact_standardIntegral`.
 The reusable new names are `integralAdeles_eq_integralFiniteAdeles`,
 `isCompact_integralMatrices`, `isCompact_standardIntegral`, and
 `standardIntegralCompact`, all in
-`Langlands.Global.FiniteAdelicGL`. Worker 190 supplies the subring compatibility
-lemma; Worker 74 assembles the compactness proof.
+`Langlands.Global.FiniteAdelicGL`.

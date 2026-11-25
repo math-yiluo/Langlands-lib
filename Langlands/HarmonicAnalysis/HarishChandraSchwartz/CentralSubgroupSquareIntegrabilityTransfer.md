@@ -1,7 +1,7 @@
 # Transferring square integrability between central quotients
 
 This module is internal measure and representation glue. It combines the
-published arbitrary-central-subgroup pushforward results of
+arbitrary-central-subgroup pushforward results of
 `Representation.Unitary.CentralSubgroupForm` with
 `Plancherel.centralSubgroupCoefficientLpComparison`, then specializes their
 hypotheses on actual rational points. It makes no new original-literature
@@ -20,7 +20,7 @@ square integrable modulo `C`,
 `centralSubgroupFullQuotientMeasure_isHaar` proves that this actual pushforward
 is Haar. The proof uses admissibility and compact-open duality to choose a
 nonzero smooth functional and a vector on which it is nonzero, then applies
-the published pushforward-Haar theorem. That theorem uses the L2 coefficient
+the pushforward-Haar theorem. That theorem uses the L2 coefficient
 to establish local finiteness on the full central quotient.
 The original `C` is not required to be closed.
 
@@ -35,7 +35,7 @@ normal central subgroup `A`, compactness of `Z(G)/(A in Z(G))`, a Borel
 measurable structure on `G/A`, and any displayed Haar measure `muA` on it.
 For a Hausdorff locally compact second-countable ambient group, it transfers
 square integrability from the original `C,muC` to `A,muA` by passing through
-the actual pushed-forward full-center measure and applying the published
+the actual pushed-forward full-center measure and applying the
 compact-central-fiber coefficient Lp comparison. No containment relation
 between `C` and `A` is assumed. There is no valuation-index hypothesis.
 The generic group and representation-carrier universes are independent.
@@ -53,7 +53,7 @@ integrability of the same representation modulo the actual point image of
 
 The implementation derives compact-open cofinality from the canonical
 rational-point topology, derives closedness of the actual split-component
-image, and uses the published
+image, and uses
 `compactSpace_center_quotient_splitComponent` to supply compactness of the
 full abstract center modulo that image. It installs the canonical Borel
 structure on the auxiliary full-center quotient and applies the generic
@@ -61,7 +61,7 @@ transfer. The field and representation-carrier universes remain independent;
 no splitness or quasisplitness of the ambient group and no characteristic
 restriction is introduced.
 
-This unit supplies the arbitrary-central-subgroup to actual split-center
+This module supplies the arbitrary-central-subgroup to actual split-center
 square-integrability bridge. It does not prove a coefficient Xi bound,
 uniform exponent or threshold result, positive-part decay, or full wave-packet
 Schwartz membership. The Borel premises are essential to applying the

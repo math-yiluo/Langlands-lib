@@ -25,7 +25,7 @@ open InfiniteWhittakerSlice FiniteWhittakerDual FiniteWhittakerSemilocal FiniteW
 open EqualSchwartzTensor
 open CuspidalPairFunctionalEquation
 open FunctionalEquationComparison.CompletedEquationAdapter
-open ClassField.Global.RelativeWeilGroup (IsCanonicalFiniteAdditiveComponent)
+open ClassFieldTheory.Global.RelativeWeilGroup (IsCanonicalFiniteAdditiveComponent)
 open MeasureTheory QuotientIntegration Whittaker EqualFiniteWhittakerTests FiniteWhittakerModel
 
 attribute [local instance 100] LieRing.ofAssociativeRing

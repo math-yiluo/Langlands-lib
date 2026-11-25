@@ -1,7 +1,6 @@
 # Reduction of the contragredient Whittaker identity
 
-Module `Langlands.Global.RankinSelberg.ContragredientDualWhittakerReduction`. Author:
-Worker 381, with Worker 126 (sphericity of the dual cusp form).
+Module `Langlands.Global.RankinSelberg.ContragredientDualWhittakerReduction`.
 
 ## 1. Content
 
@@ -28,7 +27,7 @@ This module, in the namespace `Langlands.Global.RankinSelbergGlobal`, contains
 
 * the theorem `contragredientDualWhittakerReduction`, which proves it.
 
-The two premises are open statements:
+The two premises are Library statements:
 
 * (A) [`Automorphic.CuspidalOperatorMultiplicityOneStatement`](../../Automorphic/CuspidalOperatorMultiplicityOneStatement.md):
   equivalent actual cuspidal operator realizations have the same underlying realization
@@ -38,9 +37,11 @@ The two premises are open statements:
   `φ̃(g) = φ(w_n ᵗg⁻¹)` of every vector of `T` (Gelfand–Kazhdan, Cogdell 2004 pp.201, 203,
   206).
 
-The theorem is a reduction. It is an intermediate result of Task 7121 in the sense of the
-"Intermediate results" section of that task's revision 2; the task's required result, an
-unconditional proof of the target, stays open.
+The theorem is a reduction, an intermediate result towards the target. Both premises are
+proved in the Library: (A) by `Automorphic.cuspidalOperatorMultiplicityOne` (module
+`CuspidalOperatorMultiplicityOneProof`), (B) by `cuspidalTransposeInverseContragredient`
+(module `CuspidalTransposeInverseContragredientProof`). No theorem of the Library combines
+them with this reduction into an unconditional proof of the target.
 
 ## 2. Provenance
 
@@ -64,8 +65,8 @@ of `T`.
 3. By (A), `T'.realization = Td.realization`, hence `T' = Td`
    (`cuspidalOperatorRealization_ext`); substitute.
 4. Choose `xd` in `Td` with cusp form `φ̃_x` (step 1).
-5. `xd` is spherical outside `S`: `isSphericalOutside_of_cuspFunction_eq_dual` (Worker 126,
-   module `Langlands.Global.RankinSelberg.ContragredientDualSpherical`), since `x` is.
+5. `xd` is spherical outside `S`: `isSphericalOutside_of_cuspFunction_eq_dual` (module
+   `Langlands.Global.RankinSelberg.ContragredientDualSpherical`), since `x` is.
 6. The `ψ⁻¹`-Whittaker function of `xd` is `W̃_x`:
    `cuspWhittaker_inv_eq_dualFunction` (in
    [ContragredientDualWhittakerIdentity](ContragredientDualWhittakerIdentity.md)) for the

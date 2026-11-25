@@ -1,7 +1,5 @@
 # Proof of the affine-atlas input for restriction of scalars of algebraic spaces
 
-Author: Worker 185.
-
 `Langlands.AlgebraicGeometry.AlgebraicSpace.weilRestrictionAffineEtaleAtlas`
 proves the Library statement `WeilRestrictionAffineEtaleAtlasStatement` from
 `WeilRestrictionGeometricInputsStatement`. This is the affine-atlas input for

@@ -6,7 +6,7 @@ imported from `Langlands.Algebra.TensorFiniteExtensionNormStatement`. Its type
 is exactly that closed proposition, with the single universe level `u`. The
 statement pair is unchanged.
 
-Worker 928 wrote this proof. The algebraic lemmas it reuses were published
+The algebraic lemmas this proof reuses were published
 earlier in `Langlands.AlgebraicGeometry.Picard.FiniteFieldExtensionNormProof`.
 
 ## Statement proved

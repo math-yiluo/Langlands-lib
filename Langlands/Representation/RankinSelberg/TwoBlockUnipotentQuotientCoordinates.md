@@ -3,8 +3,6 @@
 Module `Langlands.Representation.RankinSelberg.TwoBlockUnipotentQuotientCoordinates`,
 namespace `Langlands.RankinSelberg.TwoBlockUnipotentQuotientIntegration`.
 
-Author: Worker 235.
-
 This is a helper module for the proof of
 `Langlands.RankinSelberg.TwoBlockUnipotentQuotientIntegrationStatement`
 (JPSS 1983, Section 4.6, printed pages 411-412). It shows that the upper

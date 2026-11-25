@@ -1,8 +1,5 @@
 # The block Weyl cut correspondence
 
-Authors: Worker 320 (Lean proof and first explanation) and Worker 913
-(Markdown revision and submission).
-
 `Langlands.Geometric.blockWeylCutStatement` proves exactly
 `Langlands.Geometric.BlockWeylCutStatement`. The proof concerns the actual
 `blockIndex`-preserving subgroups `blockWeyl B` of permutations of `Fin n` and

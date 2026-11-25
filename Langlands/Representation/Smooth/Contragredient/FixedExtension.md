@@ -52,10 +52,10 @@ available. The published actual-inclusion and smooth-dual comparison modules
 then compare that restricted action with the ambient one. Existence of such
 an ambient representation and embedding, the common compact support bound,
 its compactness on the actual kernel, fixed-level class finiteness and category
-decomposition remain separate mathematical obligations.
+decomposition are not part of this construction.
 
 The module imports published compact-open fixed duality and its construction,
 and the published fixed-functional restriction evaluation and naturality
 module. It uses `LinearMap.leftInverse`, `LinearMap.leftInverse_apply_of_inj`
-and `LinearMap.ker_eq_bot` from Mathlib. Worker 485 authored this adapter using
-those imported results; no shared draft is incorporated.
+and `LinearMap.ker_eq_bot` from Mathlib. This adapter is built from those
+imported results.

@@ -6,7 +6,7 @@ Lean module: `Langlands.Representation.Archimedean.RealCharacterInducedSwap`, na
 ## Role and provenance
 
 This module is an internal step in the proof of
-`Langlands.Archimedean.RealCharacterInducedFiltrationStatement` (Task 7133). That statement
+`Langlands.Archimedean.RealCharacterInducedFiltrationStatement`. That statement
 asks for the adjacent filtration `RealAdjacentFiltration 3 [] [] (character c) (induced d)`
 of the `O(3)`-finite functions of the standard module of `[c, d]`, where `c` is a real
 character and `d` a complex character of nonzero weight. The module
@@ -22,9 +22,9 @@ The two theorems take as hypotheses statements that are not proved here:
 - `RealOrthogonalBlockUncertaintyStatement` (module
   `RealOrthogonalUncertaintyStatement`).
 
-Surjectivity uses the `K`-type count of the module `RealKTypeTransport` (Worker 764).
+Surjectivity uses the `K`-type count of the module `RealKTypeTransport`.
 
-The intertwining operators are the block Frobenius maps of Task 7067 (modules
+The intertwining operators are the block Frobenius maps (modules
 `RealBlockFrobeniusMap`, `RealBlockPositionData`, `RealCharacterPairReducible`). They act on
 block Fourier coefficients along one rotation, `Φ^p_j (q f) = μ(j) Φ^p_j f`. The multipliers
 are those of the Library module `RealBlockMultiplier`. The route is specific to this project.
@@ -42,14 +42,14 @@ No literature statement is formalized, so the module has no sources.
 - `r₀`, `r₁`: the rotations in the coordinates `0, 1` and `1, 2`. `Φ^p_j` is the left block
   Fourier coefficient of weight `j` along `r_p` (`blockFourierCoefficient 3 p j`).
 - `pairParity c c' = (ε_c + ε_{c'}) mod 2` and `sigma0 c c' = (-1)^{pairParity c c'}`
-  (Task 7067).
+  (modules `RealCharacterPairData` and `RealCharacterPairReducible`).
 - In the Lean statements the integer `m₀` is called `m`.
 
 ## Declarations
 
 ### General lemmas
 
-For data `h : IsBlockFrobData n ds es p ε σ μ` (Task 7067), `blockFrobMap h : K(ds) → K(es)`.
+For data `h : IsBlockFrobData n ds es p ε σ μ` (module `RealBlockFrobeniusMap`), `blockFrobMap h : K(ds) → K(es)`.
 
 - `frob_injective_of_ne_zero`: if `μ k ≠ 0` for every `k` of the class `k ≡ ε (mod 2)`, then
   `blockFrobMap h` is injective. Off the class the coefficients vanish by parity
@@ -90,7 +90,7 @@ For data `h : IsBlockFrobData n ds es p ε σ μ` (Task 7067), `blockFrobMap h :
   straddles the induction block, so the data is built field by field: position `0` of both
   lists is `(sign (ℓ+1) mod 2, exponent a)`, and the block `1, 2` goes from `(χ_B, c)` to
   `(c, χ_B)`.
-- `dataA0`: `A₀ : K(M) → K(P)`, the swap of `χ_A` and `c` along `r₀` (Task 7067's `data_swap`).
+- `dataA0`: `A₀ : K(M) → K(P)`, the swap of `χ_A` and `c` along `r₀` (`data_swap` of `RealCharacterPairReducible`).
 - `dataB0`: `B₀ : K([c, d]) → K(M)` along `r₀`, on the class `pairParity c χ_A` with sign
   `sigma0 c χ_A`. It straddles the induction block and is built field by field: the block
   `0, 1` goes from `(c, χ_A)` to `(χ_A, c)`, and position `2` of both lists is `χ_B`.

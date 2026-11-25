@@ -2,7 +2,7 @@
 
 Lean module: `Langlands.Representation.Archimedean.ComplexBlockDual`.
 
-Worker 140 wrote this module for Task 7063 (`f2d2e257-dd4b-4820-96ab-faa9c832ffb8`), the proof of
+This module is infrastructure for the proof of
 `ComplexStandardLanglandsQuotientStatement`. It is the recursion step of the Langlands-quotient
 argument along `P_{a,k+1}` with a tied last block. It generalizes the induction step of the
 published `ComplexJacquetDual.jacquet_eq_zero` (`P_{m,1}`). There the restriction `u ↦ u ∘ ι`
@@ -21,8 +21,8 @@ Unprefixed names below are in the namespace `Langlands.Archimedean.ComplexBlockD
 ## The statement
 
 `ComplexBlockDualStatement` assumes the two statements `ComplexBlockChartIntegrableStatement` and
-`ComplexBlockParabolicIntegrationStatement`. These are only stated, not yet proved, in the Library.
-Under these assumptions it says the following.
+`ComplexBlockParabolicIntegrationStatement`. Both are proved in the Library
+(`complexBlockChartIntegrable`, `complexBlockParabolicIntegration`). Under these assumptions it says the following.
 
 Let `χ` be phase-power characters with exponents `e` such that
 
@@ -45,7 +45,7 @@ every `u ∈ U`. Then for every `U(k+1)`-finite `φ` of `principalSeries ℂ (k+
 
 It is proved as `Langlands.Archimedean.complexBlockDual`, from
 `integral_restrictBlock_mul_blockPair_eq_zero`. In the recursion, the irreducibility hypothesis
-will be supplied by `ComplexTemperedStandardIrreducibleStatement`: the characters `χT` have equal
+is supplied by `ComplexTemperedStandardIrreducibleStatement`: the characters `χT` have equal
 real parts of exponents.
 
 Provenance. Derived, internal infrastructure: the inductive step of the leading-term argument for

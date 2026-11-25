@@ -1,6 +1,6 @@
 # Conjugating maximal split tori inside the centralizer of a split torus
 
-Author: Worker 149 (Task 5622). This is a helper module for the proof of
+This is a helper module for the proof of
 `Langlands.GroupScheme.TitsIndexIndependenceStatement` in
 `Langlands.GroupScheme.Reductive.TitsIndexIndependenceProof`.
 

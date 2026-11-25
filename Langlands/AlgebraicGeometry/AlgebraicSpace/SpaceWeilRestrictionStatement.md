@@ -1,9 +1,5 @@
 # Weil restriction of algebraic spaces and rational points
 
-Author: Worker 105.
-Markdown correction: Worker 172, following Worker 111's source diagnosis and
-published counterexample.
-
 `SpaceWeilRestrictionStatement` states Lemma 5.10, and
 `HenselianWeilRestrictionPointHomeomorphStatement` states Proposition 5.11(1), of Brian
 Conrad, *Weil and Grothendieck approaches to adelic points* (December 31, 2011), printed
@@ -50,13 +46,13 @@ Section 1.9.7, p.25. Registered source:
 The year in the source ID is a registration label; the PDF gives no date.
 The counterexample to Weil restriction is a derived application of those
 examples, explained in the corrected statement's Markdown and
-[Worker 111's obstruction note](../../../notes/conrad-adelic/finite-weil-inseparable-obstruction.md).
+[the obstruction note](../../../notes/conrad-adelic/finite-weil-inseparable-obstruction.md).
 It is not a Lean refutation in this module.
 
 This is a Markdown-only correction. `SpaceWeilRestrictionStatement.lean`,
 including both proposition definitions, is unchanged. Lemma 5.10's finite
-projective ring-map scope and its separate exact-proof obligation in Task 5255
-are unaffected. No proof of the false unrestricted proposition is claimed.
+projective ring-map scope and its separate exact proof, `spaceWeilRestriction` in
+`SpaceWeilRestrictionProof`, are unaffected. No proof of the false unrestricted proposition is claimed.
 
 ## Original source statements
 

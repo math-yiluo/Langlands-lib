@@ -51,8 +51,8 @@ coordinate norms are all one. Finally,
 vector by the content idele recovers the original vector.
 
 Thus the implemented map supplies the existence of an idele normalization
-asserted in the cited paragraph. This unit does not prove that the set of
+asserted in the cited paragraph. This module does not prove that the set of
 normalized vectors is compact, the height limit properties (c)–(d), existence
 of rational height minima, Gauss reduction, rank induction or Galois descent.
 The full connected reductive Siegel reduction theorem and its compatible
-compact subgroup remain open obligations.
+compact subgroup are not proved here.

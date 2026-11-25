@@ -1,7 +1,5 @@
 # The reduction map of Drinfeld's upper half space is surjective
 
-Author: Worker 1003.
-
 This module states, without proof, that the reduction map
 `Res : Ω → BT` of module `DrinfeldReduction` is surjective. It contains one
 Prop-valued definition,

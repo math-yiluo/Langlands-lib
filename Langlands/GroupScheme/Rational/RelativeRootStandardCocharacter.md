@@ -1,6 +1,6 @@
 # Standard cocharacters under the relative-root-system hypothesis
 
-Worker 185. This is an internal adapter between the published
+This is an internal adapter between the published
 `HasRelativeRootSystem`, `simpleRelativeRoots`, and split-torus interpolation
 interfaces. The root-system realization is an explicit hypothesis throughout.
 The module does not discharge `RelativeRootSystemStatement` and does not
@@ -38,7 +38,8 @@ The result includes empty simple-root sets and every subset of the simple
 roots. It imposes no condition on the characteristic of the underlying
 field and does not require the supplied root system to be reduced.
 
-An unconditional reductive-group proof must still produce the actual
+An unconditional reductive-group proof must produce the actual
 `HasRelativeRootSystem` realization from connected reductivity and a maximal
-split torus. This conditional construction supplies no replacement for that
+split torus; the Library does so in `relativeRootSystem` (module
+`RelativeRootSystemProof`). This conditional construction supplies no replacement for that
 structural obligation.

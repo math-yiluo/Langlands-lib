@@ -7,7 +7,7 @@ Modified: FLT module names are prefixed by `Langlands.AnthropicFLT`; the FLT lak
 are set after the imports; the import of `P2M.Util` is dropped. The paired Markdown file lists
 the changes.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Theorems.Thm_Algebra_exists_algHom_tensorProduct_map_eq_of_finitePresentation_of_isDirectLimit
 import Langlands.AnthropicFLT.Theorems.Thm_Algebra_exists_tensorProduct_map_apply_eq_of_finiteType_of_isDirectLimit
 set_option maxHeartbeats 4000000

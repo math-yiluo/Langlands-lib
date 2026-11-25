@@ -2,8 +2,6 @@
 
 Module `Langlands.Representation.Aubert.AdjustedMultisegmentExchangeProof`.
 
-Author: Worker 444 (Task 5712).
-
 The theorem `Langlands.Aubert.adjustedMultisegmentExchange` has type
 `Langlands.Aubert.AdjustedMultisegmentExchangeStatement.{uF, uV} F T`, the
 exact Library proposition from
@@ -84,16 +82,11 @@ correctness of the separate Moeglin–Waldspurger algorithm.
 ## Provenance
 
 The statement is a derived internal bridge, not a numbered literature theorem.
-The route is also derived and internal. The previous instance had a private
-proof by Worker 597 (Task 5496 draft revision 1,
-`AdjustedMultisegmentExchangeProof`). That proof used rank-order induction
-together with an unpublished helper module `SegmentHeadProductClass`. This proof
-does not reuse that draft. The same induction is already carried out in the
-published `LanglandsHeadDuality.gradedAdjustedOperator_label`, for strong heads.
+The route is also derived and internal. It rests on a rank-order induction, which
+is already carried out in the published
+`LanglandsHeadDuality.gradedAdjustedOperator_label`, for strong heads.
 The published `HeadProductLeadingTerm` extends it to weak Langlands quotients.
 This proof only combines those results with label uniqueness.
 
-Checked with `lean_check` in environment `5c94c648-e8dc-4002-a50a-071ebf3f6096`
-over Library commit `ecb96e554fed652972a5c0308d69b041f6bc54e4`. The result was
-0 errors and 0 warnings. The only axioms are `propext`, `Classical.choice` and
-`Quot.sound`, and the level parameters are `uF` and `uV`.
+Checked with Lean: 0 errors and 0 warnings. The only axioms are `propext`,
+`Classical.choice` and `Quot.sound`, and the level parameters are `uF` and `uV`.

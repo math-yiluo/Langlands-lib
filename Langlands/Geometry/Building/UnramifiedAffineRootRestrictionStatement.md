@@ -1,7 +1,8 @@
 # Unramified descent of affine roots
 
-`Langlands.Geometry.Building.UnramifiedAffineRootRestrictionStatement` is an
-unproved Prop-valued statement, universe polymorphic in `u`. It says that, along a
+`Langlands.Geometry.Building.UnramifiedAffineRootRestrictionStatement` is a
+Prop-valued statement, universe polymorphic in `u`, proved by
+`unramifiedAffineRootRestriction` in `UnramifiedAffineRootRestrictionProof`. It says that, along a
 Galois-fixed lift of the lower apartment into the upper one, the relative affine roots
 are exactly the nonconstant restrictions of the absolute affine roots. The module only
 states this; it proves nothing.
@@ -122,8 +123,9 @@ turns it into "a point whose image is special for `D.affineRoots` is special for
 `DS.affineRoots`". These are the facet and special-point clauses of apartment-compatible
 descent (KP Corollary 9.4.31 and Proposition 9.9.2).
 
-This statement was written for Task 6314. Its intended application is the affine map
-`descentAffineMap`, built from `descentPoint` in Worker 192's pending candidate module
+This statement serves apartment-compatible unramified descent of the building
+(`UnramifiedApartmentDescentStatement`). Its application is the affine map
+`descentAffineMap`, built from `descentPoint` in the module
 `Langlands.Geometry.Building.UnramifiedDescentAffineApartment`. That map satisfies the
 three properties:
 
@@ -132,5 +134,6 @@ three properties:
 - the linear-part property definitionally, because its linear part is a `Submodule.liftQ`
   of the same composite.
 
-A private compile check confirmed that the statement then yields that module's
-root-restriction premise.
+The theorem `descentAffineMap_roots_of_unramifiedAffineRootRestriction` (module
+`UnramifiedApartmentDescentReduction`) derives from the statement the root restriction
+for that map.

@@ -3,7 +3,7 @@
 This internal construction derives actual opposite factor pairs from the
 published `RankOneRootCellRelation.WeylData`. It uses no additional geometric
 existence premise beyond those data and no restriction on the field or its
-characteristic. It does not yet construct such data for every ambient root or
+characteristic. It does not construct such data for every ambient root or
 prove pinned automorphism rigidity.
 
 `WeylData.scalePositive` rescales the positive additive parametrization by any
@@ -35,4 +35,4 @@ centralize the torus. These are precisely the three conditions in
 
 The provenance is an internal algebraic consequence of the imported root-cell,
 reflection, and all-test root-subgroup interfaces. No original-literature
-statement is newly formalized in this unit.
+statement is newly formalized in this module.

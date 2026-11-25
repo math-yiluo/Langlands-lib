@@ -49,9 +49,10 @@ every `k`-automorphism of `L`. Apply character rigidity to the actual integral
 Galois endomorphism for each automorphism. Every character is fixed, so the
 finite Galois splitting criterion gives `IsSplitTorus T.toGrp`.
 
-This is an internal derived unit. Its inputs are finite root index,
+This is an internal derived module. Its inputs are finite root index,
 torsion-free character lattices, actual root-datum existence and equivariant
 finite Galois character descent. It supplies the step from fixed roots to a
 split torus. It does not establish fixedness of the roots, existence of an
-irreducible actual root system, a stable chamber, or the host local anisotropic
-affine-diagram theorem.
+irreducible actual root system, a stable chamber, or the local anisotropic
+affine-diagram theorem `LocalAnisotropicAffineDiagramStatement`, which this
+module serves.

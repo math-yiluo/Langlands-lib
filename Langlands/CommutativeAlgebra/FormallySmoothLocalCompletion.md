@@ -2,7 +2,7 @@
 
 Helper module `Langlands.CommutativeAlgebra.FormallySmoothLocalCompletion`, written as
 part of the proof that every stalk of a scheme smooth over an algebraically closed field is a
-unique factorization domain (task `7d63b52e-e715-47d0-a015-331cfa8a4b6d`). It contains the
+unique factorization domain. It contains the
 step "the completion of the local ring is a power series ring".
 
 ## Main result
@@ -18,8 +18,8 @@ surjective. Then for some `n : ℕ` there is a `K`-algebra isomorphism
 This is a version of the classical fact that a complete regular local ring containing a
 coefficient field is a power series ring (Cohen's structure theorem). The Lean proof below
 does not use dimension theory or Cohen's theorem. Formal smoothness takes the place of
-regularity, and the argument stays at finite level. The result is derived internally for this
-task; its statement is not quoted from a source.
+regularity, and the argument stays at finite level. The result is derived internally for the
+Library; its statement is not quoted from a source.
 
 ## Construction and proof
 

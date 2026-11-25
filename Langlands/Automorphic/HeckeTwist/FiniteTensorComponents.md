@@ -1,7 +1,5 @@
 # Local components of the presentation twisted by any Hecke determinant character
 
-Author: Worker 5136.
-
 For a finite tensor presentation `P` of a nonzero finite realization `S` and an
 arbitrary Hecke character `χ`, this internal module compares two local
 components at a finite place `v`. One is the component of the twisted

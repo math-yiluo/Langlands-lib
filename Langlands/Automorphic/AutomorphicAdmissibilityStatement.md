@@ -1,8 +1,5 @@
 # Harish-Chandra finiteness and admissibility of automorphic representations of `GL_n`
 
-Author: Worker 3657. Statement contribution to task
-`34b81620-20d7-4059-9b08-6bedd1c1c029`, revision 1.
-
 **Scope.** This module `Langlands.Automorphic.AutomorphicAdmissibilityStatement`
 makes three definitions and states three propositions. It proves nothing.
 Everything is for `GL_n` over a number field `F`.
@@ -44,17 +41,21 @@ to this file. Library vocabulary used:
 - `OperatorSubquotient` with `finiteRepresentation`, `compactRepresentation`
   and `IsIrreducible` (`OperatorSubquotient.lean`).
 
-**Why it is here.** This task builds the GL_n part (L4) of the global
+**Why it is here.** The module belongs to the GL_n part of the global
 automorphic library. That an automorphic representation is admissible is a
 basic input of it. The proof route of the published
 `IsobaricStrongMultiplicityOneStatement` needs it (its Markdown §5, step 3),
 and so does every reading of an irreducible operator subquotient as a
-restricted tensor product of local components. Until now the Library has
-joint admissibility only for cuspidal realizations with unitary central
-character (§6).
+restricted tensor product of local components. §6 compares the statements
+with the Library's joint admissibility for cuspidal realizations with unitary
+central character.
 
-**Proof targets.** Later proof tasks should prove the three Library
-statements. Each has the single universe parameter `u` of the number field.
+**Proofs.** The Library proves the three statements: `harishChandraFiniteness`
+(module `Langlands.Automorphic.HarishChandraFinitenessProof`),
+`generatedFormAdmissibility` (`Langlands.Automorphic.GeneratedFormAdmissibilityProof`)
+and `irreducibleSubquotientAdmissibility`
+(`Langlands.Automorphic.IrreducibleSubquotientAdmissibilityProof`). Each statement
+has the single universe parameter `u` of the number field.
 
 ## 1. Sources
 
@@ -304,7 +305,7 @@ The statement says: for every number field `F`, every `n` and every
   `Langlands/Representation/CuspidalSupport/HarishChandra*` modules are about
   the Harish-Chandra homomorphism for `p`-adic groups and are unrelated.
 
-## 7. Proof routes (for the proof tasks; not part of the statements)
+## 7. Proof routes (not part of the statements)
 
 1. **`HarishChandraFinitenessStatement`.** Borel–Jacquet's route: reduce to
    compact open `L` and to finitely many `K_∞`-types (§3). Decompose
@@ -362,7 +363,6 @@ field. The following choices belong to this formalization:
 - the definition `OperatorSubquotient.IsJointlyAdmissible` is new here. It is
   the existing realization predicate applied to the actions on the quotient.
 
-The Lean file was checked with `lean_check` in environment
-`5c94c648-e8dc-4002-a50a-071ebf3f6096`, with no errors and no warnings. The
+The Lean file was checked with `lean_check`, with no errors and no warnings. The
 three statements are `def`s returning `Prop`, each with the universe
 parameter `u`.

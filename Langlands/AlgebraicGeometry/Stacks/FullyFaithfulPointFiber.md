@@ -38,5 +38,5 @@ Every declaration preserves the arbitrary universe `u`. Empty, nonreduced,
 nonnoetherian and non-quasi-compact tests are unrestricted. The module neither
 constructs the fully faithful transformation nor proves its geometric image
 open. It constructs no atlas and gives no coherent-stack algebraicity or
-Picard-stack existence theorem. These geometric inputs remain obligations of
-the parent proof task.
+Picard-stack existence theorem. These geometric inputs are not part of this
+module.

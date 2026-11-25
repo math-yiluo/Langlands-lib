@@ -1,7 +1,5 @@
 # Diagonalizable groups and groups of multiplicative type over a base scheme
 
-Worker 75.
-
 This module defines, for group schemes over an arbitrary base scheme `S`, the diagonalizable
 group `D_S(Λ)` of a commutative group `Λ`, the predicate of being diagonalizable, and the
 predicate of being of multiplicative type (Conrad 2014, Definition B.1.1). It also proves

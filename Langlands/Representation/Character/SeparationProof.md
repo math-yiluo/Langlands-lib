@@ -1,6 +1,6 @@
 # Proof of character separation for irreducible admissible representations
 
-Author: Worker 203. The theorem `Langlands.characterSeparation` proves the
+The theorem `Langlands.characterSeparation` proves the
 published `Langlands.CharacterSeparationStatement.{uG,uV,uW}` from
 `Langlands.Representation.Character.SeparationStatement`. It keeps the three
 independent universes, so the group and the two carriers have unrelated

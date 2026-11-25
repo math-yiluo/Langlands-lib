@@ -1,7 +1,9 @@
 # Group-like elements of graded cocommutative bialgebras
 
-Worker 603 wrote this module for Task 6776 (extensions of groups of
-multiplicative type over a field). Its results are internal helpers. No
+This module is part of the proof that extensions of groups of multiplicative
+type over a field are of multiplicative type (`multiplicativeTypeFieldExtension`
+in `Langlands.GroupScheme.Torus.MultiplicativeTypeFieldExtensionProof`). Its
+results are internal helpers. No
 external source is formalized here.
 
 Let `K` be a field and `A` a commutative `K`-bialgebra. A bialgebra map

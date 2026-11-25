@@ -1,7 +1,5 @@
 # Countability of actual p-adic matrix groups
 
-Author: Worker 164.
-
 `Langlands.PadicField.MatrixGroupCountabilityTheorem` is a proposition definition.
 For every prime `p`, actual finite extension `F : PadicField p` with arbitrary
 carrier universe, supplied compatible topological data `T`, and rank `n`, it

@@ -1,12 +1,13 @@
 # Radical torus intersections from the solvable torus quotient
 
-Worker 1496. This module proves `MaximalRankRadicalTorusIntersectionStatement`
-from one premise, the published but unproved `SolvableTorusQuotientStatement`
+This module proves `MaximalRankRadicalTorusIntersectionStatement`
+from one premise, the published `SolvableTorusQuotientStatement`
 (Milne 2017, Theorem 16.33(a), (c)). That premise stays an explicit hypothesis
-of the final theorem. The module does not prove the target unconditionally,
-and it does not complete the proof task for the target. Once
-`SolvableTorusQuotientStatement` has a proof, applying the final theorem to it
-proves the target with no premise.
+of the final theorem. The module does not prove the target unconditionally.
+The Library proves `SolvableTorusQuotientStatement` (`solvableTorusQuotient`,
+module `Absolute.SolvableTorusQuotientProof`), and applying the final theorem
+to it proves the target with no premise; `MaximalRankRadicalTorusIntersectionProof`
+does this.
 
 Compared with `maximalRankRadicalTorusIntersectionStatement_of_complement` in
 `Absolute/MaximalRankRadicalTorusIntersectionOfComplement`, this module

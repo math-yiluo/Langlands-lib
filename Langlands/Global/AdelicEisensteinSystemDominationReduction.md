@@ -1,0 +1,50 @@
+# Domination of the Eisenstein characterizing system by Ξ_main, as a reduction
+
+Source: Bernstein–Lapid, *On the meromorphic continuation of Eisenstein series*, J. Amer. Math. Soc. 37 (2024). The relevant parts are §8.4, the system Ξ_fnl with the equations (8.2a) and (8.2b), Proposition 8.4 and its proof (journal pp. 223–224), and Lemma 8.1 with its proof (§8.1, pp. 221–222). They are combined with the system Ξ_main and Theorem 7.2 of §7.2 (pp. 211–212).
+
+This module proves the published proposition `EisensteinSystemDominationStatement` (module `AdelicEisensteinSystemDominationStatement`) **conditionally**. Six propositions enter as hypotheses, and none of them is proved here. The module contains no other mathematical input.
+
+## The premises
+
+`eisensteinSystemDomination_of` takes, at the universe `u` of the target:
+
+1. `hHC : EisensteinHarishChandraEquationsStatement` (module `AdelicEisensteinHarishChandraEquations`). These are the Harish-Chandra equations (8.2a) of \(E(\varphi,\lambda)\): finitely many bi-\(K_\infty\)-finite test functions \(h_{i,k}\) with entire coefficients \(b_{i,k}\) and \(c_i\), some \(c_i(s)\ne0\) at every \(s\), and \(\sum_k b_{i,k}(s)\,\delta(h_{i,k})E=c_i(s)E\) at regular parameters.
+2. `hcusp : EisensteinCuspidalTestSystemStatement` (module `AdelicEisensteinCuspidalTestSystemStatement`). This gives the cuspidal tests (8.2b) as an analytic family of scalar equations on \(\mathfrak F^R_L\), with three consequences: the difference equations (8.3) for the constant terms (clause 2), the fact that \(E(\varphi,\lambda)\) is a solution (clause 3, Corollary 6.10), and the uniqueness statement (6.22) for automorphic solutions (clause 4).
+3. `hgrowth : EisensteinCommonGrowthStatement` (module `AdelicEisensteinCommonGrowthStatement`). For every bounded set \(W\) of parameters there are a compact open \(L\) and an \(R_1\) such that every regular \(E(\varphi,e(s))\), \(s\in W\), lies in \(\mathfrak F^R_L\) for every \(R\ge R_1\).
+4. `hvan : ParabolicCuspidalVanishingStatement` (published, module `AdelicCuspidalAnnihilator`). This is the vanishing criterion (8.1).
+5. `hZ : LocalFinitenessSolutionAutomorphyStatement` (module `AdelicLocalFinitenessSolutionAutomorphyStatement`). Every solution of an admissible Ξ_main whose kernels are left \(K_\infty\)-finite is an automorphic form on \(G(F)\backslash G(\mathbb A)\). This is the "if" direction of Lemma 8.1, which uses Theorem 7.2.
+6. `hpos : PositiveTorusSplitComponentStatement` (module `AdelicPositiveTorusSplitComponentStatement`). A positive torus point \(t\) with \(\beta(t)=1\) for every simple root \(\beta\in J\) has the same image in \(G(\mathbb A)\) as a point of \(A_{P_J}\).
+
+`EisensteinSystemDominationPremises` is the conjunction of these six propositions. `eisensteinSystemDomination_of_premises` restates the reduction with this single hypothesis. The definition only packages the premises and adds no content.
+
+## Helper results
+
+- `differentiable_coeff_finset_prod`: if every \(D_i(s)\) has entire coefficients, so does \(\prod_{i\in S}D_i(s)\). The proof is induction on \(S\) with `Polynomial.coeff_mul`.
+- `hasModerateGrowthFunction_toFun_uniformGrowth`: the function of every \(v\in\mathfrak F^R_L\) has moderate growth (`HasModerateGrowthFunction`). It is the order-zero case \(a=1\) of the uniform growth bound, with constant \(\max(C,1)\).
+- `isRegularParameter_of_le_bound` (private): \(R\)-regularity is inherited by every smaller \(R\). Here \(R\)-regularity is the published `r.IsRegularParameter hA hT R λ`: \(R<B(\operatorname{Re}\lambda|_A,\alpha)\) for every root \(\alpha\) of \(A\) in the unipotent radical, where \(B\) is the positive definite form induced from the maximal split torus. For a fixed \(R\) this is not the simple-coroot condition \(R<\langle\operatorname{Re}\lambda,\alpha^\vee\rangle\) of Bernstein–Lapid §6.9 and Proposition 8.4: the two pairings differ by positive root-dependent factors (in relative type \(B_2\) the factors \(2/B(\alpha,\alpha)\) of the two simple roots cannot both be \(1\)), so the two conditions define cofinal families of regions, not the same region.
+
+## The proof of `eisensteinSystemDomination_of`
+
+**Threshold.** Let \(R_{HC}\), \(R_{cusp}\) and \(R_{gr}\) be the thresholds of `hHC`, `hcusp` and `hgrowth`, and put \(R_0=\max(\max(R_{HC},R_{cusp}),R_{gr})\). By `isRegularParameter_of_le_bound`, an \(R_0\)-regular parameter is regular for all three.
+
+**Group data.** `hcusp` supplies the standard parabolic family \(\mathcal F\) and the maximal compact \(K'\), which is an Iwasawa compact for every standard parabolic. The torus, the cocharacter and the group data \((U_\alpha,u_\alpha,t_\alpha,z_j)\) of Ξ_main come from `exists_isLocalFinitenessGroupData` (module `AdelicLocalFinitenessGroupData`) applied to \(\mathcal F\). The set of standard indices is finite because there are finitely many simple relative roots. For each simple root \(\alpha\), let \(J_\alpha=\Delta_0\setminus\{\alpha\}\). Then \(t_\alpha\) is a positive torus point with \(\beta(t_\alpha)=1\) for all \(\beta\ne\alpha\), so `hpos` gives \(a_\alpha\in A_{P_{J_\alpha}}\) with the same image as \(t_\alpha\) in \(G(\mathbb A)\). Likewise each \(z_j\) is killed by every simple root, so `hpos` with \(J=\Delta_0\) gives a point of \(A_G\) with the image of \(z_j\).
+
+**The data of Ξ_main.** For given \(n\) and \(e\), the data on any open set \(W'\) of parameters take the kernels and coefficients \(h_{i,k}\), \(b_{i,k}\), \(c_i\) of `hHC`. For each \(\alpha\) the constant-term polynomial is
+\[D_\alpha(s)=\prod_{Q}D(J_\alpha,a_\alpha,Q,s),\]
+of degree \(\sum_Q\deg(J_\alpha,a_\alpha,Q)\), where \(D\) and \(\deg\) come from `hcusp`. The central polynomial for \(z_j\) is the same product with \(J=\Delta_0\). The products run over all standard indices \(Q\). These data are admissible (`LocalFinitenessData.IsAdmissible`) for the following reasons. The \(h_{i,k}\) are test functions. The \(b_{i,k}\), the \(c_i\) and the coefficients of the products are entire, hence holomorphic on \(W'\) (`isHolomorphicOn_opens_of_differentiable`). Some \(c_i(s)\) is nonzero. Products of monic polynomials are monic, with degree the sum of the degrees (`Polynomial.natDegree_prod_of_monic`). The constant coefficient of the central product is the product of the nonzero constant coefficients. The target's Ξ_main is the case \(W'=\mathbb C^n\).
+
+**The system on \(W\).** Apply `hgrowth` to the bounded set \(W\) to obtain \(L\) and \(R_1\). Fix \(R\ge R_1\), and let `hcusp` give its equations \(\mathrm{eqn}_2,c_2\) on \(\mathfrak F^R_L\). The system on \(W\) is indexed by \((\mathrm{Idx}\times G(\mathbb A))\sqcup\mathrm{Idx}_2\). The left part is the scalar form of the Harish-Chandra convolution equations of the data on \(W\), namely `LocalFinitenessData.convolutionEquation` with right-hand side \(0\). The right part consists of the equations of `hcusp` restricted to \(W\). Analyticity on the left is the published `isAnalyticSystem_convolutionEquation`. On the right it is the analyticity of `hcusp` composed with the holomorphic inclusion \(W\hookrightarrow\mathbb C^n\). A vector solves the combined system exactly when it solves both parts.
+
+**Domination.** Let \(v\) be a solution at \(s\in W\). By `mem_systemSolutions_convolutionEquation_iff`, \(v\) satisfies the convolution equations of Ξ_main. Its function \(f\) has moderate growth. Clause 2 of `hcusp` says that \(\sum_k \mathrm{coeff}_k\,C_Q f(a^k\,\cdot)\), which is \(D(L_a)\,C_Qf\) by `aeval_adelicLeftShift_apply`, lies in the cuspidal annihilator along \(Q\) for every \(Q\le J\). The product step of Lemma 8.1, conditional on (8.1), then gives the constant-term equation for \(\alpha\): this is `isTranslationPolynomialSolution_subgroupConstantTerm` with `hvan`, \(K'\), \(J_\alpha\), \(a_\alpha\), the set of all standard indices, and \(u_\alpha\). The central equation for \(z_j\) follows from `isTranslationPolynomialSolution_top` in the same way. Hence \(v\) solves Ξ_main at \(s\).
+
+**Automorphy.** Every solution solves Ξ_main, so `hZ` applies with \(K_\infty\) the archimedean part of \(K\). The kernels are left \(K_\infty\)-finite by the last finiteness clause of `hHC`. Therefore the function of every solution is automorphic.
+
+**Uniqueness.** Let \(e(s)\) be \(R_0\)-regular. `hgrowth` gives \(v_0\in\mathfrak F^R_L\) whose function is \(E(\varphi,e(s))\). Then \(v_0\) satisfies the convolution equations by the Harish-Chandra equations of `hHC`, and it satisfies the cuspidal equations by clause 3 of `hcusp`, so it solves the system. Any other solution \(v\) is automorphic, as shown above. By clause 4 of `hcusp` its function is \(E(\varphi,e(s))\), and \(v=v_0\) because the map from \(\mathfrak F^R_L\) to functions is injective (`toFun_injective`). The solution set is therefore \(\{v_0\}\).
+
+## Relation to Bernstein–Lapid
+
+In the proof of Proposition 8.4, BL derive (8.3) from (8.2b), use (8.1) to conclude that the solutions of Ξ_fnl solve Ξ_main, and use Corollary 6.10 and (6.22) for the uniqueness at sufficiently regular \(\lambda\). The proof here follows the same route. The specialization of (8.3) to a single positive point \(a_\alpha\) of \(A_{P_\alpha}\), and the identification of that point with the torus point \(t_\alpha\) of Ξ_main, are made explicit through `hpos`. BL obtain automorphy of the solutions from the "if" direction of Lemma 8.1, whose proof uses Theorem 7.2. Here that step is the premise `hZ`, so the finite-dimensionality statement of Theorem 7.2 is not used directly.
+
+## Dependencies
+
+The module imports, among others, the Library modules `AdelicEisensteinHarishChandraEquations` (with `AdelicInducedHarishChandraStatement`), `AdelicLocalFinitenessGroupData`, `AdelicLocalFinitenessProductBridge` (with `AdelicCuspidalProductVanishing`), `AdelicPositiveTorusSplitComponentStatement`, `AdelicEisensteinCuspidalTestSystemStatement`, `AdelicEisensteinCommonGrowthStatement` and `AdelicLocalFinitenessSolutionAutomorphyStatement`, which with the modules they import contain the six premises and the published theorems named above.

@@ -12,7 +12,7 @@ Drinfeld, *Coverings of p-adic symmetric regions* (1976), printed p.109
 glued from formal groups over base localizations. The registered source is
 `drinfeld-1976-coverings-p-adic-symmetric-regions`, SHA256
 `7dd09e1967f46c29195ec87a400e145a17374368fc3b9dd0a782b5b7bfc44e2f`.
-This unit is a derived example and comparison for `BasicAtlas`, using the
+This module is a derived example and comparison for `BasicAtlas`, using the
 localization universal property and coefficient coherence. It does not claim
 to formalize a separate numbered theorem of the source.
 
@@ -20,7 +20,7 @@ Here O and R are commutative rings with an O-algebra structure on R, σ is a
 fixed finite coordinate type, and all test R-algebras lie in R's universe v.
 The construction of an atlas works for any supplied principal-open cover,
 expressed as `Ideal.span s = top`. The point equivalence and natural isomorphism
-below concern the singleton cover at 1. This unit does not prove an equivalence
+below concern the singleton cover at 1. This module does not prove an equivalence
 for arbitrary covers, atlas refinement invariance, a comparison with formal
 schemes or Cartier modules, order-action descent, moduli or representability.
 No representing or universal object is supplied as input.

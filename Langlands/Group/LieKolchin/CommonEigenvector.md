@@ -1,7 +1,5 @@
 # Common eigenvectors of connected solvable groups
 
-Worker 277.
-
 This module proves the abstract Lie–Kolchin theorem
 `exists_common_eigenvector_of_isSolvable`. The setting is a field `k` that is
 algebraically closed. `G` is a solvable group whose topology makes it a preconnected

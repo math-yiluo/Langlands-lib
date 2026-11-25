@@ -73,7 +73,7 @@ if `π.IsIrreducible`, `IsEssentiallySquareIntegrable π`, `Whittaker.IsGeneric 
 `κ : Fˣ →* ℂˣ` with `IsNormTrivial E κ` and
 `Nonempty (π'.Equiv (twist (κ.comp GeneralLinear.determinant) π))`.
 
-The binders are those of the task's form: the carriers `V`, `V'`, `W` and their instances are
+The carriers `V`, `V'`, `W` and their instances are
 implicit, everything else is explicit, in the order above. HL's `Π` is written `τ`, as in
 `Langlands.BaseChange.TwistedCharacter`.
 
@@ -160,8 +160,8 @@ representations of `GL_{r+1}(F)`. Every positive rank is covered.
 
 ## Relation to other statements
 
-- Statement 5 of Task 7449, `SigmaLiftFibreStatement`, was not in the Library when this module
-  was written, and this module does not import it. It asks `π'` to be essentially
+- `SigmaLiftFibreStatement` (module `Langlands.BaseChange.SigmaLiftFibreStatement`) is not
+  imported by this module. It asks `π'` to be essentially
   square-integrable instead of generic, and also allows rank `0`. Irreducible essentially
   square-integrable representations of `GL_{r+1}(F)` are generic (Zelevinsky 1980, Theorem 9.3
   with Theorem 9.7 for a single segment), so the present statement implies the positive-rank
@@ -170,7 +170,7 @@ representations of `GL_{r+1}(F)`. Every positive rank is covered.
   series `Π`. HL note (II.4.8, printed p. 90) that the lemma holds independently of that
   theorem and gives a small part of it.
 
-## Proof route (for a later proof task)
+## Proof route (for a later proof)
 
 HL's proof (printed pp. 90–91), which is not formalized here:
 
@@ -189,5 +189,6 @@ HL's proof (printed pp. 90–91), which is not formalized here:
 5. So `π'` is a discrete series, and formula (3) of II.4.8 (the orthogonality relations on the
    elliptic norms) gives `π' ≅ κπ` for some `κ ∈ K(E/F)`.
 
-Task 6845 has staged, but the Library does not yet contain, a proof of
-`JacquetLanglands.ProperParabolicCharacterVanishingStatement`, the vanishing in step 4.
+The vanishing in step 4 is `JacquetLanglands.ProperParabolicCharacterVanishingStatement`,
+proved in the Library as `JacquetLanglands.properParabolicCharacterVanishing` (module
+`Langlands.Representation.Induction.CharacterVanishing`).

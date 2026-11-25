@@ -6,7 +6,7 @@ derived complex. Its provenance is the imported Library modules
 `AcyclicResolution.Comparison`, `AcyclicResolution.Lift`, `DerivedPlus`,
 `DerivedPlusNaturality` and `ExtendMap`, together with Mathlib's extension of
 homotopies and localization of cochain complexes. It introduces no assertion
-transcribed from external literature. Worker 606 authored this development.
+transcribed from external literature.
 
 Let `F : C ⥤ D` be additive, where `C` and `D` are abelian categories with actual
 derived localizations and `C` has enough injectives. The object, morphism and
@@ -35,7 +35,7 @@ derivedComparison F I φ = T.map φ ≫ (derivedResolutionIso F I).inv.
 This definition does not need an augmentation. The augmentation and its
 quasi-isomorphism property enter the coherence lemmas. The canonical
 `derivedResolutionComparison F ε` uses Mathlib's chosen
-`injectiveResolution A` and the published `lift ε (𝟙 A)`.
+`injectiveResolution A` and `lift ε (𝟙 A)`.
 
 For compatible lifts `φ` and `ψ`, `derivedComparison_eq` proves independence
 of both the lift and the injective resolution. More generally, suppose
@@ -50,10 +50,10 @@ T.map g ≫ derivedComparison F J ψ =
 
 This result needs `QuasiIso ε`; it does not need `QuasiIso η` when the two lifts
 are already given. The canonical naturality theorem assumes both right
-resolutions so their canonical lifts exist. The proof uses the published
+resolutions so their canonical lifts exist. The proof uses
 `DerivedPlus.descHom f I J` and `homotopyOfComp` to compare the two composites
 into `J`. Extending this homotopy, applying `F`, and localizing makes the maps
-equal. Naturality of `derivedResolutionIso` follows from the published
+equal. Naturality of `derivedResolutionIso` follows from
 `derivedComplexIso_hom_naturality` and `Plus.QCompιIso` naturality. Independence
 is the case `f = 𝟙 A`, `g = 𝟙 K`.
 
@@ -66,7 +66,7 @@ For `n : ℕ`, `derivedResolutionHomologyIso F K n` identifies
    `DerivedPlus.mapExtendIso F K embeddingUpNat`;
 3. `(F(K)).extendHomologyIso embeddingUpNat rfl`.
 
-Denote this source isomorphism by `s_K`. The target is exactly the published
+Denote this source isomorphism by `s_K`. The target is exactly
 `DerivedPlus.homologyIso F I n`, denoted by `t_I`. The theorem
 `derivedComparison_homology` proves the explicit equality
 
@@ -77,8 +77,8 @@ Hⁿ(derivedComparison F I φ) ≫ t_I.hom =
 
 Here `comparison` is the existing degreewise map to `(F.rightDerived n).obj A`.
 Consequently `derivedResolutionComparison_homology` identifies the homology
-map of the canonical derived comparison with the already published
-`resolutionComparison F ε n`, using `I = injectiveResolution A`. These
+map of the canonical derived comparison with
+`resolutionComparison F ε n` of `AcyclicResolution.Comparison`, using `I = injectiveResolution A`. These
 formulas hold in every nonnegative degree and do not assume acyclicity of the
 terms of `K` under `F`.
 

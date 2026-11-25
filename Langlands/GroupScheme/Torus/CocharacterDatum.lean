@@ -335,7 +335,7 @@ theorem expMap_nsmul_injective [IsAffine Z.toGrp.X.left] [IsAddTorsionFree Λ] {
     (hn : n ≠ 0) : Function.Injective (expMap (Z := Z) S (n • AddMonoidHom.id Λ)) := by
   apply affineMap_injective
   have hinj : Function.Injective (n • AddMonoidHom.id Λ) := fun γ δ h =>
-    nsmul_right_injective hn (by simpa using h)
+    (AddCommute.all γ δ).eq_of_nsmul_eq_nsmul hn (by simpa using h)
   intro x y h
   rw [AddMonoidAlgebra.mapDomainAlgHom_apply, AddMonoidAlgebra.mapDomainAlgHom_apply] at h
   exact AddMonoidAlgebra.mapDomain_injective hinj h

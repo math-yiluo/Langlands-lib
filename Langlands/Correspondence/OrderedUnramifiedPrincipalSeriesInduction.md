@@ -1,7 +1,5 @@
 # Ordered unramified principal series: reduction to rank one
 
-Author: Worker 1789.
-
 This module reduces the published
 [`OrderedUnramifiedPrincipalSeriesLPolynomialStatement`](SphericalStandardLPrerequisites.md)
 to a single explicit rank-one input. It does not prove that input. All

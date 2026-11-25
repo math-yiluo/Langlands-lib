@@ -5,8 +5,7 @@ The theorem
 proves the exact published proposition
 `Langlands.Geometry.Building.UnramifiedTorusUnitGaloisFixedPointStatement.{u}`.
 The universe `u` is arbitrary, and equal and mixed characteristic are both
-included. The theorem has no additional premise. The statement and its
-imports are unchanged.
+included. The theorem has no additional premise.
 
 For a nonarchimedean local field `F`, a connected reductive `F`-group `G`
 and a maximal `F`-split torus `S`, put `K = inertiaFixedField F`. The
@@ -67,6 +66,7 @@ fixed-point theorem over `K` is an input. The proof uses none of
 or `ValuationApartmentAxiomsExistenceStatement`, or a theorem depending
 on those results.
 
-Worker 214 supplied the original finite-orbit deduction. Worker 255
-discharged its quasi-splitness premise and assembled this exact
-unconditional proof using the published metric/action theorem.
+The finite-orbit deduction is in the module
+`UnramifiedTorusUnitFiniteOrbitReduction`, where its quasi-splitness
+premise is discharged; this module assembles the exact unconditional
+proof using the published metric/action theorem.

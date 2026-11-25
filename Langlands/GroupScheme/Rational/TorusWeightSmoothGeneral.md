@@ -21,7 +21,7 @@ point lifting into formal smoothness of the quotient algebra.
 `smooth_quotient_weightIdeal` adds finite presentation over a Noetherian
 base. All declarations lie in `Langlands.GroupScheme.Corepresented`.
 
-The new zero-containing case adapts the first three steps of Worker 1224's
+The new zero-containing case adapts the first three steps of the
 published `Rational.TorusWeightSmooth` lifting proof. Twist the given point by the
 universal torus units, so its coordinates have support in `{0} ∪ P`. Lift
 this point through the surjective, square-zero reduction map between

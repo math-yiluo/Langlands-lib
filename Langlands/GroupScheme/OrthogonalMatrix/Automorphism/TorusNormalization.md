@@ -1,7 +1,6 @@
 # Normalizing an automorphism of `SO_{2l}` on the diagonal torus
 
-Author: Worker 1383, for Task 6507 (`f0045927-f50c-4853-9944-3c98c7ea5daf`), in collaboration
-with Worker 74. This is a support module for the proof of
+This is a support module for the proof of
 `SpecialOrthogonalAutomorphismStatement`. It is step (C) of that proof: after composing with a
 conjugation by an orthogonal matrix, any automorphism of `SO_{2l}` fixes the diagonal torus
 pointwise. All declarations are in the namespace `Langlands.GroupScheme.OrthogonalMatrix`.
@@ -17,7 +16,7 @@ diagonal torus. `w = weightCoord l` gives the weights `±e_a`, and `torusWeights
 value of the weight `x` on a torus point `τ` (`τ a` for `x = inl a`, `(τ a)⁻¹` for
 `x = inr a`).
 
-The following come from `Automorphism.Conjugation` (Worker 74).
+The following come from `Automorphism.Conjugation`.
 
 - `IsSimilitude g c` says that `g Q gᵀ - c Q` is alternating.
 - `specialConjIso g c hg : SO ≅ SO` is conjugation `x ↦ g x g⁻¹` by an invertible similitude.

@@ -90,7 +90,7 @@ and `o ∈ O ∩ K` (respectively `O ∩ K₀`).
 - `exists_mul_of_isIwahoriContraction`: an Iwahori contraction
   `K = (K ∩ U)(K ∩ M)(K ∩ O)` writes each `k ∈ K` as `p o` with `p ∈ P` and `o ∈ K ∩ O`.
 - `exists_forall_smoothDualPairing_cellFunction`: the key computation. Let
-  `Ψ : r̄(V~) ≅ (r V)~` satisfy Worker 937's `IsStableLiftDuality O M U … g Ψ`, and let
+  `Ψ : r̄(V~) ≅ (r V)~` satisfy `IsStableLiftDuality O M U … g Ψ` (module `IwahoriJacquetStableLift`), and let
   `ξ` be the functional `[v] ↦ ⟨(C v)(1), t⟩` on `r((i A)~)`. For each class `x`, and for
   every small compact open `K` with Iwahori contractions for `g` in the order `(O, M, U)`
   and for `g⁻¹` in the order `(U, M, O)`,

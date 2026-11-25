@@ -1,7 +1,5 @@
 # Structure of the actual centralizer of a maximal split torus
 
-Author: Worker 1072 (task `0becf90b-3422-4e36-bbc1-55342700202d`).
-
 ```lean
 theorem Langlands.BruhatTits.Cartan.actualCentralizerStructure :
     ActualCentralizerStructureStatement.{u}
@@ -24,8 +22,8 @@ actualCentralizerStructure_of genericCentralizer dynamicCentralizerReductive
 ```
 
 - `actualCentralizerStructure_of`, in
-  [`ActualCentralizerSplitComponent`](ActualCentralizerSplitComponent.md), is
-  submitted with this proof. It proves the split-component half outright. It
+  [`ActualCentralizerSplitComponent`](ActualCentralizerSplitComponent.md),
+  proves the split-component half outright. It
   derives the connected-reductive half from `GenericCentralizerStatement` and
   `DynamicCentralizerReductiveStatement`, which it takes as hypotheses.
 - `Langlands.GroupScheme.genericCentralizer`, in the Library module

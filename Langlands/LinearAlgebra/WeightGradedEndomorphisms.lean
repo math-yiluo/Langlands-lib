@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 
 /-! # Endomorphisms of a weight-graded vector space -/
 
@@ -158,6 +158,8 @@ theorem exists_forall_ge_eq_bot (hWi : iSupIndep W) {α : X} (hα : α ≠ 0) (�
     intro i j hij
     have h : (i : ℤ) • α = (j : ℤ) • α := by
       simpa only [add_right_inj, natCast_zsmul] using hij
+    have : HasUniqueDiv X :=
+      ⟨fun _ hn a b hab ↦ eq_of_nsmul_eq_nsmul_of_addCommute hn (AddCommute.all a b) hab⟩
     exact Nat.cast_inj.mp (smul_left_injective ℤ hα h)
   have hfin : ((fun j : ℕ => μ + j • α) ⁻¹' {μ | W μ ≠ ⊥}).Finite :=
     (finite_ne_bot hWi).preimage hinj.injOn

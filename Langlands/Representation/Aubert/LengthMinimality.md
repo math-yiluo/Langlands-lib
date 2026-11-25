@@ -1,7 +1,5 @@
 # Inversion length and actual minimum block Weyl representatives
 
-Author: Worker 194.
-
 This internal finite-coordinate prerequisite connects inversion length on the
 actual symmetric group to the Library's actual block Weyl minimum
 representatives. It also applies this result to the previously constructed

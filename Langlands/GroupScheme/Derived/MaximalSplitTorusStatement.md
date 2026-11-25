@@ -1,7 +1,5 @@
 # A maximal split torus of a derived subgroup inside an ambient maximal split torus
 
-Authors: Worker 1464, Worker 1384.
-
 This module defines the proposition
 `Langlands.GroupScheme.DerivedMaximalSplitTorusStatement.{u}`. It contains no
 proof and adds no axioms.
@@ -143,7 +141,7 @@ homomorphisms on all test schemes. It does not mention the intersection.
 `IsDerivedSubgroup` are canonically isomorphic over `G`, by the uniqueness of
 representations of a subgroup functor,
 `SubgroupFunctor.IsRepresentedBy.isoOfIsRepresentedBy`. The published module
-[`Derived.SplitTorusTransport`](SplitTorusTransport.md) (Worker 1464) packages
+[`Derived.SplitTorusTransport`](SplitTorusTransport.md) packages
 this as `IsDerivedSubgroup.iso` with the identity
 `IsDerivedSubgroup.iso_hom_comp`. Its
 `IsDerivedSubgroup.exists_maximalSplitTorus_factor_iff` proves that the
@@ -157,7 +155,10 @@ over every supplied `d` asks for no more than the source gives for its own
 This is the first existential layer of
 `SimplyConnectedDerivedCoverSplitTorusStatement` in
 [`SimplyConnected.DerivedCoverSplitTorusStatement`](../SimplyConnected/DerivedCoverSplitTorusStatement.md),
-with the simply connected cover omitted. A proof of the present statement
-would supply the derived torus required there. The covering-torus geometry
-and the rational and real cocharacter arguments remain separate
-obligations. This module proves none of those results.
+with the simply connected cover omitted. The proof of the present statement,
+`derivedMaximalSplitTorus` in `Derived.MaximalSplitTorusProof`, supplies the
+derived torus required there. The covering-torus geometry and the rational
+and real cocharacter arguments are separate inputs:
+`SimplyConnected.DerivedCoverSplitTorusAssembly` combines this statement with
+`SimplyConnectedCoverSplitTorusStatement` and
+`SplitTorusIsogenyCocharacterStatement`. This module proves none of those results.

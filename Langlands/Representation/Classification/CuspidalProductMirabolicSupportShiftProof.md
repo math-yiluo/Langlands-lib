@@ -1,20 +1,15 @@
 # Proof of the mirabolic support shift for cuspidal products
 
-Author: Worker 1166 (this module and its two helper modules
+The module has two helper modules,
 `Classification.CuspidalProductContragredient` and
-`Classification.MirabolicDerivativeContragredient`). The quotient form of
+`Classification.MirabolicDerivativeContragredient`. The quotient form of
 BZ77 Lemma 4.7(a) is imported from the published helper
-`Classification.CuspidalProductDerivativeQuotientSupport` (Worker 818,
-`lean.definition` artifact `bf38b454-70f8-4bf4-83b2-0def96b608a0`). This is an
-import of published work, not coauthorship.
+`Classification.CuspidalProductDerivativeQuotientSupport`.
 
 This module proves the published proposition
 `Langlands.Classification.CuspidalProductMirabolicSupportShift.{uF,uV} F T`
-(module `Langlands.Representation.Classification.CuspidalProductMirabolicSupportShiftStatement`,
-statement task `d54cc845-00d9-44be-bff2-c7a8bf032d31`, statement artifact
-`940bdb8f-9cc5-4d37-9dcd-cd575a194d7a`). This is Bernstein–Zelevinsky 1977,
-Lemma 4.7(b), in its mirabolic form. The proof task is
-`0b3bf4c1-9878-444f-899e-ba29d7679c29`.
+(module `Langlands.Representation.Classification.CuspidalProductMirabolicSupportShiftStatement`).
+This is Bernstein–Zelevinsky 1977, Lemma 4.7(b), in its mirabolic form.
 
 ## The theorem
 
@@ -109,13 +104,12 @@ This case installs the supplied topologies: `T.topology`, and
 
 Multiplicities are kept throughout: every inclusion is `≤` of multisets. The
 final theorem has no hypothesis beyond the target's binders, and
-`lean_check` reports only the axioms `propext`, `Classical.choice` and
+the axiom check reports only the axioms `propext`, `Classical.choice` and
 `Quot.sound`.
 
 ## Relation to the source proof
 
-BZ77 §4.8, printed pp. 455–456, proves (b) in six steps; the objective
-paraphrases them. Steps 1–4 are implemented as in the source. There are two
+BZ77 §4.8, printed pp. 455–456, proves (b) in six steps. Steps 1–4 are implemented as in the source. There are two
 changes.
 
 - **Step 5.** The source says that, since there is a nonzero pairing of `σ`
@@ -124,8 +118,8 @@ changes.
   `π̄^(k)`. No Jordan–Hölder series and no finite length of `π̄^(k)` is used.
 - **Step 6.** The source proves Lemma 4.7(a) from §4.4 and Corollary 4.6, that
   is, from derivatives of cuspidal representations and the Leibniz filtration
-  of the derivatives of a product. The Leibniz filtration and the exactness of
-  derivatives have no published proofs, so this proof uses the quotient form
+  of the derivatives of a product. This proof uses neither the Leibniz
+  filtration nor the exactness of derivatives; it uses the quotient form
   of 4.7(a) proved in the published helper
   `Classification.CuspidalProductDerivativeQuotientSupport`. Its route is as
   follows. The published Ze80 Proposition 3.7(b)
@@ -174,8 +168,7 @@ The other ingredients of the source are proved in the helper modules:
   `InvariantBilinear.forms ρ σ χ`: `B (ρ g v) (σ g w) = χ g * B v w`. In it
   the pairing has covariance `g ↦ |det g|`, which is exactly the hypothesis of
   the published `MirabolicHighestDerivativePairingStatement`. The Haar-modulus
-  comparison (statement task `a622f240-4846-4086-b34f-f650ba636ee4`) is not
-  used.
+  comparison is not used.
 
 ## Universes
 
@@ -186,49 +179,36 @@ carrier universe of the published cuspidal product. The helpers are applied
 at these universes: `derivative_quotient_support.{uF, uV}` and
 `glSupercuspidalSupportUniqueness.{uV, uF}`.
 
-## Operator authorization for the 4.7(a) helper
+## Use of the 4.7(a) helper
 
-`Classification.CuspidalProductDerivativeQuotientSupport` was written for task
-`f81d9b36-2615-4fec-abc2-50ef93d880bf`, whose candidates and proofs this task
+`Classification.CuspidalProductDerivativeQuotientSupport` was written for the
+proof of `HighestDerivativeSupportShift`, whose other modules this proof
 excludes. Its integration (commit `368b3cec32d30129c07825e0ce549058b99762f4`)
 also moved two published transport theorems into the shared module
-`CuspidalSupport.WholeLeviTransport`. Request
-`e68c5da902f45394a20f6b71e9423b11` asked whether these could be imported. The
-trusted operator answered in response `f6869c7da0bf5bb4a8b006fdf51ba668`
-(sender role `operator`, file
-`/home/taskhub/pilot/correspondence/f6869c7da0bf5bb4a8b006fdf51ba668.md`):
-
-> Yes. Import `CuspidalProductDerivativeQuotientSupport` (artifact bf38b454)
-> and `WholeLeviTransport`: the contract's lower-construction clause allows
-> this reuse once you show their proof dependencies avoid every exclusion.
-> Audit the full import closure in the Markdown against all three inherited
-> exclusion sets (b711af72, f81d9b36, 3238f371 revision 2) and cite this
-> response. Every other exclusion stands, including `HighestDerivativeSupportShift`,
-> proof candidate 61c4254f and `HighestDerivativeSupportShiftBoundary`. Tell
-> Worker 1168 to stop re-proving the quotient form of 4.7(a).
+`CuspidalSupport.WholeLeviTransport`. Both modules are imported here, since
+their proof dependencies avoid every exclusion. The other exclusions stand,
+including `HighestDerivativeSupportShift` and
+`HighestDerivativeSupportShiftBoundary`.
 
 The audit below covers the whole closure, including these two modules. No
-other module, candidate or proof of `f81d9b36` is imported. Worker 1168 was
-told to stop; the final proof does not use their unpublished helper.
+other module or proof of `HighestDerivativeSupportShift` is imported.
 
 ## Direct imports and the proved results used
 
-| Import | Publication | Results used |
-| --- | --- | --- |
-| `Classification.CuspidalProductContragredient` | Worker 1166's `lean.definition` `9ebbe17b-ea00-4aa4-a1d2-3c13c4a2c934`, staged for this task, review accepted | `twistedDualData`, `twistedDualRep`, `twistedDualRep_represents`, `nonempty_twistedDual_cuspidalProductEquiv`, `isSupercuspidalSupport_contragredient`, `twist_le_of_dual_le` |
-| `Classification.MirabolicDerivativeContragredient` | Worker 1166's `lean.definition` `14f85adb-c2e3-4896-8b14-00f7cc55e20d`, staged for this task, review accepted | `exists_determinant_pairing`, `exists_derivative_hom_contragredient` (through `Derivative.mirabolicHighestDerivativePairing`, proof `f957ae76-3779-4436-bdcb-98bc63561e07`, task `a925b519-9bb9-4927-873e-ad322d41328e`) |
-| `Classification.CuspidalProductDerivativeQuotientSupport` | `lean.definition` `bf38b454-70f8-4bf4-83b2-0def96b608a0` (Worker 818), commit `368b3cec` | `derivative_quotient_support` |
-| `Classification.SupercuspidalSupportUniquenessProof` | proof `9533b6b3-978a-4af6-b471-c377a9c7d9c1`, task `b0b54bc0-bcdc-4408-a949-7433faa9933d` | `glSupercuspidalSupportUniqueness` |
-| `Classification.CuspidalProductMirabolicSupportShiftStatement` | statement `940bdb8f-9cc5-4d37-9dcd-cd575a194d7a` | the target proposition only |
+| Import | Results used |
+| --- | --- |
+| `Classification.CuspidalProductContragredient` | `twistedDualData`, `twistedDualRep`, `twistedDualRep_represents`, `nonempty_twistedDual_cuspidalProductEquiv`, `isSupercuspidalSupport_contragredient`, `twist_le_of_dual_le` |
+| `Classification.MirabolicDerivativeContragredient` | `exists_determinant_pairing`, `exists_derivative_hom_contragredient` (through `Derivative.mirabolicHighestDerivativePairing`) |
+| `Classification.CuspidalProductDerivativeQuotientSupport` | `derivative_quotient_support` |
+| `Classification.SupercuspidalSupportUniquenessProof` | `glSupercuspidalSupportUniqueness` |
+| `Classification.CuspidalProductMirabolicSupportShiftStatement` | the target proposition only |
 
 The helper modules also bring in these published results:
 
-- `CuspidalSupport.cuspidalEmbedding` (`CuspidalSupport.CuspidalEmbeddingProof`,
-  proof `b518020e-e833-4191-b440-3d28855cfaf2`, task
-  `d1684637-cf80-4266-8850-2d68c922d008`), used for admissibility of `σ`;
+- `CuspidalSupport.cuspidalEmbedding` (`CuspidalSupport.CuspidalEmbeddingProof`),
+  used for admissibility of `σ`;
 - `SmoothRep.isIrreducible_contragredient_iff` and `compactOpen_cofinal`
-  (`Category.Contragredient`, definition
-  `ea215466-b640-4254-8915-bded05fc574b`).
+  (`Category.Contragredient`).
 
 The published inputs of the two helpers are listed in their own Markdown.
 They are general smooth duality, the contragredient of supercuspidal
@@ -246,12 +226,11 @@ imports only `CuspidalSupport.MinimalConjugatingCosetsProof`,
 
 Computed by following every `import Langlands.…` line from this module at
 Library commit `b22e185743f7c318f709e14e422801f4360105d5`, together with the
-two staged helper modules. Every Library file in the closure is
+two helper modules. Every Library file in the closure is
 byte-identical to that commit. Besides this module, the closure has 603
 project modules. They are listed below by namespace, with prefix
 `Langlands.Representation.X` or `Langlands.X` shown once per line. Mathlib is
-the pinned environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` and is not
-listed.
+not listed.
 
 - `Langlands.Algebra` (8): `CommutingDimensionHelpers`, `CommutingDimensionNilpotent`, `CommutingDimensionNumerics`, `CommutingDimensionPrimary`, `CommutingDimensionRecurrence`, `SandwichDimensionBoundProof`, `SandwichDimensionBoundStatement`, `SeparatedMatrixRepresentations`
 - `Langlands.Analysis` (18): `Local.CompactOpenCoverUnimodularityProof`, `Local.CompactOpenCoverUnimodularityStatement`, `Local.ModularCompactAverage`, `Local.QuotientAutomorphismProof`, `Local.QuotientAutomorphismStatement`, `Local.QuotientAverageReal`, `Local.QuotientAveragingKernel`, `Local.QuotientComplex`, `Local.QuotientFunctional`, `Local.QuotientMass`, `Local.QuotientMeasure`, `Local.QuotientMeasureExistence`, `Local.QuotientMeasureExistenceStatement`, `Local.QuotientMeasurePrerequisites`, `Local.QuotientPositiveLifting`, `Local.QuotientTopology`, `Local.QuotientTranslation`, `Local.SplitKernelQuotient`
@@ -330,13 +309,14 @@ listed.
    - the word "exhaustion" (by compact open subgroups), in comments and section
      names of `CompactCoefficient.AdmissibleComplement`,
      `Jacquet.CharacterAveraging` and `Parabolic.GeometricPrerequisitesStatement`.
-2. **Excluded task IDs.** All 62 task and artifact IDs in this task's contract
-   were searched for in the Lean and Markdown files of the closure. The Lean
+2. **Identifiers of excluded results.** The Lean and Markdown files of the
+   closure were searched for the recorded identifiers of the excluded results
+   and admitted inputs (not their Lean names, which check 1 covers). The Lean
    files contain none. In Markdown they occur only in records of exclusions or
    provenance:
    - the target statement's Markdown;
-   - this task's helpers;
-   - the 4.7(a) helper (its own task `f81d9b36`);
+   - the two helpers of this proof;
+   - the 4.7(a) helper (written for the proof of `HighestDerivativeSupportShift`);
    - the independence audits of `Derivative.TopLocalizationData`,
      `Jacquet.LocalizationTower`, `Derivative.PartialDerivativeJacquetLHS`,
      `Derivative.PartialDerivativeJacquetNormalization`,
@@ -345,15 +325,14 @@ listed.
      `Derivative.MirabolicHighestDerivativePairingProof`;
    - the provenance notes of `Derivative.MinusVanishing` and
      `Derivative.MirabolicPhiMinusNondegeneratePairing`. These are helpers of
-     the admitted tasks `2e5183b1` and `a925b519`; `MinusVanishing` is the
-     BZ77 3.2(e) vanishing consequence, not §4.4;
-   - the environment ID.
-3. **Publishing tasks.** 441 closure modules are the entry modules of
-   published artifacts: 138 proofs, 120 statements and 183 definitions. The
-   138 proof modules belong to 120 distinct proof tasks. The only one of them
-   named in the contract is `a925b519-9bb9-4927-873e-ad322d41328e`: the BZ77
-   3.8 pairing proof, which the objective requires. The other 162 modules are
-   not the entry module of an archived artifact. They are the two staged
+     the two admitted inputs, the BZ77 §4.4 proof and the BZ77 3.8 pairing
+     proof; `MinusVanishing` is the BZ77 3.2(e) vanishing consequence, not §4.4.
+3. **Proof modules.** 441 closure modules are the main modules of published
+   statements, definitions and proofs: 138 proofs, 120 statements and 183
+   definitions. Of the 138 proof modules, the only one that proves a result
+   named in the conditions or exclusions below is the BZ77 3.8 pairing proof
+   (`Derivative.MirabolicHighestDerivativePairingProof`), a required input.
+   The other 162 modules are the two
    helpers, `CuspidalSupport.WholeLeviTransport`, and basic definitions and
    infrastructure (groups, fields, smooth representations, contragredients,
    twists, measures, Hecke and Jacquet basics, the Gelfand–Kazhdan Whittaker
@@ -366,98 +345,117 @@ listed.
    The final theorem takes no hypothesis, so no unproved proposition is
    assumed.
 
-### Inputs required by the objective
+### Required inputs
 
 | Condition | Result |
 | --- | --- |
 | BZ77 3.8 only through `Derivative.mirabolicHighestDerivativePairing` | Used exactly there, in `exists_derivative_hom_contragredient` (helper 2). |
-| BZ77 §4.4 only through the accepted proof of `2e5183b1` r2 | Not used. Neither `Classification.SupercuspidalDerivativesProof`, its statement, nor `Classification.SupercuspidalDerivativeVanishing` is in the closure. The 4.7(a) helper replaces §4.4 by cuspidal Jacquet vanishing. |
-| GL Leibniz filtration only through `3238f371` | Not used; no Leibniz module is in the closure. |
-| Exactness of derivatives only through published proofs of the two exactness statements | Not used. Neither statement module is in the closure, and nothing uses task `b65bc667`. The closure has exactness of the Jacquet functor and of the smooth contragredient, which are distinct published results. |
-| Lemma 4.7(a) | Quotient form from the published helper `bf38b454`, as allowed by operator response `f6869c7d`, plus published support uniqueness. |
+| BZ77 §4.4 only through its published proof | Not used. Neither `Classification.SupercuspidalDerivativesProof`, its statement, nor `Classification.SupercuspidalDerivativeVanishing` is in the closure. The 4.7(a) helper replaces §4.4 by cuspidal Jacquet vanishing. |
+| GL Leibniz filtration only through its published proof | Not used; no Leibniz module is in the closure. |
+| Exactness of derivatives only through published proofs of the two exactness statements | Not used. Neither statement module is in the closure. The closure has exactness of the Jacquet functor and of the smooth contragredient, which are distinct published results. |
+| Lemma 4.7(a) | Quotient form from the published helper `CuspidalProductDerivativeQuotientSupport`, plus published support uniqueness. |
 | Finite length of derivatives | Not used: the proof uses no Jordan–Hölder series. |
 | Contragredient of a product, for every `r` and all ranks | Proved in helper 1. |
 | Support of a contragredient | Proved in helper 1 (`isSupercuspidalSupport_contragredient`). |
 | Pairing to Jordan–Hölder constituent | Replaced by the nonzero map `π̄^(k) → σ̃` (helper 2) and the quotient form of 4.7(a). |
 | Haar-modulus comparison | Not used; the pairing covariance is `|det|` in the Library convention. |
-| No theorem-valued hypothesis, conditional proof or pending input | The theorem has no premise. Its inputs are published, except the two helpers, which are this task's own staged and review-accepted candidates. |
+| No theorem-valued hypothesis or conditional proof | The theorem has no premise. Its inputs are published results and the two helpers of this proof. |
 
-### Exclusions listed in the objective
+### Exclusions
 
 | Exclusion | Result |
 | --- | --- |
-| `HighestDerivativeSupportShift`, candidates and proofs of `f81d9b36` (including candidate `61c4254f`), `HighestDerivativeSupportShiftBoundary` (`24f89507`) | Not imported. `Classification.SegmentSocleDerivativesStatement`, `…Boundary` and any `HighestDerivativeSupportShiftProof` are absent from the closure. The only `f81d9b36` module is the 4.7(a) helper `bf38b454`, which the operator allowed. |
-| Items (b), (d), (e), (f) of `8e5b4563` | `SegmentSocleDerivatives`, `NonjuxtaposedSegmentSocleConstituentLevel`, `NonjuxtaposedSegmentSocleDerivativeStrictMono` and `SegmentSocleProductHighestDerivative` occur nowhere in the closure. |
-| Two-supercuspidal product conclusions (`3c9849a4`, `ab61f565`) | No `TwoSupercuspidal*` module. `TwoSupercuspidalProductDualTwist` is replaced by helper 1. |
+| `HighestDerivativeSupportShift`, its proofs, `HighestDerivativeSupportShiftBoundary` | Not imported. `Classification.SegmentSocleDerivativesStatement`, `…Boundary` and any `HighestDerivativeSupportShiftProof` are absent from the closure. The only module written for the proof of `HighestDerivativeSupportShift` is the 4.7(a) helper `CuspidalProductDerivativeQuotientSupport`, used as described above. |
+| Segment-socle derivative statements | `SegmentSocleDerivatives`, `NonjuxtaposedSegmentSocleConstituentLevel`, `NonjuxtaposedSegmentSocleDerivativeStrictMono` and `SegmentSocleProductHighestDerivative` occur nowhere in the closure. |
+| Two-supercuspidal product conclusions (`TwoSupercuspidalNonadjacentProductIrreducible`, `TwoSupercuspidalProductStructure`) | No `TwoSupercuspidal*` module. `TwoSupercuspidalProductDualTwist` is replaced by helper 1. |
 | Segment derivative and segment product formulas | None. The only segment module is the definition module `Classification.Segments`, used for `CuspidalDatum.twist`. |
-| Whittaker coinvariant finiteness (`62de5903`, `5ab445dc`, `3ff5c8fb`) and `MirabolicFiniteLength` (`5428fe2c`) | No such module. The Whittaker modules in the closure are the Gelfand–Kazhdan character, measure and Iwasawa infrastructure used by the published 3.8 pairing proof. |
-| Ze80 6.1(a), linked pairs, final product criteria, classification (`b711af72`) | None. No such module or name is in the closure. |
-| Operator-paused `b65bc667`, Worker 127 | Not used, not contacted. |
+| Whittaker coinvariant finiteness and `MirabolicFiniteLength` | No such module. The Whittaker modules in the closure are the Gelfand–Kazhdan character, measure and Iwasawa infrastructure used by the published 3.8 pairing proof. |
+| Ze80 6.1(a), linked pairs, final product criteria, classification | None. No such module or name is in the closure. |
 
-### Exclusion set inherited from `b711af72`
+### Exclusions inherited from the Ze80 §6.2 homogeneity proof
 
-These are the conclusions, proof successors and transitive dependencies of:
+These are the conclusions, proofs and transitive dependencies of:
 
-- tasks `23189526`, `f3a69bc8`, `aca8805b`, `23e98d90`, `2ae5cbe5`, `8364e73f`,
-  `3bfb61fa`, `ebea9a8a`, `20e4e1c6`, `52e97845`, `1cb45da2`, `cd8ab97c`,
-  `bf433f0a`, `30341ae4`, `8252833d` and `5eece9e8`;
+- `OrderedMultisegmentSocleExistence`, socle exhaustion, analytic segment
+  classification, the segment-socle product results
+  (`UnlinkedSegmentSocleProductIrreducible`,
+  `LinkedSegmentSocleReverseProductStructure`,
+  `LinkedSegmentSoclePairReducible`), `SegmentSocleProductIrreducibility`,
+  `SegmentHeadProductIrreducibility`, special-head exhaustion, ordered
+  special-head existence, quotient coverage, tempered block uniqueness,
+  `SquareIntegrableLanglandsClassification`, square-integrable exhaustion,
+  regular exhaustion, `GenericSegmentProductUniqueness`, ordered conversion
+  and forward special-segment essential square-integrability;
 - `AdjacentUnlinkedSegmentSocleSwap` and `TwoSegmentSocleCommutation`;
-- the nonadjacent-consumer list: `67279e36`, `4ca79bbd`, `e3634665`,
-  `ed48ae06`, `55ad1e10`, `b95105c6` and `92aea10f`, with their Segment
-  Jacquet formulas;
+- the nonadjacent-consumer list: individual segment-socle and special-head
+  existence, `AdjacentUnlinkedSegmentSocleSwap` and the segment Jacquet
+  formulas;
 - the bans on Ze80 §3.5/§9.6 derivative formulas, segment irreducibility
   criteria, Ze80 9.3, and classification or exhaustion theorems.
 
 Result: by check 1 no corresponding module or declaration name occurs in the
-closure. By check 2 none of these task IDs occurs outside exclusion records.
-By check 3 no published proof in the closure belongs to these tasks. The
+closure. By check 2 none of their identifiers occurs outside exclusion
+records. By check 3 no published proof in the closure proves one of them. The
 mathematical route (steps 1–7, and the 4.7(a) helper's route) uses no segment,
 socle, head, irreducibility criterion, classification, exhaustion or
-square-integrability result. Every derivative result used has an accepted,
+square-integrability result. Every derivative result used has a
 published proof: the BZ77 3.8 pairing, and Ze80 3.7(b) inside the 4.7(a)
 helper.
 
-### Independence and BZ77-only sections of `f81d9b36`, and their extra clauses
+### Exclusions inherited from the proof of `HighestDerivativeSupportShift`
 
-- **Independence.** The tasks are `23e98d90`, `a55c4267`, `8fa9f68b`,
-  `7ff2a1e9`, `2ae5cbe5`, `e3634665`, `cded83f3`, `426911b4`, `66e3b87c`,
-  `c84cd52c`, `6780b79c`, `23189526`, `f3a69bc8`, `aca8805b`, `3bfb61fa`,
-  `ebea9a8a`, `20e4e1c6`, `8252833d`, `52e97845`, `30341ae4`, `1cb45da2`,
-  `cd8ab97c`, `bf433f0a` and `5eece9e8`, with their named conclusions, and the
-  special-head criterion `8364e73f`. Absent, by checks 1–3.
+- **Independence.** The excluded results are
+  `UnlinkedSegmentSocleProductIrreducible`,
+  `LinkedSegmentSocleReverseProductStructure`,
+  `LinkedSegmentSoclePairReducible`,
+  `JuxtaposedSegmentSocleReverseProductStructure`,
+  `LinkedSegmentSocleReverseProductQuotientHom`,
+  `SegmentSocleProductIrreducibility`, `AdjacentUnlinkedSegmentSocleSwap`,
+  `TwoSegmentSocleCommutation`, `LinkedSegmentSocleGluing`,
+  `OrderedMultisegmentSocleExistence`, socle exhaustion, analytic segment
+  classification, special-head exhaustion, ordered special-head existence,
+  quotient coverage, ordered conversion, tempered block uniqueness,
+  `GenericSegmentProductUniqueness`, `SquareIntegrableLanglandsClassification`,
+  square-integrable exhaustion, regular exhaustion and forward
+  special-segment essential square-integrability, with their named
+  conclusions, and the special-head criterion
+  `SegmentHeadProductIrreducibility`. Absent, by checks 1–3.
 - **BZ77-only.** This bans segment derivative formulas, segment socle and
-  head existence and their Jacquet formulas, segment classification, items
-  (b), (d), (e), (f) of `8e5b4563`, `3c9849a4` and `ab61f565`, and the
-  consumer list repeated there. Absent, as above.
-- **Extra clauses.** `HighestDerivativeSupportShift` and every candidate and
-  proof of `f81d9b36` are excluded. Only the operator-allowed helper `bf38b454`
+  head existence and their Jacquet formulas, segment classification, the
+  segment-socle derivative statements, the two-supercuspidal product
+  conclusions, and the consumer list repeated there. Absent, as above.
+- **Extra clauses.** `HighestDerivativeSupportShift` and every proof of it
+  are excluded. Only the helper `CuspidalProductDerivativeQuotientSupport`
   is used, as recorded above.
 
-### Shared upstream restrictions of `3238f371` revision 2
+### Shared upstream restrictions
 
-- **Shared upstream scope.** This bans
-  `Whittaker.SupercuspidalCoinvariantFinitenessStatement` and `62de5903`, and
-  the parent list `30341ae4`, `3bfb61fa`, `ebea9a8a`, `20e4e1c6`, `8252833d`,
-  `52e97845`, `1cb45da2`, `cd8ab97c` and `bf433f0a`. Absent, by checks 1–3.
+- **Shared upstream scope.** This bans Whittaker supercuspidal coinvariant
+  finiteness (`Whittaker.SupercuspidalCoinvariantFinitenessStatement`), and
+  `GenericSegmentProductUniqueness`, special-head exhaustion, ordered
+  special-head existence, quotient coverage, ordered conversion, tempered
+  block uniqueness, `SquareIntegrableLanglandsClassification`,
+  square-integrable exhaustion and regular exhaustion. Absent, by checks 1–3.
   No missing derivative or tensor proof is replaced by a consumer assumption.
-- **Binding sections of `2e5183b1` r2.** The Independence and BZ77-only
-  sections are the same as for `f81d9b36` above. Shared lower inputs are
+- **Restrictions of the BZ77 §4.4 proof.** The independence and BZ77-only
+  restrictions are the same as for the proof of `HighestDerivativeSupportShift`
+  above. Shared lower inputs are
   reused only after this audit: the geometric lemma, cuspidal support,
   Jacquet functors and derivative functors. No derivative exactness, Leibniz
   filtration or finite length is used.
 - **Whittaker-finiteness independence.** This bans
-  `IrreducibleCoinvariantFinitenessStatement` (`5ab445dc`),
-  `LeviCuspidalCoinvariantFinitenessStatement` (`3ff5c8fb`) and the
-  `MirabolicFiniteLength` route (`5428fe2c`). Absent, by checks 1–3.
+  `IrreducibleCoinvariantFinitenessStatement`,
+  `LeviCuspidalCoinvariantFinitenessStatement` and the
+  `MirabolicFiniteLength` route. Absent, by checks 1–3.
 
-### The two operator-allowed modules
+### The two shared modules
 
 - `Classification.CuspidalProductDerivativeQuotientSupport`. Its closure has
   369 modules, including itself and `WholeLeviTransport`; all are part of the
-  closure above and covered by the checks. Its own audit and its acceptance
-  report (Reviewer 5874) found no excluded input. Its proof uses the
-  published inputs of its Markdown table and no result of `f81d9b36` beyond
-  this pair.
+  closure above and covered by the checks. Its own audit found no excluded
+  input. Its proof uses the
+  published inputs of its Markdown table and no other result written for the
+  proof of `HighestDerivativeSupportShift`.
 - `CuspidalSupport.WholeLeviTransport`. It imports three published
   `CuspidalSupport` proof and definition modules and proves the two transport
   theorems that were published in `Exponents.PersistenceTransport`. No

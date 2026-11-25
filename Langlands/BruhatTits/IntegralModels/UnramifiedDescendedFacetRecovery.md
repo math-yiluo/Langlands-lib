@@ -1,6 +1,6 @@
 # Recovery of descended facets from actual unramified images
 
-This internal unit combines full-facet restriction with global unramified
+This module combines full-facet restriction with global unramified
 zero-fixer recovery and exact special-fibre image recovery. It does not introduce
 a new translation from the literature.
 
@@ -48,4 +48,6 @@ characterizations, and applies the geometric equality theorem above.
 This supporting result does not prove the facet-specific congruence
 containments, parabolicity, comparison with reductive-quotient images, descent of
 image equality from the base residue field, or surjectivity onto all parabolics.
-The exact host parabolic order bijection therefore remains a separate obligation.
+The exact parabolic order bijection `UnramifiedFacetParabolicOrderStatement` is
+therefore not proved here; the theorem `unramifiedFacetParabolicOrder` in
+`UnramifiedFacetParabolicOrderProof` proves it.

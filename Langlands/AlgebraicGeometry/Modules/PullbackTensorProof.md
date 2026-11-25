@@ -1,11 +1,11 @@
 # Invertibility of the canonical sheaf pullback tensor comparison
 
 The theorem `Langlands.Scheme.Modules.pullbackTensorComparisonIsIso` has
-exactly the published type
+exactly the type
 `Langlands.Scheme.Modules.pullbackTensorComparisonIsIsoStatement.{u}`.
 For arbitrary schemes `X Y : AlgebraicGeometry.Scheme.{u}` and a morphism
 `f : X ⟶ Y`, it proves invertibility of the fixed natural transformation
-`pullbackTensorComparison f`. Its component is the published canonical map
+`pullbackTensorComparison f`. Its component is the canonical map
 from `f^*(tensorObj M N)` to `tensorObj (f^*M) (f^*N)`.
 There are no extra hypotheses or parameters.
 
@@ -57,7 +57,7 @@ L.obj (M.val ⊗ N.val) ⟶ L.obj M.val ⊗ L.obj N.val
 
 whose presheaf-adjunction mate sends each pure tensor to the tensor of
 the presheaf adjunction units. The lemma
-`canonical_comparison_isIso_of_presheaf` proves that the exact published
+`canonical_comparison_isIso_of_presheaf` proves that the exact
 `pullbackTensorComparisonApp f M N` equals
 
 ```text
@@ -68,7 +68,7 @@ the presheaf adjunction units. The lemma
 To prove this equality, it applies the injective hom equivalence of the
 composite adjunction consisting of sheafification on `Y` followed by
 sheaf pullback. The lemma `composite_homEquiv_comparison` computes the
-mate of the published comparison using
+mate of the comparison using
 `homEquiv_pullbackTensorComparisonApp`,
 `tensorHomEquiv_tensorMap_comp`, and
 `tensorHomEquiv_pushforwardTensorApp`. This mate is the tensor of the
@@ -107,8 +107,8 @@ desired sheaf comparison is introduced.
 
 ## Provenance and scope
 
-This sheafification argument is internal derived content implemented by
-Worker 150, using the pinned Mathlib adjunction and sheafification APIs
+This sheafification argument is internal derived content, using the
+Mathlib adjunction and sheafification APIs
 and the existing Library tensor constructions. The presheaf maps and
 their pure-tensor formula, the unconditional presheaf invertibility
 proof, and the unconditional monoidal sheafification structure are
@@ -120,4 +120,7 @@ cited in `PullbackTensorStatement.md`. That source omits its proof;
 this module makes no attribution of the implemented argument to it.
 No flatness, quasicoherence, local freeness or affineness condition is
 used. Associativity, unit, symmetry, and pullback identity/composition
-coherence are separate obligations of the monoidal-pullback development.
+coherence are proved separately, in the modules
+`PullbackTensorAssociativityProofs`, `PullbackTensorUnitProofs`,
+`PullbackTensorCompatibilityProofs`, `PullbackMonoidal` and
+`PullbackMonoidalProofs`.

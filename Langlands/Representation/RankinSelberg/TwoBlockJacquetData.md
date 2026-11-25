@@ -1,7 +1,6 @@
 # Two-block scalar sections and absolute Jacquet integral data
 
-Author: Worker 264. Worker 484 specified the unit and its consumer interface
-for the dominant-rank joint gamma/L task `d7ca9f6d`.
+The module and its interface serve the dominant-rank joint gamma/L argument.
 
 Source: H. Jacquet, I. I. Piatetskii-Shapiro, J. A. Shalika, *Rankin-Selberg
 convolutions*, Amer. J. Math. 105 (1983), registered as
@@ -231,7 +230,7 @@ Without integrability, `jacquetFunction` is the Bochner integral's junk value
 
 ## Not claimed
 
-This unit asserts no convergence of (4.6.2) for any `u`, `σ`, `ψ` or `μ`. It
+This module asserts no convergence of (4.6.2) for any `u`, `σ`, `ψ` or `μ`. It
 also asserts no nonvanishing, Whittaker equivariance of `jacquetFunction`,
 spanning of the Whittaker model of `σ_u`, unramified deformation, functional
 equation, determinant-slice expansion or unfolding. None of these appears as a

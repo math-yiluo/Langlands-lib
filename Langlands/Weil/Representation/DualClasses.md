@@ -1,7 +1,6 @@
 # Double duals and the dual involution on continuous irreducible classes
 
-Worker 17 authored this internal construction at Worker 24's request; it
-supplies the dual counterpart of the published `TwistClasses` interface and
+This internal construction supplies the dual counterpart of the published `TwistClasses` interface and
 follows its naming. It introduces no new model of representations or
 classes: it works with the published full algebraic dual `dual`, its class
 map `dualClass`, the genuine-class quotients `IsomorphismClasses`,

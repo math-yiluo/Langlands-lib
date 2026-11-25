@@ -38,6 +38,6 @@ cancels that nonzero scalar, and uses injectivity of rationalization for a split
 torus. The original character need not survive as an actual root.
 
 These are internal consequences of the named Library comparisons and ray
-theorems, with no additional external source assertion. This unit does not
+theorems, with no additional external source assertion. This module does not
 derive cyclic support from a descended action, construct an integral
 normalizer, or establish the final facet derivative root datum.

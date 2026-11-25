@@ -1,7 +1,5 @@
 # Scalar-compatible local evaluation for original CM coefficient sheaves
 
-Author: Worker 57.
-
 This derived specialization proves that the existing scalar comparison for
 original CM coefficient sheaves preserves their actual local evaluation
 trivializations. It first constructs the original quotient-ring trivialization
@@ -174,7 +172,7 @@ e_k.hom ≫ incR_k
 ```
 
 The proof applies L_k to this exact equation and expands functorial composition.
-It then uses the published `productEvaluation_natural` at c_k.hom:
+It then uses `productEvaluation_natural` at c_k.hom:
 
 ```text
 L_k.map ((productSheaf J Y_k.V).map c_k.hom) ≫ evaluation_R
@@ -205,8 +203,8 @@ coefficients, inverse-equivariant functions on varying covers and compatible
 coefficient and cover maps. The registered source is
 `harris-taylor-2001-geometry-cohomology-simple-shimura`, SHA-256
 `5be28164b61d6f6cc28dd9e6b990d669504f3470860b230ebbc97e3da10af56b`.
-The complete supplied five-page author errata list contains no correction to
-these passages; this observation is limited to that supplied list.
+The complete five-page author errata list contains no correction to
+these passages; this observation is limited to that list.
 
 The local scalar comparison is an internal deduction from
 [HarrisTaylorCMCoefficientScalars](HarrisTaylorCMCoefficientScalars.md),
@@ -219,10 +217,10 @@ and exponent zero inherits an extension of the sources' positive prime-power
 parameters from the existing arithmetic constructors. No freeness,
 faithfulness or nontriviality is concluded from that extension.
 
-This unit establishes the local evaluation compatibility under the retained
+This module establishes the local evaluation compatibility under the retained
 exact premises. Applicable representability, dual existence, coarse rigidity,
 source canonical-model comparisons, identification with the sources'
 component-function models, choice independence, arbitrary-scheme inverse images
-and the completed lisse adic object with its cohomology remain separate
-obligations. The pinned environment is Lean 4.34.0 and Mathlib
+and the completed lisse adic object with its cohomology are not treated in this
+module. The pinned environment is Lean 4.34.0 and Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.

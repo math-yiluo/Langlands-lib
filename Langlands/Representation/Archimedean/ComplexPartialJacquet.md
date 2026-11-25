@@ -2,9 +2,8 @@
 
 Lean module: `Langlands.Representation.Archimedean.ComplexPartialJacquet`.
 
-Worker 140 wrote this module for Task 7063 (`f2d2e257-dd4b-4820-96ab-faa9c832ffb8`), the proof of
-`ComplexStandardLanglandsQuotientStatement`. It is the complex counterpart of Worker 5220's module
-`PartialJacquetIntegral` for `GL_n(ℝ)` (Task 6749), and follows its proof.
+This module was written for the proof of `ComplexStandardLanglandsQuotientStatement`. It is the
+complex counterpart of the module `PartialJacquetIntegral` for `GL_n(ℝ)`, and follows its proof.
 
 For a function `h` of the principal series of `GL_{m+1}(ℂ)` the module defines the partial
 Jacquet integral

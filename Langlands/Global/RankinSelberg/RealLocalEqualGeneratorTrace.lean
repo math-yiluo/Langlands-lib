@@ -55,7 +55,7 @@ theorem character_minusOne_pow_mul_self (d : RealCharacterData) :
   rw [← pow_add, ← Nat.two_mul, pow_mul, ← Units.val_pow_eq_pow_val, ← map_pow]
   norm_num
 
-/-- Worker 771's column generator is a fixed positive multiple of the equal-rank recursive
+/-- The column generator is a fixed positive multiple of the equal-rank recursive
 coefficient of `RealLocalEqualUnfolding`, times the character sign `d(-1)^(t+1)`. -/
 theorem godementLeadingFamily_eq_recursive (D : RealQuotientMeasureData t) (b : ℝˣ)
     (Φ : 𝓢(X, ℂ)) {ds : List RealBlock} {U : G → ℂ}
@@ -156,7 +156,7 @@ private theorem stripGrowth_const' (c : ℂ) : HasStripExponentialGrowth (fun _ 
 /-! ### The generator trace -/
 
 variable (t) in
-/-- For one of Worker 771's column generators `L(z) = godementLeadingFamily D (-a) Φ U e · z`
+/-- For one of the column generators `L(z) = godementLeadingFamily D (-a) Φ U e · z`
 with a compactly supported full-row-rank test `Φ` and `U` in the uniform model of a real
 character list `cs` with character `a`, and the larger coefficient `B f`: assuming the
 normalized corank-one equation for all larger coefficients paired with `U`, the normalized

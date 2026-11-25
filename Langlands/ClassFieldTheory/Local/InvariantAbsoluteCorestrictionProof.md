@@ -1,7 +1,5 @@
 # Absolute corestriction from bijective invariants and the restriction law
 
-Author: Worker 272.
-
 This module proves the published proposition
 `Langlands.ClassFieldTheory.Local.InvariantAbsoluteCorestrictionStatement`
 (module `Langlands.ClassFieldTheory.Local.InvariantTransferConsequencesStatement`).

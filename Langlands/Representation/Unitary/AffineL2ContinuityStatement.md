@@ -1,8 +1,5 @@
 # Joint continuity of the actual normalized affine L² action: statement
 
-Authors: Worker 452 (statement and original description) and Worker 971
-(independent inspection and description edits).
-
 This module defines the proposition
 `Langlands.AffineL2.JointContinuity F T` for the published construction in
 `Langlands.Representation.Unitary.AffineL2`. It states an analytic target;
@@ -82,13 +79,14 @@ the parameter and the vector simultaneously. Continuity of a fixed-vector
 orbit map would follow by composition, but no such corollary is stated
 here. Operator-norm continuity is not claimed.
 
-A prospective proof can combine joint continuity of inverse-affine
+The proof, in `Langlands.Representation.Unitary.AffineL2ContinuityProof`,
+combines joint continuity of inverse-affine
 evaluation, local constancy obtained from the open kernel of the determinant
-norm, and joint continuity of normalized pullback. The mirabolic part can
-then use the continuous actual coordinate maps. These are proof obligations;
-no generic continuity proposition or proof is an input to this statement.
+norm, and joint continuity of normalized pullback. The mirabolic part
+then uses the continuous actual coordinate maps. No generic continuity
+proposition or proof is an input to this statement.
 
 Fourier/Plancherel, coefficient completion, quotient transport, induced
-Hilbert models, general semidirect induction and irreducibility remain
-separate obligations. In particular, this statement neither proves
+Hilbert models, general semidirect induction and irreducibility are not
+part of this statement. In particular, this statement neither proves
 continuity nor settles normalized-induction irreducibility.

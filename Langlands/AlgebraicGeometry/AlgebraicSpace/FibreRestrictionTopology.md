@@ -72,5 +72,6 @@ The provenance is internal: the module derives these constructions from
 actual presheaf pullbacks, scheme Yoneda fullness, the published fibre
 product construction and the proved common-atlas point-topology criterion.
 It assumes no external theorem or unproved topology comparison. This
-supporting unit does not prove limit descent; the full eight-property
-`SpaceLimitPropertyDescentStatement` remains open.
+supporting module does not prove limit descent or the full eight-property
+`SpaceLimitPropertyDescentStatement`, which is proved in
+`SpaceLimitPropertyDescentProof`.

@@ -72,6 +72,9 @@ object then inherits this form through the separate
 The provenance is internal: the proof composes the proved norm-one idele
 compactness theorem, the positive scalar root and compact-unit-box constructions,
 one-by-one matrix identities, continuous-on-compact integration and the actual
-Haar pairing. It discharges the rank-one analytic case of the host task; the
-higher-rank cuspidal covering estimate and the universal local-unitarity theorem
-remain separate obligations.
+Haar pairing. It discharges the rank-one analytic case of
+`CuspidalUnitaryLocalUnitarityStatement`; the higher-rank cuspidal covering
+estimate (`OperatorRealization.exists_band_cover`, module
+`Langlands.Automorphic.CuspidalL2.SiegelCover`) and the universal
+local-unitarity theorem (`cuspidalUnitaryLocalUnitarity`, module
+`Langlands.Automorphic.CuspidalUnitaryLocalUnitarityProof`) are separate.

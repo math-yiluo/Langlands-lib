@@ -1,6 +1,6 @@
 # Base change of the actual components selected by a section
 
-This internal unit compares connected components in actual residue fibres.
+This internal module compares connected components in actual residue fibres.
 Its sole finiteness assumption is that the original morphism is locally of
 finite type. No flatness, smoothness, reducedness, quasi-compactness or
 separation assumption is needed for these comparisons.
@@ -20,7 +20,7 @@ For a Cartesian square of arbitrary schemes whose two sections commute,
 `preimage_fiberComponent_of_isPullback` applies this field comparison to
 Mathlib's actual Cartesian residue-fibre square. The original residue fibre
 is locally Noetherian because it is locally of finite type over a field.
-The published `fiberMap_fiberPoint` identifies the selected points.
+The lemma `fiberMap_fiberPoint` identifies the selected points.
 `preimage_componentSet_of_isPullback_locallyOfFiniteType` then proves equality
 of the inverse image of the original relative union with the new relative
 union. Every point is represented in its actual residue fibre, where the
@@ -37,6 +37,7 @@ inclusion into the new residue fibre.
 
 The construction derives internally from `SectionComponentFunctoriality`,
 Mathlib's Cartesian residue-fibre square and open immersion range and lifting
-theorems, and the companion `PointedConnectedComponentGeometry` development
-by Workers 1480 and 513. It supplies a base-change input for the assigned
-EGA section-component openness proof; it does not prove relative openness.
+theorems, and the companion `PointedConnectedComponentGeometry` development.
+It supplies a base-change input for the
+EGA section-component openness proof (`SectionComponentOpennessProof`); it
+does not prove relative openness.

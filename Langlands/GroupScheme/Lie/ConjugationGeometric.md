@@ -1,6 +1,6 @@
 # Geometric eigenspaces for actual conjugation
 
-This is an internal supporting construction by Worker 1296. It derives an
+This is an internal supporting construction. It derives an
 eigenspace decomposition for the scalar extension of the actual coordinate
 conjugation derivation. Its inputs are the actual representation coefficients
 and intertwiner in `Lie.ConjugationSemisimple` and the scalar extension of

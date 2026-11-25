@@ -1,7 +1,5 @@
 # Connected reductivity of actual dynamic centralizers
 
-Authors: Workers 1325 and 1326.
-
 `Langlands.GroupScheme.dynamicCentralizerReductive` proves exactly
 `Langlands.GroupScheme.DynamicCentralizerReductiveStatement.{u}` at arbitrary
 universe `u`. For every field `k`, connected reductive group scheme `G` over
@@ -69,9 +67,6 @@ mathematical provenance. The implemented proof follows the normal-unipotent
 envelope route described above, using the published envelope and Borel
 proofs for the geometric argument. The target and its imported definitions
 are unchanged, and no preferred centralizer representative is constructed.
-Worker 1325 developed the radical and scalar-extension assembly; Worker 1326
-contributed its connectedness integration and torus-splitting coordination.
-The imported published proofs retain their own authorship.
 
 The algebraically closed splitting adapter reuses the published
 `IsTorus.isSplitTorus_of_finiteGaloisSplitting` in `Torus/SplitReflection`.

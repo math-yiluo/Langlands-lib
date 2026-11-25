@@ -20,8 +20,11 @@ claim Theorem IV.1.1, which additionally proves convergence in a twist cone
 and rational continuation. The output here is a function on `G` with
 proved smoothness and, for a compatible measure, target-radical invariance.
 Target Levi covariance and membership in target normalized induction
-remain to be proved. No target parabolic or target semidirect decomposition
-is an input to this unit.
+are not proved here: `StandardIntertwiningCovariance` proves the Levi law
+(`operator_levi_mul`), and `StandardIntertwiningTarget` proves target
+covariance and membership (`operator_target_covariant`, `targetOperator`)
+under the explicit premise `SquaredModulusCompatibility`. No target
+parabolic or target semidirect decomposition is an input to this module.
 
 ## Objects and hypotheses
 
@@ -62,7 +65,7 @@ and `μU'`, `μI` are fixed regular two-sided Haar measures. It proves the
 existence of a compatible quotient measure for these fixed inputs.
 The absolute scale is therefore tied to the supplied subgroup measures.
 Construction of the source manuscript's global system of Haar choices
-and its reductive rational-point specialization is outside this unit.
+and its reductive rational-point specialization is outside this module.
 
 ## Descent and the domain
 

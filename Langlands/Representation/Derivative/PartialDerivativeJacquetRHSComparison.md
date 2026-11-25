@@ -1,7 +1,5 @@
 # Actual RHS-to-direct partial-localization comparison
 
-Author: Worker 593.
-
 This module constructs the linear equivalence between the actual normalized
 Jacquet-then-partial-derivative quotient and the direct character quotient
 at the published partial-upper subgroup. It proves both representative
@@ -45,7 +43,7 @@ Jacquet.Localization.Coinvariants A.representation
 It remains in `Type uV`, with its existing complex module structure.
 Write `q_A` for the published `Jacquet.Localization.mk` into this quotient.
 `Direct` itself needs no positivity premises; every comparison map and law
-in this unit retains both positive-block premises.
+in this module retains both positive-block premises.
 
 ## Concrete subgroup and character inputs
 
@@ -216,7 +214,7 @@ its inverse half without erasing it. This module does not prove a new
 determinant-power simplification or identify another Haar modulus.
 
 No descended `GL_k` action or smooth functor is bundled on `Direct` in this
-unit. The formula above is an identity in its complex module. The LHS
+module. The formula above is an identity in its complex module. The LHS
 ordinary-derivative adapter, the direct action, the accumulated derivative
 normalization and the final natural isomorphism remain in the separate
 assembly of the positive comparison.
@@ -245,7 +243,7 @@ Bernstein–Zelevinsky, *Induced representations of reductive p-adic groups I*
 `ρ(u)v − θ(u)v` and the inverse-half-modulus normalization. Proposition
 1.9(c),(g), printed p.445 / PDF6, motivates the transitivity and functorial
 route; §§3.5 and 4.3, printed pp.452,454 / PDF13,15, fix the ordinary
-derivative conventions used by the parent comparison. This module proves
+derivative conventions used by the comparison statement. This module proves
 its displayed maps and laws from the Library, rather than importing the
 truth of those source propositions as assumptions.
 
@@ -253,7 +251,7 @@ The retained originals are
 `/home/taskhub/central-library/Zelevinsky--Induced representations of reductive p-adic groups II, irreducible representations of GL(n)--1980.pdf`
 and
 `/home/taskhub/central-library/Bernstein-Zelevinsky--Induced representations of reductive p-adic groups I--1977.pdf`.
-The cited pages were read and visually inspected during this task, with
+The cited pages were read and visually inspected, with
 the original fingerprints verified. No applicable source-specific errata
 file was found in the checked literature and public-note locations; that
 is a bounded check.
@@ -266,8 +264,7 @@ The three direct imports are
 with the common `Langlands.Representation` prefix. Recursively following
 their actual project imports gives 91 imported modules and 182 paired
 Lean/Markdown files. Every imported file agrees byte for byte with Library
-`c6045fe1328899de3416096b16eb72db93a6c7fc`. The entry pair is the only new
-public source in this contribution; no imported pair is edited.
+`c6045fe1328899de3416096b16eb72db93a6c7fc`.
 
 The actual mathematical inputs are the quotient lifts, evaluation and
 surjectivity laws from `Jacquet.Coinvariants` and `Jacquet.Localization`;
@@ -275,11 +272,11 @@ the literal RHS composite, actual mapped intertwiners and action/character
 laws from `PartialDerivativeJacquetRHS`; the concrete subgroup/character
 identities from `PartialLocalizationData`; and `covariant_sup` from
 `LocalizationTower`. The proofs of those shared inputs use the published
-group, matrix, character, twist and quotient constructions. This unit
+group, matrix, character, twist and quotient constructions. This module
 assumes no quotient equivalence, theorem-truth field or supplied
 normalization compatibility.
 
-The integrated RHS helper additionally imports `TopLocalizationData`.
+The RHS helper `PartialDerivativeJacquetRHS` additionally imports `TopLocalizationData`.
 Its complete pair was checked: the reused `determinantNorm_upper` is
 proved from `determinant_upper` and `map_one`; that determinant identity
 uses the upper-triangular determinant formula and unit diagonal.
@@ -303,10 +300,10 @@ predicate. Field-degree and residue-field occurrences of `finrank` in
 arithmetic normalization concern fields, not representation dimensions.
 No finiteness, uniqueness, duality or classification result is used.
 
-The following table checks all exclusion families of the positive task
-and the stronger shared tower restrictions. Both the actual import
+The following table checks all exclusion families of the positive
+comparison and the stronger restrictions of the shared tower. Both the actual import
 closure and the mathematical dependencies described above avoid the
-listed conclusions, proof successors and downstream theorem routes.
+listed conclusions, the modules that prove them and downstream theorem routes.
 
 | Excluded family | Audit result |
 | --- | --- |
@@ -315,7 +312,7 @@ listed conclusions, proof successors and downstream theorem routes.
 | Tempered uniqueness, square-integrable classification or exhaustion, regular exhaustion, analytic segment classification and forward special essential square-integrability | No such module or mathematical conclusion. The actual determinant and modulus evaluations are group-character calculations. |
 | Unlinked socle-product irreducibility, linked reverse-product structure, linked pair reducibility, general socle-product irreducibility, juxtaposed structure and quotient-Hom | No product-of-representations, socle or quotient-Hom theorem. |
 | Adjacent and two-segment socle commutation, linked gluing, ordered multisegment socle existence and socle exhaustion | No commutation, gluing or socle existence/exhaustion input. |
-| Full, head and socle segment Jacquet formulas, special Jacquet exponent-norm formulas, all segment derivative formulas, and parts (b),(d),(e),(f) of the shared upstream six-statement contribution | Only general quotient constructions and actual derivative definitions occur. None of the excluded formula conclusions is used. |
+| Full, head and socle segment Jacquet formulas, special Jacquet exponent-norm formulas, all segment derivative formulas, and parts (b),(d),(e),(f) of the six statements of `Classification.SegmentSocleDerivativesStatement` | Only general quotient constructions and actual derivative definitions occur. None of the excluded formula conclusions is used. |
 | Two-supercuspidal nonadjacent-product irreducibility or full product structure; Ze80 §§3.5,9.6 segment formulas and Theorems 4.2,9.7,9.3 | No two-supercuspidal, segment criterion, analytic or classification input. The §3.7 citation is only motivation for the construction. |
 | Supercuspidal proper-derivative vanishing and finrank-one conclusions of `SupercuspidalDerivatives` | No `Classification` module or such theorem input. `TopDerivativeCoinvariantComparison` is also absent. |
 | Irreducible, Levi-cuspidal and supercuspidal Whittaker coinvariant finiteness, including the dependent mirabolic finite-length route | No representation-finiteness premise or conclusion; the unused predicate and arithmetic degree facts described above do not provide one. |
@@ -324,15 +321,15 @@ listed conclusions, proof successors and downstream theorem routes.
 The complete import list appears below. It contains only lower group, field,
 topology, measure, category, smooth-representation, twist, localization,
 Jacquet, derivative-definition and character infrastructure. A scan for the
-named excluded declarations and all 38 excluded task identifiers found no
+named excluded declarations found no
 reference in its Lean sources. This scan supplements the proof-provenance
 check above; a string scan alone does not establish independence.
 
 This construction covers positive `k,m`. It proves neither boundary
 comparison, the ordinary-derivative comparison, nor the final natural
-isomorphism requested by the parent task.
+isomorphism of the comparison statement.
 
-Environment: `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, Lean 4.34.0, Mathlib
+Environment: Lean 4.34.0, Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.
 
 ## Complete transitive project import list

@@ -1,7 +1,5 @@
 # Auxiliary interfaces for the GL block cone proof
 
-Author: Worker 534.
-
 This is an internal decomposition of the published proposition
 `Langlands.GLParabolicRootWeightConeStatement` in
 `Langlands.Representation.Classification.ParabolicConeStatement`.

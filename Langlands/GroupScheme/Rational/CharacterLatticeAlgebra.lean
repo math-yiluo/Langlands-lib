@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 
 /-! # Commutative algebra for the finiteness of rational character lattices
 
@@ -335,6 +335,8 @@ theorem free_and_finite (hw : LinearIndependent k (wa w)) (g : Finset L)
     refine add_mem (Submodule.subset_span (Or.inr ⟨_, rfl⟩)) ?_
     exact Submodule.span_mono Set.subset_union_left hq
   have := isAddTorsionFree w hw
+  have : HasUniqueDiv M :=
+    ⟨fun _ hn a b hab => eq_of_nsmul_eq_nsmul_of_addCommute hn (AddCommute.all a b) hab⟩
   exact ⟨inferInstance, hfin⟩
 
 end Lattice

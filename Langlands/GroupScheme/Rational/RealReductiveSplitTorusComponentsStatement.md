@@ -44,8 +44,7 @@ The proof continues on printed p. 147 (PDF page 94). Correspondence with the Lea
 
 - The source allows any connected `G` defined over `ℝ`. The Lean statement keeps only
   connected reductive `G`, which is the case the source's proof reduces to (via a Levi
-  decomposition) in its first paragraph. The Library has no Levi decomposition of arbitrary
-  connected groups.
+  decomposition) in its first paragraph.
 - "Tore déployé sur R maximal" is the Library's `IsMaximalSplitTorus i`.
 - In the source, `(G_R)^0` is the neutral component in the sense of 14.1, where `π₀` means
   path components, and `G_R` carries the usual topology of 9.1. The usual topology is the
@@ -68,7 +67,10 @@ It is meant as an input for the first conjunct of
 `Langlands.GroupScheme.RealPointComponentsStatement` (module
 `Langlands.GroupScheme.Rational.RealPointComponentsStatement`): the real points of a simply
 connected semisimple group are connected. The same component
-conclusion for all smooth connected affine real groups (Task 7598,
-`8119be66-5f74-491f-a33d-c4962b72d7da`) is not in the Library at this module's base. Its
-non-reductive case would need a Levi decomposition. The present proposition is the reductive
+conclusion for all smooth connected affine real groups is
+`Langlands.GroupScheme.RealMaximalSplitTorusComponentsStatement`, proved as
+`realMaximalSplitTorusComponents`
+([`RealMaximalSplitTorusComponentsProof`](RealMaximalSplitTorusComponentsProof.md)) by a
+reduction to the present proposition; its non-reductive case uses a Levi decomposition
+(`characteristicZeroLeviDecomposition`). The present proposition is the reductive
 case.

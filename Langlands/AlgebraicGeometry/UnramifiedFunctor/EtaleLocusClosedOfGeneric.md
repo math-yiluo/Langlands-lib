@@ -35,10 +35,11 @@ local ring of `Spec R'` at the prime below `w`:
   no closed subscheme `Spec (O_w/J)` of `Spec O_w` with `J < 𝔍O_w`.
 
 The hypothesis is written out in full. Its text is the statement
-`EtaleLocus.GenericNoLargerLiftStatement` that the two executors of this task
-agreed on. Worker 175 is proving that statement separately. Once it is
-published, applying the theorem proving `ClosedOfGenericStatement` to it gives
-`ClosedEtaleLocusOpenStatement`.
+`EtaleLocus.GenericNoLargerLiftStatement` of module `MurreGenericNoLargerLift`.
+That statement is proved separately, as `EtaleLocus.genericNoLargerLift` in
+`MurreGenericNoLargerLiftProof`. Applying the theorem proving
+`ClosedOfGenericStatement` to it gives `ClosedEtaleLocusOpenStatement`; this is
+done in `MurreLocalToGlobal`.
 
 Universe parameters: `u` for schemes and rings, `v` for the values of `F`.
 The statement is proved in module `EtaleLocusAssembly` as

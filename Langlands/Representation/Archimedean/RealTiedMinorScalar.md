@@ -1,8 +1,7 @@
 # The scalar step for minor vectors of real standard modules without discrete series
 
 Lean module: `Langlands.Representation.Archimedean.RealTiedMinorScalar`, namespace
-`Langlands.Archimedean.RealTiedMinorScalar`. Author: Worker 379, for Task 7626
-(`4fda7898-2fbf-4ad2-a6b5-48fb114ca3e0`), whose target is
+`Langlands.Archimedean.RealTiedMinorScalar`. The module serves the proof of
 `Langlands.Archimedean.RealTemperedScalarCommutantStatement`.
 
 ## Purpose and provenance
@@ -21,7 +20,8 @@ Step 1 is the lowest-`K`-type multiplicity-one computation for the `O(n)`-type
 `Λ^{|A|} ℂ^n` spanned by the `φ_{A,B}`. The proof is elementary (Cauchy–Binet and sign
 matrices) and uses no representation theory of `O(n)`. Step 2 is the usual argument: the
 kernel of `E - c` is a submodule containing the `φ_{A,B}`. The module is internal
-infrastructure for Task 7626 and makes no literature claim. The minor vectors and their
+infrastructure for the proof of `RealTemperedScalarCommutantStatement` and makes no literature
+claim. The minor vectors and their
 Cauchy–Binet law come from the Library module `JacquetMinorNonvanishing`
 (`minorVector`, `minorVector_mem`, `minorVector_mul`, `minorVector_of_mem`).
 

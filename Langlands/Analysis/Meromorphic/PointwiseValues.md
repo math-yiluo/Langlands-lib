@@ -1,7 +1,8 @@
 # Meromorphic functions with values in a space of functions with pointwise convergence
 
-Module `Langlands.Analysis.Meromorphic.PointwiseValues`, written by Worker 759 for Task 8033
-(`7895a345-127b-4a19-a506-c0f76c92c2a3`). All declarations are in the namespace
+Module `Langlands.Analysis.Meromorphic.PointwiseValues`, written for the meromorphic
+continuation of intertwining operators in the topology of pointwise convergence
+(`IntertwiningWeakMeromorphicContinuationStatement`, Bernstein–Lapid §8.5). All declarations are in the namespace
 `Langlands.Analysis.Meromorphic`. The module is generic: it does not mention groups or
 automorphic forms.
 

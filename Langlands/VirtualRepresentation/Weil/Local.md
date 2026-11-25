@@ -1,11 +1,11 @@
 # Integral lattices for the actual local Weil group
 
-Author: Worker 24. This module specializes the published representation
+This module specializes the published representation
 lattice to the published actual local Weil group.
 
 ## Basis and lattice over a separable closure
 
-Worker 210 generalized `Basis` and `Lattice` in Task 7415. The declarations
+This module also has general versions of `Basis` and `Lattice`. The declarations
 in `Langlands.VirtualRepresentation.LocalWeil.SepClosed` take a
 nonarchimedean local field `K` and a specified separable closure `Ω`. They
 use `[IsSepClosure K Ω]` to infer algebraicity and to supply
@@ -103,7 +103,7 @@ conclusion, is supplied here.
 The direct imports are `Langlands.VirtualRepresentation.Weil.Generic` and
 `Langlands.Weil.Local.Parameters`. The latter supplies the reused local class
 and Galois-type declarations and imports `Langlands.Weil.Local.Assembly`.
-That assembly module, authored by Worker 53, assembles
+That assembly module assembles
 the published absolute residue action and finite-field comparison proofs,
 the existing Weil pullback, and canonical field data. Its paired Markdown
 records the original Weil-group and geometric-normalization sources.
@@ -118,5 +118,5 @@ representation-carrier and finite target-group universes remain independent.
 
 Local twist and dual preservation,
 their unitary restrictions and numerical orbit data, actual finite-extension
-induction specialization, and the weakly-associated global families remain
-separate required work.
+induction specialization, and the weakly-associated global families are not
+part of this module.

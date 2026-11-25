@@ -1,6 +1,6 @@
 # Ordered coordinate coefficients for Cartan polynomial expressions
 
-Worker 459 constructed this module. All declarations are in
+All declarations are in
 `Langlands.Global.ArchimedeanGL` and apply to an arbitrary number field
 `K : Type u` and every natural rank `n`, including zero.
 
@@ -129,6 +129,6 @@ This module constructs coefficient data only. It does not assert that
 the carrier's action equals an ambient iterate or a genuine enveloping
 action, nor prove a highest-order symbol formula, coefficient
 analyticity, ellipticity or analytic regularity. Those comparisons and
-proofs require a separate focused unit. The imported carrier contains
+proofs are not part of this module. The imported carrier contains
 only the basis and actual coefficients; no annihilation or analytic
 solution certificate is added.

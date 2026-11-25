@@ -1,7 +1,5 @@
 # The preimage of a split-torus centralizer in a simply connected cover: the proof
 
-Author: Worker 4797.
-
 `Langlands.GroupScheme.splitTorusCentralizerCoverPreimage` proves exactly the
 published proposition
 `Langlands.GroupScheme.SplitTorusCentralizerCoverPreimageStatement.{u}`
@@ -73,10 +71,12 @@ all at universe `u`, and contains no new mathematical argument.
      `Spec.map (CommRingCat.ofHom (algebraMap k (AlgebraicClosure k)))`,
      so the types agree definitionally.
 
-Task `6f0af611-2c34-46cc-b5d3-f87fe1ee1cf5` asks for a separate public proof
-of `SplitTorusCentralizerDerivedSimplyConnectedStatement`. That proof was not
-in the Library when this module was written. So this module forms the same
-term in place and introduces no separate theorem for it. No unproved
+The Library also has a separate proof of
+`SplitTorusCentralizerDerivedSimplyConnectedStatement`,
+`splitTorusCentralizerDerivedSimplyConnected` in
+[`SplitTorusCentralizerDerivedProof`](SplitTorusCentralizerDerivedProof.md).
+This module does not import it: it forms the same term in place and
+introduces no separate theorem for it. No unproved
 proposition is a premise of `splitTorusCentralizerCoverPreimage`.
 
 How the reduction uses its inputs is described in its own Markdown. In
@@ -98,7 +98,7 @@ short, with `f = π ≫ d`:
   product and through `M' ⟶ D ×_G M` give a maximal torus `T'` of `M'`,
   the schematic image of the lift, with `g : T' ⟶ T`.
 
-`lean_check` compiles the module with no errors or warnings. It reports only
+The module compiles with no errors or warnings. The check reports only
 the axioms `propext`, `Classical.choice` and `Quot.sound`.
 
 ## Provenance

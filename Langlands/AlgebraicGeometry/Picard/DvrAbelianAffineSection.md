@@ -1,7 +1,5 @@
 # An affine generation open meeting the special fibre
 
-Author: Worker 171.
-
 Module `Langlands.AlgebraicGeometry.Picard.DvrAbelianAffineSection`, namespace
 `Langlands.AlgebraicGeometry.Picard.DvrAbelianGeometry`.
 
@@ -65,8 +63,8 @@ homogeneous spaces over Prüfer bases*, arXiv 2209.02443v1 (registered source
 `guo-ample-sheaves-prufer-2209-02443-v1`): Corollary 3.6 (printed p.7) shrinks an
 open with affine generic fibre to an affine principal open meeting the special fibre,
 using Lemma 3.4 (printed pp.6–7) that the complement of an affine open containing the
-maximal points of the fibres is flat of pure codimension one. Worker 171 read printed
-pp.6–8 and 12–18. The implementation specializes to a discrete valuation ring and to
+maximal points of the fibres is flat of pure codimension one. Printed
+pp.6–8 and 12–18 were read. The implementation specializes to a discrete valuation ring and to
 the generation open of a line-bundle section, replaces Lemma 3.4 by the factorial
 argument of `FactorialAffineComplement`, and adds the division by the uniformizer
 needed to make the section meet the special fibre.

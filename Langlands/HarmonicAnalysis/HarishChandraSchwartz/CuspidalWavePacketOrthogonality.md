@@ -3,18 +3,19 @@
 Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.CuspidalWavePacketOrthogonality`,
 namespace `Langlands.HarishChandraSchwartz`. It imports:
 
-- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.InducedConstantTermFourier` (Worker 249):
+- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.InducedConstantTermFourier`:
   `Space.constantTermInd` (`f^{(P),Ind}`), `constantTermInducedFourierTransform`
   (`f̂^{(P),Ind}(ω)`) and Lemma VII.1.2,
   `inducedFourierTransform_eq_constantTermInducedFourierTransform`; through it
   `coefficientFourierTransform`, `inducedFourierTransform`, `ConstantTermData`, `IsConjModulus`,
   `ConstantTermEstimate`, `TranslationWeights`, `L2Weights`, `HasTemperedCoefficients`;
-- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.InducedOrbitWavePacketPairing`
-  (Worker 249): `pairing_inducedOrbitWavePacket_eq_zero`, `factorization_mem_of_subtype`; through
+- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.InducedOrbitWavePacketPairing`:
+  `pairing_inducedOrbitWavePacket_eq_zero`, `factorization_mem_of_subtype`; through
   it `fourierOrbitSection` and `fourierOrbitSection_apply` (`InducedFourierCoherence`, the
   section `ψ_f[O, P]`), the wave packet `inducedOrbitWavePacket` (`OrbitWavePacket`), `pairing`
   (`(φ₁, φ₂)_G = ∫ conj(φ₁) φ₂`), `UnitaryOrbitRepresentative`,
-  `unitaryOrbitRepresentative_isDiscreteSeries` and Worker 200's orbit and section data.
+  `unitaryOrbitRepresentative_isDiscreteSeries` and the orbit and section data of
+  `Langlands.Representation.Plancherel.ProductInducedOrbitSections`.
 
 ## Provenance
 

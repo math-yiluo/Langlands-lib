@@ -1,7 +1,5 @@
 # Weight decomposition under a generic point of a cocharacter
 
-Author: Worker 1095.
-
 This helper module of the proof of `BorelPointContainmentStatement` checks
 the hypothesis of Lemma B (`BorelPointContainmentTangent`) for the dynamic
 centralizer of a cocharacter. The namespace is

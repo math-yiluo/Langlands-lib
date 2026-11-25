@@ -1,7 +1,5 @@
 # Finite length of actual opposite Jacquet modules from rational duality
 
-Author: Worker 196.
-
 This internal conditional adapter derives finite length and admissibility for
 the actual opposite normalized Jacquet module used in the rational-point
 commutation problem. It does not prove rational Jacquet duality, finite-length

@@ -36,9 +36,10 @@ quasi-compact). It asserts that there are a commutative ring `R : CommRingCat.{u
 
 ## Provenance and purpose
 
-This is an internal helper for Task 7618, the proof of
-`Langlands.AlgebraicGeometry.DvrPotentialGenericReductionStatement`. Worker 7, who writes the
-scheme-level assembly, asked for it: a quasi-compact scheme is covered by the spectrum of one
+This is an internal helper for the proof of
+`Langlands.AlgebraicGeometry.DvrPotentialGenericReductionStatement`
+(`Langlands.AlgebraicGeometry.DvrPotentialGenericReductionProof`). Its scheme-level assembly
+needs it: a quasi-compact scheme is covered by the spectrum of one
 ring through a morphism that is surjective, flat, locally of finite type and geometrically
 reduced. Geometric questions about `Y` can then be moved to an affine scheme. The construction is
 the standard one: the disjoint union of a finite affine open cover is affine. Mathlib uses the

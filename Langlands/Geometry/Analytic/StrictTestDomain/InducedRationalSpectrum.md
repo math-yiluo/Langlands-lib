@@ -1,6 +1,6 @@
 # Actual induced rational quotient spectra
 
-Worker 36 constructed this specialization of the published balanced topological
+This module constructs this specialization of the published balanced topological
 induction to the published actual rational quotient spectra. It supplies a
 functor of continuous actions of the full operator group and compatible maps
 to the actual ambient affinoid spectrum.

@@ -1,9 +1,7 @@
 # The Weyl point and the rank-one relation over algebraically closed points
 
-Author: Worker 239.
-
 Module `Langlands.GroupScheme.Reductive.RankOneRootCellWeyl`. This is an internal
-supporting unit for the proof of `SplitRankOneRootCellStatement`. From cell data
+supporting module for the proof of `SplitRankOneRootCellStatement`. From cell data
 (`CellData`, module `RankOneRootCellRelation`) and a `k`-point `n` that normalizes the
 torus through the reflection of `α`, it derives clauses 4 and 5 of that statement over test
 schemes whose ring of global sections behaves like an algebraically closed field. The root

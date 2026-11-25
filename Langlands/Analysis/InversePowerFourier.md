@@ -1,9 +1,11 @@
 # Fourier coefficients of `θ ↦ (P e^{iθ} + Q e^{-iθ})^{-N}`
 
-Author: Worker 3657. Module `Langlands.Analysis.InversePowerFourier`. Helper module of the proof
+Module `Langlands.Analysis.InversePowerFourier`. Helper module of the proof
 that real standard modules are nonzero (`Langlands.Archimedean.realStandardNontrivial`, module
-`Langlands.Representation.Archimedean.RealStandardNontrivialProof`), used in Task 7003.
-It imports only Mathlib. It changes no published file.
+`Langlands.Representation.Archimedean.RealStandardNontrivialProof`), used in the proof of
+genericity of archimedean standard-module components of cuspidal realizations
+(`Langlands.Automorphic.CuspidalArchimedeanStandardGenericProof`).
+It imports only Mathlib.
 
 ## Main theorems
 
@@ -54,7 +56,7 @@ Hence `θ ↦ (d' - i c')^{-N}` has no Fourier mode `|k| < N`.
 
 ## Provenance
 
-This replaces the raising/lowering-operator argument suggested in the Task 7003 contract for the
+This replaces a raising/lowering-operator argument for the
 Fourier condition of an induction block: in `GL_2(ℝ)`, the principal-series vector
 `h ↦ |det h|^α (d - i c)^{-N}` (bottom row `(c, d)`) has, after any right translation, only
 `SO(2)`-weights `|k| ≥ N`. The argument is elementary complex analysis and is internal to the
@@ -62,6 +64,5 @@ project; it makes no claim about a literature source.
 
 ## Lean checks
 
-`lean_check` in environment `5c94c648-e8dc-4002-a50a-071ebf3f6096`: checks 5850989e (Fourier
-lemma), 0572c443 (whole module) and 949e5803 (whole module with `continuous_integrand`, built with
-its dependents), no errors or warnings; axioms `propext`, `Classical.choice`, `Quot.sound`.
+The Fourier lemma, the whole module, and the whole module with `continuous_integrand` built with
+its dependents were checked: no errors or warnings; axioms `propext`, `Classical.choice`, `Quot.sound`.

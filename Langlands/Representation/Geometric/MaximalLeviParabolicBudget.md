@@ -38,4 +38,6 @@ exact detecting-family length bound. These two consequences retain independent
 field and representation-carrier universes and the original canonical
 topologies. They add no finite-length or Coxeter-coordinate premise, but the
 supplied family, gluings and every-subquotient detection remain hypotheses.
-They are conditional helpers and do not prove the host task's exact target.
+They are conditional helpers and do not prove the exact statement they serve,
+`MaximalLeviSupercuspidalInductionLengthBoundStatement` (reduced to other
+statements in `MaximalLeviSupercuspidalGeometricReduction`).

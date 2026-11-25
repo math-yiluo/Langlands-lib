@@ -19,7 +19,7 @@ coefficient functions, every freezing point `x₀`, every derivative order `p`
 `ContDiffOn ℝ ∞` on `S`, and every `x ∈ S`. No equation, ellipticity,
 analyticity, positivity or boundedness hypothesis is used.
 
-The proof is internal elementary analysis by Worker 94. It is the
+The proof is internal elementary analysis. It is the
 differentiated frozen-coefficient step of the Morrey–Nirenberg (1957) interior
 route described in the Library note
 `notes/automorphic/elliptic-analyticity-source-map.md`. That source estimates
@@ -33,8 +33,8 @@ The module imports the statement module and two published proof modules:
 
 - `Langlands.Analysis.OrderedDerivativeFamilyLeibnizProof`, for the theorem
   `orderedDerivativeFamilyLeibniz` (the binomial Leibniz bound for complete
-  ordered derivative families of a bilinear product, task `250fdf1a`);
-- `Langlands.Analysis.SmoothIteratedFDerivSymm` (Worker 815), for
+  ordered derivative families of a bilinear product);
+- `Langlands.Analysis.SmoothIteratedFDerivSymm`, for
   `iteratedFDeriv_append_of_contDiffOn` (nesting of iterated derivatives on an
   open set) and `contDiffOn_infty_iteratedLineDeriv` (smoothness of a
   fixed-word line derivative).

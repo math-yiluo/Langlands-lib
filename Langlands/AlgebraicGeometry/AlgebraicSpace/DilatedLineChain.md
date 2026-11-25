@@ -1,7 +1,5 @@
 # Countably many affine lines glued along the line with `p` inverted
 
-Author: Worker 105.
-
 Helper module for the proof of
 `Langlands.AlgebraicGeometry.AlgebraicSpace.HenselianIntegralPointsNotClosedOfSeparatedStatement`.
 It contains no statement from the literature. It builds the scheme used as the

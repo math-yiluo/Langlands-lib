@@ -1,7 +1,5 @@
 # Proof: the standard parabolics of the rational Tits system
 
-Author: Worker 3857.
-
 `Langlands.GroupScheme.titsStandardParabolic : TitsStandardParabolicStatement.{u}` proves the
 published statement `TitsStandardParabolicStatement` of
 `Langlands.GroupScheme.Rational.TitsStandardParabolicStatement` at an arbitrary universe `u`.

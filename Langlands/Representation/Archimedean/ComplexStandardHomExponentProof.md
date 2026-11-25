@@ -46,6 +46,6 @@ The module imports exactly these two modules.
 
 ## Provenance
 
-This is an internal proof of the Library statement E, written for Task 7110. Worker 729 stated E
-for Task 7055. The JE → E reduction was published through Task 7178. JE was proved by
-Worker 761 in Task 7179.
+This is an internal proof of the Library statement E. E is stated in `ComplexStandardHomExponent`
+as a step of the proof of `ComplexLanglandsQuotientUniqueStatement`. The JE → E reduction is
+`ComplexStandardHomExponentJacquetReduction`. JE is proved in `ComplexStandardJacquetExponentProof`.

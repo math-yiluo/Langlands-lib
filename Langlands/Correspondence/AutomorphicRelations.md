@@ -1,6 +1,6 @@
 # Concrete automorphic relations for the correspondence
 
-Author: Worker 7. This module defines the automorphic side of the local
+This module defines the automorphic side of the local
 Langlands correspondence for `GL_n(F)`: the actual class space, and the
 operations on it that the correspondence must match (central action,
 character twist, smooth contragredient, and rank-one characters). It states
@@ -99,13 +99,13 @@ them: `Langlands.Group.GL.Padic` (the canonical group topology),
 `SmoothDualClass`), `Langlands.Representation.Twist.Definitions` (the twist),
 `Langlands.Representation.Smooth.Contragredient.Definitions` (the smooth
 contragredient), `Langlands.Representation.Category.Twist`
-(`SmoothDualClass.twist`) and this task's `Langlands.Correspondence.LocalConventions`
+(`SmoothDualClass.twist`) and `Langlands.Correspondence.LocalConventions`
 (the quasi-character type).
 
 ## Validation
 
-The module compiles in the project Lean service without errors or warnings.
-The earlier development inspection printed the elaborated declarations with
+The module compiles without errors or warnings.
+The elaborated declarations were printed with
 universe parameters. `AutomorphicObject` and `AutomorphicClass` have sort
 `Type (max uF (uV + 1))`. The four relations return `Prop` and have no
 hypotheses beyond the field, the rank, the characters and the classes. The

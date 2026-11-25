@@ -1,7 +1,5 @@
 # Homomorphic splitting of the torus quotient of a solvable group
 
-Worker 1435.
-
 `Langlands.GroupScheme.solvableSplitExtension` proves the published proposition
 `Langlands.GroupScheme.SolvableSplitExtensionStatement.{u}` for an arbitrary
 universe `u`, with no additional premise.

@@ -1,6 +1,6 @@
 # Smooth connected maps on full model adelic points
 
-This derived unit proves openness on full model adelic points, conditional on
+This module proves openness on full model adelic points, conditional on
 the exact `SpaceUniformLangWeilStatement`. The coefficient ring is an arbitrary
 ring of S-integers of a global field; S is nonempty in the function-field
 case. Both algebraic spaces are separated and finite type, and their map is
@@ -36,5 +36,5 @@ Every infinite number-field coordinate is retained by the actual levels,
 their transitions and the full adelic point topology. The provenance is
 internal to the published level topology, cofinal principal rings, base-change
 properties and the smooth connected level-openness construction. The exact
-Lang–Weil premise remains explicit. This unit neither proves that estimate
+Lang–Weil premise remains explicit. This module neither proves that estimate
 nor claims the unconditional `AdelicSpaceSpreadSmoothOpenStatement`.

@@ -1,7 +1,5 @@
 # Proof of the open full-measure inverse-row tail locus
 
-Author: Worker 230.
-
 This module proves the published internal proposition
 `Langlands.GeneralLinear.PadicMirabolicTailConullStatement` from
 `Langlands.Group.GL.MirabolicTailConullStatement`. The closing theorem

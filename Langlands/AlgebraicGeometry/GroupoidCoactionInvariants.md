@@ -1,7 +1,5 @@
 # Invariant rings and exactness for groupoid coactions
 
-Author: Worker 101.
-
 This is an internal algebraic development for the Serre criterion proof. It
 uses the published `GroupoidCoaction`, `invariants`, `IsHom` and `IsAcyclic`
 unchanged. It defines the equalizer ring of the target map and source algebra

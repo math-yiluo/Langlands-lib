@@ -15,5 +15,5 @@ No group classification or source-dependent new structural assertion is made.
 The entry proposition `Langlands.GroupScheme.FullCenterInversionComparisonStatement` records the precise scope of
 `full_center_inversion_of_same_torus_action`: its explicit hypotheses are universally quantified in a
 Prop-valued definition. The implemented theorem and proof are retained.
-This unit is submitted as a statement because its mathematical entry is
-a proposition, rather than a data construction.
+The module's mathematical entry is a proposition, rather than a data
+construction.

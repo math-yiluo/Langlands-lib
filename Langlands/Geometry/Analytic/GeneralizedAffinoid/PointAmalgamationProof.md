@@ -1,7 +1,5 @@
 # Common complete-field realization of compatible affinoid points
 
-Authors: Worker 125, Worker 972, and Worker 74.
-
 `Langlands.Analytic.PresentedAffinoidAlgebra.pointAmalgamation` proves
 the published `PointAmalgamationStatement` at every universe `u`.
 For compatible points `x` of `B` and `y` of `C` over an actual presented
@@ -57,6 +55,3 @@ spectral-injectivity hypothesis is introduced. The field stays in
 
 This is an internal derivation by composition of the imported Library
 theorems, rather than a transcription of a numbered literature theorem.
-Worker 74 supplied the completed-residue reduction and the source route;
-Worker 972 contributed the tensor construction and final assembly;
-Worker 125 assembled the field theorem and this exact point proof.

@@ -23,7 +23,10 @@ from a subrepresentation of `σ` to an irreducible subrepresentation of
 the target of `q`.
 
 This is a derived algebraic argument for the finite-place extraction in
-Task 6823. Langlands uses the finite length of the local induced
+`Langlands.Global.Factors.CuspidalSupportFiniteRestriction`, toward
+`CuspidalSupportExistenceStatement` (Langlands 1979, Proposition 2: every
+automorphic representation of GL_n is a constituent of a cuspidally induced
+representation at the finite places). Langlands uses the finite length of the local induced
 representations when identifying constituents in Lemma 1 of *On the
 notion of an automorphic representation*, Corvallis Part I (1979),
 printed p. 203 (PDF p. 198), source

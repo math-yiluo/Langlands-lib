@@ -54,7 +54,7 @@ does not add a chosen trivialization to the preliminary data.
 The source motivation is condition (a). The proof is derived directly
 from the constructed zero-locus map, inverse-image composition and
 preservation of constant sheaves, and may be applied to actual Nilp
-bases. This unit does not prove transport of condition (b), determinant
+bases. This module does not prove transport of condition (b), determinant
 normalization (c), full admissibility, a moduli functor, or
 representability. It does not assert the special-formal-module
 construction or Proposition 2.4 on printed p.110.

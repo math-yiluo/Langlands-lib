@@ -1,7 +1,5 @@
 # Galois-stable even-path pattern data for pairing-compatible pinnings
 
-Authors: Worker 5375 and Worker 90.
-
 This module proves the Library statement
 `Langlands.GroupScheme.EvenChainGaloisDataStatement`. That statement is a
 derived finite-Galois, rational-point formulation of the rationality of
@@ -41,7 +39,7 @@ set.
 
 ## Implemented proof
 
-`nonempty_mergedGaloisData` applies Worker 90's
+`nonempty_mergedGaloisData` applies
 `GaloisCompatiblePinningData.exists_mergedRootGaloisData` (module
 `MergedRootGaloisData`) to the underlying `GaloisCompatiblePinningData`. The
 index set is `J := D.Pairs` with its action `pairAction D.isPairingCompatible`.
@@ -80,10 +78,10 @@ Markdown file:
   sorted by an invariant key.
 - `Langlands.GroupScheme.Rational.EvenChainBlockCommutation`: blocks of distinct
   paths commute.
-- `Langlands.GroupScheme.Rational.AdjacentSimpleRootCommutator` (Worker 90):
+- `Langlands.GroupScheme.Rational.AdjacentSimpleRootCommutator`:
   reordering `x_a(1) x_b(1)` for adjacent simple roots `a, b` at the cost of a
   factor in `U_{a+b}`.
-- `Langlands.GroupScheme.Rational.MergedRootGaloisData` (Worker 90): the
+- `Langlands.GroupScheme.Rational.MergedRootGaloisData`: the
   Galois-compatible merged-root data, built with a Hilbert 90 twist.
 - `Langlands.GroupScheme.Rational.EvenChainGaloisAssembly`: the even-path data,
   the middle-out ordering of the unmerged roots, and the Galois stability of the

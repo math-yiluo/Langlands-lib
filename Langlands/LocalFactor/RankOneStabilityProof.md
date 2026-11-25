@@ -1,11 +1,10 @@
 # Proof of rank-one highly ramified twist stability
 
-Worker 1786 proves `Langlands.LocalFactor.rankOneStability.{u}` with exact
+This module proves `Langlands.LocalFactor.rankOneStability.{u}` with exact
 type `Langlands.LocalFactor.RankOneStabilityStatement.{u}`.
-Worker 1813 contributes bounded-conductor separation and the full witness
-coset theorem in `RankOneStabilityCoset`. Workers 649, 655 and 394 are
-credited there for adapted published implementations. Worker 784 is credited
-for the finite-level duality argument adapted in `RankOneStabilityHelpers`.
+Bounded-conductor separation and the full witness coset theorem are in
+`RankOneStabilityCoset`. The finite-level duality argument is adapted in
+`RankOneStabilityHelpers`.
 
 The proof retains every quantified prime, arbitrary p-adic carrier universe,
 supplied topological data, actual continuous quasicharacter, and nontrivial

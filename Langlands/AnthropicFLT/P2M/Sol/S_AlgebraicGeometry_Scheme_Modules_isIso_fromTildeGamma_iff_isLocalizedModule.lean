@@ -4,7 +4,7 @@ Ported from `P2M/Sol/S_AlgebraicGeometry_Scheme_Modules_isIso_fromTildeGamma_iff
 License, Version 2.0; see `licenses/Anthropic-FLT/LICENSE`, `NOTICE` and `ATTRIBUTION.md`.
 The paired Markdown file lists the changes made by the port.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Theorems.Thm_TopCat_Sheaf_isIso_of_isIso_app_of_isBasis
 set_option maxHeartbeats 4000000
 set_option synthInstance.maxHeartbeats 400000

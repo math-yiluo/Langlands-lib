@@ -51,7 +51,7 @@ equivalence with the literal closed Levi image.
 
 The provenance is internal: the quotient transport, original Haar character,
 represented Levi point equivalences and radical compact-subgroup theorem are
-existing Library constructions and results. This unit derives their natural
+existing Library constructions and results. This module derives their natural
 compatibility. It assumes no standardness, chosen roots, dynamic presentation,
 representation finiteness or distinct-radical modulus equality.
 

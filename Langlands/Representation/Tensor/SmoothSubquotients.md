@@ -1,7 +1,5 @@
 # Actual smooth subquotients of finite external tensors
 
-Author: Worker 19.
-
 This internal algebraic adapter relates the existing actual smooth-subquotient
 relation to the existing representation-level actual-subquotient relation. It
 then transports occurrences through group equivalences and extracts or
@@ -99,13 +97,13 @@ inventory supply no classification conclusion to these constructions.
 The tensor extraction does not use their multiplicity, tempered-support,
 induction, head-existence, or exhaustion statements. No geometric-lemma,
 Jacquet-finiteness or local cuspidal-product proof is used in this adapter.
-Thus its direct and transitive proof route is independent of the eight
-excluded classification tasks in the host contract, their conclusions and
-proof successors, and uses no global support decomposition, ordered quotient
+Thus its direct and transitive proof route uses none of those classification
+conclusions or any proof of them, and uses no global support decomposition, ordered quotient
 coverage or full multisegment classification.
 
 Development compilation and inspection of the quotient presentation
 isomorphism and the smooth factor-extraction theorem succeed without warnings,
 with independent group and carrier universes and only `propext`,
-`Classical.choice` and `Quot.sound`. These checks do not supply independent
-semantic acceptance or prove either host transfer.
+`Classical.choice` and `Quot.sound`. These checks do not establish that the
+statements mean what is intended, and do not prove either Jacquet transfer
+that this module serves.

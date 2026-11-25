@@ -31,12 +31,13 @@ private theorem map_centerLiftComponent (z : CatCenter D) (X : C) :
   (h z X).choose_spec
 
 private def centerLift (z : CatCenter D) : CatCenter C where
-  app := centerLiftComponent I h z
-  naturality := fun X Y f => by
-    change f ≫ centerLiftComponent I h z Y = centerLiftComponent I h z X ≫ f
-    apply I.map_injective
-    simp only [Functor.map_comp, map_centerLiftComponent]
-    exact CatCenter.naturality z (I.map f)
+  asHom :=
+  { app := centerLiftComponent I h z
+    naturality := fun X Y f => by
+      change f ≫ centerLiftComponent I h z Y = centerLiftComponent I h z X ≫ f
+      apply I.map_injective
+      simp only [Functor.map_comp, map_centerLiftComponent]
+      exact CatCenter.naturality z (I.map f) }
 
 omit [Preadditive C] [Preadditive D] [I.Additive] in
 private theorem map_centerLift (z : CatCenter D) (X : C) :

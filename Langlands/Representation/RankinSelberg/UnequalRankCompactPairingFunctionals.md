@@ -1,7 +1,8 @@
 # Unequal-rank compact pairings and inverse-standard Whittaker functionals
 
-Author: Worker 896. Uses the published construction
-`Induction.CompactFunctionalPairing.exists_nonzero_form` of Worker 605 and Worker 805.
+Uses the published construction
+`Induction.CompactFunctionalPairing.exists_nonzero_form` (module
+`Langlands.Representation.Induction.CompactFunctionalPairing`).
 
 Module `Langlands.Representation.RankinSelberg.UnequalRankCompactPairingFunctionals`.
 This is a helper step towards the proof of
@@ -9,8 +10,9 @@ This is a helper step towards the proof of
 new proposition and does not prove that statement. Its last theorem is that
 statement's conclusion under one extra hypothesis: the inverse-standard
 Whittaker functionals of `η` form a line. That is Whittaker multiplicity one,
-which the Library still has only as the unproved
-`Langlands.Whittaker.MultiplicityOneStatement`.
+`Langlands.Whittaker.MultiplicityOneStatement`, which the Library proves as
+`Langlands.Whittaker.multiplicityOne` (module
+`Langlands.Representation.Whittaker.MultiplicityOneProof`).
 
 Notation: `N = GeneralLinear.upperUnipotent (n + 1) F`,
 `θ = standardCharacter ψ n`, `θ' = inverseStandardCharacter ψ n`.
@@ -114,8 +116,9 @@ universes `uF` and `uW`.
    - `T.fieldT2`;
    - `T.generalLinearNonarchimedean`, `T.generalLinearLocallyCompactSpace`;
    - that module's public `MirabolicCompactTwistedPairing.valuative_nonarchimedean`,
-     for the nonarchimedean additive structure. Integration exposed the existing
-     helper with its statement and proof unchanged and removed the duplicate copy.
+     for the nonarchimedean additive structure. This is the existing helper of
+     that module, with its statement and proof unchanged; this module has no
+     duplicate copy of it.
 
    The hypotheses are discharged as follows:
    - `hψ`: `MirabolicWhittaker.isOpen_complex_eq_one`;

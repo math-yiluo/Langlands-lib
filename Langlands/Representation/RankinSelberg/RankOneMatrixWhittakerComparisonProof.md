@@ -57,12 +57,12 @@ mathematics is in the helper modules listed below.
 
   It is `Set.Subset.antisymm` of two inclusions.
   - `RankOneIwasawa.whittakerRationalValues_subset_rankOneModelValues` (module
-    `RankOneMatrixWhittakerComparisonExpansion`, by Worker 901). Every matrix
+    `RankOneMatrixWhittakerComparisonExpansion`). Every matrix
     integral `Z(Φ, s + (m+1)/2, W)` equals a rank-one integral `Ψ(s, W')`, for one
     model function `W'` and every `s` in the convergence region. The proof uses
     Iwasawa unfolding, a finite level-set expansion and a Fourier cutoff.
   - `rankOneModelValues_subset_whittakerRationalValues` (module
-    `RankOneMatrixWhittakerComparisonBox`, by Worker 902). For one explicit compact
+    `RankOneMatrixWhittakerComparisonBox`). For one explicit compact
     open box `Φ₀` and one constant `C > 0`, `Z(Φ₀, s + (m+1)/2, W) = C · Ψ(s, W)`
     whenever `Ψ(s, W)` converges absolutely, with absolute convergence of the
     matrix integral.
@@ -75,7 +75,7 @@ mathematics is in the helper modules listed below.
 
 ## Helper modules
 
-All are new paired modules of this proof.
+All are modules of this proof.
 
 - `RankOneMatrixWhittakerComparisonZero`: the `n = 0` branch, and two shared lemmas
   (`whittakerSet` versus the coefficient model; constant inverse Whittaker

@@ -1,12 +1,10 @@
 # Intrinsic nonarchimedeanness of valuative GL
 
-Worker 6 authored the complete proof. Worker 52 checked the Library target,
-the proof's Mathlib interfaces and hypotheses, retained the Lean source
-unchanged, and prepared this documented submission.
+The Library target, the proof's Mathlib interfaces and its hypotheses were
+checked against the proof.
 The exact target is the proposition definition
 `Langlands.ValuativeGeneralLinearNonarchimedean` in the Library module
-`Langlands.Group.GL.NonarchimedeanStatement`, independently reviewed and
-published at commit `1804f2a6d98d21c2bbfa3c73ccf807df74c484bb`.
+`Langlands.Group.GL.NonarchimedeanStatement`.
 The theorem `Langlands.valuativeGeneralLinearNonarchimedean` has exactly that
 proposition as its type.
 
@@ -56,11 +54,9 @@ completeness argument is needed: the unit subgroup tests the actual inverse.
 All arguments are internal derivations from the pinned Mathlib interfaces.
 The only project import is the Library proposition definition above.
 Neither its Lean/Markdown pair nor its Mathlib imports is modified.
-No original-source theorem is being assumed. Machine validation and
-independent semantic acceptance/publication remain required; local
-compilation alone does not discharge them.
+No original-source theorem is being assumed.
 
-The prepared environment uses Lean 4.34.0 and Mathlib commit
+The pinned environment uses Lean 4.34.0 and Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`. The proof also imports
 `Mathlib.Tactic.NoncommRing` for the matrix multiplication identity.
 

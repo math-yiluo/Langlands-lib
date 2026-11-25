@@ -43,7 +43,7 @@ The provenance is the existing actual character/root base-change equivalences,
 finite root enumeration, opposite-factor-pair ray classification, subgroup
 closure and commutator universal properties, and the preceding internal cone
 and generated-subgroup constructions. All statements allow arbitrary common
-universe parameter and arbitrary field extensions. This unit retains the
-output-depth compatibility and common positivity hypotheses; it does not yet
+universe parameter and arbitrary field extensions. This module retains the
+output-depth compatibility and common positivity hypotheses; it does not
 supply them for every pair and every depth. It does not construct a valuation,
 an apartment, or the supplied-model building comparison.

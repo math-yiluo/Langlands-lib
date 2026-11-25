@@ -1,7 +1,5 @@
 # Conditional construction of absolute local invariants
 
-Author: Worker 154.
-
 The definition
 `Langlands.ClassFieldTheory.Local.AbsoluteInvariantAssembly.descendedEquiv`
 constructs an additive equivalence from the actual absolute degree-two continuous
@@ -133,6 +131,7 @@ hypothesis is hidden in the construction: the restriction proof works directly
 with each specified embedding. It does not separately prove the equality of
 restriction maps associated with two such embeddings.
 
-The unconditional `AbsoluteInvariantExistence` theorem remains a separate
-obligation: every remaining input must be discharged by actual proofs. Acceptance
-of this conditional construction does not complete that proof task.
+The unconditional `AbsoluteInvariantExistence` theorem is
+`absoluteInvariantExistence` in
+`Langlands.ClassFieldTheory.Local.AbsoluteInvariantProof`, which applies
+`absoluteInvariantExistence_of_finite_stages` to proofs of the six hypotheses.

@@ -1,7 +1,5 @@
 # Lifting a prescribed character along an algebraic residue extension
 
-Author: Worker 265.
-
 This internal helper performs the affine character-extension step for a bounded
 map `f : A → B` of normed commutative algebras over an ultrametric normed field
 `K`. The fields, both algebras, and the target field have independent universes.

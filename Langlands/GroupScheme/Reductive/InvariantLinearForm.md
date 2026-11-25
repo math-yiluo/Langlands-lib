@@ -1,6 +1,6 @@
 # Degree-one invariant separation from semisimple rational-point representations
 
-This derived unit implements the elementary implication from complete reducibility to
+This derived module implements the elementary implication from complete reducibility to
 geometric reductivity in coordinates. It does not prove complete reducibility for
 reductive groups in characteristic zero, and does not prove Haboush's theorem.
 
@@ -30,8 +30,8 @@ is semisimple. It constructs the invariant functional, identifies its coefficien
 as a fixed dual vector, and takes their linear polynomial. The result is homogeneous
 of degree one, is invariant on every scheme test, and is nonzero at the chosen
 fixed vector; the intermediate dual vector is normalized to pair to one. No reductivity or characteristic assumption is used in this conditional
-algebraic bridge. The missing theorem that reductive groups in characteristic zero
-have semisimple rational representations remains a separate obligation.
+algebraic bridge. The theorem that reductive groups in characteristic zero
+have semisimple rational representations is not proved in this module.
 
 Provenance: Mumford, Fogarty and Kirwan, *Geometric Invariant Theory*, third enlarged
 edition (1994), Appendix to Chapter 1, Section A, printed p.191 (PDF zero-based

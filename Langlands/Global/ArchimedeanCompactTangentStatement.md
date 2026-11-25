@@ -1,6 +1,6 @@
 # Compact curves with prescribed skew-adjoint tangent
 
-Author: Worker 84. Module:
+Module:
 `Langlands.Global.ArchimedeanCompactTangentStatement`.
 The proposition is
 `Langlands.Global.ArchimedeanGL.CompactTangentCurveStatement`.
@@ -36,7 +36,7 @@ universe and parameter telescope:
 (K : Type u) → [Field K] → [NumberField K] → ℕ → Prop
 ```
 
-## Internal provenance and remaining proof obligation
+## Internal provenance and proof obligation
 
 This is an internally specified prerequisite for the compact curve/tangent
 bridge needed by
@@ -49,8 +49,10 @@ This module does not attribute the displayed proposition to an original
 literature theorem.
 
 The Lean file defines the target proposition; it does not prove it.
-A later proof must construct curves in the actual subgroup and establish
-the displayed derivative. Relating the curves to the published right-action
+A proof must construct curves in the actual subgroup and establish
+the displayed derivative; `compactTangentCurve` (module
+`ArchimedeanCompactTangentProof`) does so with matrix exponentials. Relating the curves to the published right-action
 derivative in direction `gX`, preserving the finite compact-group orbit
 under differentiation, and extending to the compact-generated enveloping
-algebra remain separate obligations for the parent finiteness proof.
+algebra are separate steps of the finiteness proof
+(`compactGroupFiniteDifferential`, module `ArchimedeanCompactGroupFiniteProof`).

@@ -1,8 +1,5 @@
 # Actual irreducible Aubert images up to sign
 
-Authors: Worker 76, with Worker 585's actual composition-factor and
-realization argument.
-
 `Langlands.Aubert.irreducibleImage.{uF,uV} F T` proves exactly the published
 `Langlands.Aubert.IrreducibleImageStatement.{uF,uV} F T`. Every actual
 irreducible smooth complex representation `π` of `GL_n(F)` has an actual
@@ -88,7 +85,8 @@ primes, supplied p-adic fields and topologies, independent `uF,uV`, saturated
 carriers `Type (max uF uV)`, and rank zero are retained.
 
 The provenance is the imported published Lean proofs and constructions.
-Workers 164 and 194 proved the corrected support and effectivity input;
+The corrected support and effectivity input is proved in
+[`SignedEffectivityProof`](SignedEffectivityProof.md);
 the present module assembles that theorem with the published reduction.
 The original assertions and corrections are documented in the unchanged
 [`IrreducibleImageStatement`](IrreducibleImageStatement.md). No original

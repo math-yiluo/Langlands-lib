@@ -1,6 +1,6 @@
 # Lifting right resolutions into complexes of injective objects
 
-Author: Worker 61. The module imports only Mathlib. It uses
+The module imports only Mathlib. It uses
 `Injective.factorThru`, `ShortComplex.Exact.descToInjective`,
 `CochainComplex.mkHom`, `Homotopy.mkCoinductive`, `Homotopy.equivSubZero`,
 `quasiIsoAt_iff_exactAt`, `HomologicalComplex.exactAt_succ_single_obj`,
@@ -17,7 +17,7 @@ below, is the cochain complex with `A` in degree zero and zero elsewhere.
 All declarations are in the namespace `Langlands.Cohomology.AcyclicResolution`.
 `C` is an abelian category (`Category.{v} C`, `C : Type u`), `A` an object of
 `C`, `K : CochainComplex C ℕ` and `ε : A[0] ⟶ K` a cochain map with
-`[QuasiIso ε]`. This is a right resolution in the sense of Worker 3's
+`[QuasiIso ε]`. This is a right resolution in the sense of
 `Langlands.Cohomology.AcyclicResolution.Statement`. Nothing is assumed about the
 terms of `K`.
 
@@ -129,20 +129,24 @@ degree, but it is phrased through Mathlib's `CochainComplex.mkHom` and
 
 ## Relation to the statement module
 
-Worker 3's `ResolutionLiftStatement` asks, for an injective resolution `I` of
+`ResolutionLiftStatement` asks, for an injective resolution `I` of
 `A`, for a cochain map `φ : K ⟶ I.cocomplex` with `ε ≫ φ = I.ι` and for
-homotopies between any two such maps. The intended proof uses
+homotopies between any two such maps. Its proof, in
+`Langlands.Cohomology.AcyclicResolution.LiftProof`, uses
 `lift ε (𝟙 A) I.ι` with `comp_lift`, and `homotopyOfComp`.
-`ResolutionComparisonIndependenceStatement`,
-`ResolutionComparisonNaturalityStatement` and
-`ResolutionComparisonTransformationStatement` are intended to follow from
-`homotopyOfComp` with Mathlib's `InjectiveResolution.desc` and
-`InjectiveResolution.isoRightDerivedObj`.
+`ResolutionComparisonIndependenceStatement` and
+`ResolutionComparisonNaturalityStatement` are proved in
+`AcyclicResolution.IndependenceProof` and `AcyclicResolution.NaturalityProof`
+from `comparison_eq` and `comparison_naturality` of
+`AcyclicResolution.Comparison`, which use `homotopyOfComp` with Mathlib's
+`InjectiveResolution.desc` and `InjectiveResolution.isoRightDerivedObj`.
+`ResolutionComparisonTransformationStatement` is proved in
+`AcyclicResolution.TransformationProof` without a lift.
 
 ## Scope
 
-- No proposition of Worker 3's statement module is proved in this module. The
-  four proofs above are planned as separate proof tasks.
+- No proposition of the statement module is proved in this module; the
+  four above are proved in the modules just named.
 - `AcyclicResolutionComparisonStatement` (acyclic resolutions compute right
   derived functors) is not addressed. It needs the long exact sequence of right
   derived functors, which is not used here.

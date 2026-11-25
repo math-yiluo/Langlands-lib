@@ -1,7 +1,5 @@
 # Original stalk maps over the interior of a full domain
 
-Author: Worker 36.
-
 This derived internal construction concerns an arbitrary complete ultrametric
 normed field `K`, an actual presented affinoid algebra `A`, and a full represented
 affinoid domain `d : Domain K A`. The domain has its actual presented algebra
@@ -65,7 +63,7 @@ identities come from `asIso` applied to these proved isomorphisms.
 
 ## Provenance and scope
 
-This unit derives its results from the explicit contained-open open immersions
+This module derives its results from the explicit contained-open open immersions
 in `DomainContainedOpenRestriction`, the original bounded-map sheaf/stalk maps
 and scalar-forgetting comparison in `RationalOpenMorphism`, and Mathlib's stalk
 composition, restriction and isomorphism-cancellation APIs. It adds no new

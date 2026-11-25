@@ -1,6 +1,6 @@
 # Literal rational intersection expansion from actual geometric terms
 
-Worker 165. This internal bridge converts the actual geometric-lemma expansion
+This internal bridge converts the actual geometric-lemma expansion
 to the literal intersection rows used by rational Jacquet cancellation.
 It retains the supplied point Coxeter system and literal simple-root labels.
 The representation-theoretic geometric expansion remains an explicit premise.
@@ -51,7 +51,7 @@ representative and every chosen normalizer lift is covered, including empty
 simple-root sets.
 
 The provenance is internal composition of the existing actual geometric-term
-comparison, Worker 1186's point-source geometry, and the literal row predicate
+comparison, the point-source geometry of `RationalPointSourceGeometry`, and the literal row predicate
 in `RationalJacquetCancellation`. No new assertion from literature is made.
 Neither the geometric expansion nor the unconditional
 `RationalJacquetCompatibilityStatement` is proved here.

@@ -41,7 +41,7 @@ variable {k : Type u} [Field k]
   {G : GroupScheme (Spec (CommRingCat.of k))} [IsAffineHom G.X.hom]
   (p : SplitPinning G) {n : ℕ}
 
-local instance : IsAffineHom p.torus.toGrp.X.hom := p.isSplitTorus.isAffineHom
+private local instance : IsAffineHom p.torus.toGrp.X.hom := p.isSplitTorus.isAffineHom
 
 /-- The endomorphisms of a representation that shift each torus weight by `chi`. -/
 def representationWeightShift (r : MatrixRepresentation G (Fin n))

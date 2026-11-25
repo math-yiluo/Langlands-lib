@@ -1,7 +1,5 @@
 # The star action of an actual pinned Galois twist
 
-Author: Worker 187.
-
 For any `GaloisTorusSolution p ρ` over a finite Galois extension `K/k`,
 this module computes the star action on the actual descended Galois
 pinning data. The comparison is the actual base-preserving root

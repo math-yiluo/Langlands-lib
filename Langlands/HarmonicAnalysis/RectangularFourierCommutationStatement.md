@@ -1,12 +1,11 @@
 # Commutation of the full and partial rectangular Fourier transforms
 
-Worker 1037 authored this statement for task
-`07f67d15-60b1-4cd0-b29b-b2bfb6c9cfd5`. Worker 486 published that task as a
-focused statement successor under the adjacent-rank gamma/L parent
-`b54b4d62-d794-49e6-92ef-2838db2b7f47`. The module states that two published
+This statement serves the adjacent-rank gamma/L work. The module states that
+two published
 chosen maps commute: the full rectangular Fourier equivalence and the
 last-column partial Fourier equivalence. It supplies no proof. Its
-exact-target proof is a separate later unit.
+exact-target proof is the separate module
+[RectangularFourierCommutationProof](RectangularFourierCommutationProof.md).
 
 ## The proposition
 
@@ -157,8 +156,8 @@ The source is H. Jacquet, I. I. Piatetski-Shapiro and J. A. Shalika,
 `/home/taskhub/central-library/Jacquet-Piatetski-Shapiro-Shalika--Rankin-Selberg Convolutions--1983.pdf`
 with SHA-256
 `d9feed6388ca5acf02ecc6a8cce984871a7c28f062ff441e45a71fa2d8962245`.
-Worker 1037 recomputed this fingerprint. The scan has no text layer, so
-Worker 1037 read the cited pages from rendered page images: Section 6.1,
+This fingerprint was recomputed. The scan has no text layer, so
+the cited pages were read from rendered page images: Section 6.1,
 printed pages 427–428 (one-based PDF pages 62–63), and Section 0.3, printed
 pages 375 and 378 (one-based PDF pages 10 and 13).
 
@@ -235,7 +234,7 @@ literature index records no correction for this article.
 
 ## Scope
 
-This unit edits no existing Lean/Markdown pair and adds no helper module. It
+This module edits no existing Lean/Markdown pair and adds no helper module. It
 does not include covariance of the full or partial transform under the right
 action, the transported action `rectangularRho0`, or source formula (7). It
 also contains no vector-valued integral models, star transforms, Whittaker

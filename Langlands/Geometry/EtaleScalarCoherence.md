@@ -117,7 +117,7 @@ sheaf coherence lemma.
 
 ## Scope
 
-This unit treats scalar restriction on ordinary small-etale sheaves and its
+This module treats scalar restriction on ordinary small-etale sheaves and its
 compatibility with the supplied geometric group action. It does not lift these
 identity/composition comparisons to compatible coefficient diagrams or prove
 compatibility with the canonical global-section scalar comparison. It makes no

@@ -46,6 +46,6 @@ statement. The formulation here (the Library function model, Lie-stable subspace
 ordering predicate `IsRealLanglandsOrdered` as the chamber condition) is ours.
 
 Role in the project: the statement is the spherical core (step S1) of the reduction of
-`RealTemperedScalarCommutantStatement` in Task 7626. The other steps reduce the scalar
+`RealTemperedScalarCommutantStatement`. The other steps reduce the scalar
 commutant for tied lists of real blocks to this statement. Its proof must not use the Langlands
 quotient theorem or classification for lists with ties.

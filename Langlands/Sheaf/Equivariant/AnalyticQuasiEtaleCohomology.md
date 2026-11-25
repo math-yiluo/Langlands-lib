@@ -1,21 +1,21 @@
 # Cohomology of quasi-étale sheaves and quasi-étale `G`-sheaves
 
-Author: Worker 26. Builds on the following modules:
+Builds on the following modules:
 
-- `Langlands.Sheaf.Equivariant.TwistedGlobalSections` (Worker 26, submitted together with
+- `Langlands.Sheaf.Equivariant.TwistedGlobalSections` (ported together with
   this module): sections over an object and their derived functors on an arbitrary site,
   and the smooth global sections `discreteGlobalSections`, their derived functors
   `discreteGlobalDerived`, the inclusion `smoothGlobalInclusion` and the comparison
   `globalComparison` on an arbitrary twisted site.
-- `Langlands.Sheaf.Equivariant.AnalyticQuasiEtaleComparison` (Worker 26): the object
+- `Langlands.Sheaf.Equivariant.AnalyticQuasiEtaleComparison`: the object
   `quasiEtaleSelf X` (the identity of `X` in its quasi-étale site), enough injectives for
   module sheaves on the quasi-étale site (`quasiEtale_enoughInjectives`), and Berkovich's
   restriction `b^*` on quasi-étale `G`-sheaves (`quasiEtaleGSheafRestriction`). Through it:
   `AnalyticQuasiEtaleCompactCohomology` (sheafification on both sites, enough injectives on
   the twisted site), `AnalyticQuasiEtale` (the Kan extension instance
   `quasiEtale_hasPointwiseRightKanExtension`), `AnalyticGSheaves` (`QuasiEtaleGSheaf ρ`, the
-  discrete sheaves of `compactLiftSystem ρ` on the twisted quasi-étale site) and Worker 21's
-  quasi-étale site.
+  discrete sheaves of `compactLiftSystem ρ` on the twisted quasi-étale site) and the
+  quasi-étale site `QuasiEtaleSite`.
 
 All declarations are in the namespace `Langlands.Sheaf.Equivariant.Analytic`.
 
@@ -25,7 +25,7 @@ The Library has Berkovich's compactly supported cohomology `H^q_c(X{G}, -)` of q
 `G`-sheaves (`AnalyticQuasiEtaleCompactCohomology`) and the compactly supported comparison
 of his Corollary 1.5.2 (`AnalyticQuasiEtaleComparison`). Both take supports in the
 `L`-valued points of `X`. On the Library's quasi-étale model that comparison fails to be an
-isomorphism for some sheaves on a noncompact `X` (Worker 16's example in
+isomorphism for some sheaves on a noncompact `X` (the example in
 `notes/henniart/harris-cohomology-coverage.md`, section "Retained source gaps and scope
 decisions"). For compact `X`, Berkovich's Theorem 1.6.1(ii) compares instead the ordinary
 cohomology: `H^q(X{G}, F) ≅ H^q(X, b^*F)` for quasi-étale sheaves. This module defines both
@@ -33,7 +33,7 @@ sides and the comparison map. No points are involved.
 
 ## Data and universes
 
-- `K : Type u` is a complete ultrametric normed field, and `X` an object of Worker 21's
+- `K : Type u` is a complete ultrametric normed field, and `X` an object of
   `LocalizedCategory.{u, v, v} (K := K)`.
 - Coefficients: write `w = max u (v + 1) uL`. The ring `R : Type w` is commutative. The
   universe `w` is the one of the published sheafification and injectivity results. As

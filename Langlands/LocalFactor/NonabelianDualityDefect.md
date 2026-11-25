@@ -1,7 +1,6 @@
 # The exact virtual fixed-Haar duality defect
 
-Worker 1763 derives this auxiliary algebraic construction for task
-`e945d920-df9f-446c-9528-b488a3bee609`. It uses the published actual continuous
+This module derives an auxiliary algebraic construction. It uses the published actual continuous
 exact virtual groups and the existing contragredient and norm-character
 twist in the published fixed-Haar equation.
 

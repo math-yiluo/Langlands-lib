@@ -1,6 +1,6 @@
 # Nilpotent rigidity of a diagonalizable action in affine coordinates
 
-Worker 874. This internal consequence of the published natural character-action
+This internal consequence of the published natural character-action
 grading and nilpotent module reduction lemmas is an ingredient for infinitesimal
 rigidity of homomorphisms from groups of multiplicative type. It uses no additional
 literature assertion.

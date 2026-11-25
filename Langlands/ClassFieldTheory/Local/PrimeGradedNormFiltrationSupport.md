@@ -1,6 +1,6 @@
 # Integer-unit norms and conditional filtration transport
 
-Worker 96 authored this internal assembly module. It bundles the actual integral
+This internal assembly module bundles the actual integral
 norm as `integerNormHom` and its map on integer-ring units as `integerUnitsNorm`.
 Both retain the arbitrary independent universes, supplied field algebra,
 compatible Padic scalar tower and finite-dimensionality assumptions of the
@@ -56,15 +56,16 @@ n=0 and t=0.
 requested containments, at source levels m and m+1. This theorem still has the
 two arithmetic propositions as explicit proof parameters. It is a checked
 assembly implication, not an unconditional proof of either containment or of
-`PrimeRamifiedGradedNorm`. The exact task cannot be completed until genuine
-published proofs discharge these parameters and the remaining positive
-coordinate formulas are proved.
+`PrimeRamifiedGradedNorm`. The parameters are discharged by the published
+proofs `primeRamifiedTraceIdeals` and `primeNormTraceExpansion`, and
+`PrimeRamifiedGradedNorm` is proved as `primeRamifiedGradedNorm` in
+`PrimeRamifiedGradedNormProof`.
 
 These constructions and implications are internal assembly of the imported
 integer-unit, norm-order and ideal-coordinate results. Their arithmetic pattern
 is the deduction of Proposition 4 from Lemmas 4–5 in Jean-Pierre Serre,
 *Local Fields*, V.3, printed pp.83–84 / PDF pp.90–91, registered as
-`serre-1979-local-fields`. Worker 96 read V.3, printed pp.83–85 / PDF pp.90–92
-and the registered 2019 author corrections, PDF pp.2–3; no correction affects
+`serre-1979-local-fields`. V.3, printed pp.83–85 / PDF pp.90–92,
+and the registered 2019 author corrections, PDF pp.2–3, were read; no correction affects
 this passage. No different/trace arithmetic, orbit-expansion arithmetic or
 positive graded-coordinate conclusion is claimed by this support module.

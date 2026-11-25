@@ -1,7 +1,5 @@
 # The ambient hyperbolic-plane isometry morphism
 
-Authors: Worker 124.
-
 Let `K` be a field, `D` a finite-dimensional division `K`-algebra, `σ` a
 first-kind involution, and `q` a quaternionic quadratic form on `D^n`, where
 `n` is any finite index type in `Type`. Given an actual hyperbolic pair `e,f`,
@@ -54,4 +52,6 @@ This is an internal derivation from the published split-matrix extension,
 adapted representative, tensor-matrix comparison and represented isometry
 cut. It asserts no lifting to an arbitrary spin cover, no comparison with the
 entire spin kernel, and no elementary-generation or Kneser–Tits conclusion.
-Those remain subsequent obligations of the host proof task.
+Those steps belong to the proof of the Kneser–Tits statement
+`LocalSpinKneserTitsStatement`, completed in
+`Quaternionic.LocalSpinKneserTitsProof`.

@@ -1,6 +1,6 @@
 # Representations of finite type are `ℨ(G)`-admissible: statement
 
-Author: Worker 6. Module `Langlands.Representation.CuspidalSupport.FiniteTypeCenterAdmissibleStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`.
+Module `Langlands.Representation.CuspidalSupport.FiniteTypeCenterAdmissibleStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*, French edition dated 9 July 2026, VI.10.7, Theorem, printed p.215 / PDF p.221 (proof to printed p.216 / PDF p.222). The registered source ID is `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 
@@ -10,7 +10,7 @@ The theorem reads: let `(τ, E)` be a smooth representation of finite type of `G
 
 ## The Lean statement
 
-`FiniteTypeCenterAdmissibleStatement` is a statement unit: nothing is proved. It quantifies over:
+`FiniteTypeCenterAdmissibleStatement` is a statement only: nothing is proved. It quantifies over:
 
 - a nonarchimedean local field `k : Type u`;
 - a connected reductive group scheme `G` over `Spec k`, with `G(F)` locally compact and nonarchimedean in the canonical topology `RationalPointFamily.pointTopology`;
@@ -25,5 +25,5 @@ Here `CatCenter C = End (𝟭 C)` is Mathlib's centre of a category, Renard's `�
 
 - The centre is that of the category of smooth representations with carriers in the universe `v` of `τ`. Renard's `ℨ(G)` does not depend on such a choice; no comparison between universes is formalized.
 - The VI.10.7 Corollary (the Hecke algebra `H(G, K)` is a finitely generated `ℨ(G)`-module) follows by applying the theorem to the cyclic representation `𝒟(G/K)`. It is not stated here.
-- The VI.10.7 Lemma and Proposition involve Bernstein components and are separate units.
+- The VI.10.7 Lemma and Proposition involve Bernstein components and are stated separately, in `FiniteTypeComponentCharacterizationStatement`.
 - The proof (reduction to a single component, the VI.4 and VI.10.1 progenerators, and finiteness of `ℨ[ρ]` over `ℨ_𝔰`) is not formalized here.

@@ -1,7 +1,5 @@
 # The fppf Picard sheaf over a field as a separated algebraic space
 
-Authors: Worker 144 and Worker 766.
-
 ## Statement
 
 `Langlands.AlgebraicGeometry.Picard.FieldPicardSheafAlgebraicSpaceStatement.{u}`
@@ -79,16 +77,19 @@ product agrees with the source's through the published `relativeSpaceSymmetry`.
 Paragraph (6.3)(iii), printed p.89 (PDF p.93), states that for `S = Spec(k)` and
 `f` proper this sheaf is representable by a scheme that is separated and locally
 of finite type over `k`. The source attributes this to Murre, who uses a theorem
-of Oort to reduce to reduced `X`. Worker 766 read PDF pp.91–93 and verified the
-fingerprint.
+of Oort to reduce to reduced `X`. PDF pp.91–93 were read and the
+fingerprint verified.
 
 The present proposition keeps only the algebraic-space content of (6.3)(iii): the
 sheaf is an algebraic space, separated and locally of finite type over `k`. It
 does not assert scheme representability. The full scheme statement is the
 Library's `FieldPicardSheafRepresentabilityStatement`. Mathematically that scheme
-theorem implies the present proposition. This implication is not proved here, and
-it is not an available proof. The proposition is intended as an independent input
+theorem implies the present proposition. This implication is not proved here. The
+proposition is intended as an independent input
 to a proof of the scheme theorem, so a proof of it must not assume that theorem.
+The Library proves it as `fieldPicardSheafAlgebraicSpace`
+(`FieldPicardSheafAlgebraicSpaceProof`) from the Picard stack atlas
+`fieldPicardStackAtlas`, without the scheme theorem.
 
 The geometric predicates follow the registered Stacks Project snapshot
 `stacks-group-algebraic-spaces-fields-2026-11-01`, directory SHA-256

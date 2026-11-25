@@ -1,7 +1,5 @@
 # Actual source integration formulas together
 
-Author: Worker 200.
-
 This internal assembly module imports the actual global two-factor
 open-cell integration, the weighted source-coordinate Bochner integration
 and the nonnegative Iwasawa integration modules together. It introduces no

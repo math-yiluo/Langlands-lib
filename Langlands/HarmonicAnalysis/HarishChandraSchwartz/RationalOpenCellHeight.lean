@@ -105,7 +105,7 @@ theorem rationalTorusCharacterOrder_neg_inv_map (i : T.toGrp ⟶ G) [Mono i.hom.
     rationalTorusCharacterOrder i (-alpha) (rationalPoints.map i a)⁻¹ =
       rationalTorusCharacterOrder i alpha (rationalPoints.map i a) := by
   rw [← map_inv, rationalTorusCharacterOrder_map, rationalTorusCharacterOrder_map]
-  simp only [RenardLeviCones.characterOrder, map_neg, map_inv, toAdd_inv,
+  simp only [RenardLeviCones.characterOrder, AddEquiv.map_neg, AddMonoidHom.map_neg, map_inv, toAdd_inv,
     AddMonoidHom.neg_apply, neg_neg]
 
 /-- The one-sided estimate for the opposite parabolic, with the same original

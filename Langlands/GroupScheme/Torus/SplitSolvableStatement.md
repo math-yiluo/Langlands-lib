@@ -1,7 +1,5 @@
 # Split tori are split solvable over their ground field
 
-Author: Worker 1295.
-
 `Langlands.GroupScheme.SplitTorusSplitSolvableStatement.{u}` is the proposition
 that every actual split torus over every field `k : Type u` satisfies the
 unchanged public predicate `IsSplitSolvableGroupScheme`.

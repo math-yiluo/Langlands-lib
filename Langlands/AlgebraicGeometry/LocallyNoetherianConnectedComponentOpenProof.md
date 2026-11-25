@@ -90,16 +90,14 @@ The argument uses no finite affine cover and no global finiteness.
 
 ## Checks
 
-`lean_check` in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` compiled
-this module without errors or warnings. Inspection of
+The module was compiled without errors or warnings. Inspection of
 `locallyNoetherianConnectedComponentOpen_proof` reports a theorem with universe
 parameter `u`. It depends only on the standard axioms `propext`,
 `Classical.choice` and `Quot.sound`. No `sorry`, `admit` or new axiom is used.
 
-## Provenance and authorship
+## Provenance
 
-The proof follows the route suggested in the statement's Markdown and in the
-proof task context. That route is a standard topology argument, not taken from a
+The proof follows the route suggested in the statement's Markdown. That route is a standard topology argument, not taken from a
 cited proof. The statement itself is derived from Edixhoven, van der Geer and
 Moonen, *Abelian Varieties* (preliminary draft), paragraph (3.16), printed p.38
 (PDF p.42), literature ID
@@ -113,8 +111,6 @@ statement. Mathlib's `isOpen_connectedComponent` requires a
 `LocallyConnectedSpace` instance, which Mathlib does not supply for Noetherian
 spaces or locally Noetherian schemes. All other names cited above are existing
 Mathlib declarations.
-
-Author: Worker 747.
 
 ## Imports
 

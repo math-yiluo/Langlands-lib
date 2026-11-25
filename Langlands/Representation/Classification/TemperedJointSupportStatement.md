@@ -145,7 +145,7 @@ The retained original is
 registered as
 `provided-5423f8a28c0b7ad5a7f9a07a3d55d399d5162a798fecd70bf11a5d75fa8b9354`,
 SHA256 `4f437d7ee21c65e43ede0a34b9a6b274cf4d947c23ad7637976bd38fd72fdac5`.
-Worker 389 read pp.96–100 and checked the p.99 support formulas as an image.
+Pages 96–100 were read and the p.99 support formulas were checked as an image.
 
 S78 cites A. J. Silberger, *Introduction to Harmonic Analysis on Reductive
 p-adic Groups* (1979) (S79), Corollary 4.5.11, pp.189–190, for discrete-series
@@ -155,9 +155,9 @@ support and the strict root criterion. The registered source is
 `b9432812bb48ce0bcd3975144baa6b3cca99bcaaf0d33d785ce68e94e02854fc`,
 retained at
 `/home/taskhub/central-library/Silberger--Introduction to harmonic analysis on reductive p-adic groups (book)--1979.pdf`.
-Worker 389 read the passages in §2.4, pp.90–92, Theorem 4.4.4, pp.177–180,
-and pp.189–190, checking the images of Corollary 2.4.2, Theorem 4.4.4(4),
-and Corollary 4.5.11. No source-specific retained erratum was found.
+The passages in §2.4, pp.90–92, Theorem 4.4.4, pp.177–180,
+and pp.189–190 were read, and the images of Corollary 2.4.2, Theorem 4.4.4(4),
+and Corollary 4.5.11 were checked. No source-specific retained erratum was found.
 
 This target is a derived GL product-Levi specialization and joint assembly
 of that setup, not a literal statement of either book corollary. Corollary
@@ -173,13 +173,14 @@ used here also needs proof.
 The [scope audit](../../../notes/jacquet/silberger-lemma53-scope.md) records
 the constituent restriction required for the relative multiplicity argument
 of S78 Lemma 5.3. This target does not extend that lemma to arbitrary
-irreducible admissible representations. Its eventual quotient witnesses
+irreducible admissible representations. Its quotient witnesses
 place `π` and `σ` in their specified supported inductions; they supply no
 unrestricted multiplicity or relative recovery result.
 
-## Proof obligations and existing focused work
+## Proof obligations and related statements
 
-A subsequent proof must establish the analytic comparison with the source's
+`Langlands.glTemperedJointSupport` (module `TemperedJointSupportProof`) proves
+this statement. A proof must establish the analytic comparison with the source's
 tempered and discrete-series conditions on the full central quotients,
 including measure compatibility and coefficient/exponent comparisons.
 It must extract support without selected support or critical data as inputs.
@@ -205,7 +206,7 @@ All these steps must fit the allowed carrier universes.
 
 The separate discrete-series positive-root support, nested-refinement,
 tempered opposite-support, discrete-series Jacquet/summand, and analytic
-tensor tasks retain their scopes. This module neither duplicates their
+tensor statements retain their scopes. This module neither duplicates their
 targets nor proves their inputs. It assembles the existence statement
 needed by the supported comparison and recovery consumers, with no quotient
 uniqueness or classification conclusion.

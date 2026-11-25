@@ -49,7 +49,7 @@ end Langlands.BrauerComparison
 namespace Langlands.Brauer
 
 open Langlands.BrauerComparison Langlands.CentralSimple
-open Langlands.ClassField.Global
+open Langlands.ClassFieldTheory.Global
 open Langlands.Global.AdelicFunctoriality Langlands.Global.CompletionPadic
 
 /-- Brauer classes killed by two over a number field have a quadratic splitting field. -/

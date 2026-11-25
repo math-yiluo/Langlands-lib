@@ -74,9 +74,9 @@ universe uF uV uW uX
 
 variable {p : ℕ} [Fact p.Prime] (F : PadicField.{uF} p)
 
-local instance : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
-local instance : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
-local instance : IsNonarchimedeanLocalField F.Carrier :=
+private local instance : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
+private local instance : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
+private local instance : IsNonarchimedeanLocalField F.Carrier :=
   F.canonicalTopologicalData.localField
 local instance (n : ℕ) : IsTopologicalGroup (GeneralLinear n F.Carrier) :=
   F.canonicalTopologicalData.generalLinearTopologicalGroup n

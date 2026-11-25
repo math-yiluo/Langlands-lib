@@ -1,7 +1,5 @@
 # Closedness of the actual Picard diagonal from class loci and an atlas
 
-Author: Worker 509.
-
 This internal assembly has two explicit geometric inputs. The first is
 `FieldPicardClassEqualizerImmersionStatement`, concerning the fppf class
 loci of pairs of actual line bundles on every scheme test. The second is an

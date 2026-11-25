@@ -51,7 +51,7 @@ actual torsion pullback identification. The proof invokes the finite
 `levelBaseChange_eq_actual` at `p^n`. Therefore the new equivalence
 is tied at every coordinate to the actual geometric pullback. It is
 not parameterized by an arbitrary comparison, and no additional generic
-prime-adic pullback map is introduced in this unit.
+prime-adic pullback map is introduced in this module.
 
 ## Extraction and naturality
 
@@ -83,14 +83,15 @@ invariance above. Field-valued and geometric points are special cases.
 
 ## Provenance and scope
 
-The unit is internally derived from the canonical multiplicative root
+The module is internally derived from the canonical multiplicative root
 comparisons, the finite actual-pullback equation, the existing
 prime-power coordinate extraction, and test-scheme restriction. No new
 result is attributed to external literature. The proofs preserve roots
 as roots, without choosing compatible generators, bases or a twist
 trivialization.
 
-This unit covers the integral prime-adic comparison. It makes no
+This module covers the integral prime-adic comparison. It makes no
 compactness, rank, rational comparison, monodromy pullback, pairing
 compatibility, iterated-base-change coherence or PEL completion claim.
-Those remain separate constructions or obligations of the parent task.
+Those remain separate constructions or obligations towards PEL level
+structures.

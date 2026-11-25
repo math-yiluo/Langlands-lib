@@ -131,6 +131,7 @@ theorem fullTensorEquiv_lie
   exact congrArg (fun f : S.FiniteMultiplicity A => f a)
     ((D.multiplicityTensorEquiv A hS hne hA ha).property.2 i X b c hother hlocal)
 
+set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
 /-- Nonzero prescribed finite vectors and nonzero infinite tensors remain nonzero. -/
 theorem fullTensorEquiv_tmul_ne_zero
     (hS : S.IsIrreducible) (hne : A ≠ ⊥) (hA : A.toRepresentation.IsIrreducible)

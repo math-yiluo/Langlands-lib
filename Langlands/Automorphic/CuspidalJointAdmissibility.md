@@ -1,8 +1,8 @@
 # Joint admissibility of every actual cuspidal realization
 
-Module `Langlands.Automorphic.CuspidalJointAdmissibility`. Worker 174 wrote it as a step towards
-`Langlands.Automorphic.CuspidalArchimedeanIrreducibleAdmissibleComponentStatement` (G1, Task 5992,
-`8a7f44bc-c7bc-4ceb-96aa-6eff19b38f97`). Provenance: internal. It removes the central-character
+Module `Langlands.Automorphic.CuspidalJointAdmissibility`. It is a step towards
+`Langlands.Automorphic.CuspidalArchimedeanIrreducibleAdmissibleComponentStatement` (G1).
+Provenance: internal. It removes the central-character
 hypothesis from the Library's joint admissibility theorem by a determinant twist, in the same
 way the Library's `CuspidalContragredientExistenceProof` removes it for contragredients.
 

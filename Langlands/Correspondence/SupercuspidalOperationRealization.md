@@ -1,7 +1,5 @@
 # Realization of the endpoint twist and smooth-dual relations
 
-Author: Worker 357.
-
 This internal derived interface specializes published operations to the actual
 supercuspidal class space used by the correspondence specification. For every
 prime `p`, every `F : PadicField p`, every positive rank and independent field
@@ -9,7 +7,7 @@ and representation-carrier universes, it constructs canonical twist and smooth
 dual equivalences. It identifies the existing representative-based relations
 with their graphs and proves existence and uniqueness of each output.
 
-This unit does not construct a local Langlands correspondence. The final two
+This module does not construct a local Langlands correspondence. The final two
 equivalences reformulate the existing compatibility predicates as equations.
 Those equations remain conditions on a proposed family; they are not proved
 for an arbitrary family.

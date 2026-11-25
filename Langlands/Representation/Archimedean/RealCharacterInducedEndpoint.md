@@ -6,8 +6,8 @@ This module constructs an exact bijective intertwiner from the actual standard m
 `|d.weight| > 0`, and `(|d.weight| + c.parity.val) % 2 = 1`.
 It proves no claim for the other endpoint parity or outside this endpoint.
 
-The internal argument extends Worker 763's tail-first construction, extracted in
-`RealCharacterInducedInterlaced`, using Worker 766's endpoint parameter observation.
+The internal argument extends the tail-first construction extracted in
+`RealCharacterInducedInterlaced`, using an endpoint parameter observation.
 The first factor is the tail multiplier with threshold `|d.weight|`; the second is
 the generic multiplier at parameter zero. At zero all generic numerator and
 denominator factors are nonzero because the parity is zero or one and the other

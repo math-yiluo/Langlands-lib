@@ -1,9 +1,5 @@
 # Induced tori over a prescribed finite Galois splitting field
 
-Authors: Worker 1472 and Worker 1587. Worker 1587 supplied the exact target,
-source locator and splitting-field refinement; Worker 1472 implemented the
-Lean statement and this explanation.
-
 `Langlands.GroupScheme.InducedTorusWeilDecompositionStatement.{u}` is a
 Prop-valued definition in
 `Langlands.GroupScheme.Torus.InducedWeilDecompositionStatement`.
@@ -86,14 +82,16 @@ do not change Definition 2.5.1 or that classification paragraph.
 Requiring the factors to be intermediate fields of any prescribed finite
 Galois splitting field is a derived refinement of that source assertion.
 The witness field quantified inside `IsInducedTorus T` need not be `L`,
-nor need either field be given as a subfield of the other. A future proof
+nor need either field be given as a subfield of the other. A proof
 can compare their lattices after a common separable extension and
 transport the permutation basis to the prescribed `Gal(L/k)` action.
 Decomposing that finite basis into orbits, and taking the fixed field in
 `L` of the stabilizer of one representative in each orbit, produces the
 fields `E i`. The permutation lattices of their Weil restrictions then
 give the desired isomorphism by Galois descent. This is the mathematical
-provenance and a proposed proof route, not a proof supplied by this module.
+provenance and a proof route, not a proof supplied by this module. The
+Library's proof is `inducedTorusWeilDecomposition`, in
+`Langlands.GroupScheme.Torus.InducedWeilDecompositionProof`.
 
 The statement is a prerequisite for the induced-torus part of KP
 Lemma 2.5.18. It states no local bounded-norm, valuation, topology, or

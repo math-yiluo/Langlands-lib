@@ -15,7 +15,7 @@ module presenting projective space.
   ratio axiom is exactly the coordinate restriction identity proved by
   `twistOneCoordinate_restrict_coordinateOpen`.
 - `twistOne_isInvertible` converts the published local rank-one result for
-  `𝒪(1)` to `Scheme.Modules.IsInvertible` using the comparison of restriction
+  `𝒪(1)` to `Scheme.Modules.IsInvertibleFLT` using the comparison of restriction
   and pullback along open immersions. `twistOne_closedImmersionBySections`
   packages the presentation with the closed-immersion instance for the
   identity.

@@ -1,7 +1,5 @@
 # Coefficient automorphisms on rational-component quotients
 
-Author: Worker 1107.
-
 Let `k,L : Type u` be fields with `Algebra k L`, and let `H` be an actual
 smooth affine group scheme over `Spec k`. Write `H_L` for the published
 `GaloisPointComparison.baseChanged k L H`. The construction

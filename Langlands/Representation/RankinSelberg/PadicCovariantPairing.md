@@ -1,7 +1,5 @@
 # Normalized p-adic covariant pairings
 
-Author: Worker 1752.
-
 This derived helper specializes the covariant-pairing construction to the
 residue-normalized absolute value of a p-adic field. The group is the actual
 `GL_(n+1)` and the two representation carriers have independent universes.

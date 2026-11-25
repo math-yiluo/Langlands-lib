@@ -1,12 +1,10 @@
 # The positive-rank `Φ⁻` sequence of BZ77 Proposition 4.13(c)
 
-Author: Worker 837.
-
 This module proves the clause
 `Langlands.Derivative.MirabolicProductMinus.RightPhiShortExact.{uF,uV} F T` of the
 published statement module
 `Langlands.Representation.Derivative.MirabolicProductMinusCompatibilityStatement`
-(host task `6cd54f76-f453-4faa-818a-5843e1bbcaff`, component 5). Its theorem is
+(its component 5). Its theorem is
 
 ```lean
 theorem Langlands.Derivative.MirabolicProductMinus.rightPhiShortExact
@@ -60,8 +58,8 @@ representations of reductive p-adic groups I*, Ann. Sci. ENS (4) 10 (1977),
 
 The implemented route follows §7.2. The orbit calculations, the
 Haar ratios, the coefficient identifications and the scalar identities are
-derived internal content of this unit and of the published identity-orbit
-unit.
+derived internal content of this module, its three helper modules (listed
+below) and the published identity-orbit modules.
 
 ## The implemented proof
 
@@ -74,8 +72,8 @@ conjunct of the published theorem `mirabolicMixedOrbitCoverage`
 `rightPhiShortExact_of_pieces` (`MirabolicProductMinusRightPhiAssembly`) to `s`
 and the two orbit-piece isomorphisms:
 
-- `E₀ = rightPhiCyclePiece_iso T ψ k r` (this unit,
-  `MirabolicProductMinusRightPhiCycle`): the normalized localized orbit piece at
+- `E₀ = rightPhiCyclePiece_iso T ψ k r` (helper module
+  `MirabolicProductMinusRightPhiCycle`, written together with this module): the normalized localized orbit piece at
   the cycle is `rightPhiSubobject T ψ k r ⋙ toRep`;
 - `E₁ = rightPhiIdentityPiece_iso T ψ k r` (published,
   `MirabolicProductMinusRightPhiIdentity`): the piece at the identity is
@@ -93,7 +91,7 @@ through the full inclusion of smooth representations. The universes of `E₀`,
 
 ## The cyclic piece
 
-The three helper modules of this unit compute `E₀`; their Markdown describes
+The three helper modules written together with this module compute `E₀`; their Markdown describes
 each declaration:
 
 - `MirabolicProductMinusRightPhiCycleGroups`: the cyclic stabilizer `S`, the
@@ -114,20 +112,20 @@ each declaration:
 
 ## Mathematical dependency and restriction audit
 
-This unit consists of this module and the three helper modules
+This module was written together with the three helper modules
 `MirabolicProductMinusRightPhiCycleGroups`,
 `MirabolicProductMinusRightPhiCycleCoefficient` and
 `MirabolicProductMinusRightPhiCycle`, each with its own Markdown. All other
-inputs are independently accepted and published at Library commit
-`2927ec07fc7e178bab9e51306772905c3dc33579`. No Library module is modified.
+inputs are published at Library commit
+`2927ec07fc7e178bab9e51306772905c3dc33579`.
 Proposition definitions in the closure supply types and constructions; none is
 used as a proof of its conclusion.
 
 | Condition | Actual dependency and scope |
 | --- | --- |
-| Orbit coverage | The published proof `mirabolicMixedOrbitCoverage` (`MirabolicMixedOrbitCoverageProof`, with the elementary entrywise lemmas of `MirabolicMixedOrbitSpecializations`) supplies the ordered two-orbit enumeration. It is an independently accepted elementary matrix computation; its statement module is a proposition definition used only as the type of that proof. |
-| Identity piece and assembly | The published `rightPhiIdentityPiece_iso` (`MirabolicProductMinusRightPhiIdentity`) and `rightPhiShortExact_of_pieces` (`MirabolicProductMinusRightPhiAssembly`), with `MirabolicProductMinusRightPhiIdentityGroups` and `…IdentityCoefficient`, are accepted and published lower results; the assembly keeps its enumeration and piece isomorphisms as explicit premises, all supplied here by proofs. |
-| Localized compact induction | The published `SplitStagesCharacter.comparisonEquiv`, `coefficientAction_mk` and `comparisonEquiv_natural` (proof of the published `SplitStagesCharacterComparisonStatement`) are used with the actual groups, character and coefficient at the cycle. All their hypotheses are proved in this unit. No comparison or bijectivity premise is assumed. |
+| Orbit coverage | The published proof `mirabolicMixedOrbitCoverage` (`MirabolicMixedOrbitCoverageProof`, with the elementary entrywise lemmas of `MirabolicMixedOrbitSpecializations`) supplies the ordered two-orbit enumeration. It is an elementary matrix computation; its statement module is a proposition definition used only as the type of that proof. |
+| Identity piece and assembly | The published `rightPhiIdentityPiece_iso` (`MirabolicProductMinusRightPhiIdentity`) and `rightPhiShortExact_of_pieces` (`MirabolicProductMinusRightPhiAssembly`), with `MirabolicProductMinusRightPhiIdentityGroups` and `…IdentityCoefficient`, are published lower results; the assembly keeps its enumeration and piece isomorphisms as explicit premises, all supplied here by proofs. |
+| Localized compact induction | The published `SplitStagesCharacter.comparisonEquiv`, `coefficientAction_mk` and `comparisonEquiv_natural` (proof of the published `SplitStagesCharacterComparisonStatement`) are used with the actual groups, character and coefficient at the cycle. All their hypotheses are proved in this module and its helpers. No comparison or bijectivity premise is assumed. |
 | Mackey sequence | `MirabolicPhiMinusMackey` (published) supplies `plusPhiLocalization`, `plusKernelTheta` and, in the assembly, the localized two-orbit sequence. |
 | Orbit data and characters | `MirabolicMixedOrbitData`, `…Stages`, `…Sections`, `…SectionCoefficients` and `…Radicals` (published) supply the representatives, stabilizers, sections, radical intersections and coefficient formulas. `MirabolicMixedOrbitCharacters` (published) is used only for `rightOrbitTheta_zero`, an elementary character calculation on the cyclic radical intersection. |
 | Haar ratio and normalization | The ratio `|det a|` is computed from the published `mulEquivHaarChar_conj_levi_inv` and kernel identifications. The `Φ⁻` normalizations on `P_(k+r+2)` and `P_(r+1)` and the case (III) characters of shapes `(k+1, r+1)` and `(k+1, r)` are the actual published characters, and the real-power identity is proved (published `rightPsi_scalar_identity_complex`). No residual twist is assumed. |
@@ -138,23 +136,23 @@ used as a proof of its conclusion.
 | Plus functors and adjunction | From `MirabolicPlus` only the character `thetaPlus` and its laws are used (here through `plusKernelTheta` and `thetaPlus_rightCycle`). No plus functor, plus/minus adjunction or plus-functor conclusion is used. `Induction.StructuralStatement` (through `CharacterTwistProof`) supplies only proposition definitions, including `OpenSubgroupAdjunctionClause`; none is used as a proof. |
 | BZ77 4.13(d) and general Leibniz | No submodule-detection conclusion, general Leibniz proof or derivative-filtration theorem is used. `Filtration.Definitions` supplies definitions only. |
 | Segment derivative and Jacquet formulas | No segment derivative formula, Ze80 §3.5 or §9.6, `SegmentFullJacquetFormula`, `SegmentHeadJacquetFormula`, `SegmentSocleJacquetFormula` or `SegmentSpecialJacquetExponentNormFormula` supplies a direct or transitive input. |
-| Individual segment existence | No individual special-head/reverse-socle or segment-socle/reverse-head existence conclusion, proof successor or downstream consequence is used. |
+| Individual segment existence | No individual special-head/reverse-socle or segment-socle/reverse-head existence conclusion, proof of one or downstream consequence is used. |
 | Linked and unlinked socle consumers | `UnlinkedSegmentSocleProductIrreducible`, `LinkedSegmentSocleReverseProductStructure`, `LinkedSegmentSoclePairReducible`, `JuxtaposedSegmentSocleReverseProductStructure` and `LinkedSegmentSocleReverseProductQuotientHom` are absent from the dependencies. |
-| Segment product and commutation consumers | No `SegmentSocleProductIrreducibility`, `AdjacentUnlinkedSegmentSocleSwap`, `TwoSegmentSocleCommutation`, `LinkedSegmentSocleGluing`, Ze80 4.2 or 9.7 criterion, or their successors or consequences is used. |
-| Special-head criterion and uniqueness | `SegmentHeadProductIrreducibility` and `GenericSegmentProductUniqueness`, their parent tasks, successors and downstream consequences supply no input. |
+| Segment product and commutation consumers | No `SegmentSocleProductIrreducibility`, `AdjacentUnlinkedSegmentSocleSwap`, `TwoSegmentSocleCommutation`, `LinkedSegmentSocleGluing`, Ze80 4.2 or 9.7 criterion, or their proofs or consequences is used. |
+| Special-head criterion and uniqueness | `SegmentHeadProductIrreducibility` and `GenericSegmentProductUniqueness`, their proofs and downstream consequences supply no input. |
 | Ordered existence and multisegment exhaustion | No `OrderedMultisegmentSocleExistence`, `MultisegmentSocleExhaustion`, ordered strong-head existence, special-head multisegment exhaustion, quotient coverage or ordered-conversion conclusion is used. |
-| Analytic, tempered and square-integrable classification | No analytic segment classification, `SegmentSpecialEssentialSquareIntegrability`, tempered uniqueness, `SquareIntegrableLanglandsClassification`, square-integrable or regular exhaustion, or Ze80 9.3 conclusion is used, including their successors and consequences. |
-| Two-supercuspidal consumers | Neither `TwoSupercuspidalNonadjacentProductIrreducible` nor `TwoSupercuspidalProductStructure`, their full-product assembly, successors or consequences is imported or used. |
+| Analytic, tempered and square-integrable classification | No analytic segment classification, `SegmentSpecialEssentialSquareIntegrability`, tempered uniqueness, `SquareIntegrableLanglandsClassification`, square-integrable or regular exhaustion, or Ze80 9.3 conclusion is used, including their proofs and consequences. |
+| Two-supercuspidal consumers | Neither `TwoSupercuspidalNonadjacentProductIrreducible` nor `TwoSupercuspidalProductStructure`, their full-product assembly, proofs or consequences is imported or used. |
 | Supercuspidal and single-block finiteness | No `SupercuspidalCoinvariantFinitenessStatement`, all-character single-block conclusion or downstream consequence supplies an input. No arbitrary-character finiteness theorem is used. |
-| Other Whittaker finiteness exclusions | `IrreducibleCoinvariantFinitenessStatement` and `LeviCuspidalCoinvariantFinitenessStatement`, their parent and proof tasks and their consequences are absent, as is the prohibited mirabolic finite-length route. |
+| Other Whittaker finiteness exclusions | `IrreducibleCoinvariantFinitenessStatement` and `LeviCuspidalCoinvariantFinitenessStatement`, their proofs and their consequences are absent, as is the prohibited mirabolic finite-length route. |
 | Whittaker and Rankin–Selberg modules in the closure | They provide character, coefficient, measure, compact-orbit, cutoff and unimodularity constructions brought by the generic induction infrastructure, and supply no excluded input. |
-| Host clauses and pending results | The compatibility statement module supplies only the unchanged proposition and functor definitions. No other host clause theorem is used; in particular no left `Ψ⁻` or `Φ⁻` comparison, left boundary, right `Ψ⁻` clause or right boundary theorem. No pending candidate, draft or consumer conclusion is imported or used. |
-| Parameters and run controls | `T`, `ψ`, `k`, `r` and all smooth input carriers, including zero objects, are arbitrary. No suspended or paused worker supplies or waives an obligation. |
+| Other clauses of the statement | The compatibility statement module supplies only the unchanged proposition and functor definitions. No other clause theorem of the statement is used; in particular no left `Ψ⁻` or `Φ⁻` comparison, left boundary, right `Ψ⁻` clause or right boundary theorem. No consumer conclusion is imported or used. |
+| Parameters | `T`, `ψ`, `k`, `r` and all smooth input carriers, including zero objects, are arbitrary. |
 
-These rows cover every named task in the host's inherited exclusion union, its
-mathematical conclusions, proof successors and downstream consequences. A
-search over the source of the complete closure below and of this module found
-no excluded declaration name and no task identifier in Lean code; the only
+These rows cover every named excluded result, its mathematical conclusions,
+the modules that prove it and downstream consequences. A search over the source of
+the complete closure below and of this module found no excluded declaration
+name in Lean code; the only
 match of `admit` is English text in a docstring of
 `Geometric.ClosedSubgroupStatement`. The search found no `sorry`, `native_decide`
 or new axiom. The theorem `rightPhiShortExact` depends only on `propext`,
@@ -164,7 +162,7 @@ or new axiom. The theorem `rightPhiShortExact` depends only on `propext`,
 
 There are exactly 255 transitive project imports, excluding this module, at
 Library base `2927ec07fc7e178bab9e51306772905c3dc33579`, computed from the
-actual import lines. Three of them are the helper modules of this unit; every
+actual import lines. Three of them are the helper modules written together with this module; every
 other entry is published and its Lean/Markdown pair is byte-identical to that
 commit. Mathlib dependencies come from the pinned Lean environment.
 

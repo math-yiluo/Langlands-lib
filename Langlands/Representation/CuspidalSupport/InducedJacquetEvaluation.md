@@ -1,7 +1,5 @@
 # Evaluation at the identity and the normalized Jacquet module
 
-Author: Worker 241.
-
 This module proves the easy direction of Frobenius reciprocity for normalized
 parabolic induction on `GL_n` over a p-adic field, in the only form needed by
 the two-block cuspidal-induction argument: a nonzero intertwiner

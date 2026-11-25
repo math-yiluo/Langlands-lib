@@ -1,6 +1,6 @@
 # Finite-height maximal split normal unipotent subgroups
 
-This derived unit defines `SplitUnipotentRadicalExistence.IsSplitCandidate` as
+This derived module defines `SplitUnipotentRadicalExistence.IsSplitCandidate` as
 the six conditions in the published `IsSplitUnipotentRadical` that precede
 greatestness. It extends the published
 `UnipotentRadicalExistence.IsCandidate`, which records a closed immersion, a
@@ -19,9 +19,10 @@ candidate.
 
 The height and greatestness lemmas assume that the ambient group scheme `G` is
 affine and locally of finite type over the field, expressed by
-`IsAffineHom G.X.hom` and `LocallyOfFiniteType G.X.hom`. The host split-radical
-existence target supplies the latter condition through its smoothness
-hypothesis. Under these hypotheses, `exists_minimal_height_splitCandidate`
+`IsAffineHom G.X.hom` and `LocallyOfFiniteType G.X.hom`. The split-radical
+existence target that this module serves,
+`SplitUnipotentRadicalExistenceStatement`, supplies the latter condition through
+its smoothness hypothesis. Under these hypotheses, `exists_minimal_height_splitCandidate`
 chooses a split candidate whose `BorelExistence.coordinateKernel` has least
 height among all split candidates. The heights are finite by the published
 `coordinateKernel_height_ne_top`, and `Nat.find` selects the least value.
@@ -35,9 +36,10 @@ published `range_eq_of_minimal_height` to the chosen candidate and the bound.
 That result identifies their ranges on every test because the chosen height is
 minimal. The competitor's containment in the bound then transfers to the chosen
 candidate. The remaining radical fields are the candidate fields. No product
-representative is constructed here, and this unit does not establish
+representative is constructed here, and this module does not establish
 `SplitUnipotentRadicalExistenceStatement` until the upper-bound hypothesis is
-discharged.
+discharged (the statement is proved by `splitUnipotentRadicalExistence` in
+`Langlands.GroupScheme.Reductive.SplitUnipotentRadicalExistenceProof`).
 
 The route follows Milne, *Algebraic Groups* (2017), Proposition 6.42 (printed
 p.134). It replaces greatest dimension by least finite prime-kernel height, as
@@ -45,4 +47,4 @@ in the published `UnipotentRadicalMaximal`. The split radical is the object
 whose existence Conrad–Gabber–Prasad, *Pseudo-reductive groups*, second edition
 (2015), assert in the discussion preceding Proposition 2.2.4, printed p.63
 (PDF p.89). Closure of split smooth connected unipotent normal subgroups under
-products is a separate obligation, and this unit does not prove it.
+products is a separate obligation, and this module does not prove it.

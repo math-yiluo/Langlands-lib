@@ -1,6 +1,6 @@
 # Etale approximation of completed homomorphisms
 
-Worker 872. This derived construction applies finite-coefficient descent of
+This derived construction applies finite-coefficient descent of
 actual group homomorphisms and finite-order etale approximation.
 
 Let `P` be a local ring satisfying `EtaleCompletionApproximation P`. Let

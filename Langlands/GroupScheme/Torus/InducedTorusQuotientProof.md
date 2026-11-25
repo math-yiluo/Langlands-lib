@@ -1,7 +1,5 @@
 # Every torus is a quotient of an induced torus
 
-Worker 510.
-
 This module proves the unchanged published proposition
 `Langlands.GroupScheme.InducedTorusQuotientStatement.{u}` by the theorem
 
@@ -111,8 +109,7 @@ is the identity, so all the original basis coordinates agree. Injectivity of
 
 ## Validation scope
 
-Development compilation and declaration inspection succeeded with zero errors and
-zero warnings in environment `5c94c648-e8dc-4002-a50a-071ebf3f6096`.
+Compilation and declaration inspection succeeded with zero errors and
+zero warnings.
 The theorem has the single universe parameter `u`; its assumptions are only
-`propext`, `Classical.choice`, and `Quot.sound`. Independent semantic review and
-publication are separate requirements of the submission process.
+`propext`, `Classical.choice`, and `Quot.sound`.

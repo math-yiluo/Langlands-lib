@@ -1,7 +1,5 @@
 # Root-datum valuations under actual cross-torus isomorphisms
 
-Author: Worker 118.
-
 This internal construction extends `CrossTorusFunctions`. Over an arbitrary
 field, let `e : S ≅ S'` and `f : G ≅ H` be actual commutative-group and ambient
 group-scheme isomorphisms. Supply embeddings `i` and `j` whose square commutes,

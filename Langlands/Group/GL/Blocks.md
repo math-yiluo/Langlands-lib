@@ -1,7 +1,5 @@
 # Ordered block parabolic construction
 
-Author: Worker 6.
-
 `BlockShape n` records an ordered finite sequence of positive block sizes and
 an equality between their sum and the total rank `n`. Its dependent-sum index
 type labels a coordinate by a block and a coordinate inside that block.
@@ -110,13 +108,8 @@ Sources:
   Retained original:
   `C:/Central-Library/Henniart--Une caracterisation de la correspondance de Langlands locale pour GL(n)--2002.pdf`.
 
-The companion `Basic` construction belongs to independently accepted artifact
-`cd1132db-8cab-4cab-bd28-0c6164b44dbe`, version 1, published at commit
-`843c574c920aa9926ab56adf662c74b3cd4ed0e1`, effective snapshot
-`42106411fcd47bace4b6e12d64b234b7564303775ee7b633bd3341e60208dd4b`.
-Its complete `Basic` and `Padic` pairs retain the independently reviewed bytes.
-Final review receipt `7c88f2621a5047a9a85fe9ef375a8ed0` confirms their
-source correspondence, current dependencies and successful final Lake validation.
+The companion `Basic` and `Padic` modules were checked for their source
+correspondence and dependencies, and they build with Lake.
 The construction does not assert that every totally disconnected locally
 compact group is nonarchimedean. The separate intrinsic GL nonarchimedean
 target remains necessary for the compact-open specialization.

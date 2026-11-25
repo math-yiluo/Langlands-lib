@@ -127,6 +127,7 @@ def rootLineOfCentralKernelMap
     (α : characterLattice D) (hα : α ∈ roots d)
     (hχ : t ≫ α ∈ roots j) :
     k ≃ₗ[k] weightSpace j (t ≫ α) :=
+  haveI : Module.Free k (weightSpace j (t ≫ α)) := Module.Free.of_divisionRing k _
   Classical.choice (Module.nonempty_linearEquiv_of_finrank_eq_one
     (finrank_eq_one_of_centralKernelMap p hp j hS t hinj ht α hα hχ))
 

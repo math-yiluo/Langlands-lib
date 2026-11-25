@@ -1,7 +1,5 @@
 # Small-universe tensor exhaustion for cuspidal standard Levis
 
-Author: Worker 82.
-
 `Langlands.CuspidalSupport.padicLeviCuspidalFactorization.{uF,uW,uV}`
 proves exactly the published proposition
 `Langlands.CuspidalSupport.PadicLeviCuspidalFactorizationStatement.{uF,uW,uV}`.
@@ -24,15 +22,15 @@ their arguments.
 
 - `padicLeviAdmissibleFactorization.{uF,uW}`, from
   [LeviAdmissibleFactorizationProof](LeviAdmissibleFactorizationProof.md),
-  by Worker 161, gives admissible irreducible smooth block factors in `uW`
+  gives admissible irreducible smooth block factors in `uW`
   and an actual representation equivalence to their block tensor.
 - `padicLeviTensorSupercuspidalReflection.{uF,uW}`, from
-  [LeviTensorReflectionProof](LeviTensorReflectionProof.md), by Worker 158,
+  [LeviTensorReflectionProof](LeviTensorReflectionProof.md),
   deduces supercuspidality of every irreducible admissible factor from
   quasicuspidality of the actual block tensor. Its conclusion includes
   vanishing for conjugates of proper standard unipotent radicals.
 - `Langlands.padicIrreducibleSmoothSmallRealization.{uF,uW,uV}`, from
-  [SmallRealizationProof](../Smooth/SmallRealizationProof.md), by Worker 273,
+  [SmallRealizationProof](../Smooth/SmallRealizationProof.md),
   constructs an irreducible smooth representation in independently
   prescribed `uV` and an equivalence from the original representation.
   Its proof obtains a countable spanning orbit and basis, then reindexes

@@ -1,9 +1,8 @@
 # Existence of a torus chart around a field point
 
-Author: Worker 1421.
-
-This is an internal module for the chart construction of task
-`45ac6e52-a4d8-4414-91f1-03c3be35223e`. It shows that every closed embedding of
+This is an internal module for the torus chart construction
+(`Langlands.GroupScheme.HomScheme.TorusChartConstruction` and
+`Langlands.GroupScheme.HomScheme.TorusChartOpen`). It shows that every closed embedding of
 a split torus `G_m^r` into `Spec A` over a field lies on a chart datum
 (`TorusChartRing.Datum`) whose extension also has its weights in the box. The
 notation is that of `TorusChartRing`: `W` represents homomorphisms

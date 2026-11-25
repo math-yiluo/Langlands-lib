@@ -68,7 +68,8 @@ theorem polynomial_smul_family (b : Module.Basis κ R M)
   apply congrArg Matrix.det
   apply Matrix.ext
   intro j k
-  simp only [matrix, Matrix.map_apply, map_sum, map_mul, eval₂Hom_C, eval₂Hom_X',
+  simp only [matrix, Matrix.map_apply, MvPolynomial.coe_eval₂Hom, MvPolynomial.eval₂_sum,
+    MvPolynomial.eval₂_mul, MvPolynomial.eval₂_C, MvPolynomial.eval₂_X, RingHom.map_mul,
     map_smul, Matrix.smul_apply, smul_eq_mul]
   apply Finset.sum_congr rfl
   intro i _
@@ -297,7 +298,7 @@ variable {B}
 theorem harrisTaylorCMFullAlgebraLieDeterminantCondition_iso
     {B' : AbelianScheme S} (i' : A →ₐ[ℚ] End0 B')
     (e : Langlands.Rationalization.of B ≅ Langlands.Rationalization.of B')
-    (he : ∀ a : A, comp0 B B B' (i a) e.hom = comp0 B B' B' e.hom (i' a)) :
+    (he : ∀ a : A, comp0 B B B' (i a).asHom e.hom = comp0 B B' B' e.hom (i' a).asHom) :
     D.HarrisTaylorCMFullAlgebraLieDeterminantCondition C p B i ↔
       D.HarrisTaylorCMFullAlgebraLieDeterminantCondition C p B' i' :=
   (D.harrisTaylorCMFullAlgebraLieDeterminantCondition_iff C p B i).trans

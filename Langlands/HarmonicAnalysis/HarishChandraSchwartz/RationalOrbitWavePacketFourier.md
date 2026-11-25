@@ -4,9 +4,8 @@ Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalOrbitWave
 namespace `Langlands.HarishChandraSchwartz` (the separation lemma is
 `Langlands.InvariantPositiveForm.eq_of_forall_inner_eq`). It imports:
 
-- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalOrbitWavePacketPairing` (Worker 249,
-  accepted candidate `98f5e360`, which replaces the rejected `c992cfbd` and keeps its
-  declarations unchanged): the wave packet `rationalOrbitWavePacket` (`f_ψ` for `M = G`),
+- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalOrbitWavePacketPairing`: the wave
+  packet `rationalOrbitWavePacket` (`f_ψ` for `M = G`),
   `integral_conj_mul_rationalOrbitWavePacket_eq_zero` and
   `integral_conj_mul_rationalOrbitWavePacket_of_mem` (the pairing `(E^G_G ψ', f_ψ)_G`),
   `isSquareIntegrableModCentralSubgroup_out`, `out_representation_central`; through its imports

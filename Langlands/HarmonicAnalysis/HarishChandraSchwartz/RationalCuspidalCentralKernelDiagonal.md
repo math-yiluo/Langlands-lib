@@ -5,12 +5,11 @@ p-adiques (d'après Harish-Chandra)*, J. Inst. Math. Jussieu 2 (2003),
 235–333, proof of Proposition VIII.4.1, printed pp. 329–330 (PDF pp. 95–96),
 registered source `waldspurger-2003-plancherel`.
 
-This module is a follow-up to focused unit 2 of Task 7439 (revision 2). It
-imports `RationalCuspidalCentralKernelStep` (unit 2). It
-reduces unit 2's named open prerequisite `RationalLevelKernelDiagonalIntegrable`
-to the integrability of the bilinear conjugation pairings of Task 7256
-(`conjugationPairing`, `RationalConjugationPairing.lean`, already in the
-Library).
+This module continues the local kernel step `RationalCuspidalCentralKernelStep`,
+which it imports. It reduces that module's named open prerequisite
+`RationalLevelKernelDiagonalIntegrable` to the integrability of the bilinear
+conjugation pairings (`conjugationPairing`, `RationalConjugationPairing.lean`, in
+the Library).
 
 ## The source step
 
@@ -60,8 +59,8 @@ restriction.
   (`setIntegral_eq_integral_of_forall_compl_eq_zero`). The family
   `S → (G → ℂ)`, `a ↦ (x ↦ χ(a) conjugationPairing μ_G E 1_{H a} x⁻¹)`, is
   locally constant: it does not change under `a ↦ a b` for `b ∈ A ∩ H`,
-  because `χ(b) = 1` and by `rightCosetIndicator_mul_of_mem`. Unit 2's
-  `integral_apply_eq_sum_of_isLocallyConstant` therefore writes the integral
+  because `χ(b) = 1` and by `rightCosetIndicator_mul_of_mem`.
+  `integral_apply_eq_sum_of_isLocallyConstant` (`RationalCuspidalCentralKernelStep`) therefore writes the integral
   over `S` as a finite combination of members of the family. Each member is
   integrable by hypothesis, so the finite sum is integrable
   (`integrable_finsetSum`), and so is its real part.
@@ -85,26 +84,28 @@ restriction.
   (`compactSubgroup_le_rationalCommonNormKernel`). `A_G(F) ∩ G¹` is compact
   for connected reductive `G` (`isCompact_splitComponent_inf_commonNormKernel`).
   `E` vanishes outside `G¹` by the field `eq_zero_of_not_mem`, and `muA` is
-  inversion invariant by unit 2's `isInvInvariant_of_le_center`. The right
+  inversion invariant by `isInvInvariant_of_le_center`. The right
   invariance of `muG` needed by `integral_comap_eq_conjugationPairing` comes
-  from unit 2's `rationalHaar_isMulRightInvariant`.
+  from `rationalHaar_isMulRightInvariant`. Both are in
+  `RationalCuspidalCentralKernelStep`.
 
 The theorem requires `χ` trivial on `A_G(F) ∩ H`, as in the source. The
-complementary case is handled by unit 1.
+complementary case is handled by `rationalCuspidalCentralLevel_finite_of_ne_one`
+(`RationalCuspidalCentralFiniteReduction`).
 
-## Open hypotheses and their owners
+## Open hypotheses
 
-- `RationalLevelKernelPairingIntegrable`. Its source is VIII.3.2, owned by
-  Task 7256 (`b0fd13d7-7b2e-4cec-97ef-3a2286d8ed7c`). Task 7439's follow-up
-  module `RationalCuspidalCentralKernelPairing` derives it from the VIII.3.2
-  integrability form at `f₁ = E`. That form is concluded by Task 7256's
-  statement `RationalCuspidalConjugationIntegrabilityStatement` (candidate
-  `9f4689cd-0a2e-43cd-bef8-c3551ceb0281`, accepted, not yet in the Library).
-- `IsRationalCuspidalLevelKernel hKc hPK ρ muG H E`: focused unit 3 of Task
-  7439 and Task 7277 (`eaceb96b-aaaf-4068-9a11-46292b5334e6`), as listed in
-  unit 2.
+- `RationalLevelKernelPairingIntegrable`. Its source is VIII.3.2. The module
+  `RationalCuspidalCentralKernelPairing` derives it from the VIII.3.2
+  integrability form at `f₁ = E`. That form is concluded by the statement
+  `RationalCuspidalConjugationIntegrabilityStatement` (module
+  `RationalCuspidalConjugationStatement`), which the Library states but does not prove.
+- `IsRationalCuspidalLevelKernel hKc hPK ρ muG H E`: from the rank adapter
+  (`RationalCuspidalUnit`, `RationalCuspidalUnitKernel`) and the laws of the VIII.2
+  degree-zero projection, as listed in `RationalCuspidalCentralKernelStep`.
 - `IsConnectedReductive G` and `χ` trivial on `A_G(F) ∩ H` are hypotheses of
-  the source situation. The complementary case of `χ` is unit 1 of Task 7439.
+  the source situation. The complementary case of `χ` is
+  `rationalCuspidalCentralLevel_finite_of_ne_one`.
 
 Nothing here assumes same-rank finiteness, same-rank reconstruction, the
 closed target or a dimension bound.

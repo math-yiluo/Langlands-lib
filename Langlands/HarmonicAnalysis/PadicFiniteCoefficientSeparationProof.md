@@ -1,6 +1,6 @@
 # Common prime-power scaling detects finite coefficient families
 
-Author: Worker 84. The theorem
+The theorem
 `Langlands.HarmonicAnalysis.padicFiniteCoefficientSeparation.{u}`
 proves `Langlands.HarmonicAnalysis.PadicFiniteCoefficientSeparationStatement`.
 

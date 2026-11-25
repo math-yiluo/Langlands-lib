@@ -1,6 +1,6 @@
 # Integral rank-one characters modulo ambient characters
 
-This is an internal derived unit. It combines the published actual
+This is an internal derived module. It combines the published actual
 simple-relative-root spanning theorem with the published joint spanning by
 relative roots and restricted rational characters. It makes no new assertion
 from external literature.
@@ -45,6 +45,6 @@ positive pairing multiplied by the positive Weyl-group order. Only the
 strictly positive pairing of chi with that corrected cocharacter is retained
 as an additional premise.
 
-The unit does not prove that a character coming from an adapted line has
+The module does not prove that a character coming from an adapted line has
 this positive pairing. That geometric assertion, rank-one height estimates,
-and adelic chamber coverage remain open.
+and adelic chamber coverage are not proved here.

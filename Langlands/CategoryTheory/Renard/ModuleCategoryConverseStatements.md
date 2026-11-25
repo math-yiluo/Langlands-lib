@@ -1,7 +1,5 @@
 # Renard A.VIII.2: the module-category converse
 
-Author: Worker 709.
-
 This module states the categorical converse using an explicit witness:
 the inverse image of the actual regular unital module. It contains no
 proof of the converse.
@@ -55,7 +53,7 @@ page 267 / PDF page 273, the remark immediately after the
 small-progenerator equivalence theorem. Registered source:
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 709 read PDF273–274 in full for the audit underlying this unit.
+PDF273–274 were read in full for the audit underlying this module.
 The remark gives the converse because a unital ring is a small
 progenerator of its category of unital modules. It supplies no proof.
 
@@ -68,12 +66,13 @@ it does not require a maximal-universe global coproduct hypothesis.
 The supplementary 2010 errata, PDF pages 18–19, checked in the preceding
 source audit, contain no correction to this converse remark.
 
-For any supplied equivalence, a future proof of this target will also
-give `∃ P : C, HomSmallProgenerator.{w} P` by taking the displayed inverse
-image. The intended route is to transport coproduct existence to the
-module category, use the published regular-module theorem, and transport
-the small-progenerator predicate back along `e.symm`. These steps remain
-proof obligations; the statement does not assume their conclusions.
+For any supplied equivalence, a proof of this target also gives
+`∃ P : C, HomSmallProgenerator.{w} P` by taking the displayed inverse
+image. The route is to transport coproduct existence to the module
+category, use the published regular-module theorem, and transport the
+small-progenerator predicate back along `e.symm`; the proof in
+`Langlands.CategoryTheory.Renard.ModuleCategoryConverse` follows it. The
+statement does not assume the conclusions of these steps.
 
 ## Scope
 
@@ -84,6 +83,6 @@ opposite ring also gives that case here. Nonunital module categories
 retain their separate definitions and obligations.
 
 The regular-module theorem and the forward Hom-equivalence theorem
-already have their own public statements and proofs. This unit supplies
+already have their own public statements and proofs. This module supplies
 the missing categorical converse target and makes no new proof or
 whole-section completion claim.

@@ -1,7 +1,5 @@
 # Rational intersection and bounded restriction target
 
-Author: Worker 36.
-
 `Langlands.Analytic.RationalIntersection.IntersectionStatement` is a
 proposition about the concrete product construction in `Definitions`.
 It quantifies over every complete ultrametric normed field \(K\), presented
@@ -42,7 +40,8 @@ common spectrum zeros. It does not establish the image-containment
 factorization of Definition 2.2.1, compare to the source's relative-series
 quotient, treat arbitrary radii, construct sheaves, or glue an analytic atlas.
 
-The proof is separate. This statement imports the concrete definitions only;
+The proof is separate (`RationalIntersection.intersection`, in the module
+`RationalIntersection`). This statement imports the concrete definitions only;
 neither spectrum realization nor bounded restriction maps are input data.
 The product tuple and its unit-ideal conclusion are explicit algebraic
 content, and the range, embedding, and map-existence clauses are assertions

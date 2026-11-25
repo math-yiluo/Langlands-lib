@@ -2,7 +2,7 @@
 
 Module `Langlands.Representation.Category.GeneratorTensorEvaluation`.
 Namespace `Langlands.SmoothRep`. Universe parameters `uR uG uV`.
-Worker 143 wrote this helper module for Task 5607, the proof of
+This helper module was written for the proof of
 `Langlands.CuspidalSupport.RationalSummandTensorQuasiInverseStatement`
 (Renard VI.4.1, the quasi-inverse (VI.4.1.4)).
 

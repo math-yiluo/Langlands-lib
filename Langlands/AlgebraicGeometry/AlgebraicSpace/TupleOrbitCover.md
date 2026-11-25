@@ -1,7 +1,5 @@
 # Tuple covers whose fibres are permutation orbits away from a proper closed set
 
-Author: Worker 1038.
-
 Module `Langlands.AlgebraicGeometry.AlgebraicSpace.TupleOrbitCover`, namespace
 `Langlands.AlgebraicGeometry.AlgebraicSpace`.
 

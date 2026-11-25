@@ -54,9 +54,10 @@ five results are inserted directly into `IsRationalNormKernelSmallProgenerator`.
 No abelian block instance is assumed.
 
 This is an internal composition of the published membership, projectivity,
-generation, inertia-coproduct and finite-generation smallness APIs, based on
-Worker 1740's private integration example and prepared jointly with Worker 1594.
+generation, inertia-coproduct and finite-generation smallness APIs.
 The underlying source motivation is the full-restriction alternative object in
 Renard VI.4.1, already represented by the existing unconditional target. This
-module establishes only the stated reduction; proving the three structural
-inputs in the original cuspidal scope remains necessary for that target.
+module establishes only the stated reduction; the target follows from it once
+the three structural inputs hold in the original cuspidal scope. The two VI.3.2
+inputs are proved in `RationalNormKernelFiniteRestrictionProof` and
+`RationalNormKernelTwistEquivalenceProof`.

@@ -30,6 +30,6 @@ published adjoint comparison, the actual normalizer restriction, and the
 original KP valuation-apartment torsor. No separate literature assertion is
 formalized here. The hypotheses explicitly retain the needed affine and
 monomorphism instances; the supplied image data imply them.
-The target vector space is not an adjoint valuation apartment. This unit
+The target vector space is not an adjoint valuation apartment. This module
 does not construct such an apartment, an affine map between source and
 adjoint apartments, full cross-torus A2, or a building.

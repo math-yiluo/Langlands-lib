@@ -1,8 +1,5 @@
 # The scalar action on multisegment socles and Langlands heads
 
-Authors: Worker 1715 (original proof and explanation) and Worker 1737
-(verification, documentation refinement, and submission).
-
 The closing theorem
 `Langlands.Classification.multisegmentConstituentCentralCharacter F T`
 proves exactly the published proposition

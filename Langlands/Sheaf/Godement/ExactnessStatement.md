@@ -1,11 +1,9 @@
 # Exactness of the constructed Godement resolution
 
-Author: Worker 3.
-
 This pair defines seven propositions and their conjunction about the published
 cokernel and Godement constructions. The augmentation chain map, its naturality,
 and the retraction on a chosen point fiber are constructed, and their intrinsic
-identities are proved. The seven theorem assertions remain separate obligations;
+identities are proved. The seven theorem assertions are not proved here;
 defining them does not prove them.
 
 ## Objects, maps and hypotheses
@@ -144,13 +142,13 @@ Registered originals and retained bytes:
   `e046cadfb9dcec4b0cf6624f80d6316bf532416153b82023f5100bd1ab0726cd`;
   member `Berkovich--Etale equivariant sheaves on p-adic analytic spaces (unfinished manuscript)--1996.pdf`,
   SHA256 `91567a75866a27cbe6690b6f075693df5afaa02524223d94d52ea37d77bb6637`.
-  The fifteen-page supplied manuscript was read during the preceding source
-  audit; section 1.5 was rechecked for this pair.
+  The fifteen-page supplied manuscript was read; section 1.5 was rechecked for
+  this pair.
 
 ## Formal dependencies and remaining scope
 
 This pair imports the published construction modules by their Lean names.
-The exact dependency version is the current Library commit
+The exact dependency version is the Library commit
 `30ceb5a0d89d8094c1663fc19f35416519b9a125`; the following local bytes were
 verified equal to that public tree:
 
@@ -160,18 +158,17 @@ verified equal to that public tree:
 | `Langlands.Sheaf.Godement` | `fcf2515607d29714f845b8218a251d44d218a2aceb1141ee84703fb8f7eaf3d0` | `a6ee81493065823de1e872289581afacc635b4c7a6b7d30114884a8eafec9b36` |
 | `Langlands.Geometry.EtaleGodement` | `d0aded4edc3cf5bcff2bba08a843fc3836b2320cb6aadcc6fea2b8a7bafee461` | `07d39153a258525766ace53417297a7b14b9f3b951c9fadbacc085f991c46718` |
 
-These modules are authored by Worker 13; no unpublished construction was
-copied or assumed. The new augmentation chain map and fiber retraction are
+No unpublished construction was copied or assumed. The new augmentation chain map and fiber retraction are
 added in this pair. Their proved intrinsic equations do not prove the seven
 resolution, exactness or contraction statements.
 
-The environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`,
+The Lean environment in which it was checked is
 Lean 4.34.0, commit `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`,
 with Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
 Additional Mathlib imports provide actual quasi-isomorphisms and chain
 homotopies.
 
-Development check `15312320-6a52-4dd6-ae51-82ef588926c1` in that environment
+A development check in that environment
 completed a Lake build of this module and exact declaration inspection with no
 errors or warnings, for Lean source SHA256
 `66c45b9d460fce4935aa869c1db1c932ca9e60fe95188ea3a6895ae9d0037435`.
@@ -182,8 +179,7 @@ Its target fingerprint is
 `8abc8cb8a8c5c33f88dd69a37d43277d966a695a44665d59cb9dc707a0755201`.
 
 A separate print of every component, the conjunction, and the two new
-constructions in the same environment (check
-`13323b0b-b557-4aea-8405-aa840490f4d6`) was read, including the independent
+constructions in the same environment was read, including the independent
 universe parameters, the placement of joint faithfulness and exactness
 hypotheses, the actual image-augmentation in the splitting target, its
 prescribed degree-zero retraction, and both composite directions.
@@ -196,9 +192,7 @@ checks do not prove the seven assertions.
 The analytic equivariant site, its comparison to a topos, smooth group and
 Galois actions, flabbiness/softness, compact-support acyclicity, inverse-system
 compatibilities and the Harris spectral-sequence and Shimura specializations
-remain distinct obligations. In particular, this pair supplies no input
+are not treated here. In particular, this pair supplies no input
 proof of compact-support acyclicity to the published acyclic-resolution
 comparison statements. It introduces no banality assumption and makes no
-nonsplit local-global assertion. The broad Harris-Berkovich framework remains
-open. Independent acceptance and publication of these statements, and proofs
-of their mathematical assertions, are separate requirements.
+nonsplit local-global assertion.

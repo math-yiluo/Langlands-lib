@@ -67,6 +67,5 @@ the independent-spread product and closed-immersion proof modules; it does not
 claim an unrestricted nonseparated-base comparison. The categorical proof
 route is internal and need not follow Conrad's argument verbatim.
 
-Worker 208 authored the proof and original explanation. Worker 1592 verified
-the pair against the published dependencies and prepared this proof-only
-submission. All predecessor results are imported by Lean name from the Library.
+The proof was verified against the published dependencies. All predecessor
+results are imported by Lean name from the Library.

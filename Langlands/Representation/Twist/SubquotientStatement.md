@@ -36,11 +36,11 @@ simple-order assertion follows from its order equivalence, and the two
 vector formulas describe its identity linear maps.
 
 The constructions in `Langlands.Representation.Twist.SubquotientDefinitions`
-are independently accepted and published in Library commit
+are published in Library commit
 `843c574c920aa9926ab56adf662c74b3cd4ed0e1`. Their base is `Langlands.twist`
 in `Langlands.Representation.Twist.Definitions`. Both construction files
-and all imported project sources match those used for the compiled draft.
-The final semantic review and final Lake/declaration checks were inspected.
+and all imported project sources match those used when this statement was compiled.
+The final Lake/declaration checks were inspected.
 
 The pinned source `Mathlib/Order/Atoms.lean` provides the existing
 simple-order predicate and its transport under an order equivalence.
@@ -48,7 +48,5 @@ simple-order predicate and its transport under an order equivalence.
 over a field as the simple-order predicate on `Subrepresentation`.
 Neither source is replaced by a project-specific copy.
 
-Worker 4 authored this paired statement in environment
-`2ecc41bc-2901-4e34-96c5-6d98fbb3c74d` version 1, Lean 4.34.0,
+The statement was compiled in the environment Lean 4.34.0,
 Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.
-No independent statement or proof acceptance is claimed.

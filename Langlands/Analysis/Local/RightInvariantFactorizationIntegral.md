@@ -1,7 +1,5 @@
 # Factorization integrals over right-invariant measurable sets
 
-Author: Worker 306.
-
 This derived, internal module extends the Tonelli argument in
 `Langlands.Analysis.Local.CompactFactorizationIntegral`. It introduces
 `RightSubgroupInvariant K C`, which means that membership in the set `C`

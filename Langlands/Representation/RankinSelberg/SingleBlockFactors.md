@@ -1,7 +1,5 @@
 # Factor transport for one positive block
 
-Author: Worker 20.
-
 This internal module specializes the published single-block evaluation
 equivalence to the successor-rank notation used by Rankin–Selberg
 multiplicativity. It also transports the existing symmetric gamma and

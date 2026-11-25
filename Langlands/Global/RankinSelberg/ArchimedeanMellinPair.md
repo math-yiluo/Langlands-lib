@@ -1,8 +1,7 @@
 # Continuation from a Mellin pair identity (core of Jacquet 2009, Proposition 4.1)
 
-This is an intermediate result of Task 7400, towards
-`Langlands.Global.RankinSelbergGlobal.RealPlaceFunctionalEquationStatement`. Authored by
-Worker 823. Every declaration is proved, with no axioms beyond Lean's standard ones
+This is an intermediate result towards
+`Langlands.Global.RankinSelbergGlobal.RealPlaceFunctionalEquationStatement`. Every declaration is proved, with no axioms beyond Lean's standard ones
 (`propext`, `Classical.choice`, `Quot.sound`). The module imports only Mathlib.
 
 The module proves the analytic core of Proposition 4.1 of Jacquet, *Archimedean Rankin–Selberg

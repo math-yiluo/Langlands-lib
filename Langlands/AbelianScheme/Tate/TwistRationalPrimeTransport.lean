@@ -99,9 +99,9 @@ theorem rationalPrimeTransport_symm (γ : fiberFunctor s hs ≅ fiberFunctor t h
 
 /-- Loop transport recovers the existing rational prime-adic geometric action. -/
 theorem rationalPrimeTransport_aut (g : FundamentalGroup s hs) :
-    rationalPrimeTransport p (hμfin := hμfin) (hμet := hμet) g =
+    rationalPrimeTransport p (hμfin := hμfin) (hμet := hμet) g.asIso =
       rationalPrimeMonodromy s hs p (hμfin := hμfin) (hμet := hμet) g := by
-  have heq : primeTransportHom p (hμfin := hμfin) (hμet := hμet) g =
+  have heq : primeTransportHom p (hμfin := hμfin) (hμet := hμet) g.asIso =
       primeMonodromyHom s hs p (hμfin := hμfin) (hμet := hμet) g :=
     congrArg LinearEquiv.toLinearMap
       (primeTransport_aut p (hμfin := hμfin) (hμet := hμet) g)
@@ -140,7 +140,7 @@ theorem rationalPrimeTransport_monodromy (γ : fiberFunctor s hs ≅ fiberFuncto
 theorem rationalPrimeTransport_change_path (γ δ : fiberFunctor s hs ≅ fiberFunctor t ht)
     (x : Rational Ω p) :
     rationalPrimeTransport p (hμfin := hμfin) (hμet := hμet) δ x =
-      rationalPrimeMonodromy t ht p (hμfin := hμfin) (hμet := hμet) (γ.symm ≪≫ δ)
+      rationalPrimeMonodromy t ht p (hμfin := hμfin) (hμet := hμet) (Aut.of (γ.symm ≪≫ δ))
         (rationalPrimeTransport p (hμfin := hμfin) (hμet := hμet) γ x) := by
   rw [← rationalPrimeTransport_aut, ← rationalPrimeTransport_trans]
   simp

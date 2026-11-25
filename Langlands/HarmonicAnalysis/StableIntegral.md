@@ -49,6 +49,6 @@ proves the linear map laws.
 `hasStableIntegral_stableIntegral` verifies the chosen value, and
 `stableIntegral_eq` identifies it with any value satisfying the relation.
 
-This unit asserts neither stabilization for arbitrary functions nor absolute
+This module asserts neither stabilization for arbitrary functions nor absolute
 integrability on the whole group. It supplies no Jacquet functional,
 intertwining operator, rational continuation, or local coefficient.

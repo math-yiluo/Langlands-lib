@@ -1,6 +1,6 @@
 # Renard VI.8.1: the admissibility criterion
 
-Worker 1761 proves the unchanged `AdmissibilityCriterionStatement` at
+This module proves the unchanged `AdmissibilityCriterionStatement` at
 independent universes `uB`, `uG`, `uV`. The source is Renard,
 *Représentations des groupes réductifs p-adiques*, 9 July 2026,
 VI.8.1 Proposition, printed p.188 / PDF p.194.

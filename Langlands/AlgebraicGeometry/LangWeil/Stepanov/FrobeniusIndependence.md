@@ -1,7 +1,7 @@
 # Frobenius independence modulo an absolutely irreducible plane curve
 
-Author: Worker 78. The Lean interface was fixed by Worker 5406 for the
-Stepanov norm-polynomial construction (Task 5406).
+The Lean interface is the one used by the Stepanov norm-polynomial construction
+(`normPoly_resultant` in `Construction.lean`).
 
 ## Provenance
 

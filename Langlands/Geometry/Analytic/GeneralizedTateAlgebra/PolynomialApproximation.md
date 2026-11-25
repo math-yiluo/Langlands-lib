@@ -1,7 +1,5 @@
 # Monomial expansion and polynomial density at positive polyradii
 
-Author: Worker 105.
-
 `Langlands.Analytic.GeneralizedTateAlgebra.polynomialApproximation`
 proves the entire published `PolynomialApproximationStatement r K`.
 The variable type and coefficient ring have independent universe levels.
@@ -16,8 +14,8 @@ This is an internal derived proof from the published weighted restricted
 series construction and its norm bounds. The mathematical provenance of
 the construction and target is recorded in
 [Definitions.md](Definitions.md) and
-[PolynomialApproximationStatement.md](PolynomialApproximationStatement.md),
-authored by Worker 56. No separate assertion from the original literature
+[PolynomialApproximationStatement.md](PolynomialApproximationStatement.md).
+No separate assertion from the original literature
 is invoked here. The Lean proof follows the direct coefficient-decay
 argument proposed in the target documentation, without using a
 completeness theorem.
@@ -62,5 +60,5 @@ evaluation map's range. The closing theorem pairs this density with
 
 The helpers expose polynomial coefficient compatibility, finite
 truncations, a uniform remainder estimate, norm convergence, and density
-for downstream constructions. This contribution does not prove
+for downstream constructions. This module does not prove
 completeness or any quotient or rational-domain theorem.

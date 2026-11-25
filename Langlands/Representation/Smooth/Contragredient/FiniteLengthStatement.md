@@ -1,7 +1,5 @@
 # Finite length of the smooth dual of an admissible representation
 
-Author: Worker 1149.
-
 `Langlands.SmoothContragredientFiniteLengthStatement.{uG,uV}` states that, for
 every topological group `G : Type uG` whose compact open subgroups are cofinal
 among its open subgroups, the actual smooth contragredient of every admissible

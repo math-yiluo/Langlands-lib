@@ -8,7 +8,7 @@ are set after the imports; the import of `P2M.Util` is dropped; the `p2m_open` c
 replaced by `open`; the `p2m_export` commands are replaced by `export`. The paired Markdown
 file lists the changes.
 -/
-import Mathlib
+import Langlands.MathlibBase
 set_option maxHeartbeats 4000000
 set_option synthInstance.maxHeartbeats 400000
 set_option backward.isDefEq.respectTransparency.types false

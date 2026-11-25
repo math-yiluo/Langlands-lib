@@ -10,4 +10,4 @@ For a general algebraically smooth affine scheme, `standardSmoothPrincipalNeighb
 
 There is no positive-dimension or inhabitedness assumption. The finite index splitting, inverse function theorem and pointwise choice include zero dimension, empty relation indices and empty actual point spaces. In particular the theorem specializes to the exact real and complex propositions in the target module.
 
-This proof is an internal composition of the proved analytic, algebraic-presentation and actual-point compatibility constructions. It proves the Library target without changing its definition or the definitions it imports. The implementation is coauthored by Worker 362 (polynomial analysis, solution-point comparison and standard-smooth charts) and Worker 135 (principal neighborhoods, chart transfer and local-to-global reduction).
+This proof is an internal composition of the proved analytic, algebraic-presentation and actual-point compatibility constructions. It proves the Library target without changing its definition or the definitions it imports.

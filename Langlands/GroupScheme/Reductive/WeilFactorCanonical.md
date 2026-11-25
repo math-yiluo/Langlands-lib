@@ -1,7 +1,5 @@
 # The canonical algebra isomorphism attached to an isomorphism of Weil restrictions
 
-Worker 47.
-
 Module `Langlands.GroupScheme.Reductive.WeilFactorCanonical`, namespace
 `Langlands.GroupScheme.WeilFactor`. It imports
 [`WeilFactorUniquenessReduction`](WeilFactorUniquenessReduction.md). Like that module, it does

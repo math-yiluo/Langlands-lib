@@ -1,6 +1,6 @@
 # The sharp fixer of an arbitrary apartment point
 
-This derived, internal unit proves, for `ValuationBuildingData` and a point
+This derived, internal module proves, for `ValuationBuildingData` and a point
 `x` of the apartment that need not lie in a chamber, the inclusion
 
 `G(F)^♯_x ⊆ X_x(Φ_{-μ}) · X_x(Φ_μ) · H_x`
@@ -144,7 +144,7 @@ The finiteness of `Φ` and the spanning condition used by
 
 *The whole sharp fixer.* `sharpFixer_subset_mul_sharpNormalizerStabilizer`
 applies `KPApartmentData.sharpFixer_subset_mul_of_exchange` of
-`ChamberExchange` (Worker 1536) to `D = B.apartment` and the subgroup
+`ChamberExchange` to `D = B.apartment` and the subgroup
 `H = H_x`. Its inputs are supplied as follows: `S` is a split torus
 (`B.isMaximalSplitTorus`); `Φ` is finite (`IsSplitTorus.finite_relativeRoots`,
 using the smoothness of `G` from `B.isConnectedReductive`); `Ψ′` is an affine
@@ -159,7 +159,7 @@ definition and applies this theorem.
 
 The factorization and its depth bounds are the construction in the proof of
 Kaletha–Prasad Proposition 7.1.1(1) (printed pp. 237–239, PDF pp. 268–270), as
-formalized by Worker 1536 in `ChamberRankOne`. In the book, the fact that `z`
+formalized in `ChamberRankOne`. In the book, the fact that `z`
 fixes `x` comes from `z = m(w) m(v′)` being a product of two reflections
 through the same hyperplane. Here the Lean proof instead finds an explicit
 common point `y₀` of the two hyperplanes and uses that a centralizer point acts
@@ -171,7 +171,7 @@ there for every point `x ∈ A`. In the book this input is Lemma 7.3.11(3)
 (printed p. 249, PDF p. 280), `G(k)^(a)_{x,f} = U_{-a,x,f} · U_{a,x,f} · N^(a)_{x,f}`,
 proved from Lemma 7.1.5(1) and (3) (printed p. 243, PDF p. 274), together
 with the fact from Corollary 7.3.13 (printed p. 251, PDF p. 282) that
-`N^(a)_{x,f}` fixes `x` when `f ≥ 0`. This unit proves only the consequence
+`N^(a)_{x,f}` fixes `x` when `f ≥ 0`. This module proves only the consequence
 used in the proof of Proposition 7.3.12, for `f = 0` and one root at a time,
 with `H_x` in place of `N^(a)_{x,0}`. The case split `t > 0` / `t = 0` and the
 choice of `H_x` are internal to this formalization.

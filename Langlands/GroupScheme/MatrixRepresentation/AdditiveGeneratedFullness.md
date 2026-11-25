@@ -1,6 +1,6 @@
 # Coefficient fullness for supplied generating additive families
 
-This internal derived unit connects the full actual additive-family matrix
+This module, internal and derived, connects the full actual additive-family matrix
 coefficient algebra to the existing density and Burnside results. The field has
 arbitrary universe `u`, the family index independent universe `v`, and all finite
 decidable coordinate types are in `Type`.

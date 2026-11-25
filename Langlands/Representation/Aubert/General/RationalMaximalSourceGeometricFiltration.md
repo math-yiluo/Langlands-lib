@@ -1,9 +1,9 @@
 # Actual ordered geometric filtrations for maximal standard source Levis
 
-Author: Worker 124.
-
-This module states the remaining filtration input for the rank-one geometric
-Jacquet computation. It does not prove its existence. The statement is stronger
+This module states the filtration input for the rank-one geometric
+Jacquet computation. It does not prove its existence;
+`rationalMaximalSourceGeometricFiltration` in
+`RationalRankOneGeometricJacquetProof` proves the statement. The statement is stronger
 than the desired cuspidal computation in that the inducing smooth object is
 arbitrary and the maximal source need not be self-associated. The scope is
 limited to maximal standard sources and proper standard targets.
@@ -91,11 +91,12 @@ and absolute cuspidality; those hypotheses are not imported into this stronger
 filtration statement. Renard's general smooth geometric lemma provides that
 scope. The module does not claim a proof of Casselman's sequence.
 
-## Relationship to existing work and remaining proof work
+## Relationship to existing work and proof requirements
 
 `RepresentedGeometricLemmaStatement` has arbitrary represented parabolics and
 scheme-level intersection data, but concludes only unordered `IsGluedFrom`.
-Its proof and the bridge to the actual standard families remain separate.
+Its proof (`representedGeometricLemma` in `RepresentedGeometricLemmaProof`)
+and the bridge to the actual standard families are separate.
 An arbitrary unordered filtration does not determine the direction of a
 short exact sequence. A reuse proof here must retain or reconstruct the
 closed-identity-orbit endpoint from the actual support filtration.
@@ -104,8 +105,8 @@ extra point-Bruhat, continuity, compactness and normalized Haar-character
 premises must be discharged from this proposition's displayed data.
 
 No geometric lemma, double-coset comparison or normalized orbit identification
-is added as an assumption to this statement. Their exact published proofs or
-new derivations are still required. This unit preserves the existing broad
-represented-geometric-lemma and exact-K0 proof tasks; it isolates a focused
-maximal-source, object-level consumer interface. In particular it is not an
+is added as an assumption to this statement. A proof requires their exact
+published proofs or new derivations. This module leaves the broad represented
+geometric lemma and the exact-K0 expansion as separate statements; it isolates
+a focused maximal-source, object-level consumer interface. In particular it is not an
 exact-K0 expansion or an assertion that a semisimplification splits.

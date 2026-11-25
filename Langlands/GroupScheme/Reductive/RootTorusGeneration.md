@@ -1,7 +1,5 @@
 # Closed generation by a split torus and its actual roots
 
-Worker 1437.
-
 This internal construction works over any field `k : Type u`, in every
 characteristic. Let `G` be a smooth connected affine group scheme and let
 `i : T.toGrp ⟶ G` be a homomorphism from a split torus. Assume explicitly that
@@ -68,4 +66,4 @@ Cartan-specific hypotheses and conclusions are not used here. No new
 literature assertion is made. Neither zero-weight containment nor torus
 self-centralization is proved unconditionally in this file. These
 conditional constructions do not prove semisimple root generation or
-the host task's almost-simple generation statement.
+the almost-simple generation statement.

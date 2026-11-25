@@ -5,8 +5,7 @@ This module contains one proposition definition,
 with universe parameters `uF, uV` in that order. It is an internal comparison
 theorem target. The B6 endpoint uses it in the exact-stabilizer branches of
 Harris's Proposition 4.8. The target is conditional on C2, the published
-Euler-polynomial constituent-recovery target. Nothing is proved here; the
-later proof belongs to a separate task.
+Euler-polynomial constituent-recovery target. Nothing is proved here.
 
 ## The proposition
 
@@ -158,13 +157,14 @@ assumed in order to obtain the archimedean conclusion.
 
 - This target is not Arthur–Clozel III.5.1 and is not a base-change
   statement: no extension of `F` occurs. It is a separate branch premise.
-  It does not enlarge the planned B7 target
-  `Langlands.Automorphic.Unramified.CyclicWeakBaseChangeComplexPlaceStatement`
-  (not yet in the Library), which concerns parameter transport along actual
+  It does not enlarge the B7 target
+  `Langlands.Automorphic.Unramified.CyclicWeakBaseChangeComplexPlaceStatement`,
+  which concerns parameter transport along actual
   weak base changes and weak induction.
 - It has no regular-algebraicity conclusion. It leaves the separate
   totally-complex infinitesimal-character and regular-algebraicity bridge
-  statement of Task 7463 unchanged.
+  statement `Langlands.Automorphic.CuspidalComplexParameterBridgeTCStatement`
+  unchanged.
 - The supporting vocabulary (`HeckeFamilyEndpoint`,
   `IsobaricComplexPlaceParameter`) only defines the relations used here.
   It does not prove this comparison. Neither trace-formula work nor base

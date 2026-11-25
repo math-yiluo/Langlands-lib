@@ -6,4 +6,4 @@ The source of `infiniteEvaluation` is the tensor of the real and complex standar
 
 `infiniteStandardAction` is the right compact action of the actual group, via those coordinates and the local standard actions. `infiniteEvaluation_right` follows from the individual right translation laws and the composition law for indexed tensor maps.
 
-This is an internal assembly of the local evaluations for Task 6553. Flath (1979), §2, pp. 180–181 (PDF 176–177), gives the tensor product context, and Getz and Hahn (2024), §10.1, pp. 270–271 (PDF 282–283), give the scalar compact model.
+This is an internal assembly of the local evaluations for `CuspidalIsobaricAutomorphyStatement`. Flath (1979), §2, pp. 180–181 (PDF 176–177), gives the tensor product context, and Getz and Hahn (2024), §10.1, pp. 270–271 (PDF 282–283), give the scalar compact model.

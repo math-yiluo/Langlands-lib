@@ -7,7 +7,7 @@ Registered source: `conrad-2011-weil-grothendieck-adelic-points`,
 SHA-256 `fe4a9193aff4ef575665b40971f3da32f850a74d87b3f2d0fa28bba26b9cbabb`.
 The source uses the natural equality of adelic point sets under Weil
 restriction and proves equality of their independently constructed
-topologies through integral models. This unit proves that the existing
+topologies through integral models. This module proves that the existing
 original-field homeomorphism has exactly that natural underlying map.
 Its proof applies the integral counit identity and the generic-fiber
 counit compatibility.
@@ -46,7 +46,7 @@ A = O(K,E), B = O(L,E'), and Y = M.geometric.asOver.
 These are actual arithmetic and geometric data: the lower model is
 `affineChartWeilRestriction A B Y`, and the two original generic-fiber
 isomorphisms are `lowerGenericFiberIso` and `upperGenericFiberIso`.
-The published constructor `numberFieldExtensionProjectiveModel` supplies
+The existing constructor `numberFieldExtensionProjectiveModel` supplies
 such M for quasi-compact X. The model contains no assumed adelic
 comparison or counit identity.
 
@@ -91,7 +91,7 @@ finite supports, yield identical maps on every original lower adelic
 point for the fixed original immersion j. Both maps equal
 `adelicEvaluation`, which contains no model choice.
 
-This unit supplies the canonical-map identification for the number-field
+This module supplies the canonical-map identification for the number-field
 projective-immersion comparison. The function-field version, the
 algebraic-space generalization and the other assertions of the
-five-section paper remain separate obligations.
+five-section paper are not treated here.

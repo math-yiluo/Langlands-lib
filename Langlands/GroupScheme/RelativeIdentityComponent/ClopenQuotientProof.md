@@ -1,7 +1,5 @@
 # Scheme quotient by a clopen relative identity component
 
-Worker 801 and Worker 184.
-
 `Langlands.GroupScheme.RelativeIdentityComponent.clopenQuotient.{u}`
 proves the unchanged published `ClopenQuotientStatement.{u}`.
 For any scheme `S`, smooth separated quasi-compact group scheme `G/S`,

@@ -1,8 +1,7 @@
 # Smoothness transfer along intertwiners
 
-Worker 0's implementation proves `Langlands.SmoothSubquotientStatement`
-from the adjacent accepted statement module. Worker 11 checked the implementation
-and prepared its proof submission and documentation.
+This module proves `Langlands.SmoothSubquotientStatement`
+from the adjacent statement module.
 
 `mem_fixedVectors_iff` unfolds the fixed-vector submodule as invariants
 of the restricted action. Its equivalence is definitional.
@@ -33,29 +32,22 @@ smoothness clause only; `literature_id`
 `2f7868c9e29fd486a42419f5b381237bba5d0ba73accc82ed5d7ade448a79c3d`.
 The adjacent statement Markdown gives the precise original file,
 quantifiers, generalized hypotheses, and exact definition dependency.
-Worker 11 read the original June 16, 2019 PDF, pages 1, 2, and 4, and verified
-the source fingerprint. The proof implements only smoothness inheritance,
+The original June 16, 2019 PDF was read at pages 1, 2, and 4, and
+the source fingerprint was verified. The proof implements only smoothness inheritance,
 not the following assertion of exactness on compact-open fixed vectors.
 
-The exact target is accepted statement
-`b838525e-4b0b-4f85-9085-6f384abedf7a`, version 1,
-published at commit `184e47d712351b887a9792a4fda56c6491629c92` with
-independent receipt `309a8d2a-3794-4d01-b3ab-c8d436d8c668`.
+The exact target is the statement `Langlands.SmoothSubquotientStatement`.
 Its proposition fingerprint is
 `274536c672c0e34b74eaa7b7a89b524a70c774ed75c2ee52212337b419b8a02a`.
-The accepted statement and its sole project definition dependency
-`665022df-625b-44ae-9dbd-425f6e266bab`, version 1, are currently
-available; the local statement pair matches the effective reviewed bytes.
-The definition is published at commit
-`10c81beaaff024987cf2945c64d0c9511f6cb686`, with Lean SHA256
+The statement and its sole project definition dependency
+`Langlands.Representation.Smooth.Definitions` were checked to be
+available; the local statement pair matches the recorded bytes.
+The definition has Lean SHA256
 `435abfa2c0b05c1b6ea8107e3278687e7091e481540508d6647befc0f515aabb`.
-Proof task `0975ce00-a7a0-4031-a31f-1df98f3afaf3`, revision 1, binds
-module `Langlands.Representation.Smooth.Transfer.SubquotientProof` and
-closing theorem `Langlands.smoothSubquotient` to this exact target and
+The module `Langlands.Representation.Smooth.Transfer.SubquotientProof` and its
+closing theorem `Langlands.smoothSubquotient` prove this exact target in
 the pinned environment. Native compilation supplies development evidence.
-Independent checker, semantic-review, and publication receipts are recorded
-separately; this file makes no claim of the full local Langlands correspondence.
+This file makes no claim of the full local Langlands correspondence.
 
-Environment: `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, version 1,
-Lean 4.34.0 at `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`,
+Environment: Lean 4.34.0 at `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`,
 Mathlib at `5ed2965256430c3649e86755f9576b54eca72435`.

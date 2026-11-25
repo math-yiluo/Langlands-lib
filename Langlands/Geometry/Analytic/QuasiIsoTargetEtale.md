@@ -1,7 +1,5 @@
 # Target invariance of étaleness on all recognized pieces
 
-Author: Worker 208.
-
 This internal prerequisite complements the source-invariance results by
 proving that postcomposition with a full strong quasi-isomorphism does not
 change `IsEtaleAllPieces`. Let `K : Type u` be a complete ultrametric normed

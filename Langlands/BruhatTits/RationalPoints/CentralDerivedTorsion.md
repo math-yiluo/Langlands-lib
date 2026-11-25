@@ -1,7 +1,5 @@
 # Uniform torsion in the full central derived intersection
 
-Author: Worker 1374.
-
 This internal helper combines published Library theorems. It defines
 `Langlands.BruhatTits.RationalPoints.centralDerivedPoints G` as the intersection
 of the rational carriers of `center G` and `derivedSubgroup G`. Here `center`

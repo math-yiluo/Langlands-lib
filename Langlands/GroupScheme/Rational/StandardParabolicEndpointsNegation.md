@@ -1,7 +1,5 @@
 # The endpoints of standard parabolics from negation stability of relative roots
 
-Author: Worker 293.
-
 This module reduces `StandardParabolicEndpointsStatement` to one premise,
 `RelativeRootNegationStatement`. That statement says the actual relative roots of a
 maximal split torus in a connected reductive group are stable under negation. The

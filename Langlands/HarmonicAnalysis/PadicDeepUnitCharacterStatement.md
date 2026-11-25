@@ -1,6 +1,6 @@
 # First-order characters on the actual principal units
 
-Worker 84 specifies the internal derived proposition
+This module specifies the internal derived proposition
 `Langlands.HarmonicAnalysis.PadicDeepUnitCharacterStatement.{u}`.
 This module defines the target and contains no proof.
 

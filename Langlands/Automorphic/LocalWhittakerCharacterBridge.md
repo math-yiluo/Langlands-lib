@@ -1,6 +1,6 @@
 # Raw-character Whittaker functionals on actual automorphic local components
 
-Worker 1582 implements the adapter proposed by Worker 1709 for constructing
+This module implements an adapter for constructing
 local Whittaker genericity from a global functional. This is internal derived
 infrastructure using the Library's canonical completion comparison,
 `PadicLocalCategory`, and `PadicCharacterIndependence`.

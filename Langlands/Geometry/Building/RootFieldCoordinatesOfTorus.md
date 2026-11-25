@@ -1,6 +1,6 @@
 # Root field coordinates when a maximal torus is the centralizer
 
-This internal unit constructs the published structure
+This internal module constructs the published structure
 `RootFieldCoordinates i j s a` of the R1 statement
 `QuasiSplitR1RootFieldCoordinatesStatement` in one case: the representative
 `j` of the centralizer of the maximal split torus is itself a maximal torus

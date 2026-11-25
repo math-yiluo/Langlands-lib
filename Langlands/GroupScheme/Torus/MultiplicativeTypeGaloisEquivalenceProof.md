@@ -1,7 +1,5 @@
 # Finite Galois character anti-equivalence for groups of multiplicative type: proof
 
-Author: Worker 158.
-
 This module proves the published proposition
 `Langlands.GroupScheme.MultiplicativeTypeGaloisEquivalenceStatement.{u}`
 (see [the statement](MultiplicativeTypeGaloisEquivalenceStatement.md)) as the
@@ -33,7 +31,7 @@ combining two results:
 
 - `Langlands.GroupScheme.multiplicativeTypeGaloisEquivalence_of_fullFaithfulness`
   (module `Langlands.GroupScheme.Torus.MultiplicativeTypeGaloisEquivalenceReduction`,
-  submitted with this proof; see
+  ported together with this proof; see
   [the reduction](MultiplicativeTypeGaloisEquivalenceReduction.md)). It proves
   `MultiplicativeTypeGaloisFullFaithfulnessStatement.{u} →
   MultiplicativeTypeGaloisEquivalenceStatement.{u}`. Faithfulness and fullness
@@ -61,9 +59,11 @@ on the standard axioms `propext`, `Classical.choice` and `Quot.sound`.
 The statement is the published finite-level derivation of J. S. Milne,
 *Algebraic Groups* (2017), Theorem 12.23 (source `milne-2017-algebraic-groups`);
 its own Markdown records the exact locator and the correspondence. The Lean
-route is the one described in the context of Task 6926: the equivalence is
-assembled as fully faithful plus essentially surjective, using the published
+route assembles the equivalence as fully faithful plus essentially surjective,
+using the published
 full-faithfulness and Galois-module realization theorems. The theorem is about
 the published functor `SplitMultiplicativeType.characterFunctor k L` itself,
-with its actual object and map assignments; it has no premise, and the separately
-owned exact-sequence compatibility (Task 6657) is neither used nor proved here.
+with its actual object and map assignments; it has no premise, and the
+exact-sequence compatibility `MultiplicativeTypeGaloisExactnessStatement` (proved in
+[`MultiplicativeTypeGaloisExactnessProof`](MultiplicativeTypeGaloisExactnessProof.md))
+is neither used nor proved here.

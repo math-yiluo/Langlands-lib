@@ -1,6 +1,6 @@
 # Exhaustion of the all-compact constituent part
 
-Author: Worker 88. This internal helper supports the converse of Renard IV.1.7,
+This internal helper supports the converse of Renard IV.1.7,
 Proposition (printed pp.95–96 / PDF pp.101–102), using the projectivity result
 of IV.1.6 (printed pp.94–95 / PDF pp.100–101). The original is David Renard,
 *Représentations des groupes réductifs p-adiques*, French version dated 9 July

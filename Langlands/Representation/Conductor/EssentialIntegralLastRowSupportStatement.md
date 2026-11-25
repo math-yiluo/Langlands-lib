@@ -1,6 +1,6 @@
 # Integral last-row support of the essential vector
 
-Author: Worker 5032. This module defines one proposition,
+This module defines one proposition,
 `Langlands.Conductor.EssentialIntegralLastRowSupportStatement` (universes `uF`,
 `uV`). It is a statement only: nothing here proves it, and no declaration
 assumes it.

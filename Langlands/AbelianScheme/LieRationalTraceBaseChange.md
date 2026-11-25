@@ -1,7 +1,5 @@
 # Actual rational Lie trace pullback from canonical integral naturality
 
-Author: Worker 57.
-
 These internal lemmas apply the actual local trace transport construction
 to relative Lie modules and rational order actions of abelian schemes.
 Schemes and the scalar-supplying rational base ring may have arbitrary

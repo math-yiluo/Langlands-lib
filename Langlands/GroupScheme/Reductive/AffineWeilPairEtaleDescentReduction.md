@@ -8,8 +8,8 @@ This module proves
   AffineWeilPairEtaleDescentStatement.{u}`.
 
 Étale-locally given Weil-restriction presentations, on an arbitrary covering family of étale
-charts, therefore descend once two inputs are proved: factor rigidity (Worker 47's
-`WeilFactorIdempotentRigidityStatement`) and descent along a single étale cover
+charts, therefore descend once two inputs are proved: factor rigidity
+(`WeilFactorIdempotentRigidityStatement`) and descent along a single étale cover
 (`AffineWeilPairSingleChartDescentStatement`). The theorem takes both as hypotheses and adds no
 other assumption.
 
@@ -35,8 +35,8 @@ other assumption.
 - `exists_chart_comparison`: suppose `G ≅ R_{B/A}(G')` and, over an étale `A`-algebra `R`,
   `G_R ≅ R_{B'/R}(G₁)`, with both pairs reductive with almost simple geometric fibres. Base
   change of Weil restriction (`AffineWeil.BaseChange.iso`) gives an isomorphism
-  `R_{(R ⊗ B)/R}(G'_{R ⊗ B}) ≅ R_{B'/R}(G₁)`. Worker 47's
-  `WeilFactor.exists_baseChange_iso_of_weilRestriction_iso` then gives an `R`-algebra
+  `R_{(R ⊗ B)/R}(G'_{R ⊗ B}) ≅ R_{B'/R}(G₁)`.
+  `WeilFactor.exists_baseChange_iso_of_weilRestriction_iso` (in `WeilFactorUniquenessReduction`) then gives an `R`-algebra
   isomorphism `α : B' ≃ R ⊗[A] B` and an isomorphism `(G₁)_α ≅ G'_{R ⊗ B}`. The comparison
   required by the target statement uses `e := α.symm`. The base change of `G'` along the
   spectrum of `b ↦ e (1 ⊗ b)` is rewritten with the base-change composition and identity

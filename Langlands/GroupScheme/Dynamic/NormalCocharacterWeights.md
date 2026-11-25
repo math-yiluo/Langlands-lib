@@ -1,6 +1,6 @@
 # Hermitian weights from a normal cocharacter value
 
-This internal construction by Worker 1655 proves that a cocharacter of the
+This internal construction proves that a cocharacter of the
 actual general linear group scheme over an arbitrary-universe `RCLike` field
 has Hermitian Laurent weight projectors whenever its matrix value at the
 positive scalar two is normal. It uses the Laurent projectors of
@@ -61,7 +61,7 @@ are distinct: integral powers of the positive real number two are injective,
 and the canonical embedding of the reals in an `RCLike` field preserves
 integer powers and is injective.
 
-This unit establishes a sufficient condition for the existing Hermitian-weight
+This module establishes a sufficient condition for the existing Hermitian-weight
 predicate. It neither assumes nor constructs a compact subgroup or an Iwasawa
 decomposition. Its provenance is the implemented linear-algebra argument
 above and the imported, actual scheme-point Laurent construction.

@@ -1,6 +1,6 @@
 # Integral tensor Weil comparison by induced field topologies
 
-This internal unit transfers a tensor Weil point homeomorphism over fields
+This internal module transfers a tensor Weil point homeomorphism over fields
 to the corresponding comparison over coefficient rings whose point
 topologies are induced through maps to those fields. The coefficient rings
 can be completed valuation rings. It retains algebraicity and the field
@@ -56,4 +56,4 @@ naturality, the ring-level bijection, and induced topology properties.
 No injectivity of the coefficient maps is assumed or needed for this
 argument. General Weil representability, the field comparison's
 geometric hypotheses, arithmetic specializations, and the adelic endpoint
-are not proved in this unit.
+are not proved in this module.

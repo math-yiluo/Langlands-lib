@@ -1,6 +1,6 @@
 # Generic flatness and density over arbitrary domains
 
-This internal helper module by Worker 1606 supplies generic flatness and density
+This internal helper module supplies generic flatness and density
 for the affine algebraic core of generic geometric irreducibility spreading.
 
 The first lemma identifies scalar extension of a localization map with a

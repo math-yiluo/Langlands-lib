@@ -62,6 +62,8 @@ theorem continuous_fullAEL2CuspidalInfiniteOrbit (φ : S) :
 theorem fullAEL2CuspidalInfiniteOrbit_aestronglyMeasurable
     (ν : Measure (InfiniteAdelicGroupPoints F G)) (φ : S) :
     AEStronglyMeasurable (fun a : InfiniteAdelicGroupPoints F G => π∞ a φ) ν :=
+  haveI : SecondCountableTopologyEither (InfiniteAdelicGroupPoints F G) S :=
+    secondCountableTopologyEither_of_left _ _
   (continuous_fullAEL2CuspidalInfiniteOrbit F G hPD hG T i hi I e hc φ).stronglyMeasurable.aestronglyMeasurable
 
 /-- The actual original finite and infinite cusp actions commute. -/

@@ -1,6 +1,6 @@
 # Actual root-point intersections of descended facet models
 
-This internal supporting unit concerns a parahoric building over a nonarchimedean local field and any supplied relative-component model whose unramified neutral integral points are the zero subgroup intersected with the fixer of the image of a translated apartment subset. The subset may be empty or unbounded. The building comparison is equivariant; the reverse integral-to-fixer implication also uses its injectivity. Apartment axioms put actual root points in the simply connected image.
+This module concerns a parahoric building over a nonarchimedean local field and any supplied relative-component model whose unramified neutral integral points are the zero subgroup intersected with the fixer of the image of a translated apartment subset. The subset may be empty or unbounded. The building comparison is equivariant; the reverse integral-to-fixer implication also uses its injectivity. Apartment axioms put actual root points in the simply connected image.
 
 `facetRootIntegralSections` is the subgroup of actual neutral-model integral sections whose generic point is in the root group of the conjugated torus inclusion. It does not impose a depth condition or assert that its quotient reduction survives.
 
@@ -10,4 +10,4 @@ This internal supporting unit concerns a parahoric building over a nonarchimedea
 
 `rootGroupPoints_inf_conjugatedIntegralPoints_eq_rootFixer` packages this equivalence as an equality of actual subgroups. `conjugated_affineRootGroup_le_integralPoints` proves that an entire affine depth group is integral after conjugation whenever the affine functional is nonnegative on the subset. Its depth at each point is then at least zero, so it fixes every point there. This latter result needs equivariance but not injectivity of the comparison.
 
-The statements and proofs are derived from the existing actual root-point, simply connected image, filtration-fixer, and unramified descent interfaces. No new literature assertion is made. This unit does not identify the exact quotient root set or prove the final derivative root datum.
+The statements and proofs are derived from the existing actual root-point, simply connected image, filtration-fixer, and unramified descent interfaces. No new literature assertion is made. This module does not identify the exact quotient root set or prove the final derivative root datum.

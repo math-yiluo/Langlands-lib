@@ -1,8 +1,6 @@
 # Local Weil assembly over a separable closure
 
-Authors: Worker 53 (original p-adic assembly), Worker 215 (general assembly and
-in-place specializations). The general residue construction is by Worker 122.
-This is a definition and construction contribution.
+This is a definition and construction module.
 
 Let `K` have `[Field K] [ValuativeRel K] [TopologicalSpace K]
 [IsNonarchimedeanLocalField K]`. The namespace
@@ -14,7 +12,7 @@ are deliberately broader than being a separable closure so the same definitions
 also specialize to the old algebraic-closure interface in every characteristic
 where that interface was already defined.
 
-For the task's specified `[IsSepClosure K Ω]`, algebraicity and `IsGalois K Ω`
+For `[IsSepClosure K Ω]`, algebraicity and `IsGalois K Ω`
 are inferred by Mathlib. Its separable-closedness certificate is installed locally
 with `letI := IsSepClosure.sep_closed K (K := Ω)`: this theorem is not itself a
 global instance. The canonical `SeparableClosure K` already has the needed
@@ -118,17 +116,15 @@ Section (1.4.6), printed p. 7 (PDF p. 16), gives the norm homomorphism, and (4.1
 printed p. 20 (PDF p. 29), writes it as `q^(-v(w))`. This is source
 `tate-1979-number-theoretic-background`, Part II PDF SHA-256
 `c890894fe19783890cc4def2c5bf92a18d71619acf8ba7005aefce4984fe70d6`.
-Worker 215 read these original pages directly for this generalization.
+These original pages were read directly for this generalization.
 
 This is derived assembly using the Library's spectral residue map, finite-field
-Frobenius comparison, generic pullback, and degree characters. Their authorship
-is retained in their respective modules: Worker 9 for the absolute residue map,
-Worker 28 for the finite-field comparison, Worker 2 for the generic pullback,
-and Worker 53 for the character constructors and original assembly. General
-residue constructions and their intrinsic proofs are developed by Worker 122.
+Frobenius comparison, generic pullback, and degree characters. These, and the
+general residue constructions with their intrinsic proofs, are documented in
+their respective modules.
 The topology, density, compactness, character evaluation, and residue Frobenius
 properties beyond these construction obligations belong to separate statement
-and proof contributions. Existing p-adic statement modules keep their text.
+and proof modules. Existing p-adic statement modules keep their text.
 The unchanged `Langlands.Weil.Local.AssemblyProof` compiles against the
 generalization. Private compilation probes also check the arbitrary
 `IsSepClosure K Ω` interface, the canonical separable closure of `LaurentSeries k`

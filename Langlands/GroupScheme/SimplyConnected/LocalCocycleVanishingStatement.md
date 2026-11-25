@@ -1,7 +1,5 @@
 # Local vanishing for simply connected group-scheme cocycles
 
-Authors: Worker 1757.
-
 `Langlands.GroupScheme.LocalSimplyConnectedCocycleVanishingStatement.{u}` is
 a proposition definition, at arbitrary universe `u`. This module states it
 and supplies no proof.
@@ -63,9 +61,9 @@ objects by definition.
 ## Consumer and retained obligations
 
 Local cohomology vanishing is a substantial arithmetic input to the
-Prasad–Raghunathan local rank-one reduction used for the proof task targeting
+Prasad–Raghunathan local rank-one reduction of
 `LocalKneserTitsStatement`. Proving this cocycle statement alone does not
-establish that target. The required cohomological exactness and kernel
+establish that statement. The required cohomological exactness and kernel
 comparison in their Theorem B, rational generation by rank-one groups,
 classification over local fields, and generation for the resulting classical
 forms remain separate obligations.

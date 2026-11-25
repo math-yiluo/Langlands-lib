@@ -89,7 +89,7 @@ theorem exists_lineBundle_descent_of_isDirectLimit {A₀ : Type u} [CommRing A�
   obtain ⟨j, hij, Lj, hLj, hj⟩ :=
     Scheme.Modules.exists_isInvertible_nonempty_pullback_iso_of_isInvertible_of_isDirectLimit
       φ g hA i (pullback.snd f₀ ι₀) ((Scheme.Modules.pullback e).obj M)
-      ((isInvertible_of_isLocallyFreeRankOne hM).pullback e)
+      (Scheme.Modules.IsInvertible.pullbackFLT (hL := isInvertible_of_isLocallyFreeRankOne hM) e)
   -- `u` from the chosen base change of `X₀` to `Spec (G j)` to the base change of
   -- `X₀ ×_{A₀} Spec (G i)`.
   have hu : pullback.fst f₀ (Spec.map (CommRingCat.ofHom (algebraMap A₀ (G j)))) ≫ f₀ =
@@ -106,7 +106,7 @@ theorem exists_lineBundle_descent_of_isDirectLimit {A₀ : Type u} [CommRing A�
     ⟨pullback.lift _ _ (pullback.lift_snd _ _ _), pullback.lift_fst _ _ _,
       pullback.lift_snd _ _ _⟩
   refine ⟨j, (Scheme.Modules.pullback u).obj Lj,
-    isLocallyFreeRankOne_of_isInvertible (hLj.pullback u), ?_⟩
+    isLocallyFreeRankOne_of_isInvertible (Scheme.Modules.IsInvertible.pullbackFLT (hL := hLj) u), ?_⟩
   intro c hc₁ hc₂
   have h₁ : (e ≫ c ≫ u) ≫
       pullback.fst (pullback.snd f₀ ι₀) (Spec.map (CommRingCat.ofHom (φ i j hij))) =

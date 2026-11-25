@@ -49,3 +49,18 @@ Serre source ID `serre-abelian-l-adic-1989` (SHA-256
 `971dbfdd4414d99ea21d7d0af63dbb790d7b1188e9aec37f422181a2b543dec4`).
 Milne source ID `milne-2020-class-field-theory` (SHA-256
 `50d79af78250a9f1117ad9d337e0b231704a533fc707966ed1bfa52e13d498f5`).
+
+## Proofs
+
+`FiniteHeckeAvatarLiftStatement` and `FiniteGeometricArtinLifting` are proved in
+[`FiniteHeckeAvatarLiftProof`](FiniteHeckeAvatarLiftProof.md) (`finiteHeckeAvatarLift`,
+`finiteGeometricArtinLifting`), together with the description of the lift through the global
+Artin map `geometricArtinMap`. The three premises are proved:
+`finiteAbelianClassFieldExistence` ([`ClassFieldProof`](../Global/Arithmetic/ClassFieldProof.md)),
+`finiteArtinUnramifiedCriterion`
+([`FiniteArtinUnramifiedCriterionProof`](../Global/Arithmetic/FiniteArtinUnramifiedCriterionProof.md))
+and `finiteUnramifiedGaloisRestriction`
+([`FiniteUnramifiedGaloisRestrictionProof`](FiniteUnramifiedGaloisRestrictionProof.md)).
+Existence there follows the route above; uniqueness uses the density of the conjugates of the
+global geometric Frobenius elements (`dense_conjugates_globalGeometricFrobenius_degreeOne`)
+instead of `chebotarevPrimeRealizationStatement`.

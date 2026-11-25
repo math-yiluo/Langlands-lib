@@ -93,6 +93,7 @@ theorem ambientAverage_contDiffOn_hasFDerivAt (f : SmoothFunctions K n) :
               (rightMultiplicationMap r k (g : ArchimedeanMatrix K n))).comp
                 (rightMultiplicationMap r k)) ∂ν)
           (g : ArchimedeanMatrix K n) := by
+  set_option synthInstance.maxSize 256 in
   have hopen := (Units.isOpenEmbedding_val (R := ArchimedeanMatrix K n)).isOpen_range
   have hint := Langlands.Analysis.compactLinearParameterIntegral.{u, u, u}
     (J) (ArchimedeanMatrix K n) (ArchimedeanMatrix K n) ν
@@ -110,6 +111,7 @@ theorem ambientAverage_contDiffOn_hasFDerivAt (f : SmoothFunctions K n) :
 /-- The scalar compact average is an actual smooth function. -/
 theorem average_mem_smoothFunctions (f : SmoothFunctions K n) :
     average r ν w f ∈ smoothFunctions K n := by
+  set_option synthInstance.maxSize 256 in
   change ContMDiff 𝓘(ℝ, ArchimedeanMatrix K n) 𝓘(ℝ, ℂ) ∞ _
   intro g
   have hopen := (Units.isOpenEmbedding_val (R := ArchimedeanMatrix K n)).isOpen_range
@@ -125,6 +127,7 @@ theorem ambientDerivative_integrable (f : SmoothFunctions K n) (g : ArchimedeanG
       (w k) • ((fderiv ℝ (coordinateExtension K n f)
         (rightMultiplicationMap r k (g : ArchimedeanMatrix K n))).comp
           (rightMultiplicationMap r k))) ν := by
+  set_option synthInstance.maxSize 256 in
   have hopen := (Units.isOpenEmbedding_val (R := ArchimedeanMatrix K n)).isOpen_range
   have hAt : ∀ k : J, k ∈ univ →
       ∀ x ∈ range (Units.val : ArchimedeanGL K n → ArchimedeanMatrix K n),

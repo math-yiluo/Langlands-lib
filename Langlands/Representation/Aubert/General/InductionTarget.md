@@ -1,14 +1,12 @@
 # General Aubert operator and standard-Levi induction
 
-Author: Worker 165, task `e3d69272-2599-4a08-a934-cb11f2493e30`.
-
 `Langlands.Aubert.General.InductionCompatibilityStatement` is the separate
 Prop target for the first equation of Aubert 1995, Theorem 1.7(2), printed
 p.2181 / PDF p.3:
 `D_G ∘ i_J = i_J ∘ D_(M_J)` for every standard subset `J`.
 There is no extra rank sign in this equation. This file proves no instance.
 
-All maps are the actual integer-linear maps of Worker 23's
+All maps are the actual integer-linear maps of
 [`AlternatingOperator`](AlternatingOperator.md), on exact Grothendieck groups
 of finite-length smooth complex representations, with carriers in
 `Type (max uG uV)`. `inductionK0` is the map of the actual normalized
@@ -33,8 +31,8 @@ same ambient families, so its parabolic is `P_I ∩ M_J` and its radical is
 The formula for the Levi operator is the signed sum on these actual
 restricted functors, rather than an independent formal endomorphism.
 
-This is a generic actual-subgroup target, pending identification with the
-standard rational-point parabolics of a connected reductive group. Actual
+This is a generic actual-subgroup target; its identification with the
+standard rational-point parabolics of a connected reductive group is separate. Actual
 Levi decompositions and structural identifications, the named
 representation-theoretic prerequisites, and the compatibility proof remain
 obligations. No hypothesis is a field supplying the desired map equality.

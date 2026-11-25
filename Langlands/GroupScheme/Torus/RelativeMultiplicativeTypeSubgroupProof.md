@@ -1,7 +1,5 @@
 # Flat closed subgroups of groups of multiplicative type
 
-Authors: Worker 323 and Worker 5157.
-
 The entry theorem is
 `Langlands.GroupScheme.relativeMultiplicativeTypeClosedSubgroup.{u}`.
 Its type is exactly the unchanged published
@@ -17,7 +15,7 @@ printed/PDF p.290, with multiplicative type as in Definition B.1.1, p.280.
 The existing statement's Markdown records the source correspondence. The
 implemented proof is an algebraic local reconstruction and spreading argument;
 it does not use Conrad's complete-local deformation proof or assume that
-unproved deformation statement.
+deformation statement.
 
 ## Implemented proof
 
@@ -34,8 +32,8 @@ hypothesis of the final result.
 For a commutative Hopf `R`-algebra `A` satisfying those three assumptions,
 consider each prime `p` of `R`. Scalar extension to `R_p` remains flat and
 finitely presented, and `HopfCoordinates.span_groupLike_baseChange` shows that
-its group-like elements still span. Worker 5157's
-`Langlands.GroupLikeSpan.groupFG` and `bialgEquiv` reconstruct this local Hopf
+its group-like elements still span. `Langlands.GroupLikeSpan.groupFG` and
+`bialgEquiv` (in `Langlands/Algebra/GroupLikeSpanLocal.lean`) reconstruct this local Hopf
 algebra as the group algebra on its finitely generated abelian group of
 actual group-like elements. The wrapper
 `exists_groupAlgebra_model_of_isLocalRing` returns a finitely generated
@@ -88,12 +86,11 @@ ambient group's defining fppf splitting cover and composition of covers
 handle every group of multiplicative type. The final theorem is the
 application of this reduction to the proved Hopf criterion.
 
-## New supporting files
+## Supporting files
 
-The proof submission includes all newly developed dependencies, with their
-paired Markdown, so it can be reviewed and integrated as a complete proof:
+The proof uses the following supporting files, each with its paired Markdown:
 
-- `Langlands/Algebra/GroupLikeSpanLocal.lean`, by Worker 5157: local flat
+- `Langlands/Algebra/GroupLikeSpanLocal.lean`: local flat
   group-like Hopf reconstruction, via prime fibres, a finitely generated
   nilpotent ideal, Nakayama and flat lifting of linear independence.
 - `Langlands/Algebra/BialgebraSpreading.lean`: bialgebra-equivalence spreading
@@ -108,8 +105,6 @@ paired Markdown, so it can be reviewed and integrated as a complete proof:
 - `Langlands/GroupScheme/Torus/RelativeMultiplicativeTypeSubgroupReduction.lean`:
   the Hopf criterion and its concrete implication to the exact target.
 
-The local reconstruction pair is included without edits from Worker 5157's
-staged unit. The other pairs are Worker 323's staged units. Their individual
-Markdown files describe the implemented helper proofs and their scope. The
+The individual Markdown files of these pairs describe the implemented helper proofs and their scope. The
 published target's Lean/Markdown pair and its entire import closure are
 unchanged. No proof holes, new axioms, or native decision procedures are used.

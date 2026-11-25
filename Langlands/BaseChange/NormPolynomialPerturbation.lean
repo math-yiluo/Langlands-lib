@@ -14,27 +14,6 @@ universe u v
 
 variable {F : Type u} [CommRing F] {E : Type v} [CommRing E] [Algebra F E]
 
-private theorem cyclicNorm_mul_baseChange (σ : E ≃ₐ[F] E) (l : ℕ) {n : ℕ}
-    (δ : GeneralLinear n E) (s : GeneralLinear n F)
-    (hs : Commute δ (baseChange F E n s)) :
-    cyclicNorm σ l (δ * baseChange F E n s) =
-      cyclicNorm σ l δ * baseChange F E n s ^ l := by
-  let b := baseChange F E n s
-  change cyclicNorm σ l (δ * b) = cyclicNorm σ l δ * b ^ l
-  induction l with
-  | zero => simp
-  | succ l ih =>
-    have hcomm : Commute (entrywiseAut (σ ^ l) n δ) b := by
-      simpa only [b, entrywiseAut_baseChange] using hs.map (entrywiseAut (σ ^ l) n)
-    calc
-      cyclicNorm σ (l + 1) (δ * b) =
-          cyclicNorm σ l δ * b ^ l * (entrywiseAut (σ ^ l) n δ * b) := by
-        rw [cyclicNorm_succ, ih, map_mul]
-        rw [show entrywiseAut (σ ^ l) n b = b from entrywiseAut_baseChange _ s]
-      _ = cyclicNorm σ l δ * entrywiseAut (σ ^ l) n δ * (b ^ l * b) :=
-        (hcomm.symm.pow_left l).mul_mul_mul_comm _ _
-      _ = cyclicNorm σ (l + 1) δ * b ^ (l + 1) := by rw [cyclicNorm_succ, pow_succ]
-
 /-- An `l`-th power is the norm of the base change of its root. -/
 theorem isNorm_pow (σ : E ≃ₐ[F] E) (l : ℕ) {n : ℕ} (s : GeneralLinear n F) :
     IsNorm σ l (s ^ l) := by

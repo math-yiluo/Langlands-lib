@@ -1,7 +1,8 @@
 # Galois coverings on a site and Galois descent
 
-Worker 749. This module is a derived categorical helper for the planned proof of
-`AnalyticEtaleGaloisCoinducedLocalAcyclicStatement`. It supplies the descent part of a
+This module is a derived categorical helper for the proof of
+`AnalyticEtaleGaloisCoinducedLocalAcyclicStatement` from pointed Galois refinements
+(`Langlands.Cohomology.AnalyticEtaleGaloisCartanReduction`). It supplies the descent part of a
 Galois–Čech system (`Langlands.Cohomology.GaloisCartan`) for Galois coverings on an
 arbitrary site. It imports only Mathlib.
 
@@ -79,6 +80,6 @@ with the invariants of `rep G F`. These are the augmentation hypotheses of a
 ## Scope
 
 No vanishing of group cohomology is proved here, not even for injective sheaves. That
-comparison (Milne III Lemma 2.4 and Example 2.6) is separate work. Nothing analytic is
-asserted. Constructing Galois coverings of analytic spaces, and checking their local
-conditions, are separate obligations.
+comparison (Milne III Lemma 2.4 and Example 2.6) is in `Langlands.Cohomology.GaloisCoveringCech`.
+Nothing analytic is asserted. Constructing Galois coverings of analytic spaces, and checking
+their local conditions, are not part of this module.

@@ -2,7 +2,7 @@
 
 Lean module: `Langlands.Representation.Archimedean.PartialSqIntegral`.
 
-Worker 5 wrote this module for Task 7069 (`79f2a631-6cbb-4805-97c7-163e69df5de3`), the proof of
+This module was written for the proof of
 `RealStandardIrreducibleCriterionStatement`. It is the analytic input to the nonvanishing of the
 full Jacquet integral on the minimal-`K`-type test vector of a real principal series. That
 nonvanishing is used in the proof of `RealReverseIntertwinerKernelStatement`: an intertwiner from a

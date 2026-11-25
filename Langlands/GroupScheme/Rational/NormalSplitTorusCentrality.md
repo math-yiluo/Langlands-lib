@@ -1,7 +1,5 @@
 # Connected groups normalizing a split torus centralize it
 
-Author: Worker 1549.
-
 This internal consequence of the published torus-normalizer rigidity theorem
 works over an arbitrary base scheme `S` in universe `u`. It adds no reductivity,
 smoothness, finite-type, algebraic-closure or characteristic assumption.
@@ -38,5 +36,5 @@ The provenance is internal: these results are deductions from the published
 rigidity theorem and the existing definitions of normalization and centrality.
 They provide the centrality step once a normal subgroup has been proved to be
 a split torus. They do not establish that a smooth connected normal solvable
-subgroup of a pseudo-reductive group is a torus, or prove the host task's
-positive-root uniqueness statement.
+subgroup of a pseudo-reductive group is a torus, or prove the
+positive-root uniqueness statement that they serve.

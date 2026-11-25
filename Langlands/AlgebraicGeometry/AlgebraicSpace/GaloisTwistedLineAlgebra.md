@@ -1,7 +1,5 @@
 # Algebra of a separable quadratic extension
 
-Author: Worker 105.
-
 This module supplies the field-theoretic input for the Galois-twisted line of Conrad's
 Example 5.13 (Brian Conrad, *Weil and Grothendieck approaches to adelic points*, 2011,
 printed p.20). It contains no statement from the paper. The content is standard: for a

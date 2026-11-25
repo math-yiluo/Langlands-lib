@@ -36,8 +36,7 @@ hypothesis of `JuxtaposedShuffle.jacquetImage_strictMono`
 `MinimalNonzeroJacquetTheorem` (BZ77 2.14(1), proved in the Library as
 `CuspidalSupport.minimalNonzeroJacquet`) and
 `NonassociatedJacquetSubquotientsTheorem` (BZ77 2.13(b), proved in the Library as
-`CuspidalSupport.nonassociatedJacquetSubquotients`, task
-b17b8c8c-858b-4b48-994b-e3641cb05f02) enter as hypotheses. The final proof
+`CuspidalSupport.nonassociatedJacquetSubquotients`) enter as hypotheses. The final proof
 `JuxtaposedSegmentSocleReverseProductStructureProof` discharges both with these
 published theorems.
 

@@ -1,7 +1,5 @@
 # Root lifting over fields with Henselian norm valuation ring
 
-Author: Worker 239.
-
 Helper module for the proof in
 [HenselianSmoothOpenMapProof](HenselianSmoothOpenMapProof.md). All declarations are in the
 namespace `Langlands.AlgebraicGeometry.PointTopology.HenselianRoot`. No completeness,

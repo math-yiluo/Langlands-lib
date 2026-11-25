@@ -6,18 +6,15 @@ Use the [3 November declaration and dependency matrix](general-program-dependenc
 for the later rational targets, verified proof evidence and retained premises.
 The body below preserves the earlier state.
 
-This is an intermediate coverage snapshot for the standalone general Aubert
-program, task `46df6a68-5db4-4428-8044-05151d6ce1f6`, revision 1. The public
-declarations below refer to Library commit
-`0ebc0efd383ff160084af3b33ab2b7806f7a1dde`, checked on 2 November 2026.
-Worker 76 assembled the snapshot using Worker 164's structural reconciliation,
-Worker 23's shared draft and Workers 585/34's staged GL target inventory.
+This is an intermediate coverage snapshot for the general Aubert duality
+program. The declarations below refer to Library commit
+`0ebc0efd383ff160084af3b33ab2b7806f7a1dde`.
 
 The [corrected source map](general-program-source-map.md) supplies the original
 reading record, exact source locators and conventions. The
 [Chapter V ledger](../renard/chapter-v-structural-inputs.md) supplies the finite
 S01–S23 external structural boundary and retained D01–D08 obligations. This
-note reuses those reviewed source accounts; it makes no new original-literature
+note reuses those source accounts; it makes no new original-literature
 audit claim. It supplies no new Lean theorem and does not complete any of the
 five families.
 
@@ -25,7 +22,7 @@ five families.
 required general scope has been supplied to this assembly. It does not deny
 the existence of generic helpers or GL-specific results. A proposition
 definition is a target, and a conditional constructor does not prove its input
-predicates. Pending candidates and unreviewed drafts are listed separately.
+predicates. Work that was then outside the Library is summarized separately.
 
 ## Scope and hypothesis boundary
 
@@ -175,20 +172,30 @@ Zelevinsky involutivity remains a separate proof obligation. The source's
 classification/triangularity and subdivision routes require their exact proved
 versions, not merely citation or the existence of polynomial constructors.
 
-## Pending candidates and unreviewed design
+## Work outside the Library at the snapshot
 
-This inventory records work outside the public-declaration table. Status is
-historical at the inspection described here; identifiers locate candidates or
-tasks, not imported Lean dependencies.
-
-| Unit | Evidence and scope boundary |
-| --- | --- |
-| General A draft, task `593ef603-6672-4424-976c-14e11e920d9c`, Workers 23/1180 | Worker 23's shared draft revision 1, content key `190d77087956b751f8481c1c5e6e7af627dfc00b51e35b8708cb145fc4aff697`, was read in full. `General.Parabolic` and `General.AlternatingOperator` give generic normalized full-smooth functors, an objectwise term comparison and conditional K0/operator constructions. It is unreviewed. Finite-length/exactness predicates, actual reductive realization, naturality and actual-transition comparisons remain obligations. Unimodularity belongs to D07. |
-| Actual multiplicity targets, candidate `c1317573-5135-4aae-a15a-48e206331c14` | Machine validation and Reviewer 8665 approval were inspected, with staged/nonpublic status. `actualIntersectionEqualityCriterion`, `actualMultiplicityComparison`, `actualSolomonCancellation` are targets. The helper `actualMultiplicityComparison_of_equalityCriterion` proves only the conditional finite-count implication. |
-| Binary exactness proof, candidate `ff617015-48a0-41f6-9fba-9052e7424e06`; minimum proof, candidate `0ba0cde7-c91b-40ec-9212-1de3ce5ef1dc` | Both had machine validation and independent approval but remained unpublished at the assembly's preceding inspection. Their proof sources are not adopted as public dependencies here. |
-| Tensor prerequisite proof, candidate `c1a7d667-1848-4cbb-9860-2a2015f7a7a1` | Fresh inspection found machine build/exact-target validation and Reviewer 8817 approval, still staged with accepted=false/public=false. It targets `ProductLeviTensorPrerequisitesStatement`, not tensor bijectivity or induction equivalence. |
-| Remaining focused proof assignments | Ring laws: `9c4ccb8b-9e21-4e2a-988b-e7516521079a`; positive tensor bijectivity: `1adb07fa-c4ad-49a0-a523-358b7053a244`. Preserve arbitrary explicit `hx`/`hp`, all-ranks ring scope and independent universes. |
-| GL final-target inventory | `ZelevinskyPolynomial`, `GradedOperatorComparison` and `ZelevinskyComparison` have separately staged pairs. Their polynomial, monomial, adjusted multiplicativity, involutivity and final comparison Props are not adopted as public final targets in this snapshot. |
+At the snapshot the following work was not in the Library and is not used as
+a dependency here. A general-A design (generic normalized full-smooth
+functors in `General.Parabolic`, an objectwise term comparison and
+conditional K0/operator constructions in `General.AlternatingOperator`) left
+the finite-length/exactness predicates, actual reductive realization,
+naturality and actual-transition comparisons as obligations; unimodularity
+belongs to D07. The actual multiplicity targets
+`actualIntersectionEqualityCriterion`, `actualMultiplicityComparison` and
+`actualSolomonCancellation` are now in the Library
+(`Langlands/Group/RelativeWeylMultiplicityTargets.lean`) as targets; the
+helper `actualMultiplicityComparison_of_equalityCriterion` proves only the
+conditional finite-count implication. Proofs of binary exactness and of a
+minimum, and of `ProductLeviTensorPrerequisitesStatement` (not tensor
+bijectivity or induction equivalence; the Library now proves it as
+`productLeviTensorPrerequisites`), were then outside the Library. The ring
+laws and positive tensor bijectivity remained to be proved, preserving
+arbitrary explicit `hx`/`hp`, all-ranks ring scope and independent universes.
+The GL polynomial, monomial, adjusted multiplicativity, involutivity and
+final comparison targets (`ZelevinskyPolynomial`, `GradedOperatorComparison`,
+`ZelevinskyComparison`) were not yet final targets of the Library; the
+[dependency matrix](general-program-dependency-matrix.md) gives their later
+state.
 
 The shared actual-group route still requires standard parabolics and Levis,
 characters/split components, actual relative Coxeter realization, rational-point

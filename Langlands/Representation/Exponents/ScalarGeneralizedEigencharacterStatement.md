@@ -1,7 +1,5 @@
 # Scalar generalized characters and normalized Jacquet scalar compatibility
 
-Authors: Worker 561 (draft) and Worker 846 (revision).
-
 This module contains two Prop-valued definitions and proves neither of them.
 Both are internal elementary algebra about published representations. They
 are not quoted from the literature; the provenance is explained below.

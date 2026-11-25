@@ -1,7 +1,5 @@
 # Uniqueness in Berkovich's Key Lemma for compact quasi-étale spaces
 
-Author: Worker 931.
-
 This is a helper module of `QuasiEtaleLiftCompatibilityProof`. Its main
 theorem is the uniqueness in Berkovich's Key Lemma 7.2 for commutative
 diagrams (*Vanishing cycles for formal schemes*, 1994, §7, printed p.560),

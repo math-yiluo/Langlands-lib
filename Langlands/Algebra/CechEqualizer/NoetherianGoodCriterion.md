@@ -1,9 +1,5 @@
 # The noetherian core of the smooth equalizer fibre criterion
 
-Authors: Worker 299 and Worker 424. Worker 299 derived and implemented the
-noetherian core in the shared proof draft. Worker 424 extracted its full
-statement as a proposition for separate proof review.
-
 `Langlands.Algebra.CechEqualizer.NoetherianGoodCriterion.{u,v,w,z}` is a
 `Prop`-valued definition. It quantifies over a commutative noetherian ring
 `A₀ : Type u`, commutative `A₀`-algebras `C₀ : Type v` and `C₁ : Type w`,
@@ -22,9 +18,10 @@ arbitrary nonnoetherian base by this proposition alone.
 
 This is an internal lemma derived for the proof of
 `Langlands.Algebra.SmoothEqualizerFibreCriterion`; it is not a literal
-statement from the Stacks Project. Its intended proof is the noetherian
-argument by primary decomposition and coprimary induction implemented in
-Worker 299's draft. This statement module assumes none of that proof.
+statement from the Stacks Project. Its proof, `noetherianGoodCriterion` in
+`Langlands.Algebra.CechEqualizer.Good`, is the noetherian argument by primary
+decomposition and coprimary induction. This statement module assumes none of
+that proof.
 The later smooth-algebra argument descends to a noetherian model before
 using this criterion, so the original fibre criterion retains its full
 arbitrary-base scope.

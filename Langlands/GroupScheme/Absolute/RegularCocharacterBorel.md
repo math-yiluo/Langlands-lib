@@ -1,8 +1,7 @@
 # Borel subgroups from regular cocharacters: assembly
 
 Module `Langlands.GroupScheme.Absolute.RegularCocharacterBorel`. It assembles the three clauses
-of `Langlands.GroupScheme.RegularCocharacterBorelStatement` (task
-`618cd683-cfcd-43a3-b4bf-6c8abd208b1f`) from the conditional lemmas of
+of `Langlands.GroupScheme.RegularCocharacterBorelStatement` from the conditional lemmas of
 `RegularCocharacterMaximal`, `RegularCocharacterParabolic` and `RegularCocharacterBaseChange`.
 Its theorems differ in how many structure statements they take as hypotheses:
 
@@ -54,7 +53,7 @@ a maximal split torus (`IsMaximalTorus.isMaximalSplitTorus`), and regular means 
 `isSolvableGroupScheme_of_isRepresentedBy_parabolic_of_isRegular`. Same setting, with
 `i : B ⟶ G` representing `P(ν ≫ j)`; no structure statement is assumed. Conclusion: `B` is solvable. Proof: by the previous lemma `Z(ν ≫ j) ≤ range j`, so the Library
 lemma `isSolvableGroupScheme_of_isRepresentedBy_parabolic_of_le_range` (module
-`Absolute.RegularCocharacterSolvable`, by Worker 303) applies with `χ = ν ≫ j`. `G` is locally of
+`Absolute.RegularCocharacterSolvable`) applies with `χ = ν ≫ j`. `G` is locally of
 finite type because it is smooth. This lemma yields the hypothesis `hsolv` of the assembled
 statements below.
 

@@ -1,7 +1,6 @@
 # Weyl-piece interfaces for the supported excess-multiplicity branch
 
-Author: Worker 253. Coordinated with Worker 514, the first executor of the
-proof task for
+These interfaces serve the proof of
 [`GLSupportedRegularMultiplicityBranchObstructionStatement`](SupportedRegularMultiplicityBranchObstructionStatement.md).
 
 The module `Langlands.Representation.Exponents.WeylBranchPiecesStatement`

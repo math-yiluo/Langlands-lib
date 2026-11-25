@@ -1,15 +1,13 @@
 # Positive derivative detection for every smooth mirabolic representation
 
-Author: Worker 658.
-
 The theorem `Langlands.Derivative.mirabolicDerivativeDetection` proves exactly
 `Langlands.Derivative.MirabolicDerivativeDetection.{uF,uV} F T`, with outer
 parameters `{p : ℕ} [Fact p.Prime] (F : PadicField.{uF} p)
 (T : F.TopologicalData)`. It applies the already published theorem
 `Langlands.Derivative.Mirabolic.derivativeDetection F T` from
 `Langlands.Representation.Derivative.MirabolicDerivativeVanishing`.
-Only this new Lean/Markdown pair is contributed. The imported proofs are reused
-by their Lean names and are not resubmitted or claimed as new work.
+The module consists of this Lean/Markdown pair only. The imported proofs are reused
+by their Lean names.
 
 ## Exact scope
 
@@ -82,14 +80,13 @@ proof chain.
 
 The determinant inverse-half twists affect the actions but preserve the
 coinvariant quotient carriers. The proof uses only those carriers, so it needs
-no determinant/Haar-modulus identification. It does not use the conditional
-`MirabolicDerivativeOrderBridge` draft or a pending rank-one or one-step proof.
+no determinant/Haar-modulus identification. It does not use a conditional
+order-bridge construction, nor any rank-one or one-step proof beyond the
+published modules of its import closure.
 
 ## Mathematical dependency and provenance audit
 
-The audit was performed for task `ed056880-a4dc-4ebf-ad26-9878e508cf6c`,
-revision 3, including all its Independence exclusions and the complete trusted
-operator conditions in correspondence `bd71b9185aab5d6eafffb7891bd3a3ca`.
+The audit covers all the results listed under "Results not used" below.
 All 150 imported Lean/Markdown files are byte-identical to the public Library
 at both `b1b14ab0a6b31c85e9a1c5fd41cc248c2d4f0dce` and
 `ddcb24bcc9c4fe817800414f5fd5f3536da42760`. No imported pair is edited.
@@ -97,26 +94,25 @@ The unchanged detection statement has Lean SHA256
 `41824396183c6ad18890a7c51ec5f3c0cd1a0c1b66803c4078f85fcf32d038ab`
 and Markdown SHA256
 `b8540cb2f3b19c71308e6f66fbe3bc0a2096f68b74cab7015d76cf51f16771d2`.
-Its statement publication is candidate `9e5f2dd4-a832-40da-9eaa-ad6e86064d29`,
-Reviewer 4853, commit `d3985dbb10c55a703b1ca560439739837d09e8a6`;
+Its statement was published at commit `d3985dbb10c55a703b1ca560439739837d09e8a6`;
 that publication itself is not a proof input.
 
-The substantive shared helper proofs were checked in the current source and
-against their accepted publication records and independent semantic reviews.
-The following table identifies their provenance. An artifact which introduced
+The substantive shared helper proofs were checked in the source and
+against the commits that published them.
+The following table identifies their provenance. A publication which introduced
 a helper inside a larger proof supplies provenance for that helper; it does
-not create an import of the other files in that submission.
+not create an import of the other files published with it.
 
-| Current helper | Independently accepted publication | Use and checked correspondence |
+| Helper | Publication commit | Use and checked correspondence |
 | --- | --- | --- |
-| `MirabolicDerivativeVanishing` | `f957ae76-3779-4436-bdcb-98bc63561e07`, Workers 1024 and 805, Reviewer 4988; commit `2b8beb8bd3034a40aeb5dc7b2de17b607fae8d11` | Current pair is byte-identical. Supplies the boundary, induction, order transport and detection theorem. The other highest-derivative/pairing files in its submission are not imported. |
-| `MinusVanishing` | `c6026915-8731-45a8-bd21-ef1ac39654b8`, Worker 1025, Reviewer 4480; commit `771cfc69d1ff795522e29cdead1b7c40f1a1c308` | Current pair is byte-identical. This `lean.definition` publication includes the fully proved, independently reviewed one-step theorem, rather than a conditional statement. |
-| `MirabolicLatticeBox` | `18329839-964e-4149-951b-fb99bda576c6`, Reviewer 3712; commit `83bd84354679646bd127657889be51d0b580ed3b` | The helper is authored by Worker 806; its Lean is byte-identical to the helper in this independently reviewed minimality-proof publication. The minimality theorem is not imported. Supplies compact open boxes, duality and character sums. |
-| `Jacquet.CharacterAveraging` | `faa65dca-289a-4fb5-941a-b5e1200ff62e`, Reviewer 4000; commit `cb6a47b2390bdcd0be78fac0552b7fd5c46cd51b` | Current code only extracts its duplicate orbit-translation proof to `Compact.OrbitMeanTranslation` and adjusts that call's arguments. The generic averaging proofs otherwise agree. No two-block deformation assembly from that submission is imported. |
-| `Compact.orbitMean_apply` in `Compact.OrbitMeanTranslation` | `a5d47bfd-84ef-4d9b-8745-517947398a54`, Reviewer 638; commit `e3c2fa98be720f63c6981efbbdf15cd223329e76` | Extracted theorem block is byte-identical to its accepted `Jacquet.ExactProof` origin. It proves invariance of a finite orbit mean under translation. The full Jacquet exactness theorem is not imported. |
-| `isCompact_additiveLattice`, `isOpen_additiveLattice` in `PadicLatticeTopology`, and `mem_additiveLattice_of_forall_mul_eq_one` in `ZeroRowLastRowCutoffProof` | `c1ca32b0-5a13-4540-95ca-4b21576ff387`, Worker 252, Reviewer 3434; commit `6d91111e6f9b7a27124b1de32a4984bbdd222a61` | The two extracted topology proof blocks are byte-identical to the accepted cutoff-proof origin. The remaining cutoff module only adds that import and deletes those moved blocks. The scalar annihilator proof is unchanged. |
-| `PadicAdditiveConductorProof` | `8f35e474-ea64-4213-b49c-80f70e559886`, Reviewer 2908; commit `6543e70ef8c82ed8535a0f9fd06c59ed896bc738` | Current pair is byte-identical. Supplies actual valuation-lattice transport, integer-ring factorization and integer-ring annihilator lemmas. |
-| Integer-ring topology helpers in `PadicScalarHaarScalingProof` | `391187ae-1d4c-4be0-804e-2fe896a2d21e`, Worker 90, Reviewer 618; commit `01a58491bc71539f1ecd3d5f0eec6ab8eae20fed` | The compactness/openness proofs are unchanged. Current code adds `LocalField.Topology`, removes its duplicate Hausdorff certificate and uses the existing `fieldT2`. The scalar Haar-scaling theorem is not used by the detection argument. |
+| `MirabolicDerivativeVanishing` | `2b8beb8bd3034a40aeb5dc7b2de17b607fae8d11` | The pair is byte-identical. Supplies the boundary, induction, order transport and detection theorem. The other highest-derivative/pairing files published with it are not imported. |
+| `MinusVanishing` | `771cfc69d1ff795522e29cdead1b7c40f1a1c308` | The pair is byte-identical. This publication includes the fully proved one-step theorem, rather than a conditional statement. |
+| `MirabolicLatticeBox` | `83bd84354679646bd127657889be51d0b580ed3b` | Its Lean is byte-identical to the helper in this minimality-proof publication. The minimality theorem is not imported. Supplies compact open boxes, duality and character sums. |
+| `Jacquet.CharacterAveraging` | `cb6a47b2390bdcd0be78fac0552b7fd5c46cd51b` | The Library code only extracts its duplicate orbit-translation proof to `Compact.OrbitMeanTranslation` and adjusts that call's arguments. The generic averaging proofs otherwise agree. No two-block deformation assembly published with it is imported. |
+| `Compact.orbitMean_apply` in `Compact.OrbitMeanTranslation` | `e3c2fa98be720f63c6981efbbdf15cd223329e76` | Extracted theorem block is byte-identical to its `Jacquet.ExactProof` origin. It proves invariance of a finite orbit mean under translation. The full Jacquet exactness theorem is not imported. |
+| `isCompact_additiveLattice`, `isOpen_additiveLattice` in `PadicLatticeTopology`, and `mem_additiveLattice_of_forall_mul_eq_one` in `ZeroRowLastRowCutoffProof` | `6d91111e6f9b7a27124b1de32a4984bbdd222a61` | The two extracted topology proof blocks are byte-identical to the cutoff-proof origin. The remaining cutoff module only adds that import and deletes those moved blocks. The scalar annihilator proof is unchanged. |
+| `PadicAdditiveConductorProof` | `6543e70ef8c82ed8535a0f9fd06c59ed896bc738` | The pair is byte-identical. Supplies actual valuation-lattice transport, integer-ring factorization and integer-ring annihilator lemmas. |
+| Integer-ring topology helpers in `PadicScalarHaarScalingProof` | `01a58491bc71539f1ecd3d5f0eec6ab8eae20fed` | The compactness/openness proofs are unchanged. The Library code adds `LocalField.Topology`, removes its duplicate Hausdorff certificate and uses the existing `fieldT2`. The scalar Haar-scaling theorem is not used by the detection argument. |
 
 For the one-step theorem, the mathematical route was checked beyond its
 statement. Subsingleton coinvariant quotients make the trivial and `θ_ψ`
@@ -160,11 +156,10 @@ the definitions themselves.
 
 The new module has one direct import, `MirabolicDerivativeVanishing`. There
 are exactly 75 distinct transitive `Langlands` imports (76 modules including
-this new wrapper). The protected detection-statement closure contains 54
+this new wrapper). The detection-statement closure contains 54
 modules. The complete list below includes all branches, not just mathematical
 proof dependencies. Each module's imports were followed recursively and its
-Lean and paired Markdown scanned against the full excluded names and task
-IDs. Relevant helper declarations and their proofs were then inspected as
+Lean and paired Markdown scanned against the full list of names of results not used. Relevant helper declarations and their proofs were then inspected as
 described above; absence of a name alone was not used to establish provenance.
 
 ```text
@@ -245,7 +240,7 @@ Langlands.Representation.Whittaker.GeneralLinear
 Langlands.Topology.Nonarchimedean.Subgroup
 ```
 
-The scan found no excluded reference in a Lean proof or import. The broad
+The scan found no reference to these results in a Lean proof or import. The broad
 word “exhaustion” occurs in the generic compact-open subgroup exhaustion in
 `CharacterAveraging`; it has no connection with representation-classification
 exhaustion. Markdown hits are scope/independence explanations or references
@@ -253,58 +248,49 @@ to downstream uses: for example `LocalField.Topology` mentions classification
 as a consumer and `Category.Twist` mentions a downstream determinant-twist
 application. None is an import or proof premise.
 
-## Full exclusion audit
+## Results not used
 
 The proof and every imported prerequisite are independent of the following
-conclusions, their proof successors and their downstream consequences. Task
-IDs below identify the checked prohibition, not an input.
+conclusions, the modules proving them and their downstream consequences.
 
 - The consumer reduction `MirabolicStrongIndecomposabilityReduction` and its
-  conclusion; strong indecomposability task
-  `ff4738d8-47e3-433b-bedc-629bc2d492a7`; the nonadjacent product conclusion
-  `3c9849a4-a6c0-43ac-9982-d15ed76bf1e9`; and the full two-supercuspidal product
-  structure, including adjacent composition and Jacquet clauses,
-  `ab61f565-1427-4746-ba77-46097563e962`.
-- Ordered-socle existence `23189526-80b0-4828-a6d4-7ebec2cbeef5`, socle
-  exhaustion `f3a69bc8-7312-4f82-8a7d-ea3c8188cb63`, analytic segment
-  classification `aca8805b-054f-4d56-8045-12db7f623404`, unlinked segment-socle
-  product irreducibility `23e98d90-6055-4e35-91a9-b0f5d8a84961`, final
-  segment-socle irreducibility `2ae5cbe5-0701-4509-88a0-db8cbeb35be4`,
+  conclusion; strong indecomposability; the nonadjacent product conclusion
+  `TwoSupercuspidalNonadjacentProductIrreducible`; and the full two-supercuspidal
+  product structure `TwoSupercuspidalProductStructure`, including adjacent
+  composition and Jacquet clauses.
+- Ordered-socle existence, socle
+  exhaustion, analytic segment
+  classification, unlinked segment-socle
+  product irreducibility, final
+  segment-socle irreducibility,
   `AdjacentUnlinkedSegmentSocleSwap`, `TwoSegmentSocleCommutation`, and
-  adjacent socle commutation `e3634665-571b-4852-9f4c-bab8a1053434`.
-- Special-head product irreducibility `8364e73f-14ec-4d14-8f2b-1555a7c1ce95`,
-  special-head exhaustion `3bfb61fa-1129-4fc9-83fd-7fcfec22106e`, ordered
-  special-head existence `ebea9a8a-9b21-4208-aa31-98c2dea1f8a3`, quotient
-  coverage `20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584`, tempered block uniqueness
-  `52e97845-36bb-457d-b76f-70753334b88c`,
-  `SquareIntegrableLanglandsClassification` /
-  `1cb45da2-7007-4351-a694-594fb148b8d1`, square-integrable exhaustion
-  `cd8ab97c-0b78-4bce-97c4-d307a28159a4`, regular exhaustion
-  `bf433f0a-921a-428c-b0c0-6475438125ac`,
-  `GenericSegmentProductUniqueness` / `30341ae4-65f2-4a0e-9283-763db01a409e`,
-  ordered special-segment conversion `8252833d-c269-41a9-824c-5879e531b23b`,
-  and forward special-segment essential square-integrability
-  `5eece9e8-7f6b-4ea9-abea-a1f9f1b8c807`.
-- Individual special-head/reverse-socle existence
-  `67279e36-f3c2-42e3-9302-11729784042e`, individual
-  segment-socle/reverse-head existence `4ca79bbd-589e-476b-9f65-661e799984b5`,
+  adjacent socle commutation.
+- Special-head product irreducibility,
+  special-head exhaustion, ordered
+  special-head existence, quotient
+  coverage, tempered block uniqueness,
+  `SquareIntegrableLanglandsClassification`, square-integrable exhaustion,
+  regular exhaustion,
+  `GenericSegmentProductUniqueness`,
+  ordered special-segment conversion,
+  and forward special-segment essential square-integrability.
+- Individual special-head/reverse-socle existence, individual
+  segment-socle/reverse-head existence,
   `SegmentSpecialEssentialSquareIntegrability`,
   `OrderedMultisegmentSocleExistence`, `MultisegmentSocleExhaustion`, and
   `SegmentSocleProductIrreducibility`.
-- `SegmentFullJacquetFormula`, its statement/successor-arrangement task
-  `ed48ae06-964c-4c84-9e62-978f5a953ca7` and exact proof successor;
-  `SegmentHeadJacquetFormula` / `55ad1e10-62d8-46b7-a081-909ef0056426`;
-  `SegmentSocleJacquetFormula` / `b95105c6-f8bb-4641-ae53-2f49d1e7f034`;
-  and `SegmentSpecialJacquetExponentNormFormula` /
-  `92aea10f-62ac-4e0b-bd4a-9a80909797c5`.
+- `SegmentFullJacquetFormula`, its statement arrangement
+  and the module proving it;
+  `SegmentHeadJacquetFormula`;
+  `SegmentSocleJacquetFormula`;
+  and `SegmentSpecialJacquetExponentNormFormula`.
 - Ze80's segment derivative formulas (§3.5 or §9.6), its product irreducibility
   criteria (4.2 or 9.7), its analytic/square-integrability result (9.3), all
-  classification or exhaustion theorems, and the segment-socle part of
-  `8e5b4563-0365-41c7-b134-70f2a0b36292`.
+  classification or exhaustion theorems, and the segment-socle derivative
+  results.
 
 None of these appears as a mathematical dependency in the proof chain above.
-No segment or cuspidal derivative formula is needed. The operator-paused
-minus exactness task `b65bc667-6951-4bd5-82af-10fb7046df7f` is neither used,
-duplicated nor requested for resumption. The proof requires no new premise,
+No segment or cuspidal derivative formula is needed. Minus exactness is
+neither used nor duplicated. The proof requires no new premise,
 plus model, exactness theorem, filtration, Haar-modulus bridge, product,
-head, socle or classification result. No lower task was split off.
+head, socle or classification result.

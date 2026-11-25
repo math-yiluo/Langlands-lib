@@ -1,7 +1,7 @@
 # Split tensor products of test functions and cusp forms
 
 Lean module: `Langlands.BaseChange.SplitTensorCuspFormStatement`, namespace
-`Langlands.BaseChange`. Author: Worker 820, for Task 7457.
+`Langlands.BaseChange`.
 
 This module defines one proposition, `SplitTensorCuspFormStatement.{u} : Prop`. It is a
 statement only: nothing here proves it, and no declaration assumes it.
@@ -44,16 +44,16 @@ projection `F^l → F`. Under `GL_n(F^l) = GL_n(F)^l` it is the tensor product
 
 ## Use
 
-The global comparison of Task 7340 evaluates the simple trace formula and its twisted form
-(Worker 4918's package) on test functions with a cusp form at one place (Henniart-Lemaire 2011,
+The global comparison for local cyclic base change of prime degree evaluates the simple trace
+formula and its twisted form on test functions with a cusp form at one place (Henniart-Lemaire 2011,
 II.6.3, printed p. 120, condition `c_{v₁}(f)`; II.6.4, printed p. 121, condition `c^σ_{v₁}(φ)`).
 At a place `v` of the base field that splits completely in the cyclic extension `E` of degree
 `l`, `E ⊗ F_v = F_v^l` and the test function on `GL_n(E_v) = GL_n(F_v)^l` is a tensor product
 (Arthur-Clozel 1989, Chapter 1, §5, printed pp. 48-49, where the σ-twisted orbital integrals of
 `φ_1 ⊗ … ⊗ φ_m` are computed through the convolution `φ_1 ∗ … ∗ φ_m`). This statement passes
 from `GL_n(F)` to `GL_n(F^l)` at such a place: a cusp form in one factor gives a cusp form on
-`GL_n(F^l)`, and the tensor product is again a test function. The companion statements of
-Task 7457 (separate modules) are
+`GL_n(F^l)`, and the tensor product is again a test function. The companion statements
+(separate modules) are
 `CuspFormConvolutionStatement` (convolution with Hecke operators), `SupercuspidalCuspFormStatement`
 (a cusp form isolating a given supercuspidal representation) and
 `SupercuspidalExistenceStatement` (such representations exist).

@@ -1,7 +1,5 @@
 # Conditional quasicuspidal Jacquet spectrum comparison
 
-Author: Worker 320.
-
 This module proves
 `Langlands.Aubert.QuasicuspidalJacquetSpectrumStatement.{uF,uV} F T`
 as `Langlands.Aubert.quasicuspidalJacquetSpectrum`. It preserves the

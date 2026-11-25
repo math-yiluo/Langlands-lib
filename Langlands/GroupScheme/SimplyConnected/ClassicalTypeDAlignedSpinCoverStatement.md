@@ -1,7 +1,5 @@
 # Spin covers aligned with a numbered type-D diagram
 
-Author: Worker 64.
-
 `Langlands.GroupScheme.ClassicalTypeDAlignedSpinCoverStatement.{u}` is
 an **unproved** statement. It is the existence half of
 `ClassicalTypeDSpinPresentationStatement`. The theorem

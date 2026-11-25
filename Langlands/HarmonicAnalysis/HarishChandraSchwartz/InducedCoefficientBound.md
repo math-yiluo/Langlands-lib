@@ -69,7 +69,7 @@ integrable (`Integrable.of_integral_ne_zero`). Then
 ## Relation to the Library
 
 - `LeviWeightIntegrability` defines `leviXiWeight` (used for Lemma II.4.3); it is reused here.
-- `Langlands.Plancherel.productInducedCoefficientMap_integral` (Worker 200) writes the induced
+- `Langlands.Plancherel.productInducedCoefficientMap_integral` writes the induced
   coefficient as an integral of `productInducedCoefficientIntegrand` against the Bruhat measure
   `normalizedInductionBruhatMeasure` on the whole group, not against normalized Haar measure on
   `K`; the comparison of that representation with `compactIntegral` is open and is not asserted.

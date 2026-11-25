@@ -7,7 +7,7 @@ Modified: FLT module names are prefixed by `Langlands.AnthropicFLT`; the FLT lak
 are set after the imports; the import of `P2M.Util` is dropped and its commands are replaced
 by standard Lean commands. The paired Markdown file lists the changes.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_RelativePicardFunctor
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_ModulesSectionsTensorV2
 set_option maxHeartbeats 4000000
@@ -51,7 +51,7 @@ export _root_.AlgebraicGeometry (Scheme.Modules.pullback Scheme.Hom Scheme.Opens
 namespace Scheme
 export _root_.AlgebraicGeometry.Scheme (ringCatSheaf Modules.pullback Hom Γ Opens.ι_appIso Hom.image_preimage_eq_opensRange_inf Modules.restrictFunctor restrictFunctor Modules Opens grothendieckTopology Opens.opensRange_ι PresheafOfModules Modules.IsFrameOn)
 namespace Modules
-export _root_.AlgebraicGeometry.Scheme.Modules (pushforward pullback presheaf Hom restrictFunctor restrictFunctorIsoPullback map_smul IsInvertible IsFrameOn)
+export _root_.AlgebraicGeometry.Scheme.Modules (pushforward pullback presheaf Hom restrictFunctor restrictFunctorIsoPullback map_smul IsInvertibleFLT IsFrameOn)
 open _root_.AlgebraicGeometry.Scheme.Modules _root_.AlgebraicGeometry.Scheme _root_.AlgebraicGeometry
 
 namespace FrameBridge
@@ -119,6 +119,7 @@ lemma gen₀_map {W W' : (U : Scheme.{u}).Opens} (i : W' ⟶ W) :
 
 omit e in
 
+set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
 lemma bijective_smul_map_eqToHom {A B : X.Opens} (q : A = B) (t : L.val.obj (op A))
     (h : Function.Bijective (fun b : Γ(X, A) => b • t)) :
     Function.Bijective (fun a : Γ(X, B) => a • L.val.map (eqToHom q.symm : B ⟶ A).op t) := by

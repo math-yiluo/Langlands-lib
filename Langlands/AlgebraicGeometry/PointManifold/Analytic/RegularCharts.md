@@ -11,7 +11,7 @@ into this data type.
 uses their range as atlas and keeps the existing topology. `ofIsEmpty` supplies
 the atlas when the point carrier is empty, in every dimension.
 
-This internal interface is adapted by Worker 115 from Workers 94 and 274's
+This internal interface is adapted from the
 published `PointManifold.General.RegularCharts`. The inverse-evaluation field
 uses `ContDiffOn k ω`; the real-dimension and Type 0 comparison interfaces of
 the source are omitted.

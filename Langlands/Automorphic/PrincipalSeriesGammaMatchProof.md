@@ -1,7 +1,7 @@
 # Pair gamma comparison for principal-series constituents: proof
 
 `principalSeriesPairGammaMatchStatement` proves the published proposition
-`Langlands.ClassField.Global.RelativeWeilGroup.PrincipalSeriesPairGammaMatchStatement`
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.PrincipalSeriesPairGammaMatchStatement`
 (module `Langlands.Automorphic.PrincipalSeriesGammaMatchStatement`) at three arbitrary
 universe levels `u`, `uV`, `uE`. It uses only the standard axioms `propext`,
 `Classical.choice` and `Quot.sound`.

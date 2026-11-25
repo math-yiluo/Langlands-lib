@@ -1,7 +1,5 @@
 # Supplied special-head embeddings at consecutive cuts
 
-Author: Worker 357.
-
 This internal construction returns an actual injective intertwiner from a
 supplied special head to the ordered product of supplied special heads of its
 two consecutive pieces. It assembles published individual-head, induction,
@@ -113,7 +111,7 @@ as required by the general strong-socle relation.
 
 The five private lemmas are the binary finite-length specialization, the
 three equality-transport facts, and composition of injective morphisms.
-They are grouped with the constructor as one focused unit.
+They are grouped with the constructor in this module.
 
 ## Published inputs and proof-dependency audit
 
@@ -171,46 +169,38 @@ predicates and `TemperedSupportStatement`/`TemperedInductionStatement` also
 occur as definitions. They supply no theorem conclusion here.
 
 A scan of code with comments and string literals removed checked excluded
-task identifiers and excluded classification, product, derivative and
+classification, product, derivative and
 Jacquet declarations. It found no matches, missing inherited pairs, proof
 holes, new axioms or prohibited execution syntax. This inventory was
 combined with examination of the used proof bodies and the published
-individual-head and generic length routes described above. This is an
-author dependency audit, not independent semantic acceptance, and does not
+individual-head and generic length routes described above. This dependency
+audit does not
 claim that all 781 inherited files were newly read line by line.
 
-## Operator rulings and retained exclusions
+## Permitted inputs and retained exclusions
 
-The complete trusted operator responses governing the host's dependency
-conditions were read at:
-
-- `/home/taskhub/pilot/correspondence/bd71b9185aab5d6eafffb7891bd3a3ca.md`;
-- `/home/taskhub/pilot/correspondence/0edda6122ce65ed7ac51603c37473920.md`;
-- `/home/taskhub/pilot/correspondence/30144f6f9b59540b88b6d4c1517892d9.md`;
-- `/home/taskhub/pilot/correspondence/ed80148e21e7523abfc048f455e98eb0.md`;
-- `/home/taskhub/pilot/correspondence/2b33898bdd0a5ff1b9031be5155a06f0.md`;
-- `/home/taskhub/pilot/correspondence/ca18fd5005bf5e12a3f7cade18dca865.md`.
-
-The first permits a fully proved general derivative route; the second extends
-permitted general infrastructure while preserving exclusions. The third
-permits exactly the specified independently proved support bound as a later
-host input. The fourth confines `core_mid` and its simple-factor consequence
-to that support proof's length-two base. The last two permit adjacent
+The dependency conditions of the `SegmentHeadProductIrreducibility` proof
+permit a fully proved general derivative route and further proved general
+infrastructure while preserving its exclusions. They
+permit exactly the specified independently proved support bound as a later
+input of that proof, confine `core_mid` and its simple-factor consequence
+to that support proof's length-two base, and permit adjacent
 supercuspidal reducibility only for that support proof. None of that support
 bound, `core_mid`, or restricted reducibility occurs in this closure.
 
 The closure preserves independence from Ze80 3.5/9.6 and their successors;
 the excluded segment, head, socle, full-Jacquet and classification conclusions;
-and the segment-socle part of `8e5b4563-0365-41c7-b134-70f2a0b36292`.
+and the segment-socle derivative statements of
+`SegmentSocleDerivativesStatement`.
 It uses no `SegmentHeadSupportStep`, `SegmentHeadJacquetReduction`,
 `TwoSupercuspidalProductStructureProof`, or `UniverseLiftPadic`.
 It imports neither direction of the full special-head product criterion nor
 any downstream uniqueness, exhaustion, ordered-head, quotient-coverage,
-tempered, square-integrable or regular classification proof excluded by the
-host contract.
+tempered, square-integrable or regular classification proof excluded by
+those conditions.
 
 The provenance is internal assembly of published constructions and proofs.
-This contribution establishes only the displayed actual cut embedding.
+This file establishes only the displayed actual cut embedding.
 It asserts no derivative nonvanishing, derivative identification, derivative
 irreducibility, multiplicity formula, or full product irreducibility equivalence.
 

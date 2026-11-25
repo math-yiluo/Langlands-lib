@@ -1,7 +1,5 @@
 # Independence of actual Tits indices from compatible choices: proof
 
-Proof author: Worker 149 (Task 5622).
-
 This module proves `Langlands.GroupScheme.TitsIndexIndependenceStatement` (module
 `Langlands.GroupScheme.Reductive.TitsIndexChoiceStatement`). The theorem is
 `Langlands.GroupScheme.titsIndexIndependence : TitsIndexIndependenceStatement.{u}`. It
@@ -192,7 +190,7 @@ qualified prefix.
 | `HasRelativeRootSystem.exists_normalizerPoint_dominant` | `Langlands.GroupScheme.Rational.DominantChamberMove` | Move the transported `λ_d` into the closed dominant chamber of `λ_e`. |
 | `HasRelativeRootSystem.neg_mem_relativeRoots` | `Langlands.GroupScheme.Rational.RelativeRootStandardCocharacter` | Negatives of relative roots are relative roots. |
 | `mem_roots_iff_exists_splittingField_restriction` | `Langlands.GroupScheme.Rational.AbsoluteRootRestriction` | Nonzero restrictions of absolute roots are relative roots. |
-| `exists_centralizing_conj_of_isMaximalSplitTorus` | `Langlands.GroupScheme.Reductive.TitsIndexCentralizerConjugacy` (helper module of this submission) | Conjugacy over `k_s` inside the centralizer of `S_e`. |
+| `exists_centralizing_conj_of_isMaximalSplitTorus` | `Langlands.GroupScheme.Reductive.TitsIndexCentralizerConjugacy` (helper module of this proof) | Conjugacy over `k_s` inside the centralizer of `S_e`. |
 | `IsMaximalTorus.comp_iso` | `Langlands.GroupScheme.Torus.MaximalTransport` | A conjugate of a maximal torus is maximal. |
 | `IsMaximalTorus.isMaximalSplitTorus` | `Langlands.GroupScheme.Torus.MaximalSplitComparison` | Split maximal tori are maximal split tori. |
 | `IsSplitTorus.baseChange` | `Langlands.GroupScheme.Torus.Split` | Base change of a split torus is split. |
@@ -217,7 +215,7 @@ category-theory identities.
 
 ## Independence from local results
 
-The task requires independence from `LocalRankOneClassificationStatement` and from
+The proof does not depend on `LocalRankOneClassificationStatement` or on
 local Kneser–Tits results. The transitive Langlands import closure of this module was
 checked: no module in it mentions `LocalRankOne`, `Kneser`, `KneserTits` or
 `Quaternionic`. The proof uses no hypothesis beyond the target statement.

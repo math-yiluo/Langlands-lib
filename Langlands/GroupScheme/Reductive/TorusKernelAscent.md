@@ -24,7 +24,8 @@ algebraic closure, the preceding radical argument applies to the base-changed
 torus and quotient. These are exactly the four fields of the Library's
 connected-reductivity predicate.
 
-The provenance is a derived geometric helper for Task 6660, rather than a
+The provenance is a derived geometric helper for the common domination of two
+actual z-extensions, rather than a
 separately quoted proposition from the literature. It supplies the reductivity
 step for the fiber-product construction underlying KP Fact 11.4.2 and
 Lemma 11.4.3. The implemented argument uses only the existing Library results

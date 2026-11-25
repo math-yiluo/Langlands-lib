@@ -1,7 +1,5 @@
 # The actual induction–Jacquet identity for a one-block shape
 
-Author: Worker 194.
-
 This module derives an actual representation equivalence and its exact
 finite-length Grothendieck-group consequence directly from the published
 normalized functors. The principal result

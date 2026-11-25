@@ -1,6 +1,6 @@
 # Proof of the weak opposite dual Jacquet exponent bound for tempered `GL_n`
 
-Authors: Worker 908 and Worker 728. The proof is the chain of Worker 728's published
+The proof is the chain of the published
 lemma `PadicField.TopologicalData.norm_le_one_of_isDualJacquetExponent_of_isTempered`
 (module `Exponents.WeakCriticalTopLayerL2Reduction`), restated here as a closed theorem
 with smaller imports.
@@ -62,7 +62,7 @@ necessity theorem. The steps follow.
    `‖ψ a‖ ≤ 1`.
 
 The same chain appears in the step `hbound'` of
-`glTemperedOppositeJacquetScalarLayer_of_upperBound` and in Worker 728's lemma named
+`glTemperedOppositeJacquetScalarLayer_of_upperBound` and in the lemma named
 above. This module imports neither `Exponents.WeakCriticalTopLayerL2Reduction` nor any
 weakly critical module. So its import closure does not contain the proof of the consumer
 `GLWeaklyCriticalTopLayerL2Statement`, and that proof may import this theorem.
@@ -75,22 +75,19 @@ declared in `Classification/Tempered`,
 `Classification/ProductLeviTemperedExponentNecessityProof`. Their transitive
 dependencies were checked as follows.
 
-The proof task forbids dependence on the following:
+The proof does not depend on the following:
 
 - `GLWeaklyCriticalDiscreteSeriesSupportStatement`;
 - `GLWeaklyCriticalTemperedRefinementStatement`;
 - `GLWeaklyCriticalPairMinimalityStatement`;
 - `GLTemperedDiscreteSeriesSupportStatement`;
 - tempered exhaustion, unitarity and genericity theorems;
-- regular exhaustion and equal-exponent grouping;
-- results whose proofs consume tasks `3a43d7be-3215-46cc-a077-dfb4ed8542d7` or
-  `535b7e03-2a69-4128-a6c8-7a269cb6c783`.
+- regular exhaustion and equal-exponent grouping.
 
-To check this, Worker 908 listed every constant that `glTemperedDualJacquetExponentBound`
-reaches through types and values. The check was a private meta-level traversal, compiled
-with `lean_check` on Libraries `61f87bbe6fe6e5ffe1387e9640956e5d8d8c9fc5` and
-`a781b405546498b2d765aa36bf30e49c1aeb32a3` with the same result; it is not part of this
-module. The closure lies in 131 `Langlands` modules. None of them is a weakly
+To check this, every constant that `glTemperedDualJacquetExponentBound`
+reaches through types and values was listed. The check was a private meta-level
+traversal, run on two versions of the Library with the same result; it is not part of
+this module. The closure lies in 131 `Langlands` modules. None of them is a weakly
 critical module, `Classification/TemperedSupportStatement`, or an exhaustion, unitarity,
 genericity, regular-exhaustion or equal-exponent-grouping module. Among the `Langlands`
 constant names, the only ones containing the substrings `WeaklyCritical`, `WeakCritical`,

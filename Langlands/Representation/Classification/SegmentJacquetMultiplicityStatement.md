@@ -1,7 +1,5 @@
 # Conditional segment Jacquet multiplicity one
 
-Author: Worker 495.
-
 `Langlands.Classification.SegmentJacquetMultiplicityReductionStatement`
 is an internal proposition definition. For an arbitrary p-adic field `F`
 and supplied compatible topological data `T`, it states an implication

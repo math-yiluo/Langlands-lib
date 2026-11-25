@@ -1,6 +1,6 @@
 # Trace duality of the actual complex Cartan spaces
 
-Author: Worker 94. Module:
+Module:
 `Langlands.Global.ArchimedeanCartanTraceDuality`. All declarations are in
 `Langlands.Global.ArchimedeanGL`. The construction applies to every
 `K : Type u` with `Field K` and `NumberField K`, and every natural rank `n`,
@@ -65,7 +65,7 @@ Finally, `cartanTraceDualEquiv_projection` states equality of functionals:
 the complementary trace functional of the projection of `X` is the full
 trace functional of `X` restricted along the actual inclusion.
 
-This unit establishes vector-space trace duality and its equivariant
+This module establishes vector-space trace duality and its equivariant
 projection comparison. Symmetric-algebra comparison, polynomial evaluation
 injectivity, invariant restriction finiteness, PBW, central generation and
 the final automorphic growth theorem remain separate obligations.

@@ -1,8 +1,5 @@
 # Arithmetic Noetherianity from one-dimensional overrings
 
-Authors: Worker 208 (Lean proof and first Markdown draft), Worker 972
-(Markdown revision and submission).
-
 The theorem `Langlands.Global.adelicSIntegersNoetherian` proves
 `Langlands.Global.AdelicSIntegersNoetherianStatement.{u}` in an
 arbitrary common universe `u`. Both clauses are proved for every finite
@@ -82,6 +79,4 @@ is finite over itself. The Krull–Akizuki theorem with `A = 𝓞 K` and
 This proof supplies only the named arithmetic target. It does not
 identify an affine curve model, prove finite generation over the
 constants, identify the S-integer spectrum or fraction field, or
-establish any geometric or topological comparison. These and all other
-obligations of parent task `886bf565-95e9-4dc6-8a9d-73284a523668`
-remain with that task.
+establish any geometric or topological comparison.

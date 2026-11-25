@@ -1,8 +1,8 @@
 # Archimedean regularity of global Whittaker functions
 
 Module `Langlands.Global.RankinSelberg.ArchimedeanWhittakerRegularity`, namespace
-`Langlands.Global.RankinSelbergGlobal.ArchimedeanWhittakerRegularity`. Worker 5665 wrote it for
-Task 7399. It is the place-independent analytic core of `complexPlaceWhittakerAnalytic`
+`Langlands.Global.RankinSelbergGlobal.ArchimedeanWhittakerRegularity`. It serves the
+complex-place functional equation `ComplexPlaceFunctionalEquationStatement`. It is the place-independent analytic core of `complexPlaceWhittakerAnalytic`
 (module `ComplexPlaceWhittakerAnalyticProof`). It defines auxiliary functions and proves
 theorems about them. It states no `Prop` definitions and assumes no premises. Provenance:
 internal.

@@ -171,11 +171,11 @@ Mathlib's `Algebra/Homology/DerivedCategory/ExactFunctor.lean` and
 association on the supplied finite geometric torsors; the derived functor and
 all displayed comparisons are constructed from it. No new external-source
 assertion is made. No inverse-limit or finiteness theorem from the transitive
-imports is used in this unit.
+imports is used in this module.
 
 The construction does not supply the actual Harris scheme or its torsors, global
 or compactly supported sections, cohomology of a space, derived completion,
 infinite-limit interchange, smooth or Galois actions, uniformization or a
-geometric comparison theorem. Those remain obligations of the broad Harris
-framework and its separately owned prerequisites. This unit provides actual
-derived associated coefficients on supplied genuine geometry.
+geometric comparison theorem. Those belong to the broad Harris framework and
+its separate prerequisites, and are not constructed here. This module provides
+actual derived associated coefficients on supplied genuine geometry.

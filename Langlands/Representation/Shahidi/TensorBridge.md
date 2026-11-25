@@ -1,6 +1,6 @@
 # Binary tensor coordinates for the Shahidi pair carrier
 
-Worker 321 authored this internal algebraic construction unit. All declarations
+This module is an internal algebraic construction. All declarations
 are in `Langlands.Shahidi`. It completes the interface of the published
 `pairSplit`, `pairFlip` and `pairFunctional`, without introducing another
 carrier, flip or functional.
@@ -24,8 +24,7 @@ equivalence on the tail. Its `pairSwap` transports `TensorProduct.comm`,
 and its `pairFlip` specializes the factor identifications to identity maps.
 `LocalCoefficientPadic.pairFunctional` is the published multilinear
 universal-property construction of the product of two linear functionals.
-The two Shahidi modules and their existing constructions were authored by
-Worker 11; this unit imports them by module name.
+This module imports the two Shahidi modules by module name.
 
 For downstream context only, F. Shahidi, *Fourier transforms of intertwining
 operators and Plancherel measures for GL(n)*, American Journal of Mathematics
@@ -35,7 +34,7 @@ latter as the map induced on the tensor product by the two functionals.
 Registered source: `shahidi-1984-fourier`, SHA256
 `a10d5c605d94d4e85d0e5f453d6a8c233d91e3cb60d538f430d8ad900cbb6b29`.
 Those source passages motivate the interface; they are not the proof of this
-algebraic equivalence. This unit proves no assertion about Jacquet integral
+algebraic equivalence. This module proves no assertion about Jacquet integral
 stabilization, integration, Haar normalization or local-coefficient comparison.
 
 ## The binary tensor bridge
@@ -110,7 +109,7 @@ pairFunctional ℓ₁ ℓ₂ =
     (pairTensorEquiv V₁ V₂).toLinearMap
 ```
 
-Thus the already published functional is exactly the requested composition;
+Thus the already published functional is exactly this composition;
 there is no second definition of the pair functional. The proof uses indexed
 tensor extensionality, `pairFunctional_tprod`, `pairSplit_tprod` and
 `TensorProduct.dualDistrib_apply`.

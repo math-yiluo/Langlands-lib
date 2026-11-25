@@ -1,7 +1,7 @@
 # Equal-rank JPSS gamma-factor existence
 
-Author: Worker 358. The binder scope and valuative-topology proof are
-adapted from Worker 11's published `FunctionalEquationStatement` module.
+The binder scope and valuative-topology proof are
+adapted from the published `FunctionalEquationStatement` module.
 
 The paired Lean file defines, but does not prove,
 `Langlands.RankinSelberg.EqualRankGammaExistenceStatement.{uF,uV,uW}
@@ -107,8 +107,8 @@ J. A. Shalika, *Rankin–Selberg Convolutions*, American Journal of Mathematics
 Its verified SHA256 is
 `d9feed6388ca5acf02ecc6a8cce984871a7c28f062ff441e45a71fa2d8962245`.
 Printed pages 391, 395, and 396 were read visually (one-based PDF pages
-26, 30, and 31). No source erratum note was found in the checked workspace,
-project, or supplied Library `notes/errata` locations.
+26, 30, and 31). No source erratum note was found in the checked
+project or supplied Library `notes/errata` locations.
 
 Theorem 2.7(iii), display (1), printed p.391, gives the equal-rank normalized
 functional equation with `ε(s) = c q^(-ms)` and the sign
@@ -152,7 +152,8 @@ with source rank `r = n+1`, its exponent `r-1` is exactly the Lean exponent
 
 Only the proposition and the private instance proof are supplied here.
 Gamma existence, Fourier closure, rational continuation, and the required
-trilinear comparison remain proof obligations. Epsilon existence,
+trilinear comparison are proof obligations; `equalRankGammaExistence` in
+`EqualRankGammaExistenceProof` proves the statement. Epsilon existence,
 L-factor normalization, Fourier closure, and trilinear-form uniqueness are
 not added as hypotheses, nor is the gamma-existence conclusion itself.
 

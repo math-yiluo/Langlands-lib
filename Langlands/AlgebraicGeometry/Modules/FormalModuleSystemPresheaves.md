@@ -1,7 +1,5 @@
 # Module presheaves of a formal module system
 
-Author: Worker 1405.
-
 This module is `Langlands.AlgebraicGeometry.Modules.FormalModuleSystemPresheaves`.
 All declarations are in the namespace
 `Langlands.AlgebraicGeometry.Modules.FormalModuleSystemPresheaves`.
@@ -94,8 +92,10 @@ existence theorem that `ProperFormalCoherentExistenceOfFLT` assumes.
 
 ## Purpose and provenance
 
-This is the input bridge of the proof task `20cb772c` (proper coherent formal
-existence): it turns a formal module system with finitely presented terms into
+This is the input bridge of the proof of `ProperFormalCoherentExistenceStatement`
+(proper coherent formal existence), assembled in `ProperFormalCoherentExistenceOfFLT`
+and proved as `properFormalCoherentExistence` in
+`ProperFormalCoherentExistenceProof`: it turns a formal module system with finitely presented terms into
 a system of `OModulePresheaf`s satisfying the hypotheses of the FLT presheaf
 existence theorem. It follows the line-bundle version in the FLT source and
 replaces every use of invertibility by finite presentation.

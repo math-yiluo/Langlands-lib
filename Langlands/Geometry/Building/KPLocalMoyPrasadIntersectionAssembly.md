@@ -1,15 +1,16 @@
 # Clauses 4–8 of the groups `G(K)_{x,r}` from the prerequisite statements
 
-Helper module for Task 6191 (`LocalMoyPrasadGroupPropertiesStatement`). It collects
+Helper module for the proof of `LocalMoyPrasadGroupPropertiesStatement`. It collects
 clauses 4–8 of that statement for fixed building data `B` over `K = F^ur` with
-`Z = Z_G(S)` a torus (`hZ`). The inputs are two propositions (S1 and the statement of Task 6542) and two depth-zero
+`Z = Z_G(S)` a torus (`hZ`). The inputs are two propositions
+(`QuasiSplitLocalTorusFiltrationStatement` and `LocalMoyPrasadPositiveProductStatement`) and two depth-zero
 intersection facts. The module introduces no definitions.
 
 ## Inputs
 
-- `hS1 : QuasiSplitLocalTorusFiltrationStatement` (S1, Task 5890). Only its first clause is
+- `hS1 : QuasiSplitLocalTorusFiltrationStatement` (KP Lemma 7.2.3 over `K`). Only its first clause is
   used: the commutator friendliness of the torus filtration `Z(K)_r` (KP Definition 7.2.1).
-- `hProd : LocalMoyPrasadPositiveProductStatement` (Task 6542). Assuming exactly that
+- `hProd : LocalMoyPrasadPositiveProductStatement`. Assuming exactly that
   commutator clause, it gives the sign product cover at positive depth: for every `x`,
   every `r > 0` and every generic integral cocharacter `μ`,
 

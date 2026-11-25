@@ -1,6 +1,6 @@
 # Actual Galois orbit blocks for the canonical Steinberg product
 
-This internal unit constructs actual orbit blocks and a complete simple-root
+This internal module constructs actual orbit blocks and a complete simple-root
 ordering. It then descends the full image ideal of the canonical Steinberg
 product for that order, conditional on orthogonality of the supplied action's
 orbits and the explicit torus, character and whole-root-map compatibility data.
@@ -79,4 +79,6 @@ the existing actual-factor and full image-ideal descent constructions. No new
 original-literature theorem is asserted. Compatible pinning and normalized-map
 existence, orthogonality for applicable root systems, immersion and quotient
 calculations, exceptional even-type-A substitutes, rational lifting and the
-parent quotient proposition remain open.
+quotient proposition `QuasiSplitSteinbergQuotientStatement` that this module
+serves lie outside this module; the Library proves that proposition as
+`quasiSplitSteinbergQuotient` (`Rational.QuasiSplitSteinbergQuotient`).

@@ -1,6 +1,6 @@
 # Multiplicativity of the factors of pairs
 
-Author: Worker 11. This module, in namespace `Langlands.RankinSelberg`, states
+This module, in namespace `Langlands.RankinSelberg`, states
 Theorem (3.1) of Jacquet, Piatetski-Shapiro and Shalika, *Rankin-Selberg
 convolutions*, Amer. J. Math. 105 (1983): the gamma factor of a pair is
 multiplicative under parabolic induction in the second variable, and the
@@ -10,7 +10,9 @@ blocks. The factors are the rank-symmetric relations
 `PadicPairFactors`. The induced representation is the published normalized
 block induction `PadicField.canonicalNormalizedProductInduced` of
 `Induction/BlockFactors`. The module defines `succBlockShape` and three
-statements, none of them proved.
+statements, none of them proved here; `gammaMultiplicativity`
+(`GammaMultiplicativityProof`) and `lFactorMultiplicativity`
+(`LFactorMultiplicativityProof`) prove the first two.
 
 ## Source
 
@@ -142,8 +144,9 @@ has constant term `1` and `L(s) = 1/P(q^{-s})`.
   Whittaker type. The published `IsOfWhittakerType` is admissibility, finite
   generation and a one-dimensional space of functionals for the character,
   here `standardCharacter ψ`, which is `θ_ψ`. That the induced representation
-  is of Whittaker type is Proposition (2.3); it is not a hypothesis and not
-  proved in the Library. The relations pair `ψ`-functionals of the
+  is of Whittaker type is Proposition (2.3); it is not a hypothesis, and the
+  Library proves it as `normalizedProductWhittakerType`
+  (`NormalizedProductWhittakerTypeProof`). The relations pair `ψ`-functionals of the
   representation of larger rank with `ψ̄`-functionals of the other, as in
   JPSS. For representations of Whittaker type the `ψ̄`-functionals also form
   a line: `Whittaker.characterChangeFunctionalEquiv` at `a = -1`, together
@@ -161,7 +164,7 @@ has constant term `1` and `L(s) = 1/P(q^{-s})`.
   `quotientHaarExistence` in `RankinSelberg/QuotientHaarExistence`.
   The character equivalence above transports existing nonzero functionals.
   Induction preservation, the analytic inputs and multiplicativity itself
-  remain separate proof obligations. Each relation has at most one solution
+  are separate proof obligations, not discharged in this module. Each relation has at most one solution
   (`IsPadicSymmetricGammaFactor.unique`,
   `IsPadicSymmetricLPolynomial.unique`), so (i) says that the gamma factor of
   `π` against the induced representation is the product of the gamma factors
@@ -183,14 +186,13 @@ has constant term `1` and `L(s) = 1/P(q^{-s})`.
 - **Universes.** `π` lives in universe `uV`, the `σ i` in `uW`, and the induced
   representation on its function space in `max uF uW`. The relations are
   invariant under equivalences between universes, so fixed universes lose
-  nothing for representations of countable dimension, though that reduction is
-  not proved in the Library.
+  nothing for representations of countable dimension.
 - **Not stated.** Proposition (2.13) and the remarks after the theorem are
   not part of this module.
 
 ## Lean checks
 
-The module compiles with `lean_check` in environment `3b864ddf` with no errors
+The module compiles with `lean_check` in the pinned environment with no errors
 or warnings. `MultiplicativityStatement` was inspected: it returns `Prop`, has
 universe parameters `uF uV uW`, and uses only `propext`, `Classical.choice` and
 `Quot.sound`. There is no `sorry` and no new axiom.

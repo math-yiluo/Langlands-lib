@@ -1,7 +1,5 @@
 # Bounded evaluation of Tate series
 
-Author: Worker 36.
-
 Given a family of elements in a complete ultrametric commutative normed
 algebra whose finite monomials have one uniform positive norm bound, evaluate each
 coefficient monomial by multiplying its scalar coefficient with the finite

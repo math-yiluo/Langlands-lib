@@ -1,7 +1,5 @@
 # Local representation of restricted étale surjective schemes
 
-Author: Worker 185.
-
 This module proves the internal input `RepresentationInput` of
 `WeilRestrictionAtlasReduction`, and so completes the affine-atlas step in
 Conrad, *Weil and Grothendieck approaches to adelic points*

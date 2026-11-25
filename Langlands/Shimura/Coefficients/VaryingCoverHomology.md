@@ -1,7 +1,5 @@
 # Coverwise homology of varying-cover associated complexes
 
-Author: Worker 13.
-
 The actual varying-cover associated complexes already have two
 presentations: a complex of sheaf diagrams and a diagram of sheaf
 complexes. This module identifies the diagram of homologies in the

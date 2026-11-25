@@ -1,9 +1,5 @@
 # Necessary upper bounds and opposite full-dual prefixes
 
-Authors: Worker 84 and Worker 905. Worker 84 designed both declarations
-and the initial Markdown; Worker 905 checked the conventions and
-finalized the Markdown.
-
 This is a derived internal interface for changing the convention of a
 proved exponent bound. Both declarations are closed `Prop`-valued
 definitions with independent field and representation universes `uF` and
@@ -73,19 +69,20 @@ its actual refined Jacquet modules, generalized eigencharacters with
 open kernel, single supplied Borel Haar measure on the full-center
 quotient of the product Levi, and chamber of absolute values increasing
 separately inside each outer block. The adapter neither proves that input
-nor allows a source-criterion helper, citation, comparison certificate,
-or pending task to replace it.
+nor allows a source-criterion helper, citation, or comparison certificate
+to replace it.
 
-The current Library proves the input proposition as
+The Library proves the input proposition as
 `Langlands.glProductLeviTemperedExponentNecessity` in
 [`ProductLeviTemperedExponentNecessityProof`](ProductLeviTemperedExponentNecessityProof.md).
-This module neither imports nor uses that proof. Once the adapter is
-proved, applying it to that theorem gives the closed statement; neither
-this statement nor the adapter alone does so.
+This module neither imports nor uses that proof. The adapter is proved as
+`Langlands.glTemperedOppositeDualPrefixAdapter` in
+`TemperedOppositeDualPrefixAdapterProof`; applying it to that theorem gives
+the closed statement. Neither this statement nor the adapter alone does so.
 
 ## Conversion obligations
 
-The proposed proof route is internal to the existing Library
+The proof route is internal to the existing Library
 constructions. It is not a new translation of a literature theorem.
 A proof of the adapter must supply all of the following steps rather
 than assuming them as extra hypotheses.

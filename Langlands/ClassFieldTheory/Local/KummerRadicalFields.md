@@ -36,6 +36,6 @@ Mathlib's `FieldTheory.KummerExtension` and intermediate-field APIs. Its
 mathematical provenance is the radical-field norm symmetry used in Serre,
 *Local Fields* (1979), XIV §2, Proposition 7(v) and the following corollary,
 printed pages 208–209. The implementation proves that symmetry through explicit
-carry classes, rather than introducing a local symbol. This unit does not prove
+carry classes, rather than introducing a local symbol. This module does not prove
 nontriviality of the norm quotient or unconditional separation of local units;
-those arithmetic and topological arguments remain separate obligations.
+those arithmetic and topological arguments are outside this module.

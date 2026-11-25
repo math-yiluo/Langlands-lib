@@ -100,7 +100,7 @@ and `nAlpha_conj` with `s' = σ s`. For pattern `true`, it uses
 `σ(u_b) = x_{σ b}(1)`. If the orientation is kept, these are `u_a` and `u_b` of `σ • c`,
 and again `s' = σ s`. If the orientation is reversed, the conjugate starts with
 `u_a' u_b'` instead of `u_b' u_a'`, where `a', b'` are the merged roots of
-`σ • c`. Worker 90's `adjacent_rationalPoint_reorder`
+`σ • c`. The published `adjacent_rationalPoint_reorder`
 (`AdjacentSimpleRootCommutator`) gives `r` with
 `x_{a'}(1) x_{b'}(1) = x_{b'}(1) x_{a'}(1) x_α(r)`, because
 `⟨a', b'^∨⟩ = ⟨b', a'^∨⟩ = -1` (`pairing_partner`). Additivity

@@ -1,8 +1,8 @@
 # Cartier smoothness for actual affine group schemes
 
-Author: Worker 1609. The imported algebraic port is by Worker 133.
-The underlying scheme-isomorphism expression also occurs in Worker 1371's
-affine-image coordinate adapter and is reused here.
+The underlying scheme-isomorphism expression also occurs in the
+affine-image coordinate adapter `Langlands.GroupScheme.AffineHomImageHopfAdapter`
+and is reused here.
 
 `Langlands.GroupScheme.affineCartierSmooth.{u}` proves precisely
 `Langlands.GroupScheme.AffineCartierSmoothStatement.{u}`. The field has

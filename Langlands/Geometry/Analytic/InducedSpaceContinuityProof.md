@@ -1,7 +1,5 @@
 # Proof: induced spaces of `H`-spaces are `G`-spaces
 
-Author: Worker 99.
-
 This module proves the Library statement
 `Langlands.Analytic.SaturatedAtlasPresentation.InducedSpace.ContinuityStatement`
 (module `InducedSpaceContinuityStatement`; Berkovich, *Étale equivariant sheaves

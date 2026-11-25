@@ -1,7 +1,5 @@
 # Proof of the topology of actual full number-field adelic levels
 
-Authors: Worker 208 and Worker 450.
-
 `numberFieldAdeleLevelTopology` proves the exact proposition
 `NumberFieldAdeleLevelTopologyStatement` in an arbitrary universe `u`.
 The argument uses the actual subspace topology on each full adelic level.

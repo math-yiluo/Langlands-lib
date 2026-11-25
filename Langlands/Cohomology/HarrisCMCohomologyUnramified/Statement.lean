@@ -4,10 +4,10 @@ import Langlands.Shimura.DecompositionGroupAction
 /-!
 # Unramified Galois actions on geometric CM torsion cohomology
 
-Fix a small CM level `U` and Worker 57's original stable-lattice torsion
+Fix a small CM level `U` and the original stable-lattice torsion
 coefficient system on the geometric level `X̄_U = X_U ×_{Spec F} Spec F̄`,
-where `F̄ = AlgebraicClosure F`. Worker 57 constructs an action of
-`F̄ ≃ₐ[F] F̄` on every étale cohomology module of every coefficient stage.
+where `F̄ = AlgebraicClosure F`. An action of `F̄ ≃ₐ[F] F̄` is constructed
+on every étale cohomology module of every coefficient stage.
 This module states that there is one finite set of finite places of `F`
 outside which all these actions are unramified: the inertia subgroup of the
 completion at the place acts trivially, in every degree and at every

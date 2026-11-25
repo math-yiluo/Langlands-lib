@@ -81,7 +81,7 @@ variable {k : Type u} [Field k] [ValuativeRel k] [TopologicalSpace k]
   {A : CommGroupScheme (Spec (CommRingCat.of k))} {a : A.toGrp ⟶ M}
   (pres : ParabolicRootPresentation p l a)
 
-local instance : Mono pres.data.i.hom.hom.left :=
+private local instance : Mono pres.data.i.hom.hom.left :=
   pres.isCompatible.maximalSplit.isSplitSubtorus.mono
 
 /-- The original pulled-back unramified character on a nonidentity piece has

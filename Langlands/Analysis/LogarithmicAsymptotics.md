@@ -2,8 +2,7 @@
 
 Lean module `Langlands.Analysis.LogarithmicAsymptotics`.
 `BoundaryLogarithmAsymptoticsStatement` is proved by
-`tendsto_div_log_of_meromorphicOrderAt`, adapted from Worker 3657’s shared
-Task 6446 draft.
+`tendsto_div_log_of_meromorphicOrderAt`.
 
 Fix a real `θ` and suppose `f : ℂ → ℂ` is meromorphic of finite integer
 order `n` at `z₀ = 1 + iθ`. Let `l` be continuous on the real interval `(1,a)`

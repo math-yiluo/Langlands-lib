@@ -1,6 +1,6 @@
 # Invariants of ℓ-divisible systems of complexes
 
-Author: Worker 61. Built on `Langlands.Cohomology.DivisibleSystem.Sections`
+Built on `Langlands.Cohomology.DivisibleSystem.Sections`
 (left exact functors applied degreewise to `ℓ`-divisible systems of complexes,
 and the section complexes of the truncated resolutions), and through it on
 `Langlands.Cohomology.DivisibleSystem.LeftExact`, `…DivisibleSystem.Truncation`
@@ -122,7 +122,7 @@ Now `K : DivisibleSystem (CochainComplex (SmoothRep R G) ℕ) ℓ`.
 ## The truncated smooth Godement resolutions
 
 `R`, `G`, `X`, `T : SmoothSheafDivisibleSystem R G X ℓ` and `D : ℕ` are as in
-the smooth section of the Sections module, with `h` a proof of Worker 3's
+the smooth section of the Sections module, with `h` a proof of the
 unproved proposition `SmoothGodementZeroExactStatement R G X`, and
 `H : Subgroup G` normal.
 
@@ -139,8 +139,8 @@ unproved proposition `SmoothGodementZeroExactStatement R G X`, and
 ## Provenance and interpretation
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
-J. Math. Kyoto Univ. 39-2 (1999), section 2, printed p.305. Worker 61 read the
-page in the scanned original.
+J. Math. Kyoto Univ. 39-2 (1999), section 2, printed p.305. The page was read
+in the scanned original.
 
 1. The obvious sense. The `ℓ`-divisible system "of complexes of
    `ℤ/ℓ^mℤ[S(ẽ)/H]`-modules" is formalized as an `ℓ`-divisible system, in the
@@ -154,14 +154,14 @@ page in the scanned original.
    projections must stay surjective on `H`-invariants. In Harris this follows
    from the exactness of `H⁰(H, ·)` on `ℓ`-primary torsion modules for a pro-`p`
    group `H` with `p ≠ ℓ`. Here it is the explicit hypothesis `hK` (or `hterm`,
-   `hres`). Worker 3's `ProPInvariantsExactStatement` in
+   `hres`). The proposition `ProPInvariantsExactStatement` in
    `Langlands.Cohomology.ProPInvariants.Statement` states such an exactness
    for representations of a profinite pro-`p` group; this module neither
    proves nor uses it, and does not derive `hK` from it.
 3. The inclusion. `quotientInvariantsComplexesInclusion` is Harris's inclusion
    `G_m^•(U(ẽ)_F̄)^H ⊂ G_m^•(U(ẽ)_F̄)` for all `m` at once, as a morphism of
    `ℓ`-divisible systems after inflating the invariants back to `G`. Harris's
-   claim that it is a quasi-isomorphism is the content of Worker 3's separate
+   claim that it is a quasi-isomorphism is the content of the separate
    `ProPInvariantSubcomplexStatement`; it is not addressed here.
 4. Sections. As in the Sections module, the smooth instance uses compactly
    supported sections of smooth equivariant sheaves in the Library's

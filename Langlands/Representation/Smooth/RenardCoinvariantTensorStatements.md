@@ -1,6 +1,6 @@
 # Coinvariants of tensor products and the Hecke tensor product (Renard III.1.15): statements
 
-Author: Worker 1222. Module `Langlands.Representation.Smooth.RenardCoinvariantTensorStatements`,
+Module `Langlands.Representation.Smooth.RenardCoinvariantTensorStatements`,
 namespace `Langlands.Renard.Smooth`. Entry proposition `RenardCoinvariantTensorStatements`
 (universe parameters `u', v'`), the conjunction of five closed `Prop`-valued statements. The
 module also contains one Prop-valued helper predicate, `IsCheckRightAction`. It proves nothing.
@@ -9,9 +9,9 @@ module also contains one Prop-valued helper predicate, `IsCheckRightAction`. It 
 
 David Renard, *Représentations des groupes réductifs p-adiques*, French edition dated
 **9 July 2026**, registered as `renard-2026-representations-groupes-reductifs-padiques`,
-SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. Worker 1222 read
-III.1.14–III.1.15, printed pp.66–70 / PDF pp.72–76, II.3.7 (printed p.47 / PDF p.53) and the
-Proposition of II.3.12 (printed p.52 / PDF p.58) for this unit.
+SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. III.1.14–III.1.15,
+printed pp.66–70 / PDF pp.72–76, II.3.7 (printed p.47 / PDF p.53) and the Proposition of
+II.3.12 (printed p.52 / PDF p.58) were read for this module.
 
 Section III.1.15, printed p.69 / PDF p.75, reads after the Remarks:
 
@@ -177,8 +177,8 @@ separately.
 
 ## Scope
 
-This module states the listed assertions and proves none of them. Proofs belong to a separate
-proof task.
+This module states the listed assertions and proves none of them. They are proved by
+`renardCoinvariantTensorStatements` in `Langlands.Representation.Smooth.RenardCoinvariantTensorProof`.
 
 ## Imports
 

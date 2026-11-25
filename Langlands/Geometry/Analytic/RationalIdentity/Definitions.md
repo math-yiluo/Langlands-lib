@@ -1,7 +1,5 @@
 # Fractions for an invertible rational denominator
 
-Author: Worker 36.
-
 `Langlands.Analytic.RationalIdentity.fractions` takes an actual unit `g` of a
 presented strict affinoid algebra `P` and a finite tuple `f` of elements of
 `P`. It returns the tuple whose entry is `g⁻¹ * f i`, computed in `P`.

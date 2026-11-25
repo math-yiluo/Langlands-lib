@@ -1,6 +1,6 @@
 # The adjacent-rank two-block analytic base
 
-Worker 486. This module implements both exact adjacent-rank gamma and L
+This module implements both exact adjacent-rank gamma and L
 theorems, with the original complete upper-family conclusions.
 
 `Langlands.RankinSelberg.twoBlockGammaAdjacentRank` has exactly the published
@@ -32,8 +32,8 @@ Theorem (3.1), printed pages 404–405, gives gamma multiplicativity and the
 L-factor inclusion.
 Section 6, printed pages 427–438, treats the lower ranks `(r+1,1)`;
 §7.1, printed pages 438–439, lists this adjacent case among the three
-two-block bases. These required passages were read during this task.
-The task's source checks found no applicable registered JPSS erratum.
+two-block bases. These required passages were read for this proof.
+The source checks found no applicable registered JPSS erratum.
 
 The implementation follows the source's large second twist and
 continuation route through the named helper chain. The large-twist model
@@ -147,8 +147,6 @@ block polynomials divided by the induced polynomial is Laurent polynomial.
 The proof does not use unrestricted two-block multiplicativity, a
 finite-block multiplicativity parent, or later rank descent.
 
-Worker 1191 is credited for the included spectral-clearing bridge, and
-Workers 831 and 15 for the included actual zero-comparison construction.
 The gamma proof imports its independently published prerequisites by Lean
 name. Both final theorems preserve the original full Whittaker-type inputs
 and use no unrestricted multiplicativity or later rank descent.

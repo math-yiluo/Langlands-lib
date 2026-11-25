@@ -1,7 +1,5 @@
 # Admissibility of the normalized product-Levi Jacquet representation
 
-Author: Worker 320.
-
 The theorem `Langlands.Parabolic.normalizedJacquetAdmissibility.{uF,uV}`
 proves exactly `Langlands.Parabolic.NormalizedJacquetAdmissibilityClause`
 from `Langlands.Representation.Parabolic.NormalizedJacquetStatement`.

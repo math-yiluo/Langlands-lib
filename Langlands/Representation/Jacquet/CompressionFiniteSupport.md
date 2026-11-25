@@ -1,7 +1,8 @@
 # Compression stability for sums with finite fixed-vector support
 
-Worker 1751, using Worker 1755's same-exponent propagation interface. This is
-an internal finite-maximum argument for the proposed qualitative VI.9.1 proof.
+This is an internal finite-maximum argument for the proposed qualitative
+VI.9.1 proof, using the same-exponent propagation interface of
+`StableCompressionPropagation`.
 It does not establish the compact-level finiteness or componentwise eventual
 stability used as hypotheses.
 
@@ -35,4 +36,5 @@ source is `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 Renard uses an already uniform quantitative bound in VI.9.3. The finite visible
 support argument here is a derived alternative conditional passage and is not
 attributed to that printed proof. The actual Bernstein/cuspidal decomposition,
-fixed-level visibility, and generator-stability inputs remain separate work.
+fixed-level visibility, and generator-stability inputs are separate and are
+not proved here.

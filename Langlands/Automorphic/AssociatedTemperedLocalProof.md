@@ -2,13 +2,13 @@
 
 This internal definition and lemma unit assembles the local algebraic step in Henniart's
 Corollaire 2.3, as published in
-`Langlands.ClassField.Global.RelativeWeilGroup.AssociatedTemperedFactorStatement`.
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.AssociatedTemperedFactorStatement`.
 It does not yet prove that global target. Its local theorem explicitly requires
 an actual local-constant system, common gamma factors for all systems, and
 certified automorphic pole regions.
 
 The entry construction
-`Langlands.ClassField.Global.RelativeWeilGroup.localComponentDualEquiv`
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.localComponentDualEquiv`
 is the identity on the algebraic dual of the original carrier. Its intertwining
 law is the inverse-preserving law of the supplied local group homomorphism:
 `ι(g⁻¹) = ι(g)⁻¹`. No continuity, unramifiedness, irreducibility, or global
@@ -23,7 +23,7 @@ at norm one; at such a point the reflected argument has norm `q⁻¹ < 1`.
 The proof uses `Langlands.FiniteRepresentation.isUnitary_dual` and allows
 arbitrary monodromy and arbitrary normal inertia subgroup.
 
-`Langlands.ClassField.Global.RelativeWeilGroup.isPairFactorMatch_of_unitary_gamma`
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.isPairFactorMatch_of_unitary_gamma`
 applies `Langlands.Global.FactorSeparation.certifiedFactorSeparation` to the
 tensor of the supplied parameters, whose underlying action is unitary by
 `Langlands.WeilDeligneRepresentation.tensor_isUnitary`. One supplied system
@@ -35,11 +35,11 @@ pair agrees with the dual tensor through
 `Langlands.LocalFactor.WeilDeligne.rationalLFactor_eq_of_equiv`. Repeating
 separation for every supplied system gives the required epsilon equalities.
 
-`Langlands.ClassField.Global.RelativeWeilGroup.localPairClass_dual` lifts
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.localPairClass_dual` lifts
 `localComponentDualEquiv` through the zero-monodromy functor and composes it with
 `Langlands.WeilDeligneRepresentation.dualZeroMonodromyEquiv`. Equality of the
 classes follows from this actual pair equivalence.
-`Langlands.ClassField.Global.RelativeWeilGroup.isPairFactorMatch_localPairClass_of_unitary_gamma`
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.isPairFactorMatch_localPairClass_of_unitary_gamma`
 then specializes the generic assembly to the local classes of two relative
 Weil representations and their global algebraic duals, as used by the target.
 The global field, parameter-carrier, and local-system universes remain

@@ -3,11 +3,9 @@
 Module `Langlands.Geometry.Building.AlgebraicSL2RootCoordinatesConstruction`, namespaces
 `Langlands.GroupScheme.SimpleRootFiber` and `Langlands.Geometry.Building`.
 
-Worker 163, for Task 6836 (8c04a3ed-3fa6-4680-a59f-856738cb578b).
-
 ## Purpose
 
-`AlgebraicRankOneCoordinatesExistenceStatement` (the target of Task 6836) has two clauses
+`AlgebraicRankOneCoordinatesExistenceStatement` has two clauses
 for an indivisible relative root `b`:
 
 - an SL2 clause when `2 • b` is not a relative root;
@@ -15,7 +13,8 @@ for an indivisible relative root `b`:
   `AlgebraicSU3RootCoordinatesExistenceStatement`.
 
 This module proves the SL2 clause from one explicit hypothesis, the published proposition
-`SplitRelativeRootGroupProductStatement`, whose proof is Task 7010. It then reduces the whole
+`SplitRelativeRootGroupProductStatement`, proved as `splitRelativeRootGroupProduct` in
+`SplitRelativeRootGroupProductProof`. It then reduces the whole
 target to that proposition and the SU3 statement. Neither proposition is assumed outside the
 hypotheses of the theorems below.
 

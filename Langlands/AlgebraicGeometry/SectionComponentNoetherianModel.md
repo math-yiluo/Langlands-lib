@@ -1,6 +1,6 @@
 # Noetherian models with an actual section
 
-This internal supporting unit constructs a finite type model over a finitely
+This internal supporting module constructs a finite type model over a finitely
 generated ℤ-subalgebra of the affine base ring. The model includes the
 actual flat, quasi-compact, quasi-separated, locally finitely presented structure
 morphism and an actual section satisfying the section equation. Its Cartesian
@@ -10,7 +10,7 @@ the original section. The base ring and schemes lie in an arbitrary universe.
 `NoetherianSectionModel` packages these data; its subalgebra is Noetherian because
 it is finitely generated over the integers. `nonempty_noetherianSectionModel`
 constructs such a model for every morphism and section satisfying the stated
-hypotheses. The model does not assert geometric reducedness, and this unit does
+hypotheses. The model does not assert geometric reducedness, and this module does
 not assert openness of the relative component subset.
 
 The proof uses the already published Anthropic FLT scheme-descent, flat-descent,

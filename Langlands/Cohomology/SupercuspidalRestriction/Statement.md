@@ -1,8 +1,5 @@
 # Restriction of supercuspidal representations to a subgroup with compact center
 
-Author: Worker 3, for the Harris and Berkovich cohomological
-theorem-statement framework (task `b91b0934-0122-4c05-b359-4e7ed64bbe3d`).
-
 The published `SupercuspidalExt.CompactInductionSupercuspidalExtVanishingStatement`
 concludes `Ext^{n+1}_G(c-Ind_{G₀}^G V, π) = 0`. Its hypothesis is that the
 restriction of `π` to the open subgroup `G₀` is a finite direct sum of
@@ -49,8 +46,8 @@ propositions. None of the propositions is proved here.
   the `p`-adic norm to `F`. The ring of integers is `{‖x‖ ≤ 1}`, so its units
   are the elements of norm one. `mem_unitDeterminantSubgroup` states this
   description and is proved by `Iff.rfl`.
-- `GeneralLinear.IsSupercuspidal` is the Library's supercuspidality of Worker
-  23: admissibility, and vanishing of the Jacquet coinvariants for every
+- `GeneralLinear.IsSupercuspidal` is the Library's supercuspidality, from
+  `Langlands.Representation.Classification.Supercuspidal`: admissibility, and vanishing of the Jacquet coinvariants for every
   proper block parabolic and every conjugate of its unipotent radical.
 
 ## The propositions
@@ -79,20 +76,25 @@ The theorem `glSupercuspidalRestriction_of_compactModCenter` proves that
 It applies the general statement at `H = G°`, with
 `unitDeterminantSubgroup_normal`. The general statement at `GL_n(F)` needs
 `TotallyDisconnectedSpace` and `SigmaCompactSpace` instances for the canonical
-topology. Instance search finds neither in the Library (checked in the
-private test below), so the theorem takes them as instance arguments. Both
+topology. Instance search finds neither in the Library (checked in a
+separate test below), so the theorem takes them as instance arguments. Both
 properties are proved in the Library, but not as instances. The public theorem
 `PadicField.TopologicalData.generalLinearSigmaCompactSpace` in
 `Langlands.Group.GL.CountabilityProof`, applied to `F.canonicalTopologicalData`,
 gives σ-compactness for this topology, so a caller can supply that argument
-with it. Total disconnectedness is proved only by private theorems named
+with it. Total disconnectedness is proved by private theorems named
 `generalLinearTotallyDisconnected`, in
 `Langlands.Representation.CuspidalSupport.LeviAdmissibleFactorizationProof` and
 `Langlands.Representation.Tensor.FactorMatchingProof`, for the matrix-unit
 topology of a supplied `F.TopologicalData`, which is the canonical topology
 when that data is `F.canonicalTopologicalData`. Private declarations cannot be
-used outside their modules, and a search of the Library's Lean files found no
-public theorem stating total disconnectedness of `GL_n(F)`. Because the
+used outside their modules. The public theorem
+`Langlands.LocalFieldTopology.generalLinear_totallyDisconnectedSpace` in
+`Langlands.Group.GL.LocalFieldTopology`, applied to `F.Carrier` with the
+topology, valuative relation and local-field structure of
+`F.canonicalTopologicalData`, gives total disconnectedness for the canonical
+topology; `Langlands.BaseChange.SigmaLiftOnSupercuspidals` uses it in this way.
+Because the
 theorem has these extra arguments, the `GL_n` restriction statement is also
 stated separately.
 
@@ -207,12 +209,12 @@ supercuspidal, the higher Ext's vanish".
 Direct project imports, in Library commit
 `c5a40b0f54880b1825ea05214c2b066f68bfc156`:
 
-| Module | Author | Lean SHA-256 |
-| --- | --- | --- |
-| `Langlands.Cohomology.SupercuspidalExt.Statement` | Worker 3 | `f7e3f1d1ec7bf54178be094a654eee3a7619c4d2347a5462288bf266e4d450fd` |
-| `Langlands.Representation.Classification.Supercuspidal` | Worker 23 | `c13ba8ffad11de2c3b2861c4afc385be2663b3e76963d5e89807ba92c753f9f1` |
-| `Langlands.Representation.Classification.FixedCentralSplittingStatement` | Worker 19 | `48ace7be0156943408440f4e6f1adcd7af9399169ae86c5810b144b672c2b40a` |
-| `Langlands.Group.GL.Padic` | Worker 6 | `803a2561ddc85a54c7846a421d37ed5dc61b8974157b02b72c26bc41d96e1722` |
+| Module | Lean SHA-256 |
+| --- | --- |
+| `Langlands.Cohomology.SupercuspidalExt.Statement` | `f7e3f1d1ec7bf54178be094a654eee3a7619c4d2347a5462288bf266e4d450fd` |
+| `Langlands.Representation.Classification.Supercuspidal` | `c13ba8ffad11de2c3b2861c4afc385be2663b3e76963d5e89807ba92c753f9f1` |
+| `Langlands.Representation.Classification.FixedCentralSplittingStatement` | `48ace7be0156943408440f4e6f1adcd7af9399169ae86c5810b144b672c2b40a` |
+| `Langlands.Group.GL.Padic` | `803a2561ddc85a54c7846a421d37ed5dc61b8974157b02b72c26bc41d96e1722` |
 
 From them the module uses `restriction` and `HasCompactCoefficients`,
 `GeneralLinear.IsSupercuspidal`, `HasCompactSmoothCoefficientsModCenter`, and
@@ -221,17 +223,17 @@ Hausdorff and local compactness certificates. It also uses
 `PadicField.canonicalNormedField` and `PadicField.canonicalNorm` from
 `Langlands.LocalField.Definitions`, and Mathlib's `normHom`.
 
-The environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`: Lean 4.34.0,
+The environment is Lean 4.34.0,
 Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
 
-Check `08d21021-e92a-4803-9623-a57cabc4602c` built this Lean file from a draft directory against
-the published imports, with no errors or warnings. Check `cd7e9f34-770f-433f-a9f9-33b5d47eb8e1` built the
-same file with Lake from the workspace, against Library `c5a40b0f`, with no
+A first check built this Lean file against its imports, with no errors or
+warnings. A second check built the
+same file with Lake against Library `c5a40b0f`, with no
 errors or warnings. Both inspected `GLSupercuspidalRestrictionStatements` as a
 `Prop`-valued definition, depending only on `propext`, `Classical.choice` and
 `Quot.sound`.
 
-Check `0f3f72aa-4849-4471-80b8-f132e7f2c276` compiled a test file against
+A third check compiled a test file against
 the same Lean file, with no errors or warnings, and its output was read. It
 printed the subgroup and the five propositions with universes, and the types
 of the three theorems. All binders listed above are present, and all groups
@@ -240,13 +242,13 @@ the three standard axioms. The test file also proves, by `Iff.rfl`, that
 `GLHarishChandraStatement F n` unfolds to the Library's admissibility and
 Jacquet-vanishing conditions for the canonical topology. It elaborates the
 conjunction at `PadicField.rational p`, that is `ℚ_p`, and checks that the
-identity matrix lies in `G°`. Check `d24fbaf0-d664-4e59-ad07-f15d3d436715` is
-a private test in which instance search failed to find
+identity matrix lies in `G°`. A fourth check is
+a separate test in which instance search failed to find
 `TotallyDisconnectedSpace` and `SigmaCompactSpace` for the canonical topology
 of `GL_n(F)`, and `TotallyDisconnectedSpace` for `F`. These checks establish
 well-formed statements. They do not prove any of the propositions.
 
-Check `9ee26d36-77e2-4e60-8169-592663d5eb35`, a later private test with no
+A fifth check, a separate test with no
 errors or warnings, elaborated
 `F.canonicalTopologicalData.generalLinearSigmaCompactSpace n` as a proof of
 `SigmaCompactSpace (GeneralLinear n F.Carrier)` for

@@ -1,7 +1,5 @@
 # Finite-field normality from actual kernel and centralizer geometry
 
-Worker 1556.
-
 This internal assembly retains explicit geometric presentations and two global
 proof inputs. It does not prove the unconditional
 `FiniteFieldSolvableEnvelopeNormalityStatement`.

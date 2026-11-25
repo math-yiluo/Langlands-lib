@@ -1,9 +1,5 @@
 # Recovery of the untwisted inducing tensor at a fixed regular parameter
 
-Authors: Worker 19 and Worker 47. Worker 47 supplied the exact consumer interface
-in his shared conditional uniqueness assembly; Worker 19 prepared this separate
-statement and its original-source correspondence.
-
 `Langlands.GLRegularLanglandsTensorRecoveryStatement` is a proposition definition.
 It isolates the recovery of the inducing representation after the standard
 parabolic and real parameter have already been identified. It supplies no proof.
@@ -51,8 +47,8 @@ central twist. The exponents need not be individually positive or sum to zero.
 The retained Silberger article was previously read in full. For this statement,
 printed pp.97 and 101–104 were reread, and Proposition 6.1 and its concluding
 recovery argument on pp.102–103 were checked in the page images. Kudla's
-pp.367–368 and 372–374 were reread directly. No source-specific errata file
-was present in the current Library.
+pp.367–368 and 372–374 were reread directly. The Library has no
+source-specific errata file for either source.
 
 | Original source | Exact location | Use |
 | --- | --- | --- |
@@ -76,7 +72,7 @@ inner-induction support condition and then Proposition 5.7 to recover the
 tempered class. Proposition 5.7 has specific inner cuspidal support and
 intermediate discrete-series hypotheses; this pair does not discard them
 from a claimed direct transcription. The relative statements encoding that
-route remain separate work. In particular, the constituent restriction
+route are stated separately. In particular, the constituent restriction
 identified in `notes/jacquet/silberger-lemma53-scope.md` still governs use of
 Lemma 5.3 in that route.
 
@@ -117,5 +113,4 @@ The proposition has no proof here. A proof used to assemble full uniqueness
 must establish this recovery independently of full data uniqueness to avoid
 circular reasoning. Neither the numerical parameter comparison, the detailed
 relative comparisons and cosocle multiplicities, semistandard conjugacy, nor
-maximal-cone exhaustion is supplied by this pair. Publishing this target
-therefore does not complete the broad Jacquet/exponent statement task.
+maximal-cone exhaustion is supplied by this pair.

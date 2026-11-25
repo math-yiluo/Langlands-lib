@@ -110,6 +110,7 @@ theorem baseChangeSplitRigidifier_hom (e : QuasiIsogeny G G') (c : ℚ_[p]ˣ) :
       comp (rationalSplitBaseChangeIso (S := S) hExact G).hom
         (splitRigidifier hExact (e.baseChange (S := S)) c).hom := by
   simp only [splitRigidifier_hom, QuasiIsogeny.baseChange_hom, baseChange_inv]
+  dsimp only [splitWithDual]
   exact baseChangeSplitBlock_square (S := S) (G := G) (G' := G') hExact e.hom e.inv (c : ℚ_[p])
 
 end Langlands.PDivisibleGroup

@@ -1,10 +1,5 @@
 # The original action on actual compatible module families
 
-Authors: Worker 6 (construction and intrinsic proofs) and Worker 1151
-(source and interface audit, additional interface checks, and submission).
-This is the focused definition unit for task
-`ec7d7a35-8617-452b-a4ae-5bcdfbe6711f` in the whole Renard book program.
-
 The governing source is David Renard, *Représentations des groupes réductifs
 p-adiques*, French version dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
@@ -15,8 +10,8 @@ families appear in I.1.4, printed p.9/PDF15. On printed p.10/PDF16,
 Renard gives their Hom description, the original left action
 `(a • φ)(b) = φ(b*a)`, and its compatibility with the original module.
 The canonical vector map and recovery of idempotent-fixed elements are
-also described in I.1.5 on that page. Worker 1151 read all of these
-original pages and verified the registered SHA256. The supplementary
+also described in I.1.5 on that page. All of these
+original pages were read and the registered SHA256 was verified. The supplementary
 errata for the earlier printed edition, registered as
 `renard-2010-corrections-complements`, SHA256
 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
@@ -102,5 +97,5 @@ the constructed action installed.
 
 The exact Hom comparison theorem, topological completion, completion
 functor, nondegenerate-part equivalence, adjunction and submodule closure
-are separate units. The idempotent formula alone does not assert those
+are separate results. The idempotent formula alone does not assert those
 results or that the constructed module is nondegenerate.

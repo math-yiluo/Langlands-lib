@@ -1,6 +1,6 @@
 # Renard VI.8.4 from uniform detection and a global coefficient family
 
-Worker 452. This module is an internal step of the proof of Renard,
+This module is an internal step of the proof of Renard,
 *Représentations des groupes réductifs p-adiques* (9 July 2026), VI.8.4
 Proposition, printed pp. 192–193, PDF pp. 198–199. The registered source is
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256

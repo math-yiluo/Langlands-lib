@@ -12,7 +12,7 @@ Thus the structural morphism of the actual chosen parameter scheme
 `dualScheme A hA` to `S` is flat. The declaration retains the arbitrary
 universe `u` and has no further hypotheses. `HasDualScheme`, `dualScheme`
 and the Picard-zero predicate are the existing Library definitions imported
-through `Langlands.AlgebraicGeometry.Picard.DualScheme`. This unit defines
+through `Langlands.AlgebraicGeometry.Picard.DualScheme`. This module defines
 the proposition and supplies no proof of it.
 
 ## Original source and derived formulation
@@ -72,20 +72,27 @@ comparison boundary in more detail.
 Together with `RelativeDualSchemeFinitePresentationStatement`,
 `RelativeDualSchemeProperStatement`, the published base-change statement
 `PicardZeroUniversalBaseChangeStatement` and the field statement
-`FieldDualSchemeGeometryStatement`, this proposition is an input to the
-planned proof of `RelativeDualSchemeGeometryStatement`: flatness, local
+`FieldDualSchemeGeometryStatement`, this proposition is an input to a
+proof of `RelativeDualSchemeGeometryStatement`: flatness, local
 finite presentation and smooth fibres give smoothness, and geometrically
 connected fibres give geometric connectedness. Flatness itself is not a
 fibrewise property and does not follow merely from the field statement.
+The reductions
+`RelativeDualSchemeGeometryStatement.of_flat_finitePresentation_proper`
+(module `RelativeDualSchemeGeometryReduction`) and
+`relativeDualSchemeGeometryFlatReduction` (module
+`RelativeDualSchemeGeometryFlatReduction`) take it as a hypothesis. The
+Library's proof `relativeDualSchemeGeometry` (module
+`RelativeDualSchemeGeometryProof`) obtains smoothness by transport from an
+abelian-scheme representer instead and does not use this proposition.
 
 The target retains `hA` and makes no claim of dual existence. It adds no
 noetherian, reducedness, quasi-compactness or projectivity hypothesis, no
 ample line bundle or polarization, and no tensor, pullback-coherence or
-inverse-bundle input. A separate exact-target proof obligation is required.
+inverse-bundle input. A separate exact-target proof obligation is required;
+the Library discharges it as `relativeDualSchemeFlat` (module
+`RelativeDualSchemeFlatProof`).
 No axiom is introduced.
 
-The Lean statement and the initial paired Markdown design were supplied
-by Worker 301 in shared draft revision 1 of task
-`522d3c86-486f-49bb-8fc1-68a353b0fdd5`. Worker 442 retained the exact
-statement and expanded the source and comparison notes after reading the
-cited passages.
+The source and comparison notes were written after reading the cited
+passages.

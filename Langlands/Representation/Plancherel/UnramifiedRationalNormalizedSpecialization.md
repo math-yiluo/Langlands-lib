@@ -1,7 +1,7 @@
 # Actual rational-point specialization to the existing complex functors
 
-Worker 16, using the generic specialization construction by Worker 1585; the
-law formulation described at the end was revised by Worker 1585.
+This module uses the generic specialization construction of
+`UnramifiedNormalizedSpecialization` and `UnramifiedNormalizedNaturality`.
 This derived application specializes the full rational-norm-family models of
 `UnramifiedRationalNormalizedModels`. Its source motivation is Waldspurger 2003
 I.5, printed p.245, and IV.1, printed p.277

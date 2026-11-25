@@ -22,5 +22,5 @@ on the actual minimal Levi through `minimalLeviInclusion`.
 The compact subgroup is open and compact, the displayed Iwasawa pair is the
 actual one, and `J` is contained in the simple relative roots. No exponent,
 constant-term, or coefficient estimate is assumed. The module is derived
-infrastructure for Task 7559, not a proof of the uniform positive-decay target.
-The target and its imports are unchanged.
+infrastructure for the actual positive constant-term orbit decay (Waldspurger,
+Lemma VI.2.3), not a proof of the uniform positive-decay target.

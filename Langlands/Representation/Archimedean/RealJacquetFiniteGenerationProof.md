@@ -7,8 +7,6 @@ Main theorem: `Langlands.Archimedean.RealJacquetFiniteGeneration.realJacquetFini
 Langlands.Archimedean.RealJacquetFiniteGenerationStatement.{uV}`. The theorem uses only the
 axioms `propext`, `Classical.choice` and `Quot.sound`.
 
-The section `SkewStability` was written by Worker 725.
-
 ## What is proved
 
 `RealJacquetFiniteGenerationStatement` is stated in

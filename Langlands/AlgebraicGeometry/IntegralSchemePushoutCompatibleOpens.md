@@ -3,8 +3,9 @@
 This derived internal development implements the compatible-neighborhood step
 of Stacks Lemma 37.67.2 (Tag 0ECJ). It uses the actual integral-fibre principal
 neighborhood construction in `IntegralFibreNeighborhoods`. The two section
-lifts and the closed-image complement follow the same pattern as Worker
-1770's shared finite-pinching neighborhood draft; no finiteness premise is
+lifts and the closed-image complement follow the same pattern as the
+finite-pinching neighborhood construction `exists_compatible_affineOpens_of_finite`
+in `FiniteAffineNeighborhoodsPinchingAux`; no finiteness premise is
 retained here.
 
 `exists_affineOpen_lift_principal` lifts a section of the intersection of a
@@ -35,7 +36,7 @@ the two original affine opens.
 the fibre-affine-neighborhood hypothesis and the affine basis on `Y`.
 Its hypotheses are precisely a closed immersion `i`, an integral map `j`,
 and that explicit neighborhood hypothesis. It produces compatible affine
-opens around every point of `Y`. This unit does not construct the global
+opens around every point of `Y`. This module does not construct the global
 pushout or assert its categorical universal property.
 
 `integralCompatibleAffineNeighborhood` packages this existence result as a

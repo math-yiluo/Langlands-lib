@@ -1,6 +1,6 @@
 # The compact part splits off exactly under (KF): statement
 
-Author: Worker 6. Module `Langlands.Representation.Compact.CompactSplittingCriterionStatement`, namespace `Langlands.Renard.CompactRepresentation`.
+Module `Langlands.Representation.Compact.CompactSplittingCriterionStatement`, namespace `Langlands.Renard.CompactRepresentation`.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*, French edition dated 9 July 2026, IV.1.7, Proposition and proof, printed pp.95–96 / PDF pp.101–102, with the notation of IV.1.6 (printed p.94 / PDF p.100) and the standing hypotheses of IV.1.3–IV.1.4 (`G` unimodular and countable at infinity). The registered source ID is `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 
@@ -10,7 +10,7 @@ The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 
 ## The Lean statement
 
-`CompactSplittingCriterionStatement` is a statement unit: nothing is proved.
+`CompactSplittingCriterionStatement` is a statement: nothing is proved.
 
 The group binders are those of the published Bernstein–Zelevinsky statements `CompactCoefficientSplittingStatement` and `CompactCoefficientProjectorStatement`. `G : Type u` is a Hausdorff, locally compact, totally disconnected topological group that is `SigmaCompactSpace` (countable at infinity). It has its Borel structure and a regular Haar measure `μ` that is also right invariant, which expresses unimodularity. The measure does not occur in the body.
 
@@ -29,4 +29,4 @@ The published `Renard.IsCategoryDecomposition` is the A.IX notion `𝓜 = ∏ᵢ
 
 - The statement is posed at a single carrier universe `v`. This loses nothing. For `G` countable at infinity, irreducible smooth representations and the compactly induced representation `ind_K^G 1` used in Renard's proof have countable dimension, so they have isomorphic copies at every carrier universe. This remark is not formalized.
 - The more elementary decompositions displayed before the proposition (`M(G) = M(G)_τ × [M(G) \ τ]` for one or finitely many irreducible compact `τ`, and `M(G)_c = ∏_τ M(G)_τ`) are related to the published `CompactCoefficientSplittingStatement` and `CompactCoefficientProjectorStatement`. They are not restated here.
-- The proof (the projector `ρ(e_c) = ∑_τ ρ(e_τ)` under (KF), and conversely the finite length of the compact part of `ind_K^G 1`) is not formalized here.
+- The proof (the projector `ρ(e_c) = ∑_τ ρ(e_τ)` under (KF), and conversely the finite length of the compact part of `ind_K^G 1`) is not formalized here; the statement is proved by `compactSplittingCriterion` in `CompactSplittingCriterionProof`.

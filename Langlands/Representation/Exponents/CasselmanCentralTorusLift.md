@@ -1,7 +1,5 @@
 # Split-component lifts modulo the compact norm kernel
 
-Author: Worker 1682.
-
 This internal supporting module works with a supplied compatible
 `ParabolicRootPresentation`. It does not assert that presentations exist
 or prove Casselman's criterion.

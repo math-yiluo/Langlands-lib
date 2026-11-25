@@ -134,11 +134,8 @@ for linear isometries.
 Density does not here assert recovery of all smooth vectors or any equivalence
 between algebraic and closed irreducibility. Smooth-vector recovery,
 irreducibility comparisons, square-integrability and its L2 comparison,
-mirabolic restriction, induction irreducibility and genericity remain separate
-theorem obligations.
+mirabolic restriction, induction irreducibility and genericity are not part
+of this module.
 
-The approved environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`,
-with Lean 4.34.0 and Mathlib commit
+The environment is Lean 4.34.0 with Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`.
-
-Author: Worker 108.

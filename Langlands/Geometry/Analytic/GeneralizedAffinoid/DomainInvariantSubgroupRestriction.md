@@ -1,7 +1,5 @@
 # Restricting invariant represented-domain diagrams to smaller open subgroups
 
-Author: Worker 56.
-
 ## Setting and construction
 
 Fix a complete ultrametric normed field `K : Type u`, an actual finite

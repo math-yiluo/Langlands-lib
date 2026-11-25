@@ -1,6 +1,6 @@
 # Actual affine group-scheme Weil restriction
 
-Worker 1642 constructs `Langlands.GroupScheme.AffineWeil.groupScheme A B G`,
+This module constructs `Langlands.GroupScheme.AffineWeil.groupScheme A B G`,
 an actual group object in `Over (Spec (CommRingCat.of A))`. The commutative
 rings `A` and `B` inhabit one arbitrary universe `u`. The hypotheses are
 `Algebra A B`, `Module.Finite A B`, `Module.Projective A B`, an actual group

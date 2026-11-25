@@ -59,6 +59,6 @@ the actual functions on all of `GL_n(ℝ)`, since both outputs belong to
 the same standard module `K(gs)`. Linear-map extensionality gives the
 stated composite equality.
 
-This unit supplies an interchange rule once the four map data have been
+This module supplies an interchange rule once the four map data have been
 constructed. It does not construct the GL₄ block-exchange maps, prove a
 landing theorem, or establish the full induced-pair filtration.

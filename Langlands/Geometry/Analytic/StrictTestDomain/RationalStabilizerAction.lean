@@ -40,15 +40,15 @@ def stabilizerInclusion (d : RationalData K P) (g : locusStabilizer d) :
 /-- Transport to the moved quotient and restrict back to the original quotient. -/
 def stabilizerSectionMap (d : RationalData K P) (g : locusStabilizer d) :
     BoundedAlgHom K d.algebra d.algebra :=
-  (stabilizerInclusion d g).restriction.comp (d.comparison (g : Aut P).hom)
+  (stabilizerInclusion d g).restriction.comp (d.comparison (g : Aut P).asIso.hom)
 
 @[simp] theorem stabilizerSectionMap_comp_baseMap
     (d : RationalData K P) (g : locusStabilizer d) :
-    (stabilizerSectionMap d g).comp d.baseMap = d.baseMap.comp (g : Aut P).hom := by
+    (stabilizerSectionMap d g).comp d.baseMap = d.baseMap.comp (g : Aut P).asIso.hom := by
   rw [stabilizerSectionMap, BoundedAlgHom.comp_assoc, d.comparison_comp_baseMap,
     ← BoundedAlgHom.comp_assoc]
   change ((stabilizerInclusion d g).restriction.comp
-    ((g : Aut P) • d).baseMap).comp (g : Aut P).hom = _
+    ((g : Aut P) • d).baseMap).comp (g : Aut P).asIso.hom = _
   rw [RationalData.Inclusion.restriction_comp_baseMap]
 
 @[simp] theorem stabilizerSectionMap_one (d : RationalData K P) :
@@ -70,33 +70,36 @@ theorem stabilizerSectionMap_mul (d : RationalData K P) (g h : locusStabilizer d
 /-- The actual bounded automorphism of the fixed rational section algebra. -/
 def stabilizerSectionAut (d : RationalData K P) (g : locusStabilizer d) :
     Aut d.algebra where
-  hom := stabilizerSectionMap d g
-  inv := stabilizerSectionMap d g⁻¹
-  hom_inv_id := by
-    change (stabilizerSectionMap d g⁻¹).comp (stabilizerSectionMap d g) = _
-    rw [← stabilizerSectionMap_mul, inv_mul_cancel, stabilizerSectionMap_one]
-    rfl
-  inv_hom_id := by
-    change (stabilizerSectionMap d g).comp (stabilizerSectionMap d g⁻¹) = _
-    rw [← stabilizerSectionMap_mul, mul_inv_cancel, stabilizerSectionMap_one]
-    rfl
+  asIso :=
+  { hom := stabilizerSectionMap d g
+    inv := stabilizerSectionMap d g⁻¹
+    hom_inv_id := by
+      change (stabilizerSectionMap d g⁻¹).comp (stabilizerSectionMap d g) = _
+      rw [← stabilizerSectionMap_mul, inv_mul_cancel, stabilizerSectionMap_one]
+      rfl
+    inv_hom_id := by
+      change (stabilizerSectionMap d g).comp (stabilizerSectionMap d g⁻¹) = _
+      rw [← stabilizerSectionMap_mul, mul_inv_cancel, stabilizerSectionMap_one]
+      rfl }
 
 /-- The locus stabilizer acts by bounded automorphisms on a single quotient. -/
 def stabilizerSectionAction (d : RationalData K P) :
     locusStabilizer d →* Aut d.algebra where
   toFun := stabilizerSectionAut d
   map_one' := by
+    apply CategoryTheory.Aut.ext
     apply CategoryTheory.Iso.ext
     exact stabilizerSectionMap_one d
   map_mul' g h := by
+    apply CategoryTheory.Aut.ext
     apply CategoryTheory.Iso.ext
     exact stabilizerSectionMap_mul d g h
 
 /-- Each section operator extends the forward base-algebra operator. -/
 @[simp] theorem stabilizerSectionAction_baseMap
     (d : RationalData K P) (g : locusStabilizer d) (a : P) :
-    (stabilizerSectionAction d g).hom.toAlgHom (d.baseMap a) =
-      d.baseMap ((g : Aut P).hom.toAlgHom a) :=
+    (stabilizerSectionAction d g).asIso.hom.toAlgHom (d.baseMap a) =
+      d.baseMap ((g : Aut P).asIso.hom.toAlgHom a) :=
   congrArg (fun f : BoundedAlgHom K P d.algebra => f a)
     (stabilizerSectionMap_comp_baseMap d g)
 

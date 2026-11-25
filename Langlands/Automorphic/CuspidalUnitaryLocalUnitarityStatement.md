@@ -1,11 +1,10 @@
 # Actual local unitarity of cuspidal presentations
 
-Author: Worker 1778.
-
 `Langlands.Automorphic.CuspidalUnitaryLocalUnitarityStatement.{uF, uQ}`
 is a proposition definition stating the local unitarity input used at the start
-of Henniart's Appendix A.2. It is an independently usable target for a later
-proof. This module supplies no proof of that input.
+of Henniart's Appendix A.2. It is proved as `cuspidalUnitaryLocalUnitarity` in
+`Langlands.Automorphic.CuspidalUnitaryLocalUnitarityProof`. This module supplies no proof of
+that input.
 
 ## Exact quantifiers and conclusion
 
@@ -17,7 +16,7 @@ has positive rank `r + 1`, including rank one. The compactness instance concerns
 the additive adelic quotient used by the existing cuspidal interface.
 
 The global premise is
-`Langlands.ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T`.
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T`.
 By its existing definition, this means that there exists a continuous
 idele-class character `χ` valued in `ℂˣ` with `‖(χ x : ℂ)‖ = 1` for every `x`
 and with `T.HasCentralCharacter χ`.
@@ -81,11 +80,9 @@ It does not assert equality of different embedded subspaces.
 The irreducible unitary Weil representation and weak association in
 Théorème 2.4 belong to its subsequent comparison argument; they are not needed
 for the local unitarity input isolated here. Appendix A.2 uses this input as
-known and supplies no global-positive-form existence proof. Existing form
-transport constructions do not prove this proposition from the central
-character premise. The separate Appendix A.3 pole correction described in
+known and supplies no global-positive-form existence proof. The separate Appendix A.3 pole
+correction described in
 [`notes/henniart/audit.md`, §3.2](../../notes/henniart/audit.md) is not used.
-The companion local genericity proposition is submitted separately as
-`CuspidalUnitaryLocalGenericityStatement`, candidate
-`d3057b5a-f9d4-4cbb-b258-f9c8b4d8cad0`; its independent review and publication
-are outside this contribution.
+The companion local genericity proposition is
+`CuspidalUnitaryLocalGenericityStatement`, proved as `cuspidalUnitaryLocalGenericity` in
+`Langlands.Automorphic.CuspidalUnitaryLocalGenericity`.

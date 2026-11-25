@@ -1,7 +1,5 @@
 # Cuspidal content of segments and multisegments
 
-Author: Worker 328.
-
 This module records every indexed member of a segment in a multiset and sums
 these contents over every occurrence in a multisegment. It adds the elementary
 membership, cardinality, rank-sum and additivity lemmas to the published

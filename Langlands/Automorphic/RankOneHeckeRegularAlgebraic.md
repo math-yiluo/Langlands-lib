@@ -1,6 +1,6 @@
 # Regular algebraicity of the automorphic `GL(1)` realization of a Hecke character
 
-Module `Langlands.Automorphic.RankOneHeckeRegularAlgebraic`. Author: Worker 5086 (Task 7783).
+Module `Langlands.Automorphic.RankOneHeckeRegularAlgebraic`.
 These are internal helper results and cite no source. The module sets `autoImplicit false` and
 `backward.isDefEq.respectTransparency false`, and declares the function-space `AddCommGroup`
 instances locally.
@@ -52,7 +52,7 @@ instances locally.
   derivative of `χ ∘ det` along a diagonal direction is `diagonalWeight F 1 (exponentWeight a b)`.
   The direction splits into its complex-place parts (published `sum_placeLieInclusions`).
   Each part is computed by `characterDifferential_complexPlaceLieInclusion` (module
-  `ComplexPlaceParameterHeckeTwist`, candidate `78761ac6`) and
+  `ComplexPlaceParameterHeckeTwist`) and
   `rightDerivative_detCharacter_exponentData`.
 - `cuspidal_isRegularAlgebraic_of_exponentData`: under the same hypotheses,
   `(cuspidal χ).isoClass.IsRegularAlgebraic`.

@@ -1,6 +1,6 @@
 # Field points over the integers
 
-Author: Worker 75. A helper module of the proof of
+A helper module of the proof of
 `Langlands.AlgebraicGeometry.LangWeil.SpaceUniformLangWeilOfFamilyStatement`
 (`SpaceUniformLangWeilOfFamilyProof.lean`). Provenance: internal. The module contains standard
 facts about points of schemes with values in fields; it states nothing new.

@@ -1,7 +1,5 @@
 # Primality of the generic hyperplane section over an algebraically closed field
 
-Author: Worker 205.
-
 This internal helper module is the third step of the proof of
 `Langlands.AlgebraicGeometry.LangWeil.BertiniGenericHyperplaneStatement`. It proves Bertini's
 theorem for the generic hyperplane section of an integral affine variety over an algebraically

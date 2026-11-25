@@ -1,6 +1,6 @@
 # Exactness of actual dynamic normalized induction
 
-Worker 117 proves
+This module proves
 `Langlands.Aubert.General.DynamicInductionExactnessStatement.{u,uV}` as the
 closed theorem `dynamicInductionExactness`. Its binders are exactly those of
 `DynamicInductionFiniteLengthStatement`: every nonarchimedean local field,
@@ -46,9 +46,9 @@ This is an internal derivation from the listed constructions and proved
 exactness theorem; it introduces no external structural assertion or change
 of topology. In particular it assumes no comparison of normalizations,
 unimodularity, admissibility, classification, geometric lemma or finite-length
-preservation theorem. The separate irreducible-input result is still required
-to prove the task's full finite-length target.
+preservation theorem. The separate irreducible-input result is also required
+to prove the full finite-length target `DynamicInductionFiniteLengthStatement`.
 
-The proof imports its published statement and construction dependencies
-unchanged. This pair supplies the separate proof of dynamic exactness and its
+The proof imports its published statement and construction dependencies.
+This module supplies the separate proof of dynamic exactness and its
 specialized continuity and closedness helpers.

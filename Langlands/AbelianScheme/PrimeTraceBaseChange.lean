@@ -44,8 +44,9 @@ variable {S : Scheme.{u}} {Ω Ω' : Type u} [Field Ω] [Field Ω']
 theorem rationalTransport_homMap
     (e : fiberFunctor s hs ≅ fiberFunctor t ht) (f : End0 A)
     (x : Rational A (Over.mk s) p) :
-    rationalTransport htor A p hu e (rationalHomMap (Over.mk s) p f x) =
-      rationalHomMap (Over.mk t) p f (rationalTransport htor A p hu e x) := by
+    rationalTransport htor A p hu e (rationalHomMap (Over.mk s) p f.asHom x) =
+      rationalHomMap (Over.mk t) p f.asHom (rationalTransport htor A p hu e x) := by
+  generalize f.asHom = f
   induction f using TensorProduct.inductionOn with
   | tmul q f =>
       simp only [rationalHomMap_tmul, LinearMap.smul_apply]
@@ -60,11 +61,11 @@ theorem primeEndomorphismTraceAt_path
     primeEndomorphismTraceAt A (Over.mk s) p f =
       primeEndomorphismTraceAt A (Over.mk t) p f := by
   let E := rationalTransport htor A p hu e
-  have he : E.conj (rationalHomMap (Over.mk s) p f) =
-      rationalHomMap (Over.mk t) p f := by
+  have he : E.conj (rationalHomMap (Over.mk s) p f.asHom) =
+      rationalHomMap (Over.mk t) p f.asHom := by
     apply LinearMap.ext
     intro x
-    change E (rationalHomMap (Over.mk s) p f (E.symm x)) = _
+    change E (rationalHomMap (Over.mk s) p f.asHom (E.symm x)) = _
     rw [rationalTransport_homMap, E.apply_symm_apply]
   exact (LinearMap.trace_conj' _ E).symm.trans
     (congrArg (LinearMap.trace ℚ_[p] _) he)
@@ -87,7 +88,8 @@ theorem primeEndomorphismTraceAt_geometric {S : Scheme.{u}} [ConnectedSpace S]
 /-- The prime trace on the actual pullback at the mapped test object. -/
 theorem primeEndomorphismTraceAt_baseChange {S S' : Scheme.{u}} (b : S' ⟶ S)
     (A : AbelianScheme S) (T : Over S') (p : ℕ) [Fact p.Prime] (f : End0 A) :
-    primeEndomorphismTraceAt ((baseChange b).obj A) T p (rationalBaseChangeHom b f) =
+    primeEndomorphismTraceAt ((baseChange b).obj A) T p
+        (CategoryTheory.End.of (rationalBaseChangeHom b f.asHom)) =
       primeEndomorphismTraceAt A ((Over.map b).obj T) p f :=
   Tate.PrimeAdic.trace_rationalHomMap_baseChange b A T p f
 
@@ -97,14 +99,15 @@ theorem primeEndomorphismTrace_baseChange
     {k K : Type u} [Field k] [IsAlgClosed k] [Field K] [IsAlgClosed K]
     (b : Spec (.of K) ⟶ Spec (.of k)) (A : AbelianScheme (Spec (.of k)))
     (p : ℕ) [Fact p.Prime] (hp : (p : k) ≠ 0) (f : End0 A) :
-    primeEndomorphismTrace ((baseChange b).obj A) p (rationalBaseChangeHom b f) =
+    primeEndomorphismTrace ((baseChange b).obj A) p
+        (CategoryTheory.End.of (rationalBaseChangeHom b f.asHom)) =
       primeEndomorphismTrace A p f := by
   have hunit : IsUnit (p : Γ(Spec (.of k), ⊤)) := by
     simpa using (isUnit_iff_ne_zero.mpr hp).map (Scheme.ΓSpecIso (.of k)).inv.hom
   exact (primeEndomorphismTraceAt_baseChange b A (Over.mk (𝟙 _)) p f).trans
     (primeEndomorphismTraceAt_geometric A ((𝟙 _) ≫ b) (𝟙 _) p hunit f)
 
-local instance : Fact (Nat.Prime 2) := ⟨Nat.prime_two⟩
+private local instance : Fact (Nat.Prime 2) := ⟨Nat.prime_two⟩
 
 /-- Conditional on the separately owned rational trace comparison, the fixed
 geometric trace is invariant under extension between geometric fields. -/
@@ -114,7 +117,8 @@ theorem geometricEndomorphismTrace_baseChange_of_comparison
     [Field K] [IsAlgClosed K] [CharZero K]
     (b : Spec (.of K) ⟶ Spec (.of k)) (A : AbelianScheme (Spec (.of k)))
     (f : End0 A) :
-    geometricEndomorphismTrace ((baseChange b).obj A) (rationalBaseChangeHom b f) =
+    geometricEndomorphismTrace ((baseChange b).obj A)
+        (CategoryTheory.End.of (rationalBaseChangeHom b f.asHom)) =
       geometricEndomorphismTrace A f := by
   apply (algebraMap ℚ ℚ_[2]).injective
   rw [(hcomparison K ((baseChange b).obj A) 2).2.2,

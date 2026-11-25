@@ -7,7 +7,7 @@ proof.
 
 The arithmetic inputs are actual local Weil–Deligne pair classes and a
 representative of their tensor class. The two arithmetic polynomials are
-the published determinant polynomials on the inertia invariants in the
+the existing determinant polynomials on the inertia invariants in the
 monodromy kernel, for that representative and its actual dual, at the
 geometric Frobenius. No new class-level Euler polynomial is defined.
 The supplied common-closure reciprocity family, local-constant system,
@@ -27,7 +27,7 @@ measure. The arithmetic condition is imposed directly on the actual
 tensor determinant polynomials. The adapter does not infer either
 condition from gamma equality. Temperedness, essential unitarity,
 supercuspidality and non-juxtaposition can supply sufficient conditions
-through the separately owned GL and Weil pole-region branches; proving
+through the separate GL and Weil pole-region branches; proving
 those analytic inputs remains outside this adapter.
 
 The common-gamma premise retains both existence of a self-dual measure
@@ -43,7 +43,7 @@ the cyclic case* (1986), §4.4, printed p.159, registered as
 `henniart-1986-cyclic`. The generic algebraic input is the existing
 `Langlands.Global.GammaSeparationStatement`; this adapter does not
 replace or modify that target. Its conditional application to the
-published actual factor interfaces is derived content. The spectral
+existing actual factor interfaces is derived content. The spectral
 variable is `X = q^(-s)`, reflection represents `s ↦ 1-s`, and epsilon
 is the actual rational unit monomial.
 
@@ -52,6 +52,5 @@ highly ramified stability and almost-everywhere matching belongs to the
 other H1 adapters. Actual local maps and fundamental classes enter
 through those adapters, whose outputs can supply this premise without
 changing their data. Global boundary nonvanishing remains an explicit
-input in the pole/pairing branch, with its discharge assigned to the
-parent common-library program. This target proves no unconditional
+input in the pole/pairing branch. This target proves no unconditional
 AssociatedFactorStatement, factor-existence theorem or correspondence.

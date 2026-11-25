@@ -1,6 +1,6 @@
 # An ordered length-one Jacquet criterion
 
-Author: Worker 163; Worker 949 revised the premise description. This is an
+This is an
 internal derived proposition, with all its representation-theoretic
 hypotheses explicit. It supplies no proof of those hypotheses or of the
 unconditional two-supercuspidal theorem.

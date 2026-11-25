@@ -1,7 +1,5 @@
 # Derived restriction along closed immersions and derived base change
 
-Author: Worker 727.
-
 Module `Langlands.AlgebraicGeometry.Modules.DerivedRestriction`, namespace
 `Langlands.AlgebraicGeometry.Modules.DerivedSections`. It defines the derived
 restriction map along a closed immersion and proves that derived restriction

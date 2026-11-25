@@ -1,11 +1,9 @@
 # Splitting the determinant-one isometries of a Hermitian matrix
 
-Author: Worker 5375.
-
 This internal module is pure algebra. It shows that the determinant-one isometries of a
 Hermitian matrix become `SL` once the quadratic extension splits. It contains no scheme
-theory. It is the matrix step of the descent argument for Task 6209
-(`OuterTypeAHermitianPresentationStatement`): over a field `M` containing `L`, it
+theory. It is the matrix step of the descent argument for
+`OuterTypeAHermitianPresentationStatement`: over a field `M` containing `L`, it
 identifies the points of `SU(H)` with points of `SL`.
 
 Write `Mᴴ = adjoint c M = (c̄ M)ᵀ`. The published `HermitianMatrix` interface defines:

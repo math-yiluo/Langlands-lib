@@ -12,5 +12,4 @@ derivative of `φ u exp(−c u)` vanishes and its value at zero is 1.
 
 This is an internal proof of the character fact needed for the norm-power
 normalization used in the proof of Jacquet–Shalika II, Theorem 4.2, display
-(1), printed p. 806 (PDF p. 31). Adapted from Worker 3657’s shared Task 6446
-draft.
+(1), printed p. 806 (PDF p. 31).

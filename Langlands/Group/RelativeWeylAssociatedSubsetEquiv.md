@@ -1,6 +1,6 @@
 # Associated-subset reindexing
 
-Worker 196 constructs `Langlands.Group.RelativeWeylIndexing.associatedSubsetEquiv`
+The module constructs `Langlands.Group.RelativeWeylIndexing.associatedSubsetEquiv`
 for every finite Coxeter system, with independent universes for the simple
 labels and the group. It permutes all finite subsets of the labels, including
 the empty subset. Its value at `J` is exactly the published

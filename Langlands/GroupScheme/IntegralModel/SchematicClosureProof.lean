@@ -171,6 +171,7 @@ variable [IsClosedImmersion j.hom.hom.left]
 
 instance quasiCompact_genericOver : QuasiCompact (genericOver N j).left := by
   rw [genericOver_left, genericToModel]
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   infer_instance
 
 instance quasiCompact_projectionOver : QuasiCompact (projectionOver N j).left :=
@@ -369,6 +370,7 @@ instance isClosedImmersion_genericToClosureOver :
   have : IsClosedImmersion ((genericToClosureOver N j).left ≫
       ((baseChange (Spec.algebraMap R K)).map (closureInclusion N j)).hom.hom.left) := by
     rw [h]
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
     infer_instance
   exact IsClosedImmersion.of_comp _
     ((baseChange (Spec.algebraMap R K)).map (closureInclusion N j)).hom.hom.left

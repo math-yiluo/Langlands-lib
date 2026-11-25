@@ -3,9 +3,9 @@
 This module constructs creation by a degree-one class on every degree of the
 ordered Čech homology of the structure sheaf, then transports it to actual
 derived cohomology. It is internal infrastructure for the degree-two exterior
-and coproduct comparison. Worker 327 authors the creation construction;
-the ordered resolution, class maps, comparison, and degree-one cup product
-used here are Worker 5218's prerequisite constructions.
+and coproduct comparison. The ordered resolution, class maps, comparison,
+and degree-one cup product used here are prerequisite constructions imported
+through `AllSeqCup`.
 
 Let `R : CommRingCat`, `π : X ⟶ Spec R`, and let `U : ι → X.Opens` be a
 family indexed by a finite type in the same universe. Put
@@ -101,5 +101,5 @@ geometric theorem to external literature.
 The finite affine family remains an argument of `creationCanonical`.
 This module does not prove independence from that family, all-degree pullback
 naturality, creation–contraction identities, alternation in characteristic two,
-exterior generation, or the host comparison. No field or characteristic
+exterior generation, or the degree-two exterior and coproduct comparison. No field or characteristic
 assumption is imposed on the construction.

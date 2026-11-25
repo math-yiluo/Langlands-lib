@@ -66,6 +66,7 @@ private theorem complexGroupHaar_invInvariant (D : ComplexQuotientMeasureData r)
       subst ν
       exact Measure.haarScalarFactor_self _
     exact hf _ hmap
+  have : T1Space Mat := inferInstanceAs (T1Space (Fin (r + 1) → Fin (r + 1) → ℂ))
   have hmod (g : H) : Measure.modularCharacterFun g = 1 :=
     RankinSelberg.GeneralLinearUnimodularity.character_eq_one Measure.modularCharacter hscalar g
   let : μ.IsMulRightInvariant := ⟨fun g => by

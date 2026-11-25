@@ -179,8 +179,10 @@ Dictionary. A `T`-point `g` of `X` landing in `X_{s_j}`, for `T = Spec K` or
 
 The sketch uses no property of `K` beyond being a field and no property of
 `X` beyond the hypothesis on the `s i`. That is why the statement is posed in
-this generality. Formalizing the gluing of chart maps and the dictionary is
-the job of a separate proof task.
+this generality. The theorem `linearSystemMorphism` of the module
+`LinearSystemMorphismProof` proves the statement; the morphism
+`LinearSystem.linearSystemMap` is glued from the chart maps in the module
+`Langlands.AlgebraicGeometry.LinearSystem.Morphism`.
 
 ## Correspondence with the sources
 
@@ -201,7 +203,7 @@ turns the separation hypotheses of Hartshorne's criterion, as quoted by Milne
 on pp.10–11, for the span of the `s i`, into two properties of `φ`: `φ` is
 injective on rational points, and no `K[ε]`-point `t` at a rational point `x`
 other than the constant one satisfies `t ≫ φ = (π ≫ x) ≫ φ`. Hartshorne's *Algebraic Geometry* (Proposition II.7.1 and the proof
-of Proposition II.7.3, which the task names) is not registered in the project
+of Proposition II.7.3) is not registered in the project
 literature, and no claim is made here about its text.
 
 ## Provenance

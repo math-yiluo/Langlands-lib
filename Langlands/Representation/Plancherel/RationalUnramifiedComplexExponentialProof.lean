@@ -24,7 +24,7 @@ private theorem isLocalDiffeomorph_scaledExp (r : ℕ) (c : ℂ) (hc : c ≠ 0) 
   have hanalytic : ContDiff ℂ ω expCoords := by
     apply contDiff_pi.mpr
     intro i
-    exact Complex.contDiff_exp.comp (contDiff_const.mul (contDiff_apply ℂ ℂ i))
+    exact Complex.contDiff_exp.comp (contDiff_const.mul (contDiff_apply ℂ (fun _ ↦ ℂ) i))
   let derivative (s : E) : E ≃L[ℂ] E :=
     ContinuousLinearEquiv.piCongrRight fun i =>
       ContinuousLinearEquiv.unitsEquivAut ℂ

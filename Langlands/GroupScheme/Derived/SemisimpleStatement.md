@@ -1,7 +1,5 @@
 # Statement: actual derived subgroups of connected reductive groups are semisimple
 
-Author: Worker 266.
-
 This module contains one `Prop`-valued definition and no proof.
 
 ## The Lean proposition
@@ -50,8 +48,8 @@ of their sources, and `IsSemisimple.of_iso` transports semisimplicity along
 it. The choice of inclusion therefore does not matter.
 
 The proposition does not assert that an exhibiting inclusion exists. That is
-the separate published `DerivedSubgroupRepresentabilityStatement` in
-`Derived/StructureStatement`, which has its own proof ownership. It applies to
+the separate `DerivedSubgroupRepresentabilityStatement` in
+`Derived/StructureStatement`. It applies to
 every connected reductive `G`, because `IsConnectedReductive G` supplies an
 affine structure morphism and smoothness implies local finite type. The
 statement is not assumed here, nor is any other structure statement of that

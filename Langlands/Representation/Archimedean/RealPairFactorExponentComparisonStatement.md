@@ -1,7 +1,5 @@
 # Real block exponent comparison from pair factors
 
-Worker 848.
-
 `RealPairFactorExponentComparisonStatement` compares two finite lists of
 certified real Weil-group blocks. Suppose that the two pair-factor
 denominators agree as functions against each singleton block of real

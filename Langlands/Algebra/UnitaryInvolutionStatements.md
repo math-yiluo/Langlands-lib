@@ -1,13 +1,12 @@
 # Unitary involutions and the splitting of central simple algebras
 
-Author: Worker 150.
-
 Module: `Langlands.Algebra.UnitaryInvolutionStatements`.
 
 This module contains three definitions and two statements about central simple
 algebras with an involution of the second kind (a unitary involution). It proves
-nothing. The statements are prerequisites of the outer type `A` part of Task 5973
-(`LocalAnisotropicTypeAInnerStatement`). They are used through
+nothing. The statements are prerequisites of the outer type `A` part of
+`LocalAnisotropicTypeAInnerStatement` (in
+`Langlands.GroupScheme.SimplyConnected.LocalAnisotropicInnerTypeAStatement`). They are used through
 `OuterTypeAUnitarySplitPresentationStatement`, which assumes the property
 `UnitaryInvolutionSplitting K` of the base field.
 
@@ -84,8 +83,9 @@ local fields, Serre, *Local Fields*, Chapter XIII §3, Propositions 6 and 7
 and `Cor ∘ Res = 2`, it follows that `inv_K ∘ Cor_{L/K} = inv_L`. So the
 corestriction is injective on Brauer groups, `[D] = 0`, and `D = L`, that is,
 `Module.finrank L D = 1`. The Lean statement does not mention Brauer groups.
-The intended Lean proof uses the Library's theory of local division algebras
-instead, and works in every residue characteristic.
+The Lean proof, `Langlands.localUnitaryDivisionCommutative` in
+`Langlands.Algebra.LocalUnitaryDivisionCommutativeProof`, uses the Library's
+theory of local division algebras instead, and works in every residue characteristic.
 
 ## Universe conventions
 

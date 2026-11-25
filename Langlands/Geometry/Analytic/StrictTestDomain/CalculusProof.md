@@ -1,7 +1,5 @@
 # Calculus of strict-test domain representations
 
-Author: Worker 135.
-
 This proof derives the four clauses of `CalculusStatement` directly from the
 published `Represents` predicate. Its closing theorem is
 `Langlands.Analytic.StrictTestDomain.calculus`. The target and imported pairs

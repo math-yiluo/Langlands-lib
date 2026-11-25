@@ -1,6 +1,7 @@
 # Smooth closed subgroup comparison on algebraically closed field points
 
-This internal derived unit upgrades comparisons on rational points to comparisons
+This auxiliary module, derived from existing Library results, upgrades
+comparisons on rational points to comparisons
 on every test scheme. It composes the published containment criterion
 `SubgroupFunctor.range_le_iff_algClosed_points`, smooth reducedness, and the
 constructed smooth closed representative of the actual dynamic parabolic. It

@@ -1,7 +1,5 @@
 # Point-Coxeter source geometry from standard-face pairings
 
-Worker 1186, with Worker 1493's orbit and standard-face shift arguments and
-Worker 181's point root-support proof.
 This internal construction derives the three actual point-source intersection
 identities from the root-length and positive-simple-reflection comparisons
 retained in the rational Jacquet target. It works over any field in universe
@@ -99,10 +97,10 @@ The resulting proposition is exactly `PointSourceIntersectionIdentities i ν cs`
 ## Provenance and scope
 
 The private orbit, inverse-transport and finite-face shift arguments adapt
-Worker 1493's `StandardSourceTwistedIntersectionReduction`; they remain private
+`StandardSourceTwistedIntersectionReduction`; they remain private
 to avoid duplicate declaration names. The point-Weyl pairing adapter, dynamic
 centralizer case, three functor identities and rational-point evaluation are
-the present internal extension. The root-condition discharge uses Worker 181's
+the present internal extension. The root-condition discharge uses
 `RationalTwistedRootSupport`: it proves inverse positivity on the zero face by
 positive-root induction, proves simplicity of a transported zero-pairing simple
 root by indecomposability, and applies the signed simple-reflection comparison

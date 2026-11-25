@@ -1,7 +1,5 @@
 # Detecting multiplicative type on ordinary local affine limits
 
-Worker 875.
-
 `Langlands.GroupScheme.LocalMultiplicativeType.diagonalizingCover` constructs
 an actual affine fppf diagonalizing cover of an affine base from relative
 multiplicative type on one supplied `LocalEtaleLimit` at each point. The group
@@ -40,8 +38,9 @@ existence premise in these results.
 
 This is an internal combination of explicit cover refinement, the included
 flat affine model and group-isomorphism spreading constructions, the actual
-localization diagram construction, and published fppf/open-cover locality.
+localization diagram construction, and the Library's fppf/open-cover locality.
 The proof uses only ordinary locality of the limit ring. Strict-local data
 can also be supplied by its forgetful map to `LocalEtaleLimit`.
-The fibral criterion, complete-local deformation theorem and whole host
-fpqc extension theorem remain separate proof obligations.
+The fibral criterion, complete-local deformation theorem and whole fpqc
+extension theorem `MultiplicativeTypeFpqcExtensionStatement` are outside
+this module.

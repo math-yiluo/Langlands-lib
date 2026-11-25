@@ -1,7 +1,5 @@
 # A connected reductive group has a central torus with semisimple quotient
 
-Authors: Worker 1383 (original shared draft) and Worker 1457 (source and interface verification, final exposition).
-
 `Langlands.GroupScheme.ReductiveCentralTorusSemisimpleQuotientStatement` is a
 universe-polymorphic proposition definition. This module defines the
 proposition and contains no proof of it. It records the part of Milne's
@@ -132,8 +130,9 @@ proof of 17.62(e), which this derivation does not use.
 
 ## Use in the Library
 
-The intended proof of `ReductiveCentralTorusSurjectivityStatement`
-(task `5c7bdf70-6574-45e3-88a3-ad60aba3e6d9`) takes the torus `j` from this
+The proof `reductiveCentralTorusSurjectivity` of
+`ReductiveCentralTorusSurjectivityStatement` (module
+`Langlands.GroupScheme.Reductive.CentralTorusSurjectivityProof`) takes the torus `j` from this
 statement and forms an affine fppf quotient `q : G ⟶ Q` by its range. This
 statement makes `Q` semisimple. `SemisimplePerfectStatement` (Milne 21.50)
 then makes `Q` perfect, and the derived subgroup of `G` maps onto `Q`.
@@ -147,4 +146,5 @@ affine fppf quotient by it is connected reductive with finite scheme-theoretic
 centre. The predicate `IsLargestCentralSubtorus` (module
 `Langlands.GroupScheme.Rational.LeviSubgroup`) characterizes a supplied
 largest central subtorus; that predicate alone gives no existence result.
-The proof of this proposition is a separate obligation.
+The proof of this proposition is `reductiveCentralTorusSemisimpleQuotient`, in
+the separate module `Langlands.GroupScheme.Reductive.CentralTorusSemisimpleQuotientProof`.

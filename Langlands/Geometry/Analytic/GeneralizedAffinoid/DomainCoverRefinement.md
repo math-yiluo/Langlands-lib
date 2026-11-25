@@ -1,6 +1,6 @@
 # Composition and refinement of finite full-domain covers
 
-Worker 56 constructs refinements and composition for supplied finite covers
+This module constructs refinements and composition for supplied finite covers
 of a full affinoid domain. The declarations belong to
 `Langlands.Analytic.PresentedAffinoidAlgebra.Domain.FiniteCover`.
 
@@ -100,8 +100,8 @@ restriction. `bindRefinement_index` proves that `bindIndex d i j` maps to
 Every inner component in this construction is already a `Domain K A`,
 in the same fixed ambient spectrum as the outer components. A domain
 given only relative to a component's representing algebra is different
-input data; promoting it to an ambient full domain is a separate
-representation obligation. This unit constructs no intersection
+input data; promoting it to an ambient full domain requires a separate
+representation proof. This module constructs no intersection
 representations, pullbacks of covers along arbitrary maps, algebra-section
 gluing, analytic structure sheaf, analytic atlas or etale site. In
 particular, cover composition here does not prove the base-change axiom

@@ -74,7 +74,7 @@ theorem range_copy_space (c : G ⧸ H) :
 theorem actionMap_space_apply (g : G) (c : G ⧸ H) (x : localizedSpaceFunctor.obj X.V) :
     localizedSpaceFunctor.map (actionMap H X g)
         (⟨c, x⟩ : (_ : G ⧸ H) × localizedSpaceFunctor.obj X.V) =
-      (⟨g • c, localizedSpaceFunctor.map (X.ρ (correction H g c)) x⟩ :
+      (⟨g • c, localizedSpaceFunctor.map (X.ρ (correction H g c)).asHom x⟩ :
         (_ : G ⧸ H) × localizedSpaceFunctor.obj X.V) := by
   rw [← copy_space_apply, ← ConcreteCategory.comp_apply, ← Functor.map_comp, copy_actionMap,
     Functor.map_comp, ConcreteCategory.comp_apply, copy_space_apply]
@@ -120,7 +120,7 @@ theorem pointCoset_actionMap (g : G) (p : localizedSpaceFunctor.obj (copies H X)
 `r` is the chosen representative of that coset. -/
 theorem unitHom_space_apply (x : localizedSpaceFunctor.obj X.V) :
     localizedSpaceFunctor.map (unitHom H X) x =
-      (⟨baseCoset H, localizedSpaceFunctor.map (X.ρ (baseRep H)⁻¹) x⟩ :
+      (⟨baseCoset H, localizedSpaceFunctor.map (X.ρ (baseRep H)⁻¹).asHom x⟩ :
         (_ : G ⧸ H) × localizedSpaceFunctor.obj X.V) := by
   rw [unitHom, Functor.map_comp, ConcreteCategory.comp_apply, copy_space_apply]
 
@@ -158,7 +158,7 @@ theorem liftHom_space_apply {X : Action (LocalizedCategory.{u, max z v, max z v}
     (c : G ⧸ H) (x : localizedSpaceFunctor.obj X.V) :
     localizedSpaceFunctor.map (liftHom H f)
         (⟨c, x⟩ : (_ : G ⧸ H) × localizedSpaceFunctor.obj X.V) =
-      localizedSpaceFunctor.map (Y.ρ c.out) (localizedSpaceFunctor.map f x) := by
+      localizedSpaceFunctor.map (Y.ρ c.out).asHom (localizedSpaceFunctor.map f x) := by
   rw [← copy_space_apply, ← ConcreteCategory.comp_apply, ← Functor.map_comp, copy_liftHom,
     Functor.map_comp, ConcreteCategory.comp_apply]
 

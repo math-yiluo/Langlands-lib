@@ -1,6 +1,6 @@
 # Eigenvalues of central norm-kernel points have spectral norm one
 
-Author: Worker 1532. Uses `SpectralBlock` by Worker 1045.
+Uses `SpectralBlock`.
 
 Namespace: `Langlands.BruhatTits.RationalPoints.CentralNormKernel`. Internal helper for the
 proof of `CentralNormKernelCompactnessStatement`. Norms on a nonarchimedean local field `F` are
@@ -21,7 +21,7 @@ which is ultrametric and complete (`localNormedField_ultrametric`, `localNormedF
 - `spectralNorm_eq_one_of_mem_normKernel`: if `z` is a scheme-centre point
   (`GroupScheme.schemeCenterPoints M`) in `Plancherel.rationalCommonNormKernel M`, then every root
   `c` in `AlgebraicClosure F` of the characteristic polynomial of `ρ(z)` has
-  `spectralNorm F (AlgebraicClosure F) c = 1`. Worker 1045's `exists_blockProjector_spectralNorm`
+  `spectralNorm F (AlgebraicClosure F) c = 1`. `exists_blockProjector_spectralNorm`
   gives `P` with `π = P(ρ(z))` idempotent and `‖det (ρ(z) π + (1 - π))‖ = spectralNorm c ^ b`
   with `b ≥ 1`. The left side is the norm of the value at `z` of `centralBlockCharacter`, which is
   `1` because `z` is in the norm kernel (`Plancherel.mem_rationalCommonNormKernel`). A

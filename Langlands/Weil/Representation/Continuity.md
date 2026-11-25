@@ -73,12 +73,11 @@ the existing scalar-character open-kernel theorem.
 There are no project mathematical imports. The declaration uses the actual
 Mathlib `Representation`, restriction by `MonoidHom.comp`, `MonoidHom.ker`,
 `OpenSubgroup`, `NonarchimedeanGroup`, `CompactSpace`, `FiniteDimensional`, and
-`LinearMap.toContinuousLinearMap` interfaces in environment
-`2ecc41bc-2901-4e34-96c5-6d98fbb3c74d` version 1: Lean 4.34.0,
-Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
+`LinearMap.toContinuousLinearMap` interfaces in the pinned environment:
+Lean 4.34.0, Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
 
 The existing generic Weil pullback, inertia topology, and character-twist
-artifacts are not redefined. This proposition is independent of their proofs;
-later specialization must reuse their exact accepted interfaces and supply the
+modules are not redefined. This proposition is independent of their proofs;
+later specialization must reuse their exact interfaces and supply the
 additional compactness and nonarchimedean hypotheses. This file contains a
 statement definition, not a proof of the five equivalences.

@@ -1,6 +1,6 @@
 # Sections extending multiples of a minimal associated section
 
-Author: Worker 716. This is an internal helper module for
+This is an internal helper module for
 `Langlands.AlgebraicGeometry.Modules.coherentIntegralIdealFiltration`. It packages the
 output of `exists_minimal_witness` as derived data.
 

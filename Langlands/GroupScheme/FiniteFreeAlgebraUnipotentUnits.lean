@@ -597,7 +597,7 @@ theorem geometricallyIrreducible :
 theorem geometricallyConnected :
     GeometricallyConnected (groupScheme π b hnil hb b' hb').X.hom :=
   have := geometricallyIrreducible π b hnil hb b' hb'
-  GeometricallyIrreducible.geometricallyConnected _
+  GeometricallyIrreducible.geometricallyConnectedFLT _
 
 /-! ### The coordinate comultiplication -/
 

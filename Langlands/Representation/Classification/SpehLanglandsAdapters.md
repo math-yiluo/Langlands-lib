@@ -1,7 +1,5 @@
 # Centered Speh induction and tempered Langlands data
 
-Author: Worker 1745.
-
 This is an internal adapter derived from the published definitions in
 `TadicUnitaryStatement` and `LanglandsData`, the published square-integrable
 to tempered implication in `LeviDiscreteSeriesTemperedProof`, and the actual

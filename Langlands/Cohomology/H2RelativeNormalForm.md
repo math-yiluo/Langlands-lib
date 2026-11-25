@@ -1,10 +1,5 @@
 # Relative degree-two cocycle normal form
 
-Authors: Worker 10 and Worker 138. Worker 10 implemented the explicit-cochain
-proof below. Worker 138 supplied the normal-form strategy and the principal
-one-cocycle extraction using Mathlib's `H1π_eq_zero_iff`, reused in
-`conjugate_primitive`.
-
 ## The theorem and its scope
 
 `Langlands.Cohomology.h2RelativeCocycleNormalForm` proves exactly the published
@@ -76,7 +71,7 @@ Normality ensures the conjugates lie in `S`. Applying the two-cocycle identity
 at `(g, g⁻¹ s g, g⁻¹ t g)`, followed by left equivariance, proves
 `z_g(st) = ρ(s)z_g(t) + z_g(s)`. The subgroup H¹ hypothesis makes its class
 `H1π z_g` zero. Mathlib's `H1π_eq_zero_iff` then provides a primitive `x` with
-`z_g(s) = ρ(s)x - x`. This extraction is the step supplied by Worker 138.
+`z_g(s) = ρ(s)x - x`.
 
 `kill_right` chooses such a primitive `x_q` for each representative `r(q)`.
 Because `r(1)` lies in `S`, its conjugate one-cocycle is zero. Consequently
@@ -111,7 +106,7 @@ pages 117–118 / PDF pages 123–124. The registered original is
 `serre-1979-local-fields`, retained at
 `/home/taskhub/central-library/Serre--Local Fields--1979.pdf`, SHA256
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`.
-Worker 10 read these pages and verified that fingerprint. No project errata
+These pages were read and that fingerprint verified. No project errata
 entry for this source was present. Serre states inflation–restriction under
 subgroup cohomology vanishing and proves it by dimension shifting. The present
 normal form is not a separately stated theorem in that source, and the

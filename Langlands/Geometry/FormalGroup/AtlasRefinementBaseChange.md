@@ -89,7 +89,7 @@ component. `baseChange_inv_onPoints` proves the reverse square using the inverse
 of the constructed complete-family linear equivalence. The underlying point
 spaces include all coefficient naturality and overlap compatibility conditions.
 
-This unit supplies refinement base change and its actual formal comparison.
+This module supplies refinement base change and its actual formal comparison.
 Full acting-order compatibility, base change of different-cover comparison
 witnesses, varying-base moduli classes, framing, heights and representability
 remain separate.

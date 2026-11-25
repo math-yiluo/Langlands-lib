@@ -1,7 +1,5 @@
 # Points of restricted relative homomorphisms and the three-variable relative Hom functor
 
-Author: Worker 281.
-
 This module extends the published modules
 `Langlands.GroupScheme.Cartier.Restriction` (restriction of relative
 homomorphisms along test-scheme maps, the functor `relativeHomFunctor G H`, and

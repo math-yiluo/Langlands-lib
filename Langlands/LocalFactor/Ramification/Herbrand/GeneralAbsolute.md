@@ -1,9 +1,9 @@
 # Absolute upper ramification in either characteristic
 
-Worker 849 authors the characteristic-free generalization of Worker 68's
-published absolute construction. The declarations are in
+This module is the characteristic-free generalization of the
+published absolute construction of `Herbrand.Absolute`. The declarations are in
 `Langlands.Ramification.Local`. The finite input is the actual integer-ring
-filtration in `Herbrand.GeneralFinite`, generalized by Worker 845.
+filtration in `Herbrand.GeneralFinite`.
 
 ## Sources and meaning
 
@@ -36,7 +36,10 @@ the cited LaTeX file has SHA256
 `816bb31b7194dea7eb38a661bf53ae670c17a2ec0bd7d1e7e4bcfa2c94aad03a`.
 The closure is taken in the
 actual Krull topology. Identification with the intersection of finite
-first lower groups is a later arithmetic theorem. The relevant finite
+first lower groups is a separate arithmetic statement,
+`Local.AbsoluteUpperWildInertia` in `Herbrand.LocalAbsoluteStatement`; its
+p-adic case is proved as `absoluteUpperWildInertia` in
+`Herbrand.InertiaProof`. The relevant finite
 source is Serre IV §2, Corollaries 1–4 to Proposition 7, pp.67–68.
 
 ## Parameters and finite integer rings

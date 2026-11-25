@@ -1,8 +1,7 @@
 # Determinants and twists of weakly associated pairs
 
-Worker 35 authored this statement unit for task
-`91266440-3276-48dc-ab77-8d1c1fa386e8`. All declarations lie in the namespace
-`Langlands.ClassField.Global.RelativeWeilGroup`.
+All declarations lie in the namespace
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup`.
 
 The module states the second and third consequences of association in
 Henniart 2000, §2.2. Let `S` be a representation of the Weil group, `Π` an
@@ -53,7 +52,7 @@ discussed below, no existence statement is made.
   `ClassExtension (K := F) (c F E)` of `E ≃ₐ[F] E` by the idele class group
   `C_E`, is the relative Weil group `W_{E/F}`.
 - **Transfer.** `transfer c F E : RelativeWeilGroup c F E →* C_F`, from the
-  published `Langlands.ClassField.Global.RelativeWeilTransfer`, where
+  published `Langlands.ClassFieldTheory.Global.RelativeWeilTransfer`, where
   `C_F = IdeleClassGroup (𝓞 F) F`. It is the group-theoretic transfer
   (Verlagerung) to the finite-index subgroup `C_E`, descended to `C_F`
   through the injective map `C_F → C_E`. That module proves
@@ -229,15 +228,16 @@ the arithmetic fundamental class. The reciprocity law `W_{E/F}^{ab} ≅ C_F`
 used below is also a property of the arithmetic class. The cited sources
 prove neither fact for other class families. Some other families do satisfy
 the reciprocity law: as explained in
-[RelativeWeilTransferReciprocityStatement](../ClassField/Global/RelativeWeilTransferReciprocityStatement.md),
+[RelativeWeilTransferReciprocityStatement](../ClassFieldTheory/Global/RelativeWeilTransferReciprocityStatement.md),
 the negated classes `-u_{E/F}` also give a surjective transfer whose kernel
 is the commutator subgroup. Other families do not give the Weil group at
 all: for the zero family and `E ≠ F`, for instance, the extension
 `RelativeWeilGroup c F E` splits, whereas the Weil group extension does
 not. So all three statements assume `IsArithmeticClassFamily c`. The
 argument below uses this hypothesis, but it is not shown to be necessary,
-and the module claims nothing for other families. Neither the compatibility
-nor the reciprocity law is proved in the Library.
+and the module claims nothing for other families. The reciprocity law is
+proved in the Library by `relativeWeilTransferReciprocity` (module
+`Langlands.ClassFieldTheory.Global.RelativeWeilTransferReciprocityProof`).
 
 ## Why the statements are true
 
@@ -286,8 +286,7 @@ following derived choices.
 
 1. **Finite level.** Henniart's `S` is a representation of the absolute Weil
    group `W_F`. Here `S` is a representation of
-   `RelativeWeilGroup c F E`, as in the published association relation. The
-   Library has no absolute global Weil group and no maps between levels.
+   `RelativeWeilGroup c F E`, as in the published association relation.
    With `c` arithmetic, this group is `W_{E/F}`, a quotient of `W_F`, and
    Tate's `τ_F` on `W_F` factors through `W_{E/F}` (Tate 1979 §1.2; the
    abelianization of `W_F` is that of `W_{E/F}`). So the statements are the
@@ -308,9 +307,10 @@ following derived choices.
    class, the only kind that the published association relation covers.
 5. **Central character as a hypothesis.** Henniart's `ω_Π` is the central
    character of `Π`. Here `ω` is any continuous character of `C_F` with
-   `T.HasCentralCharacter ω`. The Library does not prove that a cuspidal
-   realization has a central character. Since the forms of `T` are not all
-   zero, such an `ω` is unique if it exists; this is not formalized either.
+   `T.HasCentralCharacter ω`. Since the forms of `T` are not all
+   zero, such an `ω` is unique if it exists; this is
+   `CuspidalOperatorRealization.hasCentralCharacter_unique` (module
+   `Langlands.Automorphic.AssociatedCentralCharacter.CentralCharacterUniqueness`).
 6. **Finite-order twists only.** Henniart's `χ` is any quasicharacter. Here
    `χ` is a Hecke character with the published finite-order twist relation.
    That relation leaves the action of the archimedean enveloping algebra
@@ -332,9 +332,8 @@ following derived choices.
    associated with the twist of `S`. Its conclusion includes the existence
    of such a presentation. This is true because a cuspidal representation
    decomposes by the tensor product theorem into local factors of countable
-   dimension, which can be realized in every universe. This existence is not
-   formalized, and neither form is proved to imply the other. The
-   conjunction asserts both.
+   dimension, which can be realized in every universe. Neither form is
+   proved to imply the other. The conjunction asserts both.
 
 ## Scope
 
@@ -342,8 +341,8 @@ The module states three unproved theorems and their conjunction. It does
 not assert:
 
 - the reciprocity law that `transfer` induces `W_{E/F}^{ab} ≅ C_F`, which is
-  the separate statement unit
-  `Langlands.ClassField.Global.RelativeWeilGroup.RelativeWeilTransferReciprocityStatement`
+  the separate statement
+  `Langlands.ClassFieldTheory.Global.RelativeWeilGroup.RelativeWeilTransferReciprocityStatement`
   and is not imported here;
 - the local–global compatibility of `transfer` with the local maps `ι`;
 - the existence of any weakly associated pair, of local maps `ι`, of a

@@ -40,7 +40,6 @@ properties. The definition `finiteMaximalIdealData` chooses such data
 from the proved existence lemma. This is an algebraic prerequisite; it
 does not assert the existence of a geometric good point or an etale slice.
 
-The construction is internal to the good-point proof route supplied by
-Worker 303. Worker 101 implemented the finite-generator argument using
-the pinned Mathlib essential-finiteness and generated-subalgebra
+The construction is internal to the good-point proof route. The
+finite-generator argument uses the pinned Mathlib essential-finiteness and generated-subalgebra
 interfaces and the imported, proved constant-representative lemmas.

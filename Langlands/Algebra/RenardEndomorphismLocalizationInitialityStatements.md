@@ -1,9 +1,8 @@
 # Initiality of the explicit and chosen endomorphism-localization arrows
 
-Authors: Worker 709 prepared this statement unit under whole-book Renard task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857` revision 3. It imports the published
-[`RenardEndomorphismLocalizationComparison`](RenardEndomorphismLocalizationComparison.md)
-by Worker 1581, which in turn imports the published source unit
+This statement module imports
+[`RenardEndomorphismLocalizationComparison`](RenardEndomorphismLocalizationComparison.md),
+which in turn imports the source module
 [`RenardEndomorphismLocalizationSource`](RenardEndomorphismLocalizationSource.md).
 No imported object is changed. There is no proof in this file.
 
@@ -32,8 +31,8 @@ These pages were reread directly on 5 November 2026.
 
 The following choices are internal derived formulations; the source makes none
 of them. The coefficient ring is an arbitrary commutative unital ring R, which
-contains the field case. The target category is the published full subcategory
-of pairs with invertible endomorphism. The two canonical arrows are the published
+contains the field case. The target category is the imported full subcategory
+of pairs with invertible endomorphism. The two canonical arrows are the imported
 structured arrows. Uniqueness of factors is stated both with `∃!` and as
 `StructuredArrow` initiality. Carriers are lifted into a common universe. The
 B-module sentence is covered when B is commutative, since R-linear maps are then
@@ -56,13 +55,13 @@ of this subcategory.
 | `raisedFunctor R` | U: the pair `(ULift.{max u w} A.a, ULift of the endomorphism)` in `EndomorphismCat.{u,κ} R` |
 | `explicitFunctor R` | E: the invertible pair `(ULift.{w} (Localized a), localizedEnd a)`, a = `endomorphism R A` |
 | `explicitArrow R` | iota: the natural transformation U ⟶ E ⋙ J with components the lifted `iota a` |
-| `chosenFunctor R` | F: the published chosen-localization composite through polynomial modules |
-| `chosenArrow R` | lambda: the published chosen canonical arrow U ⟶ F ⋙ J |
-| `targetComparison R` | alpha: the published natural isomorphism F ≅ E |
+| `chosenFunctor R` | F: the chosen-localization composite through polynomial modules |
+| `chosenArrow R` | lambda: the chosen canonical arrow U ⟶ F ⋙ J |
+| `targetComparison R` | alpha: the natural isomorphism F ≅ E |
 | `explicitStructuredArrow R A` | `StructuredArrow.mk (iota.app A)` over J |
 | `chosenStructuredArrow R A` | `StructuredArrow.mk (lambda.app A)` over J |
 
-The published equation `chosenArrow_comparison` states
+The imported equation `chosenArrow_comparison` states
 lambda.app A ≫ J.map (alpha.hom.app A) = iota.app A.
 
 ## Exact assertions
@@ -131,20 +130,22 @@ identify independent universes or claim that the localization lives in Type v.
 
 ## Intended proof and remaining scope
 
-No proof is implemented here. A future proof may obtain the explicit
-factorization from the published linear universal property in
+No proof is implemented here. A proof may obtain the explicit
+factorization from the linear universal property in
 `RenardEndomorphismLocalization`: `factor`, `factor_intertwines`,
 `factor_comp_iota` and `factor_unique`, transported through the explicit
 `ULift` linear equivalences and extensionality of full-subcategory morphisms.
 Explicit initiality then sends each structured arrow to its unique factor. The
-chosen clauses can be transported along the published isomorphism
+chosen clauses can be transported along the isomorphism
 `structuredArrowComparison`. Comparison uniqueness follows from initiality, and
-the field clause by specialization. These are intended steps only. The published
-linear universal property is not an accepted proof of these categorical targets.
+the field clause by specialization. These are intended steps only;
+`RenardEndomorphismLocalizationInitialityProof` proves these statements along
+this route. The linear universal property is not by itself a proof of these
+categorical targets.
 
-The source's equivalence between polynomial modules and pairs is the separately
-published `PolynomialEndomorphism.equivalence`, with functors `fromPolynomial`
+The source's equivalence between polynomial modules and pairs is the separate
+`PolynomialEndomorphism.equivalence`, with functors `fromPolynomial`
 and `toPolynomial`. These statements use those functors only inside the
 imported constructions F and E. The noncommutative B-module variant, the
-other A.III examples and the rest of Appendix A remain separate obligations. This statement unit establishes neither
+other A.III examples and the rest of Appendix A are outside these statements. This statement module establishes neither
 a proof nor section or book completion.

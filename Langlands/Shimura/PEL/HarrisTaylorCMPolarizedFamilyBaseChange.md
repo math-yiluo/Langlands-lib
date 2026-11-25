@@ -1,7 +1,5 @@
 # Actual pullback of compatible normalized CM polarized families
 
-Author: Worker 57.
-
 This derived construction supplies actual varying-base maps on the compatible
 geometric-point families defined in `HarrisTaylorCMPolarizedGeometricFamilies`.
 It proves compatibility, naturality in every original Harris transporter,

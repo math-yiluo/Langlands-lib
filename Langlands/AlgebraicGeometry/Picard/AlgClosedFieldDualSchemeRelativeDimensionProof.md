@@ -1,7 +1,5 @@
 # Relative dimension of the chosen dual over an algebraically closed field
 
-Author: Worker 3643.
-
 Module `Langlands.AlgebraicGeometry.Picard.AlgClosedFieldDualSchemeRelativeDimensionProof`
 proves the published proposition `AlgClosedFieldDualSchemeRelativeDimensionStatement`: for
 every algebraically closed field `K` (in an arbitrary universe `u`), every abelian scheme `A`

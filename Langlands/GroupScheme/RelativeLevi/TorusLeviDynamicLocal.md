@@ -1,6 +1,7 @@
 # Prescribed-torus local Levi data from the proved dynamic theorem
 
-Worker 638, adapting the local construction and transport of Worker 592.
+This module adapts the local construction and transport of `TorusDynamicLevi`,
+`TorusLeviBaseChange` and `TorusLeviOverlap`.
 
 This is an internal derived construction. It uses the published
 `dynamicRelativeLevi` proof and
@@ -46,7 +47,7 @@ range equality back through that isomorphism yields the exact overlap
 equality. `isMatchingFromDynamic` then invokes the published overlap-to-tests
 lemma to give `CoverDescent.IsMatching` for the family of local ranges.
 Neither construction takes a dynamic or radical structure statement as a
-premise, because the dynamic theorem is now proved and the required radical
+premise, because the dynamic theorem is proved (`dynamicRelativeLevi`) and the required radical
 comparison is local to each dynamic presentation.
 
 This module supplies local witnesses and matching. It does not construct a

@@ -100,7 +100,7 @@ theorem exists_away_baseChange_map_eq_restrictMap [AddMonoid.FG N]
       (GroupScheme.baseChange (Spec.map (CommRingCat.ofHom
         (algebraMap R (Localization.Away r))))).map (restrictMap R g) := by
   classical
-  obtain ⟨s, hs⟩ := AddMonoid.FG.fg_top (M := N)
+  obtain ⟨s, hs⟩ := AddMonoid.exists_of_isAddFG N
   let F := bialgHomOfHom f
   let g : N →+ M := AddMonoidAlgebra.mapDomainOfBialgHom (scalarExtension F p.ResidueField)
   refine ⟨g, generatorCoefficientProduct F g s, ?_, ?_⟩

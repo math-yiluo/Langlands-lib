@@ -115,11 +115,13 @@ abbrev End (X : C) := CategoryTheory.End (of X)
 
 /-- The canonical map of integral endomorphism rings. -/
 def ofEnd (X : C) : CategoryTheory.End X →+* End X where
-  toFun := ofHom
-  map_zero' := map_zero ofHom
+  toFun f := CategoryTheory.End.of (ofHom f.asHom)
+  map_zero' := by apply CategoryTheory.End.ext; exact map_zero ofHom
   map_one' := rfl
-  map_add' := map_add ofHom
-  map_mul' f g := by change ofHom (g ≫ f) = comp X X X (ofHom g) (ofHom f); simp
+  map_add' f g := by apply CategoryTheory.End.ext; exact map_add ofHom f.asHom g.asHom
+  map_mul' f g := by
+    apply CategoryTheory.End.ext
+    change ofHom (g.asHom ≫ f.asHom) = comp X X X (ofHom g.asHom) (ofHom f.asHom); simp
 
 /-- The rational composition, bundled as a Q-bilinear map. -/
 def compLinear (X Y Z : C) : Hom X Y →ₗ[ℚ] Hom Y Z →ₗ[ℚ] Hom X Z :=
@@ -131,31 +133,34 @@ def compLinear (X Y Z : C) : Hom X Y →ₗ[ℚ] Hom Y Z →ₗ[ℚ] Hom X Z :=
       (q * r) ⊗ₜ[ℤ] (f ≫ g) := rfl
 
 @[simp] theorem ofEnd_apply (X : C) (f : CategoryTheory.End X) :
-    ofEnd X f = (1 : ℚ) ⊗ₜ[ℤ] f := rfl
+    ofEnd X f = CategoryTheory.End.of ((1 : ℚ) ⊗ₜ[ℤ] f.asHom) := rfl
 
 /-- A pure tensor viewed as a rational endomorphism. -/
-def endTensor (X : C) (q : ℚ) (f : CategoryTheory.End X) : End X := q ⊗ₜ[ℤ] f
+def endTensor (X : C) (q : ℚ) (f : CategoryTheory.End X) : End X :=
+  CategoryTheory.End.of (q ⊗ₜ[ℤ] f.asHom)
 
 @[simp] theorem end_mul_tmul (X : C) (q r : ℚ) (f g : CategoryTheory.End X) :
     endTensor X q f * endTensor X r g = endTensor X (q * r) (f * g) := by
-  change comp X X X (r ⊗ₜ[ℤ] g) (q ⊗ₜ[ℤ] f) = _
+  apply CategoryTheory.End.ext
+  change comp X X X (r ⊗ₜ[ℤ] g.asHom) (q ⊗ₜ[ℤ] f.asHom) = _
   simp [endTensor, mul_comm]
 
 /-- The Q-algebra structure uses the tensor identity as its unit. -/
 @[simp] theorem algebraMap_eq (X : C) (q : ℚ) :
-    algebraMap ℚ (End X) q = q ⊗ₜ[ℤ] 𝟙 X := by
+    algebraMap ℚ (End X) q = CategoryTheory.End.of (q ⊗ₜ[ℤ] 𝟙 X) := by
+  apply CategoryTheory.End.ext
   change q • ((1 : ℚ) ⊗ₜ[ℤ] 𝟙 X) = _
   simp [TensorProduct.smul_tmul']
 
 /-- Endomorphisms of the target act by postcomposition. -/
 def postAction (X Y : C) : End Y →ₐ[ℚ] Module.End ℚ (Hom X Y) where
-  toFun b := CategoryTheory.Linear.rightComp ℚ (of X) b
+  toFun b := CategoryTheory.Linear.rightComp ℚ (of X) b.asHom
   map_zero' := by apply LinearMap.ext; intro f; simp [CategoryTheory.Linear.rightComp]
   map_one' := by apply LinearMap.ext; intro f; simp [CategoryTheory.Linear.rightComp]
   map_add' b b' := by
     apply LinearMap.ext
     intro f
-    exact Preadditive.comp_add (of X) (of Y) (of Y) f b b'
+    exact Preadditive.comp_add (of X) (of Y) (of Y) f b.asHom b'.asHom
   map_mul' b b' := by apply LinearMap.ext; intro f; simp [CategoryTheory.Linear.rightComp, Category.assoc]
   commutes' q := by
     apply LinearMap.ext
@@ -165,7 +170,7 @@ def postAction (X Y : C) : End Y →ₐ[ℚ] Module.End ℚ (Hom X Y) where
 
 /-- Precomposition by an endomorphism of the source. -/
 def preAction (X Y : C) (a : End X) : Module.End ℚ (Hom X Y) :=
-  CategoryTheory.Linear.leftComp ℚ (of Y) a
+  CategoryTheory.Linear.leftComp ℚ (of Y) a.asHom
 
 @[simp] theorem preAction_one (X Y : C) : preAction X Y 1 = 1 := by
   apply LinearMap.ext
@@ -174,20 +179,20 @@ def preAction (X Y : C) (a : End X) : Module.End ℚ (Hom X Y) :=
 
 theorem preAction_mul (X Y : C) (a a' : End X) (f : Hom X Y) :
     preAction X Y (a * a') f = preAction X Y a' (preAction X Y a f) :=
-  Category.assoc a' a f
+  Category.assoc a'.asHom a.asHom f
 
 theorem actions_commute (X Y : C) (a : End X) (b : End Y) (f : Hom X Y) :
     postAction X Y b (preAction X Y a f) = preAction X Y a (postAction X Y b f) :=
-  Category.assoc a f b
+  Category.assoc a.asHom f b.asHom
 
 @[simp] theorem postAction_ofEnd {X Y : C} (b : CategoryTheory.End Y) (f : X ⟶ Y) :
-    postAction X Y (ofEnd Y b) (ofHom f) = ofHom (f ≫ b) := by
-  change comp X Y Y (ofHom f) (ofHom b) = ofHom (f ≫ b)
+    postAction X Y (ofEnd Y b) (ofHom f) = ofHom (f ≫ b.asHom) := by
+  change comp X Y Y (ofHom f) (ofHom b.asHom) = ofHom (f ≫ b.asHom)
   simp
 
 @[simp] theorem preAction_ofEnd {X Y : C} (a : CategoryTheory.End X) (f : X ⟶ Y) :
-    preAction X Y (ofEnd X a) (ofHom f) = ofHom (a ≫ f) := by
-  change comp X X Y (ofHom a) (ofHom f) = ofHom (a ≫ f)
+    preAction X Y (ofEnd X a) (ofHom f) = ofHom (a.asHom ≫ f) := by
+  change comp X X Y (ofHom a.asHom) (ofHom f) = ofHom (a.asHom ≫ f)
   simp
 
 end Rationalization

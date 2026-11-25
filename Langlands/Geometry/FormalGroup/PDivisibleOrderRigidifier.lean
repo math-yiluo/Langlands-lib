@@ -22,7 +22,7 @@ variable {G H J : PDivisibleGroup R p} {O : Type v} [Ring O]
 /-- An actual quasi-isogeny intertwining two integral order actions. -/
 structure OrderQuasiIsogeny (a : O →+* End G) (b : O →+* End H) where
   val : QuasiIsogeny G H
-  commutes : ∀ o : O, comp (ofHom (a o)) val.hom = comp val.hom (ofHom (b o))
+  commutes : ∀ o : O, comp (ofHom (a o).asHom) val.hom = comp val.hom (ofHom (b o).asHom)
 
 namespace OrderQuasiIsogeny
 
@@ -30,15 +30,15 @@ variable {a : O →+* End G} {b : O →+* End H} {d : O →+* End J}
 
 /-- The actual inverse also intertwines the two order actions. -/
 theorem inverse_commutes (e : OrderQuasiIsogeny a b) (o : O) :
-    comp (ofHom (b o)) e.val.inv = comp e.val.inv (ofHom (a o)) := by
+    comp (ofHom (b o).asHom) e.val.inv = comp e.val.inv (ofHom (a o).asHom) := by
   have hG : comp e.val.hom e.val.inv = RationalHom.id G := e.val.hom_inv_id
   have hH : comp e.val.inv e.val.hom = RationalHom.id H := e.val.inv_hom_id
   calc
-    comp (ofHom (b o)) e.val.inv = comp (comp (comp e.val.inv e.val.hom) (ofHom (b o))) e.val.inv := by
+    comp (ofHom (b o).asHom) e.val.inv = comp (comp (comp e.val.inv e.val.hom) (ofHom (b o).asHom)) e.val.inv := by
       rw [hH, RationalHom.id_comp]
-    _ = comp (comp e.val.inv (comp (ofHom (a o)) e.val.hom)) e.val.inv := by
+    _ = comp (comp e.val.inv (comp (ofHom (a o).asHom) e.val.hom)) e.val.inv := by
       rw [RationalHom.comp_assoc e.val.inv e.val.hom, ← e.commutes o]
-    _ = comp e.val.inv (ofHom (a o)) := by
+    _ = comp e.val.inv (ofHom (a o).asHom) := by
       rw [← RationalHom.comp_assoc e.val.inv, RationalHom.comp_assoc, hG, RationalHom.comp_id]
 
 /-- Reverse both the actual quasi-isogeny and its order-linearity equation. -/
@@ -49,9 +49,9 @@ def symm (e : OrderQuasiIsogeny a b) : OrderQuasiIsogeny b a :=
 def trans (e : OrderQuasiIsogeny a b) (f : OrderQuasiIsogeny b d) : OrderQuasiIsogeny a d where
   val := e.val.trans f.val
   commutes o := by
-    change comp (ofHom (a o)) (comp e.val.hom f.val.hom) =
-      comp (comp e.val.hom f.val.hom) (ofHom (d o))
-    rw [← RationalHom.comp_assoc (ofHom (a o)), e.commutes o, RationalHom.comp_assoc,
+    change comp (ofHom (a o).asHom) (comp e.val.hom f.val.hom) =
+      comp (comp e.val.hom f.val.hom) (ofHom (d o).asHom)
+    rw [← RationalHom.comp_assoc (ofHom (a o).asHom), e.commutes o, RationalHom.comp_assoc,
       f.commutes o, ← RationalHom.comp_assoc e.val.hom]
 
 end OrderQuasiIsogeny
@@ -66,10 +66,10 @@ def splitOrderRigidifier {a : O →+* End G} {b : O →+* End H}
   commutes o := by
     let f := e.val.hom
     let g := (c : ℚ_[p]) • dualMap hExact e.val.inv
-    let a₁ := a o.2
-    let a₂ := (a o.1.unop).dual hExact
-    let b₁ := b o.2
-    let b₂ := (b o.1.unop).dual hExact
+    let a₁ := (a o.2).asHom
+    let a₂ := (a o.1.unop).asHom.dual hExact
+    let b₁ := (b o.2).asHom
+    let b₂ := (b o.1.unop).asHom.dual hExact
     have hf : comp (ofHom a₁) f = comp f (ofHom b₁) := e.commutes o.2
     have h := congrArg (dualMap hExact) (e.inverse_commutes o.1.unop)
     simp only [dualMap_comp, dualMap_ofHom] at h

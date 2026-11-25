@@ -30,9 +30,9 @@ variable {k : Type u} [Field k]
 theorem hasNoHigherRoots_of_isRootDatumOf
     (hT : IsSplitTorus T.toGrp) (i : T.toGrp ⟶ G)
     (hP : IsRootDatumOf i P) (j : J) : HasNoHigherRoots i (P.root j) := by
-  let : IsAddTorsionFree (ℚ ⊗[ℤ] characterLattice T) := IsAddTorsionFree.of_module_rat _
-  let : IsAddTorsionFree (characterLattice T) :=
-    hT.character_toRat_injective.isAddTorsionFree Langlands.LinearAlgebra.RationalSpan.toRat
+  let : HasUniqueDiv (ℚ ⊗[ℤ] characterLattice T) := HasUniqueDiv.of_module_rat _
+  let : HasUniqueDiv (characterLattice T) :=
+    hT.character_toRat_injective.hasUniqueDiv Langlands.LinearAlgebra.RationalSpan.toRat
   intro n hn
   let : n.AtLeastTwo := ⟨hn⟩
   rw [relativeRoots_eq_roots, ← hP.2.1]
@@ -55,6 +55,7 @@ theorem closed_of_isRepresentedBy_subgroup
   rw [← he']
   change IsClosedImmersion ((hjU.isoOfIsRepresentedBy hjV).hom.hom.hom.left ≫
     jV.hom.hom.left)
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   infer_instance
 
 /-- Every supplied representative of a nonzero intrinsic root is connected. -/

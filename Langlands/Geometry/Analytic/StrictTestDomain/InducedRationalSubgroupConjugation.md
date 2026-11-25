@@ -16,7 +16,7 @@ its topology. For the geometric constructions, fix a complete ultrametric
 normed field `K`, a presented strict affinoid algebra `P`, and an actual
 `RationalSpectralAction G P`. Fix an open subgroup `U`, an invariant rational
 presentation `d` for `U`, and an element `g : G`. The field and group share one
-arbitrary universe `u`. There are no coefficient objects in this unit, no
+arbitrary universe `u`. There are no coefficient objects in this module, no
 normality premise, and no local stable-neighbourhood premise.
 
 The imported `FiniteIndexLevel U` consists of all original open subgroups
@@ -30,7 +30,7 @@ The moved rational presentation is exactly
 `(ρ.invariantConjugationEquivalence U g).functor.obj d`.
 Its rational data is `ρ.toMonoidHom g • d.obj`, and its operator subgroup is
 the actual `g U g⁻¹`. These are the existing conjugation and rational action
-constructions. This unit proves the additional finite-level and tower
+constructions. This module proves the additional finite-level and tower
 compatibilities rather than taking those compatibilities as data.
 
 ## Original subgroup conjugation
@@ -123,10 +123,11 @@ properness of both original maps from these actual homeomorphisms.
 
 ## Remaining scope
 
-This unit varies original finite-index subgroups and transports one fixed
+This module varies original finite-index subgroups and transports one fixed
 rational presentation and its tower by one group element. It supplies the
 geometric conjugation maps, not new compact-function or cohomology maps.
-Transport on full coefficient, compact Godement and derived towers, general
-rational coverings and charts, analytic or etale realization, arithmetic
+Transport on full coefficient, compact Godement and derived towers (the latter
+in degree zero) is constructed in `InducedRationalSubgroupCohomologyConjugation`;
+general rational coverings and charts, analytic or etale realization, arithmetic
 Hecke identification and convolution, uniformization, Shimura
 specialization, and the Harris comparisons remain separate obligations.

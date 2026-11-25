@@ -1,7 +1,5 @@
 # Centered square-integrability of special quotients
 
-Author: Worker 1765.
-
 `Langlands.Classification.segmentCenteredSpecialSquareIntegrability` proves
 the unchanged Library proposition
 `Langlands.Classification.SegmentCenteredSpecialSquareIntegrability.{uF,uV}

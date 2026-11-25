@@ -1,7 +1,5 @@
 # Étale-local conjugacy of maximal tori in smooth affine group schemes
 
-Worker 585.
-
 `Langlands.GroupScheme.etaleLocalMaximalTorusConjugacy` proves the unchanged
 `Langlands.GroupScheme.EtaleLocalMaximalTorusConjugacyStatement.{u}`. The
 statement and all its imported files are unchanged.

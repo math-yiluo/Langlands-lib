@@ -114,5 +114,6 @@ and inclusion instead. Borel–Tits work with smooth algebraic groups and
 set-theoretic images. Here `A` is smooth because it is semisimple, and the
 image of the reduced torus `T` is reduced.
 
-These remarks give the provenance of the claim. They are not a proof. A proof
-of this target is a separate obligation for a successor task.
+These remarks give the provenance of the claim. They are not a proof. The
+Library proves this target as `adjointSplitTorusImageExistenceStatement` in
+`Adjoint.SplitTorusImageProof`.

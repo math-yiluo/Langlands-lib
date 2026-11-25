@@ -1,6 +1,6 @@
 # Proof of the chamber Iwasawa decomposition
 
-This unit proves the published target
+This module proves the published target
 `Langlands.Geometry.Building.IwasawaDecompositionStatement` of
 `Langlands/Geometry/Building/IwahoriWeylStatement.lean`. The theorem
 `Langlands.Geometry.Building.iwasawaDecomposition` is stated at an arbitrary universe `u`.
@@ -65,7 +65,7 @@ on printed p. 190. The implemented route is different: it is the Tits-system arg
 published reduction, with the relative Tits system of Borel–Tits 5.15–5.16 obtained from the
 proved structural statements above. KP's open-cell step, and thus that correction, is not used.
 
-This unit proves only the chamber decomposition `G(F) = U(F) N(F) P_C` for the minimal
+This module proves only the chamber decomposition `G(F) = U(F) N(F) P_C` for the minimal
 parabolic of a generic cocharacter. It is conditional on actual `ParahoricBuildingData`
 satisfying the fixed-apartment axioms. It does not construct such data, and it does not prove
 the special-`K_0` Iwasawa decomposition or the replaced Lemma 5.3.5.

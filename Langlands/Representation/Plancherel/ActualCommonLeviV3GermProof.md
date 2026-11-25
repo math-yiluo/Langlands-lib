@@ -2,7 +2,7 @@
 
 The primary construction is
 `Langlands.Plancherel.ActualCommonLeviV3.regularGermValue`.
-This internal unit develops consequences of the published predicates in
+This module develops consequences of the published predicates in
 `ActualCommonLeviV3Statement`. Its provenance is the actual tensor and
 whole-operator regular-representative convention recorded there, specialized to
 the common-Levi case of Waldspurger (2003), V.3 formula (1) and Lemma V.3.1

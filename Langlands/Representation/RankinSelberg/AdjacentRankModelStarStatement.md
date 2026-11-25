@@ -2,11 +2,11 @@
 
 This module defines the closed source-derived proposition
 `Langlands.RankinSelberg.AdjacentRankModelStarStatement.{uF,uV}`.
-It supplies no proof. It is an explicit scalar-integral formulation of the
+It supplies no proof; `adjacentRankModelStar` in `AdjacentRankModelStarProof`
+proves it. It is an explicit scalar-integral formulation of the
 model identity displayed in JPSS Section 6.2 Proposition (1), with the
 Fourier action and coefficient characters kept distinct.
-The formulation is based on Worker 486's draft, with source and
-constructor checks and expanded provenance by Worker 350.
+The formulation was checked against the source and the constructors.
 
 For every prime p and canonical p-adic field F in universe uF, the
 character psi, scalar additive Haar nu and its self-duality certificate
@@ -114,7 +114,7 @@ Shalika, *Rankin-Selberg Convolutions*, Amer. J. Math. 105 (1983),
 `d9feed6388ca5acf02ecc6a8cce984871a7c28f062ff441e45a71fa2d8962245`.
 The original PDF is
 `/home/taskhub/central-library/Jacquet-Piatetski-Shapiro-Shalika--Rankin-Selberg Convolutions--1983.pdf`.
-Workers 486 and 350 visually read printed 427-429 for the right action, partial
+Printed 427-429 were visually read for the right action, partial
 transform, rho0, plus full transform and literal model (8), and printed
 431-432 for the Section 6.2 opening definition, Proposition (1), scalar
 Lemma (2) and its Fourier-inversion reduction. These are one-based PDF
@@ -166,7 +166,7 @@ model integral.
 The explicit function formula, original-carrier tensor packaging,
 canonical p-adic scope, full-type hypothesis and both integrability
 conjuncts are thus derived scope choices, rather than a claim that JPSS
-provides this typed statement verbatim. A later proof must establish the
+provides this typed statement verbatim. A proof must establish the
 literal equality and target integrability under these exact conventions.
 
 The scalar `AdjacentRankUnipotentFourierStatement` is a separate prerequisite,

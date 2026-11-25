@@ -83,13 +83,6 @@ Corollary 6.4 has inverse factors for all three pair sums; Corollary 6.5
 prints its `(f+h)` factor without that inverse. The balanced cube statement
 is the corrected input used here.
 
-The adapter code is reused from the task objective's conditional proof
-supplied by Worker 998 of the previous instance, which records the same
-derivation in the separating-line-bundle draft by Worker 899 of the previous
-instance. These are the authors of the reused adapter; their identities were
-not carried into this instance. Worker 943 of the previous instance
-independently recompiled that adapter; no additional code from that worker
-is used here. Worker 2784 recovered the adapter, checked the current
-interfaces, assembled the unconditional theorem using the published cube
-proof, and wrote this documentation. The public helpers are reused by import; their existing authorship remains in their own paired
-documentation.
+The adapter code is reused from an earlier conditional proof of the same
+derivation, which also appeared in a draft of the separating-line-bundle
+proof. The public helpers are reused by import.

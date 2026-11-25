@@ -45,8 +45,8 @@ so the composite is an isomorphism by `IsIso.comp_isIso'`.
 
 ## Dependencies
 
-- `Langlands.AlgebraicGeometry.Modules.GeometricFibreDirectImage` (new helper
-  module in this contribution), which uses the published
+- `Langlands.AlgebraicGeometry.Modules.GeometricFibreDirectImage` (helper
+  module, ported with this file), which uses the published
   `sections_of_geometricFibreCohomologyDegreeZero`,
   `pushforward_isLocallyFreeOfRank_and_isIso_pushforwardBaseChange` and
   `relativeCohomologyPullbackIso`;

@@ -33,7 +33,7 @@ moduli problem. The registered source is
 `kottwitz-1992-points-shimura-finite-fields`, SHA-256
 `c7cede3d0a5e201068e6100acbb3832adb67767d69248ec65458e7cc74ee46f1`.
 
-The present unit combines the existing `HarrisHodgeInput`,
+The present module combines the existing `HarrisHodgeInput`,
 `RationalLieDeterminantClasses` and `PolarizedWeilLevelClasses`
 constructions. Its provenance is the pullback of the already well-defined
 determinant predicate along the actual forget-action map, followed by
@@ -54,10 +54,10 @@ is `D.harrisHodgePELForm C`.
 `D.harrisHodgePELAlgebra C` the actual `StarRing A` operation.
 Its involution, multiplication and addition laws are the corresponding
 algebra-involution laws. `auxiliary_star` computes its value.
-The published `harrisHodgePELAlgebra_isPositive` proves positivity of this
+The theorem `harrisHodgePELAlgebra_isPositive` proves positivity of this
 auxiliary involution after real base change. The same whole
 `harrisHodgePELUnit` witness is used in the form and the auxiliary algebra.
-The published form is alternating and nondegenerate, and
+The form is alternating and nondegenerate, and
 `auxiliary_form_adjoint` identifies its left adjoint with this star.
 The original Harris involution remains the right adjoint, as proved in
 `HarrisHodgeInput`; it is not installed as the left star here.
@@ -175,16 +175,17 @@ finite dimension from the actual totally real basis of `D` and transitivity
 of finite dimension over `ℚ ⊆ E`. No extra finiteness hypothesis is supplied
 to these canonical-positive wrappers.
 
-## Remaining source obligations
+## Source requirements not treated here
 
 This construction fixes the base, structure morphism and field-valued point.
 It does not impose a prescribed relative dimension or identify the determinant
 condition with all of Harris–Taylor's compatibility requirements.
 Reindexing by the opposite original Harris similitude group requires the
-separate published regular-source index bridge.
+separate regular-source index bridge of `AbelianScheme.Tate.HarrisWeilLevels`;
+it is carried out in `HarrisPolarizedWeilTower`.
 Canonical point independence, base-scheme pullback of these restricted
-polarized classes, connected and locally noetherian source restrictions,
-extension across disconnected schemes, level smallness, the full Harris PEL
-functor, its precise representability theorem, actual scheme levels and
-coefficient descent remain construction obligations. This focused
-prerequisite asserts none of these conclusions.
+polarized classes (constructed in `HarrisPolarizedDeterminantBaseChange`),
+connected and locally noetherian source restrictions, extension across
+disconnected schemes, level smallness, the full Harris PEL functor, its precise
+representability theorem, actual scheme levels and coefficient descent are not
+constructed in this module. This module asserts none of these conclusions.

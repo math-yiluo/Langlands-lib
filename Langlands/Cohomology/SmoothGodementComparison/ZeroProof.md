@@ -1,15 +1,15 @@
 # The degree-zero smooth Godement comparison map
 
-Author: Worker 716. This module proves Worker 3's statement
+This module proves the statement
 `Langlands.Cohomology.SmoothGodementComparison.SmoothGodementComparisonZeroStatement` from the
 module `Langlands.Cohomology.SmoothGodementComparison.Statement`. It imports that module and
-Worker 61's published module `Langlands.Cohomology.AcyclicResolution.Comparison`. It adds no
+the module `Langlands.Cohomology.AcyclicResolution.Comparison`. It adds no
 definitions.
 
-Composition `f ≫ g` is `f` followed by `g`. Write `Γc` for Worker 13's compact-sections functor
+Composition `f ≫ g` is `f` followed by `g`. Write `Γc` for the compact-sections functor
 `Langlands.Sheaf.Equivariant.smoothSheafCompactSections R G X`, from smooth equivariant sheaves
 to the abelian category `Langlands.SmoothRep R G` of smooth representations; `D` and `η` for
-Worker 61's degree-zero smooth Godement functor `Godement.smoothZeroFunctor R G X` and its
+the degree-zero smooth Godement functor `Godement.smoothZeroFunctor R G X` and its
 coaugmentation `Godement.smoothCoaugmentation R G X : 𝟭 ⟶ D`; and
 `ε := CokernelComplex.augmentationMap D η F` for the augmentation from `F`, placed in degree
 zero, to the smooth Godement complex `K := Godement.smoothComplex R G X F`. Its degree-zero
@@ -46,9 +46,7 @@ zero the comparison map is `τ` for `Γc`, transported along the identification 
 
 ## Proof
 
-The proof follows the route suggested in the task.
-
-1. Worker 61's `AcyclicResolution.toRightDerivedZero_eq_comparison` applied to `Γc`, `ε`, `I`,
+1. `AcyclicResolution.toRightDerivedZero_eq_comparison` applied to `Γc`, `ε`, `I`,
    `φ` and the hypothesis `ε ≫ φ = I.ι` gives
 
    `Γc.toRightDerivedZero.app F =
@@ -60,8 +58,8 @@ The proof follows the route suggested in the task.
    nor left exactness of `Γc`. (It is proved from Mathlib's
    `InjectiveResolution.toRightDerivedZero_eq`, `toRightDerivedZero'_comp_iCycles` and
    `HomologicalComplex.homologyπ_naturality`.)
-2. `toCyclesZero Γc ε` equals `(EquivariantGodementCohomology.cyclesIso D η Γc F).hom`, Worker
-   13's identification of `Γc F` with the degree-zero cycles of `Γc K`. Both are maps into the
+2. `toCyclesZero Γc ε` equals `(EquivariantGodementCohomology.cyclesIso D η Γc F).hom`, the
+   identification of `Γc F` with the degree-zero cycles of `Γc K`. Both are maps into the
    cycles, so it suffices to compare them after the monomorphism
    `HomologicalComplex.iCycles _ 0` (`cancel_mono`). By `AcyclicResolution.toCyclesZero_iCycles`
    and `CokernelComplex.augmentationMap_f_zero` the first becomes `Γc.map (η.app F)`; by
@@ -85,7 +83,7 @@ The proof follows the route suggested in the task.
    closes the goal.
 
 No property of `X` beyond the hypotheses of the statement, and no unproved statement, is used.
-`lean_check` reports that the theorem depends only on the axioms `propext`, `Classical.choice`
+A Lean check reports that the theorem depends only on the axioms `propext`, `Classical.choice`
 and `Quot.sound`.
 
 ## Sources

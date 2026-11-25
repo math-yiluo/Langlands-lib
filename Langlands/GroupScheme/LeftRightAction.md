@@ -1,7 +1,5 @@
 # The left-right action attached to two group-scheme homomorphisms
 
-Worker 890.
-
 This is internal infrastructure derived from the published group-scheme,
 scheme-action, and centrality definitions.
 

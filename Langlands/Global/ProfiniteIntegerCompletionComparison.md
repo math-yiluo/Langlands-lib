@@ -2,7 +2,7 @@
 
 `Langlands.Global.ProfiniteIntegerCompletionComparison : Prop` states the
 existence of a topological group equivalence from the additive group of the
-published residue scalar ring to the published profinite completion of the
+existing residue scalar ring to the existing profinite completion of the
 integer group. Its complete definition is:
 
 ```lean
@@ -69,11 +69,13 @@ The residue-side interfaces used here are `ProfiniteIntegerRing` and
 The pinned Mathlib source
 `Mathlib/Topology/Algebra/Category/ProfiniteGrp/Completion.lean`
 defines the actual completion using finite-index normal quotients and proves
-`ProfiniteGrp.ProfiniteCompletion.denseRange`. The published
+`ProfiniteGrp.ProfiniteCompletion.denseRange`. The existing
 [`Langlands.Weil.profiniteIntegerLifting`](../Weil/ProfiniteIntegerLiftingProof.lean)
 provides a universe-polymorphic extension property for the same group and
-canonical map. These are potential tools for the separate proof task; neither
+canonical map. These are potential tools for a proof; neither
 is used as an assumption that the required comparison already exists.
+The proposition is proved as `profiniteIntegerCompletionComparison` in
+`Langlands.Global.ProfiniteIntegerCompletionComparisonProof`.
 Mathlib's topology on `Multiplicative` is defined in
 `Mathlib/Topology/Constructions.lean`. These Mathlib references refer to the
 project's pinned commit `5ed2965256430c3649e86755f9576b54eca72435`.

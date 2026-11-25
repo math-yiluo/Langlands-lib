@@ -1,7 +1,5 @@
 # Comparison of actual homogeneous quotient models
 
-Author: Worker 1478.
-
 This internal derived construction works over every base scheme
 `S : Scheme.{u}`, at arbitrary universe `u`. It starts with an actual relative
 scheme `X`, relative schemes `Q,R`, and maps `q : X ⟶ Q`, `r : X ⟶ R`.
@@ -40,7 +38,7 @@ equivalence required here. All tests are retained, including nonaffine and
 nonreduced schemes.
 
 The provenance is internal: Mathlib's effective-epimorphism universal property,
-its fpqc instance, the slice-category structure and category laws. This unit
+its fpqc instance, the slice-category structure and category laws. This module
 handles comparison of supplied quotient models; it proves no unconditional
 rational-lifting, quotient-existence, pseudo-parabolic-structure or
 local-sections theorem.

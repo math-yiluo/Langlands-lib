@@ -1,10 +1,6 @@
 # Renard A.VIII.2: presentations by two coproducts of a generator
 
-Authors: Worker 6 (source reading, statement design, Lean draft and
-documentation), Worker 945 (independent source recheck, complete declaration
-inspection and submission).
-
-This is one statement unit in module
+This is the statement module
 `Langlands.CategoryTheory.Renard.GeneratorPresentationStatements`, namespace
 `Langlands.Renard`. It states a strengthened form of the final unnumbered
 lemma in David Renard, *Représentations des groupes réductifs p-adiques*,
@@ -40,8 +36,8 @@ coproducts. It weakens the object hypothesis to the published generator
 condition `HomGenerator P`. Thus it is an internal generalization of the
 source lemma; it does not assert that the source states the stronger
 hypothesis range. A small progenerator supplies the generator premise,
-so the source case will follow after the relevant definitions and proofs
-are available.
+so the source case follows from this target together with the relevant
+definitions and proofs.
 
 The source's proof indexes an evaluation map by elements of an arbitrary
 categorical object `M`. Such an object is not equipped with elements in
@@ -51,10 +47,11 @@ repeat evaluation for its actual kernel. Composing the second evaluation
 map with the kernel inclusion gives the first map of the displayed row.
 This route uses generation and coproducts, without projectivity or
 smallness. It is proof navigation, not a proof supplied by this statement
-unit. Mathlib's `CategoryTheory.isSeparator_iff_epi` in
+module. Mathlib's `CategoryTheory.isSeparator_iff_epi` in
 `CategoryTheory/Generator/Basic.lean` describes the native categorical
 evaluation criterion. The needed comparison with the published
-integer-module Hom definition remains a proof obligation.
+integer-module Hom definition is `homGenerator_isSeparator` in
+`Langlands.CategoryTheory.Renard.GeneratorPresentation`.
 
 ## Exact declaration and sizes
 
@@ -110,9 +107,9 @@ The imported `Langlands.CategoryTheory.Renard.HomObjectProperties` defines
 `Langlands.CategoryTheory.Renard.preadditiveCoyonedaInt P : C ⥤ ModuleCat.{v} ℤ`.
 Its carrier at `X` is `P ⟶ X`, and its map for `g : X ⟶ Y` sends `a` to
 `a ≫ g`. Its integer-module structure is the canonical one on the additive
-Hom group. The Hom construction is reused from Worker 734's published
-`HomFunctors` pair; the object predicate is reused from the published pair
-by Workers 6 and 595. Those pairs were read completely. The current unit
+Hom group. The Hom construction is reused from the published
+`HomFunctors` pair; the object predicate is reused from the published
+`HomObjectProperties` pair. Those pairs were read completely. The current module
 adds no alternative definition or global generator instance.
 
 Native coproducts and exactness are imported from Mathlib
@@ -123,7 +120,7 @@ the evaluation criterion were read in that prepared source tree.
 
 This file supplies only the proposition to be proved. It contains no
 presentation construction or proof, and no new axioms or proof holes.
-Independent statement review and publication precede a separate exact
-proof task. The smallness and finite-support characterization, finite-type
+The proof is in `Langlands.CategoryTheory.Renard.GeneratorPresentation`.
+The smallness and finite-support characterization, finite-type
 comparison, regular-module converse and equivalence with right modules
-over `End P` remain separate obligations of the whole-book parent.
+over `End P` remain separate obligations.

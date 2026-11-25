@@ -1,6 +1,6 @@
 # Square and fixed actions for powered Weyl families
 
-This derived unit supplies two Weyl-action steps for maps used in
+This derived module supplies two Weyl-action steps for maps used in
 the split isogeny construction. It does not require the powered maps
 to represent whole root subgroups. Its generic square and fixed-action
 statements work over an arbitrary commutative ring and arbitrary
@@ -42,8 +42,8 @@ map, so their product does too.
 fixed action from the exact source no-cone hypotheses. Here the
 coefficient ring is local, the actual target is reductive with a
 closed fibrewise-maximal coordinate split torus and full root datum,
-and the root-datum isogeny satisfies the host characteristic
-condition. Actual corresponding target root maps are supplied at
+and the root-datum isogeny satisfies the characteristic condition
+`∀ j', f.rootFactor j' ≠ 1 → (p : R) = 0`. Actual corresponding target root maps are supplied at
 the positive source root, its negative, and the root being conjugated.
 The three maps in the requested identity are their separately
 precomposed images. The included no-cone theorem proves commutation
@@ -59,5 +59,6 @@ is generalization of the published coroot-square point calculation
 to the supplied character formula, coordinate-preserving evaluation,
 group algebra, and the included actual-root no-cone theorem.
 Instantiating the generic lemmas with the complete powered family
-uses its rank-one, equivariance and word formulas; that wrapper and
-the remaining U1 and global isogeny assembly are separate work.
+uses its rank-one, equivariance and word formulas; that wrapper is
+`AffineSplitIsogenyWeylActions`, and neither it nor the global isogeny
+assembly is part of this module.

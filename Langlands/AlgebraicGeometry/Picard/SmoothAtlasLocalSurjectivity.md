@@ -38,7 +38,7 @@ hypothesis and retains the full site and every sheaf section.
 
 The provenance is internal: the result follows from the published actual
 point-fibre presentation, quotient-class maps, their sheaf comparisons, and
-Worker 766's smooth-surjective etale local-sections construction. No new
+the smooth-surjective etale local-sections construction. No new
 literature assertion is introduced. The result supplies the local-surjectivity
 input for the smooth-automorphism quotient construction; it does not assert
 representability of that quotient or prove the final quotient theorem.

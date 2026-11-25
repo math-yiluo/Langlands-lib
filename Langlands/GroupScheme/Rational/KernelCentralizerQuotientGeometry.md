@@ -53,6 +53,6 @@ equation. `KernelRepresentative` transports all three geometric properties
 from `K` to the actual kernel.
 
 The provenance is internal composition of the named existing Library results.
-No new original-literature reformulation is asserted. This unit supplies
+No new original-literature reformulation is asserted. This module supplies
 quotient kernel geometry; it does not prove integral opposite factors or the
 descended facet root-datum theorem.

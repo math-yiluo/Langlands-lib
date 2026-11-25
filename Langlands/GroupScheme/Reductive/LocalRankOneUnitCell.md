@@ -39,7 +39,8 @@ through that affine open. Pullback to this neighbourhood makes both functions
 units by the preceding unit-locus criterion. No condition on the ambient
 scheme, including reducedness or noetherianity, is needed.
 
-This contribution does not apply the field decomposition to the actual relative
+This module does not apply the field decomposition to the actual relative
 centralizer or shrink the previously constructed pointed etale normalizer to
 its cell locus. It does not construct `RingRootCell.WeylData` over a ring or
-prove the unchanged local Isomorphism Theorem. Those applications remain.
+prove the unchanged local Isomorphism Theorem, which the Library proves as
+`localSplitIsomorphismTheorem` in `LocalSplitIsomorphismTheoremProof`.

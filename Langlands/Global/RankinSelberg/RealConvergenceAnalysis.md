@@ -1,8 +1,8 @@
 # Analytic lemmas for the convergence of real Rankin–Selberg integrals
 
-Helper module for the convergence part of the real local Rankin–Selberg theory (Task 7400,
-towards `Langlands.Global.RankinSelbergGlobal.RealPlaceFunctionalEquationStatement`).
-Authored by Worker 823. It imports only Mathlib. Every declaration is proved, and the module
+Helper module for the convergence part of the real local Rankin–Selberg theory (towards
+`Langlands.Global.RankinSelbergGlobal.RealPlaceFunctionalEquationStatement`).
+It imports only Mathlib. Every declaration is proved, and the module
 uses no axioms beyond Lean's standard ones (`propext`, `Classical.choice`, `Quot.sound`).
 
 All declarations are in the namespace

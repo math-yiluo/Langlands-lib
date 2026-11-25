@@ -1,6 +1,7 @@
 # Nonzero inverse-transpose forms for finite adelic representations
 
-This internal construction for Task 7294 supplies the finite-factor form
+This internal construction for the cuspidal contragredient of dual cusp forms
+(`CuspidalTransposeInverseContragredientStatement`) supplies the finite-factor form
 used by the actual finite/infinite intrinsic global pairing assembly.
 It applies to any irreducible admissible complex representation of the
 actual finite adelic group of positive-rank general linear matrices.

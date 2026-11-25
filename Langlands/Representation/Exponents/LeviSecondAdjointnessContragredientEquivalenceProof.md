@@ -1,6 +1,6 @@
 # Second adjointness is equivalent to the Jacquet–contragredient formula
 
-Author: Worker 5457. Module
+Module
 `Langlands.Representation.Exponents.LeviSecondAdjointnessContragredientEquivalenceProof`.
 
 This module proves the Library proposition
@@ -106,7 +106,7 @@ VI.9 construction of second adjointness.
 The final theorem introduces the binders of the statement, installs the canonical
 rational-point topology, and pairs the two implications for the given pair of parabolics.
 
-## Helper modules (same candidate)
+## Helper modules (ported with this module)
 
 - `Langlands.Representation.Category.ConcreteSmoothLimits`: concrete limits of smooth
   representations, joint injectivity of projections, and extraction of fixed vectors from

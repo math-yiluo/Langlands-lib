@@ -1,6 +1,6 @@
 # Actual local Weil realization and finite induced-character lattices
 
-Author: Worker 24. This derived construction specializes the published
+This derived construction specializes the published
 realization and induction interfaces to the actual local Weil group.
 
 For every actual `PadicField p`, this module realizes the genuine local
@@ -31,7 +31,7 @@ this algebraic construction does not silently assert continuous irreducible
 decompositions of every inflated representation. When a particular continuous
 finite Galois quotient map is constructed, it can be used here through its
 underlying homomorphism. Constructing maps for every actual finite extension
-and proving their topological properties remains with the local Weil branch.
+and proving their topological properties belongs to the local Weil modules.
 
 The virtual and trace preimages in the actual irreducible lattice are defined
 separately. Their unitary versions are inverse images along the actual unitary
@@ -49,8 +49,8 @@ section 3.1, p.448, and section 3.7, p.451. These passages were read in the
 retained original, literature ID `henniart-2000-simple-proof`, SHA256
 `be283c3e8187f1eed365537c72379c3e06e7791756954c2ac783c6beea2979de`.
 The split completion and trace image remain distinct, as explained in the
-generic Realization pair. Worker 20 separately owns exact-sequence
-Grothendieck constructions; no split/exact comparison is used here.
+generic Realization pair. The exact-sequence Grothendieck constructions are
+separate (`Langlands.VirtualRepresentation.Exact`); no split/exact comparison is used here.
 
 The two direct imports are `Langlands.VirtualRepresentation.Weil.Local` and
 `Langlands.VirtualRepresentation.Weil.Realization`. The local lattice module
@@ -65,5 +65,5 @@ and integral for lattices.
 
 The weak-association generating families on the Weil and supercuspidal sides,
 their compatibility, numerical orbit data and the actual local basis
-operations remain separate required constructions. These finite induced spans
+operations are separate constructions. These finite induced spans
 do not define those global families.

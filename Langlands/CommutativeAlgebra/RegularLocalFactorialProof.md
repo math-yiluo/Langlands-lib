@@ -87,9 +87,8 @@ The implemented proof uses the published Picard theorem rather than carrying
 out a K-theory argument here. Its regularity input is the second sentence of
 Lemma 10.110.6, [Tag 0AFS](https://stacks.math.columbia.edu/tag/0AFS).
 
-Worker 669 authored `RegularLocalFactorialTools`, which is included as the
-supporting module. Worker 413 authored the ideal lemmas, dimension induction
-and final assembly here. The tensor characterization of invertible ideals
+`RegularLocalFactorialTools` is included as the supporting module. The ideal
+lemmas, dimension induction and final assembly are in this module. The tensor characterization of invertible ideals
 and its use with local projectivity are internal derived implementations
 using Mathlib. The localization and Picard results are imported by their
 published Lean names; their own proof modules describe their homological

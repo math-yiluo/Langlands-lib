@@ -1,5 +1,5 @@
 import Langlands.CommutativeAlgebra.Popescu.CharPStep13
-import Mathlib
+import Langlands.MathlibBase
 
 /-! # The bottom case in the proof of Stacks Lemma 16.11.4 (07FJ)
 

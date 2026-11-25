@@ -43,32 +43,32 @@ variable {M}
 actual coefficient test after arbitrary scheme pullback. -/
 theorem rootVectorPoint_baseChange_of_vector_eq
     (σ : CategoryTheory.Aut M.group) {s t : M.basis.support}
-    (hv : Lie.targetMapLinear σ.hom (CommRingCat.of M.ring) (M.pinning s 1).val =
+    (hv : Lie.targetMapLinear σ.asIso.hom (CommRingCat.of M.ring) (M.pinning s 1).val =
       (M.pinning t 1).val)
     {T : Scheme.{u}} (f : T ⟶ M.base) (A : Type u)
     [CommRing A] [Algebra M.ring A]
     (a : Spec (CommRingCat.of A) ⟶ T)
     (ha : algebraBaseMap M.ring A = a ≫ f) :
     M.rootVectorPoint f A a ha s ≫
-        ((baseChange f).map σ.hom).hom.hom.left =
+        ((baseChange f).map σ.asIso.hom).hom.hom.left =
       M.rootVectorPoint f A a ha t := by
-  have hmap : ((baseChange f).map σ.hom).hom.hom.left ≫
+  have hmap : ((baseChange f).map σ.asIso.hom).hom.hom.left ≫
       pullback.fst M.group.X.hom f =
-    pullback.fst M.group.X.hom f ≫ σ.hom.hom.hom.left := by
+    pullback.fst M.group.X.hom f ≫ σ.asIso.hom.hom.hom.left := by
     change pullback.lift _ _ _ ≫ _ = _
     exact pullback.lift_fst _ _ _
-  have hvA := (lieKernelTargetLinear_map σ.hom
+  have hvA := (lieKernelTargetLinear_map σ.asIso.hom
     (Algebra.ofId M.ring A) (M.pinning s 1).val).trans
       (congrArg (lieKernelMapLinear M.group (Algebra.ofId M.ring A)) hv)
   have hp := congrArg (fun z => z.toMul.val.left) hvA
-  change (M.rootVectorAt A s).val.left ≫ σ.hom.hom.hom.left =
+  change (M.rootVectorAt A s).val.left ≫ σ.asIso.hom.hom.hom.left =
     (M.rootVectorAt A t).val.left at hp
   apply pullback.hom_ext
   · rw [Category.assoc, hmap, ← Category.assoc,
       rootVectorPoint_fst, rootVectorPoint_fst]
     exact hp
-  · have hw := Over.w ((baseChange f).map σ.hom).hom.hom
-    change ((baseChange f).map σ.hom).hom.hom.left ≫
+  · have hw := Over.w ((baseChange f).map σ.asIso.hom).hom.hom
+    change ((baseChange f).map σ.asIso.hom).hom.hom.left ≫
       pullback.snd M.group.X.hom f = pullback.snd M.group.X.hom f at hw
     rw [Category.assoc, hw]
     exact (M.rootVectorPoint_snd f A a ha s).trans
@@ -79,10 +79,10 @@ on all pullbacks, even when their common scheme is disconnected. -/
 theorem preservesLocalPinning_baseChange_of_vector_permutation
     (σ : CategoryTheory.Aut M.group)
     (p : M.basis.support ≃ M.basis.support)
-    (hp : ∀ s, Lie.targetMapLinear σ.hom (CommRingCat.of M.ring)
+    (hp : ∀ s, Lie.targetMapLinear σ.asIso.hom (CommRingCat.of M.ring)
       (M.pinning s 1).val = (M.pinning (p s) 1).val)
     {T : Scheme.{u}} (f : T ⟶ M.base) :
-    PreservesLocalPinning ((baseChange f).mapIso σ) := by
+    PreservesLocalPinning ((baseChange f).mapIso σ.asIso) := by
   intro A _ _ α β a ha hb
   have hαβ : α = β := by
     apply Algebra.algebra_ext
@@ -103,7 +103,7 @@ pinning on every actual pullback. -/
 theorem IsPinnedAutomorphism.preservesLocalPinning_baseChange
     {σ : CategoryTheory.Aut M.group} {θ : RootPairing.Aut M.rootDatum}
     (h : M.IsPinnedAutomorphism σ θ) {T : Scheme.{u}} (f : T ⟶ M.base) :
-    PreservesLocalPinning ((baseChange f).mapIso σ) := by
+    PreservesLocalPinning ((baseChange f).mapIso σ.asIso) := by
   let p := h.simplePermutation M
   obtain ⟨hθ, _, hX⟩ := h
   exact preservesLocalPinning_baseChange_of_vector_permutation σ p hX f
@@ -114,10 +114,10 @@ theorem IsPinnedAutomorphism.exists_basedCoordinateIso [Nonempty M.base]
     {σ : CategoryTheory.Aut M.group} {θ : RootPairing.Aut M.rootDatum}
     (h : M.IsPinnedAutomorphism σ θ) :
     ∃ d : BasedCoordinateIso M.inclusion M.inclusion
-      M.rootDatum M.rootDatum M.basis M.basis, d.groupIso = σ := by
+      M.rootDatum M.rootDatum M.basis M.basis, d.groupIso = σ.asIso := by
   obtain ⟨hθ, ⟨τ, hτ, hχ⟩, _⟩ := h
   refine ⟨{
-    groupIso := σ
+    groupIso := σ.asIso
     torusIso := τ
     rootEquiv := θ⁻¹
     sourcePairing := M.pairing_eq_dot_of_nonempty
@@ -137,11 +137,11 @@ after every actual scheme pullback. -/
 theorem IsPinnedAutomorphism.preservesCocharacter_baseChange [Nonempty M.base]
     {σ : CategoryTheory.Aut M.group} {θ : RootPairing.Aut M.rootDatum}
     (h : M.IsPinnedAutomorphism σ θ) {T : Scheme.{u}} (f : T ⟶ M.base) :
-    PreservesCocharacter ((baseChange f).mapIso σ) := by
+    PreservesCocharacter ((baseChange f).mapIso σ.asIso) := by
   obtain ⟨d, hd⟩ := h.exists_basedCoordinateIso M
   have hc := d.cocharacter_comp
   rw [hd] at hc
-  change M.cocharacterOver f ≫ (baseChange f).map σ.hom = M.cocharacterOver f
+  change M.cocharacterOver f ≫ (baseChange f).map σ.asIso.hom = M.cocharacterOver f
   rw [M.cocharacterOver_eq_baseChange]
   rw [← Dynamic.baseChangeCocharacter_comp_hom, hc]
 
@@ -150,7 +150,7 @@ scheme pullback. -/
 theorem IsPinnedAutomorphism.preservesTorus_baseChange
     {σ : CategoryTheory.Aut M.group} {θ : RootPairing.Aut M.rootDatum}
     (h : M.IsPinnedAutomorphism σ θ) {T : Scheme.{u}} (f : T ⟶ M.base) :
-    PreservesTorus ((baseChange f).mapIso σ) := by
+    PreservesTorus ((baseChange f).mapIso σ.asIso) := by
   obtain ⟨_, ⟨τ, hτ, _⟩, _⟩ := h
   refine ⟨(splitTorus.baseChangeIso f M.coordinates).symm ≪≫
     (baseChange f).mapIso τ ≪≫ splitTorus.baseChangeIso f M.coordinates, ?_⟩
@@ -165,7 +165,7 @@ theorem IsPinnedAutomorphism.preservesTorus_baseChange
 theorem IsPinnedAutomorphism.locallyPinned_baseChange [Nonempty M.base]
     {σ : CategoryTheory.Aut M.group} {θ : RootPairing.Aut M.rootDatum}
     (h : M.IsPinnedAutomorphism σ θ) {T : Scheme.{u}} (f : T ⟶ M.base) :
-    IsLocallyPinned ((baseChange f).mapIso σ) :=
+    IsLocallyPinned ((baseChange f).mapIso σ.asIso) :=
   ⟨h.preservesTorus_baseChange M f, h.preservesCocharacter_baseChange M f,
     h.preservesLocalPinning_baseChange M f⟩
 
@@ -174,7 +174,7 @@ used in the relative pinned normalization and uniqueness interfaces. -/
 theorem IsPinnedAutomorphism.fppfLocallyPinned_baseChange [Nonempty M.base]
     {σ : CategoryTheory.Aut M.group} {θ : RootPairing.Aut M.rootDatum}
     (h : M.IsPinnedAutomorphism σ θ) {T : Scheme.{u}} (f : T ⟶ M.base) :
-    IsFppfLocallyPinned ((baseChange f).mapIso σ) :=
+    IsFppfLocallyPinned ((baseChange f).mapIso σ.asIso) :=
   (h.locallyPinned_baseChange M f).fppfLocallyPinned
 
 end Langlands.GroupScheme.AffinePinnedModel

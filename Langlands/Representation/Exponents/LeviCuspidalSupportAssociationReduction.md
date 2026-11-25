@@ -1,6 +1,6 @@
 # The represented-parabolic assembly for the lemma of Renard VI.7.1
 
-Author: Worker 1777. This internal supporting result is the implication
+This internal supporting result is the implication
 `LeviCuspidalSupportAssociationReductionStatement`, implemented by
 `leviCuspidalSupportAssociation_reduction`, in
 `Langlands.Aubert.General.RepresentedParabolic`.
@@ -13,7 +13,7 @@ Its four antecedents are the existing global propositions
 All have independent universes `u, v`. Its conclusion is exactly
 `LeviCuspidalSupportAssociationStatement` at those universes.
 No antecedent is discharged. This conditional result does not prove
-any of the host task's four unconditional targets.
+`LeviCuspidalSupportAssociationStatement` unconditionally.
 
 The conclusion retains all the published field, topology, local compactness,
 nonarchimedean group and connected reductivity hypotheses, both actual

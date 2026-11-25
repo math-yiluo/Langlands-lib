@@ -1,8 +1,7 @@
 # Localization of a linear endomorphism at the powers of X (Renard A.III.1, example 5)
 
-Author: Worker 751, who read the original passage and the errata pages cited
-below, and implemented the Lean construction and proofs. Worker 709 specified
-the task and its scope.
+The original passage and the errata pages cited below were read for this
+module.
 
 The module `Langlands/Algebra/RenardEndomorphismLocalization.lean` constructs,
 for a linear endomorphism `a` of an arbitrary module V, the actual localized pair
@@ -61,7 +60,7 @@ linear map that intertwines the two endomorphisms.
 
 The source gives no separate proof for example 5; it obtains the pair from
 example 4 through the equivalence of categories. The Lean proofs below follow that route on actual
-objects, with the published module-localization interface.
+objects, with the module-localization interface.
 
 ## Hypotheses, universes and the extension to rings
 
@@ -104,11 +103,11 @@ specialization `FieldStatement` below.
   R[X]-action along the constant polynomials.
 - `toPolynomialObj_eq A` proves, by `rfl`, that for every object
   `A : Langlands.Algebra.PolynomialEndomorphism.EndomorphismCat.{u, v} R` the
-  published object map gives
+  object map gives
   `toPolynomialObj R A = ModuleCat.of R[X] (EvalModule (endomorphism R A))`.
-  So the evaluation module used here is the carrier of the published
+  So the evaluation module used here is the carrier of the
   polynomial-module equivalence (`equivalence`, and `fieldEquivalence` for
-  fields). That equivalence is not rebuilt; this unit works directly with its
+  fields). That equivalence is not rebuilt; this module works directly with its
   object-level module.
 
 ## Canonical map
@@ -130,8 +129,8 @@ fraction `v / 1`.
   `LocalizedModule.divBy ⟨X, Submonoid.mem_powers X⟩` restricted to R
   (`localizedInv_apply`).
 - `localizedEnd_localizedInv a z` and `localizedInv_localizedEnd a z` are the
-  two inverse identities `ã (ã⁻¹ z) = z` and `ã⁻¹ (ã z) = z`. They apply the
-  published `Langlands.Renard.ModuleLocalization.scalar_divBy` and
+  two inverse identities `ã (ã⁻¹ z) = z` and `ã⁻¹ (ã z) = z`. They apply
+  `Langlands.Renard.ModuleLocalization.scalar_divBy` and
   `divBy_scalar` to the denominator X. `localizedEnd_mul_localizedInv` and
   `localizedInv_mul_localizedEnd` state the same identities as products in
   `Module.End R (Localized a)`.
@@ -164,8 +163,8 @@ numerator is the image of v in the evaluation module. The laws are:
 - `localizedEnd_frac a v n : localizedEnd a (frac a v n) = frac a (a v) n`
   (X action: `ã (v / Xⁿ) = a v / Xⁿ`).
 - `localizedInv_frac a v n : localizedInv a (frac a v n) = frac a v (n + 1)`
-  (inverse action: `ã⁻¹ (v / Xⁿ) = v / Xⁿ⁺¹`). It is proved from the
-  published `ModuleLocalization.divBy_mk`.
+  (inverse action: `ã⁻¹ (v / Xⁿ) = v / Xⁿ⁺¹`). It is proved from
+  `ModuleLocalization.divBy_mk`.
 - `localizedEnd_frac_succ a v n : localizedEnd a (frac a v (n + 1)) = frac a v n`.
 - `frac_eq_localizedInv_pow a v n : frac a v n = (localizedInv a ^ n) (iota a v)`,
   the inverse-shift identity `v / Xⁿ = ã⁻ⁿ (ι v)`. It matches the source's
@@ -215,12 +214,12 @@ The construction of the factorization:
   `polyMap_of` states `polyMap a b f hf (of a v) = of b (f v)`.
 - `factor a b hb f hf : Localized a →ₗ[R] W` is
   `(Module.AEval'.of b).symm.toLinearMap.comp ((ModuleLocalization.factor (powersX R) (evalModule_isSLocal b hb) (polyMap a b f hf)).restrictScalars R)`
-  (`factor_apply`). That is, it is the published localized-module lift
+  (`factor_apply`). That is, it is the localized-module lift
   `ModuleLocalization.factor` of `polyMap`, read back in W.
 - `factor_intertwines`: `factor (localizedEnd a z) = b (factor z)`. This holds
   because the lift is R[X]-linear (`map_smul` for X) and by
   `Module.AEval'.of_symm_X_smul`.
-- `factor_comp_iota`: `(factor a b hb f hf).comp (iota a) = f`, by the published
+- `factor_comp_iota`: `(factor a b hb f hf).comp (iota a) = f`, by
   `ModuleLocalization.factor_comp` and `polyMap_of`.
 - `factor_frac a b hb f hf v n`:
 
@@ -271,9 +270,9 @@ depends only on the standard axioms `propext`, `Classical.choice` and
 
 ## Reuse
 
-Published Library declarations reused by name:
+Library declarations reused by name:
 `Langlands.Renard.ModuleLocalization.{IsSLocal, isSLocal_iff_bijective, factor, factor_comp, divBy_scalar, scalar_divBy, divBy_mk}`
-(Worker 618, Renard example 4) and
+(Renard example 4, in `Langlands.Algebra.RenardModuleLocalization`) and
 `Langlands.Algebra.PolynomialEndomorphism.{EndomorphismCat, endomorphism, toPolynomialObj}`.
 Mathlib (pinned commit `5ed2965256430c3649e86755f9576b54eca72435`) supplies
 `Module.AEval'` and its lemmas `of`, `X_smul_of`, `X_pow_smul_of` and
@@ -285,7 +284,7 @@ Mathlib (pinned commit `5ed2965256430c3649e86755f9576b54eca72435`) supplies
 
 ## Scope
 
-This unit does not formalize:
+This module does not formalize:
 
 - the category of pairs, the full subcategory of pairs with invertible
   endomorphism, or an adjunction or universal-arrow packaging;
@@ -298,4 +297,10 @@ This unit does not formalize:
 - the finite-localization proposition of Appendix C.II (printed page 279 / PDF
   page 285).
 
-These remain parent obligations.
+These are outside this module. Among them, the extension to algebra actions
+is in `RenardAlgebraActionLocalization`, the kernel union and the injectivity
+of ι are stated in `RenardEndomorphismLocalizationStatements` and proved in
+`RenardEndomorphismLocalizationKernelProof`, the quotient `L / K` is
+constructed in `RenardEndomorphismQuotient`, and the C.II proposition is
+stated, under each candidate finiteness reading, in
+`RenardSourceFiniteLocalizationStatements`.

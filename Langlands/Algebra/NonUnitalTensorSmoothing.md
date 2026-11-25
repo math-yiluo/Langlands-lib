@@ -3,7 +3,7 @@
 This module constructs the two additive comparison maps in the tensor argument
 of David Renard, *Représentations des groupes réductifs p-adiques*, French
 version dated 9 July 2026, I.4.3 "Dualité et complétion", printed page 25 /
-PDF31. Worker 1171 authored this Lean/Markdown pair. Unless qualified below,
+PDF31. Unless qualified below,
 names are in `Langlands.Algebra.NonUnitalTensorSmoothing`. The module reuses
 `Langlands.Algebra.NonUnitalModuleTensor`, the published original balanced
 tensor, and the existing `oppositeIdempotent` and `oppositeIdempotent_val`
@@ -15,10 +15,10 @@ The registered governing source is
 passage of I.4.3 beginning "Montrons que le morphisme canonique
 ι : N_A ⊗_A M → N ⊗_A M est un isomorphisme" was read in full, along with the
 nonunital and nondegenerate conventions of I.1.1–I.1.2 (printed pp. 5–7 /
-PDF11–13) and the tensor conventions of I.2.1–I.2.2. As recorded in the task
-contract, the parent task checked the registered
+PDF11–13) and the tensor conventions of I.2.1–I.2.2. The registered
 `renard-2010-corrections-complements` (SHA256
-`fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`), PDF1–2.
+`fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`) was
+also checked, at PDF1–2.
 The 2026 edition governs.
 
 ## Scope and generalization
@@ -183,10 +183,13 @@ other's.
 
 The module does not prove `Φ ∘ ι = id` or `ι ∘ Φ = id`, the bijectivity of `ι`,
 or any prescribed additive isomorphism or equivalence. It also proves no
-naturality in `N` or `M`, no recovered scalar wrappers (a later scalar
-successor must use the left-factor-only nondegeneracy API, since `N` may be
-degenerate), and no complex-linear equivalence. These are separate successor
-units. The parent task retains the comparison of the completion with the full
+naturality in `N` or `M`, no recovered scalar wrappers (a scalar version
+must use the left-factor-only nondegeneracy API, since `N` may be
+degenerate), and no complex-linear equivalence. The inverse identities,
+bijectivity, prescribed additive equivalence and naturality are stated in
+`Langlands.Algebra.NonUnitalTensorSmoothingStatements` and proved in
+`Langlands.Algebra.NonUnitalTensorSmoothingProof`. This module also does not
+treat the comparison of the completion with the full
 dual, `M̃ = (M*)_A ≃ M*`, the chain of Hom adjunctions preceding it, the
-appeal to A.III.3, and formula (I.4.3.1). None of these is assumed or claimed
+appeal to A.III.3, or formula (I.4.3.1). None of these is assumed or claimed
 here.

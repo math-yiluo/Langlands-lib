@@ -4,9 +4,6 @@ Module `Langlands.Analysis.RenardConeProjectionStatements`.
 Namespace `Langlands.Renard`.
 Entry proposition `ConeProjectionStatements`; nothing is proved here.
 
-Worker 1222 wrote this statement unit under the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`.
-
 ## Source and provenance
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*,
@@ -15,8 +12,8 @@ French edition dated 9 July 2026, registered as
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 The statements are the Proposition and the Corollary of V.5.5, "Démonstration
 du lemme combinatoire de Langlands", printed pp.127–128 / PDF pp.133–134.
-Worker 1222 read V.3.18 (printed pp.114–115 / PDF pp.120–121) and all of
-V.5.5 (printed pp.127–129 / PDF pp.133–135):
+The statements were written from V.3.18 (printed pp.114–115 / PDF pp.120–121)
+and all of V.5.5 (printed pp.127–129 / PDF pp.133–135):
 
 > Soit donc `V` un tel espace [euclidien], de dimension finie, où l'on note
 > `⟨ . , . ⟩` le produit scalaire. Fixons un cône ouvert `C` de `V`, et notons
@@ -129,7 +126,7 @@ ConeProjectionBasisStatement.{u', v'}`.
 
 ## Relation to existing work
 
-The published `Langlands.RootWeightConeDecompositionStatement` (Worker 19) is a
+The published `Langlands.RootWeightConeDecompositionStatement` is a
 related Euclidean lemma from Silberger (1978), Lemma 7.1. It has the opposite
 labelling of the index set (its `F` indexes the weight terms) and assumes in
 addition `⟨αᵢ, αⱼ⟩ ≤ 0` for `i ≠ j`. The present Corollary has no such
@@ -142,8 +139,9 @@ formalized.
 
 ## Scope
 
-This file states the two assertions of V.5.5 and proves neither. Proofs belong
-to a separate `lean.proof@1` task targeting `ConeProjectionStatements`.
+This file states the two assertions of V.5.5 and proves neither. The proofs
+are in `Langlands.Analysis.RenardConeProjectionProof`
+(`coneProjectionStatements`).
 Renard's route is the projection theorem for closed convex sets, the
 equivalences (i) ⟺ (ii) ⟺ (iii), which he leaves to the reader, and for the
 Corollary the expansion of `v₀` in the basis `ω` and of `v₀ − v` in the basis
@@ -157,6 +155,5 @@ interface (rows D04–D05 of `notes/renard/chapter-v-structural-inputs.md`).
 
 The file imports only Mathlib (`Analysis.InnerProductSpace.Basic`,
 `Analysis.Convex.Basic`, `LinearAlgebra.Basis.Defs`,
-`Topology.Algebra.Module.FiniteDimension`; environment
-`bb168ec3-1031-46d9-816b-5c2ed7bbe1a6`, Mathlib commit
+`Topology.Algebra.Module.FiniteDimension`; Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`).

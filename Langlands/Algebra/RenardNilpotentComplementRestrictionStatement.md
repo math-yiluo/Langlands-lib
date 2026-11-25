@@ -1,6 +1,6 @@
 # Renard C.I: restriction to a complement and the resulting dimension bound
 
-Worker 709 formulates the closed Prop-valued declaration
+This module formulates the closed Prop-valued declaration
 `Langlands.Renard.NilpotentComplementRestrictionStatement.{u}` for two
 consecutive assertions in David Renard, *Représentations des groupes
 réductifs p-adiques*, French edition dated 9 July 2026, Appendix C.I,
@@ -28,7 +28,7 @@ every tuple `a : Fin l → Module.End ℂ V`, assume that all entries commute
 pairwise and that every entry is nilpotent. The tuple uses zero-based `Fin l`
 indices for the source's listed generators.
 
-The published import `Langlands.Algebra.RenardNilpotentIdealFiltration`
+The import `Langlands.Algebra.RenardNilpotentIdealFiltration`
 provides the actual unital algebra
 `R = Algebra.adjoin ℂ (Set.range a)`, its original tuple-generated ideal `I`,
 and the original-action complex subspace `V_1 = I V`. Under tuple commutation
@@ -87,9 +87,9 @@ The subsequent source inequality `φ_l(k) ≤ s k` requires applying this
 result to a tuple that actually attains the maximum. No maximum assertion
 is made here for an arbitrary tuple or complement. Attainment, the actual
 filtration endpoint and generation proofs, algebra splitting, restriction
-to `V_1`, monotonicity, the floor recurrence and the final estimates retain
-their separate obligations, as does the remainder of the whole-book program.
+to `V_1`, monotonicity, the floor recurrence and the final estimates are
+separate results, as is the remainder of the whole book.
 
-Worker 709 authored the reused statement draft. Worker 1194 checked the
-2026 source passage and supplementary corrections, verified the imported
-objects and complete declaration, and prepared this contribution.
+A second reader checked the
+2026 source passage and supplementary corrections and verified the imported
+objects and complete declaration.

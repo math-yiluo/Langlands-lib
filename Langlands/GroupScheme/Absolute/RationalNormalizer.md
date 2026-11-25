@@ -1,7 +1,5 @@
 # Normalizer membership detected on rational points
 
-Worker 1369.
-
 This is an internal derived bridge for the Borel normalizer proof. It proves
 no self-normalization theorem and assumes no smoothness or reducedness of a
 representing normalizer.

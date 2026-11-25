@@ -1,7 +1,5 @@
 # Rational representation with presented strict affinoid tests: proof
 
-Author: Worker 247.
-
 The theorem `Langlands.Analytic.StrictTestDomain.rationalRepresentation`
 proves `RationalRepresentationStatement`, the target stated and explained in
 `RationalRepresentationStatement.md`. Given a complete ultrametric normed

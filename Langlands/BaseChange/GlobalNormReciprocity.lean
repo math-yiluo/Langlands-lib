@@ -1,8 +1,8 @@
-import Langlands.ClassField.Global.FundamentalClassProof
-import Langlands.ClassField.Global.LocalRelativeWeilMapExistenceProof
-import Langlands.ClassField.Global.LocalRelativeWeilTransferProof
-import Langlands.ClassField.Global.RelativeWeilCharacterFactorization
-import Langlands.ClassField.Global.RelativeWeilUnramifiedTransfer
+import Langlands.ClassFieldTheory.Global.FundamentalClassProof
+import Langlands.ClassFieldTheory.Global.LocalRelativeWeilMapExistenceProof
+import Langlands.ClassFieldTheory.Global.LocalRelativeWeilTransferProof
+import Langlands.ClassFieldTheory.Global.RelativeWeilCharacterFactorization
+import Langlands.ClassFieldTheory.Global.RelativeWeilUnramifiedTransfer
 import Langlands.ClassFieldTheory.Local.LocalRelativeClassFormationProof
 import Langlands.Correspondence.AssemblyLTwistedSupercuspidal
 import Langlands.Global.Factors.RelativeWeilAssemblyCharacters
@@ -19,7 +19,7 @@ universe u
 namespace Langlands.BaseChange
 
 open NumberField IsDedekindDomain IsDedekindDomain.HeightOneSpectrum
-open ClassField.Global ClassField.Global.FundamentalClass ClassFieldTheory.Local
+open ClassFieldTheory.Global ClassFieldTheory.Global.FundamentalClass ClassFieldTheory.Local
 open Global Global.AdelicFunctoriality Global.CompletionPadic LocalClassField
 open scoped NumberField FiniteExtension
 

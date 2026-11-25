@@ -4,8 +4,7 @@ This file defines the proposition
 `Langlands.GLTemperedOppositeTwistConeStatement.{uF,uV,uM}`. It is a
 Prop-valued definition. It states the assertion and does not prove it.
 
-Worker 429 drafted the Lean statement after coordinating with Workers 359
-and 349. Worker 264 compiled and inspected it and wrote this Markdown.
+The Lean statement was compiled and inspected.
 
 ## The statement
 
@@ -92,7 +91,7 @@ are `(-1/2, 1/2)`. The candidate's real determinant exponent is `-v`, so
 the conclusion is the positive cone for `v`. The imaginary parts `b` and
 the unitary central character of `ω` contribute characters of absolute
 value one. The statement asserts none of these scalar facts. They are
-obligations of the later proof.
+obligations of the proof, `TemperedOppositeTwistConeProof`.
 
 ## Provenance
 
@@ -152,8 +151,8 @@ or cite published results.
   cannot be applied to a general `A` without further argument. Nor may
   one infer a global finite dual spectrum for every admissible source. A
   route through finite-dimensional compact-open fixed spaces may avoid
-  that. Worker 84 suggested such a route, but it is unverified and is not
-  a premise of this proposition.
+  that. Such a route is not verified here and is not a premise of this
+  proposition.
 - **Chamber.** `Langlands.GLTemperedExponentCriterionStatement` concerns
   *upper* Jacquet exponents and uses the chamber where
   `i ↦ normalizedAbs (a i)` is monotone. Passing from the opposite to the
@@ -167,4 +166,4 @@ or cite published results.
 The proposition supplies no branch selection, continuation,
 almost-everywhere occurrence, tempered induction, composition series,
 multiplicity equality, quotient existence or irreducible head. Those
-assertions belong to separate tasks.
+assertions belong to separate statements.

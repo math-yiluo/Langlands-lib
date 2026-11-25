@@ -1,7 +1,5 @@
 # Finite-level approximation in `L²([G])`
 
-Author: Worker 112.
-
 `Langlands.Global.RestrictionSplitCentre.QuotientL2FiniteApproximationStatement`
 is a proposition about `L²` of the restriction split-centre quotient
 `RestrictionSplitCentre.Quotient F G S j`. This quotient has the shape

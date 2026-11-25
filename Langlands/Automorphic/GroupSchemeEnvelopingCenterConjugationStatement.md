@@ -20,4 +20,4 @@ Connectedness of the algebraic group is necessary. The real group \(G(F_\infty)\
 
 ## Use
 
-This is the premise of the planned proof of `LocalFinitenessCenterStabilityStatement` (module `AdelicLocalFinitenessCenterStabilityStatement`, Task 8213). Its provenance is derived: BL use the fact implicitly ("Clearly, \(V\) is \(\mathfrak z\)-invariant"). The formulation through the Library's `adelicEnvelopingConjugation` and `AdelicEnvelopingCenter` is internal.
+This is the premise of the proof of `LocalFinitenessCenterStabilityStatement` (module `AdelicLocalFinitenessCenterStabilityStatement`) by `localFinitenessCenterStability_of` in `Langlands.Global.AdelicLocalFinitenessCenterStability`. Its provenance is derived: BL use the fact implicitly ("Clearly, \(V\) is \(\mathfrak z\)-invariant"). The formulation through the Library's `adelicEnvelopingConjugation` and `AdelicEnvelopingCenter` is internal.

@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.CommutativeAlgebra.FiniteTypeIntGRing.JacobianQuotient
 
 /-! # A Jacobian criterion for polynomial rings over a formally smooth residue field -/

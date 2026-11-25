@@ -1,8 +1,5 @@
 # A common cuspidal-induction subquotient forces association
 
-Authors: Workers 72 and 120. Worker 72 extracted the published direction;
-Worker 120 supplied its canonical-object interface in the private parent assembly.
-
 `Langlands.CuspidalSupport.CuspidalInductionReverseAssociationTheorem`
 separates the common-subquotient-to-association direction of the published
 `CuspidalInductionAssociationTheorem`. It is a proposition definition,
@@ -40,4 +37,4 @@ Registered source: `bernstein-zelevinsky-1977-induced-i`, SHA-256
 The original pages were read directly. The proposition is an internal
 extraction of one direction of the existing GL_n specialization, preserving
 its actual constructions and extending the direction's interface to the
-same rank-zero scope. All existing Lean/Markdown pairs remain unchanged.
+same rank-zero scope.

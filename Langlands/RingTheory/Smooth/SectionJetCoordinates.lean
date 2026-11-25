@@ -39,7 +39,11 @@ theorem augmentation_aeval (hz : ∀ s, ε (z s) = 0) (p : MvPolynomial σ k) :
     ε (aeval z p) = constantCoeff p := by
   induction p using MvPolynomial.induction_on with
   | C c => simp
-  | add p q hp hq => simp [hp, hq]
+  | add p q hp hq =>
+    have h1 : aeval z (p + q) = aeval z p + aeval z q := (aeval z).toRingHom.map_add p q
+    have h2 : ε (aeval z p + aeval z q) = ε (aeval z p) + ε (aeval z q) :=
+      ε.toRingHom.map_add _ _
+    rw [h1, h2, hp, hq, RingHom.map_add]
   | mul_X p s hp => simp [hp, hz]
 
 variable (b : Module.Basis σ k (RingHom.ker ε).Cotangent)

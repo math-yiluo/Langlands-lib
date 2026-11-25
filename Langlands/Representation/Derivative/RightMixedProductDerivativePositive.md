@@ -1,8 +1,5 @@
 # The right mixed-product derivative filtration at positive `GL` rank
 
-Authors: Worker 723 (Lean module and Markdown), Worker 969 (Markdown revisions
-and submission).
-
 This module proves the positive-`GL`-rank case of Bernstein–Zelevinsky (1977),
 Corollary 4.14(b), in the exact shape of the published proposition
 `Langlands.Derivative.RightMixedProductDerivativeFiltrationStatement`. Here the
@@ -21,16 +18,18 @@ proposition definitions as explicit hypotheses:
   `max uF uV` of the right mixed product.
 
 This module does not prove any of these hypotheses, and it does not establish
-the target proposition by itself. It is an intermediate unit of task
-`3231134e`. The planned target proof module
+the target proposition by itself. The target proof module
 `Langlands.Representation.Derivative.RightMixedProductDerivativeFiltrationProof`
-is not part of this unit. It will supply each hypothesis from an independently
-published proof and add the `k = 0` case from the published
-`Langlands.Derivative.rightMixedProductDerivativeFiltration_zero`. When this
-unit was submitted, minus exactness was already published as
-`Langlands.Derivative.Mirabolic.minusExactness`. The proofs of the 4.13(c)
-clauses (task `6cd54f76`) and of 4.14(a) (task `7e19f753`) were not yet
-published.
+supplies each hypothesis from its published proof and adds the `k = 0` case
+from the published
+`Langlands.Derivative.rightMixedProductDerivativeFiltration_zero`. Minus
+exactness is `Langlands.Derivative.Mirabolic.minusExactness`; the 4.13(c)
+clauses are `MirabolicProductMinus.rightPsiCompatibility` and
+`MirabolicProductMinus.rightPhiShortExact` (modules
+`MirabolicProductMinusRightPsi` and `MirabolicProductMinusRightPhi`), and
+4.14(a) is `Langlands.Derivative.leftMixedProductDerivativeIso` with
+`leftMixedProductDerivativeVanishing` (module
+`LeftMixedProductDerivativeProof`).
 
 The entry theorem is
 
@@ -256,5 +255,5 @@ the index lemmas `mem_rightMixedDerivativeIndices`,
 and `rightMixedDerivativeIndices_rank` from the target statement module.
 
 The identity, composition, mirabolic rank-cast, iterated-minus and derivative
-exactness helpers are reused from `LevelCalculus`; the duplicate declarations
-in the submitted `RightMixedDerivative` namespace have been removed.
+exactness helpers are reused from `LevelCalculus`; the `RightMixedDerivative`
+namespace does not redeclare them.

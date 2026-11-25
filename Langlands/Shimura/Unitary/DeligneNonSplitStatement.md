@@ -1,7 +1,5 @@
 # Statement: the real Deligne torus is a non-split torus
 
-Author: Worker 207.
-
 This module states, as one proposition, three properties of the Deligne torus
 `S = Res_{ℂ/ℝ} 𝔾_m`. First, it is smooth over `ℝ`. Second, it becomes a split
 torus over `ℂ`. Third, it is not a split torus over `ℝ`. Only the proposition is
@@ -17,7 +15,7 @@ def NonSplitTorusStatement : Prop :=
 ```
 
 - `groupScheme` is the published real Deligne group scheme
-  (`DeligneGroupScheme`, Worker 57) over `Spec (CommRingCat.of ℝ)`. Its points
+  (`DeligneGroupScheme`) over `Spec (CommRingCat.of ℝ)`. Its points
   with values in a real algebra `A` are the units of
   `QuadraticAlgebra A (-1) 0`, that is, of `A ⊗_ℝ ℂ`. So it is
   `Res_{ℂ/ℝ} 𝔾_m`, and its real points are `ℂˣ`.
@@ -63,8 +61,8 @@ The three conjuncts formalize what the sources say about `S`.
   characters. Equivalently, its real points `(ℝˣ)^I` have no element of
   order 4, while `S(ℝ) = ℂˣ` contains `i`.
 
-The milestone is packaged as one conjunction so that a single proof task proves
-all three properties together.
+The three properties are packaged as one conjunction so that a single proof
+proves them together: `nonSplitTorusStatement` in `DeligneNonSplitProof`.
 
 The second conjunct is proved separately by `isSplitTorus_complexGroupScheme` in
 the companion module `DeligneSplitTorus`. It is included so that the statement

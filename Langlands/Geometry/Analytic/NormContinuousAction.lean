@@ -18,7 +18,7 @@ variable (K : Type u) [NormedField K] [IsUltrametricDist K]
 /-- Continuity in the actual quotient norm of every forward algebra orbit. -/
 def normContinuousAffinoidActionProperty :
     ObjectProperty (Action (PresentedStrictAffinoidAlgebra K) G) :=
-  fun X => ∀ a : X.V, Continuous (fun g : G => (X.ρ g).toAlgHom a)
+  fun X => ∀ a : X.V, Continuous (fun g : G => (X.ρ g).asHom.toAlgHom a)
 
 /-- All actions on actual presented quotients with continuous element orbits,
 retaining every equivariant bounded algebra map. -/
@@ -34,9 +34,9 @@ variable {K G}
 
 /-- Bundle a specified bounded automorphism action with continuous element orbits. -/
 def ofAut (P : PresentedStrictAffinoidAlgebra K) (ρ : G →* Aut P)
-    (hρ : ∀ a : P, Continuous (fun g : G => (ρ g).hom.toAlgHom a)) :
+    (hρ : ∀ a : P, Continuous (fun g : G => (ρ g).asIso.hom.toAlgHom a)) :
     NormContinuousAffinoidAction K G :=
-  ⟨⟨P, (Aut.toEnd P).comp ρ⟩, hρ⟩
+  ⟨⟨P, (Aut.toEnd (X := P)).comp ρ⟩, hρ⟩
 
 /-- The bounded inverses come from the group action, rather than an inverse theorem. -/
 abbrev actionAut (X : NormContinuousAffinoidAction K G) : G →* Aut X.obj.V :=
@@ -44,15 +44,16 @@ abbrev actionAut (X : NormContinuousAffinoidAction K G) : G →* Aut X.obj.V :=
 
 @[simp]
 theorem actionAut_ofAut (P : PresentedStrictAffinoidAlgebra K) (ρ : G →* Aut P)
-    (hρ : ∀ a : P, Continuous (fun g : G => (ρ g).hom.toAlgHom a)) :
+    (hρ : ∀ a : P, Continuous (fun g : G => (ρ g).asIso.hom.toAlgHom a)) :
     (ofAut P ρ hρ).actionAut = ρ := by
   apply MonoidHom.ext
   intro g
   apply Aut.ext
+  apply Iso.ext
   rfl
 
 theorem continuous_orbit (X : NormContinuousAffinoidAction K G) (a : X.obj.V) :
-    Continuous (fun g : G => (X.actionAut g).hom.toAlgHom a) :=
+    Continuous (fun g : G => (X.actionAut g).asIso.hom.toAlgHom a) :=
   X.property a
 
 /-- Every actual presentation carries the trivial continuous action. -/
@@ -68,20 +69,20 @@ abbrev homMap {X Y : NormContinuousAffinoidAction K G} (f : X ⟶ Y) :
 /-- Every bounded map satisfying the equivariance equations is an arrow. -/
 def homMk {X Y : NormContinuousAffinoidAction K G}
     (f : BoundedAlgHom K X.obj.V Y.obj.V)
-    (comm : ∀ g : G, X.obj.ρ g ≫ f = f ≫ Y.obj.ρ g) : X ⟶ Y :=
+    (comm : ∀ g : G, (X.obj.ρ g).asHom ≫ f = f ≫ (Y.obj.ρ g).asHom) : X ⟶ Y :=
   ObjectProperty.homMk ⟨f, comm⟩
 
 @[simp]
 theorem homMap_homMk {X Y : NormContinuousAffinoidAction K G}
     (f : BoundedAlgHom K X.obj.V Y.obj.V)
-    (comm : ∀ g : G, X.obj.ρ g ≫ f = f ≫ Y.obj.ρ g) :
+    (comm : ∀ g : G, (X.obj.ρ g).asHom ≫ f = f ≫ (Y.obj.ρ g).asHom) :
     homMap (homMk f comm) = f :=
   rfl
 
 theorem homMap_apply_action {X Y : NormContinuousAffinoidAction K G}
     (f : X ⟶ Y) (g : G) (a : X.obj.V) :
-    homMap f ((X.actionAut g).hom.toAlgHom a) =
-      (Y.actionAut g).hom.toAlgHom (homMap f a) :=
+    homMap f ((X.actionAut g).asIso.hom.toAlgHom a) =
+      (Y.actionAut g).asIso.hom.toAlgHom (homMap f a) :=
   congrArg (fun h : BoundedAlgHom K X.obj.V Y.obj.V => h a) (f.hom.comm g)
 
 @[ext]
@@ -126,7 +127,7 @@ theorem restrict_obj_algebra (f : H →ₜ* G) (X : NormContinuousAffinoidAction
 @[simp]
 theorem restrict_obj_apply (f : H →ₜ* G) (X : NormContinuousAffinoidAction K G)
     (h : H) (a : X.obj.V) :
-    (((restrict f).obj X).obj.ρ h).toAlgHom a = (X.obj.ρ (f h)).toAlgHom a :=
+    (((restrict f).obj X).obj.ρ h).asHom.toAlgHom a = (X.obj.ρ (f h)).asHom.toAlgHom a :=
   rfl
 
 @[simp]
@@ -150,15 +151,17 @@ attribute [local instance] topCatSelfForget
 def spectrumAction (X : NormContinuousAffinoidAction K G) : Action TopCat.{u} G where
   V := TopCat.of (BanachSpectrum X.obj.V)
   ρ :=
-    { toFun := fun g => TopCat.ofHom
-        (BanachSpectrum.comapContinuous (X.actionAut g).inv.toBoundedRingHom)
+    { toFun := fun g => End.of (TopCat.ofHom
+        (BanachSpectrum.comapContinuous (X.actionAut g).asIso.inv.toBoundedRingHom))
       map_one' := by
+        apply End.ext
         apply TopCat.ext
         intro x
         change (X.actionAut 1) • x = x
         simp
       map_mul' := by
         intro g h
+        apply End.ext
         apply TopCat.ext
         intro x
         change (X.actionAut (g * h)) • x =
@@ -168,8 +171,8 @@ def spectrumAction (X : NormContinuousAffinoidAction K G) : Action TopCat.{u} G 
 @[simp]
 theorem spectrumAction_apply (X : NormContinuousAffinoidAction K G)
     (g : G) (x : BanachSpectrum X.obj.V) (a : X.obj.V) :
-    BanachSpectrum.toMulRingSeminorm (ConcreteCategory.hom ((spectrumAction X).ρ g) x) a =
-      x ((X.actionAut g).inv.toAlgHom a) :=
+    BanachSpectrum.toMulRingSeminorm (ConcreteCategory.hom ((spectrumAction X).ρ g).asHom x) a =
+      x ((X.actionAut g).asIso.inv.toAlgHom a) :=
   rfl
 
 variable [IsTopologicalGroup G]

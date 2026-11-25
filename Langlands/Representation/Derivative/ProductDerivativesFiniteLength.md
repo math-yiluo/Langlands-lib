@@ -1,10 +1,7 @@
 # Finite length of the derivatives of products of supercuspidal representations
 
-Author: Worker 237.
-
 This helper module serves the proof of
-`Langlands.Derivative.GeneralLinearDerivativeFiniteLengthStatement` (task
-`2306027f-f763-44b8-89d1-6311d80d5204`). Its main theorem is
+`Langlands.Derivative.GeneralLinearDerivativeFiniteLengthStatement`. Its main theorem is
 
 ```
 theorem Langlands.Derivative.productDerivativesFiniteLength
@@ -33,7 +30,8 @@ The carrier universe is `max uF uV`, because normalized products of factors in
 `Type uV` live in `Type (max uF uV)`. Over carriers in `Type (max uF uV)` the product
 universe `max uF (max uF uV)` reduces to `max uF uV`. So the product's derivative is
 again one at carrier universe `max uF uV`. The universe comparison back to the
-target's `uV` is not done here. It is part of the final proof module.
+target's `uV` is not done here. It is part of the final proof module,
+`GeneralLinearDerivativeFiniteLengthProof`.
 
 The theorem is a step of the proof, not the target statement. It adds no premise to
 the target, and it does not claim finite length of derivatives of arbitrary
@@ -154,7 +152,7 @@ following passages were read:
   already presupposes the finite length of the derivatives of such products.
 
 No applicable errata entry was found in the central-library literature index
-(`/home/taskhub/pilot/literature/_central-library-pointers.md`) or the public notes.
+or the public notes.
 
 ### What comes from the source and what is derived
 
@@ -194,7 +192,8 @@ The transitive project import closure has 855 `Langlands` modules, excluding thi
 module. All of them are byte-identical (Lean and Markdown) to Library commit
 `46ad94719738ee676dd6e863d6e924cca8fec970`.
 
-The closure was checked against the exclusions of task `2306027f`:
+The closure was checked against the exclusions set for the proof of
+`GeneralLinearDerivativeFiniteLengthStatement`:
 
 - No Lean source in the closure names a conclusion excluded there. The search
   covered `GenericSegmentProductUniqueness`,
@@ -204,10 +203,9 @@ The closure was checked against the exclusions of task `2306027f`:
   `SegmentSocleJacquetFormula`, `SegmentSpecialJacquetExponentNormFormula`,
   `SegmentSocleDerivatives`, `HighestDerivativeSupportShift`,
   `NonjuxtaposedSegmentSocle…` and `IsSegmentSocle`.
-- No closure Lean source names any excluded task ID. The closure Markdown files that
-  name excluded tasks or conclusions do so only in "not imported and not used"
-  independence sections.
-- The segment-socle part of task `8e5b4563-0365-41c7-b134-70f2a0b36292` is not in
+- The closure Markdown files that name excluded conclusions do so only in
+  "not imported and not used" independence sections.
+- The segment-socle part of the excluded derivative statements is not in
   the closure. That part is `Classification.SegmentSocleDerivativesStatement`,
   `HighestDerivativeSupportShiftProof`, the `SegmentSocleProduct…` modules and
   `SingletonSegmentSocle`. The cuspidal-derivative part is the separate module
@@ -226,8 +224,8 @@ The closure was checked against the exclusions of task `2306027f`:
   sequences and levels. They are reached through `RightMixedProductDerivativePositive`
   ← `RightMixedProductDerivativeFiltrationProof` ←
   `GeneralLinearDerivativeLeibnizFiltrationProof`. Neither states or uses a
-  segment, socle or segment-derivative result, and neither is one of the
-  statements of task `8e5b4563`.
+  segment, socle or segment-derivative result, and neither is one of those
+  derivative statements.
 - Only two closure Lean sources cite Zelevinsky 1980: `SupercuspidalSupport` (§1.10)
   and `RelationInversions` (§6.7, combinatorics). The closure Markdown cites
   Zelevinsky 1980 only for definitions and elementary facts:
@@ -260,9 +258,7 @@ Exactness of the derivative is not used in this module.
 
 ## Development validation
 
-The module was compiled with `lean_check` in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` over Library base `46ad9471`, with no errors
+The module was compiled over Library base `46ad9471`, with no errors
 or warnings. Declaration inspection of `productDerivativesFiniteLength` reports
 kind `theorem`, level parameters `uF, uV`, and only the axioms `propext`,
 `Classical.choice` and `Quot.sound`. No `sorry`, `admit` or new axiom is used.
-These checks are separate from independent review and publication.

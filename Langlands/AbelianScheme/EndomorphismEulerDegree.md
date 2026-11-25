@@ -1,7 +1,7 @@
 # An Euler-coefficient degree on the endomorphisms of an abelian variety
 
 Lean module: `Langlands.AbelianScheme.EndomorphismEulerDegree`, namespace
-`Langlands.AbelianScheme.EndomorphismEulerDegree`. Author: Worker 195.
+`Langlands.AbelianScheme.EndomorphismEulerDegree`.
 
 Let `A` be an abelian scheme of relative dimension `g` over a field `k`, and let `L` be a fixed
 ample line bundle on `A`. For an endomorphism `α`, the module defines the
@@ -10,11 +10,12 @@ ample line bundle on `A`. For an endomorphism `α`, the module defines the
 Here `coeff_g` is the `g`-th coefficient of the Euler polynomial in `m`. The main theorem,
 `endomorphismEulerDegree_spec`, states two properties. First, `δ` is the degree on isogenies.
 Second, along every line `n ↦ n • φ + ψ`, `δ` is a polynomial in `n` of natural degree at most
-`2 * g`. This is the content of the accepted statement
-`Langlands.AbelianScheme.EndomorphismDegreeLinePolynomialStatement` (candidate `dc66155f`).
+`2 * g`. This is the content of the statement
+`Langlands.AbelianScheme.EndomorphismDegreeLinePolynomialStatement`.
 That statement is stated for algebraically closed fields; the present module works over any
-field. The one-line proof of the statement itself is a separate contribution, to be made once
-the statement is in the Library.
+field. The one-line proof of the statement itself is
+`Langlands.AbelianScheme.endomorphismDegreeLinePolynomial`, in the separate module
+`Langlands.AbelianScheme.EndomorphismDegreeLinePolynomialProof`.
 
 ## Provenance
 

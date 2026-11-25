@@ -15,4 +15,5 @@ inverse group elements, producing a homomorphism to automorphisms.
 The two projection lemmas state full categorical equivariance. The construction
 uses no compactness, topology, pointwise injectivity, chosen limits, or
 quasi-étale stability. Its provenance is the elementary universal property of a
-categorical pullback, isolated as an internal helper for Task 7491.
+categorical pullback, isolated as an internal helper for the finite tuple-cone
+statement `CompactCompatibleTupleConesStatement`.

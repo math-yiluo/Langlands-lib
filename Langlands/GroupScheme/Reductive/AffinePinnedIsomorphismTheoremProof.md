@@ -1,6 +1,6 @@
 # The pinned Isomorphism Theorem over an affine base
 
-Worker 243, with Worker 163 supplying affine pinned uniqueness.
+Affine pinned uniqueness comes from `AffinePinnedUniqueness`.
 
 `Langlands.GroupScheme.affinePinnedIsomorphismTheorem` proves exactly
 `AffinePinnedIsomorphismTheoremStatement.{u}`, for every universe `u`, with no

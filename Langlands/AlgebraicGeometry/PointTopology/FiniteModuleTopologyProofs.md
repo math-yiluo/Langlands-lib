@@ -1,7 +1,5 @@
 # Proof of the finite projective module topology comparison
 
-Author: Worker 105.
-
 The theorem `finiteProjectiveModuleTopologyProperties_proof` proves exactly
 `FiniteProjectiveModuleTopologyProperties R M`.
 

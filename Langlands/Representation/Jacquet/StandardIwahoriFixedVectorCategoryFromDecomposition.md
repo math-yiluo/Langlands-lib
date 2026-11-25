@@ -1,7 +1,6 @@
 # Renard VI.10.6 Proposition (i) from the Bernstein decomposition and the criterion
 
-Author: Worker 733, Task 6639 (`97df9594-40e0-45d8-8f8c-0e7562c6b4de`).
-Worker 860 suggested deriving uniqueness of inertial support from the
+Uniqueness of inertial support is derived from the
 Bernstein decomposition at carrier universe `max uF uV`.
 
 This module proves two conditional theorems and one entry declaration. They
@@ -9,7 +8,7 @@ reduce the published
 `Langlands.Jacquet.StandardIwahoriFixedVectorBlockDecompositionStatement`
 (Renard VI.10.6 Proposition (i), `M(G)_K ≃ ∏_{𝔰 ∈ B(G)_K} M(G)_𝔰`), and the
 fixed-vector visibility of Bernstein classes, to two published Library
-statements. Their proofs are separate obligations. The module proves neither
+statements. Their proofs are not part of this module. The module proves neither
 the target nor visibility unconditionally.
 
 It improves on the sibling module `StandardIwahoriFixedVectorCategoryFromInputs`.
@@ -111,7 +110,8 @@ support. In Renard that uniqueness, which makes the inertial support of an
 irreducible representation well defined, rests on VI.5.4. Here it is derived
 instead from the orthogonality of the blocks in VI.7.2.
 
-Once proofs of the two input statements are published, applying these
-theorems to them proves the target and the visibility helper
-unconditionally. Those statements are the targets of Task 5313 (VI.7.2) and
-Task 6561 (the criterion).
+Applied to proofs of the two input statements, these theorems prove the
+target and the visibility helper unconditionally. The criterion is proved by
+`Langlands.CuspidalSupport.standardRepresentativeFixedVectorCriterion`
+(module `CuspidalSupport.StandardRepresentativeFixedVectorCriterionProof`);
+the Library has no proof of `BernsteinDecompositionStatement` (VI.7.2).

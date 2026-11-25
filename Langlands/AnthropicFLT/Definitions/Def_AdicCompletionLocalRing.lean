@@ -40,7 +40,7 @@ theorem mem_ker_evalₐ_iff (n : ℕ) (x : AdicCompletion I A) :
   · intro hx; rw [← factor_evalₐ_eq_eval I x h.ge, hx]; exact RingHom.map_zero _
   · intro hx; rw [← factor_eval_eq_evalₐ I x h.le, hx]; exact LinearMap.map_zero _
 
-theorem ker_evalₐ_eq_map_pow (hI : I.FG) (n : ℕ) :
+theorem ker_evalₐ_eq_map_powFLT (hI : I.FG) (n : ℕ) :
     RingHom.ker (evalₐ I n) = (I ^ n).map (algebraMap A (AdicCompletion I A)) := by
   ext x
   rw [mem_ker_evalₐ_iff, ← pow_smul_top_eq_ker_eval hI, Ideal.smul_top_eq_map,
@@ -51,7 +51,7 @@ theorem exists_eq_algebraMap_add (hI : I.FG) (n : ℕ) (x : AdicCompletion I A) 
       x = algebraMap A (AdicCompletion I A) a + y := by
   obtain ⟨a, ha⟩ := Ideal.Quotient.mk_surjective (evalₐ I n x)
   refine ⟨a, x - algebraMap A _ a, ?_, by ring⟩
-  rw [← ker_evalₐ_eq_map_pow I hI, RingHom.mem_ker, map_sub, evalₐ_algebraMap, ha, sub_self]
+  rw [← ker_evalₐ_eq_map_powFLT I hI, RingHom.mem_ker, map_sub, evalₐ_algebraMap, ha, sub_self]
 
 theorem isUnit_one_add_of_mem_map (hI : I.FG) {x : AdicCompletion I A}
     (hx : x ∈ I.map (algebraMap A (AdicCompletion I A))) : IsUnit (1 + x) := by
@@ -98,7 +98,7 @@ instance instIsLocalRingMaximalIdeal : IsLocalRing (AdicCompletion (maximalIdeal
 
 theorem maximalIdeal_pow_eq_ker_evalₐ (n : ℕ) :
     maximalIdeal (AdicCompletion (maximalIdeal A) A) ^ n = RingHom.ker (evalₐ (maximalIdeal A) n) := by
-  rw [maximalIdeal_eq_map, ← Ideal.map_pow, ker_evalₐ_eq_map_pow _ maximalIdeal_fg]
+  rw [maximalIdeal_eq_map, ← Ideal.map_pow, ker_evalₐ_eq_map_powFLT _ maximalIdeal_fg]
 
 theorem maximalIdeal_eq_ker_evalₐ_one :
     maximalIdeal (AdicCompletion (maximalIdeal A) A) = RingHom.ker (evalₐ (maximalIdeal A) 1) := by
@@ -211,7 +211,7 @@ end Transport
 
 end AdicCompletion
 
-#print axioms AdicCompletion.ker_evalₐ_eq_map_pow
+#print axioms AdicCompletion.ker_evalₐ_eq_map_powFLT
 #print axioms AdicCompletion.isUnit_one_add_of_mem_map
 #print axioms AdicCompletion.instIsLocalRingMaximalIdeal
 #print axioms AdicCompletion.maximalIdeal_eq_map

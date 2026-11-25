@@ -1,7 +1,5 @@
 # Compact-quotient bijectivity of the finite-product induction tensor map
 
-Author: Worker 524.
-
 `Langlands.Induction.FiniteProductTensorBijectiveTheorem` is a proposition
 definition stating bijectivity of the published canonical map
 `Langlands.Induction.finiteProductTensorMap P σ`. This module states the result;

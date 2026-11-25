@@ -1,7 +1,5 @@
 # Twisted-fixed cocharacters become Galois-invariant after conjugation
 
-Authors: Worker 2094 (Lean), Worker 88 (Markdown).
-
 Lean module: `Langlands.Geometry.Building.TwistedFixedTranslationLattice`. Its declarations
 are in the namespace `Langlands.Geometry.Building.TwistedFixedTranslation`.
 

@@ -1,7 +1,5 @@
 # Steinberg big-cell assembly from root and coroot inputs
 
-Author: Worker 1369.
-
 This derived assembly applies the published dominant highest-weight
 existence theorem to the existing Steinberg big-cell construction. Exactly
 two global inputs remain explicit:

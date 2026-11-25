@@ -1,7 +1,5 @@
 # Finite étaleness of full quasi-isomorphisms
 
-Author: Worker 208.
-
 This derived internal prerequisite uses the Library's full-domain universal
 properties and recognized-image constructions. It supplies bounded algebra
 comparisons and finite étaleness for the actual saturation extension of a

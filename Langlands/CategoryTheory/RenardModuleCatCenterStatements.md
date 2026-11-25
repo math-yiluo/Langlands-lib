@@ -16,8 +16,10 @@ retained at
 `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`.
 PDF page 275 was read in full, both as extracted text and as a rendered image.
 PDF pages 11–12 (printed pages 5–6) were read for the conventions on modules, and
-PDF page 18 for the forward reference from I.1.7 to A.X. The current Library has
-no `notes/errata` file for this source. The registered 2010-edition errata
+PDF page 18 for the forward reference from I.1.7 to A.X. The Library's
+`notes/errata` file for this source,
+`notes/errata/renard-2026-representations-groupes-reductifs-padiques.md`,
+concerns VII.1.2 and has no entry on A.X. The registered 2010-edition errata
 `renard-2010-corrections-complements`, SHA256
 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`, were
 also checked. Their appendix corrections on PDF pages 18–19 were read, and a
@@ -147,7 +149,7 @@ This is the component formula described above. It pins the meaning and
 orientation of the map in the other statements. It is a normalization of the
 source's identification by the implementation, not a numbered assertion of the
 source. A private probe checked that it holds by `rfl`. That check is not
-published here and is not review evidence.
+published here.
 
 ### `ModuleCatCenterBijectiveStatement.{u, v} R`
 
@@ -193,7 +195,7 @@ separate proposition and is not part of this conjunction.
   element, is the implementation's normalization of "naturellement". The source
   gives no other map.
 - The component formula is internal. It records Mathlib's existing definition
-  of the map and is included so that review and later proofs can check the
+  of the map and is included so that later proofs can check the
   orientation.
 - The carrier universe `max u v` is an implementation choice. Its reason is
   given above. The source does not discuss universes.
@@ -201,10 +203,12 @@ separate proposition and is not part of this conjunction.
   with ring homomorphisms. "Naturellement" is read as "canonically, through
   the scalar action".
 
-## Remaining proof obligations
+## Proof outside this module
 
-These statements are targets for a separate proof task. All of the following
-remain unproved here: the centrality of the regular-module evaluation, the
+These statements are proved in `Langlands.CategoryTheory.RenardModuleCatCenter`
+(`moduleCatCenterScalarComponent`, `moduleCatCenterBijective`,
+`moduleCatCenterRingEquiv`, `moduleCatCenterIdentification`). None of the
+following is proved here: the centrality of the regular-module evaluation, the
 reconstruction of every component of a natural transformation from that
 evaluation, bijectivity, and the inverse ring laws. A possible route is the
 following. For `z : CatCenter (ModuleCat.{max u v} R)`, take

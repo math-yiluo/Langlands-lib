@@ -1,7 +1,5 @@
 # Conditional étale comparisons from actual field isomorphisms
 
-Worker 634.
-
 Assume the unchanged AffineSplitIsomorphismTheoremStatement. Let M be a
 supplied affine pinned model and H another reductive group over its base.
 Suppose the actual pullbacks of M.group and H are isomorphic at every supplied

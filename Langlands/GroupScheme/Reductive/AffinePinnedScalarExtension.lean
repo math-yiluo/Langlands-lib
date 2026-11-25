@@ -20,8 +20,8 @@ namespace Langlands.GroupScheme.AffinePinnedModel
 
 variable (M : AffinePinnedModel.{u}) (A : Type u) [CommRing A] [Algebra M.ring A]
 
-local instance : Smooth M.group.X.hom := M.reductive.smooth
-local instance : IsAffineHom (M.groupOver (algebraBaseMap M.ring A)).X.hom :=
+private local instance : Smooth M.group.X.hom := M.reductive.smooth
+private local instance : IsAffineHom (M.groupOver (algebraBaseMap M.ring A)).X.hom :=
   inferInstanceAs (IsAffineHom (pullback.snd M.group.X.hom (algebraBaseMap M.ring A)))
 
 /-- Extend an original trivialized exponent weight line through the actual
@@ -66,6 +66,7 @@ def scalarExtension : AffinePinnedModel.{u} where
     change IsClosedImmersion
       ((splitTorus.baseChangeIso (algebraBaseMap M.ring A) M.coordinates).inv.hom.hom.left ≫
         ((baseChange (algebraBaseMap M.ring A)).map M.inclusion).hom.hom.left)
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
     infer_instance
   maximal := splitTorus.isFibrewiseMaximalTorus_baseChangedHom
     M.coordinates M.group M.inclusion M.maximal (algebraBaseMap M.ring A)

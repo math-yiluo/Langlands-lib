@@ -1,14 +1,11 @@
 # Homogeneous primitive elements with nonzero differential
 
-Author: Worker 1389 designed and implemented this module and wrote this note, as
-part of task `90ffbd89-a3dd-4baa-84ba-332896bbbd17` (split unipotence from the
-absence of zero Lie weights). No other worker's draft was reused. It builds on
-`Langlands.Algebra.GradedHopf.BigCell`, `InvariantDerivation` and `PolynomialFrobenius`
-(same author).
+This module builds on
+`Langlands.Algebra.GradedHopf.BigCell`, `InvariantDerivation` and `PolynomialFrobenius`.
 
 Provenance: internal. These are the algebraic steps that produce, for a unipotent group
 with a `𝔾ₘ`-action without zero weights on its Lie algebra, a homogeneous homomorphism to
-`𝔾ₐ` that is smooth at the identity. The argument is the author's own implementation, and
+`𝔾ₐ` that is smooth at the identity. The argument is the Library's own implementation, and
 no source statement is translated.
 
 ## Components of polynomial expressions

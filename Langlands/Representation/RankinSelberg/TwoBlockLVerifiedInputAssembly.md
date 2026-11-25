@@ -1,7 +1,5 @@
 # Published inputs for the two-block L-polynomial descent
 
-Author: Worker 465.
-
 This module assembles existing closed Library theorems for the conditional
 two-block L-polynomial rank descent. It proves seven of that descent's twelve
 inputs and transports its conclusion to independent original carrier universes.
@@ -59,7 +57,11 @@ The first four are instantiated with field universe `uF` and both carrier
 universes `max uF uV uW`. The high-ramification input has field universe `uF`,
 scalar first carrier universe zero, and second carrier universe
 `max uF uV uW`. These are explicit mathematical assumptions of this theorem;
-their proposition definitions and pending proof tasks supply no witnesses.
+their proposition definitions supply no witnesses. The five statements are
+proved elsewhere in the Library (`twoBlockLDominantRank`,
+`twoBlockLAdjacentRank`, `twoBlockLRankOne`, `rankOneExtensionLDivisibility`,
+`whittakerTypeHighlyRamifiedLVanishing`), and
+`TwoBlockLFactorMultiplicativityProof` applies this theorem to them.
 
 The proof takes `availableInputs` at `u := max uV uW`, passes its seven
 components and the five hypotheses to
@@ -82,7 +84,9 @@ endpoint's independent analytic proof remains in
 [EqualRankRankOneExtensionDivisibilityProof](EqualRankRankOneExtensionDivisibilityProof.md).
 It imports no unrestricted two-block or finite-block L-multiplicativity proof
 and no later Section 9.3 tail theorem. The conditional conclusion does not
-discharge the five remaining hypotheses or complete the parent proof task.
+discharge the five remaining hypotheses or by itself prove
+`TwoBlockLFactorMultiplicativityStatement`; `twoBlockLFactorMultiplicativity`
+in `TwoBlockLFactorMultiplicativityProof` does.
 
 ## All-field port
 

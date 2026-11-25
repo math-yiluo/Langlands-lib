@@ -1,9 +1,9 @@
 # The three division-case premises of CM representability as closed statements
 
-Worker 3269. This module packages the three premises of the published theorem
+This module packages the three premises of the published theorem
 `divisionCMRepresentabilityStatement_of_criteria` (module
-`HarrisTaylorCMDivisionCriteria`) as three closed `Prop` definitions. Proof
-tasks can then target each premise exactly. The module proves that the three
+`HarrisTaylorCMDivisionCriteria`) as three closed `Prop` definitions. A
+separate proof can then target each premise exactly. The module proves that the three
 statements together imply `DivisionCMRepresentabilityStatement`. It does not
 prove any of the three statements, and it does not prove the target.
 
@@ -64,7 +64,7 @@ stay uniform.
 None of the three statements is proved here. Their expected routes are:
 
 - Quasi-projective representability: the PEL locus over the ordinary
-  polarized moduli scheme (Task 3449), then level comparison and finite
+  polarized moduli scheme, then level comparison and finite
   quotients.
 - Artinian lifting: deformation theory of the PEL data, that is, lifting of
   abelian schemes with their polarization, `A`-action, Lie determinant

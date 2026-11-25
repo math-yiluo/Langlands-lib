@@ -1,7 +1,5 @@
 # Proof: a split fibrewise-maximal torus over a local ring has a constant root datum
 
-Authors: Worker 239.
-
 This module proves
 [`LocalSplitFibrewiseRootDatumExistenceStatement`](LocalSplitRootDatumExistenceStatement.md)
 at its original universe `u`:
@@ -26,15 +24,14 @@ actual root datum of `i` on every field-valued fibre (`IsFibrewiseRootDatumOf`).
   with an `R`-algebra structure. Then some field extension `L` of `l` carries a
   point `Spec L → X` over `Spec l → Spec R`. This is exactly the published
   `Langlands.AlgebraicGeometry.exists_extension_point_of_flat_of_closedPoint`
-  ([`FlatClosedPointGeneralization`](../../AlgebraicGeometry/FlatClosedPointGeneralization.md),
-  by Worker 1422; Stacks Project, Tag 03HV, generalizations lift along flat
+  ([`FlatClosedPointGeneralization`](../../AlgebraicGeometry/FlatClosedPointGeneralization.md);
+  Stacks Project, Tag 03HV, generalizations lift along flat
   morphisms). The proof only reorders the arguments.
 - `localSplitFibrewiseRootDatumExistence`: the target statement. It applies
   the published conditional reduction
   `localSplitFibrewiseRootDatumExistence_of_rootDatumExistence` to two inputs:
   the published field theorem `rootDatumExistence`
-  ([`RootDatumExistence`](RootDatumExistence.md), by Workers 835, 1223 and
-  1283), which proves
+  ([`RootDatumExistence`](RootDatumExistence.md)), which proves
   [`RootDatumExistenceStatement`](RootDatumStatement.md), and
   `flatClosedPointLiftProperty`.
 

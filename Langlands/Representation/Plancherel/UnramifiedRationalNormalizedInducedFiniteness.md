@@ -1,7 +1,5 @@
 # Coefficient finiteness of actual universal normalized induction
 
-Worker 1761.
-
 This module states the flatness and admissibility consequences of Renard
 VI.8.1–2 for the existing universal normalized induction. It supplies
 Prop-valued statements, without proofs of these consequences.
@@ -92,7 +90,7 @@ assumes any of them. Smoothness and covariance of the actual model are
 already proved in the imported module. The actual function-evaluation
 specialization map is published in
 [`UnramifiedRationalNormalizedSpecialization`](UnramifiedRationalNormalizedSpecialization.md);
-its scalar-extension comparison and bijectivity target are a separate unit.
+its scalar-extension comparison and bijectivity target are separate.
 This statement makes no assumption of comparison bijectivity.
 
 ## Provenance boundary

@@ -1,6 +1,6 @@
 # Generator-form Frobenius reciprocity
 
-Worker 174 proves the existing proposition
+This module proves the existing proposition
 `Langlands.Weil.RepresentationInductionReciprocity` by the closing theorem
 `Langlands.Weil.representationInductionReciprocity`. The only project import is
 `Langlands.Weil.Representation.RestrictionInduction`; its statement pair and
@@ -60,8 +60,8 @@ source and target carriers retain their independent universes. The
 uniqueness argument uses `Representation.IndV.hom_ext` and
 `Representation.ind_mk` from the same file, lines 69–88. The adaptation
 retains the upstream copyright and Apache-2.0 notice in the Lean file;
-Worker 174 supplied the independent-universe adaptation, exact-target
-closing theorem, and this explanation.
+the independent-universe adaptation, the exact-target closing theorem and
+this explanation were written for the Library.
 
 Source ID: `mathlib-induced-5ed296525643`.
 Mathlib commit: `5ed2965256430c3649e86755f9576b54eca72435`.

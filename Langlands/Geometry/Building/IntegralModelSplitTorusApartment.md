@@ -1,6 +1,6 @@
 # Apartments from supplied closed split tori of an integral model
 
-This internal unit combines published Henselian specialization, integral
+This module combines published Henselian specialization, integral
 split-torus conjugacy, and conjugate-apartment realization. Its inputs include
 the actual integral model and both closed integral split tori, with maximal
 split generic fibres. It constructs a generic conjugator belonging to the
@@ -71,8 +71,9 @@ There is no claim to transcribe an additional literature statement.
 
 The supplied integral tori, their generic maximal splitness, the original
 apartment containment and integral-point fixation remain hypotheses. This
-unit constructs no integral model or torus and supplies no Galois descent,
+module constructs no integral model or torus and supplies no Galois descent,
 facet or segment comparison, or integral-point fixation theorem. It does not
 prove that a supplied torus is Galois stable or special.
-`UnramifiedFixedPointSplitTorusStatement` remains open; the four prohibited
-unramified building-descent statements are not used.
+`UnramifiedFixedPointSplitTorusStatement` is not proved here;
+`unramifiedFixedPointSplitTorus` (module `UnramifiedFixedPointSplitTorusProof`)
+proves it. No unramified building-descent statement is among the imports.

@@ -26,7 +26,8 @@ notation only. These definitions retain the distinction between
 on fundamental groups by its value on every quotient representative.
 `fundamentalInertiaMap` selects a linear map with this law. Its definition does
 not assume a proof of equivariance or existence; the unconditional companion
-statement records these obligations.
+statement `FundamentalInertiaMapStatement` records them, and the Library proves
+it as `fundamentalInertiaMapStatement` (module `FundamentalInertiaMapProof`).
 
 For a torus `T`, `torusPresentationMap` composes actual geometric cocharacters
 with the inclusion of the chosen maximal torus into `T`. The representative
@@ -37,10 +38,12 @@ tori. `IsTorusInertiaComparison` characterizes its further descent to
 `π₁(T)_I → X_*(T)_I`, and `torusInertiaComparison` selects it. Both comparisons
 are to the original torus and its original cocharacter action, with no supplied
 lattice identification. Existence, uniqueness, bijectivity and equivariance
-remain unconditional statement obligations.
+are the unconditional statements `TorusFundamentalComparisonStatement` and
+`TorusInertiaComparisonStatement`, which the Library proves as
+`torusFundamentalComparison_proof` and `torusInertiaComparison_proof`.
 
 The quotient and action wrappers reuse the previously defined integral
 coinvariants. The representative characterizations and selected comparisons
 are implementation details derived from Fact 11.3.5 and functoriality, rather
 than separately numbered assertions in KP. No Kottwitz homomorphism or desired
-kernel is input to this unit.
+kernel is input to this module.

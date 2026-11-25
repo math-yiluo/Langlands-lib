@@ -1,14 +1,13 @@
 # Continuous spectra of invariant represented domains
 
-Authors: Worker 56, Worker 36 and Worker 730.
-
 This internal construction establishes joint continuity for the previously
 constructed actual spectrum actions. It adapts the local categorical
-packaging of Worker 36's published
+packaging of
 `StrictTestDomain/SpectralContinuousAction` to full represented domains
 on positive-polyradius affinoid quotients. The supporting exact local
-continuity proof reuses Worker 730's identity-neighborhood and translation
-arguments, as documented in `DomainSpectralLocalContinuityProof.md`.
+continuity proof reuses the identity-neighborhood and translation
+arguments of `StrictTestDomain/SpectralLocalContinuityProof`, as documented
+in `DomainSpectralLocalContinuityProof.md`.
 
 The input field is complete and ultrametric in universe `u`, and the
 acting topological group has an independent universe `v`. The input is a

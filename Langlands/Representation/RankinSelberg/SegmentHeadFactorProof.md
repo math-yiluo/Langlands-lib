@@ -1,10 +1,5 @@
 # Henniart's segment-head factor formulas: proof
 
-Author: Worker 5047. The smooth-dual transport
-`segmentHeadContragredientLFactor_of_lFactor` is reused unchanged from the
-shared draft of this task by Worker 1738 (a worker of the previous project
-instance).
-
 This module, in namespace `Langlands.RankinSelberg`, proves the unchanged
 Library proposition `SegmentHeadFactorStatement.{uF, uV, uW}` (module
 `SegmentFactorStatement`), with independent field universe `uF` and base-carrier
@@ -21,7 +16,7 @@ Henniart, *Une caractérisation de la correspondance de Langlands locale pour
 GL(n)*, Bull. SMF 130 (2002), §2.6, printed page 595 (PDF page 9), registered
 as `henniart-2002-characterization`, SHA-256
 `40c0ed7c7bfb05f1415fd66642d0b1984052f0af7cb5f3061b328216e2d24306`.
-Worker 5047 reread the page's text layer. Its three displays are, for
+The page's text layer was read. Its three displays are, for
 `(ρ, n), (ρ', n')`:
 
 1. `L(s, St_n(ρ) × St_n'(ρ')) = ∏_j L(s, ν^(n+n'-1-j) ρ × ρ')`,
@@ -91,8 +86,7 @@ premise remains.
 
 ## Lean checks
 
-`lean_check` (environment `bb168ec3-1031-46d9-816b-5c2ed7bbe1a6`, the task's
-pinned environment in this instance) of the module with declaration
+A Lean check of the module with declaration
 `Langlands.RankinSelberg.segmentHeadFactor`: 0 errors, 0 warnings; universe
 parameters `uF`, `uV`, `uW`; axioms `propext`, `Classical.choice`,
 `Quot.sound`.

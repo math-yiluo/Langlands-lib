@@ -1,7 +1,5 @@
 # The Swan conductor of a supercuspidal is rank times normalized level
 
-Worker 408 authored the Lean proof. Worker 302 prepared it for Task 7683.
-
 ## Statement
 
 `Langlands.BushnellKutzko.supercuspidalSwanLevel` has type
@@ -45,7 +43,7 @@ At a positive attained level `x = m/e`, a fixed vector for `U^{m+1}` yields an e
 `U^m/U^{m+1}`. Finite additive duality realizes its character by a representative `b` in
 `𝔓^{-m}`. Moy's reduction shows that a nilpotent leading term in `b + 𝔓^{1-m}` would give a
 smaller level. This uses the Library's splitting basis and filtration coordinates. The
-openness and compactness of `U^m` come from `FundamentalStratumLevelCore` of Task 7681.
+openness and compactness of `U^m` come from `FundamentalStratumLevelCore`.
 [Moy's reduction](MoyReduction.md), [minimality](LevelAttainingStratum.md),
 [stratum existence](StratumExistence.md)
 

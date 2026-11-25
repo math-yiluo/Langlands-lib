@@ -2,8 +2,6 @@
 
 This module states three internal algebraic inheritance properties as
 `Prop`-valued definitions. It supplies statement targets, not proofs.
-Worker 196 authored the mathematical interface and complete parent proof
-draft; Worker 213 extracted the statements and their conjunction.
 
 For a representation `rho` over a field `R` and a subgroup `K` of `G`,
 generation by `K`-fixed vectors means that every invariant subspace `S`
@@ -62,7 +60,7 @@ finite length, or irreducibility.
 
 These statements are internal algebraic consequences, not translations of
 a separately cited literature theorem. Their interface is extracted from
-Worker 196's shared parent draft, revision 9, module
+the module
 `Langlands.Representation.Smooth.FixedVectors.GenerationInheritance`,
 whose lemmas are `semisimple_fixedVectors_generate_of_surjective`,
 `semisimple_fixedVectors_generate_of_injective`, and
@@ -75,13 +73,13 @@ equivariant splittings of injections, while equivariant surjections transport
 generators. The subquotient clause applies the injection and surjection
 properties after restriction to `H`. Identifying the restricted fixed space
 for `K.comap H.subtype` with the ambient `K`-fixed space uses `K ≤ H`.
-This explains the provenance and intended proof route; it is not a proof
-publication.
+This explains the provenance and intended proof route; it is not a proof.
 
 Only the published smooth-representation definitions, actual subquotient
 constructions, and Mathlib semisimplicity interface are imported.
-The draft proof uses the elementary helper `fixedVectors_comp_subtype` from
-the separate FiniteTypes development. This statement module does not import
-that draft or assume its publication. A later proof contribution must resolve
-that helper dependency and prove the full conjunction against this target.
+The proof uses the elementary helper `fixedVectors_comp_subtype` from
+`Langlands.Representation.Smooth.FixedVectors.FiniteTypes`. This statement
+module does not import that module. The full conjunction is proved by
+`Langlands.semisimpleFixedVectorsGenerationInheritance` in
+`GenerationInheritance`, which imports the helper.
 These statements alone establish no cuspidal constituent theorem.

@@ -1,8 +1,7 @@
 # Additive restriction and the actual nondegenerate-part functor
 
-Authors: Workers 6 and 490. Worker 6 supplied the shared construction draft;
-Worker 490 checked its source correspondence and complete interfaces and
-prepared the paired submission.
+The source correspondence and the complete interfaces of this construction
+were checked.
 
 This construction uses the original `NonUnitalModuleHom` pointwise additive
 groups and `NonUnitalModuleCat.preadditive` from the published
@@ -35,7 +34,7 @@ These categorical interfaces have independent ring and carrier universes.
 Full unapplied interfaces check the Hom construction and its function
 equality at arbitrary independent triples, and all three functor
 certificates at arbitrary universes and both unequal pairs `(0,1)` and
-`(1,0)`. A final instance check uses the actual ambient composite. Additional private
+`(1,0)`. A final instance check uses the actual ambient composite. Additional separate
 checks assign all thirteen complete unapplied interfaces at arbitrary
 independent universes and at unequal universe specializations: all three
 functor certificates and four map laws use `(0,1)` and `(1,0)`, and the six
@@ -59,5 +58,7 @@ pointwise Hom operations and the actual subtype restriction.
 There is no unit-action, nontriviality, commutativity, field, dimension or
 finiteness hypothesis. Zero rings, zero carriers and zero actions, including
 zero actions over unital rings, are allowed. No closure, abelian or exactness certificate is an
-input. The nondegenerate abelian structure, exactness, adjunctions,
-completion and complex scalar comparisons are separate obligations.
+input. The nondegenerate abelian structure (in
+`NondegenerateModuleAbelianProof`), exactness (in
+`NondegenerateModuleExactnessProof`), adjunctions,
+completion and complex scalar comparisons are outside this module.

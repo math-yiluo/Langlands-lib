@@ -1,7 +1,5 @@
 # The associated-Levi comparison at the inverse longest representative
 
-Author: Worker 757 (task `f7d95940-33d0-49d3-93d6-8d5ff8d89373`).
-
 This module is a conditional (helper) result. It specializes the conditional
 assembly `JacquetComplex.associatedLeviComparison_of_survivingStep` (module
 `AssociatedLeviSurvivingStep`) to the following data:
@@ -12,7 +10,7 @@ assembly `JacquetComplex.associatedLeviComparison_of_survivingStep` (module
 * the coordinate `associatedCoordinate cs I = S \ I'`.
 
 The Coxeter-combinatorial hypotheses of the assembly are discharged by
-`AssociatedLeviSupport`. The orbit Jacquet data are Worker 1255's
+`AssociatedLeviSupport`. The orbit Jacquet data are
 `naturalOrbitJacquetData` (module `CorrectedOrbitJacquetNatural`). The module
 then derives the published proposition
 `TerminalJacquet.AssociatedLeviComparisonStatement` from explicit inputs. It
@@ -72,7 +70,7 @@ or companion results.
 The intended rational application must still supply:
 
 * compactness of `G / P_J`, `H`, `hS1`, `hS2` and `hD07`. These are the
-  contents of Worker 969's `RationalCorrectedGradedTransitionInputs`. That
+  contents of `RationalCorrectedGradedTransitionInputs`. That
   module also derives σ-compactness, closed parabolics and continuity of the
   Levi projections at rational points;
 * the Bruhat cover;

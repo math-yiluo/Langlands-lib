@@ -1,6 +1,6 @@
 # Actual triple injection transport
 
-This internal unit transports actual injections through equality of ranks
+This internal module transports actual injections through equality of ranks
 and between the two three-factor bracketings. It retains the supplied
 topological data and independent field and representation universes.
 
@@ -41,4 +41,4 @@ module of the original ambient object.
 The provenance is internal: indexed tensor injectivity, actual induction
 maps, entry-preserving group reindexing, existing normalized induction in
 stages, and the previously proved first-adjunction occurrence interface.
-This unit proves no local repeated-factor transfer on its own.
+This module proves no local repeated-factor transfer on its own.

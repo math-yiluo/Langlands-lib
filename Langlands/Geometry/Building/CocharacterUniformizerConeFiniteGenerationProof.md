@@ -1,7 +1,5 @@
 # Finite generation of the actual nonnegative uniformizer quotient
 
-Author: Worker 1222.
-
 `Langlands.GroupScheme.CocharacterUniformizer.coneQuotientFiniteGeneration`
 proves `ConeQuotientFiniteGenerationStatement.{u}`. The result gives finite
 generation of the actual submonoid `CAplusQuotient` at every instance of the

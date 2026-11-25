@@ -1,7 +1,5 @@
 # Central multiplicative quotient and Borel descent
 
-Authors: Worker 1369 (draft); Worker 1499 (review, Markdown revision).
-
 This is a derived statement, not a proof.
 `CentralMultiplicativeQuotientBorelStatement` is a proposition at arbitrary
 universe `u`. It says that a central closed copy of `Gm` inside a Borel can be
@@ -71,8 +69,8 @@ Given `IsClosedSubgroup z` and affineness of `Q`, the published lemma
 `RelativeRoot.IsFppfQuotient.gm_induction_properties` (in
 `Absolute/BorelNormalizerCentralQuotient.lean`) already derives smoothness of
 `q`, smoothness and connectedness of `Q`, and the strict Lie dimension drop
-from the quotient predicate. These conclusions are still listed explicitly, as
-the task requests. The substantive content is that `Q`, `q`, `BQ`, `iQ` and
+from the quotient predicate. These conclusions are still listed explicitly.
+The substantive content is that `Q`, `q`, `BQ`, `iQ` and
 `qB` exist, together with the Borel and inverse-image clauses.
 
 ## Intended consumer

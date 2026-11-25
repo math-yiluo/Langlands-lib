@@ -232,18 +232,18 @@ affinoid model and their pullbacks to the model converge spectrally to the
 identity, then they eventually preserve every chart inside the patch. -/
 theorem eventually_preimage_chartDomain_of_affinoidPatch {σ : G →* Aut X}
     (hE : ∀ᶠ g in 𝓝 (1 : G),
-      localizedSpaceFunctor.map (σ g).hom ⁻¹' E.carrier = E.carrier)
+      localizedSpaceFunctor.map (σ g).asIso.hom ⁻¹' E.carrier = E.carrier)
     (hconv : ∀ a, SpectralConvergesOn (𝓝 (1 : G))
-      (fun g => patchPullback E t ht ι (σ g).hom) (BoundedAlgHom.id K _) a)
+      (fun g => patchPullback E t ht ι (σ g).asIso.hom) (BoundedAlgHom.id K _) a)
     (W : (presentationOf X).presentation.atlas.Index)
     (hW : range ((presentationOf X).presentation.atlas.chart W) ⊆ E.carrier) :
-    ∀ᶠ g in 𝓝 (1 : G), localizedSpaceFunctor.map (σ g).hom ⁻¹'
+    ∀ᶠ g in 𝓝 (1 : G), localizedSpaceFunctor.map (σ g).asIso.hom ⁻¹'
       ((presentationOf X).chartDomain W).carrier =
         ((presentationOf X).chartDomain W).carrier := by
   filter_upwards [hE, (patchChartDomain E t ht ι W hW).eventually_comap_mem_locus_iff hconv]
     with g hg hD
   ext y
-  change localizedSpaceFunctor.map (σ g).hom y ∈
+  change localizedSpaceFunctor.map (σ g).asIso.hom y ∈
       range ((presentationOf X).presentation.atlas.chart W) ↔
     y ∈ range ((presentationOf X).presentation.atlas.chart W)
   by_cases hy : y ∈ E.carrier
@@ -252,19 +252,19 @@ theorem eventually_preimage_chartDomain_of_affinoidPatch {σ : G →* Aut X}
         range (S₀.presentation.atlas.chart t) := by
       rw [range_greatestChart_eq_univ t ht]
       exact mem_univ _
-    let R := domainRestrict E E (σ g).hom (mapsTo_of_preimage_eq E hg)
+    let R := domainRestrict E E (σ g).asIso.hom (mapsTo_of_preimage_eq E hg)
     let y'' : E.carrier := localizedSpaceFunctor.map R y'
-    have hval : y''.val = localizedSpaceFunctor.map (σ g).hom y :=
-      domainRestrict_apply_val E (σ g).hom (mapsTo_of_preimage_eq E hg) y'
+    have hval : y''.val = localizedSpaceFunctor.map (σ g).asIso.hom y :=
+      domainRestrict_apply_val E (σ g).asIso.hom (mapsTo_of_preimage_eq E hg) y'
     let b : S₀ ⟶ S₀ := (localizedTopTargetHomEquiv t ht).symm
-      (patchConj E ι (σ g).hom (mapsTo_of_preimage_eq E hg))
+      (patchConj E ι (σ g).asIso.hom (mapsTo_of_preimage_eq E hg))
     have hx'' : S₀.presentation.atlas.chart t (BanachSpectrum.comap
-        (patchPullback E t ht ι (σ g).hom).toBoundedRingHom x) =
+        (patchPullback E t ht ι (σ g).asIso.hom).toBoundedRingHom x) =
           (patchModelMap E t ht ι).baseMap y'' := by
       rw [patchPullback_of_preimage_eq E t ht ι _ hg]
       refine (b.chart_comm t t (b.image_chart_top t ht t) x).trans ?_
       rw [hx]
-      exact patchModelMap_baseMap_restrict (σ g).hom hg y'
+      exact patchModelMap_baseMap_restrict (σ g).asIso.hom hg y'
     have e1 := mem_range_chart_iff_mem_patchChartDomain_locus (hW := hW) y'' _ hx''
     have e2 := mem_range_chart_iff_mem_patchChartDomain_locus (hW := hW) y' x hx
     rw [hD x, comap_id_apply'] at e1
@@ -273,11 +273,11 @@ theorem eventually_preimage_chartDomain_of_affinoidPatch {σ : G →* Aut X}
     exact key
   · have h1 : y ∉ range ((presentationOf X).presentation.atlas.chart W) :=
       fun h => hy (hW h)
-    have h2 : localizedSpaceFunctor.map (σ g).hom y ∉
+    have h2 : localizedSpaceFunctor.map (σ g).asIso.hom y ∉
         range ((presentationOf X).presentation.atlas.chart W) := by
       intro h
       apply hy
-      have : y ∈ localizedSpaceFunctor.map (σ g).hom ⁻¹' E.carrier := hW h
+      have : y ∈ localizedSpaceFunctor.map (σ g).asIso.hom ⁻¹' E.carrier := hW h
       rwa [hg] at this
     exact iff_of_false h2 h1
 
@@ -285,23 +285,23 @@ theorem eventually_preimage_chartDomain_of_affinoidPatch {σ : G →* Aut X}
 patch converge spectrally to the identity. -/
 theorem spectralConvergesOn_preservedChartPullback_of_affinoidPatch {σ : G →* Aut X}
     (hE : ∀ᶠ g in 𝓝 (1 : G),
-      localizedSpaceFunctor.map (σ g).hom ⁻¹' E.carrier = E.carrier)
+      localizedSpaceFunctor.map (σ g).asIso.hom ⁻¹' E.carrier = E.carrier)
     (hconv : ∀ a, SpectralConvergesOn (𝓝 (1 : G))
-      (fun g => patchPullback E t ht ι (σ g).hom) (BoundedAlgHom.id K _) a)
+      (fun g => patchPullback E t ht ι (σ g).asIso.hom) (BoundedAlgHom.id K _) a)
     (W : (presentationOf X).presentation.atlas.Index)
     (hW : range ((presentationOf X).presentation.atlas.chart W) ⊆ E.carrier)
     (a : (presentationOf X).presentation.atlas.algebra W) :
-    SpectralConvergesOn (𝓝 (1 : G)) (fun g => preservedChartPullback W (σ g).hom)
+    SpectralConvergesOn (𝓝 (1 : G)) (fun g => preservedChartPullback W (σ g).asIso.hom)
       (BoundedAlgHom.id K _) a := by
   let D := patchChartDomain E t ht ι W hW
-  have hkey : ∀ᶠ g in 𝓝 (1 : G), (preservedChartPullback W (σ g).hom).comp D.baseMap =
-      D.baseMap.comp (patchPullback E t ht ι (σ g).hom) := by
+  have hkey : ∀ᶠ g in 𝓝 (1 : G), (preservedChartPullback W (σ g).asIso.hom).comp D.baseMap =
+      D.baseMap.comp (patchPullback E t ht ι (σ g).asIso.hom) := by
     filter_upwards [hE, eventually_preimage_chartDomain_of_affinoidPatch hE hconv W hW]
       with g hg hC
-    exact preservedChartPullback_comp_patchChartDomain_baseMap (σ g).hom hW hg hC
+    exact preservedChartPullback_comp_patchChartDomain_baseMap (σ g).asIso.hom hW hg hC
   refine D.spectralConvergesOn_of_factor (l := 𝓝 (1 : G))
-    (φ := fun g => (preservedChartPullback W (σ g).hom).comp D.baseMap) (ψ := D.baseMap)
-    ?_ D.represents.hasImageIn (φD := fun g => preservedChartPullback W (σ g).hom)
+    (φ := fun g => (preservedChartPullback W (σ g).asIso.hom).comp D.baseMap) (ψ := D.baseMap)
+    ?_ D.represents.hasImageIn (φD := fun g => preservedChartPullback W (σ g).asIso.hom)
     (Filter.Eventually.of_forall fun _ => rfl) (BoundedAlgHom.id_comp _) a
   intro c ε hε
   filter_upwards [(hconv c).postcomp D.baseMap ε hε, hkey] with g hg hk
@@ -316,9 +316,9 @@ model converge spectrally to the identity, then every chart of `X` contained
 in `E` is a good chart for the action. -/
 theorem isGoodChart_of_affinoidPatch {σ : G →* Aut X}
     (hE : ∀ᶠ g in 𝓝 (1 : G),
-      localizedSpaceFunctor.map (σ g).hom ⁻¹' E.carrier = E.carrier)
+      localizedSpaceFunctor.map (σ g).asIso.hom ⁻¹' E.carrier = E.carrier)
     (hconv : ∀ a, SpectralConvergesOn (𝓝 (1 : G))
-      (fun g => patchPullback E t ht ι (σ g).hom) (BoundedAlgHom.id K _) a)
+      (fun g => patchPullback E t ht ι (σ g).asIso.hom) (BoundedAlgHom.id K _) a)
     (W : (presentationOf X).presentation.atlas.Index)
     (hW : range ((presentationOf X).presentation.atlas.chart W) ⊆ E.carrier) :
     IsGoodChart σ W :=

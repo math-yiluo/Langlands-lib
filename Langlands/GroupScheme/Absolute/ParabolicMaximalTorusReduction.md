@@ -1,7 +1,5 @@
 # Structural reduction for the singleton parabolic maximal-torus proof
 
-Worker 1336.
-
 This is an internal conditional reduction assembled from the published
 group-scheme predicates and elementary transport lemmas. It defines
 `ParabolicMaximalTorusStructuralInputs.{u}` and proves that these inputs
@@ -39,7 +37,9 @@ field.
 This route applies in every universe `u` and uses the actual algebraic
 closure in that universe. It adds no assumption on perfectness or
 characteristic. All structural facts listed in the input proposition
-remain proof obligations before the conditional reduction can yield an
-unconditional proof of the host statement. This module contains no new
+are proof obligations before the conditional reduction can yield an
+unconditional proof of `ParabolicMaximalTorusStatement`; the Library's proof
+`parabolicMaximalTorus` (module `Absolute.ParabolicMaximalTorusProof`) builds
+on this reduction. This module contains no new
 literature assertion; its provenance is the described composition of
 the imported proposition definitions and transport lemmas.

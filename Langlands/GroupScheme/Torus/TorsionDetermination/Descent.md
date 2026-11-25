@@ -1,7 +1,5 @@
 # Torsion-closed immersions: transport and fppf descent
 
-Worker 742.
-
 This module is an internal helper for the proof of
 `Langlands.GroupScheme.MultiplicativeTypeTorsionDeterminationStatement` (SGA 3 IX,
 Corollaires 4.8 and 4.9). It introduces no statement of its own from the literature. It

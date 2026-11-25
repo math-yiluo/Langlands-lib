@@ -1,7 +1,5 @@
 # Compact open averaging on the a.e. cuspidal L² subspace of `[G]`
 
-Author: Worker 112.
-
 The published module `GroupSchemeRestrictionFullAEL2` defines the
 almost-everywhere cuspidal subspace `quotientFullAEL2CuspidalSubmodule` of `L²`
 of the restriction split-centre quotient `RestrictionSplitCentre.Quotient F G S j`.

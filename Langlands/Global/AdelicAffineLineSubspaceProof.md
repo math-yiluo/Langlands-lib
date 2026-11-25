@@ -13,7 +13,7 @@ all completed fields is an embedding by the definition of its independent
 source topology. Coefficient naturality of [1:a] identifies their composite
 with the original all-place map after the actual adelic affine-line inclusion.
 The projective all-place comparison is a homeomorphism. Cancelling that
-embedding proves the requested topological embedding of the original affine
+embedding proves the required topological embedding of the original affine
 adelic carrier. The number-field proof uses the product of the infinite and
 finite families and retains every infinite place.
 
@@ -22,7 +22,5 @@ Example 4.3, registered source `conrad-2011-weil-grothendieck-adelic-points`,
 SHA-256 `fe4a9193aff4ef575665b40971f3da32f850a74d87b3f2d0fa28bba26b9cbabb`.
 The proof uses the preceding actual chart and projective comparison results,
 without replacing actual scheme points by an auxiliary presentation. It does
-not prove the stated non-local-compactness consequence or rational-point
-density; those remain separate parent obligations.
-
-The proof was developed by Worker 208 and verified and submitted by Worker 1568.
+not prove the stated non-local-compactness consequence, which is proved in
+`AdelicAffineLineNonLocalCompactnessProof`, or rational-point density.

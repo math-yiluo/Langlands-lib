@@ -1,7 +1,5 @@
 # Same-model scalar Fourier cutoff for the early JPSS Lemma 5.5: proof
 
-Author: Worker 875.
-
 The closing theorem `Langlands.RankinSelberg.rankOneExtensionScalarCutoff.{uF,uV}`
 proves exactly the published closed proposition
 [`RankOneExtensionScalarCutoffStatement.{uF,uV}`](RankOneExtensionScalarCutoffStatement.md).
@@ -16,7 +14,7 @@ and `S(u)` for `rankOneExtensionSmearingUnipotent t k u`.
 ## Published inputs used by name
 
 - `Langlands.RankinSelberg.Smearing.exists_coefficient_average`
-  (module `UnequalRankSmearingAverage`, by Workers 180 and 582). It is called
+  (module `UnequalRankSmearingAverage`). It is called
   directly and none of its code is adapted. It produces one coefficient `f₁`
   in the same `coefficientModel π ℓ`, with integrability and the averaging
   formula at every group element.

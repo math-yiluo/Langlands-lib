@@ -34,7 +34,7 @@ theorem quotientExtendMap_equivariant (f : normalizedAction H X ⟶
     (Action.res (AffinoidAtlasPresentation.{u, max z v, max z w} K) H.subtype).obj Y)
     (g : G) :
     actionMap H X hH g ≫ quotientExtendMap H hH f =
-      quotientExtendMap H hH f ≫ Y.ρ g :=
+      quotientExtendMap H hH f ≫ (Y.ρ g).asHom :=
   (quotientExtendToAction H hH f).comm g
 
 /-- The full normalized-unit triangle survives transport to the quotient. -/
@@ -155,7 +155,7 @@ theorem quotientExtendMap_indexMap (f : normalizedAction H X ⟶
     (Action.res (AffinoidAtlasPresentation.{u, max z v, max z w} K) H.subtype).obj Y)
     (c : G ⧸ H) (i : X.V.nonemptyPresentation.atlas.Index) :
     (quotientExtendMap H hH f).indexMap ⟨c, i⟩ =
-      (Y.ρ c.out).indexMap (f.hom.indexMap i) := rfl
+      (Y.ρ c.out).asHom.indexMap (f.hom.indexMap i) := rfl
 
 /-- Its bounded pullback is the original contravariant composite. -/
 @[simp]
@@ -163,7 +163,7 @@ theorem quotientExtendMap_pullback (f : normalizedAction H X ⟶
     (Action.res (AffinoidAtlasPresentation.{u, max z v, max z w} K) H.subtype).obj Y)
     (c : G ⧸ H) (i : X.V.nonemptyPresentation.atlas.Index) :
     (quotientExtendMap H hH f).pullback ⟨c, i⟩ =
-      (f.hom.pullback i).comp ((Y.ρ c.out).pullback (f.hom.indexMap i)) := by
+      (f.hom.pullback i).comp ((Y.ρ c.out).asHom.pullback (f.hom.indexMap i)) := by
   change (BoundedAlgHom.id K _).comp ((extendMap H f).pullback ⟨c, i⟩) = _
   rw [BoundedAlgHom.id_comp, extendMap_pullback]
 
@@ -172,7 +172,7 @@ theorem quotientExtendMap_mk (f : normalizedAction H X ⟶
     (Action.res (AffinoidAtlasPresentation.{u, max z v, max z w} K) H.subtype).obj Y)
     (g : G) (x : LocalSpace H X) :
     (quotientExtendMap H hH f).baseMap (TopologicalInduction.mk H g x) =
-      (Y.ρ g).baseMap (f.hom.baseMap x) := by
+      (Y.ρ g).asHom.baseMap (f.hom.baseMap x) := by
   have hu := congrArg (fun p : X.V.nonemptyPresentation ⟶ Y.V => p.baseMap x)
     (quotientUnitMap_quotientExtendMap H hH f)
   change (quotientExtendMap H hH f).baseMap ((quotientUnitMap H X hH).baseMap x) =
@@ -182,11 +182,11 @@ theorem quotientExtendMap_mk (f : normalizedAction H X ⟶
     p.baseMap (TopologicalInduction.unit H x)) (quotientExtendMap_equivariant H hH f g)
   change (quotientExtendMap H hH f).baseMap
       ((actionMap H X hH g).baseMap (TopologicalInduction.unit H x)) =
-    (Y.ρ g).baseMap ((quotientExtendMap H hH f).baseMap
+    (Y.ρ g).asHom.baseMap ((quotientExtendMap H hH f).baseMap
       (TopologicalInduction.unit H x)) at he
   have hs := congrArg (fun p : Space H X => (quotientExtendMap H hH f).baseMap p)
     ((actionMap_baseMap H X hH g (TopologicalInduction.unit H x)).trans
       (TopologicalInduction.smul_unit g x)).symm
-  exact hs.trans (he.trans (congrArg (fun p : Y.V.space => (Y.ρ g).baseMap p) hu))
+  exact hs.trans (he.trans (congrArg (fun p : Y.V.space => (Y.ρ g).asHom.baseMap p) hu))
 
 end Langlands.Analytic.AtlasInducedAction

@@ -23,7 +23,7 @@ instance and the existing pullback-pushforward adjunction. No invertibility or
 coherence hypothesis is imposed on the scheme morphism.
 
 The local transparency option permits elaboration across Mathlib's scheme-module
-wrappers; it does not add a mathematical assumption. This unit contains two
+wrappers; it does not add a mathematical assumption. This module contains two
 definitions only. It does not claim a tensor construction, a monoidal structure,
 or the identity/composition coherence laws; those laws are separate proof
 obligations.

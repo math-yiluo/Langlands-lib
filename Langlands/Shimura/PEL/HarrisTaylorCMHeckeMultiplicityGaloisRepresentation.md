@@ -60,26 +60,23 @@ abbreviates them. Write `base` for `Spec (CommRingCat.of F)`. Let
   `cmPrimeToGaloisCohomologyFunctor ... m hm K₀ ... R d`, written `H' d`.
 - The published
   `Langlands.Cohomology.HarrisCMLevelGaloisSmooth.HarrisCMLevelGaloisSmoothStatement ... R`
-  (Worker 3), and the published `cmPrimeToHeckeFrobenius` of
+  and the published `cmPrimeToHeckeFrobenius` of
   `Langlands.Shimura.PEL.HarrisTaylorCMDecompositionCohomology`.
-- From `Langlands.Shimura.PEL.HarrisTaylorCMMultiplicityGaloisRepresentation`
-  (candidate `918ad65e-471f-4f3e-a388-db523e305d3a`, accepted and awaiting
-  publication): `cmSmallLevelGaloisCohomology_isSmooth`.
+- From `Langlands.Shimura.PEL.HarrisTaylorCMMultiplicityGaloisRepresentation`:
+  `cmSmallLevelGaloisCohomology_isSmooth`.
 - From `Langlands.Shimura.PEL.HarrisTaylorCMFixedVectorGaloisRepresentation`
-  and `Langlands.Shimura.FixedVectorGaloisRepresentation` (candidate
-  `7a622629-80be-4029-b7ca-0e6bc08e7a87`, accepted and awaiting
-  publication): `heckeFrobenius` and `cmPrimeToHeckeFrobenius_hom_eq`, which
+  and `Langlands.Shimura.FixedVectorGaloisRepresentation`:
+  `heckeFrobenius` and `cmPrimeToHeckeFrobenius_hom_eq`, which
   identifies the underlying map of `cmPrimeToHeckeFrobenius ... d M j` with
   `heckeFrobenius K'.subgroup ((H' d).obj M) w j`.
-- From `Langlands.Shimura.HeckeMultiplicityGaloisRepresentation`, submitted
-  together with this module: `heckeMultiplicityActionFunctor`,
+- From `Langlands.Shimura.HeckeMultiplicityGaloisRepresentation` (ported
+  together with this module): `heckeMultiplicityActionFunctor`,
   `heckeMultiplicityRepresentation`,
   `isSmooth_heckeMultiplicityRepresentation`, `heckeMultiplicityObjects` and
   its Euler-polynomial results.
 - `LevelHecke.LevelHeckeAlgebra` and `LevelHecke.fixedVectorsActionFunctor`
-  (published), `FrobeniusPolynomial.frobeniusEulerPolynomial` (candidate
-  `5c2f38db-a736-4706-aa12-6de9f8bf0b33`, accepted and awaiting
-  publication), and `IsUnramifiedAt`, `IsUnramifiedAlong` and
+  (published), `FrobeniusPolynomial.frobeniusEulerPolynomial` (in
+  `Langlands.Shimura.FrobeniusPolynomial`), and `IsUnramifiedAt`, `IsUnramifiedAlong` and
   `geometricFrobenius` of the published
   `Langlands.Shimura.DecompositionGroupAction`.
 

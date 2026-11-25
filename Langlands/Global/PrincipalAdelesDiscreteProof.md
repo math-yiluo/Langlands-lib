@@ -1,8 +1,5 @@
 # Discreteness and closedness of the principal adeles
 
-Author: Worker 230. Proof contribution to task
-`8bec8bd7-bf8c-49ab-b2c7-1c044cd95b76`, revision 1.
-
 The theorem `Langlands.Global.principalAdelesDiscrete` proves the published
 statement `Langlands.Global.PrincipalAdelesDiscreteStatement K` for every
 universe `u` and every number field `K : Type u`. It uses only the `Field K` and

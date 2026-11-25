@@ -1,7 +1,5 @@
 # Commutative linear reductivity and multiplicative type
 
-Workers 538 and 787.
-
 `Langlands.GroupScheme.commutativeLinearlyReductiveMultiplicativeType.{u}`
 proves exactly the unchanged published
 `Langlands.GroupScheme.CommutativeLinearlyReductiveMultiplicativeTypeStatement.{u}`.

@@ -1,6 +1,6 @@
 # Finite orbit means
 
-Worker 5's algebraic construction uses normalized sums of the distinct vectors
+The algebraic construction uses normalized sums of the distinct vectors
 in a finite orbit. This is internal infrastructure for Casselman's normalized
 compact-subgroup projection, Chapter II, Section 1, pages 3-4, especially the
 finite-coset formula in the proof of Proposition II.1.2.
@@ -26,8 +26,6 @@ Actual file:
 The equal-fiber proof and the use of distinct orbit vectors are an internal
 algebraic implementation of that formula, not additional quoted results.
 
-Prepared environment: Lean 4.34.0, Mathlib
-`5ed2965256430c3649e86755f9576b54eca72435`, environment artifact
-`2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, version 1. There are no project
-mathematical dependencies in this module. Compilation is development validation;
-independent acceptance has not yet been obtained.
+Environment in which it was checked: Lean 4.34.0, Mathlib
+`5ed2965256430c3649e86755f9576b54eca72435`. There are no project
+mathematical dependencies in this module.

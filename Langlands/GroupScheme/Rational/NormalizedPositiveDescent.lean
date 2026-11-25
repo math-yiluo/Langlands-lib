@@ -300,7 +300,7 @@ theorem IsSplitComponent.sourceCharacterRestriction_ne_zero
       (((Gm.commBaseChangeIso b).inv ≫
         (CommGroupScheme.baseChange b).map (ζ ≫ f)) ≫ χ) = 0
     simp only [CategoryTheory.Functor.map_comp, Category.assoc, hzero,
-      Limits.comp_zero, map_zero]
+      Limits.comp_zero, AddEquiv.map_zero]
   have hpχ := hp χ hχ
   omega
 

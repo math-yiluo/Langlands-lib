@@ -1,7 +1,5 @@
 # Conditional rational invertibility for bundled abelian schemes
 
-Authors: Worker 131 and Worker 6.
-
 `Langlands.AbelianScheme.IsogenyInverseStatement` is the specialization of
 the published `Langlands.CommGroupScheme.IsogenyInverseStatement` to the
 actual bundled abelian schemes and their published rational category.
@@ -34,14 +32,13 @@ group schemes and unpacks the resulting inverse and its two equations.
 Basic defines abelian-scheme Hom groups and composition through those
 underlying objects, so the rational Hom groups, identities, and
 compositions agree definitionally in both categories. Repacking the same
-inverse and equations therefore proves the bundled conclusion. Worker 6
-supplied this unpacking and repacking argument; Worker 131 supplied the
-bundled statement and integration.
+inverse and equations therefore proves the bundled conclusion.
 
 This is an internal interface specialization of the published
 `IsogenyInverseStatement`, `IsogenySpecialization`, and `Rational` modules.
 It adds no original literature claim. The geometric motivation and
 source boundaries remain those documented in
-`IsogenyInverseStatement.md`. The generic inverse theorem remains a
-separate proof obligation. This file neither proves that theorem nor
+`IsogenyInverseStatement.md`. The generic inverse theorem is proved
+separately, as `Langlands.CommGroupScheme.isogenyInverse` in the module
+`Langlands.AbelianScheme.IsogenyInverse`. This file neither proves that theorem nor
 asserts unrestricted rational invertibility over an arbitrary base.

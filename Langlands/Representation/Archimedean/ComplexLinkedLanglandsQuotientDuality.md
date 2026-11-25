@@ -38,15 +38,18 @@ on `S` but not on all of `I(ds')`. In other words, `Ann_{U(𝔤)}(S) ≠ Ann_{U(
 
 ### Provenance and why it holds
 
-This is an internal intermediate statement of Task 7064. It is a submodule form of the
+This is an internal intermediate statement of the proof of
+`ComplexLinkedLanglandsQuotientNotLargeStatement` (module
+`ComplexLinkedLanglandsQuotientNotLargeProof`). It is a submodule form of the
 non-largeness of the Langlands quotient and is not quoted from a source. Under the duality
 `I(ds) × I(ds') → ℂ`, the Langlands quotient `I(ds)/R` corresponds to the unique irreducible
 submodule of `I(ds')`. For a linked pair this submodule is small: when the pair is adjacent
 and suitably ordered, it lies in a module induced from a finite-dimensional representation
 `F_p ⊠ F̄_q` of a `GL_2(ℂ)` block. Its annihilator is then strictly larger than that of the
 principal series (Vogan 1978, Lemma 6.5 and Corollary 6.6, p. 94, in Gelfand–Kirillov
-dimension form). The planned proof of this statement is a Gelfand–Kirillov growth comparison.
-It is not part of this module.
+dimension form). The Library proves this statement by a Gelfand–Kirillov growth comparison
+(`complexDualSubmoduleAnnihilator_of_growth`, module `ComplexLinkedLanglandsQuotientGrowth`,
+applied in `ComplexLinkedLanglandsQuotientNotLargeProof`). It is not part of this module.
 
 ## The reduction
 

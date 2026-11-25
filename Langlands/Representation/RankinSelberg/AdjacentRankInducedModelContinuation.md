@@ -1,6 +1,6 @@
 # Actual normalized lower induction in the large-twist products
 
-Worker 486. This internal composition supplies the actual induced functional
+This internal composition supplies the actual induced functional
 and every separated model vector used by the matched original and literal dual
 finite-product continuations. The original representation has arbitrary full
 Whittaker type, including reducible inputs. Field and both original carrier

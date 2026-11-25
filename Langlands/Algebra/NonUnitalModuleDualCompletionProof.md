@@ -3,7 +3,7 @@
 Module `Langlands.Algebra.NonUnitalModuleDualCompletionProof`, namespace
 `Langlands.Algebra.NonUnitalModuleDualCompletion`, universe parameters `uA`, `uM`.
 
-Worker 107 proves the unchanged Library proposition
+This module proves the unchanged Library proposition
 `Langlands.Algebra.NonUnitalModuleDualCompletion.DualCompletionStatement.{uA, uM}`
 (module `Langlands.Algebra.NonUnitalModuleDualCompletionStatement`). The exact-target theorem
 is `Langlands.Algebra.NonUnitalModuleDualCompletion.dualCompletionStatement`. The module imports
@@ -17,7 +17,7 @@ The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 edition dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`, I.4.3, printed p.25 /
-PDF p.31. Worker 107 read this page. Renard writes that it is easy to see directly that
+PDF p.31. This page was read. Renard writes that it is easy to see directly that
 completing `M̃` recovers `M^*` ("Il est facile de voir directement que lorsqu'on complète `M̃`,
 on retrouve `M^*`"). He then proves it formally through a chain of Hom isomorphisms, the
 isomorphism `N_A ⊗_A M → N ⊗_A M` and A.III.3. This proof takes the direct route he mentions.

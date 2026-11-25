@@ -1,7 +1,5 @@
 # Nilpotent actual tangent matrices of unipotent groups
 
-Author: Worker 1377; reused by Worker 1487 for the centralizer adapter.
-
 This helper proves that the matrix of an actual tangent vector of a unipotent
 group in an `n` dimensional algebraic representation has `n`th power zero.
 The tangent vector may be over any commutative test algebra, including a

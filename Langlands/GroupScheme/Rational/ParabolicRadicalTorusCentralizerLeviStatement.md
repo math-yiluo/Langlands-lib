@@ -1,9 +1,9 @@
 # The centralizer Levi of a maximal torus of a parabolic radical
 
-Author: Worker 1355.
-
-`ParabolicRadicalTorusCentralizerLeviStatement.{u}` is an unproved structural
-proposition over every field in universe `u`. Let `G` be connected reductive,
+`ParabolicRadicalTorusCentralizerLeviStatement.{u}` is a structural
+proposition over every field in universe `u`, proved in
+`Rational.ParabolicRadicalTorusCentralizerLeviProof` as
+`parabolicRadicalTorusCentralizerLevi`. Let `G` be connected reductive,
 let `j : P → G` be an actual rational parabolic, and supply an actual geometric
 solvable radical `r : R → P`. For every commutative group scheme `S` and actual
 maximal torus `sR : S → R`, the proposition asserts a group scheme `L` and a
@@ -69,4 +69,5 @@ Levis of `P`. The proposition uses this corrected ambient parabolic.
 This is a focused existence clause extracted from the published
 `ParabolicRadicalTorusLeviStatement`. It supplies no intersection geometry,
 largest-central-subtorus result, split-part positivity, or unconditional
-proof of that host. The host statement and its import closure are unchanged.
+proof of that statement. `ParabolicRadicalTorusLeviStatement` and its import
+closure do not depend on this module.

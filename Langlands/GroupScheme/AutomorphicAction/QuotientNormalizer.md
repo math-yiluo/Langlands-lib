@@ -1,7 +1,5 @@
 # Normalizers induced by quotient actions
 
-Worker 843.
-
 These are internal formal consequences of the published flat-surjective local
 lifting argument and automorphic-action laws, together with the
 restriction-image preservation predicate.

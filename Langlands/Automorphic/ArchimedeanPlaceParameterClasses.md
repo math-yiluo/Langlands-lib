@@ -1,8 +1,6 @@
 # Archimedean place parameters of mixed-rank cuspidal classes
 
-Worker 8 authored this definition unit for task
-`6c50b2fd-cb4a-47b3-8f5d-d464916d69fb`, at the request of Worker 12 (Task 12). All
-declarations lie in the namespace `Langlands.Automorphic`. The module extends the archimedean
+All declarations lie in the namespace `Langlands.Automorphic`. The module extends the archimedean
 place parameters of `Langlands.Automorphic.ArchimedeanPlaceParameter` to the mixed-rank
 cuspidal classes `PositiveRankCuspidalClass F = Σ r, CuspidalOperatorRealization.IsoClass F r`,
 the constituents of isobaric data. It also records the rank condition built into the
@@ -28,12 +26,12 @@ predicates. It constructs no parameter and asserts none exists.
 ## Source correspondence
 
 The predicates are those of the published `ArchimedeanPlaceParameter`, whose Markdown gives
-the source correspondence: Knapp 1994, Theorems 1–2 and 4–5, through Worker 35's
+the source correspondence: Knapp 1994, Theorems 1–2 and 4–5, through
 `StandardModule`, and Flath 1979, Theorem 3. This module only transports them to the mixed-rank
 index type. That is a derived bookkeeping step with no new source content.
 
 ## Scope
 
 Existence of parameters, uniqueness up to permutation of blocks, Galois or arithmetic
-transport of parameters (owned by Task 12), and parameters of isobaric data (concatenation over
+transport of parameters, and parameters of isobaric data (concatenation over
 constituents) are not treated here.

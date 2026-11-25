@@ -1,7 +1,5 @@
 # Central maximal tori under field extension: reduction to quotients and absence of tori
 
-Worker 1379.
-
 ## Statements
 
 `IsCentral.range_isNormal` proves, over any base scheme, that the range

@@ -1,8 +1,5 @@
 # Admissibility of irreducible automorphic subquotients from admissibility of generated realizations
 
-Reduction by Worker 3657, with the compact-orbit continuity argument below
-adapted by Worker 275.
-
 Lean module: `Langlands.Automorphic.IrreducibleSubquotientAdmissibilityReduction`.
 It imports `Langlands.Automorphic.AutomorphicAdmissibilityStatement` (the
 statements), `Langlands.Automorphic.OperatorCompactCompletion`
@@ -10,10 +7,10 @@ statements), `Langlands.Automorphic.OperatorCompactCompletion`
 `Langlands.Representation.CompactMaschke` (for
 `CompactMaschke.exists_lift_intertwiner`) and
 `Langlands.Representation.Compact.ProjectionProof` (for the averaging lemmas
-on `Compact.averageMap`). It changes no published file.
+on `Compact.averageMap`).
 
-This module is a helper for the proof task of
-`Langlands.Automorphic.IrreducibleSubquotientAdmissibilityStatement` (Task 6611).
+This module is a helper for the proof of
+`Langlands.Automorphic.IrreducibleSubquotientAdmissibilityStatement`.
 It proves the implication from `GeneratedFormAdmissibilityStatement`. It does
 so by constructing a cyclic realization and transferring joint admissibility
 along its quotient map. The entry module applies this implication to the
@@ -164,24 +161,23 @@ representations, `generatedFormOperatorRealization` for `f * ℋ`, the Hom form 
 admissibility).
 
 Borel–Jacquet give no details. The proof follows the outline of §7, item 3, of
-the statement Markdown and of the task contract: a cyclic vector, then the
+the statement Markdown: a cyclic vector, then the
 passage of joint admissibility to a quotient, with a reduction to compact open
 `L`. It differs from that outline in two points.
 
 - The `K_∞`-types are not handled by isotypic projections. Instead, a
   `K_∞`-equivariant map from `σ` into the quotient is lifted to the whole space
   by the published compact Maschke lifting lemma
-  `CompactMaschke.exists_lift_intertwiner` (Worker 174; the standard averaging
+  `CompactMaschke.exists_lift_intertwiner` (the standard averaging
   proof of complete reducibility of finite-dimensional continuous
   representations of compact groups, see `CompactMaschke.md`).
 - The `L`-fixed vectors are lifted by the published averaging operator
   `Compact.averageMap` over the compact open subgroup `L₀`, applied after the
-  lift. The contract's outline averages over a finite quotient `L₀ / L'`; the
-  Library's `averageMap` takes the mean over the finite `L₀`-orbit of a vector,
-  which is the same device.
+  lift. An average over a finite quotient `L₀ / L'` is the same device: the
+  Library's `averageMap` takes the mean over the finite `L₀`-orbit of a vector.
 
 The comparison of a realization with the subquotient
-`OperatorRealization.toSubquotient`, mentioned in the contract, is not needed.
+`OperatorRealization.toSubquotient` is not needed.
 The transfer works directly with the surjective intertwiner from the realization
 onto `Q`.
 
@@ -194,6 +190,5 @@ onto `Q`.
 
 ## Lean checks
 
-`lean_check` in environment `5c94c648-e8dc-4002-a50a-071ebf3f6096` compiles
-the module with no errors or warnings. The main theorem depends only on the
+A compilation check of the module reported no errors or warnings. The main theorem depends only on the
 axioms `propext`, `Classical.choice` and `Quot.sound`.

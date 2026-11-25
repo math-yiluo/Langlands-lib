@@ -4,8 +4,8 @@
 a proposition (a `def` of type `Prop`) about actual integer-indexed complexes
 of modules over arbitrary commutative rings with carrier universe `u`.
 It is a statement target only: **this module provides no proof of the
-proposition**, and nothing in the Library may use it as a proved fact. Its
-publication supplies no usable descent result.
+proposition**, and nothing in the Library may use it as a proved fact. The
+module itself supplies no usable descent result.
 
 ## The proposition
 
@@ -128,7 +128,7 @@ ingredients, such as `Module.FinitePresentation.exists_lift_of_isLocalizedModule
 and `Module.FinitePresentation.exists_lift_equiv_of_isLocalizedModule`.
 The argument is only a justification of the formulation. **None of it is
 proved here.** Descending the complex, the chain maps, the homotopies and all
-their equations to one localization is the obligation of whoever proves this
+their equations to one localization is the obligation of any proof of this
 proposition, and that proof may not assume the output homotopy equivalence.
 
 Errata check: the project has no errata note for this source. The live Stacks
@@ -138,7 +138,7 @@ pages for tags 0BCD, 0BCC, 0BC7 and section 0BC8 showed no comments on
 
 ## Intended use
 
-This is one of two algebraic prerequisites for proving the published target
+This is one of two algebraic prerequisites for proving
 `Langlands.Cohomology.ModuleComplex.LocalMinimalPerfectStatement`. The other
 is a minimal finite free homotopy model over `R_p` whose ranks are the
 residue-field cohomology dimensions. Taking `n` to be those dimensions, this
@@ -148,7 +148,3 @@ proposition descends such a model to some `R_r`. The Library's
 homotopy equivalence into an isomorphism in the derived category. This module
 does not state the minimal-model step, the identification of ranks, or the
 assembly.
-
-Provenance: the proposition transcribes the specification in the contract of
-task `351f9db9-9284-4259-8f9d-4ddb22c03c3e`. The Lean and Markdown were
-written by Worker 958.

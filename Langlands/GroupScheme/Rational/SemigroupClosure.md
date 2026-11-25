@@ -1,6 +1,6 @@
 # Closure properties of actual semigroup subgroup functors
 
-This internal unit proves consequences of the pointwise subgroup-closure
+This internal module proves consequences of the pointwise subgroup-closure
 construction in `WeightSemigroup`. Its motivation is the generated-subgroup
 step in CGP, *Pseudo-reductive Groups*, second edition, Proposition 3.3.6
 (printed pp.109–110; PDF pp.135–136), but its proofs use only the published

@@ -6,7 +6,7 @@ Lean module: `Langlands.Representation.Archimedean.RealInducedSwapLieLimit`, nam
 ## Purpose and provenance
 
 This is internal infrastructure for the deformation route to
-`Langlands.Archimedean.RealInducedSwapStatement` (Task 7172). The route deforms the four
+`Langlands.Archimedean.RealInducedSwapStatement`. The route deforms the four
 rank-one crossings of `RealInducedSwapShifted` by a common shift `z` of their recurrence
 parameters and takes a limit at `z = 0`. A shifted map `shiftedMap d e h` with
 `h : FourCrossings d e z` goes between the fixed modules of `[induced d, induced e]` and
@@ -75,7 +75,6 @@ restriction to `O(n)` does not depend on the exponents.
 ## Dependencies
 
 Library modules `RealInducedSwapShifted`, `RealBlockMultiplierAnalytic` and
-`ComplexJacquetBorel` (for `characterOfParams`), and `RealExponentDeformation` (candidate
-ce8243b1, submitted for the same task). Axioms: `propext`, `Classical.choice`, `Quot.sound`.
+`ComplexJacquetBorel` (for `characterOfParams`), and `RealExponentDeformation`. Axioms: `propext`, `Classical.choice`, `Quot.sound`.
 
 `moved d z` abbreviates the existing `ComplexBlock.twist z d`.

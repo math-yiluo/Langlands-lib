@@ -1,6 +1,6 @@
 # Characterization of the full correspondence by pair factors at one character
 
-Author: Worker 7. This module states two corollaries of Henniart 2002. They
+This module states two corollaries of Henniart 2002. They
 concern a full map `τ` that is compatible with rank one and with all pair L-
 and epsilon-factors at one nontrivial additive character:
 
@@ -88,10 +88,10 @@ Source file: `henniart-2002-characterization`, SHA-256
 
 - Henniart's Theorem 1.8, with L-factors against indecomposable parameters of
   smaller rank only, is `AssemblyLCharacterizationStatement` of
-  `AssemblyLFactorStatement`. The one-sided results are not statements of this
-  task: the Theorem of §1.6 (characterizing `A_0(n)` and `G_0(n)`), the
+  `AssemblyLFactorStatement`. The one-sided results are not stated in this
+  module: the Theorem of §1.6 (characterizing `A_0(n)` and `G_0(n)`), the
   Theorem of §1.7 (pole orders) and the gamma-factor results of §1.9.
-- The module imports, and does not copy: this task's `FullFactorCompatibility`
+- The module imports, and does not copy: `FullFactorCompatibility`
   (`FullFactorCompatibilityAt`), `AssemblyLFactorStatement` (and through it
   `AssemblyRelation`, `SupercuspidalSpecification`), `OperationCompatibility`
   (`RankOneCompatibility`, `IsGeometricReciprocity`) and `Domains`
@@ -99,5 +99,5 @@ Source file: `henniart-2002-characterization`, SHA-256
 
 ## Validation
 
-The module compiles in the project Lean service with no errors or warnings.
+The module compiles with no errors or warnings.
 There is no `sorry` and no new axiom. Both definitions return `Prop`.

@@ -1,7 +1,5 @@
 # Actual base change of full Tate-normalized Harris CM models
 
-Author: Worker 344.
-
 This is an internal construction on the existing universe-zero Harris CM
 data, the existing prerequisite package, and the full category
 `AdmissibleCMBaseCategory` of connected admissible test bases. It additionally

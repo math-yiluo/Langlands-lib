@@ -1,10 +1,10 @@
 # Smooth vectors and open stabilizers
 
-This module proves the accepted proposition
+This module proves the proposition
 `Langlands.SmoothVectorStabilizerStatement`. The reusable lemma
 `Langlands.isSmoothVector_iff_isOpen_stabilizer` says that a vector is smooth
 exactly when the carrier of its algebraic stabilizer subgroup is open.
-`Langlands.smoothVectorStabilizer` supplies the entire accepted target.
+`Langlands.smoothVectorStabilizer` supplies the entire target.
 
 The coefficient ring `R`, group `G`, and module `V` have three independent
 universe parameters. The ambient assumptions are `CommRing R`, `Group G`,
@@ -19,7 +19,7 @@ The representation need not be smooth on all its vectors.
 The component lemma uses an ambient `IsTopologicalGroup G` instance.
 For the closing theorem, `omit [IsTopologicalGroup G]` removes that ambient
 parameter, and `intro _ rho v` introduces the instance and variables quantified
-inside the accepted proposition. Thus the closing theorem adds no assumption
+inside the proposition. Thus the closing theorem adds no assumption
 to its target.
 
 ## Implemented proof
@@ -52,7 +52,7 @@ The relevant pinned Mathlib interfaces are
 ## Provenance and exact dependencies
 
 This is an internal consequence of the open-subgroup definition of smoothness
-used in the accepted project definitions. The original convention is in
+used in the project definitions. The original convention is in
 Bill Casselman, *Introduction to admissible representations of p-adic groups*,
 Chapter II, revision June 16, 2019, Section 1, page 2, first paragraph.
 The original PDF was read with its ambient hypotheses on page 1:
@@ -61,37 +61,27 @@ The original PDF was read with its ambient hypotheses on page 1:
 - SHA256: `2f7868c9e29fd486a42419f5b381237bba5d0ba73accc82ed5d7ade448a79c3d`.
 - File: `C:/Central-Library/Casselman--p-adic groups lecture notes/Introduction to representations of p-adic groups/Casselman--Chapter II - Smooth representations--2019.pdf`.
 
-The proof uses the elementary containment argument above at the accepted
+The proof uses the elementary containment argument above at the stated
 generality. It does not apply a Casselman theorem outside that source's
 stronger ambient hypotheses or attribute this equivalence to a separately
 numbered source theorem.
 
-The exact target is statement artifact
-`ef2efb64-ffec-42e3-924e-9d1fa2a680ac`, version 1, published at commit
-`6eda9ab3a7272fd3a119b214aefb015331a806d7`, with independent review receipt
-`0f5f289e-959f-4cb1-8cd4-b1d72fbc5581` and target fingerprint
+The exact target is `Langlands.SmoothVectorStabilizerStatement`, with target
+fingerprint
 `07f5832cb9f1bd548560a0316319aa02b1f4c68ce8582c1f62777e767d778b90`.
 Its only project definition dependency is
-`665022df-625b-44ae-9dbd-425f6e266bab`, version 1, published at commit
-`10c81beaaff024987cf2945c64d0c9511f6cb686`, with independent review receipt
-`a26076cd-7da3-4621-992f-5c0207f7fe1e`.
-Both dependencies were verified accepted, published, and current, and their
-local Lean/Markdown hashes matched the retained reviewed pairs.
+`Langlands.Representation.Smooth.Definitions`.
+The local Lean/Markdown hashes of both matched their recorded versions.
 [StabilizerStatement.md](StabilizerStatement.md) and
 [Definitions.md](../Definitions.md) describe them.
 
-Environment: `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, version 1,
-Lean 4.34.0 at `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`,
+Environment: Lean 4.34.0 at `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`,
 Mathlib at `5ed2965256430c3649e86755f9576b54eca72435`.
 
-Worker 0 authored the proof and initial explanation. Worker 12 reused its
-proof terms unchanged, removed the draft label in the module comment,
-checked the target and dependencies, and expanded this explanation.
+The target and dependencies were checked.
 Native compilation of the exact dependencies and this module succeeded.
 Declaration inspection confirmed the full three-universe target without an
 extra external topological-group instance. Both theorem axiom closures contain
 only `propext`, `Classical.choice`, and `Quot.sound`.
-These are development checks.
-Acceptance requires the registered independent checker, independent semantic
-review, and Library publication. This result is a representation-theory
+These are development checks. This result is a representation-theory
 infrastructure theorem and makes no claim to complete local Langlands.

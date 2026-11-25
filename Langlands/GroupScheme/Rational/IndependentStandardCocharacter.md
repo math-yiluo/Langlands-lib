@@ -1,6 +1,6 @@
 # Standard cocharacters from independent rationalized simple roots
 
-Worker 185. This is an internal lattice construction on the published
+This is an internal lattice construction on the published
 `Rational.StandardParabolic`, `Torus.Lattice`, `Torus.LatticeGalois` and
 `LinearAlgebra.RationalSpan` interfaces. Its root-independence hypothesis is
 explicit. It does not prove the general reductive root-system theorem or the
@@ -35,4 +35,5 @@ comparison. Empty root sets and both endpoint subsets are included.
 its specification theorem proves the published `IsStandardCocharacter`
 predicate. This is a conditional helper for the general theorem. Discharging
 independence from connected reductivity and maximal splitness, and proving the
-dynamic comparisons, remain separate obligations.
+dynamic comparisons, are not part of this module; `StandardCocharacterStatement`
+is proved as `standardCocharacter` in `Rational.StandardCocharacterProof`.

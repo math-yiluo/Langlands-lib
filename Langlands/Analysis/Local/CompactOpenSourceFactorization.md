@@ -1,6 +1,6 @@
 # Literal factorization with the common compact-open source scale
 
-This derived unit implements the common scale fixed in J.-L. Waldspurger,
+This derived module implements the common scale fixed in J.-L. Waldspurger,
 *La formule de Plancherel pour les groupes p-adiques (d’après Harish-Chandra)*
 (2003), I.1, printed p.240 / PDF page 6 (zero-based index 5),
 DOI 10.1017/S1474748003000082. The source fixes one special maximal compact
@@ -59,4 +59,4 @@ compact-open-cover unimodularity theorem, when the actual carrier has such
 a cover. The literal global charts and local source-compact product geometry
 remain genuine application obligations. This module proves neither their
 general reductive realization nor arbitrary standard-intertwining
-convergence, rational continuation or a whole-task Plancherel condition.
+convergence, rational continuation or a condition of the full Plancherel formula.

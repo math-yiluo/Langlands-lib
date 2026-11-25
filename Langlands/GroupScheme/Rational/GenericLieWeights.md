@@ -1,7 +1,5 @@
 # Adjoint weight projections and generic cocharacters
 
-Author: Worker 74.
-
 This internal module concerns the actual adjoint representation on
 `Additive (lieKernel G k)`, as constructed in `Lie.Adjoint`. It is derived from
 the all-test-algebra weight-space definition and the published split-torus

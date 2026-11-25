@@ -1,7 +1,5 @@
 # Finite-order detection modulo an integer
 
-Worker 330.
-
 `Langlands.FiniteOrderCongruenceDetectionStatement.{u} : Prop` is a closed,
 universe-polymorphic proposition definition. It states the algebraic input used
 in the proof of Conrad's Corollary B.3.6. The theorem

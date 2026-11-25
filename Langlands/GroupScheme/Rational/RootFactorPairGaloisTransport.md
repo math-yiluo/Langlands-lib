@@ -1,6 +1,6 @@
 # Coefficient conjugation of actual normalizing opposite pairs
 
-This internal unit concerns an actual group scheme over a field, a supplied
+This internal module concerns an actual group scheme over a field, a supplied
 homomorphism from an actual commutative group scheme over the same field, and
 an arbitrary field extension. It proves transport for the existing rational
 point automorphism `GaloisPointComparison.rationalConjugate`. No Galois,
@@ -33,6 +33,8 @@ The provenance is an internal deduction from the existing actual pullback,
 descent, inner-automorphism and root-subgroup transport results. It asserts no
 new original-literature theorem. All fields and the universe remain arbitrary.
 Existence of compatible split pinnings and normalized root coordinates, and
-their transport laws, remain separate obligations. This transport result
-does not prove the parent Steinberg quotient theorem or its geometric and
+their transport laws, are not established here. This transport result
+does not prove the Steinberg quotient theorem it serves,
+`QuasiSplitSteinbergQuotientStatement` (proved as `quasiSplitSteinbergQuotient`,
+module `Rational.QuasiSplitSteinbergQuotient`), or its geometric and
 rational-lifting prerequisites.

@@ -1,13 +1,13 @@
 # Arithmetic pair epsilon factors along an isomorphism of p-adic fields
 
-Author: Worker 5731. This is a supporting lemma module for the proof of
-`Langlands.Global.PoleComparison.HenniartCompositeFactorStatement` (Task 5230).
+This is a supporting lemma module for the proof of
+`Langlands.Global.PoleComparison.HenniartCompositeFactorStatement`.
 It is internal derived infrastructure: it states no new published mathematics
 and has no external source. It shows that the Library's arithmetic pair epsilon
 certificates (`Correspondence.IsArithmeticPairEpsilonFactor`, and their
 multiplicity-weighted products `LocalWeil.IsUnitaryPairEpsilonFactor`) are carried
 along an isomorphism of p-adic fields, using the transported local-constant system
-of `Langlands.LocalFactor.NonabelianSystemFieldTransportSystem` (Worker 5130).
+of `Langlands.LocalFactor.NonabelianSystemFieldTransportSystem`.
 
 Throughout, `F` and `E` are p-adic fields with canonical topologies,
 `g : F.Carrier ≃ₐ[ℚ_p] E.Carrier`, `σ` is the closure isomorphism `F̄ ≅ Ē` over `g`,
@@ -134,7 +134,7 @@ Lemmas:
 - `isArithmeticPairEpsilonFactor_restrictUnitaryBasisEquiv`: the same for unitary
   basis classes `a`, `b` of `F` and their restrictions
   `restrictUnitaryBasisEquiv (weilEquiv F E g)`. It chooses representatives and
-  uses Worker 5130's `unitaryBasisPairClass_eq_classOf` and
+  uses `unitaryBasisPairClass_eq_classOf` and
   `unitaryBasisPairClass_restrictUnitaryBasisEquiv`
   (`Langlands.Global.Factors.HenniartCompositeFactorWeil`).
 - `isUnitaryPairEpsilonFactor_transport` (the interface used in the assembly):

@@ -1,6 +1,6 @@
 # Derived comparison for equivariant compactly supported cohomology
 
-Author: Worker 26. Builds on `Langlands.Cohomology.DiscreteSheafDerivedComplex`
+Builds on `Langlands.Cohomology.DiscreteSheafDerivedComplex`
 (the derived complexes `compactComplex` and `sheafCompactComplex`),
 `Langlands.Sheaf.Equivariant.TwistedCompactComparison` (`smoothForget`,
 `smoothCompactInclusion`, the exactness instances for restriction of discrete
@@ -113,7 +113,7 @@ an isomorphism.
 
 ## Provenance and scope
 
-Derived infrastructure. Source, read in the original by Worker 26: Berkovich,
+Derived infrastructure. Source, read in the original: Berkovich,
 *Etale equivariant sheaves on p-adic analytic spaces* (unfinished 1995–1996
 manuscript), §1.5, Corollary 1.5.2(i), printed pp.11–12 = PDF pp.11–12: "For any
 étale abelian sheaf `F` on `X(G)` there are canonical isomorphisms

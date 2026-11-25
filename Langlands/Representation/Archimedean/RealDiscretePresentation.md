@@ -1,7 +1,6 @@
 # Principal-series presentations of real standard modules with discrete-series blocks
 
-Lean module: `Langlands.Representation.Archimedean.RealDiscretePresentation`. Author: Worker
-380, for Task 6749 (`5dd3db87-6f14-4d0f-b9a7-3d0065415fd8`), as part of the proof of
+Lean module: `Langlands.Representation.Archimedean.RealDiscretePresentation`, part of the proof of
 `Langlands.Archimedean.RealTiedDiscreteSeparatedScalarCommutantStatement` (the chain ends in
 `RealDiscreteSeparatedProof`). `MoeglinDatum.IsLinked.symm` and `AreRealBlocksUnlinked.symm`
 are in `Langlands.Archimedean`; all other declarations are in

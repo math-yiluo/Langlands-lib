@@ -1,7 +1,5 @@
 # Proof of the rank-one boundary of mirabolic derivative detection
 
-Author: Worker 1132. No draft by another worker was reused.
-
 The theorem `Langlands.Derivative.mirabolicRankOneDetection` proves exactly the
 published proposition `Langlands.Derivative.MirabolicRankOneDetection.{uF,uV} F T`
 from `Langlands.Representation.Derivative.MirabolicRankOneDetectionStatement`.
@@ -61,12 +59,10 @@ and then the target theorem.
    subsingleton domain (`Function.Injective.subsingleton`). Applied to the injective
    map of step 2, this gives `Subsingleton A`.
 
-Development check `8b139347-6eac-4984-b5a4-0c5d6a573366`, in approved environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` over Library commit
-`4c0ab0f3966f1a1836901963afb04dca21607ffb`, compiled this module with zero errors
+A check over Library commit
+`4c0ab0f3966f1a1836901963afb04dca21607ffb` compiled this module with zero errors
 and zero warnings. Its inspection of the final theorem reports level parameters
 `uF`, `uV` and only the axioms `propext`, `Classical.choice` and `Quot.sound`.
-Compilation is not independent acceptance or publication.
 
 ## Published inputs
 
@@ -115,7 +111,7 @@ The module's sole import is
 `Langlands.Representation.Derivative.MirabolicRankOneDetectionStatement`. Its
 complete transitive project import closure was computed by following every
 `import Langlands.*` line recursively. It was compared with Library commit
-`4c0ab0f3966f1a1836901963afb04dca21607ffb`, the workspace base. The closure has 51
+`4c0ab0f3966f1a1836901963afb04dca21607ffb`. The closure has 51
 project modules: the statement module, `MirabolicMinus`, and 49 further
 dependencies. Each module's Lean file and paired Markdown file are byte-identical
 (SHA256) to the published files at that commit. None of these Lean files, nor this
@@ -193,20 +189,26 @@ The proof uses only the inputs listed above. Its mathematical content is that
 the rank-one radical is trivial and the actual quotient map has the stated kernel.
 It assumes no derivative result: neither the all-order detection statement
 `Langlands.Derivative.MirabolicDerivativeDetection`, nor the positive-rank one-step
-statement of task `77ea7de9-a4f6-4ed4-a532-d7dbf0180707`, nor any other pending
+statement `Langlands.Derivative.MirabolicOneStepDetection`, nor any other
 derivative theorem. It uses no Ze80 material, including the segment derivative
 formulas of Ze80 sections 3.5 and 9.6, the segment product irreducibility criteria
 (Ze80 4.2, 9.7) and the analytic results of Ze80 9.3. It uses no segment, cuspidal
-or other derivative formula, and no part of task
-`8e5b4563-0365-41c7-b134-70f2a0b36292`.
+or other derivative formula, and no part of the derivative statements of
+`Classification.SegmentSocleDerivativesStatement`.
 
 The Lean files of the full closure and this module were searched for each excluded
-declaration name and task-ID prefix in the task's exclusion union. These are tasks
-`23189526`, `f3a69bc8`, `aca8805b`, `23e98d90`, `2ae5cbe5`, `8364e73f`, `3bfb61fa`,
-`ebea9a8a`, `20e4e1c6`, `52e97845`, `1cb45da2`, `cd8ab97c`, `bf433f0a`,
-`30341ae4`, `8252833d`, `5eece9e8`, `67279e36`, `4ca79bbd`, `e3634665`,
-`ed48ae06`, `55ad1e10`, `b95105c6`, `92aea10f`, `8e5b4563`, `ff4738d8`,
-`3c9849a4`, `ab61f565` and `77ea7de9`. The declaration names are
+declaration name. The excluded results are ordered-socle existence, socle
+exhaustion, the analytic segment classification, unlinked segment-socle product
+irreducibility and its final criterion, the special-head product criterion,
+special-head exhaustion, ordered head existence, quotient coverage, tempered
+uniqueness, square-integrable classification and exhaustion, regular exhaustion,
+generic segment product uniqueness, ordered special-segment conversion, forward
+special-segment essential square-integrability, the individual
+special-head/reverse-socle and segment-socle/reverse-head existence results, the
+adjacent unlinked swap, the full, head, socle and special-exponent segment
+Jacquet formulas, the segment-socle derivative statements, the Ze80 §5.4
+reduction with its strong-indecomposability consumers, the two two-supercuspidal
+results and the positive-rank one-step detection. The declaration names are
 `AdjacentUnlinkedSegmentSocleSwap`, `TwoSegmentSocleCommutation`,
 `SquareIntegrableLanglandsClassification`, `GenericSegmentProductUniqueness`,
 `SegmentSpecialEssentialSquareIntegrability`, `OrderedMultisegmentSocleExistence`,
@@ -217,11 +219,11 @@ declaration name and task-ID prefix in the task's exclusion union. These are tas
 also covered the words `Segment`, `Multisegment` and `Ze80`. There were no
 matches. The only occurrences of `Zelevinsky` are the BZ77 attributions in the
 module docstrings of `MirabolicCharacter` and `MirabolicMinus`. Hence the proof
-depends neither directly nor transitively on any excluded conclusion, its proof
-successors or its consequences. The same holds for the strong-indecomposability,
+depends neither directly nor transitively on any excluded conclusion, its proofs
+or its consequences. The same holds for the strong-indecomposability,
 ordered-socle and nonadjacent-product consumers of this detection clause, and for
-the two-supercuspidal product-structure conclusion of task
-`ab61f565-1427-4746-ba77-46097563e962`.
+the two-supercuspidal product-structure conclusion
+`TwoSupercuspidalProductStructure`.
 
-This audit concerns this proof only. Lower inputs reused later by other tasks
+This audit concerns this proof only. Lower inputs reused later by other modules
 need their own independence audit.

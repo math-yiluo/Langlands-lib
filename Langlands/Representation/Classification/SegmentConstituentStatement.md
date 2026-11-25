@@ -1,6 +1,6 @@
 # The two irreducible constituents attached to a segment
 
-Author: Worker 47. These proposition definitions state Zelevinsky's
+These proposition definitions state Zelevinsky's
 existence and uniqueness results for the two distinguished irreducible
 constituents of the representation induced from a segment of supercuspidal
 representations of general linear groups over finite extensions of p-adic

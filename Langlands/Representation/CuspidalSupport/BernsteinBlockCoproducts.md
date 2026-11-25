@@ -1,6 +1,6 @@
 # Abelian structure, coproducts and smallness in a Bernstein block
 
-Author: Worker 85. This is supporting, derived work for Renard VI.10.1–VI.10.2.
+This is supporting, derived work for Renard VI.10.1–VI.10.2.
 The block is exactly the published `BernsteinSaturatedBlock`. No statement
 identifying that block with a Jacquet-defined block is used.
 

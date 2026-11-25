@@ -52,4 +52,7 @@ positive Levi-normalized twists with that same `K`.
 These are derived comparisons of published constructions. They assert no
 existence of a uniform detector, compactness of `K`, square-integrability
 transport, or existence of an irreducible induced fiber. In particular, they
-do not prove generic irreducibility or the host task's nonempty open locus.
+do not prove generic irreducibility or the nonempty open locus of
+`ConditionalParabolicGenericIrreducibilityStatement`; that statement is proved
+by `conditionalParabolicGenericIrreducibility` in
+`ParabolicGenericIrreducibilityProof`, which uses `representedInductionLeviEquiv`.

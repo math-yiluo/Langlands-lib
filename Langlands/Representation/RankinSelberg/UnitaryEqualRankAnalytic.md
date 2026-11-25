@@ -1,10 +1,11 @@
 # Unitary generic equal-rank integrals on `Re(s) ≥ 1`
 
-Authors: Worker 3657 (proof) and Worker 828 (verification and
-submission). Module
+Module
 `Langlands.Representation.RankinSelberg.UnitaryEqualRankAnalytic`, namespace
-`Langlands.RankinSelberg.UnitaryGeneric`. Helper module of the Task 6387 proof
-candidate. It imports `UnitaryWeightedWhittakerSquare` (same candidate), the published
+`Langlands.RankinSelberg.UnitaryGeneric`. Helper module of the proof of
+`UnitaryGenericLPolynomialNonvanishingStatement`
+(`UnitaryGenericLPolynomialNonvanishingProof`). It imports
+`UnitaryWeightedWhittakerSquare` (a helper module of the same proof), the published
 statement module `SquareIntegrableEqualRankAnalyticStatement` (for the integral
 definitions), `IntegrandContinuityProof` and `Langlands.Analysis.MellinHalfPlaneProof`.
 It changes no published file.
@@ -33,7 +34,7 @@ for `Re(s) ≥ 1` and is holomorphic on `Re(s) > 1`. This is Jacquet–Shalika I
 Proposition (1.5)(i), with holomorphy on the open half-plane added. It assumes
 `IsAdmissible` and `IsIrreducible` directly and allows zero functionals.
 
-The module also proves the published, previously unproved statement
+The module also proves the published statement
 `Langlands.RankinSelberg.UnitaryEqualRankConvergenceStatement` (module
 `Langlands.Representation.RankinSelberg.EqualRankEulerStatement`; Jacquet–Shalika
 I, Proposition (1.5)(i)):
@@ -49,7 +50,7 @@ admissibility; the proof applies the convergence clause of
 ## Other declarations
 
 The following are the private lemmas of the published
-`SquareIntegrableEqualRankAnalyticProof` (Worker 462, Worker 161), restated
+`SquareIntegrableEqualRankAnalyticProof`, restated
 publicly in this namespace: `sqrtNormTest`, `norm_sqrtNormTest_sq`,
 `equalRank_integrand_eq_mellin` (`I_s = I_0 · |det|^s`), `quotientDet_continuous`,
 `norm_equalRank_integrand`, `equalRank_converges_of_weighted_squares` and
@@ -86,7 +87,6 @@ integrand. Holomorphy then follows from
 
 ## Lean checks
 
-`lean_check` in environment `5c94c648-e8dc-4002-a50a-071ebf3f6096`: check
-ad5afc1c, check dddc6727 (inspecting `unitaryEqualRankConvergence`, axioms
-`propext`, `Classical.choice`, `Quot.sound`) and the builds of the whole candidate;
-no errors or warnings.
+The module and the whole proof build with no errors or warnings; inspection of
+`unitaryEqualRankConvergence` reports the axioms `propext`, `Classical.choice`
+and `Quot.sound`.

@@ -19,14 +19,15 @@ PDF p.48:
 
 The same page uses `F|_Z` for a closed `Z` in the Proposition `0 → F_c(U) → F_c(X) → F_c(Z) → 0`,
 with `F_c(Z) = (F|_Z)_c(Z)`. The published statement of that Proposition
-([ClosedRestrictionExactStatements](ClosedRestrictionExactStatements.md), proof Task 5960)
-works with families of germs over `Z` directly and leaves the sheaf `F|_Y` itself as a
-separate obligation. This file constructs that sheaf, proves the source's fibre assertion, and
+([ClosedRestrictionExactStatements](ClosedRestrictionExactStatements.md), proved by
+`closedRestrictionExact` in [ClosedRestrictionExactProof](ClosedRestrictionExactProof.md))
+works with families of germs over `Z` directly and does not construct the sheaf `F|_Y`
+itself. This file constructs that sheaf, proves the source's fibre assertion, and
 identifies the published `F_c(Z)` with the compactly supported global sections of `F|_Z`.
 It does not modify the published statement or prove it.
 
-Every declaration is a definition or a proved theorem. There is no proposition for a later
-proof task.
+Every declaration is a definition or a proved theorem. There is no proposition to be
+proved in another file.
 
 ## Setting
 
@@ -131,6 +132,4 @@ germ-family presentation follows the source's own identification with sections o
 space. It uses Mathlib's local-predicate sheaves, as Mathlib's sheafification of
 `Type`-valued presheaves does. The comparison with `closedCompactSections` and the formula for
 `restrictToClosed` are internal links to the published statement of the II.2.5 Proposition.
-The arbitrary subset `Y` is a harmless generalization of "localement fermée". Worker 4 wrote
-this unit for the whole-book task `f5d1f399-a1f8-4ab5-a981-90b92abd4857` (Task 1222), in
-agreement with Worker 1222.
+The arbitrary subset `Y` is a harmless generalization of "localement fermée".

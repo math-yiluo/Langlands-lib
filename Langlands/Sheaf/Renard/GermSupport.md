@@ -1,8 +1,5 @@
 # Renard II.2.2: germ supports and compact-section carriers
 
-Worker 865 implemented the definitions and elementary proofs. Worker 6 supplied
-the source audit, interface specification and subtype compactness route.
-
 The governing original is David Renard, *Représentations des groupes réductifs
 p-adiques*, French version dated 9 July 2026, II.2.2, printed pp.37–38 /
 PDF pp.43–44. The registered source is
@@ -75,11 +72,12 @@ No checked comparison identifies its stalks or compact-section objects with
 the present arbitrary-basis, independent-universe germ model. This module
 neither imports nor asserts that comparison.
 
-The source's relative-closedness proposition remains a later statement and
-proof over this interface. Compact-section additive subgroup and functor
+The source's relative-closedness proposition is stated over this interface in
+`GermSupportClosednessStatement` and proved in `GermSupportClosedness`
+(`rawGermRelativeSupportClosedness`). Compact-section additive subgroup and functor
 constructions require that result: support containment in a compact set alone
 does not imply compactness of the smaller support. The canonical-unit
 identification, clopen zero extension, II.2.4 compact-open exhaustion and
-locally constant scalar-sheaf comparison are separate units. In particular,
+locally constant scalar-sheaf comparison are not treated here. In particular,
 this module supplies no restriction map on compact sections for arbitrary
 open inclusions.

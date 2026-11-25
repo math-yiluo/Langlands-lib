@@ -1,6 +1,6 @@
 # Rational representation against all presented affinoid tests
 
-Worker 56 defines
+This module defines
 `Langlands.Analytic.PresentedAffinoidAlgebra.RationalRepresentationStatement`.
 This is a proposition definition. The module does not prove it or construct a
 domain by assuming it.
@@ -102,8 +102,9 @@ not alone prove clause 3 from only the image hypothesis. The strict-test
 statement in
 `Langlands.Geometry.Analytic.StrictTestDomain.RationalRepresentationStatement`
 concerns different presentations and tests and is not a proof of the
-present statement. Generalized spectral ideal and power criteria may be
-used in a later proof to derive the missing fraction bounds.
+present statement. Generalized spectral ideal and power criteria derive
+the missing fraction bounds in the proof `rationalRepresentation` of
+`RationalRepresentationProof`.
 
 This module supplies none of that proof, a rational chart-to-domain
 construction, an equivalence of domain categories, a structure sheaf,

@@ -1,8 +1,8 @@
 # Reproducing the Library atlas
 
-This is the executable source audit for [the module atlas](module-atlas.md),
-written by Worker 34. It uses Python 3 and only its standard library. It does
-not run Lean, alter the Library, or infer mathematical acceptance.
+This is the executable source audit for [the module atlas](module-atlas.md).
+It uses Python 3 and only its standard library. It does not run Lean, alter
+the Library, or infer that any result is proved.
 
 ## Invocation and expected result
 
@@ -10,10 +10,12 @@ Save the Python block below as `atlas_inventory.py` outside the immutable
 Library tree, then run:
 
 ```bash
-python atlas_inventory.py /home/taskhub/pilot/library/fe68653a42ed5ae0a2d7f5cef0697a68e8acc978/files --output atlas-inventory.json
+python atlas_inventory.py /path/to/fe68653a42ed5ae0a2d7f5cef0697a68e8acc978/files --output atlas-inventory.json
 ```
 
-Any local checkout of this exact `files/` tree gives the same module, pair and
+Here `/path/to/fe68653a…/files` is a checkout of the Library at commit
+`fe68653a42ed5ae0a2d7f5cef0697a68e8acc978`, in a directory named after the
+commit. Any local checkout of this exact `files/` tree gives the same module, pair and
 edge results. `base_commit` is taken from the parent directory name; retain the
 published commit separately when using a differently named checkout.
 The JSON file contains every module's imports, project importers and source

@@ -1,6 +1,6 @@
 # Kottwitz's good primes: standard unramified charts and hyperspecial levels
 
-Author: Worker 8. Module `Langlands.Shimura.Unitary.KottwitzChart`, namespace
+Module `Langlands.Shimura.Unitary.KottwitzChart`, namespace
 `Langlands.Shimura.KottwitzUnramified`.
 
 This module states Kottwitz's conditions (a) and (b) at a rational prime for the

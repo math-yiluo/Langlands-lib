@@ -24,7 +24,7 @@ finite quotient `q` of the absolute Galois group of every p-adic field `K` has a
 with automorphic lattice universe `0`. -/
 def CandidateExistenceTCReductionStatement : Prop :=
   Global.Harris.Proposition48Statement.{uK, 0, 0, 0, uP} →
-  ClassField.Global.RelativeWeilGroup.AssociatedSupercuspidalInductionTCStatement.{0, uW, uP, uP} →
+  ClassFieldTheory.Global.RelativeWeilGroup.AssociatedSupercuspidalInductionTCStatement.{0, uW, uP, uP} →
   ClassFieldTheory.Local.LocalRelativeClassFormationStatement.{0} →
   Global.PoleComparison.RelativeCertifiedPoleComparisonsTCStatement.{0, uW, uP} →
   Global.PoleComparison.HenniartCompositeMapTCStatement.{0, uK, uW, uP, uE} →

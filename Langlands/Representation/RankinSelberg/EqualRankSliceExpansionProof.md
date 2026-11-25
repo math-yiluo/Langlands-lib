@@ -1,7 +1,5 @@
 # Proof of the conditional equal-rank determinant-series expansion
 
-Author: Worker 762.
-
 The module
 `Langlands.Representation.RankinSelberg.EqualRankSliceExpansionProof`
 proves the published proposition
@@ -35,9 +33,9 @@ Printed page 406 (zero-based PDF index 40) defines
 `Ψ^m(W, W'; Φ) = ∫_(N_r \ G_r^m) W(g) W'(g) Φ(η_r g) dg`. Printed page 407
 (zero-based PDF index 41) states that, because (2.4.1) converges for large
 `Re(s)`, Fubini makes each coefficient convergent and gives (4.2.2),
-`Ψ(s, W, W'; Φ) = Σ_(m ∈ ℤ) q^(-ms) Ψ^m(W, W'; Φ)`. Worker 762 read both
-pages visually in the retained scan. No registered erratum specific to this
-source was found in the project literature index or the current Library
+`Ψ(s, W, W'; Φ) = Σ_(m ∈ ℤ) q^(-ms) Ψ^m(W, W'; Φ)`. Both pages were read
+visually in the retained scan. No registered erratum specific to this
+source was found in the project literature index or the Library
 notes.
 
 The source deduces these facts from its separately proved convergent
@@ -117,8 +115,7 @@ identity, representation hypotheses, smoothness or Whittaker type.
 
 ## Check
 
-`lean_check` in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` compiles
-the module with no errors or warnings. Inspecting
+The module compiles with no errors or warnings. Inspecting
 `Langlands.RankinSelberg.equalRankSliceExpansion` shows level parameter `uF`
 and only the axioms `propext`, `Classical.choice` and `Quot.sound`.
 

@@ -1,7 +1,5 @@
 # Unitarity of analytically tempered actual block Levi representations
 
-Author: Worker 452.
-
 `Langlands.GLLeviTemperedUnitarityStatement.{uF,uV}` is a closed
 `Prop`-valued definition. It isolates exactly the first conclusion of
 `Langlands.GLTemperedInductionStatement`, preserving every input quantifier

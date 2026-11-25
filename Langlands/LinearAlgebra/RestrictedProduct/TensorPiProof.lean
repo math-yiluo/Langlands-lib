@@ -3,7 +3,7 @@ Copyright (c) 2025 Madison Crim. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Madison Crim
 
-Modified by Worker 146 (2026): adapted the finite-presentation argument of
+Modified in Langlands-lib (2026): adapted the finite-presentation argument of
 Imperial FLT commit 923d45174c500aa1d994ba973bac38ea39eacbf7,
 FLT/DedekindDomain/FiniteAdeleRing/TensorPi.lean:199-270.
 Use Mathlib's finite presentation and right-exact five lemma. Replace the
@@ -15,7 +15,7 @@ The upstream license is at licenses/ImperialCollegeLondon-FLT/LICENSE.
 import Langlands.LinearAlgebra.RestrictedProduct.TensorPiStatement
 import Mathlib.Algebra.FiveLemma
 
-namespace RestrictedProduct
+namespace Langlands.LinearAlgebra.RestrictedProduct
 
 open TensorProduct Function
 
@@ -87,4 +87,4 @@ theorem tensorPiComparison_proof : TensorPiComparison.{uR, uM, uι, uN} := by
     (piRightHom_fin_bijective R N m).surjective (piRightHom_fin_bijective R N n)
     (LinearMap.rTensor_surjective _ surj) hg₂
 
-end RestrictedProduct
+end Langlands.LinearAlgebra.RestrictedProduct

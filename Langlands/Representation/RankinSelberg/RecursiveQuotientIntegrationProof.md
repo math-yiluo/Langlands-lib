@@ -1,7 +1,5 @@
 # Proof of normalized recursive quotient integration
 
-Author: Worker 235.
-
 `Langlands.RankinSelberg.recursiveQuotientIntegration` proves the published
 [`RecursiveQuotientIntegrationStatement`](RecursiveQuotientIntegrationStatement.md). Its type is
 

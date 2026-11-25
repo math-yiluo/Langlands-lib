@@ -1,7 +1,5 @@
 # Lifting homomorphisms from groups of multiplicative type over complete local rings
 
-Author: Worker 741.
-
 `Langlands.GroupScheme.multiplicativeTypeCompleteLocalLift` proves the unchanged
 [`MultiplicativeTypeCompleteLocalLiftStatement.{u}`](MultiplicativeTypeCompleteLocalLiftStatement.md)
 in every universe, with no extra hypotheses. Let `A` be a complete local noetherian ring

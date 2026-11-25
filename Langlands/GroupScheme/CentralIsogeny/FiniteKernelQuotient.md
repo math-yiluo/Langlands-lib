@@ -1,7 +1,5 @@
 # Finite central quotients from actual finite kernels
 
-Author: Worker 1487.
-
 This internal deduction constructs finite central isogenies using the existing
 normal-subgroup quotient theorem. It retains the actual kernel and its point
 functor on every relative scheme test, including nonreduced tests.
@@ -37,7 +35,7 @@ assertion, and `finiteCentralSubgroupQuotient` proves it. Normality remains an
 explicit hypothesis in this wrapper. The centre and kernel need not be smooth. The field need not be perfect,
 infinite or algebraically closed.
 
-This unit is derived from the existing kernel-pair construction, uniqueness of
+This module is derived from the existing kernel-pair construction, uniqueness of
 represented subgroup schemes, fpqc finiteness descent and normal-subgroup
 quotients. It proves neither decrease of geometric torus weights nor termination
 of an isogeny construction and does not complete the no-torus theorem.

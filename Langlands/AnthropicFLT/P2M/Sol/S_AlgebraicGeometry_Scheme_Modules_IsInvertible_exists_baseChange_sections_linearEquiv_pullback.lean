@@ -7,7 +7,7 @@ Modified: FLT module names are prefixed by `Langlands.AnthropicFLT`; the FLT lak
 are set after the imports; the import of `P2M.Util` is dropped and its commands are replaced
 by standard Lean commands. The paired Markdown file lists the changes.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_RelativePicardFunctor
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_ModulesSectionsTensor
 import Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_Scheme_Modules_exists_isFrameOn_of_pullback_iso_unit
@@ -278,7 +278,7 @@ theorem preimage_inf_eq (V W : X.Opens) :
   · intro hx; exact ⟨hx, x.2⟩
 
 theorem bijective_smul_eta {V : X.Opens} {s : Γ(L, V)} (hs : Scheme.Modules.IsFrameOn s V)
-    (hN : Scheme.Modules.IsInvertible (pb p L)) :
+    (hN : Scheme.Modules.IsInvertibleFLT (pb p L)) :
     Function.Bijective fun g : Γ(Z, p ⁻¹ᵁ V) => g • eta p L V s := by
   set O : Z.Opens := p ⁻¹ᵁ V with hO
   set t : Γ(pb p L, O) := eta p L V s with ht
@@ -481,7 +481,7 @@ def resBO (N : Z.Modules) (O : Z.Opens) (f : Γ(Z, O)) :
     map_add' := fun x y => map_add _ x y
     map_smul' := fun a x => Scheme.Modules.map_smul N (homOfLE (Z.basicOpen_le f)) a x }
 
-theorem isLocalizedModule_resBO (N : Z.Modules) (O : Z.Opens) (f : Γ(Z, O)) (hN : Scheme.Modules.IsInvertible N)
+theorem isLocalizedModule_resBO (N : Z.Modules) (O : Z.Opens) (f : Γ(Z, O)) (hN : Scheme.Modules.IsInvertibleFLT N)
     (hO : IsAffineOpen O) :
     letI := modBO N O f
     IsLocalizedModule (Submonoid.powers f) (resBO N O f) := by
@@ -507,7 +507,7 @@ theorem isLocalizedModule_resBO (N : Z.Modules) (O : Z.Opens) (f : Γ(Z, O)) (hN
     rw [Submonoid.smul_def, Submonoid.smul_def, ← sub_eq_zero, ← smul_sub]
     exact hn
 
-theorem isLocalizedModule_resN_of_eq (hpU : IsAffineOpen (p ⁻¹ᵁ U)) (hN : Scheme.Modules.IsInvertible (pb p L))
+theorem isLocalizedModule_resN_of_eq (hpU : IsAffineOpen (p ⁻¹ᵁ U)) (hN : Scheme.Modules.IsInvertibleFLT (pb p L))
     (r : Γ(X, U)) (W : Z.Opens) (h : W ≤ p ⁻¹ᵁ U) (hW : W = Z.basicOpen (p.app U r)) :
     letI := modANW p L U W h
     IsLocalizedModule (Submonoid.powers r) (resN p L U W h) := by
@@ -581,7 +581,7 @@ theorem thetaLoc_comp_resT (r : Γ(X, U)) :
   rw [thetaLoc_tmul, Scheme.Modules.map_smul, map_eta p L (homOfLE (X.basicOpen_le r)) (homOfLE (pre_le p U r))]
 
 theorem thetaLoc_bijective_of_frame (hU : IsAffineOpen U) (hpU : IsAffineOpen (p ⁻¹ᵁ U))
-    (hN : Scheme.Modules.IsInvertible (pb p L)) (r : Γ(X, U)) {s₀ : Γ(L, X.basicOpen r)}
+    (hN : Scheme.Modules.IsInvertibleFLT (pb p L)) (r : Γ(X, U)) {s₀ : Γ(L, X.basicOpen r)}
     (hs₀ : Scheme.Modules.IsFrameOn s₀ (X.basicOpen r)) : Function.Bijective (thetaLoc p L U r) := by
   haveI : IsLocalization.Away r Γ(X, X.basicOpen r) := hU.isLocalization_basicOpen r
   have hlocB := isLocalizedModule_resB_of_eq p U hpU r (p ⁻¹ᵁ X.basicOpen r) (pre_le p U r)
@@ -623,7 +623,7 @@ theorem thetaLoc_bijective_of_frame (hU : IsAffineOpen U) (hpU : IsAffineOpen (p
   · obtain ⟨b, hb⟩ := key.2 y
     exact ⟨ψ b, hb⟩
 
-theorem exists_basicOpen_isFrameOn (hL : Scheme.Modules.IsInvertible L) (hU : IsAffineOpen U) {x : X}
+theorem exists_basicOpen_isFrameOn (hL : Scheme.Modules.IsInvertibleFLT L) (hU : IsAffineOpen U) {x : X}
     (hx : x ∈ U) : ∃ f : Γ(X, U), x ∈ X.basicOpen f ∧
       ∃ s : Γ(L, X.basicOpen f), Scheme.Modules.IsFrameOn s (X.basicOpen f) := by
   obtain ⟨W, hxW, ⟨e⟩⟩ := hL.1 x
@@ -631,9 +631,9 @@ theorem exists_basicOpen_isFrameOn (hL : Scheme.Modules.IsInvertible L) (hU : Is
   obtain ⟨f, hfle, hxf⟩ := hU.exists_basicOpen_le (⟨x, hxW⟩ : W) hx
   exact ⟨f, hxf, L.presheaf.map (homOfLE hfle).op sW, (hsW.map (homOfLE hfle)).mono hfle⟩
 
-theorem theta_bijective (hL : Scheme.Modules.IsInvertible L) (hU : IsAffineOpen U)
+theorem theta_bijective (hL : Scheme.Modules.IsInvertibleFLT L) (hU : IsAffineOpen U)
     (hpU : IsAffineOpen (p ⁻¹ᵁ U)) : Function.Bijective (theta p L U) := by
-  have hN : Scheme.Modules.IsInvertible (pb p L) := hL.pullback p
+  have hN : Scheme.Modules.IsInvertibleFLT (pb p L) := AlgebraicGeometry.Scheme.Modules.IsInvertible.pullbackFLT (hL := hL) p
   let S : Set Γ(X, U) := {f | ∃ s : Γ(L, X.basicOpen f), Scheme.Modules.IsFrameOn s (X.basicOpen f)}
   have hspan : Ideal.span S = ⊤ := by
     rw [← hU.self_le_iSup_basicOpen_iff]
@@ -664,23 +664,23 @@ theorem theta_bijective (hL : Scheme.Modules.IsInvertible L) (hU : IsAffineOpen 
   obtain ⟨s₀, hs₀⟩ := r.2
   exact thetaLoc_bijective_of_frame p L U hU hpU hN r.1 hs₀
 
-def beta (hL : Scheme.Modules.IsInvertible L) (hU : IsAffineOpen U) (hpU : IsAffineOpen (p ⁻¹ᵁ U)) :
+def beta (hL : Scheme.Modules.IsInvertibleFLT L) (hU : IsAffineOpen U) (hpU : IsAffineOpen (p ⁻¹ᵁ U)) :
     Γ(Z, p ⁻¹ᵁ U) ⊗[Γ(X, U)] Γ(L, U) ≃ₗ[Γ(Z, p ⁻¹ᵁ U)] Γ(pb p L, p ⁻¹ᵁ U) :=
   LinearEquiv.ofBijective (theta p L U) (theta_bijective p L U hL hU hpU)
 
-theorem beta_tmul (hL : Scheme.Modules.IsInvertible L) (hU : IsAffineOpen U) (hpU : IsAffineOpen (p ⁻¹ᵁ U))
+theorem beta_tmul (hL : Scheme.Modules.IsInvertibleFLT L) (hU : IsAffineOpen U) (hpU : IsAffineOpen (p ⁻¹ᵁ U))
     (b : Γ(Z, p ⁻¹ᵁ U)) (s : Γ(L, U)) : beta p L U hL hU hpU (b ⊗ₜ s) = b • eta p L U s :=
   theta_tmul p L U b s
 
 end Affine
 
 theorem beta_one_tmul {X Z : Scheme.{u}} (p : Z ⟶ X) (L : X.Modules) (U : X.Opens)
-    (hL : Scheme.Modules.IsInvertible L) (hU : IsAffineOpen U) (hpU : IsAffineOpen (p ⁻¹ᵁ U)) (s : Γ(L, U)) :
+    (hL : Scheme.Modules.IsInvertibleFLT L) (hU : IsAffineOpen U) (hpU : IsAffineOpen (p ⁻¹ᵁ U)) (s : Γ(L, U)) :
     letI := algAB p U
     beta p L U hL hU hpU (1 ⊗ₜ s) = eta p L U s := by
   rw [beta_tmul, one_smul]
 
-theorem result {X Z : Scheme.{u}} (p : Z ⟶ X) {L : X.Modules} (hL : Scheme.Modules.IsInvertible L)
+theorem result {X Z : Scheme.{u}} (p : Z ⟶ X) {L : X.Modules} (hL : Scheme.Modules.IsInvertibleFLT L)
     (U : X.Opens) (hU : IsAffineOpen U) (hpU : IsAffineOpen (p ⁻¹ᵁ U)) :
     letI := (p.app U).hom.toAlgebra
     ∃ β : Γ(Z, p ⁻¹ᵁ U) ⊗[Γ(X, U)] Γ(L, U) ≃ₗ[Γ(Z, p ⁻¹ᵁ U)] Γ((Scheme.Modules.pullback p).obj L, p ⁻¹ᵁ U),
@@ -694,7 +694,7 @@ end
 open scoped _root_.P2MW.S_AlgebraicGeometry_Scheme_Modules_IsInvertible_exists_baseChange_sections_linearEquiv_pullback.P2mPullbackSectionsSol
 
 theorem solution
-    {X Z : Scheme.{u}} (p : Z ⟶ X) {L : X.Modules} (hL : Scheme.Modules.IsInvertible L)
+    {X Z : Scheme.{u}} (p : Z ⟶ X) {L : X.Modules} (hL : Scheme.Modules.IsInvertibleFLT L)
     (U : X.Opens) (hU : IsAffineOpen U) (hpU : IsAffineOpen (p ⁻¹ᵁ U)) :
     letI := (p.app U).hom.toAlgebra
     ∃ β : Γ(Z, p ⁻¹ᵁ U) ⊗[Γ(X, U)] Γ(L, U) ≃ₗ[Γ(Z, p ⁻¹ᵁ U)] Γ((Scheme.Modules.pullback p).obj L, p ⁻¹ᵁ U),

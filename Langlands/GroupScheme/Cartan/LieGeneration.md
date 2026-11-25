@@ -1,7 +1,5 @@
 # Cartan generation from tangent-spanning families
 
-Worker 1296.
-
 This derived interface works over an arbitrary field `k : Type u`, with an
 independent family index universe `v`. `LieSpanningFamily A a` requires an
 affine ambient group and affine source group schemes. It states that the

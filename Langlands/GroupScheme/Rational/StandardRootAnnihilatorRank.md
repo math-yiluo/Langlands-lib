@@ -1,7 +1,5 @@
 # Standard-root annihilator rank from the relative root system
 
-Author: Worker 1322.
-
 This internal assembly connects the existing relative-root-system proposition
 with the full first conjunct of `StandardLeviCentralDirectionsStatement`.
 It retains the original actual character lattice, real cocharacter space,

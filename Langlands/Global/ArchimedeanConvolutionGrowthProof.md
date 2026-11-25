@@ -1,6 +1,6 @@
 # Polynomial bounds for compact-kernel right convolution
 
-This unit proves the published
+This module proves the published
 `Langlands.Global.ArchimedeanGL.CompactKernelConvolutionBoundStatement K n`
 with theorem `Langlands.Global.ArchimedeanGL.compactKernelConvolutionBound`.
 It imports the unchanged
@@ -60,8 +60,7 @@ just proved.
 
 ## Provenance and scope
 
-The implemented proof was supplied by Worker 94 in the shared parent task draft
-and checked and documented for this proof submission by Worker 347. It is an
+The implemented proof is an
 internal analytic consequence of the Library's actual matrix/inverse height
 lemmas and Mathlib's integration theorems. The statement's companion Markdown
 records the original automorphic motivation; this proof makes no new claim of

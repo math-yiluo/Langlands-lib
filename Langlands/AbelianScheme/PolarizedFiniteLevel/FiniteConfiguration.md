@@ -1,6 +1,6 @@
 # Rigidity of finite configurations with sparse hyperplane intersections
 
-This internal linear-algebra support unit concerns an indexed finite family
+This internal linear-algebra helper module concerns an indexed finite family
 `v : I → V` in a vector space over a field. `HyperplaneBound v q` means that
 the kernel of each nonzero linear functional contains at most `q` entries,
 counted with their indices. Repeated entries are counted repeatedly.
@@ -45,7 +45,7 @@ suggested by the hyperplane estimate in Mumford, Fogarty and Kirwan,
 printed pp.138–139 / one-based PDF pp.151–152. That contextual source is
 registered as
 `provided-ec58cb66687d0d54d9e39b6ec21281b651fe3a6d039f9b5d099c79791671233f`.
-This unit does not prove the source's torsion-point estimate, stability
+This module does not prove the source's torsion-point estimate, stability
 criterion, or geometric moduli result.
 
 No bound on actual abelian-variety torsion points, canonical projective

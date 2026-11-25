@@ -1,6 +1,6 @@
 # The full Isom algebraic space from supplied local representatives
 
-Worker 812. This is an internal specialization of
+This is an internal specialization of
 `LocalRepresentation.ofCover`, the published all-test Isom sheaf, and the
 Isom chart and transport constructions. It cites no additional literature.
 
@@ -35,6 +35,8 @@ hypotheses, without completeness, splitting or residue-field restrictions.
 Both geometric statements are hypotheses, not proofs delivered by this module.
 
 The output is an algebraic space for the full Isom sheaf. An actual representing
-scheme and a proof of `GenericIsomorphismSchemeExistenceStatement` still require
-further effective descent using the quotient geometry. This module establishes
+scheme and a proof of `GenericIsomorphismSchemeExistenceStatement` require
+further effective descent using the quotient geometry; that statement is proved
+by `genericIsomorphismSchemeExistence` in
+`Langlands.GroupScheme.Reductive.GenericIsomorphismSchemeExistenceProof`. This module establishes
 neither those results nor either supplied geometric statement.

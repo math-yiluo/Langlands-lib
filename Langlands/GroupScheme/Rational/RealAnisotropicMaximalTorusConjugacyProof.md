@@ -1,7 +1,5 @@
 # Conjugacy of maximal tori in anisotropic real semisimple groups
 
-Worker 862.
-
 `Langlands.GroupScheme.realAnisotropicMaximalTorusConjugacy` proves
 `Langlands.GroupScheme.RealAnisotropicMaximalTorusConjugacyStatement`,
 the Library statement of Cartan's theorem. For any two maximal torus

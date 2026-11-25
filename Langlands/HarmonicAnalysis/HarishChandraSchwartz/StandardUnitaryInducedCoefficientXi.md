@@ -27,4 +27,6 @@ groupes p-adiques, d'après Harish-Chandra* (2003), Corollary III.1.2,
 printed p.264, and the proof of VI.2.2, printed pp.298–299, source
 `waldspurger-2003-plancherel`. The projected-compact consumer is derived
 project content. This supplies the coefficient input for the strict Jacquet
-exponent argument and leaves the separately owned Xi upper estimate open.
+exponent argument and does not prove the Xi upper estimate, which is the
+separate statement `RationalXiUpperBoundStatement` (proved in the Library as
+`rationalXiUpperBound` in `RationalXiUpperBoundProof`).

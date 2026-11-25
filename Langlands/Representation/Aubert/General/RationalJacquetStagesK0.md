@@ -1,6 +1,6 @@
 # Exact K0 of rational standard Jacquet restriction in stages
 
-This internal adapter defines `standardIteratedJacquetK0` for the actual
+This adapter defines `standardIteratedJacquetK0` for the actual
 standard rational-point subgroups and proves that it equals direct
 restriction in `standardJacquetK0_stages_of_modulus`. Restriction first to the Levi
 indexed by `J`, then inside that Levi to the literal restricted subgroup
@@ -23,7 +23,7 @@ The theorem retains the published stages interface's two further inputs:
 the restricted inner radical is a limit of compact subgroups, and the
 product of the actual coarse and inner positive Haar characters equals the
 fine positive Haar character. The latter is exactly the displayed premise
-`hδ`, expressed using `standardInnerJacquetModulus`. This unit does not prove
+`hδ`, expressed using `standardInnerJacquetModulus`. This module does not prove
 that Haar factorization. Finite-length preservation and preservation of
 actual finite-length short exact sequences are explicit for all ambient
 Jacquet functors and for the one inner Jacquet functor. It does not assume
@@ -52,5 +52,7 @@ classification theorem. These are declaration-level dependencies, not a
 claim about the full imported-module closure. This adapter makes no use of
 character independence, adjointness, the geometric lemma or cuspidal
 support classification. The whole rational Aubert Jacquet identity,
-common geometric-term reduction and longest-survivor comparison remain
-separate obligations.
+common geometric-term reduction and longest-survivor comparison are
+separate obligations; `rationalJacquetCompatibility` in
+`RationalJacquetCompatibilityProof` proves the identity,
+`RationalJacquetCompatibilityStatement`.

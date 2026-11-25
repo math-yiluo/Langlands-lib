@@ -1,7 +1,5 @@
 # Commutativity of the Hecke algebra of an open normal subgroup
 
-Author: Worker 1789.
-
 This is a supporting module for the proof of Renard's VI.4.3 Corollary (ii)
 (`RationalSummandEndCommutativeProof`). It extends the generic development of
 `NormalSubgroupHecke`, `NormalSubgroupHeckeDomain` and `NormalSubgroupHeckeSeparation`, in

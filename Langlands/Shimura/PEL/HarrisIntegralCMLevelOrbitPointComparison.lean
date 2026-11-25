@@ -215,7 +215,7 @@ theorem harrisIntegralCMWeilRawPointEquiv_change_path
     letI := commAt T a r hr hu
     ∀ q : RawAt T a s U,
       rawPath path' U q =
-        (show GammaR from path.symm ≪≫ path') • rawPath path U q := by
+        (show GammaR from Aut.of (path.symm ≪≫ path')) • rawPath path U q := by
   let := rightAt T a s
   let := rightAt T a r
   let := monAt T a r hr hu

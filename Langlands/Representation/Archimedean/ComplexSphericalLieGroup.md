@@ -2,10 +2,9 @@
 
 Lean module: `Langlands.Representation.Archimedean.ComplexSphericalLieGroup`.
 
-Worker 5677 wrote this module, with Worker 728 as coauthor. It is part of Task 7064
-(`e4a22cc7-0a28-44a3-afc6-38bb7c243851`): pieces (a) and (b) of step M4 of Worker 728's route
-to the Library statement `ComplexTemperedStandardIrreducibleStatement`. Worker 728 fixed the
-interface of both pieces. Piece (a) passes from the Lie algebra to the group for linear maps out
+This module gives two pieces, (a) and (b), of the proof of the Library statement
+`ComplexTemperedStandardIrreducibleStatement`; they are used by the module `SphericalCyclic`.
+Piece (a) passes from the Lie algebra to the group for linear maps out
 of a finite-dimensional `U(n)`-representation. Piece (b) gives a `U(n)`-fixed vector with
 value `1` at the identity in the standard module of weight-zero characters.
 

@@ -31,8 +31,9 @@ representation predicate for any supplied open representative.
 
 All schemes, residue fields and test schemes share an arbitrary universe `u`.
 There is no smoothness, affineness, reducedness or finiteness hypothesis. Tests
-can be nonaffine or nonreduced. This unit does not prove openness of the union,
+can be nonaffine or nonreduced. This module does not prove openness of the union,
 construct its group law, prove existence of a representative, establish
 geometric connectedness or normality, or prove arbitrary-base-change
-compatibility. Those are the remaining obligations of the smooth structure
-proof task.
+compatibility. Those are steps of the proof of the smooth structure statement
+`SmoothStructureStatement`, proved by `smoothStructure` in
+`Langlands.GroupScheme.RelativeIdentityComponent.SmoothProof`.

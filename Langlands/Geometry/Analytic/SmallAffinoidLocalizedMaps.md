@@ -1,7 +1,5 @@
 # Full localized morphisms between small affinoid spectra
 
-Author: Worker 790.
-
 For a complete ultrametric normed field `K` and presented affinoid algebras
 `R` and `S` with spectra small in universe `v`, `localizedMapEquiv R S`
 identifies bounded `K`-algebra maps `R → S` with arrows from the localized

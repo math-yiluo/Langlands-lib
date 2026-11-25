@@ -152,7 +152,7 @@ contains a nonzero actual finite slice whose finite adelic action is irreducible
 admissible. -/
 theorem CuspidalOperatorRealization.exists_irreducibleAdmissible_finiteSlice_of_contragredient
     [CompactSpace (AdeleQuotient F)] {r : ℕ} (T T' : CuspidalOperatorRealization F r)
-    (hT : Langlands.ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T)
+    (hT : Langlands.ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T)
     (hdual : T'.realization.IsContragredientOf T.realization) :
     ∃ A : T'.FiniteSlice, A.subspace.IsIrreducible ∧
       Langlands.IsAdmissible A.subspace.representation := by
@@ -176,13 +176,13 @@ theorem CuspidalOperatorRealization.exists_irreducibleAdmissible_finiteSlice_of_
 cuspidal realization `T`, on which the finite adelic action is irreducible and admissible. -/
 noncomputable def CuspidalOperatorRealization.contragredientIrreducibleSlice
     [CompactSpace (AdeleQuotient F)] {r : ℕ} (T T' : CuspidalOperatorRealization F r)
-    (hT : Langlands.ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T)
+    (hT : Langlands.ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T)
     (hdual : T'.realization.IsContragredientOf T.realization) : T'.FiniteSlice :=
   Classical.choose (T.exists_irreducibleAdmissible_finiteSlice_of_contragredient T' hT hdual)
 
 theorem CuspidalOperatorRealization.contragredientIrreducibleSlice_isIrreducible
     [CompactSpace (AdeleQuotient F)] {r : ℕ} (T T' : CuspidalOperatorRealization F r)
-    (hT : Langlands.ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T)
+    (hT : Langlands.ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T)
     (hdual : T'.realization.IsContragredientOf T.realization) :
     (T.contragredientIrreducibleSlice T' hT hdual).subspace.IsIrreducible :=
   (Classical.choose_spec
@@ -190,7 +190,7 @@ theorem CuspidalOperatorRealization.contragredientIrreducibleSlice_isIrreducible
 
 theorem CuspidalOperatorRealization.contragredientIrreducibleSlice_isAdmissible
     [CompactSpace (AdeleQuotient F)] {r : ℕ} (T T' : CuspidalOperatorRealization F r)
-    (hT : Langlands.ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T)
+    (hT : Langlands.ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T)
     (hdual : T'.realization.IsContragredientOf T.realization) :
     Langlands.IsAdmissible (T.contragredientIrreducibleSlice T' hT hdual).subspace.representation :=
   (Classical.choose_spec

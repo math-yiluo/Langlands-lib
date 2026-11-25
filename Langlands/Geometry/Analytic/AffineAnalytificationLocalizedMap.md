@@ -1,6 +1,6 @@
 # Analytic morphisms of affine analytifications in the localized category
 
-This unit turns the published strong map of polynomial-locus analytifications
+This module turns the published strong map of polynomial-locus analytifications
 induced by a `K`-algebra map into a morphism of analytic spaces. The target is
 the Library's localized category of saturated atlas presentations, which models
 Berkovich's category of `K`-analytic spaces. For a `K`-algebra map `f : A → B`
@@ -97,9 +97,13 @@ published `localizedSpaceFunctor_map`.
 
 ## Scope
 
-The unit proves no functoriality of `localizedHom`, such as identities or
-composites. Those depend on the published affine functoriality statement,
-whose proof is not yet in the Library. It does not compare morphisms for two
+The module proves no functoriality of `localizedHom`, such as identities or
+composites. Those depend on the published affine functoriality statement
+`AffineAnalytificationFunctorialityStatement`, which the Library proves as
+`affineAnalytificationFunctoriality` in `AffineAnalytificationFunctorialityProof`;
+the functoriality of `localizedHom` itself is
+`AffineAnalytificationLocalizedFunctorialityStatement`, proved in
+`AffineAnalytificationLocalizedFunctorialityProof`. It does not compare morphisms for two
 presentations of the same algebra. It proves nothing about immersions, rational
-points, the center map or the scheme-level glued space. Those are successor
-obligations of the parent task.
+points, the center map or the scheme-level glued space. Those lie outside this
+module.

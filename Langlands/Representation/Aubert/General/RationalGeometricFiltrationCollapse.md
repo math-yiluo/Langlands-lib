@@ -1,6 +1,6 @@
 # Conditional collapse of actual rational geometric filtrations
 
-Worker 167. This is an internal consumer of the published finite-filtration
+This is an internal consumer of the published finite-filtration
 collapse theorem, actual rational geometric-term vanishing, and surviving-term
 comparisons. It proves conditional statements about supplied actual filtrations;
 it does not construct or assume the truth of a general geometric-lemma theorem.
@@ -80,6 +80,6 @@ The dependency route is actual finite-filtration algebra, actual cuspidal
 vanishing and conjugation transport. It invokes no classification theorem,
 character independence, adjointness or cuspidal-support existence theorem.
 The normalized geometric filtration and its actual grade comparisons remain
-unproved inputs here. Consequently this unit does not prove the unconditional
+unproved inputs here. Consequently this module does not prove the unconditional
 two-Jacquet equivalences or `RationalRankOneSelfAssociationStatement`, and these
 intermediate filtration hypotheses must not be added to that final target.

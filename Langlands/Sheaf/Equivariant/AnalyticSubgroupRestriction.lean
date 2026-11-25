@@ -118,9 +118,9 @@ category of `G`, is the local action of the corresponding lift for `G`. -/
 theorem subgroupInclusion_map_liftAction (hH : IsOpen (H : Set G))
     {U : TwistedOver P (ρ.comp H.subtype)} (l : ActionLift (ρ.comp H.subtype) (TwistedOver.hom U))
     (h : ((liftOpenSubgroup l : OpenSubgroup H) : Subgroup H)) :
-    (subgroupInclusion ρ H).map (liftAction l h).unop =
+    (subgroupInclusion ρ H).map (liftAction l h).unop.asHom =
       (liftAction (U := (subgroupInclusion ρ H).obj U) (liftOfSubgroup hH l)
-        ⟨((h : H) : G), Subgroup.mem_map_of_mem H.subtype h.2⟩).unop :=
+        ⟨((h : H) : G), Subgroup.mem_map_of_mem H.subtype h.2⟩).unop.asHom :=
   hom_ext rfl rfl
 
 /-- For an open subgroup `H`, the restriction to `H` of a presheaf whose sections are discrete
@@ -152,9 +152,9 @@ theorem subgroupInclusion_map_liftAction_translate (t : G) {V : P.Over ⊤ X}
     (h : ((liftOpenSubgroup (U := (ι P (ρ.comp H.subtype)).obj ((translate P ρ t).obj V))
       (liftToSubgroup H (l.translate t)) : OpenSubgroup H) : Subgroup H)) :
     (subgroupInclusion ρ H).map (liftAction (U := (ι P (ρ.comp H.subtype)).obj
-        ((translate P ρ t).obj V)) (liftToSubgroup H (l.translate t)) h).unop =
+        ((translate P ρ t).obj V)) (liftToSubgroup H (l.translate t)) h).unop.asHom =
       relabelInv ρ t V ≫ (liftAction l ⟨t⁻¹ * ((h : H) : G) * t,
-        conj_mem_of_mem_liftToSubgroup_translate H l t h.2⟩).unop ≫ relabel ρ t V := by
+        conj_mem_of_mem_liftToSubgroup_translate H l t h.2⟩).unop.asHom ≫ relabel ρ t V := by
   refine hom_ext ?_ ?_
   · change ((h : H) : G)⁻¹ = (t * (t⁻¹ * ((h : H) : G) * t)⁻¹) * t⁻¹
     group
@@ -166,9 +166,9 @@ theorem subgroupInclusion_map_liftAction_translate (t : G) {V : P.Over ⊤ X}
       rw [ActionLift.coe_translateHom]
       change t⁻¹ * ((h : H) : G)⁻¹ * t = (t⁻¹ * ((h : H) : G) * t)⁻¹
       group
-    change (l.action (l.translateHom t ⟨((h : H) : G)⁻¹, hmem⟩)).hom =
+    change (l.action (l.translateHom t ⟨((h : H) : G)⁻¹, hmem⟩)).asIso.hom =
       𝟙 _ ≫ (l.action (⟨t⁻¹ * ((h : H) : G) * t,
-        conj_mem_of_mem_liftToSubgroup_translate H l t h.2⟩ : l.subgroup)⁻¹).hom ≫ 𝟙 _
+        conj_mem_of_mem_liftToSubgroup_translate H l t h.2⟩ : l.subgroup)⁻¹).asIso.hom ≫ 𝟙 _
     rw [e, Category.id_comp, Category.comp_id]
 
 omit [TopologicalSpace G] [IsTopologicalGroup G] in
@@ -237,12 +237,12 @@ theorem isLocallyDiscrete_subgroupRestriction (Adm : P.Over ⊤ X → Prop)
     have : (MulAut.conj t⁻¹) ((h : H) : G) ∈ N := hh
     rwa [MulAut.conj_apply, inv_inv] at this
   have hx : F.map (liftAction l ⟨t⁻¹ * ((h : H) : G) * t,
-        conj_mem_of_mem_liftToSubgroup_translate H l t h.2⟩).unop.op
+        conj_mem_of_mem_liftToSubgroup_translate H l t h.2⟩).unop.asHom.op
       (F.map (relabel ρ t V.obj ≫ (ι P ρ).map f₀).op s) =
         F.map (relabel ρ t V.obj ≫ (ι P ρ).map f₀).op s :=
     hN ⟨t⁻¹ * ((h : H) : G) * t, hNS hh'⟩ hh'
   change F.map ((subgroupInclusion ρ H).map (liftAction (U := (ι P (ρ.comp H.subtype)).obj
-      ((translate P ρ t).obj V.obj)) (liftToSubgroup H (l.translate t)) h).unop).op
+      ((translate P ρ t).obj V.obj)) (liftToSubgroup H (l.translate t)) h).unop.asHom).op
       (F.map ((ι P ρ).map f₀).op s) = F.map ((ι P ρ).map f₀).op s
   refine (congrArg (fun φ => F.map φ.op (F.map ((ι P ρ).map f₀).op s))
     (subgroupInclusion_map_liftAction_translate H t l h)).trans ?_
@@ -252,7 +252,7 @@ theorem isLocallyDiscrete_subgroupRestriction (Adm : P.Over ⊤ X → Prop)
     (map_comp_op_apply F _ _ s).symm
   refine (congrArg (fun y => F.map (relabelInv ρ t V.obj).op
     (F.map (liftAction l ⟨t⁻¹ * ((h : H) : G) * t,
-      conj_mem_of_mem_liftToSubgroup_translate H l t h.2⟩).unop.op y)) e1).trans ?_
+      conj_mem_of_mem_liftToSubgroup_translate H l t h.2⟩).unop.asHom.op y)) e1).trans ?_
   refine (congrArg (fun y => F.map (relabelInv ρ t V.obj).op y) hx).trans ?_
   exact (congrArg (fun y => F.map (relabelInv ρ t V.obj).op y) e1.symm).trans (e2 _)
 
@@ -274,7 +274,7 @@ def etaleGSheafSubgroupRestriction [IsTopologicalGroup G] :
     ((distinguishedLiftSystem ρ).smoothSheafInclusion A (twistedEtaleTopology ρ) ⋙
       subgroupRestriction ρ H (etaleTopology X) A)
     fun F => isLocallyDiscrete_subgroupRestriction H _
-      (fun t _ hV => hV.comp_iso (ρ t)) (etaleTopology X) F.property
+      (fun t _ hV => hV.comp_iso (ρ t).asIso) (etaleTopology X) F.property
 
 /-- Restriction of étale `G`-sheaves to `H` followed by the inclusion into sheaves is the
 inclusion followed by restriction of sheaves to `H`. -/

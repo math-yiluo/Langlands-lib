@@ -1,17 +1,16 @@
 # Dynamic quotient properness: torsor extension and structural sources
 
-Worker 1370, 5 November 2026.
-
-This note records a bounded source audit for the proof of
+This note, dated 5 November 2026, records a bounded source audit for the proof of
 [`DynamicQuotientProperStatement`](../../Langlands/GroupScheme/Dynamic/QuotientProperStatement.lean)
 ([statement explanation](../../Langlands/GroupScheme/Dynamic/QuotientProperStatement.md)).
 It identifies the structural inputs in one proposed torsor-extension route.
-It supplies no Lean proof or certificate that this route meets the task's
-independence restriction.
+It supplies no Lean proof or certificate that this route meets the independence
+restriction of the proof (no use of the rank-one uniqueness proposition). The Library now
+proves the statement, as `dynamicQuotientProper` (`Langlands/GroupScheme/Dynamic/QuotientProperProof.lean`).
 
 ## The retained target
 
-Task `04457b36-90fb-4b02-85e4-924c3c791c0b`, revision 1, asks for properness
+The statement asks for properness
 of the **supplied** `Q,q`, over every algebraically closed field and at the
 statement's universe `u`. Its right-coset fiber criterion holds on every test
 scheme, including nonreduced and nonaffine tests. Trivial and central
@@ -95,7 +94,7 @@ logically depends on the exact Library rank-one uniqueness proposition:
 establishing that would require tracing the preceding results and their
 foundational order. They also do not rule out a different independent
 construction. The bounded conclusion is that this audit has not certified a
-permitted unconditional affineness input for the host task.
+permitted unconditional affineness input for that proof.
 
 ## Registered sources and limits
 
@@ -119,7 +118,6 @@ source-specific Seshadri, Steinberg, Chevalley or Lazard errata note in the
 project/current Library notes; this is not an assertion that no corrections
 exist elsewhere. Alper's journal and corrected v3 passages were compared.
 
-The exact properness theorem, the full scheme-level torsor-extension
-construction and its comparison with the supplied `Q,q` remain proof
-obligations. This source map carries no mathematical acceptance or publication
-evidence for any of those results.
+This source map carries no proof of the exact properness theorem, of the full scheme-level
+torsor-extension construction or of its comparison with the supplied `Q,q`; the Library's
+proof of the theorem is the one named above.

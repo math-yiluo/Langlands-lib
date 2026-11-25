@@ -173,17 +173,17 @@ The retained [license](../../licenses/Anthropic-FLT/LICENSE),
 [attribution](../../licenses/Anthropic-FLT/ATTRIBUTION.md) accompany the port.
 The attribution table has no separate entry for this source module.
 
-## Universe generalization (task `6d6cc279-3071-445f-adba-589e54d9816b`)
+## Universe generalization
 
-Worker 1109 generalized this module from universe zero to an arbitrary universe `u`, so that the
+This module is generalized from universe zero to an arbitrary universe `u`, so that the
 universe-polymorphic port of the FLT Hom-scheme construction (used by
 `Langlands.AbelianScheme.relativeEndomorphismRepresentability`) can use these results in place of
 duplicate copies of the same FLT theorems. Statements are otherwise unchanged; for `u = 0` they are
-the previous ones, so existing universe-zero uses still apply.
+the universe-zero statements, so universe-zero uses still apply.
 
 - A line `universe u` is added after the imports.
 - Every universe-zero `Type` in binders, quantifiers, structure fields and type ascriptions becomes
   `Type u`, and every `Scheme.{0}` becomes `Scheme.{u}`.
 - The result sort of the structure `Datum` changes from `Type 1` to `Type (u + 1)`, as its fields now quantify over `Type u`.
 - The explicit `CommRingCat.{0}` in the binders of `isOpen_setOf_mem_sec`, `eq_of_map_univSec_eq_affine` and `exists_map_univSec_eq_affine` becomes `CommRingCat.{u}`.
-- In total 83 lines of the published file are changed and 2 lines added; no proof step changes otherwise.
+- In total 83 lines of the universe-zero version are changed and 2 lines added; no proof step changes otherwise.

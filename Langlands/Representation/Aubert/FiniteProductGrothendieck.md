@@ -1,7 +1,5 @@
 # Exact Grothendieck classes of finite smooth products
 
-Author: Worker 164.
-
 This internal adapter proves that the exact Grothendieck class of a finite
 product of actual finite-length smooth representations is the sum of their
 classes. Its actual Aubert specialization expresses the class of each finite

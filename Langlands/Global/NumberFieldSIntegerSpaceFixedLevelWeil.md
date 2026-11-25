@@ -22,13 +22,13 @@ ones from the fixed upper S-integers.
 The field instances use the independently normalized completion norms.
 The actual completion embeddings give continuous scalar multiplication;
 finite dimensionality and completeness give the module topology.
-`lowerField_henselian` and `upperField_henselian` apply the published
+`lowerField_henselian` and `upperField_henselian` apply the existing
 complete-local-field results to these norms.
 
 `fieldTensorData` packages the original completed-field tensor comparison
 with the fixed-base coefficient action. Equality of the algebra maps
 identifies that action with the original S-integer action on the completion,
-so the published finite or infinite tensor equivalence applies. Its second
+so the existing finite or infinite tensor equivalence applies. Its second
 component retains the original upper coefficient maps.
 
 `fieldPointMap_isHomeomorph` applies the finite-type tensor field
@@ -43,7 +43,7 @@ the original lower Weil factor topology and the product of the original upper
 factor topologies. The component formula is exactly
 `completedTensorSpaceWeilRestrictionPointMap` for the fixed-level tensor.
 
-`levelPointHomeomorph` composes the published fixed-base stage coordinate
+`levelPointHomeomorph` composes the existing fixed-base stage coordinate
 homeomorphism with the product of `factorPointHomeomorph`, then writes the
 nested product as the product over pairs of lower coordinates and upper
 places above them. Both directions of this last reindexing are continuous
@@ -56,6 +56,8 @@ formulas and the definition of that projection.
 The provenance is internal composition of the actual arithmetic tensor
 decompositions, original complete-local-field topology results, the integral
 comparison, and the fixed-base stage coordinates. No scheme, smoothness or
-projectivity assumption is imposed on `X`. This unit neither regroups the
+projectivity assumption is imposed on `X`. This module neither regroups the
 upper factors into their own arithmetic stage nor proves the final adelic
-homeomorphism; those assembly steps remain separate.
+homeomorphism; those assembly steps are made in
+`NumberFieldSIntegerSpaceFixedLevelRegroup` and
+`NumberFieldSpaceFixedModelWeilHomeomorph`.

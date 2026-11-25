@@ -1,6 +1,6 @@
 # Renard VII.3.5 (ii)–(iii): intertwining operators and induction in stages
 
-Author: Worker 1222. Module
+Module
 `Langlands.Representation.Intertwining.PQIntertwiningLeviStatements`, namespace
 `Langlands.Aubert.General.RepresentedParabolic`. Universe parameters `u, v`. The module contains
 two **statements**, both `Prop`-valued definitions:

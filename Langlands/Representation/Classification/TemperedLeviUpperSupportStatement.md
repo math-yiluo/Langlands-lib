@@ -1,13 +1,10 @@
 # Upper discrete-series quotient support of tempered product-Levi representations
 
-Author: Worker 276.
-
 `Langlands.GLTemperedLeviUpperSupportStatement.{uF,uV}` is a closed
 proposition definition. It isolates the middle-to-coarse support clause of
-the published host target `Langlands.GLTemperedJointSupportStatement`. This
+the published statement `Langlands.GLTemperedJointSupportStatement`. This
 module supplies the statement only. It proves no support, analytic, or
-induction assertion, and it does not change the host target or any imported
-pair.
+induction assertion.
 
 ## Quantifiers and analytic input
 
@@ -35,7 +32,7 @@ quotient, must lie in `L^(2+ε)` for every positive real `ε`.
 No tensor presentation, chosen central character, selected support, critical
 pair, opposite embedding, unitarizability, or quotient map is an input. No
 classification, relative recovery, or head result is a premise, and neither
-is the host joint-support statement.
+is the joint-support statement `GLTemperedJointSupportStatement`.
 
 ## Conclusion
 
@@ -108,8 +105,8 @@ page says that, by S79 Theorem 3.3.1 and an easy induction, an irreducible
 admissible `π` occurs as a subrepresentation of `I(P,σ)` if and only if it
 occurs as a quotient of `I(P̄,σ)`, for irreducible admissible `σ`. On p.98,
 S78 notes that every irreducible tempered representation is a direct summand
-of some `I(P,ω)` with `ω` in the discrete series of `M`. Worker 276 read
-pp.96–99 and checked pp.97 and 99 as images.
+of some `I(P,ω)` with `ω` in the discrete series of `M`. Pages 96–99
+were read and pp.97 and 99 checked as images.
 
 The cited corollary is in A. J. Silberger, *Introduction to Harmonic Analysis
 on Reductive p-adic Groups* (1979) (S79), registered as
@@ -123,8 +120,8 @@ p-pair `(P,A)` and a discrete-series `σ` of `M` with an embedding of `π` into
 parabolic. Its proof uses Corollaries 4.5.7 and 4.5.9, Theorem 4.5.10, and
 Theorem 3.2.4, arguing as in Corollary 2.4.2. By Corollary 4.5.13, p.190,
 such a `π` is unitary. Corollary 4.5.14, p.190, uses this to show that its
-weak exponents along opposite p-pairs `(P,A)` and `(P̄,A)` agree. Worker 276
-read pp.189–190 and checked them as images. No erratum specific to
+weak exponents along opposite p-pairs `(P,A)` and `(P̄,A)` agree. Pages
+189–190 were read and checked as images. No erratum specific to
 these passages of S78 or S79 was found in the project's literature index.
 
 The present target is a derived product-Levi specialization of the S78
@@ -167,13 +164,13 @@ A proof must supply at least the following, without assuming any of them.
    across the carrier universes above.
 
 The [scope audit](../../../notes/jacquet/silberger-lemma53-scope.md) on S78
-Lemma 5.3 is preserved: this statement and its eventual proof supply no
+Lemma 5.3 is preserved: this statement and its proof supply no
 unrestricted multiplicity comparison. A proof must not use the downstream
 square-integrable Langlands classification or regular-data uniqueness.
 
 ## Relation to existing work
 
-The host `GLTemperedJointSupportStatement` asserts, for the same `π`, a
+The statement `GLTemperedJointSupportStatement` asserts, for the same `π`, a
 middle-to-coarse quotient together with fine support and a fine-to-coarse
 quotient. Its first clause, after the obvious projection, is this
 statement. This target is weaker, so it can be proved separately and then
@@ -186,7 +183,7 @@ for an irreducible tempered representation of `GL_n`. The summand and
 same-σ opposite-to-upper statements compare opposite and upper inductions for
 a given discrete-series `σ`. They concern `GL_n` rather than an arbitrary
 product Levi, and conclude no upper refined quotient for product-Levi input.
-Their tasks, the analytic block tensor tasks, the discrete-series
-positive-root support task, product-Levi tempered unitarity, and normalized
+These statements, the analytic block tensor statements, the discrete-series
+positive-root support statement, product-Levi tempered unitarity, and normalized
 nested induction keep their own scopes. This module neither duplicates their
 targets nor assumes their conclusions.

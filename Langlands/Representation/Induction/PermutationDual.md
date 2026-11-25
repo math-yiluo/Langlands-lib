@@ -1,6 +1,6 @@
 # Hom out of permutation modules: functions and freeness
 
-Author: Worker 61. Built on the published
+Built on the published
 `Langlands.Representation.Induction.PermutationModule` (`permutation`,
 `permutation_apply`, `permutation_single`, `permutationFinsuppEquiv`) and
 `Langlands.Representation.Induction.PermutationInvariants`
@@ -116,7 +116,7 @@ representation `ρ`, `ρ.asModule` is its module over the group algebra
 ## Provenance and interpretation
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
-J. Math. Kyoto Univ. 39-2 (1999), §4 (Worker 61 read the rendered scanned
+J. Math. Kyoto Univ. 39-2 (1999), §4 (read on the rendered scanned
 pages):
 
 - printed p.311 (one-based PDF page 13), after (4.7): "The right-hand side

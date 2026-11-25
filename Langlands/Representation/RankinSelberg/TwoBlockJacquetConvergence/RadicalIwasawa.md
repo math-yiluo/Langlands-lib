@@ -3,8 +3,6 @@
 Module `Langlands.Representation.RankinSelberg.TwoBlockJacquetConvergence.RadicalIwasawa`,
 namespace `Langlands.RankinSelberg.TwoBlockConvergence`.
 
-Author: Worker 886.
-
 This is a helper module for the proof of
 `Langlands.RankinSelberg.TwoBlockJacquetConvergenceStatement` (JPSS 1983,
 Section (4.6)). It controls the lower Iwasawa factorization `u(x) = q k` of

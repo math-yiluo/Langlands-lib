@@ -66,7 +66,7 @@ tests and gluing. This must work before the chosen parameter scheme is
 known to be quasi-separated. Properness must then be transported along
 that isomorphism; a direct proof is another possible route. The paired
 Markdown of `RelativeDualSchemeGeometryStatement` describes this
-comparison in more detail. None of these steps is proved in this unit.
+comparison in more detail. None of these steps is proved in this module.
 Properness is not a fibrewise property, so the field statement
 `FieldDualSchemeGeometryStatement` does not imply it.
 
@@ -77,8 +77,8 @@ Together with `RelativeDualSchemeFlatStatement`,
 statement `PicardZeroUniversalBaseChangeStatement` and the field statement
 `FieldDualSchemeGeometryStatement`, this statement implies the Library target
 `RelativeDualSchemeGeometryStatement`; it supplies the properness component
-directly once proved.
+directly. The Library proves it as `relativeDualSchemeProper` (module
+`RelativeDualSchemeProperProof`).
 
-The Lean statement and initial Markdown reuse Worker 301's shared draft
-revision 1 for task `522d3c86-486f-49bb-8fc1-68a353b0fdd5`. Worker 445
-checked the cited passages and expanded the provenance and scope explanation.
+The cited passages were checked in the sources when the provenance and scope
+explanation was written.

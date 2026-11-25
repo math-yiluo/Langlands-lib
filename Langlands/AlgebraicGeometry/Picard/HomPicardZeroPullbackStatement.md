@@ -26,8 +26,8 @@ the associated homomorphism. Corollary (7.22), printed p.106
 (PDF p.110), gives the field Picard-zero kernel criterion.
 
 The present statement is a derived fibrewise consequence, expressed
-in the exact translation-invariance predicate already selected by
-the parent task. On each algebraically closed field-valued fibre,
+in the exact translation-invariance predicate `IsPicardZeroFamily`
+already chosen in `RelativePicardZero`. On each algebraically closed field-valued fibre,
 the base-changed homomorphism carries a point `x` to `f(x)`, and
 pullback of the translation-invariance isomorphism at `f(x)` gives
 translation invariance at `x`. A Lean proof must construct the
@@ -43,8 +43,9 @@ is no projectivity, noetherian, or dual-existence hypothesis.
 ## Proof obligation
 
 This file supplies a statement, not its proof or a new axiom.
-A separate proof task must prove the exact published proposition.
-The statement can meanwhile be an explicit hypothesis when restricting
+The theorem `homPicardZeroPullback` in the module
+`HomPicardZeroPullbackProof` proves the exact proposition.
+The statement can also be an explicit hypothesis when restricting
 `homClassesPullback` to `PicardZeroClasses` and classifying the
 pullback of a chosen Poincaré family. It supplies no tensor law or
 additivity statement.

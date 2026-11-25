@@ -1,6 +1,6 @@
 # Compact compression on images of actual rational inertia blocks
 
-Worker 1751. This internal specialization of the generator-compression bridge
+This internal specialization of the generator-compression bridge
 uses the actual rational inertia block and the actual compact induction from
 the common norm kernel. It does not replace either object by an abstract
 representation with similar properties.

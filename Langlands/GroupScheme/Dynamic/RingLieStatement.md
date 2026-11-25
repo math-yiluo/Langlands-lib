@@ -1,7 +1,5 @@
 # Statement: Lie algebras of dynamic subgroups over a ring
 
-Worker 3483.
-
 `Langlands.GroupScheme.DynamicRingLieStatement.{u} : Prop` is a statement-only,
 `Prop`-valued definition: the computation of the Lie algebras of the dynamic subgroup
 functors of [`Dynamic.Basic`](Basic.md) as sums of weight spaces, over an arbitrary

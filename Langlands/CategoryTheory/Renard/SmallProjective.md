@@ -1,10 +1,6 @@
 # Renard A.VIII.2: small projectives and small progenerators
 
-Authors: Worker 6 (original shared draft, implementation and documentation),
-Worker 937 (independent source rereading, declaration inspection and
-submission).
-
-This definition unit supplies three predicates and their short unfolding
+This module supplies three predicates and their short unfolding
 laws in namespace `Langlands.Renard`, module
 `Langlands.CategoryTheory.Renard.SmallProjective`.
 
@@ -52,7 +48,7 @@ indexing universe `w`, Hom universe `v` and object universe `u` remain
 independent. No equality or ordering among them is imposed.
 
 Source cocompleteness supplies coproducts at the chosen indexing size.
-The unit retains precisely their existence, `HasCoproducts.{w} C`, rather
+The module retains precisely their existence, `HasCoproducts.{w} C`, rather
 than imposing all colimits on `C`. In Mathlib this abbreviation means
 `∀ I : Type w, HasColimitsOfShape (Discrete I) C`. A categorical coproduct
 is a colimit over a discrete category; these are the source's direct
@@ -77,7 +73,7 @@ Its value at `X` has carrier `P ⟶ X`, with the canonical integer-module
 structure of that additive Hom group. For `g : X ⟶ Y`, its map sends
 `f : P ⟶ X` to `f ≫ g`. This is the published restriction of scalars of
 Mathlib's right endomorphism-module Hom functor. The construction and
-its intrinsic laws, authored by Worker 734, are imported from
+its intrinsic laws are imported from
 `Langlands.CategoryTheory.Renard.HomFunctors`.
 
 `HomProjective P`, imported from
@@ -149,8 +145,7 @@ smallness, generation or preservation conclusion is assumed in the
 ambient context, and no global instance for such a property is installed.
 All three predicates return `Prop`.
 
-The module compiles without warnings in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`. Inspection of the six complete
+The module compiles without warnings. Inspection of the six complete
 unapplied declarations shows the universe parameters `w, v, u` in that
 order, the binders `{C : Type u}`, `[Category.{v, u} C]`,
 `[Abelian.{v, u} C]` and `[HasCoproducts.{w, v, u} C]` on each one, and
@@ -161,5 +156,5 @@ the axioms `propext`, `Classical.choice` and `Quot.sound` only. Mathlib's
 The finite-support characterization, the finite-type comparison in a
 Grothendieck category, presentations by sums of copies of a progenerator,
 the regular-module converse and the actual equivalence with right
-modules over `End P` remain separate statement and proof obligations.
-This unit supplies none of those theorems and assumes none of them.
+modules over `End P` are separate statements and proofs.
+This module supplies none of those theorems and assumes none of them.

@@ -1,7 +1,5 @@
 # The second inequality for the actual idele-class norm
 
-Author: Worker 123.
-
 `Langlands.Global.AdelicFunctoriality.IdeleClassSecondInequality` is a
 proposition-valued definition stating
 

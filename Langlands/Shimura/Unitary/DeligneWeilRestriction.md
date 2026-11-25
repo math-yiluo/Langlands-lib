@@ -1,7 +1,5 @@
 # The Deligne torus is the Weil restriction `Res_{ℂ/ℝ} 𝔾ₘ`
 
-Author: Worker 299.
-
 This module identifies the host Weil restriction
 `Langlands.GroupScheme.WeilGm.groupScheme (CommRingCat.of ℝ) ℂ` (module
 `Langlands.GroupScheme.Torus.WeilRestriction`) with the published Deligne torus
@@ -40,9 +38,7 @@ is the canonical map. Real algebras `S` are in `Type`, the universe of
 model. He does not state a comparison isomorphism. The isomorphism here is
 derived: both group schemes have point models over every test scheme, and the
 tensor identity `ℂ ⊗[ℝ] S ≃ Complexification S` matches them. The host
-`Res_{ℂ/ℝ} 𝔾ₘ` is built from the TauCeti coordinate algebra (source ID
-`tauceti-8428d621-weil-restriction-closure`, TauCeti commit
-`8428d6217f74afa72531df0bc85d7b57ab72810f`); `ℂ` is finite free over `ℝ`.
+`Res_{ℂ/ℝ} 𝔾ₘ` uses the Library's Weil restriction coordinate algebra, since `ℂ` is finite free over `ℝ`.
 
 ## The algebraic comparison
 

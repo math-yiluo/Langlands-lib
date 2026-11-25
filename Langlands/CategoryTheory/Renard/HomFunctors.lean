@@ -49,7 +49,7 @@ theorem preadditiveCoyonedaObj_map_apply {X Y : C} (g : X ⟶ Y) (f : P ⟶ X) :
 /-- The right `End P`-action: `MulOpposite.op r` acts on `f : P ⟶ X` as `f · r = r ≫ f`. -/
 theorem preadditiveCoyonedaObj_op_smul (X : C) (r : End P)
     (f : (preadditiveCoyonedaObj P).obj X) :
-    MulOpposite.op r • f = r ≫ f := rfl
+    MulOpposite.op r • f = r.asHom ≫ f := rfl
 
 /-- The right-module law `f · (r * s) = (f · r) · s`, where `r * s = s ≫ r`. -/
 theorem preadditiveCoyonedaObj_op_mul_smul (X : C) (r s : End P)
@@ -63,7 +63,7 @@ group's own `ℤ`-action instead of the restricted one. -/
 
 /-- The restricted integer action is the action of the integer endomorphism `(n : End P)`. -/
 theorem preadditiveCoyonedaInt_smul_eq_comp (X : C) (n : ℤ) (f : P ⟶ X) :
-    ((preadditiveCoyonedaInt P).obj X).isModule.smul n f = (n : End P) ≫ f := rfl
+    ((preadditiveCoyonedaInt P).obj X).isModule.smul n f = (n : End P).asHom ≫ f := rfl
 
 /-- The restricted integer action is ordinary repeated addition in `P ⟶ X`. -/
 theorem preadditiveCoyonedaInt_smul (X : C) (n : ℤ) (f : P ⟶ X) :
@@ -132,7 +132,7 @@ theorem preadditiveYonedaObj_map_apply {X Y : C} (g : X ⟶ Y) (h : Y ⟶ P) :
 /-- The left `End P`-action: `r` acts on `h : X ⟶ P` as `h ≫ r`. -/
 theorem preadditiveYonedaObj_smul (X : C) (r : End P)
     (h : (preadditiveYonedaObj P).obj (op X)) :
-    r • h = h ≫ r := rfl
+    r • h = h ≫ r.asHom := rfl
 
 /-- The left-module law `(r * s) · h = r · (s · h)`, where `r * s = s ≫ r`. -/
 theorem preadditiveYonedaObj_mul_smul (X : C) (r s : End P)
@@ -142,7 +142,7 @@ theorem preadditiveYonedaObj_mul_smul (X : C) (r s : End P)
 
 /-- The restricted integer action is the action of the integer endomorphism `(n : End P)`. -/
 theorem preadditiveYonedaInt_smul_eq_comp (X : C) (n : ℤ) (h : X ⟶ P) :
-    ((preadditiveYonedaInt P).obj (op X)).isModule.smul n h = h ≫ (n : End P) := rfl
+    ((preadditiveYonedaInt P).obj (op X)).isModule.smul n h = h ≫ (n : End P).asHom := rfl
 
 /-- The restricted integer action is ordinary repeated addition in `X ⟶ P`. -/
 theorem preadditiveYonedaInt_smul (X : C) (n : ℤ) (h : X ⟶ P) :

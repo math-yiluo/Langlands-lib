@@ -1,6 +1,6 @@
 # The action quotient of the full Isom sheaf
 
-Worker 812. This internal construction uses the published `LocalGroupIso`
+This internal construction uses the published `LocalGroupIso`
 families, their fppf sheaf property, actual automorphic actions, and Mathlib
 fppf sheafification. It assumes no scheme representing Isom and cites no new
 literature theorem.
@@ -33,5 +33,7 @@ general action.
 
 The acting group and action are arbitrary. Identifying this construction as
 the outer Isom sheaf requires the appropriate source adjoint action. Scheme
-representability of this quotient and of the full Isom sheaf remain separate
-obligations.
+representability of this quotient and of the full Isom sheaf is not proved in
+this module; `Langlands.GroupScheme.IsomorphismSheafQuotientDescent` and
+`Langlands.GroupScheme.IsomorphismSchemeSingleCoverDescent` construct scheme
+representatives from local models.

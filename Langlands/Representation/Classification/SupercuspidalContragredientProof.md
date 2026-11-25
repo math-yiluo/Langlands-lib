@@ -1,7 +1,7 @@
 # Supercuspidality and the smooth contragredient
 
-Author: Worker 115. Worker 196 identified the published natural Jacquet
-duality interface used to discharge the remaining vanishing step.
+The Jacquet vanishing step uses the published natural Jacquet duality
+interface.
 
 `Langlands.GeneralLinear.supercuspidalContragredient` proves exactly
 `Langlands.GeneralLinear.SupercuspidalContragredientStatement.{uF,uV}`.

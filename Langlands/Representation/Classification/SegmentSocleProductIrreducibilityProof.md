@@ -1,8 +1,5 @@
 # Proof of the segment socle irreducibility criterion
 
-Authors: Worker 250 (the helper module `SegmentSocleCriterionAssembly` contains
-lifting code by Worker 769 and Worker 584).
-
 ## Statement proved
 
 `Langlands.Classification.segmentSocleProductIrreducibility` proves exactly
@@ -17,8 +14,8 @@ unlinked (Zelevinsky 1980, Theorem 4.2, printed p. 184).
 ## Proof
 
 The theorem is `SegmentSocleCriterionAssembly.segmentSocleProductIrreducibility_of_halves`
-(helper module `Classification.SegmentSocleCriterionAssembly`, submitted with this
-proof; see its Markdown for the full argument) applied to:
+(helper module `Classification.SegmentSocleCriterionAssembly`, published together
+with this proof; see its Markdown for the full argument) applied to:
 
 - `unlinkedSegmentSocleProductIrreducible F T`, the published proof of
   `UnlinkedSegmentSocleProductIrreducible.{uF, uV} F T` (sufficient direction,
@@ -41,8 +38,8 @@ moved together.
 
 Direct imports:
 
-- `Classification.SegmentSocleCriterionAssembly`, the helper module submitted
-  with this proof. Its own imports are the target statement module
+- `Classification.SegmentSocleCriterionAssembly`, the helper module published
+  together with this proof. Its own imports are the target statement module
   `Classification.SegmentGenericStatement`, the halves statement module
   `Classification.SegmentSocleCriterionHalvesStatement`, the statement module
   `Classification.TwoFactorProductConstituentCommutativityStatement`,
@@ -51,12 +48,9 @@ Direct imports:
   `Parabolic.ProductInductionSubrepresentation`, `Filtration.RepresentationLength`
   and `Filtration.LengthTwoMatching`. It takes the three propositions below as
   hypotheses and calls no other analytic result;
-- `Classification.UnlinkedSegmentSocleProductIrreducibleProof` (task 23e98d90,
-  artifact b7a91382);
-- `Classification.LinkedSegmentSoclePairReducibleProof` (task 8fa9f68b,
-  artifact ba05767f);
-- `Classification.TwoFactorProductConstituentCommutativityProof` (task afd5ae37,
-  artifact 016ebb10).
+- `Classification.UnlinkedSegmentSocleProductIrreducibleProof`;
+- `Classification.LinkedSegmentSoclePairReducibleProof`;
+- `Classification.TwoFactorProductConstituentCommutativityProof`.
 
 Here `Classification`, `Parabolic` and `Filtration` abbreviate the corresponding
 namespaces under `Langlands.Representation`.
@@ -74,19 +68,19 @@ target `SegmentSocleProductIrreducibility`, the segment-head proposition
 module of the closure other than the three new ones and the proof of
 `LinkedSegmentSoclePairReducible` is byte-identical (Lean and Markdown) in Library
 commit 25b91125, where the input proofs were audited, and in commit 622054b9, the
-base of this submission. The published proof of `LinkedSegmentSoclePairReducible`
-in 622054b9 is byte-identical to its approved candidate ba05767f.
+base of this proof. The published proof of `LinkedSegmentSoclePairReducible`
+in 622054b9 is byte-identical to its audited version.
 
 The three input proofs record their own independence audits in their Markdown.
-The contracts of all three carry every exclusion listed by this task and exclude
-this task itself. The contract of the `LinkedSegmentSoclePairReducible` proof also
-excludes the proposition `SegmentSocleProductIrreducibility`, the segment-head
-criterion `SegmentHeadProductIrreducibility` (task 8364e73f),
-`AdjacentUnlinkedSegmentSocleSwap` (tasks e3634665, cded83f3),
-`TwoSegmentSocleCommutation` (tasks 426911b4, 66e3b87c) and
-`LinkedSegmentSocleGluing` (tasks c84cd52c, 6780b79c). Its accepted audit, whose
+All three avoid every result excluded for this proof, and this proof itself.
+The `LinkedSegmentSoclePairReducible` proof also
+avoids the proposition `SegmentSocleProductIrreducibility`, the segment-head
+criterion `SegmentHeadProductIrreducibility`,
+`AdjacentUnlinkedSegmentSocleSwap`,
+`TwoSegmentSocleCommutation` and
+`LinkedSegmentSocleGluing`. Its audit, whose
 closure contains the closures of the other two proofs, inventories the published
-proof records of all those excluded tasks and finds none of their modules in its
+proofs of all those excluded results and finds none of their modules in its
 closure.
 
 A case-insensitive search of every module in this closure for the excluded
@@ -123,18 +117,18 @@ classification, `AdjacentUnlinkedSegmentSocleSwap`, `TwoSegmentSocleCommutation`
   hypotheses.
 
 Hence no excluded conclusion is assumed or proved anywhere in the closure:
-socle exhaustion (f3a69bc8), segment analytic classification (aca8805b),
-special-head multisegment exhaustion (3bfb61fa), ordered special-head existence
-(ebea9a8a), quotient coverage (20e4e1c6), tempered block uniqueness (52e97845),
-`SquareIntegrableLanglandsClassification` (1cb45da2), square-integrable
-exhaustion (cd8ab97c), regular exhaustion (bf433f0a),
-`OrderedMultisegmentSocleExistence` (23189526), the segment-head criterion
-`SegmentHeadProductIrreducibility` (8364e73f), `TwoSegmentSocleCommutation`
-(426911b4, 66e3b87c) and `AdjacentUnlinkedSegmentSocleSwap` (e3634665, cded83f3).
+socle exhaustion, segment analytic classification,
+special-head multisegment exhaustion, ordered special-head existence,
+quotient coverage, tempered block uniqueness,
+`SquareIntegrableLanglandsClassification`, square-integrable
+exhaustion, regular exhaustion,
+`OrderedMultisegmentSocleExistence`, the segment-head criterion
+`SegmentHeadProductIrreducibility`, `TwoSegmentSocleCommutation`
+and `AdjacentUnlinkedSegmentSocleSwap`.
 
 ## Checks
 
-`lean_check` in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, with
+`lean_check` with
 declaration `Langlands.Classification.segmentSocleProductIrreducibility`:
 0 errors, 0 warnings; universe parameters `uF`, `uV`; axioms `propext`,
 `Classical.choice`, `Quot.sound`.

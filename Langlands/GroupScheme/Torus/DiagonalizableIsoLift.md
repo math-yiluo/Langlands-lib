@@ -27,8 +27,8 @@ the disjoint open loci where `u = D(g)` for a fixed `g`.
 - `dhom_ext` and `diso_ext`: maps of diagonalizable groups that agree on an
   open cover are equal (from `baseChange_hom_ext_of_opens`).
 - `exists_open_dpull` (local rigidity): every `u : D_X(Λ) ⟶ D_X(Λ')` restricts
-  to some `D_V(g)` on an open neighbourhood `V` of any point. This is Worker
-  736's `exists_opens_baseChange_map_eq` (module
+  to some `D_V(g)` on an open neighbourhood `V` of any point. This is
+  `exists_opens_baseChange_map_eq` (module
   `RelativeDiagonalizableHomLocality`). `dpull_of_le` shrinks `V`.
   `eq_of_dpull` says that `g` is unique on a nonempty open, by the injectivity
   result of the same module.

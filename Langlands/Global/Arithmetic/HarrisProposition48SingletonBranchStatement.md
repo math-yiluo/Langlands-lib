@@ -47,7 +47,7 @@ which assumes supercuspidality at the compared place, cannot supply
 this step. The present branch implication does not assume a downstairs
 supercuspidal component, a chosen compatible extension, or the desired
 weak induction. The finite-character correction and selection are
-conclusions to be constructed by its proof owner, not hidden fields in
+conclusions that a proof of this statement constructs, not hidden fields in
 a datum. This statement supplies their combined target; it does not
 claim that the weak transfer predicate already includes them.
 

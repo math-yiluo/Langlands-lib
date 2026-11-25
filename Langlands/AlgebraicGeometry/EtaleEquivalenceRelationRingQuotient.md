@@ -1,7 +1,5 @@
 # Affine quotients from faithfully flat coordinate-ring pushouts
 
-Author: Worker 1203.
-
 This internal interface isolates the final geometric step in the planned
 proof of `EtaleEquivalenceRelationSerreCriterionStatement`. It imports the
 published `EtaleEquivalenceRelation` and `HasAffineQuotient` unchanged.

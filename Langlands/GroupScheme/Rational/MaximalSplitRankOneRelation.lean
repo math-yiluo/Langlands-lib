@@ -597,8 +597,9 @@ theorem exists_rankOneRelation (hG : IsConnectedReductive G) (i : S.toGrp ⟶ G)
     have h1 : weylAction i nN a = -a := by
       rw [hrefl, hpair, two_smul]
       abel
+    have hneg : weylAction i nN (-a) = -weylAction i nN a := (weylAction i nN).toLinearMap.map_neg a
     calc weylAction i nN⁻¹ a = weylAction i nN⁻¹ (weylAction i nN (-a)) := by
-          rw [map_neg, h1, neg_neg]
+          rw [hneg, h1, neg_neg]
       _ = -a := by
           rw [map_inv]
           exact (weylAction i nN).symm_apply_apply (-a)

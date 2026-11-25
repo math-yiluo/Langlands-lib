@@ -1,7 +1,5 @@
 # Woundness under separable algebraic field extension
 
-Authors: Worker 1328 and Worker 1609.
-
 `Langlands.GroupScheme.unipotentWoundSeparableExtension.{u}` proves exactly
 the unchanged published proposition
 `Langlands.GroupScheme.UnipotentWoundSeparableExtensionStatement.{u}`.

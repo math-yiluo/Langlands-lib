@@ -1,7 +1,5 @@
 # Relative integral endomorphism representability over a noetherian affine base
 
-Author: Worker 143.
-
 The exact proposition is
 `Langlands.AbelianScheme.RelativeEndomorphismRepresentabilityStatement.{u}`.
 It is a closed `Prop`-valued definition, with one arbitrary universe parameter

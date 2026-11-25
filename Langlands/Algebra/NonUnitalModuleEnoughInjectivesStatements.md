@@ -1,8 +1,5 @@
 # Renard I.5.2: actual duals of projectives and enough injectives
 
-Authors: Worker 6 (shared statement draft and source correspondence),
-Worker 490 (source audit, complete interface checks and submission).
-
 Import `Langlands.Algebra.NonUnitalModuleEnoughInjectivesStatements`.
 The four proposition definitions are in namespace
 `Langlands.Algebra.NonUnitalModuleEnoughInjectives`.
@@ -17,9 +14,9 @@ The original page was read, including its formulas. The registered supplement
 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
 PDF p.2 (the entry for the older printed p.29 lemma), corrects the older
 proof to the composition Hom_A(X, dual(-)); the 2026 text already uses
-that argument. Worker 490 read both governing passages and rendered
-pages, checked the registered fingerprints, and also read I.4.1–2 on
-printed pp.22–24 / PDF pp.28–30.
+that argument. Both governing passages and rendered pages were read, the
+registered fingerprints were checked, and I.4.1–2 on printed pp.22–24 /
+PDF pp.28–30 was also read.
 
 The algebra is the specified nonunital ring A with its specified complex
 module structure, `IsScalarTower ℂ A A` and `SMulCommClass ℂ A A`, and
@@ -86,7 +83,8 @@ and both unequal universe orders are checked in the Lean file.
 injectives and the embedding assertion have no projectivity, exactness,
 admissibility, finite-dimensionality, or reflexivity hypotheses. There is
 no unit law. The assertions are limited to the stated complex-algebra
-setting; general coefficients and proofs are separate obligations. The
+setting; general coefficients are not treated here. The proof is
+`injectivityAssertions` in `NonUnitalModuleInjectivityProof`. The
 projective existence theorem, I.5.3 free modules, general I.6
-limits/colimits, and the remainder of the whole-book program are outside
-this focused statement unit.
+limits/colimits, and the remainder of the book are outside
+this module.

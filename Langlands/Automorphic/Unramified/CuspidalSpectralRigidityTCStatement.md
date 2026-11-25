@@ -1,11 +1,5 @@
 # Totally complex forms of Jacquet–Shalika rigidity for supplied cuspidal spectral systems
 
-Author: Worker 0. Statement contribution to Task 0
-(`69dd20b3-6a77-44aa-b779-32391843c8dd`), revision 1, as decided in the
-operator's answer `d9c91a7e0fcb5cabbc936380004a4ae7` (option b1) to request
-`99dd5c974ab65af5a036022f960632d5`. It extends the convention of the operator's
-answer `81ed24709e7050068786116ca6613260` (Option A) to Harris's input 9.
-
 **Scope.** The module
 `Langlands.Automorphic.Unramified.CuspidalSpectralRigidityTCStatement` defines four
 propositions in the namespace `Langlands.Automorphic.Unramified` and proves
@@ -23,7 +17,7 @@ conjunction is formed from the originals.
 | `CuspidalEulerConstituentRecoveryTCStatement` | `uF uV` | `CuspidalEulerConstituentRecoveryStatement` |
 | `CuspidalSpectralRigidityTCStatement` | `uF uV` | `CuspidalSpectralRigidityStatement` |
 
-The principal declaration of the unit is
+The principal declaration of the module is
 `Langlands.Automorphic.Unramified.CuspidalSpectralRigidityTCStatement`, the totally
 complex form of Harris's input 9 in
 `Langlands.Global.Harris.Proposition48ReductionStatement`.
@@ -55,8 +49,8 @@ field `F : Type uF` with `[CompactSpace (AdeleQuotient F)]`:
 
 The originals have no archimedean clause: they speak only of finite places. The
 restriction therefore changes only the class of number fields, and nothing in the
-bodies becomes vacuous. Its purpose is the proof. The route proposed in the
-contract of Task 6446 follows JS81 §4.1 and Theorem 4.2: the behaviour at `s = 1`
+bodies becomes vacuous. Its purpose is the proof. The proof route proposed for
+`CuspidalSpectralRigidityStatement` follows JS81 §4.1 and Theorem 4.2: the behaviour at `s = 1`
 of the partial pair L-functions over the same field, namely absolute convergence
 (Jacquet–Shalika I, 5.2–5.3), the pole at `s = 1` (from Getz–Hahn Theorem 11.7.1,
 published as `Langlands.Global.CuspidalPairPoleStatement`) and Shahidi's
@@ -70,8 +64,8 @@ involves only `GL_n(ℂ)`. So on that route a proof of these forms needs no
 ## 3. Relation to the originals
 
 Each original implies its totally complex form at the same universe levels: apply
-it to the same field and forget the new instance. A private development check of
-Worker 0 compiled the three implications, each as `fun h F _ _ _ _ => h F`, and
+it to the same field and forget the new instance. A development check outside
+the module compiled the three implications, each as `fun h F _ _ _ _ => h F`, and
 the implication of the conjunctions componentwise. The converses are not claimed.
 The statements make no claim about number fields with a real place.
 
@@ -89,12 +83,10 @@ extension of a totally complex field is totally complex
 `Langlands.Global.Arithmetic.HarrisProposition48ReductionTCStatement`) takes
 `CuspidalSpectralRigidityTCStatement.{0, uV}` as its input 9.
 
-The unrestricted statement stays the target of its task (Task 6446) as
-infrastructure. Following the operator's answers, its owner is asked to stage a
-proof of these forms as a supporting candidate under that task. The operator also
-asked that the alternative route from partial L-functions (Jacquet–Shalika 1981,
-Part I, without archimedean parameters) be recorded in the contexts of Tasks 6446
-and 6821; no statement for it is made here.
+The unrestricted statement `CuspidalSpectralRigidityStatement` remains in the
+Library as infrastructure. No statement is made here for the alternative route
+from partial L-functions (Jacquet–Shalika 1981, Part I, without archimedean
+parameters).
 
 ## 5. Sources and provenance
 

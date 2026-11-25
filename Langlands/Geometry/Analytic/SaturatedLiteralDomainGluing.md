@@ -1,11 +1,12 @@
 # Unique quotient gluing of literal full strong domain matching families
 
-This derived unit concerns actual original-chart domain quasinet covers in
-saturated atlas presentations. The input consists of full strong local maps
-agreeing literally on every intersection. The constructed quotient arrow uses
-the cover-adapted source numerator and is uniquely determined among all quotient
-arrows by the given local maps. Arbitrary matching quotient families
-and their strictification remain separate obligations.
+This module, a derived construction, concerns actual original-chart domain
+quasinet covers in saturated atlas presentations. The input consists of full
+strong local maps agreeing literally on every intersection. The constructed
+quotient arrow uses the cover-adapted source numerator and is uniquely
+determined among all quotient arrows by the given local maps. Arbitrary matching
+quotient families and their strictification are treated in
+`QuotientDomainStrongRefinement` and `QuotientDomainGluing`.
 
 Berkovich, *Étale cohomology for non-Archimedean analytic spaces* (1993),
 Definition 1.3.1 (printed p.23 / PDF p.20), Proposition 1.3.2 (printed p.24 /
@@ -44,6 +45,7 @@ bounded algebra maps from spectrum values is used.
 The field, ambient-space, chart-index and cover-index universes remain
 independent. No nonemptiness premise is imposed; the quasinet condition governs
 empty cases. The result is restricted to families whose local maps and overlap
-equalities are already literal full strong data. Full quotient morphism descent,
+equalities are already literal full strong data. Full quotient morphism descent
+is proved in `QuotientDomainGluing` and `QuotientDomainHomSheaf`;
 identification with all finite-gluing analytic spaces, and all analytic domains
-remain separate obligations.
+lie outside this module.

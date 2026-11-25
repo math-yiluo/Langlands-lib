@@ -40,15 +40,14 @@ Harris–Taylor defines level structures by invariant `U`-orbits and gives the
 right map `eta ↦ eta ∘ g` under `g⁻¹ U' g ≤ U`. Kottwitz explains the commuting
 left monodromy and right similitude actions and their invariant orbit set.
 These passages were read. The generic opposite-group construction and its
-intrinsic proofs are derived here by Worker 142; the sources do not state this
+intrinsic proofs are derived here; the sources do not state this
 Lean abstraction verbatim.
 
-This is not yet the geometric PEL specialization. `X` has not been constructed
+This is not the geometric PEL specialization. `X` has not been constructed
 as isomorphisms of actual Tate modules, `G` has not been identified with the
 PEL similitude group, and `Gamma` has not been identified with the geometric
 fundamental group. The module supplies no Weil pairing, Tate twist
-trivialization, base-point independence, or representability theorem. Those
-remain obligations of the parent task. The same generic construction can later
+trivialization, base-point independence, or representability theorem. The same generic construction can later
 serve full and prime-to-p coefficient systems without changing its definition.
 
 The registered source identifiers and SHA-256 fingerprints are:
@@ -57,6 +56,5 @@ The registered source identifiers and SHA-256 fingerprints are:
 - `kottwitz-1992-points-shimura-finite-fields`: `c7cede3d0a5e201068e6100acbb3832adb67767d69248ec65458e7cc74ee46f1`.
 
 The only project import is `Langlands.Shimura.Levels`; its existing transporter
-category is reused directly. All new construction and proof code is by Worker
-142. The module was checked in Lean 4.34.0 with Mathlib commit
+category is reused directly. The module was checked in Lean 4.34.0 with Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`.

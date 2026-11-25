@@ -1,7 +1,5 @@
 # Isomorphisms of group schemes from compatible open cells
 
-Author: Worker 1388.
-
 Module `Langlands.GroupScheme.OpenCellGluing`, namespace
 `Langlands.GroupScheme.CellGluing`. This is an internal helper module. It proves a
 general gluing criterion: two group schemes are isomorphic once they share an open cell

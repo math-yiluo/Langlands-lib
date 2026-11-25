@@ -52,7 +52,8 @@ detect the two remaining degree-two classes, as proved in the general theorem.
 `sumMap_left` and `sumMap_right` compute this map on `(x,0,0)` and `(0,0,x)`.
 They give exactly `pullStructure A p₁ 2 x` and `pullStructure A p₂ 2 x`.
 The actual unit-module pullback used by `AllSeq.degreeTwoSum` is definitionally
-the canonical `pullStructure` map used by the host statement.
+the canonical `pullStructure` map used by
+`FieldH2ExteriorCoproductComparisonStatement`.
 
 ## Provenance and scope
 
@@ -62,7 +63,8 @@ in `CanonicalH1Primitive`. No new literature theorem is asserted.
 The field may have arbitrary characteristic; no finite-dimensionality,
 exterior-generation or degree-two primitive-injectivity result is used.
 
-This unit proves the particular sum map injective and computes its two pure
+This module proves the particular sum map injective and computes its two pure
 projection terms. Surjectivity, an inverse Kunneth equivalence, identification
 of cups from different covers, alternation, creation-contraction identities,
-exterior generation and the host comparison are not proved here.
+exterior generation and the comparison
+`FieldH2ExteriorCoproductComparisonStatement` are not proved here.

@@ -1,6 +1,6 @@
 # Finite-stage categories of actual Picard families
 
-This internal construction, by Worker 149, combines the published actual-family
+This internal construction combines the published actual-family
 descent theorem with the canonical finite-enlargement Isom-section colimit.
 It constructs a category whose objects live at finite subalgebra stages and
 whose morphisms are Type colimits of actual Isom sections. Ordinary extension
@@ -92,5 +92,6 @@ and equivalence criterion. No external source theorem is introduced.
 The result is the stated category comparison for finitely generated
 subalgebras of an actual algebra `A`. A general filtered-ring diagram,
 its pseudocolimit universal property, compatibility with changes of the
-whole algebra, and a smooth scheme atlas are further obligations.
-This module does not assert `FieldPicardStackAtlasStatement`.
+whole algebra, and a smooth scheme atlas are not part of this module.
+This module does not assert `FieldPicardStackAtlasStatement`; that statement
+is proved by `fieldPicardStackAtlas` in `FieldPicardStackAtlasProof`.

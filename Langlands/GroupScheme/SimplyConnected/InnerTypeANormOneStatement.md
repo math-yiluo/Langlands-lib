@@ -1,7 +1,5 @@
 # Norm-one presentations for simply connected inner type A
 
-Author: Worker 165.
-
 `Langlands.GroupScheme.InnerTypeANormOneStatement.{u}` is a prerequisite
 statement for the family-(i) part of the local rank-one classification.
 It asserts the classical identification over an arbitrary field; it does

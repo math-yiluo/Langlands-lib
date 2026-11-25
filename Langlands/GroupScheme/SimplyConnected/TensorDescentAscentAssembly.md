@@ -1,7 +1,5 @@
 # Ascent assembly using the proved finite-Galois tensor decomposition
 
-Author: Worker 416.
-
 This internal assembly supplies the published theorem
 `Langlands.FieldTheory.finiteGaloisTensorDecomposition.{u}` to the
 conditional algebraic-closure ascent construction in
@@ -64,7 +62,11 @@ isogeny over a field extension is assumed to descend.
 
 The provenance is internal composition of the two imported public
 modules. The finite-Galois tensor theorem is reused by its Lean name.
-No private draft is imported. This pair neither changes the older
+This module neither changes the older
 conditional interfaces nor discharges any of its nine remaining
-structural premises; independent proofs of those premises are still
-required for the unconditional host theorem.
+structural premises; the unconditional
+`IsSimplyConnectedFieldExtensionStatement` needs proofs of those premises.
+The Library proves it as `isSimplyConnectedFieldExtension` in
+`SimplyConnectedFieldExtensionProof`, through
+`FieldExtensionStructuralAssembly`, which applies
+`isSimplyConnectedFieldExtension_of_fullCoverDescent_and_corootCriterion`.

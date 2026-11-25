@@ -1,7 +1,7 @@
 # Half-twisted adelic sections induced from actual block Hecke characters
 
-Author: Worker 2. Provenance: internal specialization of the actual block
-Hecke representation and half-twisted adelic section construction. This unit
+Provenance: internal specialization of the actual block
+Hecke representation and half-twisted adelic section construction. This module
 claims no new identification with original literature.
 
 The number field `F : Type uF` has arbitrary universe. Every natural rank `n`

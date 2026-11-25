@@ -1,6 +1,6 @@
 # Absolute convergence of the actual rank-one-pair block integrals
 
-Worker 396. Internal derived prerequisite for the matrix functional-equation
+Internal derived prerequisite for the matrix functional-equation
 comparison. The field and representation-carrier universes remain independent,
 and the original representation may be reducible of full Whittaker type.
 
@@ -67,13 +67,15 @@ The latter is proved equal to the actual canonical constant-one vector for
 `psi.scale(-1)`. Hence the conclusion is absolute product convergence of
 the genuine complementary-block dual integrand on a right half-plane.
 
-This strengthens the separately submitted scalar ComplementaryContinuation
-argument: scalar equality alone is not used to infer absolute convergence.
+This strengthens the scalar argument of
+`RankOneMatrixFunctionalEquationComparisonComplementaryContinuation`: scalar equality alone is not used to infer absolute convergence.
 The proof uses an exact finite pointwise expansion and integrability of each
 separable summand. No new original-source transcription, irreducibility,
 finite length, multiplicativity or conditional I1/I2/I3 comparison is used.
 The paired normalized functional equation and final all-rank gamma comparison
-remain later obligations.
+are not proved here; the final comparison is
+`rankOneMatrixFunctionalEquationComparison` in
+`RankOneMatrixFunctionalEquationComparisonProof`.
 
 ## All-field port
 

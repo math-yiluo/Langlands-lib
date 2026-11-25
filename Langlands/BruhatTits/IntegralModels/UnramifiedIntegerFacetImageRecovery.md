@@ -69,10 +69,13 @@ proves `unramifiedIncidentParabolicImage_injective`.
 The companion import cleanup in `GenericRootFixerIntersection` changes only its
 provider of generic apartment injectivity to `GenericApartmentInjection` and
 corrects the provider name in its Markdown. Its theorem statements and proofs
-are unchanged. This avoids passing through a maximal-unramified wrapper whose
-imports contain the descent statements barred by the host task.
+are unchanged. This avoids passing through the maximal-unramified wrapper
+`MaximalUnramifiedApartmentInjective`, whose imports contain the unramified
+building-descent statements of `UnramifiedBuildingDescentReduction`; neither
+`GenericRootFixerIntersection` nor this module imports them.
 
-This unit does not construct the model family, prove its neutral integral-point
+This module does not construct the model family, prove its neutral integral-point
 formula, supply congruence containment or special-fibre image parabolicity, or
 prove attainment of all parabolics. In particular it establishes neither the
-full facet-parabolic bijection nor the host fixed-point split-torus theorem.
+full facet-parabolic bijection nor the fixed-point split-torus theorem
+`UnramifiedFixedPointSplitTorusStatement`.

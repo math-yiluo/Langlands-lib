@@ -12,6 +12,15 @@ regular elliptic at one finite place `v`. Then `R(f)` is trace class on `L²([G]
 is a finite sum of volumes times elliptic orbital integrals. The automorphic space, the
 operators, the measures and the orbital integrals are the Library's group-scheme objects.
 
+The form for finite sums `f = ∑ⱼ aⱼ ⊗ bⱼ` of tensor test functions is
+`Langlands.TraceFormula.GeneralLinearTensorSimpleTraceFormulaStatement` (with
+`GeneralLinearTensorSimpleTracePiecesStatement`, module
+`Langlands.TraceFormula.GeneralLinearTensorSimpleTraceFormulaStatement`). Both are proved from this
+statement and `GeneralLinearRadicalIntegralVanishingStatement` in
+`Langlands.TraceFormula.GeneralLinearTensorSimpleTraceFormulaReduction`
+(`generalLinearTensorSimpleTraceFormula_of_simpleTraceFormula`,
+`generalLinearTensorSimpleTracePieces_of_simpleTraceFormula`).
+
 ## Notation from the Library
 
 All names below are in the Library. Apart from the statement, the module adds no definition;
@@ -188,7 +197,9 @@ used in this project.
 - **Convolution and continuity.** The source takes `f` smooth. Here `f = f₁ * f₂` with `f₁, f₂`
   only continuous and compactly supported. Smooth functions are finite sums of such
   convolutions (Dixmier–Malliavin, used in the proof of Getz–Hahn Theorem 9.1.2). Both sides of
-  the identity are linear in `f`, so finite sums can be handled by a consumer.
+  the identity are linear in `f`, so finite sums can be handled by a consumer; for finite sums of
+  tensor test functions this is `GeneralLinearTensorSimpleTraceFormulaStatement`, proved from this
+  statement (above).
 - **Hilbert–Schmidt hypothesis.** The source proves that `R_cusp` of a smooth function is
   Hilbert–Schmidt (Theorem 9.1.2). This statement assumes it for the two factors `f₁, f₂`
   only. That is weaker than the hypothesis of the Library's
@@ -196,8 +207,9 @@ used in this project.
   continuous function. The statement does not claim that the hypothesis holds.
 - **Cuspidal image.** The source assumes that `R(f)` has cuspidal image. Here the assumption is
   hypothesis 2 on `f₂`: its integrals along all two-sided translates of the adelic unipotent
-  radicals vanish. This implies that `R(f₂)`, and hence `R(f)`, has cuspidal image (Task
-  7578). Task 7581 derives hypothesis 2 from a two-block condition at one finite place, as in
+  radicals vanish. This implies that `R(f₂)`, and hence `R(f)`, has cuspidal image
+  (`GroupSchemeCuspidalImageStatement`). `GeneralLinearRadicalIntegralVanishingStatement`
+  derives hypothesis 2 from a two-block condition at one finite place, as in
   Getz–Hahn Lemma 16.4.2.
 - **Ellipticity.** The source assumes that every rational element conjugate into the support is
   elliptic and semisimple. Here the support of `f` is regular elliptic at a finite place `v`. A
@@ -212,14 +224,14 @@ used in this project.
   the conclusion. The identity is stated for every compatible choice of measures, instead of one
   normalized choice.
 
-## Why it is true (for the reviewer)
+## Why it is true
 
 1. `f` is continuous with compact support, hence integrable. `R(f) = R(f₁) R(f₂)` by Fubini and
    left invariance of `μG`. By hypothesis 2, `R(f₂)` maps `L²([G])` into the cuspidal subspace
-   (Task 7578), and so does `R(f₂)*`, since the adjoint weight `g ↦ conj f₂(g⁻¹)` also satisfies
+   (`GroupSchemeCuspidalImageStatement`), and so does `R(f₂)*`, since the adjoint weight `g ↦ conj f₂(g⁻¹)` also satisfies
    hypothesis 2. So `R(f₂) = ι R_cusp(f₂) P`, with `ι` the inclusion and `P` the orthogonal
    projection. Hence `R(f) = ι R_cusp(f₁) R_cusp(f₂) P` is a product of two Hilbert–Schmidt
-   operators, and so trace class (Task 7579 has this argument).
+   operators, and so trace class (this is `GroupSchemeFullL2TraceClassStatement`).
 2. Using `G(𝔸_F) = A⁺ × G(𝔸_F)¹` with the product measure and the Weil formula for `Γ`, the
    operator `R(f)` on `L²(Γ \ G(𝔸_F)¹)` has kernel `K(x, y) = ∑_{γ ∈ Γ} fOne(x⁻¹ γ y)`. The
    sum is locally finite, so `K` is continuous. For a trace-class integral operator with
@@ -230,7 +242,7 @@ used in this project.
    `a x⁻¹ q x` lies in the support of `f`. Its component at `v` is conjugate to `q`, so `q` is
    regular elliptic at `v`. The support of `fOne` is compact, and its points are regular
    elliptic at `v`. The Library statement `GeneralLinearEllipticClassFinitenessStatement`
-   (Task 7429) says that only finitely many `GL_n(F)`-classes of rational elements have a
+   says that only finitely many `GL_n(F)`-classes of rational elements have a
    `GL_n(𝔸_F)`-conjugate in such a compact set. This gives the finite family `r`.
 4. Unfolding: `∫_{Γ\G(𝔸_F)¹} ∑_γ fOne(x⁻¹ γ x) dx = ∑_j ∫_{(Γ∩C_j)\G(𝔸_F)¹} fOne(x⁻¹ (r j) x) dx`.
    Each term equals `vol((Γ ∩ C_j) \ C_j) · O_{r j}(fOne)` by the two compatibility
@@ -250,23 +262,26 @@ used in this project.
    `G(𝔸_F)¹`, so the corestricted map is still proper. A compactly supported continuous
    function is integrable for the quotient measure `νC j`, which is finite on compact sets.
 
-## Relation to other tasks
+## Relation to other statements
 
-- Task 7579 (`Langlands.TraceFormula.GroupSchemeFullL2TraceClassStatement`): trace class of
+- `Langlands.TraceFormula.GroupSchemeFullL2TraceClassStatement`: trace class of
   `R(f₁ * f₂)` on `L²([G])` for a general reductive group scheme.
-- Task 7578 (`Langlands.TraceFormula.GroupSchemeCuspidalImageStatement`): cuspidal image under
+- `Langlands.TraceFormula.GroupSchemeCuspidalImageStatement`: cuspidal image under
   hypothesis 2.
-- Task 7581 (`Langlands.TraceFormula.GeneralLinearRadicalIntegralVanishingStatement`): hypothesis
+- `Langlands.TraceFormula.GeneralLinearRadicalIntegralVanishingStatement`: hypothesis
   2 from a local condition at one finite place.
-- Task 7429, in the Library as `Langlands.TraceFormula.GeneralLinearEllipticClassFinitenessStatement`
-  (proof Task 7557): finiteness of the rational classes that are regular elliptic at a place and
-  meet a compact set.
-- Task 7410, in the Library as
-  `Langlands.Analysis.OperatorIdeals.TraceClassContinuousKernelDiagonalStatement` (proof Task
-  7554): the trace of a trace-class operator with continuous kernel is the integral of the
-  kernel on the diagonal.
-- Task 7420: the abstract simple twisted trace formula for a discrete subgroup of a unimodular
-  group. Its measure hypotheses have the same form as here.
+- `Langlands.TraceFormula.GeneralLinearEllipticClassFinitenessStatement`
+  (proved by `Langlands.TraceFormula.generalLinearEllipticClassFiniteness`, module
+  `Langlands.TraceFormula.GeneralLinearEllipticClassFinitenessProof`): finiteness of the rational
+  classes that are regular elliptic at a place and meet a compact set.
+- `Langlands.Analysis.OperatorIdeals.TraceClassContinuousKernelDiagonalStatement` (proved by
+  `Langlands.Analysis.OperatorIdeals.traceClassContinuousKernelDiagonal`, module
+  `Langlands.Analysis.TraceClassKernelDiagonalProof`): the trace of a trace-class operator with
+  continuous kernel is the integral of the kernel on the diagonal.
+- `Langlands.TraceFormula.AbstractSimpleTwistedTraceFormulaStatement`
+  (proved by `Langlands.TraceFormula.abstractSimpleTwistedTraceFormula`, module
+  `Langlands.TraceFormula.AbstractSimpleTwistedProof`): the abstract simple twisted trace formula
+  for a discrete subgroup of a unimodular group. Its measure hypotheses have the same form as here.
 - None of these is imported. A proof of this statement may use them.
 
 ## What this module does not claim

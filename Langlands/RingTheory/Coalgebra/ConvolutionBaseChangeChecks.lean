@@ -182,7 +182,7 @@ example : (inferInstance : Algebra k (WithConv (D →ₗ[k] k))) = LinearMap.con
 
 example : (inferInstance : Mul (WithConv (D →ₗ[k] k))) = LinearMap.convMul := rfl
 
-example : (inferInstance : One (WithConv (D →ₗ[k] k))) = LinearMap.convOne := rfl
+example : (inferInstance : One (WithConv (D →ₗ[k] k))) = LinearMap.instOneWithConvId := rfl
 
 example : (inferInstance : Algebra K (WithConv ((K ⊗[k] D) →ₗ[K] K))) =
     LinearMap.convAlgebra := rfl
@@ -192,7 +192,7 @@ example : (inferInstance : Semiring (WithConv ((K ⊗[k] D) →ₗ[K] K))) =
 
 example : (inferInstance : Mul (WithConv ((K ⊗[k] D) →ₗ[K] K))) = LinearMap.convMul := rfl
 
-example : (inferInstance : One (WithConv ((K ⊗[k] D) →ₗ[K] K))) = LinearMap.convOne := rfl
+example : (inferInstance : One (WithConv ((K ⊗[k] D) →ₗ[K] K))) = LinearMap.instOneWithConvId := rfl
 
 /-- The target product is the convolution for the scalar-extended comultiplication. -/
 example (F G : WithConv ((K ⊗[k] D) →ₗ[K] K)) (c : K ⊗[k] D) :

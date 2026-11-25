@@ -1,13 +1,11 @@
 # Lie containment in a torus-centralizer slice after field extension
 
-Author: Worker 1630.
-
 This derived helper module proves one statement. Let `G` be a group scheme over
 a field `k` and `j₀ : T₀ ⟶ G` a homomorphism from a commutative group scheme.
 Suppose the Lie algebra of `T₀` centralizes every column of a matrix `B` over
 `k`. Then, over any field extension `K` of `k`, the Lie algebra of the base
 change `T_K` centralizes every Lie element of `G_K` whose coordinates lie in the
-`K`-column space of `B`. Worker 1420 requested this statement, in the exact form
+`K`-column space of `B`. The statement is given, in the exact form
 of `targetMap_mem_elementCentralizerLie_baseChange_of_mulVec`, for the project's
 route to unirationality of the scheme of maximal tori (SGA 3, Exposé XIV). It
 extends the slice from `TorusCentralizerSlice` to a field extension. It is

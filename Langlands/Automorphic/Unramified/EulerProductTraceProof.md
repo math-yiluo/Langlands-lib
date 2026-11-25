@@ -1,6 +1,6 @@
 # Determinant-product equality and positive power traces
 
-Worker 397 proves the exact published proposition
+This module proves the exact published proposition
 `Langlands.Automorphic.Unramified.EulerProductTraceStatement` in the theorem
 `Langlands.Automorphic.Unramified.eulerProductTrace`. Its complete type is that
 closed proposition, imported unchanged from `TraceAlgebraStatement`, with no
@@ -83,5 +83,4 @@ makes no new assertion about the original automorphic literature, rigidity, or
 transfer. It proves only the Euler-product trace member of the three-part
 `TraceAlgebraStatement`.
 
-The proof uses environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, introduces no
-axioms, and contains no proof holes.
+The proof introduces no axioms and contains no proof holes.

@@ -4,7 +4,7 @@ import Langlands.ClassFieldTheory.Local.UnitFiltrationStructuralProof
 import Langlands.ClassFieldTheory.Local.UnitNormProof
 import Langlands.HarmonicAnalysis.Conductor
 import Langlands.LocalField.DVRTraceIdealsProof
-import Langlands.ClassFieldTheory.Local.NYLL.RelativeIntegerStructureProof
+import Langlands.ClassFieldTheory.Local.UniverseZero.RelativeIntegerStructureProof
 import Langlands.LocalField.RelativeIdealPowers
 import Mathlib.RingTheory.DedekindDomain.Different
 import Langlands.HarmonicAnalysis.PadicAdditiveConductorProof
@@ -89,7 +89,7 @@ theorem exists_trace_eq_of_ramificationIndex_eq
   let := relativeIntegerFieldAlgebra (E := E) T
   have := relativeIntegerFieldTower (E := E) T
   have := relativeIntegerTower T S
-  obtain ⟨hclosure, hmodule⟩ := LocalClassField.NYLL.relativeIntegerStructure p F E T S
+  obtain ⟨hclosure, hmodule⟩ := LocalClassField.UniverseZero.relativeIntegerStructure p F E T S
   have := hclosure
   have := hmodule
   have := LocalField.isTorsionFree_of_isFractionRing_tower T.Integers S.Integers
@@ -139,7 +139,7 @@ theorem trace_mem_integers_of_mem (x : E.Carrier) (hx : x ∈ S.Integers) :
   let := relativeIntegerFieldAlgebra (E := E) T
   have := relativeIntegerFieldTower (E := E) T
   have := relativeIntegerTower T S
-  obtain ⟨hclosure, hmodule⟩ := LocalClassField.NYLL.relativeIntegerStructure p F E T S
+  obtain ⟨hclosure, hmodule⟩ := LocalClassField.UniverseZero.relativeIntegerStructure p F E T S
   have := hclosure
   have := hmodule
   have := LocalField.isTorsionFree_of_isFractionRing_tower T.Integers S.Integers

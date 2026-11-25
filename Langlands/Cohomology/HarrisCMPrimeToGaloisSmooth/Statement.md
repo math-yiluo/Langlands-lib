@@ -1,8 +1,5 @@
 # Galois smoothness of prime-to-`m` CM cohomology
 
-Author: Worker 3, for the Harris and Berkovich cohomological
-theorem-statement framework (task `b91b0934-0122-4c05-b359-4e7ed64bbe3d`).
-
 This module states one proposition, `HarrisCMPrimeToGaloisSmoothStatement`,
 about the Library's functor `cmPrimeToGaloisCohomologyFunctor` (module
 `Langlands.Shimura.PEL.HarrisTaylorCMPrimeToGaloisCohomology`). Fix `m ≠ 0`
@@ -64,8 +61,8 @@ The Lean definition keeps every premise as an explicit hypothesis, as the
 Library's modules do. A premise being a parameter does not mean that it is
 unproved. In Library commit `568f1cff4df2c51ba08b932716bf99235d0032c7`,
 fourteen premise types have published proofs, so a user can pass these
-theorems as the corresponding arguments. Check `9749efbe` (see the checks
-below) confirms that each theorem, at universe zero, has the premise type.
+theorems as the corresponding arguments. The first of the checks
+below confirms that each theorem, at universe zero, has the premise type.
 
 | Premise | Type | Library theorem | Module |
 | --- | --- | --- | --- |
@@ -111,6 +108,14 @@ modules `HarrisCMColimitInvariants`, `HarrisCMLevelGaloisSmooth` and
 `Langlands.Shimura.PEL.HarrisTaylorCMGeometricLatticeInverseImage`. All
 seven use the types only as binders or variables, and none concludes them.
 
+In the Library as it is now, `square`, `existence` and `geometry` are proved as
+well: `Langlands.AbelianScheme.mumfordBundlePicardZero` (module
+`Langlands.AlgebraicGeometry.Picard.MumfordBundlePicardZeroProof`),
+`Langlands.AbelianScheme.relativeDualSchemeExistence` (module
+`Langlands.AlgebraicGeometry.Picard.RelativeDualSchemeExistenceProof`) and
+`Langlands.AbelianScheme.relativeDualSchemeGeometry` (module
+`Langlands.AlgebraicGeometry.Picard.RelativeDualSchemeGeometryProof`).
+
 Since `q` is unproved, the proposition is a statement about the objects that
 any witness `q` produces. A proof must work for every such witness.
 
@@ -152,7 +157,7 @@ Library's levels live.
 - *Cohomology and colimit.* `H^d(X̄_{U(K')}, M_{K'}) = (EtaleDerivedSections.cohomology X̄_{U(K')} R d).obj M_{K'}`,
   the `d`-th right derived functor of global sections on sheaves of
   `R`-modules on the small étale site, computed with injective resolutions
-  (Worker 13's `EtaleDerivedSections`). The diagram
+  (`EtaleDerivedSections`). The diagram
   `(cmPrimeToArithmeticCoefficients ... M).cohomology d` has these values,
   and `ι_{K'} = RestrictedLevelColimit.ι (...) K'` is the insertion of level
   `K'` into its colimit. The functor `cmPrimeToGaloisCohomologyFunctor` is
@@ -178,7 +183,7 @@ Library's levels live.
   `cmPrimeToGaloisCohomology_ρ_ι_apply` proves that the operator of `σ` on
   the colimit sends `ι_{K'} y` to `ι_{K'} (T_σ^{K'} y)`.
 - *Comparison with the published operators.* The test lemma
-  `levelOperator_eq` of check `9749efbe` (below) proves that `T_σ^{K'}` is
+  `levelOperator_eq` of the first check below proves that `T_σ^{K'}` is
   the level-`U(K')` operator `T_σ` of
   [HarrisCMLevelGaloisSmooth](../HarrisCMLevelGaloisSmooth/Statement.md),
   built from `cmSmallLevelGaloisAction` and
@@ -217,7 +222,7 @@ there is an open subgroup `V` of `Γ` such that every `σ ∈ V` fixes `x`.
 
 ### Level-wise form
 
-Check `9749efbe` (below) defines the level-wise form
+The first check below defines the level-wise form
 
 ```lean
 ∀ m hm K₀ d M (K' : (cmPrimeToProperty D m hm K₀).FullSubcategory)
@@ -303,12 +308,10 @@ coefficients are level-trivial
 components of the isomorphisms `restrictionProjectionIso`
 (`cmSmallLevelArithmeticCoefficients_map`). So the injectivity part of
 `HarrisCMPrimeToInvariantsStatement` (module
-`Langlands.Cohomology.HarrisCMPrimeToInvariants.Statement`, a statement
-candidate by the same author, `a8fc38cf-2b8f-4e40-a716-56f0f5917041`, which
-is not in Library `568f1cff`) applies to them. The direct argument above
-needs no such hypothesis.
+`Langlands.Cohomology.HarrisCMPrimeToInvariants.Statement`) applies to them.
+The direct argument above needs no such hypothesis.
 
-The Library module `Langlands.Geometry.EtaleGaloisTower` (no Author line)
+The Library module `Langlands.Geometry.EtaleGaloisTower`
 constructs smooth Galois actions, for the Krull topology, on the colimit over
 finite Galois subextensions `E` of the cohomology of `X_E`. Its Markdown says
 that it does not prove that this colimit is isomorphic to the cohomology of
@@ -316,7 +319,7 @@ that it does not prove that this colimit is isomorphic to the cohomology of
 cohomology is that of `X̄_U` itself.
 
 The Library module `Langlands.Shimura.PEL.HarrisTaylorCMDecompositionCohomology`
-(no Author line, new in `568f1cff`) composes
+(new in `568f1cff`) composes
 `cmPrimeToGaloisCohomologyFunctor` with the restriction to the absolute
 Galois group of a completion `F_w` (`cmPrimeToDecompositionCohomologyFunctor`).
 Its Markdown says: "No topology on the Galois groups and no continuity of
@@ -371,9 +374,9 @@ The statement does not cover:
   coefficients, or Harris's spectral sequences;
 - compact supports, intersection cohomology, or local-global compatibility;
 - any topology on the cohomology modules other than the discrete one;
-- a proof of any premise. The open premises `square`, `q`, `existence`,
-  `geometry` and `hRigid` stay open, and the proved ones are not
-  instantiated here.
+- a proof of any premise. The premises `q` and `hRigid` are not proved in
+  the Library; the others are proved there (see "Proof status of the
+  premises") but are not instantiated here.
 
 ## Registered sources
 
@@ -405,17 +408,16 @@ The statement does not cover:
 ## Formal dependencies and checks
 
 Direct project import, in Library commit
-`568f1cff4df2c51ba08b932716bf99235d0032c7` and the workspace (unchanged
+`568f1cff4df2c51ba08b932716bf99235d0032c7` (unchanged
 since `7e84f6ad2a2083a26977b5113dd0ab93f3f3b0ed`):
 
-| Module | Author | Lean SHA-256 | Markdown SHA-256 |
-| --- | --- | --- | --- |
-| `Langlands.Shimura.PEL.HarrisTaylorCMPrimeToGaloisCohomology` | Library (no Author line) | `a185d877105c950f281ff405593ef815e4b177e1c639f5c431f3c0a700a8dcb1` | `49abedef0f75b5667fb2d058d30e29a1873f3eb3b8da6102e56d685088381ea6` |
+| Module | Lean SHA-256 | Markdown SHA-256 |
+| --- | --- | --- |
+| `Langlands.Shimura.PEL.HarrisTaylorCMPrimeToGaloisCohomology` | `a185d877105c950f281ff405593ef815e4b177e1c639f5c431f3c0a700a8dcb1` | `49abedef0f75b5667fb2d058d30e29a1873f3eb3b8da6102e56d685088381ea6` |
 
 The module also imports Mathlib's `Mathlib.FieldTheory.KrullTopology`.
-Through the import it uses `HarrisTaylorCMSmallLevelIndex` (Author: Worker
-57) for the small levels; `EtaleGaloisAction` (Author: Worker 13) for
-`baseChangeMap`; `EtaleDerivedSections` (Author: Worker 13) for the
+Through the import it uses `HarrisTaylorCMSmallLevelIndex` for the small
+levels; `EtaleGaloisAction` for `baseChangeMap`; `EtaleDerivedSections` for the
 cohomology; and the Library modules `HarrisTaylorCMPrimeToCohomology`
 (`cmPrimeToSplit`, `cmPrimeToProperty`, `cmPrimeToSchemeTower`,
 `cmPrimeToTowerEtale`), `HarrisTaylorCMSmallLevelGaloisCoefficients`,
@@ -425,21 +427,20 @@ cohomology; and the Library modules `HarrisTaylorCMPrimeToCohomology`
 (`automorphismActionFunctor`, `canonicalCohomology_exists_level`),
 `LevelTowerCanonicalCoefficients` (`projectionCohomologyMap`,
 `projectionCohomologyMap_congr`), `RestrictedLevelColimit` and
-`Representation.Category.Basic`, whose Markdown files have no Author line.
+`Representation.Category.Basic`.
 The truth argument also uses the published statement
 `Langlands.Cohomology.HarrisCMLevelGaloisSmooth.Statement`, which this
 module does not import.
 
-The environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`: Lean 4.34.0,
+The environment is Lean 4.34.0,
 Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
 
 Checks against Library `568f1cff`, all on the final Lean file (SHA-256
 `1360198eeba5a7c711b0d4851a78455f608d7f5a7206c8f59250c869e78d7aad`). None
 reported errors or warnings.
 
-- `9749efbe-4c1e-4c33-bc70-6e1757be6427` built the file with Lake from a
-  draft directory together with two test files that are not part of the
-  candidate.
+- The first built the file with Lake together with two test files that are
+  not part of the Library.
   - `Langlands/Inspect/CMPrimeToGaloisSmoothPrint.lean` (SHA-256
     `c2ce510bd354295191a2b3a24e00c616e0eeb76ffdf74015a880e6ab9f1c04ec`)
     printed `HarrisCMPrimeToGaloisSmoothStatement` with universes: a
@@ -454,15 +455,13 @@ reported errors or warnings.
     `example` with the premise type at universe zero is closed by the cited
     theorem. `#print axioms` shows that each theorem depends only on
     `propext`, `Classical.choice` and `Quot.sound`.
-- `98657cb8-1a3d-456d-b635-eb3cf4f69f8f` built the file with Lake from the
-  workspace and inspected `HarrisCMPrimeToGaloisSmoothStatement`: a
+- The second built the file with Lake and inspected
+  `HarrisCMPrimeToGaloisSmoothStatement`: a
   `Prop`-valued definition with no universe parameters, depending only on
   `propext`, `Classical.choice` and `Quot.sound` (type hash
   `588bf787909aadd0c9edc516c8ac66578b6127a052a2612a94d08bf69337d05b`).
 
-The same files passed the same checks against Library `7e84f6ad`
-(`01ba42dd-27eb-4cbf-9ed3-c869ef790fc7`,
-`c1f66fd2-e92f-4ddf-80ed-52d5931ca211` and
-`3b11d1de-817f-4457-9773-8ad3af7a6434`, with the same type hash).
+The same files passed the same checks against Library `7e84f6ad`, with the
+same type hash.
 
 This establishes a well-formed statement. It does not prove it.

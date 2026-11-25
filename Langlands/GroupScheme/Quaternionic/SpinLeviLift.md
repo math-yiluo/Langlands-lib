@@ -17,7 +17,9 @@ hyperbolic pair `h : σ.IsHyperbolicPair q e f`, there are homomorphisms
   `leviHom h` of the scalar unit `t · 1 ∈ (A ⊗ D)ˣ`;
 * `ψ ≫ π = normOneι ≫ leviHom h`.
 
-The simple-connectedness premise is an explicit hypothesis; it is the open proof Task 5664.
+The simple-connectedness premise is an explicit hypothesis; it is proved as
+`CentralSimpleUnits.degreeTwoNormOneSimplyConnected` (module
+`DegreeTwoNormOneSimplyConnectedProof`).
 
 ## Proof
 
@@ -55,6 +57,6 @@ Both parts are checked after composing with the monomorphism `σ.isometryGroupι
 
 ## Provenance
 
-Internal (Task 5398). The module only compares the published binary lifts with the
+Internal, for the proof of `LocalSpinKneserTitsStatement`. The module only compares the published binary lifts with the
 published Levi morphism; no literature is transcribed. Simple connectedness of `SL₁(D)` is
 not proved here.

@@ -52,8 +52,9 @@ actual model points and actual generic-fiber points. Their product
 homeomorphism identifies the two compatible-pair subspaces, and naturality
 identifies their cone-leg comparison maps.
 
-This unit specifies a chosen arithmetic model cone. It assumes no descent
+This module specifies a chosen arithmetic model cone. It assumes no descent
 of an independently given field cone: such descent, eventual separatedness
 of a base model, and comparison with arbitrary independently chosen spreads
-remain distinct obligations of the whole-paper program. This file states
-propositions only and supplies no proof or whole-task completion.
+remain distinct obligations. This file states propositions only and
+supplies no proof; the proof is `adelicSpreadModelPullback` in
+`AdelicSpreadModelPullbackProof`.

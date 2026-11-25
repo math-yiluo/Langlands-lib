@@ -30,6 +30,8 @@ of `G`, together with sheafification; it requires no refinement hypothesis for
 the full subcategories of discrete module sheaves. It is the published subgroup
 induction functor on underlying sheaves.
 
-This unit supplies an induction construction needed for the open-subgroup
-injective-preservation argument. It does not yet assert an adjunction on the
-discrete subcategories or prove the global cohomology comparison.
+This module supplies an induction construction needed for the open-subgroup
+injective-preservation argument of
+`Langlands.Sheaf.Equivariant.AnalyticSubgroupInjectives`. It does not assert an
+adjunction on the discrete subcategories or prove the global cohomology
+comparison.

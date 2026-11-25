@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 
 /-!
 # A finite-dimensional cyclicity lemma for an upper-triangular cell operator

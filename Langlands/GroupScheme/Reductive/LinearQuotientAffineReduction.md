@@ -1,6 +1,6 @@
 # Actual affine linear homogeneous spaces from linear quotient affineness
 
-Worker 708. This is an internal conditional reduction using published
+This is an internal conditional reduction using published
 Library constructions.
 
 `exists_affine_linearQuotient_of_reductiveLinearQuotientAffine` assumes the
@@ -26,5 +26,5 @@ proof use general linear groups, closed linear embeddings and smooth
 subgroup quotients; it does not use a Borel or rank-one classification
 result. Its hypothesis remains unproved here. In particular it proves
 neither unconditional linear quotient affineness nor
-`DynamicQuotientProperStatement`, and it does not yet construct the
+`DynamicQuotientProperStatement`, and it does not construct the
 extension argument needed for the properness application.

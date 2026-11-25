@@ -1,7 +1,5 @@
 # Local uniformizer tests for the affine reduced fibre
 
-Worker 594.
-
 `localTensorNormalizationBaseMap` sends the extended base into the
 normalization of a localized tensor product. It composes the scalar
 map of the global tensor normalization with the map that localizes

@@ -79,7 +79,7 @@ structure PolarisedAbelianScheme (g d n : ℕ) (S : Type u) [CommRing S] : Type 
 
   pol : A.Modules
 
-  pol_isInvertible : Scheme.Modules.IsInvertible pol
+  pol_isInvertible : Scheme.Modules.IsInvertibleFLT pol
 
   pol_veryAmple : Scheme.Modules.ClosedImmersionBySections pol f
 

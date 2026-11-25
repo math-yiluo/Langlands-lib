@@ -72,11 +72,11 @@ Applying this argument to every field-valued base change gives exactly
 
 Quasi-compactness is unnecessary: the argument uses local Noetherianity, which
 smoothness over a field already supplies. The target therefore also covers the
-requested finite-type case with `QuasiCompact p`. There is no perfectness,
+finite-type case with `QuasiCompact p`. There is no perfectness,
 algebraic-closedness, characteristic, separation, properness, or group-structure
 restriction. Regularity, normality, reducedness and irreducibility are
 intermediate consequences in the source derivation, not additional hypotheses.
 
-A separate proof must establish this exact proposition from the published
-interface. This statement contribution neither assumes nor implements those
-intermediate consequences.
+The proposition is proved as `smoothGeometricIntegrality` in
+`Langlands.AbelianScheme.SmoothGeometricIntegralityProof`. This module neither
+assumes nor implements those intermediate consequences.

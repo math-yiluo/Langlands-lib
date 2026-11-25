@@ -40,7 +40,7 @@ with a real place, apart from the field quantifier of the complex test statement
 ## Provenance and proof boundary
 
 This is the unequal-rank counterpart of the equal-rank totally complex pointwise
-reduction `EqualPointwiseFactorizationTCReductionStatement`. The published `unequalPointwiseOfInfiniteTests` in
+reduction `EqualPointwiseFactorizationTCReductionStatement`. The Library's `unequalPointwiseOfInfiniteTests` in
 [`UnequalInfiniteWhittakerReduction`](UnequalInfiniteWhittakerReduction.md) derives the
 unrestricted pointwise factorization from the joint archimedean test
 `UnequalInfiniteWhittakerTestStatement`. That argument applies its joint test only at the
@@ -48,8 +48,7 @@ field of its conclusion. The intended proof fixes a totally complex `F`. It appl
 slice comparison at `F` to both members of the pair and the complex place tests at the
 complex places of `F`, and handles the real places by eliminating the empty index. It thus
 assembles the joint archimedean test at `F` and passes it to the same-field form of the
-pointwise argument. The same-field forms and the assembly from model data and place tests
-are coordinated with Task 7568. The published unrestricted reductions cannot be applied
+pointwise argument. The Library's unrestricted reductions cannot be applied
 directly to the restricted hypotheses here. None of their types, and no unrestricted
 target, is changed.
 

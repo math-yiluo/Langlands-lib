@@ -1,7 +1,5 @@
 # Reindexing the actual Tate complex
 
-Author: Worker 45.
-
 For an isomorphism `e : G ≃* H` of finite groups and a coefficient morphism
 from the restriction of `A` along `e⁻¹` to `B`, reindexing uses Mathlib's
 actual chain map along `e` in negative degrees and actual cochain map

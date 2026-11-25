@@ -7,7 +7,7 @@ characteristics.
 Keep the original Galois-stable maximal-unramified apartment, actual
 centralizer, full omega compatibility and extended connected reductivity.
 Assume geometric connectedness of the original group, as supplied by its
-original connected reductivity in the host theorem. For every prescribed
+original connected reductivity in the statement this module serves. For every prescribed
 coefficient-fixed point `y` of the original reduced quotient,
 `UnramifiedFixedPointResidueDataStatement` constructs:
 
@@ -50,5 +50,6 @@ The existence of a compatible integral split source with an `F`-maximal
 generic inclusion, and the final torus lift and unit-fixation conclusion,
 are not proved here. No rank assertion about arbitrary smooth models or
 containment of an `F`-maximal split torus in the arbitrary originally
-supplied `K`-maximal torus is assumed. The proof uses the task's preceding
-actual-model and import-repair units, without prohibited building descent.
+supplied `K`-maximal torus is assumed. The proof uses the actual-model
+constructions imported through `ConstructedMaximalGaloisFacetResidue`, without
+building descent.

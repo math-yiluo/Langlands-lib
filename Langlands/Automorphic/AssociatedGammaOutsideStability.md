@@ -1,6 +1,6 @@
 # Gamma stability outside a finite set for the two Hecke families
 
-Supporting module of Task 5003 (module
+Supporting module for the proof of `AssociatedGammaStatement` (module
 `Langlands.Automorphic.AssociatedGammaOutsideStability`). This module supplies the
 `OutsideGammaStability` input of the two-twist engine (`HeckeTwistComparisonStatement`) for the
 automorphic and arithmetic Hecke families of the modules `Langlands.Automorphic.AssociatedGammaAutomorphicFamily` and

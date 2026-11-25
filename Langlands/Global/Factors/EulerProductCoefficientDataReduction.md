@@ -1,7 +1,6 @@
 # Euler products whose value times a continued coefficient is regular and nonzero
 
-Author: Worker 52. Contribution to task `c325654f-b8fb-4a43-9caf-c147e4ae95f2`,
-revision 1, whose target is the published
+This module is a step toward the published
 `Langlands.Global.CuspidalPairBoundaryNonvanishingStatement`.
 
 **Scope.** The module `Langlands.Global.Factors.EulerProductCoefficientDataReduction`
@@ -18,17 +17,15 @@ the line `Re s = 1`. The module works with an arbitrary family of Euler factors
 It also specializes the result to the partial pair Euler factors of the target
 (`EulerProductCoefficientData.enlarged_of_coefficientData`). No analytic input about
 automorphic forms is used or proved. The coefficient data are hypotheses here. For
-cuspidal pairs they are to be supplied by the statements S1 and S2 of task
-`a3004ec9-9527-41cd-9c6d-3e16366959d5` (§5).
+cuspidal pairs they are to be supplied by the statements S1 and S2 of §5.
 
 The module imports only published Library modules:
 `Langlands.Global.Factors.CuspidalPairBoundaryNonvanishingStatement` (for
 `partialEulerFactor` and `IsPartialPairLFunction`) and
 `Langlands.Global.Factors.FiniteComparisonProof` (for the identity-theorem lemma
 `FunctionalEquationComparison.eq_on_halfplane_meromorphicEq`). It does not import
-the reduction module `Langlands.Global.Factors.CuspidalPairBoundaryNonvanishingReduction`
-of candidate `b7cd46e7-a9b3-4a09-addc-39339072a2af`, and repeats none of its
-declarations.
+the reduction module `Langlands.Global.Factors.CuspidalPairBoundaryNonvanishingReduction`,
+and repeats none of its declarations.
 
 ## 1. Sources
 
@@ -149,14 +146,15 @@ cuspidal realizations `T`, `T'` and spectral presentations
   point of the imaginary axis for the partial Euler factors outside `S₀`, then there
   are `S₀ ⊇ S` and a representative `L₀` of the partial L-function outside `S₀`
   with `meromorphicOrderAt L₀ (1 + y * I) ≤ 0` for every real `y`. This is
-  `CuspidalPairBoundaryNonvanishingEnlargedStatement` (the premise of candidate
-  `b7cd46e7-a9b3-4a09-addc-39339072a2af`) for one choice of data and `S`. The
+  `CuspidalPairBoundaryNonvanishingEnlargedStatement` (the premise of the reduction
+  `cuspidalPairBoundaryNonvanishingReduction` in
+  `CuspidalPairBoundaryNonvanishingReduction`) for one choice of data and `S`. The
   conclusion is written out rather than citing that premise, so that this module
-  does not depend on the unpublished candidate.
+  does not depend on the reduction module.
 
 ## 5. How S1 and S2 supply the coefficient data
 
-Task `a3004ec9-9527-41cd-9c6d-3e16366959d5` asks for two statements about the
+The coefficient data come from two statements about the
 Eisenstein series on `GL_(r+t+2)` induced from `π ⊗ π'^∨`, with generic coefficient
 `coeff ψ φ s`:
 
@@ -170,9 +168,11 @@ Eisenstein series on `GL_(r+t+2)` induced from `π ⊗ π'^∨`, with generic co
 
 For each `s₀ = (im s₀) * I` on the imaginary axis, S1 gives `φ` and `c`, and S2
 applied to that `φ` gives `Ec`. Together they give `CoefficientData` at `s₀`.
-`enlarged_of_coefficientData` then gives the premise of the reduction `b7cd46e7`,
-and that reduction gives the target. The derivation of the premise from S1 and S2
-is planned as a separate module once S1 and S2 are published. Neither S1 nor S2 is
+`enlarged_of_coefficientData` then gives the premise of the reduction
+`cuspidalPairBoundaryNonvanishingReduction`, and that reduction gives the target. The
+derivation of the premise from S1 and S2 is the separate module
+`Langlands.Global.Factors.CuspidalPairEisensteinDerivation`
+(`cuspidalPairBoundaryNonvanishingEnlarged_of_eisenstein`). Neither S1 nor S2 is
 stated or proved here.
 
 ## 6. Provenance
@@ -183,17 +183,17 @@ stated or proved here.
   partial L-function has no zero at `1 + a_1 s₀`. Here the argument is abstracted
   to an arbitrary family of Euler factors, and stated with one unit of shift
   (`a_1 = 1`). The rescaling `s ↦ (n + m) s` of Sh81 is absorbed in the
-  parametrization of the Eisenstein series in S1 (task `a3004ec9`, §1(b)).
+  parametrization of the Eisenstein series in S1.
 - The formalization is internal: the construction of the continuation `c / Ec`,
   with its correction on the half-plane of convergence, and the order computation
   are written for this module. The uniqueness argument repeats, for
-  `IsRepresentative`, the one that candidate `b7cd46e7` proves for
-  `IsPartialPairLFunction`.
+  `IsRepresentative`, the one that `CuspidalPairBoundaryNonvanishingReduction` proves
+  for `IsPartialPairLFunction`.
 
 ## 7. What is not proved
 
 - The coefficient data for cuspidal pairs, i.e. statements S1 and S2, are neither
-  stated nor proved. Hence neither the premise
+  stated nor proved here. Hence neither the premise
   `CuspidalPairBoundaryNonvanishingEnlargedStatement` nor the target
   `CuspidalPairBoundaryNonvanishingStatement` is proved by this module.
 - Nothing is claimed about poles on `Re s = 1` or about zeros off that line.

@@ -43,28 +43,28 @@ variable [CompleteSpace K]
 comparison map. -/
 theorem stabilizerSectionMap_comparison (g : Aut P) (d : RationalData K P)
     (h : locusStabilizer d) :
-    (stabilizerSectionMap (g • d) (stabilizerConj g d h)).comp (d.comparison g.hom) =
-      (d.comparison g.hom).comp (stabilizerSectionMap d h) := by
+    (stabilizerSectionMap (g • d) (stabilizerConj g d h)).comp (d.comparison g.asIso.hom) =
+      (d.comparison g.asIso.hom).comp (stabilizerSectionMap d h) := by
   apply d.hom_ext
   calc
     _ = (stabilizerSectionMap (g • d) (stabilizerConj g d h)).comp
-        ((g • d).baseMap.comp g.hom) := by
+        ((g • d).baseMap.comp g.asIso.hom) := by
       rw [BoundedAlgHom.comp_assoc, d.comparison_comp_baseMap]
       rfl
     _ = ((g • d).baseMap.comp
-        (stabilizerConj g d h : Aut P).hom).comp g.hom := by
+        (stabilizerConj g d h : Aut P).asIso.hom).comp g.asIso.hom := by
       rw [← BoundedAlgHom.comp_assoc, stabilizerSectionMap_comp_baseMap]
-    _ = (g • d).baseMap.comp (g.hom.comp (h : Aut P).hom) := by
+    _ = (g • d).baseMap.comp (g.asIso.hom.comp (h : Aut P).asIso.hom) := by
       rw [BoundedAlgHom.comp_assoc]
       apply congrArg ((g • d).baseMap.comp)
       rw [stabilizerConj_coe]
       ext a
-      change g.hom.toAlgHom ((h : Aut P).hom.toAlgHom (g.inv.toAlgHom
-        (g.hom.toAlgHom a))) = g.hom.toAlgHom ((h : Aut P).hom.toAlgHom a)
-      have hinv : g.inv.toAlgHom (g.hom.toAlgHom a) = a :=
-        congrArg (fun f : BoundedAlgHom K P P => f a) g.hom_inv_id
+      change g.asIso.hom.toAlgHom ((h : Aut P).asIso.hom.toAlgHom (g.asIso.inv.toAlgHom
+        (g.asIso.hom.toAlgHom a))) = g.asIso.hom.toAlgHom ((h : Aut P).asIso.hom.toAlgHom a)
+      have hinv : g.asIso.inv.toAlgHom (g.asIso.hom.toAlgHom a) = a :=
+        congrArg (fun f : BoundedAlgHom K P P => f a) g.asIso.hom_inv_id
       rw [hinv]
-    _ = ((d.comparison g.hom).comp (stabilizerSectionMap d h)).comp d.baseMap := by
+    _ = ((d.comparison g.asIso.hom).comp (stabilizerSectionMap d h)).comp d.baseMap := by
       symm
       rw [BoundedAlgHom.comp_assoc, stabilizerSectionMap_comp_baseMap,
         ← BoundedAlgHom.comp_assoc, d.comparison_comp_baseMap,
@@ -87,7 +87,7 @@ private theorem spectralBound_iso_iff
 comparison for a bounded base automorphism. -/
 theorem spectralBound_comparison_iff (g : Aut P) (d : RationalData K P)
     (b : d.algebra) (r : ℝ) :
-    SpectralBound (d.comparison g.hom b) r ↔ SpectralBound b r := by
+    SpectralBound (d.comparison g.asIso.hom b) r ↔ SpectralBound b r := by
   have h := spectralBound_iso_iff (d.comparisonIso (boundedEquiv g)) b r
   change SpectralBound (d.comparison (boundedEquiv g).toBoundedAlgHom b) r ↔
     SpectralBound b r at h
@@ -99,22 +99,22 @@ condition on its fixed section algebra. -/
 theorem stabilizerConj_mem_spectral_iff (g : Aut P) (d : RationalData K P)
     (b : d.algebra) (r : ℝ) (hr : 0 ≤ r) (h : locusStabilizer d) :
     stabilizerConj g d h ∈ stabilizerSpectralSubgroup (g • d)
-      (d.comparison g.hom b) r hr ↔ h ∈ stabilizerSpectralSubgroup d b r hr := by
+      (d.comparison g.asIso.hom b) r hr ↔ h ∈ stabilizerSpectralSubgroup d b r hr := by
   change SpectralBound ((stabilizerSectionMap (g • d) (stabilizerConj g d h))
-    (d.comparison g.hom b) - d.comparison g.hom b) r ↔
+    (d.comparison g.asIso.hom b) - d.comparison g.asIso.hom b) r ↔
       SpectralBound (stabilizerSectionMap d h b - b) r
   have heq := congrArg (fun f : BoundedAlgHom K d.algebra (g • d).algebra => f b)
     (stabilizerSectionMap_comparison g d h)
-  change stabilizerSectionMap (g • d) (stabilizerConj g d h) (d.comparison g.hom b) =
-    d.comparison g.hom (stabilizerSectionMap d h b) at heq
-  rw [heq, ← map_sub (d.comparison g.hom).toAlgHom]
+  change stabilizerSectionMap (g • d) (stabilizerConj g d h) (d.comparison g.asIso.hom b) =
+    d.comparison g.asIso.hom (stabilizerSectionMap d h b) at heq
+  rw [heq, ← map_sub (d.comparison g.asIso.hom).toAlgHom]
   exact spectralBound_comparison_iff g d _ r
 
 /-- An ambient automorphism passes the original test exactly when its
 conjugate passes the transported test. -/
 theorem conj_mem_rationalSpectralSubgroup_iff (g h : Aut P) (d : RationalData K P)
     (b : d.algebra) (r : ℝ) (hr : 0 ≤ r) :
-    g * h * g⁻¹ ∈ rationalSpectralSubgroup (g • d) (d.comparison g.hom b) r hr ↔
+    g * h * g⁻¹ ∈ rationalSpectralSubgroup (g • d) (d.comparison g.asIso.hom b) r hr ↔
       h ∈ rationalSpectralSubgroup d b r hr := by
   rw [mem_rationalSpectralSubgroup, mem_rationalSpectralSubgroup]
   constructor
@@ -141,7 +141,7 @@ theorem conj_mem_rationalSpectralSubgroup_iff (g h : Aut P) (d : RationalData K 
 def RationalSpectralTest.transport (g : Aut P) (t : RationalSpectralTest K P) :
     RationalSpectralTest K P where
   domain := g • t.domain
-  element := t.domain.comparison g.hom t.element
+  element := t.domain.comparison g.asIso.hom t.element
   radius := t.radius
   radius_pos := t.radius_pos
 

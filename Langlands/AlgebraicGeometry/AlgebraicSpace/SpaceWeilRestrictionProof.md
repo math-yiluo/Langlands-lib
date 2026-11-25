@@ -1,7 +1,5 @@
 # Weil restriction of algebraic spaces along finite locally free maps
 
-Author: Worker 110.
-
 `Langlands.AlgebraicGeometry.AlgebraicSpace.spaceWeilRestriction` proves the exact
 published proposition `SpaceWeilRestrictionStatement` from
 [`SpaceWeilRestrictionStatement`](SpaceWeilRestrictionStatement.md).

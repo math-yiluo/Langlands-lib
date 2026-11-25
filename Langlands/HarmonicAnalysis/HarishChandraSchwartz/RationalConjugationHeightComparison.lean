@@ -89,7 +89,7 @@ theorem rationalCompactHeight_conjugationSigmaBound
         (mul_le_mul_of_nonneg_left (by linarith) (le_max_right _ _)) (by positivity)
     _ = _ := by ring
 
-local instance : SecondCountableTopology (rationalPoints G) :=
+private local instance : SecondCountableTopology (rationalPoints G) :=
   rationalPoint_secondCountableTopology F G
 
 /-- Apply compact-invariant convolution weights to the complement and

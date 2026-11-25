@@ -1,7 +1,5 @@
 # A nontrivial cocharacter gives positive split rank
 
-Author: Worker 118.
-
 `HasNontrivialCocharacter G` means that the actual group scheme `G` over
 a field admits a homomorphism from the base-field multiplicative group
 different from the constant identity homomorphism.

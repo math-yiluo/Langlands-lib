@@ -1,7 +1,6 @@
 import Langlands.Geometry.FormalGroup.LubinTateStandardDefect
-import Langlands.NYLL.ClassFieldTheory.LubinTate.FormalModule.StandardFormalGroup.LinearTerms.CoeffEqLinearForm
-import Langlands.NYLL.ClassFieldTheory.LubinTate.FormalModule.LinearTerm.U002.Proofs
-import Langlands.NYLL.ClassFieldTheory.LubinTate.FormalModule.LinearTerm.U004.Proofs
+import Nyll.ClassFieldTheory.LubinTate.FormalModule.StandardFormalGroup
+import Nyll.ClassFieldTheory.LubinTate.FormalModule.LinearTerm
 import Mathlib.RingTheory.LocalRing.ResidueField.Basic
 import Mathlib.RingTheory.MvPowerSeries.Expand
 
@@ -12,7 +11,7 @@ noncomputable section
 namespace Langlands.FormalGroup.LubinTateStandard
 
 open MvPowerSeries IsLocalRing
-open Langlands.NYLL.LubinTate.SameUniformizer
+open LubinTate.SameUniformizer
 open scoped ENat
 
 universe u

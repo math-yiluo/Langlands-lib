@@ -26,10 +26,11 @@ normalization or analytic identity is imposed as an additional premise.
 
 This is an internal deduction from the imported strict-rank assembly and
 comparison proofs. The closed first-block analytic proposition remains an
-explicit hypothesis; this unit does not discharge it. The conclusion concerns
+explicit hypothesis; this module does not discharge it. The conclusion concerns
 sufficiently large real opposite twists and the ordinary lower induction.
 Continuation to zero, actual lower-to-upper transport, the equal-rank boundary
-and both exact final dominant-rank targets remain separate obligations.
+and both exact final dominant-rank targets are not part of this module;
+`TwoBlockDominantRankProof` proves both final dominant-rank statements.
 
 ## All-field port
 

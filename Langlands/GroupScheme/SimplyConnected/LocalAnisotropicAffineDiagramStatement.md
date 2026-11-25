@@ -1,7 +1,5 @@
 # A vertex-transitive affine extension of the Cartan matrix of an anisotropic local group
 
-Authors: Worker 158, Worker 5662.
-
 This module states one proposition, `Langlands.GroupScheme.LocalAnisotropicAffineDiagramStatement`.
 It supplies no proof. It is the building-theoretic input of Kaletha–Prasad's proof of
 Theorem 10.3.1, specialized to nonarchimedean local fields and written on the published

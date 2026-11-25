@@ -145,18 +145,18 @@ theorem cmHarrisCoefficientDiagram_obj_carrier (m : ℕ) (hm : m ≠ 0) (k : ℕ
 theorem cmHarrisCoefficientDiagram_action (m : ℕ) (hm : m ≠ 0) (k : ℕ)
     (g : SmallCMResidualGroup D U (cmHarrisCoefficientLevel D ρ p U m hm k))
     (x : ((cmHarrisTorsionSystem D ρ p U m).obj (op k)).V) :
-    ((cmHarrisCoefficientDiagram D ρ p U m hm).ρ (op k) g).hom x =
-      ((cmHarrisCoefficientAction D ρ p U m hm k).ρ g).hom x := by
+    ((cmHarrisCoefficientDiagram D ρ p U m hm).ρ (op k) g).asHom.hom x =
+      ((cmHarrisCoefficientAction D ρ p U m hm k).ρ g).asHom.hom x := by
   induction g using QuotientGroup.induction_on with
   | H g => rfl
 
 /-- On lattice representatives the residual action retains the inverse-unop convention. -/
 @[simp] theorem cmHarrisCoefficientDiagram_action_mk (m : ℕ) (hm : m ≠ 0) (k : ℕ)
     (g : U.obj.subgroup) (x : (harrisLatticeAction ρ p ordinaryLevel).V) :
-    ((cmHarrisCoefficientDiagram D ρ p U m hm).ρ (op k) (QuotientGroup.mk g)).hom
+    ((cmHarrisCoefficientDiagram D ρ p U m hm).ρ (op k) (QuotientGroup.mk g)).asHom.hom
         (Submodule.Quotient.mk x) =
       Submodule.Quotient.mk (((harrisLatticeAction ρ p ordinaryLevel).ρ
-        (levelEquiv g)).hom x) := rfl
+        (levelEquiv g)).asHom.hom x) := rfl
 
 /-- Coefficient transitions are the canonical reductions, retaining the lattice representative. -/
 @[simp] theorem cmHarrisCoefficientDiagram_transition_mk (m : ℕ) (hm : m ≠ 0)

@@ -1,7 +1,5 @@
 # Dimension and generators for the generic hyperplane argument
 
-Author: Worker 99.
-
 This internal, derived module supplies the dimension and generator reductions
 used by the proof of `BertiniGenericHyperplaneStatement`. It relies on published
 Library results and Mathlib; it asserts no additional Bertini input.

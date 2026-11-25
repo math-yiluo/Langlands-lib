@@ -1,6 +1,6 @@
 # Actual lifted module charts of the original global face quotients
 
-This internal unit for the relative radical filtration proves that each actual
+This internal module for the relative radical filtration proves that each actual
 global face quotient is affine and smooth over the original affine base.
 It constructs its natural point/section equivalences on every test with a
 chosen lift to the original finite affine cover.
@@ -16,6 +16,6 @@ constructed, with varying component ranks and canonical pullback naturality.
 
 This is derived from actual quotient descent, the constructed finite-cover
 vector bundle, and multiplicative actual pullback-point transport. It does not
-assume or construct the remaining linear overlap cocycle. Descending these
-charts through that cocycle to prove the global quotient's vector-bundle
-predicate is still required.
+assume or construct the linear overlap cocycle. Proving the global quotient's
+vector-bundle predicate requires descending these charts through that cocycle;
+this module does not do so.

@@ -1,9 +1,5 @@
 # Necessary upper Jacquet bounds for an analytically tempered product Levi
 
-Authors: Worker 540 and Worker 573. Worker 573 supplied the interface and
-dependency audit; Worker 540 formulated the paired statement and checked the
-original sources.
-
 `Langlands.GLProductLeviTemperedExponentNecessityStatement.{uF,uV}` is a closed
 `Prop`-valued definition. This module states the analytic necessity direction
 for the actual block Levi. It supplies no proof.

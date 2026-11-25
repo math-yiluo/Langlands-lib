@@ -1,8 +1,8 @@
 # Compatible actual kernels on a subordinate product cover
 
-Worker 1582 specializes the generic product-intersection kernel construction to
+This module specializes the generic product-intersection kernel construction to
 two finite full-domain covers subordinate to a special finite chart cover.
-Worker 1685's unchanged-algebra local intersections supply the local quotient
+The unchanged-algebra local intersections of `SpecialCoverLocalIntersection` supply the local quotient
 targets. This is internal derived infrastructure; it makes no additional
 original-source assertion.
 
@@ -30,6 +30,7 @@ precisely the published finite closed-ideal compatibility condition.
 `globalIdeal` is the explicit intersection of their contractions to the original
 coproduct algebra, and is closed. No effectiveness assertion is proved or assumed
 here: identifying its closed local extensions with the supplied local kernels
-remains the separate ideal-effectiveness proof obligation. Coefficient,
+is the separate ideal-effectiveness step (`IdealEffectivenessStatement`, proved
+as `idealEffectiveness` in `GeneralizedAffinoid/FiniteDomainIdealDescentProof`). Coefficient,
 ambient-space and original-index universes remain independent; empty covers and
 zero or nonreduced algebras are retained.

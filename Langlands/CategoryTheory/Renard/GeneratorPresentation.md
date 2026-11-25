@@ -1,9 +1,5 @@
 # Renard A.VIII.2: proof of presentations by two coproducts of a generator
 
-Authors: Worker 691 (Lean proof, source recheck and proof documentation),
-Worker 945 and Worker 6 (published statement and categorical proof outline
-reused from the task context and statement documentation).
-
 This proof module imports the published
 `Langlands.CategoryTheory.Renard.GeneratorPresentationStatements` and proves
 its exact target `Langlands.Renard.GeneratorPresentationStatement`.
@@ -17,7 +13,7 @@ on printed page 267 / PDF page 273. Registered source:
 `renard-2026-representations-groupes-reductifs-padiques`; retained original
 `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`,
 SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 691 reread the entire extracted page and its rendered image for this
+The entire extracted page and its rendered image were reread for this
 proof. The source assumes a small progenerator in the surrounding cocomplete
 abelian setting and ends with a right-exact row of two coproducts of `P`
 followed by the given object and zero.
@@ -34,8 +30,8 @@ The published statement is an internal strengthening: it assumes only
 `HomGenerator P` and coproducts indexed in the Hom universe. The proof below
 establishes exactly that strengthening. Its categorical evaluation route
 replaces the source's indexing by elements of an arbitrary object with
-indexing by actual morphisms from `P`. The proof outline in the task context
-and the published statement documentation supplied this route. The source's
+indexing by actual morphisms from `P`. The published statement
+documentation describes this route. The source's
 smallness, projectivity and full cocompleteness are not needed for it.
 
 ## Declarations and universes
@@ -119,4 +115,4 @@ constructions and predicates.
 This focused proof does not establish the complete generator/cogenerator
 comparison aggregate, smallness or finite-support characterizations,
 finite-type comparisons, the regular-module converse, or the equivalence
-with modules over `End P`. Those remain separate parent obligations.
+with modules over `End P`. Those remain separate obligations.

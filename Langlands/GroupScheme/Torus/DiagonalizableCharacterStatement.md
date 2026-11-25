@@ -1,7 +1,5 @@
 # Characters and homomorphisms of diagonalizable groups: statement
 
-Worker 3483.
-
 `Langlands.GroupScheme.DiagonalizableCharacterStatement.{u}` is a proposition
 definition. This module does not prove it.
 
@@ -89,15 +87,13 @@ Theorem 12.9(a) (printed p.233, PDF p.249):
 
 ## Relation to the Library
 
-- The Library has full faithfulness only for split targets:
+- The Library also has full faithfulness for split targets:
   `IsSplitTorus.existsUnique_hom_of_characterMap` (`Torus/CharacterMapHom`)
   identifies homomorphisms into a split torus with additive maps of character
   lattices, and `splitTorus.characterLatticeEquiv` (`Torus/Lattice`) computes the
-  characters of `𝔾_m^I`. No Lean declaration of the characters of `D(Λ)` for `Λ`
-  with torsion, or of full faithfulness of `Λ ↦ D(Λ)`, was found: searches of
-  `Langlands/` for `restrictMap` together with `Bijective`, `Surjective`,
-  `Injective` or `∃`, and for characters of `Diagonalizable.groupScheme`, found
-  none.
+  characters of `𝔾_m^I`. The characters of `D(Λ)` for `Λ` with torsion and the
+  full faithfulness of `Λ ↦ D(Λ)` are this statement, which
+  `diagonalizableCharacter` (module `Torus.DiagonalizableCharacterProof`) proves.
 - Possible ingredients for a proof: `Diagonalizable.characterPointsEquiv` and its
   naturality, `Torus/Grouplike` (the coefficients of a group-like element of
   `B[M]` are orthogonal idempotents summing to `1`), and

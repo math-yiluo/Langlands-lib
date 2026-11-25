@@ -3,9 +3,8 @@
 Module: `Langlands.Representation.Aubert.General.CorrectedOrbitJacquet`,
 namespace `Langlands.Aubert.General.CorrectedFiltration`.
 
-This pair is Part B of the conditional proof of
-`CorrectedFiltration.CorrectedGradedTransitionTarget`
-(task `d6be9c3b-ff6f-425c-9bb5-84c973b9568f`). It constructs the orbit
+This module is Part B of the conditional proof of
+`CorrectedFiltration.CorrectedGradedTransitionTarget`. It constructs the orbit
 Jacquet maps `Θ` and proves the laws listed in the interface structure
 `OrbitJacquetData` (CorrectedGradedInterface). The entry declarations are the
 definition `orbitJacquetData` and the theorem `nonempty_orbitJacquetData`.
@@ -14,8 +13,8 @@ that the Library does not have; see "Hypotheses" below. The map itself is the
 definition `orbitJacquetMap`. Its laws are the theorems `orbitJacquetMap_*`,
 which hold for individual subgroups and do not need the indexed families.
 
-Author: Worker 1255. The interface `OrbitJacquetData` that this pair
-instantiates is by Worker 969 (CorrectedGradedInterface).
+The interface `OrbitJacquetData` that this module
+instantiates is in CorrectedGradedInterface.
 
 ## Provenance
 
@@ -28,12 +27,11 @@ Jantzen (Glasnik Matematički 51 (2016), (4.1) on p. 160). Here `Θ` is that
 formula in the Library's conventions, with functions restricted to `P_I`.
 `Θ φ` corresponds to the value of the formula at `l = 1`, and the
 `M_I`-equivariance law accounts for the other values. No page of either source was re-read for
-this pair; the conventions below are those of the Library and of the
+this module; the conventions below are those of the Library and of the
 interface.
 
 The construction specializes the generic split-kernel value integral
-`Induction.splitKernelValueIntegral` (SplitKernelValueIntegral, same
-candidate) to the Levi projection of `P_I`. The published inputs are:
+`Induction.splitKernelValueIntegral` (SplitKernelValueIntegral) to the Levi projection of `P_I`. The published inputs are:
 
 - `IsSemidirectDecomposition` with `projection`, `projection_levi`,
   `projection_eq_one_iff`, `projection_inv_mul_mem`, `levi_le`,
@@ -203,7 +201,7 @@ For the rational points of a connected reductive group with its standard
 parabolics, `(S1)` and `(S2)` are expected to follow from the root-system
 descriptions of these intersections for `w` minimal in `W_J w W_I`, `(D07)`
 from the corresponding identity of sums of roots, and `hr` and `hcover` from
-standard topological facts. This pair proves none of that, and the Library
+standard topological facts. This module proves none of that, and the Library
 does not contain these facts, so they are premises here.
 
 ## The data
@@ -243,5 +241,5 @@ does not contain these facts, so they are premises here.
 
 ## Status
 
-Compiles with `lean_check` together with CorrectedGradedInterface and
+Compiles together with CorrectedGradedInterface and
 SplitKernelValueIntegral (no errors or warnings).

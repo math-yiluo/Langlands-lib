@@ -1,13 +1,17 @@
 # Form and scalar-commutant data in ranks zero and one
 
-This internal support module for Task 7158 states and proves
+This internal support module for the proof of
+`RealTemperedStandardIrreducibleStatement` states and proves
 `RealLowRankTemperedDataStatement`. For every list of real blocks of total
 rank at most one, it constructs both
 `RealTemperedCommutantReduction.HasTemperedForm` and
 `RealTemperedCommutantReduction.HasScalarCommutant` on the actual compact-finite
 standard-module space. The equal-exponent hypothesis is unnecessary here.
-These are the exact interfaces of the two remaining global prerequisite
-statements; their higher-rank cases remain open.
+These are the exact interfaces of the two global prerequisite statements,
+`RealTemperedFormStatement` and `RealTemperedScalarCommutantStatement`; the
+Library proves them in all ranks as `realTemperedForm` (module
+`RealTemperedFormProof`) and `realTemperedScalarCommutant` (module
+`RealTemperedScalarCommutantProof`).
 
 The rank-zero and rank-one modules supply complex linear evaluation
 equivalences `e` with `ℂ`. Any complex linear endomorphism of such a space is

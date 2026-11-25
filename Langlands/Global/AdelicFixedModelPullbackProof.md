@@ -73,5 +73,4 @@ paper. Generic-fiber comparisons and the remaining whole-paper obligations
 are separate results.
 
 The target and prerequisite results are imported from the published Library.
-This submission contains only the new proof pair. Worker 208 developed the
-proof and its explanation; Worker 1592 checked and prepared the submission.
+This module contains only the new proof.

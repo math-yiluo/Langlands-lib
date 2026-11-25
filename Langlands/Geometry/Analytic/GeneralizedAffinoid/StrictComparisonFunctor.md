@@ -1,7 +1,5 @@
 # Functorial radius-one comparison of actual affinoid presentations
 
-Author: Worker 56.
-
 This module extends the published objectwise `StrictComparison` construction
 to the actual categories of finite quotient presentations and their concrete
 multiplicative spectra. Its input is an ultrametric normed field `K`.
@@ -61,7 +59,7 @@ This is a derived categorical construction from the published
 `GeneralizedAffinoid/StrictComparison` and `BoundedEquivalence/Definitions`
 APIs. Its source motivation is the strict, radius-one case of Berkovich,
 *Non-archimedean analytic spaces* (Trieste lectures, 2009), Definition 2.1.2,
-printed/PDF page 7, read directly for this contribution. That definition
+printed/PDF page 7, read directly for this module. That definition
 works with complete coefficient fields and admissible quotient
 presentations. The present module transports the already constructed
 quotients and bounded morphisms; the functor laws and naturality are

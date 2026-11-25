@@ -2,9 +2,7 @@
 
 `Langlands.Analysis.CanonicalScalarWeightedFactorialBoundsStatement d r` is a
 `Prop`-valued statement. It is stated here and **not proved**; this module
-contains no proof and does not assume any analytic estimate. The Lean statement
-was written by Worker 94. Worker 881 revised this Markdown for precision and
-provenance.
+contains no proof and does not assume any analytic estimate.
 
 ## Hypotheses
 
@@ -47,7 +45,7 @@ and one pair of constants serve every derivative order. They may depend on
 conclusion in particular makes every weighted seminorm finite.
 
 The two quantities come from the published module
-`Langlands.Analysis.LocalEllipticCutoffEstimate` (Worker 815), which this file
+`Langlands.Analysis.LocalEllipticCutoffEstimate`, which this file
 imports unchanged.
 
 - `derivWordNorm k u x` is
@@ -74,8 +72,10 @@ imports unchanged.
   separate obligation stated by the published
   `EuclideanScalarEllipticAnalyticityTransportStatement`. This statement neither
   uses nor implies that one either.
-- The factorial induction that would prove this statement is separate work, as
-  are any downstream pointwise (Sobolev) bounds, real analyticity of `u` and
+- The factorial induction that proves this statement is separate
+  (`canonicalScalarWeightedFactorialBounds`, in
+  `Langlands.Analysis.CanonicalScalarWeightedFactorialBoundsProof`), as are any
+  downstream pointwise (Sobolev) bounds, real analyticity of `u` and
   automorphic applications. None of them is a hypothesis here.
 
 ## Provenance

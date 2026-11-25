@@ -1,6 +1,6 @@
 # A block with irreducible Weil factor is indecomposable
 
-Worker 1429 supplies helper definitions and proved lemmas about the published
+This module supplies helper definitions and proved lemmas about the published
 uncentered blocks `block ν A m = A ⊗ S_m` of `Langlands.WeilDeligne.SpecialBlocks`
 and the published direct sum `directSum` of `Langlands.WeilDeligne.DirectSum`.
 The main result is `Blocks.isIndecomposable_block`: for an irreducible finite

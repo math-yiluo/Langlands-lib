@@ -79,7 +79,8 @@ natural in `M` and `N`. Under this identification, `L.map (f ⊗ₘ g)` correspo
 to the tensor product over `A` of the colimit maps of `f` and `g`. These maps are
 `A`-linear and, by hypothesis, bijective, so their tensor product is bijective.
 This outline explains why the proposition is expected to hold. It is not part of
-the Lean statement, and a separate proof must establish the proposition.
+the Lean statement; the proposition is proved separately, by `tensorColimitIsIso`
+in `Langlands.Algebra.Modules.TensorColimit`.
 
 The best-known instance is the stalk formula
 for a ringed space, Stacks Project Lemma 17.16.1 (Section 17.16, tag 01CA).
@@ -98,9 +99,10 @@ the scheme-level statement this prerequisite serves.
 
 ## Role and relevant interfaces
 
-This prerequisite is needed by proof task
-`1033dad0-ce5e-4bfd-9df3-97c690ee49bd`, which proves
-`Langlands.Scheme.Modules.tensorLocalEquivalencesIsMonoidalStatement`. A
+This prerequisite is needed by the proof of
+`Langlands.Scheme.Modules.tensorLocalEquivalencesIsMonoidalStatement`
+(`tensorLocalEquivalencesIsMonoidal`, in
+`Langlands.AlgebraicGeometry.Modules.TensorLocalizationProof`). A
 conservative family of site points reduces local equivalences to colimit
 isomorphisms on opposite categories of elements of the point topology. The
 strong monoidal pushforward
@@ -125,5 +127,3 @@ Mathlib at this commit has no comparison isomorphism between the colimit of a
 sectionwise tensor and the tensor of colimits.
 `Algebra/Category/ModuleCat/Stalk.lean` defines module structures on stalks but
 has no such tensor comparison either.
-
-The environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`.

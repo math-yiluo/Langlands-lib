@@ -1,9 +1,10 @@
 # Smooth closed subgroups with full Lie algebra are open
 
-This derived unit extends the local and translation argument of the published
+This module, derived rather than taken from a source, extends the local and
+translation argument of the published
 `Lie.SubgroupEqualityProof` to ambient affine groups that are locally of finite
 type and may be nonsmooth or disconnected. It is internal infrastructure for
-CGP Lemma 3.3.9; it does not yet prove semigroup intersection connectedness.
+CGP Lemma 3.3.9; it does not prove semigroup intersection connectedness.
 
 `isOpenImmersion_of_fullLie` takes a closed inclusion of a smooth group into
 such an ambient group and surjectivity on the actual identity Lie kernel over

@@ -1,6 +1,6 @@
 # Actual adelic additive self-duality and the diagonal annihilator
 
-The theorem `Langlands.Global.adelicAdditiveDuality_proof` proves the unchanged
+The theorem `Langlands.Global.adelicAdditiveDuality_proof` proves the
 published proposition `Langlands.Global.AdelicAdditiveDualityStatement.{u}`.
 It applies to every number field in arbitrary universe `u` and every existing
 continuous nontrivial unitary additive character of its actual adele ring that
@@ -14,15 +14,9 @@ The source target is Weil, *Basic Number Theory*, second edition (1973),
 Chapter IV, §2, Theorem 3, in the specialization already documented in the
 published statement pair. The implemented proof takes a different route. Its
 compactness, finite-cover and compact-character arguments were developed
-internally from Worker 1843's generic plan, with the actual one-place
-approximation constructed by Worker 1786. It assumes neither global nor local
-additive self-duality.
-
-Workers 1843 and 1786 belong to the previous project instance and have no
-identity in the current one; they are credited here only. Worker 5107
-resubmits this pair for current-instance revalidation under Task 5107. The
-Lean file is unchanged; this Markdown adds the provenance note and the
-comparison with Weil's proof in the last section.
+internally as generic results, with the actual one-place approximation in
+`AdelicLocalApproximation`. It assumes neither global nor local additive
+self-duality.
 
 ## Actual arithmetic and nondegeneracy
 

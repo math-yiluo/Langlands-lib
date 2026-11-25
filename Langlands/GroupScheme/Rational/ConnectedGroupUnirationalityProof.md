@@ -1,7 +1,5 @@
 # Proof: unirationality of connected group varieties
 
-Worker 5705, with Worker 295 (author of the reduction this proof applies).
-
 `Langlands.GroupScheme.connectedGroupUnirationality` proves exactly
 `Langlands.GroupScheme.ConnectedGroupUnirationalityStatement.{u}`, in every
 universe `u` and with no additional hypotheses. For every field `k` and every

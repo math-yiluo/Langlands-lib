@@ -53,6 +53,6 @@ projections.
 The provenance is internal composition of the actual-place reindexing,
 fixed-model curve Weil stage homeomorphisms, place-restriction surjectivity,
 and space stage coordinate comparisons. Original Weil algebraicity and the
-separated finite-type geometry of both models remain explicit. This unit
+separated finite-type geometry of both models remain explicit. This module
 does not prove compatibility with the full adelic tensor map, the final
 topology comparison, or independence of arbitrary models.

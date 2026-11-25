@@ -1,7 +1,7 @@
 /-
 Copyright (c) 2020 Kim Morrison. All rights reserved.
 Released under Apache 2.0 license as described in the Mathlib LICENSE.
-Authors: Johan Commelin, Kim Morrison; conic adaptation by Worker 705
+Authors: Johan Commelin, Kim Morrison; conic adaptation in Langlands-lib
 -/
 import Mathlib.Geometry.Convex.Cone.Pointed
 import Mathlib.LinearAlgebra.LinearIndependent.Defs

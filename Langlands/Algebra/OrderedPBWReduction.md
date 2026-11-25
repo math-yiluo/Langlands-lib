@@ -1,6 +1,6 @@
 # Ordered PBW word reductions
 
-Author: Worker 1687; uses Worker 1431's ordered-word and shortlex helpers.
+This module uses the ordered-word and shortlex helpers of `OrderedPBWWords`.
 
 This is internal infrastructure for the arbitrary-characteristic ordered PBW
 proof. Its definitions are derived directly from the supplied basis and Lie

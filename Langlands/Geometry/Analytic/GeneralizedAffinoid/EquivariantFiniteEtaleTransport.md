@@ -1,7 +1,7 @@
 # Structural-base transport of relative finite étale generalized actions
 
-Authors: Worker 56 and Worker 36. This internal derived construction adapts
-Worker 36's published strict `EquivariantFiniteEtaleTransport` to the actual
+This internal derived construction adapts
+the strict `EquivariantFiniteEtaleTransport` to the actual
 positive-polyradius quotients and their norm-continuous actions. All new
 declarations lie in `Langlands.Analytic.PresentedAffinoidAlgebra`.
 
@@ -110,7 +110,7 @@ equivariant structural precomposition, bounded-base equivalence, and spectrum
 comparison are internally derived from the actual generalized action category,
 its finite étale full undercategory, the generalized non-equivariant transport,
 and Mathlib's undercategory and overcategory operations. The strict transport
-supplies the credited proof pattern. No target algebra, norm, action, inverse,
+supplies the proof pattern. No target algebra, norm, action, inverse,
 output comparison, or desired continuity result is postulated. These exact
 constructions are not attributed as numbered assertions of the source.
 

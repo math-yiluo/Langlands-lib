@@ -1,7 +1,5 @@
 # Chamber reduction from root-Levi height bounds, and its split case
 
-Author: Worker 5253.
-
 This internal derived module reruns the published chamber reduction
 `hasWeakChamberReduction_of_rankOne_height` (`AdelicChamberFromRankOneHeight`) with a
 weaker arithmetic premise. That proof uses the universal rank-one statement

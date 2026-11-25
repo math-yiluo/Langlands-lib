@@ -1,21 +1,16 @@
 # Lemma VII.1.2 on actual points, and functions with vanishing constant term (Waldspurger VII.1, VIII.2)
 
-Author: Worker 3642, task `1ef6854b-f0e9-4d96-bbe5-cb8c4b52f927` (revision 1).
-
 Lean module:
 `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalInducedConstantTermFourier`,
 namespace `Langlands.HarishChandraSchwartz`. It imports:
 
-- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalFourierOrbitSmoothness` (this
-  author's Unit 24, candidate `773beb73-c028-4523-a526-95f1451fef23`, published in
-  the Library). From it this module uses `rationalLeviXi_inv` and
+- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalFourierOrbitSmoothness`. From it this module uses `rationalLeviXi_inv` and
   `rationalLeviTranslationWeights`. Through its imports come:
-  - Unit 23 (candidate `77e5e21c-3be4-47f0-ad86-6f41ee8ee935`, published in the
-    Library): `rationalFourierOrbitSection` (`ψ_f[O, P]`) and `rationalFourierOrbitSection_apply`;
-  - Unit 22: `rationalInducedFourierTransform` (`f̂(ω, P)`) and `compactOpenCofinal_standardLevi`;
-  - Unit 20: `rationalInducedOrbitWavePacket` (`f_ψ`), `rationalInducedSmoothOrbitSections`
+  - `RationalInducedOrbitFourierPairing`: `rationalFourierOrbitSection` (`ψ_f[O, P]`) and `rationalFourierOrbitSection_apply`;
+  - `RationalInducedFourierTransform`: `rationalInducedFourierTransform` (`f̂(ω, P)`) and `compactOpenCofinal_standardLevi`;
+  - `RationalInducedOrbitWavePacket`: `rationalInducedOrbitWavePacket` (`f_ψ`), `rationalInducedSmoothOrbitSections`
     (`C^∞(O, P)`), `leviRationalUnitaryCoordinates` with `_hasLaurent`;
-  - the published units and modules: `RationalSchwartzSpace`, `rationalXi`, `rationalL2Weights`,
+  - earlier modules of the Library: `RationalSchwartzSpace`, `rationalXi`, `rationalL2Weights`,
     `rationalXi_inv`, `rationalHeight_inv`, `rationalHasTemperedCoefficients_normalizedInduction`,
     `IsRationalLeviTempered`, `rationalLeviXi` with `rationalLeviXi_pos`, `rationalLeviData`,
     `rationalMinimalModulus_eq_one`, `isUnimodularModulus_standardUnipotentPoints`,
@@ -36,8 +31,8 @@ J.-L. Waldspurger, *La formule de Plancherel pour les groupes p-adiques, d'aprè
 J. Inst. Math. Jussieu 2 (2003), 235–333, DOI 10.1017/S1474748003000082 (literature id
 `waldspurger-2003-plancherel`, SHA256
 `4b6a6162cd0b3863703fb2f65d1698f926caf813114917f2084c16e38f2e30f7`). Page numbers are printed
-pages; the PDF page is the printed page minus 234. The author checked the quotations below on
-the rendered images of PDF pages 38, 81, 87 and 88. Overlines in the source (complex conjugation)
+pages; the PDF page is the printed page minus 234. The quotations below were checked on the
+rendered images of PDF pages 38, 81, 87 and 88. Overlines in the source (complex conjugation)
 are written `\overline{…}`.
 
 - III.6, printed p. 272: "On définit un homomorphisme `G × G` équivariant
@@ -82,8 +77,9 @@ Correspondence:
   coefficient bound of Corollary III.1.2 for `M_I` (`hcoeff`, which the proof of Lemma VI.2.2
   uses) and the conclusion of Lemma II.1.5 for `G` (`hsw`).
 - `rationalInducedFourierTransform_eq_rationalConstantTermInducedFourierTransform` is Lemma VII.1.2
-  for `P = P_I(F)`. This discharges the hypothesis `hint` of Unit 24
-  (`rationalFourierOrbitSmoothSectionLinear`) and Unit 25: given `hcoeff`, `hint` holds for every
+  for `P = P_I(F)`. This discharges the hypothesis `hint` of
+  `RationalFourierOrbitSmoothness` (`rationalFourierOrbitSmoothSectionLinear`) and of
+  `RationalFourierOrbitContinuity`: given `hcoeff`, `hint` holds for every
   `ψ`.
 - The vanishing results take `h0 : ∀ g₁ g₂, (ρ(g₁) λ(g₂) f)^{(P)} = 0`, that is
   `f^{(P),Ind} = 0`, for the one parabolic `P = P_I(F)`. Lemma VIII.2.1 asks it for every proper
@@ -98,15 +94,14 @@ Correspondence:
     `(f'_1, f_ψ)_G = 0` in the proof of Lemma VIII.2.3, stated for a function `f` that satisfies
     `h0` in place of `f'_1`, and with the order of the arguments exchanged (the two pairings are
     complex conjugate). The wave packet has a weight `w` on the orbit in place of `µ(ω)`, as in
-    Unit 20.
+    `RationalInducedOrbitWavePacket`.
 - Not formalized here: `°C(G)`, the other direction of Lemma VIII.2.1 (which uses Theorem
   VII.2.5), the fact that `f'_1` satisfies `h0` when `f_1` does, the identity
   `(f_1 ∗ f_ψ)(g) = (f'_1, f_ψ)_G`, and Lemma VIII.2.3 itself.
 
 ## Setting
 
-As in Unit 22, `RationalInducedFourierTransform.md`, and Unit 24,
-`RationalFourierOrbitSmoothness.md`:
+As in `RationalInducedFourierTransform.md` and `RationalFourierOrbitSmoothness.md`:
 
 - `G` connected reductive over a nonarchimedean local field `F` (`hG`), with a maximal split torus
   `i` (`hi`), a generic cocharacter `ν` (`hν`) and `I` a finite set of simple roots; `P = P_I(F)`
@@ -176,8 +171,9 @@ measure) and `hwb : ∀ ω, ‖w ω‖ ≤ b`, `hcoeff` for `π`, and a section 
 
 ## Proofs
 
-Each result applies the corresponding Library lemma to the actual data of `P_I(F)` (as in Units
-20–25): the semidirect decomposition `isSemidirectDecomposition_standard`, closedness of
+Each result applies the corresponding Library lemma to the actual data of `P_I(F)` (as in the
+other actual-point modules, such as `RationalInducedFourierTransform` and
+`RationalFourierOrbitSmoothness`): the semidirect decomposition `isSemidirectDecomposition_standard`, closedness of
 `U_I(F)` and `P_I(F)`, the factorization `G = P K` (`exists_standardParabolicPoints_rootSet_mul`),
 unimodularity of `G(F)` and `U_I(F)`, the modulus of `P_I(F)`, `compactOpenCofinal_standardLevi`,
 `rationalL2Weights`, `rationalXi_inv`, `rationalHeight_inv`, `rationalLeviXi_inv`, the
@@ -202,7 +198,7 @@ weights. The goal is then unfolded to the Library's definitions and closed by
   `unitaryOrbitRepresentative_isDiscreteSeries`, `A.val.property.1` (irreducibility), `hTA A` and
   `hcoeffA A`.
 - `(f_ψ, f)_G = 0`: `pairing_inducedOrbitWavePacket_eq_zero_of_constantTermInd_eq_zero` with the
-  data of Unit 20 (norm characters, circle coordinates with their Laurent property and
+  data of `RationalInducedOrbitWavePacket` (norm characters, circle coordinates with their Laurent property and
   continuity), the constant-term data, the integrability for each representative from
   `integrable_rationalCoefficientPairingIntegrand … (hcoeffA A) hsw`, and
   `fun x => h0 x.1 x.2`.
@@ -211,8 +207,9 @@ weights. The goal is then unfolded to the Library's definitions and closed by
 
 - Only standard parabolics `P_I ⊇ P₀` are covered, and the vanishing results concern one
   parabolic and one orbit.
-- Analytic inputs whose actual statements are published but unproved enter as hypotheses: `hsw`
-  and `hswM` (Lemma II.1.5 for `G` and `M_I`), `hE` (Proposition II.4.5), `hTA` (temperedness),
+- Analytic inputs whose actual statements are published enter as hypotheses: `hsw`
+  and `hswM` (Lemma II.1.5 for `G` and `M_I`), `hE` (Proposition II.4.5, not proved in the
+  Library), `hTA` (temperedness),
   `hcoeff` and `hcoeffA` (Corollary III.1.2 for `ω`, for `π` and for each representative of its
   orbit; the bound for the representatives is not derived from the bound for `π`).
 - The structural fact `hPKiw` (ledger row S5) and the measure normalizations `hμK`, `hMK`, `hUK`

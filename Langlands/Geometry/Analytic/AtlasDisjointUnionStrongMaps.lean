@@ -212,21 +212,21 @@ variable {A' : I → AffinoidAtlasPresentation.{u, max z v, max z w} K}
 
 variable (hA) in
 /-- The componentwise map between disjoint unions. -/
-def map : CompatibleStrongHom (presentation A' hA') (presentation A hA) :=
+def compatibleMap : CompatibleStrongHom (presentation A' hA') (presentation A hA) :=
   compatibleDesc fun i => (s i).comp (compatibleInclusion A hA i)
 
 @[simp]
 theorem map_baseMap_apply (i : I) (x : (A' i).space) :
-    (map hA hA' s).baseMap (⟨i, x⟩ : Σ j, (A' j).space) =
+    (compatibleMap hA hA' s).baseMap (⟨i, x⟩ : Σ j, (A' j).space) =
       (⟨i, (s i).baseMap x⟩ : Σ j, (A j).space) := rfl
 
 theorem inclusion_comp_map (i : I) :
-    (compatibleInclusion A' hA' i).comp (map hA hA' s) = (s i).comp (compatibleInclusion A hA i) :=
+    (compatibleInclusion A' hA' i).comp (compatibleMap hA hA' s) = (s i).comp (compatibleInclusion A hA i) :=
   inclusion_comp_desc _ i
 
 /-- A disjoint union of quasi-isomorphisms is a quasi-isomorphism. -/
 theorem isQuasiIso_map (hs : ∀ i, (s i).toStrongHom.IsQuasiIso) :
-    (map hA hA' s).toStrongHom.IsQuasiIso := by
+    (compatibleMap hA hA' s).toStrongHom.IsQuasiIso := by
   refine ⟨?_, ?_⟩
   · exact IsHomeomorph.sigmaMap (X := fun i => (A' i).space) (Y := fun i => (A i).space)
       (f := id) (g := fun i => ((s i).baseMap : (A' i).space → (A i).space))
@@ -247,12 +247,12 @@ theorem isQuasiIso_map (hs : ∀ i, (s i).toStrongHom.IsQuasiIso) :
     have hcomp : ((s j).comp (compatibleInclusion A hA j)).baseMap '' Set.range ((A' j).atlas.chart c) ⊆
         Set.range ((presentation A hA).atlas.chart ⟨j, d⟩) :=
       (image_descBaseMap (fun i => (s i).comp (compatibleInclusion A hA i)) j c).symm.trans_subset h
-    have hp : (map hA hA' s).pullback ⟨j, c⟩ ⟨j, d⟩ h = (s j).pullback c d hd := by
+    have hp : (compatibleMap hA hA' s).pullback ⟨j, c⟩ ⟨j, d⟩ h = (s j).pullback c d hd := by
       change ((s j).comp (compatibleInclusion A hA j)).pullback c ⟨j, d⟩ hcomp = _
       rw [CompatibleStrongHom.comp_pullback (s j) (compatibleInclusion A hA j) c d ⟨j, d⟩ hd hincl hcomp,
         inclusion_pullback_self]
       exact BoundedAlgHom.comp_id _
-    have hl : (map hA hA' s).chartImageLocus ⟨j, c⟩ ⟨j, d⟩ = (s j).chartImageLocus c d := by
+    have hl : (compatibleMap hA hA' s).chartImageLocus ⟨j, c⟩ ⟨j, d⟩ = (s j).chartImageLocus c d := by
       ext p
       constructor
       · rintro ⟨_, ⟨w, rfl⟩, hw⟩

@@ -38,7 +38,7 @@ generic provider and make `UnramifiedRecoveredTorusGeneric` use
 `IntegralSplitTorusConversion`. Their declaration types and proof bodies are
 unchanged. These imports allow the existing special-apartment chamber proof to
 use the providers without the unrelated facet-sign descent interfaces. No
-chamber, reference torus or prescribed-point fixation is asserted by this unit.
+chamber, reference torus or prescribed-point fixation is asserted by this module.
 
 The same focused import repair relocates the three published induced-residue
 arithmetic lemmas into `UnramifiedResidueArithmetic`. That provider's paired

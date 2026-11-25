@@ -1,7 +1,5 @@
 # Algebraic normalization of rational gamma equations
 
-Worker 351, with the shared interface proposed by Worker 103.
-
 This module defines
 `Langlands.RankinSelberg.GammaNormalizationStatement : Prop`.
 It states an internal algebraic prerequisite shared by the equal-rank and
@@ -145,6 +143,6 @@ normalization or the classification of every Laurent unit.
 The source's analytic input is represented here by the two explicit incidence
 hypotheses on actual rational-function sets. Neither epsilon-factor existence,
 a Laurent-unit witness, nor a normalized functional equation is assumed.
-No task status or review receipt supplies mathematical hypotheses. Proving this
-proposition, and establishing its hypotheses for the analytic integral families,
-remain separate obligations. The imported Lean/Markdown pairs are unchanged.
+The proof of this proposition is `gammaNormalization` in
+`GammaNormalizationProof`; establishing its hypotheses for the analytic
+integral families remains a separate obligation. The imported Lean/Markdown pairs are unchanged.

@@ -1,7 +1,5 @@
 # Proof that external tensors of supercuspidal factors are irreducible and Levi cuspidal
 
-Author: Worker 218.
-
 `Langlands.CuspidalSupport.glCuspidalTensor` proves the published proposition
 `Langlands.CuspidalSupport.GLCuspidalTensorStatement` in
 `Langlands.Representation.CuspidalSupport.CuspidalTensorStatement`. The

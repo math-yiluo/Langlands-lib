@@ -1,6 +1,6 @@
 # Coherence of actual common-closure operations
 
-This internal derived unit concerns the existing common-closure induction and
+This module concerns the existing common-closure induction and
 trace pullback operations in `Langlands.LocalFactor.CommonClosure`. It retains
 every prime, `F : PadicField.{uF} p`, the independent representation universe `uV`,
 the actual finite intermediate fields of the common algebraic closure, ordinary
@@ -42,5 +42,5 @@ no additional topology or character hypotheses are imposed.
 The provenance is internal and derived: the function formulas verify the
 coherence of the published induction construction directly, and the trace
 identities specialize Mathlib's actual field trace laws. There is no new
-literature claim. This supporting unit does not discharge the arithmetic Brauer
+literature claim. This module does not discharge the arithmetic Brauer
 kernel identity or the full local-constant existence target.

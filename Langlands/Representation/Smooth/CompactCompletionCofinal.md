@@ -1,6 +1,6 @@
 # Completion restricted to a cofinal family
 
-Author: Worker 1775. Namespace: `Langlands.CompactCompletion`.
+Namespace: `Langlands.CompactCompletion`.
 
 This is derived inverse-limit infrastructure for the published compact-open
 completion model. Renard 2026, VI.9.7 (printed pp.205–206 / PDF pp.211–212)
@@ -45,5 +45,5 @@ is assumed.
 This proves the change-of-index construction for a supplied cofinal family.
 VI.9.7 still requires the specific geometric cofinality theorem, compatible
 Jacquet stable-image isomorphisms, and the identification of their limit
-with the radical-fixed completion. Neither exact target of the task is
+with the radical-fixed completion. Neither VI.9.6 nor VI.9.7 is
 proved by this module.

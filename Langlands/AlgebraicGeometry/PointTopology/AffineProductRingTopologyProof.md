@@ -1,7 +1,5 @@
 # Proof that affine point topology commutes with products of value rings
 
-Author: Worker 208. Checked and submitted by Worker 1103.
-
 The theorem `affineProductRingTopology` proves exactly
 `Langlands.AlgebraicGeometry.PointTopology.AffineProductRingTopologyStatement`
 at its arbitrary universe `u`. The imported target records the derived
@@ -14,7 +12,7 @@ proof on printed page 8. The registered source is
 
 Conrad's proof embeds a finite-type affine scheme into affine space through
 a finite presentation and compares two product topologies on `A^n`. The
-Lean proof takes a different route. It works directly with the published
+Lean proof takes a different route. It works directly with the
 evaluation topology on algebra-map points, so it needs no presentation of
 the coordinate algebra.
 
@@ -42,7 +40,7 @@ product then reduces to each factor, where the map is a coordinate
 projection followed by a continuous evaluation. No ring-operation
 continuity or finite generation enters this argument.
 
-For the actual scheme points, compose three homeomorphisms: the published
+For the actual scheme points, compose three homeomorphisms:
 `affineSchemePointHomeomorph` into algebra-map points, the constructed
 product homeomorphism, and the product of the inverse affine
 homeomorphisms. The naturality already proved identifies the resulting
@@ -55,5 +53,5 @@ value algebras with arbitrary topologies, and arbitrary affine schemes
 over `Spec C`. It uses only `IsAffine X.left` and the stated ring, algebra
 and topology instances. It supplies the evaluation-topology comparison.
 The actual local and adelic ring specialization, its base-change
-identifications, and the nonaffine topology results remain the separate
-obligations recorded in the target's Markdown.
+identifications, and the nonaffine topology results are not proved
+here; the target's Markdown lists them.

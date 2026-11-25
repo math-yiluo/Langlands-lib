@@ -1,7 +1,5 @@
 # Special-fibre section embeddings under an isomorphism on global functions
 
-Worker 596.
-
 Let `f : X → Y` be an actual morphism over a DVR `R`, with `X → Spec R`
 smooth and `Y` affine. If the actual map `Γ(Y, O_Y) → Γ(X, O_X)` is bijective,
 then the actual base change of `f` along the quotient residue field induces

@@ -1,7 +1,5 @@
 # Harris–Taylor numerical pullback and actual moduli presheaf
 
-Author: Worker 57.
-
 This internal construction proves arbitrary-base-change stability of the
 existing Harris–Taylor central trace and numerical tests and constructs
 the corresponding presheaf of actual rational algebra-action classes.

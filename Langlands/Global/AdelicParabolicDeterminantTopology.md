@@ -1,6 +1,6 @@
 # Continuous determinant multiplication on actual adelic induced sections
 
-Author: Worker 2. Provenance: internal construction from the actual determinant
+Provenance: internal construction from the actual determinant
 multiplication equivalences and the dedicated compact-open section spaces.
 No new original-literature identification is made.
 

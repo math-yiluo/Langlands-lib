@@ -59,14 +59,14 @@ def pullbackTwistIso {Y : Scheme.{u}} (φ : Y ⟶ X) (L M : X.Modules) :
       tensorIso (pullbackTwistIso φ L M n) (Iso.refl _)
 
 /-- Twists of invertible modules by an invertible module are invertible. -/
-lemma isInvertible_twist {L M : X.Modules} (hL : Scheme.Modules.IsInvertible L)
-    (hM : Scheme.Modules.IsInvertible M) : ∀ n, Scheme.Modules.IsInvertible (twistF L M n)
+lemma isInvertible_twist {L M : X.Modules} (hL : Scheme.Modules.IsInvertibleFLT L)
+    (hM : Scheme.Modules.IsInvertibleFLT M) : ∀ n, Scheme.Modules.IsInvertibleFLT (twistF L M n)
   | 0 => hM
-  | n + 1 => (isInvertible_twist hL hM n).tensor_monoidalV2 hL
+  | n + 1 => Scheme.Modules.IsInvertible.tensor_monoidalV2 (isInvertible_twist hL hM n) hL
 
 /-- FLT-invertible modules are locally free of rank one. -/
 lemma isLocallyFreeRankOne_of_isInvertible {M : X.Modules}
-    (hM : Scheme.Modules.IsInvertible M) : IsLocallyFreeRankOne M := fun x => by
+    (hM : Scheme.Modules.IsInvertibleFLT M) : IsLocallyFreeRankOne M := fun x => by
   obtain ⟨U, hx, ⟨e⟩⟩ := hM.exists_trivialization x
   exact ⟨U, hx, ⟨(Scheme.Modules.restrictFunctorIsoPullback U.ι).app M ≪≫ e⟩⟩
 
@@ -87,9 +87,9 @@ section Core
 
 variable {B : Type u} [CommRing B] [IsNoetherianRing B] {XB : Scheme.{u}}
   (fB : XB ⟶ Spec (CommRingCat.of B)) [IsProper fB] [Flat fB]
-  (L : XB.Modules) (hL : Scheme.Modules.IsInvertible L)
+  (L : XB.Modules) (hL : Scheme.Modules.IsInvertibleFLT L)
   (I : XB.IdealSheafData) (hI : IsRelativeEffectiveCartierIdeal fB I)
-  (LE : I.subscheme.Modules) (hLE : Scheme.Modules.IsInvertible LE)
+  (LE : I.subscheme.Modules) (hLE : Scheme.Modules.IsInvertibleFLT LE)
   (eLE : (Scheme.Modules.pullback I.subschemeι).obj L ≅ LE)
   (k : Type u) [Field k] (sk : B →+* k)
 
@@ -111,7 +111,7 @@ theorem geomFibreH0Finrank_twist_eq (n : ℕ)
           ((Spec.map (CommRingCat.ofHom sk)) (IsLocalRing.closedPoint k))
           (twistF L (kernelModule I.subschemeι) n) := by
   set t := (Spec.map (CommRingCat.ofHom sk)) (IsLocalRing.closedPoint k) with ht
-  have hK : Scheme.Modules.IsInvertible (kernelModule I.subschemeι) :=
+  have hK : Scheme.Modules.IsInvertibleFLT (kernelModule I.subschemeι) :=
     isInvertible_of_isLocallyFreeRankOne hI.1
   have : Flat (I.subschemeι ≫ fB) := hI.2
   -- the fibre square
@@ -133,7 +133,7 @@ theorem geomFibreH0Finrank_twist_eq (n : ℕ)
   let St := (divisorSequence i).map (Scheme.Modules.pullback b)
   have hSt : St.ShortExact := shortExact_divisorSequence_map i b
   let Lt := (Scheme.Modules.pullback b).obj L
-  have hLt : IsLocallyFreeRankOne Lt := isLocallyFreeRankOne_of_isInvertible (hL.pullback b)
+  have hLt : IsLocallyFreeRankOne Lt := isLocallyFreeRankOne_of_isInvertible (Scheme.Modules.IsInvertible.pullbackFLT (hL := hL) b)
   let Sn := twistSeq Lt hLt St n
   have hSn : Sn.ShortExact := shortExact_twistSeq Lt hLt hSt n
   -- identifications of the three terms
@@ -216,7 +216,7 @@ theorem projectiveRelativeDivisorFibreHilbert_of_twistCohomology
   intro A _ _ X f 𝓛X N 𝔓 hf hflat h𝓛 hcl B _ _ s I hI k _ _ sk
   have : IsProper f := hf
   have : Flat f := hflat
-  have hK : Scheme.Modules.IsInvertible (kernelModule I.subschemeι) :=
+  have hK : Scheme.Modules.IsInvertibleFLT (kernelModule I.subschemeι) :=
     isInvertible_of_isLocallyFreeRankOne hI.1
   set t := (Spec.map (CommRingCat.ofHom sk)) (IsLocalRing.closedPoint k)
   obtain ⟨V₁, hV₁, n₁, hn₁⟩ := (hPT A f 𝓛X N 𝔓 hf hflat h𝓛 hcl (Spec (CommRingCat.of B)) s
@@ -225,8 +225,8 @@ theorem projectiveRelativeDivisorFibreHilbert_of_twistCohomology
     (𝟙_ _) (Scheme.Modules.isInvertible_unit _)).1 t
   refine ⟨max n₁ n₂, fun n hn => ?_⟩
   exact geomFibreH0Finrank_twist_eq (pullback.snd f s)
-    ((Scheme.Modules.pullback (pullback.fst f s)).obj 𝓛X) (h𝓛.pullback _) I hI
-    ((Scheme.Modules.pullback (I.subschemeι ≫ pullback.fst f s)).obj 𝓛X) (h𝓛.pullback _)
+    ((Scheme.Modules.pullback (pullback.fst f s)).obj 𝓛X) (Scheme.Modules.IsInvertible.pullbackFLT (hL := h𝓛) _) I hI
+    ((Scheme.Modules.pullback (I.subschemeι ≫ pullback.fst f s)).obj 𝓛X) (Scheme.Modules.IsInvertible.pullbackFLT (hL := h𝓛) _)
     ((Scheme.Modules.pullbackComp _ _).app 𝓛X) k sk n
     (fun p hp => hn₁ t hV₁ n p (le_of_max_le_left hn) hp)
     (fun p hp => hn₂ t hV₂ n p (le_of_max_le_right hn) hp)

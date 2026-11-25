@@ -1,6 +1,6 @@
 # Norm transport between prescribed intermediate Weil groups
 
-Worker 125. Internal derived infrastructure for Task 4919.
+Internal derived infrastructure.
 
 `intermediateInclusionEmbedding` is the literal inclusion of two finite
 intermediate fields as an embedding over the specified p-adic base.

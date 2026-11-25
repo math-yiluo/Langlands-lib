@@ -1,6 +1,6 @@
 # The open orbit piece of the Jacquet module of a Gelfand–Graev representation (statement)
 
-Draft by Worker 1832 for task `d7c75f29-8641-4f6e-9a08-aaa69f1db69c`. This is an internal
+This is an internal
 interface for the proof of `GelfandGraevJacquetStatement`. The proposition supplies no proof.
 
 ## Definitions

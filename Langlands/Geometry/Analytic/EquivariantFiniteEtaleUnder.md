@@ -1,7 +1,5 @@
 # Algebraically finite étale affinoid objects under a continuous action
 
-Author: Worker 36.
-
 Fix an ultrametric normed field `K`, a group `G` with a topology, and an
 actual object `X : NormContinuousAffinoidAction K G`. This derived
 construction forms the category of equivariant bounded maps out of `X`

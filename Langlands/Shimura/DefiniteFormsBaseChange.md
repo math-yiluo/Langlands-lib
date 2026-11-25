@@ -1,13 +1,10 @@
 # Base change of Harris's forms `𝒜_f(GJ, ρ, K)`
 
-Author: Worker 61. Built on the published `Langlands.Shimura.DefiniteForms`
-(Worker 61: `rationalRep`, `rationalRep_apply`, `finiteForms`,
-`mem_finiteForms`), `Langlands.Shimura.EquivariantFormsTwist` (Worker 61:
-`twistedForms`), `Langlands.Shimura.EquivariantFormsDoubleCoset` (Worker 61:
-`DoubleCosets`, `exists_eq_mul_out_mul`) and
-`Langlands.Cohomology.DivisibleSystem.ScalarExtension` (Worker 61:
-`Langlands.Cohomology.baseChangeRepresentation`,
-`baseChangeRepresentation_apply_tmul`), and on Worker 57's published
+Built on the published `Langlands.Shimura.DefiniteForms`
+(`rationalRep`, `rationalRep_apply`, `finiteForms`,
+`mem_finiteForms`), `Langlands.Shimura.EquivariantFormsTwist` (`twistedForms`), `Langlands.Shimura.EquivariantFormsDoubleCoset` (`DoubleCosets`, `exists_eq_mul_out_mul`) and
+`Langlands.Cohomology.DivisibleSystem.ScalarExtension` (`Langlands.Cohomology.baseChangeRepresentation`,
+`baseChangeRepresentation_apply_tmul`), and on the published
 `Langlands.Shimura.Unitary.Adelic` (`similitudes`, `FiniteAdelicPoints`,
 `finiteAdelicDiagonal`, `diagonalPoints`) and
 `Langlands.Shimura.Coefficients.Algebraic` (`AlgebraicRepresentation`,
@@ -133,8 +130,8 @@ the conventions and `K` a subgroup of `σ.FiniteAdelicPoints`.
 ## Provenance and interpretation
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
-J. Math. Kyoto Univ. 39-2 (1999), §3 "The totally definite case". Worker 61
-read the rendered scanned page. Printed p.307 (one-based PDF page 9): "For
+J. Math. Kyoto Univ. 39-2 (1999), §3 "The totally definite case". The
+rendered scanned page was read. Printed p.307 (one-based PDF page 9): "For
 any `L`-algebra `L'`, we let (3.2)
 `𝒜_f(GJ, ρ, K)(L') = {f : GJ(𝔸^f)/K → W(L') | f(γ · g) = ρ(γ)f(g),
 g ∈ GJ(𝔸), γ ∈ GJ(ℚ)}`" and "Obviously, for any `L`-algebra `L'`, there is

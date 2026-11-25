@@ -1,8 +1,6 @@
 # Intrinsic dimensions of arbitrary smooth algebraic spaces over a field
 
-Author: Worker 502.
-
-This is a derived host bridge for the manifold clause of Brian Conrad,
+This is a derived bridge for the manifold clause of Brian Conrad,
 *Weil and Grothendieck approaches to adelic points*, December 31, 2011,
 printed p.15, Proposition 5.4. The registered original is
 `conrad-2011-weil-grothendieck-adelic-points`, SHA-256
@@ -44,10 +42,17 @@ natural-number cast. Thus atlas choices do not affect the function;
 `pointDimension_independent` also records independence from the smoothness
 witness.
 
-This unit supplies only the intrinsic numerical function. Genuine algebraic
-dimension pieces, restricted atlases and section maps are the next construction
-units. The homeomorphism for the etale-chart rational-point topology,
+This module supplies only the intrinsic numerical function. Genuine algebraic
+dimension pieces, restricted atlases and section maps are constructed in
+`SmoothSourceDimensionPieces` and `SmoothSourceDimensionFieldPoints`. The
+homeomorphism for the etale-chart rational-point topology,
 functorial analytic assembly across intersections with target dimension pieces,
 etale dimension preservation and local analytic isomorphisms, and uniqueness
-of a varying-dimensional analytic structure remain subsequent statement and
-proof obligations. The full manifold assertion is not claimed here.
+of a varying-dimensional analytic structure are separate statements, proved in
+`SmoothSourceDimensionTopologyProof`,
+`SmoothSourceDimensionAnalyticAssemblyProof`,
+`SmoothSourceDimensionAnalyticFunctorialityProof`,
+`SmoothSourceDimensionEtaleAnalyticIsoProof` and
+`SmoothSourceDimensionAnalyticUniquenessProof`. The full manifold assertion
+is not claimed here; it is proved as `smoothSourceAnalyticManifold` in
+`SmoothSourceAnalyticManifoldProof`.

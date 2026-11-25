@@ -130,7 +130,7 @@ lemma integral_addMonoidHom_subsingleton (P : Type u) [Group P] [Fintype P] :
     have hn : Fintype.card (Additive P) • f x =
         Fintype.card (Additive P) • (0 : IntegralScalar.{u}) := by
       rw [← map_nsmul, card_nsmul_eq_zero, map_zero, smul_zero]
-    exact nsmul_right_injective Fintype.card_ne_zero hn
+    exact (AddCommute.all _ _).eq_of_nsmul_eq_nsmul Fintype.card_ne_zero hn
   exact ⟨fun f g => (h0 f).trans (h0 g).symm⟩
 
 variable {G : Type u} [Group G] [Fintype G]

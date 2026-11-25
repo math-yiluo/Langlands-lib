@@ -1,6 +1,6 @@
 # The full standard Levi scheme and its norm kernel
 
-This derived structural unit is part of the group-Levi comparison needed for
+This derived structural module is part of the group-Levi comparison needed for
 Waldspurger VIII.4.2, printed p.330 (PDF p.96). It uses the actual standard Levi
 scheme and its original inclusion, preserving the distinction between that
 chosen representative and the ambient group scheme.
@@ -22,5 +22,6 @@ The forward implication applies functoriality of rational-character norms;
 the reverse applies it to the inverse scheme morphism. Thus neither norm
 family is replaced by an arbitrary family of characters.
 
-This unit supplies no orbit or character Haar normalization, packet estimate,
-cuspidality theorem or closed Task 7440 target.
+This module supplies no orbit or character Haar normalization, packet estimate,
+cuspidality theorem or closed VIII.4.2 target
+(`RationalCuspidalDiscreteCoefficientStatement`, `RationalCuspidalFixedCoefficientLiftingStatement`).

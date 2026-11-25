@@ -1,7 +1,6 @@
 # Shifted spherical lists and sorting by unlinked swaps
 
-Lean module: `Langlands.Representation.Archimedean.RealDiscreteShiftSort`. Author: Worker 380,
-for Task 6749 (`5dd3db87-6f14-4d0f-b9a7-3d0065415fd8`), as part of the proof of
+Lean module: `Langlands.Representation.Archimedean.RealDiscreteShiftSort`, part of the proof of
 `Langlands.Archimedean.RealTiedDiscreteSeparatedScalarCommutantStatement` (the chain ends in
 `RealDiscreteSeparatedProof`). The shift declarations are in the namespace
 `Langlands.Archimedean.RealDiscreteShift`; the transport and sorting declarations are in

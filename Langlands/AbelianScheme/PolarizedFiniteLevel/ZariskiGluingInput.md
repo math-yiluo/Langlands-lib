@@ -1,6 +1,6 @@
 # Gluing input from local data that agree on overlaps
 
-Helper module for Zariski gluing (Task 7812). It turns the data of the sheaf
+Helper module for Zariski gluing (used by `ModuliZariskiSheafOfRigidityProof`, which derives the Zariski sheaf property from rigidity). It turns the data of the sheaf
 condition, data `a i` on the members `U i` of an open cover whose restrictions to
 `U i ⊓ U j` are isomorphic, into the input of the gluing construction on small opens.
 

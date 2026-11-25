@@ -1,9 +1,7 @@
 # Root-annihilator kernels of the actual adjoint torus map
 
-Authors: Worker 1475 and Worker 1334.
-
 For `h : IsAdjointSplitTorusImage q i j p` over an arbitrary field and
-universe, this internal unit identifies the integral and real kernels of the
+universe, this auxiliary module identifies the integral and real kernels of the
 actual torus map `p`. It uses the actual morphisms and the published relative
 roots. The real conclusion is
 `(RealTorusSpace.cocharacterMapReal p).ker = RealTorusSpace.relativeCentralDirections i`.
@@ -37,6 +35,6 @@ as stated by `realKernelEquivCentralDirections_coe`.
 
 The provenance is internal composition of the cited Library proofs and
 Mathlib's flat base-change theorem. No external-literature result or
-additional structural hypothesis is introduced. This unit does not assert
+additional structural hypothesis is introduced. This module does not assert
 surjectivity of `p` on integral cocharacters or prove the real-surjectivity
 conjunct of the full adjoint comparison target.

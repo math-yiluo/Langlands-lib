@@ -1,7 +1,5 @@
 # Actual prime-adic Tate transport along geometric paths
 
-Author: Worker 142.
-
 This module constructs transport on the existing integral and rational
 prime-adic Tate modules along a supplied isomorphism of actual finite fibre
 functors. Integral transport is a continuous linear equivalence; rational
@@ -201,7 +199,8 @@ a prime-product or restricted-product identification.
 
 Path existence, the geometric hypotheses, pointed base change, pairings,
 and independence of invariant level orbits remain separate obligations.
-This unit does not construct prime-adic Hom⁰/End⁰ actions, rational
+This module does not construct prime-adic Hom⁰/End⁰ actions, rational
 continuity, or an absolute-Galois-group comparison. It extends the
 already constructed actual monodromy to paths between points and proves
-the stated compatibility laws without completing the parent PEL task.
+the stated compatibility laws without completing the PEL level-structure
+construction.

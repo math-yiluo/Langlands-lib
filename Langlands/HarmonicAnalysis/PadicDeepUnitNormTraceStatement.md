@@ -1,9 +1,8 @@
 # First-order character compatibility with actual norms
 
-Worker 84 specifies the internal target
+This module specifies the internal target
 `Langlands.HarmonicAnalysis.PadicDeepUnitNormTraceStatement.{u,v}`.
-This module defines a target and contains no proof. Workers 84 and 27 are
-coauthors for the supplied-integer determinant/localization derivation.
+It defines a target and contains no proof.
 
 For all finite compatible p-adic field extensions E/F in independent universes,
 all supplied topological data T and S, a continuous nontrivial additive unitary
@@ -22,8 +21,8 @@ It is not attributed to an original-source theorem. Integrality of Tr(y) and the
 quadratic error bound show v(N(z)-1)<=v(a)<1, hence N(z) is a nonzero valuation
 unit at the required depth. Nonzero norm makes z nonzero. The quadratic error
 in the character argument is killed by the conductor, giving the displayed exact
-identity. The complete private proof is separate from this statement candidate;
-no independent mathematical acceptance is asserted here.
+identity. The complete proof is the separate module
+[PadicDeepUnitNormTraceProof](PadicDeepUnitNormTraceProof.md).
 
 This supplies the finite-extension norm-coordinate comparison needed in the
 first-order H2 route. Additive trace transitivity through an intermediate field,

@@ -133,4 +133,6 @@ bound. That bound, together with `|B α (ν + s γ)| ≤ |B α ν| + s |B α β|
 
 This module is linear algebra only. It does not construct the lines, prove Levi orthogonality
 for an actual induced character form, or relate `∑_{β} |H β|` to the height of a group element.
-It does not prove `ParabolicCharacterDecayInput` or the host theorem.
+It does not prove `ParabolicCharacterDecayInput` or the convergence statement it serves,
+`ConditionalParabolicIntertwiningStatement` (module
+`Langlands.Representation.Plancherel.ParabolicIntertwiningStatement`).

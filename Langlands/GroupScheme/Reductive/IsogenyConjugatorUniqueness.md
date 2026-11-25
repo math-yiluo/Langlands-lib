@@ -1,7 +1,5 @@
 # Uniqueness of actual adjoint-torus isogeny conjugators
 
-Worker 689.
-
 This internal derived development separates existence from uniqueness in the
 published `SplitIsogenyUniquenessStatement`. Its proposition
 `SplitIsogenyConjugatorExistenceStatement` repeats exactly the published
@@ -10,7 +8,7 @@ only with existence of the specified adjoint-torus ground-field point.
 It retains arbitrary fields, general isogenies, full character equality,
 central torus directions and the supplied actual adjoint quotient and torus.
 The final theorem proves that this existence-only statement implies the
-unchanged published uniqueness statement.
+published uniqueness statement.
 
 The implemented uniqueness proof first proves that equality of two actual
 maps obtained by composing an isogeny with the evaluated inner actions
@@ -30,6 +28,6 @@ the rational point lifts to a rational point of the original torus.
 
 The provenance is internal: these are formal consequences of the actual
 adjoint inner action, its all-test faithfulness, base-point evaluation,
-and the published adjoint-torus image predicate. This unit proves
+and the published adjoint-torus image predicate. This module proves
 uniqueness and the reduction to existence; it does not assert unconditional
 existence of a conjugator.

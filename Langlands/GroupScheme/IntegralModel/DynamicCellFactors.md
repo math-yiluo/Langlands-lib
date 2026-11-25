@@ -1,6 +1,6 @@
 # Integral prescribed dynamic factors from integral cell coordinates
 
-This internal unit transports actual dynamic representatives through the
+This module transports actual dynamic representatives through the
 generic-fibre identification of an integral model, and identifies prescribed
 generic factors with integral cell factors. It retains arbitrary universe `u`.
 
@@ -31,7 +31,7 @@ monicity of this binary generic cell, without a smoothness assumption.
 `ambient_integral_factors_of_cell_lift` then identifies both prescribed factors
 with the images of the original integral cell coordinates. No integral models
 of the factors and no smoothness, reductivity, Henselian, or residue-field
-assumptions are required in this unit.
+assumptions are required in this module.
 
 `integralDynamicFactorLift` selects integral sections mapping to the two
 prescribed generic factors, using the two integral-point memberships just proved.
@@ -39,5 +39,5 @@ Its subtype records both exact generic images.
 
 The provenance is internal composition of the named base-change,
 isomorphism-transport, dynamic monicity, and integral-coordinate comparison
-results. This unit assumes integral cell coordinates and does not construct
+results. This module assumes integral cell coordinates and does not construct
 them or assert the fixed-point opposite-factor theorem.

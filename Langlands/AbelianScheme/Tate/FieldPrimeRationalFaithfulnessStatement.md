@@ -1,7 +1,7 @@
 # Faithfulness target for the actual rational Tate action at one prime
 
-`Langlands.AbelianScheme.Tate.FieldPrimeRationalFaithfulnessStatement` is an
-unproved proposition. For every algebraically closed characteristic-zero field
+`Langlands.AbelianScheme.Tate.FieldPrimeRationalFaithfulnessStatement` is a
+proposition, not proved in this module. For every algebraically closed characteristic-zero field
 `Ω : Type u`, actual abelian schemes `A` and `B` over `Spec Ω`, and every
 natural prime `p` with `Fact p.Prime`, it asserts injectivity of the existing map
 
@@ -112,5 +112,6 @@ injectivity premise in the published Harris–Taylor rigidity reductions. It
 identifies a rational self-isogeny with the identity once its actual operator
 at the selected prime is the identity. The existing full rational Tate
 faithfulness theorem does not supply `h`. This statement makes no finite-order,
-polarization, lattice, level-smallness or full rigidity assertion. A focused
-proof successor must prove this exact proposition after its publication.
+polarization, lattice, level-smallness or full rigidity assertion. The
+proposition is proved as `fieldPrimeRationalFaithfulness` in
+`Langlands.AbelianScheme.Tate.FieldPrimeRationalFaithfulnessProof`.

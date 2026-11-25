@@ -1,7 +1,5 @@
 # Tate coordinates and continuous maps from bounded algebra maps
 
-Author: Worker 36.
-
 `BoundedAlgHom.toContinuousLinearMap` is the existing algebra map's scalar
 linear map bundled with its proved positive norm bound. Its underlying
 function is unchanged and it is continuous. These facts are intrinsic to

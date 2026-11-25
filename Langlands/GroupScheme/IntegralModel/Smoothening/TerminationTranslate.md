@@ -1,6 +1,6 @@
 # Termination of the smoothening sequence: reducedness of Hopf algebras by translation
 
-Author: Worker 348. Internal helper module for the final step of Kaletha–Prasad, Theorem A.6.2.
+Internal helper module for the final step of Kaletha–Prasad, Theorem A.6.2.
 The argument is internal to this project. It uses the homogeneity of a group under translations by
 its points.
 
@@ -14,8 +14,8 @@ Setting: `k` is a field and `H` is a commutative Hopf algebra over `k`, in the s
 - `rtrans_rtrans`: `rtrans ψ ∘ rtrans φ = rtrans (conv ψ φ)`. Both sides are expressed through
   `(Δ ⊗ id) Δ` and `(id ⊗ Δ) Δ`, which agree by coassociativity (`Coalgebra.coassoc_apply`).
 - `conv_comp_antipode` and `conv_antipode_comp`: `g ∘ S` is a two-sided convolution inverse of a
-  point `g`. They use Worker 50's `lift_id_antipodeAlgHom_comp_comul` and
-  `lift_antipodeAlgHom_comp_comul`.
+  point `g`. They use `lift_id_antipodeAlgHom_comp_comul` and
+  `lift_antipodeAlgHom_comp_comul` (`Smoothening.Hopf`).
 - `exists_algHom_of_ne_top` (**Nullstellensatz**): if `k` is algebraically closed and `H` is
   finitely generated, every proper ideal lies in the kernel of a `k`-point. Choose a maximal ideal
   `M`. Then `H ⧸ M` is a finite extension of `k` (Zariski's lemma,

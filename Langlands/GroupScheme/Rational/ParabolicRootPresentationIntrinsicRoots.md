@@ -1,7 +1,5 @@
 # Intrinsic positive split-component roots of a specified parabolic
 
-Author: Worker 1457.
-
 This is an internal derived construction from the published
 `ParabolicSplitComponentCocharacter`, `ParabolicRootRadicals`,
 `SubtorusIntertwiningRoots`, and split-torus weight restriction interfaces.

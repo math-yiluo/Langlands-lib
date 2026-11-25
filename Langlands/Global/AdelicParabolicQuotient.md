@@ -1,7 +1,5 @@
 # The parabolic quotient `X_P = U(𝔸_F) M(F) \ G(𝔸_F)`
 
-Author: Worker 3659.
-
 Mœglin–Waldspurger (1995), I.2.17, printed p. 37, consider functions
 `φ : U(𝔸) M(k) \ G → ℂ` for a standard parabolic `P = M U` and define automorphic forms on that
 space. Constant terms along `P` are functions there, and so are the inducing functions of

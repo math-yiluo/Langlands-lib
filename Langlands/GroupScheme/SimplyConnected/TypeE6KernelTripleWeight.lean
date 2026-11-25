@@ -59,6 +59,10 @@ theorem e6TripleFirstWeight_isStarFixed (hstar : d.StarIsTrivial) :
     d.pinning.IsStarFixedWeight (d.e6TripleFirstWeight hsc e) := by
   intro σ
   change (d.pinning.starAction σ).val.weightEquiv (d.e6TripleFirstWeight hsc e) = _
+  have : AddMonoidHomClass (characterLattice d.pinning.toSplitPinning.torus ≃ₗ[ℤ]
+      characterLattice d.pinning.toSplitPinning.torus) (characterLattice d.pinning.toSplitPinning.torus)
+      (characterLattice d.pinning.toSplitPinning.torus) :=
+    SemilinearMapClass.instAddMonoidHomClass _
   simp only [e6TripleFirstWeight, map_zsmul, d.absoluteFundamentalCharacter_star,
     hstar σ (e.symm 0)]
 

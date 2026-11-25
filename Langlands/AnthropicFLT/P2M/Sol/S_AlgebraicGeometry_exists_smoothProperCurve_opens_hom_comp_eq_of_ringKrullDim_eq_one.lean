@@ -7,7 +7,7 @@ Modified: FLT module names are prefixed by `Langlands.AnthropicFLT`; the FLT lak
 are set after the imports; the import of `P2M.Util` is dropped. The paired Markdown file lists
 the changes.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicCurve_CurveModel
 import Langlands.AnthropicFLT.Theorems.Thm_AlgebraicCurve_CurveModel_nonempty_of_perfectField
 import Langlands.AnthropicFLT.Theorems.Thm_RingHom_finiteDimensional_adjoin_range_of_finite_of_forall_mem_range

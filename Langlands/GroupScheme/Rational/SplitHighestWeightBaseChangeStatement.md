@@ -235,7 +235,10 @@ Chapter 22, an entry on p. 465 that concerns 22.8 ("X ⊂ X₀ + P(Φ)" holds
 only modulo `X₀`) and one on p. 478 (proof of 22.42); neither concerns 22.4
 or 22.5.
 
-## For the later proof (not part of this unit)
+## For the proof (not part of this module)
+
+The Library proves the proposition as `splitHighestWeightBaseChange` in
+[`Rational.SplitHighestWeightBaseChangeProof`](SplitHighestWeightBaseChangeProof.md).
 
 A possible route:
 

@@ -1,7 +1,5 @@
 # Extending multiplicative-type chart covers over open bases
 
-Author: Worker 872.
-
 A chart family over an open subscheme of the base can be viewed over
 the original base using the published generic `pushFamily`
 construction. The module proves that it remains an actual smooth

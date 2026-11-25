@@ -6,7 +6,7 @@ import Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalOrbitCentralFibe
 /-! # Split component, central quotient and character measures of a lower Levi subgroup
 
 In the induction step of Waldspurger VI.3.1 (printed p.304) the lower packets of the weak
-expansion (Task 7454, `RationalWeakExpansionLowerOrbit`) live on the literal Levi `s·M` of the
+expansion (`RationalWeakExpansionLowerOrbit`) live on the literal Levi `s·M` of the
 lower cocharacter `sζ` in `M' = M_{I'}`. They use the conjugated central subgroup `sC`, the
 transported quotient Haar measure `sμ` and the image `sρ` of the I.1 character measure.
 The source-normalized target at `M'` and the chamber of `sζ` (`StandardLeviLowerChamber`) instead
@@ -36,12 +36,12 @@ This module identifies the two sets of data exactly.
   `finiteIndex_lowerSplit`: the split component `s' = s ≫ (M_I ≅ M_{J''})` and the finite-index
   premise of the I.1 measure for it.
 * `map_lowerSplitCenter`, `lowerSplitCenter_normal`, `lowerSplit_range_normal`:
-  `A_{M_{J''}}(F)` is the conjugated subgroup `sC` of Task 7454, and it is normal.
+  `A_{M_{J''}}(F)` is the conjugated subgroup `sC`, and it is normal.
 * `lowerChamberQuotientEquiv`, `lowerChamberQuotientMeasure`, `lowerChamberQuotientMeasure_map`,
   `lowerChamberRepresentation_isSquareIntegrable`: the quotient Haar measure on
   `M_{J''}(F)/A_{M_{J''}}(F)` corresponding to `sμ`, and square integrability of `π'` there.
 * `lowerChamberCharacterTransport`, `lowerChamberCharacterTransport_apply`,
-  `map_lowerCharacterMeasure`: the I.1 measure of `s'` is the image of Task 7454's
+  `map_lowerCharacterMeasure`: the I.1 measure of `s'` is the image of
   `lowerCharacterMeasure` of the I.1 measure of `s`.
 * `pullback_lowerClass`, `lowerChamberOrbitTransport`, `lowerChamberOrbitTransport_orbitMap`,
   `finite_lowerChamberStabilizer`, `map_lowerOrbitMeasure`: the class of `π'` is the pullback of
@@ -50,7 +50,7 @@ This module identifies the two sets of data exactly.
 
 Two proofs, `map_lowerCharacterMeasure` and `map_lowerOrbitMeasure`, raise `maxHeartbeats`
 (to 800000 and 1000000). They are short chains of equalities, but each step elaborates terms
-that contain the full lower-Levi data of Task 7454 (about 530000 and 670000 heartbeats).
+that contain the full lower-Levi data (about 530000 and 670000 heartbeats).
 -/
 
 noncomputable section
@@ -396,7 +396,7 @@ local notation "𝐌'" => {x : rationalPoints M' //
 
 /-- `Z_{M'}(sζ)(F) = M_{J''}(F)` read from `M_{J''}(F)`: the inverse of
 `lowerChamberLeviHomeomorph`, with its codomain written as the literal Levi `(s·M)(F)` of the
-lower cocharacter, on which Task 7454's lower data live. -/
+lower cocharacter, on which the lower data of `RationalWeakExpansionLowerOrbit` live. -/
 abbrev lowerChamberLeviEquiv : 𝐌' ≃ₜ* levi χs := (e₀).symm
 
 set_option hygiene false in
@@ -490,7 +490,7 @@ local notation "CM'" => rationalLeviSplitCenter (c).labels (lowerSplit hi I' ζ 
 
 omit [IsAffine A.X.left] in
 /-- **`A_{M_{J''}}(F)` is the conjugated subgroup `sC`.** Under `Z_{M'}(sζ)(F) = M_{J''}(F)`,
-the image of the split component `s'` is Task 7454's `lowerCentral` of `A_{M_I}(F)`. -/
+the image of the split component `s'` is `lowerCentral` of `A_{M_I}(F)`. -/
 theorem map_lowerSplitCenter :
     (CM').map (e₁).toMulEquiv.toMonoidHom = lowerCentral hG hi hν I I' hζ n hn CM := by
   have hcomp : rationalPoints.map (lowerSplit hi I' ζ n hG hν I hζ hn s) =
@@ -534,7 +534,7 @@ variable [MeasurableSpace (𝐌 ⧸ CM)] [BorelSpace (𝐌 ⧸ CM)]
   (mu : Measure (𝐌 ⧸ CM)) [mu.IsHaarMeasure]
   [MeasurableSpace (𝐌' ⧸ CM')] [BorelSpace (𝐌' ⧸ CM')]
 
-/-- **The quotient Haar measure on `M_{J''}(F)/A_{M_{J''}}(F)`**: the image of Task 7454's
+/-- **The quotient Haar measure on `M_{J''}(F)/A_{M_{J''}}(F)`**: the image of the
 transported measure `sμ = lowerMeasure` on `(s·M)(F)/sC`. -/
 def lowerChamberQuotientMeasure : Measure (𝐌' ⧸ CM') :=
   (lowerMeasure hG hi hν I I' hζ n hn CM mu).map
@@ -597,7 +597,7 @@ set_option hygiene false in
 local notation "Ψ" => lowerLeviIso hi I' ζ n hG hν I hζ hn
 
 /-- **Characters of `(s·M)(F)` as characters of `M_{J''}(F)`**: `z ↦ z ∘ e₀⁻¹`, where
-`e₀ : Z_{M'}(sζ)(F) = M_{J''}(F)`. It is built as the inverse of Task 7454's conjugation
+`e₀ : Z_{M'}(sζ)(F) = M_{J''}(F)`. It is built as the inverse of the conjugation
 `Im X(M_I) ≃ Im X(s·M)`, followed by the passage to the Levi scheme `M_I`, the scheme
 isomorphism `M_I ≅ M_{J''}` and the passage back to `M_{J''}(F)`, so that it carries
 `lowerCharacterMeasure` of the I.1 measure of `s` to the I.1 measure of `s'`. -/
@@ -627,7 +627,7 @@ set_option maxHeartbeats 800000 in
 omit [(CM).Normal] [(CM').Normal] [MeasurableSpace (𝐌 ⧸ CM)] [BorelSpace (𝐌 ⧸ CM)]
   [MeasurableSpace (𝐌' ⧸ CM')] [BorelSpace (𝐌' ⧸ CM')] in
 /-- **The I.1 measure of `s'` is the transported I.1 measure of `s`.** The image under
-`lowerChamberCharacterTransport` of Task 7454's `lowerCharacterMeasure` of
+`lowerChamberCharacterTransport` of `lowerCharacterMeasure` of
 `standardLeviUnitaryUnramifiedCharacterHaar I s` is
 `standardLeviUnitaryUnramifiedCharacterHaar J'' s'`. -/
 theorem map_lowerCharacterMeasure :
@@ -693,7 +693,7 @@ theorem pullback_lowerClass :
         (lowerChamberQuotientMeasure_map hi I' ζ n hG hν I hζ hn s mu) (sω) = ω' :=
   rfl
 
-/-- **The orbit `sO` of Task 7454 is the orbit of `π'`.** The orbit of `sπ` under
+/-- **The orbit `sO` is the orbit of `π'`.** The orbit of `sπ` under
 `Im X(s·M)` modulo `sC` for `sμ` is homeomorphic to the orbit of `π'` under `Im X(M_{J''})`
 modulo `A_{M_{J''}}(F)` for `lowerChamberQuotientMeasure`, by `ω ↦ ω ∘ e₀⁻¹`
 (`orbitTransport`). -/
@@ -737,7 +737,7 @@ theorem finite_lowerChamberStabilizer
     (pullback_lowerClass hi I' ζ n hG hν I hζ hn s mu hs π hsq)
 
 set_option maxHeartbeats 1000000 in
-/-- **The orbit measures correspond.** Task 7454's orbit measure on `sO` for the transported
+/-- **The orbit measures correspond.** The orbit measure on `sO` for the transported
 character measure `lowerCharacterMeasure ρ_X`, with `ρ_X` the I.1 measure of `s`, is carried by
 `lowerChamberOrbitTransport` to the orbit measure `dO'` of the source-normalized target at `M'`:
 the orbit of `π'` modulo `A_{M_{J''}}(F)` for `lowerChamberQuotientMeasure` and the I.1 measure

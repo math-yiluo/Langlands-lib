@@ -85,7 +85,7 @@ theorem lieRationalSectionTrace_restrict (A : AbelianScheme S) (α : O →+* End
 theorem lieRationalSectionTrace_iso {A B : AbelianScheme S}
     (α : O →+* End0 A) (β : O →+* End0 B)
     (e : Langlands.Rationalization.of A ≅ Langlands.Rationalization.of B)
-    (he : ∀ a, comp0 A A B (α a) e.hom = comp0 A B B e.hom (β a))
+    (he : ∀ a, comp0 A A B (α a).asHom e.hom = comp0 A B B e.hom (β a).asHom)
     {U : S.Opens} {I J : Type u} [Fintype I] [Fintype J]
     (eA : SheafOfModules.free (R := S.ringCatSheaf.over U) I ≅ A.Lie.over U)
     (eB : SheafOfModules.free (R := S.ringCatSheaf.over U) J ≅ B.Lie.over U)

@@ -1,7 +1,5 @@
 # Normal subgroups of multiplicative type are central
 
-Worker 5698.
-
 This module proves part 1 of Conrad, *Reductive group schemes* (2014), Lemma 3.3.1 (p.96–97):
 let `G` be a smooth `S`-affine group over a scheme `S` with connected fibres; a normal closed
 subgroup of multiplicative type is central. All declarations are in the namespace

@@ -1,7 +1,5 @@
 # Embeddings under induction from an actual represented Levi
 
-Author: Worker 1758.
-
 This internal construction supplies coefficient maps and finite-length
 transport for the published `RepresentedParabolic.leviInductionFunctor`.
 It is supporting infrastructure for the proof route in Renard VI.6.2,

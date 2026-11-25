@@ -10,7 +10,7 @@ universe u
 namespace Langlands.Global.HeckeDivisor
 
 open NumberField IsDedekindDomain IsDedekindDomain.HeightOneSpectrum
-open Langlands.ClassField.Global
+open Langlands.ClassFieldTheory.Global
 open Langlands.Global.CompletionPadic
 open scoped NumberField NNReal
 

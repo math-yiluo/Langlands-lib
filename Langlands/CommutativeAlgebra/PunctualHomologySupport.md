@@ -1,7 +1,5 @@
 # Ideal-power torsion in homology and reversed duals
 
-Authors: Worker 1015 and Worker 975.
-
 For commutative rings `R,S : Type u`, a flat ring map `φ : R →+* S`,
 a cochain complex `K` of `R`-modules, and any integer `n`,
 `flatBaseChangeHomologyIso` constructs the actual isomorphism
@@ -50,9 +48,8 @@ ideal power in the annihilator using the preceding support criterion.
 This conclusion does not require that `m` be maximal or that the ring
 be regular local.
 
-This is internal supporting algebra. The flat-homology, finite-homology,
-and localization/support helpers are adapted from Worker 975's local
-algebra draft, with attribution retained. The final transport theorem
-combines them with the reversed-dual scalar-extension and contraction
+This is internal supporting algebra. The final transport theorem
+combines the flat-homology, finite-homology, and localization/support
+helpers with the reversed-dual scalar-extension and contraction
 constructions. The module does not prove the punctual-complex
 proposition or assert regular-local finite-length acyclicity.

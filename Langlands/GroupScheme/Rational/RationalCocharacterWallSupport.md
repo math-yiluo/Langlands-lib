@@ -1,6 +1,8 @@
 # Actual root support at a rational chamber wall
 
-This internal prerequisite for Task 5515 converts a finite rational chamber wall
+This internal prerequisite for the rational parabolic gallery, in the argument
+for the existence of an irreducible induced unramified twist, converts a finite
+rational chamber wall
 into actual root calculations in any supplied representative of its dynamic
 centralizer. It uses the original split torus and its actual character lattice;
 that torus need not be maximal in the ambient group. Throughout, the base is a
@@ -41,4 +43,4 @@ construct rank-one wall data, or prove the gallery existence propositions.
 
 Integral directions use the existing `rationalCocharacterEvaluation` and
 `rationalCocharacterEvaluation_toRat` from `RelativeReflectionPairing`, matching
-the consolidated `RationalCocharacterRealization` interface.
+the `RationalCocharacterRealization` interface.

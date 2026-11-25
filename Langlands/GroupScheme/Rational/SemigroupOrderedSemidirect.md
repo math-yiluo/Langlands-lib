@@ -51,10 +51,11 @@ and smooth connected product geometry. The original APIs retain both global
 comparison statements. The local variants retain global functoriality and
 the exact inverse-image equalities. Inner stability, the normal-factor
 product property, the larger-support containment and membership of zero remain
-explicit premises where used. This unit does not prove these premises,
+explicit premises where used. This module does not prove these premises,
 produce a solvable decomposition, perform scalar descent, handle the
-zero-absent case, or prove the host
-`SemigroupOrderedProductStatement`.
+zero-absent case, or prove `SemigroupOrderedProductStatement`, the statement
+it serves, which the Library proves as `semigroupOrderedProduct`
+(`Rational.SemigroupOrderedProductProof`).
 
 The `of_comap` variants assume only the inverse-image equalities along the
 normal inclusion, for the supplied lifted action and every additive

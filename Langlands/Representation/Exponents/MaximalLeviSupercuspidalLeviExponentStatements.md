@@ -1,6 +1,6 @@
 # Exponents along the parabolics with Levi factor `M` in Renard VII.1.3
 
-Author: Worker 1714. Module `Langlands.Representation.Exponents.MaximalLeviSupercuspidalLeviExponentStatements`, namespace `Langlands.Aubert.General.RepresentedParabolic`.
+Module `Langlands.Representation.Exponents.MaximalLeviSupercuspidalLeviExponentStatements`, namespace `Langlands.Aubert.General.RepresentedParabolic`.
 
 The module contains one predicate, `HasPositiveLeviJacquetExponents`, and two `Prop`-valued statements:
 
@@ -69,7 +69,7 @@ The published `MaximalLeviSupercuspidalPositiveConstituentStatement` follows fro
 1. The constituent statement gives an irreducible sub or quotient `W` of `π` with `HasPositiveLeviJacquetExponents (l ≫ p) W`.
 2. The hypotheses of the transfer statement are a subset of those of the constituent statement, so the transfer statement upgrades this to `HasPositiveRepresentedJacquetExponents W`.
 
-The reduction theorem will be in a separate module.
+The reduction theorem is `maximalLeviSupercuspidalPositiveConstituent_of_levi`, in the separate module `MaximalLeviUnitarizableConstituentReduction`.
 
 ## Source
 

@@ -1,9 +1,5 @@
 # Finite Hom spaces from actual fine twists into opposite Jacquet modules
 
-Authors: Worker 833 and Worker 526. Worker 526 wrote the unreviewed proof
-prototype whose theorem type this proposition transcribes; Worker 833 wrote
-this statement pair.
-
 `Langlands.FineOppositeJacquetHomFinitenessStatement.{uF,uV,uW,uZ}` is a
 closed proposition definition with two conjoined clauses. This module states
 the assertion; it contains no proof.
@@ -101,7 +97,8 @@ two-clause shape and these Hom spaces are formalization choices; they are not
 attributed to Silberger's 1978 article, and no Hom comparison is asserted.
 
 The rationale is the following route through published results, which a
-separate proof must still assemble:
+separate proof assembles (`fineOppositeJacquetHomFinite` in
+`FineOppositeJacquetHomFinitenessProof`):
 
 * `Langlands.fineTwistIrreducibleAdmissible`, in
   `Classification.FineTwistRegularityProof`, proves that `τ` is irreducible
@@ -128,6 +125,7 @@ Jacquet representations. None of the proof modules above is imported.
 
 The two clauses supply the finite-dimensionality inputs needed for the
 actual fine Hom spaces in `Langlands.GLRelativeCosocleHomComparisonStatement`.
-Applying them there still requires admissibility of the parent's target
+Applying them there still requires admissibility of that statement's target
 representations and the transport along its flattening equality. This
-statement does not prove the dimension equality of that parent statement.
+statement does not prove the dimension equality of
+`GLRelativeCosocleHomComparisonStatement`.

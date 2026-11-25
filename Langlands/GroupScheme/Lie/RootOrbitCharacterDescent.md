@@ -1,11 +1,11 @@
 # Actual root characters over root-orbit fields
 
-This internal unit descends a split root to an actual character over its
+This internal module descends a split root to an actual character over its
 root-orbit field. Let `L/k` be a field extension, `T` a commutative group
 scheme over `k` and `β` an actual root of the split base change `T_L` for
-`j : T -> G`. The unit builds an actual rational character of the base change
+`j : T -> G`. The module builds an actual rational character of the base change
 of `T` to the published stabilizer field `rootOrbitField k L j β`, written
-`E_β`. Its base change to `L` is `β`. The unit gives its values at rational
+`E_β`. Its base change to `L` is `β`. The module gives its values at rational
 points and its restriction along a homomorphism `S -> T`. It applies the
 tower descent `AffineCharacterTowerDescent.fixedDescend` to the root, viewed
 as a character of the base change.
@@ -92,7 +92,7 @@ The value lemma over `L` sets `maxRecDepth` to `4000` for elaboration.
 
 ## Scope
 
-The unit gives no further construction for multipliable roots. It does not
+The module gives no further construction for multipliable roots. It does not
 identify the torus with the centralizer used in the R1 statement, and it gives
 no root-group point coordinates. The R1 and R2 assemblies and apartment
 existence remain separate obligations. All results are uniform in the

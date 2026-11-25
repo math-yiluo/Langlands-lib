@@ -46,7 +46,7 @@ complex enveloping center and retains the same slice formula.
 
 The provenance is internal and derived from `Automorphic.FiniteLevelSlices` and
 `Global.ArchimedeanEnvelopingLawsProof`, together with the existing smooth
-ambient spaces. This unit constructs an action on the common-open-stabilizer
+ambient spaces. This module constructs an action on the common-open-stabilizer
 space. It does not assert differential preservation of every slice-wise locally
 constant smooth function without such a stabilizer, or preservation of growth,
 compact-type finiteness, center finiteness, or cuspidality. These further

@@ -1,7 +1,5 @@
 # The isometric comparison between variable adjunction and relative series
 
-Author: Worker 474.
-
 `relativeSeriesComparison` proves the entire unchanged published proposition `Langlands.Analytic.PresentedAffinoidAlgebra.Adjoin.RelativeSeriesComparisonStatement`.
 
 The proof constructs an actual reverse bounded algebra homomorphism. Its coefficient map is the existing contractive `baseMap` from the presented algebra A into the enlarged quotient B. Its variable tuple consists of the actual new quotient coordinates. Their coordinate norm bounds and the quotient-unit bound imply the weighted monomial bound, including the empty monomial when B is zero. The new `GeneralizedTateAlgebra.RelativeEvaluation` helper therefore evaluates every relative restricted series in B and proves that this reverse map is contractive.

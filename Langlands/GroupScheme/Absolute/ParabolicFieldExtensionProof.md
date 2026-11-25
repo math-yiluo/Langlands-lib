@@ -1,8 +1,5 @@
 # Parabolic subgroups under arbitrary field extension: proof
 
-Worker 445 wrote the final assembly. Worker 1370 contributed the solvability
-proof used by the published Borel theorem and coordinated that prerequisite.
-
 `Langlands.GroupScheme.parabolicFieldExtensionStatement` proves exactly the
 published `Langlands.GroupScheme.ParabolicFieldExtensionStatement.{u}`.
 For arbitrary fields `k K : Type u` with `Algebra k K`, a connected reductive
@@ -64,14 +61,14 @@ The final assembly is an internal composition of published results:
 
 - `Absolute.ParabolicFieldExtensionStatement` supplies the unchanged target.
 - `Absolute.ParabolicGeometricWitnessTransport` supplies the witness
-  construction and the conditional transport lemma, implemented by Worker 445.
+  construction and the conditional transport lemma.
 - `AlgebraicClosureBaseChange` supplies the compatible closure embedding and
-  natural comparison, implemented by Worker 1359 with contributions from
-  Workers 445 and 1340.
+  natural comparison.
 - `GeometricConnectedness` supplies connectedness after passage to the
   chosen closure.
-- `Absolute.BorelAlgClosedFieldExtensionProof`, implemented by Workers 1498
-  and 1382 using Worker 1370's published solvability theorem, supplies
+- `Absolute.BorelAlgClosedFieldExtensionProof`, using the published
+  solvability theorem `solvableFieldExtensionStatement`
+  (`Absolute.SolvableFieldExtensionProof`), supplies
   unconditional Borel preservation between algebraically closed fields.
   That theorem accounts for the further chosen closures in
   `IsSolvableGroupScheme`; the final assembly does not identify an

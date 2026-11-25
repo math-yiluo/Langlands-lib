@@ -28,7 +28,7 @@ realizations and are true for every number field, so they restrict nothing.
 
 - Hypotheses: `e : K ≃+* L`, `r : ℕ`, a cuspidal realization
   `S : CuspidalOperatorRealization L r`, and
-  `ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter S`: some
+  `ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter S`: some
   character `χ` of the idele class group of `L` with `‖χ x‖ = 1` for all `x`
   is a central character of `S`.
 - Conclusion: `HasUnitaryCentralCharacter (S.arithmeticComap e)`.
@@ -117,7 +117,7 @@ it applies a Galois automorphism to an automorphic representation:
   `α^j(Π(e,t-1))` of a cuspidal representation that is supercuspidal at the
   place above `v(*)_1` are again cuspidal, with supercuspidal component
   `α^j(Π(e,t-1)_{v(*)_1})` at that place.
-- Operator plan note `operator-external-inputs-plan-2026-11-16`
+- Plan note `operator-external-inputs-plan-2026-11-16`
   (`external-inputs-plan.tex`), Remark 4.2, proof of claim (3) (line 881):
   `α Π(b, i-1) = Π(α b, i-1)`, where `α` fixes the auxiliary place.
 
@@ -127,28 +127,22 @@ representations over CM fields.
 
 ## Consumers
 
-- Task 7785 (`2cdbece0-e746-4cbc-8ecb-0cc9273a8a76`), the decomposition of
-  the exact-stabilizer prime branch of Proposition 4.8. It needs unitarity and
-  supercuspidality of the Galois conjugates of the transported child
-  constituent over the step field `D`, for
-  `CyclicWeakInductionSupercuspidalStatement` (B4) and for
+The statements are hypotheses of reductions of Proposition 4.8 in
+`Langlands/Global/Arithmetic/` (namespace `Langlands.Global.Harris`):
+
+- `Proposition48ExactStabilizerPrimeBranchReductionStatement` (module
+  `Langlands.Global.Arithmetic.HarrisProposition48ExactStabilizerPrimeBranchReductionStatement`),
+  the exact-stabilizer prime branch, takes the unitary and supercuspidal
+  transports: unitarity and supercuspidality of the Galois conjugates of the
+  transported child constituent over the step field `D`, for
+  `CyclicWeakInductionSupercuspidalStatement` and for
   `HasDistinctMackeyComponents`.
-- Task 7786 (`794a4691-1e86-44f4-a28d-d79270146b71`), the exact-stabilizer
-  singleton branch decomposition. It uses all three statements, including the
-  transport of conjugate self-duality, for its child moved to `D`.
-- Task 7221 (`528311c0-f3fd-4553-ad48-a6bed4282b5a`), the general-position
-  prime branch decomposition, lists the transport of children to `D` and
-  Galois invariance among its obligations. It can reuse these statements.
-
-## Changes from the task's shared draft
-
-None in the Lean. This Markdown adds the exact hypotheses of each statement,
-the Library theorem behind the unitary case, the literature passages that use
-the statements implicitly, and the consumers.
-
-Revision after review of candidate `ac8d1816`: the hypothesis and conclusion of
-`ArithmeticComapConjugateSelfDualStatement` now state the whole Library
-predicate. Besides the twisted invariance, the pairing must identify the space
-with its contragredient functionals; the first version mentioned only the
-invariance. The reason now goes through `arithmeticComapEquiv`, which
-preserves both parts.
+- `Proposition48SingletonBranchTCReductionStatement` (module
+  `Langlands.Global.Arithmetic.HarrisProposition48SingletonBranchTCReductionStatement`),
+  the singleton branch, takes the supercuspidal and conjugate self-dual
+  transports, for its child moved to `D`.
+- `Proposition48PrimeBranchReductionStatement` (module
+  `Langlands.Global.Arithmetic.HarrisProposition48PrimeBranchReductionStatement`),
+  the general-position prime branch, takes all three (through
+  `Proposition48PrimeBranchCommonInputs`), for the transport of children to
+  `D` and Galois invariance.

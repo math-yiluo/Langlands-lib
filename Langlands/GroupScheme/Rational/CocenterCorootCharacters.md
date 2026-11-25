@@ -1,7 +1,5 @@
 # Actual cocenter characters from compatible derived tori
 
-Author: Worker 1293.
-
 This internal adapter composes published geometric and lattice results. It
 does not prove the existence of a Levi root model or the structural inputs
 retained below.

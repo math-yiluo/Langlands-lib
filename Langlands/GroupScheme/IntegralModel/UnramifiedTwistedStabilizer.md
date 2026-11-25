@@ -36,7 +36,7 @@ integral section. `twistedStabilizerModelIso_generic_comm` records its full
 generic compatibility square. Both specialize the corresponding theorems of
 `InnerSemilinearExtension`.
 
-This unit assumes the model and its exact integral-point identification; it does
+This module assumes the model and its exact integral-point identification; it does
 not establish their existence. It constructs individual isomorphisms for every
 coefficient index, without claiming family coherence, effective descent, a
 reductive residue quotient, Frobenius comparison, or a chamber assertion.

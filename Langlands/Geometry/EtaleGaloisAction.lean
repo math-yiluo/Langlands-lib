@@ -64,10 +64,10 @@ theorem baseChangeMap_one : baseChangeMap f (1 : L ≃ₐ[K] L) = 𝟙 _ := by
 /-- The automorphism of the base change induced by a `K`-algebra automorphism
 of `L`. -/
 def baseChangeAut (σ : L ≃ₐ[K] L) : Aut (baseChange K L f) where
-  hom := baseChangeMap f σ
-  inv := baseChangeMap f σ⁻¹
-  hom_inv_id := by rw [baseChangeMap_comp, mul_inv_cancel, baseChangeMap_one]
-  inv_hom_id := by rw [baseChangeMap_comp, inv_mul_cancel, baseChangeMap_one]
+  asIso.hom := baseChangeMap f σ
+  asIso.inv := baseChangeMap f σ⁻¹
+  asIso.hom_inv_id := by rw [baseChangeMap_comp, mul_inv_cancel, baseChangeMap_one]
+  asIso.inv_hom_id := by rw [baseChangeMap_comp, inv_mul_cancel, baseChangeMap_one]
 
 /-- The action of the `K`-algebra automorphisms of `L` on the base change.
 The value at `σ` is the automorphism induced by `σ` on the second factor, in
@@ -77,10 +77,12 @@ def galoisAut : (L ≃ₐ[K] L) →* (Aut (baseChange K L f))ᵐᵒᵖ where
   toFun σ := MulOpposite.op (baseChangeAut f σ)
   map_one' := by
     apply MulOpposite.unop_injective
+    apply Aut.ext
     apply Iso.ext
     exact baseChangeMap_one f
   map_mul' σ τ := by
     apply MulOpposite.unop_injective
+    apply Aut.ext
     apply Iso.ext
     exact (baseChangeMap_comp f σ τ).symm
 

@@ -1,7 +1,5 @@
 # Intrinsic smooth subrepresentation of a completed tensor slice
 
-Author: Worker 2.
-
 This module constructs the intrinsic locally smooth subrepresentation of an
 actual completed automorphic tensor slice and restricts the original-factor
 map to it. The image equation is proved from the published pointwise

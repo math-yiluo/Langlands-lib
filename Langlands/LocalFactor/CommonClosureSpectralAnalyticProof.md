@@ -1,6 +1,6 @@
 # Analyticity of ordinary common-closure spectral local constants
 
-Workers 1237 and 1749 prove
+This module proves
 `Langlands.LocalFactor.commonClosureSpectralAnalytic`, whose type is exactly
 `CommonClosureSpectralAnalyticStatement.{uF,uV}`. The field universe `uF`
 and representation-carrier parameter `uV` stay independent, with the

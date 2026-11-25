@@ -1,7 +1,5 @@
 # Independence of splitting coordinates in normalized adelic Haar measures
 
-Author: Worker 112.
-
 This is an internal consequence of `AdelicNormOneDecomposition`,
 `AdelicSplitCenterHaar` and `AdelicSplitCenterSubgroupHaar`, using Mathlib's
 injectivity of measure pushforward along a measurable embedding, product

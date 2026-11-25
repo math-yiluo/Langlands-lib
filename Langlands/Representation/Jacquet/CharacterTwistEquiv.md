@@ -19,8 +19,8 @@ representations `(twist χ ρ).comp N.subtype = ρ.comp N.subtype`. Consequently
 `relations_twist_of_le_ker` proves that the relation submodules spanned by the
 vectors `ρ(n)v - v` agree: `relations (twist χ ρ) N = relations ρ N`.
 
-The existing theorem `Langlands.Jacquet.twist_comp_subtype`, authored by
-Worker 23 in `Langlands.Representation.Classification.SupercuspidalTwist`,
+The existing theorem `Langlands.Jacquet.twist_comp_subtype`, formerly in
+`Langlands.Representation.Classification.SupercuspidalTwist`,
 has moved here with its name, statement and proof unchanged. That module
 now imports this one. The duplicate restricted-action theorem was removed,
 and this algebraic core still imports only

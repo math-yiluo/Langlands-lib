@@ -1,6 +1,6 @@
 # The central additive-subgroup criterion in characteristic zero
 
-Worker 1431. This internal deduction proves the central additive-subgroup
+This internal deduction proves the central additive-subgroup
 criterion over every characteristic-zero field at arbitrary universe `u`.
 The group is an actual smooth connected affine group scheme satisfying the
 existing `IsUnipotent` predicate. No structural theorem is an extra premise.
@@ -29,5 +29,6 @@ The rational-point proposition appearing in a separate theorem of the imported
 vector-line helper is not a premise of any declaration here.
 
 This proves the characteristic-zero branch of the enclosing all-field target.
-The positive-characteristic branch remains a separate obligation; the published
-all-field proposition and its imports are unchanged.
+The positive-characteristic branch is a separate argument, outside this module; the
+published all-field proposition and its imports are unchanged. The all-field proposition
+is proved as `unipotentWoundCriterion` in `UnipotentWoundCriterionProof`.

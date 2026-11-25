@@ -1,7 +1,5 @@
 # Trivial unipotent radical under extension of algebraically closed fields
 
-Author: Worker 1401.
-
 `Langlands.GroupScheme.AlgebraicallyClosedRadicalFieldExtensionStatement.{u}`
 is a proposition target. This module defines the proposition and supplies no
 proof of it.

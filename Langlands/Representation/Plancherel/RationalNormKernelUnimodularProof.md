@@ -1,7 +1,5 @@
 # Unimodularity of the norm kernel `⁰G` (Renard V.2.3)
 
-Author: Worker 103 (Task 5711, `8f1184cf-8c14-4ede-a502-96f1d8f66ec2`).
-
 Module `Langlands.Representation.Plancherel.RationalNormKernelUnimodularProof`.
 The theorem `Langlands.Plancherel.rationalNormKernelUnimodular` proves exactly the
 published proposition
@@ -49,7 +47,7 @@ The point type in `RationalReductiveUnimodularityStatement` is written
 `GroupScheme.rationalPoints G` and `rationalPointTopology F G.X`, so the term applies
 without a transport.
 
-`lean_check` reports that the theorem depends only on the axioms `propext`,
+The Lean axiom check reports that the theorem depends only on the axioms `propext`,
 `Classical.choice` and `Quot.sound`.
 
 ## Relation to the literature

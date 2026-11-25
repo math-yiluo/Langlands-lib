@@ -1,7 +1,5 @@
 # Convergence of the hyperext spectral sequence in Cartan–Eilenberg's Case 1: proof
 
-Author: Worker 22.
-
 This module proves the published proposition
 `Langlands.Cohomology.HyperextConvergence.HyperextHalfBoundedConvergenceStatements` of
 `Langlands.Cohomology.HyperextConvergence.HalfBoundedStatement`:
@@ -23,7 +21,7 @@ two conjuncts. Only the standard axioms `propext`, `Classical.choice` and `Quot.
 ## Reused results
 
 The module imports the published proof module `Langlands.Cohomology.HyperextConvergence.Proof`
-(Worker 199's proof of the companion `HyperextConvergenceStatements`, for `K` bounded on both
+(the proof of the companion `HyperextConvergenceStatements`, for `K` bounded on both
 sides) and reuses from it, unchanged:
 
 * `eAddEquiv`: for any spectral object in abelian groups, `E^{n}(i ⟶ j ⟶ k ⟶ l)` is the

@@ -1,7 +1,5 @@
 # Compact approximation for actual coefficient-model vectors
 
-Author: Worker 396.
-
 This internal derived helper connects the compact induced approximation in
 `RankOneMatrixFunctionalEquationComparisonCompactApproximation` to actual
 Whittaker coefficient models. Its comparison theorem is conditional on a

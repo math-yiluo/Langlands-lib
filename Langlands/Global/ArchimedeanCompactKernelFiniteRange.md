@@ -1,6 +1,6 @@
 # Finite central smoothing range and conditional exact reproduction
 
-Worker 94 defines `compactCentralKernels K n`, the complex submodule of
+The module defines `compactCentralKernels K n`, the complex submodule of
 actual compact smooth kernels invariant under conjugation by the whole
 standard compact subgroup. For a fixed actual derivative-topology smooth
 function, `centralSmoothingMap` restricts the published bilinear smoothing
@@ -34,7 +34,7 @@ compact conjugation invariance; no positivity, normalization or
 prescribed support is asserted for it.
 
 These are internal linear and topological consequences of the published
-actual smoothing construction. This unit neither proves central
+actual smoothing construction. This module neither proves central
 approximation nor supplies the finite decomposition or finite
 compact-type multiplicities. Those hypotheses remain explicit for later
 instantiation. It does not prove unconditional reproduction for

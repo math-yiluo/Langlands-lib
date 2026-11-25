@@ -15,7 +15,7 @@ to the localization identities proves nonvanishing and the coordinate formula.
 Every original regular function along the inverse is evaluation of its
 restriction along the original chart's inverse, so its analyticity transfers.
 
-Worker 115 adapts Workers 135 and 1650's internal published
+This module adapts the internal
 `PointManifold.General.PrincipalOpenRegularCharts` construction. The chart
 fields now express coefficient-field analytic regularity.
 

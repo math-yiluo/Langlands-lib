@@ -47,7 +47,7 @@ correspondence to the published actual automorphic quotient, with intrinsic
 whole-operator covariance. Mathlib supplies the module image/preimage inverse
 proofs and the order-theoretic maximality criterion. The published
 `LengthCriterionProof.push/pull` and `IntervalLiftProof` supply related maps for
-successive quotient filtrations; this unit instead bundles the correspondence
+successive quotient filtrations; this module instead bundles the correspondence
 for every invariant subspace of a fixed actual automorphic presentation. It
 does not assume a maximal denominator or an irreducible constituent exists,
 and asserts no spectral existence, quotient topology or function evaluation.

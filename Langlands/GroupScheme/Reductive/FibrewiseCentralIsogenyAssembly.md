@@ -1,7 +1,5 @@
 # Kernel geometry and assembly for the fibrewise central-isogeny criterion
 
-Worker 625.
-
 This internal construction is derived from the kernel and multiplicative-type
 steps in Conrad, *Reductive group schemes* (2014), Proposition 3.3.10, p.103.
 It does not give an unconditional proof of that proposition. The relative-centre
@@ -57,6 +55,8 @@ concludes centrality of the actual global kernel. The forward direction uses
 the previous module's base-change result. The reverse direction applies
 `isCentralIsogeny_of_central_kernel`.
 
-The structural hypotheses are still separate proof obligations in the
-Library. This module neither asserts them nor changes the published
+The structural hypotheses are separate statements of the Library, proved as
+`reductiveRelativeCenter` (module `RelativeCenterProof`) and
+`multiplicativeTypeFiniteSubgroupSpreading` (module
+`Torus.MultiplicativeTypeFiniteSubgroupSpreadingProof`). This module neither asserts them nor changes the published
 `ReductiveFibrewiseCentralIsogenyStatement`.

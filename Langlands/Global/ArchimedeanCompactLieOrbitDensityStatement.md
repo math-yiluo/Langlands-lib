@@ -1,8 +1,8 @@
 # Density of compact translates of the enveloping orbit
 
-This statement-only pair, formulated by Worker 94, defines
+This statement-only module defines
 `Langlands.Global.ArchimedeanGL.CompactLieOrbitDensityStatement K n`. It is a
-proposition, not a theorem. The pair proves nothing about it.
+proposition, not a theorem. The module proves nothing about it.
 
 ## Statement
 
@@ -90,7 +90,7 @@ It states only that each single translate `R(g) f` lies in the closure.
 
 ## Why compact translates are included
 
-The following remark is informal. It is not formalized in this pair.
+The following remark is informal. It is not formalized in this module.
 
 `G` is not connected when `K` has a real place and `n ≥ 1`. The real factor
 `GL_n(ℝ)` has two components, distinguished by the sign of the determinant.
@@ -116,8 +116,7 @@ function. For this reason the statement uses `R(k) D(a) f` rather than
 
 This is an internal derived prerequisite. It belongs to the automorphic
 differential-growth route recorded in the public note
-`notes/automorphic/differential-growth-source-map.md`. The parent task is
-`e0d3fab3-d5c8-47ae-bd65-d85037d6fd80`. The proposition is formulated directly
+`notes/automorphic/differential-growth-source-map.md`. The proposition is formulated directly
 on the published concrete carriers. It is not a transcription of a printed
 theorem.
 
@@ -142,10 +141,11 @@ The present formulation differs from the source in three ways:
 - It adds standard compact translates to reach every component.
 - It uses the derivative compact-open topology defined above.
 
-## Remaining proof obligations
+## Proof obligations
 
-The intended proof route is listed below. None of these steps is a hypothesis
-of the proposition, and this pair proves none of them.
+The proof route is listed below. None of these steps is a hypothesis
+of the proposition, and this module proves none of them. The proof is
+`compactLieOrbitDensity` (module `ArchimedeanCompactLieOrbitDensityProof`).
 
 1. **Separation.** If `R(g) f` were outside the closure, there would be a
    continuous complex linear functional `ℓ` on `DerivativeSmoothFunctions K n`.
@@ -153,14 +153,14 @@ of the proposition, and this pair proves none of them.
    Hahn–Banach argument in this locally convex Hausdorff space.
 2. **Smooth orbit coefficient.** `F(x) = ℓ(R(x) f)` is an actual smooth
    function, with `D(a) F(x) = ℓ(R(x) D(a) f)`. This is the published
-   statement `SmoothOrbitCoefficientStatement`, which is not yet proved in
-   the Library.
+   statement `SmoothOrbitCoefficientStatement`, proved as
+   `smoothOrbitCoefficientStatement` (module `ArchimedeanSmoothOrbitCoefficientProof`).
 3. **Transfer of joint finiteness.** The coefficient map intertwines the
    enveloping actions. It therefore carries the joint orbit span of `f` onto
    that of `F`, so `F` is joint finite.
 4. **Analyticity.** A joint-finite smooth function is real analytic. This is
-   the published statement `JointFiniteAnalyticityStatement`, which is not
-   yet proved in the Library.
+   the published statement `JointFiniteAnalyticityStatement`, proved as
+   `jointFiniteAnalyticity` (module `ArchimedeanJointFiniteAnalyticityProof`).
 5. **Jets and component uniqueness.** At each `k ∈ standardInfiniteCompact K n`,
    every `D(a) F(k) = ℓ(R(k) D(a) f)` vanishes, because `ℓ` vanishes on the
    displayed span. By the published theorem
@@ -171,8 +171,8 @@ of the proposition, and this pair proves none of them.
    component of `k`.
 6. **Component coverage.** Every point of `G` lies in the connected component
    of some element of `standardInfiniteCompact K n`. This is the published
-   statement `CompactComponentCoverageStatement`, which is not yet proved in
-   the Library.
+   statement `CompactComponentCoverageStatement`, proved as
+   `compactComponentCoverage` (module `ArchimedeanCompactComponentCoverageProof`).
 
 Together these give `F = 0`, and so `ℓ(R(g) f) = F(g) = 0`, which is a
 contradiction.

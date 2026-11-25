@@ -1,6 +1,6 @@
 # The operator identity of Renard VII.3.5 (ii)
 
-Author: Worker 115. Module
+Module
 `Langlands.Representation.Intertwining.InnerLeviOperatorIdentity`.
 
 This module proves the operator identity of Renard VII.3.5 (ii) (David Renard,

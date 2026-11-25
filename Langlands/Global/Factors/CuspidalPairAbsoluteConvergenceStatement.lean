@@ -31,7 +31,7 @@ namespace Langlands.Global
 
 open NumberField CuspidalPairFunctionalEquation CuspidalPairBoundaryNonvanishing
 open Automorphic (CuspidalOperatorRealization CuspidalSpectralPresentation)
-open Langlands.ClassField.Global.RelativeWeilGroup (HasUnitaryCentralCharacter)
+open Langlands.ClassFieldTheory.Global.RelativeWeilGroup (HasUnitaryCentralCharacter)
 
 namespace CuspidalPairAbsoluteConvergence
 

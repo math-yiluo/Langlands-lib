@@ -1,7 +1,5 @@
 # The actual opposite-parabolic–mirabolic product
 
-Authors: Worker 452 (prepared draft), Worker 264.
-
 `Langlands.GeneralLinear.MirabolicOppositeProductStatement.{u}` is a
 proposition definition. It quantifies over every field `K : Type u`, every
 `a b : ℕ` with `ha : 0 < a`, and every actual matrix
@@ -59,7 +57,7 @@ literature theorem. It is an internal algebraic statement about the actual
 matrix groups in `Mirabolic` and `OppositeBlocks`, through their published
 binary specialization in `MirabolicOppositeIntersection`. It is stated as
 an algebraic prerequisite of the normalized square-integrable block
-induction irreducibility task.
+induction irreducibility result.
 
 The elementary motivation is as follows. If `g=r*m`, then the mirabolic
 equation for `m⁻¹` makes the last row of `g⁻¹` equal to the last row of
@@ -72,6 +70,8 @@ has the mirabolic last row. Taking `r=q⁻¹` and `m=q*g` gives the required
 factors.
 
 This explanation is a proposed proof route. The module defines only the
-proposition and proves neither direction. It asserts no continuous or
+proposition and proves neither direction; the proof is
+`Langlands.GeneralLinear.mirabolicOppositeProduct` in
+`Langlands.Group.GL.MirabolicOppositeProductProof`. It asserts no continuous or
 measurable selection of factors, no openness or conullity of the product,
 no quotient-measure conclusion, and no induction or irreducibility result.

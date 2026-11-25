@@ -1,7 +1,5 @@
 # Continuous group restriction of positive-polyradius spectra
 
-Authors: Worker 56 and Worker 36.
-
 This derived construction adapts the continuous-spectrum comparison from the
 published strict `EquivariantFiniteEtaleRestriction` implementation to the
 actual arbitrary positive-polyradius quotient action category. It applies to
@@ -84,7 +82,7 @@ member SHA256
 `91567a75866a27cbe6690b6f075693df5afaa02524223d94d52ea37d77bb6637`.
 
 The exact comparison and proof are internal derived infrastructure,
-adapting Worker 36's strict comparison to the published generalized
+adapting the strict comparison of `EquivariantFiniteEtaleRestriction` to the published generalized
 quotient category and its already constructed spectrum functor. The cited
 source supplies motivation, rather than a numbered theorem asserting
 this particular norm-orbit comparison.

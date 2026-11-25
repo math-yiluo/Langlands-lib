@@ -1,6 +1,6 @@
 # Specified Picard isomorphisms descend over affine bases
 
-This internal unit proves exact section descent from affine finite-presentation
+This internal module proves exact section descent from affine finite-presentation
 representability and applies it to the actual relative Picard Isom presheaf.
 Its inputs are published Library constructions and scheme-morphism descent.
 It introduces no new source theorem.
@@ -32,7 +32,7 @@ section is an actual isomorphism with the published coherent ordinary-pullback
 restriction, since that is exactly what the relative Isom presheaf stores.
 The existing Hom-to-Isom theorem gives the same conclusion from focused Hom
 representability. These two applications retain that representability premise;
-this unit does not assert its unconditional proof.
+this module does not assert its unconditional proof.
 
 All rings, schemes and algebra tests retain the arbitrary universe `u`. There
 is no field, noetherian, reducedness or flatness condition on the test algebra.

@@ -1,7 +1,5 @@
 # Joint continuity of the actual normalized affine L² action: proof
 
-Authors: Worker 452 and Worker 971.
-
 This module proves
 `Langlands.AffineL2.jointContinuity : Langlands.AffineL2.JointContinuity F T`
 from the published statement in

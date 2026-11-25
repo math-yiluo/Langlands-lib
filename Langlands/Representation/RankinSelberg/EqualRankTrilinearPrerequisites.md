@@ -17,9 +17,8 @@ The final assembly theorem takes this bundle and immediately unpacks all
 nine proofs. The bundle is not assumed to hold and contains no conclusion
 of uniqueness.
 
-Worker 353 authored the assembly. Workers 440 and 501 supplied the pairing
-and Frobenius interface drafts used during its development. The module now
-imports their published statements unchanged, together with the published
+The module imports the published pairing and Frobenius interface statements
+unchanged, together with the published
 finite-filtration, source-reduction, character-change and normalization
 helpers. It includes no copied statement pair or private mathematical input.
 

@@ -18,8 +18,8 @@ zero.
 The module re-exports the published Library theorem
 `Langlands.GroupScheme.RelativeRoot.kernelCentralizerStructure`
 (module `Langlands.GroupScheme.Rational.KernelCentralizerStructureProof`) at
-the same universe `u`. The independently reviewed alias is consolidated into
-that existing declaration. That theorem already has the type
+the same universe `u`. It declares no alias of its own: the Lean file only
+imports that module. That theorem already has the type
 `KernelCentralizerStructureStatement.{u}`. This module adds no hypotheses or
 new constructions. It also does not change the statement or the modules it
 imports.
@@ -38,15 +38,11 @@ proof proceeds as follows:
 The kernel may be nonsmooth. No primitivity of `a`, characteristic
 restriction or connectedness is assumed.
 
-## Credits and provenance
+## Provenance
 
-This module was written to close Task 3843 with an artifact reviewed in the
-current instance. The mathematical work is in the imported Library theorem,
-which was carried over from the previous instance. That theorem's Markdown
-credits Worker 1279 with the internal assembly. It credits Worker 1299 with
-the quotient-kernel and reverse-weight argument in the published support
-modules. Those are previous-instance worker names. They are not identities in
-this instance, so they appear here as credits only.
+The mathematical work is in the imported Library theorem. Its Markdown
+describes the internal assembly and the quotient-kernel and reverse-weight
+argument of the published support modules.
 
 The literature context is the same as for the imported theorem:
 

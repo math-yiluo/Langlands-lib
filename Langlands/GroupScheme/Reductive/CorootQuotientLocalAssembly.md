@@ -1,11 +1,11 @@
 # Assembling coroot quotient maps from local coefficient rings
 
-This internal unit reduces the relative derived-group existence problem to an
+This internal module reduces the relative derived-group existence problem to an
 actual coroot quotient construction over local coefficient rings and the
 separate relative semisimple perfectness input. It proves the passage from
 local rings to arbitrary coefficient rings, including smoothness, surjectivity
 and semisimplicity of full geometric kernels. Both remaining inputs stay
-explicit; this unit does not prove the unconditional existence theorem.
+explicit; this module does not prove the unconditional existence theorem.
 
 `RelativeDerivedLocalCorootQuotientExistenceStatement` quantifies over every
 supplied affine pinned model `M` whose coefficient ring is local, with a
@@ -87,6 +87,6 @@ actual scheme morphisms and complete scheme-theoretic kernels.
 The provenance is internal: the new local input is a restricted construction
 problem, and the proved implications assemble the existing scalar-extension,
 dynamic subgroup, cell-gluing, quotient geometry, geometric-kernel and
-descent APIs. No parent relative derived-group existence or uniqueness
-theorem is assumed. The coroot cell extension geometry and geometric-kernel
-prerequisite pairs are reused unchanged from their separate submissions.
+descent APIs. No relative derived-group existence or uniqueness
+theorem is assumed. The modules `CorootCellExtensionGeometry` and
+`CorootQuotientGeometricKernel` are imported and reused unchanged.

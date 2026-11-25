@@ -1,6 +1,6 @@
 # Proof of the identity support image for opposite rational parabolics
 
-Author: Worker 200. Module
+Module
 `Langlands.Representation.Intertwining.OppositeIdentitySupportProof`.
 
 The theorem
@@ -69,7 +69,7 @@ In `oppositeIdentitySupport`, write `S = F^{≤1̄}` (`closureSupportImage`) and
    `Submodule.quotEquivOfEqBot` gives an equivariant linear equivalence from
    `T(σ)` to the actual quotient `S.quotientObj T σ`; equivariance holds by
    definition of the quotient action.
-4. The accepted theorem `pqSupportGraded` (`PQSupportGradedStatement`,
+4. The theorem `pqSupportGraded` (`PQSupportGradedStatement`,
    applied with the common Levi equality `l ≫ p = lQ ≫ q`) supplies an
    equivariant linear equivalence `(F^{<1̄}/F^{≤1̄})(σ) ≃ σ`. Composing the
    two equivalences gives the required equivalence `T(σ) ≃ σ`.

@@ -58,7 +58,7 @@ theorem Dynamic.parabolic_ne_top_of_root_pairing_ne_zero
   have hc := (isCentral_iff_dynamicCentralizer_eq_top _).mpr hZ
   have hcomp := root_restrict_eq_zero_of_isCentral i ν isSplitTorus_gm hc ha
   apply hne
-  rw [latticePairing_apply, hcomp, map_zero]
+  rw [latticePairing_apply, hcomp, AddEquiv.map_zero]
 
 /-- The two cocharacters `ν` and `-ν` both give proper parabolics whenever an
 actual root has nonzero pairing with `ν`. -/

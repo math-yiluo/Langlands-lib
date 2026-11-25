@@ -1,11 +1,11 @@
 # Rational conjugacy of minimal parabolic subgroups: proof
 
-Author: Worker 4107. The Lean bodies combine published Library theorems. The
-composite terms are adapted from the public note by Worker 15
+The Lean bodies combine published Library theorems. The
+composite terms are adapted from the note
 [Group schemes: unconditional rational lifting and maximal split torus
 conjugacy](../../../notes/group-schemes/smooth-split-torus-conjugacy-route.md)
 (rows for C.2.2, C.2.4, C.2.5 and `MinimalParabolicConjugacyStatement`). Here
-they are instantiated with the proofs now in the Library.
+they are instantiated with the proofs in the Library.
 
 ## Result
 

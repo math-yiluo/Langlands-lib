@@ -3,7 +3,7 @@
 Module `Langlands.Geometry.Building.ValuationBuildingAxioms`, namespace
 `Langlands.Geometry.Building.ValuationBuildingData`.
 
-Worker 1238's published `ValuationBuildingData G` (module `ValuationBuildingData`) bundles, for a
+The published `ValuationBuildingData G` (module `ValuationBuildingData`) bundles, for a
 connected reductive `G` over a nonarchimedean local field `F`, a maximal split torus `S`, an
 `N(F)`-stable class `A(S)` of valuations of the root datum, the actual centralizer `Z = Z_G(S)`
 and the axiom V 6 on `Z(F)`. From these data it builds the apartment `A = A(S)` and the reduced
@@ -156,7 +156,7 @@ Derived formulation. In KP the apartment `A` is a subset of `B(G)`, so the injec
 implicit in KP's statement. A facet of `B(G)` that meets `A` lies in `A`, because `A` is a
 subcomplex. So the polysimplicial structure on `A` coming from `B` is the set of facets of `B`
 that meet `A`. The published `B.IsFacet` defines the facets of the building as the
-`G(F)`-translates of images of facets of `A` (Worker 1238's module). The images of facets of `A`
+`G(F)`-translates of images of facets of `A` (module `ValuationBuildingData`). The images of facets of `A`
 are facets of the building by the published `isFacet_image`. So the field
 `exists_isFacet_of_isFacet` is the converse inclusion, and the two together say that the two sets
 of facets of `A` agree. The face relations are then determined by the facets as subsets of `A`

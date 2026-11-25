@@ -1,7 +1,5 @@
 # Isomorphism criterion for the derived base change map
 
-Author: Worker 727.
-
 Module `Langlands.AlgebraicGeometry.Modules.DerivedBaseChangeIso`, namespace
 `Langlands.AlgebraicGeometry.Modules.DerivedSections`. It reduces invertibility
 of the Library's derived base change map `derivedBaseChangeMap` (module

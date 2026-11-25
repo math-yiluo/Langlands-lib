@@ -1,7 +1,5 @@
 # Actual group fibres at a prescribed etale residue extension
 
-Author: Worker 1683.
-
 This module is `Langlands.GroupScheme.Reductive.EtaleResidueFibre`.
 It is an internal adapter derived from the exact `residue_over` equation
 in `Langlands.AlgebraicGeometry.EtaleResidueExtensionData` and the published

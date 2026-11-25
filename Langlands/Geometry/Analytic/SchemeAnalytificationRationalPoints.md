@@ -1,16 +1,17 @@
 # Rational points of the glued analytification of a scheme
 
-This unit defines the map from the actual `K`-points of a scheme `X` locally of
+This module defines the map from the actual `K`-points of a scheme `X` locally of
 finite type over a complete nonarchimedean field `K` to the glued analytification
 `Space K f` of `SchemeAnalytificationSpace`. A `K`-point factors through some
-affine open `U` of `X`. The unit sends it to the analytic point, in the
+affine open `U` of `X`. The module sends it to the analytic point, in the
 polynomial-locus analytification of `U`, of the corresponding `K`-algebra map
-on global sections. It then sends that point into the glued space. The unit
+on global sections. It then sends that point into the glued space. The module
 also supplies the algebraic bridge between the two published notions of the
 coordinate algebra of an affine scheme over `Spec K`. It proves no property of
 the map beyond its definition. Independence of the chosen affine open,
-injectivity and the comparison of topologies are left to a later statement
-unit.
+injectivity and the comparison of topologies are stated in
+`SchemeAnalytificationRationalPointsStatement` and proved as
+`schemeAnalytificationRationalPoints` in `SchemeAnalytificationRationalPointsProof`.
 
 ## Provenance
 
@@ -103,10 +104,11 @@ the chosen affine open.
 
 ## Scope
 
-The unit does not prove that `analyticRationalPoint` is independent of the
+The module does not prove that `analyticRationalPoint` is independent of the
 chosen affine open and factorization. It does not prove that it is injective,
 that its image consists of the points with residue field `K`, or that it is a
 topological embedding for the published point topology of `X(K)`. It also does
 not prove that `ι K f U` is injective or open. Those facts need the gluing
-statements and are successor obligations of the parent task. Nothing here
-concerns field extensions of `K` or algebraic spaces.
+statements; `SchemeAnalytificationOpenGluing` proves that `ι K f U` is an open
+embedding (`OpenGluing.isOpenEmbedding_ι`). Nothing here concerns field
+extensions of `K` or algebraic spaces.

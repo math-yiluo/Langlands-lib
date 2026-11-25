@@ -54,6 +54,6 @@ def InducedProgeneratorCenterInclusionStatement : Prop :=
           let I := leviInductionFunctor p l r hp hr hl hmul
           (Subring.center (End (I.obj piD)) : Set (End (I.obj piD))) =
             {x : End (I.obj piD) | ∃ z ∈ Subring.center (End piD),
-              x = I.map z ∧ ∀ a : End (I.obj piD), a * x = x * a}
+              x = End.of (I.map z.asHom) ∧ ∀ a : End (I.obj piD), a * x = x * a}
 
 end Langlands.Aubert.General.RepresentedParabolic

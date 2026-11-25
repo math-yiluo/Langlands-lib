@@ -19,23 +19,25 @@ variable {R : CommRingCat.{u}} {p : ℕ} [Fact p.Prime]
 
 /-- Evaluate an actual tower endomorphism at the indicated finite level. -/
 def endAt (G : PDivisibleGroup R p) (n : ℕ) : End G →+* End (G.inclusions.obj n) where
-  toFun f := f.app n
-  map_zero' := Hom.zero_app n
-  map_one' := Hom.id_app G n
-  map_add' f g := Hom.add_app f g n
-  map_mul' f g := Hom.comp_app g f n
+  toFun f := End.of (f.asHom.app n)
+  map_zero' := congrArg End.of (Hom.zero_app n)
+  map_one' := congrArg End.of (Hom.id_app G n)
+  map_add' f g := congrArg End.of (Hom.add_app f.asHom g.asHom n)
+  map_mul' f g := congrArg End.of (Hom.comp_app g.asHom f.asHom n)
 
 /-- A ring action of the p-adic integers on the actual tower is necessarily its
 canonical one, since each level is killed by a known power of p. -/
 theorem padicAction_unique (G : PDivisibleGroup R p) (f : ℤ_[p] →+* End G) : f = G.padicAction := by
   apply RingHom.ext
   intro a
+  apply End.ext
   apply Hom.ext
   intro n
   let T := End (G.inclusions.obj n)
   let fₙ : ℤ_[p] →+* T := (G.endAt n).comp f
   let m := (PadicInt.toZModPow n a).val
-  change fₙ a = G.levelPadicAction n a
+  change (fₙ a).asHom = (G.levelPadicAction n a).asHom
+  congr 1
   have hm : PadicInt.toZModPow n a = PadicInt.toZModPow n (m : ℤ_[p]) :=
     ((map_natCast (PadicInt.toZModPow n) m).trans
       (ZMod.natCast_zmod_val (PadicInt.toZModPow n a))).symm
@@ -46,7 +48,7 @@ theorem padicAction_unique (G : PDivisibleGroup R p) (f : ℤ_[p] →+* End G) :
   have hp : fₙ ((p : ℤ_[p]) ^ n) = 0 := by
     have hs : (p ^ n : ℕ) • (1 : T) = ((p ^ n : ℕ) : T) := nsmul_one _
     rw [← Nat.cast_pow]
-    exact (map_natCast fₙ _).trans (hs.symm.trans (G.level_nsmul_id_eq_zero n))
+    exact (map_natCast fₙ _).trans (hs.symm.trans (congrArg End.of (G.level_nsmul_id_eq_zero n)))
   have he : fₙ (a - (m : ℤ_[p])) = 0 := by
     calc
       fₙ (a - (m : ℤ_[p])) = fₙ ((p : ℤ_[p]) ^ n * b) := congrArg fₙ hb
@@ -55,7 +57,7 @@ theorem padicAction_unique (G : PDivisibleGroup R p) (f : ℤ_[p] →+* End G) :
   have hs : fₙ (a - (m : ℤ_[p])) = fₙ a - fₙ (m : ℤ_[p]) := fₙ.map_sub _ _
   have ha : fₙ a = fₙ (m : ℤ_[p]) := sub_eq_zero.mp (hs.symm.trans he)
   exact ha.trans ((map_natCast fₙ m).trans ((nsmul_one m).symm.trans
-    (G.levelPadicAction_eq_nsmul_of_le (le_refl n) a).symm))
+    (End.ext (G.levelPadicAction_eq_nsmul_of_le (le_refl n) a).symm)))
 
 end Langlands.PDivisibleGroup
 
@@ -70,7 +72,7 @@ namespace Hom
 
 /-- The scalar action on the formal law induces the given p-adic action on its actual tower. -/
 theorem pDivisibleMap_scalarHom (hM : M.IsPiDivisible (p : ℤ_[p])) (a : ℤ_[p]) :
-    (M.scalarHom a).pDivisibleMap hM hM = hM.pDivisibleGroup.padicAction a := by
+    (M.scalarHom a).pDivisibleMap hM hM = (hM.pDivisibleGroup.padicAction a).asHom := by
   let s : ℤ_[p] →+* Hom M M := {
     toFun := M.scalarHom
     map_zero' := zero_smul _ _
@@ -79,7 +81,8 @@ theorem pDivisibleMap_scalarHom (hM : M.IsPiDivisible (p : ℤ_[p])) (a : ℤ_[p
     map_mul' a b := by
       change (a * b) • Hom.id M = (a • Hom.id M).comp (b • Hom.id M)
       rw [Hom.smul_comp, Hom.comp_smul, Hom.id_comp, mul_smul] }
-  exact DFunLike.congr_fun (hM.pDivisibleGroup.padicAction_unique ((pDivisibleEnd hM).comp s)) a
+  exact congrArg End.asHom
+    (DFunLike.congr_fun (hM.pDivisibleGroup.padicAction_unique ((pDivisibleEnd hM).comp s)) a)
 
 /-- Restriction of formal morphisms to the actual p-power kernels is p-adic linear. -/
 def pDivisibleMapLinear (hM : M.IsPiDivisible (p : ℤ_[p])) (hN : N.IsPiDivisible (p : ℤ_[p])) :

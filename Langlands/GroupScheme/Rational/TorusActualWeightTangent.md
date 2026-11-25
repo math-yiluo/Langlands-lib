@@ -1,6 +1,6 @@
 # The actual tangent image of coordinate weight subgroups
 
-This internal unit computes the actual Lie image of the coordinate weight
+This internal module computes the actual Lie image of the coordinate weight
 subgroup in the original affine group over an arbitrary field and at every
 universe `u`. The input is an actual automorphic action of a commutative group
 scheme, a chosen isomorphism with a split torus on a finite index type, and an
@@ -50,7 +50,7 @@ The provenance is internal composition of the actual identity derivation,
 coordinate weight-tangent calculation, relative affine point comparison,
 coordinate quotient construction and stable represented weight decomposition.
 The supporting `TorusCoordinateWeights` and `TorusActualWeightSubgroup` pairs
-are unchanged work of Worker 1281. The present unit does not identify the
+are used unchanged. The present module does not identify the
 quotient with the generated semigroup functor or assert connectedness,
 maximality, uniqueness, unipotence, split unipotence, or the full
 `SemigroupRealizationStatement`.

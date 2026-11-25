@@ -1,7 +1,5 @@
 # Lifting an adjacent two-block swap along a uniform shape
 
-Author: Worker 1032.
-
 This internal helper is derived from the published regrouping theorem
 `Langlands.Parabolic.orderedProductRegrouping` and the adjacent merge shapes of
 `Group.GL.AdjacentMergeShape`. It makes no literature assertion and assumes no

@@ -1,7 +1,5 @@
 # A compact subgroup, an open subgroup and finitely many translates for the Siegel setup
 
-Author: Worker 3994. Part of task 40747bb3 (finite volume of `G(F) \ G(𝔸_F)¹`).
-
 The published route to Siegel finite volume needs a compact subgroup `K` of `G(𝔸_F)` with
 `P(𝔸_F) K = G(𝔸_F)`. At the finite places this requires an Iwasawa decomposition. This
 module builds a weaker substitute that uses only the Iwasawa decomposition at the infinite

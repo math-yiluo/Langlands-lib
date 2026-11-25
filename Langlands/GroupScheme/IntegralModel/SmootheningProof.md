@@ -1,7 +1,5 @@
 # Existence of smoothenings over Henselian discrete valuation rings
 
-Authors: Worker 50 and Worker 348.
-
 `Langlands.GroupScheme.IntegralModel.smoothening_exists : SmootheningStatement.{u}` proves the
 Library statement `Langlands.GroupScheme.IntegralModel.SmootheningStatement` (module
 `Langlands.GroupScheme.IntegralModel.Smoothening`) at an arbitrary universe `u`, with its
@@ -23,11 +21,11 @@ integral model `N` and a model morphism `π : N.Hom M (𝟙 G)` such that:
 
 ## The proof
 
-The proof is the one-line combination of two results. Their modules are included in this
-contribution.
+The proof is the one-line combination of two results. Their modules are ported together with
+this module.
 
 1. `Langlands.GroupScheme.IntegralModel.Smoothening.smoothening_of_finiteType`
-   (module `Smoothening.Model`, Worker 50) reduces the statement to
+   (module `Smoothening.Model`) reduces the statement to
    `IntegralFunctionsFiniteTypeStatement.{u}` (module
    `Langlands.GroupScheme.IntegralModel.IntegralFunctions`).
    - Let `A` be the coordinate Hopf algebra of `M.group`. Let `B = integralFunctions R K A` be the
@@ -39,7 +37,7 @@ contribution.
      homomorphisms from smooth group schemes lift (`Smoothening.Lift`). These are described in
      `Smoothening/Model.md` and the Markdown files of the other `Smoothening` modules.
 2. `Langlands.GroupScheme.IntegralModel.Smoothening.Termination.integralFunctions_finiteType`
-   (module `Smoothening.TerminationMain`, Worker 348) proves
+   (module `Smoothening.TerminationMain`) proves
    `IntegralFunctionsFiniteTypeStatement.{u}`. This is the counterpart of the termination Theorem
    A.6.2 of the source.
    - `B` is the union of an increasing sequence of finitely generated Hopf subalgebras, the ring

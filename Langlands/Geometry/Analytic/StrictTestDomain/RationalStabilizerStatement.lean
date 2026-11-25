@@ -17,7 +17,7 @@ def RationalLocusStabilizerOpenStatement : Prop :=
     (P : PresentedStrictAffinoidAlgebra K)
     (G : Type v) [Group G] [TopologicalSpace G] [IsTopologicalGroup G]
     (ρ : G →* Aut P),
-    (∀ a : P, Continuous (fun g : G => (ρ g).hom.toAlgHom a)) →
+    (∀ a : P, Continuous (fun g : G => (ρ g).asIso.hom.toAlgHom a)) →
       ∀ d : RationalData K P,
         IsOpen {g : G |
           (fun x : BanachSpectrum P => (ρ g) • x) '' d.locus = d.locus}

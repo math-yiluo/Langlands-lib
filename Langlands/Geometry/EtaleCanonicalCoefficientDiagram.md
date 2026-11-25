@@ -139,12 +139,11 @@ in `EtaleInverseImageCoherence`, `EtaleGeometricCoefficientDiagram` and
 existing affine-site Kan-extension and sheafification construction. No new
 assertion is attributed to an external source in this module.
 
-Worker 13 generalized and assembled the construction. Worker 57 contributed
-the equality-transport and fixed-projection coherence proof pattern from the
-private helper block of `HarrisTaylorCMGeometricGaloisCoefficients`. The helpers
+The equality-transport and fixed-projection coherence proof pattern comes from
+the private helper block of `HarrisTaylorCMGeometricGaloisCoefficients`. The helpers
 here have arbitrary universe and the triangle composition allows different
 schemes and projections. The CM specialization remains unchanged and is not
-imported or assumed by this module. Both workers are credited for this reuse.
+imported or assumed by this module.
 
 This constructs canonical geometric coefficients and their morphisms. The
 existing coefficient-diagram functors can apply derived sections, ordinary
@@ -152,4 +151,4 @@ cohomology and sections to these objects. This file does not add a deck-action
 specialization, an analytic étale realization, compact-support or trace
 comparisons, an unconditional Shimura representation theorem, arithmetic Hecke
 identifications or Harris compatibility. Those parts of the broader framework
-remain separate obligations.
+are separate.

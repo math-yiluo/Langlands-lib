@@ -1,7 +1,5 @@
 # Proof of admissibility invariance under character twists
 
-Worker 4 authored this internal derived proof. Worker 68 checked the draft
-against the published target and prepared the contribution.
 `fixedVectors_twist_eq_of_le_ker` proves equality of the two submodules
 by extensionality. For an element of the subgroup, the character value
 is the unit `1`, so the twisted fixing equation reduces to the original
@@ -11,9 +9,9 @@ coefficients and remains in the proof that uses it.
 For `isAdmissible_twist_iff`, let `L` be the open character kernel and
 `S` the set of open subgroups contained in that kernel. For every open
 subgroup `K`, its intersection `K ⊓ L` belongs to `S` and is contained
-in `K`, proving downward cofinality. Apply the accepted
+in `K`, proving downward cofinality. Apply
 `isAdmissible_iff_of_cofinal` to both representations. Their smoothness
-conditions are equivalent by the accepted `isSmooth_twist_iff`. On
+conditions are equivalent by `isSmooth_twist_iff`. On
 each member of `S`, the first helper identifies the fixed submodules,
 and `LinearEquiv.ofEq` gives their identity linear equivalence.
 `Module.Finite.equiv_iff` transports finite generation along that
@@ -43,6 +41,4 @@ The scalar-twist and smooth-representation definitions come from
 published results without changing the target or duplicating their proofs.
 
 This is an internal derived proof by the cofinality argument described above.
-Compilation and exact-type development checks do not establish independent
-proof acceptance; the contribution requires semantic review and publication.
 No project axiom or external mathematical theorem is assumed.

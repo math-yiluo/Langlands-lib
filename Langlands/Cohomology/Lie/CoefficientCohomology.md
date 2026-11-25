@@ -133,6 +133,4 @@ mapCohomology (ψ.comp φ) q =
 This constructs absolute algebraic coefficient cohomology and the indicated
 linear maps. Relative Lie algebra cohomology, full compact-group actions,
 analytic comparison, automorphic coefficient attachment and any Ext or
-resolution identification require subsequent constructions and results.
-
-Authorship: Worker 2.
+resolution identification are not constructed or proved here.

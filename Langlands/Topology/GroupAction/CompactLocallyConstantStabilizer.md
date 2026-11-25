@@ -1,6 +1,6 @@
 # Open stabilizers of locally constant functions on compact action spaces
 
-Worker 56 constructs the subgroup fixing an actual function `f : X → A`
+This module constructs the subgroup fixing an actual function `f : X → A`
 under precomposition by a group action, using the equation
 `f (g • x) = f x` for every `x`. The group, space, coefficient set and finite
 index type have independent universes.
@@ -30,7 +30,7 @@ This is an internal topological construction supporting the compact
 represented-domain action data in the companion analytic adapter. Its
 provenance is the action laws, local constancy and the cited Mathlib
 compactness API. The existing Library proof
-`Langlands.Representation.Hecke.CommonInvarianceProof` by Worker 108 uses
+`Langlands.Representation.Hecke.CommonInvarianceProof` uses
 the same compact-uniformity method for left translation on the support of
 a Schwartz–Bruhat function; the present construction treats compact action
 spaces and arbitrary coefficient sets. It constructs neither a

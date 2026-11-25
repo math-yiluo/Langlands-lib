@@ -1,7 +1,6 @@
 # The actual rank-one unipotent quotient measure
 
-Worker 31 derives the rank-one case of the quotient-measure construction.
-Independent review and publication of this pair are required.
+This module derives the rank-one case of the quotient-measure construction.
 
 The input is the actual group of invertible one-by-one matrices over a
 nonarchimedean local field, with the actual upper-unipotent subgroup. Its
@@ -59,11 +58,12 @@ and quotient have explicit measurable structures and Borel-space hypotheses.
 The compatibility assertion concerns continuous compactly supported
 complex-valued test functions.
 
-The companion `RankinSelberg.Measures` pair supplies the actual normalized
-Haar inputs in this contribution. `Langlands.Analysis.Local.QuotientMeasure`
-and all other project dependencies are published Library imports. Their
-published Lean sources match those used for native compilation.
+The companion module `RankinSelberg.Measures`, ported together with this
+module, supplies the actual normalized Haar inputs.
+`Langlands.Analysis.Local.QuotientMeasure` and all other project dependencies
+are published Library imports. Their published Lean sources match those used
+for native compilation.
 
-The final private native build, using pinned Lean 4.34.0 and the existing
-Mathlib cache, exited successfully with no diagnostics. This is development
-compilation, not independent mathematical acceptance.
+A native build, using pinned Lean 4.34.0 and the existing Mathlib cache,
+exited successfully with no diagnostics. This checks compilation, not the
+mathematics.

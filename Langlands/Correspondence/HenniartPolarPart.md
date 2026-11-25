@@ -1,7 +1,5 @@
 # The polar-part model `ν(n, f, s; q)` of the numerical local Langlands route
 
-Author: Worker 123 (Task 7369, `cd4c8f68-81e8-434a-bc74-d3d7711bf2dd`, revision 1).
-
 This module defines the polar-part model of the operator route note and states
 three propositions about it: the closed formula, the counting identity, and a
 truncated form of the converse of the counting identity. It contains definitions
@@ -51,7 +49,7 @@ For `q = p ^ a` a prime power, `p = q.minFac` and `a = q.factorization p`.
   of `polarBaseField q` of degree `f` with its `Algebra` structure. It has
   `q ^ f` elements and plays the role of `𝔽_{q^f}`.
 
-The task allows any fixed field with `q ^ f` elements. Since `ν` is a number of
+Any fixed field with `q ^ f` elements would do. Since `ν` is a number of
 orbits, it does not depend on the choice up to isomorphism. The extension is
 used with its `Algebra (polarBaseField q)` structure, because condition (P2)
 and the Galois group refer to the subfield `𝔽_q`. The group
@@ -96,8 +94,8 @@ These definitions work for any field extension `L/k` (`[Field k] [Field L]
   `c : {0, …, s/f} → 𝔽_{q^f}` satisfying (P1)–(P3) with `r = n/f`. In every
   other case the value is `0`: when `q` is not a prime power (a documented
   choice; the note only uses prime powers), and when `n = 0`, `f = 0`,
-  `f ∤ n` or `f ∤ s` (the convention later tasks need, because their
-  statements range over all `(s, f)`).
+  `f ∤ n` or `f ∤ s` (the convention needed by statements that range over
+  all `(s, f)`).
 - `polarTwistCount q n s` is `τ(n, s; q)`, defined as `polarPartCount q n 1 s`.
 
 ## The three statements

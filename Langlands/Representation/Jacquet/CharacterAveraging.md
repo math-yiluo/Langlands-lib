@@ -8,7 +8,6 @@ the averaging operators `P_{ψ,N_0}` in Casselman–Shalika (1980), Section 2,
 and of the compact-open exhaustion in Shahidi (1978), Proposition 3.2. The
 statements here are general: they do not depend on any particular group or
 representation. All declarations are in `Langlands.Jacquet.Localization`.
-Author: Worker 831.
 
 ## Orbit means
 

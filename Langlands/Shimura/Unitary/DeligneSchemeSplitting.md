@@ -1,7 +1,5 @@
 # Complex splitting of the Deligne group scheme
 
-Author: Worker 57.
-
 This module constructs an isomorphism of actual group schemes over `Spec ℂ`
 between the pullback of the existing real Deligne group scheme and the product
 of two copies of the existing multiplicative group scheme. Its point formulas
@@ -22,10 +20,10 @@ The base rings are the concrete `ℝ` and `ℂ`, and schemes are in the correspo
 small universe. Test schemes may be nonaffine or nonreduced. There is no added
 smoothness, finite-type, reducedness, field, nonemptiness or representability
 hypothesis on a test scheme. The output group schemes and their isomorphism are
-constructed; none is an input assumption. The contribution does not prove
+constructed; none is an input assumption. The module does not prove
 smoothness or reductivity, a global arithmetic unitary-group splitting, or PEL
 representability, canonical models, scheme levels or coefficient descent. Those
-remain separate obligations of the host task.
+remain separate obligations.
 
 ## The actual source and target
 

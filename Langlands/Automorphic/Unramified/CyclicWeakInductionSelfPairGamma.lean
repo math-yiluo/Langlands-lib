@@ -19,7 +19,7 @@ namespace Langlands.Automorphic.Unramified
 open Langlands.Global Langlands.Global.AdelicFunctoriality Langlands.Global.CompletionPadic
 open CuspidalOperatorRealization Correspondence GeneralLinear Whittaker
 open HarmonicAnalysis LocalFactor RankinSelberg
-open ClassField.Global.RelativeWeilGroup (HasUnitaryCentralCharacter)
+open ClassFieldTheory.Global.RelativeWeilGroup (HasUnitaryCentralCharacter)
 open scoped NumberField FiniteExtension
 
 variable {K : Type*} [Field K] [NumberField K] {n : ℕ}

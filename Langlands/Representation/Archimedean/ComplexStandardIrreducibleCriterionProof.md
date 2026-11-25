@@ -1,7 +1,6 @@
 # Proof: the irreducibility criterion for principal series of `GL_n(ℂ)`, "if" direction
 
 Lean module: `Langlands.Representation.Archimedean.ComplexStandardIrreducibleCriterionProof`.
-Worker 1008 wrote it for Task 7102 (`d350e594-f9e8-498f-8c26-2d03b2e7f9a9`).
 
 ## Statement proved
 
@@ -62,7 +61,7 @@ theorem complexStandardIrreducibleCriterion : ComplexStandardIrreducibleCriterio
    step 4 every proper `(𝔤, K)`-submodule lies in `ker T = 0`. The standard module is nonzero by
    `complexStandardNontrivial` (module `ComplexStandardNontrivialProof`).
 
-The route is the long-intertwining-operator argument suggested in the task context, factored into
+The route is the long-intertwining-operator argument, factored into
 rank-one swaps. The rank-one step is the `GL_2(ℂ)` irreducibility of step 1. The step "the image
 of the long operator is irreducible" is replaced by the kernel statement of step 4.
 
@@ -73,7 +72,7 @@ premise. That includes the identification of the Library's standard module with 
 principal series, `GL_2(ℂ)` irreducibility, intertwining and Langlands-quotient arguments, and
 tempered irreducibility.
 
-The task context forbids using `ComplexLargeStandardIrreducibleStatement` (V),
+The proof does not use `ComplexLargeStandardIrreducibleStatement` (V),
 `ComplexLinkedLanglandsQuotientNotLargeStatement` (NL_C) or Vogan's theorem. A private
 type-and-value closure scan checked this. It ran as a breadth-first search over the constants
 used by the types and values of all constants reachable from

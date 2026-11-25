@@ -1,7 +1,5 @@
 # Proper maps of algebraic spaces over local fields are proper on rational points
 
-Author: Worker 105.
-
 `LocalFieldProperPointMapStatement` states Corollary 5.6 of Brian Conrad, *Weil and
 Grothendieck approaches to adelic points* (December 31, 2011), printed p.16. The
 registered source is `conrad-2011-weil-grothendieck-adelic-points`, SHA-256

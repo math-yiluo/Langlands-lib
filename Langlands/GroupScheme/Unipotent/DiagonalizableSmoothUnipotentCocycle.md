@@ -1,7 +1,7 @@
 # Diagonalizable one-cocycles in smooth unipotent groups
 
-Worker 386. This is an internal derived module for the conjugacy of sections of
-trigonalizable groups (Task 7806). Its main theorem says that, over an algebraically
+This is an internal derived module for the conjugacy of sections of
+trigonalizable groups. Its main theorem says that, over an algebraically
 closed field of any characteristic, every rational one-cocycle of a diagonalizable group
 `D(Λ)`, with `Λ` finitely generated, in a smooth affine unipotent group is a coboundary.
 This is `VanishingStatement.{u}`, proved here as `exists_coboundary`.

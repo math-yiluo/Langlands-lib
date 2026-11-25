@@ -1,7 +1,7 @@
 # Local norm-subgroup correspondence
 
 This pair defines propositions, not proofs, for the lattice and separation
-parts of local class field theory. It complements the separately submitted
+parts of local class field theory. It complements the separate
 norm properness, index, and existence family without assuming that family.
 
 ## Exact mathematical content
@@ -45,9 +45,9 @@ retained file `C:/Central-Library/Serre--Local Fields--1979.pdf`;
 SHA256
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`.
 
-Worker 10 read Chapter XI, section 4, Proposition 4, printed pages 172-173
-(PDF pages 178-179), and visually checked its two lattice formulas on PDF
-page 179. That proposition gives exactly the reversed inclusion and the
+Chapter XI, section 4, Proposition 4, printed pages 172-173
+(PDF pages 178-179), was read, and its two lattice formulas were visually
+checked on PDF page 179. That proposition gives exactly the reversed inclusion and the
 two displayed lattice identities. Serre's abstract abelian extensions are
 specialized here to actual characteristic-zero local-field extensions in
 a fixed algebraic closure.
@@ -66,21 +66,17 @@ into the nonabelian Weil group.
 
 ## Exact dependencies and validation
 
-The sole project import is `Langlands.LocalField.Definitions`, artifact
-`ac4cb7d5-5dd1-44b6-9d56-f0ec6c70bce0`, version 1. It is accepted, public,
-published, and current at Library commit
-`9007729971e6e6ecea63b5567b6d1621769ccfb0`. The effective Lean SHA256 is
+The sole project import is `Langlands.LocalField.Definitions`. It is
+published in the Library at commit
+`9007729971e6e6ecea63b5567b6d1621769ccfb0`. Its Lean SHA256 is
 `8d9cc8aa128861b13b4f96d38bf95be46844d2eaad28aa3cbb654b070ee0e517`;
-the effective Markdown SHA256 is
+its Markdown SHA256 is
 `6cfb939cf42a71a81fa648b77bd4bab1076bffe0d62519181f7dc7db742124bf`.
-The complete receipt and source pair were checked, and local bytes agree.
+The source pair was checked, and local bytes agree.
 
-The environment is `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, version 1:
-Lean 4.34.0 and Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.
+The environment is Lean 4.34.0 and Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.
 Existing `IsAbelianGalois`, `Algebra.norm`, `Units.map`,
 `MonoidHom.range`, `IntermediateField`, and `AlgebraicClosure` are reused.
 No replacement data definition, project axiom, or placeholder is added.
 
-This is a development statement pair. Compilation is not mathematical
-acceptance. Independent source and semantic review and publication remain
-necessary before exact bound proof tasks can use this family.
+This is a statement pair: compiling it proves none of its propositions.

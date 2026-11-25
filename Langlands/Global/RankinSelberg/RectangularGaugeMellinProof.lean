@@ -21,11 +21,11 @@ local instance rectangularMellinProofSchemeAffine (n : ℕ) : IsAffine (Scheme F
   GroupScheme.GeneralLinear.isAffine_groupScheme _ _
 local instance rectangularMellinProofSchemeSmooth (n : ℕ) : Smooth (Scheme F n).X.hom :=
   GroupScheme.GeneralLinear.smoothStatement _ _
-local instance : MeasurableSpace (Ideles F) := borel _
-local instance : BorelSpace (Ideles F) := ⟨rfl⟩
-local instance : LocallyCompactSpace (Ideles F) :=
+private local instance : MeasurableSpace (Ideles F) := borel _
+private local instance : BorelSpace (Ideles F) := ⟨rfl⟩
+private local instance : LocallyCompactSpace (Ideles F) :=
   (AdelicSchwartzMellin.ideleContinuousEquiv F).symm.toHomeomorph.isClosedEmbedding.locallyCompactSpace
-local instance : SecondCountableTopology (Ideles F) :=
+private local instance : SecondCountableTopology (Ideles F) :=
   (AdelicSchwartzMellin.ideleContinuousEquiv F).symm.toHomeomorph.secondCountableTopology
 
 private theorem lintegral_torus_product_lt_top

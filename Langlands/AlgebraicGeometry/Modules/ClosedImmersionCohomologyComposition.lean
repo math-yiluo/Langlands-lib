@@ -141,7 +141,9 @@ lemma closedImmersionCohomologyMap_pushforwardComp (P : T.Modules) (n : ℕ) :
   rw [← Category.assoc]
   erw [hd]
   simp only [Category.assoc]
-  erw [← Functor.map_comp, ← hψ, Functor.map_comp, ← Category.assoc, ← hφ]
+  erw [← Functor.map_comp, ← hψ, Functor.map_comp]
+  rw [← Category.assoc]
+  erw [← hφ]
   simp only [Category.assoc]
 
 /-- Actual coefficient maps into successive closed-immersion pushforwards

@@ -1,16 +1,13 @@
 # Smoothness of Galois actions on étale cohomology with constant coefficients
 
-Author: Worker 3, for the Harris and Berkovich cohomological
-theorem-statement framework (task `b91b0934-0122-4c05-b359-4e7ed64bbe3d`).
-
-This module states one proposition. Worker 13's published
+This module states one proposition. The published
 `Langlands.Geometry.EtaleGaloisAction` lets the group `L ≃ₐ[K] L` of
 `K`-automorphisms of `L` act on the étale cohomology of a base change
 `X ×_{Spec K} Spec L` with constant coefficients. The proposition says that
 this action is smooth for the Krull topology when `L / K` is algebraic and
 `X → Spec K` is quasi-compact and quasi-separated: every cohomology class is
-fixed by an open subgroup. Worker 13's Markdown lists continuity for the Krull
-topology as not treated there. This module states it. Nothing is proved here.
+fixed by an open subgroup. The Markdown of `EtaleGaloisAction` lists continuity
+for the Krull topology as not treated there. This module states it. Nothing is proved here.
 
 ## Objects
 
@@ -20,10 +17,10 @@ All types live in one universe `u`.
 - `f : X ⟶ Spec (CommRingCat.of K)` is a morphism of Mathlib schemes with
   `[QuasiCompact f]` and `[QuasiSeparated f]`.
 - `R` is a commutative ring, `M : ModuleCat R` and `n : ℕ` are arbitrary.
-- `galoisCohomologyRep (L := L) f R M n : Rep R (L ≃ₐ[K] L)` is Worker 13's
+- `galoisCohomologyRep (L := L) f R M n : Rep R (L ≃ₐ[K] L)` is the Library's
   representation. Its underlying module is the degree-`n` cohomology of the
   base change `X_L := baseChange K L f`, the pullback of `f` and
-  `Spec.algebraMap K L`. The cohomology is that of Worker 13's
+  `Spec.algebraMap K L`. The cohomology is that of
   `Langlands.Geometry.EtaleDerivedSections`: Mathlib's small étale site
   `X_L.smallEtaleTopology`, sheaves of `R`-modules, and the constant sheaf of
   `M`. It is computed by applying sections over the final object to an
@@ -34,7 +31,7 @@ All types live in one universe `u`.
   the identity on `X` times `Spec σ` on `Spec L`, and inverse
   `baseChangeMap f σ⁻¹`. For an automorphism `a` of `X_L`, the translate of a
   sheaf `F` has sections `F(U, u ≫ a.hom)` over `(U, u)`; this is the pullback
-  `a^*F`. Worker 13's `TranslationCoaction.cochainMap` for `a` lifts the
+  `a^*F`. `TranslationCoaction.cochainMap` for `a` lifts the
   canonical map from the constant sheaf to its translate to the injective
   resolution, applies sections over the final object, and then applies
   `EtaleAutomorphism.sectionsIso a`. That isomorphism restricts along
@@ -207,7 +204,7 @@ truth argument follows SGA 4 VII §5.
 | --- | --- |
 | `Algebra.IsAlgebraic K L`, `L` as a filtered union of the finite subextensions | Derived; needed to write `X_L` as a limit of the `X_E` |
 | `[QuasiCompact f]`, `[QuasiSeparated f]` | SGA 4 VII Theorem 5.7, hypothesis that the `X_i` are quasi-compact and quasi-separated |
-| `galoisCohomologyRep (L := L) f R M n` | Worker 13's representation; the cohomology of SGA 4 VII 1.2 by step 4 |
+| `galoisCohomologyRep (L := L) f R M n` | The Library's representation; the cohomology of SGA 4 VII 1.2 by step 4 |
 | `Langlands.IsSmooth` for `krullTopology K L` | Every class is fixed by `Gal(L/E)` for a finite `E`; derived from SGA 4 VII Corollary 5.8 |
 | `∀ M n` | Corollary 5.8 holds for every sheaf `F_{i0}` and every degree |
 
@@ -267,28 +264,26 @@ Direct project imports, byte-identical in Library commits
 `c5a40b0f54880b1825ea05214c2b066f68bfc156` and
 `bd3d155f1f3eb32c90b044cd3bf1e992e726beb7`:
 
-| Module | Author | Lean SHA-256 | Markdown SHA-256 |
-| --- | --- | --- | --- |
-| `Langlands.Geometry.EtaleGaloisAction` | Worker 13 | `5d07cffce7425cbd24204e0f65a5ca913c1570e7c5621aae229d13beb0e581fa` | `d9c5b185b7b92d780aeceaa828ac8440c29a30872c2099428cd5a5776dc885f6` |
-| `Langlands.Representation.Smooth.Definitions` | Library | `435abfa2c0b05c1b6ea8107e3278687e7091e481540508d6647befc0f515aabb` | `4b7364038949eb59db10c95354f290fcba77110c1ed33a227a2b6c92f4afd569` |
+| Module | Lean SHA-256 | Markdown SHA-256 |
+| --- | --- | --- |
+| `Langlands.Geometry.EtaleGaloisAction` | `5d07cffce7425cbd24204e0f65a5ca913c1570e7c5621aae229d13beb0e581fa` | `d9c5b185b7b92d780aeceaa828ac8440c29a30872c2099428cd5a5776dc885f6` |
+| `Langlands.Representation.Smooth.Definitions` | `435abfa2c0b05c1b6ea8107e3278687e7091e481540508d6647befc0f515aabb` | `4b7364038949eb59db10c95354f290fcba77110c1ed33a227a2b6c92f4afd569` |
 
 The module also imports Mathlib's `Mathlib.FieldTheory.KrullTopology`. Through
-the first import it uses Worker 13's `EtaleConstantCohomology`,
+the first import it uses `EtaleConstantCohomology`,
 `EtaleCohomologyAction`, `TranslationCoaction` and `EtaleDerivedSections`.
 
-The environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`: Lean 4.34.0,
+The Lean environment of the checks is Lean 4.34.0,
 Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
 
-Check `8decd98d-579f-4a37-b52f-cbe6681ed768` built this Lean file from a
-draft directory against the published imports, with no errors or warnings.
-Check `33c91a95-4b6f-4062-b1c1-6dd468f2c6d1` built the same file with Lake
-from the workspace, against Library `c5a40b0f`, with no errors or warnings.
-Check `40e1a25b-9595-4cba-96c3-d29c1810f846` built the same file with Lake
-from the workspace, against Library `bd3d155f`, with no errors or warnings.
+A first check built this Lean file against the published imports, with no
+errors or warnings. A second check built the same file with Lake against
+Library `c5a40b0f`, with no errors or warnings. A third check built the same
+file with Lake against Library `bd3d155f`, with no errors or warnings.
 All three inspected `GaloisCohomologySmoothStatement` as a `Prop`-valued
 definition with the single universe parameter `u`, depending only on
-`propext`, `Classical.choice` and `Quot.sound`. Check
-`bd4b1848-5ad0-44c3-a0d9-e6fe53910177` compiled a test file against the same
+`propext`, `Classical.choice` and `Quot.sound`. A fourth check
+compiled a test file against the same
 Lean file, with no errors or warnings, and its output was read. It printed the
 definition with universes: all binders listed above are present, and the
 body is `Langlands.IsSmooth` of `galoisCohomologyRep f R M n`. The same file

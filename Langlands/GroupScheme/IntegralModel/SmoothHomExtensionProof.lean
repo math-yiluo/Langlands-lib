@@ -228,7 +228,9 @@ theorem smoothHomExtension : SmoothHomExtensionStatement.{u} := by
   have : IsAffine M.genericFibre.X.left := by
     change IsAffine (CategoryTheory.Limits.pullback M.group.X.hom (Spec.algebraMap R K))
     infer_instance
-  have : IsAffine G.X.left := IsAffine.of_isIso M.genericIso.inv.hom.hom.left
+  have : IsAffine G.X.left :=
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
+    IsAffine.of_isIso M.genericIso.inv.hom.hom.left
   apply nonempty_hom_of_genericCoordinates M N f
   intro b
   apply genericCoordinate_mem_range_of_integral_values M hM

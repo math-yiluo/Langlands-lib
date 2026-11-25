@@ -131,7 +131,7 @@ theorem rationalFullToPrime_fixed_of_levelIso_fixed
         comparison symmetry stability square universality compatibility h A
         (D.harrisHodgePELForm C) s hs htor hu additivity X X
         ((hodgeLevelFunctor D C).obj U) q e he a = a →
-      (let f : End0 X.actionObj.abelianScheme := RationalAlgebraAction.hom0 e.hom
+      (let f : End0 X.actionObj.abelianScheme := CategoryTheory.End.of (RationalAlgebraAction.hom0 e.hom)
        IsOfFinOrder f) →
       ∀ y : RationalFull X.actionObj.abelianScheme (Over.mk s),
         PrimeComparison.rationalFullToPrime X.actionObj.abelianScheme (Over.mk s)

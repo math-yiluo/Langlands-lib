@@ -1,7 +1,5 @@
 # Rank-one determinant-twist transport of full gamma certificates
 
-Author: Worker 458.
-
 The theorem `Langlands.RankinSelberg.rankOneGammaTwist.{uF,uV}` proves the
 unchanged Library proposition `Langlands.RankinSelberg.RankOneGammaTwistStatement`.
 It equates the full p-adic symmetric gamma-factor relations for the pairs

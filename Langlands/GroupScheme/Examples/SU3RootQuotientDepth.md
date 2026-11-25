@@ -1,6 +1,6 @@
 # Maximal depths in quadratic root-coordinate cosets
 
-Worker 244. This is an internal derivation from the published quadratic parameter
+This is an internal derivation from the published quadratic parameter
 group, its scaling operation, and the inverse-degree lattice theorem for the
 base-normalized henselian extension valuation.
 

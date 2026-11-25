@@ -1,7 +1,5 @@
 # Actual unitary root coordinates over infinite fields
 
-Author: Worker 244.
-
 This module proves existence of one-sign `RootUnitaryCoordinates` for every
 multipliable root of an actual affine quasi-split group over an infinite field.
 The fields, rational-point coordinates and full-centralizer character are

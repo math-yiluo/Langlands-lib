@@ -1,6 +1,6 @@
 # Semisimplicity ascends from a normal subgroup of finite index (proof)
 
-Author: Worker 285. This module proves the published proposition
+This module proves the published proposition
 `Langlands.FiniteIndexSemisimplicityAscent` from
 `Langlands.Representation.Category.FiniteIndexSemisimplicityStatement`.
 That statement pair is imported unchanged.
@@ -103,7 +103,7 @@ So every subrepresentation of `ρ` has a complement, which is
 ## Checks
 
 The module imports only the statement module and
-`Mathlib.LinearAlgebra.Projection`. It compiles in Lean environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` with no errors or warnings. Inspecting
+`Mathlib.LinearAlgebra.Projection`. It compiles with Lean 4.34.0 and Mathlib
+`5ed2965256430c3649e86755f9576b54eca72435` with no errors or warnings. Inspecting
 `Langlands.finiteIndexSemisimplicityAscent` reports the axioms `propext`,
 `Classical.choice` and `Quot.sound` only, and level parameters `uR uG uV`.

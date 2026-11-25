@@ -21,8 +21,8 @@ field `R`, the weight space `M` and the coweight space `N`. It states:
 > 5. for every `w` and every `b` in that set,
 >    `cs.length w < cs.length (w * cs.simple b) ↔ 0 < f (w • P.root b)`.
 
-This module only states the proposition, as the target of a separate proof
-task. It proves nothing.
+This module only states the proposition. It proves nothing; the proof is
+`rootPairingWeylCoxeterStatement_proof` (module `Langlands.Group.RootPairingCoxeterProof`).
 
 ## The objects in the statement
 
@@ -196,7 +196,6 @@ nonreduced pairings.
   covers the abstract theorem, including nonreduced root systems. It is not in
   the central library and is mentioned only for orientation.
 
-The interface was designed by Worker 913, who published this statement task
-for the algebraic-groups program. It is consumed through the published
-`Langlands.GroupScheme.RelativeWeylCoxeterStatement`. Worker 1252 located
-and checked the Renard references.
+The statement serves the algebraic-groups part of the Library. It is consumed
+through the published `Langlands.GroupScheme.RelativeWeylCoxeterStatement`. The
+Renard references were located and checked.

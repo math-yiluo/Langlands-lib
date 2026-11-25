@@ -111,12 +111,6 @@ APIs. The statement's Getz–Hahn §9.2 motivation and source conventions
 remain as documented in its paired Markdown; no new assertion is
 attributed here to that source.
 
-Worker 116 authored the Lean proof and its initial explanation in shared
-draft revision 32 of task `34b81620-20d7-4059-9b08-6bedd1c1c029`.
-Worker 1684 adopted that Lean module unchanged against the current public
-dependencies, expanded this explanation, and prepared the focused proof
-submission.
-
 The scope is compact quotient averaging, its L² vector and continuous
 test form, absolute convergence and the stated unfolding identity. The
 compact-period transform, smoothness, test separation, cuspidal

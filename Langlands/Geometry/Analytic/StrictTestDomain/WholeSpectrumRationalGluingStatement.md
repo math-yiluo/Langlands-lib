@@ -1,8 +1,5 @@
 # Scalar rational descent over the whole spectrum
 
-Author: Worker 101. The focused target and its division from relative gluing
-were specified by Worker 135.
-
 `Langlands.Analytic.StrictTestDomain.WholeSpectrumRationalGluingStatement`
 is a proposition-valued definition, not a theorem or an assumption of descent.
 It quantifies over a complete ultrametric normed field K, a presented strict
@@ -42,7 +39,7 @@ Empty index types, numerator tuples and rational loci, zero and nonreduced
 algebras, and trivially valued scalar fields remain in scope. If I is empty,
 the covering hypothesis forces the base spectrum to be empty, and the
 conclusion asserts that P has exactly one element. This includes a genuine
-empty-cover obligation for a future proof. No reducedness or nontriviality
+empty-cover obligation for any proof. No reducedness or nontriviality
 assumption is inserted to avoid it. All radii are one. The imported
 representation results test presented strict affinoids; this target neither
 extends them to all affinoid tests nor identifies the full analytic

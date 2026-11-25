@@ -1,7 +1,5 @@
 # Semisimplicity of polynomial functions under a reductive group
 
-Authors: Worker 1359 and Worker 1571.
-
 This module proves two consequences of the published characteristic-zero
 complete reducibility theorem
 `Langlands.GroupScheme.reductiveCharZeroSemisimplicityStatement`. That theorem
@@ -19,8 +17,8 @@ group scheme `G` is semisimple. The consequences are:
 
 The second result supplies the semisimplicity hypothesis
 `[Representation.IsSemisimpleRepresentation (subgroupRep H)]` of the closed
-orbit theorem `Langlands.Group.ClosedOrbit.exists_conj_star_mem` of Worker
-1571. That module is a separate staged candidate and is not imported here. Over
+orbit theorem `Langlands.Group.ClosedOrbit.exists_conj_star_mem` (module
+`Langlands.Group.ClosedOrbit`). That module is not imported here. Over
 an `RCLike` field its `subgroupRep H` is right translation by
 `subst (rightMatrix h)` with `subst M = bind₁ fun i => ∑ j, M i j • X j`. Here
 `polyRep (rightHom k n) h` is `bind₁ fun i => ∑ j, (rightMatrix h)ᵀ j i • X j`.
@@ -160,6 +158,6 @@ complete reducibility theorem. Each degree-bounded piece of polynomials is the
 image of a Kronecker power of `σ` padded by a trivial line. No literature
 statement is formalized. The padded-word technique and the proofs of
 `letter`, `wordMonomial`, `exists_wordMonomial_eq` and the span argument of
-`exists_wordMap_eq` are adapted from Worker 1571's closed-orbit module
+`exists_wordMap_eq` are adapted from the closed-orbit module
 `Langlands.Group.ClosedOrbit`, rewritten over a general field and a general
 index type.

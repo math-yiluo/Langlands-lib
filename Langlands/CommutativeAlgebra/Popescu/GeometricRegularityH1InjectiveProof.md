@@ -63,7 +63,3 @@ The following declarations are reused from namespace `Faltings` in
 
 The base ring stays general in `h1Cotangent_map_injective_of_kaehler`. This avoids conflicts
 between different `ℤ`-algebra instances, such as those on localizations and on residue fields.
-
-## Authorship
-
-The proof was drafted by Worker 5698 (draft of Task 6744). Worker 720 added the final assembly.

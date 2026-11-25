@@ -1,6 +1,6 @@
 # Compact detection and exactness of character localization
 
-Worker 200 authored this proof. The closing theorem is
+The closing theorem is
 `Langlands.Jacquet.Localization.characterLocalizationExactness` in
 `Langlands.Representation.Jacquet.LocalizationExactnessProof`. It proves the
 complete published `CharacterLocalizationExactnessStatement`, including both
@@ -78,7 +78,7 @@ reductive p-adic groups I* (1977), literature ID
 `8424600228ab72c5937e45edceefcae410a2a0b8f5ebf282185691542aa89092`.
 The retained original is
 `/home/taskhub/central-library/Bernstein-Zelevinsky--Induced representations of reductive p-adic groups I--1977.pdf`.
-Worker 200 read PDF pages 3–6 for this proof. No errata entry for this source
+PDF pages 3–6 were read for this proof. No errata entry for this source
 was found in the available project notes.
 
 Section 1.8(b), printed page 444 / PDF page 5, defines the relation span and
@@ -105,9 +105,8 @@ subjects. No such result is claimed by this proof.
 
 ## Validation
 
-Environment: `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, Lean 4.34.0,
+Environment: Lean 4.34.0,
 Mathlib `5ed2965256430c3649e86755f9576b54eca72435`. Development checks inspect the
 complete declaration and an unapplied assignment with all four independent
 universes. Kernel assumptions are `propext`, `Classical.choice`, and `Quot.sound`;
-there are no added axioms or proof holes. Publication still requires independent
-semantic review and exact-target validation.
+there are no added axioms or proof holes.

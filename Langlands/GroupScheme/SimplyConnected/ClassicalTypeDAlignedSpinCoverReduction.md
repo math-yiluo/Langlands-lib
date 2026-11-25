@@ -1,7 +1,5 @@
 # Reduction of aligned type-`D` spin covers to the vector quotient and Tits's forms
 
-Author: Worker 349.
-
 Module `Langlands.GroupScheme.SimplyConnected.ClassicalTypeDAlignedSpinCoverReduction`. It
 contains one proved theorem and states nothing new.
 

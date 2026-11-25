@@ -66,9 +66,8 @@ theorem cyclicProductUnitReduction : CyclicProductUnitReductionStatement := by
     cyclicProductGLCoordinates_wrap c hc hc' hwrap x
   have hunitL := hunit p F L τ d r hfield he
   refine ⟨?_, ?_⟩
-  · intro γ hreg hnot
-    exact hunitL.1 γ hreg (fun hn ↦ hnot
-      ((cyclicProductGLCoordinates_isNorm_iff c hc hc' hshift hwrap d hcyclic.pow_eq_one γ).mpr hn))
+  · exact (vanishesOffNorms_cyclicProduct_iff c hc hc' hshift hwrap hcyclic.pow_eq_one _ _).mpr
+      hunitL.1
   intro δ γ hassoc hreg μδ _ _ μγ _ _ νδ νγ hνδ hνγ hmeas
   let y := (List.ofFn (κ δ)).prod
   let C := sigmaCentralizer σ n δ
@@ -95,34 +94,12 @@ theorem cyclicProductUnitReduction : CyclicProductUnitReductionStatement := by
     hclosed.isClosedEmbedding_subtypeVal.isEmbedding.isInducing.pseudoMetrizableSpace
   let : μZ.Regular := Measure.Regular.of_sigmaCompactSpace_of_isLocallyFiniteMeasure μZ
   obtain ⟨νZ, hνZ⟩ := compatibleMeasureExists Z hclosed μ μZ
-  have hassocZ : IsAssociatedMeasure τ d y γ μZ μγ := by
-    obtain ⟨a, ha, hm⟩ := hmeas
-    let b := κ a 0
-    refine ⟨b, ?_, ?_⟩
-    · have h := congrArg (fun z : H ↦ κ z 0) ha
-      change κ (a⁻¹ * cyclicNorm σ ((m + 1) * d) δ * a) 0 =
-        κ (baseChange F.Carrier E n γ) 0 at h
-      rw [map_mul, map_mul, map_inv, Pi.mul_apply, Pi.mul_apply, Pi.inv_apply,
-        cyclicProductGLCoordinates_norm_zero c hc hc' hshift hwrap,
-        cyclicProductGLCoordinates_baseChange c hc hc' γ 0] at h
-      exact h
-    · have hproj : Measurable (fun z : H ↦ κ z 0) :=
-        ((continuous_apply 0).comp κ.continuous).measurable
-      have hbase : Continuous (baseChange F.Carrier E n) :=
-        (IsModuleTopology.continuous_of_linearMap (Algebra.linearMap F.Carrier E)).generalLinearGroup_map
-      have hbase' : Measurable (fun t : glCentralizer γ ↦ baseChange F.Carrier E n t.val) :=
-        (hbase.comp continuous_subtype_val).measurable
-      have hmap := congrArg (Measure.map (fun z : H ↦ κ z 0)) hm
-      rw [Measure.map_map hproj (by fun_prop), Measure.map_map hproj hbase'] at hmap
-      change Measure.map (fun z : Z ↦ b⁻¹ * z.val * b) (Measure.map e μδ) =
-        Measure.map (fun t : glCentralizer γ ↦ baseChange F.Carrier L.Carrier n t.val) μγ
-      have hconj : Measurable (fun z : Z ↦ b⁻¹ * z.val * b) := by fun_prop
-      have heMeas : Measurable (e : C → Z) := e.continuous.measurable
-      rw [Measure.map_map hconj heMeas]
-      change Measure.map (fun x : C ↦ b⁻¹ * κ x.val 0 * b) μδ =
-        Measure.map (fun t : glCentralizer γ ↦ baseChange F.Carrier L.Carrier n t.val) μγ
-      simpa only [Function.comp_def, b, map_mul, map_inv, Pi.mul_apply, Pi.inv_apply,
-        κ, cyclicProductGLCoordinates_baseChange] using hmap
+  have hZ : Measure.map Subtype.val μZ = Measure.map (fun z : C ↦ κ z.val 0) μδ := by
+    change Measure.map Subtype.val (Measure.map e μδ) = _
+    rw [Measure.map_map measurable_subtype_coe (map_continuous e).measurable]
+    rfl
+  have hassocZ : IsAssociatedMeasure τ d y γ μZ μγ :=
+    IsAssociatedMeasure.cyclicProduct c hc hc' hshift hwrap hZ hmeas
   have hκ : MeasurePreserving κ μH ρ := by
     have hforward : Measurable (κ : H → Fin (m + 1) → G) := κ.continuous.measurable
     have hback : Measurable (κ.symm : (Fin (m + 1) → G) → H) := κ.symm.continuous.measurable

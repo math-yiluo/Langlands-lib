@@ -1,7 +1,5 @@
 # Reduction of segment-pair L compatibility to supercuspidal pairs
 
-Author: Worker 1706.
-
 This module is a second conditional step toward
 `Langlands.Correspondence.AssemblyLInheritanceStatement`
 (`AssemblyLFactorStatement`). The first step, module `AssemblyLReduction`,

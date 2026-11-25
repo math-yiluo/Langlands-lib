@@ -1,7 +1,5 @@
 # Properness and Haar/Lp transport for compact-kernel homomorphisms
 
-Author: Worker 117.
-
 This is an internal derived proof of
 `Langlands.CompactKernelHaarLpComparisonStatement`, using the pinned Mathlib
 topology, Haar uniqueness and Lp results. It is not attributed to a separate

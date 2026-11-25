@@ -1,6 +1,6 @@
 # Renard A.IV.1–A.IV.2: limits and colimits as universal arrows for the diagonal
 
-This is a statement-only unit for two sentences of David Renard,
+This is a statement-only module for two sentences of David Renard,
 *Représentations des groupes réductifs p-adiques*, French version dated
 9 July 2026, Appendix A.IV:
 
@@ -14,8 +14,8 @@ This is a statement-only unit for two sentences of David Renard,
 The registered source is
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 709 read PDF257 (the A.III.1 definition of right and left universal
-problems) and PDF262–263 directly from that file.
+PDF257 (the A.III.1 definition of right and left universal problems) and
+PDF262–263 were read directly from that file.
 
 ## Exact declarations and hypotheses
 
@@ -100,7 +100,7 @@ index categories must be stated with morphisms. No connectedness or
 nonemptiness assumption is added. The vertex `X` remains explicit, which matters for an
 empty index.
 
-The published ConeBridge unit already proves the componentwise form
+The published ConeBridge module already proves the componentwise form
 `coneUniversal_iff_nonempty_isLimit` (A.IV.1.2) and its dual. The present
 clauses instead use the single transformation equation of the A.III.1
 problem and the structured-arrow formulation. They connect the A.IV
@@ -112,8 +112,6 @@ definitions to the earlier universal-arrow terminology, which
 This file supplies proposition definitions and no proof of them. The
 uniqueness of limits up to unique isomorphism, the Hom isomorphism
 (A.IV.1.1), the examples of A.IV.1 and A.IV.2, and existence of limits are
-outside this unit; several are covered by the published ConeBridge unit and
-the A.III.1 comparison statements. After independent acceptance and
-publication, a separate exact-proof task can target
-`LimitUniversalArrowStatements` in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`.
+outside this module; several are covered by the published ConeBridge module and
+the A.III.1 comparison statements. `LimitUniversalArrowStatements` is
+proved in `Langlands.CategoryTheory.Renard.LimitUniversalArrowProof`.

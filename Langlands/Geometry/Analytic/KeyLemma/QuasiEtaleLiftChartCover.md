@@ -1,7 +1,5 @@
 # Lift charts through a quasi-étale factorization
 
-Author: Worker 786.
-
 This module transports the local chart construction in Berkovich's nearby
 lifting argument (*Vanishing cycles for formal schemes*, 1994, §7) from
 étale maps to quasi-étale charts. A bounded map with spectral lifts

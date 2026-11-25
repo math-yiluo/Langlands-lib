@@ -45,38 +45,37 @@ on `T.Integers` is `Padic.integerAction T K.Carrier`.
 - Jean-Pierre Serre, *Local Fields*, GTM 67, Springer (1979). Registered as
   `serre-1979-local-fields`, SHA256
   `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`. Used:
-  Chapter IV, §1, Proposition 2 (printed p. 62), and §3, Lemma 5 and Propositions 14–15
-  (printed pp. 73–75). The Library statement module cites the same places.
-- The proofs use the ported Anthropic FLT theorems in `Langlands.AnthropicFLT` (accepted
-  candidate `cf07dc37-888b-4c8a-8bc0-81226d21710e`). They are Herbrand's theorem in
+  Chapter IV, §1, Proposition 2 (printed p. 62), and §3, Propositions 14–15 (printed p. 74) and
+  Lemma 5 (printed p. 75). The Library statement module cites the same places.
+- The proofs use the ported Anthropic FLT theorems in `Langlands.AnthropicFLT`. They are Herbrand's theorem in
   lower numbering for a finite group acting faithfully on a discrete valuation ring with
   separable residue extension
-  (`IsDiscreteValuationRing.map_lowerRamificationGroup_mk_eq_of_isSeparable_residueField`),
+  (`Langlands.Ramification.map_lowerGroup_mk_eq_of_isSeparable_residueField`),
   and its consequences for `φ`
-  (`IsLocalRing.herbrandPhi_eq_herbrandPhi_quotient_comp_of_map_lowerRamificationGroup_mk_eq`)
+  (`Langlands.Ramification.herbrandPhiRat_eq_herbrandPhiRat_quotient_comp_of_map_lowerGroup_mk_eq`)
   and for upper numbering
-  (`IsLocalRing.upperRamificationQuotientCompat_of_map_lowerRamificationGroup_mk_eq`).
+  (`Langlands.Ramification.upperGroupRatQuotientCompat_of_map_lowerGroup_mk_eq`).
   Both of these are stated at nonnegative rational arguments.
 
 All other declarations are internal transport lemmas between the two formalizations. The
 Library side has real-indexed groups built from `Padic.integerAction`. The source side has
-rational-indexed groups of `IsLocalRing.lowerRamificationGroup`.
+rational-indexed groups of `Langlands.Ramification.lowerGroup`.
 
 ## Proof (as implemented)
 
 1. **Transport** (section `Transport`). Let `e : A ≃+* B` be a ring isomorphism of local
    rings and `f : G ≃* G'` a group isomorphism. Suppose `e (g • a) = f g • e a`. Then
-   `f` maps `IsLocalRing.lowerRamificationGroup A G i` onto
-   `IsLocalRing.lowerRamificationGroup B G' i`
+   `f` maps `Langlands.Ramification.lowerGroup A G i` onto
+   `Langlands.Ramification.lowerGroup B G' i`
    (`map_lowerRamificationGroup_of_equivariant`), and so the cardinalities agree
    (`lowerRamificationCard_of_equivariant`). The proof uses that `e` maps
    `maximalIdeal A ^ n` onto `maximalIdeal B ^ n` (`ringEquiv_mem_maximalIdeal_pow_iff`).
 2. **Library φ at rational points** (section `Phi`). Suppose the Library orders
    `Padic.lowerGroupOrder T K i` equal the source cardinalities
-   `IsLocalRing.lowerRamificationCard A Γ i` for all `i`. Then, for every rational `u ≥ 0`,
+   `Langlands.Ramification.lowerGroupCard A Γ i` for all `i`. Then, for every rational `u ≥ 0`,
    the Library real `herbrandPhi` at `u` is the cast of the source rational
    `herbrandPhi` at `u` (`herbrandPhi_ratCast`). Both are given by the floor formula
-   (`Padic.herbrandPhi_floor`, `IsLocalRing.herbrandPhi_of_pos`). For finite `Γ`, the
+   (`Padic.herbrandPhi_floor`, `Langlands.Ramification.herbrandPhiRat_of_pos`). For finite `Γ`, the
    ceiling of the Library `ψ` at a rational `w ≥ 0` is the source index
    `upperRamificationIndex A Γ w` (`ceil_herbrandPsi_ratCast`). Hence the Library upper
    group at `w` is the Library lower group with that index

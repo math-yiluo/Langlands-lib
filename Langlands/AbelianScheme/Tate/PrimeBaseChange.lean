@@ -131,15 +131,15 @@ variable (A)
 test object is mapped to the original base. -/
 theorem trace_rationalHomMap_baseChange (f : End0 A) :
     LinearMap.trace ℚ_[p] (Rational ((AbelianScheme.baseChange b).obj A) T p)
-        (rationalHomMap T p (rationalBaseChangeHom b f)) =
+        (rationalHomMap T p (rationalBaseChangeHom b f.asHom)) =
       LinearMap.trace ℚ_[p] (Rational A ((Over.map b).obj T) p)
-        (rationalHomMap ((Over.map b).obj T) p f) := by
+        (rationalHomMap ((Over.map b).obj T) p f.asHom) := by
   let e := rationalBaseChange b A T p
-  have he : e.conj (rationalHomMap T p (rationalBaseChangeHom b f)) =
-      rationalHomMap ((Over.map b).obj T) p f := by
+  have he : e.conj (rationalHomMap T p (rationalBaseChangeHom b f.asHom)) =
+      rationalHomMap ((Over.map b).obj T) p f.asHom := by
     apply LinearMap.ext
     intro x
-    change e (rationalHomMap T p (rationalBaseChangeHom b f) (e.symm x)) = _
+    change e (rationalHomMap T p (rationalBaseChangeHom b f.asHom) (e.symm x)) = _
     rw [rationalBaseChange_homMap, e.apply_symm_apply]
   exact (LinearMap.trace_conj' _ e).symm.trans
     (congrArg (LinearMap.trace ℚ_[p] _) he)

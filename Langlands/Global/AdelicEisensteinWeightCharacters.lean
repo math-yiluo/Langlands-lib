@@ -91,7 +91,8 @@ theorem positiveWeightCharacter_neg_splitComponent (hG : IsConnectedReductive G)
   rw [← finsum_comp_equiv (Equiv.neg (characterLattice A)), ← finsum_neg_distrib]
   apply finsum_congr
   intro α
-  simp only [Equiv.neg_apply, map_neg, LinearMap.neg_apply, neg_neg, smul_neg]
+  simp only [Equiv.neg_apply, AddEquiv.map_neg, LinearMap.map_neg, LinearMap.neg_apply, neg_neg,
+    smul_neg]
   rw [show (Equiv.neg (characterLattice A)) α = -α from rfl,
     r.finrank_weightSpace_neg_splitComponent hG]
 

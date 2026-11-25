@@ -23,7 +23,7 @@ variable {F : Type u} [Field F] [NumberField F]
   (hcalc : AdelicDifferentialCommutator F G hsmooth)
   (Kinf : Subgroup (InfiniteAdelicGroupPoints F G))
 
-local instance : AddCommGroup (FinitePlotSmoothRationalFunctions F G) :=
+private local instance : AddCommGroup (FinitePlotSmoothRationalFunctions F G) :=
   Module.addCommMonoidToAddCommGroup ℂ
 
 /-- An unbundled automorphic function on the rational quotient is evaluated

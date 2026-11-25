@@ -1,7 +1,5 @@
 # Extension from a represented dynamic centralizer
 
-Author: Worker 1291.
-
 This elementary interface works with any actual representative `j : L → G`
 of `Dynamic.centralizer χ`, over any base scheme and in any universe `u`.
 The generic construction requires the representing monomorphism and equality

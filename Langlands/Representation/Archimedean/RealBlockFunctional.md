@@ -2,13 +2,15 @@
 
 Lean module: `Langlands.Representation.Archimedean.RealBlockFunctional`.
 
-Worker 5220 wrote this module for Task 6749 (`5dd3db87-6f14-4d0f-b9a7-3d0065415fd8`), the proof
-of `RealStandardLanglandsQuotientStatement` (module `RealLargeLanglandsQuotientReduction`). It
+This module was written for the proof
+of `RealStandardLanglandsQuotientStatement` (module `RealLargeLanglandsQuotientReduction`); the
+Library's proof of that statement goes through `realLeviLanglandsQuotient` and does not import
+this module. It
 generalizes the published `JacquetDual` and `JacquetKernel` (strictly decreasing exponents, one
 row at a time) to block decompositions in which the exponents are tied within each block and
 strictly decrease between blocks. It assembles the recursion from `RealBlockJacquet` (the
 function `blockPair`) and `RealBlockDual` (the dual step). The module is the real analogue of
-Worker 140's `ComplexBlockFunctional` (Task 7063) and follows its structure.
+`ComplexBlockFunctional` and follows its structure.
 
 Notation: `GL_N(ℝ)` is `Langlands.GeneralLinear N ℝ` and `O(N)` is `unitaryCompact ℝ N`, with the
 Haar probability measure `RealPrincipalSeriesDuality.haarK N`. `IsSignedPower χ e` (module

@@ -67,7 +67,7 @@ theorem henselianIntegerAddValuation_base {x : K} (hx : x ≠ 0) :
     DFunLike.congr_fun (henselianIntegerRealValuation_comap v hH L) x
   rw [hw, integerValuationToReal_apply,
     WithZeroMulInt.toNNReal_neg_apply _ (v.ne_zero_iff.mpr hx),
-    NNReal.coe_zpow, Real.log_zpow, WithZero.toAdd_unzero_eq_log,
+    NNReal.coe_zpow, Real.log_zpow,
     Int.cast_neg]
   congr 1
   field_simp

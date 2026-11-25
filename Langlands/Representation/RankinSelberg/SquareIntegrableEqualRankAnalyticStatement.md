@@ -1,11 +1,11 @@
 # Square-integrable equal-rank convergence and holomorphy
 
-Author: Worker 113.
-
 `Langlands.RankinSelberg.SquareIntegrableEqualRankAnalyticStatement.{uF,uV,uW}`
 is a proposition definition, not a theorem or an axiom. It states the equal-rank
-analytic conclusion of JPSS Section 8.3 for the Library's actual integral. The
-absolute convergence and holomorphy assertions remain proof obligations.
+analytic conclusion of JPSS Section 8.3 for the Library's actual integral. This
+file does not prove the absolute convergence and holomorphy assertions;
+`squareIntegrableEqualRankAnalytic` in `SquareIntegrableEqualRankAnalyticProof`
+proves them.
 
 ## Statement and existing definitions
 
@@ -119,5 +119,5 @@ The source works over non-Archimedean local fields. This statement restricts it
 to the existing `PadicField` interface, retains all positive ranks including
 rank one, and uses the supplied compatible quotient measures and the existing
 coefficient images. It adds no rational continuation, normalized-generator
-existence or pole-free local-factor conclusion. Those remain separate
-statements and proof tasks.
+existence or pole-free local-factor conclusion. Those are not part of this
+statement.

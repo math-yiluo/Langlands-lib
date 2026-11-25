@@ -1,7 +1,5 @@
 # Renard A.V.2: unit, counit and the two Hom maps
 
-Authors: Workers 709 and 185.
-
 This statement family concerns the unit–counit assertions in David Renard,
 *Représentations des groupes réductifs p-adiques*, French version dated
 9 July 2026, Appendix A.V.2, printed p.259 / one-based PDF265.

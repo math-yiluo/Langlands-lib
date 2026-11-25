@@ -86,5 +86,5 @@ topology on algebra sections.
 This is the finite invariant rational site over one actual presented affinoid.
 It does not construct a finite site of all invariant full domains, an
 unrestricted analytic atlas, an analytic etale or quasi-etale site, Berkovich's
-full equivariant etale site, or the Harris tower. Those are remaining
-construction obligations of the host task.
+full equivariant etale site, or the Harris tower. Those constructions are not
+treated in this module.

@@ -28,9 +28,9 @@ lemma supportedIn_top {k : Type u} [CommRing k] {V : Scheme.{u}} (π : V ⟶ Spe
 given by a polynomial of degree at most `N`. -/
 theorem eulerPolynomial_of_point (A : Type u) [CommRing A] {X : Scheme.{u}}
     (f : X ⟶ Spec (CommRingCat.of A)) (𝓛X : X.Modules) (N : ℕ) (𝔓 : 𝓛X.ProjPresentation f N)
-    [IsProper f] (h𝓛 : Scheme.Modules.IsInvertible 𝓛X) [IsClosedImmersion 𝔓.toProj]
+    [IsProper f] (h𝓛 : Scheme.Modules.IsInvertibleFLT 𝓛X) [IsClosedImmersion 𝔓.toProj]
     (T : Scheme.{u}) (s : T ⟶ Spec (CommRingCat.of A))
-    (F : (pullback f s).Modules) (hF : Scheme.Modules.IsInvertible F) (B : CommRingCat.{u})
+    (F : (pullback f s).Modules) (hF : Scheme.Modules.IsInvertibleFLT F) (B : CommRingCat.{u})
     (hB : IsField B) (b : Spec B ⟶ T) :
     ∃ P : Polynomial ℚ, P.natDegree ≤ N ∧ ∀ n : ℕ,
       ((∑ᶠ p : ℕ, (-1 : ℤ) ^ p * (Module.finrank B
@@ -54,9 +54,9 @@ theorem eulerPolynomial_of_point (A : Type u) [CommRing A] {X : Scheme.{u}}
   have : IsClosedImmersion 𝔓'.toProj :=
     MorphismProperty.of_isPullback (P := @IsClosedImmersion) hpb ‹_›
   let L := (Scheme.Modules.pullback (a ≫ pullback.fst f s)).obj 𝓛X
-  have hL : Scheme.Modules.IsInvertible L := h𝓛.pullback _
+  have hL : Scheme.Modules.IsInvertibleFLT L := Scheme.Modules.IsInvertible.pullbackFLT (hL := h𝓛) _
   let Ft := (Scheme.Modules.pullback a).obj F
-  have hFt : Scheme.Modules.IsInvertible Ft := hF.pullback _
+  have hFt : Scheme.Modules.IsInvertibleFLT Ft := Scheme.Modules.IsInvertible.pullbackFLT (hL := hF) _
   have hdim : topologicalKrullDim (pullback (C := Scheme.{u}) gT b) ≤ N :=
     ProjSpace.topologicalKrullDim_le_of_isClosedImmersion 𝔓'.toProj
   let K := ProjSpace.stdCoverPullback 𝔓'.toProj
@@ -68,14 +68,14 @@ theorem eulerPolynomial_of_point (A : Type u) [CommRing A] {X : Scheme.{u}}
   refine ⟨P, hP, fun n => ?_⟩
   rw [← hPev n]
   congr 1
-  have hFLn : Scheme.Modules.IsInvertible (Ft ⊗ L.tensorPow n) :=
-    hFt.tensor_monoidalV2 (hL.tensorPow_monoidalV2 n)
-  have : (Ft ⊗ L.tensorPow n).IsQuasicoherent :=
+  have hFLn : Scheme.Modules.IsInvertibleFLT (Ft ⊗ L.tensorPowFLT n) :=
+    Scheme.Modules.IsInvertible.tensor_monoidalV2 hFt (Scheme.Modules.IsInvertible.tensorPow_monoidalV2 hL n)
+  have : (Ft ⊗ L.tensorPowFLT n).IsQuasicoherent :=
     Picard.IsLocallyFreeRankOne.isQuasicoherent (fun x => by
       obtain ⟨U, hx, ⟨e⟩⟩ := hFLn.exists_trivialization x
       exact ⟨U, hx, ⟨(Scheme.Modules.restrictFunctorIsoPullback U.ι).app _ ≪≫ e⟩⟩)
   refine (finsum_congr fun p => ?_).trans
-    (CechBridge.eulerChar_ofModules_eq (R := B) (π := q) K (Ft ⊗ L.tensorPow n)).symm
+    (CechBridge.eulerChar_ofModules_eq (R := B) (π := q) K (Ft ⊗ L.tensorPowFLT n)).symm
   congr 2
   exact ((DerivedSections.relativeCohomology q p).mapIso
     (pullbackTwistIso _ a ((Scheme.Modules.pullbackComp a (pullback.fst f s)).app 𝓛X) F n ≪≫

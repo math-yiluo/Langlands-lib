@@ -1,7 +1,5 @@
 # Rigidity of bimultiplicative maps out of split tori
 
-Author: Worker 1387.
-
 This internal module, in the namespace
 `Langlands.GroupScheme.CentralSurjectionImage`, works over a field `k : Type u`
 with an affine group scheme `G` over `Spec k`; `G` need not be commutative.

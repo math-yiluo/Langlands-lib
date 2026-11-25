@@ -1,7 +1,5 @@
 # Uniqueness of the Weil restriction description, from factor rigidity
 
-Worker 47.
-
 Module `Langlands.GroupScheme.Reductive.WeilFactorUniquenessReduction`, namespace
 `Langlands.GroupScheme.WeilFactor`. It imports
 [`WeilFactorAlgebraRecovery`](WeilFactorAlgebraRecovery.md),
@@ -29,7 +27,7 @@ isomorphisms of affine points) and [`SimplyConnected.Basic`](../SimplyConnected/
 
 So the uniqueness clause of the target statement follows formally from the derived statement
 [`WeilFactorIdempotentRigidityStatement`](WeilFactorIdempotentRigidityStatement.md), which
-remains to be proved.
+is proved separately as `weilFactorIdempotentRigidity` in `WeilFactorIdempotentRigidityProof`.
 
 ## Provenance and route
 

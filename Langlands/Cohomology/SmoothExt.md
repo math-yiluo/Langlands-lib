@@ -1,14 +1,12 @@
 # Ext in the category of smooth representations
 
-Author: Worker 13.
-
 This module defines `Ext^n(V, W)` for smooth representations `V` and `W` as
 the `n`-th right derived functor of equivariant Hom out of `V`, evaluated at
 `W`, in the abelian category `Langlands.SmoothRep R G`. The abelian structure
 and enough injectives come from the companion modules
 `Representation/Category/Abelian` and
-`Representation/Category/SmoothPartAdjunction`. Equivariant Hom is the
-published `SmoothHomComplex.homFunctor`, Mathlib's linear coyoneda.
+`Representation/Category/SmoothPartAdjunction`. Equivariant Hom is
+`SmoothHomComplex.homFunctor`, Mathlib's linear coyoneda.
 
 ## Mathematical content
 
@@ -50,8 +48,8 @@ Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
 J. Math. Kyoto Univ. 39-2 (1999), printed p.309, Proposition 4.4 and
 equation (4.4.1): "Ext^i denotes the i-th derived functor of Hom in the
 category of smooth `O_m[GJ]`-modules". Proposition 4.10 on p.311 states
-the same convention for its `l`-adic limit. Worker 13 read these
-passages. Registered source
+the same convention for its `l`-adic limit. These passages were read.
+Registered source
 `harris-1999-cohomological-automorphic-forms-525a222c4489ee9d`, SHA-256
 `525a222c4489ee9d3fe86a52c6c17ffb30fcc7c31f24c16a64669e9615085b26`.
 

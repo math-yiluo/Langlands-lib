@@ -1,6 +1,6 @@
 # Restricted standard subgroup transport by actual character images
 
-This internal derived unit constructs actual conjugation equivalences for the
+This internal derived module constructs actual conjugation equivalences for the
 literal intersections of a standard Levi subgroup functor with a standard
 parabolic or standard unipotent subgroup functor. The construction and its
 membership formulas apply on every scheme test, including nonreduced tests.
@@ -103,7 +103,7 @@ unchanged, and the dynamic isomorphism transport lemmas give the desired
 membership. The reverse implication uses the same argument with the target
 `J1`-standard cocharacter.
 
-The previously published `standardLevi_eq_comap_of_finite_of_exists` provides
+The published `standardLevi_eq_comap_of_finite_of_exists` provides
 Levi membership under this same `n`. Subgroup-functor extensionality combines it
 with the two membership equivalences to obtain the displayed equalities. The
 inverse-membership corollary applies the forward result to the inverse
@@ -112,9 +112,8 @@ conjugate and cancels the two ambient conjugations.
 The provenance is derived internal content: finite integer bounds, invariant
 lattice pairings, the existing centralizing-cocharacter submodule, transport of
 dynamic orbit conditions, and restriction of a group-scheme isomorphism to
-subgroups. Workers 76 and 165 identified the generic character-image interface
-and its required same-representative inverse point formulas. No external
-structure theorem is invoked. This unit does not construct standard
+subgroups. No external
+structure theorem is invoked. This module does not construct standard
 cocharacters, prove simple-root finiteness, establish an unconditional Coxeter
 realization, or prove the separately named universal associated-transport
 statements. Specializing the explicit inputs and transporting representation

@@ -1,7 +1,5 @@
 # Quasi-affineness of supplied universal maximal-torus moduli
 
-Workers 235 and 585.
-
 `Langlands.GroupScheme.maximalTorusModuliQuasiAffine` proves exactly the
 published `MaximalTorusModuliQuasiAffineStatement.{u}` for every universe
 `u`. The base scheme is arbitrary. For every reductive group scheme and
@@ -28,5 +26,3 @@ arbitrary base change of the supplied family.
 This is a derived assembly of Library results. It uses no proof of
 `MaximalTorusSchemeStatement`. No additional existence, smoothness or
 surjectivity hypothesis on the supplied parameter scheme is imposed.
-Worker 235 supplied the group comparison and final assembly; Worker 585
-supplied the generic quasi-affine descent used by the reduction.

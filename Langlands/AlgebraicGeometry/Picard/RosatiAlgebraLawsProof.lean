@@ -26,15 +26,18 @@ variable (P : Prerequisites.{u}) {S : Scheme.{u}}
   {A : AbelianScheme S} (W : DualData A) (hadd : W.Additivity P)
 
 /-- Actual rational dualization preserves the identity. -/
-lemma DualData.dual0_id : W.dual0 P hadd (id0 A) = id0 (W.dual P) := by
+lemma DualData.dual0_id :
+    W.dual0 P hadd (CategoryTheory.End.of (id0 A)) = CategoryTheory.End.of (id0 (W.dual P)) := by
+  apply CategoryTheory.End.ext
   unfold DualData.dual0
   apply dualHom0_id
 
 /-- Actual rational dualization reverses composition. -/
 lemma DualData.dual0_comp (a b : End0 A) :
-    W.dual0 P hadd (comp0 A A A a b) =
-      comp0 (W.dual P) (W.dual P) (W.dual P)
-        (W.dual0 P hadd b) (W.dual0 P hadd a) := by
+    W.dual0 P hadd (CategoryTheory.End.of (comp0 A A A a.asHom b.asHom)) =
+      CategoryTheory.End.of (comp0 (W.dual P) (W.dual P) (W.dual P)
+        (W.dual0 P hadd b).asHom (W.dual0 P hadd a).asHom) := by
+  apply CategoryTheory.End.ext
   unfold DualData.dual0
   apply dualHom0_comp
 
@@ -50,14 +53,14 @@ theorem involution_mul (a b : End0 A) :
 
 /-- Conjugation fixes the actual rational identity. -/
 theorem involution_id :
-    involution P W hadd lam (id0 A) = id0 A := by
+    involution P W hadd lam (CategoryTheory.End.of (id0 A)) = CategoryTheory.End.of (id0 A) := by
   rw [involution_apply, DualData.dual0_id, comp0_id0, polarization_comp_inverse]
 
 /-- Conjugation fixes every rational scalar endomorphism. -/
 theorem involution_algebraMap (q : ℚ) :
     involution P W hadd lam (algebraMap ℚ (End0 A) q) =
       algebraMap ℚ (End0 A) q := by
-  have hq : algebraMap ℚ (End0 A) q = q • id0 A := by
+  have hq : algebraMap ℚ (End0 A) q = q • CategoryTheory.End.of (id0 A) := by
     rw [Algebra.algebraMap_eq_smul_one]
     rfl
   rw [hq, map_smul, involution_id]
@@ -71,7 +74,7 @@ variable (P : Prerequisites.{u}) {k : Type u} [Field k] [IsAlgClosed k] [CharZer
   (lam : A ⟶ W.dual P) (hpol : W.IsPolarization P lam)
   [hInverse : HasRationalInverse P W lam]
 
-local instance : Fact (Nat.Prime 2) := ⟨Nat.prime_two⟩
+private local instance : Fact (Nat.Prime 2) := ⟨Nat.prime_two⟩
 
 include hpol
 
@@ -91,6 +94,7 @@ theorem involution_involutive (a : End0 A) :
     P.comparison P.symmetry P.stability relativeFiniteWeilTransition
     relativeFiniteWeilAlternation W.hasDual W.geometry W.inversePoincare W.evaluation
     T lam hpol 2
+  apply CategoryTheory.End.ext
   apply Tate.fieldPrimeRationalFaithfulness k A A 2
   apply LinearMap.ext
   intro y
@@ -100,16 +104,16 @@ theorem involution_involutive (a : End0 A) :
   rw [map_sub, sub_eq_zero]
   calc
     E x (Tate.PrimeAdic.rationalHomMap T 2
-        (involution P W hadd lam (involution P W hadd lam a)) y) =
-        E (Tate.PrimeAdic.rationalHomMap T 2 (involution P W hadd lam a) x) y :=
+        (involution P W hadd lam (involution P W hadd lam a)).asHom y) =
+        E (Tate.PrimeAdic.rationalHomMap T 2 (involution P W hadd lam a).asHom x) y :=
       (primeWeil_involution P W hadd relativeFiniteWeilTransition T 2 lam
         (involution P W hadd lam a) x y).symm
-    _ = -E y (Tate.PrimeAdic.rationalHomMap T 2 (involution P W hadd lam a) x) :=
+    _ = -E y (Tate.PrimeAdic.rationalHomMap T 2 (involution P W hadd lam a).asHom x) :=
       (hAlt.neg _ _).symm
-    _ = -E (Tate.PrimeAdic.rationalHomMap T 2 a y) x :=
+    _ = -E (Tate.PrimeAdic.rationalHomMap T 2 a.asHom y) x :=
       congrArg Neg.neg
         (primeWeil_involution P W hadd relativeFiniteWeilTransition T 2 lam a y x).symm
-    _ = E x (Tate.PrimeAdic.rationalHomMap T 2 a y) := hAlt.neg _ _
+    _ = E x (Tate.PrimeAdic.rationalHomMap T 2 a.asHom y) := hAlt.neg _ _
 
 end Involutivity
 

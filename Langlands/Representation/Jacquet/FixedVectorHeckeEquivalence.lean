@@ -32,7 +32,7 @@ def fixedVectorHeckeEndAddEquiv : LevelHeckeAlgebra ℂ K.toSubgroup ≃+
     (End (fixedVectorProgenerator.{uG,uV} K))ᵐᵒᵖ :=
   ((fixedVectorHeckeAddEquiv K).trans
     (fixedVectorProgeneratorHomEquiv K (fixedVectorProgenerator K)).symm).trans
-      MulOpposite.opAddEquiv
+      (End.addEquiv.symm.trans MulOpposite.opAddEquiv)
 
 /-- The opposite endomorphism multiplication is precisely the published convolution. -/
 def fixedVectorHeckeEndEquiv : LevelHeckeAlgebra ℂ K.toSubgroup ≃+*
@@ -41,6 +41,7 @@ def fixedVectorHeckeEndEquiv : LevelHeckeAlgebra ℂ K.toSubgroup ≃+*
     map_mul' := by
       intro a b
       apply MulOpposite.unop_injective
+      apply End.ext
       apply (fixedVectorProgeneratorHomEquiv K (fixedVectorProgenerator K)).injective
       apply Subtype.ext
       change smallFixedVectorLift K (smallFixedVectorGenerator K).representation

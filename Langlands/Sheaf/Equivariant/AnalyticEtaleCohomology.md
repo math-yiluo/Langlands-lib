@@ -1,16 +1,16 @@
 # Cohomology of étale sheaves and étale `G`-sheaves
 
-Author: Worker 26. Builds on the following modules:
+Builds on the following modules:
 
-- `Langlands.Sheaf.Equivariant.TwistedExactGlobalComparison` (Worker 26, submitted
+- `Langlands.Sheaf.Equivariant.TwistedExactGlobalComparison` (ported
   together with this module): for an exact abelian subcategory `𝒜` of module sheaves on a
   twisted site, the smooth global sections `exactGlobalSections`, the invariant global
   sections `exactInvariantGlobalSections`, their derived functors `exactGlobalDerived`
   and `exactInvariantGlobalDerived`, the inclusion `exactGlobalInclusion`, the edge map
   `exactInvariantGlobalEdgeMap` and the comparison `exactGlobalComparison`. Through it,
-  `TwistedGlobalSections` (Worker 26): `sheafSectionsModule` and `sectionsDerived`,
+  `TwistedGlobalSections`: `sheafSectionsModule` and `sectionsDerived`,
   sections over an object of an arbitrary site and their derived functors.
-- `Langlands.Sheaf.Equivariant.AnalyticEtaleComparison` (Worker 26): the object
+- `Langlands.Sheaf.Equivariant.AnalyticEtaleComparison`: the object
   `etaleSelf X` (the identity of `X` in its étale site), enough injectives for module
   sheaves on the étale site (`etale_enoughInjectives`), the Kan extension theorem
   `etale_hasPointwiseRightKanExtension`, and Berkovich's restriction `b^*` on étale
@@ -19,7 +19,7 @@ Author: Worker 26. Builds on the following modules:
   `LocalActionSmoothPart` (the abelian structure of locally discrete sheaves and the
   exactness of their inclusion `smoothSheafInclusion`), `AnalyticGSheaves`
   (`EtaleGSheaf ρ`, the locally discrete sheaves of `distinguishedLiftSystem ρ` on the
-  twisted étale site) and Worker 21's étale site `EtaleSite` with its topology
+  twisted étale site) and the étale site `EtaleSite` with its topology
   `etaleTopology`.
 
 All declarations are in the namespace `Langlands.Sheaf.Equivariant.Analytic`.
@@ -38,7 +38,7 @@ adds the invariant cohomology `H^q(X(G), F)` with its edge map. No points are in
 
 ## Data and universes
 
-- `K : Type u` is a complete ultrametric normed field, and `X` an object of Worker 21's
+- `K : Type u` is a complete ultrametric normed field, and `X` an object of
   `LocalizedCategory.{u, v, v} (K := K)`.
 - Coefficients: write `w = max u (v + 1) uL`. The ring `R : Type w` is commutative, and
   sheaves take values in `ModuleCat.{w} R`. As `uL` occurs only inside `w`, uses name
@@ -50,7 +50,7 @@ adds the invariant cohomology `H^q(X(G), F)` with its edge map. No points are in
   `SmoothRep.{w, z, w} R G`. From exactness on, the declarations also assume
   `[Small.{w} G]` and
   `[(distinguishedLiftSystem ρ).HasAdmissibleRefinements (twistedEtaleTopology ρ)]`, as in
-  `AnalyticEtaleCompactCohomology`. Worker 26's module `AnalyticEtaleRefinements` derives
+  `AnalyticEtaleCompactCohomology`. The module `AnalyticEtaleRefinements` derives
   the second from three conditions on distinguished étale objects; this module does not
   import it.
 

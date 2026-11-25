@@ -1,7 +1,5 @@
 # Geometric fibres after composition of bases
 
-Author: Worker 109.
-
 This internal construction derives transport of quasi-compact morphisms and
 geometrically connected fibres from the actual base-composed spaces,
 preserved presheaf pullbacks, and ordinary point homeomorphisms. It claims

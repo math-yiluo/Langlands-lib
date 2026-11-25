@@ -1,7 +1,5 @@
 # Smooth subgroup quotients from an exact-fiber ambient map
 
-Author: Worker 148.
-
 This internal derived module specializes the actual smooth relation quotient
 construction to the published right-coset arrow scheme. It introduces no new
 external geometric theorem. The ambient map remains an explicit hypothesis.

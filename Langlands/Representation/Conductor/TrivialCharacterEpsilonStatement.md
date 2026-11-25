@@ -1,6 +1,6 @@
 # Existence of the epsilon factor against the trivial character of `GL_1`
 
-Author: Worker 5032. This module defines one proposition,
+This module defines one proposition,
 `Langlands.Conductor.TrivialCharacterEpsilonStatement` (universes `uF`, `uV`).
 It is a statement only: nothing here proves it, and no declaration assumes it.
 
@@ -95,8 +95,10 @@ recalls on the same page that for irreducible `π` the space `V*_θ` has
 dimension `0` or `1` by Gelfand–Kazhdan [G-K]. So an `IsGeneric` representation
 is of Whittaker type exactly once Whittaker multiplicity one is known, and
 `IsGeneric` does not include it. The Library proves multiplicity one
-(`Whittaker.multiplicityOne`, `MultiplicityOneStatement`) only for
-`PadicField`. A proof of the present statement over an arbitrary `F` therefore
+for `PadicField` (`Whittaker.multiplicityOne`, `MultiplicityOneStatement`) and
+over every nonarchimedean local field (`Whittaker.localFieldMultiplicityOne`,
+used by [`TrivialCharacterEpsilonReduction`](TrivialCharacterEpsilonReduction.md)).
+A proof of the present statement over an arbitrary `F` therefore
 needs multiplicity one over `F`, or an argument that does not use it; the
 Library relation asks for the functional equation for every nonzero functional
 `ℓ` of `π`, which for a representation of Whittaker type is a single
@@ -105,17 +107,17 @@ functional up to scalars. The test representation `1` of `GL_1` has
 
 ## The normalizations
 
-The normalizations are those of the host `ConductorExponentStatement`, copied
+The normalizations are those of `ConductorExponentStatement`, copied
 unchanged: `q` is the residue cardinality, `abv` is the normalized absolute
 value fixed by `abv ϖ = q⁻¹` and `abv = 1` on units, `ψ` has conductor `O`,
 and `ν` is self-dual for `ψ`, the measure for which the published relation is
 meant to define the JPSS factor ([`EpsilonFactor`](../RankinSelberg/EpsilonFactor.md)
 records that the sources use the self-dual measure). The pair `(π, rankOneCharacter 1)` and
-the parameters `q ψ abv ν` are exactly those for which the host asserts
+the parameters `q ψ abv ν` are exactly those for which `ConductorExponentStatement` asserts
 `IsPairEpsilonFactor q ψ abv ν π (rankOneCharacter 1) (c, (m : ℤ))`. So the
-exponent `m` produced here is the one the host constrains; because the
+exponent `m` produced here is the one `ConductorExponentStatement` constrains; because the
 pair epsilon factor is unique for `q > 1` (published
-`IsPairEpsilonFactor.unique`), the host's `(c, m)` must be the one supplied here. The uniformizer `ϖ` occurs
+`IsPairEpsilonFactor.unique`), the `(c, m)` of `ConductorExponentStatement` must be the one supplied here. The uniformizer `ϖ` occurs
 only to pin down `abv`; it is not used in the conclusion.
 
 ## Why the exponent is only an integer
@@ -123,26 +125,30 @@ only to pin down `abv`; it is not used in the conclusion.
 The source's factor `c q^(−ns)` has an integer exponent and Theorem (2.7)
 asserts nothing about its sign. The statement accordingly concludes only
 `m : ℤ`. That `m ≥ 0` for irreducible generic `π`, and that `m` is the
-conductor, are part of the host `ConductorExponentStatement` (`m : ℕ` there),
+conductor, are part of `ConductorExponentStatement` (`m : ℕ` there),
 derived in JPSS 1981, (5.3) and Theorem (5.1), from the dual comparison of
 essential vectors. They are not part of this statement.
 
 ## Why this statement is needed
 
-The Library's proved existence results for epsilon factors quantify over
+The p-adic existence results for epsilon factors quantify over
 `PadicField` only: `genericPairEpsilonFactorExists` in
 `Langlands.Representation.RankinSelberg.PadicSymmetricEpsilonFactor`, and the
 statements `Theorem27Statement` (module `FunctionalEquationStatement`),
 `PairEpsilonNormalizationStatement` and
-`LanglandsPairEpsilonFactorExistenceStatement` all fix `F : PadicField p`. The
-host statement covers every nonarchimedean local field, including those of
+`LanglandsPairEpsilonFactorExistenceStatement` all fix `F : PadicField p`.
+`ConductorExponentStatement` covers every nonarchimedean local field, including those of
 positive characteristic, so it needs this existence result over arbitrary `F`.
-A proof must not import the p-adic-only results.
+A proof must not import the p-adic-only results. The theorem
+`Langlands.Conductor.trivialCharacterEpsilon`, in
+[`TrivialCharacterEpsilonProof`](TrivialCharacterEpsilonProof.md), proves the
+statement from the all-field functional equation
+`RankinSelberg.localFieldUnequalRankFunctionalEquation`.
 
 ## Imports
 
-`Langlands.Representation.Conductor.EssentialStatement` (for the host's
-binders, `HasIntegerConductor`, `IsSelfDual`, `IsGeneric` and
+`Langlands.Representation.Conductor.EssentialStatement` (for the binders of
+`ConductorExponentStatement`, `HasIntegerConductor`, `IsSelfDual`, `IsGeneric` and
 `rankOneCharacter`) and `Langlands.Representation.RankinSelberg.PairEpsilonFactor`
 (for `PairEpsilonFactorExists`). `Langlands.GeneralLinear.Iwasawa` is opened
-as in the host module.
+as in `EssentialStatement`.

@@ -1,7 +1,5 @@
 # Unramified characters under a multiplicative homeomorphism
 
-Author: Worker 34.
-
 This is an internal derivation from `unramifiedCharacters` and the
 compact-open topology on continuous monoid homomorphisms in Mathlib.
 It introduces no original-literature assertion.
@@ -33,6 +31,6 @@ restricting to the subtypes proves continuity on the actual unramified
 character spaces. Thus the construction uses the existing compact-open
 topologies and does not define either topology by transport.
 
-This unit supplies a transport construction only. It asserts no
+This module supplies a transport construction only. It asserts no
 finite-rank parameterization, representation genericity, induced trace
 equality or exact finite-length K0 comparison.

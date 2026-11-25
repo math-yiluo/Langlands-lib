@@ -137,5 +137,4 @@ use Yoneda evaluation, the natural Hom equivalences of
 `RepresentableBy`, and uniqueness of terminal costructured arrows.
 The actual Lean proof and its route must be documented in the
 separate proof pair. The core Yoneda theorem, A.III.1 universal-arrow
-comparisons, A.III.3, and the rest of Appendix A retain their separate
-owners and proof obligations.
+comparisons, A.III.3, and the rest of Appendix A are outside this module.

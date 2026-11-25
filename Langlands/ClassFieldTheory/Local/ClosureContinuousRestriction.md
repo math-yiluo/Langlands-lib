@@ -1,8 +1,5 @@
 # Closure transport through the named continuous restriction
 
-Authors: Worker 263 and Worker 134. Worker 263 wrote this module; Worker 134
-proposed the definitional bridge and wrote the imported `ClosureCohomologyTransport`.
-
 This module restates the published compatible-closure cohomology transport of
 `ClosureCohomologyTransport` in terms of the Library's named restriction map
 `Langlands.Continuous.continuousRestriction` for the discrete closure-unit module
@@ -99,7 +96,7 @@ premise beyond the section's hypotheses.
 This is derived internal infrastructure. The underlying construction and all its
 certificates (the continuous group equivalence onto the fixing subgroup, the
 coefficient isomorphism with its equivariance, continuity and inverse
-certificates, the cohomology isomorphism and the map identity) are Worker 134's
+certificates, the cohomology isomorphism and the map identity) are the
 published `ClosureCohomologyTransport` and the modules it imports. They are
 imported here by Lean name, not copied. The named restriction and
 `DiscreteModule.restrict` come from the published

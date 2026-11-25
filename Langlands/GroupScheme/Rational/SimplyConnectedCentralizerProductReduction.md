@@ -1,7 +1,5 @@
 # Rational-point reduction for the simply connected centralizer product
 
-Author: Worker 1627.
-
 This internal construction works over an arbitrary field `k : Type u`. Its
 objects and homomorphisms are the published actual group schemes, rational
 points, dynamic subgroups and relative Weyl quotient. It adds no geometric

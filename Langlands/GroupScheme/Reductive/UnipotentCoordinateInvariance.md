@@ -1,6 +1,6 @@
 # Coordinate invariance from the simple roots of a chamber
 
-This is derived supporting work by Worker 1369. It combines actual smooth
+This is derived supporting work. It combines actual smooth
 root-subgroup representatives, the closed coordinate stabilizer envelope and
 the Library's simple-root generation theorem. It makes no new assertion from
 external literature.
@@ -58,6 +58,6 @@ all-test invariance to prove `b(x * g) = b(g)` for arbitrary `V` and arbitrary
 at every `x` with the evaluation at the identity point of the same test.
 No reducedness, affineness or nonemptiness condition is imposed on `V`.
 
-The rational simple-root premise is retained. This unit does not establish
+The rational simple-root premise is retained. This module does not establish
 that premise for a Steinberg covariant, the fixed-height restriction injection,
 the dimension of the whole induced space, or `SteinbergBigCellStatement`.

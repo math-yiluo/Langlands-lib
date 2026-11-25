@@ -1,6 +1,6 @@
 # Fixed-torus realization of intrinsic semistandard triples
 
-Worker 770, Task 7514. The target is exactly
+The target is exactly
 `Langlands.GroupScheme.SemistandardSpectralDynamicCoverageStatement.{u}`.
 This is a derived arbitrary-field scheme-theoretic strengthening of the
 semistandard distinguished-Levi convention in Waldspurger (2003), I.1,

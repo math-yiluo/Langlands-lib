@@ -1,7 +1,5 @@
 # A diagonal integral matrix representation of a local integral model
 
-Author: Worker 4686.
-
 This internal module proves the Library proposition
 `Langlands.GroupScheme.IntegralModel.IntegralDiagonalRepresentationStatement`
 (from `IwasawaCellLinear.lean`) at every universe `u`, as
@@ -10,7 +8,7 @@ This internal module proves the Library proposition
 input for `MaximalCompactStatement` is the published
 `LeviMaximalCocharacterStatement`, which is not proved here.
 
-It uses three helper modules of the same contribution:
+It uses three helper modules, ported with this file:
 `IntegralLinearEmbedding/Comodule.lean` (matrix coefficients over a principal
 ideal domain), `IntegralLinearEmbedding/Diagonalization.lean` (diagonalizing a
 cocharacter of `GL_n` over a principal ideal domain) and

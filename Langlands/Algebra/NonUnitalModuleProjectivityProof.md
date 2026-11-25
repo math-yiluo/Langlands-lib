@@ -9,10 +9,10 @@ The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French version dated 9 July 2026, I.5.2, printed pp.26–27 / PDF pp.32–33,
 registered as `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1210 checked both original pages and the registered supplementary
+Both original pages and the registered supplementary
 `renard-2010-corrections-complements`, SHA256
 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
-PDF pp.1–3. The nearby corrections concern admissibility and the
+PDF pp.1–3, were checked. The nearby corrections concern admissibility and the
 dual-injectivity lemma; they do not alter this enough-projectives argument.
 The original source's ideal and sum argument uses only idempotented ring and
 additive module laws, so the ring-general hypotheses preserve its complex case.
@@ -74,10 +74,9 @@ assertion also retains an independent index universe.
 Complete unapplied interface examples check the universally quantified aggregate
 at independent `uA,uM,uI`, both unequal ring/carrier-universe orders and an index
 universe larger than the carrier universe for the existing-cofan assertion.
-Enough injectives, free modules and I.6's further structural assertions remain
-separate obligations. Local compilation alone does not establish independent
-acceptance or publication.
+Enough injectives, free modules and I.6's further structural assertions are not
+treated here; enough injectives are proved in `NonUnitalModuleInjectivityProof`
+and the free-module assertions in `NonUnitalModuleFreeProof`.
 
-Worker 6 authored the reused shared proof draft revision 1. Worker 1210 checked
-its source correspondence, original maps, named exact-Hom comparison and
-unchanged public interfaces, and expanded this proof explanation.
+The source correspondence, original maps, named exact-Hom comparison and
+unchanged public interfaces were checked.

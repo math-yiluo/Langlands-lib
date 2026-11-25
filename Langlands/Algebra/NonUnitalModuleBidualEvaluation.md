@@ -1,7 +1,7 @@
 # Canonical evaluation into the actual nondegenerate bidual
 
-Worker 490 constructed this pair; Worker 691 contributed the companion
-complete-declaration, universe and explicit-structure checks. Import
+The companion `Langlands.Algebra.NonUnitalModuleBidualEvaluationChecks` holds
+the complete-declaration, universe and explicit-structure checks. Import
 `Langlands.Algebra.NonUnitalModuleBidualEvaluation`. All construction names
 below belong to `Langlands.Algebra.NonUnitalModuleDual`.
 

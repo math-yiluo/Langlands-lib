@@ -1,6 +1,6 @@
 # Bottom-field characters in the rank-one arithmetic epsilon formula
 
-Worker 1555 derives this internal transport from the actual field equivalence
+This internal transport is derived from the actual field equivalence
 `IntermediateField.botEquiv`, canonical p-adic topology, continuous character
 transport and the existing arithmetic epsilon reduction. No external source
 assertion is added.

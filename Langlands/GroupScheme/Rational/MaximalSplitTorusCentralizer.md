@@ -1,7 +1,5 @@
 # Testing maximal splitness in closed subgroups and centralizers
 
-Author: Worker 1445.
-
 This is an internal consequence of the published definitions of split-subtorus
 maximality and the all-test centralizer. It supplies formal steps for the
 ambient-maximality argument of `MinimalParabolicLeviCentralizerStatement`.

@@ -1,6 +1,6 @@
 # Target-valued regular families and inverse specialization
 
-This internal unit uses algebraic projections, the explicit regularized
+This module uses algebraic projections, the explicit regularized
 four-crossing maps, and finite-dimensional weak analytic calculus. It introduces
 no topology on an ambient representation and no new continuation assumption.
 

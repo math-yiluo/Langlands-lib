@@ -25,4 +25,4 @@ isomorphism. `AffineQuotientModel.isAffineHom` transports affineness back to `Q`
 
 This is an internal derived affine-model construction using actual morphisms
 and all scheme tests. The faithful representation is an explicit input; no
-quotient existence, unipotence, or pseudo-reductivity is asserted by this unit.
+quotient existence, unipotence, or pseudo-reductivity is asserted by this module.

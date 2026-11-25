@@ -1,6 +1,6 @@
 # Vector coordinates for split commutative extensions
 
-Worker 1485. This internal derived unit constructs natural coordinates for a
+This internal derived module constructs natural coordinates for a
 split commutative extension from its actual full kernel and a group-scheme
 section. It uses only the existing group-object laws and all-test kernel and
 vector-group definitions, with no external classification input.

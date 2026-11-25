@@ -47,13 +47,13 @@ theorem range_comp_iso_eq_of_le [IsAffineHom G.X.hom] [LocallyOfFiniteType G.X.h
   let U : G.X.left.affineOpens := ⟨⊤, isAffineOpen_top G.X.left⟩
   have : IsNoetherianRing Γ(G.X.left, ⊤) :=
     IsLocallyNoetherian.component_noetherian U
-  let e' : Aut G := e
+  let e' : Aut G := Aut.of e
   let φ : ℕ → Aut G := fun n => e' ^ n
-  have hφ : ∀ n, (φ (n + 1)).hom = e.hom ≫ (φ n).hom := fun n => by
+  have hφ : ∀ n, (φ (n + 1)).asIso.hom = e.hom ≫ (φ n).asIso.hom := fun n => by
     simp only [φ, pow_succ, Aut.Aut_mul_def]
     rfl
-  let a : ℕ → (P ⟶ G) := fun n => i ≫ (φ n).hom
-  have ha : ∀ n, a (n + 1) = (i ≫ e.hom) ≫ (φ n).hom := fun n => by
+  let a : ℕ → (P ⟶ G) := fun n => i ≫ (φ n).asIso.hom
+  have ha : ∀ n, a (n + 1) = (i ≫ e.hom) ≫ (φ n).asIso.hom := fun n => by
     simp only [a, hφ, Category.assoc]
   have hstep : ∀ n, SubgroupFunctor.range (a (n + 1)) ≤ SubgroupFunctor.range (a n) :=
     fun n => by
@@ -64,8 +64,8 @@ theorem range_comp_iso_eq_of_le [IsAffineHom G.X.hom] [LocallyOfFiniteType G.X.h
   obtain ⟨I, ⟨n, rfl⟩, hmax⟩ :=
     set_has_maximal_iff_noetherian.mpr
       (inferInstance : IsNoetherian Γ(G.X.left, ⊤) Γ(G.X.left, ⊤)) ideals ⟨_, 0, rfl⟩
-  have : IsClosedImmersion (a n).hom.hom.left := hi.comp_iso (φ n)
-  have : IsClosedImmersion (a (n + 1)).hom.hom.left := hi.comp_iso (φ (n + 1))
+  have : IsClosedImmersion (a n).hom.hom.left := hi.comp_iso (φ n).asIso
+  have : IsClosedImmersion (a (n + 1)).hom.hom.left := hi.comp_iso (φ (n + 1)).asIso
   have : Mono (a n).hom.hom := Over.mono_of_mono_left _
   have : Mono (a (n + 1)).hom.hom := Over.mono_of_mono_left _
   let f := SubgroupFunctor.factorOfRangeLE (hstep n)
@@ -92,11 +92,11 @@ theorem range_comp_iso_eq_of_le [IsAffineHom G.X.hom] [LocallyOfFiniteType G.X.h
       (show IsIso f.hom from inferInstance)
   have hge : SubgroupFunctor.range (a n) ≤ SubgroupFunctor.range (a (n + 1)) :=
     SubgroupFunctor.range_le_of_factor (inv f) ((IsIso.inv_comp_eq f).mpr hf.symm)
-  have hn : SubgroupFunctor.range ((i ≫ e.hom) ≫ (φ n).hom) =
-      SubgroupFunctor.range (i ≫ (φ n).hom) := by
+  have hn : SubgroupFunctor.range ((i ≫ e.hom) ≫ (φ n).asIso.hom) =
+      SubgroupFunctor.range (i ≫ (φ n).asIso.hom) := by
     rw [← ha n]
     exact le_antisymm (hstep n) hge
-  exact (SubgroupFunctor.range_comp_iso_eq_iff _ _ (φ n)).mp hn
+  exact (SubgroupFunctor.range_comp_iso_eq_iff _ _ (φ n).asIso).mp hn
 
 /-- A closed subgroup of an affine group of finite type over a field that is contained in
 its image under an ambient automorphism equals that image on every test. -/

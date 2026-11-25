@@ -1,7 +1,5 @@
 # Actual quadratic unitary coordinates and the full centralizer action for type R2 roots
 
-Author: Worker 1045.
-
 `QuasiSplitR2RootUnitaryCoordinatesStatement` is an unproved existence
 proposition for the type R2 structural prerequisite of the apartment
 construction. It is the multipliable-root counterpart of the Library's

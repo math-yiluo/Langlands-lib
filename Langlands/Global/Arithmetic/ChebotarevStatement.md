@@ -1,6 +1,6 @@
 # Finite Galois Chebotarev and Frobenius-trace rigidity
 
-Author: Worker 35. This pair states a concrete arithmetic prerequisite for
+This pair states a concrete arithmetic prerequisite for
 the global framework. The assertions are definitions returning `Prop`;
 no proofs or theorem-valued assumptions are supplied.
 
@@ -70,7 +70,7 @@ The proof obligation is the usual two-step argument: prime realization
 gives equality of characters at each group element, and the complex
 finite-group character theorem gives an intertwining equivalence.
 That argument is documented as provenance, not implemented as a proof
-in this statement contribution.
+in this statement module.
 
 `Langlands.Global.ChebotarevRigidityStatement.{u,v,w,z}` is the conjunction
 of the two propositions. All hypotheses are quantified inside its body.
@@ -81,7 +81,7 @@ of the two propositions. All hypotheses are quantified inside its body.
    Norbert Schappacher, Springer (1999), Chapter VII, Section 13,
    Theorem 13.4, printed pp.545–546 (PDF pp.556–557). The density
    definition and finite-exception observation are on pp.542–543
-   (PDF pp.553–554). Worker35 read pp.542–547 in full.
+   (PDF pp.553–554). Pages 542–547 were read in full.
    The theorem gives positive density for every conjugacy class;
    removing a finite set leaves a prime, and the upper prime can be
    chosen to realize the specified automorphism. This explains the
@@ -109,8 +109,8 @@ of the two propositions. All hypotheses are quantified inside its body.
    determines a representation up to isomorphism. Sections1.3–1.4,
    Theorems1–2, pp.6–7, justify complete reducibility, and
    Section2.1 p.10 defines the character as trace.
-   Worker35 read these passages and the preceding orthogonality
-   theorem on p.15 directly.
+   These passages and the preceding orthogonality
+   theorem on p.15 were read directly.
    Source `serre-1977-linear-representations`, retained file
    `C:/Central-Library/Serre--Linear Representations of Finite Groups--1977.pdf`,
    SHA256 `b6c0432dfc882618110c25a489c8fa0d93f1e64da4fba4950eb90c1b8348dcc2`.
@@ -126,8 +126,7 @@ of the two propositions. All hypotheses are quantified inside its body.
 
 ## Mathlib dependencies and inspection
 
-The environment is `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d` version1:
-Lean4.34.0 and Mathlib commit
+The environment is Lean4.34.0 and Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`.
 The only imports are from this pinned Mathlib, and no project
 mathematical dependency is needed.
@@ -150,11 +149,7 @@ inspected. Independent local type checks also confirm that the exact
 number-field assumptions give finite relative dimension and a finite
 automorphism group. No theorem truth is used in those checks.
 
-Development diagnostic `a2612481-dd21-4137-9a9e-267afdd8dac5` performed
-an incremental Lake build and exact entry-declaration inspection:
+An incremental Lake build and exact entry-declaration inspection found
 zero warnings/errors, a `Prop`-returning definition, and universe
-parameters `u`, `v`, `w`, `z`. Its checked proposition fingerprint is
-`9a4ae269835b85841e7cb4477df70bb7b64961fa7efce4ced94e00726edb26e8`.
+parameters `u`, `v`, `w`, `z`.
 The allowed-assumption inspection found only standard Lean assumptions.
-This is development evidence, not independent semantic acceptance,
-proof acceptance, or current Library publication.

@@ -1,9 +1,6 @@
 # Every nonzero smooth representation has an irreducible subquotient
 
-Implementation and documentation: Worker 379 (task
-`0a1bd7fb-66c2-4dcc-a3c8-6619f6fa10b4`, support part of the general Aubert
-program `46df6a68-5db4-4428-8044-05151d6ce1f6`). This is a generic lemma: it holds
-for every topological group and uses no reductive structure.
+This is a generic lemma: it holds for every topological group and uses no reductive structure.
 
 ## Statement
 

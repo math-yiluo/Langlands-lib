@@ -1,8 +1,5 @@
 # The two-line-bundle isomorphism form of the geometric cube theorem
 
-Author: Worker 1328. The specialization of the algebraic assembly follows
-the carried draft by Worker 482 of the previous instance.
-
 The module proves the exact published proposition:
 
 ```lean

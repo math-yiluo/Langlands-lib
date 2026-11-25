@@ -1,8 +1,5 @@
 # Inverse image and exact extension for a represented dynamic centralizer
 
-Author: Worker 1116. The hypothesis interface `hfwd`, `hsurj` was proposed by
-Worker 1236.
-
 This module proves the elementary all-test algebra behind the parabolic
 correspondence of
 `Langlands.GroupScheme.DynamicLeviParabolicCorrespondenceStatement`, together
@@ -88,8 +85,10 @@ with `(e F).val = extendFromCentralizer χ j hj F.val` and
 `hfwd` and `hsurj` are structural facts that this module does not prove. One
 expected route derives them from
 `ParabolicDynamicStatement`, `DynamicCentralizerReductiveStatement` and a
-descent statement for parabolics contained in `P(χ)`. Until such proofs are
-available, the assembly theorem is a reduction, not a proof of the target.
+descent statement for parabolics contained in `P(χ)`. The assembly theorem is a
+reduction, not a proof of the target; the target is proved by
+`dynamicLeviParabolicCorrespondence` in
+`Rational.DynamicLeviParabolicCorrespondenceProof`.
 
 ## Provenance
 

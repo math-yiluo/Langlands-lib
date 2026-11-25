@@ -1,6 +1,6 @@
 # Ordinary facet derivatives and actual quotient roots
 
-This internal supporting unit proves the converse to
+This module proves the converse to
 `UnramifiedQuotientFacetRoots` and combines the two implications into an exact
 root comparison. All objects are in an arbitrary universe `u` over a
 nonarchimedean local field `F`. The ambient group is affine and carries supplied
@@ -59,5 +59,6 @@ additive character specialization to a bijection between the derivative-root
 subtype and the actual quotient-root subtype. Its character formula is
 reflexive. This is an internal composition of the named support, lifting,
 root-kernel and root-system results; it asserts no new original-literature
-formulation. It proves no coroot comparison, full host root datum, or
+formulation. It proves no coroot comparison, full root datum of
+`UnramifiedFacetRootDatumStatement`, or
 unconditional opposite-factor statement.

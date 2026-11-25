@@ -1,7 +1,5 @@
 # Bounded full-group action on the actual induced affinoid atlas
 
-Author: Worker 36.
-
 This module constructs the full-group action by bounded morphisms of the
 actual induced quotient-algebra family. Its spectrum realization agrees
 with the existing action on the balanced quotient and is jointly

@@ -1,6 +1,6 @@
 # Compact comparison of actual spherical functions
 
-Worker 248, Task 5460. The module
+The module
 `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalXiCompactComparison`
 specializes the derived compact comparison to the actual rational points of a
 connected reductive group and to its actual standard Levi subgroups. The

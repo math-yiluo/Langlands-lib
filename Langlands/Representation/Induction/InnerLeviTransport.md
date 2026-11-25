@@ -1,7 +1,5 @@
 # Inner transport of whole-Levi data
 
-Author: Worker 178.
-
 This derived construction implements inner changes of coordinates on an actual
 product Levi. It supplies representation equivalences, real-character
 compatibility, analytic temperedness transport, normalized-induction transport,

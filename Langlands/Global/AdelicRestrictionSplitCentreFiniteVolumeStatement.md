@@ -1,7 +1,5 @@
 # Finite volume of the restriction split-centre quotient
 
-Author: Worker 112.
-
 `Langlands.Global.RestrictionSplitCentre.ConnectedReductiveQuotientFiniteVolumeStatement`
 is a Prop-valued target. It states that the adelic quotient
 `[G] = A_G G(F) \ G(𝔸_F)` of Getz–Hahn (2.21) has finite volume when `G` is

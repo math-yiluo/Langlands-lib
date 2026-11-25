@@ -1,6 +1,6 @@
 # Actual normalized framing square over a varying Nilp base
 
-This internal unit proves the test-chart equation for the actual normalized
+This module proves the test-chart equation for the actual normalized
 framing of the constructed Nilp-base extension. It uses exactly the fixed-frame
 and target test-chart comparisons of `DrinfeldFramedBaseChangeCharts`, with
 no new original-source or representability assertion.
@@ -35,4 +35,7 @@ algebra, embedded field, coefficient and residue fields, fixed height-certified
 frame and Nilp objects in universes `{v,u}`. Covers may be infinite and quotient
 scalar maps may merge generators. Independence of the fixed-frame test
 comparison from the target chart and preservation of original framed
-comparison squares remain further constructions.
+comparison squares are outside this module; they are
+`baseChangeFrameChartIso_eq_global` in
+`DrinfeldFramedBaseChangeCanonicalSquare` and `framingSquare_baseChange` in
+`DrinfeldFramedComparisonBaseChange`.

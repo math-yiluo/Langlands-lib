@@ -122,7 +122,9 @@ statement.
 
 ## Provenance
 
-This is an internal assembly step of Task 7782 and follows no particular source.
+This is an internal assembly step of the proof
+`selfCentralizingTorusConjugacyQuotientAffine` of
+`SelfCentralizingTorusConjugacyQuotientAffineStatement` and follows no particular source.
 The descent of `f` and the identification of its fibres with normalizer cosets
 correspond to the identification `G/N ≅ TM_G` in the proof of SGA 3, Exposé XVI,
 Theorem 4.1(d). The step "proper monomorphism ⇒ closed immersion" is Stacks Project, Tag 04XV,

@@ -1,6 +1,6 @@
 # Connected fibres of a target family after arbitrary scheme base change
 
-This internally derived supporting unit identifies geometrically connected
+This internally derived supporting module identifies geometrically connected
 nonempty fibres of the changed morphism with structural geometrically connected
 nonempty fibres of the changed target-chart family. The original target chart
 is assumed surjective and etale. The comparison imposes no affine, finiteness,
@@ -28,6 +28,7 @@ the lift equation. All connected-space assertions retain nonemptiness.
 
 The provenance is composition of existing Library fibre comparisons, slice
 adjunction, preservation of chart properties, and the already proved
-algebraically closed field criterion. This unit proves the arbitrary-base
+algebraically closed field criterion. This module proves the arbitrary-base
 comparison needed for the limit argument; eventual connected-fibre descent
-and the full eight-property host theorem remain separate obligations.
+and the full eight-property theorem `SpaceLimitPropertyDescentStatement`
+are separate obligations, not proved here.

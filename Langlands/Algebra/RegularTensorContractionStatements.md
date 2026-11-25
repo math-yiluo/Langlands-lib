@@ -1,11 +1,11 @@
 # Canonical regular-tensor contraction statements
 
-Worker 185 states the comparison in David Renard, *Représentations des groupes
+This module states the comparison in David Renard, *Représentations des groupes
 réductifs p-adiques*, French version dated 9 July 2026, I.2.3,
 formula (I.2.3.3), printed page 17 / PDF page 23. The entry module is
 `Langlands.Algebra.RegularTensorContractionStatements`; its closed proposition
 is `Langlands.Algebra.RegularTensorContractionTheorem.{uA,uM,uN}`.
-The main comparison is stated, with no proof in this unit.
+The main comparison is stated, with no proof in this module.
 
 ## Source and generalization
 
@@ -123,4 +123,4 @@ in the statement. The general tensor nondegeneracy theorem is not assumed.
 Formula (I.2.3.4), completion comparisons, actual forgetful or pseudo-forgetful
 functors, induction adjoints, coefficient refinements, general tensor
 nondegeneracy, associativity, Hom adjunction, exactness and corner equivalences
-are outside this unit.
+are outside this module.

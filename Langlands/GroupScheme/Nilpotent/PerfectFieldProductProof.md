@@ -1,7 +1,5 @@
 # Products of unipotent groups and tori over perfect fields
 
-Worker 244.
-
 This module proves the unchanged Library proposition
 `Langlands.GroupScheme.NilpotentPerfectFieldProductStatement.{u}` in every universe.
 For every perfect field and every smooth connected affine group scheme over it,

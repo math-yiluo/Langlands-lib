@@ -1,7 +1,5 @@
 # Discrete-series orbit measures with the I.1 character scale
 
-Author: Worker 200.
-
 This derived adapter combines the existing actual character Haar measure
 with the existing actual discrete-series orbit measure. It implements the
 measure conventions in Waldspurger, *La formule de Plancherel pour les

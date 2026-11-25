@@ -1,7 +1,7 @@
 # Clifford reduction to representations that are scalar on a commutative normal subgroup
 
 Helper module for the proof of
-`Langlands.ClassField.Global.RelativeWeilGroup.InducedCharacterGenerationStatement`.
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.InducedCharacterGenerationStatement`.
 It provides the Clifford step sketched in item 3 of "Relation to the source" in
 the Markdown of the statement module. It does not decompose an irreducible
 representation. Instead it gives an injective intertwiner, which needs no

@@ -5,9 +5,10 @@ namespace `Langlands.Aubert.General.CorrectedFiltration`. It imports
 `CorrectedOrbitJacquet` (the explicit data `orbitJacquetData`) and
 `CorrectedGradedNatural` (the predicate `OrbitJacquetData.IsNatural`).
 
-Author: Worker 1255 (task `d6be9c3b-ff6f-425c-9bb5-84c973b9568f`). The module answers
-Worker 969's request for a naturality lemma for the orbit Jacquet data. It is a
-conditional helper and does not prove the rational task target.
+The module supplies a naturality lemma for the orbit Jacquet data, in the form of the
+predicate `OrbitJacquetData.IsNatural` of `CorrectedGradedNatural`. It is a
+conditional helper and does not prove the rational-point transition target
+`RationalCorrectedGradedTransitionStatement`.
 
 ## Provenance
 
@@ -15,7 +16,7 @@ This is an internal derived result with no source in the literature. It states t
 the orbit maps of `CorrectedOrbitJacquet` are natural in the representation, which is
 the naturality of the orbit isomorphism of Aubert's erratum (Trans. AMS 348 (1996),
 p. 4689), as cited in the Markdown of `CorrectedOrbitJacquet`. No source page was
-re-read for this pair.
+re-read for this module.
 
 ## Data
 

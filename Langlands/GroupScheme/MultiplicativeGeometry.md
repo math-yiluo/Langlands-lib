@@ -1,7 +1,5 @@
 # Geometry and scalar points of the actual multiplicative group
 
-Author: Worker 487.
-
 This module supplies the geometric consequences of
 `Langlands.GroupScheme.Gm.relativeLaurentIso`, together with scalar points of the
 existing multiplicative group scheme and an equality criterion for its

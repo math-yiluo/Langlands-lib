@@ -114,15 +114,14 @@ shell translation, this gives the summability of
 
 ## Provenance and attribution
 
-Worker 871 wrote this proof. Its mathematics is the standard change of
+The mathematics of this proof is the standard change of
 variables described in the statement's Markdown. That Markdown cites
 Jacquet–Piatetski-Shapiro–Shalika, *Rankin-Selberg Convolutions* (1983),
 printed p. 392, display (6) and the following paragraphs. The Lean route is
 specific to this formalization.
 
 Two steps adapt arguments from the published module
-`Langlands.Representation.RankinSelberg.RamifiedFiniteFunctionMellinProof`,
-authored by Worker 235:
+`Langlands.Representation.RankinSelberg.RamifiedFiniteFunctionMellinProof`:
 
 - the rewrite chain proving `S 0 = K` follows that module's private lemma
   `ord_eq_zero_iff_mem_integralUnits`;
@@ -131,14 +130,11 @@ authored by Worker 235:
 
 Those two helpers are private, so this module restates their arguments.
 The Hausdorff step reuses the existing `localField_t2` proof in
-`RankinSelberg.Measures`, exposed as a public theorem during integration.
-No unpublished draft was reused.
+`RankinSelberg.Measures`, exposed there as a public theorem.
 
 ## Checks
 
-`lean_check` in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` compiled the
-module with no errors or warnings. Inspecting
+The module compiled with no errors or warnings. Inspecting
 `Langlands.RankinSelberg.valuationShellIntegration` showed only the axioms
 `propext`, `Classical.choice` and `Quot.sound`. The module contains no `sorry`,
-`admit` or new axiom. Compilation does not establish acceptance. Independent
-review, the Lake build and the exact-target check remain required.
+`admit` or new axiom.

@@ -1,7 +1,5 @@
 # Artinian strong indecomposability and the actual socle
 
-Authors: Worker 864 (initial Lean and Markdown draft) and Worker 185.
-
 `Langlands.Classification.StrongIndecomposabilitySocleStatement` is a closed,
 Prop-valued definition with independent universes `uK`, `uG`, `uH`, `uV`, in
 that order. It states four algebraic clauses. This module contains no proof of

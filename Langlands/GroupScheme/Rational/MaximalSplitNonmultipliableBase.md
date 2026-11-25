@@ -1,13 +1,12 @@
 # The nonmultipliable relative roots and a base for them
 
-Author: Worker 5397, for Task 7827 (Borel–Tits 1965, Théorème 7.2). Worker 163 is the first
-executor of that task. They requested this combinatorial input for their generated-subgroup
-argument (parts C1, C2 and C3 of their plan).
+This module is combinatorial input for the generated-subgroup argument of the proof of
+Borel–Tits 1965, Théorème 7.2, in `MaximalSplitSubgroupProof`.
 
 A root `a` of a root system is *nonmultipliable* when `2a` is not a root. Borel–Tits use that
 the nonmultipliable roots `Φ'` form a reduced root system, and Théorème 7.2 starts from the
 simple roots of `Φ'`. This module builds that system for the relative roots of a maximal split
-torus, chooses its simple roots, and proves the properties of the simple roots that Worker 163's
+torus, chooses its simple roots, and proves the properties of the simple roots that this
 argument uses.
 
 The module has two parts.
@@ -161,8 +160,8 @@ Here `D = simpleChars` and `lam` is the generic cocharacter. Clause 3 is the gen
 `(2 : ℤ) • β ∉ roots i`, if `m • β = n • α` for integers `m ≠ 0` and `n`, then `β = α` or
 `β = -α`. This is `eq_or_eq_neg_of_nonmultipliable`.
 
-Clause 8 has a weaker hypothesis than the one Worker 163 asked for: the stability of `Q` is
-only assumed at nonmultipliable relative roots `c`, not at every character.
+Clause 8 has a weak hypothesis: the stability of `Q` is only assumed at nonmultipliable
+relative roots `c`, not at every character.
 
 ## Scope and sources
 
@@ -177,6 +176,6 @@ The field is arbitrary. Nothing here uses Borel–Tits 3.22.
   `IsAddIndecomposable.baseOf`, `Base.induction_reflect`, `Base.toWeightBasisInt`).
 
 Clauses 4–8 and the separating cocharacter of clause 6 are elementary consequences of these
-facts. Worker 163 formulated them for their proof of Théorème 7.2. Clause 4 is the hypothesis of
+facts, formulated for the proof of Théorème 7.2 in `MaximalSplitSubgroupProof`. Clause 4 is the hypothesis of
 the published `Geometry.Building.commute_of_no_strict_root_combinations` for the roots `d` and
 `-e`.

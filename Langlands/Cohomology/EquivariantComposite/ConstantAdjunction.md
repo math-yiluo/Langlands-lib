@@ -1,7 +1,5 @@
 # The constant equivariant sheaf adjunction
 
-Author: Worker 134.
-
 This internal construction supplies the injective-preservation input for the
 global composite comparison. A representation gives a constant module
 presheaf on the transport category of opens: the map with label `g` acts by

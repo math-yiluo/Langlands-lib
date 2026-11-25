@@ -1,6 +1,6 @@
 # Applying constituent induction to a finite family of types
 
-Author: Worker 196. This is an ancillary application lemma for the final
+This is an ancillary application lemma for the final
 cuspidal constituent proof. It combines the finite-type compact-open selection
 with the fixed-vector induction, following the choice in Bernstein–Zelevinsky
 (1976), Proposition 3.30, proof steps (2)–(3), printed/PDF page 37, registered

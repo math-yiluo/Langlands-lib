@@ -30,8 +30,8 @@ local instance rationalBlockCenterReductionTopology :
 def rationalInertiaBlockEndRingEquiv
     (π : SmoothRep.{0, uF, max uF uV} ℂ (GroupScheme.rationalPoints G))
     (X : RationalInertiaBlock G π) : End X ≃+* End X.obj where
-  toFun f := f.hom
-  invFun f := ObjectProperty.homMk f
+  toFun f := End.of f.asHom.hom
+  invFun f := End.of (ObjectProperty.homMk f.asHom)
   left_inv _ := rfl
   right_inv _ := rfl
   map_mul' _ _ := rfl
@@ -53,7 +53,7 @@ theorem rationalInertiaBlockCenterEquiv_apply
     (X : RationalInertiaBlock G π)
     [(preadditiveCoyonedaObj X).Full] [(preadditiveCoyonedaObj X).Faithful]
     (z : CatCenter (RationalInertiaBlock G π)) :
-    (rationalInertiaBlockCenterEquiv G π X z : End X.obj) = (z.app X).hom := rfl
+    (rationalInertiaBlockCenterEquiv G π X z : End X.obj) = End.of (z.app X).hom := rfl
 
 end Block
 

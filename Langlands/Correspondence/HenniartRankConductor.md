@@ -1,6 +1,6 @@
 # Conductors of the extension of the stable images
 
-Author: Worker 4803. Module `Langlands.Correspondence.HenniartRankConductor`, namespace
+Module `Langlands.Correspondence.HenniartRankConductor`, namespace
 `Langlands.Henniart.Extension`. A supporting module of `HenniartSurjectivityStepProof`;
 it defines no statement. Its hypotheses are published Library statements passed as
 arguments; nothing is assumed globally.
@@ -46,9 +46,8 @@ is the epsilon factor of `b₀ ⊗ 1` and of `π₀ × 1` (`candidate_pairEpsilo
 - Side of `GL_(k+1)`, `conductor_eq_of_pairEpsilon`: twisting `π₀` by `χ ∘ det` keeps
   the exponent `m₀` (`isSupercuspidalPairEpsilonFactor_unramifiedTwist_left`, from the
   published `RankinSelberg.unramifiedTwistEpsilon`). The lemma
-  `exists_newvectorConductor_of_pairEpsilon` (module `HenniartConductorFinitenessProof`,
-  which is part of this contribution and is not yet in the Library; it uses `hBHK` and
-  `hJPSS`) gives a newvector conductor `b = m₀ - (k+1) n(ψ)`, and a
+  `exists_newvectorConductor_of_pairEpsilon` (module `HenniartConductorFinitenessProof`;
+  it uses `hBHK` and `hJPSS`) gives a newvector conductor `b = m₀ - (k+1) n(ψ)`, and a
   newvector conductor is the first fixed level
   (`firstFixedLevel_eq_of_isNewvectorConductor`).
 

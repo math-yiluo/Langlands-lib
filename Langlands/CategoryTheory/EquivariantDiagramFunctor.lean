@@ -19,14 +19,14 @@ def mapFunctor (F : C ⥤ E) :
     { obj := M.obj ⋙ F
       ρ i := (F.mapEnd (M.obj.obj i)).comp (M.ρ i)
       comm f g := by
-        change F.map (M.ρ _ g) ≫ F.map (M.obj.map f) =
-          F.map (M.obj.map f) ≫ F.map (M.ρ _ ((D.map f).hom g))
+        change F.map (M.ρ _ g).asHom ≫ F.map (M.obj.map f) =
+          F.map (M.obj.map f) ≫ F.map (M.ρ _ ((D.map f).hom g)).asHom
         rw [← F.map_comp, M.comm, F.map_comp] }
   map {M N} c :=
     { hom := Functor.whiskerRight c.hom F
       comm i g := by
-        change F.map (M.ρ i g) ≫ F.map (c.hom.app i) =
-          F.map (c.hom.app i) ≫ F.map (N.ρ i g)
+        change F.map (M.ρ i g).asHom ≫ F.map (c.hom.app i) =
+          F.map (c.hom.app i) ≫ F.map (N.ρ i g).asHom
         rw [← F.map_comp, c.comm, F.map_comp] }
   map_id M := by
     apply Hom.ext
@@ -44,7 +44,7 @@ def mapNatTrans {F F' : C ⥤ E} (α : F ⟶ F') :
     mapFunctor (D := D) F ⟶ mapFunctor (D := D) F' where
   app M :=
     { hom := Functor.whiskerLeft M.obj α
-      comm i g := α.naturality (M.ρ i g) }
+      comm i g := α.naturality (M.ρ i g).asHom }
   naturality {M N} c := by
     apply Hom.ext
     apply NatTrans.ext

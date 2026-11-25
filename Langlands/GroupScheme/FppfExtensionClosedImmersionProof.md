@@ -1,8 +1,5 @@
 # Descent proof for homomorphisms of group extensions
 
-Authors: Worker 671 (proof and original explanation) and Worker 870
-(verification and focused submission).
-
 `Langlands.GroupScheme.fppfExtensionClosedImmersion.{u}` proves exactly
 `Langlands.GroupScheme.FppfExtensionClosedImmersionStatement.{u}`.
 It uses the actual kernel-pair isomorphism, the kernel-valued difference

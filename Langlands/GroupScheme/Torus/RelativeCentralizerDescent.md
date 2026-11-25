@@ -1,6 +1,6 @@
 # Smooth closed centralizers of relative tori over arbitrary bases
 
-This internal support unit constructs a smooth closed representative of the
+This internal module constructs a smooth closed representative of the
 all-test centralizer of any homomorphism from a relative torus into a smooth,
 relatively affine group scheme over an arbitrary base. The homomorphism need
 not be an immersion.
@@ -18,5 +18,5 @@ for a relative torus.
 
 The provenance is internal: the construction combines the published ring
 centralizer theorem, effective epimorphic étale covers, closed subgroup descent,
-and smoothness descent. This unit does not establish reductivity or maximality
+and smoothness descent. This module does not establish reductivity or maximality
 of the resulting centralizer, or the full derived-group correspondence.

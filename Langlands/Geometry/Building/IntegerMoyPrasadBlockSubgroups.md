@@ -3,8 +3,7 @@
 These internal lemmas generalize the actual rational-point arguments of
 `MoyPrasadDoubleRefinement` and `MoyPrasadBlockExchange` from local-field
 parahoric data to `IntegerValuationBuildingData`. They were adapted from
-Worker 359’s Task 6191 revision-10 draft `IntegerRootConjugation`, with
-Worker 359 as coauthor. They use an explicit order-one unit, which supplies
+`IntegerRootConjugation`. They use an explicit order-one unit, which supplies
 the extended affine root system through `IntegerExtendedAffineRootSystems`.
 No apartment axiom or building-existence premise is added.
 

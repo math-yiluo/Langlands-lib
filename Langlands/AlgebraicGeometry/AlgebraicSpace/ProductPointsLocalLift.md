@@ -1,7 +1,5 @@
 # Lifting points of an algebraic space to an étale chart over a finite free extension
 
-Author: Worker 105.
-
 Helper module for the proof of Conrad's Proposition 5.2,
 `Langlands.Global.AdelicSpaceLevelPointsStatement`. It contains no statement from the
 literature. It is the local step of Conrad's proof (printed pp.13–14): the fibres of an affine

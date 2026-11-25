@@ -1,7 +1,5 @@
 # Arithmetic epsilon factors of pairs of special blocks
 
-Author: Worker 1695.
-
 This module computes the conditional epsilon value of a pair of uncentered
 special blocks on the Galois side. It is a step toward deriving the
 epsilon compatibility of segment pairs from the published, unproved statements

@@ -56,5 +56,4 @@ specified-spread topological properties. No local compactness or countability
 claim is made for arbitrary infinite constant fields.
 
 This pair supplies a proposition interface, not its proof or a model-existence
-theorem. The all-five-sections obligations of parent task
-`886bf565-95e9-4dc6-8a9d-73284a523668` remain separate.
+theorem. The proof is `adelicSpreadGroup` (module `AdelicSpreadGroupProof`).

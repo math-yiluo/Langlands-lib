@@ -1,10 +1,8 @@
 # Translation by a rational point of the acting group
 
-Author: Worker 919.
-
 Module `Langlands.GroupScheme.SchemeActionTranslation`, namespace
-`Langlands.GroupScheme.SchemeActionTranslation`. This is an internal supporting unit for
-Task 7586, with no literature source.
+`Langlands.GroupScheme.SchemeActionTranslation`. This is an internal supporting module for
+the proof of `Langlands.GroupScheme.RankOneCentralCoverStatement`, with no literature source.
 
 ## Definitions and statements
 

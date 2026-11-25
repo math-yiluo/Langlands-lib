@@ -1,6 +1,6 @@
 # Actual subrepresentation sums and irreducible subquotients
 
-This is an internal algebraic supporting unit for the full smooth support
+This is an internal algebraic file serving the full smooth support
 category arguments. It constructs the actual inclusion between ordered invariant
 subrepresentations, the inverse image of an invariant subrepresentation along
 an intertwiner, and the restricted map to that inverse image.

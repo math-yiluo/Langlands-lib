@@ -1,14 +1,12 @@
 # Corollary 5.6 for algebraic spaces from the valuative criterion
 
-Author: Worker 78.
-
 `LocalFieldProperPointValuativeReductionStatement` is the implication
 
 ```
 SpaceValuativeExistenceStatement.{u} → LocalFieldProperPointMapStatement.{u}
 ```
 
-between two published statements of the Library. The module only states it and contains no
+between two statements of the Library. The module only states it and contains no
 proof. It isolates the reduction step of the valuative route to Conrad's Corollary 5.6 for
 algebraic spaces, so that the reduction and the valuative criterion can be proved
 independently.
@@ -46,11 +44,13 @@ base schemes, test rings and fields of both statements.
 ## Provenance
 
 The statement is derived, not quoted from a source. Conrad proves Corollary 5.6 by Chow's
-lemma for algebraic spaces and the scheme case (printed p.16). The host task
-(`bc24327e-c607-4b6b-937f-69ae3b0bee57`) allows instead the valuative criterion for
+lemma for algebraic spaces and the scheme case (printed p.16). The route recorded here uses
+instead the valuative criterion for
 universally closed morphisms of algebraic spaces with a direct topological argument. This
 statement records exactly that reduction step: a proper morphism is quasi-compact, separated
 and universally closed (Stacks Tag 03ZM, the Library's `IsProperMorphism`), so the valuative
 criterion applies to it, and the topological argument derives properness on rational points.
-The intended proof applies the valuative lift over the ring of convergent germs in an
-ultrapower of the local field, after base change of `f` to an affine étale chart of `Y`.
+The proof, `localFieldProperPointValuativeReduction` in
+`LocalFieldProperPointValuativeReductionProof`, applies the valuative lift over the ring of
+convergent germs in an ultrapower of the local field, after base change of `f` to an affine
+étale chart of `Y`.

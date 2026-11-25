@@ -1,7 +1,5 @@
 # Algebraic reduction for the dual comparison
 
-Author: Worker 106.
-
 This is an internal, derived interface for the proof of the published
 `Langlands.Conductor.EssentialDualComparisonStatement`. It supplies no
 unconditional dual comparison or functional equation.

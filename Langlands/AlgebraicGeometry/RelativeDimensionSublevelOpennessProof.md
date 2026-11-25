@@ -1,6 +1,6 @@
 # Openness of relative local fibre dimension sublevels
 
-Worker 105 proves the published proposition
+This module proves the proposition
 `Langlands.AlgebraicGeometry.SchemeFiberGeometry.RelativeDimensionSublevelOpenness`.
 The target is the openness assertion of Stacks Lemma 29.29.4, used as an
 internal prerequisite toward Conrad Theorem 3.4(2).
@@ -30,7 +30,7 @@ constructibility, or filtered descent.
 The statement comes from Stacks Section 29.29, Lemma 29.29.4, tag 02FW,
 registered as `stacks-fibre-constructibility-local-dimension-2026-11-04`,
 SHA-256 `1f3421cf5c5733cafdf296e8a9d38af7e4730550989a3d727d4b9a61cf1f3db3`.
-The dimension in both the published target and this proof is the minimum
+The dimension in both the target and this proof is the minimum
 of the dimensions of open neighbourhoods of the actual point in its
 residue-field scheme fibre. It is not the dimension of the point's local
 ring. The implemented proof uses the constructed polynomial charts and

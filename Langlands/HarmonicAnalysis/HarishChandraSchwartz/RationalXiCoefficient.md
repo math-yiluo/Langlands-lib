@@ -1,8 +1,5 @@
 # `Ξ` as a matrix coefficient of the actual `I_{P₀}^G 1`
 
-Author: Worker 3642 (formerly Worker 19), task `1ef6854b-f0e9-4d96-bbe5-cb8c4b52f927`
-(revision 1).
-
 Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalXiCoefficient`, namespace
 `Langlands.HarishChandraSchwartz`. It uses:
 
@@ -23,7 +20,7 @@ Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalXiCoeffic
   `isStandardCocharacter_empty_self`; `Aubert.General.DynamicParabolic` and
   `DynamicInductionExactness`: `dynamic_isSemidirectDecomposition`,
   `continuous_dynamic_projection`; `Plancherel.rationalPoints_nonarchimedeanGroup`;
-- `Jacquet.DynamicCasselmanConstantTerm` (Worker 3642): `HasDynamicConstantTerm`,
+- `Jacquet.DynamicCasselmanConstantTerm`: `HasDynamicConstantTerm`,
   `IsDynamicConstantTerm`, `dynamicConstantTerm`, `dynamicConstantTerm_spec`, `dynamicLeviPoints`.
 
 ## Source

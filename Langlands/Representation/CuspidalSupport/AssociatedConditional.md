@@ -1,7 +1,8 @@
 # Conditional completion of the associated Jacquet filtration argument
 
-Author: Worker 193. This helper imports Worker 168's finite-filtration closure
-proof and Worker 193's rank-zero and geometric assembly helpers. Its explicit
+This helper imports the finite-filtration closure
+proof `FiltrationQuasicuspidality` and the rank-zero and geometric assembly helpers
+`AssociatedRankZero` and `AssociatedAssembly`. Its explicit
 geometric and deletion hypotheses are discharged by published proofs in
 the companion `AssociatedProof` module. Both declarations here remain
 conditional helpers rather than unconditional proofs of
@@ -31,7 +32,7 @@ the concrete minimal conjugating subtype, whose comparison with Weyl cosets is
 a separate published proposition.
 
 The imported `FiltrationQuasicuspidality` proof and
-`CoinvariantVanishingStatement` are Worker 168's published work. This module
+`CoinvariantVanishingStatement` are published Library modules. This module
 reuses them unchanged from the Library.
 
 ## All-field port

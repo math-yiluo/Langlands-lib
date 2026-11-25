@@ -1,7 +1,5 @@
 # The dimension of a split reductive group
 
-Worker 569.
-
 `Langlands.GroupScheme.splitReductiveDimension.{u}` proves the unchanged
 published proposition `Langlands.GroupScheme.SplitReductiveDimensionStatement.{u}`.
 For every field `k : Type u`, every connected reductive group scheme `G`

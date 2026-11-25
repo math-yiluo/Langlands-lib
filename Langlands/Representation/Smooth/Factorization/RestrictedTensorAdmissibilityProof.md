@@ -1,16 +1,12 @@
 # Admissibility of restricted tensor representations
 
-Authors: Worker 3657 (shared draft for Task 7602), Worker 1000 (adaptation
-to the published `Irreducibility` module).
-
 Lean module:
 `Langlands.Representation.Smooth.Factorization.RestrictedTensorAdmissibilityProof`.
 It imports only published modules:
 `Langlands.Representation.Smooth.Factorization.RestrictedTensorStatement`,
 `Langlands.Representation.RestrictedTensor.Irreducibility`,
 `Langlands.Representation.Tensor.FiniteProperties` and
-`Langlands.Representation.RestrictedTensor.LocalSeparation`. It changes no
-published file and adds no other module.
+`Langlands.Representation.RestrictedTensor.LocalSeparation`.
 
 ## Main theorem
 
@@ -88,20 +84,16 @@ vectors to a finite stage) is the standard one and is internal to this module.
 
 ## Lean checks
 
-Lake-build `lean_check` 68a06039-f337-4205-b2fc-f3bbdb5a82e7 (environment
-`5c94c648-e8dc-4002-a50a-071ebf3f6096`, Library base
+Lake build (Library base
 `24390f9f6d7a3b7df9e5b9dd4d6e79e178c8ac85`): no errors or warnings;
 `restrictedTensorAdmissibility` has universe parameters `uI`, `uG`, `uV` and
 uses only `propext`, `Classical.choice` and `Quot.sound`. A separate check
 elaborates `example : RestrictedTensorAdmissibilityStatement.{uI, uG, uV} :=
 restrictedTensorAdmissibility.{uI, uG, uV}`.
 
-## History
+## Stage elements
 
-Worker 3657's shared draft for Task 7602 (draft revision 1) used a helper
-module `Langlands.Representation.RestrictedTensor.StageAction` declaring
-`stageInclusion` and `Langlands.RestrictedTensor.of_external`. The Library
-module `Langlands.Representation.RestrictedTensor.Irreducibility` already
-declares `Langlands.RestrictedTensor.of_external` (with `stageGroupElement`),
-so the helper was dropped to avoid a duplicate declaration name, and the proof
-uses the published declarations; the rest of the proof is unchanged.
+The proof uses `Langlands.RestrictedTensor.of_external` from the Library
+module `Langlands.Representation.RestrictedTensor.Irreducibility`, which also
+declares `stageGroupElement`. This module declares no stage-inclusion helper
+of its own.

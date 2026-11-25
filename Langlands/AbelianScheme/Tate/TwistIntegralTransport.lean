@@ -105,7 +105,7 @@ theorem integralTransport_symm (γ : fiberFunctor s hs ≅ fiberFunctor t ht) :
 
 /-- A loop gives exactly the previously constructed integral geometric root action. -/
 theorem integralTransport_aut (g : FundamentalGroup s hs) :
-    integralTransport P (hμfin := hμfin) (hμet := hμet) g =
+    integralTransport P (hμfin := hμfin) (hμet := hμet) g.asIso =
       integralMonodromy s hs P (hμfin := hμfin) (hμet := hμet) g := by
   apply AddEquiv.ext
   intro x
@@ -167,7 +167,7 @@ theorem integralTransport_monodromy (γ : fiberFunctor s hs ≅ fiberFunctor t h
 theorem integralTransport_change_path (γ δ : fiberFunctor s hs ≅ fiberFunctor t ht)
     (x : Divisibility.Integral Ω P) :
     integralTransport P (hμfin := hμfin) (hμet := hμet) δ x =
-      integralMonodromy t ht P (hμfin := hμfin) (hμet := hμet) (γ.symm ≪≫ δ)
+      integralMonodromy t ht P (hμfin := hμfin) (hμet := hμet) (Aut.of (γ.symm ≪≫ δ))
         (integralTransport P (hμfin := hμfin) (hμet := hμet) γ x) := by
   rw [← integralTransport_aut, ← integralTransport_trans]
   simp

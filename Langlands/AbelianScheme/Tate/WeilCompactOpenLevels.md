@@ -102,4 +102,4 @@ nonemptiness of any frame space. Away from a prime this gives the
 prime-to-that-prime tower in the source; the Lean definition also allows
 an arbitrary natural modulus. A topology on the frame or level set,
 canonical unpointed base-point change, and pointed base-change natural
-transformations are outside this unit.
+transformations are outside this module.

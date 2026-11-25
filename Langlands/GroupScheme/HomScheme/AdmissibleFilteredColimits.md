@@ -1,7 +1,5 @@
 # Filtered colimits of actual closed torus subgroups
 
-Author: Worker 668.
-
 For a quasi-compact, separated, locally finitely presented group over a
 locally noetherian scheme, the small presheaf of actual closed torus
 subgroups satisfies Murre's filtered-colimit condition. It sends

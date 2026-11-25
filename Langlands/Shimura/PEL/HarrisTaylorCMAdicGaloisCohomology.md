@@ -6,7 +6,7 @@ studies its Galois action. Fix a small CM level `U` and an algebraic
 representation `ρ` of `D.rationalInvolution.baseChange K` on a
 finite-dimensional vector space `W` over a number field `K`. Fix also a
 rational finite place `p` and the nonzero natural number `m` of the
-published construction. Worker 57's published
+published construction. The published
 `cmHarrisGeometricGaloisCohomologyAction ... degree` is the inverse system,
 over the stages `r`, of the cohomology modules `H^degree(X̄_U, B_r)` with
 their actions of `Gal(F̄/F)`. Here `X̄_U = X_U ×_{Spec F} Spec F̄`, and `B_r`
@@ -16,7 +16,7 @@ the coefficient ring. This module takes the limit of this system in the
 category of Galois actions, the `m`-power torsion limit of the cohomology.
 With the inverse limit topology of the discrete stages, the limit is
 Hausdorff. The Galois action on it is jointly continuous for the Krull
-topology when every stage is smooth, as asserted by Worker 3's Library
+topology when every stage is smooth, as asserted by the Library
 statement `HarrisCMGaloisCohomologySmoothStatement`. The limit is unramified
 at a finite place where every stage is, and its projections to the stages
 intertwine the geometric Frobenius endomorphisms. When the limit is finite
@@ -34,7 +34,7 @@ the Galois group, with the local factors (5.6) formed from Frobenius
 eigenvalues, and Theorem 5.7 concerns those on the cohomology
 `H^{n-1}(S_K(N), W)` of the Shimura variety. This module gives the inverse
 limit over the stages of the published cohomology of the actual geometric CM
-level with Worker 57's version of these coefficient systems, together with
+level with the Library's version of these coefficient systems, together with
 its Galois action, continuity, unramifiedness transfer and Frobenius Euler
 polynomial.
 
@@ -67,7 +67,7 @@ the arguments `D C ... q U ρ p m hm existence geometry hRigid`. Write
 definitionally `Field.absoluteGaloisGroup F`, with its Krull topology, and
 `Rcoeff` for `HarrisCoefficientIntegers K p`.
 
-- Worker 57's published `cmHarrisGeometricGaloisCohomologyAction ... degree :
+- The published `cmHarrisGeometricGaloisCohomologyAction ... degree :
   ℕᵒᵖ ⥤ Action (ModuleCat Rcoeff) Galois`
   (`Langlands.Shimura.PEL.HarrisTaylorCMGeometricGaloisCohomology`), the
   cohomology of the stages of the coefficient system built from
@@ -75,20 +75,19 @@ definitionally `Field.absoluteGaloisGroup F`, with its Krull topology, and
   powers (`Langlands.Shimura.Coefficients.HarrisReduction`). Every stage is
   killed by `m^r`; its Markdown records that `m` need not be prime and may
   be `1`.
-- Worker 3's published
+- The published
   `Langlands.Cohomology.HarrisCMCohomology.HarrisCMGaloisCohomologySmoothStatement ...`:
   for every degree and every stage `r`, the representation
   `((Rep.ActionToRep Rcoeff Galois).obj ((cmHarrisGeometricGaloisCohomologyAction ... degree).obj r)).ρ`
   is smooth.
-- Worker 61's published `Langlands.Cohomology.ContinuousLimit`:
+- The published `Langlands.Cohomology.ContinuousLimit`:
   `ConeSpace`, `act`, `t2Space_of_isLimit`, `continuous_action`,
   `contRepresentation` and `contAction`.
-- From `Langlands.Shimura.LimitGaloisAction`, submitted together with this
+- From `Langlands.Shimura.LimitGaloisAction`, ported together with this
   module: `isUnramifiedAlong_limit`, `isUnramifiedAt_limit` and
   `geometricFrobenius_limit_π`.
-- From `Langlands.Shimura.FrobeniusPolynomial` (candidate
-  `5c2f38db-a736-4706-aa12-6de9f8bf0b33`, accepted and awaiting
-  publication): `frobeniusEulerPolynomial`,
+- From the published `Langlands.Shimura.FrobeniusPolynomial`:
+  `frobeniusEulerPolynomial`,
   `frobeniusEulerPolynomial_eq_along` and
   `eulerPolynomial_eq_frobeniusEulerPolynomial_of_lift`.
 - From the published `Langlands.Shimura.DecompositionGroupAction` and
@@ -152,11 +151,11 @@ last one using the unramifiedness of the limit.
 
 ## Provenance
 
-This is an internal composition of Worker 57's published Galois action on
+This is an internal composition of the published Galois action on
 the cohomology of the original geometric CM torsion coefficient system with
-Worker 61's published inverse-limit topology, and with
-`LimitGaloisAction` and `FrobeniusPolynomial`. The smoothness input is Worker
-3's published statement `HarrisCMGaloisCohomologySmoothStatement`, used as a
+the published inverse-limit topology, and with
+`LimitGaloisAction` and `FrobeniusPolynomial`. The smoothness input is the
+published statement `HarrisCMGaloisCohomologySmoothStatement`, used as a
 hypothesis. No action, limit or polynomial is supplied as input. The limit is
 the `m`-power torsion limit for the scalar `m` of the published coefficient
 construction; it is not identified with Harris's `λ`-adic cohomology. Harris

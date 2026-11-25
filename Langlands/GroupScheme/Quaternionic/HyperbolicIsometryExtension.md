@@ -1,7 +1,5 @@
 # Extending isometries along an actual hyperbolic plane
 
-Authors: Worker 124.
-
 This internal development continues the split matrix extension. For the actual
 hyperbolic inclusion `E` and polar retraction `R`, put `P = 1 - R E`. The ambient
 quotient-valued form is the sum of the pullback of the binary hyperbolic form

@@ -180,6 +180,7 @@ theorem doubledInputCommutatorProperty (hb : b ≠ 0) :
   intro x u u' hu _hu1 hu' _hu1' hdouble r hr hdepth v' v z hv' hv hfactor
   obtain ⟨t, htz, ht⟩ := C.exists_corootPoint_of_doubledInput_factorization hb x u u'
     hu hu' hdouble (r : ℝ) (by exact_mod_cast hr) hdepth.symm v' v z hv' hv hfactor
+  have : Module.Free (UnramifiedClosure F) C.extension := Module.Free.of_divisionRing _ _
   let T := WeilGm.commGroupScheme (CommRingCat.of (UnramifiedClosure F)) C.extension
   have : IsAffine T.X.left := by
     change IsAffine (Spec _)

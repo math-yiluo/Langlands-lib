@@ -3,8 +3,6 @@
 Module `Langlands.GroupScheme.HomScheme.DiagonalizableHopfPoint`, namespace
 `Langlands.GroupScheme.HomScheme.DiagonalizablePoint`.
 
-Author: Worker 57.
-
 The module turns group-scheme homomorphisms from a diagonalizable group `D(Λ)` to an affine
 group scheme `G` over `Spec R`, after base change to `Spec C`, into Hopf points
 `O(G) → C ⊗[R] R[Λ]`. It also reads naturality, closed immersions and equality of ranges on
@@ -12,8 +10,8 @@ these Hopf points. Here `Λ` is an arbitrary commutative group in `Type u`: neit
 generation nor torsion-freeness is assumed. It generalizes the split-torus section
 `SplitTorusPoint` of `HomScheme.SplitTorusHopfPoint` (the case `Λ = ℤ^I`) and the
 two-source kernel criteria of `HomScheme.SplitTorusRangeKernel`. It is infrastructure for the
-chart construction of the task "Prove that multiplicative-type subgroups of a fibre lift to an
-étale neighbourhood" (Task 6946). There the charts parametrize closed subgroups of
+chart construction in the proof of `MultiplicativeTypeEtaleLiftStatement` (multiplicative-type
+subgroups of a fibre lift to an étale neighbourhood). There the charts parametrize closed subgroups of
 multiplicative type through Hopf points with values in `C ⊗[R] R[(ℤ^r) × F]`, with `F` a
 finite abelian group.
 

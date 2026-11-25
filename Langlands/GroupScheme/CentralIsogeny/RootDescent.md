@@ -1,6 +1,6 @@
 # Termination of characteristic division of split-torus roots
 
-This internal supporting unit proves
+This module proves
 `SplitRootDivisionTerminationStatement.{u}`. Fix a split torus over a
 field of positive characteristic `p > 1`, and any family of affine
 locally finite type group schemes over that field. Suppose every map
@@ -29,6 +29,8 @@ The preceding conclusion for each coordinate says every character in
 the set is zero, contradicting the exclusion of zero.
 
 These are internal deductions from the imported character lattice,
-root restriction and central-isogeny constructions. The unit does not
+root restriction and central-isogeny constructions. The module does not
 construct the required outgoing isogenies, nor assert that a composite
-of central isogenies is central. Those are separate host obligations.
+of central isogenies is central. Those are separate obligations of the
+proof of `SemisimpleIsogenyReductionStatement` in
+`Lie.SemisimpleIsogenyReduction`, which uses this module.

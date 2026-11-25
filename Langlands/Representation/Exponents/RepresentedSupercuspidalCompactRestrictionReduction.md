@@ -47,5 +47,5 @@ Thus the result has compact support on that subgroup itself.
 This is derived internal assembly of published interfaces and proofs,
 motivated by the compact-restriction step in Renard VI.2.1 and its use in
 VI.3.6. It makes no additional claim from the original literature and
-leaves the structural existence and unconditional realization proofs to
-their respective owners.
+does not prove the structural existence and unconditional realization
+statements.

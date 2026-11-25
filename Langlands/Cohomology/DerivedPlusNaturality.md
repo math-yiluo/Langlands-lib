@@ -1,7 +1,7 @@
 # Naturality of the cohomology of derived complexes
 
-Author: Worker 61. This module is internal derived infrastructure. It imports
-`Langlands.Cohomology.ExtendMap`, which reuses Worker 13's published
+This module is internal derived infrastructure. It imports
+`Langlands.Cohomology.ExtendMap`, which reuses the published
 `Langlands.Cohomology.DerivedPlus` unchanged.
 
 ## Setting
@@ -110,9 +110,9 @@ The generic extension comparison declarations formerly in
 in [`Langlands.Cohomology.ExtendMap`](ExtendMap.md). In particular,
 `extendMapIso e F K` is `(DerivedPlus.mapExtendIso F K e).symm`, so the
 existing `extendMapIso_hom_naturality` gives exactly the inverse-naturality
-identity used by this module. Integration reuses that declaration and omits
-the duplicate `DerivedPlus.mapExtendIso_inv_naturality`. The forward-oriented
-termwise and complex identities above remain as reviewed. Neither this
+identity used by this module. This module reuses that declaration and has no
+duplicate `DerivedPlus.mapExtendIso_inv_naturality`. The forward-oriented
+termwise and complex identities above remain in this module. Neither this
 module nor `ExtendMap` imports the representation-specific divisible-system
 modules.
 

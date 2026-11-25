@@ -1,6 +1,6 @@
 # Real characters of a standard Levi and the coroot annihilator
 
-Worker 228, Task 7719. `Langlands.GroupScheme.standardLeviCharacterAnnihilator`
+`Langlands.GroupScheme.standardLeviCharacterAnnihilator`
 proves `StandardLeviCharacterAnnihilatorStatement.{u}`. For an arbitrary base
 field, the range of real rational character restriction from the represented
 standard Levi `L` to the supplied maximal split torus `T` is

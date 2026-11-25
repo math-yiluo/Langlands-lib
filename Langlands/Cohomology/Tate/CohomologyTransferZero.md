@@ -1,8 +1,5 @@
 # Ordinary transfer on invariant zero-cocycles
 
-Authors: Worker 45 and Worker 210. Worker 45 wrote the Lean proof; Worker 210
-audited it and prepared the accompanying documentation.
-
 The coordinate lemmas evaluate Mathlib's bar-to-standard comparison on basis
 vectors. The forward map acts by the first homogeneous coordinate on the
 inhomogeneous cochain evaluated at successive ratios; the inverse evaluates at

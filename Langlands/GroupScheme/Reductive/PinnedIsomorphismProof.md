@@ -1,7 +1,5 @@
 # Unique actual pinned lifts of based root-datum isomorphisms
 
-Author: Worker 1467.
-
 `Langlands.GroupScheme.pinnedIsomorphism` proves exactly the published
 [`PinnedIsomorphismStatement`](PinnedIsomorphismStatement.md) at arbitrary
 universe `u`. Over every field, each based equivalence between the full
@@ -11,7 +9,7 @@ cocharacter map is `e.coweightEquiv.symm`, and its index equivalence is
 `e.indexEquiv`. Uniqueness is equality of the complete pinned-isomorphism
 structure.
 
-The implementation applies Worker 1416's published
+The implementation applies the published
 `PinnedIsomorphism.pinnedIsomorphismStatement_of_prerequisites` from
 [`PinnedIsomorphismReduction`](PinnedIsomorphismReduction.md). It supplies
 the conjunction of three unconditional theorems at the same universe:

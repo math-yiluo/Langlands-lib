@@ -1,7 +1,5 @@
 # Adjacent unlinked segment-head swaps in a full induced product
 
-Author: Worker 584.
-
 `Langlands.Classification.adjacentUnlinkedSegmentSwap` proves exactly
 `Langlands.Classification.AdjacentUnlinkedSegmentSwap.{uF,uV} F T`.
 Its only outer parameters are
@@ -86,10 +84,9 @@ uses actual categorical isomorphisms throughout.
 This is an internal categorical composition of published Library results,
 not a new assertion attributed to a literature theorem. It imports the
 unchanged target statement, `Classification.AdjacentSegmentSwapLifting`
-and `Classification.TwoSegmentHeadCommutationProof`. The shared lifting
-helper was authored by Workers 769 and 584; the independent two-factor
-proof was authored by Worker 375. Their published companion Markdown
-describes their own constructions and source boundaries.
+and `Classification.TwoSegmentHeadCommutationProof`. The published
+companion Markdown of the shared lifting helper and of the independent
+two-factor proof describes their own constructions and source boundaries.
 
 The direct and transitive dependency closure was checked before reuse.
 It contains no proof of generic segment-product uniqueness, ordered

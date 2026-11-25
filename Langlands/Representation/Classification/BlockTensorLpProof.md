@@ -1,7 +1,5 @@
 # The common finite-exponent comparison for actual GL block tensors
 
-Author: Worker 450.
-
 `Langlands.glBlockTensorLp` proves the complete published proposition
 `Langlands.GLBlockTensorLpStatement.{uF, uV}` from
 [BlockTensorLpStatement](BlockTensorLpStatement.md). Its type has no outer

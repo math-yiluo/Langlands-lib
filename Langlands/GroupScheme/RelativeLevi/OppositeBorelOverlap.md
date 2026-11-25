@@ -1,6 +1,8 @@
 # Agreement of local opposite Borels on étale overlaps
 
-Worker 608, using Worker 653's relative uniqueness and Borel transport lemmas.
+This module uses the relative uniqueness lemma of
+`OppositeBorelRelativeUniqueness` and the Borel transport lemmas of
+`BorelEtaleTransport`.
 
 This module retains `RelativeParabolicLieContainmentStatement` as an explicit
 premise. It does not discharge that statement.

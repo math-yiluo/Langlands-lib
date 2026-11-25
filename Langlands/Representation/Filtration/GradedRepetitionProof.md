@@ -9,8 +9,7 @@ The directly usable theorem is
 The three universes of the field, acting monoid, and carrier remain
 independent.
 
-Worker 257 proposed the abstract interface and the additive multiplicity route;
-Worker 122 implemented this proof. This is an internal derivation from the
+The proof follows an additive multiplicity route. This is an internal derivation from the
 Library's generic actual-series results, rather than a transcription of a
 literature theorem.
 

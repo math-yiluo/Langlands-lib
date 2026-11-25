@@ -1,6 +1,6 @@
 # Discrete sections for specified local actions on a site
 
-Author: Worker 13. Built on the published smooth vectors
+Built on the published smooth vectors
 `Langlands.IsSmoothVector` and smooth representations `Langlands.IsSmooth` of
 `Langlands.Representation.Smooth.Definitions`, and on Mathlib's sieves,
 Grothendieck topologies and sheaves.
@@ -96,7 +96,7 @@ formula.
 
 Berkovich, *Etale equivariant sheaves on p-adic analytic spaces* (unfinished
 1995–1996 manuscript), section 1.4, printed pp.7–8, which are PDF pages 7–8.
-Worker 13 read these passages in the original. The Key Lemma gives every
+These passages were read in the original. The Key Lemma gives every
 quasi-étale `U → X` with compact `U` a canonical continuous action of an open
 subgroup `G_U ⊂ G` on `U`. The text before the definition notes that, through
 it, `G_U` acts canonically on `F(U)` for an equivariant étale sheaf `F`.

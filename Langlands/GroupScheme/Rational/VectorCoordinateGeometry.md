@@ -1,6 +1,6 @@
 # Geometry from natural vector coordinates
 
-This derived unit uses the published actual vector group and the fully faithful
+This derived module uses the published actual vector group and the fully faithful
 group-valued Yoneda construction. It does not classify any previously given
 unipotent group.
 
@@ -28,4 +28,4 @@ argument needs neither a field nor a smoothness assumption.
 These are conditional consequences of natural coordinates. Existence of such
 coordinates on smooth commutative unipotent groups, positive-characteristic
 torus linearization, and the exact ordered-product theorem remain separate
-obligations. The imported mathematical constructions retain their authorship.
+obligations.

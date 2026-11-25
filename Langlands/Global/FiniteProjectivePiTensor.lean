@@ -15,7 +15,7 @@ theorem finiteProjectivePiTensorMap_bijective (R : Type u) [CommRing R]
     {ι : Type w} (N : ι → Type x) [∀ i, AddCommGroup (N i)] [∀ i, Module R (N i)] :
     Function.Bijective (TensorProduct.piRightHom R R M N) := by
   let : Module.FinitePresentation R M := Module.finitePresentation_of_projective R M
-  exact RestrictedProduct.tensorPiComparison_proof R M N
+  exact Langlands.LinearAlgebra.RestrictedProduct.tensorPiComparison_proof R M N
 
 /-- The original tensor/product algebra map for arbitrary index sets and finite projective coefficients. -/
 def finiteProjectivePiTensorEquiv (R : Type u) (B : Type v)

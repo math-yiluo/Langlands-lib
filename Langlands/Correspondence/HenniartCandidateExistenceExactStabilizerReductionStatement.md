@@ -3,7 +3,7 @@
 Module `Langlands.Correspondence.HenniartCandidateExistenceExactStabilizerReductionStatement`,
 namespace `Langlands.Henniart`, universe parameters `uK uW uP uE uQ` as
 published. It imports the published `HenniartCandidateExistenceReductionStatement`
-and `HenniartCandidateExistenceTCReductionStatement`, and Task 7413's
+and `HenniartCandidateExistenceTCReductionStatement`, and the
 published `HarrisProposition48ExactStabilizerStatement`, which defines
 `Global.Harris.Proposition48ExactStabilizerStatement`; that proposition is not
 restated here.
@@ -18,7 +18,7 @@ proved here.
 ```
 def CandidateExistenceExactStabilizerReductionStatement : Prop :=
   Global.Harris.Proposition48ExactStabilizerStatement.{uK, 0, 0, 0, uP} →
-  ClassField.Global.RelativeWeilGroup.AssociatedSupercuspidalInductionStatement.{0, uW, uP, uP} →
+  ClassFieldTheory.Global.RelativeWeilGroup.AssociatedSupercuspidalInductionStatement.{0, uW, uP, uP} →
   ClassFieldTheory.Local.LocalRelativeClassFormationStatement.{0} →
   Global.PoleComparison.RelativeCertifiedPoleComparisonsStatement.{0, uW, uP} →
   Global.PoleComparison.HenniartCompositeMapStatement.{0, uK, uW, uP, uE} →
@@ -47,7 +47,7 @@ unchanged.
 ```
 def CandidateExistenceExactStabilizerTCReductionStatement : Prop :=
   Global.Harris.Proposition48ExactStabilizerStatement.{uK, 0, 0, 0, uP} →
-  ClassField.Global.RelativeWeilGroup.AssociatedSupercuspidalInductionTCStatement.{0, uW, uP, uP} →
+  ClassFieldTheory.Global.RelativeWeilGroup.AssociatedSupercuspidalInductionTCStatement.{0, uW, uP, uP} →
   ClassFieldTheory.Local.LocalRelativeClassFormationStatement.{0} →
   Global.PoleComparison.RelativeCertifiedPoleComparisonsTCStatement.{0, uW, uP} →
   Global.PoleComparison.HenniartCompositeMapTCStatement.{0, uK, uW, uP, uE} →
@@ -67,7 +67,7 @@ the same universes. Its totally complex hypotheses 2, 4 and 5, its hypothesis
 3 and its conclusion are unchanged. Harris's proposition, whose fields are CM,
 has no totally complex form, as in the published statement.
 
-A private audit (not submitted) compared the elaborated values. In each
+An audit outside the Library compared the elaborated values. In each
 published value the constant `Global.Harris.Proposition48Statement` occurs
 once; replacing it by `Global.Harris.Proposition48ExactStabilizerStatement`
 (same universe arity) gives the new value exactly, with the same type,
@@ -99,7 +99,7 @@ Each one composes `h` with
 `proposition48ExactStabilizerStatement_of_proposition48Statement` on the first
 hypothesis. Both use only the standard axioms. Neither converse is claimed.
 
-## Why the statements are true (the expected proof)
+## Why the statements are true (the route of the proof)
 
 This is a reading of the Library at commit `97bd11ee`; the proofs are not given
 here.
@@ -117,12 +117,13 @@ here.
   (`HarrisDatumCharacterRealizationExactStabilizerStatement`) and the
   exact-stabilizer reduction
   (`HenniartGlobalizationExactStabilizerReductionStatement`, both stated in
-  the sibling modules of this task), the restated proposition gives the same
+  other modules), the restated proposition gives the same
   conclusion, so the same proof gives
   `CandidateExistenceExactStabilizerReductionStatement`.
-- The proof of the published TC form is open (Task 7363,
-  `a10de1f7-62b5-4acd-852f-4b0fcc13833e`). Its expected proof goes through TC
-  copies of the same lemmas, and the same change applies to it.
+- The published TC form is proved as `candidateExistenceTCReduction`
+  (`HenniartCandidateExistenceTCReductionProof`), which imports the proof of the
+  exact-stabilizer TC form. The TC proof goes through TC copies of the same
+  lemmas, and the same change applies to it.
 
 Mathematically, Henniart needs Harris's proposition only for the characters
 of his §3.4, whose component at `0'` satisfies condition 3). That condition
@@ -132,12 +133,15 @@ enough.
 ## What is not claimed
 
 Neither `CandidateExistenceExactStabilizerReductionStatement` nor
-`CandidateExistenceExactStabilizerTCReductionStatement` is proved here. Their
-proofs belong to separate `lean.proof@1` tasks of the parent (Task 7343). Only
-the two implications to the published statements are proved. The published
-`CandidateExistenceReductionStatement` (proved as `candidateExistenceReduction`),
-`CandidateExistenceTCReductionStatement` (Task 7363) and their tasks are
-unchanged.
+`CandidateExistenceExactStabilizerTCReductionStatement` is proved here. They
+are proved as `candidateExistenceExactStabilizerReduction`
+(`HenniartCandidateExistenceExactStabilizerReductionProof`) and
+`candidateExistenceExactStabilizerTCReduction`
+(`HenniartCandidateExistenceExactStabilizerTCReductionProof`). Only
+the two implications to the published statements are proved here. The published
+`CandidateExistenceReductionStatement` (proved as `candidateExistenceReduction`)
+and `CandidateExistenceTCReductionStatement` (proved as
+`candidateExistenceTCReduction`) are unchanged.
 
 ## Sources
 
@@ -164,7 +168,7 @@ unchanged.
   Lemma 4.7, printed pp.204–206 (statement of (4.12) on p.204, PDF p.28): with
   `G = Γ_F`, `H = Γ_{F'}` and `χ̃(*) = χ(*) ∘ N_{F̃/F'}`,
   `H = {g ∈ G | g χ̃(*) = χ̃(*)}`.
-- Design: operator plan note `operator-external-inputs-plan-2026-11-16`,
+- Design: plan note `operator-external-inputs-plan-2026-11-16`,
   Section 4.8, Remark 4.2 (TeX lines 859–894) and the paragraph "The remark
   and the Library's statements" (TeX lines 897–912). The plan note is
-  unreviewed design guidance, not a source of the statement.
+  design guidance, not a source of the statement.

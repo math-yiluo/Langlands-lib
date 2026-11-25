@@ -33,7 +33,7 @@ considered: the conclusions concern every complex place of `F`.
 
 In both clauses `S` is an actual cuspidal realization over `F` and `T` an
 actual cuspidal realization over `E`. Both have unitary central character, in
-the sense of `ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter`:
+the sense of `ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter`:
 there is a continuous idele-class character of absolute value one that is the
 central character of the realization. This is the convention of the Library's
 cyclic transfer statements (`CyclicTransferStatement`). Comparing it with
@@ -152,7 +152,7 @@ algebraicity are not asserted. They belong to that separate archimedean
 bridge.
 
 The conclusion formulas of (1)r and (2)r are literally those of clauses (1)
-and (2) of canonical B7 (Task 7479, `abcbb7a8-e133-45df-b7cf-6413542ec954`).
+and (2) of canonical B7 (`CyclicWeakBaseChangeComplexPlaceStatement`).
 The hypotheses are stronger in five ways:
 
 - the CM base;
@@ -175,14 +175,10 @@ The design source is the registered operator plan
   with a single prime above each) and to state B7 beside them;
 - Section 4.8, the paragraph "The infinity type" (lines 910–911).
 
-The restriction to classes supercuspidal at the auxiliary conjugate pair is
-point 4(ii) of the operator ruling
-`/home/taskhub/pilot/correspondence/afc4eb775dc157d6807bbc17caa2b02b.md`. It
-is authorized in this form by point (b) of the operator's R2 ruling,
-`/home/taskhub/pilot/correspondence/a79e2e832569567a8582b3c994f2fc1b.md`.
-That point drops the plan's regular-algebraicity condition: it requires only
-unitary cuspidal classes that are supercuspidal at the auxiliary conjugate
-pair.
+The restriction to classes supercuspidal at the auxiliary conjugate pair
+follows that recommendation without the plan's regular-algebraicity
+condition: it requires only unitary cuspidal classes that
+are supercuspidal at the auxiliary conjugate pair.
 
 The original global source is `arthur-clozel-1989-base-change`, Chapter III:
 
@@ -211,9 +207,9 @@ selected coordinates is an internal comparison, and it is not proved here.
 
 ## Relation to the restricted complex-place premise and other targets
 
-The intended later route (Task 7340) derives this statement from a separate
-restricted complex-place III.5.1 premise without algebraicity, stated in
-Task 7553 (`7c6af0ac-5d10-471f-85bd-c42b84dfdbc3`). That premise uses
+The intended later route derives this statement from a separate
+restricted complex-place III.5.1 premise without algebraicity, stated as
+`RestrictedCyclicBaseChangeComplexPlaceCompatibilityStatement`. That premise uses
 aggregate isobaric parameters on both sides. Passing from it to the literal
 formulas here needs four further comparisons, all unproved obligations of the
 later derivation:
@@ -232,8 +228,8 @@ later derivation:
 
 None of these comparisons is proved by defining either proposition.
 
-Task 7465 (`6cf9cf58-e349-4b29-89cf-1d33171cb458`) assumes a regular-algebraic
+`RestrictedCyclicBaseChangeCompatibilityStatement` assumes a regular-algebraic
 downstairs source and concludes finite-place chosen-map compatibility. It does
-not imply this statement, and it is not changed. Canonical B7 (Task 7479),
-including its third clause, and the original Harris/cohomological fallback
+not imply this statement, and it is not changed. Canonical B7
+(`CyclicWeakBaseChangeComplexPlaceStatement`), including its third clause, and the original Harris/cohomological fallback
 also remain unchanged.

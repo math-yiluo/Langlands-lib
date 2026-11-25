@@ -1,7 +1,6 @@
 # Cuspidal trace independence from logarithmic asymptotics
 
 Lean module `Langlands.Automorphic.Unramified.CuspidalPowerTraceIndependenceReduction`.
-The proof adapts Worker 3657’s shared draft for Task 6446, revision 7.
 
 `CuspidalPowerTraceIndependenceReductionStatement.{uF, uV}` assumes the
 published `CuspidalPairAbsoluteConvergenceStatement`. It gives two

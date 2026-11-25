@@ -1,7 +1,5 @@
 # Adjoint weights under restriction between split tori
 
-Author: Worker 1317.
-
 This is an internal construction and its API, derived from the published
 all-test-algebra adjoint weight spaces, their internal direct-sum decomposition
 for split tori, and the component projections in `Rational.GenericLieWeights`.

@@ -1,10 +1,10 @@
 # Zero fiber averages and the ambient Haar integral
 
-Worker 121 proves the exact published proposition
-`Langlands.QuotientIntegration.RealAveragingKernelIntegralZero`, with closing
-theorem `realAveragingKernelIntegralZero`. The theorem has the original universal
-proposition as its type, with no additional hypotheses. It imports Worker 101's
-published `realQuotientCompactNormalization` from
+The closing theorem `realAveragingKernelIntegralZero` proves the exact
+published proposition
+`Langlands.QuotientIntegration.RealAveragingKernelIntegralZero`. The theorem has the original universal
+proposition as its type, with no additional hypotheses. It imports
+`realQuotientCompactNormalization` from
 `Langlands.Analysis.Local.QuotientPositiveLifting`.
 
 The group is locally compact and Hausdorff, the subgroup is closed, and both
@@ -21,7 +21,7 @@ Gerald B. Folland, *A Course in Abstract Harmonic Analysis*, second edition
 Registered source: `folland-2015-abstract-harmonic-analysis-second`, SHA256
 `c82467bfa77428c32d3e1a5d1cbdc11129511e0c61da2f9d8fbc717776b9e542`.
 PDF pages 74–76 were read for this development. There is no corresponding errata
-note in the current public notes.
+note in the public notes.
 
 The project uses left cosets `H*g` and the fiber integral `f(h*g)`, reversing
 Folland's convention. The proof adapts Folland's double-integral argument and

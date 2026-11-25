@@ -1,6 +1,6 @@
 # Actual right Haar Hermitian approximation
 
-Worker 116 formulates the internal proposition
+The module formulates the internal proposition
 `Langlands.Analysis.RightHaarHermitianApproximationStatement`.
 It specializes `IntegratedHermitianApproximationStatement` to the inverse
 of an actual left Haar measure and the intrinsic modular character.
@@ -57,7 +57,7 @@ pp.97–98, especially (3.8), and section 9.3, printed pp.246–247, PDF
 pp.258–259. The registered source
 `getz-hahn-2024-automorphic-representations` has SHA-256
 `a125cf9c0f445972cbbd3552b4fb9905ca948108a05880f90eaa43558d09a507`.
-Those four original pages were read directly before freezing this target.
+Those four original pages were read directly for this target.
 Mathlib's right-pushforward modular character agrees with GH's δ_G,
 and modularCharacter(g⁻¹) is δ_G(g)⁻¹. GH uses right Haar measure and this
 reciprocal character in the Hermitian weight equation. GH's term
@@ -74,9 +74,8 @@ they leave the cited modular and approximation formulas unchanged.
 
 This is a Prop-valued statement with no proof. Its internal proof route
 uses the Haar inversion-density theorem and the generic continuous
-Hermitian approximation theorem. Those prerequisites require their own
-independent accepted-public proofs before an exact-target proof child
-can submit this specialization. The continuous weights here precede GH's
+Hermitian approximation theorem. The proof is in
+`Langlands.Representation.Unitary.RightHaarHermitianApproximationProof`. The continuous weights here precede GH's
 smooth adelic weights. Smoothness, the actual automorphic Hilbert action,
 comparison with algebraic Hecke operators, compactness and spectral
-decomposition remain separate obligations.
+decomposition are not part of this statement.

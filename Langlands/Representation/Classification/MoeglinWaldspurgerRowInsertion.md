@@ -1,6 +1,6 @@
 # Abstract row insertion for weakly decreasing integer rows
 
-Worker 5734. This is the first of three helper modules for the proof of
+This is the first of three helper modules for the proof of
 `Langlands.MoeglinWaldspurger.involutivity`. The proof module is
 `MoeglinWaldspurgerInvolutivityProof`. This module imports only Mathlib. It does not
 mention multisegments. Every definition here is an internal construction for the

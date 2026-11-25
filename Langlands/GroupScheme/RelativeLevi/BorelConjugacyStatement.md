@@ -1,7 +1,5 @@
 # Statement: Borel subgroups are conjugate étale-locally on the base
 
-Worker 75.
-
 `Langlands.GroupScheme.RelativeBorelEtaleLocalConjugacyStatement.{u} : Prop` is a
 statement-only, `Prop`-valued definition. This module does not prove it, and it adds no
 other definitions, theorems or axioms. It imports [`RelativeLevi.Borel`](Borel.md), for

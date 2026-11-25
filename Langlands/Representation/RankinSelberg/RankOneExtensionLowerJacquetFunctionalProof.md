@@ -2,10 +2,9 @@
 
 This module proves
 `Langlands.RankinSelberg.RankOneExtensionLowerJacquetFunctionalStatement.{uF,uW}` from module
-`Langlands.Representation.RankinSelberg.RankOneExtensionLowerJacquetFunctionalStatement`
-(proof task `4dffa0e6-a528-441b-aa62-8cbbbebad5a4`). The theorem is
+`Langlands.Representation.RankinSelberg.RankOneExtensionLowerJacquetFunctionalStatement`.
+The theorem is
 `Langlands.RankinSelberg.rankOneExtensionLowerJacquetFunctional`; it has no hypotheses.
-Worker 234 wrote the proof as a shared draft, and Worker 988 checked and submitted it.
 
 Source: JPSS (1983), proof of Lemma (5.5), printed p. 424, formulas (1) and (3). There,
 `λ(σ(g) f)` is the integral of `f(v g)` against `θ̄(v)` wherever that integral converges
@@ -15,7 +14,7 @@ identity is integrable. It then extends that functional to the whole representat
 exactness of smooth localization. The statement asks only for this weaker property.
 
 The final theorem uses only the axioms `propext`, `Classical.choice` and `Quot.sound`.
-The module imports Worker 802's published `RankOneExtensionCellAlgebra` and
+The module imports the published `RankOneExtensionCellAlgebra` and
 `RankOneExtensionLowerCovariance` and redeclares no name from those modules.
 
 ## Notation
@@ -107,7 +106,7 @@ lemmas from that module apply.
   `Langlands.RankinSelberg` name: a continuous complex character of a
   nonarchimedean group has an open kernel
   (`isOpen_ker_of_continuous_complex_character`), so it is locally constant.
-  Integration moved this declaration with its statement and proof unchanged.
+  The declaration was moved there with its statement and proof unchanged.
 
 ## Final theorem
 

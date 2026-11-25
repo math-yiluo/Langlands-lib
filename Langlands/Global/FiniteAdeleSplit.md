@@ -1,7 +1,5 @@
 # Splitting the finite adeles at finitely many places
 
-Author: Worker 13.
-
 This internal construction fixes a number field `K` and a predicate `p` on the
 finite places of `K`. When `p` is decidable and only finitely many places
 satisfy it, it identifies the published finite adeles `FiniteAdeles K` (from
@@ -236,7 +234,7 @@ The mathematical decomposition is classical:
   L_S = Π_{x ∈ S} L_x". Restricted to finite places, `AwayFiniteAdeles K p`
   corresponds to the finite part of `A_L^S` and the first factor to `L_S`.
 
-Worker 13 read Weil printed pp.59–60 and Harris–Taylor printed p.20 through
+Weil printed pp.59–60 and Harris–Taylor printed p.20 were read through
 text extraction of the registered PDFs.
 
 ## Motivation and scope

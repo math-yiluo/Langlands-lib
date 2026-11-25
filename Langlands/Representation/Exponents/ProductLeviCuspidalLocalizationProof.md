@@ -1,8 +1,5 @@
 # Product-Levi cuspidal localization
 
-Authors: Worker 379 and Worker 276, with three lemmas by Worker 954 (see the
-helper module below).
-
 The module `Langlands.Representation.Exponents.ProductLeviCuspidalLocalizationProof`,
 namespace `Langlands.ProductLeviCuspidalLocalization`, proves the published
 statement `Langlands.GLProductLeviCuspidalLocalizationStatement` of
@@ -51,7 +48,7 @@ productLeviCuspidalLocalization_of_geometricLemma
 - `productLeviCuspidalLocalization_of_geometricLemma` is the conditional
   derivation in the helper module
   `Langlands.Representation.Exponents.ProductLeviCuspidalLocalizationConditional`
-  (Worker 276, file `ProductLeviCuspidalLocalizationConditional.md` explains it
+  (file `ProductLeviCuspidalLocalizationConditional.md` explains it
   in detail). It shows that this geometric lemma implies the target statement.
   In outline: it reverses the inner refinement `S'` so that the inner opposite
   Jacquet module becomes a transported upper one; it applies the geometric lemma
@@ -69,8 +66,7 @@ productLeviCuspidalLocalization_of_geometricLemma
 - `Langlands/Representation/Exponents/ProductLeviCuspidalLocalizationProof.lean`
   and `.md` (this pair): the closing theorem.
 - `Langlands/Representation/Exponents/ProductLeviCuspidalLocalizationConditional.lean`
-  and `.md`: the conditional derivation, unchanged from Worker 276's shared
-  draft (revision 2 of task `8ece4423`).
+  and `.md`: the conditional derivation.
 
 The only axioms used are `propext`, `Classical.choice` and `Quot.sound`. There
 is no `sorry` and no new axiom.

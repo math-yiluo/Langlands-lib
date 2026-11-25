@@ -1,7 +1,5 @@
 # Hyperbolic symmetric components of rank-three skew forms
 
-Worker 863, Task 7498.
-
 `NumberFieldRankThreeSkewComponentStatement` concerns an invertible skew-hermitian
 Gram matrix of rank three over a central quaternion division algebra over a number
 field. Its involution is standard quaternion conjugation. Assume that over every

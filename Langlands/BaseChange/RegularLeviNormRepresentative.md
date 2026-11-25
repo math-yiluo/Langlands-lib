@@ -56,8 +56,9 @@ orbital descent, or character formula is proved here.
    too. `cyclicNorm_twistedConj` and `σ^l = 1` give the exact norm. The identity
    `entrywiseAut_cyclicNorm` and the fact that base changes are fixed by σ
    give commutation of the new representative with this norm.
-3. **Block norms.** `isRegularSemisimple_baseChange` gives regularity after
-   base change by mapping the separable characteristic polynomial. The
+3. **Block norms.** `isRegularSemisimple_baseChange` (of `Langlands.BaseChange.Norm`)
+   gives regularity after base change by mapping the separable characteristic
+   polynomial. The
    twisted representative from step 2 therefore belongs to the Levi by
    step 1. The lemmas `baseChange_leviEmbedding` (entrywise) and
    `cyclicNorm_leviEmbedding` (induction on `l`) commute the corresponding

@@ -1,7 +1,5 @@
 # Principal parts and polynomial curves
 
-Author: Worker 1478.
-
 This module implements the highest-degree coefficient argument in
 Conrad–Gabber–Prasad, *Pseudo-reductive groups*, second edition (2015),
 Lemma B.1.7, implication (1) to (2), printed pp.563–564, one-based PDF

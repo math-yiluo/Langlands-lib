@@ -1,6 +1,6 @@
 # Supports of Tadić's multisegments `a(n,d)^ρ`
 
-Author: Worker 1792. Module
+Module
 `Langlands.Representation.Classification.TadicSupportIdentification`, namespace
 `Langlands.Classification`. Everything is proved from published Library results;
 there are no hypotheses of theorem type, no axioms and no `sorry`.

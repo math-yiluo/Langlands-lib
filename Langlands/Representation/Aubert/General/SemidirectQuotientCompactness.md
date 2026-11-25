@@ -1,6 +1,6 @@
 # Compact quotients inside an actual semidirect Levi
 
-This internal supporting construction transfers compact representatives from an
+This construction transfers compact representatives from an
 ambient group to its actual Levi subgroup. It applies to any group `G` with a
 topology and an actual `IsSemidirectDecomposition P M U`. No reductive group,
 root labeling, or representation is required.
@@ -38,7 +38,7 @@ compact continuous images. This is an internal deduction from those published
 results. It uses no classification, character independence, geometric lemma,
 adjointness, or cuspidal-support theorem.
 
-This unit leaves compactness of the ambient quotient explicit. In the intended
+This module leaves compactness of the ambient quotient explicit. In the intended
 standard-family application, `Q` is a finer parabolic and `P` the coarse
 parabolic; the quotient in the conclusion is the literal quotient inside the
 coarse Levi. The result neither proves ambient parabolic quotient compactness

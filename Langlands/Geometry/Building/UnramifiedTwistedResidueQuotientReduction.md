@@ -59,4 +59,5 @@ datum `UnramifiedBuildingDescent.buildingData` and the semilinear datum
 - The heartbeat limits are raised for the generic form (6400000), the translated radical bound
   the zero-subgroup conjugation helper and the specialization
   `unramifiedTwistedResidueQuotient_of_inputs` (1600000 each). Their elaboration is expensive but finite.
-- No proof of any of the ten downstream statements excluded by Task 6572 is used.
+- No proof of any of the ten downstream statements listed in the Markdown of
+  `UnramifiedTwistedResidueQuotientProof` is used.

@@ -3,10 +3,10 @@
 This module constructs the full geometric coefficient-cover diagram at the
 original Harris coefficient kernel levels. It identifies that diagram,
 including every transition and residual action, with the geometric pullback of
-the published original coefficient-cover diagram.
+the original coefficient-cover diagram.
 
 The construction is conditional on the same exact representability and named
-geometric prerequisites as the published geometric normal torsors. The desired
+geometric prerequisites as the geometric normal torsors. The desired
 diagram or its comparison is not an input.
 
 ## Inputs and exact objects
@@ -37,7 +37,7 @@ coefficient powers and the original opposite-group convention. Their actual
 inclusions give `cmHarrisCoefficientLevels`; their identity-induced residual
 quotient homomorphisms give `cmHarrisCoefficientGroups`. The construction uses
 these functors without modification. The coefficient field, lattice, integral
-scalars and full torsion quotients remain those of the published original
+scalars and full torsion quotients remain those of the original
 coefficient system.
 
 Write `X(V)` for the original scheme tower, `Xbar(V)` for
@@ -50,7 +50,7 @@ The small-etale objects and torsor results additionally retain
 and the original `CMGeometricCoarseRigidity ... U.obj` premise. The generic
 dominant-unramified-etale criterion is discharged by
 `DominantUnramifiedEtaleProof.dominantUnramifiedEtale`. The other retained
-premises are not discharged by this contribution.
+premises are not discharged by this module.
 
 ## Geometric schemes, projections and torsors
 
@@ -65,7 +65,7 @@ Its action at `k` is the existing `cmGeometricNormalQuotientAction` for
 `U` and `V_k`. A representative `g` acts by the existing geometric tower map at
 `smallCMNormalInverseArrow ... g`, preserving the inverse-right normalization.
 Transition equivariance is proved by residual quotient induction. On a
-representative, functoriality reduces it to the published equality
+representative, functoriality reduces it to the equality
 `smallCMNormalInverseArrow_inclusion` of the actual level arrows.
 
 `cmHarrisGeometricCoefficientSchemeProjection` projects the diagram to the
@@ -74,7 +74,7 @@ uses composition of the original inclusion arrows and functoriality of the
 geometric scheme tower. Its invariance theorem specializes the existing
 geometric normal projection invariance to each `V_k`.
 
-`cmHarrisGeometricCoefficientTorsor k` specializes the published
+`cmHarrisGeometricCoefficientTorsor k` specializes
 `cmGeometricNormalGeometricTorsor_of_dominantCriterion` to precisely this
 coefficient level. It returns the existing action in `Xbar(U).Etale` together
 with its proved `IsFiniteGeometricTorsor` property. In particular, the residual
@@ -97,7 +97,7 @@ to that already proved for the geometric scheme diagram. The `_action`,
 `_obj_left`, `_obj_hom`, `_map_left` and `_action_mk_left` lemmas identify its
 exact components, structural maps, transitions and representative deck maps.
 The `_isFiniteGeometricTorsor` result uses the property of the constructed
-torsor, and `_coversTop` applies the published surjective-etale-cover result.
+torsor, and `_coversTop` applies the surjective-etale-cover result.
 Thus every displayed component covers the final object of the actual
 small-etale site.
 
@@ -110,11 +110,11 @@ same residual group functor `G`. The comparison target is exactly
 (etaleTorsorDiagramPullback π_U G).obj Y
 ```
 
-This is the published generic pullback functor on varying-group cover diagrams.
+This is the generic pullback functor on varying-group cover diagrams.
 It allows an arbitrary base morphism. No etaleness of `π_U` is assumed.
 
 At each index, `cmHarrisGeometricCoefficientEtaleActionPullbackIso` is the
-already published `cmGeometricNormalEtaleActionPullbackIso` specialized to
+existing `cmGeometricNormalEtaleActionPullbackIso` specialized to
 `V_k` and the discharged dominant criterion. Its underlying map is the
 canonical isomorphism of the existing cartesian square
 
@@ -133,7 +133,7 @@ compatibility with every actual coefficient-level transition.
 
 The entry definition `cmHarrisGeometricCoefficientEtaleDiagramPullbackIso`
 bundles this natural isomorphism as an isomorphism of full equivariant diagrams.
-Its forward and inverse equivariance fields are exactly those of the published
+Its forward and inverse equivariance fields are exactly those of the
 component action isomorphisms. Its inverse laws follow from the underlying
 natural isomorphism and extensionality of equivariant-diagram morphisms.
 
@@ -143,9 +143,9 @@ cartesian square, by reflexivity. The `_hom_app_fst` and `_hom_app_snd` lemmas
 identify the coordinates with `π_{V_k}` and the exact coarse geometric
 forgetting map. No replacement cartesian comparison is selected.
 
-## Provenance and remaining scope
+## Provenance and scope
 
-This is an internal deduction from published constructions:
+This is an internal deduction from the constructions of
 `HarrisTaylorCMCoefficientDiagram`, `HarrisTaylorCMCoefficientSchemes`,
 `HarrisTaylorCMGeometricNormalActions`, `HarrisTaylorCMGeometricNormalTorsor`
 and `Coefficients.EtaleTorsorPullback`, together with the original level-arrow
@@ -156,9 +156,12 @@ external literature; the original-source provenance of the reused moduli,
 coefficient kernels and geometric normal torsors remains in their paired
 modules.
 
-The full exact representability theorem, source-moduli rigidity and comparison,
-canonical-model geometry and the other named premises remain obligations.
-This contribution does not identify associated coefficient sheaves under
-arbitrary inverse image, prove the corresponding coefficient descent, or
-complete the host task. It supplies the exact geometric cover diagram and its
-canonical equivariant comparison for those subsequent constructions.
+The full exact representability theorem, source-moduli comparison,
+canonical-model geometry and the other named premises are not proved here;
+source-moduli rigidity at small levels follows from `cmSmallLevelRigidity`
+(`HarrisTaylorCMSmallLevelRigidityProof`). This module does not identify
+associated coefficient sheaves under arbitrary inverse image (that
+identification is in `HarrisTaylorCMGeometricInverseImageComparison`) or prove
+the corresponding coefficient descent. It supplies the exact geometric cover
+diagram and its canonical equivariant comparison for those further
+constructions.

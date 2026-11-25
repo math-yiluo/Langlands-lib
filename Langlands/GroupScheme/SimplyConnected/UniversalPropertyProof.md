@@ -1,7 +1,5 @@
 # Universal property of a semisimple simply connected central cover
 
-Authors: Worker 1290 and Worker 1362.
-
 The theorem
 `Langlands.GroupScheme.simplyConnectedCentralCoverUniversalProperty` proves
 exactly the published

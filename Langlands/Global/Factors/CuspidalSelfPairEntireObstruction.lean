@@ -16,7 +16,7 @@ namespace Langlands.Global.CuspidalSelfPairAssembly
 open NumberField CuspidalPairFunctionalEquation CuspidalPairBoundaryNonvanishing
 open CuspidalPairAbsoluteConvergence
 open Automorphic (CuspidalOperatorRealization CuspidalSpectralPresentation)
-open Langlands.ClassField.Global.RelativeWeilGroup (HasUnitaryCentralCharacter)
+open Langlands.ClassFieldTheory.Global.RelativeWeilGroup (HasUnitaryCentralCharacter)
 
 variable {F : Type u} [Field F] [NumberField F] [CompactSpace (AdeleQuotient F)]
   {r : ℕ} {T Td : CuspidalOperatorRealization F r}

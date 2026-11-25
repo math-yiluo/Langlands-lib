@@ -1,7 +1,5 @@
 # Integral last-row support from polynomial degree coefficients
 
-Author: Worker 952.
-
 This internal reduction uses the published Iwasawa cell expansion in
 `SphericalSeparation` and the algebraic coefficient obstruction in
 `SchurPolynomialSupport`. `HasPolynomialCorankOneDegreeCoefficients` means that

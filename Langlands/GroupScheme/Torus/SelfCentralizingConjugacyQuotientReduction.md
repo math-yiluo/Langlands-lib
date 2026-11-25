@@ -1,7 +1,5 @@
 # Reducing the affine normalizer quotient to four statements
 
-Worker 946, Task 7782.
-
 This internal module proves
 `Langlands.GroupScheme.SelfCentralizingTorusConjugacyQuotientAffineStatement`
 conditionally, from four `Prop`-valued statements taken as hypotheses:
@@ -79,5 +77,8 @@ hypotheses on `G` and on `t : T.toGrp ⟶ G`.
 
 The witness of the target is therefore `Q.scheme` with `Q.projection`. The
 theorem does not prove any of the four statements. They are proved
-separately: statement 1 in Task 7705, statement 2 in Task 7821, and
-statements 3 and 4 in Task 7782.
+separately: statement 1 as
+`TorusSubgroupModuli.smoothAffineFiberTorusSubgroupRepresentability`, statement 2
+as `separatedTorusNormalizer`, and statements 3 and 4 in
+[`SelfCentralizingConjugacyQuotientProof`](SelfCentralizingConjugacyQuotientProof.md),
+which applies this theorem.

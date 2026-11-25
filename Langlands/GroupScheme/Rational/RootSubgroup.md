@@ -1,6 +1,6 @@
 # All-test relative root subgroup functors
 
-This construction belongs to Worker 1263's relative-root task. It works with the
+This construction works with the
 Library's actual group schemes `Grp (Over B)` and morphisms of all schemes over
 an arbitrary base `B`. It makes no field, reductivity, splitness, smoothness,
 primitivity, or representability assumption. The intended relative-root case is

@@ -1,6 +1,6 @@
 # Identity and transporter compatibility of actual orbit-cover levels
 
-This internal unit compares the existing direct raw levels obtained from actual
+This internal module compares the existing direct raw levels obtained from actual
 finite-etale orbit-cover morphisms with the original selected-cover level and
 its Harris level transitions. It uses the original universe-zero number fields,
 central simple unitary algebra, signature charts, abelian family, supplied dual
@@ -41,7 +41,7 @@ fibre comparison at that target lift.
 `harrisIntegralCMFiniteOrbitCoverTransportLevel_eq_map` identifies this
 constructed level with the image of the selected cover's level under the
 actual `map j` in its direct raw tower. The proof applies restriction
-evaluation injectivity, then the new restriction/level-arrow compatibility
+evaluation injectivity, then the restriction/level-arrow compatibility
 lemma in `HarrisIntegralCMRestrictionLevelCompatibility`, the selected-level
 value formula and the supplied target equality. Thus the transition uses the
 original Harris arrow and the literal restricted integral action.
@@ -51,4 +51,5 @@ restriction evaluation and level towers. They assert no equality between a
 fundamental-group image and a full point stabilizer, and establish no inverse
 or surjectivity for the Hom-level map. Comparison on the full admissible test
 category, normalized rational-isogeny comparison, existence of a representing
-scheme, admissibility, smoothness and division-case projectivity remain open.
+scheme, admissibility, smoothness and division-case projectivity are not proved
+here.

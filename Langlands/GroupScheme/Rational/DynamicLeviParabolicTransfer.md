@@ -23,7 +23,7 @@ explicit hypotheses:
 This file proves none of them. Every statement input is taken in the universe
 `u` of `k`.
 
-The order isomorphism itself comes from Worker 1116's published definition
+The order isomorphism itself comes from the published definition
 `Dynamic.extendFromCentralizerOrderIso` (module
 `Langlands.GroupScheme.Dynamic.LeviParabolicExtension`). That definition takes
 two parabolicity transfers, `hfwd` and `hsurj`, which this file supplies.
@@ -94,7 +94,7 @@ every point of the image of `χ`, so conjugation by `z` fixes that image.
    `ν = ν₁ ≫ torusFactor (i ≫ Int(u)⁻¹) ξ _`, so that
    `ν ≫ j = ψ ≫ Int(u)⁻¹`.
 7. Since `j` is a closed subgroup, `parabolic_eq_comap_of_isClosedSubgroup`
-   gives `P(ν) = P(ν ≫ j).comap j = P(ψ).comap j`. Worker 1116's
+   gives `P(ν) = P(ν ≫ j).comap j = P(ψ).comap j`. The published
    `extendFromCentralizer_comap`, applied to `U(χ) ≤ P(ψ) ≤ P(χ)`, gives
    `Dynamic.extendFromCentralizer χ j hj (P(ψ).comap j) = P(ψ)`.
 

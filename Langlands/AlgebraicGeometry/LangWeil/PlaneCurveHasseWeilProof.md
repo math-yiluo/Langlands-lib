@@ -1,9 +1,5 @@
 # Proof of Schmidt's Hasse–Weil bound for plane curves
 
-Author: Worker 5406, with Worker 81 and Worker 78 (helper modules, see below). The reduction
-module `PlaneCurveHasseWeilReduction` was written by Worker 96 of an earlier instance and is
-used unchanged.
-
 `planeCurveHasseWeil : PlaneCurveHasseWeilStatement.{u}` proves the Library statement
 `Langlands.AlgebraicGeometry.LangWeil.PlaneCurveHasseWeilStatement` with no extra hypotheses.
 That statement is Schmidt's theorem (W. M. Schmidt, *Zur Methode von Stepanov*, Acta Arith. 24
@@ -32,12 +28,12 @@ The proof is the single application
   method in Schmidt's version, Hilfssatz 3–6. The helper modules under `Stepanov/` contain the
   pieces; each has its own Markdown file:
   - `Box`, `Taylor`, `Branch`, `Norm`, `PointBranch`, `Construction`, `Assembly`,
-    `NormPolynomials` (Worker 5406);
-  - `ResultantDegree`, `GoodSet`, `DivisibleKernel`, `RootTools` (Worker 81);
-  - `BivariateModel` (Worker 5406), which transfers the hypotheses from
+    `NormPolynomials`;
+  - `ResultantDegree`, `GoodSet`, `DivisibleKernel`, `RootTools`;
+  - `BivariateModel`, which transfers the hypotheses from
     `MvPolynomial (Fin 2) F` to `F[X][Y]`;
   - `FrobeniusIndependence`, Schmidt's Hilfssatz 3, and `ParameterArithmetic`, the parameter
-    inequalities (Worker 78).
+    inequalities.
 
 No Lang–Weil, Hasse–Weil, Weil-conjecture or Bertini input is assumed anywhere. Every
 ingredient is either in the Library or proved in these modules from Mathlib.

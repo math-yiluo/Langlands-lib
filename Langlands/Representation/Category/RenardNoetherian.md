@@ -1,6 +1,6 @@
 # Subobject unions and Noetherianity for smooth representations
 
-Worker 1582. This internal, derived construction supplies the order-theoretic
+This internal, derived construction supplies the order-theoretic
 infrastructure used in proving Renard VI.7.5. It applies to every commutative
 ring `R`, group `G` and supplied topology on `G`, with independent coefficient,
 group and representation-carrier universes `uR`, `uG`, `uV`. There is no
@@ -58,7 +58,5 @@ This module proves the all-unions part needed for the VI.7.5 Proposition.
 It does not prove that finitely generated smooth representations are
 Noetherian, that any smooth category is a Noetherian category, or that
 parabolic induction preserves finite type. Those substantive assertions
-remain the two exact targets of task
-`ea93fe45-ec73-41a7-aca0-ff6d5a72aa23`.
-
-Prepared environment: `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`.
+are the separate statements `SmoothRepNoetherianCategoryStatement` and
+`LeviInductionFiniteTypeStatement` (in `Langlands.Representation.Exponents`).

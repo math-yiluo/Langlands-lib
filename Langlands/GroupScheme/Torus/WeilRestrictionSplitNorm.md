@@ -1,7 +1,5 @@
 # From `Res_{(I → L)/k} 𝔾ₘ` to the Weil restriction of a split `L`-torus
 
-Author: Worker 33.
-
 Let `L / k` be a field extension, `I` a finite index type, `G` a group scheme
 over `Spec L` and `σ : G ≅ 𝔾ₘ^I` an isomorphism with the Library's split torus
 `splitTorus (Spec L) I`. This module builds a homomorphism of `k`-group

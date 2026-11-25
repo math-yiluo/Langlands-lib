@@ -1,7 +1,5 @@
 # Dominant Weyl displacement in the real character space
 
-Worker 1222, Task 1222 (`f5d1f399-a1f8-4ab5-a981-90b92abd4857`).
-
 `Langlands.GroupScheme.DominantWeylDisplacementStatement` states the bound
 in the full real character space in Renard (VII.4.1.3). For a connected
 reductive group over a field `k`, a maximal split torus `i : T → G`, and a

@@ -25,7 +25,7 @@ variable {R : Type u} [CommRing R] {G : GroupScheme (Spec (CommRingCat.of R))}
   [IsAffineHom G.X.hom] {I : Type u} [Fintype I]
   (i : splitTorus (Spec (CommRingCat.of R)) I ⟶ G) (mu nu : I → ℤ)
 
-local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
+private local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
 
 /-- The canonical dynamic inclusion is a closed subgroup over every base ring. -/
 theorem isClosedSubgroup_incl : IsClosedSubgroup (incl i mu nu) := by
@@ -35,6 +35,7 @@ theorem isClosedSubgroup_incl : IsClosedSubgroup (incl i mu nu) := by
     Corepresented.isClosedSubgroup_centralizerHom (centCochar i mu)
   change IsClosedImmersion (incl i mu nu).hom.hom.left
   dsimp only [incl, Grp.comp_hom_hom, Over.comp_left]
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   infer_instance
 
 /-- The canonical inclusion represents the intersection of the two actual

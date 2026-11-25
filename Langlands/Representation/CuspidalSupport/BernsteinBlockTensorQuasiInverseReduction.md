@@ -2,14 +2,14 @@
 
 Module `Langlands.Representation.CuspidalSupport.BernsteinBlockTensorQuasiInverseReduction`.
 Namespace `Langlands.CuspidalSupport`. Universe parameters `uF uV`.
-Worker 130 wrote this module for Task 5686, the proof of
+The module serves the proof of
 `BernsteinBlockTensorQuasiInverseStatement`.
 
 Source: David Renard, *Représentations des groupes réductifs p-adiques*, French
 version dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
-`7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. Worker 130 read
-these pages for this unit:
+`7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. These pages
+were read:
 
 - VI.10.1, Theorem and proof, printed p.208 / PDF p.214: `Π_Ω` is a finitely generated
   progenerator of `M(G)_Ω`.
@@ -118,7 +118,7 @@ statements, so the hypothesis applies verbatim.
 
 ## Provenance
 
-This is an internal derived unit. Renard argues as follows (printed pp.150–151, applied to
+The content of this module is internal and derived. Renard argues as follows (printed pp.150–151, applied to
 `Π_Ω` by VI.10.2). The composite `G_Π ∘ F_Π` is right exact and commutes with direct sums,
 and `ev` is the isomorphism `R ⊗_R V_Π ≅ V_Π` for `τ = Π`. Every `τ` in the block has a
 presentation `⊕_I V_Π → ⊕_J V_Π → E → 0` (Lemma A.VIII.2), and the five lemma on (VI.4.1.5)
@@ -134,8 +134,7 @@ target and is not proved here.
 
 The result is conditional on `BernsteinInducedProgeneratorStatement` (VI.10.1) or on
 `BernsteinBlockHomEquivalenceStatement` (VI.10.2). Neither has an unconditional proof in the
-Library; their proof task is 2174cd68-b110-4f86-b992-28712c29d35f. Once an unconditional
-proof of either is published, composing it with this module proves
+Library. Composed with an unconditional proof of either, this module proves
 `BernsteinBlockTensorQuasiInverseStatement`.
 
 ## Imports

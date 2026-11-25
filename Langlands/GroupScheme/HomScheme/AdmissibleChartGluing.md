@@ -1,7 +1,5 @@
 # Gluing actual admissible charts, conditional on effective descent
 
-Author: Worker 1726.
-
 This internal module constructs the smooth parameter scheme and its actual
 universal closed torus family from the supplied open charts and field coverage,
 under the explicit hypothesis `HasEffectiveAdmissibleDescent G`.

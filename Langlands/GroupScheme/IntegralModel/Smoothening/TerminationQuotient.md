@@ -1,6 +1,6 @@
 # Termination of the smoothening sequence: the closure of the reduced points is smooth
 
-Author: Worker 348. Internal helper module for Kaletha–Prasad, Theorem A.6.2. In the source, the
+Internal helper module for Kaletha–Prasad, Theorem A.6.2. In the source, the
 dilatation at step `i` is taken along the Zariski closure `Y(i)` of the reductions of the
 `R`-points in the special fibre. Over an algebraically closed residue field, `Y(i)` is a reduced,
 hence smooth, closed subgroup (Construction A.6.1). This module proves the ring-theoretic form of
@@ -28,8 +28,8 @@ and `Γ` is a set of `R`-points of `C`. `evPt` is defined in `TerminationGamma`.
 - `jbar_isRadical`: `jbar Γ` is radical, being an intersection of kernels of maps to a field.
 - `smooth_quotient_jbar`: if moreover `k` is algebraically closed and `C` is finitely generated,
   then `(k ⊗ C) ⧸ jbar Γ` is smooth over `k`. It is a reduced, finitely generated, commutative
-  Hopf algebra (Mathlib's Hopf quotient structure), so Worker 50's
-  `smooth_of_isReduced_of_isAlgClosed` applies.
+  Hopf algebra (Mathlib's Hopf quotient structure), so
+  `smooth_of_isReduced_of_isAlgClosed` (`Smoothening.Smoothness`) applies.
 
 ## The comparison with `C`
 

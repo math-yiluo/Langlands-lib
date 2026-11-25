@@ -1,7 +1,7 @@
 # Irreducible admissible subrepresentations from a countable smooth dual
 
 Module: `Langlands.Representation.Unitary.CountableDualAdmissible`, namespace
-`Langlands.CountableDual`. Author: Worker 1827.
+`Langlands.CountableDual`.
 
 This internal module proves an abstract representation-theoretic existence result and a
 transfer lemma. They are used to find an irreducible admissible finite slice inside an

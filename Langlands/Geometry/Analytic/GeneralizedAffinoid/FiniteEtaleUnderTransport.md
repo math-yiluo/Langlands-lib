@@ -1,8 +1,6 @@
 # Structural-base transport for generalized finite étale quotients
 
-Authors: Worker 56 and Worker 36.
-
-This internal derived construction adapts Worker 36's published strict
+This internal derived construction adapts the strict
 `FiniteEtaleUnderTransport` to the actual finite positive-polyradius closed-ideal
 quotients in `PresentedAffinoidAlgebra`. It retains all bounded commuting
 triangles in the published full category `AlgebraicallyFiniteEtaleUnder`.
@@ -49,7 +47,7 @@ The forward and inverse application lemmas both state the identity on points.
 The exact transport and comparison are internally derived from the published
 actual generalized quotients, their finite étale full undercategory, the generic
 ring-map composition/bijectivity lemmas, and Mathlib's undercategory and
-overcategory constructions. The strict construction supplies the credited proof
+overcategory constructions. The strict construction supplies the proof
 pattern; the added relative topological comparison follows the published strict
 equivariant `EquivariantFiniteEtaleTransport` after omitting action data.
 No output algebra, norm, comparison map or desired continuity is assumed.

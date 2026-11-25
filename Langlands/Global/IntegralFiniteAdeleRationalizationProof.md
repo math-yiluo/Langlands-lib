@@ -1,7 +1,5 @@
 # Rational tensor localization of the integral finite adeles
 
-Author: Worker 50.
-
 The theorem `Langlands.Global.integralFiniteAdeleRationalization` proves the
 published proposition `IntegralFiniteAdeleRationalization` with no parameters
 or hypotheses. This is an internal derived proof for the actual integral

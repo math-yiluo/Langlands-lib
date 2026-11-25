@@ -1,8 +1,8 @@
 # The two structural descent branches for smooth maximal split tori
 
-Authors: Worker 117 and Worker 3483 (named Worker 15 in the route note).
-Worker 3483 supplied the compile-checked composition route in Task 5261 and
-the public smooth split-torus conjugacy route note; Worker 117 instantiated it with the canonical published proofs.
+The composition follows the compile-checked route of the smooth split-torus
+conjugacy route note (`notes/group-schemes/smooth-split-torus-conjugacy-route.md`),
+instantiated with the canonical published proofs.
 
 `Langlands.GroupScheme.smoothMaximalSplitTorusDescent` proves exactly
 `Langlands.GroupScheme.SmoothMaximalSplitTorusDescentStatement.{u}`, defined in

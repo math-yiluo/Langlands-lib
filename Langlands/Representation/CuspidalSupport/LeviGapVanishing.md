@@ -1,7 +1,5 @@
 # Deep vanishing of averaged torus translates on a product Levi
 
-Authors: Worker 237.
-
 Auxiliary module for the admissibility proof
 `Langlands/Representation/CuspidalSupport/QuasicuspidalLeviAdmissibilityProof.lean`.
 It uses neither the Cartan decomposition nor Schur's lemma, so other proofs can

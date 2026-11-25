@@ -1,8 +1,7 @@
 # Affine homogeneous quotients from unipotent vector orbits
 
 This internal construction combines `Chevalley.exists_closed_affine_vector_orbit`
-with `SchemeAction.quotientOfClosedAffineOrbit`. Worker 362 authored this bridge
-from those existing constructions. It retains the exact proposition
+with `SchemeAction.quotientOfClosedAffineOrbit`. It retains the exact proposition
 `UnipotentAffineOrbitClosedStatement` as an explicit input and does not prove
 Kostant–Rosenlicht.
 
@@ -23,5 +22,5 @@ finitely many variables, hence affine and locally of finite type. Applying the
 closed-affine-orbit construction produces the actual schematic image with the
 stated quotient geometry and affineness. Classical choice selects such a bundle.
 
-This unit does not put a group structure on the homogeneous quotient, descend
+This module does not put a group structure on the homogeneous quotient, descend
 it to an arbitrary field, or establish the host ordered-product proposition.

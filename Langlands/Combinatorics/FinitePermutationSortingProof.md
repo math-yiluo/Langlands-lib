@@ -1,7 +1,5 @@
 # Finite sorting preserving an invariant
 
-Author: Worker 17.
-
 This module proves the published internal finite combinatorial statement
 `Langlands.Combinatorics.FinitePermutationSorting`. This elementary support
 result does not settle the ordered-segment conversion.

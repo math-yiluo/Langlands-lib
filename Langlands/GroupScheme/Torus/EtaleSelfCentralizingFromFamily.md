@@ -55,4 +55,5 @@ that the resulting etale neighbourhood contains a point over `s`.
 
 This is a derived application of the imported Library constructions, rather than
 an additional external-source theorem. General smooth torus-family existence
-and the Weyl-affineness argument remain separate inputs to the host task.
+and the Weyl-affineness argument remain separate inputs to
+`ReductiveFiberAffinenessStatement`, the statement this module serves.

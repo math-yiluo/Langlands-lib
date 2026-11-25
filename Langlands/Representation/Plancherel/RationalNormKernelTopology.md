@@ -1,7 +1,5 @@
 # Open actual norm kernel and discrete valuation quotient
 
-Author: Worker 200.
-
 This derived consumer removes the extra rational-point topology premises from
 the open-kernel and discrete-image part of `RationalCharacterTopology`. The
 field `F : Type u` is any `IsNonarchimedeanLocalField`, with its supplied

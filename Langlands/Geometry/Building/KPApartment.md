@@ -1,6 +1,6 @@
 # The apartment of an equipollence class of valuations
 
-This module belongs to the task on actual Kaletha–Prasad affine-root,
+This module belongs to the formalization of actual Kaletha–Prasad affine-root,
 special-point, parahoric and compact-stabilizer objects. It builds on the
 published module `RootDatumValuation`. Given valid data, an `N(k)`-stable
 equipollence class `A` of valuations of the root datum of `(G, S)`, it
@@ -247,10 +247,10 @@ facets, chambers and vertices), which is stated for any real affine space.
   modules state them as predicates on `D`: V 6 is `D.IsOmegaCompatible C`
   for the actual centralizer `C : CentralizerDatum i` (module
   `KPCentralizerCompatibility`), and V 7 is `D.IsTopologyCompatible`
-  (Worker 1045's module `KPApartmentAxioms`).
+  (module `KPApartmentAxioms`).
 - The existence of valid data for any `G`. For quasi-split `G` existence is
   KP Definition 6.1.27 with Lemma 6.1.28; in general it is the descent of
-  Chapter 9. This remains an obligation of the parent program.
+  Chapter 9.
 - The apartments `A(S′)` of the other maximal split tori and the maps
   `A(S) → A(gSg⁻¹)` of Axiom 4.1.4. This module fixes one `i`.
 

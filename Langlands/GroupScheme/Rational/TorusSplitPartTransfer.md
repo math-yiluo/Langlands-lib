@@ -1,8 +1,6 @@
 # Ambient transfer for largest split subtori
 
-Author: Worker 1348.
-
-This is an internal derived unit. It uses the published largest-split-subtorus
+This is an internal derived module. It uses the published largest-split-subtorus
 construction in `Rational.TorusSplitPart`; it assumes no parabolic or rational
 Levi theorem. Its purpose is to isolate the elementary final step in the
 split-part argument following Borel–Tits, *Groupes réductifs* (1965), proof of
@@ -38,10 +36,9 @@ Neither result asserts that the required map `b` exists.
 `TorusSplitPartTransferStatement.{u}` records the last result as a
 proposition definition, with all fields, group schemes, embeddings and the
 subgroup functor universally quantified. The theorem `torusSplitPartTransfer`
-proves it by the preceding lemma. The entry declaration of this unit is this
-derived proposition definition. Its statement publication does not supply a
-separate proof receipt for the helper theorems or discharge the assigned
-minimal-parabolic theorem.
+proves it by the preceding lemma. The entry declaration of this module is this
+derived proposition definition. The module does not prove the
+minimal-parabolic split-part theorem.
 
 The original source is registered as `borel-tits-1965-groupes-reductifs`,
 SHA-256 `ec6674ba292deaadd77a449f4bad3750db79c0b87b117a892ef6b09bb16357ad`.

@@ -1,7 +1,5 @@
 # Continuous projectors for actual archimedean compact types
 
-Author: Worker 94.
-
 This internal proof assembles character averaging on the actual compact
 subgroup `standardInfiniteCompact K n`. Equip the subgroup with its Borel
 sigma algebra and choose Haar measure normalized on the whole compact group.

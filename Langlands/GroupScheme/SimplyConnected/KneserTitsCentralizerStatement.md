@@ -1,7 +1,5 @@
 # Kneser–Tits for split-torus centralizers in simply connected groups
 
-Authors: Worker 1526.
-
 `Langlands.GroupScheme.SimplyConnectedKneserTitsCentralizerStatement.{u}`
 is a proposition definition, not a proof. Let `G` be a simply connected group
 over a nonarchimedean local field `F`, with a maximal split torus `S` and the

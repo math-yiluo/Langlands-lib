@@ -1,6 +1,6 @@
 # Unique expansions from a filtration with rank-one graded pieces
 
-Author: Worker 5226. This is an internal algebraic lemma, derived for the free-module conclusion of the first lemma of Renard VI.10.4 (printed pp.209–212 / PDF pp.215–218). Reference: David Renard, *Représentations des groupes réductifs p-adiques*, French version dated 9 July 2026, registered as `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. Renard does not state this lemma. It is the standard fact that a module with a finite filtration whose successive quotients are zero or free of rank one is free, with a basis made of lifts of the rank-one generators. Here it is stated in the elementwise form the planned proof needs.
+This is an internal algebraic lemma, derived for the free-module conclusion of the first lemma of Renard VI.10.4 (printed pp.209–212 / PDF pp.215–218). Reference: David Renard, *Représentations des groupes réductifs p-adiques*, French version dated 9 July 2026, registered as `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. Renard does not state this lemma. It is the standard fact that a module with a finite filtration whose successive quotients are zero or free of rank one is free, with a basis made of lifts of the rank-one generators. Here it is stated in the elementwise form the planned proof needs.
 
 ## Statement
 

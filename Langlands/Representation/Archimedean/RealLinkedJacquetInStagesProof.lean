@@ -14,8 +14,8 @@ This file proves `RealLinkedJacquetFunctionalInStagesStatement`. For a list
 by `|det|^c`. If `ℓ'` is a functional as in `RealLinkedJacquetFunctionalExists` for the twisted
 list, then `ℓ' ∘ Res` is one for `pre ++ core ++ post`.
 
-`Res` is built from Worker 109's slice `σ₁` (module `RealInductionStagesSlice`) and the twist
-by `|det|^c`. Nonvanishing of `ℓ' ∘ Res` uses Worker 109's induced maps `Ind T`
+`Res` is built from the slice `σ₁` (module `RealInductionStagesSlice`) and the twist
+by `|det|^c`. Nonvanishing of `ℓ' ∘ Res` uses the induced maps `Ind T`
 (`RealInductionStagesInduce`) and an explicit polynomial test function on `O(n)`.
 -/
 
@@ -106,7 +106,7 @@ theorem contMDiff_detPow (s : ℂ) : ContMDiff (matrixModel ℝ r) 𝓘(ℝ, ℂ
     (contDiffAt_abs hdet).comp y hd.contDiffAt
   exact (PrincipalSeriesExtension.contDiffAt_ofReal_cpow habs (abs_pos.mpr hdet) _).contDiffWithinAt
 
-/-- Worker 109's factor `ν = |det|^(-c)` is `detPow`. -/
+/-- The slice factor `ν = |det|^(-c)` is `detPow`. -/
 theorem sliceFactor_eq_detPow (n a r : ℕ) :
     sliceFactor n a r = detPow r (-sliceExponent n a r) :=
   rfl

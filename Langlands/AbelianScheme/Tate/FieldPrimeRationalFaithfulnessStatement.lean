@@ -29,13 +29,15 @@ theorem rationalEndAction_injective_of_fieldFaithfulness
     (h : FieldPrimeRationalFaithfulnessStatement.{u}) :
     Function.Injective
       (rationalEndAction (Over.mk (𝟙 (Spec (CommRingCat.of Ω)))) p A) := by
-  exact h Ω A A p
+  intro f g hfg
+  rw [rationalEndAction_apply, rationalEndAction_apply] at hfg
+  exact CategoryTheory.End.ext (h Ω A A p hfg)
 
 /-- Identity of the actual prime Tate operator detects identity of a rational endomorphism. -/
 theorem rationalHomMap_eq_id_iff_of_fieldFaithfulness
     (h : FieldPrimeRationalFaithfulnessStatement.{u}) (f : Rationalization.End A) :
-    rationalHomMap (Over.mk (𝟙 (Spec (CommRingCat.of Ω)))) p f = LinearMap.id ↔
-      f = Rationalization.identity A := by
+    rationalHomMap (Over.mk (𝟙 (Spec (CommRingCat.of Ω)))) p f.asHom = LinearMap.id ↔
+      f.asHom = Rationalization.identity A := by
   constructor
   · intro hf
     apply h Ω A A p

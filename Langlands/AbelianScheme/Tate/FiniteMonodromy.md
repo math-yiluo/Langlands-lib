@@ -1,7 +1,5 @@
 # Geometric monodromy on finite torsion fibres
 
-Author: Worker 155.
-
 This module constructs the action of the actual finite geometric-fibre functor's
 natural automorphisms on the existing torsion levels of an actual abelian scheme.
 It proves the intrinsic action, continuity, scalar, and equivariance laws needed
@@ -190,6 +188,7 @@ particular `levelAction` installed locally in its statement.
 It passes `AbelianScheme.groupHom f` to the generic result. Neither theorem
 takes an equivariant map as an extra hypothesis.
 
-This unit preserves the original statement targets. It constructs no action
+This module keeps `GeometricFiberFinite` and `TorsionFiniteEtaleStatement` as
+explicit hypotheses (`hfin` and `htor`). It constructs no action
 on an integral or rational Tate limit, rational topology, pairing, base-point
 transport, or Galois-category equivalence. Those are separate extensions.

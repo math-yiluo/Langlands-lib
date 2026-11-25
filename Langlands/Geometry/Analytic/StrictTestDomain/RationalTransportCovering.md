@@ -1,7 +1,5 @@
 # Finite coverings in the rational transport category
 
-Author: Worker 36.
-
 Fix an ultrametric normed field K and a presented strict affinoid algebra P.
 The imported `RationalTransport K P` has chosen unit-radius rational
 presentations as objects. Its arrows retain a bounded algebra automorphism
@@ -66,7 +64,7 @@ topologies, by pushing the witnessing finite family into the image sieve.
 This is a covering-preservation statement; no continuity or equivalence
 of sheaf categories is asserted.
 
-This is a derived extension of Worker 36's published `RationalCovering`
+This is a derived extension of the published `RationalCovering`
 to the published `RationalTransport` category. It uses the actual
 `RationalLimits` intersections and `RationalAutomorphism` incidence
 lemmas. The existing quotient-algebra presheaf is available by import,

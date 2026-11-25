@@ -1,7 +1,5 @@
 # Canonical adelic point bijections for Weil restrictions of algebraic spaces
 
-Author: Worker 113.
-
 This is a derived construction supporting the proof of
 `Langlands.Global.AdelicSpaceWeilRestrictionStatement`, the formalization of
 Conrad's Proposition 5.14. It packages the set bijection using the published

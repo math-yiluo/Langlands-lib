@@ -1,7 +1,7 @@
 # Transposing an intertwiner inside a `U(n)`-integral matrix coefficient
 
 Lean module: `Langlands.Representation.Archimedean.ComplexReverseTransfer`, namespace
-`Langlands.Archimedean.ComplexReverseTransfer`. Worker 5677 wrote it under Task 7064 as a helper
+`Langlands.Archimedean.ComplexReverseTransfer`. It is a helper
 for `ComplexStrictReverseIntertwinerKernelStatement` (module `ComplexReverseIntertwinerStrict`).
 
 Notation. `GL_n(ℂ)` is `Langlands.GeneralLinear n ℂ`, `U(n)` is `unitaryCompact ℂ n` (as a

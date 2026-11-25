@@ -1,7 +1,5 @@
 # Coalgebras embedded in monomial coalgebras
 
-Author: Worker 1467.
-
 This is an internal derived linear-algebra helper. For a field `k`, the
 coalgebra structure on `AddMonoidAlgebra k M` has diagonal monomial
 comultiplication. No group or monoid structure on `M` is needed.

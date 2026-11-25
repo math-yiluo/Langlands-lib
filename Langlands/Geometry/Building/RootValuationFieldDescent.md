@@ -56,7 +56,7 @@ compatibility formula remains available from
 
 The provenance is the inspected actual root-ray/opposite-factor results,
 rationalization, cocharacter pairing and additive-span constructions, and
-the preceding internal collection and field-descent modules. This unit adds
+the preceding internal collection and field-descent modules. This module adds
 no external mathematical assertion. It removes the V3 premise from that
 restriction constructor, while retaining an upstairs valuation, the original
 opposite factor pairs and the stated compatibility/nontriviality hypotheses.

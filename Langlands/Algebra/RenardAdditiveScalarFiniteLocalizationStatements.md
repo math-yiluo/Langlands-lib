@@ -1,8 +1,7 @@
 # Additive stable generation and scalar-linear localization
 
-Worker 709 prepared these derived internal statements. Worker 702 checked
-the exact hypotheses, imported predicates and source passages and submitted
-the pair. The statements assert no equivalence with Renard's finiteness
+These are derived internal statements. Their exact hypotheses, imported
+predicates and source passages were checked. The statements assert no equivalence with Renard's finiteness
 terminology and prove no result.
 
 The two propositions in
@@ -25,8 +24,9 @@ generation of every stable additive subgroup implies finite stable
 generation of every stable scalar-linear submodule. For each subgroup
 or submodule the generating set is contained in that object, and every
 stable object containing the set must contain the original object.
-The propositions assert existence of generators in the conclusions; the
-intended proof reuses the generators supplied by the additive hypotheses.
+The propositions assert existence of generators in the conclusions; their
+proofs, in `RenardAdditiveScalarFiniteLocalization`, reuse the generators
+supplied by the additive hypotheses.
 Neither proposition asserts the reverse implication.
 
 `Langlands.Renard.AlgebraActionLocalization.AdditiveIdealFiniteLocalizationStatement`
@@ -80,16 +80,17 @@ réductifs p-adiques*, French version dated 9 July 2026, registered as
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`,
 at
 `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`.
-Worker 709 reread printed6/PDF12 and printed279/PDF285 directly from that
-fingerprinted original for these statements. Worker 702 independently
-reread those two pages, visually checked PDF285,
-and rechecked the source fingerprint. No `notes/errata` directory is present
-in the current Library `42ebad9dec7efaf48307e0b6085168e104486dfb`.
-Worker 702 also read PDF18–19 of the registered older supplement
+Printed6/PDF12 and printed279/PDF285 were reread directly from that
+fingerprinted original for these statements. Those two pages were also
+reread independently, PDF285 was visually checked,
+and the source fingerprint was rechecked. No `notes/errata` directory was
+present in the Library at commit `42ebad9dec7efaf48307e0b6085168e104486dfb`;
+the directory now exists, and its Renard notes do not concern C.II.
+PDF18–19 of the registered older supplement
 `renard-2010-corrections-complements`, SHA256
-`fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`;
-these pages do not resolve the convention. The earlier parent audit
-also read the relevant localization, stability, scalar-unitization and
+`fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
+were also read; these pages do not resolve the convention. An earlier,
+broader source audit also read the relevant localization, stability, scalar-unitization and
 categorical finiteness passages.
 The published
 [finiteness source audit](../../notes/renard/nonunital-finiteness-sources.md)
@@ -104,7 +105,8 @@ noncommutative algebra and retaining canonical uniqueness are inherited
 internal strengthenings. The generic coefficient-ring comparisons are
 derived algebra, not separately numbered source assertions.
 
-The intended proof forgets scalar closure from a stable scalar-linear
+The proof, `Langlands.Renard.additiveScalarFiniteLocalization` in
+`RenardAdditiveScalarFiniteLocalization`, forgets scalar closure from a stable scalar-linear
 submodule to its actual underlying additive subgroup. It then applies the
 published `stableIdealFiniteLocalization` after the two generation
 comparisons, using the regular left action for the ideal hypothesis.
@@ -113,7 +115,7 @@ supplied by this statement file. It uses the same actual localization
 and compatible actions throughout.
 
 The original-action categorical finiteness and integer-unitization
-results retain their existing owners. These statements add no category
+results are not part of this pair. These statements add no category
 equivalence, subobject comparison, unitization action or localization
 construction. The reverse generation comparisons, the source convention
 identification, its inverse-polynomial proof and the full C.II and

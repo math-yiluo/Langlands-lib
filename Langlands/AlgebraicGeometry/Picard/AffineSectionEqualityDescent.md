@@ -1,6 +1,6 @@
 # Equality of affine presheaf sections descends
 
-This internal unit derives eventual equality of sections from the published
+This internal module derives eventual equality of sections from the published
 scheme-morphism equality descent theorem. It applies the result to the actual
 Picard Isom presheaf using the existing focused representability propositions.
 It makes no new assertion from the literature.
@@ -38,6 +38,6 @@ published Hom-to-Isom implication.
 
 All rings, schemes and algebra tests have arbitrary universe `u`. No
 noetherian, flatness or finiteness restriction is imposed on the algebra `A`.
-This unit detects equality for sections initially defined on the identity
+This module detects equality for sections initially defined on the identity
 base. It does not itself construct a filtered-colimit category comparison,
 prove infinitesimal gluing, or produce a smooth chart.

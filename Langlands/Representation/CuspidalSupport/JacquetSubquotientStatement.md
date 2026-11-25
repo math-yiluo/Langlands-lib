@@ -1,6 +1,6 @@
 # Actual subquotients under normalized Jacquet descent
 
-Author: Worker 72. This pair states two internal interfaces needed to descend a
+This pair states two internal interfaces needed to descend a
 common actual subquotient in the cuspidal-induction association argument. It
 contains proposition definitions only.
 

@@ -300,7 +300,7 @@ theorem rationalSummand_cyclic
     (φ : NormalHecke.inducedRep (rationalCommonNormKernel G) ρ ⟶ rationalInertiaBaseLift G π)
     (hφ : φ ≠ 0)
     (ψ : NormalHecke.inducedRep (rationalCommonNormKernel G) ρ ⟶ rationalInertiaBaseLift G π) :
-    ∃ α : End (NormalHecke.inducedRep (rationalCommonNormKernel G) ρ), α ≫ φ = ψ := by
+    ∃ α : End (NormalHecke.inducedRep (rationalCommonNormKernel G) ρ), α.asHom ≫ φ = ψ := by
   have : (rationalInertiaBaseLift G π).representation.IsIrreducible :=
     isIrreducible_rationalInertiaBaseLift hπ
   have hsurj : Function.Surjective (SmoothRep.hom φ) := by
@@ -315,7 +315,7 @@ theorem rationalSummand_cyclic
   have : Epi φ' := (rationalInertiaBlock_epi_iff_surjective G _ φ').mpr hsurj
   have h1 := (ModuleCat.epi_iff_surjective ((preadditiveCoyonedaObj P).map φ')).mp inferInstance
   obtain ⟨x, hx⟩ := h1 (ObjectProperty.homMk ψ : P ⟶ Q)
-  exact ⟨x.hom, congrArg (fun f : P ⟶ Q => f.hom) hx⟩
+  exact ⟨End.of x.hom, congrArg (fun f : P ⟶ Q => f.hom) hx⟩
 
 /-- An equivariant identification of the maps into a twist with the maps into `π` gives an
 isomorphism of the twist with `π`. -/
@@ -326,7 +326,7 @@ theorem rationalSummand_twistIso (ω : GroupScheme.rationalPoints G →* ℂˣ)
         (rationalInertiaBaseLift G π).twist ω hω) ≃ₗ[ℂ]
       (NormalHecke.inducedRep (rationalCommonNormKernel G) ρ ⟶ rationalInertiaBaseLift G π))
     (hΨ : ∀ (α : End (NormalHecke.inducedRep (rationalCommonNormKernel G) ρ)) φ,
-      Ψ (α ≫ φ) = α ≫ Ψ φ) :
+      Ψ (α.asHom ≫ φ) = α.asHom ≫ Ψ φ) :
     Nonempty ((rationalInertiaBaseLift G π).twist ω hω ≅ rationalInertiaBaseLift G π) := by
   let P : RationalInertiaBlock G (rationalInertiaBaseLift G π) := ⟨_, hmem⟩
   let X : RationalInertiaBlock G (rationalInertiaBaseLift G π) :=
@@ -337,7 +337,7 @@ theorem rationalSummand_twistIso (ω : GroupScheme.rationalPoints G →* ℂˣ)
     { toFun := fun f => ObjectProperty.homMk (Ψ f.hom)
       invFun := fun f => ObjectProperty.homMk (Ψ.symm f.hom)
       map_add' := fun f g => ObjectProperty.hom_ext _ (map_add Ψ f.hom g.hom)
-      map_smul' := fun a f => ObjectProperty.hom_ext _ (hΨ a.unop.hom f.hom)
+      map_smul' := fun a f => ObjectProperty.hom_ext _ (hΨ (End.of a.unop.asHom.hom) f.hom)
       left_inv := fun f => ObjectProperty.hom_ext _ (Ψ.symm_apply_apply f.hom)
       right_inv := fun f => ObjectProperty.hom_ext _ (Ψ.apply_symm_apply f.hom) }
   let e : (preadditiveCoyonedaObj P).obj X ≅ (preadditiveCoyonedaObj P).obj Y :=

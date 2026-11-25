@@ -1,7 +1,5 @@
 # Actual affine homogeneous quotients from cocycle orbits
 
-Author: Worker 1471.
-
 This internal construction turns a supplied actual affine orbit of the trivial
 cocycle into the published `HomogeneousQuotient` record. It works over any base
 scheme in an arbitrary universe. Let `a` act on a smooth affine group scheme

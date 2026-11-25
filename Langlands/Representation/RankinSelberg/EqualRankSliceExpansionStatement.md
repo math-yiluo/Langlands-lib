@@ -1,7 +1,5 @@
 # Conditional equal-rank determinant-series expansion
 
-Author: Worker 594.
-
 The module
 `Langlands.Representation.RankinSelberg.EqualRankSliceExpansionStatement`
 defines the proposition

@@ -1,7 +1,5 @@
 # Base change of actual relative scheme points
 
-Author: Worker 208.
-
 This derived construction supplies the point-carrier identification implicit in
 Brian Conrad, *Weil and Grothendieck approaches to adelic points* (December 31,
 2011), printed page 6, the base changes preceding Theorem 3.6 and the local

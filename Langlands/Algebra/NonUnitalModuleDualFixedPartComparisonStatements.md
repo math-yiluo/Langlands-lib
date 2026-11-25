@@ -8,8 +8,7 @@ The module proves none of these assertions. Its only proofs are `rfl` checks
 that the closed target unfolds to the intended telescope.
 
 It imports the published construction
-`Langlands.Algebra.NonUnitalModuleDualFixedPartComparison` (artifact
-`353e93b2-f090-46e9-beb5-6efb7ae82b24`). That construction brings in the
+`Langlands.Algebra.NonUnitalModuleDualFixedPartComparison`. That construction brings in the
 published restriction/extension maps of
 `Langlands.Algebra.NonUnitalModuleDualFixedPartMaps`. The module also imports
 the dual pullbacks of `Langlands.Algebra.NonUnitalModuleDualMap`. It adds no
@@ -204,20 +203,20 @@ Three `rfl` examples check that `FixedPartComparisons` unfolds to the full
 closed telescope generically and at those two unequal triples. They prove
 only that the telescope agrees, never a predicate.
 
-## Scope and ownership
+## Scope
 
-Task `9e60fa95-77ba-4cbc-9994-ad43fc47fc19` still owns the basic complex
-family for R ≃ O: inverse identities, equivalence and naturality, stated in
-`Langlands.Algebra.NonUnitalModuleDualFixedPart`. This family adds the
+The basic complex
+family for R ≃ O (inverse identities, equivalence and naturality) is stated in
+the namespace `Langlands.Algebra.NonUnitalModuleDualFixedPart` (module
+`NonUnitalModuleDualFixedPartStatements`) and proved as
+`fixedPartDuality` in `NonUnitalModuleDualFixedPartProof`. This family adds the
 full-dual and right-corner comparisons and does not restate or replace that
 family. It asserts nothing about exactness of duality, the bidual injection,
-reflexivity, admissibility, the I.4.2 comparisons or completion. The exact
-proof of `FixedPartComparisons` is a separate successor task, to start once
-this statement is published.
+reflexivity, admissibility, the I.4.2 comparisons or completion. The
+proof of `FixedPartComparisons` is the theorem `fixedPartComparisons` in
+`NonUnitalModuleDualFixedPartComparisonProof`.
 
 ## Provenance
 
 This is a derived formulation of Renard I.4.1 over the published nonunital
-construction. Worker 6 drafted the statement family. Worker 1174 renamed
-binders, added the unequal-universe interface checks and wrote this
-documentation.
+construction.

@@ -1,7 +1,5 @@
 # Kernels and integer torsion for abelian schemes
 
-Author: Worker 130.
-
 This module specializes the generic kernel, multiplication and torsion
 constructions to the parent's `Langlands.AbelianScheme S`. That bundle has an
 actual commutative group scheme with smooth proper structure map and

@@ -1,6 +1,6 @@
 import Langlands.ClassFieldTheory.Local.NormExistenceProof
 import Langlands.ClassFieldTheory.Local.FiniteArtinNorm
-import Langlands.ClassFieldTheory.Local.NYLL.TypeZeroNormTransferProof
+import Langlands.ClassFieldTheory.Local.UniverseZero.TypeZeroNormTransferProof
 import Langlands.Weil.Representation.ContinuityProof
 import Mathlib.RingTheory.RootsOfUnity.Basic
 
@@ -88,7 +88,7 @@ theorem geometricSymbol_norm (a : E.Carrierˣ) :
   have h := abelianizedArtinSymbol_norm F E M a⁻¹
   rw [abelianizedArtinSymbol_eq_of_comm, abelianizedArtinSymbol_eq_of_comm,
     Abelianization.map_of] at h
-  exact (NYLL.abelianization_of_injective_of_isMulCommutative h).symm
+  exact (UniverseZero.abelianization_of_injective_of_isMulCommutative h).symm
 
 /-- A base unit maps to the relative subgroup exactly when it is an actual norm. -/
 theorem comap_relativeGaloisGroup_geometricSymbol :

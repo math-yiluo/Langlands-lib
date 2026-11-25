@@ -1,7 +1,5 @@
 # Equivariant surjectivity of the flattened Jacquet quotient
 
-Author: Worker 434.
-
 `Langlands.Parabolic.flattenedJacquetQuotient.{uF,uV}` proves the exact closed
 `FlattenedJacquetQuotientStatement.{uF,uV}`. For every prime, p-adic field,
 supplied topological data, block shape, ordered refinement and complex

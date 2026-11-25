@@ -1,6 +1,6 @@
 # Semilinear matrices of bases adapted to surjections
 
-This internal unit extends the adapted-basis determinant computation to
+This module extends the adapted-basis determinant computation to
 semilinear maps over an arbitrary homomorphism of commutative rings
 `g : R → R'`. Consider linear maps `f : V → W`, `f' : V' → W'`, semilinear
 maps `F : V → V'`, `Q : W → W'` and a commutative square `f' ∘ F = Q ∘ f`.

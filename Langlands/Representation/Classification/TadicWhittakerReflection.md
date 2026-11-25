@@ -1,6 +1,6 @@
 # Whittaker nondegeneracy of actual twisted and complementary products
 
-Worker 1732. This is derived content obtained by composing the existing actual
+This is derived content obtained by composing the existing actual
 determinant twist, its functional equivalence, and the full finite-product
 nondegeneracy criterion. It adds no classification premise or literature
 assertion.

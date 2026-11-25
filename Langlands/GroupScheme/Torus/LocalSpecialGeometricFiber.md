@@ -1,7 +1,5 @@
 # Comparing local special fibres and closed geometric fibres
 
-Worker 508.
-
 This internal comparison applies to every commutative local ring `A`.
 It imposes no Henselian, Noetherian, completeness or characteristic condition.
 

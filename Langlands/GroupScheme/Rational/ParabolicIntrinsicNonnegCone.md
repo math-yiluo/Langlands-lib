@@ -1,6 +1,6 @@
 # Intrinsic nonnegative cones of actual parabolics
 
-Worker 17. This internal construction uses a supplied compatible root
+This internal construction uses a supplied compatible root
 presentation of an actual parabolic, rational Levi and split component.
 `intrinsicNonnegCone` is the nonnegative cone hull of the real images of all
 positive actual weights of that split component.

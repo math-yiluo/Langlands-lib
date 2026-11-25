@@ -1,7 +1,5 @@
 # Range-kernel exactness on the actual nondegenerate parts
 
-Authors: Worker 6 and Worker 702.
-
 `Langlands.Algebra.NondegeneratePartRangeExactnessStatement.{uA,uL,uM,uN}`
 is a closed proposition about the published original additive actions and
 intertwiners. For every nonunital ring `A` and `hA : IsIdempotented A`,
@@ -49,8 +47,8 @@ preimage `l` of `m`. Then `e • l` lies in the nondegenerate part and maps to
 immediate. The registered supplementary earlier-edition errata
 `renard-2010-corrections-complements`, SHA256
 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
-was checked at PDF1–3 and PDF18–19 by Worker 702 as well as in the parent
-source audit. Those consulted pages give no correction to this exactness
+was checked at PDF1–3 and PDF18–19, for this statement as well as in a
+broader source audit. Those consulted pages give no correction to this exactness
 argument; the older errata do not replace the governing 2026 original. The published source-discrepancy note
 `notes/renard/appendix-a-corrections.md` explains the deficient unrestricted
 abelian-subcategory criterion in the book; that criterion is not used here.
@@ -58,7 +56,10 @@ abelian-subcategory criterion in the book; that criterion is not used here.
 This exact formulation is an internal derived specification of the
 original-map conclusion in the source proof. It states no theorem and
 supplies no proof. The actual part functor's categorical preservation of
-`CategoryTheory.ShortComplex.Exact`, the inclusion's exactness, the
-nondegenerate abelian structure, adjunctions, completion and scalar
-comparisons remain separate obligations. A later proof can follow the
-source's idempotent-adjusted lift directly.
+`CategoryTheory.ShortComplex.Exact` and the inclusion's exactness (both proved
+in `NondegenerateModuleExactnessProof`) and the nondegenerate abelian structure
+(proved in `NondegenerateModuleAbelianProof`) are separate from this statement,
+as are adjunctions, completion and scalar comparisons. Its proof,
+`Langlands.Algebra.nondegeneratePartRangeExactnessStatement` in
+`NondegeneratePartRangeExactnessProof`, follows the source's
+idempotent-adjusted lift directly.

@@ -77,10 +77,10 @@ variable {k : Type u} [Field k]
 theorem hasNoHigherRoots (a : p.rootIndex) :
     RelativeRoot.HasNoHigherRoots p.inclusion (p.rootDatum.root a) := by
   let : p.rootDatum.IsReduced := p.isReduced
-  let : IsAddTorsionFree (ℚ ⊗[ℤ] characterLattice p.torus) :=
-    IsAddTorsionFree.of_module_rat _
-  let : IsAddTorsionFree (characterLattice p.torus) :=
-    p.isSplitTorus.character_toRat_injective.isAddTorsionFree toRat
+  let : HasUniqueDiv (ℚ ⊗[ℤ] characterLattice p.torus) :=
+    HasUniqueDiv.of_module_rat _
+  let : HasUniqueDiv (characterLattice p.torus) :=
+    p.isSplitTorus.character_toRat_injective.hasUniqueDiv toRat
   intro n hn
   let : n.AtLeastTwo := ⟨hn⟩
   rw [relativeRoots_eq_roots, ← p.isRootDatum.2.1]

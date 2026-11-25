@@ -12,7 +12,7 @@ universe uF uW uP
 namespace Langlands.Global.PoleComparison
 
 open Langlands.VirtualRepresentation Langlands.VirtualRepresentation.RelativeGlobal
-open Langlands.Global.CompletionPadic Langlands.ClassField.Global
+open Langlands.Global.CompletionPadic Langlands.ClassFieldTheory.Global
 open Langlands.Global.AdelicFunctoriality
 
 private theorem localWeil_unitaryDegree_eq {p : ℕ} [Fact p.Prime]

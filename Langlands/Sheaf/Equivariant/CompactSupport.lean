@@ -67,7 +67,7 @@ set_option backward.isDefEq.respectTransparency false in
 /-- Restriction of a transported section equals transport of its restriction. -/
 theorem restrict_action (g : G) (U : ActionOpens G X)
     (s : F.obj (op ActionOpens.top)) :
-    restrict F (ActionOpens.translate g U) (((sectionAction F).ρ g).hom s) =
+    restrict F (ActionOpens.translate g U) (((sectionAction F).ρ g).asHom.hom s) =
       F.map (ActionOpens.translationIso g U).inv.op (restrict F U s) := by
   let i : U ⟶ ActionOpens.top := ActionOpens.inclusionHom le_top
   let j : ActionOpens.translate g U ⟶ ActionOpens.top :=
@@ -87,7 +87,7 @@ theorem restrict_action (g : G) (U : ActionOpens G X)
 /-- A zero germ transports to a zero germ at the translated point. -/
 theorem germ_action_zero (g : G) (s : F.obj (op ActionOpens.top)) (x : X)
     (hx : (ordinary F).Γgerm (g⁻¹ • x) s = 0) :
-    (ordinary F).Γgerm x (((sectionAction F).ρ g).hom s) = 0 := by
+    (ordinary F).Γgerm x (((sectionAction F).ρ g).asHom.hom s) = 0 := by
   obtain ⟨U, hxU, hU⟩ := (germ_zero_iff F s _).1 hx
   apply (germ_zero_iff F _ x).2
   refine ⟨ActionOpens.translate g U, hxU, ?_⟩
@@ -95,7 +95,7 @@ theorem germ_action_zero (g : G) (s : F.obj (op ActionOpens.top)) (x : X)
 
 /-- The support of a transported section lies in the translated support. -/
 theorem support_action_subset (g : G) (s : F.obj (op ActionOpens.top)) :
-    Langlands.Sheaf.CompactSupport.support (ordinary F) (((sectionAction F).ρ g).hom s) ⊆
+    Langlands.Sheaf.CompactSupport.support (ordinary F) (((sectionAction F).ρ g).asHom.hom s) ⊆
       (fun x : X => g • x) '' Langlands.Sheaf.CompactSupport.support (ordinary F) s := by
   intro x hx
   refine ⟨g⁻¹ • x, ?_, smul_inv_smul g x⟩
@@ -106,7 +106,7 @@ theorem support_action_subset (g : G) (s : F.obj (op ActionOpens.top)) :
 theorem preserves_compactSupport (g : G) (s : F.obj (op ActionOpens.top))
     (hs : IsCompact (Langlands.Sheaf.CompactSupport.support (ordinary F) s)) :
     IsCompact (Langlands.Sheaf.CompactSupport.support (ordinary F)
-      (((sectionAction F).ρ g).hom s)) :=
+      (((sectionAction F).ρ g).asHom.hom s)) :=
   (hs.image (continuous_const_smul g)).of_isClosed_subset
     (Langlands.Sheaf.CompactSupport.isClosed_support _ _) (support_action_subset F g s)
 

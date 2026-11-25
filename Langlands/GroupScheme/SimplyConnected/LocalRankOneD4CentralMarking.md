@@ -1,6 +1,6 @@
 # The exact marking of every local rank-one D4 index
 
-This internal derived unit proves `localRankOneD4_central_marking`.
+This internal derived module proves `localRankOneD4_central_marking`.
 For any nonarchimedean local field `K : Type u`, it assumes an affine
 locally finite type group scheme, actual `TitsIndexData G`, simple
 connectedness, absolute almost simplicity, split rank one, and an
@@ -25,4 +25,5 @@ It does not prove that the action is nontrivial or has a globally fixed
 leaf. In particular, it does not exclude inner D4 or trialitarian local
 indices, and does not itself prove `HasRankOneOuterD4Index` or the full
 `LocalRankOneTitsIndexStatement`. Those arithmetic and full-image
-obligations remain.
+steps are not taken here; `localRankOneTitsIndex` in
+`LocalRankOneTitsIndexProof` proves the full statement.

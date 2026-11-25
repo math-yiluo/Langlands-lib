@@ -10,7 +10,7 @@ an additional hypothesis.
 Write `T = F.canonicalTopologicalData`. The first conjunct states all of the
 following for each `F`:
 
-1. `T.topology = F.canonicalTopology`, where the right side is the accepted
+1. `T.topology = F.canonicalTopology`, where the right side is the
    finite-dimensional module topology.
 2. `T.topology` is also the topology of the explicit
    `F.canonicalNormedField`.
@@ -33,7 +33,7 @@ following for each `F`:
     valuation ring, the valuative relation is discrete, and its residue
     field is finite.
 
-The remaining two conjuncts concern `rational p`, the accepted degree-one
+The remaining two conjuncts concern `rational p`, the degree-one
 example whose carrier is `Padic p`. They assert equality of the topology of
 its canonical realization with `(rationalTopologicalData p).topology`, and
 equivalence of their valuative comparisons for every pair of elements.
@@ -89,7 +89,7 @@ formalization choices.
   `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`,
   file `C:/Central-Library/Serre--Local Fields--1979.pdf`.
 
-Worker 26 read these original passages and checked both source hashes.
+These original passages were read and both source hashes checked.
 The norm and relation clauses record the chosen Mathlib implementation of
 prolongation, including zero arguments in all comparisons. The topology
 clauses identify its topology with the canonical module topology. Completeness,
@@ -99,43 +99,28 @@ clauses express compatibility with the existing base example.
 
 ## Dependencies and status
 
-The sole direct import is `Langlands.LocalField.Canonical`. The constructor
-is accepted definition artifact `c342ec21-e5ee-4ba4-aec6-b4c1b1e2b629`,
-version 1, published at commit
-`9db46907db3181b0c1dfd287b8ab2f1f02054cab` with independent receipt
-`24df660d770545809d3f2ad0d607c9bb` and effective snapshot
-`bdbf7a14a6a5d5800958d1d758d3a90273f129253b41a85d6bca034255b7abb9`.
-Its accepted Lean and Markdown hashes are respectively
+The sole direct import is `Langlands.LocalField.Canonical`, the constructor.
+The Lean and Markdown hashes of the version used are respectively
 `e702bb7808fc344bda47a3093d9438d5cda71dcb165be7110be7b393f61d7c48`
 and `94a7a93a2ac19a6c106542cd76530caf8244892f29b98eea8755b031ec7e872d`.
 
-Its underlying interface is accepted definition
-`ac4cb7d5-5dd1-44b6-9d56-f0ec6c70bce0`, version 1,
-`Langlands.LocalField.Definitions`, publication commit
-`1fe07fd211e579cc430734fd96ce959aadb7663d`, independent receipt
-`203bba66-269f-46f4-984c-71531a4963c2`, and effective snapshot
-`7dd12688f9e4cc615cd460940f0a82295c62729f3d59bb86304e3627c6831512`.
-The accepted Lean and Markdown hashes are respectively
+Its underlying interface is
+`Langlands.LocalField.Definitions`.
+The Lean and Markdown hashes of the version used are respectively
 `8d9cc8aa128861b13b4f96d38bf95be46844d2eaad28aa3cbb654b070ee0e517`
 and `6cfb939cf42a71a81fa648b77bd4bab1076bffe0d62519181f7dc7db742124bf`.
-Both exact versions were freshly verified as accepted, published, and current,
-with no missing or changed files or unavailable dependencies. The local pairs
-match these effective published hashes.
+The local pairs matched these published hashes, with no missing or changed
+files or unavailable dependencies.
 
-Environment `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, version 1, pins
+The pinned environment is
 Lean 4.34.0 at `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b` and Mathlib
 at `5ed2965256430c3649e86755f9576b54eca72435`.
 
-Worker 26 authored this proposition and its Markdown. The proposition and a
+The proposition and a
 complete proof compile without errors or warnings in the pinned native
-environment. Development diagnostic
-`9f2f1577-2ae5-4c0e-956f-b5a1446b310f` compiled the three dependency-first
+environment. A development diagnostic compiled the three dependency-first
 modules with no warnings or errors and confirmed that the declaration returns
-`Prop`, with universe parameter `u` and checked target fingerprint
-`31cf58218ce1e184e0f1463a4413ee1703b7ae569e191bc4a046c0896b001df8`.
-The checked Lean sources and accepted dependency bytes are unchanged.
-
-This is development evidence, not proof acceptance. The target requires its
-own independent semantic review and publication. A proof contribution must
-then be bound to this target's exact accepted version and pass registered
-independent proof checking and independent semantic review before publication.
+`Prop`, with universe parameter `u`.
+The checked Lean sources and dependency bytes are unchanged. The proof is
+`Langlands.PadicField.canonicalCompatibility` in
+`Langlands.LocalField.CanonicalProof`.

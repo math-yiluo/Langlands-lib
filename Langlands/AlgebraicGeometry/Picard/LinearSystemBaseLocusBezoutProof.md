@@ -19,7 +19,8 @@ points of `B` where `s` vanishes is at most
 All helper declarations are in namespace
 `Langlands.AlgebraicGeometry.Picard.LinearSystemBaseLocusBezout`. The module sets
 `backward.isDefEq.respectTransparency false`, like the Library modules it builds
-on. It declares local instances for the quasi-coherence of the structure module,
+on. It declares local instances for the quasi-coherence of the structure module
+and the structure sheaf (these two private to the module),
 of tensor powers of a line bundle and of the cokernel of a section map, taken
 from the published line-bundle and cokernel lemmas.
 

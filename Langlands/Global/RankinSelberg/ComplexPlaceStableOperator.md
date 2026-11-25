@@ -1,9 +1,9 @@
 # Subspaces stable under the commutant of the place actions at a complex place
 
 Module `Langlands.Global.RankinSelberg.ComplexPlaceStableOperator`, namespace
-`Langlands.Automorphic.OperatorRealization`. Worker 5665 wrote it for Task 7399 (complex-place
-Rankin–Selberg functional equation), as a step towards the bridge premise of the conditional
-reduction `complexPlaceFunctionalEquationReduction`. Provenance: internal. The proofs copy
+`Langlands.Automorphic.OperatorRealization`. It is a step towards the bridge premise of the
+conditional reduction `complexPlaceFunctionalEquationReduction` (complex-place Rankin–Selberg
+functional equation). Provenance: internal. The proofs copy
 the Library's proof that the free set at a complex place is stable under the operator algebra
 (`OperatorRealization.complexFreeSet_operator` and the lemmas before it, module
 `Langlands.Automorphic.PlaceComponentRealization`), with the free set replaced by an

@@ -1,9 +1,7 @@
 # KP Proposition 13.7.4 (1): translates meeting a deeper lattice are degenerate
 
-Author: Worker 3557.
-
-This module belongs to the Kaletha–Prasad Bruhat–Tits program (task
-`f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703`). It states part (1) of KP
+This module belongs to the Library's Kaletha–Prasad Bruhat–Tits development.
+It states part (1) of KP
 Proposition 13.7.4 for the Library's supplied Lie filtrations and for points
 of the apartment. Let `X ∈ 𝔤_{x,r}`. If the translate `Ξ = X + 𝔤_{x,r+}` in
 the Lie algebra meets `𝔤_{y,s}` for some `s > r`, then `Ξ` contains a
@@ -174,7 +172,7 @@ the apartment, with the Library's supplied Lie filtration in place of KP's
 lattices, and with KP's coset read as a translate in `Lie(G)` (a coset of
 `𝔤_{x,r}/𝔤_{x,r+}` for periodic `L`). The name
 `DegenerateCosetOfDeeperIntersectionStatement` is internal. The module uses
-Worker 13's `LieFiltrationData`, `lieFiltrationReal` and
+`LieFiltrationData`, `lieFiltrationReal` and
 `lieFiltrationPlusReal` (modules `KPLieFiltration` and
 `KPLieFiltrationDual`), and `IsDegenerateLieCoset` (module
 `KPNilpotentCoset`).

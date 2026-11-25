@@ -1,10 +1,9 @@
 # Actual split-component embeddings and full-lattice central directions
 
-Authors: Worker 55 and Worker 33. The two private auxiliary proofs follow the
-reduction route in Worker 33's shared draft
-`Langlands/GroupScheme/Rational/CharacterRestrictionReduction` for Task 3798
-(`6d0882ee-6e45-410c-b5a1-86d4544a4ffb`). The split-torus detection step reuses
-that draft's code.
+The two private auxiliary proofs follow the
+reduction route in
+`Langlands/GroupScheme/Rational/CharacterRestrictionReduction`. The split-torus
+detection step reuses that module's code.
 
 `Langlands.GroupScheme.relativeSplitCentralDirections` proves the exact Library
 proposition `RelativeSplitCentralDirectionsStatement.{u}` from
@@ -71,9 +70,9 @@ Finite index is the published `IsSplitComponent.finiteIndex_range_characterRestr
 (`Rational/CharacterRestrictionFiniteIndex`).
 
 The two auxiliary theorems are `private`. The public proofs of
-`CentralSplitTorusCharacterStatement` and `CharacterRestrictionStatement` belong to
-their owning tasks: Task 3873 (`4f432abe-c26e-45a1-97de-0f87624ccf5b`) and
-Task 3798.
+`CentralSplitTorusCharacterStatement` and `CharacterRestrictionStatement` are
+`centralSplitTorusCharacter` (`Rational/CentralSplitTorusCharacterProof`) and
+`characterRestriction` (`Rational/CharacterRestrictionProof`).
 
 ## Provenance and scope
 

@@ -1,9 +1,9 @@
 # Coefficient transport of canonical simple-reflection points
 
-This internal unit proves that the canonical simple-reflection points constructed
+This internal module proves that the canonical simple-reflection points constructed
 from normalized root maps inherit compatibility of the actual root characters
 and normalized unit points. The field extension and universe are arbitrary.
-The compatibility premises are explicit; this unit does not construct a
+The compatibility premises are explicit; this module does not construct a
 compatible pinning or compatible normalized root maps.
 
 For two actual acting tori related by an isomorphism and with the same
@@ -45,9 +45,11 @@ The provenance is an internal deduction from actual torus/root-subgroup
 transport, coefficient transport of ordered opposite pairs, and uniqueness
 of the canonical opposite pair. No new original-literature assertion is
 introduced. Neither compatibility of arbitrary supplied normalized maps nor
-existence of compatible choices is inferred. The parent quotient theorem,
-cross-section descent, exceptional even-type-A geometry, and rational lifting
-remain separate obligations.
+existence of compatible choices is inferred. The quasi-split quotient theorem
+`QuasiSplitSteinbergQuotientStatement` that this module serves, cross-section
+descent, exceptional even-type-A geometry, and rational lifting remain separate
+obligations; the Library proves that theorem as `quasiSplitSteinbergQuotient`
+(`Rational.QuasiSplitSteinbergQuotient`).
 
-Integration gives the local instances used here module-specific names to permit
-joint imports. Their types, values, and local scopes are unchanged.
+The local instances used here carry module-specific names to permit joint
+imports. The names change none of their types, values, or local scopes.

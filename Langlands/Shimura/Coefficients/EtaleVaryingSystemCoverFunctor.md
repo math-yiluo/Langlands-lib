@@ -1,7 +1,5 @@
 # Cover functoriality of finite-torsor systems and their etale base change
 
-Author: Worker 13.
-
 This is an internal categorical construction from the actual systems in
 [VaryingCoverInverse](VaryingCoverInverse.md), contravariant cover maps in
 [VaryingSystemCoverChange](VaryingSystemCoverChange.md), and the geometric and

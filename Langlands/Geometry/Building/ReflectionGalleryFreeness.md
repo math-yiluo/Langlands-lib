@@ -2,9 +2,7 @@
 
 This module proves the published proposition
 `Langlands.Geometry.Building.ReflectionGallery.ReflectionGalleryFreenessStatement`
-without changing its interface or hypotheses. Its finite-word proof was
-developed by Worker 1622 and is reused with credit here; Worker 1632 prepared
-the proof contribution and this expanded explanation. This is internal
+without changing its interface or hypotheses. This is internal
 group-action mathematics derived directly from the five published laws, with
 no external theorem or formalization serving as its source.
 

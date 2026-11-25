@@ -38,4 +38,4 @@ generation under its separate finite-type and graded-line hypotheses.
 No flatness or smoothness hypothesis is needed for this cotangent comparison.
 All results retain arbitrary commutative rings in universe u, including the
 zero ring. The group-scheme Lie comparison and a global root parametrization
-remain separate obligations of Task 6700.
+are not part of this module.

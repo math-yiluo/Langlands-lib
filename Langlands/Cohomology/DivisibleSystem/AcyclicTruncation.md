@@ -1,25 +1,25 @@
 # Acyclic truncated resolutions of ℓ-divisible systems (Harris 1999, Lemma 2.2 bis and (2.3))
 
-Author: Worker 26. This is a generic module. It completes Worker 61's published truncated
+This is a generic module. It completes the published truncated
 resolution systems with their augmentations, their `Φ`-acyclicity, and Harris's
 identification (2.3) of the cohomology of the section complexes with right derived functors.
 It uses the following published modules:
 
-- `Langlands.Cohomology.DivisibleSystem` (Worker 61): `DivisibleSystem`, `obj`,
+- `Langlands.Cohomology.DivisibleSystem`: `DivisibleSystem`, `obj`,
   `projection`, `shortExact`, `isZero_obj_zero` and `shortComplex_exact_congr`.
-- `Langlands.Cohomology.DivisibleSystem.Coaugmented` (Worker 61): `residualSystem`,
+- `Langlands.Cohomology.DivisibleSystem.Coaugmented`: `residualSystem`,
   `termSystem`, `residualInclusion`, `mono_residualInclusion_tower_app`,
   `residual_shortExact`, `residualInclusion_termDifferential_tower_app` and
   `residualInclusion_termDifferential_exact`.
-- `Langlands.Cohomology.DivisibleSystem.Resolution` (Worker 61): `resolutionSystem`,
+- `Langlands.Cohomology.DivisibleSystem.Resolution`: `resolutionSystem`,
   `resolutionSystem_obj_d` and `resolutionSystem_obj_exactAt`.
-- `Langlands.Cohomology.DivisibleSystem.Truncation` (Worker 61): `truncatedResolutionSystem`,
+- `Langlands.Cohomology.DivisibleSystem.Truncation`: `truncatedResolutionSystem`,
   `truncatedResolutionHom` (with its published instance `truncatedResolutionHom_quasiIso`),
   `isZero_truncatedResolutionSystem_obj_X`, `truncationTerm`, `truncationTerm_of_le`,
   `truncationTerm_of_eq`, `isZero_truncationTerm_tower_obj`,
   `isIso_truncationInclusion_tower_app` and `mono_truncationInclusion_tower_app`.
-- `Langlands.Cohomology.DivisibleSystem.LeftExact` (Worker 61): `epi_map_projection_of_succ`.
-- `Langlands.Cohomology.DivisibleSystem.Sections` (Worker 61):
+- `Langlands.Cohomology.DivisibleSystem.LeftExact`: `epi_map_projection_of_succ`.
+- `Langlands.Cohomology.DivisibleSystem.Sections`:
   `truncatedResolutionSectionsSystem`.
 - `Langlands.Cohomology.RightDerivedSequence`: `DerivedPlus.rightDerived_exact₃` and
   `DerivedPlus.shortExact_map_of_isZero_rightDerived_one` (the long exact sequence of the
@@ -48,7 +48,7 @@ system in the published sense: levels `T m`, inclusions `T m' ⟶ T m`, projecti
 `T m ⟶ T (m - m')`, short exact sequences `0 ⟶ T m' ⟶ T m ⟶ T (m - m') ⟶ 0`, and `T 0`
 zero. `D : ℕ` is the truncation degree.
 
-Worker 61's published constructions give the residual systems `R q` (`R 0 = T`,
+The published constructions give the residual systems `R q` (`R 0 = T`,
 `R (q + 1) = coker (R q ⟶ F(R q))`), the term systems `F^q = F(R q)`, the resolution system
 `F^•` whose level `m` is the complex `F^0_m ⟶ F^1_m ⟶ ⋯`, and Harris's truncation
 `G^• = τ_{≤ D+1}(F^•)` (`truncatedResolutionSystem F η T D`). `G^q = F^q` for `q ≤ D`,
@@ -171,7 +171,7 @@ Harris checks surjectivity on `G^{D+1}` differently, from the surjectivity of
 ## Provenance and scope
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)* (1999), §2, read in
-the original by Worker 26 (checked against the page images).
+the original (checked against the page images).
 
 Printed p.303 = PDF p.5:
 
@@ -213,7 +213,7 @@ Fact 2 enter only as the hypotheses `hF` and `hT`, and only for `Φ` itself. Har
 Fact 2 for every étale `U → U(ẽ)` and uses it for the sections over each such `U`. Here
 there is a single functor `Φ`, and the divisible-system property is stated for the section
 complexes `Φ(G^•_m)` (`acyclicTruncatedSectionsSystem`), not for the sheaves `G^q`, whose
-divisible-system structure is Worker 61's published `truncatedResolutionSystem`.
+divisible-system structure is the published `truncatedResolutionSystem`.
 
 Not constructed or proved here: Harris's sheaves, the functor `F` and its exactness (Fact 3);
 the acyclicity of `F(T)` (Berkovich); Fact 2 itself; the constant system `ℤ/ℓ^mℤ`; the

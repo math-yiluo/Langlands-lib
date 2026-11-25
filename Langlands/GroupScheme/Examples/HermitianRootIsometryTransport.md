@@ -1,6 +1,6 @@
 # Isometry transport of actual Hermitian matrix groups
 
-This derived internal unit uses an invertible matrix `P` satisfying the actual
+This module uses an invertible matrix `P` satisfying the actual
 Gram congruence `conjugateTranspose c P * gram J * P = gram H`. Conjugation
 `g ↦ P * g * P⁻¹` identifies `specialUnitarySubgroup H` with
 `specialUnitarySubgroup J`. The inverse is conjugation by `P⁻¹`.
@@ -23,7 +23,7 @@ using the published `PreservesForm`, `specialUnitarySubgroup` and
 `specialUnitaryMap` definitions. No classification or local arithmetic result
 is assumed.
 
-This unit constructs transport between matrix groups for a supplied invertible
+This module constructs transport between matrix groups for a supplied invertible
 Gram congruence. It does not construct that congruence from an arbitrary
 Hermitian pairing, extend this transport to a group-scheme isomorphism, prove
 existence of a Hermitian presentation of an arbitrary group, or prove the local

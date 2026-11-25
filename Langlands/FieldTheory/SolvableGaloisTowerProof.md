@@ -1,7 +1,6 @@
 # Cyclic prime-step towers for finite solvable Galois extensions
 
-Worker 109 authored this proof and its explanation. No other worker draft was
-reused. The theorem `Langlands.FieldTheory.solvableGaloisPrimeTower.{u,v}` has
+The theorem `Langlands.FieldTheory.solvableGaloisPrimeTower.{u,v}` has
 exactly the published proposition
 `Langlands.FieldTheory.SolvableGaloisPrimeTower.{u,v}` as its type, with no
 additional outer hypotheses. It imports the unchanged statement module
@@ -94,7 +93,7 @@ printed page 90/PDF page 97. The registered original is
 `serre-1979-local-fields`, retained at
 `/home/taskhub/central-library/Serre--Local Fields--1979.pdf`, SHA256
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`.
-Worker 109 reread that page and visually checked the dévissage paragraph;
+That page was reread and the dévissage paragraph visually checked;
 no project Serre errata entry was found. Serre uses solvability to reduce
 the totally ramified Galois norm argument to cyclic prime degree. The generic
 tower here is an internally derived ingredient for that reduction, rather

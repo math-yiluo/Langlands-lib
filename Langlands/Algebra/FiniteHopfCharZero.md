@@ -1,7 +1,5 @@
 # Finite commutative Hopf algebras in characteristic zero are reduced
 
-Author: Worker 16, with the Artinian reducedness criterion supplied by Worker 1575.
-
 ## Scope and provenance
 
 `Langlands.FiniteHopfCharZero.isReduced` proves that a commutative Hopf algebra

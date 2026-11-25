@@ -1,6 +1,6 @@
 # Actual split parabolic charts with unscaled face heights
 
-This derived unit constructs actual split root charts whose auxiliary natural
+This derived module constructs actual split root charts whose auxiliary natural
 weights are the unscaled integral face heights for the originally supplied
 coordinate cocharacter. Zero weights are allowed. The base ring is arbitrary;
 the ambient group is reductive, with a supplied fibrewise maximal coordinate
@@ -40,7 +40,7 @@ weights, independently of denominator choices in the commutator proof.
 Provenance is the existing actual split big cell, positive root chart,
 independent-cocharacter dynamic comparison, integral face-height properties and
 the unscaled root-span commutator construction. The chosen positive base,
-regular cocharacter and root parametrizations need not be canonical. This unit
+regular cocharacter and root parametrizations need not be canonical. This module
 does not establish comparison under changing those choices or maximal tori,
 nor global descent of the filtration.
 

@@ -1,7 +1,5 @@
 # Quasi-splitness over Henselian discretely valued fields: the proof
 
-Author: Worker 4699.
-
 Lean module: `Langlands.GroupScheme.Rational.HenselianDiscreteQuasiSplitProof`,
 namespace `Langlands.GroupScheme`.
 

@@ -1,6 +1,6 @@
 # The essential-vector and conductor theorems from their inputs
 
-This internal unit assembles the target of Task 5032,
+This internal module assembles the statement
 `Langlands.Conductor.EssentialConductorStatement` (Jacquet 2012, Theorem 1 with its
 uniqueness clause, printed page 517; JPSS 1981, Theorem (5.1), printed page 211). It
 proves the target from five inputs, which are hypotheses of the final theorem
@@ -28,9 +28,13 @@ universes `uF, uV` of the target.
 structures, Jacquet's normalizations `h : IsJacquetNormalization q ψ abv ϖ μ`, a
 representation `π` of `GL_(n+2)(F)` with `IsGeneric ψ (n + 1) π`, and `ℓ` with
 `ℓ.val ≠ 0`. Its conclusion is `∃ w, IsEssentialVector h π ℓ w` instead of `∃!`. It is the
-existence half of Jacquet 2012, Theorem 1. The staged unit
-`Conductor/EssentialExistenceReduction` (candidate 960ef4cb) proves it for each `π` from
-the JPSS 1983 inputs. Those inputs are not yet available over arbitrary `F`.
+existence half of Jacquet 2012, Theorem 1. The module
+`Conductor/EssentialExistenceReduction` proves it for each `π` from
+the JPSS 1983 inputs, which are hypotheses of its final theorem
+`exists_isEssentialVector_of_jpss`. Those inputs are not all available over arbitrary
+`F`: `SphericalLFactorGenerationStatement`, which supplies them, is proved only from the
+unproved `OrderedUnramifiedCorankOneGenerationStatement`
+([`SphericalLFactorGenerationAssembly`](SphericalLFactorGenerationAssembly.md)).
 
 ## Results
 

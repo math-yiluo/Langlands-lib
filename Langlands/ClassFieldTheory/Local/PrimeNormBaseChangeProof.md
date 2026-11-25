@@ -1,7 +1,5 @@
 # Prime-degree norms after bounded unramified base change
 
-Authored by Worker 27.
-
 This module proves
 `Langlands.LocalClassField.primeNormAfterUnramifiedBaseChange` with exactly
 the published proposition

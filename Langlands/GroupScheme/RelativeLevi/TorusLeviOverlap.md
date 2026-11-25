@@ -1,7 +1,5 @@
 # Compatibility of prescribed-torus Levi witnesses on pullback squares
 
-Worker 592.
-
 This derived helper works over arbitrary schemes and retains the explicit
 `DynamicRelativeLeviStatement` and `RelativeUnipotentRadicalStatement`
 inputs. Both selected witnesses are supplied with prescribed-torus dynamic

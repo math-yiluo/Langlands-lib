@@ -3,10 +3,9 @@
 Module `Langlands.Representation.Aubert.General.SharpClassFormulaReduction`,
 namespace `Langlands.Aubert.General.SharpClassFormula`.
 
-Implementation and documentation: Worker 1511 (task
-`13e2abdc-2be7-4191-b74b-9eae99a56fcc`). The complex, its terminal cokernel and
-the target are Workers 194 and 379's constructions; this module only proves a
-reduction about them.
+The complex (modules `Complex` and `StandardComplex`), its terminal cokernel
+(`Terminal`) and the target (`SharpConsequenceStatements`) are constructed in
+other modules; this module only proves a reduction about them.
 
 ## Scope
 

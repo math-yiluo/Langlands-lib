@@ -1,6 +1,6 @@
 # Frobenius descent of actual origin-invariant coordinates
 
-This is a derived supporting construction by Worker 1369. It connects the
+This is a derived supporting construction. It connects the
 actual arbitrary-test origin condition to the polynomial expansion
 characterization in `Langlands.Algebra.PolynomialFrobeniusDescent`. It uses
 no new assertion from external literature.
@@ -64,7 +64,7 @@ zero, exponential characteristic one, and zero-dimensional opposite
 unipotent coordinates need no exceptions. The small-variable restriction
 in the generic adapter includes every finite dynamic coordinate set.
 
-This unit does not exclude the resulting nonconstant expanded kernel
+This module does not exclude the resulting nonconstant expanded kernel
 vector, prove injectivity at a fixed height, prove the whole-space
 Steinberg dimension bound, construct the remaining structural or
 highest-weight data, or prove `SteinbergBigCellStatement`.

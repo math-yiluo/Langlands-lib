@@ -227,7 +227,7 @@ theorem isNear_of_mem (g : memberStabilizer K (testMember τ))
 end Test
 
 theorem omegaAction_ρAut_hom (γ : Matrix.GeneralLinearGroup (Fin (d + 1)) F) :
-    ((omegaAction F K d).ρAut γ).hom = localizationFunctor.map (saturatedAction K γ) := rfl
+    ((omegaAction F K d).ρAut γ).asIso.hom = localizationFunctor.map (saturatedAction K γ) := rfl
 
 /-- Membership of `γ = g⁻¹` in the inverse image of Berkovich's set `G_τ(Ω)`. -/
 theorem mem_preimage_nearIdentity_of_mem (τ : TestTriple (omegaSaturated F K d))

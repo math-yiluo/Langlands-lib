@@ -1,7 +1,5 @@
 # Complete reducibility for Lie algebras with central radical
 
-Author: Worker 1429.
-
 This module proves a form of Weyl's complete reducibility theorem in the
 namespace `Langlands.Algebra.WeylCompleteReducibility`. Throughout, `k` is a
 field of characteristic zero (no algebraic closure is assumed), `L` is a

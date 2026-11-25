@@ -1,7 +1,5 @@
 # Rationality of the Weil restriction of `𝔾_m` along a finite algebra over a field
 
-Worker 91.
-
 This helper module proves that for every field `k` and every commutative `k`-algebra `B` that
 is finite over `k`, the Weil restriction `(𝔾_m)_{B/k}` is birational over `k` to a
 finite-dimensional affine space. No separability, field or étaleness hypothesis on `B` is

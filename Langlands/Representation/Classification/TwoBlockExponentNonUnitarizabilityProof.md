@@ -1,7 +1,5 @@
 # Non-unitarizability of `ν^s ρ × ν^(-s) ρ` for `s < -k/2`
 
-Author: Worker 235 (Lean implementation and proof documentation).
-
 `Langlands.Classification.twoBlockLargeExponentNonUnitarizable` proves exactly the
 published proposition
 `Langlands.Classification.TwoBlockLargeExponentNonUnitarizable.{uF,uV} F T`
@@ -93,8 +91,7 @@ with `f_e(q k') = σ(q) e`. Suppose `A ∈ P` satisfies `σ(A) e = c e`, and eve
   Weak contraction is closed under products (`IsWeaklyContracting.mul`, by
   induction from `isWeaklyContracting_one`), so `a^m` is weakly contracting. The
   lower-part condition of the factorization then puts `A^{-m} l⁻¹ A^m` in the
-  lower Iwahori part of `K`. This is the reordering requested in the task's
-  suggested route.
+  lower Iwahori part of `K`.
 - `not_isUnitarizable_normalizedParabolicInduced`. Let `τ` be an admissible
   representation of the block Levi, `a` weakly contracting, and `e` a vector with
   `ℓ(e) ≠ 0` such that the Levi element `blockScalarLevi a` acts on `e` by `c`
@@ -161,9 +158,8 @@ Fix `k`, `hk`, `ρ`, `s < -k/2`, and put `B = Shahidi.twoBlocks k k hk hk`,
    representation is by definition the normalized parabolic induction of
    `B.blockTensor σ`.
 
-In the language of the suggested route, `μ(π(a^n) f_e) = ν(K') c^n ℓ(e)` with
-`|c| = q^{-k(k/2+s)}`. This matches step 4 of the route up to the positive
-factor `ν(K')`.
+In other words, `μ(π(a^n) f_e) = ν(K') c^n ℓ(e)` with
+`|c| = q^{-k(k/2+s)}`.
 
 ## Provenance
 
@@ -173,8 +169,7 @@ sketch there says that the matrix coefficients of `π_s` can be computed
 directly and that "for large |s| there exists a non-bounded matrix coefficient
 of π_s. Therefore such π_s cannot be unitary". The PDF text layer garbles the
 Greek letters of this passage. The source gives no
-computation, so the computation above is an internal derivation following the
-route in the task contract. It is not a verbatim reproduction of a published
+computation, so the computation above is an internal derivation. It is not a verbatim reproduction of a published
 proof. Source: `zelevinsky-1980-induced-ii`, retained at
 `/home/taskhub/central-library/Zelevinsky--Induced representations of reductive p-adic groups II, irreducible representations of GL(n)--1980.pdf`,
 SHA-256 `663c79f2ee236626385d242d83107410c1a3291ba5584d4b8abee9cf8af428ac`
@@ -202,10 +197,10 @@ module is imported by the target statement itself. It defines the propositions
 `TwoSupercuspidalAdjacentProductComposition` and `...Jacquet`; this proof
 neither states nor uses them.
 
-**Forbidden modules and names.** No module in the closure is a segment,
-multisegment, ordered, tempered-block, square-integrable,
+**Excluded modules and names.** No module in the closure is one of the
+excluded segment, multisegment, ordered, tempered-block, square-integrable,
 regular-exhaustion, product-irreducibility, segment Jacquet-formula, or
-adjacent-reducibility module of the forbidden tasks. No module mentions
+adjacent-reducibility modules. No module mentions
 `SegmentSpecialEssentialSquareIntegrability`,
 `SquareIntegrableLanglandsClassification`, `GenericSegmentProductUniqueness`,
 `OrderedMultisegmentSocleExistence`, `MultisegmentSocleExhaustion`,
@@ -219,7 +214,7 @@ adjacent-reducibility module of the forbidden tasks. No module mentions
 - the Riesz representation of smooth functionals for an admissible
   representation with an invariant positive form;
 - admissibility of irreducible smooth representations of `GL_r(F)` (the
-  cuspidal embedding theorem, as suggested by the task);
+  cuspidal embedding theorem);
 - the unitary central character of an irreducible admissible unitarizable
   representation;
 - admissibility of external tensor products and of normalized parabolic
@@ -230,7 +225,8 @@ adjacent-reducibility module of the forbidden tasks. No module mentions
 No derivative formula (Ze80 §3.5 or §9.6, BZ77), segment product irreducibility
 criterion (Ze80 4.2 or 9.7), square-integrability result (Ze80 9.3), or
 classification or exhaustion theorem is used. The proof does not depend on the
-adjacent reducibility task `0988a3e0` or its target.
+adjacent reducibility statement `TwoSupercuspidalAdjacentProductReducible` or
+its proof.
 
 ## Axioms
 

@@ -1,7 +1,5 @@
 # Unipotent bounds from dominant orbits in pseudo-reductive groups
 
-Authors: Worker 1549, Worker 1547, and Worker 317.
-
 This internal prerequisite works over an algebraically closed field in universe
 `u`, in every characteristic. It derives the unipotent dominant-orbit and
 homogeneous-curve bounds from pseudo-reductivity and a solvable closed
@@ -55,7 +53,8 @@ quotient and noncontainment hypotheses. The prescribed-Borel application
 and apply `curveUnipotentDataOfPseudoReductive`.
 [Rank-one curve application](../Reductive/RankOneCurvePositiveRootsProof.lean)
 
-The independent rank-one central-cover argument in Task 7586 applies
+The independent rank-one central-cover argument (the proof of
+`RankOneCentralCoverStatement`, through `Reductive.RankOneFlagCrux`) applies
 `curveUnipotentDataOfPseudoReductive` to an ordinary flag quotient `G/B`.
 Białynicki–Birula limits, the classification of torus-fixed points and
 Hartogs extension give the dimension bound in that argument, which also
@@ -64,9 +63,6 @@ resulting intrinsic tangent bound and the disjoint root-weight spaces.
 
 The proofs adapt the existing Library orbit and dynamic-curve constructions,
 using the new normal-closure unipotence theorem in place of their structural
-torus premise. Worker 317 proposed the original normality and action-kernel
-route; Worker 1547 implemented the existing stabilizer and curve constructions;
-Worker 1549 supplied the diagonal-kernel step and these consumers. This is
-derived internal content. Actual quotient existence, the curve dimension bound,
+torus premise. This is derived internal content. Actual quotient existence, the curve dimension bound,
 and the required dynamic noncontainment are supplied when applying the curve
 results.

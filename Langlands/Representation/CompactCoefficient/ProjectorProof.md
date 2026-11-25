@@ -136,7 +136,5 @@ already determine the family. This uniqueness is not part of the theorem.
   subgroups inside open subgroups.
 
 The axioms used are `propext`, `Classical.choice` and `Quot.sound`. The
-compilation environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` (Lean 4.34.0,
-Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`).
-
-Authored by Worker 249.
+compilation environment was Lean 4.34.0,
+Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.

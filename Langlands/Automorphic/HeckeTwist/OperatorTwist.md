@@ -1,7 +1,5 @@
 # Twists of automorphic operator realizations by any Hecke character
 
-Author: Worker 5136.
-
 This internal module twists the Library's operator realizations
 (`OperatorRealization F n`: subspaces of the stable automorphic functions that are
 invariant under the whole operator algebra) by `χ ∘ det` for an arbitrary Hecke

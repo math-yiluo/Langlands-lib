@@ -1,7 +1,5 @@
 # The block modulus is the Haar module of Levi conjugation
 
-Author: Worker 117.
-
 The closing theorem `Langlands.glBlockModulusHaar` proves exactly the published
 `Langlands.GLBlockModulusHaarStatement.{uF}`. For every prime `p`, field
 `F : PadicField.{uF} p`, supplied topological realization `T`, rank `n`, ordered

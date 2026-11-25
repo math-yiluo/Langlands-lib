@@ -1,6 +1,6 @@
 # Actual characters and finiteness for arbitrary covariance weights
 
-This derived unit works with arbitrary affine group schemes `G` and `H` over a
+This derived module works with arbitrary affine group schemes `G` and `H` over a
 field, an actual group morphism `i : H ⟶ G`, and an arbitrary coordinate `χ` of
 `H`. It does not initially assume that `χ` is a character.
 
@@ -43,5 +43,5 @@ All constructions and proofs are derived from the Library's actual coordinate
 coalgebra, right-contraction stability, normalized-character recovery and
 proper-quotient finiteness, together with elementary vector-space duality and
 character extensionality. There is no external literature assertion in this
-unit. It does not prove a Steinberg dimension formula, irreducibility of entire
+module. It does not prove a Steinberg dimension formula, irreducibility of entire
 covariance spaces, or the universal `SteinbergBigCellStatement`.

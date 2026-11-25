@@ -13,19 +13,19 @@ K-algebra, and `iota : L →ₐ[K] D` is a supplied embedding of a field L. Writ
 `SpecialAtlas`: the actual order is `IntegerRing K D`, the coordinate type is
 `Fin d`, and the atlas supplies the full-degree unramified integer-subfield
 condition and distinct geometric tangent characters. Existence of that
-subfield and specialization to invariant 1/d remain separate obligations.
+subfield and specialization to invariant 1/d are not proved here.
 
 R and S are arbitrary commutative O_K-algebras in the same universe v;
 no flatness or injectivity is required of f. Principal covers may be infinite.
 Coefficient tests have universe v and complete compatible families have
 universe v+1. The geometric tangent condition has exactly the algebraically
 closed test-field universe `max u v` of `SpecialAtlas`; L has its independent
-universe s. Formal maps in this unit use equal principal-generator sets.
+universe s. Formal maps in this module use equal principal-generator sets.
 
-The unit derives its constructions from `SpecialAtlasBaseChange`,
+The module derives its constructions from `SpecialAtlasBaseChange`,
 `AtlasAlgebraTransport`, `AtlasBaseChangeAlong` and
 `AtlasOrderBaseChangeAlong`. The specialness and height notions are the
-existing ones; this unit makes no new translation of an original-literature
+existing ones; this module makes no new translation of an original-literature
 assertion. Equality elimination and the previously constructed coefficient
 extension give all the results below.
 

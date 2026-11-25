@@ -1,7 +1,5 @@
 # The full geometric radical theorem for dynamic parabolics
 
-Author: Worker 1281.
-
 `Langlands.GroupScheme.dynamicGeometricUnipotentRadical` proves exactly
 `Langlands.GroupScheme.DynamicGeometricUnipotentRadicalStatement.{u}` for
 arbitrary universe `u`. For every field `k`, connected reductive group
@@ -38,6 +36,5 @@ target and its imported definitions are unchanged. The imported reduction
 and centralizer proof pairs explain their implemented arguments and
 provenance; this final application adds no external structural assertion
 or citation. Representability, smoothness, connectedness and centralizer
-reductivity are reused from their published modules, which retain their
-own authorship. General dynamic parabolicity remains independently owned
-and is not required by this composition.
+reductivity are reused from their published modules. General dynamic
+parabolicity is a separate result and is not required by this composition.

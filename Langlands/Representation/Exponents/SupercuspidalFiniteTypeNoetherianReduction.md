@@ -4,7 +4,7 @@ Module `Langlands.Representation.Exponents.SupercuspidalFiniteTypeNoetherianRedu
 
 ## Purpose and scope
 
-Worker 1582's reduction `smoothRepNoetherianCategory_of_inputs` (module
+The reduction `smoothRepNoetherianCategory_of_inputs` (module
 `Exponents/SmoothRepNoetherianReduction`) derives the VI.7.5 Proposition
 (`SmoothRepNoetherianCategoryStatement`) from four inputs. One of them is
 `SupercuspidalFiniteTypeNoetherianStatement`: for every connected reductive `G` over a
@@ -168,6 +168,6 @@ argument of the published
 `Aubert.General.JacquetCommonConstituent.exists_irreducible_quotient_of_moduleFinite`, so
 that the heavier module need not be imported.
 
-Inputs remaining open for an unconditional proof: the seven premises of
+Inputs of an unconditional proof by this route: the seven premises of
 `supercuspidalFiniteTypeNoetherian_of_inputs`, plus the inputs of
 `smoothRepNoetherianCategory_of_inputs` for the Proposition.

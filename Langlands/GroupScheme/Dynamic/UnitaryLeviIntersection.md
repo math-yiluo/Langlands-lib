@@ -1,7 +1,5 @@
 # Unitary intersections for a compatible diagonal dynamic Levi
 
-Author: Worker 1655.
-
 This internal prerequisite defines `Dynamic.IsDiagonalLeviPair` for a fixed
 closed matrix representation, cocharacter, parabolic inclusion and Levi
 inclusion. The cocharacter maps to the diagonal cocharacter in that same

@@ -1,7 +1,5 @@
 # Reflection of split tori along base maps admitting sections
 
-Author: Worker 1354.
-
 This is internal categorical infrastructure for specializing actual torus
 splitting witnesses. It uses the published base-change coherence isomorphisms
 and the existing `IsSplitTorus` definition, rather than a structural torus

@@ -1,8 +1,7 @@
 # Milne 16.56 from the splitness of the canonical extension
 
 This module serves the proof of
-`Langlands.GroupScheme.SplitSolvableSchemeProductStatement` (Task 7832,
-`61c64f71-25d0-40f3-9dac-3233755fd71e`; Milne, *Algebraic Groups* (2017),
+`Langlands.GroupScheme.SplitSolvableSchemeProductStatement` (Milne, *Algebraic Groups* (2017),
 Corollary 16.56, printed p.344, source `milne-2017-algebraic-groups`). It derives
 the statement from a hypothesis about the extension data (U, D, i, q) that the
 statement fixes. The hypothesis says that U is split unipotent and D is a split

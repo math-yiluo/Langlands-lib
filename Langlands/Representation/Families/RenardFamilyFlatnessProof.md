@@ -1,6 +1,6 @@
 # Renard VI.8.1: the flatness criterion
 
-Worker 1761 proves the unchanged `FlatnessCriterionStatement` at independent
+This module proves the unchanged `FlatnessCriterionStatement` at independent
 universes `uB`, `uG`, `uV`. The source is Renard, *Représentations des groupes
 réductifs p-adiques*, 9 July 2026, VI.8.1 Remark, printed p.188 / PDF p.194.
 Literature ID: `renard-2026-representations-groupes-reductifs-padiques`;

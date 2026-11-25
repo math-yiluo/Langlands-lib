@@ -1,7 +1,5 @@
 # Supplied schemes representing group-scheme isomorphisms
 
-Worker 217.
-
 This internal interface packages an actual scheme over an arbitrary base
 representing natural local group isomorphisms on every test. Its existence
 is not assumed proved. The purpose is to derive the action required by the

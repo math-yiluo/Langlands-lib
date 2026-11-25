@@ -1,6 +1,6 @@
 # Irreducible subrepresentations carrying an actual Jacquet exponent
 
-Worker 148. This internal construction selects an irreducible smooth
+This internal construction selects an irreducible smooth
 subrepresentation carrying a supplied generalized central character of an
 admissible Artinian representation. It specializes to the normalized
 Jacquet module of an arbitrary represented rational parabolic, on the

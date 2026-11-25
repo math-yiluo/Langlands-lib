@@ -1,8 +1,9 @@
 # Geometric specialization of the Bernstein fixed-vector reduction
 
-Author: Worker 146. This internal unit constructs the actual standard family
-needed by the fixed-vector splitting adapter and isolates its remaining
-special-level comparison with the exact geometric telescope of Task 5293.
+This internal module constructs the actual standard family
+needed by the fixed-vector splitting adapter and isolates its
+special-level comparison with the exact geometric telescope of Renard
+VI.10.6, Proposition (iii)–(iv) (`FixedVectorCategoryStatements`).
 It is a conditional reduction and does not prove the unconditional target.
 
 `standardBernsteinFamily` constructs `BernsteinStandardFamily i ν` from a
@@ -25,8 +26,8 @@ open level, normality and Iwahori-decomposition hypotheses as
 `bernsteinFixedVectorVisibility` for the constructed actual standard family.
 The required local compactness and nonarchimedean group structure are
 derived from the canonical rational-point topology. Field and carrier
-universes remain independent. The statement is an explicit remaining
-obligation, not an assumed global instance or an established theorem.
+universes remain independent. The statement is an explicit hypothesis
+of the reductions below, not an assumed global instance or an established theorem.
 
 `standardFixedVectorSplitting_of_bernstein_inputs` applies the actual
 Bernstein splitting adapter using the constructed family. Its two explicit
@@ -40,7 +41,7 @@ reduction with the previously published exact global assembly. Its
 conclusion is exactly `FixedVectorCategoryStatements`, under four explicit
 premises: VI.9.4 subquotient generation, VI.7.5 smooth-category
 Noetherianity, the actual Bernstein decomposition, and the new special-level
-comparison. None of these four propositions is proved by this unit.
+comparison. None of these four propositions is proved by this module.
 
 The provenance is internal: the family construction composes published
 structural theorems on the actual standard subgroups, and the remaining

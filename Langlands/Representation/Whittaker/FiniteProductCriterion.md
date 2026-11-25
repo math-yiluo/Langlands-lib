@@ -1,6 +1,6 @@
 # Full functional dual and nondegeneracy of finite normalized products
 
-Worker 1732. This is a derived composition of the full top-derivative tensor
+This is a derived composition of the full top-derivative tensor
 comparison and the full Whittaker-functional/top-derivative dual comparison.
 It introduces no literature assertion or classification hypothesis.
 

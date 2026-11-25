@@ -1,7 +1,5 @@
 # Binary forms attached to a rank-one lowering curve
 
-Author: Worker 10.
-
 This module is pure linear algebra over a field. It is the first step of the
 split rank-one rational-orbit height bound
 (`SplitRankOneAdelic.md`). Fix a vector `e` and the polynomial matrices of a

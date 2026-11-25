@@ -1,8 +1,9 @@
 # The zero group acts without inversions on facets over the maximal unramified field
 
-`Langlands.Geometry.Building.MaximalUnramified.ZeroFacetNoInversionsStatement` is an
-unproved proposition, published as an interface. It is a `def` returning `Prop`. A separate
-proof task will follow publication. The module also proves two consequences of the
+`Langlands.Geometry.Building.MaximalUnramified.ZeroFacetNoInversionsStatement` is a
+proposition, published as an interface. It is a `def` returning `Prop`. It is proved as
+`MaximalUnramified.zeroFacetNoInversions` in the module `UnramifiedZeroFacetNoInversionsProof`.
+The module also proves two consequences of the
 proposition, described below. These are implications from the proposition, not proofs of it.
 
 ## The statement
@@ -135,7 +136,7 @@ Chapter 4 does not establish these properties. KP prove the axioms in later chap
 for quasi-split groups. Remark 7.6.5 says that Proposition 7.6.4 completes the proof of
 Axioms 4.1.1, 4.1.4 and 4.1.9 in the setting of Chapter 7. So the statement cannot be proved
 by appeal to Chapter 4, and a supplied `BuildingData` object does not by itself provide any
-axiom. The proof successor must establish the property over `K` from the constructed building
+axiom. A proof of the statement must establish the property over `K` from the constructed building
 theory, discharging each property it needs.
 
 ### Where the property is proved: Chapter 7
@@ -177,7 +178,7 @@ valuations, since V 6 is part of `C`. By KP Proposition 6.2.6 (p. 216 / PDF p. 2
 two `ω`-compatible valuations are equipollent, so the class of `C` is the canonical class of
 §6.1. The published sibling `UnramifiedZeroFixerAffineRootStatement` uses the same argument.
 So the statement concerns the building of Chapter 7 for `H` over `K`. These are facts about
-the source; the proof successor must prove in Lean any of them that it uses.
+the source; a proof of the statement must prove in Lean any of them that it uses.
 
 For every datum `E`, `E.zeroPoints` is `H(K)^0`. Each `E` makes the choices that Definition
 2.6.23(1) allows, and the result does not depend on them by KP Lemma 2.6.24 (p. 104 /
@@ -225,8 +226,7 @@ facets of an axiomatic building, and prove it in Chapter 7 as Proposition 7.6.4(
 subsets of apartment facets. The statement rephrases this for one point and its image. It
 combines the facet form with three ingredients: the facets of the Library's reduced building
 come from apartment facets, `H(K)` acts on facets, and the apartment map is injective. The
-argument above derives the point form from these. The interface is the one the task
-specifies, unchanged.
+argument above derives the point form from these.
 
 ## Choices and scope
 
@@ -254,9 +254,9 @@ specifies, unchanged.
 
 ## Intended consumer
 
-Task 6315 (`36e777a5-694a-4123-be42-eaad69d89d73`) proves
-`UnramifiedZeroDescentStatement`, whose clause 3 is KP Proposition 9.3.24. The consumer
-plans the following use. `UnramifiedApartmentDescentStatement` provides an equivariant
+The consumer is a proof of
+`UnramifiedZeroDescentStatement`, whose clause 3 is KP Proposition 9.3.24. Such a proof
+can use this statement as follows. `UnramifiedApartmentDescentStatement` provides an equivariant
 building embedding `e` and an affine apartment map `a` with
 `a ⁻¹' facet C.affineRoots (a w) = facet B.affineRoots w`. So for a downstairs chamber
 `Ca = facet B.affineRoots w`, the set `a '' Ca` lies in one upstairs facet. If a downstairs
@@ -265,6 +265,6 @@ consumer applies this statement with `x = a w` and `y = a (n • w)`. This gives
 `a (n • w) = a w`, hence `n • w = w`. This is the consumer's argument; this module does not
 assert it.
 
-The proof successor must not use `UnramifiedZeroDescentStatement`, or integral models whose
+A proof of this statement must not use `UnramifiedZeroDescentStatement`, or integral models whose
 construction uses it, since that would be circular. It must not add supplied integral models
 as premises.

@@ -1,7 +1,5 @@
 # Separation and coordinate surjectivity for full integral Tate groups
 
-Author: Worker 1584.
-
 This internal helper for connected integral lattice reflection uses the published
 full positive-index Tate group, without selecting primes. It proves that positive
 integer multiplication is injective: the coordinate at `n` is the transition of

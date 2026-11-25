@@ -1,7 +1,5 @@
 # Compact open subgroups in the actual p-adic matrix groups
 
-Author: Worker 6.
-
 For every algebraic `PadicField p` and every supplied `TopologicalData`, this
 module constructs nonarchimedean certificates and choices of compact open
 subgroups inside arbitrary identity neighborhoods of the following actual

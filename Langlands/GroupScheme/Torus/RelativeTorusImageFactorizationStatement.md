@@ -65,7 +65,8 @@ torus property of the image made explicit.
 
 This is a derived corollary of Exposé IX, Theorem 6.8 (with its N.B.) and
 Exposé X, Corollary 4.5, as explained above. The conclusion keeps only what the
-affineness proof of Task 7782 for the normalizer quotient uses. There the
+affineness proof `selfCentralizingTorusConjugacyQuotientAffine` of
+`SelfCentralizingTorusConjugacyQuotientAffineStatement` for the normalizer quotient uses. There the
 statement is applied to the composite of a maximal torus `T → G` with a matrix
 representation `G → GL_m`, giving the image torus of `T` in `GL_m`. The kernel
 `K` is not named; the conclusion records only that `π` is an fppf quotient map

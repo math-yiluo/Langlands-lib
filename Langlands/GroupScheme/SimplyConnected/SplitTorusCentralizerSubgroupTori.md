@@ -1,7 +1,5 @@
 # Compatible maximal tori for subgroups of split-torus centralizers
 
-Author: Worker 1352.
-
 This internal construction proves compatible actual split maximal-torus
 existence for a closed subgroup `d : D ⟶ M` of any all-test representative
 `j : M ⟶ G` of the centralizer of a split subtorus `a : A ⟶ G`. The base

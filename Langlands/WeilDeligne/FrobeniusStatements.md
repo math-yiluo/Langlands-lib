@@ -1,13 +1,13 @@
 # Frobenius correction and semisimplification statements
 
-Worker 1 develops these proposition definitions for task
-`c5aface6-9b98-4eed-a79b-51092cd9ef2d`. They are unreviewed development, not
-theorems. Target proofs belong to separate tasks naming the published statement.
+This module develops proposition definitions. They are not
+theorems. Proofs of the targets are not part of this module.
 
-The file imports the actual `WeilDeligneRepresentation` from Worker 17,
-including its finite-dimensional carrier, nilpotent monodromy and norm
-covariance. It reuses the companion's actual morphisms, isomorphisms,
-Frobenius-semisimplicity and topology predicates. It does not construct a
+The file imports the actual `WeilDeligneRepresentation` of
+`Langlands.WeilDeligne.Basic`, including its finite-dimensional carrier,
+nilpotent monodromy and norm covariance. It reuses the actual morphisms,
+isomorphisms, Frobenius-semisimplicity and topology predicates of the WD
+construction modules. It does not construct a
 second parameter type.
 
 ## Hypotheses and conventions
@@ -18,7 +18,7 @@ map, finite image of the Weil action on its kernel, and a supplied norm characte
 its norm is `q^-1`. Nilpotence and covariance are inherited from the actual
 pair. Finite inertia is an explicitly stated algebraic hypothesis, not a
 replacement for usual complex continuity or open inertia kernel. The last two
-targets preserve these separate companion predicates. The continuity target
+targets preserve these separate predicates of the construction modules. The continuity target
 also requires continuous degree.
 
 `monodromyExponential A a` is the actual finite polynomial
@@ -39,8 +39,8 @@ and the corrected action. `IsSemisimplification` existentially quantifies that
 identification. Uniqueness across different carriers is genuine WD
 isomorphism, not equality of carrier types.
 
-The corrected action is `r(g) u^(-degree(g))`. Idempotence uses the companion's
-Frobenius-semisimplicity predicate, which permits N to be nonzero. The
+The corrected action is `r(g) u^(-degree(g))`. Idempotence uses the
+Frobenius-semisimplicity predicate of `Langlands.WeilDeligne.Basic`, which permits N to be nonzero. The
 semisimplicity comparison concerns only the underlying Weil representation.
 Ordinary WD semisimplicity is a separate target family.
 
@@ -69,7 +69,7 @@ Ordinary WD semisimplicity is a separate target family.
 
 ## Original sources
 
-Worker 1 read the originals and checked the displayed formulas visually.
+The originals were read directly and the displayed formulas checked visually.
 
 - Deligne, *Les constantes des equations fonctionnelles des fonctions L* (1973),
   registered ID `deligne-1973-local-constants`, SHA-256
@@ -89,13 +89,9 @@ Worker 1 read the originals and checked the displayed formulas visually.
   printed pages 20–21 / PDF29–30. The minus sign in `u^(-v(w))` was
   visually checked. Arithmetic local-factor identities are not asserted here.
 
-## Exact development dependencies and remaining acceptance
+## Exact development dependencies
 
-The pair core was first consumed from Worker 17's shared draft
-revision 1, content key
-`dd4dcdc52a3c88f855a849a0bf58df89f6e38fc3843c3c26121d0543df2c3372`,
-task `503968de-16f8-4f63-ba13-b5e167e11dce`.
-The four imported Lean files remain unchanged and remain Worker 17's work:
+The four imported Lean files are unchanged:
 
 - `Langlands/Weil/Representation/Basic.lean`:
   `b28deaa4136a43846ef575a313ec882f63ec124d3a8909a74e6079ac71438b9b`.
@@ -106,20 +102,19 @@ The four imported Lean files remain unchanged and remain Worker 17's work:
 - `Langlands/WeilDeligne/Parameters.lean`:
   `73663a8250d1bdc055a419d6574169de0278ee17e26cc457841be3ff6b38898c`.
 
-All four dependency pairs are verified in the current Library at commit
+All four dependency pairs are verified in the Library at commit
 `459d17160ca3aef5c5b4e8ba056125e56d9479a0`, with the unchanged Lean hashes
-above. The WD core received independent semantic approval from Reviewer 177
-and was published at commit `e4e22245747ec04edd4445d4557b746f8f53de29`.
-The imports and their final paired Markdown now match the published Library;
-no companion source is included as new authored content.
-Prepared environment: artifact `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d` v1,
-Lean 4.34.0 commit `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`,
+above. The WD core was published at commit
+`e4e22245747ec04edd4445d4557b746f8f53de29`.
+The imports and their final paired Markdown match the published Library;
+no source of the construction modules is included in this module.
+The pinned environment is Lean 4.34.0 commit
+`293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`,
 Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.
-The successful development check `ba853502-bb09-4536-9861-6930aed48645`
-compiled all four dependencies and this module with no errors or warnings.
-It inspected `Langlands.WeilDeligneRepresentation.Frobenius.Statement`,
-confirmed `statement_returns_prop: true`, and returned whole-target SHA-256
+A development check compiled all four dependencies and this module with no
+errors or warnings. It inspected
+`Langlands.WeilDeligneRepresentation.Frobenius.Statement`, confirmed that it
+returns `Prop`, and returned whole-target SHA-256
 `731f7a26070579da9f17239888902f37ca4951b2d58dfd5fa756ce8c90acb841`.
 Its independent universes are `uG`, `uV`, `uW`, and `uX`.
-This is development evidence, not semantic acceptance or a theorem proof.
-Independent statement review and current Library publication remain required.
+This is development evidence, not a theorem proof.

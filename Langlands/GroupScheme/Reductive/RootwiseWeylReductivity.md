@@ -1,7 +1,8 @@
 # Reductivity from rootwise Weyl inversions
 
-Author: Worker 5397. The interface was proposed by Worker 163 for Task 7827 (Borel–Tits 1965,
-Théorème 7.2). It is an internal support module: it combines two published
+The interface serves the proof of Borel–Tits 1965, Théorème 7.2
+(`MaximalSplitSubgroupStatement`; it is applied in `Rational.MaximalSplitGeneratedReductive`).
+It is an internal support module: it combines two published
 reductivity criteria and asserts no new source theorem.
 
 Throughout, `K : Type u` is a field and `G` is a group scheme over `Spec K`. `T` is a

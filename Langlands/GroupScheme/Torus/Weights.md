@@ -1,7 +1,5 @@
 # Weight spaces and roots through the actual adjoint representation
 
-Worker 274.
-
 This module defines the weight spaces and the roots of a commutative group scheme
 `T` mapping to a group scheme `G` by a homomorphism `i : T ⟶ G`. Both use the
 adjoint representation `adjoint G A` of the module `Langlands.GroupScheme.Lie.Adjoint`

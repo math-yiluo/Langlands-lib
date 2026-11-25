@@ -1,7 +1,5 @@
 # Berkovich's local condition for full-recognition pair systems
 
-Author: Worker 36.
-
 This module defines the local condition on pair systems from Berkovich's
 Proposition 1.2.15(i). It proves that the full-recognition pair systems of
 `FullRecognitionPairSystems` satisfy it.

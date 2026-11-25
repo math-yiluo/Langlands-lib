@@ -1,7 +1,5 @@
 # Single-block and rank-one tempered standard modules
 
-Author: Worker 1737.
-
 This internal prerequisite identifies the actual standard module with any of
 its irreducible quotients when the tempered Langlands datum has one block.
 It then proves that every datum of total rank one satisfies that condition.

@@ -117,7 +117,7 @@ to the away coefficient action in `AwayRationalScalars`, reusing the actual
 rational Tate functor and the rational intertwining lemmas. Arbitrary test
 schemes, natural moduli and rational algebras are internal generalizations.
 
-This unit establishes linear transport and its functorial laws. Weil pairings,
+This module establishes linear transport and its functorial laws. Weil pairings,
 similitude multipliers, monodromy, rational topology, continuity, pointed base
 change and fixed orbit classes remain separate obligations. No full-to-away
 transport square or prime-to-p rational-homomorphism localization is asserted

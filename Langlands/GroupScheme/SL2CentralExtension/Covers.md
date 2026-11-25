@@ -1,6 +1,6 @@
 # Fppf covers adjoining roots and inverting polynomials
 
-Worker 65. Internal supporting development for the proof of
+Internal supporting development for the proof of
 `Langlands.GroupScheme.SpecialLinearCentralExtensionSplitStatement` (Conrad, *Reductive group
 schemes*, Proposition 4.3.1). Conrad's proof uses fppf-local choices of units and roots
 (for example a unit `t` with `t² - 1` a unit). This module provides them in the language of

@@ -1,7 +1,5 @@
 # Reduction: rational points of strongly regular classes from Steinberg's class quotient
 
-Author: Worker 1379.
-
 ## Statements
 
 `epi_spec_field` proves that every morphism

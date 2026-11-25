@@ -48,7 +48,8 @@ theorem integralDiagonalPositive_of_ampleMumfordPresentation :
       have htrace := hformula P k A W hadd lam (d + 1) (Nat.succ_pos d) hg
         L B evaluationB M evaluation hL heq f
       have hproduct :
-          0 < traceForm P W hadd lam (homToHom0 f) (homToHom0 f) *
+          0 < traceForm P W hadd lam (CategoryTheory.End.of (homToHom0 f))
+              (CategoryTheory.End.of (homToHom0 f)) *
             (lineBundleEulerPolynomial A.X.hom L (d + 1)).coeff (d + 1) := by
         rw [htrace]
         exact mul_pos (by norm_num) hpos

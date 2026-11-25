@@ -1,6 +1,6 @@
 # Ordinary germs of actual analytic higher direct images
 
-This internal unit uses the actual ordinary direct image `etaleUnderlyingSheaf`
+This internal module uses the actual ordinary direct image `etaleUnderlyingSheaf`
 and actual lifted ordinary site points `underlyingTopologyPoint`, with independent
 `u`, `v` and `uL` levels and coefficient universe `max u (v + 1) uL`. No geometric
 separation, field-point-surjectivity or group-action hypothesis is required.
@@ -32,4 +32,4 @@ identity morphism with zero, proving the sheaf is zero.
 These are internal sheaf and derived-functor calculations. They assert no
 identification of analytic germs with absolute-Galois cohomology, no special
 smooth-point-product vanishing, and no equivariant cohomology comparison. Such
-analytic local inputs remain separate obligations.
+analytic local inputs are not part of this module.

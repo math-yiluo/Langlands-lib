@@ -1,6 +1,6 @@
 # Geometry and fppf locality of relative groups of multiplicative type
 
-Worker 879. Internal derived helpers for the canonical kernel-factorization
+Internal derived helpers for the canonical kernel-factorization
 proof, using the published definition in
 [`RelativeMultiplicativeType`](RelativeMultiplicativeType.md).
 

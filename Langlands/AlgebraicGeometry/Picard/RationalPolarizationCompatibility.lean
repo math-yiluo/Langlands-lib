@@ -79,8 +79,8 @@ variable {R : Type v} [Ring R] [StarRing R]
 
 /-- Harris--Taylor's equation, using the constructed rational dual of the action. -/
 def IsInvolutionCompatible (i : R →+* End0 A) (lam : Hom0 A DA) : Prop :=
-  ∀ b : R, comp0 A A DA (i b) lam =
-    comp0 A DA DA lam (dual0 (i (star b)))
+  ∀ b : R, comp0 A A DA (i b).asHom lam =
+    comp0 A DA DA lam (dual0 (i (star b)).asHom)
 
 local notation "Compatible" => IsInvolutionCompatible preservation composition unitCoherence
   associativity comparison symmetry stability hA additivity MA evaluationA geometryA

@@ -5,7 +5,7 @@ Namespace `Langlands.GroupScheme.HomScheme`.
 ## The absolute statement
 
 `AbsoluteSquareZeroCohomologyLiftStatement` is a Prop-valued definition,
-used here only as a hypothesis. Its form was specified by Worker 880. It
+used here only as a hypothesis. It
 says the following for:
 
 - every `R : CommRingCat`;
@@ -76,5 +76,7 @@ base `S` and a square-zero thickening
 The main theorem sets `maxHeartbeats 1600000`. All declarations use only
 the axioms `propext`, `Classical.choice` and `Quot.sound`.
 
-This is the internal transport step of Task 6989, written by Worker 496 at
-Worker 880's request. Worker 880 proves the absolute statement.
+This is the internal transport step of the proof that homomorphisms from
+groups of multiplicative type lift through nilpotent thickenings. The absolute
+statement is proved by `absoluteSquareZeroCohomologyLift` (module
+`HomScheme/SquareZeroCohomology`).

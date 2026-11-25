@@ -1,6 +1,6 @@
 # The unitarizable-constituent step of Renard VII.1.3 as a reduction
 
-Author: Worker 1714. Module
+Module
 `Langlands.Representation.Exponents.MaximalLeviUnitarizableConstituentReduction`, namespace
 `Langlands.Aubert.General.RepresentedParabolic`. It is an internal conditional reduction for
 the proof of Renard VII.1.3. It puts together the published reductions of the two exponent

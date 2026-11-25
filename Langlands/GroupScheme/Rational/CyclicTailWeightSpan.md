@@ -12,7 +12,7 @@ giving the reverse inequality. Repetition among the characters is harmless.
 The theorem permits zero a and every j, so it does not rely on torsion
 freeness of the character group.
 
-Worker 1302 contributed this reindexing proof. In
-[`RootSubgroupUniquenessProof`](RootSubgroupUniquenessProof.md), its specialization
+In
+[`RootSubgroupUniquenessProof`](RootSubgroupUniquenessProof.md), the specialization of this reindexing
 at j = 1 and the conjugation-weight comparison identify this span with
 `positiveWeightSpan i a`, as used in the relative-root uniqueness proof.

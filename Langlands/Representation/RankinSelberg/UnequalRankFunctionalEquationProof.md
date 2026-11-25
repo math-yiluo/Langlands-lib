@@ -1,7 +1,5 @@
 # The uniform unequal-rank normalized functional equation
 
-Author: Worker 103.
-
 The theorem `Langlands.RankinSelberg.unequalRankFunctionalEquation` proves
 exactly `UnequalRankFunctionalEquationStatement.{uF,uV,uW} F T n r` from
 `FunctionalEquationStatement`. It quantifies every prime, p-adic field,

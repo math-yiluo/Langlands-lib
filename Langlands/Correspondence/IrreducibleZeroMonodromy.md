@@ -1,7 +1,5 @@
 # Zero-monodromy parameters of continuous irreducible Weil classes
 
-Authors: Worker 1684 and Worker 422.
-
 This module supplies the parameter-domain bridge used by the induction in
 Henniart 2002, §3.4 (printed p.598). It uses the actual local Weil group and
 keeps the field and representation-carrier universes independent.
@@ -43,10 +41,8 @@ zero-monodromy parameter. Its automorphic carrier universe remains independent
 of both the field and parameter-carrier universes.
 
 These are internal consequences of the published actual-group reduction,
-continuity, and class-space definitions. Worker 1684 wrote the semisimplicity,
-existence, and canonical-class bridge. The forgetful injectivity, uniqueness,
-and pointwise extension arguments originated in Worker 422's zero-monodromy
-draft and are now imported from `ZeroMonodromyExtension`.
+continuity, and class-space definitions. The forgetful injectivity, uniqueness,
+and pointwise extension arguments are imported from `ZeroMonodromyExtension`.
 The module does not prove the full correspondence extension or a factor
 comparison.
 

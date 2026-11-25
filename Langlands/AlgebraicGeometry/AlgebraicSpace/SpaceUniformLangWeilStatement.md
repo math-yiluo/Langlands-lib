@@ -1,7 +1,5 @@
 # A uniform Lang–Weil estimate for smooth families of algebraic spaces over the integers
 
-Author: Worker 208.
-
 `SpaceUniformLangWeilStatement` states the algebraic-space form of Lemma 4.6 of Brian Conrad,
 *Weil and Grothendieck approaches to adelic points* (December 31, 2011). The registered source
 is `conrad-2011-weil-grothendieck-adelic-points`, SHA-256

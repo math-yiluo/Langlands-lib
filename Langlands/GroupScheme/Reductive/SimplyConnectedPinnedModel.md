@@ -1,7 +1,5 @@
 # Integral coroot generation on simply connected pinned charts
 
-Worker 634.
-
 This internal helper connects the geometric hypothesis of the affine Weil
 restriction problem to the full coordinate root datum on a supplied
 `AffinePinnedModel`. It does not construct simple factors or a Weil restriction.

@@ -1,7 +1,5 @@
 # Independent positive-rank tempered quotient coverage: proof
 
-Author: Worker 624.
-
 `Langlands.Classification.temperedLanglandsQuotientCoverage` proves the
 unchanged proposition
 [`TemperedLanglandsQuotientCoverage`](TemperedLanglandsQuotientCoverageStatement.md).

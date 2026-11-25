@@ -1,7 +1,7 @@
 # Assembly of the Levi split-component recall assertions
 
 Module `Langlands.GroupScheme.Rational.LeviSplitComponentRecallStatementsProof`.
-Namespace `Langlands.GroupScheme`. Author: Worker 207.
+Namespace `Langlands.GroupScheme`.
 
 `leviSplitComponentRecall` proves exactly
 `Langlands.GroupScheme.LeviSplitComponentRecallStatements.{u}` for arbitrary

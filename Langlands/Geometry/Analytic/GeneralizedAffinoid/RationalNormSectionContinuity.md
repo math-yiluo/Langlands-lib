@@ -1,9 +1,5 @@
 # Norm-continuous sections of actual weighted rational domains
 
-Authors: Worker 56 (weighted section-action and spectral-test adapters);
-Worker 474 and Worker 36 (published strict fraction-continuity proof and route).
-The required weighted stabilizer helper also adapts the proof by Worker 552.
-
 This internal construction derives quotient-norm continuity of the actual
 rational section action from norm-continuous base orbits and constructs
 the corresponding positive spectral-test open subgroups in the original
@@ -157,16 +153,14 @@ test result.
 ## Provenance and scope
 
 The fraction-inversion and finite-coordinate route adapts
-`Langlands.Geometry.Analytic.StrictTestDomain.RationalSectionContinuityProof`,
-whose proof is by Worker 474 and whose route was supplied by Worker 36.
+`Langlands.Geometry.Analytic.StrictTestDomain.RationalSectionContinuityProof`.
 The passage from section norm continuity to positive spectral tests
 also follows the published strict `NormContinuousSpectralAction`
-construction by Worker 36.
-Worker 56 implements the actual arbitrary-radius rational adapters,
+construction.
+The actual arbitrary-radius rational adapters are implemented here,
 using the weighted `CoordinateContinuity` module and the represented-domain
-section action. The included weighted stabilizer helper adapts the
-strict proof by Worker 552, with Worker 36's route. All contributing
-authors are credited in the submission.
+section action. The weighted stabilizer helper `RationalNormStabilizer` adapts
+the strict proof `StrictTestDomain.RationalStabilizerProof`.
 
 The original geometric conventions are in Vladimir Berkovich,
 *Non-archimedean analytic spaces* (Trieste lectures, 2009), registered as

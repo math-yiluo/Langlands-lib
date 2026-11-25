@@ -1,13 +1,15 @@
 # Finite generation of normalized opposite Jacquet modules
 
-Author: Worker 319. The statement form is adapted from Worker 186's published
-upper Jacquet statement; Worker 23 specified the bundled opposite target.
+The statement form is adapted from the published upper Jacquet statement
+(`Parabolic.JacquetFiniteGenerationStatement`).
 
 The closed proposition
 `Langlands.Parabolic.OppositeJacquetFiniteGenerationStatement.{uF,uV}`
 states finite generation of the actual normalized opposite Jacquet module
 over the complex group algebra of its block Levi. This pair defines the
-proposition. Its proof is a separate obligation.
+proposition. Its proof is `Langlands.Parabolic.oppositeJacquetFiniteGeneration`,
+in the separate module
+`Langlands.Representation.Parabolic.OppositeJacquetFiniteGenerationProof`.
 
 ## Exact statement
 
@@ -82,7 +84,7 @@ Registered source: `casselman-1995-admissible-representations`, SHA256
 `78b921fc6331ad2b75389f37d15bd5ac3399e6cfc2d7555e1a4d666e0d42612a`.
 The retained original is
 `/home/taskhub/central-library/Casselman--p-adic groups lecture notes/Introduction to representations of p-adic groups/Casselman--Introduction to the theory of admissible representations of p-adic reductive groups--1995.pdf`.
-No source-specific errata file was present in the project notes, current
+No source-specific errata file was present in the project notes,
 Library notes, or literature collection.
 
 Casselman's theorem applies to every parabolic `P = MN` of a reductive
@@ -119,6 +121,6 @@ the original trivial-group representation, preserving finite generation.
 
 The only new Lean declaration is the closed `Prop`-valued definition
 above. This pair proves neither finite generation nor admissibility of
-the opposite quotient. The proof successor must prove this exact
-proposition in both independent universes, retaining all ranks and the
-published opposite normalization.
+the opposite quotient. The proof `oppositeJacquetFiniteGeneration` has this
+exact proposition as its type, in both independent universes, with all ranks
+and the published opposite normalization.

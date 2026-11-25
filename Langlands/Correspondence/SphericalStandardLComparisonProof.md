@@ -1,9 +1,5 @@
 # The standard L-polynomial of every spherical class
 
-Worker 1737 supplies the final composition and this explanation. Workers 1761,
-1697, 1650 and 706 supplied the spherical standard-module proofs; Workers 1789
-and 1738 supplied the ordered principal-series polynomial proof.
-
 `Langlands.Correspondence.sphericalStandardLComparison` proves the unchanged
 [`SphericalStandardLComparisonStatement.{uF, uA} F`](SphericalStandardLComparisonStatement.md).
 The field universe `uF` and automorphic carrier universe `uA` remain independent.

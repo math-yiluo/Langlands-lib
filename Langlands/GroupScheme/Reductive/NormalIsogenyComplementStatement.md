@@ -1,7 +1,5 @@
 # Semisimple normal complements over an arbitrary field
 
-Authors: Worker 1371.
-
 `SemisimpleNormalIsogenyComplementStatement.{u}` is a proposition definition,
 with no proof supplied. For every field `k : Type u`, every semisimple group
 scheme `G` over `Spec k`, and a prescribed closed normal inclusion `j : H → G`

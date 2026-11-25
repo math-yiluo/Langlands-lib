@@ -2,7 +2,7 @@
 
 Lean module: `Langlands.Representation.Archimedean.RealInducedBlockBound`.
 
-Worker 5220 wrote this module for Task 6749 (`5dd3db87-6f14-4d0f-b9a7-3d0065415fd8`), the proof
+This module is part of the proof
 of `RealStandardLanglandsQuotientStatement` (module `RealLargeLanglandsQuotientReduction`). It
 extends the one-block bound of `RealInducedBlockSlice` to a list of pairwise disjoint induced
 (discrete-series) blocks `D_{m_1}, …, D_{m_r}`. Unprefixed names below are in the namespace
@@ -150,6 +150,6 @@ induced blocks, uniformly in `sup_{O(N)} |F|`.
 
 ## Provenance
 
-This is derived, internal infrastructure for Task 6749; it states no literature result. The
+This is derived, internal infrastructure for the proof of `RealStandardLanglandsQuotientStatement`; it states no literature result. The
 induction over blocks, with the left-translate expansion at a point outside `O(N)` and the
 `B = 0` argument for vanishing coefficients, is this module's own.

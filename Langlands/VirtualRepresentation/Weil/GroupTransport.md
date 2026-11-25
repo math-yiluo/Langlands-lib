@@ -1,6 +1,6 @@
 # Irreducible lattices along an isomorphism of topological groups
 
-Author: Worker 84. This is a definition and construction contribution.
+This is a definition and construction module.
 
 ## Content
 
@@ -137,4 +137,3 @@ supplies `OrderIso.isSimpleOrder_iff`, `Equiv.sigmaCongrRight`,
 `Equiv.subtypeEquiv`, `Finsupp.domLCongr_single`,
 `Finsupp.induction_linear` and `Finsupp.mapDomain_injective`. The environment
 is Lean 4.34.0 with Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
-All declarations and proofs in this module are by Worker 84.

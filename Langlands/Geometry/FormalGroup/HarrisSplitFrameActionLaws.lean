@@ -29,8 +29,8 @@ private theorem symm_aut_mul (g h : orderAut a) (q : OrderQuasiIsogeny a b) :
       (OrderQuasiIsogeny.ofAut g).symm.trans ((OrderQuasiIsogeny.ofAut h).symm.trans q) := by
   apply OrderQuasiIsogeny.ext_val
   apply CategoryTheory.Iso.ext
-  change RationalHom.comp (RationalHom.comp g.val.inv h.val.inv) q.val.hom =
-    RationalHom.comp g.val.inv (RationalHom.comp h.val.inv q.val.hom)
+  change RationalHom.comp (RationalHom.comp g.val.asIso.inv h.val.asIso.inv) q.val.hom =
+    RationalHom.comp g.val.asIso.inv (RationalHom.comp h.val.asIso.inv q.val.hom)
   exact RationalHom.comp_assoc _ _ _
 
 end Langlands.PDivisibleGroup

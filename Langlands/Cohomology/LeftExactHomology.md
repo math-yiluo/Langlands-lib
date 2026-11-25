@@ -1,6 +1,6 @@
 # Left exact functors, homology and right derived functors
 
-Author: Worker 61. The module imports my
+The module imports the Library's
 `Langlands.Cohomology.AcyclicResolution.Comparison` (`comparison`, `comparisonNatTrans`,
 `comparisonNatTrans_app`, `comp_lift_id`). From Mathlib it uses the short complex API
 (`ShortComplex.liftCycles`, `ShortComplex.descHomology`, `ShortComplex.cyclesIsKernel`,
@@ -111,7 +111,7 @@ Mathlib's right derived functors.
 
 ## Compatibility with the comparison maps of resolutions
 
-`AcyclicResolution.comparison F I φ n : Hⁿ(F K) ⟶ (F.rightDerived n).obj A` (my published
+`AcyclicResolution.comparison F I φ n : Hⁿ(F K) ⟶ (F.rightDerived n).obj A` (the Library
 module `AcyclicResolution.Comparison`) is the cohomology map of `F φ` for a cochain map
 `φ : K ⟶ I.cocomplex`, followed by `(I.isoRightDerivedObj F n).inv`.
 

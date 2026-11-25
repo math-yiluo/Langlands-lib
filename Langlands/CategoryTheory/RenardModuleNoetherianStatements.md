@@ -1,8 +1,10 @@
 # Renard's Noetherian comparisons for actual unital modules
 
-This statement unit uses Mathlib's actual category of unital left modules
+This statement module uses Mathlib's actual category of unital left modules
 over an arbitrary unital ring. It states an object comparison and the
-category/ring comparison in Renard's Appendix A.I.3. It proves neither.
+category/ring comparison in Renard's Appendix A.I.3. It proves neither;
+`moduleNoetherian` in `Langlands.CategoryTheory.RenardModuleNoetherianProof`
+proves both.
 The imported source-facing definitions in
 `Langlands.CategoryTheory.RenardFiniteType` are unchanged.
 
@@ -13,7 +15,7 @@ réductifs p-adiques*, French version dated 9 July 2026, registered source
 The retained original is
 `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`.
 Appendix A.I.2–A.I.3, printed248–249/PDF254–255, were read in full and
-both pages were visually checked for this unit. The global convention at
+both pages were visually checked for this module. The global convention at
 printed6/PDF12 was also read: `M(A)` is the full category of unital
 modules over a unital ring, even though the book elsewhere permits
 nonunital rings and actions.
@@ -105,25 +107,26 @@ finite subcover, as needed for zero. These repairs are documented
 mathematical diagnoses, not author-issued errata.
 
 The adjacent unital-module finite-type and finite-subcover comparisons
-belong to task `c3a9b8fe-51c5-4e9f-98d1-d2a1aa238f96`. General
+are `ModuleFiniteTypeStatement` in
+`Langlands.CategoryTheory.RenardModuleFiniteTypeStatements`. General
 categorical maximal-subset, chain, sequence and all-subobjects-finite-type
-comparisons remain separate. This unit neither supplies nor assumes
+comparisons are separate. This module neither supplies nor assumes
 those results. Arbitrary nonunital-action categories and the unresolved
-source convention for a nonunital Noetherian algebra remain separate as
+source convention for a nonunital Noetherian algebra are separate as
 well.
 
 ## Provenance and proof boundary
 
 Renard cites [25], Proposition 1.6.1 and Lemma 3.6.1, near these examples,
 and [37], 4.10 Theorem 1, for the preceding general compactness comparison.
-Those bibliographic sources were not read for this unit and supply no
+Those bibliographic sources were not read for this module and supply no
 proof evidence here. This statement family uses the original 2026
 passage and the unchanged published source-facing definitions.
 
 The pinned Mathlib sources provide the actual order isomorphism
 `ModuleCat.subobjectModule` and
 `set_has_maximal_iff_noetherian` as possible proof-route ingredients.
-They are not assumptions of these propositions or accepted proofs of
-the exact aggregate. A separate proof successor must target the exact
-published `ModuleNoetherianStatement` and verify its own dependencies,
-including any finite-type comparison it uses.
+They are not assumptions of these propositions or proofs of the exact
+aggregate. The proof of `ModuleNoetherianStatement` is `moduleNoetherian` in
+`Langlands.CategoryTheory.RenardModuleNoetherianProof`; it uses the
+finite-type comparison `Langlands.Renard.ModuleFiniteType.finiteType`.

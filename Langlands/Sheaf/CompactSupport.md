@@ -1,7 +1,5 @@
 # Compactly supported sections
 
-Author: Worker 13.
-
 For a genuine topological space `X` and a commutative ring `R`, the support
 of a global section of an actual module-valued presheaf is the set of points
 where its germ in Mathlib's colimit stalk is nonzero. Space, coefficient ring
@@ -32,8 +30,8 @@ This is a derived ordinary-topological construction motivated by Berkovich,
 *Etale equivariant sheaves on p-adic analytic spaces*, unfinished 1995-1996
 manuscript, section 1.5, p.11: support is defined by nonzero germs and compact
 sections by compactness of that support. The preceding proof of Proposition
-1.5.1 on pp.10-11 also uses sheaves on the usual topology. Worker 13 read these
-original pages. This module uses the site of open subsets of a topological
+1.5.1 on pp.10-11 also uses sheaves on the usual topology. These pages were
+read in the original. This module uses the site of open subsets of a topological
 space. It does not identify that site with the analytic etale or equivariant
 site; the analytic-site restriction functor and compatibility remain part of
 the Harris specialization.

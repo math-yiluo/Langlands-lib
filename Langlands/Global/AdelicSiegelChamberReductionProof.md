@@ -1,7 +1,5 @@
 # The chamber form of Springer's fundamental set theorem
 
-Author: Worker 5269.
-
 This module proves the Library proposition
 `Langlands.Global.AdelicSiegelFactors.AdelicSiegelChamberReductionStatement`
 (module `Langlands.Global.AdelicSiegelChamberReduction`). This is the chamber form of the

@@ -3,7 +3,7 @@
 Namespace `Langlands.GroupScheme.WeilChart`. This internal construction is the second step of
 the proof of `AffineWeilPairSingleChartDescentStatement`. It turns the chart transfer of
 idempotents (module `Langlands.GroupScheme.Reductive.WeilChartTransfer`) into canonical
-algebra isomorphisms between chart coefficient algebras. It uses Worker 47's algebra recovery
+algebra isomorphisms between chart coefficient algebras. It uses the algebra recovery
 `WeilFactor.IdemTransfer` (module `Langlands.GroupScheme.Reductive.WeilFactorIdemTransfer`).
 The isomorphisms satisfy the identity and cocycle conditions of a descent datum.
 
@@ -35,7 +35,7 @@ factor rigidity `hR`. Let `T` be an `A`-algebra.
 - `chartIdemTransfer f₁ f₂ : WeilFactor.IdemTransfer T (ChartCoeff C f₁) (ChartCoeff C f₂)`
   packages these maps.
 - `chartAlgEquiv f₁ f₂ : ChartCoeff C f₂ ≃ₐ[T] ChartCoeff C f₁` is the canonical coefficient
-  isomorphism, Worker 47's `IdemTransfer.algEquiv` of `chartIdemTransfer f₁ f₂`. It is
+  isomorphism, `IdemTransfer.algEquiv` of `chartIdemTransfer f₁ f₂`. It is
   characterized by the transfer of graph idempotents.
 - `chartAlgEquiv_self`: the canonical isomorphism of a chart map with itself is the identity.
 - `chartAlgEquiv_trans`: for three chart maps,
@@ -48,5 +48,5 @@ factor rigidity `hR`. Let `T` be an `A`-algebra.
 This is internal. In Conrad, *Reductive group schemes* (2014), proof of Proposition 6.4.4, the
 uniqueness of Weil pairs provides canonical isomorphisms on overlaps of an étale cover. These are
 the coefficient-algebra part of those isomorphisms. Here they are obtained from factor rigidity,
-through idempotents and Worker 47's recovery of an algebra isomorphism from a transfer of
+through idempotents and the recovery of an algebra isomorphism from a transfer of
 idempotents.

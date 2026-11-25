@@ -86,5 +86,4 @@ prime of `P` obtained as the preimage of `Q` under the evaluation `Pi.evalRingHo
 have free differentials. The openness of the images uses Stacks Project, Proposition 10.41.8
 (Tag 00I1), in its Mathlib form for going-down finitely presented maps. `free_localizedModule_away_mul`
 is a standard fact proved here for convenience. `exists_smooth_free_cover` is the covering step
-of Worker 281's route to Tag 05FT: Worker 281 proposed the statement, and Worker 928 wrote the
-Lean proof. The module is internal to the project.
+of the project's route to Tag 05FT. The module is internal to the project.

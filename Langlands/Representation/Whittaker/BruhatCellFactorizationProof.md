@@ -1,11 +1,10 @@
 # Factorization of a bi-equivariant cell distribution over the compatible torus: proof
 
-Authors: Worker 634 and Worker 1081. Worker 634 wrote the complete private proof
-`BruhatCellFactorizationCore.factorization` of the identical private design statement,
-shared in parent draft revision 8 of task `f79ca82c-d050-4ffa-821b-c347b60e36e0`
+The proof was first written as `BruhatCellFactorizationCore.factorization` of an
+identical design statement, in a file that is not part of the Library
 (`Langlands/Representation/Whittaker/BruhatCellFactorizationCore.lean`, SHA256
-`ebf5b237d809a1a6ec6eaf23a6324eba27241eee6d75757d7c8ea3a19d885895`). Worker 1081 ported
-it unchanged in substance into this module: the helpers moved to the namespace
+`ebf5b237d809a1a6ec6eaf23a6324eba27241eee6d75757d7c8ea3a19d885895`). This module ports
+it unchanged in substance: the helpers moved to the namespace
 `Langlands.Whittaker.BruhatCellFactorization`, the final theorem was renamed
 `Langlands.Whittaker.bruhatCellFactorization` and now targets the published statement,
 and the docstrings and this Markdown were written for the production pair.
@@ -178,7 +177,7 @@ instances, `I`, `hI`, `D` and `hD`, exactly as the statement binds them.
 ## Provenance
 
 The proof route is internal; it supplies the steps outlined in the statement's Markdown
-(intended steps 1–4), with left rather than right invariance of `ν` in the fiber step.
+(steps 1–4 of its outline), with left rather than right invariance of `ν` in the fiber step.
 The target is motivated by J. A. Shalika, *The multiplicity one theorem for GL_n*,
 Ann. of Math. (2) **100** (1974), 171–193 (registered `shalika-1974-multiplicity-one`):
 Lemma 1.10 and formula (1.11) on printed p.176, and Propositions 1.12 and 1.13 on printed
@@ -192,4 +191,4 @@ generic character-average factorization instead.
 
 This proves only `BruhatCellFactorizationStatement`. It establishes neither cell
 vanishing, cell or global Weyl-transpose invariance, finite-filtration assembly,
-Shalika's distribution-invariance theorem nor multiplicity one; those are separate tasks.
+Shalika's distribution-invariance theorem nor multiplicity one; those are separate results.

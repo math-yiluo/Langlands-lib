@@ -1,7 +1,5 @@
 # Degree-zero subgroup maps
 
-Author: Worker 45.
-
 This file constructs subgroup restriction and corestriction on Mathlib's
 actual degree-zero Tate cohomology. Restriction comes from the inclusion of
 group invariants into subgroup invariants. Corestriction comes from the sum

@@ -1,7 +1,5 @@
 # Comparing scheme and sheaf Weil restrictions
 
-Author: Worker 110.
-
 This is derived construction infrastructure for the proof of Brian Conrad,
 *Weil and Grothendieck approaches to adelic points* (December 31, 2011),
 Lemma 5.10, printed pp.17–18. Registered source:

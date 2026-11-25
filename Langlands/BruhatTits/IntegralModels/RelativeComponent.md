@@ -74,7 +74,7 @@ to a facet after the building/model comparison, which is not supplied here.
 The first paragraph of Axiom 4.1.22, printed p. 163 / PDF p. 194, uses model
 maps with the identity generic fibre and their induced residue maps. The
 published generic model-map and reduction APIs are reused here for the
-component inclusion. This unit does not define or assert the ordered-subset
+component inclusion. This module does not define or assert the ordered-subset
 maps or any of the seven special-fibre clauses of that axiom.
 
 Registered source `kaletha-prasad-2023-bruhat-tits-new-approach`, SHA-256

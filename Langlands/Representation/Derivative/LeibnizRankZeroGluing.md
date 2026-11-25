@@ -1,7 +1,5 @@
 # Complete natural Leibniz filtrations with a rank-zero factor
 
-Author: Worker 593.
-
 This internal helper packages the published natural source-to-piece
 comparisons in `LeibnizRankZeroBoundary` as actual one-step filtrations
 and complete feasible-index `IsGluedFrom` assertions, when either input
@@ -102,7 +100,8 @@ identification, finite dimension, finite length, admissibility,
 irreducibility, genericity or theorem-valued premise. Zero sources and
 zero pieces cause no change to the construction or enumeration.
 These declarations prove the two zero-factor cases, and leave the
-general positive-rank assertion to the parent proof.
+general positive-rank assertion to the full proof
+`GeneralLinearDerivativeLeibnizFiltrationProof`.
 
 ## Direct and transitive import audit
 
@@ -160,38 +159,37 @@ functorial restriction/twisting and equality-based rank transport.
 There is no appeal to a general derivative filtration, to an unproved
 restriction sequence, or to exactness of a minus functor.
 
-The inherited exclusions were checked both against the entire import
+The results below were checked both against the entire import
 closure and against these actual mathematical inputs. None of the
 following supplies a proof premise, directly or transitively:
 
-| Inherited condition | Check for this construction |
+| Result not used | Check for this construction |
 | --- | --- |
-| `UnlinkedSegmentSocleProductIrreducible`, `LinkedSegmentSocleReverseProductStructure`, `LinkedSegmentSoclePairReducible`; tasks `23e98d90-6055-4e35-91a9-b0f5d8a84961`, `a55c4267-7e3a-43f6-8bb1-ce319e1d0aa9`, `8fa9f68b-fa1b-431a-97f6-5b163964d1fc` | No segment-socle product result is in the closure or the quotient/tensor argument. |
-| `JuxtaposedSegmentSocleReverseProductStructure`, `LinkedSegmentSocleReverseProductQuotientHom`; task `7ff2a1e9-89dc-439e-a861-a567b3db92bf` and successors | No reverse-product structure or quotient comparison for segments is used. |
-| `SegmentSocleProductIrreducibility`; task `2ae5cbe5-0701-4509-88a0-db8cbeb35be4` | The argument holds for arbitrary smooth representations and uses no irreducibility criterion. |
-| `AdjacentUnlinkedSegmentSocleSwap`; tasks `e3634665-571b-4852-9f4c-bab8a1053434`, `cded83f3-df9c-4018-bc61-dc54f5c1f9ab` | The rank-zero tensor flip is proved by pure tensor algebra; it does not invoke socle commutation. |
-| `TwoSegmentSocleCommutation`; tasks `426911b4-6620-413f-8065-04b25287f3bd`, `66e3b87c-647e-41e4-af18-df4d436765f0` | No two-segment assertion occurs in the closure or actual inputs. |
-| `LinkedSegmentSocleGluing`; tasks `c84cd52c-3ff3-4024-be50-8b84dd480888`, `6780b79c-9526-46aa-b8b4-00377d68b1ea` | The only gluing construction is the generic zero/full one-step filtration, independently proved by quotient algebra. |
-| `OrderedMultisegmentSocleExistence`, `MultisegmentSocleExhaustion`; tasks `23189526-80b0-4828-a6d4-7ebec2cbeef5`, `f3a69bc8-7312-4f82-8a7d-ea3c8188cb63` | No existence, exhaustion or constituent choice is used. |
-| Individual special-head/reverse-socle and segment-socle/reverse-head existence; tasks `67279e36-f3c2-42e3-9302-11729784042e`, `4ca79bbd-589e-476b-9f65-661e799984b5` | No head or socle is defined or selected. |
-| Analytic segment classification; task `aca8805b-054f-4d56-8045-12db7f623404` | All comparisons use explicit algebraic maps, not analytic segment classification. |
-| `SegmentSpecialEssentialSquareIntegrability`; task `5eece9e8-7f6b-4ea9-abea-a1f9f1b8c807` | No square-integrability assertion or analytic criterion is used. |
-| Multisegment special-head exhaustion, ordered strong-head existence, quotient coverage, ordered conversion and tempered uniqueness; tasks `3bfb61fa-1129-4fc9-83fd-7fcfec22106e`, `ebea9a8a-9b21-4208-aa31-98c2dea1f8a3`, `20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584`, `8252833d-c269-41a9-824c-5879e531b23b`, `52e97845-36bb-457d-b76f-70753334b88c` | These classification and existence consumers are absent from the closure. Actual source carriers are retained without decomposition. |
-| `GenericSegmentProductUniqueness`; task `30341ae4-65f2-4a0e-9283-763db01a409e` | Naturality and singleton enumeration use no uniqueness theorem for generic products. |
-| `SquareIntegrableLanglandsClassification`, square-integrable and regular exhaustion; tasks `1cb45da2-7007-4351-a694-594fb148b8d1`, `cd8ab97c-0b78-4bce-97c4-d307a28159a4`, `bf433f0a-921a-428c-b0c0-6475438125ac` | No classification or exhaustion theorem is imported or used. |
-| `SegmentHeadProductIrreducibility`; task `8364e73f-14ec-4d14-8f2b-1555a7c1ce95` | No special-head criterion or its consequences enters the construction. |
-| Every segment derivative formula, parent contribution parts (b), (d), (e), (f), and segment-socle/head existence or Jacquet formulas | Derivative/tensor commutation is proved from the actual character-localization quotients. No derivative formula for a segment is used. |
-| `TwoSupercuspidalNonadjacentProductIrreducible`, `TwoSupercuspidalProductStructure`; tasks `3c9849a4-a6c0-43ac-9982-d15ed76bf1e9`, `ab61f565-1427-4746-ba77-46097563e962` | The construction does not impose or use supercuspidality, adjacent-product structure or any of these consumer conclusions. |
-| `SegmentFullJacquetFormula`, `SegmentHeadJacquetFormula`, `SegmentSocleJacquetFormula`, `SegmentSpecialJacquetExponentNormFormula`; tasks `ed48ae06-964c-4c84-9e62-978f5a953ca7`, `55ad1e10-62d8-46b7-a081-909ef0056426`, `b95105c6-f8bb-4641-ae53-2f49d1e7f034`, `92aea10f-62ac-4e0b-bd4a-9a80909797c5` | Generic character-localization definitions are used, but none of these segment Jacquet conclusions, successors or consequences is in the dependency closure. |
+| `UnlinkedSegmentSocleProductIrreducible`, `LinkedSegmentSocleReverseProductStructure`, `LinkedSegmentSoclePairReducible` | No segment-socle product result is in the closure or the quotient/tensor argument. |
+| `JuxtaposedSegmentSocleReverseProductStructure`, `LinkedSegmentSocleReverseProductQuotientHom`, and the modules proving them | No reverse-product structure or quotient comparison for segments is used. |
+| `SegmentSocleProductIrreducibility` | The argument holds for arbitrary smooth representations and uses no irreducibility criterion. |
+| `AdjacentUnlinkedSegmentSocleSwap` and the module proving it | The rank-zero tensor flip is proved by pure tensor algebra; it does not invoke socle commutation. |
+| `TwoSegmentSocleCommutation` | No two-segment assertion occurs in the closure or actual inputs. |
+| `LinkedSegmentSocleGluing` | The only gluing construction is the generic zero/full one-step filtration, independently proved by quotient algebra. |
+| `OrderedMultisegmentSocleExistence`, `MultisegmentSocleExhaustion` | No existence, exhaustion or constituent choice is used. |
+| Individual special-head/reverse-socle and segment-socle/reverse-head existence | No head or socle is defined or selected. |
+| Analytic segment classification | All comparisons use explicit algebraic maps, not analytic segment classification. |
+| `SegmentSpecialEssentialSquareIntegrability` | No square-integrability assertion or analytic criterion is used. |
+| Multisegment special-head exhaustion, ordered strong-head existence, quotient coverage, ordered conversion and tempered uniqueness | These classification and existence consumers are absent from the closure. Actual source carriers are retained without decomposition. |
+| `GenericSegmentProductUniqueness` | Naturality and singleton enumeration use no uniqueness theorem for generic products. |
+| `SquareIntegrableLanglandsClassification`, square-integrable and regular exhaustion | No classification or exhaustion theorem is imported or used. |
+| `SegmentHeadProductIrreducibility` | No special-head criterion or its consequences enters the construction. |
+| Every segment derivative formula, and segment-socle/head existence or Jacquet formulas | Derivative/tensor commutation is proved from the actual character-localization quotients. No derivative formula for a segment is used. |
+| `TwoSupercuspidalNonadjacentProductIrreducible`, `TwoSupercuspidalProductStructure` | The construction does not impose or use supercuspidality, adjacent-product structure or any of these consumer conclusions. |
+| `SegmentFullJacquetFormula`, `SegmentHeadJacquetFormula`, `SegmentSocleJacquetFormula`, `SegmentSpecialJacquetExponentNormFormula` | Generic character-localization definitions are used, but none of these segment Jacquet conclusions, their proofs or consequences is in the dependency closure. |
 | Ze80 §§3.5, 9.6, 4.2, 9.7, 9.3; classification, exhaustion and unproved BZ77 derivative inputs | No such result or citation is used. The rank-zero comparison and one-step construction are fully proved published inputs. |
-| `SupercuspidalCoinvariantFinitenessStatement`; all-character single-block task `62de5903-b616-4b5c-88eb-a066b77c5467` | Arbitrary `GL_0` carriers and their tensor quotients require no finiteness theorem; that consumer and its consequences are absent. |
-| `IrreducibleCoinvariantFinitenessStatement`, `LeviCuspidalCoinvariantFinitenessStatement`; tasks `5ab445dc-d2b4-4072-80d1-6370870a4a26`, `3ff5c8fb-397c-4345-bcb3-5d98a0993d18`, and the unrepaired mirabolic finite-length route `5428fe2c-013c-482d-aa6e-7df43e7191aa` | The proof uses no finite-length or Whittaker-finiteness route. No repair, pending proof or consumer assertion is presumed. |
-| Worker 745's conditional `TwoBlockDerivativePieces` assembly and zero-factor/unit/two-block-shape helpers | These downstream constructions are not imported or used; the comparisons here come from the general published tensor/localization constructions. |
+| `SupercuspidalCoinvariantFinitenessStatement`; all-character single-block finiteness | Arbitrary `GL_0` carriers and their tensor quotients require no finiteness theorem; that consumer and its consequences are absent. |
+| `IrreducibleCoinvariantFinitenessStatement`, `LeviCuspidalCoinvariantFinitenessStatement`, and the mirabolic finite-length route that depends on them | The proof uses no finite-length or Whittaker-finiteness route. No consumer assertion is presumed. |
+| The conditional `TwoBlockDerivativePieces` assembly and zero-factor/unit/two-block-shape helpers | These downstream constructions are not imported or used; the comparisons here come from the general published tensor/localization constructions. |
 
-The checks cover mathematical conclusions, proof successors and
-downstream consequences of the listed exclusions, not only their
+The checks cover mathematical conclusions, the modules proving them and
+downstream consequences of the listed results, not only their
 identifiers. Proposition definitions in the target module provide the
 actual source, pieces and index set; their unproved conclusions are
-not hypotheses. The construction uses neither a private draft nor a
-pending proof as mathematical evidence, and does not contact or rely on
-work from the paused Worker 127.
+not hypotheses. The construction uses no unproved statement as
+mathematical evidence.

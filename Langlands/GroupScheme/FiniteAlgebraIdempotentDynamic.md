@@ -48,5 +48,7 @@ Module `Langlands.GroupScheme.FiniteAlgebraIdempotentDynamic`, namespace
 Internal. This is the standard fact that elements of positive weight for a cocharacter
 contract to the identity (the dynamic description of `U(λ)`, Conrad–Gabber–Prasad,
 *Pseudo-reductive groups*, §2.1), proved directly for unit groups of finite algebras and the
-Library's idempotent tori. It is used in Task 5398 to show that Eichler transformations of a
+Library's idempotent tori. It is used in `Langlands.GroupScheme.Quaternionic.EichlerDynamic`
+(toward the Kneser–Tits property of the quaternionic spin groups of Witt index one over
+nonarchimedean local fields) to show that Eichler transformations of a
 hyperbolic pair are rational points of the unipotent subgroup of the hyperbolic torus.

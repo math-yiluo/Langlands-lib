@@ -1,6 +1,6 @@
 # Fixed-exponent stability of compact compression
 
-Worker 1751. This internal algebraic interface packages the published compact
+This internal algebraic interface packages the published compact
 compression of a smooth complex representation. It does not prove that a stable
 power exists for an arbitrary smooth representation or that its exponent can be
 chosen independently of the representation.

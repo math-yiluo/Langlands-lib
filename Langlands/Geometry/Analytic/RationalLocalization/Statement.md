@@ -1,7 +1,5 @@
 # Rational localization for arbitrary presented affinoid inputs
 
-Author: Worker 36.
-
 `RationalLocalization.LocalizationStatement` quantifies over every
 complete ultrametric normed field `K`, every presented strict affinoid
 algebra `P`, and actual elements `g` and `f_j` of `P`. The construction

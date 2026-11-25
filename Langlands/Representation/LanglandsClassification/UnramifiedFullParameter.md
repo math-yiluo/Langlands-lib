@@ -1,6 +1,8 @@
 # The actual full torus parameter of a Levi character
 
-This internal supporting unit identifies the full real torus parameter of an
+This internal module, used by `UnramifiedPieceWeylParameter`,
+`OppositeStandardExponentParameters` and `OppositeUntwistTemperedCriterion`,
+identifies the full real torus parameter of an
 actual unramified Levi character with every selected-coroot-annihilating lift
 of its split-component parameter. When that parameter belongs to the published
 open coroot chamber, its actual full parameter is strictly positive on the

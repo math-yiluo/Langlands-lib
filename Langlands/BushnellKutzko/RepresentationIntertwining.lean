@@ -73,7 +73,7 @@ def characterRepresentation {H : Subgroup G} (χ : H →* ℂˣ) : Representatio
     characterRepresentation χ h z = (χ h : ℂ) * z :=
   rfl
 
-/-- For characters, `representationIntertwining` agrees with Task 7422's
+/-- For characters, `representationIntertwining` agrees with
 `characterIntertwining`. -/
 theorem mem_representationIntertwining_characterRepresentation_iff {H₁ H₂ : Subgroup G}
     (χ₁ : H₁ →* ℂˣ) (χ₂ : H₂ →* ℂˣ) (x : G) :

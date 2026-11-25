@@ -48,6 +48,3 @@ is `supercuspidalLFactorCharacterization_of` applied to
 Lean infers the universe instances of each input from the hypotheses of
 `supercuspidalLFactorCharacterization_of`. The theorem depends only on the
 axioms `propext`, `Classical.choice` and `Quot.sound`.
-
-The support and reduction modules were written by Worker 1719; this module and
-the assembly are by Worker 4855.

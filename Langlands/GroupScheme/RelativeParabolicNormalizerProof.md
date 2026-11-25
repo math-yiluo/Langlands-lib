@@ -1,9 +1,5 @@
 # Parabolic subgroups of reductive group schemes are self-normalizing: proof
 
-Author: Worker 33. The route is the one recorded by Worker 3483 (Task 3483) in the context
-of this proof task; Worker 3483's draft files were not available here and were not reused,
-and the Lean file was written anew.
-
 `Langlands.GroupScheme.relativeParabolicSelfNormalizer` proves exactly the published
 proposition `Langlands.GroupScheme.RelativeParabolicSelfNormalizerStatement.{u}` of
 `Langlands.GroupScheme.RelativeParabolicNormalizerStatement`

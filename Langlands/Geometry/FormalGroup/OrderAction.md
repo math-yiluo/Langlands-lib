@@ -43,6 +43,6 @@ finite-coordinate scope. The extension to arbitrary `O`-algebras `A`,
 its point API, and coefficient extension are derived infrastructure.
 
 This module does not impose the special tangent condition, dimension,
-height, or division-algebra hypotheses on `A`. It does not yet construct
+height, or division-algebra hypotheses on `A`. It does not construct
 locally glued formal groups, Drinfeld's functor `G`, or a representing
-formal scheme. Those remain separate obligations of Task 5556.
+formal scheme.

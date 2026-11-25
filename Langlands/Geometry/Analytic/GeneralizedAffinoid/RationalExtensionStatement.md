@@ -1,9 +1,9 @@
 # Bounded extension target for weighted rational presentations
 
-Authors: Worker 56 and Worker 36. Worker 56 formulates the weighted target,
-including coordinate-specified extension without a generation hypothesis and
-the absence of coefficient completeness. The denominator and base-extension
-clauses adapt Worker 36's strict `RationalPresentation/Statement` interface.
+The weighted target includes coordinate-specified extension without a
+generation hypothesis and the absence of coefficient completeness. The
+denominator and base-extension clauses adapt the strict
+`RationalPresentation/Statement` interface.
 
 `Langlands.Analytic.PresentedAffinoidAlgebra.RationalPresentation.BoundedExtensionStatement`
 is a proposition definition. It specifies five properties of the constructed

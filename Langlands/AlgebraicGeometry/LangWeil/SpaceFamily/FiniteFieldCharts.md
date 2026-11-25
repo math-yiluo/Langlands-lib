@@ -1,8 +1,8 @@
 # Uniform finite-field charts of a quasi-separated algebraic space of finite type over ℤ
 
-Author: Worker 3694. A helper module of the proof of
+A helper module of the proof of
 `Langlands.AlgebraicGeometry.LangWeil.SpaceUniformLangWeilOfFamilyStatement`; the final
-assembly (Worker 75) uses its main theorem to pass from points of the algebraic space `B` to
+assembly (`SpaceUniformLangWeilOfFamilyProof`) uses its main theorem to pass from points of the algebraic space `B` to
 points of affine schemes.
 
 Provenance: internal. The single-point version is the Library theorem

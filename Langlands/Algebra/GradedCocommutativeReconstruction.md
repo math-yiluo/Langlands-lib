@@ -1,6 +1,7 @@
 # Reconstruction of graded cocommutative Hopf algebras
 
-Workers 312 and 603. Internal supporting construction for Task 6776.
+Internal supporting construction for the proof that extensions of groups of
+multiplicative type over a field are of multiplicative type.
 
 Let `K` be an algebraically closed field and `A` a commutative, cocommutative
 Hopf algebra over `K`. Let `N` be any commutative group and let
@@ -29,9 +30,7 @@ inverse and then `MonoidAlgebra.toAdditiveBialgEquiv` gives the displayed
 equivalence in the additive group-algebra convention used by diagonalizable
 groups.
 
-This is an internal combination of the same-task graded-spanning proof and
-the published group-like reconstruction API. The original graded-spanning
-pair is included unchanged as supporting source. This definition supplies
-a data-valued entry point for that supporting submission; the previously
-staged exact field-extension proof and every source in its frozen bundle
-remain unchanged.
+This is an internal combination of the graded-spanning proof of
+`CocommutativeGradedGroupLike` and the published group-like reconstruction API
+(`GroupLikeReconstruction`). This definition supplies a data-valued entry point for
+that graded-spanning result.

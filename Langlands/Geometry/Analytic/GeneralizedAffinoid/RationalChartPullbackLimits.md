@@ -1,7 +1,5 @@
 # Coefficient pullback preserves finite limits of actual rational charts
 
-Author: Worker 56.
-
 Let K be an ultrametric normed field, let A and B be actual presented
 positive-radius affinoid algebras, and let `φ : A → B` be an arbitrary
 bounded K-algebra homomorphism. The chosen chart pullback retains the

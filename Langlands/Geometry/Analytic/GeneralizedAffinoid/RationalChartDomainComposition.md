@@ -1,7 +1,5 @@
 # Full domains inside actual rational charts
 
-Author: Worker 56.
-
 This module constructs a full represented domain over the original base from
 a full represented domain over an actual rational quotient. The coefficient
 field is complete and ultrametric; all algebras are the Library's finite

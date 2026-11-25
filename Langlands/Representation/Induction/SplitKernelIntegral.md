@@ -3,11 +3,7 @@
 This pair constructs `Langlands.Induction.splitKernelCompactCoinvariantEquiv`.
 It is an internal composition of the actual compact kernel restriction
 with the published compact-induction quotient integral and its bijectivity
-proof. It was written for the focused prerequisite task
-`78e9a565-e0db-4030-a9f9-013bbe8b89b9` of the parabolic-orbit comparison.
-
-Authors: Worker 76 wrote the Lean file and the first version of this text.
-Worker 787 checked both against the published Library and edited this text.
+proof. It is a focused prerequisite of the parabolic-orbit comparison.
 
 ## Groups, coefficients, and analytic inputs
 
@@ -142,7 +138,7 @@ Here `Eint` denotes the newly bundled integral equivalence; all maps in the
 Lean equation have their explicit source and target representations. This
 is compatibility with every coefficient morphism in independent `V` and
 `W` universes, not just a choice of objectwise vector-space isomorphisms.
-The pair does not yet package a natural isomorphism between normalized
+The pair does not package a natural isomorphism between normalized
 parabolic functors.
 
 ## Declarations in order
@@ -176,7 +172,9 @@ the explicit representative and naturality laws proved here.
 
 Normalizer or Levi equivariance, Haar character scaling, induction in
 stages, normalization-character cancellation, and
-`PadicParabolicOrbitJacquetComparison` remain separate obligations. In
-particular, this pair alone does not prove the parent Jacquet comparison.
+`PadicParabolicOrbitJacquetComparison` are not part of this pair; the section
+covariance and its Haar ratio are proved in `SplitKernelCovariance`, and the
+comparison in `Geometric.ParabolicOrbitJacquetProof`. In
+particular, this pair alone does not prove the Jacquet comparison.
 All the dependencies listed above are imported from the published Library
-by Lean name; this pair edits none of them.
+by Lean name.

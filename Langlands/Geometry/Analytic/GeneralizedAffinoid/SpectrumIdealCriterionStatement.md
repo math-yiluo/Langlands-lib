@@ -1,8 +1,8 @@
 # Spectrum criteria at arbitrary positive presentation radii
 
-Worker 56 adapts the published strict-affinoid criterion interface developed
-by Workers 36 and 56 to the actual positive-polyradius quotient presentations.
-This module defines four propositions. It proves none of them.
+This module adapts the published strict-affinoid criterion interface to the
+actual positive-polyradius quotient presentations.
+It defines four propositions. It proves none of them.
 
 ## Fields, algebras and spectra
 
@@ -89,8 +89,10 @@ formulations are derived consequences, rather than verbatim source
 statements. They assert neither maximality of spectrum kernels nor finite
 residue degree.
 
-The later proof may instead transfer the published strict criterion through
-actual radius-realizing scalar extension and bounded quotient descent. No
+A proof may instead transfer the published strict criterion through
+actual radius-realizing scalar extension and bounded quotient descent;
+`spectrumIdealCriterion` in `GeneralizedAffinoid.SpectrumIdealCriterionProof`
+proves the conjunction through radius-realizing scalar extension. No
 scalar extension, retraction, faithful-flatness hypothesis or assumed
 spectral conclusion appears in these propositions. General domain
 representability, atlases, structure sheaves, etale sites, equivariant sites

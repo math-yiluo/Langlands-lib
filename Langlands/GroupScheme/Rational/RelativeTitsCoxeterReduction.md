@@ -1,7 +1,8 @@
 # The Weyl-group part of the relative Tits system from a Coxeter realization
 
-This internal auxiliary module supports the proof task for
-`Langlands.GroupScheme.RelativeTitsSystemStatement`. It takes the published Coxeter realization
+This internal auxiliary module serves the proof of
+`Langlands.GroupScheme.RelativeTitsSystemStatement` (`relativeTitsSystem`, module
+`Rational.RelativeTitsSystemProof`). It takes the published Coxeter realization
 of the relative Weyl group, `IsRelativeWeylCoxeterRealization` and `HasRelativeWeylCoxeterSystem`
 from `Langlands.GroupScheme.Rational.RelativeWeylCoxeterStatement`, and derives from it every
 part of `HasRelativeTitsSystem i ν` that concerns only the Weyl group `N(k)/Z(k)`. The remaining

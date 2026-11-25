@@ -20,8 +20,8 @@ namespace OpenSubgroupTransport.Hom
 variable {X Y Z : ρ.OpenSubgroupTransport}
 
 private theorem ambientInv_comp (r s : G) :
-    (ρ.toMonoidHom r).inv.comp (ρ.toMonoidHom s).inv =
-      (ρ.toMonoidHom (s * r)).inv := by
+    (ρ.toMonoidHom r).asIso.inv.comp (ρ.toMonoidHom s).asIso.inv =
+      (ρ.toMonoidHom (s * r)).asIso.inv := by
   rw [map_mul]
   rfl
 
@@ -29,12 +29,12 @@ private theorem ambientInv_comp (r s : G) :
 def chartPullback (f : X ⟶ Y) (a b : G)
     (hab : (b : G ⧸ Y.subgroup.toSubgroup) = (a * f.label⁻¹ : G)) :
     BoundedAlgHom K Y.domain.obj.algebra X.domain.obj.algebra :=
-  f.restriction.comp (Y.chartAlgebraChange b (a * f.label⁻¹) hab).hom
+  f.restriction.comp (Y.chartAlgebraChange b (a * f.label⁻¹) hab).asIso.hom
 
 theorem chartPullback_comp_baseMap (f : X ⟶ Y) (a b : G)
     (hab : (b : G ⧸ Y.subgroup.toSubgroup) = (a * f.label⁻¹ : G)) :
     (f.chartPullback a b hab).comp Y.domain.obj.baseMap =
-      X.domain.obj.baseMap.comp (ρ.toMonoidHom (b⁻¹ * a)).inv := by
+      X.domain.obj.baseMap.comp (ρ.toMonoidHom (b⁻¹ * a)).asIso.inv := by
   unfold chartPullback
   rw [BoundedAlgHom.comp_assoc, Y.chartAlgebraChange_comp_baseMap,
     ← BoundedAlgHom.comp_assoc, f.restriction_comp_baseMap,
@@ -46,7 +46,7 @@ theorem chartPullback_unique (f : X ⟶ Y) (a b : G)
     (hab : (b : G ⧸ Y.subgroup.toSubgroup) = (a * f.label⁻¹ : G))
     (φ : BoundedAlgHom K Y.domain.obj.algebra X.domain.obj.algebra)
     (hφ : φ.comp Y.domain.obj.baseMap =
-      X.domain.obj.baseMap.comp (ρ.toMonoidHom (b⁻¹ * a)).inv) :
+      X.domain.obj.baseMap.comp (ρ.toMonoidHom (b⁻¹ * a)).asIso.inv) :
     φ = f.chartPullback a b hab := by
   apply Y.domain.obj.hom_ext
   exact hφ.trans (f.chartPullback_comp_baseMap a b hab).symm
@@ -157,8 +157,8 @@ theorem chartPullback_naturality (f : X ⟶ Y) (a a' b b' : G)
     (hb : (b : G ⧸ Y.subgroup.toSubgroup) = b')
     (hab : (b : G ⧸ Y.subgroup.toSubgroup) = (a * f.label⁻¹ : G))
     (hab' : (b' : G ⧸ Y.subgroup.toSubgroup) = (a' * f.label⁻¹ : G)) :
-    (X.chartAlgebraChange a a' ha).hom.comp (f.chartPullback a b hab) =
-      (f.chartPullback a' b' hab').comp (Y.chartAlgebraChange b b' hb).hom := by
+    (X.chartAlgebraChange a a' ha).asIso.hom.comp (f.chartPullback a b hab) =
+      (f.chartPullback a' b' hab').comp (Y.chartAlgebraChange b b' hb).asIso.hom := by
   apply Y.domain.obj.hom_ext
   conv_lhs =>
     rw [BoundedAlgHom.comp_assoc, f.chartPullback_comp_baseMap,
@@ -199,7 +199,7 @@ def cosetChartPullback (f : X ⟶ Y) (c : G ⧸ X.subgroup.toSubgroup) :
 theorem cosetChartPullback_comp_baseMap (f : X ⟶ Y)
     (c : G ⧸ X.subgroup.toSubgroup) :
     (f.cosetChartPullback c).comp Y.domain.obj.baseMap =
-      X.domain.obj.baseMap.comp (ρ.toMonoidHom ((f.cosetMap c).out⁻¹ * c.out)).inv :=
+      X.domain.obj.baseMap.comp (ρ.toMonoidHom ((f.cosetMap c).out⁻¹ * c.out)).asIso.inv :=
   f.chartPullback_comp_baseMap c.out (f.cosetMap c).out (f.cosetChart_compatible c)
 
 /-- The continuous spectrum map of the bounded pullback in chosen coset coordinates. -/

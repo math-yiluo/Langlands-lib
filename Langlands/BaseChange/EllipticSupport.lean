@@ -13,7 +13,7 @@ defines:
 * `IsEllipticSupported f`: `f : GL_n(F) → ℂ` vanishes off the regular elliptic elements
   (the Library's `JacquetLanglands.IsRegularElliptic`);
 * `IsSigmaEllipticSupported σ l φ`: `φ : GL_n(E) → ℂ` vanishes off the σ-elliptic elements
-  (`IsSigmaElliptic σ l`, Task 7405).
+  (`IsSigmaElliptic σ l`).
 
 The lemmas show that these supports are contained in the regular and σ-regular sets (so the
 predicates refine `IsRegularSupported` and `IsSigmaRegularSupported`), and that both

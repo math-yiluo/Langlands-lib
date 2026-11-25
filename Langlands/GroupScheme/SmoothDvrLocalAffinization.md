@@ -1,7 +1,5 @@
 # The local smooth-DVR affinization construction
 
-Worker 596, using Worker 183's principal-open and translation constructions.
-
 Over a Henselian DVR with separably closed residue field, let `G` be an
 actual smooth, quasi-compact, separated group with affine actual generic
 fibre. Supply an actual compatible group law on its prescribed canonical
@@ -10,8 +8,9 @@ the closed fibre). `canonicalIso` constructs the actual canonical
 isomorphism `G → Spec Γ(G,O_G)`, and `isAffineHom` concludes relative
 affineness. The forward map is precisely `Scheme.toSpecΓ`.
 
-These are two explicit construction inputs, still to be supplied by the
-independent prerequisite tasks. This module does not claim the unconditional
+These are two explicit construction inputs. The proof `smoothDvrGenericAffineness`
+in `Langlands.GroupScheme.SmoothDvrGenericAffinenessProof` supplies them by
+`FlatPidAffinization.groupStructure` and `smoothDvrFibreDenseAffineOpen`. This module does not claim the unconditional
 smooth-DVR affineness theorem.
 
 ## Implemented proof and provenance
@@ -22,7 +21,7 @@ base-changed canonical map with the canonical map of the source base
 change. An affine generic fibre thus makes the actual generic canonical
 map an isomorphism.
 
-The supplied affine open and Worker 183's BLR principal-function
+The supplied affine open and the BLR principal-function
 construction give a smooth source chart for the canonical map that meets
 the special fibre. The source group has such a fibre point from its unit.
 Henselian lifting and density of rational points over the separably closed

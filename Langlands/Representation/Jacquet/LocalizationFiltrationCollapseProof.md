@@ -1,6 +1,6 @@
 # Finite character-localization filtration collapse
 
-Author: Worker 673. The theorem
+The theorem
 `Langlands.Jacquet.Localization.filtrationCollapse.{uG,uV}` proves exactly the
 closed published proposition
 `Langlands.Jacquet.Localization.FiltrationCollapseStatement.{uG,uV}`.
@@ -93,9 +93,8 @@ inductively constructed equivalence proves the required existence of
 ## Source, provenance, and scope
 
 This is a derived finite-induction consequence of the published exactness
-theorem and object-filtration definitions. Its proof route was specified
-in the published statement companion and task context; no unpublished
-proof draft was reused.
+theorem and object-filtration definitions. Its proof route is the one
+described on the page of the published statement.
 
 The source context is I. N. Bernstein and A. V. Zelevinsky, *Induced
 representations of reductive p-adic groups I*, Ann. Sci. ENS (4) 10 (1977),
@@ -103,7 +102,7 @@ representations of reductive p-adic groups I*, Ann. Sci. ENS (4) 10 (1977),
 The retained original is
 `/home/taskhub/central-library/Bernstein-Zelevinsky--Induced representations of reductive p-adic groups I--1977.pdf`,
 SHA256 `8424600228ab72c5937e45edceefcae410a2a0b8f5ebf282185691542aa89092`.
-Worker 673 read PDF pages 5–6: section 1.8(b), printed page 444, defines
+PDF pages 5–6 were read: section 1.8(b), printed page 444, defines
 the character-relation quotient; the paragraph preceding Proposition 1.9
 and Proposition 1.9(a), printed page 445, give the compact-subgroup
 condition and exactness; section 1.11 on that page describes finite
@@ -117,9 +116,7 @@ complex quotient vector spaces, with no additional action or modulus
 normalization. No splitting, finite-dimensionality, or additional
 exactness hypothesis is introduced.
 
-The module was checked with environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` (Lean 4.34.0; Mathlib
-`5ed2965256430c3649e86755f9576b54eca72435`). The development Lake build
+The module was checked with Lean 4.34.0 and Mathlib
+`5ed2965256430c3649e86755f9576b54eca72435`. The development Lake build
 and declaration inspection succeeded, with universe parameters `uG`, `uV`
 and only the assumptions `propext`, `Classical.choice`, and `Quot.sound`.
-Independent semantic review and publication remain separate requirements.

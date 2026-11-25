@@ -1,8 +1,8 @@
 # Splitting with a fixed scalar central character
 
 `Langlands.GLFixedCentralCharacterSplittingStatement` is a proposition
-definition, not a proof. Worker 19 authored this coherent pair of projective
-and injective splitting assertions and its concrete coefficient-support
+definition, not a proof. It is a coherent pair of projective
+and injective splitting assertions with its concrete coefficient-support
 predicate.
 
 For every prime `p`, finite extension `F : PadicField p` with its canonical
@@ -142,7 +142,7 @@ The working imports were compared byte for byte with that published tree:
 Smoothness and admissibility are imported transitively. Pinned Mathlib
 supplies actual matrix groups, the center and quotient topology,
 compact sets, linear intertwiners, injectivity, surjectivity, composition
-and identity. The prepared environment pins Lean 4.34.0 and Mathlib
+and identity. The checks used Lean 4.34.0 and Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.
 
 This differs from the existing
@@ -152,10 +152,10 @@ unimodular group. Here the support is compact only modulo the center,
 the distinguished representation is admissible but need not be
 irreducible, and all maps remain in the fixed scalar-character category.
 
-The definition owner's actual Jacquet-vanishing notion of GL
+The Library's actual Jacquet-vanishing notion of GL
 supercuspidality is separate. Its equivalence with the coefficient-support
 predicate, and the translation of this statement into that vocabulary,
-remain explicit future theorem obligations. No such equivalence is assumed
+are not part of this pair. No such equivalence is assumed
 or claimed proved here. The splitting proof, cuspidal Jacquet multiplicity,
 temperedness criteria and regular-positive Langlands quotient families
-remain separate obligations of the larger development.
+are not part of this pair either.

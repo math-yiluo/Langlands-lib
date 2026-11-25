@@ -1,7 +1,5 @@
 # Renard V.3.21.1 modulo the common norm kernel
 
-Author: Worker 1222.
-
 `Langlands.BruhatTits.Cartan.RenardLeviCones.LeviConePartitionStatement`
 states a partition of the image of `A_M^+` in `A_M(F)/⁰A_M` for every
 standard parabolic `P = MN`. Each piece comes from `A_L^{++}` for a standard

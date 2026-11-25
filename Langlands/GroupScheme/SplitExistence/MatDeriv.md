@@ -1,7 +1,5 @@
 # Derivatives of matrices over a polynomial ring
 
-Author: Worker 1398.
-
 Module `Langlands.GroupScheme.SplitExistence.MatDeriv`.
 
 ## Declarations

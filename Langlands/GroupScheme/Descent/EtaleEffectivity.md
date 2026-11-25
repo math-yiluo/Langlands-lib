@@ -37,6 +37,7 @@ affineness of its structure morphism.
 
 The output includes an actual group scheme over `B`, an isomorphism from
 its pullback to the given group scheme over `S`, and compatibility with the
-specified descent datum. This unit supplies effective descent; the host
-quasi-split inner-form theorem also requires separate geometric and inner
-discrepancy constructions.
+specified descent datum. This module supplies effective descent; the
+quasi-split inner-form theorem over an arbitrary base,
+`RelativeQuasiSplitInnerFormExistenceStatement`, also requires separate
+geometric and inner discrepancy constructions.

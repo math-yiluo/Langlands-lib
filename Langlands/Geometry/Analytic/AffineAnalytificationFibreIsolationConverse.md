@@ -1,7 +1,5 @@
 # Fibre isolation in the affine analytification forces quasi-finiteness
 
-Author: Worker 99.
-
 Let `K` be a complete ultrametric nontrivially normed field. Let `A` and `B`
 be commutative `K`-algebras with finite polynomial presentations `P` and `Q`,
 and let `f : A →ₐ[K] B`. The theorem `quasiFinite_of_forall_isolated`

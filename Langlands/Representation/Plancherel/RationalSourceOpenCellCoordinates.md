@@ -1,7 +1,5 @@
 # Actual source open-cell coordinates
 
-Author: Worker 200.
-
 This derived adapter follows Waldspurger (2003), I.1, second formula (2),
 printed p.240 / PDF p.6. It uses the canonical rational-point topology and
 Borel measurable space for an actual connected reductive group scheme over

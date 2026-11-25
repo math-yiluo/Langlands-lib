@@ -195,7 +195,7 @@ frame-composition transitions. It separately asserts smooth projective
 representability, finite-etale forgetting and the normal-level Galois
 cover with group `U/V`.
 
-This module's contribution is an internal deduction of the finiteness
+This module gives an internal deduction of the finiteness
 part under the explicit formal premises. Its implemented route uses
 the proved original comparison-surjectivity theorem, actual pullback
 points and coproduct summands to establish point-fiber transitivity,
@@ -209,13 +209,15 @@ The exact representing test category remains restricted as described
 above. Applicable representability under the required division/global
 hypotheses, comparison with the full source moduli problem, the source
 smallness implication to actual coarse-object rigidity, and etaleness of
-the original forgetting morphism remain obligations. This module does
+the original forgetting morphism are not proved here; the smallness
+implication is `CMSmallLevelRigidityStatement`, proved as
+`cmSmallLevelRigidity`. This module does
 not assert a free residual action, invertibility of the kernel comparison,
 or the source's complete Galois-cover assertion from these inputs alone.
 The inherited torsion finite-etaleness premise does not establish
 etaleness of `p`. Canonical-model comparisons, uniformization and actual
 coefficient-system descent also remain separate obligations.
 
-All code and prose in this pair are by Worker 57. The pinned environment
+The pinned environment
 is Lean 4.34.0 with Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.

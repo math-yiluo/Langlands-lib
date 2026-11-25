@@ -5,7 +5,7 @@ Module `Langlands.Representation.RankinSelberg.HighlyRamified.Prerequisites`.
 Internal helper for the proof of `Langlands.RankinSelberg.HighlyRamifiedGammaStabilityStatement`
 (Jacquet–Shalika 1985, Proposition (4.1), printed page 326). It states the reduction of the
 target to three published Library statements. They are the only inputs of the
-`HighlyRamified` development that are not yet proved. Everything else it uses is proved,
+`HighlyRamified` development taken as hypotheses here. Everything else it uses is proved,
 either in the Library or in the `HighlyRamified` modules.
 
 ## Declaration
@@ -33,6 +33,11 @@ The proof is one application of `highlyRamifiedGammaStability_of_inputs`
 (`HighlyRamified.AdjacentStep`). It passes `hT1`, the third conjunct `h2.2.2`, `h3`, `hone` and
 `kirillovShellInput` (`HighlyRamified.KirillovShell`), the proved Kirillov shell input. That
 input is an internal substitute for the vector `W'` of JS85 (4.4.16)–(4.4.17), not that
-vector; `KirillovShell.md` lists the differences. Each of the three prerequisite statements is the target of a
-separate proof task. When their proofs are published, applying this theorem to them gives
-the target with no remaining premise.
+vector; `KirillovShell.md` lists the differences. Applying this theorem to proofs of the three
+prerequisite statements gives the target with no remaining premise. The Library proves two of
+them: `whittakerCompleteness` (`Whittaker.CompletenessProof`) and `uniformRankOneTwist`
+(`UniformRankOneTwistProof`). It does not prove `EssentialConductorStatement` as a closed
+theorem; `Conductor.EssentialConductorReduction` derives it from further statements. The
+Library's proof of the target, `highlyRamifiedGammaStability` in `HighlyRamifiedProof`, does not
+use this theorem: it applies `highlyRamifiedGammaStability_of_adjacentStep` with the essential
+pair input obtained from `UniformRankOneTwistStatement`.

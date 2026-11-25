@@ -1,6 +1,6 @@
 # Generic pullbacks of connected étale schemes over a DVR
 
-Worker 607. This internal helper unit derives its conclusions from the published
+This internal helper module derives its conclusions from the published
 fraction-field/generic-point comparison, the published flat DVR connectedness
 theorem with reduced special fibre, and reducedness for smooth schemes over a
 reduced base. It introduces no external-source theorem or new hypothesis on the

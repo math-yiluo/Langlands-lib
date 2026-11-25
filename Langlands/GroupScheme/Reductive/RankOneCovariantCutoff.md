@@ -1,6 +1,6 @@
 # Rank-one degree bounds for actual covariant coordinates
 
-This is derived supporting work by Worker 1369. It constructs the polynomial
+This is derived supporting work. It constructs the polynomial
 of an actual affine-line curve in an affine group and proves a degree bound
 from supplied all-test rank-one relations and coordinate covariance. The
 argument uses the actual coordinate evaluation and relative-spectrum counit
@@ -68,9 +68,9 @@ invariance removes its first factor and coroot covariance gives
 `Q(t) = t^m P(t⁻¹)`. Counit injectivity transfers this equality to `k`,
 and the reciprocal polynomial lemma supplies the degree bound.
 
-The relation and both covariance laws are explicit hypotheses. This unit
+The relation and both covariance laws are explicit hypotheses. This module
 does not prove that a specified covariant character has these laws, extend
 the final degree conclusion to arbitrary coefficient-algebra points, or
 construct a Steinberg representation. The Frobenius cutoff, whole-space
 restriction injectivity, sharp dimension bound, structural existence and
-`SteinbergBigCellStatement` remain obligations of the host task.
+`SteinbergBigCellStatement` are not part of this module.

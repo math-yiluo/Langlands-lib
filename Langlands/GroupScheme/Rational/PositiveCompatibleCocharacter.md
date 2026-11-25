@@ -1,6 +1,6 @@
 # Compatible whole-torus centralizers preserving finite positivity
 
-This derived unit refines the published
+This derived module refines the published
 `Rational/CompatibleTorusCocharacter` construction by preserving positivity on
 a supplied finite family of integral additive forms. Its proof adapts that
 module's dominant-combination argument and adds the integral bound from
@@ -48,7 +48,7 @@ for the chosen value. No uniqueness or canonical-choice assertion is made.
 In the Levi-centralizer application, the forms can be pairings of source
 characters after base change and postcomposition with a specified lift.
 That application still has to supply these additive forms, their finite
-index family, and an initial cocharacter positive on them. This unit does
+index family, and an initial cocharacter positive on them. This module does
 not construct the initial positive direction, a relative root system, a
 splitting extension, ambient maximal splitness, or a factorization through a
 specified geometric solvable radical, and does not prove

@@ -39,7 +39,7 @@ open Langlands.LinearAlgebra.SimplyConnectedCartanComponents
 
 variable {M : AffinePinnedModel.{u}} (D : RootComponentCoordinates M)
 
-local instance : Smooth M.group.X.hom := M.reductive.smooth
+private local instance : Smooth M.group.X.hom := M.reductive.smooth
 
 /-- Every simply connected algebraically closed field fibre of the pinned
 model is the actual product of the relative derived component fibres. -/

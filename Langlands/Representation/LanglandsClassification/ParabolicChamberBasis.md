@@ -1,6 +1,6 @@
 # Coordinate subspaces and chamber topology
 
-Worker 705, Task 6450. Module
+Module
 `Langlands.Representation.LanglandsClassification.ParabolicChamberBasis`,
 namespace `Langlands.GroupScheme.ParabolicChamberAux`.
 

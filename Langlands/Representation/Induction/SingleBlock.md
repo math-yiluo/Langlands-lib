@@ -1,7 +1,5 @@
 # Evaluation for single-block normalized induction
 
-Author: Worker 163.
-
 This module constructs an actual representation equivalence for normalized
 parabolic induction from a shape with one block, together with its block-product
 corollary. It is internal infrastructure derived from the published induction,

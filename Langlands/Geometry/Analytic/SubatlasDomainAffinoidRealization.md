@@ -1,7 +1,5 @@
 # Actual finite selected-atlas realizations of original local full domains
 
-Author: Worker 36.
-
 For a locally refining selection of original charts, this module constructs
 a finite gluing datum in the selected atlas's actual local-domain saturation
 for every original local full domain. The given old domain algebra and
@@ -136,10 +134,11 @@ atlas assumptions; global Hausdorffness is not added. The finite
 cover may be empty when its coverage equation permits it.
 No reducedness or nonzero-algebra assumption is used.
 
-This unit constructs the finite realization and proves its bounded
+This module constructs the finite realization and proves its bounded
 compatibility. Completed-tensor overlap admissibility, specialness
-of this cover, recognition of the old domain for the selected
-saturation, and recognition invariance remain subsequent steps.
-The full arbitrary equivalent-net theorem, maximal-atlas uniqueness,
-unrestricted analytic morphism identification, analytic etale and
-equivariant sites, and Harris specialization remain further obligations.
+of this cover and recognition of the old domain for the selected
+saturation are proved in `SubatlasDomainRecognition`, and recognition
+invariance under the selection in `SubatlasRecognitionEquivalence`. The full
+arbitrary equivalent-net theorem, maximal-atlas uniqueness, unrestricted
+analytic morphism identification, analytic etale and equivariant sites, and
+Harris specialization lie outside this module.

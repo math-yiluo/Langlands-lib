@@ -1,6 +1,6 @@
 # Normalized spectral characters in rank-one arithmetic epsilon values
 
-Worker 1555 derives this internal unit from the existing normalized reciprocity
+This internal module is derived from the existing normalized reciprocity
 predicate, actual continuous absolute-value power character, and bottom-field
 character transport. It introduces no new original-literature assertion.
 

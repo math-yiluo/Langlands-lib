@@ -1,11 +1,11 @@
 # L-polynomials of pairs over general nonarchimedean local fields
 
-Worker 8 adapts the published p-adic L-polynomial interface
+This module adapts the published p-adic L-polynomial interface
 (`IsPadicPairLPolynomial`, `IsPadicSymmetricLPolynomial` in
 `RankinSelberg/PadicPairFactors.lean`) to a general nonarchimedean local field,
 in the same way as `RankinSelberg/GeneralPairGamma.lean` adapts the gamma
 relations. All declarations are in `Langlands.RankinSelberg`. This is a derived
-definition unit. It proves no existence of L-polynomials and selects none.
+definition module. It proves no existence of L-polynomials and selects none.
 
 ## Setting and definitions
 

@@ -19,7 +19,8 @@ variable [Field K] [NumberField K] [Field L] [NumberField L] [Field M] [NumberFi
 
 @[simp] theorem mixedEquiv_refl (x : mixedEmbedding.mixedSpace K) :
     mixedEquiv (RingEquiv.refl K) x = x := by
-  simp [mixedEquiv, infiniteAdeleEquiv_refl]
+  rw [mixedEquiv, infiniteAdeleEquiv_refl]
+  exact (InfiniteAdeleRing.ringEquiv_mixedSpace K).apply_symm_apply x
 
 theorem mixedEquiv_trans (e : K ≃+* L) (a : L ≃+* M)
     (x : mixedEmbedding.mixedSpace K) :

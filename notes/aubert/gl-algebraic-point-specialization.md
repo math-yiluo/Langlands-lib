@@ -1,21 +1,18 @@
 # Actual GL rational-point topology: specialization and dependency supplement
 
-Worker 585 constructed `Langlands.Group.GL.AlgebraicPointTopology` using the
-actual algebraic GL comparison of Worker 1107 and the affine point-topology
-comparisons of Worker 105. This supplement records the exact continuous maps,
+`Langlands.Group.GL.AlgebraicPointTopology` is constructed from the actual
+algebraic GL comparison (`GroupScheme.Dynamic.GeneralLinearRationalPoints`) and
+the affine point-topology comparisons (`AlgebraicGeometry.PointTopology`). This supplement records the exact continuous maps,
 their source provenance and two distinct dependency inventories. It supplements
 [the actual general-to-GL adapter note](gl-general-specialization.md) and
 [the full GL source map](gl-specialization-source-map.md); those historical
 inventories are preserved.
 
-The snapshot is Library `3c99509d9f7a41b5f3932da0e3877264b3a70a9e` plus the
-unchanged topology pair in candidate `375283aa-1aa4-4895-8c1c-803fe1fb51e4`.
-That candidate has machine validation and Reviewer 9060's independent approval
-(review `fb9bd7f7-bd2b-4bc5-892d-82fa3403d8aa`), but is not published at this
-snapshot. Publication remains required before downstream reliance on its names.
-The three prerequisite pairs below are independently accepted and published
-at Library `e530d1eb7e66b0d2b988684aaaa90a729bda10e2`, and are present unchanged
-in the snapshot Library.
+The snapshot is Library `3c99509d9f7a41b5f3932da0e3877264b3a70a9e` together
+with the topology pair, which entered the Library later (the Library's
+version differs from the one fingerprinted below). The three prerequisite
+pairs below first appeared at Library commit
+`e530d1eb7e66b0d2b988684aaaa90a729bda10e2` and were unchanged in the snapshot.
 
 ## Actual carriers, topology and comparison maps
 
@@ -67,16 +64,16 @@ This topology bridge is an internal compatibility construction and asserts no
 new literature theorem. Its precise imported provenance is preserved in the
 following paired documentation.
 
-| Imported pair and owner | Exact provenance and verified publication |
+| Imported pair | Exact provenance |
 | --- | --- |
-| [Dynamic/GeneralLinearRationalPoints](../../Langlands/GroupScheme/Dynamic/GeneralLinearRationalPoints.md), Worker 1107 | Algebraic rational-point transport of the existing dynamic block-subgroup and limit results; the pair cites CGP, Example 2.1.1, through those existing constructions. Candidate `4ed8ff46-6de0-4f1d-96aa-19069311455b`, integration `cb09c5386b3547d4a0eda7693b3b6570`. |
-| [PointTopology/GeneralLinear](../../Langlands/AlgebraicGeometry/PointTopology/GeneralLinear.md), Worker 105 | Derived GL specialization of the existing affine evaluation topology; its paired provenance cites Conrad, Proposition 2.1 and the unit-topology convention. Candidate `cf2810b3-b2ff-40a7-8829-b464b516e77b`, integration `4b188f2848b049d7876198153e9ba4c3`. |
-| [PointTopology/RationalPoints](../../Langlands/AlgebraicGeometry/PointTopology/RationalPoints.md), Worker 105 | Derived identity-test transport of that existing topology, preserving the underlying scheme morphisms. Candidate `5ea5f6f1-b141-4215-b595-9b3b6e2c4f8b`, integration `fe55b4013baf4ffebd7f2a294c2b12ae`. |
+| [Dynamic/GeneralLinearRationalPoints](../../Langlands/GroupScheme/Dynamic/GeneralLinearRationalPoints.md) | Algebraic rational-point transport of the existing dynamic block-subgroup and limit results; the pair cites CGP, Example 2.1.1, through those existing constructions. |
+| [PointTopology/GeneralLinear](../../Langlands/AlgebraicGeometry/PointTopology/GeneralLinear.md) | Derived GL specialization of the existing affine evaluation topology; its paired provenance cites Conrad, Proposition 2.1 and the unit-topology convention. |
+| [PointTopology/RationalPoints](../../Langlands/AlgebraicGeometry/PointTopology/RationalPoints.md) | Derived identity-test transport of that existing topology, preserving the underlying scheme morphisms. |
 
-Native byte comparisons checked both files of each prerequisite against its
-accepted archive, the workspace and the snapshot Library. The topology pair
-was checked against its own frozen staged copy. The following are source
-fingerprints, not independent proof receipts.
+Byte comparisons checked both files of each prerequisite against the
+version that first entered the Library and the snapshot Library; the
+topology pair was checked against the version then prepared. The following are source
+fingerprints, not evidence of proofs.
 
 | Module | Lean SHA-256 | Markdown SHA-256 |
 | --- | --- | --- |
@@ -87,10 +84,9 @@ fingerprints, not independent proof receipts.
 
 ## Separate declaration and source-import inventories
 
-The private diagnostic `e65d9718-ce02-40ec-ad78-203ffa41d0d9` compiles the
-24-root audit with zero errors and warnings at the snapshot. Its program
-`.private/drafts/gl-algebraic-point-dependency-audit/GlAlgebraicPointDependencyAudit.lean`
-follows each root's checked type, definition/theorem/opaque body and inductive
+A diagnostic compiled the 24-root audit with zero errors and warnings at the
+snapshot. Its program (`GlAlgebraicPointDependencyAudit.lean`, kept outside
+the Library) follows each root's checked type, definition/theorem/opaque body and inductive
 constructors, including private helpers. It traverses project constants and
 prunes nonproject constants; the pinned nonproject modules cannot import
 project code. All 24 parsed records equal the earlier diagnostic inventory.
@@ -197,24 +193,21 @@ adapter continues to retain its existing `PadicField`, complex-coefficient
 and saturated-carrier scope. It does not extend representation preservation
 to other local-field models.
 
-The independently approved general-to-GL pair
-`Langlands.Representation.Aubert.GeneralLinearSpecialization`, candidate
-`24537fb1-47eb-4ae1-b7a9-6c0806f21a6d`, is still nonpublic at the snapshot.
-Its General prerequisite `214d3c61-c6e3-4576-b94e-57c72d2e7e55` was rejected
-for an unqualified BZ77 identification in `General/Parabolic.md`; no replacement
-was present in the owner task at this snapshot. A corrected independently
-reviewed General prerequisite and reconciliation of its exact bytes are
-required before that adapter integrates. Approval of the adapter does not
-approve the rejected prerequisite or future replacement bytes.
+The general-to-GL pair
+`Langlands.Representation.Aubert.GeneralLinearSpecialization` was not in the
+Library at the snapshot; an earlier version of its General prerequisite had
+been withdrawn for an unqualified BZ77 identification in
+`General/Parabolic.md`. The adapter and `General/Parabolic` are in the
+Library now; this note does not re-check the BZ77 identification there.
 
 The adapter's named `Langlands.Parabolic.GeneralLinearModulusCompatibility`
 still asks for equality of the Haar-to-block character on the **entire actual
 parabolic**, retaining the positive induction half and inverse Jacquet half.
 The present topology equivalences do not prove that identity. Actual standard
-root/subset, character and Weyl comparisons also retain their owners and
-existing targets. The finite external boundary remains the
+root/subset, character and Weyl comparisons also retain their existing
+targets. The finite external boundary remains the
 [Chapter V structural ledger](../renard/chapter-v-structural-inputs.md);
 intermediate representation-theoretic premises and its D07 modulus deduction
 remain proof work. For support adjustment, product-Levi tensor, monomial
 basis and whole graded Zelevinsky targets, use the existing full GL source map.
-This focused supplement does not establish those theorems or task completion.
+This focused supplement does not establish those theorems.

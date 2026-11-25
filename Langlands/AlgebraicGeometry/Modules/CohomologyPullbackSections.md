@@ -4,8 +4,6 @@ These definitions are internal compositions of the Library's relative sections
 functor and Mathlib's scheme-module adjunction and composition isomorphisms.
 They work in every universe, over any commutative ring `R`, for arbitrary actual
 structure-sheaf modules. They impose no geometric or acyclicity hypotheses.
-The section and split-coefficient constructions adapt Worker 100's private
-`PullbackInterfaceSketch`; that sketch supplied no all-degree pullback map.
 
 For `h : Y ⟶ X` in `Over (Spec R)`,
 `DerivedSections.relativePushforwardSectionsIso h` identifies `h_*` followed by

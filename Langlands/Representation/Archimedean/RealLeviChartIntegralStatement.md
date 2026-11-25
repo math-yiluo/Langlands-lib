@@ -2,11 +2,11 @@
 
 Lean module: `Langlands.Representation.Archimedean.RealLeviChartIntegralStatement`.
 
-Worker 5220 wrote this module for Task 6749 (`5dd3db87-6f14-4d0f-b9a7-3d0065415fd8`), the proof
-of `RealStandardLanglandsQuotientStatement` (module `RealLargeLanglandsQuotientReduction`). It
+This module is part of the proof of `RealStandardLanglandsQuotientStatement` (module
+`RealLargeLanglandsQuotientReduction`). It
 states one proposition, `RealLeviChartIntegrableStatement`, and does not prove it. The module also
 defines the coordinates of a standard parabolic subgroup and proves a few elementary lemmas about
-them. The proposition generalizes the published `RealBlockChartIntegrableStatement` (module
+them. The proposition generalizes `RealBlockChartIntegrableStatement` (module
 `RealBlockChartIntegralStatement`) from the maximal parabolic subgroup `P_{a,k}` to an arbitrary
 standard parabolic subgroup `Q`, in the special case that the problem needs: the exponents are
 tied inside each block of `Q`. See "Use" below.
@@ -74,11 +74,11 @@ are tied inside the blocks of `Q` and strictly decreasing from block to block. T
 case of the Gindikin–Karpelevich convergence of standard intertwining integrals. Take a function
 `h` in the smooth principal series of `GL_N(ℝ)` with exponents `s_0, …, s_{N−1}`. On
 `n̄(X) O(N)` it is bounded by a constant times `∏_l G_l^{(σ_l − σ_{l−1})/2}`, where
-`σ_l = Re s_l + (N−1)/2 − l` (published `ParabolicChartBound` for one row; the general
+`σ_l = Re s_l + (N−1)/2 − l` (`ParabolicChartBound` for one row; the general
 Iwasawa–Gram formula is in `PrincipalSeriesGramFormula`). At a tie `Re s_{l−1} = Re s_l` the
 exponent is `−1/2`. At a strict descent `Re s_{l−1} > Re s_l` it is `< −1/2`.
 
-Intended proof (for a proof task): induction on the number `c` of blocks, in stages. Let `a` be the
+Intended proof: induction on the number `c` of blocks, in stages. Let `a` be the
 size of the first `c − 1` blocks, `k = sz_{c−1}`, and `Q'` the parabolic subgroup of `GL_a(ℝ)` given
 by the first `c − 1` blocks. Every element of `N̄_Q` can be written as
 `[[n̄', 0], [Y, 1]] = n̄_P(Y n̄'^{-1}) · diag(n̄', 1)` with `n̄' ∈ N̄_{Q'}`. Take the Iwasawa
@@ -93,7 +93,7 @@ induction hypothesis and Tonelli's theorem then conclude.
 
 ## Use
 
-In Task 6749 the statement gives the convergence of the integral over `N̄_Q` that defines the
+In the proof of `RealStandardLanglandsQuotientStatement` the statement gives the convergence of the integral over `N̄_Q` that defines the
 pairing in the single-step Langlands lemma along the parabolic subgroup `Q` whose blocks are the
 tie classes of the Langlands order. It also gives integrability of the dominating function in
 the limit argument. In the limit argument the exponents become `max(ε_l, −1)`, which still satisfy

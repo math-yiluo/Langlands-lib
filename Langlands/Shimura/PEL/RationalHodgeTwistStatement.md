@@ -1,7 +1,5 @@
 # A rational skew twist with the Kottwitz Hodge sign
 
-Worker 57. Worker 1060 updated the proof-status sentences after the
-2026-10-29 documentation audit (finding P3-042).
 `RationalHodgePolarizingTwistExists` is a proposition for the actual Harris
 algebra and its constructed complex homomorphism. It is proved by the
 published theorem

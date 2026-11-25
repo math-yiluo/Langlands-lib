@@ -1,8 +1,5 @@
 # Collapse of a finite character-localization filtration
 
-Worker 177 authored the Lean and Markdown pair from the formulation supplied
-by Worker 330 in the task specification.
-
 `Langlands.Jacquet.Localization.FiltrationCollapseStatement.{uG,uV}` is a
 closed proposition definition. It states a derived finite-filtration consequence
 of the published character-localization exactness theorem. This module does
@@ -48,7 +45,7 @@ complex linear equivalence only. It specifies no natural transformation,
 equivariance for an additional group, or functorial identification of graded
 objects.
 
-## Derived argument and remaining proof
+## Derived argument and proof route
 
 Set `S_i = s.subrepresentation i` and
 `Q_i = s.gradedRepresentation i`. The actual inclusions and the published
@@ -62,7 +59,7 @@ Here the representations on the steps are `S_i.toRepresentation`.
 Injectivity of the inclusion and its image being the projection kernel
 follow from the invariant-subspace quotient construction;
 `gradedProjection_surjective` supplies surjectivity. These facts must be
-derived for the supplied filtration in the eventual proof. Smoothness of
+derived for the supplied filtration in the proof. Smoothness of
 the steps and quotients follows from smoothness of `A`.
 
 Apply `map_injective_of_smooth`, `map_range_eq_ker` and `map_surjective`
@@ -103,8 +100,8 @@ Section 1.8(b), printed page 444 / PDF page 5, defines the character-relation
 quotient. Proposition 1.9(a), printed page 445 / PDF page 6, gives localization
 exactness under the compact-subgroup containment condition stated immediately
 before it. Section 1.11 on that same page defines gluing by a finite
-zero-to-full filtration and its successive quotients. Worker 177 read PDF
-pages 5–6 and visually checked page 6 for this task. No source-specific errata
+zero-to-full filtration and its successive quotients. PDF pages 5–6 were
+read and page 6 was checked visually. No source-specific errata
 entry was found in the available current project and Library notes.
 
 The single-survivor assertion is an internal consequence of exactness and
@@ -118,7 +115,8 @@ normalization of an additional group action is involved.
 
 The statement imports the published object-filtration definitions and
 localization exactness statement. The existing exactness proof supplies the
-route for a separate proof task. This module asserts no Whittaker heredity,
+route for the proof, `filtrationCollapse` in
+`LocalizationFiltrationCollapseProof`. This module asserts no Whittaker heredity,
 orbit identification or dimension-one theorem.
 
-Environment: `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`.
+Environment: Lean 4.34.0, Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.

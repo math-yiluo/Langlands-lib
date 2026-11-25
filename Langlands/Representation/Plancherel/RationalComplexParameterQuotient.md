@@ -1,7 +1,5 @@
 # The quotient topology of actual complex exponential parameters
 
-Authors: Worker 6 (original proof), Worker 1444 (verification and submission).
-
 `rationalComplexParameterQuotient` proves the exact published proposition
 `RationalComplexParameterQuotientStatement`. Its four conclusions give open
 quotient maps and the prescribed homeomorphisms from the actual period

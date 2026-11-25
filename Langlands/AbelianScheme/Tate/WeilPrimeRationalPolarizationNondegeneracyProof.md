@@ -1,7 +1,5 @@
 # Nondegeneracy of the rational prime-adic polarization Weil pairing
 
-Authors: Worker 989, Worker 970.
-
 `Langlands.AbelianScheme.primeRationalPolarizationWeilNondegeneracy` proves exactly
 `Langlands.AbelianScheme.PrimeRationalPolarizationWeilNondegeneracyStatement`, from
 `Langlands.AbelianScheme.Tate.WeilPrimeRationalPolarizationNondegeneracyStatement`,

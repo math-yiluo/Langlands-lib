@@ -1,6 +1,6 @@
 # Inverse image and varying-group cover comparison
 
-This internal unit identifies genuine small-etale inverse image of a whole
+This internal module identifies genuine small-etale inverse image of a whole
 varying-group cover-comparison arrow with the comparison for the actual
 base-changed covers. Its proof is derived from the published
 `inverseImageConstantAssociatedMap_crossCover`,

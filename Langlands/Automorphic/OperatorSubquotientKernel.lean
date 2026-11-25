@@ -16,15 +16,15 @@ open Langlands.Global
 
 variable {F : Type uF} [Field F] [NumberField F] {n : ℕ}
 
-local instance rationalGroup : AddCommGroup (RationalInvariantFunctions F n) :=
+private local instance rationalGroup : AddCommGroup (RationalInvariantFunctions F n) :=
   Submodule.addCommGroup _
-local instance continuousGroup : AddCommGroup (ContinuousRationalFunctions F n) :=
+private local instance continuousGroup : AddCommGroup (ContinuousRationalFunctions F n) :=
   Submodule.addCommGroup _
 local instance smoothGroup : AddCommGroup (FiniteSmoothRationalFunctions F n) :=
   Submodule.addCommGroup _
-local instance formsGroup : AddCommGroup (AutomorphicForms F n) :=
+private local instance formsGroup : AddCommGroup (AutomorphicForms F n) :=
   Submodule.addCommGroup _
-local instance stableGroup : AddCommGroup (StableAutomorphicFunctions F n) :=
+private local instance stableGroup : AddCommGroup (StableAutomorphicFunctions F n) :=
   Submodule.addCommGroup _
 local instance realizationGroup (S : OperatorRealization F n) : AddCommGroup S.Space :=
   Submodule.addCommGroup _

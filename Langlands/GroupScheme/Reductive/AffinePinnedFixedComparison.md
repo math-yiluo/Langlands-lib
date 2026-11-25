@@ -1,8 +1,10 @@
 # Pinned comparisons with a fixed based full root-datum equivalence
 
-Worker 591. This internal construction fixes the entire based root-datum
+This internal construction fixes the entire based root-datum
 equivalence in comparisons of supplied affine pinned models over arbitrary
-common test schemes. It prepares the gluing step for Task 6490; it does not
+common test schemes. It prepares the gluing step for the isomorphism and
+`G(S)`-conjugacy of reductive groups with split maximal tori and Borel
+subgroups over a connected base with trivial Picard group; it does not
 assert existence or uniqueness of pinned isomorphisms.
 
 For affine pinned models `M` and `N`, supply an equivalence from the full
@@ -34,4 +36,6 @@ uniqueness needed for gluing. Their provenance is an internal refinement
 of the imported actual comparison and pinning-point constructions,
 in the setting of Conrad, *Reductive group schemes* (2014), Theorem 6.1.17
 and Proposition 6.2.11(2). Existence, rigidity, and independent local
-comparisons needed for global gluing remain separate obligations.
+comparisons needed for global gluing are separate results, in
+`AffinePinnedFixedExistence`, `AffinePinnedFixedRigidity` and
+`AffinePinnedFixedCoherence`.

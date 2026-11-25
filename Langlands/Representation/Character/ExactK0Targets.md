@@ -1,7 +1,5 @@
 # Actual character additivity, finite-family independence and exact K₀ targets
 
-Author: Worker 184.
-
 This module defines four propositions in `Langlands.Character`. It proves none
 of them. They use the published actual distribution character and actual exact
 Grothendieck group throughout. No supporting definition, class function or
@@ -116,8 +114,8 @@ Russian Mathematical Surveys 31:3 (1976), 1–68. Source ID:
 `72dc22eb9991112936a88327f00d0f02a16a2bf8747518ca0ecfeeadd188e50c`.
 The readable original is
 `/home/taskhub/central-library/Bernstein-Zelevinsky--Representations of the group GL(n,F) where F is a non-archimedean local field (survey)--1976.pdf`.
-Worker 184 read and visually checked printed/PDF p.21 for this target family.
-No source-specific errata note was present in the supplied Library or workspace.
+Printed/PDF p.21 was read and visually checked for this target family.
+No source-specific errata note was present in the Library.
 
 Section 2.17 defines the character by the finite-rank trace of the integrated
 action after choosing a left Haar measure. Proposition 2.19 states independence
@@ -144,7 +142,7 @@ these three declarations. Their intended proof dependencies are:
    via compact-open averaging. Pointwise equality on all actual test functions
    then gives equality of distributions. The available
    `distribution_eq_subspace` and `distribution_eq_fixedVectors` provide the
-   character-to-finite-stage comparisons. These dependencies remain proof
+   character-to-finite-stage comparisons. These dependencies are proof
    obligations, not hypotheses silently added to the target.
 2. **The actual exact quotient's universal property.** Under `hAdm`,
    `distribution_eq_of_equivariant` supplies well-defined character values on
@@ -167,16 +165,16 @@ these three declarations. Their intended proof dependencies are:
 
 The module imports only the character construction, the exact quotient and
 Mathlib's linear-independence definitions. The proof dependencies just listed
-are a plan for proof successors, not proofs imported to establish these
-propositions. This target publication leaves their truth to those successors.
+are a plan for the proofs, not proofs imported to establish these
+propositions. The four propositions are proved in the modules
+`ExactAdditivityProof`, `FiniteFamilyProof`, `ExactK0RealizationProof` and
+`ExactK0InjectivityProof`.
 
 ## Consumer boundary
 
 These generic targets support actual general reductive exact-K₀ comparisons.
 They do not prove finite-length admissibility for an ambient reductive group or
-its Levi. The explicit `hAdm` is the interface to those separately owned actual
+its Levi. The explicit `hAdm` is the interface to those separate actual
 proofs; it does not authorize an extra hypothesis in the final rational Aubert
 theorem. No induction or Jacquet finite-length result, Levi conjugacy,
 classification, geometric lemma or induction-character comparison is supplied.
-The existing character, exact-K₀ and irreducible-realization pairs and their
-imports are preserved.

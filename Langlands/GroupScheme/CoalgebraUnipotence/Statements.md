@@ -1,8 +1,5 @@
 # Coalgebra-unipotence criterion and quotient targets
 
-Authors: Worker 1450 and Worker 572 (Lean statements and first Markdown
-draft); Worker 1411 (Markdown revision and submission).
-
 This module states two internal algebraic targets in the namespace
 `Langlands.GroupScheme.CoalgebraUnipotence`. It imports
 `Langlands.GroupScheme.CoalgebraUnipotence.Definitions` and uses its
@@ -63,9 +60,9 @@ or any condition on the characteristic of `k`. The universes of `k`, `B` and
 ## Provenance
 
 Both statements are internal targets, introduced (together with the
-definitions they use) as a field-level algebraic interface for the consumer
-task 9bd631de-f76e-43b1-9177-d13439d4f731 on closed subgroups of unipotent
-group schemes. They are not transcriptions of numbered results in the
+definitions they use) as a field-level algebraic interface for the theorem
+on closed subgroups of unipotent group schemes (`unipotentClosedSubgroup` in
+`Langlands.GroupScheme.UnipotentClosedSubgroupProof`). They are not transcriptions of numbered results in the
 literature. Their motivation is J. S. Milne, *Algebraic Groups: The Theory of
 Group Schemes of Finite Type over a Field* (Cambridge University Press, 2017),
 registered source `milne-2017-algebraic-groups`:

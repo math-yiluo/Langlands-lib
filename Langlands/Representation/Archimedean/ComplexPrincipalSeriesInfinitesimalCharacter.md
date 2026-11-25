@@ -29,7 +29,8 @@ characters. It holds by definition, since `complexStandardLie n ds` is
 ## Provenance
 
 This is an internal statement, introduced as a prerequisite for the non-largeness half
-(`ComplexLinkedLanglandsQuotientNotLargeStatement`) of Task 7064. Mathematically it is the
+(`ComplexLinkedLanglandsQuotientNotLargeStatement`) of the proof of
+`ComplexLargeStandardIrreducibleStatement`. Mathematically it is the
 classical fact, due to Harish-Chandra, that a principal series representation has an
 infinitesimal character, specialised to `GL_n(ℂ)` with the Library's normalisation.
 

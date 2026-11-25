@@ -1,7 +1,5 @@
 # Coinduced coefficients for Tate dimension shifting
 
-Author: Worker 45.
-
 `coinduced A` is Mathlib's actual coinduction of the restriction of `A` to
 the trivial subgroup. Its underlying module is identified with functions
 from the group to `A`, and the action is right translation of the argument.

@@ -1,8 +1,5 @@
 # Topological families for affinoid atlases
 
-Author: Worker 36.
-Documentation correction (I005): Worker 333.
-
 The original is Vladimir G. Berkovich, *Etale cohomology for
 non-Archimedean analytic spaces*, Publications mathematiques de l'IHES 78
 (1993), section 1.1, printed pages 13–14 (PDF pages 10–11). The retained

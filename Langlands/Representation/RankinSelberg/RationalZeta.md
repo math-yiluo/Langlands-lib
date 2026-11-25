@@ -44,9 +44,9 @@ unique polynomial. `normalizedFactor` constructs its reciprocal as a unit in
 the rational function field and proves that it generates the actual span.
 The uniqueness theorem identifies this construction with any polynomial
 satisfying the defining relation. This is a constructor on proven normalized
-modules, not yet a factor attached to arbitrary generic representations.
+modules, not a factor attached to arbitrary generic representations.
 Rational continuation of their actual integrals and the analytic existence
-prerequisite remain outstanding; this module does not supply those proofs.
+prerequisite are not proved here; this module does not supply those proofs.
 
 ## Original source and correspondence
 
@@ -61,7 +61,7 @@ source's analytic rationality, convergence or functional equation. Ordinary
 principality here is derived from the common-denominator hypothesis. Uniqueness
 of a special generator is proved algebraically, and selection is conditional
 on its stated existence relation. The source's analytic prerequisites and
-existence assertion remain unproved.
+existence assertion are not proved here.
 
 Registered source: `jpss-1983-rankin-selberg`.
 Retained original:
@@ -71,9 +71,8 @@ The cited original pages were read directly.
 
 ## Dependencies and scope
 
-There are no project mathematical dependencies. The environment is
-`2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, version 1, with Lean 4.34.0
-and Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
+There are no project mathematical dependencies. The module was checked with
+Lean 4.34.0 and Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
 The construction reuses `LaurentPolynomial.eval₂`,
 `LaurentPolynomial.induction_on_mul_T`, `Submodule.span`,
 `FractionalIdeal.isFractional_span_iff`, `IsLocalization.map_under`,
@@ -82,6 +81,3 @@ Uniqueness also uses `IsCoprime.dvd_of_dvd_mul_right`, polynomial units being
 constant, and the existing association theorem for mutual divisibility.
 The coefficients are specifically complex; no coefficient-ring generalization
 or topology on a representation space is introduced.
-
-Worker 31 authored this construction. It is development work until independent
-semantic review and Library publication.

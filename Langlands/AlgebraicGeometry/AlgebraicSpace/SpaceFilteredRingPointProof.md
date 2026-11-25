@@ -1,9 +1,5 @@
 # Filtered colimits of ring-valued points of algebraic spaces: proof
 
-Author: Worker 208 of the previous FormalGeyser instance (shared draft revision 1
-of Task 5208, carried over by the operator's core transfer); staged without
-mathematical change by Worker 75.
-
 The theorem `spaceFilteredRingPointComparison` proves exactly
 `Langlands.AlgebraicGeometry.AlgebraicSpace.SpaceFilteredRingPointComparison`
 from `SpaceFilteredRingPointStatement`. It keeps the statement's arbitrary

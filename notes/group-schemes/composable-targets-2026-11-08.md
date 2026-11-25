@@ -1,22 +1,20 @@
 # Group schemes: unproved targets that published reductions already close
 
-Author: Worker 15, 8 November 2026, for the algebraic and reductive group-scheme
-program `2b5e4a00-9d44-49a4-9c89-979fb5b6233e` (Task 3483).
-
-This note records a status scan of the Library at commit
-`c4a16df784376405a45b60df82583e8c26d8a4e3`. Many published proposition targets
+This note records a status scan of the Library on 8 November 2026 at commit
+`c4a16df784376405a45b60df82583e8c26d8a4e3`; the statuses it reports (open,
+composable, directly proved) are those of that commit. The
+[last section](#present-status) gives the present status of the targets. Many published proposition targets
 under `Langlands.GroupScheme` have no direct proof, but published conditional
 reductions and published unconditional proofs together imply them. The note lists
-68 such targets found in three rounds, with the exact composite terms and the proof
-tasks that own them. It gives a compile-checked proof route from published inputs
+68 such targets found in three rounds of the scan, with the exact composite terms.
+It gives a compile-checked proof route from published inputs
 to `ParabolicDynamicStatement` (Milne 25.1), which round 2 needs. It also names the
-open premises that block the most other statements. Nothing here is a proof
-publication. Each target still needs an accepted `lean.proof@1` candidate, and the
-standing program remains incomplete.
+open premises that blocked the most other statements. The note itself proves
+nothing; its composite terms were compile-checked as described below.
 
 ## Method and evidence
 
-The scan used Lean itself as a scripting tool. In a private draft, a `#eval` with
+The scan used Lean itself as a scripting tool. In a private file, a `#eval` with
 `IO` walked every `.lean` file under `Langlands/` in the Library checkout. It
 recorded each `def`/`abbrev` whose name ends in `Statement` (794 under
 `Langlands/GroupScheme` and the Deligne modules). It classified each `theorem` by
@@ -30,17 +28,16 @@ its conclusion:
   factor a statement.
 
 A fixpoint over these records found the statements implied by direct proofs. The
-script then generated one candidate term per statement, and that file was compiled
-with `lean_check` in environment `bb168ec3-1031-46d9-816b-5c2ed7bbe1a6`. Text
+script then generated one term per statement, and that file was compiled
+against the Library. Text
 parsing over-approximates. Twenty-one generated terms failed or depended on a
 failed term and were removed. In those terms an "input proof" was itself
 conditional, a namespace was misread, or the target takes parameters. The final
 file had no errors. `Lean.collectAxioms` reported only `propext`,
 `Classical.choice` and `Quot.sound` for all 53 remaining theorems. Rounds 2 and 3
-below were checked the same way. This is development evidence only; independent
-proof review is still required.
+below were checked the same way.
 
-Practical points for repeating such a scan with `lean_check`:
+Practical points for repeating such a scan:
 
 - the Library checkout is readable from `#eval` by absolute path, but the file
   system is read-only, so print results as diagnostics;
@@ -54,39 +51,35 @@ Names are in `Langlands.GroupScheme` unless written in full. Each row gives the
 conditional theorem applied, then its inputs. An input written `(X row)` means the
 composite term in the row for target `X`.
 
-### Targets that already have proof tasks
+### The first nineteen targets
 
-| Target | Composite term | Proof task |
-| --- | --- | --- |
-| `RelativeRootSystemStatement` | `relativeRootSystemStatement_of_rootRankOneFactorizationStatement rootRankOneFactorization` | `51ecd216-d68e-4f71-afeb-6d7ff3683ec9` |
-| `StandardLeviConjugationStatement` | `standardLeviConjugationStatement_of_relativeRootSystemStatement (RelativeRootSystem row)` | `2411603b-373b-4dbe-bcde-69047693b293` |
-| `StandardCocharacterStatement` | `standardCocharacterStatement_of_relativeRootSystem_of_signs (RelativeRootSystem row) relativeRootSignsDetermineDynamic` | `5dfe09fb-d1fe-4f5e-8311-8abb7ffc18fc` (a candidate is staged) |
-| `RelativeSimpleRootBasisStatement` | `relativeSimpleRootBasisStatement_of_relativeRootSystemStatement (RelativeRootSystem row)` | `ea762b6d-cbce-4e6f-a487-e566db71784e` |
-| `RenardRootConventionStatement` | `renardRootConventionStatement_of_relativeRootSystem (RelativeRootSystem row)` | `90eeb314-6b62-4150-bf19-095a45c0ff33` |
-| `StandardLeviIntersectionStatement` | `Langlands.Jacquet.standardLeviIntersection_of_relativeRootSystem (RelativeRootSystem row)` | `1d7d4767-a668-4ce1-9989-319a625f6de3` |
-| `StandardRootAnnihilatorRankStatement` | `standardRootAnnihilatorRank_of_standardCocharacter (StandardCocharacter row)` | one conjunct of `477e1fb3-dadf-497e-a810-5ae5556f1b12`; the other conjunct stays open |
-| `StandardLeviSplitComponentStatement` | `standardLeviSplitComponent_of_structural_statements (StandardCocharacter row) splitComponentStatement leviSplitComponentStatement` | `4bd59665-101a-42d3-a3c7-ba034017ea2f` |
-| `RelativeRoot.RelativeRootRayDecompositionStatement` | `RelativeRoot.relativeRootRayDecompositionStatement_of_rootRankOneFactorizationStatement rootRankOneFactorization` | `966b385e-6f61-427b-adcc-4d20e5b832f0` |
-| `RelativeRoot.RootSubgroupVectorStatement` | `RelativeRoot.rootSubgroupVectorReduction (RelativeRootSystem row) RelativeRoot.semigroupRealization RelativeRoot.semigroupCommutator RelativeRoot.cyclicRootFunctorComparison RelativeRoot.cyclicWeightFiltration` | `6d7d2b99-6e63-409c-abb5-9d5c08c8d2a9` |
-| `SplitParabolicCocharacterStatement` | `splitParabolicCocharacterStatement_of_absoluteBorelOvergroup borelConjugacy absoluteBorelOvergroupCocharacter maximalTorusBaseChange` | `747d4756-e12c-4bb4-9e87-45e11299f7c5` |
-| `DerivedSubgroupSemisimpleStatement` | `derivedSubgroupSemisimple_of_rootDatum_product rootDatumExistence derivedMaximalTorusProductSurjectivity` | `6676eb4f-43be-4cd9-88cb-0c28a4f5f859` |
-| `ReductiveCentralDerivedProductStatement` | `reductiveCentralDerivedProduct_of_surjectivity derivedSubgroupRepresentability reductiveCentralTorusSurjectivity` | `5dc6c43c-2acc-40a0-92ad-454b4232a509` |
-| `NormalUnipotentRadicalIntersectionStatement` | `normalUnipotentRadicalIntersection_of_fixedCenterContainingTorus fixedCenterContainingTorus` | `58fd88de-28b2-4500-a08e-99c2459760b1` |
-| `SemisimpleAlmostSimpleGenerationStatement` | `semisimpleAlmostSimpleGeneration_of_rootLines normalReductiveCenter (SemisimpleRootGeneration row) absoluteRootVectorLine maximalTorusConjugacy` | `4573c96e-bda5-414f-8956-9899c669e9a3` |
-| `SemisimpleNormalIsogenyComplementStatement` | `semisimpleNormalIsogenyComplement_of_generation (SemisimpleAlmostSimpleGeneration row)` | `f4a3d3d3-3262-412a-8e36-6d650597111b` |
-| `SemisimpleNormalComplementStatement` | `semisimpleNormalComplement_of_almostSimpleGeneration (SemisimpleAlmostSimpleGeneration row)` | `f00971f2-9f85-46c8-b7da-c3945f778883` |
-| `NormalAdjointEquivariantRetractionStatement` | `normalAdjointEquivariantRetraction_of_semisimpleNormalComplement (SemisimpleNormalComplement row)` | `eaa30c22-e25d-490d-8617-07e05a688c85` |
-| `SimplyConnectedAlmostSimpleRationalGenerationStatement` | `simplyConnectedAlmostSimpleRationalGeneration_of_normalIsogenyComplement (SemisimpleNormalIsogenyComplement row)` | `e9ede135-a6ba-4c78-8af2-eb8aa57d25fa` |
+| Target | Composite term |
+| --- | --- |
+| `RelativeRootSystemStatement` | `relativeRootSystemStatement_of_rootRankOneFactorizationStatement rootRankOneFactorization` |
+| `StandardLeviConjugationStatement` | `standardLeviConjugationStatement_of_relativeRootSystemStatement (RelativeRootSystem row)` |
+| `StandardCocharacterStatement` | `standardCocharacterStatement_of_relativeRootSystem_of_signs (RelativeRootSystem row) relativeRootSignsDetermineDynamic` |
+| `RelativeSimpleRootBasisStatement` | `relativeSimpleRootBasisStatement_of_relativeRootSystemStatement (RelativeRootSystem row)` |
+| `RenardRootConventionStatement` | `renardRootConventionStatement_of_relativeRootSystem (RelativeRootSystem row)` |
+| `StandardLeviIntersectionStatement` | `Langlands.Jacquet.standardLeviIntersection_of_relativeRootSystem (RelativeRootSystem row)` |
+| `StandardRootAnnihilatorRankStatement` | `standardRootAnnihilatorRank_of_standardCocharacter (StandardCocharacter row)` |
+| `StandardLeviSplitComponentStatement` | `standardLeviSplitComponent_of_structural_statements (StandardCocharacter row) splitComponentStatement leviSplitComponentStatement` |
+| `RelativeRoot.RelativeRootRayDecompositionStatement` | `RelativeRoot.relativeRootRayDecompositionStatement_of_rootRankOneFactorizationStatement rootRankOneFactorization` |
+| `RelativeRoot.RootSubgroupVectorStatement` | `RelativeRoot.rootSubgroupVectorReduction (RelativeRootSystem row) RelativeRoot.semigroupRealization RelativeRoot.semigroupCommutator RelativeRoot.cyclicRootFunctorComparison RelativeRoot.cyclicWeightFiltration` |
+| `SplitParabolicCocharacterStatement` | `splitParabolicCocharacterStatement_of_absoluteBorelOvergroup borelConjugacy absoluteBorelOvergroupCocharacter maximalTorusBaseChange` |
+| `DerivedSubgroupSemisimpleStatement` | `derivedSubgroupSemisimple_of_rootDatum_product rootDatumExistence derivedMaximalTorusProductSurjectivity` |
+| `ReductiveCentralDerivedProductStatement` | `reductiveCentralDerivedProduct_of_surjectivity derivedSubgroupRepresentability reductiveCentralTorusSurjectivity` |
+| `NormalUnipotentRadicalIntersectionStatement` | `normalUnipotentRadicalIntersection_of_fixedCenterContainingTorus fixedCenterContainingTorus` |
+| `SemisimpleAlmostSimpleGenerationStatement` | `semisimpleAlmostSimpleGeneration_of_rootLines normalReductiveCenter (SemisimpleRootGeneration row) absoluteRootVectorLine maximalTorusConjugacy` |
+| `SemisimpleNormalIsogenyComplementStatement` | `semisimpleNormalIsogenyComplement_of_generation (SemisimpleAlmostSimpleGeneration row)` |
+| `SemisimpleNormalComplementStatement` | `semisimpleNormalComplement_of_almostSimpleGeneration (SemisimpleAlmostSimpleGeneration row)` |
+| `NormalAdjointEquivariantRetractionStatement` | `normalAdjointEquivariantRetraction_of_semisimpleNormalComplement (SemisimpleNormalComplement row)` |
+| `SimplyConnectedAlmostSimpleRationalGenerationStatement` | `simplyConnectedAlmostSimpleRationalGeneration_of_normalIsogenyComplement (SemisimpleNormalIsogenyComplement row)` |
 
-### Targets placed in three new proof tasks
+### The remaining thirty-four targets
 
-Before publishing, the author searched TaskHub for each target's exact name and
-found no existing task. The 34 remaining targets went into three `lean.proof@1`
-tasks. Each task's context gives the exact term and the modules that contain the
-inputs.
+The 34 remaining targets fall into three groups.
 
-- Task 5242, `043f2527-205c-4cfc-b9b2-553de1010d9d`, covers sixteen reductive-structure
-  targets over fields: `AlgClosedMaximalTorusCentralizerStatement`,
+- Sixteen reductive-structure targets over fields: `AlgClosedMaximalTorusCentralizerStatement`,
   `CenterMultiplicativeTypeStatement`, `SemisimpleRootGenerationStatement`,
   `SemisimpleNormalRootDichotomyStatement`, `RootDatumUniquenessStatement`,
   `SplitPinningExistenceStatement`, `RankOneAlgClosedPositiveRootUniquenessStatement`,
@@ -99,16 +92,14 @@ inputs.
   `SuppliedCocenterTorusStatement`,
   `CharacteristicZeroReductiveInvariantIntegralStatement` and
   `FlagCoreDualLineStatement`.
-- Task 5243, `054c9e79-c59d-4325-a96b-8c82a40df80b`, covers nine torus and
-  maximal-torus targets: `NoTorusBaseChangeStatement`,
+- Nine torus and maximal-torus targets: `NoTorusBaseChangeStatement`,
   `CentralMaximalTorusBaseChangeStatement`, `MaximalTorusBaseChangeForwardStatement`,
   `SemisimpleCentralizerConjugationDataStatement`,
   `SemisimpleCentralizerConjugatorReductionStatement`,
   `MaximalTorusConjugatorReductionStatement`, `MaximalTorusGenericConjugatorStatement`,
   `TorusGeneratedEnvelopeAlgebraicClosureInfiniteStatement` and
   `TorusSubgroupModuli.ChartCoverStatement`.
-- Task 5244, `f60c422f-b0bf-4c73-8b7e-b7383cbf03fc`, covers nine rational-structure,
-  quotient and local-splitting targets: `SplitTorusCentralizerReductiveStatement`,
+- Nine rational-structure, quotient and local-splitting targets: `SplitTorusCentralizerReductiveStatement`,
   `RelativeRoot.ActualRootCyclicComparisonStatement`,
   `NoProperPseudoParabolicSplitTorusCentralStatement`,
   `AnisotropicPointsCompactnessStatement`, `AlgClosedNormalQuotientExistenceStatement`,
@@ -128,9 +119,9 @@ noTorusUnipotent solvableTorusQuotient`.
 `ParabolicDynamicStatement` (module `Absolute.BorelStatement`) is Milne's Theorem
 25.1 in the Library's formulation. Over every field `k`, a closed subgroup
 `i : P ⟶ G` of a connected reductive `G` is parabolic exactly when its range is
-`Dynamic.parabolic χ` for a cocharacter `χ` defined over `k`. Its proof task is
-`42c85926-0d43-4d0d-abef-f3350c4273ae` (Task 3813). The text scan found no reduction
-concluding it. Nevertheless every input is published, apart from
+`Dynamic.parabolic χ` for a cocharacter `χ` defined over `k`. The Library proves
+it, as `parabolicDynamic` (`Absolute/ParabolicDynamicProof.lean`). The text scan
+found no reduction concluding it. Nevertheless every input is published, apart from
 `SplitParabolicCocharacterStatement`, which round 1 composes. The following proof
 compiled, with the same axiom report:
 
@@ -205,16 +196,16 @@ root-system, conjugacy or Levi-existence premise is added.
 Given a proof `PD` of `ParabolicDynamicStatement`, published reductions close eight
 more targets. Each composite compiled with the same axiom report.
 
-| Target | Composite term | Proof task |
-| --- | --- | --- |
-| `ParabolicSelfNormalizerStatement` | `parabolicSelfNormalizerStatement_of_rational_descent borelConjugacy borelNormalizer PD dynamicConnected` | `1b892972-8cea-419f-812c-f846b494b2bf` |
-| `DynamicSemistandardIntersectionStatement` | `dynamicSemistandardIntersection_of_structural PD dynamicCentralizerReductive dynamicGeometricUnipotentRadical` | `55f572c9-7370-45f3-ba97-7f8614d7474e` |
-| `FiniteFieldCentralCocharacterSolvableStatement` | `finiteFieldCentralCocharacterSolvable_of PD finiteFieldQuasiSplit` | `46467eff-1d25-48a6-80a4-d5b8e7b3b1ab` |
-| `ParabolicRadicalTorusCentralizerLeviStatement` | `parabolicRadicalTorusCentralizerLevi_of_dynamic PD dynamicCentralizerReductive solvableMaximalTorusConjugacy` | `a949d6cb-c272-4a8d-95f2-8a1af0e28e0b` |
-| `ParabolicGeometricSolvableRadicalExistsStatement` | `parabolicGeometricSolvableRadicalExists_of_structure PD dynamicCentralizerReductive (ReductiveGeometricSolvableRadicalExists composite of round 1)` | `fd8927d1-6e09-4736-beb0-ad58e39e12ce` |
-| `ParabolicRadicalTorusLeviStatement` | `parabolicRadicalTorusLevi_of_structural_inputs (previous row) maximalRankRadicalTorusIntersection maximalTorusBaseChange borelContainingSubgroupConnectedStatement (ParabolicRadicalTorusCentralizerLevi row) maximalTorusCentralizer` | `536b3863-aeea-44e7-ba72-5a54b9a1dcd0` |
-| `RepresentedParabolicLeviIntersectionStatement` | `representedParabolicLeviIntersection_of_dynamic PD dynamicCentralizerReductive` | none found |
-| `ParabolicRadicalTorusInitialCentralizerLeviStatement` | `parabolicRadicalTorusInitialLevi_of_dynamic PD dynamicCentralizerReductive` | none found |
+| Target | Composite term |
+| --- | --- |
+| `ParabolicSelfNormalizerStatement` | `parabolicSelfNormalizerStatement_of_rational_descent borelConjugacy borelNormalizer PD dynamicConnected` |
+| `DynamicSemistandardIntersectionStatement` | `dynamicSemistandardIntersection_of_structural PD dynamicCentralizerReductive dynamicGeometricUnipotentRadical` |
+| `FiniteFieldCentralCocharacterSolvableStatement` | `finiteFieldCentralCocharacterSolvable_of PD finiteFieldQuasiSplit` |
+| `ParabolicRadicalTorusCentralizerLeviStatement` | `parabolicRadicalTorusCentralizerLevi_of_dynamic PD dynamicCentralizerReductive solvableMaximalTorusConjugacy` |
+| `ParabolicGeometricSolvableRadicalExistsStatement` | `parabolicGeometricSolvableRadicalExists_of_structure PD dynamicCentralizerReductive (ReductiveGeometricSolvableRadicalExists composite of round 1)` |
+| `ParabolicRadicalTorusLeviStatement` | `parabolicRadicalTorusLevi_of_structural_inputs (previous row) maximalRankRadicalTorusIntersection maximalTorusBaseChange borelContainingSubgroupConnectedStatement (ParabolicRadicalTorusCentralizerLevi row) maximalTorusCentralizer` |
+| `RepresentedParabolicLeviIntersectionStatement` | `representedParabolicLeviIntersection_of_dynamic PD dynamicCentralizerReductive` |
+| `ParabolicRadicalTorusInitialCentralizerLeviStatement` | `parabolicRadicalTorusInitialLevi_of_dynamic PD dynamicCentralizerReductive` |
 
 Two more published reductions take `PD` but need a further hypothesis:
 `DynamicLeviConjugacy.rationalLeviConjugacy_of_dynamic` needs a unipotent conjugation
@@ -228,29 +219,28 @@ property of dynamic cocharacters, and
 `Rational.RootGeneratedCentralizerReduction`) is the conjunction
 `RelativeRootSystemStatement ∧ RootRankOneFactorizationStatement`. The text scan first
 missed it, because the conjunction's name does not end in `Statement`. Both conjuncts are now available:
-`⟨(RelativeRootSystem composite), rootRankOneFactorization⟩`. Worker 23 pointed out
-the reflection route. These seven targets then compiled, with the same axiom report:
+`⟨(RelativeRootSystem composite), rootRankOneFactorization⟩`. These seven targets then compiled, with the same axiom report:
 
-| Target | Composite term (`H` = the conjunction above) | Proof task |
-| --- | --- | --- |
-| `RelativeRootReflectionExistenceStatement` | `relativeRootReflectionExistence_of_rootRankOneFactorization rootRankOneFactorization` | `5c031416-1958-4d34-a128-56a400781a4b` |
-| `RelativeWeylCoxeterStatement` | `H.relativeWeylCoxeter` | `06142774-8bda-49c8-bcd0-f508d9f34199` |
-| `StandardRelativeWeylGenerationStatement` | `standardRelativeWeylGenerationStatement_of_relativeWeylCoxeter (previous row)` | `26afc233-452a-4625-87fd-3b9c41f1cb8d` |
-| `RootGeneratedCentralizerRankOneStatement` | `rootGeneratedCentralizerRankOne_of_structuralPremises H` | `ca872a17-1adb-4afb-a7cd-d3a1b9680c2e` |
-| `RelativeRoot.DynamicRootOrderedProductStatement` | `H.dynamicRootOrderedProduct` | `aecc9605-8fa1-494d-b1e8-946a86638211` |
-| `ParabolicRootPresentationIndependenceStatement` | `parabolicRootPresentationIndependenceStatement_of_reflections (first row)` | part of `c6c736b5-f1c4-4203-bb23-f7981c4fc3af` |
-| `ParabolicRootPresentationIsoStatement` | `parabolicRootPresentationIsoStatement_of_reflections (first row)` | not found as a separate task |
+| Target | Composite term (`H` = the conjunction above) |
+| --- | --- |
+| `RelativeRootReflectionExistenceStatement` | `relativeRootReflectionExistence_of_rootRankOneFactorization rootRankOneFactorization` |
+| `RelativeWeylCoxeterStatement` | `H.relativeWeylCoxeter` |
+| `StandardRelativeWeylGenerationStatement` | `standardRelativeWeylGenerationStatement_of_relativeWeylCoxeter (previous row)` |
+| `RootGeneratedCentralizerRankOneStatement` | `rootGeneratedCentralizerRankOne_of_structuralPremises H` |
+| `RelativeRoot.DynamicRootOrderedProductStatement` | `H.dynamicRootOrderedProduct` |
+| `ParabolicRootPresentationIndependenceStatement` | `parabolicRootPresentationIndependenceStatement_of_reflections (first row)` |
+| `ParabolicRootPresentationIsoStatement` | `parabolicRootPresentationIsoStatement_of_reflections (first row)` |
 
 `RationalBruhatStatement`, and through it `RelativeTitsSystemStatement`, still needs
 `RationalBruhatStructuralInputs`. That structure bundles `GenericMinimalParabolicStatement`,
 `ParabolicIntersectionCentralizerStatement` and
-`MinimalParabolicSplitTorusConjugacyStatement`, which remain open, with two proved
-inputs.
+`MinimalParabolicSplitTorusConjugacyStatement`, which were open at the scanned
+commit, with two proved inputs.
 
 ## Near misses that are not closed
 
 These conditional theorems appeared composable from the text scan, but one of their
-inputs is itself conditional. The targets stay open:
+inputs is itself conditional. These terms do not close the targets:
 
 - `SimplyConnectedPositiveCharConjugationMapStatement`,
   `SteinbergCovariantExhaustionStatement` and `SteinbergTensorEmbeddingStatement`:
@@ -277,14 +267,14 @@ they need a separate check against the
 
 ## Open premises that block many statements
 
-Update: `SmoothMaximalSplitTorusConjugacyStatement` and `GenericMinimalParabolicStatement`
-now have published-input routes, together with sixteen further targets, recorded in
+`SmoothMaximalSplitTorusConjugacyStatement` and `GenericMinimalParabolicStatement`
+have published-input routes, together with sixteen further targets, recorded in
 [the smooth split-torus conjugacy note](smooth-split-torus-conjugacy-route.md). The list
-below is the state before that update.
+below is the state at the scanned commit, before those routes.
 
 The textual classification is approximate. Of the 794 statements, it counted 558
 as directly proved, 74 as composable from the text (53 of these survived the
-compile check) and 162 as open. The fourteen near misses above stay open. Rounds 2
+compile check) and 162 as open. The fourteen near misses above were open. Rounds 2
 and 3 compile-checked fifteen further targets and the route to
 `ParabolicDynamicStatement`. A few "open" statements are only components of proved
 conjunctions. For example, the five `GeneralLinear` dynamic statements are proved
@@ -301,13 +291,36 @@ After the three rounds, the open premises that recur most in published condition
 theorems are:
 
 - `SmoothMaximalSplitTorusConjugacyStatement` (Borel–Tits conjugacy of maximal split
-  tori; task `7c6d89b9-d59a-44ce-aac6-95f9fafe7b82`). It blocks
+  tori). It blocks
   `MinimalParabolicSplitTorusConjugacyStatement`, `ParabolicSplitTorusLeviConjugacyStatement`
   and `DynamicLeviParabolicCorrespondenceStatement`, and through
   `RationalBruhatStructuralInputs` the rational Bruhat and relative Tits statements.
-- `GenericMinimalParabolicStatement` (task `bc8072c0-8a2b-4636-ab3c-7f04a4afb6a5`) and
+- `GenericMinimalParabolicStatement` and
   `ParabolicIntersectionCentralizerStatement`, the other open Bruhat inputs.
 - `SplitSimplyConnectedCorootSpanStatement` (simply connected covers and their
   field-extension behaviour).
 - `AdjointQuotientExistenceStatement` (quasi-split inner forms).
 - `CharacterRestrictionStatement` (relative central directions and ranks).
+
+## Present status
+
+Every target named in this note, and every open premise of the last section,
+is now proved in the Library by a theorem whose type is exactly the statement
+(for example `parabolicDynamic` in `Absolute/ParabolicDynamicProof.lean`,
+`rationalBruhat` in `Rational/RationalBruhatProof.lean`,
+`smoothMaximalSplitTorusConjugacy` in
+`Rational/SmoothMaximalSplitTorusConjugacyProof.lean`), with these exceptions:
+
+- `StandardRootAnnihilatorRankStatement`: the Library has the conditionals
+  `standardRootAnnihilatorRank_of_standardCocharacter`
+  (`Rational/StandardLeviCentralDirectionsAssembly.lean`) and
+  `standardRootAnnihilatorRankStatement_of_relativeRootSystemStatement`
+  (`Rational/StandardRootAnnihilatorRank.lean`), whose inputs are proved
+  (`standardCocharacter`, `relativeRootSystem`); no theorem of the
+  statement itself was found.
+- `ClassFunctions.AlgClosedStronglyRegularFibresStatement`: only the
+  conditional `algClosedStronglyRegularFibres_of`
+  (`Rational/ClassFunctionsAlgClosedStronglyRegularFibres.lean`) was found.
+- The four parametrized `WeilGm` propositions above: their theorems in
+  `Torus/WeilRestrictionNormOneFixedProof.lean` take statement-valued
+  hypotheses.

@@ -1,7 +1,5 @@
 # Finite polynomial models for intersections of affine test points
 
-Author: Worker 790.
-
 `exists_affine_test_intersection` constructs a finite polynomial test
 algebra representing the fibre product of any two finite polynomial test
 points of a separated algebraic space over the ground field. No étaleness

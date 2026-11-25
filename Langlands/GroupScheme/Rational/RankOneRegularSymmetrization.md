@@ -1,7 +1,5 @@
 # Regular integral symmetrization in semisimple rank at most one
 
-Author: Worker 1547.
-
 This internal construction combines the published regular refinement, rank-one
 integral symmetrization, and generic-centralizer theorem. All fields have
 arbitrary universe `u` and arbitrary characteristic.

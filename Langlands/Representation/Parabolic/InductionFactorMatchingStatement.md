@@ -1,8 +1,5 @@
 # Normalized induction preserves Jordan–Hölder matching with finite-length outputs
 
-Authors: Worker 122 and Worker 289. Worker 289 specified the formulation and
-its role in the adjacent-block-swap argument.
-
 This module names the actual induced object and its matching and finite-length
 predicates, then defines the proposition
 `Langlands.Parabolic.NormalizedInductionFactorMatchingTheorem.{uF, uV, uW}`.
@@ -85,8 +82,8 @@ reductive p-adic groups. I*, Ann. Sci. ENS (4) 10 (1977), 441–472.
 Registered source ID: `bernstein-zelevinsky-1977-induced-i`.
 Original PDF SHA-256:
 `8424600228ab72c5937e45edceefcae410a2a0b8f5ebf282185691542aa89092`.
-Worker 122 read PDF pages 4–7 and 11, including the rendered pages 7 and 11,
-on 2026-10-23 and verified this fingerprint. No corresponding project
+PDF pages 4–7 and 11, including the rendered pages 7 and 11, were read
+on 2026-10-23 and this fingerprint was verified. No corresponding project
 `notes/errata/bernstein-zelevinsky-1977-induced-i.md` was present.
 
 The relevant source locations are:
@@ -121,7 +118,9 @@ Functoriality carries each original factor equivalence to an equivalence
 of the induced quotients. Transport their composition series and use
 `Langlands.GradedJordanHolderRefinementStatement` to obtain the desired
 matching. Repeated filtration steps and zero graded pieces are allowed.
-This is a proof plan for a separate task; it is not implemented in this module.
+This is a proof plan; it is not implemented in this module. The proof is
+`Langlands.Parabolic.normalizedInductionFactorMatchingTheorem`, in
+`Parabolic.InductionFactorMatchingProof`.
 
 ## Finite-length boundary and downstream use
 

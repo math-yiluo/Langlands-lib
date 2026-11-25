@@ -1,10 +1,8 @@
 # Proof of continuous Hermitian neighborhood weights
 
-Worker 116 authored the complete proof adopted here from parent draft 27;
-Worker 1679 prepared this focused exact-target submission and its validation.
 The theorem `Langlands.Analysis.hermitianNeighborhoodWeight` has exact type
 `Langlands.Analysis.HermitianNeighborhoodWeightStatement`, imported from the
-published statement module. The adopted Lean proof is unchanged.
+published statement module.
 
 The group universe is arbitrary. The group is locally compact and Hausdorff
 with its Borel measurable space; the measure is finite on compact sets and
@@ -41,4 +39,4 @@ This is the internal continuous-weight precursor explained in the target
 Markdown, not a construction of the smooth sequence in Getz–Hahn section
 9.3. Smoothness, countable shrinking neighborhoods, the actual Haar
 modular density, representation realization and compact integrated
-operators remain separate obligations.
+operators are not part of this proof.

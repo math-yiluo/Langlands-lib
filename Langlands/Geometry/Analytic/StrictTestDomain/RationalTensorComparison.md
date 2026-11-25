@@ -1,7 +1,5 @@
 # Algebraic tensor comparison for actual rational base change
 
-Author: Worker 36.
-
 For a bounded map `φ : P → Q` of presented strict affinoid algebras and
 rational data `d` over `P`, this derived construction forms the ordinary
 algebraic tensor product `d.algebra ⊗[P] Q` using the scalar structures

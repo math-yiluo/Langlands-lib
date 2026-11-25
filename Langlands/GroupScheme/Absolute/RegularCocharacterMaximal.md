@@ -2,8 +2,7 @@
 
 Module `Langlands.GroupScheme.Absolute.RegularCocharacterMaximal`. It is derived
 infrastructure for the maximality part of clause 1 of
-`Langlands.GroupScheme.RegularCocharacterBorelStatement` (task
-`618cd683-cfcd-43a3-b4bf-6c8abd208b1f`).
+`Langlands.GroupScheme.RegularCocharacterBorelStatement`.
 
 Let `G` be a smooth affine group over a field `k`, `j : T ⟶ G` a homomorphism from a split
 torus whose roots are stable under negation, and `ν` a cocharacter of `T`. Let `i : B ⟶ G`
@@ -26,10 +25,11 @@ prove them:
 
 The root-symmetry theorem takes `RelativeRootNegationStatement` as its hypothesis `hNeg`. The
 rank-one obstruction for `B'` is the explicit hypothesis `hobs` of the main theorem; it has
-the form of the conclusion of the statement in task `a638de3b-f51a-4539-b985-72fc0acb694c`
-(`RankOneSolvableObstructionStatement`) applied to `B'`. None of these hypotheses is a premise
-of any target statement. A final proof of the target supplies them from Library proofs once
-those are published.
+the form of the conclusion of `RankOneSolvableObstructionStatement` applied to `B'`. None of
+these hypotheses is a premise of any target statement. The proof `regularCocharacterBorel` of
+the target (module `Absolute.RegularCocharacterBorelProof`) supplies them, through the assembly
+in `Absolute.RegularCocharacterBorel`, from the Library proofs `dynamicLie`, `dynamicSmooth`,
+`lieSubgroupEquality`, `relativeRootNegation` and `rankOneSolvableObstruction`.
 
 ## Contents
 

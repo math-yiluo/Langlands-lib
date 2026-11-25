@@ -1,8 +1,5 @@
 # Exact-K0 adapters and Aubert's unadjusted alternating operator
 
-Implementation and documentation: Worker 23 (task
-`593ef603-6672-4424-976c-14e11e920d9c`).
-
 This module adapts the functors of
 [`Aubert.General.Parabolic`](Parabolic.md) to the published exact Grothendieck
 group of finite-length smooth complex representations. It then defines
@@ -47,8 +44,7 @@ p. 178, which uses the geometric-lemma consequence VI.5.4) and by `r^G_P`
 lemma VI.6.1). They are false for arbitrary subgroups, which is why the generic
 layer takes them as hypotheses. Exactness reduces to structural inputs, as
 proved in the next subsection. For the actual group, finite-length preservation
-is a representation-theoretic proof obligation. It is to be stated as a Prop
-target of this task in a separate submission, not in this module.
+is a representation-theoretic statement; it is not stated in this module.
 
 ### Exactness from structural inputs
 
@@ -114,8 +110,8 @@ has finite length whenever `A` does, for every `A : SmoothRep.{0, uG, uV} ℂ H`
 Fix a finite index type `ι` (in applications, the simple relative roots `S`)
 and families `P M U : Finset ι → Subgroup G` with
 `h : ∀ I, IsSemidirectDecomposition (P I) (M I) (U I)`, closed `U I`, and
-`hfl : ∀ I, ParabolicFiniteLength (h I) (hU I)`. This is the layout of Worker
-194's `Aubert.SubgroupComplex`.
+`hfl : ∀ I, ParabolicFiniteLength (h I) (hU I)`. This is the layout of
+`Aubert.SubgroupComplex`.
 
 * `alternatingTerm .. I := (inductionK0 ..).comp (jacquetK0 ..)`, which is
   `i_I ∘ r_I` on K0.

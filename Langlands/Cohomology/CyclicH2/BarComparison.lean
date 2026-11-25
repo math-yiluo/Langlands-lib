@@ -68,7 +68,7 @@ lemma resolution_d_one_zero (g : G) (hg : ∀ x, x ∈ Subgroup.zpowers g) :
 set_option backward.defeqAttrib.useBackward true in
 set_option backward.isDefEq.respectTransparency false in
 lemma resolution_d_two_one (g : G) (hg : ∀ x, x ∈ Subgroup.zpowers g) :
-    (Rep.FiniteCyclicGroup.resolution k g hg).complex.d 2 1 = (Rep.leftRegular k G).norm := by
+    (Rep.FiniteCyclicGroup.resolution k g hg).complex.d 2 1 = (Rep.leftRegular k G).norm.asHom := by
   simp [HomologicalComplex.alternatingConst]
 
 omit [Fintype G] in
@@ -97,7 +97,7 @@ lemma applyAsHom_single (g h : G) (r : k) :
   simp [Representation.ofMulAction_single]
 
 lemma norm_single_one :
-    (Rep.leftRegular k G).norm.hom (MonoidAlgebra.single 1 1) =
+    (Rep.leftRegular k G).norm.asHom.hom (MonoidAlgebra.single 1 1) =
       ∑ h : G, MonoidAlgebra.single h (1 : k) := by
   rw [Rep.norm_apply]
   simp [Representation.norm, Representation.ofMulAction_single]
@@ -126,7 +126,7 @@ lemma d_single_pair (g : G) (i : ℕ) :
   simp [pow_succ, sub_eq_add_neg, MonoidAlgebra.single_neg, add_comm]
 
 lemma comm₂_aux (g : G) (hg : ∀ x, x ∈ Subgroup.zpowers g) :
-    f₂ k g ≫ Rep.barComplex.d k G 1 = (Rep.leftRegular k G).norm ≫ f₁ k g := by
+    f₂ k g ≫ Rep.barComplex.d k G 1 = (Rep.leftRegular k G).norm.asHom ≫ f₁ k g := by
   apply leftRegular_hom_ext
   simp only [Rep.hom_comp, Representation.IntertwiningMap.comp_apply]
   rw [f₂_one, map_sum, norm_single_one, map_sum]

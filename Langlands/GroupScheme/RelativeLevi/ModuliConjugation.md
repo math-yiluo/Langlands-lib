@@ -1,7 +1,5 @@
 # Conjugation of subgroup images and relative restriction
 
-Author: Worker 179.
-
 This internal module proves that the actual conjugation construction commutes
 with restriction of arbitrary all-test subgroup functors. It uses the exact
 `pulledBackPoint` from the representation interface, so its action convention

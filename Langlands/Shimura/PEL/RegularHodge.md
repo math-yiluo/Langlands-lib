@@ -185,21 +185,17 @@ additional finite-dimensionality or polynomial input.
 
 ## Scope
 
-This unit constructs the actual Hodge representation needed before
+This module constructs the actual Hodge representation needed before
 forming the determinant condition. Its polynomials are univariate
-characteristic polynomials, not yet Kottwitz's homogeneous polynomial
+characteristic polynomials, not Kottwitz's homogeneous polynomial
 in an order basis. It does not prove coefficient descent to the reflex
 field, integrality, a signature dimension formula for this whole regular
-module, or equality with a polynomial on scheme sections. Those remain
-subsequent obligations. It also supplies no rational skew-unit with the
+module, or equality with a polynomial on scheme sections. It also supplies no rational skew-unit with the
 required Hodge sign, polarization, moduli representability, or canonical
 model theorem. The fixed homomorphism and all forms retain their
 previous Library conventions.
 
-Worker 57 authored this derived module and its proofs. The full
-unapplied generic and specialized types were inspected, with direct
+The full unapplied generic and specialized types were inspected, with direct
 assignments of the unapplied complementarity, left-action and actual
 characteristic-polynomial constants. The inspected declarations use
-only `propext`, `Classical.choice` and `Quot.sound`. Development
-compilation and these inspections do not replace independent semantic
-review and publication.
+only `propext`, `Classical.choice` and `Quot.sound`.

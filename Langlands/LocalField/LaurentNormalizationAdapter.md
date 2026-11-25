@@ -1,8 +1,8 @@
 # The p-adic and Laurent-series fields as instances of one consumer
 
-Worker 785 instantiates the common consumer `Langlands.LocalField.NormalizedAt`
+This module instantiates the common consumer `Langlands.LocalField.NormalizedAt`
 of `Langlands.LocalField.NormalizationConsumer` by the actual X-adic
-Laurent-series field of `Langlands.LocalField.LaurentSeries` (Worker 27), and
+Laurent-series field of `Langlands.LocalField.LaurentSeries`, and
 records that this field and every p-adic field feed the same consumer. This is a
 narrow compiled adapter: no new field family, bundled representation category,
 topology, valuation or normalization is introduced.
@@ -32,7 +32,7 @@ The order is the published `FML.ord`, with `ord 0 = ⊤`; the absolute value is
 the published `residueNormalizedAbsoluteValue`. Thus order one has absolute
 value `(Nat.card k)⁻¹`. Evaluation at the particular series `X` needs the order
 computation `FML.ord (LaurentSeries k) X = 1`. That computation is the published
-`Langlands.LocalField.Laurent.ord_X` of Worker 27's
+`Langlands.LocalField.Laurent.ord_X` of
 `Langlands.LocalField.LaurentNormalization`, which also evaluates the absolute
 value at `X` and its integer powers directly. This module does not import it
 and proves no order calculation of its own.
@@ -56,9 +56,9 @@ meet only through the general `IsNonarchimedeanLocalField`-based predicate.
 
 ## Provenance and limits
 
-This is an internal derived adapter. It imports by module name Worker 27's
-`Langlands.LocalField.LaurentSeries`, Worker 785's
-`Langlands.LocalField.NormalizationConsumer`, and through them Worker 607's
+This is an internal derived adapter. It imports by module name
+`Langlands.LocalField.LaurentSeries`,
+`Langlands.LocalField.NormalizationConsumer`, and through them
 `ResidueNormalization` and `PadicResidueNormalization` and the published
 `Langlands.LocalField.Canonical`. It copies no source. The normalization
 `|π| = q⁻¹` is that of `ResidueNormalization`, whose Markdown records its source.

@@ -1,14 +1,14 @@
 # Theorem 2.7 over every local field: from supplied data to hypothesized normalization
 
 Module `Langlands.Representation.RankinSelberg.LocalFieldUnequalRankAnalyticReduction`
-(part of the proof of `SphericalCorankOneFunctionalEquationStatement`, Task 5680).
+(part of the proof of `SphericalCorankOneFunctionalEquationStatement`).
 
 ## Context
 
 Jacquet, Piatetski-Shapiro and Shalika 1983, Theorem (2.7)(i)–(ii) (printed page 390)
 asserts that the unequal-rank block integrals converge absolutely on a right half-plane,
 have rational continuations, admit a common denominator and have a normalized generator.
-The all-field port (Task 5889) states this as
+The all-field port states this as
 `Langlands.AllField.RankinSelberg.UnequalRankAnalyticStatement F T n j k`. It takes a field
 `F` with supplied data `T : LocalFieldData F`, which fixes the topology, the valuation, the
 Borel structures, the residue cardinality `T.residueCardinality` and the absolute value
@@ -29,7 +29,7 @@ Proof as implemented:
 1. Every Borel structure in the target context (on `F`, `GL_(n+1)(F)`, the upper
    unipotent group and the quotient `N\GL`) equals the `borel` structure. The proof
    substitutes these equalities (`BorelSpace.measurable_eq`).
-2. `eq_normalizedAbsoluteValue_ofInstances` (Task 5889 port, module
+2. `eq_normalizedAbsoluteValue_ofInstances` (all-field module
    `LocalFieldUnequalRankFunctionalEquationReduction`) shows that `abv` is
    `normalizedAbsoluteValue (LocalFieldData.ofInstances F)`. `residueCardinality_ofInstances`
    shows that `q` is `(LocalFieldData.ofInstances F).residueCardinality`. The proof
@@ -38,8 +38,8 @@ Proof as implemented:
    definition. The hypothesis at `F, n, j, k` then applies to the remaining arguments
    unchanged.
 
-This follows Worker 5743's `localFieldUnequalRankFunctionalEquation_of_allField`, which
-does the same for the functional equation.
+This follows `localFieldUnequalRankFunctionalEquation_of_allField` (the same all-field
+module), which does the same for the functional equation.
 
 ## Theorem `localFieldUnequalRankAnalytic`
 
@@ -47,5 +47,5 @@ Conclusion: `LocalFieldUnequalRankAnalyticStatement`, with no hypotheses.
 
 Proof as implemented: apply `localFieldUnequalRankAnalytic_of_allField` to the published
 all-field theorem `Langlands.AllField.RankinSelberg.unequalRankAnalytic F
-(LocalFieldData.ofInstances F) n j k` (Task 5889, module
+(LocalFieldData.ofInstances F) n j k` (module
 `Langlands.AllField.Representation.RankinSelberg.UnequalRankAnalyticProof`).

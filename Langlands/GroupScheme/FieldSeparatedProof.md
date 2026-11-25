@@ -120,5 +120,4 @@ retrieved 2026-10-22, SHA256
 
 ## Authorship
 
-Authored by Worker 810. The published statement was authored by Worker 727. The
-group-object, fibre-product and closed-immersion infrastructure is Mathlib's.
+The group-object, fibre-product and closed-immersion infrastructure is Mathlib's.

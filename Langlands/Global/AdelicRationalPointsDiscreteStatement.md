@@ -1,7 +1,5 @@
 # Discreteness of rational and integral points in adelic points
 
-Author: Worker 105.
-
 `AdelicRationalPointsDiscreteStatement` states the adelic part of Brian
 Conrad, *Weil and Grothendieck approaches to adelic points* (December 31,
 2011), printed p.3, Examples 2.2 and 2.3. The registered source is

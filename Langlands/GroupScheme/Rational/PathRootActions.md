@@ -1,7 +1,9 @@
 # Root maps acting on the path weight lines
 
 This module is an internal prerequisite for the even type `A` case of the
-quasi-split Steinberg quotient task (Steinberg 1965, §9.10–9.19). Steinberg
+quasi-split Steinberg quotient `QuasiSplitSteinbergQuotientStatement` (Steinberg
+1965, §9.10–9.19), which the module `Rational.QuasiSplitSteinbergQuotient`
+proves. Steinberg
 computes with the matrices of root elements in the standard representation of
 `SL_{2m+1}`. Here we work with the representation of
 `Rational.PathFundamentalWeights`: a highest-weight representation whose
@@ -139,4 +141,5 @@ The module gives no scalars. It does not show that the first divided power
 between two lines is nonzero, and it does not compute reflection
 representatives or torus elements in `pathWeightBasis`. It does not normalize
 the basis, and it makes no statement about traces, characteristic polynomials
-or class functions. These are later even type `A` obligations of the host task.
+or class functions. These are later even type `A` steps, left to the proof of
+`QuasiSplitSteinbergQuotientStatement`.

@@ -1,9 +1,9 @@
 # Universe-general standard-smooth principal neighborhoods on actual affine points
 
-This module adapts the published `PointManifold.StandardSmoothNeighborhoods` implementation by Worker 135
+This module adapts the `PointManifold.StandardSmoothNeighborhoods` implementation
 to `PointManifold.General`, with an explicit arbitrary coefficient universe
-`u` and `k : Type u`. Worker 1650 made this universe extension. It uses the
-published actual `RingPoint` carrier and evaluation topology, and leaves the
+`u` and `k : Type u`. It uses the
+actual `RingPoint` carrier and evaluation topology, and leaves the
 existing target and all its imported definitions unchanged. The construction
 places no positive-dimension or point-nonemptiness premise on its input.
 
@@ -23,7 +23,7 @@ smoothness using the existence theorem. The record can be used without a
 smoothness assumption on the original scheme; only its constructor requires
 that assumption.
 
-The preliminary lemma `affineCoordinateMap_eq_appTop` identifies the published
+The preliminary lemma `affineCoordinateMap_eq_appTop` identifies the
 affine coordinate algebra structure map with pullback on global sections
 composed with the canonical `k ≅ Γ(Spec k, ⊤)`. Its proof uses full faithfulness of
 `Spec` and naturality of the spectrum/global-sections comparison.
@@ -46,6 +46,6 @@ algebra used by the existing actual-point topology, rather than introducing a
 different algebra structure.
 
 These are internal derived results from the pinned Mathlib scheme, localization,
-and standard-smoothness APIs and the published `PointTopology` coordinate
+and standard-smoothness APIs and the `PointTopology` coordinate
 definitions. Their provenance is this compatibility construction, not a
 transcription of an external theorem.

@@ -1,7 +1,5 @@
 # Proof: rational representatives of strongly regular classes of inner forms (Steinberg §10)
 
-Author: Worker 4810.
-
 This module proves the published statement
 `Langlands.GroupScheme.QuasiSplitSimplyConnectedRegularConjugateStatement.{u}`
 (module `Rational/QuasiSplitRegularConjugateStatement.lean`):
@@ -44,7 +42,7 @@ See the statement's Markdown for the precise meaning of each hypothesis.
 The proof applies one published implication to two published unconditional theorems.
 
 1. `quasiSplitSimplyConnectedRegularConjugate_of_classRational` (module
-   `Rational/QuasiSplitRegularConjugateReduction`, Worker 1601). Its hypotheses are
+   `Rational/QuasiSplitRegularConjugateReduction`). Its hypotheses are
    `QuasiSplitRegularClassRationalStatement.{u}` and
    `RegularConjugateFiniteGaloisStatement.{u}`, and it concludes the target. The proof
    works as follows.
@@ -60,8 +58,7 @@ The proof applies one published implication to two published unconditional theor
      realizes the conjugacy over a finite Galois `L'`.
    - Naturality of `e` at `r` translates this conjugacy back to `y`.
 2. `quasiSplitRegularClassRational : QuasiSplitRegularClassRationalStatement.{u}`
-   (module `Rational/QuasiSplitRegularClassRational`, Worker 4871, task
-   `dd1d7a92-2f47-4d25-b340-c9e4a1ab4ed0`). This is Borel–Springer 8.6 for
+   (module `Rational/QuasiSplitRegularClassRational`). This is Borel–Springer 8.6 for
    Galois-stable strongly regular classes. A strongly regular `L`-point of `G` whose
    class is stable under `Gal(L/K)` is geometrically conjugate to a `K`-rational point.
    It is proved through Steinberg's invariant quotient `ρ : G ⟶ V`, in four steps:
@@ -70,7 +67,7 @@ The proof applies one published implication to two published unconditional theor
    - `x` and `z` lie in one strongly regular fibre of `ρ`.
    - Such a fibre is a single geometric class, so `x` and `z` are conjugate.
 3. `regularConjugateFiniteGalois : RegularConjugateFiniteGaloisStatement.{u}` (module
-   `Rational/RegularConjugateFiniteGaloisProof`, Worker 1296). The proof runs as
+   `Rational/RegularConjugateFiniteGaloisProof`). The proof runs as
    follows.
    - The centralizer of `x` is a closed subgroup that becomes isomorphic to a torus
      over a field, so it is a `K`-torus.
@@ -79,7 +76,7 @@ The proof applies one published implication to two published unconditional theor
    - So it has a point over a finite Galois extension of `K`.
 
 The supplied terms have exactly the hypothesis types of the implication. The theorem
-therefore depends on no unproved statement. A `lean_check` of this module with the
+therefore depends on no unproved statement. A development check of this module with the
 declaration reports only the axioms `propext`, `Classical.choice` and `Quot.sound`.
 
 ## Sources

@@ -1,7 +1,5 @@
 # Compatibility of the relative and absolute invariant maps
 
-Author: Worker 42.
-
 `InvariantFamily.ClosureCompatibility` is a predicate on the law-free
 candidate invariant family. For every finite Galois intermediate field
 `E` of the actual algebraic closure of a p-adic field `F`, and every

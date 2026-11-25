@@ -1,7 +1,5 @@
 # Proof of the product-Levi chamber bound
 
-Author: Worker 246.
-
 This module proves
 
 ```text

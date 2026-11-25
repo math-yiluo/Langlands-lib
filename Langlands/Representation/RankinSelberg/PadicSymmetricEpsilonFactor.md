@@ -1,7 +1,5 @@
 # Constructed generic p-adic epsilon factors in either rank order
 
-Author: Worker 31.
-
 `genericPairEpsilonData`, `genericPairEpsilonFactor` and
 `genericPairEpsilonValue` construct coefficient/exponent data in `ℂˣ × ℤ`,
 a unit of `RatFunc ℂ`, and a complex unit at each complex spectral

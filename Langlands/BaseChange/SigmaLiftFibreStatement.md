@@ -34,7 +34,8 @@ is `IsSigmaLift σ l π hπ τ hτ A c`. It uses
 `AreConcordant σ l μF μE φ f` from `Langlands.BaseChange.OrbitalIntegral`
 to match the tests for the Haar measures `μF` and `μE`.
 `Langlands.BaseChange.PseudoCoefficient` supplies `IsSigmaDiscreteSeries σ n τ`
-for the σ-discrete series statements in Task 7449.
+for the σ-discrete series statements (`DiscreteSeriesSigmaLiftStatement`,
+`SigmaDiscreteDescentStatement`).
 
 ## Sources and scope
 
@@ -115,5 +116,5 @@ existence theorem II.4.6. Its proof uses the orthogonality
 relations for discrete-series characters on the elliptic
 set, character twists, and the nonvanishing of an
 essentially discrete character at an elliptic norm.
-A later proof task can follow this route without invoking
+A later proof can follow this route without invoking
 the existence or descent statement.

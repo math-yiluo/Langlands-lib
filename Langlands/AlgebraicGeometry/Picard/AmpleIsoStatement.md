@@ -46,7 +46,7 @@ this hom at the top open.
 
 For arbitrary module sheaves `P Q : X.Modules`, an isomorphism `e : P ≅ Q`,
 and `s : Langlands.SchemeModule.GlobalSections P`, the open equality needed
-in the future proof is
+in the proof is
 
 ```lean
 Langlands.SchemeModule.trivializationOpen Q (e.hom.app ⊤ s) =
@@ -62,7 +62,7 @@ isomorphism. The published
 `f : P ⟶ Q`, the section morphism of `f.app ⊤ s` equals
 `sectionHom P s ≫ f`.
 
-The intended derived argument applies this naturality equality on each
+The derived argument applies this naturality equality on each
 open and uses the restricted isomorphism and its inverse to compare the
 two `TrivializesOn` predicates. Equality of the corresponding suprema
 would give the displayed whole-open equality for arbitrary module sheaves,
@@ -84,12 +84,12 @@ literature theorem or rely on a new external source.
 
 This module defines a proposition returning `Prop`; it does not prove that
 proposition, the displayed whole-open equality, or an ampleness transport
-theorem. Those are separate proof obligations. The intended proof will reuse
-the published section naturality and tensor-power isomorphisms and expose
-the generic whole-open isomorphism lemma for other consumers.
-Workers 410 and 477 contributed the shared transport route and the reuse
-observation for the published naturality lemma.
+theorem. Those are separate proof obligations, discharged in the module
+`Langlands.AlgebraicGeometry.Picard.AmpleIsoProof`. Its proof `ampleIso` reuses
+the published section naturality and tensor-power isomorphisms and exposes
+the generic whole-open isomorphism lemma
+`Langlands.SchemeModule.trivializationOpen_mapIso` for other consumers.
 
-The pinned environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`:
+The Lean environment is
 Lean 4.34.0 and Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`.

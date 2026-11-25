@@ -1,11 +1,12 @@
 # Cuspidal-factor extraction from supplied actual graded pieces
 
-Authors: Workers 1553 and 321. Worker 321 identified the existing arbitrary-grade
-extraction theorem and agreed the division between the actual Jacquet
-subquotient reduction and this dependent-witness filtration argument.
+This module uses the existing arbitrary-grade extraction theorem of
+`Filtration.ActualGradedExtraction`. The actual Jacquet subquotient reduction is
+in `CuspidalJacquetFactorReduction`; this module holds the dependent-witness
+filtration argument.
 
-This is an internal conditional assembly for task
-`e6add7c5-44c5-45ea-afe9-7f48c98fb927`. It does not prove
+This is an internal conditional assembly for the rational cuspidal
+Jacquet-factor extraction. It does not prove
 `RationalCuspidalJacquetFactorExtractionStatement`. In particular it does
 not construct a geometric filtration or prove that proper induced grades
 exclude all irreducible inside-Levi cuspidal subquotients.
@@ -76,7 +77,7 @@ The declaration dependencies used by the new argument are:
   `Representation.IsIrreducible.bijective_or_eq_zero` and the
   nontriviality of a simple module.
 
-The direct imports are the unchanged rational target and
+The direct imports are the rational target and
 `Filtration.ActualGradedExtraction`. The latter's classification-named
 imports provide elementary range, kernel and quotient algebra; this
 argument invokes no support existence, uniqueness or classification
@@ -87,8 +88,8 @@ input here.
 
 The provenance is elementary algebra applied to the extraction pattern
 specified by the published target. Renard VI.5.3(ii),(iii) and the first
-paragraph of VI.5.4 motivate that target, as documented in its unchanged
-paired Markdown; this module claims no new formalization of those source
+paragraph of VI.5.4 motivate that target, as documented in its
+Markdown page; this module claims no new formalization of those source
 passages. Establishing the actual rational filtration, its exclusion and
 conjugation alternatives, and the actual Jacquet occurrence remains
 necessary before these helpers can prove the whole rational target.

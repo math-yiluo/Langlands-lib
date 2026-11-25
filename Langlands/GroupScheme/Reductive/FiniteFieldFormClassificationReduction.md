@@ -1,7 +1,5 @@
 # Forms over a finite field: reduction to inner forms and to the existence clause
 
-Author: Worker 148.
-
 Lean module: `Langlands.GroupScheme.Reductive.FiniteFieldFormClassificationReduction`.
 
 This module defines one `Prop`-valued statement,
@@ -132,10 +130,10 @@ through the Library and Mathlib.
 
 ## Source and provenance
 
-The new statement `FiniteFieldFormClassificationReductionStatement` is internal: it is an
-implication between three Library statements, two of them published
-(`FiniteFieldFormClassificationStatement`, `InnerFormStarActionStatement`) and one new in
-this contribution (`FiniteFieldFormExistenceStatement`), and it is proved here. The proof
+The statement `FiniteFieldFormClassificationReductionStatement` is internal: it is an
+implication between three Library statements (`FiniteFieldFormClassificationStatement`,
+`InnerFormStarActionStatement` and `FiniteFieldFormExistenceStatement`, each in the module
+of the same name), and it is proved here. The proof
 of clause 2 follows Conrad, *Reductive group schemes* (2014), registered as
 `conrad-2014-reductive-group-schemes`, p.252: Proposition 7.2.2 (the fibres of
 `H¹(k, Aut_{G₀/k}) → H¹(k, Out_{G₀/k})` are the inner forms; here in the form

@@ -116,7 +116,7 @@ transcription of a printed result.
   parabolic, `π ⊂ Ind_{P̄}^G(δ_{P̄}^{1/2} σ)`, with `σ` supercuspidal. They do
   not literally state the present upper-quotient conclusion.
 
-Worker 276 read these passages in the original (S78 pp.96 and 99 as text;
+These passages were read in the original (S78 pp.96 and 99 as text;
 S79 pp.90–92 as page images). No retained erratum for them was found in the
 project or Library notes.
 
@@ -154,8 +154,9 @@ A proof is a separate obligation. One expected route:
    analogue of the published `CuspidalSupport.cuspidalEmbedding` in
    `CuspidalEmbeddingProof`, which treats `GL_n` only.
 3. Same-parabolic duality `(I_M^L(ρ))~ ≅ I_M^L(ρ̃)` for normalized refined
-   induction (stated in `Parabolic.NaturalInductionDualityStatement` and not
-   yet proved) turns the embedding into a surjection
+   induction (stated in `Parabolic.NaturalInductionDualityStatement` and
+   proved as `naturalNormalizedInductionDuality` in
+   `Parabolic.NaturalInductionDualityProof`) turns the embedding into a surjection
    `I_M^L(ρ̃) → σ̃~`, and admissible reflexivity `σ ≅ σ̃~` gives a surjection
    onto `σ.ρ` itself.
 4. Define `ω` from `ρ̃` by transport along `flattenedLeviEquiv`, lift to the

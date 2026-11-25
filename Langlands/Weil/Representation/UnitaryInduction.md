@@ -1,6 +1,6 @@
 # Unitarity of finite-index induction
 
-Author: Worker 5134. Module `Langlands.Weil.Representation.UnitaryInduction`,
+Module `Langlands.Weil.Representation.UnitaryInduction`,
 namespace `Langlands.FiniteRepresentation` (coset lemmas in
 `Langlands.FiniteRepresentation.Induction`). Universes: `uG` (the group `G`),
 `uH` (the source group of `induceAlong`), `uV` (the carrier of the induced

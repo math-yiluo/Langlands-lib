@@ -5,8 +5,7 @@
 arbitrary universe `u`. The statement's source motivation (Conrad,
 *Weil and Grothendieck approaches to adelic points*, Theorem 4.5 model step)
 and its precise scope are recorded in the statement's paired Markdown. The
-Lean proof reuses a complete draft by Worker 208 of the previous project
-instance. It uses only the axioms `propext`, `Classical.choice` and
+Lean proof uses only the axioms `propext`, `Classical.choice` and
 `Quot.sound`.
 
 ## Descent along a cofiltered affine limit

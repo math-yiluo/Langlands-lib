@@ -1,6 +1,7 @@
 # Actual inverse-transpose images of cuspidal operator realizations
 
-This internal helper for Task 7294 applies the established subrepresentation
+This internal helper for the proof of
+`CuspidalTransposeInverseContragredientStatement` applies the established subrepresentation
 transport construction to the inverse-transpose involution of the actual
 stable automorphic core. The algebraic image construction follows
 `OperatorCMTransport` and the general

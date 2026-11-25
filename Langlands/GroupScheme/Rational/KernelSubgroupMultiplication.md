@@ -1,7 +1,7 @@
 # Multiplication by a homomorphism kernel as a pullback
 
-Worker 679. This internal construction supports the almost direct product in
-the assigned torus anisotropic-part theorem. It works for group schemes over
+This internal construction supports the almost direct product in
+the torus anisotropic-part theorem. It works for group schemes over
 an arbitrary scheme, without commutativity or geometric assumptions.
 
 Given homomorphisms `a : A → G` and `q : G → Q`, multiplication

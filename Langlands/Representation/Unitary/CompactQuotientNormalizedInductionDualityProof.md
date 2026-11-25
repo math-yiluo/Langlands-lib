@@ -1,7 +1,5 @@
 # Normalized induction from a cocompact closed subgroup and duality
 
-Author: Worker 142.
-
 The theorem `Langlands.Renard.CompactRepresentation.compactQuotientNormalizedInductionDuality`
 proves the unchanged published proposition
 `Langlands.Renard.CompactRepresentation.CompactQuotientNormalizedInductionDualityStatement`.

@@ -1,7 +1,5 @@
 # Complete weight spaces under field extension
 
-Author: Worker 1317.
-
 Let `k ⟶ K` be an extension of fields in the original universe `u`. Let `G`
 be an affine group scheme locally of finite type over `Spec k`, let `T`
 be a commutative group scheme whose underlying group is a split torus,
@@ -62,7 +60,7 @@ spans in `Torus.WeightBaseChangeSupport`, the split weight decomposition in
 `Torus.WeightDecomposition`, the projection API in
 `Rational.GenericLieWeights`, and the actual split character-lattice
 bijection in `Torus.SplitLatticeBaseChange`. The refinement proof
-reuses Worker 1317's declaration in `Torus.WeightRestriction`. It attributes
+reuses the declaration `submodule_eq_iSup_of_refinement` in `Torus.WeightRestriction`. It attributes
 no additional structural result to external literature.
 
 The negation equivalence is a transport result. It supplies neither side

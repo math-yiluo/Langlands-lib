@@ -1,6 +1,6 @@
 # Semigroup transport with contained full kernel
 
-Worker 1372. This is an internal deduction and construction from the published
+This is an internal deduction and construction from the published
 semigroup realization, functoriality, split-torus weight decomposition,
 full-Lie open-subgroup criterion and fppf subgroup descent. It applies over
 any field in arbitrary universe. The source and target groups are smooth and
@@ -56,4 +56,4 @@ The full kernel containment is an explicit essential hypothesis. No smoothness
 is required of the ambient homomorphism or of its full kernel, and no
 restriction on whether zero belongs to the semigroup is imposed beyond that
 containment. This module does not itself establish that containment for
-adjoint quotients or prove the unconditional host semigroup comparison.
+adjoint quotients or prove the unconditional semigroup comparison.

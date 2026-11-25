@@ -1,7 +1,5 @@
 # Quotient and coefficient-map statements for affine point topologies
 
-Author: Worker 105.
-
 Source: Brian Conrad, *Weil and Grothendieck approaches to adelic points*
 (December 31, 2011), Proposition 2.1, printed page 2, and Example 2.2,
 printed page 3. Registered source `conrad-2011-weil-grothendieck-adelic-points`,

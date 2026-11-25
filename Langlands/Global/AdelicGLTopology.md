@@ -1,6 +1,6 @@
 # Local compactness and compact-open translation on actual adelic matrix groups
 
-Author: Worker 2. Provenance: internal construction from the published actual
+Provenance: internal construction from the published actual
 adelic matrix groups, the published proof of local compactness of number-field
 adeles, and pinned Mathlib topology. No new original-literature identification
 is made.
@@ -34,6 +34,6 @@ function vary simultaneously. Fixing the function proves continuity of every
 orbit map. These arguments require no linear, norm, completeness or
 finite-dimensional structure on `V`.
 
-This unit makes no statement about derivative topologies, smooth orbit maps,
+This module makes no statement about derivative topologies, smooth orbit maps,
 Haar normalization, nonzero induced sections, unitary completion or automorphic
 existence.

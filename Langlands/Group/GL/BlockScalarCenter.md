@@ -1,7 +1,5 @@
 # Block scalars in the center of the product Levi
 
-Author: Worker 267. Extracted into this module by Integrator.
-
 `Langlands.Parabolic.blockScalarCenter B` is the homomorphism
 
 ```text

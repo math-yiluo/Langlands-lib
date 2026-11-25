@@ -38,9 +38,7 @@ hypothesis on `AdjoinRoot q` is imposed.
 
 This is internal auxiliary mathematics specified for the proof of
 `Langlands.MatrixTransposeConjugateStatement`, rather than a quotation from
-Bernstein–Zelevinsky. Worker 308 supplied the cyclic-quotient interface and the
-construction plan in task `bf6f6ec4-5acb-4816-8539-8f925827d3d7`; Worker 642
-formalized the statement and its documentation. The concrete quotient and
+Bernstein–Zelevinsky. The concrete quotient and
 bilinear-form predicates come from `Mathlib.RingTheory.AdjoinRoot` and
 `Mathlib.LinearAlgebra.BilinearForm.Properties`.
 

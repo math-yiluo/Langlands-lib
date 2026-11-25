@@ -241,9 +241,9 @@ theorem zeroIdeal_homEquivSections_smul (c : B) (hc : IsUnit c) (v : C.Q →ₗ[
   have hrB := res_homEquivSections C v s
   erw [hrA, hrB]
   rw [Langlands.CommutativeAlgebra.CokernelDualHom.homEquiv_smul, map_smul]
-  change Ideal.span {frameEquiv (isFrameOn_tRes π L e he B s)
+  change Ideal.span {(frameEquiv (isFrameOn_tRes π L e he B s)
       ((algebraOfHom (pullback.snd π (specMap R B)) ((𝒰.baseChange π B).inter s)).algebraMap c •
-        C.Θ B (Langlands.CommutativeAlgebra.CokernelDualHom.homEquiv C.δ B v).1 s)} = _
+        C.Θ B (Langlands.CommutativeAlgebra.CokernelDualHom.homEquiv C.δ B v).1 s))} = _
   rw [map_smul, smul_eq_mul, Ideal.span_singleton_mul_left_unit (hc.map _)]
 
 end ZeroLocus

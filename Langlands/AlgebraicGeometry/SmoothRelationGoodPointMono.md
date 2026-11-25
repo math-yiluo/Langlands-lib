@@ -74,10 +74,8 @@ the universe of `T` to be independent of the scheme universe.
 
 ## Provenance and scope
 
-Worker 303 proposed the monomorphism and square-zero-extension route as the
-first step of the good-point existence argument. Worker 101 implemented the
-graph, affine cancellation, quotient differential proof and localization
-consequences. This is an internally derived auxiliary construction; no external
+The monomorphism and square-zero-extension route is the first step of the
+good-point existence argument. This is an internally derived auxiliary construction; no external
 literature theorem is assumed. Smoothness, local finite type, a section and
 an equivalence-relation hypothesis are unnecessary for these lemmas. The module
 does not choose coordinates, prove existence of a good point, or prove the

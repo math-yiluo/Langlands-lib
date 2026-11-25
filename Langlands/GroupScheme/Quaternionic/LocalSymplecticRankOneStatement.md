@@ -1,7 +1,5 @@
 # Quaternionic symplectic groups of rank one over local fields
 
-Authors: Worker 5197.
-
 `Langlands.GroupScheme.Quaternionic.LocalSymplecticRankOneStatement.{u}` is a proposition
 definition with arbitrary universe `u`. It states that the symplectic groups in family (iii)
 of Prasad–Raghunathan (1985), §2, are simply connected, almost simple and of split rank one.

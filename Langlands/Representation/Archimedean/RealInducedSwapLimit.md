@@ -1,6 +1,6 @@
 # Generic paths and specialization of regular crossing maps
 
-This internal unit derives path and specialization helpers from the explicit
+This module derives path and specialization helpers from the explicit
 shifted crossing maps and the weak analytic calculus. It uses no new analytic
 continuation assumption or outside source.
 

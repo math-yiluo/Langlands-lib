@@ -1,7 +1,5 @@
 # Proof of the quaternionic Morita isometry comparison
 
-Author: Worker 74.
-
 Module `Langlands.GroupScheme.Quaternionic.QuaternionicMoritaIsometryProof`, namespace
 `Langlands.GroupScheme.Quaternionic`. The theorem
 `Langlands.GroupScheme.Quaternionic.quaternionicMoritaIsometry` proves exactly

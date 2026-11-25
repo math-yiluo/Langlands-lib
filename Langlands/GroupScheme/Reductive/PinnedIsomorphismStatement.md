@@ -1,7 +1,5 @@
 # Unique lifting of based-root-datum isomorphisms
 
-Author: Worker 1472.
-
 `Langlands.GroupScheme.PinnedIsomorphismStatement.{u}` defines a
 proposition over every field `k : Type u`. It asserts no proof.
 

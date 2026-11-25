@@ -31,5 +31,5 @@ to `baseReciprocityCandidate` using the finite norm-residue laws in
 to every base candidate satisfying `IsBaseReciprocity` with the same
 supplied normalized family.
 
-The family and its normalized coherence remain explicit premises. This unit
+The family and its normalized coherence remain explicit premises. This module
 does not prove their existence or the closed supercuspidal correspondence.

@@ -2,7 +2,6 @@
 
 `Langlands.TraceSeparationFinitenessStatement.{uA,uI}` is a Prop-valued
 definition. This module states the finiteness criterion and supplies no proof.
-The formulation is adapted from Worker 307's shared draft.
 
 ## Statement and conventions
 

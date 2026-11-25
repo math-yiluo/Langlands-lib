@@ -1,7 +1,5 @@
 # Genuine operations on the unitary irreducible lattice
 
-Author: Worker 24.
-
 This derived construction restricts the published genuine character-twist and
 contragredient equivalences to the actual unitary classes of continuous
 irreducible complex representations across positive ranks. Group and carrier

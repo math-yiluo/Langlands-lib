@@ -1,6 +1,6 @@
 # Free representations over `𝒪/ℓ^m𝒪[Γ]` as representations over `𝒪`
 
-Author: Worker 61. Built on the published module
+Built on the published module
 `Langlands.Cohomology.DivisibleSystem.FreeTorsionProjective`
 (`FreeOverPowQuotient`, `torsionQuotientRep`, `torsionQuotientRepIso`,
 `isTorsionBySet_of_powSMul_eq_zero`, `powSMul_hom_apply`, and the instances
@@ -115,7 +115,7 @@ a type.
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
 J. Math. Kyoto Univ. 39-2 (1999), proof of Proposition 4.10, printed p.312
-(one-based PDF page 14; Worker 61 read the rendered scanned page): "Since
+(one-based PDF page 14; read in the rendered scanned page): "Since
 `C^j_m(ẽ)^{H_p}` and `Hom(𝒪_m[C_p/H_p]^M, 𝓛_m)` are both free
 `𝒪/ℓ^m𝒪[S(ẽ)/H_p]`-modules, it follows that the maps (4.10.3) are surjective
 for all `m`."

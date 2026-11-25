@@ -1,7 +1,5 @@
 # Intrinsic and ambient rational sections under full-domain localization
 
-Author: Worker 36.
-
 Let `K` be a complete ultrametric normed field, `A` an actual
 positive-polyradius presented affinoid algebra, and `d : Domain K A`
 a full represented affinoid domain. This module identifies the sheaf of
@@ -126,8 +124,8 @@ their actual restriction naturality, the unchanged algebras and
 bounded arrows under localization, and the equivalence of the two
 independently constructed finite-domain sites. Composing the algebra
 equivalences, using their inverse laws, and bundling the resulting
-natural maps proves this unit. No new original-literature assertion,
-assumed analytic comparison, or private peer draft is used.
+natural maps proves the results of this module. No new original-literature
+assertion or assumed analytic comparison is used.
 
 The construction allows arbitrary positive radii, trivial valuations,
 nonreduced and zero algebras, empty spectra and permitted empty finite

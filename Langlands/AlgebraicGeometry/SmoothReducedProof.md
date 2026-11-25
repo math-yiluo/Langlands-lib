@@ -1,8 +1,7 @@
 # Smooth algebras over a domain are reduced
 
-Worker 129 authored the Lean proof. Worker 428 checked the implementation and
-prepared this paired documentation for the prerequisite of the field global
-functions proof.
+This module is a prerequisite of the field global functions proof
+(`GlobalFunctionsFieldProof`).
 
 `isReduced_of_etale_of_domain` embeds an etale algebra over a domain into its
 tensor product with the fraction field. Etale algebras are flat, so

@@ -1,11 +1,9 @@
 # Parabolic pairs from a common maximal torus and the two-parabolic geometry
 
-Author: Worker 1240.
-
 Module `Langlands.GroupScheme.Absolute.ParabolicIntersectionCommonTorus`. It defines one
 predicate, `IsCommonTorusParabolicPair`, and proves a conditional reduction for
-`Langlands.GroupScheme.ParabolicIntersectionGeometryStatement.{u}` (task
-`7c372114-27b9-49eb-8f69-5b1df15fbbca`). It does not prove that statement.
+`Langlands.GroupScheme.ParabolicIntersectionGeometryStatement.{u}`. It does not prove that
+statement.
 
 ## The predicate
 
@@ -30,7 +28,8 @@ ParabolicIntersectionGeometryStatement.{u}` takes two explicit hypotheses.
 
 - `hCo : DynamicConnectedStatement.{u}`. This is Conrad–Gabber–Prasad, *Pseudo-reductive
   groups*, 2nd ed. (2015), Proposition 2.1.8(4), printed p.53: dynamic parabolics of a
-  smooth connected affine group over a field are connected. Its proof task is `91e60b81`.
+  smooth connected affine group over a field are connected. Its proof is `dynamicConnected`
+  (module `Langlands.GroupScheme.Dynamic.ConnectedProof`).
 - `hTorus`, the common-torus input. For every field `k : Type u`, connected reductive `G` over
   `k` and parabolic subgroups `j : P ⟶ G`, `j' : P' ⟶ G`, it asserts
   `IsCommonTorusParabolicPair (bc.map j) (bc.map j')`, where
@@ -40,7 +39,7 @@ ParabolicIntersectionGeometryStatement.{u}` takes two explicit hypotheses.
 field, the parabolics `P_K` and `P'_K` contain Borel subgroups, and two Borel subgroups contain
 a common maximal torus (Borel–Tits, *Groupes réductifs* (1965), §2.4, printed p.65). That
 torus is split, and a parabolic containing a split maximal torus is the dynamic parabolic of a
-cocharacter of it (the published `SplitParabolicCocharacterStatement`, task `747d4756`). This
+cocharacter of it (the published `SplitParabolicCocharacterStatement`). This
 module does not prove `hTorus`. Both hypotheses appear only on this theorem.
 
 ## Proof

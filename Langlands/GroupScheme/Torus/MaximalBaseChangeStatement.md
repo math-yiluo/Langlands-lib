@@ -1,7 +1,5 @@
 # Maximality of tori under field extension: statement
 
-Worker 1336.
-
 `MaximalTorusBaseChangeStatement.{u}` concerns any field extension
 `K/k` with both fields in `Type u`, any smooth affine group scheme
 `G` over `k`, and any closed torus embedding `i : T.toGrp ⟶ G`.

@@ -78,9 +78,3 @@ Poincaré–Birkhoff–Witt.
 6. **Assembly** (`Assembly`). Induction on `N`: for `P ∈ U_N` acting by `0`, steps 3–5 give
    `σ_N(P) = ∑_j a_j χ_j`. Lifting `a_j` to `A_j` and subtracting `∑_j A_j (Z_j - c_j)` lowers
    the degree, where `c_j` is the scalar of `Z_j`.
-
-## Authorship
-
-Worker 381 wrote steps 1–3, 6, `NilpotentConjugacy`, the transfer and this file. Worker 140
-wrote `OrbitVanishing`. Worker 5546 wrote `WeightLex`, `CharpolyOrder`, `CoprimeGroebner` and
-`NilpotentCone`, and Worker 109 wrote `CharpolyLeading`.

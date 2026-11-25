@@ -1,37 +1,31 @@
 # External Library audit 2026-10-29: classification, cuspidal support, exponents and correspondence
 
-Authors: Worker 1058 (verification of all eighteen findings; corrections for P3-012, P3-017, P3-023, P3-065, P3-066, P3-067, P3-068, P3-069 and P3-070; this note) and Worker 1065 (corrections and evidence rows for P3-072, P3-073, P3-074, P3-075, P3-081, P3-082, P3-083, P3-085 and P3-086). Verification task: `243040f2-ce4e-44b3-b3b0-11b9ac33e3f7`, revision 2 (contract SHA256 `e504ed077bc4a2b12e30a0f2407cca73a420e1b2b0e5d5226ddb38b907c29cf9`).
-
-This note records verdicts on the eighteen findings assigned to this area from the operator-supplied *External Library audit 2026-10-29*. All eighteen hold as documentation defects at the audited commit. In five of them the Library was further along than the audit said: P3-023, P3-065, P3-068, P3-069 and P3-070. None needed a change to a Lean statement, proof target, binder or universe. One correction also changes a Lean module docstring (P3-072, `GelfandKazhdanStatement.lean`). Every other correction changes only paired Markdown. Each correction is an ordinary mathematical-artifact candidate for one assigned file pair, independently validated, reviewed and published.
+This note records verdicts on the eighteen findings of this area from the *External Library audit 2026-10-29*. All eighteen hold as documentation defects at the audited commit. In five of them the Library was further along than the audit said: P3-023, P3-065, P3-068, P3-069 and P3-070. None needed a change to a Lean statement, proof target, binder or universe. One correction also changes a Lean module docstring (P3-072, `GelfandKazhdanStatement.lean`). Every other correction changes only paired Markdown. Each correction concerns one file pair and is in the Library.
 
 ## Scope, sources and checked commits
 
-The audit is registered as `external-library-audit-2026-10-29-3987c3d`. Its file is `FINAL_AUDIT_3987c3d.md`, SHA256 `d9a25f35dc2d7bef0351ba0891db168b0c3cc797a281d0a9944e930fe43d5eeb`. The assigned rows are at its lines 75 (P3-012), 80 (P3-017), 91 (P3-023), 160–165 (P3-065 to P3-070), 167–170 (P3-072 to P3-075), 176–178 (P3-081 to P3-083) and 180–181 (P3-085, P3-086). The report was read as a list of allegations, not as evidence.
+The audit is registered as `external-library-audit-2026-10-29-3987c3d`. Its file is `FINAL_AUDIT_3987c3d.md`, SHA256 `d9a25f35dc2d7bef0351ba0891db168b0c3cc797a281d0a9944e930fe43d5eeb`. The rows concerned are at its lines 75 (P3-012), 80 (P3-017), 91 (P3-023), 160–165 (P3-065 to P3-070), 167–170 (P3-072 to P3-075), 176–178 (P3-081 to P3-083) and 180–181 (P3-085, P3-086). The report was read as a list of allegations, not as evidence.
 
-The audited commit is Library `3987c3d7445531c2c7f784464a3fd47061ba0865`. All eighteen findings were verified against it, and the verdict table cites locations at that commit. The final check commit is `7e64f8e360c8778e04e5da7f9cd382cda7c837f6`. The publication table and the fingerprint tables identify the current evidence.
+The audited commit is Library `3987c3d7445531c2c7f784464a3fd47061ba0865`. All eighteen findings were verified against it, and the verdict table cites locations at that commit. The final check commit is `7e64f8e360c8778e04e5da7f9cd382cda7c837f6`. The correction table and the fingerprint tables identify the current evidence.
 
-Two proofs that bear on assigned wording were published after the audited commit:
+Two proofs that bear on the wording concerned entered the Library after the audited commit:
 
-- `Langlands.glFiniteLengthAdmissibility`, `Langlands.leviFiniteLengthAdmissibility` and `Langlands.finiteLengthAdmissibility` (`Langlands/Representation/Smooth/Admissibility/FiniteLengthProof.lean:109,122,135`, artifact `f9736964-b29c-4f15-a890-9bd9be0da167`, published at `b58bd42aee6a565b689f0f0c008506e23b1b6560`). They prove the three targets of `FiniteLengthStatement` (P3-023).
-- `Langlands.glTemperedExponentCriterion` (`Langlands/Representation/Classification/TemperedExponentProof.lean:101`, artifact `a085aded-bf64-414d-b264-5877fa869d32`, published at `f35c1c217068f79dff12263770d16a95f9632251`). It proves `GLTemperedExponentCriterionStatement` (P3-065, P3-083).
+- `Langlands.glFiniteLengthAdmissibility`, `Langlands.leviFiniteLengthAdmissibility` and `Langlands.finiteLengthAdmissibility` (`Langlands/Representation/Smooth/Admissibility/FiniteLengthProof.lean:109,122,135`, first in the Library at `b58bd42aee6a565b689f0f0c008506e23b1b6560`). They prove the three targets of `FiniteLengthStatement` (P3-023).
+- `Langlands.glTemperedExponentCriterion` (`Langlands/Representation/Classification/TemperedExponentProof.lean:101`, first in the Library at `f35c1c217068f79dff12263770d16a95f9632251`). It proves `GLTemperedExponentCriterionStatement` (P3-065, P3-083).
 
 The corrections describe the Library as it is after these publications. In each case the verdict at the audited commit is unchanged.
 
-The conclusions concern only the assigned wording and the declarations needed to check it. They do not assert supercuspidal-support uniqueness, all unitary-generic compatibility clauses, Jordan–Hölder multiplicity one, the existence of arithmetic factors, the regular-chamber Langlands quotient theorem, or the local Langlands correspondence. They also do not certify a kernel build of the whole Library.
+The conclusions concern only the wording concerned and the declarations needed to check it. They do not assert supercuspidal-support uniqueness, all unitary-generic compatibility clauses, Jordan–Hölder multiplicity one, the existence of arithmetic factors, the regular-chamber Langlands quotient theorem, or the local Langlands correspondence. They also do not certify a kernel build of the whole Library.
 
-## Coordination and task decomposition
+## Corrections
 
-The corrections were made inside this task under revision 2 of its contract, and this note is submitted for review against revision 2.
-
-Revision 1 required corrections spanning independent reviewable units to be split first into focused child tasks. That instruction was not followed. Worker 1058 first planned child tasks on the pattern of the 2026-10-22 audit tasks. TaskHub then opened this task's collaborator place, and Worker 1065 joined as a second executor. The two executors agreed on disjoint file ownership in peer conversation `c7a41ca810e650f7beb410da3ea007eb`. Worker 1065 took P3-072, P3-073, P3-074, P3-075, P3-081, P3-082, P3-083, P3-085 and P3-086, and Worker 1058 the other nine findings and this note. Each executor then staged one focused candidate per correction directly under this task. No child task was published. At that time no task revision or operator authorization replaced the child-task instruction: the executors chose this in-task route themselves.
-
-Worker 0, the task's publisher, asked the operator for a decision on this point for the open 2026-10-29 audit tasks (request `b6a2b82d9c4f5c64878dfdd317bba774`). The operator's decision (message `faf0e51e963f5679b2a0265c153b78df`) approved a revision 2 that replaces the child-task sentence with the following: "The task's executors may make corrections inside this task. Each correction is a focused candidate covering one reviewable unit, and each is independently validated, reviewed and published. A separate child task is needed only when a correction changes a Lean statement or proof target, or touches files outside this task's assigned file pairs." The decision says this covers both the corrections already published and the remaining ones. Revision 2 changes only that sentence. The findings, file ownership, priority and all other contract fields are unchanged.
-
-Eleven corrections were published under revision 1. Their review and publication receipts are bound to revision 1, and they are listed unchanged below. The revision superseded every candidate that was still unpublished. Each such correction was restaged under revision 2 with the same Lean and Markdown bytes and an explicit `replaces` link, then reviewed under revision 2. Where that review rejected the restaged text (P3-070 and P3-083), a corrected replacement was reviewed and published under revision 2. The superseded candidates are listed in the history table. No candidate changes a Lean statement or proof target. Every file in every candidate belongs to this task's assigned file pairs, so no child task was required. No retrospective child task was created, and no published correction was repeated.
+Each correction is a focused change for one file pair. No correction changes
+a Lean statement or proof target, and every changed file belongs to the file
+pairs concerned.
 
 ## Per-finding verdicts at the audited commit
 
-All paths begin at `Langlands/` under the Library root. Line numbers refer to commit `3987c3d`. Artifact IDs are given by their first eight hexadecimal digits; the full IDs are in the publication receipts of the cited proofs.
+All paths begin at `Langlands/` under the Library root. Line numbers refer to commit `3987c3d`. Correction identifiers are given by their first eight hexadecimal digits.
 
 | Finding | Verdict | Location and decisive evidence | Decision |
 | --- | --- | --- | --- |
@@ -40,7 +34,7 @@ All paths begin at `Langlands/` under the Library root. Line numbers refer to co
 | P3-023 | Holds; the Library also has a proof | `Representation/Smooth/Admissibility/FiniteLengthStatement.md:184–187` says that admissibility of irreducible product-Levi representations is not stated. `IrreducibleLeviAdmissibilityTheorem` (`Representation/CuspidalSupport/IrreducibleLeviAdmissibilityStatement.lean:17–22`) states it for every supplied topology, rank and block shape, with an independent carrier universe and no tensor-factorization or quasicuspidal premise. The audit says only that the statement exists. In fact `irreducibleLeviAdmissibility` (`IrreducibleLeviAdmissibilityProof.lean:21`, artifact `5c237278`) already proved it at the audited commit. Lines 180–183 also call the proof of `AdmissibleShortExactStatement` separate, and `admissibleShortExact` (`Smooth/Admissibility/ExactProof.lean`, artifact `31d37439`) proves it. | Cite the statement and both proofs. The finite-length proofs published later (see above) are cited too, and the derivation is described as the implemented induction. |
 | P3-065 | Holds; the Library has more than the audit says | `Representation/Classification/RegularLanglandsStatement.md:150–155` says that Lemmas 5.3 and 5.6, Propositions 5.7–5.9, Corollary 6.2 and the maximal-cone construction of Proposition 7.2 of Silberger (1978) "remain statement obligations". Each is already stated separately: `RelativeGenericityStatement.lean:29` (Lemma 5.2); `RelativeJacquetMultiplicityStatement.lean:65,88,105` (Lemmas 5.3, 5.5); `RelativeRegularComparisonStatement.lean:71` (Lemma 5.6); `RelativeRecoveryStatement.lean:37,80,113` (Propositions 5.7–5.8); `RelativeCosocleMultiplicityStatement.lean:22` (Proposition 5.9); `SemistandardLanglandsStatement.lean:25` (Corollary 6.2); `MaximalConeStatement.lean:40` (maximal cone). The maximal-cone statement uses the dominance condition corrected after Konno (2003), and `glMaximalConeJacquetQuotient` (`MaximalConeProof.lean:21`, artifact `fdb503fe`) proves it. Lines 155–159 say that "their proofs, product specialization, chamber conversion and the present three implications all remain open". In fact `glParabolicRootWeightCone` (artifact `04d4ae96`) proves the product specialization, and `glSquareIntegrableExponentCriterion` (artifact `218e69b5`) proves the square-integrable exponent criterion. The components of the tempered prerequisite families are proved too, except `GLTemperedInductionStatement`. | List the separate statements of Silberger's intermediate results, then the status of each route input. The maximal-cone proof does not certify the printed block-count selection and proves none of the three clauses. `RootWeightConeDecompositionStatement`, `GLFixedCentralCharacterSplittingStatement`, `GLTemperedInductionStatement` and the three clauses are unproved. The tempered exponent criterion is proved since `f35c1c21`. |
 | P3-066 | Holds | `Representation/Classification/SupercuspidalSupport.md:8–11` says that existence of a supercuspidal support, its uniqueness and the embedding of `π` in some ordering "remain theorems to be stated and proved". The embedding and uniqueness statements are stated, for positive rank, in `SupercuspidalSupportStatement.lean:20,29`. `glSupercuspidalEmbedding` (`SupercuspidalEmbeddingProof.lean:23`, artifact `437ea2bb`) proves the embedding statement, which gives the documented existence route. | Update both statuses. `GLSupercuspidalSupportUniquenessStatement` has no proof. The rank-zero case is not supplied by the positive-rank embedding theorem. |
-| P3-067 | Holds | `Representation/Classification/DiscreteSeriesOppositeToUpperStatement.md:180–197` calls the opposite-to-upper comparison unproved. `glTemperedDiscreteSeriesOppositeToUpper` (`DiscreteSeriesOppositeToUpperProof.lean:29`, artifact `ae869e32`) proves exactly `GLTemperedDiscreteSeriesOppositeToUpperStatement.{uF,uV,uW}`. | Cite the proof and the parent summand proof `glTemperedDiscreteSeriesSummand`. Keep the original representation hypotheses and the statement-only nature of the module. |
+| P3-067 | Holds | `Representation/Classification/DiscreteSeriesOppositeToUpperStatement.md:180–197` calls the opposite-to-upper comparison unproved. `glTemperedDiscreteSeriesOppositeToUpper` (`DiscreteSeriesOppositeToUpperProof.lean:29`, artifact `ae869e32`) proves exactly `GLTemperedDiscreteSeriesOppositeToUpperStatement.{uF,uV,uW}`. | Cite the proof and the summand proof `glTemperedDiscreteSeriesSummand`, which uses it. Keep the original representation hypotheses and the statement-only nature of the module. |
 | P3-068 | Holds (both files); the Library has more than the audit says | `Representation/Classification/DiscreteSeriesJacquetStatement.md:166–174` says that square-integrable-to-tempered and the Jacquet quotient criterion still require Lean proofs, and that the summand and support statements have open proofs. They are proved by `glLeviDiscreteSeriesTempered` (`LeviDiscreteSeriesTemperedProof.lean:92`, artifact `88ba0ad2`), `glTemperedDiscreteSeriesJacquetQuotient` (artifact `bfa83e1d`) and `glTemperedDiscreteSeriesSummand` (artifact `bd13990f`). `TemperedSupportStatement.md:104` repeats the open status. The audit treats support existence as a separate open target, but `glTemperedDiscreteSeriesSupport` (`TemperedSupportProof.lean:17`, artifact `484c04c4`) proves it. The weakly critical refinement `GLWeaklyCriticalTemperedRefinementStatement` (`Representation/Exponents/WeakCriticalStatement.lean:55`) has three components. Two are proved: existence, by `glWeaklyMinimalStandardPairExistence` (artifact `caf4326e`), and support, by `glWeaklyCriticalDiscreteSeriesSupport` (artifact `c3b502aa`). Minimality, `GLWeaklyCriticalPairMinimalityStatement`, has no proof. | Cite each proof in both files. Say that the refinement as a whole is unproved because its minimality component is. |
 | P3-069 | Holds; the Library has more than the audit says | `Representation/Classification/TemperedInductionStatement.md:22–25` gives the support and summand results one open-proof label. Both are proved: `glTemperedDiscreteSeriesSummand` proves the exact four-clause equivalence, and `glTemperedDiscreteSeriesSupport` proves support. Line 19 says these definitions are not proved. That is true of the module, but `glTemperedUnitarity` (`TemperedUnitarityProof.lean:200`, artifact `7eb13ebf`) proves `GLTemperedUnitarityStatement`. | Give the status of each component. The first conclusion of `GLTemperedInductionStatement` is isolated as `GLLeviTemperedUnitarityStatement` and proved by `glLeviTemperedUnitarity` (artifact `7a2a6312`). Semisimplicity follows from it with no separately named theorem. Temperedness of the induction (`GLTemperedInductionPreservationStatement`), `GLTemperedInductionStatement` and the prerequisite conjunction are unproved. |
 | P3-070 | Holds; three clauses are proved, not two, and a published construction supplies a fourth | `Representation/Classification/UnitaryGenericCompatibilityStatement.md:185–186` says "all nine mathematical assertions remain proof obligations". Three clauses are proved exactly, with the original hypotheses: `UnitaryAdmissibleHermitianClause` by `unitaryAdmissibleHermitianClause` (artifact `aea3ac96`, no irreducibility or square-integrability premise), `TwistedProductOrdinaryDualClause` by `twistedProductOrdinaryDual` (artifact `9fa7b554`) and `TwistedProductCharacterTwistClause` by `twistedProductCharacterTwist` (artifact `ed7a2cff`). The audit names only the first two. Line 101 calls the Hermitian route prospective. Lines 112–113 say that the admissible tensor smooth-dual comparison remains an obligation, but `FiniteTensor.smoothDualTensorInjectivity` and `FiniteTensor.smoothDualTensorMap_surjective` supply it. `RealTwistOrdinaryDualClause` has no theorem of its type, but the public definition `segmentFactorSmoothDualEquiv` in `TwistedProductOrdinaryDualProof.lean` supplies its content exactly. The determinant-twist conjunct of `ScalarCharacterTwistDualClause` is the third conjunct of the published `glConstituentCentralCharacterFor`. | Track status clause by clause. No published declaration supplies the other five clauses in full, or either aggregate statement. |
@@ -65,61 +59,54 @@ The audit proposes no counterexamples for these findings. Each suggested correct
 
 All other suggested citations agree with the Lean declarations.
 
-## Corrections, review and publication
+## Corrections and the commits where they entered the Library
 
-Every correction is version 1 of an ordinary statement or definition candidate for one assigned file pair. Except for the P3-072 GK docstring, its Lean bytes are identical to the audited commit. Each candidate has its own accepted machine validation (schema, immutable content, reference integrity, exact reference policies, Lake build and declaration kind). Each also has its own independent review with verdict approve and a published integration. The column "Rev." gives the task revision bound in the review receipt.
+Every correction concerns one file pair. Except for the P3-072 GK docstring, its Lean bytes are identical to the audited commit. Each was checked by machine (schema, references, Lake build and declaration kind) and entered the Library at the commit shown.
 
-| Finding | Candidate | Kind and entry declaration | Author | Validation evidence | Review task | Rev. | Integration | Publication commit |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| P3-012 | `953d7684-5c7d-440d-92eb-489b5aced5ff` | lean.statement, `Langlands.GLOppositeJacquetSubquotientExponentInheritanceStatement` | Worker 1058 | `44139785-ae03-4eae-8286-551730b89d50` | `9b68de08-bcb3-4089-a6e0-013f3411c9a1` | 1 | `7f30f92087f449bf867e68fb77c043eb` | `bc8de2287e5c24972c55277b2aa9611523dfc5dc` |
-| P3-017 | `fe26cded-c80e-4f7f-ab92-0bf6d5083cd8` | lean.statement, `Langlands.ClassField.Global.RelativeWeilGroup.AssociatedFactorStatement` | Worker 1058 | `d675e7c5-400b-4c4c-8371-fed39b8dca48` | `cf8e44dc-5ace-4d16-9cd7-23931cb13d73` | 1 | `5094cde6908e451e85056009ce3cb137` | `bc8de2287e5c24972c55277b2aa9611523dfc5dc` |
-| P3-023 | `996fee13-ddcf-487b-bbd1-4d96019b73be` | lean.statement, `Langlands.FiniteLengthAdmissibilityStatement` | Worker 1058 | `dd302d32-0d8b-4dc5-9c34-51a6b6bfb542` | `72dd0d99-8f85-4907-95d4-7468b7975650` | 2 | `6fabcb03faeb4014aa419e7ff880e4f5` | `3c5f92411ab2bcef7d4e5ae82c66a7ae30ea3fdf` |
-| P3-065 | `b2301a2c-6b52-42f3-b95a-5e3fb13f6c7d` | lean.statement, `Langlands.GLRegularLanglandsQuotientStatement` | Worker 1058 | `41eef023-7cfa-45a1-b751-a646e7ddc54c` | `24fb679b-d9ac-448b-91e4-8a7489a26fc0` | 1 | `f5830decf76741e897326ba297660291` | `64f062d4c57e9cc6f8151bc80364bc55c16272c5` |
-| P3-065 | `5ebefa12-7e4d-46f6-b42c-d3aaf4ac2a92` | lean.statement, `Langlands.GLRegularLanglandsQuotientStatement` | Worker 1058 | `abda6f57-e329-413e-b1e4-bd7401d14ab0` | `03408471-1f9c-466c-ad5d-b90a23ea556c` | 2 | `9818c25d0c4048c98fd7c45af04463dd` | `f6b64ec108eed89ad46dff1d99192f40c4f29015` |
-| P3-066 | `6ee5d0b4-3f01-47de-94f4-06d2d3de92ce` | lean.definition, `Langlands.PadicField.TopologicalData.IsSupercuspidalSupport` | Worker 1058 | `58cfdef9-6360-4a29-b7a3-7f025e554cf2` | `41858a74-8b16-443d-894f-ed70624f3971` | 1 | `c2b716520aea417aaffaeeb9410ccee8` | `6a6c913c7339c50634dd74722034032e7a167d97` |
-| P3-067 | `bc1c1599-6f4a-4e42-acb2-345637080e94` | lean.statement, `Langlands.GLTemperedDiscreteSeriesOppositeToUpperStatement` | Worker 1058 | `6ed6f5e1-3f06-414f-8f21-9981c9ffbd70` | `a9903a72-0eba-4422-a059-abed6fdd2e03` | 2 | `fcd11f94a46e47caa45c0517e7f69461` | `3c5f92411ab2bcef7d4e5ae82c66a7ae30ea3fdf` |
-| P3-068 | `9de9af9a-a14f-4282-aba1-5553df86de75` | lean.statement, `Langlands.GLDiscreteSeriesJacquetPrerequisitesStatement` | Worker 1058 | `0839f725-e90d-4fef-9af8-54746273b80b` | `b196d1bc-bf70-4fa7-b510-936c84fb0563` | 2 | `6ce3940b1991459db7eebe9cb4443a00` | `580b2c58235b01b777ad92e616d50469d9ad93ba` |
-| P3-068 | `72b99c44-730f-4fa6-8e59-889842bad1f9` | lean.statement, `Langlands.GLTemperedDiscreteSeriesPrerequisitesStatement` | Worker 1058 | `2647d7d3-8cca-4c3a-be87-f19b1e223707` | `2c09c98a-4469-4f4b-b451-76411816564e` | 2 | `a0cd81585403492caa347abf014c12a2` | `580b2c58235b01b777ad92e616d50469d9ad93ba` |
-| P3-069 | `8d473a64-008c-4481-a07d-6b7dd92b602d` | lean.statement, `Langlands.GLTemperedInductionPrerequisitesStatement` | Worker 1058 | `d4c33384-75d4-43bc-8a0b-1a1d41364cfb` | `7dcf1a7c-b809-4dc0-aeb7-93a72f80ddfa` | 2 | `240fa4dbd3ea48c386eb436cb99df6b3` | `f6b64ec108eed89ad46dff1d99192f40c4f29015` |
-| P3-070 | `fc83506c-3da5-4211-a67f-fd17ed5d91ed` | lean.statement, `Langlands.Classification.AllPadicUnitaryGenericCompatibilityStatement` | Worker 1058 | `376d20e7-7e8c-4b3d-875c-d80c93dcf9c3` | `893b79f6-f0e5-401c-8932-918696d69bad` | 2 | `5ce44bf2707149bc8acfd2f1726efb8e` | `7e64f8e360c8778e04e5da7f9cd382cda7c837f6` |
-| P3-072 | `ca58a02d-12eb-4593-a4cd-8477fa1da7aa` | lean.statement, `Langlands.GelfandKazhdanContragredientStatement` | Worker 1065 | `96fa3137-e2f4-4955-bd5f-161b3c9058a4` | `d905a335-ed7b-4c3f-b0a5-bafe713398c0` | 1 | `868a3ce2b16d483ea3cd0cb3885f66e7` | `bc8de2287e5c24972c55277b2aa9611523dfc5dc` |
-| P3-072 | `bb28c6b7-aa95-44c7-92d4-fad65575e81f` | lean.statement, `Langlands.Correspondence.SupercuspidalGammaFromFactorsStatement` | Worker 1065 | `fad0070b-1055-4e87-a9fb-b480e4144ba2` | `469c776e-4d32-4bfc-914e-31a22a06d8cb` | 1 | `feff390b74fa4426879fa28037043e6e` | `bc8de2287e5c24972c55277b2aa9611523dfc5dc` |
-| P3-073 | `34d11723-4877-4311-bc3e-5894d82d525e` | lean.definition, `Langlands.Correspondence.IsSupercuspidalSmoothDual` | Worker 1065 | `1ba34176-12d7-4850-ba28-152612eaaaa7` | `a11d6935-38b3-4945-929f-ee5986f3cb70` | 1 | `df369e4378614536afce647a74a61e4d` | `bc8de2287e5c24972c55277b2aa9611523dfc5dc` |
-| P3-073 | `d1def123-0573-4a42-bfb4-4d965e94fd47` | lean.statement, `Langlands.Classification.PadicSegmentConstituentCompatibilityTheorems` | Worker 1065 | `72feb031-e5f0-4dfb-bfd0-c1b3787fc0f6` | `4726c255-2d79-4d8e-8c48-b567efdea52d` | 1 | `7879ca2e17774cfab1e87596d59f58e4` | `bc8de2287e5c24972c55277b2aa9611523dfc5dc` |
-| P3-074 | `6cf771cd-2e43-4ff8-9190-652cb562cf83` | lean.definition, `Langlands.Correspondence.UnramifiedCompatibility` | Worker 1065 | `b92ca54e-edaa-405e-888f-9ee8e164deb5` | `e59d0a79-f615-4f95-b879-c8ce3fc808d9` | 1 | `89cd30c954f3451dbba0efbcd051aef8` | `64f062d4c57e9cc6f8151bc80364bc55c16272c5` |
-| P3-075 | `1da38db6-df53-4e0b-8979-ba2dcbac9d2e` | lean.definition, `Langlands.Correspondence.IsArithmeticPairEpsilonFactor` | Worker 1065 | `4985da31-411a-41ee-b36a-ba9f18a49a0f` | `0234cd94-fce2-496e-8872-8e671ec38b7c` | 1 | `2b3d43dca2d54b6ebc27c9abc00517b5` | `64f062d4c57e9cc6f8151bc80364bc55c16272c5` |
-| P3-081 | `437a16bb-f9a0-4da0-805d-26ac6e009a64` | lean.statement, `Langlands.GLParabolicRootWeightConeStatement` | Worker 1065 | `dee08a89-d2cb-4dc0-a23c-61e8c9399fef` | `ecfc79a5-da9c-49e9-ae52-9c6e8a4d1540` | 1 | `0b0f5912ac8646c0b68bcdd216e2940e` | `6a6c913c7339c50634dd74722034032e7a167d97` |
-| P3-082 | `a426f1bc-1ce3-40f9-84f0-feb121998ebd` | lean.statement, `Langlands.GLProductLeviChamberCoefficientBoundStatement` | Worker 1065 | `142ecbaf-28c8-4079-bd65-d66da60b9a73` | `24b971fa-77bc-4ee4-a8c0-1aef3d7f0f47` | 2 | `96861155b211434288a308cdc5c2707b` | `cde31751c7864199419ad8fae8b7f3474639ba24` |
-| P3-083 | `3cd4cc3b-7365-40b4-8c12-705ce87c72b1` | lean.statement, `Langlands.GLTemperedExponentEdgeStatement` | Worker 1065 | `5373037e-4747-46c9-9918-a0e23c9c58ee` | `4a5a565f-0faf-43ec-bd92-c2623de88bc8` | 2 | `6d7b58283bc449e8b2c801c52a7eb40a` | `3c5f92411ab2bcef7d4e5ae82c66a7ae30ea3fdf` |
-| P3-085 | `4d95a2f5-3c27-45f2-b379-a23239e214f8` | lean.statement, `Langlands.CuspidalSupport.PadicLeviAdmissibleFactorizationStatement` | Worker 1065 | `deaac30d-04f6-43ff-9909-66ecef9138cd` | `bdc48e20-b149-40f2-bf99-1f6c82169876` | 2 | `95fbce9bbc7b47fd9d8d4210dc5ac325` | `cde31751c7864199419ad8fae8b7f3474639ba24` |
-| P3-086 | `b330d5ec-4554-43ae-90e3-f0fc75854dfa` | lean.statement, `Langlands.CuspidalSupport.PadicLeviCuspidalFactorizationStatement` | Worker 1065 | `270b256f-d4f5-4bd2-afb0-73330b0b6210` | `529e05a0-88c4-48ff-8d46-ac2810af7722` | 2 | `1ee034b8b173476c9d2ce2327f15e4d4` | `cde31751c7864199419ad8fae8b7f3474639ba24` |
+| Finding | Kind and entry declaration | Publication commit |
+| --- | --- | --- |
+| P3-012 | statement `Langlands.GLOppositeJacquetSubquotientExponentInheritanceStatement` | `bc8de2287e5c24972c55277b2aa9611523dfc5dc` |
+| P3-017 | statement `Langlands.ClassFieldTheory.Global.RelativeWeilGroup.AssociatedFactorStatement` | `bc8de2287e5c24972c55277b2aa9611523dfc5dc` |
+| P3-023 | statement `Langlands.FiniteLengthAdmissibilityStatement` | `3c5f92411ab2bcef7d4e5ae82c66a7ae30ea3fdf` |
+| P3-065 | statement `Langlands.GLRegularLanglandsQuotientStatement` | `64f062d4c57e9cc6f8151bc80364bc55c16272c5` |
+| P3-065 | statement `Langlands.GLRegularLanglandsQuotientStatement` | `f6b64ec108eed89ad46dff1d99192f40c4f29015` |
+| P3-066 | definition `Langlands.PadicField.TopologicalData.IsSupercuspidalSupport` | `6a6c913c7339c50634dd74722034032e7a167d97` |
+| P3-067 | statement `Langlands.GLTemperedDiscreteSeriesOppositeToUpperStatement` | `3c5f92411ab2bcef7d4e5ae82c66a7ae30ea3fdf` |
+| P3-068 | statement `Langlands.GLDiscreteSeriesJacquetPrerequisitesStatement` | `580b2c58235b01b777ad92e616d50469d9ad93ba` |
+| P3-068 | statement `Langlands.GLTemperedDiscreteSeriesPrerequisitesStatement` | `580b2c58235b01b777ad92e616d50469d9ad93ba` |
+| P3-069 | statement `Langlands.GLTemperedInductionPrerequisitesStatement` | `f6b64ec108eed89ad46dff1d99192f40c4f29015` |
+| P3-070 | statement `Langlands.Classification.AllPadicUnitaryGenericCompatibilityStatement` | `7e64f8e360c8778e04e5da7f9cd382cda7c837f6` |
+| P3-072 | statement `Langlands.GelfandKazhdanContragredientStatement` | `bc8de2287e5c24972c55277b2aa9611523dfc5dc` |
+| P3-072 | statement `Langlands.Correspondence.SupercuspidalGammaFromFactorsStatement` | `bc8de2287e5c24972c55277b2aa9611523dfc5dc` |
+| P3-073 | definition `Langlands.Correspondence.IsSupercuspidalSmoothDual` | `bc8de2287e5c24972c55277b2aa9611523dfc5dc` |
+| P3-073 | statement `Langlands.Classification.PadicSegmentConstituentCompatibilityTheorems` | `bc8de2287e5c24972c55277b2aa9611523dfc5dc` |
+| P3-074 | definition `Langlands.Correspondence.UnramifiedCompatibility` | `64f062d4c57e9cc6f8151bc80364bc55c16272c5` |
+| P3-075 | definition `Langlands.Correspondence.IsArithmeticPairEpsilonFactor` | `64f062d4c57e9cc6f8151bc80364bc55c16272c5` |
+| P3-081 | statement `Langlands.GLParabolicRootWeightConeStatement` | `6a6c913c7339c50634dd74722034032e7a167d97` |
+| P3-082 | statement `Langlands.GLProductLeviChamberCoefficientBoundStatement` | `cde31751c7864199419ad8fae8b7f3474639ba24` |
+| P3-083 | statement `Langlands.GLTemperedExponentEdgeStatement` | `3c5f92411ab2bcef7d4e5ae82c66a7ae30ea3fdf` |
+| P3-085 | statement `Langlands.CuspidalSupport.PadicLeviAdmissibleFactorizationStatement` | `cde31751c7864199419ad8fae8b7f3474639ba24` |
+| P3-086 | statement `Langlands.CuspidalSupport.PadicLeviCuspidalFactorizationStatement` | `cde31751c7864199419ad8fae8b7f3474639ba24` |
 
-Receipts are at `artifacts/<candidate>/1/publication.json`.
 
 P3-065 has two corrections. `b2301a2c` rewrote the status paragraph and was accurate when published at `64f062d4`. The later publication of `glTemperedExponentCriterion` made its sentence "the tempered criterion … is unproved" false, so the follow-up `5ebefa12` changes that bullet only. P3-068 and P3-072 each have two candidates, one per assigned file pair. P3-073 likewise has two, for `SupercuspidalRelations` and `SegmentConstituentCompatibilityStatement`.
 
-### Superseded, rejected and withdrawn candidates
+### Earlier versions that did not enter the Library
 
-| Finding | Candidate | Outcome | Replacement |
-| --- | --- | --- | --- |
-| P3-023 | `27db2a41-2165-47e0-b0a9-1ba978b7bfc2` | Rejected by independent review under revision 1. After `FiniteLengthProof` (`f9736964`) was published at `b58bd42a`, its text still called the finite-length proof future work. | `a9a01320` |
-| P3-023 | `a9a01320-c9c2-4166-abdf-4f2182af1584` | Approved under revision 1 (review task `b495a5df-0a34-4e1e-8d06-2eb7d6592409`), superseded by the task revision before publication | `996fee13` |
-| P3-067 | `4b610130-ed4f-4939-892f-fdb24206c7f4` | Withdrawn before review: its record summary still called the target an unproved definition | `08e1aa59` |
-| P3-067 | `08e1aa59-8a2a-4290-8d79-97493196ec21` | Approved under revision 1 (review task `b3242337-7580-46df-8a43-dddf1f479374`), superseded before publication | `bc1c1599` |
-| P3-068 | `0e202d84-0ecd-4d9f-bbcb-a0298c81a40d` | Approved under revision 1 (review task `49c5e052-1f81-4943-bb93-5433a5f54b55`), superseded before publication | `9de9af9a` |
-| P3-068 | `a00bd658-e432-4eb6-8dc1-e71a7e8fba61` | Superseded under revision 1 before its review was complete | `72b99c44` |
-| P3-069 | `912c3415-ba78-4e73-bccb-fbb642faef52` | Superseded under revision 1 before its review was complete | `8d473a64` |
-| P3-070 | `2945876e-ec53-42f2-8f67-9a87e1a287f5` | Superseded under revision 1 before its review was complete | `7a7015d3` |
-| P3-070 | `7a7015d3-d402-49be-a9b1-a5f02b659f49` | Rejected under revision 2 (review receipt `c8a07017`). Its text listed `RealTwistOrdinaryDualClause` as unproved, although the published construction `segmentFactorSmoothDualEquiv` already supplies that clause in full. | `751d6616` |
-| P3-070 | `751d6616-4a33-4247-8dfd-badfbd679f19` | Rejected under revision 2 (review receipt `d30afb2e`). Its text said that no published declaration gives the scalar-twist character `ω * χ.toMonoidHom ^ n`, although the third conjunct of the published theorem `glConstituentCentralCharacterFor` proves it. | `fc83506c` |
-| P3-082 | `c862989b-3cec-4ea8-a6d3-0ffae8d3618e` | Approved under revision 1, superseded before publication | `a426f1bc` |
-| P3-083 | `26eff41d-0ba6-473e-8991-266c8b9fb245` | Approved under revision 1, superseded before publication | `b4209112` |
-| P3-083 | `b4209112-7c85-45de-a59e-4586a544ec65` | Rejected under revision 2 (review receipt `4d3cdc5c`). Its text said `GLTemperedExponentCriterionStatement` has no proof, which became false at `f35c1c21`. | `3cd4cc3b` |
-| P3-085 | `905104de-b6d7-46e0-b85d-d287c17228b0` | Rejected under revision 1 (review receipt `75fd56e1`). One inherited sentence claimed a convention comparison that `TwoFactorExistenceProof.md:29–34` shows is not needed. | `6db14549` |
-| P3-085 | `6db14549-4ddb-43f4-812b-08c7e37261db` | Superseded by the task revision before publication | `4d95a2f5` |
-| P3-086 | `ccd48ede-2250-44aa-9873-077edf31bc67` | Approved under revision 1 (review task `369411d8`), superseded before publication | `b330d5ec` |
-
-Each replacement made because of the task revision has the same Lean and Markdown bytes as the candidate it replaces. The replacements made after a rejection (`a9a01320`, `6db14549`, `3cd4cc3b`, `751d6616` and `fc83506c`) change only the passages named in the table. `08e1aa59` has the same Markdown as `4b610130` and corrects only the record summary.
+Several corrections had earlier versions that did not enter the Library.
+Four were rejected for substance, and the versions in the Library correct
+those passages: a P3-023 version still called the finite-length proof future
+work after `FiniteLengthProof` had entered the Library at `b58bd42a`; a P3-070
+version listed `RealTwistOrdinaryDualClause` as unproved, although the
+construction `segmentFactorSmoothDualEquiv` already supplies that clause in
+full; another P3-070 version said that no declaration of the Library gives
+the scalar-twist character `ω * χ.toMonoidHom ^ n`, although the third
+conjunct of the theorem `glConstituentCentralCharacterFor` proves it; a
+P3-083 version said `GLTemperedExponentCriterionStatement` has no proof, which
+became false at `f35c1c21`; and a P3-085 version kept a sentence claiming a
+convention comparison that `TwoFactorExistenceProof.md:29–34` shows is not
+needed. The other earlier versions were identical to the versions in the
+Library.
 
 ## What remains unproved
 
@@ -136,9 +123,9 @@ A scan of `7e64f8e360c8778e04e5da7f9cd382cda7c837f6` finds no theorem proving an
 
 Jordan–Hölder multiplicity one for unramified principal series is not stated in the Library.
 
-## Related stale passage outside this task's files
+## Related stale passage outside the files concerned
 
-`Langlands/Representation/Classification/MaximalConeStatement.md:7–9` calls `GLMaximalConeJacquetQuotientStatement` "a derived proposition definition, not a proved theorem". That is literally true of the statement module, but the file never says that `glMaximalConeJacquetQuotient` (artifact `fdb503fe`) proves it. Worker 1065 reported this. The file lies outside this task's file pairs and was not edited. It is reported to Worker 0 with this ledger.
+`Langlands/Representation/Classification/MaximalConeStatement.md:7–9` calls `GLMaximalConeJacquetQuotientStatement` "a derived proposition definition, not a proved theorem". That is literally true of the statement module, but the file never says that `glMaximalConeJacquetQuotient` proves it. The file lies outside the file pairs concerned and was not edited.
 
 ## Checked file fingerprints at the audited commit
 
@@ -172,30 +159,30 @@ SHA256 at `3987c3d7445531c2c7f784464a3fd47061ba0865` of the 21 assigned file pai
 
 SHA256 at `7e64f8e360c8778e04e5da7f9cd382cda7c837f6`. All 21 Markdown files and one `.lean` file (`GelfandKazhdanStatement.lean`) differ from the audited commit. Each is byte-identical to the file of the last published candidate for that pair. No other `.lean` file of the 21 pairs changed.
 
-| Finding | File | SHA256 | Last candidate |
-| --- | --- | --- | --- |
-| P3-017 | `Langlands/Automorphic/AssociatedFactorStatement.md` | `81a5177fd934f311a6b63a13f18f0819f8233978d1165ba30103bbea51a0a22e` | `fe26cded` |
-| P3-075 | `Langlands/Correspondence/ArithmeticFactors.md` | `2b6c647408a23f89f340d3c0c5304f05b06d7fa040cc8b231302a8ddc90d17de` | `1da38db6` |
-| P3-072 | `Langlands/Correspondence/SupercuspidalGammaCompatibility.md` | `409ee0f04e585767ed082e697f579d5bf220e26a15155e3b3d8953d1b74718a1` | `bb28c6b7` |
-| P3-073 | `Langlands/Correspondence/SupercuspidalRelations.md` | `b68f655249d77bd7a42ad36fb3d363d7cb78bfc81b0c30f317de6a84c32efed3` | `34d11723` |
-| P3-074 | `Langlands/Correspondence/UnramifiedNormalization.md` | `f8edd76283052d2b17c25e9526965c33d3b588afa6f6e80f5ec0b7dcc5379965` | `6cf771cd` |
-| P3-068 | `Langlands/Representation/Classification/DiscreteSeriesJacquetStatement.md` | `e1aeb9625fddffe06f9b2f7a768daa2d3e539ca85eb04897c4615d3e9516d98a` | `9de9af9a` |
-| P3-067 | `Langlands/Representation/Classification/DiscreteSeriesOppositeToUpperStatement.md` | `7b5dd1cec442c2086968e50ffc5c1e64a6530abf14507382874214646297b6e6` | `bc1c1599` |
-| P3-081 | `Langlands/Representation/Classification/ParabolicConeStatement.md` | `3f4e8755df5ca796bcb8e2b70ec859dd49b7adbb6a6406345a20dce281ee9fd3` | `437a16bb` |
-| P3-082 | `Langlands/Representation/Classification/ProductLeviChamberBoundStatement.md` | `61338ddc82b36a9f8fe93bedf1b2bc465671b430578e9a14b79044d095ca6874` | `a426f1bc` |
-| P3-065 | `Langlands/Representation/Classification/RegularLanglandsStatement.md` | `c45725c3faf41a59d39c5d0b7197849226c8104d277287f0150dfe1f1b685f62` | `5ebefa12` |
-| P3-073 | `Langlands/Representation/Classification/SegmentConstituentCompatibilityStatement.md` | `62d19df82ed6ef5ff3e917182ae1fd361b408c1f6e4ef8af9493d9ba10a0faf7` | `d1def123` |
-| P3-066 | `Langlands/Representation/Classification/SupercuspidalSupport.md` | `7f8064dc6500a598053a8dcbf6dfba8fdc1a6413b49ccb4cabc3267eae4e6e1f` | `6ee5d0b4` |
-| P3-083 | `Langlands/Representation/Classification/TemperedExponentEdgeStatement.md` | `49f04530d5043c43beb93ca94756112e6859ff8667f0f92aed7dd66dde52af3e` | `3cd4cc3b` |
-| P3-069 | `Langlands/Representation/Classification/TemperedInductionStatement.md` | `1f94e075a6c3174bf8743fa438365236b5f11bdd04289fbe45b402475df85c52` | `8d473a64` |
-| P3-068 | `Langlands/Representation/Classification/TemperedSupportStatement.md` | `32047c7876072f552c9979e10fd8bcd8ad4224d1b32c2b7305081ac53424fdf0` | `72b99c44` |
-| P3-070 | `Langlands/Representation/Classification/UnitaryGenericCompatibilityStatement.md` | `77aa1a23f065e4bf98e0d6d529a01e407f5aaf5b702c4e7b19b33d5f20aaf758` | `fc83506c` |
-| P3-085 | `Langlands/Representation/CuspidalSupport/LeviAdmissibleFactorizationStatement.md` | `9b575b15486e19e351a66f325563489328ebf68d9c08241ee6e5e10e198144db` | `4d95a2f5` |
-| P3-086 | `Langlands/Representation/CuspidalSupport/LeviTensorFactorizationStatement.md` | `339a46a357b532c67632fb509b9305a381eb77f8be2c37e74476e4d801fd0c46` | `b330d5ec` |
-| P3-012 | `Langlands/Representation/Exponents/OppositeJacquetSubquotientInheritanceStatement.md` | `451694fd298398f17f768887a6da68f044c55fb0e7efb2758bf70158de358d3c` | `953d7684` |
-| P3-023 | `Langlands/Representation/Smooth/Admissibility/FiniteLengthStatement.md` | `843d0cf807fc581f725f79153efdda98e6bfdd264f621cecf83e792b811e1a0a` | `996fee13` |
-| P3-072 | `Langlands/Representation/Smooth/Contragredient/GelfandKazhdanStatement.lean` | `1acddaf0533cbf03d7a8cf6dffd5cfe8998424315e36134a7125d89653df7078` | `ca58a02d` |
-| P3-072 | `Langlands/Representation/Smooth/Contragredient/GelfandKazhdanStatement.md` | `d95a498616c01041d4f6727ea52c5e1243bcd4045d9fec8b7e610bf7a8b0487d` | `ca58a02d` |
+| Finding | File | SHA256 |
+| --- | --- | --- |
+| P3-017 | `Langlands/Automorphic/AssociatedFactorStatement.md` | `81a5177fd934f311a6b63a13f18f0819f8233978d1165ba30103bbea51a0a22e` |
+| P3-075 | `Langlands/Correspondence/ArithmeticFactors.md` | `2b6c647408a23f89f340d3c0c5304f05b06d7fa040cc8b231302a8ddc90d17de` |
+| P3-072 | `Langlands/Correspondence/SupercuspidalGammaCompatibility.md` | `409ee0f04e585767ed082e697f579d5bf220e26a15155e3b3d8953d1b74718a1` |
+| P3-073 | `Langlands/Correspondence/SupercuspidalRelations.md` | `b68f655249d77bd7a42ad36fb3d363d7cb78bfc81b0c30f317de6a84c32efed3` |
+| P3-074 | `Langlands/Correspondence/UnramifiedNormalization.md` | `f8edd76283052d2b17c25e9526965c33d3b588afa6f6e80f5ec0b7dcc5379965` |
+| P3-068 | `Langlands/Representation/Classification/DiscreteSeriesJacquetStatement.md` | `e1aeb9625fddffe06f9b2f7a768daa2d3e539ca85eb04897c4615d3e9516d98a` |
+| P3-067 | `Langlands/Representation/Classification/DiscreteSeriesOppositeToUpperStatement.md` | `7b5dd1cec442c2086968e50ffc5c1e64a6530abf14507382874214646297b6e6` |
+| P3-081 | `Langlands/Representation/Classification/ParabolicConeStatement.md` | `3f4e8755df5ca796bcb8e2b70ec859dd49b7adbb6a6406345a20dce281ee9fd3` |
+| P3-082 | `Langlands/Representation/Classification/ProductLeviChamberBoundStatement.md` | `61338ddc82b36a9f8fe93bedf1b2bc465671b430578e9a14b79044d095ca6874` |
+| P3-065 | `Langlands/Representation/Classification/RegularLanglandsStatement.md` | `c45725c3faf41a59d39c5d0b7197849226c8104d277287f0150dfe1f1b685f62` |
+| P3-073 | `Langlands/Representation/Classification/SegmentConstituentCompatibilityStatement.md` | `62d19df82ed6ef5ff3e917182ae1fd361b408c1f6e4ef8af9493d9ba10a0faf7` |
+| P3-066 | `Langlands/Representation/Classification/SupercuspidalSupport.md` | `7f8064dc6500a598053a8dcbf6dfba8fdc1a6413b49ccb4cabc3267eae4e6e1f` |
+| P3-083 | `Langlands/Representation/Classification/TemperedExponentEdgeStatement.md` | `49f04530d5043c43beb93ca94756112e6859ff8667f0f92aed7dd66dde52af3e` |
+| P3-069 | `Langlands/Representation/Classification/TemperedInductionStatement.md` | `1f94e075a6c3174bf8743fa438365236b5f11bdd04289fbe45b402475df85c52` |
+| P3-068 | `Langlands/Representation/Classification/TemperedSupportStatement.md` | `32047c7876072f552c9979e10fd8bcd8ad4224d1b32c2b7305081ac53424fdf0` |
+| P3-070 | `Langlands/Representation/Classification/UnitaryGenericCompatibilityStatement.md` | `77aa1a23f065e4bf98e0d6d529a01e407f5aaf5b702c4e7b19b33d5f20aaf758` |
+| P3-085 | `Langlands/Representation/CuspidalSupport/LeviAdmissibleFactorizationStatement.md` | `9b575b15486e19e351a66f325563489328ebf68d9c08241ee6e5e10e198144db` |
+| P3-086 | `Langlands/Representation/CuspidalSupport/LeviTensorFactorizationStatement.md` | `339a46a357b532c67632fb509b9305a381eb77f8be2c37e74476e4d801fd0c46` |
+| P3-012 | `Langlands/Representation/Exponents/OppositeJacquetSubquotientInheritanceStatement.md` | `451694fd298398f17f768887a6da68f044c55fb0e7efb2758bf70158de358d3c` |
+| P3-023 | `Langlands/Representation/Smooth/Admissibility/FiniteLengthStatement.md` | `843d0cf807fc581f725f79153efdda98e6bfdd264f621cecf83e792b811e1a0a` |
+| P3-072 | `Langlands/Representation/Smooth/Contragredient/GelfandKazhdanStatement.lean` | `1acddaf0533cbf03d7a8cf6dffd5cfe8998424315e36134a7125d89653df7078` |
+| P3-072 | `Langlands/Representation/Smooth/Contragredient/GelfandKazhdanStatement.md` | `d95a498616c01041d4f6727ea52c5e1243bcd4045d9fec8b7e610bf7a8b0487d` |
 
 ## Source register
 
@@ -205,4 +192,4 @@ SHA256 at `7e64f8e360c8778e04e5da7f9cd382cda7c837f6`. All 21 Markdown files and 
 
 The corrections change no claim about original literature. In P3-065 the Silberger (1978) lemma, proposition and corollary numbers are those already documented by the separate published statement modules cited in the verdict table. The source locators of every corrected pair are unchanged from its published record.
 
-The environment is Lean 4.34.0 with Mathlib `5ed2965256430c3649e86755f9576b54eca72435`, environment artifact `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`. Each edited module was compiled with `lean_check` before staging; those checks are diagnostics, not acceptance evidence. Acceptance rests on the validation, review and publication receipts listed in the corrections section.
+The environment is Lean 4.34.0 with Mathlib `5ed2965256430c3649e86755f9576b54eca72435`. Each edited module was compiled with `lean_check` beforehand; those checks are diagnostics, not proofs. The corrections' status rests on their entry into the Library, listed in the corrections section.

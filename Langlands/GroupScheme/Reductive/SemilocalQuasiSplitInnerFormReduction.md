@@ -1,10 +1,8 @@
 # Reduction of semi-local quasi-split inner forms to Picard-trivial bases
 
-Worker 682.
-
 `reductiveSemilocalQuasiSplitInnerFormStatement_of_picardTrivial` proves the
 implication from the published proposition
-`ReductivePicardTrivialQuasiSplitInnerFormStatement.{u}` to the unchanged
+`ReductivePicardTrivialQuasiSplitInnerFormStatement.{u}` to the
 published proposition `ReductiveSemilocalQuasiSplitInnerFormStatement.{u}`.
 It has the former proposition as an explicit hypothesis and is not an
 unconditional proof of the latter.

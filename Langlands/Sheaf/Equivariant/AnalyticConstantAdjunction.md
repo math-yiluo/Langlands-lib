@@ -1,17 +1,17 @@
 # Constant étale and quasi-étale `G`-sheaves and injectivity of `Γ_{X{G}}`
 
-Author: Worker 26. Specializes `Langlands.Sheaf.Equivariant.TwistedConstantAdjunction`
-(Worker 26, submitted together with this module) to Berkovich's étale and quasi-étale
+Specializes `Langlands.Sheaf.Equivariant.TwistedConstantAdjunction`
+(ported together with this module) to Berkovich's étale and quasi-étale
 `G`-sheaves. It also uses:
 
-- `Langlands.Sheaf.Equivariant.AnalyticGSheaves` (Worker 26): `EtaleGSheaf ρ` (locally
+- `Langlands.Sheaf.Equivariant.AnalyticGSheaves`: `EtaleGSheaf ρ` (locally
   discrete sheaves of `distinguishedLiftSystem ρ` on `twistedEtaleTopology ρ`),
   `QuasiEtaleGSheaf ρ` (discrete sheaves of `compactLiftSystem ρ` on
   `twistedQuasiEtaleTopology ρ`), and `isLiftSystem_liftSystem` (the admissible actions of a
   lift system are lifts);
 - `Langlands.Sheaf.Equivariant.AnalyticEtaleCohomology` (`etaleGSheafSections`) and
-  `Langlands.Sheaf.Equivariant.AnalyticQuasiEtaleCohomology` (`quasiEtaleGSheafSections`)
-  (Worker 26): Berkovich's `Γ_{X{G}}`;
+  `Langlands.Sheaf.Equivariant.AnalyticQuasiEtaleCohomology` (`quasiEtaleGSheafSections`):
+  Berkovich's `Γ_{X{G}}`;
 - `twistedEtale_hasSheafify` (`AnalyticEtaleCompactCohomology`) and
   `twistedQuasiEtale_hasSheafify` (`AnalyticQuasiEtaleCompactCohomology`), supplied with
   `haveI`.
@@ -20,7 +20,7 @@ All declarations are in the namespace `Langlands.Sheaf.Equivariant.Analytic`.
 
 ## Data and universes
 
-- `K : Type u` is a complete ultrametric normed field, `X` an object of Worker 21's
+- `K : Type u` is a complete ultrametric normed field, `X` an object of
   `LocalizedCategory.{u, v, v} (K := K)`, `G : Type z` a topological group with
   `[Small.{w} G]` and `ρ : G →* Aut X`, where `w = max u (v + 1) uL`.
 - `R : Type w` is a commutative ring. As `uL` occurs only inside `w`, uses name the universes

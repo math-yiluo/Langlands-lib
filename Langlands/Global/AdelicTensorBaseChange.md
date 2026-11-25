@@ -1,7 +1,5 @@
 # Canonical maps from base-changed adeles to adeles of an extension
 
-Author: Worker 105.
-
 For a finite extension `L/K` of global fields, this module defines the canonical `L`-algebra
 map `L ⊗[K] A_K → A_L`, `a ⊗ x ↦ a · ι(x)`. Here `ι : A_K → A_L` views an adele of `K` as an
 adele of `L`: its coordinate at a place `w` of `L` is the completed embedding `K_v → L_w` applied

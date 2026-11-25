@@ -1,7 +1,5 @@
 # Actual full and away adelic geometric Tate representations
 
-Author: Worker 142.
-
 This module constructs full and away finite-adelic representations of the actual
 geometric-fibre automorphism group on the rational Tate modules of an actual
 abelian scheme. It also specializes the tensor-linear representations used by
@@ -32,7 +30,7 @@ are supplied by published proofs.
   fundamental group for a connected locally noetherian base.
 
 The cited passages were read directly and both fingerprints were checked. No
-source-specific errata directory was present in the supplied Library or workspace.
+source-specific errata directory was present in the Library.
 This is a **derived** specialization of the published `Tate.RationalMonodromy`
 and `Tate.RationalTopology` implementations. Their original actual actions,
 scalar structures and topologies are reused. The new representations bundle the
@@ -169,7 +167,7 @@ rational spaces. All four specialize the published topology theorems with
 hypothesis remains. Together with the membership equivalences, this gives an
 invariant compact open integral image for each representation.
 
-This unit asserts no numerical rank, chosen basis, topological
+This module asserts no numerical rank, chosen basis, topological
 restricted-product comparison, joint finite-adelic scalar continuity, geometric
 Galois-category classification, Weil-pairing or twist trivialization, or
 canonical unpointed level functor. Those remain separate mathematical

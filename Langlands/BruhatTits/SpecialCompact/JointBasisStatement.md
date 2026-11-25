@@ -7,12 +7,9 @@ and simultaneous Renard basis under one existential apartment datum `D` and one
 point `x`. It also constructs an actual represented torus centralizer and its
 character comparison, shared by all Cartan clauses. It supplies no proof.
 
-This is derived packaging of the shared special-compact predicates of
-Worker 1249, the geometric adapters of Worker 1229, the actual-parabolic
-product predicates of Worker 1265, the actual Cartan predicates of Workers 454
-and 1266, and the simultaneous basis predicates of Workers 15 and 1218.
-Worker 118 supplied the common-witness requirement and the retained
-corrected-building boundary.
+This is derived packaging of published predicates: the shared special-compact
+predicates, the geometric adapters, the actual-parabolic product predicates,
+the actual Cartan predicates and the simultaneous basis predicates.
 
 ## Quantifiers and the geometric subgroup
 
@@ -44,7 +41,7 @@ K0 = D.specialCompactSubgroup x
 
 The first equality names the subgroup; the second unfolds the shared adapter.
 The last is the imported character-kernel stabilizer formula. This is the
-literal subgroup of the sibling special-compact task. Its definition does
+literal subgroup of the sibling special-compact target. Its definition does
 not assert compactness. The present target requires compactness, openness
 and maximality as conclusions at this particular witness.
 
@@ -209,8 +206,8 @@ The geometric `SpecialCompact` and `SpecialCompactLevi` adapters, the general
 `SimultaneousBasisStatement` projection, `SpecialCompact.Properties`,
 `RenardSpecialCompactComparison`, its `SpecialCompactDominantQuotient`
 dependency, and `RenardSameCompactLeviComparison` are published. This target
-imports their Lean names and does not resubmit their definitions. Development
-checks using private copies establish only syntax and interface compatibility.
-The submission was also freshly compiled and inspected against the published
-imports in the refreshed workspace; this verifies elaboration and the
+imports their Lean names and does not restate their definitions. Checks
+using private copies of them establish only syntax and interface compatibility.
+The module was also compiled and inspected against the published
+imports; this verifies elaboration and the
 proposition-valued target, without proving the target.

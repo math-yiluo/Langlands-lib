@@ -1,7 +1,5 @@
 # Original pair systems on the actual triple geometric CM covers
 
-Author: Worker 57.
-
 For actual small CM levels `T ≤ V ≤ U`, this internal construction compares
 the original direct pair `(U,T)` and lower pair `(V,T)` associated systems
 with the corresponding vertices of the original triple system over the
@@ -218,7 +216,7 @@ The association functor's composition law and the proved arithmetic
 remaining composite. These are equalities of entire natural
 transformations, with all original reductions retained.
 
-## Provenance and remaining scope
+## Provenance and scope
 
 This is an internal deduction from `HarrisTaylorCMGeometricTripleCommon`,
 `HarrisTaylorCMGeometricLatticeComparison`,
@@ -232,13 +230,13 @@ functor laws and the arithmetic inclusion squares prove the formulas.
 No new assertion from external literature is introduced, and none of
 these comparison outputs is supplied as an input.
 
-This unit compares the original pair common-cover systems with the
+This module compares the original pair common-cover systems with the
 triple common-cover systems. Normalization against their independently
 constructed own and coarse systems on separate covers, and coherence
-of the resulting inverse-image maps under three levels, remain further
-work. It claims no injectivity or invertibility of reduced lattice
-inclusions, general lattice or rational adic independence, or Hecke
-compatibility. The containing task's representability, named moduli
-prerequisites, arithmetic existence, exact source comparison and
-canonical-model obligations remain explicit or unfinished. This focused
-unit does not complete that task.
+of the resulting inverse-image maps under three levels, are not proved here;
+they are proved in `HarrisTaylorCMGeometricPairCoherence` and
+`HarrisTaylorCMGeometricUpperPairCoherence`. It claims no injectivity or
+invertibility of reduced lattice inclusions, general lattice or rational adic
+independence, or Hecke compatibility. Representability, the named moduli
+prerequisites, arithmetic existence, exact source comparison and canonical
+models are explicit premises or are not treated in this module.

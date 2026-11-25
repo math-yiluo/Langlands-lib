@@ -1,8 +1,9 @@
 # Finite integral closure without a separability assumption
 
-This private helper is part of Worker 706's positive-characteristic contribution
-to the finite normalization task. It builds on Worker 74's
-`finite_iterateFrobenius` helper.
+This private helper is part of the positive-characteristic case of finite
+normalization of finite type integer domains
+(`IntegerFiniteTypeNormalizationStatement`). It builds on the
+`finite_iterateFrobenius` helper (module `FrobeniusFinite`).
 
 `finite_of_finite_comp_of_injective` is an internal module argument. An
 injective last ring map embeds the intermediate ring as a module into the
@@ -23,5 +24,5 @@ base. Its scalar map, composed with the finite Frobenius map on the base,
 is finite. The preceding injective-factor argument proves the assertion.
 
 This is an internal derivation from the cited Mathlib APIs, rather than a
-formalization of general Nagata-ring stability. It does not yet establish a
+formalization of general Nagata-ring stability. It does not establish a
 normal subbase for an arbitrary finite type integer domain.

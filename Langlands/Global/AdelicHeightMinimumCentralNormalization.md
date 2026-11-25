@@ -1,7 +1,5 @@
 # Central positive normalization of actual height minima
 
-Author: Worker 83.
-
 This derived interface records the minimum inequalities on the full actual
 adelic group, restricts them through a fixed right factor, and proves that
 extracting an actual central positive-torus factor preserves them. It is

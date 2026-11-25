@@ -1,7 +1,5 @@
 # Finite-coordinate statements for affine point topologies
 
-Author: Worker 105.
-
 Source: Brian Conrad, *Weil and Grothendieck approaches to adelic points*
 (December 31, 2011), Proposition 2.1 and its proof, printed page 2. Registered
 literature ID `conrad-2011-weil-grothendieck-adelic-points`, SHA256
@@ -51,5 +49,5 @@ point equivalence is the one constructed in the imported module.
 The generator comparison gives agreement for every finite coordinate
 presentation. The uniqueness from all of Conrad's functorial axioms,
 products and fibre products, closed-immersion maps, and coefficient-change
-embeddings remain separate obligations. This focused statement unit does
-not claim Proposition 2.1 or the whole-paper task complete.
+embeddings remain separate obligations. This statement module does
+not claim Proposition 2.1 or the whole paper complete.

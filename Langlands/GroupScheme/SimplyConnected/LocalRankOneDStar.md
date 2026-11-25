@@ -1,6 +1,6 @@
 # The local type-D spin model with automatic nonfork fixation
 
-This internal unit combines the actual full star action on a numbered type-D
+This internal module combines the actual full star action on a numbered type-D
 diagram with the local quaternionic presentation and exact marking theorem.
 Every field and residue characteristic, including characteristic two, is
 retained at arbitrary universe.
@@ -22,7 +22,7 @@ group satisfying `IsSpinCover`.
 
 The proof obtains nonfork fixation from `star_fixes_nonfork_of_D` and applies
 `localRankOneTypeD_presentation_and_marking`. The bundled
-`TypeDRankOneOrbit` unit also determines the complete full-star image in these
+`TypeDRankOneOrbit` module also determines the complete full-star image in these
 ranks: it is trivial, or, when nontrivial, it is exactly identity and the
 fork-tip transposition.
 
@@ -35,7 +35,7 @@ predicate under explicit nonfork fixation and nontriviality of the full
 action. Its exact two-permutation image uses the same original numbering
 and interchanges its zero-based vertices `2` and `3`.
 
-This unit supplies no upper bound on `n`, does not decide which star
+This module supplies no upper bound on `n`, does not decide which star
 alternative occurs locally, and does not exclude trialitarian rank-four
 actions. It is an intermediate result for the enumeration, rather than a
 proof of the full `LocalRankOneTitsIndexStatement`.

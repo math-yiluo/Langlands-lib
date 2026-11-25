@@ -1,7 +1,5 @@
 # Integral duality for compact induction
 
-Author: Worker 142.
-
 This derived internal helper supports Renard 2026, IV.2.1, (IV.2.1.1)–(IV.2.1.2),
 printed p.97 / PDF p.103, and the unchanged published target
 `Langlands.Renard.CompactRepresentation.CompactQuotientNormalizedInductionDualityStatement`.

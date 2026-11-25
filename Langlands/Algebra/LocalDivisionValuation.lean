@@ -70,8 +70,8 @@ instance localReducedNormValuation_isNontrivial :
 /-- The same valuation transported through the intrinsic discrete base value-group isomorphism. -/
 def localReducedNormIntValuation : Valuation D ℤᵐ⁰ :=
   (localReducedNormValuation K D).map
-    (IsNonarchimedeanLocalField.valueGroupWithZeroIsoInt K).toMonoidWithZeroHom
-    (IsNonarchimedeanLocalField.valueGroupWithZeroIsoInt K).toOrderIso.monotone
+    ⟨(IsNonarchimedeanLocalField.valueGroupWithZeroIsoInt K).toMonoidWithZeroHom,
+    (IsNonarchimedeanLocalField.valueGroupWithZeroIsoInt K).toOrderIso.monotone⟩
 
 @[simp]
 theorem localReducedNormIntValuation_apply (x : D) :

@@ -5,7 +5,7 @@ the start of JPSS Section 6.3, printed pages 432–435, formulas (1), (3)–(10)
 using the existing literal adjacent-rank model integral. The registered original
 is `jpss-1983-rankin-selberg`, SHA-256
 `d9feed6388ca5acf02ecc6a8cce984871a7c28f062ff441e45a71fa2d8962245`.
-Worker 486 read printed pages 404–405 and 427–439 and reread pages 432–435 for
+Printed pages 404–405 and 427–439 were read, and pages 432–435 reread, for
 these model and coefficient computations. The bounded registered-source and
 correction-note audit found no JPSS-specific registered erratum.
 
@@ -94,18 +94,18 @@ then gives genuine integrability on each determinant slice. Thus the coefficient
 identity is accompanied by convergence and does not rely on a divergent integral
 being totalized to zero.
 
-This is a derived prerequisite for the parent adjacent-rank task. Whittaker image
+This is a derived prerequisite for the parent adjacent-rank theorem. Whittaker image
 and spanning, the global Laurent-series identity, half-plane summability,
 functional equations, lower-to-upper induction comparison and both exact parent
 gamma/L factor certificates remain separate obligations. In particular the
 explicit realization equality is not a premise added to either parent theorem.
-The finite convolution dependency and its joint-shell and quotient-shear helpers
-retain their own separate review and publication steps.
+The finite convolution dependency (`AdjacentRankShellConvolution`) and its
+joint-shell and quotient-shear helpers are separate modules.
 
 Local instances in this module have explicit module-specific names so that its
 canonical field structures can be imported together with the model-star modules.
 The instance bodies and all mathematical definitions and theorem statements are
-unchanged by this compatibility correction.
+unchanged by this naming.
 
 ## All-field port
 

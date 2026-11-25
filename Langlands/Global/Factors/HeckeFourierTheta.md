@@ -1,8 +1,8 @@
 # Fourier theta coefficients of actual Hecke characters
 
-Worker 1692 builds these internal coefficient identities for the dual side of
-the global Hecke unfolding requested by Worker 1798 (package B4). They are the
-Fourier counterparts of `HeckeThetaCoefficients` (package B3). Everything is
+This module builds internal coefficient identities for the dual side of
+the global Hecke unfolding. They are the
+Fourier counterparts of `HeckeThetaCoefficients`. Everything is
 stated for an actual Hecke character `χ : HeckeCharacter K` of a number field
 `K` in unrestricted universe `u`, its actual finite components
 `χ.finiteComponent v`, the Library's actual local Euler tests `eulerTest`,
@@ -36,7 +36,8 @@ as in `HeckeThetaCoefficients`. `q_v` is the actual residue cardinality and
   `q^k f̂(y π^(-k))`, since `|π^k| = q^(-k)`.
 - `norm_fourierTransform_eulerTest_le`: `‖(eulerTest χ)^(y)‖ ≤ μ(O).toReal`,
   by bounding the integrand by the indicator of the integer ring (the Euler
-  test has norm at most one and vanishes off the integers, by the B3 lemmas).
+  test has norm at most one and vanishes off the integers, by the lemmas of
+  `HeckeThetaCoefficients`).
 - `mem_additiveLattice_of_fourierTransform_eulerTest_ne_zero`: if the
   transformed Euler test is nonzero at `y`, then `y` lies in the lattice of
   level `n + a`, where `n` is the additive conductor of `ψ` and `a` the
@@ -50,8 +51,8 @@ as in `HeckeThetaCoefficients`. `q_v` is the actual residue cardinality and
 For `d : FinitePlaceDivisor K`, `μ' : K` and `s : ℂ`:
 
 - `dilatedEulerTest χ d v` is the test function `x ↦ eulerTest_v(x π_v^(d v))`;
-  `thetaCoeff_eq_finprod_dilatedEulerTest` records that the B3 theta
-  coefficient is the unordered product of these at `γ`.
+  `thetaCoeff_eq_finprod_dilatedEulerTest` records that the theta
+  coefficient of `HeckeThetaCoefficients` is the unordered product of these at `γ`.
 - `fourierEulerTest χ ψf μ v y` is the actual transform `(eulerTest_v)^(y)` for
   `ψf v` and `μ v`.
 - `fourierThetaFactor χ ψf μ d μ' v := q_v^(d v) · fourierEulerTest_v(μ' π_v^(-d v))`;
@@ -79,9 +80,8 @@ For `d : FinitePlaceDivisor K`, `μ' : K` and `s : ℂ`:
   `e` with `e(v) = n_v + a_v - d(v)` for every `v` and proves that a nonzero
   Fourier theta coefficient forces `μ' ∈ Hecke.latticeIdeal e`. Each nonzero
   local factor puts `μ' π_v^(-d v)` in level `n_v + a_v`, hence `μ'` in level
-  `n_v + a_v - d(v)`. (This corrects the tentative `n - d - a` in the original
-  request; the Library's ramified transform is supported in order
-  `-(n + a)`.)
+  `n_v + a_v - d(v)`. (The level is not `n - d - a`: the Library's ramified
+  transform is supported in order `-(n + a)`.)
 - Uniform bound: `exists_norm_fourierThetaCoeff_le` gives `C` with
   `‖fourierThetaCoeff χ ψf μ d μ'‖ ≤ C` for all `μ'`: on the finite set from
   `exists_finset_fourierThetaFactor_eq_eulerTest` each factor is bounded by
@@ -105,7 +105,7 @@ With the presentations `dR`, `hR`, `dC`, `hC` and the additive conductor set:
 - (iii) `fourierThetaCoeff_unit_mul`: for `u : (𝓞 K)ˣ`,
   `fourierThetaCoeff χ ψf μ d (u μ') = (χV(ι u))⁻¹ · fourierThetaCoeff χ ψf μ d μ'`,
   where `ι = mixedEmbedding K`, by the local covariance and the finite product
-  formula `finprod_finiteComponent_localUnit` from B3.
+  formula `finprod_finiteComponent_localUnit` from `HeckeThetaCoefficients`.
 - (iv) `fourierThetaCoeff_mul_eq_coefficient`: for `μ' : Kˣ`, `s : ℂ` and any
   finite set `S` outside which `fourierShellWeight χ ψf μ v s 0 = 1`,
   `fourierThetaCoeff χ ψf μ d μ' · χV(ι μ') · N(ι μ')^(-s)` equals
@@ -117,7 +117,8 @@ With the presentations `dR`, `hR`, `dC`, `hC` and the additive conductor set:
   `fSW(ord x_v) = f̂_v(x_v) (χ_v(μ') χ_v(π_v)^(-d v))⁻¹ spectralVariable_v(s)^(ord x_v)`;
   multiplying by `(q_v χ_v(π_v)⁻¹ spectralVariable_v(s))^(d v)` gives
   `q_v^(d v) f̂_v(x_v) χ_v(μ')⁻¹ spectralVariable_v(s)^(principalDivisor μ' v)`,
-  which is the local left-hand term (the B3 lemma `mixedNorm_cpow_eq_prod`
+  which is the local left-hand term (the lemma `mixedNorm_cpow_eq_prod` of
+  `HeckeThetaCoefficients`
   supplies the norm power and `finprod_finiteComponent_localUnit` the mixed
   character). A private lemma `fourier_coefficient_algebra` carries out this
   scalar identity in `ℂ`.
@@ -125,5 +126,5 @@ With the presentations `dR`, `hR`, `dC`, `hC` and the additive conductor set:
 These results do not establish Poisson summation, unit-cone integrals,
 archimedean factors, analytic continuation or the global functional equation.
 
-Integration uses module-specific names for local instances. Their types, values,
-and local instance scopes are unchanged.
+The local instances have module-specific names. The renaming did not change
+their types, values, or local instance scopes.

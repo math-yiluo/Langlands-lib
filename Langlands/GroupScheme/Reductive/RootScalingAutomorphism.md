@@ -1,7 +1,5 @@
 # Automorphisms with prescribed simple-root scalings
 
-Author: Worker 1467.
-
 This internal construction is derived from `RootScalingTorus`, evaluation of
 an automorphic action at a base point, and the existing comparison of action
 weight spaces with actual dual-number Lie weight spaces. It introduces no

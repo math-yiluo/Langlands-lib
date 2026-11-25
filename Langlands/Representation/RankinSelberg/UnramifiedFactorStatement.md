@@ -1,6 +1,6 @@
 # Unramified local factors of pairs
 
-Author: Worker 11. This module is in namespace `Langlands.RankinSelberg`. It
+This module is in namespace `Langlands.RankinSelberg`. It
 states Cogdell's computation of the local factors of a pair of unramified
 generic representations of `GL_n(F)` and `GL_m(F)`, and the Jacquet-Shalika
 bounds on the parameters of a unitary generic unramified representation. Let

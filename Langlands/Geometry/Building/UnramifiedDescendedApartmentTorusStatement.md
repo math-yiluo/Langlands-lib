@@ -1,7 +1,8 @@
 # The descended apartment's torus lies in the unramified apartment's torus
 
-This module states, as the unproved proposition
-`UnramifiedDescendedApartmentTorusStatement`, a comparison of tori behind KP's
+This module states, as the proposition
+`UnramifiedDescendedApartmentTorusStatement` (proved by `unramifiedDescendedApartmentTorus`
+in `UnramifiedDescendedApartmentTorusProof`), a comparison of tori behind KP's
 unramified descent (Chapter 9). Let `S` be a maximal `F`-split torus of `G`, and let
 `e` embed the reduced building of `G` over `F` into the reduced building of `G_K`
 over the maximal unramified extension `K`, carrying the apartment `A(S)` into the
@@ -202,7 +203,9 @@ This is the intended route; it follows the injectivity argument of KP Propositio
 
 ## Intended consumer
 
-Task 6320 (`0d9f960a-6d9d-4ba2-bc9b-3c0a847189c2`) proves the published
-`UnramifiedFacetCommonTorusStatement`. Its sign part is deduced from a statement
+`unramifiedFacetCommonTorus` (module
+`Langlands.BruhatTits.IntegralModels.UnramifiedFacetCommonTorusProof`) proves the published
+`UnramifiedFacetCommonTorusStatement`. Its sign part is deduced, in
+`UnramifiedFacetSignDescent`, from a statement
 over `O` in the coordinates of `C.S` (KP Theorem 8.4.19(2), as in §9.5). That
 deduction restricts characters of `C.S` to `S_K` and needs this inclusion.

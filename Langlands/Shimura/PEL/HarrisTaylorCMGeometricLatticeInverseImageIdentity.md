@@ -1,7 +1,5 @@
 # Identity of the original geometric Harris lattice inverse-image comparison
 
-Author: Worker 57.
-
 This internal construction proves the identity law for the existing original
 CM lattice inverse-image morphism at an unchanged small level. It retains the
 literal represented tower map, its proved equality to the scheme identity,
@@ -56,7 +54,7 @@ arguments of this predicate. Only one level is used, so the same rigidity
 proof supplies both appearances in the imported self-level comparison.
 The base-map identity alone omits the unused rational finiteness premise.
 None of these named existence, representability or rigidity inputs is proved
-in this unit.
+in this module.
 
 ## Actual base map and cover identities
 
@@ -158,7 +156,8 @@ exactly `δ = cmHarrisGeometricLatticeInverseImageComparison = d ; α.inv`.
 `cmHarrisLatticeCommonCoefficientInclusion_refl` proves that the original
 common coefficient inclusion at every exponent is the identity module map.
 It changes to the actual original `cmHarrisTorsionSystemInclusion` and uses
-its published reflexive identity from `HarrisTaylorCMCoefficientLevelSystem`.
+its reflexive identity `cmHarrisTorsionSystemInclusion_refl` from
+`HarrisTaylorCMCoefficientLevelSystem`.
 It introduces no equality or invertibility premise for other lattice maps.
 
 Let `j_k` and `j_common,k` denote the original invariant-section inclusions
@@ -216,7 +215,7 @@ Its `_id_app` theorem evaluates this equality at every exponent and expands
 identity. Both final laws use the original `δ`, with its existing lattice,
 coarse and common-cover constructions unchanged.
 
-## Provenance and remaining scope
+## Provenance and scope
 
 This is an internal deduction from
 `HarrisTaylorCMGeometricLatticeInverseImage`,
@@ -229,11 +228,11 @@ formulas identify the two constructed maps, and categorical cancellation
 proves the full original identity law. No additional assertion from external
 literature or desired CM identity theorem is assumed.
 
-This unit proves the identity law at one unchanged small level under the
+This module proves the identity law at one unchanged small level under the
 explicit geometric and representability premises above. Composition for
-nested distinct levels is treated separately. General lattice
-commensurability, rational adic independence and Hecke compatibility remain
-separate obligations. The exact Harris source comparison, remaining moduli
-and arithmetic existence results, representability and canonical-model
-obligations of the containing task remain open or explicitly conditional.
-This focused identity construction does not complete that task.
+nested distinct levels is treated separately, in
+`HarrisTaylorCMGeometricLatticeInverseImageCoherence`. General lattice
+commensurability, rational adic independence and Hecke compatibility are not
+treated in this module. The exact Harris source comparison, the moduli and
+arithmetic existence results, representability and canonical models are not
+proved here; those that are used are explicit premises.

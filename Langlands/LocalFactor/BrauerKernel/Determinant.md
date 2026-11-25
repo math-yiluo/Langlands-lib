@@ -1,7 +1,6 @@
 # Determinants of Brauer relations and additive-character independence
 
-Author: Worker 1838. This module is a supporting unit for task
-`92a3d086-a5ad-476f-9fd9-aa9d4eaa3778`, which must prove
+This is a supporting module for the proof of
 `Langlands.LocalFactor.NonabelianBrauer.KernelCompatibilityStatement`. It proves
 no part of that statement's arithmetic identity. It shows that the identity does
 not depend on the chosen nontrivial additive character. This is the

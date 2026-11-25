@@ -33,5 +33,5 @@ a new approach* (2023), Proposition C.5.1, printed pp.703–704 / PDF
 pp.734–735. The basis and all-test coordinate isomorphisms are derived
 internal constructions from the published tensor-product and affine Weil
 APIs; the source does not state this explicit coordinate isomorphism.
-This unit does not construct a special-fibre comparison or prove the
+This module does not construct a special-fibre comparison or prove the
 root-model identification in Lemma C.5.3.

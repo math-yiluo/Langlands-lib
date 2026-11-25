@@ -3,7 +3,9 @@
 This is an internal consequence of the published finite external-tensor
 irreducibility theorem and the Library's actual algebraic direct-limit
 construction of restricted tensors. It is needed to connect the finite
-spectral presentations in Task 7397 to their irreducible actual finite factors.
+spectral presentations of the factorization of partial Rankin–Selberg
+Whittaker integrals (`ArchimedeanFactorizationStatement`) to their irreducible
+actual finite factors.
 It introduces no alternative carrier or representation.
 
 `Langlands.RestrictedTensor.RestrictedTensorIrreducibilityStatement` asserts
@@ -57,4 +59,4 @@ formula. Applying it to a supplied spectral presentation still requires
 establishing its local scalar self-intertwiner hypotheses and transporting
 through that presentation's actual equivariance. Continuous archimedean
 Whittaker factorization and the unconditional Rankin–Selberg factorization
-statement remain further work.
+statement are not proved here.

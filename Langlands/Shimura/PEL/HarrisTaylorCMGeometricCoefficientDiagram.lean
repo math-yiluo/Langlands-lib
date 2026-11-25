@@ -142,7 +142,7 @@ local notation "projection" => cmHarrisGeometricCoefficientSchemeProjection D C
 /-- Every residual action fixes the exact geometric coarse projection. -/
 @[reassoc] theorem cmHarrisGeometricCoefficientSchemeProjection_invariant
     (k : ℕᵒᵖ) (g : (groups).obj k) :
-    (schemeDiagram).ρ k g ≫ (projection).app k = (projection).app k :=
+    ((schemeDiagram).ρ k g).asHom ≫ (projection).app k = (projection).app k :=
   cmGeometricNormalProjection_invariant D C preservation composition unitCoherence
     associativity comparison symmetry stability square universality dualityNaturality
     polarizationStability compatibility h htor q U (Vcoeff k.unop) (hcoeff k.unop) g
@@ -221,7 +221,7 @@ local notation "etaleDiagram" => cmHarrisGeometricCoefficientEtaleDiagram D C
 /-- Each deck transformation is the existing inverse-right geometric tower map. -/
 @[simp] theorem cmHarrisGeometricCoefficientEtaleDiagram_action_mk_left
     (k : ℕᵒᵖ) (g : U.obj.subgroup) :
-    ((etaleDiagram).ρ k (QuotientGroup.mk g)).left =
+    ((etaleDiagram).ρ k (QuotientGroup.mk g)).asHom.left =
       (geometricSchemes).map
         (smallCMNormalInverseArrow D U (Vcoeff k.unop) (hcoeff k.unop) g) := rfl
 

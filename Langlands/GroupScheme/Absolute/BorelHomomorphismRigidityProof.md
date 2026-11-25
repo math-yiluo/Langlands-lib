@@ -1,7 +1,5 @@
 # Proof: homomorphisms agreeing on a Borel subgroup agree (Milne 17.21)
 
-Worker 5655.
-
 `Langlands.GroupScheme.borelHomomorphismRigidity` proves exactly
 `Langlands.GroupScheme.BorelHomomorphismRigidityStatement.{u}`
 ([statement](BorelHomomorphismRigidityStatement.md)), in every universe and with no

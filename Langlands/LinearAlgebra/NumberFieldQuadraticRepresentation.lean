@@ -26,7 +26,7 @@ def NumberFieldQuadraticRepresentationStatement : Prop :=
 theorem numberFieldQuadraticRepresentation : NumberFieldQuadraticRepresentationStatement.{u} := by
   intro F _ _ _ V _ _ _ q a hq hlocal
   exact QuadraticIsometryReduction.represents_of_local
-    (numberFieldQuadraticIsotropy_of_cyclicNorm ClassField.Global.cyclicHasseNorm) q hq a hlocal
+    (numberFieldQuadraticIsotropy_of_cyclicNorm ClassFieldTheory.Global.cyclicHasseNorm) q hq a hlocal
 
 /-- In dimension at least four, only the archimedean representation conditions are needed. -/
 theorem numberFieldQuadraticRepresentation_of_archimedean
@@ -40,7 +40,7 @@ theorem numberFieldQuadraticRepresentation_of_archimedean
     ∃ y, q y = a := by
   intro inst h
   apply QuadraticIsometryReduction.represents_of_local_lineProduct_isotropy
-    (numberFieldQuadraticIsotropy_of_cyclicNorm ClassField.Global.cyclicHasseNorm) q hq a
+    (numberFieldQuadraticIsotropy_of_cyclicNorm ClassFieldTheory.Global.cyclicHasseNorm) q hq a
   intro v
   rcases v with v | v
   · exact QuadraticIsometryReduction.lineProduct_baseChange_not_anisotropic_of_represents

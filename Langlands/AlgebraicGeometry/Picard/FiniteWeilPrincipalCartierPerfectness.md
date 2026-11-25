@@ -1,6 +1,6 @@
 # Cartier perfectness along a principal polarization
 
-Author: Worker 195. This is an internal construction from the published
+This is an internal construction from the published
 `FiniteWeilCartierPerfectness`, the actual integer-torsion functor, and
 `FiniteWeilAlongHom`. It adds no external mathematical input.
 The exact proposition `RelativeDualKernelCharacterBijectiveStatement`

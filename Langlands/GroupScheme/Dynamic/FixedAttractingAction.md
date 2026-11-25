@@ -52,5 +52,5 @@ the two actual action relations.
 
 The provenance is entirely internal to the existing action laws, all-test
 representability, product comparisons, conjugation comparisons and relative
-smoothness theorems. This unit does not assert orbit closedness, reductive
+smoothness theorems. This module does not assert orbit closedness, reductive
 quotient affineness or `DynamicQuotientProperStatement`.

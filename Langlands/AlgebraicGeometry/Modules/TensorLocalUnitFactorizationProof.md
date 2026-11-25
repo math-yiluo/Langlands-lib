@@ -165,8 +165,8 @@ form of the published `tensorLocalFiniteDecomposition`. The converse proof
 of Lemma 17.25.4 (tag 0B8M) uses finite presentation and spreads a stalk
 basis via Lemma 17.11.7. This proof does not follow that route. It uses the
 unit-pairing argument above, which needs only that the stalks of `𝒪_X` are
-local rings, and that holds for every scheme. The proposition is the internal
-interface specified by Worker 124. This module proves only the invertibility
+local rings, and that holds for every scheme. The proposition is an internal
+interface. This module proves only the invertibility
 of `s ⊗ₘ t`; individual invertibility of `s` or `t`, local freeness of
 rank one, and the reverse implication are not proved here.
 

@@ -1,6 +1,6 @@
 # Canonical face terms with a fixed torus and positive base
 
-This derived unit compares every actual canonical face-filtration term for
+This derived module compares every actual canonical face-filtration term for
 two split parabolic face charts with the same ambient coordinate torus, root
 datum and positive base. Their root parametrization families, enumeration,
 auxiliary regular cocharacter and original nonzero cocharacter values may
@@ -34,4 +34,4 @@ Provenance is the integral simple-root basis, existing face-height and actual
 root-parametrization definitions, constructed split face charts, the generated
 ambient-root comparison and represented-subgroup uniqueness. Comparing
 different positive bases or maximal tori and global descent remain outside
-this unit's assertions.
+this module's assertions.

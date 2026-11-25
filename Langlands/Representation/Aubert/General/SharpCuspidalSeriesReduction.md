@@ -1,8 +1,5 @@
 # Cuspidal-series retention from irreducibility and support retention
 
-Implementation and documentation: Worker 1513 (task
-`6316db5a-5618-43bb-a920-eadd3a912b88`).
-
 This module reduces the cuspidal-series retention target for the actual
 terminal cokernel `E#` to four inputs. Two are the irreducibility target and the
 support-retention target. The other two are named here as propositions about

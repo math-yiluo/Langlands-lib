@@ -1,7 +1,5 @@
 # Removing a prescribed residue-field conjugator
 
-Worker 648.
-
 These are internal transport consequences of the pointed smooth-group lift,
 the published `Descent.pullbackComparison` and its projection and naturality
 laws, and the published `baseChange_innerIso_hom` and `innerIso_hom_comp`.

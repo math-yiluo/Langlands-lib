@@ -1,6 +1,6 @@
 # Congruence neighborhoods without compactness
 
-This is an internal derived unit. It combines the published coordinate and
+This module combines the published coordinate and
 congruence APIs of `IntegralModel`, the evaluation topology of affine points,
 the spectral-norm topology of the actual inertia fixed field, and the proved
 maximal-unramified arithmetic. It makes no additional source-backed claim.
@@ -65,5 +65,7 @@ by the equality with the spectral-norm topology.
 All fields and rings retain arbitrary universe `u`. These results use no
 compactness of `R`, no finiteness of its residue field, and no completeness
 of `K`. They do not assert that a model exists or identify its integral
-points with a building fixer or a zero subgroup. The host unramified
-parahoric-model statement remains a separate proof obligation.
+points with a building fixer or a zero subgroup. The unramified
+parahoric-model statement this module serves, `UnramifiedParahoricModelStatement`,
+is proved separately, as `unramifiedParahoricModel` in
+`Langlands.BruhatTits.IntegralModels.UnramifiedParahoricModelProof`.

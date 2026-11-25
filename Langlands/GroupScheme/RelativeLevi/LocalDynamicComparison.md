@@ -23,7 +23,7 @@ the resulting opens, their inverses identify `P` with `Q` compatibly with
 the original inclusion, proving equality of the subgroup functors on every
 test scheme.
 
-All inputs are published Library constructions or the separately reviewed
+All inputs are published Library constructions or the
 `SmoothIsomorphismLocus` comparison and its Lie-rank prerequisite. The
-provenance is internal. This unit is a supporting step toward relative
+provenance is internal. This module is a supporting step toward relative
 parabolic closedness and does not assert that final theorem.

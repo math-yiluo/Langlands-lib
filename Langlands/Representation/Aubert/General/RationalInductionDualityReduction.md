@@ -6,8 +6,8 @@ namespace `Langlands.Aubert.General`.
 ## Purpose and scope
 
 This module is partial progress towards the proof target
-`Langlands.Aubert.General.RationalPointFamily.RationalNaturalInductionDualityStatement`
-of task `2137e0ce-8d32-43f5-b4ed-79824b68585f`. That statement asks, for the
+`Langlands.Aubert.General.RationalPointFamily.RationalNaturalInductionDualityStatement`.
+That statement asks, for the
 actual standard parabolic `P = M ⋉ U` of the rational-point group `G(k)` of a
 connected reductive group over a nonarchimedean local field, for a natural family
 of isomorphisms `i(A)∨ ≅ i(A∨)` on admissible smooth `M`-representations `A`, where
@@ -23,7 +23,7 @@ theorem states the hypotheses it uses.
 
 ## Provenance
 
-All declarations are internal proof devices made for this task (provenance
+All declarations are internal proof devices made for this target (provenance
 `internal`). The mathematics is the standard argument for
 same-parabolic duality `i(σ)∨ ≅ i(σ∨)` through the pairing
 `⟨ℓ, f⟩ = ∫_K ⟨ℓ(k), f(k)⟩ dk` (Casselman, lecture notes *Introduction to
@@ -34,8 +34,7 @@ only: no declaration transcribes a definition from that source.
 `smoothContragredientEquiv` reuses the common construction in
 `Smooth.Contragredient.Equivalence`, extracted unchanged from the published
 `Langlands.Classification.HighestDerivativeSupportShiftProof.smoothContragredientEquiv`.
-Both namespaces retain abbreviations for that definition. Credit for the
-construction belongs to the authors of the original module.
+Both namespaces retain abbreviations for that definition.
 
 ## Section `Contragredient`
 

@@ -1,7 +1,5 @@
 # A short exact sequence from a last grade and a single surviving prefix grade
 
-Author: Worker 124.
-
 This internal module proves
 `Langlands.smooth_shortExact_of_last_and_single_prefix`. Let `A`, `B`, `C` be
 smooth representations of any topological group over a commutative ring, with

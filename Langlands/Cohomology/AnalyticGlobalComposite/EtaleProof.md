@@ -1,7 +1,5 @@
 # Berkovich's composite identification for étale G-sheaves
 
-Author: Worker 280.
-
 `analyticEtaleGlobalComposite` proves the unchanged published proposition
 `Langlands.Cohomology.AnalyticGlobalComposite.AnalyticEtaleGlobalCompositeStatement`.
 It retains all five universe parameters `w, u, v, uL, z`, all field and group

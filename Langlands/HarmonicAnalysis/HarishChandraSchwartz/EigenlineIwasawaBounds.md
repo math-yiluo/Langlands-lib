@@ -75,4 +75,5 @@ with `‖v‖ ≤ C' ‖ρ(y) v‖` for `y ∈ U(χ)(F)`. The set `K⁻¹` is co
 These are estimates for one line at a time. Turning them into the decay of
 `δ^{1/2} χ` at Levi components on `Ū(F) ∩ U'(F)` still needs explicit lines whose eigenvalues are
 known characters of the Levi, and the cone geometry of relative roots. Neither is done here, and
-the module does not complete the host theorem.
+the module does not by itself prove the convergence of the standard intertwining
+integrals that these estimates serve.

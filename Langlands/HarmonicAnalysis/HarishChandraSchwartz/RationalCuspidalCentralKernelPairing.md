@@ -6,12 +6,12 @@ p-adiques (d'après Harish-Chandra)*, J. Inst. Math. Jussieu 2 (2003),
 where the diagonal integral is made finite by VIII.3.2. Registered source
 `waldspurger-2003-plancherel`.
 
-This module is the second follow-up to focused unit 2 of Task 7439
-(revision 2). It imports `RationalCuspidalCentralKernelDiagonal` (unit 2b), which imports
-unit 2 (`RationalCuspidalCentralKernelStep`). It reduces
-unit 2b's pairing input `RationalLevelKernelPairingIntegrable` to
-`RationalLevelKernelConjugationIntegrable`. That is the integrability of Task
-7256's descended conjugation pairings of `E` with every Schwartz function: the
+This module continues the local kernel step `RationalCuspidalCentralKernelStep`.
+It imports `RationalCuspidalCentralKernelDiagonal`, which imports
+`RationalCuspidalCentralKernelStep`. It reduces the pairing input
+`RationalLevelKernelPairingIntegrable` of `RationalCuspidalCentralKernelDiagonal` to
+`RationalLevelKernelConjugationIntegrable`. That is the integrability of the
+descended conjugation pairings of `E` with every Schwartz function: the
 form of the VIII.3.2 conclusion at `f₁ = E`.
 
 ## Generic results
@@ -61,7 +61,7 @@ form of the VIII.3.2 conclusion at `f₁ = E`.
   `q ↦ ∫ E(q̇ g q̇⁻¹) f₂(g) dmuG(g)`, is `muQ`-integrable. The published statement
   `RationalCuspidalConjugationIntegrabilityStatement` in
   `RationalCuspidalConjugationStatement` concludes this for every cuspidal
-  `f₁`; this unit retains that analytic proof obligation.
+  `f₁`; this module retains that analytic proof obligation.
 - `RationalLevelKernelPairingIntegrable.of_leftConjugationPairing` assumes a
   Haar `muA`, a Haar `muG` and a compact open `H`. It derives
   `RationalLevelKernelPairingIntegrable hKc hPK ρ muA muG H E` from
@@ -80,24 +80,27 @@ Assume:
 - `χ` is trivial on `A_G(F) ∩ H`;
 - `RationalLevelKernelConjugationIntegrable` holds.
 
-Then this module, unit 2b's `IsRationalCuspidalLevelKernel.diagonalIntegrable`
-and unit 2's `IsRationalCuspidalLevelKernel.finiteDimensional_levelSpan` (with
+Then this module, `IsRationalCuspidalLevelKernel.diagonalIntegrable`
+(`RationalCuspidalCentralKernelDiagonal`) and
+`IsRationalCuspidalLevelKernel.finiteDimensional_levelSpan` (`RationalCuspidalCentralKernelStep`, with
 the weight hypotheses) give finite dimensionality of the actual level span.
 
-## Open hypotheses and their owners
+## Open hypotheses
 
-- `RationalLevelKernelConjugationIntegrable`: VIII.3.2, owned by Task 7256
-  (`b0fd13d7-7b2e-4cec-97ef-3a2286d8ed7c`).
-- For the composition with units 2 and 2b:
-  - `IsRationalCuspidalLevelKernel`: unit 3 of Task 7439 and Task 7277
-    (`eaceb96b-aaaf-4068-9a11-46292b5334e6`);
-  - `CentralWeights`: Task 5480 (`c3846e17-dfda-44c2-a37e-cd9054cb3b0f`);
+- `RationalLevelKernelConjugationIntegrable`: VIII.3.2
+  (`RationalCuspidalConjugationIntegrabilityStatement`, not proved in the Library).
+- For the composition with `RationalCuspidalCentralKernelStep` and
+  `RationalCuspidalCentralKernelDiagonal`:
+  - `IsRationalCuspidalLevelKernel`: from the rank adapter (`RationalCuspidalUnit`,
+    `RationalCuspidalUnitKernel`) and the laws of the VIII.2 degree-zero projection;
+  - `CentralWeights`: from `RationalSplitCenterHeightStatement`, proved as
+    `rationalSplitCenterHeight`;
   - `L2Weights` and `ConvolutionWeights`: Lemma II.1.5. Its upper-bound input
-    is owned by Task 5326 (`d27429ee-ab4e-47b4-8486-8cdd92ff4d34`). Its
-    basis/Cartan structural premises are supplied in the closed assembly
-    (Task 7439, coordinated by Task 3642), as detailed in unit 2.
-  - Unimodularity of `G(F)` is proved (unit 2's
-    `rationalHaar_isMulRightInvariant`).
+    `RationalXiUpperBoundStatement` is proved as `rationalXiUpperBound`. Its
+    basis/Cartan structural premises belong to the closed assembly of the
+    target, as detailed in `RationalCuspidalCentralKernelStep`.
+  - Unimodularity of `G(F)` is proved
+    (`rationalHaar_isMulRightInvariant`).
 
 Nothing here assumes same-rank finiteness, same-rank reconstruction, the
 closed target or a dimension bound.

@@ -6,7 +6,7 @@ import Langlands.HarmonicAnalysis.HarishChandraSchwartz.CentralQuotientHaar
 
 This module reduces `RationalLevelKernelPairingIntegrable` (from
 `RationalCuspidalCentralKernelDiagonal`) to `RationalLevelKernelConjugationIntegrable`. That is
-the integrability of Task 7256's descended conjugation pairings of `E` with every Schwartz
+the integrability of the descended conjugation pairings of `E` with every Schwartz
 function, which is the form of the VIII.3.2 conclusion at `f₁ = E`. Two facts are proved on the
 way. Compatible quotient measures on `A \ G` for closed central `A` are invariant under the
 inversion `A g ↦ A g⁻¹`. The characteristic function of `H a`, for central `a`, lies in the
@@ -184,7 +184,7 @@ def rationalRightCosetIndicator (hs : IsSplitComponent s) (H : OpenSubgroup (rat
 every Borel structure on `A_G(F) \ G(F)`, every compatible quotient measure `muQ` and every `f₂`
 in the actual Schwartz space, the descended conjugation pairing
 `q ↦ ∫ E(q̇ g q̇⁻¹) f₂(g) dmuG(g)` (`rationalLeftConjugationPairing`) is `muQ`-integrable. This is the
-second conjunct of Task 7256's `RationalCuspidalConjugationIntegrability` at `f₁ = E`. -/
+second conjunct of `RationalCuspidalConjugationIntegrability` at `f₁ = E`. -/
 def RationalLevelKernelConjugationIntegrable (hs : IsSplitComponent s)
     (muA : Measure (rationalPoints.map s).range) (muG : Measure (rationalPoints G))
     (E : RationalSchwartzSpace hKc hPK ρ) : Prop :=

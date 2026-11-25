@@ -17,15 +17,15 @@ open scoped NumberField
 universe u
 variable {F : Type u} [Field F] [NumberField F] [CompactSpace (AdeleQuotient F)] {r : ℕ}
 
-local instance rationalGroup (n : ℕ) : AddCommGroup (RationalInvariantFunctions F n) :=
+private local instance rationalGroup (n : ℕ) : AddCommGroup (RationalInvariantFunctions F n) :=
   Submodule.addCommGroup _
-local instance continuousGroup (n : ℕ) : AddCommGroup (ContinuousRationalFunctions F n) :=
+private local instance continuousGroup (n : ℕ) : AddCommGroup (ContinuousRationalFunctions F n) :=
   Submodule.addCommGroup _
 local instance finiteSmoothGroup (n : ℕ) : AddCommGroup (FiniteSmoothRationalFunctions F n) :=
   Submodule.addCommGroup _
-local instance formsGroup (n : ℕ) : AddCommGroup (AutomorphicForms F n) :=
+private local instance formsGroup (n : ℕ) : AddCommGroup (AutomorphicForms F n) :=
   Submodule.addCommGroup _
-local instance stableGroup (n : ℕ) : AddCommGroup (StableAutomorphicFunctions F n) :=
+private local instance stableGroup (n : ℕ) : AddCommGroup (StableAutomorphicFunctions F n) :=
   Submodule.addCommGroup _
 local instance spaceGroup (S : OperatorRealization F (r + 1)) : AddCommGroup S.Space :=
   Submodule.addCommGroup _

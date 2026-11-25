@@ -16,9 +16,11 @@ the published no-higher-root case
     UnramifiedRootDepthKernelStatement.{u}`.
 
 The hypothesis `MultipliableRootGroupCoordinatesExistenceStatement` is **not**
-proved here. Hence neither the main Task 6392 target
+proved here. Hence neither the main target
 `UnramifiedRootDepthKernelStatement` nor C.5.3 for multipliable roots is proved
-unconditionally by this module.
+unconditionally by this module. The module `RootDepthKernel` supplies the
+hypothesis (`multipliableRootGroupCoordinatesExistence`) and proves the target
+(`unramifiedRootDepthKernel`).
 
 ## Provenance
 

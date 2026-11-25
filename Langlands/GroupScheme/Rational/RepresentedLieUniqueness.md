@@ -4,7 +4,7 @@ This internal helper constructs the actual morphism between representatives
 of two subgroup functors included on every test scheme. It also reduces a
 subgroup-equality step to `LieSubgroupEqualityStatement`. The original
 `eq_of_le_of_hasLieImage` retains that explicit premise.
-`IsSmoothConnectedClosed.eq_of_le_of_hasLieImage` now instantiates it with
+`IsSmoothConnectedClosed.eq_of_le_of_hasLieImage` instantiates it with
 the published proof `Langlands.GroupScheme.lieSubgroupEquality`, imported
 from `Lie.SubgroupEqualityProof`.
 
@@ -63,7 +63,7 @@ or arbitrary comparison of subgroups from Lie images alone is asserted.
 The provenance is internal: the construction and proofs use the published
 Yoneda lift, actual all-test subgroup and Lie-image definitions,
 closed-immersion cancellation, the full-Lie theorem, the intrinsic
-split-torus support bound, and the closure universal property. This unit
+split-torus support bound, and the closure universal property. This module
 does not prove smooth realization, exact Lie image, unipotence or
 split unipotence of the generated semigroup subgroup, and hence does not
 prove the full `SemigroupRealizationStatement`.

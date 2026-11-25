@@ -1,7 +1,5 @@
 # Torsion-free principal congruence levels
 
-Author: Worker 19.
-
 Let `A` be a finite-dimensional `ℚ`-algebra with involution `σ`, and let
 `v` be a finite place of `ℚ` lying over a prime `q ≥ 3`. This module
 constructs an open subgroup of the local similitude group `σ(ℚ_v)` whose

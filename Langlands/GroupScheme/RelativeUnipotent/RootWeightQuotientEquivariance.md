@@ -1,6 +1,7 @@
 # Equivariance of actual exact-weight quotient maps
 
-This internal adapter for Task 7200 proves actual equivariance of each
+This internal adapter for the finite vector-bundle filtrations of supplied
+relative radicals proves actual equivariance of each
 exact-weight quotient map under a supplied realizing cocharacter. The
 commutative base ring and universe are arbitrary. No field, reducedness,
 connectedness, nonempty-base or positive-rank hypothesis is imposed.

@@ -1,6 +1,6 @@
 # Finite completed residues over base-field-valued points
 
-This internal unit proves finite-dimensionality of the completed residue field
+This internal module proves finite-dimensionality of the completed residue field
 at a source point of a locally finite analytic map over a full base-field-valued
 target point. It uses a complete ultrametric normed field `K` and allows
 independent universes for the field, atlas space, and chart indices.

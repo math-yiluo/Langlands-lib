@@ -38,7 +38,7 @@ is also pointwise: applying an actual representation intertwiner to the
 integrand equals the target representation's integrand at the image vector.
 It uses the existing Mathlib intertwiner and linear map structures.
 
-This unit does not yet integrate the function or assert a convolution-action
+This module does not integrate the function or assert a convolution-action
 law. The genuine finite fiber-sum integral and published scalar convolution
 algebra remain prerequisites for the complete Hecke action. No arbitrary action
 or desired algebra law is included as input data.

@@ -1,6 +1,6 @@
 # Scaled upper root depth factors of a concrete unramified lift
 
-This internal derived unit defines `ApartmentLift.scaledRootDepth y a r` as
+This module defines `ApartmentLift.scaledRootDepth y a r` as
 the existing multiplier-scaled upper subgroup for the base change of the lower
 character `a`, using the valuation at the supplied lifted point `L.e y`.
 The base field is a nonarchimedean local field, the ambient group is affine,

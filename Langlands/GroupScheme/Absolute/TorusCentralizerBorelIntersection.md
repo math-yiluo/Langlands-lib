@@ -1,7 +1,5 @@
 # Borel intersection with a torus centralizer
 
-Worker 229.
-
 This is an internal derived result assembling published Library theorems. The
 entry proposition `Langlands.GroupScheme.TorusCentralizerBorelIntersectionStatement`
 says that, over every field and in every universe, for a smooth connected affine

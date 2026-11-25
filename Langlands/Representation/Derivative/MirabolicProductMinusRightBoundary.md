@@ -1,7 +1,5 @@
 # The right source-rank-one boundary of BZ77 Proposition 4.13(c)
 
-Author: Worker 837.
-
 This pair proves the clause
 `Langlands.Derivative.MirabolicProductMinus.RightPhiBoundary.{uF,uV} F T` of the
 published statement `MirabolicProductMinusCompatibilityStatement`. The entry
@@ -248,7 +246,7 @@ contains the closures of `SplitKernelCharacter` and of
   CompactLocalSection, CompactLocalSectionSpanningProof,
   CompactLocalSectionSpanningStatement, CompactLocallyConstant,
   CompactQuotientProof, Definitions, InverseTranspose, OppositeParabolic,
-  Parabolic, SplitKernelCharacter (this unit), SplitKernelCompact,
+  Parabolic, SplitKernelCharacter (written together with this module), SplitKernelCompact,
   SplitKernelCovariance, SplitKernelIntegral, StructuralStatement.
 - `Langlands.Representation.Jacquet`: CharacterAveraging, Coinvariants,
   Localization, PositiveCharacter, SmoothTwist.
@@ -296,7 +294,7 @@ condition:
   `Category/Basic` defines `HasFiniteLength`, which is not used.
 - `Langlands.Whittaker.SupercuspidalCoinvariantFinitenessStatement`,
   `IrreducibleCoinvariantFinitenessStatement`,
-  `LeviCuspidalCoinvariantFinitenessStatement` and their tasks are not in the
+  `LeviCuspidalCoinvariantFinitenessStatement` and their proofs are not in the
   closure. `Whittaker/Algebraic` and `Whittaker/GeneralLinear` contain only
   Whittaker character and coefficient-model definitions, which enter through
   the lattice-box lemmas and are not used here.
@@ -305,8 +303,8 @@ condition:
   clause of the target statement is used. The statement module is imported
   only for `rightPhiProduct`, `rightPhiQuotient` and `RightPhiBoundary`.
 - No segment, socle, head, Jacquet-formula, classification or exhaustion
-  result is used. No module or task in the independence lists appears in the
-  closure, and Worker 127's work is not used.
+  result is used. No module in the independence lists appears in the
+  closure.
 - The inputs are arbitrary smooth representations. The `GL_0` carrier of
   `Ψ⁻τ` is kept in full, and no positive-rank `GL` factor is replaced by a
   rank-zero factor or a chosen unit. Every rank transport is the published

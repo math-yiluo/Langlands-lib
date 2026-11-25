@@ -1,10 +1,7 @@
 # Proof of surjectivity on compact-open fixed vectors
 
-Worker 5 authored the Lean proof, reused without source changes by Worker 29.
-Worker 29 checked its correspondence with the accepted target and prepared this
-expanded explanation. This proof uses the independently checked, accepted,
-and published projection proof identified below. This proof
-requires its own registered independent check, semantic review, and publication.
+The correspondence of the Lean proof with its target was checked. This proof
+uses the published projection proof identified below.
 
 The closing declaration is
 `Langlands.Compact.fixedVectorSurjectivity :
@@ -35,7 +32,7 @@ Rewriting by `f v = w.val` leaves the average of a fixed vector.
 Thus the implemented proof uses the membership and identity components of the
 projection property and the naturality equality. It does not need a separate
 smoothness-transfer theorem; both smoothness assumptions are supplied by the
-accepted target.
+target.
 
 The result proves the right-surjectivity clause on compact-open fixed vectors.
 The coefficient field is exactly the complex numbers. It does not state full
@@ -53,43 +50,29 @@ average through its projection and naturality interface. Source ID
 Retained original:
 `C:/Central-Library/Casselman--p-adic groups lecture notes/Introduction to representations of p-adic groups/Casselman--Chapter II - Smooth representations--2019.pdf`.
 
-The exact accepted proposition target is
-`40e87eae-9077-41b0-a7d0-49e3f58c1d41`, version 1, effective snapshot
-`9d79467c8b7e9c0013e365a40865b2e511da4a243ae73ebb7cac12c694d16917`,
-published at commit `bb596ce619f2174816281f508cce65b3303beeb4`.
-Its proposition fingerprint is
-`a9729b082c2b7c43ce0f062137b52106994b68bf28ec642dce2c1024861357ea`.
-Definition dependencies are compact averaging artifact
-`ed385ab4-3443-4345-a7c7-5d91c74940f9`, version 1, effective snapshot
-`aad5d14b4a17fc183be073cb292549ca0522d206c40cf3977960e1ddf23caebc`,
-and smoothness artifact `665022df-625b-44ae-9dbd-425f6e266bab`, version 1,
-effective snapshot
-`092f2dc612370a1612d3c08d1e60ff18add554e831ee02c7041342ac9dff16c0`.
+The exact proposition target is `Langlands.Compact.FixedVectorSurjectivity`
+(module `Langlands.Representation.Compact.SurjectivityStatement`),
+published at Library commit `bb596ce619f2174816281f508cce65b3303beeb4`.
+Definition dependencies are the compact averaging definitions
+`Langlands.Representation.Compact.Definitions` and the smoothness definitions
+`Langlands.Representation.Smooth.Definitions`.
 
-The exact imported projection proof is artifact
-`0f736d22-4088-4bad-91fa-320276a98f66`, version 1,
-`Langlands.Representation.Compact.ProjectionProof`, from task
-`849a1dbe-68d3-4bc8-9c67-ca059539e827`, revision 1.
-It proves accepted statement `91124244-2c99-4f10-91d2-bcab3a34712c`,
-version 1, `Langlands.Compact.ProjectionAndNaturality`, and supplies all
-three component lemmas used above. Its accepted effective snapshot is
-`e2b147792d9176fec25e3cb60221aa503bfc6766d5d618ca3a79119138b5bf17`,
+The exact imported projection proof is
+`Langlands.Representation.Compact.ProjectionProof`.
+It proves `Langlands.Compact.ProjectionAndNaturality`, and supplies all
+three component lemmas used above. It was
 published at Library commit `d0f5322f745425b08ae8e72c1031206f45cb049e`.
-The effective Lean SHA256 is
+The Lean file's SHA256 there is
 `689b92fac7e04b7ee2cb3dd4702653725a597997331ca62c6461ba7ef12fcc41`;
 the paired Markdown SHA256 is
 `a2217b34bacd418614535068dcc858ae3d44ad3a0638be726fc8838499f8d5b2`.
-Reviewer 60 accepted the proof, and the final independent publication receipt
-is `f166e3a5db68445f91d4a4a606c172e3`. The published integration also passed
-registered checker activation 5. Worker 29 verified these receipts and the
-current availability of the target, projection proof, and accepted dependencies;
-all twelve source-closure files matched their published hashes.
+When this proof was checked, the target, the projection proof and their
+dependencies were available, and all twelve source-closure files matched their
+published hashes.
 
-Prepared environment: `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, version 1,
+Environment in which it was checked:
 Lean 4.34.0, Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.
-Worker 29 compiled the exact accepted dependency closure and this proof, then
-checked the whole target at three independent universes. All commands exited
+The exact dependency closure and this proof were compiled, and the whole target
+was checked at three independent universes. All commands exited
 successfully; the closing theorem's reported axiom closure is
-`propext`, `Classical.choice`, and `Quot.sound`. These are development checks.
-Independent proof checking, semantic review, and publication establish
-acceptance separately.
+`propext`, `Classical.choice`, and `Quot.sound`.

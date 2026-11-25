@@ -1,7 +1,5 @@
 # A quasi-separated finite type space whose integral points are not closed
 
-Author: Worker 105.
-
 Proof of
 `Langlands.AlgebraicGeometry.AlgebraicSpace.HenselianIntegralPointsNotClosedOfFiniteTypeStatement.{u}`.
 This is the counterexample showing that the closedness assertion of Corollary 5.7 of Brian
@@ -132,4 +130,4 @@ The proof uses only the standard axioms `propext`, `Classical.choice` and `Quot.
   printed p.16. Conrad states closedness of the image for quasi-separated spaces locally
   of finite type; the example shows that separatedness is needed.
 - The example (an affine line with a doubled point, where integral points of one origin
-  converge to the other) is an internal construction by Worker 105 for this proof.
+  converge to the other) is an internal construction for this proof.

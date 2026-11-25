@@ -30,11 +30,10 @@ and the Xi comparison. It takes norms of the equality, applies the two bounds,
 and cancels the strictly positive half-modulus norm. All family parameters and
 all points of the shifted closed chamber remain in the result.
 
-The exact upper Xi target is owned by Task 5326 and remains unproved at the
-time this supporting unit was written. Extending its uniformizer-chamber scope and the published
-lower bound to the full minimal-Levi chamber is a separate remaining comparison
-obligation. This adapter is supporting progress and does not prove the final
-orbit-decay theorem.
+The exact upper Xi target `RationalXiUpperBoundStatement` is proved in the Library
+(`rationalXiUpperBound`, module `RationalXiUpperBoundProof`). Extending its uniformizer-chamber
+scope and the published lower bound to the full minimal-Levi chamber is a further comparison,
+not made here. This adapter does not prove the final orbit-decay theorem.
 
 The comparisons retain all supplied actual Iwasawa and compact data, the
 connected-reductive/maximal-split/generic data, and `J` inside the simple roots

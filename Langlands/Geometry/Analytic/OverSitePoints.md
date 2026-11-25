@@ -1,7 +1,5 @@
 # Field-valued points on sites of morphisms over an analytic space
 
-Author: Worker 21.
-
 The modules `EtaleGeometricPoints` and `EtaleGeometricPointEquivariance` give,
 for an `L`-valued point `x` of an analytic space `X`, a fibre functor on the
 étale site `Ét(X)`, a point of the étale site under the point axioms, and the
@@ -9,8 +7,10 @@ compatibility of these points with group actions on `X`. This module does the
 same for any site `P.Over ⊤ X` of morphisms with a property `P` to `X`, for
 any Grothendieck topology `J` on it. It specializes the construction to the
 quasi-étale site `Qét(X)` (Library `QuasiEtaleSite`) and checks that the étale
-case is the existing one. Worker 26's quasi-étale `G`-sheaves (Task 26) need
-these points for compactly supported cohomology.
+case is the existing one. The quasi-étale `G`-sheaves (`QuasiEtaleGSheaf`,
+module `Langlands.Sheaf.Equivariant.AnalyticGSheaves`) need these points for
+compactly supported cohomology (module
+`Langlands.Sheaf.Equivariant.AnalyticQuasiEtaleCompactCohomology`).
 
 All declarations are in `Langlands.Analytic.SaturatedAtlasPresentation`. The
 field `K` is a complete ultrametric normed field, `L` a normed field with
@@ -33,7 +33,7 @@ For `P : MorphismProperty LocalizedCategory` and an `L`-valued point
 - With `[P.RespectsIso]`:
   - `OverSite.translate P e : P.Over ⊤ X ≌ P.Over ⊤ Y` for `e : X ≅ Y`. It is
     Mathlib's `MorphismProperty.Comma.mapRightIso`, sending `U ⟶ X` to
-    `U ⟶ X ⟶ Y`. Its functor for `e = ρ g` is definitionally Task 26's
+    `U ⟶ X ⟶ Y`. Its functor for `e = ρ g` is definitionally
     `TwistedOver.translate P ρ g`.
   - `OverSite.pointFibreTranslate` and `OverSite.pointTranslate`: the fibre
     of the translate at the image of `x` is the fibre at `x`, by injectivity
@@ -41,7 +41,7 @@ For `P : MorphismProperty LocalizedCategory` and an `L`-valued point
   - `OverSite.pointEquivariance P L ρ J h`: for an action
     `ρ : G →* Aut X` and points satisfying the point axioms, the family
     `x ↦ toPoint P L J x (h x)`, with `G` acting on `L`-valued points by
-    `EtaleSite.pointAction`, is a `TwistedOver.PointEquivariance` (Task 26's
+    `EtaleSite.pointAction`, is a `TwistedOver.PointEquivariance` (module
     `Langlands.Sheaf.Equivariant.TwistedCompactSupport`).
 
 ## The étale site

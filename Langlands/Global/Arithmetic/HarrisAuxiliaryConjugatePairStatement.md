@@ -70,7 +70,7 @@ def ConjugateSelfDualUnitaryCentralCharacterStatement : Prop :=
   ∀ (E : Type u) [Field E] [NumberField E] [IsCMField E] [CompactSpace (AdeleQuotient E)]
     (r : ℕ) (S : CuspidalOperatorRealization E r),
     S.isoClass.IsConjugateSelfDual →
-    ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter S
+    ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter S
 ```
 
 **Hypotheses.** `E` is a CM number field in universe `u` with compact adele
@@ -100,7 +100,7 @@ So `x ↦ B (·) x` is an isomorphism `π ≅ π^∨ ∘ c` on the actual realiz
 This is Harris's condition `π ≅ π̌ ∘ c` (Theorem 1.2(ii)).
 
 **Conclusion.** `HasUnitaryCentralCharacter S` holds. This predicate is in
-namespace `Langlands.ClassField.Global.RelativeWeilGroup`, module
+namespace `Langlands.ClassFieldTheory.Global.RelativeWeilGroup`, module
 `AssociatedFactorStatement`. It says that there is a continuous character
 `χ : IdeleClassGroup (𝓞 E) E →ₜ* ℂˣ` of the idele class group with
 `‖χ x‖ = 1` for all `x` such that `S.HasCentralCharacter χ`. That is, every

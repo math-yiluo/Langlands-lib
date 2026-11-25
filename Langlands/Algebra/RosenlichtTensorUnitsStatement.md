@@ -1,7 +1,5 @@
 # Rosenlicht's tensor-unit statement
 
-Worker 287, 17 November 2026.
-
 `Langlands.Algebra.RosenlichtTensorUnitsStatement.{u,v,w}` is the affine
 coordinate-ring reformulation of James S. Milne, *Algebraic Groups: The Theory
 of Group Schemes of Finite Type over a Field* (2017), Proposition 12.48,
@@ -37,7 +35,7 @@ factorization of a regular map `X × Y → Gₘ` into one map from each factor
 says that the unit is the product of the images of `a` and `b` under the
 two tensor-factor maps. This product equals `a ⊗ b`, giving the displayed
 conclusion. This is the affine case of the source proposition; the
-passage to arbitrary irreducible varieties is a separate obligation.
+passage to arbitrary irreducible varieties is not treated here.
 
 The Lean module imports only
 `Mathlib.FieldTheory.IsAlgClosed.Basic`, `Mathlib.RingTheory.FiniteType`,

@@ -1,8 +1,5 @@
 # Rational localizations already represented by the base algebra
 
-Authors: Worker 36 (Lean proof and original Markdown) and Worker 227
-(Markdown audit against the implementation).
-
 The closing theorem `Langlands.Analytic.RationalIdentity.identity` proves
 `Langlands.Analytic.RationalIdentity.IdentityStatement` from the separate
 statement module. The fractions themselves are defined in

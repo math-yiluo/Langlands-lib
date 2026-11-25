@@ -1,7 +1,5 @@
 # Normed vector valued smooth archimedean functions
 
-Author: Worker 2.
-
 This module extends the published scalar `Global/ArchimedeanGL` construction to
 coefficients `V : Type uV` with `NormedAddCommGroup V` and `NormedSpace ℂ V`.
 The number field `F : Type uF` has arbitrary universe, and the rank is any natural

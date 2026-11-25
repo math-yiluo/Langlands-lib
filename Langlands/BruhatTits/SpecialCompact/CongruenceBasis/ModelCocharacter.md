@@ -1,6 +1,6 @@
 # The full model at a special vertex and its cocharacters
 
-This internal unit chooses the integral model whose congruence tower
+This internal module chooses the integral model whose congruence tower
 `Langlands.BruhatTits.SpecialCompact.CongruenceBasis.Assembly` uses. It also
 shows that every cocharacter of the maximal split torus lifts to that model.
 Here `F` is a nonarchimedean local field with valuation ring `𝒪[F]` and `G`

@@ -32,9 +32,10 @@ article was read. The finite-stage splitting and contraction below are
 implementation proofs of the construction's intrinsic embedding properties;
 they are not separately attributed theorems of Flath.
 
-Flath §2, p. 181, numbered (1) and Example 2 motivate the subsequent induced-map
-and group-action contributions. This file does not yet implement those
-contributions. The factorization and uniqueness theorems, the archimedean
+Flath §2, p. 181, numbered (1) and Example 2 motivate the induced-map
+and group-action constructions. This file does not implement those
+constructions; they are in separate modules of
+`Langlands.Representation.RestrictedTensor`. The factorization and uniqueness theorems, the archimedean
 `(g,K)` discussion in §3, and the Hilbert completion in §4 are distinct
 mathematics and are not consequences claimed here.
 
@@ -108,9 +109,8 @@ embeddings with no additional hypotheses.
 
 ## Dependencies, verification, and remaining scope
 
-There are no project mathematical dependencies. The exact environment is
-`2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, version 1: Lean 4.34.0, Mathlib
-`5ed2965256430c3649e86755f9576b54eca72435`.
+There are no project mathematical dependencies. The module was checked with
+Lean 4.34.0 and Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.
 
 The audited Mathlib APIs are `PiTensorProduct.Basic`, `Algebra.Colimit.DirectLimit`,
 `LinearAlgebra.Dual.Lemmas`, and `TensorProduct.Map`. In particular
@@ -118,11 +118,10 @@ The audited Mathlib APIs are `PiTensorProduct.Basic`, `Algebra.Colimit.DirectLim
 not used to impose restrictions on the local carriers. All construction
 obligations stated in this file have Lean proofs.
 
-This contribution is the core algebraic construction. Almost-everywhere
+This module is the core algebraic construction. Almost-everywhere
 reference-preserving induced maps, changes of the exceptional set,
 the genuine restricted-product representation, intertwiner compatibility, and
-smoothness belong to separate modules in the same task. Coherent separation
+smoothness belong to separate modules of
+`Langlands.Representation.RestrictedTensor`. Coherent separation
 in the full restricted tensor product is implemented in
-[Separation](Separation.md). Compilation and
-development inspection do not themselves establish independent acceptance
-or current Library publication.
+[Separation](Separation.md).

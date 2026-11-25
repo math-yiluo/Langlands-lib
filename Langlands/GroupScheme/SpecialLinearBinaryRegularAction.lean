@@ -195,8 +195,7 @@ theorem covariantRegularRepresentation_affineMatrix (m : ℕ)
   rw [binaryMatrixRepresentation_apply]
   change M i j = (binaryBasis m).repr
     (specialLinearRepresentation m g (binaryBasis m j)) i
-  rw [h]
-  simp [Finsupp.single_apply]
+  rw [h, Module.Basis.repr_sum_self]
 
 /-- Rational points of the actual binary special-linear scheme are determinant-one matrices. -/
 def rationalPointsEquiv :

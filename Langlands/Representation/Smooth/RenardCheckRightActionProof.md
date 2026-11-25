@@ -1,6 +1,6 @@
 # The right Hecke action through inversion
 
-Author: Worker 139. The theorem `Langlands.Renard.Smooth.checkRightActionExists`
+The theorem `Langlands.Renard.Smooth.checkRightActionExists`
 proves exactly `CheckRightActionExistsStatement` in independent group and carrier
 universes. Its right action satisfies the published `IsCheckRightAction`
 predicate by definition.

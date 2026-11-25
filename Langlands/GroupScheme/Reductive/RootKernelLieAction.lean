@@ -139,7 +139,7 @@ theorem adjoint_eq_self_of_kills_roots
     rw [Lie.smoothKernelScalarExtension_tmul, map_smul,
       adjoint_const_eq_self_of_kills_roots I G i P hP t ht Y]
   | add Y Z hY hZ =>
-    simp only [map_add, hY, hZ]
+    rw [LinearEquiv.map_add, map_add, hY, hZ]
 
 /-- Every full exponent kernel whose relation subgroup contains all roots
 acts trivially on the actual Lie module over every test algebra. -/

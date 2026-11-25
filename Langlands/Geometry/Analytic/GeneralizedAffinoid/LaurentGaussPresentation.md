@@ -1,7 +1,5 @@
 # Affinoid presentation of the completed Gauss Laurent algebra
 
-Author: Worker 84.
-
 Let `K : Type u` be an ultrametric normed field and let `t > 0`, supplied as
 `Fact (0 < t)`. This module equips the existing Gauss Laurent polynomial
 algebra and its completion with compatible normed `K`-algebra structures.

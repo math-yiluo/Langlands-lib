@@ -1,6 +1,6 @@
 # Contraction of regular vector two-cocycles on diagonalizable groups
 
-Worker 1552. This is an internal construction over a field k in an arbitrary universe u. The character group Λ is any abelian group, and D = D(Λ) is the actual diagonalizable group scheme. The coefficient group V is supplied with an automorphic action a of D and vector coordinates e on every test scheme, satisfying `IsLinearVectorCoordinates a e`. The section declares V affine; no finite-generation, torsion-free, characteristic-zero or reducedness assumption is used. No scheme section or extension group is an input.
+This is an internal construction over a field k in an arbitrary universe u. The character group Λ is any abelian group, and D = D(Λ) is the actual diagonalizable group scheme. The coefficient group V is supplied with an automorphic action a of D and vector coordinates e on every test scheme, satisfying `IsLinearVectorCoordinates a e`. The section declares V affine; no finite-generation, torsion-free, characteristic-zero or reducedness assumption is used. No scheme section or extension group is an input.
 
 The two-cochain is an actual regular morphism `cochain : D.X ⊗ D.X ⟶ V.X`. Its evaluation `value` is composition with the pair of test points. Assuming the identity
 

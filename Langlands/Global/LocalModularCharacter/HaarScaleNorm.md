@@ -1,7 +1,5 @@
 # Haar scaling of linear automorphisms over number-field completions
 
-Author: Worker 1402.
-
 This helper module proves the Haar normalization lemma used in the proof of
 `Langlands.Global.PlaceGroupPoints.LocalModularCharacterAdjointDeterminantStatement`.
 Let `F` be a number field, `i : Place F` a place, `K = placeCompletion F i` the actual

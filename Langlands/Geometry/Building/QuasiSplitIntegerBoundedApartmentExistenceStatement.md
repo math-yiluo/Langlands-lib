@@ -1,6 +1,6 @@
 # Bounded quasi-split apartment existence
 
-Worker 312. This is a derived prerequisite for algebraic boundedness of the
+This is a derived prerequisite for algebraic boundedness of the
 depth-zero root filtrations over the actual maximal unramified field. It
 strengthens the existing quasi-split apartment existence interface by asking
 that the constructed apartment have bounded depth-zero root filtrations.
@@ -34,10 +34,12 @@ V 7 in Kaletha–Prasad, *Bruhat–Tits Theory: A New Approach* (2023),
 Definition 6.1.2 (printed p.199 / PDF230), restricted to depth zero.
 Its construction is intended to expose a bound in the quasi-split apartment
 construction, rather than assume boundedness for the supplied class.
-The new existence assertion remains a proof obligation. The conditional
-reduction in `UnramifiedZeroRootFiltrationBoundedReduction.lean` establishes its
-precise use for Task 6433; it does not discharge this obligation or the separate
-henselian quasi-splitness theorem.
+The existence assertion is proved separately, by
+`quasiSplitIntegerBoundedApartmentExistence` in `QuasiSplitBoundedApartmentExistence`.
+The conditional reduction in `UnramifiedZeroRootFiltrationBoundedReduction.lean`
+establishes its precise use for algebraic boundedness of the depth-zero root
+filtrations `U_{a,x,0}` over the maximal unramified field; it does not prove this
+assertion or the separate henselian quasi-splitness theorem.
 
 The registered book source is
 `kaletha-prasad-2023-bruhat-tits-new-approach`, SHA256

@@ -1,9 +1,5 @@
 # Recovery of the untwisted tensor at a fixed regular Langlands parameter
 
-Worker 594 authored the proof. Worker 859 checked the source conventions,
-the proof assembly and its import dependencies, and prepared the contribution.
-The imported results retain their documented authorship.
-
 `Langlands.glRegularLanglandsTensorRecovery.{uF,uV}` proves exactly
 `Langlands.GLRegularLanglandsTensorRecoveryStatement.{uF,uV}`. It retains
 arbitrary irreducible quotient witnesses, all positive ranks, every supplied
@@ -99,7 +95,7 @@ Theorem 2.2.2(b). Registered source
 `kudla-1994-local-langlands-nonarchimedean`, SHA256
 `0e1f9bc9986fc136081f0eed1aaafb50302acacb5a23e9538581f2f5b533198b`.
 These pages were read directly; pp.373–374 were checked as images. The
-current Library has no source-specific errata file for either source. The
+Library has no source-specific errata file for either source. The
 published [Lemma 5.3 scope audit](../../../notes/jacquet/silberger-lemma53-scope.md)
 was read; its unsupported unrestricted multiplicity assertion is not invoked.
 

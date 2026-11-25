@@ -1,7 +1,5 @@
 # Two affine lines glued along a translate of a punctured line
 
-Author: Worker 105.
-
 Helper module for the proof of
 `Langlands.AlgebraicGeometry.AlgebraicSpace.HenselianIntegralPointsNotClosedOfFiniteTypeStatement`.
 It contains no statement from the literature. It builds the scheme used as the

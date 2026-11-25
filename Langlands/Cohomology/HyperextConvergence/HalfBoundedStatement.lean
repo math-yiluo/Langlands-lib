@@ -7,7 +7,7 @@ import Mathlib.Algebra.Homology.DerivedCategory.TStructure
 # Convergence of the hyperext spectral sequence in Cartan–Eilenberg's Case 1
 
 Let `t` be a t-structure on a triangulated category `C`, and let `K` and `B` be objects of `C`.
-Worker 61's hyperext spectral sequence `hyperextSpectralSequence t K B` applies `Hom(-, B)` to the
+The hyperext spectral sequence `hyperextSpectralSequence t K B` applies `Hom(-, B)` to the
 truncations of `K`. Its object in position `(p, q)` on page 2 is
 `Hom(heartPiece t K q, B⟦p + q⟧)`, its intended abutment in total degree `n` is `Hom(K, B⟦n⟧)`,
 and that group is filtered by the subgroups `F^p` of morphisms factoring through

@@ -67,7 +67,8 @@ again affine, by the pullback-stability of affine morphisms. The statement
 needs it to form `MaximalUnramified.BuildingData`. It is the same private
 instance as in the published `UnramifiedParahoricModelStatement`.
 
-`UnramifiedModelKernelStatement.{u}` is an unproved proposition. Its inputs:
+`UnramifiedModelKernelStatement.{u}` is a proposition, proved as
+`unramifiedModelKernel` in `UnramifiedModelKernelProof`. Its inputs:
 
 - `F`, a nonarchimedean local field. The source's `k`, `K` and `O` are `F`,
   the existing `inertiaFixedField F` (the maximal unramified extension inside
@@ -205,8 +206,10 @@ a single model homomorphism.
   printed p. 104 / PDF p. 135), `T(K)^0` does not depend on the splitting
   field (Lemma 2.5.12, printed p. 89 / PDF p. 120), and the image of the
   simply connected cover does not depend on the chosen cover. The Library
-  does not prove these independence results; the statement needs them only
-  for the comparison with the source.
+  proves the combined independence, that `E.zeroPoints` does not depend on
+  `E`, as `unramifiedZeroPointsIndependence` (module
+  `Langlands.Geometry.Building.UnramifiedZeroIndependenceProof`); the
+  statement needs it only for the comparison with the source.
 - **Choice of `C`.** The statement quantifies over every supplied `C`.
   This is no strengthening either. The class carried by `C` is an
   equipollence class of valuations of the root datum of `(G_K, S)`
@@ -225,8 +228,8 @@ a single model homomorphism.
 ## Intended consumers
 
 The construction of the integral models for KP Axioms 4.1.20 and 4.1.22
-(task `cd2ad671-3edf-4905-a0e2-e7aa2b160b91`) needs this statement. The
+needs this statement. The
 general morphism clauses of Axiom 4.1.22 require the special-fibre kernel of
 each model homomorphism `𝒢_{Ω′} → 𝒢_Ω` over `𝒪[F]` to be smooth, connected
-and unipotent. That task applies the statement after unramified base change
+and unipotent. That construction applies the statement after unramified base change
 and descends the conclusion to the finite residue field.

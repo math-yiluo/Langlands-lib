@@ -1,7 +1,6 @@
 # Reverse realization of products of block zeta integrals
 
 Module `Langlands.Representation.GodementJacquet.TwoBlockReverseRealization`.
-Author: Worker 1112.
 
 This module proves the reverse inclusion of Godement–Jacquet, *Zeta Functions of
 Simple Algebras* (1972), Theorem 3.4 (printed 43–45) for two blocks: every product
@@ -9,8 +8,8 @@ of rational values of individual block zeta integrals lies in the Laurent span o
 the values of the normalized induced representation. Instead of the source's
 Lemma 3.4.6 (a duality argument), the implemented proof realizes each product
 directly with sections supported on one double coset `P K₀`. It also packages, with
-the forward module `TwoBlockZetaExpansion`, all three components of Worker 704's
-`TwoBlockMatrixGeneratorInputs`.
+the forward module `TwoBlockZetaExpansion`, all three components of
+`TwoBlockMatrixGeneratorInputs` (module `TwoBlockAnalyticAssembly`).
 
 Notation as in `TwoBlockZetaExpansion`; `P` is the upper two-block parabolic,
 `parabolicPoint (L, x) = [[a, a x], [0, d]]`.
@@ -81,7 +80,7 @@ converge at the block shifts for all block tests,
 `Padic.matrixIntegral F Φ (s + t/2) (biSmoothCoefficient π ℓ v) =
  κ · Z₀(Φ₀, s + m₀/2) · Z₁(Φ₁, s + m₁/2)`.
 
-Construction. Worker 704's `exists_compactProductCoefficientFormula` gives `K`, a Haar
+Construction. `exists_compactProductCoefficientFormula` (module `CompactProductCoefficients`) gives `K`, a Haar
 probability `μK` and the equivalence `E`. Take `Φ = reverseTest Φ₀ Φ₁`; choose compact
 open `K₀ ≤ K` fixing `Φ` on both sides and such that `P ∩ K₀` fixes the pure tensor
 `w = v₀ ⊗ v₁` and the pure functional
@@ -123,8 +122,8 @@ This theorem is compiled with `set_option maxHeartbeats 1600000` (a finite limit
 
 The blocks need only be smooth and admissible and satisfy the matrix analytic
 assertions; no irreducibility, central-character or functional-equation hypothesis
-is used. Assembly of the full analytic assertions from these inputs is Worker 704's
-`matrixAnalyticAssertions_twoBlock_of_generators`.
+is used. Assembly of the full analytic assertions from these inputs is
+`matrixAnalyticAssertions_twoBlock_of_generators` (module `TwoBlockAnalyticAssembly`).
 
 ## All-field port
 

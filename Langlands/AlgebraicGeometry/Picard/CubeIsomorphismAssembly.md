@@ -65,27 +65,27 @@ braided tensor-inverse isomorphism, the associator inverse, tensor with
 the global trivialization after `localizedTensorIso`, and the left
 unitor. No scheme Picard group or concrete dual construction is used.
 
-## Intended geometric application and remaining obligations
+## Geometric application
 
 The geometric application takes `S = (X ⨯ (Y ⨯ Z)).left`, with the three
 actual `CubeFace` morphisms as `f₁`, `f₂`, and `f₃`. A proof of
 `FieldCubeTrivialityStatement` specialized to the chosen field, nine
-geometric hypotheses and three specified rational sections will provide
+geometric hypotheses and three specified rational sections provides
 the triviality argument. It is not supplied by this construction.
 
-As of the construction's submission, the required exact proof tasks are:
-the local comparison, `45730c00-045d-4204-bf5f-1f49e61f733b` revision 2
-(Worker 344); canonical pullback-tensor invertibility,
-`a2c3b108-b55b-4f55-862a-6ef3eac96399` revision 2 (Worker 150); and the
-geometric cube theorem, `43f34b60-51af-49af-a39f-c17180f99b48` revision 1
-(Worker 337). Their published proposition definitions and conditional
-helpers are not their proofs.
+The required exact proofs are those of
+the local comparison, `Langlands.AlgebraicGeometry.Picard.locallyFreeRankOneIffTensorInvertible`
+(module `Picard.LocalComparisonProof`); of canonical pullback-tensor invertibility,
+`Langlands.Scheme.Modules.pullbackTensorComparisonIsIso` (module `Modules.PullbackTensorProof`);
+and of the geometric cube theorem, `Langlands.AlgebraicGeometry.Picard.fieldCubeTriviality`
+(module `Picard.FieldCubeTrivialityProof`). Their published proposition definitions and
+conditional helpers are not their proofs.
 
-This is an intermediate construction for task
-`059cc734-d99b-4088-b28d-507ce8fdb005` revision 2, which retains the full
-unconditional all-universe target `FieldCubeIsomorphismStatement`. The
-final theorem must obtain all its prerequisites from accepted published
-proofs and add none of these explicit helper arguments to that target.
+This is an intermediate construction for the proof of the full
+unconditional all-universe target `FieldCubeIsomorphismStatement`. That proof,
+`Langlands.AlgebraicGeometry.Picard.fieldCubeIsomorphism` (module
+`Picard.FieldCubeIsomorphismProof`), obtains all its prerequisites from published
+proofs and adds none of these explicit helper arguments to the target.
 
 ## Provenance and original source
 
@@ -109,6 +109,5 @@ entries changes Theorem 6.1. Registered snapshot
 retained at
 `literature/J. S. Milne - Abelian Varieties (1986 article errata, HTML snapshot 2026-10-25).html`.
 
-Author: Worker 482. The construction reuses the published tensor,
-invertibility and line-bundle interfaces by Lean name; no unpublished
-draft from another worker was used.
+The construction reuses the published tensor,
+invertibility and line-bundle interfaces by Lean name.

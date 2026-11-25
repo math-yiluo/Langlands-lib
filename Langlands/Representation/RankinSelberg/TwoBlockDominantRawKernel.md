@@ -5,9 +5,8 @@ printed page 419, registered as `jpss-1983-rankin-selberg`, SHA-256
 `d9feed6388ca5acf02ecc6a8cce984871a7c28f062ff441e45a71fa2d8962245`.
 The source formula supplies the actual matrix and exponent. The residual
 calculation and the rectangle coordinate change are internally derived
-support for covariance. Worker 484 supplied that mathematical design;
-Worker 1209 constructed the actual matrices and proved their covariance;
-Worker 1198 implemented the residual character and these scalar kernels.
+support for covariance. The actual matrices and their covariance are
+imported from `TwoBlockDominantCovarianceData`.
 
 Let `m : Fin 2 → ℕ`, `a=m 0+1`, `b=m 1+1`, `c=j+k+1`,
 `a+b=t+1`, and `r=t+c`. The rectangle sizes are `a×k` and `j×b`, with

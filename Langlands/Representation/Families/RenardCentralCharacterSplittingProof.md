@@ -135,7 +135,7 @@ intrinsic to this proof. None is claimed as a statement of the source.
 
 ## Environment
 
-Environment `bb168ec3-1031-46d9-816b-5c2ed7bbe1a6`: Lean 4.34.0 at
+Lean 4.34.0 at
 `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`, Mathlib at
 `5ed2965256430c3649e86755f9576b54eca72435`. Project imports:
 `Langlands.Representation.Families.RenardCentralCharacterSplittingStatement`

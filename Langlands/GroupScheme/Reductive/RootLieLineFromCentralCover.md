@@ -1,7 +1,5 @@
 # Split root lines from a supplied geometric rank-one central cover
 
-Author: Worker 781.
-
 This internal supporting construction reduces the exact arbitrary-field
 `SplitRootLieLineStatement.{u}` to the single explicit premise
 `RankOneCentralCoverStatement.{u}`. It retains arbitrary universe `u`.
@@ -47,10 +45,10 @@ cocharacter whose actual centralizer contains the prescribed root and has
 pairwise dependent roots, applies the rank-one assertion there, and
 transports its line through the actual centralizer differential.
 
-This proves the unchanged `SplitRootLieLineStatement.{u}` with
+This proves `SplitRootLieLineStatement.{u}` with
 `RankOneCentralCoverStatement.{u}` as an explicit extra premise. It does
-not provide an unconditional proof of the target or completion of the
-host task.
+not provide an unconditional proof of the target; `splitRootLieLine_independent`
+in `Reductive.SplitRootLieLineIndependentProof` applies it to `rankOneCentralCover`.
 
 ## Provenance
 
@@ -64,9 +62,9 @@ It supplies no root datum or root-cell existence argument.
 
 ## Dependency audit
 
-Terminal check `4eed66da-3339-415e-a44e-4f6cf23c316f` compiled this module,
-inspected the entry definition, and ran a private recursive dependency
-scanner in environment `5c94c648-e8dc-4002-a50a-071ebf3f6096`, over Library
+A final check compiled this module,
+inspected the entry definition, and ran a recursive dependency
+scanner, not part of the Library, over Library
 base `18c5dd82d119bef479b69de264324b22fe6f8d36`. The definition has the
 single arbitrary universe parameter `u`. The scanner follows every reached
 constant's type and value, including opaque values, and fails on forbidden
@@ -83,7 +81,8 @@ All four closures have zero forbidden hits and zero missing constants.
 Both the entry definition and the general-rank theorem use only the axioms
 `propext`, `Classical.choice`, and `Quot.sound`.
 
-The scanner checks all 24 named exclusions of Task 7510:
+The scanner checks all 24 named exclusions of a proof of
+`SplitRootLieLineStatement` independent of the dynamic-Borel inputs:
 `ParabolicDynamicStatement`, `RegularCocharacterBorelStatement`,
 `RankOneSolvableObstructionStatement`, `RankOneBorelDynamicStatement`,
 `RankOnePositiveRootUniquenessStatement`, their five respective proof names
@@ -102,7 +101,7 @@ The scanner checks all 24 named exclusions of Task 7510:
 `steinbergBigCell`, and
 `isParabolicSubgroup_of_range_eq_dynamicParabolic`.
 
-To guard against cycles with downstream work, it additionally checks
+To guard against cycles with downstream results, it additionally checks
 `SplitSimplyConnectedCorootSpanStatement`,
 `splitSimplyConnectedCorootSpan`,
 `algClosedGraphProjectionIsomorphisms`,
@@ -115,8 +114,8 @@ avoids the separate root-datum and root-cell route:
 `splitRankOneRootCell_of_centralCover`.
 
 Matching uses the entire final name component under any namespace.
-The scanner and its diagnostics remain private development evidence.
+The scanner and its output are not part of the Library.
 The proof itself uses actual scalar extension, matrix root spaces, the
-supplied cover, and centralizer transport. Independence of a future
-unconditional application still depends on the proof supplied for
+supplied cover, and centralizer transport. Independence of an
+unconditional application depends on the proof supplied for
 `RankOneCentralCoverStatement`.

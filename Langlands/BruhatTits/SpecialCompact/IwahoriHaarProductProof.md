@@ -1,7 +1,5 @@
 # Proof of the Iwahori Haar-character product
 
-Authors: Worker 103 (original proof draft), Worker 1648 (verification and submission).
-
 This is an internal derivation of the published conditional statement from
 `iwahoriRelativeIndex`, `compactOpenIndexHaar`, and Mathlib. It asserts no
 additional correspondence with the literature.

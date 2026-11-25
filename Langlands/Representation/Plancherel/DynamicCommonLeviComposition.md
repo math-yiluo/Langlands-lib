@@ -1,6 +1,6 @@
 # Composition of actual standard integrals with a common Levi (target)
 
-Worker 5. The module
+The module
 `Langlands.Representation.Plancherel.DynamicCommonLeviComposition`
 (namespace `Langlands.Plancherel.DynamicCommonLeviComposition`) states two
 Prop-valued targets:
@@ -85,7 +85,7 @@ a constant factor. If `K ∩ U₁` is not the product of `K ∩ U₀ ∩ U₁` a
 `K ∩ U₁ ∩ Ū₀`, the measure on the complement `U₁ ∩ Ū₀` defined by
 the quotient need not give `K ∩ U₁ ∩ Ū₀` mass one. The target therefore
 assumes the two splittings `SplitsAlong K ψ₀ ψ₁` and `SplitsAlong K ψ₁ ψ₂`
-of Worker 200's module `CommonLeviCompactSplitting`. `SplitsAlong K t m`
+of the module `CommonLeviCompactSplitting`. `SplitsAlong K t m`
 says that every point of `K ∩ U_G(m)` is a product `a b` with
 `a ∈ K ∩ U_G(t⁻¹) ∩ U_G(m)` and `b ∈ K ∩ U_G(m) ∩ U_G(t)`. The target does not
 assume that `K` is special or maximal.
@@ -269,7 +269,7 @@ argument at the level of integrals:
   product identities of the compact open pieces and ordered absolute
   integrability;
 - `Langlands.Plancherel.StandardIntertwining.OppositeCharts.comp_hasIntegral_of_hasCompactOpenProduct`
-  (Worker 200, module `StandardIntertwiningOppositeCharts`) does this for
+  (module `StandardIntertwiningOppositeCharts`) does this for
   source `P_G(χ⁻¹)`, middle `P_G(ψ)` and target `P_G(χ)`, deriving the outer
   local product identities from two `HasCompactOpenProduct` hypotheses.
 
@@ -299,15 +299,15 @@ constructed in the Library.
   the source measures at one compact open subgroup.
 - `StandardIntertwiningFactorization`: `OrderedSubgroupFactorization` and
   the generic composition theorem.
-- `CommonLeviCompactSplitting` and `StandardIntertwiningOppositeCharts`
-  (Worker 200): `SplitsAlong`, the opposite-source composition.
-- `PQCompositionProductDecomposition` (Worker 102): the proved
+- `CommonLeviCompactSplitting` and `StandardIntertwiningOppositeCharts`:
+  `SplitsAlong`, the opposite-source composition.
+- `PQCompositionProductDecomposition`: the proved
   `PQCompositionProductStatement`, Renard VII.3.5 (i). It gives
   `V₁₃ = V₁₂ V₂₃` for `Vᵢⱼ = N̄ᵢ ∩ Nⱼ` under the distance condition, for
   represented parabolics in the framework of `RepresentedParabolic`. This is
   the analogue of the third chart for the complements. It is not connected to
   dynamic radicals here.
-- `StandardInductionCanonicalScalarComposition` (Worker 200): equality of
+- `StandardInductionCanonicalScalarComposition`: equality of
   canonical scalars of two opposite pairs with a common Levi, conditional on
   eight composition identities of continued families on nonempty open sets
   of parameters. The present target concerns the families only pointwise on

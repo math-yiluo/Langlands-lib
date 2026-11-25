@@ -1,7 +1,6 @@
 # Untwisted source projection for an actual geometric piece
 
-Workers 526 and 828 implemented this route; Workers 359 and 430 supplied the
-coordinate, source-twist and normalization guidance. Its provenance is internal
+The provenance of this route is internal
 composition of the actual functors, character reflection, admissible
 fixed-space extraction and real-part formulas named below.
 

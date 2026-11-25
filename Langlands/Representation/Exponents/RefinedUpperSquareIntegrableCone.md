@@ -1,7 +1,5 @@
 # Strict blockwise cones for upper exponents of square-integrable product Levis
 
-Author: Worker 953.
-
 This module proves, in the namespace
 `Langlands.Exponents.RefinedUpperSquareIntegrableCone`, that a real part of a
 generalized eigencharacter of an upper normalized refined Jacquet module of a

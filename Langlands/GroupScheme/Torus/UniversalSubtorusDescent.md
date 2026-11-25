@@ -1,7 +1,8 @@
 # Fppf descent of universal subtori
 
-Worker 584, using the universal-property transport and fppf torus-descent
-helpers contributed by Worker 632. These are derived internal constructions.
+This module uses the universal-property transport and fppf torus-descent
+helpers (`Torus.UniversalSubtorusTransport`, `Torus.FppfRelativeTorusDescent`).
+These are derived internal constructions.
 
 A closed subgroup whose pullbacks on an fppf cover are universal subtori is a
 universal subtorus. The relative-torus property descends using

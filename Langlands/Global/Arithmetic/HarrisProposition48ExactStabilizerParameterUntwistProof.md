@@ -1,7 +1,7 @@
 # Untwisting complex-place parameters in Proposition 4.8
 
 Module `Langlands.Global.Arithmetic.HarrisProposition48ExactStabilizerParameterUntwistProof`,
-namespace `Langlands.Global.Harris`. Proof by Worker 5086 (Task 7783).
+namespace `Langlands.Global.Harris`.
 
 The theorem `Langlands.Global.Harris.proposition48ExactStabilizerParameterUntwist.{uF, uV}`
 proves the published statement
@@ -60,7 +60,7 @@ problems have the same fields and instances, definitionally).
 
 ## Relation to the source
 
-The target is an internal interface of the operator's ruling R2 for the exact-stabilizer form
+The target is an internal interface for the exact-stabilizer form
 of the induction for Harris (1998), Proposition 4.8 (see the paired Markdown of the statement
 module); it is not a statement of Harris. The proof follows the argument sketched there under
 "Why it should hold": the parameter of `S` is that of `T` twisted back by `ν⁻¹` at `v`, and the

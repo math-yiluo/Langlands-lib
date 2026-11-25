@@ -14,7 +14,7 @@ equivariant on the left under the Borel subgroup, the derivative of `Φ_j(φ)` i
 of `Φ_{j-2}(φ)`, `Φ_j(φ)` and `Φ_{j+2}(φ)` (a "tridiagonal formula").
 
 This module is internal infrastructure for the proof of
-`Langlands.Archimedean.RealCharacterPairFiltrationStatement` (Task 7067). There the formula
+`Langlands.Archimedean.RealCharacterPairFiltrationStatement`. There the formula
 gives the conditions under which a functional built from block Fourier coefficients is a
 Jacquet functional, and the propagation of vanishing Fourier coefficients along paths in the
 Borel subgroup. The formula is an elementary computation (the Lie algebra action on `K`-types

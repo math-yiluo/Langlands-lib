@@ -23,7 +23,7 @@ variable {X : Scheme.{u}} {M : X.Modules} {ι κ μ I : Type u}
   (f : ∀ j, SheafOfModules.free (R := X.ringCatSheaf.over (S j)) I ≅ M.over (S j))
   (g : ∀ k, SheafOfModules.free (R := X.ringCatSheaf.over (R k)) I ≅ M.over (R k))
 
-local instance : DecidableEq I := Classical.decEq I
+private local instance : DecidableEq I := Classical.decEq I
 
 /-- Determinant transitions of a selected subfamily are the refined transitions. -/
 lemma refineCocycle_reindex (β : κ → ι) :

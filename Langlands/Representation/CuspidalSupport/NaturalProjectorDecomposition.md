@@ -1,7 +1,7 @@
 # Natural projectors and actual subquotients
 
-Author: Worker 173. This is an internal algebraic construction for the eventual proof of
-`LeviQuasicuspidalDecompositionTheorem`. It is not a proof of that published target,
+This is an internal algebraic construction for the proof of
+`LeviQuasicuspidalDecompositionTheorem` (`LeviQuasicuspidalDecompositionProof`). It is not a proof of that published target,
 and it makes no assertion that a quasicuspidal natural projector exists.
 
 The generic lemma works over any commutative coefficient ring, with independent
@@ -21,7 +21,7 @@ inputs only; the final target must construct and prove the quasicuspidal family
 without theorem-valued assumptions. No finite length, admissibility, or closure
 of P under subquotients is used in this algebraic step.
 
-This companion module is reviewed with `PointwiseProjectorSum`, whose constructor
+This companion module goes with `PointwiseProjectorSum`, whose constructor
 and conditional decomposition theorem use this range/kernel argument. It is a
-partial algebraic construction unit and does not discharge the main task's
+partial algebraic construction unit and does not prove the
 unconditional product-Levi decomposition proposition.

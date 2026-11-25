@@ -1,6 +1,6 @@
 # Compatible-input ambient tensor-dual evaluation
 
-Worker 321. This is derived internal infrastructure for David Renard,
+This is derived internal infrastructure for David Renard,
 *Représentations des groupes réductifs p-adiques*, French version of 9 July
 2026, I.4.1–I.4.2, printed pp.22–24 / PDF28–30, especially the tensor-Hom
 argument on PDF30. The original nonunital modules and idempotent conventions
@@ -79,7 +79,7 @@ formula are exposed by `uncurry_toAddMonoidHom`, `uncurry_function` and
 `uncurry_tmul`.
 
 This pair constructs the two ambient maps. Their preservation laws and actual
-nondegenerate-part restrictions are a separate focused pair in the same task.
+nondegenerate-part restrictions are in the separate pair `NonUnitalTensorDualMapsParts`.
 No inverse identities, comparison equivalence, categorical naturality, actual
 F/P specialization, or full-source I.4.2 coefficient-convention conclusion is
 claimed. None of these is an input certificate to these constructions.

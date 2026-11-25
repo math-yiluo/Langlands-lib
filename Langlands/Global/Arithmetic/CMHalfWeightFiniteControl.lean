@@ -10,7 +10,7 @@ noncomputable section
 
 open NumberField IsDedekindDomain IsDedekindDomain.HeightOneSpectrum Filter Topology
 open scoped NumberField
-open Langlands.ClassField.Global Langlands.Global.AdelicFunctoriality
+open Langlands.ClassFieldTheory.Global Langlands.Global.AdelicFunctoriality
 
 namespace Langlands.Global.CMHalfWeight
 

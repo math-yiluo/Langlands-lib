@@ -24,7 +24,6 @@ comparison with actual torus points. These are proved imported results,
 not additional hypotheses of this theorem.
 
 This proof is a direct internal assembly of the imported actual torus
-construction. Worker 1333 authored this assembly and its norm-based torus
 construction. The independent structural existence and torus-reduction
 results needed for arbitrary connected reductive groups are separate
 obligations; this theorem alone does not prove Steinberg quasi-splitness.

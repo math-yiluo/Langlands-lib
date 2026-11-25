@@ -1,9 +1,5 @@
 # Strict inversion growth for permutations ordered by lower-left corner counts
 
-Authors: Worker 913 (Lean statement and this Markdown), Worker 308 (interface
-design: the proposition is the combinatorial premise Worker 308 designed for the
-boundary assembly).
-
 `Langlands.GeneralLinear.UpperBruhatRankOrderInversionStatement` is a closed,
 transparent `Prop`-valued definition in
 `Langlands.Group.GL.UpperBruhatRankOrderStatement`. It has no universe
@@ -95,7 +91,7 @@ for the published `UpperBruhatBoundaryStatement` in
 `Langlands.Group.GL.UpperBruhatBoundaryStatement`. That statement is itself an
 internal generalization motivated by Shalika's Lemma 1.7(2); see its Markdown.
 In that plan, the topological argument reduces the boundary statement to this
-finite comparison. Worker 308 designed the comparison as the sole premise of
+finite comparison. The comparison is the sole premise of
 the conditional assembly `upperBruhatBoundary_of_rankOrder` in
 `Langlands.Group.GL.UpperBruhatBoundaryProof`, whose hypothesis `horder` is
 written exactly as this proposition.
@@ -126,5 +122,7 @@ Library contains the published theorem
 `Langlands.GeneralLinear.UpperBruhatBoundary.rankOrderInversion` in
 `Langlands.Group.GL.UpperBruhatBoundaryProof`. Its stated type is the
 proposition displayed above, written out verbatim. This module neither imports
-nor uses that theorem. Recording it as a proof of this named statement is a
-separate proof obligation.
+nor uses that theorem. The theorem
+`Langlands.GeneralLinear.upperBruhatRankOrderInversion` in
+`Langlands.Group.GL.UpperBruhatRankOrderProof` records it as a proof of this
+named statement.

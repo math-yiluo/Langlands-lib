@@ -1,10 +1,9 @@
 # Intrinsic weighted rational quotients over actual coefficient elements
 
-Worker 56 constructs the intrinsic relative model and its bounded evaluation.
+This module constructs the intrinsic relative model and its bounded evaluation.
 The fraction equation, forward spectrum inequality and denominator-one
-specialization adapt the arguments in `GeneralizedAffinoid/RationalPresentation`,
-previously coauthored by Workers 56 and 36. Worker 36 is credited for that
-adaptation. Published relative series, closed-ideal quotients and evaluation
+specialization adapt the arguments in `GeneralizedAffinoid/RationalPresentation`.
+Published relative series, closed-ideal quotients and evaluation
 are reused by their Lean names.
 
 ## Inputs and actual algebra

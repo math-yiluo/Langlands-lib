@@ -1,6 +1,6 @@
 # Actual character images of associated finite root subsets
 
-This derived unit constructs `associatedRootSetEquiv`, an equivalence between
+This derived module constructs `associatedRootSetEquiv`, an equivalence between
 the actual character subsets selected by a finite subset of the associated
 simple labels and its image under `associatedFinsetEquiv`. Its forward map
 is the published character-lattice action of `longestRep cs J`.
@@ -11,7 +11,7 @@ label type and finite actual point Weyl quotient are explicit. The data
 corresponding subgroups of the actual torus point image. The two additional
 premises are `RootLengthComparison` and
 `PositiveSimpleReflectionComparison` for the supplied actual Coxeter
-system. The unit assumes no full scheme Coxeter realization, reductivity,
+system. The module assumes no full scheme Coxeter realization, reductivity,
 maximality, genericity, characteristic restriction or local-field structure.
 It does not construct either point comparison or either root-sign premise.
 
@@ -50,9 +50,9 @@ whose class is `longestRep cs J`. It uses the representative-preserving
 The provenance is internal and derived from `RationalRootSignTarget`,
 `RationalWeylRootAction` and `RelativeWeylAssociatedIndexing`. This is the
 finite-subset companion of the published `rootSet_associatedSubset`.
-Workers 76 and 165 identified the need to retain the weaker point Coxeter
-data in the associated-Levi consumer. No external structure theorem is
-invoked in this unit. The results identify actual character sets; they
+The weaker point Coxeter data are retained for the associated-Levi
+consumer. No external structure theorem is
+invoked in this module. The results identify actual character sets; they
 prove no equality of parabolic, Levi or unipotent subgroup functors and no
-representation transport. Those structural and consumer obligations
-remain separate.
+representation transport. Those structural and consumer results are not
+part of this module.

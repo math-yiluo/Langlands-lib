@@ -1,7 +1,5 @@
 # Reduction of domain flatness to rational-chart flatness
 
-Author: Worker 2037.
-
 This module contains supporting results for
 `PresentedAffinoidAlgebra.Domain.FlatnessStatement`. It does not prove that
 statement by itself. It shows that the statement follows once the structural

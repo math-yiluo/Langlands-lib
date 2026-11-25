@@ -1,7 +1,5 @@
 # Proof: the rational Bruhat decomposition
 
-Author: Worker 3784 (formerly Worker 24).
-
 This module proves the published statement
 `Langlands.GroupScheme.RationalBruhatStatement` of
 [`Statement`](Statement.md) at an arbitrary universe `u`, as the theorem

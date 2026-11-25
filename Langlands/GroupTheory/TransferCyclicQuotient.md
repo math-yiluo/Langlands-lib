@@ -1,9 +1,7 @@
 # The transfer to the kernel of a degree map modulo `f`
 
-Author: Worker 5137.
-
 This helper module of the proof
-`Langlands.ClassField.Global.RelativeWeilGroup.presentedDeterminantMultipleAssociation`
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.presentedDeterminantMultipleAssociation`
 computes a group-theoretic transfer in the situation of an unramified place. It is
 a standard fact about the transfer (see for example Serre, *Local Fields*, VII §8, or
 any treatment of the transfer through cycle decompositions); the Lean proof is

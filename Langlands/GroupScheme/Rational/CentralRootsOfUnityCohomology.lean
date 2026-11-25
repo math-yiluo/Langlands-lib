@@ -1,6 +1,6 @@
 import Langlands.GroupScheme.SimplyConnected.LocalCocycleVanishingGaloisReduction
-import Langlands.ClassField.Global.ReciprocityTower
-import Langlands.ClassField.Global.H1VanishingProof
+import Langlands.ClassFieldTheory.Global.ReciprocityTower
+import Langlands.ClassFieldTheory.Global.H1VanishingProof
 import Langlands.ClassFieldTheory.Local.LocalInvariantFamilyRelativeImagesProof
 import Langlands.ClassFieldTheory.Local.UnramifiedH2Proof
 
@@ -92,7 +92,7 @@ theorem rootsOfUnityPrimitiveAfterRefinement_of_units [CharZero F]
       div_self', div_one]
     rfl
 
-open Langlands.ClassFieldTheory.Local Langlands.ClassField.Global
+open Langlands.ClassFieldTheory.Local Langlands.ClassFieldTheory.Global
 open NumberField IsDedekindDomain IsDedekindDomain.HeightOneSpectrum
 open scoped NumberField Langlands.Global.AdelicFunctoriality.FiniteExtension
 

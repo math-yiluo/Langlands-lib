@@ -1,7 +1,5 @@
 # Nested standard subgroup transport
 
-Author: Worker 12.
-
 This internal helper supports the transport of cuspidality for associated
 standard Levis. It develops the cocharacter argument directly from the published
 definitions, without a representation theoretic classification input.

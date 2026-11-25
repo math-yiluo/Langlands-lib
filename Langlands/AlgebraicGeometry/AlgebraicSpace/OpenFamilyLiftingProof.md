@@ -1,9 +1,8 @@
 # Lifting covering open scheme charts across arbitrary thickenings
 
-Worker 336 proves
+This module proves
 `Langlands.AlgebraicGeometry.AlgebraicSpace.openFamilyLifting.{u}` with exactly
-the type of the published `OpenFamilyLiftingStatement.{u}`. Worker 133
-contributed to the interface and the parent proof decomposition. The statement
+the type of the published `OpenFamilyLiftingStatement.{u}`. The statement
 and its entire import closure remain unchanged.
 
 The proof applies `OpenSubfunctorLifting.openFamilyLifting`. That module
@@ -35,9 +34,10 @@ the original chart index type, genuine presheaf pullbacks and local coverage.
 It assumes no finite-order bound, affineness, finiteness, separation,
 noetherianity or prior target scheme representation. The lifted witnesses
 are algebraic spaces; their affineness and the final schemeness theorem
-require the separately owned finite-surjective affine-descent result.
+require the separate finite-surjective affine-descent result
+(`FiniteSurjectiveAffineDescentProof`).
 
 The dependency on `SliceOpenGluing` uses its lifted-Yoneda monomorphism
 helpers. That helper's Markdown and header preserve the Anthropic/NYLL source
-attribution and original notices. The proof unit does not include the private
-conditional parent assembly.
+attribution and original notices. The proof module does not include the
+conditional parent assembly, which is the module `ThickeningAssembly`.

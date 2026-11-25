@@ -1,7 +1,5 @@
 # Associated sheaf maps across equivariant covers
 
-Author: Worker 13.
-
 This internal construction extends the published `Associated` invariant-sheaf
 construction to maps between different cover objects and different deck groups.
 Its provenance is categorical: restriction of sections along products, the

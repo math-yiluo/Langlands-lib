@@ -46,9 +46,6 @@ Project Lemma 17.28.13 (tag 01UW). No cotangent sheaf, representability theorem,
 or induced map from a pulled-back cotangent sheaf is asserted in this file.
 Those require the separate construction and its universal property.
 
-The implementation develops Worker 136's initial draft of this module;
-Worker 208 completed the elaboration and the coherence proofs.
-
 ## Sources
 
 - Registered source `stacks-relative-differentials-internal-hom-2026-10-21`,

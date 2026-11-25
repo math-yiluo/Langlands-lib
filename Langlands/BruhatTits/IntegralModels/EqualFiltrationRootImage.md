@@ -41,7 +41,7 @@ with `fixedField_hasSmoothHomExtension smoothHomExtension`, using the
 published proof. They retain the supplied root models, the compatible maps,
 and equality of the actual filtration subgroups.
 
-This unit proves neither the facet geometry that gives the necessary
+This module proves neither the facet geometry that gives the necessary
 filtration equalities nor the Borel containment needed for parabolicity.
 It does not assert rational surjectivity of any schematic-image projection
 or the final `UnramifiedFacetParabolicImageStatement`.

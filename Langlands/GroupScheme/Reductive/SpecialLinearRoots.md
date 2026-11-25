@@ -1,8 +1,7 @@
 # Maximality of the diagonal torus of the special linear group, and its roots
 
 Helper module for the proof of
-`Langlands.GroupScheme.SpecialLinearSimplyConnectedPinningStatement`. Author: Worker 61
-(Task 5703). It proves that the diagonal torus `diagonalTorus n k` of
+`Langlands.GroupScheme.SpecialLinearSimplyConnectedPinningStatement`. It proves that the diagonal torus `diagonalTorus n k` of
 `Reductive.SpecialLinearTorus` is a maximal torus of `SL_{n+1}` over a field `k`. It also
 determines the roots of `SL_{n+1}` with respect to this torus. All declarations are in
 namespace `Langlands.GroupScheme.SpecialLinear.FinSucc`. Let `𝔻` be the split torus

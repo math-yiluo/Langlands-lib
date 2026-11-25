@@ -59,6 +59,6 @@ def RationalSummandBlockCenterStatement : Prop :=
               ∃ e : CatCenter (RationalInertiaBlock G (rationalInertiaBaseLift G π)) ≃+*
                   Subalgebra.center ℂ (End I),
                 ∀ z : CatCenter (RationalInertiaBlock G (rationalInertiaBaseLift G π)),
-                  (e z : End I) = (z.app ⟨I, hmem⟩).hom
+                  (e z : End I) = End.of (z.app ⟨I, hmem⟩).hom
 
 end Langlands.CuspidalSupport

@@ -1,7 +1,5 @@
 # Recognition of arbitrary original recognized subsets in a selected atlas
 
-Author: Worker 36.
-
 Every recognized subset of an original local-domain saturation has a
 constructed recognized presentation in the saturation of a locally
 refining selected atlas. The construction keeps its literal ambient locus
@@ -123,10 +121,11 @@ The field, ambient space and original atlas indices have independent
 universes. There is no added global Hausdorffness, reducedness,
 nonzero-algebra or nonempty-cover premise.
 
-This unit constructs recognition and algebra/chart recovery in the
-original-to-selected direction. Recovery of all bounded restrictions,
-functorial naturality, reverse recognition and the resulting category
-comparison remain subsequent work. Arbitrary equivalent-net invariance,
-maximal-atlas uniqueness, the analytic morphism comparison, etale and
-equivariant sites, and the Harris specialization remain obligations of
-the host task.
+This module constructs recognition and algebra/chart recovery in the
+original-to-selected direction. Recovery of all bounded restrictions and
+functorial naturality are proved in `SubatlasRecognizedNaturality`,
+reverse recognition in `SubatlasReverseRecognition`, and the resulting
+category comparison in `SubatlasRecognitionEquivalence`. Arbitrary
+equivalent-net invariance, maximal-atlas uniqueness, the analytic morphism
+comparison, etale and equivariant sites, and the Harris specialization are
+not treated in this module.

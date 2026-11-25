@@ -1,6 +1,7 @@
 # Actual linear descent datum from original lifted point charts
 
-This internal Task 7200 construction compares actual module overlap maps by
+This internal construction for the finite vector-bundle filtrations of
+supplied relative radicals compares actual module overlap maps by
 their original point action after every pullback, using the prescribed
 canonical module composition comparisons. Such compatibility is equivalent to
 the normalized fixed-lift point action. Actual disjoint free presentations give

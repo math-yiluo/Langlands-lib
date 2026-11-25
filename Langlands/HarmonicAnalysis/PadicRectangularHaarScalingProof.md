@@ -1,7 +1,5 @@
 # Determinant scaling of rectangular additive Haar measure
 
-Author: Worker 110.
-
 The theorem
 `Langlands.HarmonicAnalysis.padicRectangularHaarScalingStatement`
 proves exactly the published proposition

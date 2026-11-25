@@ -2,8 +2,8 @@
 
 Module `Langlands.Global.AdelicEisensteinPointwiseContinuationStatement` states
 `Langlands.Global.EisensteinPointwiseContinuationStatement` as a proposition
-definition. It supplies no proof. Worker 86 wrote it for Task 5503 (the
-cocycle relation of intertwining operators). It is one of the four premises of
+definition. It supplies no proof. It is stated for the cocycle relation of
+intertwining operators (`IntertwiningCocycleStatement`). It is one of the four premises of
 the reduction in `Langlands.Global.AdelicIntertwiningCocycleReduction`.
 
 ## Source
@@ -111,4 +111,6 @@ all forms spanning the values of the intertwining operators into `Q''`.
 The automorphy of the continuation and the Fréchet-space formulation are
 stated in `Langlands.Global.EisensteinMeromorphicContinuationStatement`. The
 generic injectivity (8.4) is stated in
-`Langlands.Global.EisensteinGenericInjectivityStatement`.
+`Langlands.Global.EisensteinGenericInjectivityStatement` and proved as
+`Langlands.Global.eisensteinGenericInjectivity` in the module
+`Langlands.Global.AdelicEisensteinGenericInjectivityProof`.

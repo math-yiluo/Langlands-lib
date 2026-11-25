@@ -51,9 +51,10 @@ and `W`. The proof first removes the scalar correction, then applies
 its unchanged ambient-element map. That theorem uses regular Haar
 uniqueness and the shared mass-one set, so no scalar remains.
 
-No quotient measure is selected, replaced or rescaled in this unit.
+No quotient measure is selected, replaced or rescaled in this module.
 Right invariance, compatible Weil measures for the actual source scale,
 the local compact-open product geometries, reductive chart realization,
 convergence, integral representability and rational continuation remain
-application obligations. This unit does not assert a standard-integral
-composition theorem or close a whole-task Plancherel condition.
+application obligations. This module does not assert a standard-integral
+composition theorem or establish a top-level requirement of the full
+Plancherel formula.

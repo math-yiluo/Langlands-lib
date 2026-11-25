@@ -1,7 +1,5 @@
 # Proof that the dynamic cell of a smooth connected solvable group is the whole group
 
-Worker 1407 wrote this proof for Task 7830.
-
 `Langlands.GroupScheme.solvableDynamicCell` proves the unchanged published
 proposition `Langlands.GroupScheme.SolvableDynamicCellStatement.{u}` (from
 [`Dynamic.SolvableCellStatement`](SolvableCellStatement.md)) for every

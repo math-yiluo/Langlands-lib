@@ -212,7 +212,7 @@ variable {F : Type uF} [Field F] [TopologicalSpace F] [IsTopologicalRing F]
   {V : Type uV} [AddCommGroup V] [Module ℂ V]
   {W : Type uW} [AddCommGroup W] [Module ℂ W]
 
-/-- A type-transport wrapper for the owner's actual unequal-rank integral. -/
+/-- A type-transport wrapper for the actual unequal-rank integral `unequalRankIntegral`. -/
 def unequalRankIntegralAt (j k : ℕ) (hr : r = n + (j + k + 1))
     (ψ : UnitaryAdditiveCharacter F) (abv : AbsoluteValue F ℝ)
     (μ : Measure (LeftUnipotentQuotient n F))

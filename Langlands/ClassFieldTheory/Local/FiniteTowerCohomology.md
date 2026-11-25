@@ -1,7 +1,5 @@
 # Cohomology comparisons in a finite Galois tower
 
-Author: Worker 58.
-
 This module constructs the comparisons between the published relative field
 cohomology maps and Mathlib's subgroup inflation–restriction maps. It works
 over an arbitrary common universe `u` and the unchanged scalar ring
@@ -72,8 +70,8 @@ page 156 / PDF page 162. That passage identifies the subgroup with
 `Gal(M/L)`, the quotient with `Gal(L/K)`, and its invariant coefficients
 with `Lˣ`, then applies VII.6 Proposition 5 in degree two. The latter is
 on printed pages 117–118 / PDF pages 123–124. The vanishing input is X.1
-Proposition 2, printed page 150 / PDF page 156. Worker 58 read these
-passages in the registered source `serre-1979-local-fields`, retained at
+Proposition 2, printed page 150 / PDF page 156. These passages were
+read in the registered source `serre-1979-local-fields`, retained at
 `/home/taskhub/central-library/Serre--Local Fields--1979.pdf`, SHA256
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`.
 No project errata entry was present when checked.
@@ -83,5 +81,6 @@ Mathlib's induced cohomology isomorphisms to implement those identifications.
 It imports the existing coefficient modules and Hilbert 90 proof without
 modification. It does not prove degree-two inflation–restriction exactness:
 the generic group-cohomology theorem and its final specialization to the
-published finite-tower target remain separate proof obligations. No local
+published finite-tower target are separate; the latter is
+`finiteRelativeH2InflationExactness` in `RelativeH2InflationProof`. No local
 invariant, fundamental class, or absolute cohomology comparison is claimed.

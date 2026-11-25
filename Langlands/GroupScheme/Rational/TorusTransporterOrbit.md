@@ -27,7 +27,8 @@ structure asserted; it is not identified with points of a sheaf quotient.
 The derivation is internal: category composition and the published actual inner
 isomorphism formulas give the transporter difference, and the universal normalizer
 condition is equivalent to stabilization of the full subgroup functor. Mathlib's
-general orbit-stabilizer theorem then applies. Worker 118 identified this exact
-interface for apartment indexing; the algebraic construction retains its original
+general orbit-stabilizer theorem then applies. This is the interface used for
+apartment indexing; the algebraic construction retains its original
 objects. Existence or conjugacy of maximal split tori, the cross-torus root/weight
-comparison, and affine apartment/valuation transport are separate obligations.
+comparison, and affine apartment/valuation transport are separate results, outside
+this module.

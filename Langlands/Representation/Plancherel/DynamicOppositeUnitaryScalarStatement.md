@@ -1,6 +1,6 @@
 # Nonvanishing of `j_P` and regularity and nonnegativity of `j_P⁻¹` at unitary points (target)
 
-Worker 5. `Langlands.Plancherel.ConditionalDynamicOppositeUnitaryScalarStatement`
+`Langlands.Plancherel.ConditionalDynamicOppositeUnitaryScalarStatement`
 is a Prop-valued target. It says that the canonical scalar `j_P` of
 `J_{P|P̄} J_{P̄|P}` for a square-integrable inducing representation is
 nonzero, and that `j_P⁻¹` is regular with a nonnegative real value at every
@@ -189,7 +189,9 @@ Lemma V.2.1 for the density `μ`.
 
 ## Not proved here
 
-The target itself is not proved. In particular, this module proves none of
+The target itself is not proved here; its proof is
+`conditionalDynamicOppositeUnitaryScalar` (module
+`DynamicOppositeUnitaryScalarProof`). In particular, this module proves none of
 IV.3(1)–(6), Lemma V.2.1, the adjunction of the intertwining integrals,
 or the existence of the continuations and of an irreducibility locus.
 

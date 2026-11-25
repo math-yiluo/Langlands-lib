@@ -1,8 +1,8 @@
 # Assembly of multiplicative-type monomorphism spreading
 
-Worker 878, using the global fibre criterion of Worker 677, relative
-multiplicative-type geometry of Worker 879, and the finite-subgroup reduction
-of Workers 877 and 887.
+This module uses the global fibre criterion of `FiberwiseMonomorphism`, the
+relative multiplicative-type geometry of `RelativeMultiplicativeTypeGeometry`,
+and the finite-subgroup reduction of `FiniteSubgroupSpreadingReduction`.
 
 `multiplicativeTypeMonomorphismNeighbourhoodOfFiniteSubgroupSpreading`
 constructs a `MonomorphismNeighbourhood f s` with an open set containing
@@ -11,7 +11,7 @@ Its assumptions are exactly those of the local assertion of
 `MultiplicativeTypeMonomorphismSpreadingStatement`, with the
 finite-subgroup spreading proposition supplied as an additional premise.
 Relative multiplicative type supplies the affine and locally finitely
-presented source needed by the published kernel reduction.
+presented source needed by the kernel reduction.
 
 `multiplicativeType_mono_of_residueField_fibres` proves the global assertion
 6.7 under its original hypotheses, without separatedness of the target.
@@ -26,14 +26,16 @@ proves both clauses of `MultiplicativeTypeMonomorphismSpreadingStatement` from
 clause it extracts the open set and the two certificates from the chosen
 neighbourhood. For the global clause it uses the preceding
 fibre criterion. All schemes, group schemes, homomorphisms and base
-points retain the quantifiers of the imported target in every universe.
+points retain the quantifiers of the imported statement in every universe.
 
 `multiplicativeType_monomorphismSpreading_of_uniformExponent` composes this
-result with the published
+result with
 `FiniteSubgroupSpreadingReduction.finiteSubgroupSpreading_of_uniformExponent`.
 Its sole mathematical premise is
-`QuasiFiniteCommutativeUniformExponentStatement`, which remains to be proved
-for this route to give the unconditional local assertion.
+`QuasiFiniteCommutativeUniformExponentStatement`, which the Library proves as
+`quasiFiniteCommutativeUniformExponent` in
+`QuasiFiniteCommutativeUniformExponentProof`; with it, this route gives the
+unconditional local assertion.
 
 These constructions and implications are derived internal composites of
 the imported APIs. The kernel and finite-subgroup reductions explain the

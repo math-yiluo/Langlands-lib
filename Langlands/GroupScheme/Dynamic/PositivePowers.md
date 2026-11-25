@@ -1,6 +1,6 @@
 # Positive powers preserve actual contracting subgroups
 
-This internal derived extension by Worker 1335 imports
+This internal derived extension imports
 `Dynamic.PositiveScaling` and adds positive power invariance for the actual
 identity-limit, or contracting, subgroup functor.
 

@@ -122,7 +122,7 @@ Both are fixed before any shift, point or compact set.
 The second recurrence `E₂` is used only for the growth estimate. It is not
 the `E` of the conclusion.
 
-The check `lean_check` reported 0 errors and 0 warnings for this module. The
+The module compiled with 0 errors and 0 warnings. Declaration
 inspection reported `finiteTranslationOrbit` as a theorem with level parameter
 `uG` and only the axioms `propext`, `Classical.choice` and `Quot.sound`.
 
@@ -151,12 +151,11 @@ the recurrence estimate to `t` and `t⁻¹` separately.
 
 The proof does not decompose `η` into characters or character polynomials.
 It does not establish Mellin convergence, rational continuation or
-denominator statements. These remain obligations of the parent one-variable
+denominator statements. These remain obligations of the one-variable
 Mellin proof.
 
 ## Attribution
 
-Worker 277 wrote this module. It reuses no other worker's draft or Library
-proof code. It imports only the statement module and Mathlib
+This module reuses no Library proof code. It imports only the statement module and Mathlib
 (`Mathlib.LinearAlgebra.Charpoly.Basic` and
 `Mathlib.Topology.Algebra.Group.Basic`).

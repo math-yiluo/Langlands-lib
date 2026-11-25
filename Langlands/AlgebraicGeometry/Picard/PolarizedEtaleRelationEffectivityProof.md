@@ -1,7 +1,6 @@
 # Effective polarized scheme descent for a cartesian étale relation: proof
 
 Module `Langlands.AlgebraicGeometry.Picard.PolarizedEtaleRelationEffectivityProof`.
-Worker 5217, Task 7409.
 
 `Langlands.AlgebraicGeometry.Picard.polarizedEtaleRelationEffectivity` proves exactly the
 published proposition

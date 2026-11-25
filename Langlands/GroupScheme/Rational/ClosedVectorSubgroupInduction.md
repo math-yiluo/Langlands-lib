@@ -40,6 +40,6 @@ closed immersion into the affine standard vector group.
 
 The provenance is internal: these results compose the published actual
 subgroup-intersection, base-change and range interfaces with natural-number
-induction. This unit retains the lowering rule as an explicit input. It does
+induction. This module retains the lowering rule as an explicit input. It does
 not construct that rule or assert the unconditional vector-factor theorem or
 affine-line constancy of a complement.

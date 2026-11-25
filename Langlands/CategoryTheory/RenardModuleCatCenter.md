@@ -42,9 +42,8 @@ were searched for center/category entries and their appendix corrections on
 PDF18–19 were read. No correction to this example was found; the 2026 edition
 governs the present result.
 
-Worker 490 implemented this proof. The lifted-regular-module proof lead was
-recorded in Worker 6's task and Worker 713's published statement documentation;
-both are credited for that lead. No complete prior proof draft was reused.
+The lifted-regular-module proof route is the one recorded in the published
+statement documentation (`RenardModuleCatCenterStatements.md`).
 
 ## Implemented proof
 
@@ -132,4 +131,4 @@ proved in this module.
 The result makes no claim for module carriers in a universe too small to
 contain a lifted copy of `R`, or for compatibility with ring homomorphisms.
 The nonunital idempotented-ring center in I.1.7, categorical decompositions
-in A.IX, and later Bernstein-center assertions remain separate obligations.
+in A.IX, and later Bernstein-center assertions are separate obligations.

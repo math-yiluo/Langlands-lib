@@ -66,8 +66,8 @@ variable (iA : D →ₐ[ℚ] Rationalization.End A) (iB : D →ₐ[ℚ] Rational
 
 /-- Intertwining extends to the constructed tensor-product algebra action. -/
 theorem rationalHomMap_primeToFiniteAdeleAlgebraAction (f : Rationalization.Hom A B)
-    (hf : ∀ d, Rationalization.comp A A B (iA d) f =
-      Rationalization.comp A B B f (iB d))
+    (hf : ∀ d, Rationalization.comp A A B (iA d).asHom f =
+      Rationalization.comp A B B f (iB d).asHom)
     (a : D ⊗[ℚ] Global.PrimeToFiniteAdeles m) (x : RationalAway A T m) :
     rationalHomMap T (fun n => Nat.Coprime n m) f (primeToFiniteAdeleAlgebraAction A T hAway iA a x) =
       primeToFiniteAdeleAlgebraAction B T hAway iB a (rationalHomMap T (fun n => Nat.Coprime n m) f x) := by
@@ -80,8 +80,8 @@ theorem rationalHomMap_primeToFiniteAdeleAlgebraAction (f : Rationalization.Hom 
 
 /-- An intertwining rational homomorphism is linear over D tensored with the away adeles. -/
 def primeToFiniteAdeleAlgebraHomMap (f : Rationalization.Hom A B)
-    (hf : ∀ d, Rationalization.comp A A B (iA d) f =
-      Rationalization.comp A B B f (iB d)) :
+    (hf : ∀ d, Rationalization.comp A A B (iA d).asHom f =
+      Rationalization.comp A B B f (iB d).asHom) :
     let := primeToFiniteAdeleAlgebraModule A T hAway iA
     let := primeToFiniteAdeleAlgebraModule B T hAway iB
     RationalAway A T m →ₗ[D ⊗[ℚ] Global.PrimeToFiniteAdeles m] RationalAway B T m := by
@@ -91,14 +91,14 @@ def primeToFiniteAdeleAlgebraHomMap (f : Rationalization.Hom A B)
     map_smul' := rationalHomMap_primeToFiniteAdeleAlgebraAction T hAway iA iB f hf }
 
 @[simp] theorem primeToFiniteAdeleAlgebraHomMap_apply (f : Rationalization.Hom A B)
-    (hf : ∀ d, Rationalization.comp A A B (iA d) f =
-      Rationalization.comp A B B f (iB d)) (x : RationalAway A T m) :
+    (hf : ∀ d, Rationalization.comp A A B (iA d).asHom f =
+      Rationalization.comp A B B f (iB d).asHom) (x : RationalAway A T m) :
     primeToFiniteAdeleAlgebraHomMap T hAway iA iB f hf x = rationalHomMap T (fun n => Nat.Coprime n m) f x := rfl
 
 /-- An invertible intertwining rational homomorphism gives tensor-algebra transport. -/
 def primeToFiniteAdeleAlgebraIso (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d)) :
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom) :
     let := primeToFiniteAdeleAlgebraModule A T hAway iA
     let := primeToFiniteAdeleAlgebraModule B T hAway iB
     RationalAway A T m ≃ₗ[D ⊗[ℚ] Global.PrimeToFiniteAdeles m] RationalAway B T m := by
@@ -110,8 +110,8 @@ def primeToFiniteAdeleAlgebraIso (e : Rationalization.of A ≅ Rationalization.o
 
 @[simp] theorem primeToFiniteAdeleAlgebraIso_apply
     (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d)) (x : RationalAway A T m) :
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom) (x : RationalAway A T m) :
     primeToFiniteAdeleAlgebraIso T hAway iA iB e he x = rationalHomMap T (fun n => Nat.Coprime n m) e.hom x := rfl
 
 @[simp] theorem primeToFiniteAdeleAlgebraHomMap_identity :
@@ -125,10 +125,10 @@ def primeToFiniteAdeleAlgebraIso (e : Rationalization.of A ≅ Rationalization.o
 
 theorem primeToFiniteAdeleAlgebraHomMap_comp (iC : D →ₐ[ℚ] Rationalization.End C)
     (f : Rationalization.Hom A B) (g : Rationalization.Hom B C)
-    (hf : ∀ d, Rationalization.comp A A B (iA d) f =
-      Rationalization.comp A B B f (iB d))
-    (hg : ∀ d, Rationalization.comp B B C (iB d) g =
-      Rationalization.comp B C C g (iC d)) :
+    (hf : ∀ d, Rationalization.comp A A B (iA d).asHom f =
+      Rationalization.comp A B B f (iB d).asHom)
+    (hg : ∀ d, Rationalization.comp B B C (iB d).asHom g =
+      Rationalization.comp B C C g (iC d).asHom) :
     let := primeToFiniteAdeleAlgebraModule A T hAway iA
     let := primeToFiniteAdeleAlgebraModule B T hAway iB
     let := primeToFiniteAdeleAlgebraModule C T hAway iC
@@ -155,8 +155,8 @@ theorem primeToFiniteAdeleAlgebraHomMap_comp (iC : D →ₐ[ℚ] Rationalization
 
 @[simp] theorem primeToFiniteAdeleAlgebraIso_symm
     (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d)) :
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom) :
     let := primeToFiniteAdeleAlgebraModule A T hAway iA
     let := primeToFiniteAdeleAlgebraModule B T hAway iB
     (primeToFiniteAdeleAlgebraIso T hAway iA iB e he).symm =
@@ -169,10 +169,10 @@ theorem primeToFiniteAdeleAlgebraHomMap_comp (iC : D →ₐ[ℚ] Rationalization
 theorem primeToFiniteAdeleAlgebraIso_trans (iC : D →ₐ[ℚ] Rationalization.End C)
     (e : Rationalization.of A ≅ Rationalization.of B)
     (f : Rationalization.of B ≅ Rationalization.of C)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
-    (hf : ∀ d, Rationalization.comp B B C (iB d) f.hom =
-      Rationalization.comp B C C f.hom (iC d)) :
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
+    (hf : ∀ d, Rationalization.comp B B C (iB d).asHom f.hom =
+      Rationalization.comp B C C f.hom (iC d).asHom) :
     let := primeToFiniteAdeleAlgebraModule A T hAway iA
     let := primeToFiniteAdeleAlgebraModule B T hAway iB
     let := primeToFiniteAdeleAlgebraModule C T hAway iC

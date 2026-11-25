@@ -1,6 +1,6 @@
 # Generation by corank-one integrals of `π × I(x)` for norm-ordered `x`
 
-Author: Worker 8. This module defines one proposition,
+This module defines one proposition,
 `Langlands.Conductor.OrderedUnramifiedCorankOneGenerationStatement`
 (universes `uF`, `uV`). It is a statement only: nothing here proves it.
 

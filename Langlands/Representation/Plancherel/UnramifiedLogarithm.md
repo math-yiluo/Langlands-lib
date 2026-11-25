@@ -1,7 +1,5 @@
 # Normalized logarithms of norm characters
 
-Author: Worker 200.
-
 Waldspurger, *La formule de Plancherel pour les groupes p-adiques (d’après
 Harish-Chandra)*, I.1, printed pp.239–240 (PDF pp.5–6), defines the common
 norm kernel and the unramified characters, then fixes the sign of the map
@@ -86,10 +84,10 @@ split-center character lattice. This file uses the additive real dual of `L`;
 comparison with that target requires the actual restriction and scalar-extension
 identifications and is not asserted here.
 
-This contribution closes the generic numerical and homomorphism construction
+This module provides the generic numerical and homomorphism construction
 only. It does not prove openness or closedness of the common kernel, containment
 of compact or derived subgroups, an integral full-rank image lattice, finite
 index of the split-center image, finiteness of the resulting quotient, a complex
 or unitary character torus, or any Haar normalization. It supplies no
-rational-point topology and makes no claim that the whole retained
-Renard V.2.3–V.2.6 obligation has been discharged.
+rational-point topology and makes no claim to establish the whole of
+Renard V.2.3–V.2.6.

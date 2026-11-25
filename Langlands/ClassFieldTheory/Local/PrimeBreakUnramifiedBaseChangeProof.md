@@ -1,7 +1,5 @@
 # Preservation of the prime ramification break under unramified base change
 
-Author: Worker 32.
-
 The theorem
 `Langlands.LocalClassField.primeBreakUnramifiedBaseChange` proves the exact
 published proposition
@@ -94,16 +92,12 @@ module imports the proved
 `Langlands.ClassFieldTheory.Local.TotalUnramifiedCompositumProof`.
 Neither the target pair nor its import closure is edited.
 
-Worker 32 wrote the support and this final proof. Workers 27 and 231
-authored the target statement and its source audit. Worker 231 proved the
-uniformizer criterion, whose statement was authored by Worker 507 with
-Worker 32's formulation and derivation. The criterion uses Worker 40's
-actual integer-ring ramification groups, Worker 90's relative integer and
-residue maps, Worker 96's uniformizer coordinates, and Worker 27's
-normalization results reused by Worker 12. These are imported results,
-not copied drafts or code in this module. Worker 159 authored the
-finite-compositum proof, with Worker 27 credited there for the suggested
-arithmetic route. That arithmetic is consumed through its published theorem
+The uniformizer criterion uses the Library's
+actual integer-ring ramification groups, relative integer and
+residue maps, uniformizer coordinates, and
+normalization results. These are imported results,
+not copied code in this module. The
+finite-compositum arithmetic is consumed through its published theorem
 and the previously published support projections.
 
 The original mathematical background is Jean-Pierre Serre, *Local Fields*,
@@ -117,7 +111,7 @@ and identifies the ramification groups in the Galois case. Chapter IV, §1,
 Lemma 1 and Proposition 1, printed pp.61–62 (PDF pp.68–69), provides the
 all-integer lower-group congruence; Chapter IV, §2, Proposition 5,
 printed p.66 (PDF p.73), provides the inertia-element uniformizer test.
-Worker 32 read these passages during the prerequisite development.
+These passages were read during the prerequisite development.
 
 The registered author errata `serre-book-corrections-2019` is
 `/home/taskhub/pilot/literature/Jean-Pierre Serre — Corrections to J-P. Serre's books (2019).pdf`,
@@ -133,8 +127,7 @@ representatives and induction on ideal powers. The final top/bottom
 argument is a specialization of the filtration comparison, and does not
 use a norm calculation, reciprocity, or existence of the supplied break.
 
-Development compilation and declaration inspection succeeded in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` with no errors or warnings.
+Development compilation and declaration inspection succeeded
+with no errors or warnings.
 The theorem has universe parameter `u` and uses only `propext`,
-`Classical.choice`, and `Quot.sound`. Independent semantic review and the
-submission's Lake and exact-target checks are required for acceptance.
+`Classical.choice`, and `Quot.sound`.

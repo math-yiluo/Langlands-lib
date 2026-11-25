@@ -1,7 +1,7 @@
 # Compact-open detection of a finite family of types
 
-Worker 196 authored this internal statement from the finite-family interface
-agreed with Worker 166 for the cuspidal constituent argument.
+This internal statement is the finite-family interface for the cuspidal
+constituent argument.
 
 `Langlands.FiniteTypeCompactOpenDetectionStatement` quantifies an arbitrary
 commutative coefficient ring R, group G, representation carrier V, second

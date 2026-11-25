@@ -1,6 +1,6 @@
 # The connected-fibre locus and structural limit descent
 
-This internally derived supporting unit proves descent of geometrically
+This internally derived supporting module proves descent of geometrically
 connected nonempty structural fibres along arbitrary cofiltered limits of
 affine schemes. The space at the specified stage is quasi-separated and has
 a quasi-compact locally finitely presented etale surjective atlas.
@@ -41,5 +41,6 @@ index categories in the declared universe.
 The provenance is composition of the cited Library constructions and proofs;
 no additional literature assertion or general morphism limit-descent premise
 is used. The conclusion concerns structural morphisms of base-changed spaces.
-The full eight-property statement and descent for an arbitrary morphism remain
-obligations of the host task.
+The full eight-property statement `SpaceLimitPropertyDescentStatement` and
+descent for an arbitrary morphism are not proved here; the statement is proved
+in `SpaceLimitPropertyDescentProof`.

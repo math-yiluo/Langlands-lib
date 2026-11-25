@@ -1,7 +1,5 @@
 # Inner cuspidal support for an upper Jacquet module
 
-Author: Worker 125.
-
 This internal adapter changes upper refined Jacquet coordinates to opposite
 coordinates by reversing the fine blocks inside each coarse block. Its maps
 are the published actual quotient equivalences, including normalization.

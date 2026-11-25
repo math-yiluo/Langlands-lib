@@ -1,7 +1,5 @@
 # Henniart's route with Tate's conductor formula reduced to rank one
 
-Worker 4803 wrote this module (Task 4803).
-
 ## Statement
 
 `Henniart.Extension.SupercuspidalCorrespondenceHenniartRankOneInputsStatement.{uK, uW, uV}`
@@ -29,5 +27,8 @@ conductor formula for each `K` is `SpectralConductor.spectralConductorRankOneRed
 applied to premises 4 and 5 at `K`.
 
 Compared with the six-input entry, normalized reciprocity existence is discharged, and
-Tate's spectral conductor formula is replaced by premises 4 and 5. Task 5737 proves
-premise 4. The ingredients of premise 5 are Tasks 5738 and 5739.
+Tate's spectral conductor formula is replaced by premises 4 and 5. Premise 4 is proved as
+`Ramification.Padic.finiteInertiaConductorRefinement` (module
+`InertiaConductorRefinementProof`). The ingredients of premise 5 are
+`LocalClassField.finiteCharacterConductorTheorems` (module `FiniteConductorProof`) and
+`Ramification.Padic.finiteGaloisConductorInflation` (module `InflationProof`).

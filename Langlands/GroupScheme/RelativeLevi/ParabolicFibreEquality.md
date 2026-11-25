@@ -1,7 +1,5 @@
 # Equality of relative parabolics from residue fibres
 
-Worker 653.
-
 This is a derived, internal reduction for the uniqueness step in the proof of
 Conrad, *Reductive group schemes* (2014), Proposition 5.2.12, p.158. It supplies
 supporting lemmas and does not prove `RelativeParabolicLieContainmentStatement`.

@@ -1,7 +1,7 @@
 /-
 Copyright 2026 Anthropic, PBC.
 Released under the Apache License 2.0; see licenses/Anthropic-FLT/LICENSE.
-Adapted by Worker 344 from Definitions/Def_CategoryTheory_OverTotalPresheaf.lean
+Adapted from Definitions/Def_CategoryTheory_OverTotalPresheaf.lean
 at 6e837e75355538c7f80bab5b956861e86c4eacc2.
 Changes: use focused imports, type the underlying over-category equalities
 explicitly, and use explicit-transparency rewrites. See the paired Markdown.

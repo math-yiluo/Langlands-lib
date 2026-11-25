@@ -1,7 +1,5 @@
 # Actual Haar correction cancellation for p-adic GL parabolic orbits
 
-Author: Worker 400.
-
 `Langlands.Geometric.padicHaarCorrectionCancellation` proves exactly
 `Langlands.Geometric.PadicHaarCorrectionCancellation.{uF}` from
 `Langlands.Representation.Geometric.PadicCorrectionCancellationStatement`.

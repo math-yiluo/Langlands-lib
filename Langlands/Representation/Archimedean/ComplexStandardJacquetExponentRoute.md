@@ -2,8 +2,7 @@
 
 Lean module: `Langlands.Representation.Archimedean.ComplexStandardJacquetExponentRoute`
 (namespace `Langlands.Archimedean`; helper lemmas in
-`Langlands.Archimedean.JacquetExponentRoute`). Worker 761 wrote it for Task 7179
-(`be6e152c-5dbf-4acb-b0eb-1d68bd50d53c`), the proof of the Library statement
+`Langlands.Archimedean.JacquetExponentRoute`). It was written for the proof of the Library statement
 `Langlands.Archimedean.ComplexStandardJacquetExponentStatement` (JE, module
 `ComplexStandardHomExponentJacquetReduction`).
 
@@ -130,7 +129,7 @@ has degree at least `∑_j |l(d_j)|` on `U(n)`. No cited source states it in thi
 `ComplexJacquetCasselmanOsborneStatement → ComplexJacquetTranslationStatement →
 ComplexJacquetAntidominantBoundStatement → ComplexStandardJacquetExponentStatement`.
 
-Provenance: derived, internal (the route of Task 7179).
+Provenance: derived, internal (the route of the proof of JE in `ComplexStandardJacquetExponentProof`).
 
 ## Proof of the route (`complexStandardJacquetExponentRoute`)
 
@@ -194,6 +193,6 @@ Let `ℓ ≠ 0` be a Jacquet functional on `X(d)` with exponents `(a, b)`.
 
 ## Use
 
-Once CO, Trans and Bound are proved, JE is `complexStandardJacquetExponentRoute hCO hTr hB`,
+With the proofs of CO, Trans and Bound, JE is `complexStandardJacquetExponentRoute hCO hTr hB`,
 and the Library's `ComplexStandardHomExponentStatement` follows by
 `complexStandardHomExponentJacquetReduction`.

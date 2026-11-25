@@ -1,7 +1,5 @@
 # The quasi-split envelope from Borel–Tits 7.2 and the nonmultipliable coroot span
 
-Author: Worker 162 (Task 7779).
-
 The module proves one theorem,
 
 ```

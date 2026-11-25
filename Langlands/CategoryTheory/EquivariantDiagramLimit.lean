@@ -25,17 +25,17 @@ variable (F : EquivariantDiagram (D ⋙ forget₂ ProfiniteGrp GrpCat) TopCat.{m
 def profiniteLimitTranslate (g : ProfiniteGrp.limit D) :
     C((TopCat.limitCone.{v, max u w} F.obj).pt, (TopCat.limitCone.{v, max u w} F.obj).pt) where
   toFun x :=
-    ⟨fun j => (F.ρ j (g.val j)).hom (x.val j), by
+    ⟨fun j => (F.ρ j (g.val j)).asHom.hom (x.val j), by
       intro i j f
-      change F.obj.map f ((F.ρ i (g.val i)).hom (x.val i)) =
-        (F.ρ j (g.val j)).hom (x.val j)
+      change F.obj.map f ((F.ρ i (g.val i)).asHom.hom (x.val i)) =
+        (F.ρ j (g.val j)).asHom.hom (x.val j)
       rw [← g.property f, ← x.property f]
       exact congrArg (fun a : F.obj.obj i ⟶ F.obj.obj j => a (x.val i))
         (F.comm f (g.val i))⟩
   continuous_toFun := by
     apply Continuous.subtype_mk
     exact continuous_pi fun j =>
-      (F.ρ j (g.val j)).hom.continuous.comp
+      (F.ρ j (g.val j)).asHom.hom.continuous.comp
         ((continuous_apply j).comp continuous_subtype_val)
 
 /-- The actual profinite group limit acts on the actual topological limit cone point. -/
@@ -43,22 +43,24 @@ def profiniteLimitUnderlyingAction :
     Action TopCat.{max u v w} (ProfiniteGrp.limit D) where
   V := (TopCat.limitCone.{v, max u w} F.obj).pt
   ρ :=
-    { toFun g := TopCat.ofHom (profiniteLimitTranslate D F g)
+    { toFun g := End.of (TopCat.ofHom (profiniteLimitTranslate D F g))
       map_one' := by
+        apply End.ext
         apply TopCat.ext
         intro x
         apply Subtype.ext
         funext j
-        change (F.ρ j 1).hom (x.val j) = x.val j
+        change (F.ρ j 1).asHom.hom (x.val j) = x.val j
         rw [map_one]
         rfl
       map_mul' g h := by
+        apply End.ext
         apply TopCat.ext
         intro x
         apply Subtype.ext
         funext j
-        change (F.ρ j (g.val j * h.val j)).hom (x.val j) =
-          (F.ρ j (g.val j)).hom ((F.ρ j (h.val j)).hom (x.val j))
+        change (F.ρ j (g.val j * h.val j)).asHom.hom (x.val j) =
+          (F.ρ j (g.val j)).asHom.hom ((F.ρ j (h.val j)).asHom.hom (x.val j))
         rw [map_mul]
         rfl }
 
@@ -70,7 +72,7 @@ theorem profiniteLimitUnderlyingAction_isContinuous
   apply Continuous.subtype_mk
   apply continuous_pi
   intro j
-  have h : Continuous (fun p : D.obj j × F.obj.obj j => (F.ρ j p.1).hom p.2) :=
+  have h : Continuous (fun p : D.obj j × F.obj.obj j => (F.ρ j p.1).asHom.hom p.2) :=
     (Action.isContinuous_def (F.action j)).mp (hF j)
   have hg : Continuous (fun p : ProfiniteGrp.limit D × (TopCat.limitCone.{v, max u w} F.obj).pt =>
       p.1.val j) :=

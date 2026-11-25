@@ -1,6 +1,6 @@
 # Radical preimages for the actual incident facet morphisms
 
-This internal unit proves the third clause of `FacetReductiveComparisons`
+This internal module proves the third clause of `FacetReductiveComparisons`
 and assembles all three clauses under `D.SatisfiesGroupAxioms`, at arbitrary
 universe `u`. The models, radical representatives, quotients, schematic
 images and maps are exactly those supplied by the original datum. In the
@@ -67,4 +67,5 @@ preimage membership.
 axioms and proved structural results, with no premise assuming the
 comparison itself or global validity. Its provenance is internal
 composition of those Library results. The full corrected maximal pro-p
-proposition still requires its other structural inputs.
+proposition also requires its other structural inputs; it is proved as
+`availableMaximalProP` in `Langlands.BruhatTits.MaximalProP.AvailableProof`.

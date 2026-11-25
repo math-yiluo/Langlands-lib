@@ -116,7 +116,7 @@ theorem averageOnCompactCLM_apply (μ : Measure B) [IsFiniteMeasureOnCompacts μ
 
 private def fixedSupportRightDerivativeCLM (Y : M) (K : Compacts M) :
     𝓓_{K}(M, ℂ) →L[ℝ] 𝓓_{K}(M, ℂ) :=
-  (ContDiffMapSupportedIn.bilinLeftCLM (ContinuousLinearMap.apply ℝ ℂ (E := M)).flip
+  (ContDiffMapSupportedIn.bilinLeftCLM (ContinuousLinearMap.apply ℝ ℂ (E' := M)).flip
     (LinearMap.mulRight ℝ Y).toContinuousLinearMap.contDiff).comp
     (ContDiffMapSupportedIn.fderivCLM ℝ ⊤ ⊤)
 

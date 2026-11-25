@@ -87,7 +87,7 @@ connected reductive (`lowerAmbient_isConnectedReductive`), and `iL` is a maximal
   read through the point equivalence `leviSchemePointsEquiv`. The proof rewrites with the
   published `rationalXi_leviScheme` and then applies `rationalXi_lowerChamber`.
 
-For the weak expansion of Task 7454, the lower density package has
+For the weak expansion of `RationalWeakExpansionTargets`, the lower density package has
 `PM.K = leviSchemeCompact K`. This is the field `CommonCompactNormalization.lower`. So the last
 two results apply with the compact of that package.
 
@@ -139,9 +139,10 @@ anything analytic. In particular:
 - the Iwasawa decomposition `hM` of `M_{I'}(F)` for `K ∩ M_{I'}(F)` is a hypothesis;
 - the target at `M'` takes square integrability modulo the split component
   `rationalLeviSplitCenter J'' s'` of `M_{J''}`, with the character measure
-  `standardLeviUnitaryUnramifiedCharacterHaar J'' s' …`. The weak expansion of Task 7454 uses
-  instead the conjugated subgroup `lowerCentral`, the measure `lowerMeasure` and the image
-  measure `lowerCharacterMeasure`. Comparing the two is left to a separate module;
+  `standardLeviUnitaryUnramifiedCharacterHaar J'' s' …`. The weak expansion of
+  `RationalWeakExpansionTargets` uses instead the conjugated subgroup `lowerCentral`, the measure
+  `lowerMeasure` and the image measure `lowerCharacterMeasure`. Comparing the two is left to the
+  module `StandardLeviLowerSplitCenter`;
 - the target's sections `rationalInducedSmoothOrbitSections` at `M'` are not compared with the
-  dynamic lower sections `LowerSectionsAt` of Task 7454, and the two wave packets are not
-  compared. This is also left to a separate module.
+  dynamic lower sections `LowerSectionsAt` of `RationalWeakExpansionTargets`, and the two wave
+  packets are not compared. This is left to the module `StandardLeviLowerPacket`.

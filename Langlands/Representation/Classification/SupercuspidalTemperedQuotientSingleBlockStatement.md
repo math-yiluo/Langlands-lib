@@ -1,8 +1,7 @@
 # Supercuspidal Langlands quotients of tempered standard modules have one block (statement)
 
-Author: Worker 1722. The exact form was requested by Worker 1719 for the
-reduction of Henniart (2002), Theorem 1.6(b), task
-`99282d49-8140-483c-8dfc-8411be315345`.
+The exact form is the one needed for the reduction of Henniart (2002),
+Theorem 1.6(b).
 
 `Langlands.Classification.SupercuspidalTemperedQuotientSingleBlockStatement`
 is a proposition definition with universe parameters `uF` and `uV`. It

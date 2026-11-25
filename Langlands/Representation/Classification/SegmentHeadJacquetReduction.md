@@ -1,7 +1,5 @@
 # Conditional reduction of the two-block Jacquet formula for segment heads
 
-Authors: Worker 256 and Worker 756.
-
 This module reduces the published proposition
 `Langlands.Classification.SegmentHeadJacquetFormula` from
 [`SegmentHeadJacquetStatement`](SegmentHeadJacquetStatement.md) (Zelevinsky 1980,
@@ -13,11 +11,11 @@ as in the target.
 The generic lemmas (block combinatorics, pullbacks, socle lifting, refined Jacquet
 modules, Lemma K, `jacquet_map_injective`, twist isomorphisms, `uniformRefinement`,
 `nonempty_productInduced_iso_uniform`, `twistRep`, `terminal_isRepresentedBy_twistRep`
-and `nontrivial_of_isIrreducible`) are Worker 756's and are imported from
+and `nontrivial_of_isIrreducible`) are imported from
 [`SegmentSocleJacquetReduction`](SegmentSocleJacquetReduction.md), the socle-side
 analogue for Ze80 3.4. They retain the
 `Langlands.Classification.SegmentSocleJacquetReduction` namespace and one shared
-implementation. Worker 756 approved this reuse. The head-side declarations are
+implementation. The head-side declarations are
 new or adapted to the decreasing induction:
 `nonempty_equiv_of_ker_eq`, `nonempty_iso_of_isSegmentHead`, `segmentInducedDown_eq`,
 `segmentFactorsDown_isLeviQuasicuspidal`, `jacquet_ofPair_subsingleton`,
@@ -61,14 +59,14 @@ Fix a prime `p` with `[Fact p.Prime]`, `F : PadicField.{uF} p` and
 ## Declarations
 
 The head-specific declarations are in namespace
-`Langlands.Classification.SegmentHeadJacquetReduction`. The shared declarations
-attributed below to Worker 756 are imported from
+`Langlands.Classification.SegmentHeadJacquetReduction`. The shared declarations,
+marked "(shared)" below, are imported from
 `Langlands.Classification.SegmentSocleJacquetReduction`. Below, `m = Δ.length`,
 `r = Δ.rank` and `n = Δ.degree = m * r`. The representation
 `π : SmoothRep.{0, uF, max uF uV} ℂ (GeneralLinear n F.Carrier)` and the Jacquet
 functors are those of the target.
 
-**Block combinatorics** (Worker 756).
+**Block combinatorics** (shared).
 
 - `size_eq_of_levisAssociated_uniform hr h j`: if `D : BlockShape (m * r)` is
   `LevisAssociated` with `BlockShape.uniform m r hr`, then every block of `D` has
@@ -83,7 +81,7 @@ functors are those of the target.
   refinements of the same shape, whose (flattened) blocks all have the same positive
   size `r` are equal.
 
-**General representation theory** (Worker 756, except `nonempty_equiv_of_ker_eq`).
+**General representation theory** (shared, except `nonempty_equiv_of_ker_eq`).
 
 - `exists_injective_surjective_of_pullback f hf i hi`: for smooth representations of
   a topological group over a field, a surjection `f : Z ⟶ R` and an injection
@@ -103,7 +101,7 @@ functors are those of the target.
 - `nontrivial_of_isIrreducible ρ h`: an irreducible representation has a nontrivial
   carrier.
 
-**Refined Jacquet modules** (Worker 756).
+**Refined Jacquet modules** (shared).
 
 - `flattenedRefinedJacquet T C S X`: the normalized refined Jacquet module
   `T.normalizedRefinedJacquet C S X.representation`, pulled back to the Levi of
@@ -144,11 +142,11 @@ functors are those of the target.
   `T.segmentInducedDown A.obj m _` and every `0 < l < n` with `¬ r ∣ l`, the
   normalized Jacquet module of `π` along `BlockShape.ofPair (n - l) l …` is
   `Subsingleton`.
-- `uniformRefinement hr C len hlen` (Worker 756): the refinement of a shape whose
+- `uniformRefinement hr C len hlen` (shared): the refinement of a shape whose
   blocks have sizes `len j * r` into blocks of size `r`.
-- `twistIsoOfEq` and `segmentFactorTwistIso T A s t u h` (Worker 756): twists by equal
+- `twistIsoOfEq` and `segmentFactorTwistIso T A s t u h` (shared): twists by equal
   characters are isomorphic, and `ν^s (ν^t A) ≅ ν^u A` when `u = s + t`.
-- `nonempty_productInduced_iso_uniform` (Worker 756): normalized product induction
+- `nonempty_productInduced_iso_uniform` (shared): normalized product induction
   from a shape `B` equal to `BlockShape.uniform k r hr` of factors `σ` is isomorphic
   to the one from the uniform shape of factors `τ` when corresponding factors are
   isomorphic. The factors are compared through `HEq` because their groups are only
@@ -159,7 +157,7 @@ functors are those of the target.
   `Δ.splitShape q hq hqm` (block sizes `((m - q) r, q r)`) of the factors
   `T.segmentInducedDown (ν^q A) (m - q) _` (first block) and
   `T.segmentInducedDown A q _` (second block).
-- `twistRep T s A` and `terminal_isRepresentedBy_twistRep` (Worker 756): the twist
+- `twistRep T s A` and `terminal_isRepresentedBy_twistRep` (shared): the twist
   `ν^s A` of a supercuspidal representative, and if `A` represents `Δ.base`, then
   `ν^q A` represents the base of `Δ.terminal q hqm`.
 - `exists_split_embedding T Δ q hq hqm A π₁ π₂ h₁ h₂`: if `π₁` is the irreducible
@@ -170,7 +168,7 @@ functors are those of the target.
 
 **Clause 2.**
 
-- `jacquet_map_injective T hr hH2` (Worker 756). Assume H2 in rank `m * r`. Let `ρ`
+- `jacquet_map_injective T hr hH2` (shared). Assume H2 in rank `m * r`. Let `ρ`
   be quasicuspidal on the uniform Levi, let `π` embed in the normalized induction of
   `ρ` from the uniform shape, and let the normalized Jacquet module of `π` along
   every shape equal to the uniform shape be irreducible. Then every surjection
@@ -300,8 +298,8 @@ through Lemma K, where the source cites 2.13(a) or 1.6. No derivative result
 The transitive `Langlands` import closure at Library commit
 46ad94719738ee676dd6e863d6e924cca8fec970 has 257 modules. `lean_check` reports the
 axioms `propext`, `Classical.choice` and `Quot.sound` only for
-`segmentHeadJacquetReductionClause_holds`. Against the exclusions of task
-55ad1e10-62d8-46b7-a081-909ef0056426:
+`segmentHeadJacquetReductionClause_holds`. Against the results the head Jacquet
+formula is to be proved independently of:
 
 - No module in the closure states or proves SegmentHeadProductIrreducibility,
   GenericSegmentProductUniqueness, multisegment exhaustion, ordered strong-head
@@ -313,8 +311,8 @@ axioms `propext`, `Classical.choice` and `Quot.sound` only for
   `Whittaker.Iwasawa`, the Iwasawa decomposition of `GL_n`. A text search of the
   closure for the excluded names finds only `RegularLanglandsStatement` and
   `LanglandsData`, apart from this module.
-- `RegularLanglandsStatement` enters through `RegularLanglandsHeadReduction`
-  (Worker 156), imported for the unconditional lemma
+- `RegularLanglandsStatement` enters through `RegularLanglandsHeadReduction`,
+  imported for the unconditional lemma
   `RegularHeadExistence.nontrivial_normalizedProductInduction`. That statement
   module contains only the proposition definitions
   `GLRegularLanglandsHeadExistenceStatement`,
@@ -325,9 +323,7 @@ axioms `propext`, `Classical.choice` and `Quot.sound` only for
 - `LanglandsData` defines the data structure `SquareIntegrableLanglandsDatum`. It is
   not the classification statement or its proof.
 - The four hypotheses are the only conditional inputs. They are published
-  statements of Ze80 9.1(*), BZ77 2.13(b), Ze80 9.1 and BZ77 2.8, with proof tasks
-  b331611c-526d-4925-87fe-ea67ed6e6fed, b17b8c8c-858b-4b48-994b-e3641cb05f02,
-  67279e36-f3c2-42e3-9302-11729784042e and 7baa622d-e46d-4b7a-932d-2a33433ab201.
+  statements of Ze80 9.1(*), BZ77 2.13(b), Ze80 9.1 and BZ77 2.8.
   This module neither imports nor depends on their proofs. Those proofs are
   published, and [`SegmentHeadJacquetProof`](SegmentHeadJacquetProof.md) supplies
   them. That module's Markdown audits their closures.
@@ -341,5 +337,5 @@ printed p.198, with the proof of 3.4, printed pp.181–182 (source
 statements of Zelevinsky 1980, 9.1(*) (H1′) and 9.1 (H3′),
 Bernstein–Zelevinsky 1977, Corollary 2.13(b) (H2, source
 `bernstein-zelevinsky-1977-induced-i`), and Bernstein–Zelevinsky 1977, Theorem 2.8
-(H4). The generic lemmas come from Worker 756's socle-side reduction, as stated at
-the top.
+(H4). The generic lemmas come from the socle-side reduction
+`SegmentSocleJacquetReduction`, as stated at the top.

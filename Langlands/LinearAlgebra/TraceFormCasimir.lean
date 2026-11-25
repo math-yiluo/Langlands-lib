@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 
 /-! # Casimir elements of dual families and the trace-form radical -/
 

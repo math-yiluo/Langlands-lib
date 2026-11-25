@@ -1,6 +1,6 @@
 # Abstract inputs for the integral identification of Renard VII.3.4
 
-Author: Worker 48. Module `Langlands.Representation.Intertwining.PQIntegralIdentificationAbstract`.
+Module `Langlands.Representation.Intertwining.PQIntegralIdentificationAbstract`.
 
 This helper module holds four independent groups of abstract facts used by the proof of
 Renard VII.3.4 in `Langlands.Representation.Intertwining.PQIntegralIntertwiningOperatorProof`.

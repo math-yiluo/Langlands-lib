@@ -1,6 +1,6 @@
 # Finite polynomial specialization to binomial and canonical tail operators
 
-This derived internal unit specializes the explicit cleared finite spectral
+This derived internal module specializes the explicit cleared finite spectral
 families of `RealRationalCompactFamilies`. At positive resonance they equal a
 nonzero scalar times the binomial spectral operator. At a negative pole they
 equal a nonzero scalar times the canonical tail spectral operator, provided
@@ -27,7 +27,7 @@ The explicit regularized product cancels its nonzero denominator product below
 
 The reflection factors in `clearedMultiplier` and `regularizedMultiplier`
 are the same. Extending the sequence identity therefore covers every integer
-mode. The proved scalar degeneration of Worker 769 then identifies the
+mode. The proved scalar degeneration of `RealGenericMultiplierDegeneration` then identifies the
 regularized multiplier with its nonzero first-high-index value times the
 canonical tail. The displayed scalar is
 
@@ -68,6 +68,6 @@ supplies the displayed half-index `r` and `r<N`.
 
 The proof uses explicit generic and regularized products, the previously
 proved scalar binomial/canonical-tail degenerations and finite spectral sums.
-Worker 769 supplied those scalar degenerations. No full generic or canonical
+Those scalar degenerations are in `RealGenericMultiplierDegeneration`. No full generic or canonical
 braid, relation with the chosen interlaced equivalence, or filtration
 kernel-image containment is asserted.

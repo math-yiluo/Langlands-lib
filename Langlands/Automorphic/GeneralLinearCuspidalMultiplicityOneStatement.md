@@ -120,9 +120,10 @@ isometric equivalence `U : P ≃ Q` with `U(πc a x) = πc a (U x)` for all
 
 ## Proof route (not part of the statement)
 
-Getz–Hahn's proof uses the Whittaker expansion. The expansion is the staged
+Getz–Hahn's proof uses the Whittaker expansion. The expansion is
 `WhittakerExpansionStatement` (module
-`Langlands.Global.GeneralLinearWhittakerExpansionStatement`), on smooth
+`Langlands.Global.GeneralLinearWhittakerExpansionStatement`; the Library proves
+it as `whittakerExpansion` in `Langlands.Global.GeneralLinearWhittakerExpansionProof`), on smooth
 functions on `GL_n(F) \ GL_n(𝔸)`. Applying it requires smooth vectors of `P`
 and `Q` that are smooth functions of uniform moderate growth. The proof also
 uses local uniqueness of Whittaker functionals at every place (Getz–Hahn

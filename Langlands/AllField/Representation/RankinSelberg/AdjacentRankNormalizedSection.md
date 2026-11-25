@@ -29,11 +29,11 @@ Compact-orbit sections in the exact normalized adjacent-rank lower induction.
 - `Langlands.AllField.RankinSelberg.adjacentRankLowerScalarProjection` (def): The scalar diagonal block, with its rank made explicit.
 - `Langlands.AllField.RankinSelberg.adjacentRankLower_halfModulus` (theorem): The opposite half-modulus on the exact ordered lower shape.
 - `Langlands.AllField.RankinSelberg.adjacentRankLower_weightRatio` (theorem): The two weights in JPSS (10) give exactly the lower normalized character.
-- `Langlands.AllField.RankinSelberg.Padic.adjacentRankLowerTensorCoordinates_action` (theorem): The host's block tensor action in original-module coordinates.
+- `Langlands.AllField.RankinSelberg.Padic.adjacentRankLowerTensorCoordinates_action` (theorem): The block tensor action of the induction in `Langlands.RankinSelberg.AdjacentRankModelImageStatement`, in original-module coordinates.
 - `Langlands.AllField.RankinSelberg.Padic.adjacentRankLowerCompactRepresentation` (abbrev): The actual parabolic action obtained from the compact average.
-- `Langlands.AllField.RankinSelberg.Padic.adjacentRankLowerTensorRepresentation` (abbrev): The exact tensor-valued inducing representation in the host target.
+- `Langlands.AllField.RankinSelberg.Padic.adjacentRankLowerTensorRepresentation` (abbrev): The exact tensor-valued inducing representation of the induction in `Langlands.RankinSelberg.AdjacentRankModelImageStatement`.
 - `Langlands.AllField.RankinSelberg.Padic.adjacentRankLowerInducingCoordinates` (def): Original-module coordinates identify the compact-section action with the
-  host's normalized inducing action.
+  normalized inducing action `adjacentRankLowerTensorRepresentation`.
 - `Langlands.AllField.RankinSelberg.Padic.adjacentRankNormalizedSection` (def): The compact full-rank section in the exact canonical normalized lower induction.
 - `Langlands.AllField.RankinSelberg.Padic.adjacentRankNormalizedSection_eval` (theorem): Evaluation retains the literal compact-average formula on the original module.
 - `Langlands.AllField.RankinSelberg.Padic.adjacentRankNormalizedSectionTensor` (def): The normalized section map on the full compact-test/original-vector tensor product.

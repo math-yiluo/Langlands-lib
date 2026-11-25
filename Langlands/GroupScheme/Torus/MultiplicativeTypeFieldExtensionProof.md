@@ -1,6 +1,6 @@
 # Extensions of groups of multiplicative type over a field
 
-Workers 312 and 603. Proof of the unchanged published proposition
+Proof of the unchanged published proposition
 `Langlands.GroupScheme.MultiplicativeTypeFieldExtensionStatement.{u}`.
 
 The final theorem `multiplicativeTypeFieldExtension` covers every field and
@@ -30,16 +30,18 @@ algebra finite-type criterion make the group of group-like elements finitely
 generated. This gives the diagonalizable model over the chosen algebraic closure
 required by `IsMultiplicativeType`.
 
-For a connected quotient, Worker 603's connected-quotient theorem makes the
+For a connected quotient, the connected-quotient theorem
+`isCommMonObj_of_connectedSpace` (module `ConnectedQuotientCommutative`) makes the
 middle group commutative without smoothness assumptions. Apply the preceding
-commutative case. For the second clause, Worker 603's central diagonalizable
-extension theorem takes the first clause for this exact sequence. A split torus
+commutative case. For the second clause, the central diagonalizable
+extension theorem `exists_iso_diagonalizable_of_part_one` (module
+`CentralDiagonalizableExtensionSplit`) takes the first clause for this exact sequence. A split torus
 quotient is connected, so the middle group is multiplicative type and therefore
 commutative. The Hopf-algebra argument for central extensions with split-torus
 quotient supplies a diagonalizable model over the original field.
 
-These are internal combinations of the cited Library interfaces and same-task
-supporting modules. The proof route replaces the source's commutative
+These are internal combinations of the cited Library interfaces and the
+supporting modules ported together with this proof. The proof route replaces the source's commutative
 characterization and Galois-twist arguments by the implemented graded Hopf-algebra
 constructions. The source correspondence is recorded in the unchanged target
 Markdown; no independent source claim is added here.

@@ -1,7 +1,5 @@
 # Differentials of simple-root scaling automorphisms
 
-Worker 243.
-
 For every supplied `AffinePinnedModel M`, every tuple of simple-root units `c`, and every chosen simple root `a`, `rootScalingIso_rootVector` proves
 
 ```
@@ -17,4 +15,4 @@ The proof first establishes two internal descent lemmas. Injective test-algebra 
 
 For the scaling formula, lift the prescribed quotient-torus point along the simple-root projection. The coordinate lemmas identify its simple-root monomials with the images of the units `c a`. The restriction of the descended action is the original torus conjugation, so after coefficient extension its differential is the adjoint action. The defining all-test equation of the actual exponent weight space gives the claimed scalar on the extended pinning vector. Faithful flatness makes the coefficient map injective, and the first lemma reflects this equality to the original Lie module. Naturality of the actual target Lie map connects this calculation to the evaluated automorphism.
 
-The mathematical provenance is the pinning-scaling argument of Brian Conrad, *Reductive group schemes* (2014), Corollary 6.1.15, pp.195–196. This unit supplies an internal arbitrary-ring differential calculation for the quotient-torus construction in `AffinePinnedScalingAction`. It uses faithfully flat descent of equality rather than the field-only character weight decomposition.
+The mathematical provenance is the pinning-scaling argument of Brian Conrad, *Reductive group schemes* (2014), Corollary 6.1.15, pp.195–196. This module supplies an internal arbitrary-ring differential calculation for the quotient-torus construction in `AffinePinnedScalingAction`. It uses faithfully flat descent of equality rather than the field-only character weight decomposition.

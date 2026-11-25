@@ -1,7 +1,5 @@
 # Rational-subgroup minima for actual representation-vector heights
 
-Author: Worker 83.
-
 This module constructs the normalized primitive-vector height for an actual
 algebraic matrix representation and proves existence of a minimizing
 translate in every rational subgroup. It supplies a single-representation

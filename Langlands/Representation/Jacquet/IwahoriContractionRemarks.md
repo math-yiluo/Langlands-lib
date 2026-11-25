@@ -1,6 +1,6 @@
 # Renard VI.9.1, Remarks 1 and 2, for abstract Iwahori contractions
 
-Author: Worker 167. Module `Langlands.Representation.Jacquet.IwahoriContractionRemarks`,
+Module `Langlands.Representation.Jacquet.IwahoriContractionRemarks`,
 namespaces `Langlands.Compact` and `Langlands.Jacquet`.
 
 Source: David Renard, *Représentations des groupes réductifs p-adiques*, French edition

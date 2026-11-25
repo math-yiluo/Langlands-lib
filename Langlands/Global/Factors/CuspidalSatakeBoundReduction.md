@@ -33,16 +33,17 @@ The proof does not use the hypothesis `HasIrreducibleAdmissibleComponents P`: at
 outside `P.exceptional`, irreducibility and admissibility of the local components are part of
 the presentation's unramified data (`P.unramified`).
 
-This is a reduction: `IrreducibleCentralCharacterStatement` is an open Library statement
-(Task 5209), and this module does not prove it. Together with
-`cuspidalPairCompletedEquationReduction`, it reduces the Satake-bound premise of the
-completed cuspidal-pair functional equation (Task 5721) to the existence of central
-characters.
+This is a reduction: this module does not prove `IrreducibleCentralCharacterStatement`. The
+Library proves it as `Langlands.Automorphic.OperatorRealization.irreducibleCentralCharacter`
+(module `Langlands.Automorphic.IrreducibleCentralCharacterProof`). Together with
+`cuspidalPairCompletedEquationReduction`, this module reduces the Satake-bound premise of the
+completed cuspidal-pair functional equation (`CuspidalPairCompletedEquationStatement`) to the
+existence of central characters.
 
 ## 2. Provenance
 
-The statement is internal: a reduction step needed by Task 5721, not a theorem quoted from a
-single source. The mathematics is classical:
+The statement is internal: a reduction step needed for `CuspidalPairCompletedEquationStatement`,
+not a theorem quoted from a single source. The mathematics is classical:
 
 * Jacquet–Shalika, *On Euler products and the classification of automorphic forms I*,
   Amer. J. Math. 103 (1981) (Library source
@@ -103,7 +104,7 @@ Let `F` be a number field with compact adele quotient, `T : CuspidalOperatorReal
 `m = r + 1`.
 
 1. `norm_le_of_hasUnitaryCentralCharacter`: if `T` has a unitary central character
-   (`ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T`), then for every
+   (`ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T`), then for every
    presentation `Q` of `T`, every `v ∉ Q.exceptional` and every `α` in
    `Q.spectralSystem.eigenvalues v hv`, `‖α‖ ≤ q_v ^ (m * m + 2 * m)`. The local component
    at `v` is irreducible and admissible (from `Q.unramified`), hence unitarizable by the
@@ -141,9 +142,12 @@ Let `F` be a number field with compact adele quotient, `T : CuspidalOperatorReal
 
 The proofs use only the axioms `propext`, `Classical.choice` and `Quot.sound`.
 
-## 4. Remaining premise
+## 4. The premise
 
 `IrreducibleCentralCharacterStatement` (existence of a central character for irreducible
-operator realizations, a form of Schur's lemma for the automorphic realization) remains
-open; it is the subject of Task 5209. This module does not prove
-`CuspidalSatakeBoundStatement` unconditionally.
+operator realizations, a form of Schur's lemma for the automorphic realization) is proved in
+the Library as `OperatorRealization.irreducibleCentralCharacter` (module
+`Langlands.Automorphic.IrreducibleCentralCharacterProof`). This module itself does not prove
+`CuspidalSatakeBoundStatement` unconditionally; the term
+`cuspidalSatakeBoundReduction OperatorRealization.irreducibleCentralCharacter` does, and
+`CuspidalPairPartialGammaTCReduction` uses it.

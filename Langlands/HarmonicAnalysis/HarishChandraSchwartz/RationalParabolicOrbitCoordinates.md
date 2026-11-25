@@ -1,6 +1,6 @@
 # Actual norms of maximal-parabolic orbit coordinates
 
-This unit proves the actual-point coordinate estimates used in step (2)
+This module proves the actual-point coordinate estimates used in step (2)
 of Waldspurger, *La formule de Plancherel pour les groupes p-adiques
 (d'après Harish-Chandra)*, Lemma II.3.5, printed pp.257–258.
 The original is registered as `waldspurger-2003-plancherel`,
@@ -100,7 +100,7 @@ finite matrix realization, but does not require separability of an
 orbit map or characteristic zero.
 
 All results retain arbitrary field universe and both local-field
-characteristics. This unit supplies coordinate estimates toward
+characteristics. This module supplies coordinate estimates toward
 II.3.5. It does not assert the density-extension or two-parabolic
 intersection conclusion of that lemma, the opposite-radical tail
 cutoff, or the final VIII.3.1 integral estimate.

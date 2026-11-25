@@ -1,7 +1,6 @@
 # The separated discrete-series case
 
-Lean module: `Langlands.Representation.Archimedean.RealDiscreteSeparatedProof`. Author: Worker
-380, for Task 6749 (`5dd3db87-6f14-4d0f-b9a7-3d0065415fd8`). The theorems
+Lean module: `Langlands.Representation.Archimedean.RealDiscreteSeparatedProof`. The theorems
 `realTiedDiscreteSeparated_of_sphericalCyclic` and `realTiedDiscreteSeparatedScalarCommutant`
 are in the namespace `Langlands.Archimedean`; the other declarations are in
 `Langlands.Archimedean.RealDiscreteSeparated`.
@@ -13,13 +12,13 @@ The module proves
 `realTiedDiscreteSeparated_of_sphericalCyclic :
   RealSphericalCyclicStatement → RealTiedDiscreteSeparatedScalarCommutantStatement`
 
-and, with Worker 48's Library proof `RealSphericalCyclicProof.realSphericalCyclic` of
+and, with the Library proof `RealSphericalCyclicProof.realSphericalCyclic` of
 `RealSphericalCyclicStatement` (module `RealSphericalCyclicProof`), the unconditional
 
 `realTiedDiscreteSeparatedScalarCommutant : RealTiedDiscreteSeparatedScalarCommutantStatement`.
 
 `RealTiedDiscreteSeparatedScalarCommutantStatement` (module
-`RealTiedDiscreteScalarCommutantCases`) is the separated discrete-series case of Task 7626's
+`RealTiedDiscreteScalarCommutantCases`) is the separated discrete-series case of
 `RealTemperedScalarCommutantStatement`: for every list `ds` of real blocks of total rank `n`
 with equal real exponents, at least one discrete-series block, and separated discrete exponents
 (`IsRealDiscreteExponentSeparated`: every block with the complex exponent of a discrete-series
@@ -29,12 +28,12 @@ scalar simultaneous `O(n)`/Lie commutant (`HasScalarCommutant n ds`).
 theorem; the second theorem discharges it. The proof below does not use the hypothesis that `ds` has a discrete-series block.
 
 All declarations are internal. The module uses only the reductions of the separated case to
-sorted data (`RealDiscreteSeparatedCore`) and Worker 379's Library tools in
+sorted data (`RealDiscreteSeparatedCore`) and the Library tools in
 `RealTiedScalarAssembly`: `blockChars`, `flatMap_expand_eq`, `exponent_re_of_mem_blockChars`,
 `sortParity`, `hasScalarCommutant_perm` (the scalar commutant is invariant under permutations
 of lists with equal real exponents) and `hasScalarCommutant_of_twoWay`. The Library lemma
 `realStandardModule_append_flatMap_expand` (`RealLinkedJacquetPairReduction`) identifies a
-block of weight `0` with its two characters. Following the constraints of Task 7626, the proof
+block of weight `0` with its two characters. The proof
 uses no Langlands-quotient statement, no tempered-irreducibility statement and no Library result
 on tied lists that assumes tempered irreducibility.
 

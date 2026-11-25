@@ -1,6 +1,6 @@
 # Field points of a separated algebraic space and its symmetric tuple charts
 
-Author: Worker 75. A helper module of the proof of
+A helper module of the proof of
 `Langlands.AlgebraicGeometry.LangWeil.SpaceUniformLangWeilOfFamilyStatement`. Provenance:
 internal.
 

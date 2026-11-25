@@ -84,8 +84,6 @@ modules. Finiteness of the morphism makes the preimage of one affine target
 open affine; Noetherianness ensures finite presentation of its finite
 coordinate module. The private helpers are derived internal proof steps
 for this target, not additional assumptions or separate source assertions.
-Worker 667 implemented the proof from the route supplied by Worker 415
-and the Mathlib interface leads checked by Worker 100 in the task contract.
 
 The source is registered as `stacks-generic-flatness-052A-2026-10-25`.
 The retained original is

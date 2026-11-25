@@ -1,6 +1,6 @@
 # Conjugacy of sections of trigonalizable groups with smooth unipotent part
 
-Worker 386. The theorem `Langlands.GroupScheme.trigonalizableSectionConjugacySmooth.{u}`
+The theorem `Langlands.GroupScheme.trigonalizableSectionConjugacySmooth.{u}`
 proves the corrected Milne 16.27, exactly
 [`TrigonalizableSectionConjugacySmoothStatement.{u}`](SectionConjugacySmoothStatement.md).
 It uses `diagonalizableSmoothUnipotentCocycle.exists_coboundary` in both parts and the

@@ -113,6 +113,6 @@ def HarrisCMPrimeToInvariantsStatement [Algebra ℚ R] : Prop :=
             (primeToComparison m hm K₀ existence geometry hRigid criterion R coeff d).hom.hom =
           {z | ∀ k ∈ K₀.subgroup,
             ((smallColimitCohomology coeff d).ρ
-              (CompactOpenLevel.factorHom (cmPrimeToSplit D m hm) k)).hom z = z}
+              (CompactOpenLevel.factorHom (cmPrimeToSplit D m hm) k)).asHom.hom z = z}
 
 end Langlands.Cohomology.HarrisCMPrimeToInvariants

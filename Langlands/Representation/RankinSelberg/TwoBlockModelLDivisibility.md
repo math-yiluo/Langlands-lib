@@ -1,6 +1,6 @@
 # Rank-one L divisibility through actual coefficient quotients
 
-Worker 468 authored this internal derived proof. The analytic context is JPSS,
+This is an internal derived proof. The analytic context is JPSS,
 *Rankin–Selberg Convolutions* (1983), Theorem 3.1, printed pp. 404–405,
 Section 5.3, printed p. 422, and Section 7.1(3), printed pp. 438–439.
 The registered source is `jpss-1983-rankin-selberg`, SHA-256

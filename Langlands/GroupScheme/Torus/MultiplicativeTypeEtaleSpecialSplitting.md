@@ -1,7 +1,5 @@
 # Splitting a multiplicative-type residue fibre at an etale point
 
-Worker 875.
-
 `Langlands.GroupScheme.ExtensionReduction.etaleSpecialSplitting R G p`
 constructs an actual etale `R`-algebra and a point above the given prime `p`
 whose residue fibre of `G` has an actual diagonalizable presentation. The
@@ -35,5 +33,5 @@ supports subsequent localization and completion.
 This is an internal composition of the two published existence theorems and
 actual base-change comparisons. It does not construct a strict henselization,
 prove that the whole group is of relative multiplicative type, or prove the
-host fpqc extension theorem. No field extension or deformation theorem about
+fpqc extension statement `MultiplicativeTypeFpqcExtensionStatement`. No field extension or deformation theorem about
 extensions of groups is assumed.

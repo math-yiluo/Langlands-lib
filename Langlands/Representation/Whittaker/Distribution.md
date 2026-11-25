@@ -73,7 +73,7 @@ J. A. Shalika, *The multiplicity one theorem for GLn*, Annals of Mathematics
 the source conventions. The original PDF is
 `/home/taskhub/central-library/Shalika--The multiplicity one theorem for GLn--1974.pdf`,
 SHA256 `788c5d124024c768aa47c4e8b179475fbcf5b0882a518ae60b19cdc88089f087`.
-Worker 88 independently read these pages and visually checked pp.174–175;
+These pages were read and pp.174–175 visually checked;
 no source errata file was found in project or Library notes.
 
 On p.174, taking every first-superdiagonal coefficient equal to one permits

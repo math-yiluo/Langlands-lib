@@ -46,12 +46,20 @@ closed immersions under pullback and composition with isomorphisms.
 `galoisHom_represents` combines its resulting monicity with the range
 identity, so representation is on all scheme tests.
 
-This contribution does not yet identify the transported subgroup with a
+This module does not identify the transported subgroup with a
 specified simple root, establish its torus character or derivative
 normalization, construct a Galois-compatible pinning or root-map family,
-or deduce `RootMapsGaloisCompatible`. It establishes neither cross-section
-geometry nor the parent quotient theorem, and makes no exceptional
-even-type-A section claim.
+or deduce `RootMapsGaloisCompatible`. The identification with a specified root
+subgroup and the torus equivariance are
+`SplitPinning.NormalizedRootParametrization.galoisHom_represents_root` and
+`galoisHom_torus_equivariant` in `Rational.SteinbergNormalizedGaloisTransport`,
+and the derivative law is
+`SplitPinning.NormalizedRootParametrization.galoisHom_derivative`
+in `Rational.SteinbergGaloisDerivatives`; both modules build on this one. It
+establishes neither cross-section geometry nor the quotient theorem
+`QuasiSplitSteinbergQuotientStatement` that it serves, which the Library proves
+as `quasiSplitSteinbergQuotient` (`Rational.QuasiSplitSteinbergQuotient`), and
+makes no exceptional even-type-A section claim.
 
-Integration gives the local instances used here module-specific names to permit
-joint imports. Their types, values, and local scopes are unchanged.
+The local instances used here carry module-specific names to permit joint
+imports. The names change none of their types, values, or local scopes.

@@ -59,7 +59,7 @@ def HasCompatibleCompactQuasiEtaleLifts : Prop :=
     ∀ (a : ActionLift ρ U.hom) (b : ActionLift ρ V.hom),
       ∃ N : Subgroup G, IsOpen (N : Set G) ∧ ∃ (ha : N ≤ a.subgroup) (hb : N ≤ b.subgroup),
         ∀ (g : G) (hg : g ∈ N),
-          (b.action ⟨g, hb hg⟩).hom ≫ f.left = f.left ≫ (a.action ⟨g, ha hg⟩).hom
+          (b.action ⟨g, hb hg⟩).asIso.hom ≫ f.left = f.left ≫ (a.action ⟨g, ha hg⟩).asIso.hom
 
 /-- The existence half of `QuasiEtaleActionLiftStatement` gives lifts on all compact
 quasi-étale objects of a Hausdorff space with a continuous action. -/

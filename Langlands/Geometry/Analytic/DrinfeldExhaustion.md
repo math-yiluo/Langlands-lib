@@ -1,7 +1,5 @@
 # An exhaustion of Drinfeld's upper half space by rational domains
 
-Author: Worker 21.
-
 This module writes Drinfeld's upper half space `Ω` (module
 `DrinfeldUpperHalfSpace`) as an increasing union of rational domains
 `V_0 ⊆ V_1 ⊆ ⋯` of the closed polydiscs, each contained in the interior of the

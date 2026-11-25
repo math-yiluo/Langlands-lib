@@ -1,7 +1,5 @@
 # Separating group-ring elements by the quotients `Λ ⧸ nΛ`
 
-Worker 732.
-
 Module `Langlands.GroupScheme.Torus.TorsionDensityLattice`. This is an internal helper
 module for the proof of
 `Langlands.GroupScheme.MultiplicativeTypeTorsionDensityStatement`

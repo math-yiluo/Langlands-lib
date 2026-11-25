@@ -1,11 +1,10 @@
 # Real components of trace additive characters
 
-Author: Worker 5093. This is a supporting unit for task
-`92a3d086-a5ad-476f-9fd9-aa9d4eaa3778`, which must prove
+This is a supporting module for the proof of
 `Langlands.LocalFactor.NonabelianBrauer.KernelCompatibilityStatement`. The archimedean epsilon
 factors of the global functional equations in Deligne's argument (1973, proof of Lemma 4.12)
 depend on the archimedean components of the additive character `ψ ∘ Tr` of each global field
-`M ⊇ k`. This unit computes these components at real places of `M` above real places of `k`.
+`M ⊇ k`. This module computes these components at real places of `M` above real places of `k`.
 The facts are elementary and have no separate literature source.
 
 Everything is in `Langlands.LocalFactor.NonabelianBrauer`. For a real infinite place `v`,

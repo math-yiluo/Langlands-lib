@@ -22,7 +22,7 @@ polarization or coherence hypothesis is imposed on `S`, `A`, `hA`, the
 parameter scheme or its morphism. The declaration is universe-polymorphic
 in `u`. `HasDualScheme`, `dualScheme` and the geometric Picard-zero
 predicate are the existing Library definitions in
-`Langlands.AlgebraicGeometry.Picard.DualScheme`, used unchanged. This unit
+`Langlands.AlgebraicGeometry.Picard.DualScheme`, used unchanged. This module
 defines a proposition only; it proves nothing and introduces no axiom.
 
 ## Original source and derived formulation
@@ -80,7 +80,7 @@ schemes using affine tests and gluing. That recovery must not assume that
 the chosen parameter scheme is already quasi-separated. Quasi-compactness
 would then be transported along the isomorphism. A direct proof of the
 precise geometric property, for example by a boundedness argument, is
-another possible route. None of these steps is proved in this unit.
+another possible route. None of these steps is proved in this module.
 
 Quasi-compactness of a morphism is not a fibrewise property: quasi-compact
 geometric fibres, or the field statement `FieldDualSchemeGeometryStatement`,
@@ -97,9 +97,8 @@ criterion. Conversely, Mathlib's instance from `UniversallyClosed` to
 `QuasiCompact` shows that a proof of the properness statement would imply
 this one, so a proof of this statement intended as a properness
 prerequisite must not assume the properness target or the parent target
-`RelativeDualSchemeGeometryStatement`. The exact proof of this statement
-remains a separate obligation.
-
-The Lean statement follows verbatim the formulation specified by
-Worker 529 in task `e63495ab-16b0-47b7-a0c7-616fbf34c021`, published for
-the properness proof task `f39b40a8-68f7-4734-a60f-bca1f46f648c`.
+`RelativeDualSchemeGeometryStatement`. The Library proves this statement as
+`relativeDualSchemeQuasiCompact` (module `RelativeDualSchemeQuasiCompactProof`),
+and `relativeDualSchemeProper` (module `RelativeDualSchemeProperProof`) uses it
+through `relativeDualSchemeProper_of_prerequisites` (module
+`RelativeDualSchemeProperReduction`).

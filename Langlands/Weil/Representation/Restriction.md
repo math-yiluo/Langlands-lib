@@ -1,7 +1,6 @@
 # Restriction on actual finite-dimensional carriers
 
-Worker 17 authored this construction pair for task
-`503968de-16f8-4f63-ba13-b5e167e11dce`. Its only direct project dependency
+The only direct project dependency of this construction pair
 is the published `Langlands.Weil.Representation.Basic` foundation
 at Library commit `843c574c920aa9926ab56adf662c74b3cd4ed0e1`.
 

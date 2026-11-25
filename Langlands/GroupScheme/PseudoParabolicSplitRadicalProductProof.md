@@ -54,7 +54,5 @@ This is an internal proof assembly of the published target corresponding to
 the first equality in CGP Proposition 2.2.4. The target's paired Markdown
 records the original-source provenance. The implementation uses the published
 wound-quotient, quotient-action and fppf-cover composition results rather than
-repeating their proofs. Worker 1468 authored the final assembly and cover
-composition infrastructure; Worker 1150 contributed the quotient-action and
-kernel-product infrastructure and the proof architecture. The wound-quotient
+repeating their proofs. The wound-quotient
 proof is imported from the published Library.

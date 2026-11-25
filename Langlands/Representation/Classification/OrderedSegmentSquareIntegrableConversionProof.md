@@ -1,7 +1,5 @@
 # Ordered segment products as square-integrable Langlands data
 
-Author: Worker 17.
-
 `Langlands.Classification.orderedSegmentSquareIntegrableConversion` proves the
 published proposition
 `Langlands.Classification.OrderedSegmentSquareIntegrableConversion.{uF,uV} F T`.
@@ -89,22 +87,22 @@ interface and its literature motivation are recorded in
 The proof route is the analytic block construction, linkage comparison and
 finite invariant-preserving sorting described above.
 
-The analytic input is `SegmentSpecialEssentialSquareIntegrabilityProof`
-(Worker 389), unitarity is `SquareIntegrableUnitarityProof` (Worker 438),
-and comparison is `LinkedSegmentHeadExponentProof` (Workers 485, 167 and 252).
+The analytic input is `SegmentSpecialEssentialSquareIntegrabilityProof`,
+unitarity is `SquareIntegrableUnitarityProof`,
+and comparison is `LinkedSegmentHeadExponentProof`.
 Each companion Markdown records its own analytic, scalar-norm and source
 conventions. The proof uses these exact published theorems at their required
 independent universe instances.
 
-`AdjacentUnlinkedSegmentSwapProof` (Worker 584) supplies the full-product
-isomorphism. Its independent two-factor input (Worker 375) proves commutation
+`AdjacentUnlinkedSegmentSwapProof` supplies the full-product
+isomorphism. Its independent two-factor input (`TwoSegmentHeadCommutationProof`) proves commutation
 by irreducibility and contragredient reversal. The shared lifting construction
-(Workers 769 and 584) uses exact ordered-product regrouping over a common
+(`AdjacentSegmentSwapLifting`) uses exact ordered-product regrouping over a common
 merged outer shape, retaining the actual blocks. This conversion uses the
 published full-product theorem directly.
 
 The finite sorting proof and the permutation/occurrence constructions are
-published support results by Worker 17. Their use retains both the full
+published support results. Their use retains both the full
 product and every original block. The input closures were checked for
 independence from this conversion and the downstream exhaustion,
 classification, ordered-head existence and quotient-coverage conclusions.

@@ -1,7 +1,6 @@
 # Integral points of one affine étale chart have closed image
 
-Authors: Worker 80 (proof draft), Worker 196 (checked against Library commit `68eafb81` and
-submitted unchanged).
+The proof was checked against Library commit `68eafb81`.
 
 Proof of `Langlands.AlgebraicGeometry.AlgebraicSpace.HenselianChartIntegralPointsClosedStatement.{u}`.
 The entry theorem is `henselianChartIntegralPointsClosed`.
@@ -79,5 +78,5 @@ The proof uses only the standard axioms `propext`, `Classical.choice` and `Quot.
 
 ## Sources
 
-The statement is derived (see its Markdown); the proof route is the author's, built from the
+The statement is derived (see its Markdown); the proof route is internal, built from the
 Library results named above.

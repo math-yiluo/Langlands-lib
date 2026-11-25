@@ -1,9 +1,9 @@
 # `ℓ`-adic étale cohomology as an inverse limit of cohomology modules
 
-Author: Worker 61. Built on the published modules
-`Langlands.Geometry.EtaleDerivedSections` of Worker 13 (`ModuleSheaf`,
+Built on the published modules
+`Langlands.Geometry.EtaleDerivedSections` (`ModuleSheaf`,
 `sections`, `cohomology`, `cohomologyZeroIso`, `diagramFunctor`),
-`Langlands.Geometry.EtaleAdicSystem` of Worker 13 (`functor`,
+`Langlands.Geometry.EtaleAdicSystem` (`functor`,
 `inverseLimit`), `Langlands.Geometry.EtaleActionFunctor`
 (`EtaleCohomologyAction.pullbackCohomologyFunctor`,
 `pullbackSectionsFunctor`, `pullbackCohomologyZeroFunctorIso`),
@@ -14,10 +14,10 @@ Author: Worker 61. Built on the published modules
 (`harrisEtaleDivisibleSystem`, `harrisEtaleSectionsDivisibleSystem`) and
 `Langlands.Cohomology.DivisibleSystem.InverseLimit` (`inverseLimit`, the
 limit of the tower of an `ℓ`-divisible system). Through their imports it uses
-Worker 13's `EtaleCohomologyAction.EquivariantSheaf` and
+`EtaleCohomologyAction.EquivariantSheaf` and
 `TranslationAction.Equivariant.forget`
 (`Langlands.Geometry.EtaleCohomologyAction`,
-`Langlands.Cohomology.TranslationAction`) and Worker 13's
+`Langlands.Cohomology.TranslationAction`) and
 `harrisEtaleCoefficientSystem`, `harrisEtaleCohomologySystem`,
 `harrisEtaleSectionsSystem` and `harrisEtaleCohomologyZeroIso`
 (`Langlands.Shimura.Coefficients.HarrisEtaleCoefficients`). From Mathlib it
@@ -99,8 +99,8 @@ sheafified sectionwise reductions, as sheaves of `R`-modules, and
 ## Equivariant coefficients
 
 `G` is a group and `ρ : G →* (Aut X)ᵐᵒᵖ` an action of `G` on `X` by
-automorphisms. A `ρ`-equivariant sheaf (Worker 13's
-`EtaleCohomologyAction.EquivariantSheaf R ρ`) is a sheaf with compatible
+automorphisms. A `ρ`-equivariant sheaf
+(`EtaleCohomologyAction.EquivariantSheaf R ρ`) is a sheaf with compatible
 structure maps from its translates under `G`;
 `TranslationAction.Equivariant.forget` forgets the structure maps. The
 published `pullbackCohomologyFunctor R ρ q` sends a `ρ`-equivariant sheaf to
@@ -133,7 +133,7 @@ published `pullbackCohomologyFunctor R ρ q` sends a `ρ`-equivariant sheaf to
 ## Harris's coefficient sheaves
 
 As in the published `HarrisEtale` and `HarrisEtaleCoefficients`, `ℓ` is a
-natural number, `A` a finite-dimensional `ℚ`-algebra with Worker 13's
+natural number, `A` a finite-dimensional `ℚ`-algebra with an
 involution `σ`, `L` a number field, `W` a finite-dimensional `L`-module with
 an algebraic representation `ρ` of `σ.baseChange L`, `p` a finite place of
 `ℚ` and `U` a compact open level of `σ.FiniteAdelicPoints`;
@@ -165,7 +165,7 @@ an algebraic representation `ρ` of `σ.baseChange L`, `p` a finite place of
 
 ## Provenance and interpretation
 
-Milne, *Étale Cohomology* (1980), Chapter V, §1 (Worker 61 read the text
+Milne, *Étale Cohomology* (1980), Chapter V, §1 (read in the text
 layer of the scanned pages):
 
 - printed p.163 (one-based PDF page 177), paraphrased: for a prime `l`, an
@@ -191,7 +191,7 @@ agrees with its cohomology as a sheaf of `Z`-modules. `limitComparison` is the c
 the module proves only that it is an isomorphism for `r = 0`.
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
-J. Math. Kyoto Univ. 39-2 (1999), §4 (Worker 61 read the rendered scanned
+J. Math. Kyoto Univ. 39-2 (1999), §4 (read in the rendered scanned
 pages):
 
 - printed p.311 (one-based PDF page 13): "the inverse system `{𝓛̃_m}`

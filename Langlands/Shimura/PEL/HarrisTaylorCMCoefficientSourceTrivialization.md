@@ -1,7 +1,5 @@
 # Original CM coefficient diagrams on a fixed source cover
 
-Author: Worker 57.
-
 This derived specialization simultaneously trivializes the original CM
 coefficient sheaves through a fixed exponent on that exponent's original
 coefficient cover. It constructs isomorphisms of entire diagrams, both for
@@ -167,7 +165,7 @@ The three new source diagrams have codomain
   `Under.forget k ⋙ B̂ ⋙ L_(Y.obj.obj k)`.
 
 The integral isomorphism `cmHarrisCoefficientSourceTrivialization k` applies
-the published `etaleAssociatedSourceTrivialization` to the actual CM cover
+`etaleAssociatedSourceTrivialization` to the actual CM cover
 and coefficient diagrams and their proved torsor condition. It identifies the
 first source diagram with the constant coefficient source diagram. Its theorem
 `_hom_app` identifies the component at i with
@@ -231,8 +229,8 @@ sheaves using inverse-equivariant functions on cover components and compatible
 coefficient and cover maps. The registered source is
 `harris-taylor-2001-geometry-cohomology-simple-shimura`, SHA-256
 `5be28164b61d6f6cc28dd9e6b990d669504f3470860b230ebbc97e3da10af56b`.
-The complete supplied five-page author errata list contains no correction
-to these passages; this observation concerns only that supplied list.
+The complete five-page author errata list contains no correction
+to these passages; this observation concerns only that list.
 
 The exponent k may be zero, and m may be any nonzero natural number. These
 parameters inherit the existing constructors' extension of the sources'
@@ -244,7 +242,7 @@ simultaneously trivialized on this fixed cover. Applicable representability,
 dual existence, coarse rigidity, source canonical-model comparisons,
 identification with the source's component-function sheaves, independence of
 choices, arbitrary-scheme inverse images, trivial intersection of congruence
-kernels and the completed lisse adic/cohomology object remain separate
-obligations. This contribution is a conditional coefficient prerequisite.
+kernels and the completed lisse adic/cohomology object are not treated in this
+module. This module is a conditional coefficient prerequisite.
 Its pinned environment is Lean 4.34.0 and Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.

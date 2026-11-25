@@ -4,7 +4,7 @@ This module connects the star-fixed weight subgroups of `SimplyConnected/StarFix
 to two other parts of the Library. The first is the predicate `IsStarFixedWeight` of
 `Reductive/InnerStarWeights`. The second is the base change of Galois pinning data to an
 intermediate field, `Reductive/GaloisPinningBaseChange`. It supports the transfer clause
-of Task 7603: a weight `λ` fixed by `Γ_F = F.fixingSubgroup` becomes a star-fixed weight
+for the Tits obstruction: a weight `λ` fixed by `Γ_F = F.fixingSubgroup` becomes a star-fixed weight
 of the base change of `G` to `F`. It constructs no Tits algebra, Brauer class or
 corestriction.
 
@@ -50,7 +50,7 @@ is the base change of the pinning data to `F`, with the same `K`.
   the weight transport restricted to these subgroups, as an additive equivalence. Its
   values and inverse values are the transport and its inverse (`_apply`, `_symm_apply`).
 
-In Task 7603 the Tits obstruction is defined on the star-fixed weights. Clause 3 evaluates
+The Tits obstruction is defined on the star-fixed weights. The transfer clause evaluates
 the obstruction of `G_F` over `F` at the base-changed weight `λ_F`. This equivalence shows
 that the transported weight lies in that domain, and that every weight in that domain
 arises this way.

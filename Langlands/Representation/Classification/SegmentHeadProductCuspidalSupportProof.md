@@ -1,8 +1,5 @@
 # Cuspidal support realization for segment heads
 
-Authors: Worker 328 (support realization and proof); Worker 627 (adapted rank
-transport pattern).
-
 `Langlands.Classification.segmentHeadProductCuspidalSupport` proves exactly the
 published proposition
 `Langlands.Classification.SegmentHeadProductCuspidalSupport.{uF,uV} F T`.
@@ -117,7 +114,7 @@ regrouping theorem, and the quotient argument retain the rank-zero case.
 
 This is an internal derivation from primitive head quotients and published
 lower constructions. The rank-transport helper and its use in the regrouping
-specialization adapt Worker 627's generic equality-elimination pattern in
+specialization adapt the generic equality-elimination pattern in
 `TemperedSpecialSegmentRefinementAssembly`. That module is not imported, and
 none of its classification hypotheses or conclusions is applied.
 

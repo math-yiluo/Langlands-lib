@@ -1,10 +1,5 @@
 # Realization of the actual semigroup subgroup
 
-Worker 1281 assembled this proof. Its geometric construction is by Workers
-1281, 1324 and 1224. The structural proofs and their coordinate and Hopf-algebra
-constructions are by Workers 1285, 1324, 1388, 1398, 1389 and 1419; the supporting
-modules retain their individual attribution.
-
 The theorem
 `Langlands.GroupScheme.RelativeRoot.semigroupRealization` has exactly the type
 `SemigroupRealizationStatement.{u}` from

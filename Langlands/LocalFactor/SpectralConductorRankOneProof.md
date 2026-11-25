@@ -1,9 +1,5 @@
 # Rank-one conductor transport at intermediate fields of the common closure: proof
 
-Authors: Worker 96, with Worker 4803 and Worker 4918. Worker 4803's partial draft (Task 4803
-draft revision 2) supplied the outline, Step 1 and the profile argument. Worker 4918 wrote the
-Galois-side module `Langlands.LocalFactor.Ramification.RankOneArtinSum`.
-
 ## Result
 
 `Langlands.LocalFactor.SpectralConductor.commonClosureRankOneConductor` has type

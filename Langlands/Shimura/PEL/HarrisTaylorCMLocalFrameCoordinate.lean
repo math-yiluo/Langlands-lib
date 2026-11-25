@@ -185,7 +185,7 @@ theorem exists_localFrameCoordinate_fixed_of_levelIso_fixed
     ∀ (a : (orbitTower X).obj ((indexFunctor).obj U)) (q : ℚˣ)
       (e : X.actionObj ≅ X.actionObj) (he : Mult X X q e),
       transport X X ((indexFunctor).obj U) q e he a = a →
-      (let f : End0 X.actionObj.abelianScheme := RationalAlgebraAction.hom0 e.hom
+      (let f : End0 X.actionObj.abelianScheme := CategoryTheory.End.of (RationalAlgebraAction.hom0 e.hom)
        IsOfFinOrder f) →
       ∃ eta : Frame, ∀ y : RationalFull X.actionObj.abelianScheme (Over.mk s),
         localFrameCoordinate D C preservation composition unitCoherence associativity

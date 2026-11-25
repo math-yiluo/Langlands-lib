@@ -351,7 +351,7 @@ variable {F : Type u} [Field F] [NumberField F] [CompactSpace (AdeleQuotient F)]
 /-- With a unitary central character, the Satake parameters at every place outside the
 exceptional set of a presentation satisfy `‖α‖ ≤ q_v ^ (m * m + 2 * m)`, `m = r + 1`. -/
 theorem norm_le_of_hasUnitaryCentralCharacter {r : ℕ} {T : CuspidalOperatorRealization F r}
-    (hT : ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T)
+    (hT : ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T)
     (Q : CuspidalSpectralPresentation.{u, uQ} T) (v : FinitePlace F) (hv : v ∉ Q.exceptional)
     {α : ℂˣ}
     (hα : α ∈ ((Q.spectralSystem.eigenvalues v hv : Unramified.Eigenvalues (r + 1)) :
@@ -386,7 +386,7 @@ theorem exists_norm_finiteUniformizerValue (χ : HeckeCharacter F) :
 unitary central character. -/
 theorem hasUnitaryCentralCharacter_heckeDeterminantTwist {r : ℕ}
     (T : CuspidalOperatorRealization F r) (ω : HeckeCharacter F) (hω : T.HasCentralCharacter ω) :
-    ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter
+    ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter
       (T.heckeDeterminantTwist (normRpow ω (-1 / ((r + 1 : ℕ) : ℝ)))) := by
   refine ⟨normRpow ω (-1 / ((r + 1 : ℕ) : ℝ)) ^ (r + 1) * ω,
     norm_normRpow_pow_mul ω (r + 1) (Nat.succ_ne_zero r), ?_⟩

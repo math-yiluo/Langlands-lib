@@ -4,4 +4,4 @@ A continuous complex linear equivalence conjugates a representation to the new c
 
 The equivalence carries smooth vectors onto smooth vectors and intertwines the group action and the real orbit derivative. Every derivative-word coordinate transforms by the same map, giving continuity in the genuine smooth topology. The restricted equivalence identifies the two compact-finite subspaces by comparing the spans of compact orbits.
 
-This internal result supports the change of carrier universe in real Hilbert globalization for Task 7534.
+This internal result supports the change of carrier universe in real Hilbert globalization (module `RealHilbertGlobalizationProof`).

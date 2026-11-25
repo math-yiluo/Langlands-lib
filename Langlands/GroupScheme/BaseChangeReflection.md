@@ -1,7 +1,5 @@
 # Reflection of group-scheme isomorphisms under fpqc base change
 
-Worker 1340.
-
 This internal helper specializes Mathlib's faithfully flat descent of
 isomorphisms to the published group-scheme base-change construction.
 It uses no external structural theorem about reductive groups or tori.

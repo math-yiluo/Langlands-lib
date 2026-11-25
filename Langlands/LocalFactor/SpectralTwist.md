@@ -1,6 +1,6 @@
 # Spectral twists of continuous exact virtual representations
 
-Worker 20 connects the published degree characters and nonzero spectral
+This module connects the published degree characters and nonzero spectral
 parameter to actual finite representations and their exact virtual group.
 This provides the spectral-shift operation required before evaluating an
 explicit local-constant system. No such system is assumed or chosen here.
@@ -114,5 +114,5 @@ There is no evaluation of an L-factor, so no poles are discarded. This module
 does not define epsilon, prove nonabelian-system existence, choose a self-dual
 measure, or assert a conversion between Deligne and Langlands conventions.
 It supplies the actual twist to be used by those subsequent definitions.
-The accompanying `Langlands/VirtualRepresentation/ExactTwist` pair is included
-in the same candidate; all other imports are published.
+The accompanying `Langlands/VirtualRepresentation/ExactTwist` pair and all
+other imports are published.

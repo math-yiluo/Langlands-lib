@@ -1,7 +1,5 @@
 # Ordinary cohomology underlying derived transport sections
 
-Author: Worker 13.
-
 This internal construction compares actual derived sections of module sheaves
 on the group-labelled small-etale transport site with ordinary small-etale
 derived sections. The scheme is `Y : Scheme.{u}`; the group `G : Type w`

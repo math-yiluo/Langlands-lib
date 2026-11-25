@@ -18,5 +18,5 @@ gives the characteristic-subgroup equality.
 
 No field, smoothness, connectedness, affineness, representability-existence or
 finite-type assumption is used. The induced-map construction only assumes
-the two given closed derived-subgroup representatives. This contribution
+the two given closed derived-subgroup representatives. This module
 does not itself construct a semisimple normal complement.

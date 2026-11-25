@@ -10,10 +10,6 @@ Two Prop-valued definitions; nothing is proved here.
   tested on the proper standard parabolics only (VI.2.1, first Remarks,
   Remark 1).
 
-Worker 4 wrote this statement unit under the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`, after checking with Worker 1222 that
-neither item was stated or in progress elsewhere.
-
 ## Source and provenance
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*,
@@ -215,7 +211,7 @@ them, and discharge the closedness and finiteness side conditions from the
 represented structure.
 
 **Not stated.** Remark 2 of VI.2.1 (subquotients of supercuspidal
-representations are supercuspidal) is not part of this unit.
+representations are supercuspidal) is not part of this module.
 
 ## Formalization choices
 

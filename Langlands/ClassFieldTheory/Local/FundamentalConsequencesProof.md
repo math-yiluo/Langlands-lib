@@ -1,7 +1,5 @@
 # Fundamental-class consequences of relative class formation
 
-Author: Worker 159.
-
 The theorem `Langlands.ClassFieldTheory.Local.relativeFundamentalClassConsequences`
 proves exactly the published
 `RelativeFundamentalClassConsequencesStatement.{u}` from

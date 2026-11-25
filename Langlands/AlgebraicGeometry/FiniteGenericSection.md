@@ -1,7 +1,5 @@
 # Extending generic sections of finite schemes over valuation rings
 
-Worker 217.
-
 `Langlands.AlgebraicGeometry.finiteGenericSection` chooses the unique
 integral section extending a prescribed generic point.
 `Langlands.AlgebraicGeometry.existsUnique_section_of_finite` proves that a

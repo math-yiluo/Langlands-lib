@@ -1,7 +1,5 @@
 # The universal reductive quotient of a relative parabolic subgroup
 
-Workers 596 and 646.
-
 `Langlands.GroupScheme.relativeParabolicReductiveQuotient` proves exactly
 the unchanged `RelativeParabolicReductiveQuotientStatement.{u}`. The
 universe is arbitrary, and the base is any scheme. For every reductive
@@ -50,6 +48,6 @@ This proof introduces no new assertion from external literature. Its
 provenance is the explicit composition above; the original-source
 correspondence belongs to the unchanged statement Markdown. The
 pointwise quotient and annihilation lemmas retain their conditional
-interfaces, and this final theorem discharges both inputs. Workers 590
-and 637 contributed the radical comparison and transport helpers used
-by those constructions.
+interfaces, and this final theorem discharges both inputs. The radical
+comparison and transport helpers used by those constructions are in
+`DynamicRadicalIdentification` and `UnipotentRadicalDescent`.

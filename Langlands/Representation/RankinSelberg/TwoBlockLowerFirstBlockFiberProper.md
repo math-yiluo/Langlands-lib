@@ -1,7 +1,6 @@
 # Compact finiteness of the actual lower mixed fiber kernels
 
 Module `Langlands.Representation.RankinSelberg.TwoBlockLowerFirstBlockFiberProper`.
-Author: Worker 1196.
 
 This is derived topological and measure-theoretic support for the actual kernels
 motivated by JPSS (1983), Section 4.9, equations (2) and (8), printed pages 416

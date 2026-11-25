@@ -5,14 +5,13 @@ The module
 defines two propositions in the namespace `Langlands.Automorphic.Unramified`.
 Both have universe parameters `uF uE uV uW`, the same as B5:
 
-- `RestrictedCyclicWeakBaseChangeSupercuspidalStatement`, interface B5r of
-  operator ruling `c05e16c6` (on request `d972fdbc`, Task 7340);
+- `RestrictedCyclicWeakBaseChangeSupercuspidalStatement`, interface B5r, the
+  restricted form of B5 for the simple-trace-formula route of Section 5;
 - `RestrictedCyclicWeakBaseChangeSupercuspidalTCStatement`, its totally complex
   form.
 
 Both are unproved proposition definitions of a *derived global input*. The
-module proves nothing. By the ruling, Task 7340
-(`0407c885-1c0b-496b-a8bf-829f3c1a7038`) proves B5r with the twisted simple
+module proves nothing. B5r is meant to be proved with the twisted simple
 trace formula.
 
 ## 1. The statement
@@ -43,7 +42,7 @@ hypothesis. In full, it quantifies over:
 
 The hypotheses are:
 
-1. `ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter S`, as in B5;
+1. `ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter S`, as in B5;
 2. `(P.localComponent w.1).IsSupercuspidal`, as in B5;
 3. (new) `(P.localComponent w'.1).IsSupercuspidal`: the local component of the
    *same* presentation `P` at `w'` is supercuspidal;
@@ -58,10 +57,10 @@ In words: let `E/F` be cyclic of prime degree, unramified at the infinite
 places, and let `v ≠ v'` be finite places of `F`, each with only one place of
 `E` above it, `w` and `w'`. If a cuspidal class over `F` with unitary central
 character has a cuspidal weak base change to `E` that is supercuspidal at `w`
-and at `w'`, then the class is supercuspidal at `v`. This is B5r of the
-ruling: "the hypotheses of B5, and a second finite place `v'` of `F`,
-different from `v`, with a place `w'` of `E` above it at which the cuspidal
-weak base change is supercuspidal; the conclusion of B5 at `v`".
+and at `w'`, then the class is supercuspidal at `v`. This is B5r: the
+hypotheses of B5, and a second finite place `v'` of `F`, different from `v`,
+with a place `w'` of `E` above it at which the cuspidal weak base change is
+supercuspidal; the conclusion of B5 at `v`.
 
 ### Why one presentation carries both local hypotheses
 
@@ -76,10 +75,8 @@ one presentation. The statement does not need two presentation binders.
 
 ## 2. Restrictions, and why the proof needs them
 
-The ruling asks for B5r "as generally as your proof gives it (assume `v'`
-non-split or `w'` unique only if the proof needs it)". Worker 4918, who routes
-the proof in Task 7340, asked for exactly two restrictions beyond the second
-place:
+B5r is stated as generally as the proof route of Section 5 gives it. Beyond
+the second place it has exactly two restrictions, both needed by that proof:
 
 - **`w'` is the unique place above `v'`.** The twisted pseudo-coefficient sits
   at `w'`. If `v'` split in `E`, the component of `T` above `v'` would be a
@@ -124,10 +121,11 @@ claimed.
   forms. A private development check compiled both implications
   (`fun h F E … hp v w hw v' w' _ _ r S T P hS hPw _ hBC =>
   h F E hp v w hw r S T P hS hPw hBC`). The converse is not claimed.
-- **Canonical B5 stays.** Task 7425 published B5 and its TC form, and they
-  stay unchanged. By the ruling, the branches do not use B5. Task 7340 delivers
-  it only as a conditional derivation from the general Arthur–Clozel III.5.1
-  premise at `v` together with E2.
+- **Canonical B5 stays.** B5 and its TC form (module
+  `Langlands.Automorphic.Unramified.CyclicWeakBaseChangeSupercuspidalStatement`)
+  stay unchanged. The branches do not use B5. Its intended proof is only a
+  conditional derivation from the general Arthur–Clozel III.5.1 premise at `v`
+  together with E2.
 - **Consumer.** The singleton branch of Harris's Proposition 4.8 under the
   exact-stabilizer condition, and its TC form, use B5r with `v` the auxiliary
   place `Q.Ps.v` and `v'` its conjugate `conjPlace Q.E Q.Ps.v` (module
@@ -140,7 +138,7 @@ claimed.
 
 ## 5. Why a second place, and proof obligations
 
-The simple-trace-formula route in request `d972fdbc` uses two places: a
+The simple-trace-formula route uses two places: a
 supercuspidal test at one place for the cuspidal spectral side and regular
 elliptic support at another for the geometric side. If `w` is used for the
 supercuspidal test, B5 does not guarantee another place where the twisted
@@ -165,9 +163,8 @@ is σ-discrete, so its twisted character is not identically zero on the
 (I.2.10). The proposed comparison puts the pseudo-coefficient at `w'` and
 uses σ-regular elliptic support at `w`.
 
-The eventual proof (Task 7340), along the route in request `d972fdbc`, keeps
-the following obligations. It names every input it uses (ruling `c05e16c6`,
-item 3).
+The eventual proof, along this route, keeps the following obligations. It
+names every input it uses.
 
 1. **Unitarity and rigidity.** These are as in obligations 1 and 2 of B5: `T`
    is unitary, and `T` is identified with Arthur–Clozel's global base change
@@ -181,8 +178,8 @@ item 3).
    in the form the proof needs. It is used at `w` and at `w'`.
 4. **The fibre statement.** Two cuspidal classes over `F` whose base changes
    agree almost everywhere differ by a twist by a power of `κ`, a character of
-   `F^× N(𝔸_E^×) \ 𝔸_F^×`. This is Arthur–Clozel III, Theorem 3.1. The
-   request and the ruling also cite Henniart–Lemaire II.6.11. If the fibre
+   `F^× N(𝔸_E^×) \ 𝔸_F^×`. This is Arthur–Clozel III, Theorem 3.1; see also
+   Henniart–Lemaire II.6.11. If the fibre
    statement is not a Library theorem, it is proved or stated as a named
    premise with its source.
 5. **Conclusion by orthogonality.** Orthogonality of elliptic characters gives
@@ -197,12 +194,9 @@ statement, which has no local-map parameter.
 ## 6. Sources and provenance
 
 Provenance: *derived*. The statement is formulated for the trace-formula route
-in Section 5, with supercuspidal components at two non-split places. Its form
-is fixed by operator ruling `c05e16c6`
-(`correspondence/c05e16c66b7657e9aca53372f4114a52.md`), which answers request
-`d972fdbc` of Task 7340. The two restrictions in Section 2 are those requested
-by Task 7340's proof route. The sources below are not accepted proof
-evidence.
+in Section 5, with supercuspidal components at two non-split places. The two
+restrictions in Section 2 are those that proof route needs. The sources below
+are not proof evidence.
 
 - `operator-external-inputs-plan-2026-11-16`: operator note *Formalizing the
   large external inputs of the local Langlands correspondence for `GL_n`*,
@@ -226,7 +220,7 @@ evidence.
   G. Henniart and B. Lemaire, *Changement de base et induction automorphe pour
   GL_n en caractéristique non nulle*, Mém. SMF 124 (2011). Chapter II, §6 (a
   global method), II.6.11, printed p.127. This is the technical lemma used in
-  the proof of II.6.12, cited in the ruling.
+  the proof of II.6.12.
 
 No source-specific errata file exists in the Library under these source IDs.
 The statement adds no `n < p` condition. It makes no claim when `v` or `v'`

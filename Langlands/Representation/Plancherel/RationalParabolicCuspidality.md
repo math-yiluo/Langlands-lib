@@ -1,6 +1,6 @@
 # Supercuspidality on all proper rational parabolics of the actual Levi
 
-Worker 1780. This source-facing definition supplies the supercuspidality
+This source-facing definition supplies the supercuspidality
 hypothesis for the universal induced family in Renard VI.9.2. The registered
 source is David Renard, *Représentations des groupes réductifs p-adiques*,
 2026 version, source ID

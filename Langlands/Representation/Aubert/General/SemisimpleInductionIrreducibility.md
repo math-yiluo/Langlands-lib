@@ -1,7 +1,5 @@
 # Irreducibility of semisimple induction detected by its actual Jacquet module
 
-Author: Worker 480.
-
 This internal derived helper treats the published actual normalized induction
 and Jacquet functors for a semidirect decomposition `P = M U` of subgroups of
 a locally compact nonarchimedean group `G`. The subgroup `U` is closed and

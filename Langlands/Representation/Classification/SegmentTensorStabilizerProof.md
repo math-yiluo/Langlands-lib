@@ -1,7 +1,5 @@
 # Distinct members and inducing tensors of a segment
 
-Author: Worker 495.
-
 This proof supplies
 `Langlands.Classification.segmentTensorStabilizerAndCuspidality.{uF,uV} F T`
 of the grouped proposition

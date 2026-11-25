@@ -1,12 +1,10 @@
 # Finite-surjective descent of affineness for algebraic spaces
 
-Author: Worker 239.
-
 This module states Stacks Project Lemma 70.15.1 (Tag 07VS): if a finite
 surjective morphism of algebraic spaces over a scheme has a source that is an
 affine scheme, then its target is an affine scheme. It states the lemma for
 every base scheme and every such morphism, with no finite-presentation or
-other extra hypothesis. It imports the published
+other extra hypothesis. It imports
 `Langlands.AlgebraicGeometry.AlgebraicSpace.SchemeLocalGeometry` and uses its
 predicates and those of `Basic` unchanged. It proves nothing.
 
@@ -28,18 +26,18 @@ and none is restricted:
 - `S : Scheme.{u}` is an arbitrary scheme. It need not be affine,
   quasi-compact, quasi-separated, noetherian or reduced.
 - `X Y : AlgebraicSpace S` are actual algebraic spaces over `S` in the
-  fppf-sheaf convention of the published `Basic` module: fppf sheaves on
+  fppf-sheaf convention of the `Basic` module: fppf sheaves on
   schemes over `S` with values in `Type (u + 1)`, with representable diagonal
   and a geometrically surjective etale atlas by an actual scheme over `S`.
   No separatedness or quasi-compactness is assumed of `X`, `Y` or their
   diagonals, and `Y` is not assumed to be a scheme.
 - `f : X ⟶ Y` is an actual morphism of algebraic spaces over `S`, and
   `hom f : X.presheaf ⟶ Y.presheaf` is its underlying natural transformation.
-  The predicates below are the published ones for transformations of
+  The predicates below are the Library's ones for transformations of
   presheaves, applied to `hom f`.
 
 The three hypotheses and the conclusion have the following meanings. All
-names are those of the published modules.
+names are those of the Library modules.
 
 - `IsFinite (hom f)` (from `SchemeLocalGeometry`) says that `hom f` is
   representable, and that for all `U V : Over S`, every
@@ -95,8 +93,8 @@ at lines 167–177:
 The whole retained Section 70.15, including its text aid `07VQ.txt` and its
 single comment, was read. The comment (#1792) concerns a missing reference in
 the proof of Proposition 70.15.2 and does not affect Lemma 70.15.1. No
-source-specific errata note was found in the checked project, Library or
-workspace locations.
+source-specific errata note was found in the checked project and Library
+locations.
 
 The translation is as follows.
 
@@ -110,8 +108,8 @@ The translation is as follows.
   Lemma 67.45.3 (Tag 03ZQ) shows this is equivalent to $f$ being
   representable and finite in the scheme-test sense of Section 67.3, and
   Lemma 67.45.1 (Tag 03ZO) identifies that sense with the affine test. The
-  scheme-test sense, testing every scheme base change, is the published
-  `IsFinite`. The published `SchemeLocalGeometry` Markdown records this
+  scheme-test sense, testing every scheme base change, is the Library's
+  `IsFinite`. The `SchemeLocalGeometry` Markdown records this
   convention; it is not a Lean comparison theorem.
 - *$f$ is surjective.* Definition 67.5.2 (Tag 03ME) calls a morphism of
   algebraic spaces surjective when $|f| : |X| \to |Y|$ is surjective.
@@ -125,14 +123,14 @@ The translation is as follows.
   `2913d9742274ac9e357ea115d7170d006577593e6d6aa90dcd0f05beb1cb3dfd`):
   `03MC.html`, lines 163–173 (Lemma 67.5.1 with its proof), 178–180
   (Definition 67.5.2) and 183–223 (Lemma 67.5.3 with its proof). Its comment section is empty. The
-  scheme-base-change form is the published `IsSurjective`. That predicate
+  scheme-base-change form is the Library's `IsSurjective`. That predicate
   also contains representability of `hom f`, which already follows from
   `IsFinite (hom f)`. So under the finiteness hypothesis it imposes nothing
   beyond the source's surjectivity.
 - *$X$ is affine; then $Y$ is affine.* An algebraic space over $S$ is
   affine when it is isomorphic to the functor of points of an affine scheme.
   In Lean this is `IsRepresentedByAffineScheme`, an internal specialization
-  of the published `IsRepresentedByScheme` documented by the
+  of the Library's `IsRepresentedByScheme` documented by the
   `SchemeLocalGeometry` module: the representing scheme must also be affine.
   Affineness is absolute, as in the source, where "$X$ is affine" refers to
   $X$ itself and not to its structure morphism to $S$.
@@ -151,27 +149,28 @@ using that a finite morphism is affine and universally closed
 (Lemmas 70.11.3, 70.5.10, Proposition 70.8.1, Lemmas 70.7.1, 70.6.7 and
 70.6.4), and concludes by a cohomological criterion for spaces of finite
 presentation over $\mathbf{Z}$ (Cohomology of Spaces, Lemma 69.17.3). These
-steps are obligations of a later proof. They are neither hypotheses of this
+steps are not part of this statement; the proof is `finiteSurjectiveAffineDescent`
+in `FiniteSurjectiveAffineDescentProof`. They are neither hypotheses of this
 statement nor results supplied by it.
 
 ## Status and scope
 
-Development check: `lean_check` diagnostic
-`f503496d-3e42-4c02-b197-69e7757b2556` compiled the module with 0 errors and
+Development check: the module compiled with 0 errors and
 0 warnings; inspection reports a Prop-valued definition with level parameter
 `u` and only the axioms `propext`, `Classical.choice` and `Quot.sound`.
 
-This unit states the proposition only. Its exact proof is a separate later
-task, published after this statement is accepted and in the Library. The
-unit proves no descent result and no separatedness, quasi-compactness,
+This module states the proposition only. Its exact proof is
+`Langlands.AlgebraicGeometry.AlgebraicSpace.finiteSurjectiveAffineDescent` in
+`FiniteSurjectiveAffineDescentProof`. The
+module proves no descent result and no separatedness, quasi-compactness,
 limit, approximation or cohomological lemma. It adds no definitions and
-leaves the published `Basic`, `Thickening`, `SchemeLocalGeometry` and
+leaves the `Basic`, `Thickening`, `SchemeLocalGeometry` and
 `SchemenessOfThickeningStatement` Lean/Markdown pairs unchanged. It supplies
 no open-subspace lifting or scheme gluing, no Picard deformation or
 representability result and no comparison with an actual family.
 
-It is a prerequisite of the general-thickening schemeness task
-`1b18b90e-9748-4e50-a82b-c59bb05afe2c` (Workers 133 and 336), whose target
-`SchemenessOfThickeningStatement` is unchanged. Their route applies this
-statement to affine opens lifted across a thickening, using the published
+It is a prerequisite of the general-thickening schemeness statement
+`SchemenessOfThickeningStatement`, proved as `schemenessOfThickening` in
+`SchemenessOfThickeningProof` through `ThickeningAssembly`. That route applies
+this statement to affine opens lifted across a thickening, using
 `IsThickening.finite` and `IsThickening.surjective`.

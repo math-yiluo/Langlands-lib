@@ -51,27 +51,27 @@ actual base homeomorphisms. -/
 instance compactOpenMulAction (D : Type z) :
     MulAction G (CompactOpenOriginalDomainSection X.V D) where
   smul g s :=
-    { toOriginalDomainSection := ((action X D).ρ g).hom s.toOriginalDomainSection
-      isCompact_domain := s.isCompact_domain.image (isoHomeomorph (X.ρAut g)).continuous
-      isOpen_domain := (isoHomeomorph (X.ρAut g)).isOpenMap _ s.isOpen_domain }
+    { toOriginalDomainSection := ((action X D).ρ g).asHom.hom s.toOriginalDomainSection
+      isCompact_domain := s.isCompact_domain.image (isoHomeomorph (X.ρAut g).asIso).continuous
+      isOpen_domain := (isoHomeomorph (X.ρAut g).asIso).isOpenMap _ s.isOpen_domain }
   one_smul s := by
     apply CompactOpenOriginalDomainSection.ext
-    change OriginalDomainSection.transport (X.ρAut 1) s.toOriginalDomainSection = _
+    change OriginalDomainSection.transport (X.ρAut 1).asIso s.toOriginalDomainSection = _
     rw [map_one]
     exact OriginalDomainSection.transport_refl _
   mul_smul g h s := by
     apply CompactOpenOriginalDomainSection.ext
-    change OriginalDomainSection.transport (X.ρAut (g * h)) s.toOriginalDomainSection =
-      OriginalDomainSection.transport (X.ρAut g)
-        (OriginalDomainSection.transport (X.ρAut h) s.toOriginalDomainSection)
+    change OriginalDomainSection.transport (X.ρAut (g * h)).asIso s.toOriginalDomainSection =
+      OriginalDomainSection.transport (X.ρAut g).asIso
+        (OriginalDomainSection.transport (X.ρAut h).asIso s.toOriginalDomainSection)
     rw [map_mul]
-    exact OriginalDomainSection.transport_trans (X.ρAut h) (X.ρAut g) _
+    exact OriginalDomainSection.transport_trans (X.ρAut h).asIso (X.ρAut g).asIso _
 
 @[simp]
 theorem compactOpen_smul_pair {D : Type z} (g : G)
     (s : CompactOpenOriginalDomainSection X.V D) :
     (g • s).toOriginalDomainSection =
-      ((action X D).ρ g).hom s.toOriginalDomainSection := rfl
+      ((action X D).ρ g).asHom.hom s.toOriginalDomainSection := rfl
 
 local instance : MulAction G X.V.space :=
   inferInstanceAs (MulAction G
@@ -83,7 +83,7 @@ def domainStabilizer (S : X.V.atlas.OriginalChartDomain) : Subgroup G :=
   MulAction.stabilizer G (S : Set X.V.space)
 
 theorem mem_domainStabilizer (S : X.V.atlas.OriginalChartDomain) (g : G) :
-    g ∈ domainStabilizer X S ↔ isoOriginalDomain (X.ρAut g) S = S := by
+    g ∈ domainStabilizer X S ↔ isoOriginalDomain (X.ρAut g).asIso S = S := by
   change g • (S : Set X.V.space) = (S : Set X.V.space) ↔ _
   constructor
   · exact fun h => SetLike.coe_injective h
@@ -98,12 +98,12 @@ local instance (S : X.V.atlas.OriginalChartDomain) :
 @[simp]
 theorem domain_smul_val (S : X.V.atlas.OriginalChartDomain)
     (g : domainStabilizer X S) (x : S) :
-    (g • x : S).val = (X.ρ (g : G)).baseMap x.val := rfl
+    (g • x : S).val = (X.ρ (g : G)).asHom.baseMap x.val := rfl
 
 local instance (S : X.V.atlas.OriginalChartDomain) :
     ContinuousConstSMul (domainStabilizer X S) S where
   continuous_const_smul g :=
-    ((X.ρ (g : G)).baseMap.continuous.comp continuous_subtype_val).subtype_mk _
+    ((X.ρ (g : G)).asHom.baseMap.continuous.comp continuous_subtype_val).subtype_mk _
 
 variable [TopologicalSpace G] [IsTopologicalGroup G]
 
@@ -116,11 +116,11 @@ omit [IsTopologicalGroup G] in
 /-- The original joint point continuity restricts to the exact set stabilizer,
 with the original subspace topologies on the group and the domain. -/
 theorem continuous_domain_smul
-    (hX : Continuous (fun p : G × X.V.space => (X.ρ p.1).baseMap p.2))
+    (hX : Continuous (fun p : G × X.V.space => (X.ρ p.1).asHom.baseMap p.2))
     (S : X.V.atlas.OriginalChartDomain) :
     Continuous (fun p : domainStabilizer X S × S => p.1 • p.2) := by
   have h : Continuous (fun p : domainStabilizer X S × S =>
-      (X.ρ (p.1 : G)).baseMap (p.2 : X.V.space)) := hX.comp
+      (X.ρ (p.1 : G)).asHom.baseMap (p.2 : X.V.space)) := hX.comp
     ((continuous_subtype_val.comp continuous_fst).prodMk
       (continuous_subtype_val.comp continuous_snd))
   exact h.subtype_mk _
@@ -128,7 +128,7 @@ theorem continuous_domain_smul
 /-- Compactness and openness of the actual subset construct an open setwise
 stabilizer; no domain invariance is supplied. -/
 theorem domainStabilizer_isOpen
-    (hX : Continuous (fun p : G × X.V.space => (X.ρ p.1).baseMap p.2))
+    (hX : Continuous (fun p : G × X.V.space => (X.ρ p.1).asHom.baseMap p.2))
     (S : X.V.atlas.OriginalChartDomain)
     (hS : IsCompact (S : Set X.V.space)) (hO : IsOpen (S : Set X.V.space)) :
     IsOpen (domainStabilizer X S : Set G) := by
@@ -152,7 +152,7 @@ theorem domainStabilizer_isOpen
 
 /-- The open subgroup is the entire setwise stabilizer, not a chosen subgroup. -/
 def domainOpenStabilizer
-    (hX : Continuous (fun p : G × X.V.space => (X.ρ p.1).baseMap p.2))
+    (hX : Continuous (fun p : G × X.V.space => (X.ρ p.1).asHom.baseMap p.2))
     (S : X.V.atlas.OriginalChartDomain)
     (hS : IsCompact (S : Set X.V.space)) (hO : IsOpen (S : Set X.V.space)) :
     OpenSubgroup G :=
@@ -161,7 +161,7 @@ def domainOpenStabilizer
 /-- The entire discrete function space of a compact original domain has a
 jointly continuous action of its exact setwise stabilizer. -/
 def domainLocallyConstantAction
-    (hX : Continuous (fun p : G × X.V.space => (X.ρ p.1).baseMap p.2))
+    (hX : Continuous (fun p : G × X.V.space => (X.ρ p.1).asHom.baseMap p.2))
     (S : X.V.atlas.OriginalChartDomain)
     (hS : IsCompact (S : Set X.V.space)) (D : Type z) :
     ContAction TopCat.{max v z} (domainStabilizer X S) := by
@@ -177,7 +177,7 @@ entire varying domain-section pairs. -/
 theorem action_domain_section_pair
     (S : X.V.atlas.OriginalChartDomain) {D : Type z}
     (g : domainStabilizer X S) (f : DiscreteLocallyConstant S D) :
-    ((action X D).ρ (g : G)).hom
+    ((action X D).ρ (g : G)).asHom.hom
         (⟨S, f.toLocallyConstant⟩ : OriginalDomainSection X.V D) =
       ⟨S, (g • f).toLocallyConstant⟩ := by
   apply OriginalDomainSection.ext
@@ -189,7 +189,7 @@ omit [TopologicalSpace G] [IsTopologicalGroup G] in
 /-- The full varying-pair stabilizer is the image of the full fixed-domain
 function stabilizer in the exact domain stabilizer. -/
 theorem sectionStabilizer_eq_image {D : Type z} (s : OriginalDomainSection X.V D) :
-    {g : G | ((action X D).ρ g).hom s = s} =
+    {g : G | ((action X D).ρ g).asHom.hom s = s} =
       Subtype.val '' (MulAction.stabilizer (domainStabilizer X s.domain)
         (⟨s.value⟩ : DiscreteLocallyConstant s.domain D) :
           Set (domainStabilizer X s.domain)) := by
@@ -213,14 +213,14 @@ theorem sectionStabilizer_eq_image {D : Type z} (s : OriginalDomainSection X.V D
       (⟨value⟩ : DiscreteLocallyConstant S D)
     change k • (⟨value⟩ : DiscreteLocallyConstant S D) =
       (⟨value⟩ : DiscreteLocallyConstant S D) at hk
-    change ((action X D).ρ (k : G)).hom ⟨S, value⟩ = ⟨S, value⟩
+    change ((action X D).ρ (k : G)).asHom.hom ⟨S, value⟩ = ⟨S, value⟩
     rw [hk] at hp
     exact hp
 
 /-- Compact-open domain and compact function stabilizers together make the
 entire varying-pair stabilizer open in the original group. -/
 theorem compactOpen_stabilizer_isOpen
-    (hX : Continuous (fun p : G × X.V.space => (X.ρ p.1).baseMap p.2))
+    (hX : Continuous (fun p : G × X.V.space => (X.ρ p.1).asHom.baseMap p.2))
     {D : Type z} (s : CompactOpenOriginalDomainSection X.V D) :
     IsOpen (MulAction.stabilizer G s : Set G) := by
   let S := s.toOriginalDomainSection.domain
@@ -228,7 +228,7 @@ theorem compactOpen_stabilizer_isOpen
   have : ContinuousSMul (domainStabilizer X S) S :=
     ⟨continuous_domain_smul X hX S⟩
   have hpair : (MulAction.stabilizer G s : Set G) =
-      {g : G | ((action X D).ρ g).hom s.toOriginalDomainSection =
+      {g : G | ((action X D).ρ g).asHom.hom s.toOriginalDomainSection =
         s.toOriginalDomainSection} := by
     ext g
     exact ⟨fun h => congrArg CompactOpenOriginalDomainSection.toOriginalDomainSection h,
@@ -243,7 +243,7 @@ theorem compactOpen_stabilizer_isOpen
 /-- Joint continuity on the full discrete type of compact-open domain-section
 pairs, for the original topology on the group. -/
 theorem continuous_compactOpen_smul
-    (hX : Continuous (fun p : G × X.V.space => (X.ρ p.1).baseMap p.2))
+    (hX : Continuous (fun p : G × X.V.space => (X.ρ p.1).asHom.baseMap p.2))
     (D : Type z) :
     Continuous (fun p : G × CompactOpenOriginalDomainSection X.V D => p.1 • p.2) := by
   have : ContinuousSMul G (CompactOpenOriginalDomainSection X.V D) :=
@@ -253,16 +253,18 @@ theorem continuous_compactOpen_smul
 /-- The complete compact-open section-pair action as an actual continuous
 action object. -/
 def compactOpenAction
-    (hX : Continuous (fun p : G × X.V.space => (X.ρ p.1).baseMap p.2))
+    (hX : Continuous (fun p : G × X.V.space => (X.ρ p.1).asHom.baseMap p.2))
     (D : Type z) : ContAction TopCat.{max v z} G :=
   ⟨{ V := TopCat.of (CompactOpenOriginalDomainSection X.V D)
      ρ :=
-       { toFun g := TopCat.ofHom ⟨fun s => g • s, continuous_of_discreteTopology⟩
+       { toFun g := End.of (TopCat.ofHom ⟨fun s => g • s, continuous_of_discreteTopology⟩)
          map_one' := by
+           apply End.ext
            apply TopCat.ext
            intro s
            exact one_smul G s
          map_mul' g h := by
+           apply End.ext
            apply TopCat.ext
            intro s
            exact mul_smul g h s } },

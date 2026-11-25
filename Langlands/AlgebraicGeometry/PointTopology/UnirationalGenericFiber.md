@@ -1,8 +1,6 @@
 # Unirationality from a unirational base and a unirational generic fiber
 
-Author: Worker 1630.
-
-This derived helper proves a generic-fiber criterion for the published
+This derived helper proves a generic-fiber criterion for the
 predicate `PointTopology.IsUnirational`. A scheme `X` over a field `k` is
 unirational in this sense when some nonempty open `U` of affine space
 `𝔸(ι; Spec k)`, with `ι` finite, maps to `X` over `k` with dense image. All
@@ -21,7 +19,7 @@ arbitrary point `a` of `Spec K` and a given equation `g a = x`.
 the iterated affine space `𝔸(ι'; 𝔸(ι; Spec k))` is unirational over `k`,
 with its composite structure map to `Spec k`. The parametrization is the
 whole of `𝔸(ι ⊕ ι'; Spec k)`. It maps to the iterated space by the
-published isomorphism `affineSpaceSumIso` of
+isomorphism `affineSpaceSumIso` of
 `Langlands.AlgebraicGeometry.PointTopology.IteratedAffineSpace`, which is
 compatible with the maps to `Spec k`. The map is surjective, so its image
 is dense.
@@ -64,7 +62,7 @@ Let `p : U → Y` be a parametrization of `Y`, with `U` open in
    `p` has dense image, the point of `Spec L` maps to the generic point
    `η` of `Y`. So `Spec L → Y` factors through `Spec κ(η)`. This makes
    `L` a `κ(η)`-algebra.
-2. By the published `IsUnirational.baseChange`, the base change of the
+2. By `IsUnirational.baseChange`, the base change of the
    fiber to `L` is unirational over `L`. It is parametrized by an open `V`
    of `𝔸(ι'; Spec L)`, with `ι'` finite.
 3. Let `gen` be the generic point of `𝔸(ι'; 𝔸(ι; Spec k))`, which lies
@@ -90,8 +88,8 @@ Let `p : U → Y` be a parametrization of `Y`, with `U` open in
    `f ≫ Y.hom = X.hom`.
 6. The iterated affine space is unirational over `k`
    (`isUnirational_iteratedAffineSpace`), and its stalk at `gen` is its
-   function field. Worker 1420's published spreading lemma
-   `IsUnirational.of_stalk` turns `φ` into a parametrization of `X`. It
+   function field. The spreading lemma
+   `IsUnirational.of_stalk` of `UnirationalSpreading` turns `φ` into a parametrization of `X`. It
    needs that `X` is locally of finite type over `k` and that the
    iterated affine space is germ-injective at `gen`, which holds for
    integral schemes.
@@ -103,10 +101,10 @@ definition and applies the criterion.
 
 The criterion is derived. It is the standard argument that a dominant
 family with unirational base and unirational generic fiber has a
-unirational total space, written for the published actual-parametrization
+unirational total space, written for the actual-parametrization
 predicate. The Lean proof uses Mathlib's scheme-fiber, residue-field,
 stalk, affine-space and preimmersion interfaces. It also uses the
-published Library modules `UnirationalBaseChange` (field-extension
+Library modules `UnirationalBaseChange` (field-extension
 transport), `UnirationalSpreading` (spreading out from a stalk) and
 `IteratedAffineSpace` (coordinate sums and generic points). No external
 theorem is asserted. This module proves no unirationality statement about

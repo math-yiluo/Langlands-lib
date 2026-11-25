@@ -1,10 +1,10 @@
 # Deep-unit linearization for rank-one stability
 
-Worker 1786 constructs the additive character `x -> chi(1+x)` on a deep
+This module constructs the additive character `x -> chi(1+x)` on a deep
 lattice and proves the exact order of its linearization parameter.
 These are internal derived constructions supporting the unchanged
 rank-one stability target. The finite lattice duality dependency adapts
-Worker 784's published implementation, as explained in
+the published implementation in `PadicAdditiveCharacterSelfDuality`, as explained in
 `RankOneStabilityHelpers.md`.
 
 For `m > 0` and `x in L_(-m)`, `valuation_one_add` proves that `1+x`

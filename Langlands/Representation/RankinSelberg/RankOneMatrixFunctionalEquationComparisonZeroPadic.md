@@ -38,12 +38,15 @@ equal rank one. No change of variables or extra scalar is introduced there.
 The conditional rank-one argument does not need a self-duality assumption:
 the matrix premise already supplies the Fourier witnesses and normalized
 equations used by the Tate passage. It therefore applies in particular to
-every self-dual measure required by the parent statement.
+every self-dual measure required by
+`RankOneMatrixFunctionalEquationComparisonStatement`.
 
 The provenance is internal composition of the actual Tate-passage and
 gamma-uniformity lemmas, with the published canonical normalization and
-trivial-quotient comparison. The positive-rank block argument remains a
-separate obligation of the parent task.
+trivial-quotient comparison. The positive-rank block argument is not part of
+this module; `rankOneMatrixFunctionalEquationComparison` in
+`RankOneMatrixFunctionalEquationComparisonProof` treats it and uses this
+module for `n = 0`.
 
 The local canonical instances have explicit `matrixComparisonZero` names,
 with unchanged terms and locality. This prevents generated-name collisions

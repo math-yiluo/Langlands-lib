@@ -10,7 +10,7 @@ the completed-tensor decomposition and the subsequent Weil-restriction
 identities on printed p.10. Registered source:
 `conrad-2011-weil-grothendieck-adelic-points`, SHA256
 `fe4a9193aff4ef575665b40971f3da32f850a74d87b3f2d0fa28bba26b9cbabb`.
-That page was read. There is no source-specific errata file in the current
+That page was read. There is no source-specific errata file in the
 Library's `notes/errata` directory.
 
 Conrad replaces the completed tensor algebra by a product of upper-place
@@ -124,5 +124,5 @@ The actual completed tensor decomposition over all upper places, its
 function-field instances, the identification of the factor targets,
 complete-field point comparisons, integral models, geometric preservation
 of Weil restriction and the global adelic homeomorphism remain separate
-obligations. In particular, this contribution does not by itself finish
-Example 4.2 or the whole-paper task.
+obligations. In particular, this module does not by itself finish
+Example 4.2 or the formalization of the whole paper.

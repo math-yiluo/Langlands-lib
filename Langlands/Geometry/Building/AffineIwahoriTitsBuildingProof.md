@@ -1,8 +1,6 @@
 # Proof that the actual affine Iwahori–Tits system is the building Tits system
 
-Author: Worker 4691.
-
-This unit proves the published target
+This module proves the published target
 `Langlands.Geometry.Building.AffineIwahoriTitsBuildingStatement` of
 `Langlands/Geometry/Building/AffineIwahoriTitsBuildingStatement.lean`. The theorem
 `Langlands.Geometry.Building.affineIwahoriTitsBuilding` is stated at an arbitrary
@@ -168,7 +166,7 @@ Tits-system subgroup classification, transports them to all facets with
 `G(F) = G(F)^0 N(F)` (KP Fact 2.6.22, through its published Library proof), and reads
 off the three comparisons of Axiom 4.1.9.
 
-This unit is conditional only in the sense of the target: it is a theorem about supplied
+This module is conditional only in the sense of the target: it is a theorem about supplied
 `ParahoricBuildingData` satisfying the apartment axioms, with a supplied actual affine
 Iwahori–Tits system. It does not construct such data and does not prove
 `AffineIwahoriTitsStatement`.

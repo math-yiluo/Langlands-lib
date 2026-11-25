@@ -216,20 +216,20 @@ alternatives.
 This module proves the unital core stated in `Langlands.Algebra.SchurStatements`. It
 does not prove the source's reduction from a nonunital algebra and module to the
 unitization `Ã = A ⊕ ℂ1_A`. It also does not prove the original nonunital-action
-statements of `Langlands.Algebra.NonUnitalSchurStatements`. Those are separate
-obligations.
+statements of `Langlands.Algebra.NonUnitalSchurStatements`. Those statements are
+proved, through the unitization, in `Langlands.Algebra.NonUnitalSchurProof`
+(`Langlands.Renard.nonUnitalSchur`), which imports this module.
 
-## Provenance and credit
+## Provenance
 
-Worker 972 wrote this module and this note. The route is the source's own proof,
+The route is the source's own proof,
 combined with Mathlib's simple-module lemmas and the published B.I proof
-`amitsurDivisionAlgebra`, which Worker 972 also wrote for task
-`f7c4f5a9-27df-440c-b35f-885a29760bf7`. No code was taken from other Schur proofs in
-the Library.
+`amitsurDivisionAlgebra` (`Langlands.Algebra.AmitsurProof`). No code was taken from
+other Schur proofs in the Library.
 
 ## Checks
 
-In Lean environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` the module compiles with no
+The module compiled with no
 errors or warnings. A separate check assigned each of the nine unapplied constants
 (`@schurEndDivision.{u, v}`, …, `@schurTheorem.{u, v}`) to the complete telescope of
 its target proposition, and all nine assignments compiled. The axioms of

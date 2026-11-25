@@ -1,6 +1,6 @@
 # Reduction of the spherical L-factor generation facts
 
-Author: Worker 8. All declarations are in `Langlands.Conductor`. The module
+All declarations are in `Langlands.Conductor`. The module
 proves the published `SphericalLFactorGenerationStatement`
 ([`SphericalLFactorGenerationStatement`](SphericalLFactorGenerationStatement.md))
 from five propositions, none of which is proved here:

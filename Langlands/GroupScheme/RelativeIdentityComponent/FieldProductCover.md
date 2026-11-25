@@ -37,7 +37,7 @@ after base change with the inverse image of the original product image. It uses
 the naturality of the monoidal tensor comparison, which is an isomorphism, and
 the pullback image formula for schemes. Evaluating the canonical residue-field
 point under the first pullback projection gives `y`, so the required image
-membership descends. This image comparison adapts Worker 513's general
+membership descends. This image comparison adapts a general
 monoidal base-change argument.
 
 The provenance is internal derivation from `FieldGeometry`, actual open-immersion

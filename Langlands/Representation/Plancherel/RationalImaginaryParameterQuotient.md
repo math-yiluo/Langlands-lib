@@ -1,9 +1,7 @@
 # Actual period discreteness and the compact imaginary quotient
 
 `rationalImaginaryParameterQuotient` proves all nine clauses of
-`RationalImaginaryParameterQuotientStatement`. Worker 6 authored the
-original proof; Worker 1444 verified it against the current Library,
-completed this explanation and submitted the pair. It retains every
+`RationalImaginaryParameterQuotientStatement`. It retains every
 field, valuation, topology, nonarchimedean local field and
 connected-reductive quantifier of the target statement.
 The underlying group scheme, rational-character lattice and actual

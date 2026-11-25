@@ -1,18 +1,17 @@
 # Extension of scalars of isotypic parts
 
-Author: Worker 61. Built on the Library modules
+Built on the Library modules
 `Langlands.Cohomology.HyperextScalarExtension` (`baseChangeLift`,
 `IsSemilinear`, `abutmentMap`, `cohomologyHomMap`, the base-change maps
 `abutmentBaseChangeMap`, `cohomologyHomBaseChangeMap`,
-`smoothRepExtendScalars_isSemilinear`; Worker 61) and
+`smoothRepExtendScalars_isSemilinear`) and
 `Langlands.Cohomology.HyperextDegenerationIsotypic` (`isotypicPart`,
 `isotypicRepresentation`, `isotypicIntertwiningMap`, `abutmentRepresentation`,
-`cohomologyHomRepresentation`; Worker 61). Through these imports it also uses
-`baseChangeRepresentation` of `Langlands.Cohomology.DivisibleSystem.ScalarExtension`
-(Worker 61), the actions `abutmentAction`, `cohomologyHomAction` of
-`Langlands.Cohomology.HyperextDegenerationEquivariance` (Worker 61) and
-`exactDerivedHomologyIso` of `Langlands.Cohomology.ExactDerivedHomology`
-(Worker 13).
+`cohomologyHomRepresentation`). Through these imports it also uses
+`baseChangeRepresentation` of `Langlands.Cohomology.DivisibleSystem.ScalarExtension`,
+the actions `abutmentAction`, `cohomologyHomAction` of
+`Langlands.Cohomology.HyperextDegenerationEquivariance` and
+`exactDerivedHomologyIso` of `Langlands.Cohomology.ExactDerivedHomology`.
 
 Let `R → S` be an algebra of commutative rings (`[Algebra R S]`) and `Γ` a
 group. The module `HyperextDegenerationIsotypic` attaches to representations
@@ -176,15 +175,15 @@ of smooth representations, which is exact for flat `S`
 ## Provenance and interpretation
 
 The statements, definitions and proofs are ours, assembled from Mathlib and the
-Library. Worker 13, the first executor of the task, asked Worker 61 for the
-change of coefficients from `𝒪` to `L_ℓ` and for the maps it induces on the
-degeneration of Harris's spectral sequence and on its isotypic parts, with any
-failure of extension of scalars to commute with isotypic parts kept as an
-explicit obligation. The modules `HyperextScalarExtension` and
+Library. This module serves the change of coefficients from `𝒪` to `L_ℓ`
+and the maps it induces on the degeneration of Harris's spectral sequence and
+on its isotypic parts; any failure of extension of scalars to commute with
+isotypic parts is kept explicit (see the Scope section). The modules
+`HyperextScalarExtension` and
 `HyperextScalarEdgeMap` treat the comparison maps without group actions; this
 module adds the actions and the isotypic parts.
 
-For this module Worker 61 read the following passages of Harris 1999, in the
+For this module the following passages of Harris 1999 were read, in the
 rendered scans (the text layer of this scan is unreliable):
 
 - Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
@@ -225,7 +224,7 @@ parts with Harris's objects.
   trivial representation on `S ⊗[R] R ≅ S`, and the isotypic part of that
   representation in `S ⊗[R] ρ` is again `(S ⊗[R] ρ)^Γ`; so
   `isotypicBaseChangeMap` for this `τ` is not surjective either. Whether the
-  maps are bijective in Harris's situation remains an open obligation.
+  maps are bijective in Harris's situation is not addressed here.
 - The module proves injectivity only for `isotypicBaseChangeMap` and
   `invariantsBaseChangeMap`, under `[Module.Flat R S]`; the maps on abutments
   and on `Hom(H^{-n} K, W)` are composites with base-change maps whose

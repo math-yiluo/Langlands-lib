@@ -53,7 +53,7 @@ of the actual compact-support inclusion. -/
 def godementForgetSupport (q : ℕ) :
     godementCompactCohomology (R := R) X q ⋙ SmoothRep.toRep ⟶
       godementGlobalCohomology X q :=
-  Functor.whiskerLeft (sheafFunctor X) (forgetSupport R G X.InducedSpectrum q)
+  (Functor.whiskerLeft (sheafFunctor X) (forgetSupport R G X.InducedSpectrum q) : _)
 
 theorem godementForgetSupport_app (q : ℕ) (M : SmoothRep.{u, u, u} R G) :
     (godementForgetSupport X q).app M =
@@ -180,7 +180,7 @@ theorem godementCompactPullbackNatTrans_forgetSupport (f : X ⟶ Y)
         (godementForgetSupportComplex X).app M =
       (godementForgetSupportComplex Y).app M ≫
         (godementGlobalPullbackNatTrans f).app M :=
-  coefficientCompactNatTrans_forgetSupport f.inducedMap f.inducedMap_smul hf M
+  (coefficientCompactNatTrans_forgetSupport f.inducedMap f.inducedMap_smul hf M : _)
 
 /-- The support square is an equality of full coefficient natural transformations. -/
 theorem godementCompactPullbackNatTrans_forgetSupport_natTrans (f : X ⟶ Y)
@@ -201,7 +201,7 @@ theorem godementCohomologyPullbackNatTrans_forgetSupport (f : X ⟶ Y)
         (godementForgetSupport X q).app M =
       (godementForgetSupport Y q).app M ≫
         (godementGlobalCohomologyPullbackNatTrans f q).app M :=
-  coefficientCohomologyNatTrans_forgetSupport f.inducedMap f.inducedMap_smul hf q M
+  (coefficientCohomologyNatTrans_forgetSupport f.inducedMap f.inducedMap_smul hf q M : _)
 
 theorem godementCohomologyPullbackNatTrans_forgetSupport_natTrans (f : X ⟶ Y)
     (hf : IsProperMap f.inducedMap) (q : ℕ) :

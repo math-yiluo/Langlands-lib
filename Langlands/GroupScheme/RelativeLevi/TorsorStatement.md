@@ -1,7 +1,5 @@
 # The torsor of relative Levi subgroups
 
-Authors: Worker 178 and Worker 179.
-
 `Langlands.GroupScheme.RelativeLeviTorsorStatement.{u}` states the torsor
 realization of the actual relative Levi moduli. It is a proposition definition,
 not a proof of the theorem.

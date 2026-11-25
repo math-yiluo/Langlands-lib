@@ -5,8 +5,8 @@ from `ArchimedeanCasimirCartan` with the genuine differentiation and
 enveloping action from `ArchimedeanSmoothDifferential` and
 `ArchimedeanEnvelopingAction`. Its scope is the original archimedean real
 matrix space over every number field and at every natural rank, including
-zero. Worker 94 supplied the development; Worker 116 inspected it and
-added the complete-parameter checks.
+zero. The closing `example`s of the Lean file check declarations with
+their complete parameters.
 
 `leftMatrixFrame` maps a real matrix Lie direction `X` to `g * X` in the
 original ambient real matrix space at an actual unit `g`. Multiplication

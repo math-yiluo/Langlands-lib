@@ -1,7 +1,5 @@
 # Quotients by central maximal split tori have split rank zero
 
-Author: Worker 1467.
-
 The imported `subgroupIntersection a q` is the actual group-scheme pullback of the
 homomorphisms `a : T ⟶ C` and `q : G ⟶ C`, over any base scheme. The following
 proofs use it as the preimage of a closed split torus under a quotient.

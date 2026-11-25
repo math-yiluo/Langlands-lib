@@ -1,7 +1,6 @@
 # A tightness criterion for families of column sets
 
-Lean module: `Langlands.Representation.Archimedean.RealDiscreteTightness`. Author: Worker 380,
-for Task 6749 (`5dd3db87-6f14-4d0f-b9a7-3d0065415fd8`), as part of the proof of
+Lean module: `Langlands.Representation.Archimedean.RealDiscreteTightness`, part of the proof of
 `Langlands.Archimedean.RealTiedDiscreteSeparatedScalarCommutantStatement` (the chain ends in
 `RealDiscreteSeparatedProof`). All declarations are in the namespace
 `Langlands.Archimedean.RealDiscreteTightness`. The module imports only Mathlib.

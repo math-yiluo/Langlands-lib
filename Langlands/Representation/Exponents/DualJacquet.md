@@ -1,7 +1,5 @@
 # Split-center dual exponents and their uniform nilpotence orders
 
-Author: Worker 19.
-
 This module constructs dual exponents on the full algebraic dual of the actual
 normalized opposite Jacquet quotient of a complex representation of `GL_n(F)`.
 It proves the quotient/source comparison at every finite nilpotence order. The

@@ -1,7 +1,5 @@
 # Full Harris coefficient diagrams on original CM kernel levels
 
-Author: Worker 57.
-
 This module constructs the inverse diagram of the actual small CM coefficient
 levels, their original residual quotient groups, and the full Harris coefficient
 reductions equivariant for those groups. The coefficient and group transitions

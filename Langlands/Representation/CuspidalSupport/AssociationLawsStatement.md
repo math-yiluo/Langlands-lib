@@ -1,6 +1,6 @@
 # Algebraic laws of Levi and representation association
 
-Author: Worker 72. This pair states internal algebraic prerequisites for composing
+This pair states internal algebraic prerequisites for composing
 associations through a common Jacquet constituent. It contains proposition
 definitions, with no proof of these propositions asserted here.
 
@@ -32,8 +32,10 @@ analytic theorem. Identity, inverse, and composite permutations give the subgrou
 relation laws. Their Levi conjugation maps must be checked against the actual
 matrix embeddings; the identity, inverse, and composition of intertwining
 equivalences then give the representation laws. This explains the intended
-provenance, and is a proof obligation rather than a hypothesis of any target.
+provenance, and is proved separately (`associationRelationLaws`, module
+`AssociationLawsProof`) rather than a hypothesis of any target.
 
-The parent cuspidal-induction association theorem remains a separate obligation.
+The parent cuspidal-induction association theorem is a separate statement,
+proved as `cuspidalInductionAssociation` in `AssociationProof`.
 These laws only provide the final algebraic composition once the analytic
 argument has associated both inducing representations to the same constituent.

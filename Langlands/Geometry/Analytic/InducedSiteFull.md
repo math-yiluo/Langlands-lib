@@ -1,7 +1,5 @@
 # Induction on equivariant quasi-étale sites is full
 
-Author: Worker 933.
-
 This module proves that the induction functor
 `quasiEtaleSiteInduction hH hC hQ X : Qét(X(H)) ⥤ Qét(X_{G/H}(G))` (module
 `InducedEquivariantSite`) is full. The proof assumes the statement

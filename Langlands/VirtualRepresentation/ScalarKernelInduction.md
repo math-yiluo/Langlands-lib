@@ -1,7 +1,7 @@
 # Scalar lifts of induced characters of the normalized image
 
 Helper module for the proof of
-`Langlands.ClassField.Global.RelativeWeilGroup.InducedCharacterGenerationStatement`.
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.InducedCharacterGenerationStatement`.
 It continues `Langlands.VirtualRepresentation.ScalarKernelGroup`, in the same
 namespace `Langlands.VirtualRepresentation.ScalarKernel`. It computes the scalar
 lift of a representation of the normalized image induced from a

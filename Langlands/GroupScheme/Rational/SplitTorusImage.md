@@ -1,7 +1,5 @@
 # Images of split tori in affine group schemes over a field
 
-Author: Worker 228.
-
 ## Main theorem
 
 `Langlands.GroupScheme.IsSplitTorus.exists_factor_isSplitSubtorus`: let `k` be a field
@@ -84,6 +82,5 @@ The statement is the standard structure of images of diagonalizable groups over 
 image of a split torus is a closed split torus whose character group is a sublattice. The
 Lean proof is self-contained, using the published coordinate adapter and Mathlib's group
 algebras, tensor products, flatness over fields, and submodules of free modules over a PID.
-It is a prerequisite for the split-component arguments of tasks
-`62edef35-527b-463b-99e8-144240046a95` (Levi split components) and
-`fe540c1a-3c81-44ed-b16d-9acf125e1489` (existence and uniqueness of split components).
+It is a prerequisite for the split-component arguments on Levi split components and on
+the existence and uniqueness of split components.

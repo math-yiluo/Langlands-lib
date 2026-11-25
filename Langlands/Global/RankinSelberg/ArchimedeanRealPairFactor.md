@@ -1,8 +1,7 @@
 # Rapidly decreasing Mellin pairs for the real pair factors
 
-Module of an intermediate result of Task 7400 (entry module `ArchimedeanRealPairIdentity`), towards
-`Langlands.Global.RankinSelbergGlobal.RealPlaceFunctionalEquationStatement`. Authored by
-Worker 823. Every declaration is proved, with no axioms beyond Lean's standard ones
+Module of an intermediate result (entry module `ArchimedeanRealPairIdentity`), towards
+`Langlands.Global.RankinSelbergGlobal.RealPlaceFunctionalEquationStatement`. Every declaration is proved, with no axioms beyond Lean's standard ones
 (`propext`, `Classical.choice`, `Quot.sound`). Helper modules: `ArchimedeanInverseMellin`
 (inverse Mellin transform) and `ArchimedeanGammaBounds` (Gamma factors in vertical strips).
 

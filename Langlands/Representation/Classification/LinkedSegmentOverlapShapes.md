@@ -1,7 +1,5 @@
 # Block shapes of two overlapping segments
 
-Author: Worker 1033.
-
 This module fixes the combinatorial data of the overlapping case of Zelevinsky
 1980, Proposition 4.6, step (2). It lives in the namespace
 `Langlands.Classification.QuotientHom`. Step (2) of Zelevinsky's proof (Ze80

@@ -40,9 +40,9 @@ This module contains only the statement. It is not proved here.
 
 ## Provenance
 
-This is an internal statement, introduced in Task 7070 for the proof of
-`RealLinkedLanglandsQuotientNotLargeStatement`. It is the lower half of the Gelfand–Kirillov
-dimension comparison suggested in the task, and it is used in the module
+This is an internal statement, introduced for the proof of
+`RealLinkedLanglandsQuotientNotLargeStatement`. It is the lower half of a Gelfand–Kirillov
+dimension comparison, and it is used in the module
 `RealLinkedQuotientGrowth`.
 
 Mathematically, the statement follows from two facts.

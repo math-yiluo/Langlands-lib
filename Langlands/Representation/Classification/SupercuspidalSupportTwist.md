@@ -1,8 +1,6 @@
 # Determinant twists of supercuspidal supports
 
-Author: Worker 357.
-
-This internal derived helper transports the existing support relation along a
+This module transports the existing support relation along a
 real determinant-power twist. It uses the actual cuspidal representatives,
 injection, quotient map and published normalized product-twist equivalence.
 It makes no derivative assertion.
@@ -49,8 +47,8 @@ At Library base `e01d121751dd80ba2ce2d21544b43f6e8df18007`, the recursive
 inventory contains 242 project modules including this entry and 123 directly
 named external import roots. There is one direct import,
 `Langlands.Representation.Classification.CuspidalProductContragredient`.
-All 241 inherited Lean/Markdown pairs are byte-identical to the current
-Library and to the corresponding pairs in the previously accepted
+All 241 inherited Lean/Markdown pairs are byte-identical to the
+Library at the time of the audit and to the corresponding pairs in the
 `SegmentHeadProductDualInitialSupport` dependency audit. No project import or
 paired Markdown is missing. The complete inventories are below; the external
 list records direct roots rather than a separate recursive Mathlib audit.
@@ -70,35 +68,26 @@ supercuspidal contragredient theorem, and the general cuspidal Jacquet
 multiplicity Prop interface. No derivative or mirabolic module is in this
 closure. No published Prop interface is treated as a proved input.
 
-The host's trusted operator correspondence
-[bd71b9185aab5d6eafffb7891bd3a3ca](/home/taskhub/pilot/correspondence/bd71b9185aab5d6eafffb7891bd3a3ca.md),
-[0edda6122ce65ed7ac51603c37473920](/home/taskhub/pilot/correspondence/0edda6122ce65ed7ac51603c37473920.md),
-[30144f6f9b59540b88b6d4c1517892d9](/home/taskhub/pilot/correspondence/30144f6f9b59540b88b6d4c1517892d9.md),
-[ed80148e21e7523abfc048f455e98eb0](/home/taskhub/pilot/correspondence/ed80148e21e7523abfc048f455e98eb0.md),
-[2b33898bdd0a5ff1b9031be5155a06f0](/home/taskhub/pilot/correspondence/2b33898bdd0a5ff1b9031be5155a06f0.md),
-and [ca18fd5005bf5e12a3f7cade18dca865](/home/taskhub/pilot/correspondence/ca18fd5005bf5e12a3f7cade18dca865.md)
-was read in full. The narrow exceptions for the individual support proof's
-length-two base do not enter this unit: it imports no adjacent-reducibility,
+This module imports no adjacent-reducibility,
 terminal-support, `core_mid` or `core` result.
 
-The inherited closure and the new proof are independent of the host criterion
-in either direction; parent `GenericSegmentProductUniqueness`; multisegment
+The inherited closure and the proof of this module are independent of the
+criterion `SegmentHeadProductIrreducibility`, in either direction; the statement
+`GenericSegmentProductUniqueness`; multisegment
 exhaustion; ordered strong-head existence; quotient coverage; ordered
 conversion; tempered uniqueness; square-integrable classification and
-exhaustion; regular exhaustion; Ze80 3.5/9.6 and their proof successors;
-excluded segment, head, socle and full Jacquet conclusions; and the
-segment-socle part of task `8e5b4563`. The broad lexical scan of the full
-Lean closure has no hit for the host exclusion inventory. The route and
+exhaustion; regular exhaustion; Ze80 3.5/9.6 and any proofs of them;
+excluded segment, head, socle and full Jacquet conclusions; and
+segment-socle results. The broad lexical scan of the full
+Lean closure has no hit for this exclusion inventory. The route and
 fingerprint checks above supplement this lexical check.
 
 ## Validation
 
-The complete native module and selected construction compiled in the project's
-authorized Lean service with zero errors and warnings. Declaration inspection
+The complete native module and selected construction compiled with zero errors and warnings. Declaration inspection
 identifies the selected construction as a definition, with independent `uF`
 and `uV` and only the standard `propext`, `Classical.choice` and `Quot.sound`
-axioms. Independent semantic review and publication
-remain separate requirements.
+axioms.
 
 ## Complete project import inventory
 

@@ -1,7 +1,5 @@
 # Proof of the all-degree Tate cup laws
 
-Proof author: Worker 45. Audit and documentation preparation: Worker 211.
-
 `Langlands.Tate.cupLaws` proves exactly `CupLaws` in arbitrary universe `u`.
 It assembles the normalization and naturality theorems of `CupProof`, the
 boundary theorems of `CupBoundary` and `CupBoundarySecond`, and the subgroup

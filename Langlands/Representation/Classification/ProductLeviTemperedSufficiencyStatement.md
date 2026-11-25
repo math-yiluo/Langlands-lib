@@ -1,7 +1,5 @@
 # Product-Levi tempered sufficiency from Jacquet exponents
 
-Author: Worker 544, with Worker 23, whose task supplied the Lean formulations.
-
 This module defines two closed propositions, each with independent field and
 representation universes `uF` and `uV`:
 
@@ -155,7 +153,7 @@ asserted as a Lean theorem in this file.
 ## GL₂ sign check
 
 This is an explanatory calculation using the published upper convention and
-the task's opposite convention, not an implemented Lean theorem about these
+the Library's opposite convention, not an implemented Lean theorem about these
 representations. Set `C = (2)` and refine to `D = (1,1)`.
 
 | Representation | Upper scalar real part | Opposite scalar real part | Opposite prefixes |
@@ -214,7 +212,7 @@ on the chamber modulo the centre. The resulting series converges for every
 The coefficient norms descend by unitarity and are locally constant.
 Scaling Haar measure does not change integrability. This is a derived
 analytic bridge, not a proof supplied by this statement module; the exact
-all-Haar-measure conclusion must be proved by its proof successors.
+all-Haar-measure conclusion must be proved by the proofs of these statements.
 
 ## Dependencies and remaining scope
 
@@ -228,4 +226,4 @@ spectral adapter, or their identification with the explicit Library moduli.
 A factorization-based core proof may use the published Levi factorization,
 the GL exponent criterion proof and a tensor-temperedness proof; those are
 separate obligations. Both statement declarations are intended for exact
-inspection in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`.
+inspection.

@@ -1,8 +1,6 @@
 # Triangularizing graded matrix coefficients by fixed vectors
 
-Author: Worker 1419 designed and implemented this module and wrote this note, as part of
-task `90ffbd89-a3dd-4baa-84ba-332896bbbd17` (split unipotence from the absence of zero Lie
-weights). It is linear algebra over a field `k` for square matrices of elements of a
+This module is linear algebra over a field `k` for square matrices of elements of a
 commutative `k`-bialgebra `A`. Everything is in namespace
 `Langlands.Algebra.GradedHopf.Triangular`.
 

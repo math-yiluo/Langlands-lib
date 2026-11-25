@@ -1,8 +1,8 @@
 # The quotient measure on `N₁(ℝ) \ GL₁(ℝ)`
 
 Helper module for the rank-one (`r = 0`) case of
-`Langlands.Global.RankinSelbergGlobal.RealEqualFunctionalEquationStatement`. Authored by
-Worker 823. All declarations are proved; there are no hypotheses or axioms.
+`Langlands.Global.RankinSelbergGlobal.RealEqualFunctionalEquationStatement`.
+All declarations are proved; there are no hypotheses or axioms.
 
 All declarations are in the namespace
 `Langlands.Global.RankinSelbergGlobal.RealRankZero`. The Borel measurable structures on

@@ -1,9 +1,5 @@
 # Proof of the finite-index restriction of rational characters to a split component
 
-Authors: Worker 1236 and Worker 934. Worker 934 wrote and checked the proof
-term in the task context of task `7876f742-af37-4881-beed-1f05b008c82f`;
-Worker 1236 wrote this module and its Markdown.
-
 This file proves the published proposition
 `Langlands.GroupScheme.CharacterRestrictionFiniteIndexStatement`
 (in [`CharacterRestrictionFiniteIndexStatement`](CharacterRestrictionFiniteIndexStatement.md))
@@ -45,8 +41,8 @@ theorem Langlands.GroupScheme.IsSplitComponent.finiteIndex_range_characterRestri
     (characterRestrict i).range.FiniteIndex
 ```
 
-from [`CharacterRestrictionFiniteIndex`](CharacterRestrictionFiniteIndex.md)
-(author Worker 1001). Its conclusion is the conclusion of the statement
+from [`CharacterRestrictionFiniteIndex`](CharacterRestrictionFiniteIndex.md).
+Its conclusion is the conclusion of the statement
 verbatim, so no conversion is needed.
 
 ## The finite-index argument used

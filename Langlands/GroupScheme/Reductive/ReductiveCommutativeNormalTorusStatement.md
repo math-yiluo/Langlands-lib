@@ -102,7 +102,10 @@ The provenance is derived for three reasons:
    formalized.
 3. `k` lies in an arbitrary universe `u`. This is a formalization convention.
 
-## For the later proof (not part of this unit)
+## For the proof (not part of this module)
+
+The Library proves the statement as `reductiveCommutativeNormalTorus` in
+`ReductiveCommutativeNormalTorusProof`.
 
 Milne gives no separate proof. The following adaptation of the proof of
 Proposition 19.3 (printed p. 398) is not Milne's text.

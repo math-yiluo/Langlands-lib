@@ -4,7 +4,7 @@ This internal composition proves
 `SpecialLinearTorusAutomorphismStatement` implies the exact published
 `SpecialLinearTitsCocycleStatement`, in the same arbitrary universe. The
 automorphism proposition remains an explicit premise; the unconditional Tits
-cocycle theorem is not proved by this unit.
+cocycle theorem is not proved by this module.
 
 `Presentation.HasTitsMatrixFormulas p x` is the predicate that the family of
 matrices `x` satisfies both discrepancy formulas on all relative test schemes,

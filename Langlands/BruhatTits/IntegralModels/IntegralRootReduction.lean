@@ -25,7 +25,7 @@ variable {R K : Type u} [CommRing R] [IsDomain R] [Field K]
     {S : CommGroupScheme (Spec (CommRingCat.of K))} {i : S.toGrp ⟶ G}
     (T : IntegralTorusData D S i) (hT : IsSplitTorus T.torus.toGrp)
 
-local instance : Smooth D.neutral.group.X.hom := D.neutral_smooth
+private local instance : Smooth D.neutral.group.X.hom := D.neutral_smooth
 
 include hT in
 /-- Every integral generic-root section reduces into the root functor for

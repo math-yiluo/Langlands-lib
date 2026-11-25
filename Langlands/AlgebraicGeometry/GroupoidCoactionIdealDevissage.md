@@ -1,6 +1,6 @@
 # Dévissage by powers of an invariant ideal
 
-Worker 148. This is internal algebra derived from the existing coaction,
+This is internal algebra derived from the existing coaction,
 stable-submodule, quotient, invariant-ideal, and short exact sequence
 constructions. It does not rely on a geometric descent theorem. The rings
 have arbitrary universe `u`, and the coefficient modules have independent
@@ -41,5 +41,5 @@ finitely generated. Mathlib's
 which `I^n` lies in the annihilator, so the preceding theorem applies.
 
 Both results are conditional reductions. They establish neither the initial
-vanishing condition for modules killed by `I` nor the host geometric
-acyclicity theorem.
+vanishing condition for modules killed by `I` nor the geometric
+acyclicity theorem (`EtaleEquivalenceRelationComodulesAcyclicStatement`).

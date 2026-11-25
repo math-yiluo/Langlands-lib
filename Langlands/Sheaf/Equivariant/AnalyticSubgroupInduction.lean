@@ -62,23 +62,23 @@ theorem mem_discreteSubmodule_of_subgroup_hom
     change t⁻¹ * (t * (g : G) * t⁻¹) * t = (g : G)
     group
   have hinter :
-      relabel ρ t V.obj ≫ (subgroupInclusion ρ H).map (liftAction lH kS).unop =
-        (liftAction l ⟨g, hS g.2⟩).unop ≫ relabel ρ t V.obj := by
+      relabel ρ t V.obj ≫ (subgroupInclusion ρ H).map (liftAction lH kS).unop.asHom =
+        (liftAction l ⟨g, hS g.2⟩).unop.asHom ≫ relabel ρ t V.obj := by
     rw [subgroupInclusion_map_liftAction_translate H t l kS, heq]
     rw [← Category.assoc, ← Category.assoc]
     have hri : relabel ρ t V.obj ≫ relabelInv ρ t V.obj = 𝟙 _ :=
       hom_ext (inv_mul_cancel t) (Category.id_comp _)
     rw [hri, Category.id_comp]
   have hfixed :
-      E.map ((subgroupInclusion ρ H).map (liftAction lH kS).unop).op
+      E.map ((subgroupInclusion ρ H).map (liftAction lH kS).unop.asHom).op
         (η.app (op W) (F.map f₀.op s)) = η.app (op W) (F.map f₀.op s) := by
-    exact (η.naturality_apply (liftAction lH kS).unop.op _).symm.trans
+    exact (η.naturality_apply (liftAction lH kS).unop.asHom.op _).symm.trans
       (congrArg (η.app (op W)) (hN kS hk))
   have hval : E.map f.op (η.app (op U) s) =
       E.map (relabel ρ t V.obj).op (η.app (op W) (F.map f₀.op s)) := by
     rw [← hf, map_comp_op_apply]
     exact congrArg (E.map (relabel ρ t V.obj).op) (η.naturality_apply f₀.op s).symm
-  change E.map (liftAction l ⟨g, hS g.2⟩).unop.op
+  change E.map (liftAction l ⟨g, hS g.2⟩).unop.asHom.op
     (E.map f.op (η.app (op U) s)) = E.map f.op (η.app (op U) s)
   rw [hval]
   rw [← map_comp_op_apply, ← hinter, map_comp_op_apply]

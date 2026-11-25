@@ -1,0 +1,220 @@
+/-
+Copyright (c) 2026 Bin Wu. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Bin Wu
+-/
+
+module
+
+public import WeilConjectures.Mathlib.AlgebraicGeometry.IdealSheaf.Module
+public import WeilConjectures.AlgebraicGeometry.IdealModuleProductStalk
+public import WeilConjectures.Blowup.Affine.ReesGrading
+public import Mathlib.AlgebraicGeometry.IdealSheaf.Functorial
+public import WeilConjectures.AlgebraicGeometry.Coherent
+import Mathlib.CategoryTheory.Abelian.Basic
+import WeilConjectures.AlgebraicGeometry.QuasicoherentFiniteTypeAffine
+import WeilConjectures.AlgebraicGeometry.IdealPowersLocalCoefficientSpan
+
+/-! # Degree-zero generators for ideal-power Rees modules
+
+Source: Stacks Project, coherent.tex, Tag 02O8, proof and preceding paragraph.
+-/
+
+@[expose] public section
+
+set_option autoImplicit false
+universe v
+open CategoryTheory Opposite
+namespace AlgebraicGeometry
+
+set_option synthInstance.maxHeartbeats 20000 in
+-- Transporting finite local generators through the iterated slice sites needs more
+-- elaboration heartbeats; this file still compiles within the 60-second limit.
+set_option backward.isDefEq.respectTransparency false in
+
+/-- Restriction preserves finite type: pull the local generating cover back along
+`Over.forget U`; its local maps preserve colimits and the unit, hence carry each finite
+family of generators to a finite family. Source: Stacks Project, Modules, Tag 01B5,
+the locality of finite type. The construction follows the proved private helper
+in WeilConjectures.AlgebraicGeometry.FinitePushforwardCoherent, with the site and ring arguments
+made explicit to avoid expensive inference. -/
+private theorem isFiniteType_over (X : Scheme.{v}) (F : X.Modules)
+    [F.IsFiniteType] (U : X.Opens) : (F.over U).IsFiniteType := by
+  classical
+  obtain ⟨q, hq⟩ := SheafOfModules.IsFiniteType.exists_localGeneratorsData F
+  let G := Over.forget U
+  let J := Opens.grothendieckTopology X
+  let K := J.over U
+  have (V : Over U) (W : Over V) : IsCofiltered ((K.over V).Cover W) :=
+    isCofiltered_of_semilatticeInf_nonempty _
+  have (W : Over U) : IsCofiltered (K.Cover W) :=
+    isCofiltered_of_semilatticeInf_nonempty _
+  let S := X.ringCatSheaf.over U
+  let d : (F.over U).LocalGeneratorsData :=
+    { I := Σ (V : Over U) (i : q.I), G.obj V ⟶ q.X i
+      X := fun i ↦ i.1
+      coversTop := fun V ↦ by
+        refine K.superset_covering ?_ (G.cover_lift K _ (q.coversTop (G.obj V)))
+        intro W g ⟨i, ⟨v⟩⟩
+        exact ⟨⟨W, i, v⟩, ⟨𝟙 _⟩⟩
+      generators := fun i ↦ by
+        let G' := Over.post (X := i.1) G ⋙ Over.map i.2.2
+        have : G'.IsContinuous (K.over i.1) (J.over (q.X i.2.1)) :=
+          Functor.isContinuous_comp _ _ _ (J.over _) _
+        have : G'.IsCocontinuous (K.over i.1) (J.over (q.X i.2.1)) :=
+          isCocontinuous_comp (Over.post (X := i.1) G) (Over.map i.2.2)
+            (K.over i.1) (J.over (G.obj i.1))
+        let ψ : S.over i.1 ⟶
+            (G'.sheafPushforwardContinuous RingCat.{v} (K.over i.1)
+              (J.over (q.X i.2.1))).obj (X.ringCatSheaf.over (q.X i.2.1)) := 𝟙 _
+        let H := SheafOfModules.pushforward.{v} (F := G')
+          (R := X.ringCatSheaf.over (q.X i.2.1)) ψ
+        have : H.IsLeftAdjoint :=
+          SheafOfModules.isLeftAdjoint_pushforward_of_isIso.{v} (F := G')
+            (R := X.ringCatSheaf.over (q.X i.2.1)) ψ
+        exact (q.generators i.2.1).map H (Iso.refl _) }
+  apply SheafOfModules.IsFiniteType.mk (R := X.ringCatSheaf.over U)
+  refine ⟨d, ?_⟩
+  refine SheafOfModules.LocalGeneratorsData.IsFiniteType.mk (p := d) (fun i ↦ ?_)
+  have := hq.isFiniteType i.2.1
+  refine ⟨?_⟩
+  change Finite (q.generators i.2.1).I
+  infer_instance
+
+private theorem app_cast {X : Scheme.{v}} {M : X.Modules} (N : ℕ → X.Modules)
+    {n k : ℕ} (h : n = k) (q : M ⟶ N n) (U : X.Opens)
+    (s : M.val.obj (op U)) :
+    HEq (((h ▸ q) : M ⟶ N k).val.app (op U) s) (q.val.app (op U) s) := by
+  cases h
+  rfl
+
+private theorem inclusion_cast {X : Scheme.{v}} {M F : X.Modules}
+    (N : ℕ → X.Modules) (j : ∀ n, N n ⟶ F)
+    {n k : ℕ} (h : n = k) (q : M ⟶ N n) (U : X.Opens)
+    (s : M.val.obj (op U)) :
+    (j k).val.app (op U) (((h ▸ q) : M ⟶ N k).val.app (op U) s) =
+      (j n).val.app (op U) (q.val.app (op U) s) := by
+  cases h
+  rfl
+
+set_option backward.isDefEq.respectTransparency false in
+/-- A finite type module generates all its ideal-power products in degree zero.
+Source: Stacks Project, coherent.tex, Tag 02O8, lines 5330--5400.
+(blueprint: lem-weil-pbc-ideal-powers-rees-zero-generators).
+
+Proof: Since J^0=O_X, its product with F maps isomorphically onto F by the
+left unitor. At x choose an open U and finitely many generators of F, using
+finite type, and lift them uniquely to G_0(U). Given t in G_m(V) and y in V,
+shrink about y so its image is a finite sum a_j u_j, with a_j images of elements
+of I^m. Indeed the product-image construction gives finite sums locally, and
+the extended ideal is locally generated by the images of I; expanding its mth
+power gives the asserted coefficients. Shrink again for the finitely many u_j
+so that each is a linear combination of the chosen generators. The section
+formula for mu identifies each term a_j s_i with mu_(0,m)(a_j t^m)(s_i).
+The inclusion of G_m into F is injective, so equality of the images gives the
+required span membership in G_m itself. Empty generating families handle the
+zero module; m=0, I=0 and I=A use the same argument with I^0=A. -/
+theorem idealPowersReesZeroGenerators {A : Type v} [CommRing A]
+    {X : Scheme.{v}} (f : X ⟶ Spec (CommRingCat.of A))
+    (I : Ideal A) (J : X.IdealSheafData)
+    (hJ : J = (Scheme.IdealSheafData.ofIdealTop
+      (I.map (Scheme.ΓSpecIso (CommRingCat.of A)).inv.hom)).comap f)
+    (F : X.Modules) [F.IsQuasicoherent] [F.IsFiniteType] :
+    let G := fun m ↦ Scheme.idealModuleProduct (Scheme.idealSheafPower J.toModulesι m).2 F
+    let graded := reesGrading I
+    ∀ (mu : ∀ (m k : ℕ), graded k → (G m ⟶ G (m + k))),
+      (∀ (m k : ℕ) (b : graded k) (U : X.Opens) (s : (G m).val.obj (op U)),
+        ((Scheme.idealModuleProductι (Scheme.idealSheafPower J.toModulesι (m + k)).2 F).app
+          U).hom ((mu m k b).app U s) =
+        (((Scheme.ΓSpecIso (CommRingCat.of A)).inv ≫ f.appLE ⊤ U le_top).hom
+          (b.val.val.coeff k)) •
+        ((Scheme.idealModuleProductι (Scheme.idealSheafPower J.toModulesι m).2 F).app
+          U).hom s) →
+      (∀ x : X, ∃ (U : X.Opens), x ∈ U ∧
+      ∃ (r : ℕ) (s : Fin r → (G 0).val.obj (op U)),
+        ∀ (m : ℕ) (V : X.Opens) (hVU : V ≤ U) (t : (G m).val.obj (op V))
+          (y : X), y ∈ V → ∃ (W : X.Opens) (hWV : W ≤ V), y ∈ W ∧
+            (G m).val.map (homOfLE hWV).op t ∈
+              Submodule.span ((moduleRings X.toRingedSpace).obj.obj (op W))
+                {z | ∃ (i : Fin r), 0 ≤ m ∧
+                  ∃ b : graded (m - 0),
+                    HEq z ((mu (0) (m - 0) b).val.app (op W)
+                      ((G (0)).val.map (homOfLE (hWV.trans hVU)).op (s i)))}) := by
+  classical
+  dsimp only
+  intro mu hmu x
+  let G := fun m ↦ Scheme.idealModuleProduct (Scheme.idealSheafPower J.toModulesι m).2 F
+  let j := fun m ↦ Scheme.idealModuleProductι (Scheme.idealSheafPower J.toModulesι m).2 F
+  let : MonoidalCategory X.Modules := SheafOfModules.monoidalCategory X.sheaf
+  have hj0 : IsIso (j 0) := by
+    change IsIso (CategoryTheory.Limits.image.ι
+      (MonoidalCategory.whiskerRight (𝟙 (MonoidalCategory.tensorUnit X.Modules)) F ≫
+        (MonoidalCategory.leftUnitor F).hom))
+    have : IsIso
+        (MonoidalCategory.whiskerRight (𝟙 (MonoidalCategory.tensorUnit X.Modules)) F ≫
+          (MonoidalCategory.leftUnitor F).hom) := by
+      infer_instance
+    have : Epi (CategoryTheory.Limits.image.ι
+        (MonoidalCategory.whiskerRight (𝟙 (MonoidalCategory.tensorUnit X.Modules)) F ≫
+        (MonoidalCategory.leftUnitor F).hom)) :=
+      epi_of_epi_fac (CategoryTheory.Limits.image.fac _)
+    exact isIso_of_mono_of_epi _
+  obtain ⟨U, hU, hxU, -⟩ :=
+    exists_isAffineOpen_mem_and_subset (x := x) (U := ⊤) (show x ∈ (⊤ : X.Opens) from trivial)
+  have : Module.Finite Γ(X, U) Γ(F, U) :=
+    (((Scheme.Modules.quasicoherent_finite_type_affine.{v, v} X).2 F inferInstance).1
+      U hU).1.mp (isFiniteType_over X F U)
+  obtain ⟨r, u, hu⟩ := Module.Finite.exists_fin (R := Γ(X, U)) (M := Γ(F, U))
+  let s : Fin r → (G 0).val.obj (op U) := fun i ↦ (inv (j 0)).app U (u i)
+  refine ⟨U, hxU, r, s, ?_⟩
+  intro m V hVU t y hyV
+  obtain ⟨W, hWV, hyW, ht⟩ :=
+    idealPowersLocalCoefficientSpan f I J hJ F U hU r u hu m V hVU t y hyV
+  refine ⟨W, hWV, hyW, ?_⟩
+  simp only [Nat.sub_zero]
+  let action (b : reesGrading I m) : G 0 ⟶ G m := (Nat.zero_add m) ▸ mu 0 m b
+  let P : Submodule Γ(X, W) ((G m).val.obj (op W)) :=
+    Submodule.span Γ(X, W)
+      {z | ∃ i : Fin r, 0 ≤ m ∧ ∃ b : reesGrading I m,
+        HEq z ((mu 0 m b).val.app (op W)
+          ((G 0).val.map (homOfLE (hWV.trans hVU)).op (s i)))}
+  let l := ((j m).val.app (op W)).hom
+  have hs (i : Fin r) : ((j 0).app U).hom (s i) = u i := by
+    change (((inv (j 0)) ≫ j 0).app U).hom (u i) = u i
+    rw [CategoryTheory.IsIso.inv_hom_id]
+    rfl
+  have hres (i : Fin r) :
+      ((j 0).app W).hom
+        ((G 0).val.map (homOfLE (hWV.trans hVU)).op (s i)) =
+      F.val.map (homOfLE (hWV.trans hVU)).op (u i) := by
+    rw [← hs i]
+    exact congrArg (fun q ↦ q (s i))
+      ((j 0).val.naturality (homOfLE (hWV.trans hVU)).op)
+  have hgen : ∀ z ∈ {z | ∃ (i : Fin r) (a : A), a ∈ I ^ m ∧
+      z = (((Scheme.ΓSpecIso (CommRingCat.of A)).inv ≫
+        f.appLE ⊤ W le_top).hom a) •
+          F.val.restrictₛₗ (homOfLE (hWV.trans hVU)).op (u i)}, z ∈ P.map l := by
+    rintro z ⟨i, a, ha, rfl⟩
+    let b : reesGrading I m := ⟨reesMonomial I a ha, reesMonomial_mem I a ha⟩
+    have hb : b.val.val.coeff m = a := Polynomial.coeff_monomial_same m a
+    have hact := hmu 0 m b W
+      ((G 0).val.map (homOfLE (hWV.trans hVU)).op (s i))
+    rw [hb, hres i] at hact
+    have he := inclusion_cast G j (Nat.zero_add m) (mu 0 m b) W
+      ((G 0).val.map (homOfLE (hWV.trans hVU)).op (s i))
+    refine ⟨(action b).val.app (op W)
+      ((G 0).val.map (homOfLE (hWV.trans hVU)).op (s i)),
+      Submodule.subset_span ⟨i, Nat.zero_le m, b, ?_⟩, he.trans hact⟩
+    exact app_cast G (Nat.zero_add m) (mu 0 m b) W _
+  have ht' : l ((G m).val.map (homOfLE hWV).op t) ∈ P.map l :=
+    (Submodule.span_le.mpr hgen) ht
+  have : Mono (j m) := by
+    dsimp [j, Scheme.idealModuleProductι]
+    infer_instance
+  have : Mono (j m).val := (SheafOfModules.forget _).map_mono (j m)
+  have hinj : Function.Injective l :=
+    (ModuleCat.mono_iff_injective ((j m).val.app (op W))).mp inferInstance
+  obtain ⟨q, hq, heq⟩ := ht'
+  exact (hinj heq) ▸ hq
+
+end AlgebraicGeometry

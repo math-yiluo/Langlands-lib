@@ -56,6 +56,6 @@ and the published `Langlands.Scheme.fieldPointTangentLocalRegularity`.
 The provenance is internal: the module assembles the cited published
 actual-point and stalk-derivation interfaces and transfers their dimension
 comparison. There is no smoothness, connectedness, reductivity, separability
-or characteristic premise. This unit does not identify cotangent dimension
+or characteristic premise. This module does not identify cotangent dimension
 with Krull dimension, prove dimension invariance under isogenies, or prove
 the central-isogeny root-datum statement; those remain further steps.

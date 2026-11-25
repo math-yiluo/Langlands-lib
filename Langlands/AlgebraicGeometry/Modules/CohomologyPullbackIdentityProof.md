@@ -10,9 +10,9 @@ geometric or acyclicity hypothesis.
 
 This is an internal coherence proof for the construction in
 `CohomologyPullback`, using the exact identity comparison fixed in
-`CohomologyPullbackLawsStatement`. It proves one component of the five-law
-target. Composition, coefficient naturality, degree-zero normalization, and
-split retraction are separate obligations. It does not assert an additional
+`CohomologyPullbackLawsStatement`. It proves one of the five laws of that
+statement. Composition, coefficient naturality, degree-zero normalization, and
+split retraction are proved in separate modules. It does not assert an additional
 formal comparison with a different implementation of the general Stacks
 cohomological f-map.
 
@@ -30,8 +30,7 @@ The proof follows the four factors of the published derived pullback.
    augmentation using the preceding unit equation.
    `pullbackIdentity_resolutionAugmentation` then extends this equation to
    the integer-indexed resolution. Naturality of the inverse
-   `extendSingleIso` is proved by the degree-zero component, using the
-   argument contributed by Worker 310.
+   `extendSingleIso` is proved by the degree-zero component.
 3. `pullbackIdentity_derivedAugmentation` transports the augmentation
    equation through localization. It uses the faithful inclusion from the
    bounded below derived category, naturality of the single-complex and

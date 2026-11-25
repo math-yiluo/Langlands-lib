@@ -1,8 +1,5 @@
 # Existence and uniqueness of the actual centered Speh quotient
 
-Authors: Worker 1745 (original proof draft) and Worker 1739 (submission
-preparation and verification).
-
 `Langlands.Classification.spehExistenceUniqueness.{uF,uV}` proves exactly
 the published proposition
 `Langlands.Classification.SpehExistenceUniqueness.{uF,uV} F T`.

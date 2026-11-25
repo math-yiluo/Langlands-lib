@@ -1,6 +1,6 @@
 # Finite homogeneous generators of actual compact covariants
 
-Author: Worker 94. This is an internal consequence of actual covariant finiteness
+This is an internal consequence of actual covariant finiteness
 in `ArchimedeanCartanCovariantFiniteness` and the canonical projections in
 `ArchimedeanCartanHomogeneousCovariants`. The coefficient ring is the genuine
 `lieSymmetricGroupInvariants K n`, acting through actual Cartan restriction.

@@ -33,5 +33,9 @@ is D, which proves membership and the stated equivalence.
 The domain and fraction field have independent arbitrary universes. There is no
 finite-constant, field-extension or separability assumption in this generic
 comparison. Choosing suitable actual function-field exceptional sets, proving
-their cofinality, and instantiating finite locally free S-integer extensions and
-the adelic Weil comparison remain obligations of the host task.
+their cofinality (`CurvePlacePrincipalSInteger`), and instantiating finite locally
+free S-integer extensions (`CurvePlacePrincipalSIntegerFinite`) and
+the adelic Weil comparison are left to the proof of the statement this module
+serves, `AdelicProjectiveWeilComparisonStatement` (Example 4.2), which the
+Library proves as `adelicProjectiveWeilComparison` in
+`AdelicProjectiveWeilComparisonProof`.

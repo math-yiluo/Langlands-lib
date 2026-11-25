@@ -13,10 +13,10 @@ open Langlands.Global
 
 variable (F : Type u) [Field F] [NumberField F] (n : ℕ)
 
-local instance : AddCommGroup (RationalInvariantFunctions F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (ContinuousRationalFunctions F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (FiniteSmoothRationalFunctions F n) := Submodule.addCommGroup _
-local instance : AddCommGroup (AutomorphicForms F n) := Submodule.addCommGroup _
+private local instance : AddCommGroup (RationalInvariantFunctions F n) := Submodule.addCommGroup _
+private local instance : AddCommGroup (ContinuousRationalFunctions F n) := Submodule.addCommGroup _
+private local instance : AddCommGroup (FiniteSmoothRationalFunctions F n) := Submodule.addCommGroup _
+private local instance : AddCommGroup (AutomorphicForms F n) := Submodule.addCommGroup _
 local instance : AddCommGroup (ArchimedeanGL.SmoothFunctions F n) :=
   (ArchimedeanGL.smoothFunctions F n).addCommGroup
 

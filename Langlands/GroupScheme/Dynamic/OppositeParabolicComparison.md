@@ -1,8 +1,7 @@
 # Comparing opposite cocharacters with the same centralizer
 
 This is an internal, derived comparison using the published dynamic subgroup,
-split-torus image, rational root-point, and root-sign results. Worker 1650
-implements the argument. It does not supply a new structural root theorem.
+split-torus image, rational root-point, and root-sign results. It does not supply a new structural root theorem.
 
 `exists_common_maximalSplitTorus_of_range_le_centralizer` applies to any
 affine group scheme locally of finite type over an arbitrary field. If the

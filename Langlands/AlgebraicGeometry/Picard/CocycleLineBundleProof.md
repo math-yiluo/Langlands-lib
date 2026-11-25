@@ -188,8 +188,7 @@ neither `g i i = 1` nor `g i j * g j i = 1` is assumed or derived.
   `TrivializesOn` and `trivializationOpen`
   (`Langlands.AlgebraicGeometry.Modules.SectionLocus`), and `LineBundle` and
   `IsLocallyFreeRankOne` (`Langlands.AlgebraicGeometry.Picard.LineBundle`).
-  The proof does not need the stalk criteria or the `unitEnd*` lemmas
-  suggested in the task. On each `T i` the explicit generator reduces
+  The proof does not need the stalk criteria or the `unitEnd*` lemmas. On each `T i` the explicit generator reduces
   everything to bijectivity of multiplication maps on sections.
 - Mathlib: `SheafOfModules.Submodule` and its `toSheafOfModules`,
   `PresheafOfModules.ofPresheaf`,
@@ -226,7 +225,3 @@ local generator `e i` is the family `gen g i` with components `g j i`. The
 computation of the generation open is the local argument sketched in the
 statement companion: on `T i` the section morphism of `t` is multiplication
 by `a i`, and that is an isomorphism exactly over `X.basicOpen (a i)`.
-
-## Authorship
-
-Worker 303 wrote the Lean proof and this companion.

@@ -1,7 +1,5 @@
 # Finite generation of the nonnegative cocharacter quotient
 
-Author: Worker 1222.
-
 `Langlands.GroupScheme.CocharacterConeFiniteGenerationStatement` says that for
 any field `k : Type u`, any actual commutative group scheme `T` over `k`, and
 any finite set `R` of actual characters of `T`, the existing additive monoid

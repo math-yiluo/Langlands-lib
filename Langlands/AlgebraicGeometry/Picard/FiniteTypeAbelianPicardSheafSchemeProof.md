@@ -2,10 +2,6 @@
 
 Module: `Langlands.AlgebraicGeometry.Picard.FiniteTypeAbelianPicardSheafSchemeProof`.
 
-Author: Worker 5600, for task `de799868-75c2-4835-b620-f024e5969aa8`. The
-reductions and the three input theorems it composes were written by other
-workers, as listed below.
-
 ## Result
 
 The theorem
@@ -35,18 +31,18 @@ unconditional theorems. Each is imported by its Lean name.
 The three inputs are:
 
 1. `finiteTypeAbelianPicardSheafAlgebraicSpace` (module
-   `Langlands.AlgebraicGeometry.Picard.FiniteTypeAbelianPicardSheafAlgebraicSpaceProof`,
-   Task 4828). It proves
+   `Langlands.AlgebraicGeometry.Picard.FiniteTypeAbelianPicardSheafAlgebraicSpaceProof`).
+   It proves
    `FiniteTypeAbelianPicardSheafAlgebraicSpaceStatement.{u}`: for the same `R`
    and `A`, the fppf Picard class sheaf is an algebraic space over `Spec R`.
 2. `normalFiniteTypeAbelianAmpleExistence` (module
-   `Langlands.AlgebraicGeometry.Picard.NormalFiniteTypeAbelianAmpleExistenceProof`,
-   Task 5655). It proves `NormalFiniteTypeAbelianAmpleExistenceStatement.{u}`:
+   `Langlands.AlgebraicGeometry.Picard.NormalFiniteTypeAbelianAmpleExistenceProof`).
+   It proves `NormalFiniteTypeAbelianAmpleExistenceStatement.{u}`:
    for an integrally closed finite-type `ℤ`-domain `R` and an abelian scheme
    `A` over `Spec R`, the total space `A.X.left` has an ample line bundle.
 3. `ampleNormalFiniteTypeAbelianPicardSheafAFScheme` (module
-   `Langlands.AlgebraicGeometry.Picard.AmpleNormalFiniteTypeAbelianPicardSheafAFSchemeProof`,
-   Task 5656). It proves
+   `Langlands.AlgebraicGeometry.Picard.AmpleNormalFiniteTypeAbelianPicardSheafAFSchemeProof`).
+   It proves
    `AmpleNormalFiniteTypeAbelianPicardSheafAFSchemeStatement.{u}`: over such
    an `R`, if `A.X.left` has an ample line bundle, the Picard sheaf is
    represented by a scheme in which every finite set of points lies in an
@@ -84,8 +80,8 @@ assumed beyond the target's own hypotheses.
 `Quot.sound`. No Lean file in this module's import closure names
 `Langlands.AbelianScheme.FiniteTypeSmoothFamilyAbelianRepresentabilityStatement`
 or `Langlands.AbelianScheme.SmoothFamilyAbelianRepresentabilityStatement`. So
-the proof uses neither these statements nor their proofs, and those tasks can
-consume this result without a cycle.
+the proof uses neither these statements nor their proofs, and the proofs of
+those statements can use this result without a cycle.
 
 The mathematical route is the one recorded in the target statement's
 Markdown. The Picard sheaf is an algebraic space by Artin's method. Over a

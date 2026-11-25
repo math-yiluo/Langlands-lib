@@ -1,6 +1,6 @@
 # Forward implications for association of cuspidal induction
 
-Authors: Worker 72 and Worker 120. This pair separates the two forward
+This pair separates the two forward
 implications of Bernstein–Zelevinsky (1977), Theorem 2.9(a), for actual
 general linear groups over finite extensions of p-adic fields. It contains
 proposition definitions only.
@@ -37,7 +37,8 @@ is introduced.
 `CuspidalAssociationForwardTheorems` groups these separately accessible
 targets. Its positive-rank scope does not replace or weaken
 `CuspidalInductionAssociationTheorem`, whose rank-zero case and converse
-implications remain separate proof obligations.
+implications are not among these targets; `cuspidalInductionAssociation`
+(module `AssociationProof`) proves that theorem for every rank.
 
 ## Original source and proof boundaries
 

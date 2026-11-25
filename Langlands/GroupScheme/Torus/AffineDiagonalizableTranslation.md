@@ -1,6 +1,7 @@
 # Translation by a diagonalizable subgroup
 
-Worker 644. Internal adapters for Task 7326. Over an arbitrary scheme S, the
+Internal adapters for the construction of affine quotients by central
+multiplicative-type subgroups over arbitrary bases. Over an arbitrary scheme S, the
 translation graph of a homomorphism H → G sends (h,g) to (g,i(h)g). It factors
 as the product of the inclusion with the identity, followed by the square
 automorphism (x,y) → (y,xy), whose inverse is (x,y) → (yx^{-1},x).
@@ -21,4 +22,4 @@ quotient in SGA 3, Exposé VIII, Gille–Polo recomposition of 8 November 2009,
 `sga3-expose-viii-gille-polo-2009`, SHA-256
 `06e43e0571d411cc5579975778fcc03c8ecaa67189248d1a053e61dc653af510`.
 The graph factorization and comparison proof are internal. This module does not
-yet identify the graph coordinate ring map or construct the quotient scheme.
+identify the graph coordinate ring map or construct the quotient scheme.

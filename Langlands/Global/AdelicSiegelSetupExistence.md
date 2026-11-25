@@ -1,12 +1,10 @@
 # Existence of the actual algebraic Siegel setup from three structural statements
 
-Author: Worker 4149 (formerly Worker 0).
-
 This module isolates the algebraic half of the Library target
 `Langlands.Global.AdelicSiegelFactors.AdelicGoodSiegelReductionStatement`. It states
 that the actual algebraic setup `IsSiegelAlgebraicSetup` exists for every connected
 reductive group over a number field, and it proves this statement from three published
-structural propositions that are not yet proved. Every other clause of the setup comes
+structural propositions, which it takes as hypotheses. Every other clause of the setup comes
 from published proofs. The module proves no analytic assertion: no compact subgroup,
 Iwasawa decomposition or Siegel coverage is constructed or assumed.
 
@@ -51,18 +49,18 @@ in the same universe `u`:
 - `Langlands.GroupScheme.GenericMinimalParabolicStatement`
   (`GroupScheme.Rational.MinimalParabolicStatement`): for a maximal split torus `i` of a
   connected reductive group over a field and a generic cocharacter `ν`, the dynamic
-  parabolic `Dynamic.parabolic (ν ≫ i)` is a minimal parabolic subgroup functor. Its proof
-  task is `bc8072c0-8a2b-4636-ab3c-7f04a4afb6a5`.
+  parabolic `Dynamic.parabolic (ν ≫ i)` is a minimal parabolic subgroup functor. It is
+  proved as `genericMinimalParabolic` (`GroupScheme.Rational.GenericMinimalParabolicProof`).
 - `Langlands.GroupScheme.DerivedMaximalSplitTorusStatement`
   (`GroupScheme.Derived.MaximalSplitTorusStatement`): for a derived subgroup `d : D ⟶ G`
   and a maximal split torus `i : S ⟶ G`, some maximal split torus `j : S_D ⟶ D` and closed
-  `e : S_D ⟶ S` satisfy `j ≫ d = e ≫ i`. Its proof task is
-  `45bba50f-b29d-49c2-b923-64037208e2e1`.
+  `e : S_D ⟶ S` satisfy `j ≫ d = e ≫ i`. It is proved as
+  `derivedMaximalSplitTorus` (`GroupScheme.Derived.MaximalSplitTorusProof`).
 - `Langlands.GroupScheme.DerivedCentralSplitTorusProductStatement`
   (`GroupScheme.Derived.CentralSplitTorusProductStatement`): for such compatible data and
   a split component `a : A ⟶ G` factoring as `c ≫ i`, the multiplication
-  `prodHom e c : S_D × A ⟶ S` is a central isogeny. Its proof task is
-  `52f33732-d993-43ae-aa80-b0bd915c3034`.
+  `prodHom e c : S_D × A ⟶ S` is a central isogeny. It is proved as
+  `derivedCentralSplitTorusProduct` (`GroupScheme.Derived.CentralSplitTorusProductProof`).
 
 ## Declarations and proofs
 
@@ -119,8 +117,9 @@ The theorem adds no hypothesis beyond the three named statements.
 
 ## What remains
 
-The three structural statements are unproved; once their proof tasks publish proofs,
-applying `siegelAlgebraicSetupExistence_of_structural` to them proves
+The three structural statements are proved in the Library (see above);
+`siegelAlgebraicSetupExistence` (module `AdelicSiegelSetupExistenceProof`) applies
+`siegelAlgebraicSetupExistence_of_structural` to them and proves
 `SiegelAlgebraicSetupExistenceStatement`. The compact subgroup with Iwasawa decomposition
-and positive-torus compatibility, and the Siegel coverage itself, are separate obligations
-of task `6adbbc46-4bb2-4c01-843a-d8ded48189f2`.
+and positive-torus compatibility, and the Siegel coverage itself, are separate obligations,
+not treated here.

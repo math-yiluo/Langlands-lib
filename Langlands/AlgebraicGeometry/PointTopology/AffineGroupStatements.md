@@ -1,6 +1,6 @@
 # Topological group properties of actual affine group-scheme points
 
-This statement unit records group consequences of Brian Conrad, *Weil and
+This statement module records group consequences of Brian Conrad, *Weil and
 Grothendieck approaches to adelic points* (December 31, 2011), Proposition 2.1
 and the following paragraph, printed page 2. The registered original is
 `conrad-2011-weil-grothendieck-adelic-points`, SHA256
@@ -58,9 +58,9 @@ them. The relative formulation is derived: the source is recovered by
 taking `S = R`. Coefficients in `S` are constant evaluation functions, so no
 topology on `R` or continuity of its structure map is required.
 
-This unit does not construct reductive groups or their parabolic, Levi or
+This module does not construct reductive groups or their parabolic, Levi or
 unipotent subgroup schemes. It does not assert second countability, a
 nonarchimedean group structure or compact open subgroup bases, nor compare
 the point topology of an actual general linear group with a matrix
-topology. Those specializations and the remainder of the five-section
-Conrad program remain separate obligations.
+topology. Those specializations and the remainder of the five sections of
+Conrad's paper remain separate obligations.

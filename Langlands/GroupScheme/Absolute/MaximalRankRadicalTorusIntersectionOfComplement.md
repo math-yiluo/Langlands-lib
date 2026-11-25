@@ -1,10 +1,9 @@
 # Radical torus intersections from a unipotent-by-torus decomposition
 
-Worker 1496. This module composes published Library results. It proves
+This module composes published Library results. It proves
 `MaximalRankRadicalTorusIntersectionStatement` from four structural premises,
 which stay explicit hypotheses of the final theorem. It does not prove the
-proposition unconditionally. Accepting this module discharges none of the
-premises and does not complete the proof task for the target.
+proposition unconditionally, and it discharges none of the premises.
 
 ## Declarations
 
@@ -109,7 +108,7 @@ premise `hcomp` is the decomposition `H = H_u ⋊ T` of Milne 2017, Theorem 16.3
 printed pp.335–336, with factor order `(n, t)`. That reference is
 `milne-2017-algebraic-groups`, SHA-256
 `899b0f44f3c3ccfbaf5ed1cf9c180be7a8016b1c0e9709ca0c206304e5bd1cd0`. It is weaker
-than the separately staged proposition `SolvableMaximalTorusSemidirectStatement`,
+than the separate proposition `SolvableMaximalTorusSemidirectStatement`,
 which also asserts smoothness, connectedness, normality and maximality of `U`. The
 module does not import that proposition. The argument follows the classical
 pattern: conjugate a maximal torus of the radical into the given maximal torus, then

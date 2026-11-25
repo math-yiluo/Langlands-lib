@@ -1,7 +1,5 @@
 # Real Levi-compatible Iwasawa from ambient star realization
 
-Author: Worker 1655.
-
 This internal construction uses the polynomial adjoint core to obtain
 internal Hermitian cocharacter conjugation from adjoint stability of the
 actual base-field image. The coefficient field is real `RCLike`, and a
@@ -23,7 +21,9 @@ the original projectors Hermitian.
 The provenance is internal composition of the polynomial adjoint core,
 internal real unitarization, and actual closed-image descent. It does not
 establish initial ambient realization or common-cocharacter existence for
-an arbitrary rational pair. The unconditional host statement remains open.
+an arbitrary rational pair. The unconditional statement this module serves,
+`Langlands.Global.InfinitePlaceGroupPoints.LeviCompatibleIwasawaStatement`, is
+proved in `Langlands.Global.InfinitePlaceLeviIwasawaProof`.
 
 `MatrixRepresentation.realHermitianConjugate` chooses the resulting
 internally conjugated representation. Its specification proves that it

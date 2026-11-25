@@ -1,8 +1,7 @@
 # Checks for compatible tensor residual actions
 
-Worker 321 authored this companion to
-`Langlands.Algebra.NonUnitalBimoduleTensorScalars`, with its construction by
-Worker 185. It checks the internal adapter's exact interfaces and named
+This is a companion to
+`Langlands.Algebra.NonUnitalBimoduleTensorScalars`. It checks the internal adapter's exact interfaces and named
 structures; the mathematical provenance and proof description are in the core
 module's Markdown. No additional source theorem is asserted here.
 
@@ -47,5 +46,4 @@ actual example, not merely an identity on a subsingleton carrier.
 The generic signatures impose no nontriviality, unit-action or dimension
 condition. In particular they retain the zero and subsingleton cases admitted
 by the core hypotheses. Zero actions on nonzero carriers are not asserted to be
-nondegenerate. These are elaboration and kernel checks; independent semantic
-review and publication remain separate requirements.
+nondegenerate. These are elaboration and kernel checks.

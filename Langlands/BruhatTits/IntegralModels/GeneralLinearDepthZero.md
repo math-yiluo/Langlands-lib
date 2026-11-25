@@ -26,10 +26,9 @@ The module is derived. Its statements are standard facts about `GL_N` over
 a discrete valuation ring. Here they are obtained by applying published
 Library results to the standard model.
 
-The task objective (Task 3557) asks for this in two places. Its "Regression
-examples" section asks for proved examples. Its "Representation layer"
-section asks that the Library's concrete `GL_n` results be recovered from the
-general theory, with proved comparisons.
+The module is a proved regression example of the general theory, and it
+recovers the Library's concrete `GL_n` results from the general theory, with
+proved comparisons.
 
 The comparison values come from Kaletha–Prasad, *Bruhat–Tits Theory: A New
 Approach* (2023). The registered original is

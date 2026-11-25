@@ -1,6 +1,6 @@
 # Cleared corank coefficients and rational denominator bounds
 
-Worker 486. This internal consumer converts formal Laurent clearing of actual
+This internal consumer converts formal Laurent clearing of actual
 corank coefficients into the reciprocal-polynomial denominator bound. Its
 scalar argument applies to unrestricted bilateral series.
 

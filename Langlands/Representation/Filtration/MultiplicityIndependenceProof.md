@@ -1,7 +1,5 @@
 # Independence of a single Jordan–Hölder multiplicity
 
-Author: Worker 430.
-
 `Langlands.jordanHolderMultiplicityIndependence` proves the exact published
 `Langlands.JordanHolderMultiplicityIndependenceStatement` from
 `Langlands.Representation.Filtration.MultiplicityStatement`. The field,

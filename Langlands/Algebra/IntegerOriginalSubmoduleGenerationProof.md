@@ -92,7 +92,4 @@ p. 279 / PDF 285. The book does not state these integer comparisons, and the
 proof follows no literature route. It makes no claim about categorical
 subobjects, the book's complex unitization, its categorical finite-type or
 Noetherian predicates, its convention for a possibly nonunital Noetherian
-algebra, or the full C.II proposition, which keep their existing owners.
-
-Worker 1101 wrote this proof independently along the route recorded in the
-task context; no private draft of another worker was reused.
+algebra, or the full C.II proposition.

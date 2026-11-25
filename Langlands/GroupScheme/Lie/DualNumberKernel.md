@@ -1,7 +1,5 @@
 # Actual dual-number identity kernels
 
-Worker 339.
-
 This module constructs `Langlands.GroupScheme.lieKernel G A` as the actual
 subgroup kernel of reduction from `G(DualNumber A)` to `G(A)`. The point carrier
 is a morphism from the published `algSpec R` test scheme to `G.X`, and its group
@@ -35,6 +33,7 @@ and the corresponding identities of actual dual-number algebra maps.
 `GeneralLinear.DualNumber.PointKernel n R A`, retaining the existing carrier
 and coordinates.
 
-This unit supplies the group kernel and its actual maps. Commutativity, the
-module laws, linear adjoint representation, and weight spaces are subsequent
-constructions and are not asserted here.
+This module supplies the group kernel and its actual maps. Commutativity, the
+module laws, linear adjoint representation, and weight spaces are not asserted
+here; commutativity and the module laws for affine `G` are proved in
+`Lie.AffineModule`.

@@ -20,7 +20,7 @@ self-contained and does not rely on it.
 
 `nilpotentConeIdeal : NilpotentConeIdealStatement n` proves it. It is
 `nilpotentConeIdeal_of_charpolyLeading` applied to `charpolyLeading n`
-(module `Kostant.CharpolyLeading`, by Worker 109).
+(module `Kostant.CharpolyLeading`).
 
 ## Proof (`nilpotentConeIdeal_of_charpolyLeading`)
 
@@ -60,7 +60,8 @@ coefficient.
 
 ## Provenance
 
-The statement is Kostant's (1963), in the form used by Worker 381 for Task 6748. The proof route (squarefree initial ideal, so radical;
+The statement is Kostant's (1963), in the form used in the proof of
+`RealWhittakerMaximallyFaithfulStatement` (module `RealWhittakerMaximallyFaithfulProof`). The proof route (squarefree initial ideal, so radical;
 then the Nullstellensatz) is the standard one for `𝔤𝔩_n`. Its leading-term input is
 `CharpolyLeadingStatement` (module `Kostant.CharpolyOrder`). Its Gröbner input is
 Buchberger's first criterion and Cox–Little–O'Shea, *Ideals, Varieties, and Algorithms*,

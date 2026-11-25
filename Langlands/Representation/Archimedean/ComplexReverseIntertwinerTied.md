@@ -1,7 +1,6 @@
 # Intertwiners to the reversed standard module: the Langlands-ordered case
 
-Lean module: `Langlands.Representation.Archimedean.ComplexReverseIntertwinerTied`. Worker 5677
-wrote it under Task 7064 (`e4a22cc7-0a28-44a3-afc6-38bb7c243851`).
+Lean module: `Langlands.Representation.Archimedean.ComplexReverseIntertwinerTied`.
 
 ## Notation
 
@@ -24,7 +23,8 @@ non-increasing along the list. The twist `σ(g) = w₀ (gᵀ)⁻¹` is `ComplexR
 
 The hypothesis `ComplexTemperedStandardIrreducibleStatement` (module
 `ComplexTemperedIrreducibleStatement`) says: if all exponents of `ds` have the same real part, then
-`I(ds)` is irreducible. It is not yet proved in the Library.
+`I(ds)` is irreducible. The Library proves it as `complexTemperedStandardIrreducible` (module
+`ComplexTemperedStandardIrreducibleProof`).
 
 The proof also uses two block statements. The Library proves both: `complexBlockChartIntegrable`
 (module `ComplexBlockChartIntegralProof`) and `complexBlockParabolicIntegration` (module
@@ -41,9 +41,8 @@ them. The three statements used by the proof are:
   principal series of the modulus character, with integrability of the inner integrand.
 - `ComplexTemperedStandardIrreducibleStatement`, as above.
 
-The conclusion `ComplexReverseIntertwinerKernelStatement` (Rev_C) was stated by Worker 728 in the
-module `ComplexStandardIrreducibleCriterionReduction` (published from candidate
-`f94dfe9f-7bf7-40a4-8de6-05842c2a02b4`). It says: for every `n`, every list `ds` of `n` complex
+The conclusion `ComplexReverseIntertwinerKernelStatement` (Rev_C) is stated in the module
+`ComplexStandardIrreducibleCriterionReduction`. It says: for every `n`, every list `ds` of `n` complex
 characters with `IsComplexLanglandsOrdered ds`, every intertwiner `T : I(ds) → I(ds.reverse)` and
 every `(𝔤, K)`-submodule `W` of `I(ds)` (`IsGKSubmodule`) with `W ≠ ⊤`, `W ≤ ker T`.
 
@@ -59,21 +58,21 @@ Derived (internal). This is a reduction: it proves Rev_C from the Library statem
 `I(ds) → I(ds.reverse)` is the Langlands quotient, so its kernel is the largest proper submodule.
 The formal proof does not follow that route. It extends the proof of the strictly ordered case
 (`ComplexStrictReverseIntertwinerKernelStatement`, module `ComplexReverseIntertwinerStrict`) to
-blocks of tied exponents, using the block Jacquet functional of Worker 140 (Task 7063).
+blocks of tied exponents, using the block Jacquet functional of `ComplexBlockFunctional`.
 
 ## Supporting modules
 
-- Worker 5677 (Task 7064): `ComplexReverseTwist` (the twist `σ`, `twistLin`, pullback of principal
+- `ComplexReverseTwist` (the twist `σ`, `twistLin`, pullback of principal
   series), `ComplexReverseTransfer` (pairing transpose and transfer identity),
   `ComplexReverseRecursion` (`integral_mul_swap`), `ComplexReverseIntertwinerStrict`
   (`complexPositionCharacter_inv`, `complexPositionCharacter_reverse`) and
   `ComplexReverseBlockRecursion` (the recursion `mul_jac_eq_zero` along the blocks).
-- Worker 140 (Task 7063): `ComplexBlockFunctional` (block decompositions, `BlockOrdered`, the block
+- `ComplexBlockFunctional` (block decompositions, `BlockOrdered`, the block
   Jacquet functional `jac`, `TiedIrreducible`), `ComplexBlockDual`, `ComplexBlockNonvanishing`
   (`exists_jac_testVector_ne_zero`: a `U(n)`-finite test vector with nonzero `jac`) and
   `ComplexBlockLanglandsQuotient` (`exists_blockOrdered`, `exponent_ordered`, and `tiedIrreducible`:
   `ComplexTemperedStandardIrreducibleStatement → TiedIrreducible`).
-- Worker 728 (Task 7064): `ComplexBlockLimitSum` and `ComplexBlockSlice`, used by
+- `ComplexBlockLimitSum` and `ComplexBlockSlice`, used by
   `ComplexReverseBlockRecursion`.
 - Library: `ComplexJacquetKernel` (the annihilator of a proper stable space and its stability),
   `ComplexStrictLanglandsQuotient.isPhasePower`, and the block proofs `complexBlockChartIntegrable`

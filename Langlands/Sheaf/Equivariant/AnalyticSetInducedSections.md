@@ -1,14 +1,14 @@
 # Berkovich's functor `Γ_{X{G}}` on sheaves on `X(G)_qét` and `X(G)_ét`
 
-Author: Worker 26. Builds on the following modules:
+Builds on the following modules:
 
-- `Langlands.Topology.GroupAction.DiscreteGSetFibre` (imported; same candidate): for a
+- `Langlands.Topology.GroupAction.DiscreteGSetFibre` (imported; ported together with this module): for a
   presheaf `P` of modules on `P(G)`, the diagram `fibreDiagram P` over the pointed orbits,
   its colimit `fibre P`, the base points `basePoint G`, Berkovich's comparison
   `colimitOpenSubgroupIsoFibre P` with the colimit over the open subgroups, the smooth
   representation `fibreRep P`, the fibre functor `fibreFunctor G R`, and
   `hasColimitsOfShape_pointedOrbit G R`.
-- `Langlands.Geometry.Analytic.SetInducedSite` (imported; Worker 21): Berkovich's functor
+- `Langlands.Geometry.Analytic.SetInducedSite` (imported): Berkovich's functor
   `γ : Σ ↦ X_Σ(G)` as `SetInducedSpace.quasiEtaleSiteFunctor hC X hD : P(G) ⥤ Qét(X(G))` and
   `SetInducedSpace.etaleSiteFunctor hC X hD : P(G) ⥤ Ét(X(G))`. Here `X_Σ` is
   `setInduced X.obj Σ`, the disjoint union of copies of `X` indexed by `Σ`, in which `g` maps
@@ -16,9 +16,12 @@ Author: Worker 26. Builds on the following modules:
   the hypotheses `hC : SetInducedSpace.ContinuityStatement` (the action of `G` on `X_Σ` is
   continuous for discrete `Σ`) and `hD : SigmaDescStatement` (morphisms out of a disjoint
   union that are quasi-étale, resp. étale, on every piece are quasi-étale, resp. étale).
-  Both are statements in the Library and neither is proved there.
+  Both are statements in the Library. They are proved by `SetInducedSpace.continuityStatement`
+  (`Langlands.Geometry.Analytic.SetInducedSpaceContinuityProof`) and
+  `sigmaDesc_quasiEtale_etale` (`Langlands.Geometry.Analytic.LocalizedSigmaQuasiEtaleProof`);
+  this module takes them as hypotheses.
 - `Langlands.Geometry.Analytic.EquivariantQuasiEtaleSite` and
-  `Langlands.Geometry.Analytic.EquivariantEtaleSite` (Worker 21, imported or through the
+  `Langlands.Geometry.Analytic.EquivariantEtaleSite` (imported or through the
   imports): `EquivariantQuasiEtaleSite X = Qét(X(G))` and `EquivariantEtaleSite X = Ét(X(G))`,
   their topologies `equivariantQuasiEtaleTopology X` and `equivariantEtaleTopology X`, and
   the functor `EquivariantQuasiEtaleSite.ofEquivariantEtaleSite X : Ét(X(G)) ⥤ Qét(X(G))`.

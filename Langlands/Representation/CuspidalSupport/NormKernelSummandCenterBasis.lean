@@ -197,10 +197,10 @@ theorem leviInducedEndCenterExpansion_of_endExpansion
           let I := leviInductionFunctor p l r hp hr hl hmul
           ∀ (n : ℕ) (b : Fin n → End (I.obj piD)),
             (∀ x : End (I.obj piD),
-              ∃! a : Fin n → End piD, x = ∑ i, I.map (a i) ≫ b i) →
+              ∃! a : Fin n → End piD, x = ∑ i, End.of (I.map (a i).asHom ≫ (b i).asHom)) →
             ∃ (s : ℕ) (c : Fin s → End (I.obj piD)),
               ∀ x : End (I.obj piD), ∃! z : Fin s → Subring.center (End piD),
-                x = ∑ i, I.map ((z i : End piD) : piD ⟶ piD) ≫ c i := by
+                x = ∑ i, End.of (I.map (z i : End piD).asHom ≫ (c i).asHom) := by
   have := hl.isConnectedReductive.isAffineHom
   have : IsAffine M.X.left := isAffine_of_isAffineHom M.X.hom
   have := hl.isConnectedReductive.smooth
@@ -211,8 +211,8 @@ theorem leviInducedEndCenterExpansion_of_endExpansion
   let := leviInductionFunctor_additive.{u, max u v} p l r hp hr hl hmul
   let f : End piD →+* End (I.obj piD) :=
     { I.mapEnd piD with
-      map_zero' := I.map_zero _ _
-      map_add' := fun _ _ => I.map_add }
+      map_zero' := congrArg End.of (I.map_zero _ _)
+      map_add' := fun _ _ => congrArg End.of I.map_add }
   obtain ⟨d, hd⟩ := finite_unique_right_expansion_trans f b c.val hb
     (unique_center_right_expansion c.val)
   exact ⟨n * (m ^ 2), d, hd⟩

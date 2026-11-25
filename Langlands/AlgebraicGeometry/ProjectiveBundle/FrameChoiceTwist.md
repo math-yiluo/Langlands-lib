@@ -89,14 +89,14 @@ coordinate change.
 
 ## Provenance and remaining scope
 
-This unit is derived from `ProjectiveBundle.FrameChoice`,
+This module is derived from `ProjectiveBundle.FrameChoice`,
 `ProjectiveBundle.Tautological`, module pullback transport, and
 `Picard.RigidifiedPullbackProofs`. The proof route is the explicit
 pullback construction and its canonical associativity, rather than a new
 descent argument for each family.
 
 The compatibility equation for these chart isomorphisms when the frame
-family changes remains a separate obligation. This unit also does not
+family changes is proved in `FrameChoiceTwistChart`. This module also does not
 compare different atlases, prove tensor-line invariance, construct a
 cubic embedding or a Hilbert quotient, or prove
 `LargeLevelRepresentabilityStatement`.

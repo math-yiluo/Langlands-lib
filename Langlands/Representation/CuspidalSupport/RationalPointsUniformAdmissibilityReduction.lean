@@ -93,7 +93,7 @@ theorem exists_center_monoid_generators {B : Type uM} [CommGroup B] (P : G →* 
   have hQ : Q.FG := (Subgroup.fg_iff_add_fg Q).mpr
     ((Submodule.fg_iff_addSubgroup_fg (AddSubgroup.toIntSubmodule Q.toAddSubgroup)).mp
       (IsNoetherian.noetherian _))
-  obtain ⟨S, hS⟩ := (Subgroup.fg_iff_submonoid_fg Q).mp hQ
+  obtain ⟨S, hS⟩ := Submonoid.isMulFG_iff.mp ((Subgroup.fg_iff_submonoid_fg Q).mp hQ)
   have hmem : ∀ b : S, ∃ y : Subgroup.center G, Pc y = b := by
     intro b
     have : (b : B) ∈ Q.toSubmonoid := hS ▸ Submonoid.subset_closure b.2

@@ -1,16 +1,16 @@
-/-
-Copyright (c) 2026 The Tau Ceti contributors. All rights reserved.
-Released under Apache 2.0 license as described in the file LICENSE.
-Authors: The Tau Ceti contributors
-
-Worker 105 adapts the universal-property functoriality of the published
-Langlands.TauCeti.RingTheory.WeilRestriction.Basic (upstream commit
-8428d6217f74afa72531df0bc85d7b57ab72810f) to finite-type input algebras.
-The old finite-presentation interface is unchanged.
--/
 import Langlands.RingTheory.WeilRestriction.FiniteType
 
-/-! # Functoriality of finite-type affine Weil restriction -/
+/-! # Functoriality of the finite-type Weil restriction algebra
+
+Let `B` be a finite projective `A`-algebra. For a `B`-algebra `C` of finite type,
+`WeilRestrictionFiniteType A B C` represents the functor `T ↦ (C →ₐ[B] B ⊗[A] T)` on
+`A`-algebras, through `homEquiv`. A homomorphism `φ : C →ₐ[B] D` acts on these functors by
+precomposition, so it corresponds to a homomorphism of representing algebras
+`map A B φ : WeilRestrictionFiniteType A B C →ₐ[A] WeilRestrictionFiniteType A B D`: the one
+whose point is the universal point of `D` composed with `φ`. This file defines `map`, proves
+that it respects identities and composition, and compares it with the map of
+`Langlands.Algebra.WeilRestriction` when `C` and `D` are finitely presented.
+-/
 
 noncomputable section
 
@@ -24,7 +24,9 @@ variable (A B : Type*) [CommRing A] [CommRing B] [Algebra A B]
   [Algebra B C] [Algebra B D] [Algebra B E] [Algebra A T]
   [Algebra.FiniteType B C] [Algebra.FiniteType B D] [Algebra.FiniteType B E]
 
-/-- The canonical map classifying the composite with the universal point. -/
+/-- The homomorphism of Weil restriction algebras induced by `φ : C →ₐ[B] D`. Under the
+representing bijection of `C` it corresponds to the universal point of `D` composed with
+`φ`. -/
 def map (φ : C →ₐ[B] D) :
     WeilRestrictionFiniteType A B C →ₐ[A] WeilRestrictionFiniteType A B D :=
   (homEquiv A B C _).symm ((universalPoint A B D).comp φ)
@@ -33,44 +35,60 @@ variable {A B}
 
 theorem homEquiv_map (φ : C →ₐ[B] D) :
     homEquiv A B C _ (map A B φ) = (universalPoint A B D).comp φ :=
-  Equiv.apply_symm_apply _ _
+  (homEquiv A B C _).apply_symm_apply _
 
+/-- `homEquiv_map`, evaluated at an element of `C`. -/
 @[simp]
 theorem lTensor_map_universalPoint (φ : C →ₐ[B] D) (c : C) :
     Algebra.TensorProduct.lTensor (S := B) B (map A B φ)
         (universalPoint A B C c) = universalPoint A B D (φ c) :=
-  congrArg (fun f : C →ₐ[B] B ⊗[A] WeilRestrictionFiniteType A B D ↦ f c)
-    (homEquiv_map φ)
+  DFunLike.congr_fun (homEquiv_map (A := A) φ) c
 
-/-- Contravariance of represented points in the coordinate algebra. -/
+/-- On points, composing with `map A B φ` is composing with `φ`. -/
 theorem homEquiv_comp_map (φ : C →ₐ[B] D)
     (g : WeilRestrictionFiniteType A B D →ₐ[A] T) :
     homEquiv A B C T (g.comp (map A B φ)) =
-      (homEquiv A B D T g).comp φ := by
-  rw [homEquiv_comp, homEquiv_map, homEquiv_apply, AlgHom.comp_assoc]
+      (homEquiv A B D T g).comp φ :=
+  calc homEquiv A B C T (g.comp (map A B φ))
+      = (Algebra.TensorProduct.lTensor B g).comp (homEquiv A B C _ (map A B φ)) :=
+        homEquiv_comp _ _
+    _ = (Algebra.TensorProduct.lTensor B g).comp ((universalPoint A B D).comp φ) := by
+        rw [homEquiv_map]
+    _ = (homEquiv A B D T g).comp φ := rfl
 
 @[simp]
 theorem map_id :
     map A B (AlgHom.id B C) = AlgHom.id A (WeilRestrictionFiniteType A B C) := by
+  apply (homEquiv A B C _).injective
+  rw [homEquiv_map, homEquiv_apply, AlgHom.comp_id]
   ext c
   simp
 
 theorem map_comp (ψ : D →ₐ[B] E) (φ : C →ₐ[B] D) :
     map A B (ψ.comp φ) = (map A B ψ).comp (map A B φ) := by
-  ext c
-  simp [Algebra.TensorProduct.map_id_comp]
+  apply (homEquiv A B C _).injective
+  rw [homEquiv_comp_map, homEquiv_map, homEquiv_map, AlgHom.comp_assoc]
 
-/-- The finite-type functor and the published finite-presentation functor
-agree under their canonical representing-algebra comparisons. -/
+/-- For finitely presented `C` and `D`, the comparison isomorphisms with
+`Langlands.Algebra.WeilRestriction` carry `map A B φ` to the map of that construction. -/
 theorem finitePresentationAlgEquiv_map
     [Algebra.FinitePresentation B C] [Algebra.FinitePresentation B D]
     (φ : C →ₐ[B] D) :
-    (TauCeti.Algebra.WeilRestriction.map A B φ).comp
+    (Langlands.Algebra.WeilRestriction.map A B φ).comp
         (finitePresentationAlgEquiv A B C).toAlgHom =
       (finitePresentationAlgEquiv A B D).toAlgHom.comp (map A B φ) := by
+  -- Both sides have the point `(WeilRestriction.universalPoint A B D).comp φ`.
   apply (homEquiv A B C _).injective
-  rw [homEquiv_comp_finitePresentationAlgEquiv,
-    TauCeti.Algebra.WeilRestriction.homEquiv_map, homEquiv_comp_map]
-  simp only [homEquiv_apply, finitePresentationAlgEquiv_universalPoint]
+  calc homEquiv A B C _ ((Langlands.Algebra.WeilRestriction.map A B φ).comp
+          (finitePresentationAlgEquiv A B C).toAlgHom)
+      = Langlands.Algebra.WeilRestriction.homEquiv A B C _
+          (Langlands.Algebra.WeilRestriction.map A B φ) :=
+        homEquiv_comp_finitePresentationAlgEquiv _
+    _ = (Langlands.Algebra.WeilRestriction.universalPoint A B D).comp φ :=
+        Langlands.Algebra.WeilRestriction.homEquiv_map φ
+    _ = (homEquiv A B D _ (finitePresentationAlgEquiv A B D).toAlgHom).comp φ := by
+        rw [homEquiv_apply, finitePresentationAlgEquiv_universalPoint]
+    _ = homEquiv A B C _ ((finitePresentationAlgEquiv A B D).toAlgHom.comp (map A B φ)) :=
+        (homEquiv_comp_map φ _).symm
 
 end Langlands.Algebra.WeilRestrictionFiniteType

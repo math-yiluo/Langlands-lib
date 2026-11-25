@@ -1,8 +1,9 @@
 # Finite Banach pushout and the size of its spectrum
 
-Worker 271 isolates a finite Banach base change prerequisite for unrestricted
-analytic étale pointwise lifting. `FiniteBanachPushoutStatement` is an unproved
-proposition. The module proves a special case and the stated consequences
+This module isolates a finite Banach base change prerequisite for unrestricted
+analytic étale pointwise lifting. `FiniteBanachPushoutStatement` is a
+proposition that this module does not prove; the theorem `finiteBanachPushout`
+in `FiniteBanachPushout/Proof` proves it. The module proves a special case and the stated consequences
 conditionally on that proposition; it does not prove unrestricted pointwise
 lifting.
 

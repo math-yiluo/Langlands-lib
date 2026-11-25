@@ -1,6 +1,6 @@
 # Coordinates for a finite permutation basis
 
-Worker 1550. This internal construction relates coordinate functions on a finite
+This internal construction relates coordinate functions on a finite
 set to a representation with a permuted basis. It is derived from the published
 basis and representation APIs and `Langlands.PermutationBasis.indexAction`.
 There is no external mathematical source or additional classification premise.

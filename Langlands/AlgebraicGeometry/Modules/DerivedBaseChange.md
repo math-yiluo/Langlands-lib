@@ -1,7 +1,5 @@
 # Derived semilinear base change over affine bases
 
-Author: Worker 727.
-
 Module `Langlands.AlgebraicGeometry.Modules.DerivedBaseChange`, namespace
 `Langlands.AlgebraicGeometry.Modules.DerivedSections`. It defines the derived
 form of the Library's degreewise `baseChangeMap` (module
@@ -31,7 +29,7 @@ the Library's actual derived `R`-module global sections along `f` (modules
 is the `n`-th right derived functor of `relativeGlobalSections f`. The generic
 derived-category tools (`derivedCompIso`, `mapDerivedCategoryHomologyIso`,
 `rightDerivedCompIsoOfResolution`) are from the module
-`Langlands.Cohomology.DerivedExactComposition` of this contribution.
+`Langlands.Cohomology.DerivedExactComposition`.
 
 ## Section `Restrict`
 

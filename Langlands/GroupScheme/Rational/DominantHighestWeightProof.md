@@ -1,7 +1,5 @@
 # Proof of dominant highest-weight existence
 
-Author: Worker 1239.
-
 This file proves `Langlands.GroupScheme.SplitDominantHighestWeightRepresentationsExistStatement.{u}`
 as the theorem `Langlands.GroupScheme.splitDominantHighestWeightRepresentationsExist`. The
 theorem's type is exactly the published proposition. Let `k : Type u` be an algebraically

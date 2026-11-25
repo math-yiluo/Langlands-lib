@@ -1,7 +1,5 @@
 # Vanishing of nonconjugating associated geometric pieces
 
-Author: Worker 178.
-
 This proof targets the published `AssociatedGeometricPieceVanishingTheorem`.
 The finite permutation group acts on ambient subgroups by conjugation. In a
 finite group orbit of a partial order, comparable elements are equal: translate

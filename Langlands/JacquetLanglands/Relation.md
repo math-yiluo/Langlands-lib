@@ -36,7 +36,7 @@ theorem statement.
 DKV's `E²` asks for square-integrable representations with unitary
 central character. Badulescu's `E²` asks for essential
 square-integrability, which allows a twist by a character. This module
-follows Badulescu and Task 5443: `ρ` is essentially square-integrable.
+follows Badulescu: `ρ` is essentially square-integrable.
 
 ## Conventions
 

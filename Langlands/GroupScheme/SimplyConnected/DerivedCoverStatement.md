@@ -1,7 +1,5 @@
 # Statement: existence of simply connected covers of actual reductive derived subgroups
 
-Author: Worker 266.
-
 This module contains one `Prop`-valued definition and no proof.
 
 ## The Lean proposition
@@ -99,8 +97,8 @@ The proposition combines two source theorems, and its provenance is derived.
   the registered errata, the factorization `α` lands in the source `G'` of the
   incoming isogeny. The law is an explicit field of the published cover
   predicate. Deducing it from simple connectedness over an arbitrary field is
-  not assumed here; task `2be094ba-099b-4960-b5e3-3326c4320317` states that
-  law separately.
+  not assumed here; `SimplyConnectedCentralCoverUniversalProperty`
+  (`SimplyConnected/UniversalPropertyStatement`) states that law separately.
 
 `SimplyConnected/Basic.md` and `SimplyConnected/DerivedCover.md` describe how
 these source conventions match the Library predicates.
@@ -120,7 +118,7 @@ Propositions 19.10, 19.15 or 19.21. Its Chapter 18 entry is the
 Proposition 18.8 arrow correction described above. No retained project errata
 for CGP was found.
 
-## Intended proof route (not formalized)
+## Intended proof route (not formalized in this module)
 
 A proof is expected to combine three separate obligations, none of which is
 proved or assumed here.
@@ -128,18 +126,18 @@ proved or assumed here.
 1. `IsConnectedReductive G` supplies an affine structure morphism, and
    smoothness implies local finite type. The published
    `DerivedSubgroupRepresentabilityStatement` (`Derived/StructureStatement`,
-   with its own proof ownership) then gives an actual `d : D ⟶ G` with
+   proved as `derivedSubgroupRepresentability` in `Derived/RepresentabilityProof`) then gives an actual `d : D ⟶ G` with
    `IsDerivedSubgroup d`.
 2. The separate statement that the source of every such inclusion is
    semisimple, Milne Proposition 19.21(c), gives `IsSemisimple D`.
 3. A separate statement of existence of simply connected central covers of
-   semisimple field groups (CGP Corollary A.4.11(1), task
-   `ca621c65-139e-4ee3-a67e-d5357df9b4be`) gives `C` and `π` with
+   semisimple field groups (CGP Corollary A.4.11(1),
+   `SimplyConnectedCoverExistenceStatement`) gives `C` and `π` with
    `IsSimplyConnectedCover π`.
 
-The hypothesis supplies the remaining field `isConnectedReductive`. After this
-proposition is accepted, an exact-target proof task will be published or
-coordinated.
+The hypothesis supplies the remaining field `isConnectedReductive`. The
+proposition is proved along this route as `simplyConnectedDerivedCoverExistence`
+in `SimplyConnected/DerivedCoverProof`.
 
 ## What is not stated
 

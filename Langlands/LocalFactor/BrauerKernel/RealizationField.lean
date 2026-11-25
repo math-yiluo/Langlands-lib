@@ -1,6 +1,6 @@
 import Langlands.LocalFactor.BrauerKernel.RealizationPlace
 import Langlands.LocalFactor.BrauerKernel.GaloisType
-import Langlands.ClassField.Global.CompletionTower
+import Langlands.ClassFieldTheory.Global.CompletionTower
 
 /-! # Generator fields at the distinguished place of a global realization -/
 
@@ -293,7 +293,7 @@ theorem realizationCompletionHom_surjective (v : HeightOneSpectrum (𝓞 k))
       ⟨completionMap v u (φ.symm a), by
         change ψ (completionMap u w (completionMap v u (φ.symm a))) = _
         rw [← RingHom.comp_apply (completionMap u w),
-          ClassField.Global.CompletionTower.completionMap_comp v u w,
+          ClassFieldTheory.Global.CompletionTower.completionMap_comp v u w,
           realization_completionMap K v w φ ψ hφ hψ hcomp, RingEquiv.apply_symm_apply]⟩)
   have hle : IntermediateField.fixedField (galoisImage F K L) ≤ M := by
     refine fixedField_le_of_map_mem θ
@@ -359,7 +359,7 @@ def realizationBaseAlgHom {𝕃 : Type} [Field 𝕃] [NumberField 𝕃] [Algebra
   letI := (padicField v).algebra
   letI := F.canonicalTopology
   letI := (towerPadicField v u).algebra
-  (ClassField.Global.RelativeWeilGroup.completionPadicAlgHom v u).comp
+  (ClassFieldTheory.Global.RelativeWeilGroup.completionPadicAlgHom v u).comp
     (algHomOfContinuous (A := F.Carrier) (B := v.adicCompletion k)
       (continuous_algebraMap_padicField F) (continuous_padicMap v)
       (φ.symm : F.Carrier →+* v.adicCompletion k) hφ')
@@ -402,7 +402,7 @@ def realizationGeneratorEquiv (w : HeightOneSpectrum (𝓞 K')) [w.asIdeal.LiesO
         AlgebraicClosure F.Carrier) = _
       rw [← completionMap_comp_padicMap v u, RingHom.comp_apply,
         ← RingHom.comp_apply (completionMap u w),
-        ClassField.Global.CompletionTower.completionMap_comp v u w,
+        ClassFieldTheory.Global.CompletionTower.completionMap_comp v u w,
         realization_completionMap K v w φ ψ hφ hψ hcomp, realization_padicMap v φ hφ a]
       rfl)
 
@@ -443,7 +443,7 @@ theorem realizationGeneratorEquiv_base (w : HeightOneSpectrum (𝓞 K'))
       algebraMap F.Carrier (AlgebraicClosure F.Carrier) a := by
   rw [realizationGeneratorEquiv_apply, realizationBaseAlgHom_apply,
     ← RingHom.comp_apply (completionMap u w),
-    ClassField.Global.CompletionTower.completionMap_comp v u w,
+    ClassFieldTheory.Global.CompletionTower.completionMap_comp v u w,
     realization_completionMap K v w φ ψ hφ hψ hcomp, RingEquiv.apply_symm_apply]
   rfl
 

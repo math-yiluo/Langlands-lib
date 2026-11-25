@@ -1,8 +1,7 @@
 # Admissible center-finiteness and uniform central-character decomposition
 
-Author: Worker 1629. The algebra helper adapts Worker 23's published
-`Langlands.Representation.Exponents.FiniteActionSpectrumProof`; that contribution
-is credited in the submission as well.
+The algebra helper adapts the published
+`Langlands.Representation.Exponents.FiniteActionSpectrumProof`.
 
 `Langlands.centralCharacterDecomposition` has the whole unapplied type
 `Langlands.CentralCharacterDecompositionStatement.{uR,uG,uV}`. The coefficient
@@ -121,8 +120,8 @@ exceptional cases.
 
 The only direct project import is the companion
 `Langlands.Representation.Exponents.CentralDecompositionAlgebra`, which imports
-the unchanged target module `Langlands.Representation.Exponents.CentralStatement`.
-The target module supplies `IsCenterFinite` and the exact proposition. Its
+the statement module `Langlands.Representation.Exponents.CentralStatement`.
+The statement module supplies `IsCenterFinite` and the exact proposition. Its
 imports supply `centralCharacterSpace`, `generalizedCentralCharacterSpace`,
 `mem_generalizedCentralCharacterSpace`, `centralCharacterSpace_mono`,
 `IsCentralExponent`, `fixedVectors`, `IsSmooth` and `IsAdmissible`. The final
@@ -134,10 +133,10 @@ The remaining direct import is Mathlib's
 `Mathlib.LinearAlgebra.Eigenspace.Pi` in the algebra helper. The subrepresentation
 and group-algebra interfaces are Mathlib's actual `Subrepresentation.asSubmodule`
 and `Representation.asModule`. Twisting and contragredient definitions occur
-transitively through the unchanged target's imports but supply no proof step
+transitively through the statement module's imports but supply no proof step
 here. No sibling twist or contragredient proposition, Jacquet finite-length
 result, geometric lemma or analytic exponent criterion is proved by this
-contribution.
+module.
 
 The whole-theorem inspection reports precisely the universe parameters
 `uR`, `uG`, `uV` and the axioms `propext`, `Classical.choice`, `Quot.sound`.

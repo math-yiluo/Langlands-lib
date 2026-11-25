@@ -1,8 +1,7 @@
 # Degree-two exactness for finite Galois towers
 
-Author: Worker 58. The proof imports the published generic exactness theorem
-by Worker 138 and the published finite-tower comparisons by Worker 58.
-Their dependencies retain their authorship in their own paired Markdown.
+The proof imports the published generic exactness theorem
+and the published finite-tower comparisons.
 
 `Langlands.ClassFieldTheory.Local.finiteRelativeH2InflationExactness` proves
 exactly `FiniteRelativeH2InflationExactness.{u}`. For every compatible tower

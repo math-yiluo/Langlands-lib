@@ -1,6 +1,6 @@
 # Forward transport and factorization of the original epsilon corrections
 
-This internal deduction by Worker 184 is a normalization prerequisite for the
+This internal deduction is a normalization prerequisite for the
 rational geometric lemma. It uses the original Haar corrections, conjugation
 invariance of actual Haar characters, and the proved correction-intersection
 semidirect decomposition. It makes no new literature translation claim.

@@ -10,7 +10,7 @@ The sum of the chosen lifts `InjectiveResolution.desc f` and
 `Functor.rightDerived_map_eq` to compute the derived map through that sum,
 then uses additivity of the induced homology maps.
 
-This is the unchanged generic instance from Worker 958’s published
+This is the unchanged generic instance from the
 `AlgebraicGeometry/Modules/CechResolution/Acyclic` module. It retains its full
 declaration name and is shared by the Čech-resolution and divisible-system
 modules without requiring algebraic-geometry imports.

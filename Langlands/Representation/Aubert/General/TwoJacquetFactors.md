@@ -51,7 +51,7 @@ inclusion, not a supplied Jacquet isomorphism. The length argument uses
 classification, character independence, geometric lemma or cuspidal-support
 theorem. Its irreducible-subquotient detector remains a premise.
 
-This unit supplies the quotient side of the algebraic pattern used in the
+This file supplies the quotient side of the algebraic pattern used in the
 two exponent-sign branches of the intended self-association argument. It
 does not prove the simplicity or detection premises for rational cuspidal
 induction, exponent inequalities, unitarizability, rational structural inputs

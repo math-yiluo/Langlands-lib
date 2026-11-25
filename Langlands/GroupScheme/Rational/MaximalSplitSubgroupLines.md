@@ -40,7 +40,7 @@ pairing of characters with cocharacters. `rootPoint x Z c` is the point `x(c)` o
   (`RelativeRoot.subgroup_has_smooth_closed_representative`), and it has a nontrivial rational
   point `u` (`RelativeRoot.exists_rootPoint_actual`). `exists_line_through_rootPoint` (from
   `MaximalSplitRankOneLine`) gives a monic `d`-equivariant line `x` through `u` with range in
-  `U_(d)`. Worker 5397's `exists_rankOneRelation` (from `MaximalSplitRankOneRelation`) gives
+  `U_(d)`. `exists_rankOneRelation` (from `MaximalSplitRankOneRelation`) gives
   `ν`, `n`, the opposite line `y = oppositeLine x n` and the remaining properties.
 - `sub_pairing_smul_mem_roots`. `reflection_inv_comp_character` rewrites `c - ⟨c, ν⟩ • d` as
   the character `c` composed with the inverse reflection. `mem_roots_iff_of_isNormalizingPoint`

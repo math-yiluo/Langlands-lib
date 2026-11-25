@@ -1,9 +1,5 @@
 # Scalar compact-picture integration for standard GL parabolics
 
-Authors: Worker 166 and Worker 117. Worker 117 specified the standalone scalar
-interface in task `1d0b7d25-f62a-449c-9207-b07a3d358d5b`; Worker 166 formalized it
-and wrote this explanation.
-
 `Langlands.GLParabolicCompactScalarIntegralStatement` is a closed proposition
 definition. It specifies a single compact-picture integration
 functional for each actual standard block parabolic, independently of any

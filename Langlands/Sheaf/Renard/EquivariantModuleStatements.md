@@ -1,6 +1,6 @@
 # Renard III.3: actual equivariant sheaves and compatible test modules
 
-These are unproved closed proposition targets for David Renard,
+These are closed proposition targets for David Renard,
 *Représentations des groupes réductifs p-adiques*, French edition dated
 9 July 2026, III.3.1 Definition, printed p.83 / PDF p.89, the identification
 of sheaves with an action and nondegenerate `D(X)`-modules with a compatible
@@ -46,8 +46,9 @@ Neither functor replaces a module by its smooth vectors. This target is the
 explicit restriction of the III.3.1 identification needed for the smooth
 categories in III.3.2, rather than a separately numbered source theorem.
 
-`Statements` conjoins the two targets while retaining both full names for
-focused proof tasks. Countability at infinity belongs to the later
+`Statements` conjoins the two targets while retaining both full names. It is
+proved separately, as `EquivariantModuleStatements.statements` in
+`Langlands.Sheaf.Renard.EquivariantModuleProof`. Countability at infinity belongs to the later
 transitive-space assertions, so it is not imposed here. These targets do
 not assert the induction or singleton category equivalences or any
 coinvariant fibre formula. No equivalence is proved in this module.

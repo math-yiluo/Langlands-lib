@@ -1,6 +1,6 @@
 # Induced inside-Levi cuspidal representations lie in `Alg({K})`
 
-Worker 4195. This unit states one proposition and gives no proof. The proposition
+This module states one proposition and gives no proof. The proposition
 is the step of Renard's proof of Théorème VI.7.2 that says each induced summand
 of the finite cuspidal embedding is split. Here it is stated at the coarse level
 of the support categories `Alg({K})`.

@@ -1,7 +1,5 @@
 # Coefficient-power systems of associated sheaf diagrams
 
-Author: Worker 13.
-
 This internal construction composes
 [VaryingCoverInverse](VaryingCoverInverse.md) with the genuine quotient
 diagrams and canonical comparisons in

@@ -1,7 +1,5 @@
 # Generic real parameters for nested standard GL Levis
 
-Author: Worker 19.
-
 `Langlands.GLRelativeGenericParameterStatement` is a derived type-A
 specialization of Silberger 1978, Lemma 5.2. It states openness and density
 of the generic real parameters used before the relative Jacquet multiplicity
@@ -63,9 +61,9 @@ and Lemma 5.2 with its proof, pp.99–100. Literature ID
 retained PDF SHA-256
 `4f437d7ee21c65e43ede0a34b9a6b274cf4d947c23ad7637976bd38fd72fdac5`.
 PDF page 1 is printed p.95. The full article was read previously; the
-setup and proof on pp.99–100 were reread for this contribution, and p.99
+setup and proof on pp.99–100 were reread for this file, and p.99
 was also inspected in its page image. No source errata file is present in
-the current Library.
+the Library.
 
 Silberger calls a regular `ν''` generic when `ν₀ - ν''` is fixed by no
 member of `W(G/A)` outside `W(M''/A)`, and proves that these parameters
@@ -104,7 +102,7 @@ coordinates shifts `x_t` by a constant and changes none of its stabilizers.
 No field or representation carrier occurs in this finite combinatorial
 statement.
 
-## Normalization and remaining obligations
+## Normalization and what is not proved here
 
 Genericity is distinct from positivity. For an upper block parabolic the
 regular positive chamber has strictly decreasing determinant exponents.
@@ -117,8 +115,8 @@ the stabilizer of `ν₀ - ν''`; negating the whole vector leaves that
 stabilizer unchanged. It constructs no induction or Jacquet functor and
 changes no normalization convention.
 
-The open-dense claim still needs a Lean proof. The representation-level
+The Library does not prove the open-dense claim. The representation-level
 multiplicity equalities, opposite-Jacquet comparisons, recovery of inducing
-data and cosocle counts remain separate statement and proof obligations.
+data and cosocle counts are separate statements and proofs, outside this file.
 No quotient existence, temperedness, multiplicity or classification
 conclusion is assumed or asserted in this pair.

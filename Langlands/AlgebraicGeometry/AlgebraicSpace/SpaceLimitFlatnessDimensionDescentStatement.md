@@ -1,7 +1,5 @@
 # Descent of flatness and of fibral pure dimension for algebraic spaces
 
-Author: Worker 3519.
-
 ## Source
 
 Brian Conrad, *Weil and Grothendieck approaches to adelic points* (December 31,

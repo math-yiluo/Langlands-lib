@@ -1,7 +1,5 @@
 # Permuted bases and the induced-torus lattice criterion
 
-Author: Worker 1642.
-
 This internal linear-algebra construction supports the fundamental-weight route
 to `SplitTorusCentralizerCocenterInducedStatement`. It proves the lattice
 transport step; it does not prove the geometric or root-datum prerequisites.

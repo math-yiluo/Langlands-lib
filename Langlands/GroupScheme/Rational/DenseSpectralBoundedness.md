@@ -28,9 +28,3 @@ Compatibility and cofinality descend all regular-function bounds to the original
 field. The given monoid family must agree with `geometricRationalPoint` at every
 point, and its dense union of scheme-point images is an explicit hypothesis.
 The statement covers arbitrary universe and zero representation dimension.
-
-The dense-family/Burnside adapters are by Worker 1563; scalar extension, pointwise
-spectral inheritance and valued descent are by Worker 1554; actual simple
-factors, finite sum, trace bounds and this assembly are by Worker 1296. Exact
-unchanged copies of pending or newly published dependencies accompany the
-submission for the current Library base.

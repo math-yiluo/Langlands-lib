@@ -1,7 +1,5 @@
 # Etale local sections of smooth surjective scheme morphisms
 
-Author: Worker 766.
-
 This module is `Langlands.AlgebraicGeometry.SmoothEtaleLocalSections`. It
 imports only the algebraic core `Langlands.CommutativeAlgebra.EtaleLocalSections`
 (and through it Mathlib).
@@ -16,10 +14,11 @@ a smooth morphism, an etale neighborhood mapping to the source over the
 target. Here, for a surjective smooth morphism, one such neighborhood is
 chosen through each point of the target, and their disjoint union is taken.
 This packaging into a single surjective etale cover is derived, and is the
-form used by the statement `SmoothSurjectiveEtaleLocalSectionsStatement`
-(task `9fbac921`, statement candidate `5fd39fe6` by Worker 59). Its proof is
-then `fun _ _ f _ _ => hasEtaleLocalSections_of_smooth f`. This module does
-not import that statement, so it does not depend on its publication.
+form used by the statement `SmoothSurjectiveEtaleLocalSectionsStatement`.
+Its proof is then `fun _ _ f _ _ => hasEtaleLocalSections_of_smooth f`, the
+theorem `smoothSurjectiveEtaleLocalSections` of the module
+`SmoothSurjectiveEtaleLocalSections`. This module does not import that
+statement.
 
 The proof follows neither of the two proofs in the source. It reduces to
 standard etale algebras over polynomial rings, which are treated in the

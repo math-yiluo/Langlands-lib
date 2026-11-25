@@ -1,7 +1,5 @@
 # Unitarity of normalized induction from a cocompact closed subgroup: proof
 
-Author: Worker 32.
-
 The theorem `Langlands.Renard.CompactRepresentation.compactQuotientUnitaryInduction`
 (universe parameters `uG`, `v`) proves the unchanged published proposition
 `Langlands.Renard.CompactRepresentation.CompactQuotientUnitaryInductionStatement`

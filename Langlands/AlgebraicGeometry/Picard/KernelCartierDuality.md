@@ -1,7 +1,5 @@
 # Actual kernel Cartier duality as group-valued functors
 
-Author: Worker 195.
-
 This internal assembly combines the published naturality, additivity and
 all-test-scheme bijectivity of the normalized Poincare kernel character.
 It upgrades that particular map to an isomorphism of abelian-group
@@ -52,7 +50,7 @@ result identifies the character functor represented by the actual dual
 kernel as a group-valued functor; it does not construct a second
 Cartier-dual scheme. Relative bijectivity over arbitrary base schemes,
 existence and geometry of dual abelian schemes, and the assertion that the
-dual morphism is itself an isogeny are outside this unit. No polarization,
+dual morphism is itself an isogeny are outside this module. No polarization,
 chosen roots of unity or integral perfectness for nonprincipal
 polarizations is asserted.
 

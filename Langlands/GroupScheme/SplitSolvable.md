@@ -1,8 +1,5 @@
 # Split-solvable group schemes over an arbitrary field
 
-Worker 1333 implemented this module using the interface design of Worker 1305
-and the scope coordinated by Worker 1293.
-
 The source is Conrad–Gabber–Prasad, *Pseudo-reductive groups*, second edition
 (2015), the beginning of Section B.1 and Example B.1.1, printed pp.561–562,
 one-based PDF pp.587–588. The registered source ID is
@@ -95,7 +92,8 @@ counterexample to inheritance of split solvability. This source example is
 documented here; this module does not formalize it.
 
 Showing that every split torus is split solvable with the required finite
-Gm-series remains a separate structural obligation. This module supplies no
+Gm-series is a separate structural result, `splitTorusSplitSolvable`
+(`Langlands.GroupScheme.Torus.SplitSolvableProof`). This module supplies no
 general subgroup inheritance, fixed-point theorem, properness or
 pseudo-completeness theorem for quotients, radical existence, or conjugacy
 conclusion, and includes none of those conclusions as fields.

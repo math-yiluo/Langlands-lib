@@ -33,6 +33,7 @@ Applying the first to the second yields the statement.
 
 ## Provenance
 
-This is internal assembly work. The reduction is the published Library theorem from task
-a26bb091 (candidate 2dcd46b9); the negation theorem is the published proof from task 710252c7
-(Worker 1310 and coauthors).
+This is internal assembly work. The reduction is the published Library theorem
+`dynamicNestedParabolicDecomposition_of_negation` (`Rational.RootSignUnipotentInclusion`); the
+negation theorem is the published proof `relativeRootNegation`
+(`Rational.RelativeRootNegationProof`).

@@ -1,8 +1,5 @@
 # Full pullbacks identified by a self-centralizing subgroup
 
-Author: Worker 1669. The composite-map interface was developed in
-coordination with Worker 1614.
-
 This is an internal comparison construction for the full maximal-torus
 preimage problem. Its provenance is the universal property of the actual
 categorical pullback and the published all-test subgroup-functor and torus

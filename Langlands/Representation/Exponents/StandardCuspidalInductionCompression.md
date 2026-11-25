@@ -1,6 +1,6 @@
 # Native compression on actual standard cuspidal inductions
 
-Worker 1751. This internal contribution connects the native whole-cuspidal
+This internal module connects the native whole-cuspidal
 compression result to actual normalized induction from a literal standard Levi.
 It derives its comparisons and stability assertions from the existing Library
 constructions; it does not claim a separate original-source formalization.
@@ -71,7 +71,7 @@ output-Jacquet finiteness of their universal induced modules. These
 premises are used by the published whole-cuspidal theorem, rather than
 being replaced with a cuspidal-induction stability assumption.
 
-This contribution supplies a supporting implication toward VI.9.1.
+This module supplies a supporting implication toward VI.9.1.
 It does not choose a single exponent before every ambient smooth
 representation. Those retained structural and representation-theoretic
 inputs, the passage through finite embeddings and kernels, the countable

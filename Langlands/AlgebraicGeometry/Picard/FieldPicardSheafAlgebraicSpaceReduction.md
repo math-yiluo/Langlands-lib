@@ -1,7 +1,5 @@
 # The proper-field Picard algebraic space from a Picard stack atlas
 
-Author: Worker 3502.
-
 This module reduces the exact Library proposition
 `Langlands.AlgebraicGeometry.Picard.FieldPicardSheafAlgebraicSpaceStatement.{u}`
 to the single proposition

@@ -1,13 +1,12 @@
 # Transpose invariance of bi-equivariant distributions on compatible Bruhat cells
 
-Authors: Worker 634 and Worker 1051. The Lean text of the proposition is Worker 634's
-type-checked private design (namespace `Langlands.Whittaker.Design`, shared in draft
-revision 5 of task `f79ca82c-d050-4ffa-821b-c347b60e36e0`), as reproduced in the task
-objective. Worker 1051 placed it, otherwise unchanged, in the final namespace
-`Langlands.Whittaker` and this module, added the docstrings and wrote this Markdown.
+The Lean text of the proposition is a type-checked design statement (namespace
+`Langlands.Whittaker.Design`), placed, otherwise unchanged, in the final namespace
+`Langlands.Whittaker` and this module.
 
-`Langlands.Whittaker.BruhatCellInvarianceStatement.{uF}` is the following unproved
-proposition. This module defines the proposition and supplies no proof and no other
+`Langlands.Whittaker.BruhatCellInvarianceStatement.{uF}` is the following
+proposition; its proof is `Langlands.Whittaker.bruhatCellInvariance` in
+`Langlands.Representation.Whittaker.BruhatCellInvarianceProof`. This module defines the proposition and supplies no proof and no other
 declaration. It imports, unchanged, the published modules
 `Langlands.Representation.Whittaker.BruhatCellDistribution`,
 `Langlands.Representation.Whittaker.BruhatFiberAverage`,
@@ -107,8 +106,8 @@ published `isWeylTransposeInvariantBruhatCellDistribution_iff` it says exactly
 where `pullback e f g = f (e g)`. In Shalika's notation this is `T(f^θ) = T(f)`. The
 pushforward carries no measure or modular factor.
 
-`IsBiEquivariantBruhatCellDistribution n F.Carrier w ψ D`, from the input definition
-artifact `04b24b75-6b0b-41c4-a4a3-d05e55fbaa2a`, says: for all `u₁, u₂ ∈ U` and every
+`IsBiEquivariantBruhatCellDistribution n F.Carrier w ψ D`, from
+`Langlands.Representation.Whittaker.BruhatCellDistribution`, says: for all `u₁, u₂ ∈ U` and every
 test function `f` on the cell,
 
     D (Hecke.TestFunction.pullback (bruhatCellBiTranslate n F.Carrier w u₁ u₂) f)
@@ -171,8 +170,7 @@ representation is introduced. The proposition involves no measure.
 
 The complementary case, an empty compatible torus, is not covered here. There Shalika's
 Proposition 1.13 forces the cell distribution to vanish; that is the separate statement
-task `c1d1c15e-c4d7-4898-9c59-fa4f238d00fd` (`BruhatCellVanishingStatement`), which is
-neither a premise nor a consequence of the present proposition.
+`BruhatCellVanishingStatement`, which is neither a premise nor a consequence of the present proposition.
 
 ## The case n = 0
 
@@ -187,10 +185,10 @@ excluded.
 The registered original is `shalika-1974-multiplicity-one`: J. A. Shalika, *The
 multiplicity one theorem for GL_n*, Ann. of Math. (2) **100** (1974), 171–193. The copy
 `/home/taskhub/central-library/Shalika--The multiplicity one theorem for GLn--1974.pdf`
-has SHA256 `788c5d124024c768aa47c4e8b179475fbcf5b0882a518ae60b19cdc88089f087`. Worker
-1051 read the text of printed pp.174–178 (one-based PDF pages 5–9) and checked the
-rendered images of printed pp.174, 175 and 178 (PDF pages 5, 6 and 9). Worker 634
-earlier read printed pp.173–179 and visually checked pp.176–178. No source-specific
+has SHA256 `788c5d124024c768aa47c4e8b179475fbcf5b0882a518ae60b19cdc88089f087`. The
+text of printed pp.174–178 (one-based PDF pages 5–9) was read and the rendered images of
+printed pp.174, 175 and 178 (PDF pages 5, 6 and 9) checked; printed pp.173–179 were
+also read, and pp.176–178 visually checked. No source-specific
 errata note for this paper exists in the project literature pointers or the Library
 notes.
 
@@ -246,11 +244,12 @@ proposition is the internal derived interface for the nonempty case:
 - the full algebraic dual replaces the source's distributions;
 - the field is restricted to p-adic fields; the source allows any local field.
 
-## Intended later proof (not established here)
+## Outline of the proof (not established here)
 
-The following outlines how the proposition is expected to be proved, in a separate
-proof task. None of it is established by this module, and no theorem is claimed. The
-later proof may take a different route.
+The following outlines how the proposition is proved. The separate module
+`Langlands.Representation.Whittaker.BruhatCellInvarianceProof` carries out these steps,
+with the corrections noted on its page. None of it is established by this module, and
+no theorem is claimed.
 
 1. **Cell stability.** Pick `d` in the compatible torus. The published
    `Langlands.Whittaker.compatibleMonomialFixed` proves
@@ -268,7 +267,8 @@ later proof may take a different route.
    `Langlands.Whittaker.bruhatOrbitalIntegration` (statement
    `BruhatOrbitalIntegrationStatement`) a surjective linear `I` from test functions on
    `U × (H × U)` to test functions on the cell satisfying Shalika's formula (1.11). The
-   published statement `BruhatCellFactorizationStatement`, once proved, gives a torus
+   published statement `BruhatCellFactorizationStatement`, proved by
+   `bruhatCellFactorization`, gives a torus
    distribution `τ_H` supported on `compatibleTorus ψ n w` with `τ_H(β_α) = D (I α)`,
    where `β_α` is the published character average with weight the inverse of both
    character values.
@@ -288,10 +288,10 @@ later proof may take a different route.
    `v ↦ s⁻¹ τ(v)⁻¹ s` is an involutive automorphism of `U_w⁺`. If it preserves `ν`,
    the defining integrals show that `I α♯` and
    `pullback (bruhatCellWeylTranspose n F.Carrier w hτ) (I α)` agree at that point.
-   This measure transport must be proved in the later proof; it is not assumed here.
+   This measure transport is proved in the proof module; it is not assumed here.
    At points over the complement of the compatible torus the corresponding substitution
    involves an extra conjugation by a diagonal matrix, which can rescale Haar measure,
-   so the later proof should compare the two functions only where it needs them.
+   so the proof compares the two functions only where it needs them.
 5. **Conclusion.** A support argument, from the factorization, the support of `τ_H` and
    a lift through `I` that vanishes at the product points over the compatible torus
    whenever the lifted cell function vanishes at their images, shows that `D` kills
@@ -315,11 +315,8 @@ distribution invariance (Shalika's Theorem 1.6), or multiplicity one.
 
 ## Provenance
 
-The Lean text is Worker 634's private type-checked design, reproduced exactly from the
-task objective, placed in its final namespace and module by Worker 1051 and checked here
-in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` (diagnostics
-`5654178d-65af-494e-9d8c-02f24c678b4a` and, for the final pair,
-`5e0f5995-2c29-49d0-85a1-8506fdb59a66`: no errors or warnings, statement returns
+The Lean text is a type-checked design statement, reproduced exactly, placed in its
+final namespace and module and checked there (no errors or warnings, statement returns
 `Prop`, axioms `propext`, `Classical.choice` and `Quot.sound`). The formulation is internal
 derived content, as explained above; its sources are Shalika (1974), the
 anti-automorphism θ and properties (1.1)–(1.5) (printed p.174), Proposition 1.8
@@ -328,6 +325,4 @@ anti-automorphism θ and properties (1.1)–(1.5) (printed p.174), Proposition 1
 ## Consumers
 
 The proposition is an intermediate target for the exact Shalika distribution-invariance
-work (task `f79ca82c-d050-4ffa-821b-c347b60e36e0`, Worker 634) and, through it, the
-Whittaker multiplicity-one work (task `209cde88-bab8-4a85-8a9d-72b8864b6fa0`, Worker 16).
-A separate proof task follows publication of this statement.
+theorem and, through it, for Whittaker multiplicity one.

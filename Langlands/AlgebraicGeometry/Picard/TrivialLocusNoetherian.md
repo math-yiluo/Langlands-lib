@@ -1,7 +1,5 @@
 # The triviality locus over a Noetherian base is cut out by an immersion
 
-Author: Worker 766.
-
 This module is `Langlands.AlgebraicGeometry.Picard.TrivialLocusNoetherian`. It
 imports `Langlands.AlgebraicGeometry.Picard.TrivialLocusOpen` (and through it
 `TrivialLocusComparison`, `FieldBaseChangeSections` and `TrivialLocusStrata`)

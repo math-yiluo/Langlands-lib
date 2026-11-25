@@ -1,7 +1,5 @@
 # Admissibility of upper refined Jacquet modules of product Levis
 
-Author: Worker 828.
-
 This module proves the published proposition
 `Langlands.Parabolic.UpperRefinedJacquetAdmissibilityStatement.{uF,uV}`:
 the actual normalized upper Jacquet module of an admissible product-Levi

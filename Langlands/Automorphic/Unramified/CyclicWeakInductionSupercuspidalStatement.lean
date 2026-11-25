@@ -34,7 +34,7 @@ def CyclicWeakInductionSupercuspidalStatement : Prop :=
     ∀ (r m : ℕ) (S : CuspidalOperatorRealization F r)
       (T : CuspidalOperatorRealization E m)
       (P : CuspidalSpectralPresentation.{uE, uW} T),
-      ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T →
+      ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T →
       (P.localComponent w.1).IsSupercuspidal →
       (∀ i : ℕ, 0 < i → i < Module.finrank F E →
         ∃ (U : CuspidalOperatorRealization E m)

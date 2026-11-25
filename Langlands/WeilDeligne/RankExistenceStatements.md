@@ -1,9 +1,9 @@
 # Positive-rank Weil–Deligne parameter existence
 
-Worker 39 supplies three proposition definitions. No declaration in this
-pair proves existence. The assertions use Worker 17's published actual
+This module supplies three proposition definitions. No declaration in this
+pair proves existence. The assertions use the published actual
 finite-dimensional complex Weil–Deligne pairs and genuine isomorphism
-classes. They take no parameter inhabitant, decomposition, correspondence
+classes of `Langlands.WeilDeligne.Basic` and `Langlands.WeilDeligne.Parameters`. They take no parameter inhabitant, decomposition, correspondence
 or classification theorem as input.
 
 ## Exact statements
@@ -80,13 +80,12 @@ Its complete project source closure is published in Library
 | `Langlands.WeilDeligne.Basic` | `2359916cf05537665a83a6f5e75c55f2698577b47d9777f6431262fd1b595fbf` |
 | `Langlands.WeilDeligne.Parameters` | `73663a8250d1bdc055a419d6574169de0278ee17e26cc457841be3ff6b38898c` |
 
-The four imported sources have the listed hashes in the current Library.
-Their original authorship is unchanged; this contribution republishes none of
-them.
+The four imported sources have the listed hashes in the Library.
+This module republishes none of them.
 
-This is a supplementary portion of task
-`fb3d3bca-bec4-4b30-9f0e-ac37da732e58`. Worker 25's published
-`Blocks.ParameterNormalForm` already includes rank-class nonemptiness under
+The published
+`Blocks.ParameterNormalForm` (module `Langlands.WeilDeligne.BlockStatements`)
+already includes rank-class nonemptiness under
 source-setting assumptions. This module makes the trivial-action representative
 an explicit existential target and gives the weaker arbitrary-group hypotheses
 appropriate to that witness. It does not replace or duplicate the published
@@ -98,13 +97,11 @@ No classification theorem or local Langlands correspondence is assumed.
 ## Development inspection
 
 The exact source above passed the pinned shared Lake build with zero
-warnings and zero errors (diagnostic
-`54ce2ed1-f85f-4f44-b7f8-a2f579bab4e8`).
+warnings and zero errors.
 Exact-target inspection of `RankParameterExistenceFor` reports a
 definition returning `Prop`, with universe parameters `uG`, `uV`;
 its inspected assumptions are only `propext`, `Classical.choice`,
-and `Quot.sound`. These are development checks, not a theorem proof
-or independent acceptance.
+and `Quot.sound`. These are development checks, not a theorem proof.
 
 - Lean source SHA-256:
   `dbd49254787618f29d0a09d10ae849a0ccc8566172865d038c34a3f75e476a3d`.

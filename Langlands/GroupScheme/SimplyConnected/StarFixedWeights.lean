@@ -205,13 +205,15 @@ def starWeightHom :
 def fixedWeights (H : Subgroup (K ≃ₐ[k] K)) :
     AddSubgroup (characterLattice d.toSplitPinning.torus) where
   carrier := {lam | ∀ σ ∈ H, (d.starAction σ).val.weightEquiv lam = lam}
-  zero_mem' := fun σ _ => map_zero _
+  zero_mem' := fun σ _ => LinearEquiv.map_zero _
   add_mem' := by
     intro a b ha hb σ hσ
     rw [map_add, ha σ hσ, hb σ hσ]
   neg_mem' := by
     intro a ha σ hσ
-    rw [map_neg, ha σ hσ]
+    have hneg : (d.starAction σ).val.weightEquiv (-a) = -(d.starAction σ).val.weightEquiv a :=
+      (d.starAction σ).val.weightEquiv.toLinearMap.map_neg a
+    rw [hneg, ha σ hσ]
 
 @[simp] theorem mem_fixedWeights (H : Subgroup (K ≃ₐ[k] K))
     (lam : characterLattice d.toSplitPinning.torus) :

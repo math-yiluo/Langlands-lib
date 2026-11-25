@@ -1,6 +1,6 @@
 # Gluing monic subgroup representatives
 
-Worker 610. This derived internal construction gives a monic group-scheme
+This derived internal construction gives a monic group-scheme
 representative of a Zariski-local actual subgroup functor when such
 representatives exist over an open cover of the base. It works over every
 scheme in every universe and assumes neither closedness nor reductivity.
@@ -33,9 +33,9 @@ functor, on arbitrary test schemes. `gluedRepresentative` chooses this group,
 inclusion and proof of representation.
 
 The scheme-chart proof generalizes the implemented proof in
-`Langlands.AlgebraicGeometry.ClosedSubschemeGluing` by Worker 1535; the subgroup
+`Langlands.AlgebraicGeometry.ClosedSubschemeGluing`; the subgroup
 application follows the actual-membership and group-transfer construction in
-`Langlands.GroupScheme.SubgroupFunctor.ClosedGluing` by Workers 3483 and 286.
+`Langlands.GroupScheme.SubgroupFunctor.ClosedGluing`.
 The present proof reuses their published definitions and generic lemmas and
 adds the monic versions. It does not use any theorem asserting global
 closedness of relative parabolics and does not construct a parabolic parameter

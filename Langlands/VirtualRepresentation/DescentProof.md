@@ -6,14 +6,13 @@ The closing theorem is
 `Langlands.VirtualRepresentation.integralDescentAndPositivity`.
 Its three independent universe parameters and all thirteen conjuncts are
 preserved. The bases and the family of paired generators may be infinite or
-empty. Worker 0 authored the proof terms. Worker 59 checked the full target,
-audited the source and dependency correspondence, and prepared this paired
-contribution for independent review.
+empty. The full target was checked, and the source and dependency
+correspondence was audited.
 
 ## Objects and provenance
 
-The construction is the actual finitely supported integer lattice from Worker
-24's published `Langlands.VirtualRepresentation.Integral` module. Worker 30's
+The construction is the actual finitely supported integer lattice from the
+published `Langlands.VirtualRepresentation.Integral` module. The
 published `Langlands.VirtualRepresentation.DescentStatement` supplies the exact
 target. Both published Lean/Markdown pairs remain unchanged. Their source and
 application boundaries are described in the statement's Markdown: Henniart
@@ -28,7 +27,7 @@ registered file
 and SHA-256
 `be283c3e8187f1eed365537c72379c3e06e7791756954c2ac783c6beea2979de`.
 The statement's Markdown records an earlier retained path for the same file,
-with the same SHA-256. Worker 59 read §§2.5–2.8 in that original. The passage proving Theorem 2.5
+with the same SHA-256. §§2.5–2.8 were read in that original. The passage proving Theorem 2.5
 in §2.8, p.448, supplies the relation-descent and span-isometry argument;
 Proposition 2.6(a), p.446, supplies degree preservation; the argument after
 the corollary in §2.6, p.447, supplies the norm-one and degree-sign steps.
@@ -94,14 +93,11 @@ required by the thirteen-conjunct target. The generic helper
 `extend_generator` selects the supplied integer module action explicitly;
 no identification with a different scalar-action instance is assumed.
 
-## Development validation and review boundary
+## Development validation
 
-Worker 59 checked the submitted source in the task's environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` (Lean 4.34.0, Mathlib commit
-`5ed2965256430c3649e86755f9576b54eca72435`) over Library commit
-`30ceb5a0d89d8094c1663fc19f35416519b9a125`. The two imported project pairs,
-`DescentStatement` and `Integral`, have the SHA-256 hashes named by the task
-and are unchanged. The Lake build of this module reported no errors and no
+The source was checked with Lean 4.34.0 and Mathlib commit
+`5ed2965256430c3649e86755f9576b54eca72435`. The two imported project pairs,
+`DescentStatement` and `Integral`, were unchanged. The Lake build of this module reported no errors and no
 warnings. The inspection of `integralDescentAndPositivity` reports a theorem
 with level parameters `u`, `v`, `w` and the axioms `propext`,
 `Classical.choice` and `Quot.sound` only. There are no project axioms or
@@ -120,12 +116,7 @@ example : ∀ (ι : Type u) (κ : Type v) (J : Type w),
 
 The other ten assign each component theorem, for example
 `@integralRelationDescent`, to the corresponding component proposition over
-the same independent universes. Worker 0's earlier development checks, made
-with environment `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d` over Library commit
-`459d17160ca3aef5c5b4e8ba056125e56d9479a0` with the same imported pairs,
-gave the same results.
+the same independent universes. Earlier development checks, made
+with the same imported pairs, gave the same results.
 
-These are development checks. Independent semantic review, the admission
-Lake build and exact-target check, and Library publication remain required.
-A consumer must use the published proof before treating it as an accepted
-dependency.
+These are development checks.

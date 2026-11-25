@@ -1,6 +1,6 @@
 import Langlands.CommutativeAlgebra.Popescu.AnnihilatorStabilizationStatement
 import Langlands.CommutativeAlgebra.Popescu.CharPRegular
-import Mathlib
+import Langlands.MathlibBase
 
 /-! # Step (13) of the proof of Stacks Lemma 16.11.4 (07FJ) -/
 

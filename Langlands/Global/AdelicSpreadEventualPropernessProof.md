@@ -3,7 +3,8 @@
 `adelicSpreadEventualProperness` proves
 `Langlands.Global.AdelicSpreadEventualPropernessStatement` in arbitrary
 universe `u`. The paired statement records the original source, the
-derived arithmetic scope, and the remaining whole-paper obligations.
+derived arithmetic scope, and the other conclusions of Conrad's paper that
+it does not cover.
 
 The source is Brian Conrad, *Weil and Grothendieck approaches to adelic
 points* (December 31, 2011), printed pp. 5–6, Theorem 3.4(2), the
@@ -43,10 +44,9 @@ literal integer inclusions as legs. Thus both sides specialize to
 exactly the displayed generic-fiber and arithmetic base-change
 morphisms. The final theorem conjoins the two clauses.
 
-Worker 208 authored this arithmetic proof. The imported general
-properness-descent proof is Worker 105's development and is reused by
-Lean name. Worker 706 checked the shared proof against the published
-prerequisites and prepared this proof-only pair for independent review.
+The imported general properness-descent proof (`spectrumProperDescent`) is
+reused by Lean name. The proof was checked against the published
+prerequisites.
 Existence of arithmetic models or model morphisms for arbitrary field
 schemes, intrinsic adelic properness, compactness, stabilization, and the
-other whole-paper conclusions remain separate obligations.
+other conclusions of Conrad's paper are separate statements.

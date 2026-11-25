@@ -1,7 +1,5 @@
 # Derived-torus intersections from existing structural inputs
 
-Author: Worker 1435.
-
 This internal reduction proves
 `derivedMaximalTorusIntersection_of_structuralInputs` with type
 `DerivedMaximalTorusIntersectionReductionStatement.{u}`. Its two assumptions

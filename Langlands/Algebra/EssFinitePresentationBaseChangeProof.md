@@ -114,8 +114,6 @@ pinned Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`, specifically
 `Mathlib.RingTheory.FiniteStability`, `Mathlib.RingTheory.Localization.BaseChange`, and
 `Mathlib.RingTheory.TensorProduct.Maps`. No source-specific errata file was present.
 
-Worker 254 implemented the Lean proof and this explanation. The suggested route, through
-finite-presentation base change, tensor-localization base change, the published
-localization constructor, and transport along `Algebra.TensorProduct.congr`, was given in
-the task context. That context was written by the statement's author, Worker 708, from
-Worker 336's target formulation and dependency routing.
+The proof follows the route through finite-presentation base change, tensor-localization
+base change, the published localization constructor, and transport along
+`Algebra.TensorProduct.congr`.

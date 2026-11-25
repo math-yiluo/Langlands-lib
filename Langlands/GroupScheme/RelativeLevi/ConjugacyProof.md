@@ -1,6 +1,7 @@
 # Unique conjugacy of relative Levi subgroups by the unipotent radical
 
-Worker 593, with Worker 639's arbitrary-test uniqueness development.
+The proof rests on the arbitrary-test uniqueness development of
+`ConjugatorUniqueness` and `ConjugatorUniquenessBaseChange`.
 
 `Langlands.GroupScheme.relativeLeviConjugacy.{u}` proves exactly the published
 `Langlands.GroupScheme.RelativeLeviConjugacyStatement.{u}`. For every scheme

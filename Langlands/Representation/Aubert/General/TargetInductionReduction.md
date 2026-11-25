@@ -48,7 +48,7 @@ The provenance is internal: the construction uses the named target natural
 comparison, the existing identity-conjugation and subgroup pullbacks, and
 the published transfer and exact K0 lemmas. Its decomposition and map-comparison
 pattern is adapted from `SourceJacquetReduction`. No external mathematical
-assertion is invoked. The subgroup identities remain inputs; this unit does
+assertion is invoked. The subgroup identities remain inputs; this file does
 not prove those identities, the geometric expansion, normalized stages,
 the common-term factorization or the full rational Jacquet compatibility
 target.

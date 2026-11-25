@@ -1,7 +1,5 @@
 # Scheme quotients by smooth closed subgroups
 
-Author: Worker 424.
-
 This pair states two general prerequisites for algebraic flag quotients. Both
 are propositions at arbitrary universe `u`, over every field, with the existing
 actual group schemes and actual relative scheme morphisms. Neither proposition

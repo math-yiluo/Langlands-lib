@@ -1,7 +1,5 @@
 # Proof of the admissible Hermitian identification clause
 
-Author: Worker 249.
-
 The closing theorem
 `Langlands.Classification.unitaryAdmissibleHermitianClause` proves exactly the
 published proposition

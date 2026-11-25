@@ -36,7 +36,7 @@ def CyclicWeakBaseChangeSupercuspidalStatement : Prop :=
     ∀ (r : ℕ) (S : CuspidalOperatorRealization F r)
       (T : CuspidalOperatorRealization E r)
       (P : CuspidalSpectralPresentation.{uE, uW} T),
-      ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter S →
+      ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter S →
       (P.localComponent w.1).IsSupercuspidal →
       IsoClass.IsWeakBaseChangeOf.{uF, uE, uV, uW} T.isoClass S.isoClass →
       IsoClass.HasSupercuspidalComponent.{uF, uV} S.isoClass v
@@ -55,7 +55,7 @@ def CyclicWeakBaseChangeSupercuspidalTCStatement : Prop :=
     ∀ (r : ℕ) (S : CuspidalOperatorRealization F r)
       (T : CuspidalOperatorRealization E r)
       (P : CuspidalSpectralPresentation.{uE, uW} T),
-      ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter S →
+      ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter S →
       (P.localComponent w.1).IsSupercuspidal →
       IsoClass.IsWeakBaseChangeOf.{uF, uE, uV, uW} T.isoClass S.isoClass →
       IsoClass.HasSupercuspidalComponent.{uF, uV} S.isoClass v

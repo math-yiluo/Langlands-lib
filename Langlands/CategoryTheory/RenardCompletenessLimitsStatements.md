@@ -1,11 +1,8 @@
 # Renard A.VI.2(10): complete abelian categories have all limits
 
-Authors: Worker 800 and Worker 6. Worker 6 wrote the target specification,
-including the two implications, the size bound `HasLimitsOfSize.{w, w}` and
-the expected proof route, and checked in a private probe that the proposed
-types elaborate. Worker 800 read the original passage and the errata
-independently and wrote this Lean/Markdown pair. This unit states
-A.VI.2(10). It proves nothing; the proof is a separate obligation.
+The original passage and the errata were read for this Lean/Markdown pair. This module states A.VI.2(10). It proves nothing; the
+proof is `Langlands.Renard.sourceCompletenessLimits` in the separate module
+`Langlands.CategoryTheory.RenardCompletenessLimits`.
 
 ## Original and reading record
 
@@ -36,12 +33,12 @@ product) is called *complete*, and one satisfying AB4\* (every family of
 objects has a direct sum) is called *cocomplete*. These conventions are the
 published predicates `Langlands.Renard.IsSourceComplete` and
 `Langlands.Renard.IsSourceCocomplete` of
-`Langlands.CategoryTheory.RenardGrothendieckAxioms`, which this unit imports
+`Langlands.CategoryTheory.RenardGrothendieckAxioms`, which this module imports
 and uses unchanged. On PDF262, A.IV.1 calls a functor `D : I → 𝒞` a
 *diagram* in 𝒞 with scheme `I`, where `I` is an arbitrary category.
 
-Errata check: no separate project errata note for the 2026 edition exists in
-the published Library notes. The published note
+Errata check: no separate project errata note for the 2026 edition was in
+the published Library notes when this module was written. The published note
 `notes/renard/appendix-a-corrections.md` concerns A.III.1, A.IV.1–A.IV.2 and
 A.VI.1. Its A.IV entries (direction typos in the universal-property arrows
 and the constant-functor bijection for nonempty indices) do not affect (10),
@@ -116,13 +113,13 @@ functor is introduced.
 The source defines a limit of `D : I → 𝒞` as a universal pair consisting of
 a constant functor and a natural transformation, and then, more concretely,
 as an object with compatible morphisms to every `D(i)` and the universal
-factorization property. The published unit
+factorization property. The published module
 `Langlands.CategoryTheory.Renard.ConeBridge` identifies this concrete
 universal property with Mathlib's `IsLimit` and `IsColimit`
 (`Langlands.CategoryTheory.Renard.coneUniversal_iff_nonempty_isLimit` and
 `coconeUniversal_iff_nonempty_isColimit`), and the corrections note above
 records why the cone form, rather than the constant-functor form, is the
-right reading for arbitrary index categories. This unit does not import that
+right reading for arbitrary index categories. This module does not import that
 bridge; Mathlib's `HasLimit` is the formalization of "admet une limite".
 
 ## Sizes and universes
@@ -183,7 +180,7 @@ a source direct system is a functor `I ⥤ C`. Both `I` and `Iᵒᵖ` have objec
 in `Type w` and morphisms in `Type w`, so `HasLimitsOfSize.{w, w} C` gives a
 limit of every inverse system and `HasColimitsOfSize.{w, w} C` gives a
 colimit of every direct system indexed at size `w`. A private Lean
-diagnostic, not part of this unit, checked these two consequences; the
+diagnostic, not part of this module, checked these two consequences; the
 existence of limits or colimits in the empty, discrete, parallel-pair and
 cospan cases above (the last two through `hasLimitsOfSizeShrink` and
 `hasColimitsOfSizeShrink`); the recovery of `HasProducts.{w} C`;
@@ -192,7 +189,7 @@ by Mathlib instances, `IsFiltered I` and `IsCofiltered Iᵒᵖ` for a nonempty
 directed `I`. It did not check the counterexample above in Lean. The main statements are not restricted to these
 systems and impose no directedness.
 
-## Equalizers and the later proof
+## Equalizers and the proof
 
 For an abelian category, Mathlib provides equalizers and coequalizers through
 the instances `CategoryTheory.Abelian.hasEqualizers` and
@@ -205,8 +202,9 @@ addition to the source hypothesis. Mathlib's
 `has_limits_of_hasEqualizers_and_products` and
 `has_colimits_of_hasCoequalizers_and_coproducts`
 (`Mathlib/CategoryTheory/Limits/Constructions/LimitsOfProductsAndEqualizers.lean`)
-are the expected proof route. This unit claims no proof: the statements are
-propositions, and their proof is a separate task.
+are the proof route, which `Langlands.CategoryTheory.RenardCompletenessLimits`
+follows. This module claims no proof: the statements are propositions, and
+their proof is in that separate module.
 
 ## Scope and provenance
 
@@ -214,9 +212,9 @@ The file imports only `Langlands.CategoryTheory.RenardGrothendieckAxioms`. It
 defines the three propositions and contains no theorems, proof holes or new
 axioms, and it does not assume any of its conclusions. The names, the size
 convention `HasLimitsOfSize.{w, w}` and the split into two implications and
-their conjunction follow Worker 6's task specification for task
-`11f873e9-41f9-4745-bb70-e0e2748a9b61`. The size bound itself is a
+their conjunction are fixed by the specification of this statement. The size
+bound itself is a
 formalization choice inherited from `RenardGrothendieckAxioms`, since the
 source does not bound "every family". The existence of sums of arbitrary
 families of subobjects, the comparisons with Mathlib's AB5 and Grothendieck
-classes, and A.VI.3 AB6 remain separate obligations.
+classes, and A.VI.3 AB6 are separate obligations.

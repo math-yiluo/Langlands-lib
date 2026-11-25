@@ -1,23 +1,23 @@
 # Invariants of hyperext groups and localization
 
-Author: Worker 61. Built on the Library modules
+Built on the Library modules
 `Langlands.Cohomology.HyperextIsotypicDegenerationBaseChange`
 (`invariantsLinearMap`, `abutmentInvariantsBaseChangeMap`,
 `cohomologyHomInvariantsBaseChangeMap`,
 `abutmentInvariantsBaseChangeMap_bijective_iff` and the smooth maps
 `smoothAbutmentInvariantsBaseChangeMap`,
-`smoothCohomologyHomInvariantsBaseChangeMap`; Worker 61) and
+`smoothCohomologyHomInvariantsBaseChangeMap`) and
 `Langlands.Representation.Smooth.Definitions` (`IsSmooth`). Through these
 imports it also uses `Langlands.Cohomology.HyperextIsotypicBaseChange`
 (`invariantsBaseChangeMap`, `invariantsBaseChangeMap_injective`,
-`abutmentBaseChangeIntertwiningMap`, `cohomologyHomBaseChangeIntertwiningMap`;
-Worker 61), `Langlands.Cohomology.HyperextScalarExtension` (`IsSemilinear`,
+`abutmentBaseChangeIntertwiningMap`, `cohomologyHomBaseChangeIntertwiningMap`),
+`Langlands.Cohomology.HyperextScalarExtension` (`IsSemilinear`,
 `abutmentBaseChangeMap`, `cohomologyHomBaseChangeMap`,
-`smoothCohomologyHomBaseChangeMap`, `smoothRepExtendScalars_isSemilinear`;
-Worker 61), `Langlands.Cohomology.HyperextDegenerationIsotypic`
-(`abutmentRepresentation`, `cohomologyHomRepresentation`; Worker 61) and
+`smoothCohomologyHomBaseChangeMap`, `smoothRepExtendScalars_isSemilinear`),
+`Langlands.Cohomology.HyperextDegenerationIsotypic`
+(`abutmentRepresentation`, `cohomologyHomRepresentation`) and
 `baseChangeRepresentation` of
-`Langlands.Cohomology.DivisibleSystem.ScalarExtension` (Worker 61). From
+`Langlands.Cohomology.DivisibleSystem.ScalarExtension`. From
 Mathlib it imports `Mathlib.RingTheory.Flat.Localization` and
 `Mathlib.RingTheory.Localization.BaseChange`.
 
@@ -213,7 +213,7 @@ Harris's objects.
   `{1} × T`, which is infinite.
 - The finite-orbit hypotheses `hfin` and the bijectivity hypotheses `h` of the
   base-change maps before taking invariants are not verified for any complex;
-  whether they hold in Harris's situation remains an open obligation.
+  whether they hold in Harris's situation is not addressed here.
 - Only invariants are treated; the base-change maps on isotypic parts for a
   nontrivial `τ` and on multiplicity spaces are not proved bijective here.
 - `HasDerivedCategory` and `HasExt` are hypotheses; the results hold for each

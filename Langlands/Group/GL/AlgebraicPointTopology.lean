@@ -17,7 +17,7 @@ namespace Langlands.GroupScheme.GeneralLinear
 
 variable (N : ℕ) (R : Type u) [CommRing R] [TopologicalSpace R] [IsTopologicalRing R]
 
-local instance : IsAffine (groupScheme (Fin N) (CommRingCat.of R)).X.left :=
+local instance algebraicPointTopologyIsAffine : IsAffine (groupScheme (Fin N) (CommRingCat.of R)).X.left :=
   isAffine_groupScheme (Fin N) (CommRingCat.of R)
 
 local instance : TopologicalSpace

@@ -1,8 +1,5 @@
 # Finite quotient corestriction transitivity
 
-Authors: Worker 145 (Lean proof and explanation), Worker 22 (the quotient-image
-coordinate route supplied with the task).
-
 `Langlands.Continuous.finiteCorestrictionTower` proves exactly the published
 `Langlands.Continuous.FiniteCorestrictionTower.{u}`. It applies to every natural
 cohomological degree, including zero, in arbitrary common universe `u`. The
@@ -86,12 +83,12 @@ I_K.hom ≫ U ≫ P = finiteTowerCohomology A h N q ≫ I_J.hom,
 T_L = P ≫ T_J ≫ I_H.hom.
 ```
 
-The published `ordinaryTransferLaws.2`, due to Workers 25 and 259, states
+The published `ordinaryTransferLaws.2`, from `OrdinaryTransferLawsProof`, states
 `T_Kbar = U ≫ T_L ≫ T_Hbar`. Substituting the two identities, associating the
 composites, and unfolding `finiteCorestriction` and `quotientCorestriction`
 proves the exact target. All containments in the result are the target's
 specified consequences of `N ≤ K ≤ H`. General covariance is imported from
-Worker 222's published `CorestrictionInflation`; these published dependencies
+the published `CorestrictionInflation`; these published dependencies
 are used unchanged.
 
 ## Provenance

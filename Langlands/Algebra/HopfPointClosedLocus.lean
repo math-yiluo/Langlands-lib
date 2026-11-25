@@ -126,7 +126,7 @@ theorem exists_away_surjective [AddMonoid.FG M] {α : A →ₐ[R] AddMonoidAlgeb
     ∃ f ∉ p, Function.Surjective (scalarExt ((AddMonoidAlgebra.mapAlgHom M
       (IsScalarTower.toAlgHom R C (Localization.Away f))).comp α)) := by
   classical
-  obtain ⟨s, hs⟩ := AddMonoid.FG.fg_top (M := M)
+  obtain ⟨s, hs⟩ := AddMonoid.exists_of_isAddFG M
   choose a ha using exists_coeff_not_mem p h
   let f := ∏ m ∈ s, (α (a m)).coeff m
   have hfp : f ∉ p := by
@@ -190,7 +190,7 @@ theorem exists_away_surjective_of_field [AddMonoid.FG M] {α : A →ₐ[R] AddMo
     ∃ f : C, φ f ≠ 0 ∧ Function.Surjective (scalarExt ((AddMonoidAlgebra.mapAlgHom M
       (IsScalarTower.toAlgHom R C (Localization.Away f))).comp α)) := by
   classical
-  obtain ⟨s, hs⟩ := AddMonoid.FG.fg_top (M := M)
+  obtain ⟨s, hs⟩ := AddMonoid.exists_of_isAddFG M
   choose a ha using exists_coeff_ne_zero_of_field φ h
   let f := ∏ m ∈ s, (α (a m)).coeff m
   have hf : φ f ≠ 0 := by

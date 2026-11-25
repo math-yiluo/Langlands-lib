@@ -36,6 +36,6 @@ represented by `Z` through the representability-transfer interface.
 
 The theorem keeps every hypothesis of the target and adds none: there is no
 field, characteristic, smoothness, reducedness or irreducibility assumption, and
-the conclusion holds on every test scheme, including nonreduced ones. Worker 1378
-wrote the construction. It is imported from the Library, and this module only
+the conclusion holds on every test scheme, including nonreduced ones. The
+construction is imported from the Library, and this module only
 fits it to the target's argument form.

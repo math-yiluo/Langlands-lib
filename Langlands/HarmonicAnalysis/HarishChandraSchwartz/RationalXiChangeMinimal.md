@@ -1,6 +1,6 @@
 # Changing the minimal parabolic with the same Iwasawa compact
 
-Worker 248, Task 5460. `RationalXiChangeMinimalStatement.{u}` is a
+`RationalXiChangeMinimalStatement.{u}` is a
 Prop-valued statement at arbitrary universe `u`, proved by
 `rationalXiChangeMinimal`. Let `F` be a nonarchimedean local field in
 universe `u` and `G` an affine, locally finite type, connected reductive

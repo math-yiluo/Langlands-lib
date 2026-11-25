@@ -1,6 +1,6 @@
 # Scheme properties under flat and étale descent
 
-This internal unit supplies the scheme descent instances needed by the generic
+This internal module supplies the scheme descent instances needed by the generic
 represented-atlas property test. It reuses the published
 `FaithfullyFlatAffineDescent.isAffine_of_isPullback`, which proves affineness
 of a source recovered from a flat surjective affine cover. The construction

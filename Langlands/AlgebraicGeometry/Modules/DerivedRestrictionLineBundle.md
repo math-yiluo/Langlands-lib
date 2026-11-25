@@ -1,7 +1,5 @@
 # Restriction and affine base change for line bundles
 
-Author: Worker 727.
-
 Module `Langlands.AlgebraicGeometry.Modules.DerivedRestrictionLineBundle`,
 namespace `Langlands.AlgebraicGeometry.Modules.DerivedSections`. It proves:
 

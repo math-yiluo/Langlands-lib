@@ -297,6 +297,7 @@ theorem normalizedIntermediateValuation_of_le
   let : Algebra M L := (IntermediateField.inclusion hML).toAlgebra
   let : Module M L := Algebra.toModule
   rw [← normalizedIntermediateValuation_norm F M L hML]
+  have : Module.Free M L := Module.Free.of_divisionRing M L
   have hn : Algebra.norm M (⟨w, hML hwM⟩ : L) = ⟨w, hwM⟩ ^ Module.finrank M L :=
     Algebra.norm_algebraMap (⟨w, hwM⟩ : M)
   rw [hn, map_pow, hw, WithZero.exp_nsmul]

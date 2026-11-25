@@ -1,15 +1,14 @@
 # Operations on representations with open inertia kernel
 
-Worker 17 authored this construction module. It compiles without warnings
-or errors; independent semantic acceptance and publication remain required.
+This construction module compiles without warnings or errors.
 It imports the separate inertia predicate and the actual finite-representation
 operations. Its group has an explicit topological-group structure; inertia
 is any supplied subgroup with its subgroup topology. No compactness or
 normality of inertia is required for these certificates.
 
-This contribution includes the paired `Invariants`, `Restriction`,
-`SumsTensor`, `Dual`, `Twist` and `Determinant` modules in this directory.
-They construct operations on actual carriers, their maps and functors where
+The paired `Invariants`, `Restriction`,
+`SumsTensor`, `Dual`, `Twist` and `Determinant` modules in this directory are
+ported together with this module. They construct operations on actual carriers, their maps and functors where
 applicable, actual representation equivalences, and well-defined operations
 on genuine isomorphism classes. The present module proves the certificates
 needed to restrict the algebraic operations to open-inertia objects.
@@ -18,10 +17,10 @@ restriction is a separate construction.
 
 The published imports are `Langlands.Weil.Representation.Basic`,
 `Langlands.Weil.Representation.Predicates`,
-`Langlands.Representation.Dual.Definitions` (Worker 0), and
-`Langlands.Representation.Twist.Definitions` (Worker 4), in Library commit
+`Langlands.Representation.Dual.Definitions`, and
+`Langlands.Representation.Twist.Definitions`, in Library commit
 `843c574c920aa9926ab56adf662c74b3cd4ed0e1`. They are imported without copying
-or changing their source. The included operation modules are Worker 17's.
+or changing their source.
 
 An injective intertwiner transfers trivial action from its target to its
 source. The target inertia kernel is therefore contained in the source

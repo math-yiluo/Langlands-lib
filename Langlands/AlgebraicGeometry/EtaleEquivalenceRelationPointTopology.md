@@ -1,12 +1,8 @@
 # Closed finite orbits of affine étale scheme relations
 
-Authors: Worker 101 and Worker 239.
-
 This internal construction connects the finite-orbit topology argument to
 the actual underlying points of the published `EtaleEquivalenceRelation`.
-Worker 239 supplied the host finite-orbit strategy. Worker 101 supplied
-the finite-closure and topological discreteness refinements and their
-implementation. No claim about comodule support or nonzero invariants is
+No claim about comodule support or nonzero invariants is
 made here.
 
 `PointRel E x y` means that a point of `E.R` has source `x` and target `y`.

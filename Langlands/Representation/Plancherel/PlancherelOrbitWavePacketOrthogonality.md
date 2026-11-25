@@ -1,20 +1,16 @@
 # The Plancherel product on `C^∞(O, P)` and detection by Plancherel wave packets (Waldspurger VII.2, proof of Corollary VII.2.3, with the weight `µ`)
 
-Author: Worker 5, task `1ef6854b-f0e9-4d96-bbe5-cb8c4b52f927` (revision 1).
-
 Lean module: `Langlands.Representation.Plancherel.PlancherelOrbitWavePacketOrthogonality`,
 namespace `Langlands.Plancherel`. It imports:
 
-- `Langlands.Representation.Plancherel.PlancherelWeightPositivity` (candidate
-  `4a929a37-8a95-4d82-bca2-b20030228811`, review accepted, not yet in the Library). It provides
+- `Langlands.Representation.Plancherel.PlancherelWeightPositivity`. It provides
   the real Plancherel weight `standardLeviPlancherelWeightReal` on the orbit `O` with
   `continuous_`, `_nonneg`, `exists_…_le`, `dense_…_pos` and
   `ofReal_standardLeviPlancherelWeightReal`. Through it come the complex Plancherel weight
-  `standardLeviPlancherelWeight` (candidate `f1478940-20ed-4d17-96de-4906bd124712`, review
-  accepted) and the canonical scalar `conditionalCanonicalRationalScalar` (Library).
-- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalInducedOrbitWavePacketOrthogonalityDense`
-  (candidate `5ab951a5-2fa0-426e-bbb9-e1645c17a6ab`, review accepted, not yet in the Library). It
-  provides `rationalUnitaryOrbitWeightedProductCore_of_dense` and the two detection theorems
+  `standardLeviPlancherelWeight` (module `StandardLeviPlancherelWeight`) and the canonical scalar
+  `conditionalCanonicalRationalScalar` (Library).
+- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalInducedOrbitWavePacketOrthogonalityDense`.
+  It provides `rationalUnitaryOrbitWeightedProductCore_of_dense` and the two detection theorems
   `…_of_dense` for a bounded continuous weight `u ≥ 0` with `{u > 0}` dense.
 
 ## Source
@@ -48,7 +44,7 @@ Correspondence with the source, for one pair `(O, P)`:
 - `P = P_I(F) = M_I(F) ⋉ U_I(F)` is an actual standard parabolic, `M = M_I`, and `O` is the
   orbit under `Im X(M_I)` of the class of a square-integrable representation `π` of `M_I(F)`
   modulo `C` (`discreteSeriesOrbit`).
-- `µ(ω)` is `standardLeviPlancherelWeight … hreg ω` (candidate `f1478940`). There,
+- `µ(ω)` is `standardLeviPlancherelWeight … hreg ω` (module `StandardLeviPlancherelWeight`). There,
   `µ = j_P^{-1} ∏_α γ(M_α|M)^2`, transported from `Im X(Z_G(ζ ∘ i))` to `O` along
   `e : Z_G(ζ ∘ i)(F) ≃ M_I(F)`. Here `j_P = conditionalCanonicalRationalScalar … (π ∘ e) …` is
   the canonical scalar of the inducing representation `π ∘ e`.
@@ -57,7 +53,8 @@ Correspondence with the source, for one pair `(O, P)`:
 - The wave packet of `ψ ∈ C^∞(O, P)` for the weight `µ` is
   `rationalInducedOrbitWavePacket … ρX (standardLeviPlancherelWeight … hreg) ψ`, that is
   `f_ψ(g) = ∫_O µ(ω) (E_P^G ψ_ω)(g) dω`. The same object appears in the decay bound
-  `exists_norm_standardLeviPlancherelWavePacket_le_rationalXi_rpow` (candidate `f1478940`).
+  `exists_norm_standardLeviPlancherelWavePacket_le_rationalXi_rpow` (module
+  `StandardLeviPlancherelWeight`).
 - `ψ_f[O, P]` is `rationalFourierOrbitSection … f`, and `f̂(A, P)` is
   `rationalInducedFourierTransform … A.val.obj … f`.
 
@@ -109,7 +106,7 @@ detection theorems take `hcoeff` (bounds of the coefficients of `π` by `Ξ^{M}`
   `Classical.choose` from `exists_standardLeviPlancherelWeightReal_le`;
   **`standardLeviPlancherelWeightReal_le_bound`**: the real weight is at most this number at
   every point of `O`.
-- **`standardLeviPlancherelOrbitProductCore … ρX hreg hj hnn`** (definition, the recorded
+- **`standardLeviPlancherelOrbitProductCore … ρX hreg hj hnn`** (definition, the main
   declaration, `@[instance_reducible]`):
   `InnerProductSpace.Core ℂ (rationalInducedSmoothOrbitSections hG hi hν I hKw hPKw π)`. As for
   every `InnerProductSpace.Core`, it is conjugate-linear in the first argument, additive,
@@ -132,7 +129,7 @@ detection theorems take `hcoeff` (bounds of the coefficients of `π` by `Ξ^{M}`
 - `ofReal_comp_…` is `funext` of `ofReal_standardLeviPlancherelWeightReal`.
 - `…_le_bound` is `Classical.choose_spec` of `exists_standardLeviPlancherelWeightReal_le`.
 - The product is `rationalUnitaryOrbitWeightedProductCore_of_dense` with `u` the real Plancherel
-  weight. Its four hypotheses on `u` come from candidate `4a929a37`:
+  weight. Its four hypotheses on `u` come from `PlancherelWeightPositivity`:
   `continuous_standardLeviPlancherelWeightReal`, `standardLeviPlancherelWeightReal_nonneg` (from
   `hnn`), `dense_standardLeviPlancherelWeightReal_pos` (from `hj` and `hnn`) and
   `standardLeviPlancherelWeightReal_le_bound`.

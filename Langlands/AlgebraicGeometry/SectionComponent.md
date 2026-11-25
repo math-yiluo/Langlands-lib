@@ -30,5 +30,5 @@ definition and Mathlib's fibre homeomorphism.
 
 EGA IV, Quatrième partie, List III of errata was checked at the entries for
 §15 (printed pp. 347, 357–358): it corrects 15.6.1, 15.6.3, 15.6.7 and
-15.6.10, with no correction to Corollary 15.6.5. This unit asserts no openness,
+15.6.10, with no correction to Corollary 15.6.5. This module asserts no openness,
 base-change compatibility, or geometric connectedness.

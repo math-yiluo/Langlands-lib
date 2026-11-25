@@ -1,6 +1,6 @@
 # Ground-field rational points after extension of scalars
 
-Worker 1574. This internal interface uses actual scheme pullbacks and actual
+This internal interface uses actual scheme pullbacks and actual
 identity-test sections. `geometricRationalPoint` is the pullback lift of a
 ground-field section to an extension field. Its two projections are the original
 section composed with the base morphism and the identity of the new base.
@@ -14,7 +14,7 @@ and the naturality identity. It does not assert that ordinary rational density
 is preserved by scalar extension.
 
 This interface is derived from the actual pullback universal property in Mathlib
-and from the published identity-test `RationalPoint` convention in
+and from the identity-test `RationalPoint` convention in
 `Langlands.AlgebraicGeometry.PointTopology.RationalPoints`. It is an internal
 construction for the density argument in
 `Langlands.GroupScheme.Rational.RationalMaximalTorusDensityReduction`.

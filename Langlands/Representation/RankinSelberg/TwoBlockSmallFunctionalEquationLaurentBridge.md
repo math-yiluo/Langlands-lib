@@ -12,8 +12,7 @@ and `HasSum` expansions. The earlier lemmas with an explicit
 It imports the published `BilateralSpectralEvaluation`,
 `BilateralSpectralCoefficientUniquenessStatement`,
 `BilateralSpectralCoefficientUniquenessProof`, and
-`TwoBlockFirstBlockLaurentReflection` modules by their Lean names. The new
-construction and bridge are authored by Worker 1191.
+`TwoBlockFirstBlockLaurentReflection` modules by their Lean names.
 
 `normalizedGeneratorLaurentLift hP hRm` chooses the finite Laurent polynomial
 clearing an actual rational value `R ∈ vals` by the supplied normalized

@@ -1,8 +1,8 @@
 # Restriction of the transfer along a homomorphism
 
 Helper module for the proof of
-`Langlands.ClassField.Global.RelativeWeilGroup.TransferNormCompatibilityStatement`
-(task `d02b213c-6237-44c1-a667-4a8c19662bfe`). It uses only Mathlib's transfer
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.TransferNormCompatibilityStatement`.
+It uses only Mathlib's transfer
 (`MonoidHom.transfer`) and left transversals. It states and proves nothing about Weil
 groups.
 

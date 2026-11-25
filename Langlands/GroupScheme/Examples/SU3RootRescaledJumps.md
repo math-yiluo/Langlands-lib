@@ -1,6 +1,6 @@
 # Positive rescaling of coordinate valuations and jumps
 
-Worker 244. This internal unit proves that changing a coordinate valuation by
+This internal module proves that changing a coordinate valuation by
 a positive real factor preserves existence of an indivisible central jump.
 It uses the literal coordinate jump sets of `SU3RootQuotientJumps` and the
 condition of `SU3RootJumpParity`; no original-source classification is invoked.

@@ -1,15 +1,15 @@
 # The real-place functional equation from Jacquet's pair identity
 
-Intermediate result of Task 7400, towards
-`Langlands.Global.RankinSelbergGlobal.RealPlaceFunctionalEquationStatement`. Authored by
-Worker 823. Every declaration is proved, with no axioms beyond Lean's standard ones
+Intermediate result towards
+`Langlands.Global.RankinSelbergGlobal.RealPlaceFunctionalEquationStatement`. Every declaration is proved, with no axioms beyond Lean's standard ones
 (`propext`, `Classical.choice`, `Quot.sound`).
 
 The module reduces `RealPlaceFunctionalEquationStatement` to three premises:
 - Jacquet's pair identity for the real unequal-rank local integrals on the uniform coefficient
   spaces;
 - the same identity for the real positive equal-rank local integrals;
-- the Library's `RealPlaceContragredientPairLStatement` (Task 7644).
+- the Library's `RealPlaceContragredientPairLStatement` (real-place contragredient pair-factor
+  denominator compatibility).
 
 It combines `realPairIdentityContinuation` (module `ArchimedeanRealPairIdentity`) with the
 convergence theorems `realUnequalPairConvergence` and `realEqualPairConvergence`, the
@@ -94,7 +94,7 @@ Jacquet, *Archimedean Rankin–Selberg integrals* (2009):
 This module uses one direction of the equivalence (module `ArchimedeanRealPairIdentity`) for
 the uniform coefficient spaces used by the Library's real-place reduction.
 
-**Signs.** The signs are those of the published continuation statements, and they agree with
+**Signs.** The signs are those of the Library's continuation statements, and they agree with
 Theorem 2.1(iii), p. 6. Here `det_ds(-1)` is the product of the block determinant values at
 `-1`. It plays the role of `ω_π(-1)`, since Jacquet notes `det σ_u = ω_π` (p. 7). In unequal
 rank `det_ds(-1)^(t+1) · det_es(-1)` corresponds to `ω_π(-1)^m ω_π'(-1)` with `m = t + 1`. In

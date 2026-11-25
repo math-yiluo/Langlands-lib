@@ -1,6 +1,6 @@
 # Renard VII.3.5 (i): the product decomposition `V₁₃ = V₁₂ V₂₃`
 
-Author: Worker 102. Module
+Module
 `Langlands.Representation.Intertwining.PQCompositionProductDecomposition`, namespace
 `Langlands.Aubert.General.RepresentedParabolic`. Universe parameter `u`.
 
@@ -29,9 +29,9 @@ The proof does not use the hypothesis `d(P₁, P₂) = 1`, the hypotheses
 `IsIso (subgroupMultiplication _ _)`, or the instances `LocallyCompactSpace G(F)` and
 `NonarchimedeanGroup G(F)`. They are binders of the published statement.
 
-The proof uses lemma `RelativeRoot.dynamicUnipotent_inf_le_of_positiveRoots`, which is new in
-`Langlands.GroupScheme.Rational.DynamicUnipotentIntersectionRoots`. That module is submitted with
-this one and has its own Markdown.
+The proof uses lemma `RelativeRoot.dynamicUnipotent_inf_le_of_positiveRoots`, which is in
+`Langlands.GroupScheme.Rational.DynamicUnipotentIntersectionRoots`. That module is ported
+together with this one and has its own Markdown.
 
 ## Notation
 

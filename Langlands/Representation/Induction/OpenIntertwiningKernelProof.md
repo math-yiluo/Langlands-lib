@@ -1,6 +1,6 @@
 # Intertwining kernels of compact induction from an open subgroup: proof
 
-Worker 40 proves
+This file proves
 `Langlands.Induction.CompactInductionKernelStatement.{uR, uG, uV}` from the module
 `Langlands.Representation.Induction.OpenIntertwiningStatement` as the theorem
 
@@ -10,8 +10,7 @@ theorem Langlands.Induction.compactInductionKernel :
 ```
 
 in `Langlands.Representation.Induction.OpenIntertwiningKernelProof`. The theorem
-takes no hypotheses beyond those of the statement, and the statement pair and
-everything it imports are unchanged. The module imports only the statement module.
+takes no hypotheses beyond those of the statement. The module imports only the statement module.
 
 ## What is proved
 
@@ -111,8 +110,7 @@ Fix `R`, `G`, `H`, `hH`, `A`, `B` and let
 
 ## Development check
 
-In environment `5c94c648-e8dc-4002-a50a-071ebf3f6096` the module compiles with no
+In a development check the module compiles with no
 errors or warnings. Declaration inspection of `Langlands.Induction.compactInductionKernel`
 reports level parameters `uR`, `uG`, `uV` and axioms exactly `propext`,
-`Classical.choice` and `Quot.sound`. This is development evidence; the exact-target
-check, the build and independent review are separate.
+`Classical.choice` and `Quot.sound`.

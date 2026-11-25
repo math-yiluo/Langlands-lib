@@ -1,6 +1,6 @@
 # Normalized induction along an isomorphic represented parabolic
 
-Author: Worker 1720. Module `Langlands.Representation.Exponents.IsoParabolicInduction`,
+Module `Langlands.Representation.Exponents.IsoParabolicInduction`,
 namespace `Langlands.Aubert.General.RepresentedParabolic`.
 
 This module treats the degenerate case `P = G` of Renard's normalized parabolic

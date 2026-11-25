@@ -24,7 +24,7 @@ by restricting the witnessing chart square, using its base-changed scheme
 morphism. `schemeProperty_overPullback_map` establishes the latter preservation
 for any scheme property stable under base change, by cancelling the target
 pullback square from the source pullback square. These are preservation
-statements only; properness and connected fibres are not asserted in this unit.
+statements only; properness and connected fibres are not asserted in this module.
 
 The constructions and proofs are derived directly from the imported definitions;
-no outside literature is used for this internal comparison unit.
+no outside literature is used for this internal comparison module.

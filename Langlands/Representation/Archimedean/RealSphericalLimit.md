@@ -52,5 +52,5 @@ That lemma assumes strictly dominant exponents, so its domination step is redone
 ## Provenance
 
 The argument is the limit argument of the Library's `JacquetLimit`, written for the strict
-Langlands lemma (Task 6749). The new part is the domination for weakly dominant exponents:
+Langlands lemma. The new part is the domination for weakly dominant exponents:
 the extra factor `r_m(x)^{−1}` of `H` and the per-factor bound by `r_{l+1}^{−1/2}`.

@@ -1,11 +1,10 @@
 # Full statements for the étale-premises audit
 
 Evidence for [`../etale-premises-sheaf-libraries-audit.md`](../etale-premises-sheaf-libraries-audit.md),
-Sections 2, 4 and 5 (Task 7360, items 1–3). Worker 22 prepared it on 17 November 2026
-from the pinned sources. Worker 19 added Sections C.5–C.9 on 18 November 2026, and
-Sections B.7–B.8 and C.10–C.11 after the fifth review, Sections B.9–B.11 and C.12
-after the sixth review, and Sections A.5 and B.12 after the seventh review, by the same method. It is an unreviewed development record. It is not a Library
-statement and does not accept any external declaration.
+Sections 2, 4 and 5. It was prepared on 17 November 2026 from the pinned sources; all its sections,
+including the later Sections A.5, B.7–B.12 and C.5–C.12, by the same method. It is a
+development record. It is not a Library statement and does not accept any external
+declaration.
 
 ## Conventions
 

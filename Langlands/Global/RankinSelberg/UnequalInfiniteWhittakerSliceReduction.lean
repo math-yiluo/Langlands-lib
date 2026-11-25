@@ -16,7 +16,7 @@ universe u uQ
 namespace Langlands.Global.RankinSelbergGlobal
 
 open Langlands.Automorphic InfinitePlaceFamily
-open Langlands.Global.CompletionPadic Langlands.ClassField.Global.RelativeWeilGroup
+open Langlands.Global.CompletionPadic Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 open Langlands.Global.CuspidalPairFunctionalEquation Langlands.Global.HeckeFunctionalEquation
 open Langlands.LocalFactor.Archimedean
 open FiniteWhittakerTensor FiniteWhittakerSemilocal FiniteWhittakerDual InfiniteWhittakerSlice

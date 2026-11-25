@@ -1,6 +1,6 @@
 # Extension and restriction of scalars of smooth representations
 
-Author: Worker 61. Built on
+Built on
 `Langlands.Cohomology.DivisibleSystem.ScalarExtension`
 (`baseChangeRepresentation`, `restrictScalarsRepresentation`,
 `restrictScalarsModule`, `repExtendScalars`, `repRestrictScalars`,

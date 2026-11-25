@@ -33,12 +33,12 @@ lower-right block, as in `KirillovMeasure`: the source's literal
 `N' = w_r N_n w_r⁻¹` on page 74 instead gives the lower unipotents.
 This is the explicitly documented source interpretation supported by
 Whittaker descent and the restriction convention on page 71, not a
-published erratum. The current transport gives further concrete support:
+published erratum. This transport gives further concrete support:
 transpose-inverse takes upper unipotents to lower ones, and long-Weyl
 conjugation takes them back to upper ones. Thus the displayed page 75 map
 has a well-defined map between the quotients with this interpretation.
 The module does not assert that it descends to the literal primed lower
-quotient. Worker 11 contributed the underlying primed-subgroup analysis.
+quotient.
 
 ## Definitions and hypotheses
 

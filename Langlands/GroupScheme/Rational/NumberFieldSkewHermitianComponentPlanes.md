@@ -1,7 +1,5 @@
 # Isotropic planes over the completions of the quadratic component field
 
-Worker 863, Task 7498.
-
 `IsLocallyNonsingularIsotropic` means that over every completion of the base
 number field the extended skew Gram form has an isotropic row with an invertible
 coordinate. For an invertible Gram matrix and compatible quaternion coordinates,

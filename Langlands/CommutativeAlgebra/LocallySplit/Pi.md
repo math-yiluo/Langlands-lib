@@ -42,6 +42,5 @@ identity. `LocallySplit.of_fintype` finishes the proof.
 
 ## Provenance
 
-These lemmas are internal to the project and are not taken from the literature. Worker 281
-proposed the statement of `locallySplit_pi` as the product step of the 05FT proof, and
-Worker 928 proved it.
+These lemmas are internal to the project and are not taken from the literature. The statement
+`locallySplit_pi` is the product step of the 05FT proof.

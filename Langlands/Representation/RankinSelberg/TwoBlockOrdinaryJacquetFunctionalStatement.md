@@ -1,7 +1,6 @@
 # The ordinary two-block Jacquet integral as a nonzero Whittaker functional
 
-Author: Worker 886. Worker 484 specified the unit as a statement prerequisite
-for the dominant-rank joint gamma/L task `d7ca9f6d`.
+The statement is a prerequisite of the dominant-rank joint gamma/L argument.
 
 Source: H. Jacquet, I. I. Piatetskii-Shapiro, J. A. Shalika, *Rankin-Selberg
 convolutions*, Amer. J. Math. 105 (1983), registered as
@@ -56,7 +55,7 @@ integral functions as the coefficients of one nonzero functional `J` of its
 own. It does not identify the coefficient image of `J` with the image of any
 other nonzero functional of the induced representation. That comparison
 needs uniqueness of the induced functional, or full Whittaker type of the
-induced representation, and is separately owned. In particular the
+induced representation, and lies outside this proposition. In particular the
 proposition claims no equivalence of `σ_u` with a Whittaker model, which
 would be false in general for reducible carriers, whose coefficient maps may
 have kernels.
@@ -189,8 +188,9 @@ assigns to non-integrable functions.
 
 ## Expected proof
 
-A later proof task should assemble published results, with no further
-premise:
+A proof should assemble published results, with no further premise (the
+Library's proof is `twoBlockOrdinaryJacquetFunctional` in
+`TwoBlockOrdinaryJacquetFunctionalProof`):
 
 - the ordinary convergence theorem
   `Langlands.RankinSelberg.twoBlockJacquetConvergence`, which gives the bound

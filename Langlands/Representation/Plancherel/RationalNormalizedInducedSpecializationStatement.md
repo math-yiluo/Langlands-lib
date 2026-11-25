@@ -1,6 +1,6 @@
 # Renard VI.8.2: specialization of actual normalized induction
 
-Worker 1759. Source: David Renard, *Représentations des groupes réductifs
+Source: David Renard, *Représentations des groupes réductifs
 p-adiques*, 9 July 2026 version, VI.8.2, base-change proposition and formula
 (VI.8.2.2), printed p.190 / PDF p.196, and specialization corollary, printed
 p.191 / PDF p.197. Registered source
@@ -42,7 +42,7 @@ with a `ParabolicRootPresentation`, and the actual unipotent subgroup specified
 by n. The representation-carrier universe `uV` is independent of the field and
 group universe `u`. π is any smooth complex Levi representation; neither
 admissibility nor finite dimension is needed for this specialization claim,
-so it applies in particular to the admissible representations of the task.
+so it applies in particular to admissible representations.
 No flatness, projectivity, fixed-space comparison or specialization bijectivity
 is present among the hypotheses.
 
@@ -59,6 +59,6 @@ to a split or matrix group.
 The source's proof uses the finite compact-open double-coset invariant
 comparison and then shrinks the stabilizer. The bijectivity target here
 retains that proof obligation for the actual constructed map. Flatness and
-compact-open fixed finite projectivity are separate statement units; VI.8.3
+compact-open fixed finite projectivity are separate statements; VI.8.3
 and all subsequent Jacquet and generic-irreducibility assertions are outside
 this module.

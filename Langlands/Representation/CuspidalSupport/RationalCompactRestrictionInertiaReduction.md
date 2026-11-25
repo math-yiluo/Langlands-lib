@@ -6,8 +6,11 @@ It does not prove that statement on its own. Its last theorem derives it from
 two published propositions that are taken as hypotheses. These are Renard
 VI.3.2(ii) (`RationalNormKernelFiniteRestrictionStatement`) and VI.3.2(iii)
 (`RationalNormKernelTwistEquivalenceStatement`). Neither proposition is proved
-here, and neither is a premise of the final target. The final proof will apply
-this theorem to their independently published proofs. The generic open-subgroup and open-normal-family projectors are imported from
+here, and neither is a premise of the final target. The final proof,
+`rationalCompactRestrictionInertiaDecomposition` in
+`RationalCompactRestrictionInertiaDecompositionProof`, applies this theorem to
+their proofs `rationalNormKernelFiniteRestriction` and
+`rationalNormKernelTwistEquivalence`. The generic open-subgroup and open-normal-family projectors are imported from
 [OpenNormalFamilyProjector](OpenNormalFamilyProjector.md). That module preserves
 the original declaration names, signatures and proofs; this module re-exports
 them and contains only the rational application.
@@ -67,7 +70,7 @@ and the generic projector decomposition imported from
 which constructs the inertia block from the finitely many restriction types
 given by VI.3.2(ii), using the IV.1.5 projectors, and identifies it with the
 inertia class by VI.3.2(iii). No step of the source proof of VI.3.2 is reproved
-here. The generic declarations were moved to their own module by Worker 1740,
-with their original author Worker 1168 as coauthor. The rational theorem and
+here. The generic declarations were moved to their own module,
+`OpenNormalFamilyProjector`. The rational theorem and
 its statement are unchanged. The module adds no axioms; its declarations depend
 only on `propext`, `Classical.choice` and `Quot.sound`.

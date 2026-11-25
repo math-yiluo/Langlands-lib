@@ -1,7 +1,7 @@
 # Valuation pullbacks of groups with affine residue fibres
 
-Worker 584. `Langlands.GroupScheme.HasAffineResidueFibers G` names the fibre
-hypothesis of Task 7705. It asks for affineness over the residue field of each
+`Langlands.GroupScheme.HasAffineResidueFibers G` names the fibre
+hypothesis of `SmoothAffineFiberTorusSubgroupRepresentabilityStatement`. It asks for affineness over the residue field of each
 actual group `RelativeIdentityComponent.residueFiber G s`. Raynaud names affine
 fibres as a case of Corollary 8.11, recomposed p. 295.
 

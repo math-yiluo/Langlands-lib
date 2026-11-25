@@ -1,7 +1,5 @@
 # Derived sections of a pushforward with vanishing higher direct images
 
-Author: Worker 727.
-
 Module `Langlands.AlgebraicGeometry.Modules.PushforwardComparison`. It defines a
 comparison map and proves when it is an isomorphism. Everything is proved in the
 file: there are no hypotheses beyond those in the signatures and no proof holes.
@@ -152,15 +150,16 @@ Library instance.
 `PushforwardInjectiveAcyclicStatement` for `h` and `g` (Stacks Project, Cohomology
 of Sheaves, Lemma 01EX (2) with `V = Y`; another route goes through Lemmas 09SX and
 09SY: injective modules are flasque, pushforwards of flasque modules are flasque,
-flasque modules are acyclic). Once that statement is proved, `hJ` is available for
-every `h` and `g`, and the theorem gives the `R`-module form of Stacks Lemma 01F4 (1)
+flasque modules are acyclic). That statement is proved
+(`Langlands.AlgebraicGeometry.Modules.pushforwardInjectiveAcyclic`, module
+`PushforwardInjectiveAcyclicProof`), so `hJ` is available for every `h` and `g`,
+and the theorem gives the `R`-module form of Stacks Lemma 01F4 (1)
 under the vanishing hypothesis `hM`.
 
 ## Intended use
 
 For a closed immersion `i : X ⟶ P` (for example a section axis of an abelian
-scheme over a field, in the proof of Stacks tag 0BF3 for task
-`eab37f2b-d9cf-40e4-86ad-492608a9c630`), `R^{q+1} i_* M = 0` and the isomorphism
+scheme over a field, in the proof of Stacks tag 0BF3), `R^{q+1} i_* M = 0` and the isomorphism
 identifies `Hⁿ(P, i_* M)` with `Hⁿ(X, M)`. Composing with the map induced by the
 unit `𝒪_P ⟶ i_* i^* 𝒪_P` then gives the restriction map
 `Hⁿ(P, 𝒪_P) ⟶ Hⁿ(X, 𝒪_X)` used in

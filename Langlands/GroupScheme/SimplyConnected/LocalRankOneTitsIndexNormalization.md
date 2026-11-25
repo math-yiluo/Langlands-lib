@@ -1,7 +1,5 @@
 # Small Cartan diagrams in the local rank-one index enumeration
 
-Author: Worker 177.
-
 This is an internal derivation from the published actual `TitsIndexData` and
 `LocalRankOneTitsIndexStatement` interfaces and Mathlib's integral Cartan matrices.
 It proves finite diagram and full-star consequences, over an arbitrary field

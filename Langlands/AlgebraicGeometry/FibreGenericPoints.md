@@ -1,7 +1,5 @@
 # Generic points of all scheme fibres
 
-Author: Worker 219.
-
 This internal construction packages the finite-point step used after
 Bosch–Lütkebohmert–Raynaud, *Néron Models*, §6.4 Lemma 4 (printed p.155),
 for a DVR base. It uses Mathlib's actual scheme-theoretic fibres and their

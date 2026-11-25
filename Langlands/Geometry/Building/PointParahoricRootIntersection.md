@@ -22,7 +22,7 @@ The construction assumes the existing apartment predicate
 `P.apartment.SatisfiesApartmentAxioms P.centralizer`, opposite factor pairs
 `RelativeRoot.HasRankOneFactorization P.i`, and the global proposition
 `RelativeRoot.DynamicRootOrderedProductStatement.{u}`. The latter two
-prerequisites remain explicit. This unit introduces no universal statement
+prerequisites remain explicit. This module introduces no universal statement
 of their truth or of the unconditional point-intersection conclusion.
 
 The coordinate lemmas in `KPApartmentData` work over an arbitrary field.
@@ -73,9 +73,11 @@ equality gives the entry equivalence and its ambient-point formula.
 ## Provenance and retained obligations
 
 These are deductions from the existing Library definitions and proved
-interfaces. This unit introduces no external source assertion. It does
+interfaces. This module introduces no external source assertion. It does
 not discharge opposite factor pairs or Dynamic ordered products, or prove
 the closing affine Iwahori–Tits statement. The exact target statement and
 its apartment-only premise are unchanged. Subgroup normality, affine-Weyl
-image comparison, Tits axioms and corrected saturation remain separate
-obligations.
+image comparison, Tits axioms and corrected saturation are not proved here;
+the normalities of `P.zeroSubgroup` and `P.normalizerZero` are
+`ParahoricBuildingData.normal_zeroSubgroup` and `normal_normalizerZero`
+(module `ZeroSubgroupCommutatorNormality`).

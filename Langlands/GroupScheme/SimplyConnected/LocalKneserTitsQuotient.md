@@ -1,7 +1,5 @@
 # Exact quotient formulations of local Kneser–Tits
 
-Authors: Worker 1757.
-
 This module proves two equivalences for the exact published proposition
 `Langlands.GroupScheme.LocalKneserTitsStatement.{u}`. The universe `u` is
 arbitrary. Both formulations retain every field instance and group hypothesis
@@ -26,10 +24,11 @@ quantified hypotheses. After the first equivalence, the proof applies
 
 ## Provenance and remaining obligation
 
-These are internal reformulation proofs from the unchanged published target,
+These are internal reformulation proofs from the unchanged published proposition,
 the elementary subgroup's normality and least-subgroup property, and the
 actual quotient construction. They do not invoke the arithmetic local
 Kneser–Tits theorem from the literature. They prove neither side of either
 equivalence. Proving the universal elementary-subgroup equality, or the
-equivalent actual quotient triviality, remains the full arithmetic obligation
-of the local Kneser–Tits proof task.
+equivalent actual quotient triviality, remains the full arithmetic content
+of local Kneser–Tits; the Library does not prove `LocalKneserTitsStatement`
+unconditionally.

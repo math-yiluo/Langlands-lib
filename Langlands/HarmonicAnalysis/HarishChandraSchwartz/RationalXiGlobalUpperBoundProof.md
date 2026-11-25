@@ -3,7 +3,7 @@
 `Langlands.HarishChandraSchwartz.rationalXiGlobalUpperBound` proves
 `RationalXiGlobalUpperBoundStatement.{u}` for arbitrary universe `u`. It
 applies `rationalXiGlobalUpperBound_of_chamber_of_comparison` to the translated
-chamber estimate `rationalXiUpperBound` from Task 5326 and the determinant-based
+chamber estimate `rationalXiUpperBound` (module `RationalXiUpperBoundProof`) and the determinant-based
 Cartan–Iwasawa weight comparison `rationalCartanIwasawaWeightComparison`.
 [Target](RationalXiGlobalUpperBoundStatement.md) ·
 [Reduction](RationalXiGlobalUpperBoundReduction.md) ·

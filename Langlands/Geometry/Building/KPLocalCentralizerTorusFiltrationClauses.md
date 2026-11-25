@@ -1,13 +1,12 @@
-# The three torus-filtration clauses over `K = F^ur` in D1's convention
+# The three torus-filtration clauses over `K = F^ur` in the convention of `KPLocalMoyPrasadGroups`
 
-Author: Worker 119. These composition helpers are submitted with the final
-`KPQuasiSplitLocalTorusFiltrationProof` contribution.
+These composition helpers are used by `KPQuasiSplitLocalTorusFiltrationProof`.
 
 Lean module: `Langlands.Geometry.Building.KPLocalCentralizerTorusFiltrationClauses`.
 
-D1 (Task 5875, Library module `KPLocalMoyPrasadGroups`) presents the torus `Z` by the single
+The Library module `KPLocalMoyPrasadGroups` presents the torus `Z` by the single
 binder `hZ : IsTorus B.centralizer.Z`. It defines `Z(K)_r = B.centralizerTorusFiltration hZ r`
-and `j(Z(K)_r) = B.centralizerTorusImage hZ r`. Clause 3 for D1's filtration,
+and `j(Z(K)_r) = B.centralizerTorusImage hZ r`. Clause 3 for this filtration,
 `centralizerTorusImage_isNormalizerStable`, is imported from the published module
 `KPLocalCentralizerFiltrationNormalizerStable`. Clauses 1 and 2 are in the supporting modules
 `KPLocalCentralizerFiltrationCommutatorFriendly` and `KPLocalCentralizerFiltrationRootCompatible`.
@@ -15,22 +14,23 @@ and `j(Z(K)_r) = B.centralizerTorusImage hZ r`. Clause 3 for D1's filtration,
 ## Declarations
 
 - `centralizerTorusFiltration_clauses_of_coroot_of_torusRoot hZ hcor hroot` assumes
-  `KPLocalCorootComponentStatement` (Task 5911) and `KPLocalTorusRootCommutatorStatement`
-  (Task 5918). It states the three clauses of S1 for D1's filtration as one conjunction:
+  `KPLocalCorootComponentStatement` and `KPLocalTorusRootCommutatorStatement`. It states
+  the three clauses of `QuasiSplitLocalTorusFiltrationStatement` for the filtration of
+  `KPLocalMoyPrasadGroups` as one conjunction:
   clause 1 in the form of `IsCommutatorFriendly`, clause 2 in the form of `IsRootCompatible`,
   and clause 3 in the form of `IsNormalizerStable`. Proof: the triple of
   `centralizerTorusFiltration_isCommutatorFriendly_of_coroot`,
   `centralizerTorusImage_isRootCompatible_of_torusRoot` (whose depth-`0` case uses neither
   assumption) and `centralizerTorusImage_isNormalizerStable`.
 - `quasiSplitLocalTorusFiltration_of_coroot_of_torusRoot hcor hroot`, in namespace
-  `Langlands.Geometry.Building`: the same two assumptions imply the published S1 statement
-  `QuasiSplitLocalTorusFiltrationStatement` (Task 5890, Library module
+  `Langlands.Geometry.Building`: the same two assumptions imply the published statement
+  `QuasiSplitLocalTorusFiltrationStatement` (KP Lemma 7.2.3 over `K`, Library module
   `KPQuasiSplitLocalTorusFiltrationStatement`). Its three conjuncts are
   exactly the three clauses above, so the proof introduces `F`, `H`, `B`, `hZ` and applies
   `centralizerTorusFiltration_clauses_of_coroot_of_torusRoot`. The final module
   `KPQuasiSplitLocalTorusFiltrationProof` applies this theorem to the published proofs
   `kpLocalCorootComponent` and `kpLocalTorusRootCommutator`, obtaining the exact
-  unconditional S1 statement.
+  unconditional statement `QuasiSplitLocalTorusFiltrationStatement`.
 
 ## Provenance
 

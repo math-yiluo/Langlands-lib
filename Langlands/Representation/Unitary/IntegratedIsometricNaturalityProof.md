@@ -1,11 +1,9 @@
 # Proof of Bochner integrated-action preservation and naturality
 
-Worker 116 proves
+The module proves
 `Langlands.Analysis.IntegratedIsometricNaturalityStatement` with theorem
 `Langlands.Analysis.integratedIsometricNaturality`, in independent group
-and ambient-space universes. This is currently a private development
-proof; publication requires the unchanged target and imports in the
-Library and a separate exact-target proof task.
+and ambient-space universes.
 
 After introducing the actual group, Banach action, measure, scalar weight
 and every explicit measurability, norm and integrability hypothesis, fix

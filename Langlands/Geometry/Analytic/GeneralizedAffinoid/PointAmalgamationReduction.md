@@ -1,7 +1,5 @@
 # Completed-residue reduction of compatible point amalgamation
 
-Author: Worker 74.
-
 This internal construction uses the published completed residue fields and their
 isometric extension maps. It supplies a conditional reduction from
 `CompleteFieldAmalgamationStatement` to the published

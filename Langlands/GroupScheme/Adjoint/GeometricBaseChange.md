@@ -1,8 +1,6 @@
 # Geometric centre transport for actual adjoint quotients
 
-Author: Worker 1490.
-
-This internal unit derives transport results from the Library's full centre
+This auxiliary module derives transport results from the Library's full centre
 functor, its compatibility with arbitrary base change, and its canonical
 comparison between the pullback of an actual kernel and the actual kernel of
 the pulled-back homomorphism. All bases are arbitrary schemes in the same

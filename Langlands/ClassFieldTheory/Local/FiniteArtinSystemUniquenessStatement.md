@@ -1,7 +1,5 @@
 # Uniqueness target for coherent geometric finite Artin systems
 
-Author: Worker 1771.
-
 `Langlands.LocalClassField.GeometricFiniteArtinSystemUniqueness.{u}` is
 the uniqueness part of the published
 `GeometricFiniteArtinSystemExistenceUniqueness.{u}`. This internal target

@@ -1,6 +1,6 @@
 # Base naturality of actual integral Harris compatible families
 
-This internal unit constructs actual restriction into the existing compatible
+This internal module constructs actual restriction into the existing compatible
 family of normalized CM classes at all geometric points and proves its
 base-change square. It retains the universe-zero Harris CM arithmetic data,
 abelian scheme `B` over `S`, supplied dual witness and polarization, and morphism
@@ -54,7 +54,7 @@ original Harris level and transporter.
 
 The provenance is internal: the construction composes existing actual raw
 restriction and geometric-family maps, and the proof uses their evaluation
-laws and the actual original-isogeny normalized-class square. This unit does
+laws and the actual original-isogeny normalized-class square. This module does
 not construct a representing scheme or prove admissibility, smoothness or
 division projectivity. Test-variable laws for the raw restriction and the
-surrounding representability geometry remain separate obligations.
+representability geometry are not part of this module.

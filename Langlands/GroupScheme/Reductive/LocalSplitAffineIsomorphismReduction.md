@@ -17,8 +17,7 @@ the local conclusion.
 This is an internal composition of the two published statements with the
 local root-space construction. It has no reducedness or other additional
 local-ring hypothesis. The affine isomorphism theorem remains an explicit
-premise: this reduction does not by itself prove the local target or close
-Task 6014.
+premise: this reduction does not by itself prove the local target.
 
 For mathematical context, the root-space trivializations give the local
 free-root-space condition in Brian Conrad, *Reductive group schemes*

@@ -1,7 +1,5 @@
 # Hecke characters and prescribed local components
 
-Author: Worker 2.
-
 `Langlands.Global.HeckeCharacter K` is the group of continuous multiplicative
 maps from the actual quotient `IdeleClasses K` to `ℂˣ`. It includes nonunitary
 characters; `HeckeCharacter.IsUnitary` separately requires the complex absolute
@@ -41,7 +39,7 @@ unramified convention after Definition 7 on p.117; and §4, p.118:
 continuous quasi-characters, their pointwise group structure, the actual
 idele-class quotient, identification with idele characters trivial on
 principal ideles, and restrictions to local multiplicative groups.
-Worker 2 read these passages and the adelic definitions cited in `Adelic.md`.
+These passages and the adelic definitions cited in `Adelic.md` were read.
 
 Literature ID `weil-1973-basic-number-theory`, retained original
 `C:/Central-Library/Weil--Basic number theory (book, 2nd edition)--1973.pdf`,

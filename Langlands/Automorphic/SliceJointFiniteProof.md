@@ -1,6 +1,6 @@
 # Joint differential finiteness of actual automorphic slices
 
-Author: Worker 94. Module: `Langlands.Automorphic.SliceJointFiniteProof`.
+Module: `Langlands.Automorphic.SliceJointFiniteProof`.
 The theorem `Langlands.Automorphic.automorphicSliceJointFinite` proves the
 unchanged `AutomorphicSliceJointFiniteStatement K n` for arbitrary
 `K : Type u` with `[Field K] [NumberField K]` and every natural rank `n`,

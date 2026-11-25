@@ -1,7 +1,5 @@
 # Extending the Whittaker expansion to the full diagonal torus
 
-Author: Worker 78.
-
 `Langlands.WhittakerFullTorus.of_lastEntryOne` proves the implication from
 `WhittakerLastEntryOneAsymptoticStatement.{uK,uV}` to
 `WhittakerTypeAsymptoticStatement.{uK,uV}`. The field and carrier universes

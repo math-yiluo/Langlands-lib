@@ -1,11 +1,9 @@
 # Noetherian unitized actions on actual endomorphism localization: proof
 
-Author: Worker 735, for proof task `f7c49a61-e9b1-4576-8910-b846a70185d9`
-under whole-book Renard task `f5d1f399-a1f8-4ab5-a981-90b92abd4857`,
-revision 2. The module is
+The module is
 `Langlands.Algebra.RenardCompatibleLocalizationNoetherianProof`, in
 namespace `Langlands.Renard.AlgebraActionLocalization`. It imports the
-published statement module
+statement module
 `Langlands.Algebra.RenardCompatibleLocalizationNoetherianStatements` by
 name and does not change it or anything it imports.
 
@@ -21,13 +19,14 @@ This is internal derived content motivated by David Renard,
 9 July 2026, C.II, printed page 279 / PDF page 285. Registered source:
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 735 reread PDF page 285 for this proof. There, Renard proves that
+PDF page 285 was reread for this proof. There, Renard proves that
 the canonical map is surjective by writing `ã⁻¹` as a polynomial in `ã`
 over `B`. He then obtains `K = ker aⁿ` from finite generation of the kernel
-union `K`. No project errata file for this source exists in the Library
-used here.
+union `K`. The Library's errata file for this source,
+`notes/errata/renard-2026-representations-groupes-reductifs-padiques.md`,
+concerns chapters V–VII and has no entry for this passage.
 
-The Lean proof takes a different route. It applies the published
+The Lean proof takes a different route. It applies the
 Noetherian localization core, whose surjectivity step is a quotient
 Hopfian argument. Its kernel step stabilizes the ascending chain of power
 kernels. Commutativity of `B` is not used. The algebra may be
@@ -35,12 +34,12 @@ noncommutative and nonunital. Its multiplication is complex-bilinear
 through the two compatibility classes. The action `ρ` may be degenerate,
 and the space `V` may be zero or of any complex dimension.
 
-The proof covers exactly the three published internal targets. It does
+The proof covers exactly the three internal targets. It does
 not compare them with Renard's finite-type or Noetherian conventions. It
 does not prove the complete source-facing C.II proposition or identify
 the localization with the stable image. The compatible-power, criteria,
 quotient, universal-property and unitization-finiteness branches are
-untouched. All of these remain separate parent obligations.
+untouched. All of these are separate from this proof.
 
 ## Data and local module selection
 
@@ -55,7 +54,7 @@ The surjectivity helper's type selects only the localized action. Its
 proof adds the source action internally to form the unitized maps, so the
 first target has no hypothesis on `V`.
 
-The proof uses three actual unitized maps, each obtained from a published
+The proof uses three actual unitized maps, each obtained from a
 linear intertwiner by `CompatibleUnitization.ofLinearIntertwiner`. Each
 has the same underlying function as its intertwiner.
 
@@ -67,7 +66,7 @@ has the same underlying function as its intertwiner.
 - `unitizedLocalizedEquiv a ρ ha`, a `U`-linear automorphism of
   `Localized a`, built with `LinearEquiv.ofLinearMap`. Its two maps come
   from `localizedEndIntertwiner` and `localizedInvIntertwiner`, and its
-  inverse laws are the published identities `localizedEnd_localizedInv`
+  inverse laws are the identities `localizedEnd_localizedInv`
   and `localizedInv_localizedEnd`.
 
 ## Implemented proof
@@ -81,14 +80,14 @@ power as a function iterate with `LinearEquiv.pow_apply` or
 underlying functions.
 
 **Core certificates.** `unitized_intertwines_exhausts` proves the
-intertwining identity `F (A x) = E (F x)` from the published
+intertwining identity `F (A x) = E (F x)` from
 `iota_intertwines`. It also proves inverse-power exhaustion. Every element
 of `Localized a` is an actual fraction `frac a x n` by `frac_surjective`.
 By power coherence and `localizedEnd_pow_frac`, the `n`-th power of the
 automorphism sends `frac a x n` to `iota a x = F x`.
 
 **First target.** `surjective_of_isNoetherian` assumes only
-`IsNoetherian U (Localized a)` for the σ-action. It applies the published
+`IsNoetherian U (Localized a)` for the σ-action. It applies
 `NoetherianLocalizationCore.exhaustion_surjective` with ring `U`, source
 `V`, target `Localized a`, and the maps `A`, the automorphism and `F`.
 Surjectivity of `F` is surjectivity of the actual `iota a`, since the
@@ -96,8 +95,8 @@ functions coincide.
 
 **Second target.** `stabilizationAt_of_isNoetherian` assumes Noetherianity
 of both selected unitized modules. Local nilpotence of the kernel comes
-from the published `iota_eq_zero_iff`: `iota a x = 0` gives some `m` with
-`(a ^ m) x = 0`, hence `(A ^ m) x = 0` by power coherence. The published
+from `iota_eq_zero_iff`: `iota a x = 0` gives some `m` with
+`(a ^ m) x = 0`, hence `(A ^ m) x = 0` by power coherence. The lemma
 `NoetherianLocalizationCore.localization_core` then returns surjectivity
 of `F`. It also returns one exponent `n > 0` for which, as `U`-submodules,
 `ker F = ker (A ^ n)`, `ker (A ^ n) = ker ((A ^ n) ^ 2)` and
@@ -127,16 +126,13 @@ applies the second target's helper.
 
 **Aggregate.** `compatibleLocalizationNoetherian` introduces each target's
 algebra, space, instances, `ρ` and `f`. It supplies the three helpers in
-the published order. The first helper's compatibility proof argument is
+the statement's order. The first helper's compatibility proof argument is
 unified with the statement's `fun b z => f.map_action' b z`.
 
 ## Verification
 
-The module compiled on 29 October 2026 in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` with no errors or warnings.
+The module compiled on 29 October 2026 with no errors or warnings.
 Inspection of `compatibleLocalizationNoetherian` reported a theorem with
 level parameters `uB` and `uV`. It depends only on the standard axioms
 `propext`, `Classical.choice` and `Quot.sound`. It uses no `sorry`,
-`admit` or new axioms. Development compilation is not acceptance.
-Independent semantic review, the Lake build, exact-target validation and
-Library publication are still required.
+`admit` or new axioms.

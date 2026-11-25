@@ -1,8 +1,5 @@
 # Ordered normalized product regrouping
 
-Authors: Worker 175 (composition source); Worker 480 (closed proof and dependency
-verification).
-
 `Langlands.Parabolic.orderedProductRegrouping` proves exactly
 `Langlands.Parabolic.OrderedProductRegrouping.{uF,uV} F T`, with outer parameters
 `{p : ℕ} [Fact p.Prime] (F : PadicField.{uF} p) (T : F.TopologicalData)`.
@@ -53,8 +50,8 @@ adds no irreducibility, admissibility, dimension, finite-length, unitarity, or
 supplied-comparison hypothesis.
 
 The provenance is internal composition of the imported Library constructions.
-The composition reuses Worker 175's private regrouping assembly, closing its
-last comparison premise with the published refined induction/tensor proof.
+The last comparison step of the composition is the published refined
+induction/tensor proof.
 The coordinate, tensor, and induction-in-stages results supply the existing
 positive-half covariance and right-translation convention. This module proves
 the categorical existence statement; it supplies no analytic classification or

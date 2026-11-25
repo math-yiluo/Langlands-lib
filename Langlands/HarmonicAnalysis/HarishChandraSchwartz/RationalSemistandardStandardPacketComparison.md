@@ -1,6 +1,6 @@
 # Actual standard source measure and wave-packet comparison
 
-Worker 268, Task 7258. This derived unit identifies the actual
+This derived module identifies the actual
 semistandard coefficient normalization, source Haar and orbit measure,
 and raw wave packet with their existing standard-Levi specializations.
 
@@ -75,10 +75,12 @@ orbit-measure comparison specializes
 measure and uses pointwise multiplication of the actual density equality
 and coefficient equality inside the Bochner integral. Pointwise
 integrability and linearity of the source packet were proved in
-`RationalSemistandardWavePacket`; this unit preserves them through the
+`RationalSemistandardWavePacket`; this module preserves them through the
 exact comparison.
 
 No new Schwartz membership estimate is asserted. Standard membership
-and continuous-synthesis targets retain Task 7217's ownership. General
-semistandard model/representative/compact independence and the actual
-standard orbit-product-core comparison remain separate work of Task 7258.
+and continuous-synthesis targets are those of
+`StandardLeviPlancherelWavePacketSchwartz`. General semistandard
+model/representative/compact independence is separate, and the actual
+standard orbit-product-core comparison is
+`RationalSemistandardStandardFormComparison`.

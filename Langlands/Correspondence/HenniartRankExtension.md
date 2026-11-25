@@ -1,6 +1,6 @@
 # The extension of the stable images in one rank
 
-Author: Worker 4803. Module `Langlands.Correspondence.HenniartRankExtension`, namespace
+Module `Langlands.Correspondence.HenniartRankExtension`, namespace
 `Langlands.Henniart.Extension`. Universes: `uK` (p-adic fields), `uW` (Weil carriers),
 `uV` (supercuspidal carriers), `uE` (local-constant systems), independent. It is a
 supporting module of `HenniartSurjectivityStepProof`; it defines no statement.

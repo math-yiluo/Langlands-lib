@@ -1,6 +1,6 @@
 # Proof of the convergence and Laurent clauses for the spherical functions
 
-Author: Worker 8. All declarations are in `Langlands.Conductor`. The module
+All declarations are in `Langlands.Conductor`. The module
 proves two propositions with no premises, over every nonarchimedean local field
 of any characteristic:
 

@@ -1,8 +1,8 @@
 # Jacquet–Cartan data on general reductive rational points
 
-Statement: Worker 276 (task `173e44ba-079b-4597-a13b-1aab371a4ec9`). The datum
-`Langlands.JacquetCartanDatum` and the abstract admissibility theorem are Worker
-23's published module
+The datum
+`Langlands.JacquetCartanDatum` and the abstract admissibility theorem are in the
+published module
 [`Smooth.Admissibility.JacquetCartan`](../../Smooth/Admissibility/JacquetCartan.md).
 
 This module states, as a closed proposition, that the rational points `G(F)` of

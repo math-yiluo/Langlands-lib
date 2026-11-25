@@ -145,7 +145,9 @@ The provenance is derived for these reasons:
 - `k`, `K`, `G` and the test algebras in `IsStableSubspace` lie in one
   universe `u`. This is a formalization convention.
 
-Relation to the Library. The Library has no notion of linear reductivity.
+Relation to the Library. The Library defines linear reductivity as
+`IsLinearlyReductive` (in `Torus.NagataReductionStatements`), by the same
+condition as the local `let` above.
 `SemisimpleRepresentationFieldExtensionStatement` (in
 [`Reductive.SemisimpleRepresentationFieldExtensionStatement`](SemisimpleRepresentationFieldExtensionStatement.md),
 Milne's Proposition 4.19) concerns one representation and its base change;
@@ -164,7 +166,11 @@ of stable subspaces above, and for p. 249 an entry on the proof of
 Theorem 12.57 only; it has no entry for printed pp. 3, 6, 41, 83, 86, 90,
 230 or 248.
 
-## For the later proof (not part of this unit)
+## For the proof (not part of this module)
+
+The Library proves the statement as
+`LinearReductivity.linearlyReductiveFieldExtension` in
+`LinearlyReductiveFieldExtensionProof`.
 
 - If `G_K` is linearly reductive, so is `G`: for `ρ : MatrixRepresentation G
   (Fin n)`, the base change `ρ.baseChange f` (in
@@ -177,8 +183,8 @@ Theorem 12.57 only; it has no entry for printed pp. 3, 6, 41, 83, 86, 90,
   Remark 12.56: in characteristic zero, Corollary 22.43, whose Lean form is
   the first conjunct of `CharZeroSemisimpleRepresentationIdentityComponentStatement`
   (stated there for smooth `G`; algebraic groups in characteristic zero are
-  smooth); in characteristic `p ≠ 0`, Nagata's theorem, whose Lean form
-  `NagataLinearlyReductiveStatement` was submitted separately by the same
-  author and was not in the Library when this unit was written. In both cases
+  smooth); in characteristic `p ≠ 0`, Nagata's theorem, whose Lean form is
+  `NagataLinearlyReductiveStatement` (in
+  `Torus.NagataLinearlyReductiveStatement`). In both cases
   a proof must also show that the conditions of the classification are
   unchanged by base change to `K`.

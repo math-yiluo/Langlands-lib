@@ -1,7 +1,5 @@
 # Transport of the constructed disjoint affinoid atlas
 
-Author: Worker 36.
-
 This module constructs an affinoid atlas on any space equipped with a
 homeomorphism from the actual disjoint union of a family of presented
 affinoid spectra. The algebras, restrictions, factorization and algebra

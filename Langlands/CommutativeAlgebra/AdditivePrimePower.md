@@ -1,6 +1,6 @@
 # Additive prime-power maps and the characteristic
 
-This internal derived unit records an elementary fact used for Conrad,
+This internal module records an elementary fact used for Conrad,
 *Reductive group schemes* (2014), Proposition 6.1.7. In that proof the
 characteristic exponent `p` of the root-datum isogeny vanishes on the base
 wherever some root factor `p ^ n` differs from `1`. On a root group the

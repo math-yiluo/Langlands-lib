@@ -1,7 +1,5 @@
 # Boolean interval cut contraction
 
-Author: Worker 194. The imported signed cut diagram construction is by Worker 164.
-
 This internal algebraic prerequisite proves contraction and homogeneous
 exactness for a signed cut diagram with an invertible coordinate. It then
 constructs the constant-coefficient diagram on a Boolean interval, proves

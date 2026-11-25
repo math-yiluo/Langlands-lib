@@ -1,7 +1,5 @@
 # Actual Levi cocenter root-model assembly from structural inputs
 
-Authors: Worker 1293 (assembly), Worker 1632 (supporting constructions and interfaces).
-
 This internal supporting construction retains the actual rational torus,
 its selected common finite Galois splitting field, the actual ambient and
 centralizer root data on that field, and the base change of the original

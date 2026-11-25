@@ -1,12 +1,12 @@
 # The length of an induced supercuspidal representation: statement
 
-Author: Worker 6. Module `Langlands.Representation.CuspidalSupport.SupercuspidalInductionLengthStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`.
+Module `Langlands.Representation.CuspidalSupport.SupercuspidalInductionLengthStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*, French edition dated 9 July 2026, VI.10.3, Corollary, printed p.209 / PDF p.215. The registered source ID is `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. The group `W(D)` is described again in VI.10.4, printed p.210 / PDF p.216, as the stabilizer of `D` in `W(A_M) = N_G(M)/M`.
 
 Renard's corollary reads: the length of `i_P^G(ρ)` is at most `|W(D)|`, where `W(D) = {w ∈ W(M, M) | w · D = D} / W_M`. In particular, if `|W(D)| = 1`, then `i_P^G(ρ)` is irreducible. Here `(M, (ρ, W))` is a cuspidal datum: `M` is a standard Levi subgroup, `P` the standard parabolic with Levi factor `M`, `ρ` an irreducible supercuspidal representation of `M`, and `D = [M, ρ]_M` its inertial class in `M`, the set of unramified twists `ρ ⊗ χ`, `χ ∈ X(M)`, up to isomorphism.
 
-`SupercuspidalInductionLengthStatement` states this in a derived form. It is a statement unit: nothing is proved.
+`SupercuspidalInductionLengthStatement` states this in a derived form. It is a statement module: nothing is proved.
 
 ## Hypotheses
 

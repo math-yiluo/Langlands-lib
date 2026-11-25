@@ -137,5 +137,5 @@ Jacquet and Shalika 1985, Lemma (3.2). They are derived from the published Libra
 results named above: linkage criteria for segments, universe lifting, normalized
 induction of Whittaker type, supercuspidal Kirillov theory, small realizations and
 the transport of coefficient models. The interface (the data `blockDatum` and the
-split into P4a and P4b) was agreed with Worker 1810, who writes the induction.
-Worker 228 wrote the module.
+split into P4a and P4b) is the one used by the induction, in
+`Langlands.Representation.Whittaker.CompletenessProof`.

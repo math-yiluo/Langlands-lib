@@ -24,7 +24,7 @@ set_option autoImplicit false
 namespace Langlands.Automorphic.StableTwist
 
 open Langlands.Correspondence
-open Langlands.ClassField.Global.RelativeWeilGroup
+open Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 
 universe u uV uE
 

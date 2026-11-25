@@ -1,7 +1,5 @@
 # Cocenter existence from maximal-torus products and intersections
 
-Authors: Worker 1616, with the integral cocharacter construction by Worker 1435.
-
 This internal conditional assembly proves the exact proposition
 `CocenterQuotientExistenceStatement` from two structural inputs:
 surjectivity of multiplication of an actual derived subgroup and a supplied
@@ -30,8 +28,9 @@ fpqc; its scheme epimorphism induces the required epimorphism of groups.
 The actual restricted kernel is identified with the intersection using
 `isTorus_kernel_comp_baseChange_of_isTorus_intersection`. The supplied
 intersection property therefore makes the full kernel a torus after every
-field extension, hence smooth and connected. Worker 1435's
-`IsSplitTorus.cocharacter_surjective_of_smooth_connected_kernel` applies to
+field extension, hence smooth and connected.
+`IsSplitTorus.cocharacter_surjective_of_smooth_connected_kernel` (module
+`Torus.SmoothConnectedKernelCocharacters`) applies to
 the resulting epimorphism of split tori and proves integral surjectivity
 on the exact cocharacter lattices appearing in the target.
 

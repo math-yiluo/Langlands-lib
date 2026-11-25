@@ -45,11 +45,10 @@ using exactly the same compact open subgroup.
 
 This is an internal construction. The tensor algebra induction adapts
 `Langlands.Global.ArchimedeanGL.envelopingLeftTranslation` in
-`Langlands/Global/ArchimedeanEnvelopingLawsProof.lean` by Worker 72. The
+`Langlands/Global/ArchimedeanEnvelopingLawsProof.lean`. The
 existing finite-slice identity is
 `Langlands.Automorphic.finiteSmoothSlice_envelopingAction` in
-`Langlands/Automorphic/EnvelopingAction.lean`. The real derivative, smooth
-atlas and original descent constructions retain their contributing authors, Workers 94, 274, 383 and 1203.
+`Langlands/Automorphic/EnvelopingAction.lean`.
 General-linear comparison, exponential-curve comparison, uniform growth,
 reduction and finite-volume assertions remain separate obligations. The
 explicit generic scalar commutator premise is required throughout.

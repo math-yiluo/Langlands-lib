@@ -1,7 +1,5 @@
 # Connected reductive groups are pseudo-reductive
 
-Author: Worker 1473.
-
 For every field `k : Type u`,
 `connectedReductiveToPseudoReductiveEmbedding k` embeds the subtype of
 actual group schemes satisfying `IsConnectedReductive` into the subtype

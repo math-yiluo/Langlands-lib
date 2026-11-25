@@ -1,6 +1,6 @@
 # Proof of the unipotent Iwahori double-coset bijections
 
-This unit proves the published target
+This module proves the published target
 `Langlands.Geometry.Building.UnipotentIwahoriDoubleCosetStatement` of
 `Langlands/Geometry/Building/IwahoriWeylStatement.lean`. The theorem
 `Langlands.Geometry.Building.unipotentIwahoriDoubleCoset` is stated at an arbitrary universe `u`.

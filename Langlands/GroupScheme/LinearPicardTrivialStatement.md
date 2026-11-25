@@ -98,11 +98,13 @@ The provenance is derived for three reasons:
    nothing because every finite type is in bijection with some `Fin m`.
 3. `k` lies in an arbitrary universe `u`. This is a formalization convention.
 
-## For the later proof (not part of this unit)
+## For the proof (not part of this module)
 
-Milne's route can be followed. The Library already supplies
+The Library proves the proposition as
+`LinearPicardTrivial.linearPicardTrivialStatement` in `LinearPicardTrivialProof`.
+Milne's route can be followed. The Library supplies
 `GeneralLinear.determinantLocalizationEquiv` in `GeneralLinearLocalization`;
-the remaining Picard comparisons below are proof obligations.
+the Picard comparisons below are the further steps of the proof.
 
 - `GL_n`. The Library's coordinate ring `GeneralLinear.CoordinateRing n k` is
   isomorphic to the localization `k[Xᵢⱼ][1/det]`: the relation `XY = 1`

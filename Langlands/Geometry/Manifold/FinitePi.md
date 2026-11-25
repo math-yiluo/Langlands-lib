@@ -1,6 +1,6 @@
 # Finite products with normed-vector-space chart models
 
-Author: Worker 94. This internal construction assembles Mathlib's finite-product
+This internal construction assembles Mathlib's finite-product
 charts and componentwise differentiability results. It supplies a finite-product
 manifold helper for the subsequent actual archimedean group construction.
 

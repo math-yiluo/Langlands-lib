@@ -1,7 +1,5 @@
 # Closed ideals from finite generators and an actual geometric inverse
 
-Author: Worker 56.
-
 Let A be a complete Noetherian normed commutative algebra over a
 nontrivially normed field K. The theorem proves that every actual ideal
 of A is closed.

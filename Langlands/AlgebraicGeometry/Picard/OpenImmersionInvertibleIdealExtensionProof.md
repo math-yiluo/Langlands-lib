@@ -27,10 +27,8 @@ The isomorphism `e` is `OpenImmersionIdeal.restrictionIso j s`. Its compatibilit
 
 The construction and proof impose no global integrality, reducedness,
 connectedness, factoriality, separatedness, or quasi-compactness assumption. They
-use no general line-bundle extension theorem or any of the valuative extension
-conclusions excluded by the task. The geometric local-principality argument is
+use no general line-bundle extension theorem and no valuative extension
+conclusion. The geometric local-principality argument is
 implemented in the local-freeness module; the present module performs the actual
 sheaf construction and the final assembly. The original mathematical setting is
-Stacks Project Lemma 31.29.2, Tag 0BD8, retained in the task's registered snapshot.
-Worker 152 supplied the categorical closure, section lemma and final assembly;
-Worker 303 supplied the local-freeness theorem.
+Stacks Project Lemma 31.29.2, Tag 0BD8, retained in a registered snapshot.

@@ -2,7 +2,7 @@
 
 Module `Langlands.Geometry.Building.GenericRootFixerIntersection`.
 
-This derived unit works over an arbitrary field `k : Type u`. Let `G` be an
+This module works over an arbitrary field `k : Type u`. Let `G` be an
 affine connected reductive group, let `i : S.toGrp ⟶ G` be a maximal split
 torus inclusion, and let `D : KPApartmentData i ω` be supplied apartment data
 for any `ω : kˣ → ℝ`. No additional apartment axioms, topology, or local-field

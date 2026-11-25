@@ -32,5 +32,5 @@ positive inclusion by f and the target positive inclusion.
 The module requires the actual equivariant positive-group map and common
 realizing scale described above. It does not construct geometric conjugators or
 prove compatibility of canonical face-cocharacter actions for different tori.
-Those inputs, parabolic normalization and effective descent remain obligations
-of Task 7200.
+Those inputs, parabolic normalization and effective descent remain separate
+steps of the finite vector-bundle filtrations of supplied relative radicals.

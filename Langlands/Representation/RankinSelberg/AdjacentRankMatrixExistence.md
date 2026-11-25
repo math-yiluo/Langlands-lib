@@ -1,6 +1,6 @@
 # Matrix equation existence for adjacent test coefficients
 
-Worker 486. This internal composition proves
+This internal composition proves
 `exists_adjacentRankMatrixFunctionalEquationWitnesses`. For a specified
 irreducible full Whittaker-type test representation, a nonzero specified
 inverse-character functional and any quasicharacter, it constructs

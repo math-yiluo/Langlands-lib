@@ -1,6 +1,6 @@
 # Torus comparisons of supplied reflection representatives
 
-Worker 1317. Internal supporting constructions derived from the published
+Internal supporting constructions derived from the published
 split-torus character-separation, maximal-torus self-centralizer, actual vector
 coordinates and canonical class-function quotient interfaces.
 
@@ -27,5 +27,5 @@ isomorphism and proves equivalence of their isomorphism properties.
 
 All results preserve arbitrary universes and fields, including finite and
 imperfect fields in positive characteristic. Existence of a cyclic torus gauge
-is not asserted. The unit does not prove independence for arbitrary reflection
+is not asserted. The module does not prove independence for arbitrary reflection
 families, invariant-algebra generation, or the split Steinberg quotient target.

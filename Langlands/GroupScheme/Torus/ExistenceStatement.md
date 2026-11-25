@@ -1,7 +1,5 @@
 # Existence of a maximal torus over the original field: statement
 
-Worker 1336.
-
 `MaximalTorusExistenceStatement.{u}` says that every smooth affine group
 scheme `G` over any field `k : Type u` admits a commutative group scheme
 `T` and a homomorphism `i : T.toGrp ⟶ G` satisfying the published
@@ -33,5 +31,5 @@ This module only defines the proposition. It supplies no existence
 proof, field-extension theorem, or proof that a torus maximal in a
 parabolic is maximal in the ambient group. In particular, it does not
 prove `ParabolicMaximalTorusStatement`. General maximal-torus
-existence is a separate structural prerequisite of that task and of
+existence is a separate structural prerequisite of that statement and of
 the common-maximal-torus theorem for two parabolics.

@@ -1,6 +1,6 @@
 # Laws of the compact Hecke comparison
 
-Worker 133, Task 5403. Derived supporting constructions for Renard III.2.6,
+Derived supporting constructions for Renard III.2.6,
 printed pp.75–76 / PDF pp.81–82, registered source
 `renard-2026-representations-groupes-reductifs-padiques`.
 
@@ -25,5 +25,5 @@ compact induction. The pointwise identity is b_g(L_x T)=b_(g*x)(T). Integrating
 this intertwiner and identifying the integrated left regular action with the
 original Haar convolution proves ambient Hecke equivariance.
 
-This supporting unit proves the elementary laws. The balanced quotient lift,
+This supporting module proves the elementary laws. The balanced quotient lift,
 its naturality, bijectivity, and the final natural isomorphism are separate.

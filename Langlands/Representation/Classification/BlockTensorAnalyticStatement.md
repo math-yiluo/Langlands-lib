@@ -1,14 +1,12 @@
 # Analytic temperedness and square-integrability of actual GL block tensors
 
-Author: Worker 161. Worker 47 specified the target and its dependency boundary.
-
 ## Statements and quantifiers
 
 This module defines three closed propositions:
 `Langlands.GLBlockTensorTemperedStatement`,
 `Langlands.GLBlockTensorSquareIntegrableStatement`, and their conjunction
 `Langlands.GLBlockTensorAnalyticStatement`. It proves neither comparison.
-The conjunction is one statement contribution; its two components can be proved
+The conjunction is one statement; its two components can be proved
 separately.
 
 Fix any prime `p`, a finite extension `F : PadicField.{uF} p`, and any supplied
@@ -120,7 +118,7 @@ obligations below, not implicit fields of a certificate.
 The exact finite-product equivalences are **derived product statements**.
 They are not attributed verbatim to a theorem in the following originals.
 The sources specify the analytic conventions, and the tensor/coefficient
-argument described below explains the derivation that a later proof must
+argument described below explains the derivation that a proof must
 implement. All cited originals were read at the indicated locations.
 
 | Registered original | Exact location | Correspondence |

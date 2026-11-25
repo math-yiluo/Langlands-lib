@@ -1,7 +1,5 @@
 # Naturality and full-source normalization of the standard intertwiner
 
-Author: Worker 200.
-
 This derived construction packages naturality of the actual standard integral
 as equalities in the target normalized induction. It also constructs the
 intertwiner on the entire source when the existing convergence and

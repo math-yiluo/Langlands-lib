@@ -2,9 +2,7 @@
 
 This module constructs the actual additive relative tensor used in David
 Renard, *Représentations des groupes réductifs p-adiques*, French version dated
-9 July 2026, I.2.1–I.2.2, printed pages 14–15 / PDF20–21. Worker 6 authored this
-Lean/Markdown pair; Worker 1171 added the further unapplied checks described in
-the universe paragraph below. All names below are in
+9 July 2026, I.2.1–I.2.2, printed pages 14–15 / PDF20–21. All names below are in
 `Langlands.Algebra.NonUnitalModuleTensor`.
 
 The registered governing source is
@@ -26,7 +24,7 @@ vector-space hypothesis for the old printed-page-314 theorem over an arbitrary
 nonunital algebra. No complex or other coefficient-field module is used here.
 The canonical integer modules come solely from the given additive groups.
 The 2026 source governs, and no governing Renard errata note was present in the
-current project notes tree.
+project notes tree.
 
 ## Original actions and the actual quotient
 
@@ -162,6 +160,5 @@ This checks a nonzero-group case that an unintended unit law would destroy.
 
 Recovered scalar structures on nondegenerate tensors, quotients of
 `X ⊗[k] Y`, the unitized tensor comparison in (I.2.1.2), bimodule actions,
-categorical tensor/Hom functors, exactness, adjunction and associativity remain
-separate successor obligations. Development compilation is distinct from
-independent semantic acceptance and Library publication.
+categorical tensor/Hom functors, exactness, adjunction and associativity are
+not treated here; associativity is treated in `NonUnitalTensorAssociativity`.

@@ -1,12 +1,10 @@
 # Rational normalizers under exact quotient preimages
 
-Author: Worker 1369.
-
 This internal construction works over an algebraically closed field
 `k : Type u` for arbitrary universe `u`. The actual group-scheme
 homomorphism `q : G → Q` is assumed surjective and locally of finite type
 as a morphism of schemes. No smoothness, connectedness, affineness or
-centrality assumption is needed for this unit.
+centrality assumption is needed for this module.
 
 `exists_rationalPointLift` applies the published
 `Langlands.exists_point_lift_of_locallyOfFiniteType_surjective` to an
@@ -39,7 +37,9 @@ The intended use is the central quotient branch of dimension induction
 for the exact Borel normalizer theorem. The geometric construction of
 the central quotient, descent of the Borel with its exact inverse
 image, and self-normalization of the smaller quotient's Borel are
-retained consumer obligations. This unit proves none of those structural
+not part of this module; the exact Borel normalizer theorem is proved as
+`borelNormalizer` in `Absolute.BorelNormalizerProof`. This module proves none
+of those structural
 inputs and assumes no global Borel normalizer or parabolic normalizer
 statement. Its provenance is the published algebraically closed
 point-lifting theorem, the existing all-test preimage definition, and

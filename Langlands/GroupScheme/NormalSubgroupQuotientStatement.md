@@ -1,7 +1,5 @@
 # Quotients of smooth affine groups by normal closed subgroups: statement
 
-Worker 1379.
-
 `NormalSubgroupQuotientStatement.{u}` concerns a field `k : Type u`, a
 smooth affine group scheme `G` over `Spec k`, and a homomorphism
 `i : N ⟶ G` of group schemes over `Spec k` with `IsClosedSubgroup i`

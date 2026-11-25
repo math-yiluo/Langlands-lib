@@ -1,10 +1,10 @@
 # Finite equivariant refinements on the twisted quasi-étale site
 
-Author: Worker 26. Uses the published `Langlands.Sheaf.Equivariant.AnalyticGSheaves`
+Uses the published `Langlands.Sheaf.Equivariant.AnalyticGSheaves`
 (twisted quasi-étale site, lifts on compact objects, the local action system
-`compactLiftSystem`, Worker 26) and `Langlands.Sheaf.Equivariant.LocalActionDiscretePart`
+`compactLiftSystem`) and `Langlands.Sheaf.Equivariant.LocalActionDiscretePart`
 (the class `LocalActionSystem.HasFiniteEquivariantRefinements` and
-`isLocallyEquivariant_of_intertwines`, Worker 26). From Worker 21 it uses the
+`isLocallyEquivariant_of_intertwines`). It also uses the
 quasi-étale site `QuasiEtaleSite`, its topology `quasiEtaleTopology`, compact spaces
 `IsCompactSpace`, lifts `ActionLift`, and the statement
 `QuasiEtaleActionLiftStatement` (`Langlands.Geometry.Analytic.QuasiEtaleActionLiftStatement`).
@@ -22,19 +22,19 @@ action to compact quasi-étale objects. The published modules
 for the abelian structure of these sheaves and for their derived compactly supported
 cohomology `H^q_c(X{G}, F)`. This module reduces that class to three conditions on the
 plain quasi-étale site of `X`. Two of them are new propositions. The third follows
-from Worker 21's published statement of Berkovich's lifts. The three conditions
+from the published statement `QuasiEtaleActionLiftStatement` of Berkovich's lifts. The three conditions
 remain hypotheses. This module does not prove any of them.
 
 All declarations are in `Langlands.Sheaf.Equivariant.Analytic`.
 
 ## Data and universes
 
-- `K : Type u` is a complete ultrametric normed field. `X` is an object of Worker 21's
+- `K : Type u` is a complete ultrametric normed field. `X` is an object of
   `LocalizedCategory.{u, v, v} (K := K)`.
 - `G : Type z` is a group with a topology, and `ρ : G →* Aut X`. The theorem that uses
   `QuasiEtaleActionLiftStatement` also assumes `[IsTopologicalGroup G]`.
 - `IsCompactSpace U` means that the underlying space of `U` is compact and Hausdorff
-  (Worker 21's definition).
+  (the definition in `Langlands.Geometry.Analytic.LocalActionLifts`).
 
 ## The three conditions
 
@@ -56,7 +56,7 @@ All declarations are in `Langlands.Sheaf.Equivariant.Analytic`.
   intertwines the two lifted actions on an open subgroup.
 
 `hasCompactQuasiEtaleLifts_of_actionLiftStatement hKL hX hρ` (theorem) derives (B) from
-Worker 21's `QuasiEtaleActionLiftStatement.{u, v, z} K` (`hKL`), the Hausdorff property
+`QuasiEtaleActionLiftStatement.{u, v, z} K` (`hKL`), the Hausdorff property
 of the underlying space of `X` (`hX`) and continuity of `ρ` (`hρ :
 IsContinuousAction ρ`). It applies the statement to the structure morphism `V.hom`,
 which is quasi-étale because `V` is an object of `QuasiEtaleSite X`, and keeps the
@@ -130,7 +130,7 @@ The correspondence is as follows.
   not formalized. In particular, it is not checked here for coverings produced by the
   transitivity closure of the generated topology.
 - (B) is the existence of the extension to `G_U` on p.7. It is the existence half of
-  Worker 21's `QuasiEtaleActionLiftStatement`.
+  `QuasiEtaleActionLiftStatement`.
 - (C) is the statement that the morphisms `U_i → U` are `N`-morphisms for a small
   open `N` (steps A.1 and A.2). Berkovich derives it from the Key Lemma (Berkovich
   1994, Key Lemma 7.2) and the canonical choice of the extensions. Here it is a
@@ -148,8 +148,8 @@ the facts that step A.2 uses, on a subgroup small enough for all members at once
 
 - (A) and (C) are new hypotheses. Their proofs belong with the geometry of the
   quasi-étale site and with Berkovich's Key Lemma. Neither proof is given here.
-- (B) is derived from `QuasiEtaleActionLiftStatement`, which is itself an unproved
-  statement. The Hausdorff hypothesis on `X` is that statement's hypothesis. The
+- (B) is derived from `QuasiEtaleActionLiftStatement`, which is proved as
+  `quasiEtaleActionLift` in `Langlands.Geometry.Analytic.QuasiEtaleActionLiftProof`. The Hausdorff hypothesis on `X` is that statement's hypothesis. The
   three conditions and the reduction theorem do not assume it.
 - No instance is declared. A user supplies the class locally, for example with
   `haveI := hasFiniteEquivariantRefinements_compactLiftSystem ρ hA hB hC`.

@@ -70,10 +70,11 @@ the preceding semisimplicity result to the actual fibre of `kernel q`.
 At a geometric point, the inverse kernel/base-change isomorphism transports
 this to the full kernel of the geometric-fibre homomorphism.
 
-The provenance is internal: this unit combines the field coroot-kernel
+The provenance is internal: this module combines the field coroot-kernel
 criterion, the model's actual fibrewise interfaces, canonical split-torus
 and diagonalizable base-change comparisons, kernel-square transport and
 semisimplicity invariance. It does not construct `q`, prove its relative
 smoothness or surjectivity, or discharge relative semisimple perfectness.
-The unconditional relative derived-group existence target remains a
-separate assembly obligation.
+The unconditional relative derived-group existence statement
+`RelativeDerivedGroupExistenceStatement` is not proved here; it is proved as
+`relativeDerivedGroupExistence` in `Reductive.RelativeDerivedGroupExistenceProof`.

@@ -1,7 +1,5 @@
 # Integral simple-root annihilators and split components: proof
 
-Authors: Worker 1222 and Worker 674.
-
 `Langlands.GroupScheme.simpleRootSplitCentralImage` proves exactly
 `Langlands.GroupScheme.SimpleRootSplitCentralImageStatement.{u}`. Over every
 field `k : Type u`, it identifies the common integral annihilator of the

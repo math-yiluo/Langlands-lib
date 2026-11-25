@@ -1,7 +1,5 @@
 # Full strong-map restriction to actual source and target domains
 
-Author: Worker 36.
-
 This module constructs simultaneous restriction of a full strong map to
 original-chart domains S and T. The explicit chartwise hypothesis requires
 every original source chart contained in S to map into an original target
@@ -17,7 +15,7 @@ non-Archimedean analytic spaces* (1993), Definition 1.2.3 and Remark
 printed pp.18–19 / PDF pp.15–16; and Definition 1.3.1, printed p.23 /
 PDF p.20. Registered source: `berkovich-1993-etale-cohomology`, SHA256
 `06b42aca1c8f237e607d2cf1f15a41fdc9718324a4dc9fd5bce66574254bb91c`.
-These original pages were read for this unit. The extracted header of
+These original pages were read for this module. The extracted header of
 PDF p.15 misreads the printed page number; the previously inspected
 rendering identifies printed p.18. No source-specific errata file was
 found in the project and Library locations.
@@ -80,4 +78,4 @@ without a general strong-map composition operation.
 The chartwise hypothesis is not derived from pointwise containment for
 general maps. Arbitrary original-domain inverse-image existence, atlas
 saturation, unrestricted strong-map composition, structure sheaves,
-and analytic étale sites remain separate obligations.
+and analytic étale sites lie outside this module.

@@ -1,7 +1,5 @@
 # Actual finite affinoid realizations of recognized-chart domains
 
-Author: Worker 36.
-
 This module constructs an actual finite affinoid realization for every full
 affinoid domain in a recognized chart over the full local-domain atlas.
 Its parent algebra is the given domain algebra. The finite component
@@ -16,7 +14,7 @@ Proposition 1.2.13(ii)–(iii), printed p.21 / PDF p.18; and
 Definition 1.3.1 and its following paragraph, printed p.23 / PDF p.20.
 Registered source `berkovich-1993-etale-cohomology`, SHA256
 `06b42aca1c8f237e607d2cf1f15a41fdc9718324a4dc9fd5bce66574254bb91c`.
-These original pages were read for this unit. No source-specific errata
+These original pages were read for this module. No source-specific errata
 file was found in the available project and Library locations.
 
 This is a derived construction toward closure of the recognized atlas
@@ -24,8 +22,9 @@ under full affinoid domains. It instantiates the existing
 `FiniteChartGluingData.AffinoidRealization` construction using actual
 domains and maps. The source does not state this intermediate construction
 separately. The result does not assume a realization or a section-algebra
-comparison, and does not yet prove specialness of the constructed cover
-or the source's entire maximal-atlas assertion.
+comparison, and does not prove specialness of the constructed cover
+(proved in `RecognizedDomainSpecialCover`) or the source's entire
+maximal-atlas assertion.
 
 First let `V : a.RecognizedSubset` and `D : Domain K V.algebra`.
 `domainLocus_subset` records that `V.chart '' D.locus` lies in `V.locus`.
@@ -106,10 +105,12 @@ No reducedness, nonzeroness, nonempty-cover or ambient Hausdorff
 hypothesis is added. All full-domain universal properties quantify over
 every presented affinoid test algebra with finite positive polyradii.
 
-The unit constructs the finite realization. It does not yet prove
-admissibility of its completed-tensor overlap maps, specialness of its
-finite cover, recognition of the entire domain, maximal closure,
-idempotence or the unrestricted morphism-category identification.
+The module constructs the finite realization. It does not prove
+admissibility of its completed-tensor overlap maps or specialness of its
+finite cover, which `RecognizedDomainSpecialCover` proves; recognition of
+the entire domain, which `RecognizedDomainClosure` proves; idempotence,
+which `FullRecognitionIdempotence` proves; maximal closure; or the
+unrestricted morphism-category identification.
 The general special-intersection statement and closed-ideal effectiveness
 are not assumed. Analytic étale and equivariant sites and the Harris tower
-specialization remain later obligations.
+specialization lie outside this module.

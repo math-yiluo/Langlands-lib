@@ -1,6 +1,6 @@
 # Integrating natural additive two-cocycles
 
-Worker 1485. This internal derived unit applies the published scalar polynomial
+This internal derived module applies the published scalar polynomial
 cocycle theorem to a natural family over all coefficient algebras.
 
 A `ScalarFamily` assigns a scalar `c_A(x,y)` to each pair of elements of every

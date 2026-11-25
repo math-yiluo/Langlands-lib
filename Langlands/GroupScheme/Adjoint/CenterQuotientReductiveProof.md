@@ -1,7 +1,5 @@
 # The full-centre quotient of a connected reductive group is connected reductive
 
-Authors: Worker 1499 and Worker 1404.
-
 This module proves the published Library statement
 `Langlands.GroupScheme.CenterQuotientReductiveStatement` (module
 `Langlands.GroupScheme.Adjoint.CenterQuotientStatement`).
@@ -25,7 +23,7 @@ centre, and no perfectness of `k`.
 The proof is the composite of two helper modules.
 
 1. `centerQuotientReductive_of_geometricCore` (module
-   `CenterQuotientReduction`, by Worker 1404) reduces the statement to
+   `CenterQuotientReduction`) reduces the statement to
    `CenterQuotientGeometricCoreStatement`: over an algebraically closed field,
    the target of an fppf quotient of a smooth connected affine group with
    trivial unipotent radical by its full centre, with affine target locally of
@@ -34,7 +32,7 @@ The proof is the composite of two helper modules.
    there directly, and the core is applied after base change to
    `AlgebraicClosure k`.
 2. `CenterQuotient.hasTrivialUnipotentRadical_of_isFppfQuotient_center`
-   (module `CenterQuotientCore`, by Worker 1499) proves the core statement.
+   (module `CenterQuotientCore`) proves the core statement.
    Its proof uses the helper modules `CenterQuotientLinearAlgebra`,
    `CenterQuotientConjugation`, `CenterQuotientCommutator` and
    `CenterQuotientEnvelope`.

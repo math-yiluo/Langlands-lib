@@ -4,8 +4,8 @@ This internal supporting module contains the coordinate and equivalence helpers
 shared by the increasing-embedding and decreasing-quotient constructions for two
 juxtaposed segment socles. It is derived from existing block-shape, twist and
 ordered normalized-induction infrastructure. It asserts no segment constituent
-existence or classification result. The code was extracted from Worker 1032's
-initial-embedding draft, jointly adapted with Worker 167.
+existence or classification result. The code was extracted from the
+initial-embedding construction of `JuxtaposedInitialEmbedding`.
 
 `index_index_eq_of_lt_iff` identifies the actual coordinate embeddings for a block
 refinement with those of a flat block shape, assuming a lexicographic numbering

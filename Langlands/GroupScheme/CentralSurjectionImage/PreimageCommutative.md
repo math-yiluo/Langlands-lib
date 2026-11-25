@@ -1,7 +1,5 @@
 # The preimage of a split torus under a central fppf surjection is commutative
 
-Author: Worker 1387.
-
 This internal module lives in the namespace
 `Langlands.GroupScheme.CentralSurjectionImage`.
 

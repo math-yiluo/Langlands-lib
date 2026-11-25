@@ -1,6 +1,6 @@
 # Finite projective extension of continuous functions
 
-Worker 105 constructs a derived algebraic tool for the point-topology comparison
+This module constructs a derived algebraic tool for the point-topology comparison
 in Brian Conrad, *Weil and Grothendieck approaches to adelic points*
 (December 31, 2011), Example 2.4, printed page 3, registered source
 `conrad-2011-weil-grothendieck-adelic-points`. This continuous-function
@@ -35,4 +35,6 @@ formula and additivity. These identities fix the actual forward map and its
 compatibility with all point evaluations.
 
 This tool alone does not identify any Weil-restriction point spaces or prove
-the source's homeomorphism. Those remain separate obligations.
+the source's homeomorphism. Those are proved separately in
+`AffineWeilRestriction`, by `weilRestrictionAlgPointHomeomorph` and its scheme
+versions.

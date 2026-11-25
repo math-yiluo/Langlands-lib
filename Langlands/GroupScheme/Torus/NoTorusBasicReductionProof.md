@@ -1,7 +1,5 @@
 # Conditional nilpotent and finite-field no-torus reductions
 
-Author: Worker 1487.
-
 `Langlands.GroupScheme.noTorusBasicReduction` proves exactly
 `NoTorusBasicReductionStatement.{u}`. It proves two conditional implications,
 with the three structural statements retained as explicit premises. It does

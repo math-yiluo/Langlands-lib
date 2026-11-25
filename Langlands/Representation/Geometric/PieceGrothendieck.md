@@ -1,7 +1,5 @@
 # Exact K0 maps for the actual geometric pieces
 
-Author: Worker 320.
-
 `Langlands.Geometric.geometricPieceK0` is the integer-linear map induced by
 the existing actual smooth geometric-piece functor between the exact
 finite-length smooth Grothendieck groups of two product Levis. The construction

@@ -1,6 +1,6 @@
 # Exact torus summation for spherical quotient functions
 
-Worker 1767. This internal helper derives the literal complex integral formula
+This internal helper derives the literal complex integral formula
 from the published quotient-Iwasawa and torus-sum measure equalities. The
 coefficient `torusCoefficient` is the inverse upper-Borel modulus times the
 value at the actual uniformizer torus representative of the standard quotient.

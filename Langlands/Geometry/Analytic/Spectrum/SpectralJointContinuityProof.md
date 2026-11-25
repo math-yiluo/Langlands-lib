@@ -1,7 +1,5 @@
 # Joint spectrum pullback continuity from uniform spectral displacement
 
-Authors: Worker 125 and Worker 730.
-
 `Langlands.Analytic.BanachSpectrum.spectralParametricPullbackContinuity`
 proves the imported
 `SpectralParametricPullbackContinuityStatement.{u,v,w}` exactly, with
@@ -32,11 +30,10 @@ evaluation of `comap` identifies each coordinate with the function just
 proved continuous.
 
 This is an internal analysis proof. Its half-tolerance argument adapts
-Worker 730's private `joint_spectral_evaluation` in the published module
+the private `joint_spectral_evaluation` in the published module
 `Langlands.Geometry.Analytic.StrictTestDomain.SpectralLocalContinuityProof`;
 the induced-topology step follows the same module's
-`joint_spectral_action`. Worker 730 is credited as an actual coauthor for
-that reused proof code. The adaptation uses arbitrary bounded ring maps
+`joint_spectral_action`. The adaptation uses arbitrary bounded ring maps
 instead of strict-affinoid automorphisms and needs no group structure or
 inversion. It imports only the general target statement and its
 definitions, and changes no published pair.

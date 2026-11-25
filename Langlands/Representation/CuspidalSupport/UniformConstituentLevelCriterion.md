@@ -12,7 +12,7 @@ It has two explicit hypotheses:
 
 The conclusion is existence of one compact open subgroup with nonzero
 fixed vectors in every irreducible actual subquotient of `A`. Neither
-of the two hypotheses is asserted unconditionally in this unit.
+of the two hypotheses is asserted unconditionally in this module.
 
 The implemented proof chooses a decreasing compact-open neighbourhood
 basis. If no uniform detector exists, at its `n`th level choose an

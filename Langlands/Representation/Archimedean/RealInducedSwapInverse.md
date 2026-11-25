@@ -1,6 +1,6 @@
 # Explicit inverses for shifted four-crossing maps
 
-This internal result derives an explicit inverse from two supplied shifted
+This result derives an explicit inverse from two supplied shifted
 four-crossing systems. The endpoint exponents remain fixed. Its inputs are the
 published shifted-window construction, Fourier uniqueness and the single-block
 reciprocal-multiplier identity.
@@ -30,5 +30,5 @@ parameters are the shifted differences plus one. The published opposite-paramete
 scalar identity verifies `AreInverse`, giving `genericShiftEquiv` with its
 opposite-shift four-crossing map as the explicit inverse.
 
-This unit does not remove an exceptional pole or prove fixed-Lie-action
+This module does not remove an exceptional pole or prove fixed-Lie-action
 intertwining for a nonzero recurrence shift.

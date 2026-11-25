@@ -3,7 +3,7 @@
 Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.SigmaProductGL`, namespace
 `Langlands.HarishChandraSchwartz`. It imports `SigmaProduct` (`IsBlockDiagonal`,
 `IsBlockUnipotent`, `sigmaProductBound_height`) and the Library module
-`Langlands.Group.GL.Blocks` (Worker 6: `BlockShape`, `BlockShape.indexEquiv`,
+`Langlands.Group.GL.Blocks` (`BlockShape`, `BlockShape.indexEquiv`,
 `BlockShape.leviSubgroup`, `BlockShape.unipotentSubgroup`, `BlockShape.parabolic`, and the
 entry lemmas `leviEmbedding_apply_ne`, `mem_parabolic_iff`, `mem_unipotentSubgroup_iff`).
 Through `SigmaProduct` it uses `height` and `glNorm` of `Height` and `SigmaProductBound` of

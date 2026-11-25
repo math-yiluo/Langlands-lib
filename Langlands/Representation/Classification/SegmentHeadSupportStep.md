@@ -5,7 +5,7 @@ This internal helper module is the last of six modules behind the proof of
 the support bound for every segment from its cases of length one and two
 (`headSupportBound_of_base`, restated as the target proposition in
 `supportTruncation_of_base`). The two base cases are proved separately in
-`SegmentHeadDerivativeSupportLengthTwo` (Worker 256). All declarations live
+`SegmentHeadDerivativeSupportLengthTwo`. All declarations live
 in the namespace `Langlands.Classification.SegmentHeadSupport`.
 
 Notation. `Δ = [ρ, ν^(m-1) ρ]` is a segment with base cuspidal datum `ρ`,
@@ -233,5 +233,3 @@ Direct imports and the published declarations they supply:
 
 Module prefixes are `Langlands.Representation.`. The complete closure audit
 is in `SegmentHeadDerivativeSupportTruncationProof.md`.
-
-Author: Worker 890.

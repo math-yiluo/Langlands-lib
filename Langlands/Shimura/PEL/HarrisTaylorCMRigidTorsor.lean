@@ -144,8 +144,8 @@ variable (existence : RelativeDualSchemeExistenceStatement.{0})
 @[simp] theorem representedCMNormalGeometricTorsorOfRigidity_ρ_left
     (hRigid : Rigid U.obj) [Etale (projection R U V hVU)]
     (g : SmallCMResidualGroup D U V) :
-    ((rigidTorsor R U V hVU existence geometry hRigid).val.ρ g).left =
-      (quotientAction R U V hVU).ρ g := rfl
+    ((rigidTorsor R U V hVU existence geometry hRigid).val.ρ g).asHom.left =
+      ((quotientAction R U V hVU).ρ g).asHom := rfl
 
 end Identifications
 
@@ -218,10 +218,10 @@ variable (existence : RelativeDualSchemeExistenceStatement.{0})
 @[simp] theorem cmNormalGeometricTorsorOfRigidity_ρ_left
     (hRigid : Rigid U.obj) [Etale (projection chosen U V hVU)]
     (g : SmallCMResidualGroup D U V) :
-    ((chosenRigidTorsor existence geometry hRigid).val.ρ g).left =
-      (cmNormalQuotientAction D C preservation composition unitCoherence associativity
+    ((chosenRigidTorsor existence geometry hRigid).val.ρ g).asHom.left =
+      ((cmNormalQuotientAction D C preservation composition unitCoherence associativity
         comparison symmetry stability square universality dualityNaturality
-        polarizationStability compatibility h htor U V hVU q).ρ g := rfl
+        polarizationStability compatibility h htor U V hVU q).ρ g).asHom := rfl
 
 end ChosenIdentifications
 

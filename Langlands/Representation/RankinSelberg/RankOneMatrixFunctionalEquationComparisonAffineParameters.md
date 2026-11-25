@@ -1,7 +1,5 @@
 # Actual free-coordinate parametrizations of affine slices
 
-Author: Worker 623.
-
 This internal measure helper identifies the already defined affine slice
 measures with actual product measures on their free coordinates. It keeps
 the supplied scalar additive Haar measure exactly, with no rescaling.

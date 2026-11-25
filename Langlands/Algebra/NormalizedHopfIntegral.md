@@ -1,6 +1,6 @@
 # Normalized dual integrals and the Hopf antipode
 
-This internal derived unit works with a commutative Hopf algebra over a field.
+This module works with a commutative Hopf algebra over a field.
 Given a coordinate integral t with a t = counit(a) t and a linear functional
 lambda with (id tensor lambda) Delta(a) = lambda(a) 1 and lambda(t) = 1,
 it constructs F(a) = (id tensor lambda)((1 tensor a) Delta(t)). Tensor

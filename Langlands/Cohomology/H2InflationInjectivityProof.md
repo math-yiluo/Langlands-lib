@@ -1,7 +1,5 @@
 # Degree-two inflation injectivity under subgroup H1 vanishing
 
-Author: Worker 138.
-
 `Langlands.Cohomology.h2InflationInjectivity` proves exactly the published
 proposition `Langlands.Cohomology.H2InflationInjectivity.{u}`. For every common
 universe `u`, commutative ring `k`, group `G`, representation `A`, and normal
@@ -13,7 +11,8 @@ cochains use Mathlib's inhomogeneous differential
 `(d₁₂ A b)(g,h) = A.ρ g (b h) - b (g*h) + b g`.
 
 The proof uses arbitrary, possibly unnormalized cocycles. It proves the
-injectivity part of the parent inflation–restriction theorem; it does not
+injectivity part of the inflation–restriction theorem
+`Langlands.Cohomology.H2InflationRestrictionExactness`; it does not
 assert exactness at the middle term.
 
 ## Implemented proof
@@ -59,5 +58,5 @@ printed pages 117–118 / PDF pages 123–124. Registered source:
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`.
 The published statement pair supplies its source correspondence. Serre uses
 dimension shifting; the present direct primitive-descent proof and its
-supporting lemmas are an internal derivation by Worker 138 using Mathlib's
+supporting lemmas are an internal derivation using Mathlib's
 low-degree cocycle and quotient APIs.

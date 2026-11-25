@@ -27,9 +27,9 @@ theorem isDiscrete_of_finite_isLimit
     (D ⋙ sheafToPresheaf J _ ⋙ (evaluation _ _).obj (op U))
     (isLimitOfPreserves (sheafToPresheaf J _ ⋙ (evaluation _ _).obj (op U)) hc)
   intro d
-  change (c.π.app d).hom.app (op U) (c.pt.obj.map (a h).unop.op s) =
+  change (c.π.app d).hom.app (op U) (c.pt.obj.map (a h).unop.asHom.op s) =
     (c.π.app d).hom.app (op U) s
-  exact ((c.π.app d).hom.naturality_apply (a h).unop.op s).trans
+  exact ((c.π.app d).hom.naturality_apply (a h).unop.asHom.op s).trans
     (hN d h (OpenSubgroup.iInfOfFinite_le N d (inf_le_right (a := H) hh)))
 
 /-- The discrete-sheaf property is closed under finite limits for every local

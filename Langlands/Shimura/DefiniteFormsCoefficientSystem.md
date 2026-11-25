@@ -1,9 +1,7 @@
 # Harris's inverse system `𝓛_m = 𝓛 / ℓ^m 𝓛` through forms, smooth forms, `Ext` and the hyperext abutments (Proposition 4.10)
 
-Author: Worker 61. Built on Worker 61's module
-`Langlands.Shimura.DefiniteFormsSmoothCoefficients` (candidate
-`5582dec2-e211-422a-8821-c50815d036c5`), which has been independently
-accepted but is not yet in the Library (commit c0c7eab6). From it this module
+Built on the published
+`Langlands.Shimura.DefiniteFormsSmoothCoefficients`. From it this module
 uses `coefficientDomain`, `domainLevel`, `awayLevel_domainLevel_le`,
 `coefficientForms`, `coefficientTranslation`, `coefficientTransport`,
 `coefficientFormsPresheaf`, `coefficientSmoothPresheaf`,
@@ -14,34 +12,30 @@ uses `coefficientDomain`, `domainLevel`, `awayLevel_domainLevel_le`,
 `localCoefficientRep`, `dividingCoefficientDomain` and the
 `dividingCoefficient*Presheaf`, `dividingCoefficientFiltrationι`,
 `dividingCoefficientFiltrationMapOfLE` and `dividingCoefficientGradedπ`
-specializations. That module imports two further accepted modules of
-Worker 61 that are not yet in the Library:
-`Langlands.Shimura.DefiniteFormsSmoothExt` (candidate
-`687f402a-30ce-4e91-8e37-a5c30bf357a6`: `awayLevel`,
+specializations. That module imports two further published modules:
+`Langlands.Shimura.DefiniteFormsSmoothExt` (`awayLevel`,
 `factorHom_mul_awayLevel`) and
-`Langlands.Cohomology.HyperextAbutmentFunctor` (candidate
-`8e1ba75f-07ac-4edf-8a61-c381b99cc033`:
-`HyperextAbutment.filtrationFunctor`, `gradedFunctor`, `filtrationι`,
-`filtrationMapOfLE`, `gradedπ`). All three are included unchanged in this
-candidate's workspace and must be integrated first.
+`Langlands.Cohomology.HyperextAbutmentFunctor`
+(`HyperextAbutment.filtrationFunctor`, `gradedFunctor`, `filtrationι`,
+`filtrationMapOfLE`, `gradedπ`).
 
-It is also built on Worker 61's published
+It is also built on the published
 `Langlands.Shimura.EquivariantForms` (`formsRepFunctor`, `formsFunctor` and
 the instance that `formsFunctor` preserves limits),
 `Langlands.Cohomology.DivisibleSystem.Reduction` (`reductionTower`,
 `reductionπ`) and `Langlands.Cohomology.DivisibleSystem.ReductionLimit`
-(`reductionCone`, `isLimitReductionCone`); on Worker 13's published
+(`reductionCone`, `isLimitReductionCone`); on the published
 `Langlands.Representation.Category.SmoothPartAdjunction`
 (`SmoothRep.smoothPartFunctor`, `SmoothRep.toRepSmoothPartAdjunction`),
 `Langlands.Cohomology.SmoothExt` (`SmoothExt.ext`),
 `Langlands.Shimura.SplitLevelTower` (`factorHom`, `awayHom`) and
 `Langlands.Shimura.Unitary.PointsSplit` (`DividingPoints`,
-`finiteAdelicPointsSplit`); on Worker 41's published
+`finiteAdelicPointsSplit`); on the published
 `Langlands.Galois.CompatibleFamily`
-(`GaloisRepresentation.residueCharacteristic`); on Worker 65's published
+(`GaloisRepresentation.residueCharacteristic`); on the published
 `Langlands.Global.CompletionResidue`
 (`CompletionResidue.ringChar_residueField`,
-`CompletionResidue.prime_ringChar_residueField`); and on Worker 57's
+`CompletionResidue.prime_ringChar_residueField`); and on the
 published `Langlands.Shimura.Levels` (`CompactOpenLevel`) and
 `Langlands.Shimura.Unitary.Adelic` (`finiteAdelicDiagonal`). From Mathlib it
 uses `Rep` with `Rep.resFunctor`, limits and limit preservation
@@ -52,7 +46,7 @@ uses `Rep` with `Rep.resFunctor`, limits and limit preservation
 derived categories with their canonical t-structure (`singleFunctor`, shifts)
 and `preadditiveCoyoneda`.
 
-The accepted `DefiniteFormsSmoothCoefficients` constructs, for one
+The published `DefiniteFormsSmoothCoefficients` constructs, for one
 coefficient representation, the forms with coefficients as smooth
 representations of the first factor, their `Ext` groups and the hyperext
 abutment with its filtration, as presheaves on levels away from `p`. Harris
@@ -71,13 +65,13 @@ pulled back along `g ↦ g_ℓ`.
 
 `R` is a commutative ring. `Γ`, `G`, `H`, `H'` are groups, `ι : Γ →* G`, and
 `G`, `H`, `H'` carry topologies. `e : G ≃ₜ* H × H'` is an isomorphism of
-topological groups and `D` a subgroup of `G`. As in the accepted
+topological groups and `D` a subgroup of `G`. As in the published
 `DefiniteFormsSmoothCoefficients`, for a representation `ρ` of `D` and a
 subgroup `K'` of the coefficient domain `coefficientDomain e D` (the `k ∈ H'`
 with `e⁻¹ (1, k) ∈ D`), `coefficientForms R e ι ρ K'` are the functions
 `f : G → V` with `f (ι γ * g) = f g` and `f (g * k) = ρ k⁻¹ (f g)` for
 `k ∈ e⁻¹ (1 × K')`, and `coefficientTranslation` is right translation by `H`
-on them. The accepted presheaves `coefficientFormsPresheaf R e ι ρ`,
+on them. The published presheaves `coefficientFormsPresheaf R e ι ρ`,
 `coefficientSmoothPresheaf`, `coefficientExtPresheaf … W i`,
 `coefficientAbutmentPresheaf … X n`, `coefficientFiltrationPresheaf … X n p`
 and `coefficientGradedPresheaf … X n p` are functors out of
@@ -184,17 +178,17 @@ derived category (`n` a total degree, `p` a filtration index):
   `coefficientFiltrationBifunctor R e ι X n p`,
   `coefficientGradedBifunctor R e ι X n p`: `coefficientSmoothBifunctor`
   followed levelwise by `singleFunctor _ 0` and then by the shift by `n` and
-  `preadditiveCoyoneda.obj (op X)`, resp. the accepted
+  `preadditiveCoyoneda.obj (op X)`, resp. the published
   `HyperextAbutment.filtrationFunctor` and `gradedFunctor`. Their objects at
-  `Y` are the accepted `coefficientAbutmentPresheaf`,
+  `Y` are the published `coefficientAbutmentPresheaf`,
   `coefficientFiltrationPresheaf` and `coefficientGradedPresheaf` for `Y.ρ`
   (`_obj` lemmas, true by definition).
 - `coefficientFiltrationBifunctorι`, `coefficientFiltrationBifunctorMapOfLE`
   (for `p ≤ q`), `coefficientGradedBifunctorπ`: the inclusions
   `F^p ⟶ Hom(X, A(K')[n])`, `F^q ⟶ F^p` and the projections `F^p ⟶ gr^p`
-  as natural transformations of bifunctors (the accepted `filtrationι`,
+  as natural transformations of bifunctors (the published `filtrationι`,
   `filtrationMapOfLE` and `gradedπ`, whiskered). Their components at `Y` are
-  the accepted `coefficientFiltrationι`, `coefficientFiltrationMapOfLE` and
+  the published `coefficientFiltrationι`, `coefficientFiltrationMapOfLE` and
   `coefficientGradedπ` for `Y.ρ` (`_app` lemmas, true by definition).
 - `coefficientAbutmentSystem`, `coefficientFiltrationSystem`,
   `coefficientGradedSystem`, for an inverse system `L` of coefficients, with
@@ -246,20 +240,20 @@ declarations are applied with `e = σ.finiteAdelicPointsSplit p hp`
 (`GJ(𝔸_f) ≃ₜ* GJ(∏_{v ∣ p} ℚ_v) × GJ(𝔸_f^{(p)})`),
 `ι = σ.finiteAdelicDiagonal` and `D = localCoefficientDomain σ ℓ Kℓ` (the
 `g ∈ GJ(𝔸_f)` with `g_ℓ ∈ Kℓ`). Levels `K'` are compact open levels of the
-accepted `dividingCoefficientDomain σ ℓ Kℓ p hp`. Write `𝓛_m` for
+published `dividingCoefficientDomain σ ℓ Kℓ p hp`. Write `𝓛_m` for
 `(reductionTower l 𝓛).obj (op m) = 𝓛 / l ^ m 𝓛`.
 
 - `localCoefficientFunctor σ ℓ Kℓ R` (abbreviation): Mathlib's
-  `Rep.resFunctor` along the accepted `localCoefficientMap σ ℓ Kℓ`
+  `Rep.resFunctor` along the published `localCoefficientMap σ ℓ Kℓ`
   (`g ↦ g_ℓ`), from `Rep R Kℓ` to `Rep R (localCoefficientDomain σ ℓ Kℓ)`;
   `localCoefficientFunctor_obj_ρ`: the restricted representation of `𝓛` is
-  the accepted `localCoefficientRep σ ℓ Kℓ 𝓛.ρ`.
+  the published `localCoefficientRep σ ℓ Kℓ 𝓛.ρ`.
 - `dividingCoefficientFormsBifunctor σ ℓ Kℓ R p hp`,
   `dividingCoefficientSmoothBifunctor`,
   `dividingCoefficientExtBifunctor … W i`: `localCoefficientFunctor` followed
   by the generic bifunctors. Their objects at `𝓛 : Rep R Kℓ` are
   `coefficientFormsPresheaf` for `localCoefficientRep σ ℓ Kℓ 𝓛.ρ`, the
-  accepted `dividingCoefficientSmoothPresheaf σ ℓ Kℓ 𝓛.ρ p hp` and
+  published `dividingCoefficientSmoothPresheaf σ ℓ Kℓ 𝓛.ρ p hp` and
   `dividingCoefficientExtPresheaf σ ℓ Kℓ 𝓛.ρ p hp W i` (`_obj` lemmas, true
   by definition).
 - `dividingReductionFormsSystem σ ℓ Kℓ R p hp 𝓛`,
@@ -278,12 +272,12 @@ accepted `dividingCoefficientDomain σ ℓ Kℓ p hp`. Write `𝓛_m` for
   indices `i ≤ j` (section `DividingAbutment`):
   `dividingCoefficientAbutmentBifunctor`,
   `dividingCoefficientFiltrationBifunctor`,
-  `dividingCoefficientGradedBifunctor` (objects at `𝓛`: the accepted
+  `dividingCoefficientGradedBifunctor` (objects at `𝓛`: the published
   `dividingCoefficientAbutmentPresheaf`, `dividingCoefficientFiltrationPresheaf`
   and `dividingCoefficientGradedPresheaf` for `𝓛.ρ`);
   `dividingCoefficientFiltrationBifunctorι`,
   `dividingCoefficientFiltrationBifunctorMapOfLE`,
-  `dividingCoefficientGradedBifunctorπ` (components at `𝓛`: the accepted
+  `dividingCoefficientGradedBifunctorπ` (components at `𝓛`: the published
   `dividingCoefficientFiltrationι`, `dividingCoefficientFiltrationMapOfLE`,
   `dividingCoefficientGradedπ`); the systems
   `dividingReductionAbutmentSystem`, `dividingReductionFiltrationSystem`,
@@ -303,15 +297,15 @@ accepted `dividingCoefficientDomain σ ℓ Kℓ p hp`. Write `𝓛_m` for
 - `isLimitDividingCoefficientFormsReductionCone σ ℓ Kℓ p hp h𝓛`,
   `isLimitDividingCoefficientSmoothReductionCone σ ℓ Kℓ p hp h𝓛`: for
   `h𝓛 : IsAdicComplete (Ideal.span {(l : R)}) 𝓛`, the presheaf of forms
-  (resp. the accepted `dividingCoefficientSmoothPresheaf`) with coefficients
+  (resp. the published `dividingCoefficientSmoothPresheaf`) with coefficients
   `𝓛` is the inverse limit of those with coefficients `𝓛_m`, via the maps
   induced by the projections `𝓛 ⟶ 𝓛_m`.
 
 ## Provenance and interpretation
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
-J. Math. Kyoto Univ. 39-2 (1999), §4. Worker 61 read the rendered scanned
-pages.
+J. Math. Kyoto Univ. 39-2 (1999), §4. The rendered scanned pages were
+read.
 
 - Printed p.309 (one-based PDF page 11): "Let `𝓛` be a free `𝒪/ℓ^m 𝒪`-module,
   and let `𝓛̃` denote the corresponding constant étale sheaf on
@@ -321,7 +315,7 @@ pages.
   `𝓛_m = 𝓛 ⊗_𝒪 𝒪_m` for any `m`. Then `𝓛_m` forms an inverse system of
   `𝒪`-modules, and the inverse system `{𝓛̃_m}` defines a lisse `ℓ`-adic sheaf
   `W̃ = lim 𝓛̃_m ⊗_𝒪 L_ℓ` on `S̄_{K(N)}`." Then Proposition 4.10 (quoted in the
-  accepted `DefiniteFormsSmoothCoefficients.md`), whose proof begins: "We need
+  published `DefiniteFormsSmoothCoefficients.md`), whose proof begins: "We need
   to check that the complexes used to obtain the spectral sequences (4.9)
   satisfy a Mittag-Leffler condition as `m` varies."
 
@@ -341,14 +335,14 @@ How the module relates to Harris (an explanation, not formalized):
   lattice, with `K_ℓ` acting on `𝓛_m` through the quotient action.
 - Taking the system through the forms. Harris's finite-level spectral
   sequences (4.9) have second argument built from `𝒜_ℓ(GJ, 𝓛_m, H(m))`, and
-  his limit (4.10.1) has `𝒜_ℓ(GJ, ρ, H)`. The accepted
+  his limit (4.10.1) has `𝒜_ℓ(GJ, ρ, H)`. The published
   `DefiniteFormsSmoothCoefficients` constructs the forms with coefficients
   `𝓛 (g_ℓ)` as smooth `GJ(∏_{v ∣ p} ℚ_v)`-modules, their `Ext` groups and the
   hyperext abutment for one coefficient representation. This module makes
   them functorial in the coefficient representation and evaluates them on
   `m ↦ 𝓛_m`. The resulting `dividingReduction*System`s are presheaves on
   levels away from `p` of inverse systems indexed by `m`; the level
-  variation is that of the accepted module.
+  variation is that of the published module.
 - The limit. Harris passes to the limit in `m` by a Mittag-Leffler argument
   on the complexes computing (4.9). This module proves the limit statement
   only for the forms and the smooth forms
@@ -363,8 +357,8 @@ How the module relates to Harris (an explanation, not formalized):
 - Coefficient rings. Harris's (4.10.1) uses `L_ℓ`-coefficients (after
   inverting `ℓ`), while the system `𝓛_m` consists of `𝒪`-modules. Here all
   terms are over the one ring `R`; inverting `l` is not formalized.
-- All declarations are ours, derived from Mathlib and the published and
-  accepted modules named above. The bifunctors, systems and comparison maps
+- All declarations are ours, derived from Mathlib and the published
+  modules named above. The bifunctors, systems and comparison maps
   are internal constructions not printed in Harris 1999. The generic
   sections allow any natural number `ℓ` in the reduction tower; Harris's case
   uses the residue characteristic `l`.
@@ -380,8 +374,8 @@ How the module relates to Harris (an explanation, not formalized):
   `ℓ`-adic completeness of Harris's coefficient rings and lattices, whose
   hypothesis `natCast_residueCharacteristic_mem` supplies for `l`.
 - `Langlands.Shimura.DefiniteForms.dividingExtHeckeAlgebraHom`
-  (`Shimura/DefiniteFormsHeckeExt`, accepted, not yet in the Library; in this
-  workspace but not imported): Hecke operators for trivial coefficients. Hecke
+  (`Shimura/DefiniteFormsHeckeExt`, not imported
+  here): Hecke operators for trivial coefficients. Hecke
   operators on the systems of this module are not treated.
 
 ## Scope
@@ -405,5 +399,5 @@ Source registration: Harris 1999,
 `harris-1999-cohomological-automorphic-forms-525a222c4489ee9d`, SHA-256
 `525a222c4489ee9d3fe86a52c6c17ffb30fcc7c31f24c16a64669e9615085b26`.
 
-Dependencies are Mathlib and the published and accepted modules named above, pinned to
+Dependencies are Mathlib and the published modules named above, pinned to
 Lean 4.34.0 and Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.

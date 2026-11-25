@@ -1,7 +1,5 @@
 # Chevalley data with Lie relations from simple `SL₂`-data (`ChevalleyLieConstruction`)
 
-Author: Worker 239.
-
 Let `P : RootDatum J X Y` be reduced with finite `J`, and let `b` be a base. This module turns
 integral `SL₂`-data for the simple roots (`S : SimpleRootData P b`) into integral Chevalley data
 with Lie relations (`ChevalleyLieData P b`). To do so, it constructs divided-power root operators

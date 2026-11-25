@@ -1,7 +1,8 @@
 # Reducing split-torus-dominated quotient existence to the absolute case
 
-Worker 1485 combines the actual split-target descent construction with Worker
-1376's full-kernel descent. This is an internal derived construction from those
+This module combines the actual split-target descent construction of
+`SplitTorusTargetDescent` with the full-kernel descent of
+`TorusQuotientKernelDescent`. This is an internal derived construction from those
 APIs and the existing field-extension and geometric-connectedness theorems.
 No external assertion is transcribed.
 
@@ -46,7 +47,7 @@ extracts closedness, smoothness, connectedness and unipotence from the
 geometric radical predicate. The descended fppf quotient and split target
 supply the remaining fields of the published quotient statement.
 
-The absolute quotient theorem remains an explicit premise; this unit does
+The absolute quotient theorem remains an explicit premise; this module does
 not prove it. It introduces no restriction on characteristic, perfection,
 infinitude, or the extension in the first construction. It neither supplies
 ground-field split unipotence of the kernel nor proves the unconditional

@@ -1,7 +1,5 @@
 # Positive multiplication isogeny over arbitrary fields
 
-Author: Worker 399.
-
 `Langlands.GroupScheme.fieldMultiplicationIsogeny` proves the entire published
 proposition `Langlands.GroupScheme.FieldMultiplicationIsogenyStatement.{u}`.
 For every field `K : Type u` and actual commutative group object
@@ -51,7 +49,7 @@ flatness using its established geometric inputs. Its conclusion is precisely
 `IsIsogeny` of the given multiplication morphism: finiteness, flatness and
 surjectivity of its underlying scheme morphism.
 
-The four inputs are imported by their current Library module and Lean
+The four inputs are imported by their Library module and Lean
 declaration names. This module is only their final composition; it assumes
 no unproved geometric, tensor, descent or Picard comparison. The published
 target pair and all its imports are unchanged.
@@ -72,9 +70,9 @@ group-scheme presentation with connected geometric fibres; the target's
 [companion](FieldMultiplicationIsogenyStatement.md) explains that
 correspondence.
 
-This is an internal assembly by Worker 399 of independently published
-prerequisite proofs. Their paired companions describe their constructions
-and authorship. The registered original source is
+This is an internal assembly of published
+prerequisite proofs. Their paired companions describe their constructions.
+The registered original source is
 `milne-abelian-varieties-1986-author-2022`, SHA256
 `bffdf81c57c77420b5454b31270007989d12f332abea62424be15c424079fc7c`,
 retained at

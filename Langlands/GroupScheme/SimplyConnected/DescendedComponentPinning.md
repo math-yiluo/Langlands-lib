@@ -1,6 +1,6 @@
 # The exact descended group realizes the entire prescribed Cartan component
 
-Workers 509 and 587. Derived from actual normal-factor descent, original-field
+Derived from actual normal-factor descent, original-field
 torus projections, the geometric scalar-extension comparison, actual factor
 Galois pinnings, and the equivalence of factor fibres with entire Cartan
 components. For a simply connected ambient group, the actual group descended

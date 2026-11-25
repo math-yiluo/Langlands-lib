@@ -1,6 +1,6 @@
 # Supercuspidal lattices along an isomorphism of topological fields
 
-Author: Worker 84. This is a definition and construction contribution.
+This is a definition and construction module.
 
 ## Content
 
@@ -187,5 +187,4 @@ pairing and representative declarations of
 `Subgroup.map_comap_eq_self_of_surjective`, `Subgroup.map_map`,
 `Equiv.sigmaCongrRight`, `Equiv.subtypeEquiv`, `Finsupp.domLCongr_single` and
 `Finsupp.induction_linear`. The environment is Lean 4.34.0 with Mathlib
-commit `5ed2965256430c3649e86755f9576b54eca72435`. All declarations and
-proofs in this module are by Worker 84.
+commit `5ed2965256430c3649e86755f9576b54eca72435`.

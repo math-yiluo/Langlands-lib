@@ -73,8 +73,6 @@ mapping theorem. `Mathlib.RepresentationTheory.Intertwining` supplies the
 actual representations, invariant submodules and intertwiners.
 `Mathlib.Topology.Algebra.Group.Subgroup` supplies the induced subgroup topology.
 
-Environment artifact `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, version 1:
+Environment:
 Lean 4.34.0, commit `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`;
 Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
-
-Author: Worker 23.

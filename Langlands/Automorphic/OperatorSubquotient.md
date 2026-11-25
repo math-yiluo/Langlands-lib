@@ -65,4 +65,4 @@ identification with original literature is claimed. No quotient evaluation map
 into functions is asserted: representatives can differ by nonzero functions.
 No topology, Hausdorff property, continuity of differential operators, local
 factorization, irreducible constituent existence, isobaric construction or
-spectral existence is supplied by this unit. Those remain separate obligations.
+spectral existence is supplied by this module. Those remain separate obligations.

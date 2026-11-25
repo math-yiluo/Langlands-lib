@@ -1,6 +1,6 @@
 # Maximal tori meet normalized smooth connected subgroups in maximal tori
 
-Worker 43. This module proves clause (i) of Conrad, *Reductive group schemes*, Exercise 5.5.1,
+This module proves clause (i) of Conrad, *Reductive group schemes*, Exercise 5.5.1,
 the first clause of `NormalSubgroupIntersectionStatement`
 ([`Rational.NormalSubgroupIntersectionStatement`](NormalSubgroupIntersectionStatement.md)),
 over an arbitrary field. It does not prove clause (ii) of that statement (parabolic and
@@ -41,7 +41,7 @@ All three theorems are in the namespace
 
 ## Proof of `exists_torusIntersection_of_isNormal`
 
-The argument follows Worker 1496's `exists_radicalTorusIntersection_of_complement`
+The argument follows `exists_radicalTorusIntersection_of_complement`
 ([`Absolute.MaximalRankRadicalTorusIntersectionOfComplement`](../Absolute/MaximalRankRadicalTorusIntersectionOfComplement.md)).
 There the unipotent-by-torus decomposition was assumed for `N` itself. Here it is used
 only for a Cartan subgroup of `N`.

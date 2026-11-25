@@ -66,7 +66,7 @@ comparison, fixed-input nonzero outputs for supercuspidal representations,
 Fourier stability and inverse identities, and standard complex polynomial
 splitting. It does not prove the analytic cross identity, identify `σ` with any
 particular pullback, or extend the comparison to arbitrary full-matrix tests.
-Those obligations remain separate from this contribution.
+Those obligations remain separate from this module.
 
 ## All-field port
 

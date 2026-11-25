@@ -57,7 +57,9 @@ maximal torus in a connected reductive group. It does not prove that structural
 proposition or assume it globally. Neither form constructs a solvable radical,
 an intersection torus, a rational Levi, or a whole-torus centralizer
 representative. Maximality of `S` in the radical and geometric radical data
-remain separate obligations of the host theorem.
+remain separate obligations in proving `ParabolicRadicalTorusLeviStatement`,
+which the module `Rational.ParabolicRadicalTorusLeviProof` proves as
+`parabolicRadicalTorusLevi`.
 
 The provenance is internal: the proof uses the published factorization and
 closedness lemmas in `Rational.LeviFactorization`, the centralizer comparison

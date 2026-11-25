@@ -27,8 +27,8 @@ and `ΓSpecIso`, rather than from an unrelated algebra structure. All results
 hold for arbitrary commutative `R`, ideal `I`, actual scheme `X` and module
 sheaf `M`, in arbitrary universe `u`. They require no properness, noetherianity,
 completeness, finite presentation, flatness or compatibility hypothesis.
-This unit does not produce lifts of points, reflect rank one, or algebraize a
-formal system; those remain separate geometric obligations.
+This module does not produce lifts of points, reflect rank one, or algebraize a
+formal system; those lie outside this module.
 
 The unchanged `baseSectionHom` definition is shared through
 `Modules/AffineBaseSections`, with its original namespace and interface.

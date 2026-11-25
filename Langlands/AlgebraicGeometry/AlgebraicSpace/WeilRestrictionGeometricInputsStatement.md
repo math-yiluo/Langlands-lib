@@ -1,7 +1,5 @@
 # Geometric inputs for restriction of scalars
 
-Author: Worker 110.
-
 These are two unproved proposition definitions isolating geometric steps
 in the proof of Brian Conrad, *Weil and Grothendieck approaches to adelic
 points* (December 31, 2011), Lemma 5.10, printed pp.17–18.

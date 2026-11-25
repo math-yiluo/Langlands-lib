@@ -1,8 +1,5 @@
 # Proof of bounded normalized inverse-pair finiteness
 
-Worker 565, 17 November 2026; theorem type stated as the published
-statement by Worker 5678, 18 November 2026.
-
 `Langlands.Algebra.Rosenlicht.boundedInversePairs` proves the published
 Library statement `Langlands.Algebra.RosenlichtBoundedInversePairsStatement.{u,v}`,
 with independent universes for the field and the domain.

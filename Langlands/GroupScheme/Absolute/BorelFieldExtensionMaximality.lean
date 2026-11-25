@@ -4,7 +4,7 @@ import Langlands.GroupScheme.AffineHopfCoordinates
 import Langlands.GroupScheme.AffineCoordinatesFiniteType
 import Langlands.GroupScheme.SubgroupBaseChange
 import Langlands.GroupScheme.Absolute.RationalPointClosureSolvable
-import Langlands.TauCeti.Algebra.AlgebraicGroup.FunctorOfPoints
+import Langlands.RingTheory.HopfAlgebra.PointGroup
 import Langlands.GroupScheme.Absolute.UnipotentAllBorelsEnvelope
 import Langlands.AnthropicFLT.P2M.Sol.S_AlgebraicGeometry_geometricallyIntegral_of_isAlgClosed
 

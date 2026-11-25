@@ -27,15 +27,15 @@ Fix a finite index type `I`, commutative rings `R i`, and `R i`-algebras `B i`.
 `component B i` is the open immersion `Spec (B i) → Spec (∀ j, B j)`, the spectrum of
 evaluation. These maps form a coproduct decomposition (Mathlib's `sigmaSpec`). Given group
 schemes `H i` over `Spec (B i)`, `group B H` is the group scheme over `Spec (∀ j, B j)` assembled
-with Worker 632's `Descent.DisjointGroupAssembly.group`. Its restriction to each component is
+with `Descent.DisjointGroupAssembly.group`. Its restriction to each component is
 `H i` (`componentIso`), and its underlying scheme is the disjoint union (`underlyingIso`). It is
 affine and locally of finite type when the `H i` are. `smooth`, `isReductive` and
 `isAlmostSimple_geometricFiber` transfer smoothness, reductivity and almost simple geometric
 fibres from the `H i`. `geometricFiber_property` handles any field-group property invariant
 under isomorphism and reflected by field extension. It uses
 `RelativeLevi.geometricFiberBaseChangeIso` at a point of a component.
-These proofs adapt the proofs Worker 632 gave for `AffineWeil.FiniteFamily` (copies of one base
-ring) to a family of different rings.
+These proofs adapt the proofs for `AffineWeil.FiniteFamily` in `AffineWeilFiniteFamily` (copies
+of one base ring) to a family of different rings.
 
 ## Factor tensor products
 

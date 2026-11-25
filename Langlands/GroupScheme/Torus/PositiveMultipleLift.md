@@ -1,6 +1,6 @@
 # Positive-multiple lifts of actual cocharacters
 
-This is an internal derived construction by Worker 146.
+This is an internal derived construction.
 
 Let `k : Type u` be any field, let `T` and `U` be commutative group schemes over
 `Spec k`, and assume that their underlying group schemes are split tori. Let
@@ -33,7 +33,7 @@ allows positive-dimensional kernels. No assumption asserts surjectivity on
 `k`-points. All fields, including imperfect fields and positive characteristic,
 and all finite torus ranks, including rank zero, are included.
 
-The multiplier can depend on `ν'`. This unit does not assert that the original
+The multiplier can depend on `ν'`. This module does not assert that the original
 cocharacter itself lifts integrally, that a lift is primitive or unique, or that
 the map on integral cocharacters has finite cokernel.
 
@@ -44,7 +44,7 @@ that a categorical epimorphism of group schemes induces an injective map on
 actual characters. Equality after restriction is equality of composites with
 the epimorphism, so categorical cancellation gives equality of characters.
 
-The actual character restriction is extended from `ℤ` to `ℚ` by the published
+The actual character restriction is extended from `ℤ` to `ℚ` by
 `rationalCharacterRestrictRat`. Its injectivity follows from
 `RationalSpan.rationalization_injective`, which uses flatness of `ℚ` over `ℤ`.
 The target cocharacter `ν'` defines a rational linear functional on
@@ -55,7 +55,7 @@ At the image of an integral character `α` this functional has value
 
 Mathlib's `LinearMap.dualMap_surjective_of_injective` extends this functional
 across the injective rationalized restriction map to a rational functional `F`
-on the full character space of `T`. The published theorem
+on the full character space of `T`. The Library theorem
 `IsSplitTorus.exists_positive_multiple_pairing` supplies `d > 0` and an actual
 integral source cocharacter `ν` whose pairings are `d` times `F`.
 That theorem realizes rational functionals in finite split-torus coordinates
@@ -69,8 +69,8 @@ latticePairing U α (ν ≫ p) = latticePairing U α (d • ν').
 ```
 
 This uses associativity of actual morphism composition, bilinearity of the
-published integer pairing and injectivity of the integer-to-rational map.
-The published `IsSplitTorus.cocharacter_eq_zero` detects cocharacters by all
+integer pairing and injectivity of the integer-to-rational map.
+The Library's `IsSplitTorus.cocharacter_eq_zero` detects cocharacters by all
 character pairings, so their difference is zero. It proves the required
 equality in the original integral Hom group.
 

@@ -12,7 +12,6 @@ A(s,\pi,w_{m,n})f(g)=\int_{U'} f(w_{m,n}u'g)\,du'.
 
 The registered original is `shahidi-1984-fourier`, SHA256
 `a10d5c605d94d4e85d0e5f453d6a8c233d91e3cb60d538f430d8ad900cbb6b29`.
-The author is Worker 11.
 
 On page 72 the source calls (0.1) an intertwining operator on the induced
 space `I(s,π)` of the standard `(m,n)` parabolic. Its display (0.3) applies
@@ -131,7 +130,7 @@ This paragraph is a check of the intended use. It is not a Lean statement.
 In the intended application `H` is the Levi `GL_m(F) × GL_n(F)`, `τ` is the
 identity, and `ρ = π₁ ⊗ π₂`. The scalar `χ(h₁, h₂)` is
 `|det h₁|^((s+n)/2) |det h₂|^(-(s+m)/2)`. These are the normalized exponents
-of `I(s,π)` recorded in the task context. Over a p-adic field with an additive
+of `I(s,π)`. Over a p-adic field with an additive
 Haar measure, `c(h₂, h₁) = |det h₂|^m |det h₁|^(-n)` by
 `map_rectangularConj_padic`. The product is
 
@@ -155,7 +154,7 @@ operator preserves the corresponding level of smoothness.
 
 ## What is not claimed
 
-This unit does not claim the following:
+This module does not claim the following:
 
 - that the integral converges for `f ∈ I(s,π)` when `Re s` is large;
 - that `A(s,π,w_(m,n))` has a rational continuation in `q^(-s)`;
@@ -163,7 +162,7 @@ This unit does not claim the following:
   and the identification of the target shape with `swapRank`;
 - any Haar normalization of `du'`.
 
-These remain obligations for the later specialization to induced
+These are obligations of the specialization to induced
 representations.
 
 ## All-field port

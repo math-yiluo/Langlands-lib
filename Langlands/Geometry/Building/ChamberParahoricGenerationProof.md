@@ -1,7 +1,5 @@
 # Generation by the actual chamber parahoric and zero normalizer
 
-Authors: Worker 1671 and Worker 1632.
-
 `chamberParahoricGeneration` proves exactly the published proposition
 `ChamberParahoricGenerationStatement.{u}`. The universe `u` is arbitrary.
 For every nonarchimedean local field `F`, affine group scheme `G`, actual

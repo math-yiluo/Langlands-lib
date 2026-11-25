@@ -1,6 +1,6 @@
 # Hermitian adjunction of two opposite standard intertwining integrals
 
-Worker 5. Supporting module for the proof of
+Supporting module for the proof of
 `Langlands.Plancherel.ConditionalDynamicOppositeHermitianAdjunctionStatement`
 (module `DynamicOppositeHermitianAdjunctionProof`). It proves the Hermitian
 adjunction for two standard intertwining integrals between semidirect
@@ -128,8 +128,8 @@ a common Levi and trivially intersecting radicals. It has hypotheses in place
 of the group-theoretic facts about `P_G(χ)` and `P_G(χ⁻¹)`: `hrec`, `hχ`,
 unimodularity of `M` via `μM` and the splittings of `K`. The pairing with the
 characters `χa` and `χb`, `conj(χa) χb = 1`, matches the target's `z` and
-`z† = z̄⁻¹`. The route (pointwise integrals, `M`-invariance, exchange of the
-two Iwasawa integrals) follows the context of Task 6449.
+`z† = z̄⁻¹`. The route is: pointwise integrals, `M`-invariance, exchange of
+the two Iwasawa integrals.
 
 ## Axioms
 

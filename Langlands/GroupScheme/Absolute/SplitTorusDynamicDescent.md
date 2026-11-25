@@ -1,8 +1,8 @@
 # Descent of actual fixed-torus dynamic presentations
 
-This is an internal derived construction by Worker 146. It uses the published
-fpqc reflection development of Worker 1358, the actual cocharacter pullback map
-of Worker 1272, and the split-torus lattice equivalence.
+This is an internal derived construction. It uses the published
+fpqc reflection development, the actual cocharacter pullback map,
+and the split-torus lattice equivalence.
 
 Let `k` and `K` be fields in universe `u`, with any `k`-algebra structure on `K`.
 Let `G` and `P` be group schemes over `Spec k`, assume that the underlying
@@ -78,4 +78,5 @@ it introduces no separate literature assertion or classification assumption.
 It can descend an already established fixed-torus presentation, including one
 over an algebraic closure. It does not construct such a presentation from
 geometric parabolicity. The unconditional geometric classification required by
-`SplitParabolicCocharacterStatement` remains a separate obligation.
+`SplitParabolicCocharacterStatement` is proved separately, as
+`splitParabolicCocharacterStatement` in `Absolute.SplitParabolicCocharacterProof`.

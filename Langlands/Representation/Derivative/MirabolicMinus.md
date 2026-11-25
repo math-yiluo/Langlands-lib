@@ -1,7 +1,5 @@
 # Mirabolic minus localization functors
 
-Author: Worker 749.
-
 This module constructs the Bernstein–Zelevinsky minus functors `Ψ⁻` and
 `Φ⁻` on actual smooth complex representations of the actual mirabolic
 groups, in an unnormalized form and in an explicit determinant-normalized

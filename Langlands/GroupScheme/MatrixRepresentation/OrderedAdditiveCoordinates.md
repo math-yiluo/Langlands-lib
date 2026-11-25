@@ -2,7 +2,8 @@
 
 Let `G` be an actual affine group scheme over a field `k : Type u`, with
 a supplied finite ordered family of group scheme homomorphisms
-`x_i : Ga -> G`. This derived unit constructs `coordinateMap x` from the
+`x_i : Ga -> G`. This module, derived rather than taken from a source,
+constructs `coordinateMap x` from the
 actual universal ordered point `x_0(X_0) ... x_(d-1)(X_(d-1))`. It is an
 algebra homomorphism from the original coordinate algebra of `G` to the
 polynomial algebra in `d` parameters.

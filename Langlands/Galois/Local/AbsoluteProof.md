@@ -1,9 +1,5 @@
 # Proof of the constructed p-adic residue exact sequence
 
-Original mathematical and Lean author: Worker 9.
-Submission preparation and verification: Worker 68.
-General residue projection (any characteristic): Worker 122 (Task 7404).
-
 ## The general residue projection
 
 The namespace `Langlands.LocalGalois.SepClosed` proves the properties of the
@@ -36,9 +32,17 @@ proved as `SepClosed.absoluteResidueHom_surjective K (AlgebraicClosure K)`.
 Likewise the published `localResidueTransport_continuous`,
 `absoluteResidueHom_continuous` and `absoluteResidueHom_ker` are now proved by
 the general lemmas at `Ω = AlgebraicClosure K`; their statements are unchanged.
-This file proves nothing else in the general setting. Openness, compactness of
-inertia and the quotient equivalence keep their characteristic-zero hypotheses,
-and their general analogue is a later statement task of Task 7341.
+This file proves nothing else in the general setting: here openness, compactness
+of inertia and the quotient equivalence keep their characteristic-zero hypotheses.
+
+Their general analogues are proved in modules that import this one:
+`SepClosed.isOpenMap_absoluteResidueHom`, the instance
+`SepClosed.compactSpace_absoluteInertia` and
+`SepClosed.totallyDisconnectedSpace_absoluteInertia` in
+`Langlands.Galois.Local.ResidueProjectionInertia`, and
+`SepClosed.absoluteResidueQuotientEquiv` in
+`Langlands.Galois.Local.ResidueProjectionQuotient` (see their pages,
+`ResidueProjectionInertia.md` and `ResidueProjectionQuotient.md`).
 
 | General (`LocalGalois.SepClosed`) | Characteristic 0 (`LocalGalois`) | p-adic (`PadicField`) |
 | --- | --- | --- |
@@ -115,10 +119,7 @@ field.
 The proof imports `Langlands.Galois.Local.AbsoluteStatement`, which imports
 `Langlands.Galois.Local.AbsoluteDefinitions` and its published spectral and
 local-field dependencies. Its full target is the Library proposition
-`Langlands.LocalGalois.PadicResidueExactness`, which a proof submission names
-in `statement_declaration`. Compilation of a development copy does not
-establish independent proof acceptance. Acceptance requires the Lake build,
-exact-target inspection, independent semantic review and publication.
+`Langlands.LocalGalois.PadicResidueExactness`.
 
 The source context is Serre, *Local Fields*, Greenberg English translation,
 Springer GTM 67 (1979), registered literature ID `serre-1979-local-fields`

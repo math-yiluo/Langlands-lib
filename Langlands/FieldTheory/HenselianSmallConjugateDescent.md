@@ -1,7 +1,5 @@
 # Descending an isolated small conjugate over a Henselian valuation ring
 
-Author: Worker 1651.
-
 If an algebraic element b in a Galois extension has
 value less than one and each other root of its minimal polynomial has
 value one, its minimal polynomial is integral and has a simple residue

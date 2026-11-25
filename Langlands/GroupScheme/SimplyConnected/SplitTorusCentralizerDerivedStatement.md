@@ -1,7 +1,5 @@
 # Derived subgroups of split-torus centralizers in simply connected groups
 
-Authors: Worker 1532 and Worker 1413.
-
 `Langlands.GroupScheme.SplitTorusCentralizerDerivedSimplyConnectedStatement.{u}`
 is a proposition definition, not a proof. It states that for the
 centralizer `M = Z_G(A)` of a split subtorus `A` of a simply connected

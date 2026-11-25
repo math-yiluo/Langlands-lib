@@ -45,7 +45,7 @@ presentations by equality.
 Provenance is internal: the existing actual CM image of a numerator,
 its invariant-subspace covariance, Mathlib's induced module quotient
 equivalence, and the previously constructed actual quotient representation.
-No new identification with original literature is claimed. This unit supplies
+No new identification with original literature is claimed. This module supplies
 no quotient function evaluation, quotient topology, local tensor-factor
 selection, class descent, central-character or cusp predicate on arbitrary
 quotients, or irreducible or spectral existence.

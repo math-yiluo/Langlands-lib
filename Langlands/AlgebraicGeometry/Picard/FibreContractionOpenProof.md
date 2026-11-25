@@ -1,9 +1,5 @@
 # Proof: the locus where a morphism contracts the fibres of an abelian scheme is open
 
-Authors: Worker 1028 and Worker 139. Worker 1028 supplied the proof draft;
-Worker 139 checked the implementation, source passage and scope, and prepared
-the focused exact-target submission.
-
 `Langlands.AbelianScheme.fibreContractionOpen` proves exactly the published
 proposition `Langlands.AbelianScheme.FibreContractionOpenStatement.{u}`. It
 applies to arbitrary schemes `Y` and `Z` in universe `u`, every abelian scheme
@@ -26,8 +22,8 @@ registered as `edixhoven-vandergeer-moonen-abelian-varieties-draft`, SHA-256
 `81e88e484e1e830286ffed93d4636c80e50a1c341ffe19cc198bd856be713b42`.
 The retained file is
 `literature/Edixhoven, van der Geer, Moonen - Abelian Varieties (preliminary version of the first chapters).pdf`.
-No source-specific errata note was present in the checked workspace, current
-Library or project `notes/errata/` locations.
+No source-specific errata note was present in the Library or in the
+project's `notes/errata/`.
 
 The source treats varieties over a field and a product with a complete
 variety. Its proof uses an affine neighbourhood and the closed image of its
@@ -116,5 +112,4 @@ conclusion is openness of exactly the displayed set.
 The proof imports only the target statement and the published global-functions
 proof, with their existing dependencies. It uses none of the Picard-zero
 component-constancy, component-comparison or open-locus statements, and assumes
-no `IsPicardZeroOpenLocus`. It does not change the paused smooth-family,
-ordinary, ambient or existence workflows.
+no `IsPicardZeroOpenLocus`.

@@ -1,10 +1,6 @@
 # Renard A.VIII.1: proof of the finite-preservation comparisons
 
-Authors: Worker 6 (proof route and Lean proof, from the shared draft of task
-`a38c5f8d-65c9-48e8-8437-be85ec8956ce`), Worker 910 (source and target
-rechecks, compilation, complete-declaration checks and submission).
-
-This proof unit proves the unchanged published target
+This proof module proves the unchanged published target
 `Langlands.Renard.FinitePreservationComparisonStatement F` in
 `Langlands.CategoryTheory.Renard.FinitePreservationStatements`, together with
 its three named clauses. The module is
@@ -100,6 +96,6 @@ hypothesis. `PreservesFiniteLimits` and `PreservesFiniteColimits` are
 Mathlib's predicates for all finite shapes, so empty and disconnected
 diagrams are included.
 
-This unit does not prove that `F` preserves arbitrary exact complexes or
+This module does not prove that `F` preserves arbitrary exact complexes or
 homology, or any faithfulness criterion, Hom left exactness statement or
 other part of the book. Those remain separate obligations.

@@ -169,7 +169,7 @@ local notation "lambdaAdic" => cmHarrisLambdaAdicRepresentation D C preservation
 limit `H`. -/
 theorem cmHarrisLambdaAdicRepresentation_representation_apply (g : Field.absoluteGaloisGroup F) :
     letI := harrisCoefficientComponentAlgebra K p l
-    (lambdaAdic).val.representation g = ((adicCohomology degree).ρ g).hom.baseChange _ :=
+    (lambdaAdic).val.representation g = ((adicCohomology degree).ρ g).asHom.hom.baseChange _ :=
   rfl
 
 /-- The dimension of the `l`-adic representation is the rank of the torsion limit. -/

@@ -80,6 +80,8 @@ The boundary examples exercise the actual constructions:
 The pairing arguments are only nonzero-witness checks. They establish no
 regular-tensor isomorphism or scalar-restriction comparison. Coefficient and
 unitization bridges, tensor comparison theorems, Hom-based functors,
-adjunctions and exactness remain separate obligations as in the construction
-module. Worker 185 authored this companion and its source audit; Worker 1193
-authored the construction module.
+adjunctions and exactness are outside this companion, as they are outside the
+construction module. The Hom-based functors are in `RenardHomFunctors`, and the
+I.2.4 exactness and the F–I and P–pseudo-F adjunctions are proved in
+`NondegenerateFInductionExactness`, `NondegeneratePInductionExactness`,
+`NondegenerateFInductionAdjunction` and `NondegeneratePInductionAdjunction`.

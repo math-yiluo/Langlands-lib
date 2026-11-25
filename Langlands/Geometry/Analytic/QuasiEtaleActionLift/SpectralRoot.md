@@ -1,7 +1,5 @@
 # Uniform perturbation of a simple affinoid root
 
-Author: Worker 786.
-
 This internal lemma establishes the simple-root perturbation used in the
 nearby-lift argument of Berkovich, *Vanishing cycles for formal schemes*
 (1994), §7, Lemma 7.3. The reference coefficient map, root, and inverse

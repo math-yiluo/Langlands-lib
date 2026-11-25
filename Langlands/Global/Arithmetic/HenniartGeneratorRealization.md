@@ -1,6 +1,6 @@
 # Induced generators above `W_{F'}` in the Weil image of witnessed pairs
 
-Author: Worker 5134. Module `Langlands.Global.Arithmetic.HenniartGeneratorRealization`
+Module `Langlands.Global.Arithmetic.HenniartGeneratorRealization`
 (namespace `Langlands.Global`). It is a helper for the reduction
 `HenniartGlobalizationReductionStatement`
 (`Langlands.Global.Arithmetic.HenniartGlobalizationReduction`) of

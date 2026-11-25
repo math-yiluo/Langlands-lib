@@ -1,7 +1,5 @@
 # Full quasi-isomorphisms under directed strong composition
 
-Author: Worker 36.
-
 This module proves that full strong quasi-isomorphisms compose when the
 intermediate and final original atlases have directed charts. It packages
 these actual morphisms as a multiplicative morphism property in the
@@ -113,7 +111,7 @@ theorem above with the bundled intermediate and final directedness proofs.
 Thus it concerns the existing full strong maps and their actual category
 composition.
 
-This focused unit provides identity and composition closure in this directed
+This module provides only identity and composition closure in this directed
 category. Unrestricted atlas extension, gluing and composition, Ore squares,
 localization, analytic sheaves, etale and equivariant sites, and the Harris
-tower remain further construction obligations.
+tower lie outside it.

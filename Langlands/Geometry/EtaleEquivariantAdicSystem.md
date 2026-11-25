@@ -75,5 +75,5 @@ assert exactness of coefficient extension, preservation of injectives, an
 identification with an adic completion, commutation with cohomology, or a
 derived inverse-limit theorem. Specializing to the actual Harris coefficient
 sheaves and proving the required smoothness and cohomological comparisons
-remain separate obligations. The complex inverse-limit and Godement work has
-separate ownership and is not replaced by this construction.
+remain separate obligations. The complex inverse-limit and Godement
+constructions are separate from this module and are not replaced by it.

@@ -3,7 +3,7 @@
 This internal assembly works at arbitrary universe `u`. It combines
 `UnramifiedFacetQuotientRoots` with `UnramifiedFacetRootDatumAssembly`.
 The only global proposition left as a premise is
-`IntegralOppositeFactorsStatement`. This unit does not prove that premise.
+`IntegralOppositeFactorsStatement`. This module does not prove that premise.
 
 For supplied data, `P` is a parahoric building datum over a nonarchimedean local
 field with affine ambient group, apartment axioms and root reflections. The
@@ -44,6 +44,9 @@ splitness witness. Several hypotheses of the full statement are stronger than
 those needed by this composition and remain quantified exactly as published.
 
 This is an internal composition of the named supporting results, with no new
-original-literature formulation. The host proof without additional premises
-remains open until the integral opposite-factor statement is independently
-proved. The published host statement and its import closure are unchanged.
+original-literature formulation. The proof of
+`UnramifiedFacetRootDatumStatement` without additional premises is
+`unramifiedFacetRootDatum` in `UnramifiedFacetRootDatumProof`, which applies
+this reduction to the theorem `integralOppositeFactors` (module
+`IntegralOppositeFactorsProof`). The published statement
+`UnramifiedFacetRootDatumStatement` and its import closure are unchanged.

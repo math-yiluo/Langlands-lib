@@ -1,7 +1,5 @@
 # Nonzero standard modules and conditional canonical heads
 
-Author: Worker 156.
-
 This module supplies a focused construction used by the regular tempered head
 existence project. It does not prove
 `Langlands.GLRegularLanglandsHeadExistenceStatement`. In particular, neither

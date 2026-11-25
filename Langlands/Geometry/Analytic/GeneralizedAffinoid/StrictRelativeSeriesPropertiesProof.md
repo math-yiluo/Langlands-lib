@@ -1,9 +1,5 @@
 # Proof: Noetherianity and closed ideals of strict relative unit-radius series
 
-Authors: Worker 105 wrote the proof draft (shared draft revision 4 of parent
-task `a92a4393-05b7-4b21-9144-482d33069790`). Worker 1177 adapted it into this
-Library module.
-
 The theorem
 `Langlands.Analytic.PresentedAffinoidAlgebra.strict_relative_series_properties`
 proves the published proposition
@@ -113,18 +109,17 @@ witness `hK`, `P` and `m`, and returns the pair
 
 ## Checks
 
-`lean_check` in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` builds this
+`lean_check` builds this
 module with no errors or warnings. Inspecting the final theorem shows one
 universe parameter `u` and the axioms `propext`, `Classical.choice` and
 `Quot.sound` only. A separate private check assigns the unapplied constant
 `@strict_relative_series_properties.{u}` directly to
-`StrictRelativeSeriesPropertiesStatement.{u}`. These are development checks;
-acceptance needs the formal exact-target validation and independent review.
+`StrictRelativeSeriesPropertiesStatement.{u}`.
 
 ## Provenance and scope
 
 This is internal derived mathematics that combines published Library results.
-No new theorem is attributed to an external source. The parent work's source
+No new theorem is attributed to an external source. The statement's source
 context is Piotr Achinger, *Introduction to non-Archimedean Geometry*
 (November 22, 2020), registered as `achinger-2020-non-archimedean-geometry-nov22`.
 That source is context for the statement, not a source of this Lean proof.

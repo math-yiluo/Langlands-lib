@@ -6,7 +6,7 @@ p.59 / PDF p.65. The governing registered source is
 `renard-2026-representations-groupes-reductifs-padiques`, French edition of
 9 July 2026, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 284 read PDF pp.37–38 and 65 for this proof.
+PDF pp.37–38 and 65 were read for this proof.
 
 The internal vector-pairing construction uses the published finite decomposition
 of a vector-valued compact test into scalar indicators times vectors. A

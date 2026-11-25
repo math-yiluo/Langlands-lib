@@ -1,8 +1,6 @@
 # Corrected Aubert filtration: Bruhat inputs and the fixed length order
 
-Author: Worker 76, with Worker 969's identification of missing consumer inputs
-and Worker 164's source-boundary reconciliation. Checked on 3 November 2026.
-This is a bounded original-source audit, not a Lean proof or a change to a
+Checked on 3 November 2026. This is a bounded original-source audit, not a Lean proof or a change to a
 published proposition.
 
 The [Chapter V ledger](../renard/chapter-v-structural-inputs.md) classifies
@@ -87,8 +85,8 @@ modular comparisons (D07); they remain distinct from S13 and S16.
 
 This audit leaves the exact rational filtration targets and their imports
 unchanged. It does not classify the fixed-order topology bridge as a new
-allowed external premise. Existing structural, endpoint, geometric-lemma,
-localization and graded-map owners retain their obligations. No actual
+allowed external premise. The structural, endpoint, geometric-lemma,
+localization and graded-map obligations are unchanged. No actual
 Bruhat realization, filtration comparison, full-smooth exactness or
 terminal-cokernel result is proved by this note.
 

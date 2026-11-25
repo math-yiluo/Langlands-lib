@@ -95,7 +95,7 @@ theorem rationalInertiaBlockTensorEvaluation_surjective_and_ker
       LinearMap.ker (rationalInertiaBlockTensorEvaluation G π P τ) =
         Submodule.span ℤ (Set.range
           (fun p : End P × (P ⟶ τ) × P.obj =>
-            (p.1 ≫ p.2.1) ⊗ₜ[ℤ] p.2.2 - p.2.1 ⊗ₜ[ℤ] (SmoothRep.hom p.1.hom p.2.2))) := by
+            (p.1.asHom ≫ p.2.1) ⊗ₜ[ℤ] p.2.2 - p.2.1 ⊗ₜ[ℤ] (SmoothRep.hom p.1.asHom.hom p.2.2))) := by
   have := projective_of_isEquivalence_preadditiveCoyonedaObj G π P hP
   exact SmoothRep.fullSubcategoryTensorEvaluation_surjective_and_ker P
     (isSeparator_of_isEquivalence_preadditiveCoyonedaObj G π P hP) τ
@@ -111,7 +111,7 @@ theorem exists_tensorEvaluation_of_isEquivalence_preadditiveCoyonedaObj
       Function.Surjective ev ∧
       LinearMap.ker ev = Submodule.span ℤ (Set.range
         (fun p : End P × (P ⟶ τ) × P.obj =>
-          (p.1 ≫ p.2.1) ⊗ₜ[ℤ] p.2.2 - p.2.1 ⊗ₜ[ℤ] (SmoothRep.hom p.1.hom p.2.2))) :=
+          (p.1.asHom ≫ p.2.1) ⊗ₜ[ℤ] p.2.2 - p.2.1 ⊗ₜ[ℤ] (SmoothRep.hom p.1.asHom.hom p.2.2))) :=
   ⟨rationalInertiaBlockTensorEvaluation G π P τ,
     fun α w => rationalInertiaBlockTensorEvaluation_tmul G π α w,
     rationalInertiaBlockTensorEvaluation_surjective_and_ker G π P hP τ⟩

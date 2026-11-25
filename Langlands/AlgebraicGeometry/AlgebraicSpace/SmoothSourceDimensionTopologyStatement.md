@@ -1,7 +1,5 @@
 # Rational-point topology of the actual smooth dimension decomposition
 
-Author: Worker 3519.
-
 `Langlands.AlgebraicGeometry.AlgebraicSpace.SmoothSourceDimensionTopologyStatement`
 is a proposition interface for the topological bridge from the published
 algebraic dimension decomposition to the varying-dimensional manifold assertion

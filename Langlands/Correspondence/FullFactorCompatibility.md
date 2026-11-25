@@ -1,6 +1,6 @@
 # Pair L- and epsilon-factor compatibility of full families
 
-Author: Worker 7. This module states the pair epsilon-factor condition for the
+This module states the pair epsilon-factor condition for the
 full family `FullMap` of `Domains`. It then combines it with the L-factor
 condition of `FullLFactorCompatibility` into the full pair-factor condition.
 The full family sends Frobenius-semisimple Weil–Deligne parameter classes,
@@ -25,9 +25,8 @@ and `A'` of `π'`, and representations `J`, `J'` with carriers in universe
 `max uF uA`, such that:
 
 - `J` is equivalent to `A` and `J'` to `A'`; and
-- Worker 31's `RankinSelberg.IsLanglandsPairEpsilonFactor.{uF, uA, uA}
-  F ψ ν J J' e` holds (module `RankinSelberg/LanglandsFactors`, task
-  6f0365a3).
+- `RankinSelberg.IsLanglandsPairEpsilonFactor.{uF, uA, uA}
+  F ψ ν J J' e` holds (module `RankinSelberg/LanglandsFactors`).
 
 That relation is the epsilon factor of Henniart 2002, §2.8, defined through
 the Langlands classification. Both `J` and `J'` are Langlands quotients of
@@ -106,7 +105,7 @@ these agree definitionally, so no rank casts occur.
   `π_i` ordered by nonincreasing exponent, citing Casselman 1977 and JPSS
   1983, Introduction. For `π = Σ π_i` and `π' = Σ π'_j`,
   `ε(s, π × π') = Π_(i,j) ε(s, π_i × π'_j, ψ)`, with the same `ψ` in every
-  factor. This is the definition that Worker 31's
+  factor. This is the definition that
   `IsLanglandsPairEpsilonFactor` implements.
 - Harris–Taylor 2001, Introduction, printed pp.1–2 (PDF pp.9–10), property 2:
   a local Langlands correspondence matches `L(π_1 × π_2, s)` and
@@ -145,8 +144,8 @@ Source files:
   statement of `FullGammaCompatibility`.
 - **Totality.** The witness `e` is asserted to exist. So the condition implies,
   and does not assume, that every image class is the Langlands quotient of
-  square-integrable data and that all block epsilon factors exist. Worker
-  31's module keeps the existence of block factors and the independence of the
+  square-integrable data and that all block epsilon factors exist. The
+  module `RankinSelberg/LanglandsFactors` keeps the existence of block factors and the independence of the
   data as explicit inputs of its constructor; it does not prove them.
 - **Measures.** A self-dual measure for `ψ` is asserted to exist, so the
   `∀ ν` clause is not vacuous, and the identity is required for every
@@ -157,7 +156,9 @@ Source files:
   is existentially quantified with its base reciprocity component `e`.
   Deligne's theorem gives existence and uniqueness of such a system; the
   Library states these as `NonabelianSystem.Exists` and
-  `NonabelianSystem.Unique` without proof.
+  `NonabelianSystem.Unique` and proves them as `NonabelianSystem.exists_system`
+  (`LocalFactor/NonabelianSystemExistsProof`) and `NonabelianSystem.unique`
+  (`LocalFactor/NonabelianUniquenessProof`).
 - **Representatives.** The relation is existential in the representatives
   and in the equivalent representations `J`, `J'`. Henniart 2002, §1.2,
   remark, printed p.589: the factors depend only on the isomorphism classes.
@@ -168,18 +169,19 @@ Source files:
 
 ## Scope
 
-- The module imports, and does not copy: Worker 31's
-  `RankinSelberg/LanglandsFactors` (`IsLanglandsPairEpsilonFactor`), this
-  task's `FullLFactorCompatibility` (`FullPairLCompatibility`,
+- The module imports, and does not copy:
+  `RankinSelberg/LanglandsFactors` (`IsLanglandsPairEpsilonFactor`),
+  `FullLFactorCompatibility` (`FullPairLCompatibility`,
   `FullPairLCompatibilityAt`), `ArithmeticFactors`
   (`IsArithmeticPairEpsilonFactor`, `IsBaseReciprocity`), `Domains`,
   `AutomorphicRelations`, `OperationCompatibility` (`ReciprocityCandidate`)
   and `LocalConventions`.
 - The two topology instances on `F` and on `GL_n(F)` are local and have
   explicit names (`fullFactorFieldTopology`, `fullFactorGeneralLinearTopology`),
-  so the module can be imported together with the other modules of this task.
+  so the module can be imported together with the other modules of
+  `Langlands.Correspondence`.
 
 ## Validation
 
-The module compiles in the project Lean service with no errors or warnings.
+The module compiles with no errors or warnings.
 There is no `sorry` and no new axiom. Every condition returns `Prop`.

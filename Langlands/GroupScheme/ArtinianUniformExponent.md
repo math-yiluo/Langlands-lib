@@ -1,6 +1,6 @@
 # Uniform exponents over Artinian local bases
 
-Worker 801 develops the Artinian local restriction of the uniform exponent
+This module develops the Artinian local restriction of the uniform exponent
 argument in SGA 3, Exposé IX, Lemma 6.1 (registered source
 `sga3-expose-ix-gille-polo-2009`, printed pp.52–53). The Prop-valued `Statement`
 asks for one positive exponent on all scheme-valued points of a quasi-compact,
@@ -17,7 +17,8 @@ original base. Coordinate choices are compared through their actual affine
 presentations, and finiteness of the coordinate Hopf algebra is derived from
 finiteness of the group scheme.
 
-The statement itself remains a proof target. The omission of commutativity and
+The statement itself is proved separately, by `artinianUniformExponent` in
+`Langlands.GroupScheme.ArtinianUniformExponentProof`. The omission of commutativity and
 finite presentation is an internal strengthening of the Artinian local step: a
 quasi-compact, locally quasi-finite morphism to an Artinian base is finite,
 and a finite group over a field has a uniform exponent without commutativity.

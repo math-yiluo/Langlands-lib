@@ -1,7 +1,5 @@
 # Source changes of the full Harris derived coefficient diagram
 
-Author: Worker 13.
-
 This internal specialization constructs actual source-change isomorphisms for
 the Harris coefficient objects in the derived categories of whole local sheaf
 diagrams. The construction preserves the original lattice reductions at every

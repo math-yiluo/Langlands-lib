@@ -1,7 +1,6 @@
 # Pair factors of archimedean Weil-group presentations
 
-Worker 8 authored this definition unit for task
-`6c50b2fd-cb4a-47b3-8f5d-d464916d69fb`. All declarations lie in the namespace
+All declarations lie in the namespace
 `Langlands.LocalFactor.Archimedean`. The module defines the pair `L`- and `ε`-factors of two
 presentations by archimedean Weil-group blocks. A presentation is a list of the Library's
 blocks: `RealBlock` for `W_ℝ`, `ComplexCharacterData` for `W_ℂ`. The pair factor of `ds` and

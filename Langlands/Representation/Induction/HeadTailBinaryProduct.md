@@ -1,7 +1,5 @@
 # The first factor and ordered tail as a literal binary product
 
-Author: Worker 357.
-
 This internal adapter composes the published first/tail regrouping with the
 published all-rank binary product functor and equality transport of the ambient
 rank. It supplies an actual categorical isomorphism, retaining the original
@@ -84,7 +82,7 @@ imported binary functor comparison is the isomorphism induced by its
 proved equality with product induction on `BlockShape.binary`.
 The new entry only maps and composes these actual isomorphisms.
 
-Searching the current Library found the reused
+Before this module the Library had the reused
 `headTailProductInductionIso`, but no declaration named
 `headTailBinaryProductIso` or
 `normalizedProductInductionRankTransportIso`. The existing comparison
@@ -93,30 +91,26 @@ provides the literal binary functor on the original head, the original
 ordered tail product, and the exact ambient rank transport needed by
 binary consumers.
 
-## Host independence audit
+## Independence audit
 
-The recursive inventory at Library
-`96e2bf23b0d79b978b965af2fce2d0d47ad24661` has 172 project modules,
+The recursive inventory at Library commit
+`96e2bf23b0d79b978b965af2fce2d0d47ad24661` had 172 project modules,
 including this entry, and 98 directly named external import roots.
-All 171 inherited Lean/Markdown pairs are present, have nonempty
-Markdown and are byte-identical to the published Library. There are
-no missing project imports or pending imported candidates.
 The inventory below lists project modules recursively and external
 roots directly; it does not claim a separate recursive traversal
 of Mathlib.
 
 Every inherited pair has the same fingerprints as a previously read
 and audited input pair. The general induction, tensor, rank-transport
-and derivative-construction closure was covered by the binary derivative
-support audit. The additional first/tail closure was read in full as
+and derivative-construction closure was covered by the dependency audit of
+`Derivative.BinaryDerivativeSupportAggregation`. The additional first/tail closure was read in full as
 Lean/Markdown pairs: the head/tail and adjacent-merge geometry, carrier
 lift and block equivalence, heterogeneous constructions and pairs,
 ordered regrouping statement, equivalence and proof, factor equivalences,
 and the five inherited three-block carrier, geometry, universe,
-associativity-interface and assembly modules. The current inventory
+associativity-interface and assembly modules. The inventory
 comparison leaves only this new entry outside that union.
-This is a comparison of source fingerprints and proof routes; it uses
-no pending aggregation candidate as a mathematical premise.
+This is a comparison of source fingerprints and proof routes.
 
 Exactly four `Classification` modules occur:
 `Supercuspidal`, `SupercuspidalTwist`,
@@ -127,55 +121,52 @@ The only modules under `Representation.Derivative` are `Iteration`,
 constructions. No segment or classification conclusion is invoked
 by the implemented isomorphisms.
 
-The trusted operator responses
-[bd71b9185aab5d6eafffb7891bd3a3ca](/home/taskhub/pilot/correspondence/bd71b9185aab5d6eafffb7891bd3a3ca.md),
-[0edda6122ce65ed7ac51603c37473920](/home/taskhub/pilot/correspondence/0edda6122ce65ed7ac51603c37473920.md),
-and [30144f6f9b59540b88b6d4c1517892d9](/home/taskhub/pilot/correspondence/30144f6f9b59540b88b6d4c1517892d9.md)
-were read in full. They retain the host exclusions while permitting
-independently proved general infrastructure and, separately, a new
-exactly support-only terminal-truncation bound. This adapter proves
+This adapter proves
 no segment support bound and uses none as an input.
 
 | Excluded result or boundary | Check on the closure and implemented route |
 | --- | --- |
-| Ze80 §§3.5/9.6, their formulas, proofs and proof successors | No segment derivative module is imported or invoked. The only rank-transport dependency is equality elimination. |
-| Full segment/head/socle Jacquet formulas and exponent norm formula, including tasks `ed48ae06-964c-4c84-9e62-978f5a953ca7`, `b95105c6-f8bb-4641-ae53-2f49d1e7f034`, `55ad1e10-62d8-46b7-a081-909ef0056426`, `92aea10f-62ac-4e0b-bd4a-9a80909797c5` | None supplies a dependency. General induction and coordinate constructions do not apply these conclusions. |
-| Host criterion `8364e73f-14ec-4d14-8f2b-1555a7c1ce95` in either direction and socle product criterion `2ae5cbe5-0701-4509-88a0-db8cbeb35be4` | Neither conclusion, a proof successor nor a downstream criterion consumer is imported or used. |
-| Parent uniqueness `30341ae4-65f2-4a0e-9283-763db01a409e` | No uniqueness or comparison of different segment products is used. |
-| Multisegment exhaustion `3bfb61fa-1129-4fc9-83fd-7fcfec22106e`, ordered strong-head existence `ebea9a8a-9b21-4208-aa31-98c2dea1f8a3`, quotient coverage `20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584`, ordered conversion `8252833d-c269-41a9-824c-5879e531b23b` | None supplies an input. The factor family here is supplied and the refinement is geometric. |
-| Tempered uniqueness `52e97845-36bb-457d-b76f-70753334b88c`, `SquareIntegrableLanglandsClassification` and task `1cb45da2-7007-4351-a694-594fb148b8d1`, square-integrable exhaustion `cd8ab97c-0b78-4bce-97c4-d307a28159a4`, regular exhaustion `bf433f0a-921a-428c-b0c0-6475438125ac` | These conclusions and proof routes are absent. |
-| Segment-socle part of `8e5b4563-0365-41c7-b134-70f2a0b36292`, linked-pair structure, adjacent commutation and two-supercuspidal product criteria | None is used by the actual general induction isomorphisms. |
+| Ze80 §§3.5/9.6, their formulas, proofs and the modules that prove them | No segment derivative module is imported or invoked. The only rank-transport dependency is equality elimination. |
+| Full segment/head/socle Jacquet formulas and exponent norm formula (`SegmentFullJacquetFormula`, `SegmentSocleJacquetFormula`, `SegmentHeadJacquetFormula`, `SegmentSpecialJacquetExponentNormFormula`) | None supplies a dependency. General induction and coordinate constructions do not apply these conclusions. |
+| Criterion `SegmentHeadProductIrreducibility`, which this module serves, in either direction and socle product criterion `SegmentSocleProductIrreducibility` | Neither conclusion, a module proving it nor a downstream criterion consumer is imported or used. |
+| Uniqueness `GenericSegmentProductUniqueness` | No uniqueness or comparison of different segment products is used. |
+| Multisegment exhaustion, ordered strong-head existence, quotient coverage, ordered conversion | None supplies an input. The factor family here is supplied and the refinement is geometric. |
+| Tempered uniqueness, `SquareIntegrableLanglandsClassification`, square-integrable exhaustion, regular exhaustion | These conclusions and proof routes are absent. |
+| Segment-socle derivative statements of `Classification.SegmentSocleDerivativesStatement`, linked-pair structure, adjacent commutation and two-supercuspidal product criteria | None is used by the actual general induction isomorphisms. |
 | Whittaker irreducible/Levi/supercuspidal coinvariant finiteness and dependent mirabolic finite length | These conclusions are absent; this construction needs no finite-length assertion. |
 | Original carrier parameters, order and repeated factors | `uF,uV` remain independent; carriers stay at `max uF uV`, the target uses the original head and actual ordered tail, and there is no distinctness premise or removal of repeated factors. |
-| Pending results and run controls | All imported inputs are published. The pending support aggregation and support-only proof are not used; no paused proof owner is needed for this unit. |
+| Support aggregation and support bounds | All imported inputs are published. Neither the support aggregation `Derivative.ProductDerivativeSupportAggregation`, which imports this module, nor a support-only terminal-truncation bound is used. |
 
 A recursive lexical scan after removing nested comments and strings
-found no audited excluded-name or task-identifier matches, proof holes,
+found no audited excluded-name matches, proof holes,
 new axioms or prohibited execution syntax. The proof-route examination
 above supplements the scan; a name scan alone would not establish
 independence.
 
 ## Validation and remaining scope
 
-Recovery draft check `81067f22-dcde-49dd-9b38-4a3e31ab78df` compiled
-this module with zero errors and warnings in approved environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`.
-Exact entry inspection and Lake build
-`ab429bf5-021e-4038-8962-e289349eaaed` also passed with zero errors
+A development check compiled
+this module with zero errors and warnings.
+Exact entry inspection and a Lake build
+also passed with zero errors
 and warnings. The entry is a definition with independent level
 parameters `uF,uV` and only `propext`, `Classical.choice` and
-`Quot.sound`. Final ordinary-module Lake build and exact entry inspection
-`50df741f-c703-4b50-809a-56fad3c9fa80` reproduced that clean result,
-with the same source and type fingerprints. No Lean edit followed it.
-These development checks establish no independent semantic acceptance
-or publication.
+`Quot.sound`. A final ordinary-module Lake build and exact entry inspection
+reproduced that clean result,
+with the same source and type fingerprints.
 
 This focused comparison supplies one adapter for finite-product
 iteration. It does not itself iterate derivatives or support witnesses,
 prove a terminal-truncation support bound, identify a derivative
 with a truncated head, prove derivative irreducibility or multiplicity,
-or prove either direction of the host irreducibility criterion.
-Those obligations remain open.
+or prove either direction of the irreducibility criterion
+`SegmentHeadProductIrreducibility`.
+Those results lie outside this module: for example
+`Derivative.ProductDerivativeSupportAggregation` constructs factor supports
+for derivatives of finite ordered products, and
+`Langlands.Classification.segmentHeadProductIrreducibility` in
+`Classification.SegmentHeadProductIrreducibilityProof` proves both
+directions of that criterion.
 
 ## Complete project import inventory
 

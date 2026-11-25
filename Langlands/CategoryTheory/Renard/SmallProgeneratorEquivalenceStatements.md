@@ -1,9 +1,5 @@
 # Renard A.VIII.2: the actual small-progenerator equivalence
 
-Authors: Worker 6 (statement design, implementation and documentation);
-Worker 923 (independent source and errata reread, contract type
-ascription, Markdown revision, compilation and inspection).
-
 This file states one theorem,
 `Langlands.Renard.SmallProgeneratorEquivalenceStatement`, in module
 `Langlands.CategoryTheory.Renard.SmallProgeneratorEquivalenceStatements`.
@@ -15,8 +11,8 @@ David Renard, *Représentations des groupes réductifs p-adiques*, French
 version dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Complete PDF pages 272–273 (printed 266–267) were reread for this unit
-by Worker 6 and, independently, by Worker 923.
+Complete PDF pages 272–273 (printed 266–267) were reread for this module
+in two independent readings.
 
 The unnumbered **Théorème** in A.VIII.2 (Progénérateurs), printed page
 267 / PDF page 273, reads:
@@ -37,9 +33,8 @@ projective and a small progenerator using the actual functor
 exactness of a functor by both one-sided sequence conditions.
 
 Renard refers to Pareigis [37], §4.11, Theorem 1 for this theorem and
-gives no proof on the page. Neither Worker 6, the supplied draft's
-author, nor Worker 923 has read Pareigis; no proof from it has been
-checked for this unit.
+gives no proof on the page. Pareigis was not read; no proof from it has been
+checked for this module.
 
 The supplementary author errata for the 2010 edition,
 `renard-2010-corrections-complements`, SHA256
@@ -59,7 +54,7 @@ def SmallProgeneratorEquivalenceStatement (C : Type u) [Category.{v} C]
     (preadditiveCoyonedaObj P : C ⥤ ModuleCat.{v} (End P)ᵐᵒᵖ).IsEquivalence
 ```
 
-The type ascription on the functor is the contract's literal body. It
+The type ascription on the functor
 names the target category and elaborates to the same term as the bare
 `preadditiveCoyonedaObj P`.
 
@@ -157,21 +152,14 @@ degenerate zero category and zero ring are included.
 
 ## Verification
 
-Development checks used the approved environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`. Worker 6 reports exact entry
-checks `60efaf4a-84c2-41d2-aef8-9314a5d3fff6` and
-`a65a5a28-2730-4842-8389-65dba121082d`, and probes
-`95383e65-ac94-4ac4-990c-058850437297` and
-`aa603410-552c-4e5f-818a-b8f6f10833e8`, for the draft without the
-ascription. All are reported clean.
+Two entry checks and two probes of the body without the
+ascription are reported clean.
 
-Worker 923 checked the ascribed body. The draft statement check
-(diagnostic `3e619238-62fb-4175-ab54-fb2e717eef17`) had no errors or
+For the ascribed body, a statement check had no errors or
 warnings. It returned a `Prop`, with level parameters `v u` and axioms
-`propext`, `Classical.choice` and `Quot.sound`. The workspace check of
-this exact pair (diagnostic `ec1c0531-34b8-4821-a73b-ef23049d0b71`)
-gave the same result. A private inspection
-module (diagnostic `bbe42771-81c5-4025-b1f0-a2e60e29c3d6`, no errors or
+`propext`, `Classical.choice` and `Quot.sound`. A check of
+this exact pair gave the same result. A private inspection
+module (no errors or
 warnings) checked the following.
 
 - It printed the declaration with explicit instances. The preadditive
@@ -179,7 +167,7 @@ warnings) checked the following.
   `Preadditive.instRingEnd` with `MulOpposite.instRing`, and the
   conclusion is `Functor.IsEquivalence.{v, v, u, v + 1}`.
 - It checked the complete unapplied telescope, and that the fully
-  qualified contract body equals the definition by `rfl`.
+  qualified body equals the definition by `rfl`.
 - It unfolded `HomSmallProgenerator.{v} P` to the three conditions above
   by `Iff.rfl`.
 - It checked that `preadditiveCoyonedaInt P` is
@@ -199,13 +187,15 @@ warnings) checked the following.
 These are checks of the statement and its terms. They do not prove the
 theorem.
 
-## Separate obligations
+## Separate results
 
 The finite-subcoproduct characterization of small projectives, the
 Grothendieck finite-type comparison and the regular-module
-small-progenerator remark have their own statements and proof branches.
+small-progenerator remark have their own statement and proof modules
+(`SmallProjectiveFiniteSupport`, `SmallProjectiveFiniteType` and
+`RegularModuleSmallProgenerator`, each with its `Statements` module).
 `Langlands.Renard.generatorPresentation` does not itself prove this
 statement. The converse, for a category already equivalent to a module
 category, and the construction and comparison of Renard's nonunital
-module categories remain separate whole-book obligations. This file
+module categories are separate statements. This file
 asserts only the forward theorem above.

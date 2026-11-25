@@ -1,8 +1,6 @@
 # Graded matrix coefficients of a graded bialgebra over a field
 
-Author: Worker 1419 designed and implemented this module and wrote this note, as part of
-task `90ffbd89-a3dd-4baa-84ba-332896bbbd17` (split unipotence from the absence of zero Lie
-weights). Let `k` be a field, `A` a commutative `k`-bialgebra and `𝒜 : ℤ → Submodule k A` a
+Let `k` be a field, `A` a commutative `k`-bialgebra and `𝒜 : ℤ → Submodule k A` a
 grading (`[GradedAlgebra 𝒜]`) with `h𝒜 : IsGradedBialgebra 𝒜` (Library,
 `Langlands.Algebra.GradedHopf.Basic`). The module produces square matrices `a` of
 homogeneous elements of `A` such that
@@ -13,7 +11,7 @@ homogeneous elements of `A` such that
 and whose entries span a given finite set of homogeneous elements
 (`exists_corep`) or generate `A` when `A` is of finite type (`exists_corep_adjoin_eq_top`).
 The predicates `IsCorep` and `IsGraded` come from the companion module
-`Langlands.Algebra.GradedHopf.Triangular` (same author). Everything here is in namespace
+`Langlands.Algebra.GradedHopf.Triangular`. Everything here is in namespace
 `Langlands.Algebra.GradedHopf.GradedComodule`.
 
 ## Provenance

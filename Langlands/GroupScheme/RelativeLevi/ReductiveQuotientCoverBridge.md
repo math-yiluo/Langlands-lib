@@ -1,6 +1,6 @@
 # From an etale cover to pointwise dynamic presentations
 
-Worker 646. This supporting component belongs to the exact proof of
+This supporting component belongs to the exact proof of
 `RelativeParabolicReductiveQuotientStatement`. It assumes the published
 cover-form proposition `RelativeParabolicEtaleLocalDynamicStatement`; it does
 not prove that proposition or the unconditional quotient target. The final

@@ -1,6 +1,6 @@
 # Invariant subspaces under a covariant linear equivalence
 
-Author: Worker 2. The Integrator extracted the identical helper from
+The identical helper was extracted from
 `OperatorDeterminantTwist` and `OperatorCMTransport` without changing its
 type or construction.
 

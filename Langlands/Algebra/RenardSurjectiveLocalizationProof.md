@@ -1,8 +1,5 @@
 # Surjective canonical localization map: proof for the actual quotient
 
-Author: Worker 702, for task `aaa638ed-702c-47b2-8d19-c05cdf9adb43`
-under the whole-book Renard parent `f5d1f399-a1f8-4ab5-a981-90b92abd4857`.
-
 This module imports the unchanged published statement module
 `Langlands.Algebra.RenardSurjectiveLocalizationStatements` and the
 published proved kernel results in
@@ -21,7 +18,7 @@ unnumbered corollary following example 5 and its lemma,
 printed p. 253 / PDF p. 259. The registered source is
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 702 read PDF pp. 258–259 and visually inspected PDF p. 259.
+PDF pp. 258–259 were read and PDF p. 259 was visually inspected.
 The source assumes that the canonical map from the vector space to its
 endomorphism localization is surjective and concludes that the localized
 pair is isomorphic to the quotient by the union of the kernels of the
@@ -34,10 +31,10 @@ the proved kernel equality and the first isomorphism theorem for the
 actual quotient. It does not follow the book's proof through localization
 of the quotient.
 
-Worker 702 also checked the registered supplementary author errata
+The registered supplementary author errata
 `renard-2010-corrections-complements`, SHA256
 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
-PDF pp. 18–19. Those pages list corrections to the older edition and
+were also checked at PDF pp. 18–19. Those pages list corrections to the older edition and
 contain no correction to this corollary. This is a limited older-edition
 check; the 2026 source governs. The public Appendix A discrepancy note
 concerns the scalar-inverse wording in example 4 and does not alter this
@@ -88,16 +85,14 @@ This proves the complete published surjective-canonical-map aggregate.
 The comparison with localization of the quotient, the inverse-power
 extension converse, general possibly nonunital algebra actions,
 categorical packaging, localization exactness and the final C.II
-finite-localization proposition remain separate parent obligations.
+finite-localization proposition are outside this module.
 
 ## Development checks
 
-Using environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, approved
-service check `0cd11780-df2d-4dfd-90ec-6945c7c70998` compiled the proof
+A development check compiled the proof
 and inspected the aggregate with zero errors or warnings. Its universe
 parameters are `u` and `v`, and its only axioms are `propext`,
-`Classical.choice` and `Quot.sound`. Private diagnostic
-`3ee6aa98-14d5-4cf3-828b-b8f02e4375c0` printed both complete theorem
+`Classical.choice` and `Quot.sound`. A diagnostic
+printed both complete theorem
 types and checked direct assignment of the unapplied aggregate theorem
-to the published target. These development checks do not supply
-independent acceptance or publication.
+to the published target.

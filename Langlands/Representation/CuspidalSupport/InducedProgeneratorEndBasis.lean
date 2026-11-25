@@ -90,14 +90,14 @@ theorem existsUnique_precomp_expansion_of_basis {C : Type uC} [Category.{vC} C] 
       ∃! a : Fin m → (X ⟶ X), x = ∑ i, Φ.map (a i) ≫ b i := by
   let _ := endPrecompModule Φ X Z
   let b := B.reindex e
-  have hsum : ∀ c : Fin m → (End X)ᵐᵒᵖ, b.equivFun.symm c = ∑ j, Φ.map (c j).unop ≫ b j :=
+  have hsum : ∀ c : Fin m → (End X)ᵐᵒᵖ, b.equivFun.symm c = ∑ j, Φ.map (c j).unop.asHom ≫ b j :=
     fun c => b.equivFun_symm_apply c
-  refine ⟨b, fun x => ⟨fun j => (b.equivFun x j).unop, ?_, fun a ha => ?_⟩⟩
-  · change x = ∑ j, Φ.map (MulOpposite.op (b.equivFun x j).unop).unop ≫ b j
+  refine ⟨b, fun x => ⟨fun j => (b.equivFun x j).unop.asHom, ?_, fun a ha => ?_⟩⟩
+  · change x = ∑ j, Φ.map (MulOpposite.op (b.equivFun x j).unop).unop.asHom ≫ b j
     simp only [MulOpposite.op_unop]
     rw [← hsum, LinearEquiv.symm_apply_apply]
   · funext j
-    have h : b.equivFun.symm (fun j => MulOpposite.op (a j)) = x := by
+    have h : b.equivFun.symm (fun j => MulOpposite.op (End.of (a j))) = x := by
       rw [hsum]
       exact ha.symm
     rw [← h, LinearEquiv.apply_symm_apply]

@@ -1,7 +1,5 @@
 # Affine commutative quotient data for an actual derived subgroup
 
-Author: Worker 1616.
-
 `IsDerivedSubgroup.commutativeQuotientData` chooses an actual commutative
 group scheme `Q` and a homomorphism `q : G ⟶ Q.toGrp` over any field
 `k : Type u`. The input is a smooth affine group scheme `G` and a supplied

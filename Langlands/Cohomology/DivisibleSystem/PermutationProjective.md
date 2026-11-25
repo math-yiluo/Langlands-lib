@@ -1,6 +1,6 @@
 # Projectivity of permutation modules of pro-`p` subgroups
 
-Author: Worker 61. Built on
+Built on
 `Langlands.Cohomology.DivisibleSystem.PowTorsionProjective`
 (`powTorsionProjective_obj_of_adjunction`,
 `powTorsionProjective_compactInduction`,
@@ -32,12 +32,12 @@ epimorphism `p : X ⟶ Y` such that multiplication by `ℓ ^ m` on `X`
 (`powSMul ℓ m X`) is zero, every morphism `P ⟶ Y` lifts along `p`. It is read
 as "`P` is projective relative to objects killed by `ℓ ^ m`".
 
-`ProPInvariantsExactStatement` (Worker 3) says: for a prime `p`, a compact,
+`ProPInvariantsExactStatement` says: for a prime `p`, a compact,
 totally disconnected topological group `K` whose quotient by every open normal
 subgroup is a `p`-group, and a commutative ring `R` in which `p` is a unit,
 the `K`-invariants of a short exact sequence of smooth representations of `K`
 over `R` form a short exact sequence of `R`-modules. It is not proved in this
-module or, as of this module, in the Library. Every result after the first
+module or in the Library. Every result after the first
 section takes it as a hypothesis `hP`.
 
 All new names are in the namespace `Langlands.Cohomology`.
@@ -141,7 +141,7 @@ of the published `SupercuspidalExt.compactInduction R G H` and
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
 J. Math. Kyoto Univ. 39-2 (1999).
 
-Section 2, printed p.305 (Worker 61 read the page in the scanned original):
+Section 2, printed p.305 (read in the scanned original):
 Harris takes "an open normal pro-`p` subgroup `H ⊂ S(ẽ)`" and writes "Since
 `p` is prime to `ℓ`, the functor `H⁰(H, •)` is exact on `ℓ`-primary torsion
 modules".

@@ -105,10 +105,10 @@ instance : Module R (ConeSpace c) := inferInstanceAs (Module R c.pt.V)
 def proj (j : J) : ConeSpace c →ₗ[R] (M.obj j).V := (c.π.app j).hom.hom
 
 /-- The action of `g` on the cone point. -/
-def act (g : G) : ConeSpace c →ₗ[R] ConeSpace c := (c.pt.ρ g).hom
+def act (g : G) : ConeSpace c →ₗ[R] ConeSpace c := (c.pt.ρ g).asHom.hom
 
 lemma proj_act (j : J) (g : G) (x : ConeSpace c) :
-    proj c j (act c g x) = ((M.obj j).ρ g).hom (proj c j x) :=
+    proj c j (act c g x) = ((M.obj j).ρ g).asHom.hom (proj c j x) :=
   LinearMap.congr_fun (congrArg ModuleCat.Hom.hom ((c.π.app j).comm g)) x
 
 /-- The inverse limit topology: the coarsest topology for which every projection to a level
@@ -141,7 +141,7 @@ instance : IsTopologicalAddGroup (ConeSpace c) where
 /-- Each element of the group acts continuously. -/
 theorem continuous_act (g : G) : Continuous (act c g) :=
   (continuous_iff c _).2 fun j => by
-    have h := (isLocallyConstant_proj c j).comp ((M.obj j).ρ g).hom
+    have h := (isLocallyConstant_proj c j).comp ((M.obj j).ρ g).asHom.hom
     simpa only [Function.comp_def, proj_act] using h
 
 /-- If the orbit maps `r ↦ r • y` of every level are locally constant, scalar multiplication on
@@ -238,12 +238,12 @@ theorem continuous_hom {M' : J ⥤ Action (ModuleCat.{u} R) G} {c' : Cone M'} (�
   exact (isLocallyConstant_proj c j).comp _
 
 lemma act_one (x : ConeSpace c) : act c 1 x = x := by
-  change (c.pt.ρ 1).hom x = x
+  change (c.pt.ρ 1).asHom.hom x = x
   rw [map_one]
   rfl
 
 lemma act_mul (g h : G) (x : ConeSpace c) : act c (g * h) x = act c g (act c h x) := by
-  change (c.pt.ρ (g * h)).hom x = (c.pt.ρ g).hom ((c.pt.ρ h).hom x)
+  change (c.pt.ρ (g * h)).asHom.hom x = (c.pt.ρ g).asHom.hom ((c.pt.ρ h).asHom.hom x)
   rw [map_mul]
   rfl
 
@@ -316,7 +316,7 @@ lemma limitTopRepFunctor_obj_V (M : J ⥤ Action (ModuleCat.{u} R) G) :
 
 lemma limitTopRepFunctor_obj_ρ (M : J ⥤ Action (ModuleCat.{u} R) G) (g : G)
     (x : ((limitTopRepFunctor R G J).obj M).V) :
-    ((limitTopRepFunctor R G J).obj M).ρ g x = ((limit M).ρ g).hom x :=
+    ((limitTopRepFunctor R G J).obj M).ρ g x = ((limit M).ρ g).asHom.hom x :=
   rfl
 
 lemma limitTopRepFunctor_map_apply {M M' : J ⥤ Action (ModuleCat.{u} R) G} (α : M ⟶ M')
@@ -362,7 +362,7 @@ theorem continuous_action [TopologicalSpace G] [ContinuousMul G]
     (hF : ∀ n, IsSmooth ((Rep.ActionToRep R G).obj
       ((EtaleCohomologyAction.pullbackCohomologyFunctor R ρ q).obj (F.obj n))).ρ) :
     Continuous (Y := AdicCohomologySpace R ρ q F) fun p : G × AdicCohomologySpace R ρ q F =>
-      (((equivariantAdicCohomology R ρ q).obj F).ρ p.1).hom p.2 :=
+      (((equivariantAdicCohomology R ρ q).obj F).ρ p.1).asHom.hom p.2 :=
   ContinuousLimit.continuous_action
     (limit.cone (F ⋙ EtaleCohomologyAction.pullbackCohomologyFunctor R ρ q)) hF
 

@@ -1,7 +1,8 @@
 # Intrinsic Weyl comparison at an actual inducing representative
 
 This adapter transports a displayed comparison in the dynamic coefficient
-model to the intrinsic product-induced coefficient objects of Task 7229.
+model to the intrinsic product-induced coefficient objects of the actual
+semistandard spectral families.
 Both parabolic presentations use the same compact, with the displayed
 Iwasawa factorizations. The target centralizer equality is the all-test
 conjugation equality for the specified actual Weyl lift.

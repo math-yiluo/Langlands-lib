@@ -1,7 +1,5 @@
 # Spectral steps for weak upper Jacquet bounds of induced representations
 
-Author: Worker 828.
-
 This module contains the spectral parts of the proof of
 `Langlands.GLInductionWeakJacquetBoundsStatement`. They are: reading the
 central spectrum of refined normalized induction off the inducing

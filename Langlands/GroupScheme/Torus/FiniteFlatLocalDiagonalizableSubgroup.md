@@ -4,7 +4,9 @@ This derived internal development constructs a diagonalizable presentation for
 finite flat affine closed subgroups over every commutative local ring,
 including nonreduced rings. It uses the full coordinate character group and
 actual group-scheme isomorphisms. Finiteness of the subgroup is a hypothesis;
-the arbitrary-base fibrewise central-isogeny criterion remains open.
+the arbitrary-base fibrewise central-isogeny criterion
+`ReductiveFibrewiseCentralIsogenyStatement` is not proved here but by
+`reductiveFibrewiseCentralIsogeny` in `Reductive.FibrewiseCentralIsogenyProof`.
 
 ## Coalgebra and bialgebra reconstruction
 
@@ -86,4 +88,5 @@ The local-ring hypothesis replaces the domain hypothesis of the related
 additional essential hypothesis here. The present group-scheme theorem
 assumes finiteness of `H`; it does not deduce finiteness from finite fibres.
 Neither the general-base closed-subgroup theorem nor kernel centrality in
-the host criterion follows from this unit alone.
+the central-isogeny criterion `ReductiveFibrewiseCentralIsogenyStatement`,
+which this module serves, follows from this module alone.

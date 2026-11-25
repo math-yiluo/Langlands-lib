@@ -1,6 +1,6 @@
 # The unramified normalization of a full correspondence
 
-Author: Worker 7. This module states the unramified normalization of the full
+This module states the unramified normalization of the full
 local Langlands correspondence for `GL_n(F)`. Unramified Weil–Deligne
 parameters (inertia acts trivially and the monodromy is zero) correspond to
 the irreducible representations with a nonzero `GL_n(O_F)`-fixed vector. The
@@ -28,7 +28,7 @@ integral subgroup and block shapes apply without casts.
 - `borelShape r` is the block shape of `GL_(r+1)` with `r + 1` blocks of size
   one; its standard parabolic is the upper Borel subgroup.
 - `principalSeries F r χ`, for `χ : Fin (r + 1) → QuasiCharacter F`, is
-  Worker 23's published `normalizedProductInduced` for `borelShape r` of the
+  `normalizedProductInduced` (`Representation.Induction.BlockFactors`) for `borelShape r` of the
   characters `χ_i ∘ det` of `GL_1(F)`: Henniart's `i(χ_1, …, χ_(r+1))`,
   normalized parabolic induction from the upper Borel subgroup.
 - `IsSubquotientOf ρ π`: some subrepresentation of `ρ` maps onto `π` by an
@@ -133,14 +133,15 @@ Source files:
 
 ## Scope
 
-These are conditions on a family. The full correspondence predicate of this
-task does not include them, because Henniart's characterization does not;
+These are conditions on a family. The full correspondence predicate
+`IsFullCorrespondence` (`Langlands.Correspondence.FullSpecification`) does
+not include them, because Henniart's characterization does not;
 that a full correspondence satisfies them is a separate statement. The
 module imports, and does not copy: `Conductor.integralSubgroup`,
 `fixedVectors`, `normalizedProductInduced`, `IsUnramifiedCharacter`,
 `FiniteRepresentation.IsUnramified`, `WeilDeligneRepresentation.directSum`
-and `zeroMonodromy`, and this task's `Domains`, `AutomorphicRelations` and
-`OperationCompatibility`.
+and `zeroMonodromy`, and `Domains`, `AutomorphicRelations` and
+`OperationCompatibility` of `Langlands.Correspondence`.
 
 ## Validation
 

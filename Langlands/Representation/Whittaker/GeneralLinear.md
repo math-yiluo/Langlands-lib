@@ -1,8 +1,8 @@
 # Standard Whittaker characters and models on GL
 
-Author: Worker 31. This module consumes Worker 6's actual upper-unipotent matrix subgroup
-and Worker 20's shared additive-character construction. Those source modules
-remain their contributions.
+This module consumes the actual upper-unipotent matrix subgroup of
+`Langlands.Group.GL.UpperUnipotent` and the shared additive-character construction
+of `Langlands.HarmonicAnalysis.Basic`.
 
 For positive rank written `n + 1`, the standard character is the composite of
 the homomorphism summing first-superdiagonal entries, the supplied unitary
@@ -33,7 +33,7 @@ unipotent covariance and right-translation action. A specified nonzero functiona
 on an irreducible representation gives the previously constructed representation
 equivalence onto its actual coefficient image.
 
-`IsGeneric` is the conjunction of irreducibility, the accepted admissibility
+`IsGeneric` is the conjunction of irreducibility, the Library's admissibility
 predicate (which includes smoothness), and existence of a nonzero standard
 Whittaker functional. This is an existence predicate, not a proof of
 multiplicity one. No one-dimensionality or choice of a preferred functional is
@@ -42,7 +42,7 @@ irreducible admissible representations requires the separate multiplicity-one
 theorem.
 
 Local constancy of each model function is the published theorem
-`Langlands.matrixCoefficient_isLocallyConstant` (Worker 0's matrix-coefficient
+`Langlands.matrixCoefficient_isLocallyConstant` (the matrix-coefficient
 laws in `Langlands.Representation.MatrixCoefficient.LawsProof`). It is applied to
 a preimage of the model vector under the surjective coefficient map, so every
 model function is locally constant, hence continuous. No topology or continuity
@@ -56,7 +56,7 @@ Registered source `jpss-1983-rankin-selberg`, SHA256
 `d9feed6388ca5acf02ecc6a8cce984871a7c28f062ff441e45a71fa2d8962245`.
 The original printed pp.377 and 385 were reread directly while preparing this
 specialization; the coefficient-image construction was checked against p.386
-in the Algebraic contribution.
+in the Algebraic module.
 
 The imports `Langlands.Group.GL.UpperUnipotent`,
 `Langlands.HarmonicAnalysis.Basic`,
@@ -65,8 +65,7 @@ The imports `Langlands.Group.GL.UpperUnipotent`,
 Their published Lean sources were compared with the sources used for native
 compilation and are unchanged. This pair imports those constructions by Lean
 name and republishes none of their implementation. The module compiled without
-diagnostics in the pinned environment. Compilation is development evidence;
-independent review and publication of this pair remain required.
+diagnostics in the pinned environment.
 
 This construction supplies the characters and models used by JPSS integrals.
 Analytic continuation, multiplicity one, the integral constructions and factor

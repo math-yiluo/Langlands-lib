@@ -1,11 +1,9 @@
 # The actual right-linear endomorphism model
 
 This module constructs the right-linear endomorphism model and its specified
-pointwise uniformities for Renard I.1.6. Worker 6 supplied the construction and
-interface checks; Worker 702 checked the source correspondence and completed
-the function identities and documentation; Worker 345 audited the sources,
-Markdown, complete declaration types and competing structures. The imported
-constructions retain their original authorship.
+pointwise uniformities for Renard I.1.6. The source correspondence was
+checked, and the sources, Markdown, complete declaration types and competing
+structures were audited.
 
 The source is David Renard, *Représentations des groupes réductifs
 p-adiques*, French version dated 9 July 2026, registered as
@@ -54,7 +52,8 @@ are retained by `_val` and `_subtype_comp`. `toRightLinearEnd_coe` also
 identifies its complete underlying endomorphism map as families vary.
 
 `toEndRingHom_apply_eq` gives `x.val e * a` for every idempotent `e`
-with `e*a=a`, using the predecessor's choice-independent formula.
+with `e*a=a`, using the choice-independent formula
+`IdempotentedRingRightLimit.applyOriginal_eq`.
 `toEndRingHom_idempotent` gives exactly `x.val e` at `a=e`.
 `toRightLinearEnd_apply`, `toRightLinearEnd_apply_eq` and
 `toRightLinearEnd_idempotent` expose these same actual evaluations directly
@@ -98,16 +97,18 @@ The explicit `Subring`, nonunital and unital ring homomorphisms,
 `UniformSpace` comaps and intrinsic interface lemmas are internal packaging
 of those constructions. The actual family, ring, internal evaluation,
 canonical map and original uniformity are imported by their published
-Lean names, with their original authorship retained.
+Lean names.
 
 All constructions retain the arbitrary original universe `uA`; the
 endomorphism and family carriers remain in that universe. No identity,
 nontriviality, field, dimension, countability, completeness or density
 hypothesis is added. Zero rings need no extra hypothesis.
 The two inverse identities, a ring equivalence, comparison with the
-specified family topology, the I.1.6 closure lemma, natural endomorphisms
-of the forgetful functor and categorical centres are later obligations.
-This unit makes no topological-ring assertion about the full endomorphism
+specified family topology and the I.1.6 closure lemma are proved in
+`IdempotentedRingEndomorphismComparisonProof`; natural endomorphisms
+of the forgetful functor in `NondegenerateModuleNaturalEndClassificationProof`,
+and categorical centres in `NondegenerateModuleCenterProof`.
+This module makes no topological-ring assertion about the full endomorphism
 ring.
 
 The supplementary *Corrections et compléments* for the 2010 edition,
@@ -115,7 +116,7 @@ registered as `renard-2010-corrections-complements`, SHA256
 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
 was checked at PDF1–3. Its p.13 correction to a barred completed-ring
 intersection belongs to the later topology comparison, and is reflected
-in the governing 2026 text. It does not alter this unit's definitions.
+in the governing 2026 text. It does not alter this module's definitions.
 
 ## Declaration and edge-case checks
 

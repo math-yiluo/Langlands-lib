@@ -1,7 +1,5 @@
 # The finite torsion subgroup determined by a commensurable lattice
 
-Author: Worker 1730.
-
 This is an internal construction derived from the published full Tate limit,
 its rationalization and its actual geometric monodromy. No external source is
 used. The input `L` is an additive subgroup of the full rational Tate module;

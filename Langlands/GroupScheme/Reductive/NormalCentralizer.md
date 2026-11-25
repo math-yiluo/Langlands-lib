@@ -1,7 +1,5 @@
 # The full centralizer of a normal subgroup
 
-Worker 1466, with the centralizer proof route proposed by Worker 1454.
-
 This is an internal construction from the published all-test fixed-subgroup
 representability theorem. It adds no structural theorem about semisimple groups.
 

@@ -1,6 +1,6 @@
 # Local component existence implies the embedding characterization
 
-Proof by Worker 3657. This module supplies
+This module supplies
 `Langlands.Automorphic.localComponentEmbedding_of_localComponentExistence`,
 which derives `LocalComponentEmbeddingStatement.{u, uW}` from
 `LocalComponentExistenceStatement.{u}`. Here `u` is the universe of the number

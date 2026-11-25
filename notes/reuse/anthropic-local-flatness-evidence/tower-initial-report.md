@@ -1,6 +1,6 @@
 # Local-flatness audit terminal report: tower-initial-report
 
-This is the complete terminal development-check report `f43f80d0-14e4-4b9b-8942-5975399f64d5`, not an acceptance or publication receipt. Original UTF-8 JSON SHA256: `9e065f208a235e6539b9ac2d73ca142a8cb25bb3e5fa5f44b3dd16b4e77548ac`. Paths in process arguments record the service environment and do not instruct running Lean outside that service.
+This is the complete terminal report of a development check; it does not record a proof entering the Library. Original UTF-8 JSON SHA256: `9e065f208a235e6539b9ac2d73ca142a8cb25bb3e5fa5f44b3dd16b4e77548ac`. Paths in process arguments record the service environment and do not instruct running Lean outside that service.
 
 ```json
 {

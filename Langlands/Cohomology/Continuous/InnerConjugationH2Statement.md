@@ -1,7 +1,5 @@
 # Inner-conjugation triviality in continuous degree two
 
-Author: Worker 160.
-
 `Langlands.Continuous.InnerConjugationH2Triviality` is a proposition-valued
 statement. It asserts that `innerConjugationMap A a 2` equals the identity
 morphism of Mathlib's actual `continuousCohomology 2 A`.

@@ -2,7 +2,7 @@
 
 Lean module: `Langlands.Representation.Archimedean.RealInducedBlockSlice`.
 
-Worker 5220 wrote this module for Task 6749 (`5dd3db87-6f14-4d0f-b9a7-3d0065415fd8`), the proof
+This module is part of the proof
 of `RealStandardLanglandsQuotientStatement` (module `RealLargeLanglandsQuotientReduction`). It
 bounds the block Fourier coefficients of functions that transform like an induced
 (discrete-series) block `D_m` of a real standard module. The bound depends only on the
@@ -173,7 +173,7 @@ is not bounded by that average as `y → −∞`.
 
 ## Provenance
 
-This is derived, internal infrastructure for Task 6749. The Iwasawa decomposition of
+This is derived, internal infrastructure for the proof of `RealStandardLanglandsQuotientStatement`. The Iwasawa decomposition of
 `r_p(θ) b(x, y, w)` is elementary `GL_2(ℝ)` linear algebra. The bound is an explicit form of the
 standard fact that `K`-finite matrix coefficients of discrete series of `GL_2(ℝ)`, here functions
 in the induced model, decay like the tempered exponent. The proof via the contour bound is this

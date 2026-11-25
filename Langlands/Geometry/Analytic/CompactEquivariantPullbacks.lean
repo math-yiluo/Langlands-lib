@@ -53,8 +53,8 @@ structure CompactContinuousPullbackData where
   compact : IsCompactSpace cone.pt.left
   action : G →* Aut cone.pt.left
   continuous : IsContinuousAction action
-  fst_equivariant : ∀ a, (action a).hom ≫ cone.fst.left = cone.fst.left ≫ (σU a).hom
-  snd_equivariant : ∀ a, (action a).hom ≫ cone.snd.left = cone.snd.left ≫ (σV a).hom
+  fst_equivariant : ∀ a, (action a).asIso.hom ≫ cone.fst.left = cone.fst.left ≫ (σU a).asIso.hom
+  snd_equivariant : ∀ a, (action a).asIso.hom ≫ cone.snd.left = cone.snd.left ≫ (σV a).asIso.hom
 
 /-- Combine actual compact pullback existence, its categorical induced action,
 and the explicit pullback-continuity prerequisite. -/
@@ -64,8 +64,8 @@ def compactContinuousPullback
     (hB : IsCompactSpace B.left) (hU : IsCompactSpace U.left)
     (hV : IsCompactSpace V.left) (σB : G →* Aut B.left)
     (hσU : IsContinuousAction σU) (hσV : IsContinuousAction σV)
-    (hf : ∀ a, (σU a).hom ≫ f.left = f.left ≫ (σB a).hom)
-    (hg : ∀ a, (σV a).hom ≫ g.left = g.left ≫ (σB a).hom) :
+    (hf : ∀ a, (σU a).asIso.hom ≫ f.left = f.left ≫ (σB a).asIso.hom)
+    (hg : ∀ a, (σV a).asIso.hom ≫ g.left = g.left ≫ (σB a).asIso.hom) :
     CompactContinuousPullbackData f g σU σV := by
   let hex := hgeom X B U V f g hB hU hV
   let t := Classical.choose hex

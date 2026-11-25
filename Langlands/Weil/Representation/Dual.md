@@ -1,6 +1,6 @@
 # Algebraic duality on actual finite-dimensional carriers
 
-Worker 17 authored this construction. `dual A` uses Mathlib's full
+`dual A` uses Mathlib's full
 algebraic dual vector space and its inverse-element action:
 `(r.dual g ell)(v) = ell(r(g⁻¹)v)`. Finiteness follows from Mathlib's
 finite-dimensional dual instance. The output carrier universe is the
@@ -17,7 +17,7 @@ This is full algebraic duality; no smooth subspace or topological dual is
 silently substituted. All finite ranks, including zero, are allowed.
 There are no continuity or semisimplicity hypotheses.
 
-Exact project dependency: Worker 0's
+Exact project dependency:
 `Langlands.Representation.Dual.Definitions`, present at Library commit
 `843c574c920aa9926ab56adf662c74b3cd4ed0e1`.
 Its effective Lean SHA-256 is

@@ -1,8 +1,8 @@
 # Canonical topological realization of a p-adic field
 
-## General base implementation (Task 7403)
+## General base implementation
 
-Worker 845 now delegates the spectral constructions to the characteristic-free
+This module delegates the spectral constructions to the characteristic-free
 [`Extension`](Extension.md) module. The original `PadicField` and
 `PadicField.TopologicalData` structures and every original declaration name and
 type are retained. The new `.toLocalData` and `.ofLocalData` conversions copy all
@@ -32,7 +32,7 @@ This pair contains three definitions:
   value is the nonnegative spectral norm.
 - `canonicalValuativeRel F` compares these valuation values.
 - `canonicalTopologicalData F` equips the carrier with the spectral norm
-  topology, this relation, and every certificate required by the accepted
+  topology, this relation, and every certificate required by the
   `TopologicalData` interface.
 
 The constructor supplies the certificates from Mathlib and explicit proofs;
@@ -42,7 +42,7 @@ or ramification.
 
 ## Construction and instance selection
 
-First install the accepted explicit `F.canonicalNormedField` and
+First install the explicit `F.canonicalNormedField` and
 `F.canonicalNormedAlgebra` structures. Mathlib's
 `isNonarchimedean_spectralNorm` makes their distance ultrametric. The
 definition `NormedField.valuation` then gives an `NNReal`-valued valuation,
@@ -131,7 +131,7 @@ typeclasses are internal implementation choices.
   `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`.
   Actual file: `C:/Central-Library/Serre--Local Fields--1979.pdf`.
 
-Worker 26 read these original passages and verified their file hashes.
+These original passages were read and their file hashes verified.
 Serre identifies the finite-extension topology with the finite-dimensional
 product topology and proves completeness and uniqueness of prolongation.
 The Lean constructor reuses Mathlib's proved results for these ingredients.
@@ -140,18 +140,13 @@ ramification degree formula, or a norm formula involving a field norm.
 
 ## Exact dependencies and validation
 
-The sole project import is `Langlands.LocalField.Definitions`, accepted
-definition artifact `ac4cb7d5-5dd1-44b6-9d56-f0ec6c70bce0`, version 1.
-Its publication commit is `1fe07fd211e579cc430734fd96ce959aadb7663d`,
-with independent receipt `203bba66-269f-46f4-984c-71531a4963c2` and
-effective snapshot
-`7dd12688f9e4cc615cd460940f0a82295c62729f3d59bb86304e3627c6831512`.
-The exact accepted Lean and Markdown hashes are respectively
+The sole project import is `Langlands.LocalField.Definitions`.
+The Lean and Markdown hashes of the version used are respectively
 `8d9cc8aa128861b13b4f96d38bf95be46844d2eaad28aa3cbb654b070ee0e517`
 and `6cfb939cf42a71a81fa648b77bd4bab1076bffe0d62519181f7dc7db742124bf`.
-They were checked against the local files and current Library membership.
+They were checked against the local files.
 
-Environment `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, version 1, pins
+The pinned environment is
 Lean 4.34.0 at `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b` and Mathlib
 at `5ed2965256430c3649e86755f9576b54eca72435`. The additional direct imports
 are `Mathlib.Analysis.Normed.Module.FiniteDimension` and
@@ -160,10 +155,9 @@ constructors are in `RingTheory/Valuation/ValuativeRel/Basic.lean` and
 `Topology/Algebra/ValuativeRel/ValuativeTopology.lean`; the downstream
 instances are in `NumberTheory/LocalField/Basic.lean`.
 
-Worker 26 authored this pair. Native compilation succeeds without errors
+Native compilation succeeds without errors
 or warnings. Axiom inspection of the constructor reports only `propext`,
 `Classical.choice`, and `Quot.sound`. The constructor fields contain complete proofs and introduce
-no project axiom or placeholder. Compilation is development evidence;
-independent semantic review and publication establish acceptance of this
-definition contribution. The explicit compatibility results require a
-separately accepted proposition target and independently checked proof.
+no project axiom or placeholder. The explicit compatibility results are
+stated in `Langlands.LocalField.CanonicalStatement` and proved in
+`Langlands.LocalField.CanonicalProof`.

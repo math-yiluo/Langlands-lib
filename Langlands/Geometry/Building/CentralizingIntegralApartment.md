@@ -1,8 +1,5 @@
 # Centralizing charts from residue-maximal integral tori
 
-Author: Worker 362. The unchanged centralizing descended-apartment dependency
-is the contribution of Worker 360 and Worker 249.
-
 This internal construction assembles the integral conjugacy and descended-torus
 arguments for an arbitrary same-universe field extension `K/F`. Let `G/F` be
 a group scheme, `i:T → G` and `j:T' → G` maps of commutative group schemes,
@@ -73,5 +70,6 @@ generic conjugation square from the original to the target torus, target
 generic maximality, or target chart coverage. It does retain existence of the
 model, initial integral covering chart, residue-maximal integral split target
 torus, and its factorization of `a`. Constructing those data from a pair of
-coefficient-fixed unit-fixed points is still required for the host
-`UnramifiedFixedPairSpecialApartmentStatement`.
+coefficient-fixed unit-fixed points is not done here;
+`UnramifiedFixedPairSpecialApartmentStatement`, which needs them, is proved
+separately in `UnramifiedFixedPairSpecialApartmentProof`.

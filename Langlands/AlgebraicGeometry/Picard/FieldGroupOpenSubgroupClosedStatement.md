@@ -49,9 +49,8 @@ Lemma 39.7.2 (Tag 0B7N, PDF page 9).
 The present proposition is a derived statement, not a quotation of
 Lemma 39.7.7. It replaces the image of a homomorphism by an arbitrary open
 subset with the stated geometric division property, and includes local
-finite type to support the following geometric-point argument. The Lean
-body preserves the formulation supplied by Worker 1028; this module only
-records that formulation.
+finite type to support the following geometric-point argument. This
+module only records that formulation.
 
 For the derivation rationale, take a point `y` in the closure of `U` and
 an algebraic closure `K` of its residue field. This gives a `K`-point `s`

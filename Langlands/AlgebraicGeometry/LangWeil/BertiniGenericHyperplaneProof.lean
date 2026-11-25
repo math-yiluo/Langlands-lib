@@ -113,7 +113,7 @@ theorem radical_span_fieldTensorMap_hyperplaneEq_isPrime [IsAlgClosed K] [IsDoma
       algebraMap 𝓛 Ω (algebraMap (MvPolynomial (Option (Fin n)) k) 𝓛 (X o)) =
         algebraMap 𝓛' Ω (algebraMap (MvPolynomial (Option (Fin n)) K) 𝓛' (X o))) :
     (Ideal.span {TensorSpectrumBaseChange.fieldTensorMap k 𝓛 Ω A
-      (hyperplaneEq k g)}).radical.IsPrime := by
+                   (hyperplaneEq k g)}).radical.IsPrime := by
   apply radical_span_singleton_isPrime_of_surjective (reductionMap k A K π 𝓛' Ω)
     (reductionMap_surjective k A K π 𝓛' Ω hπ) (ker_reductionMap_le k A K π 𝓛' Ω hπ hker)
   rw [reductionMap_hyperplaneEq k A g K π Ω hcompat]

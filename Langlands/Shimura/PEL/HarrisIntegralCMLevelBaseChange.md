@@ -1,6 +1,6 @@
 # Rational-isogeny comparison for actual integral Harris level restriction
 
-This internal unit uses the actual universe-zero Harris CM arithmetic data,
+This internal module uses the actual universe-zero Harris CM arithmetic data,
 abelian scheme `B` over `S`, dual witness `W`, and polarization `lam`. A morphism
 `f : T' ⟶ T` of quasi-separated test schemes over `S` and a full-order integral
 action `a` on the direct family over `T` are supplied. The joint full-order CM
@@ -43,7 +43,9 @@ original Harris level conventions.
 
 The provenance is internal: this specializes the published actual family,
 duality and raw Weil-level constructions and applies their inverse identity.
-It does not yet prove the commuting square on normalized CM classes or on
-compatible families of classes at all geometric points. Test-variable identity
-and composition, representing schemes, admissibility, smoothness and division
-projectivity remain obligations of the surrounding representability proof.
+It does not prove the commuting square on normalized CM classes or on
+compatible families of classes at all geometric points; those squares are proved
+in `HarrisIntegralCMLevelClassBaseChange` and `HarrisIntegralCMLevelFamilyBaseChange`.
+Test-variable identity and composition, representing schemes, admissibility,
+smoothness and division projectivity are not proved here; a representability
+proof must supply them.

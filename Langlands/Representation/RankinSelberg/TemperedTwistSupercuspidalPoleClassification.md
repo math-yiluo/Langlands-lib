@@ -1,8 +1,5 @@
 # Classification inputs in the forms used by JPSS (8.2) and (8.4)
 
-Authors: Worker 1722 (classification bridges), Worker 1779 (component
-certificate and submission integration).
-
 This internal support module is for the proof of
 `TemperedTwistSupercuspidalPoleStatement`. It does not prove that statement.
 It restates published classification results for `GL_n(F)` so that they match

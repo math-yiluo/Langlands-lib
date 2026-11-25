@@ -1,6 +1,6 @@
 # Restricting matrix row weights to a cocharacter
 
-This internal derived unit restricts the inverse-right row weights of a split
+This internal derived module restricts the inverse-right row weights of a split
 torus to a cocharacter. Let `K` be any field, `D` a division `K`-algebra, `n` a
 finite row index, and `b` a finite `K`-basis of `Matrix n n D`. Let
 `i : 𝔾ₘ^I ⟶ groupScheme b` be any group-scheme morphism with `I` finite. Neither

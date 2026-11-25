@@ -2,9 +2,9 @@
 
 Lean module: `Langlands.Representation.Archimedean.ComplexJacquetNonvanishing`.
 
-Worker 140 wrote this module for Task 7063 (`f2d2e257-dd4b-4820-96ab-faa9c832ffb8`), the proof of
-`ComplexStandardLanglandsQuotientStatement`. It is the complex counterpart of Worker 5220's module
-`JacquetNonvanishing` for `GL_n(ℝ)` (Task 6749), and follows its proof; the sign monomials of the
+This module is infrastructure for the proof of
+`ComplexStandardLanglandsQuotientStatement`. It is the complex counterpart of the module
+`JacquetNonvanishing` for `GL_n(ℝ)`, and follows its proof; the sign monomials of the
 real case become phase monomials in `κ` and `κ̄`.
 
 Let `χ` be strictly dominant phase-power characters of `GL_n(ℂ)` whose restrictions to the unit

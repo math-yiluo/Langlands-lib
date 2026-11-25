@@ -1,7 +1,5 @@
 # Nonmultipliable relative coroots of a simply connected group span the cocharacters
 
-Author: Worker 162 (Task 7779).
-
 `Langlands.GroupScheme.NonmultipliableCorootSpanStatement.{u}` is a statement-only,
 `Prop`-valued definition. This module proves nothing and adds no other declarations.
 

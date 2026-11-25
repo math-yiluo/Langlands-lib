@@ -61,5 +61,4 @@ pp. 303–304 (PDF pp. 5–6), registered as
 `harris-1999-cohomological-automorphic-forms-525a222c4489ee9d`, SHA256
 `525a222c4489ee9d3fe86a52c6c17ffb30fcc7c31f24c16a64669e9615085b26`.
 
-Worker 244 formalized the proof. Worker 355 checked the scope and source
-comparison.
+The scope and the source comparison were checked.

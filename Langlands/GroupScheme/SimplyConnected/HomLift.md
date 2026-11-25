@@ -1,7 +1,5 @@
 # Lifting a simply connected source through a central isogeny
 
-Authors: Worker 124.
-
 This internal construction extends the published common-refinement construction
 from central isogenies to arbitrary homomorphisms out of a simply connected
 semisimple group. The field and all schemes have arbitrary common universe.

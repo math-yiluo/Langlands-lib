@@ -36,11 +36,10 @@ to prove that this map is onto.
 These are the first three clauses of the existing corrected
 `MaximalProPConclusions`. The final theorem
 `maximalProPConclusions_of_chamberNormalizers` combines them with explicitly
-supplied direct chamber-normalizer identities. This unit does not prove those
+supplied direct chamber-normalizer identities. This module does not prove those
 identities, nor claim injectivity of the chamber map or a proof of the full
 `AvailableMaximalProPStatement`.
 
 The provenance is internal composition of the actual local-model pro-p proof,
 finite-field Sylow/Borel and normal-Sylow proofs, facet comparison proofs and
-the chamber classification constructions. The target pair and every pair it
-imports are unchanged.
+the chamber classification constructions.

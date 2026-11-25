@@ -1,7 +1,5 @@
 # Kernels of matrices with a split block of columns
 
-Author: Worker 766.
-
 This module is in the namespace `Langlands.LinearAlgebra.KernelColumnSplit`. It is
 plain linear algebra over commutative rings. It imports only Mathlib and the
 Library lemma

@@ -1,7 +1,5 @@
 # A central maximal torus with unipotent quotient: statement
 
-Author: Worker 1487.
-
 `NilpotentCentralTorusStatement.{u}` concerns a smooth connected affine
 group scheme `G` over any field `k : Type u` for which the geometric
 predicate `IsNilpotentGroupScheme G` holds. It asks for a commutative

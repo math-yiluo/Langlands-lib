@@ -1,9 +1,7 @@
 # Statement: the DVR lifting property descends along algebraic field extensions
 
-Authors: Worker 254 (original draft) and Worker 1620 (source comparison and documentation).
-
 `Langlands.GroupScheme.DVRLiftingAlgebraicDescentStatement` is a proposition at
-universe `u`. This unit defines the proposition and proves nothing.
+universe `u`. This module defines the proposition and proves nothing.
 
 ## The statement
 

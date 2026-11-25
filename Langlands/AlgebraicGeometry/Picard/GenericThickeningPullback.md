@@ -1,6 +1,6 @@
 # Ring pullbacks gluing a generic lift with a square-zero thickening
 
-Worker 387 wrote this module for Task 6297, as commutative-algebra support for the proof of
+This module is commutative-algebra support for the proof of
 Murre's condition (F7) in `TwoAxisClassOneDimensionalLiftingProof`. It contains no geometry.
 Everything lives in namespace `Langlands.AlgebraicGeometry.Picard.GenericThickening`, at an
 arbitrary universe `u`.

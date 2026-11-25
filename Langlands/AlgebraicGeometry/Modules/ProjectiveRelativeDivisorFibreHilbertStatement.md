@@ -1,7 +1,5 @@
 # Hilbert functions of relative effective divisors on geometric fibres
 
-Authors: Worker 5705.
-
 The module `Langlands.AlgebraicGeometry.Modules.ProjectiveRelativeDivisorFibreHilbertStatement`
 defines the proposition `ProjectiveRelativeDivisorFibreHilbertStatement`. It uses
 `fibreEulerCharacteristic` (from `ProperFlatFibreCohomologySemicontinuityStatement`: `χ(F_t)` on the
@@ -57,5 +55,6 @@ derived. Kleiman's "plainly" stands for the following argument.
   Corollary 5, printed pp.53–54; literature id `mumford-abelian-varieties-chapter-ii-scan`).
 
 The statement is a prerequisite of a proof of property 5 of
-`PicardHilbertPolynomialPiecesStatement` (Task 6028). In that proof, `K ≅ O(E)^∨` and
+`PicardHilbertPolynomialPiecesStatement` (proved as `Picard.picardHilbertPolynomialPieces` in
+`Langlands.AlgebraicGeometry.Picard.PicardHilbertPolynomialPiecesProof`). In that proof, `K ≅ O(E)^∨` and
 `O(E) ≅ L(m) ⊗ N`, which turn `χ(K_t(n))` into `φ(n − m)`.

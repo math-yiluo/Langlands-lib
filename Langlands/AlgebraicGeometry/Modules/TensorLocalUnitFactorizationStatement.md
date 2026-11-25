@@ -62,8 +62,7 @@ Both lemma proofs and the definition were read in the retained original.
 No source-specific erratum file was present in the current Library or project
 `notes/errata/` locations when checked on 2026-10-26.
 
-The Lean proposition is an internal intermediate interface, specified by
-Worker 124 and formalized by Worker 513. It is motivated by the finite tensor
+The Lean proposition is an internal intermediate interface. It is motivated by the finite tensor
 expansion in Lemma 17.25.2 and local-ring algebra, specialized to schemes.
 It is not a verbatim statement of either lemma. It selects an alternative
 unit-pairing route toward the converse of Lemma 17.25.4, rather than
@@ -71,10 +70,12 @@ formalizing the source's finite-presentation and basis-spreading proof.
 The stronger local-ring hypothesis needed for this interface is supplied by
 schemes; Lemma 17.25.2 itself holds for arbitrary ringed spaces.
 
-## Obligations for a later proof
+## Obligations for the proof
 
-A later proof must justify the following steps and comparisons; this statement
-does not provide them.
+A proof must justify the following steps and comparisons; this statement
+does not provide them. The theorem
+`Langlands.Scheme.Modules.tensorLocalUnitFactorization` in
+`TensorLocalUnitFactorizationProof` proves the proposition.
 
 1. Interpret the given isomorphism and its inverse image of one using the
    actual sheaf tensor. Obtain, near the chosen point, a finite pure-tensor
@@ -106,6 +107,9 @@ does not provide them.
 Any substantive missing comparison needs its own justified construction and
 proof, rather than an extra hypothesis on the final proposition.
 Generic categorical cancellation from invertibility of the tensor of two
-unit-source morphisms to individual isomorphisms is a separate prerequisite.
-The reverse local-rank-one implication and the parent equivalence remain
-separate assembly obligations.
+unit-source morphisms to individual isomorphisms is a separate prerequisite,
+proved in `Langlands.CategoryTheory.Picard.UnitTensorCancellationProof`.
+The reverse local-rank-one implication and the equivalence of local rank one
+with tensor invertibility are separate results:
+`tensorInvertibleLocallyFreeRankOne` in `Picard.TensorInvertibleLocallyFreeRankOneProof`
+and `locallyFreeRankOneIffTensorInvertible` in `Picard.LocalComparisonProof`.

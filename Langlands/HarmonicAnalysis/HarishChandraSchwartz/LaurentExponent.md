@@ -3,7 +3,7 @@
 Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.LaurentExponent`, namespace
 `Langlands.HarishChandraSchwartz`. It imports:
 
-- the published `Representation.Plancherel.UnitaryUnramifiedSmoothEvaluation` (Worker 200):
+- the published `Representation.Plancherel.UnitaryUnramifiedSmoothEvaluation`:
   `HasLaurentUnitaryCoordinates ν e`, the condition that for every `m : H` there is
   `n : J → ℤ` with `((e.symm z).val m : ℂ) = torusCharacter n z` for all `z : J → Circle`, and
   `rationalCanonicalUnitaryUnramifiedCharacterCoordinates_hasLaurent`; through its imports
@@ -31,9 +31,8 @@ Harish-Chandra*, J. Inst. Math. Jussieu 2 (2003), 235–333, DOI 10.1017/S147474
 
 Waldspurger has no coordinates on `Im X(G)`. All content of this module is derived. It supplies
 the hypotheses on the lattice map `n` used by the Library's torus formulation of the proof of
-Proposition VII.1.3: in `TwistedFourierFamily` and in the accepted candidate
-`FourierOrbitSmoothness` (d6417274, not yet in the Library when this module was written), the
-characters are `χ_z(m) = torusCharacter (n m) z` for a map `n` with
+Proposition VII.1.3: in `TwistedFourierFamily` and in
+`FourierOrbitSmoothness`, the characters are `χ_z(m) = torusCharacter (n m) z` for a map `n` with
 `hn : ∀ g h, n (g * h) = n g + n h`, `hK₀ : ∀ k ∈ K₀, n k = 0` for a compact open subgroup `K₀`,
 `hnm : Measurable n` and the identification `hne` of `χ_z` with the coordinate character. This
 module constructs such an `n` from `HasLaurentUnitaryCoordinates` and proves these properties.

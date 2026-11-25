@@ -1,7 +1,5 @@
 # Arbitrary split-torus centralizers and their cocenters
 
-Author: Worker 1282.
-
 This module extends the implemented proof of `genericCentralizer` from maximal
 split tori to arbitrary split-torus homomorphisms, then gives conditional
 reductions for centralizer reductivity and finite Galois splitting of every

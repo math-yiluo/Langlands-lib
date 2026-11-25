@@ -145,7 +145,8 @@ abbrev levelOneCopy (δ : LevelOneIndex F d) :
 
 theorem levelOneCopy_ρ (g : Matrix.GeneralLinearGroup (Fin (d + 1)) F)
     (δ : LevelOneIndex F d) :
-    levelOneCopy K δ ≫ (levelOneBase K).ρ g = (omegaAction F K d).ρ g ≫ levelOneCopy K (g • δ) :=
+    levelOneCopy K δ ≫ ((levelOneBase K).ρ g).asHom =
+      ((omegaAction F K d).ρ g).asHom ≫ levelOneCopy K (g • δ) :=
   SetInducedSpace.copy_actionMap _ _ g δ
 
 /-- The projection `Ω × Δ → Ω`, a morphism of `GL_{d+1}(F)`-objects. -/
@@ -165,8 +166,8 @@ def levelOneCopyHom (H : Subgroup (Matrix.GeneralLinearGroup (Fin (d + 1)) F))
       (Action.res _ H.subtype).obj (levelOneBase (F := F) (d := d) K) where
   hom := levelOneCopy K δ
   comm h := by
-    change (omegaAction F K d).ρ (h : Matrix.GeneralLinearGroup (Fin (d + 1)) F) ≫
-        levelOneCopy K δ = levelOneCopy K δ ≫ (levelOneBase K).ρ h
+    change ((omegaAction F K d).ρ (h : Matrix.GeneralLinearGroup (Fin (d + 1)) F)).asHom ≫
+        levelOneCopy K δ = levelOneCopy K δ ≫ ((levelOneBase K).ρ h).asHom
     rw [levelOneCopy_ρ, smul_levelOneIndex_of_mem (hH h.2)]
 
 @[simp]

@@ -1,7 +1,5 @@
 # Real evaluation of actual character restriction to a split torus
 
-Author: Worker 1381.
-
 This module supplies the real-space comparison used for
 `CentralizerValuationComparisonStatement`. It identifies the actual real
 cocharacter space `V(S)` with the real dual of the rational characters of `Z`.
@@ -9,7 +7,7 @@ It needs two inputs: `S` is an actual split torus, and character restriction
 along `s : S → Z` is injective with finite-index range. Both inputs are explicit
 hypotheses. The module proves neither the reductivity of a torus centralizer, nor
 that `s` is its split component, nor the injectivity of character restriction.
-The declared definition of this unit is `restrictionEvaluationEquiv`, the
+The declared definition of this module is `restrictionEvaluationEquiv`, the
 resulting real-linear equivalence.
 
 ## Notation

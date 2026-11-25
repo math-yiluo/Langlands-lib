@@ -1,7 +1,5 @@
 # Reflecting a fixed-coweight character comparison to the splitting field
 
-Author: Worker 1632.
-
 This internal module allows the actual cocenter character comparison to be
 verified over a further field while retaining the original splitting field,
 the same integral coweight, and the ordinary Galois actions in the descent

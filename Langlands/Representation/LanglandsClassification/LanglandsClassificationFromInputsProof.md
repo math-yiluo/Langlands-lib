@@ -1,6 +1,6 @@
 # The Langlands classification from its remaining inputs: proof
 
-Author: Worker 5295. Module
+Module
 `Langlands.Representation.LanglandsClassification.LanglandsClassificationFromInputsProof`,
 namespace `Langlands.Aubert.General.RepresentedParabolic`.
 
@@ -15,8 +15,8 @@ LanglandsClassificationStatement.{u, v}`. See `LanglandsClassificationFromInputs
 for the premises and the source (Renard, VII.4.2, printed pp.243–246 / PDF pp.249–252).
 
 This is a conditional result. It does not prove `LanglandsClassificationStatement` itself:
-the four premises are still open. They are the targets of Task 4834 (second adjointness),
-Task 4950 (both finite-length statements) and Task 3838 (irreducible implies admissible).
+the four premises (second adjointness, both finite-length statements, and irreducible
+implies admissible) are not proved in the Library.
 
 ## The proof
 
@@ -35,7 +35,7 @@ proofs. It adds no new mathematics.
   kernel.
 - **Part (ii)**, `LanglandsQuotientInjectiveStatement`, is
   `langlandsQuotientInjective_of_secondAdjointness hAdj` (module
-  `LanglandsQuotientMutualRigidityProof`, by Worker 63). That module proves the mutual rigidity
+  `LanglandsQuotientMutualRigidityProof`). That module proves the mutual rigidity
   of two Langlands triplets with a common irreducible quotient, and derives part (ii) from it
   with second adjointness and the VII.4.1 Lemma.
 - **Part (iii)**, `LanglandsQuotientExhaustiveStatement`, is
@@ -55,7 +55,7 @@ proofs. It adds no new mathematics.
   `LanglandsDecompositionProof`) and restriction of exponents to a larger standard Levi
   (`oppositeStandardExponentRestriction`, module `OppositeStandardExponentRestrictionProof`) give
   the chamber condition. The temperedness criterion (`oppositeUntwistTemperedCriterion`, module
-  `OppositeUntwistTemperedCriterion`, by Worker 63) shows that the untwist `σ` is tempered.
+  `OppositeUntwistTemperedCriterion`) shows that the untwist `σ` is tempered.
   Second adjointness turns the embedding of `σ ⊗ ψ` into `r(π)` into a nonzero map from
   `i_P^G(σ ⊗ ψ)` to `π`, which is surjective because `π` is irreducible.
 

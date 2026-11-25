@@ -1,9 +1,7 @@
 # Harish-Chandra's compact-coefficient criterion for product Levis
 
-Author: Worker 180.
-
 `Langlands.CuspidalSupport.LeviHarishChandraTheorem.{uF,uV}` is a
-`Prop`-valued definition of a future proof target. It universally quantifies
+`Prop`-valued definition of a proof target. It universally quantifies
 `p : ℕ` with `Fact p.Prime`, an actual `F : PadicField.{uF} p`,
 compatible `T : F.TopologicalData`, every `n : ℕ`, every
 `B : BlockShape n`, and every actual smooth complex representation
@@ -21,9 +19,9 @@ Writing `G = B.Levi F.Carrier` and
  \operatorname{HasCompactSmoothDualCoefficients}(A|_{G^\circ}).
 \]
 
-The left side is the accepted predicate on `A.representation`: every proper
+The left side is the existing predicate on `A.representation`: every proper
 standard block refinement has a subsingleton unipotent coinvariant quotient.
-The right side applies the accepted compact-coefficient predicate to the
+The right side applies the existing compact-coefficient predicate to the
 actual action `determinantUnitRestriction T B A.representation`. This
 restriction retains the carrier of `A` and evaluates a subgroup element by
 its inclusion in `G`. The subgroup requires normalized determinant absolute
@@ -58,7 +56,7 @@ translation (BZ76).
 - Retained original: `/home/taskhub/central-library/Bernstein-Zelevinsky--Representations of the group GL(n,F) where F is a non-archimedean local field (survey)--1976.pdf`.
 - Read directly for this pair: §§2.39–2.40, printed/PDF p.26; §§3.18
   and 3.20–3.23, printed/PDF pp.34–35. No corresponding errata note
-  was present in the current Library.
+  was present in the Library.
 
 Section 3.18 defines quasicuspidality through vanishing of the Jacquet
 modules for proper refinements of the product group. Section 3.20
@@ -70,7 +68,7 @@ smooth complex representation. Here “finite” has the meaning of
 contragredient vectors. It does not mean finite dimension.
 Sections 3.22–3.23 supply the source's remaining argument via averaging,
 unipotent coinvariants, and Cartan parameters. That argument is not
-implemented in this statement unit.
+implemented in this module.
 
 The coefficient in §2.39 is `g ↦ ℓ (ρ₀ g⁻¹ v)`, whereas the
 Library's `matrixCoefficient` is `g ↦ ℓ (ρ₀ g v)`. Inversion is a
@@ -108,4 +106,4 @@ Their Lean/Markdown pairs are unchanged. These imports supply the
 actual quasicuspidality predicate, determinant-unit restriction, smooth
 category, and coefficient predicate. There are no new axioms or
 placeholder theorems. A proof of this universally quantified proposition
-is a separate task.
+is `leviHarishChandraTheorem` in `HarishChandraAssembly`.

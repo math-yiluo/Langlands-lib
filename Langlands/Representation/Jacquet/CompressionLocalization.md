@@ -1,13 +1,12 @@
 # The actual localization of compact compression and Jacquet fixed vectors
 
-Worker 1755, with reuse guidance from Worker 1751. Derived constructions for
-Renard 2026 VI.9.1, the two localization
+Derived constructions for Renard 2026 VI.9.1, the two localization
 lemmas on printed pp.196–197 / PDF pp.202–203, and their use in VI.9.2,
 printed p.199 / PDF p.205. Source:
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 
-This draft constructs the actual localization equivalence without a
+This module constructs the actual localization equivalence without a
 finite-dimensionality, admissibility or finite-generation hypothesis.
 It uses a compact open subgroup, the published abstract Iwahori contraction
 conditions, a normalizing Levi subgroup, and an element central in that Levi.
@@ -65,7 +64,7 @@ This module asserts no eventual stability or uniform exponent. In VI.9.2
 finite generation over the coefficient ring must still be supplied for
 both the compact fixed vectors and the Jacquet fixed vectors, with their
 compatible coefficient actions. These are constructions and elementary laws
-of the actual localization comparison, rather than a proof of the host task's
+of the actual localization comparison, rather than a proof of the
 uniform stabilization proposition. The broader topological-group and
 commutative-ring settings of the internal helpers are derived scope; no new
 generality is attributed verbatim to Renard.

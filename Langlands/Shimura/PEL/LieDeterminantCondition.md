@@ -12,7 +12,7 @@ acting ring is `D.harrisHodgePELIntegralOrder C`, constructed using the positive
 auxiliary left involution. The base is an actual scheme `S` with an actual
 morphism `s` to `Spec` of `D.kottwitzCocharacterReflexField C`. An actual abelian
 scheme `B` over `S` carries a unital ring action of that integer order in
-`End B`. This unit does not impose injectivity on the action.
+`End B`. This module does not impose injectivity on the action.
 
 For a finite order family `a` and an open `W`, the construction
 `harrisReflexSectionDeterminant` maps the coefficients of
@@ -69,7 +69,7 @@ Hodge polynomial for a basis of a prime-local order and states its reflex and
 integral coefficient properties; p.390 requires equality with the polynomial
 on Lie sections; p.391 addresses representability for sufficiently small levels.
 
-This unit is a derived reflex-field condition using the constructed integer
+This module is a derived reflex-field condition using the constructed integer
 order and requiring every finite family. It makes no assertion that arbitrary
 abelian schemes satisfy the condition. It does not identify this predicate
 with the entire original prime-local moduli problem: the prime-local order and
@@ -77,7 +77,7 @@ integral coefficient model, projectivity and isogeny category, polarization,
 levels and moduli representability remain separate obligations. No output
 scheme or desired Hodge comparison theorem is supplied as construction data.
 
-Worker 57 authored this unit. All arithmetic types, the polynomial variable and
+All arithmetic types, the polynomial variable and
 finite chart-basis types, and the base scheme have universe-zero scope, matching
 the existing reflex polynomial. The index of an auxiliary covering in the
 local-cover lemma may have any universe. The proofs impose no affine-open,

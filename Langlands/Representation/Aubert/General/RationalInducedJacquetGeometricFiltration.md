@@ -1,7 +1,5 @@
 # The actual geometric filtration of `r_J i_I σ` in the extraction-input form
 
-Author: Worker 174, Task 5323 (`c79b0cd0-661f-4239-9f65-483d6f319480`).
-
 Module `Langlands.Representation.Aubert.General.RationalInducedJacquetGeometricFiltration`,
 namespace `Langlands.Aubert.General.RationalPointFamily`.
 
@@ -9,7 +7,7 @@ This module proves, with no hypothesis beyond the displayed rational data, the
 geometric-filtration input `PointInducedJacquetGeometricFiltration` of the
 published extraction route in
 [RationalCuspidalExtractionInputs](RationalCuspidalExtractionInputs.md). That
-predicate was published as an explicit unproved input of
+predicate is an explicit input of
 `rationalCuspidalJacquetFactorExtraction_of_inputs`. It is the first conjunct of
 `RationalCuspidalExtractionInputsStatement`; the second conjunct, proper-standard
 induction exclusion, is not proved here.
@@ -64,7 +62,7 @@ For `pointInducedJacquetGeometricFiltration_of_leviWeyl`:
 1. `positiveSimpleReflectionComparison_of_rootLength` (module
    `RationalSuppliedCoxeterComparisons`) derives the positive-simple-reflection
    comparison from `hRoots`, `hν` and the root-length comparison.
-2. Fix `I`, `J`, `σ`. Worker 124's `pointGeometricObjectFiltrationOfEpsilonBalance`
+2. Fix `I`, `J`, `σ`. `pointGeometricObjectFiltrationOfEpsilonBalance`
    (module `RationalGeometricObjectFiltrationConstruction`) is applied with its
    target index `J` and its source index `I`. It constructs the actual ordered
    support filtration of `pointInducedJacquetObject … J I σ`, which is by
@@ -72,7 +70,7 @@ For `pointInducedJacquetGeometricFiltration_of_leviWeyl`:
    classes, a lift of each class, source and target decompositions and the
    actual grade isomorphisms with the geometric terms.
 3. Its only extra hypothesis, cancellation of the two original Haar
-   corrections at every minimal lift, is supplied by Worker 4021's
+   corrections at every minimal lift, is supplied by
    `geometricEpsilon_mul_eq_one` (module `RationalGeometricEpsilonBalance`).
    That theorem needs closedness of the actual standard parabolics and
    continuity of the actual Levi projections; these are the published

@@ -13,5 +13,6 @@ back to its source, because an algebraic linear functional extends
 along a linear left inverse of the map.
 
 This internal transfer supplies compact differentiation for the cyclic
-submodule of the translated period carrier in Task 6823. The period
+submodule of the translated period carrier in the proof of
+`CuspidalSupportExistenceStatement`. The period
 carrier is spanned by images of actual automorphic realizations.

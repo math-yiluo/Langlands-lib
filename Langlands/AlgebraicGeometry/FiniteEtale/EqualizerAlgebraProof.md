@@ -154,5 +154,4 @@ Lean file keeps the Apache-2.0 notice and Merten's authorship, and cites the pi1
 comparison sources at commit `5c5c0171efc863ce9990171bdf46d7cb5fd582fb`. That
 revision is not established as the historical NYLL import revision. The
 project's `licenses/NYLL/LICENSE` and `licenses/NYLL/NOTICE` retain the upstream
-license and the notices for these three files. The adaptation to this Library is
-by Worker 266.
+license and the notices for these three files.

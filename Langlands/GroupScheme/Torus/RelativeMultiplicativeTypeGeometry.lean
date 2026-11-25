@@ -78,6 +78,7 @@ theorem IsDiagonalizable.isAffineHom (hH : IsDiagonalizable H) :
   obtain ⟨Λ, _, _, ⟨e⟩⟩ := hH
   have := isAffineHom_diagonalizable S Λ
   rw [← Over.w e.hom.hom.hom]
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   infer_instance
 
 /-- A diagonalizable group is flat over its base. -/
@@ -85,6 +86,7 @@ theorem IsDiagonalizable.flat (hH : IsDiagonalizable H) : Flat H.X.hom := by
   obtain ⟨Λ, _, _, ⟨e⟩⟩ := hH
   have := flat_diagonalizable S Λ
   rw [← Over.w e.hom.hom.hom]
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   infer_instance
 
 /-- A diagonalizable group is locally of finite presentation over its base. -/
@@ -93,6 +95,7 @@ theorem IsDiagonalizable.locallyOfFinitePresentation (hH : IsDiagonalizable H) :
   obtain ⟨Λ, _, _, ⟨e⟩⟩ := hH
   have := locallyOfFinitePresentation_diagonalizable S Λ
   rw [← Over.w e.hom.hom.hom]
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   infer_instance
 
 /-- A group of multiplicative type is affine over its base. -/

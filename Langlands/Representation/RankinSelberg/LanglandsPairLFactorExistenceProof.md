@@ -1,7 +1,5 @@
 # Existence of the L-factor of every irreducible admissible pair
 
-Author: Worker 5010.
-
 `Langlands.RankinSelberg.langlandsPairLFactorExistence` proves exactly the
 published proposition
 `Langlands.RankinSelberg.LanglandsPairLFactorExistenceStatement.{uF,uV,uW}`
@@ -87,8 +85,8 @@ The `lean_check` inspection of the theorem reports only the axioms `propext`,
 The target is the sentence after display (4) of Jacquet, Piatetski-Shapiro
 and Shalika, *Rankin-Selberg convolutions*, Amer. J. Math. 105 (1983),
 §(9.4), printed page 458, registered as `jpss-1983-rankin-selberg` (SHA-256
-`d9feed6388ca5acf02ecc6a8cce984871a7c28f062ff441e45a71fa2d8962245`). I
-checked that page as an image (one-based PDF page 93). The source says that
+`d9feed6388ca5acf02ecc6a8cce984871a7c28f062ff441e45a71fa2d8962245`). That
+page was checked as an image (one-based PDF page 93). The source says that
 an irreducible admissible `π` (resp. `σ`) "is uniquely representable as a
 quotient of a representation `ξ` (resp. `η`) of Langland's type", and that
 "one can take (4) as a definition of `L(s, π × σ)` for any pair `π, σ` of
@@ -123,8 +121,8 @@ display (3) is described in
 
 ## Scope
 
-This unit proves only `LanglandsPairLFactorExistenceStatement`. The other
-statements of the same module are separate units and are not claimed here:
+This module proves only `LanglandsPairLFactorExistenceStatement`. The other
+statements of the same statement module are separate and are not claimed here:
 `GenericLanglandsQuotientLFactorStatement`,
 `SquareIntegrableDataLFactorStatement`, and their conjunction
 `LanglandsQuotientLFactorStatement`. The same holds for nongeneric epsilon

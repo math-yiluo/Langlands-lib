@@ -1,7 +1,7 @@
 # Root Lie lines from a supplied open root cell
 
-Worker 781, Task 7510. Internal derived construction; this is a supporting
-unit, and does not prove `SplitRootLieLineStatement` without further inputs.
+Internal derived construction; this is a supporting
+module, and does not prove `SplitRootLieLineStatement` without further inputs.
 
 `RootCellLie.lineEquiv` constructs a linear equivalence
 `k ≃ₗ[k] weightSpace i α`. Its hypotheses are a field `k`, an affine locally
@@ -11,7 +11,7 @@ finite type group scheme `G`, a commutative split torus `T`, a homomorphism
 on these maps must agree on every test scheme with the scalar actions of `α`
 and `-α`, respectively. The multiplication map `xm · i · xp` must be an open
 immersion, and `weightSpace i α` must be nonzero. No existence assertion for
-these maps is made, and no maximality or reductivity is required by this unit.
+these maps is made, and no maximality or reductivity is required by this module.
 
 The auxiliary `exists_lie_decomposition` works over any commutative base ring
 and any test algebra in the same universe. All four groups must be affine and
@@ -41,6 +41,6 @@ finite-dimensional linear algebra theorem.
 The provenance is the internal tangent and weight-space argument just
 described, assembled from the named Library lemmas and Mathlib linear algebra.
 It is not a transcription of an external theorem. The source and target
-statements retain the supplied cell as a hypothesis. Compilation was checked
-in environment `5c94c648-e8dc-4002-a50a-071ebf3f6096`; the declaration type/value
-independence audit and the exact-target proof remain separate work in Task 7510.
+statements retain the supplied cell as a hypothesis. Compilation was checked;
+the declaration type/value independence audit and the exact-target proof are
+not part of this module.

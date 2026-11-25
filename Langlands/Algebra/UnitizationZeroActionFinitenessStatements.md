@@ -1,7 +1,6 @@
 # Zero-action separation of unitized finiteness conventions
 
-Author: Worker 709. This is a statement-only internal derived unit for
-whole-book Renard task `f5d1f399-a1f8-4ab5-a981-90b92abd4857`, revision 2.
+This is a statement-only internal derived module.
 
 The module `Langlands.Algebra.UnitizationZeroActionFinitenessStatements`
 uses the actual public `CompatibleUnitization.module` on the fixed carrier
@@ -60,7 +59,7 @@ The registered older supplement
 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
 PDF pages 18–19, was read as supplementary errata. It gives no resolution
 of this convention question and does not supersede the 2026 original.
-No project or current Library `notes/errata` directory was present at
+No project or Library `notes/errata` directory was present at
 the source audit.
 
 A separate private feasibility check implements the following derivation.
@@ -75,15 +74,13 @@ countability, contradicting the uncountability of ℂ. Noetherianity would
 imply the same forbidden finiteness. This is a derivation rationale;
 no theorem is proved in this statement module.
 
-Development checks in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`
+Development checks
 compiled the canonical aggregate with zero errors or warnings and
-`statement_returns_prop: true`; recovery diagnostic
-`358f589b-7353-40f8-93f8-1967ebb95356` retains that result. Diagnostic
-`05ae9e59-c6c7-4138-b18e-a9e886b70780` inspected all three complete
+`statement_returns_prop: true`. A diagnostic
+inspected all three complete
 bodies and unapplied types, instantiated `uA` at 0 and 1, and checked
 both complete telescopes with explicit module arguments by `Iff.rfl`.
 The aggregate has universe parameter `uA` and only the standard
 `propext`, `Classical.choice` and `Quot.sound` assumptions. The separate
-private feasibility module also compiled cleanly, most recently in
-`e0be3b25-8dad-4a16-9123-281e8d5f95a8`. These development checks supply
-neither independent semantic acceptance nor an accepted proof.
+private feasibility module also compiled cleanly. These development checks
+supply no proof.

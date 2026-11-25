@@ -123,8 +123,8 @@ def cmHarrisSuccessiveRefinementActionIso :
     intro g
     induction g using QuotientGroup.induction_on with
     | H g =>
-      change (cmHarrisFiniteTorsionAction D ρ p U m k).ρ g ≫ 𝟙 _ =
-        𝟙 _ ≫ (cmHarrisFiniteTorsionAction D ρ p U m k).ρ g
+      change ((cmHarrisFiniteTorsionAction D ρ p U m k).ρ g).asHom ≫ 𝟙 _ =
+        𝟙 _ ≫ ((cmHarrisFiniteTorsionAction D ρ p U m k).ρ g).asHom
       simp only [Category.comp_id, Category.id_comp])
 
 @[simp] theorem cmHarrisSuccessiveRefinementActionIso_hom_hom :

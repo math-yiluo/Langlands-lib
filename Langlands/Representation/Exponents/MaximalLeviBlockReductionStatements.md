@@ -1,6 +1,6 @@
 # Reduction statements for the Bernstein component of a non-self-associate supercuspidal
 
-Author: Worker 77. Module
+Module
 `Langlands.Representation.Exponents.MaximalLeviBlockReductionStatements`, namespace
 `Langlands.Aubert.General.RepresentedParabolic`. It contains two **statements**, closed
 `Prop`-valued definitions with universe parameters `u, v`. Neither is assumed or proved here.
@@ -23,7 +23,7 @@ SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`:
 - VII.1.3, Corollary, printed p.226 / PDF p.232, and its proof, printed pp.226–227 /
   PDF pp.232–233.
 
-Worker 77 read PDF pages 232 and 233.
+PDF pages 232 and 233 were read.
 
 The proof begins: "Le premier point découle immédiatement du théorème." Point (i) is
 derived from the Theorem. Points (ii) and (iii) are then proved from (i), the geometric
@@ -88,18 +88,17 @@ the source uses (i) and VI.5.3 instead.
 - **The second premise contains part of the conclusion.** Premise 2 consists of three of
   the four conjuncts of part (iii), so of part (iii) the statement reduces only the
   faithfulness conjunct. Its
-  purpose is to let the derivation of parts (i), (ii) and of faithfulness be reviewed and
-  published apart from the proofs of the Theorem and of the rest of part (iii). Proofs of
+  purpose is to keep the derivation of parts (i), (ii) and of faithfulness apart from the
+  proofs of the Theorem and of the rest of part (iii). Proofs of
   both premises give `MaximalLeviBlockStatements`.
 
 ## Relation to published work
 
-At Library commit `c2558dd5`, `MaximalLeviSupercuspidalReducibilityStatement` has proof task
-`004e00e1-5995-4dc1-884e-a5f512150d0c` and is not proved. The published
+At Library commit `c2558dd5`, `MaximalLeviSupercuspidalReducibilityStatement` is not
+proved. The published
 `MaximalLeviSupercuspidalReducibilityFromInputsStatement`, whose proof is published,
 derives it from eleven other published statements. No theorem proves
-`MaximalLeviBlockStatements` or its part (iii). Both belong to proof task
-`f4046ca6-c4e9-4422-85bf-f67a9d92de79`.
+`MaximalLeviBlockStatements` or its part (iii).
 
 ## Provenance
 

@@ -51,7 +51,7 @@ theorem infiniteTensorEvaluation (p : InfinitePlace K) (z : L ⊗[K] Adeles K)
       (numberFieldAdeleTensorMap K L z).1 q.1 := by
   induction z with
   | tmul a x =>
-    change NumberField.LiesOver.completionMap (x.1 p) *
+    change NumberField.LiesOver.completionMap p q.1 (x.1 p) *
       algebraMap L q.1.Completion a =
       algebraMap L q.1.Completion a *
         infiniteCompletionMap (algebraMap K L) q.1 (x.1 (q.1.comap (algebraMap K L)))

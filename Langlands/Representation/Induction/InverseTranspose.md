@@ -1,7 +1,5 @@
 # Inverse-transpose transport to normalized opposite induction
 
-Author: Worker 470.
-
 This module constructs an equivalence on the actual function spaces of normalized
 block induction. Its public constructor is
 `Langlands.PadicField.TopologicalData.inverseTransposeProductToOppositeEquiv`.

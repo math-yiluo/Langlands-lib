@@ -11,8 +11,8 @@ The torus-depth image normalizes every root filtration: its character
 valuations vanish, equivalent valuations have the same character kernel,
 and omega compatibility makes these points fix the apartment. The same
 conjugation preserves both factors of the original root block. This torus
-normalization proof is adapted from Worker 359’s revision-10 covariance
-draft, with coauthorship.
+normalization proof is adapted from the covariance argument for the K-level
+Moy–Prasad groups (`KPLocalMoyPrasadCovariance`).
 
 At a fixed positive depth `r`, ordinary opposite-root exchange gives a torus
 coordinate of depth `2r`, which antitonicity lowers to `r`. Doubled-positive

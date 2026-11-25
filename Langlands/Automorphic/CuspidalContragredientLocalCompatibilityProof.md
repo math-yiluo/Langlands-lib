@@ -1,7 +1,5 @@
 # Local smooth duality for every pair of cuspidal contragredient presentations
 
-Author: Worker 818.
-
 `Langlands.Automorphic.cuspidalContragredientLocalCompatibility` proves the
 published proposition
 `Langlands.Automorphic.CuspidalContragredientLocalCompatibilityStatement.{uF, uP, uQ}`

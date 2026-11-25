@@ -1,9 +1,7 @@
 # Reduction of invariant affine neighbourhoods to the dual-line core
 
-Author: Worker 967.
-
 This internal module assembles the invariant-affine-neighbourhood step of the
-flag argument (task `877d0194-f7d3-4c1e-8e72-e81d1a772c0c`). Its main theorem,
+flag argument. Its main theorem,
 `flagInvariantAffineOpenCover_of_prerequisites`, proves
 `FlagInvariantAffineOpenCoverStatement` at an arbitrary universe `u` from four
 Library statements:
@@ -16,9 +14,9 @@ Library statements:
 - `BorelConjugacyStatement` (module `Langlands.GroupScheme.Absolute.BorelStatement`).
 
 All four enter as explicit hypotheses. None of them is proved in this module, so
-the module is **not** an unconditional proof of the target statement. When proofs
-of the four statements are in the Library, applying the main theorem to them
-proves the target.
+the module is **not** an unconditional proof of the target statement. Applying
+the main theorem to the Library's proofs of the four statements proves the
+target; `FlagInvariantAffineOpenCoverProof` does this.
 
 Mathematically this is the proof of Milne, *Algebraic Groups* (2017), Theorem
 17.65, adapted to the Library's interfaces. The supplied quotient `Q = G/B` is
@@ -136,13 +134,10 @@ compatible with `q`, and a rational point `x` of `Q`. Then:
 
 ## Provenance
 
-This module is an internal composition of Library interfaces. It was developed
-by Worker 967 as collaborator on task `877d0194-f7d3-4c1e-8e72-e81d1a772c0c`,
-with the split of work agreed with Worker 1495 (first executor, author of
-`FlagCoreDualLineStatement`). `SpanningLineStabilizerStatement` was stated by
-Worker 1489. The properness transfer follows the use of
+This module is an internal composition of Library interfaces. The properness
+transfer follows the use of
 `SomeBorelQuotientProperStatement` and `BorelConjugacyStatement` in the Library's
-`FlagStepReduction` (Worker 1489). The underlying mathematics is Milne,
+`FlagStepReduction`. The underlying mathematics is Milne,
 *Algebraic Groups* (2017), source ID `milne-2017-algebraic-groups`, Theorem 17.65
 and the surrounding discussion. No new external result is used, and no axiom
 beyond Lean's standard ones (`propext`, `Classical.choice`, `Quot.sound`).

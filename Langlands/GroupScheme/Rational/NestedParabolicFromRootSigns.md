@@ -33,8 +33,6 @@ and nonreduced tests.
 
 The provenance is an internal implication between the published targets,
 using the published lattice pairing and the elementary dynamic limit
-calculations in `Dynamic.NestedDecomposition`. Worker 1107 supplied the
-root-negation argument; Worker 1291 formalized and assembled it. The
-independent owners of the two structural targets, standard cocharacter
-realization, standard parabolic order and centralizer reductivity retain
-their proof obligations.
+calculations in `Dynamic.NestedDecomposition`. The two structural targets,
+standard cocharacter realization, standard parabolic order and centralizer
+reductivity are separate statements; this module does not prove them.

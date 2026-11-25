@@ -1,7 +1,5 @@
 # Banach rings from positive-polyradius quotient presentations
 
-Author: Worker 56.
-
 Over a complete ultrametric normed field `K`, this module proves that every
 `PresentedAffinoidAlgebra K` is complete for its existing quotient norm.
 The carrier remains the actual quotient of the finite positive-polyradius

@@ -1,6 +1,7 @@
 # Dominant-ray volume bounds in the actual split-central quotient
 
-This internal auxiliary construction for Task 7500 proves an inverse-modulus
+This internal auxiliary construction for Waldspurger's Corollary VIII.3.2 on
+the actual compatible split-central quotient proves an inverse-modulus
 upper bound for compact cells along the dominant common-uniformizer lattice.
 It retains the supplied compatible measure on the actual split-central left
 quotient and allows the compact open subgroup `K` to differ from the structural

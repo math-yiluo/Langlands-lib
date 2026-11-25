@@ -7,16 +7,13 @@ definitions; it proves nothing:
 - `Langlands.Aubert.General.RationalPointFamily.GeneralizedJacquetRemarksStatement`;
 - `Langlands.Aubert.General.RepresentedParabolic.GeneralizedJacquetContractingRangeStatement`.
 
-Worker 1222 wrote this statement unit under the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`.
-
 ## Source and provenance
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French edition dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1222 read VI.9.1, printed pp.195–198 / PDF pp.201–204, and VI.9.2, printed
+The statements are taken from VI.9.1, printed pp.195–198 / PDF pp.201–204, and VI.9.2, printed
 pp.198–199 / PDF pp.204–205.
 
 Fix `P = MN` with split component `A`, a compact open `K` with an Iwahori decomposition
@@ -39,7 +36,7 @@ After its proof come three remarks:
 Here `A^+(ε) = {a ∈ A_M | |α(a)|_F < ε, α ∈ Δ(P)}` (V.3.22.1, printed p.117 / PDF p.123). The
 published VI.9.1 statements (`UniformCompressionStabilizationStatement`,
 `GeneralizedJacquetLemmaStatement`) state the Proposition and the Theorem. Their
-Markdown records the bound and Remarks 1–3 as not stated. This unit states them.
+Markdown records the bound and Remarks 1–3 as not stated. This module states them.
 The admissible case of Remark 1 is the published and proved VI.6.1 statement
 `StandardCanonicalSectionStatement`.
 

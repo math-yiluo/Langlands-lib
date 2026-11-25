@@ -100,7 +100,7 @@ contravariant composition, zero, and addition laws. They give
 `dualFunctor S : S.Modulesᵒᵖ ⥤ S.Modules` with a `Functor.Additive` instance.
 The proofs reduce to composition and addition of the actual local module maps.
 
-This contribution provides the internal Hom, dual, and their section API. It
+This module provides the internal Hom, dual, and their section API. It
 asserts no pullback base-change isomorphism, local-freeness or rank result,
 tensor-Hom adjunction, or Lie-module construction. The cited section's later
 base-change results are not used.

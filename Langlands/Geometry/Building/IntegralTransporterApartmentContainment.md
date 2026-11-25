@@ -1,8 +1,6 @@
 # Integral transporters preserve containment in translated apartments
 
-Author: Worker 362.
-
-This internal unit connects an actual integral transporter to containment in
+This module connects an actual integral transporter to containment in
 an actual conjugate valuation apartment. It uses
 `IntegralModel.HenselianTransporter` and the published
 `KPApartmentData.conjugateApartmentMap` realization.

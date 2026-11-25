@@ -1,0 +1,156 @@
+/-
+Copyright (c) 2026 Bin Wu. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Bin Wu
+-/
+module
+public import WeilConjectures.AlgebraicGeometry.BoundedConstructibleComplete
+public import WeilConjectures.AlgebraicGeometry.CompletedTowerDirectImage
+public import WeilConjectures.CategoryTheory.ModulePullbackPushforwardAdjunction
+import WeilConjectures.Algebra.Category.ModuleCat.Presheaf.SheafificationBilinearExtension
+import WeilConjectures.Algebra.Category.ModuleCat.Sheaf.ExtensionTensorComparison
+import WeilConjectures.Algebra.Category.ModuleCat.Sheaf.FlatEquationalCriterionOfUniverses
+import WeilConjectures.Algebra.Category.ModuleCat.Sheaf.LocalizedSiteTensorRestriction
+import WeilConjectures.Algebra.Category.ModuleCat.Sheaf.TensorSheafificationOfUniverses
+import WeilConjectures.Algebra.Homology.BoundedFlatIndependentCoefficients
+import WeilConjectures.Algebra.Homology.ChangeOfRingsKFlatAllIndependentCoefficients
+import WeilConjectures.Algebra.Homology.ChangeOfRingsKFlatIndependentCoefficients
+import WeilConjectures.Algebra.Homology.ChangeOfRingsTensorCancellationIndependentCoefficients
+import WeilConjectures.Algebra.Homology.CochainTensorModelRigidity
+import WeilConjectures.Algebra.Homology.ExactProductsRoosComparison
+import WeilConjectures.Algebra.Homology.FlatScalarRestrictionKFlat
+import WeilConjectures.Algebra.Homology.KFlatFixedTensorTriangulated
+import WeilConjectures.Algebra.Homology.KFlatResolution
+import WeilConjectures.Algebra.Homology.KFlatTotalTensorModel
+import WeilConjectures.Algebra.Homology.KInjectiveRestrictLocalizedOfUniverses
+import WeilConjectures.Algebra.Homology.KernelShiftedMappingCone
+import WeilConjectures.Algebra.Homology.RingedSiteRestrictionKFlat
+import WeilConjectures.Algebra.Homology.RingedToposAdaptedFlatResolution
+import WeilConjectures.Algebra.Homology.RingedToposPullbackFilteredColimits
+import WeilConjectures.Algebra.Homology.ScalarHomOrdinaryTensorComparison
+import WeilConjectures.Algebra.Homology.SheafRingDerivedHomComparison
+import WeilConjectures.Algebra.Homology.SplitPerfectTensorKInjective
+import WeilConjectures.Algebra.Homology.TensorColimitsIndependentCoefficients
+import WeilConjectures.AlgebraicGeometry.ConstantCompletionCompletedFinitePull
+import WeilConjectures.AlgebraicGeometry.ConstantCompletionInverseImageExists
+import WeilConjectures.AlgebraicGeometry.ConstantCompletionKoszulReflector
+import WeilConjectures.AlgebraicGeometry.DerivedPullbackRepresentativeComputation
+import all WeilConjectures.AlgebraicGeometry.DerivedScalarExtensionRestrictionAdjunction
+import WeilConjectures.AlgebraicGeometry.EtaleInverseImageModuleAdjunction
+import WeilConjectures.AlgebraicGeometry.ExactProductFunctorStrictLimit
+import WeilConjectures.AlgebraicGeometry.ExtendedCechCompletionModel
+import WeilConjectures.AlgebraicGeometry.FiniteLocallyClosedStratification
+import WeilConjectures.AlgebraicGeometry.FourCorners
+import WeilConjectures.AlgebraicGeometry.KFlatRingedToposPullback
+import WeilConjectures.AlgebraicGeometry.NoetherianStratumDetection
+import WeilConjectures.AlgebraicGeometry.ProEtale.AffineClosedInverseImageEvaluation
+import WeilConjectures.AlgebraicGeometry.ProEtale.ClosedSiteAdjunction
+import WeilConjectures.AlgebraicGeometry.ProEtaleAlgebraicInverseImage
+import WeilConjectures.AlgebraicGeometry.ProEtaleImmersionLimitPreservation
+import WeilConjectures.AlgebraicGeometry.ProEtaleInverseImageLimitsZariskiLocal
+import WeilConjectures.AlgebraicGeometry.ProEtaleInverseImageTensorComparison
+import WeilConjectures.AlgebraicGeometry.ProEtaleModelRingPresentation
+import all WeilConjectures.AlgebraicGeometry.ProEtaleModuleInverseImageCanonicalUnit
+import WeilConjectures.AlgebraicGeometry.ProEtaleModuleInverseImageComparison
+import WeilConjectures.AlgebraicGeometry.ProEtaleModuleInverseImageUnitComparison
+import WeilConjectures.AlgebraicGeometry.ProEtaleProductsExact
+import WeilConjectures.AlgebraicGeometry.ProEtaleWeaklyEtaleLocalization
+import WeilConjectures.AlgebraicGeometry.ReducedInducedClosedSubscheme
+import WeilConjectures.AlgebraicGeometry.ResolvingRepresentativeWhiskering
+import WeilConjectures.AlgebraicGeometry.RingedTopoiDerivedPullback
+import WeilConjectures.AlgebraicGeometry.RingedTopoiTensorComparisonConstruction
+import WeilConjectures.AlgebraicGeometry.ScalarExtensionBinaryCoherence
+import WeilConjectures.AlgebraicGeometry.SemilinearDerivedCalculus
+import WeilConjectures.AlgebraicGeometry.StrictConstantTowerOperations
+import WeilConjectures.AlgebraicGeometry.StrictPerfectPackageOnSite
+import WeilConjectures.AlgebraicGeometry.WeilCompletedRealizationRegular
+import WeilConjectures.CategoryTheory.DerivedCategory.CochainAdjunctionCompatibility
+import WeilConjectures.CategoryTheory.DerivedCategory.ExactRestrictionComposition
+import WeilConjectures.CategoryTheory.DerivedCategory.LeftDerivedFromResolvingClass
+import WeilConjectures.CategoryTheory.DerivedCategory.RightDerivedFunctor.FullyFaithful
+import WeilConjectures.CategoryTheory.DerivedCategory.RightDerivedFunctor.MapDerivedComp
+import WeilConjectures.CategoryTheory.ExactDerivedAdjunction
+import WeilConjectures.CategoryTheory.FlatScalarKoszulTowerComparison
+import WeilConjectures.CategoryTheory.GeometricModuleConstruction
+import WeilConjectures.CategoryTheory.LeftDerivedKanSourceTriangles
+import WeilConjectures.CategoryTheory.LocalCoefficientLocalization
+import WeilConjectures.CategoryTheory.ModuleInverseImageAdjunction
+import WeilConjectures.CategoryTheory.ModuleInverseImageUnitComparison
+import WeilConjectures.CategoryTheory.NatTransFromResolvingClass
+import WeilConjectures.CategoryTheory.RightKanExtensionCoherentShift
+import WeilConjectures.CategoryTheory.RingedCechCompletionUnitIdempotence
+import WeilConjectures.CategoryTheory.RingedCechKoszulComparisonOnSite
+import WeilConjectures.CategoryTheory.RingedDerivedRestrictionGeneral
+import WeilConjectures.CategoryTheory.RingedKoszulCompletionReflector
+import WeilConjectures.CategoryTheory.RingedNegativeKoszulDuality
+import WeilConjectures.CategoryTheory.RingedSectionLocalizationOfUniverses
+import WeilConjectures.CategoryTheory.RingedToposKFlatPullback
+import WeilConjectures.CategoryTheory.RoosComparisonHorizontalCoherence
+import WeilConjectures.CategoryTheory.ScalarLocalizationRegularColimit
+import WeilConjectures.CategoryTheory.SheafPullbackForgetComparison
+import WeilConjectures.CategoryTheory.Sites.MonObj
+import WeilConjectures.CategoryTheory.StrictRoosDerivation
+import WeilConjectures.CategoryTheory.StrictRoosDerivedLimitComparison
+import WeilConjectures.CategoryTheory.TowerSplitEnvelope
+import WeilConjectures.Mathlib.Algebra.Homology.BifunctorShift
+import WeilConjectures.Mathlib.CategoryTheory.Shift.Adjunction
+import WeilConjectures.RingTheory.FactorsThroughLocalization
+import WeilConjectures.RingTheory.FilteredColimitOfFactorization
+import WeilConjectures.SecSmoothPurity.CochainComparisonMonoidalEquations
+import WeilConjectures.SecSmoothPurity.CochainInverseComparison
+import WeilConjectures.SecSmoothPurity.CochainPullbackTensorCoherence
+import WeilConjectures.SecSmoothPurity.ModuleTensorGenerators
+import WeilConjectures.SixFunctors.Etale.BaseChangeTheorems.Proper
+import WeilConjectures.SixFunctors.ProEtale.BaseChange.WeaklyEtale
+import WeilConjectures.SixFunctors.ProEtale.Comparison.LowerStarAcyclic
+import WeilConjectures.SixFunctors.ProEtale.FiniteCoefficient.Derived.ModuleDerivedCategory
+import WeilConjectures.SixFunctors.ProEtale.FiniteCoefficient.Derived.OpenLowerShriekProj
+import WeilConjectures.SixFunctors.ProEtale.FiniteCoefficient.LowerShriek.Open.Conservative
+import WeilConjectures.SixFunctors.ProEtale.FiniteCoefficient.UpperLowerStar.FlatModuleCat
+public import Mathlib.Algebra.Category.ModuleCat.Sheaf.PullbackContinuous
+public import Mathlib.CategoryTheory.Functor.Derived.Adjunction
+public import WeilConjectures.CategoryTheory.HomotopyCategory.Adjunction
+public import WeilConjectures.CategoryTheory.DerivedCategory.RightDerivedFunctor.KInjective
+
+/-! # Completed pullback on the published completed-coefficient categories
+
+Source: Stacks proetale.tex, Tag 099N (2),(5), blueprint order 1261.
+(auxiliary; not a blueprint node)
+The coefficient structure is fixed on all quotient projections. Ordinary pullback
+is its total derived sheafified tensor inverse image. Completion is characterized
+by its reflection universal property on the actual intrinsic complete subcategory.
+-/
+
+@[expose] public noncomputable section
+set_option autoImplicit false
+set_option synthInstance.maxSize 4096
+universe u
+open CategoryTheory CategoryTheory.Functor CategoryTheory.Limits Opposite AlgebraicGeometry
+open AlgebraicGeometry.ProEtale
+namespace AlgebraicGeometry.Scheme
+variable {X Y : Scheme.{u}} (g : X ⟶ Y) {A : Type (u + 1)} [CommRing A]
+variable (d : AdicCoefficientDatum A)
+
+/-- The original ring-valued presentation of the actual coefficient limit.
+Source: blueprint order 1261 (auxiliary; not a blueprint node). -/
+abbrev pbcActualCompletedRing (T : Scheme.{u}) :=
+  (adicLisseForget T).obj (pbcAdicCompletion T d)
+
+/-- The recorded coefficient structure map, after forgetting commutativity.
+Source: Stacks 099N (auxiliary; not a blueprint node). -/
+abbrev pbcActualStructureMap : pbcActualCompletedRing d Y ⟶
+    (proEtaleSheafDirectImage g RingCat.{u + 1}).obj (pbcActualCompletedRing d X) :=
+  ⟨Functor.whiskerRight (completedCoefficientDirectImageMap g d).hom
+    (forget₂ CommRingCat.{u + 1} RingCat.{u + 1})⟩
+
+section CompletionPresentation
+variable (X)
+variable (r : ℕ) (a : Fin r → A) (ha : Ideal.span (Set.range a) = d.ideal)
+
+attribute [local irreducible] pbcCompletedComparison
+
+end CompletionPresentation
+
+variable (T : Scheme.{u})
+
+end AlgebraicGeometry.Scheme

@@ -1,6 +1,6 @@
 # The integral parameters remaining in the two-induced-block swap
 
-This internal reduction for Task 7172 uses the generic GL4 swap and the
+This internal reduction for `RealInducedSwapStatement` uses the generic GL4 swap and the
 equal-parameter identity. Write \(p=|d.\mathrm{weight}|\),
 \(q=|e.\mathrm{weight}|\), and
 \(\nu=(\mathrm{chB}\ d).\mathrm{exponent}-

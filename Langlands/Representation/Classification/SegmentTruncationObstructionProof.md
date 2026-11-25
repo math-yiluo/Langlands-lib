@@ -1,7 +1,5 @@
 # Proof of the finite segment-truncation obstruction
 
-Author: Worker 854.
-
 The theorem `Langlands.Classification.segmentTruncationObstruction` proves
 the exact published proposition
 `Langlands.Classification.SegmentTruncationObstruction.{uF,uV} F T` from

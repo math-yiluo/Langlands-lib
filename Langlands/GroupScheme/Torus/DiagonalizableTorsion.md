@@ -1,7 +1,5 @@
 # Actual integer torsion of diagonalizable groups
 
-Worker 508.
-
 This internal construction identifies the actual scheme-theoretic kernel
 `D_R(M)[n]` with `D_R(M/nM)` over every commutative ring `R`, for every abelian
 group `M` and every natural number `n`. It uses the unsaturated quotient by the

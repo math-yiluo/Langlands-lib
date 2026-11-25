@@ -1,23 +1,22 @@
 # Finite Weyl models over Noetherian bases from a supplied affineness criterion
 
-Author: Worker 640.
-
-This draft develops a conditional Noetherian finite-Weyl construction for Task 7526.
-The proposition `SelfCentralizingTorusWeylAffinenessStatement` remains an explicit
-input; this module does not prove it or the parent affineness target.
+This module develops a conditional Noetherian finite-Weyl construction toward
+`ReductiveFiberAffinenessStatement` (affineness of smooth group schemes with connected
+reductive residue fibres). The proposition `SelfCentralizingTorusWeylAffinenessStatement`
+is an explicit input; this module does not prove it or that affineness statement.
 
 The generic scheme lemma `isFinite_of_noetherian_dvr_pullbacks` proves finiteness
 of a separated quasi-compact locally quasi-finite morphism locally of finite type
 to a Noetherian affine base if all pullbacks to DVR spectra are finite. On a
 valuative square, the finite pullback has a lift by properness; compose with the
-pullback projection. The published Noetherian DVR valuative criterion gives
+pullback projection. The Noetherian DVR valuative criterion gives
 universal closedness. Proper quasi-finite morphisms are finite.
 
 `isMaximalTorus_fieldPoint_of_connectedReductive_residueFibers` and
 `isFibrewiseMaximalTorus_baseChange` use smoothness and affineness of each actual
 residue fibre, rather than global affineness, to transport maximality. The first
 proof factors a supplied field point through its canonical residue-field map,
-applies the published field-extension theorem there, then transports the actual
+applies the field-extension theorem there, then transports the actual
 inclusion through the iterated-pullback comparison. The second applies this
 construction to every residue point of the new base.
 
@@ -36,7 +35,7 @@ supplied actual normalizer quotient. Every DVR pullback has a closed relative
 torus which stays fibrewise maximal and represents its full centralizer. The
 conditional DVR affineness theorem makes the ambient pullback affine. Its
 connected reductive residue fibres then make it globally reductive, so the
-published Weyl-quotient finiteness reduction applies to the original pulled-back
+Library's Weyl-quotient finiteness reduction applies to the original pulled-back
 quotient. The original all-test torus-kernel condition is rewritten using the
 self-centralizer representation, then transported by
 `torusCentralizerKernel_baseChange`. No quotient is replaced or identified by
@@ -54,10 +53,11 @@ separated and quasi-compact ambient structure morphism, connected reductive actu
 residue fibres, and a supplied closed self-centralizing fibrewise-maximal relative
 torus. The construction explicitly takes a proof of
 `SelfCentralizingTorusWeylAffinenessStatement.{u}` as an argument. That structural
-criterion remains a separate unproved input. After the quotient is proved finite,
+criterion is a separate input, which the Library does not prove. After the quotient is proved finite,
 it is affine, and the criterion's equivalence gives the last field.
 
 No claim for arbitrary non-Noetherian bases follows from the DVR test here.
-Descending connected reductive residue fibres to a Noetherian model remains a
-separate problem. This conditional construction does not prove the criterion,
-provide universal torus-family existence, or prove Task 7526's unchanged target.
+Descending connected reductive residue fibres to a Noetherian model is a
+separate problem, not treated here. This conditional construction does not prove
+the criterion, provide universal torus-family existence, or prove
+`ReductiveFiberAffinenessStatement`.

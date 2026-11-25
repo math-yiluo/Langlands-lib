@@ -34,6 +34,6 @@ This is an internal construction from the published actual differential,
 finite algebraic representation, general linear determinant and determinant
 invariance under change of linear coordinates. It makes no structural
 smoothness or finite-dimensionality claim about dynamic subgroups: finite
-coordinates are the explicitly stated input of this unit. For normalized
+coordinates are the explicitly stated input of this module. For normalized
 conjugation the original action retains orientation `h*u*h⁻¹`. No absolute
 value, Haar measure, square root or analytic modulus is used.

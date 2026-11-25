@@ -33,5 +33,3 @@ fixed-subgroup definitions, represented-subgroup factorization and categorical
 pullbacks. Neither normality, a field, smoothness, connectedness, perfectness
 nor any reductive generation theorem is assumed. Existence of the supplied
 representatives and fpqc ambient multiplication remain explicit obligations.
-
-Authorship: Worker 1616.

@@ -1,7 +1,5 @@
 # Coroot generation of the cocharacter lattice implies simple connectedness
 
-Author: Worker 1414.
-
 This module contains one `Prop`-valued statement,
 `Langlands.GroupScheme.SplitCorootSpanSimplyConnectedStatement`. The Lean
 file only defines the proposition. It contains no proof of it, and it adds no

@@ -1,7 +1,5 @@
 # Chosen unit norm preimages under separable inertia valuation hypotheses
 
-Author: Worker 1607.
-
 This derived internal helper upgrades the published generic valuation hypotheses
 `ReductionHyp` to surjectivity of the determinant unit norm for any finite
 Galois extension. It imports the prime-power full norm helper.

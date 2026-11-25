@@ -1,9 +1,9 @@
 # Universe-general reduction of regular atlas existence to standard-smooth affine charts
 
-This module adapts the published `PointManifold.StandardSmoothReduction` implementation by Worker 135
+This module adapts the `PointManifold.StandardSmoothReduction` implementation
 to `PointManifold.General`, with an explicit arbitrary coefficient universe
-`u` and `k : Type u`. Worker 1650 made this universe extension. It uses the
-published actual `RingPoint` carrier and evaluation topology, and leaves the
+`u` and `k : Type u`. It uses the
+actual `RingPoint` carrier and evaluation topology, and leaves the
 existing target and all its imported definitions unchanged. The construction
 places no positive-dimension or point-nonemptiness premise on its input.
 
@@ -33,4 +33,4 @@ The construction includes zero dimension and empty actual point spaces: its
 pointwise choice requires no inhabitedness premise. It is a conditional
 reduction and does not by itself prove the analytic standard-smooth chart
 input. Its provenance is the internal composition of the neighborhood and
-chart-transfer constructions with the published actual open-point API.
+chart-transfer constructions with the actual open-point API.

@@ -1,6 +1,6 @@
 # Unchanged-algebra local intersections subordinate to a special cover
 
-Worker 1685 extends the proved special-cover member intersection construction
+This module extends the proved special-cover member intersection construction
 to arbitrary full local domains whose literal loci lie in two chosen original
 members of the finite cover. Each input keeps its original actual algebra,
 regardless of its original presentation chart. Coefficient, ambient-space and
@@ -8,8 +8,8 @@ original-index universes remain independent.
 
 This is internal derived infrastructure from the actual original-chart
 reexpression and coherence results, the full `LocalDomain` category and
-`SpecialCoverDomainIntersection`. Supporting helpers, including Worker 1582's
-unchanged domain product and closed-ideal extension constructions, are credited.
+`SpecialCoverDomainIntersection`. Supporting helpers include the
+domain product and closed-ideal extension constructions.
 No new original-source assertion is used.
 
 `LocalDomain.reexpress` uses the proved full-domain reexpression in a containing
@@ -37,4 +37,6 @@ The construction retains arbitrary positive radii, trivial valuations,
 nonreduced and zero algebras, and empty domains, without global ambient
 Hausdorffness. It supplies the individual local intersections for a finite
 subordinate cover. The descent needed to assemble them across the entire
-special subset remains a separate obligation.
+special subset is not done here. The full `SpecialSetIntersectionStatement`,
+which needs it, is proved as `specialSetIntersection` in
+`SpecialSetIntersectionProof`.

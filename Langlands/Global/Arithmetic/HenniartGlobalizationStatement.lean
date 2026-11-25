@@ -26,7 +26,7 @@ namespace Langlands.Global
 
 open NumberField Langlands.Weil.Local Langlands.Global.CompletionPadic
 open Langlands.VirtualRepresentation Langlands.VirtualRepresentation.RelativeGlobal
-open Langlands.ClassField.Global
+open Langlands.ClassFieldTheory.Global
 
 section Transport
 

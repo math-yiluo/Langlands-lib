@@ -1,7 +1,5 @@
 # Segment induction from a minimal consecutive-run word
 
-Author: Worker 320.
-
 `MinimalIntegralCuspidalRunsSegmentInduction` concerns actual smooth complex
 representations over an arbitrary supplied p-adic field and topology. The field
 and carrier universes are independent; representation carriers are saturated

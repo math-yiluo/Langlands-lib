@@ -1,8 +1,5 @@
 # The upper bound of Waldspurger's Lemma II.1.1 for the actual `Ξ` (statement)
 
-Author: Worker 3642 (formerly Worker 19), task `1ef6854b-f0e9-4d96-bbe5-cb8c4b52f927`
-(revision 1).
-
 Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalXiUpperBoundStatement`,
 namespace `Langlands.HarishChandraSchwartz`. It imports
 `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalXiLowerBound`. It uses that module's
@@ -135,7 +132,9 @@ The upper bound itself does not mention `K0`, and `K` need not be related to `K0
 
 ## Status and scope
 
-This is a statement target; it is not proved here. Waldspurger's proof fixes `t` as in
+This is a statement target; it is not proved here. The Library proves it as
+`rationalXiUpperBound` (module `RationalXiUpperBoundProof`), through the reduction
+`rationalXiUpperBound_of_jacquetUnipotent` of `RationalXiUpperBoundReduction`. Waldspurger's proof fixes `t` as in
 Proposition I.4.3 for the pair `(e, e)`. It splits `M̄_0^+` into the regions `M̄_0^+(P)` of the
 standard parabolics `P`, and uses that `(π_P(a) − 1)^d` kills the Jacquet module `V_P` of
 `I_{P_0}^G 1` for `a ∈ A_M` ("On sait calculer `π_P`, cf. I.3"). So the coefficient of the

@@ -26,4 +26,6 @@ and a finite original field extension are explicit. No separability assumption
 is imposed. Empty exceptional sets are allowed: the coefficient argument does
 not assume that the lower S-integer ring has the whole original lower field as
 its fraction field. Finite local freeness and the integral and adelic Weil
-comparisons remain obligations of the host task.
+comparisons are left to the proof of the statement this module serves,
+`AdelicProjectiveWeilComparisonStatement` (Example 4.2), which the Library
+proves as `adelicProjectiveWeilComparison` in `AdelicProjectiveWeilComparisonProof`.

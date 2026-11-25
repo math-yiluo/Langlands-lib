@@ -1,6 +1,6 @@
 # Finite continuous spans under bilinear operations
 
-Author: Worker 94. Internal finite-basis argument, with no topology on the vector space carriers.
+Internal finite-basis argument, with no topology on the vector space carriers.
 
 A finite linear expansion with continuous complex scalar coefficients has finite continuous span. Conversely, a map with finite continuous span has such an expansion: choose a finite basis of its range span and extend the coordinate functionals to the ambient vector space. Applying these extended algebraic linear functionals to the map supplies continuous coefficients.
 

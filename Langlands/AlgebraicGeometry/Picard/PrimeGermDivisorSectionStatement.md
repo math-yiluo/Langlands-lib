@@ -84,13 +84,11 @@ statement is vacuous.
 ## Use
 
 The statement is used in the proof of
-`Langlands.GroupScheme.AlgebraicallyClosedSectionSeedExistenceStatement` (proof task
-ff2d671a-f569-4f74-bab5-c409b9407294), where the published theorem
+`Langlands.GroupScheme.AlgebraicallyClosedSectionSeedExistenceStatement` (module
+`Langlands.AbelianScheme.AlgebraicallyClosedSectionSeedExistenceProof`), where the published theorem
 `Langlands.AlgebraicGeometry.smoothAlgClosedFactorialStalks` supplies factorial stalks for
 schemes smooth over an algebraically closed field: a rational point `x ≠ e` is separated by
 a prime factor of the germ at `e` of a function vanishing at `e` but not at `x`, and a
 nonzero tangent vector at `e` by a prime factor not killed by it.
 
-The Lean text is, unchanged, the required statement text of statement task
-ccde8b6e-eab2-4800-89b1-cb3b09bfdaee, which was published from the seed-existence proof task
-but never received an executor; it is therefore submitted here together with its proof.
+The Lean text is the statement text required by the seed-existence proof.

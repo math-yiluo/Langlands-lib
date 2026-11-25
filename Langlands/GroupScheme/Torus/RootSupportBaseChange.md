@@ -1,6 +1,6 @@
 # Actual roots of a split torus after field extension
 
-Worker 416. Let `G` be an affine group scheme locally of finite type over a
+Let `G` be an affine group scheme locally of finite type over a
 field `k`, and let `i : T → G` be a homomorphism from a split commutative
 torus. For every extension field `K/k`, this module proves that the actual
 root set of the pulled-back homomorphism is exactly the image of the original

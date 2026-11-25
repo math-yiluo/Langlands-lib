@@ -1,8 +1,6 @@
 # Renard A.VIII.2: proof that the regular unital module is a small progenerator
 
-Author: Worker 734.
-
-This proof unit targets the unchanged published proposition
+This proof module targets the unchanged published proposition
 `Langlands.Renard.RegularModuleSmallProgeneratorStatement`, imported from
 `Langlands.CategoryTheory.Renard.RegularModuleSmallProgeneratorStatements`.
 It works with the actual published predicates `HomSmallProgenerator`,
@@ -172,30 +170,26 @@ The reused Mathlib declarations are from commit
 `homProjectiveComparison` and `homGeneratorComparison` are imported
 unchanged.
 
-This unit does not address the equivalence with right `End(P)`-modules, the
+This module does not address the equivalence with right `End(P)`-modules, the
 converse for categories equivalent to module categories, nonunital module
 categories, or the finite-support and finite-type assertions.
 
 ## Development checks
 
-Approved environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` compiled the
-module without warnings or errors. Lake build and declaration inspection of
+A development check compiled the module without warnings or errors. Lake
+build and declaration inspection of
 `Langlands.Renard.regularModuleSmallProgenerator` completed without warnings
-or errors in diagnostic `91568007-bcb7-4af7-8de0-482cc742a967`, over
-Library commit `d8292e5e2ee514f9410e96a37b722b57f1e9de93`. The
+or errors, over Library commit `d8292e5e2ee514f9410e96a37b722b57f1e9de93`. The
 inspection reports a theorem with independent level parameters `w, v, u` and only the
 standard axioms `propext`, `Classical.choice` and `Quot.sound`. The inspected
 type has SHA256
 `faaa6c2f8630ea8998ebfb1b63b369399ef970a67e0b641db8058bd5e9f94db5`.
 
-A private diagnostic, `7c2ff5ff-d6c8-45c2-8d25-c456fb82542f`, ran further
-checks. It assigned the unapplied theorem to the full target telescope above
+A private diagnostic ran further checks. It assigned the unapplied theorem to the full target telescope above
 and checked the displayed unfolding by `rfl`. It found the projectivity
 instances named above. It applied the theorem to `ℤ` at universes
 `.{7, 3, 0}` under a supplied `HasCoproducts.{7}` hypothesis, and to the
 zero ring `PUnit` and the noncommutative ring `Module.End ℤ (ℤ × ℤ)` at
 `.{0, 0, 0}`. It also checked by `rfl` that the natural isomorphism's
 component sends `f` to `f.hom (ULift.up 1)`, and by `one_smul` that its
-inverse sends `x` to a morphism with value `x` at `ULift.up 1`. These are
-development checks; independent semantic review, official exact-target
-validation and publication are separate requirements.
+inverse sends `x` to a morphism with value `x` at `ULift.up 1`.

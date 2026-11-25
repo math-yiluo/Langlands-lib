@@ -1,10 +1,9 @@
 # Index comparisons for an aligned spin cover
 
-Author: Worker 64 (interface agreed with Worker 73).
-
-`Langlands.GroupScheme.AlignedSpinCoverTitsIndexStatement.{u}` is an
-**unproved** statement. It is the index-comparison half of
-`ClassicalTypeDSpinPresentationStatement`. The theorem
+`Langlands.GroupScheme.AlignedSpinCoverTitsIndexStatement.{u}` is a
+statement that this module does **not** prove; it is proved as
+`alignedSpinCoverTitsIndex` in `AlignedSpinCoverTitsIndex`. It is the
+index-comparison half of `ClassicalTypeDSpinPresentationStatement`. The theorem
 `classicalTypeDSpinPresentation_of_aligned` derives that statement from
 this one and from `ClassicalTypeDAlignedSpinCoverStatement`. The
 statement holds over every field, in every characteristic, for every
@@ -112,7 +111,7 @@ characteristic, and its formulation does not rely on Chapter X.
 
 This is a derived formulation. Tits describes the rational points of
 representatives of strict isogeny classes and their indices. He does not
-state this Lean group-scheme proposition. The proof successor must
+state this Lean group-scheme proposition. A proof must
 compare the Witt index with the actual split rank of `G` through the
 central isogeny, and identify the actual distinguished vertices of `d`
 with the restricted roots of `O(q)⁰`, using the alignment to fix the

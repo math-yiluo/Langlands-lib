@@ -1,7 +1,5 @@
 # The product topology on S-unit ideles
 
-Author: Worker 107.
-
 This internal construction identifies the Library's subgroup `sUnitIdeles K S`
 with the product of the whole infinite idele factor, the full multiplicative
 groups at finite places in `S`, and valuation-unit groups at finite places

@@ -1,9 +1,9 @@
 # The local cyclic prime-step tower used in Harris's general position
 
-Author: Worker 84. This module defines the proposition
+This module defines the proposition
 `Langlands.Global.HarrisCyclicPrimeTowerStatement.{u}`. It supplies a
-separate target for the field-theoretic tower needed in H2 of the global
-automorphic and Henniart-input program. The module proves no existence
+separate target for the field-theoretic tower needed for Harris's general
+position. The module proves no existence
 assertion.
 
 ## Mathematical content
@@ -88,10 +88,9 @@ the existing common-closure extension objects and `IsCyclicPrimeStep`.
 Neither that module's general-position assertions nor the present
 proposition are assumed true by defining this target.
 
-The planned proof reuses the Library's actual inertia-solvability
+The proof, `harrisCyclicPrimeTower` in `HarrisCyclicPrimeTowerProof`,
+reuses the Library's actual inertia-solvability
 theorem and `Langlands.FieldTheory.solvableGaloisPrimeTower`. The generic
 tower theorem takes solvability as a premise; this target requires
 deriving it for the actual local field and transporting the resulting
-intermediate fields into the common closure. Its proof belongs to a
-separate exact-target proof task after this proposition is independently
-accepted and published.
+intermediate fields into the common closure.

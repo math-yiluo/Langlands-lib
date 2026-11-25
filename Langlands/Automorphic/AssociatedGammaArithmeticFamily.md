@@ -1,8 +1,8 @@
 # The arithmetic Hecke Euler family of a pair of relative Weil representations
 
-Supporting module of Task 5003 (module
+Supporting module for the proof of `AssociatedGammaStatement` (module
 `Langlands.Automorphic.AssociatedGammaArithmeticFamily`, namespace
-`Langlands.ClassField.Global.RelativeWeilGroup`). It builds the arithmetic side `A` of the
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup`). It builds the arithmetic side `A` of the
 two-twist comparison engine used for `AssociatedGammaStatement` (Henniart 2000, Théorème
 2.3), from the proved global equation `relativeWeilTwistFunctionalEquation : 
 RelativeWeilTwistFunctionalEquationStatement` (Tate 1979, Theorem 3.5.3).

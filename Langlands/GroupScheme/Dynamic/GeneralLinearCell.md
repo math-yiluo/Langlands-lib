@@ -1,6 +1,6 @@
 # The opposite open cell of `GL_n` for a weight vector: matrix algebra
 
-This internal unit contains the matrix algebra behind the opposite open cell of a general
+This module contains the matrix algebra behind the opposite open cell of a general
 linear group. Throughout, `n` is a finite index type, `A` an arbitrary commutative ring and
 `e : n → ℤ` a weight vector. The two subgroups are the ones from `Dynamic.GeneralLinear`:
 
@@ -73,6 +73,6 @@ vanishes. So `p` is block parabolic for `e`.
 
 Step 3 of the proof of Proposition 2.1.8(3) in Conrad–Gabber–Prasad, *Pseudo-reductive groups*
 (2nd edition), starts from the open cell of `GL(V)`, which the book takes from its Example 2.1.1
-and Proposition 2.1.2. This unit supplies the matrix algebra of that case for a diagonal
+and Proposition 2.1.2. This module supplies the matrix algebra of that case for a diagonal
 cocharacter with weights `e`. The cell minor `δ_e`, the threshold blocks and the explicit factor
 `cellLower` are an internal formulation, not taken from the book.

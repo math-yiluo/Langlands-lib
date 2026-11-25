@@ -1,9 +1,9 @@
 # Etale slices through good points
 
-This internal proof combines the local differential slice construction by
-Worker 101, the good-point cotangent bridge by Worker 303, and the propagation
-and open shrinking construction by Worker 424. These three workers are
-coauthors of this combined result.
+This internal proof combines the local differential slice construction
+(`SchemeDifferentialSlice`), the good-point cotangent bridge
+(`SmoothRelationGoodPointChart`), and the propagation and open shrinking
+construction (`RelationSliceEtalePropagationProof`).
 
 For an equivalence relation `t,s : R → U` with `s` smooth and a common
 identity section `e`, suppose `x` satisfies the maximal ideal equality
@@ -31,6 +31,8 @@ the point over `x` remains in `O`.
 
 The result is a slice through a supplied good point. It does not assert
 that every orbit contains a good point or construct a globally
-surjective family of slices. Those remain separate inputs to the final
-smooth equivalence relation slicing theorem. No unproved statement is
+surjective family of slices. Those are separate inputs to the final
+smooth equivalence relation slicing theorem
+(`smoothEquivalenceRelationEtaleSlice` in
+`SmoothEquivalenceRelationEtaleSliceProof`). No unproved statement is
 used as a hypothesis of this result.

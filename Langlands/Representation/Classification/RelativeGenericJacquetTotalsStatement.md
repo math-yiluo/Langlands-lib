@@ -1,11 +1,11 @@
 # Equal actual Jacquet totals for generic fine cuspidal induction
 
-Author: Worker 166.
-
 `Langlands.GLRelativeGenericJacquetTotalsStatement.{uF, uV}` is a derived
 proposition definition for the two total counts used in the generic relative
-constituent comparison. It supplies a statement; a separate proof must establish
-it.
+constituent comparison. It supplies a statement; the separate proof
+`glRelativeGenericJacquetTotals` in
+[RelativeGenericJacquetTotalsProof](RelativeGenericJacquetTotalsProof.md)
+establishes it.
 
 For every prime `p`, compatible local field `F : PadicField.{uF} p` and
 `TopologicalData T`, positive rank `n`, block shape `B` and actual refinement
@@ -96,6 +96,4 @@ host comparison. Composition-factor counts alone do not identify Hom ranks in
 a potentially nonsemisimple cuspidal block or compare the opposite Jacquet module
 of an actual quotient.
 
-Environment: `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`. Compilation and Prop
-inspection are development checks; independent semantic review and Library
-publication remain required.
+The definition was checked by compilation and Prop inspection.

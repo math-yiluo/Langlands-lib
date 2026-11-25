@@ -1,7 +1,5 @@
 # Statement: maximal tori of anisotropic real groups are conjugate
 
-Worker 75.
-
 `Langlands.GroupScheme.RealAnisotropicMaximalTorusConjugacyStatement : Prop` is
 a statement-only, `Prop`-valued definition with no universe parameters. This
 module does not prove it, and it adds no other definitions, theorems or
@@ -163,8 +161,10 @@ torus is conjugate under `SU(2)(ℝ)` to the diagonal circle.
   extension, and over the base field when it is separably closed. Over `ℝ`
   it only gives conjugacy over `ℂ`. The present statement gives conjugacy
   over `ℝ` for anisotropic semisimple groups.
-- The Library has no statement of Theorem 25.57.
+- The Library has no other statement of Theorem 25.57; it proves this one as
+  `realAnisotropicMaximalTorusConjugacy`
+  ([`RealAnisotropicMaximalTorusConjugacyProof`](RealAnisotropicMaximalTorusConjugacyProof.md)).
 
-## For the later proof (not part of this unit)
+## For a proof (not part of this module)
 
 Milne gives no proof; he refers to Suzuki 1971, Theorem 2.

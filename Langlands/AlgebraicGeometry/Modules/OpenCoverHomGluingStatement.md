@@ -25,7 +25,7 @@ objects and morphisms.
 For indices `i,j`, let `Pᵢⱼ := Uᵢ ×[X] Uⱼ`, with projections
 `p₁ : Pᵢⱼ ⟶ Uᵢ` and `p₂ : Pᵢⱼ ⟶ Uⱼ`. The equality
 `p₁ ≫ uᵢ = p₂ ≫ uⱼ` is the categorical `pullback.condition`.
-For either `A = M` or `A = N`, the published
+For either `A = M` or `A = N`,
 [`squarePullbackIso`](SquarePullbackComparison.md), applied as
 
 ```text
@@ -89,13 +89,16 @@ sections over an open with morphisms of the restricted modules.
 [`ModuleLocalHomPullbackProofs`](../ModuleLocalHomPullbackProofs.md) and
 [`ModuleLocalHomPullbackCoherenceProofs`](../ModuleLocalHomPullbackCoherenceProofs.md)
 provide restriction and coherence results for the actual pullbacks.
-These are possible ingredients of a later proof; this statement does not
-assert that those ingredients already prove the exact gluing proposition.
+These are possible ingredients of a proof; this statement does not
+assert that those ingredients prove the exact gluing proposition. The
+proposition is proved as `OpenCoverHomGluing.openCoverHomGluing` (module
+`Langlands.AlgebraicGeometry.Modules.OpenCoverHomGluing`).
 
-The Lean interface was supplied by Worker 453 for use in the separatedness
-argument for actual rigidified abelian-scheme classes. This module isolates
-the general module-morphism locality prerequisite and leaves that consumer's
-final proof assembly separate. The cited source below does not state this
+The Lean interface serves the separatedness argument for actual rigidified
+abelian-scheme classes, which takes it as a hypothesis (module
+`Langlands.AlgebraicGeometry.Picard.RigidifiedClassesZariskiSeparatedProof`).
+This module isolates the general module-morphism locality prerequisite and
+leaves that consumer's final proof assembly separate. The cited source below does not state this
 open-cover, pullback-based formulation; the formulation is derived internally
 from the background principle recorded there.
 

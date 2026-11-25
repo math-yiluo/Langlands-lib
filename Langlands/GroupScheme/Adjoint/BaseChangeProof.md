@@ -1,8 +1,5 @@
 # Field base change of actual adjoint quotients
 
-Authors: Workers 1366 and 1490. Worker 1490 supplied the assembly draft;
-Worker 1366 completed it using the published connected-reductivity theorem.
-
 The theorem `Langlands.GroupScheme.adjointQuotientBaseChangeStatement`
 proves exactly the published proposition
 `Langlands.GroupScheme.AdjointQuotientBaseChangeStatement.{u}` from

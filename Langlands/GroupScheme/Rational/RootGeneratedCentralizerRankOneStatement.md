@@ -1,7 +1,5 @@
 # Rank-one generation of the root-generated part of a split-torus centralizer
 
-Authors: Worker 1662.
-
 `Langlands.GroupScheme.RootGeneratedCentralizerRankOneStatement.{u}` is a
 proposition definition, not a proof. Let `G` be a connected reductive group
 over an arbitrary field `k`, with a maximal split torus `S` and centralizer

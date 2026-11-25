@@ -36,6 +36,6 @@ This is an internal consequence of the imported original jet section and
 algebra comparisons, actual canonical affine jet points and conjugation, and
 the existing algebraic orbit map. Closedness supplies source affineness. There
 is no smoothness, flatness, or finite-presentation premise beyond the supplied
-data. This focused unit supplies the conjugate-family calculation. Its
+data. This focused module supplies the conjugate-family calculation. Its
 identification with the classified kernel on the actual homogeneous quotient,
 faithfully flat descent, and the final ampleness assembly remain separate.

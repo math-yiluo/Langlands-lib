@@ -1,7 +1,5 @@
 # Underlying orbits and translations of scheme actions
 
-Worker 1460.
-
 This internal construction extends the published `SchemeAction H X` and
 `SchemeActionRationalPoints` orbit-morphism API over an arbitrary base
 scheme `S`. A section means a morphism from the terminal relative scheme,

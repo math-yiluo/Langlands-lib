@@ -128,9 +128,9 @@ theorem IsRootDatumOf.two_nsmul_not_mem_relativeRoots
     (hP : IsRootDatumOf i P) (hS : IsSplitTorus S.toGrp) [P.IsReduced]
     {a : characterLattice S} (ha : a ∈ relativeRoots i) :
     (2 : ℕ) • a ∉ relativeRoots i := by
-  let : IsAddTorsionFree (ℚ ⊗[ℤ] characterLattice S) := IsAddTorsionFree.of_module_rat _
-  let : IsAddTorsionFree (characterLattice S) :=
-    hS.character_toRat_injective.isAddTorsionFree Langlands.LinearAlgebra.RationalSpan.toRat
+  let : HasUniqueDiv (ℚ ⊗[ℤ] characterLattice S) := HasUniqueDiv.of_module_rat _
+  let : HasUniqueDiv (characterLattice S) :=
+    hS.character_toRat_injective.hasUniqueDiv Langlands.LinearAlgebra.RationalSpan.toRat
   change a ∈ roots i at ha
   change (2 : ℕ) • a ∉ roots i
   rw [← hP.2.1] at ha ⊢

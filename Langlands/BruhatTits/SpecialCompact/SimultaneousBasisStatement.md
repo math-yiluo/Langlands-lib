@@ -31,8 +31,9 @@ valued-root apartment, its quotient `ReducedBuilding`, the map `apartmentMap`
 and the action of `G(F)`. The subgroup in the conclusion is exactly
 `G(F)^1 ∩ Stab(D.apartmentMap x)`: its first factor is the published
 `Plancherel.rationalCommonNormKernel G`, and its second factor is the full
-stabilizer for that action. This is the literal term used by the sibling
-special-compact interface. No replacement subgroup, chosen apartment origin,
+stabilizer for that action. This is literally the definition of
+`D.specialCompactSubgroup x`, the subgroup used by the special-compact
+interface `SpecialMaximalCompactExistence` (module `ExistenceStatement`). No replacement subgroup, chosen apartment origin,
 parahoric or chamber Iwahori is introduced.
 
 Both point conditions refer to `D.affineRoots`. `IsSpecialPoint` says that
@@ -75,7 +76,7 @@ restricted actual-character inequalities; they are not freely supplied
 subsets. The canonical topology and all induced subgroup topologies are
 fixed inside `SimultaneousStandardBasisAt`.
 
-## Scope and retained obligations
+## Scope and related statements
 
 Construction of `D` and `x` is in the conclusion. In particular, this is
 not an implication with a preexisting apartment or completed building
@@ -87,27 +88,33 @@ building axioms or topological consequences.
 This focused target records the basis-existence projection at the shared
 geometric formula for `K0`. It does not add separate compactness,
 openness, maximal-compactness, Iwasawa, Weyl-representative, Cartan or
-standard-Levi adaptedness conjuncts for `K0`. Those are sibling structural
-obligations. In particular, two independently proved existential
-statements do not imply that their witnesses agree. A final joint
-compact-package statement must supply one `D,x` for all sibling
+standard-Levi adaptedness conjuncts for `K0`. Those belong to separate
+structural statements. In particular, two independently proved existential
+statements do not imply that their witnesses agree. A joint
+compact-package statement must supply one `D,x` for all these
 conclusions, or derive them uniformly from one genuinely sufficient
 corrected validity predicate and its general existence theorem. That
-same-witness composition and any corresponding supplied-data basis
-target remain outstanding; no validity predicate is invented here.
+same-witness composition is `JointSpecialCompactBasisExistenceStatement`,
+which `jointBasisReduction` (module `JointBasisReductionProof`) reduces to
+the existence of a valid corrected assignment and conditional statements on
+its data; the corresponding supplied-data basis statement
+`AvailableSimultaneousStandardBasisStatement` is proved by
+`availableSimultaneousStandardBasis` (module `AvailableBasisProof`). No
+validity predicate is invented here.
 
-The proof obligations also retain corrected valued-root/building
+A proof of this statement also needs corrected valued-root/building
 existence in full generality, existence of a special vertex, the
 simultaneous small-filtration construction, the canonical topology
 comparisons, actual standard-Levi and opposite-radical comparisons, the
 compatible split-component construction and section theorem, and all
 contraction and cofinality proofs. The exact inherited Levi compact
-must still be identified with the sibling's adapted Levi compact at
-the common witness.
+must also be identified with the adapted Levi compact of the special-compact
+statement at the common witness. The Library has no proof of this statement.
 
-This unit does not duplicate the generic compact-containment target or
+This module does not duplicate the generic compact-containment target or
 the S22-to-Jacquet consumer. The existing
 `SimultaneousBasisJacquetAdapterStatement` keeps the conditional passage
 to the actual Jacquet input separate; its proof, including strict-chamber
-nonemptiness, remains required. No deduction obtained by forgetting
+nonemptiness, is `simultaneousBasisJacquetAdapter` in
+`SimultaneousBasisJacquetAdapterProof`. No deduction obtained by forgetting
 openness establishes the present simultaneous basis target.

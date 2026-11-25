@@ -1,7 +1,5 @@
 # Spectral small-displacement subgroups on rational quotients
 
-Author: Worker 36.
-
 This module constructs subgroups of actual bounded automorphisms from spectral
 bounds on actual rational quotient sections. It is a local construction toward
 the analytic automorphism topology; no topology is defined in this module.
@@ -72,7 +70,7 @@ p. 8, and rational algebras in Definition 2.2.1 and Exercise 2.2.2(ii) on p. 9.
 
 The present implementation is restricted to chosen unit-radius rational
 presentations over a fixed strict affinoid base and `K`-linear automorphisms.
-It does not yet construct all compact analytic domains, arbitrary analytic
+It does not construct all compact analytic domains, arbitrary analytic
 functions on them, or automorphisms of the coefficient field. The source uses
 pullback notation, while the Library's left section action uses the forward
 algebra map and its left spectrum action uses inverse pullback. Replacing a
@@ -88,7 +86,7 @@ and equivariant etale sites remain separate obligations.
 
 The registered Equish source folder is
 `provided-7bb3903652336bd799aad8853b8efd7ff3bcc0c7652745417f4745a14ac08e90`,
-receipt SHA256
+SHA256 digest
 `e046cadfb9dcec4b0cf6624f80d6316bf532416153b82023f5100bd1ab0726cd`.
 Its member
 `Berkovich--Etale equivariant sheaves on p-adic analytic spaces (unfinished manuscript)--1996.pdf`

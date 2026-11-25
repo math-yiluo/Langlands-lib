@@ -1,6 +1,6 @@
 # Compact invariance of the determinant-band form
 
-Module: `Langlands.Automorphic.CuspidalUnitaryCompactForm`. Author: Worker 1827.
+Module: `Langlands.Automorphic.CuspidalUnitaryCompactForm`.
 
 The Library constructs a positive definite Hermitian form on the original finite adelic
 action of an operator realization with a unitary central character

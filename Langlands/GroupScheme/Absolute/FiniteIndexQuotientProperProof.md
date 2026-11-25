@@ -1,9 +1,5 @@
 # Proof of the properness transfer to quotients by open subgroups of stabilizers
 
-Authors: Worker 716 (the Lean proof and this description), adapting in
-`exists_factor` a draft lemma of Worker 898. Worker 1400 rechecked the module
-against the current Library and added the section on the use of the hypotheses.
-
 The module proves
 
 ```

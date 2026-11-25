@@ -1,7 +1,5 @@
 # Strongly regular rational points from the algebraically closed case
 
-Author: Worker 1531.
-
 This module proves one conditional result. The algebraically closed statement
 `AlgClosedStronglyRegularTorusPointStatement` (module
 `Absolute/StronglyRegularTorusPointStatement`) implies the published

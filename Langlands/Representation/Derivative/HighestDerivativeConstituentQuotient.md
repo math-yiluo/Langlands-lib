@@ -1,7 +1,5 @@
 # Actual highest-derivative constituents and smooth-dual quotients
 
-Author: Worker 357.
-
 This derived supporting construction selects an actual irreducible
 subrepresentation of a finite-length highest left derivative and an actual
 surjective intertwiner from the same-order right derivative onto that
@@ -110,11 +108,11 @@ and no unproved proposition target as an input theorem.
 
 The import audit at Library commit
 `dad4d948ab2f6838277ce9094bcc92df1507b0cb` contains 190 project modules,
-including this module and the separately submitted `InvariantBilinearSmoothDual`
+including this module and the separate `InvariantBilinearSmoothDual`
 helper, and 118 external import roots. All 188 other inherited Lean/Markdown
-pairs match that Library byte for byte. The smooth-dual helper's pair matches
-its separately reviewed submission exactly; it requires separate publication
-and is not part of this module's integration payload.
+pairs match that Library byte for byte. The smooth-dual helper
+(`Filtration.InvariantBilinearSmoothDual`) is a separate module, not part of
+this one.
 
 The four `Classification` modules in the closure are `Supercuspidal`,
 `SupercuspidalTwist`, `SupercuspidalContragredientStatement`, and
@@ -123,7 +121,7 @@ infrastructure, and the proved general duality-transfer helper used by the
 smooth-dual construction. A proposition target is not used as a proved
 conclusion. The derivative branch uses the proved general mirabolic
 highest-pairing theorem and its actual functors. The closure contains no
-excluded segment derivative or Jacquet formula, segment-socle conclusion,
+segment derivative or Jacquet formula, segment-socle conclusion,
 two-factor irreducibility, special-head irreducibility, multisegment
 uniqueness or exhaustion, ordered-head existence, quotient coverage,
 ordered conversion, tempered uniqueness, square-integrable classification
@@ -137,5 +135,7 @@ step under explicit finite-length and highest-derivative hypotheses. It
 proves neither direction of `SegmentHeadProductIrreducibility`. Individual
 special-head derivative information, the required finite-length inputs,
 the linked-pair argument, and the remaining product and support arguments
-are separate obligations. The full repeated-segment special-head criterion
-and its original carrier universes remain the host target.
+are separate obligations. The full repeated-segment special-head criterion,
+in its original carrier universes, is the statement this construction serves;
+it is proved as `Langlands.Classification.segmentHeadProductIrreducibility` in
+`Classification.SegmentHeadProductIrreducibilityProof`.

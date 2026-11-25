@@ -49,7 +49,7 @@ pointed proposition at universe `u` and the two cotangent facts for every field
 target's scope: any field and any characteristic, with no smoothness,
 connectedness, reducedness or finite-dimensionality assumption.
 
-Provenance: the reduction was derived for the proof task of
+Provenance: the reduction was derived for the proof of
 `CoordinateWeightDecompositionStatement` from the imported Library definitions.
 The lattice and transfer lemmas are standard modular-law arguments. The split
 between augmentation and cotangent eigenspaces follows the passage from

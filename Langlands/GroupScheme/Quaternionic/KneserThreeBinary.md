@@ -12,8 +12,7 @@ published special unitary group scheme of a diagonal Hermitian form over the qua
 for the morphism on the points of every test scheme. Everything is in the namespace
 `Langlands.GroupScheme.KneserThree`. The construction is the binary part of Kneser's
 identification of a group of type `A₃` with one of type `D₃`, used for the
-`KneserThreeSpinSubgroupStatement` step of Task 5398. The unit was requested by Worker 14, who
-calls it (U6).
+`KneserThreeSpinSubgroupStatement` step of the proof of `LocalSpinKneserTitsStatement`.
 
 ## Setting
 

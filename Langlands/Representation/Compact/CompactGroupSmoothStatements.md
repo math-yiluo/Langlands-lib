@@ -1,6 +1,6 @@
 # Smooth representations of compact t.d. groups; an admissibility criterion: statements
 
-Author: Worker 6. Module `Langlands.Representation.Compact.CompactGroupSmoothStatements`, namespace `Langlands.Renard.CompactRepresentation`.
+Module `Langlands.Representation.Compact.CompactGroupSmoothStatements`, namespace `Langlands.Renard.CompactRepresentation`.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*, French edition dated 9 July 2026, IV.1.1, Theorem (printed p.88 / PDF p.94), and IV.1.2, Proposition (printed p.89 / PDF p.95). The registered source ID is `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 
@@ -17,7 +17,7 @@ The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 
 ## The Lean statements
 
-The module is a statement unit: nothing is proved. Smooth representations are the published `SmoothRep.{0, u, v} ℂ G`, over an arbitrary group carrying a topology, with carriers in an independent universe `v`.
+The module contains statements only: nothing is proved. Smooth representations are the published `SmoothRep.{0, u, v} ℂ G`, over an arbitrary group carrying a topology, with carriers in an independent universe `v`.
 
 ### `CompactGroupSmoothRepresentationStatement` (IV.1.1)
 
@@ -42,4 +42,4 @@ That is, `dim Hom_K(σ, Res^G_K π) < ∞` for every compact open `K` and every 
 
 - The IV.1.1 Corollary (the canonical isotypic decomposition `V = ⊕_{σ ∈ K̂} V(σ)`) and the multiplicity formula `m(σ) = dim V(σ) / dim V_σ` are not stated here.
 - Renard's t.d. groups are Hausdorff, locally compact and totally disconnected topological groups. The hypotheses above state exactly this.
-- The proofs (finite orbit spans via II.3.2, finite group representation theory, Haar averaging) are not formalized here.
+- The proofs (finite orbit spans via II.3.2, finite group representation theory, Haar averaging) are not formalized here. The statements are proved by `compactGroupSmoothStatements` in `CompactGroupSmoothProof`.

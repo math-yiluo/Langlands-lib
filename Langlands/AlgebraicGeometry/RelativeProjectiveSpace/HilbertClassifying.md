@@ -47,5 +47,5 @@ of every classified family.
 ## Provenance
 
 Internal packaging of the published Hilbert scheme (Grothendieck, FGA; Mumford–Fogarty–
-Kirwan, GIT §0.5(c), "closed subschemes with k sections"). Used in Task 7811's reduction
-(`FrameChartRepresentabilityReduction`), where `R` is the set of level coefficient tuples.
+Kirwan, GIT §0.5(c), "closed subschemes with k sections"). Used in the reduction
+`FrameChartRepresentabilityReduction` (`Langlands.AbelianScheme.PolarizedFiniteLevel`), where `R` is the set of level coefficient tuples.

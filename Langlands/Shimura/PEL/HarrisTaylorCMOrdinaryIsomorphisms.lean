@@ -73,7 +73,7 @@ theorem tateNormalizedCM_integralActionRationalExtension {U : HarrisLevel D}
   let := auxiliaryStarRing D C
   exact IntegralOrderExtension.extend_unique (D.harrisHodgePELIntegralBasis C)
     ((Rationalization.ofEnd x.data.1.actionObj.abelianScheme).comp x.restriction.action)
-    x.data.1.actionObj.action (fun a => (x.restriction.agrees a).symm)
+    x.data.1.actionObj.action (fun a => CategoryTheory.End.ext (x.restriction.agrees a).symm)
 
 local notation "extension_eq" => tateNormalizedCM_integralActionRationalExtension D C P Z
   compatibility h s hs htor
@@ -83,7 +83,7 @@ isomorphism for the original full rational actions. -/
 def tateNormalizedCMOrdinaryRationalIso {U : HarrisLevel D} (x y : NRep U) :
     letI := auxiliaryStarRing D C
     ∀ (g : x.data.1.actionObj.abelianScheme ≅ y.data.1.actionObj.abelianScheme)
-      (_ha : ∀ a : O, x.restriction.action a ≫ g.hom = g.hom ≫ y.restriction.action a),
+      (_ha : ∀ a : O, (x.restriction.action a).asHom ≫ g.hom = g.hom ≫ (y.restriction.action a).asHom),
       x.data.1.actionObj ≅ y.data.1.actionObj := by
   let := auxiliaryStarRing D C
   intro g ha
@@ -103,7 +103,7 @@ actual scheme isomorphism, without denominator factors. -/
 theorem tateNormalizedCMOrdinaryRationalIso_arrows {U : HarrisLevel D} (x y : NRep U) :
     letI := auxiliaryStarRing D C
     ∀ (g : x.data.1.actionObj.abelianScheme ≅ y.data.1.actionObj.abelianScheme)
-      (ha : ∀ a : O, x.restriction.action a ≫ g.hom = g.hom ≫ y.restriction.action a),
+      (ha : ∀ a : O, (x.restriction.action a).asHom ≫ g.hom = g.hom ≫ (y.restriction.action a).asHom),
       (RationalAlgebraAction.underlyingIso (ordinaryIso x y g ha)).hom =
         Rationalization.ofHom g.hom ∧
       (RationalAlgebraAction.underlyingIso (ordinaryIso x y g ha)).inv =
@@ -117,7 +117,7 @@ omit [IsCMField F] in
 theorem tateNormalizedCMOrdinaryRationalIso_eq {U : HarrisLevel D} (x y : NRep U) :
     letI := auxiliaryStarRing D C
     ∀ (g : x.data.1.actionObj.abelianScheme ≅ y.data.1.actionObj.abelianScheme)
-      (ha : ∀ a : O, x.restriction.action a ≫ g.hom = g.hom ≫ y.restriction.action a)
+      (ha : ∀ a : O, (x.restriction.action a).asHom ≫ g.hom = g.hom ≫ (y.restriction.action a).asHom)
       (e : x.data.1.actionObj ≅ y.data.1.actionObj)
       (_hg : Rationalization.ofHom g.hom = (RationalAlgebraAction.underlyingIso e).hom),
       ordinaryIso x y g ha = e := by
@@ -134,7 +134,7 @@ theorem tateNormalizedCMOrdinary_multiple_iff {U : HarrisLevel D}
     (x y : NRep U) (q : ℚˣ) :
     letI := auxiliaryStarRing D C
     ∀ (g : x.data.1.actionObj.abelianScheme ≅ y.data.1.actionObj.abelianScheme)
-      (ha : ∀ a : O, x.restriction.action a ≫ g.hom = g.hom ≫ y.restriction.action a),
+      (ha : ∀ a : O, (x.restriction.action a).asHom ≫ g.hom = g.hom ≫ (y.restriction.action a).asHom),
       Mult x.data.1 y.data.1 q (ordinaryIso x y g ha) ↔
       Nonempty (Rationalization.IntegralMultipleData
         ((pullZ x.data.1 y.data.1) g.hom y.data.1.polarization)
@@ -162,7 +162,7 @@ def TateNormalizedCMOrdinaryRelated {U : HarrisLevel D} (x y : NRep U) : Prop :=
   letI := auxiliaryStarRing D C
   ∃ (q : ℚˣ)
     (g : x.data.1.actionObj.abelianScheme ≅ y.data.1.actionObj.abelianScheme)
-    (ha : ∀ a : O, x.restriction.action a ≫ g.hom = g.hom ≫ y.restriction.action a)
+    (ha : ∀ a : O, (x.restriction.action a).asHom ≫ g.hom = g.hom ≫ (y.restriction.action a).asHom)
     (hpol : Nonempty (Rationalization.IntegralMultipleData
       ((pullZ x.data.1 y.data.1) g.hom y.data.1.polarization)
       x.data.1.polarization (q : ℚ))),
@@ -192,14 +192,15 @@ theorem tateNormalizedCMRelated_iff_ordinaryRelated {U : HarrisLevel D}
     let e := ordinaryIso x y g ha
     have he : Mult x.data.1 y.data.1 q e :=
       (ordinary_multiple_iff x y q g ha).mpr hpol
-    have hgi : ∀ a : O, y.restriction.action a ≫ g.inv = g.inv ≫ x.restriction.action a := by
+    have hgi : ∀ a : O, (y.restriction.action a).asHom ≫ g.inv =
+        g.inv ≫ (x.restriction.action a).asHom := by
       intro a
       calc
-        y.restriction.action a ≫ g.inv =
-            g.inv ≫ (g.hom ≫ y.restriction.action a) ≫ g.inv := by
+        (y.restriction.action a).asHom ≫ g.inv =
+            g.inv ≫ (g.hom ≫ (y.restriction.action a).asHom) ≫ g.inv := by
           simp only [Category.assoc, Iso.inv_hom_id_assoc]
-        _ = g.inv ≫ (x.restriction.action a ≫ g.hom) ≫ g.inv := by rw [ha]
-        _ = g.inv ≫ x.restriction.action a := by simp only [Category.assoc, Iso.hom_inv_id,
+        _ = g.inv ≫ ((x.restriction.action a).asHom ≫ g.hom) ≫ g.inv := by rw [ha]
+        _ = g.inv ≫ (x.restriction.action a).asHom := by simp only [Category.assoc, Iso.hom_inv_id,
           Category.comp_id]
     exact ⟨q, e, he, g, rfl, rfl, ha, hgi, hpol, hlev⟩
 

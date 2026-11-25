@@ -6,7 +6,7 @@ import Langlands.Representation.Aubert.General.RationalLeviNormTopology
 
 For a connected reductive group `G` over a nonarchimedean local field, a maximal split torus, a
 generic cocharacter and an actual standard parabolic `P_I = M_I U_I ⊇ P₀` (`I` a finite set of
-simple roots), this module instantiates Worker 200's coefficient map on the product-induced space
+simple roots), this module instantiates the coefficient map on the product-induced space
 `L(ω, P) = I_{P×P}^{G×G}(ω ⊗ ω^∨)` (Waldspurger V.1) on actual rational points
 (`rationalInducedCoefficientMap`), and proves Waldspurger's Lemma VI.2.2 for it: if the
 coefficients of an admissible representation of `M_I(F)` are bounded by multiples of `Ξ^{M_I}`,

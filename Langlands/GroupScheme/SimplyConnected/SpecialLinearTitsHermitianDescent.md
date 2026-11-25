@@ -1,8 +1,6 @@
 # A Hermitian form from an outer discrepancy
 
-Author: Worker 239.
-
-This internal unit works over arbitrary fields `K`, `L` and `M` in the
+This internal module works over arbitrary fields `K`, `L` and `M` in the
 same universe. The extension `M/K` is finite Galois, `L/K` is Galois, and
 `f : L →ₐ[K] M` is a specified embedding. A local special-linear
 presentation `E` over `Spec M` is supplied. Its discrepancies are assumed
@@ -43,4 +41,4 @@ discrepancy and Hermitian normalization results. They construct neither
 the initial cover nor its inner trivialisation, and do not assert the
 final presentation of an outer type A group. A separable quadratic
 extension supplies the Galois field and nontrivial involution required
-here, but the unit takes those data as inputs.
+here, but the module takes those data as inputs.

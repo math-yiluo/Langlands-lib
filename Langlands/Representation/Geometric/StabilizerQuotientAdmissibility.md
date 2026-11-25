@@ -1,6 +1,6 @@
 # Admissibility of the actual native stabilizer coefficient quotient
 
-This internal unit proves admissibility of the native stabilizer coefficient quotient attached to each supplied actual `GeometricLemmaIntersectionDatum D`. It combines the constructed proper-source vanishing and surviving-section admissibility with the published native coefficient quotient transport. It does not assume admissibility of the quotient.
+This internal module proves admissibility of the native stabilizer coefficient quotient attached to each supplied actual `GeometricLemmaIntersectionDatum D`. It combines the constructed proper-source vanishing and surviving-section admissibility with the published native coefficient quotient transport. It does not assume admissibility of the quotient.
 
 For source and target parabolics `p` and `q`, with target Levi `lQ`, write
 

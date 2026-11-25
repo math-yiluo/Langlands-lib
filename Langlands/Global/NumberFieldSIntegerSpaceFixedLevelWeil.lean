@@ -121,7 +121,10 @@ scoped instance fieldFactorModuleTopology (i) (q : Above K L T.val i) :
     IsModuleTopology (NumberFieldLevelField K T.val i) (upperField K L S T i q) := by
   cases i with
   | inl p => exact isModuleTopologyOfFiniteDimensional
-  | inr z => cases z <;> exact isModuleTopologyOfFiniteDimensional
+  | inr z =>
+    cases z <;>
+      set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
+      exact isModuleTopologyOfFiniteDimensional
 
 /-- Henselianity for the original lower completed field at every coordinate. -/
 theorem lowerField_henselian (i : NumberFieldLevelFactorIndex K T.val) :

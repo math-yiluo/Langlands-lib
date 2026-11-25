@@ -1,7 +1,5 @@
 # Finite power series minor expansion
 
-Author: Worker 1767.
-
 This internal helper extends a formal series coefficient by zero to negative
 integer degrees. It constructs the reversed Vandermonde alternant whose
 column at `y j` is multiplied by the series rescaled at that variable. Its

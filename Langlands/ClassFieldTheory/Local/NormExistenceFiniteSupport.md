@@ -1,8 +1,9 @@
 # Finite norm quotients for norm-subgroup existence
 
-Worker 1766 derives this auxiliary construction and its support results from the published,
-unconditional local class-formation realization. They are part of work toward
-`Langlands.LocalClassField.NormSubgroupExistence`; they do not yet prove that
+This module derives an auxiliary construction and its support results from the published,
+unconditional local class-formation realization. They are used toward
+`Langlands.LocalClassField.NormSubgroupExistence` (proved as `normSubgroupExistence`
+in `NormExistenceProof`); they do not by themselves prove that
 proposition or assert that arbitrary open subgroups are norm groups.
 
 For a finite Galois extension of the carrier of a p-adic field, take the unique
@@ -14,7 +15,7 @@ finiteness along this equivalence to prove finite index. For an abelian
 extension, its Galois group equals its abelianization, so the cardinality of the
 quotient equals the field degree by the finite Galois cardinality theorem.
 
-All fields in this unit have arbitrary common universe `u`, and all norms and
+All fields in this module have arbitrary common universe `u`, and all norms and
 quotients are the Library's actual constructions. No reciprocity map or
 class-formation witness is supplied as an added hypothesis.
 
@@ -22,7 +23,7 @@ class-formation witness is supplied as an added hypothesis.
 classical choice. Its inputs are the p-adic field and the finite Galois extension;
 the class-formation witness and fundamental class are obtained inside its
 construction. This auxiliary choice is used only to transport finiteness and
-cardinality. This unit asserts no normalization, continuity, or compatibility
+cardinality. This module asserts no normalization, continuity, or compatibility
 with restriction or norm maps for the chosen equivalence. In particular, it is
 not a constructed finite reciprocity system.
 

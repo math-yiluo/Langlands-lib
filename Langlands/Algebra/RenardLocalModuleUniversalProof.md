@@ -1,11 +1,9 @@
 # The actual categorical module-localization universal property
 
-Author: Worker 1158. This proof imports the unchanged published statement
+This proof imports the unchanged statement
 `Langlands.Renard.ModuleLocalization.CategoricalUniversalStatements` from
 `Langlands.Algebra.RenardLocalModuleUniversalStatement`. Its actual
-full-subcategory and localization constructions are unchanged. Workers 709
-and 1193 authored the imported statement; importing that published work does
-not make them coauthors of this proof.
+full-subcategory and localization constructions are unchanged.
 
 ## Source and derived formulation
 
@@ -14,15 +12,15 @@ réductifs p-adiques*, French version dated 9 July 2026, Appendix A.III.1,
 printed pp.251–252 / one-based PDF257–258. The registered source identifier
 is `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1158 read both original pages directly for this proof on 1 November
-2026 and verified the source hash.
+Both original pages were read directly for this proof on 1 November
+2026 and the source hash verified.
 
 PDF257 defines the right universal problem by unique factorization.
 Example 4 on PDF258 asserts that the actual module localization solves
 that problem for the full subcategory of local modules over the original
 ring. Its scalar-inverse parenthesis is stronger than invertibility of the
 scalar endomorphism. The imported `IsSLocal` uses the latter condition;
-the published `RenardModuleLocalization` supplies the counterexample to
+`RenardModuleLocalization` supplies the counterexample to
 the parenthesis. No new correction is introduced by this proof.
 
 The supplementary registered `renard-2010-corrections-complements`,
@@ -33,7 +31,7 @@ not correct the parenthesis. This is a bounded check of the older errata.
 
 The explicit universes, ULift equivalences, bundled full subcategory and
 structured-arrow initiality are internal formulations of the source
-universal problem. The implemented proof transports the published linear
+universal problem. The implemented proof transports the linear
 universal property and builds Mathlib initiality data; it does not attribute
 this Lean implementation to the original.
 
@@ -42,7 +40,7 @@ this Lean implementation to the original.
 All declarations are in `Langlands.Renard.ModuleLocalization`. The ring
 universe u, source-module universe v and enlargement universe w remain
 independent. For a commutative unital ring R, submonoid S and arbitrary
-R-module M, put κ = max u v w. The published source is
+R-module M, put κ = max u v w. The imported source object is
 `raisedSource M`, with carrier `ULift.{max u w} M`, and the local target
 `canonicalLocalObject S M` has carrier
 `ULift.{w} (LocalizedModule S M)`. Both lie in the original-ring ambient
@@ -56,7 +54,7 @@ no smallness, shrinking, nontriviality, finiteness or faithful action.
 
 ## Implemented proof
 
-`categoricalFactorizationStatement` proves the first published component.
+`categoricalFactorizationStatement` proves the first component.
 Extensionality reduces equality of module-category morphisms to equality
 of their linear maps and then to a raised vector `ULift.up m`. Unfolding
 the actual canonical map and factor removes the two explicit lifts.
@@ -100,14 +98,14 @@ component identifies its right component with the chosen factor, and
 the constructed data as the proposition required by the statement.
 
 Finally, `categoricalUniversalStatements` conjoins the three proofs in
-the published order. Its entire type is exactly
+the statement's order. Its entire type is exactly
 `CategoricalUniversalStatements.{u,v,w}`, with no outer parameters or
 additional premises.
 
 ## Scope
 
 This proves the actual categorical universal property asserted by the
-published aggregate. Compatible-isomorphism comparison, functorial
-localization, adjunctions, other examples and the remaining Appendix A
-and whole-book obligations stay with the parent task. None is claimed
-as a consequence completed by this submission.
+aggregate. Compatible-isomorphism comparison, functorial
+localization, adjunctions, other examples and the rest of Appendix A
+and of the book are outside this proof. None is claimed
+as a consequence of this proof.

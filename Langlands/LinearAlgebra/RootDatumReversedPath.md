@@ -1,7 +1,7 @@
 # Simple roots reversed along a path
 
-This module is an internal prerequisite for the quasi-split Steinberg quotient
-task, specifically for the even type `A` case (Steinberg 1965, §9.10–9.19). It
+This module is a prerequisite for the quasi-split Steinberg quotient
+`QuasiSplitSteinbergQuotientStatement`, specifically for the even type `A` case (Steinberg 1965, §9.10–9.19). It
 proves the following without a classification of Dynkin diagrams. Suppose a
 group acts on the simple roots by pairing-preserving permutations, and some
 element moves a simple root `a` to a simple root that is not orthogonal to
@@ -10,8 +10,8 @@ the connected component of `a` in the Dynkin diagram is a simply-laced path
 `β 0, …, β (2m - 1)` of even length, that is, a diagram of type `A_{2m}`. The
 element reverses this path, and `a` is the vertex `β (m - 1)`. Reversal then
 gives `ρ γ a = β m`, so the swapped pair is the middle edge of the path. The
-host task intends to index the even type `A` substitute products and the
-fundamental representation of the `A_{2m}` factor by this path.
+path is meant to index the even type `A` substitute products and the
+fundamental representation of the `A_{2m}` factor.
 
 ## Setting
 
@@ -135,4 +135,7 @@ the field `isOrthogonal`. Finally `β (m - 1) = p 0 = a`.
 The module is pure root-datum combinatorics. It does not identify the path
 with a factor of the group, and it does not treat other group elements, which
 may move the component to another component. It constructs no Steinberg
-cross-section. Those remain obligations of the host task.
+cross-section. Those are part of the proof of
+`QuasiSplitSteinbergQuotientStatement`, which the Library gives as
+`quasiSplitSteinbergQuotient` in
+`Langlands.GroupScheme.Rational.QuasiSplitSteinbergQuotient`.

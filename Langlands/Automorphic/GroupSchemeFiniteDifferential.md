@@ -3,7 +3,7 @@
 This internal construction combines actual infinite tangent differentiation with
 finite-level slice reconstruction. It adapts the descent in the public
 `Langlands.Automorphic.EnvelopingAction` to first-order actual group-scheme
-differentiation. Worker 94 supplies this adaptation; Worker 72's reconstruction
+differentiation. The reconstruction
 and descent arguments are retained. Its base is any number field `F : Type u`
 and any affine group scheme `G` over `Spec F` with the explicit algebraic
 premise `SmoothOfRelativeDimension d G.X.hom`. No splitness or positive rank is
@@ -53,7 +53,7 @@ extra analytic smoothness or chosen dimension premise. The ambient affineness
 instance remains explicit in this file and follows from connected reductivity
 by the existing `affineScheme` theorem.
 
-This unit constructs first-order tangent differentiation and its intrinsic
+This module constructs first-order tangent differentiation and its intrinsic
 descent laws. It does not assert a Lie-bracket law, construct a general
 universal enveloping action, identify derivatives of exponential curves,
 establish any derivative growth bound, or construct quotient measures or

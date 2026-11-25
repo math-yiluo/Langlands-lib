@@ -1,6 +1,6 @@
 # Continuous-map gluing on finite full-domain covers
 
-Worker 56 constructs unique gluing of compatible continuous maps on the
+This module constructs unique gluing of compatible continuous maps on the
 loci of a supplied finite cover by actual full affinoid domains. The namespace
 is `Langlands.Analytic.PresentedAffinoidAlgebra.Domain.FiniteCover`.
 
@@ -26,7 +26,7 @@ topology and spectrum compactness for a nonzero Banach ring. Definition
 also including empty zero-ring spectra, to construct the actual finite
 spectrum-cover quotient map.
 
-This unit is an internal consequence of that published quotient map.
+This module is an internal consequence of that published quotient map.
 The source does not separately state the present gluing equivalence.
 Mathlib's `Topology.IsQuotientMap.lift` descends a continuous map constant
 on quotient fibers; `lift_comp` proves its defining restriction identity.
@@ -85,8 +85,8 @@ on `Y` or `Z`. All constructions also apply to an empty cover, for which
 the already published coverage property forces `V.locus` to be empty.
 No choice of a point of `Y` is needed.
 
-These are continuous maps on actual domain loci. The unit constructs
+These are continuous maps on actual domain loci. The module constructs
 neither gluing of quotient-algebra sections nor an analytic structure
 sheaf, an intersection representation, a general analytic atlas or an
-étale site. In particular, it does not discharge the separate rational
-algebra gluing or analytic-space construction obligations.
+étale site. In particular, it does not prove rational algebra gluing or
+construct analytic spaces.

@@ -1,6 +1,6 @@
 # Transport of analytic point fields
 
-Worker 310. Derived internal infrastructure for the common analytic point field.
+Derived internal infrastructure for the common analytic point field.
 The definition `FieldPoint.mapField` composes all evaluations with an isometric
 algebra homomorphism into another normed coefficient algebra field. The point
 is preserved, the norm condition follows from the isometry, and associativity

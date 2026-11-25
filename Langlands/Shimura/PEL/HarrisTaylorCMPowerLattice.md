@@ -1,8 +1,9 @@
 # An even power preserving the actual carried Harris lattice
 
-This internal unit concerns the original Harris compact level, actual positive
-polarized action object, compatible full Tate frames and rational self-isogeny.
-It uses the existing `Prerequisites` package for the carried lattice construction.
+This module, an internal construction, concerns the original Harris compact
+level, actual positive polarized action object, compatible full Tate frames and
+rational self-isogeny. It uses the existing `Prerequisites` package for the
+carried lattice construction.
 
 `EvenIntegralPowerWitness` asserts the existence of an actual compatible frame
 and a positive integer m such that q^(2m)=1 and the actual full rational Tate

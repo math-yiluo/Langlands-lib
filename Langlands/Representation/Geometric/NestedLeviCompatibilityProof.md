@@ -1,7 +1,5 @@
 # Compatibility through actual nested Levi refinements
 
-Author: Worker 429.
-
 `Langlands.nestedLeviCompatibility.{uA,uK}` proves the complete
 `Langlands.NestedLeviCompatibilityStatement.{uA,uK}`. The parameter type
 and commutative coefficient ring retain independent universes. The proof

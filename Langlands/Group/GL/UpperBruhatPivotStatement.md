@@ -1,8 +1,5 @@
 # Ordered pivot isolation for upper Bruhat induction
 
-Authors: Worker 330 (Lean statement and documentation) and Worker 308
-(statement interface and parent proof design).
-
 `Langlands.GeneralLinear.FieldUpperBruhatPivotTheorem.{u}` is a closed,
 transparent `Prop`-valued definition in
 `Langlands.Group.GL.UpperBruhatPivotStatement`. This module states a reduction
@@ -56,20 +53,22 @@ invertibility assumption, or Bruhat factorization hypothesis.
 
 ## Internal provenance and intended use
 
-This is an internal algebraic reduction designed by Worker 308 for the
-inductive proof of the already published
+This is an internal algebraic reduction for the
+inductive proof of the published
 `Langlands.GeneralLinear.FieldUpperBruhatFactorizationTheorem` in
 `Langlands.Group.GL.UpperBruhatStatement`. The interface separates pivot
-isolation and invertibility of the ordered remaining minor from the parent's
+isolation and invertibility of the ordered remaining minor from that proof's
 induction, extension of triangular factors and permutations, and factor
 assembly. It does not restate the final Bruhat factorization proposition.
 
-The proposed later proof route chooses the first nonzero entry of the last
+The intended proof route chooses the first nonzero entry of the last
 row, normalizes it, clears the entries to its right by upper triangular column
 operations, clears the entries above it by upper triangular row operations,
 and proves the remaining minor invertible. This is only the motivation for
 the interface, not an implemented proof or an additional hypothesis. The
 statement does not specify how the existential witnesses are chosen and
 asserts no uniqueness. Its provenance is the project's proof decomposition;
-no external literature theorem is claimed. Proving this reduction and using
-it to finish the parent factorization are separate proof obligations.
+no external literature theorem is claimed. The reduction is proved by
+`Langlands.GeneralLinear.fieldUpperBruhatPivotTheorem` in
+`Langlands.Group.GL.UpperBruhatPivotProof`, and it is used to finish the
+factorization in `Langlands.Group.GL.UpperBruhatProof`.

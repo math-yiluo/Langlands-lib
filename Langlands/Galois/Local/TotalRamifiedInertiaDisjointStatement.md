@@ -1,8 +1,5 @@
 # Disjointness of a totally ramified field and the inertia fixed field
 
-Authors: Worker 104 (Lean definition, original-source reading and Markdown)
-and Worker 366 (exact interface and finite-stage proof-route specification).
-
 ## Exact proposition
 
 `Langlands.PadicField.TotallyRamifiedInertiaDisjoint.{u}` is a `Prop`-valued
@@ -27,7 +24,7 @@ norm surjectivity, nor another arithmetic theorem. It makes no assertion
 for a non-Galois `D`.
 
 This module supplies a statement target, not a proof of that target.
-Acceptance or compilation of the proposition definition does not prove
+Compilation of the proposition definition does not prove
 the implication.
 
 ## Actual fields, maps and normalization
@@ -76,7 +73,7 @@ Greenberg, Springer GTM 67 (1979), registered as
 `serre-1979-local-fields`, file
 `/home/taskhub/central-library/Serre--Local Fields--1979.pdf`, SHA256
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`.
-Worker 104 read the following passages in the retained original:
+The following passages were read in the retained original:
 
 - Chapter V, section 4, printed pages 87–88 / PDF pages 94–95.
   On page 87 Serre proves that a finite totally ramified extension `L/K`
@@ -127,7 +124,7 @@ and proves that every finite subset of `U` lies in a finite Galois
 intermediate field with the same canonical absolute index as `F`;
 it also proves containment in `U` for every such finite field.
 
-An intended future proof of this target can choose an `F`-basis of
+A proof of this target can choose an `F`-basis of
 `D.field` and consider a finite linear relation over `U`. The exhaustion
 theorem places its finitely many coefficients in one finite unramified
 stage `E`. Finite total/unramified disjointness makes that basis linearly
@@ -141,12 +138,18 @@ the separate Library target
 This module neither proves that finite arithmetic nor assumes its target
 as a hypothesis.
 
-The later proof must supply the finite arithmetic input and the
+A proof must supply the finite arithmetic input and the
 coefficient descent with the actual scalar structures. An intersection
 calculation alone cannot be passed directly to Mathlib's
 `IntermediateField.LinearDisjoint.of_inf_eq_bot`: that lemma requires
 both fields to be finite-dimensional over the base, and no such
-assumption on `U` is present here.
+assumption on `U` is present here. The proof in the Library,
+`totallyRamifiedInertiaDisjoint` in
+`Langlands.Galois.Local.TotalRamifiedInertiaDisjointProof`, takes the finite
+arithmetic from `Langlands.LocalClassField.totalUnramifiedCompositum` and
+the descent from Mathlib's finite-support reduction
+`Subalgebra.LinearDisjoint.of_linearDisjoint_finite_right`, rather than
+from a basis of `D.field`.
 
 The existing target
 `Langlands.PadicField.InertiaDisjointTotallyRamified` gives the reverse

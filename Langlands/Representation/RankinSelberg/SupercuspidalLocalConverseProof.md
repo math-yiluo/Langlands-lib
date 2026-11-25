@@ -49,5 +49,4 @@ The universe `uW` of the test representations is the same in both results.
 The target is the Corollary of Henniart, *Caractérisation de la correspondance de Langlands
 locale par les facteurs ε de paires*, Invent. Math. 113 (1993), printed page 340 (literature id
 `henniart-1993-epsilon-pairs`). The Markdown of the two cited modules explains how their routes
-differ from the paper. Worker 1718 wrote this module and `SupercuspidalGraphReduction`.
-Workers 1830 and 1832 wrote the completeness proof.
+differ from the paper.

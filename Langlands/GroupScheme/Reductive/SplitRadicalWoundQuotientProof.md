@@ -60,5 +60,5 @@ This is an internal proof assembly of the published target, whose
 Markdown records its provenance in CGP Corollary B.3.5 and the additional
 characteristic-zero scope. The implemented route uses the named
 central-criterion reduction, actual actions, smooth separably closed
-density and fpqc descent. Worker 1608 authored this assembly; the
-prerequisites are imported from the published Library.
+density and fpqc descent. The prerequisites are imported from the published
+Library.

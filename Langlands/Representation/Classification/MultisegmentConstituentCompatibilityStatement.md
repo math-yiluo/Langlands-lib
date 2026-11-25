@@ -1,9 +1,6 @@
 # Multisegment socle and Langlands head compatibility
 
-Worker 67 authored the five-clause statement family. Worker 126 contributed
-an independently developed four-clause draft and the source/derivation audit
-adapted below. Worker 111 contributed the endpoint, reversed-block, and
-central-character source audit. This is a proposition-definition installment: it states, and
+This is a proposition-definition module: it states, and
 does not prove, compatibility of the actual published constituent relations.
 
 ## Scope, universes, and conventions
@@ -94,7 +91,7 @@ the source assertion that the dual segment remains a segment in the
 supercuspidal set (Ze80 §3.3, Ta86 §1.15). Explicit preservation sources
 are Ca95 Proposition 2.1.10 and Corollary 2.1.13, p.22, for admissibility
 and irreducibility, and Theorem 5.3.1(a)–(b), pp.48–49, for
-supercuspidality. Its eventual Lean proof needs these preservation
+supercuspidality. Its Lean proof needs these preservation
 results; this module supplies none of those proofs. The smooth-dual carrier lies in the
 same carrier universe, since it is a subspace of the complex linear dual.
 No total or arbitrary map on supercuspidal classes is introduced.
@@ -128,7 +125,7 @@ is not asserted here. Ta86's proof of 5.6 cites Ze80 Proposition 9.5 for
 the segment-dual formula, but the formula occurs in Ze80 Proposition 9.4,
 p.198. The cited Langlands-head proof also uses Jacquet's *Principal
 L-functions of the linear group*, equation (3.3.13); that upstream proof
-source has not been read for this contribution. Neither that citation nor
+source has not been read for this module. Neither that citation nor
 Ze80's conjecture in §9.17 is treated as a supplied Lean proof.
 
 ## Central-character formula
@@ -168,7 +165,7 @@ smooth representations. The product of an empty family is the trivial
 character; at positive rank the premise for that empty family is
 unrealizable by the constituent definitions.
 
-## Published dependencies and remaining proof obligations
+## Published dependencies and proof obligations
 
 The five direct imports are already published modules:
 
@@ -190,10 +187,16 @@ The five direct imports are already published modules:
 - `Langlands.Group.GL.ReverseBlocks`: the actual `BlockShape.reverse`
   with its positivity and total-rank proofs.
 
-No draft or pending classification candidate is imported. No induction,
+No unpublished classification module is imported. No induction,
 classification, or constituent-existence theorem is supplied as a
 constructor field or proposition hypothesis. The substantive compatibility
-assertions remain unproved. Their eventual proofs require induction/twist
+assertions are not proved in this module. The four multisegment clauses are
+proved in `MultisegmentConstituentRealTwistCompatibilityProof`,
+`MultisegmentConstituentCharacterTwistCompatibilityProof`,
+`MultisegmentConstituentContragredientProof` and
+`MultisegmentConstituentCentralCharacterProof`;
+`SquareIntegrableLanglandsHeadContragredientCompatibility` has no proof in
+the Library. Their proofs require induction/twist
 and induction/dual equivalences, segment and multisegment classification,
 supercuspidal-dual preservation, and the scalar-action calculation.
 The source-level supercuspidal-dual input has a separate published target
@@ -202,7 +205,7 @@ Dualizing a socle embedding alone produces a quotient, so it does not by
 itself prove the socle-dual clause; Ze80 Theorem 7.10 is essential.
 The reversed square-integrable head statement uses H02 §2.8 beyond the
 single-segment assertion. Compilation and `Prop` inspection check the
-formal statements, not these outstanding mathematical proofs.
+formal statements, not these mathematical proofs.
 
 ## Retained originals and reading extent
 
@@ -223,8 +226,8 @@ No source-specific project errata files were found for these source IDs.
   `663c79f2ee236626385d242d83107410c1a3291ba5584d4b8abee9cf8af428ac`.
   Read the relevant normalization and duality passages on pp.170–171,
   §3.3 p.181, Theorem 7.10 and proof pp.194–195, and §9.4 p.198
-  (PDF pp.7–8, 18, 31–32, 35). Worker 126 additionally audited
-  §§6.1–6.5, pp.188–189 (PDF pp.25–26).
+  (PDF pp.7–8, 18, 31–32, 35). §§6.1–6.5, pp.188–189 (PDF pp.25–26),
+  were additionally audited.
 - **Ta86:** M. Tadić, *Classification of unitary representations in
   irreducible representations of general linear group (non-archimedean
   case)*, Ann. Sci. ENS (4) 19 (1986), 335–382.
@@ -243,8 +246,8 @@ No source-specific project errata files were found for these source IDs.
   representations of p-adic reductive groups*, draft of 1 May 1995.
   ID `casselman-1995-admissible-representations`; SHA-256
   `78b921fc6331ad2b75389f37d15bd5ac3399e6cfc2d7555e1a4d666e0d42612a`.
-  Worker 111 read §§2.1 and 5.1, pp.21–22 and 46, Corollary 4.2.5,
+  Read §§2.1 and 5.1, pp.21–22 and 46, Corollary 4.2.5,
   p.42, and Theorem 5.3.1, pp.48–49, for the endpoint-dual
-  supercuspidal representatives. Worker 67 rechecked Proposition 2.1.10,
-  Corollary 2.1.13, p.22, and Theorem 5.3.1(a)–(b), pp.48–49.
+  supercuspidal representatives; Proposition 2.1.10,
+  Corollary 2.1.13, p.22, and Theorem 5.3.1(a)–(b), pp.48–49, were rechecked.
   Printed and one-based PDF page numbers coincide.

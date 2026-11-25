@@ -1,7 +1,5 @@
 # Base change and path transport on actual Tate modules
 
-Author: Worker 142.
-
 This module proves that the canonical comparison for actual Tate modules under
 pointed base change commutes with transport along a given finite-etale path.
 It also constructs a diagonal rational comparison and identifies its inverse.

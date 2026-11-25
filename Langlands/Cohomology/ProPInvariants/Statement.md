@@ -1,7 +1,5 @@
 # Pro-p invariants and finite acyclic resolutions
 
-Author: Worker 3.
-
 This pair constructs one natural transformation and defines three propositions
 and their conjunction `Langlands.Cohomology.ProPInvariantTruncationStatements`.
 The propositions are two algebraic inputs that Harris 1999, section 2, uses
@@ -101,8 +99,8 @@ is not stated separately.
 No statement is made about a particular geometric complex. The compactly
 supported cohomology of Harris's analytic spaces, the existence of an open
 normal pro-`p` subgroup acting trivially, Berkovich's cohomological-dimension
-bound, and the divisible-system surjectivity remain separate obligations. The
-equivariant section complexes they apply to also remain separate. No banality
+bound, and the divisible-system surjectivity are separate obligations. The
+equivariant section complexes they apply to are also separate. No banality
 hypothesis is used. Characteristic-zero coefficients are allowed whenever `p`
 is invertible.
 
@@ -127,19 +125,19 @@ The only project import is the published `Langlands.Representation.Smooth.Defini
 At Library commit `68e8013fc4fed0de284fd849695676aca2e0c32d` it has Lean SHA-256
 `435abfa2c0b05c1b6ea8107e3278687e7091e481540508d6647befc0f515aabb` and
 Markdown SHA-256
-`4b7364038949eb59db10c95354f290fcba77110c1ed33a227a2b6c92f4afd569`, equal to the
-workspace bytes. The Mathlib imports provide `Rep`, its abelian structure and
+`4b7364038949eb59db10c95354f290fcba77110c1ed33a227a2b6c92f4afd569`. The Mathlib
+imports provide `Rep`, its abelian structure and
 forgetful functor, `Rep.invariantsFunctor`, `OpenNormalSubgroup`, `IsPGroup`,
 quasi-isomorphisms, short exact sequences and right derived functors. The
-environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`: Lean 4.34.0, Mathlib
+environment is Lean 4.34.0, Mathlib
 commit `5ed2965256430c3649e86755f9576b54eca72435`.
 
-Development check `8dcd8057-a7cf-4d0e-bbd8-8b643460871b` built this module with
+A development check built this module with
 no errors or warnings. It inspected
 `Langlands.Cohomology.ProPInvariantTruncationStatements` as a definition
 returning `Prop`, with universe parameters `uH uR uV u v u' v'` and only the
-axioms `propext`, `Classical.choice` and `Quot.sound`. Check
-`39f36fa0-3d28-4ac2-b94c-7323c1991080` printed the natural transformation,
+axioms `propext`, `Classical.choice` and `Quot.sound`. A second check
+printed the natural transformation,
 the three components and the conjunction with universe annotations, and the
 output was read. The prints show:
 

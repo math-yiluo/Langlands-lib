@@ -1,7 +1,5 @@
 # Natural geometric product comparison for etale restriction
 
-Author: Worker 13.
-
 ## Scope and conventions
 
 Let `X` and `Z` be schemes in universe `u`, and let `f : Z ⟶ X` be

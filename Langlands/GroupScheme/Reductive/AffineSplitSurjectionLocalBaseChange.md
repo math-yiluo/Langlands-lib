@@ -1,6 +1,6 @@
 # Vanishing of the characteristic exponent after base change to local algebras
 
-This internal derived unit moves the local theorem of
+This internal derived module moves the local theorem of
 [`Reductive.AffineSplitSurjectionLocalCore`](AffineSplitSurjectionLocalCore.md)
 from a local base ring to the setting of Conrad, *Reductive group schemes*
 (2014), Proposition 6.1.7 (p.190), over an arbitrary affine base `Spec R`. It
@@ -9,7 +9,9 @@ root factor `q > 1` is a power of the prime `p`, then `p = 0`. Conrad proves thi
 in Lemma 6.1.4 (pp.188-189) by working Zariski-locally on the base. Here the
 local theorem is applied after base change to a local `R`-algebra `A` whose
 spectrum maps into the open set where the character map is known. The proof of
-the target then uses `A = R_𝔭` for primes `𝔭` of `R`.
+`AffineSplitSurjectionRootDatumStatement` in
+[`Reductive.AffineSplitSurjectionRootDatumProof`](AffineSplitSurjectionRootDatumProof.md)
+then uses `A = R_𝔭` for primes `𝔭` of `R`.
 
 All declarations are in the namespace
 `Langlands.GroupScheme.AffineSplitSurjection`. Throughout, `R` is a commutative
@@ -62,8 +64,8 @@ induced morphism of spectra.
 - `A` is a local `R`-algebra;
 - `G` and `H` are reductive group schemes over `Spec R` with coordinate split
   tori `i` and `i'` that are maximal on every fibre, with reduced fibrewise root
-  data `P` and `Q`, and with root spaces free of rank one (the hypotheses of the
-  target statement, except that the tori are not required to be closed);
+  data `P` and `Q`, and with root spaces free of rank one (the hypotheses of
+  `AffineSplitSurjectionRootDatumStatement`, except that the tori are not required to be closed);
 - `φ : G ⟶ H` is locally quasi-finite and `i ≫ φ = τ ≫ i'`;
 - `splitTorus.CharacterMapOn τ V h` holds on an open set `V`;
 - `r : RootDatumIsogeny p Q P` is a root-datum isogeny with `r.weightMap = h`;

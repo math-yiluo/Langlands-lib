@@ -1,7 +1,5 @@
 # Unipotent Haar measure under character-change conjugation
 
-Author: Worker 234.
-
 This module states a proposition. It does not prove it; the proof
 `unipotentCharacterChangeModulus` is in
 [UnipotentCharacterChangeModulusProof](UnipotentCharacterChangeModulusProof.md)

@@ -1,9 +1,7 @@
 # Descending a Hermitian Galois cocycle to a special unitary group
 
-Author: Worker 5375.
-
-This internal module is the descent step of Task 6209
-(`OuterTypeAHermitianPresentationStatement`). It builds an isomorphism from the special
+This internal module is the descent step of the proof of
+`OuterTypeAHermitianPresentationStatement`. It builds an isomorphism from the special
 unitary group scheme `SU(H)` of a Hermitian matrix onto a group `G` that becomes `SL_(n+1)`
 over a Galois cover. The input is a local isomorphism whose Galois discrepancies have the
 inner/outer shape of the published `SpecialLinearTitsCocycleStatement`. The module then
@@ -117,5 +115,5 @@ The provenance is internal. This is the classical description of an outer form o
 `SL_(n+1)` as the special unitary group of a Hermitian form, by Galois descent of the
 splitting `SU(H) ≅ SL_(n+1)` over a field containing `L`. Both discrepancy hypotheses
 quantify over all test schemes and all cover points. The module does not produce `E` or
-the Hermitian matrix: those come from the cocycle side of Task 6209. The torus clause is
+the Hermitian matrix: those come from the cocycle side of that proof. The torus clause is
 in `OuterTypeAHermitianTorus`.

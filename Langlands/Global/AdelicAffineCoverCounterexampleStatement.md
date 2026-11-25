@@ -39,7 +39,7 @@ unit, is a proof obligation rather than an assumed input.
 The aggregate is the conjunction of these three proposition definitions.
 It states a set-theoretic obstruction and does not assert a comparison of
 topologies. Every quantified type lies in the arbitrary common universe
-`u`. This unit states the assertions and does not supply their proof.
+`u`. This module states the assertions and does not supply their proof.
 
 Registered source `conrad-2011-weil-grothendieck-adelic-points`, SHA-256
 `fe4a9193aff4ef575665b40971f3da32f850a74d87b3f2d0fa28bba26b9cbabb`,

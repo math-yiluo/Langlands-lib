@@ -51,10 +51,13 @@ lift `SubgroupPreimage.kernelInclusion` with its fppf-quotient lemma
   holds from `AdmitsTower D q`, that is, from a tower of some finite length.
 
 The last theorem is the meaning of the statement
-`LinearKernelTower.SectionExistenceStatement`, as specified by task
-`e2b7437f-c78c-43e7-a63a-9853584f835f`, except that it has the hypothesis
-`hsplit`. Once `LinearAdditiveExtensionSplittingStatement` is proved, that
-statement follows by applying this theorem to the proof.
+`LinearKernelTower.SectionExistenceStatement`, except that it has the hypothesis
+`hsplit`. `LinearAdditiveExtensionSplittingStatement` is proved by
+`linearAdditiveExtensionSplitting`
+(`Langlands.GroupScheme.LinearAdditiveExtensionSplittingProof`), and
+`LinearKernelTower.sectionExistence`
+(`Langlands.GroupScheme.LinearKernelTowerSectionProof`) obtains that statement
+by applying this theorem to the proof.
 
 ## Proof
 

@@ -1,7 +1,6 @@
 # Flatness of a universal smooth-family Picard parameter: proof
 
-Authors: Worker 2037. The assembly adapts Worker 442's earlier conditional
-two-input draft. It is internal derived content: it combines published Library
+The proof is internal derived content: it combines published Library
 theorems and makes no new literature assertion.
 
 ## Result
@@ -68,17 +67,16 @@ geometric-point classification.
 
 ## Checks and scope
 
-A development `lean_check` (diagnostic `115f54c7-5d44-484c-a415-690c769f354f`)
-built the module with 0 errors and 0 warnings. It reports the axioms
+A development `lean_check` built the module with 0 errors and 0 warnings. It reports the axioms
 `propext`, `Classical.choice` and `Quot.sound` only, and the theorem type is the
 constant `Langlands.AbelianScheme.SmoothFamilyFlatStatement` at universe
 parameter `u`.
 
-The proof does not use `RelativeDualSchemeFlatStatement`,
-`RelativeDualSchemeGeometryStatement` or any conditional draft. It constructs no
+The proof does not use `RelativeDualSchemeFlatStatement` or
+`RelativeDualSchemeGeometryStatement`. It constructs no
 second representer. It uses the published finite-type representer, the
 published general-base reduction, and the published comparison. The final
-assembly of the shared representability statement belongs to task
-`e9fb02f6-3fec-4e98-84cf-fcbd2b47f407`, and this proof does not publish it. It
-applies the two published theorems inline instead. Task IDs record ownership
-only. They are not mathematical evidence.
+assembly of the shared representability statement is
+`smoothFamilyAbelianRepresentability` (module
+`SmoothFamilyAbelianRepresentabilityProof`), which this proof does not import. It
+applies the two published theorems inline instead.

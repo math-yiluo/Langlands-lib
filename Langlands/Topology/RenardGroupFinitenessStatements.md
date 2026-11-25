@@ -14,8 +14,8 @@ proof on printed page **43** / PDF page **49**:
 - Original: `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`.
 - SHA256: `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 
-Worker 450 read that entire PDF page and the t.d.-space and group definitions
-in II.1.1, printed page 30 / PDF page 36, and checked the original file's hash.
+That entire PDF page and the t.d.-space and group definitions in II.1.1,
+printed page 30 / PDF page 36, were read, and the original file's hash was checked.
 The latter definition requires Hausdorffness and a compact-open neighborhood
 basis. It is exactly the published predicate
 `Langlands.Topology.IsLocallyProfinite G`, which is equivalent, by
@@ -86,13 +86,14 @@ finite family of open cosets covers each compact member of a countable
 compact exhaustion, giving a countable cover of `G` by cosets.
 
 These arguments describe the original source, not proofs implemented here.
-The three conclusions remain proof obligations. A separate focused proof
-successor must prove the unchanged published declaration
+The three conclusions are not proved in this module. The separate
+module `Langlands.Topology.RenardGroupFinitenessProof` proves the unchanged
+published declaration
 `Langlands.Topology.RenardGroupFinitenessStatements.Assertions`; its Markdown
-must describe its implemented Lean route, which may use existing Mathlib
+describes its implemented Lean route, which uses existing Mathlib
 results instead of the source's finite-subcover argument.
 
-The environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, Lean 4.34.0 at
+The environment is Lean 4.34.0 at
 `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`, Mathlib at
 `5ed2965256430c3649e86755f9576b54eca72435`. The project dependency is
 `Langlands.Topology.LocallyProfinite`. Mathlib imports supply the existing

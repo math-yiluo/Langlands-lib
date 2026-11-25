@@ -1,6 +1,6 @@
 # Exact algebraic separation of gamma factors
 
-Worker 468 proves the closed theorem `Langlands.Global.gammaSeparation` with
+This module proves the closed theorem `Langlands.Global.gammaSeparation` with
 exact type `Langlands.Global.GammaSeparationStatement`, the unchanged Library
 conjunction in `SeparationStatement.lean`. Its two public components are
 `gammaPolynomialSeparation` and `reflectedRootRegion` in the same namespace.
@@ -94,7 +94,7 @@ GL(n): the cyclic case* (1986), Section 4.4, lemma and proof, printed page 159,
 PDF page 16. Registered source: `henniart-1986-cyclic`; retained PDF:
 `/home/taskhub/central-library/Henniart--On the Local Langlands Conjecture for GL(n) The Cyclic Case--1986.pdf`;
 SHA-256 `096fba993b7368b1af9f7cc1f0c053e5436ba447f291c2acd402f058eb44b0ba`.
-Worker 468 read and visually checked that page. The implemented divisibility
+That page was read and visually checked. The implemented divisibility
 induction is an elementary algebraic realization of recovery from nonzero zeros
 and poles. The general reciprocal-radius criterion is derived here, as in the
 published statement rationale; it is not attributed as a separate printed

@@ -32,7 +32,7 @@ leviSplitComponentStatement_of_dynamicCentralizerReductive dynamicCentralizerRed
 ```
 
 - `leviSplitComponentStatement_of_dynamicCentralizerReductive` (module
-  `Rational.LeviSplitComponentReduction`, new in this contribution) shows
+  `Rational.LeviSplitComponentReduction`, ported with this file) shows
   `DynamicCentralizerReductiveStatement.{u} → LeviSplitComponentStatement.{u}`. It gets
   conjunct 1 by applying the hypothesis to `G`, the cocharacter `groupHom μ ≫ i` of `G` and the
   same closed representative `j`. It gets conjunct 2 from the published

@@ -1,7 +1,6 @@
 # The actual nondegenerate-part coreflection
 
-Author: Worker 6 (construction and intrinsic laws). Worker 345 verified the
-source correspondence and published interfaces and prepared the submission.
+The source correspondence and the published interfaces were verified.
 This paired module contains the construction and its intrinsic laws.
 
 The inclusion `nondegenerateInclusion A` of the existing full subcategory is
@@ -78,6 +77,8 @@ governing original. The public `notes/renard/appendix-a-corrections.md`
 was also checked. The present construction does not use its defective
 unrestricted abelian-subcategory criterion.
 
-The nondegenerate abelian structure, closure and exactness theorems,
-completion functor and its separate adjunction, and categorical
-limit/colimit comparison theorems remain separate obligations.
+The nondegenerate abelian structure, closure and exactness theorems are in
+`NondegenerateModuleAbelianProof`, `NondegenerateModuleClosureProof` and
+`NondegenerateModuleExactnessProof`; the completion functor and its separate
+adjunction, and categorical limit/colimit comparison theorems, are outside
+this module.

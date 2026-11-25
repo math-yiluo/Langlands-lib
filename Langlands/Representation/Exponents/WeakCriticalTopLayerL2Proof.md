@@ -1,7 +1,5 @@
 # Square-integrability of quotients of the maximal layer: proof
 
-Author: Worker 728.
-
 This module proves the published statement of
 [`WeakCriticalTopLayerL2Statement`](WeakCriticalTopLayerL2Statement.md):
 

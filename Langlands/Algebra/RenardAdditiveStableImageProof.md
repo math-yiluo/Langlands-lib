@@ -1,8 +1,8 @@
 # Proof of the canonical stable image for additive nonunital actions
 
-Authors: Worker 490 and Worker 926. Worker 490 adapted their published
-complex-compatible stable-image proof to the canonical integer conversion of
-original additive data, following Worker 926's successor-task route. The
+This proof adapts the published complex-compatible stable-image proof
+(`RenardCompatibleStableImageProof`) to the canonical integer conversion of
+original additive data. The
 published target and all its imported Lean/Markdown pairs are unchanged.
 
 The closed theorem
@@ -25,16 +25,16 @@ A.III.1, example 5 and its following lemma and corollary, printed pp. 252–253 
 PDF pp. 258–259. The nonunital conventions are on printed pp. 5–6 / PDF
 pp. 11–12, and the additive versus complex-linear Hom distinction and
 unitization are I.2.1, printed p. 14 / PDF p. 20, with context on PDF p. 21.
-Worker 490 read these passages for this proof on 30 October 2026 and visually
-checked PDF p. 285; the source hash was verified.
+These passages were read for this proof on 30 October 2026 and PDF p. 285
+was visually checked; the source hash was verified.
 
 The registered supplementary source `renard-2010-corrections-complements`,
-at `/home/taskhub/pilot/literature/Renard — Représentations des groupes réductifs p-adiques- corrections et compléments (2010 edition errata).pdf`,
 SHA256 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
 was checked on PDF pp. 18–19 after verifying its hash. These pages do not
 correct the final C.II proposition or resolve its nonunital finiteness
-conventions. No dedicated source errata file was present in the project,
-workspace or pinned Library. The 2026 original governs.
+conventions. When this proof was written, no dedicated source errata file was
+present in the project or the Library; the Renard errata notes now in
+`notes/errata` do not concern C.II. The 2026 original governs.
 
 This proof is **internal derived, finiteness-free content**. Renard's final
 proposition assumes a commutative Noetherian complex algebra, a finite module
@@ -146,12 +146,11 @@ uniqueness are proved rather than assumed.
 
 ## Development checks
 
-In approved environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, the complete
+In the Lean environment used for checking, the complete
 proof compiled with zero errors and warnings and its closed theorem was
 inspected. Its only axioms are `propext`, `Classical.choice` and `Quot.sound`.
-A private inspection overlay checked all public helper types, the unapplied
+A separate inspection overlay checked all public helper types, the unapplied
 closed theorem and its exact target at arbitrary independent `uA, uV`, and
 at `(0, 1)` and `(1, 0)`. All checks passed. The target's complete project-import closure, 22 Lean/Markdown
 files, was compared byte for byte with the published Library base and is
-unchanged. Independent semantic acceptance and official machine validation
-are separate from these development checks.
+unchanged.

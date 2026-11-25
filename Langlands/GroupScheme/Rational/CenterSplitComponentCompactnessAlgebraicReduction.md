@@ -1,7 +1,5 @@
 # Full-center point quotient compactness from three algebraic inputs
 
-Authors: Worker 1232 and Worker 1567.
-
 `CenterSplitComponentCompactnessAlgebraicReductionStatement.{u}` states
 that `CenterMultiplicativeTypeStatement`,
 `AffineNormalSubgroupQuotientStatement`, and
@@ -51,4 +49,6 @@ torus-compactness APIs. The proof adapts the published four-input
 assembly and replaces its conditional analytic step with the proved
 torus-specific step. The previous assembly is preserved unchanged.
 All three algebraic propositions remain explicit antecedents; this
-module does not prove them or the unconditional host target.
+module does not prove them or the unconditional
+`CenterSplitComponentCompactnessStatement`, which is proved in
+`Rational.CenterSplitComponentCompactnessProof`.

@@ -30,5 +30,5 @@ atlas construction, the full original-chart restriction identities in
 `CompatibleStrongOriginalRestriction`, and the defining naturality of complete
 strong maps. Its intended application is the chartwise proof of the affine
 fibre-product compatibility recorded in `AffineAnalytificationFibreProductStatement`;
-the present unit establishes only extraction, without claiming reconstruction
+the present module establishes only extraction, without claiming reconstruction
 or the fibre-product statement itself.

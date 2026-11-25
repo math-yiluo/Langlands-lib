@@ -44,9 +44,9 @@ lemma squarePullbackIso_unit_scaled {X Y X' Y' : Scheme.{u}}
     (hs : p' ≫ t = s ≫ p) (c : Γ(Y', ⊤)ˣ) :
     Langlands.AlgebraicGeometry.LinearSystem.PullbackSquareCompatible p p' s t hs
       (pullbackUnitIso p).hom (pullbackUnitIso p').hom
-      ((pullbackUnitIso t).hom ≫ (unitAut (SheafOfModules.unit Y'.ringCatSheaf) c).hom)
+      ((pullbackUnitIso t).hom ≫ (unitAut (SheafOfModules.unit Y'.ringCatSheaf) c).asIso.hom)
       ((pullbackUnitIso s).hom ≫ (unitAut (SheafOfModules.unit X'.ringCatSheaf)
-        (Units.map p'.appTop.hom.toMonoidHom c)).hom) := by
+        (Units.map p'.appTop.hom.toMonoidHom c)).asIso.hom) := by
   unfold Langlands.AlgebraicGeometry.LinearSystem.PullbackSquareCompatible
   have hm := congrArg Iso.hom
     (pullback_mapIso_unitAut p' (SheafOfModules.unit Y'.ringCatSheaf) c)
@@ -54,7 +54,7 @@ lemma squarePullbackIso_unit_scaled {X Y X' Y' : Scheme.{u}}
   rw [hm, unitAut_naturality]
   simpa only [Category.assoc] using congrArg
     (fun f => f ≫ (unitAut (SheafOfModules.unit X'.ringCatSheaf)
-      (Units.map p'.appTop.hom.toMonoidHom c)).hom)
+      (Units.map p'.appTop.hom.toMonoidHom c)).asIso.hom)
     (squarePullbackIso_unit p p' s t hs).symm
 
 end Langlands.Scheme.Modules
@@ -94,14 +94,14 @@ lemma openLinePullbackIso_restrict {TU TV : Scheme.{u}}
     (Scheme.Modules.pullback t).map (openLinePullbackIso p jV bV hV eV).hom ≫
         (pullbackUnitIso t).hom ≫
           (unitAut (SheafOfModules.unit TU.ringCatSheaf)
-            (Units.map bU.appTop.hom.toMonoidHom (openLineTransitionUnit eV eU h))).hom =
+            (Units.map bU.appTop.hom.toMonoidHom (openLineTransitionUnit eV eU h))).asIso.hom =
       compHom t jV jU htj ((Scheme.Modules.pullback p).obj N) ≫
         (openLinePullbackIso p jU bU hU eU).hom := by
   have he :
       (Scheme.Modules.pullback (S.homOfLE h)).map (openLineIso eV).hom ≫
           ((pullbackUnitIso (S.homOfLE h)).hom ≫
             (unitAut (SheafOfModules.unit U.toScheme.ringCatSheaf)
-              (openLineTransitionUnit eV eU h)).hom) =
+              (openLineTransitionUnit eV eU h)).asIso.hom) =
         compHom (S.homOfLE h) V.ι U.ι (S.homOfLE_ι h) N ≫ (openLineIso eU).hom := by
     simpa only [structureSheaf, openLineRestrictionIso, openPullbackIso, compHom, Iso.trans_hom,
       Functor.mapIso_hom, Iso.app_hom, Category.assoc] using
@@ -111,12 +111,12 @@ lemma openLinePullbackIso_restrict {TU TV : Scheme.{u}}
     p jU jV t htj bU bV (S.homOfLE h) U.ι V.ι ht hU.symm hV.symm
     (S.homOfLE_ι h) N (openLineIso eU) (openLineIso eV)
     (pullbackUnitIso (S.homOfLE h) ≪≫
-      unitAut (SheafOfModules.unit U.toScheme.ringCatSheaf)
-        (openLineTransitionUnit eV eU h)) he
+      (unitAut (SheafOfModules.unit U.toScheme.ringCatSheaf)
+        (openLineTransitionUnit eV eU h)).asIso) he
     (pullbackUnitIso bU).hom (pullbackUnitIso bV).hom
     ((pullbackUnitIso t).hom ≫
       (unitAut (SheafOfModules.unit TU.ringCatSheaf)
-        (Units.map bU.appTop.hom.toMonoidHom (openLineTransitionUnit eV eU h))).hom)
+        (Units.map bU.appTop.hom.toMonoidHom (openLineTransitionUnit eV eU h))).asIso.hom)
     (squarePullbackIso_unit_scaled bV bU t (S.homOfLE h) ht
       (openLineTransitionUnit eV eU h))
 
@@ -144,7 +144,7 @@ lemma baseLineChartIso_restrict
         (baseLineChartIso hM hN V).hom ≫
       (pullbackUnitIso (tensorChartRestriction hM hN h)).hom ≫
         (unitAut (structureSheaf (RelativeProjectiveSpace U.val.toScheme n))
-          (dualLineProjectiveUnit hM hN h)).hom =
+          (dualLineProjectiveUnit hM hN h)).asIso.hom =
       compHom (tensorChartRestriction hM hN h)
         (tensorChart hM hN V) (tensorChart hM hN U)
         ((tensorAtlas hM hN).cocycle.transition_chart h)

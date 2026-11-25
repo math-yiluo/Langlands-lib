@@ -90,7 +90,7 @@ def IsCoordinateDiscrete (F : (P.Over ⊤ X)ᵒᵖ ⥤ ModuleCat.{w} R)
     {U : TwistedOver P ρ} {H : OpenSubgroup G}
     (a : (H : Subgroup G) →* (End U)ᵐᵒᵖ) (t : ∀ g, ↑(objects ρ F U g)) : Prop :=
   ∃ K : OpenSubgroup G, K ≤ H ∧ ∀ h : (H : Subgroup G), (h : G) ∈ K →
-    coordinateMap ρ F (a h).unop t = t
+    coordinateMap ρ F (a h).unop.asHom t = t
 
 /-- Discreteness of an actual induction section is exactly discreteness of its coordinate family. -/
 theorem isDiscreteSection_iff (F : (P.Over ⊤ X)ᵒᵖ ⥤ ModuleCat.{w} R)

@@ -1,0 +1,115 @@
+/-
+Copyright (c) 2026 Yijun Yuan. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Yijun Yuan
+-/
+module
+
+public import FontaineWintenberger.LocalField.Basic
+public import FontaineWintenberger.LocalField.Spectral.IntegralGenerator
+
+set_option relaxedAutoImplicit false
+set_option maxSynthPendingDepth 3
+
+/-!
+# The spectral integer ring equals every compatible extension valuation ring
+
+Integral closedness gives inclusion into any compatible valuation ring. The
+one-dimensional valuation overring theorem and localness exclude a larger ring.
+
+## Main results
+
+* `spectralIntegerRing_eq_extension_valuationSubring`: The integral-closure construction equals any
+  compatible chosen valuation ring.
+* `extensionValuationSubring_exists_generator`: Monogenicity for any chosen compatible extension
+  valuation, with arbitrary perfect residue.
+
+## References
+
+* Serre, *Local Fields*, Chapters I–II (discrete valuation rings, completions, unramified and
+  totally ramified extensions).
+-/
+
+@[expose] public section
+
+namespace Valuation.HasExtension
+
+variable {K L : Type*} [Field K] [Field L] [Algebra K L]
+variable {ΓK ΓL : Type*} [LinearOrderedCommGroupWithZero ΓK]
+    [LinearOrderedCommGroupWithZero ΓL] (v : Valuation K ΓK) (w : Valuation L ΓL)
+    [v.HasExtension w]
+
+/-- The canonical map between compatible field valuation rings is injective. -/
+instance valuationSubring_faithfulSMul : FaithfulSMul v.valuationSubring w.valuationSubring := by
+  apply (faithfulSMul_iff_algebraMap_injective _ _).mpr
+  intro a b hab
+  apply Subtype.ext
+  apply (algebraMap K L).injective
+  exact congrArg (fun y : w.valuationSubring => (y : L)) hab
+
+end Valuation.HasExtension
+
+namespace FontaineWintenberger
+
+variable (K : Type*) [NontriviallyNormedField K] [IsCompleteDiscreteValuedField K]
+variable (L : Type*) [Field L] [Algebra K L] [FiniteDimensional K L]
+variable [Algebra.IsSeparable K L]
+variable {Γ : Type*} [LinearOrderedCommGroupWithZero Γ] (w : Valuation L Γ)
+variable [(NormedField.valuation (K := K)).HasExtension w]
+
+
+/-- The integral-closure construction equals any compatible chosen valuation ring. -/
+theorem spectralIntegerRing_eq_extension_valuationSubring :
+    spectralIntegerRing K L = w.valuationSubring := by
+  apply ValuationSubring.eq_of_le_of_ne_top
+  · intro x hx
+    have hint : IsIntegral 𝒪[K] x := (isIntegral_iff_spectralNorm_le_one K x).mpr hx
+    have hW : IsIntegral w.valuationSubring x := hint.tower_top
+    exact (Valuation.valuationSubring.integers w).isIntegral_iff_v_le_one.mp hW
+  · intro htop
+    have hfield : IsField w.valuationSubring := by
+      rw [htop]
+      exact Field.toIsField _
+    obtain ⟨π, hπ⟩ := IsDiscreteValuationRing.exists_irreducible 𝒪[K]
+    have hmem : ¬ IsUnit (algebraMap 𝒪[K] w.valuationSubring π) :=
+      map_nonunit (algebraMap 𝒪[K] w.valuationSubring) π hπ.not_isUnit
+    have hne : algebraMap 𝒪[K] w.valuationSubring π ≠ 0 := by
+      intro h
+      apply hπ.ne_zero
+      apply Subtype.ext
+      apply (algebraMap K L).injective
+      simpa using congrArg (fun y : w.valuationSubring => (y : L)) h
+    let := hfield.toField
+    exact hmem (isUnit_iff_ne_zero.mpr hne)
+
+/-- Any compatible chosen valuation ring is the base integral closure in `L`. -/
+instance extensionValuationSubring_isIntegralClosure :
+    IsIntegralClosure w.valuationSubring 𝒪[K] L where
+  algebraMap_injective := Subtype.val_injective
+  isIntegral_iff := by
+    intro x
+    rw [← spectralIntegerRing_eq_extension_valuationSubring K L w]
+    exact (spectralIntegerRing_isIntegralClosure K L).isIntegral_iff
+
+instance extensionValuationSubring_moduleFinite : Module.Finite 𝒪[K] w.valuationSubring :=
+  IsIntegralClosure.finite (A := 𝒪[K]) (K := K) (L := L) (C := w.valuationSubring)
+
+include K in
+theorem extensionValuationSubring_isDiscreteValuationRing :
+    IsDiscreteValuationRing w.valuationSubring := by
+  rw [← spectralIntegerRing_eq_extension_valuationSubring K L w]
+  infer_instance
+
+include K in
+theorem extensionValuationSubring_henselianLocalRing : HenselianLocalRing w.valuationSubring := by
+  rw [← spectralIntegerRing_eq_extension_valuationSubring K L w]
+  infer_instance
+
+/-- Monogenicity for any chosen compatible extension valuation, with arbitrary perfect residue. -/
+theorem extensionValuationSubring_exists_generator [PerfectField 𝓀[K]] :
+    ∃ x : w.valuationSubring, Algebra.adjoin 𝒪[K] {x} = ⊤ := by
+  have := extensionValuationSubring_isDiscreteValuationRing K L w
+  have := extensionValuationSubring_henselianLocalRing K L w
+  exact exists_integral_generator
+
+end FontaineWintenberger

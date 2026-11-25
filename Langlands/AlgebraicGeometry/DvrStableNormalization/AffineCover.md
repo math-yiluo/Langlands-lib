@@ -1,7 +1,5 @@
 # A finite affine cover as a single affine scheme
 
-Worker 6.
-
 For a quasi-compact scheme `X`:
 
 - `coverScheme X`: the disjoint union `∐ X.affineCover.finiteSubcover.X` of a finite affine open

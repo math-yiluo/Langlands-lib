@@ -1,8 +1,8 @@
 # The real equal-rank successor step with strip growth
 
-This module is the real counterpart of the published complex module
+This module is the real counterpart of the complex module
 `ComplexLocalEqualGrowthStep`. It assembles the canonical-range step of
-`RealLocalEqualCanonicalGrowth` into Worker 1050's rank-indexed equal predicate. It also reduces
+`RealLocalEqualCanonicalGrowth` into the rank-indexed equal predicate of `RealLocalCharacterGrowthInterfaces`. It also reduces
 the target `RealLocalUniformPositiveEqualContinuationStatement` to explicitly named premises.
 
 ## Premises (definitions)
@@ -11,7 +11,7 @@ The three premises below are open inputs, defined as propositions. They are not 
 
 * `RealUniformCanonicalRangePremise`: for every rank index `r`, nonzero real `a`, parities `p` and
   complex exponents `z` indexed by `Fin (r + 1)`, the uniform Whittaker model
-  `realUniformWhittakerModel r (characterList p z) (-a)` is contained in the range of Worker 771's
+  `realUniformWhittakerModel r (characterList p z) (-a)` is contained in the range of the
   canonical Jacquet map `canonicalJacquetMap a p z`. The reverse inclusion is already known: the
   canonical map is a uniform Whittaker intertwiner for the character `-a`
   (`realGodementCanonicalModel`). The canonical map is nonzero at every exponent
@@ -31,9 +31,8 @@ The three premises below are open inputs, defined as propositions. They are not 
   square Schwartz test `Ψ` with finite-dimensional left orthogonal span,
   `RealMatrixCoefficientNormalizedGrowth` holds. Its lists are `[charData e 0]` and `fs` with
   their duals, with parameter `-a`, scale `√|a|` and sign `1`. This is the matrix input of the
-  steps `RealLocalEqualFiniteSquareNormalized` through `RealLocalEqualCanonicalGrowth`. Worker
-  823's planned normalized matrix theorem (`RealMatrixPairNormalizedGrowthStatement`) is
-  expected to provide it.
+  steps `RealLocalEqualFiniteSquareNormalized` through `RealLocalEqualCanonicalGrowth`. The
+  Library does not prove it.
 
 ## Helper statements
 
@@ -46,8 +45,8 @@ The three premises below are open inputs, defined as propositions. They are not 
 ## Statements
 
 `RealLocalEqualGrowthStepStatement t` (proved by `realLocalEqualGrowthStep`) assumes the three
-premises, with the matrix premise at rank `t`. It also assumes Worker 1050's adjacent character
-predicate `RealLocalAdjacentCharacterGrowthAtRank t`. It concludes Worker 1050's equal
+premises, with the matrix premise at rank `t`. It also assumes the adjacent character
+predicate `RealLocalAdjacentCharacterGrowthAtRank t`. It concludes the equal
 character predicate `RealLocalEqualCharacterGrowthAtRank (t + 1)`. Explicitly: for real character
 lists `ds, es` of rank `t + 2`, a nonzero real `a`, quotient data `D` of rank `t + 1`, `W` in the
 uniform model of `ds` with character `a`, `W'` in that of `es` with character `-a`, and a
@@ -75,7 +74,7 @@ For the step, write `ds = cs.map character` and `es = fs₀.map character` and u
 * The larger map `B = canonicalJacquetMap a P' Zs'` is a uniform intertwiner for the list
   `fs = (charData (P' i) (Zs' i))_i` with character `-a` (`realGodementCanonicalModel`). The
   evaluation premise gives its continuous Whittaker evaluation.
-* Worker 1050's adjacent predicate is applied at the parameter `-a`, with the larger list `fs`,
+* The adjacent predicate is applied at the parameter `-a`, with the larger list `fs`,
   the tail list `(charData (P (i+1)) (Zs (i+1)))_i`, and the Library quotient data
   `realQuotientMeasureData t`. After `hasRealPairNormalizedGrowth_neg_neg`, this is the
   corank-one input of `realLocalEqualCanonicalGrowth`, in the order and with the sign used
@@ -84,7 +83,7 @@ For the step, write `ds = cs.map character` and `es = fs₀.map character` and u
 
 `realLocalEqualCanonicalGrowth` then gives the conclusion for `(W, W')`.
 
-The reduction applies Worker 1050's `realLocalUniformPositiveEqualContinuation_of_characterGrowth`
+The reduction applies `realLocalUniformPositiveEqualContinuation_of_characterGrowth`
 (from `RealLocalCharacterGrowthInterfaces`). Each positive rank is `t + 1`, and the step
 supplies equal character growth there.
 
@@ -98,10 +97,6 @@ For the second Whittaker function he uses a continuous Whittaker functional on t
 representation, whose uniqueness he invokes on p. 4, to expand its compact averages (p. 57). The Lean statement keeps these two inputs as explicit premises: the canonical
 range premise and the evaluation premise. The matrix normalized equation (Jacquet's Proposition
 4.4, used on pp. 56–58) is the third premise. The passage from character lists to block lists is
-Worker 1050's reduction, which keeps `RealUniformPrincipalSeriesInclusionStatement` as a premise.
+the reduction of `RealLocalCharacterGrowthInterfaces`, which keeps `RealUniformPrincipalSeriesInclusionStatement` as a premise.
 The module does not prove any of the five premises. It therefore does not prove
 `RealLocalUniformPositiveEqualContinuationStatement` unconditionally.
-
-The pairs `RealLocalCharacterGrowthInterfaces`, `RealLocalGrowthInterfaces`,
-`RealLocalEqualRankZeroGrowth` and `RealLocalNormalizedGrowth` are Worker 1050's reviewed modules.
-They accompany this candidate unchanged.

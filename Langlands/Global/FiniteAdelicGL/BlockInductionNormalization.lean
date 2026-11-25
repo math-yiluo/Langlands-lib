@@ -94,7 +94,7 @@ theorem norm_eq_canonicalNormalizedAbs (x : FiniteCompletion F v) :
   have hlog : WithZero.log (Valued.v x) = (WithZero.unzero hvx).toAdd :=
     congrArg WithZero.log (WithZero.coe_unzero hvx).symm
   rw [NumberField.FinitePlace.norm_def, WithZeroMulInt.toNNReal_neg_apply _ hvx,
-    NNReal.coe_zpow, NNReal.coe_natCast, ← hlog, T.normalizedAbs_of_ne_zero hx,
+    NNReal.coe_zpow, NNReal.coe_natCast, T.normalizedAbs_of_ne_zero hx,
     canonicalResidueCardinality_eq_absNorm v, PadicField.TopologicalData.ord,
     ← valued_eq_canonicalDiscreteValuation v, neg_neg]
 

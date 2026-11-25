@@ -1,6 +1,6 @@
 # Line stabilizers in a rank-one graded algebra acting on a vector space
 
-Author: Worker 33. Module `Langlands.Algebra.RankOneGradedLagrangian`, namespace
+Module `Langlands.Algebra.RankOneGradedLagrangian`, namespace
 `Langlands.RankOneGraded.IsRankOneGrading`. It imports
 `Langlands.Algebra.RankOneGradedAlgebra` and only adds to it.
 

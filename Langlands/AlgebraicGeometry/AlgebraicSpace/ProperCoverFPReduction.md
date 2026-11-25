@@ -1,8 +1,8 @@
 # Proper finitely presented scheme covers from weak Chow covers
 
-This internal unit derives `ProperSchemeCoverStatement` from the weak Chow
+This internal module derives `ProperSchemeCoverStatement` from the weak Chow
 cover interface `ProperSchemeCover.ChowCoverStatement`. It follows the route
-described in the task context: first a Noetherian model of the space, then
+described in `ProperSchemeCoverStatement.md`: first a Noetherian model of the space, then
 the cover of that model, then pulling the cover back to the original base.
 The cover itself is the hypothesis `h`. The interface is in the spirit of
 Stacks Lemma 69.18.1 (Tag 089I); see `ChowCoverStatement.md`.
@@ -76,9 +76,9 @@ statement is not used.
 
 ## Provenance
 
-The reduction is internal and follows the route in the task context. It uses
+The reduction is internal and follows the route in `ProperSchemeCoverStatement.md`. It uses
 published Library results: model existence along cofiltered limits, base
 change of atlases, and `isSeparated_of_representableBy`. It also uses the
-units `ProperCoverFPApprox` and `ProperCoverFPComposite`. It does not use
+modules `ProperCoverFPApprox` and `ProperCoverFPComposite`. It does not use
 `SpaceLimitPropertyDescentStatement`, and it adds no hypothesis to
 `ProperSchemeCoverStatement` beyond the explicit interface `h`.

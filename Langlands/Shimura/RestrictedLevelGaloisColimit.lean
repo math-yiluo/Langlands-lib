@@ -34,11 +34,11 @@ theorem isLevelTrivial_forget (hF : IsLevelTrivial F) :
 modules. -/
 def actionNatTrans (γ : Γ) :
     F ⋙ Action.forget (ModuleCat.{w} R) Γ ⟶ F ⋙ Action.forget (ModuleCat.{w} R) Γ where
-  app U := (F.obj U).ρ γ
+  app U := ((F.obj U).ρ γ).asHom
   naturality _ _ a := ((F.map a).comm γ).symm
 
 @[simp] theorem actionNatTrans_app (γ : Γ) (U : P.FullSubcategoryᵒᵖ) :
-    (actionNatTrans F γ).app U = (F.obj U).ρ γ := rfl
+    (actionNatTrans F γ).app U = ((F.obj U).ρ γ).asHom := rfl
 
 /-- A level-trivial presheaf of modules with an action of `Γ`, as a level-trivial presheaf of
 modules with an action of `Γ` by endomorphisms of presheaves. -/
@@ -46,10 +46,11 @@ def levelTrivialAction (hF : IsLevelTrivial F) :
     Action (levelTrivialProperty P (ModuleCat.{w} R)).FullSubcategory Γ where
   V := ⟨F ⋙ Action.forget (ModuleCat.{w} R) Γ, isLevelTrivial_forget F hF⟩
   ρ :=
-    { toFun γ := ObjectProperty.homMk (actionNatTrans F γ)
-      map_one' := ObjectProperty.hom_ext _ (NatTrans.ext (funext fun U => (F.obj U).ρ.map_one))
-      map_mul' γ δ :=
-        ObjectProperty.hom_ext _ (NatTrans.ext (funext fun U => (F.obj U).ρ.map_mul γ δ)) }
+    { toFun γ := End.of (ObjectProperty.homMk (actionNatTrans F γ))
+      map_one' := End.ext (ObjectProperty.hom_ext _
+        (NatTrans.ext (funext fun U => congrArg End.asHom (F.obj U).ρ.map_one)))
+      map_mul' γ δ := End.ext (ObjectProperty.hom_ext _
+        (NatTrans.ext (funext fun U => congrArg End.asHom ((F.obj U).ρ.map_mul γ δ)))) }
 
 end Presheaf
 
@@ -73,9 +74,9 @@ theorem smoothRepAction_V :
 
 /-- The action of `γ ∈ Γ` on a vector coming from level `U` is its action at level `U`. -/
 theorem smoothRepAction_ρ_ι_apply (γ : Γ) (U : P.FullSubcategory) (x : (F.obj (op U)).V) :
-    ((smoothRepAction F hF).ρ γ).hom.hom
+    ((smoothRepAction F hF).ρ γ).asHom.hom.hom
         ((ι (F ⋙ Action.forget (ModuleCat.{w} R) Γ) U).hom x) =
-      (ι (F ⋙ Action.forget (ModuleCat.{w} R) Γ) U).hom (((F.obj (op U)).ρ γ).hom x) :=
+      (ι (F ⋙ Action.forget (ModuleCat.{w} R) Γ) U).hom (((F.obj (op U)).ρ γ).asHom.hom x) :=
   congrArg (fun f => ModuleCat.Hom.hom f x) (ι_map (actionNatTrans F γ) U)
 
 /-- The action of `g ∈ G` on a vector coming from level `U`: it comes from the conjugate level
@@ -89,9 +90,9 @@ theorem smoothRepAction_representation_ι_apply (g : G) (U : P.FullSubcategory)
 
 /-- The actions of `G` and of `Γ` on the colimit commute. -/
 theorem smoothRepAction_comm (γ : Γ) (g : G) (z : (smoothRepAction F hF).V) :
-    ((smoothRepAction F hF).ρ γ).hom.hom ((smoothRepAction F hF).V.obj.ρ g z) =
-      (smoothRepAction F hF).V.obj.ρ g (((smoothRepAction F hF).ρ γ).hom.hom z) :=
-  Representation.IntertwiningMap.isIntertwining _ _ ((smoothRepAction F hF).ρ γ).hom.hom g z
+    ((smoothRepAction F hF).ρ γ).asHom.hom.hom ((smoothRepAction F hF).V.obj.ρ g z) =
+      (smoothRepAction F hF).V.obj.ρ g (((smoothRepAction F hF).ρ γ).asHom.hom.hom z) :=
+  Representation.IntertwiningMap.isIntertwining _ _ ((smoothRepAction F hF).ρ γ).asHom.hom.hom g z
 
 /-! ### Fixed vectors -/
 
@@ -181,7 +182,7 @@ abbrev heckeModule (K : Subgroup G) : Action (ModuleCat.{w} (LevelHeckeAlgebra R
 /-- Each element of `Γ` commutes with the Hecke algebra on fixed vectors. -/
 theorem heckeModule_ρ_smul (K : Subgroup G) (γ : Γ) (a : LevelHeckeAlgebra R K)
     (x : (heckeModule F hF K).V) :
-    ((heckeModule F hF K).ρ γ).hom (a • x) = a • ((heckeModule F hF K).ρ γ).hom x :=
+    ((heckeModule F hF K).ρ γ).asHom.hom (a • x) = a • ((heckeModule F hF K).ρ γ).asHom.hom x :=
   heckeModuleActionFunctor_ρ_smul Γ K (smoothRepAction F hF) γ a x
 
 /-- The double-coset element `[K g K]` acts on the `K`-fixed vectors as the double-coset

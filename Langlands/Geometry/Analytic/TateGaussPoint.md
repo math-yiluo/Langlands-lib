@@ -1,7 +1,5 @@
 # Gauss points and power bounds for strict Tate algebras
 
-Author: Worker 56, building on Worker 36's actual restricted-series construction.
-
 The coefficient norm is attained because the coefficient sequence vanishes at
 infinity: above any positive threshold there are only finitely many coefficients.
 The finiteness, attainment and first-maximum lemmas work over any ultrametric
@@ -19,7 +17,7 @@ at most one. Submultiplicativity then bounds every power by one. The coefficient
 field may have trivial valuation, and completeness is not needed for these
 results. No reduction or finite-dimensional assumption is used.
 
-This is the unquotiented Tate-algebra case, not the requested theorem for all
+This is the unquotiented Tate-algebra case, not the theorem for all
 closed-ideal affinoid quotients. The construction of suitable monic relations for
 general quotients, Noether normalization, and the corresponding spectral bound
 is developed in separate modules. They are not assumed in this module.
@@ -29,8 +27,8 @@ hosted at
 https://math.huji.ac.il/~temkin/teach/math738/Affinoid_algebras.pdf,
 section 2.1, page 1 (multiplicativity of the coefficient norm), and
 Proposition 2.6.5, page 12 (the general power-boundedness result for which this
-is supporting infrastructure). The operator supplied the exact 14-page PDF,
-now read in full, with pages 1, 3, 6, 11 and 12 also inspected visually.
+is supporting infrastructure). The exact 14-page PDF was read in full,
+with pages 1, 3, 6, 11 and 12 also inspected visually.
 It identifies itself as notes of part of Vladimir Berkovich's course; the
 note-taker and publication date are not identified. Its PDF metadata is dated
 2011-02-28. Registered source:
@@ -43,7 +41,7 @@ Retained file:
 The precise implementation uses Mathlib's
 `MvPowerSeries.antidiagonal_dominant` for the final strong-triangle argument.
 It proves, rather than assumes, the required dominant coefficient.
-Its internal dependencies are the actual `TateAlgebra` construction (Worker 36,
-with Worker 56's coefficient generalization) and `Spectrum.Definitions`.
+Its internal dependencies are the actual `TateAlgebra` construction (with its
+coefficient generalization) and `Spectrum.Definitions`.
 The division proof uses the coefficient norm-attainment lemmas from this
 module; the spectral proof also uses its Gauss point.

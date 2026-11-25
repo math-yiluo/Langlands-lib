@@ -17,7 +17,7 @@ Notation. `K/k` is a field extension, `b = algebraBaseMap k K`, and `S_K`, `T_K`
 ## The three hypotheses
 
 These are the hypotheses (H1)–(H3) of `hdesc` in `unramifiedZeroJumpDescent_of_galoisDescent`
-(module `UnramifiedZeroJumpDescentAssembly`, Task 6754). For a family `ψ` of root functions
+(module `UnramifiedZeroJumpDescentAssembly`). For a family `ψ` of root functions
 of `(G_K, S_K)` and a root `α` of `(G, S)`, write `U = rootGroupPoints iS_K α_K`.
 
 - (H1) For `g, h ∈ U`, `min (ψ_{α_K} g) (ψ_{α_K} h) ≤ ψ_{α_K} (g h⁻¹)`.
@@ -56,7 +56,7 @@ Proof.
    Step 1 rewrites its conclusion.
 
 The three lemmas cited in steps 3–5, and `mem_roots_baseChange_iff`, are proved in module
-`TorusRestrictedRootInvariance` (Task 6754).
+`TorusRestrictedRootInvariance`.
 
 ### The core iff, over an arbitrary field extension
 

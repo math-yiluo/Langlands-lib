@@ -1,7 +1,5 @@
 # Statement: gluing isomorphisms of the Levi subgroups of semisimple rank at most one
 
-Author: Worker 712.
-
 This module contains one `Prop`-valued statement,
 `Langlands.GroupScheme.SplitCommonTorusLeviGluingStatement`. The Lean file
 only defines the proposition. It contains no proof of it, and it adds no

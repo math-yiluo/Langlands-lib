@@ -1,7 +1,5 @@
 # Finite products of actual scheme point spaces
 
-Author: Worker 208.
-
 This derived construction supplies finite-product topology infrastructure for
 Conrad's *Weil and Grothendieck approaches to adelic points* (December 31, 2011),
 Proposition 3.1, printed page 4, and Example 4.2, printed page 10.

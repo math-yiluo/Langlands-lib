@@ -14,12 +14,12 @@ def ComplexPlaceFunctionalEquationMinusOneFreeReductionStatement : Prop :=
 ```
 
 `ComplexPlaceFunctionalEquationStatement` (Library module
-`Langlands.Global.RankinSelberg.ArchimedeanFunctionalEquationStatement`) is the target of the
-host task. It is the conjunction of the unequal-rank and the equal-rank functional equations of
+`Langlands.Global.RankinSelberg.ArchimedeanFunctionalEquationStatement`) is the target of this
+reduction. It is the conjunction of the unequal-rank and the equal-rank functional equations of
 Jacquet 2009, Theorem 2.1 (iii), p.6, at one complex place of a number field, for the
 archimedean restrictions of global Whittaker functions of actual cuspidal realizations.
 
-The four premises are those of the published reduction
+The four premises are those of the existing reduction
 `ComplexPlaceFunctionalEquationReductionStatement` (Library module
 `Langlands.Global.RankinSelberg.ComplexPlaceFunctionalEquationReduction`), with its minus-one
 premise `ComplexPlaceMinusOneStatement` removed:
@@ -33,17 +33,19 @@ premise `ComplexPlaceMinusOneStatement` removed:
   at a complex place is a permutation of the inverse characters.
 
 None of these four premises is proved here. The statement is weaker than the target, since it
-keeps four open premises, and stronger than the published reduction, since it drops one.
+keeps four premises, and stronger than the existing reduction, since it drops one. The two
+local functional equations are proved separately, as `complexLocalUnequalFunctionalEquation`
+and `complexLocalEqualFunctionalEquation`.
 
 ## Proof
 
-`complexPlaceFunctionalEquationMinusOneFreeReduction` applies the published theorem
+`complexPlaceFunctionalEquationMinusOneFreeReduction` applies the theorem
 `complexPlaceFunctionalEquationReduction` to the four premises and to
 `complexPlaceMinusOne : ComplexPlaceMinusOneStatement`.
 
 `complexPlaceMinusOne` is proved in `Langlands.Global.RankinSelberg.ComplexPlaceMinusOneProof`,
-with helper module `Langlands.Global.RankinSelberg.ComplexPlaceMinusOneScalar`; both modules are
-part of this contribution and have their own Markdown. In short: if an actual cuspidal
+with helper module `Langlands.Global.RankinSelberg.ComplexPlaceMinusOneScalar`; both modules were
+ported with this file and have their own Markdown. In short: if an actual cuspidal
 realization `T` of `GL_(r+1)` has the parameter `d` at the complex place `w`, then `-1 ∈ U(r+1)`
 at `w` acts on `T` by `∏_j χ_j(-1)`. The reason is that `-1` at `w` is central, so its
 eigenspaces in `T` are subrepresentations. On the complex principal series of `d`, right
@@ -58,5 +60,5 @@ The proofs use only the axioms `propext`, `Classical.choice` and `Quot.sound`.
 
 ## Provenance
 
-The statement is internal. It is the published conditional reduction with one premise
+The statement is internal. It is the existing conditional reduction with one premise
 discharged, and serves as an intermediate result toward the target.

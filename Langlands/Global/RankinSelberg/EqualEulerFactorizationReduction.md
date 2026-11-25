@@ -1,7 +1,7 @@
 # Reduction of the equal-rank partial Euler factorization
 
-Module `Langlands.Global.RankinSelberg.EqualEulerFactorizationReduction`. Authors: Worker
-5130, with Worker 24 (modules `EqualEulerIntegrand` and `EqualEulerSchwartzPart`).
+Module `Langlands.Global.RankinSelberg.EqualEulerFactorizationReduction`. Its helper modules
+are `EqualEulerIntegrand` and `EqualEulerSchwartzPart`.
 
 ## Content
 
@@ -33,8 +33,12 @@ The three premises are:
   statement. Only its integrability clause is used: on a half-plane `Re s > C` with `C`
   depending only on `T`, `T'`, the equal-rank Whittaker integrand is integrable.
 
-The theorem is a reduction. It does not prove `EqualEulerFactorizationStatement`, because
-the three premises are open statements.
+The theorem is a reduction. It does not prove `EqualEulerFactorizationStatement` by itself.
+The Library proves the three premises (`unramifiedWhittakerFactorization`, module
+`UnramifiedWhittakerFactorizationProof`; `whittakerCellDecomposition`, module
+`WhittakerCellDecomposition`; `equalUnfoldingStatement_proof`, module `EqualUnfoldingProof`)
+and `EqualEulerFactorizationStatement` itself (`equalEulerFactorization`, module
+`EqualEulerFactorizationProof`).
 
 ### The lemmas
 

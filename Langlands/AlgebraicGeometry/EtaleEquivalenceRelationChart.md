@@ -1,7 +1,5 @@
 # Étale chart relations
 
-Author: Worker 706.
-
 This internal construction restricts the published étale equivalence relation
 `E` along a scheme morphism `f : V → E.U`. Its arrow scheme is
 `(V ×_{E.U,t} E.R) ×_{s,E.U} V`. If `f` is étale, the induced endpoint

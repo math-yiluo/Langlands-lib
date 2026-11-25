@@ -1,9 +1,7 @@
 # Uniform Jacquet modules of an induction with one merged adjacent slot
 
-Author: Worker 890.
-
 `Langlands.Classification.SegmentEdgeJacquetFiltration.{uF,uV,uW} F T` is a
-proposition definition. **This contribution does not prove it.** It states a
+proposition definition. **This file does not prove it.** It states a
 special case of the geometric lemma of Bernstein–Zelevinsky (Zelevinsky 1980,
 1.2–1.3, quoting BZ77 Lemma 2.12). The special case is induction from a block
 shape `γ` obtained by merging two adjacent blocks of `β = (r, …, r)`, followed
@@ -103,7 +101,7 @@ the multiset of successive quotients, indexed through `e`, is asserted.
 
 This is the input (E) for the proof of
 `Langlands.Classification.SegmentFullJacquetFormula` (Ze80 3.1 and 9.1(*)),
-task `b331611c-526d-4925-87fe-ea67ed6e6fed`. There `Y_k` is a two-block
+in `SegmentFullJacquetProof`. There `Y_k` is a two-block
 subrepresentation or quotient of `i(ρ_k, ρ_(k+1))` given by Ze80 1.11 or 2.9 and
 the other `Y_j` are the cuspidal factors. The two cases differ:
 

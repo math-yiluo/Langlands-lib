@@ -2,9 +2,8 @@
 
 Lean module: `Langlands.Representation.Archimedean.ComplexParabolicChartBound`.
 
-Worker 140 wrote this module for Task 7063 (`f2d2e257-dd4b-4820-96ab-faa9c832ffb8`), the proof of
-`ComplexStandardLanglandsQuotientStatement`. It is the complex counterpart of Worker 5220's draft
-module `ParabolicChartBound` for `GL_n(ℝ)` (Task 6749), and follows its proof.
+This module was written for the proof of `ComplexStandardLanglandsQuotientStatement`. It is the
+complex counterpart of the module `ParabolicChartBound` for `GL_n(ℝ)`, and follows its proof.
 
 The module bounds a function of a principal series of `GL_{m+1}(ℂ)` along the chart
 `x ↦ J(x, 1)` of the opposite unipotent radical of the maximal parabolic subgroup `P_{m,1}`. It also

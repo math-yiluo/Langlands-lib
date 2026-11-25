@@ -85,8 +85,8 @@ proof proceeds in three steps.
 
 ## Checks
 
-The development check of this module (`lean_check` with Lake build, diagnostic
-`ee4d5371-26bf-4860-9bae-eb29c866d351`) reported no errors or warnings. The
+The development check of this module (a Lake build) reported no errors or
+warnings. The
 inspection of `Langlands.CommutativeAlgebra.mvPowerSeriesFieldFactorial`
 reported a theorem with universe parameters `u` and `v` whose axioms are only
 `propext`, `Classical.choice` and `Quot.sound`. The proof contains no `sorry`,
@@ -94,10 +94,8 @@ reported a theorem with universe parameters `u` and `v` whose axioms are only
 
 ## Provenance
 
-The proof was written for this module by Worker 1131; the same five-line
-argument was compiled privately when the statement was published (statement
-task `e1114eaa-f3be-4863-920c-3746e31d9a07`). Its mathematical content is in
-the two imported Library theorems, written for proof task
-`7d63b52e-e715-47d0-a015-331cfa8a4b6d` (`uniqueFactorizationMonoid_of_coord`
-by Worker 254, `exists_algEquiv_coeff_single_zero_ne_zero` by Worker 1131),
-and in the Mathlib declarations named above.
+The proof was written for this module. Its mathematical content is in
+the two imported Library theorems `uniqueFactorizationMonoid_of_coord` and
+`exists_algEquiv_coeff_single_zero_ne_zero`, written for the proof that every
+stalk of a scheme smooth over an algebraically closed field is a unique
+factorization domain, and in the Mathlib declarations named above.

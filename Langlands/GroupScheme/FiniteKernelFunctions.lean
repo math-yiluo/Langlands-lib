@@ -51,7 +51,7 @@ private theorem kernelIdeal_eq [IsAffine Q.X.left] (q : G ⟶ Q) :
   have hpb := kernel_isPullback_scheme q
   rw [← hpb.isoPullback_hom_fst, Scheme.Hom.ker_comp_of_isIso,
     Scheme.IdealSheafData.ker_fst_of_isClosedImmersion,
-    Scheme.ker_of_isAffine, Scheme.IdealSheafData.comap_ofIdealTop]
+    Scheme.ker_of_isAffine, Scheme.IdealSheafData.comap_ofIdealTopFLT]
 
 /-- Choose finite augmentation functions detecting a homomorphism's full kernel
 when its source is Noetherian and its target affine. -/

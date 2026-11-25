@@ -20,7 +20,7 @@ variable (F : Type u) [Field F] [NumberField F]
   [hclosed : IsClosed (adelicPoints F G U : Set (AdelicGroupPoints F G))]
   [CompactSpace (RationalQuotient F G U)]
 
-local instance : LocallyCompactSpace (adelicPoints F G U) :=
+private local instance : LocallyCompactSpace (adelicPoints F G U) :=
   hclosed.locallyCompactSpace
 
 /-- Compactness of the actual principal-image quotient forces every ambient character norm

@@ -1,6 +1,6 @@
 # Odd-degree splitting from a cube scalar coboundary
 
-This internal derived supporting unit proves three theorems. Throughout,
+This module proves three theorems. Throughout,
 `L/k` is a finite Galois extension of fields in one universe.
 
 `Langlands.CentralSimple.sylowTwo_fixedField_odd_degree`: for an actual Sylow

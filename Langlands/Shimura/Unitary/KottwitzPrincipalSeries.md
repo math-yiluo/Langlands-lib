@@ -1,8 +1,8 @@
 # Unramified representations and their parameters for Kottwitz's groups
 
-Author: Worker 8. Module `Langlands.Shimura.Unitary.KottwitzPrincipalSeries`, namespace
+Module `Langlands.Shimura.Unitary.KottwitzPrincipalSeries`, namespace
 `Langlands.Shimura.KottwitzUnramified`. It builds on the published standard unramified
-charts of `Langlands.Shimura.Unitary.KottwitzChart` (item 1 of Task 5424).
+charts of `Langlands.Shimura.Unitary.KottwitzChart`.
 
 At a good prime `p`, a standard unramified chart `c` identifies `ℚ_p ⊗_ℚ A` with
 `Π_{w ∣ p} M_n(K_w)`. In it, the involution has the antidiagonal form
@@ -81,7 +81,7 @@ are `k : Fin n`, numbered from `0`. In the usual numbering `k = 1, …, n`, the 
 The constructions of this module (torus, Borel subgroup, cocharacter points, Weyl group)
 are defined for every chart. Their interpretation as the quasi-split structure and as
 the modulus character of an unramified group needs the good-prime hypothesis
-`IsUnramifiedAt p K` of item 1. That hypothesis is part of the relation
+`IsUnramifiedAt p K` of `KottwitzChart`. That hypothesis is part of the relation
 `IsSphericalIrreducible` below. The square-root normalizations require `s² = p`, which
 is built into the type `SqrtPrime p L`.
 
@@ -111,7 +111,7 @@ is built into the type `SqrtPrime p L`.
   `UnramifiedChart.torus` is the subgroup with diagonal coordinates (`mem_torus_iff`),
   and `torus_le_borel` holds. Because `θ` preserves upper triangular and diagonal
   matrices, these are the `ℚ_p`-points of a Borel subgroup and of a maximal torus
-  contained in it. This is the quasi-split structure of item 1.
+  contained in it. This is the quasi-split structure of `KottwitzChart`.
 - `diagPart` takes diagonal parts. `diagPart_mul_of_isUpper`: it is multiplicative on
   upper triangular matrices. `diagUnit` is the diagonal part of an upper triangular
   unit, a unit.
@@ -250,12 +250,12 @@ convention `|x|^{1/2} = s^{-val(x)}`. The unitarily normalized character is
   values are permuted, `positionValue s ξ' w k = positionValue s ξ w (σ_w k)`. Hence
   the multiset of normalized position values at each place depends only on the
   Weyl-equivalence class. These multisets are the base-change Satake parameters of
-  item 4.
+  `KottwitzBaseChange`.
 
 ### Decomposition over the places of the totally real field
 
 A place `v` of `E` above `p` is split in `K` when it has two places `w ≠ w̄` above it,
-and inert when it has one place `w = w̄` (ramified places do not occur, by item 1).
+and inert when it has one place `w = w̄` (ramified places do not occur, by `KottwitzChart`).
 The lattice `localCocharacters` and the Weyl group decompose accordingly.
 
 - At a split `v` with places `w, w̄`, the coordinates at `w̄` are determined by those
@@ -272,15 +272,14 @@ The lattice `localCocharacters` and the Weyl group decompose accordingly.
   position cocharacters and one cocharacter with prescribed `m_c`, since the position
   cocharacters span the sublattice `m_c = 0`. The normalization of the similitude part
   uses `⟨2ρ, λ⟩` for the full lattice. That is done with the dual torus attached to the
-  complex embeddings of `K` (item 3), where `⟨2ρ, ·⟩` is the half of a sum over the
+  complex embeddings of `K` (`KottwitzPolynomial`), where `⟨2ρ, ·⟩` is the half of a sum over the
   fixed-point-free conjugation of embeddings.
 
 ## Scope and provenance
 
 The definitions are a derived, concrete presentation of Cartier's and Borel's notions
-for the groups of item 1. The torus, Borel subgroup and modulus character are those of
-the chart's antidiagonal normal form. The following are not proved here and remain
-explicit obligations, each stated for an algebraically closed parameter field `Ω` of
+for the groups of `KottwitzChart`. The torus, Borel subgroup and modulus character are those of
+the chart's antidiagonal normal form. The following are not proved here, each stated for an algebraically closed parameter field `Ω` of
 characteristic zero:
 
 - every representation that is spherical and irreducible over `Ω` has a parameter
@@ -293,13 +292,12 @@ The determination of an unramified character of `T` by its values at the points
 `λ(p)` is proved in [`KottwitzTorusLattice`](KottwitzTorusLattice.md), using the
 decomposition `T = λ(p) · (T ∩ K_p)`.
 
-Descent from `Ω = L̄` to `L` concerns the polynomials built from parameters (item 3), not
+Descent from `Ω = L̄` to `L` concerns the polynomials built from parameters (`KottwitzPolynomial`), not
 the parameters themselves. The module defines no Hecke algebra action and assumes no
 Satake or Langlands correspondence: parameters are named through the principal series.
 No structure field stores a parameter.
 
-Formal dependencies: `Langlands.Shimura.Unitary.KottwitzChart` (item 1, candidate
-`5bf204f1-0791-4a64-b8ab-e362c3cac923`), `Langlands.Representation.Induction.Definitions`
+Formal dependencies: `Langlands.Shimura.Unitary.KottwitzChart`, `Langlands.Representation.Induction.Definitions`
 (`smoothInduced`), `Langlands.Representation.Category.Basic` (`SmoothRep`,
 `IsIrreducible`), `Langlands.Representation.Smooth.IrreducibleRealization`,
 `Langlands.Representation.Category.ClassInvariants`, and Mathlib

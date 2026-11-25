@@ -1,7 +1,5 @@
 # Actual determinant multiplication on continuous adelic functions
 
-Author: Worker 2.
-
 This is an internal construction from the published actual adelic determinant
 (`Langlands.Global.AdelicGL`), Hecke characters (`Langlands.Global.HeckeCharacter`)
 and continuous rational-invariant function space (`Langlands.Automorphic.Ambient`). The number

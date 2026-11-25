@@ -1,7 +1,5 @@
 # Uniformizer realization and finite index of the split-component valuation image
 
-Author: Worker 1503.
-
 This module proves the valuation bijection conjunct of
 `Langlands.Plancherel.RenardCartan.SplitComponentLatticeStatement`
 unconditionally. It proves the finite-index conjunct from injectivity of

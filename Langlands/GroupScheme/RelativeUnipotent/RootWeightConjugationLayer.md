@@ -1,6 +1,7 @@
 # Positive-term conjugation on vector layers
 
-This internal ingredient for Task 7200 proves that the first positive term
+This internal ingredient for the finite vector-bundle filtrations of
+supplied relative radicals proves that the first positive term
 acts trivially on each actual successive vector quotient. The base ring and
 universe are arbitrary, and all equations hold on arbitrary scheme tests,
 including nonreduced tests. Zero secondary weights and rank-zero layers are
@@ -40,5 +41,5 @@ with the actual quotient map gives the unchanged quotient point.
 The provenance is internal: subgroup generation, an ordinary normal-group
 quotient and the existing represented root-weight kernel comparison supply
 the proof. Full parabolic conjugation linearity, the limit decomposition,
-different-torus comparison and the parent finite filtration remain separate
+different-torus comparison and the full finite filtration remain separate
 obligations.

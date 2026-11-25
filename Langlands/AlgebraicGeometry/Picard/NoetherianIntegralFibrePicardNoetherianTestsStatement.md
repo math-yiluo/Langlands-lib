@@ -1,9 +1,6 @@
 # The Picard sheaf of a pointed projective flat family with geometrically integral fibres on noetherian affine test schemes
 
-Authors: Worker 5705.
-
-Worker 5705 wrote the Lean file and this description for task
-`07219dde-fd87-48cf-83be-db16cbb3707c` (Task 5705), after reading the cited
+The Lean file and this description were written after reading the cited
 pages of Kleiman's survey and the cited Stacks Project results. The
 proposition is the core of the Library statement
 `NoetherianIntegralFibrePicardSheafAFSchemeStatement`: it keeps that
@@ -221,7 +218,7 @@ on these test schemes the two agree by Theorem 2.5 and the Library comparison
 above. No source-specific errata note was found in the Library's
 `notes/errata/` directory.
 
-## Future proof obligations
+## Proof obligations
 
 A proof must construct, for every such `R`, `f`, section and ample bundle, an
 actual `P : Over S` in `Scheme.{u}` with conjuncts 1 and 2, and a natural
@@ -230,4 +227,8 @@ Theorem 4.8 it needs the Hilbert scheme of `X/S`, the openness of relative
 effective divisors in it (Kleiman Theorem 3.7), linear systems as projective
 bundles (Kleiman Theorem 3.13), the quotient construction of Kleiman Lemma 4.9,
 and the decomposition by Hilbert polynomials (pp.28–29). None of these is a
-premise of the proposition, and the proposition has not been proved.
+premise of the proposition. The Library proves the proposition from
+`PicardHilbertPiecesRepresentabilityStatement` as
+`noetherianIntegralFibrePicardNoetherianTests_of_piecesRepresentability` (module
+`NoetherianIntegralFibrePicardSheafAFSchemeAssembly`), and proves that statement as
+`picardHilbertPiecesRepresentability` (module `PicardHilbertPiecesRepresentabilityProof`).

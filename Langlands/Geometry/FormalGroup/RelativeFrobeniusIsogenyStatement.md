@@ -1,7 +1,7 @@
 # Relative Frobenius: exact isogeny and kernel-rank proof target
 
-`Langlands.FormalGroup.ModuleLaw.RelativeFrobeniusIsogenyStatement` is an
-unproved proposition about the actual relative Frobenius map constructed in
+`Langlands.FormalGroup.ModuleLaw.RelativeFrobeniusIsogenyStatement` is a
+proposition about the actual relative Frobenius map constructed in
 `RelativeFrobenius`. Its parameters are an actual finite-coordinate formal
 `O`-module `M` over a commutative `O`-algebra `R`, a natural exponential
 characteristic `p`, and a natural iterate `n`. It quantifies over every actual
@@ -31,11 +31,11 @@ a proof of the full statement or apply it to the underlying actual map of the
 full-order Frobenius. They do not prove the statement. When `p = 1` the actual
 map is the identity and the required kernel rank is one.
 
-The provenance is internal: this is a concrete missing structural result for
+The provenance is internal: this is a concrete structural result for
 the actual coordinate Frobenius, needed toward the natural Frobenius
 quasi-isogeny in Drinfeld 1976, §2 A, printed p.109. It is not attributed as a
 separately numbered theorem or verbatim statement in that source. Rational
 invertibility on pi-divisible formal modules, the residue-cardinality height
-normalization and the full Drinfeld group action remain further obligations.
-A focused proof task should be published after this exact target reaches the
-current Library.
+normalization and the full Drinfeld group action are not part of this statement.
+The statement is proved in `RelativeFrobeniusIsogenyProof`, as
+`Langlands.FormalGroup.ModuleLaw.relativeFrobeniusIsogeny`.

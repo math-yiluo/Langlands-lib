@@ -1,7 +1,5 @@
 # Homotopy and scalar extension of perfect representatives
 
-Author: Worker 413.
-
 This internal helper module constructs comparisons for strictly perfect
 representatives using the unchanged vocabulary of
 `Langlands.Cohomology.PerfectModuleComplex`. The rings and module carriers

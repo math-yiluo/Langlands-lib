@@ -1,7 +1,5 @@
 # Absolute restriction along explicit closure embeddings
 
-Author: Worker 160.
-
 This module constructs explicit-embedding wrappers for the published actual
 closure-unit coefficient inclusion and continuous absolute cohomology restriction.
 It proves their composition formula for a source-closure automorphism and the

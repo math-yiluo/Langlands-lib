@@ -4,7 +4,7 @@ Ported from `P2M/Sol/S_AlgebraicGeometry_Scheme_Modules_exists_frame_of_frame_pu
 License, Version 2.0; see `licenses/Anthropic-FLT/LICENSE`, `NOTICE` and `ATTRIBUTION.md`.
 The paired Markdown file lists the changes made by the port.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_RelativePicardFunctor
 import Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_Scheme_Modules_bijective_unit_app_of_le_opensRange
 import Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_Scheme_Modules_bijective_smul_unit_app_of_bijective_smul
@@ -189,7 +189,7 @@ theorem pb_smul {X' : Scheme.{u}} (p : X' ⟶ X) (M : X.Modules) (r : Γ(X, ⊤)
   erw [Scheme.Modules.Hom.app_smul]
   rfl
 
-theorem main {X' : Scheme.{u}} (p : X' ⟶ X) (M : X.Modules) (hM : Scheme.Modules.IsInvertible M)
+theorem main {X' : Scheme.{u}} (p : X' ⟶ X) (M : X.Modules) (hM : Scheme.Modules.IsInvertibleFLT M)
     (m : Γ(M, ⊤)) (z : X') (h : ∃ U' : X'.Opens, z ∈ U' ∧ IsFrame ((Scheme.Modules.pullback p).obj M) (pb p M m) U') :
     ∃ U : X.Opens, p z ∈ U ∧ IsFrame M m U := by
   classical
@@ -250,7 +250,7 @@ theorem main {X' : Scheme.{u}} (p : X' ⟶ X) (M : X.Modules) (hM : Scheme.Modul
 end FrameSpecSol
 
 theorem solution
-    {X X' : Scheme.{u}} (p : X' ⟶ X) (M : X.Modules) (hM : Scheme.Modules.IsInvertible M) (m : Γ(M, ⊤)) (z : X')
+    {X X' : Scheme.{u}} (p : X' ⟶ X) (M : X.Modules) (hM : Scheme.Modules.IsInvertibleFLT M) (m : Γ(M, ⊤)) (z : X')
     (h : ∃ U' : X'.Opens, z ∈ U' ∧ ∀ V' : X'.Opens, V' ≤ U' →
       Function.Bijective fun g : Γ(X', V') =>
         g • (((Scheme.Modules.pullback p).obj M).presheaf.map (homOfLE (le_top : V' ≤ ⊤)).op

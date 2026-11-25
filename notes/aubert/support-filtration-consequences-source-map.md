@@ -5,18 +5,14 @@ of the Jacquet modules `r_I(E_J)`, its graded targets, and the finite-length and
 irreducible consequence targets (Aubert's Corollaire 3.9) of the general Aubert
 program to their Lean/Markdown pairs. It records the source passages behind each
 declaration, which declarations are constructions or proved laws and which are
-proposition targets, and the remaining prerequisites with their owners.
+proposition targets, and the remaining prerequisites.
 
-Author: Worker 379, task `0a1bd7fb-66c2-4dcc-a3c8-6619f6fa10b4` revision 1, with
-first executor Worker 194, for parent `46df6a68-5db4-4428-8044-05151d6ce1f6`
-(Worker 76). Generic-helper reuse update: Worker 76, checked on 3 November 2026
-against Library `6eec947454b4466fab00fb115b09f2dc49fe158b`.
-Worker 194's companion note
+The generic-helper reuse section was checked on 3 November 2026 against Library
+`6eec947454b4466fab00fb115b09f2dc49fe158b`. The companion note
 `notes/aubert/smooth-complex-construction-source-map.md` covers the actual
 smooth complex, its terminal cokernel `E#`, the corrected Theorem 3.6 target, the
-p.4690 terminal-Jacquet comparison, the structural ownership table and the
-classification import audit. That note may not yet be published. This note does
-not repeat those parts. The
+p.4690 terminal-Jacquet comparison, the table of structural realization and proof boundaries and the
+classification import audit. This note does not repeat those parts. The
 [general source map](general-program-source-map.md) gives the overall correction
 policy and the [Chapter V ledger](../renard/chapter-v-structural-inputs.md)
 defines the S rows used below.
@@ -24,24 +20,23 @@ defines the S rows used below.
 None of the targets below is proved here. A target is a `Prop`-valued definition
 of generic subgroup and Weyl data. It is meant to hold for the standard families
 of a connected reductive group, and it can fail for arbitrary data of the same
-shape. Proving the targets belongs to the parent task.
+shape. Proving the targets belongs to the general program.
 
-## Publication-status snapshot (2 November 2026)
+## Library-status snapshot (2 November 2026)
 
-This section records the status at submission against Library
-`4103487976e26033768519d7c8e53adf6d10c898`. Later publications are not
-reflected in this snapshot.
+This section records the status against Library
+`4103487976e26033768519d7c8e53adf6d10c898`, with the later changes noted
+after the table.
 
-| Module (under `Langlands/Representation/`) | Candidate | Kind | Status |
-| --- | --- | --- | --- |
-| `Aubert/RankOrderedSupports` | `cee5aa83-cc9e-4216-b953-31a583b26877` | definition | published |
-| `Aubert/General/SupportCategory`, `…/SupportCategoryStatements`, `…/SupportCategoryReductions`, `Category/IrreducibleSubquotientExistence` | `19947d93-60c4-401f-bdb7-146008333dca` | definition | published |
-| `Aubert/General/CorrectedFiltration` | `1c48a424-f7e9-4aec-b326-4d81e098fbf0` | definition | published (Library `4103487976e26033768519d7c8e53adf6d10c898`) |
-| `Aubert/General/SharpConsequenceStatements` | `6da10c90-35c3-45d0-a60b-cc0ee8169807` | statement | approved by independent review (Reviewer 9445), not yet in the Library |
-| `Aubert/General/CorrectedFiltrationStatements` | `bd7db6bd-c5d0-4a71-bdc3-dbd14b3f789b` | statement | approved by independent review (Reviewer 9540), not yet in the Library |
+| Module (under `Langlands/Representation/`) | Kind | Status |
+| --- | --- | --- |
+| `Aubert/RankOrderedSupports` | definition | in the Library |
+| `Aubert/General/SupportCategory`, `…/SupportCategoryStatements`, `…/SupportCategoryReductions`, `Category/IrreducibleSubquotientExistence` | definition | in the Library |
+| `Aubert/General/CorrectedFiltration` | definition | in the Library (first at `4103487976e26033768519d7c8e53adf6d10c898`) |
+| `Aubert/General/SharpConsequenceStatements` | statement | not yet in the Library at the snapshot |
+| `Aubert/General/CorrectedFiltrationStatements` | statement | not yet in the Library at the snapshot |
 
-The last two rows were candidates, not accepted Library results, at that
-snapshot. Check the current Library before relying on their names.
+The last two modules are in the Library now.
 The later generic-helper check below does not update this historical status
 table or establish any general Aubert target.
 
@@ -56,8 +51,8 @@ table or establish any general Aubert target.
   (`hδ`). The intended data are the published rational-point families
   `Langlands.Aubert.General.RationalPointFamily.parabolic`, `levi` and
   `unipotent`. Proving that they satisfy these hypotheses is the structural
-  work listed in Worker 194's table.
-- **Removed-root indexing.** The complex terms use Worker 194's
+  work listed in the companion note's structural table.
+- **Removed-root indexing.** The complex terms use
   `StandardComplex.removedFamily`. A term is indexed by the removed roots `s`,
   with `J = S \ s`. Hence `CorrectedFiltration.term P M U h hclosed E s` is
   `E_J = i_J r_J E`, and `transition … hst` for `s ⊆ t` is the actual map
@@ -163,7 +158,7 @@ detection by exactness of `r`. That reduction has not been formalized.
 | `cellSupport T B Q θ`, `IsBruhatCover T B Q` | `⋃_{w∈θ} B n_w Q` over all lifts `n_w ∈ N_G(T)`; the covering hypothesis `G = ⋃ B n Q` | erratum p.4687, `G_θ := ⋃_{w∈θ} B w P_I`; rows S13, S16 |
 | `modifiedSupport cs J I i` | BJ's two-sided `θ_i'` for `W_J`, `W_I` and Coxeter length | BJ p.161 |
 | `mem_modifiedSupport_succ_iff` | `θ_i'` changes at `i` exactly when the `i`-th element is minimal in `W_J w W_I`. Uses the published `minimalRepresentativeUnique_proof`. | BJ p.161 |
-| `term`, `transition` | `E_J` and `φ^J_{J'}` in removed-root indexing (Worker 194's complex) | Aubert (3.5), p.2187 |
+| `term`, `transition` | `E_J` and `φ^J_{J'}` in removed-root indexing (the companion note's complex) | Aubert (3.5), p.2187 |
 | `groupSupport`, `inductionStep`, `step` | `G_{θ_i'}` with `B = P ∅`; functions supported there; their image in `r_I(E_J)` | erratum pp.4687–4688 |
 | `step_monotone`, `step_zero`, `step_length` (under `IsBruhatCover T (P ∅) (P I)`) | The steps increase, start at `⊥` and end at `⊤`. | erratum p.4689 chain endpoints |
 | `transition_mem_inductionStep`, `transition_mem_step` | The actual maps `r_I(φ^J_{J'})` preserve every step. | erratum p.4689, "elles respectent la filtration par Θ" |
@@ -184,7 +179,7 @@ graded transition is carried by the differential of the complex, not by `β`.
 
 `E#` is `StandardComplex.sharpObject … E I`, the cokernel at removed-root
 degree `|S| − |I|`. The definitions of `E#` and the corrected Theorem 3.6
-target `CorrectedTheorem36Statement` are Worker 194's.
+target `CorrectedTheorem36Statement` are those of the companion note.
 
 | Target | Assertion | Source |
 | --- | --- | --- |
@@ -202,7 +197,7 @@ representation. Taking `(E#)#` at the same `I` is faithful because
 `sharpObject` depends on `I` only through `|S| − |I|`, and associated
 standard subsets have equal cardinality.
 
-## Intended proof route (derived, for the parent's proofs)
+## Intended proof route (derived, for the general program's proofs)
 
 This is the route of the erratum with the Ban–Jantzen repair, written in terms
 of the declarations above. It is guidance, not a claim that any step is proved.
@@ -231,7 +226,7 @@ of the declarations above. It is guidance, not a claim that any step is proved.
    give `SharpClassFormulaTarget`. The terms with `r_J E = 0` vanish by
    `SupportCategoryJacquetVanishingTarget`.
 5. Corollaire 3.9 follows Aubert p.2189, in this order. Theorem 1.7 is the
-   sibling task's (`e3d69272`): (2) is `InductionCompatibilityStatement`,
+   relative-Weyl modules': (2) is `InductionCompatibilityStatement`,
    (3) is `InvolutivityStatement` and (4) is `CuspidalEigenvalueStatement`.
    - **(b), `SharpIrreducibleTarget`.** Let `E ∈ 𝔈(I)` be a subquotient of
      `i_I(σ)` with `σ` irreducible cuspidal, and let `E_1, …, E_n` be the
@@ -305,8 +300,8 @@ shows how `degreeDifferential_exact_of_correctedGraded` and
 GL-specific degree filtrations and comparisons do not supply the missing
 general ones. The actual general graded identifications, differential
 comparisons and support detection remain obligations of
-`RationalCorrectedTheorem36Statement`, in successor task
-`613611a4-9c0e-43e3-82aa-f91d2044cfe2`. No terminal-vanishing conclusion or
+`RationalCorrectedTheorem36Statement`, which the Library proves only
+conditionally (`rationalCorrectedTheorem36_of_inputs`). No terminal-vanishing conclusion or
 finite-length restriction on its smooth input follows from this reuse.
 
 For double sharp, one can take `A = (E#)#` and `τ = E` only after proving
@@ -314,29 +309,29 @@ finite length and the exact equality `[(E#)#] = [E]` for the actual cokernels.
 The helper then gives the object isomorphism; it does not construct those
 cokernels, establish that equality or provide a natural isomorphism of
 functors. Those application obligations remain in
-`RationalSharpInvolutionStatement`, successor task
-`9d570c9e-e376-4437-8d15-3cbe9e9a0027`, with the support, class-formula and
+`RationalSharpInvolutionStatement` (proved in the Library only
+conditionally, `rationalSharpInvolutionStatement_of_inputs`), with the support, class-formula and
 operator-involution inputs of the route above. Neither generic helper uses a
 parabolic, Aubert or representation-classification theorem.
 
-These reuse locations do not change either successor's exact target or its
+These reuse locations do not change either exact target or its
 hypothesis scope. Any additional Coxeter, Bruhat or structural inputs needed
 by this proof route must be derived, rather than appended to the proposition.
 
-## Prerequisites and owners
+## Prerequisites
 
-| Prerequisite | Where it enters | Owner |
+| Prerequisite | Where it enters | Where it is addressed |
 | --- | --- | --- |
-| Proofs of all targets in this note and of `CorrectedTheorem36Statement`, including the actual general applications of the published generic helpers | the parent task and its focused proof successors | Worker 76, `46df6a68-5db4-4428-8044-05151d6ce1f6` |
-| Theorem 1.7 and the geometric lemma for the general operator (`InvolutivityStatement`, `JacquetCompatibilityStatement`, `InductionCompatibilityStatement`, `CuspidalEigenvalueStatement`) | Corollaire 3.9 (b), (c); graded identification | Workers 165/1186, `e3d69272-2599-4a08-a934-cb11f2493e30` |
-| Normalized functors, exactness on smooth and finite-length sequences, `conjugationFunctor`, `alternatingOperator` | all modules | Workers 23/1180, `593ef603-6672-4424-976c-14e11e920d9c` (published adapters) |
-| Bruhat covering `IsBruhatCover T (P ∅) (P I)`, a Coxeter system on `N_G(T)/Z_G(T)` matching the actual roots, the `W`-association of conjugate standard Levis, and `IsLimitOfCompactSubgroups (U J)` | `step_length`, the targets, `SupportCategoryReductions` | structural rows S08–S10, S13, S15–S18, S20–S22, with owners as in Worker 194's structural table |
-| Renard Chapter VI cuspidal-support theory: existence, association, Jacquet detection and vanishing, Bernstein decomposition, finite length of `i` and `r` | `SupportCategoryStatements`, `SharpFiniteLengthTarget` | parent proof plan. On 2 November 2026 the Library's `Representation/CuspidalSupport` modules treated only the product (block) Levis of `GL_n`; no development for general standard families was found. |
+| Proofs of all targets in this note and of `CorrectedTheorem36Statement`, including the actual general applications of the published generic helpers | the general program's proofs | see the [dependency matrix](general-program-dependency-matrix.md) |
+| Theorem 1.7 and the geometric lemma for the general operator (`InvolutivityStatement`, `JacquetCompatibilityStatement`, `InductionCompatibilityStatement`, `CuspidalEigenvalueStatement`) | Corollaire 3.9 (b), (c); graded identification | the relative-Weyl modules |
+| Normalized functors, exactness on smooth and finite-length sequences, `conjugationFunctor`, `alternatingOperator` | all modules | the [adapter modules](general-adapter-dependency-table.md) (in the Library) |
+| Bruhat covering `IsBruhatCover T (P ∅) (P I)`, a Coxeter system on `N_G(T)/Z_G(T)` matching the actual roots, the `W`-association of conjugate standard Levis, and `IsLimitOfCompactSubgroups (U J)` | `step_length`, the targets, `SupportCategoryReductions` | structural rows S08–S10, S13, S15–S18, S20–S22, as in the companion note's structural table |
+| Renard Chapter VI cuspidal-support theory: existence, association, Jacquet detection and vanishing, Bernstein decomposition, finite length of `i` and `r` | `SupportCategoryStatements`, `SharpFiniteLengthTarget` | the general program's proof plan. At the snapshot of 2 November 2026 the Library's `Representation/CuspidalSupport` modules treated only the product (block) Levis of `GL_n`; no development for general standard families was found. |
 
 ## Classification
 
-No declaration in this note has a classification premise. As for Worker 194's
-modules, the imports reach classification modules. `SupportCategory` imports
+No declaration in this note has a classification premise. As for the companion
+note's modules, the imports reach classification modules. `SupportCategory` imports
 `Category.ConstituentDichotomy`, which imports
 `Classification.SupercuspidalSupport`. Import reachability neither shows that a
 classification theorem is used nor that none is. If a later proof follows

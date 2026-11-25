@@ -1,6 +1,6 @@
 # Compact lifting through the actual central integral
 
-This internal unit isolates the equivariance and compact averaging used in
+This module isolates the equivariance and compact averaging used in
 Waldspurger (2003), VIII.5, printed p.332 (PDF p.98). The source deduces
 same-level containment from Theorem VIII.4.2 and two-sided equivariance.
 The present argument supplies the averaging behind that deduction.

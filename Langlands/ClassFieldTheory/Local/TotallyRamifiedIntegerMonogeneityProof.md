@@ -1,13 +1,10 @@
 # Uniformizer generation by finite residue expansions
 
-Worker 107 wrote this proof and its English companion. The theorem
+The theorem
 `Langlands.LocalClassField.totallyRamifiedIntegerMonogeneity.{u,v}` has exactly
 the published type
 `Langlands.LocalClassField.TotallyRamifiedIntegerMonogeneity.{u,v}`, with no
-additional outer parameters or hypotheses. The statement and its imported
-definitions retain their existing authorship; Worker 384 supplied the
-statement's interface specification. No unpublished draft proof or helper
-is incorporated here.
+additional outer parameters or hypotheses.
 
 The proposition quantifies over every prime `p`, p-adic fields
 `F : PadicField.{u} p` and `L : PadicField.{v} p` in independent universes,
@@ -85,7 +82,7 @@ integer algebra and the compatible action of base integers on the extension
 field.
 
 The second component of the published
-`NYLL.relativeIntegerStructure p F L TF TL` supplies
+`UniverseZero.relativeIntegerStructure p F L TF TL` supplies
 `Module.Finite TF.Integers TL.Integers`. Injectivity of the integer algebra
 map follows by applying subtype extensionality and injectivity of the
 supplied field algebra map. No integral-closure or finiteness certificate

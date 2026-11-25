@@ -1,8 +1,6 @@
 # Mixed simple-root semigroups and all-test commutation
 
-Author: Worker 1444.
-
-This internal derived unit uses the actual intrinsic simple roots of a generic
+This internal derived module uses the actual intrinsic simple roots of a generic
 cocharacter and a root datum realizing the ambient roots. It constructs the
 literal mixed semigroup of positive multiples of one character plus positive
 multiples of the negative of another, using the existing cyclic-tail and
@@ -45,6 +43,6 @@ root group with the opposite of a distinct simple root group in the mixed
 subgroup. Its triviality proves `commute_simple_opposite`. The conclusion holds
 over every field and on all tests, including nonreduced schemes.
 
-All inputs are imported Library or Mathlib results. This unit proves no graph
+All inputs are imported Library or Mathlib results. This module proves no graph
 density, simple-root algebraic group generation or global projection
 invertibility, and supplies no proof of the main isomorphism theorem.

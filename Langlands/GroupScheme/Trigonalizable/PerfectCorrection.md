@@ -1,6 +1,6 @@
 # Correcting crossed homomorphisms over perfect fields with connected diagonalizable groups
 
-Author: Worker 60 (Task 7805). Module
+Module
 `Langlands.GroupScheme.Trigonalizable.PerfectCorrection`, namespace
 `Langlands.GroupScheme.PerfectCorrection`.
 

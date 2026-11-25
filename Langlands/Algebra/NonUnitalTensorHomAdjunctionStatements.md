@@ -172,11 +172,11 @@ extensionality and tensor extensionality prove both inverses and both naturality
 equations. The implemented idempotent landing argument then permits restricting
 the codomain to the actual part; original inclusion and restriction give the
 refined comparisons and naturality. The main conclusions of this route remain
-unproved in this statement unit.
+unproved in this module.
 
 Additive equivalences alone do not supply Renard's complex-linear equivalences.
-Coefficient and unitization comparisons remain explicit parent obligations,
+Coefficient and unitization comparisons remain outside this file,
 as do associativity I.2.2.4/I.2.2.7, the exactness proposition, actual categorical
 adjunctions and the F, pseudo-F, I and P constructions. This file does not claim
-complete coverage of I.2.2. A separate exact-target proof successor must consume
-the statement declarations after their independent acceptance and publication.
+complete coverage of I.2.2. The statement declarations are proved in
+`NonUnitalTensorHomAdjunctionProof`, by `Langlands.Algebra.nonUnitalTensorHomAdjunction`.

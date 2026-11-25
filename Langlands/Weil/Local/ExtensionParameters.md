@@ -1,6 +1,6 @@
 # Restriction and induction along an extension of p-adic fields
 
-Worker 17 authored this construction module. It imports Worker 53's
+This construction module imports
 `Langlands.Weil.Local.ExtensionWeilRange` and `Langlands.Weil.Local.Parameters`, and
 `Langlands.WeilDeligne.InductionAlong`.
 
@@ -16,20 +16,20 @@ Library to `ι`. Restriction goes from `W_F` to `W_E`; induction goes from
 
 ## Facts about the Weil map used here
 
-- The imported instance `extensionWeilRange_finiteIndex` registers Worker 53's
+- The imported instance `extensionWeilRange_finiteIndex` registers the
   proof `extensionWeilMap_range_finiteIndex` that the range of `ι` has finite
   index in `W_F`; induction uses this shared instance.
 - A private lemma proves that `I_F` is open in `W_F`: it is the preimage of
   the identity under the continuous degree map `localDegree F` to the discrete
   group `Degree`.
 - `extensionWeilMap_inertia` states `ι(I_E) ⊆ I_F`, the `mpr` direction of
-  Worker 53's `extensionWeilMap_mem_localInertia : ι w ∈ I_F ↔ w ∈ I_E`.
+  the published `extensionWeilMap_mem_localInertia : ι w ∈ I_F ↔ w ∈ I_E`.
 - `localDegreeInt_extensionWeilMap_ne_zero` states that if `w ∈ W_E` has
-  nonzero integer degree, so has `ι w`. This holds because Worker 53's
+  nonzero integer degree, so has `ι w`. This holds because the published
   `localDegreeInt_extensionWeilMap` multiplies the degree by the residue
   degree, and `extensionResidueDegree_pos` shows the residue degree is
   positive.
-- `localNormCharacter_comp_extensionWeilMap` restates Worker 53's
+- `localNormCharacter_comp_extensionWeilMap` restates the published
   `localNormCharacter_extensionWeilMap`, `‖ι w‖_F = ‖w‖_E`, for the composite
   monoid homomorphism.
 
@@ -89,7 +89,7 @@ Induced spaces live in the universe `max u w`, where `u` is the universe of
   `extensionInduceEquiv` and `extensionInduceClass` give the functor, the
   transport of equivalences and the class map.
 - `rank_extensionInduce` proves that the rank of the induced representation is
-  `[E : F] * rank A`. It combines `rank_induceAlong` with Worker 53's
+  `[E : F] * rank A`. It combines `rank_induceAlong` with the published
   `extensionWeilMap_range_index`, which identifies the index of `ι(W_E)` with
   `[E : F]`. `extensionInduceClassOfRank n` therefore sends rank-`n` classes
   to rank-`[E : F] * n` classes.
@@ -131,7 +131,7 @@ Tate does not write out restriction or induction of pairs, nor the
 preservation statements above. These are derived constructions and proved
 obligations: restriction of pairs keeps `N`; induction of pairs uses the
 weighted monodromy of the published generic induction; the inertia, norm,
-degree and rank facts come from Worker 53's `ExtensionWeil`.
+degree and rank facts come from `ExtensionWeil`.
 
 ## Scope
 

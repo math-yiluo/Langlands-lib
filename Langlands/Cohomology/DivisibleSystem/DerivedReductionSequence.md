@@ -1,33 +1,33 @@
 # Reduction sequences for right derived functors of ℓ-divisible systems
 
-Author: Worker 61. Built on the published modules
-`Langlands.Cohomology.DivisibleSystem` (Worker 61: `DivisibleSystem` with
+Built on the published modules
+`Langlands.Cohomology.DivisibleSystem` (`DivisibleSystem` with
 `tower`, `obj`, `projection`, `inclusion`, `powSMul_eq_zero`,
 `inclusion_comp`, `shortExact`, `torsion_exact`, `flat`, `epi_projection`,
 `isZero_obj_zero` and the instance `mono_inclusion`; `powSMul`,
 `comp_powSMul`, `powSMul_comp_powSMul`, `map_powSMul`),
-`Langlands.Cohomology.DivisibleSystem.Colimit` (Worker 61:
-`shortComplex_exact_of_evaluation`),
-`Langlands.Cohomology.DivisibleSystem.ReductionSequence` (Worker 61:
-`cokernelKernelShortComplex`, `cokernelKernelShortComplex_shortExact`),
-`Langlands.Cohomology.RightDerivedSequence` (Worker 61: the connecting maps
+`Langlands.Cohomology.DivisibleSystem.Colimit`
+(`shortComplex_exact_of_evaluation`),
+`Langlands.Cohomology.DivisibleSystem.ReductionSequence`
+(`cokernelKernelShortComplex`, `cokernelKernelShortComplex_shortExact`),
+`Langlands.Cohomology.RightDerivedSequence` (the connecting maps
 `DerivedPlus.rightDerivedδ` of the long exact sequence of right derived
 functors, `rightDerived_map_comp_map`, `rightDerived_map_comp_δ`,
 `rightDerivedδ_comp_map`, `rightDerived_exact₁`, `rightDerived_exact₂`,
 `rightDerived_exact₃`, `rightDerivedδ_naturality`) and
-`Langlands.Cohomology.DivisibleSystem.EtaleAdicCohomology` (Worker 61:
-`EtaleAdicCohomology.adicCohomology`,
+`Langlands.Cohomology.DivisibleSystem.EtaleAdicCohomology`
+(`EtaleAdicCohomology.adicCohomology`,
 `EtaleAdicCohomology.harrisEtaleAdicCohomology`). Through their imports it
-uses `reductionπ` (`Langlands.Cohomology.DivisibleSystem.Reduction`), Worker
-13's `EtaleDerivedSections.ModuleSheaf`, `EtaleDerivedSections.sections` and
+uses `reductionπ` (`Langlands.Cohomology.DivisibleSystem.Reduction`),
+`EtaleDerivedSections.ModuleSheaf`, `EtaleDerivedSections.sections` and
 `EtaleDerivedSections.cohomology` (`Langlands.Geometry.EtaleDerivedSections`),
 the published `harrisEtaleDivisibleSystem`
-(`Langlands.Cohomology.DivisibleSystem.HarrisEtale`) with Worker 57's
+(`Langlands.Cohomology.DivisibleSystem.HarrisEtale`) with
 `HarrisCoefficientIntegers` (`Langlands.Shimura.Coefficients.HarrisLattice`)
 and `IsFiniteGeometricTorsor` (`Langlands.Shimura.Coefficients.Etale`),
 `harrisCongruenceGroups` (`Langlands.Shimura.Coefficients.HarrisReduction`)
-and Worker 13's `EquivariantDiagram`
-(`Langlands.CategoryTheory.EquivariantDiagram`), and Worker 3's unproved
+and `EquivariantDiagram`
+(`Langlands.CategoryTheory.EquivariantDiagram`), and the unproved
 statement
 `MittagLefflerShortExactLimitStatement`
 (`Langlands.Cohomology.InverseLimit.Statement`), which appears only as a
@@ -78,7 +78,7 @@ of the inverse system `T.tower ⋙ F.rightDerived q`.
 
 - The imported instance
   `Langlands.AlgebraicGeometry.Modules.CechResolution.rightDerived_additive F n`
-  makes `F.rightDerived n` additive. Worker 958’s published proof is shared
+  makes `F.rightDerived n` additive. Its published proof is shared
   through `Langlands/Cohomology/RightDerivedAdditive`, with its original name
   and without algebraic-geometry imports. It computes the map of `f + g`
   through the sum of the chosen lifts to injective resolutions.
@@ -212,7 +212,7 @@ Here `D` has limits indexed by `ℕᵒᵖ`.
 `X : Scheme.{u}` is a scheme, `R : Type u` a commutative ring and
 `T : DivisibleSystem (EtaleDerivedSections.ModuleSheaf X R) ℓ` an
 `ℓ`-divisible system of sheaves of `R`-modules on the small étale site of
-`X`. `H^q(X, -)` is Worker 13's `EtaleDerivedSections.cohomology X R q`, the
+`X`. `H^q(X, -)` is the published `EtaleDerivedSections.cohomology X R q`, the
 `q`-th right derived functor of the global sections functor
 `EtaleDerivedSections.sections X R`.
 
@@ -241,8 +241,8 @@ Here `D` has limits indexed by `ℕᵒᵖ`.
 
 ## Provenance and interpretation
 
-Milne, *Étale Cohomology* (1980), Chapter V, §1 (Worker 61 read the scanned
-pages, as recorded in the published `ReductionSequence`; printed p.165 in the
+Milne, *Étale Cohomology* (1980), Chapter V, §1 (the scanned pages were
+read, as recorded in the published `ReductionSequence`; printed p.165 in the
 rendered image, the others in the text layer):
 
 - printed p.165 (one-based PDF page 179), Lemma 1.11: "Let F = (F_n) be an
@@ -272,7 +272,7 @@ axioms, which contain Milne's flatness hypothesis (`flat`). Milne's
 `H^r(X, F) = lim_n H^r(X, F_n)` is `lim_m R^q F(T m)`, which for étale
 cohomology is the published `adicCohomology`. His use of the exactness of
 inverse limits of finite groups is `limit_exact_of_finite`. That lemma
-assumes Worker 3's `MittagLefflerShortExactLimitStatement` (EGA III.0,
+assumes `MittagLefflerShortExactLimitStatement` (EGA III.0,
 13.2.2), which is not proved here. Milne assumes finiteness in all degrees;
 the proof uses only degree `q`. The general tools, the restated published
 axioms, the morphisms of inverse systems and the `limMap` identifications are
@@ -284,7 +284,7 @@ derived.
 Finite generation of `lim_m H^q(X, T m)` over `ℤ_ℓ` is not formalized.
 Neither the comparison with `H^q(X, lim_m T m)` nor any group, Hecke or
 Galois action is treated, and the sequences are not shown to be natural in
-`T`. The short exactness of the limit sequences assumes Worker 3's
+`T`. The short exactness of the limit sequences assumes
 `MittagLefflerShortExactLimitStatement` (`hML`) and the finiteness of the
 level cohomology (`hfin`). No topology, continuity or `ℚ_ℓ`-coefficients are
 treated.

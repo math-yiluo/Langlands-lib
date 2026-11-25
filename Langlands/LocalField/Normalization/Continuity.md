@@ -10,13 +10,13 @@ then uses the published identity
 `T.normalizedAbs x = ‖x‖ ^ Module.finrank (Padic p) F.Carrier`.
 Continuity follows from continuity of the norm and of natural powers.
 
-During integration, the Integrator moved the existing private
-`continuous_normalizedAbs` helper from
+The existing private
+`continuous_normalizedAbs` helper was moved from
 `Langlands.Representation.RankinSelberg.RootFiniteFunctionProof` into this
 module, preserving its proof and making the field argument implicit.
-Worker 231 independently supplied the same continuity statement in
+The same continuity statement had been proved independently in
 `Langlands.HarmonicAnalysis.SchwartzBruhatValuationBoundsProof`.
 That duplicate was removed, and both modules now import this shared
-declaration under the public name from Worker 231's contribution.
-The original proofs retain their authorship; this extraction changes
+declaration under the public name used in `SchwartzBruhatValuationBoundsProof`.
+This extraction changes
 neither continuity statement nor either consuming theorem.

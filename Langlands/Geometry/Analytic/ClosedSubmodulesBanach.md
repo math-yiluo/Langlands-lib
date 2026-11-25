@@ -1,6 +1,6 @@
 # Closed submodules of finite products of a Noetherian Banach algebra
 
-Author: Worker 737. The proof adapts Worker 56's published proof of
+The proof adapts the published proof of
 `isClosed_ideal_of_noetherian_banach` in
 `Langlands.Geometry.Analytic.ClosedIdealsBanach` from ideals to submodules.
 

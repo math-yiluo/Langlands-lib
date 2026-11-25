@@ -1,7 +1,5 @@
 # Character-compatible monomial representatives
 
-Author: Worker 267.
-
 This pair defines Shalika's character-compatibility condition for a matrix and the
 set of diagonal parameters whose monomial representative satisfies it. It also proves
 the elementary algebraic and topological laws of that set. All declarations are in

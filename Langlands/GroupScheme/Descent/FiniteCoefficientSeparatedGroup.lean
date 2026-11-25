@@ -30,6 +30,7 @@ private theorem separated_fg_tower (T : Subalgebra R A) (U : Subalgebra T A)
 private theorem separated_of_group_iso {S : Scheme.{u}} {G H : GroupScheme S}
     (e : G ≅ H) (h : IsSeparated G.X.hom) : IsSeparated H.X.hom := by
   have sq : IsPullback e.inv.hom.hom.left H.X.hom G.X.hom (𝟙 S) :=
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
     IsPullback.of_horiz_isIso
       ⟨by rw [Category.comp_id]; exact e.inv.hom.hom.w⟩
   exact MorphismProperty.of_isPullback sq h

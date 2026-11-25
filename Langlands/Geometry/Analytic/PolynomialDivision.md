@@ -1,7 +1,5 @@
 # Polynomial division estimates for Weierstrass division
 
-Author: Worker 56.
-
 The file proves that division by a monic polynomial whose coefficients have
 norm at most one does not increase the coefficient supremum norm of either
 the quotient or the remainder. It works over any ultrametric normed

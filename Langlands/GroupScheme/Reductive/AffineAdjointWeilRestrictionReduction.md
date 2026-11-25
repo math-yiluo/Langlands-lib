@@ -1,7 +1,7 @@
 # The exact affine adjoint Weil target reduced to three structural inputs
 
-Worker 632; generic pair-descent statement by Worker 5254 and uniqueness
-construction by Worker 47.
+The generic pair-descent statement is in `AffineWeilPairEtaleDescentStatement`
+and the uniqueness construction in `WeilFactorUniquenessReduction`.
 
 `affineAdjointWeilRestriction_of_inputs` constructs the unchanged
 published `Langlands.GroupScheme.AffineAdjointWeilRestrictionStatement.{u}`
@@ -25,7 +25,7 @@ Its `exists_pair` theorem is exactly the required existential output.
 
 For uniqueness, the two supplied comparisons from the original group
 give an isomorphism of the two actual Weil restrictions. The proof
-applies Worker 47's
+applies
 `WeilFactor.exists_baseChange_iso_of_weilRestriction_iso`, supplying
 factor rigidity, reductivity and the almost-simple part of the two
 geometric-fibre assumptions. That theorem produces the algebra

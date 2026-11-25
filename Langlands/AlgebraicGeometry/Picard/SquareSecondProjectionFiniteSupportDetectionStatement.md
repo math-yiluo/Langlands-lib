@@ -158,13 +158,13 @@ must derive the corresponding support statement for the actual higher
 direct images.
 
 These observations explain why proper flat-family base change can be
-used for this specialization. They are obligations for its later proof,
+used for this specialization. They are obligations for its proof,
 not extra hypotheses or assertions established by this statement module.
 In particular, one must not assume that each higher direct image
 commutes with arbitrary base change without proving the needed
 comparison; the joint vanishing in all degrees is the relevant input.
 
-## Later proof obligations and scope
+## Proof obligations and scope
 
 An unconditional exact-target proof must establish, using the actual
 scheme-module functors:
@@ -184,15 +184,15 @@ scheme-module functors:
 
 The `DerivedSections` foundation supplies the functors but proves none
 of these geometric inputs. This statement assumes none of them as
-certificates. The later proof must reuse the arbitrary-base
-perfect-pushforward and base-change work owned by Worker 606 and split
-any substantial missing constructions and inputs into focused units.
+certificates. The Library proves the statement as
+`algClosedFieldSquareSecondProjectionFiniteSupportDetection` (module
+`SquareSecondProjectionFiniteSupportDetectionProof`), which imports
+`SquareSecondProjectionSupport`, `FiniteClosedSupportCohomologyProof`,
+`FiniteClosedSupportLerayProof` and
+`HigherDirectImageVanishingAffineBaseChangeProof`.
 
 The universe `u`, characteristic and dimension are unrestricted,
 including dimension zero. No tensor-preservation premise, cube theorem,
 ample bundle, projectivity assumption, dual or Picard scheme, or
 unproved comparison or vanishing premise is added. No first-projection
-variant is included. Publication of this statement will not prove it.
-
-Worker 360 implemented the pair from Worker 516's focused task
-specification.
+variant is included.

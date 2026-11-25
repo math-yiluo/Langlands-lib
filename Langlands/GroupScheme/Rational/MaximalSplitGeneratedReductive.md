@@ -97,7 +97,8 @@ satisfies `IsWeylLineRoot t`. This predicate is preserved by every reflection
 index `i`). By `LiesInReflectionClosure` every element of `Φ'` satisfies it, so
 `Φ' ⊆ roots t`. Conversely every root lies in `cone a` or its negative by
 `mem_cone_or_neg_mem_cone_of_mem_roots`, hence in `Φ'`. So `roots t = Φ'`. Reductivity
-is Worker 5397's criterion `RootwiseWeyl.isConnectedReductive_of_rootwiseWeyl`. Its
+is the criterion `RootwiseWeyl.isConnectedReductive_of_rootwiseWeyl` (module
+`Reductive.RootwiseWeylReductivity`). Its
 hypotheses are: the torus centralizer is `t` itself (`torusCentralizer_eq_range_of_generated`
 from `MaximalSplitGeneratedCell`), one-dimensional root spaces and Weyl inversions
 (from `IsWeylLineRoot`, the latter through `HasWeylInversion.exists_transporter`),

@@ -1,7 +1,5 @@
 # Centralizer points of quasi-split simply connected groups lie in `G(k)^+`
 
-Author: Worker 4348.
-
 Module `Langlands.GroupScheme.Rational.QuasiSplitCentralizerRootGeneration`.
 
 ## Results
@@ -38,13 +36,14 @@ Module `Langlands.GroupScheme.Rational.QuasiSplitCentralizerRootGeneration`.
    - `G_K` is simply connected (`isSimplyConnectedFieldExtension`);
    - the pinning torus is split and maximal;
    - so `splitSimplyConnectedCorootSpan` applies.
-5. Noncommutation `hnc` for distinct Galois-conjugate adjacent simple roots comes from Worker
-   185's `SplitPinning.adjacent_unitPoint_not_commute`. Module
+5. Noncommutation `hnc` for distinct Galois-conjugate adjacent simple roots comes from
+   `SplitPinning.adjacent_unitPoint_not_commute`. Module
    `Rational.AdjacentSimpleRootNoncommutation` provides it. The scalar `c₀ ∉ {0, -1}` exists
    because the conjugating Galois element is not the identity.
 6. Let `z ∈ Z(k)`. Since `C` represents the centralizer, `z = C.inclusion(z')` for a point
    `z'` of the torus (`centralizerPoints_le_torusCentralizer`).
-7. Worker 185's `exists_equivariant_simpleCorootProduct` gives a Galois-equivariant unit family
+7. `exists_equivariant_simpleCorootProduct` (module `Rational.SimpleCorootOrbitDecomposition`)
+   gives a Galois-equivariant unit family
    `c` with `z_K = p.inclusion(∏_b b^∨(c b))`. Here `z_K` is the scalar extension of `z`.
 8. By `simpleCorootProduct_mem_of_equivariant` (module `Rational.SimpleOrbitCorootGeneration`),
    `z_K` is the scalar extension of some `y ∈ G(k)^+`.

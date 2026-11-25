@@ -1,8 +1,8 @@
 # Positive type of actual unitary distribution characters
 
-Author: Worker 143.
-
-This internal prerequisite for Task 5667 defines `Character.IsPositiveType μ D`
+This internal prerequisite for the unitarity of the irreducible constituents of
+admissible finite-length character limits
+(`Langlands.Representation.Unitary.CharacterLimitSubquotientsProof`) defines `Character.IsPositiveType μ D`
 by nonnegativity of `D(f† * f)` for every actual Schwartz–Bruhat function.
 Here `f†(g) = conj (f(g⁻¹))` and multiplication is the existing Haar
 convolution. Complex nonnegativity means a real, nonnegative value.
@@ -24,4 +24,6 @@ representation carrier is assumed.
 in the complex plane to preserve positive type under pointwise convergence.
 These constructions are derived internally from the published actual
 integrated action, finite-rank character and invariant-form interfaces. They
-do not yet give unitarity of simple constituents from positivity.
+do not by themselves give unitarity of simple constituents from positivity;
+`Langlands.Representation.Unitary.CharacterLimitSubquotientsProof` derives it
+with further inputs.

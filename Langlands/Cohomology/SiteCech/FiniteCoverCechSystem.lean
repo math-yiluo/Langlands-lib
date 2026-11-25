@@ -31,7 +31,7 @@ theorem chainAugmentation_exact_epi [QuasiIso ε] :
   have h : QuasiIsoAt ε 0 := inferInstance
   rw [ChainComplex.quasiIsoAt₀_iff, ShortComplex.quasiIso_iff_of_zeros'] at h
   · exact h
-  all_goals (simp; rfl)
+  all_goals (simp <;> rfl)
 
 /-- A quasi-isomorphic augmentation forces exactness in every positive degree. -/
 theorem chainAugmentation_positive_exact [QuasiIso ε] (n : ℕ) :

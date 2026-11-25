@@ -1,8 +1,6 @@
 # Index comparisons for an aligned type-D spin cover
 
-Authors: Worker 146.
-
-This module proves `Langlands.GroupScheme.AlignedSpinCoverTitsIndexStatement` (Task 6282) as
+This module proves `Langlands.GroupScheme.AlignedSpinCoverTitsIndexStatement` as
 the theorem
 
 ```lean
@@ -36,8 +34,8 @@ universes are covered. The star-action hypothesis of the statement is not used.
 The proof is a one-line composition.
 
 1. `Langlands.GroupScheme.alignedSpinCoverTitsIndex_of_weights`, from the helper module
-   `Langlands.GroupScheme.SimplyConnected.AlignedSpinCoverTitsIndexReduction` of this
-   contribution, derives the statement from three hypotheses:
+   `Langlands.GroupScheme.SimplyConnected.AlignedSpinCoverTitsIndexReduction` (ported
+   together with this module), derives the statement from three hypotheses:
    `Quaternionic.ConnectedIsometrySplitRankStatement`,
    `Quaternionic.IsometryMaximalSplitTorusWeightsStatement` and
    `SpinCoverVectorWeightsStatement`. Its Markdown describes the argument: compare split

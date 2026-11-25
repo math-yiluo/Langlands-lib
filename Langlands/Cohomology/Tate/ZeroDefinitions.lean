@@ -33,7 +33,7 @@ abbrev InvariantsModNorm (A : Rep R G) :=
 
 /-- The part of the Tate complex in degrees `-1, 0, 1`, expressed on coefficients. -/
 abbrev zeroShortComplex (A : Rep R G) : ShortComplex (ModuleCat R) :=
-  ShortComplex.mk A.norm.toModuleCatHom (d₀₁ A) (Rep.norm_comp_d_eq_zero A)
+  ShortComplex.mk A.norm.asHom.toModuleCatHom (d₀₁ A) (Rep.norm_comp_d_eq_zero A)
 
 set_option backward.isDefEq.respectTransparency.types false in
 set_option backward.defeqAttrib.useBackward true in

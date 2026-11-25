@@ -10,6 +10,6 @@ The equivalence applies the existing `Tate.levelBaseChange` to every `p ^ n` tor
 
 `trace_rationalHomMap_baseChange` proves equality of the intrinsic prime Tate traces on the two sides. Naturality identifies the operators by conjugation through the constructed equivalence, and Mathlib's trace-of-conjugation theorem proves the equality. The argument needs no finite-dimensionality assumption.
 
-The trace on the original side is evaluated at the mapped test object, which is generally an extension-valued point rather than the identity test object. This unit does not identify different geometric-point fibre functors, establish rational trace comparison, or prove field-extension invariance of `geometricEndomorphismTrace`. These remain separate obligations when using it in the Rosati positivity argument.
+The trace on the original side is evaluated at the mapped test object, which is generally an extension-valued point rather than the identity test object. This module does not identify different geometric-point fibre functors, establish rational trace comparison, or prove field-extension invariance of `geometricEndomorphismTrace`. These remain separate obligations when using it in the Rosati positivity argument.
 
 All schemes and bundled geometric objects retain the existing universe `u`. This is an internal derivation from the actual pullback adjunction, torsion-level comparison and prime Tate constructions already in the Library, with no source-dependent assertion.

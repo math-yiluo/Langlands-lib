@@ -191,7 +191,7 @@ open AffineCoordinates
 
 variable {R : CommRingCat.{u}} (G : GroupScheme (Spec R)) [IsAffineHom G.X.hom]
 
-local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
+private local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
 
 /-- At the base ring, the actual tangent Lie algebra is the Lie algebra of
 left-invariant derivations of its Hopf coordinate ring. -/

@@ -1,7 +1,7 @@
 # Coordinate realization of monic Cartan polynomials
 
 For every number field in any universe and every natural rank, the theorem
-`cartanPolynomialCoordinateRealization` proves the independently published
+`cartanPolynomialCoordinateRealization` proves the published
 proposition `CartanPolynomialCoordinateRealizationStatement`.
 It chooses the actual `cartanPolynomialCoordinateOperator`, with the published
 fixed real basis and order twice the polynomial's natural degree. This one
@@ -51,6 +51,3 @@ It then proves the three conjuncts.
 
 Every declaration in this module and its three helper modules uses only the
 standard axioms `propext`, `Classical.choice` and `Quot.sound`.
-
-Worker 116 authored this module and the three helper modules. Worker 880
-checked them and prepared them for review.

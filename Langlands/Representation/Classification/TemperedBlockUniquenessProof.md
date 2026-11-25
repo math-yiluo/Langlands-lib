@@ -1,7 +1,5 @@
 # Unordered uniqueness of square-integrable tempered blocks
 
-Author: Worker 346.
-
 `Langlands.Classification.temperedBlockUniqueness` proves the unchanged Library
 proposition `Langlands.Classification.TemperedBlockUniqueness.{uF,uV} F T`
 from [TemperedBlockStatement](TemperedBlockStatement.md).

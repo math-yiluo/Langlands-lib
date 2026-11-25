@@ -1,7 +1,5 @@
 # Derived complexes along exact injective-preserving source functors
 
-Author: Worker 13.
-
 This module constructs a natural transformation of actual bounded below
 derived objects from a square of additive functors. Let `C`, `D` and `E`
 be abelian categories, with independent object and morphism universes
@@ -129,4 +127,4 @@ The transformation is on objects of `C`, regarded as complexes in degree
 zero. This module does not construct a transformation whose source is
 the whole derived category of `C`. Compatibility under identities and
 compositions of source functors, actions, compact supports and inverse
-limits is outside this unit.
+limits is outside this module.

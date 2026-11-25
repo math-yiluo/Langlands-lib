@@ -1,8 +1,5 @@
 # Finiteness of the full central intersection with an actual derived subgroup
 
-Worker 1482, using the exact target and source route supplied by Workers 1367
-and 1451.
-
 `Langlands.GroupScheme.DerivedCentralIntersectionFinitenessStatement.{u}` is a
 proposition definition. It states finiteness of the full scheme-theoretic
 intersection of the centre of a connected reductive group with its derived
@@ -65,7 +62,8 @@ exhibiting derived inclusions compatibly with their maps to `G`. Thus the
 source assertion transfers to every `d` in this statement.
 
 Constructing the centre representative, this pullback as an actual group
-scheme, its range equality, and its finiteness are future proof obligations.
+scheme, its range equality, and its finiteness are the work of the proof,
+`derivedCentralIntersectionFiniteness` in `Derived.CentralIntersectionProof`.
 This description does not supply those Lean proofs. The statement concerns
 the centre of `G` intersected with `D`; it makes no assertion identifying it
 with the centre of `D`. It retains the entire finite group scheme, including
@@ -100,7 +98,7 @@ of the derived semisimplicity assertion in part (c):
    using finite root-of-unity group schemes. The block determinants are
    characters whose closed kernels contain every commutator; the defining
    minimality of `derivedSubgroup` then places the derived subgroup in each
-   kernel. This adapts the source argument without assuming an unproved
+   kernel. This adapts the source argument without assuming the
    Library character-annihilation statement. The scalar bounds retain
    nonreduced roots of unity in positive characteristic.
 3. The paragraph before Proposition 19.10 and its proof, printed p.400 /

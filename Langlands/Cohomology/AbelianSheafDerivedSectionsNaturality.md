@@ -1,6 +1,6 @@
 # Coefficient naturality of actual abelian-sheaf cohomology comparisons
 
-Worker 368. This internal companion proves coefficient naturality of the
+This internal companion proves coefficient naturality of the
 existing `AbelianSheafDerivedSections.HAddEquiv`. The topological space
 `X : TopCat.{u}`, the abelian sheaves with section groups in universe `u`,
 their morphism `f : F ⟶ G`, and the degree `n : ℕ` are arbitrary.
@@ -59,5 +59,4 @@ Mathlib's pinned `CategoryTheory/Sites/SheafCohomology/Basic.lean` supplies
 the source, its coefficient maps and the actual `functorH`.
 No new external theorem or additional axiom is assumed.
 Scheme base change, compatibility with connecting homomorphisms,
-module scalar actions and Picard representability remain separate
-obligations.
+module scalar actions and Picard representability are not treated here.

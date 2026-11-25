@@ -1,6 +1,6 @@
 # Finite coefficient homomorphisms over arbitrary algebras
 
-Worker 700. Proof of the internal arbitrary-algebra homomorphism descent
+Proof of the internal arbitrary-algebra homomorphism descent
 statement used in the arbitrary-base approximation step of Conrad,
 *Reductive group schemes* (2014), Theorem 5.3.5, p.166.
 
@@ -29,4 +29,4 @@ in every universe. Its assumptions are precisely the quasi-compact and
 quasi-separated source and locally finitely presented target in that
 statement. This proof descends a supplied homomorphism between already
 defined groups; group-object approximation, eventual monicity and reductivity,
-and the closed-immersion theorem remain separate obligations.
+and the closed-immersion theorem are not part of it.

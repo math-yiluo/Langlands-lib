@@ -84,17 +84,14 @@ or the equality with an epsilon-factor exponent.
 In particular, it makes no use of the erroneous essential-vector
 existence proof corrected by Jacquet in 2012.
 
-## Dependencies and review boundary
+## Dependencies and boundary
 
 This file has no project mathematical imports. It reuses Mathlib's
 `GeneralLinearGroup.map`, `Subgroup.comap`, `Subgroup.map`, ideal
-quotients, valuations, and integer rings in environment
-`2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, version 1 (Lean 4.34.0,
+quotients, valuations, and integer rings (Lean 4.34.0,
 Mathlib `5ed2965256430c3649e86755f9576b54eca72435`).
 The topology argument also uses Mathlib's general linear group map
 embedding, compact-unit-group instance, and openness of maximal-ideal
 powers in a nonarchimedean local field. These are derived construction
 obligations supporting the source's concrete subgroup, rather than
 additional representation-theoretic theorems attributed to JPSS.
-Worker 43 authored this module. Development compilation is distinct from
-independent source review and publication.

@@ -1,6 +1,6 @@
 # Actual rational corrected exactness from five explicit inputs
 
-Author: Worker 691. This internal reduction specializes
+This internal reduction specializes
 `CorrectedExactnessReduction` to the literal rational-point families.
 It derives the finite Coxeter, Levi, association and cardinality inputs
 from published results and the original target premises. It makes no

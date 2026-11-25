@@ -59,8 +59,8 @@ variable (B : AbelianScheme S) {O : Type v} [Ring O] (α : O →+* End0 B)
 /-- The rational action on the fixed relative Lie sheaf is independent of the rational base. -/
 theorem lieRationalOrderAction_base_independent :
     lieRationalOrderAction p B α = lieRationalOrderAction q B α := by
-  ext a
-  exact lieMap0_base_independent p q (α a)
+  ext a : 1
+  exact congrArg CategoryTheory.End.of (lieMap0_base_independent p q (α a).asHom)
 
 /-- The restricted rational action on a fixed open is independent of the rational base. -/
 theorem lieRationalLocalOrderAction_base_independent (U : S.Opens) :

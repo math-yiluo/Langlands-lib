@@ -11,7 +11,7 @@ The registered 2010 corrections, PDF pp.1–2
 (`renard-2010-corrections-complements`, SHA256
 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`),
 concern nearby injection, reflexivity and exactness arguments. The 2026 edition
-governs. Worker 1149 specializes and extends Worker 6's comparison audit.
+governs.
 
 For an original right module, the first raw dual has an action of the double
 opposite ring. `rawFirstDualAction` names this action. `firstDualAction`
@@ -60,4 +60,4 @@ and recovered complex modules in the presence of competing instances.
 No complex module on an original carrier, comparison certificate, dimension
 bound, nonzero condition, anti-involution or faithful action is assumed.
 The generic bidual is imported by Lean name from its published construction;
-evaluation transport is a separate successor pair.
+evaluation transport is in the separate pair `NonUnitalModuleRightBidualEvaluation`.

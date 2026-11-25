@@ -137,8 +137,7 @@ Whittaker model `W₁` with the published reversed pure tensor `w ⊗ 1`, and th
 invariance of `W` with the fixed vector `v` of `π`, as the target statement
 specifies.
 
-This proof is an internal derivation from published Library results. Worker 816
-wrote it.
+This proof is an internal derivation from published Library results.
 
 The three general block-subgroup lemmas above are imported from [OppositeBlockIntersection](../../Group/GL/OppositeBlockIntersection.md).
 

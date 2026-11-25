@@ -1,6 +1,6 @@
 # Harish-Chandra homomorphisms: statement
 
-Author: Worker 6. Module `Langlands.Representation.CuspidalSupport.HarishChandraHomomorphismStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`.
+Module `Langlands.Representation.CuspidalSupport.HarishChandraHomomorphismStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*, French edition dated 9 July 2026, VI.10.5, printed p.213 / PDF p.219. The registered source ID is `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 
@@ -10,7 +10,7 @@ For a parabolic `P = MN` of `G`, the map `i_{MG} : Ω(M) → Ω(G)` of VI.7.3 is
 
 ## The Lean statement
 
-`HarishChandraHomomorphismStatement` is a statement unit: nothing is proved.
+`HarishChandraHomomorphismStatement` is a statement only: nothing is proved.
 
 It quantifies over:
 
@@ -28,7 +28,7 @@ The conclusion is the existence of a ring homomorphism `φ : CatCenter(G) →+* 
 
 ## Comparison with the source
 
-- Renard constructs `i*_{MG}` geometrically, from the finite morphism `Ω(M) → Ω(G)` and the identification of the centres with polynomial functions (VI.10.4, Theorem). That construction needs the variety structures, which are not available. The statement asserts instead the existence of a ring homomorphism with the two compatibilities of the Proposition and the finiteness. Since `i_P^G` is faithful, condition 1 determines `φ z` uniquely, so the existential describes exactly Renard's homomorphism. This uniqueness remark is not formalized.
+- Renard constructs `i*_{MG}` geometrically, from the finite morphism `Ω(M) → Ω(G)` and the identification of the centres with polynomial functions (VI.10.4, Theorem). That construction needs the variety structures, which this statement does not use. The statement asserts instead the existence of a ring homomorphism with the two compatibilities of the Proposition and the finiteness. Since `i_P^G` is faithful, condition 1 determines `φ z` uniquely, so the existential describes exactly Renard's homomorphism. This uniqueness remark is not formalized.
 - The parabolic need not be standard.
 - The finiteness of `i_{MG}` as a morphism of varieties is not stated; only its consequence, finite generation of `ℨ(M)` over `ℨ(G)`, is.
 - The proof is not formalized here.

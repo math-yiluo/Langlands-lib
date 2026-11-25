@@ -1,6 +1,6 @@
 # Freeness of the terms of Harris's complexes `C_m^{•,H}` over `(R ⧸ (ℓ ^ m))[G ⧸ H]`
 
-Author: Worker 61. Built on `Langlands.Cohomology.DivisibleSystem.LevelProjective`
+Built on `Langlands.Cohomology.DivisibleSystem.LevelProjective`
 (`IsUnitMulUniformizerPow`, `DivisibleSystem.exists_free_generators_obj`), and through it on the
 InvariantTotalProjective module and the systems `groupStandardTotalSystem` (Total module),
 `quotientInvariantsTotalSystem`, `smoothGodementInvariantTotalSystem` (InvariantTotal module) and
@@ -159,8 +159,8 @@ term of every level is free over `(R ⧸ (ℓ ^ m))[G ⧸ H]`.
   `TermwiseFreeOverPowQuotient (K.quotientInvariantsTotalSystem N H hK)`.
 - `termwiseFreeOverPowQuotient_smoothGodementInvariantTotalSystem_of_isUnitMulUniformizerPow`:
   for the truncated smooth Godement resolutions (`h`, `T`, `D`, `hterm`, `hres` as in
-  `smoothGodementInvariantTotalSystem`, all types in one universe `u`; `h` is a proof of Worker
-  3's unproved proposition `SmoothGodementZeroExactStatement R G X`),
+  `smoothGodementInvariantTotalSystem`, all types in one universe `u`; `h` is a proof of the
+  unproved proposition `SmoothGodementZeroExactStatement R G X`),
   `TermwiseFreeOverPowQuotient (smoothGodementInvariantTotalSystem h T D H hterm hres)`.
 - `termwiseFreeOverPowQuotient_proPSmoothGodementInvariantTotalSystem_of_isUnitMulUniformizerPow`:
   in the pro-`p` case (`hP : ProPInvariantsExactStatement`, an unproved proposition;
@@ -175,8 +175,8 @@ system of `H`-invariants being resolved, since the three systems are abbreviatio
 ## Provenance and interpretation
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
-J. Math. Kyoto Univ. 39-2 (1999), printed pp.304 and 306 (one-based PDF pages 6 and 8). Worker
-61 read both pages in the rendered scanned original for the LevelProjective and
+J. Math. Kyoto Univ. 39-2 (1999), printed pp.304 and 306 (one-based PDF pages 6 and 8). Both
+pages were read in the rendered scanned original for the LevelProjective and
 InvariantTotalProjective modules; the quotations below are those of these modules.
 
 1. Harris's claims. On p.304 an `ℓ`-divisible system is "a collection `{T_m}` of étale sheaves

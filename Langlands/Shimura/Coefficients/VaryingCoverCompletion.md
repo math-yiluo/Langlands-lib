@@ -1,7 +1,5 @@
 # Associated completed coefficients and the limit of associated quotients
 
-Author: Worker 13.
-
 This internal construction connects the actual algebraic completion of
 varying-group coefficient diagrams with the ordinary coefficient-power limit
 of their associated small-etale sheaf diagrams.

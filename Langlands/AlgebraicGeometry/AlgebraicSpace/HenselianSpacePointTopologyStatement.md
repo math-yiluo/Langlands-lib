@@ -1,7 +1,5 @@
 # The topology on rational points of algebraic spaces over henselian fields
 
-Author: Worker 105.
-
 `HenselianSpacePointTopologyStatement` states the topological part of
 Proposition 5.4 of Brian Conrad, *Weil and Grothendieck approaches to adelic
 points* (December 31, 2011), printed pp.14–15, corrected by an added

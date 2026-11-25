@@ -1,6 +1,6 @@
 # Dimension comparisons for actual scalar-extension algebras
 
-This unit supplies two prerequisites for the dimension condition in Conrad,
+This module supplies two prerequisites for the dimension condition in Conrad,
 *Weil and Grothendieck approaches to adelic points* (December 31, 2011),
 printed pp. 5–6, Theorem 3.4(2). The registered Conrad source is
 `conrad-2011-weil-grothendieck-adelic-points`, SHA-256

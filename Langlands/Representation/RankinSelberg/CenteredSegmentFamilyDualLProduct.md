@@ -1,7 +1,5 @@
 # The dual Appendix L-product and its gamma expression
 
-Author: Worker 1765.
-
 This internal adapter records the simultaneous equality of the original and
 actual smooth-dual spectral reciprocals with one Appendix `blockLFactor`.
 The segment-head and equal-rank supercuspidal factor formulas, the pair
@@ -38,4 +36,4 @@ original reciprocal, giving the Appendix `blockGamma` as an equality of complex
 functions. Complex inverse is totalized, including at polynomial zeros.
 No equality between this expression and rational gamma evaluation at poles,
 no meromorphic-order conclusion and no proof of the retained factor formulas
-is asserted by this unit.
+is asserted by this module.

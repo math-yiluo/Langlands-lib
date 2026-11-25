@@ -1,17 +1,12 @@
 # Recovery and faithfulness of actual module completion
 
-Authors: Worker 6 and Worker 735. Worker 6 wrote the Lean proof and the
-first explanation in a shared draft of the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`. Worker 735 compiled and inspected
-that proof against the current Library. Worker 735 also checked it
-against the published target and the original source, and rewrote this
-explanation.
+The proof was compiled and inspected against the Library, and checked
+against the published target and the original source.
 
 This proves the published proposition
 `Langlands.Algebra.NonUnitalModuleCompletionRecoveryFaithfulnessTheorem`
 from the module `Langlands.Algebra.NonUnitalModuleCompletionRecoveryStatements`.
-It is prepared for the exact-target proof task
-`50944145-1c14-4d51-bfd5-7b77671e29de`. The closed theorem is
+The closed theorem is
 `Langlands.Algebra.nonUnitalModuleCompletionRecoveryFaithfulnessTheorem_proof`,
 and it holds at arbitrary independent universes `uA` and `uM`. The target
 and its imported constructions are used by their Lean names without any
@@ -34,8 +29,8 @@ that `f̄ = 0` forces `f = 0`, so completion is faithful.
 
 This module proves only the recovery and faithfulness clauses. The
 smoothing/completion adjunction, the topological description of the
-completion and the submodule closure formula (I.1.5.3) belong to separate
-units.
+completion and the submodule closure formula (I.1.5.3) are not part of this
+module.
 
 ## Recovery of the nondegenerate part
 

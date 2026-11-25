@@ -43,6 +43,8 @@ The construction works in arbitrary universe `u`. It assumes no noetherian,
 connectedness, nonempty-base, or constant-rank hypothesis. It does not deduce
 linearity of quotient transitions from additive group isomorphisms. Constructing
 the local filtration, proving overlap invariance, providing actual linear
-quotient charts, and proving termination remain obligations of the parent task.
+quotient charts, and proving termination are not done here; the Library's
+theorem for the filtration is `relativeUnipotentRadicalFiltration`
+(`RelativeUnipotentRadicalFiltrationStatement`) in `RadicalFiltrationProof`.
 The provenance is internal composition of the cited Library declarations and
 Mathlib's fpqc smoothness reflection, rather than a new external-source claim.

@@ -23,36 +23,29 @@ general interfaces are used at field universe `0`.
 
 The interfaces, in the order of the implication:
 
-| # | Declaration | Module (task) |
+| # | Declaration | Module |
 |---|---|---|
-| 1 | `Proposition48MackeyFibreStatement.{uF}` | `HarrisProposition48MackeyTransportStatement` (Task 7823) |
+| 1 | `Proposition48MackeyFibreStatement.{uF}` | `HarrisProposition48MackeyTransportStatement` |
 | 2 | `Proposition48MackeyConstituentGaloisConjugateStatement.{uF, uV}` | same |
 | 3 | `Proposition48MackeyChildTransportStatement.{uF, uV}` | same |
 | 4 | `Proposition48PrimeInducedParameterStagesStatement.{uF}` | same |
 | 5 | `Proposition48PrimeInductionStagesStatement.{uF, uV}` | same |
 | 6 | `Proposition48InducedParameterRegularAlgebraicStatement.{uF}` | same |
 | 7 | `WeakInductionConjugateInverseSelfDualStatement.{uV, 0, 0}` (TC form in the TC reduction) | same |
-| 8 | `ArithmeticComapUnitaryCentralCharacterStatement.{0, 0}` | `CuspidalArithmeticTransportStatement` (Task 7823) |
+| 8 | `ArithmeticComapUnitaryCentralCharacterStatement.{0, 0}` | `CuspidalArithmeticTransportStatement` |
 | 9 | `ArithmeticComapSupercuspidalComponentStatement.{0, 0, uV}` | same |
-| 10 | `ConjugateSelfDualUnitaryCentralCharacterStatement.{0}` | `HarrisAuxiliaryConjugatePairStatement` (Task 7822) |
+| 10 | `ConjugateSelfDualUnitaryCentralCharacterStatement.{0}` | `HarrisAuxiliaryConjugatePairStatement` |
 | 11 | `ConjugateSelfDualSupercuspidalConjPlaceStatement.{0, uV}` | same |
 | 12 | `SplitPlaceNeConjPlaceStatement.{0}` | same |
-
-Task 7823 is `dadd0ec0-1d72-4bdd-a5e6-c74dc98712b9`; Task 7822 is
-`364f76f1-154a-4269-9b0b-4cd6dc277a09` (published by the singleton
-decomposition, Task 7786).
 
 ## Sources
 
 Harris (1998), Proposition 4.8, proof of the prime orbit, printed p.203
 (`math_9611226v1.tex` lines 1646–1664, registered source
-`harris-1998-local-langlands`); operator plan note
+`harris-1998-local-langlands`); plan note
 `operator-external-inputs-plan-2026-11-16`, `external-inputs-plan.tex`,
 Section 4.8, lines 859–912: Remark 4.2 (lines 859–894), the prime branch
-(line 908), the infinity type (lines 910–911);
-operator ruling R2 (`/home/taskhub/pilot/correspondence/a79e2e832569567a8582b3c994f2fc1b.md`)
-and the ruling on the bridge
-(`/home/taskhub/pilot/correspondence/89b70579f7465ae3994e304e80cf284b.md`).
+(line 908), the infinity type (lines 910–911).
 
 Harris's argument: with `q = [D : E]` Mackey classes, `A` is a principal
 homogeneous space under `Gal(D/E)`, the constituent `Π(e)` of a base point and
@@ -62,7 +55,7 @@ auxiliary place is supercuspidal by Henniart–Herb because the conjugate
 components are distinct, and `Π` weakly induces `ξ`. The reductions are derived
 statements, not clauses of Harris. The route follows this prime-orbit argument
 with distinctness supplied by `HasDistinctMackeyComponents` (claim (2) of
-Remark 4.2, in the form of B6) instead of general position. Under R2 the
+Remark 4.2, in the form of B6) instead of general position. In this design the
 children carry complex-place parameters, and restricted B7(2) gives the
 output's parameters without assuming algebraicity. The separate bridge
 `CuspidalComplexParameterBridgeTCStatement` is used through interface 6, in
@@ -217,23 +210,21 @@ is met:
 
 | Obligation (target's Markdown) | Where it is met |
 |---|---|
-| unitary central character of the child's constituent `S_a` | interface 10 over `R.E` (Task 7822), moved to `D` by interface 8 (Task 7823) |
-| unitary central character of `Π` | interface 10 over `Q.E` (Task 7822), after step 7 |
-| supercuspidality at `conjPlace Q.E Q.Ps.v` | interface 11 (Task 7822) for `Π`; for `T₀`, interface 11 over `R.E` with interface 9 |
-| `Q.Ps.v ≠ conjPlace Q.E Q.Ps.v` | interface 12 (Task 7822) |
+| unitary central character of the child's constituent `S_a` | interface 10 over `R.E`, moved to `D` by interface 8 |
+| unitary central character of `Π` | interface 10 over `Q.E`, after step 7 |
+| supercuspidality at `conjPlace Q.E Q.Ps.v` | interface 11 for `Π`; for `T₀`, interface 11 over `R.E` with interface 9 |
+| `Q.Ps.v ≠ conjPlace Q.E Q.Ps.v` | interface 12 |
 | unique places of `D` above both places | proved in the Library: `finitePlacesAbove_subsingleton`; their existence from the child (step 2) with `finitePlaceEquiv_liesOver`, `conjPlace_liesOver` (step 3) |
-| transport of `S_a` and its parameters from `R.E` to `D` | interfaces 3, 8, 9 (Task 7823) |
-| permutation identities (Mackey's formula for the induced parameters) | interface 4 (Task 7823), with interface 3 at the `D` level |
-| Galois translates of the constituent, trivial stabilizer for restricted B7(2) | step 4: interface 2 (Task 7823) and the target's hypothesis `HasDistinctMackeyComponents`; deriving that hypothesis from B6 is the separate `Proposition48ExactStabilizerDistinctnessStatement` (proof task 7784, `164e0acf-5a60-4650-a62a-c82f952d83c3`) |
+| transport of `S_a` and its parameters from `R.E` to `D` | interfaces 3, 8, 9 |
+| permutation identities (Mackey's formula for the induced parameters) | interface 4, with interface 3 at the `D` level |
+| Galois translates of the constituent, trivial stabilizer for restricted B7(2) | step 4: interface 2 and the target's hypothesis `HasDistinctMackeyComponents`; deriving that hypothesis from B6 is the separate `Proposition48ExactStabilizerDistinctnessStatement` (proved as `proposition48ExactStabilizerDistinctness` in `HarrisProposition48ExactStabilizerDistinctnessProof`) |
 | `Π` from Arthur–Clozel induction (B2, B3) | B2 only, with `cyclicNormKernelCharacter` (proved in the Library); B3 is not used |
 | supercuspidal component of `Π` at `Q.Ps.v` | B4, with the distinct conjugate components of step 8 |
-| weak induction of `ξ` (Mackey's formula) | interface 5 (Task 7823) |
-| conjugate self-duality "as in the published branch" | interface 7 (Task 7823) with the rigidity premise of the target |
+| weak induction of `ξ` (Mackey's formula) | interface 5 |
+| conjugate self-duality "as in the published branch" | interface 7 with the rigidity premise of the target |
 | parameters of `Π` from restricted B7(2) | step 10 |
-| regular algebraicity from the bridge | interface 6 (Task 7823) with the bridge premise of the target |
+| regular algebraicity from the bridge | interface 6 with the bridge premise of the target |
 
-Shared with other decompositions: interfaces 3, 6, 7, 8, 9 and 10–12 are used by
-the exact-stabilizer singleton branch (Task 7786,
-`794a4691-1e86-44f4-a28d-d79270146b71`); interfaces 2, 3, 5 and 7 are
-obligations of the general-position prime branch (Task 7221,
-`528311c0-f3fd-4553-ad48-a6bed4282b5a`). New for this branch: interfaces 1 and 4.
+Shared with other branches: interfaces 3, 6, 7, 8, 9 and 10–12 are used by
+the exact-stabilizer singleton branch; interfaces 2, 3, 5 and 7 are
+obligations of the general-position prime branch. New for this branch: interfaces 1 and 4.

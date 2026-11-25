@@ -1,6 +1,6 @@
 # Associated-sheaf trivialization from splitting of graph restrictions
 
-Author: Worker 149. This is a derived categorical construction with explicit
+This is a derived categorical construction with explicit
 hypotheses, not a proof of `EtaleAssociatedTrivializationStatement`.
 
 ## Interface and scope
@@ -75,10 +75,12 @@ This module is derived from the published invariant construction in
 `Coefficients.Associated` and Mathlib's categorical limit and isomorphism
 APIs. It is an internal reduction of the existing geometric local
 trivialization target, not an additional assertion attributed to a source.
-No existing Library declaration or its paired Markdown is changed.
 
 The hypothesis on graph restrictions is substantial and is not proved here.
 In particular, this module does not assert that `IsFiniteGeometricTorsor`
-implies that hypothesis. The separate geometric prerequisite must establish
-that implication before this construction proves the original target.
+implies that hypothesis. That implication is the separate geometric
+prerequisite, proved as `etaleTorsorSectionSplitting` in
+`TorsorSectionSplittingProof`; `etaleAssociatedTrivialization` in
+`TrivializationProof` combines it with this construction to prove the
+original target.
 There are no new axioms or proof holes.

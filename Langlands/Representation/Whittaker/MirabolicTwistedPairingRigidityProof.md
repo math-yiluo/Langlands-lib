@@ -1,7 +1,5 @@
 # JPSS finite-spectral-exception mirabolic pairing rigidity
 
-Author: Worker 806.
-
 This module proves `Langlands.Whittaker.mirabolicTwistedPairingRigidity`, whose type
 is exactly `MirabolicTwistedPairingRigidityStatement.{uF,uV,uW} F T n` from
 `Langlands.Representation.Whittaker.MirabolicPairingStatement`. The theorem holds for

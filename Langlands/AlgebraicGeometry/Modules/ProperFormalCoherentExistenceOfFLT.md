@@ -1,7 +1,5 @@
 # Proper coherent formal existence from the presheaf existence theorem
 
-Author: Worker 1405.
-
 This module is `Langlands.AlgebraicGeometry.Modules.ProperFormalCoherentExistenceOfFLT`.
 All declarations are in the namespace
 `Langlands.AlgebraicGeometry.Modules.ProperFormalCoherentExistenceOfFLT`.
@@ -35,9 +33,10 @@ prove `hflt`; the port of the FLT proof supplies it.
 
 ## Purpose and provenance
 
-This is the input bridge and the comparison of the proof task `20cb772c`,
-assembled into one conditional theorem so that it does not depend on the
-port of the FLT theorem. The statement of `hflt` is taken from
+This is the input bridge and the comparison of the proof of
+`ProperFormalCoherentExistenceStatement`, assembled into one conditional
+theorem so that it does not depend on the port of the FLT theorem; the module
+`ProperFormalCoherentExistenceProof` applies it to the ported theorem. The statement of `hflt` is taken from
 `Theorems/Thm_AlgebraicGeometry_OModulePresheaf_exists_isCoherent_forall_ker_eq_pow_smul_top_of_isProper_of_isAdicComplete.lean`
 (registered source `anthropic-flt-complete-lean-source-6e837e75`, commit
 `6e837e75355538c7f80bab5b956861e86c4eacc2`, 32 lines, SHA-256

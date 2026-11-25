@@ -1,6 +1,6 @@
 # Harris's direct limit `C_m^•` over shrinking subgroups and the comparison (2.6)
 
-Author: Worker 61. Built on
+Built on
 `Langlands.Cohomology.DivisibleSystem.Colimit` (`colimitSystem`,
 `colimitSystemDesc`, `levelCocone`),
 `Langlands.Cohomology.DivisibleSystem.InvariantTransitivity`
@@ -14,7 +14,7 @@ Author: Worker 61. Built on
 `quasiIso_quotientInvariantsTotalSystemToRepExtend`), `…Invariants`
 (`smoothQuotientInvariants`, `toRepComplexes`), `…ProPInvariants`
 (`IsProPSubgroup`), the base module `DivisibleSystem` (`extendSystem`) and
-Worker 3's `Langlands.Cohomology.ProPInvariants.Statement`
+`Langlands.Cohomology.ProPInvariants.Statement`
 (`ProPInvariantSubcomplexStatement`, used only as a hypothesis). From
 Mathlib it uses `HasExactColimitsOfShape`, `AB5OfSize_of_univLE`,
 `HasExactColimitsOfShape.domain_of_functor`,
@@ -116,7 +116,7 @@ J. Math. Kyoto Univ. 39-2 (1999), section 2, printed p.306. After forming
 `C_m^{•,H}` and noting the change of `H`, Harris writes: "Taking the direct
 limit as H shrinks to the identity, we obtain an ℓ-divisible system of
 complexes C_m^• of projective Z/ℓ^mZ[S(ẽ)]-modules and a natural
-S(ẽ)-equivariant quasi-isomorphism (2.6)". Worker 61 read this passage in
+S(ẽ)-equivariant quasi-isomorphism (2.6)". This passage was read in
 the scanned original. On p.305 the subgroup `H` is an open normal pro-`p`
 subgroup of `S(ẽ)` acting trivially on `H_c^q(U(ẽ)_F̄, ℤ/ℓ^mℤ)` for all `q`
 and `m`.
@@ -140,7 +140,7 @@ Our rendering:
    the cohomology of the abstract complex `K.toRepComplexes.obj m`. It is not
    stated for Harris's compactly supported cohomology
    `H_c^q(U(ẽ)_F̄, ℤ/ℓ^mℤ)`; his (2.3) identifies the two, and that is not
-   formalized. The quasi-isomorphism also depends on Worker 3's unproved
+   formalized. The quasi-isomorphism also depends on the unproved
    `ProPInvariantSubcomplexStatement` (hypothesis `hS`), and the surjectivity
    (`hK`) and unit (`hk`) hypotheses stay explicit.
 5. The exact-colimit instances, the diagram, the cocone and the theorem are

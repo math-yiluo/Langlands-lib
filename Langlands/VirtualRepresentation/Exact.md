@@ -1,6 +1,6 @@
 # Exact-sequence virtual representations
 
-Worker 20 constructs `Langlands.VirtualRepresentation.ExactGrothendieckGroup P`
+This module constructs `Langlands.VirtualRepresentation.ExactGrothendieckGroup P`
 from actual finite-dimensional representations over a field. This is the exact
 relation quotient needed before formulating nonabelian local constants on
 virtual representations. It is not a free group on irreducible classes, and no
@@ -103,13 +103,13 @@ numbered dimension theorem on that page.
   objects, intertwining equivalences, isomorphism quotients and class ranks.
 - `Langlands.VirtualRepresentation.Integral` supplies the existing finitely
   supported integer module, its generator and linear extension. This import
-  preserves Worker 24's independent construction and does not reinterpret it
+  preserves that module's independent construction and does not reinterpret it
   as an exact-relation group.
 - Pinned Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`, Lean 4.34.0,
   supplies submodule spans and quotients, integral-module maps, and rank-nullity.
 
 The project imports are published in Library
-`459d17160ca3aef5c5b4e8ba056125e56d9479a0`. No pending Weil-Deligne kernel module
+`459d17160ca3aef5c5b4e8ba056125e56d9479a0`. No Weil-Deligne kernel module
 or actual local-field Weil assembly is imported. Identification with a split
 Grothendieck group or an irreducible basis, induction on exact virtual groups,
 local-field extension and reciprocity compatibility, and nonabelian epsilon

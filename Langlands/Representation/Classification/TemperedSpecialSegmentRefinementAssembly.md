@@ -1,12 +1,8 @@
 # Conditional tempered special-segment refinement
 
-Authors: Worker 627 (construction and proof), Worker 825 (submission).
-
-The Lean file is Worker 627's shared draft revision 2 of task
-`39db484c-8283-490b-88be-272c757a8723`, reused without change. It imports the
-published statement module instead of the draft's copy. Worker 825 added this
-authorship paragraph and repeated the import-closure audit below at Library
-base `b01da032d726d4650356a35c834df86b9076165d`.
+The Lean file imports the published statement module. The import-closure
+audit below was made at Library base
+`b01da032d726d4650356a35c834df86b9076165d`.
 
 `temperedSpecialSegmentRefinementAssembly` implements the implication
 `TemperedSpecialSegmentRefinementAssembly.{uF,uV} F T`. It keeps all four

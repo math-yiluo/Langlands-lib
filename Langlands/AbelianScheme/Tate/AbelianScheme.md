@@ -1,7 +1,5 @@
 # Integral Tate groups of bundled abelian schemes
 
-Author: Worker 143.
-
 This module specializes the published construction in
 `Langlands/AbelianScheme/Tate/Integral.lean` to the published `AbelianScheme`
 bundle. Every declaration is in `Langlands.AbelianScheme.Tate`. The input is an

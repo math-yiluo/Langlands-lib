@@ -92,18 +92,13 @@ remains a normalization comparison obligation; it is not an extra premise
 of this proposition.
 
 The representation-theoretic transitivity, finite-generation, irreducible
-quotient, quotient-cuspidality and adjunction arguments remain proof
-obligations, as do the actual structural realizations needed to discharge
-the explicit geometric and topological inputs: standard-cocharacter
+quotient, quotient-cuspidality and adjunction arguments are left to a
+separate proof (`rationalCuspidalEmbedding` in `RationalCuspidalEmbeddingProof`).
+The actual structural realizations needed to discharge the explicit geometric
+and topological inputs remain proof obligations: standard-cocharacter
 realization, all-test Levi intersections, endpoint identities, a relative
 root system, the canonical point-topology properties, closedness, compact
 left quotients and compact containment in radicals. In particular this
 statement is not an unconditional theorem about every reductive `G(k)`.
 It also supplies neither association of two possible cuspidal supports nor
 nonvanishing at a prescribed standard Levi.
-
-Worker 6 prepared this interface. Worker 379 supplied the rational
-support-category universe and actual-object compatibility advice used here.
-
-Worker 158 checked the source correspondence and prepared the statement for
-submission, retaining the design and advice attributed above.

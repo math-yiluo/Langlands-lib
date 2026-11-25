@@ -1,7 +1,5 @@
 # Order-zero general linear derivative Leibniz filtration
 
-Author: Worker 593.
-
 This pair proves the `d = 0` instance of the unchanged
 `GeneralLinearDerivativeLeibnizFiltrationStatement` for every factor rank and
 arbitrary smooth carriers. It does not prove its positive-order instances.
@@ -69,10 +67,10 @@ isomorphism uses only the generic first-isomorphism constructor and the proved
 zero-kernel and surjectivity of the full inclusion. The boundary comparison
 uses only the two identity-functor equations and the existing feasible-index
 singleton. `leibnizSource` and `leibnizPiece` retain the actual product without
-using any nontrivial property of it. The accepted target's conditional
+using any nontrivial property of it. The target statement's conditional
 `.filtration` extractor is not used. These are all proof inputs.
 
-| Inherited requirement or exclusion | Verification for this contribution |
+| Requirement, or result not used | Verification for this module |
 | --- | --- |
 | Actual natural filtration; complete enumeration; repeated and zero grades permitted | The endpoints are actual subfunctors, the grade is their actual quotient functor, its identification is a natural isomorphism, and `Finset.equivFin` enumerates the entire singleton. A zero product still has this one grade. |
 | Independent field and carrier universes; no extra representation hypothesis | The parameters retain `uF,uV`, the supplied topology and bundled additive character. All ranks and smooth carriers are arbitrary. The only bound is the original order bound `0 ≤ a+b`. |
@@ -83,10 +81,13 @@ using any nontrivial property of it. The accepted target's conditional
 | Special-head criterion; generic segment product uniqueness; multisegment exhaustion, strong-head existence, quotient coverage, ordered conversion and tempered uniqueness | No such module or conclusion occurs in the closure or supplies a proof input. |
 | Square-integrable Langlands classification, square-integrable and regular exhaustion, forward special essential square-integrability | No classification or square-integrability module occurs in the closure; no such conclusion supplies a proof input. |
 | Two-supercuspidal nonadjacent irreducibility and full-product structure/assembly, or any consumer proving its own upstream input | No two-supercuspidal module occurs in the closure and no consumer result is used. |
-| Irreducible, Levi-cuspidal and supercuspidal Whittaker coinvariant finiteness; all-character single-block finiteness and dependent mirabolic finite-length route | The closure's two Whittaker modules define algebraic characters and the general-linear character, without any finiteness input. No prohibited finiteness conclusion or mirabolic finite-length result is used. |
-| Preserve the target and all imported Lean/Markdown pairs | This contribution adds only this pair and `Filtration.OneStep`; the published target and every imported pair are unchanged. |
+| Irreducible, Levi-cuspidal and supercuspidal Whittaker coinvariant finiteness; all-character single-block finiteness and dependent mirabolic finite-length route | The closure's two Whittaker modules define algebraic characters and the general-linear character, without any finiteness input. No such finiteness conclusion or mirabolic finite-length result is used. |
+| Preserve the target and all imported Lean/Markdown pairs | Besides this pair, only `Filtration.OneStep` was ported with this file; the published target and every imported pair are unchanged. |
 
 These checks cover direct and transitive proof dependencies: the complete
-project import graph has none of the excluded families, and the new proof
+project import graph has none of the families listed above, and the new proof
 terms use only the explicit elementary inputs above. This is an order-zero
-helper contribution and does not discharge the all-rank positive-order target.
+helper module and does not prove the all-rank positive-order statement; the
+theorem `generalLinearDerivativeLeibnizFiltration` in
+`GeneralLinearDerivativeLeibnizFiltrationProof` proves it in every rank and
+order, using this module.

@@ -77,7 +77,9 @@ presentation and flatness; it is not asserted or used here.
 
 This is a prerequisite of the global dual comparison. Compatibility with
 restriction in U and with scalar multiplication, assembly into a morphism
-`f*(dual M) → dual(f*M)`, and its identity and composition laws remain separate
-obligations of the host task. The present file does not assume or assert those
+`f*(dual M) → dual(f*M)`, and its identity and composition laws are proved in
+[ModuleDualPullback](ModuleDualPullback.md) (`localDualPullback_restrict`,
+`localDualPullback_smul`, `dualPullbackComparison`, `dualPullbackComparison_id`,
+`dualPullbackComparison_comp`). The present file does not assume or assert those
 remaining laws and does not assert that the dual pullback comparison is an
 isomorphism.

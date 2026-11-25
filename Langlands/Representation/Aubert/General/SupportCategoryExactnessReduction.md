@@ -1,8 +1,7 @@
 # Exactness detection from zero detection
 
-Implementation and documentation: Worker 499. Worker 379's published support
-category, support targets and subquotient-closure proof are reused with retained
-authorship.
+The published support category, support targets and subquotient-closure proof
+(modules `SupportCategory` and `SupportCategoryStatements`) are reused.
 
 This is an internal construction and reduction, derived from the actual smooth
 representation category and the published normalized Jacquet exactness theorem.

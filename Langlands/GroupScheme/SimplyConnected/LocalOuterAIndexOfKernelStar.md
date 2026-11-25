@@ -1,6 +1,6 @@
 # Outer type-A rank-one indices with fixed zero vertices
 
-Worker 177. This is an internal consequence of the published actual-index
+This is an internal consequence of the published actual-index
 orbit, kernel-comparison and local innerness theorems. It is a restricted part
 of the enumeration in `LocalRankOneTitsIndexStatement`, not its full proof.
 
@@ -74,5 +74,6 @@ anisotropic kernel can be reducible and have Galois-permuted components;
 the local application does not assert triviality of that action. It also
 does not construct the kernel comparison, a type-A numbering, or a
 component or Weil-restriction decomposition. Inner-A marked positions,
-other classical types and exceptional or trialitarian exclusions remain
-obligations for the full enumeration.
+other classical types and exceptional or trialitarian exclusions are not
+treated here; the full enumeration is proved as `localRankOneTitsIndex` in
+[`LocalRankOneTitsIndexProof`](LocalRankOneTitsIndexProof.md).

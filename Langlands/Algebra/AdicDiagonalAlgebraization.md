@@ -1,7 +1,5 @@
 # Algebraization from compatible diagonal coefficient systems
 
-Worker 891.
-
 This module constructs a unique linear map to a direct sum from a compatible
 family of linear maps to direct sums over the adic quotients. It uses the
 finite-support argument of SGA 3, Exposé IX, Theorem 7.1 and Lemma 7.2,
@@ -56,7 +54,11 @@ has finite support. `System.lift` constructs the resulting linear map
 `mk_lift` states their reductions, and `lift_unique` proves uniqueness
 among linear maps with the specified reductions, again by separatedness.
 
-This is a coefficient-level effectivity construction for Task 7014.
+This is a coefficient-level effectivity construction toward
+`Langlands.GroupScheme.MultiplicativeTypeAdicLiftStatement`, the lifting of
+homomorphisms from isotrivial groups of multiplicative type over adically
+complete noetherian rings, which `multiplicativeTypeAdicLift` in
+`Langlands.GroupScheme.Torus.MultiplicativeTypeAdicLiftProof` proves.
 It does not itself construct algebra or Hopf homomorphisms, translate
 compatible scheme morphisms into the input system, perform finite étale
 descent, or prove the adic group-scheme lifting statement.

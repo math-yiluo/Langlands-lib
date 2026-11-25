@@ -1,13 +1,12 @@
 # Automorphism covariance of the compact coinvariant integral
 
-Author: Worker 787.
-
 `Langlands.Induction.CompactAutomorphismIntegralCovariance.{uG,uV}` is a
 proposition, written as a `Prop`-valued `def`. It says how the published
 quotient integral on compact induction changes when the induced functions are
 precomposed with a continuous automorphism `α` of `G` that preserves the
 inducing subgroup `H`. This module states the proposition; it does not prove
-it. The proof is a separate later task coordinated by Worker 76. The module
+it. The proof is `compactAutomorphismIntegralCovariance`, in the separate
+module `CompactAutomorphismIntegralProof`. The module
 adds no other declarations.
 
 ## Published objects used
@@ -294,8 +293,8 @@ The formalization differs from the source as follows.
   This proposition has neither. The coefficient transport here is the
   identity on vectors. The action of `n` on the coefficients, the character
   twist, the determinant normalization, and the full relative
-  normalizer-equivariant orbit comparison belong to later work, in particular
-  `Langlands.Geometric.PadicParabolicOrbitJacquetComparison` (Worker 76).
+  normalizer-equivariant orbit comparison belong to other results, in particular
+  `Langlands.Geometric.PadicParabolicOrbitJacquetComparison`.
 
 ## Scope
 

@@ -1,7 +1,5 @@
 # AF representability from a finite surjection with quasi-affine source
 
-Author: Worker 133.
-
 This module states a derived specialization of Philipp Gross,
 *Tensor generators on schemes and stacks*, Proposition 3.5. It is a
 substantial prerequisite for the proof of finite-surjective AF descent.
@@ -64,9 +62,8 @@ source obtained by shrinking inside an affine source open. That use is the
 reason for isolating this statement. Definition 3.1, printed p. 510, supplies
 the finite-set meaning of AF.
 
-The relative formulation follows the existing published
-`FiniteSurjectiveFiniteAffineNeighborhoodsDescentStatement`, formulated by
-Workers 139 and 1038. Gross's conventions on printed p. 503 / PDF p. 3
+The relative formulation follows the existing
+`FiniteSurjectiveFiniteAffineNeighborhoodsDescentStatement`. Gross's conventions on printed p. 503 / PDF p. 3
 use an absolute quasi-compact and quasi-separated diagonal. Over the affine
 base `S`, the absolute diagonal factors through the relative diagonal
 followed by a base change of the closed diagonal of `S` over `Spec ℤ`.
@@ -74,12 +71,12 @@ Consequently the retained relative quasi-separatedness supplies absolute
 quasi-compactness of the diagonal; representable diagonal monomorphisms are
 separated and hence quasi-separated. An absolute representing scheme
 acquires its structure map to `S` by composing with the target's structure
-map. These comparisons explain the derived formulation and remain proof
-obligations if the eventual proof uses this absolute route.
+map. These comparisons explain the derived formulation; a proof that uses
+this absolute route must establish them.
 
 The original source pages 510–512 were read in full. No source-specific
-errata note was found in the checked workspace, project or supplied Library
-notes; this records the search scope.
+errata note was found in the checked project or Library notes; this records
+the search scope.
 
 ## Proof boundary
 
@@ -90,8 +87,10 @@ supplies none of those constructions or their proofs. In particular it does
 not follow merely by applying affine-source descent to an open subscheme
 of an affine source.
 
-A separate exact proof successor is required after independent statement
-acceptance and Library publication. The full AF-source descent task still
-needs the shrinking, point and gluing arguments reducing its source to
-this special case. No adjacent ring, scheme-pushout, AF-preservation,
-Picard, actual-family comparison or representability task is discharged here.
+The exact proof is `finiteSurjectiveQuasiAffineSourceAF` in
+`FiniteSurjectiveQuasiAffineSourceAFProof`. The full AF-source descent
+(`FiniteSurjectiveFiniteAffineNeighborhoodsDescentStatement`) needs the
+shrinking, point and gluing arguments reducing its source to this special
+case; they are in `AFDescentOpenCharts` and `AFDescentFiniteSets`. No adjacent ring, scheme-pushout,
+AF-preservation, Picard, actual-family comparison or representability result
+is proved here.

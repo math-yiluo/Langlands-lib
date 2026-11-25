@@ -21,7 +21,7 @@ arbitrary.
 
 ## The imported universal predicate
 
-`IsUniversalSmoothFamilyOnQuasiSeparatedTests` is the accepted Library
+`IsUniversalSmoothFamilyOnQuasiSeparatedTests` is the Library
 definition in
 `Langlands.AlgebraicGeometry.Picard.SmoothFamilyQuasiSeparatedRepresentabilityStatement`.
 This module imports it unchanged. For the given `L` it is the conjunction of:
@@ -93,13 +93,13 @@ cited above already has this. No source-specific errata note was found under
 The source theorem uses no polarization and no local projectivity. Its
 representer is an abelian scheme, so it is smooth over `S` and therefore flat.
 
-## Derived formulation and remaining proof obligations
+## Derived formulation and proof obligations
 
 This is a derived proposition, not a verbatim source theorem. Lan's
 representer is not stated for an arbitrary `P` with the Library's predicate.
-A future proof of this statement must, without changing it, do the following:
+A proof of this statement must, without changing it, do the following:
 
-1. Construct, or reuse after its acceptance and publication, an actual abelian
+1. Construct, or reuse, an actual abelian
    scheme over `S` with an actual universal rigidified family representing
    Lan's `Pic⁰_e(A/S)` on quasi-separated tests.
 2. Show that the actual classes and pullbacks of that representer agree with
@@ -125,13 +125,15 @@ points, or flatness of the geometric fibres, does not give flatness either:
 the inclusion of the origin into the affine line over a field has flat
 fibres over every point, but it is not flat. A proof must not use
 `RelativeDualSchemeFlatStatement` or `RelativeDualSchemeGeometryStatement`.
-Those targets concern the chosen dual, and their planned proofs may use this
+Those targets concern the chosen dual, and their proofs may use this
 result, so using them here would be circular.
 
-A separately allocated sibling statement for local finite presentation uses
+The Library proves this statement as `smoothFamilyFlat` (module
+`SmoothFamilyFlatProof`); its Markdown describes the implemented proof.
+
+A sibling statement for local finite presentation,
+`SmoothFamilyFinitePresentationStatement`, uses
 the same quantifiers and predicate and concludes
 `LocallyOfFinitePresentation P.hom`. Each statement asserts one geometric
-property. Both need the same actual representer construction in a future
+property. Both need the same actual representer construction in a
 proof. Neither statement proves it.
-
-The Lean statement and this Markdown were written by Worker 302.

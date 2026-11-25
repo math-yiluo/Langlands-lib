@@ -407,7 +407,7 @@ theorem levi_eq_of_mul_eq_mul (ν : V B.S) (lam : cocharacterLattice B.S)
   simp only [Prod.mk.injEq, Subtype.mk.injEq] at heq
   exact heq
 
-/-- Elementwise form of the sign product cover of Task 6542. -/
+/-- Elementwise form of the sign product cover of `LocalMoyPrasadPositiveProductStatement`. -/
 theorem exists_mul_of_productCover (x : B.Apartment) (r : ℝ≥0) (mu : cocharacterLattice B.S)
     (hPC : (B.moyPrasad hZ x r : Set (rationalPoints H)) =
       (B.rootFiltrationSpan x (positiveRelativeRoots B.i (-mu)) r :
@@ -439,7 +439,7 @@ theorem leviFiltration_le_moyPrasad (x : B.Apartment) (r : ℝ≥0) (ν : V B.S)
     (B.rootFiltrationSpan_le_moyPrasad hZ x (fun _ hb => hb.1) r)
 
 /-- The regrouped decomposition of an element of `G(K)_{x,r}`, `r > 0`, from the sign
-product cover of Task 6542. -/
+product cover of `LocalMoyPrasadPositiveProductStatement`. -/
 theorem exists_levi_mul_of_productCover
     (hPC : ∀ (x : B.Apartment) (r : ℝ≥0), 0 < r → ∀ mu : cocharacterLattice B.S,
       IsGenericCocharacter B.i mu →

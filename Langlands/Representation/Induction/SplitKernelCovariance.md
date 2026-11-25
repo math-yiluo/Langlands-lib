@@ -1,15 +1,11 @@
 # Section covariance for a split kernel
 
-Authors: Worker 76 (shared draft, all constructions and the main proofs) and
-Worker 835 (the pointwise lemma `splitKernelCompactEquiv_section_eval`, checks
-and this description).
-
 This pair builds the conjugation automorphisms and the coefficient action of
 `L`. It then proves the section covariance of the split-kernel relative integral
 `splitKernelCompactIntegral` and of its descent
 `splitKernelCompactCoinvariantDesc` (the entry theorem
 `Langlands.Induction.splitKernelCompactCoinvariantDesc_section`). It is an internal
-prerequisite for Worker 76's parabolic-orbit Jacquet comparison.
+prerequisite for the parabolic-orbit Jacquet comparison.
 
 ## Provenance
 
@@ -189,6 +185,7 @@ sides reduce definitionally to the integral identity above.
 ## Scope
 
 This pair does not bundle the scalars `c_l` into a character. It does not prove
-induction in stages, a normalized functor isomorphism, or the parent
-`PadicParabolicOrbitJacquetComparison`. It imports `SplitKernelIntegral` and
+induction in stages, a normalized functor isomorphism, or
+`PadicParabolicOrbitJacquetComparison` (proved in
+`Geometric.ParabolicOrbitJacquetProof`). It imports `SplitKernelIntegral` and
 `CompactAutomorphismIntegralProof` by their published module names.

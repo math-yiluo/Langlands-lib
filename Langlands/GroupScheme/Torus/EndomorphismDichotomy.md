@@ -1,7 +1,5 @@
 # Torus endomorphism dichotomy
 
-Author: Worker 1369.
-
 The theorem `Langlands.GroupScheme.torusEndomorphismDichotomy.{u}` proves the
 existing `TorusEndomorphismDichotomyStatement.{u}`. For every algebraically closed
 field in arbitrary universe `u`, an endomorphism of an actual torus is surjective

@@ -47,9 +47,9 @@ implication substitutes the stated equality into that certificate.
 ## Provenance and scope
 
 The ordered-pair rank dispatch and specialization to nonzero dual functionals
-adapt Worker 31's `gammaFactorOfAnalyticInput` assembly in `PadicGammaFactor`.
+adapt the `gammaFactorOfAnalyticInput` assembly in `PadicGammaFactor`.
 The present proof instead certifies the expression for the supplied arbitrary
-epsilon and polynomial data. Worker 31 is credited as an adaptation coauthor.
+epsilon and polynomial data.
 
 This is an internal derived bridge between published Library interfaces. It
 uses the existing proofs in `GammaFromWhittakerType`,

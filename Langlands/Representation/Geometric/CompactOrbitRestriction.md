@@ -37,5 +37,3 @@ This conditional construction proves neither the homeomorphism nor section
 extension, surjectivity, or the full Mackey filtration theorem. Its provenance
 is the elementary topology of compact sets and relatively closed subspaces,
 applied to the existing concrete induction definitions.
-
-Author: Worker 112.

@@ -36,7 +36,8 @@ def boundedL2Pullback (hφ : Measurable φ) (c : ℝ≥0)
       map_add' := by
         intro u v
         apply Lp.ext
-        filter_upwards [hP (u + v), hP u, hP v, hq.ae_eq_comp (Lp.coeFn_add u v),
+        filter_upwards [hP (u + v), hP u, hP v,
+          QuasiMeasurePreserving.ae_eq_comp hq (Lp.coeFn_add u v),
           Lp.coeFn_add (P u) (P v)] with x huv hu hv hsum hadd
         calc
           P (u + v) x = (u + v) (φ x) := huv
@@ -46,7 +47,7 @@ def boundedL2Pullback (hφ : Measurable φ) (c : ℝ≥0)
       map_smul' := by
         intro a u
         apply Lp.ext
-        filter_upwards [hP (a • u), hP u, hq.ae_eq_comp (Lp.coeFn_smul a u),
+        filter_upwards [hP (a • u), hP u, QuasiMeasurePreserving.ae_eq_comp hq (Lp.coeFn_smul a u),
           Lp.coeFn_smul a (P u)] with x hau hu hsmul hadd
         calc
           P (a • u) x = (a • u) (φ x) := hau
@@ -87,7 +88,8 @@ theorem boundedL2Pullback_toLp_ae (hφ : Measurable φ) (c : ℝ≥0)
     boundedL2Pullback hφ c hd (hf.toLp f) =ᵐ[μ] f ∘ φ := by
   have hq : Measure.QuasiMeasurePreserving φ μ ν :=
     ⟨hφ, (Measure.absolutelyContinuous_of_le hd).trans (Measure.AbsolutelyContinuous.rfl.smul_left _)⟩
-  exact (boundedL2Pullback_ae hφ c hd _).trans (hq.ae_eq_comp hf.coeFn_toLp)
+  exact (boundedL2Pullback_ae hφ c hd _).trans
+    (QuasiMeasurePreserving.ae_eq_comp hq hf.coeFn_toLp)
 
 /-- Restrict an `L²` function to a measurable domain in the same ambient type. -/
 def restrictL2 (S : Set X) : Lp E 2 μ →L[ℂ] Lp E 2 (μ.restrict S) :=

@@ -1,8 +1,7 @@
 # Canonical reflexivity and admissibility
 
-Worker 6 supplied the complete proof draft. Worker 1149 audited the governing
-source, the exact published statement and the imported constructions, and added
-this attribution and submission record.
+The governing source, the exact published statement and the imported
+constructions were audited.
 
 This proof establishes
 `NonUnitalModuleAdmissibilityStatements.AdmissibleIffEvaluationBijective`

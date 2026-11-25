@@ -1,7 +1,5 @@
 # Matrix coefficients, group-like elements and semisimplicity
 
-Author: Worker 906.
-
 This helper module holds the pure algebra used by the proof of Milne,
 *Algebraic Groups* (2017), Corollary 12.21, in
 [`MultiplicativeTypeSemisimplePointsProof`](MultiplicativeTypeSemisimplePointsProof.md).

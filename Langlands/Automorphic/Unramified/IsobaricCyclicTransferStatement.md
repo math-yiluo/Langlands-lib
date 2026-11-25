@@ -1,7 +1,6 @@
 # Arthur–Clozel cyclic base change and automorphic induction for isobaric data
 
-Worker 12 authored this statement unit for task
-`91266440-3276-48dc-ab77-8d1c1fa386e8`. All declarations lie in the namespace
+All declarations lie in the namespace
 `Langlands.Automorphic.Unramified` and are proposition definitions. Nothing is proved
 here.
 
@@ -26,7 +25,7 @@ cuspidal data. They are represented by their constituent data.
 
 ## Objects and conventions
 
-- `IsobaricData F` (Worker 8, `Langlands.Automorphic.IsobaricData`) is a finite multiset
+- `IsobaricData F` (`Langlands.Automorphic.IsobaricData`) is a finite multiset
   of cuspidal classes of positive rank. `D.IsUnitary` says every constituent is
   unitarizable. Unitary data are exactly the unitary cuspidal data `σ` of Definition 4.1,
   up to the order of the blocks. By (2.4) and the irreducibility of the induced

@@ -1,7 +1,5 @@
 # Structural inputs for no-torus unipotence
 
-Author: Worker 1487.
-
 `Langlands.GroupScheme.NoTorusStructuralReductionStatement.{u}` is an
 internal conditional reduction to the exact published
 `NoTorusUnipotentStatement.{u}`. It is a proposition definition; this file
@@ -28,11 +26,13 @@ connected affine group, and the all-test triviality of every homomorphism
 from every torus over the ground field. No restriction to infinite,
 perfect, algebraically closed or characteristic-zero fields is added to
 that conclusion. The finite and infinite field cases are part of the
-intended proof, not additional target assumptions.
+proof, not additional target assumptions.
 
-This interface is derived from the published structural interfaces for the
-parent task. Its intended proof uses induction on actual Lie dimension
-for the infinite-field case. Torus lifting passes the absence of closed
+This interface is derived from the published structural interfaces for
+`NoTorusUnipotentStatement`, the theorem this module serves. Its proof,
+`noTorusStructuralReduction` in
+[`NoTorusStructuralReductionProof`](NoTorusStructuralReductionProof.md), uses
+induction on actual Lie dimension for the infinite-field case. Torus lifting passes the absence of closed
 tori through the isogeny. In the nonnilpotent branch, the connected
 centralizer has smaller dimension and contains the original nonzero
 semisimple tangent element, preventing it from being unipotent. This
@@ -42,4 +42,5 @@ the first three explicit premises.
 
 Proving this implication would establish only the assembly step. Every
 structural premise retains its independent proof obligation, and this
-conditional statement does not prove the parent no-torus theorem.
+conditional statement does not prove the no-torus theorem
+`NoTorusUnipotentStatement` that it serves.

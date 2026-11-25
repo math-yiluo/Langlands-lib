@@ -1,7 +1,8 @@
 # Dynamic subgroups of the quasi-split unitary group: statement
 
 `Langlands.GroupScheme.QuasiSplitUnitary.DynamicStatement` is a proposition
-definition, the target for a separate proof unit. It quantifies over fields
+definition; it is proved as `dynamicStatement` in `QuasiSplitUnitaryDynamicProof`.
+It quantifies over fields
 `F` and `E`, an `F`-algebra structure and `IsQuadraticExtension F E`, a finite
 `F`-basis `b` of `Matrix (Fin 2) (Fin 2) E`, and a nonidentity automorphism
 `c : E ≃ₐ[F] E`. It imposes no characteristic restriction.

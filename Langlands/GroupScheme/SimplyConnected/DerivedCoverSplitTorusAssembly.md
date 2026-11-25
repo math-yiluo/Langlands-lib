@@ -1,7 +1,5 @@
 # Assembling maximal split tori through a simply connected derived cover
 
-Author: Worker 1470.
-
 This internal support module bundles three published propositions and proves
 that, together, they imply
 `SimplyConnectedDerivedCoverSplitTorusStatement`. It also proves the

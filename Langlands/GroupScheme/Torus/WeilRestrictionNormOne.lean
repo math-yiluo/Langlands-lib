@@ -171,7 +171,7 @@ def normOneDecompositionPointsEquiv (T : Over (Spec A')) :
               (Gm.baseChangeIso (baseMap A A')).hom.hom.hom) = _ at h
           rwa [Gm.pointsEquiv_baseChangeIso_hom] at h)))
 
-set_option maxHeartbeats 800000 in
+set_option maxHeartbeats 3200000 in
 /-- The product-one coordinates are the existing Weil-restriction coordinates
 of the image under the actual kernel inclusion. -/
 theorem normOneDecompositionPointsEquiv_val (T : Over (Spec A'))
@@ -179,9 +179,10 @@ theorem normOneDecompositionPointsEquiv_val (T : Over (Spec A'))
     (normOneDecompositionPointsEquiv A A' B I e T x).val =
       decompositionPointsEquiv A A' B I e T
         (x ≫ ((GroupScheme.baseChange (baseMap A A')).map (normOneι A B)).hom.hom) := by
+  rw [normOneDecompositionPointsEquiv, MulEquiv.trans_apply, MulEquiv.trans_apply]
   change decompositionPointsEquiv A A' B I e T
-    ((x ≫ (kernelBaseChangeIso (baseMap A A') (norm A B)).hom.hom.hom) ≫
-      (kernelι ((GroupScheme.baseChange (baseMap A A')).map (norm A B))).hom.hom) = _
+    ((kernelPointsEquiv _ T (isoPointsEquiv _ T x)).val) = _
+  rw [kernelPointsEquiv_val, isoPointsEquiv_apply]
   congr 1
   rw [Category.assoc]
   congr 1

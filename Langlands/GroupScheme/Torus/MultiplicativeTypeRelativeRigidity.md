@@ -1,7 +1,5 @@
 # Rigidity of families of homomorphisms between groups of multiplicative type
 
-Worker 5698.
-
 This module extends the diagonalizable rigidity of
 [`Torus.RelativeDiagonalizableRigidity`](RelativeDiagonalizableRigidity.md) to groups of
 multiplicative type (`RelativeMultiplicativeType.IsMultiplicativeType`, Conrad, *Reductive group

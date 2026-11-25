@@ -20,7 +20,7 @@ universe uF uQ
 namespace Langlands.Automorphic
 
 open Langlands.Global Langlands.HarmonicAnalysis
-open Langlands.ClassField.Global.RelativeWeilGroup (HasUnitaryCentralCharacter)
+open Langlands.ClassFieldTheory.Global.RelativeWeilGroup (HasUnitaryCentralCharacter)
 
 /-- **Local genericity** of the actual local components of cuspidal spectral presentations. -/
 theorem cuspidalUnitaryLocalGenericity : CuspidalUnitaryLocalGenericityStatement.{uF, uQ} := by

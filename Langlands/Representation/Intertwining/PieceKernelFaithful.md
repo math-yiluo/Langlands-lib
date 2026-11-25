@@ -1,6 +1,6 @@
 # Faithfulness of normalized induction for central group-algebra kernels
 
-Author: Worker 102. Module `Langlands.Representation.Intertwining.PieceKernelFaithful`,
+Module `Langlands.Representation.Intertwining.PieceKernelFaithful`,
 namespace `Langlands.Aubert.General.RepresentedParabolic`. Universe parameters `u` (the field)
 and `v` (the representation).
 

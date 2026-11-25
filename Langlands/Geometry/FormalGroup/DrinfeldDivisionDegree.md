@@ -17,6 +17,10 @@ order unit acts by an integral isomorphism and has degree one. Under
 `HasPiHeight π q H`, the central scalar \(\pi\) acts by the original
 scalar endomorphism with kernel rank \(q^H\), which is its degree.
 
+NYLL’s `LocalFieldTheory.valueGroupWithZeroIsoInt_of_integerRing_irreducible`
+gives normalized value `Multiplicative.ofAdd (-1)` for the irreducible integer.
+This gives positive order one in the Plancherel convention.
+
 Write \(d\) for the reduced degree and suppose the scalar height is
 \(Hd\) with rank base \(q>0\). The order-one scalar uniformizer raised to
 minus the reduced-norm order of \(g\) corrects \(g^d\) into an integral

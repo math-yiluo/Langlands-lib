@@ -1,7 +1,8 @@
 # Mellin convolution in logarithmic coordinates
 
 This is an internal analytic step toward the real principal-series coefficient
-integrals in Task 7400. `ArchimedeanMellinConvolutionStatement` packages two
+integrals of the real-place functional equation (`RealPlaceFunctionalEquationStatement`).
+`ArchimedeanMellinConvolutionStatement` packages two
 facts: closure under multiplicative convolution with a product formula for the
 Mellin transform, and a Fubini identity on a general measure space with a
 product of positive weights.

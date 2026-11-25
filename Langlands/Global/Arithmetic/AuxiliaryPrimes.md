@@ -1,7 +1,5 @@
 # Auxiliary primes for a Kummer extension of prime degree
 
-Author: Worker 226.
-
 Let `K` be a number field containing a primitive `p`-th root of unity, `p` prime, and let `S`
 be a finite set of finite places of `K` such that `p` is a unit at every finite place outside
 `S`. Let `α` be an `S`-unit that is not a `p`-th power in `K`. This module chooses a finite set
@@ -36,9 +34,9 @@ hypothesis. Everything is in namespace `Langlands.Global.Arithmetic.AuxiliaryPri
 
 `sUnits K S` is the group of `S`-units of the Library module
 `Langlands.Global.Arithmetic.SUnitIndex`. `localUnits q` is the subgroup `U_q` of valuation
-units of `K_qˣ` (Library module `Langlands.ClassField.Global.LocalUnitCohomology`), and
+units of `K_qˣ` (Library module `Langlands.ClassFieldTheory.Global.LocalUnitCohomology`), and
 `localUnitPowers q p` is its subgroup `U_q ^ p` of `p`-th powers (Library module
-`Langlands.ClassField.Global.LocalUnitPowers`).
+`Langlands.ClassFieldTheory.Global.LocalUnitPowers`).
 
 - `sUnitsToLocalUnits S q hq : sUnits K S →* localUnits q`, for a finite place `q ∉ S`, sends an
   `S`-unit to its image in `K_q`. That image is a unit because its `q`-adic valuation is `1`

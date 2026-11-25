@@ -1,7 +1,5 @@
 # Derivatives of tensor products with an inert factor
 
-Author: Worker 969.
-
 This module provides ingredients for the rank-zero cases of BZ77 4.14(b) and (c);
 the actual comparison of the right mixed product with a tensor product and the
 filtration assembly are not part of it. Let `X` be a smooth

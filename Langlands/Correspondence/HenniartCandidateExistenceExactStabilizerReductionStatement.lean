@@ -29,7 +29,7 @@ Galois group of every p-adic field `K` has a candidate, with automorphic lattice
 changed. -/
 def CandidateExistenceExactStabilizerReductionStatement : Prop :=
   Global.Harris.Proposition48ExactStabilizerStatement.{uK, 0, 0, 0, uP} →
-  ClassField.Global.RelativeWeilGroup.AssociatedSupercuspidalInductionStatement.{0, uW, uP, uP} →
+  ClassFieldTheory.Global.RelativeWeilGroup.AssociatedSupercuspidalInductionStatement.{0, uW, uP, uP} →
   ClassFieldTheory.Local.LocalRelativeClassFormationStatement.{0} →
   Global.PoleComparison.RelativeCertifiedPoleComparisonsStatement.{0, uW, uP} →
   Global.PoleComparison.HenniartCompositeMapStatement.{0, uK, uW, uP, uE} →
@@ -47,7 +47,7 @@ Galois group of every p-adic field `K` has a candidate, with automorphic lattice
 changed. -/
 def CandidateExistenceExactStabilizerTCReductionStatement : Prop :=
   Global.Harris.Proposition48ExactStabilizerStatement.{uK, 0, 0, 0, uP} →
-  ClassField.Global.RelativeWeilGroup.AssociatedSupercuspidalInductionTCStatement.{0, uW, uP, uP} →
+  ClassFieldTheory.Global.RelativeWeilGroup.AssociatedSupercuspidalInductionTCStatement.{0, uW, uP, uP} →
   ClassFieldTheory.Local.LocalRelativeClassFormationStatement.{0} →
   Global.PoleComparison.RelativeCertifiedPoleComparisonsTCStatement.{0, uW, uP} →
   Global.PoleComparison.HenniartCompositeMapTCStatement.{0, uK, uW, uP, uE} →

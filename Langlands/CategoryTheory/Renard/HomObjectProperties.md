@@ -1,9 +1,6 @@
 # Renard A.VIII.2: projective, injective and generator objects
 
-Authors: Worker 6 (original shared draft, implementation and documentation),
-Worker 595 (direct source checks, declaration inspection and submission).
-
-This definition unit covers the five object properties in David Renard,
+This definition module covers the five object properties in David Renard,
 *Représentations des groupes réductifs p-adiques*, French edition dated
 9 July 2026, A.VIII.2, printed page 267 / PDF page 273. The preceding Hom
 functors and exactness convention occur in A.VIII.1–2, printed page 266 /
@@ -51,12 +48,12 @@ the covariant map sends `f : P ⟶ X` to `f ≫ g`; the contravariant map on
 `g.op` sends `h : Y ⟶ P` to `g ≫ h`. Their restricted integer actions are
 the canonical actions on those additive Hom groups. Both functors are
 additive. These constructions and intrinsic laws are imported from their
-published pair, authored by Worker 734, rather than reconstructed here.
+published pair rather than reconstructed here.
 The target carriers have universe `v`, with no comparison between `u` and `v`.
 `Mathlib.Algebra.Category.ModuleCat.Abelian` supplies the abelian target.
 
-The imported module `Langlands.CategoryTheory.RenardExactFunctor`, authored
-by Worker 595 with Worker 6's specification, supplies the source conditions.
+The imported module `Langlands.CategoryTheory.RenardExactFunctor` supplies
+the source conditions.
 For an additive functor `F : A ⥤ B` between abelian categories, left sequence
 exactness means
 
@@ -143,9 +140,10 @@ They assert no preservation or comparison theorem.
 
 Hom left exactness, comparison with Mathlib `Projective`, `Injective`,
 `IsSeparator` and `IsCoseparator`, and the nonzero-Hom criterion for a
-projective object to be a progenerator remain theorem obligations.
+projective object to be a progenerator are proved in
+`Langlands.CategoryTheory.Renard.HomExactnessComparison` and
+`Langlands.CategoryTheory.Renard.HomGeneratorCriteria`.
 Smallness and preservation of coproducts, the finite-support characterization,
 the finite-type comparison in Grothendieck categories, presentations by
 coproducts of the progenerator, and the module-category equivalence remain
-separate construction or theorem obligations. These boundaries preserve the
-rest of A.VIII.2 under the whole-book parent task.
+separate construction or theorem obligations.

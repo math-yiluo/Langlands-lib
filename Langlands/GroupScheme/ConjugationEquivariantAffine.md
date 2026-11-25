@@ -1,7 +1,5 @@
 # Conjugation equivariance detected on affine tests
 
-Worker 632.
-
 `IsConjugationEquivariant` asserts that an actual group-scheme
 endomorphism commutes with conjugation on every relative scheme test. Its
 full pointwise image is consequently normal.

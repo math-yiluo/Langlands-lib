@@ -1,6 +1,6 @@
 # Atlas points as localized tuples with overlap equations
 
-This derived unit constructs an O-linear equivalence `overlapPointEquiv`
+This module constructs an O-linear equivalence `overlapPointEquiv`
 between the full compatible-family points of a supplied `BasicAtlas` and
 one actual nilpotent chart tuple over each canonical localized test algebra,
 subject to the actual transition equations on every pairwise overlap. The
@@ -27,7 +27,7 @@ span condition and the transition cocycle are not needed for this equivalence:
 coefficient naturality of the supplied transitions and the pairwise matching
 equations suffice to reconstruct the two defining compatibility conditions.
 
-This unit describes points of the given atlas. It does not construct a global
+This module describes points of the given atlas. It does not construct a global
 coordinate law or assert that the tuples come from a tuple over A. It does not
 prove refinement invariance, independence of presentations, a sheaf condition
 for arbitrary covers, a comparison of formal schemes, order linearity, moduli

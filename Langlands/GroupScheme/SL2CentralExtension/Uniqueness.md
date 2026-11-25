@@ -1,7 +1,5 @@
 # Uniqueness of sections of central extensions of SL₂
 
-Worker 794.
-
 This internal helper development supplies the uniqueness step for central
 extensions of the actual binary special linear group over an arbitrary scheme.
 The reference target is Conrad, *Reductive group schemes* (2014),

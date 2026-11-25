@@ -1,7 +1,7 @@
 # Base change of Galois pinning data to an intermediate field
 
-This module provides the transport part of the transfer clause for the Tits obstruction
-(Task 7603, clause 3). For a scalar tower `k ⊆ E ⊆ K` and Galois pinning data `d` of a
+This module provides the transport part of the transfer law for the Tits obstruction
+(`Reductive/TitsTransfer`, `Reductive/TitsTransferBaseChange`). For a scalar tower `k ⊆ E ⊆ K` and Galois pinning data `d` of a
 group `G` over `k` with splitting field `K`, it constructs Galois pinning data of `G_E`
 over the same field `K`. It also gives the transport of integral weights, proves that the
 transport is compatible with the root datum, the base and the star actions of

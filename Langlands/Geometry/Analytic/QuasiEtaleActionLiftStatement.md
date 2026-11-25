@@ -1,12 +1,10 @@
 # Statement: lifts of continuous actions to compact quasi-étale spaces
 
-Author: Worker 21.
-
 This module states, as a proposition, the consequence of Berkovich's Key
 Lemma used to define equivariant sheaves: a continuous action on `X` lifts,
 on an open subgroup, to every compact space quasi-étale over `X`, and the
 lift is unique up to shrinking the subgroup. The statement is not proved
-here; it is a target for a separate proof task.
+here; `QuasiEtaleActionLiftProof` proves it as `quasiEtaleActionLift`.
 
 ## Original sources
 

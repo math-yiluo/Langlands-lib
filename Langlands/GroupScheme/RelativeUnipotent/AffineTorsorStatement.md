@@ -1,7 +1,5 @@
 # Vector-bundle series and affine torsor vanishing
 
-Author: Worker 204.
-
 `Langlands.GroupScheme.RelativeUnipotentAffineTorsorStatement` is a
 universe-polymorphic proposition target. This module defines the proposition;
 it does not prove it.

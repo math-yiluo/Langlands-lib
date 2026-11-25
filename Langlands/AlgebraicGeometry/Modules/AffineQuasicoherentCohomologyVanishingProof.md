@@ -1,7 +1,5 @@
 # Higher cohomology of quasi-coherent modules on affine schemes vanishes: proof
 
-Author: Worker 958.
-
 This module proves the published proposition
 `Langlands.AlgebraicGeometry.Modules.AffineQuasicoherentCohomologyVanishingStatement.{u}`
 from `Langlands.AlgebraicGeometry.Modules.AffineQuasicoherentCohomologyVanishingStatement`,

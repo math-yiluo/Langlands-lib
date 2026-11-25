@@ -1,7 +1,5 @@
 # Statement: the central quotient of a split reductive group by the kernel of a torus isogeny
 
-Authors: Worker 1428, Worker 1404.
-
 This module states one unproved proposition, the `Prop`-valued `def`
 `Langlands.GroupScheme.SplitCentralTorusQuotientStatement` with one universe
 parameter `u`. Nothing is proved here.

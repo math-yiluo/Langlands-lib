@@ -38,7 +38,7 @@ scheme pullback, conjugation naturality, lattice pullback, tensor extension
 and quotient constructions. They introduce no new assertion from original
 literature.
 
-This contribution concerns the supplied split torus and its own pullback.
+This module concerns the supplied split torus and its own pullback.
 It does not enlarge that torus to a maximal split torus over `K`, construct
 compatible root valuations or an apartment map, compare affine translation
 terms, or prove `IntegralModel.BuildingComparisonStatement`.

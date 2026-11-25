@@ -1,7 +1,5 @@
 # Standard testing of unitary Jacquet vanishing
 
-Worker 1222, Task 1222 (`f5d1f399-a1f8-4ab5-a981-90b92abd4857`).
-
 `Langlands.Aubert.General.RepresentedParabolic.UnitaryJacquetVanishingStandardReductionStatement`
 compares the vanishing condition of Renard VII.2.4 with its represented-parabolic
 form in `TemperedSquareIntegrableUnitaryPartStatement`. The source tests the

@@ -1,7 +1,5 @@
 # Proof of the pair gamma twist exchange
 
-Author: Worker 389.
-
 The theorem `Langlands.RankinSelberg.pairGammaTwistExchange.{uF, uV, uW}` proves the
 unchanged Library proposition `Langlands.RankinSelberg.PairGammaTwistExchangeStatement`
 at three independent universe levels. For every p-adic field `F`, unitary additive

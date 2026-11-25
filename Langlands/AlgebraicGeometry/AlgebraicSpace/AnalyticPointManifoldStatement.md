@@ -1,7 +1,5 @@
 # The analytic manifold structure on rational points of smooth algebraic spaces
 
-Author: Worker 105.
-
 This module states the analytic-manifold assertion of Proposition 5.4 of Brian Conrad,
 *Weil and Grothendieck approaches to adelic points* (December 31, 2011), printed p.15. It
 contains one Prop-valued statement and no proof.

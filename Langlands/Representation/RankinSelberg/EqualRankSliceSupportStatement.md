@@ -1,10 +1,9 @@
 # Equal-rank determinant-slice lower support
 
-Worker 488 states
+This file states
 `Langlands.RankinSelberg.EqualRankSliceSupportStatement.{uF,uV,uW}`
 in `Langlands.Representation.RankinSelberg.EqualRankSliceSupportStatement`.
-Worker 484 proposed the focused support interface and its internal proof route.
-The telescope uses Worker 11's published analytic interfaces.
+The telescope uses the published analytic interfaces of `AnalyticStatement`.
 This module defines a proposition and does not prove it.
 
 ## Complete statement
@@ -78,8 +77,8 @@ J. A. Shalika, *Rankin–Selberg Convolutions*, American Journal of Mathematics
 SHA256
 `d9feed6388ca5acf02ecc6a8cce984871a7c28f062ff441e45a71fa2d8962245`.
 Printed pp.385–386, 388–391 and 406–407 were read visually for this statement.
-No source-specific erratum file was found in the supplied Library,
-workspace or project `notes/errata` locations on 27 October 2026.
+No source-specific erratum file was found in the supplied Library
+or project `notes/errata` locations on 27 October 2026.
 
 In §4.2, (4.2.1), p.406, the source uses
 `G_r^m = {g : |det g| = q^(-m)}` and defines
@@ -135,9 +134,10 @@ every diagonal entry and hence the normalized determinant. Sufficiently
 negative determinant slices have identically zero integrand, so their
 integrals vanish. For `n = 0` there are no adjacent ratios; compact test
 support bounds the single diagonal entry directly. These geometric and
-integration steps remain proof obligations of a separate successor.
+integration steps are proof obligations, carried out by
+`equalRankSliceSupport` in `EqualRankSliceSupportProof`.
 
-## Boundary of this unit
+## Boundary of this statement
 
 The coefficient uses the existing total Bochner integral. The statement
 assumes neither slice integrability nor convergence, and asserts neither.

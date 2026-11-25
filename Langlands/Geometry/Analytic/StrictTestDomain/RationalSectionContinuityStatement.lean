@@ -16,8 +16,8 @@ def RationalSectionOrbitContinuityStatement : Prop :=
     (P : PresentedStrictAffinoidAlgebra K) (d : RationalData K P)
     (G : Type v) [Group G] [TopologicalSpace G] [IsTopologicalGroup G]
     (ρ : G →* locusStabilizer d),
-    (∀ a : P, Continuous (fun g : G => (ρ g : Aut P).hom.toAlgHom a)) →
+    (∀ a : P, Continuous (fun g : G => (ρ g : Aut P).asIso.hom.toAlgHom a)) →
       ∀ b : d.algebra,
-        Continuous (fun g : G => (stabilizerSectionAction d (ρ g)).hom.toAlgHom b)
+        Continuous (fun g : G => (stabilizerSectionAction d (ρ g)).asIso.hom.toAlgHom b)
 
 end Langlands.Analytic.StrictTestDomain.RationalAutomorphism

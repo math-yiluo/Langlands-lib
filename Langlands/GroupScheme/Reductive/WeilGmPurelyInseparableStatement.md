@@ -1,7 +1,5 @@
 # A pseudo-reductive group that is not reductive: statement
 
-Worker 3483.
-
 `Langlands.GroupScheme.WeilGmPurelyInseparablePseudoReductiveStatement.{u}` is
 a proposition definition. This module does not prove it.
 
@@ -103,11 +101,11 @@ The same page (printed p.4, PDF p.30) describes the Weil restriction used:
   implication fails for `R_{k'/k}(𝔾_m)`.
 - `IsConnectedReductive.isPseudoReductive` (`Reductive/ToPseudoReductive`)
   gives the implication that always holds.
-- Available ingredients for a proof include `WeilGm.smooth`
+- The proposition is proved as `weilGmPurelyInseparablePseudoReductive`
+  (`Reductive/WeilGmPurelyInseparableProof`). That proof uses `WeilGm.smooth`
   (`Torus/WeilRestriction`, smoothness of `G`) and `WeilGm.pointsEquiv`
-  (its points). No Lean declaration of connectedness of `WeilGm.groupScheme`
-  was found by searching `Langlands/` for `ConnectedSpace` together with
-  `Weil`.
+  (its points), and proves connectedness of `WeilGm.groupScheme` itself
+  (`WeilGmPurelyInseparable.connectedSpace_groupScheme`).
 - The published family-3 ledger
   (`notes/group-schemes/ledger-family-3-unipotent-reductive.md`, row B5)
   lists this example as missing; this module supplies the statement.

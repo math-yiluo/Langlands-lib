@@ -1,7 +1,5 @@
 # Statement: central rigidity for groups of finite presentation from the noetherian case
 
-Worker 738.
-
 `Langlands.GroupScheme.MultiplicativeTypeCentralRigidityNoetherianReductionStatement.{u} :
 Prop` is a statement-only, `Prop`-valued definition. This module does not prove it, and it
 adds no other definitions, theorems or axioms. It imports:

@@ -1,6 +1,6 @@
 # Equivariant locally constant descent through original domain spectra
 
-Worker 56 constructs an isomorphism of continuous group actions for locally
+This module constructs an isomorphism of continuous group actions for locally
 constant descent through the original structural quotient of an actual
 invariant represented domain. The inputs are an actual positive-polyradius
 `PresentedAffinoidAlgebra` over a complete ultrametric normed field, its

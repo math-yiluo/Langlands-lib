@@ -1,6 +1,6 @@
 # A specified generator of an even orthogonal cover kernel
 
-This internal supporting unit works over any field `k` in universe `u`. Let
+This internal supporting module works over any field `k` in universe `u`. Let
 `p : S → O(2l)⁰` be a central isogeny with algebraically simply connected
 source, where the finite index type `l` has at least three elements.
 
@@ -43,4 +43,4 @@ ones, and use no characteristic restriction. Their provenance is the
 explicit composition of the named Library lattice, torus and centralizer
 results. They neither construct the quaternionic adapted coordinates nor
 identify the binary Levi diagonal; those comparisons remain necessary for
-the host task's `SpinKernelGeneratorStatement`.
+`SpinKernelGeneratorStatement`.

@@ -30,7 +30,8 @@ q*(d+1), the subgroup is exactly W.subgroup d on that affine test scheme. Thus a
 multiplier in a realizing cocharacter changes the intrinsic cutoff parameter;
 the original represented filtration and its unscaled weights are unchanged.
 
-This module's final comparison is on all coefficient algebras, not yet a claim
+This module's final comparison is on all coefficient algebras, not a claim
 of coordinate-independent ambient subgroup equality on arbitrary scheme tests.
 That extension, comparison across different chart groups or maximal tori,
-parabolic normalization and global descent remain obligations in Task 7200.
+parabolic normalization and global descent remain separate steps of the
+finite vector-bundle filtrations of supplied relative radicals.

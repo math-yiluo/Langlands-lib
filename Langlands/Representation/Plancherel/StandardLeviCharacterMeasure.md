@@ -1,6 +1,6 @@
 # I.1 character and orbit measures on the literal standard Levi
 
-Worker 270. Namespace `Langlands.Plancherel`.
+Namespace `Langlands.Plancherel`.
 
 This derived adapter transports the published I.1 character and VI.3 orbit measures to the literal standard Levi subgroup used by the actual wave-packet integral. It does not change the inducing representation to a representation on a dynamic Levi.
 
@@ -22,7 +22,7 @@ The field `F : Type u` has the shared `IsNonarchimedeanLocalField` structure, wi
 
 The standard connected reductive application supplies maximal split torus and generic cocharacter hypotheses. These are not needed by the transport identities themselves. The adapter takes normality instances for `CL` and `CM`; they follow from `hs.isCentralSplitTorus.isCentral.range_le_center` and `rationalLeviSplitCenter_le_center I s hs`, respectively, by `Subgroup.normal_of_le_center`. They impose no additional mathematical condition. The literal quotient `M / CM` has its displayed Borel measurable space and Haar measure `mu`. The intrinsic quotient uses its Borel measurable space.
 
-The actual-image premise `hindex : (RenardCartan.splitValuationImage s).FiniteIndex` is retained explicitly. It is an unresolved structural proof obligation in the standing program, not a permitted permanent external structural input. The imported finite-kernel and finite-stabilizer theorems use this premise. No separate self-twist finiteness assumption is mathematically necessary: `finite_standardLeviDiscreteSeriesStabilizer` derives it. Some comparison lemmas bind a `Finite` instance for that stabilizer to elaborate the existing integral measure; callers can use this theorem.
+The actual-image premise `hindex : (RenardCartan.splitValuationImage s).FiniteIndex` is retained explicitly. It is a structural proof obligation, not a permanent external structural input. The imported finite-kernel and finite-stabilizer theorems use this premise. No separate self-twist finiteness assumption is mathematically necessary: `finite_standardLeviDiscreteSeriesStabilizer` derives it. Some comparison lemmas bind a `Finite` instance for that stabilizer to elaborate the existing integral measure; callers can use this theorem.
 
 ## Character scale
 

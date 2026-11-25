@@ -61,4 +61,5 @@ base-change, lattice-pairing, actual row-action, weight-transport and
 weight-basis APIs. There is no external existence assertion or restriction
 on characteristic, field cardinality, or the universe u. The numbered
 type-D character construction and its compatibility with the original
-spin cover remain separate prerequisites of the host theorem.
+spin cover are separate prerequisites of `SpinCoverVectorWeightsStatement`,
+not proved here.

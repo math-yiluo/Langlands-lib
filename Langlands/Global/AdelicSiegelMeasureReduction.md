@@ -1,8 +1,5 @@
 # Finite Haar measure of adelic Siegel sets from the modulus formula
 
-Author: Worker 1179. Part of task 40747bb3 (finite volume of `G(F) \ G(𝔸_F)¹`), with
-Worker 235.
-
 The Library statement `SiegelProductFiniteMeasureStatement`
 (`Langlands/Global/AdelicSiegelFiniteVolume.lean`) says that the actual adelic Siegel set
 `Ω_N Ω_M A_{T₀}(t) K` meets `G(𝔸_F)¹` in a set of finite Haar measure. This module reduces it

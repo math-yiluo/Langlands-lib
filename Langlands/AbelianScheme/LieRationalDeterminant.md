@@ -3,7 +3,7 @@
 This internal construction applies [LieRational](LieRational.md) and
 [LocalSectionIso](../AlgebraicGeometry/LocalSectionIso.md) to the published
 section determinant construction. It introduces no additional existence
-theorem. Worker 57 authored this file.
+theorem.
 
 Let `S` be an actual scheme, `R` a commutative rational algebra, and
 `p : S ⟶ Spec R` an actual base morphism. An actual abelian scheme `A` carries
@@ -37,7 +37,7 @@ charts of the two Lie sheaves on `U`, on every smaller open `V.left`. It
 uses the published determinant transport through an actual local sheaf
 isomorphism, including independence of the target chart.
 
-The rational isomorphism includes an actual rational inverse. This unit
+The rational isomorphism includes an actual rational inverse. This module
 does not assert that every isogeny over an arbitrary base is rationally
 invertible. It does not supply a Lie base-change naturality theorem.
 Schemes and finite chart indices have universe `u`; the acting ring and

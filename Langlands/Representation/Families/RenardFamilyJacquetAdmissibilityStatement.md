@@ -1,6 +1,6 @@
 # Renard VI.9.5: the Jacquet module of an admissible `(G, B)`-module is admissible
 
-Author: Worker 6. Module
+Module
 `Langlands.Representation.Families.RenardFamilyJacquetAdmissibilityStatement`,
 namespace `Langlands.Renard.AlgebraicFamily`. It contains one **statement**, the
 closed `Prop`-valued definition `JacquetAdmissibleStatement` (universe parameters
@@ -20,9 +20,9 @@ dated **9 July 2026**:
   argument VI.9.5 refers to.
 
 Literature ID `renard-2026-representations-groupes-reductifs-padiques`, file
-`/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`,
+`Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`,
 SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 6 read PDF pages 182–183, 193, 197 and 207.
+PDF pages 182–183, 193, 197 and 207 were read for this statement.
 
 The passage of VI.9.5 is: "Plaçons-nous dans les hypothèses de la section VI.8.3.
 Le foncteur de restriction `r_P^G : M(G, B) → M(M, B)` préserve la
@@ -42,7 +42,7 @@ that this functor sends admissible `(G, B)`-modules to admissible
 
 The binders are those of the VI.6.1 Corollary statement
 [ArbitraryParabolicJacquetAdmissibilityStatement](../Exponents/ArbitraryParabolicJacquetAdmissibilityStatement.md)
-for complex representations, with Worker 709's coefficient ring and family
+for complex representations, with the coefficient ring and family
 conventions of VI.8:
 
 - a field `k : Type u'` with `[Field k] [ValuativeRel k] [TopologicalSpace k]
@@ -91,15 +91,14 @@ That module's Markdown explains Renard's reciprocal `δ_P` convention.
    compact-open fixed module. The `B`-linearity of the action is built into
    `Representation B`.
 2. The source's conclusion is that `r_P^G(V)` is an admissible `(M, B)`-module.
-   That consists of three properties. Flatness is the VI.8.3 claim, stated by
-   Worker 709 as `JacquetFlatStatement` in the sibling module
-   `RenardFamilyParabolicFlatnessStatements` (accepted as candidate
-   `ec9f856f-48d8-4387-9bc8-0e7f08049065`, not yet in the Library at commit
-   `7e84f6ad`). Smoothness is the published law `isSmooth_jacquetRepresentation`
+   That consists of three properties. Flatness is the VI.8.3 claim, stated
+   as `JacquetFlatStatement` in the sibling module
+   `RenardFamilyParabolicFlatnessStatements` and proved as `jacquetFlat` in
+   `RenardFamilyParabolicFlatnessProof`. Smoothness is the published law `isSmooth_jacquetRepresentation`
    for the Jacquet family of a subgroup decomposition; this module asserts no
    smoothness for the transported family of `M(F)`. The remaining property,
    finite generation of the compact-open fixed modules, is what
-   `JacquetAdmissibleStatement` states. So this statement, Worker 709's flatness
+   `JacquetAdmissibleStatement` states. So this statement, the flatness
    statement and the smoothness of the transported family together give
    Renard's claim.
 3. The flatness hypothesis on `V` is part of the source's notion of a
@@ -130,7 +129,7 @@ finitely generated.
 At Library commit `7e84f6ad`:
 
 - [ArbitraryParabolicJacquetAdmissibilityStatement](../Exponents/ArbitraryParabolicJacquetAdmissibilityStatement.md)
-  (Worker 15) is the complex VI.6.1 Corollary for every represented parabolic.
+  is the complex VI.6.1 Corollary for every represented parabolic.
   It is not proved, and it does not imply this statement, because a
   `(G, B)`-module need not be admissible as a complex representation;
 - the VI.9.1 Theorem is the published `GeneralizedJacquetLemmaStatement` of
@@ -142,5 +141,6 @@ At Library commit `7e84f6ad`:
   underlying complex representation of `V` and relate the dynamic parabolic to
   the represented one.
 
-No theorem of the Library proves `JacquetAdmissibleStatement`. Its proof is a
-separate obligation.
+The Library proves `JacquetAdmissibleStatement` only from the VI.9.1
+statements, in
+[RenardFamilyJacquetAdmissibilityReduction](RenardFamilyJacquetAdmissibilityReduction.md).

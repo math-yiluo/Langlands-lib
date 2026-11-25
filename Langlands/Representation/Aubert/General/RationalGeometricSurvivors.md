@@ -1,6 +1,6 @@
 # Actual rational geometric survivors
 
-Worker 167. This is an internal deduction from the published actual normalized
+This is an internal deduction from the published actual normalized
 geometric-term constructions, rational standard-Levi conjugation theorems,
 maximal-root class comparison, and cuspidal vanishing. It makes no new assertion
 from the literature. The results concern individual actual terms, rather than

@@ -1,7 +1,5 @@
 # One-slot exactness of product induction and the edge maps of a merged slot
 
-Author: Worker 890.
-
 This module builds two intertwiners used in the proof of Zelevinsky 1980, 3.1
 and 9.1(*) (`Langlands.Classification.SegmentFullJacquetFormula`). Let
 `β = BlockShape.uniform m r hr` and let `γ = β.adjacentMerge k hk` merge the

@@ -1,6 +1,6 @@
 # Proof of differentiation of the L² classes of cusp forms on GLₙ
 
-Author: Worker 1033. The theorem
+The theorem
 `Langlands.Automorphic.GroupSchemeFunctions.generalLinearCuspidalFormClassDerivative`
 proves exactly `GeneralLinearCuspidalFormClassDerivativeStatement` at the
 statement's original universe. Its two form classes are given, not constructed.

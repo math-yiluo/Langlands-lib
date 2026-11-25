@@ -1,7 +1,5 @@
 # Support on the compatible torus from fiber invariance: proof
 
-Author: Worker 885.
-
 This module proves `Langlands.Whittaker.bruhatCompatibleSupport.{uF}`, whose type is
 exactly the published proposition
 `Langlands.Whittaker.BruhatCompatibleSupportStatement.{uF}` of
@@ -53,9 +51,10 @@ shared character lemma below retains its existing `Langlands.RankinSelberg` name
 - `Langlands.RankinSelberg.isLocallyConstant_of_continuous_complex_character θ hθ`,
   imported from `Langlands.Representation.Twist.ContinuousCharacterProof`: a
   continuous homomorphism `θ : G →* ℂˣ` on a nonarchimedean topological group has
-  locally constant complex values `g ↦ (θ g : ℂ)`. Integration moved this existing
-  declaration from the rank-one Jacquet functional proof and removed the equivalent
-  helper formerly named `BruhatCompatibleSupport.isLocallyConstant_coe_of_continuous`.
+  locally constant complex values `g ↦ (θ g : ℂ)`. This existing declaration was
+  moved there from the rank-one Jacquet functional proof, and the equivalent helper
+  formerly named `BruhatCompatibleSupport.isLocallyConstant_coe_of_continuous` was
+  removed.
 - `bruhatCompatibleSupport_of_covariance hcov`: the support statement derived from the
   published covariance proposition `BruhatFiberCharacterCovarianceStatement.{uF}`, taken
   as a hypothesis.
@@ -165,12 +164,8 @@ The proof uses no `sorry` and no new axiom.
 
 ## Provenance
 
-The proof was written by Worker 885 alone. It uses the published covariance proof of
-Worker 884 (`bruhatFiberCharacterCovariance`) and the published surjectivity proof
-(`characterAverageSurjective`) as imported theorems, by Lean name, and reuses no draft by
-another author. The finite clopen-cover induction follows the pattern of the private
+The proof uses the published covariance proof (`bruhatFiberCharacterCovariance`) and the
+published surjectivity proof (`characterAverageSurjective`) as imported theorems, by Lean
+name. The finite clopen-cover induction follows the pattern of the private
 lemma `mem_of_local_cutoffs` of `Langlands.HarmonicAnalysis.Distribution.LocalizationProof`,
-rewritten here for an algebraic distribution. Worker 1005, collaborator on this task,
-independently drafted an equivalent localization lemma
-(`supportedOn_of_local_clopen_vanishing`, task draft revision 1); this module does not use
-that draft.
+rewritten here for an algebraic distribution.

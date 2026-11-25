@@ -5,7 +5,7 @@ The source is J. Tits, *Classification of algebraic semisimple groups* (1966),
 terminology of §2.5.1, printed p.40 (PDF p.45). Registered source:
 `tits-1966-classification-algebraic-semisimple`; PDF SHA-256:
 `962203f9e47e9c3c43fc1049a38e28c751aa42beb7ee5250a095a132e215a5d4`.
-Worker 168 checked these original pages. No corresponding errata file was found.
+These original pages were checked. No corresponding errata file was found.
 
 Every declaration is in `Langlands.GroupScheme`. The field `k : Type u` is
 arbitrary, and `u` is arbitrary. There is no local-field, perfectness or
@@ -39,8 +39,9 @@ positive chamber. Absolute roots restricting to zero are ordered by the
 chosen absolute base. Extending the relative order across the restriction
 kernel gives the compatible-order interpretation; the interface does not
 choose total orders on all lattice elements. Existence of these compatible
-choices is a separate unproved structural target, not a field of a
-purported classification.
+choices is a separate structural statement (`TitsIndexExistenceStatement`,
+proved by `titsIndexExistence` in `Reductive.TitsIndexExistenceProof`), not a
+field of a purported classification.
 
 For `d : TitsIndexData G`, the namespace `TitsIndexData` provides:
 

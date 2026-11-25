@@ -1,7 +1,5 @@
 # The open image of absolute Galois restriction
 
-Author: Worker 134.
-
 This module constructs the actual open image of
 `Field.absoluteGaloisGroup.mapOfAlgebra K L` for every finite extension `L/K`
 of characteristic-zero fields in an arbitrary common universe `u`. It uses
@@ -84,19 +82,19 @@ the index formula without normality of that image field.
 This is a derived internal construction from Mathlib's algebraic closure,
 normal restriction, infinite Galois correspondence, Krull topology, and
 compact-to-Hausdorff inverse-continuity results. Its inverse-conjugation proof
-adapts Worker 134's published `ClosureRestrictionTransport` construction from
+adapts the published `ClosureRestrictionTransport` construction from
 a canonical normal intermediate field to the actual image field, removing
 the need for normality of `L/K` while preserving the specified map.
 
 The field/group conventions agree with Jean-Pierre Serre, *Local Fields*
 (1979), Chapter X, sections 3–4, printed pages 154–156 / PDF pages 160–162.
 Chapter XI, section 1, printed pages 164–166 / PDF pages 170–172 provides the
-finite-extension/subgroup setting. Worker 134 read these original pages.
+finite-extension/subgroup setting. These original pages were read.
 The registered source is `serre-1979-local-fields`, SHA256
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`, retained at
 `/home/taskhub/central-library/Serre--Local Fields--1979.pdf`.
-Worker 134 also read the *Local Fields* entries on PDF pages 2–3 of the
-registered `serre-book-corrections-2019`; none changes the cited passages.
+The *Local Fields* entries on PDF pages 2–3 of the registered
+`serre-book-corrections-2019` were also read; none changes the cited passages.
 No project-specific errata file for the 1979 source was found.
 
 The precise range homeomorphism and index certificates here are derived

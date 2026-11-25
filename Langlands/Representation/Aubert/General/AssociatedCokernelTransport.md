@@ -1,6 +1,6 @@
 # Actual ambient and Levi cokernel bridges on full smooth subcategories
 
-Worker 1300. Internal constructions for assembling the associated-Levi
+Internal constructions for assembling the associated-Levi
 comparison. These are natural cokernel presentations of its two sides;
 they do not identify the two different cokernels.
 

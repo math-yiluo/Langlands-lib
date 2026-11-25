@@ -1,7 +1,5 @@
 # Uniform target-block labels
 
-Author: Worker 167.
-
 This internal supporting module parametrizes actual minimal block permutations
 whose inverse sends each target block into a single source block. It uses finite
 ordered coordinates only. All declarations are in
@@ -73,12 +71,12 @@ that condition.
 
 The proved Library inputs actually used are:
 
-| Input | Published module and originating task | Use and independence |
+| Input | Published module | Use and independence |
 | --- | --- | --- |
 | `blockIndex_index`, `BlockShape.indexEquiv` and its inverse laws | `Langlands.Representation.Geometric.WeylDefinitions` and `Langlands.Group.GL.Blocks` | Finite coordinate identification and decomposition only. |
-| `exists_index_of_blockIndex_eq` | `Langlands.Representation.Geometric.WeylUniquenessProof`, task `9ad51693-f8a1-45de-949a-72d07ecc13b9` | Recovers the coordinate of a known block; proved directly with `indexEquiv`. |
-| `index_strictMono` | `Langlands.Representation.Geometric.WeylMinimalRepresentativeProof`, task `6e35399b-9029-438e-9663-5ce96ab02576` | The ordered coordinate embedding, proved with the prefix-sum formula. No representation theorem enters. |
-| `TotalConjugatingCount.card_blockIndex_fiber` | `Langlands.Representation.CuspidalSupport.TotalConjugatingCountProof`, task `5becc159-1242-4fa4-9102-79aa6e2726c0` | Identifies one block fiber with `Fin (B.size j)`; no cuspidal representation theorem is used. |
+| `exists_index_of_blockIndex_eq` | `Langlands.Representation.Geometric.WeylUniquenessProof` | Recovers the coordinate of a known block; proved directly with `indexEquiv`. |
+| `index_strictMono` | `Langlands.Representation.Geometric.WeylMinimalRepresentativeProof` | The ordered coordinate embedding, proved with the prefix-sum formula. No representation theorem enters. |
+| `TotalConjugatingCount.card_blockIndex_fiber` | `Langlands.Representation.CuspidalSupport.TotalConjugatingCountProof` | Identifies one block fiber with `Fin (B.size j)`; no cuspidal representation theorem is used. |
 | `StrictMono.eq_of_range_eq`, `Fintype.orderIsoFinOfCardEq`, equivalence and cardinality laws | Mathlib | Uniqueness of finite increasing enumerations, their existence, products and transported cardinalities. |
 
 The recursive project import closure has 69 modules. Its classification modules
@@ -92,5 +90,5 @@ Ze80 3.1 or 3.4 proof, or conditional segment formula is invoked.
 
 This finite equivalence supports the remaining shuffle calculation for the
 juxtaposed-segment argument. It does not identify any Jacquet representation,
-prove the shuffle Jacquet formula, or prove the unconditional parent target
+prove the shuffle Jacquet formula, or prove the unconditional
 `JuxtaposedSegmentSocleReverseProductStructure`.

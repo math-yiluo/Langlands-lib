@@ -1,6 +1,6 @@
 # Locality of actual orbit extensions on test schemes
 
-Workers 3483 and 286. Internal helpers for arbitrary-base dynamic representability.
+Internal helpers for arbitrary-base dynamic representability.
 
 The product-chart helpers identify the pullback of a test scheme's open cover
 along the first product projection with products of its charts. They also give

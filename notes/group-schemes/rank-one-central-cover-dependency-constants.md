@@ -1,4 +1,4 @@
-# Rank-one central cover: Library constants reached by the Task 7586 proof
+# Rank-one central cover: Library constants reached by its proof
 
 Companion to [rank-one-central-cover-dependency-audit.md](rank-one-central-cover-dependency-audit.md).
 These are all 20999 `Langlands` constants in the type-and-value closure of

@@ -12,15 +12,14 @@ statement is proved here, and no new object is defined.
 - `StandardIwahoriFixedVectorCategoryStatement`: Renard VI.10.6, Proposition (iii) and (iv),
   with the source's hypothesis on `K`.
 - `fixedVectorCategoryStatements_of_standardIwahori`: the second statement implies the
-  published `FixedVectorCategoryStatements` (Worker 6), which states (iii) and (iv) under the
+  published `FixedVectorCategoryStatements`, which states (iii) and (iv) under the
   stronger hypothesis `StandardParabolicBasisMember`.
 
-Worker 4 wrote this unit under the whole-book task `f5d1f399-a1f8-4ab5-a981-90b92abd4857`.
 The row "VI.10.6 Theorem, Proposition" of the Chapter VI item ledger
 (`notes/renard/item-ledger-vi.md`) lists `FixedVectorCategoryStatements` for the
 Proposition. That module's Markdown says that the decomposition
-`M(G)_K ≃ ∏_{𝔰 ∈ B(G)_K} M(G)_𝔰` of (i) is not stated there. This unit states it. It also
-states (iii) and (iv) under the source's hypothesis on `K`, as the accepted unit
+`M(G)_K ≃ ∏_{𝔰 ∈ B(G)_K} M(G)_𝔰` of (i) is not stated there. This module states it. It also
+states (iii) and (iv) under the source's hypothesis on `K`, as the module
 `StandardIwahoriDecompositionStatements` does for VI.6.1 and VI.9.4 (framework comparison
 F3 of the same ledger).
 
@@ -29,9 +28,9 @@ F3 of the same ledger).
 David Renard, *Représentations des groupes réductifs p-adiques*, French version dated
 9 July 2026, registered as `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. PDF page numbers are
-one-based and equal printed page numbers plus six. The author read VI.10.6, printed
-pp.213–214 / PDF pp.219–220, and checked the Proposition and its proof on the rendered
-page PDF p.220.
+one-based and equal printed page numbers plus six. VI.10.6, printed
+pp.213–214 / PDF pp.219–220, was read, and the Proposition and its proof were checked on
+the rendered page PDF p.220.
 
 **`B(G)_K` (VI.10.6, Theorem, printed p.213 / PDF p.219).**
 

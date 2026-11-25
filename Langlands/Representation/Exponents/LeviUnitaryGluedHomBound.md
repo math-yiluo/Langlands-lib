@@ -1,6 +1,6 @@
 # Hom bounds on the unitary Jacquet module from a supplied gluing
 
-Author: Worker 1597. This is internal derived support for the generic
+This is internal derived support for the generic
 irreducibility argument of Waldspurger, *La formule de Plancherel pour les
 groupes p-adiques d'après Harish-Chandra*, 2003, III.7.3 (printed p.276), and
 its multiplicity count via the unitary geometric filtration of III.3.3

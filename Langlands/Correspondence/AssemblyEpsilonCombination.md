@@ -32,8 +32,12 @@ introduced. Its measure requirements are those of the full pair
 compatibility supplied by the premise; the combination makes no extra
 local-constant or measure existence assumption.
 
-The host target keeps its original hypotheses and is not changed by this
-helper. An unconditional proof of the host task still requires proofs of
-both premises. In particular, this module does not prove reciprocity
+The target `AssemblyEpsilonInheritanceStatement` keeps its original hypotheses
+and is not changed by this helper. An unconditional proof of it through this
+module requires proofs of both premises. (The Library proves the first premise
+as `geometricWeilReciprocityUniqueness`, and proves the target as
+`assemblyEpsilonInheritance` in `AssemblyEpsilonInheritanceProof`, whose proof
+passes through this module's theorem by way of `AssemblyEpsilonRemainingReduction`.)
+In particular, this module does not prove reciprocity
 uniqueness, segment-level epsilon inheritance, or the classification inputs
 of fixed-system inheritance.

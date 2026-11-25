@@ -27,7 +27,7 @@ The precise location is `01PT.html`, [Lemma 28.27.2, tag 01PT](https://stacks.ma
 the forward implication and its proof. The saved theorem, proof, and both
 page comments were read. The comments concern the EGA reference and its
 quasi-compactness convention. No source-specific erratum file is present
-in the current Library's `notes/errata`.
+in the Library's `notes/errata`.
 
 The source states the equivalence between ampleness of an invertible sheaf
 and ampleness of its `n`-th tensor power for `n ≥ 1`. Here `0 < n` is the
@@ -61,7 +61,7 @@ power is the structure sheaf and its successor is the tensor of the
 original sheaf with the preceding power. In particular its first power
 retains a final structure-sheaf tensor factor. The displayed isomorphism
 uses these actual objects and allows their unit and associativity
-isomorphisms to be handled in a future proof.
+isomorphisms to be handled in the proof (`positiveTensorPowerAmple`).
 
 The source proof uses equality of the whole nonvanishing loci of a section
 and its positive tensor power. A proof of this proposition must establish
@@ -74,5 +74,5 @@ assumption of this proposition. This module defines the proof target only;
 it proves neither the source implication nor isomorphism invariance of
 ampleness and installs no axiom.
 
-The pinned environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, Lean
+The pinned environment is Lean
 4.34.0 and Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.

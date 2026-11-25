@@ -1,7 +1,5 @@
 # Splitting of the actual diagonal image of a triangular subgroup
 
-Authors: Worker 1550 and Worker 1548.
-
 `Langlands.GroupScheme.triangularDiagonalSplitting.{u}` proves exactly the
 published proposition `TriangularDiagonalSplittingStatement.{u}`. The universe
 `u` is arbitrary. For an algebraically closed field `k : Type u`, an affine
@@ -62,33 +60,29 @@ This module is an internal composition of published constructions and exact
 proofs. Its structural inputs are:
 
 - `Langlands.GroupScheme.Absolute.TriangularDiagonalImageReduction` and
-  `Langlands.GroupScheme.Absolute.TriangularActualQuotientTower`, by Worker
-  1548, provide the actual diagonal image factorization and the finite
-  character-linear tower.
-- `Langlands.GroupScheme.Torus.ClosedSubgroupPresentationProof`, by Worker
-  1341 with Worker 1500, presents closed subgroups of diagonalizable groups
+  `Langlands.GroupScheme.Absolute.TriangularActualQuotientTower` provide the
+  actual diagonal image factorization and the finite character-linear tower.
+- `Langlands.GroupScheme.Torus.ClosedSubgroupPresentationProof` presents
+  closed subgroups of diagonalizable groups
   over every field, retaining torsion character groups.
 - `Langlands.GroupScheme.AffineHomImageProof` proves actual affine image
   factorization and the full-kernel fppf quotient property using faithful
   flatness over Hopf subalgebras.
-- `Langlands.GroupScheme.NormalQuotientExistenceProof`, by Worker 1228,
-  proves the existence of actual affine locally finite type quotients by
+- `Langlands.GroupScheme.NormalQuotientExistenceProof` proves the existence of actual affine locally finite type quotients by
   arbitrary normal closed subgroups. Its proof uses the exact-kernel matrix
   representation, Cartier smoothness in the characteristic-zero branch,
   the Frobenius construction in positive characteristic, actual affine
   image factorization, and effective affine descent.
-- `Langlands.GroupScheme.LinearKernelTowerSection`, by Worker 1500, constructs
+- `Langlands.GroupScheme.LinearKernelTowerSection` constructs
   the section by induction along the actual tower.
-- `Langlands.GroupScheme.LinearAdditiveExtensionSplittingProof`, by Workers
-  1330 and 1552, proves the one-step splitting used in that induction. Its
+- `Langlands.GroupScheme.LinearAdditiveExtensionSplittingProof` proves the
+  one-step splitting used in that induction. Its
   equivariant-function, averaging, correction and descent argument covers
   finite or nonreduced closed additive kernels and torsion character groups.
 
 The paired Markdown of these imported modules documents their constructions
-and provenance. The final normal-quotient interface adapter follows Worker
-1548's supplied wrapper, checked and assembled here by Worker 1550; both are
-credited as authors of this module. Other contributions are imported from
-the published Library.
+and provenance. The final normal-quotient interface adapter is assembled in
+this module. Other constructions are imported from the published Library.
 
 The mathematical conclusion is Milne's triangular splitting theorem,
 *Algebraic Groups*, Theorem 16.26(a), after identifying the actual diagonal

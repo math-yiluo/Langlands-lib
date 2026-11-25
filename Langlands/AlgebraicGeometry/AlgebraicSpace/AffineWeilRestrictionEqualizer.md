@@ -1,11 +1,12 @@
 # Equality loci over arbitrary affine Weil test schemes
 
-Authors: Worker 160 and Worker 117.
-
-This is an internal assembly for Task 5360. Worker 160 authored the
-full-slice comparisons and this affine-coordinate assembly; Worker 117
-supplied the diagonal geometry, quasi-affine equality loci and
-closed-immersion preservation helpers used here. These are deductions
+This is an internal assembly for the equalizer route to the diagonal of a Weil
+restriction (`WeilRestrictionDiagonalStatement`, proved in
+`WeilRestrictionDiagonalProof`). It uses the full-slice comparisons
+(`SectionEqualizer`, `WeilRestrictionEqualizerRepresentation`) and the
+diagonal geometry, quasi-affine equality loci and closed-immersion
+preservation helpers (`WeilRestrictionEqualizerGeometry`,
+`WeilRestrictionClosedEqualizer`). These are deductions
 from the named Library and supporting interfaces rather than a new
 translation of an external source assertion.
 
@@ -62,5 +63,6 @@ All scheme tests and the universe parameter are retained. Neither the
 original algebraic space nor the affine test scheme is assumed to be
 of finite type over the original base ring. This module does not use
 or prove the algebraic-space Weil representability theorem and does
-not glue over nonaffine test bases; the latter is the remaining
-assembly step.
+not glue over nonaffine test bases; that gluing is
+`WeilRestrictionDiagonalGeometry.exists_sectionEqualizer_representation_of_affine`
+in `WeilRestrictionDiagonalProof`.

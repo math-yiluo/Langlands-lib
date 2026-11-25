@@ -70,15 +70,15 @@ def groupMap (i : I) : D.obj i →* End ((inclusion (D := D)).obj i) :=
   ((Grothendieck.ι (groupCategoryDiagram D) i).mapEnd (SingleObj.star (D.obj i))).comp
     (SingleObj.toEnd (D.obj i)).toMonoidHom
 
-@[simp] theorem groupMap_base (i : I) (g : D.obj i) : (groupMap i g).base = 𝟙 i := rfl
+@[simp] theorem groupMap_base (i : I) (g : D.obj i) : (groupMap i g).asHom.base = 𝟙 i := rfl
 
-@[simp] theorem groupMap_element (i : I) (g : D.obj i) : element (groupMap i g) = g := by
+@[simp] theorem groupMap_element (i : I) (g : D.obj i) : element (groupMap i g).asHom = g := by
   change g * 1 = g
   simp
 
 @[reassoc] theorem comm {i j : I} (f : i ⟶ j) (g : D.obj i) :
-    groupMap i g ≫ (inclusion (D := D)).map f =
-      (inclusion (D := D)).map f ≫ groupMap j ((D.map f).hom g) := by
+    (groupMap i g).asHom ≫ (inclusion (D := D)).map f =
+      (inclusion (D := D)).map f ≫ (groupMap j ((D.map f).hom g)).asHom := by
   apply hom_ext
   · change (𝟙 i) ≫ f = f ≫ 𝟙 j
     simp
@@ -93,16 +93,17 @@ variable {D C}
 /-- Read an equivariant diagram as a functor on the Grothendieck category. -/
 def toIndexFunctor (M : EquivariantDiagram D C) : Index D ⥤ C where
   obj x := M.obj.obj x.base
-  map {x y} f := M.obj.map f.base ≫ M.ρ y.base (Index.element f)
+  map {x y} f := M.obj.map f.base ≫ (M.ρ y.base (Index.element f)).asHom
   map_id x := by
     simp only [Grothendieck.id_base, Index.id_element, M.obj.map_id, map_one, Category.id_comp]
     rfl
   map_comp {x y z} f g := by
     simp only [Grothendieck.comp_base, Index.comp_element, M.obj.map_comp, map_mul]
     change (M.obj.map f.base ≫ M.obj.map g.base) ≫
-        (M.ρ z.base ((D.map g.base).hom (Index.element f)) ≫ M.ρ z.base (Index.element g)) =
-      (M.obj.map f.base ≫ M.ρ y.base (Index.element f)) ≫
-        (M.obj.map g.base ≫ M.ρ z.base (Index.element g))
+        ((M.ρ z.base ((D.map g.base).hom (Index.element f))).asHom ≫
+          (M.ρ z.base (Index.element g)).asHom) =
+      (M.obj.map f.base ≫ (M.ρ y.base (Index.element f)).asHom) ≫
+        (M.obj.map g.base ≫ (M.ρ z.base (Index.element g)).asHom)
     simp only [Category.assoc]
     rw [← Category.assoc (M.obj.map g.base), ← M.comm g.base (Index.element f)]
     simp only [Category.assoc]
@@ -110,14 +111,14 @@ def toIndexFunctor (M : EquivariantDiagram D C) : Index D ⥤ C where
 @[simp] theorem toIndexFunctor_map_inclusion (M : EquivariantDiagram D C)
     {i j : I} (f : i ⟶ j) :
     (toIndexFunctor M).map ((Index.inclusion (D := D)).map f) = M.obj.map f := by
-  change M.obj.map f ≫ M.ρ j 1 = _
+  change M.obj.map f ≫ (M.ρ j 1).asHom = _
   rw [map_one]
   exact Category.comp_id _
 
 @[simp] theorem toIndexFunctor_map_groupMap (M : EquivariantDiagram D C)
     (i : I) (g : D.obj i) :
-    (toIndexFunctor M).map (Index.groupMap i g) = M.ρ i g := by
-  change M.obj.map (𝟙 i) ≫ M.ρ i (Index.element (Index.groupMap i g)) = _
+    (toIndexFunctor M).map (Index.groupMap i g).asHom = (M.ρ i g).asHom := by
+  change M.obj.map (𝟙 i) ≫ (M.ρ i (Index.element (Index.groupMap i g).asHom)).asHom = _
   rw [Index.groupMap_element, M.obj.map_id, Category.id_comp]
 
 /-- The functor from varying-group diagrams to ordinary functors on their index category. -/
@@ -136,8 +137,8 @@ def fromIndexFunctor (F : Index D ⥤ C) : EquivariantDiagram D C where
   obj := Index.inclusion ⋙ F
   ρ i := (F.mapEnd _).comp (Index.groupMap i)
   comm f g := by
-    change F.map (Index.groupMap _ g) ≫ F.map (Index.inclusion.map f) =
-      F.map (Index.inclusion.map f) ≫ F.map (Index.groupMap _ ((D.map f).hom g))
+    change F.map (Index.groupMap _ g).asHom ≫ F.map (Index.inclusion.map f) =
+      F.map (Index.inclusion.map f) ≫ F.map (Index.groupMap _ ((D.map f).hom g)).asHom
     rw [← F.map_comp, Index.comm, F.map_comp]
 
 /-- Restriction to the base and to the fiber endomorphisms is functorial. -/
@@ -145,7 +146,7 @@ def fromFunctor : (Index D ⥤ C) ⥤ EquivariantDiagram D C where
   obj := fromIndexFunctor
   map c :=
     { hom := Functor.whiskerLeft Index.inclusion c
-      comm i g := c.naturality (Index.groupMap i g) }
+      comm i g := c.naturality (Index.groupMap i g).asHom }
   map_id F := by apply Hom.ext; rfl
   map_comp c d := by apply Hom.ext; rfl
 
@@ -162,9 +163,9 @@ def fromToIso (M : EquivariantDiagram D C) :
             change M.obj.map f ≫ 𝟙 (M.obj.obj j) = 𝟙 (M.obj.obj i) ≫ M.obj.map f
             simp }
       comm i g := by
-        change M.ρ i g ≫ 𝟙 _ = 𝟙 _ ≫ (toIndexFunctor M).map (Index.groupMap i g)
+        change (M.ρ i g).asHom ≫ 𝟙 _ = 𝟙 _ ≫ (toIndexFunctor M).map (Index.groupMap i g).asHom
         rw [toIndexFunctor_map_groupMap]
-        change M.ρ i g ≫ 𝟙 (M.obj.obj i) = 𝟙 (M.obj.obj i) ≫ M.ρ i g
+        change (M.ρ i g).asHom ≫ 𝟙 (M.obj.obj i) = 𝟙 (M.obj.obj i) ≫ (M.ρ i g).asHom
         simp }
   inv :=
     { hom :=
@@ -176,9 +177,9 @@ def fromToIso (M : EquivariantDiagram D C) :
             change M.obj.map f ≫ 𝟙 (M.obj.obj j) = 𝟙 (M.obj.obj i) ≫ M.obj.map f
             simp }
       comm i g := by
-        change (toIndexFunctor M).map (Index.groupMap i g) ≫ 𝟙 _ = 𝟙 _ ≫ M.ρ i g
+        change (toIndexFunctor M).map (Index.groupMap i g).asHom ≫ 𝟙 _ = 𝟙 _ ≫ (M.ρ i g).asHom
         rw [toIndexFunctor_map_groupMap]
-        change M.ρ i g ≫ 𝟙 (M.obj.obj i) = 𝟙 (M.obj.obj i) ≫ M.ρ i g
+        change (M.ρ i g).asHom ≫ 𝟙 (M.obj.obj i) = 𝟙 (M.obj.obj i) ≫ (M.ρ i g).asHom
         simp }
   hom_inv_id := by
     apply Hom.ext
@@ -208,7 +209,7 @@ def toFromIso (F : Index D ⥤ C) :
     rcases y with ⟨j, yj⟩
     cases yj
     change (F.map (Index.inclusion.map f.base) ≫
-      F.map (Index.groupMap j (Index.element f))) ≫ F.map (𝟙 _) =
+      F.map (Index.groupMap j (Index.element f)).asHom) ≫ F.map (𝟙 _) =
         F.map (𝟙 _) ≫ F.map f
     simp only [F.map_id, Category.comp_id, Category.id_comp, ← F.map_comp]
     congr 1

@@ -1,15 +1,13 @@
 # Weak automorphic induction gives weak association with the induced Weil representation
 
 Lean module: `Langlands.Automorphic.WeakInductionAssociationProof`
-(namespace `Langlands.ClassField.Global.RelativeWeilGroup`).
-
-Author: Worker 5130. This is the proof for task `f096b984-dff5-4425-861f-8f298e5896fb`.
+(namespace `Langlands.ClassFieldTheory.Global.RelativeWeilGroup`).
 
 ## Statement
 
 `weakInductionAssociation : WeakInductionAssociationStatement.{u, uV, uP}` proves the
 published proposition
-`Langlands.ClassField.Global.RelativeWeilGroup.WeakInductionAssociationStatement`
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.WeakInductionAssociationStatement`
 (module `Langlands.Automorphic.WeakInductionAssociationStatement`) exactly. All three
 universes stay free and there is no added hypothesis; in particular neither `ξ` nor `π`
 is assumed unitary.
@@ -35,7 +33,7 @@ weakInductionAssociation_reduction
 ```
 
 - `weakInductionAssociation_reduction` (module
-  `Langlands.Automorphic.WeakInductionAssociationReduction`, by the same author) proves
+  `Langlands.Automorphic.WeakInductionAssociationReduction`) proves
   `WeakInductionAssociationReductionStatement.{u, uV, uP}`. This is the implication
   `WeilReciprocityExistenceUniqueness.{u} → LocalRelativeWeilMapExistenceStatement.{u} →
   LocalInducedRestrictionStatement.{uV, u} → WeakInductionAssociationStatement.{u, uV, uP}`.
@@ -66,7 +64,7 @@ weakInductionAssociation_reduction
   topological realizations, has a unique geometrically normalized Weil reciprocity
   candidate.
 - `localRelativeWeilMapExistence` (module
-  `Langlands.ClassField.Global.LocalRelativeWeilMapExistenceProof`) proves
+  `Langlands.ClassFieldTheory.Global.LocalRelativeWeilMapExistenceProof`) proves
   `LocalRelativeWeilMapExistenceStatement.{u}`. For arithmetic class families, every
   geometric candidate of `L_w` has a local map `ι : W_{F_v} → W_{L/F}` with
   `IsLocalRelativeWeilMap v w e ι`.
@@ -82,6 +80,6 @@ the argument is not circular. The transitive import closure of this module prove
 these. Its only proved correspondence results are rank-one ones (local class field
 theory), and the functional-equation modules it reaches are statements, or comparisons
 that take functional equations as hypotheses. All four theorems above are unconditional.
-`lean_check` reports only the standard axioms `propext`, `Classical.choice` and
-`Quot.sound`. This contribution leaves the target pair and every pair it imports
-unchanged.
+The axiom check reports only the standard axioms `propext`, `Classical.choice` and
+`Quot.sound`. This module leaves the statement's Lean file and page, and every file it
+imports, unchanged.

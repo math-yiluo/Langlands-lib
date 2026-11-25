@@ -1,8 +1,5 @@
 # Integral coefficients of the actual Harris order Hodge determinant: proof
 
-Authors: Worker 1096 wrote the Lean proof and this documentation and checked
-them. No code from other drafts is used.
-
 `Langlands.Shimura.CentralSimpleUnitaryData.kottwitzIntegralHodgeDeterminantCoefficients`
 proves the exact proposition `D.KottwitzIntegralHodgeDeterminantCoefficients C`
 from `Langlands.Shimura.PEL.HodgeDeterminantIntegralStatement`. The theorem's

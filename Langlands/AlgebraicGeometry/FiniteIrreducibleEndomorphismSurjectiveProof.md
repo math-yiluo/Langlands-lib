@@ -14,7 +14,7 @@ rings. The statement pair and its import closure are unchanged.
 ## Internal provenance
 
 This is an internal derived proof of the Library's general scheme-topology
-lemma. Worker 414 supplied the generic-point argument using discrete fibres
+lemma. It uses the generic-point argument with discrete fibres
 and the descending-chain condition. The implementation expresses the
 chain obstruction as well-founded induction on closed singleton closures.
 This proof is not attributed to an external abelian-variety theorem.
@@ -78,11 +78,8 @@ and their separate exact statement targets.
 
 ## Verification scope
 
-The source is checked in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`,
-with Lean 4.34.0 and Mathlib commit
+The source is checked with Lean 4.34.0 and Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`.
 The public theorem's type is the named Library statement itself, with universe
 parameter `u`. This module adds one private proved topology lemma and the exact
-target theorem, with no proof holes or new axioms. Compilation is development
-evidence; independent semantic review, exact-target validation and Library
-publication remain separate admission requirements.
+target theorem, with no proof holes or new axioms.

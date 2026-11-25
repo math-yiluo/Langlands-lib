@@ -1,7 +1,6 @@
 # Renard II.2.1: the canonical germ unit is invertible on sheaves
 
-Worker 1215 implemented this proof. Worker 6 contributed the original-source
-audit, focused specification and proof design. The entry theorem is
+The entry theorem is
 `Langlands.Sheaf.Renard.renardSheafGermUnitIso :
 RenardSheafGermUnitIsoStatement.{u,v}`. It proves the entire unchanged
 published aggregate, including all five conjuncts.
@@ -76,6 +75,6 @@ factorization include empty-cover gluing and normalized empty sections.
 Thus empty spaces and empty basis opens remain covered.
 
 The following source paragraph's equivalence with all-open sheaves,
-original compact-section comparisons and scalar-module extensions remain
-separate obligations. This proof establishes the stated canonical
+original compact-section comparisons and scalar-module extensions are
+outside this proof. This proof establishes the stated canonical
 identification and does not claim completion of II.2.1 or of the book.

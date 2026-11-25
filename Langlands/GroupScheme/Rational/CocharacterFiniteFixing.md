@@ -1,7 +1,5 @@
 # Cocharacters over an algebraic extension are fixed by a finite-index subgroup
 
-Author: Worker 47 (Task 6502).
-
 Let `K/k` be a field extension and `G` an affine group scheme over `k`. Cocharacters of
 `G_K = G ×_k K` are morphisms `ν : 𝔾_m,K → G_K`. The Library describes such a cocharacter by its
 Laurent coordinates `GaloisCocharacterDescent.coordinates k K G ν`, an algebra map from the
@@ -48,4 +46,4 @@ for all `σ` fixing one finite intermediate field.
 This is internal infrastructure. It is the standard fact that a morphism of finite-type
 schemes over an algebraic extension is defined over a finite subextension, specialised to
 cocharacters and stated pointwise. It is needed for the finite orbits of the Galois action on
-the unramified building (Task 6502).
+the unramified building.

@@ -73,7 +73,7 @@ section locus. The section `r` is defined by transport, so no additional
 compatibility between a preselected product section and the flattening
 isomorphisms is needed.
 
-## Provenance and authorship
+## Provenance
 
 The source is The Stacks Project, Section 28.27, tag
 [01PR](https://stacks.math.columbia.edu/tag/01PR), Definition 28.27.1
@@ -84,8 +84,8 @@ The retained original is
 its registered directory SHA256 is
 `23bfc9d1d2b4467556c7308dd203f22596c80d2f5276f1d5f9829673427e2f2d`.
 The section and its comments were read again on 2026-10-28.
-No source-specific errata file was present in the workspace, current
-Library, or project `notes/errata` locations.
+No source-specific errata file was present in the Library's
+`notes/errata`.
 
 Lemma 28.27.5 uses ampleness of `L` and a positive-power section cover for
 `M`; ampleness of `M` supplies this cover. Its section `s^m ⊗ t^n` and
@@ -94,8 +94,6 @@ whole-generation-open equalities and affine-intersection theorem supply
 the geometric steps in the actual definitions. The final transport to
 the supplied bundle `N` is the isomorphism-invariant form of that argument.
 
-Worker 477 implemented the final proof. Worker 489 designed and checked
-the direct transport into `N`, the packaging of iterated powers as line
-bundles, and the assembly interface used here. The implementation imports
+The implementation imports
 the published tensor, rank-one, section-locus and transport infrastructure
-by Lean module name. It reuses no unaccepted draft as a mathematical fact.
+by Lean module name.

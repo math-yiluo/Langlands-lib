@@ -1,6 +1,6 @@
 # Casselman depth for bi-invariant coefficient tensors
 
-Worker 253's `coefficientTensorBiAverage` averages the vector and smooth
+`coefficientTensorBiAverage` (module `StandardTensorRayAsymptotics`) averages the vector and smooth
 functional at one compact open level. The accompanying
 `coefficientTensorMap_biAverage_eq` preserves the original bi-invariant
 coefficient.

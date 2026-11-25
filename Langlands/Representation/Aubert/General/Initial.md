@@ -1,7 +1,7 @@
 # The canonical initial map of the normalized complex
 
-Internal construction by Worker 194, using the normalized comparison
-from Worker 23 and the existing orbit-function construction.
+Internal construction, using the normalized comparison
+of `General.Parabolic` and the existing orbit-function construction.
 
 `augmentation A s` transports the canonical orbit function through the
 normalization equivalence. Its value at `g` is exactly the class of `g v` in

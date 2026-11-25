@@ -31,7 +31,7 @@ same presented parabolic `P` over all of `i𝔞_P^*`, for the same `hK`, `iU`, `
 hsmooth hcalc (fun g => ambientWavePacketProfile eG b g * Θ g)`, whose definition quantifies a
 presented parabolic existentially. It therefore does not say that the lift is a wave packet of
 `P`. The orthogonality of non-associate parabolics on `[G]`
-(`RelativeWavePacketOrthogonalityStatement`, Task 7950) needs the lifts of the wave packets of
+(`RelativeWavePacketOrthogonalityStatement`, module `AdelicSpectralDecompositionReduction`) needs the lifts of the wave packets of
 `P` and `P'` to be wave packets of `P` and `P'` themselves, to apply
 `NonAssociateWavePacketOrthogonalityStatement`, whose hypothesis concerns the Levi subgroups of
 these two parabolics. The statement here is that stronger form. It implies the published one
@@ -56,10 +56,9 @@ coordinates `(x, z) ↦ e(x) + eG(z)` of `𝔞_P^*` and with coefficients `c_j(x
 `∫∫ ∑_j c_j(x) b(z) E_j(i e(x) + i eG(z))(g) dx dz = (∫ b(z) g^{i eG(z)} dz) · Θ(g)` by Fubini.
 The new coefficients are smooth and compactly supported, the inducing forms `v j`, the
 continuations `E j`, their domain `D` and the regularity witnesses are unchanged, and the
-product of the two spectral measures is the spectral measure of the product coordinates. This
-is the construction in Worker 3657's checked draft proof of the published lift (shared draft of
-Task 3657, `AdelicWavePacketAmbientLiftProof.lean`), which produces the data of the same
-parabolic.
+product of the two spectral measures is the spectral measure of the product coordinates. The
+same construction gives a proof of the published lift (that proof is not in the Library); it
+produces the data of the same parabolic.
 
 ## Scope
 

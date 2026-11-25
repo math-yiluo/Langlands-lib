@@ -121,6 +121,7 @@ semilinear scheme maps. -/
 theorem sourceConjugate_comp (hi : IsUnipotentRadical i) (σ : K ≃ₐ[k] K) :
     sourceConjugate hi σ ≫ i.hom.hom.left =
       i.hom.hom.left ≫ TensorCoordinates.conjugate k K G.X σ := by
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   apply (cancel_epi (hi.galoisSourceIso σ).hom.hom.hom.left).mp
   have h := congrArg (fun f => f.hom.hom.left) (hi.galoisSourceIso_hom_comp σ)
   change (hi.galoisSourceIso σ).hom.hom.hom.left ≫ i.hom.hom.left =

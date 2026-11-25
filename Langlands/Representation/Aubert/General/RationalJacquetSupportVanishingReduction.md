@@ -84,7 +84,7 @@ Jacquet module.
 ## Provenance
 
 This is derived internal content, with no new direct literature assertion.
-Worker 158 assembled the published generic reduction and rational induction
-adapters with Worker 593's published inside-Levi embedding. The cited
+It assembles the published generic reduction and rational induction
+adapters with the published inside-Levi embedding. The cited
 published modules supply their own source correspondence and scope.
 The imported target and all its dependencies remain unchanged.

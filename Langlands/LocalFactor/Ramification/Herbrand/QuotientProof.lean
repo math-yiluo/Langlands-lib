@@ -1,8 +1,8 @@
 import Langlands.LocalFactor.Ramification.Herbrand.ArithmeticStatement
 import Langlands.LocalField.RelativeIntegers
-import Langlands.AnthropicFLT.Theorems.Thm_IsDiscreteValuationRing_map_lowerRamificationGroup_mk_eq_of_isSeparable_residueField
-import Langlands.AnthropicFLT.Theorems.Thm_IsLocalRing_herbrandPhi_eq_herbrandPhi_quotient_comp_of_map_lowerRamificationGroup_mk_eq
-import Langlands.AnthropicFLT.Theorems.Thm_IsLocalRing_upperRamificationQuotientCompat_of_map_lowerRamificationGroup_mk_eq
+import Langlands.LocalFactor.Ramification.Herbrand.LowerQuotient
+import Langlands.LocalFactor.Ramification.Herbrand.RationalQuotient
+import Mathlib.FieldTheory.Finite.GaloisField
 
 /-!
 # Herbrand's quotient theorem for actual finite p-adic Galois extensions
@@ -35,9 +35,9 @@ theorem ringEquiv_mem_maximalIdeal_pow_iff (e : A ≃+* B) (n : ℕ) (a : A) :
 
 theorem mem_lowerRamificationGroup_iff_of_equivariant (e : A ≃+* B) (f : G ≃* G')
     (he : ∀ (g : G) (a : A), e (g • a) = f g • e a) (i : ℕ) (g : G) :
-    f g ∈ IsLocalRing.lowerRamificationGroup B G' i ↔
-      g ∈ IsLocalRing.lowerRamificationGroup A G i := by
-  simp only [IsLocalRing.mem_lowerRamificationGroup]
+    f g ∈ lowerGroup B G' i ↔
+      g ∈ lowerGroup A G i := by
+  simp only [mem_lowerGroup]
   constructor
   · intro h a
     rw [← ringEquiv_mem_maximalIdeal_pow_iff e, map_sub, he]
@@ -51,8 +51,8 @@ theorem mem_lowerRamificationGroup_iff_of_equivariant (e : A ≃+* B) (f : G ≃
 lower ramification groups. -/
 theorem map_lowerRamificationGroup_of_equivariant (e : A ≃+* B) (f : G ≃* G')
     (he : ∀ (g : G) (a : A), e (g • a) = f g • e a) (i : ℕ) :
-    (IsLocalRing.lowerRamificationGroup A G i).map (f : G →* G') =
-      IsLocalRing.lowerRamificationGroup B G' i := by
+    (lowerGroup A G i).map (f : G →* G') =
+      lowerGroup B G' i := by
   ext σ
   obtain ⟨g, rfl⟩ := f.surjective σ
   rw [mem_lowerRamificationGroup_iff_of_equivariant e f he]
@@ -60,8 +60,8 @@ theorem map_lowerRamificationGroup_of_equivariant (e : A ≃+* B) (f : G ≃* G'
 
 theorem lowerRamificationCard_of_equivariant (e : A ≃+* B) (f : G ≃* G')
     (he : ∀ (g : G) (a : A), e (g • a) = f g • e a) (i : ℕ) :
-    IsLocalRing.lowerRamificationCard B G' i = IsLocalRing.lowerRamificationCard A G i := by
-  unfold IsLocalRing.lowerRamificationCard
+    lowerGroupCard B G' i = lowerGroupCard A G i := by
+  unfold lowerGroupCard
   rw [← map_lowerRamificationGroup_of_equivariant e f he i]
   exact Subgroup.card_map_of_injective f.injective
 
@@ -90,33 +90,33 @@ theorem natFloor_ratCast (u : ℚ) : ⌊(u : ℝ)⌋₊ = ⌊u⌋₊ := by
 /-- If the orders of the lower groups agree, the Library real Herbrand function
 agrees at nonnegative rational arguments with the source rational one. -/
 theorem herbrandPhi_ratCast
-    (hcard : ∀ i, Padic.lowerGroupOrder T K i = IsLocalRing.lowerRamificationCard A Γ i)
+    (hcard : ∀ i, Padic.lowerGroupOrder T K i = lowerGroupCard A Γ i)
     {u : ℚ} (hu : 0 ≤ u) :
-    Padic.herbrandPhi T K (u : ℝ) = (IsLocalRing.herbrandPhi A Γ u : ℝ) := by
+    Padic.herbrandPhi T K (u : ℝ) = (herbrandPhiRat A Γ u : ℝ) := by
   rcases hu.eq_or_lt with rfl | hu
   · simp
   rw [Padic.herbrandPhi_floor T K (by exact_mod_cast hu.le),
-    IsLocalRing.herbrandPhi_of_pos hu, natFloor_ratCast]
+    herbrandPhiRat_of_pos hu, natFloor_ratCast]
   push_cast
   simp only [hcard]
   rw [sum_Icc_one_eq_sum_range]
 
 theorem herbrandPhi_natCast_eq
-    (hcard : ∀ i, Padic.lowerGroupOrder T K i = IsLocalRing.lowerRamificationCard A Γ i)
+    (hcard : ∀ i, Padic.lowerGroupOrder T K i = lowerGroupCard A Γ i)
     (n : ℕ) :
-    Padic.herbrandPhi T K (n : ℝ) = (IsLocalRing.herbrandPhi A Γ (n : ℚ) : ℝ) := by
+    Padic.herbrandPhi T K (n : ℝ) = (herbrandPhiRat A Γ (n : ℚ) : ℝ) := by
   have h := herbrandPhi_ratCast T K hcard (Nat.cast_nonneg n : (0 : ℚ) ≤ n)
   rwa [Rat.cast_natCast] at h
 
 /-- The integer index of the Library upper group at a nonnegative rational
 argument is the source upper index. -/
 theorem ceil_herbrandPsi_ratCast [Finite Γ]
-    (hcard : ∀ i, Padic.lowerGroupOrder T K i = IsLocalRing.lowerRamificationCard A Γ i)
+    (hcard : ∀ i, Padic.lowerGroupOrder T K i = lowerGroupCard A Γ i)
     {w : ℚ} (hw : 0 ≤ w) :
-    ⌈Padic.herbrandPsi T K (w : ℝ)⌉ = (IsLocalRing.upperRamificationIndex A Γ w : ℤ) := by
-  set N := IsLocalRing.upperRamificationIndex A Γ w
+    ⌈Padic.herbrandPsi T K (w : ℝ)⌉ = (upperGroupRatIndex A Γ w : ℤ) := by
+  set N := upperGroupRatIndex A Γ w
   have key : ∀ n : ℕ, Padic.herbrandPsi T K (w : ℝ) ≤ n ↔
-      w ≤ IsLocalRing.herbrandPhi A Γ (n : ℚ) := by
+      w ≤ herbrandPhiRat A Γ (n : ℚ) := by
     intro n
     rw [← (Padic.herbrandPhi_strictMono T K).le_iff_le, Padic.herbrandPhi_herbrandPsi,
       herbrandPhi_natCast_eq T K hcard]
@@ -136,16 +136,16 @@ theorem ceil_herbrandPsi_ratCast [Finite Γ]
         rw [Nat.cast_sub hpos]
         push_cast at hlt ⊢
         exact hlt
-      have := IsLocalRing.upperRamificationIndex_le ((key _).mp h1)
+      have := upperGroupRatIndex_le ((key _).mp h1)
       omega
   · push_cast
-    exact (key N).mpr (IsLocalRing.le_herbrandPhi_upperRamificationIndex w)
+    exact (key N).mpr (le_herbrandPhiRat_upperGroupRatIndex w)
 
 theorem upperRamificationGroup_ratCast [Finite Γ]
-    (hcard : ∀ i, Padic.lowerGroupOrder T K i = IsLocalRing.lowerRamificationCard A Γ i)
+    (hcard : ∀ i, Padic.lowerGroupOrder T K i = lowerGroupCard A Γ i)
     {w : ℚ} (hw : 0 ≤ w) :
     Padic.upperRamificationGroup T K (w : ℝ) =
-      Padic.lowerRamificationGroup T K (IsLocalRing.upperRamificationIndex A Γ w) := by
+      Padic.lowerRamificationGroup T K (upperGroupRatIndex A Γ w) := by
   rw [Padic.upperRamificationGroup_eq_lower, ceil_herbrandPsi_ratCast T K hcard hw,
     ← Padic.lowerRamificationGroupReal_int, Int.cast_natCast,
     Padic.lowerRamificationGroupReal_nat]
@@ -242,12 +242,12 @@ theorem integerAction_faithful :
 theorem lowerRamificationGroup_eq_source (i : ℕ) :
     letI := Padic.integerAction T K
     Padic.lowerRamificationGroup T K i =
-      IsLocalRing.lowerRamificationGroup T.Integers (F.Carrier ≃ₐ[K] F.Carrier) i := rfl
+      lowerGroup T.Integers (F.Carrier ≃ₐ[K] F.Carrier) i := rfl
 
 theorem lowerGroupOrder_eq_source (i : ℕ) :
     letI := Padic.integerAction T K
     Padic.lowerGroupOrder T K i =
-      IsLocalRing.lowerRamificationCard T.Integers (F.Carrier ≃ₐ[K] F.Carrier) i := rfl
+      lowerGroupCard T.Integers (F.Carrier ≃ₐ[K] F.Carrier) i := rfl
 
 end Source
 
@@ -269,10 +269,10 @@ ring and the full automorphism group. -/
 theorem source_map_lowerRamificationGroup_mk (H : Subgroup Gal(L.Carrier/K.Carrier))
     [H.Normal] (n : ℕ) :
     letI := Padic.integerAction T K.Carrier
-    (IsLocalRing.lowerRamificationGroup T.Integers Gal(L.Carrier/K.Carrier) n).map
+    (lowerGroup T.Integers Gal(L.Carrier/K.Carrier) n).map
         (QuotientGroup.mk' H) =
-      IsLocalRing.lowerRamificationGroup (FixedPoints.subring T.Integers H)
-        (Gal(L.Carrier/K.Carrier) ⧸ H) ⌈IsLocalRing.herbrandPhi T.Integers H (n : ℚ)⌉₊ := by
+      lowerGroup (FixedPoints.subring T.Integers H)
+        (Gal(L.Carrier/K.Carrier) ⧸ H) ⌈herbrandPhiRat T.Integers H (n : ℚ)⌉₊ := by
   letI := Padic.integerAction T K.Carrier
   letI := T.topology
   letI := T.valuativeRel
@@ -285,7 +285,7 @@ theorem source_map_lowerRamificationGroup_mk (H : Subgroup Gal(L.Carrier/K.Carri
     inferInstanceAs (Finite T.ResidueField)
   haveI : (maximalIdeal T.Integers).LiesOver
       (maximalIdeal (FixedPoints.subring T.Integers Gal(L.Carrier/K.Carrier))) :=
-    ⟨FixedPoints.maximalIdeal_subring_eq_comap⟩
+    ⟨maximalIdeal_fixedSubring_eq_comap⟩
   letI : Field (T.Integers ⧸ maximalIdeal T.Integers) := Ideal.Quotient.field _
   letI : Field (FixedPoints.subring T.Integers Gal(L.Carrier/K.Carrier) ⧸
       maximalIdeal (FixedPoints.subring T.Integers Gal(L.Carrier/K.Carrier))) :=
@@ -297,14 +297,14 @@ theorem source_map_lowerRamificationGroup_mk (H : Subgroup Gal(L.Carrier/K.Carri
         (FixedPoints.subring T.Integers Gal(L.Carrier/K.Carrier) ⧸
           maximalIdeal (FixedPoints.subring T.Integers Gal(L.Carrier/K.Carrier)))
         (T.Integers ⧸ maximalIdeal T.Integers)).injective
-  exact IsDiscreteValuationRing.map_lowerRamificationGroup_mk_eq_of_isSeparable_residueField n
+  exact map_lowerGroup_mk_eq_of_isSeparable_residueField n
 
 /-- The Library lower-group orders of `L` over the actual fixed field of `H`
 are the source orders for the subgroup `H`. -/
 theorem lowerGroupOrder_fixedField (H : Subgroup Gal(L.Carrier/K.Carrier)) (i : ℕ) :
     letI := Padic.integerAction T K.Carrier
     Padic.lowerGroupOrder T (IntermediateField.fixedField H) i =
-      IsLocalRing.lowerRamificationCard T.Integers H i := by
+      lowerGroupCard T.Integers H i := by
   letI := Padic.integerAction T K.Carrier
   letI := Padic.integerAction T (IntermediateField.fixedField H)
   haveI := finiteDimensional_carrier K L
@@ -370,7 +370,7 @@ theorem map_restrictNormalHom_eq [IsGalois K.Carrier L.Carrier]
     (X : Subgroup Gal(L.Carrier/K.Carrier)) (i : ℕ)
     (hX : letI := Padic.integerAction T K.Carrier
       X.map (QuotientGroup.mk' H) =
-        IsLocalRing.lowerRamificationGroup (FixedPoints.subring T.Integers H)
+        lowerGroup (FixedPoints.subring T.Integers H)
           (Gal(L.Carrier/K.Carrier) ⧸ H) i) :
     X.map (AlgEquiv.restrictNormalHom (F := K.Carrier) (K₁ := L.Carrier)
         (IntermediateField.fixedField H)) =
@@ -400,7 +400,7 @@ theorem lowerGroupOrder_fixedPadicField [IsGalois K.Carrier L.Carrier]
     (S : (Padic.fixedPadicField K L H).TopologicalData) (i : ℕ) :
     letI := Padic.integerAction T K.Carrier
     Padic.lowerGroupOrder S K.Carrier i =
-      IsLocalRing.lowerRamificationCard (FixedPoints.subring T.Integers H)
+      lowerGroupCard (FixedPoints.subring T.Integers H)
         (Gal(L.Carrier/K.Carrier) ⧸ H) i := by
   letI := Padic.integerAction T K.Carrier
   letI := Padic.integerAction S K.Carrier
@@ -439,7 +439,7 @@ theorem upperQuotientCompatibility [IsGalois K.Carrier L.Carrier] :
     upperRamificationGroup_ratCast T K.Carrier (lowerGroupOrder_eq_source T K.Carrier) hw0,
     upperRamificationGroup_ratCast S K.Carrier (lowerGroupOrder_fixedPadicField K L T H S) hw0]
   exact map_restrictNormalHom_eq K L T H S _ _
-    (IsLocalRing.upperRamificationQuotientCompat_of_map_lowerRamificationGroup_mk_eq
+    (upperGroupRatQuotientCompat_of_map_lowerGroup_mk_eq
       (source_map_lowerRamificationGroup_mk K L T H) _ hw0)
 
 /-- The phi tower law through the actual fixed field of a normal subgroup. -/
@@ -461,14 +461,14 @@ theorem herbrandPhi_fixedField_tower [IsGalois K.Carrier L.Carrier]
         Padic.herbrandPhi_of_nonpos S _ hq']
     · have hH := herbrandPhi_ratCast T (IntermediateField.fixedField H)
         (lowerGroupOrder_fixedField K L T H) hq.le
-      have hφ0 : 0 ≤ IsLocalRing.herbrandPhi T.Integers H q := by
+      have hφ0 : 0 ≤ herbrandPhiRat T.Integers H q := by
         have h := Padic.herbrandPhi_pos T (IntermediateField.fixedField H)
           (by exact_mod_cast hq : (0 : ℝ) < q)
         rw [hH] at h
         exact_mod_cast h.le
       rw [herbrandPhi_ratCast T K.Carrier (lowerGroupOrder_eq_source T K.Carrier) hq.le, hH,
         herbrandPhi_ratCast S K.Carrier (lowerGroupOrder_fixedPadicField K L T H S) hφ0,
-        IsLocalRing.herbrandPhi_eq_herbrandPhi_quotient_comp_of_map_lowerRamificationGroup_mk_eq
+        herbrandPhiRat_eq_herbrandPhiRat_quotient_comp_of_map_lowerGroup_mk_eq
           (source_map_lowerRamificationGroup_mk K L T H) hq.le]
   have hcont : Continuous fun u => Padic.herbrandPhi S K.Carrier
       (Padic.herbrandPhi T (IntermediateField.fixedField H) u) :=

@@ -1,7 +1,5 @@
 # Existence and uniqueness of the split component
 
-Author: Worker 1178.
-
 This file proves `Langlands.GroupScheme.SplitComponentStatement` as the
 theorem `Langlands.GroupScheme.splitComponentStatement`, for every universe
 `u`, every field `k` and every `G : GroupScheme (Spec (CommRingCat.of k))`

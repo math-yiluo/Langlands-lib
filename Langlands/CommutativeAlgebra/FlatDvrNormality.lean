@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 
 /-! # Normality criteria for algebras flat over a discrete valuation ring -/
 

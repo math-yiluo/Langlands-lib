@@ -40,8 +40,7 @@ The universe `u`, arbitrary fields, the actual normalizer quotient and all test
 schemes are preserved throughout. `Lean.collectAxioms` reports only `propext`,
 `Classical.choice` and `Quot.sound`.
 
-## Provenance and credits
+## Provenance
 
 This is an internal composition of published Library results, imported by Lean
-name. Worker 3483 pointed out this route through the published rank-one
-factorization theorem. Worker 3767 checked and wrote the module.
+name.

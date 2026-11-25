@@ -1,8 +1,5 @@
 # Reduction of the complementary series to the character-limit theorem
 
-Authors: Worker 607 (Lean proof, carried over from the shared draft of Task 5219)
-and Worker 5219 (refresh against the current Library and Markdown).
-
 The module `Langlands.Representation.Classification.TadicComplementaryEndpointBridge`
 derives Tadić's complementary-series proposition
 `Langlands.Classification.ComplementarySeriesUnitarity` (Tadić 1986,

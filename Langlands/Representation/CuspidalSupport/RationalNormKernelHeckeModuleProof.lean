@@ -100,9 +100,9 @@ theorem hom_comp_unitFunction (α : End (inducedRep H ρ)) (s : inducedRep H ρ 
     (hψ : ∀ w, ψ w = SmoothRep.hom s (unitFunction H hH ρ.representation ρ.isSmooth w))
     (φ : G → Module.End ℂ ρ)
     (hα : ∀ g w, eval H ρ.representation
-      (SmoothRep.hom α (unitFunction H hH ρ.representation ρ.isSmooth w)).1 g = φ g w)
+      (SmoothRep.hom α.asHom (unitFunction H hH ρ.representation ρ.isSmooth w)).1 g = φ g w)
     (w : ρ) :
-    SmoothRep.hom (α ≫ s) (unitFunction H hH ρ.representation ρ.isSmooth w) =
+    SmoothRep.hom (α.asHom ≫ s) (unitFunction H hH ρ.representation ρ.isSmooth w) =
       heckeRightAction H ρ τ ψ φ w := by
   have hφ : ∀ (h : H) (g : G) (u : ρ), φ ((h : G) * g) u = ρ.representation h (φ g u) := by
     intro h g u
@@ -116,7 +116,7 @@ theorem hom_comp_unitFunction (α : End (inducedRep H ρ)) (s : inducedRep H ρ 
     rw [mul_inv_rev, show ((h : G))⁻¹ = ((h⁻¹ : H) : G) from rfl, hφ, ψ.isIntertwining]
     change τ.representation (g * (h : G)) (τ.representation ((h⁻¹ : H) : G) _) = _
     rw [← Module.End.mul_apply, ← map_mul, Subgroup.coe_inv, mul_inv_cancel_right]
-  change SmoothRep.hom s (SmoothRep.hom α (unitFunction H hH ρ.representation ρ.isSmooth w)) =
+  change SmoothRep.hom s (SmoothRep.hom α.asHom (unitFunction H hH ρ.representation ρ.isSmooth w)) =
     ∑ᶠ q : G ⧸ H, Φ q.out
   rw [hom_apply_eq_finsum H hH ρ τ s ψ hψ, ← finsum_leftQuotient_eq H Φ hΦ]
   refine finsum_congr fun q => ?_
@@ -134,7 +134,7 @@ theorem exists_heckeRightAction
   have hψ : ∀ w, ψ w = SmoothRep.hom s₀ (unitFunction H hH ρ.representation ρ.isSmooth w) :=
     fun w => (cosetSum_comp_unitMap H hH τ.representation ρ.representation ρ.isSmooth ψ w).symm
   refine ⟨(resIntertwining H τ.representation
-    (SmoothRep.hom (endOfHecke H ρ hH φ ≫ s₀))).comp (unitMap H hH ρ.representation ρ.isSmooth),
+    (SmoothRep.hom ((endOfHecke H ρ hH φ).asHom ≫ s₀))).comp (unitMap H hH ρ.representation ρ.isSmooth),
     fun w => ?_⟩
   exact hom_comp_unitFunction H hH ρ τ (endOfHecke H ρ hH φ) s₀ ψ hψ φ
     (fun g u => endValue_endOfHecke H ρ hH φ g u) w
@@ -152,13 +152,13 @@ theorem heckeRightAction_heckeRightAction [ρ.representation.IsIrreducible]
     fun w => (cosetSum_comp_unitMap H hH τ.representation ρ.representation ρ.isSmooth ψ w).symm
   obtain ⟨α, rfl⟩ := (heckeEquiv H ρ hH).surjective φ
   obtain ⟨β, rfl⟩ := (heckeEquiv H ρ hH).surjective φ'
-  have hψ₁ : ∀ u, ψ' u = SmoothRep.hom (α ≫ s₀)
+  have hψ₁ : ∀ u, ψ' u = SmoothRep.hom (α.asHom ≫ s₀)
       (unitFunction H hH ρ.representation ρ.isSmooth u) := fun u =>
     (hψ' u).trans (hom_comp_unitFunction H hH ρ τ α s₀ ψ hψ
       (heckeEquiv H ρ hH α : G → Module.End ℂ ρ)
       (fun g u => (heckeEquiv_apply H ρ hH α g u).symm) u).symm
   rw [← heckeEquiv_mul H ρ hH α β,
-    ← hom_comp_unitFunction H hH ρ τ β (α ≫ s₀) ψ' hψ₁
+    ← hom_comp_unitFunction H hH ρ τ β (α.asHom ≫ s₀) ψ' hψ₁
       (heckeEquiv H ρ hH β : G → Module.End ℂ ρ)
       (fun g u => (heckeEquiv_apply H ρ hH β g u).symm) w,
     ← hom_comp_unitFunction H hH ρ τ (α * β) s₀ ψ hψ

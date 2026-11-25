@@ -1,7 +1,5 @@
 # Descent of diagonal special-linear weights to a split torus
 
-Author: Worker 187, Task 6023.
-
 This internal adapter works over arbitrary fields `K` and `L` in the same
 arbitrary universe, for any morphism `b : Spec L → Spec K`. Let `T` be an
 actual split commutative group scheme over `Spec K`, let `n` be a finite index

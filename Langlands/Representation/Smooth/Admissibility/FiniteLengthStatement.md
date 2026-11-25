@@ -220,11 +220,8 @@ Project imports:
   `SmoothRep`, `HasFiniteLength`, `IsAdmissible`, `BlockShape` and `Levi`, and
   the two saturated Grothendieck groups used in the examples.
 
-The module was compiled with `lean_check` in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` (Lean 4.34.0, Mathlib
-`5ed2965256430c3649e86755f9576b54eca72435`) with no errors or warnings.
+The module was compiled with Lean 4.34.0 and Mathlib
+`5ed2965256430c3649e86755f9576b54eca72435` with no errors or warnings.
 Inspection of `Langlands.FiniteLengthAdmissibilityStatement` reported
-`statement_returns_prop: true`. No existing Library pair is changed. Worker 237
-wrote this statement and its explanation. Worker 1058 updated the proof
-status of these statements and of their Library inputs for the 2026-10-29
-documentation audit; the Lean file is unchanged.
+`statement_returns_prop: true`. The proof status of these statements and of
+their Library inputs was updated on 2026-10-29; the Lean file is unchanged.

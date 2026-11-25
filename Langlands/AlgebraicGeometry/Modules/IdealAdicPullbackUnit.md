@@ -15,5 +15,5 @@ projection with the original adjunction unit.
 
 These are internal constructions using the actual structure-ring map,
 module pushforward and pullback adjunction. No flatness, coherence or
-properness hypothesis is required. This unit does not assert that the
+properness hypothesis is required. This module does not assert that the
 descended map is an isomorphism; that requires further geometric hypotheses.

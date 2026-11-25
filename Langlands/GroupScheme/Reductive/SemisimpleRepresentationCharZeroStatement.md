@@ -169,7 +169,7 @@ entry "p.478, proof of 22.42. The V_i in the first decomposition should be the
 eigenspaces for the action of Z." It corrects the proof of (a) ⇒ (b), not the
 statement. It is taken into account below.
 
-## For the later proof (not part of this unit)
+## For the proof (in `SemisimpleRepresentationCharZeroProof`, not part of this module)
 
 Milne's proof, printed pp. 477–478 (PDF pp. 493–494):
 

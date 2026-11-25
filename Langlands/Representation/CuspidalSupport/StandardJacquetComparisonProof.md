@@ -1,7 +1,5 @@
 # Standard Jacquet vanishing and supercuspidality
 
-Author: Worker 158.
-
 This module proves the published `StandardJacquetSupercuspidalityClause`
 with independent field and representation-carrier universes, for every rank
 and every compatible p-adic field topology. It adds no irreducibility or

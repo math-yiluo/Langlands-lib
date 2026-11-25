@@ -142,29 +142,29 @@ def nilpDeligneCompletedResidueDivisionAction : (GL (Fin d) K × Dˣ) →*
 
 /-- The comparison from residue coordinates intertwines the two group actions. -/
 theorem nilpDeligneCompletedResidueIso_inv_action (g : GL (Fin d) K × Dˣ) :
-    (nilpDeligneDivisionAction κ hπ g).hom ≫ (nilpDeligneCompletedResidueIso hπ).inv =
-      (nilpDeligneCompletedResidueIso hπ).inv ≫ (nilpDeligneCompletedResidueDivisionAction hπ g).hom := by
+    (nilpDeligneDivisionAction κ hπ g).asIso.hom ≫ (nilpDeligneCompletedResidueIso hπ).inv =
+      (nilpDeligneCompletedResidueIso hπ).inv ≫ (nilpDeligneCompletedResidueDivisionAction hπ g).asIso.hom := by
   let e := nilpDeligneCompletedResidueIso (d := d) hπ
   let a := nilpDeligneDivisionAction κ hπ g
-  change a.hom ≫ e.inv = e.inv ≫ (e.symm.conjAut a).hom
+  change a.asIso.hom ≫ e.inv = e.inv ≫ (e.symm.conjAut a).asIso.hom
   rw [Iso.conjAut_apply]
-  change a.hom ≫ e.inv = e.inv ≫ e.hom ≫ a.hom ≫ e.inv
+  change a.asIso.hom ≫ e.inv = e.inv ≫ e.hom ≫ a.asIso.hom ≫ e.inv
   simp
 
 /-- The first coordinate carries the projective action. The second is
 precomposition by the inverse power of actual completed Frobenius. -/
 theorem nilpDeligneCompletedResidueDivisionAction_apply (g : GL (Fin d) K × Dˣ)
     (B : Nilp.{u, u} 𝒪[K] π) (x : (nilpDeligneCompletedCoefficientFunctor (d := d) hπ).obj B) :
-    (nilpDeligneCompletedResidueDivisionAction hπ g).hom.app B x =
-      ((nilpSheafProjectiveLeftHom hπ (Matrix.ProjGenLinGroup.mk g.1)).hom.app B x.1,
+    (nilpDeligneCompletedResidueDivisionAction hπ g).asIso.hom.app B x =
+      ((nilpSheafProjectiveLeftHom hπ (Matrix.ProjGenLinGroup.mk g.1)).asIso.hom.app B x.1,
         x.2.comp ((completedUnramifiedFrobenius K ^ (-(residueActionOrder g).toAdd : ℤ)).toAlgHom)) := by
   let e := nilpDeligneCompletedResidueIso (d := d) hπ
   let a := nilpDeligneDivisionAction κ hπ g
-  have hact : nilpDeligneCompletedResidueDivisionAction hπ g = e ≪≫ a ≪≫ e.symm := by
+  have hact : (nilpDeligneCompletedResidueDivisionAction hπ g).asIso = e ≪≫ a.asIso ≪≫ e.symm := by
     exact Iso.conjAut_apply e.symm a
   rw [hact]
   apply (e.app B).toEquiv.injective
-  change (e.app B).toEquiv ((e.app B).toEquiv.symm (a.hom.app B ((e.app B).toEquiv x))) = _
+  change (e.app B).toEquiv ((e.app B).toEquiv.symm (a.asIso.hom.app B ((e.app B).toEquiv x))) = _
   rw [Equiv.apply_symm_apply]
   apply Prod.ext
   · exact nilpDeligneDivisionAction_deligne κ hπ g B ((e.app B).toEquiv x)

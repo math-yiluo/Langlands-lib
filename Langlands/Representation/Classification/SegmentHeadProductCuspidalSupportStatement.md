@@ -1,7 +1,5 @@
 # Cuspidal support of an irreducible product of segment heads
 
-Author: Worker 491.
-
 This module states
 `Langlands.Classification.SegmentHeadProductCuspidalSupport.{uF,uV} F T`.
 It imports the published `SegmentCuspidalContent`, `LanglandsData` and
@@ -68,7 +66,7 @@ representatives. The imported rank-sum identities alone do not supply
 that witness. No equality involving the noncanonical chosen function
 `supercuspidalSupport` and no Grothendieck-group equality is asserted.
 
-## Derived provenance and remaining proof work
+## Derived provenance and proof route
 
 The source is A. V. Zelevinsky, *Induced representations of reductive
 p-adic groups II. On irreducible representations of GL(n)*, Ann. Sci.
@@ -90,7 +88,7 @@ The original passages used here were read in the retained PDF:
   That page was also checked visually. Its classification and
   reconstruction argument is motivation, not a proof input here.
 
-No source-specific errata file was found under the current Library's
+No source-specific errata file was found under the Library's
 `notes/errata` or among its Zelevinsky notes. The published
 `notes/henniart/gln-classification-sources.md` was consulted for the
 source boundary.
@@ -104,8 +102,9 @@ cuspidal induction through actual tensor-compatible induction in
 stages. The resulting quotient is a subquotient; the explicitly assumed
 irreducibility supplies the remaining constituent condition. Actual
 preservation of the quotient maps, the tensor and rank transports in
-flattening, and the exact multiplicity enumeration all remain proof
-obligations. An abstract stages comparison for a composed presentation
+flattening, and the exact multiplicity enumeration are not proved in this
+module; the module `Classification.SegmentHeadProductCuspidalSupportProof`
+proves the proposition as `segmentHeadProductCuspidalSupport`. An abstract stages comparison for a composed presentation
 does not by itself establish the required tensor-factor comparison.
 
 ## Independence
@@ -120,6 +119,6 @@ uniqueness, multisegment exhaustion, ordered strong-head existence,
 quotient coverage, ordered conversion, tempered uniqueness,
 `SquareIntegrableLanglandsClassification`, square-integrable exhaustion,
 and regular exhaustion. It also does not use uniqueness of supercuspidal
-support or the all-rank cuspidal-induction association theorem. The
-proof successor must audit the direct and transitive dependencies of any
+support or the all-rank cuspidal-induction association theorem. A
+proof must audit the direct and transitive dependencies of any
 lower results it reuses and preserve these boundaries.

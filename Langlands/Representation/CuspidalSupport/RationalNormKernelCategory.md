@@ -1,7 +1,7 @@
 # Actual norm-kernel factors for Renard VI.3.4
 
-Worker 6 constructs the full factors and the category-decomposition assertion
-in Renard's theorem VI.3.4. This is a definition unit. It does not prove that
+This module constructs the full factors and the category-decomposition assertion
+in Renard's theorem VI.3.4. This is a definition module. It does not prove that
 these factors decompose the category, fixed-level finiteness (KF), or a
 comparison with other descriptions of compact blocks.
 
@@ -16,8 +16,9 @@ pp.151–152; and Appendix A.IX, printed p.268 / PDF p.274.
 
 The field `F : Type uF` is an arbitrary nonarchimedean local field.
 `G` is an actual affine group scheme of locally finite type over `F`.
-These hypotheses form the definitions; connected reductivity will be a
-hypothesis of the separate universal theorem. The point group has the
+These hypotheses form the definitions; connected reductivity is a
+hypothesis of the separate universal statements in
+`RationalNormKernelDecompositionStatement`. The point group has the
 published canonical `rationalPointTopology F G.X`. Its actual subgroup
 `Plancherel.rationalCommonNormKernel G` is the intersection of the kernels of
 the normalized absolute values of all actual rational algebraic characters.
@@ -58,7 +59,7 @@ and then states its equivalence with compact support of all smooth-dual
 scalar coefficients. This construction uses that scalar formulation.
 The proof comparing it with the original averaging definition, including
 the inversion convention, remains a separate obligation. IV.1.3 assumes
-unimodularity for its section; this unit asserts no averaging comparison
+unimodularity for its section; this module asserts no averaging comparison
 or theorem without that hypothesis.
 
 The reused coefficient predicate tests every vector and every algebraic
@@ -90,8 +91,11 @@ published `IsSubquotient.of_iso_right`. These arguments prove no compactness,
 semisimplicity, finiteness or decomposition theorem.
 
 The universal connected-reductive norm-kernel KF and decomposition statements
-remain to be submitted separately over published definitions. Their proofs
+are stated separately over published definitions:
+`RationalNormKernelFixedLevelFinitenessStatement` and
+`RationalNormKernelCategoryDecompositionStatement`, in
+`RationalNormKernelDecompositionStatement`. Their proofs
 retain the VI.2.3 and VI.2.4 inputs, the compact norm-kernel restriction
-arguments and the IV.1.7 assembly. In particular this unit does not discharge
+arguments and the IV.1.7 assembly. In particular this module does not discharge
 the existing conditional projector hypotheses or identify their ranges with
 the class-sum factors.

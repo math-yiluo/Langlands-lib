@@ -1,7 +1,5 @@
 # Open-subgroup fixed vectors of actual completed tensor slices
 
-Author: Worker 2.
-
 This internal construction identifies the fixed vectors of an entire closed
 Hilbert tensor slice with those of its intrinsic smooth part. Under the existing
 admissibility and nonzero-tail hypotheses, it identifies them with the fixed

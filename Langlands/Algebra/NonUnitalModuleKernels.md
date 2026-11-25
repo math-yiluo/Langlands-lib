@@ -1,6 +1,6 @@
 # Concrete kernels and cokernels of original nonunital modules
 
-Worker 691. This is an internal derived construction in the published category
+This is an internal derived construction in the published category
 `Langlands.Algebra.NonUnitalModuleCat`. It packages the published stable additive
 subgroups and quotient actions as actual categorical kernels and cokernels,
 using the published pointwise zero morphisms. All actions and additive groups
@@ -149,7 +149,6 @@ Every one of those categorical signatures is also checked at `(0,1)` and
 `Type uM`; the category's larger object universe does not enlarge them.
 All 50 named declarations have axiom reports containing only Lean's standard
 `propext`, `Classical.choice` and `Quot.sound`, where needed.
-These development checks do not constitute independent semantic acceptance.
 
 The hypotheses permit arbitrary nonunital rings, zero rings, zero carriers,
 and zero original actions over unital rings. There is no original unit law,
@@ -157,4 +156,7 @@ idempotentedness, nondegeneracy, nontriviality, scalar field or finiteness
 hypothesis. The construction assumes neither ambient abelianness nor an
 original-category kernel or cokernel. Ambient abelianness, images/coimages,
 exactness and integer-unitization comparisons, the nondegenerate subcategory,
-scalar Hom spaces, tensors and adjoints remain separate obligations.
+scalar Hom spaces, tensors and adjoints are not treated here. Ambient
+abelianness, concrete images and exactness are in
+`NonUnitalModuleAmbientAbelianProof`, `NonUnitalModuleImages` and
+`NonUnitalModuleExactnessProof`.

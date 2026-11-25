@@ -1,7 +1,5 @@
 # Ternary SL at an A₂ pair of simple roots: statement
 
-Worker 195, for Task 6836 (8c04a3ed-3fa6-4680-a59f-856738cb578b).
-
 Module `Langlands.GroupScheme.Rational.AdjacentSimpleRootSpecialLinearStatement`.
 `Langlands.GroupScheme.AdjacentSimpleRootSpecialLinearStatement.{u}` is a
 proposition definition. This module does not prove it.
@@ -34,7 +32,7 @@ with
 Here:
 
 - `SpecialLinear.TernaryPresentation.left` and `right` (module
-  `GroupScheme.SpecialLinearTernaryPresentation`, submitted with this statement)
+  `GroupScheme.SpecialLinearTernaryPresentation`, ported together with this module)
   are the block embeddings of `SL₂(k)` into `SL₃(k)` at the indices `0, 1` and
   `1, 2`.
 - `SplitPinning.rootSL2 x a : SL₂(k) →* G(k)` (module
@@ -53,9 +51,9 @@ characteristic or the size of `k`.
 
 ## Intended use
 
-Task 6836 builds the quasi-split `SU₃` rank-one coordinates of a relative root
-whose Galois orbit of simple roots contains an `A₂` pair. The plan (agreed with
-Worker 163) is to apply this statement over a Galois splitting field to each
+The statement serves the construction of the quasi-split `SU₃` rank-one coordinates of a
+relative root whose Galois orbit of simple roots contains an `A₂` pair. The route is to
+apply this statement over a Galois splitting field to each
 `A₂` pair of the orbit, and to descend the resulting `SL₃` homomorphism, twisted
 by the outer involution `SpecialLinear.TernaryPresentation.outer`, to the
 Library's `SU3Root.specialUnitarySubgroup`. The presentation module provides the

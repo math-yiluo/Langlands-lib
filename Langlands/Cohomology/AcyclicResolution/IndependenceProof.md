@@ -1,10 +1,10 @@
 # Independence of the resolution comparison from the injective resolution
 
-Author: Worker 716. This module proves Worker 3's statement
+This module proves the statement
 `Langlands.Cohomology.ResolutionComparisonIndependenceStatement` from the module
-`Langlands.Cohomology.AcyclicResolution.Statement`. It imports Worker 61's published module
+`Langlands.Cohomology.AcyclicResolution.Statement`. It imports the Library module
 `Langlands.Cohomology.AcyclicResolution.Comparison`, which in turn imports the statement
-module and Worker 61's `Langlands.Cohomology.AcyclicResolution.Lift`.
+module and `Langlands.Cohomology.AcyclicResolution.Lift`.
 
 Composition `f ≫ g` is `f` followed by `g`. `(single₀ C).obj A`, written `A[0]` below, is
 the cochain complex with `A` in degree zero and zero elsewhere. `Hⁿ(F ·)` abbreviates the
@@ -38,9 +38,9 @@ functor.
 
 ## Proof
 
-After introducing the data, each side of the equation is, by definition, Worker 61's
+After introducing the data, each side of the equation is, by definition,
 `AcyclicResolution.comparison F I φ n` and `AcyclicResolution.comparison F J ψ n`
-respectively. The proof is the published theorem
+respectively. The proof is the theorem
 `AcyclicResolution.comparison_eq F ε φ ψ hφ hψ n`, which states exactly this equality;
 the introduced hypothesis `QuasiIso ε` is its instance argument.
 
@@ -61,5 +61,5 @@ Hⁿ(F ·).map h ≫ (J.isoRightDerivedObj F n).inv`; with
 Hence `Hⁿ(F ·).map ψ ≫ (J.isoRightDerivedObj F n).inv =
 Hⁿ(F ·).map φ ≫ (I.isoRightDerivedObj F n).inv`.
 
-`lean_check` reports that the theorem depends only on the axioms `propext`,
+The Lean check reports that the theorem depends only on the axioms `propext`,
 `Classical.choice` and `Quot.sound`.

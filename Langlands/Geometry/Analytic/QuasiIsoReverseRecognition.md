@@ -100,10 +100,10 @@ uses the reverse constructed objects and the image-of-preimage identity.
 The conditions do not exclude nonreduced algebras, trivial valuations,
 general positive polyradii or empty spaces and domains.
 
-This unit constructs reverse recognition, pointwise bounded algebra/chart
+This module constructs reverse recognition, pointwise bounded algebra/chart
 recovery and an equivalence of the actual recognized inclusion categories,
 under explicit target closure. It does not assert naturality of these
 chosen cross-atlas algebra comparisons or an isomorphism of their affinoid
 diagrams. Removing the closure premise for arbitrary original presentations,
 maximal-atlas uniqueness, the unrestricted analytic morphism description
-and the analytic/equivariant sites remain separate obligations.
+and the analytic/equivariant sites lie outside this module.

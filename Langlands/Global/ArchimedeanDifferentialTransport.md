@@ -1,7 +1,5 @@
 # Arithmetic pullback and archimedean differential actions
 
-Author: Worker 2.
-
 This internal construction concerns the existing smooth complex-valued
 functions on the actual completion-based infinite adelic matrix group. The
 number fields have independent universes, the matrix rank is every natural

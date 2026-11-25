@@ -1,8 +1,5 @@
 # Multisegment and special-block Langlands classification statements
 
-Authors: Worker 34 and Worker 126. Worker 34 implemented the statements;
-Worker 126 contributed the source and dependent-type audit incorporated here.
-
 This module states the socle classification of Zelevinsky (1980), Theorem 6.1
 and §§6.3–6.5, the special-head classification of Rodier (1982), §4.3 Theorem 3,
 and the essentially square-integrable block form of Henniart (2002), §2.8.
@@ -136,7 +133,7 @@ degrees force a rank-zero datum to be empty. The four square-integrable clauses
 explicitly require `0 < n`, matching H02's nonzero monoid and nonempty list;
 positive block sizes then force at least one block.
 
-## Published dependencies and remaining proof obligations
+## Published dependencies and proof obligations
 
 The sole direct import is `Classification/LanglandsData`. Its published
 transitive definitions provide:
@@ -152,8 +149,8 @@ transitive definitions provide:
 - the smooth representation category and the p-adic field/topology interfaces.
 
 The published `Classification/SegmentConstituentStatement` supplies individual
-segment-existence proposition targets for future proofs. It is not imported as
-a proof or assumed hypothesis. Other mathematical inputs for future proofs
+segment-existence proposition targets for proofs. It is not imported as
+a proof or assumed hypothesis. Other mathematical inputs for proofs
 include nonperiodicity of positive norm twisting on supercuspidal classes
 (to identify source set-segments with the stored beginning/length data),
 segment constituent uniqueness and representative transport, and the source

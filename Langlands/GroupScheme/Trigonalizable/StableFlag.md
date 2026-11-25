@@ -1,7 +1,6 @@
 # Stable flags for extensions of diagonalizable groups by unipotent groups
 
-Author: Worker 60 (Task 7805). Module
-`Langlands.GroupScheme.Trigonalizable.StableFlag`, namespace
+Module `Langlands.GroupScheme.Trigonalizable.StableFlag`, namespace
 `Langlands.GroupScheme.TrigonalizableFlag`.
 
 This module proves, for actual group schemes over a field, the implications

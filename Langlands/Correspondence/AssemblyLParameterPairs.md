@@ -1,14 +1,11 @@
 # Parameter-side premises of assembled pair L-factor inheritance
 
-Authors: Worker 1716 (the proofs of `arithmeticPairLDirectSum` and
-`arithmeticBlockPairLFactor`) and Worker 1706.
-
 The reduction of `Langlands.Correspondence.AssemblyLInheritanceStatement` has two
 premises that concern only arithmetic pair L-factors of local Weil-Deligne
 representations. This module proves both of them. Their definitions are in
 `AssemblyLReduction` and `AssemblyLSegmentReduction`. The proofs specialize two
 general theorems of the modules `Langlands.LocalFactor.WeilDeligneEulerSum` and
-`Langlands.LocalFactor.WeilDeligneBlockPair` (Worker 1716). Those theorems hold
+`Langlands.LocalFactor.WeilDeligneBlockPair`. Those theorems hold
 for Weil-Deligne representations over an arbitrary field and group.
 
 **The target statement is still not proved here.** The final theorem keeps two
@@ -61,8 +58,8 @@ theorem assemblyLInheritance_of_rankinSelberg
 
 This is `assemblyLInheritance_of_rankinSelberg_of_blockPairs` (module
 `AssemblyLDatumExistence`) with the two theorems above as its premises `hD` and
-`hB`. The two remaining hypotheses are Library statements whose proofs are not yet
-in the Library:
+`hB`. The two remaining hypotheses are Library statements, proved in other modules
+(`RankinSelberg.squareIntegrableDataLFactor` and `RankinSelberg.segmentHeadLFactor`):
 
 - `SquareIntegrableDataLFactorStatement`: JPSS (9.5), the L-factor of a pair of
   Langlands quotients of square-integrable data is the product of the L-factors

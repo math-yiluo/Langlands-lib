@@ -1,7 +1,5 @@
 # Derivatives of actual compact weighted averages
 
-Author: Worker 94.
-
 This internal development builds finite expansions of genuine enveloping
 derivatives of the actual weighted compact average. Each expansion
 simultaneously identifies the derivative of every compact translate and

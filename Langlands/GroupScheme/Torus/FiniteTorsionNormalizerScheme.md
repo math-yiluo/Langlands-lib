@@ -1,6 +1,6 @@
 # Scheme normalizers detected by finite diagonalizable subgroups
 
-This internal unit proves that, over any affine base, a closed diagonalizable
+This internal module proves that, over any affine base, a closed diagonalizable
 subgroup of a smooth affine group has the same full scheme normalizer as one
 of its finite characteristic torsion subgroups. The finitely generated
 abelian character group may have torsion, the coefficient ring is arbitrary,

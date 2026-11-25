@@ -10,8 +10,8 @@ operator route note `operator-numerical-llc-route-2026-11-16`, §4.4, definition
 before Lemma `lem:level`, printed p. 15 ("`ℓ(π) = min {m / e(𝔄) : ...}`", which presupposes that the minimum
 exists).
 
-`NormalizedLevelExistenceStatement.{uK, uV} : Prop` is an unproved statement; a later
-`lean.proof@1` task proves it.
+`NormalizedLevelExistenceStatement.{uK, uV} : Prop` is a statement; `normalizedLevelExistence`
+(module `Langlands.BushnellKutzko.NormalizedLevelExistenceProof`) proves it.
 
 ## Statement
 
@@ -23,7 +23,7 @@ admissible complex representations of `GL_n(K)`, there is `x : ℚ` with
 
 No other hypothesis is made.
 
-## Why it holds (for the proof task)
+## Why it holds
 
 - Nonempty: a nonzero vector of a smooth representation is fixed by an open subgroup, which
   contains the congruence subgroup `U^{m+1}(𝔄(𝓛₀))` for the standard chain `𝓛₀ = (𝔭^i 𝔬^n)_i`

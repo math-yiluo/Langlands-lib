@@ -1,6 +1,6 @@
 # Compact induction from an open subgroup is left adjoint to restriction
 
-Author: Worker 61. Built on the published
+Built on the published
 `Langlands.Representation.Induction.Definitions` (`LeftQuotient`,
 `quotientMap`, `quotientRight`, `quotientSupport`, `eval`,
 `CompactFunctions`, `compactFunctionOf`, `compactInduced`,
@@ -8,7 +8,7 @@ Author: Worker 61. Built on the published
 `Langlands.Representation.Category.Abelian` (`SmoothRep`,
 `SmoothRep.epi_iff_surjective`, `SmoothRep.mono_iff_injective`),
 `Langlands.Representation.Smooth.Transfer.PullbackProof` (`isSmooth_comp`)
-and Worker 3's `Langlands.Cohomology.SupercuspidalExt.Statement` (the functors
+and `Langlands.Cohomology.SupercuspidalExt.Statement` (the functors
 `restriction` and `compactInduction`). From Mathlib it uses `finsum`,
 `Adjunction.mkOfHomEquiv`, `Functor.preservesEpimorphisms_of_adjunction`,
 `Adjunction.map_projective` and `Adjunction.map_injective`.
@@ -104,7 +104,7 @@ the restriction of `τ`.
 - `smoothRestriction R H : SmoothRep R G ⥤ SmoothRep R H`: restriction along
   the inclusion `H → G`, which is continuous for the subspace topology on `H`,
   so smoothness is preserved (`isSmooth_comp`). It is the same formula as
-  Worker 3's `SupercuspidalExt.restriction`, in all universes.
+  `SupercuspidalExt.restriction`, in all universes.
   `smoothRestriction_hom_apply`: it does not change the underlying maps.
 - `smoothCompactInduction R H`: the abbreviation
   `SmoothRep.toRep ⋙ compactInductionFunctor H`, from
@@ -156,7 +156,7 @@ adjunction. Restriction also preserves projective objects there; that uses the
 other adjunction (restriction is left adjoint to smooth induction) and is not
 covered here.
 
-## Specialization to Worker 3's functors
+## Specialization to the functors of `SupercuspidalExt.Statement`
 
 In the namespace `Langlands.Cohomology.SupercuspidalExt`, for `R` and `G` in
 one universe `u`:
@@ -165,7 +165,7 @@ one universe `u`:
   compactInduction R G H ⊣ restriction R G H`, where `compactInduction` and
   `restriction` are the functors on `SmoothRep.{u, u, u}` from
   `Langlands.Cohomology.SupercuspidalExt.Statement`. It is
-  `Induction.compactInductionAdjunction.{u, u, u} H hH`; Worker 3's functors
+  `Induction.compactInductionAdjunction.{u, u, u} H hH`; those functors
   are definitionally `smoothCompactInduction R H` and `smoothRestriction R H`
   in these universes.
 
@@ -194,13 +194,13 @@ summand; the direct sums over `i + j = k` and `(e, δ)`, the Hom complexes and
 Harris's particular groups are not formalized here. On p.310 (proof of
 Proposition 4.4) Harris also uses that "compact induction preserves
 projectivity with arbitrary coefficients [Vi, 5.9 (d)]", which is
-`projective_smoothCompactInduction`. The Ext form of reciprocity is Worker 3's
+`projective_smoothCompactInduction`. The Ext form of reciprocity is the
 separate `CompactInductionExtReciprocityStatement`.
 
 ## Scope
 
 - This module constructs the adjunction and its formal consequences. It does
-  not prove Worker 3's `CompactInductionExtReciprocityStatement` (the Ext
+  not prove `CompactInductionExtReciprocityStatement` (the Ext
   version of reciprocity) or the clause `OpenSubgroupAdjunctionClause` of
   `Langlands.Representation.Induction.StructuralStatement` (a linear
   equivalence over `ℂ` with a support formula), although it is the main input

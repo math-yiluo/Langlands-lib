@@ -1,7 +1,5 @@
 # Actual points under subgroup-family restriction
 
-Author: Worker 1726.
-
 This internal helper unfolds actual subgroup-family restriction without losing
 the chosen direct ambient pullback. The multiplicative `familyPointsEquiv`
 first uses the inverse direct-to-iterated group-scheme pullback comparison,

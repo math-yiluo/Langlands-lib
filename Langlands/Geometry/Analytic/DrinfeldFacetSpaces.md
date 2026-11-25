@@ -1,7 +1,5 @@
 # Harris's domains `U(f)` are open, and the action of their stabilizers
 
-Author: Worker 21.
-
 For a finite set `f` of vertices of the building, in particular for a facet,
 this module proves that Harris's subset `U(f) = Res⁻¹(B(f, ε))` of Drinfeld's
 upper half space `Ω` is open. It then makes `U(f)` an analytic domain of `Ω`

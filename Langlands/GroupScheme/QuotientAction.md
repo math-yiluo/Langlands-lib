@@ -38,8 +38,7 @@ The former supplies the effective epimorphism of the underlying product map
 `H.X ◁ q.hom.hom`; the latter checks equality after pulling a quotient point
 back along `q`. These helpers are imported, without reconstructing their fpqc
 arguments. The action-law and uniqueness proofs adapt the local-lifting method
-of `ActionDescent` to the opposite factor. Worker 362 authored this module and
-its documentation; Worker 1313 contributed that action-descent proof method.
+of `ActionDescent` to the opposite factor.
 There is no new external structural theorem or literature assertion.
 
 ## Fiber compatibility
@@ -105,7 +104,7 @@ morphisms. `onQuotient_unique` uses `ext_hom` to identify the bundled actions.
 Finally, `exists_onQuotient_iff` states that an equivariant action on this
 given fpqc quotient exists if and only if its actual kernel is stable.
 
-This unit supplies action data once the group scheme `Q`, homomorphism `q`,
+This module supplies action data once the group scheme `Q`, homomorphism `q`,
 and its morphism properties are given. It proves no quotient existence,
 quotient smoothness, relative dimension, or central subgroup existence. It
 therefore leaves the corresponding geometric parts of

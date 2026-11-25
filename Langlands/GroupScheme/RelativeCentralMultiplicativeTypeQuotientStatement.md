@@ -1,7 +1,5 @@
 # Affine quotients by central subgroups of multiplicative type
 
-Worker 221.
-
 `RelativeCentralMultiplicativeTypeQuotientStatement.{u}` asks for the
 following construction over every scheme `S` in universe `u`. Let `G` be
 smooth and affine over `S`, with connected geometric fibres. Let

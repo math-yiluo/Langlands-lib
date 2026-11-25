@@ -1,11 +1,11 @@
 # Incident facets for prescribed residue-torus cocharacters
 
-This internal supporting unit applies the prescribed short-ray construction
+This module applies the prescribed short-ray construction
 to the actual torus of an integral model. The base is a local domain `R`
 with fraction field `K`; `B` is integer-valued building data for an affine
 group over `K`, and `A` is `IntegralSplitTorusData N B.i` for an actual
 integral model `N`. Both fields and rings have arbitrary universe `u`.
-There is no smoothness or algebraic-closedness premise for this unit.
+There is no smoothness or algebraic-closedness premise for this module.
 
 `exists_pos_incidentFacet_of_specialFibreCocharacter` lifts an arbitrary
 cocharacter `nu` of `A.specialFibreTorus` through the inverse of the actual
@@ -29,5 +29,5 @@ pairing identity, combined with `IncidentCocharacterFacet`. No new
 external literature claim is made. This result constructs apartment
 facets and compares root fixers of the generic fibre. It does not assert equality
 of special-fibre schematic images with dynamic parabolics, attainment
-of all parabolic subgroup functors, or the host's descended parabolic
-order bijection.
+of all parabolic subgroup functors, or the descended parabolic
+order bijection `UnramifiedFacetParabolicOrderStatement`.

@@ -1,28 +1,24 @@
 # `ψ_f[O, P]` and the pairing of wave packets with `C(G)` on actual points (Waldspurger VII.1, VII.2)
 
-Author: Worker 3642, task `1ef6854b-f0e9-4d96-bbe5-cb8c4b52f927` (revision 1).
-
 Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalInducedOrbitFourierPairing`,
 namespace `Langlands.HarishChandraSchwartz`. It imports:
 
-- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalInducedOrbitWavePacket` (this
-  author's Unit 20, candidate `32489085-08ba-4b12-be15-d1eee77e42b3`, review-accepted). It
+- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalInducedOrbitWavePacket`. It
   provides:
   - the actual wave packet `rationalInducedOrbitWavePacket` and `C^∞(O, P)`
     (`rationalInducedSmoothOrbitSections`);
   - the circle coordinates `leviRationalUnitaryCoordinates`, with
     `leviRationalUnitaryCoordinates_hasLaurent`.
 
-  Through Unit 19 (published) it brings the actual data of `P_I(F)`, `rationalLeviXi`,
+  Through `RationalInducedCoefficients` it brings the actual data of `P_I(F)`, `rationalLeviXi`,
   `rationalLeviData`, `compactSpace_subgroupOf_standardLevi`, `rationalMinimalModulus_eq_one` and
   `isUnimodularModulus_standardUnipotentPoints`.
-- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalInducedFourierTransform` (this
-  author's Unit 22, candidate `f4294d1f-31a6-454a-b620-a27ffd3f9df8`, published). It provides
+- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalInducedFourierTransform`. It provides
   `rationalInducedFourierTransform` (`f̂(ω, P)`) and `compactOpenCofinal_standardLevi`. Through
   it come `rationalL2Weights`, `rationalXi_inv`, `rationalHeight_inv`,
   `rationalHasTemperedCoefficients_normalizedInduction`, `IsRationalLeviTempered` and
   `RationalSchwartzSpace`.
-- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.InducedOrbitWavePacketPairing` (Worker 249).
+- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.InducedOrbitWavePacketPairing`.
   It provides `pairing_inducedOrbitWavePacket_eq_integral_productPairing` (formula (1),
   abstract) and `unitaryOrbitWeightedProductPairing`. Through its imports come:
   - `fourierOrbitSection`, `fourierOrbitSection_apply`, `fourierOrbitSection_mem_coherent` and
@@ -36,8 +32,8 @@ J.-L. Waldspurger, *La formule de Plancherel pour les groupes p-adiques, d'aprè
 J. Inst. Math. Jussieu 2 (2003), 235–333, DOI 10.1017/S1474748003000082 (literature id
 `waldspurger-2003-plancherel`, SHA256
 `4b6a6162cd0b3863703fb2f65d1698f926caf813114917f2084c16e38f2e30f7`). Page numbers are printed
-pages; the PDF page is the printed page minus 234. The author checked the quotations below on the
-text of PDF pages 82 and 85.
+pages; the PDF page is the printed page minus 234. The quotations below were checked on the text
+of PDF pages 82 and 85.
 
 - VII.1, printed p. 316: "Soit `O` une orbite dans `E_2(M)` pour l'action de `Im X(M)`. Pour
   `f ∈ C(G)`, on définit une fonction `ψ_f[O, P]` sur `O` par: `ψ_f[O, P]_ω = f̂(ω, P)` pour tout
@@ -65,7 +61,8 @@ This module adds no new analysis; it supplies the actual data of `P_I(F)`.
 
 ## Setting
 
-The setting combines those of Units 20 and 22:
+The setting combines those of `RationalInducedOrbitWavePacket` and
+`RationalInducedFourierTransform`:
 
 - `F`, `G`, `hG`, `i`, `hi`, `ν`, `hν`, `I`, and `P = P_I(F)`, as there.
 - `K` is open with `hKc` (compact) and `hPK : IsIwasawaPair P₀(F) K`.
@@ -95,14 +92,15 @@ The setting combines those of Units 20 and 22:
   and the tempered growth of every `I_P^G A` from
   `rationalHasTemperedCoefficients_normalizedInduction` (Lemma III.2.3) and `hTA A`.
 - **`rationalFourierOrbitSection_apply f A`**: `ψ_f[O, P]_A = f̂(A, P)`, the
-  `rationalInducedFourierTransform` of Unit 22 at the representative `A`.
+  `rationalInducedFourierTransform` of `RationalInducedFourierTransform` at the representative `A`.
 - **`rationalFourierOrbitSection_mem_coherent f`**: for inverse-invariant `μG`
   (`[μG.IsInvInvariant]`), `ψ_f[O, P]` is coherent: its values at two representatives of one
   class correspond under every equivalence between them.
 - **`pairing_rationalInducedOrbitWavePacket_eq_integral_productPairing … q r f hrf`** (formula
   (1)). Suppose `r ∈ C^∞(O, P)` satisfies `r = ψ_f[O, P]`. Then
   `(f_ψ, f)_G = ∫_O conj(w(ω)) (ψ_ω, f̂(ω, P)) dω`. Here:
-  - `f_ψ = rationalInducedOrbitWavePacket … q` is the wave packet of `q` (Unit 20);
+  - `f_ψ = rationalInducedOrbitWavePacket … q` is the wave packet of `q`
+    (`RationalInducedOrbitWavePacket`);
   - `(φ₁, φ₂)_G = ∫ conj(φ₁) φ₂ dμG` (`pairing`);
   - `(ψ_ω, f̂(ω, P))` is the product of V.2 (`unitaryOrbitProductPairing … q r ω`);
   - the measure on `O` is `discreteSeriesOrbitMeasure` for `ρX`.
@@ -113,22 +111,25 @@ The setting combines those of Units 20 and 22:
   `fourierOrbitSection_mem_coherent` with the actual data, after unfolding the definitions.
   (A direct `rfl` for `_apply` exceeds the heartbeat limit.)
 - Formula (1) applies `pairing_inducedOrbitWavePacket_eq_integral_productPairing` with:
-  - the data of Unit 20;
+  - the data of `RationalInducedOrbitWavePacket`;
   - the Laurent property and continuity of `leviRationalUnitaryCoordinates`;
   - `isUnimodularModulus_standardUnipotentPoints`, `rationalLeviData`, `hM`,
     `rationalMinimalModulus_eq_one`;
-  - the data of Unit 22 for the Fourier side.
+  - the data of `RationalInducedFourierTransform` for the Fourier side.
 
   It then unfolds `unitaryOrbitWeightedProductPairing` and `rationalInducedOrbitWavePacket`.
-  The final step is `with_reducible_and_instances exact`, as in Units 19–22.
+  The final step is `with_reducible_and_instances exact`, as in `RationalInducedCoefficients`,
+  `RationalInducedOrbitWavePacket` and `RationalInducedFourierTransform`.
 
 ## Scope and hypotheses
 
 - Only standard parabolics `P_I ⊇ P₀` are covered.
-- `hsw` (Lemma II.1.5) and `hTA` are hypotheses, as in Unit 22. For square-integrable
-  representatives `hTA` follows from Corollary III.1.2 (`RationalSquareIntegrableRapidDecayStatement`,
-  unproved). `hcoeff` is the same hypothesis as in Unit 20.
-- Proposition VII.1.3 (`ψ_f[O, P] ∈ C^∞(O, P)`) is not proved on actual points. Formula (1)
+- `hsw` (Lemma II.1.5) and `hTA` are hypotheses, as in `RationalInducedFourierTransform`. For
+  square-integrable representatives `hTA` follows from Corollary III.1.2
+  (`RationalSquareIntegrableRapidDecayStatement`, proved as `rationalSquareIntegrableRapidDecay`).
+  `hcoeff` is the same hypothesis as in `RationalInducedOrbitWavePacket`.
+- Proposition VII.1.3 (`ψ_f[O, P] ∈ C^∞(O, P)`) is not proved here; `RationalFourierOrbitSmoothness`
+  proves it on actual points. Formula (1)
   takes the smooth section `r` with `r = ψ_f[O, P]` as data.
 - The rest of the proof of Proposition VII.2.2 (vanishing for non-conjugate Levi subgroups,
   the intertwining operators and `γ(G|M) c(G|M)²`) is not treated here.

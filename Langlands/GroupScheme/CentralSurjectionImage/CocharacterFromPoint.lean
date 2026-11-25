@@ -117,7 +117,7 @@ theorem IsDatum.exists_restrict [IsAffine Z.toGrp.X.left] [Nontrivial S]
     rw [hcm, AddMonoidAlgebra.coeff_single, Finset.mem_coe, Finsupp.mem_support_iff,
       Finsupp.single_eq_same]
     exact one_ne_zero
-  refine ⟨Γ, hm, ⟨T, rfl⟩, p', ?_, ?_⟩
+  refine ⟨Γ, hm, (AddSubgroup.fg_iff Γ).mpr ⟨T, rfl, T.finite_toSet⟩, p', ?_, ?_⟩
   · have hinj : Function.Injective
         (expMapG (G := Z.toGrp) (S := S) (Γ.subtype.prodMap Γ.subtype)) :=
       affineMap_injective _ (AddMonoidAlgebra.mapDomain_injective

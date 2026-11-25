@@ -1,7 +1,5 @@
 # Proof: rational surjectivity of torus quotients with torus kernel
 
-Worker 175.
-
 `Langlands.GroupScheme.torusQuotientRationalSurjectivity` proves exactly
 [`TorusQuotientRationalSurjectivityStatement.{u}`](QuotientRationalSurjectivityStatement.md)
 for an arbitrary universe `u`. Let `k : Type u` be a field with
@@ -106,7 +104,6 @@ Fix `k`, `B`, `C`, `q` and a rational point `c` of `C`.
 
 ## Verification
 
-The module compiles with 0 errors and 0 warnings in environment
-`5c94c648-e8dc-4002-a50a-071ebf3f6096`. Declaration inspection reports only
+The module compiles with 0 errors and 0 warnings. Declaration inspection reports only
 the axioms `propext`, `Classical.choice` and `Quot.sound`. The published
 statement pair and its imports are unchanged.

@@ -1,7 +1,5 @@
 # Commutative groups without tori under field extension
 
-Author: Worker 1467.
-
 This internal deduction combines the published geometric cocharacter vanishing
 and specialization results. The target group is an affine commutative group
 scheme locally of finite type over an arbitrary field; smoothness and

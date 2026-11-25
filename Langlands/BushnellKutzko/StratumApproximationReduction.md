@@ -28,8 +28,13 @@ with universe parameters `uF, uV`. Here:
 - `Pᵢᵢᵢ` is `CriticalDerivedStratumStatement.{uF, uV}` (BK93 (2.4.1)(iii)).
 - `T7` is the published `StratumApproximationStatement.{uF, uV}`.
 
-The premises are unproved propositions. T3, T5 and T6 are published Library
-statements; `Pᵢ`, `Pᵢᵢ` and `Pᵢᵢᵢ` are statements staged in the same task. The theorem `stratumApproximationReduction` proves
+The premises are propositions. T3, T5 and T6 are published Library
+statements; `Pᵢ`, `Pᵢᵢ` and `Pᵢᵢᵢ` are statements in their own modules
+(`PureStratumSimpleApproximationStatement`,
+`SimpleStratumCorestrictionCongruenceStatement`, `CriticalDerivedStratumStatement`).
+The Library proves T3, T5, T6, `Pᵢᵢ` and `Pᵢᵢᵢ` (`minimalCriticalExponent`,
+`stratumEquivalence`, `refinement`, `simpleStratumCorestrictionCongruence`,
+`criticalDerivedStratum`) and has no proof of `Pᵢ` or of T7. The theorem `stratumApproximationReduction` proves
 the implication; it uses the published proof `tameCorestriction` (T1) for the
 existence of tame corestrictions. Its axioms are `propext`, `Classical.choice`
 and `Quot.sound`.

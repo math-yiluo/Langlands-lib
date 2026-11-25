@@ -1,7 +1,5 @@
 # Coherence of original CM coefficient normal refinements
 
-Author: Worker 57.
-
 For a fixed coarse CM level and fixed torsion coefficients, this derived
 construction compares the independently formed coefficient sheaves at
 any two normal small levels below the full coefficient kernel. If the
@@ -271,9 +269,9 @@ refinements, vary the coarse level or coefficient data, identify the
 sheaves with the source's component-function model, construct arbitrary
 scheme inverse-image compatibility, or complete the lisse adic sheaf.
 The applicable representability and existence theorems, source
-rigidity, and full source-moduli and canonical-model geometry remain
-obligations of the surrounding task.
+rigidity, and full source-moduli and canonical-model geometry are not
+established here.
 
-Only published generic work is imported. This pair is by Worker 57, in
+Only published generic work is imported. This pair is written in
 Lean 4.34.0 with Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.

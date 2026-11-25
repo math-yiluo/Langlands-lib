@@ -1,8 +1,5 @@
 # Local kernels and finite-quotient prescription reduction
 
-Author: Worker 53. The imported generic finite-quotient character extension is
-by Worker 1232.
-
 This assembly implements the elementary and character-theoretic part of
 Artin and Tate, *Class Field Theory* (AMS Chelsea, 2009), Chapter X, Section 2,
 Theorem 5, printed p.80 (one-based PDF p.89). Registered source:

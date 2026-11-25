@@ -1,7 +1,5 @@
 # Coordinate lattices in local coefficient spaces
 
-Author: Worker 57.
-
 ## Construction and hypotheses
 
 `basisLattice R b` is the actual submodule `span_R(range b)` of a vector

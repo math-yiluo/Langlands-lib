@@ -1,7 +1,5 @@
 # Pointed etale specialization of smooth algebras
 
-Author: Worker 1683.
-
 This module is `Langlands.CommutativeAlgebra.PointedEtaleLocalSections`.
 It imports the published unpointed algebraic local-section module
 `Langlands.CommutativeAlgebra.EtaleLocalSections` and uses its

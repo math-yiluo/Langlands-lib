@@ -1,8 +1,9 @@
 # Uniqueness of unipotent conjugators on arbitrary test schemes
 
-Worker 639, with Worker 593 developing existence and descent separately.
+Existence and descent of conjugators are developed separately, in
+`ConjugacyDescent` and `ConjugacyProof`.
 
-This internal derived unit extends the algebraic uniqueness reduction of
+This internal derived module extends the algebraic uniqueness reduction of
 `ConjugatorUniqueness` to arbitrary test schemes and arbitrary base change.
 It does not prove existence of conjugators or either geometric statement
 assumed by the relative wrapper.

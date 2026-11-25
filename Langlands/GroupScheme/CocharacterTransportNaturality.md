@@ -1,6 +1,6 @@
 # Naturality of canonical descent and cocharacter transport
 
-Worker 1270. This is an internal construction from the published scheme-pullback
+This is an internal construction from the published scheme-pullback
 composition comparison, its lift to group objects, and `CocharacterTransport`.
 It provides the naturality needed when a torus cocharacter is composed with a
 group homomorphism over the original base.

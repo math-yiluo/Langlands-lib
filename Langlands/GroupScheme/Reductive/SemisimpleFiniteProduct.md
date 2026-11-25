@@ -1,7 +1,5 @@
 # Semisimplicity of finite products
 
-Worker 632.
-
 This internal helper constructs `semisimplePi`, the actual finite categorical
 product bundled with its semisimplicity witness, and proves that the product of
 semisimple field group schemes is semisimple. The underlying group of the

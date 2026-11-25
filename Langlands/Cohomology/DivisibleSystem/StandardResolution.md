@@ -1,6 +1,6 @@
 # The standard resolution of ℓ-divisible systems
 
-Author: Worker 61. Built on `Langlands.Cohomology.DivisibleSystem` (the
+Built on `Langlands.Cohomology.DivisibleSystem` (the
 `ℓ`-divisible systems `DivisibleSystem C ℓ`, their images `T.map F` under
 additive functors preserving finite limits and finite colimits, `mapNatTrans`
 and `degree`) and on Mathlib. Names in the first two sections are in the
@@ -49,8 +49,7 @@ resolution and any freeness are not part of this module.
   complex (see below), but `d_n` need not equal the alternating sum. For
   example, on `ℚ`-vector spaces take `P V = V ⊕ (V ⊗ V)`,
   `P f = f ⊕ (f ⊗ f)` and `ε` the first projection: there `d_2` and the
-  alternating sum differ by a sign on a nonzero element (Reviewer 1362's
-  counterexample in review 3c9b446c of an earlier version of this module).
+  alternating sum differ by a sign on a nonzero element.
   The systems below and the group case `indResBot` use additive `P`, where
   the two descriptions agree.
 - `standardPowMap_comp_standardCounit` is naturality of `ε`:
@@ -162,8 +161,8 @@ Now `P` is additive and preserves finite limits and finite colimits, and
 ## Provenance and interpretation
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
-J. Math. Kyoto Univ. 39-2 (1999), section 2, printed pp.305–306. Worker 61
-read (2.4), (2.5) and the following paragraph in the scanned original.
+J. Math. Kyoto Univ. 39-2 (1999), section 2, printed pp.305–306. (2.4), (2.5)
+and the following paragraph were read in the scanned original.
 
 1. The functor of (2.4). Mathlib's induction along `φ : G →* Γ` is
    `(k[Γ] ⊗_k A)_G`, with `h ∈ Γ` sending `⟦h₁ ⊗ a⟧` to `⟦h₁h⁻¹ ⊗ a⟧`. For

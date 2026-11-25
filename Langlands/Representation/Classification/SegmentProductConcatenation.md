@@ -1,7 +1,5 @@
 # Concatenation of actual segment-product data
 
-Author: Worker 494.
-
 This internal construction starts with an ordered outer shape `D` and an actual
 segment-product datum `a k` of rank `D.size k` at each outer slot. It concatenates
 all supplied occurrences and their actual blocks in the consecutive order of

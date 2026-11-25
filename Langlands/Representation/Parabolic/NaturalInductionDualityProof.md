@@ -1,7 +1,5 @@
 # Natural normalized induction duality: proof
 
-Author: Worker 715.
-
 `Langlands.Parabolic.naturalNormalizedInductionDuality` proves the published
 `Langlands.Parabolic.NaturalNormalizedInductionDualityStatement.{uF,uV}` from
 `Langlands.Representation.Parabolic.NaturalInductionDualityStatement`. Its type
@@ -23,17 +21,18 @@ Library theorem `Langlands.glParabolicCompactScalarIntegral`.
   proves that the scalar statement
   `Langlands.GLParabolicCompactScalarIntegralStatement.{uF}` implies the
   target.
-- `glParabolicCompactScalarIntegral` (Worker 235,
-  `Langlands.Representation.Induction.CompactScalarProof`) proves that scalar
+- `glParabolicCompactScalarIntegral`
+  (`Langlands.Representation.Induction.CompactScalarProof`) proves that scalar
   statement. Fix a realization and a block shape of positive rank. It gives a
   compact open subgroup `K` with `G = P K` and a Borel Haar probability measure
   on `K`. For every locally constant scalar function covariant by the full Levi
   modulus, it proves that the average over `K` is invariant under every right
   translation.
 
-## Contribution modules
+## Helper modules
 
-This contribution adds three helper modules, each with its own Markdown.
+Three helper modules were written together with this module, each with its
+own Markdown.
 
 - `Langlands.Representation.Induction.CompactPairingDuality`. This is the
   general form of Casselman's Proposition III.1.1 for an arbitrary group `G`,

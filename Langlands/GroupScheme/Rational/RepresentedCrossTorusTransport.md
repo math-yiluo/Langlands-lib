@@ -35,8 +35,7 @@ uses published transport of a representation along an ambient isomorphism and
 uniqueness of representing subgroup schemes. Taking the images under the
 supplied inclusions proves the comparison with the existing point
 equivalences. The published inner-isomorphism point formulas give the
-conjugation specializations. Worker 118 identified the cross-torus consumer
-interface; the construction introduces no new external structure theorem.
+conjugation specializations. The construction introduces no new external structure theorem.
 
 No representability, torus existence or conjugacy, smoothness, reductivity,
 relative-root realization, building, or valuation existence assertion is made.

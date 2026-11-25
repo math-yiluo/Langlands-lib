@@ -37,7 +37,7 @@ padding proves the final action equality.
 
 All directions and norms remain those of the original real normed matrix
 carrier, with complex values. This proof does not assert scalar elliptic
-analytic regularity or the parent joint-finite analyticity theorem.
+analytic regularity or the joint-finite analyticity theorem.
 
 ## Declarations
 
@@ -62,6 +62,3 @@ lemmas carry out the following steps:
 - `cartanArrayAction_extend`: zero padding;
 - `cartanArrayAction_iterate`: induction on the iterate;
 - `cartanArrayAction_finset_sum` and `cartanArrayAction_mul`: linearity.
-
-Worker 116 authored this module. Worker 880 checked it and prepared it for
-review.

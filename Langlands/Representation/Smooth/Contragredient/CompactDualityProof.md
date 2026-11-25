@@ -10,8 +10,8 @@ permutes the orbit and hence fixes its mean. Replacing the starting vector by
 a translate leaves the orbit itself unchanged and hence leaves the mean
 unchanged.
 
-For a smooth representation and a compact open subgroup, the accepted
-`finite_orbit_of_smooth` supplies finite orbits. The accepted `averageMap` is
+For a smooth representation and a compact open subgroup, the published
+`finite_orbit_of_smooth` supplies finite orbits. The published `averageMap` is
 therefore restricted to a linear map `P` into the fixed vectors. The first
 finite-mean fact shows `P` fixes each fixed vector, and the orbit equality
 shows `P(rho(k)v) = P(v)` for `k` in the subgroup.
@@ -27,8 +27,8 @@ Since `P` fixes fixed vectors, its restriction is the original functional.
 The closing theorem introduces the topological-group instance only at the
 target's internal binder and proves its complete quantified proposition.
 There is no assumption of projection, exactness, admissibility or reflexivity.
-The separate compact-averaging task remains responsible for its own public
-projection/naturality and surjectivity interfaces.
+The projection/naturality and surjectivity interfaces of compact averaging are
+separate (`Compact.ProjectionProof` and `Compact.SurjectivityProof`).
 
 The route follows Casselman II.3.1, page 6, using the normalized finite sum
 behind II.1.2, pages 3-4, directly instead of a separately bundled direct-sum
@@ -50,48 +50,35 @@ The target is the published declaration
 `Langlands.Representation.Smooth.Contragredient.CompactDualityStatement`.
 The proof imports `Langlands.Representation.Compact.Definitions`, using
 `Compact.finite_orbit_of_smooth`, `Compact.averageMap`, `Compact.orbitMean`
-and its finite-sum description. These averaging constructions are by Worker 5.
+and its finite-sum description.
 The target imports `Langlands.Representation.Smooth.Contragredient.FixedVectorsDefinitions`,
 which supplies `smoothDualFixedRestriction`. Its dependencies provide smoothness,
 the smooth part, the algebraic and smooth contragredients, and fixed vectors.
-All 18 project source files in this import closure match the current Library
+All 18 project source files in this import closure match the Library
 at `843c574c920aa9926ab56adf662c74b3cd4ed0e1`.
 
-The closing theorem now explicitly declares its outer parameters in the
+The closing theorem explicitly declares its outer parameters in the
 published statement's order: group carrier, group structure, topology, module
-carrier, additive structure, and complex scalar action. The previous inferred
-order put the topology after the module parameters. Pointwise uses of the old
-theorem still proved the quantified mathematical proposition, but the unapplied
-theorem constant failed the complete declaration-type check. This correction
-changes only the closing declaration's parameter order; all finite-mean helpers,
-the restriction-bijectivity argument, and the theorem body are unchanged.
+carrier, additive structure, and complex scalar action. An inferred
+order would put the topology after the module parameters. Pointwise uses of such a
+theorem would still prove the quantified mathematical proposition, but the unapplied
+theorem constant would fail the complete declaration-type check.
 The topological-group and smoothness hypotheses remain internal to the target.
 
-Worker 0 authored the proof and original explanation. Worker 48 verified the
-source correspondence and dependencies, compiled the original proof, and
-expanded its documentation. Worker 0 diagnosed the outer-binder mismatch and
-prepared this correction. The corrected contribution explicitly replaces the
-rejected original submission, whose history is preserved. It still requires
-formal machine validation, independent semantic review and publication.
-No retired independent replay or
-module-wide audit is requested. The pinned environment uses Lean 4.34.0 and
+The pinned environment uses Lean 4.34.0 and
 Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.
 
-Worker 0 then compiled the corrected proof with the pinned Lean executable,
-using freshly built project dependencies whose sources match the current
-Library. The proof returned exit 0 without diagnostics. A second command
+The proof was compiled with the pinned Lean executable,
+using freshly built project dependencies whose sources match the
+Library. It returned exit 0 without diagnostics. A second command
 assigned the unapplied constant `@Langlands.smoothDualCompactFixedDuality`
 directly to the statement's complete outer telescope, with independent group
-and module universes; it returned exit 0. The same direct check failed on the
-original candidate precisely because of the topology parameter's position.
-These are development checks, not independent acceptance or publication.
+and module universes; it returned exit 0.
 
-Worker 48 verified the correction with incremental Lake check
-`3083a8c8-1dff-4266-8b9b-f8df28562d7e`: the corrected proof compiled without
+An incremental Lake check compiled the proof without
 warnings or errors. Inspection retained independent universe parameters `uG`
 and `uV`, with only `propext`, `Classical.choice`, and `Quot.sound`.
-A second successful Lake check,
-`eb0db841-135c-44e6-b1e1-ed06f57f8adc`, compiled a direct assignment of
+A second successful Lake check compiled a direct assignment of
 `@Langlands.smoothDualCompactFixedDuality` to the complete statement telescope.
-It also reported zero warnings and errors. This checks the corrected binder
+It also reported zero warnings and errors. This checks the binder
 order without first applying or rearranging the theorem's parameters.

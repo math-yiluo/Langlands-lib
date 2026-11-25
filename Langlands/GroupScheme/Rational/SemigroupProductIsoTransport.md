@@ -1,6 +1,6 @@
 # Exact semigroup products under equivariant isomorphisms
 
-This internal transport unit works at every universe over any field, with
+This internal transport module works at every universe over any field, with
 two actual affine group schemes, actions of the same commutative group
 scheme, and a supplied equivariant group-scheme isomorphism `e`. It does
 not require the acting group to be split, nor the two affine groups to be
@@ -42,6 +42,6 @@ Applying this construction to the inverse equivariant isomorphism gives
 The blocks, their positive additive closures, the exact cross-exclusion
 hypothesis, arbitrary orderings, and the case of zero factors are
 unchanged. These are derived constructions from the imported actual
-support, closed-inclusion and ordered-product interfaces. This unit
+support, closed-inclusion and ordered-product interfaces. This module
 constructs neither a solvable-group decomposition nor scalar descent,
 and does not prove the full `SemigroupOrderedProductStatement`.

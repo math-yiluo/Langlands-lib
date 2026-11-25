@@ -1,8 +1,8 @@
 # Statement: Berkovich's center map is surjective and restricts to charts and rational points
 
-This unit states, without proof, the basic properties of Berkovich's center map
+This module states, without proof, the basic properties of Berkovich's center map
 `π : X^an → X` for the Library's polynomial-locus analytification. The map is
-defined in `AnalytificationCenter`. The unit covers the affine center map
+defined in `AnalytificationCenter`. The module covers the affine center map
 `AffineAnalytification.center K P` with values in the prime spectrum, and the
 scheme-level map `SchemeAnalytification.center K f` with values in `X`. The
 proposition is
@@ -95,10 +95,11 @@ Scheme part, for all such `K`, `X` and `f`:
 
 ## Scope
 
-The unit supplies no proof and edits no published or staged input. It imports
+The module supplies no proof; the statement is proved as `analytificationCenter`
+in `AnalytificationCenterProof`. It imports
 `AnalytificationCenter` and `SchemeAnalytificationRationalPoints`. It does not
 describe the fibres of `π` over points that are not `K`-rational, the points
 with finite completed residue field over `K`, or the `L`-points for extensions
 `L` of `K`. It states nothing about structure sheaves, flatness of the local
-maps (Theorem 3.4.1(ii)), or maps induced by morphisms of schemes. These remain
-successor obligations of the parent task.
+maps (Theorem 3.4.1(ii)), or maps induced by morphisms of schemes. These lie
+outside this statement.

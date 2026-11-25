@@ -1,8 +1,10 @@
 # Rational-point injectivity through affine scalar-quotient pullbacks
 
-Author: Worker 309. This unit supplies a proved algebraic construction and a
-conditional analytic reduction for Task 7247. It does not prove the task's full
-Hausdorff and topological embedding target.
+This module supplies a proved algebraic construction and a
+conditional analytic reduction for `SpaceAnalytificationRationalPointsStatement`.
+It does not prove that statement's full Hausdorff and topological embedding
+target, which `spaceAnalytificationRationalPoints` (module
+`SpaceAnalytificationRationalPointsProof`) proves.
 
 ## Algebraic construction
 
@@ -40,7 +42,8 @@ hypothesis on the algebraic space is needed.
 
 `rationalPoint_injective_of_pointLifting` assumes the explicit point-lifting
 property for all categorical analytic pullback squares over the fixed `K`,
-in the same field, space and index universe as the task. The property says
+in the same field, space and index universe as
+`SpaceAnalytificationRationalPointsStatement`. The property says
 that any pair of ordinary points with equal image has a point of the given
 pullback with those two projections. It asserts neither uniqueness of
 such a point nor a topological pullback universal property.
@@ -58,8 +61,9 @@ the presheaf pullback square by this section identifies the two maps
 `Spec K → X`. The lifted Yoneda equivalence identifies the original
 rational points.
 
-The point-lifting property remains a genuine explicit premise. Its
-independent proof and publication are separate from this unit. No
+The point-lifting property remains a genuine explicit premise of this
+theorem; the Library proves it separately as `exists_point_of_isPullback`
+(module `LocalizedPullbackPoints`). No
 Hausdorffness, local finite type, rational-point naturality or analytic
 étale local-isomorphism premise is used in this injectivity reduction.
 The theorem does not assert continuity, the inducing property, or a

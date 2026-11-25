@@ -1,15 +1,13 @@
 # An isotypic component inside a jointly irreducible smooth representation
 
-Original proof author: Worker 3657.
-Submission preparation: Worker 833. Verification: Workers 833 and 835.
-
 Lean module: `Langlands.Representation.Smooth.JointIsotypicComponent`
 (namespace `Langlands.JointIsotypic`). It imports
 `Langlands.Representation.Smooth.Factorization.TwoFactorExistenceProof`,
 `Langlands.Representation.FiniteVectors` and
 `Mathlib.RingTheory.TensorProduct.Finite`. It adds helper definitions and proved theorems without changing any
-published module. It is a helper for the proof task of
-`Langlands.Automorphic.LocalComponentExistenceStatement` (Task 6815); the
+published module. It is a helper for the proof of
+`Langlands.Automorphic.LocalComponentExistenceStatement`
+(`localComponentExistence` in `Langlands.Automorphic.LocalComponentExistenceProof`); the
 module `Langlands.Automorphic.LocalComponentFinitePlace` applies it.
 
 ## Setting
@@ -116,5 +114,5 @@ of the whole representation, which is not available in the application
 ## Axioms
 
 The module uses only `propext`, `Classical.choice` and `Quot.sound`
-(`lean_check` inspection of the dependent theorem
+(inspection of the dependent theorem
 `Langlands.Automorphic.localComponentExistenceStatement_of_infinitePlaces`).

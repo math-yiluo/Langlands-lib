@@ -15,9 +15,8 @@ generic lemma `map_averageMap_of_forall_eq`) and `Jacquet.SmoothTwist` (for
 `Jacquet.isSmooth_action`).
 
 It supplies the first four clauses of
-`Langlands.Jacquet.IwahoriContractionJacquetStatement` for focused proof task
-`70794755-13dc-4217-9b1e-b9e13ed7910d`. The closed Jacquet finite-length task
-`73e60be8-481a-4cea-b464-eed3bd89be7f` is a separate consumer. The structural
+`Langlands.Jacquet.IwahoriContractionJacquetStatement`, which
+`iwahoriContractionJacquet` in `IwahoriContractionProof` proves. The structural
 input `hbasis : HasIwahoriContractionBasis N M Nbar` remains an explicit
 hypothesis; its realization for actual reductive rational-point parabolics is
 separate.
@@ -27,9 +26,8 @@ p-adiques*, French version dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 The precise passages are V.5.2(ii)–(iv), printed p.123 / PDF p.129, and VI.6.1,
-printed pp.176–177 / PDF pp.182–183. Worker 834 authored the reused Lean proof.
-Worker 1004 checked it against the current Library and original passages and
-revised this documentation; the Lean implementation is unchanged.
+printed pp.176–177 / PDF pp.182–183. The Lean proof was checked against the
+Library and the original passages.
 
 All declarations are in `Langlands.Jacquet`. The group universe `uG` and the
 carrier universe `uV` are independent. Throughout, `ρ : Representation ℂ G V`,

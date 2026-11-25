@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.CommutativeAlgebra.FiniteTypeIntGRingStatement
 import Langlands.CommutativeAlgebra.FiniteTypeIntGRing.TensorFiberRegular
 

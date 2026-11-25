@@ -29,5 +29,5 @@ finite-field comparison constructions; it makes no additional literature claim.
 No equivalence or map-compatibility hypothesis is left to a caller. The result
 does not assert vanishing or absolute degree-two exactness.
 
-Authorship: Worker 54. The intrinsic field and unit identifications are imported
-from Worker 68's published `FixedFieldStages` module.
+The intrinsic field and unit identifications are imported from the published
+`FixedFieldStages` module.

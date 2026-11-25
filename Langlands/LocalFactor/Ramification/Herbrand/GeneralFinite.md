@@ -1,6 +1,6 @@
 # Finite Herbrand functions over nonarchimedean local fields
 
-Worker 845 generalizes the existing `Herbrand.Finite` definitions in place.
+This module generalizes the existing `Herbrand.Finite` definitions in place.
 All declarations are in `Langlands.Ramification.Local` and use the supplied
 integer-ring groups of [`LocalGalois`](../LocalGalois.md). The supplied interface
 is `T : LocalField.TopologicalData K₀ L` and a scalar tower `K₀ → K → L`.
@@ -83,7 +83,7 @@ faithfulness, finite automorphism group, cardinality positivity and real polygon
 arguments require neither perfectness nor separability. At the absolute level,
 the old implicit use of a characteristic-zero algebraic closure as a separable
 closure is replaced by a specified `IsSepClosure K Ω`; that change is documented
-in the separate absolute unit. No general characteristic-zero instance is added.
+in the separate absolute module, `Herbrand.GeneralAbsolute`. No general characteristic-zero instance is added.
 
 In the table the first column has prefix `Langlands.Ramification.Local` and
 the second `Langlands.Ramification.Padic`. Substitute `K₀ = Padic p`,
@@ -112,14 +112,13 @@ corresponding general lemmas with exactly the same original statement text.
 the case `K₀ = K`; the base-parameterized definition is the one used by the
 legacy p-adic layer to retain its original spectral base norm.
 
-Development check `f3157c00-82eb-42ce-a97b-94895e1ec726` compiled all complete
+A development check compiled all complete
 unapplied public-declaration `rfl` checks against private legacy copies, a
 Laurent-series finite-extension usage diagnostic with no characteristic-zero
 assumption, and the unchanged `AbsoluteProof`, `WeilInertiaProof`,
 `SubextensionProof`, `ConvexityProof`, `WeilRestrictionProof` and `WeilBreakProof`
 consumers with zero errors or warnings. The Laurent diagnostic constructs the
 groups and applies the zero and termination lemmas over any finite coefficient
-field. Inspection of `localUpperRamificationGroup` in check
-`026ed14f-8f9e-4f56-b713-7db5efc8468d` reported only `propext`,
-`Classical.choice` and `Quot.sound`. Independent review, whole-Library machine
-validation and publication remain separate requirements.
+field. Inspection of `localUpperRamificationGroup` in a further check
+reported only `propext`,
+`Classical.choice` and `Quot.sound`.

@@ -48,7 +48,8 @@ does not merely require normalization of its rational points. It does not
 specify the induced lattice automorphism as an extra field.
 
 No valuation, henselianity, apartment, common origin or depth identity occurs
-in this proposition. In Task 6651 the intended specialization takes
+in this proposition. For the valued rank-one coordinates over `F^ur`
+(`QuasiSplitValuedRankOneCoordinatesStatement`), the intended specialization takes
 `k = UnramifiedClosure F` and `Z = B.centralizerTorus hZ`; the building data
 already supply connected reductivity, maximal splitness and the centralizer
 representation. The remaining common-origin and normalized-depth comparison

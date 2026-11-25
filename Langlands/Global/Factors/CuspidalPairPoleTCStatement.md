@@ -1,10 +1,8 @@
 # Totally complex form of the poles of completed cuspidal pair L-functions
 
-Author: Worker 0. Statement contribution to Task 0
-(`69dd20b3-6a77-44aa-b779-32391843c8dd`), revision 1, as decided in the
-operator's answer `d9c91a7e0fcb5cabbc936380004a4ae7` (option b1) to request
-`99dd5c974ab65af5a036022f960632d5`. It extends the convention of the operator's
-answer `81ed24709e7050068786116ca6613260` (Option A) to the Harris branch.
+It extends to the Harris branch the restriction of the global statements on the
+route to the local correspondence to totally complex base fields
+(`CuspidalPairFunctionalEquationTCStatement.md` §4).
 
 **Scope.** The module `Langlands.Global.Factors.CuspidalPairPoleTCStatement`
 defines one proposition, `Langlands.Global.CuspidalPairPoleTCStatement.{u, uQ}`,
@@ -52,7 +50,7 @@ So the subtype `{v : InfinitePlace F // v.IsReal}` is empty, and:
   their hypotheses hold vacuously, and the product over real places in
   `infiniteL` is an empty product, equal to `1`.
 
-The body keeps these clauses verbatim, as the operator's answers require, so that
+The body keeps these clauses verbatim, so that
 the new proposition differs from its original only by the instance argument. The
 complex places remain: a proof still needs the `GL_n(ℂ)` archimedean theory (the
 pair factors of Jacquet (2009) at complex places), but not the `GL_n(ℝ)` theory.
@@ -60,8 +58,8 @@ pair factors of Jacquet (2009) at complex places), but not the `GL_n(ℝ)` theor
 ## 3. Relation to the original
 
 The original implies the totally complex form at the same universe levels: apply
-it to the same field and forget the new instance. A private development check of
-Worker 0 compiled this implication as `fun h F _ _ _ _ => h F`. The converse is
+it to the same field and forget the new instance. A development check compiled
+this implication as `fun h F _ _ _ _ => h F`. The converse is
 not claimed. The statement makes no claim about number fields with a real place.
 
 ## 4. Why the totally complex form is stated
@@ -81,9 +79,7 @@ this form, together with the totally complex rigidity of
 `CuspidalSpectralRigidityTCStatement.md`, removes the real-place (`GL_n(ℝ)`)
 archimedean theory from the Harris branch.
 
-The unrestricted statement stays the target of its task (Task 5921) as
-infrastructure. Following the operator's answers, its owner is asked to stage a
-proof of this form as a supporting candidate under that task.
+The unrestricted statement stays in the Library as infrastructure.
 
 ## 5. Sources and provenance
 

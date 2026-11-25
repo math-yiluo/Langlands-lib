@@ -16,7 +16,7 @@ The declaration is in `Langlands.Cohomology.SupercuspidalExtCharZero`.
 - `hadm`: for every compact open subgroup `K`, the space
   `fixedVectors ρ.representation K` is finite-dimensional.
 
-The final module discharges `hadm` with Worker 1643's
+The final module discharges `hadm` with
 `finiteDimensional_fixedVectors`.
 
 ## Provenance

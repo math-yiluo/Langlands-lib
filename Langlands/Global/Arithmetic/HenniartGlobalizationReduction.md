@@ -1,14 +1,13 @@
-# Henniart's relative globalization from Harris's Proposition 4.8 and five open inputs
+# Henniart's relative globalization from Harris's Proposition 4.8 and five inputs
 
-Author: Worker 5134. This is an internal supporting unit of the proof task
-`1b87b965-a232-4c02-a51f-e287f630c549`. That task's exact target is
+This module supports the proof of
 `Langlands.Global.HenniartGlobalizationStatement`
 (`Langlands/Global/Arithmetic/HenniartGlobalizationStatement.lean`). The module
 `Langlands.Global.Arithmetic.HenniartGlobalizationReduction` defines the proposition
 `Langlands.Global.HenniartGlobalizationReductionStatement` and proves it as
-`henniartGlobalization_reduction`. It keeps five published, still unproved
-propositions as antecedents. It does not prove the unconditional target, and publishing
-it does not complete the host task.
+`henniartGlobalization_reduction`. It keeps five published propositions as
+antecedents; four of them are proved in the Library (see below). It does not prove the
+unconditional target.
 
 ## The reduction statement
 
@@ -32,24 +31,28 @@ carriers are in `uW` and presentation carriers in `uP`.
 - `Langlands.LocalClassField.CommonClosureReciprocityExistence.{uK}`
   (`Langlands/ClassFieldTheory/Local/ReciprocitySystemStatement.lean`): every p-adic field
   has a geometrically normalized coherent family of local reciprocity maps on its finite
-  extensions. It supplies the family `e` on `K` in Harris's Proposition 4.8. Proof task
-  `26fda979-9fe9-4e34-b341-a68f57de7f89`. The Library reduces it to
-  `FiniteCupArtinCharacterComparison`
+  extensions. It supplies the family `e` on `K` in Harris's Proposition 4.8. It is proved
+  as `commonClosureReciprocityExistence`
+  (`Langlands/ClassFieldTheory/Local/CommonClosureExistenceProof.lean`). The Library also
+  reduces it to `FiniteCupArtinCharacterComparison`
   (`commonClosureReciprocityExistence_of_finiteCupComparison`).
-- `Langlands.ClassField.Global.RelativeWeilGroup.LocalInducedRestrictionStatement.{uW, 0}`
+- `Langlands.ClassFieldTheory.Global.RelativeWeilGroup.LocalInducedRestrictionStatement.{uW, 0}`
   (`Langlands/VirtualRepresentation/Global/RelativeWeilLocalRestrictionStatement.lean`):
   Tate (1979), (2.3.5) with (1.6.1), the local restriction formula for representations
-  induced from relative Weil groups. Proof task `cfea3159-7908-43b1-a677-75834c3859bd`.
-- `Langlands.ClassField.Global.RelativeWeilGroup.AssociatedCentralCharacterStatement.{0, uW, uP}`
+  induced from relative Weil groups. It is proved as `localInducedRestriction`
+  (`Langlands/VirtualRepresentation/Global/RelativeWeilLocalRestrictionProof.lean`).
+- `Langlands.ClassFieldTheory.Global.RelativeWeilGroup.AssociatedCentralCharacterStatement.{0, uW, uP}`
   (`Langlands/Automorphic/AssociatedCentralCharacterStatement.lean`): Henniart (2000),
-  §2.2, `det S = ω_Π ∘ τ_F`. Proof task `35beef68-9782-4d26-93f1-cb2bae2dec95`.
-- `Langlands.ClassField.Global.RelativeWeilGroup.AssociatedSupercuspidalInductionStatement.{0, uW, uP, uP}`
+  §2.2, `det S = ω_Π ∘ τ_F`. It is proved as `associatedCentralCharacter`
+  (`Langlands/Automorphic/AssociatedCentralCharacterProof.lean`).
+- `Langlands.ClassFieldTheory.Global.RelativeWeilGroup.AssociatedSupercuspidalInductionStatement.{0, uW, uP, uP}`
   (`Langlands/Automorphic/AssociatedFactorStatement.lean`): Henniart (2000),
-  Théorème 2.4. Proof task `65c9a94c-af88-4876-baa4-43d78ccd5531`.
-- `Langlands.ClassField.Global.RelativeWeilGroup.LocalTransferReciprocityStatement.{0}`
-  (`Langlands/ClassField/Global/LocalRelativeWeilTransferStatement.lean`): Tate (1979),
-  (1.6.1), the transfer of a local map is inverse geometric local reciprocity. Proof task
-  `960e8dac-1593-4e9e-a96e-20cc689cb4aa`.
+  Théorème 2.4.
+- `Langlands.ClassFieldTheory.Global.RelativeWeilGroup.LocalTransferReciprocityStatement.{0}`
+  (`Langlands/ClassFieldTheory/Global/LocalRelativeWeilTransferStatement.lean`): Tate (1979),
+  (1.6.1), the transfer of a local map is inverse geometric local reciprocity. It is
+  proved as `localTransferReciprocity`
+  (`Langlands/ClassFieldTheory/Global/LocalRelativeWeilTransferProof.lean`).
 
 Harris's Proposition 4.8 is not an antecedent of the reduction. It is the hypothesis of
 `HenniartGlobalizationStatement` itself. The other inputs of the argument are already
@@ -131,7 +134,7 @@ Fix Harris's Proposition 4.8, an arithmetic class family `c`, a p-adic field `K`
 
 ## Helper modules
 
-The proof uses four further new modules of this unit, each with its own Markdown:
+The proof uses four further modules, each with its own Markdown:
 
 - `Langlands.Global.Arithmetic.HenniartWitnessedGenerator`: witnessed generators from
   irreducible unitary representations weakly associated with cuspidal classes, and

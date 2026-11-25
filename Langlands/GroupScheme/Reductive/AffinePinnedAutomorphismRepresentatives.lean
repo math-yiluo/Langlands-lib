@@ -31,7 +31,7 @@ theorem existsUnique_pinnedAutomorphism
       M.closed M.maximal M.fibrewiseRootDatum M.rootLines
       M.closed M.maximal M.fibrewiseRootDatum M.rootLines
       M.basis M.basis M.pinning M.pinning θ⁻¹ hθinv
-  refine ⟨σ, ⟨hθ, ⟨τ, hτ, ?_⟩, ?_⟩, ?_⟩
+  refine ⟨Aut.of σ, ⟨hθ, ⟨τ, hτ, ?_⟩, ?_⟩, ?_⟩
   · intro U x m
     have h := hτχ U x (θ.weightMap m)
     change
@@ -47,7 +47,8 @@ theorem existsUnique_pinnedAutomorphism
       Subtype.ext (θ.indexEquiv.symm_apply_apply a)
     rwa [ha] at h
   · intro ρ hρ
-    apply hσunique ρ
+    apply Aut.ext
+    apply hσunique ρ.asIso
     obtain ⟨hθ', ⟨υ, hυ, hυχ⟩, hρX⟩ := hρ
     refine ⟨⟨υ, hυ, ?_⟩, ?_⟩
     · intro U x m

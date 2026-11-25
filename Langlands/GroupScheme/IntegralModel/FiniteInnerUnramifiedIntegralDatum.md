@@ -7,7 +7,7 @@ rings, field inclusions, lifted automorphisms and finite overlap cover from
 `FiniteUnramifiedIntegralDatum`, `InnerSemilinearCoefficientRecovery`,
 `InnerSemilinearExtension` and `InnerSemilinearCoherence`, together with the
 proved `smoothHomExtension` and its strictly Henselian fixed-field
-specialization. No original-literature theorem is asserted by this unit.
+specialization. No original-literature theorem is asserted by this module.
 
 Let `F` be a nonarchimedean local field with the Library's compatible valuation
 and topology, and let `E` be an intermediate field of its separable closure

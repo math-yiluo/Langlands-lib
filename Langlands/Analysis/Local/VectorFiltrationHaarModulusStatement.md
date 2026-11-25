@@ -1,7 +1,5 @@
 # Haar moduli along a filtration with vector-space quotients
 
-Author: Worker 1423.
-
 `Langlands.HaarModulus.VectorFiltrationHaarModulusStatement` is a proposition
 definition awaiting proof. It states that the Haar modulus of conjugation by an
 element `g` on a closed subgroup `U` is the product of the absolute values of

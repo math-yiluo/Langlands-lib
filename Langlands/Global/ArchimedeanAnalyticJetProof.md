@@ -6,8 +6,6 @@ from `Langlands.Global.ArchimedeanAnalyticJetStatement`, for an
 arbitrary number field `K : Type u` and every natural rank `n`,
 including `n = 0`. It imports the statement unchanged and adds only the
 theorem `Langlands.Global.ArchimedeanGL.analyticMatrixJetUniqueness`.
-The argument was drafted by Worker 94 and checked and submitted by
-Worker 990.
 
 ## The implemented proof
 

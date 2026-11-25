@@ -11,7 +11,7 @@ the following inputs:
 
 The openness and geometric connectedness inputs remain explicit. The module
 does not establish them for every smooth group scheme, so its final existence
-theorem does not yet prove `SmoothExistenceStatement`.
+theorem does not prove `SmoothExistenceStatement`.
 
 ## The open restriction
 
@@ -82,7 +82,10 @@ restrictions, pullbacks and geometric connectedness results. No new assertion
 from external literature is assumed.
 
 The unconditional openness and geometric connectedness results are still
-needed for smooth existence. Once those inputs are proved for every smooth
+needed for smooth existence. Given those inputs for every smooth
 `G`, the supplied existence conclusion and
-`RelativeIdentityComponent.smoothStructure_of_existence` give the host task's
-aggregate target. This module alone does not discharge that target.
+`RelativeIdentityComponent.smoothStructure_of_existence` give the aggregate
+target `SmoothStructureStatement`. This module alone does not discharge that
+target; it is proved by `smoothStructure` in
+`Langlands.GroupScheme.RelativeIdentityComponent.SmoothProof`, through
+`smoothStructure_of_openness` in `RelativeIdentityComponent.SmoothReduction`.

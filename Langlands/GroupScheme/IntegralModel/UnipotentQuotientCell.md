@@ -31,4 +31,5 @@ their original integral product is exactly the given section.
 The provenance is internal composition of the cited Library results and the
 proved dynamic kernel-cell construction. This is an integral-coordinate
 bridge for the depth-zero opposite-factor argument. Construction of a suitable
-quotient, a translated-cell normalizer and the host theorem remain separate.
+quotient, a translated-cell normalizer and the opposite-factor theorem this
+bridge serves remain separate.

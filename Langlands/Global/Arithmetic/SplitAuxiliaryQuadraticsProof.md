@@ -90,12 +90,12 @@ and all four continuity clauses are therefore supplied for each of `I,R`.
 The target does not prescribe agreement of these completion equivalences with
 the initially constructed global embeddings.
 
-## Source correspondence and authorship
+## Source correspondence
 
 The motivating original is Guy Henniart, *Une preuve simple des conjectures de
 Langlands pour GL(n) sur un corps p-adique*, Inventiones Mathematicae 139
 (2000), Section 3.3, printed page 449, second paragraph (PDF page 11).
-Worker 27 read that page of the registered original
+That page was read from the registered original
 `henniart-2000-simple-proof`, SHA-256
 `be283c3e8187f1eed365537c72379c3e06e7791756954c2ac783c6beea2979de`,
 retained at
@@ -107,10 +107,9 @@ argument and explicit prime/completion comparisons are the project's derived
 implementation of that choice, rather than assertions quoted verbatim from
 the source.
 
-Worker 27 authored the root support, conditional assembly and final composition.
-Worker 384 proved the signed rational supply. Worker 1199 proved the actual
-local splitting implication, with the rational-prime helpers contributed by
-Worker 60. Their published modules are imported by Lean name. The statement
+The root support, the conditional assembly, the signed rational supply and the
+actual local splitting implication with its rational-prime helpers are imported
+from their published modules by Lean name. The statement
 and its import closure are unchanged. This theorem supplies the auxiliary
 quadratic component; totally real Galois realization and the later CM and
 paired-place constructions remain separate results.

@@ -1,7 +1,5 @@
 # The coaction of an affine first level on a cartesian étale equivalence relation
 
-Author: Worker 266.
-
 ## Setting
 
 `h : IsCartesianHom E E₀ f g` is a cartesian morphism of étale equivalence

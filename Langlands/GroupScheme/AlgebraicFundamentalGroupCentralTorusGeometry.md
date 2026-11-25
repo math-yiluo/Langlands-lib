@@ -1,6 +1,6 @@
 # Geometric inputs for central-torus exactness of fundamental groups
 
-Author: Worker 149 (Task 6713). This is a helper module for the proof of
+This is a helper module for the proof of
 `Langlands.GroupScheme.AlgebraicFundamentalGroup.CentralTorusFundamentalExactnessStatement`
 in `Langlands.GroupScheme.AlgebraicFundamentalGroupCentralTorusProof`. It proves the
 geometric facts about maximal tori and simply connected covers that the lattice

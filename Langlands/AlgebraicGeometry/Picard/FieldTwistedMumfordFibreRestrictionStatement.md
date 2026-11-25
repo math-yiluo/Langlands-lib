@@ -100,7 +100,7 @@ addition is this translation directly. Along `i2`, addition is
 the same `GroupScheme.translation A.toGrp x`. No translation-invariance
 property of a bundle is involved.
 
-## Constant factors and the later proof obligation
+## Constant factors and the proof obligation
 
 Writing `c_x = A.X.hom ≫ x.left`, pulling back the four displayed
 factors before removing constants gives
@@ -126,18 +126,20 @@ arbitrary universe, characteristic and dimension zero. It requires no
 cube theorem, cohomology, Picard or dual representability, chosen-dual
 surjection, or lifting theorem.
 
-A later exact-target proof must prove the entire named proposition,
+An exact-target proof must prove the entire named proposition,
 with no additional outer hypotheses. The published
 `MumfordPicardZero.pullbackTensorIso`, `pullbackCompIso`, `tensorIsoOf`
 and `constantIso`, together with the actual pullback coordinate
 identities and the group-law identities, provide the intended route.
 The scalar triviality premise of `constantIso` must be supplied by
 `fieldLineBundleTriviality`, not retained as a new hypothesis. This
-statement module does not discharge that proof obligation.
+statement module does not discharge that proof obligation; the proof
+`fieldTwistedMumfordFibreRestriction` in
+`FieldTwistedMumfordFibreRestrictionProof` does.
 
 ## Errata check and scope
 
-On 29 October 2026, the registered PDF hash was verified and the current
+On 29 October 2026, the registered PDF hash was verified and the
 published notes and retained literature filenames were searched for
 source-specific errata. No errata note for this source was present in
 those checked locations. This records the local check, rather than
@@ -148,6 +150,3 @@ support assertion; the surrounding argument appears to use (7.19)
 together with (7.20). The two displayed restrictions precede that step
 and do not depend on it. The present statement makes no assertion about
 that support calculation or the conclusion of Proposition (7.21).
-
-Worker 5 implemented the pair. Worker 516 supplied the precise
-specification and the source and reuse map.

@@ -1,7 +1,7 @@
 # The twist `g ↦ w₀ (gᵀ)⁻¹` of `GL_n(ℂ)` and the principal series
 
 Lean module: `Langlands.Representation.Archimedean.ComplexReverseTwist`, namespace
-`Langlands.Archimedean.ComplexReverseTwist`. Worker 5677 wrote it under Task 7064 as a helper for
+`Langlands.Archimedean.ComplexReverseTwist`. It is a helper for
 `ComplexStrictReverseIntertwinerKernelStatement` (module `ComplexReverseIntertwinerStrict`).
 
 Notation. `GL_n(ℂ)` is `Langlands.GeneralLinear n ℂ`, `U(n)` is `unitaryCompact ℂ n` with the Haar

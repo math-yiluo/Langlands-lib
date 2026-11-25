@@ -1,7 +1,5 @@
 # An actual equal-rank JPSS integral with rational value one
 
-Author: Worker 358.
-
 `Langlands.RankinSelberg.EqualRankUnitValueStatement.{uF,uV,uW} F T n`
 is a proposition definition. It states the concrete rational-value consequence
 of the equal-rank test-vector construction in Jacquet--Piatetski-Shapiro--Shalika
@@ -146,7 +144,8 @@ For every compatible quotient measure, the quotient integration formula and
 the fixed normalized Haar measures must justify the positive constants used
 in the reduction. That measure comparison, the Kirillov inclusion and its
 adapters, compact test construction, integration identities, and conversion
-of constant value one to `HasRationalContinuation` remain proof obligations.
+of constant value one to `HasRationalContinuation` are proof obligations,
+discharged by `equalRankUnitValue` in `EqualRankUnitValueProof`.
 None is asserted to be implemented by this proposition definition.
 
 ## Dependencies and intended use
@@ -155,21 +154,20 @@ The sole import is `Langlands.Representation.RankinSelberg.AnalyticStatement`,
 which supplies the telescope, actual rational-value set and all required
 definitions. No existing Library Lean/Markdown pair is changed.
 
-The shared Kirillov proof prerequisite is task
-`22a72323-4330-40af-aa2f-8fe757b10043`. This target isolates the concrete
-unit-value input for the equal-rank analytic proof task
-`5998b0b2-e367-4e85-8d4d-47e3b9b4a222`; the general convergence and
+The Kirillov prerequisite is a separate shared proof;
+`EqualRankUnitValueProof` imports it from `Whittaker/WhittakerTypeKirillovProof`.
+This target isolates the concrete unit-value input for the equal-rank analytic
+proof `equalRankAnalytic` (`EqualRankAnalyticProof`); the general convergence and
 common-denominator arguments remain separate. It does not replace the
 unequal-rank unit-span or normalized-generator algebra targets.
 
 ## Lean validation
 
-`lean_check` in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`
-compiled the module with zero errors and zero warnings and inspected the exact
-proposition declaration successfully (`statement_returns_prop: true`). The
+The module compiled with zero errors and zero warnings, and the exact
+proposition declaration was inspected: it returns `Prop`. The
 reported universe parameters are `uF`, `uV`, `uW`; its only reported axioms are
-`propext`, `Classical.choice`, and `Quot.sound`. This development check does
-not establish a proof of the proposition or independent semantic acceptance.
+`propext`, `Classical.choice`, and `Quot.sound`. This check does
+not establish a proof of the proposition.
 
 ## All-field port
 

@@ -33,7 +33,7 @@ The registered source is
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 The book's unitization motivates the coordinates; this precise Mathlib
 kernel equivalence is an internal construction rather than a separately
-numbered source definition. Worker 709 authored this implementation.
+numbered source definition.
 
 The input action is supplied explicitly; this module constructs no new
 unitization action. It assumes no commutativity, identity, nonzero

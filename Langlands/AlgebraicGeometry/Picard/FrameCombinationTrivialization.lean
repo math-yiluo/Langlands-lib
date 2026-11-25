@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AlgebraicGeometry.Modules.TensorSections
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_RelativePicardFunctor
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_ModulesSectionsTensor
@@ -132,7 +132,7 @@ field point `B → K`, and the sections of the fibre are spanned over `K` by pul
 many global sections `m i`, then `N` becomes trivial after a flat finitely presented base change
 `B → A` whose image contains the point, on every scheme mapping compatibly to `X` and
 `Spec A`. -/
-theorem exists_flat_trivialization_of_span (N : X.Modules) (hN : IsInvertible N)
+theorem exists_flat_trivialization_of_span (N : X.Modules) (hN : IsInvertibleFLT N)
     {ι : Type} [Fintype ι] (m : ι → Γ(N, ⊤)) (K : Type u) [Field K] [Algebra B K]
     (htriv : Nonempty ((Scheme.Modules.pullback (pullback.fst f (specMap B K))).obj N ≅
       SheafOfModules.unit (pullback f (specMap B K)).ringCatSheaf))
@@ -160,7 +160,7 @@ theorem exists_flat_trivialization_of_span (N : X.Modules) (hN : IsInvertible N)
   let pC := pullback.fst f (specMap B C)
   let fC := pullback.snd f (specMap B C)
   let NC := (Scheme.Modules.pullback pC).obj N
-  have hNC : IsInvertible NC := IsInvertible.pullback pC hN
+  have hNC : IsInvertibleFLT NC := IsInvertible.pullbackFLT pC hN
   let xC : ι → Γ(pullback f (specMap B C), ⊤) := fun i =>
     fC.appTop ((Scheme.ΓSpecIso (.of C)).inv (MvPolynomial.X i))
   let σ : Γ(NC, ⊤) := comb pC N m xC

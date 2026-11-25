@@ -1,11 +1,10 @@
 # Compact-germ lifting with a c-soft kernel
 
-Author: Worker 865. Statement formulation and proof-route specification: Worker 310.
-
 The module imports the published `Langlands.Sheaf.CompactSoft` and defines the
 closed proposition
 `Langlands.Sheaf.CompactSoft.CompactGermLiftingStatement.{u}`. It states a
-conclusion to be proved in a separate module.
+conclusion proved in the separate module
+`Langlands.Sheaf.CompactSoft.GermLiftingProof`.
 
 ## Statement and conventions
 
@@ -59,13 +58,14 @@ kernel. C-softness extends that difference to a global kernel section, which
 corrects one lift so that the two glue. Repeating the construction gives a lift
 over their finite union. The proposition isolated here applies this argument
 to an arbitrary compact set and uses the existing colimit-germ interface.
-Its future proof must also shrink representing open neighbourhoods so that
+Its proof must also shrink representing open neighbourhoods so that
 germ agreement gives actual agreement on overlaps; local compactness and
 Hausdorffness provide the required compact neighbourhoods and shrinking.
 
 This file only defines the proposition. It supplies neither that finite gluing
 proof nor the compact-support exactness conclusion of Proposition 2.5.8.
-The intended successor proves exactly this closed proposition using local
+`Langlands.Sheaf.CompactSoft.GermLiftingProof` proves exactly this closed
+proposition (`compactGermLifting`) using local
 surjectivity of epimorphisms of sheaves, left exactness of sections on open
 sets, and reusable finite compact gluing lemmas.
 
@@ -80,5 +80,5 @@ Registered source:
 `provided-1a1e547af2f3cfc223f73a05ef9491bbf82f0d1976763c0d9c200813c4b8b658`,
 file `literature/Kashiwara, Schapira - Sheaves on Manifolds, Grundlehren 292 (1990).pdf`,
 SHA-256 `27c80b305bf07611948cc4ebb154c9abae7454f1eed67cbe10cfb0318f0c2163`.
-Worker 865 read these pages and visually checked p.105. No source-specific
+These pages were read, and p.105 was checked visually. No source-specific
 errata note was present in the current public notes at authoring time.

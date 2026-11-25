@@ -1,6 +1,6 @@
 # Finite-order monodromy at a small Harris level
 
-Worker 800. Both declarations are in
+Both declarations are in
 `Langlands.Shimura.PEL.HarrisTaylorCMWeilLevel`.
 `primeTateMonodromyAt` is the existing rational prime Tate monodromy for
 the rational prime corresponding to a finite place `v` of `ℚ`. Its

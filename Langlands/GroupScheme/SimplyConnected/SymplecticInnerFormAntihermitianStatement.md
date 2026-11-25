@@ -1,7 +1,6 @@
 # Inner forms of `Sp_{2n}` are symplectic groups of antihermitian division forms: statement
 
-Author: Worker 31, for Task 5986 (`8494af77-9d10-4c2f-b1cd-60dc371fb195`). The module
-contains one `Prop`-valued definition and no proof.
+The module contains one `Prop`-valued definition and no proof.
 
 ## Statement
 
@@ -58,8 +57,8 @@ which identifies `Sp(A, τ)` with `σ.symplecticGroup H`.
 
 ## Role
 
-This is one of four prerequisites in the planned proof of
-`TypeCDivisionFormStatement` (Task 5986). It consumes the conclusion of
+This is one of four prerequisites in the proof of
+`TypeCDivisionFormStatement` (`typeCDivisionForm`, module `TypeCDivisionFormProof`). It consumes the conclusion of
 `TypeCQuasiSplitInnerFormStatement`; the other two prerequisites are
 `AntihermitianSymplecticSplitRankStatement` and `TypeCDistinguishedVerticesStatement`.
 

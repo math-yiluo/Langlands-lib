@@ -1,9 +1,6 @@
 # Full upper-unipotent orbit classification and ordering
 
-Authors: Worker 179 (Lean proof and documentation), Worker 330 (interface
-and algebraic reduction plan).
-
-This module proves the unchanged, closed proposition
+This module proves the closed proposition
 `Langlands.Whittaker.UnipotentOrbitStatement.{uF}` as
 `Langlands.Whittaker.unipotentOrbit`. The field universe is arbitrary; the
 theorem has no additional parameters or hypotheses.
@@ -37,7 +34,7 @@ and all open initial unions. Stored representatives are `w`; their orbits
 are `P * w⁻¹ * U`.
 
 This is an internal algebraic and topological derivation of the interface
-whose source convention is documented in the unchanged
+whose source convention is documented in
 `UnipotentOrbitStatement.md`. It reuses the published parabolic Bruhat
 proof and finite closed-subgroup orbit ordering, rather than formalizing
 Rodier's distribution argument anew. It proves no character criterion,

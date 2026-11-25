@@ -1,7 +1,5 @@
 # Künneth detection of products of degree-one Čech cocycles (statement)
 
-Author: Worker 274.
-
 This module states `Langlands.Cohomology.Cech.KunnethDetectionStatement`, the Čech-level
 Künneth input of the proof of `Langlands.AbelianScheme.FieldStructureSheafH1DimensionBoundStatement`.
 It only states the proposition; the proof is a separate module.

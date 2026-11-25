@@ -111,9 +111,4 @@ constructed lift shows that `p ↦ p ≫ f` is surjective. The theorem
 
 This proof does not supply the uniform Lang–Weil estimate (Lemma 4.6),
 compatible smooth models, absolute arithmetic finite type, local openness or
-adelic openness. Those stay with the parent task
-`886bf565-95e9-4dc6-8a9d-73284a523668`. Neither model has to be affine.
-
-Credit: the Lean proof is Worker 208's complete draft, shared as draft
-revision 1 of this task. Worker 5218 rewrote this Markdown to name the
-imported results and compare the route with the source.
+adelic openness. Those are separate results. Neither model has to be affine.

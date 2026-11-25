@@ -32,8 +32,7 @@ and the character `ψ⁻¹`, as the statement's Markdown explains.
 
 ## Dependencies
 
-The proof is built on the Whittaker expansion core of Worker 758 (Task 7123, candidate
-`c666ae41-20e6-46d3-a426-0db00338a35f`), the modules
+The proof is built on the Whittaker expansion core, the modules
 `Langlands.Global.RankinSelberg.WhittakerExpansionCore.*`. It uses these results from them:
 
 - `whittaker F r ψ f`, the `ψ`-Whittaker function of `f` with all simple-root coefficients `1`

@@ -182,8 +182,8 @@ def harrisLatticeComponentEquiv :
 /-- The integral product equivalence retains the original completion actions. -/
 theorem harrisLatticeComponentEquiv_action (g : U.subgroup)
     (x : (harrisLatticeAction ρ p U).V) :
-    harrisLatticeComponentEquiv ρ p U (((harrisLatticeAction ρ p U).ρ g).hom x) =
-      fun l : FinitePlacesAbove L p => ((algebraicCompactCoefficientLattice ρ p l.1 U).action.ρ g).hom
+    harrisLatticeComponentEquiv ρ p U (((harrisLatticeAction ρ p U).ρ g).asHom.hom x) =
+      fun l : FinitePlacesAbove L p => ((algebraicCompactCoefficientLattice ρ p l.1 U).action.ρ g).asHom.hom
         (harrisLatticeComponentEquiv ρ p U x l) := by
   ext l
   apply Subtype.ext
@@ -216,13 +216,13 @@ def harrisTorsionEquiv (m n : ℕ) :
 /-- The canonical finite reduction splitting intertwines the original torsion actions. -/
 theorem harrisTorsionEquiv_action (m n : ℕ) (g : U.subgroup)
     (x : (harrisTorsionAction ρ p U m n).V) :
-    harrisTorsionEquiv ρ p U m n (((harrisTorsionAction ρ p U m n).ρ g).hom x) =
+    harrisTorsionEquiv ρ p U m n (((harrisTorsionAction ρ p U m n).ρ g).asHom.hom x) =
       fun l : FinitePlacesAbove L p => ((torsionAction (coefficientScalarIdeal l.1 m)
-        (algebraicCompactCoefficientLattice ρ p l.1 U).action n).ρ g).hom
+        (algebraicCompactCoefficientLattice ρ p l.1 U).action n).ρ g).asHom.hom
           (harrisTorsionEquiv ρ p U m n x l) := by
   obtain ⟨y, rfl⟩ := Submodule.Quotient.mk_surjective _ x
   change (fun l => Submodule.Quotient.mk
-    (harrisLatticeComponentEquiv ρ p U (((harrisLatticeAction ρ p U).ρ g).hom y) l)) = _
+    (harrisLatticeComponentEquiv ρ p U (((harrisLatticeAction ρ p U).ρ g).asHom.hom y) l)) = _
   rw [harrisLatticeComponentEquiv_action]
   rfl
 
@@ -251,7 +251,7 @@ theorem mem_harrisCongruenceKernel (m n : ℕ) (g : U.subgroup) :
           (algebraicCompactCoefficientLattice ρ p i.1 U).action n).V :=
       Pi.single l (Submodule.Quotient.mk y)
     let x := (harrisTorsionEquiv ρ p U m n).symm z
-    have hx : ((harrisTorsionAction ρ p U m n).ρ g).hom x = x := by
+    have hx : ((harrisTorsionAction ρ p U m n).ρ g).asHom.hom x = x := by
       obtain ⟨t, ht⟩ := Submodule.Quotient.mk_surjective _ x
       rw [← ht]
       exact hg t
@@ -260,7 +260,7 @@ theorem mem_harrisCongruenceKernel (m n : ℕ) (g : U.subgroup) :
     have hel := congrFun he l
     have hz : z l = Submodule.Quotient.mk y := Pi.single_eq_same l _
     change ((torsionAction (coefficientScalarIdeal l.1 m)
-      (algebraicCompactCoefficientLattice ρ p l.1 U).action n).ρ g).hom
+      (algebraicCompactCoefficientLattice ρ p l.1 U).action n).ρ g).asHom.hom
         (harrisTorsionEquiv ρ p U m n x l) = harrisTorsionEquiv ρ p U m n x l at hel
     dsimp only [x] at hel
     rw [LinearEquiv.apply_symm_apply, hz] at hel
@@ -268,7 +268,7 @@ theorem mem_harrisCongruenceKernel (m n : ℕ) (g : U.subgroup) :
   · intro hg x
     apply (harrisTorsionEquiv ρ p U m n).injective
     change harrisTorsionEquiv ρ p U m n
-      (((harrisTorsionAction ρ p U m n).ρ g).hom (Submodule.Quotient.mk x)) = _
+      (((harrisTorsionAction ρ p U m n).ρ g).asHom.hom (Submodule.Quotient.mk x)) = _
     refine (harrisTorsionEquiv_action ρ p U m n g (Submodule.Quotient.mk x)).trans ?_
     ext l
     exact (mem_congruenceKernel _ _ n g).mp (hg l)
@@ -316,8 +316,8 @@ def harrisFiniteTorsionAction (m n : ℕ) :
 
 @[simp] theorem harrisFiniteTorsionAction_mk (m n : ℕ) (g : U.subgroup)
     (x : (harrisLatticeAction ρ p U).V) :
-    ((harrisFiniteTorsionAction ρ p U m n).ρ g).hom (Submodule.Quotient.mk x) =
-      Submodule.Quotient.mk (((harrisLatticeAction ρ p U).ρ g).hom x) := rfl
+    ((harrisFiniteTorsionAction ρ p U m n).ρ g).asHom.hom (Submodule.Quotient.mk x) =
+      Submodule.Quotient.mk (((harrisLatticeAction ρ p U).ρ g).asHom.hom x) := rfl
 
 /-- The module splitting respects the actual quotient-ring splitting of scalars. -/
 theorem harrisTorsionEquiv_quotient_smul (m n : ℕ)
@@ -343,13 +343,15 @@ theorem harrisFiniteTorsionAction_ker (m n : ℕ) :
     (harrisTorsionAction ρ p U m n).ρ g = 1
   constructor
   · intro h
+    apply End.ext
     apply ModuleCat.hom_ext
     ext x
-    exact congrArg (fun f : End (harrisFiniteTorsionAction ρ p U m n).V => f.hom x) h
+    exact congrArg (fun f : End (harrisFiniteTorsionAction ρ p U m n).V => f.asHom.hom x) h
   · intro h
+    apply End.ext
     apply ModuleCat.hom_ext
     ext x
-    exact congrArg (fun f : End (harrisTorsionAction ρ p U m n).V => f.hom x) h
+    exact congrArg (fun f : End (harrisTorsionAction ρ p U m n).V => f.asHom.hom x) h
 
 /-- The full finite coefficient action factored through its actual image quotient group. -/
 def harrisFiniteCoefficientAction (m n : ℕ) :
@@ -404,8 +406,8 @@ abbrev harrisCongruenceTransition (m : ℕ) {i j : ℕ} (h : i ≤ j) :
 theorem harrisCongruenceTransition_equivariant (m : ℕ) {i j : ℕ} (h : i ≤ j)
     (g : HarrisCongruenceGroup ρ p U m j) (x : (harrisFiniteCoefficientAction ρ p U m j).V) :
     ((harrisTorsionSystem ρ p U m).map (homOfLE h).op).hom.hom
-        (((harrisFiniteCoefficientAction ρ p U m j).ρ g).hom x) =
-      ((harrisFiniteCoefficientAction ρ p U m i).ρ (harrisCongruenceTransition ρ p U m h g)).hom
+        (((harrisFiniteCoefficientAction ρ p U m j).ρ g).asHom.hom x) =
+      ((harrisFiniteCoefficientAction ρ p U m i).ρ (harrisCongruenceTransition ρ p U m h g)).asHom.hom
         (((harrisTorsionSystem ρ p U m).map (homOfLE h).op).hom.hom x) := by
   induction g using QuotientGroup.induction_on with
   | H g =>

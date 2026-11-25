@@ -1,7 +1,5 @@
 # The Harris CM base and the cocharacter reflex base
 
-Author: Worker 57.
-
 This internal construction supplies the scalar and scheme maps relating
 the CM base used by the Harris numerical trace condition to the actual
 cocharacter reflex base used by the determinant condition. It is derived

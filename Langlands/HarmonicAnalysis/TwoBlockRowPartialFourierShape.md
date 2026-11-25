@@ -1,7 +1,7 @@
 # The positive two-block placement of a row
 
 Module `Langlands.HarmonicAnalysis.TwoBlockRowPartialFourierShape`, namespace
-`Langlands.HarmonicAnalysis.TwoBlockRowPartialFourier`. Author: Worker 1037.
+`Langlands.HarmonicAnalysis.TwoBlockRowPartialFourier`.
 
 This small adapter connects the generic row coordinates of
 `Langlands.HarmonicAnalysis.TwoBlockRowPartialFourierData` with the two-block shape

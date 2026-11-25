@@ -1,7 +1,5 @@
 # Étale local dynamic presentations along a prescribed maximal torus
 
-Worker 189.
-
 `Langlands.GroupScheme.relativeTorusDynamicPresentation` proves the unchanged
 `Langlands.GroupScheme.RelativeTorusDynamicPresentationStatement.{u}` for
 every universe `u`.

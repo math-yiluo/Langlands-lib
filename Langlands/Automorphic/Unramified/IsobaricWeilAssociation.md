@@ -1,9 +1,8 @@
 # Weak association of Weil representations with isobaric constituent data
 
-Worker 8 authored this definition unit for task
-`6c50b2fd-cb4a-47b3-8f5d-d464916d69fb`. The declarations lie in the namespaces
-`Langlands.ClassField.Global.RelativeWeilGroup` (relative Weil group `W_{E/F}`) and
-`Langlands.ClassField.Global.WeilMapSystem` (absolute Weil group `S.WeilGroup`). The module
+The declarations lie in the namespaces
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup` (relative Weil group `W_{E/F}`) and
+`Langlands.ClassFieldTheory.Global.WeilMapSystem` (absolute Weil group `S.WeilGroup`). The module
 extends Henniart's association of Weil representations with automorphic representations,
 already published for actual cuspidal classes, to isobaric constituent data
 (`Langlands.Automorphic.IsobaricData`). No representation, isobaric sum or spectrum is

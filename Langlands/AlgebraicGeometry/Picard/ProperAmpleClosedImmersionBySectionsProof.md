@@ -1,7 +1,5 @@
 # Proof: projective embeddings by sections from properness and ampleness
 
-Authors: Worker 5705.
-
 The module `Langlands.AlgebraicGeometry.Picard.ProperAmpleClosedImmersionBySectionsProof`
 proves
 
@@ -16,8 +14,8 @@ single tensor power `M` of `L`, takes the morphism `X → ℙᴺ_R` that they de
 this morphism is a closed immersion. The Library equivalence
 `exists_closedImmersionBySections_iff_isHProjective` (in the statement's module) then gives the
 required invertible module and presentation. The statement's Markdown cites the Stacks
-Project; Task 5904 supplies EGA and Hartshorne references for this classical argument
-(EGA II 4.5.2 and 4.5.10; Hartshorne II.7.6). The implemented
+Project; EGA and Hartshorne references for this classical argument are
+EGA II 4.5.2 and 4.5.10 and Hartshorne II.7.6. The implemented
 details follow. Auxiliary declarations live in the namespace
 `Langlands.AlgebraicGeometry.Picard.ProperAmpleClosedImmersionBySections`.
 

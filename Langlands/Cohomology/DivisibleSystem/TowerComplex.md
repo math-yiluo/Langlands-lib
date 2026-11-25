@@ -1,6 +1,6 @@
 # Complexes of inverse systems and the limit of the Hom complexes
 
-Author: Worker 61. Built on the published modules
+Built on the published modules
 `Langlands.Cohomology.DiagramHomology` (`diagramHomologyIso`) and
 `Langlands.Cohomology.DivisibleSystem.CompatibleHomComplex`
 (`compatibleCochains`, `compatibleHomComplex`, `compatibleEval`,
@@ -186,7 +186,7 @@ For a commutative ring `R` and a group `G` with a topology,
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
 J. Math. Kyoto Univ. 39-2 (1999), end of the proof of Proposition 4.10,
-printed p.312 (one-based PDF page 14; Worker 61 read the rendered scanned
+printed p.312 (one-based PDF page 14; read in the rendered scanned
 page). After checking the Mittag-Leffler condition for the complexes (4.10.2)
 as `m` varies, Harris writes: "In fact, we have proved the stronger (integral)
 statement

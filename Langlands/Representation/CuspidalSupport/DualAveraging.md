@@ -1,7 +1,5 @@
 # Averaging against smooth functionals, and compact open bases of product Levis
 
-Author: Worker 252.
-
 This helper module supports the forward direction (quasicuspidal ⇒ compact
 coefficients) of `Langlands.CuspidalSupport.LeviHarishChandraTheorem`. It is
 internal infrastructure, not a result quoted from the literature. The averaging

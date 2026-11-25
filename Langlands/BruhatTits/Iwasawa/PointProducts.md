@@ -1,13 +1,13 @@
 # Product propositions on actual parabolic point carriers
 
-Author: Worker 1265.
-
 This module defines the conclusion bodies used to state Iwasawa decomposition
 for the actual rational points of algebraic groups. It constructs no building,
 parahoric or compact subgroup, and proves no decomposition. Its subgroup
-parameter `K` will be instantiated with the separately constructed special
-parahoric `P_x` and the shared special compact `K0` in the geometric statement
-targets. A proposition parameterized by `K` is not the general Iwasawa theorem
+parameter `K` is instantiated with the separately constructed special
+parahoric `P_x` and the shared special compact `K0` in the geometric statements
+`AvailableIwasawaStatement` and `IwasawaExistenceStatement` (modules
+`Langlands.BruhatTits.Iwasawa.AvailableStatement` and
+`Langlands.BruhatTits.Iwasawa.ExistenceStatement`). A proposition parameterized by `K` is not the general Iwasawa theorem
 or the required building-existence assertion.
 
 ## Exact carriers and products
@@ -57,7 +57,7 @@ standard constructions remain their published intersection definitions; this
 module adds no classification or representability claim for them.
 
 These definitions need neither reductivity nor a valuation or topology.
-The final geometric statements must impose their own actual connected
+The geometric statements must impose their own actual connected
 reductive, maximal split torus, minimal parabolic, field and valid-building-data
 hypotheses. No `K` is described here as geometric, compact, open or maximal.
 
@@ -80,7 +80,10 @@ The mandatory *Corrections and additions*, 1 November 2024, registered as
 `23293f51e58d5ceecb91f834743f68058b98431797d2531142415d013fdf61ed`,
 PDF p.30, correct the preceding Theorem 5.3.3 proof and replace Lemma 5.3.5.
 They leave the statement of Theorem 5.3.4 unchanged. Corrected 5.3.3 and
-replaced 5.3.5 have separately owned statement and proof obligations; neither
+replaced 5.3.5 are stated and proved in separate modules (`iwasawaDecomposition`
+in `Langlands.Geometry.Building.IwasawaDecompositionProof` and
+`unipotentNormalizerCoset` in
+`Langlands.Geometry.Building.UnipotentNormalizerCosetProof`); neither
 is a premise of these definitions.
 
 Renard, *Représentations des groupes réductifs p-adiques*, 9 July 2026 edition,
@@ -89,14 +92,14 @@ parabolic and one adapted maximal compact open subgroup `K0`. Registered
 source: `renard-2026-representations-groupes-reductifs-padiques`, SHA-256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 This is consumer row S19(1) of
-`notes/renard/chapter-v-structural-inputs.md`. Applying the future geometric
-statement at the shared `K0`, and then selecting its minimal-parabolic
-instance, will expose that consumer conclusion. The same `K0` must serve
+`notes/renard/chapter-v-structural-inputs.md`. Applying the geometric
+statements at the shared `K0`, and then selecting their minimal-parabolic
+instance, exposes that consumer conclusion. The same `K0` must serve
 all standard indices and arbitrary parabolics.
 
-## Topology and remaining geometric targets
+## Topology and the geometric statements
 
-For the local-field application the field parameters will be
+For the local-field application the field parameters are
 `[Field F] [ValuativeRel F] [TopologicalSpace F]`
 `[IsNonarchimedeanLocalField F]`, covering both characteristics. Affineness
 comes from the explicit connected-reductive hypothesis, and the topology on
@@ -105,12 +108,15 @@ this point group is the named canonical
 subgroups have the induced topology. The product equalities themselves
 do not depend on a topology, and this module installs none.
 
-The geometric targets still must quantify over the actual valid corrected
-building data and every special reduced-building vertex, use its actual
-`P_x` and the sibling's same `K0 = G(F)^1 ∩ Stab(x)`, and retain `P_x ≤ K0`
-without identifying either group with the full reduced fixer. A separate
-general-group target must explicitly conclude existence of those data and
-a special vertex. No such existence, Iwasawa decomposition, flag transitivity,
+`AvailableIwasawaStatement` quantifies over the actual valid corrected
+building data and every special reduced-building vertex, uses its actual
+`P_x` and the same `K0 = G(F)^1 ∩ Stab(x)` as the special-compact existence
+statement `AvailableSpecialMaximalCompactExistence`, and retains `P_x ≤ K0`
+without identifying either group with the full reduced fixer. The separate
+general-group statement `IwasawaExistenceStatement` explicitly concludes
+existence of those data and a special vertex; the Library does not prove it.
+No such existence, Iwasawa decomposition, flag transitivity,
 or quotient compactness is supplied as a hypothesis by this module.
-Proofs of the product conclusions and the deductions about `G/P` remain
-separate obligations.
+This module proves neither the product conclusions nor the deductions about
+`G/P`; `availableIwasawa` (module `Langlands.BruhatTits.Iwasawa.AvailableProof`)
+proves the product conclusions of `AvailableIwasawaStatement`.

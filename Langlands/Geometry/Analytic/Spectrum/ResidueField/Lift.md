@@ -1,7 +1,5 @@
 # Extending point realizations to completed residue fields
 
-Author: Worker 74.
-
 This derived construction extends a realization of a bounded multiplicative
 spectrum point to its actual completed residue field. It uses the published
 quotient, fraction field, absolute value and completion constructions in

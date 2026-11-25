@@ -1,7 +1,5 @@
 # Transporting the geometric Borel witness of a parabolic subgroup
 
-Worker 445.
-
 This internal construction transports the actual factorization used by
 `IsParabolicSubgroup` through a comparison of two iterated base-change
 functors. It does not prove preservation of Borel subgroups under field
@@ -37,6 +35,6 @@ The construction works at arbitrary universe `u`. It uses the existing
 group schemes, homomorphisms and geometric predicates without altering
 them. Its provenance is the indicated composition of published
 definitions, isomorphism transport and functor naturality. It introduces
-no new assertion from the literature. The natural comparison and the
-geometric Borel-preservation premise remain obligations for an
-unconditional field-extension proof.
+no new assertion from the literature. The unconditional field-extension
+proof in `ParabolicFieldExtensionProof` supplies the natural comparison and
+the geometric Borel-preservation premise separately.

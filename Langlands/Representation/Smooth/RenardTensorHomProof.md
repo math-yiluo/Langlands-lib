@@ -1,7 +1,5 @@
 # Regular representations and the smooth tensor–Hom theorems
 
-Author: Worker 139.
-
 `Langlands.Renard.Smooth.renardTensorHomStatements` has exactly the published
 type `Langlands.Renard.Smooth.RenardTensorHomStatements`, with independent
 group and representation-carrier universe parameters. Its statement pair and

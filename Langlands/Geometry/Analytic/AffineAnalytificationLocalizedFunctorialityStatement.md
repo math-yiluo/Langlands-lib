@@ -5,7 +5,7 @@ morphisms `saturatedHom` and `localizedHom` of `AffineAnalytificationLocalizedMa
 respect identities and composites. It also states that the morphism induced by
 the identity between the analytifications for two presentations of the same
 algebra is an isomorphism in the localized category. It is a `Prop`-valued
-definition; this unit supplies no proof.
+definition; this module supplies no proof.
 
 ## Provenance
 

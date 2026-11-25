@@ -40,7 +40,7 @@ unipotents supplies the inside-Levi closedness by preimage. Unimodularity of the
 selected inside-Levi unipotent remains explicit.
 
 `hasStandardCuspidalRemainderSplitting_of_rationalWholeCoproduct` consumes
-`Renard.EveryObjectIsCoproductOfComponents` for the unchanged published
+`Renard.EveryObjectIsCoproductOfComponents` for the published
 `rationalWholeCuspidalDecompositionProperties`. The all-cuspidal factor implies
 cuspidality of its own component by testing its identity subquotient; the other
 factor is exactly the required remainder property. This gives the weaker local
@@ -71,12 +71,12 @@ separate obligation. This component does not prove the full rational
 cuspidal Jacquet-factor extraction statement, construct its geometric filtration,
 or identify geometric grades with proper standard induction.
 
-Worker 1553 implements this internal deduction for the extraction task; Worker 321
-contributed the requested conditional exclusion interface and the connection to
+This internal deduction serves the cuspidal Jacquet-factor extraction; it includes
+the conditional exclusion interface and the connection to
 standard induction inside each Levi. The mathematical inputs are the published
 `IsCuspidalFor`, `IsCuspidal`, `IsLeviCuspidal`, actual first adjointness,
 actual subquotient isomorphism transport, the coproduct universal property and
-the unchanged rational whole-category factors. This is an internal conditional
+the rational whole-category factors. This is an internal conditional
 consequence of those interfaces; it claims no new external splitting theorem.
 
-Worker 1751's naming repair assigns explicit module-specific names to the local instances in this file. This prevents generated-name collisions when the rebuilt inertia and norm-kernel branches are imported or replayed together. Only the instance names change; their values, topology, mathematical statements and proof bodies are unchanged.
+The local instances in this file have explicit module-specific names. This prevents generated-name collisions when the inertia and norm-kernel branches are imported or replayed together. The names do not affect the instances' values, topology, mathematical statements or proof bodies.

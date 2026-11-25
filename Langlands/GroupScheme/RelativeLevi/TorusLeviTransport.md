@@ -1,7 +1,5 @@
 # Transport of unique Levi witnesses containing a prescribed group
 
-Worker 592.
-
 This derived helper transports the actual data in a `TorusLeviWitness`.
 Ambient preservation of the relative Levi predicate is supplied by
 `IsRelativeLeviSubgroup.comp_iso` from `RelativeLevi.AmbientTransport`.

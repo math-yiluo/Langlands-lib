@@ -1,6 +1,6 @@
 # Scalar p-adic Fourier scaling
 
-Worker 1650 proves the existing `Langlands.LocalFactors.PadicFourierScalingStatement.{u}` as `Langlands.HarmonicAnalysis.padicFourierScaling`. The target is imported unchanged from `Langlands.LocalFactor.Harmonic.Statement`. The theorem retains every prime, field universe, supplied topology, continuous nontrivial additive character, additive Haar measure and locally constant compactly supported function.
+This module proves the existing `Langlands.LocalFactors.PadicFourierScalingStatement.{u}` as `Langlands.HarmonicAnalysis.padicFourierScaling`. The target is imported unchanged from `Langlands.LocalFactor.Harmonic.Statement`. The theorem retains every prime, field universe, supplied topology, continuous nontrivial additive character, additive Haar measure and locally constant compactly supported function.
 
 This is an internal derivation from the published `padicScalarHaarScaling` and Mathlib's Bochner integral APIs. The source correspondence and plus-sign convention are those documented in the unchanged [target Markdown](../LocalFactor/Harmonic/Statement.md). No new literature result is assumed.
 

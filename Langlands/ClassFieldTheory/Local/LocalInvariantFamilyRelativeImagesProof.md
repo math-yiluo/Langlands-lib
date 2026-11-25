@@ -1,7 +1,5 @@
 # Relative images of the local invariant family
 
-Author: Worker 272.
-
 This module proves the published proposition
 `Langlands.ClassFieldTheory.Local.LocalInvariantFamilyRelativeImagesStatement`
 (module `Langlands.ClassFieldTheory.Local.LocalInvariantFamilyLawsStatement`).

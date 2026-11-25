@@ -211,13 +211,13 @@ theorem translate_mul (g h : G) : translate F (g * h) = translate F h ≫ transl
 def action : Action C G where
   V := colimit (diagram F)
   ρ :=
-    { toFun := translate F
-      map_one' := translate_one F
-      map_mul' := fun g h => translate_mul F g h }
+    { toFun := fun g => End.of (translate F g)
+      map_one' := congrArg End.of (translate_one F)
+      map_mul' := fun g h => congrArg End.of (translate_mul F g h) }
 
 @[simp] theorem action_V : (action F).V = colimit (diagram F) := rfl
 
-@[simp] theorem action_ρ (g : G) : (action F).ρ g = translate F g := rfl
+@[simp] theorem action_ρ (g : G) : ((action F).ρ g).asHom = translate F g := rfl
 
 theorem ι_translate_of_mem (hF : IsLevelTrivial F) {K : CompactOpenLevel G} {k : G}
     (hk : k ∈ K.subgroup) : ι F K ≫ translate F k = ι F K := by

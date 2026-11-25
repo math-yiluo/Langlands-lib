@@ -1,6 +1,6 @@
 # Actual full semistandard fixed indices and local Levi finiteness
 
-This unit constructs the full fixed-index set for Waldspurger VIII.1.3 from
+This module constructs the full fixed-index set for Waldspurger VIII.1.3 from
 the imported intrinsic index and the actual normalized induced representation.
 It states the all-Levi and proper-Levi local VIII.1.2 hypotheses separately.
 
@@ -92,4 +92,4 @@ proof in the companion uses this existential form and the separate normal-level
 comparison, so it does not assume the arbitrary-level target.
 
 No Fourier support, smoothness, VII.1.4 covariance, synthesis, inversion or
-Plancherel theorem is claimed by this unit.
+Plancherel theorem is claimed by this module.

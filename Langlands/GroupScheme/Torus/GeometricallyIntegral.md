@@ -1,7 +1,5 @@
 # Tori over a field are geometrically integral
 
-Worker 1424.
-
 `IsTorus.geometricallyIntegral`: if `T` is a torus over `Spec k` for a field
 `k` (the published predicate `IsTorus` of `Torus/Lattice.lean`), then the
 structure morphism `T.X.hom` is geometrically integral in Mathlib's sense

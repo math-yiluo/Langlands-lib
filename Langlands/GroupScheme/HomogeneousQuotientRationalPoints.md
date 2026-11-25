@@ -1,7 +1,5 @@
 # Actual rational lifts from sections and finite quotient fibers
 
-Author: Worker 1436.
-
 This internal adapter unit preserves identity-test rational points and the
 supplied actual map. It constructs lifts when the indicated section or
 finite-field torsor input is available.

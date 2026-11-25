@@ -1,12 +1,12 @@
 # Compactly supported sections of smooth equivariant sheaves
 
-Author: Worker 13. Built on Worker 13's published
+Built on
 `Langlands.Sheaf.Equivariant.CompactSupport` (the compact-section
 representation `CompactSections.representation` and functor
 `CompactSections.functor`), `Langlands.Cohomology.EquivariantDerivedSections`
 (left exactness of that functor) and `Langlands.Representation.Category.Abelian`
-(the abelian category `Langlands.SmoothRep R G`), and on `SmoothAbelian` (this
-submission).
+(the abelian category `Langlands.SmoothRep R G`), and on `SmoothAbelian` (ported
+together with this module).
 
 Let `R` be a commutative ring and `G` a group with a topology acting on a
 topological space `X` by continuous translations (`ContinuousConstSMul`). The
@@ -73,7 +73,7 @@ Berkovich, *Etale equivariant sheaves on p-adic analytic spaces* (unfinished
 1995–1996 manuscript), section 1.5, printed p.11, defines the support of a
 section by its nonzero germs and
 `Γ_{c,X{G}}(F) = lim_N Γ_{c,X(N)}(F)`, the colimit over open subgroups `N` of
-compactly supported `N`-invariant sections. Worker 13 read this passage in the
+compactly supported `N`-invariant sections. This passage was read in the
 original. For a smooth sheaf this colimit is the union, over open subgroups,
 of the compactly supported sections they fix. By
 `isSmooth_representation_of_isSmoothSheaf` that union is all compactly

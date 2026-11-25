@@ -87,7 +87,11 @@ theorem smoothCompactAction_sectionDifferential (k : K) (X : RealLieAlgebra F n)
 /-- Additivity in the real direction for the actual section differential. -/
 theorem sectionDifferential_add (X Y : RealLieAlgebra F n) (f : W) :
     sectionDifferential F B S (X + Y) f = sectionDifferential F B S X f + sectionDifferential F B S Y f := by
-  simp only [← sectionEnvelopingAction_real_generator, map_add, LinearMap.add_apply]
+  have hadd : ∀ a b, sectionEnvelopingAction F B S (a + b) =
+      sectionEnvelopingAction F B S a + sectionEnvelopingAction F B S b :=
+    (sectionEnvelopingAction F B S).toRingHom.map_add
+  simp only [← sectionEnvelopingAction_real_generator, map_add (complexify F n),
+    map_add (envelopingGenerator F n), hadd, LinearMap.add_apply]
 
 /-- For compact-equivariant operators, equality of the normalized coefficient
 at infinite compact identity for every input implies equality of sections. -/

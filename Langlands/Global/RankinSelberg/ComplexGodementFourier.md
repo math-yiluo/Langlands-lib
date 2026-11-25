@@ -44,8 +44,7 @@ The statement says that for all `n`, `a` and every Schwartz function
 `∫ Φ(blockA v X · w_(n+2)) ψ_(-a)(S(v,X)) d(v,X) = ∫ rectFourier (-a) Φ (w_(n+1) · blockA v X) ψ_a(S(v,X)) d(v,X)`,
 
 where `S = superdiagSum`. Since `ψ_(-a) = ψ̄_a`, this is Jacquet's statement for `ψ = ψ_a`. The
-integrals are single Bochner integrals over the product space, as the interface agreed with Worker
-273 (Task 7569) asked. Fubini turns them into Jacquet's iterated integrals.
+integrals are single Bochner integrals over the product space. Fubini turns them into Jacquet's iterated integrals.
 
 Provenance: internal formalization of a published lemma. The only change is the choice of
 coordinates (strict upper triangular positions for `v`) and the restriction to `m ≥ 1` rows.

@@ -1,6 +1,6 @@
 # Integration in a finite-dimensional algebraic span
 
-Author: Worker 94. This is an internal construction from scalar Bochner integration, finite bases and algebraic dual separation in Mathlib. It attributes no additional theorem to the external automorphic literature.
+This is an internal construction from scalar Bochner integration, finite bases and algebraic dual separation in Mathlib. It attributes no additional theorem to the external automorphic literature.
 
 For a topological space `X` and a complex vector space `V`, `HasFiniteContinuousSpan F` means that the complex linear span of the range of `F : X → V` is finitely generated and that `l ∘ F` is continuous for every algebraic linear functional `l : V →ₗ[ℂ] ℂ`. No topology is chosen on `V`. The domain and vector spaces may have independent universes. Constants, sums, complex scalar multiples, images under algebraic linear maps, and continuous changes of the domain preserve this property. The finite-span arguments for sums and changes of domain use that a subspace of a finite-dimensional complex vector space is finite dimensional.
 

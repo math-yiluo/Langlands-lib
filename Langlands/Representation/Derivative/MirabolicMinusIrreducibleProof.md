@@ -1,7 +1,5 @@
 # Proof that unnormalized `Φ⁻` sends irreducibles to irreducibles or zero
 
-Author: Worker 806.
-
 This module proves `Langlands.Derivative.Mirabolic.phiMinusIrreducible`, of type
 `PhiMinusIrreducibleStatement.{uF, uV} F T m`, for every p-adic field `F`, topological
 data `T` and `m : ℕ`.

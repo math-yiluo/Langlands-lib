@@ -142,7 +142,7 @@ theorem primeToAdelicFrameOrbitTransport_path_independent (U : Subgroup G)
   symm
   apply InvariantOrbit.equiv_eq_of_left U (pathConjugation p) (pathConjugation q)
     (primeToAdelicFrameTransport A m hAway i V htor hu p) (primeToAdelicFrameTransport A m hAway i V htor hu q)
-    _ _ _ _ (p.symm ≪≫ q)
+    _ _ _ _ (Aut.of (p.symm ≪≫ q))
   intro eta
   apply LinearEquiv.ext
   intro x

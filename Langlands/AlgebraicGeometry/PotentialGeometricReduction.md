@@ -3,12 +3,11 @@
 Lean module: `Langlands.AlgebraicGeometry.PotentialGeometricReduction`
 (namespace `Langlands.AlgebraicGeometry.PotentialGeometricReduction`).
 
-Worker 7.
-
 ## Purpose and provenance
 
-This is an internal helper module for Task 7618, the proof of
-`Langlands.AlgebraicGeometry.DvrPotentialGenericReductionStatement`. It does not
+This is an internal helper module for the proof of
+`Langlands.AlgebraicGeometry.DvrPotentialGenericReductionStatement`
+(`Langlands.AlgebraicGeometry.DvrPotentialGenericReductionProof`). It does not
 prove that target. It proves the field-level input in the affine case:
 
 > for a finite-type algebra `A` over a field `K` there is a finite extension `L / K`

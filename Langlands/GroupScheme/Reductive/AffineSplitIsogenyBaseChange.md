@@ -41,4 +41,6 @@ with any supplied target torus inclusion.
 No local conjugation, commutator or gluing theorem is invoked here. These
 comparisons allow a separate local-ring argument to use the same original
 root data and descend its point identities; they do not construct the
-ambient isogeny or prove the host theorem.
+ambient isogeny or prove the affine split Isogeny Theorem
+`AffineSplitIsogenyTheoremStatement`, which is proved in
+`Reductive/AffineSplitIsogenyTheoremProof`.

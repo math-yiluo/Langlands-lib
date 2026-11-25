@@ -59,10 +59,10 @@ def originalCoordinateIso
     (σ : CategoryTheory.Aut M.group)
     (d : BasedCoordinateIso (M.inclusionOver (𝟙 M.base)) (M.inclusionOver (𝟙 M.base))
       M.rootDatum M.rootDatum M.basis M.basis)
-    (hd : d.groupIso = (baseChange (𝟙 M.base)).mapIso σ) :
+    (hd : d.groupIso = (baseChange (𝟙 M.base)).mapIso σ.asIso) :
     BasedCoordinateIso M.inclusion M.inclusion
       M.rootDatum M.rootDatum M.basis M.basis where
-  groupIso := σ
+  groupIso := σ.asIso
   torusIso := d.torusIso
   rootEquiv := d.rootEquiv
   sourcePairing := d.sourcePairing
@@ -71,18 +71,18 @@ def originalCoordinateIso
   characters := d.characters
   square := by
     have hn := ((Functor.mapGrpNatIso Over.pullbackId) ≪≫
-      Functor.mapGrpIdIso).hom.naturality σ.hom
-    change (baseChange (𝟙 M.base)).map σ.hom ≫ (baseChangeIdIso M.group).hom =
-      (baseChangeIdIso M.group).hom ≫ σ.hom at hn
+      Functor.mapGrpIdIso).hom.naturality σ.asIso.hom
+    change (baseChange (𝟙 M.base)).map σ.asIso.hom ≫ (baseChangeIdIso M.group).hom =
+      (baseChangeIdIso M.group).hom ≫ σ.asIso.hom at hn
     have hs := d.square
     rw [hd] at hs
     simp only [Functor.mapIso_hom] at hs
     calc
-      M.inclusion ≫ σ.hom =
-          M.inclusionOver (𝟙 M.base) ≫ (baseChangeIdIso M.group).hom ≫ σ.hom := by
+      M.inclusion ≫ σ.asIso.hom =
+          M.inclusionOver (𝟙 M.base) ≫ (baseChangeIdIso M.group).hom ≫ σ.asIso.hom := by
         rw [← Category.assoc, M.inclusionOver_id_comp]
       _ = M.inclusionOver (𝟙 M.base) ≫
-          (baseChange (𝟙 M.base)).map σ.hom ≫ (baseChangeIdIso M.group).hom := by rw [hn]
+          (baseChange (𝟙 M.base)).map σ.asIso.hom ≫ (baseChangeIdIso M.group).hom := by rw [hn]
       _ = d.torusIso.hom ≫ M.inclusion := by
         rw [← Category.assoc, hs, Category.assoc, M.inclusionOver_id_comp]
 
@@ -92,7 +92,7 @@ theorem isPinnedAutomorphism_of_basedCoordinateIso_of_fppfLocalPinning
     (d : BasedCoordinateIso M.inclusion M.inclusion
       M.rootDatum M.rootDatum M.basis M.basis)
     (hpin : IsFppfLocallyPinned ((baseChange (𝟙 M.base)).mapIso d.groupIso)) :
-    M.IsPinnedAutomorphism d.groupIso d.rootEquiv⁻¹ := by
+    M.IsPinnedAutomorphism (Aut.of d.groupIso) d.rootEquiv⁻¹ := by
   classical
   have hr : d.rootEquiv ∈ M.basedAutomorphisms := d.simple_iff
   have hθ : d.rootEquiv⁻¹ ∈ M.basedAutomorphisms :=
@@ -122,18 +122,18 @@ theorem isPinnedAutomorphism_of_basedCoordinateIso_of_fppfLocalPinning
     obtain ⟨c, hvec, _⟩ := splitTorus.existsUnique_unit_smul_of_aligned_weightLines
       τ d.groupIso d.square (M.rootDatum.root s) (M.rootDatum.root (p s)) hχ
       (M.pinning s) (M.pinning (p s))
-    have hc1 := pinning_unit_eq_one_of_fppfLocalPinning d.groupIso hpin hvec
+    have hc1 := pinning_unit_eq_one_of_fppfLocalPinning (Aut.of d.groupIso) hpin hvec
     simpa only [hc1, Units.val_one, one_smul] using hvec
   exact M.isPinnedAutomorphism_of_basedCoordinateIso d
-    (preservesLocalPinning_baseChange_of_vector_permutation d.groupIso p hX (𝟙 M.base))
+    (preservesLocalPinning_baseChange_of_vector_permutation (Aut.of d.groupIso) p hX (𝟙 M.base))
 
 /-- Exact extraction is compatible with the actual identity-pullback models. -/
 theorem isPinnedAutomorphism_of_identityCoordinateIso_of_fppfLocalPinning
     (σ : CategoryTheory.Aut M.group)
     (d : BasedCoordinateIso (M.inclusionOver (𝟙 M.base)) (M.inclusionOver (𝟙 M.base))
       M.rootDatum M.rootDatum M.basis M.basis)
-    (hd : d.groupIso = (baseChange (𝟙 M.base)).mapIso σ)
-    (hpin : IsFppfLocallyPinned ((baseChange (𝟙 M.base)).mapIso σ)) :
+    (hd : d.groupIso = (baseChange (𝟙 M.base)).mapIso σ.asIso)
+    (hpin : IsFppfLocallyPinned ((baseChange (𝟙 M.base)).mapIso σ.asIso)) :
     M.IsPinnedAutomorphism σ d.rootEquiv⁻¹ :=
   M.isPinnedAutomorphism_of_basedCoordinateIso_of_fppfLocalPinning
     (M.originalCoordinateIso σ d hd) hpin

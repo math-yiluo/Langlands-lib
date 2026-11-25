@@ -1,11 +1,9 @@
 # Groups for the cyclic orbit of the right `Φ⁻` sequence
 
-Author: Worker 837.
-
 This helper module belongs to the proof of the clause
 `Langlands.Derivative.MirabolicProductMinus.RightPhiShortExact.{uF,uV} F T` of
-`Langlands.Representation.Derivative.MirabolicProductMinusCompatibilityStatement`
-(host task `6cd54f76-f453-4faa-818a-5843e1bbcaff`). It supplies the group data of
+`Langlands.Representation.Derivative.MirabolicProductMinusCompatibilityStatement`.
+It supplies the group data of
 the published split-stage character comparison at the cyclic representative,
 the restriction of the positive character to the kernel intersection, and the
 Haar ratio of that comparison. The cyclic piece is assembled in

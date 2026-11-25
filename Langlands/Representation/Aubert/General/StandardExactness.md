@@ -1,6 +1,6 @@
 # Exactness with the terminal cokernel retained
 
-Internal target interface and intrinsic construction laws by Worker 194.
+Internal target interface and intrinsic construction laws.
 
 `IsExactBeforeTerminal A I` requires the kernel of the actual signed
 differential to equal the actual incoming image at each removed-root degree
@@ -22,7 +22,8 @@ display (*), and the retained-cokernel definition on p.4690. It is a generic
 interface for the actual subgroup-family complex. No theorem here asserts
 that an arbitrary nested family satisfies corrected Theorem 3.6. The
 representation-theoretic assertion for every smooth object of `Alg({I})`
-will be a separate proposition target, specialized eventually to the actual
-standard-subset realization. The corrected two-sided support argument and
-the other unproved general representation-theoretic inputs remain necessary
-for its proof.
+is the separate proposition target `CorrectedTheorem36Statement` (module
+`CorrectedTheorem36`), specialized to the actual standard-subset realization
+as `RationalCorrectedTheorem36Statement` (module `RationalCorrectedTheorem36`).
+The corrected two-sided support argument and the other general
+representation-theoretic inputs are necessary for its proof.

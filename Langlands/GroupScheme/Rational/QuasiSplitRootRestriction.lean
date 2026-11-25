@@ -78,10 +78,10 @@ local notation "S_L" => Functor.obj (CommGroupScheme.baseChange b) S
 local notation "T_L" => Functor.obj (CommGroupScheme.baseChange b) T
 local notation "G_L" => Functor.obj (GroupScheme.baseChange b) G
 
-local instance : IsAffineHom (G_L).X.hom :=
+private local instance : IsAffineHom (G_L).X.hom :=
   MorphismProperty.baseChange_obj (P := @IsAffineHom) b G.X inferInstance
 
-local instance : LocallyOfFiniteType (G_L).X.hom :=
+private local instance : LocallyOfFiniteType (G_L).X.hom :=
   MorphismProperty.baseChange_obj (P := @LocallyOfFiniteType) b G.X inferInstance
 
 /-- Every absolute root has nonzero restriction to the base-changed maximal

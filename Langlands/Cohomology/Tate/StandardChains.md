@@ -1,7 +1,5 @@
 # Explicit coordinates for the standard chain comparison
 
-Author: Worker 45.
-
 This internal pair records representative formulas for Mathlib's existing
 bar/standard resolution isomorphism. An inhomogeneous generator
 `[g₁,...,gₙ]a` becomes the coinvariant class of the tensor of `a` with

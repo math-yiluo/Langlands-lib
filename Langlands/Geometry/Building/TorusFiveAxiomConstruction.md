@@ -1,12 +1,12 @@
 # Actual torus buildings with all five metric-construction axiom families
 
-This internally derived unit constructs actual `ParahoricBuildingData`, a
+This internally derived module constructs actual `ParahoricBuildingData`, a
 polysimplicial realization and an apartment splitting satisfying the seven
 existing predicates in `RootValuationBuildingConstructionStatement`, for every
 actual torus over every nonarchimedean local field and at every universe `u`.
 It requires `IsTorus T.toGrp` and has no anisotropy, splitness, characteristic,
 supplied-building or derived-cover premise. The unrestricted connected-reductive
-parent statement remains open.
+statement `RootValuationBuildingConstructionStatement` remains open.
 
 The supplied-data lemmas use any `ValuationBuildingData` or
 `ParahoricBuildingData` for a commutative ambient group. The final constructor
@@ -56,5 +56,5 @@ Library's documented empty-reflection extension of the restricted Tits building.
 
 The final data-valued dependent pair packages the actual datum, realization and
 splitting with precisely the seven unchanged predicates. This proves the full
-torus specialization, with no assertion of the general parent theorem, a
+torus specialization, with no assertion of the general connected-reductive theorem, a
 metric-space construction, or unramified descent for nonempty root systems.

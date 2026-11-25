@@ -1,10 +1,8 @@
 # Twist compatibility of the Henniart assembly
 
-Authors: Worker 1705, Worker 1715.
-
 This module proves the twist part of the published proposition
 `Langlands.Correspondence.AssemblyOperationStatement` (module `AssemblyRelation`). Its
-main theorem depends on two published propositions that are not yet proved. Both are
+main theorem depends on two published propositions. Both are
 explicit hypotheses:
 
 | Hypothesis | Library declaration (module) | Content |
@@ -12,8 +10,10 @@ explicit hypotheses:
 | `hwell` | `AssemblyWellDefinedStatement.{uF, uP, uA} F` (`Correspondence/AssemblyRelation`) | For every supercuspidal map `c0`, every parameter class `D` is assembled from `c0` (`IsAssembledFrom F c0 D π`) to exactly one automorphic class `π`. |
 | `htw` | `Classification.MultisegmentConstituentCharacterTwistCompatibility.{uF, uA} F F.canonicalTopologicalData` (`Representation/Classification/MultisegmentConstituentCompatibilityStatement`) | For a character `χ` of `Fˣ` with open kernel, `J` is a Zelevinsky socle (resp. Langlands head) of a multisegment `a` if and only if `J ⊗ (χ ∘ det)` is a Zelevinsky socle (resp. Langlands head) of the multisegment `aχ`. Here `aχ` twists every cuspidal base by `χ ∘ det` and keeps every length. |
 
-The module does not prove either hypothesis. Both are separate proof targets in the
-Library. Apart from them, the main theorem uses exactly the hypotheses of
+The module does not prove either hypothesis. The Library proves both separately:
+`assemblyWellDefined` (`Correspondence/AssemblyWellDefinedProof`) and
+`Classification.multisegmentConstituentCharacterTwistCompatibility`
+(`Representation/Classification/MultisegmentConstituentCharacterTwistCompatibilityProof`). Apart from them, the main theorem uses exactly the hypotheses of
 `AssemblyOperationStatement` that concern twists:
 
 - the assembly relation `IsAssemblyOf F c0 c`,
@@ -105,6 +105,5 @@ Fix `n`, `D` and `χ`, and write `χ_W = χ ∘ rec` for the Weil character
 Derived. The module adds one definition, `twistDirectSumEquiv`. It is an elementary
 equivalence of Weil–Deligne representations with the identity carrier map. Every
 theorem combines published definitions with the two hypotheses `hwell` and `htw`. No new
-literature claim is made. Worker 1715 contributed the identity-carrier construction of
-twist equivalences, which `twistDirectSumEquiv` follows and which their published
-`Blocks.blockTwistEquiv` uses.
+literature claim is made. `twistDirectSumEquiv` follows the identity-carrier
+construction of twist equivalences that the published `Blocks.blockTwistEquiv` uses.

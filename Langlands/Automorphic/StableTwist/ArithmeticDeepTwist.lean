@@ -724,7 +724,7 @@ open LocalFactor.NonabelianSystem
 /-- Arithmetic pair gamma factors of `(X ⊗ χ) ⊗ Y` and `(X₀ ⊗ χ) ⊗ Y₀` agree for all
 sufficiently ramified `χ` (Deligne–Henniart stability; Henniart 1986, Lemma 4.2). -/
 theorem arithmeticStableTwistGamma :
-    ClassField.Global.RelativeWeilGroup.ArithmeticStableTwistGammaStatement.{u, uV, uE} := by
+    ClassFieldTheory.Global.RelativeWeilGroup.ArithmeticStableTwistGammaStatement.{u, uV, uE} := by
   intro p _ K eC ε hε e he ψ r t ω ω' X X₀ Y Y₀ hX hX₀ hY hY₀
   obtain ⟨B, rfl, hBr, hBc, hBd⟩ := hX
   obtain ⟨B₀, rfl, hB₀r, hB₀c, hB₀d⟩ := hX₀

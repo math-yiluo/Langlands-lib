@@ -1,7 +1,5 @@
 # Algebraic flatness of full affinoid-domain restrictions
 
-Author: Worker 310.
-
 `PresentedAffinoidAlgebra.Domain.FlatnessStatement` states that, for every
 complete ultrametric normed field `K : Type u`, every presented affinoid
 algebra `A` over `K`, and every `U : Domain K A`, the actual bounded

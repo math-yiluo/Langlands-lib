@@ -1,11 +1,9 @@
 # Renard II.2.1: basis sheafification and the separation step
 
-Worker 6, 1 November 2026.
-
-This source audit identifies a false intermediate assertion in the printed
+This source audit, dated 1 November 2026, identifies a false intermediate assertion in the printed
 sheafification argument, gives a counterexample and explains how to repair
 the argument. The sheafification adjunction remains a formalization
-obligation. This note contains no new Lean declaration or proof receipt.
+obligation. This note contains no new Lean declaration or proof.
 
 The governing source is David Renard, *Représentations des groupes réductifs
 p-adiques*, French version dated 9 July 2026, II.2.1, printed pp.33–37 /
@@ -141,7 +139,7 @@ addition is checked on a common refinement and then by sheaf uniqueness.
 Locally represented sections are locally images of the unit, so the same
 argument gives uniqueness of the factorization. These are mathematical
 proof instructions; the actual maps, naturality, Hom equivalence and
-adjunction still require construction and independent formal review.
+adjunction still require construction and formal verification.
 
 ## Reuse and remaining boundaries
 
@@ -167,18 +165,16 @@ machinery. Its `Functor.IsDenseSubsite.sheafEquiv` declaration takes an
 the needed hypotheses, and comparing to the literal basis condition,
 remain obligations rather than assumptions licensed by this audit.
 
-The basis foundation belongs to task
-`337b01ce-b067-4fc7-873a-f776b52f5f93`. The separate stalk construction
-belongs to `5867d762-4d36-4267-95c0-abd677dafcc1`. They do not establish
+The basis foundation and the separate stalk construction do not establish
 the later sheafification adjunction or basis-extension equivalence.
 Subsequent work must retain independent space and group universes,
 arbitrary chosen bases and empty cases, and must use published
 prerequisites by Lean name.
 
-After the actual stalk construction, further units must cover its
+After the actual stalk construction, the route needs its
 representative assertions, locally represented section groups and their
 maps, the unit and functor, and the exact adjunction statements and
-proofs. The final paragraph of II.2.1 also requires actual restriction and
+proofs; the Library now has them (the adjunction is `germAdjunction`, module `GermUniversalProof`; see the [germ-sheaf progress note](germ-sheaf-progress.md)). The final paragraph of II.2.1 also requires actual restriction and
 extension functors between basis sheaves and all-open sheaves, with the
 natural isomorphisms establishing equivalence. This note does not count
 any of those assertions as completed. The

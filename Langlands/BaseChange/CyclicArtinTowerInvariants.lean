@@ -78,7 +78,7 @@ private theorem lowerGroupOrder_eq_ramificationFactor [IsGalois K.Carrier L.Carr
   let : FiniteDimensional K.Carrier L.Carrier :=
     Module.Finite.of_restrictScalars_finite (Padic p) K.Carrier L.Carrier
   let := relativeIntegerFieldAlgebra (E := L) T
-  let := (LocalClassField.NYLL.relativeIntegerStructure p K L T S).2
+  let := (LocalClassField.UniverseZero.relativeIntegerStructure p K L T S).2
   let : Module.IsTorsionFree T.Integers S.Integers :=
     relativeIntegerAlgebra_isTorsionFree T S
   let : IsLocalHom (algebraMap T.Integers S.Integers) := relativeIntegerMap_isLocalHom T S

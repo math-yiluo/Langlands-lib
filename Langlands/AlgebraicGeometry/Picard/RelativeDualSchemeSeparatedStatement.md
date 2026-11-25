@@ -24,7 +24,7 @@ quasi-separated. `HasDualScheme`, `dualScheme` and the geometric Picard-zero
 predicate used by `IsUniversalPicardZero` are the existing Library
 definitions in `Langlands.AlgebraicGeometry.Picard.DualScheme`.
 
-This unit provides a proposition definition only. It does not prove the
+This module provides a proposition definition only. It does not prove the
 proposition, and no axiom is introduced.
 
 ## Original source and derived formulation
@@ -104,7 +104,7 @@ rigidified Picard-zero families agree via a seesaw argument, is another
 possible route. Mathlib's `IsSeparated.of_valuativeCriterion` additionally
 requires `QuasiSeparated` of the morphism; that hypothesis is not part of
 this statement and would have to be proved. These remarks are route
-guidance only; none of these steps is proved in this unit.
+guidance only; none of these steps is proved in this module.
 
 ## Role
 

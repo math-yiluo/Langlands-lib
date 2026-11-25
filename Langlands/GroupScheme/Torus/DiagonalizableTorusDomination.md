@@ -24,6 +24,6 @@ makes this dominant map pointed. The proof does not select the identity
 component of the diagonalizable source and does not discard nilpotents of the
 finite factor.
 
-All characteristics and imperfect fields are retained. This unit constructs a
+All characteristics and imperfect fields are retained. This module constructs a
 parametrization after a finite separable extension; splitness of a unipotent
 target, descent, and the full conjugacy theorem remain separate obligations.

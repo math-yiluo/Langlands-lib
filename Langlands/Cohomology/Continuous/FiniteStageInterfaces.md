@@ -1,6 +1,6 @@
 # Finite-stage maps and lifted integer coefficients
 
-Author: Worker 22. This interface imports the published canonical comparison
+This interface imports the published canonical comparison
 and its proof from `FiniteQuotientComparisonProof`.
 
 `discreteStageToContinuous B A φ f q` sends actual ordinary cohomology of
@@ -44,6 +44,6 @@ field-unit module is constructed here.
 Literature ID `serre-1979-local-fields`; SHA-256
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`;
 retained file `/home/taskhub/central-library/Serre--Local Fields--1979.pdf`.
-Pinned environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, Lean 4.34.0,
+Pinned environment: Lean 4.34.0,
 Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.
 

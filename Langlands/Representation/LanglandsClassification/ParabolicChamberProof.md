@@ -1,6 +1,6 @@
 # Assembly of the parabolic chamber proofs
 
-Worker 658, Task 7268. Module
+Module
 `Langlands.Representation.LanglandsClassification.ParabolicChamberProof`,
 namespace `Langlands.GroupScheme`.
 

@@ -19,7 +19,7 @@ immersion is equivalent to the Library's actual H-projectivity predicate. -/
 theorem exists_closedImmersionBySections_iff_isHProjective
     {R : Type u} [CommRing R] {X : Scheme.{u}}
     (f : X ⟶ Spec (CommRingCat.of R)) :
-    (∃ M : X.Modules, Scheme.Modules.IsInvertible M ∧
+    (∃ M : X.Modules, Scheme.Modules.IsInvertibleFLT M ∧
       Scheme.Modules.ClosedImmersionBySections M f) ↔ IsHProjective f := by
   constructor
   · rintro ⟨M, _, n, p, hp⟩
@@ -39,7 +39,7 @@ def ProperAmpleClosedImmersionBySectionsStatement : Prop :=
   ∀ (R : Type u) [CommRing R] [IsNoetherianRing R] (X : Scheme.{u})
     (f : X ⟶ Spec (CommRingCat.of R)),
     IsProper f → (∃ L : LineBundle X, L.IsAmple) →
-      ∃ M : X.Modules, Scheme.Modules.IsInvertible M ∧
+      ∃ M : X.Modules, Scheme.Modules.IsInvertibleFLT M ∧
         Scheme.Modules.ClosedImmersionBySections M f
 
 end Langlands.AlgebraicGeometry.Picard

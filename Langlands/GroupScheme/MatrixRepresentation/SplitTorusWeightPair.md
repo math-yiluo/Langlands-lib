@@ -1,7 +1,5 @@
 # Nonreciprocal weights in faithful split-torus representations
 
-Author: Worker 118.
-
 This internal module provides actual universal coefficient vectors for the
 rank-one isometry argument. Let `k : Type u` be any field, `I : Type u` a
 finite index type, and `ρ : G_m^I → GL_N` an actual group-scheme

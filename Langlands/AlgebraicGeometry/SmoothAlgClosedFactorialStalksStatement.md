@@ -78,13 +78,15 @@ field. That general-field case is true but is not stated here; this
 definition keeps only the special case of an algebraically closed field.
 
 The intended consumer is the existence of finite section seeds on abelian
-group schemes over algebraically closed fields (task
-`3ea19da5-0729-4710-aaa0-fddf297ac368` and its successors). There it turns
+group schemes over algebraically closed fields
+(`Langlands.AbelianScheme.AlgebraicallyClosedSectionSeedExistenceProof`, through
+`Langlands.AlgebraicGeometry.Picard.PrimeGermPointwiseSeparation`). There it turns
 prime divisors through a point into invertible ideal sheaves.
 
 ## Proof boundary
 
 The Lean file defines this proposition and supplies no proof. Regular local
 rings and regular schemes appear only in the provenance above; no Lean
-regularity notion or certificate is introduced. A separate proof must
-establish this exact proposition.
+regularity notion or certificate is introduced. The proof of this exact
+proposition is `smoothAlgClosedFactorialStalks` in
+`SmoothAlgClosedFactorialStalksProof`.

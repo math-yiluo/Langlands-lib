@@ -1,6 +1,6 @@
 # The root-count upper bound for the canonical induced space
 
-This is derived supporting work by Worker 1369. It identifies the actual
+This is derived supporting work. It identifies the actual
 opposite-rho unipotent Lie dimension with the positive-root count of a
 supplied pinning and applies the entire-space Frobenius detection bound.
 The argument combines existing Library proofs and makes no new assertion
@@ -40,7 +40,7 @@ span `hspan : p.rootDatum.corootSpan Int = top`. Write `rho` for
 and `U` for `Standard.unipotentScheme p.inclusion (-nu) empty`. The supplied
 pinning contains the connected reductive structure, split maximal torus,
 actual root datum and base; their universal existence is not assumed by
-any theorem in this unit.
+any theorem in this module.
 
 `oppositeRhoPositiveRootEquiv` constructs an equivalence
 
@@ -85,4 +85,5 @@ covariance and detection definitions.
 The supplied pinning and full coroot span remain explicit hypotheses. The
 matching lower bound, irreducibility of the entire canonical space,
 universal existence of the supplied data, and the exact
-`SteinbergBigCellStatement` remain separate obligations.
+`SteinbergBigCellStatement` are not proved in this module; the Library proves
+`SteinbergBigCellStatement` by `steinbergBigCell` (`SteinbergBigCellProof`).

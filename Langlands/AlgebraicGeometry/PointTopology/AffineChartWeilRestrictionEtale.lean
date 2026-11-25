@@ -1,6 +1,6 @@
 import Langlands.AlgebraicGeometry.PointTopology.AffineChartWeilRestrictionFiniteType
-import Langlands.TauCeti.RingTheory.WeilRestriction.Smooth
-import Langlands.TauCeti.Algebra.TensorProduct.Ideal
+import Langlands.RingTheory.WeilRestriction.Smooth
+import Langlands.RingTheory.TensorProduct.QuotientKernel
 import Mathlib.AlgebraicGeometry.Morphisms.Etale
 
 /-! # Étaleness of actual affine-chart Weil restrictions -/
@@ -14,7 +14,7 @@ open _root_.AlgebraicGeometry
 
 namespace Langlands.Algebra
 
-open TauCeti.Algebra
+open Langlands.Algebra
 open scoped TensorProduct
 
 variable (A B C : Type u) [CommRing A] [CommRing B] [CommRing C]

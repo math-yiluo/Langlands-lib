@@ -1,7 +1,5 @@
 # Descent from Weyl double cosets to matrix double cosets
 
-Author: Worker 176.
-
 This internal construction provides `weylToParabolicDoubleCoset`, the actual map
 from `W_C \\ S_n / W_B` to `P_B \\ GL_n(R) / P_C` induced by
 `w ↦ permutation(w)⁻¹`. It works for any commutative ring and every finite rank,

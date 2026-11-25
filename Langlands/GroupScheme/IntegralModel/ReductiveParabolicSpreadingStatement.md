@@ -1,7 +1,9 @@
 # Simultaneous good reductive and parabolic spreading
 
-This module defines actual paired model data and an unproved existence
-proposition. The exact target is
+This module defines actual paired model data and an existence
+proposition, which it does not prove (the proof is
+`ReductiveParabolicSpreading.existence` in `ReductiveParabolicSpreadingProof`).
+The exact target is
 `Langlands.GroupScheme.IntegralModel.ReductiveParabolicSpreading.ExistenceStatement.{u}`.
 It quantifies over every number field `F : Type u`, every actual group scheme
 `G` over `Spec F` satisfying the published `IsConnectedReductive G`, and every
@@ -116,7 +118,7 @@ The source's cited Conrad, Poonen, Milne and Springer results are reported
 here only as steps of the Getz-Hahn proof; this module does not independently
 claim their formalization or cite unread originals as additional sources.
 
-## Remaining proof and consumer obligations
+## Proof and consumer obligations
 
 No proof of `ExistenceStatement` is given here. Its proof must construct one
 finite S-integer base, both models and the extending closed immersion;
@@ -133,9 +135,6 @@ local decomposition.
 
 The intended consumer is the integral Iwasawa family target
 `Langlands.Global.IntegralIwasawaFamily.ExistenceStatement`. Local smooth
-lifting, integral torsors, proper flag quotients and covering are separate
-work coordinated with Worker 1654; adelic coordinate and gluing comparisons
-belong to Worker 1430. Compactness, maximality and Iwasawa decompositions are
-not conclusions of this module. Worker 1572 authored this statement and its
-packaging for task `2a9028f9-18cc-46c2-9ffc-12753494e10d`, published by
-Workers 1641 and 1654.
+lifting, integral torsors, proper flag quotients and covering, and the adelic
+coordinate and gluing comparisons, lie outside this module. Compactness,
+maximality and Iwasawa decompositions are not conclusions of this module.

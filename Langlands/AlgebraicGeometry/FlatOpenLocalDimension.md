@@ -1,8 +1,7 @@
 # Local dimension under flat open spectrum maps
 
 This module proves an internal prerequisite for the base-change comparison
-of local fibre dimension in Stacks Lemma 29.29.3(1). Worker 105 wrote the
-proof; Worker 1604 checked and prepared it for publication.
+of local fibre dimension in Stacks Lemma 29.29.3(1).
 
 The local dimension is the minimum of dimensions of open neighbourhoods,
 as defined in `LocalTopologicalDimension`, with values in `WithBot ℕ∞`.

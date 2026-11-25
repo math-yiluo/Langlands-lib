@@ -1,6 +1,6 @@
 # Simultaneous finite-stage realization of an absolute star equivalence
 
-Worker 838. This is an internal prerequisite for the reverse implication of
+This is an internal prerequisite for the reverse implication of
 `InnerFormStarActionStatement`, derived by combining the published common finite
 Galois splitting field of two tori with the published finite-stage comparison of
 star actions. The simultaneous assertion makes no additional source claim.

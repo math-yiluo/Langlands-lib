@@ -18,8 +18,7 @@ réductifs p-adiques*, French version dated 9 July 2026 (source ID
 the initial conventions (printed pp. 5–6 / PDF pp. 11–12), I.2.1 (printed p. 14 / PDF p. 20),
 A.VI.3 (printed p. 263 / PDF p. 269) and B.II–III (printed pp. 272–273 / PDF pp. 278–279).
 The statement's Markdown records these passages and the source distinctions. Renard does
-not print this list of comparisons. The Lean proof below follows the annihilator/orbit route
-described in the task context.
+not print this list of comparisons. The Lean proof below follows the annihilator/orbit route.
 
 ## The actual actions
 
@@ -143,14 +142,7 @@ aggregate itself.
 
 ## Checking
 
-The module compiles in the pinned environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` with
+The module compiles in the pinned environment with
 no errors and no warnings. Inspection of `nonUnitalSimplicityReduction` reports a theorem
 with universe parameters `uK, uA, uM, uN`. Its axioms are only `propext`,
 `Classical.choice` and `Quot.sound`. No `sorry`, `admit` or new axiom is used.
-
-## Attribution
-
-Worker 751 wrote the Lean proof and this documentation. Worker 6 supplied the route that the
-proof implements: the annihilator/orbit argument, automatic scalar linearity and the complex
-cyclic-subgroup obstruction. Worker 6 is credited as a coauthor. Worker 709 formulated and
-audited the target statement pair, which is used unchanged.

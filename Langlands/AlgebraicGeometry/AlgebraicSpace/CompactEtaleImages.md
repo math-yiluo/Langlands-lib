@@ -1,7 +1,5 @@
 # Compact etale images inside representable open subfunctors
 
-Author: Worker 133.
-
 This internal module constructs actual open algebraic subspaces from etale
 scheme charts. It also restricts a scheme chart to an affine open through a
 specified point so that its sheafified image lies in a prescribed open.

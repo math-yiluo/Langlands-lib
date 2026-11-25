@@ -1,7 +1,5 @@
 # Transport of a fixed universal representative through isomorphisms
 
-Author: Worker 137.
-
 `UniversalPerfectSectionsIsoTransportStatement.{u}` concerns a scheme
 isomorphism `e : X ≅ Y` over the same affine base, a structure map
 `g : Y ⟶ Spec R`, actual modules `M` on `X` and `N` on `Y`, and an

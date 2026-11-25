@@ -49,4 +49,5 @@ comparisons and the named Mathlib associated-prime, localization, compactness
 and sheaf-stalk theorems. It introduces no scheme-level associated-point
 notion and makes no assertion identifying the chosen global finite set with
 an intrinsic associated-point set. It uses none of the line-bundle extension
-or valuative conclusions excluded by the host task.
+or valuative conclusions excluded from the proof of
+`QuasiAffineLineBundleIdealEmbeddingStatement`, which it serves.

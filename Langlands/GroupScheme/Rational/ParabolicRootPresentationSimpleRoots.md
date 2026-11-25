@@ -1,8 +1,8 @@
 # Restricted ambient simple roots and intrinsic component roots
 
 Fix a field, an affine group scheme `G`, and a compatible presentation `r` of
-the actual maps `p : P → G`, `l : M → P`, and `a : A → M`. This internal
-supporting unit identifies restricted complementary ambient simple roots with
+the actual maps `p : P → G`, `l : M → P`, and `a : A → M`. This module
+identifies restricted complementary ambient simple roots with
 the intrinsic indecomposable positive weights of the specified component,
 under explicit ambient root independence and negation hypotheses. It does not
 prove those root hypotheses or the unconditional aggregate statement.
@@ -73,11 +73,11 @@ This is derived internal content. It combines the published actual standard
 Levi, split-component cocharacter range, central root restriction, dynamic Lie,
 weight restriction, scaled lattice pairing, and positive-root induction APIs.
 The intrinsic root definitions and support independence are supplied by
-`ParabolicRootPresentationIntrinsicRoots`; the included dependency pair is
-unchanged from that separately reviewed supporting candidate.
+`ParabolicRootPresentationIntrinsicRoots`, which this module imports
+unchanged.
 
 The field is arbitrary, and no reducedness, positive rank, characteristic-zero,
 or fixed-torus comparison is imposed. The final comparison explicitly retains
 rational independence and negation for the ambient presentation roots. General
 presentation existence and the discharge of those root hypotheses remain
-outside this unit. In particular this is not a proof of the exact aggregate.
+outside this module. In particular this is not a proof of the exact aggregate.

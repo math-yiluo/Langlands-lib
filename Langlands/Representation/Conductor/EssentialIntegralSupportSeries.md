@@ -1,8 +1,6 @@
 # Polynomial coefficients forced by the essential identity
 
-Worker 1466.
-
-This internal helper unit derives polynomial Satake coefficients for the actual
+This internal helper module derives polynomial Satake coefficients for the actual
 corank-one Laurent series of a smooth Whittaker-model vector. Its inputs are an
 `IsJacquetNormalization`, a complex polynomial `P` with `P.coeff 0 = 1`, and
 `SatisfiesEssentialIdentity` for that polynomial and vector. It applies to every
@@ -61,5 +59,5 @@ All results here are derived from the published actual model-series,
 denominator, integral-expansion and separation interfaces and ordinary
 Mathlib algebra and convergence results. They do not use existence of an
 essential vector, the 1981 existence argument, compact-subgroup invariance of
-that vector, or the conductor theorem. This unit supplies a coefficient
+that vector, or the conductor theorem. This module supplies a coefficient
 property; it does not itself assert the final integral last-row support theorem.

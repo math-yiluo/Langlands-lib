@@ -1,6 +1,6 @@
 # Proof: Renard III.3.1, the stalk of the coinvariant sheaf is the fibre coinvariants
 
-Worker 136 implemented this proof for Task 5593. The entry theorem is
+The entry theorem is
 
 ```
 Langlands.Sheaf.Renard.CoinvariantStatements.fibreCoinvariantStatement :
@@ -21,9 +21,10 @@ point `y : Y`. It asks for a natural isomorphism between two functors
   compact-section representation of the restriction of `F` to the fibre
   `Z = {x // q x = y}`.
 
-The proof adds no hypothesis. It does not use the unproved II.2.5 module
-comparison (`ModuleComparisonIsIso`) or the companion statement
-`CompactComparisonStatement`.
+The proof adds no hypothesis. It does not use the II.2.5 module
+comparison (`ModuleComparisonIsIso`, proved in `ModuleProjectorComparisonProof`)
+or the companion statement `CompactComparisonStatement` (proved in
+`CoinvariantCompactComparisonProof`).
 
 The proof uses two helper modules, documented in their own Markdown:
 `FibreCoinvariantStalk` (the stalk map of Renard's vector sheaf of a
@@ -171,7 +172,8 @@ The Lean proof uses the same ingredients. These are: surjectivity of
 restriction; compact support covered by a compact open avoiding `y`; and stalks
 as quotients by neighbourhood tests. But it compares the two quotients of `A` by
 their kernels directly. It does not pass through `F′_c(Y) ≅ F_c(X)_G`, which in
-this Library is the unproved `CompactComparisonStatement`. The kernel of `α` is
+this Library is `CompactComparisonStatement`, proved separately in
+`CoinvariantCompactComparisonProof`. The kernel of `α` is
 described with tests `χ_K`, `y ∈ K`, rather than with functions vanishing at
 `y`. The two descriptions are equivalent and the Lean proof does not need the
 other one.

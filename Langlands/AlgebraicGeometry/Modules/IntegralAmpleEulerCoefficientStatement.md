@@ -14,7 +14,9 @@ premise of this induction step; the statement does not assert the criterion
 in every dimension or the full smooth proper Euler-polynomial theorem.
 
 This is an internal supporting statement for the ample coefficient induction
-and the polarized finite-flat rank theorem. Worker 689 specified the interface
-and the exact-dimensional section route. Worker 1013 supplied the actual
-section-cokernel coefficient identity used by the intended proof. Its
+and the polarized finite-flat rank theorem. Its proof,
+`integral_lineBundleEulerPolynomial_coeff_pos` (module
+`IntegralAmpleEulerCoefficientProof`), follows the exact-dimensional section
+route and uses the actual section-cokernel coefficient identity
+`Picard.sectionCokernelEulerCoefficient`. Its
 provenance is these existing geometric and polynomial constructions.

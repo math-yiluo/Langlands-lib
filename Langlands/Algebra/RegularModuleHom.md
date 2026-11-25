@@ -1,8 +1,6 @@
 # Actual regular-module Hom and its source action
 
-Authors: Worker 6 (construction and intrinsic proofs) and Worker 185
-(source/interface audit and submission). This is the focused definition
-unit for task `4c53eccd-a24b-4027-b6bd-bcdfea0e3031`.
+The source and the interfaces of this definition module were audited.
 
 The governing source is David Renard, *Représentations des groupes réductifs
 p-adiques*, French version dated 9 July 2026, registered as
@@ -12,8 +10,8 @@ Chapter I conventions and I.1.1–I.1.5, printed pp.5–11/PDF11–17, govern
 the original nonunital actions. I.1.4, printed p.10/PDF16, describes the
 evaluation of `Hom_A(A,M)` on actual idempotents and the left action
 `(a • φ)(b) = φ(b*a)`. Formula I.1.5.1 on the same page describes the
-canonical vector map `m ↦ (a ↦ a • m)`. Worker 185 read all of these
-original pages and visually checked PDF16. The registered supplementary
+canonical vector map `m ↦ (a ↦ a • m)`. All of these original pages were
+read, and PDF16 was visually checked. The registered supplementary
 2010 errata `renard-2010-corrections-complements`, SHA256
 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
 were consulted at PDF pages 1–3. The correction from `ae=e` to `ae=a`
@@ -66,8 +64,12 @@ carriers remain included. Complete unapplied interfaces are checked at
 independent ring and vector universes and at both unequal assignments.
 
 The evaluation isomorphism proposition is a separate statement and proof
-unit requiring `IsIdempotented A`. This file constructs its actual map
+pair requiring `IsIdempotented A` (`RegularModuleHomLeftLimitComparisonStatements`
+and `RegularModuleHomLeftLimitComparisonProof`). This file constructs its actual map
 but does not assert bijectivity. It installs no scalar action on the
 family carrier and makes no topological claim. The family action,
 completion functor, nondegenerate-part comparison and
-smoothing/completion adjunction remain separate successors.
+smoothing/completion adjunction are separate from this file; the completion
+functor and the smoothing/completion adjunction are in
+`NonUnitalModuleCompletionFunctor` and
+`NonUnitalModuleSmoothingCompletionAdjunctionProof`.

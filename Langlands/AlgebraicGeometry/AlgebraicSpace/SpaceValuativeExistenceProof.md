@@ -1,7 +1,5 @@
 # The valuative existence criterion for algebraic spaces
 
-Author: Worker 198.
-
 `spaceValuativeExistence` proves `SpaceValuativeExistenceStatement`
 (`SpaceValuativeExistenceStatement.lean`), the implication (1) ⇒ (3) of Stacks Project, Lemma
 67.42.3 (Tag 0A3Y): let `f : X ⟶ Y` be a quasi-compact, separated, universally closed morphism
@@ -83,5 +81,6 @@ Namespace `ValuativeExistence`:
 ## Checks
 
 `lean_check` of `Langlands.AlgebraicGeometry.AlgebraicSpace.SpaceValuativeExistenceProof` in
-environment `bb168ec3-1031-46d9-816b-5c2ed7bbe1a6` (Lake build) reports no errors or warnings,
+the pinned environment (Lean 4.34.0, Mathlib `5ed2965256430c3649e86755f9576b54eca72435`;
+Lake build) reports no errors or warnings,
 and the axioms of `spaceValuativeExistence` are `propext`, `Classical.choice` and `Quot.sound`.

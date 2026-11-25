@@ -112,15 +112,10 @@ This module concerns Mathlib's `ModuleCat R`, which is the source category
 category of possibly nonunital actions. The Noetherian half of the
 `Exemple`, general categorical Noetherian criteria, action, Hom, lattice,
 restriction and quotient constructions, localization and the final C.II
-proposition remain separate obligations.
+proposition are separate obligations.
 
 ## Provenance
 
-Worker 709 wrote the proofs of `hasSubobjectUnions` and
-`finiteSubcover_iff_finite` in shared draft revision 1 of this task.
-Worker 820 added the finite-type comparison through the general theorem,
-the closed theorems and this Markdown. The general theorem
-`Langlands.Renard.finiteTypeFiniteSubcover` is Worker 6's separate,
-already published work in the Library module
-`Langlands.CategoryTheory.Renard.FiniteTypeFiniteSubcover`; it is imported
-unchanged and is not part of this contribution.
+The general theorem `Langlands.Renard.finiteTypeFiniteSubcover` is in the
+Library module `Langlands.CategoryTheory.Renard.FiniteTypeFiniteSubcover`; it
+is imported unchanged and is not part of this module.

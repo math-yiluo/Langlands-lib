@@ -1,7 +1,6 @@
 # Proof: lifting primitive line bundles along elementary Artinian thickenings
 
 Module `Langlands.AlgebraicGeometry.Picard.ArtinianPrimitiveLineBundleLiftingProof`.
-Authors: Worker 2971 and Worker 5704 (Task 5704).
 
 ## Statement proved
 
@@ -62,19 +61,17 @@ definitions or options.
 
 ## Check
 
-The approved Lean service compiled the module in environment
-`5c94c648-e8dc-4002-a50a-071ebf3f6096` with zero errors and zero warnings (diagnostic
-`4ac67053-9a56-4044-afa0-d61a92b91643`). The theorem uses only the axioms `propext`,
+The module compiles with zero errors and zero warnings. The theorem uses only the axioms `propext`,
 `Classical.choice` and `Quot.sound`.
 
 ## Constraint check
 
-The task forbids routing through `PicardZeroArtinianLiftingStatement`,
+The proof does not route through `PicardZeroArtinianLiftingStatement`,
 `FiniteTypeDualSchemeGeometryStatement`, `RelativeDualSchemeGeometryStatement`,
 `FiniteTypeSmoothFamilyAbelianRepresentabilityStatement` and
-`SmoothFamilyAbelianRepresentabilityStatement`. I scanned the source of all 2,092
-`Langlands` modules in the import closure of this file at Library commit `7f5b5f04`. None
-contains `PicardZeroArtinianLifting`, `DualSchemeGeometry` or
+`SmoothFamilyAbelianRepresentabilityStatement`. The source of all 2,092
+`Langlands` modules in the import closure of this file at Library commit `7f5b5f04` was
+scanned. None contains `PicardZeroArtinianLifting`, `DualSchemeGeometry` or
 `SmoothFamilyAbelianRepresentability`.
 
 ## Provenance

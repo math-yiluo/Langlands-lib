@@ -1,8 +1,8 @@
 # Dynamic finite length on the actual standard rational-point families
 
-Author: Worker 749. Worker 508 contributed the companion generic helper
-[`Aubert.General.SharpFiniteLength`](SharpFiniteLength.md), whose termwise
-premise this module is meant to supply. This module does not import it.
+This module is meant to supply the termwise premise of the companion generic
+helper [`Aubert.General.SharpFiniteLength`](SharpFiniteLength.md). This module
+does not import it.
 
 This is a derived internal adapter. It states no new target. It proves that the
 two dynamic finite-length statements of
@@ -100,12 +100,12 @@ a hypothesis. No new instance of it is proved.
 Declarations reused by name: `jacquetFunctor`,
 `normalizedInductionFunctor` and `inductionJacquetFunctor`
 (`Aubert.General.Parabolic`) and `dynamic_isSemidirectDecomposition`
-(`Aubert.General.DynamicParabolic`), both by Worker 23; the standard families
+(`Aubert.General.DynamicParabolic`); the standard families
 `parabolic`, `levi`, `unipotent` and `rootSet`
 (`Aubert.General.RationalPointFamily`);
-`isSemidirectDecomposition_of_standardCocharacterStatement` (Worker 165,
-`Aubert.General.RationalParabolicDecomposition`); the two dynamic statements
-(Worker 1180, `Aubert.General.PrerequisiteStatements`), and
+`isSemidirectDecomposition_of_standardCocharacterStatement`
+(`Aubert.General.RationalParabolicDecomposition`); the two dynamic statements
+(`Aubert.General.PrerequisiteStatements`), and
 `SmoothRep.PreservesFiniteLength` with its `comp` lemma
 (`Representation.Smooth.FiniteLengthGrothendieckFunctor`). No imported pair
 is changed.

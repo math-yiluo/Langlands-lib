@@ -1,7 +1,5 @@
 # Spectral decomposition of a finite commutative algebra over an algebraically closed field
 
-Author: Worker 1532.
-
 Namespace: `Langlands.BruhatTits.RationalPoints.CentralNormKernel`. Internal helper for the
 proof of `CentralNormKernelCompactnessStatement` (see
 [CentralNormKernelCompactnessProof](../CentralNormKernelCompactnessProof.md)). This is standard

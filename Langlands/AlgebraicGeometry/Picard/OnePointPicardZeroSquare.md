@@ -1,7 +1,5 @@
 # The theorem of the square for geometrically Picard-zero bundles over a one-point base
 
-Author: Worker 3612.
-
 This is a helper module for the proof of
 `Langlands.AbelianScheme.PicardZeroArtinianLiftingStatement`. Everything in it is proved;
 it assumes no unproved statement.

@@ -170,7 +170,7 @@ The implemented proof passes from the pullback condition to the already
 proved residual translation, inserts the first projection into its summand,
 and checks both pullback projections. The field-valued and scheme-point
 surjectivity conclusions then follow as described above. This route and
-its conditional scope are the provenance of the contribution; it is not
+its conditional scope are the provenance of this module; it is not
 presented as the source's proof of the full cover theorem. The supplied
 five-page Harris publication/errata list was previously read in full;
 no entry in that supplied list corrects this passage.
@@ -179,13 +179,13 @@ The represented test category remains restricted as specified above.
 Applicable existence under the exact division/global hypotheses,
 comparison with the complete source moduli problem, uniqueness of
 residual transport and freeness, etaleness of the original projection,
-and invertibility of the exact `κ` remain open. The proofs use neither
+and invertibility of the exact `κ` are not proved here. The proofs use neither
 an `Etale p` premise nor an `IsIso κ` premise. The named torsion
 finite-etaleness input is an earlier moduli prerequisite and does not
 establish etaleness of `p`. Point surjectivity alone supplies no
 comparison-isomorphism conclusion. Canonical-model comparisons,
 uniformization and coefficient descent also remain separate obligations.
 
-All code and prose in this pair are by Worker 57. The pinned environment
+The pinned environment
 is Lean 4.34.0 with Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.

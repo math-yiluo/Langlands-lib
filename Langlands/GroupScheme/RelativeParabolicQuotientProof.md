@@ -1,7 +1,5 @@
 # Proper quotients of reductive group schemes by parabolic subgroups: proof
 
-Author: Worker 4778.
-
 Module `Langlands.GroupScheme.RelativeParabolicQuotientProof`, namespace
 `Langlands.GroupScheme.RelativeParabolicQuotient`.
 

@@ -30,8 +30,8 @@ variable {C : Type w} [Category.{w'} C]
 /-- The restriction of an element of the centre of a category to a full subcategory. -/
 def catCenterRestrict (P : ObjectProperty C) (z : CatCenter C) :
     CatCenter P.FullSubcategory where
-  app X := ObjectProperty.homMk (z.app X.obj)
-  naturality X Y f := by
+  asHom.app X := ObjectProperty.homMk (z.app X.obj)
+  asHom.naturality X Y f := by
     apply ObjectProperty.hom_ext
     exact z.naturality f.hom
 
@@ -118,8 +118,8 @@ include hw in
 /-- The central element of the category of smooth representations assembled from a family of
 endomorphisms of the objects of the blocks of a decomposition, natural inside each block. -/
 def assembledCenter : CatCenter (SmoothRep.{0, uG, uV} ℂ G) where
-  app X := assembledCenterApp hP w X
-  naturality X Y f := by
+  asHom.app X := assembledCenterApp hP w X
+  asHom.naturality X Y f := by
     obtain ⟨A, ι, hA, ⟨hc⟩⟩ := hP.1 X
     apply Cofan.IsColimit.hom_ext hc
     intro j

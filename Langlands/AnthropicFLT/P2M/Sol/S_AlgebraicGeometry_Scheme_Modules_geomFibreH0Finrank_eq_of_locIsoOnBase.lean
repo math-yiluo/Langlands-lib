@@ -7,7 +7,7 @@ Modified: FLT module names are prefixed by `Langlands.AnthropicFLT`; the FLT lak
 are set after the imports; the import of `P2M.Util` is dropped and its commands are replaced
 by standard Lean commands. The paired Markdown file lists the changes.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_PolarisationRosati
 import Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_Polarisation_LocIsoOnBase_pullback_of_comp_eq
 import Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_Polarisation_LocIsoOnBase_equivalence
@@ -36,12 +36,12 @@ theorem locIsoOnBase_of_iso {S' : Type u} [CommRing S'] {X : Scheme.{u}} (g : X 
   fun _ => ⟨⊤, trivial, ⟨(Scheme.Modules.pullback _).mapIso e⟩⟩
 
 noncomputable def dualIso {X : Scheme.{u}} {M M' : X.Modules} (e : M ≅ M') :
-    Scheme.Modules.dual M ≅ Scheme.Modules.dual M' :=
+    Scheme.Modules.dualFLT M ≅ Scheme.Modules.dualFLT M' :=
   ((MonoidalClosed.internalHom (C := X.Modules)).mapIso e.op.symm).app (𝟙_ X.Modules)
 
 theorem locIsoOnBase_dual {A : Scheme.{u}} (f : A ⟶ Spec (CommRingCat.of S)) {𝓛 𝓛' : A.Modules}
-    (h𝓛 : Scheme.Modules.IsInvertible 𝓛) (h𝓛' : Scheme.Modules.IsInvertible 𝓛') (h : LocIsoOnBase f 𝓛 𝓛') :
-    LocIsoOnBase f (Scheme.Modules.dual 𝓛) (Scheme.Modules.dual 𝓛') := by
+    (h𝓛 : Scheme.Modules.IsInvertibleFLT 𝓛) (h𝓛' : Scheme.Modules.IsInvertibleFLT 𝓛') (h : LocIsoOnBase f 𝓛 𝓛') :
+    LocIsoOnBase f (Scheme.Modules.dualFLT 𝓛) (Scheme.Modules.dualFLT 𝓛') := by
   intro s
   obtain ⟨U, hsU, ⟨e⟩⟩ := h s
   obtain ⟨d⟩ := AlgebraicGeometry.Scheme.Modules.IsInvertible.pullback_dual_monoidalV2 (f ⁻¹ᵁ U).ι h𝓛
@@ -49,7 +49,7 @@ theorem locIsoOnBase_dual {A : Scheme.{u}} (f : A ⟶ Spec (CommRingCat.of S)) {
   exact ⟨U, hsU, ⟨d ≪≫ dualIso e ≪≫ d'.symm⟩⟩
 
 theorem locIsoOnBase_mumfordBundle {A : Scheme.{u}} (f : A ⟶ Spec (CommRingCat.of S)) (L : RelativeGroupLaw S f)
-    {𝓛 𝓛' : A.Modules} (h𝓛 : Scheme.Modules.IsInvertible 𝓛) (h𝓛' : Scheme.Modules.IsInvertible 𝓛')
+    {𝓛 𝓛' : A.Modules} (h𝓛 : Scheme.Modules.IsInvertibleFLT 𝓛) (h𝓛' : Scheme.Modules.IsInvertibleFLT 𝓛')
     (h : LocIsoOnBase f 𝓛 𝓛') :
     LocIsoOnBase (pullback.fst f f ≫ f) (mumfordBundle f L 𝓛) (mumfordBundle f L 𝓛') := by
   have hd := locIsoOnBase_dual f h𝓛 h𝓛' h
@@ -57,12 +57,12 @@ theorem locIsoOnBase_mumfordBundle {A : Scheme.{u}} (f : A ⟶ Spec (CommRingCat
       ((Scheme.Modules.pullback (addMor f L)).obj 𝓛') :=
     LocIsoOnBase.pullback_of_comp_eq (pullback.fst f f ≫ f) (addMor f L) (𝟙 _)
       (by rw [Category.comp_id]; exact addMor_over f L) h
-  have h2 : LocIsoOnBase (pullback.fst f f ≫ f) ((Scheme.Modules.pullback (pullback.fst f f)).obj (Scheme.Modules.dual 𝓛))
-      ((Scheme.Modules.pullback (pullback.fst f f)).obj (Scheme.Modules.dual 𝓛')) :=
+  have h2 : LocIsoOnBase (pullback.fst f f ≫ f) ((Scheme.Modules.pullback (pullback.fst f f)).obj (Scheme.Modules.dualFLT 𝓛))
+      ((Scheme.Modules.pullback (pullback.fst f f)).obj (Scheme.Modules.dualFLT 𝓛')) :=
     LocIsoOnBase.pullback_of_comp_eq (pullback.fst f f ≫ f) (pullback.fst f f) (𝟙 _)
       (by rw [Category.comp_id]) hd
-  have h3 : LocIsoOnBase (pullback.fst f f ≫ f) ((Scheme.Modules.pullback (pullback.snd f f)).obj (Scheme.Modules.dual 𝓛))
-      ((Scheme.Modules.pullback (pullback.snd f f)).obj (Scheme.Modules.dual 𝓛')) :=
+  have h3 : LocIsoOnBase (pullback.fst f f ≫ f) ((Scheme.Modules.pullback (pullback.snd f f)).obj (Scheme.Modules.dualFLT 𝓛))
+      ((Scheme.Modules.pullback (pullback.snd f f)).obj (Scheme.Modules.dualFLT 𝓛')) :=
     LocIsoOnBase.pullback_of_comp_eq (pullback.fst f f ≫ f) (pullback.snd f f) (𝟙 _)
       (by rw [Category.comp_id]; exact pullback.condition.symm) hd
   exact LocIsoOnBase.tensor h1 (LocIsoOnBase.tensor h2 h3)

@@ -27,7 +27,7 @@ variable {K : Type uK} [Field K] {L : Type uL} [Field L] [TopologicalSpace L]
 topology of the space over the topological field `L`. -/
 def HasContinuousOrbits : Prop :=
   letI : TopologicalSpace M.V := moduleTopology L M.V
-  ∀ x : M.V, Continuous fun g : Field.absoluteGaloisGroup K => (M.ρ g).hom x
+  ∀ x : M.V, Continuous fun g : Field.absoluteGaloisGroup K => (M.ρ g).asHom.hom x
 
 /-- On a finite-dimensional space, continuous orbit maps make the Galois representation
 continuous for the module topology on its endomorphisms. -/
@@ -47,10 +47,10 @@ theorem isContinuous_finiteRepresentation_of_hasContinuousOrbits [IsTopologicalR
       Module.Free.ChooseBasisIndex L M.V → L))
   let e := LinearMap.toMatrix b b
   have hsymm : Continuous e.symm := IsModuleTopology.continuous_of_linearMap e.symm.toLinearMap
-  have hentries : Continuous fun g : Field.absoluteGaloisGroup K => e (M.ρ g).hom := by
+  have hentries : Continuous fun g : Field.absoluteGaloisGroup K => e (M.ρ g).asHom.hom := by
     refine continuous_pi fun i => continuous_pi fun j => ?_
-    have heq : (fun g : Field.absoluteGaloisGroup K => e (M.ρ g).hom i j) =
-        fun g => b.coord i ((M.ρ g).hom (b j)) := by
+    have heq : (fun g : Field.absoluteGaloisGroup K => e (M.ρ g).asHom.hom i j) =
+        fun g => b.coord i ((M.ρ g).asHom.hom (b j)) := by
       funext g
       rw [LinearMap.toMatrix_apply]
       rfl
@@ -58,7 +58,7 @@ theorem isContinuous_finiteRepresentation_of_hasContinuousOrbits [IsTopologicalR
     exact (IsModuleTopology.continuous_of_linearMap (b.coord i)).comp (hM (b j))
   show Continuous ((ModuleCat.endRingEquiv M.V).toMonoidHom.comp M.ρ)
   have hfun : ⇑((ModuleCat.endRingEquiv M.V).toMonoidHom.comp M.ρ) =
-      e.symm ∘ fun g => e (M.ρ g).hom := by
+      e.symm ∘ fun g => e (M.ρ g).asHom.hom := by
     funext g
     simp only [Function.comp_apply, LinearEquiv.symm_apply_apply]
     rfl

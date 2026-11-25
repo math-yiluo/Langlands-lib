@@ -1,7 +1,5 @@
 # Proof that power maps have non-open image on function-field adelic units
 
-Author: Worker 1518.
-
 `curvePlacePowerImage` proves `CurvePlacePowerImageStatement`: for every finite
 field `k`, every function field `F` over `k` (with the compatible `RatFunc k`-algebra
 structure) and every `n ≥ 2` with `¬ ringChar k ∣ n`, the image of `x ↦ x ^ n` is

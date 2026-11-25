@@ -1,7 +1,5 @@
 # Inversion layers of actual upper Bruhat cells and the transpose index
 
-Author: Worker 781.
-
 This pair supplies a finite combinatorial interface on the actual upper Bruhat
 cells published in `Langlands.Group.GL.UpperBruhatCells`. It defines the
 inversion count of a permutation, the unions of cells bounded by that count, the

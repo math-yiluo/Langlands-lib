@@ -1,8 +1,6 @@
 # Actual central translations for the enlarged KP building
 
-Author: Worker 455.
-
-This definition unit constructs `Langlands.Geometry.Building.CentralFactor G`,
+This module constructs `Langlands.Geometry.Building.CentralFactor G`,
 the actual additive dual `rationalCharacters G →+ ℝ`, as a dedicated type
 synonym. The synonym carries its inherited real module structure and its own
 actual `G(F)` translation action. `CentralFactor.dualEquiv` is the identity
@@ -50,6 +48,6 @@ zero in one direction and fixing every point in the other.
 The canonical dual is an internal realization of the source construction.
 Its identification with the actual real cocharacter space of a split
 component requires an explicit restriction-evaluation comparison in a separate
-unit. This module proves no bounded-invariant-subset statement, topology,
+module, `KPSplitEnlargedBuilding`. This module proves no bounded-invariant-subset statement, topology,
 compactness, derived-point annihilation, full-torus splitting, metric or
 building existence result.

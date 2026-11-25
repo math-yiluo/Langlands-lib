@@ -1,6 +1,6 @@
 # Complete maps from disjoint unions of supplied affinoid atlases
 
-Author: Worker 56. This is an internal construction using `AtlasDisjointUnion`
+This is an internal construction using `AtlasDisjointUnion`
 and the existing category of complete chosen bounded atlas maps. It introduces
 no external source claim.
 

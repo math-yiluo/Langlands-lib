@@ -1,7 +1,5 @@
 # Canonical affine-hull presentation after quasi-affine descent
 
-Worker 585.
-
 The internal helper
 `Langlands.AlgebraicGeometry.FaithfullyFlatQuasiAffineDescent.isQuasiAffine_of_isPullback`
 works in every universe. Let `P → X`, `P → B`, `X → Y`, `B → Y` be a

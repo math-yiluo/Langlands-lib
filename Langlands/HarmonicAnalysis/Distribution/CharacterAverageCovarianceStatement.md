@@ -109,7 +109,7 @@ Mathlib's `measurePreserving_mul_left`, `measurePreserving_mul_right`,
 `MeasurePreserving.prod` and `MeasurePreserving.integral_comp'`; it lives in
 the separate module described in
 [CharacterAverageCovarianceProof](CharacterAverageCovarianceProof.md), not in
-this unit.
+this module.
 
 The sign agrees with the published convention for bi-equivariant
 distributions. Shalika's condition (see Provenance) is
@@ -135,7 +135,7 @@ same factor `χ(u₁) χ(u₂) = χ(u₁ u₂)`.
 
 ## The upper-unipotent p-adic application
 
-The intended application, which this unit does not carry out, is the published
+The intended application, which this module does not carry out, is the published
 specialization `standardCharacterAverage F n ψ μ` of the imported module. There
 `F : PadicField p` is an actual p-adic field with carrier `K = F.Carrier` and
 its canonical topological data, `G` is the upper unipotent subgroup
@@ -177,7 +177,7 @@ reasons.
 
 This module is a statement only and proves no covariance itself. The equality
 above is proved by the separate theorem `characterAverageCovariance` (see
-[Status](#status)), for exactly the hypotheses listed above. This unit also
+[Status](#status)), for exactly the hypotheses listed above. This module also
 states and proves nothing about:
 
 - surjectivity of the averaging map `α ↦ characterAverage χ μ α`;
@@ -231,9 +231,7 @@ single Haar measure on each factor.
 ## Consumers
 
 The proposition is intended for the exact Shalika distribution-invariance work
-(task `f79ca82c-d050-4ffa-821b-c347b60e36e0`) and, through it, the Whittaker
-multiplicity-one work (task `209cde88-bab8-4a85-8a9d-72b8864b6fa0`). Its proof
-was supplied by task `71db8a18-f07f-4ab5-903a-dad529415e84`; see
+and, through it, the Whittaker multiplicity-one work. For its proof see
 [Status](#status).
 
 ## Status
@@ -242,10 +240,9 @@ The proposition is proved by the theorem
 `Langlands.HarmonicAnalysis.SchwartzBruhat.characterAverageCovariance.{uG, uY}`
 in `Langlands.HarmonicAnalysis.Distribution.CharacterAverageCovarianceProof`.
 Its type is exactly `CharacterAverageCovarianceStatement.{uG, uY}`, with the
-same independent universes and no added hypothesis. The proof is artifact
-`c6cadd36-7426-4e30-9a89-c0c0ba0a7a5a` version 1. Its validation passed the
-Lake build and exact-target checks, an independent review approved it, and it
-was published at Library commit `cb6a47b2390bdcd0be78fac0552b7fd5c46cd51b`.
+same independent universes and no added hypothesis. The proof passed the
+Lake build and exact-target checks and was published at Library commit
+`cb6a47b2390bdcd0be78fac0552b7fd5c46cd51b`.
 It proves only the covariance law stated here. It does not prove the
 surjectivity, factorization or Shalika invariance results listed under
 [Scope](#scope), or the upper-unipotent specialization.

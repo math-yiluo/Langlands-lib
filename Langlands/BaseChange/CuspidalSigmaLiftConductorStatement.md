@@ -50,7 +50,7 @@ so distinct characters giving isomorphic twists contribute distinct summands.
 
 The ranks are written `k + 1` and `k₁ + 1` to match the Library's fixed-level
 conductor. The two carrier types `W₁` and `W` share the universe `uW`, as in
-Task 7470's `CuspidalSigmaLiftStructureStatement`, so that its witnesses can
+`CuspidalSigmaLiftStructureStatement`, so that its witnesses can
 be used directly. The mathematical structure theorem of Henniart–Lemaire
 II.4.12 gives an orbit product for a cuspidal sigma-lift with
 `s = Nat.card (normTwistStabilizer E π)`. The present proposition takes any
@@ -73,8 +73,7 @@ gives the following identity.
 ψ_E = ψ_F ∘ Tr_{E/F}.
 ```
 
-The negative exponent follows the original formula and corrects the sign in
-the task summary. The conductor comparison uses the power of `q_F^(-z)`, so
+The negative exponent follows the original formula. The conductor comparison uses the power of `q_F^(-z)`, so
 the lambda factor, which is constant in the complex variable `z`, drops out.
 See Arthur–Clozel (6.7), printed p. 60.
 

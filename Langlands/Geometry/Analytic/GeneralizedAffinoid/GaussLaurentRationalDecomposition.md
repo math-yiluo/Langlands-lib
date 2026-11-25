@@ -89,7 +89,7 @@ positive-threshold locus is empty and `m = 0` is allowed.
 The coefficient constructions retain arbitrary positive real radii, arbitrary
 closed presentation ideals, empty coordinate tuples, trivial valuations,
 nonreduced and zero quotient algebras. No independence of `t` is assumed.
-This unit handles finite Laurent polynomial data with a supplied positive
+This module handles finite Laurent polynomial data with a supplied positive
 denominator threshold. It does not approximate arbitrary quotient elements,
 strictify affinoid presentations, or prove
 `Domain.FiniteRationalCoverStatement`.

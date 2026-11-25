@@ -1,7 +1,5 @@
 # Rational conjugacy of maximal tori in smooth connected solvable groups
 
-Author: Worker 1333.
-
 `Langlands.GroupScheme.solvableMaximalTorusConjugacy` proves exactly the
 published `Langlands.GroupScheme.SolvableMaximalTorusConjugacyStatement.{u}`.
 For every field `k : Type u` and smooth connected affine solvable group scheme

@@ -106,7 +106,7 @@ Humphreys is registered in the project literature as source
 `provided-e4636f4e6257fbf54e791ed1ca16e71c5ba9c10c64f8184fd7ec2e0fe6e211e5`.
 
 This proposition is an internal intermediate statement of the proof of
-`Langlands.GroupScheme.WeylCharacterFormulaStatement` (Task 7128). It is proved
+`Langlands.GroupScheme.WeylCharacterFormulaStatement`. It is proved
 as `Langlands.GroupScheme.freudenthalMultiplicityStatement` in
 `Langlands.GroupScheme.Rational.FreudenthalMultiplicityProof`, by the Casimir
 operator of the trace form of a faithful representation together with `r`. That

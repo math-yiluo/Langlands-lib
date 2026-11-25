@@ -1,7 +1,5 @@
 # The first structure-sheaf cohomology of an abelian variety has dimension `g`
 
-Author: Worker 372.
-
 This module proves the published proposition
 `Langlands.AbelianScheme.FieldStructureSheafH1DimensionStatement`. The theorem is
 `Langlands.AbelianScheme.fieldStructureSheafH1Dimension`. Let `k` be any field, `A` an abelian

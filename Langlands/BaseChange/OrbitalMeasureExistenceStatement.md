@@ -1,8 +1,8 @@
 # Existence of the measures entering concordance
 
 Module `Langlands.BaseChange.OrbitalMeasureExistenceStatement`, namespace
-`Langlands.BaseChange`. It states `OrbitalMeasureExistenceStatement.{u, v} : Prop`
-(item 10 of the task). The statement is not proved here.
+`Langlands.BaseChange`. It states `OrbitalMeasureExistenceStatement.{u, v} : Prop`.
+The statement is not proved here.
 
 ## Source
 
@@ -64,9 +64,9 @@ the quotient measure. These arguments are not formalized here.
 
 ## Dependencies
 
-`Langlands.BaseChange.OrbitalIntegral` (this task); through it Task 7402
-(`Langlands.TraceFormula.TwistedOrbital`) and Task 7405 (`Langlands.BaseChange.Norm`:
-`IsCyclicAlgebra`, `IsNormAssociated`); the Library's `QuotientIntegration.IsCompatible`,
+`Langlands.BaseChange.OrbitalIntegral`; through it
+`Langlands.TraceFormula.TwistedOrbital` and `Langlands.BaseChange.Norm`
+(`IsCyclicAlgebra`, `IsNormAssociated`); the Library's `QuotientIntegration.IsCompatible`,
 `LeftQuotient` and `JacquetLanglands.IsRegularSemisimple`; Mathlib's
 `IsNonarchimedeanLocalField` (`Mathlib.NumberTheory.LocalField.Basic`) and
 `IsModuleTopology`.

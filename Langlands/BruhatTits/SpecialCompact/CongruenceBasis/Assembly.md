@@ -1,6 +1,6 @@
 # The simultaneous standard basis from the congruence tower of an integral model
 
-This internal unit proves the simultaneous standard-basis property
+This internal module proves the simultaneous standard-basis property
 `SimultaneousStandardBasisAt i ν K0` in two settings.
 
 1. `K0` is the group of integral points of any integral model to which every
@@ -20,16 +20,16 @@ model `M`.
 
 ## Scope
 
-This unit proves the third conjunct of
+This module proves the third conjunct of
 `AvailableSimultaneousStandardBasisStatement` for every available
 assignment, and hence, through `KPBuildingAssignment.IsValid.isAvailableFor`,
 for every valid one. It does **not** prove
-`AvailableSimultaneousStandardBasisStatement` itself, which is the target of
-Task 5310. It also proves neither `JointSpecialCompactBasisExistenceStatement`
+`AvailableSimultaneousStandardBasisStatement` itself, which is proved as
+`availableSimultaneousStandardBasis` in `AvailableBasisProof`. It also proves neither `JointSpecialCompactBasisExistenceStatement`
 nor `BruhatTitsAvailabilityStatement`. No existence of a valid or available
 assignment is asserted or assumed.
 
-The unit builds on four helper modules in
+The module builds on four helper modules in
 `Langlands/BruhatTits/SpecialCompact/CongruenceBasis/`, each with its own
 Markdown:
 

@@ -19,7 +19,7 @@ maximal real subfield through `IsCMField.equivInfinitePlace`. Restriction of a
 chosen complex embedding equals the chosen real embedding at the restricted
 place. The product of the resulting coordinates is the rational norm, using
 the proved place-factor norm product in
-`Langlands.ClassField.Global.CyclicReciprocityParts`. The real-coordinate formula
+`Langlands.ClassFieldTheory.Global.CyclicReciprocityParts`. The real-coordinate formula
 for the normalized character reduces its value to that product divided by its
 absolute value. Positivity then makes numerator and denominator equal.
 

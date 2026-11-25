@@ -1,11 +1,10 @@
 # The archimedean block of the Brauer product package
 
-Author: Worker 5093. This is a supporting unit for task
-`92a3d086-a5ad-476f-9fd9-aa9d4eaa3778`, which must prove
+This is a supporting module for the proof of
 `Langlands.LocalFactor.NonabelianBrauer.KernelCompatibilityStatement`. In Deligne's global
 argument (1973, proof of Lemma 4.12) the archimedean factors of the product of Hecke L-functions
 cancel, because all archimedean components are powers of the absolute value and the types are
-balanced. This unit carries out that cancellation for the archimedean block of the published
+balanced. This module carries out that cancellation for the archimedean block of the published
 package `RelativeWeilEngine.hasGlobalEquation_brauerProduct`, with exponent `0` on the base
 character.
 
@@ -17,7 +16,7 @@ Everything is in `Langlands.LocalFactor.NonabelianBrauer`.
 - `K : Fin n → IntermediateField k E` are intermediate fields with weights `r i`.
 - `Λ₁ i`, `Λ₂ i` are Hecke characters of `K i` whose archimedean components are those of
   `‖·‖^{t₁ i}` and `‖·‖^{t₂ i}`.
-- The data for each `Λ_j i` is `normPowerArchData` (unit `ArchimedeanData`), for an additive
+- The data for each `Λ_j i` is `normPowerArchData` (module `ArchimedeanData`), for an additive
   character `ψ` of `A_k` with real components `a`.
 - The balancing hypothesis `hdim` reads, for every `τ : ℂ`,
   `Σ_i r_i [K i : k] ([t₁ i = τ] - [t₂ i = τ]) = 0`.

@@ -1,6 +1,6 @@
 import Langlands.Automorphic.Unramified.RelativeWeilAssociation
 import Langlands.Automorphic.PadicLocalCategory
-import Langlands.ClassField.Global.FundamentalClassStatement
+import Langlands.ClassFieldTheory.Global.FundamentalClassStatement
 import Langlands.Correspondence.FullLFactorCompatibility
 import Langlands.Correspondence.FullFactorCompatibility
 import Langlands.Correspondence.FullGammaCompatibility
@@ -18,7 +18,7 @@ and actual cuspidal classes of `GL_n` over a number field. Proposition definitio
 
 noncomputable section
 
-namespace Langlands.ClassField.Global
+namespace Langlands.ClassFieldTheory.Global
 
 open scoped NumberField
 open Langlands.Global Langlands.Global.AdelicFunctoriality Langlands.Global.CompletionPadic
@@ -261,4 +261,4 @@ def AssociatedFactorStatement : Prop :=
 
 end RelativeWeilGroup
 
-end Langlands.ClassField.Global
+end Langlands.ClassFieldTheory.Global

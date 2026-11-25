@@ -1,7 +1,5 @@
 # Open normal subgroups contain dynamic unipotent points
 
-Author: Worker 1374.
-
 This internal helper is derived from the published actual-point contraction theorem
 `Langlands.BruhatTits.DynamicUnipotentContainment.exists_conj_mem` in
 `Langlands.BruhatTits.Unipotent.CompactOpenContainmentProof`. Its provenance is

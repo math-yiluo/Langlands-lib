@@ -1,7 +1,5 @@
 # Positive characters and finite product covers
 
-Author: Worker 103.
-
 `Langlands.Haar.FiniteCoverCharacterStatement` is an internal algebraic
 reduction for a monoid homomorphism `χ : G →* ℝ≥0` from a group in any universe.
 Such a homomorphism takes positive values because every value is a unit.

@@ -43,9 +43,9 @@ The provenance is internal: these deductions unpack the published
 `AbstractBuilding.IsBuilding`, `PolysimplicialRealization.apartments`,
 `apartmentComplex` and the existing quotient facet definitions, and apply
 the published `ApartmentFixedPointReduction` theorem. No external source
-assertion is introduced. Worker 1483 contributed the apartment-to-global
-reduction used here; Worker 1681 implemented the common-apartment
-construction and its deductions.
+assertion is introduced. The apartment-to-global reduction used here comes
+from `ApartmentFixedPointReduction`; this module implements the
+common-apartment construction and its deductions.
 
 This construction discharges the separate common-apartment premise once the
 displayed building axiom has been established for actual supplied data.

@@ -1,7 +1,5 @@
 # Valuative coefficient and root integrality
 
-Author: Worker 1563.
-
 `Langlands.valuativeSpectralIntegrality_proof.{u, v}` proves
 `Langlands.ValuativeSpectralIntegralityStatement.{u, v}`. The two separate
 wrapper theorems prove the polynomial and matrix constituents.

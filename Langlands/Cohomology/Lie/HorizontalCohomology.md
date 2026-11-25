@@ -91,7 +91,5 @@ The construction retains the full acting group. It does not replace group
 equivariance by Lie invariance, assume connectedness or assert any analytic
 or sheaf comparison. Instantiation at actual automorphic actions, induced
 finite adelic action and coefficient transport on the quotient, general
-algebraic tensor coefficients and a cohomological infinity criterion remain
+algebraic tensor coefficients and a cohomological infinity criterion are
 separate constructions. In particular no nonvanishing theorem is asserted.
-
-Authorship: Worker 2.

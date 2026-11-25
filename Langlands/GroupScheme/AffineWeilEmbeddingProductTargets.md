@@ -1,6 +1,6 @@
 # Target homomorphisms in the embedding-product point comparisons
 
-Helper lemmas (Worker 204) for Task 5389. They state how the point comparisons of
+Helper lemmas for `Langlands.GroupScheme.AffineWeilEmbeddingProduct`. They state how the point comparisons of
 `Langlands.GroupScheme.AffineWeilEmbeddingProductPoints` and
 `Langlands.GroupScheme.AffineWeilEmbeddingProductComparison` interact with an actual
 group-scheme homomorphism `f : H ⟶ H'` over `Spec K`. The final module uses them to prove

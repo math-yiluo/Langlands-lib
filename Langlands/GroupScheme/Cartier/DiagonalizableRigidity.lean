@@ -52,7 +52,7 @@ lemma zpowEquiv_naturality {G H : Type v} [CommGroup G] [CommGroup H] (φ : G �
   rw [zpowEquiv_apply_one, MonoidHom.comp_apply, zpowEquiv_apply_one]
 
 lemma addGroupFG_uliftInt : AddGroup.FG (ULift.{u} ℤ) := by
-  refine ⟨⟨{ULift.up 1}, ?_⟩⟩
+  refine AddGroup.isAddFG_iff.mpr ⟨{ULift.up 1}, ?_⟩
   rw [eq_top_iff]
   rintro ⟨n⟩ -
   have : (ULift.up n : ULift.{u} ℤ) = n • ULift.up (1 : ℤ) := by

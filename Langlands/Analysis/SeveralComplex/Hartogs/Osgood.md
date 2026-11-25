@@ -3,7 +3,7 @@
 Module `Langlands.Analysis.SeveralComplex.Hartogs.Osgood`, namespace
 `Langlands.Analysis.SeveralComplex`. This module is the first step towards Hartogs' theorem on
 separate holomorphy, which the proof of
-`Langlands.Analysis.Meromorphic.MeromorphicContinuationHolomorphicStatement` needs (Task 5431).
+`Langlands.Analysis.Meromorphic.MeromorphicContinuationHolomorphicStatement` needs.
 
 ## Provenance
 

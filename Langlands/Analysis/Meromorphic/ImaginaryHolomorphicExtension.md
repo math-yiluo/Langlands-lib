@@ -4,8 +4,9 @@ Module `Langlands.Analysis.Meromorphic.ImaginaryHolomorphicExtension` proves,
 in one chart `ℂⁿ`, the step of Mœglin–Waldspurger IV.3.12 that passes from
 "`M(w, λ)` is unitary at the imaginary points where it is holomorphic" to
 "`M(w, λ)` is holomorphic at every imaginary point", for a finite expansion
-`∑ i, coeff i s • ψ i` with meromorphic coefficients. Worker 106 wrote it for
-Task 5682 (target `Langlands.Global.IntertwiningImaginaryUnitarityStatement`).
+`∑ i, coeff i s • ψ i` with meromorphic coefficients. It was written for the
+holomorphy and unitarity of intertwining operators on the imaginary axis
+(`Langlands.Global.IntertwiningImaginaryUnitarityStatement`).
 It uses the meromorphy predicates `IsMeromorphicOn` and
 `IsMeromorphicInCoordinatesOn` of `Langlands.Analysis.Meromorphic.AnalyticSystems`
 and `.LinearCoordinates`, and the division lemma of
@@ -61,8 +62,8 @@ The case `m = 0` is trivial (`D' = ℂⁿ`). Otherwise `D` is open and dense.
 
 1. *Coordinates.* `exists_linearIndependent'` gives a subfamily `ψ ∘ a`,
    `a : κ → Fin m` injective, linearly independent with the same span.
-   `exists_eval_leftInverse` (after Worker 979's
-   `exists_continuousLinearMap_leftInverse` in the Task 5501 draft) gives
+   `exists_eval_leftInverse` (after
+   `exists_continuousLinearMap_leftInverse` in `FiniteDimensionalValues`) gives
    finitely many points `pts j` and a linear `Λ` recovering the coordinates of
    `∑ k, y k • ψ (a k)` from its values at the `pts j`. The coordinate
    functions `d k s = Λ (j ↦ ∑ i, coeff i s * ψ i (pts j)) k` are linear
@@ -107,11 +108,11 @@ The case `m = 0` is trivial (`D' = ℂⁿ`). Otherwise `D` is open and dense.
   (`φ ∘ e₀.symm` with domain `e₀.symm ⁻¹' D'`).
 - `isMeromorphicOn_restrict`: restriction to a smaller open dense domain.
 - `gramForm_smul`, `fiberSum_smul`: homogeneity used in `exists_coercive`.
-- Private helper lemmas on scalar meromorphic functions (holomorphy as
+- Helper lemmas on scalar meromorphic functions (holomorphy as
   complex differentiability, identity theorem, local presentations, sums,
-  products, constants, restriction) are copies of lemmas written by Worker 587
-  (Task 5502 draft) and reproduced by Worker 86 in the staged cocycle
-  reduction of Task 5503; `IsMeromorphicOn.mul_const` is new.
+  products, constants, restriction) come from
+  [Scalar meromorphic identities](ScalarIdentity.md); the private
+  `IsMeromorphicOn.mul_const` is new.
 
 ## Scope
 

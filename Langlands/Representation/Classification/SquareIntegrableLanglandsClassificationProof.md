@@ -1,7 +1,5 @@
 # Square-integrable Langlands quotient classification
 
-Author: Worker 596.
-
 `Langlands.Classification.squareIntegrableLanglandsClassification.{uF,uV}`
 proves exactly the published proposition
 `Langlands.Classification.SquareIntegrableLanglandsClassification.{uF,uV} F T`.

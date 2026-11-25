@@ -1,7 +1,5 @@
 # Tangent space and local cotangent space at a rational point over a field
 
-Author: Worker 207.
-
 `Langlands.Scheme.FieldPointTangentLocalRegularityStatement.{u}` is the
 following `Prop`-valued definition:
 
@@ -33,7 +31,8 @@ defined in `Langlands.AlgebraicGeometry.PointTangentSpace`. Then:
 
 This file is a statement target only. It proves none of these assertions,
 and it supplies no identification between `T`, a stalk or a cotangent space.
-A separate proof task will prove the statement.
+The statement is proved by `Langlands.Scheme.fieldPointTangentLocalRegularity` in the
+separate module `Langlands.AlgebraicGeometry.FieldPointTangentLocalRegularityProof`.
 
 ## The objects
 
@@ -180,7 +179,7 @@ criterion, stated with an auxiliary natural number `g` (for example a
 relative dimension) between the two numbers. It adds no new regularity
 definition or criterion to the Library.
 
-## Future proof obligations
+## Proof obligations
 
 The statement does not supply any of the following; a proof must build them
 from the actual objects:
@@ -214,11 +213,9 @@ statement, because `T` is fixed as the published construction.
   with `IsLocalRing.ResidueField`, `IsLocalRing.CotangentSpace` and
   `ringKrullDim` through its imports.
 
-No existing Lean or Markdown file is changed.
-
 ## Verification
 
-`lean_check` in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` compiles
+Lean compiles
 `Langlands.AlgebraicGeometry.FieldPointTangentLocalRegularityStatement` with no
 errors or warnings. Inspection of the declaration reports a definition with
 the single universe parameter `u`, `statement_returns_prop: true`, and only

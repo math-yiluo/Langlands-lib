@@ -1,6 +1,6 @@
 # Transport of fixed-functional gamma equations
 
-Worker 458. The forward rational-value families agree by the integral identities
+The forward rational-value families agree by the integral identities
 and surjectivity of each coefficient map. Consequently every nonzero-continuation
 witness transports unchanged. The unequal-rank dual continuation is multiplied
 by the constant rational function with value `χ(-1)^n`. The existing

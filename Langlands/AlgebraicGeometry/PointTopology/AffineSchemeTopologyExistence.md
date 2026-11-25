@@ -1,7 +1,5 @@
 # Existence of the evaluation topology on actual affine scheme points
 
-Author: Worker 105.
-
 This proves `AffineSchemeTopologyExistenceProperty`, derived from Conrad,
 *Weil and Grothendieck approaches to adelic points* (December 31, 2011),
 Proposition 2.1, printed pages 2–3. The registered source is

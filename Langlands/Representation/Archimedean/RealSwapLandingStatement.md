@@ -3,10 +3,11 @@
 Lean module: `Langlands.Representation.Archimedean.RealSwapLandingStatement`
 (namespace `Langlands.Archimedean`).
 
-Worker 763 wrote this module for Task 7133 (`534c17c3-0cef-4982-b771-0750d513e885`), the proof of
+This module serves the proof of
 `Langlands.Archimedean.RealCharacterInducedFiltrationStatement` (module
-`RealInducedPairFiltrationReduction`). The mirror Task 7134 (`adfadcc2-a871-435c-ac94-9ab97d899a00`)
-uses the same statements. The module defines three propositions and proves nothing.
+`RealInducedPairFiltrationReduction`). The proof of its mirror
+`RealInducedCharacterFiltrationStatement` uses the same statements. The module defines three
+propositions and proves nothing.
 
 ## Notation
 
@@ -92,7 +93,7 @@ Remarks on the hypotheses.
 ## Why the statements hold
 
 This module proves none of the following. The section explains why the propositions are
-true. Separately submitted modules implement a proof along these lines, and their own Markdown
+true. Separate modules implement a proof along these lines, and their own Markdown
 files describe it in detail: `RealSwapLandingAlgebra` (the polynomial continuation below),
 `RealSwapLandingIntegral` (the integral at the special parameters, theorem
 `RealSwapLandingIntegral.inducedFirst`) and `RealSwapLandingMirror` (the second statement from

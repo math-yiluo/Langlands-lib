@@ -221,11 +221,11 @@ theorem iteratedTranslate_mul (g h : H') :
 def iteratedAction : Action C H' where
   V := colimit (diagram (partialColimit F))
   ρ :=
-    { toFun := iteratedTranslate F
-      map_one' := iteratedTranslate_one F
-      map_mul' := fun g h => iteratedTranslate_mul F g h }
+    { toFun := fun h' => End.of (iteratedTranslate F h')
+      map_one' := congrArg End.of (iteratedTranslate_one F)
+      map_mul' := fun g h => congrArg End.of (iteratedTranslate_mul F g h) }
 
-@[simp] theorem iteratedAction_ρ (h' : H') : (iteratedAction F).ρ h' = iteratedTranslate F h' :=
+@[simp] theorem iteratedAction_ρ (h' : H') : ((iteratedAction F).ρ h').asHom = iteratedTranslate F h' :=
   rfl
 
 variable [IsTopologicalGroup H]

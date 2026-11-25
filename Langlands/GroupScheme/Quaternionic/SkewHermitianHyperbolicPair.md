@@ -1,7 +1,5 @@
 # Hyperbolic pairs in antihermitian division spaces
 
-Worker 863, Task 7498.
-
 For a left-separating antihermitian pairing with two invertible, a nonzero
 isotropic vector `x` has an isotropic partner `y` with `B(x,y) = 1`. Rescale
 a vector that pairs nontrivially with `x`, then subtract half its self-pairing

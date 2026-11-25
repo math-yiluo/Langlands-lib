@@ -1,11 +1,11 @@
 # ℓ-divisible systems under equivalences and spatial induction
 
-Author: Worker 61. This module builds on the following published modules:
+This module builds on the following published modules:
 
 - `Langlands.Cohomology.DivisibleSystem`: `ℓ`-divisible systems (Harris 1999,
   (2.1)), `hom_ext`, `mapFunctor C ℓ F` for exact additive functors, and
   `SmoothSheafDivisibleSystem R G X ℓ`.
-- Worker 13's `Langlands.Sheaf.Equivariant.SmoothSpatialInduction`: the
+- `Langlands.Sheaf.Equivariant.SmoothSpatialInduction`: the
   equivalence `SpatialInduction.smoothRestrictionEquivalence R H hH X` between
   `G`-equivariant smooth sheaves on the induced space `Space H X` (written
   `G ×ᴴ X` below) and `H`-equivariant smooth sheaves on `X`. Its functor is
@@ -73,7 +73,7 @@ in one universe, as in `SmoothSpatialInduction`.
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
 J. Math. Kyoto Univ. 39-2 (1999), section 2, printed pp.303–304 (one-based PDF
-pages 5–6). Worker 61 read both pages in the rendered scan.
+pages 5–6). Both pages were read in the rendered scan.
 
 1. What Harris uses. On p.303 Harris writes: "Recall that the action of GJ on
    Ω lifts to an action on 𝓜̆_N, and U(ẽ) is stabilized by a compact open
@@ -84,7 +84,7 @@ pages 5–6). Worker 61 read both pages in the rendered scan.
    `U(ẽ)`, while `GJ` acts on the whole space.
 2. What is formalized. The module is internal framework. Harris does not
    state the induction equivalence. The construction `G ×ᴴ X` is the
-   Library's induced space (Worker 13). Reading `H` as `S(ẽ)` and `X` as
+   Library's induced space `Space H X`. Reading `H` as `S(ẽ)` and `X` as
    `U(ẽ)` is our interpretation. Under it, the module identifies
    `ℓ`-divisible systems of `S(ẽ)`-equivariant smooth sheaves on `U(ẽ)` with
    `ℓ`-divisible systems of `GJ`-equivariant smooth sheaves on the induced

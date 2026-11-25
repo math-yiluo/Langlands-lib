@@ -1,7 +1,5 @@
 # Categorical colimits of the actual finite-adelic level cocones
 
-Author: Worker 208.
-
 `FiniteAdeleLevelColimitStatement` states that each of the already defined
 canonical cocones is a categorical colimit: first in `TopCommRingCat`, and
 then in `CommRingCat`. The quantifiers range over Dedekind domains and their
@@ -27,7 +25,8 @@ It strengthens the previously isolated final-topology description by
 stating the actual categorical universal properties, rather than equating
 that continuity criterion with a categorical colimit by definition.
 
-This statement unit supplies no proof. It does not impose a global-field
+This module states the proposition and supplies no proof; the proof is
+`finiteAdeleLevelColimit` in `FiniteAdeleLevelColimitProof`. It does not impose a global-field
 hypothesis or a nonempty finite part. The source's all-place convention,
 the full adelic colimit for global fields in both characteristics, model
 descent, and scheme or algebraic-space comparisons remain separate.

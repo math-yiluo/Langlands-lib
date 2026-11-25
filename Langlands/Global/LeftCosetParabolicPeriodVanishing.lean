@@ -24,7 +24,7 @@ variable {G : Type u} [Group G] [TopologicalSpace G] [IsTopologicalGroup G]
   [SecondCountableTopology G] [MeasurableSpace G] [BorelSpace G]
   {Γ H : Subgroup G} [BorelSpace H] [BorelSpace (LeftCosetSpace H)]
 
-local instance : SecondCountableTopology H := secondCountableTopology_induced _ G Subtype.val
+private local instance : SecondCountableTopology H := secondCountableTopology_induced _ G Subtype.val
 
 /-- If every right translate has zero period on the discrete quotient inside
 a closed subgroup, its integrable ambient period also vanishes. -/

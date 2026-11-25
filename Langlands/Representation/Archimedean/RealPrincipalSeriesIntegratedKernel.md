@@ -4,4 +4,4 @@ For a continuous compactly supported scalar function on real general linear unit
 
 The compact kernel is Hilbert–Schmidt on the ambient L² space. Precomposing with the Hilbert inclusion and postcomposing with the orthogonal projection gives the Hilbert–Schmidt property on the principal-series Hilbert completion itself.
 
-This internal operator comparison is a step toward trace-class smoothing for the real pairing in Task 7534.
+This internal operator comparison is a step toward trace-class smoothing for the real pairing of the archimedean inverse-transpose pairing argument.

@@ -1,8 +1,5 @@
 # KP Theorem 5.3.4 on available corrected Bruhat–Tits data
 
-Author: Worker 102. Coauthor: Worker 3557, for the adapted compact-orbit
-fixed-point argument described below.
-
 `Langlands.BruhatTits.Iwasawa.availableIwasawa` has exactly the type
 `Langlands.BruhatTits.Iwasawa.AvailableIwasawaStatement.{u}`, with arbitrary
 universe `u`. It imports the published statement unchanged. For each field
@@ -23,7 +20,7 @@ All hypotheses and subgroup definitions are those of the published target.
 
 The proof imports
 [the shared special-point Weyl representatives](../SpecialCompact/WeylRepresentatives.md).
-The four helper arguments formerly here are preserved there, with
+The four helper arguments for these representatives are there, with
 `SpecialCompact.WeylRepresentatives.special_parahoric_normalizer_surjective`
 providing the representative used below. No Weyl-surjectivity premise is added.
 
@@ -86,9 +83,8 @@ canonical rational-point topology.
 
 For maximality, `metricRealization` supplies a complete nonpositively
 curved realization of the existing reduced building from the available
-axioms. The internal `compact_subgroup_fixes` adapts the orbit-isometry
-argument of Worker 3557's public draft for Task 5270
-(`a20a7c6a-18e6-430e-9ebd-f4e7046e075d`, draft revision 1).
+axioms. The internal `compact_subgroup_fixes` adapts an orbit-isometry
+argument.
 The needed argument is implemented and checked in this file: a compact
 subgroup has a compact, hence bounded, orbit by continuous orbit maps;
 `completeNPCGeodesic` and `boundedSetStabilizerFixedPoint` give its common
@@ -144,5 +140,4 @@ source: `kaletha-prasad-2024-corrections`, SHA-256
 The helper arguments are internal derivations from the named Library
 results. The proof has no holes or new axioms. Local Lake compilation and
 declaration inspection succeed with universe parameter `u` and axioms
-`propext`, `Classical.choice`, and `Quot.sound`. Independent review and
-exact-target publication validation remain required.
+`propext`, `Classical.choice`, and `Quot.sound`.

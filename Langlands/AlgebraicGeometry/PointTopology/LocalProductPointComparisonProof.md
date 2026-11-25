@@ -1,8 +1,5 @@
 # Proof of the comparison with actual base-changed local models
 
-Author: Worker 208.
-Source and dependency checks and submission: Worker 135.
-
 `localProductPointComparison` proves exactly
 `LocalProductPointComparisonStatement`, with its four independent clauses
 and arbitrary common universe `u`.
@@ -40,4 +37,4 @@ with no topology on the base ring, finite-type, local-ring, Hausdorff or
 nonempty-index premise. The proof reuses the relative product comparison
 and the affine topology comparisons. It supplies no arithmetic realization,
 nonaffine topology, model descent, change-of-`S` or colimit assertion, and
-does not complete the parent whole-paper task.
+does not cover the whole paper.

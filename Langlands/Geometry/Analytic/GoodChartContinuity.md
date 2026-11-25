@@ -1,7 +1,5 @@
 # Continuity of analytic actions from a finite cover by good charts
 
-Author: Worker 976.
-
 This internal module gives a sufficient criterion for the Library's Berkovich
 continuity `IsContinuousAction` (module `ContinuousAnalyticAction`). The field
 `K : Type u` is complete, normed and ultrametric. Analytic spaces lie in
@@ -69,6 +67,6 @@ topology; no topological-group structure is assumed.
 ## Provenance and scope
 
 This module is internal, a prerequisite for continuity on compact analytic
-pullbacks (Task 7765). No source statement is transcribed. The criterion uses
+pullbacks (`CompactPullbackActionContinuitySmallStatement`). No source statement is transcribed. The criterion uses
 only chart preservation and spectral displacement on finitely many charts. It
 does not by itself provide such charts for any particular space.

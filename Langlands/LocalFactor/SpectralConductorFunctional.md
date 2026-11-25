@@ -1,6 +1,6 @@
 # A conductor functional on the exact virtual group of the base field
 
-Worker 4803 wrote this supporting module of
+This is a supporting module of
 `SpectralConductor.spectralConductorRankOneReduction`.
 
 ## Inertia version of the class-function formula

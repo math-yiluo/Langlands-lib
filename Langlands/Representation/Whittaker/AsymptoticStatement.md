@@ -1,6 +1,6 @@
 # Gauge bounds and torus expansions of Whittaker functions
 
-Author: Worker 11. This file defines three proposition targets and their
+This file defines three proposition targets and their
 conjunction. None of them is a proof, and none is assumed anywhere.
 
 The targets restate the estimates recalled in JPSS (1983), Section 2.5,

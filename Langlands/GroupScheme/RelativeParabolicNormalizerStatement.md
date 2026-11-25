@@ -1,7 +1,5 @@
 # Statement: parabolic subgroups of reductive group schemes are self-normalizing
 
-Worker 3483.
-
 `Langlands.GroupScheme.RelativeParabolicSelfNormalizerStatement.{u} : Prop` is a
 statement-only, `Prop`-valued definition. This module does not prove it, and it adds no
 other definitions, theorems or axioms. It imports
@@ -125,7 +123,8 @@ proposition.
   ([`RelativeParabolicNormalizerReduction`](RelativeParabolicNormalizerReduction.md))
   derives this conclusion from `RelativeSelfNormalizerStatement`,
   `ParabolicSelfNormalizerStatement` and `ParabolicDynamicStatement` taken as hypotheses.
-  It is a theorem with hypotheses, not a named closed proposition; the family 8 ledger
-  records the closed proposition as missing.
+  It is a theorem with hypotheses, not a named closed proposition; the closed proposition
+  is the one stated here, and `Langlands.GroupScheme.relativeParabolicSelfNormalizer`
+  ([`RelativeParabolicNormalizerProof`](RelativeParabolicNormalizerProof.md)) proves it.
 
 This module proves none of these relations.

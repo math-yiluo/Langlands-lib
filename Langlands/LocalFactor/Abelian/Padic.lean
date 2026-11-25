@@ -14,9 +14,9 @@ Concrete expressions for the abelian theorem family, using the actual
 conductors constructed by `Langlands.HarmonicAnalysis.Conductor`.
 No functional equation or nonabelian constant system is assumed or chosen.
 
-Worker 33 authored the callable expressions and conductor bridges. Worker 20
-connects them to the convergent abelian construction and supplies rational
-L-factors with restricted evaluation.
+This module connects the callable expressions and conductor bridges to the
+convergent abelian construction and supplies rational L-factors with restricted
+evaluation.
 -/
 
 noncomputable section
@@ -76,7 +76,7 @@ private theorem ord_unit_zero_iff (v : F.Carrierˣ) :
   · intro h
     simp [PadicField.TopologicalData.ord, h]
 
-/-- The local formula is exactly membership in the owner's actual principal units. -/
+/-- The local formula is exactly membership in the actual principal units. -/
 theorem unitLevel_iff_mem_principalUnits (a : ℕ) (v : F.Carrierˣ) :
     unitLevel T a v ↔ v ∈ T.principalUnits a := by
   by_cases ha : a = 0
@@ -117,7 +117,7 @@ def AdditiveConductorAt (ψ : AddChar F.Carrier Circle) (n : ℤ) : Prop :=
   IsGreatest {m : ℤ | ∀ x : F.Carrier,
     T.discreteValuation x ≤ WithZero.exp m → ψ x = 1} n
 
-/-- The additive predicate names precisely the owner's constructed conductor. -/
+/-- The additive predicate names precisely the constructed conductor. -/
 theorem additiveConductorAt_iff (ψ : AdditiveCharacter) (n : ℤ) :
     letI := T.topology
     AdditiveConductorAt T ψ.toAddChar n ↔ n = T.additiveConductor ψ := by
@@ -127,7 +127,7 @@ theorem additiveConductorAt_iff (ψ : AdditiveCharacter) (n : ℤ) :
   exact ⟨fun h => h.unique hc, fun h => h.symm ▸ hc⟩
 
 /-- The elementary Euler expression, retaining its explicit conductor input.
-The public `lFactor` below uses the owner's actual conductor constructor. -/
+The public `lFactor` below uses the actual conductor constructor. -/
 def lFactorAt (π : F.Carrierˣ) (χ : MultiplicativeCharacter)
     (a : ℕ) (s : ℂ) : ℂ :=
   if a = 0 then (1 - (χ π : ℂ) * spectralVariable T s)⁻¹ else 1
@@ -198,7 +198,7 @@ def lFactor (χ : MultiplicativeCharacter) (s : ℂ) : ℂ :=
   lFactorAt T (uniformizerUnit T) χ (T.multiplicativeConductor χ) s
 
 /-- The actual fixed-Haar rank-one epsilon expression. Its conductors are chosen
-only from the owner's proved least/greatest-level existence theorems. -/
+only from the proved least/greatest-level existence theorems. -/
 def epsilon (χ : MultiplicativeCharacter) (ψ : AdditiveCharacter)
     (μ : BorelMeasure T) (s : ℂ) : ℂ :=
   letI := T.topology

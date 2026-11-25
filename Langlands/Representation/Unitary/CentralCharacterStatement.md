@@ -35,14 +35,17 @@ of the published invariant-form definition in
 `Langlands.Representation.Unitary.Basic`: for a nonzero vector, definiteness
 makes its self-pairing nonzero, while scalar central action and invariance
 identify this self-pairing with its product by the scalar's squared modulus.
-Cancellation forces that modulus to be one. A proof successor must implement
-this reasoning; no part of it is a premise of the proposition.
+Cancellation forces that modulus to be one. No part of this reasoning is a
+premise of the proposition; `unitarizableCentralCharacter` in
+`Langlands.Representation.Unitary.CentralCharacterProof` proves the proposition.
 
 The statement is useful for the GL unitary Weyl exponent rigidity proof in
 `Langlands.Representation.Classification.UnitaryWeylRigidityStatement`.
 It does not assert that theorem's block-coordinate geometry, weighted real
-exponent equalities, generic self-association consequence, or the host generic
-relative Jacquet comparison.
+exponent equalities, generic self-association consequence, or the generic
+relative Jacquet comparison that the rigidity statement serves.
 
-This module records only the proposition. Its proposed algebraic derivation
-and its use in exponent rigidity remain proof obligations.
+This module records only the proposition. `unitarizableCentralCharacter`
+proves it; `Langlands.Representation.Classification.UnitaryWeylRigidityProof`,
+which proves `GLUnitaryWeylRealExponentRigidityStatement`, does not import
+this module.

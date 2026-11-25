@@ -59,6 +59,6 @@ polynomial comparison identities prove its factorization equation.
 The argument is an internal deduction from the imported orbit uniqueness,
 affine-line saturation, and normalized conjugation constructions. It adds no
 splitness, perfectness, characteristic, or field-cardinality premise. The
-actual stable open immersion and the orbit extension remain inputs. This unit
+actual stable open immersion and the orbit extension remain inputs. This module
 does not prove existence of an opposite cell or an unconditional rational
 Bruhat decomposition.

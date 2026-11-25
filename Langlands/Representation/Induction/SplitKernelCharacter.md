@@ -1,7 +1,5 @@
 # Character-twisted relative integration over a split kernel
 
-Author: Worker 837.
-
 This pair extends the published split-kernel relative integral from the trivial
 character to an arbitrary smooth character `θ` of the kernel. If `θ` is trivial
 on `I = H ∩ N`, the pair identifies the actual `θ`-localized quotient of compact

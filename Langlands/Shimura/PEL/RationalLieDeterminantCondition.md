@@ -4,13 +4,12 @@ This is a derived rational-action version of
 [LieDeterminantCondition](LieDeterminantCondition.md), using the actual
 rational Lie functor and its section determinants. It retains the same
 constructed order, reflex determinant and reflex-field base morphism.
-Worker 57 authored this unit.
 
 The arithmetic input is the existing actual central simple unitary datum
 `D`, Harris signature charts `C` and CM-section hypothesis `hΦ`. The actual
 base scheme `S` maps by `s` to the spectrum of the constructed cocharacter
 reflex field. An actual abelian scheme `B` over `S` carries an actual
-rational algebra map `i : A →ₐ[ℚ] End0 B`. This unit does not require or
+rational algebra map `i : A →ₐ[ℚ] End0 B`. This module does not require or
 prove injectivity of `i`.
 
 `harrisRationalOrderAction` restricts this map along the inclusion of
@@ -57,7 +56,7 @@ existing construction derived from Kottwitz, *Points on Some Shimura
 Varieties over Finite Fields* (1992), section 5, printed pp.389–391,
 registered source `kottwitz-1992-points-shimura-finite-fields`.
 
-This unit is an internal extension and invariance theorem for the
+This module is an internal extension and invariance theorem for the
 Library's reflex-field determinant predicate on order families. It
 does not identify that predicate with the full Harris–Taylor
 compatibility conditions or construct the full moduli problem.

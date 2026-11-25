@@ -1,6 +1,6 @@
 # Compact right translation preserves actual automorphic forms
 
-Author: Worker 84. Module: `Langlands.Automorphic.CompactTranslationProof`.
+Module: `Langlands.Automorphic.CompactTranslationProof`.
 All declarations below are in `Langlands.Automorphic`.
 
 `automorphicCompactTranslation` proves exactly the published

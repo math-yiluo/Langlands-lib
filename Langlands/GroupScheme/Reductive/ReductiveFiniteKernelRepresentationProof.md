@@ -1,7 +1,7 @@
 # Reductivity and semisimple representations with finite kernel
 
 `Langlands.GroupScheme.reductiveFiniteKernelRepresentation.{u}` proves the
-unchanged Library proposition
+Library proposition
 `Langlands.GroupScheme.ReductiveFiniteKernelRepresentationStatement.{u}`.
 It applies in every universe to every smooth connected affine group scheme
 over a perfect field, without additional assumptions. The representation is
@@ -28,7 +28,7 @@ finite-target rigidity lemma makes that subgroup inclusion trivial. Thus the
 group is pseudo-reductive. The published `perfectFieldPseudoReductive` theorem
 then gives connected reductivity. Perfectness is used in this last comparison.
 
-The final Lean proof introduces the telescope of the unchanged proposition,
+The final Lean proof introduces the telescope of the proposition,
 uses the forward existence theorem, and applies the converse reduction with
 the proved normal-unipotent action assertion. Both implications retain the
 original representation, stable-subspace and kernel definitions.
@@ -40,5 +40,4 @@ p. 442. The source is registered as `milne-2017-algebraic-groups`, SHA-256
 The forward proof uses composition factors instead of the source's
 central/derived product route; the converse follows the source's use of
 normal-unipotent action and the perfect-field comparison. The retained
-official errata has no correction for p. 442. Worker 661 supplied the forward
-construction and assembly; Worker 774 supplied the converse reduction.
+official errata has no correction for p. 442.

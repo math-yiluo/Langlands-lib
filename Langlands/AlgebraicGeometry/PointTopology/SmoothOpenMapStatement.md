@@ -1,7 +1,5 @@
 # Smooth morphisms are open on local-field rational points
 
-Author: Worker 1505.
-
 `Langlands.AlgebraicGeometry.PointTopology.SmoothRationalPointOpenMapStatement.{u}`
 is a Prop-valued proposition. It quantifies over:
 
@@ -57,4 +55,5 @@ many coefficients of one local standard-smooth presentation of `f`, so this
 generalization holds by the same implicit-function argument. If `Y` is of
 finite type over `F`, the statement is exactly the affine case of Conrad's.
 
-This is a statement unit only; the proof is a separate obligation.
+This is a statement module only; the theorem `smoothRationalPointOpenMap` in
+`SmoothOpenMapProof` proves it.

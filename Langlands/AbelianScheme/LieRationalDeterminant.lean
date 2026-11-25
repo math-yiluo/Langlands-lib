@@ -24,7 +24,7 @@ variable {S : AlgebraicGeometry.Scheme.{u}} {R : CommRingCat.{u}}
 /-- Restrict the actual rational Lie action to a genuine open. -/
 def lieRationalLocalOrderAction (A : AbelianScheme S) (α : O →+* End0 A)
     (U : S.Opens) : O →+* CategoryTheory.End (A.Lie.over U) where
-  toFun a := (lieRationalOrderAction p A α a).over U
+  toFun a := CategoryTheory.End.of ((lieRationalOrderAction p A α a).asHom.over U)
   map_zero' := by rw [map_zero]; rfl
   map_one' := by rw [map_one]; rfl
   map_add' a b := by rw [map_add]; rfl
@@ -40,7 +40,7 @@ def lieRationalSectionOrderAction (A : AbelianScheme S) (α : O →+* End0 A)
 theorem lieRationalSectionOrderAction_apply (A : AbelianScheme S)
     (α : O →+* End0 A) {U : S.Opens} (V : Over U) (a : O)
     (x : Γ(A.Lie, V.left)) :
-    lieRationalSectionOrderAction p A α V a x = (lieMap0 p (α a)).app V.left x :=
+    lieRationalSectionOrderAction p A α V a x = (lieMap0 p (α a).asHom).app V.left x :=
   rfl
 
 /-- The rational action on sections commutes with actual restrictions. -/
@@ -93,8 +93,8 @@ theorem lieRationalLocalOrderAction_integral (A : AbelianScheme S)
     (α : O →+* End A) (U : S.Opens) :
     lieRationalLocalOrderAction p A ((endToEnd0 A).comp α) U =
       lieLocalOrderAction A α U := by
-  ext a
-  exact congrArg (fun f : CategoryTheory.End A.Lie => f.over U)
+  ext a : 1
+  exact congrArg (fun f : CategoryTheory.End A.Lie => CategoryTheory.End.of (f.asHom.over U))
     (RingHom.congr_fun (lieRationalOrderAction_integral p A α) a)
 
 /-- The polynomial for an integral action is the published integral Lie polynomial. -/
@@ -117,10 +117,10 @@ def lieLocalIso0 {A B : AbelianScheme S}
 theorem lieLocalIso0_intertwines {A B : AbelianScheme S}
     (α : O →+* End0 A) (β : O →+* End0 B)
     (e : Langlands.Rationalization.of A ≅ Langlands.Rationalization.of B)
-    (he : ∀ a, comp0 A A B (α a) e.hom = comp0 A B B e.hom (β a))
+    (he : ∀ a, comp0 A A B (α a).asHom e.hom = comp0 A B B e.hom (β a).asHom)
     (U : S.Opens) (a : O) :
-    lieRationalLocalOrderAction p A α U a ≫ (lieLocalIso0 p e U).hom =
-      (lieLocalIso0 p e U).hom ≫ lieRationalLocalOrderAction p B β U a := by
+    (lieRationalLocalOrderAction p A α U a).asHom ≫ (lieLocalIso0 p e U).hom =
+      (lieLocalIso0 p e U).hom ≫ (lieRationalLocalOrderAction p B β U a).asHom := by
   exact congrArg ((SheafOfModules.overFunctor S.ringCatSheaf U).map)
     (lieMap0_intertwines p α β e.hom he a)
 
@@ -128,7 +128,7 @@ theorem lieLocalIso0_intertwines {A B : AbelianScheme S}
 theorem lieRationalSectionDeterminant_iso {A B : AbelianScheme S}
     (α : O →+* End0 A) (β : O →+* End0 B)
     (e : Langlands.Rationalization.of A ≅ Langlands.Rationalization.of B)
-    (he : ∀ a, comp0 A A B (α a) e.hom = comp0 A B B e.hom (β a))
+    (he : ∀ a, comp0 A A B (α a).asHom e.hom = comp0 A B B e.hom (β a).asHom)
     {U : S.Opens} {I J : Type u} [Fintype I] [Fintype J]
     (eA : SheafOfModules.free (R := S.ringCatSheaf.over U) I ≅ A.Lie.over U)
     (eB : SheafOfModules.free (R := S.ringCatSheaf.over U) J ≅ B.Lie.over U)

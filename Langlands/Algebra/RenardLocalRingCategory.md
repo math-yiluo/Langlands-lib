@@ -66,11 +66,11 @@ faithful-action or additional coefficient hypothesis is used.
 
 The category implementation, full-subcategory packaging, designated
 image choice and factor candidate are internal derived formulations of
-the source example. This unit constructs them and proves their short
+the source example. This module constructs them and proves their short
 intrinsic laws. It does not assert categorical factorization, uniqueness,
-initiality, a reflection functor or an adjunction. After these definitions
-are actually published, a separate Prop-valued statement should require
+initiality, a reflection functor or an adjunction. The Prop-valued
+statements requiring
 `canonicalRingMap A ≫ localRingInclusion.map g = f`, unique `g`, and
 `Nonempty (StructuredArrow.IsUniversal (canonicalStructuredArrow A))`
-or an equivalent actual initiality proposition. Its exact proof remains
-a separate task. No completion of A.III or the whole book is claimed.
+are in `RenardLocalRingUniversalStatement`, and they are proved in
+`RenardLocalRingUniversalProof`. No completion of A.III or the whole book is claimed.

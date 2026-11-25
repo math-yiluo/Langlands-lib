@@ -1,4 +1,4 @@
-import Langlands.ClassField.Global.AbsoluteWeilGroupStatement
+import Langlands.ClassFieldTheory.Global.AbsoluteWeilGroupStatement
 import Langlands.VirtualRepresentation.Global.RelativeImages
 import Langlands.Weil.Representation.UnitaryProof
 
@@ -18,7 +18,7 @@ universe u uW uP
 
 namespace Langlands.VirtualRepresentation.AbsoluteGlobal
 
-open Langlands.Global Langlands.Global.CompletionPadic Langlands.ClassField.Global
+open Langlands.Global Langlands.Global.CompletionPadic Langlands.ClassFieldTheory.Global
 open Langlands.Global.AdelicFunctoriality
 open Langlands.Automorphic
 
@@ -374,11 +374,11 @@ theorem WitnessedGenerator.exists_relative (d : WitnessedGenerator.{u, uW, uP} S
       rw [hconj, map_mul, map_mul, hi, mul_one, ← map_mul, inv_mul_cancel, map_one]
     · have hconj := WeilMapSystem.eulerPolynomial_representation_conj (A := B) y⁻¹
         (ι' (Weil.Local.localGeometricFrobenius (padicField v')))
-      rw [inv_inv] at hconj
+      simp only [inv_inv] at hconj
       have hp' : LocalFactor.eulerPolynomial (B.representation
           (S.toLevel K (θ' (Weil.Local.localGeometricFrobenius (padicField v'))))) =
           d.presentation.spectralSystem.eulerPolynomial v' hs := hp
-      rw [hy, hconj] at hp'
+      simp only [hy, hconj] at hp'
       exact hp'
   have hexp : LocalWeil.ExactExpansion (padicField v)
       (RelativeGlobal.localExactClass F K c v B hassoc.1 ι)

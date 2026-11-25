@@ -1,7 +1,5 @@
 # Inverse-character reproduction on an irreducible source
 
-Author: Worker 94.
-
 This internal consequence of Schur conjugation averaging uses coordinate
 rank-one endomorphisms. For a vector `v`, the endomorphism `rankOne j v`
 sends `w` to `w j` times `v`, and its trace is `v j`. Apply conjugation

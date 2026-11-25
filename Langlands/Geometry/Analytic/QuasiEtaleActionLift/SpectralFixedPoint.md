@@ -1,7 +1,5 @@
 # Polynomial fixed points with spectral bounds
 
-Author: Worker 786.
-
 The fixed-point lemma is an internal construction for the nearby-lift
 argument of Berkovich, *Vanishing cycles for formal schemes* (1994), §7,
 especially Lemma 7.3. It supplies the spectral bound on the displacement in a

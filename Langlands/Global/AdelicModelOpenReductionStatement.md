@@ -1,7 +1,5 @@
 # Local hypotheses for actual fixed-model adelic openness
 
-Author: Worker 208.
-
 `AdelicModelOpenReductionStatement` is the conjunction of the actual
 function-field and full number-field local-to-adelic openness reductions.
 It records the topological passage in Brian Conrad, *Weil and Grothendieck

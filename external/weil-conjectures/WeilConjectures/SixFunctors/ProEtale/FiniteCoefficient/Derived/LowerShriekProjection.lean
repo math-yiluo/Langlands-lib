@@ -1,0 +1,160 @@
+/-
+Copyright (c) 2026 Claude. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Claude
+-/
+module
+
+public import WeilConjectures.SixFunctors.ProEtale.FiniteCoefficient.Derived.LowerShriek
+public import WeilConjectures.SixFunctors.ProEtale.FiniteCoefficient.Derived.LowerStarProjection
+public import WeilConjectures.SixFunctors.ProEtale.FiniteCoefficient.Derived.OpenLowerShriekProj
+
+/-!
+# The projection map for the compactly supported direct image
+
+Let `f : X ⟶ Y` be a morphism of schemes with a compactification
+`c = (X ⟶[i] Z ⟶[g] Y)`, so that `Rf_!(c) = Di_! ⋙ Rg_*`. We construct the projection map
+```
+PF_c : Rf_!(c)K ⊗ᴸ L ⟶ Rf_!(c)(K ⊗ᴸ Lf^*L)
+```
+natural in `K` in `D(X_proét)` and `L` in `D(Y_proét)`, as the composite
+```
+Rg_*(i_!K) ⊗ᴸ L ⟶ Rg_*(i_!K ⊗ᴸ Lg^*L)          (projection map of `Rg_*`)
+                ≅ Rg_*(i_!(K ⊗ᴸ Li^*Lg^*L))     (projection formula for `i_!`)
+                ≅ Rg_*(i_!(K ⊗ᴸ Lf^*L))         (`Lg^* ⋙ Li^* ≅ L(i ≫ g)^*` and `f = i ≫ g`)
+```
+of `AlgebraicGeometry.ProEtale.rightDerivedLowerStarProjectionMap`, of the inverse of
+`AlgebraicGeometry.ProEtale.derivedOpenImmersionLowerShriekProjectionIso` and of
+`AlgebraicGeometry.ProEtale.leftDerivedUpperStarComp`.
+
+## Main definitions and results
+
+- `AlgebraicGeometry.ProEtale.derivedTensorRightDerivedLowerShriek c` and
+  `AlgebraicGeometry.ProEtale.rightDerivedLowerShriekDerivedTensorLeftDerivedUpperStar c`: the
+  bifunctors `(K, L) ↦ Rf_!(c)K ⊗ᴸ L` and `(K, L) ↦ Rf_!(c)(K ⊗ᴸ Lf^*L)`, of type
+  `D(X_proét) ⥤ D(Y_proét) ⥤ D(Y_proét)`.
+- `AlgebraicGeometry.ProEtale.projectionMapOfCompactification c`: the projection map `PF_c`, as a
+  natural transformation between these bifunctors.
+- `AlgebraicGeometry.ProEtale.projectionMap f`: the projection map for the chosen
+  compactification `HasCompactification.compactification f`.
+- `AlgebraicGeometry.ProEtale.projectionMapOfCompactification_app_app`: the value of `PF_c` at
+  `(K, L)` is the composite above.
+-/
+
+@[expose] public section
+
+universe u' u
+
+open CategoryTheory Limits MonoidalCategory
+
+open scoped CategoryTheory.Functor
+
+namespace AlgebraicGeometry
+
+open Scheme
+
+variable (A : Type u') [Category.{u + 1} A] [Abelian A] [IsGrothendieckAbelian.{u + 1} A]
+  [MonoidalCategory A] [MonoidalPreadditive A] [SymmetricCategory A] [MonoidalClosed A]
+  [Abelian.HasFunctorialFlatResolution A]
+
+namespace ProEtale
+
+variable {X Y : Scheme.{u}} {f : X ⟶ Y} (c : Compactification f)
+
+/-- The bifunctor `(K, L) ↦ Rf_!(c)K ⊗ᴸ L`, of type `D(X_proét) ⥤ D(Y_proét) ⥤ D(Y_proét)`. -/
+noncomputable def derivedTensorRightDerivedLowerShriek :
+    DerivedCategory (Sheaf (Scheme.ProEt.topology X) A) ⥤
+      DerivedCategory (Sheaf (Scheme.ProEt.topology Y) A) ⥤
+        DerivedCategory (Sheaf (Scheme.ProEt.topology Y) A) :=
+  Rf_!(c)[A] ⋙ -⊗ᴸ-(Y)[A]
+
+@[simp]
+lemma derivedTensorRightDerivedLowerShriek_obj_obj
+    (K : DerivedCategory (Sheaf (Scheme.ProEt.topology X) A))
+    (L : DerivedCategory (Sheaf (Scheme.ProEt.topology Y) A)) :
+    ((derivedTensorRightDerivedLowerShriek A c).obj K).obj L =
+      ((-⊗ᴸ-(Y)[A]).obj ((Rf_!(c)[A]).obj K)).obj L :=
+  rfl
+
+/-- The bifunctor `(K, L) ↦ Rf_!(c)(K ⊗ᴸ Lf^*L)`, of type `D(X_proét) ⥤ D(Y_proét) ⥤ D(Y_proét)`. -/
+noncomputable def rightDerivedLowerShriekDerivedTensorLeftDerivedUpperStar :
+    DerivedCategory (Sheaf (Scheme.ProEt.topology X) A) ⥤
+      DerivedCategory (Sheaf (Scheme.ProEt.topology Y) A) ⥤
+        DerivedCategory (Sheaf (Scheme.ProEt.topology Y) A) :=
+  (Functor.postcompose₂.obj Rf_!(c)[A]).obj
+    ((((Functor.whiskeringLeft₂ _).obj (𝟭 _)).obj L((f)^*[A])).obj (-⊗ᴸ-(X)[A]))
+
+@[simp]
+lemma rightDerivedLowerShriekDerivedTensorLeftDerivedUpperStar_obj_obj
+    (K : DerivedCategory (Sheaf (Scheme.ProEt.topology X) A))
+    (L : DerivedCategory (Sheaf (Scheme.ProEt.topology Y) A)) :
+    ((rightDerivedLowerShriekDerivedTensorLeftDerivedUpperStar A c).obj K).obj L =
+      (Rf_!(c)[A]).obj (((-⊗ᴸ-(X)[A]).obj K).obj (L((f)^*[A]).obj L)) :=
+  rfl
+
+/-- The isomorphism `Li^* ∘ Lg^* ≅ Lf^*` (that is, `Lg^* ⋙ Li^* ≅ Lf^*`) for a
+compactification `c = (X ⟶[i] Z ⟶[g] Y)` of `f`: the inverse of
+`AlgebraicGeometry.ProEtale.leftDerivedUpperStarComp` transported along `f = i ≫ g`. -/
+noncomputable def leftDerivedUpperStarCompactificationIso :
+    L((c.g)^*[A]) ⋙ L((c.i)^*[A]) ≅ L((f)^*[A]) :=
+  (leftDerivedUpperStarComp A c.i c.g).symm ≪≫
+    eqToIso (congrArg (fun h ↦ L((h)^*[A])) c.comm.symm)
+
+variable [ProEtale.UpperStarPreservesFlat A]
+
+/-- Blueprint `def-exchange-projection`: Exchange and projection transformations, the
+projection transformation `PF`.
+
+The **projection map** `PF_c : Rf_!(c)K ⊗ᴸ L ⟶ Rf_!(c)(K ⊗ᴸ Lf^*L)` for a
+compactification `c = (X ⟶[i] Z ⟶[g] Y)` of `f`, as a natural transformation of bifunctors
+`D(X_proét) ⥤ D(Y_proét) ⥤ D(Y_proét)`. It is the composite
+```
+Rg_*(i_!K) ⊗ᴸ L ⟶ Rg_*(i_!K ⊗ᴸ Lg^*L) ≅ Rg_*(i_!(K ⊗ᴸ Li^*Lg^*L)) ≅ Rg_*(i_!(K ⊗ᴸ Lf^*L))
+```
+of the projection map `AlgebraicGeometry.ProEtale.rightDerivedLowerStarProjectionMap` of `g`, of
+`Rg_*` applied to the inverse of the projection formula
+`AlgebraicGeometry.ProEtale.derivedOpenImmersionLowerShriekProjectionIso` for `i`, and of the
+isomorphism `AlgebraicGeometry.ProEtale.leftDerivedUpperStarCompactificationIso`. -/
+noncomputable def projectionMapOfCompactification :
+    derivedTensorRightDerivedLowerShriek A c ⟶
+      rightDerivedLowerShriekDerivedTensorLeftDerivedUpperStar A c :=
+  Functor.whiskerLeft D((c.i)_!open[A]) (rightDerivedLowerStarProjectionMap A c.g) ≫
+    (Functor.postcompose₂.obj R((c.g)_*[A])).map
+      (Functor.whiskerRight (derivedOpenImmersionLowerShriekProjectionIso A c.i).inv
+        ((Functor.whiskeringLeft _ _ _).obj L((c.g)^*[A]))) ≫
+    (Functor.postcompose₂.obj R((c.g)_*[A])).map
+      (Functor.whiskerLeft ((Functor.postcompose₂.obj D((c.i)_!open[A])).obj (-⊗ᴸ-(X)[A]))
+        ((Functor.whiskeringLeft _ _ _).map (leftDerivedUpperStarCompactificationIso A c).hom))
+
+/-- The value of the projection map `PF_c` at `(K, L)` is the composite
+```
+Rg_*(i_!K) ⊗ᴸ L ⟶ Rg_*(i_!K ⊗ᴸ Lg^*L) ≅ Rg_*(i_!(K ⊗ᴸ Li^*Lg^*L)) ≅ Rg_*(i_!(K ⊗ᴸ Lf^*L)).
+``` -/
+lemma projectionMapOfCompactification_app_app
+    (K : DerivedCategory (Sheaf (Scheme.ProEt.topology X) A))
+    (L : DerivedCategory (Sheaf (Scheme.ProEt.topology Y) A)) :
+    ((projectionMapOfCompactification A c).app K).app L =
+      ((rightDerivedLowerStarProjectionMap A c.g).app (D((c.i)_!open[A]).obj K)).app L ≫
+        R((c.g)_*[A]).map
+          (((derivedOpenImmersionLowerShriekProjectionIso A c.i).inv.app K).app
+            (L((c.g)^*[A]).obj L)) ≫
+        R((c.g)_*[A]).map (D((c.i)_!open[A]).map (((-⊗ᴸ-(X)[A]).obj K).map
+          ((leftDerivedUpperStarCompactificationIso A c).hom.app L))) :=
+  rfl
+
+/-- Blueprint `sk-def-sf-exchanges`: Exchange and projection transformations, typed (the
+projection transformation `PF_{f,K,L}` on the pro-étale sites).
+
+The **projection map** `PF : Rf_!K ⊗ᴸ L ⟶ Rf_!(K ⊗ᴸ Lf^*L)` for a morphism
+`f : X ⟶ Y` admitting a compactification: the projection map
+`AlgebraicGeometry.ProEtale.projectionMapOfCompactification` for the chosen compactification
+`HasCompactification.compactification f`. -/
+noncomputable def projectionMap (f : X ⟶ Y) [HasCompactification f] :
+    derivedTensorRightDerivedLowerShriek A (HasCompactification.compactification f) ⟶
+      rightDerivedLowerShriekDerivedTensorLeftDerivedUpperStar A
+        (HasCompactification.compactification f) :=
+  projectionMapOfCompactification A (HasCompactification.compactification f)
+
+end ProEtale
+
+end AlgebraicGeometry

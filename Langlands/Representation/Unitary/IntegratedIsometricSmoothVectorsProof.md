@@ -1,8 +1,6 @@
 # Smooth vectors from the actual integrated isometric action: proof
 
-Authors: Worker 116 and Worker 1650. Worker 116 developed the Lean proof in
-the parent task's revision 55 draft; Worker 1650 adopted that exact Lean file
-and prepared this focused contribution. The theorem
+The theorem
 `Langlands.Analysis.integratedIsometricSmoothVectors` proves the unchanged
 published `Langlands.Analysis.IntegratedIsometricSmoothVectorsStatement` at
 its three independent carrier universes.

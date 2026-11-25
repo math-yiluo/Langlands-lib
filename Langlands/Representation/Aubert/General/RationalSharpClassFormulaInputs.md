@@ -2,32 +2,18 @@
 
 Module `Langlands.Representation.Aubert.General.RationalSharpClassFormulaInputs`.
 
-Authors:
-
-* Worker 751: the first assembly.
-* Worker 4217: the reduced-input corollaries. Workers 751 and 4217 wrote these
-  for Library `3f0bcbd4638c9c42befdc9f7e1578d62fde2c959` and updated them for
-  Library `e449cde988d4e97ab280b8d4d11262887ccc26e0`. They are in the shared
-  draft of Task 4217 (`13e2abdc-2be7-4191-b74b-9eae99a56fcc`).
-* Worker 29, with coauthor Worker 3640 (Task 3640): the final theorem
-  `rationalSharpClassFormulaReduction`. Worker 29 also rechecked the module
-  against Library `3489c50380b46cfbdad8997457a217e6e8e6a27d`, which
-  contains the published statement module
-  [`RationalSharpReductionStatements`](RationalSharpReductionStatements.md).
-* Worker 442 (proof task `18c36a7c-1b08-4443-b90a-38a4f0b9532a`) rechecked
-  the unchanged Lean module against Library
-  `c40a01345b2f4172fa41e07ff31644b40e695003` and submitted it. In
-  environment `5c94c648-e8dc-4002-a50a-071ebf3f6096` the module has zero
-  errors and zero warnings, and the final theorem uses only the axioms
-  `propext`, `Classical.choice` and `Quot.sound` (development check
-  `f74b9c9f-a981-4f9e-bb15-99bf4e8a5dd0`).
+The final theorem `rationalSharpClassFormulaReduction` proves the reduction
+proposition of the statement module
+[`RationalSharpReductionStatements`](RationalSharpReductionStatements.md). The
+module has zero errors and zero warnings, and the final theorem uses only the
+axioms `propext`, `Classical.choice` and `Quot.sound`.
 
 The module uses:
 
-* Worker 1511's generic reduction
+* the generic reduction
   `Langlands.Aubert.General.SharpClassFormula.class_formula_of_exact`, from
   `SharpClassFormulaReduction`;
-* Worker 691's endpoint-free conditional exactness theorem
+* the endpoint-free conditional exactness theorem
   `RationalPointFamily.rationalIsExactBeforeTerminal_of_inputs`, from
   `RationalCorrectedExactnessReduction`.
 
@@ -35,7 +21,7 @@ The module is conditional and does not prove the target. It proves the
 published reduction proposition
 `RationalPointFamily.RationalSharpClassFormulaReductionStatement`, which says:
 the target `RationalPointFamily.RationalSharpClassFormulaStatement` follows
-from four propositions that the Library states but does not yet prove. The
+from four propositions that the Library states but does not prove. The
 target is Aubert 1995, Corollaire 3.9 (a), on the actual rational-point
 families, extended to finite-length members of `Alg({I})` as in the 1996
 erratum, p. 4690.
@@ -105,25 +91,27 @@ new statement of the literature.
   - The target's finite-length proof `hfl`, used to build `D_G`, stays
     universally quantified inside `RationalSharpClassFormulaStatement`.
 
-## Remaining inputs and owners
+## Remaining inputs
 
-Library `c40a0134…` proves none of the following. For two of them it has
+The Library proves none of the following. For four of them it has
 only conditional reductions:
-`rationalSupportCategoryInductionJacquet_of_decomposition_splitting_and_association`
+`rationalSupportCategoryInductionJacquet_of_decomposition_splitting_and_association`,
+`rationalSupportCategoryExactnessDetection_of_zeroDetection`,
+`rationalSupportCategoryJacquetVanishing_of_dynamicCompact_and_association`
 and `rationalCuspidalSupportAssociation_of_cuspidalJacquetFactorExtraction`.
 
-| Input | Owner task |
-| --- | --- |
-| `RationalCorrectedGradedVanishingStatement` | `277860be-2aeb-4a85-8ccb-f1e2e5c573b9` |
-| `RationalSupportCategoryInductionJacquetStatement` | `09268952-5848-4585-90e4-0a12121c60ef` |
-| `RationalSupportCategoryExactnessDetectionStatement` | `d70a1edd-5a84-4b03-aecf-2818901809d4` |
-| `RationalSupportCategoryJacquetVanishingStatement` | `bc64458d-2bc4-438a-9992-ba06185affa7` |
-| or `RationalCuspidalSupportAssociationStatement` | `fc414cb1-5832-4033-a2aa-d7c27f5e4691` |
+| Input |
+| --- |
+| `RationalCorrectedGradedVanishingStatement` |
+| `RationalSupportCategoryInductionJacquetStatement` |
+| `RationalSupportCategoryExactnessDetectionStatement` |
+| `RationalSupportCategoryJacquetVanishingStatement` |
+| or `RationalCuspidalSupportAssociationStatement` |
 
 `RationalCorrectedGradedTransitionStatement` is proved by the published
 theorem `rationalCorrectedGradedTransitionStatement`
-(`RationalCorrectedGradedTransitionProof`). Once the other inputs are
-published, the target follows in either of two ways:
+(`RationalCorrectedGradedTransitionProof`). Given proofs of the other inputs,
+the target follows in either of two ways:
 
 * apply `rationalSharpClassFormula_of_open` (or
   `rationalSharpClassFormula_of_association`) to their proofs;
@@ -151,6 +139,4 @@ representations, no geometric-lemma `K0` expansion and no induction/Jacquet
 adjointness.
 
 The final theorem `rationalSharpClassFormulaReduction` only applies
-`rationalSharpClassFormula_of_open`, so it adds no dependency. Whoever reuses
-the proofs of the remaining inputs must record their dependencies at that
-point.
+`rationalSharpClassFormula_of_open`, so it adds no dependency.

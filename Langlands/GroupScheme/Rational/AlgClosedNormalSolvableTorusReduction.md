@@ -1,7 +1,5 @@
 # Normal solvable subgroups of reductive groups from split torus quotients
 
-Author: Worker 1378.
-
 This module reduces the published target
 `AlgClosedReductiveNormalSolvableTorusStatement.{u}` (module
 `Rational.AlgClosedNormalSolvableTorusStatement`) to the published

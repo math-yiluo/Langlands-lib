@@ -1,7 +1,6 @@
 # Assembly of the two structural descent branches
 
-Worker 1295 implemented this internal reduction, following the structural
-descent route coordinated with Worker 1305.
+This internal reduction follows the structural descent route.
 
 `SmoothMaximalSplitTorusDescentReductionStatement` is the conditional
 proposition

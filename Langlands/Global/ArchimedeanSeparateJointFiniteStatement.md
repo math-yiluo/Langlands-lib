@@ -1,6 +1,6 @@
 # Combining separate center and compact differential finiteness
 
-Author: Worker 94. Module:
+Module:
 `Langlands.Global.ArchimedeanSeparateJointFiniteStatement`.
 The proposition is
 `Langlands.Global.ArchimedeanGL.SeparateJointFiniteStatement`.
@@ -41,8 +41,9 @@ finitely many compact translates `b_i f` spanning the compact orbit of `f`.
 Centrality identifies the center orbit of each `b_i f` with a linear image,
 under `b_i`, of the finite center orbit of `f`. Each such image is finite.
 Every joint translate lies in their finite sum, which is finite-dimensional.
-This paragraph describes a proposed proof route, not an implemented Lean proof.
-The submitted Lean file defines the proposition and checks its full parameter
+This paragraph describes the proof route, not a Lean proof; the Lean proof is
+`separateJointFinite` in `ArchimedeanSeparateJointFiniteProof`.
+This Lean file defines the proposition and checks its full parameter
 telescope only.
 
 The motivating joint-finiteness hypothesis occurs in Harish-Chandra,
@@ -57,7 +58,7 @@ Retained PDF:
 `/home/taskhub/pilot/literature/Harish-Chandra, Discrete series for semisimple Lie groups II- Explicit determination of the characters (1966).pdf`.
 SHA256:
 `3ad72529bddbfe96e537bc3f49df6aa3223169c2abbe265d858c32c48545f3d9`.
-Worker 94 rechecked the fingerprint and pp.18–19; the product symbols on p.18
+The fingerprint and pp.18–19 were rechecked; the product symbols on p.18
 were visually checked for the imported joint-orbit construction.
 No applicable source erratum was found in the supplied notes.
 

@@ -9,7 +9,9 @@ reductive group `G` over a field `k`. The objects come from the published module
 - the point quotient `pointWeylGroup i U = N(U) ⧸ Z(U)`;
 - the restriction map `relativeWeylGroupRestrict i U : relativeWeylGroup i →* pointWeylGroup i U`.
 
-No target is proved here. Each is a `Prop`-valued definition for a later proof task.
+No target is proved here. Each is a `Prop`-valued definition; the proofs are in the modules
+`Rational/TorusNormalizerProof`, `Rational/RelativeWeylGroupRestrictProof` and
+`Rational/NormalizerPointsInfiniteFieldProof`.
 All quotients in this file are quotients of groups of points. None of them is the
 group of points of a quotient scheme `N/Z`.
 

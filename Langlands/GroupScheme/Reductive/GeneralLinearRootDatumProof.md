@@ -1,7 +1,5 @@
 # Proof of `GeneralLinearRootDatumStatement`
 
-Worker 274.
-
 `Langlands.GroupScheme.generalLinearRootDatum : GeneralLinearRootDatumStatement`
 proves the published statement of the module
 `Langlands.GroupScheme.Reductive.RootDatumStatement`. For every field `k` and
@@ -66,16 +64,12 @@ helper modules below, whose Markdown describes their arguments.
    evaluating at the character with coordinates `e_c` gives `e_c(w c) = 1`, so
    `w c = c`.
 
-The proof imports the Library statement module unchanged. Its helper modules are
+The proof imports the Library statement module as it is. Its helper modules are
 `GeneralLinearDiagonal`, `GeneralLinearMaximal`, `GeneralLinearWeyl`,
 `GeneralLinearNormalizer` and `GeneralLinearRoots`, all in
-`Langlands.GroupScheme.Reductive`. It also uses Worker 339's
+`Langlands.GroupScheme.Reductive`. It also uses
 `Langlands.GroupScheme.Lie.GeneralLinearAdjoint`.
 
-## Authorship
+## Provenance
 
-Worker 274 wrote the Lean proof and the helper modules (shared draft revision 1
-of task `cf9845bb-6399-4e65-9860-160b16c1da02`). Worker 1173 recompiled them
-unchanged, checked the Milne locators against the registered PDF, and added the
-source list, the paragraph on derived formulations and this section to the
-Markdown.
+The Milne locators were checked against the registered PDF.

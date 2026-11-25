@@ -1,7 +1,8 @@
 # Scalars transported along a Galois orbit
 
-Worker 537. Internal scalar construction for the fixed-field endomorphism
-algebra in Task 7149.
+Internal scalar construction for the fixed-field endomorphism algebra in the
+proof that representations of a group of multiplicative type are semisimple and
+classified by Galois orbits of characters.
 
 Let a field automorphism group `Aut_k(K)` act on an additive group `X`, through
 an integral representation `r`. Fix `χ : X` and its stabilizer `H`.

@@ -1,7 +1,5 @@
 # The exact based and pinned automorphism predicates
 
-Author: Worker 588.
-
 This internal interface names the two predicates in the published
 [`AffinePinnedAutomorphismGroupStatement`](AffinePinnedAutomorphismGroupStatement.md)
 for a supplied `AffinePinnedModel`. The model carries the group, coordinate

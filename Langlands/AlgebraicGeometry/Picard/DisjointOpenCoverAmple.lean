@@ -102,7 +102,7 @@ theorem isAmple_of_rankOpen
     obtain ⟨n, hn⟩ := TopologicalSpace.Opens.mem_iSup.mp hx
     exact TopologicalSpace.Opens.mem_iSup.mpr ⟨⟨n⟩, hn⟩
   · intro i j hij
-    exact a.rankOpen_disjoint (fun he => hij (ULift.ext _ _ he))
+    exact a.rankOpen_disjoint (fun he => hij (ULift.ext he))
 
 end FiniteLocalFrames
 

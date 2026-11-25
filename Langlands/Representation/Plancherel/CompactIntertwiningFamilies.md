@@ -1,6 +1,6 @@
 # Actual compact-picture intertwining families
 
-Worker 200. Derived constructions supporting Waldspurger IV.1.
+Derived constructions supporting Waldspurger IV.1.
 
 The source is J.-L. Waldspurger, *La formule de Plancherel pour les groupes
 p-adiques (d'après Harish-Chandra)*, J. Inst. Math. Jussieu 2 (2003), 235–333,
@@ -56,16 +56,16 @@ The standard-integral constructions additionally assume the existing Borel
 structures, fixed regular two-sided Haar measures on the target radical and
 intersection, an actual compatible measure on the nonnormal intersection
 quotient, closed Levi, Hausdorff ambient group, and the explicit actual
-`SquaredModulusCompatibility` premise. Its general geometric proof remains
-open here.
+`SquaredModulusCompatibility` premise. Its general geometric proof is not
+given here.
 
 `standardCompactOperator` uses the existing `fullSourceIntertwiner` inside
 this composite. At each parameter it requires an equality of the actual
 smooth-dual integral domain with the whole induced source. This equality
 includes both absolute scalar convergence and representability by a vector of
 the original inducing carrier for every source vector and ambient argument.
-It is an analytic prerequisite needing proof, not an authorized structural
-assumption for program completion.
+It is an analytic prerequisite needing proof, not a structural
+assumption.
 
 The evaluation theorem identifies this map at every compact point with the
 original selected standard integral. The specification extends its output

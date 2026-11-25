@@ -1,8 +1,5 @@
 # Conditional assembly of the segment socle irreducibility criterion
 
-Authors: Worker 250, with lifting code by Worker 769 and Worker 584 (see
-"Credits").
-
 This module derives the irreducibility criterion for products of segment socles,
 `Langlands.Classification.SegmentSocleProductIrreducibility.{uF, uV} F T`
 (Zelevinsky 1980, Theorem 4.2, in socle form), from three published proposition
@@ -77,7 +74,7 @@ For a monoid `G` and complex representations:
 - `rank_pos`, `length_pos`: a datum has positive rank exactly when it has a
   segment, since segment degrees are positive.
 - `induced_nontrivial`: if all blocks are nonzero and the rank is positive, the
-  product `e.induced` is nonzero. Worker 494's published
+  product `e.induced` is nonzero. The published
   `Parabolic.normalizedProductSlotSubrepresentation_ne_bot` is applied to the
   slot `0` and the subrepresentation `⊤`, together with
   `normalizedProductSlotSubrepresentation_top`.
@@ -88,7 +85,7 @@ For a monoid `G` and complex representations:
 
 ## Adjacent regrouping for an unsaturated segment universe
 
-The published `Classification.AdjacentSegmentSwapLifting` (Workers 769 and 584)
+The published `Classification.AdjacentSegmentSwapLifting`
 treats only `T.SegmentProductDatum.{max uF uV, uF}`, whose segments lie in the
 carrier universe. The criterion has segments in an arbitrary universe `uV`, so
 the construction is restated here for `T.SegmentProductDatum.{uV, uF}`. The
@@ -122,8 +119,8 @@ The new declaration in this section is `mergedFiber_isIrreducible`. If the block
 of `d` are segment socles and `d.induced` is irreducible, then the merged
 two-block product `(mergedFiber d j h).induced` is irreducible. Otherwise it is
 nonzero (`induced_nontrivial_of_socles`), so it has a proper nonzero
-subrepresentation `S`. All other fibers are nonzero products of socles. Worker
-494's published `Parabolic.normalizedProductSlotSubrepresentation_proper_nonzero`
+subrepresentation `S`. All other fibers are nonzero products of socles. The
+published `Parabolic.normalizedProductSlotSubrepresentation_proper_nonzero`
 lifts `S` to a proper nonzero subrepresentation of the outer product over the
 merged shape. That product is isomorphic to `d.induced` by `regroup_direct`, so
 `d.induced` would be reducible (`LengthTwo.isIrreducible_of_equiv`).
@@ -189,7 +186,7 @@ The module imports only:
   (proposition definitions only);
 - the definitions `Classification.SegmentProductPermutation`;
 - the published regrouping proof `Parabolic.OrderedProductRegroupingProof`;
-- Worker 494's published slot lift `Parabolic.ProductInductionSubrepresentation`;
+- the published slot lift `Parabolic.ProductInductionSubrepresentation`;
 - the length and length-two APIs `Filtration.RepresentationLength` and
   `Filtration.LengthTwoMatching`.
 
@@ -198,15 +195,16 @@ filtrations and Jordan–Hölder transport, length criterion, smooth and compact
 induction, parabolic refinement, regrouping, tensor and factor-matching results,
 twists and admissibility. No classification, exhaustion, existence, coverage,
 uniqueness, commutation or swap theorem is imported. In particular, the module
-does not use any of the following: `TwoSegmentSocleCommutation` (tasks 426911b4,
-66e3b87c), `AdjacentUnlinkedSegmentSocleSwap`, `AdjacentSegmentSwapLifting`
-(its code is restated instead), the special-head criterion (task 8364e73f), task
-e3634665, OrderedMultisegmentSocleExistence, task 23189526, socle exhaustion
-f3a69bc8, segment analytic classification aca8805b, or the exclusions 3bfb61fa,
-ebea9a8a, 20e4e1c6, 52e97845, 1cb45da2, cd8ab97c and bf433f0a of task 2ae5cbe5.
+does not use any of the following: `TwoSegmentSocleCommutation`,
+`AdjacentUnlinkedSegmentSocleSwap`, `AdjacentSegmentSwapLifting`
+(its code is restated instead), the special-head criterion
+`SegmentHeadProductIrreducibility`, `OrderedMultisegmentSocleExistence`, socle
+exhaustion, segment analytic classification, special-head multisegment
+exhaustion, ordered special-head existence, quotient coverage, tempered block
+uniqueness, `SquareIntegrableLanglandsClassification`, square-integrable
+exhaustion or regular exhaustion.
 
-## Credits
+## Adapted code
 
-The lifting part (`select` through `lift`) was written by Worker 584 and Worker
-769 in `Classification.AdjacentSegmentSwapLifting`. Worker 250 restated it for
-the segment universe `uV` and wrote the rest of the module.
+The lifting part (`select` through `lift`) is restated from
+`Classification.AdjacentSegmentSwapLifting` for the segment universe `uV`.

@@ -1,7 +1,5 @@
 # Root support and coroots in normal subgroup functors
 
-Worker 634.
-
 This internally derived helper uses actual root subgroup functors of a supplied
 split maximal torus of a connected reductive group over a field. It defines the
 root support of an arbitrary subgroup functor and proves that normality makes it

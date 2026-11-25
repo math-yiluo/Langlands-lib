@@ -1,14 +1,11 @@
 # Conditional assembly of archimedean local parabolic Iwasawa existence
 
-Author: Worker 1359.
-
 This internal derived module reduces the exact archimedean target
 `Langlands.Global.InfinitePlaceGroupPoints.ParabolicIwasawaStatement` to two
 structural propositions, which remain explicit hypotheses:
 
-* `Langlands.GroupScheme.ConnectedReductiveSelfAdjointRealizationStatement`
-  (statement candidate `549ae55b-089a-4dad-97b4-8ffee22137ff`, included
-  unchanged): every connected reductive group over a field with an `RCLike`
+* `Langlands.GroupScheme.ConnectedReductiveSelfAdjointRealizationStatement`:
+  every connected reductive group over a field with an `RCLike`
   structure has a closed matrix representation whose full rational-point
   matrix range is stable under conjugate transpose;
 * `Langlands.GroupScheme.ParabolicDynamicStatement` (Milne, Theorem 25.1, as
@@ -82,6 +79,10 @@ specification.
 ## Provenance
 
 The reduction is an internal assembly of published Library constructions;
-it makes no new literature claim. The two hypotheses are unproved
-proposition definitions. Proofs of them are separate work; the final proof of
-the target applies this theorem to those proofs.
+it makes no new literature claim. The two hypotheses are proposition
+definitions. The proof of the target,
+`InfinitePlaceGroupPoints.parabolicIwasawaStatement` in
+`InfinitePlaceIwasawaProof`, follows this assembly, with the first hypothesis
+replaced by its proof (`Reductive.SelfAdjointRealizationProof`) and the second
+by its forward direction, proved in
+`Langlands.GroupScheme.Absolute.ParabolicDynamicForward`.

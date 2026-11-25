@@ -1,11 +1,9 @@
 # Nilpotent field groups: central maximal tori, unipotent quotients and perfect-field products
 
-Author: Worker 1107, 4 November 2026. Updated by Worker 5005, 17 November 2026,
-with the [perfect-field product section](#perfect-fields-products-of-a-unipotent-group-and-a-torus).
+This note is dated 4 November 2026. The [perfect-field product section](#perfect-fields-products-of-a-unipotent-group-and-a-torus) was added on 17 November 2026.
 
-This focused ledger records accepted published statements and their exact
-published proofs in standing program `2b5e4a00-9d44-49a4-9c89-979fb5b6233e`,
-revision 2. It contributes to thematic families 2, 3 and 6 and supplements
+This focused ledger records statements and their exact
+proofs in the Library, in the algebraic and reductive group-scheme program. It contributes to thematic families 2, 3 and 6 and supplements
 the [field-tori ledger](field-tori-central-progress.md). All eight families,
 the concrete milestones and the remaining rational structure theorems
 remain obligations of the program.
@@ -63,8 +61,6 @@ and no smoothness premise on the full center. The universe is arbitrary.
 The focused theorem is an exact alias of
 [`nilpotentCentralTorus`](../../Langlands/GroupScheme/Nilpotent/NoTorusUnipotent.lean)
 ([underlying proof explanation](../../Langlands/GroupScheme/Nilpotent/NoTorusUnipotent.md)).
-Worker 1331 authored the focused entry point and credited Worker 1487's
-underlying published proof.
 
 The construction `IsNilpotentGroupScheme.centralTorusQuotient` chooses a
 maximal torus over the original field, proves it central, and constructs
@@ -92,9 +88,9 @@ preservation deduced from that theorem.
 
 ## Original-source comparison
 
-Worker 1107 read Milne, *Algebraic Groups* (2017), printed pp.340–342 /
+Milne, *Algebraic Groups* (2017), printed pp.340–342 /
 one-based PDF pp.356–358, and the complete retained official errata
-snapshot of 2 November 2026.
+snapshot of 2 November 2026 were read.
 
 | Source assertion | Relation to the published target |
 | --- | --- |
@@ -115,23 +111,18 @@ Milne's proof.
 
 ## Verified acceptance and publication
 
-Worker 1107 read the complete independent acceptance reports and the
-machine receipts, checked publication metadata, and compared the exact
-statement and focused proof Lean/Markdown pairs with their frozen files,
-Library `442ff746325df5b6d721fee75d430a65c33d09f0` and the workspace.
-All four files match.
+The exact statement and focused proof Lean and Markdown files were compared with the versions
+that first entered the Library and with Library
+`442ff746325df5b6d721fee75d430a65c33d09f0`. All four files match.
 
-| Unit | Candidate | Accepted machine receipt | Independent review task and reviewer | Publication commit |
-| --- | --- | --- | --- | --- |
-| `NilpotentCentralTorusStatement` | `5d4a3a38-0eee-476d-aed9-c46cb008fca1` | `635de049-9615-4181-af9e-576d24b1f3a7`, `lean.statement@1` | `e20c5a0a-d90c-4c7a-98ea-23d58c3fb213`, Reviewer 11668 | `1fddae33727cfcfcc52ed326c69373200a28ff87` |
-| `nilpotentCentralTorusStatement` | `2b1ea742-6bb7-4e78-9b9d-1589bcbb6838` | `e75c7977-3c02-454d-ac07-ee49d3fda8be`, `lean.proof@1` | `17918685-35f4-486d-a297-7c686fdd89f2`, Reviewer 12913 | `442ff746325df5b6d721fee75d430a65c33d09f0` |
+| Module | First appeared at Library commit |
+| --- | --- |
+| `NilpotentCentralTorusStatement` | `1fddae33727cfcfcc52ed326c69373200a28ff87` |
+| `nilpotentCentralTorusStatement` | `442ff746325df5b6d721fee75d430a65c33d09f0` |
 
-The respective integrations are `cff85464be2d4fec9eefe3438908fd9a`
-and `2f5d9c274604400f9bb2493477398653`. The proof's original accepted
-receipt checks Lake build, exact target, unchanged statement and frozen
-inputs. Reviewer 12913's unqualified approval also checks the independent
-nilpotent proof route and its use of the geometric predicate. No new
-compilation was needed for this documentation.
+The proof was checked for Lake build, exact target, unchanged statement and unchanged
+inputs, and its independent nilpotent route and its use of the geometric predicate were
+checked.
 
 ## Perfect fields: products of a unipotent group and a torus
 
@@ -166,7 +157,7 @@ unipotent part of `G` or `T` with the central multiplicative part
 
 ### Implemented proof
 
-Worker 244 authored the proof. The forward direction does not invoke
+The forward direction does not invoke
 `nilpotentCentralTorusStatement` from the sections above. It passes from
 nilpotence to solvability (`IsNilpotentGroupScheme.isSolvableGroupScheme`)
 and applies the perfect-field construction
@@ -207,8 +198,8 @@ nilpotent. The given isomorphism, the product point equivalence and
 
 ### Original-source comparison
 
-Worker 5005 read Milne, *Algebraic Groups* (2017), printed p.341 / PDF
-p.357 (source `milne-2017-algebraic-groups`). Corollary 16.48 states: "The
+Milne, *Algebraic Groups* (2017), printed p.341 / PDF
+p.357 (source `milne-2017-algebraic-groups`), was read. Corollary 16.48 states: "The
 connected nilpotent group varieties over a perfect field k are exactly
 those of the form U × T with U a connected unipotent group variety and T a
 torus." The statement Markdown records how this sentence, Milne's affine
@@ -226,28 +217,18 @@ nilpotence. It is an internal Library deduction and does not formalize
 
 ### Verified acceptance and publication
 
-| Unit | Candidate | Accepted machine receipt | Independent review task and reviewer | Publication commit |
-| --- | --- | --- | --- | --- |
-| `NilpotentPerfectFieldProductStatement` | `cc0c18b0-911e-4dd1-9103-5ac2788d069c` | `39b7ce92-3440-4d8f-8560-47a20b3d5eb4`, `lean.statement@1` | `2e0a465c-63ee-447d-85c2-d04b07ba225a`, Reviewer 2851 | `b3a1bdaf15715f16a43643513b7cbb6cbb58ef3a` |
-| `nilpotentPerfectFieldProduct` | `d00a8ca3-685e-4f01-82bc-b75ff1828fad` | `0825839a-9e17-4360-9bd7-7183f519d059`, `lean.proof@1` | `5064e2e9-8b90-43ef-ad19-b2702bcbd10c`, Reviewer 6969 | `371b9c350ae74d42665a9e7e0ec32e4c66f56619` |
+| Module | First appeared at Library commit |
+| --- | --- |
+| `NilpotentPerfectFieldProductStatement` | `b3a1bdaf15715f16a43643513b7cbb6cbb58ef3a` |
+| `nilpotentPerfectFieldProduct` | `371b9c350ae74d42665a9e7e0ec32e4c66f56619` |
 
-Worker 5005 read the complete acceptance reports, the integration
-report and the machine receipts and checked the publication metadata.
-The SHA-256 digests of the proof Lean/Markdown pair at Library
-`371b9c350ae74d42665a9e7e0ec32e4c66f56619` equal those recorded in the accepted
-machine receipt for the frozen candidate files, and the statement pair is
-unchanged between its publication commit and that commit.
-The statement's integration is `15d2ad0b453a434793958b6a6f66bde1`; the
-proof's is `602d0d4def864705809d5b5bcfde8c73`. The proof's accepted
-receipt checks Lake build, exact target, unchanged statement and frozen
-inputs. Reviewer 6969 approved without qualifications, checking the
-Lean/Markdown correspondence and the route against Milne 16.48. No new
-compilation was needed for this documentation.
+The SHA-256 digests of the proof Lean and Markdown files at Library
+`371b9c350ae74d42665a9e7e0ec32e4c66f56619` equal those of the versions that first entered the
+Library, and the statement files are unchanged between the commit of their first appearance
+and that commit. The proof was checked for Lake build, exact target, unchanged statement and
+unchanged inputs, and the Lean/Markdown correspondence and the route were checked against
+Milne 16.48.
 
-The proof was the work of Task 6796
-(`7b1943aa-9136-4156-9523-aebf6603ce49`). By agreement between its two
-executors, Worker 244 owned the proof candidate and Worker 5005 wrote this
-documentation update.
 
 ## Remaining field-layer obligations
 
@@ -262,7 +243,7 @@ a special case of the first part of
 [`ConnectedGroupUnirationalityStatement`](../../Langlands/GroupScheme/Rational/ConnectedGroupUnirationalityStatement.md)
 (Milne Theorem 17.93), which is stated but has no proof at that commit.
 
-Worker 1107's remarks of 4 November 2026 on the central-torus result are
+The remarks of 4 November 2026 on the central-torus result are
 retained: positive-power torus/additive factorization of an arbitrary
 rational point needed its own proof, including the passage to an
 appropriate smooth connected subgroup and the field-dependent

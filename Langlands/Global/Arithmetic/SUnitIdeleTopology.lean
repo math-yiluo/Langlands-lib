@@ -11,7 +11,7 @@ universe u
 namespace Langlands.Global.Arithmetic.SUnitIdeleTopology
 
 open NumberField IsDedekindDomain
-open Langlands.ClassField.Global IdeleSUnits
+open Langlands.ClassFieldTheory.Global IdeleSUnits
 open scoped RestrictedProduct
 
 variable (K : Type u) [Field K] [NumberField K]

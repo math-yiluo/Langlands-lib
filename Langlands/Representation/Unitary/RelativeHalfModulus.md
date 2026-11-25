@@ -1,7 +1,5 @@
 # Smooth positive relative half modulus
 
-Author: Worker 142.
-
 This helper constructs the positive smooth square root needed in Renard 2026,
 IV.2.1, (IV.2.1.1), printed p.97 / PDF p.103. The registered source is
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256

@@ -24,8 +24,8 @@ Let `V : Type uV` be a complex vector space and `π : Representation ℂ (GL_n(F
 `hπ : IsAdmissible π`, `π.IsIrreducible` and `JacquetLanglands.IsSquareIntegrable π`
 (square-integrability modulo the centre). Let `χ : Subgroup.center (GL_n(F)) →* ℂˣ` with
 `HasCentralCharacterRep π χ`, and let `μ` be a Haar measure on `GL_n(F)`. Apart from
-`0 < n`, these are the data of the Library's `Langlands.BaseChange.PseudoCoefficientExistenceStatement`
-(Task 7442), which asserts (a) alone. Here one locally constant, compactly supported
+`0 < n`, these are the data of the Library's `Langlands.BaseChange.PseudoCoefficientExistenceStatement`,
+which asserts (a) alone. Here one locally constant, compactly supported
 `f : SchwartzBruhat (GL_n(F))` must satisfy all four clauses:
 
 - (a) `IsPseudoCoefficient μ χ π hπ f`: the direct trace at `π` is `1`, and the trace at
@@ -66,7 +66,7 @@ HL take pseudo-coefficients in `C^∞_c(G, χ)`, with central covariance by `χ�
 and compact support modulo the centre. In this space (c) holds for every
 pseudo-coefficient of the given representation: HL II.5.14, Corollaire 1, identifies
 their orbital integrals, and Proposition 2 (2) gives vanishing for the one constructed
-in II.5.13. In the Library's `C^∞_c(G)` (Task 7442), adding `h` whose weighted central
+in II.5.13. In the Library's `C^∞_c(G)`, adding `h` whose weighted central
 average `h_χ` is zero preserves (a) but can change the orbital integrals. The statement
 therefore asks for one witness with (a)–(d), not for every pseudo-coefficient to have them.
 
@@ -122,11 +122,14 @@ unspecified elliptic element would not supply the near-identity hypothesis they 
 HL prove II.5.14, Proposition 1 (2), on which Corollaire 1 rests, by a global argument
 with the twisted Deligne–Kazhdan trace formula. A later proof must avoid appeals to
 results that in turn use the statement being proved. `CharZero F` follows Kazhdan and
-the programme's other base-change statements (Tasks 7416, 7432 and 7442). HL also
+the programme's other base-change statements (on orbital integrals, twisted characters
+and pseudo-coefficients). HL also
 work in positive characteristic; the Library's separable characteristic-polynomial
 test for regular semisimplicity agrees with HL's regularity here in characteristic zero.
 
 The definitions are reused under their published names: `IsPseudoCoefficient` and
-`HasCentralCharacterRep` (Task 7442), `glCentralizer` and the Borel left-quotient
-instances `leftQuotientMeasurableSpace` and `leftQuotient_borelSpace` (Task 7416),
-`orbitalIntegral` (Task 7402), and `OrbitalIntegralsVanishOffElliptic` (this task).
+`HasCentralCharacterRep` (module `Langlands.BaseChange.PseudoCoefficient`), `glCentralizer`
+and the Borel left-quotient instances `leftQuotientMeasurableSpace` and
+`leftQuotient_borelSpace` (module `Langlands.BaseChange.OrbitalIntegral`), `orbitalIntegral`
+(module `Langlands.TraceFormula.TwistedOrbital`), and `OrbitalIntegralsVanishOffElliptic`
+(module `Langlands.BaseChange.EllipticOrbitalIntegral`).

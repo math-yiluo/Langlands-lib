@@ -62,7 +62,7 @@ Mathlib's `Equivalence.mk` keeps the given functors, so the functor equalities
 hold by `rfl`. The `SigmaCompactSpace G` premise is only passed on to the second
 assumption.
 
-The two assumptions are published proof targets of sibling tasks (Task 5591 and
-Task 5596). This module does not prove them; the entry module
-`HomogeneousEquivalenceProof` supplies their published proofs. The module edits no
-Library file.
+The two assumptions are published statements, proved in the modules
+`EquivariantModuleProof` (`EquivariantModuleStatements.statements`) and
+`HomogeneousCompactSectionProof` (`compactAlphaBeta`). This module does not prove them; the entry module
+`HomogeneousEquivalenceProof` supplies their published proofs.

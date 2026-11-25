@@ -6,7 +6,7 @@ Module `Langlands.Representation.Archimedean.RealInducedCharacterHard` (namespac
 ## Role and provenance
 
 This module is an internal step of the proof of `RealInducedCharacterFiltrationStatement`
-(Task 7134; see `RealInducedCharacterFiltration.md`). It treats the one case the pushforward
+(see `RealInducedCharacterFiltration.md`). It treats the one case the pushforward
 of `RealInducedCharacterPushforward` does not cover. There, the stage-`2` piece would have
 weight `ℓ - m' < ℓ`, so it is not admissible in `RealAdjacentFiltration`. In this case the
 module builds a bijective exact intertwiner between the standard modules of `[c, d]` and
@@ -15,7 +15,7 @@ module builds a bijective exact intertwiner between the standard modules of `[c,
 The proof uses three main inputs:
 
 * the two landing statements `RealSwapLandingCharacterFirstStatement` and
-  `RealSwapLandingInducedFirstStatement` (Worker 763's module `RealSwapLandingStatement`).
+  `RealSwapLandingInducedFirstStatement` (module `RealSwapLandingStatement`).
   They are hypotheses here and are not proved in this module; `RealInducedCharacterFiltrationProof`
   supplies their proofs;
 * the uncertainty principle `RealOrthogonalUncertainty.realOrthogonalBlockUncertainty`
@@ -115,7 +115,7 @@ construction runs in the other direction.
    `δ = 1 - (ℓ - m')`; then `δ + ℓ = a - s + 1`. It gives `Φ¹_k (F f) = 0` on `O(3)` for
    `|k| < ℓ`. Since `[c, c_a, c_b]` has the principal series of `[c, d]`
    (`realPositionCharacter_S`), `RealSwapFLanding.mem_realStandardModule_character_induced`
-   (Worker 763) gives an exact intertwiner `M : KF 3 [d, c] → KF 3 [c, d]`.
+   gives an exact intertwiner `M : KF 3 [d, c] → KF 3 [c, d]`.
 4. Injectivity as in case (i). `B₁ f = 0` gives `Φ¹_j f = 0` for `|j| ≥ ℓ - m'`. The induction
    block of `[d, c]` gives `Φ⁰_j f = 0` for `|j| < ℓ`. Apply the uncertainty principle with
    `n = ℓ` along `r_0` and `n' = ℓ - m' < ℓ` along `r_1`.

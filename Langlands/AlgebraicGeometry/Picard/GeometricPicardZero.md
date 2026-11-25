@@ -67,7 +67,7 @@ On printed p.95 (PDF p.99), the point formula for the morphism associated to
 a line bundle is `φ_L(x) = [t_x^* L ⊗ L⁻¹]`. Corollary (7.22), printed
 p.106 (PDF p.110), identifies the kernel of `L ↦ φ_L` with `Pic⁰` over a
 field. These passages motivate the translation-invariance criterion chosen
-explicitly by item 3 of the parent task.
+here.
 
 The module is a derived construction of that chosen fibre condition. It does
 not formalize the source's comparison with an identity component or its

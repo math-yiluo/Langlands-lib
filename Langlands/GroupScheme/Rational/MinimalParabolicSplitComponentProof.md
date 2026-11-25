@@ -1,7 +1,5 @@
 # Minimal parabolics and their specified split components
 
-Author: Worker 712.
-
 The theorem
 `Langlands.GroupScheme.minimalParabolicSplitComponent`, with universe parameter
 `u`, in module

@@ -1,7 +1,5 @@
 # Second countability of actual rational points
 
-Author: Worker 53.
-
 This is an internal consequence of Mathlib's local-field topology results and
 the published finite-coordinate topology of affine group-scheme points. It
 provides a topological input for the actual standard-parabolic modular-character

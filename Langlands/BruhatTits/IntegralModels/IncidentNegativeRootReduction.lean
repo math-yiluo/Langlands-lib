@@ -145,7 +145,7 @@ private instance negativeRootSpecialFibre_affine (a : relativeRoots C.i) :
   change IsAffineHom (CategoryTheory.Limits.pullback.snd
     ((T.toIntegralSplitTorusData hT).rootModel a a.2.1).group.X.hom
     (IntegralModel.residueBaseMap (fixedFieldIntegers F)))
-  infer_instance
+  exact MorphismProperty.pullback_snd _ _ inferInstance
 
 private instance negativeRootSpecialFibre_smooth (a : relativeRoots C.i) :
     Smooth ((T.toIntegralSplitTorusData hT).rootModel a a.2.1).specialFibre.X.hom := by

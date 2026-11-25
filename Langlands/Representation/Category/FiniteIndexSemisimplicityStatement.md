@@ -1,6 +1,6 @@
 # Semisimplicity ascends from a normal subgroup of finite index
 
-Author: Worker 261. This file states a proposition. It proves nothing and
+This file states a proposition. It proves nothing and
 assumes no theorem as data.
 
 `Langlands.FiniteIndexSemisimplicityAscent` quantifies over:
@@ -52,7 +52,7 @@ Lemma 2.9(a) itself is the complex case. It is the instance
 universes `uG` and `uV` stay arbitrary. During development, an `example` that
 applies `h : FiniteIndexSemisimplicityAscent.{0, uG, uV}` to
 `ℂ G V H ρ` for an arbitrary `G : Type uG` and `V : Type uV` compiled in a
-private draft. That check is not part of this file.
+separate test file. That check is not part of this file.
 
 ## Provenance
 
@@ -63,7 +63,7 @@ Source: I. N. Bernshtein and A. V. Zelevinskii, *Representations of the group
 GL(n,F) where F is a non-Archimedean local field*, Russian Math. Surveys 31:3
 (1976), 1–68. Registered source `bernstein-zelevinsky-1976-representations-gln`,
 SHA-256 `72dc22eb9991112936a88327f00d0f02a16a2bf8747518ca0ecfeeadd188e50c`.
-Worker 261 read printed pages 15–17 (PDF pages 15–17) and page 37 in the
+Printed pages 15–17 (PDF pages 15–17) and page 37 were read in the
 registered original.
 
 - **Conventions (§2, p. 15).** Representations `(π, G, E)` act on complex
@@ -93,7 +93,8 @@ rest of the argument is linear algebra that holds over any field. It needs no
 dimension bound, and the index is finite by `H.FiniteIndex`. The universe
 independence is also our own formal generality. The intended proof is the
 source's averaging argument over `R`. That route explains the statement. It is
-not a proof shipped with it; the proof is a separate task.
+not a proof shipped with it; the proof is `finiteIndexSemisimplicityAscent` in
+the module `FiniteIndexSemisimplicity`.
 
 ## Use in BZ76 Proposition 3.30(2)
 
@@ -117,7 +118,6 @@ admissibility result.
 
 The file imports `Mathlib.GroupTheory.Index` (for `Subgroup.FiniteIndex`) and
 `Mathlib.RepresentationTheory.Semisimple` (for
-`Representation.IsSemisimpleRepresentation`). It imports no Library module and
-modifies no published pair. Lean service environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` (Lean 4.34.0, Mathlib
-`5ed2965256430c3649e86755f9576b54eca72435`).
+`Representation.IsSemisimpleRepresentation`). It imports no Library module.
+Environment: Lean 4.34.0, Mathlib
+`5ed2965256430c3649e86755f9576b54eca72435`.

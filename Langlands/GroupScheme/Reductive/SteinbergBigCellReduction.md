@@ -5,7 +5,7 @@
 universe `u`. The theorem `steinbergCovariantExhaustion_of_bigCell` proves it. It
 proves neither proposition by itself.
 
-Worker 1330 derives this file internally. It translates the test-scheme
+This file is derived internally. It translates the test-scheme
 hypotheses of `SteinbergBigCellStatement` into the algebra-valued point
 hypotheses of the Hopf-algebra theorems in `Chevalley.CellExhaustion`, and
 assembles the four conditions of `SteinbergCovariantExhaustionStatement`. No
@@ -127,4 +127,5 @@ with the published `steinbergTensorEmbedding_of_covariantExhaustion` and
 `simplyConnectedPositiveCharConjugationMap_of_steinberg`. It proves that
 `SteinbergBigCellStatement` implies the exact statement
 `SimplyConnectedPositiveCharConjugationMapStatement`, at the same universe.
-`SteinbergBigCellStatement` itself remains unproved.
+This module does not prove `SteinbergBigCellStatement` itself; `steinbergBigCell`
+(module `Reductive.SteinbergBigCellProof`) does.

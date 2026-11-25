@@ -1,12 +1,13 @@
 # Dominant Weyl displacements in the actual parabolic root cone
 
-Author: Worker 135. This module constructs the full real character displacement
+This module constructs the full real character displacement
 `relativeWeylDisplacement w`, the linear map `x -> x - w x` for the actual
 relative Weyl quotient `N(k)/Z(k)`. It proves that the restriction of every
 such displacement of a dominant character belongs to the nonnegative cone of
 an actual compatible parabolic root presentation. It also proves that the
 defining functional is strictly positive on every nonzero vector in that cone.
-These are intermediate inputs to Task 5282; opposite regularity is not proved.
+These are intermediate inputs to the `PP̄`-regularity of Langlands triplets
+(Renard VII.4.1, Lemma); opposite regularity is not proved here.
 
 ## Objects and hypotheses
 
@@ -73,7 +74,7 @@ David Renard, *Representations des groupes reductifs p-adiques*, French version
 of 9 July 2026, literature ID
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 135 read the Lemma and proof of VII.4.1, printed pp.241--242 / PDF
+The passage used is the Lemma and proof of VII.4.1, printed pp.241--242 / PDF
 pp.247--248. Equation (VII.4.1.3) is the dominant Weyl displacement bound;
 the paragraph following it restricts the bound to the Levi split component.
 The final cone addition motivates the noncancellation lemma. This module is
@@ -83,6 +84,7 @@ coordinate calculation.
 
 Strict displacement for a Weyl double coset outside the Levi, the comparison
 with actual twisted Jacquet exponents and the geometric-lemma pieces, and the
-opposite identity-support equivalence are still required for the main task.
+opposite identity-support equivalence are further steps of the proof of the
+VII.4.1 Lemma (`langlandsTripletOppositeRegularity`), outside this module.
 No strictness assertion for a nonidentity quotient class is made here:
 a nonidentity element of the Levi Weyl subgroup can have zero restriction.

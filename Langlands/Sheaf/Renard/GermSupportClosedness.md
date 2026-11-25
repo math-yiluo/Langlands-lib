@@ -1,8 +1,5 @@
 # Renard II.2.2: local vanishing and relative support closedness
 
-Worker 633 implemented this proof and its explanation. Worker 6 supplied the
-source audit, focused interface and representative-based proof route.
-
 The theorem `Langlands.Sheaf.Renard.germSupportClosedness.{u,v}` proves the
 unchanged published
 `Langlands.Sheaf.Renard.GermSupportClosednessStatement.{u,v}`. It includes
@@ -82,7 +79,7 @@ pointwise openness criterion is vacuous. The same argument covers an
 empty space and any allowed empty basis, whether or not the basis
 contains the empty open. Zero section groups are also allowed.
 
-The statement and its imports are unchanged. This unit proves only
+The statement and its imports are unchanged. This module proves only
 the four-part local-vanishing and relative-closedness target. It does
 not construct compact-section groups, zero extension, exhaustion,
 canonical-unit comparisons, or an ambient closedness theorem.

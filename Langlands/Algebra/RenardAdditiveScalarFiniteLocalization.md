@@ -1,8 +1,5 @@
 # Additive stable generation and actual finite localization
 
-Author: Worker 490, for proof task
-`551264ec-c65e-43eb-8047-daafd431ed28` revision 1.
-
 The theorem `Langlands.Renard.additiveScalarFiniteLocalization` has exactly
 the complete closed type
 `Langlands.Renard.AdditiveScalarFiniteLocalizationStatement.{uR, uB, uV}`
@@ -104,5 +101,5 @@ a unit-action law nor nondegeneracy, nontriviality or finite dimension. It
 asserts only the written additive-to-scalar sufficient conditions. Reverse
 generation implications, identification of Renard's nonunital finiteness
 convention, the source-facing C.II proposition, the other appendices and the
-whole book retain their separate obligations. This proof adds no category
+whole book are separate from this proof. This proof adds no category
 equivalence, unitization action or localization construction.

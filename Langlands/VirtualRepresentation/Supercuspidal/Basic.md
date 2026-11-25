@@ -1,7 +1,7 @@
 # Integral lattices on actual supercuspidal classes
 
-Author: Worker 24. This construction uses the published
-`Langlands.Representation.Classification.Supercuspidal` module by Worker 23.
+This construction uses the published
+`Langlands.Representation.Classification.Supercuspidal` module.
 
 For a field `F` with a topology and a separately fixed representation-carrier
 universe, `Supercuspidal.ClassFamily F n` is the genuine isomorphism-class
@@ -83,7 +83,7 @@ Both direct imports are published at Library commit
   its paired Markdown.
 
 These dependency pairs are imported without modification.
-The prepared environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` pins
+The environment in which it was checked pins
 Lean 4.34.0 and Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.
 
 Every new map is an application of a proved coefficient-module constructor,
@@ -91,10 +91,8 @@ or the actual representation-to-isomorphism-class map. The canonical-field
 specialization installs the already constructed topology explicitly. No new
 project axiom or placeholder is used.
 
-Development compilation and independent semantic acceptance are separate checks.
-
 Actual supercuspidal twist and smooth contragredient preservation, their
 descended basis actions and numerical orbits, and the generating families from
-weakly associated global objects remain separate required work. This module
+weakly associated global objects are not part of this module. This module
 does not assume those actions, identify a global image, or assert lattice
 spanning or a correspondence.

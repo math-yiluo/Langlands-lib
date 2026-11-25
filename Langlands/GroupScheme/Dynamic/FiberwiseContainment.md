@@ -1,7 +1,5 @@
 # Dynamic parabolic containment detected on residue fibres
 
-Worker 606.
-
 This is an internal, derived ingredient for the proof of
 `Langlands.GroupScheme.RelativeParabolicLieContainmentStatement`. It combines
 published dynamic representability and smoothness with the fibrewise criterion

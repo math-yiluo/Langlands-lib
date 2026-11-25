@@ -30,7 +30,7 @@ local notation "b" => algebraBaseMap k K
 local notation "G_K" => Functor.obj (GroupScheme.baseChange b) G
 local notation "M_K" => Functor.obj (CommGroupScheme.baseChange b) M
 
-local instance : IsAffineHom ((GroupScheme.baseChange b).obj G).X.hom := by
+private local instance : IsAffineHom ((GroupScheme.baseChange b).obj G).X.hom := by
   change IsAffineHom (pullback.snd G.X.hom b)
   infer_instance
 

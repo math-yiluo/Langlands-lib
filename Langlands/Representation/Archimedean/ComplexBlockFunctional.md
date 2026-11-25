@@ -2,7 +2,7 @@
 
 Lean module: `Langlands.Representation.Archimedean.ComplexBlockFunctional`.
 
-Worker 140 wrote this module for Task 7063 (`f2d2e257-dd4b-4820-96ab-faa9c832ffb8`), the proof of
+This module is infrastructure for the proof of
 `ComplexStandardLanglandsQuotientStatement`. It generalizes the published `ComplexJacquetDual` and
 `ComplexJacquetKernel` (strictly decreasing exponents, one row at a time) to block decompositions
 in which the exponents are tied within each block and strictly decrease between blocks. It assembles

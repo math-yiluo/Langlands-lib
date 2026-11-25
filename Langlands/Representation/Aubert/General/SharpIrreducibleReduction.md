@@ -2,17 +2,10 @@
 
 Module `Langlands.Representation.Aubert.General.SharpIrreducibleReduction`.
 
-Authors: Worker 4220 and Worker 36, for Task 4220
-(`44d0ed8c-18a6-44f8-8836-dc351694e9d9`). The proof development comes from the
-shared draft of this task (revision 2, by Worker 4220, which builds on
-revision 1 by a previous instance's executor of the same task). Worker 36
-added the reduction statement `RationalSharpIrreducibleReductionStatement` and
-its proof, and this documentation.
-
 This module states and proves one implication between published propositions.
 It does **not** prove `RationalSharpIrreducibleStatement`. Its main theorem is
-conditional on five published propositions that are not yet proved; they are
-listed below.
+conditional on five published propositions that the Library does not prove;
+they are listed below.
 
 ## The statement
 
@@ -163,13 +156,13 @@ includes nonzero.
 `RationalPointFamily.rationalSharpIrreducibleStatement_of_inputs` derives
 `RationalSharpIrreducibleStatement.{u, v}` from exactly these inputs:
 
-| Input | Owner task |
+| Input | Module |
 | --- | --- |
-| `DynamicInductionFiniteLengthStatement.{u, max (u + 1) v}` | 174d2de0-fa21-41b4-b091-f1b86481790b |
-| `DynamicJacquetFiniteLengthStatement.{u, max (u + 1) v}` | 73e60be8-481a-4cea-b464-eed3bd89be7f |
-| `RationalInductionCompatibilityStatement.{u, v}` | 475f7a39-11ad-4748-87b3-cfaef16a59cb |
-| `RationalInvolutivityStatement.{u, v}` | 2f01b264-fb0e-4029-901c-009044feaa97 |
-| `RationalSharpClassFormulaStatement.{u, v}` | 13e2abdc-2be7-4191-b74b-9eae99a56fcc |
+| `DynamicInductionFiniteLengthStatement.{u, max (u + 1) v}` | `PrerequisiteStatements` |
+| `DynamicJacquetFiniteLengthStatement.{u, max (u + 1) v}` | `PrerequisiteStatements` |
+| `RationalInductionCompatibilityStatement.{u, v}` | `RationalInductionTarget` |
+| `RationalInvolutivityStatement.{u, v}` | `RationalInvolutivityTarget` |
+| `RationalSharpClassFormulaStatement.{u, v}` | `RationalSharpConsequenceTargets` |
 
 Published proofs supply the remaining data:
 
@@ -187,14 +180,13 @@ Published proofs supply the remaining data:
   compatibility into the abstract `InductionCompatibilityStatement`.
 - `sharpFiniteLengthTarget_of_inductionJacquet` and
   `inductionJacquet_hasFiniteLength` give finite length of `E#` inside the
-  closer. So `RationalSharpFiniteLengthStatement` (task
-  0da1c37e-a39a-42e1-b90d-135db6c6e5c3) is not needed as an input.
+  closer. So `RationalSharpFiniteLengthStatement` is not needed as an input.
 
 The theorem keeps every binder of the target, at independent universes `u`
 and `v`. It adds no premise inside the proposition, but it has the five
-theorem-valued parameters above. Once proofs of those five are published,
-applying it (or `rationalSharpIrreducibleReduction`) to them proves the
-target. Until then this module does not prove the target.
+theorem-valued parameters above. Applied to proofs of those five, it (or
+`rationalSharpIrreducibleReduction`) proves the target. Without them this
+module does not prove the target.
 
 ## Dependency ledger
 
@@ -208,7 +200,7 @@ applies are `rationalWeylComparison` (`RationalWeylComparisonProof`),
 records that they invoke none of these theorems. The
 Levi-finite-length chain uses only the explicit evaluation and covariance
 formulas of `FirstAdjointness`, not an adjunction theorem. The five inputs
-enter only as hypotheses of the implication. Whatever their eventual proofs
-use (for example the geometric lemma behind induction compatibility and
-involutivity) is recorded with those proofs by their owner tasks. Aubert's
+enter only as hypotheses of the implication. Whatever their proofs use (for
+example the geometric lemma behind induction compatibility and involutivity)
+is recorded with those proofs. Aubert's
 Proposition 3.2 and its original application are not used.

@@ -1,7 +1,5 @@
 # The type `A` root system over `ℚ`, transported along an injective linear map
 
-Author: Worker 1220.
-
 This module builds the root system of type `A` as a Mathlib `RootPairing` over `ℚ`,
 together with its reflections and the image of its Weyl group. It is pure linear
 algebra. It is written as a helper for the planned `GL_n` case of the relative root

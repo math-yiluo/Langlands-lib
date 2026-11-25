@@ -72,7 +72,7 @@ theorem restriction_congruence_of_residue_eq (L : LocalFiniteAbelianExtension F)
     exact hs.symm.trans
       ((congrArg (fun g => AlgEquiv.toAlgHom g (j (residue _ z))) h).trans ht)
   have he := congrArg (ResidueField.mapEquiv e) hr
-  exact (NYLL.suppliedResidueCongruence (L.asPadicField (p := p)) S _ _).mp he
+  exact (UniverseZero.suppliedResidueCongruence (L.asPadicField (p := p)) S _ _).mp he
 
 theorem restriction_eq_of_residue_eq (L : LocalFiniteAbelianExtension F)
     (hL : F.canonicalTopologicalData.ramificationIndex =
@@ -93,7 +93,7 @@ theorem restriction_eq_of_residue_eq (L : LocalFiniteAbelianExtension F)
   obtain ⟨x, rfl⟩ := residue_surjective y
   let ec := ArithmeticCoordinate.extensionIntegerEquiv F (L.asPadicField (p := p))
   apply (ResidueField.mapEquiv ec).injective
-  apply (NYLL.suppliedResidueCongruence (L.asPadicField (p := p))
+  apply (UniverseZero.suppliedResidueCongruence (L.asPadicField (p := p))
     (L.asPadicField (p := p)).canonicalTopologicalData _ _).mpr
   exact restriction_congruence_of_residue_eq F L _ σ τ h x.val
     (FiniteArtinSystemUniqueness.discreteValuation_le_one _ _ (ec x))

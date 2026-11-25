@@ -1,7 +1,5 @@
 # Proof: descent of central homomorphisms from groups of multiplicative type
 
-Worker 754.
-
 This module proves the published statement
 [`MultiplicativeTypeCentralDescentStatement`](MultiplicativeTypeCentralDescentStatement.md),
 which is SGA 3, Exposé IX, Corollaire 5.4:

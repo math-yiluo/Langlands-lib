@@ -1,7 +1,5 @@
 # Preservation of analytic temperedness by actual normalized GL induction
 
-Author: Worker 540.
-
 `Langlands.glTemperedInductionPreservation` proves exactly the published
 `Langlands.GLTemperedInductionPreservationStatement.{uF,uV}` from
 `Langlands.Representation.Classification.TemperedInductionPreservationStatement`.
@@ -40,7 +38,7 @@ or unitarizability hypothesis.
 
 ## From the supplied Levi measure to every ambient measure
 
-`glProductLeviTemperedExponentNecessity`, by Workers 819 and 219, consumes
+`glProductLeviTemperedExponentNecessity` consumes
 `hσ` and exactly `ht` with the supplied `μ`. It proves the upper refined
 Jacquet bounds for every source refinement, using actual flattened Levi
 and block-scalar maps and open-kernel generalized characters with a common
@@ -53,17 +51,17 @@ center. Its proof uses the supplied `L^(2+ε)` memberships. The present
 assembly makes no change of the input measure and assumes no tensor
 presentation of `σ`.
 
-`glInductionWeakJacquetBounds`, by Worker 828, applies to those source bounds
+`glInductionWeakJacquetBounds` applies to those source bounds
 and yields the entire numerical right side of the ambient exponent
-criterion. Its proof uses the actual normalized geometric lemma of Workers
-164 and 194, finite-filtration detection of generalized characters, evaluation
+criterion. Its proof uses the actual normalized geometric lemma,
+finite-filtration detection of generalized characters, evaluation
 on geometric pieces, admissible fixed-space character extension and inverse
 Weyl chamber coordinates. These published results keep the upper
 inverse-half-modulus Jacquet normalization and cancel the induction half
 modulus on the required scalars.
 
-Finally, the reverse implication of `glTemperedExponentCriterion`, assembled
-by Worker 349 with Workers 819, 219 and 851, converts those bounds to the
+Finally, the reverse implication of `glTemperedExponentCriterion`
+converts those bounds to the
 unchanged `T.IsTempered` predicate. It applies at carrier universe
 `max uF uV`, the universe of the actual induced function space.
 Its admissibility and scalar-action premises were proved above.

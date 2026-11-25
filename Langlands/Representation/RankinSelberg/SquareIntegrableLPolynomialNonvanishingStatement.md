@@ -1,7 +1,5 @@
 # Nonvanishing of an existing square-integrable pair L-polynomial
 
-Author: Worker 1067.
-
 This module defines the proposition
 `Langlands.RankinSelberg.SquareIntegrableLPolynomialNonvanishingStatement.{uF,uV,uW}`.
 It is a statement target, not a proof. It keeps the quantifiers and
@@ -11,7 +9,8 @@ only that statement's existential conclusion by a conditional one: every
 polynomial satisfying the symmetric pair L-polynomial relation has no zero in
 the open unit disk. The module imports `TemperedLFactorStatement` and changes
 no published file. It defines no new factor and does not replace the original
-target, which remains open.
+target, which is proved separately as `squareIntegrablePoleFree` (module
+`SquareIntegrablePoleFreeProof`).
 
 ## Quantifiers and hypotheses
 
@@ -78,9 +77,10 @@ at most one solution (`IsPadicSymmetricLPolynomial.unique`), the existential
 statement is equivalent to this proposition together with existence of the
 polynomial. That equivalence is not proved in this module.
 
-Existence of the polynomial remains a separate substantive obligation: it
+Existence of the polynomial is a separate substantive result: it
 needs the normalized generators of JPSS Theorem 2.7 for the pair, for every
-compatible quotient measure. This proposition neither asserts nor assumes
+compatible quotient measure (in the Library, `symmetricLPolynomialExists`,
+module `SymmetricLPolynomialExistenceProof`). This proposition neither asserts nor assumes
 it. For a pair with no such polynomial the conclusion holds vacuously, so the
 proposition alone does not prove the original target.
 
@@ -124,8 +124,7 @@ one.
 
 ## Lean checks
 
-The module compiles with `lean_check` in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` with no errors or warnings. Inspection
+The module compiles with no errors or warnings. Inspection
 of `SquareIntegrableLPolynomialNonvanishingStatement` reports that it is a
 definition returning `Prop`, with universe parameters `uF uV uW`, using only
 `propext`, `Classical.choice` and `Quot.sound`. There is no `sorry` and no new

@@ -1,8 +1,7 @@
 # Group-scheme ledger, family 6: Galois and central structure
 
-Author: Worker 3483, 10 November 2026, for the algebraic and reductive group-scheme program
-`2b5e4a00-9d44-49a4-9c89-979fb5b6233e` (Task 3483). This note is the source-to-declaration
-ledger for family 6 of that program's contract. Family 6 covers:
+This note, dated 10 November 2026, is the source-to-declaration
+ledger for family 6 of the algebraic and reductive group-scheme program. Family 6 covers:
 
 - the Galois action on the lattices of a torus;
 - the star action on the absolute based root datum, and its relation to the Galois action;
@@ -12,10 +11,10 @@ ledger for family 6 of that program's contract. Family 6 covers:
 - central isogenies;
 - simply connected covers and their root-data comparisons.
 
-The original rows describe Library commit `e748734106ab2ee9de1cab1eb18a60e59593aac0`
-and environment `bb168ec3-1031-46d9-816b-5c2ed7bbe1a6`. That version updated
+The original rows describe Library commit `e748734106ab2ee9de1cab1eb18a60e59593aac0`.
+That version updated
 A6, D9 and F3 from commit `e449cde988d4e97ab280b8d4d11262887ccc26e0`.
-Row A9 records publications verified on 18 November 2026. A10 was checked
+Row A9 records results checked on 18 November 2026. A10 was checked
 at Library commit `1704ae21875deeabd17a51ced41447cc741572dd`.
 
 All Lean names are in `Langlands.GroupScheme` unless a namespace is shown. Module paths
@@ -25,28 +24,23 @@ scheme over `Spec k` for a field `k : Type u`.
 ## Status codes and evidence
 
 Each row gives the source assertion with its locator, the exact Lean statement and its
-hypotheses, a status, the evidence, and the owner task.
+hypotheses, a status and the evidence.
 
 - **D (definition or internal result).** A published construction, or a published
   internal theorem that is not a proposition declaration, with the hypotheses listed in the
   row. The evidence is its module path.
 - **P (published proof).** The cited Library commit contains a theorem whose type is
-  exactly the statement. The evidence is that theorem and its module path. The author also
-  type-checked `example : S := proof` for every P row in a private module. That check
-  passed with no errors or warnings, but it is not public evidence. No further proof work is
+  exactly the statement. The evidence is that theorem and its module path. Every P row was also
+  type-checked as `example : S := proof`, with no errors or warnings. No further proof work is
   needed.
 - **C (composite, not published).** No published theorem has the statement as its type.
-  However, a term built only from published theorems has that type: the author type-checked
-  it in the same private module, and its axioms are `propext`, `Classical.choice` and
-  `Quot.sound`. The composite is not an accepted artifact. The owner task is the
-  `lean.proof@1` task that should publish it.
-- **O (open).** No published proof, no staged candidate and no composite from published
-  results is known. The row names a proof task if one exists. The context of such a task
-  may point to an unreviewed draft by the author. Such a draft is not evidence and does not
-  change the status.
+  However, a term built only from published theorems has that type: it was type-checked
+  in the same way, and its axioms are `propext`, `Classical.choice` and
+  `Quot.sound`. The composite is not itself in the Library.
+- **O (open).** No published proof and no composite from published
+  results is known. A proof outside the Library does not change the status.
 
-The labels "accepted" and "published" are used only for artifacts that passed independent
-review; staged candidates and private drafts are never called accepted.
+The label "published" means: in the Library.
 
 Source locators use these registered sources, cited by source id:
 - `milne-2017-algebraic-groups`: J. S. Milne, *Algebraic Groups* (2017). PDF page = printed
@@ -62,9 +56,8 @@ Source locators use these registered sources, cited by source id:
 - `borel-tits-1972-complements-groupes-reductifs`: Borel and Tits, *Compléments à l'article
   « Groupes réductifs »* (1972).
 
-Locators marked (†) were re-read in the original by the author for this note. Every other
-locator is copied from the published Markdown of a module named in the row, and was checked
-by that module's own review at publication.
+Locators marked (†) were re-read in the original for this note. Every other
+locator is copied from the published Markdown of a module named in the row.
 
 ## A. Galois actions and the star action
 
@@ -82,9 +75,7 @@ printed p.239 (PDF 250) (†).
   Hypotheses: an algebraic extension `E/k` and a commutative group scheme `T` over `Spec k`
   with `T_E` split. Conclusion: some finite-dimensional intermediate field `L` has the
   property that every `σ` fixing `L` acts trivially on `X^*(T_E)` and `X_*(T_E)`.
-- Status P: `torusLatticeGaloisContinuity` (`Torus/LatticeGaloisContinuityProof`), published
-  from candidate `faea411e-8f86-46be-ba5a-8be80ea8ce78` of Task 5263
-  (`bfb511f7-800a-4ce4-afc4-cf2e243e9ff6`). Its proof is a new argument, not a composite:
+- Status P: `torusLatticeGaloisContinuity` (`Torus/LatticeGaloisContinuityProof`). Its proof is a new argument, not a composite:
   finite fields of definition of the splitting isomorphism
   (`Descent.FiniteStage.homModel`), then invariance of characters and, by the lattice
   pairing, of cocharacters.
@@ -118,8 +109,7 @@ printed p.555 (PDF 566).
   isomorphism `e` of root data with weight map `characterLattice.congr φ`. It preserves the
   bases and intertwines `d.starAction σ` with `d'.starAction σ` for every `σ`.
 - Status P: `StarActionIndependence.starActionIndependence`
-  (`Reductive/StarActionIndependenceProof`), published from candidate
-  `134bd05c-fda6-48ac-8698-1460bef158cd` of Task 5308 (`8d88be37-6df2-4f4a-be32-112532044d71`).
+  (`Reductive/StarActionIndependenceProof`).
   Its proof is a new argument using published theorems: conjugacy of the two split maximal
   tori over `E`, comparison of root data, a Weyl correction to match the bases, and Galois
   descent of the conjugating point.
@@ -129,8 +119,7 @@ printed p.555 (PDF 566).
   algebraic, `G` affine and locally of finite type, and Galois pinning data `d`.
   Conclusion: some finite-dimensional intermediate field `L` has the property that every
   `σ` fixing `L` has `d.galoisAction σ = 1` and `d.starAction σ = 1`.
-- Status P: `starActionContinuity` (`Reductive/StarActionContinuityProof`), published from
-  candidate `6ff85063-630a-46b5-a929-546c8e4fbf02` of Task 5263. Its proof is a short new
+- Status P: `starActionContinuity` (`Reductive/StarActionContinuityProof`). Its proof is a short new
   argument from the A2 theorem.
 
 **A6. In the quasi-split case the star action is the Galois action.** Source: Milne 2022,
@@ -148,12 +137,11 @@ Proposition 25.28(a), direction "quasi-split ⇒ natural action", with §25.c, p
 
   No published theorem states that the roots of a `k`-Borel subgroup containing the torus
   form the positive system of a base. This is why the row is not C.
-- Owner task: Task 5456, `274ef979-d206-458b-9a02-bf8dfa7ed4b2` (a `lean.proof@1` task for
-  this statement). On 10 November 2026 it had no executor and no candidate. Its context
-  points to a shared draft revision of Task 3483 by the author. The draft adds two new
+- A route outside the Library at this commit adds two new
   lemmas: the roots statement above, for a Borel subgroup that represents the dynamic
   parabolic of a regular cocharacter, and the fact that a geometric Borel subgroup stays
-  Borel over `SeparableClosure k`. The draft compiles, but it has not been reviewed.
+  Borel over `SeparableClosure k`. The Library now proves A6; see the
+  [Galois and derived coverage note](galois-derived-coverage-2026-11-13.md).
 
 **A7. Finite Galois descent from a supplied pinned action.** Internal constructions with
 no single source statement. They implement the twisting step in the proof of Conrad,
@@ -177,7 +165,7 @@ pinned automorphisms `Aut(R, Δ)`.
 
 **A8. The pinned Galois twist is an inner twist (conditional).** Internal supporting result
 (`Rational/PinnedGaloisInnerTwist`; its Markdown calls it a step toward the
-inner-discrepancy part of B1). Host source: Conrad, Proposition 7.2.11, p.258 (†), whose
+inner-discrepancy part of B1). Source: Conrad, Proposition 7.2.11, p.258 (†), whose
 proof shows that the twisted group is an inner form of `G`.
 - Lean: `SplitPinning.hasInnerDiscrepancy_solution`. Data and hypotheses:
   - fields `k`, `K` with `K/k` finite Galois, a group scheme `H` over `Spec k` with `H_K`
@@ -214,11 +202,9 @@ Source is Milne 2017, §12.g and Theorem 12.23, printed pp.239–240 (PDF 255–
   are integral linear and equivariant for `Gal(k_s/k)`, with torsion allowed.
   This applies to a central subgroup sequence when all three groups are of
   multiplicative type.
-- Task 7761 (`786e06b5-2256-43b7-9bfb-7007258ac237`) published proof
-  `8da8da3c-ab65-4e77-bc97-7a67d6694700` at
-  `bb9e086196d00484fd52204977452d922bf3c660`. D4 in the family 2 ledger
+- The proof first appeared in the Library at `bb9e086196d00484fd52204977452d922bf3c660`. D4 in the family 2 ledger
   records the categorical equivalence for the same functor.
-  [Modules, statement and proof receipts](multiplicative-type-absolute-galois-progress.md)
+  [Modules, statements and proofs](multiplicative-type-absolute-galois-progress.md)
 
 **A10. Fixed lattices and rational morphisms.** Milne 2017, §12.g, printed
 p.239 (PDF 255), gives the fixed-character formula over the separable
@@ -231,13 +217,8 @@ specializes to that formula for commutative affine algebraic groups.
   invariant submodules for A1, with the canonical `𝔾_m` base-change
   isomorphism. This covers `K = SeparableClosure k`.
 - Status P. `galoisInvariantLattices` in
-  `Torus/GaloisInvariantLatticesProof` proves both comparisons. Task 7959
-  (`7bb1a480-7982-4b50-b08c-204069bb66ff`) published
-  `a36c4dfb-7c34-461f-983e-6cb1f929067a` at
-  `2d12bd934a2a0da7808014bfe52c6d67fde3eb62`. Review
-  `07b968c9-4fef-4832-b2ce-ac745417c7df` approved the proof,
-  and receipt `c5332c0a-6a14-4f31-ab80-b23e60e116a5` records the Lake and
-  exact-target checks. [Statement](../../Langlands/GroupScheme/Torus/GaloisInvariantLatticesStatement.md),
+  `Torus/GaloisInvariantLatticesProof` proves both comparisons. The proof first appeared in the Library at
+  `2d12bd934a2a0da7808014bfe52c6d67fde3eb62`; it was checked for Lake build and the exact target. [Statement](../../Langlands/GroupScheme/Torus/GaloisInvariantLatticesStatement.md),
   [proof](../../Langlands/GroupScheme/Torus/GaloisInvariantLatticesProof.md),
   [family 2, D6](ledger-family-2-tori.md#d-field-tori-and-galois-actions-on-lattices)
 
@@ -294,9 +275,7 @@ The centre need not be smooth.
 - Lean: `CenterMultiplicativeTypeStatement` (`Reductive/CenterMultiplicativeTypeStatement`).
   Hypotheses: a connected reductive `G` and its centre `z : Z ⟶ G`. Conclusion:
   `IsMultiplicativeType Z`.
-- Status P: `centerMultiplicativeType` (`Reductive/CenterMultiplicativeTypeProof`), published
-  from candidate `574605df-e99d-400a-a0eb-52e7a1114693` of Task 5242
-  (`043f2527-205c-4cfc-b9b2-553de1010d9d`). Its proof is the composite
+- Status P: `centerMultiplicativeType` (`Reductive/CenterMultiplicativeTypeProof`). Its proof is the composite
   `centerMultiplicativeTypeCentralizerReduction` applied to
   `algClosedMaximalTorusCentralizerReduction dynamicCentralizerReductive noTorusUnipotent
   solvableTorusQuotient` (`Reductive/CenterMultiplicativeTypeReduction`,
@@ -373,7 +352,7 @@ subgroup.** Source: Milne 2017, Definition 6.16, Propositions 6.17–6.18 and Co
   (`Derived/ConnectednessProof`), `derivedSubgroupFieldBaseChange`
   (`Derived/FieldBaseChangeAssembly`).
 - The conjunction `DerivedSubgroupStructureStatement` of these four is C, as the 4-tuple
-  of the proofs. No owner task was found.
+  of the proofs.
 
 **D2. The derived subgroup of a connected reductive group is semisimple.** Source: Milne
 2017, Proposition 19.21(c), printed p.402 (PDF 418) (†).
@@ -451,8 +430,8 @@ Corollary 6.19(d), printed p.129; Remark 6.23, printed p.131.
   statements. The first needs the instance `IsAffineHom` for the base change `H_R`, which
   holds because `pullback.snd H.X.hom b` is affine. The conjunction is the pair of the two
   composites.
-- Owner task: Task 5444, `13a72515-2207-4c10-9fbc-c74917768715` (a `lean.proof@1` task for all
-  three statements). On 10 November 2026 it had no executor and no candidate.
+- The Library now proves the three statements; see the
+  [Galois and derived coverage note](galois-derived-coverage-2026-11-13.md).
 
 ## E. Central isogenies
 
@@ -503,7 +482,7 @@ p.260; Milne 2017, Proposition 17.20, printed pp.357–358.
 - Status P: `centralIsogenySplitMaximalTorusLift` (`CentralIsogeny/SplitMaximalTorusLiftProof`).
 
 **E5. Central isogenies killing central semisimple tangent vectors.** Internal deduction
-with no single source statement (statement Markdown, Worker 1487).
+with no single source statement (statement Markdown).
 - Lean: `CentralSemisimpleKernelStatement` (`CentralIsogeny/SemisimpleKernel`) and
   `GeometricCentralSemisimpleKernelStatement` (`CentralIsogeny/GeometricSemisimpleKernel`).
   Hypotheses: exponential characteristic `p > 1`, and `G` smooth, affine and connected.
@@ -572,8 +551,7 @@ of the base field".
     (`SimplyConnected/FieldExtensionProof`).
   - P for the conjunction: `simplyConnected_fieldExtension`
     (`SimplyConnected/FieldExtensionPackageProof`).
-  - These two were published after commit `e449cde`, for Task 4036
-    (`a50922f1-28e3-4f35-ab30-18b26c293a30`).
+  - These two first appeared in the Library after commit `e449cde`.
 
 **F4. Simply connected covers exist over every field.** Source: CGP, Corollary A.4.11(1),
 printed pp.500–501 (PDF 526–527) (†); Milne 2017, Definition 18.5, printed p.388.
@@ -651,8 +629,8 @@ stated verbatim in the sources.
 
 ## Remaining open targets in family 6
 
-- A6, the quasi-split star action: no published proof and no candidate. The missing
-  published input is that the roots of a `k`-Borel subgroup containing the torus form the
-  positive system of a base. Owner: Task 5456.
-- Publication of the C rows: the D1 conjunction (no task) and the three D9 statements
-  (Task 5444).
+At the snapshot commit these were open: A6, the quasi-split star action (the missing
+input was that the roots of a `k`-Borel subgroup containing the torus form the
+positive system of a base), and named theorems for the C rows, the D1 conjunction and the
+three D9 statements. All of them are now proved in the Library; see the
+[Galois and derived coverage note](galois-derived-coverage-2026-11-13.md).

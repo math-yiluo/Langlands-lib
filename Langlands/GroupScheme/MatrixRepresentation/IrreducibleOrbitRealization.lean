@@ -112,7 +112,7 @@ theorem characterProjector_mem_characterSpace_of_span (ρ : MatrixRepresentation
       exact (ρ.characterSpace χ).zero_mem
   exact hle (by rw [hspan]; trivial)
 
-local instance : IsAffineHom
+private local instance : IsAffineHom
     ((GroupScheme.baseChange (algebraBaseMap k K)).obj G).X.hom :=
   inferInstanceAs (IsAffineHom (Limits.pullback.snd G.X.hom (algebraBaseMap k K)))
 

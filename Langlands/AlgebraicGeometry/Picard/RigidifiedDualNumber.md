@@ -1,7 +1,5 @@
 # Rigidified classes over the dual numbers
 
-Author: Worker 509.
-
 This internal construction restricts the published universal classification
 equivalence to a fibre. It provides an equivalence of types between actual
 dual-number tangent maps at the trivial parameter and rigidified classes

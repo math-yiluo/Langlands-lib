@@ -1,7 +1,5 @@
 # Chamber coordinates of standard intersections
 
-Author: Worker 828.
-
 Module `Langlands.Representation.Geometric.IntersectionChamberCoordinates`.
 
 Fix block shapes `B`, `C` of rank `n`, a permutation `w`, and a refinement
@@ -17,8 +15,7 @@ representative. This module shows three things:
 
 All declarations are in namespace `Langlands.Geometric`. They are internal
 coordinates and helper lemmas, written for the proof of
-`Langlands.GLInductionWeakJacquetBoundsStatement` (task
-5c9a0e18-0039-4f00-81bc-e103757b5a3a) and for reuse by the coarse-character
+`Langlands.GLInductionWeakJacquetBoundsStatement` and for reuse by the coarse-character
 reflection of geometric pieces.
 
 ## Declarations and proofs

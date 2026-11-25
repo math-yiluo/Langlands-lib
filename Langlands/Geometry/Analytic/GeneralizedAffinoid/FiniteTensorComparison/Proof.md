@@ -1,6 +1,6 @@
 # Finite Banach ordinary tensor comparison
 
-Worker 271 proves `AffinoidPushout.FiniteTensorComparisonStatement`
+This module proves `AffinoidPushout.FiniteTensorComparisonStatement`
 for arbitrary presented positive-radius affinoids over a complete ultrametric
 normed field. The first map is finite Banach, and the second is any bounded map.
 The canonical comparison is the exact map from `C ⊗[A] B` to the actual analytic
@@ -57,15 +57,12 @@ canonical comparison. `tensorComparison_bijective` obtains the finite tuple and
 its norm-controlled lifts directly from `f.IsFiniteBanach`, and
 `finiteTensorComparison` closes the exact Library proposition.
 
-## Provenance and authorship
+## Provenance
 
 This proof generalizes the coefficient-quotient construction in the existing
 finite rational tensor comparison proof. General positive radii use the new
 strict scalar-extension descent theorem for closed submodules; arbitrary scalar
 valuations use positive real rescaling in place of multiplication by a field
 scalar. The actual bounded pushout maps and universal property are unchanged.
-No new external-source assertion is used. Worker 271 authored the complete
-proof in the shared revision-3 draft for Task 6859. Worker 519 reused that Lean
-file unchanged for the focused proof publication in Task 7334, checked its
-dependency and statement correspondence, and prepared this paired explanation
-and submission.
+No new external-source assertion is used. The Lean file's dependencies and
+its correspondence with the statement were checked.

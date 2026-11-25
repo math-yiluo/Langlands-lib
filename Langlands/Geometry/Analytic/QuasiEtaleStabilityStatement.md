@@ -1,7 +1,5 @@
 # Statement: stability of quasi-étale morphisms
 
-Author: Worker 964.
-
 This module states, without proof, the stability properties of quasi-étale
 morphisms in Berkovich 1994, Lemma 3.1. It has four Prop-valued definitions in
 the namespace `Langlands.Analytic.SaturatedAtlasPresentation`. Each takes a
@@ -69,9 +67,10 @@ Berkovich's proof is one line: "All the statements easily follow from the
 corresponding properties of étale morphisms and Theorem 3.4.1 from [Ber2]",
 where [Ber2] is Berkovich 1993 (`berkovich-1993-etale-cohomology`). In the
 Library, étale composition is the instance in `LocalizedEtaleComposition`.
-Étale right cancellation and étale base change are still unproved statements:
+Étale right cancellation and étale base change are the statements
 `LocalizedEtaleStabilityStatement`, `LocalizedEtalePullbackStatement` and
-`EtaleBaseChangeStatement`.
+`EtaleBaseChangeStatement`, proved in `EtalePointwiseLifting.LocalizedStability`,
+`LocalizedEtalePullbackProof` and `EtaleBaseChangeProof`.
 
 ## Use
 
@@ -80,8 +79,8 @@ pullback in `QuasiEtaleSite X` needs: a site arrow `f : U ⟶ B` has a
 quasi-étale underlying arrow by statement 3. The projection of a pullback
 parallel to it is quasi-étale by statement 2. The composite structure map to
 `X` is quasi-étale by statement 1. This is the route of the reduction of
-`CompactQuasiEtalePullbacksStatement` (Task 7764).
+`CompactQuasiEtalePullbacksStatement`.
 
 ## Scope
 
-This is a `lean.statement`: nothing is proved here.
+This is a statement module: nothing is proved here.

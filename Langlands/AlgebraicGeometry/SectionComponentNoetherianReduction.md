@@ -1,6 +1,6 @@
 # Reduction to openness at geometrically reduced Noetherian fibres
 
-This internal supporting unit defines
+This internal supporting module defines
 `SectionComponent.NoetherianFiberwiseOpennessStatement`. For a flat, locally
 finitely presented, quasi-compact and quasi-separated morphism over the spectrum
 of a Noetherian ring, with an actual section, it asks that every point in the
@@ -8,7 +8,7 @@ selected component union be an interior point whenever the residue fibre at
 its image is geometrically reduced. Other fibres need not be geometrically
 reduced.
 
-The statement is not proved in this unit. The theorem
+The statement is not proved in this module. The theorem
 `flatFinitePresentationOpenness_of_noetherianFiberwise` proves that it implies
 the published arbitrary-base
 `SectionComponent.FlatFinitePresentationOpennessStatement`, in every universe.
@@ -48,5 +48,7 @@ the model union. Continuity of the comparison map pulls that interior
 neighbourhood back to the original component union.
 
 No assertion of geometric reducedness on all model fibres or descent of that
-global property to a finite stage is made. The main task still requires a
-proof of the Noetherian fibrewise assertion.
+global property to a finite stage is made. The Noetherian fibrewise
+assertion is proved by `noetherianFiberwiseOpenness` in
+`SectionComponentOpennessProof`, which combines it with this reduction to
+prove `FlatFinitePresentationOpennessStatement`.

@@ -1,6 +1,6 @@
 # Centrality of spectra of Hopf algebra maps
 
-Worker 626. This internal extension of `HopfSpecPoints` and
+This internal extension of `HopfSpecPoints` and
 `CentralExtensionHopfSpec` compares actual group-scheme centrality with
 coordinate coactions. The commutative base ring R and the two commutative
 Hopf algebras A and C lie in any common universe u. No finiteness, flatness,
@@ -34,6 +34,6 @@ construction to bundle Spec C as a commutative group scheme.
 `commGroupSchemeOfTensorCoactions_toGrp` is reflexive equality: the source
 group scheme and all its operations are retained.
 
-This unit establishes the scheme/Hopf comparison. It does not yet derive
-coaction equality from a nilpotent base reduction, or prove the host
+This module establishes the scheme/Hopf comparison. It does not derive
+coaction equality from a nilpotent base reduction, or prove the
 arbitrary-base fibrewise central-isogeny statement.

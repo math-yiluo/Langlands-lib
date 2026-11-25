@@ -1,6 +1,6 @@
 # Properness along actual filtered ring and affine scheme limits
 
-This unit records the properness clause of Brian Conrad, *Weil and
+This module records the properness clause of Brian Conrad, *Weil and
 Grothendieck approaches to adelic points* (December 31, 2011), printed
 pp. 5–6, Theorem 3.4(2), and derived model-existence and relative forms.
 Registered source `conrad-2011-weil-grothendieck-adelic-points`, SHA-256

@@ -1,6 +1,6 @@
 # Character localization of compact induction in p-adic unipotent groups
 
-Worker 288 defines the closed proposition
+This module defines the closed proposition
 `Langlands.Whittaker.CompactLocalizationStatement.{uF,uV}`. This is an
 internal, derived specialization of the character-weighted integration
 argument in Bernstein–Zelevinsky (1977), not a literal quotation of its
@@ -84,8 +84,9 @@ character in the relation `ρ(a)f - χ(a) • f`. This formula explains the
 sign convention; the present proposition neither defines this integral
 nor assumes its bijectivity.
 
-A later proof must supply all measure facts for this concrete `U` and
-every closed `H`. The existing compact-open containment theorem
+The proof, `Langlands.Whittaker.compactLocalization` in
+`Langlands.Representation.Whittaker.CompactLocalizationProof`, supplies all
+measure facts for this concrete `U` and every closed `H`. The existing compact-open containment theorem
 `RankinSelberg.unipotent_exists_compact_open` suggests deriving
 unimodularity of `H` by intersecting compact open subgroups of `U` with
 the closed subgroup, then using Haar uniqueness. The published
@@ -114,7 +115,7 @@ SHA256:
 `8424600228ab72c5937e45edceefcae410a2a0b8f5ebf282185691542aa89092`.
 The cited sections were read at PDF pages 4–6 and 27–28; printed
 pp.444–445 and 466–467 were also visually checked. No source-specific
-erratum was found in the checked current Library notes, project notes,
+erratum was found in the checked Library notes, project notes,
 or literature index.
 
 Section 1.7 explains invariant quotient measures when ambient and closed

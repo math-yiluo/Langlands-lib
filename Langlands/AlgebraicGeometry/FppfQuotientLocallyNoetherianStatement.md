@@ -1,8 +1,8 @@
 # Representability of an fppf sheaf on locally noetherian tests through a flat proper equivalence relation
 
-Author: Worker 22, for task `07219dde-fd87-48cf-83be-db16cbb3707c` (Task 5705).
-Worker 5705 designed the Lean interface for the Picard construction of that
-task. The hypotheses match what Worker 5705's assembly can supply.
+The statement is an input of the Picard construction
+(`Langlands.AlgebraicGeometry.Picard.PicardHilbertPiecesRepresentabilityReductionStatement`
+takes it as a hypothesis). The hypotheses match what that construction can supply.
 
 ## Statement
 
@@ -88,7 +88,7 @@ that category. Hypothesis 4 and the bijectivity of `e` follow this convention.
 The companion statement
 `Langlands.AlgebraicGeometry.FppfQuotientRepresentabilityStatement` (published)
 assumes instead that `R` represents `Z ×_G Z` on all of `Over S`. The present
-form is the one Worker 5705 needs: in the Picard construction, `R` comes from
+form is the one the Picard construction needs: there, `R` comes from
 linear systems, which, as in Kleiman, are known to represent `Z ×_G Z` only on
 locally noetherian tests.
 
@@ -157,7 +157,7 @@ products of schemes.
    `T`-points for every scheme `T` holds.
 3. **The quotient.** Hypothesis 1, step 2 and hypothesis 5 are the hypotheses
    of `Langlands.AlgebraicGeometry.FlatProperEquivalenceRelationQuotientStatement`
-   (published, Task 5705), applied to `Z.hom`, `s.left` and `t.left`. It gives
+   (published), applied to `Z.hom`, `s.left` and `t.left`. It gives
    an H-quasi-projective `Q` over `S` and a flat, surjective, proper
    `π : Z ⟶ Q` over `S`, locally of finite presentation, such that `R`, with
    `s` and `t`, is the fibre product `Z ×_Q Z`. Its sources are Altman–Kleiman
@@ -219,6 +219,8 @@ In Kleiman's proof of Theorem 4.8 (pp.29–30), `Z` is an open subscheme of the
 scheme of relative effective divisors and `α` is the Abel map onto a piece
 `P^{φ₀}_0` of the Picard sheaf. Its fibre products with schemes are linear
 systems, and Kleiman shows that the first projection of `Z ×_P Z` is smooth and
-projective. In Task 5705, Worker 5705 plans to apply the present statement with `G`
+projective. The proof in
+`Langlands.AlgebraicGeometry.Picard.PicardHilbertPiecesRepresentabilityReductionProof`
+applies the present statement with `G`
 the image subsheaf of the Abel map in `RelativePicard.classSheaf f`, for which
 hypothesis 2 holds by construction.

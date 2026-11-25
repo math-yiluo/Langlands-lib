@@ -21,7 +21,7 @@ Expanding `groupCohomologyIso` then proves the claimed equality.
 `precompMap` is precisely the cochain map obtained by applying the linear Yoneda
 functor to the supplied chain map and passing out of the opposite category.
 
-Worker 53 implemented this derivation. The surrounding cyclic comparison design
-and exact target interface were supplied by Worker 28 and documented in the
-published target by Worker 25. This auxiliary argument uses Mathlib directly;
+The surrounding cyclic comparison design
+and exact target interface are documented in the
+published target `Langlands.Cohomology.CyclicH2.CocycleSumComparison`. This auxiliary argument uses Mathlib directly;
 it is not claimed as a verbatim result from the original literature.

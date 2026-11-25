@@ -1,6 +1,6 @@
 # Actual special-fibre images under local coefficient extension
 
-This internal derived unit compares actual schematic images after a local
+This module, internal and derived, compares actual schematic images after a local
 extension of integral coefficients, and specializes the result to the
 maximal-unramified extension. All declarations use arbitrary universe `u`.
 
@@ -42,7 +42,7 @@ the quotient-induced residue algebra with the algebra specified by
 
 Provenance is composition of the imported Library pullback comparisons,
 dominant-factorization and parabolicity transport and reflection theorems.
-This unit proves no facet-generation or reduction-preimage assertion and
+This module proves no facet-generation or reduction-preimage assertion and
 does not prove `UnramifiedFacetParabolicImageStatement`.
 
 ## Recovery and reverse-oriented squares
@@ -93,7 +93,7 @@ The final `RelativeComponentModelHom` wrapper applies this result to the actual
 neutral map and yields `HasParabolicSpecialFibreImage`.
 
 The provenance is a derived use of existing schematic-image factorization,
-model rigidity, smooth model recovery and parabolic descent results. This unit
+model rigidity, smooth model recovery and parabolic descent results. This module
 assumes the specified models and integral-point equalities. It asserts neither
-model existence nor the exact reduction-preimage equality nor the host
-opposite-factor theorem.
+model existence nor the exact reduction-preimage equality nor the
+opposite-factor theorem it serves.

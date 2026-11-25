@@ -4,8 +4,10 @@ This internal reduction uses the published torus-action unipotence theorem
 to remove the two general unipotence assumptions from the earlier
 `Dynamic.UnipotentStructure` reduction. It proves unipotence of actual
 identity-limit representatives in a smooth affine ambient group and reduces
-the full geometric radical target to the separately owned dynamic-centralizer
-reductivity statement. It does not prove that remaining statement.
+the full geometric radical target to the dynamic-centralizer reductivity
+statement `DynamicCentralizerReductiveStatement`. It does not prove that
+remaining statement (the Library proves it as `dynamicCentralizerReductive`
+in `Dynamic.CentralizerReductiveProof`).
 
 ## Unipotence for smooth affine ambient groups
 

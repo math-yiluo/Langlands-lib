@@ -1,7 +1,6 @@
 # Relations between the frame vectors of the separated discrete-series case
 
-Lean module: `Langlands.Representation.Archimedean.RealDiscreteSeparatedRelations`. Author:
-Worker 380, for Task 6749 (`5dd3db87-6f14-4d0f-b9a7-3d0065415fd8`), as part of the proof of
+Lean module: `Langlands.Representation.Archimedean.RealDiscreteSeparatedRelations`, part of the proof of
 `Langlands.Archimedean.RealTiedDiscreteSeparatedScalarCommutantStatement` (the chain ends in
 `RealDiscreteSeparatedProof`). All declarations are in the namespace
 `Langlands.Archimedean.RealDiscreteSeparated`.
@@ -52,7 +51,7 @@ relate all of these to `tgtSet ∅`.
   `card_tgtSet`, `colSet_tgtSet` and, column by column, `cnt (domSet D) x ≤ |colSet D x|`.
 * `sum_sum_eq_sum_card`, `sum_rotC`: the rotation weight of `D` for the plane `(p, p + 1)` is
   `Σ_j Σ_{l ∈ D_j} rotC(p, l) = |colSet D (p+1)| − |colSet D p|`.
-* `kmat_flip`, `prod_prod_flip`: the matrix of Worker 379's sign matrix
+* `kmat_flip`, `prod_prod_flip`: the matrix of the sign matrix
   `RealTiedMinorScalar.flip q` (Library) is `diag(−1 at q)`, and
   `∏_j ∏_{x ∈ D_j} (−1 if x = l) = (−1)^{|colSet D l|}`.
 * `frameVec_eq_zero`: if `|D j| ≠ |R j|` for some `j`, then `u_D = 0` (all its minors vanish).

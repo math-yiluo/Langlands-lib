@@ -1,7 +1,5 @@
 # A `G`-space over an induced space is induced from the domain over the base copy
 
-Author: Worker 933.
-
 This module proves that a `G`-object `Y` with a `G`-morphism `π : Y → X_{G/H}`
 is induced from the domain `π⁻¹(X_H)` of `Y` that lies over the copy of `X`
 indexed by the coset `H`. The proof assumes the statement

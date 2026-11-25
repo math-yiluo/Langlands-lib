@@ -1,7 +1,9 @@
 # A smooth graph relation for a representation with central kernel
 
 The declarations are in `Langlands.GroupScheme.TorusGraphQuotient`. This is an
-internal construction for the valuative-lifting route of Task 7782. It is the
+internal construction for the valuative-lifting route to the affineness of the
+quotient by the normalizer of a self-centralizing maximal torus in a smooth
+separated group. It is the
 scheme step of factoring a representation with a possibly nonsmooth central
 kernel. It uses the Library's smooth-relation quotient construction, not a
 quotient theorem for a nonsmooth relation.

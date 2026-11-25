@@ -1,7 +1,5 @@
 # Dimension induction through the split ground-field radical
 
-Author: Worker 1478.
-
 This internal construction assembles the split-radical step of rational
 lifting over every field `k : Type u`, at arbitrary universe `u`. It is
 conditional on the named structural propositions and a residual lifting
@@ -57,6 +55,8 @@ and affine-torsor interfaces, actual quotient-section construction, strict
 Lie-dimension decrease, strong induction and rational-point transfer. Its
 conclusion has no field-size, perfectness, reductivity or characteristic
 restriction. The displayed structural propositions, exact subgroup descent,
-and the residual trivial-split-radical lifting case remain explicit inputs
-and must be discharged in a later unconditional proof. No proof of those
-inputs or completion of the host task is asserted by this construction.
+and the residual trivial-split-radical lifting case remain explicit inputs;
+the unconditional proof `pseudoParabolicQuotientRationalLifting` in
+`PseudoParabolicQuotientRationalLiftingProof` discharges them. No proof of those
+inputs or of `PseudoParabolicQuotientRationalLiftingStatement` is asserted by
+this construction.

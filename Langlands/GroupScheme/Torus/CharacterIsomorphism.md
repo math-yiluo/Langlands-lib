@@ -1,7 +1,5 @@
 # Detecting isomorphisms of split tori on actual characters
 
-Author: Worker 1375.
-
 This internal construction works over every base scheme `S : Scheme u`.
 It uses the product presentation in `IsSplitTorus` and the actual character
 lattice `Hom(T, 𝔾_m)`. It requires no field, coordinates on an integral

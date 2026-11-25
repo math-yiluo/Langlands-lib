@@ -1,4 +1,4 @@
-import Langlands.ClassField.Global.TensorUnitCochains
+import Langlands.ClassFieldTheory.Global.TensorUnitCochains
 import Langlands.GroupScheme.CentralIsogeny.GaloisLiftScalarExtension
 import Langlands.GroupScheme.ComponentFieldEmbeddings
 import Langlands.GroupScheme.Rational.CentralMuCocycleLift
@@ -41,7 +41,7 @@ theorem Cocycle.LocallyTrivial.numberFieldBaseChange {F B : Type u}
 
 namespace IsCentralIsogeny
 
-open Langlands.ClassField.Global Langlands.ClassFieldTheory.Local
+open Langlands.ClassFieldTheory.Global Langlands.ClassFieldTheory.Local
 open TensorUnitShapiro
 
 variable {F B L : Type u} [Field F] [Field B] [Field L]

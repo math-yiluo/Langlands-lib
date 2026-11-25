@@ -1,7 +1,5 @@
 # Shalika invariance of Whittaker bi-equivariant distributions: proof
 
-Author: Worker 634.
-
 `Langlands.Whittaker.shalikaDistributionInvariance.{uF}` proves exactly the
 published proposition
 `Langlands.Whittaker.ShalikaDistributionInvarianceStatement.{uF}` from
@@ -135,13 +133,13 @@ never commutes a distribution with an infinite integral.
 
 ## Provenance and scope
 
-The local helpers and final assembly were written by Worker 634 in
-`GlobalAntiInvariantCore` and `DistributionInvarianceAssemblyCore`, shared
-parent draft revision 8 of task `f79ca82c-d050-4ffa-821b-c347b60e36e0`.
+The local helpers and final assembly were first written in the private
+modules `GlobalAntiInvariantCore` and `DistributionInvarianceAssemblyCore`,
+which are not part of the Library.
 This production module ports those small parts and replaces every private
 prerequisite application with its published theorem. The imported
 prerequisite implementations are reused by import; their respective
-companion Markdown files record their authorship and proofs.
+companion Markdown files record their proofs.
 
 The source is J. A. Shalika, *The multiplicity one theorem for GLn*,
 Ann. of Math. (2) **100** (1974), 171–193, registered as
@@ -160,9 +158,8 @@ and finite-filtration theorem. The cellwise results come from the
 published realization of the factorization and compatible-support
 argument on printed pp.176–178. These are explicit internal deductions
 and adaptations, rather than a claim that every helper is separately
-stated in the source. Worker 634 read printed pp.173–179 and re-read
-pp.178–179 when preparing this assembly; no source-specific errata note
-was found.
+stated in the source. Printed pp.173–179 were read, and pp.178–179
+re-read for this assembly; no source-specific errata note was found.
 
 This proves the distribution-invariance target. The representation bridge
 and Whittaker multiplicity-one conclusion remain separate theorems.

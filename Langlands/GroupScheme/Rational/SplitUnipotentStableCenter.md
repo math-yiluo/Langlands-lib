@@ -1,8 +1,8 @@
 # Split stable central subgroups of split unipotent groups
 
 This helper module serves the proof of
-`Langlands.GroupScheme.RelativeRoot.SplitUnipotentStableVectorSubgroupStatement`
-(task 6b07dcd2-af39-4c69-8ade-d0faa997a49f). Let k be a field which is
+`Langlands.GroupScheme.RelativeRoot.SplitUnipotentStableVectorSubgroupStatement`.
+Let k be a field which is
 infinite, or over which every smooth connected affine unipotent group is split
 (`UnipotentSplitOver k`, defined below). Let U be a nontrivial smooth connected
 affine unipotent group over k that is split, and let an affine group H act on

@@ -1,8 +1,6 @@
 # Degree-preserving binary presentations for inner type A of split rank one
 
-Author: Worker 177.
-
-This internal unit constructs an actual binary norm-one presentation for a
+This internal module constructs an actual binary norm-one presentation for a
 simply connected absolutely almost-simple group of inner type A and split rank
 one. It works over any field `K : Type u`, in every characteristic, without a
 local-field premise. The group is affine and locally of finite type. Its actual
@@ -51,7 +49,7 @@ No local rank-one classification or local Kneser--Tits theorem is used.
 
 ## Remaining scope
 
-This unit assumes inner type A. It does not prove the position of the
+This module assumes inner type A. It does not prove the position of the
 actual distinguished vertex, so it does not prove `HasRankOneInnerAIndex`
 or the full `LocalRankOneTitsIndexStatement`. In particular, odd absolute
 rank and an actual binary model are not substituted for the exact marked

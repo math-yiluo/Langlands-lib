@@ -36,7 +36,7 @@ These are exactly the two standard-slice families required by the imported
 comparison maps. They identify each supplied sigma algebra with the Borel
 sigma algebra of its quotient topology. A Haar-measure instance alone does
 not state that equality. No Borel compatibility is imposed on nonstandard
-indices. This correction propagates the measure hypotheses of the imported
+indices. This module propagates the measure hypotheses of the imported
 map to its fixed-index consumers; it does not prove a discrete-series
 comparison or an analytic finiteness theorem.
 
@@ -44,7 +44,7 @@ The explicit premise
 `RationalSemistandardStandardDiscreteSeriesComparison a ha mu hG hi hnu b hb eta`
 compares discrete-series membership for the identical actual smooth-dual class
 on the common literal standard Levi. The imported orbit equivalence preserves
-that class and reindexes only its actual unitary character relation. This unit
+that class and reindexes only its actual unitary character relation. This module
 does not prove the same-class split-component/measure comparison.
 
 ## Declarations and proofs

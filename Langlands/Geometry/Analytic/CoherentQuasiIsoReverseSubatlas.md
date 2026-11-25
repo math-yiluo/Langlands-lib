@@ -141,10 +141,15 @@ actual local inverse-image compatibility. Its `toStrongHom` is
 definitionally the constructed reverse strong map, as recorded by
 `reverseCompatibleStrongMap_toStrongHom`.
 
-This unit proves the selection, its local refinement and closure, and a
-full compatible reverse strong quasi-isomorphism. It does not yet prove
+This module proves the selection, its local refinement and closure, and a
+full compatible reverse strong quasi-isomorphism. It does not prove
 the two whole-arrow composite equations with the original forward map
 and the subatlas inclusion, a general Ore refinement square, the
 analytic morphism category comparison, etale or quasi-etale sites,
-equivariant sites, or the Harris tower specialization. Those remain
-obligations of the surrounding analytic-space and site construction.
+equivariant sites, or the Harris tower specialization. The two composite
+equations are proved in `CompatibleQuasiIsoReverseIdentities`
+(`reverse_comp`, and `lift_comp_reverse`, which also assumes
+`A.atlas.HasAllLocalDomains`), and an Ore refinement square in
+`CompatibleQuasiIsoOreRefinement` (`quasiIsoOre_square`, which assumes
+full-domain closure of the common target and of the source of the arbitrary
+map); the other items lie outside this module.

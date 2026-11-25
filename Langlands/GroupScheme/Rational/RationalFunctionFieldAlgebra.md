@@ -1,7 +1,5 @@
 # Rational function fields as algebras over the base field
 
-Author: Worker 1420.
-
 This internal, derived module fixes one `k`-algebra structure on the function field
 `K = (𝔸(m; Spec k)).functionField` of affine space over a field `k : Type u`, for any
 `m : Type u`. It also names the coordinate functions in `K`. There is no finiteness,

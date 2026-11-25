@@ -1,8 +1,5 @@
 # Actual derived unit on a complex of acyclic terms
 
-Authors: Worker 595 (statement design and initial documentation), Worker 310
-(interface verification and expanded documentation).
-
 `Langlands.Cohomology.AcyclicTermsDerivedUnitStatement` is an internal comparison
 proposition for arbitrary abelian categories with chosen derived categories,
 with enough injectives in the source. For an additive left exact functor `F`
@@ -45,10 +42,10 @@ cohomology. The index `q + 1` ranges over all positive degrees. The hypothesis
 is on the terms `K.obj.X i` only: there is no exactness requirement on `K`, no
 restriction on its homology objects, and no requirement that its terms be
 injective. The Lean declaration is a `def` returning `Prop`; it supplies no
-proof. An exact proof is reserved for a successor task after publication of
-this statement.
+proof. The proof is `Langlands.Cohomology.acyclicTermsDerivedUnitStatement` in
+`Langlands.Cohomology.AcyclicTermsDerivedUnitProof`.
 
-The provenance is internal: it specifies the missing adapter between Mathlib's
+The provenance is internal: it specifies the adapter between Mathlib's
 bounded-below derived-functor unit and the Library's classical acyclic-object
 infrastructure, rather than transcribing a particular literature statement.
 The two imported Mathlib modules

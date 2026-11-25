@@ -1,7 +1,5 @@
 # Pointed base change for integral and rational root monodromy
 
-Author: Worker 92.
-
 This module states four laws for the existing geometric actions on actual
 Tate twists. All declarations are Prop-valued definitions; they provide no
 proofs of these laws.

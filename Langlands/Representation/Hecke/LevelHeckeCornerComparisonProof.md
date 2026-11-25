@@ -37,7 +37,7 @@ The source context is David Renard, *Représentations des groupes réductifs
 p-adiques*, French version dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-The source locations checked by Worker 275 are:
+The source locations checked are:
 
 - II.3.11–II.3.12, printed pp.51–53 / PDF pp.57–59: the probability measure
   `e_K`, the identification of Hecke distributions with densities `f μ` for a
@@ -56,8 +56,7 @@ representative `ρ(x)` in the action formula.
 
 The comparison itself is not a numbered assertion printed in Renard. The
 additional subgroup hypotheses in VI.9.4 concern its categorical consequence.
-Worker 273 implemented the Lean proof; Worker 275 checked the source context
-and conventions.
+The source context and conventions were checked against these locations.
 
 ## Implemented proof
 
@@ -109,6 +108,6 @@ independent universes, with no additional premise.
 The proof imports the published target by Lean module name, the linear helper,
 and `Langlands.Representation.Hecke.ActionProjection`.
 The target and its imported Lean–Markdown pairs are unchanged.
-The complete proof and helper compile through the project's Lean service;
+The complete proof and helper compile;
 declaration inspection reports the universes `u`, `v` and only
 `propext`, `Classical.choice`, and `Quot.sound`.

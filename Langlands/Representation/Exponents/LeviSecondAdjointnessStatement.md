@@ -1,6 +1,6 @@
 # Bernstein's second adjointness for represented parabolics
 
-Author: Worker 6. Module `Langlands.Representation.Exponents.LeviSecondAdjointnessStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`. Statement `LeviSecondAdjointnessStatement : Prop`; nothing is proved here.
+Module `Langlands.Representation.Exponents.LeviSecondAdjointnessStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`. Statement `LeviSecondAdjointnessStatement : Prop`; nothing is proved here.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*, French edition dated 9 July 2026, VI.9.6, first Theorem, printed p.201 / PDF p.207. The registered source ID is `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. In translation: let `P = MN` be a parabolic subgroup of `G` and `P̄ = M N̄` the opposite parabolic; then the functor `r_{P̄}^G` is right adjoint to `i_P^G`, that is, for every smooth `(π, V)` of `G` and every smooth `(τ, E)` of `M` there is a natural isomorphism
 

@@ -129,15 +129,14 @@ remaining steps are the universal property of `(P, L)` and the connectedness of
 the image of an irreducible parameter scheme.
 
 
-## Authorship and dependency boundary
+## Dependency boundary
 
-This pair retains the carried Task 2104 forward argument (historically Worker
-860). Worker 2104 updated the assembly to use the reverse implication
+The assembly
+uses the reverse implication
 proved from published constancy. The actual smooth-family comparison is proved
-in the published `SmoothFamilyPicardZeroComparisonProof` module, whose
-authorship remains recorded there.
+in the published `SmoothFamilyPicardZeroComparisonProof` module.
 
 The proof does not import geometric-point or all-test-scheme Picard-zero
 openness, any supplied-open-locus-to-component result, or an assumed
-`IsPicardZeroOpenLocus`. The target and its protected imported pairs remain
+`IsPicardZeroOpenLocus`. The target and its imported pairs remain
 unchanged.

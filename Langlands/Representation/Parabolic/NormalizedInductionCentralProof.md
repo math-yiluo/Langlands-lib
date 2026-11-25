@@ -1,7 +1,5 @@
 # Scalar central action on normalized parabolic induction
 
-Author: Worker 257.
-
 `Langlands.Parabolic.normalizedInductionCentralClause` proves the published
 proposition `Langlands.Parabolic.NormalizedInductionCentralClause.{uF,uV} F T B V`
 from `Parabolic.NormalizedCompatibilityStatement`. It keeps all the

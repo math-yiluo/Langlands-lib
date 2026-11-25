@@ -126,12 +126,12 @@ claimed by the cited passage or proved here. The implementation
 uses Mathlib's algebraic restricted product with the actual integral
 images, rather than identifying the global rationalization with a
 product by definition. The imported `RationalPrime` construction
-was developed by Worker 142 using Worker 92's tensor-lift pattern.
+uses the root-twist tensor-lift pattern (`TwistRationalPrime`).
 
 This module supplies additive groups and additive maps. It introduces
 no rational or finite-adele scalar action on the restricted product,
 no rational topology, no continuity statement, and no injectivity,
 surjectivity or equivalence claim for the integral or rational
-comparison. Those are separate mathematical obligations. No
+comparison. Those are not established in this module. No
 finiteness, rank, characteristic, monodromy or pairing hypothesis is
 needed for the constructions and elementary laws established here.

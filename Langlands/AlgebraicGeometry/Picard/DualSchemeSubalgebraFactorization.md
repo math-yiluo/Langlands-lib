@@ -1,7 +1,5 @@
 # Morphisms from affine schemes to the chosen dual factor through finite stages
 
-Author: Worker 3643.
-
 Module `Langlands.AlgebraicGeometry.Picard.DualSchemeSubalgebraFactorization` shows that
 the Library's chosen dual `dualScheme A hA` of an abelian scheme `A` over an affine base
 `Spec R` is locally of finite type, and locally of finite presentation when `R` is

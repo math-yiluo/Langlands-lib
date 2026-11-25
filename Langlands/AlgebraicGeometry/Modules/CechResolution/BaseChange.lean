@@ -91,7 +91,7 @@ lemma sheafOnPushforwardApp_smul {W : X.Opens} {W' : Y.Opens}
     (g.app (W.ι ''ᵁ (W.ι ⁻¹ᵁ V)) r') n
   have he := congrArg
     (fun z : Γ(Y, W'.ι ''ᵁ (W'.ι ⁻¹ᵁ (g ⁻¹ᵁ V))) =>
-      (N.smul z).hom (N.presheaf.map (homOfLE (sheafOnPushforward_le g hW V)).op n))
+      (N.smul z).asHom.hom (N.presheaf.map (homOfLE (sheafOnPushforward_le g hW V)).op n))
     (ConcreteCategory.congr_hom hr'' r)
   exact (congrArg
     (fun z : Γ(N, g ⁻¹ᵁ (W.ι ''ᵁ (W.ι ⁻¹ᵁ V))) =>

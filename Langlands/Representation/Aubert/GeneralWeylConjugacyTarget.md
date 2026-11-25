@@ -1,8 +1,9 @@
 # Weyl conjugacy of induced exact-K0 classes
 
-Author: Worker 1186. This module reuses Worker 23's actual normalized
-parabolic functors and exact-K0 maps, and the published actual
-normalizer/full-centralizer quotient of Worker 165.
+This module reuses the actual normalized parabolic functors and exact-K0
+maps of `General/Parabolic` and `General/AlternatingOperator`, and the
+published actual normalizer/full-centralizer quotient of
+`Langlands.Group.RelativeWeyl`.
 
 The two declarations in namespace `Langlands.Aubert.General` are
 Prop-valued targets. Neither is a proof or an external Chapter V
@@ -10,11 +11,7 @@ structural assertion.
 
 
 The imported `General/Parabolic` and `General/AlternatingOperator` pairs
-are the unmodified, unreviewed Worker 23 adapter draft revision 1 from task
-`593ef603-6672-4424-976c-14e11e920d9c`. They are frozen validation
-dependencies, excluded from this target pair's publication paths. Their
-independent acceptance and publication must precede integration of this
-pair; target review does not accept or publish those adapters.
+are used unmodified; they are separate modules, not part of this pair.
 
 ## Exact statements
 
@@ -70,21 +67,21 @@ local-field realization remains an obligation. Unlike the alternating
 operator, this identity needs no enumeration of all root subsets, so the
 target itself does not require `Fintype ι`.
 
-| Source or construction | Declaration used or required | Status and owner |
+| Source or construction | Declaration used or required | Status |
 | --- | --- | --- |
-| Actual normalized induction and inverse-conjugation transport | `normalizedInductionFunctor`, `conjugationFunctor`, `conjugationEquiv` from `General/Parabolic` | Actual adapters owned by task `593ef603-6672-4424-976c-14e11e920d9c`, Worker 23. |
-| Exact finite-length K0 maps | `inductionK0`, `conjugationK0`, `ParabolicFiniteLength` from `General/AlternatingOperator` | Conditional actual maps. Finite length and exactness are visible named premises, owned by Workers 23 and 1180; the parent must discharge them. |
+| Actual normalized induction and inverse-conjugation transport | `normalizedInductionFunctor`, `conjugationFunctor`, `conjugationEquiv` from `General/Parabolic` | Actual adapters of `General/Parabolic`. |
+| Exact finite-length K0 maps | `inductionK0`, `conjugationK0`, `ParabolicFiniteLength` from `General/AlternatingOperator` | Conditional actual maps. Finite length and exactness are visible named premises; a user of the targets must discharge them. |
 | Equivalence pullback | `SmoothRep.pullbackFunctor_preservesFiniteLength` | Published generic theorem; it supplies only transport finiteness. |
 | Actual Weyl quotient | `Langlands.Group.RelativeWeyl.normalizer`, `.Weyl` | Published construction with denominator the full centralizer. It supplies no induced-class identity. |
-| Aubert (1.2), printed p.2181, citing Bernstein–Deligne–Kazhdan Lemma 5.4(iii) | `inducedK0WeylConjugacy` and `inducedClassWeylConjugacy` | Targets supplied here. A proof successor belongs to parent `46df6a68-5db4-4428-8044-05151d6ce1f6`. |
-| Ban–Jantzen 2016 Proposition 4.1(3), p.158 | The same two targets under the actual standard-Levi specialization | Published literature route uses character independence, Langlands classification and the geometric lemma. Their general declaration-level instantiations remain prerequisite work, coordinated with existing Renard owners. |
+| Aubert (1.2), printed p.2181, citing Bernstein–Deligne–Kazhdan Lemma 5.4(iii) | `inducedK0WeylConjugacy` and `inducedClassWeylConjugacy` | Targets supplied here. |
+| Ban–Jantzen 2016 Proposition 4.1(3), p.158 | The same two targets under the actual standard-Levi specialization | Published literature route uses character independence, Langlands classification and the geometric lemma. Their general declaration-level instantiations are prerequisites of that route. |
 
 The last row is a dependency requirement for the intended proof, not
 evidence that those prerequisites have already been formalized. This
 module has no proof of Weyl-conjugacy and imports no classification proof.
 Any future proof following Ban–Jantzen must record the actual general
 classification, character-independence and geometric-lemma declaration
-names and their hypotheses. The currently inspected GL-specific
+names and their hypotheses. The GL-specific
 `Langlands.PadicField.TopologicalData.TemperedLanglandsDatum.langlandsQuotient`
 is a head construction, not a general classification theorem and not a
 replacement for that requirement. An unproved general prerequisite may

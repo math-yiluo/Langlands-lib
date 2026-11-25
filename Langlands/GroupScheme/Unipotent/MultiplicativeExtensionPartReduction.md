@@ -1,7 +1,6 @@
 # The unipotent part of an extension of a multiplicative group: reduction to 16.26(a)
 
-Author: Worker 603 (Task 7802). Module
-`Langlands.GroupScheme.Unipotent.MultiplicativeExtensionPartReduction`; the
+Module `Langlands.GroupScheme.Unipotent.MultiplicativeExtensionPartReduction`; the
 auxiliary declarations are in the namespace
 `Langlands.GroupScheme.MultiplicativeExtensionUnipotentPart`.
 

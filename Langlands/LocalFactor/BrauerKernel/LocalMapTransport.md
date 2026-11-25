@@ -1,12 +1,11 @@
 # Local relative Weil maps on a prime-transported completion package
 
-Author: Worker 5093. This is a supporting unit for task
-`92a3d086-a5ad-476f-9fd9-aa9d4eaa3778`, which must prove
+This is a supporting module for the proof of
 `Langlands.LocalFactor.NonabelianBrauer.KernelCompatibilityStatement`. At the distinguished place of
 the global argument, the completion `𝕃_u` of a global generator field is used through the package
 `towerPadicField v u = padicFieldAt u (residuePrime_eq v u)`, whose prime index is the residue
 prime of the place `v` below. The published existence statement for local relative Weil maps is
-stated for the canonical package `padicField u`. This unit restates its consequence for
+stated for the canonical package `padicField u`. This module restates its consequence for
 `padicFieldAt u h`, for any `h : residuePrime u = p`. It is bookkeeping with no separate literature
 source.
 

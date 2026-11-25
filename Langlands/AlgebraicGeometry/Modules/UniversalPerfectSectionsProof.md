@@ -1,7 +1,5 @@
 # Universal perfect representatives for smooth proper line-bundle sections: proof
 
-Author: Worker 958.
-
 The theorem `universalPerfectSections.{u}` proves
 `UniversalPerfectSectionsStatement.{u}` with no extra hypotheses. Base rings,
 scalar extensions and carriers stay arbitrary in universe `u`. The proof is a

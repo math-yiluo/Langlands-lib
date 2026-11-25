@@ -26,7 +26,8 @@ def pointsIsoEquiv (e : G ≅ H) (T : Over S) : (T ⟶ G.X) ≃* (T ⟶ H.X) :=
 
 /-- Conjugating an inner automorphism through an actual isomorphism transports its point. -/
 theorem autMulEquivOfIso_innerIso (e : G ≅ H) (g : Over.mk (𝟙 S) ⟶ G.X) :
-    Aut.autMulEquivOfIso e (G.innerIso g) = H.innerIso (g ≫ e.hom.hom.hom) := by
+    Aut.autMulEquivOfIso e (Aut.of (G.innerIso g)) = Aut.of (H.innerIso (g ≫ e.hom.hom.hom)) := by
+  apply Aut.ext
   apply Iso.ext
   change e.inv ≫ (G.innerIso g).hom ≫ e.hom = _
   rw [innerIso_hom_comp, Iso.inv_hom_id_assoc]
@@ -47,18 +48,18 @@ def fullInnerAutEquiv (hn : 2 ≤ n) :
 /-- This equivalence is the actual inner-conjugation homomorphism. -/
 @[simp] theorem fullInnerAutEquiv_apply (hn : 2 ≤ n)
     (g : Over.mk (𝟙 (Spec (CommRingCat.of K))) ⟶ (groupScheme (Fin n) K).X) :
-    fullInnerAutEquiv hn g = (groupScheme (Fin n) K).innerIso g := by
+    fullInnerAutEquiv hn g = Aut.of ((groupScheme (Fin n) K).innerIso g) := by
   let e := identityComponentIso (K := K) hn
   change Aut.autMulEquivOfIso e
-    ((identityComponent (groupScheme (Fin n) K)).innerIso (g ≫ e.inv.hom.hom)) = _
+    (Aut.of ((identityComponent (groupScheme (Fin n) K)).innerIso (g ≫ e.inv.hom.hom))) = _
   rw [autMulEquivOfIso_innerIso]
   simp only [Category.assoc, ← Grp.comp_hom_hom, e.inv_hom_id, Grp.id_hom_hom, Category.comp_id]
 
 /-- The inverse equivalence supplies the unique original-field conjugating point. -/
 theorem fullInnerAutEquiv_symm_spec (hn : 2 ≤ n)
     (σ : CategoryTheory.Aut (groupScheme (Fin n) K)) :
-    (groupScheme (Fin n) K).innerIso ((fullInnerAutEquiv hn).symm σ) = σ := by
-  rw [← fullInnerAutEquiv_apply]
-  exact (fullInnerAutEquiv hn).apply_symm_apply σ
+    (groupScheme (Fin n) K).innerIso ((fullInnerAutEquiv hn).symm σ) = σ.asIso := by
+  exact congrArg Aut.asIso
+    ((fullInnerAutEquiv_apply hn _).symm.trans ((fullInnerAutEquiv hn).apply_symm_apply σ))
 
 end Langlands.GroupScheme.OddOrthogonalMatrix

@@ -25,8 +25,8 @@ variable {R : Type*} [Field R]
 /-- The comparison map `ℤᵐ⁰ → ℝ≥0` sends the integer `m` to `e ^ m`. -/
 theorem toNNReal_coe_ofAdd {e : ℝ≥0} (he : e ≠ 0) (m : ℤ) :
     WithZeroMulInt.toNNReal he ((Multiplicative.ofAdd m : Multiplicative ℤ) : ℤᵐ⁰) = e ^ m := by
-  rw [WithZeroMulInt.toNNReal_neg_apply he WithZero.coe_ne_zero, WithZero.unzero_coe,
-    toAdd_ofAdd]
+  rw [WithZeroMulInt.toNNReal_neg_apply he WithZero.coe_ne_zero]
+  rfl
 
 /-- A real valuation whose nonzero values are integer powers of some `e > 1` is the composite of
 an integer-valued valuation with `m ↦ e ^ m`. -/
@@ -164,10 +164,12 @@ theorem exists_intermediateValUniformizer
   refine exists_valUniformizer (D := Module.finrank (UnramifiedClosure F) L) hn
     (q := q) hπ0 hπ1 (fun x hx0 hx1 => ?_)
     (c := algebraMap (UnramifiedClosure F) L πK) ?_ ?_
-  · have hN0 : Algebra.norm (UnramifiedClosure F) x ≠ 0 :=
+  · have : Module.Free (UnramifiedClosure F) L := Module.Free.of_divisionRing _ _
+    have hN0 : Algebra.norm (UnramifiedClosure F) x ≠ 0 :=
       (Algebra.norm_ne_zero_iff).mpr hx0
     obtain ⟨k, hk⟩ := hπK (Algebra.norm (UnramifiedClosure F) x) hN0 (by
-      change sepClosureValuation F _ ≤ 1
+      change sepClosureValuation F (algebraMap (UnramifiedClosure F) (SeparableClosure F)
+        (Algebra.norm (UnramifiedClosure F) x)) ≤ 1
       rw [intermediateValuation_norm]
       exact pow_le_one₀ zero_le hx1)
     refine ⟨k, ?_⟩
@@ -286,6 +288,7 @@ theorem normalizedIntermediateValuation_norm
   have : IsScalarTower L M (SeparableClosure F) := IsScalarTower.of_algebraMap_eq (fun _ => rfl)
   have : IsScalarTower (UnramifiedClosure F) L M := IsScalarTower.of_algebraMap_eq (fun _ => rfl)
   have : FiniteDimensional L M := FiniteDimensional.right (UnramifiedClosure F) L M
+  have : Module.Free L M := Module.Free.of_divisionRing L M
   have hd : Module.finrank L M ≠ 0 := Module.finrank_pos.ne'
   have hnorm : ∀ y : M, intermediateValuation F L (Algebra.norm L y) =
       intermediateValuation F M y ^ Module.finrank L M := fun y =>

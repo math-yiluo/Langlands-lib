@@ -1,11 +1,11 @@
 # Acyclic resolutions and right-derived comparison
 
-Author: Worker 3.
-
 This pair defines six propositions and their conjunction. It contains no
 theorem proof or axioms. The original-source checks below establish the intended
-meaning of the statements; their proofs and independent publication remain
-separate obligations.
+meaning of the statements. Components 1-5 are proved in
+`Langlands.Cohomology.AcyclicResolution.LiftProof`, `ComparisonProof`,
+`IndependenceProof`, `NaturalityProof` and `TransformationProof` (in that
+order); the Library has no proof of component 6 or of the conjunction.
 
 ## Mathematical content
 
@@ -186,11 +186,10 @@ compatibility. No claim is made to have read the entire book.
 
 This pair imports only pinned Mathlib through
 `Mathlib.CategoryTheory.Abelian.RightDerived` and
-`Mathlib.CategoryTheory.Action.Basic`. Its project environment is
-artifact `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d` version 1:
+`Mathlib.CategoryTheory.Action.Basic`, with
 Lean 4.34.0, commit `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`;
 Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
-It has no dependency on the unpublished inverse-limit or spectral-page
+It has no dependency on the inverse-limit or spectral-page
 statements.
 
 The Harris and Berkovich application still needs actual sheaf categories,
@@ -200,8 +199,8 @@ supplied by the generic hypotheses above. No claim is made here about
 Shimura cohomology or split-supercuspidal local-global compatibility, and no
 banality or other torsion hypothesis is introduced.
 
-The six-component source passed the pinned compiler and incremental Lake
-check `c6893ce7-6717-45a9-98aa-57ea6afdaa07`, with zero errors and warnings.
+The six-component source passed the pinned compiler and an incremental Lake
+check, with zero errors and warnings.
 The check used snapshot
 `0fcd26e4b807daa3d66f11af312a710bf52aabdc47aafe1b3d933bfaf81fe07c`
 and Lean source SHA256
@@ -217,7 +216,7 @@ ordinary lift, and equality to the underlying map of the resulting action
 isomorphism were checked explicitly. Compilation does not verify the
 mathematical statements.
 
-The comparison theorem proofs and independent acceptance/publication remain
-separate obligations. Reading and registering the sources does not supply
-these proofs, nor does this algebraic pair complete the Harris–Berkovich
+The comparison theorem proofs are not part of this pair; components 1-5 are
+proved in the modules named at the top. Reading and registering the sources
+does not supply these proofs, nor does this algebraic pair complete the Harris–Berkovich
 theorem family.

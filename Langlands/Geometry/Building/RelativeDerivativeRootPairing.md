@@ -1,6 +1,7 @@
 # Full derivative root pairings on the actual relative-root span
 
-Worker 227. Internal transport construction for Task 6205. Assume a split
+Internal transport construction for the affine-diagram input for anisotropic
+groups over local fields (building part of Kaletha–Prasad Theorem 10.3.1). Assume a split
 torus, a rank-zero-compatible affine root system on an affine space under
 the actual reduced translation space, and equality of its full derivative
 set with the range of actual relative-root forms. No root is discarded.

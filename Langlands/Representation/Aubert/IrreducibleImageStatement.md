@@ -1,7 +1,5 @@
 # Irreducible images up to sign under the actual Aubert operator
 
-Author: Worker 320.
-
 `Langlands.Aubert.IrreducibleImageStatement.{uF,uV} F T` is the proposition
 that every actual irreducible smooth complex representation `π` of `GL_n(F)`
 has an actual irreducible smooth representation `πD` of the same group with
@@ -50,7 +48,8 @@ identity is included.
 Every natural rank `n` is included. The source's positive-rank `GL_n` case is
 extended to the trivial rank-zero group, where there is one empty shape with
 coefficient `1`. Verifying that its actual induction-Jacquet term is the
-identity is part of the future proof, rather than a result in this module.
+identity is part of the proof, `irreducibleImage` in `IrreducibleImageProof`,
+rather than a result in this module.
 
 ## Original assertions and corrected proof boundary
 
@@ -100,7 +99,7 @@ argument of Corollary 3.9, are recorded in the published source audit
 and its retained audit guide. They do not add hypotheses to the present
 proposition or constitute an implemented Lean proof.
 
-## Future proof and independence
+## Proof and independence
 
 A corrected complex proof must construct the actual transition maps and prove
 exactness before the surviving terminal homology. To deduce irreducibility
@@ -120,10 +119,10 @@ Schneider–Stuhler alternative with its further dependencies.
 
 The only direct imports here are the published `Aubert.AlternatingOperator`
 and `Smooth.IrreducibleRealization`, whose existing Lean and Markdown pairs
-are unchanged. A future proof must avoid the parent analytic segment
+are unchanged. A proof must avoid the analytic segment
 classification, multisegment exhaustion, ordered strong-head existence,
 quotient coverage, tempered block uniqueness, square-integrable Langlands
-classification or exhaustion, regular exhaustion, and their proof successors
-and transitive proof inputs. This statement asserts no analytic
+classification or exhaustion, regular exhaustion, and the modules that prove
+them and their transitive proof inputs. This statement asserts no analytic
 square-integrability, irreducibility of segment products, or segment
 classification result.

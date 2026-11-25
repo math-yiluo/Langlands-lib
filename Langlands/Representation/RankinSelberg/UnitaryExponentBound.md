@@ -1,6 +1,6 @@
 # The exponent bound for unitary generic unramified representations
 
-Author: Worker 1797. Module `Langlands.Representation.RankinSelberg.UnitaryExponentBound`,
+Module `Langlands.Representation.RankinSelberg.UnitaryExponentBound`,
 namespace `Langlands.RankinSelberg.UnramifiedUnitary`.
 
 This helper module serves the proof of
@@ -60,7 +60,8 @@ Proof.
    (`modelMap_surjective`, `mem_fixedVectors_of_model`).
 2. `rowSum_bounded` gives `∑_{m<M} q^(k m) |ℓ(ρ(t_m) v)|² ≤ C`, with
    `t_m = diag(ϖ^m, 1, …, 1)`.
-3. Worker 1767's published `UnramifiedWhittaker.sphericalTest_torus_schur` gives
+3. The published `UnramifiedWhittaker.sphericalTest_torus_schur` (module
+   `SphericalWhittakerFormula`) gives
    `ℓ(ρ(t_m) v) = halfModulus · satakeSchur = q^(-(k+1)m/2) h_m(a)`, with
    `a = characterValues F χ`.
 4. So `q^(k m) |ℓ(ρ(t_m) v)|² = |u_m|²`, where `u_m = q^(-m/2) h_m(a)`. The partial sums

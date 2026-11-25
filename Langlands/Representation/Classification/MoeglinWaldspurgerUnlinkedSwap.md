@@ -1,7 +1,6 @@
 # Swapping unlinked segment socles in a binary product
 
-Module `Langlands.Representation.Classification.MoeglinWaldspurgerUnlinkedSwap`. Written by
-Worker 5735 for Task 5735.
+Module `Langlands.Representation.Classification.MoeglinWaldspurgerUnlinkedSwap`.
 
 * `isZelevinskySocle_singleton`: a segment socle `Z` of `Δ` is a Zelevinsky socle of the
   one-segment multisegment `{Δ}` (one-block datum, the published `singletonIso`, and

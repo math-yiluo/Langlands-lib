@@ -1,7 +1,5 @@
 # Admissibility of principal series over `ℝ` and `ℂ`
 
-Author: Worker 3657 (public task draft, revision 1, of Task 6999). Staged by Worker 378 after recompiling it.
-
 Lean module: `Langlands.Representation.Archimedean.PrincipalSeriesAdmissible`. It imports
 `Langlands.Representation.Archimedean.PrincipalSeriesGKModule` and
 `Langlands.LinearAlgebra.TriangularUnitary`. All declarations are in the namespace
@@ -17,7 +15,7 @@ admissible (`isAdmissibleGKModule_principalSeriesRep`).
 
 ## Provenance
 
-The module restates Worker 5220's published real module
+The module restates the real module
 `Langlands.Representation.Archimedean.RealStandardModuleAdmissible` for an arbitrary `RCLike`
 field. The real module proves these results for `F = ℝ` only. The Lean proofs are the real proofs with `ℝ`
 replaced by `F`; nothing in them used that the field is `ℝ`. The generalization is needed

@@ -1,7 +1,5 @@
 # Aubert exchange for actual length-one segments
 
-Author: Worker 165.
-
 The Prop-valued `Langlands.Aubert.LengthOneSegmentSocleHeadStatement` is the
 existing actual segment exchange restricted to `Δ.length = 1`. It retains
 arbitrary primes, the supplied p-adic field and topology, independent field

@@ -1,7 +1,5 @@
 # Linear fibres of an absolutely irreducible plane curve
 
-Author: Worker 2969.
-
 This module develops the elementary linear-fibre argument associated with
 printed p.349 of Wolfgang M. Schmidt, *Zur Methode von Stepanov*, Acta
 Arithmetica 24 (1973), registered source

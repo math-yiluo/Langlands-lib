@@ -1,6 +1,6 @@
 # Unirationality from unirational Cartan subgroups
 
-Worker 321. The theorem `cartanUnirationalityStatement` proves the unchanged
+The theorem `cartanUnirationalityStatement` proves the unchanged
 published `CartanUnirationalityStatement` in every universe. It follows the
 finite-product route of Milne, *Algebraic Groups* (2017), Corollary 17.92
 (printed p.382), using the published proof of Cartan generation (Theorem 17.91).

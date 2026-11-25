@@ -1,7 +1,5 @@
 # Global sections of a supplied homogeneous quotient
 
-Worker 690.
-
 This internal construction identifies functions on an actual supplied
 homogeneous quotient with right-invariant functions on its ambient group.
 It applies to any base scheme `S` and any morphism `i : H → G` of group

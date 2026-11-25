@@ -1,7 +1,5 @@
 # Proof of actual finiteness invariance under a universe lift
 
-Worker 1210, in coordination with Worker 189.
-
 `Langlands.universeLiftFiniteness` proves the internal
 `Langlands.UniverseLiftFinitenessStatement` with independent universes
 `uX`, `uG` and `uV`.

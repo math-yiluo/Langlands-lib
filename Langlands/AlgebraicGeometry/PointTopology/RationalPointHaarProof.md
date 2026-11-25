@@ -1,7 +1,5 @@
 # Haar regularity from actual finite-coordinate point topologies
 
-Author: Worker 1650.
-
 `rationalPointHaarRegularity` proves the unchanged
 `RationalPointHaarRegularityStatement`.
 

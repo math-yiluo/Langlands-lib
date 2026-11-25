@@ -1,7 +1,8 @@
 # Radius-one comparison of relative finite etale actions
 
-Authors: Worker 56 and Worker 36. The new comparison uses their strict
-and generalized relative categories and the radius-one action comparison.
+The comparison uses the strict and generalized relative categories
+(`EquivariantFiniteEtaleUnder` and `GeneralizedAffinoid/EquivariantFiniteEtaleUnder`)
+and the radius-one action comparison (`GeneralizedAffinoid/StrictActionComparison`).
 
 This internal derived construction transports the actual finite-etale
 structural maps and all bounded equivariant triangles through the existing

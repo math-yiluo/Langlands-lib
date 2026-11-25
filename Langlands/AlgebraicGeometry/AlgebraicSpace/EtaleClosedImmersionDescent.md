@@ -1,7 +1,5 @@
 # Closedness of immersions checked on an etale atlas
 
-Author: Worker 509.
-
 This internal construction checks the closedness of an existing preimmersion
 after base change. If `i : Z ⟶ T` is a preimmersion and `p : V ⟶ T` is a quotient
 map on underlying spaces, closedness of the pullback image implies closedness

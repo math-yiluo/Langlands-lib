@@ -4,7 +4,7 @@ Ported from `Theorems/Thm_CoherentBaseChange_TwoTermComplex_exists_nonempty_H0_l
 License, Version 2.0; see `licenses/Anthropic-FLT/LICENSE`, `NOTICE` and `ATTRIBUTION.md`.
 The paired Markdown file lists the changes made by the port.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_CoherentBaseChange
 import Langlands.AnthropicFLT.P2M.Sol.S_CoherentBaseChange_TwoTermComplex_exists_nonempty_H0_linearEquiv_annihilator_of_fibreH0_le_one
 set_option maxHeartbeats 4000000

@@ -42,6 +42,9 @@ construction, radical-radius strictification, bounded strict comparison,
 compactness and rational-cover descent. No strictness, nontriviality,
 reducedness or nonzero condition is imposed on the original inputs. Arbitrary
 positive real radii, trivial original valuations, zero and nonreduced
-quotients, empty coordinate tuples and empty domains are retained. This unit
+quotients, empty coordinate tuples and empty domains are retained. This module
 does not prove strict local Gerritzen–Grauert and is not an unconditional proof
-of the host finite-cover proposition.
+of the finite-cover proposition `FiniteRationalCoverStatement`. The unconditional
+proof is `Domain.finiteRationalCover` in `DomainRationalCoverProof`, which
+supplies `StrictTestDomain.localRationalNeighborhood` to
+`finiteRationalCoverStatement_of_strictLocal`.

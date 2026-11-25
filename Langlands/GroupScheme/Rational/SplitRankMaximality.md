@@ -1,6 +1,6 @@
 # Split subtori of full split rank are maximal split tori
 
-Worker 224. This is an internal derivation from published Library results. It is a helper for the
+This is an internal derivation from published Library results. It is a helper for the
 proof of `Langlands.Geometry.Building.SpecialTorusExistenceStatement` (Kaletha–Prasad,
 Proposition 9.3.4) and makes no independent literature assertion.
 

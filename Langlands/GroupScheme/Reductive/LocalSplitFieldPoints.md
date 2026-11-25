@@ -66,5 +66,5 @@ These are internal lemmas for the proof of the Isomorphism Theorem over a reduce
 (`LocalSplitReducedIsomorphismTheoremStatement`), written for this project. They pass from an
 isomorphism of a field fibre to the point-level data used by the gluing argument
 (`nonempty_iso_of_fieldAlgebras`), and from Weyl points over `R` to Weyl points on field fibres.
-The base change of root maps is Worker 712's module `LocalSplitBigCellProof`. The proofs follow
+The base change of root maps is in the module `LocalSplitBigCellProof`. The proofs follow
 no particular printed source.

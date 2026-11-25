@@ -6,10 +6,10 @@ DOI 10.1017/S1474748003000082, literature ID `waldspurger-2003-plancherel`.
 Relevant passages: the proof of Proposition VIII.4.1, printed pp. 328–329
 (PDF pp. 94–95), which uses Remark VIII.2.2 and Lemma VIII.2.3.
 
-This module is unit 3 ("rank adapter") of Task 7439, revision 2. Its provenance is
-**derived**. The source proves the properties of `°e` in a few lines. This module
-packages them as an interface for the kernel step (unit 2) and derives them from
-named laws of an operator.
+This module is the abstract layer of the rank adapter for the proof of VIII.4.1. Its
+provenance is **derived**. The source proves the properties of `°e` in a few lines. This
+module packages them as an interface for the kernel step (`RationalCuspidalCentralKernelStep`)
+and derives them from named laws of an operator.
 
 ## What the source does
 
@@ -32,7 +32,7 @@ from the check identity `(°f)ˇ = °(fˇ)` of Remark VIII.2.2, since `eˇ = e`.
 
 ## What this module states and proves
 
-**Status.** The actual degree-zero projection of Task 7277 is not in the Library.
+**Status.** The actual degree-zero projection of VIII.2 is not in the Library.
 This module therefore does **not** state or prove anything about that operator.
 Instead it works with an arbitrary complex-linear operator
 `P : RationalSchwartzSpace hKc hPK ρ →ₗ[ℂ] RationalSchwartzSpace hKc hPK ρ`.
@@ -89,7 +89,7 @@ Conjunct 2 has the form of the hypothesis `hE` of
 identity that the Library's `IsKernelAlphaChiSpace` asks for, once
 `(μH Set.univ).toReal` is rewritten by `comap_subtype_univ_toReal`. Conjuncts 1, 3
 and 4 are the inputs the source uses for `α(·, g₂) ∈ °C_H` and for the diagonal
-computation of p. 329. How unit 2 consumes them is decided in unit 2. This module
+computation of p. 329. How `RationalCuspidalCentralKernelStep` consumes them is decided there. This module
 proves no finiteness.
 
 ### The characteristic function (definition, proved formula)
@@ -141,35 +141,35 @@ linear `P`:
 * `isRationalCuspidalUnit_of_degreeZeroLaws`: the six laws together give
   `IsRationalCuspidalUnit hKc hPK ρ μG H.toSubgroup (P e)`.
 
-## Open hypotheses and their owners
+## Open hypotheses
 
-This unit assumes no same-rank finiteness, no same-rank reconstruction, no
+This module assumes no same-rank finiteness, no same-rank reconstruction, no
 VIII.4.1 target and no dimension bound. The following inputs stay open.
 
 * **The actual operator `degreeZero`** (`f ↦ f - κ(properFourier f)`), conditional on
   the strictly-smaller-rank finiteness and synthesis-reconstruction predicates.
-  Owner: **Task 7277** (construction unit 1). Global well-founded assembly of these
-  rank-restricted inputs: **Task 3642**.
-* `RationalDegreeZeroRangeLaw` for `degreeZero`. Owner: **Task 7277** (VIII.2.1
+  It is not constructed in the Library; its rank-restricted inputs come from a global
+  well-founded assembly over rank.
+* `RationalDegreeZeroRangeLaw` for `degreeZero` (the VIII.2.1
   comparison target). The law is stated for the Library's `rationalCuspidalSubmodule`,
-  the kernel used by the closed VIII.4.1 target. If Task 7277 states VIII.2.1 for
+  the kernel used by the closed VIII.4.1 target. If VIII.2.1 is stated for
   another presentation of the intrinsic kernel, the comparison between the two is
-  also needed; **Task 7252** owns the intrinsic kernel.
+  also needed; the intrinsic kernel is constructed in `RationalCuspidalSpace`.
 * `RationalDegreeZeroConjLaw`, `RationalDegreeZeroCheckLaw` and
-  `RationalDegreeZeroTwistLaw` for `degreeZero`. Owner: **Task 7277** (VIII.2.2
+  `RationalDegreeZeroTwistLaw` for `degreeZero` (the VIII.2.2
   targets). The twist target there uses the Library's twisting action and its
   character group. Matching those with `rationalUnitaryUnramifiedCharacters G` is
   part of the instantiation below.
-* `RationalDegreeZeroLeftConvolutionLaw` for `degreeZero` and a Haar measure `μG`.
-  Owner: **Task 7277** (VIII.2.3 left target `f₁ ∗ f₂ = f₁ ∗ degreeZero(f₂)`).
-* `RationalDegreeZeroTranslationLaw` for `degreeZero`. This is **not** among Task
-  7277's listed VIII.2.1–VIII.2.3 targets, and **no task currently owns it**. It is
+* `RationalDegreeZeroLeftConvolutionLaw` for `degreeZero` and a Haar measure `μG`
+  (the VIII.2.3 left target `f₁ ∗ f₂ = f₁ ∗ degreeZero(f₂)`).
+* `RationalDegreeZeroTranslationLaw` for `degreeZero`. This is **not** among the
+  VIII.2.1–VIII.2.3 targets. It is
   the source's "relation évidente" and follows from the translation covariance of
-  the Fourier transform and of synthesis. It must be supplied, as a target of a
-  Task 7277 successor or within Task 7439, before the instantiation below can be
-  completed.
+  the Fourier transform and of synthesis. It must be supplied before the instantiation
+  below can be completed.
 * **Instantiation** (`P := degreeZero` and discharge of the six laws from the
-  published targets). Owner: **Task 7439** (this task, unit 3 second layer), after
-  Task 7277 publishes the operator and its targets.
+  published targets). It needs the operator and its targets, which are not in the Library.
 * **Consumption** of `IsRationalCuspidalUnit` in the kernel step (level finiteness
-  through `IsKernelAlphaChiSpace`). Owner: **Task 7439**, unit 2 (Worker 825).
+  through `IsKernelAlphaChiSpace`): `RationalCuspidalUnitKernel` connects the predicate
+  to `IsRationalCuspidalLevelKernel`, and `RationalCuspidalUnitAssembly` composes it with
+  the kernel step.

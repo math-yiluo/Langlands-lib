@@ -1,7 +1,8 @@
 # The modified product `N''` fixes the middle path line
 
 This module is an internal prerequisite for the even type `A` case of the
-quasi-split Steinberg quotient task. It proves the matrix-level form of the
+quasi-split Steinberg quotient `QuasiSplitSteinbergQuotientStatement`, which the
+module `Rational.QuasiSplitSteinbergQuotient` proves. It proves the matrix-level form of the
 inclusion of Steinberg's substitute product `N''` in the hypersurface `f = 0`,
 where `f = det(1 - ·)` is taken in the first fundamental representation of the
 `A_{2m}` factor (Steinberg 1965, §9.10–9.19, in particular the description of
@@ -103,6 +104,7 @@ classification again applies. If `z` is off the path,
 The module does not construct the class function `f` or relate it to the
 canonical quotient. It does not treat `N'''` or the torus factor, and it proves
 no isomorphism onto the stratum `f = 0` (Steinberg 9.19). It does not show that
-data with the stated properties exist. These remain obligations of the host task.
+data with the stated properties exist. These are left to the proof of
+`QuasiSplitSteinbergQuotientStatement`.
 
 The additive fixed-vector helper reuses `MatrixRepresentation.AdditiveDividedPowers.affineMatrix_mulVec_eq_self_of_dividedPower_eq_zero`; the conditions `1 ≤ m` and `0 < m` on natural numbers coincide.

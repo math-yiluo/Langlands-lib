@@ -152,10 +152,10 @@ theorem dynamicUnipotent_inf_baseChangeQuotientKernel_le_of_exponentRoots
     intro hz
     have hmzero : m r = 0 := by
       apply (splitTorus.characterLatticeEquiv R I).symm.injective
-      simpa only [map_zero] using hcoord.symm.trans hz
+      simpa only [AddEquiv.map_zero] using hcoord.symm.trans hz
     have hakzero : a r = 0 := by
       rw [← hmk r, hmzero,
-        splitTorus.exponentCharacter_eq_characterLatticeEquiv_symm, map_zero]
+        splitTorus.exponentCharacter_eq_characterLatticeEquiv_symm, AddEquiv.map_zero]
     exact (ham r).1.1.1 hakzero
   have hrep (r : Fin n) := Domain.subgroup_has_smooth_geometricallyConnected_closed_representative
     (isSplitTorus_splitTorus I) i

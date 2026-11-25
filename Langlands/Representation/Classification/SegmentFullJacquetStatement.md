@@ -1,12 +1,10 @@
 # Full cuspidal Jacquet modules of segment subrepresentations and quotients
 
-Author: Worker 890.
-
 `Langlands.Classification.SegmentFullJacquetFormula.{uF,uV} F T` is a proposition
 definition. It states Zelevinsky 1980, 3.1 (printed pp.180–181, PDF pages 17–18)
 and 9.1, displayed formula (*) (printed p.197, PDF page 34), for the actual
 Library objects. The source is registered as `zelevinsky-1980-induced-ii`.
-**This contribution does not prove either formula.** It states them, and
+**This file does not prove either formula.** It states them, and
 compiling the definitions proves nothing about them. The file adds no helper
 definitions and assumes no theorem as data.
 
@@ -145,9 +143,8 @@ The source writes `=` for isomorphism of representations of
 `G_β = G_m × ⋯ × G_m`. The Lean conclusion reads it as an actual equivalence of
 Levi representations.
 
-No errata note for Zelevinsky 1980 exists in the Library (`notes/` has no
-`errata` directory at the current Library commit). The literature index lists
-none.
+No errata note for Zelevinsky 1980 exists in the Library (`notes/errata` has
+none for it). The literature index lists none.
 
 ## Normalization of the Jacquet functor
 
@@ -248,7 +245,9 @@ from §2 (Theorem 2.8, Corollary 2.9, Proposition 2.10, with 2.2, 2.4 and 2.7). 
 route uses the geometric lemma, multiplicity-freeness of the full cuspidal Jacquet
 module of `ρ × νρ × … × ρ'`, Ze80 1.11 for two supercuspidal representations,
 exactness and transitivity of Jacquet functors, and Frobenius reciprocity. Each of
-these must be proved for the Library objects in the separate proof task.
+these must be proved for the Library objects; the module
+`Classification.SegmentFullJacquetProof` proves the statement as
+`segmentFullJacquetFormula`.
 
 ## Original source
 

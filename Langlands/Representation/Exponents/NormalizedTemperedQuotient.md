@@ -1,10 +1,10 @@
 # Actual quotients of normalized-exponent tempered representations
 
-This derived supporting unit supplies quotient closure for the normalized-exponent
+This module supplies quotient closure for the normalized-exponent
 temperedness predicate used in Renard, *Représentations des groupes réductifs
 p-adiques*, 9 July 2026, VII.2.6, first proof paragraph, printed p.231 / PDF p.237.
 That proof selects an irreducible quotient of a unitary Jacquet module and uses
-the tempered square-integrability criterion on the quotient. The present unit
+the tempered square-integrability criterion on the quotient. This module
 isolates the quotient step. The registered source is
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.

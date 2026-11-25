@@ -1,6 +1,6 @@
 # Strict-depth sections and the facet reduction kernel
 
-This derived unit defines the subgroup `strictDepthIntegralSections P g D a ψ`
+This module defines the subgroup `strictDepthIntegralSections P g D a ψ`
 of integral sections whose actual generic points lie in the conjugate by `g`
 of the strict-depth subgroup `U_(ψ+)`. The construction is a subgroup map
 followed by a subgroup preimage; it assumes no integrality of the whole
@@ -47,7 +47,8 @@ radical preimage.
 The provenance is internal: these are consequences of the imported actual
 reflection criterion, strict-depth membership formula, group operations,
 transport results, and the explicitly assumed opposite-factor statement.
-The unit does not prove `IntegralOppositeFactorsStatement`, assert its
-availability, identify surviving quotient roots, or prove the host derivative
-root-datum theorem. In particular its two kernel conclusions retain that
-unproved mathematical input as an explicit premise.
+The module does not prove `IntegralOppositeFactorsStatement`, assert its
+availability, identify surviving quotient roots, or prove the derivative
+root-datum statement `UnramifiedFacetRootDatumStatement`. In particular its two
+kernel conclusions retain that mathematical input as an explicit premise; the
+theorem `integralOppositeFactors` in `IntegralOppositeFactorsProof` proves it.

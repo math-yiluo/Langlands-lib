@@ -1,7 +1,9 @@
 # Canonical reflection representatives on consecutive path lines
 
 This module is an internal prerequisite for the even type `A` case of the
-quasi-split Steinberg quotient task (Steinberg 1965, §9.10–9.19). Steinberg
+quasi-split Steinberg quotient `QuasiSplitSteinbergQuotientStatement` (Steinberg
+1965, §9.10–9.19), which the module `Rational.QuasiSplitSteinbergQuotient`
+proves. Steinberg
 computes in the standard representation of `SL_{2m+1}`. There a simple root
 element is an elementary matrix `1 + t E_{i,i+1}`, and the Weyl representative
 of a simple reflection sends `e_{i+1} ↦ e_i` and `e_i ↦ -e_{i+1}`. This module
@@ -102,5 +104,5 @@ the results above and from injectivity of `B` on `V_{i+1}`, applied to
 The module treats only the simple path vertices and their canonical
 representatives. It does not treat the merged root of Steinberg's `N''` and
 `N'''`, the torus factor, or products. It computes no characteristic
-polynomial on `N'''` and proves no isomorphism onto a stratum. These remain
-obligations of the host task.
+polynomial on `N'''` and proves no isomorphism onto a stratum. These are left
+to the proof of `QuasiSplitSteinbergQuotientStatement`.

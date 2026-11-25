@@ -23,12 +23,12 @@ variable {R : Type u} [CommRing R] {G : Type t} [Group G] [TopologicalSpace G]
 
 /-- An action on a module in which an open subgroup acts by the identity is smooth. -/
 theorem isSmooth_actionToRep_of_open_trivial (V : Action (ModuleCat.{u} R) G)
-    (U : OpenSubgroup G) (hU : ∀ g ∈ U, V.ρ g = 𝟙 V.V) :
+    (U : OpenSubgroup G) (hU : ∀ g ∈ U, V.ρ g = End.of (𝟙 V.V)) :
     IsSmooth ((Rep.ActionToRep R G).obj V).ρ := by
   intro v
   refine ⟨U, ?_⟩
   intro g
-  change (V.ρ (g : G)).hom v = v
+  change (V.ρ (g : G)).asHom.hom v = v
   rw [hU g g.property]
   rfl
 
@@ -36,7 +36,7 @@ theorem isSmooth_actionToRep_of_open_trivial (V : Action (ModuleCat.{u} R) G)
 acting by the identity. No filteredness of the indexing category is used. -/
 theorem isSmooth_actionToRep_colimit {K : Type v} [Category.{w} K]
     [HasColimitsOfShape K (ModuleCat.{u} R)] (D : K ⥤ Action (ModuleCat.{u} R) G)
-    (hD : ∀ i, ∃ U : OpenSubgroup G, ∀ g ∈ U, (D.obj i).ρ g = 𝟙 (D.obj i).V) :
+    (hD : ∀ i, ∃ U : OpenSubgroup G, ∀ g ∈ U, (D.obj i).ρ g = End.of (𝟙 (D.obj i).V)) :
     IsSmooth ((Rep.ActionToRep R G).obj (colimit D)).ρ := by
   let S : Submodule R (colimit D).V := smoothVectors ((Rep.ActionToRep R G).obj (colimit D)).ρ
   have hι : ∀ (i : K) (x : (D.obj i).V), (colimit.ι D i).hom.hom x ∈ S := by
@@ -44,7 +44,7 @@ theorem isSmooth_actionToRep_colimit {K : Type v} [Category.{w} K]
     obtain ⟨U, hU⟩ := hD i
     refine ⟨U, ?_⟩
     intro g
-    change ((colimit D).ρ (g : G)).hom ((colimit.ι D i).hom.hom x) = (colimit.ι D i).hom.hom x
+    change ((colimit D).ρ (g : G)).asHom.hom ((colimit.ι D i).hom.hom x) = (colimit.ι D i).hom.hom x
     have h := congrArg (fun f => f.hom x) ((colimit.ι D i).comm (g : G))
     rw [hU g g.property] at h
     exact h.symm
@@ -93,7 +93,7 @@ variable (R : Type u) [CommRing R] (A : J ⥤ Action ((Over X)ᵒᵖ) G)
 /-- Every level of the original geometric tower has an open subgroup acting
 by the identity over-base automorphism. -/
 def IsLevelwiseSmooth [TopologicalSpace G] : Prop :=
-  ∀ i : J, ∃ U : OpenSubgroup G, ∀ g ∈ U, (A.obj i).ρ g = 𝟙 (A.obj i).V
+  ∀ i : J, ∃ U : OpenSubgroup G, ∀ g ∈ U, (A.obj i).ρ g = End.of (𝟙 (A.obj i).V)
 
 section Cohomology
 
@@ -112,6 +112,7 @@ theorem cohomologyFunctor_obj_obj_ρ_congr (q : ℕ) (M : ModuleSheaf X R) (i : 
     {g h : G} (hgh : (A.obj i).ρ g = (A.obj i).ρ h) :
     (((cohomologyFunctor R A q).obj M).obj i).ρ g =
       (((cohomologyFunctor R A q).obj M).obj i).ρ h := by
+  apply End.ext
   rw [cohomologyFunctor_obj_obj_ρ, cohomologyFunctor_obj_obj_ρ]
   have key : ∀ e e' : (A.obj i).V ⟶ (A.obj i).V, e = e' →
       EtaleDerivedGlobalPullback.cohomologyPullbackWithCoefficients e.unop.left R q
@@ -120,7 +121,7 @@ theorem cohomologyFunctor_obj_obj_ρ_congr (q : ℕ) (M : ModuleSheaf X R) (i : 
           ((projectionInverseImageIso R _ _ _ (Over.w e'.unop)).hom.app M) := by
     rintro e _ rfl
     rfl
-  exact key _ _ hgh
+  exact key _ _ (congrArg End.asHom hgh)
 
 /-- The section action depends on a group element only through its original
 deck automorphism. -/
@@ -128,6 +129,7 @@ theorem sectionsFunctor_obj_obj_ρ_congr (M : ModuleSheaf X R) (i : J)
     {g h : G} (hgh : (A.obj i).ρ g = (A.obj i).ρ h) :
     (((sectionsFunctor R A).obj M).obj i).ρ g =
       (((sectionsFunctor R A).obj M).obj i).ρ h := by
+  apply End.ext
   rw [sectionsFunctor_obj_obj_ρ, sectionsFunctor_obj_obj_ρ]
   have key : ∀ e e' : (A.obj i).V ⟶ (A.obj i).V, e = e' →
       EtaleDerivedGlobalPullback.sectionsPullbackWithCoefficients e.unop.left R
@@ -136,13 +138,13 @@ theorem sectionsFunctor_obj_obj_ρ_congr (M : ModuleSheaf X R) (i : J)
           ((projectionInverseImageIso R _ _ _ (Over.w e'.unop)).hom.app M) := by
     rintro e _ rfl
     rfl
-  exact key _ _ hgh
+  exact key _ _ (congrArg End.asHom hgh)
 
 /-- A group element acting trivially on the original level geometry acts
 trivially on its ordinary cohomology. -/
 theorem cohomologyFunctor_obj_obj_ρ_eq_id (q : ℕ) (M : ModuleSheaf X R) (i : J)
-    {g : G} (hg : (A.obj i).ρ g = 𝟙 (A.obj i).V) :
-    (((cohomologyFunctor R A q).obj M).obj i).ρ g = 𝟙 _ := by
+    {g : G} (hg : (A.obj i).ρ g = End.of (𝟙 (A.obj i).V)) :
+    (((cohomologyFunctor R A q).obj M).obj i).ρ g = End.of (𝟙 _) := by
   have h1 : (A.obj i).ρ g = (A.obj i).ρ 1 := by
     rw [hg, map_one]
     rfl
@@ -152,8 +154,8 @@ theorem cohomologyFunctor_obj_obj_ρ_eq_id (q : ℕ) (M : ModuleSheaf X R) (i : 
 /-- A group element acting trivially on the original level geometry acts
 trivially on its global sections. -/
 theorem sectionsFunctor_obj_obj_ρ_eq_id (M : ModuleSheaf X R) (i : J)
-    {g : G} (hg : (A.obj i).ρ g = 𝟙 (A.obj i).V) :
-    (((sectionsFunctor R A).obj M).obj i).ρ g = 𝟙 _ := by
+    {g : G} (hg : (A.obj i).ρ g = End.of (𝟙 (A.obj i).V)) :
+    (((sectionsFunctor R A).obj M).obj i).ρ g = End.of (𝟙 _) := by
   have h1 : (A.obj i).ρ g = (A.obj i).ρ 1 := by
     rw [hg, map_one]
     rfl
@@ -231,15 +233,15 @@ theorem levelCohomologyι_zero (i : J) :
 
 /-- The colimit action is characterized on each level by the level action. -/
 theorem levelCohomologyι_comm (q : ℕ) (i : J) (M : ModuleSheaf X R) (g : G) :
-    (((cohomologyFunctor R A q).obj M).obj i).ρ g ≫
+    ((((cohomologyFunctor R A q).obj M).obj i).ρ g).asHom ≫
         ((levelCohomologyι R A q i).app M).hom =
       ((levelCohomologyι R A q i).app M).hom ≫
-        ((colimitCohomologyFunctor R A q).obj M).ρ g :=
+        (((colimitCohomologyFunctor R A q).obj M).ρ g).asHom :=
   ((levelCohomologyι R A q i).app M).comm g
 
 theorem levelSectionsι_comm (i : J) (M : ModuleSheaf X R) (g : G) :
-    (((sectionsFunctor R A).obj M).obj i).ρ g ≫ ((levelSectionsι R A i).app M).hom =
-      ((levelSectionsι R A i).app M).hom ≫ ((colimitSectionsFunctor R A).obj M).ρ g :=
+    ((((sectionsFunctor R A).obj M).obj i).ρ g).asHom ≫ ((levelSectionsι R A i).app M).hom =
+      ((levelSectionsι R A i).app M).hom ≫ (((colimitSectionsFunctor R A).obj M).ρ g).asHom :=
   ((levelSectionsι R A i).app M).comm g
 
 /-- The underlying module of the colimit cohomology is the colimit of the

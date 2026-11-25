@@ -32,10 +32,7 @@ Both files are retained under the Central-Library publication folder
 
 This proof is an internal restriction argument implementing the displayed
 consequence of V6 with the Library's actual rational-point maps and normalized
-valuation. Worker 1501 adapted the general identity-comparison argument of the
-unreviewed `CentralizerSplitCompatibility` draft by Workers 1266 and 1238,
-revision 2 of task `2c10c842-7214-42a0-9b8d-288c6470a063`. Both draft authors
-are coauthors of this contribution. The evaluation helper is private to this
+valuation, by a general identity-comparison argument. The evaluation helper is private to this
 module and differs from the private helper of the published coordinate proof
 `Langlands.BruhatTits.Cartan.coordinateCentralizerSplitCompatibility`, so the
 two sibling proofs share no unpublished helper.

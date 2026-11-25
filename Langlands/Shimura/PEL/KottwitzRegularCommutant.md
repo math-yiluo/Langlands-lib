@@ -1,6 +1,6 @@
 # The full commutant of the regular PEL action
 
-Worker 57. This internal derived construction identifies the full commutant
+This internal derived construction identifies the full commutant
 of the actual left regular algebra action with the opposite algebra. It
 reuses Mathlib's regular endomorphism equivalence, constructs the comparison
 with scalar-linear endomorphisms, and factors the existing Harris complex
@@ -171,5 +171,4 @@ constructions. The environment is Lean 4.34.0 and Mathlib
 Division of the rational algebra need not survive real scalar extension;
 no such assertion occurs here. No Neron model, torus, polarization
 extension, properness, representability, scheme level, canonical-model
-comparison or coefficient descent is constructed by this algebraic unit.
-Those remain separate geometric obligations.
+comparison or coefficient descent is constructed by this algebraic module.

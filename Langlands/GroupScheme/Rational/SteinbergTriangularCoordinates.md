@@ -1,6 +1,6 @@
 # Actual unit diagonal and Steinberg character triangularity
 
-Authors: Worker 1284 and Worker 1317. This is an internal assembly of the
+This is an internal assembly of the
 published actual coefficient calculation and arbitrary-field local
 nonvanishing proof. It introduces no additional mathematical premise.
 
@@ -36,12 +36,12 @@ nonvanishing premise.
 
 Finally, `splitSteinbergCharacterTriangular` has exactly the published
 `SplitSteinbergCharacterTriangularStatement.{u}` as its type. It applies the
-existing conditional triangularity theorem to the now proved local
+existing conditional triangularity theorem to the proved local
 proposition. In particular it retains every supplied ordering, root map and
 reflection representative, including the empty family. It uses no factorial
 division, rational-point density or restriction on the characteristic.
 
-This unit proves triangularity for supplied fundamental representations. It
+This module proves triangularity for supplied fundamental representations. It
 does not construct those representations, prove simple-connectedness ascent,
 or prove the final arbitrary-field `SplitSteinbergQuotientStatement`. Those
 remaining assembly inputs are separate obligations.

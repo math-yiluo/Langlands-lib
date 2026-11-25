@@ -1,6 +1,6 @@
 # Regularity and real integration of the source gamma integrand
 
-Worker 200. This is a derived consumer of `SemidirectSourceGamma` and the
+This is a derived consumer of `SemidirectSourceGamma` and the
 existing `HarishChandraSchwartz.Spherical` weight. It does not replace their
 objects or assume continuity of chosen Iwasawa components.
 
@@ -55,8 +55,8 @@ of that lower integral, hence equals `semidirectSourceGammaReal`.
 Nonzero and finite lower gamma give strict positivity of its real value.
 There is no change of Haar scale.
 
-The actual rational open-cell conullness assertion remains a separate
-unproved target. Source compact factorization and normalization, the
+The actual rational open-cell conullness assertion is not proved here.
+Source compact factorization and normalization, the
 comparison with each rational parabolic, independence of gamma from
 the parabolic with fixed Levi, root-index products, `c(G|M)`, spectral
 density and the Plancherel formula remain separate obligations. No

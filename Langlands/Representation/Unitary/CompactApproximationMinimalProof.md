@@ -1,6 +1,6 @@
 # Proof of minimal closed invariant subspaces
 
-Worker 116 implements the internal minimal-subrepresentation step motivated
+The module implements the internal minimal-subrepresentation step motivated
 by Getz–Hahn Lemma 9.3.1, printed p.247, one-based PDF p.259.
 
 The proof first obtains a nonzero intersection with a nonzero eigenspace
@@ -30,5 +30,5 @@ minimality gives Q = P.
 The proof uses the actual submodules and orthogonal projection, not a
 supplied decomposition or irreducible-existence hypothesis. It imports
 the published eigenspace proof. The statement's Markdown records exact
-original-source and errata provenance and the remaining decomposition,
-multiplicity and automorphic obligations.
+original-source and errata provenance and the decomposition,
+multiplicity and automorphic steps that lie outside it.

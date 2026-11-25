@@ -1,8 +1,8 @@
 # The quotient by a central maximal torus contains no torus, from extensions and images of tori
 
-Worker 1395 wrote this module. It reduces
+This module reduces
 [`CentralMaximalTorusQuotientStatement`](CentralMaximalQuotientStatement.md)
-(Worker 1379; the "only if" direction of Milne's Lemma 16.43 as used in the
+(the "only if" direction of Milne's Lemma 16.43 as used in the
 proof of Theorem 17.82) to two premises:
 
 - [`CentralTorusExtensionStatement`](CentralExtensionStatement.md): a

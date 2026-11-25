@@ -1,7 +1,5 @@
 # Renard IV.2.2 and IV.3.2–IV.3.3: the combined proof
 
-Author: Worker 89.
-
 The theorem `Langlands.Renard.CompactRepresentation.unitarySquareIntegrable`
 proves the exact published proposition `UnitarySquareIntegrableStatements`,
 with independent group and representation-carrier universes. It assembles the

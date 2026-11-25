@@ -1,6 +1,6 @@
 # Exponent-sorted orderings of segment-head products
 
-Author: Worker 4988. Module `Langlands.Representation.Classification.A6iiSorting`,
+Module `Langlands.Representation.Classification.A6iiSorting`,
 namespace `Langlands.Classification.A6ii`. Internal helper for the proof of Tadić's
 Corollary A.6(ii) (`IrreducibleLanglandsHeadProductProof`). It repeats, for a supplied
 segment datum, the sorting step of the published `orderedSegmentSquareIntegrableConversion`.

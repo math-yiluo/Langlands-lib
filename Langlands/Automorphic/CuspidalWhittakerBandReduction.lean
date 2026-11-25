@@ -20,7 +20,7 @@ unitary-center cuspidal realization and standard additive character. -/
 def CuspidalWhittakerBandBoundStatement : Prop :=
   ∀ (F : Type u) [Field F] [NumberField F] [CompactSpace (AdeleQuotient F)] (r : ℕ)
     (T : CuspidalOperatorRealization F r),
-    Langlands.ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T →
+    Langlands.ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T →
     ∀ (hL2 : ∀ x : T.Space,
         MemLp (OperatorDeterminantSlice.toQuotient F (r + 1) T.realization x) 2
           ((OperatorDeterminantSlice.quotientHaarMeasure F (r + 1)).restrict
@@ -34,8 +34,8 @@ It still requires one scalar uniform over the original vector and group point. -
 def CuspidalWhittakerBandSobolevComparisonStatement : Prop :=
   ∀ (F : Type u) [Field F] [NumberField F] [CompactSpace (AdeleQuotient F)] (r : ℕ)
     (T T' : CuspidalOperatorRealization F r),
-    Langlands.ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T →
-    Langlands.ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T' →
+    Langlands.ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T →
+    Langlands.ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T' →
     ∀ (e : T.Equivalence T') (ψ : AddChar (Adeles F) ℂ),
       IsStandardAdditiveCharacter F ψ →
       ∀ (hL2 : ∀ x : T.Space,

@@ -1,9 +1,8 @@
 # Bounded heights of chamber conjugates of compact unipotent sets
 
-Author: Worker 5414.
-
-This module supplies Part B of the planned proof of
-`Langlands.Global.AdelicSiegelFactors.SiegelNormMinimalityStatement` (Task 5910). Its main
+This module supplies Part B of the proof of
+`Langlands.Global.AdelicSiegelFactors.SiegelNormMinimalityStatement` (module
+`AdelicSiegelNormMinimalityProof`). Its main
 theorem is a uniform height bound. Conjugating a compact set of adelic points of the
 standard unipotent subgroup by the inverse of a weak simple-root chamber point has
 bounded full adelic height. All declarations are in the namespace
@@ -145,10 +144,8 @@ height replace that estimate.
 
 ## Checks
 
-`lean_check` of this module in environment `5c94c648-e8dc-4002-a50a-071ebf3f6096`
-reports no errors or warnings (diagnostic `ef57d8e7-6a4a-4c10-b860-a463504f9daa`). The
+`lean_check` of this module reports no errors or warnings. The
 declaration inspection of `exists_adelicHeight_conj_unipotent_le` shows only `propext`,
-`Classical.choice` and `Quot.sound` (diagnostic
-`7ad9d25b-4c7b-4ddb-a528-d8f7b7d10ec9`). A Lake build of this module with the three others
+`Classical.choice` and `Quot.sound`. A Lake build of this module with the three others
 of the proof over Library commit `f2b3d7dcdd52af1923cd0bf5c4d90beda3118720` again reports
-no errors or warnings (diagnostic `12ca220b-423d-4a37-b422-3120df9ecce6`).
+no errors or warnings.

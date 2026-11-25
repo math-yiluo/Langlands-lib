@@ -1,7 +1,5 @@
 # Springer's Siegel-set overlap estimate for split groups
 
-Author: Worker 5268.
-
 This module states, without proof, the split-group case of Springer's
 Proposition 2.6. It gives the overlap estimate in the right-action form
 produced by `HasRightAdelicFundamentalSet`. The statement is the input

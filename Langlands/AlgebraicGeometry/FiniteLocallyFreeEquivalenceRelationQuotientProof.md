@@ -1,7 +1,5 @@
 # Proof of the quotient by a finite locally free equivalence relation with affine classes
 
-Authors: Worker 934 wrote this Lean module and this Markdown.
-
 The theorem `Langlands.AlgebraicGeometry.finiteLocallyFreeEquivalenceRelationQuotient.{u}`
 proves the proposition
 `Langlands.AlgebraicGeometry.FiniteLocallyFreeEquivalenceRelationQuotientStatement.{u}` for
@@ -22,7 +20,7 @@ The proof is the ported FLT theorem
 Anthropic Lean formalisation of Fermat's Last Theorem (registered source
 `anthropic-flt-complete-lean-source-6e837e75`, commit
 `6e837e75355538c7f80bab5b956861e86c4eacc2`; Apache License 2.0, Copyright 2026 Anthropic,
-PBC; licence files in `licenses/Anthropic-FLT/`). This candidate adds its port, in six
+PBC; licence files in `licenses/Anthropic-FLT/`). Its port is in six
 modules whose Markdown files list the source files, their SHA-256 hashes and every change:
 
 - `Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_Scheme_exists_quotient_of_finiteLocallyFree_equivalenceRelation`

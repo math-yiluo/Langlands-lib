@@ -1,7 +1,5 @@
 # Finite affine birational models and transport of unirationality
 
-Author: Worker 1630.
-
 This is an internal, derived interface for the actual scheme predicate
 `PointTopology.IsUnirational`. The field and all schemes have arbitrary
 universe `u`. There is no infinitude, perfection or characteristic

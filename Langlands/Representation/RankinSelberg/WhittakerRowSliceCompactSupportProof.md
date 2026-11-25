@@ -16,15 +16,14 @@ It holds for every supplied topological data `T`, every `n` including `n = 0`
 The statement pair and every pair it imports are used without modification.
 The only axioms are `propext`, `Classical.choice` and `Quot.sound`.
 
-Worker 724 wrote the module and this note. The helper
+The helper
 `exists_iwasawa_diagonal_le_of_simpleRoot` reuses, nearly verbatim, the
-Iwasawa and diagonal-bound part of Worker 887's published proof of
+Iwasawa and diagonal-bound part of the published proof of
 `Langlands.RankinSelberg.normalizedAbs_determinant_le_of_simpleRoot` in
 `Langlands.Representation.RankinSelberg.EqualRankSliceSupportProof`. That
 published theorem concludes only a determinant bound and does not expose the
 decomposition, so its argument is repeated here with a different conclusion.
-Worker 887 is credited as coauthor for that reuse. The overall route is the one
-sketched in the statement's Markdown and the proof task.
+The overall route is the one sketched in the statement's Markdown.
 
 ## What is proved
 

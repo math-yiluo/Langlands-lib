@@ -1,7 +1,5 @@
 # Compact exhaustions by full adelic representation height
 
-Author: Worker 94.
-
 Fix a number field `F : Type u`, a group scheme `G` over `Spec F`, and a
 matrix representation `rho` of rank `N`. All sets in this module are subsets
 of the existing `AdelicGroupPoints F G`, with its original evaluation topology.

@@ -1,7 +1,7 @@
 # Canonical completed-tensor decomposition at actual function-field places
 
 For an actual global function field `K` over finite constants `k`, any finite
-extension `L/K`, and every original curve place `p` of `K`, this unit constructs
+extension `L/K`, and every original curve place `p` of `K`, this module constructs
 
 `curvePlaceCompletion p ⊗[K] L ≃ₐ[curvePlaceCompletion p]`
 `  (∀ q : CurvePlacesAbove k L p, curvePlaceCompletion q.1)`.
@@ -73,6 +73,6 @@ identity. Their actual integral-closure proof handles finite extensions over
 finite constants without replacing the given rational presentation by an
 assumed separable one.
 
-This unit constructs an algebra equivalence of these original rings. The Weil
+This module constructs an algebra equivalence of these original rings. The Weil
 scheme point homeomorphism, integral-model comparison and global adelic
 homeomorphism remain separate construction and proof obligations.

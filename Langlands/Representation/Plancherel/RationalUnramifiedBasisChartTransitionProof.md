@@ -1,7 +1,5 @@
 # Basis independence of the complex chart on unramified characters
 
-Author: Worker 343.
-
 `Langlands.Plancherel.rationalUnramifiedBasisChartIndependence_of_basisTransition` proves
 `RationalUnramifiedBasisChartIndependenceStatement.{u}`. For a connected reductive
 group \(G\) over a nonarchimedean local field, give \(X(G)\) the complex chart

@@ -17,7 +17,7 @@ d(M ⊗ N,P) ≫ (d(M,N) ▷ FP) ≫ α(FM,FN,FP).hom
 ```
 
 Both composites run from `F((M ⊗ N) ⊗ P)` to `FM ⊗ (FN ⊗ FP)`.
-Here `⊗`, `α`, and the whiskerings belong to the published localized
+Here `⊗`, `α`, and the whiskerings belong to the Library's localized
 monoidal structure on scheme-module sheaves. The explicit equation is
 
 ```text
@@ -30,7 +30,7 @@ The explicit tensor is the sheafified tensor, and `A` is the fixed
 associator transported through `localizedTensorIso`.
 
 The argument uses the existing fixed maps and does not assume invertibility of
-the pullback tensor comparison. It imports the published naturality lemmas for
+the pullback tensor comparison. It imports the naturality lemmas for
 `localizedTensorIso` from `Picard.RigidifiedTensorAssociativity`; these are
 unconditional lemmas, and none of that module's conditional rigidified
 associativity results are used.
@@ -59,7 +59,7 @@ Applying its explicit-equation hypothesis proves the transported equality;
 cancellation yields the desired localized equality.
 
 The theorem `localizedPullbackTensorAssociativity` discharges the transfer
-lemma's hypothesis with the published unconditional
+lemma's hypothesis with the unconditional
 `explicitPullbackTensorAssociativity`, imported from
 `ExplicitPullbackTensorAssociativityProofs`. The final theorem
 `pullbackTensorAssociativity` pairs this localized result with the imported
@@ -68,12 +68,11 @@ pullback structure, comparison invertibility, or a geometric restriction.
 This module supplies the two associativity equations; it does not assemble
 a strong symmetric monoidal pullback structure.
 
-Worker 339 authored the comparison calculations, transfer lemma, and final
-conjunction in this module. The imported explicit proof was authored by
-Worker 367 with Worker 339's adjunction calculation; it in turn uses
-Worker 464's published pushforward associativity theorem. This is an internal
-categorical consequence of the fixed Library definitions and those published
-results, not a translation of a separate literature theorem. The imported
-statements and constructions are unchanged. Integration exposes Worker 464's
-existing associator comparison and reuses it here in place of the identical
+The imported explicit proof rests on an adjunction calculation; it in turn
+uses the pushforward associativity theorem `pushforwardTensorAssociativity`
+(module `PushforwardTensorAssociativityProofs`). This is an internal
+categorical consequence of the fixed Library definitions and those
+results, not a translation of a separate literature theorem. The associator
+comparison `localizedTensorIso_associativity` of
+`PushforwardTensorAssociativityProofs` is reused here in place of an identical
 private comparison statement. No axioms or proof holes are added.

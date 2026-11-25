@@ -1,7 +1,5 @@
 # Matrix-coefficient and Whittaker integrals on the actual coefficient model
 
-Author: Worker 902.
-
 This module defines the closed proposition
 `Langlands.GodementJacquet.WhittakerModelComparisonStatement.{uF,uV}`.
 It states the comparison `I₂ = I₃` of JPSS Section (5.2) for the actual
@@ -192,7 +190,7 @@ The statement follows JPSS (5.2) with these Library-level formulations:
 
 ## What a proof must supply
 
-A separate exact-target proof must establish both inclusions on the actual
+A proof must establish both inclusions on the actual
 model, for instance by the source's route:
 
 - `I₂ ⊆ I₃` by the averaging argument of printed 421, which uses that the
@@ -215,8 +213,9 @@ compact-open cofinality in `GL_(n+1)` from
 (in `Langlands.Representation.Unramified.SphericalConstituentExistenceProof`).
 Finite generation over the group algebra can descend by
 `Module.Finite.of_surjective` after converting the intertwining map to a
-module map. These are future proof routes; this module proves none of
-these specializations.
+module map. These are proof routes; this module proves none of
+these specializations. The proof of the statement is `whittakerModelComparison`
+in `WhittakerModelComparisonProof`.
 
 Conversely, this statement by itself asserts no nonzero value, common
 denominator, normalized generator, product-ideal identity, functional
@@ -229,11 +228,10 @@ leaves every existing Library pair unchanged.
 
 ## Development validation
 
-`lean_check` in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` compiled
-the module. Declaration inspection reported `statement_returns_prop: true`,
+The module compiles. Declaration inspection reported `statement_returns_prop: true`,
 universe parameters `uF, uV`, and only the standard axioms `propext`,
 `Classical.choice`, `Quot.sound`. These checks establish a well-formed
-statement, not its truth or semantic acceptance.
+statement, not its truth.
 
 ## All-field port
 

@@ -1,7 +1,7 @@
 # Polynomial certificates for the unit ideal in a subring
 
-Worker 525. This is an internal algebraic supporting construction for the
-independent homogeneous-quotient affineness argument. It assumes no group,
+This is an internal algebraic supporting construction for the
+homogeneous-quotient affineness argument. It assumes no group,
 reductivity, characteristic or geometric property.
 
 `linearFamilyPolynomial f F` substitutes the linear form

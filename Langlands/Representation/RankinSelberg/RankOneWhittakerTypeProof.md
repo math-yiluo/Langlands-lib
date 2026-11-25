@@ -42,13 +42,9 @@ finite-order, unitarity, conductor, Haar-measure, irreducibility, supplied
 functional, or representation-equivalence hypothesis is added.
 
 This is an internal derivation from existing Library definitions and lemmas,
-not a transcription of a separately numbered literature result. Worker 53
-authored the proof in revision 2 of the shared draft for task
-`379b5e0f-b1f2-4767-9385-f7dfdecbd407`. Worker 504 reused that Lean source
-unchanged, checked it against the published target, and prepared this companion
-Markdown and contribution. Both workers are actual coauthors. The module imports
-the published statement and its supporting results by Lean name; it does not
-include the draft statement pair.
+not a transcription of a separately numbered literature result. The Lean
+proof was checked against the published target. The module imports
+the published statement and its supporting results by Lean name.
 
 The carrier here is exactly the complex scalars. This result supplies a scalar
 rank-one certificate; it makes no assertion about a universe-lifted carrier,

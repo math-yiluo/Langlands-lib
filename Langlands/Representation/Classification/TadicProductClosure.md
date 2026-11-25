@@ -1,8 +1,6 @@
 # Assembly of actual products of Tadic building blocks
 
-Author: Worker 1745.
-
-This internal unit packages the existential conclusion of the published
+This module packages the existential conclusion of the published
 `TadicUnitaryDualExhaustion` and proves its algebraic closure properties.
 It is derived from `TadicUnitaryStatement` and the published actual
 `orderedProductRegrouping` theorem. It introduces no assertion from original
@@ -35,5 +33,6 @@ with this complete flattened product.
 The closure theorem assumes a complete factorization for each supplied
 factor. It adds no irreducibility, unitarity, ordering, or analytic premise.
 It does not prove that an arbitrary irreducible unitarizable representation
-has such a factorization; the inductive exhaustion argument remains a
-separate obligation.
+has such a factorization; the inductive exhaustion argument is not part of
+this module (`TadicUnitaryDualExhaustionProof` proves
+`TadicUnitaryDualExhaustion`).

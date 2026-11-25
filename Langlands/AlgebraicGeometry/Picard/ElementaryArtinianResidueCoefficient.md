@@ -1,6 +1,6 @@
 # Functorial residue-fibre coefficient maps
 
-Worker 219 defines the actual residue-fibre projection and its pushforward
+The module defines the actual residue-fibre projection and its pushforward
 structure module on each original scheme over `Spec R`. The coefficient map
 for a morphism of schemes is the pushforward of its residue-fibre structure
 map, followed by pushforward composition, equality transport across the

@@ -1,6 +1,6 @@
 # Comparing local tensor trivializations
 
-This derived unit compares the actual sheaf isomorphisms
+This module compares the actual sheaf isomorphisms
 `tensorRestrictionTrivialization M N U t` as the line trivialization `t`
 varies on one fixed open `U` of an arbitrary scheme `S`.
 
@@ -30,5 +30,5 @@ This is internal infrastructure derived from the published sheaf tensor,
 its unitors, the restriction comparison and the structure-module unit
 correspondence. It does not establish compatibility between different
 trivializing opens, equality of projective cocycles, or representability
-of the ordinary full-level moduli functor. Those remain separate proof
-obligations.
+of the ordinary full-level moduli functor. Those are separate statements, not
+proved in this module.

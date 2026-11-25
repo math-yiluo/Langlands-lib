@@ -1,8 +1,6 @@
 # Minimal-parabolic norm-one factors and chamber reduction from the rank-one bound
 
-Author: Worker 5269.
-
-This internal derived auxiliary unit does two things:
+This auxiliary module does two things:
 
 1. It proves, for every actual algebraic Siegel setup, that each ambient norm-one point
    of the minimal parabolic can be written as a product of parabolic factors.
@@ -10,8 +8,11 @@ This internal derived auxiliary unit does two things:
    universal rank-one arithmetic statement `RankOneParabolicRationalOrbitHeightBoundStatement`
    alone.
 
-The rank-one statement is an explicit hypothesis of the reduction. This unit does not
-prove it, so the chamber statement itself remains unproved.
+The rank-one statement is an explicit hypothesis of the reduction. This module does not
+prove it, so it does not prove the chamber statement itself. Both are proved in the Library:
+`rankOneParabolicRationalOrbitHeightBound` in `AdelicRankOneOrbitHeightBoundProof`, and
+`adelicSiegelChamberReduction` in `AdelicSiegelChamberReductionProof`, which applies this
+reduction to it.
 
 ## The definition
 

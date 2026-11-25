@@ -1,9 +1,8 @@
 # Reciprocal actual Haar characters on opposite rational-point radicals
 
-Author: Worker 127.
-
 `Langlands.Aubert.General.RationalPointFamily.RationalOppositeHaarReciprocityStatement`
-is a proposition definition awaiting proof. On the literal common standard
+is a proposition definition; `rationalOppositeHaarReciprocity` in
+`RationalOppositeHaarReciprocityProof` proves it. On the literal common standard
 Levi, it asserts that the actual positive Haar scaling characters of the
 standard radical and the opposite radical multiply to one. It supplies no
 proof or additional axiom.
@@ -119,13 +118,13 @@ The normalized Jacquet functor uses
 `HaarModulus.closedInverseHalfCharacter` of its own radical. Applying the
 canonical positive-half and complex character maps to the asserted product
 identity gives the reciprocal normalization scalars needed for an
-equivariant opposite-Jacquet pairing. This implication still needs its Lean
+equivariant opposite-Jacquet pairing. This implication needs its own Lean
 proof; it is not a conclusion declared by this statement.
 
-This unit isolates that structural normalization obligation. It does not
+This module isolates that structural normalization obligation. It does not
 construct a stable pairing or contraction basis, prove naturality or
 Jacquet duality, identify a parabolic modular character, or prove ambient
 or Levi unimodularity. No classification, character-independence, geometric
 lemma, adjointness or cuspidal-support theorem is invoked by this proposition
-definition. Any such use in a future proof must be identified by its actual
+definition. Any such use in a proof must be identified by its actual
 declarations.

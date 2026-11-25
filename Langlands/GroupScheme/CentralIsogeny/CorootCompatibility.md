@@ -1,8 +1,6 @@
 # Actual torus reflections and coroot compatibility in a commuting square
 
-Author: Worker 1283.
-
-This internal unit constructs the actual involution of a commutative
+This module constructs the actual involution of a commutative
 group scheme attached to a character `α` and a cocharacter `ν` whose
 actual lattice pairing is two. It proves that supplied actual root data
 have compatible coroots in a commuting square, provided the torus map
@@ -62,5 +60,6 @@ conjugation and root-datum interfaces. The integral argument implements
 the normalizer-based coroot comparison without choosing an invariant
 positive form. No finite-image theorem, root bijection, epimorphy of a
 central isogeny's torus restriction, or isomorphism criterion is proved
-here. In particular, the full
-`CentralIsogenyRootDatumHomStatement` remains outstanding.
+here. In particular, this module does not prove the full
+`CentralIsogenyRootDatumHomStatement`; the theorem
+`centralIsogenyRootDatumHom` in `CentralIsogeny.SplitRootDatumProof` proves it.

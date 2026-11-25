@@ -1,7 +1,5 @@
 # The actual quotient-Hom sheaf on original-chart domains
 
-Author: Worker 36.
-
 This internal construction proves that the previously constructed actual
 quotient-Hom domain presheaf is a sheaf for the original-chart quasinet topology.
 It uses the proved arbitrary quotient relative-domain gluing construction and

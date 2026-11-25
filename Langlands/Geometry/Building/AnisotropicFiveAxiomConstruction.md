@@ -38,4 +38,5 @@ original predicate explicitly. The data and witnesses therefore satisfy
 the requested five-axiom conclusion for this supplied anisotropic datum.
 Unrestricted actual-data existence, groups with nonempty relative roots,
 and the general descent and comparison constructions remain obligations
-of the parent task.
+of a proof of `RootValuationBuildingConstructionStatement`, which the Library
+does not prove.

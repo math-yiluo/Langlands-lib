@@ -1,7 +1,5 @@
 # Reduction of the torsion-closed immersion lemma to the group-algebra models
 
-Worker 742.
-
 This module is an internal step of the proof of
 `Langlands.GroupScheme.MultiplicativeTypeTorsionDeterminationStatement`. It reduces the
 torsion-closed immersion lemma `TorsionClosedImmersionIsIso` of [`Assembly`](Assembly.md)
@@ -30,7 +28,8 @@ theorems below, not claims proved here.
   every point `x` with `x ^ n = 1` for some `n > 0` factors through `i`, then `i.left` is an
   isomorphism. Here `Diagonalizable.groupScheme R Λ` is the published group-algebra model
   `Spec R[Λ]` over `Spec R` (a commutative group scheme; `.X` is its underlying object of
-  `Over (Spec R)`). This is the form of the core case proved by Worker 452.
+  `Over (Spec R)`). This is the form of the core case proved by
+  `isIso_left_of_diagonalizable` in [`Diagonalizable`](Diagonalizable.md).
 
 ## Results
 

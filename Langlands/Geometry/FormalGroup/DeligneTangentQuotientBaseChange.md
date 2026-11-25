@@ -10,7 +10,7 @@ object. The source file is registered as
 `drinfeld-1976-coverings-p-adic-symmetric-regions`, SHA-256
 `7dd09e1967f46c29195ec87a400e145a17374368fc3b9dd0a782b5b7bfc44e2f`.
 
-The provenance is derived. The implementation combines the published natural
+The provenance is derived. The implementation combines the natural
 comparison of ordinary module pullback stalks with actual scalar-extension
 functors, their preservation of cokernels, and the scheme morphism's residue
 square. These are comparisons of objects already defined in
@@ -79,7 +79,9 @@ original residue extension followed by residue-field extension. In particular,
 the original and pulled quotient fibres are the existing objects, rather than
 new fibre presentations taken as input.
 
-This unit does not prove compatibility of the comparison with the actual map
+This module does not prove compatibility of the comparison with the actual map
 `u`, nor preservation of condition (b)'s injectivity. Full admissibility,
-the moduli functor, projective-linear actions and representability also remain
-separate obligations.
+the moduli functor, projective-linear actions and representability are also
+outside this module; the first three are treated in
+`DeligneAdmissibleBaseChange`, `DeligneNilpFunctor` and
+`DeligneProjectiveAction`, and representability remains separate.

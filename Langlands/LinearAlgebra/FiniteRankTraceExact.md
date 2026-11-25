@@ -1,8 +1,5 @@
 # Finite-rank trace on short exact sequences
 
-Authors: Worker 34 (Lean proof and first draft) and Worker 969 (Markdown
-revision and submission).
-
 This module proves three derived linear algebra lemmas about the genuine
 finite-rank trace `Langlands.FiniteRankEnd.trace` of
 `Langlands.LinearAlgebra.FiniteRankTrace`. The carriers `A : Type uA`,

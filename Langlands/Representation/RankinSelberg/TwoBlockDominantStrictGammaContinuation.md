@@ -1,6 +1,6 @@
 # Continuation of the strict-rank gamma product to zero
 
-This internal unit proves the complete symmetric gamma product for the actual
+This internal module proves the complete symmetric gamma product for the actual
 lower two-block induction at the original parameter, when `t < r`. The test
 representation has actual rank `r + 1`; the induced representation has actual
 rank `t + 1`. The independent field, test and dependent block universes,
@@ -88,14 +88,15 @@ certificates for both blocks and their product are returned unchanged.
 
 ## Provenance and scope
 
-This is an internal deduction from the separately reviewed strict real-ray
+This is an internal deduction from the separately proved strict real-ray
 comparison, the published exact first-block theorem, actual opposite Whittaker
 families, common-level transformations, full analytic expansion, unramified
 transport and coefficientwise continuation machinery. It introduces no new
 literature translation. It uses neither unrestricted multiplicativity nor
-later rank descent. This unit proves the strict actual lower conclusion;
-the exact target module combines the equal-rank boundary and actual normalized
-lower-to-upper reversal.
+later rank descent. This module proves the strict actual lower conclusion;
+`TwoBlockDominantRankProof`, which proves the exact target
+`TwoBlockGammaDominantRankStatement`, combines it with the equal-rank boundary
+and actual normalized lower-to-upper reversal.
 
 ## All-field port
 

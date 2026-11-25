@@ -1,7 +1,5 @@
 # Fibrewise centrality from central rigidity
 
-Worker 876.
-
 This internal reduction retains the published
 `MultiplicativeTypeCentralRigidityStatement` as an explicit premise.
 It proves the arbitrary-base detection clause of SGA 3, Exposé IX, Théorème

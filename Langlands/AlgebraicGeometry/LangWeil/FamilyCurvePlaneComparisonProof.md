@@ -2,8 +2,6 @@
 
 Lean module: `Langlands.AlgebraicGeometry.LangWeil.FamilyCurvePlaneComparisonProof`.
 
-Authors: Worker 189 and Worker 191 (Task 5581).
-
 The theorem `Langlands.AlgebraicGeometry.LangWeil.familyCurvePlaneComparison` proves the
 unchanged published statement
 `Langlands.AlgebraicGeometry.LangWeil.FamilyCurvePlaneComparisonStatement.{u}`. Its meaning
@@ -17,8 +15,8 @@ affine core `CurvePlane.affineCurvePlaneComparison` (module `AffineCurvePlaneCom
 ## Outline of the implemented proof
 
 1. Affine core (`AffineCurvePlaneComparison`, with helper modules `CurvePlaneZeroDimensional`,
-   `CurvePlaneRadicialPoints`, `CurvePlaneFibrePoints`, `CurvePlanePolynomial`; Worker 191,
-   partly building on drafts by Worker 189). For a Noetherian domain `A` with fraction
+   `CurvePlaneRadicialPoints`, `CurvePlaneFibrePoints`, `CurvePlanePolynomial`). For a
+   Noetherian domain `A` with fraction
    field `K` and a finite type `A`-algebra `R` whose geometric generic fibre has prime
    nilradical and whose generic fibre has dimension one, there are `a ≠ 0` in `A` and `B`
    such that, over every finite field `κ` with `a ≠ 0` in `κ` and `B < #κ`, some plane

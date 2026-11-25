@@ -22,7 +22,7 @@ theorem normContinuousAction_ofStrict
     normContinuousActionProperty K G (((ofStrictFunctor K).mapAction G).obj X.obj) := by
   intro a
   change Continuous (fun g : G =>
-    (strictEquiv K X.obj.V).symm ((X.obj.ρ g).toAlgHom (strictEquiv K X.obj.V a)))
+    (strictEquiv K X.obj.V).symm ((X.obj.ρ g).asHom.toAlgHom (strictEquiv K X.obj.V a)))
   exact (strictEquiv K X.obj.V).symm.toBoundedAlgHom.continuous.comp
     (X.property (strictEquiv K X.obj.V a))
 
@@ -45,8 +45,8 @@ theorem ofStrictActionFunctor_obj_algebra
 theorem ofStrictActionFunctor_obj_apply
     (X : Langlands.Analytic.NormContinuousAffinoidAction K G)
     (g : G) (a : ofStrict K X.obj.V) :
-    (((ofStrictActionFunctor K G).obj X).obj.ρ g).toAlgHom a =
-      (strictEquiv K X.obj.V).symm ((X.obj.ρ g).toAlgHom (strictEquiv K X.obj.V a)) :=
+    (((ofStrictActionFunctor K G).obj X).obj.ρ g).asHom.toAlgHom a =
+      (strictEquiv K X.obj.V).symm ((X.obj.ρ g).asHom.toAlgHom (strictEquiv K X.obj.V a)) :=
   rfl
 
 @[simp]
@@ -120,9 +120,9 @@ theorem strictActionSpectrumHomeomorph_equivariant
     (g : G) (x : BanachSpectrum X.obj.V) :
     strictSpectrumHomeomorph K X.obj.V ((X.actionAut g) • x) =
       BanachSpectrum.comap
-        (((ofStrictActionFunctor K G).obj X).actionAut g).inv.toBoundedRingHom
+        (((ofStrictActionFunctor K G).obj X).actionAut g).asIso.inv.toBoundedRingHom
         (strictSpectrumHomeomorph K X.obj.V x) :=
-  strictSpectrumHomeomorph_naturality K (X.obj.ρ (g⁻¹)) x
+  strictSpectrumHomeomorph_naturality K (X.obj.ρ (g⁻¹)).asHom x
 
 variable [IsTopologicalGroup G]
 

@@ -1,7 +1,5 @@
 # Central stable vector subgroups of split unipotent groups
 
-Worker 1405 and Worker 1389.
-
 The theorem `Langlands.GroupScheme.RelativeRoot.splitUnipotentStableVectorSubgroup.{u}`
 proves the unchanged proposition
 `Langlands.GroupScheme.RelativeRoot.SplitUnipotentStableVectorSubgroupStatement.{u}`
@@ -26,10 +24,10 @@ The proof is one application:
 The paired Markdown of each module describes its proofs.
 
 - `Langlands.Algebra.PolynomialCocycle.Homogeneous` and
-  `Langlands.Algebra.PolynomialCocycle.Coboundary` (Worker 1389): under the
+  `Langlands.Algebra.PolynomialCocycle.Coboundary`: under the
   torsion condition, a symmetric polynomial 2-cocycle is a polynomial
   coboundary (`exists_coboundary`).
-- `Langlands.GroupScheme.Rational.SplitCommutativeVector` (Worker 1389): a
+- `Langlands.GroupScheme.Rational.SplitCommutativeVector`: a
   commutative affine split unipotent group whose points are all killed by
   `ringChar k` is a vector group (`isVectorGroup_of_isSplitUnipotent_of_exponent`).
 - `Langlands.GroupScheme.Rational.SplitSeriesProductDecomposition`: for one

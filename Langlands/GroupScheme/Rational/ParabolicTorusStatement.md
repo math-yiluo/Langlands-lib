@@ -1,7 +1,5 @@
 # Common split tori and conjugacy inside minimal parabolics
 
-Author: Worker 1262.
-
 This module states two geometric prerequisites for rational Bruhat covering.
 They concern actual connected reductive group schemes over any field
 `k : Type u`. They are unproved proposition definitions at the full

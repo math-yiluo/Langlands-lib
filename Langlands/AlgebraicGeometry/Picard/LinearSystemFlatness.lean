@@ -79,7 +79,7 @@ lemma isZero_iff_finrank_eq_zero {K : Type u} [Field K] (N : ModuleCat.{u} K) [M
 section Fibres
 
 variable {T Y : Scheme.{u}} [IsLocallyNoetherian T] (g : Y ⟶ T) [IsProper g] [Flat g]
-  (M : Y.Modules) (hM : Scheme.Modules.IsInvertible M) (V : T.affineOpens)
+  (M : Y.Modules) (hM : Scheme.Modules.IsInvertibleFLT M) (V : T.affineOpens)
 
 include hM in
 /-- **Fibres of `g` over `V` and of its base change to `Spec Γ(T, V)` have the same cohomology.** -/
@@ -95,7 +95,7 @@ theorem isZero_fibre_iff (p : Spec Γ(T, V.1)) (n : ℕ) :
   have : IsNoetherianRing Γ(T, V.1) := IsLocallyNoetherian.component_noetherian V
   let π := pullback.snd g (affPt V)
   let MX := (Scheme.Modules.pullback (pullback.fst g (affPt V))).obj M
-  have hMX : Scheme.Modules.IsInvertible MX :=
+  have hMX : Scheme.Modules.IsInvertibleFLT MX :=
     PicardHilbertPiecesReduction.isInvertible_pullback _ hM
   have hdim := Modules.properFibreCohomologyDimBaseChange T (Spec Γ(T, V.1)) Y
     (pullback g (affPt V)) g (affPt V) π (pullback.fst g (affPt V))

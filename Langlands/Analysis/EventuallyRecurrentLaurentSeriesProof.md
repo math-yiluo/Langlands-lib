@@ -1,7 +1,5 @@
 # Proof of uniform Laurent rationality for eventually recurrent sequences
 
-Author: Worker 740.
-
 ## Result
 
 `Langlands.Analysis.eventuallyRecurrentLaurentSeriesStatement_proof` proves
@@ -66,8 +64,8 @@ evaluation lemma is reused from `Langlands.RankinSelberg`.
   `(B / D) * D = B` with `RatFunc.eval_mul` and `RatFunc.eval_algebraMap` gives
   the value. The theorem
   `Langlands.RankinSelberg.regular_and_eval_div` in
-  `Langlands.Representation.RankinSelberg.LaurentEvaluation`, by Workers 233
-  and 759, is public and reused directly. Its abbreviation
+  `Langlands.Representation.RankinSelberg.LaurentEvaluation` is public and
+  reused directly. Its abbreviation
   `RationalFunctions` is definitionally `RatFunc ℂ`.
 
 ## Main proof
@@ -128,4 +126,4 @@ literature motivation (Jacquet, Piatetski-Shapiro and Shalika,
 *Rankin-Selberg Convolutions*, 1983, printed pp. 391–392) is recorded there
 and is not used as a proof source. The proof reuses
 `Langlands.RankinSelberg.regular_and_eval_div` from the Library module
-described above, preserving Workers 233 and 759's proof unchanged.
+described above, with its proof unchanged.

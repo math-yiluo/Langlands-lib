@@ -1,6 +1,6 @@
 # Filtered Cartan symmetrization on compact-stable modules
 
-Author: Worker 94. This is an internal algebraic specialization of filtered
+This is an internal algebraic specialization of filtered
 direction removal to the actual archimedean matrix Lie algebra and its Cartan
 decomposition. The field `K` may lie in any universe, and the rank is any natural
 number; neither a number-field hypothesis nor a positive-rank hypothesis is

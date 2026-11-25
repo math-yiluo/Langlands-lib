@@ -1,7 +1,7 @@
 # The rank-zero ambient matrix-to-gamma comparison
 
-Authors: Worker 64 (mathematical proof); Worker 458 (explicit local instance
-names for compatibility with the positive-rank imports).
+The local instances have explicit names for compatibility with the
+positive-rank imports.
 
 `Langlands.RankinSelberg.rankOneAmbientMatrixFunctionalEquationComparison_zero`
 proves the `n = 0` branch of the existing ambient comparison. It covers every
@@ -107,7 +107,7 @@ multiplicativity, Section 7 descent, generic-socle occurrence or gamma
 invariance assertion from that later argument.
 
 Both source fingerprints were checked. The registered index, project notes
-and current Library notes contain no source-specific erratum affecting these
+and Library notes contain no source-specific erratum affecting these
 passages. The proof's precise provenance is composition of the existing
 actual compact-test, coefficient, Fourier, quotient-measure and functional
 uniformity theorems, together with the supplied actual inclusion. It adds

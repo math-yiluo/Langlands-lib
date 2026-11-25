@@ -3,7 +3,7 @@
 Module `Langlands.AlgebraicGeometry.Modules.PerfectFibreVanishing`. The generic derived
 category lemmas are in the namespace `Langlands.Cohomology.DerivedPlus`. The scheme results
 are in `Langlands.AlgebraicGeometry.Modules.DerivedSections`, with the local instance
-`HasDerivedCategory.standard`, as in the published `UniversalPerfectSectionsStatement`.
+`HasDerivedCategory.standard`, as in `UniversalPerfectSectionsStatement`.
 
 ## Definitions
 
@@ -27,11 +27,11 @@ def homologyIsoOfIsoDerivedComplex {K : CochainComplex D ℤ} {X : C}
 This comparison is imported from `Langlands.Cohomology.DerivedPlus`, where
 its unchanged declaration is shared with other derived-complex arguments.
 Here `C` and `D` are abelian categories with derived categories, `C` has enough injectives,
-`F : C ⥤ D` is additive, and `derivedComplex F` is the published
+`F : C ⥤ D` is additive, and `derivedComplex F` is
 `DerivedPlus.derivedComplex` (`X` placed in degree zero, then the right derived functor on
 bounded below derived categories). If a cochain complex `K` is isomorphic in `D(D)` to the
 derived complex of `X`, then `Hⁿ(K) ≅ (F.rightDerived n).obj X` for `n : ℕ`. The isomorphism
-is Mathlib's `DerivedCategory.homologyFunctorFactors`, then `e`, then the published
+is Mathlib's `DerivedCategory.homologyFunctorFactors`, then `e`, then
 `DerivedPlus.homologyIso`.
 
 The module also adds the instance
@@ -41,8 +41,8 @@ instance instAdditiveRelativeGlobalSectionsOf {X : Scheme.{u}} {A : Type u} [Com
     (g : X ⟶ Spec (CommRingCat.of A)) : (relativeGlobalSections g).Additive
 ```
 
-It is the published additivity instance for `relativeGlobalSections`, restated for a base
-`Spec (CommRingCat.of A)`. Lean's instance search does not find the published instance for
+It is the Library's additivity instance for `relativeGlobalSections`, restated for a base
+`Spec (CommRingCat.of A)`. Lean's instance search does not find that instance for
 such a base, because `↑(CommRingCat.of A)` reduces to `A`. The instance is needed to form
 `derivedComplex` over `Spec (R ⧸ m)` in the main theorem.
 
@@ -61,9 +61,9 @@ theorem isZero_rightDerived_of_iso_derivedComplex (e : ...)
 So `K` is acyclic exactly when every `(F.rightDerived n).obj X` (with `n : ℕ`) is zero.
 
 Scheme results, in `Langlands.AlgebraicGeometry.Modules.DerivedSections`.
-`relativeGlobalSections` and `relativeCohomology` are the published `R`-module global
+`relativeGlobalSections` and `relativeCohomology` are the Library's `R`-module global
 sections and cohomology over a base `Spec R`. `ModuleComplex.IsStrictlyPerfect` and
-`ModuleComplex.baseChange` are the published bounded finite projective complexes and ordinary
+`ModuleComplex.baseChange` are the Library's bounded finite projective complexes and ordinary
 degreewise extension of scalars.
 
 ```lean
@@ -111,7 +111,7 @@ theorem isZero_relativeCohomology_of_universalPerfectSections
     IsZero ((relativeCohomology f n).obj L.obj)
 ```
 
-This takes the published proposition `UniversalPerfectSectionsStatement` as a hypothesis
+This takes the proposition `UniversalPerfectSectionsStatement` as a hypothesis
 `hups`; it does not prove it. Given `hups`, for a smooth proper `f : X ⟶ Spec R` and a line
 bundle `L` on `X`, if the cohomology of the pullback of `L` to every fibre `X_m` over a maximal
 ideal vanishes in every degree, then `Hⁿ(X, L) = 0` for every `n : ℕ`.
@@ -121,7 +121,7 @@ ideal vanishes in every degree, then `Hⁿ(X, L) = 0` for every `n : ℕ`.
 `idealQuotientHom`, `homologyIsoOfIsoDerivedComplex` and the instance are internal adapters
 with no literature counterpart.
 
-The generic lemmas restate the published `DerivedPlus.homologyIso` and
+The generic lemmas restate `DerivedPlus.homologyIso` and
 `DerivedPlus.isZero_homology_of_neg`: the derived complex has cohomology `Rⁿ F(X)` in degree
 `n ≥ 0` and none in negative degrees.
 
@@ -130,7 +130,7 @@ Algebra, Lemma `lemma-check-perfect-pointwise` (tag 068V). Its proof of (3) ⇒ 
 `Hⁱ(K) = 0` for `i ∉ [a, b]`. When every reduction `K ⊗ κ(m)` is acyclic, condition (3) holds
 for every interval, and an interval that omits a given degree `i` gives `Hⁱ(K) = 0`. See `more-algebra.tex` at git commit
 `a04446e57ec1fbc252a871afcec7752fb2807b14`, lines 20031–20062, in the registered source
-`stacks-perfect-complexes-a04446e5`. It enters through the published
+`stacks-perfect-complexes-a04446e5`. It enters through
 `ModuleComplex.acyclic_of_isStrictlyPerfect_of_residue_acyclic`, whose Markdown states the
 specializations (strictly perfect complexes and the ordinary tensor product with `R ⧸ m`).
 Here they are applied to the complex that computes `RΓ(X, M)`.
@@ -156,7 +156,7 @@ internal.
   zero because `K` is exact at `n`.
 - `isZero_relativeCohomology_of_quotient_fibres`: `relativeCohomology f n` is by definition
   `(relativeGlobalSections f).rightDerived n`. By `isZero_rightDerived_of_iso_derivedComplex`
-  and `e`, it suffices that `K` is acyclic. By the published
+  and `e`, it suffices that `K` is acyclic. By
   `ModuleComplex.acyclic_of_isStrictlyPerfect_of_residue_acyclic`, it suffices that
   `K ⊗ R ⧸ m` is acyclic for every maximal `m`. This follows from
   `acyclic_of_iso_derivedComplex`, the isomorphism from `eq`, and `hfib`.
@@ -171,11 +171,14 @@ and `Quot.sound`.
 ## Intended use
 
 This is the algebraic core of a proof of the open-local rational-fibre statement
-(`RationalFibreAcyclicityStatement`, task `3bbaeb61-b856-4adf-9f01-4b03a336b13c`), which feeds
-the proof of `Langlands.AbelianScheme.AlgClosedFieldSquareFirstProjectionAcyclicityStatement`
-(task `651d1a6b-549e-4d79-ae47-19627b02f30d`). Applied over an affine open `Spec A` of the
+(`RationalFibreAcyclicityStatement`, proved as `rationalFibreAcyclicity` in
+`RationalFibreAcyclicityProof`), which feeds the proof of
+`Langlands.AbelianScheme.AlgClosedFieldSquareFirstProjectionAcyclicityStatement`
+(`algClosedFieldSquareFirstProjectionAcyclicity`, module
+`Langlands.AlgebraicGeometry.Picard.SquareFirstProjectionAcyclicityProof`). Applied over an affine open `Spec A` of the
 base, it reduces vanishing of `Hⁿ(f⁻¹(Spec A), L)` to vanishing on the fibres over the closed
-points of `Spec A`. Still missing: identifying these fibres with the fibres over rational
-points (by the Nullstellensatz, `A ⧸ m` is the base field when `A` is of finite type over an
-algebraically closed field), the affine-open localization, and a proof of
-`UniversalPerfectSectionsStatement`.
+points of `Spec A`. The remaining steps are identifying these fibres with the fibres over
+rational points (by the Nullstellensatz, `A ⧸ m` is the base field when `A` is of finite type
+over an algebraically closed field), the affine-open localization, and a proof of
+`UniversalPerfectSectionsStatement`, which the Library gives as `universalPerfectSections`
+(module `UniversalPerfectSectionsProof`).

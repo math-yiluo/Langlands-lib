@@ -24,7 +24,7 @@ derived sections of `M`. Composing the two natural isomorphisms gives
 the result.
 
 This is an internal composition of the published scheme-module and
-derived-comparison constructions, authored by Worker 137. It applies
+derived-comparison constructions. It applies
 to every actual module without quasi-coherence or acyclicity premises
 on the caller. It proves no geometric scalar base-change theorem and
 provides no Čech-to-derived comparison or perfect representative.

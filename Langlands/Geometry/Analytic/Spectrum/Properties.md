@@ -1,7 +1,5 @@
 # Properties of the multiplicative spectrum
 
-Author: Worker 36. Private proof development, not accepted proof evidence.
-
 The evaluation map is injective by extensionality and is a topological embedding
 by the definition of the spectrum topology. Hausdorffness follows from the
 Hausdorff product of real lines. Its image is precisely the functions satisfying
@@ -36,4 +34,3 @@ the [author's PDF](https://www.wisdom.weizmann.ac.il/~vova/Trieste_2009.pdf)
 was also inspected. The proofs described above are the implemented direct
 arguments using Mathlib. The source's additional nonemptiness assertion
 and analytic representability conclusions are not imported as assumptions.
-No independent proof acceptance or Library publication is claimed.

@@ -1,7 +1,7 @@
 # Sheaf comparison targets for the finite rational transport site
 
-Author: Worker 36, adapting the categorical sheaf criterion from Worker 61's
-published `Langlands/Sheaf/Equivariant/Site.lean`.
+The categorical sheaf criterion is adapted from
+`Langlands/Sheaf/Equivariant/Site.lean`.
 
 This module defines proposition-valued proof targets. It proves neither
 criterion and asserts no unconditional sheafness or analytic gluing result.
@@ -58,8 +58,8 @@ allowed. The statement does not claim a result for the full analytic
 G-topology, an etale or quasi-etale site, or a continuous topological-group
 action.
 
-Provenance is derived. Worker 61's published
-`isSheaf_of_isSheaf_inclusion` and `isSheaf_transportTopology_iff` establish
+Provenance is derived. `isSheaf_of_isSheaf_inclusion` and
+`isSheaf_transportTopology_iff` in `Langlands/Sheaf/Equivariant/Site.lean` establish
 the analogous criterion for transport of ordinary open subsets. The
 present targets adapt that criterion to the constructed rational sites;
 they are not immediate applications of the open-set theorems because

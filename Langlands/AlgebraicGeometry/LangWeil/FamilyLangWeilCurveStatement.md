@@ -1,7 +1,5 @@
 # The uniform Lang–Weil estimate for families of curves, from the plane-curve bound
 
-Author: Worker 69.
-
 This module states a reduction: the uniform Lang–Weil estimate for families whose fibres are
 geometrically irreducible curves follows from Schmidt's Hasse–Weil bound for absolutely
 irreducible plane curves and the uniform upper bound for point counts in families. It is one
@@ -64,4 +62,4 @@ absolutely irreducible (the Library's generic spreading of geometric irreducibil
 
 ## Status
 
-Open. A proof is to be supplied through its own focused proof task.
+Proved, as `familyLangWeilCurve` in `FamilyLangWeilCurveProof`.

@@ -1,7 +1,5 @@
 # Polar compact subgroups on actual affine points
 
-Authors: Worker 1571 and Worker 1359.
-
 Let `k : Type u` be a field, `S : Type u` an `RCLike` field equipped with a
 `k`-algebra structure, and `G` an affine actual group scheme over `Spec k`.
 Let `ρ : MatrixRepresentation G (Fin d)` be a scheme-theoretic closed

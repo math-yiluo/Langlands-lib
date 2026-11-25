@@ -1,6 +1,6 @@
 # Algebraic and separable completed residues of finite degree
 
-This internal unit treats an actual spectrum point of a normed algebra over a
+This internal module treats an actual spectrum point of a normed algebra over a
 complete ultrametric normed field `K`. The base field may have trivial norm, and
 the algebra and field universes are independent.
 

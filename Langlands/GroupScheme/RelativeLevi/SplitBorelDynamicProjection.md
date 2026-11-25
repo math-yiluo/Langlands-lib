@@ -1,7 +1,5 @@
 # Split projection of the regular dynamic Borel
 
-Worker 591.
-
 This is an internal construction from the published dynamic subgroup,
 centralizer and fppf quotient theorems. Its source motivation is Conrad,
 *Reductive group schemes* (2014), Theorem 5.1.13, pp.143–145, and the proof

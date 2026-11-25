@@ -1,13 +1,6 @@
 # Renard A.VIII.2: the regular unital module is a small progenerator
 
-Authors: Worker 734 (source rereading, implementation, compilation and
-inspection, documentation); Worker 6 (the proposed type and body, adopted
-verbatim from the objective of task `71264c9b-d96b-47f9-bc18-e4a1ab3e55b5`;
-an independent draft pair, shared as that task's draft revision 1, whose
-Markdown formulations were partly adopted here; and an independent private
-inspection probe).
-
-This statement unit supplies
+This statement module supplies
 `Langlands.Renard.RegularModuleSmallProgeneratorStatement` in module
 `Langlands.CategoryTheory.Renard.RegularModuleSmallProgeneratorStatements`.
 It states that the regular module of a unital ring is a small progenerator
@@ -33,7 +26,7 @@ It directly follows the theorem that a cocomplete abelian category with a
 small progenerator `P` is naturally equivalent, through `Hom_A(P, •)`, to
 the category of unital right modules over `R_P = End_A(P)`. Renard gives
 the remark without proof; the surrounding text cites Pareigis [37], 4.11.
-That cited source has not been read for this unit, and no proof from it is
+That cited source has not been read for this module, and no proof from it is
 claimed to have been checked. Only the regular-object assertion, the
 reason the remark gives, is formalized here. The converse itself (that a
 category equivalent to a category of unital modules admits a small
@@ -190,7 +183,7 @@ here.
 Other prepared Mathlib files, `Mathlib/Algebra/Category/ModuleCat/Ulift.lean`
 (lifted modules and the lift functor) and
 `Mathlib/Algebra/Category/ModuleCat/Projective.lean` (bridges between module
-and categorical projectivity), are relevant to a later proof. They are not
+and categorical projectivity), are relevant to a proof. They are not
 used by this statement and do not by themselves prove the source Hom
 predicates.
 
@@ -208,17 +201,15 @@ the statement does not depend on them.
 
 ## Verification and remaining obligations
 
-Development compilation and full declaration inspection were performed in
-approved environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` with prepared
-Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`. The workspace
-check `b4df8c9a-221d-432f-b0b0-e663799e26d3` reports 0 errors and 0 warnings,
+Development compilation and full declaration inspection were performed
+with Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`. The workspace
+check reports 0 errors and 0 warnings,
 and its inspection reports a `definition` with level parameters `w, v, u`,
 returning `Prop`, whose axioms are only `propext`, `Classical.choice` and
 `Quot.sound`.
 
-A private probe module compiled with the statement (latest diagnostic
-`3060c300-fc86-4ea0-afbc-e63117245a68`, earlier
-`addc2947-5372-4556-a5b0-c448968a339b`, each with 0 errors and 0 warnings).
+A private probe module compiled with the statement (two runs, each with
+0 errors and 0 warnings).
 It checked by `rfl` that the complete unapplied declaration is
 
 ```lean
@@ -243,23 +234,19 @@ The declaration elaborated for `ℤ`, the zero ring `PUnit`,
 the noncommutative ring `Matrix (Fin 2) (Fin 2) ℚ` and `ℤᵐᵒᵖ` at universes
 `{0, 0, 0}`; for `ℤ` at `{2, 2, 0}` and `{0, 1, 0}`; for `ULift.{2} ℤ` at
 `{1, 1, 2}`; for general `R` at `{max u v, v, u}`; and at `{5, 1, 0}` for `ℤ`
-under an explicitly assumed `HasCoproducts.{5}` hypothesis. Worker 6's
-independent private probe (diagnostic
-`ee5ff0ea-bc1f-4ae2-b486-3d5e8d54ba3c`) made comparable checks of the
+under an explicitly assumed `HasCoproducts.{5}` hypothesis. A second,
+independent private probe made comparable checks of the
 unapplied type and body, the universe triples above and `{0, 0, 0}`, the
 carrier and action, the opposite-ring order and the coproduct instance at
 `max u v`. These checks establish elaboration, the proposition kind and
-the actual object; they do not prove the remark or establish independent
-semantic acceptance.
+the actual object; they do not prove the remark.
 
-The proof is a separate exact-target successor after independent statement
-publication. A route through evaluation at the lifted unit has not been
-implemented or checked. The following remain separate obligations: the
+The proof is in `Langlands.CategoryTheory.Renard.RegularModuleSmallProgenerator`.
+The following remain separate obligations: the
 small-progenerator equivalence with right `End(P)`-modules, nonunital source
 module categories, the finite-support and finite-type assertions of A.VIII.2
-(tasks `f27c1b29-df22-46eb-ae83-ee1e258cba79` and
-`372132dd-d49a-4c66-a628-f335dadd820d`) and their proofs. Presentations by
+and their proofs. Presentations by
 copies of a small progenerator already have the public proof
-`Langlands.Renard.generatorPresentation`, which this unit does not
+`Langlands.Renard.generatorPresentation`, which this module does not
 duplicate. No proof sketch, imported theorem or circular assumption is
 supplied in this statement pair.

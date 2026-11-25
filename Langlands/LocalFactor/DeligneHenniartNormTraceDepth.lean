@@ -1,7 +1,7 @@
 import Langlands.LocalFactor.DeligneHenniartPrimeNormTrace
 import Langlands.LocalFactor.DeligneHenniartNormTrace
 import Langlands.ClassFieldTheory.Local.UnitFiltrationConductor
-import Langlands.ClassFieldTheory.Local.NYLL.UniverseZeroModel
+import Langlands.ClassFieldTheory.Local.UniverseZero.UniverseZeroModel
 
 /-! # Norm and trace at a prescribed depth -/
 
@@ -84,7 +84,7 @@ theorem normTraceAtDepth_of_canonical_ideal_bounds
   apply normTraceAtDepth_of_remainder K L TK TL m n hn
   intro y hy hym
   have horder : L.canonicalTopologicalData.ord y = TL.ord y :=
-    NYLL.ord_eq_of_algEquiv (AlgEquiv.refl : L.Carrier ≃ₐ[Padic p] L.Carrier)
+    UniverseZero.ord_eq_of_algEquiv (AlgEquiv.refl : L.Carrier ≃ₐ[Padic p] L.Carrier)
       TL L.canonicalTopologicalData y
   have hym' : (m : ℤ) ≤ L.canonicalTopologicalData.ord y := by
     rw [horder]
@@ -106,7 +106,7 @@ theorem normTraceAtDepth_of_canonical_ideal_bounds
     intro k c hc
     have hvaleq : TK.discreteValuation (c : K.Carrier) =
         K.canonicalTopologicalData.discreteValuation (c : K.Carrier) :=
-      NYLL.discreteValuation_eq_of_algEquiv
+      UniverseZero.discreteValuation_eq_of_algEquiv
         (AlgEquiv.refl : K.Carrier ≃ₐ[Padic p] K.Carrier)
         K.canonicalTopologicalData TK (c : K.Carrier)
     rw [TK.mem_additiveLattice, hvaleq]

@@ -1,6 +1,6 @@
 # Hopf algebras of central extensions of split tori by split tori
 
-Worker 1395 wrote this module. It is the algebraic core of the proof of
+This module is the algebraic core of the proof of
 [`CentralTorusExtensionStatement`](../GroupScheme/Torus/CentralExtensionProof.md).
 Let `K` be a field and `A` a commutative `K`-Hopf algebra with bialgebra maps
 `φ : K[ℤ^I] →ₐc A` and `π : A →ₐc K[ℤ^J]`. Geometrically, `Spec A = E`, `Spec φ` is

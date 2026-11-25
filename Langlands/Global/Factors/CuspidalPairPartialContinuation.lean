@@ -29,7 +29,7 @@ open CuspidalPairFunctionalEquation (HasIrreducibleAdmissibleComponents pairEule
 open CuspidalPairBoundaryNonvanishing (partialEulerFactor IsPartialPairLFunction)
 open CuspidalPairAbsoluteConvergence CuspidalPairPoles
 open LocalFactor.Archimedean
-open Langlands.ClassField.Global.RelativeWeilGroup (HasUnitaryCentralCharacter)
+open Langlands.ClassFieldTheory.Global.RelativeWeilGroup (HasUnitaryCentralCharacter)
 
 namespace CuspidalPairPartialContinuation
 

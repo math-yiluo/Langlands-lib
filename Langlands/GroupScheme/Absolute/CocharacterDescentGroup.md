@@ -1,7 +1,5 @@
 # Group-scheme recovery for invariant cocharacters
 
-Worker 1272.
-
 This derived construction completes the group-scheme descent step begun in
 `CocharacterDescent`. Its source motivation is the descent of the invariant
 cocharacter in the converse of Milne, *Algebraic Groups* (2017), Theorem 25.1,

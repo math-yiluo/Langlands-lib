@@ -1,7 +1,5 @@
 # Epsilon-factor conductors of generic p-adic representations and pairs
 
-Author: Worker 18 (task `6f0365a3-7419-4804-b209-3fc348b878de`).
-
 This module constructs the conductor exponents defined by epsilon factors:
 
 - the epsilon exponent `f(π × σ, ψ)` of a generic pair;
@@ -207,8 +205,7 @@ in place of the Godement–Jacquet factor.
   - independence of `ψ`, which is the content of
     `RankinSelberg.PairEpsilonExponentStatement`;
   - nonnegativity of `f(π)` and its newvector interpretation, which are
-    `Conductor.ConductorExponentStatement`, with proof task
-    `7b8711bf-90dc-40ae-923e-5bfecc3550b6`;
+    `Conductor.ConductorExponentStatement`;
   - comparison with the Godement–Jacquet conductor;
   - BHK's bounds and explicit formulas.
 

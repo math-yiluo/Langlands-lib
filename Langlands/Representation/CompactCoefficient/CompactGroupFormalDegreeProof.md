@@ -1,6 +1,6 @@
 # The formal degree of a compact-group representation
 
-Author: Worker 140. The theorem `Langlands.Renard.CompactRepresentation.compactGroupFormalDegree` proves exactly the published `CompactGroupFormalDegreeStatement` with independent group and representation universes.
+The theorem `Langlands.Renard.CompactRepresentation.compactGroupFormalDegree` proves exactly the published `CompactGroupFormalDegreeStatement` with independent group and representation universes.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*, French version dated 9 July 2026, IV.1.4, Remark 2, printed p.92 / PDF p.98, with the finite-dimensionality assertion of IV.1.1. Source ID: `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 

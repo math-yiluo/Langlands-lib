@@ -1,7 +1,5 @@
 # Pointed affine-line capture and constant split kernels
 
-Author: Worker 1371.
-
 This internal construction concerns actual group schemes over an arbitrary
 field. `CapturesPointedAffineLineMaps s` says that every relative-scheme
 morphism from the affine line which sends zero to the identity factors through

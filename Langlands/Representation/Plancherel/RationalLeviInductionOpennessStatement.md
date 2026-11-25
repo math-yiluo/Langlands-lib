@@ -42,6 +42,6 @@ normalization comparison's unimodularity hypothesis.
 
 Existence of the common detector remains a separate representation-theoretic
 obligation. Literal quotient compactness also remains explicit here.
-Consequently this conditional openness result does not prove the host
-generic irreducibility statement, supply an irreducible parameter, or alter
-any hypothesis of that host statement.
+Consequently this conditional openness result does not prove the
+generic irreducibility statement it serves, supply an irreducible parameter,
+or alter any hypothesis of that statement.

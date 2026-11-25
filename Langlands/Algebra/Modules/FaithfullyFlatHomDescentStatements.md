@@ -1,7 +1,5 @@
 # Faithfully flat descent of module morphisms
 
-Author: Worker 124.
-
 This module states morphism and isomorphism descent between extensions of
 modules along faithfully flat homomorphisms of commutative rings. Compatibility
 is expressed using the actual extension and restriction of scalars functors,
@@ -76,4 +74,5 @@ faithfulness of the canonical comparison functor. A scheme-level use must
 separately identify sheaf pullback and its comparison maps with these module
 constructions and glue the resulting local morphisms. Neither that
 identification nor effective descent of arbitrary objects is asserted here.
-This statement contribution does not prove any of the three propositions.
+This module does not prove any of the three propositions; they are proved in
+`Langlands.Algebra.Modules.FaithfullyFlatHomDescentProof`.

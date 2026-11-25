@@ -67,10 +67,11 @@ for this Fourier law. The supplied character is continuous and nontrivial,
 as required by `UnitaryAdditiveCharacter`. A supplied self-dual additive Haar
 measure and an actual row Fourier pair are retained.
 
-This contribution does not establish ordinary Jacquet convergence,
+This module does not establish ordinary Jacquet convergence,
 finite numerator assembly, parameter continuation, gamma certification or
-L-polynomial divisibility. Those remain separate obligations in the host
-dominant-rank task.
+L-polynomial divisibility. Those are further steps toward the dominant-rank
+statements `TwoBlockGammaDominantRankStatement` and
+`TwoBlockLDominantRankStatement`, which `TwoBlockDominantRankProof` proves.
 
 ## All-field port
 

@@ -1,12 +1,11 @@
 # Factorization of a bi-equivariant cell distribution over the compatible torus
 
-Authors: Worker 634 and Worker 1035. The Lean text of the proposition is Worker 634's
-type-checked private design, as supplied in the task objective. Worker 1035 placed it,
-otherwise unchanged, in the final namespace `Langlands.Whittaker` and this module, added
-the docstrings and wrote this Markdown.
+The Lean text of the proposition is a type-checked design statement, placed, otherwise
+unchanged, in the final namespace `Langlands.Whittaker` and this module.
 
-`Langlands.Whittaker.BruhatCellFactorizationStatement.{uF}` is the following unproved
-proposition. This module defines the proposition and supplies no proof and no other
+`Langlands.Whittaker.BruhatCellFactorizationStatement.{uF}` is the following
+proposition; its proof is `Langlands.Whittaker.bruhatCellFactorization` in
+`Langlands.Representation.Whittaker.BruhatCellFactorizationProof`. This module defines the proposition and supplies no proof and no other
 declaration. It imports, unchanged, the published modules
 `Langlands.Representation.Whittaker.BruhatCellDistribution`,
 `Langlands.Representation.Whittaker.BruhatFiberAverage`,
@@ -107,8 +106,8 @@ Shalika observes that `π` is surjective onto the cell (printed p.176), so the f
 determines `I` when such an `I` exists; the proposition neither states nor uses this
 surjectivity, and it does not assert that such an `I` exists.
 
-`IsBiEquivariantBruhatCellDistribution n F.Carrier w ψ D`, from the input definition
-artifact `04b24b75-6b0b-41c4-a4a3-d05e55fbaa2a`, says: for all `u₁, u₂ ∈ U` and every
+`IsBiEquivariantBruhatCellDistribution n F.Carrier w ψ D`, from
+`Langlands.Representation.Whittaker.BruhatCellDistribution`, says: for all `u₁, u₂ ∈ U` and every
 test function `f` on the cell,
 
     D (Hecke.TestFunction.pullback (bruhatCellBiTranslate n F.Carrier w u₁ u₂) f)
@@ -214,10 +213,10 @@ is kept in the quantification, not excluded.
 The registered original is `shalika-1974-multiplicity-one`: J. A. Shalika, *The
 multiplicity one theorem for GL_n*, Ann. of Math. (2) **100** (1974), 171–193. The copy
 `/home/taskhub/central-library/Shalika--The multiplicity one theorem for GLn--1974.pdf`
-has SHA256 `788c5d124024c768aa47c4e8b179475fbcf5b0882a518ae60b19cdc88089f087`. Worker
-1035 read the text of printed pp.174–178 (one-based PDF pages 5–9) and checked the
-rendered image of printed p.177 (PDF page 8). Worker 634 earlier read printed
-pp.173–179 and visually checked pp.176–178. No source-specific errata note
+has SHA256 `788c5d124024c768aa47c4e8b179475fbcf5b0882a518ae60b19cdc88089f087`. The
+text of printed pp.174–178 (one-based PDF pages 5–9) was read and the rendered image of
+printed p.177 (PDF page 8) checked; printed pp.173–179 were also read, and pp.176–178
+visually checked. No source-specific errata note
 for this paper exists in the project literature pointers or the Library notes.
 
 - **Printed p.175, Proposition 1.8.** `T` is a distribution on the cell `G_w` with
@@ -289,10 +288,12 @@ be read as `β ↦ (δ − 1)β`, with the `δ` defined two lines earlier, as re
 public Markdown of `BruhatCompatibleSupportStatement`. The present proposition does not
 depend on that reading.
 
-## Intended later proof (not established here)
+## Outline of the proof (not established here)
 
-The following outlines how the proposition is expected to be proved, in a separate
-proof task. None of it is established by this module, and no theorem is claimed.
+The following outlines how the proposition is proved. The separate module
+`Langlands.Representation.Whittaker.BruhatCellFactorizationProof` carries it out, with
+left rather than right invariance of `ν` in step 3. None of it is established by this
+module, and no theorem is claimed.
 
 1. **Positive-character product bi-equivariance of `D.comp I`.** For `a, b ∈ U` and
    `u ∈ P`, if `bruhatFiberAct u (u₁, (d, u₂)) = (x₁, (d, x₂))`, then
@@ -339,10 +340,9 @@ global distribution invariance, or multiplicity one.
 
 ## Provenance
 
-The Lean text is Worker 634's private type-checked design, reproduced exactly from the
-task objective, placed in its final namespace and module by Worker 1035 and checked here
-in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` (diagnostic
-`af4adeda-8bd8-4dd2-a660-25b739b59136`: no errors or warnings, statement returns `Prop`).
+The Lean text is a type-checked design statement, reproduced exactly, placed in its
+final namespace and module and checked there (no errors or warnings, statement returns
+`Prop`).
 The formulation is internal derived content, as explained above; its sources are
 Shalika (1974), Proposition 1.8 (printed p.175), Lemma 1.10 and formula (1.11) (printed
 p.176), and Propositions 1.12 and 1.13 (printed p.177).
@@ -350,6 +350,4 @@ p.176), and Propositions 1.12 and 1.13 (printed p.177).
 ## Consumers
 
 The proposition is an intermediate target for the exact Shalika distribution-invariance
-work (task `f79ca82c-d050-4ffa-821b-c347b60e36e0`, Worker 634) and, through it, the
-Whittaker multiplicity-one work (task `209cde88-bab8-4a85-8a9d-72b8864b6fa0`, Worker 16).
-A separate proof task follows publication of this statement.
+theorem and, through it, for Whittaker multiplicity one.

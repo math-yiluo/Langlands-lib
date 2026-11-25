@@ -556,19 +556,27 @@ theorem one_tmul_positiveWeightCharacter (i : T.toGrp ⟶ G) (R : Finset (charac
     refine ⟨?_, ?_⟩
     · rintro rfl
       apply hα
-      simp
+      simp only [AddEquiv.map_zero, smul_zero]
     · intro hbot
       apply hα
       rw [hbot, finrank_bot]
       simp
+  have hsum : ∀ f : characterLattice T → rationalCharacters T.toGrp,
+      rationalCharacters.equivCharacterLattice T (∑ α ∈ R, f α) =
+        ∑ α ∈ R, rationalCharacters.equivCharacterLattice T (f α) := fun f =>
+    map_sum (rationalCharacters.equivCharacterLattice T).toAddMonoidHom f R
+  have hnsmul : ∀ (n : ℕ) (x : rationalCharacters T.toGrp),
+      rationalCharacters.equivCharacterLattice T (n • x) =
+        n • rationalCharacters.equivCharacterLattice T x := fun n x =>
+    (rationalCharacters.equivCharacterLattice T).toAddMonoidHom.map_nsmul n x
   unfold positiveWeightCharacter
-  rw [finsum_eq_sum_of_support_subset _ hsupp, map_sum, TensorProduct.tmul_sum,
+  rw [finsum_eq_sum_of_support_subset _ hsupp, hsum, TensorProduct.tmul_sum,
     Finset.sum_filter]
   refine Finset.sum_congr rfl fun α _ => ?_
   split_ifs with h
-  · rw [map_nsmul, AddEquiv.apply_symm_apply, Nat.cast_smul_eq_nsmul]
+  · rw [hnsmul, AddEquiv.apply_symm_apply, Nat.cast_smul_eq_nsmul]
     exact map_nsmul (TensorProduct.mk ℤ ℝ (characterLattice T) 1) _ α
-  · rw [zero_smul, map_zero, TensorProduct.tmul_zero]
+  · rw [zero_smul, AddEquiv.map_zero, TensorProduct.tmul_zero]
 
 end Realization
 

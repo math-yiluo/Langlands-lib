@@ -1,7 +1,5 @@
 # Actual semigroup functoriality and normal adjoint comparison
 
-Worker 1372.
-
 `RelativeRoot.semigroupFunctoriality` proves the existing
 `SemigroupFunctorialityStatement.{u}` for every universe `u`. It applies to every
 field, smooth affine source and target group schemes, a split torus with actual
@@ -52,5 +50,6 @@ not suffice.
 These corollaries are formal deductions from the named Library results and
 explicit hypotheses. They do not construct radical quotients, adjoint quotient
 squares, their action descent, their semigroup fppf images, or centre
-containments. They leave the structural retraction theorem and the full normal
-intersection case open, and do not prove `SemigroupComparisonStatement`.
+containments. They do not themselves prove the structural retraction theorem
+or the full normal intersection case, and do not prove
+`SemigroupComparisonStatement`.

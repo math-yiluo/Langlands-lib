@@ -8,7 +8,7 @@ This module defines a reduction proposition and proves it.
 
 `EndomorphismDegreeLinePolynomialStatement.{u} → IsogenyDegreeTateDeterminantNormStatement.{u} → IsogenyDegreeTateDeterminantCharZeroStatement.{u}`.
 
-The three propositions are existing staged or published Library statements, all in `Langlands/AbelianScheme/`:
+The three propositions are Library statements, all in `Langlands/AbelianScheme/`:
 
 - `EndomorphismDegreeLinePolynomialStatement` (G1): there is `δ : (A ⟶ A) → ℚ`, equal to the degree on isogenies, with `n ↦ δ (n • φ + ψ)` polynomial of degree at most `2g` on natural numbers.
 - `IsogenyDegreeTateDeterminantNormStatement` (G23): in characteristic zero, for every prime `p`, the degree of an isogeny and the determinant of its rational `p`-adic Tate map have the same `p`-adic norm, and that determinant is `0` for a non-isogeny.

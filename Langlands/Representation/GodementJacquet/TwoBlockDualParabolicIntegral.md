@@ -1,7 +1,6 @@
 # The dual two-block parabolic integral
 
 Module `Langlands.Representation.GodementJacquet.TwoBlockDualParabolicIntegral`.
-Author: Worker 1117.
 
 This module is a helper for the transformed side of the two-block functional
 equation (Godement–Jacquet, *Zeta Functions of Simple Algebras* (1972), proof

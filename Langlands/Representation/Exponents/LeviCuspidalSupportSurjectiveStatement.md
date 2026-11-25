@@ -1,6 +1,6 @@
 # The cuspidal support map is surjective with finite fibres
 
-Author: Worker 6. Module `Langlands.Representation.Exponents.LeviCuspidalSupportSurjectiveStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`. Statement `LeviCuspidalSupportSurjectiveStatement : Prop`; nothing is proved here.
+Module `Langlands.Representation.Exponents.LeviCuspidalSupportSurjectiveStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`. Statement `LeviCuspidalSupportSurjectiveStatement : Prop`; nothing is proved here.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*, French edition dated 9 July 2026, VI.7.1, Proposition, printed p.180 / PDF p.186, with its proof on the same page. The registered source ID is `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. The Lemma of VI.7.1 defines the cuspidal support map `Sc : Irr(G) → Ω(G)`, sending `π` to the class of a cuspidal datum `(M, (ρ, W))` such that `ρ` is a composition factor of `r_P^G π` for some `P ∈ P(M)`. In translation, the Proposition says: the map `Sc` is a surjection with finite fibres. Its proof says:
 

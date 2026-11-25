@@ -1,8 +1,8 @@
 # Inputs for the unitary case of Renard VII.1.3
 
-Author: Worker 1507. Module `Langlands.Representation.Exponents.MaximalLeviReducibilityUnitaryInputs`, namespace `Langlands.Aubert.General.RepresentedParabolic`.
+Module `Langlands.Representation.Exponents.MaximalLeviReducibilityUnitaryInputs`, namespace `Langlands.Aubert.General.RepresentedParabolic`.
 
-The module has eight `Prop`-valued definitions and nothing else. None of them is assumed or proved here. They are the results of Chapters III, IV and VI that the proof of Renard VII.1.3 uses once the induced representation has a unitary central character, i.e. for the published `MaximalLeviSupercuspidalReducibilityUnitaryStatement` (module `MaximalLeviReducibilityReductionStatements`). Each one is stated for the represented-parabolic interface of the published target `MaximalLeviSupercuspidalReducibilityStatement`. A later proof module will derive the unitary statement from them (see "How the statements are used" below).
+The module has eight `Prop`-valued definitions and nothing else. None of them is assumed or proved here. They are the results of Chapters III, IV and VI that the proof of Renard VII.1.3 uses once the induced representation has a unitary central character, i.e. for the published `MaximalLeviSupercuspidalReducibilityUnitaryStatement` (module `MaximalLeviReducibilityReductionStatements`). Each one is stated for the represented-parabolic interface of the published target `MaximalLeviSupercuspidalReducibilityStatement`. The module `MaximalLeviReducibilityUnitaryProof` derives the unitary statement from them (see "How the statements are used" below).
 
 ## Source
 
@@ -79,10 +79,10 @@ Derived form: the source draws the contradiction (`M ≠ M'`) or the identificat
 
 ## How the statements are used
 
-The planned proof of `MaximalLeviSupercuspidalReducibilityUnitaryStatement` (not part of this module) has two cases.
+The proof of `MaximalLeviSupercuspidalReducibilityUnitaryStatement` in `MaximalLeviReducibilityUnitaryProof` (not part of this module) has two cases.
 
 - If `ρ` has a unitary central character: I1 makes `ρ` unitarizable, `RationalPointsIrreducibleAdmissibleStatement` makes it admissible, IA and IU make `π = i_P^G ρ` admissible and unitarizable, and N makes `π` nonzero. The published `admissibleUnitarySemisimplicity` (Renard IV.2.2, Corollaire) makes `π` semisimple, so a reducible `π` has a nonscalar endomorphism (a projection onto a proper summand). K1 then gives `g`, `φ` and `ρ ≃ ρ ∘ φ(F)`, which is the target's conclusion with `ψ = 1`.
-- If not: an unramified positive twist `ρ_0 = ρ ⊗ ψ` has a unitary central character (VI.8.5, to be supplied by Worker 1517's general twist lemma, which is not stated here). Then `ρ_0` is unitarizable by I1, `ρ ≃ ρ_0 ⊗ ψ^{-1}` and C gives an irreducible unitarizable sub or quotient `W` of `π`. Hd with `σ = ρ_0`, `χ = ψ^{-1}`, `χ' = ψ` gives a nonzero morphism between `i_P^G(ρ ψ^2)` and `π`, and K2 gives `ρ ≃ (ρ ψ^2) ∘ φ(F)` up to inverting `(g, φ)`. The alternative `ρ ψ^2 ≃ ρ` is excluded on the center of `M(F)`: it would make `ψ^2`, hence `ψ`, trivial there, so the central character of `ρ` would be that of `ρ_0`, which is unitary.
+- If not: an unramified positive twist `ρ_0 = ρ ⊗ ψ` has a unitary central character (VI.8.5, supplied by the general twist lemma `exists_positive_unramifiedTwist_unitaryCentralCharacter` of module `PositiveUnramifiedCentralTwist`, which is not stated here). Then `ρ_0` is unitarizable by I1, `ρ ≃ ρ_0 ⊗ ψ^{-1}` and C gives an irreducible unitarizable sub or quotient `W` of `π`. Hd with `σ = ρ_0`, `χ = ψ^{-1}`, `χ' = ψ` gives a nonzero morphism between `i_P^G(ρ ψ^2)` and `π`, and K2 gives `ρ ≃ (ρ ψ^2) ∘ φ(F)` up to inverting `(g, φ)`. The alternative `ρ ψ^2 ≃ ρ` is excluded on the center of `M(F)`: it would make `ψ^2`, hence `ψ`, trivial there, so the central character of `ρ` would be that of `ρ_0`, which is unitary.
 
 ## Faithfulness notes
 
@@ -94,4 +94,4 @@ The planned proof of `MaximalLeviSupercuspidalReducibilityUnitaryStatement` (not
 
 ## Provenance
 
-All eight statements are derived from the proof of Renard VII.1.3 and the results it cites, as listed per statement above. I1, IA and IU are the cited results for the represented interface. N is a standard elementary fact made explicit. Hd, K1, K2 and C are the specific consequences of IV.2.1.2, III.2.5 with VI.5.3, and Casselman's criterion that the proof of VII.1.3 uses, stated in the form in which the proof applies them rather than as the underlying general theorems (for which the represented interface has no hermitian dual, contragredient of inductions or geometric-lemma filtration yet).
+All eight statements are derived from the proof of Renard VII.1.3 and the results it cites, as listed per statement above. I1, IA and IU are the cited results for the represented interface. N is a standard elementary fact made explicit. Hd, K1, K2 and C are the specific consequences of IV.2.1.2, III.2.5 with VI.5.3, and Casselman's criterion that the proof of VII.1.3 uses, stated in the form in which the proof applies them rather than as the underlying general theorems.

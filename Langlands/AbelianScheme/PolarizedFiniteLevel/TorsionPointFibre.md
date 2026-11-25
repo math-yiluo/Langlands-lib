@@ -44,7 +44,5 @@ This map and its injectivity hold for every `n`.
 This is an internal supporting construction for the actual cubic
 torsion-hyperplane bound. Its provenance is the existing finite-multiplication
 theorem, actual torsion-section kernel, and Mathlib's residue-field,
-quasi-finite-fibre, and closed-immersion APIs cited above. Worker 1124 supplied
-the point-side reduction plan; Worker 310 implemented the construction and
-proofs, including the arbitrary-field section-evaluation argument.
-The unrestricted geometric cardinality bound remains a separate obligation.
+quasi-finite-fibre, and closed-immersion APIs cited above.
+The unrestricted geometric cardinality bound is not proved here.

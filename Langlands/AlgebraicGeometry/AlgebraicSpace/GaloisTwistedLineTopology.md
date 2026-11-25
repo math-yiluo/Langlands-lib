@@ -1,7 +1,5 @@
 # The image of `X(K)` in `X_{K'}(K')` is not closed
 
-Author: Worker 105.
-
 This module proves clause (3) of Conrad's Example 5.13 (printed p.20) for the Galois-twisted
 line: `not_isClosed_range`. It assumes nontrivially normed fields `K` and `K'`,
 `NormedAlgebra K K'`, `QuadraticConj K K'` data and `[Module.Finite K K']`.

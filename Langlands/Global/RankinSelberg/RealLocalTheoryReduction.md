@@ -15,7 +15,7 @@ named premises:
   dualized original blocks.
 
 The main proposition `RealPlaceLocalTheoryReductionStatement.{u}` is the
-implication from these four premises to the exact published
+implication from these four premises to the exact Library statement
 `RealPlaceFunctionalEquationStatement.{u}`. None of the four premises is
 proved in this module.
 
@@ -42,8 +42,8 @@ standard-module nonvanishing theorem and the parameter injection identify
 each local determinant with the actual compact minus-one scalar, via
 `RealLocalJacquet.realMinusOneScalar_eq_parameter`. The dual-factor premise
 rewrites the denominator to the actual contragredient parameters. This
-supplies `RealPositiveJacquetRestrictionEquationStatement`, and the previously
-proved `realPlacePositiveAnalyticReduction` finishes the implication.
+supplies `RealPositiveJacquetRestrictionEquationStatement`, and the Library
+theorem `realPlacePositiveAnalyticReduction` finishes the implication.
 
 The dual-factor premise requires equality only of the two entire denominator
 functions. It does not require a permutation of block lists or assert that
@@ -51,7 +51,9 @@ the inverse-block presentation is unique. All original global hypotheses,
 both rank cases and the free field universe `u` are retained in the conclusion.
 
 The provenance is internal composition and interface refinement. This is a
-conditional intermediate result; the four analytic and model premises, and
-therefore the unconditional full functional equation, remain open.
+conditional intermediate result. The model premise is proved in the Library
+as `realPlaceWhittakerModel` (module `RealPlaceWhittakerAnalyticProof`); the
+three other premises, and therefore the unconditional full functional
+equation, remain open.
 
-The pinned-environment checks `ad2d3309-a67d-41f7-be21-82fa6e83e377` (entry proposition) and `31e29280-dd81-40ec-95f6-4b8ecb7f59be` (implemented theorem) pass with no errors or warnings. The universe `u` is free, and the theorem uses only `propext`, `Classical.choice` and `Quot.sound`.
+The entry proposition and the implemented theorem were checked in the pinned environment with no errors or warnings. The universe `u` is free, and the theorem uses only `propext`, `Classical.choice` and `Quot.sound`.

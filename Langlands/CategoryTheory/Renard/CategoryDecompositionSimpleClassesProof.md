@@ -130,7 +130,6 @@ no separate treatment. The proof does not construct supported sums,
 product-category equivalences, support closure, splitting, or subquotient
 results, and does not assert completion of A.IX.
 
-The proof is checked in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`. Inspection retains independent
+The proof was checked in a Lean environment. Inspection retains independent
 universe parameters `w`, `v`, `u` and uses only `propext`,
 `Classical.choice`, and `Quot.sound`.

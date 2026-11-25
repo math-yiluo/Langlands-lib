@@ -1,7 +1,5 @@
 # Dominant unramified morphisms over geometrically unibranch integral bases
 
-Authors: Worker 208 and Worker 122.
-
 `Langlands.AlgebraicGeometry.DominantUnramifiedEtaleProof.dominantUnramifiedEtale`
 proves exactly `Langlands.AlgebraicGeometry.DominantUnramifiedEtaleStatement.{u}`
 for an arbitrary universe `u`. For actual integral schemes `X` and `Y` and a

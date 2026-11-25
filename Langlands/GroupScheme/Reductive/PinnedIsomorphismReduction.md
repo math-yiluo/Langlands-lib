@@ -1,7 +1,5 @@
 # Reduction of the pinned Isomorphism Theorem to three prerequisites
 
-Author: Worker 1416.
-
 This internal assembly proves two transport lemmas and a conditional result,
 and bundles the hypotheses of the conditional result into one proposition.
 
@@ -44,7 +42,7 @@ conclusion is the unchanged target statement, with every binder and the full
 conclusion.
 
 The module also uses the torus isomorphism of a root-datum equivalence from
-[`PinningLattice`](PinningLattice.md) (Worker 1467):
+[`PinningLattice`](PinningLattice.md):
 `SplitPinning.torusIsoOfRootDatumEquiv p q e : p.torus ≅ q.torus`, with its
 character equation `torusIsoOfRootDatumEquiv_character` (the inverse
 character pullback is `e.weightEquiv`), its cocharacter equation

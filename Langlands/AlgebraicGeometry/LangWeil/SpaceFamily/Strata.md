@@ -1,6 +1,6 @@
 # Degree strata of the base of a separated algebraic space with a smooth chart
 
-Author: Worker 75. A helper module of the proof of
+A helper module of the proof of
 `Langlands.AlgebraicGeometry.LangWeil.SpaceUniformLangWeilOfFamilyStatement`. Provenance:
 internal.
 

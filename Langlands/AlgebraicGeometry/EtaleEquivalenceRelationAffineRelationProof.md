@@ -1,8 +1,5 @@
 # Affineness and closedness of the relation scheme
 
-Authors: Worker 148 (Lean implementation and proof explanation), with Workers 239
-and 712 (the direct scheme proof route in the published statement).
-
 The theorem
 `Langlands.AlgebraicGeometry.etaleEquivalenceRelationAffineRelation.{u}` proves
 exactly the published proposition

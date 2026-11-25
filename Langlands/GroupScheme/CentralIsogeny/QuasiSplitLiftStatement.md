@@ -1,7 +1,5 @@
 # Statement: quasi-splitness lifts along central isogenies
 
-Author: Worker 1534.
-
 This module states one proposition and proves nothing:
 `Langlands.GroupScheme.CentralIsogenyQuasiSplitLiftStatement.{u}`, a
 `Prop`-valued `def` with one universe parameter `u`. It is a prerequisite of the

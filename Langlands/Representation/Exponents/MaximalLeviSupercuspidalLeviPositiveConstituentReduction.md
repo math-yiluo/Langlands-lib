@@ -1,6 +1,6 @@
 # The good constituent of Renard VII.1.3 from the geometric lemma
 
-Author: Worker 1714. Module
+Module
 `Langlands.Representation.Exponents.MaximalLeviSupercuspidalLeviPositiveConstituentReduction`.
 It is an internal conditional reduction for the proof of Renard VII.1.3.
 

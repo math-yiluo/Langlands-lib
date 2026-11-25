@@ -3,7 +3,7 @@
 `Langlands.AlgebraicGeometry.QuasiSeparatedTestIsoDetectionStatement.{u}`
 is a proposition definition. It states a criterion for a morphism of schemes
 over a base to be an isomorphism, tested only on quasi-separated test
-schemes. This unit defines the proposition and supplies no proof of it.
+schemes. This module defines the proposition and supplies no proof of it.
 
 ## Exact statement
 
@@ -60,7 +60,7 @@ content: it allows comparison with functors that are only defined, or only
 known, on quasi-separated test schemes, without first proving the target
 parameter schemes quasi-separated.
 
-The criterion was isolated for the relative dual geometry workflow. There
+The criterion was isolated for the geometry of the relative dual. There
 the Library's chosen parameter scheme `dualScheme A hA`, used in
 `Langlands.AbelianScheme.RelativeDualSchemeFlatStatement` and
 `Langlands.AbelianScheme.RelativeDualSchemeFinitePresentationStatement`, has
@@ -77,11 +77,11 @@ It does not construct any comparison morphism, does not prove bijectivity
 for any particular functor, and does not establish any property of a
 representing scheme.
 
-## Remaining proof obligations
+## Proof obligations
 
-A proof of this proposition is the separate obligation of an exact-target
-proof task. It must establish a genuine inverse scheme morphism over `S`
-from the stated tests. Unfolding this definition, or citing a
+The module `QuasiSeparatedTestIsoDetectionProof` proves this proposition
+(`quasiSeparatedTestIsoDetection`). A proof must establish a genuine inverse
+scheme morphism over `S` from the stated tests. Unfolding this definition, or citing a
 representability theorem, is not a proof.
 
 One possible route, not established here, is the following. Cover

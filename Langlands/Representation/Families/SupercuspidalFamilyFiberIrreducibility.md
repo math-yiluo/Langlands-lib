@@ -7,7 +7,7 @@ universal unramified family `ρ_B` of a smooth representation `σ` of `M(F)`, in
 character `ψ`. The theorem says this specialization is irreducible whenever the complex
 induction `i_P^G(σ ⊗ ψ)` is irreducible.
 
-The module does **not** prove the task target `SupercuspidalFamilyEndomorphismStatement`.
+The module does **not** prove the target `SupercuspidalFamilyEndomorphismStatement`.
 That proof also needs generic irreducibility (VI.8.5) and admissibility of irreducible
 supercuspidal representations of `M(F)`. Neither is in the Library unconditionally.
 
@@ -140,7 +140,7 @@ irreducible. Then the specialization along `χ`,
 `(Module.End.baseChangeHom B ℂ (LeviInduced … ρB)).toMonoidHom.comp
 (leviInducedRepresentation … ρB)`, is irreducible. This is the fiber hypothesis of the
 published `EndomorphismScalarStatement` at the point `χ`. The conclusion is word for word
-the body of `SupercuspidalFamilyFiberStatement` from Worker 5205's reduction module
+the body of `SupercuspidalFamilyFiberStatement` from the reduction module
 `RenardSupercuspidalFamilyEndomorphismReduction`.
 
 The proof supplies the inputs of `isIrreducible_baseChange_leviInduced`:

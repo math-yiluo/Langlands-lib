@@ -49,7 +49,7 @@ the displayed operator equality at the chosen parameter.
 
 The provenance is internal: the proof composes the existing actual convolution
 exchange, direct inverse-transpose transport, nonzero monomial comparison, and
-operator evaluation. This contribution does not extend the equation to arbitrary
+operator evaluation. This module does not extend the equation to arbitrary
 full-matrix tests or assemble the closed normalized functional-equation data.
 
 ## All-field port

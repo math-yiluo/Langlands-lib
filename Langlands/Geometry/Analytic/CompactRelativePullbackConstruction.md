@@ -30,7 +30,4 @@ to which `isContinuousAction_of_isPullback_of_quasiEtale` applies.
 `IsContinuousAction.of_equivariant_domainEmbedding` gives continuity
 on the cut. The data retain the equivariance of both projections.
 
-This is an internal construction for the tuple-cone proof. Worker 659
-proved compactness of the cut and continuity for the product and its
-domain. Worker 611 proved the diagonal and common-product results and
-assembled the relative pullback.
+This is an internal construction for the tuple-cone proof.

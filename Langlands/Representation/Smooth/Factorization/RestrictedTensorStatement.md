@@ -127,9 +127,9 @@ The sole direct project import is
 `Langlands.Representation.RestrictedTensor.Smooth`. It imports
 `RestrictedTensor.Action`, `RestrictedTensor.Maps`, `RestrictedTensor.Basic`
 and `Representation.Smooth.Definitions`. All five pairs are published in the
-workspace's Library base
+Library base
 `30ceb5a0d89d8094c1663fc19f35416519b9a125`. The environment is
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`: Lean 4.34.0, Mathlib
+Lean 4.34.0, Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.
 
 Neither `RestrictedTensor.Separation` nor a two-factor statement is imported to
@@ -145,14 +145,18 @@ retains the exceptional indices outside `A`.
 
 This existing algebraic separation is available for proof work, but does not
 alone establish any of the four representation-theoretic targets above or
-general Flath decomposition. General factorization existence, the spherical
-Hecke algebra hypothesis of Theorem 2, the archimedean `(g,K)` category of
-Theorem 3, and the Hilbert completion of Theorem 4 remain separate obligations.
+general Flath decomposition. General factorization existence, under the
+spherical Hecke algebra hypothesis of Theorem 2, is
+`FlathRestrictedProductExistenceStatement`, proved in
+`RestrictedProductExistenceProof`. The archimedean `(g,K)` category of
+Theorem 3 and the Hilbert completion of Theorem 4 are not part of this group.
 This group supplies prerequisites for local components; it does not define
 cuspidal automorphic representations, Satake data, or the higher-rank
 Jacquet–Shalika and Arthur–Clozel statements.
 
-Worker 44 authored this pair over the published constructions. Compilation
-and declaration inspection check well-formed propositions; independent
-semantic review and publication are still required, and theorem proofs remain
-separate work.
+This pair is built over the published constructions. Compilation
+and declaration inspection check well-formed propositions. The four clauses
+are proved in `RestrictedTensorAdmissibilityProof`,
+`RestrictedTensorIrreducibilityProof`, `RestrictedTensorReferenceIndependenceProof`
+and `RestrictedTensorUniquenessProof`, and `flathRestrictedTensor` in
+`FlathRestrictedTensorProof` assembles them.

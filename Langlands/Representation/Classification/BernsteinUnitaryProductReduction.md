@@ -1,7 +1,5 @@
 # Binary reduction for Bernstein's unitary product theorem
 
-Author: Worker 103.
-
 This internal reduction isolates the positive-rank binary irreducibility input
 needed by `Langlands.Classification.BernsteinUnitaryProductIrreducibility`.
 It does not prove the binary input or the final theorem unconditionally.

@@ -64,7 +64,7 @@ inside `namespace Langlands.AlgebraicGeometry.Modules`, with
 `Mathlib.AlgebraicGeometry.Morphisms.Smooth` and
 `Mathlib.Algebra.DirectSum.Module`. With `pp.fullNames true`,
 `pp.fieldNotation false`, `pp.proofs true` and `pp.funBinderTypes true`,
-`#print` in the approved environment reports:
+`#print` reports:
 
 ```text
 def Langlands.AlgebraicGeometry.Modules.CoherentFieldExternalTensorKunnethStatement.{u} : Prop :=
@@ -245,7 +245,7 @@ Library's cohomology.
   is the subtype-indexed direct sum described above.
 
 Smoothness is an additional hypothesis that the source lemma does not need.
-It is kept because the contract fixes the smooth proper interface used for
+It is kept because it is the smooth proper interface used for
 abelian schemes. It makes the proposition weaker, not stronger, than the
 source specialization.
 
@@ -253,7 +253,7 @@ source specialization.
 
 For a Library `A : AbelianScheme (Spec (CommRingCat.of K))` the structure
 morphism `A.X.hom` carries the instances `A.smooth : Smooth A.X.hom` and
-`A.proper : IsProper A.X.hom`. A private check in the approved environment
+`A.proper : IsProper A.X.hom`. A check outside this module
 confirmed that, for any field `K` with `IsAlgClosed K`, any such `A`, any
 `L : LineBundle A.X.left` and any `n`, the term
 `h K A.X A.X L L n` has the self-product type, where `h` is a proof of this
@@ -266,7 +266,7 @@ condition on `L`.
 The statement covers every universe `u`, every field `K` of every
 characteristic, all degrees `n : ℕ` including `0`, and every dimension. In
 dimension zero, `Over.mk (𝟙 (Spec K))` is smooth and proper; the same
-private check confirmed both instances. The empty scheme over `Spec K` is
+check confirmed both instances. The empty scheme over `Spec K` is
 also allowed; then both sides are zero.
 
 The only geometric hypotheses are smoothness and properness of `X.hom` and
@@ -275,11 +275,11 @@ line-bundle triviality or translation-invariance condition, and no
 supplied cohomology, affine cover, acyclicity, Čech-to-derived comparison,
 perfectness or Künneth premise.
 
-## Proof obligations for the later exact proof
+## Proof obligations for the exact proof
 
-After independent acceptance and publication, a separate exact-target proof
-must have this entire named proposition as its type, with no extra outer
-hypotheses. The Stacks proof of tag 0BED (`varieties.tex` lines 5459-5630)
+The proof `coherentFieldExternalTensorKunneth` (module
+`CoherentFieldExternalTensorKunnethProof`) has this entire named proposition
+as its type, with no extra outer hypotheses. The Stacks proof of tag 0BED (`varieties.tex` lines 5459-5630)
 suggests the following obligations. None is proved here.
 
 1. All-degree derived comparison. For a separated quasi-compact scheme over
@@ -289,10 +289,10 @@ suggests the following obligations. None is proved here.
    (`coherent.tex`, `lemma-cech-cohomology-quasi-coherent`) together with
    affine vanishing (tag 01XB). It is needed for `X.left`, `Y.left` and,
    on the source route, for `P.left`, which is proper over `Spec K` and
-   hence also separated and quasi-compact. Worker 958 owns an in-progress
-   all-degree Čech-to-derived comparison (AB2) under task
-   `5056e5fc-5861-489e-adae-be84a23164c5`. The proof should reuse that
-   comparison once it is published, and must not duplicate it. This
+   hence also separated and quasi-compact. The all-degree Čech-to-derived
+   comparison is in the Library as
+   `CechResolution.nonempty_relativeCohomology_iso_cechCochainComplex_homology`
+   (module `CechResolution.CechCohomologyIso`), and the proof uses it. This
    statement does not assume it.
 2. Affine section calculation. For affine opens `U ⊆ X.left` and
    `V ⊆ Y.left`, identify the sections of `p₁^*L ⊗ p₂^*M` over the affine
@@ -368,18 +368,13 @@ The existing degree-one results
 `Langlands.AlgebraicGeometry.Picard.fieldTwoAxisH1Injectivity`, for `H¹` of
 structure sheaves, and the abstract degree-one
 `Langlands.Algebra.TensorDegreeOneKunneth` may be reused where they apply.
-They are not proofs of this all-degree statement. Substantial missing
-inputs need separate definitions, statements and unconditional proofs, in
-dependency order.
+They are not proofs of this all-degree statement.
 
-## Role and authorship
+## Role
 
-This is a focused prerequisite of the exact proof task
-`a45129b4-368e-4cd9-813b-e2e884897b35`, which proves
+This is a focused prerequisite of the proof of
 `Langlands.AbelianScheme.AlgClosedFieldTranslationInvariantCohomologyVanishingStatement`
-(EVM Lemma (7.19)). That host target, the parent translation-difference
+(EVM Lemma (7.19)), `algClosedFieldTranslationInvariantCohomologyVanishing` in
+`Picard.TranslationInvariantCohomologyVanishingProof`. That statement, the translation-difference
 lifting statement and any downstream dual or Picard existence result are
 neither used nor cited as justification here.
-
-Worker 1137 implemented the Lean declaration and this Markdown, following
-the task specification.

@@ -1,14 +1,12 @@
 # Kernel and inverse-power exhaustion of the actual endomorphism localization: proof
 
-Author: Worker 900, for proof task `27b06f5a-9788-4307-b9d1-950763a472ec`
-under the whole-book Renard parent `f5d1f399-a1f8-4ab5-a981-90b92abd4857`.
-The target statement was published in Library commit
+The target statement entered the Library in commit
 `cb6a47b2390bdcd0be78fac0552b7fd5c46cd51b`.
 
 ## Target
 
 The module `Langlands.Algebra.RenardEndomorphismLocalizationKernelProof`
-imports the published statement module
+imports the statement module
 `Langlands.Algebra.RenardEndomorphismLocalizationStatements` unchanged and
 proves
 
@@ -17,7 +15,7 @@ theorem kernelExhaustionStatements : KernelExhaustionStatements.{u, v}
 ```
 
 in namespace `Langlands.Renard.EndomorphismLocalization`. The theorem has no
-section parameters; its type is exactly the published aggregate: the ring
+section parameters; its type is exactly the aggregate: the ring
 statement `KernelExhaustionStatement.{u,v}` together with the field
 specialization `FieldKernelExhaustionStatement.{u,v}`. The coefficient
 universe `u` and the module universe `v` are independent.
@@ -28,13 +26,13 @@ Every helper is stated for an arbitrary commutative unital ring `R : Type u`,
 an `R`-module `V : Type v` and an arbitrary endomorphism `a : Module.End R V`.
 None assumes finite generation, finite dimension, Noetherianity,
 nontriviality or injectivity, except the displayed hypothesis of
-`iota_injective`. The helpers use only the published construction
+`iota_injective`. The helpers use only the construction
 `Langlands.Algebra.RenardEndomorphismLocalization` (`Localized`, `iota`,
 `localizedInv`, `frac`) and do not redefine it.
 
 - `iota_eq_zero_iff a z : iota a z = 0 ↔ ∃ n, (a ^ n) z = 0`.
   The proof writes `iota a z` as `frac a z 0` (`frac_zero`) and `0` as
-  `frac a 0 0` (from `frac_zero` and `map_zero`). The published equality
+  `frac a 0 0` (from `frac_zero` and `map_zero`). The equality
   criterion `frac_eq_frac_iff` then says the two fractions are equal exactly
   when `(a ^ (k + 0)) z = (a ^ (k + 0)) 0` for some `k`. `simp` with
   `add_zero` and `map_zero` reduces this to `∃ k, (a ^ k) z = 0`.
@@ -56,7 +54,7 @@ nontriviality or injectivity, except the displayed hypothesis of
 - `iUnion_range_localizedInv_pow a :
   (⋃ n, Set.range ((localizedInv a ^ n).comp (iota a))) = Set.univ`.
   This is a literal equality of sets in `Localized a`. For any element
-  `z`, the published lemma `frac_surjective` gives `w` and `n` with
+  `z`, the lemma `frac_surjective` gives `w` and `n` with
   `frac a w n = z`. Then `frac_eq_localizedInv_pow` rewrites this as
   `(localizedInv a ^ n) (iota a w)`. So `z` lies in the `n`-th member of the
   union, witnessed by `w`.
@@ -80,6 +78,6 @@ The book's route is not needed for this proof. The field implication matches
 Renard 2026, A.III.1, lemma (i) after example 5 (printed253/PDF259). The
 kernel equalities and the literal exhaustion are the derived formulations
 recorded in the paired statement Markdown. The extension to commutative
-rings is internal. This module proves nothing beyond the published
-aggregate. The quotient, comparison, converse, B-action and C.II obligations
-of parent `f5d1f399-a1f8-4ab5-a981-90b92abd4857` remain open.
+rings is internal. This module proves nothing beyond the
+aggregate. The quotient, comparison, converse, B-action and C.II results
+are outside this module.

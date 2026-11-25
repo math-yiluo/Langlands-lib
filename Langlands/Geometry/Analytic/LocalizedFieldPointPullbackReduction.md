@@ -33,6 +33,8 @@ arrows and uses the same strong/localized étale comparison.
 The provenance is internal: the proof combines the existing full
 right-fraction calculus, common strong numerators, the actual étale
 composition and comparison results, and categorical invariance of pullback
-squares under isomorphisms. This unit does not establish the remaining
+squares under isomorphisms. This module does not establish the remaining
 geometric preservation assertion for strong squares and does not prove the
-host task's unconditional target.
+unconditional statement `LocalizedEtaleFieldPointPullbackStatement`; the
+Library proves it as `localizedEtaleFieldPointPullback` in
+`LocalizedEtaleFieldPointPullbackProof`.

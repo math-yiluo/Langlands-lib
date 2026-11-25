@@ -24,8 +24,8 @@ private theorem scalarHom_id_naturality {S : AlgebraicGeometry.Scheme.{0}}
 
 private theorem eq_scalar_iff_of_iso {S : AlgebraicGeometry.Scheme.{0}}
     {M N : S.Modules} (e : M ≅ N) (α : End M) (β : End N)
-    (h : α ≫ e.hom = e.hom ≫ β) (r : Γ(S, ⊤)) :
-    α = scalarHom r (𝟙 M) ↔ β = scalarHom r (𝟙 N) := by
+    (h : α.asHom ≫ e.hom = e.hom ≫ β.asHom) (r : Γ(S, ⊤)) :
+    α.asHom = scalarHom r (𝟙 M) ↔ β.asHom = scalarHom r (𝟙 N) := by
   have hr := scalarHom_id_naturality r e.hom
   constructor
   · intro hα
@@ -45,7 +45,7 @@ variable (L : Type) [Field L] [NumberField L] [IsCMField L]
 
 /-- On the positive tensor factor the central `E` action equals the structural scalar action. -/
 def PositiveLieScalarCondition : Prop :=
-  ∀ a : E, lieTensorAction L s B i false (algebraMap K A (algebraMap E K a)) =
+  ∀ a : E, (lieTensorAction L s B i false (algebraMap K A (algebraMap E K a))).asHom =
     scalarHom (secHom s ⊤ (algebraMap E K a)) (𝟙 (lieTensorSheaf L s B i false))
 
 /-- The source compatibility condition, using its actual original-order positive tensor sheaf. -/
@@ -55,7 +55,7 @@ def LieCompatibility (n : ℕ) : Prop :=
 
 /-- The same scalar condition on the constructed full positive Lie eigensubsheaf. -/
 def PositiveLieEigenScalarCondition : Prop :=
-  ∀ a : E, lieEigensheafAction L s B i false (algebraMap K A (algebraMap E K a)) =
+  ∀ a : E, (lieEigensheafAction L s B i false (algebraMap K A (algebraMap E K a))).asHom =
     scalarHom (secHom s ⊤ (algebraMap E K a)) (𝟙 (lieEigensheaf L s B i false))
 
 /-- The eigensubsheaf version of the rank and scalar compatibility condition. -/
@@ -79,7 +79,7 @@ theorem lieCompatibility_iff_eigensheaf (n : ℕ) :
 
 variable {B} {B' : AbelianScheme S} (i' : A →ₐ[ℚ] End0 B')
   (e : Langlands.Rationalization.of B ≅ Langlands.Rationalization.of B')
-  (he : ∀ a : A, comp0 B B B' (i a) e.hom = comp0 B B' B' e.hom (i' a))
+  (he : ∀ a : A, comp0 B B B' (i a).asHom e.hom = comp0 B B' B' e.hom (i' a).asHom)
 
 include e he in
 /-- Actual equivariant rational isomorphisms preserve equality of the two central actions. -/

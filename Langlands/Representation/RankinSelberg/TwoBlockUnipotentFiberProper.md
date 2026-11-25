@@ -1,9 +1,8 @@
 # Compact finiteness and s-finiteness of the radical fiber kernel
 
-Authors: Worker 113 and Worker 235. Internal derived support for the unchanged
-two-block unipotent quotient integration statement. Worker 235 supplied the
-coordinate homeomorphism and radical-coordinate API used in the compactness
-proof; Worker 113 supplied the compactness proof and the kernel consequences.
+Internal derived support for the unchanged two-block unipotent quotient
+integration statement. The coordinate homeomorphism and radical-coordinate API
+used in the compactness proof come from `TwoBlockUnipotentQuotientCoordinates`.
 
 `fiberPoint_isCompact_preimage` proves that the radical fiber map
 `x ↦ [u(x) g]_H` has compact preimages of compact sets. Here the two positive
@@ -40,7 +39,7 @@ countability give a countable compact cover. Applying
 coset representatives and no uniform bound on the total masses of the fibers.
 
 These results are internal consequences of the published quotient topology and
-block/radical definitions, Worker 235's coordinate homeomorphism, and the
+block/radical definitions, the coordinate homeomorphism, and the
 measurable-kernel support lemmas. No separate literature theorem is claimed.
 The module establishes neither the normalized quotient-measure tower nor the
 final integration statement.

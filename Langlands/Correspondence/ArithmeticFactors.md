@@ -1,6 +1,6 @@
 # Arithmetic pair factors on the correspondence domains
 
-Author: Worker 7. This module defines the Weil–Deligne side of the pair-factor
+This module defines the Weil–Deligne side of the pair-factor
 conditions of the local Langlands correspondence for `GL_n(F)`: the pair
 L-factor `L(s, X ⊗ Y)` and the pair epsilon factor `ε(s, X ⊗ Y, ψ)` of two
 pair classes of the actual local Weil group of a p-adic field `F`. The
@@ -165,11 +165,11 @@ The module imports, and does not copy: `Weil.Local.Assembly`
 `LocalFactor.NonabelianSystem` (`Assignment`, `IsSystem`),
 `LocalFactor.CommonClosureGamma` (`conditionalPairEpsilonValue`),
 `LocalFactor.RankOne` (`ReciprocityCandidate`, `reciprocityUnits`) and
-`RankinSelberg.FunctionalEquationStatement` (`epsilonMonomial`). From this
-task it uses `Domains` (`IrreducibleWeilClass`, `weilClassForget`) and the
+`RankinSelberg.FunctionalEquationStatement` (`epsilonMonomial`). From
+`Langlands.Correspondence` it uses `Domains` (`IrreducibleWeilClass`, `weilClassForget`) and the
 reciprocity names of `OperationCompatibility`.
 
 ## Validation
 
-The module compiles in the project Lean service with no errors or warnings.
+The module compiles with no errors or warnings.
 There is no `sorry` and no new axiom. Every relation returns `Prop`.

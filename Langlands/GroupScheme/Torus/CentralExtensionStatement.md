@@ -1,7 +1,5 @@
 # A central extension of a torus by a torus is a torus: statement
 
-Worker 1395.
-
 `CentralTorusExtensionStatement.{u}` concerns a field `k : Type u`, a
 group scheme `E` over `Spec (CommRingCat.of k)`, a commutative group
 scheme `Z` over `Spec k` and a homomorphism `z : Z.toGrp ⟶ E`, with these
@@ -86,7 +84,8 @@ connectedness of `E` would be harder to prove than centrality.
 - The hypothesis `IsAffineHom p.hom.hom.left` follows from the other
   hypotheses, so it does not restrict the source's setting: `p` is a
   torsor under the affine group `Z`, so `p` is affine by fpqc descent of
-  affineness. Neither Mathlib nor the Library
-  has that descent, so the statement assumes it. The consumer
+  affineness. The statement assumes it; the fpqc descent of affineness is in
+  the Library as `affine_descendsAlong_fpqc` (module
+  `AlgebraicGeometry/SchemeFlatPropertyDescent`). The consumer
   [`CentralMaximalTorusQuotientReductionStatement`](CentralMaximalQuotientReduction.md)
   supplies it, because there `p` is a base change of an affine morphism.

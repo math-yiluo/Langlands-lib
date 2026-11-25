@@ -1,7 +1,7 @@
 # Orbits of pairing-preserving actions on simple roots
 
-This module is an internal prerequisite for the quasi-split Steinberg quotient
-task. It describes the orbits of a group that acts on the simple roots of a
+This module is a prerequisite for the quasi-split Steinberg quotient
+`QuasiSplitSteinbergQuotientStatement`. It describes the orbits of a group that acts on the simple roots of a
 root datum and preserves the integral pairing. Each simple root is orthogonal
 to every other root in its orbit, with at most one exception. If an exception
 `c` exists, then `a` and `c` form an `A₂` pair: both pairings are `-1`, the
@@ -108,4 +108,8 @@ The remaining results follow from this bound.
 The module is pure root-datum combinatorics. It does not show that the ordinary
 Galois action of a quasi-split group is pairing-compatible, does not decide
 which orbits contain `A₂` pairs, and constructs no Steinberg cross-section.
-Those remain obligations of the host task.
+Those are part of the proof of `QuasiSplitSteinbergQuotientStatement`, which
+the Library gives as `quasiSplitSteinbergQuotient` in
+`Langlands.GroupScheme.Rational.QuasiSplitSteinbergQuotient`; pairing
+compatibility of the Galois action is shown in
+`Langlands.GroupScheme.Rational.QuasiSplitPinningOrbitPairs`.

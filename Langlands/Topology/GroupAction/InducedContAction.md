@@ -1,6 +1,6 @@
 # Induction and restriction of actual continuous topological actions
 
-Worker 56 constructs the induction functor and its adjunction to restriction
+This module constructs the induction functor and its adjunction to restriction
 on actual continuous topological actions. The namespace is
 `Langlands.TopologicalInduction`. The module imports the published balanced
 quotient from `InducedSpace` and reuses it by Lean name.

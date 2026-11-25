@@ -1,7 +1,5 @@
 # Radius-one comparison of actual quotient presentations
 
-Author: Worker 56.
-
 This construction sends a chosen strict affinoid presentation to the
 positive-polyradius presentation whose radii are all one and whose ideal is
 the inverse image of the original closed ideal under the existing

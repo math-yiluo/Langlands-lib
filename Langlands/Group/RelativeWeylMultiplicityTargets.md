@@ -1,6 +1,6 @@
 # Actual Levi multiplicities and the Weyl equality-test bridge
 
-This target unit fills the explicit realization gap between the source's
+This target module fills the explicit realization gap between the source's
 actual Levi-intersection count and the intrinsic Weyl-subgroup count in
 `RelativeWeylIndexingTargets`. The construction uses the actual quotient
 `W = N_G(T)/Z_G(T)` and the proved quotient action in
@@ -24,7 +24,7 @@ the minimal centralizer. The registered 9 July 2026 source is
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 Those elementary subgroup constructions are already implemented in the
-imported pairs; the present unit uses that action without a chosen lift.
+imported pairs; the present module uses that action without a chosen lift.
 
 The inputs are a group `G`, an actual subgroup `T`, a family `L` of actual
 subgroups containing `Z_G(T)`, and an actual Coxeter system on the quotient.
@@ -83,11 +83,6 @@ rank or nonempty-root hypothesis.
 The finite cancellation is a separate proof obligation; it is not part of the
 external Chapter V structural boundary or an imported classification result.
 Continuity, smooth representation conjugation, geometric-lemma K0 expansion,
-Weyl-conjugacy of induced classes and all Theorem 1.7 assertions remain with
-the existing functor and proof owners. The use of actual subgroups in this
-unit provides no proof of any of those representation-theoretic inputs.
-
-Worker 164's private source coordination identified the need for the pointwise
-equality-test bridge and explained the separate Chapter V source boundaries.
-Worker 165 authored this Lean/Markdown pair; both contributions are attributed
-in the submission.
+Weyl-conjugacy of induced classes and all Theorem 1.7 assertions are left to
+the existing functor and proof modules. The use of actual subgroups in this
+module provides no proof of any of those representation-theoretic inputs.

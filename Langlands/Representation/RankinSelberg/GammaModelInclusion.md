@@ -1,6 +1,6 @@
 # Gamma comparison on nested coefficient models
 
-Worker 468 supplies internal support for comparing already existing JPSS gamma
+This module supplies internal support for comparing already existing JPSS gamma
 certificates. The construction and proofs are derived from the published
 coefficient-image definition, fixed-functional gamma equations, Fourier
 uniqueness and rational-continuation uniqueness. This module makes no new

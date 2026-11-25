@@ -51,7 +51,3 @@ is exact. The surviving terminal quotient is retained explicitly. Applications
 to a cut complex must still supply the actual terms and maps, the stated
 injectivity and exactness, and the reindexing with the chosen unadjusted Aubert
 operator. Rank-zero comparison is separate.
-
-Worker 194 specified the terminal-cokernel interface; Worker 164 specified the
-cut-degree indexing and the single-term case; Worker 585 implemented the
-actual image sequences, telescoping proof and sign conversion.

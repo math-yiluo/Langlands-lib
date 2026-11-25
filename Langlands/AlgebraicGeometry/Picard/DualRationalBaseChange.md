@@ -52,8 +52,7 @@ and existence, geometry, inverse line bundles and evaluation data
 at the required endpoints remain explicit. These are the same
 actual constructions used by the integral target.
 
-Worker 57 implemented the rational extension following Worker 144's
-integral-square and involution-transport analysis. This is internal
+This is internal
 algebraic compatibility of existing constructions, with no additional
 literature theorem asserted. The integral naturality theorem remains
 a named hypothesis. No polarization, faithfulness after pullback,

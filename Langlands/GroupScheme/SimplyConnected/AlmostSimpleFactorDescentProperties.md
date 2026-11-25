@@ -1,6 +1,6 @@
 # Almost-simplicity of the descended factor
 
-This internal construction by Worker 166 proves reflection of almost-simplicity
+This internal construction proves reflection of almost-simplicity
 and absolute almost-simplicity along arbitrary field extensions, then applies
 reflection to the actual selected factor over its stabilizer field.
 

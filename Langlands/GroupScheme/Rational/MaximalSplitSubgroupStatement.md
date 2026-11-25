@@ -1,7 +1,5 @@
 # Borel–Tits 7.2: a split reductive subgroup through a maximal split torus
 
-Author: Worker 162 (Task 7779).
-
 `Langlands.GroupScheme.MaximalSplitSubgroupStatement.{u}` is a statement-only, `Prop`-valued
 definition. This module proves nothing and adds no other declarations.
 

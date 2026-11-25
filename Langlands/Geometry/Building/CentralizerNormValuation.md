@@ -1,7 +1,5 @@
 # Norm characters and the integer centralizer valuation
 
-Author: Worker 1045.
-
 This internal module relates the published norm character
 `Langlands.Plancherel.TorusNormKernel.normCharacter` to the integer
 centralizer valuation `Langlands.Geometry.Building.IntegerValuation.centralizerValuation`.

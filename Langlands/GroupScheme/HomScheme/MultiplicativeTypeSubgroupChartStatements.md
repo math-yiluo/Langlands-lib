@@ -1,7 +1,5 @@
 # Chart covers for multiplicative-type subgroups
 
-Author: Worker 872.
-
 `MultiplicativeTypeSubgroupModuli.ChartCoverStatement.{u}` asks for a
 family of actual smooth open subgroup charts for each smooth affine
 group scheme over every base scheme. The charts must cover the

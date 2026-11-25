@@ -35,7 +35,9 @@ image theorem. For finitely many labels, the existing constructible-membership
 lemma gives one open neighbourhood of a generic point on which all these
 image predicates have the same truth values as at the generic point.
 
-This unit does not identify these base image predicates with the incidence of
+This module does not identify these base image predicates with the incidence of
 the geometric base changes of the cover. That compatibility, geometric
 connectedness and covering after spreading, the finite splitting base change,
-and arbitrary-ring approximation remain separate inputs to the host theorem.
+and arbitrary-ring approximation are separate inputs to the statement this
+module serves, `GeometricFibreComponentsConstructibleStatement` (Conrad,
+Lemma 5.1).

@@ -2,8 +2,6 @@
 
 Module `Langlands.BruhatTits.IntegralModels.UnramifiedRootIntersectionReduction`.
 
-Author: Worker 99.
-
 This internal supporting module works over the maximal unramified extension
 `K = inertiaFixedField F` of a nonarchimedean local field `F`, in arbitrary
 universe `u`. It reproves two published arguments under a weaker hypothesis on

@@ -1,7 +1,5 @@
 # Relative-root-system assembly from four explicit structural inputs
 
-Author: Worker 1225.
-
 `RelativeRootSystemReductionStatement.{u}` is the conditional implication from
 four geometric statements to the existing `RelativeRootSystemStatement.{u}`.
 The theorem `relativeRootSystemReduction` proves this implication using
@@ -39,8 +37,16 @@ come from `IsSplitTorus.exists_genericCocharacter` and
 Weyl image, and faithful action come from
 `RelativeRootReflectionData.hasRelativeRootSystem_of_positive_stabilizer`.
 
-The remaining geometric proof obligations include the corrected CGP route for
-reflection existence. This reduction asserts no new external geometric theorem
-and does not resolve the host task's Milne-errata obligation. Discharging the
-four explicit inputs with independently accepted proofs would permit a theorem
-whose type is the unconditional exact host target.
+The geometric inputs include reflection existence, by the corrected CGP route.
+The Library proves it as `relativeRootReflectionExistence` (module
+`Rational.RootReflectionExistenceProof`), and the other three inputs as
+`parabolicDynamic` (module `Absolute.ParabolicDynamicProof`),
+`parabolicSelfNormalizer` (module `Rational.ParabolicNormalizerProof`) and
+`genericCentralizer` (module `Rational.GenericCentralizerProof`). This
+reduction asserts no new external geometric theorem and does not resolve the
+warning of Milne's errata (entry “p.549”) that the classical proofs of the
+relative root system are incomplete. Combining this reduction with proofs of
+the four explicit inputs gives a theorem whose type is the unconditional exact
+`RelativeRootSystemStatement`. The Library proves that statement as
+`relativeRootSystem` (module `Rational.RelativeRootSystemProof`) by another
+route, from rank-one opposite factor pairs, without this module.

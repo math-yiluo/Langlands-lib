@@ -1,7 +1,5 @@
 # The polar-part counting identity
 
-Worker 563, Task 7381, revision 1.
-
 `Langlands.Henniart.polarPartCountingIdentity` proves
 `Langlands.Henniart.PolarPartCountingIdentityStatement`. The identity is
 equation (2), `eq:polar`, in Lemma 3.3 (`lem:polar`) of the operator note

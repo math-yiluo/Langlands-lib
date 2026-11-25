@@ -20,7 +20,7 @@ The proof combines two results.
    valuation ring, to which `DvrCoreStatement` applies. A locally constructible set stable
    under specialization is closed. Closedness gives the second clause, because a generic
    point specializes to every point.
-2. `ConnectedFibreLocus.dvrCore` (module `ConnectedFibreLocusDvrCoreProof`, by Worker 801)
+2. `ConnectedFibreLocus.dvrCore` (module `ConnectedFibreLocusDvrCoreProof`)
    proves `DvrCoreStatement`. Over a discrete valuation ring `R` the published relative
    identity component `H ⊆ G` is smooth, affine and geometrically connected, and it is
    reductive by `ConnectedFibreDvrGeometry`. If the generic fibre of `G` is connected, the

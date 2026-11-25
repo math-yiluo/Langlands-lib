@@ -1,10 +1,9 @@
 # Statement: every rational point lies in a Borel subgroup
 
-Author: Worker 1531.
-
 This module defines the proposition
-`Langlands.GroupScheme.BorelPointContainmentStatement.{u}`. A separate proof
-must prove this exact proposition.
+`Langlands.GroupScheme.BorelPointContainmentStatement.{u}`. A separate module,
+`Absolute.BorelPointContainmentProof`, proves this exact proposition as
+`borelPointContainment`.
 
 ## Complete Lean proposition
 
@@ -85,7 +84,7 @@ A. Borel, *Linear Algebraic Groups*, 2nd ed., Theorem 11.10.
 
 ## Boundary
 
-This unit states the proposition only. It does not prove it, and it supplies
+This module states the proposition only. It does not prove it, and it supplies
 no density, closedness or completeness results for `G/B`. Borel existence and
 conjugacy are published separately as `BorelConjugacyStatement` and are not
 premises here.

@@ -1,7 +1,5 @@
 # Absolute convergence of individual Schur pair terms
 
-Author: Worker 1767.
-
 This internal analytic helper proves summability of the geometric weight
 `r ^ sum α` over every finite tuple of natural exponents when `0 ≤ r < 1`.
 The proof inducts on tuple length, using the head/tail equivalence and the

@@ -22,7 +22,7 @@ Below, `T_p(f)` is `orderedDerivativeFamilyNorm v p f x`. This is the Euclidean
 norm of the array of all values `iteratedFDeriv ℝ p (f i) x (v ∘ w)`, over
 indices `i` and words `w : Fin p → A`.
 
-The proof is internal elementary analysis by Worker 94. Its only classical
+The proof is internal elementary analysis. Its only classical
 ingredient is the Leibniz rule for a bilinear product. The module imports only
 the statement module; that module's import closure is
 `Langlands.Analysis.OrderedDerivativeFamilyNorm` and Mathlib. The proof uses the

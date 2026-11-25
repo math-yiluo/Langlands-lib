@@ -106,6 +106,5 @@ through `IsAmple` and makes no cohomological assertion. Tags 01Q6 and 09NV
 had no comments. No displayed correction changed either statement used
 here.
 
-The Lean statement definitions and initial companion draft were supplied by
-Worker 770. Worker 689 checked the original passages, current comments,
-and Library correspondence and expanded this companion.
+The original passages, current comments,
+and Library correspondence were checked for this companion.

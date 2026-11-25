@@ -20,7 +20,7 @@ set_option autoImplicit false
 
 universe u uQ uV uE
 
-namespace Langlands.ClassField.Global.RelativeWeilGroup
+namespace Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 
 open Langlands.Global Langlands.Global.CompletionPadic
 open Langlands.Global.FunctionalEquationComparison Langlands.Global.AdelicFunctoriality
@@ -124,4 +124,4 @@ theorem centralActsBy_localClass [CompactSpace (AdeleQuotient F)] {r : ℕ}
   ⟨(P.localComponent z).padicObject (h z).1 (h z).2, rfl, fun f =>
     localComponent_scalar_of_hasCentralCharacter P ω hω z a f⟩
 
-end Langlands.ClassField.Global.RelativeWeilGroup
+end Langlands.ClassFieldTheory.Global.RelativeWeilGroup

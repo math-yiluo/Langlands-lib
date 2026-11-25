@@ -1,7 +1,7 @@
 # Nested averaging of same-class canonical Jacquet lifts
 
-Worker 813 assembled this proof using Worker 209’s carried uniqueness
-argument and Worker 938’s published `blockStableImageAverageBridge`.
+This proof combines a uniqueness argument with the published
+`blockStableImageAverageBridge`.
 
 `Langlands.Jacquet.blockStableImageNestedAverage.{uF,uV}` proves
 `BlockStableImageNestedAverageClause F T B V` from

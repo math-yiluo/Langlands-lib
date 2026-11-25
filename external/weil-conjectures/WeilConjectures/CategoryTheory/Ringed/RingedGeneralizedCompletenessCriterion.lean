@@ -1,0 +1,91 @@
+/-
+Copyright (c) 2026 Bin Wu. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Bin Wu
+-/
+module
+public import WeilConjectures.CategoryTheory.Ringed.RingedPresentationData
+import all WeilConjectures.CategoryTheory.ProperBaseChange.ElementRestrictionHom
+import WeilConjectures.CategoryTheory.NativeRingedRestrictionLocalization
+import WeilConjectures.CategoryTheory.NativeRingedRestrictionHom
+import Mathlib.Algebra.Category.ModuleCat.Sheaf.PushforwardContinuous
+import Mathlib.Algebra.Homology.Additive
+import WeilConjectures.Algebra.Homology.HomComplex
+import WeilConjectures.Algebra.Homology.HomComplexProjections
+import Mathlib.Algebra.Category.ModuleCat.Sheaf.Abelian
+import Mathlib.Algebra.Category.ModuleCat.Sheaf.Limits
+import Mathlib.CategoryTheory.Limits.Preserves.Shapes.Products
+import WeilConjectures.CategoryTheory.Ringed.RingedSectionLocalizationOfUniversesSupplement
+import WeilConjectures.CategoryTheory.NativeRingedRestrictionSheafification
+import Mathlib.Algebra.Category.ModuleCat.Presheaf.Sheafification
+import Mathlib.CategoryTheory.Sites.PreservesLocallyBijective
+import WeilConjectures.CategoryTheory.NativeRingedRestrictionDerivedHom
+import WeilConjectures.Algebra.Homology.DerivedInternalHomOfUniverses
+import WeilConjectures.Algebra.Homology.DerivedInternalHom
+import WeilConjectures.SixFunctors.Etale.Derived.Hom
+import WeilConjectures.CategoryTheory.RingedSiteKInjectiveResolutionsOfUniverses
+import Mathlib.Algebra.Category.Grp.AB
+import Mathlib.Algebra.Category.ModuleCat.Sheaf.Colimits
+import Mathlib.Algebra.Category.Ring.Limits
+import Mathlib.Algebra.Homology.HomotopyCategory.KInjective
+import Mathlib.CategoryTheory.Abelian.GrothendieckCategory.Basic
+import Mathlib.CategoryTheory.Yoneda
+import Mathlib.Algebra.Category.ModuleCat.Presheaf.Free
+import Mathlib.CategoryTheory.Abelian.GrothendieckAxioms.Sheaf
+import Mathlib.CategoryTheory.Generator.Basic
+import WeilConjectures.Mathlib.Algebra.Category.ModuleCat.Presheaf.Sheafification
+import WeilConjectures.CategoryTheory.GrothendieckAbelian.KInjectiveResolutionInjective
+import WeilConjectures.Algebra.Homology.QuasiIsoHomComplexMapOfUniverses
+import Mathlib.Algebra.Category.Grp.FilteredColimits
+import WeilConjectures.Algebra.Homology.HomComplexSectionsQuasiIsoOfUniverses
+import WeilConjectures.CategoryTheory.SiteCoveringAxioms
+import Mathlib.CategoryTheory.Sites.PrecoverageToGrothendieck
+import Mathlib.CategoryTheory.Sites.SheafCohomology.Basic
+import WeilConjectures.CategoryTheory.RingedSiteModules
+import WeilConjectures.CategoryTheory.GrothendieckAbelian.KInjectiveResolution
+import WeilConjectures.CategoryTheory.DerivedCategory.RightDerivedFunctor.KInjective
+import WeilConjectures.CategoryTheory.DerivedCategory.RightDerivedFunctor.Triangulated
+import WeilConjectures.Algebra.Homology.HomotopyCategory.Products
+import WeilConjectures.CategoryTheory.Triangulated.DerivedLimit
+import Mathlib.CategoryTheory.Sites.Equivalence
+import Mathlib.CategoryTheory.Sites.LocallyBijective
+import Mathlib.Algebra.Homology.DerivedCategory.Basic
+import WeilConjectures.CategoryTheory.Sites.RGammaDerivedLimit
+import Mathlib.Algebra.Category.Grp.Abelian
+import WeilConjectures.Algebra.Homology.HomComplexSectionsDerivedNaturalityOfUniverses
+import WeilConjectures.Algebra.Homology.RhomIntoKInjectiveLocal
+import WeilConjectures.Algebra.Homology.KInjectiveRestrictLocalizedOfUniverses
+import WeilConjectures.Algebra.Homology.LocalizedRestrictionAdjunctionOfUniverses
+import WeilConjectures.Algebra.Homology.LocalizedRestrictionExtensionExistsOfUniverses
+import WeilConjectures.CategoryTheory.ExtensionByZeroPresheaf
+import Mathlib.Algebra.Category.ModuleCat.Presheaf.EpiMono
+import Mathlib.Algebra.Homology.ShortComplex.ExactFunctor
+import Mathlib.CategoryTheory.Adjunction.Additive
+import WeilConjectures.CategoryTheory.DerivedCategory.RightDerivedFunctor.Comp
+import Mathlib.Algebra.Homology.DerivedCategory.KInjective
+import WeilConjectures.Algebra.Homology.HomComplexSectionsHomotopyNaturalityOfUniverses
+import WeilConjectures.Algebra.Homology.HomComplexSectionsCanonicalComparisonOfUniverses
+import Mathlib.Algebra.Homology.HomotopyCategory.HomComplexShift
+import WeilConjectures.Algebra.Homology.HomComplexSectionsCochainsOfUniverses
+import WeilConjectures.Algebra.Homology.HomComplexSectionsCochainsCommOfUniverses
+import Mathlib.Algebra.Homology.HomotopyCategory.HomComplexCohomology
+import Mathlib.Algebra.Category.Grp.EpiMono
+import WeilConjectures.Algebra.Homology.LocalizedModuleRestrictionQuasiIsoOfUniverses
+import Mathlib.Algebra.Homology.QuasiIso
+import WeilConjectures.Mathlib.CategoryTheory.Sites.Continuous
+import WeilConjectures.Algebra.Homology.QuasiIsoOfSectionsOfUniverses
+import Mathlib.CategoryTheory.Sites.Abelian
+import Mathlib.Algebra.Homology.Functor
+import WeilConjectures.Mathlib.Algebra.Homology.DerivedCategory.ExactFunctor
+import WeilConjectures.CategoryTheory.Native.NativeRingedRestrictionSlicesSupplement
+import WeilConjectures.CategoryTheory.Ringed.RingedInternalHomExactRestrictionSupplement
+import WeilConjectures.Mathlib.Algebra.Homology.DerivedCategory.HomologySequence
+@[expose] public noncomputable section
+set_option autoImplicit false
+universe u
+open CategoryTheory CategoryTheory.Limits Opposite
+namespace CategoryTheory
+
+attribute [local instance] comp_preservesFiniteLimits comp_preservesFiniteColimits
+
+end CategoryTheory

@@ -1,7 +1,5 @@
 # Invariant compact complexes on actual induced rational spectra
 
-Author: Worker 13.
-
 This pair applies the existing invariant compact-section constructions to the
 full locally constant smooth sheaf on the actual balanced rational spectrum.
 It constructs the Godement complex, sheaf-derived invariant compact sections

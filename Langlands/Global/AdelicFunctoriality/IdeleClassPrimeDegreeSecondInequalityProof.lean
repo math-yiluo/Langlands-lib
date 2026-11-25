@@ -2,8 +2,8 @@ import Langlands.Global.AdelicFunctoriality.IdeleClassPrimeDegreeSecondInequalit
 import Langlands.Global.AdelicFunctoriality.CyclotomicSecondInequalityReduction
 import Langlands.Global.AdelicFunctoriality.IdeleClassNormIndexFiniteProof
 import Langlands.Global.AdelicFunctoriality.IdeleClassNormTowerProof
-import Langlands.ClassField.Global.IdeleClassGaloisDescentProof
-import Langlands.ClassField.Global.CyclicIdeleClassHerbrandAssembly
+import Langlands.ClassFieldTheory.Global.IdeleClassGaloisDescentProof
+import Langlands.ClassFieldTheory.Global.CyclicIdeleClassHerbrandAssembly
 import Langlands.Global.Arithmetic.KummerSecondInequality
 import Langlands.Global.Arithmetic.CyclicNonsplitPrimeProof
 
@@ -21,7 +21,7 @@ theorem ideleClassPrimeDegreeSecondInequality :
     ideleClassNormIndexFinite.{u, v} ideleClassNormTower.{u, v, v}
     (Langlands.Global.Arithmetic.KummerSecondInequality.ideleClassKummerPrimeDegreeSecondInequality_of.{v}
         Langlands.Global.cyclicNonsplitPrimeStatement.{v, v}
-        Langlands.ClassField.Global.ideleClassGaloisDescent.{v, v}
-        Langlands.ClassField.Global.cyclicIdeleClassHerbrandQuotient.{v, v})
+        Langlands.ClassFieldTheory.Global.ideleClassGaloisDescent.{v, v}
+        Langlands.ClassFieldTheory.Global.cyclicIdeleClassHerbrandQuotient.{v, v})
 
 end Langlands.Global.AdelicFunctoriality

@@ -49,6 +49,7 @@ actual model postcomposition, and transport along initial-set
 homeomorphisms. Independence of the spread topologies identifies these
 topologies with those in the target.
 
-This unit leaves its proof, existence of spreads for all finite-type
+Its proof is `adelicSpreadFunctoriality` in `AdelicSpreadFunctorialityProof`.
+This module leaves existence of spreads for all finite-type
 field-schemes, agreement with other point topology constructions, and the
 remaining conclusions of the paper as separate obligations.

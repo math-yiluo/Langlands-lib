@@ -44,8 +44,8 @@ is unchanged, as stated by `coe_unramifiedNeutralSharpFixerEquiv`.
 
 This is internal derived content from the actual centralizer construction,
 centralizer translations, generic apartment injection, smooth extension,
-connected factorization and neutral generation. Worker 200 suggested
-comparing the centralizer contributions for nearby fixer sets. The result
+connected factorization and neutral generation. The approach compares
+the centralizer contributions for nearby fixer sets. The result
 assumes that both full models are already supplied; it does not construct
 them, prove torus-Iwahori comparisons or complete the host parahoric-model
 statement.

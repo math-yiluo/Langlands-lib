@@ -12,18 +12,17 @@ A(s,\pi,w_{m,n})f(g)=\int_{U'} f(w_{m,n}u'g)\,du'.
 
 The registered original is `shahidi-1984-fourier`, SHA256
 `a10d5c605d94d4e85d0e5f453d6a8c233d91e3cb60d538f430d8ad900cbb6b29`.
-The author is Worker 11.
 
 On page 72 the source calls (0.1) an intertwining operator on `I(s,π)`, where
 `π = π₁ ⊗ π₂`. Its display (0.3) applies the Whittaker functional of
 `I(-s,π')`, with `π' = π₂ ⊗ π₁`, to `A f`. The source does not spell out how
 the values of `A f`, which lie in the space `V₁ ⊗ V₂` of `π`, become values in
-the space `V₂ ⊗ V₁` of `π'`. This unit uses the tensor flip
+the space `V₂ ⊗ V₁` of `π'`. This module uses the tensor flip
 `v₁ ⊗ v₂ ↦ v₂ ⊗ v₁`, which is the reading under which `A f` lies in
 `I(-s,π')`. The proofs below show that with the flip `A f` has exactly the
 covariance of `I(-s,π')`.
 
-The unit builds on three published modules:
+The module builds on three published modules:
 
 - `IntertwiningIntegral`: the weak integral `intertwiningOperator m n ρ μ
   hcofinal hρ` on its domain `intertwiningDomain m n ρ μ`, for an arbitrary
@@ -118,8 +117,8 @@ internal to the formalization.
 Over a p-adic field with an additive Haar measure, the published
 `map_rectangularConj_padic` gives this scaling with the Library's
 `T.determinantNorm`. Converting it to `IsModulusScaling` for an absolute value
-that agrees with `T.normalizedAbs` is left to the p-adic unit. This unit does
-not state it.
+that agrees with `T.normalizedAbs` is done in the p-adic module
+`IntertwiningPadic` (`isModulusScaling_padic`). This module does not state it.
 
 ## The operator between covariant function spaces
 
@@ -220,10 +219,10 @@ beyond these hypotheses.
 
 ## What is not claimed
 
-This unit does not claim the following:
+This module does not claim the following:
 
 - that the integral converges for `f ∈ I(s,π)` when `Re s` is large. The
-  domain `sourceDomain` is defined by convergence, and this unit does not
+  domain `sourceDomain` is defined by convergence, and this module does not
   show that it is all of `I(s,π)` for any `s`;
 - that `A(s,π,w_{m,n})` has a rational continuation in `q^(-s)`;
 - the p-adic specialization: the cofinality `hcofinal` for the Levi, and
@@ -232,4 +231,5 @@ This unit does not claim the following:
 - the comparison of Shahidi's `GL_r(O)`-finite functions with the Library's
   smooth induction, which `Induction` also leaves open.
 
-These remain obligations for later units of the parent task.
+These are obligations outside this module; the p-adic specialization is
+made in `IntertwiningPadic`.

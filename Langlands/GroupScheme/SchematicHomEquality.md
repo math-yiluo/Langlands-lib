@@ -1,7 +1,5 @@
 # Equality after schematically dense base change
 
-Worker 890.
-
 This internal module derives equality tests and a closedness result from
 Mathlib's scheme-theoretic dominance and closed-immersion APIs, the
 published reduced induced closed subscheme, and the open equality-locus

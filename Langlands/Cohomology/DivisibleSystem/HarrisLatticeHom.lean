@@ -10,7 +10,7 @@ denote the ring of integers of `L_ℓ`, and let `𝓛_W` be a `K_ℓ`-stable `�
 proof of Proposition 4.10, p.312: "`Hom(𝒪_m[C_p/H_p]^M, 𝓛_m)` [is a] free
 `𝒪/ℓ^m𝒪[S(ẽ)/H_p]`-module".
 
-The published `harrisLattice ρ p U` (Worker 57) models `𝓛` as a lattice over the product
+The published `harrisLattice ρ p U` models `𝓛` as a lattice over the product
 `∏_{l | p} 𝒪_l` of the valuation rings of the completions of `L` at the places above `p`. Over a
 product of rings, a lattice need not be free; this module shows that `𝓛` is:
 

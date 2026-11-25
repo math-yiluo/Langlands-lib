@@ -53,11 +53,11 @@ private def frameDeck : Equiv.Perm (Fin (n + 1)) →* Aut (domainObj P.obj D) :=
 
 @[reassoc]
 private theorem frameDeck_comp (σ : Equiv.Perm (Fin (n + 1))) :
-    (P.frameDeck h hY hp U σ).hom ≫ ι = ι ≫ (P.permutations σ).hom :=
+    (P.frameDeck h hY hp U σ).asIso.hom ≫ ι = ι ≫ (P.permutations σ).asIso.hom :=
   (invariantDomainInclusion _ _ (P.isInvariant_frameDomain h hY hp U)).comm σ
 
 private theorem frameDeck_over (σ : Equiv.Perm (Fin (n + 1))) :
-    (P.frameDeck h hY hp U σ).hom ≫ P.frameMap h hY hp U = P.frameMap h hY hp U := by
+    (P.frameDeck h hY hp U σ).asIso.hom ≫ P.frameMap h hY hp U = P.frameMap h hY hp U := by
   apply (cancel_mono (baseInclusion U)).mp
   rw [Category.assoc, P.frameMap_comp, P.frameDeck_comp_assoc, P.permutations_base]
 
@@ -139,7 +139,7 @@ private theorem simplyTransitive_frameDeck
     (hlarge : ∀ z ∈ Q.distinctLocus h, localizedSpaceFunctor.map Q.base z ∉ U)
     (a b : (Φ).obj (domainObj P.obj D))
     (hab : (Φ).map (P.frameMap h hY hp U) a = (Φ).map (P.frameMap h hY hp U) b) :
-    ∃! σ : Equiv.Perm (Fin (n + 1)), (Φ).map (P.frameDeck h hY hp U σ).hom a = b := by
+    ∃! σ : Equiv.Perm (Fin (n + 1)), (Φ).map (P.frameDeck h hY hp U σ).asIso.hom a = b := by
   let a' := (Φ).map ι a
   let b' := (Φ).map ι b
   have hD (q : (Φ).obj (domainObj P.obj D)) : ((πτ).app P.obj ((Φ).map ι q)).down ∈ (D).carrier := by
@@ -171,10 +171,10 @@ private theorem simplyTransitive_frameDeck
     have he : eA (σ.symm i) = eB i := eA.apply_symm_apply (eB i)
     exact congrArg Subtype.val he
   have hcoord (τ : Equiv.Perm (Fin (n + 1))) (i : Fin (n + 1)) :
-      (Φ).map (P.coord i) ((Φ).map ι ((Φ).map (P.frameDeck h hY hp U τ).hom a)) =
+      (Φ).map (P.coord i) ((Φ).map ι ((Φ).map (P.frameDeck h hY hp U τ).asIso.hom a)) =
         (Φ).map (P.coord (τ.symm i)) a' := by
-    have hperm : (Φ).map ι ((Φ).map (P.frameDeck h hY hp U τ).hom a) =
-        (Φ).map (P.permutations τ).hom a' := by
+    have hperm : (Φ).map ι ((Φ).map (P.frameDeck h hY hp U τ).asIso.hom a) =
+        (Φ).map (P.permutations τ).asIso.hom a' := by
       rw [← CategoryTheory.Functor.map_comp_apply, P.frameDeck_comp,
         CategoryTheory.Functor.map_comp_apply]
     rw [hperm, ← CategoryTheory.Functor.map_comp_apply, P.permutations_coord]

@@ -1,7 +1,5 @@
 # Affine-line constancy from anisotropic polynomial relations
 
-Author: Worker 1478.
-
 This derived module translates the polynomial constancy result in
 `Unipotent.PrincipalPart` into constancy of actual scheme morphisms.
 Its source motivation is the highest-degree argument in

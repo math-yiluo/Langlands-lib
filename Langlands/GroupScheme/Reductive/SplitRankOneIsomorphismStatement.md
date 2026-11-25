@@ -1,7 +1,5 @@
 # Statement: the Isomorphism Theorem in semisimple rank at most one, common torus
 
-Author: Worker 712.
-
 This module contains one `Prop`-valued statement,
 `Langlands.GroupScheme.SplitRankOneCommonTorusIsomorphismStatement`. The Lean
 file only defines the proposition. It contains no proof of it, and it adds no

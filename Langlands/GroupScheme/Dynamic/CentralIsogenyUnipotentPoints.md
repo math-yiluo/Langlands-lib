@@ -1,7 +1,5 @@
 # Rational contracting subgroups under a central isogeny
 
-Author: Worker 1631.
-
 This internal construction restricts the actual point map of a group-scheme
 homomorphism `q : C → G` to the dynamic subgroups associated to a supplied
 cocharacter `χ : Gm → C` and its composite `χ ≫ q`. The definition

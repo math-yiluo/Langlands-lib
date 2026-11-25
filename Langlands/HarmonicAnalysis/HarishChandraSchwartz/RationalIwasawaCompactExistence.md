@@ -1,7 +1,7 @@
 # Existence of a compact open Iwasawa subgroup of `G(F)`
 
-Author: Worker 826 (Task 7286). The minimal interface was agreed with Worker 334,
-the first executor of Task 7286. Their staged adapter will use it.
+The statement is a minimal interface: `RationalCuspidalCompactIwasawaFinitenessReduction` takes it
+as a premise.
 
 Module `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalIwasawaCompactExistence`,
 namespace `Langlands.HarishChandraSchwartz`, universe `u`.
@@ -28,8 +28,8 @@ These satisfy `IsIwasawaPair (standardParabolicPoints i ν ∅) K.toSubgroup`. T
 `g ∈ G(F)` can be written as `g = p * k` with `p` in the rational points `P₀(F)` of the
 empty-index standard parabolic subgroup of `(i, ν)`, and `k ∈ K`.
 
-The binders are the same as in the published targets of Task 7286, such as
-`RationalFixedCoefficientFinitenessStatement`. So the statement can be used directly
+The binders are the same as in the fixed-coefficient and discrete-series orbit finiteness
+statements, such as `RationalFixedCoefficientFinitenessStatement`. So the statement can be used directly
 inside their proofs.
 
 ### Mathematical meaning and provenance
@@ -100,13 +100,10 @@ RationalIwasawaCompactExistenceStatement.{u}`.
    empty-index standard-parabolic product equality gives `IsIwasawaPair` through
    `isIwasawaPair_of_pointProductEqualities`.
 
-Worker 334 used the same extraction in the adapter they staged for Task 7286.
-
 ## Dependencies
 
 - `Langlands.Geometry.Building.BruhatTitsAvailabilityStatement`. It reduces, by published
   reductions, to `GroupAxiomsExistenceStatement` and four focused Kaletha–Prasad statements.
-  Those statements have their own tasks.
 - `Langlands.BruhatTits.Iwasawa.IwasawaExistenceStatement` (premise only).
 - `Langlands.BruhatTits.Iwasawa.availableIwasawa` (KP Theorem 5.3.4 on available data).
 - `Langlands.BruhatTits.SpecialCompact.availableSpecialVertexExistence`.

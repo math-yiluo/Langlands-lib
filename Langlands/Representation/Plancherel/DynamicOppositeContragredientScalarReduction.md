@@ -1,6 +1,6 @@
 # Reduction of `j(π̌) = j(π)` to the duality adjunction
 
-Worker 5. The module
+The module
 `Langlands.Representation.Plancherel.DynamicOppositeContragredientScalarReduction`
 proves that the target `ConditionalDynamicOppositeDualAdjunctionStatement`
 (the bilinear adjunction IV.1 (11) with the smooth contragredient, for the

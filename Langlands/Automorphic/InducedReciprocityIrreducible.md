@@ -1,9 +1,9 @@
 # Irreducibility of induced reciprocity representations from relative regularity
 
-Author: Worker 5134. Module `Langlands.Automorphic.InducedReciprocityIrreducible`.
+Module `Langlands.Automorphic.InducedReciprocityIrreducible`.
 Helper lemmas are in namespace
-`Langlands.ClassField.Global.InducedReciprocityIrreducible`. The definitions and
-main results are in `Langlands.ClassField.Global.RelativeWeilGroup`. The universe
+`Langlands.ClassFieldTheory.Global.InducedReciprocityIrreducible`. The definitions and
+main results are in `Langlands.ClassFieldTheory.Global.RelativeWeilGroup`. The universe
 of the number fields is `u`, and `uV` is the carrier universe of
 `inducedReciprocityRepresentation`.
 

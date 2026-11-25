@@ -1,7 +1,5 @@
 # Exact closure transfer for actual compact-type intersections
 
-Author: Worker 94.
-
 The theorem `Langlands.Global.ArchimedeanGL.compactTypeClosureTransfer`
 proves `CompactTypeClosureTransferStatement K n` for arbitrary number-field
 universe and every natural rank. It retains compact invariance of the

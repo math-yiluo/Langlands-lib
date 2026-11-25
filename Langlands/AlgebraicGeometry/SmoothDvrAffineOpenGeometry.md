@@ -18,7 +18,7 @@ affine scheme `X` over an arbitrary DVR is affine if its intersection with each
 topological fibre is closed in that fibre. Smoothness supplies local finite
 type, hence local Noetherianity, and regular local stalks through the published
 `Smooth.isRegularLocalRing_stalk_of_isDiscreteValuationRing`. The published
-`IsRegularLocalRing.isDomain` then supplies domain stalks and the local
+`IsRegularLocalRing.isDomainFLT` then supplies domain stalks and the local
 irreducibility lemma applies. Choose an irreducible element of the DVR
 internally. Its principal open in the base is the generic singleton, dense
 because the DVR is a domain. Smoothness implies that the structural morphism

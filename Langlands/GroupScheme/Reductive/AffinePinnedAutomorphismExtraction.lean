@@ -75,7 +75,7 @@ theorem isPinnedAutomorphism_of_basedCoordinateIso
     (d : BasedCoordinateIso M.inclusion M.inclusion
       M.rootDatum M.rootDatum M.basis M.basis)
     (hpin : PreservesLocalPinning ((baseChange (𝟙 M.base)).mapIso d.groupIso)) :
-    M.IsPinnedAutomorphism d.groupIso d.rootEquiv⁻¹ := by
+    M.IsPinnedAutomorphism (Aut.of d.groupIso) d.rootEquiv⁻¹ := by
   classical
   have hr : d.rootEquiv ∈ M.basedAutomorphisms := d.simple_iff
   have hθ : d.rootEquiv⁻¹ ∈ M.basedAutomorphisms :=
@@ -110,7 +110,7 @@ theorem isPinnedAutomorphism_of_basedCoordinateIso
     obtain ⟨c, hvec, _⟩ := splitTorus.existsUnique_unit_smul_of_aligned_weightLines
       τ d.groupIso d.square (M.rootDatum.root s) (M.rootDatum.root t) hχ
       (M.pinning s) (M.pinning t)
-    exact pinning_vector_eq_of_localPinning_of_scalar d.groupIso hpin hvec
+    exact pinning_vector_eq_of_localPinning_of_scalar (Aut.of d.groupIso) hpin hvec
 
 /-- Construct an actual pinned automorphism, together with its exact pinning
 certificate, from global coordinate alignment and concrete local pinning. -/
@@ -119,7 +119,7 @@ def pinnedAutomorphismOfBasedCoordinateIso
       M.rootDatum M.rootDatum M.basis M.basis)
     (hpin : PreservesLocalPinning ((baseChange (𝟙 M.base)).mapIso d.groupIso)) :
     {σ : CategoryTheory.Aut M.group // M.IsPinnedAutomorphism σ d.rootEquiv⁻¹} :=
-  ⟨d.groupIso, M.isPinnedAutomorphism_of_basedCoordinateIso d hpin⟩
+  ⟨Aut.of d.groupIso, M.isPinnedAutomorphism_of_basedCoordinateIso d hpin⟩
 
 /-- On a nonempty affine base the label of an exact pinned automorphism is
 determined by the actual automorphism. -/

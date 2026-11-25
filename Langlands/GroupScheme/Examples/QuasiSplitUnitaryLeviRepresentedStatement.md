@@ -1,8 +1,8 @@
 # The quadratic unitary Levi as a represented closed subgroup
 
-`Langlands.GroupScheme.QuasiSplitUnitary.LeviRepresentedStatement` is S6
-of the quasi-split `U(1,1)` construction. It is a proposition definition,
-with its proof assigned to a separate proof task after publication.
+`Langlands.GroupScheme.QuasiSplitUnitary.LeviRepresentedStatement` is a
+statement of the quasi-split `U(1,1)` construction. It is a proposition definition;
+it is proved as `leviRepresentedStatement` in `QuasiSplitUnitaryLeviRepresentedProof`.
 
 The statement quantifies over fields `F` and `E`, an `F`-algebra structure
 on `E`, `Algebra.IsQuadraticExtension F E`, a finite `F`-basis `b` of

@@ -1,14 +1,10 @@
 # General linear groups over every finite p-adic extension
 
-Author: Worker 6. Shared Hausdorff-certificate extraction: Worker 26.
-This is a construction group for task
-974e7b2e-4779-4b03-a8a1-6b81962d310c, revision 2.
-
 The carrier of every group in this file is the actual
 `Langlands.GeneralLinear n F.Carrier` from `Basic.lean`. Here `p` is any prime,
-`F : PadicField p` is any of the accepted algebraic finite extensions, in an
+`F : PadicField p` is any of the algebraic finite extensions, in an
 arbitrary universe, and `n` is any natural number. No normality, unramifiedness,
-or degree restriction is imposed. Thus all requested positive ranks are covered.
+or degree restriction is imposed. Thus all positive ranks are covered.
 
 For a supplied `T : F.TopologicalData`, `generalLinearTopology` uses the topology
 of matrix units induced by `T.topology`. The next three proved certificates provide
@@ -47,35 +43,29 @@ letI := T.generalLinearLocallyCompactSpace n
 ```
 
 The four `canonicalGeneralLinear...` abbreviations apply the same constructions
-to the accepted `F.canonicalTopologicalData`. They require the algebraic field
+to the published `F.canonicalTopologicalData`. They require the algebraic field
 alone. They introduce no global topology instance on the field, and make no
 identification between the spectral norm and the residue-normalized absolute
 value.
 
-This is an internal specialization of the accepted local-field constructors and
+This is an internal specialization of the published local-field constructors and
 Mathlib's existing matrix-unit topology. The mathematical setting agrees with
 Bernstein–Zelevinsky (1977), Sections 2.1–2.2, printed page 446: `GL(n,F)` with
 its natural locally compact topology. The original passage was read.
 
 Exact project dependencies:
 
-- `Langlands.LocalField.Definitions`, artifact
-  `ac4cb7d5-5dd1-44b6-9d56-f0ec6c70bce0`, version 1, publication commit
-  `1fe07fd211e579cc430734fd96ce959aadb7663d`.
-- `Langlands.LocalField.Canonical`, artifact
-  `c342ec21-e5ee-4ba4-aec6-b4c1b1e2b629`, version 1, publication commit
-  `9db46907db3181b0c1dfd287b8ab2f1f02054cab`.
-- `Langlands.Group.GL.Basic` is the companion module within this construction
-  group.
+- `Langlands.LocalField.Definitions`.
+- `Langlands.LocalField.Canonical`.
+- `Langlands.Group.GL.Basic`, the companion module.
 
-Both local-field dependencies were freshly fetched and verified accepted,
-public, published, and current at Library commit
-`d0f5322f745425b08ae8e72c1031206f45cb049e`. Their complete effective pairs and
-review/validation receipts were read. The pinned environment is Lean 4.34.0,
+Both local-field dependencies were checked against Library commit
+`d0f5322f745425b08ae8e72c1031206f45cb049e`, and their complete Lean/Markdown
+pairs were read. The pinned environment is Lean 4.34.0,
 Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.
 
 Nonarchimedeanness of these general linear groups and the resulting compact-open
-bases are not supplied by this construction group. The generic compact-open theorem is
+bases are not supplied by this module. The generic compact-open theorem is
 already published, but its `NonarchimedeanGroup` hypothesis must be discharged
 for the actual matrix groups before applying it.
 
@@ -85,7 +75,8 @@ Sections 2.1–2.2, printed page 446. The companion `Basic.md` also records
 Henniart (2002), Section 2.5, printed pages 594–595, for the determinant
 convention.
 
-The extraction adds the `Langlands.LocalField.Topology` import and retains
+The extraction of the shared Hausdorff certificate adds the
+`Langlands.LocalField.Topology` import and retains
 the `Basic` and `Canonical` imports. Every public declaration name and full
 type in this module, including the topologies, continuous maps and canonical
 abbreviations, is retained. The shared module's

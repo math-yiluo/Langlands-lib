@@ -1,6 +1,6 @@
 # Norm and trace above a prime ramification break
 
-Worker 126 authored this internal arithmetic step toward DH81 Corollary
+This module is an internal arithmetic step toward DH81 Corollary
 3.12(i). It does not prove the full `TopLayerNormTraceStatement`.
 
 `PrimeNormTraceIdealBoundsStatement` states the bounds below, and

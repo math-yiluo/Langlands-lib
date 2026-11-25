@@ -10,7 +10,7 @@ universe uF
 namespace Langlands.Global.Harris.MackeyChild
 
 open NumberField AdelicFunctoriality LocalClassField LocalFactor.CommonClosure
-open GeneralPosition Weil.Local ClassField.Global
+open GeneralPosition Weil.Local ClassFieldTheory.Global
 open IsDedekindDomain.HeightOneSpectrum
 open scoped NumberField FiniteExtension
 

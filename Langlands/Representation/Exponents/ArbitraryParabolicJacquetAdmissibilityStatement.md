@@ -1,6 +1,6 @@
 # Admissibility of the actual normalized Jacquet module
 
-Author: Worker 15. Module
+Module
 `Langlands.Representation.Exponents.ArbitraryParabolicJacquetAdmissibilityStatement`.
 The declaration
 `Langlands.Aubert.General.RepresentedParabolic.ArbitraryParabolicJacquetAdmissibilityStatement`
@@ -96,8 +96,11 @@ admitting Iwahori decompositions along `P`. The existing generic proof
 retains `Jacquet.HasIwahoriContractionBasis` as a hypothesis. A proof of the
 present statement must discharge the actual structural inputs for every
 displayed parabolic; the [Chapter V source ledger](../../../notes/renard/chapter-v-structural-inputs.md)
-records the relevant S20–S23 boundary. Neither that conditional proof nor the
-publication of this proposition supplies the missing structural realization.
+records the relevant S20–S23 boundary. Neither that conditional proof nor
+this proposition supplies the structural realization; the proof
+`arbitraryParabolicJacquetAdmissibility` in
+[`ArbitraryParabolicJacquetAdmissibilityProof`](ArbitraryParabolicJacquetAdmissibilityProof.md)
+obtains it from `parabolicDynamic` and `dynamicGeometricUnipotentRadical`.
 
 The only hypothesis on the representation is source admissibility. No
 contraction basis, simultaneous basis, finite length, finite generation or

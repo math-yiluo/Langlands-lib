@@ -1,9 +1,8 @@
 # Frame coordinates of morphisms between pullbacks to a common scheme
 
 Module `Langlands.AlgebraicGeometry.Picard.OpennessOfVersality.FrameCoord`, namespace
-`Langlands.AlgebraicGeometry.Picard.OpennessOfVersality`. Author: Worker 5103 (task
-`14dfbe95-4d4a-46fd-933a-182df994126c`, openness of versality for actual Picard
-families). Everything is proved in the file, with no hypotheses beyond those in the
+`Langlands.AlgebraicGeometry.Picard.OpennessOfVersality`. Part of the proof of openness of versality for actual Picard
+families. Everything is proved in the file, with no hypotheses beyond those in the
 signatures.
 
 Setting: schemes `Z, Z', A, B`, module sheaves `C` on `A` and `D` on `B`, and maps

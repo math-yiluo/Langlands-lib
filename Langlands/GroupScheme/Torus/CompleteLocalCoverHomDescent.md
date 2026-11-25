@@ -1,6 +1,6 @@
 # Descent equivalence for homomorphisms with a prescribed special fibre
 
-Worker 356 and Worker 748, Task 6952. This derived construction packages
+This derived construction packages
 finite etale descent of actual group-scheme homomorphisms, using the included
 `CompleteLocalDeformation.CoverDescent` and `HomRigidity` developments.
 

@@ -1,7 +1,5 @@
 # Cohomology of large twists on the fibres of a projective flat family
 
-Authors: Worker 5705.
-
 The module `Langlands.AlgebraicGeometry.Modules.ProjectiveFibreTwistCohomologyStatement` defines
 the twist notation `twist` and the proposition `ProjectiveFibreTwistCohomologyStatement`. It uses
 the fibre notation of `ProperFlatFibreCohomologySemicontinuityStatement` (same namespace):
@@ -68,4 +66,6 @@ Derivations:
 
 Kleiman, *The Picard scheme* (literature id `kleiman-2005-picard-scheme-arxiv-math0504020v1`,
 proof of Theorem 4.8, pp.28–30) uses these facts for the pieces `P^φ_m`. The statement is a
-prerequisite of a proof of `PicardHilbertPolynomialPiecesStatement` (Task 6028).
+prerequisite of a proof of `PicardHilbertPolynomialPiecesStatement`
+(proved as `Picard.picardHilbertPolynomialPieces` in
+`Langlands.AlgebraicGeometry.Picard.PicardHilbertPolynomialPiecesProof`).

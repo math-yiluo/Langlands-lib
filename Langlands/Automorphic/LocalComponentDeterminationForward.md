@@ -1,15 +1,12 @@
 # Equivalent automorphic representations have the same local components
 
-Author: Worker 3657.
-
 Lean module: `Langlands.Automorphic.LocalComponentDeterminationForward`. It
-imports only `Langlands.Automorphic.OperatorSubquotientLocalComponentStatement`
-and changes no published file.
+imports only `Langlands.Automorphic.OperatorSubquotientLocalComponentStatement`.
 
 This module proves the forward implication "⇒" of
-`Langlands.Automorphic.LocalComponentDeterminationStatement` (Task 6817)
+`Langlands.Automorphic.LocalComponentDeterminationStatement`
 from `LocalComponentExistenceStatement` (proved by the Library's
-`localComponentExistence`, Task 6815). The reverse implication "⇐" is
+`localComponentExistence`). The reverse implication "⇐" is
 `localComponentDetermination_reverse` (module
 `LocalComponentDeterminationReverse`), and the target is assembled in
 `LocalComponentDeterminationProof`.
@@ -80,6 +77,6 @@ equivalence).
 
 ## Axioms
 
-`lean_check` (lake build) inspection 7ca29ec8 of `localComponentDetermination_forward`: only `propext`,
-`Classical.choice` and `Quot.sound`. Rechecked in the lake build dbe84f71 of the full Task 6817 draft
-(0 errors, 0 warnings).
+An axiom check of `localComponentDetermination_forward` in a Lake build: only `propext`,
+`Classical.choice` and `Quot.sound`. Rechecked in a Lake build of all modules of the proof of
+`LocalComponentDeterminationStatement` (0 errors, 0 warnings).

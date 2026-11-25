@@ -1,7 +1,5 @@
 # Harris's levels at a split prime in product form
 
-Author: Worker 19.
-
 This module gives the `p`-adic level subgroups of Harris (1999), (4.1), in
 their product form
 

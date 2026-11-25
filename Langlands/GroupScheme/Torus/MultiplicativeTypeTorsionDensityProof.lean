@@ -39,6 +39,8 @@ theorem isIso_of_baseChange (G : GroupScheme (Spec (CommRingCat.of k)))
   let g := pullback.fst G.X.hom b
   let z' : pullback z g ⟶ pullback G.X.hom b := pullback.snd z g
   have hiso : IsIso (z' ≫ e.hom.hom.hom.left) := by
+    have : IsIso e.hom.hom.hom.left :=
+      set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in inferInstance
     apply hH _ _ inferInstance
     intro n hn T x hx
     let x1 : T ⟶ ((GroupScheme.baseChange b).obj G).X := x ≫ e.inv.hom.hom
@@ -53,7 +55,9 @@ theorem isIso_of_baseChange (G : GroupScheme (Spec (CommRingCat.of k)))
     congr 1
     change x ≫ e.inv.hom.hom ≫ e.hom.hom.hom = x
     rw [← Grp.comp_hom_hom, e.inv_hom_id, Grp.id_hom_hom, Category.comp_id]
-  have : IsIso z' := IsIso.of_isIso_comp_right z' e.hom.hom.hom.left
+  have : IsIso z' :=
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
+    IsIso.of_isIso_comp_right z' e.hom.hom.hom.left
   exact MorphismProperty.of_pullback_snd_of_descendsAlong
     (P := MorphismProperty.isomorphisms Scheme)
     (Q := @Surjective ⊓ @Flat ⊓ @QuasiCompact) (f := z) (g := g)

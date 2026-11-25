@@ -1,7 +1,7 @@
 # Compact-cell volume bounds for the compatible split-central quotient
 
-This internal finite-coset argument supplies a volume ingredient for Task 7500,
-the actual split-central quotient form of Waldspurger's Corollary VIII.3.2.
+This internal finite-coset argument supplies a volume ingredient for the
+actual split-central quotient form of Waldspurger's Corollary VIII.3.2.
 The source is *La formule de Plancherel pour les groupes p-adiques* (2003),
 registered as `waldspurger-2003-plancherel`, printed pp.326–327 (PDF pp.92–93).
 The proof on printed p.327 uses an inverse-modulus bound for cells represented

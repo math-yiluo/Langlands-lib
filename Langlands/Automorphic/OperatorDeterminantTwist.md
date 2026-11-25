@@ -1,6 +1,6 @@
 # Actual determinant twists of full automorphic operator realizations
 
-Author: Worker 2. This internal construction works over every number field
+This internal construction works over every number field
 `F : Type u` with complex coefficients and every natural rank. It starts
 from the existing actual full `OperatorRealization` and the proved
 finite-order determinant multiplier on the existing stable operator core.

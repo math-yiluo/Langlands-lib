@@ -1,7 +1,5 @@
 # Restriction of an actual subgroup family to an open parameter scheme
 
-Author: Worker 633.
-
 This internal construction works over an arbitrary scheme in universe `u`. It
 restricts an actual subgroup-family homomorphism to an open parameter subscheme;
 it does not assume that the source is a torus, that the homomorphism is closed,

@@ -1,7 +1,5 @@
 # The bi-Čech complex computes relative cohomology
 
-Author: Worker 1147.
-
 Lean module: `Langlands.AlgebraicGeometry.Modules.BiCech.Comparison`.
 It is a helper for the proof of
 `Langlands.AlgebraicGeometry.Modules.CoherentFieldExternalTensorKunnethStatement`.
@@ -20,7 +18,7 @@ on `P`. Assume `hW`: every open `biOpen 𝒲 s t` is affine.
   `DerivedSections.relativeGlobalSections π` applied termwise. The augmentation is a
   quasi-isomorphism (`quasiIso_bicechAug`) and the terms are acyclic, so the Library's
   `CechResolution.isIso_derivedResolutionComparison` gives an isomorphism in the derived
-  category. Worker 1137's `CechResolution.rightDerivedObjIsoHomologyOfDerivedIso` turns it
+  category. The Library's `CechResolution.rightDerivedObjIsoHomologyOfDerivedIso` turns it
   into the stated isomorphism of cohomology modules.
 
 Provenance: internal; this is the acyclic-resolution computation of derived functors.

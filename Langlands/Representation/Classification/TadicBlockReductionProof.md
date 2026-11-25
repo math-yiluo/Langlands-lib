@@ -1,6 +1,6 @@
 # Proof of Tadić's Lemma 4.8(ii) (factorization into members of `X_m`)
 
-Author: Worker 5121. Module
+Module
 `Langlands.Representation.Classification.TadicBlockReductionProof`.
 
 ## Result
@@ -78,7 +78,7 @@ does not use Lemma 4.7 or Theorem 2.5(ii); it uses the shifted highest derivativ
 
 `TadicBlockRing`, `TadicBlockDerivative`, `TadicBlockSteinberg`, `TadicBlockCombinatorics`,
 `TadicBlockBlocks` and `TadicBlockReductionAssembly`, each described in its own Markdown.
-`TadicBlockBlocks` and `TadicBlockReductionAssembly` are edited by this contribution: the
+`TadicBlockBlocks` and `TadicBlockReductionAssembly` were adapted for this proof: the
 complementary-series hypothesis is weakened to `ComplementarySeriesOpenIntervalUnitarity`,
 `step` takes the six inputs separately, and `tadicBlockReduction_of_inputs` and
 `complementarySeriesOpenIntervalUnitarity_of` are added. The published

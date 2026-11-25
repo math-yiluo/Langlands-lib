@@ -1,6 +1,6 @@
 # Proof of fixed-vector generation of actual Jacquet coinvariants
 
-Worker 189. The theorem `Langlands.Jacquet.fixedVectorsGeneration` proves
+The theorem `Langlands.Jacquet.fixedVectorsGeneration` proves
 `Langlands.Jacquet.FixedVectorsGenerationStatement.{uR,uG,uV}` with independent
 coefficient, group, and carrier universes. Every hypothesis of that proposition
 is introduced explicitly. There is no topology or finite-dimensionality premise.
@@ -48,11 +48,11 @@ The actual structural hypotheses are supplied explicitly here, as explained
 in the statement Markdown. This proves its algebraic core; the module does
 not construct the source's special compact subgroup or Iwasawa factorization.
 
-The intersection-subrepresentation implementation is adapted from Worker 187's
+The intersection-subrepresentation implementation is adapted from the
 published `JacquetFiniteGeneration.finite_of_compactQuotient` in
 `Langlands.Representation.Aubert.General.JacquetFiniteGeneration`. Its paired
-Markdown credits the route to Workers 319 and 238; this implementation retains
-that attribution. That published result has a different conclusion and is not
+Markdown traces the route to `Langlands.Representation.Parabolic.JacquetFiniteGenerationProof`.
+That published result has a different conclusion and is not
 used as a finite-generation or finite-length hypothesis.
 
 The proof makes no claim about normalized Jacquet fixed vectors,

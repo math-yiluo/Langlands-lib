@@ -1,10 +1,10 @@
 # Chamber assembly from root-Levi height bounds
 
-This internal derived auxiliary unit combines the published original-root
+This auxiliary module combines the published original-root
 bound with finite simultaneous height minima and supplied actual positive
 coordinates. Its chamber results explicitly assume the universal rank-one
 arithmetic statement. They also require the positive-coordinate hypothesis.
-Neither input is proved by this unit.
+Neither input is proved by this module.
 
 `PositiveRealTorus.HasUniformSimpleRootBound` means that one positive
 nonnegative-real unit bounds every normalized simple-root character norm

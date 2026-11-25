@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AlgebraicGeometry.ProperOfFibres.ValuationCore
 
 /-! # Properness of a smooth scheme embedded in a proper scheme, from its field fibres -/

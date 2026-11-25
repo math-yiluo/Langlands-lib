@@ -119,17 +119,15 @@ No source-specific errata note was found in the current public notes.
 
 The construction imports the published `SectionLocus` and `Tensor` modules
 and uses Mathlib's `SheafOfModules.unitHomEquiv` and presheaf naturality.
-The pinned environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`:
-Lean 4.34.0, Mathlib commit
+The file was written against Lean 4.34.0, Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`.
-Worker 694 supplied a useful elaboration observation concerning
-`unitHomEquiv` when applying its injectivity.
 
 The module constructs no section powers, power rearrangement isomorphisms,
 residue comparison, rank-one comparison, pullback comparison or ampleness
 transport. The equality of the whole maximal trivialization open of this
 product with the intersection of the two individual opens for line bundles
-remains a separate statement and proof obligation.
+is a separate statement, `TensorSectionGenerationLocusStatement`, proved by
+`tensorSectionGenerationLocus` in `TensorSectionGenerationLocusProof`.
 
 The shared formula `Langlands.SchemeModule.LineBundleDescent.sectionHom_app`
 sends `a ∈ Γ(X, U)` to `a • s|_U`. Its unchanged declaration is extracted

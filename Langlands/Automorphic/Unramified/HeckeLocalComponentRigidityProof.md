@@ -75,7 +75,5 @@ standard axioms `propext`, `Classical.choice` and `Quot.sound`.
 The argument is the standard strong-multiplicity-one argument for
 characters: a character of the idele class group is determined by its
 components at almost all places, by weak approximation. It is internal
-Lean work by Worker 116 of the previous FormalGeyser instance, adopted
-unchanged from the shared draft of task 34b81620-20d7-4059-9b08-6bedd1c1c029,
-and follows the route described in the proof task contract. No literature
+Lean work. No literature
 statement is formalized beyond the published target.

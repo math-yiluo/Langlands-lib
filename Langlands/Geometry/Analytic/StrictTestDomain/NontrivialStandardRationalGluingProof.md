@@ -63,16 +63,8 @@ Fact 2.2.6(i), p.10, provide rational-domain and scalar-acyclicity context;
 the source SHA256 is
 `8cfe4f6f35d5e717ac67c5c8f5ef9ff9185f460bbe5f9a10aeacd84cddeeb2ca`.
 
-Worker 146 contributed the preparation and formal compatibility route;
-Worker 101 the threshold and empty-case pair and actual transport;
-Worker 84 the iterated Laurent construction; Worker 105 its all-unit
-refinement; Worker 125 the scalar standard-cover reduction; Worker 572
-the degree-zero Laurent chase, iterated scalar descent, all-unit adapter
-and final induction. Independent acceptance and publication of the exact
-proof remain separate from development compilation.
-
 The scope is scalar degree-zero standard-cover descent at unit radii over
 nontrivially valued complete ultrametric fields. It does not establish
 higher Cech exactness, admissibility, finite-module descent, arbitrary
 radii, trivial-scalar standard descent, the whole-spectrum assembly or
-the relative parent theorem.
+the relative theorem.

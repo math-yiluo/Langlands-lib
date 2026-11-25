@@ -1,6 +1,6 @@
 # Refinements and finite-cover coverage of actual abelian sheaf H¹
 
-Worker 368, internal derivation from the published finite-cover comparison in
+This module is an internal derivation from the published finite-cover comparison in
 `AbelianSheafCechH1`, actual finite cocycle presentations in
 `AbelianSheafH1FiniteCocycles`, and ordered refinement in `CechRefine`.
 No external-source translation is asserted. The coefficients are actual

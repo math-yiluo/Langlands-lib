@@ -16,7 +16,8 @@ of `pre ++ y :: x :: post`. If `T` is injective and is a `(𝔤, K)`-intertwiner
 ## Provenance
 
 This is one input of the reduction `RealLinkedJacquetFunctionalReductionStatement`, which is
-internal to Task 7070. The idea is standard. On `O(n)`, the two standard modules differ only
+internal to the proof of `RealLinkedLanglandsQuotientNotLargeStatement`. The idea is standard.
+On `O(n)`, the two standard modules differ only
 by a permutation of the positions, so they have isomorphic restrictions to `O(n)`. Their
 `O(n)`-isotypic components are finite-dimensional, so an injective intertwiner between them is
 onto. The module does not prove the isomorphism or decompose into `O(n)`-types. It builds an
@@ -41,7 +42,7 @@ The proof uses these Library results:
 - `eq_zero_of_mem_principalSeries_of_eqOn_unitaryCompact`: a vector of the principal series
   that vanishes on `O(n)` is zero.
 
-It also uses Worker 109's Library modules `RealInductionStagesSlice` and
+It also uses the Library modules `RealInductionStagesSlice` and
 `RealInductionStagesFourier`:
 
 - `realPositionCharacter_append_left/right` and `realInducedBlockAt_append_left/right`: the

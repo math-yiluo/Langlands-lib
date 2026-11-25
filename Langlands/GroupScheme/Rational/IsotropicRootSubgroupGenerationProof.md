@@ -1,7 +1,5 @@
 # Root subgroups generate an isotropic almost-simple group: proof
 
-Authors: Worker 180.
-
 The theorem `Langlands.GroupScheme.isotropicRootSubgroupGeneration` has type
 exactly `IsotropicRootSubgroupGenerationStatement.{u}` (module
 `Rational.IsotropicRootSubgroupGenerationStatement`), at arbitrary universe

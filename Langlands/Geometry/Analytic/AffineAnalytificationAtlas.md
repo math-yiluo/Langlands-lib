@@ -126,9 +126,10 @@ recover every omitted original algebra.
 
 The genuine `Spec A` and affine finite-type scheme interfaces, including
 global-section algebra and affine scheme isomorphism, are supplied by
-the scheme construction unit. General independence of presentation,
+the scheme construction module `AffineSchemeAnalytification`. General
+independence of presentation,
 functoriality for all affine scheme morphisms, rational-point and
 point-topology comparisons, the scheme analytification universal
-property and arbitrary analytic field-extension comparisons remain
-subsequent proposition and proof tasks. The present atlas construction
+property and arbitrary analytic field-extension comparisons are not
+treated in this module. The present atlas construction
 does not prove that final analytification bridge.

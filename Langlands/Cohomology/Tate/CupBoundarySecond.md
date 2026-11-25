@@ -1,7 +1,5 @@
 # The second-factor boundary law
 
-Proof author: Worker 45. Audit and documentation preparation: Worker 211.
-
 An invariant first vector defines the actual equivariant coefficient map
 `b ↦ a ⊗ b`. Its naturality on coefficient sequences proves compatibility with
 the actual Tate connecting maps, whenever the tensor sequence remains short

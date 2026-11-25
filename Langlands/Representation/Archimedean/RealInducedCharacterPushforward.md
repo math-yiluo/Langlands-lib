@@ -6,7 +6,7 @@ Module `Langlands.Representation.Archimedean.RealInducedCharacterPushforward` (n
 ## Role and provenance
 
 This module is an internal step of the proof of `RealInducedCharacterFiltrationStatement`
-(Task 7134; see `RealInducedCharacterFiltration.md`). It covers every case except the hard
+(see `RealInducedCharacterFiltration.md`). It covers every case except the hard
 case `t_c - a = -m'` (module `RealInducedCharacterHard`). In these cases it builds the
 filtration of the standard module of `[d, c]` on `GL₃(ℝ)` from the filtration for two
 characters, by pushing forward along the tail maps of `RealInducedCharacterMaps`. The

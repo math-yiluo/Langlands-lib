@@ -4,7 +4,8 @@
 coordinate torus with a **single** scale, and a meromorphic continuation and
 functional equation for the corresponding Schwartz torus zeta integrals.
 This is an internal step toward the principal-series coefficient integrals
-in Task 7400; no matrix coefficient or Whittaker integral is identified here.
+of the real-place functional equation (`RealPlaceFunctionalEquationStatement`,
+Jacquet 2009, Theorem 2.1); no matrix coefficient or Whittaker integral is identified here.
 
 Let $n=m+1$, with coordinates indexed by `Fin (m+1)`, and choose parities
 $e_i\in\{0,1\}$ and complex parameters $u_i$. Off the coordinate

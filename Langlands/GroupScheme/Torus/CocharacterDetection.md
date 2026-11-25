@@ -98,12 +98,11 @@ Internal. The result is the standard fact that a torus over a field is
 determined by its cocharacters: the pairing between the character group and
 the cocharacter group of a torus is perfect over a splitting field, and the
 characters and cocharacters defined over `k` are the Galois invariants. The
-proof here is a different, direct argument designed by Worker 1001 for task
-6d0882ee: it never constructs the cocharacter group. Instead it descends one
+proof here is a different, direct argument: it never constructs the cocharacter group. Instead it descends one
 explicit cocharacter-like point from a splitting field to `k`: to a finitely
 generated subalgebra, to a finite residue field (Zariski's lemma), through
 the purely inseparable part (by a Frobenius argument), and through the Galois
 part (by taking the product of conjugates, which multiplies the weight by a
-positive integer). Worker 1178 wrote the descent modules
+positive integer). The descent modules
 `CocharacterCoefficientDescent`, `FrobeniusTensorPower`,
-`CocharacterGaloisDescent` and `CocharacterInseparableDescent` used here.
+`CocharacterGaloisDescent` and `CocharacterInseparableDescent` are used here.

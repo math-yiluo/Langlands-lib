@@ -1,8 +1,6 @@
 # Averaging transitions for stable Jacquet lifts
 
-Author: Worker 1775.
-
-This derived supporting unit addresses the compatibility needed when Renard
+This derived module addresses the compatibility needed when Renard
 VI.9.7 identifies the inverse system of stable compression images with the
 inverse system of Levi-fixed Jacquet vectors. The source is David Renard,
 *Représentations des groupes réductifs p-adiques*, version dated 9 July 2026,

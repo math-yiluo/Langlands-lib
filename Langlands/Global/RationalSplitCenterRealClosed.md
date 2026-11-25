@@ -1,7 +1,5 @@
 # Closed ambient image of actual positive real torus points
 
-Author: Worker 112.
-
 This internal construction combines the published actual real-to-adelic
 comparison with the published closed-immersion theorem on actual adelic
 points. It identifies the real model of a supplied rational split torus

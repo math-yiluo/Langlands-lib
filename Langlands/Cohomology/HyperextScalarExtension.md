@@ -1,14 +1,14 @@
 # Extension of scalars and comparison maps on hyperext groups
 
-Author: Worker 61. Built on the Library modules
+Built on the Library modules
 `Langlands.Cohomology.DivisibleSystem.SmoothScalarExtension`
-(`smoothRepExtendScalars`; Worker 61), through it
-`Langlands.Cohomology.DivisibleSystem.ScalarExtension` (`repExtendScalars`;
-Worker 61), `Langlands.Cohomology.ExactDerivedHomology`
-(`exactDerivedHomologyIso`; Worker 13) and
+(`smoothRepExtendScalars`), through it
+`Langlands.Cohomology.DivisibleSystem.ScalarExtension` (`repExtendScalars`),
+`Langlands.Cohomology.ExactDerivedHomology`
+(`exactDerivedHomologyIso`) and
 `Langlands.Representation.Category.Abelian` (the abelian structure of smooth
 representations and the closure of `smoothRepProperty` under kernels and
-cokernels; Worker 13).
+cokernels).
 
 Let `R → S` be an algebra of commutative rings (`[Algebra R S]`). The Library's
 degeneration of the hyperext spectral sequence compares, for an object `K` of
@@ -198,15 +198,14 @@ The definitions, statements and proofs are ours, assembled from Mathlib and the
 Library. Exactness of extension of scalars along a flat algebra and the
 `S`-linear extension `S ⊗[R] M → N` of an `R`-semilinear map are standard.
 
-Worker 13, the first executor of the task, asked Worker 61 for the change of
-coefficients from `𝒪` to `L_ℓ` for the complexes and groups of morphisms used
-in Harris's spectral sequence, and for the maps induced on the degeneration and
-on isotypic parts. This module supplies the first part for a general flat
+The subject is the change of coefficients from `𝒪` to `L_ℓ` for the complexes
+and groups of morphisms used in Harris's spectral sequence, together with the
+maps induced on the degeneration and on isotypic parts. This module supplies the first part for a general flat
 algebra `R → S`: exactness of extension of scalars and the comparison maps on
 `Ext`, on `Hom(K, W₀⟦n⟧)` and on `Hom(H^q K, W)`. Their compatibility with the
 edge map, with group actions and with isotypic parts is not treated here.
 
-For this module Worker 61 read the following passages of Harris 1999, in the
+The following passages of Harris 1999 were read for this module, in the
 rendered scans (the text layer of this scan is unreliable):
 
 - Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
@@ -261,12 +260,13 @@ depends on finiteness properties of the cohomology of the Drinfeld tower and of
   extension of scalars of `H_c(M̆_N, 𝒪(n - 1))`, the relation between
   `𝒜_ℓ(GJ, 𝓛, H)` and `𝒜_ℓ(GJ, ρ, H)`, the comparison of the cohomology of
   `S̄_{K(N)}` with coefficients `𝓛̃` and `W̃`, and the geometric inputs of
-  Proposition 4.10, which Worker 13 lists as planned obligations.
+  Proposition 4.10.
 - The compatibility of the comparison maps with the edge map
   `HyperextDegeneration.edgeMap`, with group actions and with isotypic parts is
   not stated. In particular, no statement relates the isotypic parts of a
-  representation over `R` to those of its extension of scalars to `S`; such a
-  relation remains an open obligation.
+  representation over `R` to those of its extension of scalars to `S`; that
+  relation is treated in `Langlands.Cohomology.HyperextIsotypicBaseChange` and
+  `Langlands.Cohomology.HyperextIsotypicLocalization`.
 - The general maps need `F` exact (instances `F.Additive`,
   `PreservesFiniteLimits F`, `PreservesFiniteColimits F`) and semilinear (the
   hypothesis `hF`). `HasExt` and `HasDerivedCategory` are hypotheses; the

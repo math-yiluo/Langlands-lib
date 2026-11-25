@@ -1,6 +1,6 @@
 # Compact induction of trivial representations as permutation modules
 
-Author: Worker 61. Built on the published
+Built on the published
 `Langlands.Representation.Induction.OpenAdjunction` (`quotientSupport_finite`,
 `compactFunctions_ext`) and, through it, on
 `Langlands.Representation.Induction.Definitions` (`LeftQuotient`,
@@ -144,7 +144,7 @@ of trivial representations with coefficients in `𝒪/ℓ^m𝒪`.
 ## Provenance and interpretation
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
-J. Math. Kyoto Univ. 39-2 (1999), proof of Proposition 4.10 (Worker 61 read
+J. Math. Kyoto Univ. 39-2 (1999), proof of Proposition 4.10 (read on
 the rendered scanned pages):
 
 - printed pp.311-312 (one-based PDF pages 13-14): `C^j(ẽ)` "has been chosen

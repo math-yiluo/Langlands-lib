@@ -1,7 +1,5 @@
 # Comparison of Tate subgroup maps with ordinary homology and cohomology
 
-Author: Worker 45.
-
 `Langlands.Tate.OrdinaryComparisons` quantifies over a commutative ring, a
 finite group and subgroup, a representation, and a positive natural number
 `n` (expressed by `[NeZero n]`). It gives four equalities of linear maps:

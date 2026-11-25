@@ -1,7 +1,7 @@
 # Normalized induction from opposite block parabolics
 
-Author: Worker 15. The implementation adapts Worker 23's published upper
-parabolic wrapper; Worker 19 specified the consumer interface and normalization.
+The implementation adapts the published upper
+parabolic wrapper of `Induction/Parabolic`.
 
 This module constructs smooth induction from the actual lower block parabolic
 `B.oppositeParabolic F` using its published projection
@@ -109,7 +109,7 @@ smooth variants is not proved here.
 This is a derived construction, not a new representation-theoretic theorem.
 Its implementation follows `Induction/Parabolic`, replacing the upper subgroup
 and projection by `Group/GL/OppositeBlocks` and `Group/GL/PadicOppositeBlocks`.
-It composes the accepted constructions in `Group/GL/BlockModulus`,
+It composes the published constructions in `Group/GL/BlockModulus`,
 `Jacquet/PositiveCharacter`, `Twist/Definitions`, `Induction/Definitions`, and
 `Category/Basic`. The lower subgroup and its common embedded Levi stay explicit
 throughout; no conjugation or transport to an upper parabolic is performed.
@@ -125,7 +125,7 @@ the published upper wrapper. That comparison is neither assumed nor proved here.
 
 Silberger (1979), Corollary 4.5.11, printed pages 189--190 / PDF pages 195--196,
 and Theorem 4.5.18, printed page 193 / PDF page 199, motivate the downstream
-support and summand interfaces requested by Worker 19. Those results are not
+support and summand interfaces. Those results are not
 asserted in this pair. The cited original pages were read; their roles here are
 the function-space convention and downstream motivation, respectively.
 
@@ -139,7 +139,7 @@ Registered sources:
   Corollary 4.5.11, printed pages 189--190 / PDF pages 195--196, and
   Theorem 4.5.18, printed page 193 / PDF page 199 (motivation only).
 
-The contribution proves intrinsic construction obligations only. Admissibility,
+This module proves intrinsic construction obligations only. Admissibility,
 finite length, irreducibility, adjunction, Weyl transport, and support or
 classification theorems remain separate obligations.
 

@@ -1,7 +1,5 @@
 # Proof of exclusion of the inducing exponent from proper quotients
 
-Author: Worker 5120.
-
 This module proves
 `Langlands.Renard.AlgebraicFamily.inducedTwistQuotientExclusion :
 InducedTwistQuotientExclusionStatement.{u, v}`, the exclusion proposition stated in

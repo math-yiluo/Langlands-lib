@@ -1,8 +1,9 @@
 # Square-integrable coefficients from strict fundamental Jacquet bounds
 
-Authors: Worker 19 and Worker 728. This exact interface applies Worker 728's
+This exact interface applies the
 published `ProductLeviSquareIntegrable.memLp_two_of_strictFundHypothesis`.
-Its summation argument adapts Worker 246's published strict-Lp proof.
+Its summation argument adapts the published strict-Lp proof
+`ProductLeviSquareIntegrable.memLp_of_strict` in `ProductLeviSquareIntegrableLpProof`.
 
 `Langlands.glProductLeviStrictCoefficientL2` proves
 `GLProductLeviStrictCoefficientL2Statement.{uF,uV}` from
@@ -35,13 +36,12 @@ Lean/Markdown pairs are unchanged.
 
 The dependency audit at Library base
 `61f87bbe6fe6e5ffe1387e9640956e5d8d8c9fc5` covers 378 project modules in the
-combined closure of this proof and the other generic helper. All previously
-audited shared Lean/Markdown files are unchanged, every imported pair matches
-the current Library, and no pair is missing. The only new imported modules
-are the published `ProductLeviSquareIntegrableSufficiencyStatement` and
-`ProductLeviSquareIntegrableSufficiencyProof`, whose Lean/Markdown pairs match
-the independently reviewed frozen bytes. Their source and proof were checked
-for this reuse. No `WeakCritical` module from the same publication is imported.
+combined closure of this proof and the other generic helper. Every imported
+Lean/Markdown pair matches the Library at that base, and no pair is missing.
+The imports added for this proof are the published
+`ProductLeviSquareIntegrableSufficiencyStatement` and
+`ProductLeviSquareIntegrableSufficiencyProof`. Their source and proof were checked
+for this reuse. No `WeakCritical` module is imported.
 
 The four forbidden-name matches in the combined closure are unproved
 proposition definitions and aggregate references in
@@ -51,8 +51,7 @@ analytic classification, special-head exhaustion or existence, quotient
 coverage, tempered block uniqueness, square-integrable classification or
 exhaustion, regular exhaustion, weakly-critical support/refinement/minimality,
 tempered exhaustion/unitarity/genericity, equal-exponent grouping, or the
-forbidden proof successors and transitive dependencies of these conclusions.
-In particular, tasks `3a43d7be-3215-46cc-a077-dfb4ed8542d7` and
-`535b7e03-2a69-4128-a6c8-7a269cb6c783` supply no input. This preserves both
+forbidden proofs and transitive dependencies of these conclusions.
+This preserves both
 the strict GL criterion's independence and the product-Levi consumer's
 independence. The named target and every pair it imports are unchanged.

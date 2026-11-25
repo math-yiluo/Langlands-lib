@@ -1,7 +1,5 @@
 # Finite maps of affine schemes are proper on rational points
 
-Author: Worker 105.
-
 The affine case of Conrad's Corollary 5.12 (Brian Conrad, *Weil and Grothendieck approaches
 to adelic points*, December 31, 2011, printed p.20). Conrad reduces to `B = A[t]/(h)` with
 `h` monic and uses continuity of roots. The Lean proof uses the ultrafilter criterion for

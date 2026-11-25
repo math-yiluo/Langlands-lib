@@ -15,20 +15,17 @@ lattice (`P.corootSpan ℤ = ⊤`). Then `G` is simply connected, so every centr
 The proof is one application of the published conditional reduction
 `splitCorootSpanSimplyConnected_of_rootDatumHom`
 (`Langlands.GroupScheme.SimplyConnected.SplitCriterionReduction`). Its arguments are
-accepted Library proofs of its three premises:
+Library proofs of its three premises:
 
 * `RootDatumExistenceStatement` (`Langlands.GroupScheme.Reductive.RootDatumStatement`):
-  proved by `rootDatumExistence` in `Langlands.GroupScheme.Reductive.RootDatumExistence`
-  (task `972e4466-2aff-4fc0-a62e-1be346c899a0`);
+  proved by `rootDatumExistence` in `Langlands.GroupScheme.Reductive.RootDatumExistence`;
 * `CentralIsogenySplitMaximalTorusLiftStatement`
   (`Langlands.GroupScheme.CentralIsogeny.SplitTorusLiftStatement`): proved by
   `centralIsogenySplitMaximalTorusLift` in
-  `Langlands.GroupScheme.CentralIsogeny.SplitMaximalTorusLiftProof` (task
-  `aa3b37a9-010c-46d5-8cc8-cdc83c6a456b`);
+  `Langlands.GroupScheme.CentralIsogeny.SplitMaximalTorusLiftProof`;
 * `CentralIsogenyRootDatumHomStatement`
   (`Langlands.GroupScheme.CentralIsogeny.SplitRootDatumStatement`): proved by
-  `centralIsogenyRootDatumHom` in `Langlands.GroupScheme.CentralIsogeny.SplitRootDatumProof`
-  (task `ce241772-26d6-47b2-9310-94e6c02d897a`).
+  `centralIsogenyRootDatumHom` in `Langlands.GroupScheme.CentralIsogeny.SplitRootDatumProof`.
 
 The Markdown of `SplitCriterionReduction` describes the argument and how it relates to
 Milne, *Algebraic Groups* (2017), Proposition 23.29 (printed p. 493) via Proposition 23.5

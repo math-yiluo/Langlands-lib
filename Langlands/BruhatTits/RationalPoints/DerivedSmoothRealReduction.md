@@ -1,9 +1,9 @@
 # Conditional derived-point inclusion into an ambient smooth real kernel
 
-Authors: Worker 1374 (implemented reduction) and Worker 1512 (proposed
-factorization target and surrounding proof plan). This internal assembly
-proves a conditional implication. The unrestricted target still requires
-proofs of the two displayed premises.
+This internal assembly
+proves a conditional implication. The unrestricted target is proved as
+`derivedSmoothRealAnnihilation` (module `DerivedSmoothRealAnnihilationProof`),
+which supplies proofs of the two displayed premises.
 
 `derivedSmoothRealAnnihilation_of_structure` takes precisely the two
 propositions `PositivePowerTorusAdditiveFactorizationStatement` and `RelativeRootReflectionExistenceStatement`, both at arbitrary universe `u`.
@@ -49,7 +49,7 @@ required inclusion in the ambient kernel.
 This route does not require reductivity or semisimplicity of the representative
 `D`, equality of its rational points with abstract commutators, rational
 surjectivity of a central isogeny, perfectness of the field, or rational Jordan
-decomposition. It does require proofs of both remaining structural
+decomposition. It does require proofs of both structural
 propositions. Neither is supplied by this conditional reduction.
 
 `derivedPointsToOpenRealKernel` is the resulting group homomorphism from

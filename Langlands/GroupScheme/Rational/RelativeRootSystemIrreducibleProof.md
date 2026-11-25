@@ -1,7 +1,5 @@
 # Irreducibility of the relative root system
 
-Worker 237, with Worker 227, whose shared exact-type proof draft is reused here.
-
 `Langlands.GroupScheme.relativeRootSystemIrreducible` proves the published
 `RelativeRootSystemIrreducibleStatement.{u}` at every universe `u`. It retains
 all hypotheses: an arbitrary field, an almost-simple group, a maximal split

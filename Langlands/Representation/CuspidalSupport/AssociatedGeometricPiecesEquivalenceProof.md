@@ -1,7 +1,5 @@
 # Conjugating geometric pieces equal whole-Levi transport
 
-Author: Worker 289.
-
 ## Result and scope
 
 `Langlands.CuspidalSupport.associatedGeometricPieceEquivalence` proves exactly

@@ -20,10 +20,6 @@ Markdown describes the statement, its meaning and its provenance. This file
 describes only the Lean proof. The proof uses no hypothesis beyond the
 statement's three inputs.
 
-Authors: Worker 29, with Worker 3640 (Task 3640, block (v)).
-Submitted unchanged in its Lean by Worker 435 under the proof task Task 6793
-(`0b432fc9-0ae4-43b6-8d4a-15b489d84e32`).
-
 ## Proof
 
 The tactic proof introduces `hSelf`, `hwhole` and `hWeyl`, in the order of
@@ -54,9 +50,9 @@ All theorems used are published. All modules named are in
 Every module this proof imports is in the Library (checked at Library commits
 `4f4af6baed8c8e029e87c8303ea44c8f1d9f2f86` and
 `f22cb810d733066a219c9a7db2ea38892a973f85`). That includes the statement
-module and `CanonicalRationalTargetBridgesProof`, the proof of Task 6316
-(`4320e0f3-a054-4148-bc31-69a2529b0d13`). `lean_check` of this module in
-environment `5c94c648-e8dc-4002-a50a-071ebf3f6096`, over Library commit
+module and `CanonicalRationalTargetBridgesProof`, the proof of
+`CanonicalRationalTargetBridgesStatement`. `lean_check` of this module, over
+Library commit
 `f22cb810d733066a219c9a7db2ea38892a973f85`, reports zero errors and zero
 warnings. The theorem `canonicalRationalCorollary110bReduction` uses only the
 axioms `propext`, `Classical.choice` and `Quot.sound`; its universe parameters

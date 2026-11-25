@@ -1,7 +1,5 @@
 # Harris's levels `K(N, m)` through an identification of `GG` and `GJ` away from `p`
 
-Author: Worker 19.
-
 Harris (1999), Section 4, works with two unitary similitude groups, `GG` and
 `GJ`, attached to two algebras `ℬ` and `𝒟` with involutions of the second
 kind that are isomorphic away from the distinguished place, the real place

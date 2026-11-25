@@ -1,7 +1,5 @@
 # Clopen decomposition of a normal idempotent
 
-Worker 632, following the relative gluing input proposed by Worker 47.
-
 `normalIdempotentDecomposition` constructs complementary opens of any base
 scheme for an idempotent endomorphism of a reductive group with almost-simple
 geometric fibres, provided its full pointwise image is normal. On the first
@@ -24,6 +22,6 @@ Thus this proof retains arbitrary nonreduced bases: it does not infer global
 equality merely from equality on geometric fibres.
 
 This internally derived construction supplies the geometric part of the
-relative normal-idempotent statement. It does not yet turn the clopen subset
+relative normal-idempotent statement. It does not turn the clopen subset
 of an affine base into a ring idempotent or translate a transformation of
 restricted affine point functors into an actual group-scheme map.

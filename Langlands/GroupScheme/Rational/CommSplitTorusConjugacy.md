@@ -1,6 +1,6 @@
 # Conjugacy restricted from commutative overgroups
 
-Worker 1356. This module is an internal construction from the published
+This module is an internal construction from the published
 largest-split-subtorus universal property and subgroup-conjugacy laws.
 It assumes no additional result from the literature.
 

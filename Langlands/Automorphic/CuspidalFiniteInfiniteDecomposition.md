@@ -1,6 +1,7 @@
 # Finite versus infinite decomposition of cuspidal realizations
 
-This internal construction for Task 7294 derives an actual finite factor from
+This internal construction for the cuspidal contragredient of dual cusp forms
+(`CuspidalTransposeInverseContragredientStatement`) derives an actual finite factor from
 the existing irreducible admissible finite-slice existence theorem. It uses the
 tensor evaluation construction in `FiniteInfiniteMultiplicity` and does not
 assert a decomposition into individual archimedean places or construct an

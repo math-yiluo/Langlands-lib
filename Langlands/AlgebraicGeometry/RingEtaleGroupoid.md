@@ -1,9 +1,9 @@
 # Affine étale groupoids in ring form without the closed immersion condition
 
-Author: Worker 266. The coaction constructions repeat, under a weaker
-hypothesis, constructions of the Library modules `GroupoidCoactionUniversal`
-and `GroupoidCoactionExact` (Worker 101), `GroupoidCoactionCore`, and
-`GroupoidCoactionSubmodule` (Worker 148).
+The coaction constructions repeat, under a weaker
+hypothesis, constructions of the Library modules `GroupoidCoactionUniversal`,
+`GroupoidCoactionExact`, `GroupoidCoactionCore`, and
+`GroupoidCoactionSubmodule`.
 
 ## Purpose
 

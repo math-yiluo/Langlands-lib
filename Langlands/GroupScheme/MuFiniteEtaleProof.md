@@ -1,7 +1,5 @@
 # Finite étaleness of the actual roots-of-unity group scheme
 
-Author: Worker 407.
-
 `Langlands.GroupScheme.muFiniteEtale.{u}` proves the unchanged Library
 proposition `Langlands.GroupScheme.MuFiniteEtaleStatement.{u}`. Its complete
 unapplied type is this proposition, with no additional theorem parameters.
@@ -80,7 +78,7 @@ and applies Zariski descent. It makes no rank or freeness assertion.
 The retained originals are registered as
 `stacks-mu-finite-etale-2026-10-23` in
 `literature/Stacks Project - Roots of unity and the Kummer finite etale calculation (2026-10-23)/`.
-Both complete HTML files, including comments, were read for this task.
+Both complete HTML files, including comments, were read for this module.
 Tag 03PL Comment 8155 makes the positive-natural convention explicit;
 Comment 7888 discusses the need for invertibility in the Kummer
 statement. Their SHA256 values are
@@ -102,11 +100,11 @@ PDF p.36 was read. No source-specific project errata note was found
 when checked on 26 October 2026.
 
 The two affine inputs are imported by their Library Lean names.
-`MuAffinePresentationProof` supplies Worker 690's natural comparison
+`MuAffinePresentationProof` supplies the natural comparison
 on all test schemes and Yoneda argument, using the existing
 `Multiplicative` and `MultiplicativeLaurent` APIs.
-`MuCoordinateAlgebraProof` supplies Worker 354's monic finiteness and
-standard étale calculation, following Worker 427's algebraic route.
+`MuCoordinateAlgebraProof` supplies the monic finiteness and
+standard étale calculation.
 The local-to-global helpers in the present module are derived from
 those results, the existing base-change isomorphism for `mu`, and
 Mathlib's locality and spectrum criteria.

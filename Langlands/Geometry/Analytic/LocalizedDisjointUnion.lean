@@ -106,7 +106,7 @@ abbrev compatibleSigmaMap (T X : J → SaturatedAtlasPresentation.{u, max z v, m
     (σ : ∀ j, (⟨nonemptyFamily T j⟩ : CompatibleAtlasPresentation.{u, max z v, max z v} K) ⟶
       ⟨nonemptyFamily X j⟩) :
     sigmaCompatible T ⟶ sigmaCompatible X :=
-  AtlasDisjointUnion.map (nonemptyFamily_hasNonemptyCharts X)
+  AtlasDisjointUnion.compatibleMap (nonemptyFamily_hasNonemptyCharts X)
     (nonemptyFamily_hasNonemptyCharts T) σ
 
 theorem compatibleInclusion_map (T X : J → SaturatedAtlasPresentation.{u, max z v, max z v} K)

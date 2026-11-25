@@ -1,6 +1,6 @@
 # Full domain transport along bounded equivalences of the base
 
-Worker 56 constructs transport of supplied full affinoid-domain
+This module constructs transport of supplied full affinoid-domain
 representations along a bounded equivalence of their actual base algebras.
 The main construction is
 `Langlands.Analytic.PresentedAffinoidAlgebra.Domain.transportBaseEquivalence`.
@@ -112,8 +112,8 @@ both its algebra realization in the opposite category and its
 quotient-spectrum realization are unchanged.
 
 The locus homeomorphism here compares subsets of two base spectra.
-Injectivity of a generic representing-spectrum map to its locus remains
-a separate obligation. The module constructs no new rational
+Injectivity of a generic representing-spectrum map to its locus is not
+proved here. The module constructs no new rational
 representation, intersection, atlas, structure sheaf, or site.
 
 ## Provenance

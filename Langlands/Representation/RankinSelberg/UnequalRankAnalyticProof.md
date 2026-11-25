@@ -1,7 +1,5 @@
 # JPSS unequal-rank convergence, rationality and normalized generators
 
-Author: Worker 329.
-
 `Langlands.RankinSelberg.unequalRankAnalytic` proves exactly the published
 `UnequalRankAnalyticStatement.{uF,uV,uW} F T n j k`. For every prime, p-adic
 field `F`, supplied topological data `T`, and natural numbers `n,j,k`, it
@@ -28,7 +26,7 @@ to the resulting value set. Independence of the generator from the block is
 the separate `UnequalRankCommonGeneratorStatement`; this theorem proves the
 four clauses for each fixed block.
 
-The continuation and Laurent-span helpers are imported from the published `Langlands.Representation.RankinSelberg.RationalContinuationLinearProof`, in namespace `Langlands.RankinSelberg.RationalContinuationLinear`. Worker 64 extracted the addition, finite-sum, finite-linear-combination, half-plane-transfer and span-membership arguments from Worker 329's earlier draft and added fixed-denominator closure. This module uses that shared implementation and contains no duplicate definitions of those helpers. Its `commonDenominator_of_mem_span` retains the specified common denominator through span induction.
+The continuation and Laurent-span helpers are imported from the published `Langlands.Representation.RankinSelberg.RationalContinuationLinearProof`, in namespace `Langlands.RankinSelberg.RationalContinuationLinear`. That module holds the addition, finite-sum, finite-linear-combination, half-plane-transfer and span-membership arguments and fixed-denominator closure. This module uses that shared implementation and contains no duplicate definitions of those helpers. Its `commonDenominator_of_mem_span` retains the specified common denominator through span induction.
 
 `integrable_separated_sum` combines Mathlib's integrability of products of integrable factors on a product measure with closure under finite sums. Only the inner measure requires the stated SFinite instance. `integral_separated_sum` integrates the second variable first, preserving the nested integral order in the JPSS definition; finite sum linearity and scalar linearity produce the complex constants. It does not replace a nonintegrable Bochner integral by an asserted formal expression.
 
@@ -51,14 +49,14 @@ public. They use the published identification of the actual zero-row product Haa
 
 `unequalRankAnalytic_of_prerequisites` proves a conditional implication to the complete `UnequalRankAnalyticStatement.{uF,uV,uW} F T n j k`. The only additional premises are `UnequalRankZeroRowAnalyticStatement.{uF,uV,uW} F T n (j+k)` and `UnequalRankUnitSpanStatement.{uF,uV,uW} F T n j k`. This intermediate theorem retains independent field and representation universes, every natural rank parameter, the supplied topology, every compatible quotient measure and the supplied additive Haar measure. The final theorem discharges both premises with published proofs.
 
-The assembly transports the larger representation, its Whittaker type, and its specified nonzero functional along `0+(j+k)+1 = j+k+1`. Two private lemmas justify preservation of Whittaker type and nonvanishing by equality elimination. It instantiates the zero-row premise with these transported data, then `diagonal_analytic_of_zero_row` supplies all three diagonal hypotheses. For every coefficient, the published `Langlands.RankinSelberg.unequalRankCompactSupport` by Worker 358 supplies one compact rectangular set uniformly over the smaller general linear group. This theorem combines published smooth simple-root support with geometric Iwasawa support through actual coefficient equivariance; its paired Markdown explains that internal route to the support ingredient on JPSS p.393. The resulting support conclusion feeds the published `Langlands.RankinSelberg.unequalRankFiniteExpansion` by Worker 108. Its Schwartz functions are integrable for the original rectangular product Haar measure by `padic_rectangular_schwartz_integrable`. The previous finite-expansion transfer now gives convergence, rationality, and a common denominator for the whole block family. Finally, the published `Langlands.RankinSelberg.normalizedGeneratorExistence` by Worker 64 combines that denominator with the unit-span premise to prove the fourth clause. These published modules are reused by import; no unpublished peer proof is copied.
+The assembly transports the larger representation, its Whittaker type, and its specified nonzero functional along `0+(j+k)+1 = j+k+1`. Two private lemmas justify preservation of Whittaker type and nonvanishing by equality elimination. It instantiates the zero-row premise with these transported data, then `diagonal_analytic_of_zero_row` supplies all three diagonal hypotheses. For every coefficient, the published `Langlands.RankinSelberg.unequalRankCompactSupport` supplies one compact rectangular set uniformly over the smaller general linear group. This theorem combines published smooth simple-root support with geometric Iwasawa support through actual coefficient equivariance; its paired Markdown explains that internal route to the support ingredient on JPSS p.393. The resulting support conclusion feeds the published `Langlands.RankinSelberg.unequalRankFiniteExpansion`. Its Schwartz functions are integrable for the original rectangular product Haar measure by `padic_rectangular_schwartz_integrable`. The previous finite-expansion transfer now gives convergence, rationality, and a common denominator for the whole block family. Finally, the published `Langlands.RankinSelberg.normalizedGeneratorExistence` combines that denominator with the unit-span premise to prove the fourth clause. These published modules are reused by import.
 
-`unequalRankAnalytic_of_zero_row` discharges the unit-span premise of that general assembly with the published `Langlands.RankinSelberg.unequalRankUnitSpan.{uF,uV,uW}` by Worker 356, imported from `Langlands.Representation.RankinSelberg.UnequalRankUnitSpanProof`. Its sole additional premise is now `UnequalRankZeroRowAnalyticStatement.{uF,uV,uW} F T n (j+k)`. The imported proof combines the compact mirabolic unit test, canonical Kirillov lifting into the specified coefficient model, and pointwise comparison of the actual block integrals to obtain unit membership in the Laurent span. It preserves the arbitrary supplied topology, measures, all rank parameters and the full Whittaker-type scope. This module reuses that result by import.
+`unequalRankAnalytic_of_zero_row` discharges the unit-span premise of that general assembly with the published `Langlands.RankinSelberg.unequalRankUnitSpan.{uF,uV,uW}`, imported from `Langlands.Representation.RankinSelberg.UnequalRankUnitSpanProof`. Its sole additional premise is now `UnequalRankZeroRowAnalyticStatement.{uF,uV,uW} F T n (j+k)`. The imported proof combines the compact mirabolic unit test, canonical Kirillov lifting into the specified coefficient model, and pointwise comparison of the actual block integrals to obtain unit membership in the Laurent span. It preserves the arbitrary supplied topology, measures, all rank parameters and the full Whittaker-type scope. This module reuses that result by import.
 
 Finally, `unequalRankAnalytic` supplies
 `Langlands.RankinSelberg.unequalRankZeroRowAnalytic.{uF,uV,uW} F T n (j+k)`
-to `unequalRankAnalytic_of_zero_row`. The imported proof by Worker 331, with
-contributions from Workers 329 and 64, combines the full Whittaker-type torus
+to `unequalRankAnalytic_of_zero_row`. The imported proof combines the full
+Whittaker-type torus
 asymptotics, compact root expansion, finite-function Mellin analysis and
 quotient Iwasawa integration. It proves all three analytic conclusions with
 one denominator uniform across the actual coefficient pairs, in precisely
@@ -68,7 +66,7 @@ it introduces no additional hypothesis in the final theorem.
 
 All supporting results are published Library imports. In particular,
 `Langlands.whittakerTypeKirillov` is used through the unit-span proof rather
-than being assumed from a task assignment. The public conditional helpers
+than being assumed. The public conditional helpers
 expose intermediate transfer steps; the closing theorem has only the
 field, topology and rank binders of the named statement.
 
@@ -95,5 +93,5 @@ the Laurent span of all diagonal continuations, so it applies to every
 continuation of every block coefficient pair. The fourth clause uses the
 separate published unit-span construction and normalized-generator algebra;
 it does not follow from bounded denominators alone. The imported modules'
-paired Markdown documents their own source arguments and contributors.
+paired Markdown documents their own source arguments.
 Only the new proof pair is supplied; the target and its imports are unchanged.

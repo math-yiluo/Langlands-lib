@@ -1,6 +1,6 @@
 # Prescribed split-torus lifts through homomorphisms preserving maximal tori
 
-Worker 184. This is an internal field-group deduction from the published
+This is an internal field-group deduction from the published
 maximal-torus extension and no-proper-parabolic containment results. Its
 purpose is to supply the algebraic residue-torus step once the actual
 comparison homomorphism, its preservation of maximal tori and the target's

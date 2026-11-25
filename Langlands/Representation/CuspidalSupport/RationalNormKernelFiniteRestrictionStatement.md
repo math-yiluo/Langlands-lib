@@ -113,10 +113,10 @@ is the direct sum of finitely many simple submodules. Applied to the
 of `ρH`, finitely many in number, whose sum is the whole carrier; forgetting
 directness gives clause 3. Conversely, a sum of finitely many simple
 submodules is semisimple and of finite length, so clause 3 also implies
-clauses 1 and 2. The three clauses are stated separately as the task
-requires, with clause 2 explicit, rather than relying on these implications.
+clauses 1 and 2. The three clauses are stated separately, with clause 2
+explicit, rather than relying on these implications.
 This section explains the relation between the clauses; no Lean proof of
-either implication is part of this unit.
+either implication is part of this module.
 
 ## Source proof and the obligations it creates
 

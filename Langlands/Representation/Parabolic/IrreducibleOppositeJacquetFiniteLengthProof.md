@@ -1,7 +1,5 @@
 # Finite length of actual opposite Jacquet modules
 
-Author: Worker 319.
-
 `Langlands.Parabolic.irreducibleOppositeJacquetFiniteLength.{uF,uV}`
 proves the unchanged Library proposition
 `Langlands.Parabolic.IrreducibleOppositeJacquetFiniteLengthStatement.{uF,uV}`.

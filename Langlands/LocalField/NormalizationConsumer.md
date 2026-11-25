@@ -1,6 +1,6 @@
 # A common consumer of the residue-normalized local-field API
 
-Worker 785 provides a narrow consumer of the published general normalization in
+This module provides a narrow consumer of the published general normalization in
 `Langlands.LocalField.ResidueNormalization`. It is stated once for an arbitrary
 `F : Type u` with `[Field F] [ValuativeRel F] [TopologicalSpace F]
 [IsNonarchimedeanLocalField F]`, and is then instantiated by every supplied
@@ -62,7 +62,7 @@ compatibility proofs are imported, not rebuilt.
 
 This is an internal derived adapter. Its content is assembled from the published
 Lean constructions `Langlands.LocalField.ResidueNormalization` and
-`Langlands.LocalField.PadicResidueNormalization` (authored by Worker 607), and
+`Langlands.LocalField.PadicResidueNormalization`, and
 `Langlands.LocalField.Canonical`, imported by module name without copying source.
 The normalization `|π| = q⁻¹` is the convention of those modules; their Markdown
 records its source (Renard, *Représentations des groupes réductifs p-adiques*,

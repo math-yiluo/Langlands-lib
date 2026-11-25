@@ -1,6 +1,6 @@
 # Consequences of Krull dimension at most one for a finitely generated domain
 
-Worker 716. Standard commutative-algebra facts, used in the proof of
+Standard commutative-algebra facts, used in the proof of
 `Langlands.GroupScheme.PerfectFieldOneDimensionalUnipotentStatement` to supply
 the finiteness and dependence hypotheses of the algebraic core (`Core`). No
 registered source was used. The proofs are the implemented ones. Throughout,

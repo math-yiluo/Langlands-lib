@@ -1,7 +1,5 @@
 # Exact K0 transitivity for composed parabolics
 
-Author: Worker 320.
-
 `Langlands.Parabolic.normalizedComposedInductionK0` and
 `Langlands.Parabolic.normalizedComposedJacquetK0` are integer-linear maps on
 the existing exact finite-length smooth Grothendieck groups. They have the

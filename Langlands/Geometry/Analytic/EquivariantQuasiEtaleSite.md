@@ -1,7 +1,5 @@
 # The quasi-étale site `X(G)_qét` of a `G`-space
 
-Author: Worker 21.
-
 For a `G`-space `X`, Berkovich's equivariant quasi-étale site `X(G)_qét` has as
 objects the quasi-étale `G`-morphisms `U(G) → X(G)` from `G`-spaces `U`. Its
 coverings are the families whose underlying families are quasi-étale
@@ -94,5 +92,5 @@ Not done here: continuity of `ofEquivariantEtaleSite` and of the other
 functors for the Grothendieck topologies (the morphism of sites `µ_G`); the
 morphisms of sites along general morphisms `X′(G′) → X(G)` of `𝒜n^op`, which
 need fibre products; the induced spaces `X_{G/N}` and Example 1.2.1; sheaves,
-`G`-sheaves and Theorem 1.4.2, which belong to the parent task's equivariant
-sheaf branch.
+`G`-sheaves and Theorem 1.4.2, which belong to equivariant
+sheaf theory.

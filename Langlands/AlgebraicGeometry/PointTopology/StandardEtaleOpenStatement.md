@@ -1,7 +1,5 @@
 # Openness of actual standard etale point maps
 
-Author: Worker 208.
-
 `StandardEtalePointOpenStatement` asserts that, for every complete nontrivially
 normed field K and every standard etale presentation of an A-algebra B,
 restriction from actual K-algebra-map B-points to actual K-algebra-map A-points

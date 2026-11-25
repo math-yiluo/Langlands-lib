@@ -26,4 +26,4 @@ For two original spans `X ← S → Y` and `Y ← T → Z`, let `e : W ⟶ S` an
 
 All constructions use the existing original arrows and actual balanced quotient spectra. Properness, coverings and cartesianness are not established for every rational arrow, nor is a pullback object asserted to exist in the rational transport category. Mathlib's type-level product-subtype pullback in the topology helper exhibits the general cartesian input but does not construct a rational, analytic or Shimura pullback object.
 
-This unit acts on ordinary-open compactly supported locally constant functions. It constructs no trace on Godement resolutions or higher sheaf-derived etale cohomology, no analytic uniformization, and no actual arithmetic Hecke correspondence or Harris compatibility theorem. Those parts of the wider framework remain obligations.
+This module acts on ordinary-open compactly supported locally constant functions. It constructs no trace on Godement resolutions or higher sheaf-derived etale cohomology, no analytic uniformization, and no actual arithmetic Hecke correspondence or Harris compatibility theorem.

@@ -1,7 +1,5 @@
 # Square-summability of square-integrable Whittaker functions on the torus lattice
 
-Author: Worker 906. The helper modules credit further authors of reused code.
-
 `Langlands.RankinSelberg.squareIntegrableWhittakerTorusSum` proves the published
 statement
 
@@ -18,7 +16,7 @@ uniformizing `ϖ`, the family `δ(ϖ^μ)⁻¹ ‖W(ϖ^μ)‖²`, with `μ = (lam
 The statement Markdown cites Jacquet, Piatetski-Shapiro and Shalika 1983, §8.3, which uses
 this square-summability without proof. The proof here does not use the Whittaker asymptotic
 expansion or an exponent criterion. It compares Whittaker functions directly with matrix
-coefficients, a route the task contract allows. This route is internal to the project. The
+coefficients. This route is internal to the project. The
 irreducibility hypothesis is not used; only square-integrability modulo the centre (with the
 admissibility it contains) is used.
 

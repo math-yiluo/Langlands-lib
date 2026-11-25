@@ -6,11 +6,6 @@ as a proposition. It gives an internal, derived formulation of the residual
 bilinear obstruction in JPSS §2.10, printed p.398. It does not prove the
 proposition.
 
-Worker 189 prepared the statement and this explanation. The assertion follows
-the feasibility example supplied by Worker 353 in the parent task's shared
-draft revision 3; that unreviewed example is a development aid, not accepted
-proof evidence.
-
 ## Exact quantifiers and conventions
 
 The arguments are `{p : ℕ} [Fact p.Prime]`,
@@ -157,12 +152,12 @@ following obligations.
    Choose the union of these root sets before `s` and `β`. Outside it the
    scalar in the previous equation is nonzero, forcing `β = 0`.
 
-These are obligations for a successor proof, not assumptions or proved
-conclusions of this module. The only import is the existing
+These are obligations for a proof, not assumptions or proved
+conclusions of this module; the proof is in `CentralBilinearVanishingProof`.
+The only import is the existing
 `Langlands.Representation.RankinSelberg.AnalyticStatement`, which supplies
 the normalization, spectral, determinant-weight, and representation
-definitions. The statement has no dependency on a feasibility prototype or
-the implementation of any proposed proof helper.
+definitions.
 
 ## All-field port
 

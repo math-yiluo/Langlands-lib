@@ -2,19 +2,17 @@
 
 `Langlands.AlgebraicGeometry.RelativeProjectiveSpaceFibreAffineOpen`.
 
-Authors: Worker 1224.
-
 Let `f : X ⟶ S` be a morphism of schemes that factors through a closed immersion
 `i : X ⟶ RelativeProjectiveSpace S n`. This module shows that every finite set of
 points of `X` lying in one fibre of `f` is contained in an affine open of `X`. The
 proof of `Langlands.AbelianScheme.FiniteEtaleQuotientExistenceStatement` uses it to
 find affine opens containing the orbits of a finite subgroup acting on a projectively
-embedded abelian scheme. Worker 934 fixed the statement as the interface for that
+embedded abelian scheme. The statement of this module is the interface for that
 assembly.
 
 ## Provenance
 
-This module is derived infrastructure for this task. Its main input is
+This module is derived infrastructure for that proof. Its main input is
 `AlgebraicGeometry.exists_isAffineOpen_forall_mem_of_isAffineHom_proj`, which is
 already in the Library in
 `Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_exists_isAffineOpen_forall_mem_of_isAffineHom_proj`

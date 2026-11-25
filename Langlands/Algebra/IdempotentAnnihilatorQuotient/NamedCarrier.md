@@ -1,6 +1,6 @@
 # The annihilator of `eA` and the quotient functor `M ↦ M_e`
 
-Worker 1111. This module constructs the annihilator `F(eA,M)` and the quotient
+This module constructs the annihilator `F(eA,M)` and the quotient
 `M_e = M/F(eA,M)` of Renard I.3.2. It builds the quotient as an additive
 endofunctor of the published category of original modules, with the quotient
 projections as a natural transformation from the identity, and restricts both
@@ -234,15 +234,13 @@ described under "The quotient `M_e`" above.
 
 ## Reuse
 
-- `Langlands.Algebra.NonUnitalModule` (accepted base candidate
-  `e1b5cfdd-e161-4f49-9807-6db2d68e2a05` for the original additive module
+- `Langlands.Algebra.NonUnitalModule` (the original additive module
   constructions): `NonUnitalModule`,
   `NonUnitalModuleHom`, `NonUnitalSubmodule`, `NonUnitalModule.zero`,
   `IsNondegenerate`, `NonUnitalModuleCat`, `nondegenerateProperty`,
   `NondegenerateModuleCat`, `nondegenerateInclusion`.
 - `Langlands.Algebra.IdempotentedRing`: `Idempotent`.
-- `Langlands.Algebra.IntegerNonUnitalSubmodule` (accepted candidate
-  `be182b75-5913-4e3c-b1b8-047b7d50d65d`): `NonUnitalSubmodule.toIntCompatible`.
+- `Langlands.Algebra.IntegerNonUnitalSubmodule`: `NonUnitalSubmodule.toIntCompatible`.
 - `Langlands.Algebra.IntegerCompatibleNonUnitalAction`:
   `NonUnitalModuleHom.toIntLinearIntertwiner`.
 - `Langlands.Algebra.CompatibleSubmodule`:
@@ -267,10 +265,14 @@ idempotented-ring assumption.
 
 ## Scope
 
-This is a construction unit. The following parts of Renard I.3.2 and its
+This is a construction module. The following parts of Renard I.3.2 and its
 sequel on printed pages 20–22 are not stated or proved here, and none of them
-is an assumption of this definition family. They remain separate statement
-and proof successors over these constructions:
+is an assumption of this definition family. Some of them are proved in other
+files: the first two in
+`Langlands.Algebra.IdempotentAnnihilatorComparisons` (`quotient_idempotence`,
+`fixed_comparison`) and the equivalence criterion in
+`Langlands.Algebra.NonUnitalModuleCornerEquivalenceCriterionProof`
+(`cornerEquivalenceCriterion`). The parts are:
 
 - the lemma `(M_e)_e = M_e`;
 - the isomorphism induced by the quotient on `e`-fixed parts;
@@ -279,7 +281,7 @@ and proof successors over these constructions:
 - the bijection of simple classes;
 - the equivalence criterion.
 
-The `e`-fixed corner module of I.3.1 is a separate task and is not
-constructed here. No completion of I.3.2 or of the book is claimed.
+The `e`-fixed corner module of I.3.1 is not constructed here (it is in
+`Langlands.Algebra.NonUnitalModuleCorner`). No completion of I.3.2 or of the book is claimed.
 
-Integration placement: this reviewed implementation is preserved in the NamedCarrier submodule; the parent `Langlands.Algebra.IdempotentAnnihilatorQuotient` imports both reviewed interfaces.
+Placement: this implementation is the NamedCarrier submodule; the parent `Langlands.Algebra.IdempotentAnnihilatorQuotient` imports both interfaces, this one and `ExplicitAction`.

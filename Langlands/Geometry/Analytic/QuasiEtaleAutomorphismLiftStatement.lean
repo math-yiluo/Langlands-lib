@@ -21,6 +21,6 @@ def QuasiEtaleAutomorphismLiftStatement (K : Type u) [NormedField K] [IsUltramet
       ∀ E : Finset (TestTriple (presentationOf U)),
         ∃ D : Finset (TestTriple (presentationOf X)), ∀ σ : Aut X,
           (∀ τ ∈ D, σ ∈ nearIdentity τ) →
-            ∃ ψ : U ⟶ U, ψ ≫ f = f ≫ σ.hom ∧ ∀ τ ∈ E, IsNear τ ψ (𝟙 U)
+            ∃ ψ : U ⟶ U, ψ ≫ f = f ≫ σ.asIso.hom ∧ ∀ τ ∈ E, IsNear τ ψ (𝟙 U)
 
 end Langlands.Analytic.SaturatedAtlasPresentation

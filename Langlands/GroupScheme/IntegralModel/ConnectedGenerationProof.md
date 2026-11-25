@@ -1,7 +1,5 @@
 # Proof of KP Lemma A.4.26: connected generators recover the relative identity component
 
-Author: Worker 5254.
-
 The theorem `Langlands.GroupScheme.connectedGeneration.{u}` proves exactly
 `Langlands.GroupScheme.ConnectedGenerationStatement.{u}`, the affine form of
 Kaletha–Prasad, *Bruhat–Tits Theory: A New Approach* (2023), registered as

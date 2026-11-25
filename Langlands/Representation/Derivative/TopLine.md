@@ -1,7 +1,5 @@
 # A scalar model of a nonzero irreducible top derivative
 
-Author: Worker 357.
-
 This is a derived supporting construction.
 `Langlands.Derivative.topDerivativeLineEquiv` constructs an actual complex
 linear equivalence from the full carrier of the top derivative of an

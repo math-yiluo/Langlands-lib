@@ -1,7 +1,7 @@
 # The generalized compression kernel is the upper Jacquet kernel
 
-Author: Worker 127. The short orbit-invariance helper is reproduced from
-Worker 99's published `BlockCompressionProof`.
+The short orbit-invariance helper is reproduced from the published
+`BlockCompressionProof`.
 
 The closing theorem `Langlands.Jacquet.blockPowerKernelJacquet.{uF,uV}`
 proves exactly `Langlands.Jacquet.BlockPowerKernelJacquetClause.{uF,uV}`
@@ -85,8 +85,9 @@ theorems and the existing relation-span quotient. It imports
 `Langlands.Representation.Jacquet.BlockCompressionProof` and
 `Langlands.Group.GL.BlockContractionProof`; every existing Library pair
 remains unchanged. The orbit-invariance helper is the elementary argument
-from the private `average_apply_subgroup` helper in Worker 99's published
-compression proof, reproduced because that declaration is private.
+from the private `average_apply_subgroup` helper in the published
+compression proof `BlockCompressionProof`, reproduced because that declaration
+is private.
 
 The motivating original is Bill Casselman, *Introduction to admissible
 representations of p-adic groups*, Chapter III, *Induced representations and

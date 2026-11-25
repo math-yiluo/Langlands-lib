@@ -34,6 +34,7 @@ splitness, affine-base, or global-cocharacter hypothesis. Equality of ranges
 is equality of subgroup functors on every test scheme.
 
 The provenance is derived from the imported local construction and descent
-lemmas. This is the complete conditional reduction of the host target;
-unconditional proofs of the three structure inputs remain necessary to
-conclude the host task.
+lemmas. This is the complete conditional reduction of `RelativeTorusLeviStatement`;
+concluding that statement from it needs unconditional proofs of the three
+structure inputs. The Library's unconditional theorem is `relativeTorusLevi`
+in `TorusLeviProof`.

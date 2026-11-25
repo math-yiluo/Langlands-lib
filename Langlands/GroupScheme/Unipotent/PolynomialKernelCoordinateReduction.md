@@ -50,7 +50,7 @@ universe; the theorem does not assert a cross-universe base-change isomorphism.
 
 The conclusion supplies some zero coordinate. The original lemma selects the
 first coordinate by a final permutation; that permutation is not included
-here. This unit does not yet identify the kernel with a product, produce the
-complete vector-factor decomposition, or prove the arbitrary unipotent-group
+here. This module does not identify the kernel with a product (the module
+`PolynomialKernelProduct` does), produce the complete vector-factor decomposition, or prove the arbitrary unipotent-group
 woundness criterion. No structural presentation or additional theorem premise
 is assumed for an arbitrary group.

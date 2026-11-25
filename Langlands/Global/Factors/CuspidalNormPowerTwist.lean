@@ -35,7 +35,7 @@ open scoped NNReal
 open Automorphic (CuspidalOperatorRealization OperatorRealization centralIdeleCharacter)
 open Automorphic.ContinuousRationalFunctions (evaluate)
 open CuspidalPairPoles
-open Langlands.ClassField.Global.RelativeWeilGroup (HasUnitaryCentralCharacter)
+open Langlands.ClassFieldTheory.Global.RelativeWeilGroup (HasUnitaryCentralCharacter)
 
 namespace NormPowerTwist
 

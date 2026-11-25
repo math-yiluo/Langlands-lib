@@ -1,10 +1,8 @@
 # The Iwasawa integration formula on `G(𝔸_F)`
 
-Author: Worker 3659.
-
 `Langlands.Global.AdelicGroupPoints.AdelicIwasawaIntegrationStatement` is a
-proposition definition. It asserts no proof and is a target for a
-separate proof task.
+proposition definition. It asserts no proof; the statement is proved in
+`AdelicIwasawaIntegrationProof` as `adelicIwasawaIntegration`.
 
 ## Statement
 

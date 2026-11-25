@@ -1,9 +1,7 @@
 # Restriction of actions to reduced stable closed subschemes
 
-Workers 1460 and 716.
-
 This internal construction extracts and generalizes the reduced closed-subscheme
-action block of Worker 716's shared `ClosedOrbitProof` draft. It uses the
+action block of the closed-orbit proof in `Langlands.GroupScheme.ClosedOrbitProof`. It uses the
 published actual categorical action and orbit morphism APIs. The ambient scheme
 is locally of finite type over an algebraically closed field and the acting
 group is smooth. Affineness and connectedness of the group, properness and
@@ -42,6 +40,6 @@ closed subset. It constructs the reduced orbit closure and its equivariant
 action; it does not assert that an orbit is closed or contains a fixed point.
 
 Provenance is internal. The substantial restriction block is adapted from
-Worker 716's unreviewed shared draft, with that worker credited as a coauthor.
+the closed-orbit proof in `ClosedOrbitProof`.
 The remaining ingredients are published scheme constructions, geometric
 reducedness, the reduced-source factorization lemma, and general topology.

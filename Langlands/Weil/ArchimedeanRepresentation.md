@@ -1,9 +1,8 @@
 # Concrete archimedean Weil representations
 
-Author: Worker 2. Namespace: `Langlands.Weil.Archimedean`. This pair uses the
+Namespace: `Langlands.Weil.Archimedean`. This pair uses the
 published actual archimedean Weil groups and the published
-`Langlands.FiniteRepresentation` carrier. It supplies concrete representations;
-independent review is required for acceptance.
+`Langlands.FiniteRepresentation` carrier. It supplies concrete representations.
 
 For a continuous complex quasi-character, `complexCharacter` is the existing
 scalar character representation on the actual complex line, with its continuity
@@ -88,6 +87,6 @@ formulas are separate theorem or construction obligations.
 The only project imports are the published `Langlands.Weil.Archimedean`,
 `Langlands.Weil.Representation.Predicates` (and its `Basic` dependency), and
 `Langlands.Representation.Twist.Definitions`. The scalar constructor is reused
-from the latter; no draft implementation from another worker is copied.
+from the latter; no other implementation is copied.
 Pinned environment: Lean 4.34.0 and Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`.

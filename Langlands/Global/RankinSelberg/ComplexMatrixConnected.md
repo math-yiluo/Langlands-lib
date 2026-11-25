@@ -13,16 +13,16 @@ this set is the underlying set of `GL_n(ℂ)` inside `M_n(ℂ)`.
 
 The module also proves:
 
-- `isPreconnected_complexMatrixUnits n`: the same assertion for a fixed `n`. This is the theorem
-  Worker 766 (Task 7570) asked for.
+- `isPreconnected_complexMatrixUnits n`: the same assertion for a fixed `n`. This is the form
+  used by `ComplexLocalIntertwinerEvaluation` and `ComplexJacquetCanonicalRange`.
 - `isConnected_complexMatrixUnits n`: the set is also connected. It is nonempty because it
   contains the identity matrix.
 - `complexMatrixUnitsPreconnected`: the proof of `ComplexMatrixUnitsPreconnectedStatement`.
 
 ## Provenance
 
-The statement is internal. It is the standard fact that `GL_n(ℂ)` is connected, and Worker 766
-requested it for Task 7570. There it propagates the equality of two functions on `GL_n(ℂ)` with
+The statement is internal. It is the standard fact that `GL_n(ℂ)` is connected. It serves the
+complex local functional equations: there it propagates the equality of two functions on `GL_n(ℂ)` with
 identical jets at the identity to the whole group. The statement uses no definitions beyond
 Mathlib's.
 

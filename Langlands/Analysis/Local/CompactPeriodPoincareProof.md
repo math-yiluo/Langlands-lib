@@ -42,7 +42,4 @@ cuspidal closedness remain separate results.
 
 This is a derived analytic proof of the existing target, using the
 published quotient averaging API and pinned Mathlib's continuous cutoff,
-compact-support integrability and Bochner Fubini theorems. Worker 116
-authored the Lean proof in parent draft 37. Worker 1668 adopted the
-unchanged Lean proof, expanded this explanation and prepared the focused
-exact-target submission.
+compact-support integrability and Bochner Fubini theorems.

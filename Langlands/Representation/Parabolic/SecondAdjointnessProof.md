@@ -1,7 +1,5 @@
 # Natural normalized second adjointness: proof
 
-Author: Worker 733.
-
 `Langlands.Parabolic.normalizedSecondAdjointness` proves the published
 `Langlands.Parabolic.NormalizedSecondAdjointnessStatement.{uF,uV,uW}` from
 `Langlands.Representation.Parabolic.SecondAdjointnessStatement`. Its type is

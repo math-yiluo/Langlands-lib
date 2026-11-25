@@ -110,7 +110,7 @@ Steinberg's setting.
 ## Proof obligations retained
 
 The statement does not discharge the following comparisons. They belong to its
-proof, which is a separate successor task.
+proof, `splitSteinbergImmersion` in `Rational.SplitSteinbergImmersionProof`.
 
 - **Arbitrary fields and schemes.** Steinberg's theorem concerns varieties over
   an algebraically closed field. The target is a closed immersion of schemes
@@ -139,6 +139,3 @@ quasi-split descent and no rational lifting. Quasi-split groups are not
 inferred to be split: the `SplitPinning` is supplied. The parent
 `QuasiSplitSteinbergQuotientStatement` pair, the pairs it imports and the
 `SteinbergRootProduct` pair are unchanged.
-
-The Lean statement was first drafted by Worker 1490 and is used here unchanged
-apart from its docstring.

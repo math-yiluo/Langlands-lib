@@ -1,12 +1,10 @@
 # Renard VI.10.6 Proposition (i) from its named inputs
 
-Author: Worker 733, Task 6639 (`97df9594-40e0-45d8-8f8c-0e7562c6b4de`).
-
 This module proves two conditional theorems. They reduce the published
 `Langlands.Jacquet.StandardIwahoriFixedVectorBlockDecompositionStatement`
 (Renard VI.10.6 Proposition (i), `M(G)_K ≃ ∏_{𝔰 ∈ B(G)_K} M(G)_𝔰`), and the
 fixed-vector visibility of Bernstein classes, to three published Library
-statements. Their proofs are separate obligations. The module proves neither
+statements. Their proofs are not part of this module. The module proves neither
 the target nor visibility unconditionally.
 
 ## Statements
@@ -31,7 +29,7 @@ The module proves the following.
   instances `T2Space F`, `LocallyCompactSpace (rationalPoints G)` and
   `NonarchimedeanGroup (rationalPoints G)`. It concludes
   `bernsteinFixedVectorVisibility.{uF, uV} i ν (standardBernsteinFamily i ν hG hi hν) K`.
-  This is the conditional form of the visibility helper required by the task.
+  This is the conditional form of the fixed-vector visibility of Bernstein classes.
 - `standardIwahoriFixedVectorBlockDecomposition_of_inputs hBernstein hCrit hAssociate`
   has type exactly `StandardIwahoriFixedVectorBlockDecompositionStatement.{uF, uV}`.
 - `standardIwahoriFixedVectorBlockDecompositionOfInputs` is the same
@@ -89,8 +87,9 @@ decomposition together with the fact that `K`-fixed vectors are visible on
 inertial classes. The latter comes from the criterion of the Corollary's
 proof and Jacquet's lemma. The implemented route uses the admissibility-free
 nonvanishing form of Jacquet's lemma (module `IwahoriJacquetNonvanishing`)
-and only the necessity direction of the criterion. Once proofs of the three
-input statements are published, applying these theorems to them proves the
-target and the visibility helper unconditionally. Those statements are the
-targets of Task 5313 (VI.7.2), Task 6561 (the criterion), and Task 4949 or
-Task 6571 (VI.5.4 / support uniqueness).
+and only the necessity direction of the criterion. Applied to proofs of the
+three input statements, these theorems prove the target and the visibility
+helper unconditionally. The criterion is proved by
+`Langlands.CuspidalSupport.standardRepresentativeFixedVectorCriterion`; the
+Library has no proof of `BernsteinDecompositionStatement` (VI.7.2) or of
+`LeviSupercuspidalInductionAssociationStatement` (VI.5.4).

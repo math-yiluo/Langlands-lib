@@ -3,8 +3,6 @@
 Module `Langlands.Representation.RankinSelberg.TwoBlockFirstBlockQuotientData`,
 namespace `Langlands.RankinSelberg.TwoBlockFirstBlockQuotient`.
 
-Author: Worker 823.
-
 This module is a definitions unit. It builds the subgroups, quotients and
 averages that appear in the second disintegration of JPSS (1983),
 Section (4.6), equation (6). These are internal data for that displayed

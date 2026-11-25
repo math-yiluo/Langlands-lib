@@ -106,6 +106,9 @@ characterization itself explicitly omits smoothness and affineness; neither
 is used here. No new external source assertion is introduced.
 
 Smooth existence remains a premise of the two conditional smooth theorems.
-This unit does not prove `SmoothExistenceStatement` and does not alone prove
-the published `SmoothStructureStatement` without premises. It leaves the
-existence obligation of the enclosing task intact.
+This module does not prove `SmoothExistenceStatement` and does not alone prove
+the published `SmoothStructureStatement` without premises. Smooth existence is
+proved separately, by `smoothExistence` in
+`Langlands.GroupScheme.RelativeIdentityComponent.SmoothExistenceProof`, and
+`smoothStructure` in `Langlands.GroupScheme.RelativeIdentityComponent.SmoothProof`
+proves `SmoothStructureStatement`.

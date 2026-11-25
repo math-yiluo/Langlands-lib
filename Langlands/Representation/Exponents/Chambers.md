@@ -1,7 +1,5 @@
 # H-maps and positive root cones for block Levis of `GL_n`
 
-Author: Worker 23.
-
 This module adds Harish-Chandra's H-map for the block Levi of a standard
 parabolic of `GL_n(F)` and for its split centre, together with the positive
 root cones used in the square-integrability and temperedness inequalities. It
@@ -96,8 +94,7 @@ For `T.IsRealPartOf χ x`:
 These are the inequalities of Casselman's criteria for a single character,
 written for block scalars. The module states neither the square-integrability
 criterion nor the tempered criterion for a representation: both quantify over
-all standard parabolics and all exponents, and they remain separate statements
-(Worker 19's exponent criteria).
+all standard parabolics and all exponents, and they remain separate statements.
 
 ## Sources
 
@@ -160,10 +157,10 @@ Lean code states only the block-scalar inequalities.
 The cone predicates and their pairing and simple-root characterizations are
 elementary linear algebra, proved here, in the coordinates fixed by the
 published `IsRealPartOf`. The H-maps follow Silberger's definition, with the
-explicit basis of rational characters described above. Worker 19 asked for this
-interface for the remaining exponent statements (H-maps with their character
+explicit basis of rational characters described above. This interface serves
+the exponent statements (H-maps with their character
 compatibility, and partial-sum cones in split-centre coordinates, kept separate
-from the determinant-twist chamber). Worker 19's published
+from the determinant-twist chamber). The published
 `RootWeightConeDecompositionStatement` is the Euclidean cone lemma of
 Silberger 1978 and is not restated here. The field `F` is any p-adic field, and
 `r` and the block shape are arbitrary; for `r ≤ 1` both cones reduce to

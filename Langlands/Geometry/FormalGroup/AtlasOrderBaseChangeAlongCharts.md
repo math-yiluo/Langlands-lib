@@ -1,6 +1,6 @@
 # Actual rational chart maps through supplied-target coefficient extension
 
-This internal unit states actual chart formulas for full-order quasi-isogeny
+This module states actual chart formulas for full-order quasi-isogeny
 extension to supplied target scalar structures. It combines the existing raw
 coefficient-extension formula with scalar equality transport of actual global
 formal order maps and tensors. It makes no new literature assertion.
@@ -37,4 +37,5 @@ actions with equal covers. Coefficient rings and tests share universe `v`,
 while `O`, `D` and `F` may have separate universes. Quasi-isogenies retain the
 existing domain/fraction-field assumptions. Covers may be infinite and scalar
 maps may merge generators. Compatibility of framed Nilp-base extension with
-framed comparisons remains a further construction.
+framed comparisons is outside this module; `DrinfeldFramedComparisonBaseChange`
+constructs `DrinfeldFramedAtlas.Comparison.baseChange`.

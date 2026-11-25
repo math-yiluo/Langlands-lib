@@ -26,12 +26,12 @@ inverse-deck actions. -/
 def galoisFixedSectionInclusion {V : TwistedOver (etale (K := K)) ρ}
     (l : ActionLift ρ V.hom) (B : OpenSubgroup G) (hB : (B : Subgroup G) ≤ l.subgroup)
     {Γ : Type} [Group Γ] (deck : Γ →* Aut V.obj.left)
-    (hdeck : ∀ γ, (deck γ).hom ≫ V.hom = V.hom)
+    (hdeck : ∀ γ, (deck γ).asIso.hom ≫ V.hom = V.hom)
     (hcomm : ∀ (γ : Γ) (k : l.subgroup),
-      (l.action k).hom ≫ (deck γ).hom = (deck γ).hom ≫ (l.action k).hom)
+      (l.action k).asIso.hom ≫ (deck γ).asIso.hom = (deck γ).asIso.hom ≫ (l.action k).asIso.hom)
     (σ : Representation R (ULift.{w} Γ) (S.obj.obj.obj (op V)))
     (hσ : ∀ (γ : ULift.{w} Γ) (t : S.obj.obj.obj (op V)),
-      σ γ t = S.obj.obj.map (deckEndomorphism V (deck γ.down⁻¹) (hdeck γ.down⁻¹)).op t) :
+      σ γ t = S.obj.obj.map (deckEndomorphism V (deck γ.down⁻¹).asIso (hdeck γ.down⁻¹)).op t) :
     galoisFixedSectionRep (S := S) l B hB deck hdeck hcomm ⟶ Rep.of σ :=
   Rep.ofHom <| LinearMap.intertwiningMap_of_isIntertwiningMap _ σ
     (liftFixedSubmodule S V l B hB).subtype (by
@@ -46,12 +46,12 @@ theorem exists_galoisFixedSubrepresentation_of_discreteSections
     (hS : HasCoinducedGaloisFixedSections L S)
     {V : TwistedOver (etale (K := K)) ρ} (hV : IsDistinguishedEtale V.hom)
     (l : ActionLift ρ V.hom) {Γ : Type} [Group Γ] [Finite Γ]
-    (deck : Γ →* Aut V.obj.left) (hdeck : ∀ γ, (deck γ).hom ≫ V.hom = V.hom)
+    (deck : Γ →* Aut V.obj.left) (hdeck : ∀ γ, (deck γ).asIso.hom ≫ V.hom = V.hom)
     (hfree : ∀ (γ : Γ) (p : (localizedFieldPointFunctor L).obj V.obj.left),
-      (localizedFieldPointFunctor L).map (deck γ).hom p = p → γ = 1)
+      (localizedFieldPointFunctor L).map (deck γ).asIso.hom p = p → γ = 1)
     (σ : Representation R (ULift.{w} Γ) (S.obj.obj.obj (op V)))
     (hσ : ∀ (γ : ULift.{w} Γ) (t : S.obj.obj.obj (op V)),
-      σ γ t = S.obj.obj.map (deckEndomorphism V (deck γ.down⁻¹) (hdeck γ.down⁻¹)).op t)
+      σ γ t = S.obj.obj.map (deckEndomorphism V (deck γ.down⁻¹).asIso (hdeck γ.down⁻¹)).op t)
     {D : Type a} [Finite D] (s : D → S.obj.obj.obj (op V))
     (hdisc : ∀ i, IsDiscreteSection S.obj.obj (liftAction l) (s i))
     (n : ℕ) :
@@ -62,7 +62,7 @@ theorem exists_galoisFixedSubrepresentation_of_discreteSections
   obtain ⟨M, hM, hcomm⟩ := exists_openSubgroup_commuting_with_deck hV l deck hdeck
   let l' := l.restrict M M.isOpen hM
   have hcomm' (γ : Γ) (k : l'.subgroup) :
-      (l'.action k).hom ≫ (deck γ).hom = (deck γ).hom ≫ (l'.action k).hom :=
+      (l'.action k).asIso.hom ≫ (deck γ).asIso.hom = (deck γ).asIso.hom ≫ (l'.action k).asIso.hom :=
     hcomm γ k k.property
   have hs (i : D) : IsDiscreteSection S.obj.obj (liftAction l') (s i) := by
     exact IsDiscreteSection.of_agree (N := M) (a := liftAction l) (a' := liftAction l')

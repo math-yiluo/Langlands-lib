@@ -1,6 +1,6 @@
 # Action kernels in finite representation filtrations
 
-Author: Worker 154. Module `Langlands.Representation.Intertwining.PQFilteredKernels`,
+Module `Langlands.Representation.Intertwining.PQFilteredKernels`,
 namespace `Langlands.PQFilteredKernels`.
 
 `gradedKernel s X φ` constructs the intersection of the actual group-algebra
@@ -17,7 +17,7 @@ p-adiques*, French version of 9 July 2026, VII.3.3, proof of the Lemma,
 printed p.234 / PDF p.240. Registered source
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 154 read this page. The provenance is derived: the module isolates
+This page was read. The provenance is derived: the module isolates
 an algebraic consequence of an actual supplied filtration, without asserting
 existence of the geometric-lemma support filtration needed by the original
 application.
@@ -53,14 +53,16 @@ that `I + ambientKernel` is the whole group algebra if and only if
 latter sum into the radical of the former and uses that an ideal whose
 radical is the whole ring is itself the whole ring.
 
-## Retained application obligations
+## What the application needs
 
-For VII.3.3(i) ⇔ (ii), one must still supply a finite filtration of the
+For VII.3.3(i) ⇔ (ii), one must supply a finite filtration of the
 quotient by the identity boundary support image and identify its actual
 grades with the specified geometric-lemma pieces, with the same action of
 `A_M`. This module does not construct those identifications or prove the
 exponent-disjointness clauses of `PQRegularityLemmaStatement`. It is an
-auxiliary construction for Task 5300, not the exact regularity-lemma proof.
+auxiliary construction for Renard VII.3.2–VII.3.4 (support filtrations, the
+PQ-regularity lemma and the characterization of `J_{Q|P}`), not the exact
+regularity-lemma proof.
 
 The sole import is the unchanged
 `Langlands.Representation.Intertwining.PQRegularity`, which supplies

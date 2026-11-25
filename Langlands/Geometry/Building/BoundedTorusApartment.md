@@ -118,13 +118,14 @@ This is an internal composition of the named Library constructions and
 theorems, not a transcription of a separate literature statement.
 `IntegralModelSplitTorusApartment` and its
 `HenselianSplitConjugacy` prerequisite supply the integral conjugacy step;
-the present unit constructs its integral-torus inputs from generic bounds.
+this module constructs its integral-torus inputs from generic bounds.
 
 The integral model, the generic tori, their bounds and integral-point
 fixation remain supplied. The unramified helper derives the first bound
 from the supplied source inclusion, but constructs neither that inclusion
 nor the second generic torus. There is no assertion of descent, Galois
 stability, specialness, a facet or segment comparison, or a lift of a
-prescribed residue torus. In particular,
-`UnramifiedFixedPointSplitTorusStatement` remains open. No prohibited
+prescribed residue torus. In particular, this module does not prove
+`UnramifiedFixedPointSplitTorusStatement`; the Library proves it as
+`unramifiedFixedPointSplitTorus` in `UnramifiedFixedPointSplitTorusProof`. No
 unramified building-descent statement or consumer is used.

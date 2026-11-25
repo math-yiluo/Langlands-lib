@@ -1,6 +1,6 @@
 # Standard induction stages at the Bernstein carrier universes
 
-Worker 1437 supplies internal adapters for the published
+This module supplies internal adapters for the published
 `BernsteinInductionRestrictionStatement`. The field and representation
 universes `uF` and `uV` remain independent; the input and output carriers have
 universe `max uF uV`. The structural data are exactly a
@@ -28,8 +28,7 @@ of the concrete induction functors.
 These are derived adaptations of the proofs in `RationalSupportInduction`
 and `RationalInductionStages`. Those modules state their standard wrappers
 at `max (uF + 1) uV`; applying the generic construction directly here avoids
-raising the target's carrier universe. No published definition or theorem
-is changed. The source context is Renard, *Représentations des groupes
+raising the target's carrier universe. The source context is Renard, *Représentations des groupes
 réductifs p-adiques*, French version dated 9 July 2026, VI.1 (transitivity)
 and VI.7.3 (printed p.185 / PDF p.191), registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256

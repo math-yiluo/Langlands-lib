@@ -1,7 +1,5 @@
 # Flat affine models along affine limits
 
-Worker 875.
-
 `Langlands.AlgebraicGeometry.FlatAffineLimit.model` chooses a flat affine
 locally finitely presented model of a supplied affine scheme over one level of
 a small cofiltered diagram of affine schemes. The diagram is given with an
@@ -37,4 +35,5 @@ finite-coefficient and flatness descent theorems, noetherian finite-type
 algebra facts, and affine-transition limit factorization. The implementation
 uses explicit scalar actions for the lifted integer ring. It is a generic
 model construction and does not prove relative multiplicative-type descent
-or the host extension theorem.
+or the fpqc extension theorem for groups of multiplicative type
+(`Langlands.GroupScheme.MultiplicativeTypeFpqcExtensionStatement`) that it supports.

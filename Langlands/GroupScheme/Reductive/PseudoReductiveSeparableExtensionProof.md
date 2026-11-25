@@ -1,7 +1,5 @@
 # Pseudo-reductivity after separable algebraic extension
 
-Author: Worker 1661.
-
 The theorem `Langlands.GroupScheme.pseudoReductiveSeparableExtension` proves
 the unchanged published proposition
 `Langlands.GroupScheme.PseudoReductiveSeparableExtensionStatement.{u}`

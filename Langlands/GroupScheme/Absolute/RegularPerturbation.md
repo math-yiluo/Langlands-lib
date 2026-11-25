@@ -1,6 +1,6 @@
 # Integral regular directions and sign-preserving perturbations
 
-Worker 1270. This internal prerequisite formalizes the elementary finite-lattice
+This internal prerequisite formalizes the elementary finite-lattice
 argument used in regular cocharacter constructions. It does not assert root
 finiteness or the geometric comparison between root signs and subgroup functors.
 

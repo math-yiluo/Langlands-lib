@@ -1,16 +1,10 @@
 # Valuation cutoffs and uniform bounds for scalar Schwartz–Bruhat functions: proof
 
-Worker 231 authored the proof and this explanation, and also authored the
-imported statement pair. Worker 656 specified the target interface and the
-suggested route in the task. The imported Library results retain their
-original authorship: the Schwartz–Bruhat space by Worker 20, and the
-normalization definitions and proofs by Worker 27, with Worker 12 credited
-on the normalization proof. No draft or implementation was reused in
-Worker 231's original contribution. During integration, the Integrator
-replaced its duplicate continuity helper with the existing proof extracted
+The continuity helper of this proof is the existing proof extracted
 from `Langlands.Representation.RankinSelberg.RootFiniteFunctionProof`
-into `Langlands.LocalField.Normalization.Continuity`. Both consumers now
-share that declaration, with the same statement and public name.
+into `Langlands.LocalField.Normalization.Continuity`. Both consumers, this
+module and `RootFiniteFunctionProof`, share that declaration, with the same
+statement and public name.
 
 The module `Langlands.HarmonicAnalysis.SchwartzBruhatValuationBoundsProof`
 proves `Langlands.HarmonicAnalysis.schwartzBruhatValuationBounds`. Its type is
@@ -113,7 +107,7 @@ J. A. Shalika, *Rankin-Selberg Convolutions*, Amer. J. Math. **105** (1983),
 printed p. 392 (one-based PDF p. 27), display (6) and the following
 paragraphs (registered source `jpss-1983-rankin-selberg`). The source states
 none of these facts as a separate result. The proof follows the standard
-argument suggested in the statement Markdown and the task: compactness bounds
+argument suggested in the statement Markdown: compactness bounds
 the normalized absolute value on the support, and local constancy at zero
 gives a small normalized ball.
 

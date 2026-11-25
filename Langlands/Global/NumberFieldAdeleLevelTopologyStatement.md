@@ -1,7 +1,5 @@
 # Topology of actual full number-field adelic levels
 
-Author: Worker 208.
-
 `NumberFieldAdeleLevelTopologyStatement` asserts four properties for every
 number field in an arbitrary common universe `u`:
 

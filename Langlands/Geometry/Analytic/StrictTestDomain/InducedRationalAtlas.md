@@ -1,7 +1,5 @@
 # Actual affinoid atlases on induced rational spectra
 
-Author: Worker 36.
-
 The module constructs an `IndexedAffinoidAtlas` on the actual balanced
 quotient of a rational quotient spectrum by an open subgroup. It uses
 the actual quotient algebras, the published radius-one algebra comparison,
@@ -42,7 +40,7 @@ test spaces. Registered source:
 `berkovich-2009-trieste-analytic-spaces`, PDF SHA256
 `8cfe4f6f35d5e717ac67c5c8f5ef9ff9185f460bbe5f9a10aeacd84cddeeb2ca`.
 These original passages were read for this construction. No source-specific
-errata note was present in the current Library.
+errata note was present in the Library.
 
 The rational-spectrum specialization, the combination of the two
 homeomorphisms and the chart formulas are derived constructions, not
@@ -134,11 +132,13 @@ restriction reduces to that identity.
 
 ## Scope
 
-This unit constructs the affinoid atlas on the actual induced rational
-space. It does not yet promote the existing full-group action or
+This module constructs the affinoid atlas on the actual induced rational
+space. It does not promote the existing full-group action or
 transport arrows to compatible bounded maps for every pair of these
 chosen atlas charts. Those further maps must include the subgroup
-operator caused by the choice of coset representatives. General
+operator caused by the choice of coset representatives; they are
+constructed in `InducedRationalAtlasAction` (for the full-group action)
+and `InducedRationalAtlasTransport` (for transport arrows). General
 refinements and analytic morphism localization, structure sheaves,
 etale and quasi-etale sites, the full analytic induction universal
-property and Harris's tower specialization remain host-task obligations.
+property and Harris's tower specialization are not treated in this module.

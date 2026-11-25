@@ -33,9 +33,11 @@ The base field has arbitrary universe and characteristic, its valuative
 relation has arbitrary rank, and both representation dimensions may be
 zero. There are no reductivity, faithfulness, local-field, topology,
 algebraic-closedness, density or simplicity hypotheses. The subset theorem
-also permits the empty set. This unit supplies spectral-integrality
-inheritance only; it does not prove boundedness or the host
-`ReductiveSpectralBoundednessStatement`.
+also permits the empty set. This module supplies spectral-integrality
+inheritance only; it does not prove boundedness or
+`ReductiveSpectralBoundednessStatement`, the statement it serves, which the
+Library proves as `reductiveSpectralBoundedness`
+(`Rational.ReductiveSpectralBoundednessProof`).
 
 The original composition-factor proof in Kaletha–Prasad passes to an
 algebraic closure, takes invariant subspaces, and deduces integral traces on

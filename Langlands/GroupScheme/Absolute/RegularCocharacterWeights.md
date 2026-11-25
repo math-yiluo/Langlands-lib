@@ -1,13 +1,13 @@
 # Weights of a cocharacter on the actual Lie algebra through a split torus
 
-Worker 303. This module compares two kinds of weight space in the actual Lie
+This module compares two kinds of weight space in the actual Lie
 algebra `lieKernel G k`. The first kind belongs to a homomorphism `j : T ⟶ G`
 from a split torus. The second belongs to the composite `ν ≫ j` of a
 cocharacter `ν : 𝔾_m ⟶ T` with `j`. It then proves the regular-cocharacter
 consequences that the clauses of
 `Langlands.GroupScheme.RegularCocharacterBorelStatement` need at the
-Lie-algebra level. This is helper infrastructure for the proof task
-`618cd683-cfcd-43a3-b4bf-6c8abd208b1f`.
+Lie-algebra level. This is helper infrastructure for the proof of that
+statement.
 
 Everything is stated with the published notions:
 
@@ -21,8 +21,9 @@ The only structural input is the published split-torus weight decomposition
 reductivity, smoothness, connectedness or maximality hypothesis appears.
 The module proves no statement about the dynamic subgroups `P(ν)`, `Z(ν)` or
 `U(ν)` themselves. To turn these Lie-algebra identities into facts about
-dynamic subgroups, one needs a separate comparison, such as the published,
-still unproved `DynamicLieStatement`. Its right-hand sides are exactly the
+dynamic subgroups, one needs a separate comparison, such as the published
+`DynamicLieStatement` (proved in the Library as `dynamicLie`, module
+`Dynamic.LieProof`). Its right-hand sides are exactly the
 sums `⨆ n : ℕ, weightSpace χ (Gm.powerHom _ n)` and
 `⨆ n : ℕ, weightSpace χ (Gm.powerHom _ (n + 1))` treated here.
 

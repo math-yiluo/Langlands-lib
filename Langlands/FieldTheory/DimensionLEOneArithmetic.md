@@ -35,7 +35,3 @@ The latter documents its source in Serre, *Local Fields*, Chapter X,
 Section 7, Proposition 11. This module makes no additional literature
 claim. All fields and quantified extensions lie in arbitrary `Type u`;
 there is no perfectness or characteristic assumption.
-
-Worker 1333 authored this interface and its elementary proofs. The
-finite-Galois cohomology vanishing theorem is the published work of
-Worker 68, with the p-group case credited there to Workers 28 and 68.

@@ -83,7 +83,7 @@ restriction kernel. -/
 theorem lowerGroupOrder_tower [Normal K.Carrier E.Carrier] (i : ℕ) :
     letI := Padic.integerAction T K.Carrier
     Padic.lowerGroupOrder T E.Carrier i =
-      IsLocalRing.lowerRamificationCard T.Integers (towerKernel K L E) i := by
+      lowerGroupCard T.Integers (towerKernel K L E) i := by
   letI := Padic.integerAction T K.Carrier
   letI := Padic.integerAction T E.Carrier
   exact (lowerRamificationCard_of_equivariant (RingEquiv.refl T.Integers)
@@ -196,7 +196,7 @@ theorem map_restrictNormalHom_eq_tower [IsGalois K.Carrier L.Carrier]
     (X : Subgroup Gal(L.Carrier/K.Carrier)) (i : ℕ)
     (hX : letI := Padic.integerAction T K.Carrier
       X.map (QuotientGroup.mk' (towerKernel K L E)) =
-        IsLocalRing.lowerRamificationGroup (FixedPoints.subring T.Integers (towerKernel K L E))
+        lowerGroup (FixedPoints.subring T.Integers (towerKernel K L E))
           (Gal(L.Carrier/K.Carrier) ⧸ towerKernel K L E) i) :
     X.map (AlgEquiv.restrictNormalHom (F := K.Carrier) (K₁ := L.Carrier) E.Carrier) =
       Padic.lowerRamificationGroup S K.Carrier i := by
@@ -215,7 +215,7 @@ theorem lowerGroupOrder_towerQuotient [IsGalois K.Carrier L.Carrier]
     [IsGalois E.Carrier L.Carrier] [Normal K.Carrier E.Carrier] (i : ℕ) :
     letI := Padic.integerAction T K.Carrier
     Padic.lowerGroupOrder S K.Carrier i =
-      IsLocalRing.lowerRamificationCard (FixedPoints.subring T.Integers (towerKernel K L E))
+      lowerGroupCard (FixedPoints.subring T.Integers (towerKernel K L E))
         (Gal(L.Carrier/K.Carrier) ⧸ towerKernel K L E) i := by
   letI := Padic.integerAction T K.Carrier
   letI := Padic.integerAction S K.Carrier
@@ -237,13 +237,13 @@ theorem herbrandPhi_tower [IsGalois K.Carrier L.Carrier] [IsGalois K.Carrier E.C
       rw [Padic.herbrandPhi_of_nonpos T _ hq', Padic.herbrandPhi_of_nonpos T _ hq',
         Padic.herbrandPhi_of_nonpos S _ hq']
     · have hH := herbrandPhi_ratCast T E.Carrier (lowerGroupOrder_tower K L E T) hq.le
-      have hφ0 : 0 ≤ IsLocalRing.herbrandPhi T.Integers (towerKernel K L E) q := by
+      have hφ0 : 0 ≤ herbrandPhiRat T.Integers (towerKernel K L E) q := by
         have h := Padic.herbrandPhi_pos T E.Carrier (by exact_mod_cast hq : (0 : ℝ) < q)
         rw [hH] at h
         exact_mod_cast h.le
       rw [herbrandPhi_ratCast T K.Carrier (lowerGroupOrder_eq_source T K.Carrier) hq.le, hH,
         herbrandPhi_ratCast S K.Carrier (lowerGroupOrder_towerQuotient K L E T S) hφ0,
-        IsLocalRing.herbrandPhi_eq_herbrandPhi_quotient_comp_of_map_lowerRamificationGroup_mk_eq
+        herbrandPhiRat_eq_herbrandPhiRat_quotient_comp_of_map_lowerGroup_mk_eq
           (source_map_lowerRamificationGroup_mk K L T (towerKernel K L E)) hq.le]
   have hcont : Continuous fun u => Padic.herbrandPhi S K.Carrier
       (Padic.herbrandPhi T E.Carrier u) :=
@@ -292,7 +292,7 @@ theorem upperRestrictionCompatibility_aux [IsGalois K.Carrier L.Carrier]
     upperRamificationGroup_ratCast T K.Carrier (lowerGroupOrder_eq_source T K.Carrier) hw0,
     upperRamificationGroup_ratCast S K.Carrier (lowerGroupOrder_towerQuotient K L E T S) hw0]
   exact map_restrictNormalHom_eq_tower K L E T S _ _
-    (IsLocalRing.upperRamificationQuotientCompat_of_map_lowerRamificationGroup_mk_eq
+    (upperGroupRatQuotientCompat_of_map_lowerGroup_mk_eq
       (source_map_lowerRamificationGroup_mk K L T (towerKernel K L E)) _ hw0)
 
 omit [IsScalarTower (Padic p) E.Carrier L.Carrier] in

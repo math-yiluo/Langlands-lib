@@ -78,6 +78,7 @@ private theorem genericAffine : IsAffine G.X.left := by
   let : IsAffine M.genericFibre.X.left := by
     change IsAffine (pullback M.group.X.hom (Spec.algebraMap R K))
     infer_instance
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   exact IsAffine.of_isIso M.genericIso.inv.hom.hom.left
 
 private theorem hom_of_genericSchemeHom (f : G ⟶ H) (φ : M.group.X ⟶ N.group.X)
@@ -148,6 +149,7 @@ theorem nonempty_hom_of_genericCoordinates (f : G ⟶ H)
   apply Over.OverMorphism.ext
   apply pullback.hom_ext
   · simp only [Over.pullback_map_left, pullback.lift_fst]
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
     apply (cancel_epi M.genericIso.inv.hom.hom.left).mp
     have hh := congrArg (fun a => a.left) hr
     change (M.genericIso.inv.hom.hom.left ≫

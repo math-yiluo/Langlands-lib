@@ -1,9 +1,9 @@
 # Dynamic ordered root products from actual root-ray decomposition
 
-Worker 1315 wrote this internal derived reduction. It proves the full existing
+This is an internal derived reduction. It proves the full existing
 `DynamicRootOrderedProductStatement` with exactly one structural proposition
 remaining as a premise: `RelativeRootRayDecompositionStatement`. It does not
-prove that premise or the unconditional host target.
+prove that premise or the unconditional target.
 
 `hasOrderedSemigroupProducts_of_unipotent` applies over any field in arbitrary
 universe `u`. The original group is smooth, connected, affine and unipotent,
@@ -58,8 +58,8 @@ This is a substantive specialization to the positive unipotent source. It
 removes the general solvable ordered-product theorem from the required inputs;
 it does not prove that separate theorem, choose a maximal-torus decomposition,
 or replace ray separation with a hypothesis on the field. The remaining
-ray-decomposition proposition is explicit. In particular, acceptance of this
-supporting implication is not completion of the unconditional product task.
+ray-decomposition proposition is explicit. In particular, this supporting
+implication does not by itself prove the unconditional product statement.
 The provenance is internal composition of the published realization,
 unipotent product, field-extension detection and comparison proofs. It adds
 no new external structural assertion or axiom.

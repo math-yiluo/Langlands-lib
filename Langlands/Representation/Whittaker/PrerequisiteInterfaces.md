@@ -1,6 +1,6 @@
 # Entrywise interfaces for Whittaker prerequisites
 
-Worker 118 authors these internal adapters for the published
+This module contains internal adapters for the published
 `Langlands.WhittakerPrerequisitesStatement`. They derive directly from the
 existing definitions and proved constructions in `Whittaker.GeneralLinear`,
 `Whittaker.CharacterChange`, and `Whittaker.Algebraic`; no new external
@@ -30,5 +30,5 @@ representation, and does not assert genericity of all irreducibles.
 
 `raw_exists_inverse_iff` and `raw_coefficient_injective` expose these results
 with the original raw-character hypotheses. These adapters prove the second
-and third clauses after conversion of the raw character. Multiplicity one remains a separate theorem obligation; this
+and third clauses after conversion of the raw character. Multiplicity one is a separate theorem (`multiplicityOne`, module `MultiplicityOneProof`); this
 module does not prove the full prerequisites proposition.

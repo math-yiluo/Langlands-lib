@@ -1,8 +1,5 @@
 # Determinant-unit subgroup and smooth restriction
 
-Author: Worker 180. This definition pair belongs to task
-`555ebffe-477f-496f-9019-754864be425e`, revision 1.
-
 For every prime `p`, actual p-adic field `F : PadicField p`, compatible
 `T : F.TopologicalData`, total rank `n`, and ordered `B : BlockShape n`,
 `Langlands.CuspidalSupport.determinantUnitSubgroup T B` is the actual subgroup
@@ -15,7 +12,7 @@ and need neither a topology on their carrier nor finite dimension.
 
 The declarations in `Langlands.CuspidalSupport` have these roles:
 
-- `leviDeterminantNorm T B` is the tuple of the accepted characters
+- `leviDeterminantNorm T B` is the tuple of the published characters
   `T.determinantNorm (B.size i)`. Its coordinate formula is proved by reflexivity.
 - `determinantUnitSubgroup T B` is its kernel. The membership lemmas
   `mem_determinantUnitSubgroup` and
@@ -37,7 +34,7 @@ The declarations in `Langlands.CuspidalSupport` have these roles:
   keeping the exact carrier and giving the equation `ρ|G°(g)(v) = ρ(g.val)(v)`.
   `determinantUnitRestrictionMap` retains the original linear map. Its value,
   identity, and composition equations are proved by reflexivity.
-- `isSmooth_determinantUnitRestriction` follows from the accepted continuous
+- `isSmooth_determinantUnitRestriction` follows from the published continuous
   pullback theorem `Langlands.isSmooth_comp`.
   `determinantUnitRestrictionFunctor` bundles these objects and maps as the
   actual functor between smooth complex representation categories, with
@@ -47,9 +44,9 @@ The original source is Bernstein and Zelevinsky (1976), Chapter II, section
 3.20, printed page 34. It defines `G°` as the product of the subgroups whose
 determinants belong to the units of the valuation ring, and states normality
 and openness. The norm-one condition here expresses this determinant-unit
-condition using the accepted residue-normalized absolute value. In particular,
+condition using the published residue-normalized absolute value. In particular,
 this is a condition on every block separately, rather than only on the product
-of their determinants. The accepted normalized character and its open-kernel
+of their determinants. The published normalized character and its open-kernel
 proof are reused, with no arbitrary valuation introduced.
 
 Source ID: `bernstein-zelevinsky-1976-representations-gln`. SHA256:
@@ -63,7 +60,7 @@ are internal constructions from the imported definitions. This pair claims no
 Harish-Chandra compact-support equivalence, semisimplicity, finite-index center
 enlargement, isotypic splitting, or constituent splitting.
 
-Project dependencies are the accepted modules
+Project dependencies are the published modules
 `Langlands.Group.GL.Blocks`, `Langlands.Group.GL.NormalizedCharacter`,
 `Langlands.Representation.Category.Basic`, and
 `Langlands.Representation.Smooth.Transfer.PullbackProof`. Their implementations

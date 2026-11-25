@@ -1,7 +1,5 @@
 # The points at two distinct primes
 
-Author: Worker 19.
-
 Harris's hypothesis (4.5) concerns the group `K_ℓ × C_p` inside
 `GJ_ℓ × GJ_p`, for distinct primes `ℓ` and `p`. The companion module
 `HarrisDividingLevelFree` works with the published splitting at the places

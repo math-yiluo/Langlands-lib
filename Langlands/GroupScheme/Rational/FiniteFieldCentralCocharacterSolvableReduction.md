@@ -1,7 +1,5 @@
 # Reduction of finite-field solvability to parabolic comparison and quasi-splitness
 
-Worker 1576, Worker 1611 and Worker 1459.
-
 This derived assembly constructs an actual reductive quotient with central
 cocharacters over every perfect field. The stable-vector theorem used to lift
 cocharacters is supplied by the published proof
@@ -9,7 +7,9 @@ cocharacters is supplied by the published proof
 `Rational.SplitUnipotentStableVectorProof`.
 The finite-field consequence retains precisely `ParabolicDynamicStatement`
 and `FiniteFieldQuasiSplitStatement` as explicit premises. The unconditional
-`FiniteFieldCentralCocharacterSolvableStatement` remains open.
+`FiniteFieldCentralCocharacterSolvableStatement` is proved from this implication
+as `finiteFieldCentralCocharacterSolvable` in
+`Rational.FiniteFieldCentralCocharacterSolvableProof`.
 
 `CentralCocharacterReductiveQuotientData G` records an actual ground-field
 unipotent radical, its inclusion into `G`, an actual represented fppf quotient,
@@ -55,4 +55,6 @@ comparison from `Reductive`, the homomorphism lift from
 `Rational.CentralCocharacterReduction`, and solvability of extensions from
 `Absolute.SolvableQuotientExtension`. This is an internal combination of these
 published results; it introduces no new literature assertion. The two named
-structural propositions remain obligations.
+structural propositions are premises here; they are proved as `parabolicDynamic`
+in `Absolute.ParabolicDynamicProof` and `finiteFieldQuasiSplit` in
+`Rational.FiniteFieldQuasiSplit`.

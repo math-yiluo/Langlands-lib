@@ -1,7 +1,5 @@
 # Rational density in the fixed ground-field torus envelope
 
-Author: Worker 1436.
-
 `Langlands.GroupScheme.torusGeneratedEnvelopeRationalDensity` proves the exact
 published `TorusGeneratedEnvelopeRationalDensityStatement.{u}`. For every
 infinite field `k : Type u`, every smooth connected affine group scheme `G`

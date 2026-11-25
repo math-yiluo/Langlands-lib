@@ -45,7 +45,8 @@ pulled-back group law. No other model of the base change is used.
 
 Each component states only the direction from `k` to `K`. Neither asserts
 that a property of `G_K` descends to `G`. Reflection along algebraic
-extensions is the subject of a separate statement task.
+extensions is stated as `AlgebraicExtensionReflectionStatement` in
+`Langlands.GroupScheme.Reductive.AlgebraicExtensionReflectionStatement`.
 
 ## Meaning of the predicates
 
@@ -129,9 +130,11 @@ extensions and to the Library's exact predicates.
 For algebraic extensions the argument is simpler than Milne's, which reduces
 to an extension of algebraically closed fields and uses a spreading argument.
 An algebraic closure of `K` is also an algebraic closure of `k`, so no
-extension of algebraically closed fields is needed. The expected proof route
-below uses only public Library and Mathlib interfaces. All its steps are
-proof obligations of a successor. None of them is a hypothesis of these
+extension of algebraically closed fields is needed. The proof route
+below uses only public Library and Mathlib interfaces. It is the proof of
+`algebraicExtensionAscent` in
+`Langlands.GroupScheme.Reductive.AlgebraicExtensionAscent`, which proves both
+components. None of its steps is a hypothesis of these
 propositions or a result proved in this module.
 
 1. Algebraicity of `K` over `k` gives `IsAlgClosure k (AlgebraicClosure K)`.

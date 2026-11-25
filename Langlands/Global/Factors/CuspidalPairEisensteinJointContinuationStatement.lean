@@ -18,7 +18,7 @@ namespace Langlands.Global
 
 open NumberField CuspidalPairEisenstein
 open Automorphic (CuspidalOperatorRealization)
-open Langlands.ClassField.Global.RelativeWeilGroup (HasUnitaryCentralCharacter)
+open Langlands.ClassFieldTheory.Global.RelativeWeilGroup (HasUnitaryCentralCharacter)
 
 /-- For actual cuspidal realizations `T`, `T'` with unitary central characters and a section `φ`
 of the normalized induced representation from `π ⊗ π'^∨` on the upper two-block parabolic of

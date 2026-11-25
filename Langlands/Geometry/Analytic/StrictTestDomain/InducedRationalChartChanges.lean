@@ -96,8 +96,8 @@ def chartSectionAction : X.subgroup →* Aut X.domain.obj.algebra :=
     (ρ.invariantStabilizerInclusion X.subgroup X.domain).toMonoidHom
 
 theorem chartSectionAction_comp_baseMap (h : X.subgroup) :
-    (X.chartSectionAction h).hom.comp X.domain.obj.baseMap =
-      X.domain.obj.baseMap.comp (ρ.toMonoidHom (h : G)).hom :=
+    (X.chartSectionAction h).asIso.hom.comp X.domain.obj.baseMap =
+      X.domain.obj.baseMap.comp (ρ.toMonoidHom (h : G)).asIso.hom :=
   ρ.sectionAction_comp_baseMap X.domain.obj
     (ρ.invariantStabilizerInclusion X.subgroup X.domain h)
 
@@ -114,8 +114,8 @@ def chartBoundedChange (a b : G)
 
 theorem chartAlgebraChange_comp_baseMap (a b : G)
     (hab : (a : G ⧸ X.subgroup.toSubgroup) = b) :
-    (X.chartAlgebraChange a b hab).hom.comp X.domain.obj.baseMap =
-      X.domain.obj.baseMap.comp (ρ.toMonoidHom (a⁻¹ * b)).inv := by
+    (X.chartAlgebraChange a b hab).asIso.hom.comp X.domain.obj.baseMap =
+      X.domain.obj.baseMap.comp (ρ.toMonoidHom (a⁻¹ * b)).asIso.inv := by
   have h := X.chartSectionAction_comp_baseMap (X.chartChangeElement a b hab)⁻¹
   simpa only [chartAlgebraChange, map_inv, InvMemClass.coe_inv, chartChangeElement_coe,
     Aut.Aut_inv_def, Iso.symm] using h
@@ -125,8 +125,8 @@ theorem chartAlgebraChange_unique (a b : G)
     (hab : (a : G ⧸ X.subgroup.toSubgroup) = b)
     (f : BoundedAlgHom K X.domain.obj.algebra X.domain.obj.algebra)
     (hf : f.comp X.domain.obj.baseMap =
-      X.domain.obj.baseMap.comp (ρ.toMonoidHom (a⁻¹ * b)).inv) :
-    f = (X.chartAlgebraChange a b hab).hom := by
+      X.domain.obj.baseMap.comp (ρ.toMonoidHom (a⁻¹ * b)).asIso.inv) :
+    f = (X.chartAlgebraChange a b hab).asIso.hom := by
   apply X.domain.obj.hom_ext
   exact hf.trans (X.chartAlgebraChange_comp_baseMap a b hab).symm
 
@@ -150,8 +150,8 @@ theorem chartAlgebraChange_trans (a b c : G)
 theorem chartAlgebraChange_hom_trans (a b c : G)
     (hab : (a : G ⧸ X.subgroup.toSubgroup) = b)
     (hbc : (b : G ⧸ X.subgroup.toSubgroup) = c) :
-    (X.chartAlgebraChange a c (hab.trans hbc)).hom =
-      (X.chartAlgebraChange b c hbc).hom.comp (X.chartAlgebraChange a b hab).hom := by
+    (X.chartAlgebraChange a c (hab.trans hbc)).asIso.hom =
+      (X.chartAlgebraChange b c hbc).asIso.hom.comp (X.chartAlgebraChange a b hab).asIso.hom := by
   rw [X.chartAlgebraChange_trans a b c hab hbc]
   rfl
 

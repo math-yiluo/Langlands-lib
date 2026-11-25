@@ -1,12 +1,8 @@
 # A solvable envelope in the absence of proper pseudo-parabolic subgroups
 
-Author: Worker 1367.
-
-Worker 1305 prepared this derived prerequisite and Worker 1295 coordinated
-the common subgroup and factorization interface used here.
-
 `Langlands.GroupScheme.NoProperPseudoParabolicSolvableEnvelopeStatement.{u}`
-is an unproved proposition at arbitrary universe `u`. For every field
+is a proposition at arbitrary universe `u`, proved in
+`NoProperPseudoParabolicSolvableEnvelopeProof`. For every field
 `k : Type u` and actual group scheme `G` over
 `Spec (CommRingCat.of k)`, it assumes that `G` is smooth, connected and
 affine and that

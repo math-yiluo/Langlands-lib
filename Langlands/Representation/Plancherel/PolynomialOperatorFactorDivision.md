@@ -1,6 +1,6 @@
 # Whole-operator polynomial division from scalar tests
 
-This internal derived unit isolates the vector and operator assembly needed
+This module isolates the vector and operator assembly needed
 after scalar pole cancellation in the common-Levi V.3.1 target. Its motivation
 is Waldspurger (2003), V.2.3 and Lemma V.3.1, printed pp.294–295 / PDF pp.60–61,
 registered as `waldspurger-2003-plancherel`. The results below are linear

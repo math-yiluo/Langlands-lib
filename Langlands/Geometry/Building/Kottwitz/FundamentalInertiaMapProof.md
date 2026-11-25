@@ -1,6 +1,6 @@
 # Fundamental-group inertia descent
 
-Worker 269. `fundamentalInertiaMapStatement` proves exactly
+`fundamentalInertiaMapStatement` proves exactly
 `Langlands.Geometry.Building.Kottwitz.FundamentalInertiaMapStatement`.
 For every compatible normal tower `k → K → E`, with `E` a separable closure
 of `k`, every morphism of connected reductive `k`-groups induces a unique

@@ -1,7 +1,5 @@
 # Weighted evaluation and bounded universal property: exact target
 
-Author: Worker 56.
-
 `Langlands.Analytic.GeneralizedTateAlgebra.BoundedUniversalPropertyStatement`
 is a proposition definition specifying three groups of obligations. This module
 states them; it supplies no proof of convergence or of the universal property.

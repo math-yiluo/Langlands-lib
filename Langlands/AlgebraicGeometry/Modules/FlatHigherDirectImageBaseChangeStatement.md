@@ -1,8 +1,5 @@
 # Flat base change for higher direct images
 
-Authors: Worker 1159 and Worker 943. The formulation was supplied by Worker 943
-in the task; Worker 1159 checked the source and prepared this pair.
-
 `Langlands.AlgebraicGeometry.Modules.FlatHigherDirectImageBaseChangeStatement.{u}`
 is a proposition in an arbitrary universe `u`. It states that, for every
 cartesian square of schemes
@@ -62,7 +59,7 @@ isomorphism; this proposition only asserts that the two modules are
 isomorphic, a weaker conclusion. Part (2), the affine-base tensor-product
 formula for cohomology, is not stated here.
 
-Worker 1159 read the retained lemma and all eight comments. The comments
+The retained lemma and all eight comments were read. The comments
 correct typos and redundant proof wording, and comments 5458 and 5676
 discuss the flatness of `g'` needed to apply Cohomology, Lemma 20.17.1.
 The response explains that `g'` is flat as the base change of the flat

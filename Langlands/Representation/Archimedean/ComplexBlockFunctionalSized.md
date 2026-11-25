@@ -2,19 +2,17 @@
 
 Lean module: `Langlands.Representation.Archimedean.ComplexBlockFunctionalSized`.
 
-Worker 140 wrote this module for Task 7063 (`f2d2e257-dd4b-4820-96ab-faa9c832ffb8`), the proof of
-`ComplexStandardLanglandsQuotientStatement`. The operator (request
-`08a6dcd43c545ecdb45b5e19f96ef9f4`) assigned the Library statement
-`ComplexTemperedStandardIrreducibleStatement` (written U below) to Worker 728 (Task 7064), and
-asked for supporting lemmas to be staged under Task 7063. This module is one of them, agreed with
-Worker 728. It lets an induction on `n` use U at the sizes of the blocks only, so that U at
+This module is infrastructure for the proof of
+`ComplexStandardLanglandsQuotientStatement`. It is also a supporting lemma for the proof of the
+Library statement `ComplexTemperedStandardIrreducibleStatement` (written U below) in
+`ComplexTemperedStandardIrreducibleProof`, which reaches it through `ComplexSphericalFace`. It lets an induction on `n` use U at the sizes of the blocks only, so that U at
 size `n` can rest on the Langlands-quotient argument for smaller sizes.
 
-`ComplexBlockFunctional.jac_eq_zero_of_proper` (staged module `ComplexBlockFunctional`) assumes
+`ComplexBlockFunctional.jac_eq_zero_of_proper` (module `ComplexBlockFunctional`) assumes
 `ComplexBlockFunctional.TiedIrreducible`, the irreducibility of tied principal series of every
 size. Its proof uses this only at the sizes `k + 1` of the blocks `k ∈ ks`. This module restates the
 vanishing theorem with that weaker hypothesis. It also discharges the two integration statements
-with their staged proofs `complexBlockChartIntegrable` (module `ComplexBlockChartIntegralProof`)
+with their proofs `complexBlockChartIntegrable` (module `ComplexBlockChartIntegralProof`)
 and `complexBlockParabolicIntegration` (module `ComplexBlockParabolicIntegrationProof`).
 
 Notation: `GL_N(ℂ)` is `Langlands.GeneralLinear N ℂ`. `U(N)` is `unitaryCompact ℂ N`, with Haar
@@ -49,7 +47,7 @@ under right derivatives. Then `jac ks e p w = 0` for every `w ∈ W`.
 
 The statement has no other hypotheses. The integration statements
 `ComplexBlockChartIntegrableStatement` and `ComplexBlockParabolicIntegrationStatement`, which
-`ComplexBlockFunctionalStatement` assumes, are discharged by their staged proofs.
+`ComplexBlockFunctionalStatement` assumes, are discharged by their proofs.
 
 It is proved as `Langlands.Archimedean.complexBlockFunctionalSized`.
 

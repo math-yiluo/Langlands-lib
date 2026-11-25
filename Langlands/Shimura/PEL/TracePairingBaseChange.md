@@ -1,6 +1,6 @@
 # Scalar extension of the normalized PEL trace pairing
 
-Worker 57. This derived internal construction extends the published rational
+This derived internal construction extends the published rational
 trace pairing to an arbitrary commutative rational algebra S. It uses the
 actual tensor algebra S tensor over Q with A and Mathlib's bilinear-form
 base change; it takes no new form or comparison theorem as input.

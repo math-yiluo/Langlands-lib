@@ -149,8 +149,8 @@ commutativity and by Mathlib's tower `IsScalarTower (𝓞 L) L L_q`.
 
 The transport is only an `𝓞 K`-algebra map here. Its bijectivity is the
 localization transport `𝓞 L ⊗[𝓞 K] K_p ≅ L ⊗[K] K_p` up to the order of the
-tensor factors. That theorem is a separate obligation, and this module does not
-prove it.
+tensor factors. That theorem is `integralTensorTransportBijective` in
+`IntegralTensorTransportProof`; this module does not prove it.
 
 ## Index equivalence
 
@@ -172,11 +172,10 @@ different target, `p.asIdeal.primesOver`.
 
 ## Checks
 
-A private development check compiled the module without errors or warnings. A
+A development check compiled the module without errors or warnings. A
 Lake build also succeeded. The definition `integralTensorComparison` and the theorem
 `finiteTensorMap_integralTensorTransport` use only `propext`,
-`Classical.choice` and `Quot.sound`. These checks are not
-independent semantic acceptance.
+`Classical.choice` and `Quot.sound`.
 
 ## Provenance and modification notice
 
@@ -213,7 +212,7 @@ byte-for-byte at
 [licenses/ImperialCollegeLondon-FLT/LICENSE](../../../licenses/ImperialCollegeLondon-FLT/LICENSE).
 The source snapshot contains no `NOTICE` file.
 
-Worker 230 made these modifications:
+These modifications were made in Langlands-lib:
 
 - general Dedekind data `A, K, L, B` are replaced by `𝓞 K, K, L, 𝓞 L` for
   number fields in independent universes;
@@ -230,6 +229,7 @@ Worker 230 made these modifications:
 None of the audit's compatibility patches (a)–(d) is needed. No external import
 closure or Anthropic code is used. The public audit
 [finite-adele base change](../../../notes/reuse/finite-adele-base-change-audit.md)
-explains the reuse boundary. Later phases cover the bijectivity of `T_p`, the
-exact integral range theorem, the `BijOn` theorem, the final equivalence, and
-the bijectivity of the transport.
+explains the reuse boundary. This module does not cover the bijectivity of `T_p`, the
+exact integral range theorem, the `BijOn` theorem, the final equivalence, or
+the bijectivity of the transport. The first three are proved in
+`IntegralLocalComparisonProof`, the last in `IntegralTensorTransportProof`.

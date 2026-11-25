@@ -1,6 +1,6 @@
 # Compact open subgroups meet finitely many Bernstein components: statement
 
-Author: Worker 6. Module `Langlands.Representation.CuspidalSupport.CompactOpenInertialFinitenessStatement`, namespace `Langlands.CuspidalSupport`.
+Module `Langlands.Representation.CuspidalSupport.CompactOpenInertialFinitenessStatement`, namespace `Langlands.CuspidalSupport`.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*, French edition dated 9 July 2026, VI.10.6, Theorem and its proof, printed pp.213–214 / PDF pp.219–220. The registered source ID is `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 
@@ -12,7 +12,7 @@ The proof shows two things. A cuspidal support `θ = (M, ρψ)_G` lies in `Ω(G)
 
 ## The Lean statement
 
-`CompactOpenInertialFinitenessStatement` states the "more precisely" part, in the published framework of actual standard cuspidal data (modules `BernsteinData` and `BernsteinBlock`, Worker 1153). It is a statement unit: nothing is proved.
+`CompactOpenInertialFinitenessStatement` states the "more precisely" part, in the published framework of actual standard cuspidal data (modules `BernsteinData` and `BernsteinBlock`). It is a statement only: nothing is proved.
 
 It quantifies over a nonarchimedean local field `F : Type uF`, a group scheme `G` over `Spec F` with `[IsAffineHom G.X.hom] [LocallyOfFiniteType G.X.hom]`, `T`, `i : T.toGrp ⟶ G` and `ν : cocharacterLattice T`. `G(F)` carries the canonical topology `pointTopology` and is assumed locally compact and nonarchimedean. The statement also takes `family : BernsteinStandardFamily i ν`, the published structural hypotheses: `G` connected reductive, `i` a maximal split torus, `ν` generic, finitely many simple roots, and the semidirect decompositions and closedness of the standard subgroups. Finally it takes `K : OpenSubgroup (rationalPoints G)` with `IsCompact (K : Set _)`.
 
@@ -26,5 +26,5 @@ The published relations have the following meaning. `IsBernsteinCuspidalSupport 
 ## Not stated
 
 - The first sentence of the theorem, about the Bernstein decomposition `V = ⊕ V_𝔰` of an arbitrary smooth `V`, needs the decomposition theorem VI.7.2, which is not available as a published construction. In the presence of the decomposition, it follows from part 1. Every irreducible subquotient of `V_𝔰` has inertial support `𝔰`. A nonzero `K`-fixed vector `v` of `V_𝔰` generates a finitely generated subrepresentation, which has an irreducible quotient, and the image of `v` there is a nonzero `K`-fixed vector.
-- The VI.10.6 Proposition (the category `M(G)_K` and the Hecke algebra `H(G, K)`) is a separate unit.
+- The VI.10.6 Proposition (the category `M(G)_K` and the Hecke algebra `H(G, K)`) is treated in separate modules.
 - The proof, including the identification `i_P^G(ρψ)^K ≅ ⊕_{P \ G / K} W^{p(K_g)}` of Lemma III.2.2, is not formalized.

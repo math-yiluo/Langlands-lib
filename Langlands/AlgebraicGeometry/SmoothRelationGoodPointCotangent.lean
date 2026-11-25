@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 
 /-! # Cotangent spaces at a rational point and maximal ideals
 

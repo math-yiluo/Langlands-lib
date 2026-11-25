@@ -53,10 +53,9 @@ assertions attributed verbatim to the book. The proof uses ordinary spans
 and the coordinate formula. It does not identify additive stable subgroups
 with scalar-linear stable subspaces, the book's categorical finite-type
 predicate or its nonunital Noetherian convention. Source comparisons,
-localization, decomposition and the final C.II proposition remain separate
+localization, decomposition and the final C.II proposition are separate
 obligations. No commutativity, unit, countability, nontriviality or finite
 dimension assumption on `A` is imposed. Zero original actions are allowed.
 
-Worker 709 wrote the Lean proof. Worker 803 checked it against the
-published target and revised this description. The Lean uses only the
-standard axioms `propext`, `Classical.choice` and `Quot.sound`.
+The Lean proof was checked against the target statement. The Lean uses
+only the standard axioms `propext`, `Classical.choice` and `Quot.sound`.

@@ -10,8 +10,9 @@ assembles bijectivity, i.e. `Langlands.Aubert.SegmentPolynomialComparisonStateme
 the published proposition `Langlands.Classification.MultisegmentSocleExhaustion.{uF, uV} F T`
 (Zelevinsky 1980, Theorem 6.1 (c)): for every `n`, every irreducible smooth
 representation of `GL_n(F)` is an irreducible socle of a precedence-ordered product
-of segment socles with some multisegment of degree `n`. The Library does not yet
-prove this proposition.
+of segment socles with some multisegment of degree `n`. The Library proves this
+proposition separately, as `Classification.multisegmentSocleExhaustion` (module
+`Classification/MultisegmentSocleExhaustionProof`).
 
 Throughout, `F : PadicField.{uF} p`, `T : F.TopologicalData`,
 `hx : BinaryProductExactnessStatement.{uF, uV} F T` and
@@ -234,7 +235,7 @@ is the body of `HighestDerivativeLabelStep`.
 
 ## Helper modules
 
-The module imports three helper modules by Worker 237, included unchanged:
+The module imports three helper modules, included unchanged:
 `Aubert/SegmentProductClass` (`zeta_multisegment`, `hasFiniteLength_induced`),
 `Aubert/SegmentPolynomialInjectivity` (injectivity) and
 `Aubert/ZelevinskyHighestDerivative` (the label step).

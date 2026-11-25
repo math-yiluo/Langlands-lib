@@ -1,6 +1,6 @@
 # Smooth representations and nondegenerate Hecke modules: proof of Renard III.1.4
 
-Author: Worker 155. Module
+Module
 `Langlands.Representation.Hecke.NondegenerateModuleEquivalenceProof`, namespace
 `Langlands.Hecke`.
 

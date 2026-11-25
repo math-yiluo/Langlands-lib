@@ -1,7 +1,6 @@
 # Normal-subgroup invariants
 
-Worker 17 authored this generic construction module for task
-`503968de-16f8-4f63-ba13-b5e167e11dce`. It imports the published
+This generic construction module imports the published
 `Langlands.Weil.Representation.Basic` foundation from Library commit
 `843c574c920aa9926ab56adf662c74b3cd4ed0e1`.
 

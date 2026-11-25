@@ -19,7 +19,7 @@ integral converges for every `s` and equals `vol(U^k(𝔄(𝓛))) ℓ(w)`
 (`matrixIntegral_stratumTest`), and the shifted integral has the constant rational value
 `vol(U^k(𝔄(𝓛))) ℓ(w)` (`hasShiftedRationalValue_stratumTest`).
 
-This is piece An2 of the analytic part of the proof of T2 (Task 7683).
+This belongs to the analytic part of the proof of T2 (see `ConductorFormula`).
 -/
 
 noncomputable section
@@ -218,7 +218,7 @@ def stratumCoefficient (σ : Representation ℂ (GeneralLinear (n + 1) K.Carrier
     (ℓ : SmoothDual σ) (w : smoothVectors σ) : GodementJacquet.biSmoothMatrixCoefficients σ :=
   ⟨GodementJacquet.biSmoothCoefficient σ ℓ w, Submodule.subset_span ⟨ℓ, w, rfl⟩⟩
 
-/-- **The zeta integral of the stratum test function** (piece An2). Let `k ≥ 1` and let `w` be a
+/-- **The zeta integral of the stratum test function**. Let `k ≥ 1` and let `w` be a
 smooth vector with `σ(g) w = ψ(tr(b' (g - 1))) w` for `g ∈ U^k(𝔄(𝓛))`. For every `s`, the
 Godement–Jacquet matrix integral of the stratum test function against `g ↦ ℓ(σ(g) w)` converges
 and equals `vol(U^k(𝔄(𝓛))) ℓ(w)`. -/
@@ -297,7 +297,7 @@ theorem generalLinearHaar_real_unitSubgroup_pos
     (hUo.measure_pos μ ⟨1, (unitSubgroup K 𝓛 k).one_mem⟩).ne'
   exact ENNReal.toReal_pos hpos hUc.measure_lt_top.ne
 
-/-- **The rational value of the stratum test function** (piece An2). Under the hypotheses of
+/-- **The rational value of the stratum test function**. Under the hypotheses of
 `matrixIntegral_stratumTest`, the shifted matrix integral has the constant rational value
 `vol(U^k(𝔄(𝓛))) ℓ(w)`. -/
 theorem hasShiftedRationalValue_stratumTest

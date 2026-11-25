@@ -58,8 +58,9 @@ Getz–Hahn, *An Introduction to Automorphic Representations* (2024),
 Section 3.6, equations (3.12)–(3.13), printed pages 89–90. The five-page
 October 2026 author errata contain no correction to Section 3.6.
 
-The generic product modular-character module is a separately submitted
-prerequisite and must be integrated first. This unit does not prove
+The generic product modular-character formula is the separate module
+`Langlands.Analysis.Local.ProductModularCharacter`, which this file imports.
+This module does not prove
 the local determinant/Jacobian comparison, the finite-adelic product
 formula, the full adelic character-norm comparison, reductive determinant
 triviality, or `AdelicHaarUnimodularityStatement`.

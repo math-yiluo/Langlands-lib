@@ -5,8 +5,9 @@ Module `Langlands.Global.EisensteinConstantTerm.Reduction`. It proves the publis
 Bernstein–Lapid Lemma 6.10 (6.17), Mœglin–Waldspurger II.1.7) from two named premises:
 
 - `Langlands.Global.EisensteinAbsoluteConvergenceStatement` (published, module
-  `AdelicEisensteinConvergenceStatement`; its proof is Task 5490, open);
-- `Langlands.Global.GeometricLemmaUnfoldingStatement` (new, module
+  `AdelicEisensteinConvergenceStatement`; proved by `Langlands.Global.eisensteinAbsoluteConvergence`
+  in `AdelicEisensteinConvergenceProof`);
+- `Langlands.Global.GeometricLemmaUnfoldingStatement` (module
   `EisensteinConstantTerm.GeometricLemmaUnfoldingStatement`).
 
 ## Declarations
@@ -72,7 +73,7 @@ for `φ`. Fix `λ` with `r.IsRegularParameter hA hT R₀ λ` and `g ∈ G(𝔸)`
 
 ## What is not proved here
 
-Neither premise is proved. The convergence premise is used only through one bound: summability,
+Neither premise is proved here. The convergence premise is used only through one bound: summability,
 over `P(F) \ G(F)`, of `sup_{v ∈ C_V} |φ_λ(γ v g)|` for one `λ`. The geometric-lemma premise is
 used only for `h = φ_λ`. The statement `EisensteinConstantTermStatement` itself is not claimed
 unconditionally. That needs proofs of both premises.
@@ -83,7 +84,6 @@ The route is the proof of BL Lemma 6.10 (J. Bernstein and E. Lapid, *On the mero
 continuation of Eisenstein series*, J. Amer. Math. Soc. 37 (2024), registered as
 `bernstein-lapid-2024-meromorphic-continuation-eisenstein`, journal pp. 208–209, PDF pages 22–23),
 which BL call a straightforward generalization of Mœglin–Waldspurger II.1.7 (registered as
-`moeglin-waldspurger-1995-spectral-decomposition`, printed pp. 91–93). It follows steps 1–3 and 6
-of the task's proof guide. Steps 4–5 (the identification with the intertwining integral) are the
-premise `GeometricLemmaUnfoldingStatement`. Conclusions 1 and 2 come from the bound on `|φ_λ|`,
+`moeglin-waldspurger-1995-spectral-decomposition`, printed pp. 91–93). The identification with
+the intertwining integral is the premise `GeometricLemmaUnfoldingStatement`. Conclusions 1 and 2 come from the bound on `|φ_λ|`,
 as in MW II.1.7 (4).

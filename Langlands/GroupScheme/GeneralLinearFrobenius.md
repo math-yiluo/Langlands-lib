@@ -1,7 +1,5 @@
 # Finite matrix Frobenius
 
-Author: Worker 1487.
-
 For a field `k : Type u`, its exponential characteristic `p`, and a finite matrix
 index type `n : Type`, `frobeniusHom k p n` is an actual endomorphism of
 `GeneralLinear.groupScheme n (CommRingCat.of k)` over `Spec k`. On every affine

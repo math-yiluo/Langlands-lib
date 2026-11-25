@@ -1,7 +1,5 @@
 # Product coefficient bounds on compact translates of a lattice
 
-Author: Worker 19.
-
 `CompactTranslateLatticeBoundStatement` is an internal analytic adapter for a
 smooth complex representation of any topological group. The field of scalars
 is complex, while the group, representation carrier and finite coordinate

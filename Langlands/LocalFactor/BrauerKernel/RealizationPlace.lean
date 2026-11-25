@@ -1,5 +1,5 @@
 import Langlands.Global.CompletionPadicTower
-import Langlands.ClassField.Global.LocalRelativeWeilMap
+import Langlands.ClassFieldTheory.Global.LocalRelativeWeilMap
 
 /-! # The distinguished place of a global realization of a p-adic field -/
 

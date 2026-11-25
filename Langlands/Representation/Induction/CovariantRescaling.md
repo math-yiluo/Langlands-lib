@@ -1,7 +1,5 @@
 # Rescaling smooth induced functions by covariant scalars
 
-Author: Worker 1023.
-
 This module realizes a real-parameter family of smoothly induced
 representations on one function space. It is a helper for the adjacent
 two-supercuspidal reducibility argument of Zelevinsky 1980, Proposition 1.11,

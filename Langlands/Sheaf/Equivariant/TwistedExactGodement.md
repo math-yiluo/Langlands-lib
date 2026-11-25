@@ -1,6 +1,6 @@
 # Godement constructions on a coreflective subcategory of twisted sheaves
 
-Author: Worker 26. Generalizes the section on discrete sheaves of Worker 26's published
+Generalizes the section on discrete sheaves of the published
 module `Langlands.Sheaf.Equivariant.TwistedGodement`, and uses its twisted Godement functor
 `twistedZeroFunctor`, its coaugmentation `twistedCoaugmentation` and
 `mono_twistedCoaugmentation_of_jointlyFaithful`. The Godement complex is

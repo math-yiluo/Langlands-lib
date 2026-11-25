@@ -1,7 +1,5 @@
 # Tori and arbitrary field extension
 
-Worker 1340.
-
 This is an internal consequence of the published definition
 `Langlands.GroupScheme.IsTorus` in `Torus/Lattice.lean`. That definition
 requires the group scheme to become a split torus over some extension

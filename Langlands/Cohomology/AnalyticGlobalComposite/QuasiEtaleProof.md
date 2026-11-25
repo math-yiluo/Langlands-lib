@@ -1,7 +1,5 @@
 # Berkovich's composite comparison for quasi-étale `G`-sheaves
 
-Author: Worker 281.
-
 The theorem
 `Langlands.Cohomology.AnalyticGlobalComposite.analyticQuasiEtaleGlobalComposite`
 proves the unchanged Library proposition

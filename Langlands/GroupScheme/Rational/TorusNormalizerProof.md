@@ -17,7 +17,7 @@ This module proves `TorusNormalizerRepresentableStatement` as `torusNormalizerRe
 
 ## Centralizer
 
-The centralizer half is the published `torusCentralizer_hasSmoothClosedRepresentative` (module `Langlands.GroupScheme.Torus.CentralizerSmooth`, by Worker 1296). It is applied to `i`, the split-subtorus hypothesis and `hG.smooth`.
+The centralizer half is the published `torusCentralizer_hasSmoothClosedRepresentative` (module `Langlands.GroupScheme.Torus.CentralizerSmooth`). It is applied to `i`, the split-subtorus hypothesis and `hG.smooth`.
 
 ## Provenance
 

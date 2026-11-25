@@ -1,7 +1,5 @@
 # Finite Artin maps from cyclic symbols
 
-Author: Worker 4966.
-
 This helper module constructs, for every finite abelian extension `D` of a p-adic
 field `F` (with `D` in the same universe as `F.Carrier`), a homomorphism
 

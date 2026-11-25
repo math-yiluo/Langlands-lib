@@ -38,13 +38,13 @@ variable {G} (Y : Action X.Etale G)
 
 /-- The deck action is the original action on the first fiber coordinate. -/
 @[reassoc (attr := simp)] theorem etaleTorsorPullbackFunctor_ρ_fst (g : G) :
-    (((etaleTorsorPullbackFunctor f G).obj Y).ρ g).left ≫ pullback.fst Y.V.hom f =
-      pullback.fst Y.V.hom f ≫ (Y.ρ g).left := by
+    (((etaleTorsorPullbackFunctor f G).obj Y).ρ g).asHom.left ≫ pullback.fst Y.V.hom f =
+      pullback.fst Y.V.hom f ≫ (Y.ρ g).asHom.left := by
   simp [etaleTorsorPullbackFunctor, etaleObjectPullback]
 
 /-- Every pulled-back deck map fixes the second fiber coordinate. -/
 @[reassoc (attr := simp)] theorem etaleTorsorPullbackFunctor_ρ_snd (g : G) :
-    (((etaleTorsorPullbackFunctor f G).obj Y).ρ g).left ≫ pullback.snd Y.V.hom f =
+    (((etaleTorsorPullbackFunctor f G).obj Y).ρ g).asHom.left ≫ pullback.snd Y.V.hom f =
       pullback.snd Y.V.hom f := by
   simp [etaleTorsorPullbackFunctor, etaleObjectPullback]
 

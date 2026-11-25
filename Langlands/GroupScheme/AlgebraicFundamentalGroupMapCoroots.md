@@ -1,6 +1,6 @@
 # Coroot preservation for geometric torus factorizations
 
-Worker 235. This internal construction supports the induced-map obligation in
+This internal construction supports the induced map of
 KP Lemma 11.3.6. It derives its claims from the Library's actual derived-cover
 lift and the pullback definition of the full preimage torus. It works over
 every field extension, without requiring a separable closure.
@@ -19,5 +19,6 @@ the integral quotient homomorphism `factorizationMap`. Its effect on every
 quotient representative is `factorizationMap_projection`.
 
 This module constructs the map for a single factorization. Independence of
-factorization and compatibility with presentation changes are separate
-obligations.
+factorization and compatibility with presentation changes are proved
+separately, by `algebraicFundamentalGroupMap_of_comparison` in
+`Langlands.GroupScheme.AlgebraicFundamentalGroupMapNaturality`.

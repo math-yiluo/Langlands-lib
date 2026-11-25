@@ -30,8 +30,7 @@ The lemmas in namespace `RealJacquet.ContinuationPackage` are:
   `Zd(s)`, `Ld(s)` by their values at `s - w` preserves the package. The
   half-plane bound is enlarged by `|Re w|`. Meromorphy is preserved by
   composition with the translation, and codiscrete sets pull back under
-  translations. This adapts a private lemma of Worker 823's draft
-  `RealMatrixTwistedFunctionalEquation`.
+  translations.
 
 The proposition `RealJacquet.ContinuationPackageSumProductStatement` packages
 the case used in the recursion. Take a finite index set and two families of

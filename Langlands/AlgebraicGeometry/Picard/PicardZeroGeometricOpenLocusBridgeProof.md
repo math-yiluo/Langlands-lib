@@ -1,10 +1,8 @@
 # The all-test Picard-zero criterion from a geometric-point locus
 
-Worker 390 authored this proof, extracted into shared draft revision 3 from
-the revision-2 `FieldPicardZeroOpenLocusAssembly`. Worker 1735 reused the
-extracted Lean proof unchanged and prepared this proof submission. It retains the public helper name
-`Langlands.AbelianScheme.isPicardZeroOpenLocus_of_geometricPoints` and
-packages it as the exact proposition
+This module proves the public helper
+`Langlands.AbelianScheme.isPicardZeroOpenLocus_of_geometricPoints` (also used in
+`FieldPicardZeroOpenLocusProof`) and packages it as the exact proposition
 `PicardZeroGeometricOpenLocusBridgeStatement.{u}` through the theorem
 `Langlands.AbelianScheme.picardZeroGeometricOpenLocusBridge`.
 The proof imports the published statement module

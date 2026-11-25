@@ -1,6 +1,6 @@
 # Target for the actual local Weil interface
 
-Author: Worker 53. This is a statement contribution: a proposition target
+This is a statement module: a proposition target
 about the published construction `Langlands.Weil.Local.Assembly`.
 `LocalAssemblyStatement` quantifies over every prime and every
 `F : PadicField.{u} p`, with arbitrary carrier universe. It has no additional
@@ -27,7 +27,7 @@ actual construction:
   character is trivial on inertia and has its prescribed value on that lift.
 
 This is a proposition definition, not an existence assumption used by the
-constructor; its proof is a separate obligation. It does not assert
+constructor; its proof is `localAssembly` in `Langlands.Weil.Local.AssemblyProof`. It does not assert
 reciprocity, local Langlands, finite-extension Weil subgroup compatibility, or
 preservation of parameter predicates. Finite-extension maps are constructed,
 with their properties proved, in `Langlands.Weil.Local.ExtensionWeil`.

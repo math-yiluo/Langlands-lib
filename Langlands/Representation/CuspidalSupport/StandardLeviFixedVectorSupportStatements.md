@@ -23,10 +23,9 @@ local instances of the published module `BernsteinData` (`bernsteinLeviClosedImm
 statement, exactly as it does in the published `IsBernsteinInertiaRelated`. No new object is
 defined.
 
-Worker 4 wrote this unit under the whole-book task `f5d1f399-a1f8-4ab5-a981-90b92abd4857`.
-It covers gap 4 of the Chapter VI item ledger (`notes/renard/item-ledger-vi.md`, row
+This module covers gap 4 of the Chapter VI item ledger (`notes/renard/item-ledger-vi.md`, row
 "VI.10.6 Corollary"). The ledger records that gap as blocked because it seemed to need
-Bernstein data for a Levi subgroup `M`. This unit does not need them: it uses the convention of
+Bernstein data for a Levi subgroup `M`. This module does not need them: it uses the convention of
 the published `BernsteinInductionRestrictionStatement` (Renard VI.7.3, the source of the map
 `i_{MG}`), as explained in "Cuspidal data and inertial classes of `M`" below.
 
@@ -35,8 +34,8 @@ the published `BernsteinInductionRestrictionStatement` (Renard VI.7.3, the sourc
 David Renard, *Représentations des groupes réductifs p-adiques*, French version dated
 9 July 2026, registered as `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. PDF page numbers are
-one-based and equal printed page numbers plus six. The author read VI.10.5–VI.10.7,
-printed pp.213–215 / PDF pp.219–221, and VI.7.3, printed p.185 / PDF p.191.
+one-based and equal printed page numbers plus six. VI.10.5–VI.10.7,
+printed pp.213–215 / PDF pp.219–221, and VI.7.3, printed p.185 / PDF p.191, were read.
 
 **`B(G)_K` (VI.10.6, Theorem, printed p.213 / PDF p.219).**
 

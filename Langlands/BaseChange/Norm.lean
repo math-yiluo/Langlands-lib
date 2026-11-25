@@ -8,8 +8,10 @@ For a commutative ring `F`, a commutative `F`-algebra `E` and `σ : E ≃ₐ[F] 
 entrywise action `δ ↦ δ^σ` on `GL_n(E)`, the map `GL_n(F) → GL_n(E)` induced by
 `algebraMap F E`, the norm `N(δ) = δ δ^σ ⋯ δ^{σ^{l-1}}`, association of elements of
 `GL_n(E)` and `GL_n(F)`, norms, σ-regular and σ-elliptic elements, cyclic algebras and the
-statement of the norm lemma, after Henniart–Lemaire (2011), §I.1.2 and §§I.2.1–I.2.3.
-See the paired Markdown.
+statement of the norm lemma, after Henniart–Lemaire (2011), §I.1.2 and §§I.2.1–I.2.3. For fields,
+the elementary facts on rational points used throughout: an entrywise fixed matrix is rational when
+the fixed scalars are, base change keeps regular semisimplicity, and regular semisimplicity is
+invariant under conjugation. See the paired Markdown.
 -/
 
 namespace Langlands.BaseChange
@@ -112,6 +114,28 @@ theorem entrywiseAut_baseChange (σ : E ≃ₐ[F] E) {n : ℕ} (γ : GeneralLine
   ext i j
   simp
 
+/-- The norm of `δ b` for `b` rational and commuting with `δ` is `N(δ) b^l`. -/
+theorem cyclicNorm_mul_baseChange (σ : E ≃ₐ[F] E) (l : ℕ) {n : ℕ}
+    (δ : GeneralLinear n E) (s : GeneralLinear n F)
+    (hs : Commute δ (baseChange F E n s)) :
+    cyclicNorm σ l (δ * baseChange F E n s) =
+      cyclicNorm σ l δ * baseChange F E n s ^ l := by
+  let b := baseChange F E n s
+  change cyclicNorm σ l (δ * b) = cyclicNorm σ l δ * b ^ l
+  induction l with
+  | zero => simp
+  | succ l ih =>
+    have hcomm : Commute (entrywiseAut (σ ^ l) n δ) b := by
+      simpa only [b, entrywiseAut_baseChange] using hs.map (entrywiseAut (σ ^ l) n)
+    calc
+      cyclicNorm σ (l + 1) (δ * b) =
+          cyclicNorm σ l δ * b ^ l * (entrywiseAut (σ ^ l) n δ * b) := by
+        rw [cyclicNorm_succ, ih, map_mul]
+        rw [show entrywiseAut (σ ^ l) n b = b from entrywiseAut_baseChange _ s]
+      _ = cyclicNorm σ l δ * entrywiseAut (σ ^ l) n δ * (b ^ l * b) :=
+        (hcomm.symm.pow_left l).mul_mul_mul_comm _ _
+      _ = cyclicNorm σ (l + 1) δ * b ^ (l + 1) := by rw [cyclicNorm_succ, pow_succ]
+
 /-- `δ ∈ GL_n(E)` and `γ ∈ GL_n(F)` are associated when `N(δ)` is conjugate in `GL_n(E)`
 to `γ` (Henniart–Lemaire, I.1.2). -/
 def IsNormAssociated (σ : E ≃ₐ[F] E) (l : ℕ) {n : ℕ} (δ : GeneralLinear n E)
@@ -180,6 +204,66 @@ theorem isCyclicAlgebra_one : IsCyclicAlgebra (1 : F ≃ₐ[F] F) 1 := by
   exact ⟨x, rfl⟩
 
 end Field
+
+section Descent
+
+variable {K : Type u} {L : Type v} [Field K] [Field L] [Algebra K L]
+
+/-- An entrywise fixed invertible matrix descends when the fixed scalars lie in
+ the image of the base field. -/
+theorem exists_baseChange_eq_of_entrywiseAut_eq {σ : L ≃ₐ[K] L}
+    (hfix : ∀ a : L, σ a = a → a ∈ (algebraMap K L).range)
+    {n : ℕ} {x : GeneralLinear n L} (hx : entrywiseAut σ n x = x) :
+    ∃ y : GeneralLinear n K, baseChange K L n y = x := by
+  classical
+  have hentry (i j : Fin n) : x i j ∈ (algebraMap K L).range :=
+    hfix _ (congrArg (fun g : GeneralLinear n L => g i j) hx)
+  choose a ha using hentry
+  let A : Matrix (Fin n) (Fin n) K := a
+  have hmap : A.map (algebraMap K L) = x.val := Matrix.ext ha
+  have hdet : A.det ≠ 0 := by
+    intro h
+    apply x.det_ne_zero
+    rw [← hmap]
+    change ((RingHom.mapMatrix (algebraMap K L)) A).det = 0
+    rw [← RingHom.map_det, h, map_zero]
+  exact ⟨Matrix.GeneralLinearGroup.mkOfDetNeZero A hdet, Matrix.GeneralLinearGroup.ext ha⟩
+
+end Descent
+
+section FieldExtension
+
+variable {F : Type u} [Field F] {E : Type v} [Field E] [Algebra F E] {n : ℕ}
+
+/-- For a cyclic algebra that is a field, an element of `GL_n(E)` fixed by `σ` is rational. -/
+theorem IsCyclicAlgebra.exists_baseChange_eq_of_entrywiseAut_eq {σ : E ≃ₐ[F] E} {l : ℕ}
+    (hσ : IsCyclicAlgebra σ l) {g : GeneralLinear n E} (hg : entrywiseAut σ n g = g) :
+    ∃ x : GeneralLinear n F, baseChange F E n x = g :=
+  Langlands.BaseChange.exists_baseChange_eq_of_entrywiseAut_eq hσ.2.2.2.2 hg
+
+/-- Entrywise extension of scalars preserves separability of the characteristic polynomial. -/
+theorem isRegularSemisimple_baseChange {γ : GeneralLinear n F} (hγ : IsRegularSemisimple γ) :
+    IsRegularSemisimple (baseChange F E n γ) := by
+  change (γ.val.map (algebraMap F E)).charpoly.Separable
+  rw [Matrix.charpoly_map]
+  exact Polynomial.Separable.map hγ
+
+/-- Separability of the characteristic polynomial is kept by scalar extension (the form of
+`isRegularSemisimple_baseChange` for dot notation). -/
+theorem _root_.Langlands.JacquetLanglands.IsRegularSemisimple.baseChange {γ : GeneralLinear n F}
+    (hγ : IsRegularSemisimple γ) :
+    IsRegularSemisimple (baseChange F E n γ) :=
+  isRegularSemisimple_baseChange hγ
+
+/-- Regular semisimplicity is invariant under conjugation. -/
+theorem isRegularSemisimple_conj_iff (y γ : GeneralLinear n F) :
+    IsRegularSemisimple (y⁻¹ * γ * y) ↔ IsRegularSemisimple γ := by
+  have e : y⁻¹ * γ * y = y⁻¹ * γ * (y⁻¹)⁻¹ := by rw [inv_inv]
+  change (((y⁻¹ * γ * y : GeneralLinear n F)) : Matrix (Fin n) (Fin n) F).charpoly.Separable ↔
+    (γ : Matrix (Fin n) (Fin n) F).charpoly.Separable
+  rw [e, Units.val_mul, Units.val_mul, Matrix.coe_units_inv (y⁻¹), Matrix.charpoly_units_conj]
+
+end FieldExtension
 
 /-- The norm lemma of Henniart–Lemaire (2011), I.2.2, Lemme: for a cyclic `F`-algebra `E`
 of group `⟨σ⟩` of order `l`,

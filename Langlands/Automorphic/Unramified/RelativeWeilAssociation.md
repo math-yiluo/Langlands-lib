@@ -1,8 +1,7 @@
 # Weak association of relative Weil representations with unramified spectra
 
-Worker 35 authored this definition unit for task
-`91266440-3276-48dc-ab77-8d1c1fa386e8`. All declarations lie in the namespace
-`Langlands.ClassField.Global.RelativeWeilGroup`.
+All declarations lie in the namespace
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup`.
 
 The module defines when a finite-dimensional complex representation `S` of
 the published relative Weil group `W_{E/F} = RelativeWeilGroup c F E` is
@@ -123,7 +122,7 @@ cuspidal class of `GL_{r+1}` over `F`.
   `CuspidalSpectralPresentation.{u, uP} T` whose exported system is weakly
   associated with `S`. It applies the published `hasSpectralSystem_iff`.
 
-`HasSpectralSystem` is the current published attachment relation. Its witness
+`HasSpectralSystem` is the published attachment relation. Its witness
 supplies an actual presentation of the class: smooth local factors and a
 genuine tensor equivalence onto a nonzero slice of its form image, with
 irreducible, admissible unramified local factors away from a finite set, on
@@ -148,9 +147,11 @@ The formalization differs from the source in the following derived choices.
 1. **Relative Weil group.** Henniart uses the absolute Weil group `W_F`.
    Here `S` is a representation of the finite-level group `W_{E/F}` at a
    supplied class family `c`. A representation of `W_F` factoring through
-   `W_{E/F}` would give such an `S`, but the library has no absolute global
-   Weil group. The absolute group and the comparison between the two levels
-   belong to Worker 2's construction. No claim is made that every
+   `W_{E/F}` would give such an `S`. The absolute group (module
+   `Langlands.ClassFieldTheory.Global.AbsoluteWeilGroup`) and the comparison
+   between the two levels (module
+   `Langlands.Automorphic.Unramified.AbsoluteWeilAssociation`) are separate
+   from this module. No claim is made that every
    representation used in Henniart's proof factors through some `W_{E/F}`.
 2. **Local components.** Henniart's `S_v` is the restriction of `S` along
    `W_{F_v} → W_F`, which is defined up to conjugacy. Here the local
@@ -158,14 +159,17 @@ The formalization differs from the source in the following derived choices.
    `IsLocalRelativeWeilMap`, at every place `w` above `v` and for every
    reciprocity candidate `e`. The predicate requires matching for all such
    pairs, which needs no conjugacy or uniqueness theorem. The published
-   conjugacy statement (`LocalRelativeWeilMapConjugacyStatement`, unproved)
-   would make the choice of `ι` for fixed `w` and `e` irrelevant, because
+   conjugacy statement (`LocalRelativeWeilMapConjugacyStatement`, proved as
+   `localRelativeWeilMapConjugacy` in `LocalRelativeWeilMapConjugacyProof`)
+   makes the choice of `ι` for fixed `w` and `e` irrelevant, because
    Euler polynomials and unramifiedness are conjugation invariant.
 3. **No vacuous matching.** The predicate also requires that some pair
    `(e, ι)` exists for every `w` above `v`. Without this, the matching
    condition would hold vacuously when no local map exists, for instance for
    a class family `c` that is not the fundamental class. The published
-   statement `LocalRelativeWeilMapExistenceStatement` (unproved) supplies
+   statement `LocalRelativeWeilMapExistenceStatement` (proved as
+   `localRelativeWeilMapExistence` in `LocalRelativeWeilMapExistenceProof`)
+   supplies
    such maps under its fundamental-class hypotheses.
 4. **One cofinite set.** Henniart restricts to the finite places where both
    `S_v` and `Π_v` are unramified and asks for equality at almost all of

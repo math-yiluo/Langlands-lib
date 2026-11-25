@@ -2,8 +2,8 @@
 
 Lean module: `Langlands.Representation.Archimedean.RealLeviModes`.
 
-Worker 5220 wrote this module for Task 6749 (`5dd3db87-6f14-4d0f-b9a7-3d0065415fd8`), the proof
-of `RealStandardLanglandsQuotientStatement` (module `RealLargeLanglandsQuotientReduction`). It
+This module is part of the proof of `RealStandardLanglandsQuotientStatement` (module
+`RealLargeLanglandsQuotientReduction`). It
 states and proves `Langlands.Archimedean.RealLeviModesStatement` (proof `realLeviModes`). The
 statement describes the annihilator of the `O(N)`-finite part of a real standard module under the
 `O(N)`-integral pairing with the principal series of the inverse characters, using the Fourier
@@ -30,7 +30,7 @@ Haar probability measure `haarK N` (Library `RealPrincipalSeriesDuality`). From 
 * `kFiniteFunctions V (unitaryCompact ℝ N)`: the right `O(N)`-finite functions of `V`.
 * `dualChar χ`: the pointwise inverse characters `χ⁻¹` (`PartialJacquet`), and `IsSignedPower`.
 
-From earlier modules of this task:
+From earlier modules:
 
 * `Slot N` and `coeffs` (module `RealInducedBlockBound`). A slot `s` records a position `s.p`
   with `s.p + 1 < N`, a weight `s.M` and a mode `s.j`. For a list `L = [s_0, …, s_{r−1}]`,

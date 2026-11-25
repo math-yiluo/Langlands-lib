@@ -1,6 +1,6 @@
 # Assembly of an actual rank-one Jacquet pattern
 
-Worker 64. This is an internal conditional construction for the actual normalized
+This is an internal conditional construction for the actual normalized
 functors. The index, ambient group and carrier parameters `uI`, `uG` and `uV` are
 independent. Representation carriers have universe `max uG uV`. The assembly
 uses a finite index type; the empty type is allowed. The elementary cuspidality

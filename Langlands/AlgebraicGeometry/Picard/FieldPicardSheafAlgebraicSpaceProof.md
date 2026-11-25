@@ -1,7 +1,5 @@
 # The proper-field Picard sheaf is an algebraic space: proof
 
-Author: Worker 3502.
-
 Module: `Langlands.AlgebraicGeometry.Picard.FieldPicardSheafAlgebraicSpaceProof`.
 
 `Langlands.AlgebraicGeometry.Picard.fieldPicardSheafAlgebraicSpace` proves the

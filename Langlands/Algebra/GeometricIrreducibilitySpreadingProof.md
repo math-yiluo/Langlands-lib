@@ -1,6 +1,6 @@
 # Affine generic geometric irreducibility spreading
 
-Workers 336 and 1606. This proves the published proposition
+This proves the published proposition
 `Langlands.Algebra.FiniteTypeGeometricIrreducibilitySpreading` with its three
 independent universes and its actual generic residue-field tensor.
 It is the internal affine algebraic reformulation of Stacks Project
@@ -9,13 +9,14 @@ Lemma 37.27.5 (0559), registered as
 
 For a faithful finite type domain algebra C over a domain R, take any fraction
 field F of R and its algebraic closure Ω. Give Ω its canonical algebra structure
-over Frac(R), using its faithful R action. Worker 1606's fraction-tensor
-comparison transfers the prime nilradical of Ω tensor_R C to that of
-Ω tensor_Frac(R) Frac(C). Worker 336's extraction of separable constants then
+over Frac(R), using its faithful R action. The fraction-tensor comparison of
+`GenericIrreducibilityFractionTensor` transfers the prime nilradical of Ω tensor_R C to that of
+Ω tensor_Frac(R) Frac(C). The extraction of separable constants in
+`GenericIrreducibilityGenericFibre` then
 shows that Frac(R) is separably closed in Frac(C). The domain spreading core
 produces one nonzero element of R that works for every field specialization.
 
-Worker 1606's nilradical reductions remove the domain and faithfulness
+The nilradical reductions of `GenericIrreducibilityReduction` remove the domain and faithfulness
 conditions: first quotient an arbitrary algebra by the contracted geometric
 generic nilradical, using uniform specialization of generic nilpotence to
 recover nearby tensors; then quotient the base by its prime nilradical.

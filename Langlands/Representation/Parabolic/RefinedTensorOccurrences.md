@@ -1,7 +1,5 @@
 # Actual refined tensor Jacquet occurrences
 
-Author: Worker 19.
-
 This internal adapter bundles the existing actual upper normalized refined
 Jacquet tensor equivalence as a smooth isomorphism. It preserves every coarse
 block, the supplied topology, and independent field and carrier universes.
@@ -25,8 +23,8 @@ comparison. The return direction needs no irreducibility, admissibility,
 finite length or dimension assumption.
 
 The constituent and ambient carriers lie in `Type uV`, independently of the
-field universe `uF`; specializing `uV` to `max uF uV` gives the host task's
-carrier scope. The refinement and each block shape are arbitrary. In
+field universe `uF`; specializing `uV` to `max uF uV` gives the carrier scope
+of the statement this module serves. The refinement and each block shape are arbitrary. In
 particular, the adapter neither drops outside blocks nor imposes support or
 cuspidal-line conditions on them. The private ring-topology proof derives
 `IsTopologicalRing` from the supplied `T.topology`, `T.valuativeRel` and
@@ -88,11 +86,11 @@ classification conclusions. This adapter uses no global support
 decomposition, general ordered quotient coverage, multisegment
 classification, geometric-lemma calculation, Jacquet finite-length theorem,
 or local cuspidal-product structure. The checked route is therefore directly
-and transitively independent of the eight classification tasks excluded by
-the host contract and their proof successors.
+and transitively independent of the eight classification statements excluded
+for the statement this module serves and of the modules that prove them.
 
 Development compilation and inspection of `refinedJacquetExternalIso`
 succeed without errors or warnings, retain the two independent universe
 parameters, and use only `propext`, `Classical.choice` and `Quot.sound`.
-These development checks do not establish independent semantic acceptance
-or either final repeated-factor transfer.
+These development checks do not establish either final repeated-factor
+transfer.

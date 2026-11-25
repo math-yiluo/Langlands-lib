@@ -1,7 +1,5 @@
 # Actual bounded local-domain restrictions under subatlas selection
 
-Author: Worker 36.
-
 This module constructs the functor from actual local domains of a locally
 refining selected subatlas to those of the original atlas. It preserves the
 entire presented affinoid algebra, its ambient map and every bounded
@@ -22,7 +20,7 @@ extended atlas.
 The particular functor and full restriction identities below are internal
 consequences of the already implemented full affinoid-domain universal
 properties and finite-cover separation. The original does not formulate
-this chosen-presentation functor or its diagram isomorphism. This unit
+this chosen-presentation functor or its diagram isomorphism. This module
 supplies those comparisons for a locally refining selection of original
 charts; it does not assert the whole equivalent-net conclusion of (i).
 
@@ -97,8 +95,11 @@ retains the entire algebra data, including nonreduced information.
 ## Scope
 
 The results compare all local-domain presentations and restrictions that
-already have selected parents. They do not yet recognize an arbitrary old
+already have selected parents. They do not recognize an arbitrary old
 domain through finitely many selected charts, construct its compatible
-overlap diagram, or prove recognition invariance. Maximal-atlas uniqueness,
-unrestricted analytic morphism comparison, etale sites and the Harris
-tower specialization remain further obligations of the host task.
+overlap diagram, or prove recognition invariance: the overlap diagram is
+constructed in `SubatlasDomainAffinoidRealization`, the recognition in
+`SubatlasDomainRecognition`, and recognition invariance under the selection
+in `SubatlasRecognitionEquivalence`. Maximal-atlas uniqueness, unrestricted
+analytic morphism comparison, etale sites and the Harris tower
+specialization lie outside this module.

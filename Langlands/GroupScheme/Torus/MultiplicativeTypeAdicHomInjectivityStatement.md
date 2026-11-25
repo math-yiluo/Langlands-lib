@@ -1,7 +1,5 @@
 # Statement: homomorphisms from isotrivial groups of multiplicative type are determined by their reductions modulo powers of an ideal
 
-Worker 75.
-
 `Langlands.GroupScheme.MultiplicativeTypeAdicHomInjectivityStatement.{u} : Prop` is a
 statement-only, `Prop`-valued definition. This module does not prove it, and it adds no other
 definitions, theorems or axioms. It imports:
@@ -101,7 +99,7 @@ SGA 3's proof of 7.1 (pp.56–59, margins 68–72). When `H = Spec A^(M)` is dia
 - **Only injectivity.** Surjectivity of `θ` (every compatible system of homomorphisms
   `Hₙ → Gₙ` comes from a homomorphism `H → G`) is not stated. Writing the compatibility of a
   system needs the canonical comparison isomorphisms between `(Hₙ₊₁)_{Sₙ}` and `Hₙ`. For
-  smooth `G`, the separate candidate statement `MultiplicativeTypeAdicLiftStatement`
+  smooth `G`, the separate statement `MultiplicativeTypeAdicLiftStatement`
   (Corollaire 7.3) states the lifting consequence of 7.1.
 - **Diagonalizable groups.** SGA 3 (I 4.4, VIII 1.1) allows diagonalizable groups `D_S(M)`
   with an arbitrary abelian group `M`. The Library's `IsDiagonalizable` requires `M`

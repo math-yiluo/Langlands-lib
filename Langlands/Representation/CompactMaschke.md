@@ -1,8 +1,8 @@
 # Invariant complements for representations of compact groups
 
 Module `Langlands.Representation.CompactMaschke`, namespace `Langlands.CompactMaschke`.
-Worker 174 wrote it as a step towards
-`Langlands.Automorphic.CuspidalArchimedeanIrreducibleAdmissibleComponentStatement` (G1, Task 5992).
+It is a step towards
+`Langlands.Automorphic.CuspidalArchimedeanIrreducibleAdmissibleComponentStatement` (G1).
 Provenance: the standard averaging proof of complete reducibility of finite-dimensional
 continuous representations of compact groups (Weyl's unitary trick in the form of an averaged
 projection). It is internal infrastructure; Mathlib's `Maschke` covers finite groups only.

@@ -7,7 +7,8 @@ It states the global trace identity of cyclic base change for `GL_n`: if the glo
 integrals of a test function `φ` on `Res_{L/K} GL_n` match those of a test function `f` on
 `GL_n` over `K` at norms, up to a constant `c`, and those of `f` vanish off norms, then
 `tr (R(φ) ∘ I_θ) = c · tr R(f)`. Both functions satisfy the hypotheses of the simple trace
-formulas of Task 7649 (twisted) and Task 7585 (untwisted).
+formulas `GeneralLinearSimpleTwistedTraceFormulaStatement` (twisted) and
+`GeneralLinearSimpleTraceFormulaStatement` (untwisted).
 
 ## Notation from the Library
 
@@ -28,7 +29,9 @@ formulas of Task 7649 (twisted) and Task 7585 (untwisted).
 - `Θ = adelicAut K (unitGaloisAut K L GLₙ σ)` is the automorphism of `W(𝔸_K)` attached to `σ`,
   and `θ = normOneAut K (unitGaloisAut K L GLₙ σ)` is its restriction to `W(𝔸_K)¹`.
   `twistOperator ... Θ ...` is the operator `I_θ` on `L²([W])`.
-- `Φ : W(𝔸_K) → AdelicGL L n = GL_n(𝔸_L)` is the identification used in Tasks 7649, 7660 and 7670
+- `Φ : W(𝔸_K) → AdelicGL L n = GL_n(𝔸_L)` is the identification used in
+  `GeneralLinearSimpleTwistedTraceFormulaStatement`, `GeneralLinearTwistedEllipticCentralizerStatement`
+  and `GeneralLinearWeilAdelicTwistStatement`
   (`AdelicGaloisUnit.weilAdelicEquiv`, then the base-change isomorphism of `GL_n`, then
   `GeneralLinearGroupPoints.adelicHomeomorph L n`). The norm `N(g) = g Θ(g) ⋯ Θ^{l-1}(g)` is the
   ordered product of `adelicAut K (unitGaloisAut K L GLₙ σ ^ k) g` for `k` in `List.range l`.
@@ -46,7 +49,8 @@ formulas of Task 7649 (twisted) and Task 7585 (untwisted).
   measure of `μ` by `μC` in the supporting quotient integration formula.
 - `fullAEL2CuspidalIntegratedAction`, `haarQuotientL2IntegratedAction`, `IsHilbertSchmidt`,
   `IsTraceClass`, `operatorTrace`, `properParabolicHaarMeasure`, `positivePointMap` and
-  `normalizedPositiveHaarMeasure` are used exactly as in Tasks 7585 and 7649.
+  `normalizedPositiveHaarMeasure` are used exactly as in
+  `GeneralLinearSimpleTraceFormulaStatement` and `GeneralLinearSimpleTwistedTraceFormulaStatement`.
 
 ## Statement
 
@@ -67,14 +71,14 @@ against `properParabolicHaarMeasure` along every two-sided translate of the unip
 radical of every proper rational parabolic vanishes. Form `φ = φ₁ * φ₂` with that ambient Haar
 measure by `φ(g) = ∫ a, φ₁(a) φ₂(a⁻¹ g)`. At the chosen finite place `w` of `L`, the
 projection of `Φ(N(g))` is regular elliptic for every `g ∈ tsupport φ`. These are the
-hypotheses of Task 7649.
+hypotheses of `GeneralLinearSimpleTwistedTraceFormulaStatement`.
 
 On `G(𝔸_K)`, let `f₁, f₂` be continuous compactly supported complex functions with the
 corresponding Hilbert–Schmidt conditions for every integrability witness and the same
 cuspidality condition on `f₂` for `GLₙ`. Form `f = f₁ * f₂` with `Measure.haar` on `G(𝔸_K)`
 and the same convolution convention. At the chosen finite place `v` of `K`, the projection of
 `adelicHomeomorph K n g` is regular elliptic for every `g ∈ tsupport f`. These are the
-hypotheses of Task 7585.
+hypotheses of `GeneralLinearSimpleTraceFormulaStatement`.
 
 For `x` in the respective norm-one subgroup, let
 `φ¹(x) = ∫_{A⁺_W} φ(a x) da` and `f¹(x) = ∫_{A⁺_G} f(a x) da`, using `positivePointMap` for
@@ -112,17 +116,17 @@ and `operatorTrace` gives
 
 ## Proof sketch
 
-1. Task 7649 supplies `hΘ`, `hΘμ`, integrability and trace class on the twisted side, and
+1. `GeneralLinearSimpleTwistedTraceFormulaStatement` supplies `hΘ`, `hΘμ`, integrability and trace class on the twisted side, and
    gives `tr (R(φ) ∘ I_θ) = ∑_j vol(C_{r_j}(K) \ C_{r_j}) · TO_{r_j}(φ¹)`. Its finite family
    of rational representatives `r_j` has distinct `θ`-conjugacy classes with regular elliptic
    norms at `w` and covers every rational class whose adelic twisted orbit meets the nonzero
-   locus of `φ¹`. Task 7585 supplies integrability and trace class on the untwisted side,
+   locus of `φ¹`. `GeneralLinearSimpleTraceFormulaStatement` supplies integrability and trace class on the untwisted side,
    and gives `tr R(f) = ∑_k vol(C_{q_k}(K) \ C_{q_k}) · O_{q_k}(f¹)` for the corresponding
    finite family of ordinary classes regular elliptic at `v`. The volumes use quotient
    measures compatible with the centralizer Haar measures and counting measures on the
    rational centralizers. The orbital integrals use quotient measures compatible with the
    ambient norm-one Haar measures and the same centralizer measures.
-2. Through `Φ`, `W(K) = GL_n(L)` and `Θ` acts entrywise by `σ` (Task 7670). For `δ ∈ GL_n(L)`,
+2. Through `Φ`, `W(K) = GL_n(L)` and `Θ` acts entrywise by `σ` (`GeneralLinearWeilAdelicTwistStatement`). For `δ ∈ GL_n(L)`,
    `N(δ)` is `GL_n(L)`-conjugate to some `ι(q)` with `q ∈ GL_n(K)`, `q` is determined up to
    `GL_n(K)`-conjugacy, and `δ` is determined up to `σ`-conjugacy by the `GL_n(L)`-conjugacy
    class of `N(δ)`. These are the assertions of `CyclicNormLemmaStatement` in the Library

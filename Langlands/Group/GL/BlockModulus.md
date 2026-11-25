@@ -1,7 +1,5 @@
 # Explicit standard block modulus and its two halves
 
-Author: Worker 23.
-
 For an actual ordered positive block shape `B` and a supplied compatible
 p-adic-field realization `T`, `leviModulus T B` is the positive character
 

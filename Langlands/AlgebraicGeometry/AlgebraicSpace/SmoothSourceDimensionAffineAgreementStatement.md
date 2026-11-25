@@ -1,7 +1,5 @@
 # Affine-space normalization of the assembled varying-dimension structure
 
-Author: Worker 3519.
-
 This derived statement supports the scheme-agreement part of the
 analytic-manifold assertion in Brian Conrad, *Weil and Grothendieck approaches
 to adelic points*, December 31, 2011, printed p.15, Proposition 5.4, and the
@@ -11,7 +9,8 @@ final paragraph of its proof on printed p.16. The registered original is
 Conrad requires the analytic structure on rational points to agree with the
 known scheme case. As in the Library's pure-dimensional framework, that
 requirement is encoded by the normalization on polynomial affine spaces.
-This unit contains no proof.
+This module contains no proof; the statement is proved as
+`smoothSourceDimensionAffineAgreement` in `SmoothSourceDimensionAffineAgreement`.
 
 `SmoothSourceDimensionAffineAgreementStatement` is a proposition definition in
 `Langlands.AlgebraicGeometry.AlgebraicSpace`. Let `K` be a nontrivially normed
@@ -50,7 +49,9 @@ The inverse expression uses the analytic inverse of that inclusion, from `σ`'s
 
 The field is only assumed henselian, which is what the concrete atlas needs.
 No completeness is assumed, because the admissible family is a premise. This
-unit does not assert the other three admissibility conditions of
-`σ.dimensionStructure hK`. Those are the separately submitted assembly,
-functoriality and étale statements. It also does not assert uniqueness, or
+module does not assert the other three admissibility conditions of
+`σ.dimensionStructure hK`. Those are the separate assembly,
+functoriality and étale statements (`SmoothSourceDimensionAnalyticAssemblyStatement`,
+`SmoothSourceDimensionAnalyticFunctorialityStatement` and
+`SmoothSourceDimensionEtaleAnalyticIsoStatement`). It also does not assert uniqueness, or
 agreement with an analytic structure on arbitrary nonaffine smooth schemes.

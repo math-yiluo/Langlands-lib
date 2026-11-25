@@ -64,5 +64,6 @@ The product prescription is from Harris–Taylor; the categorical assembly and
 its intrinsic proofs are derived here from the imported constructions. The
 source representability assertion on page 91 is not proved by this module.
 Representability of the precise actual moduli functor, representing scheme
-levels, finite étale level maps and coefficient descent remain further
-obligations of the host task.
+levels, finite étale level maps and coefficient descent are not proved in this
+module; the Library does not prove the representability statement
+`CMRepresentabilityStatement`.

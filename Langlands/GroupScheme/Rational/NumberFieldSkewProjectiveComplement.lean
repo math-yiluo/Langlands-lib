@@ -108,7 +108,7 @@ theorem exists_complement_isotropic_of_local_planes [NumberField K] [FiniteDimen
     · exact hlocal v.Completion (hl (.inl v))
     · exact hlocal (Global.FiniteCompletion K v) (hl (.inr v))
   exact (QuadraticMap.not_anisotropic_iff_exists q).mp
-    (Langlands.numberFieldQuadraticIsotropy_of_cyclicNorm ClassField.Global.cyclicHasseNorm K W q hq hloc)
+    (Langlands.numberFieldQuadraticIsotropy_of_cyclicNorm ClassFieldTheory.Global.cyclicHasseNorm K W q hq hloc)
 
 end Langlands.SymmetricBilinear.HyperbolicPair
 

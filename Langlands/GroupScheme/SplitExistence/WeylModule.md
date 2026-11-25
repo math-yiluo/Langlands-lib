@@ -1,7 +1,5 @@
 # Small integral representations of `SL₂` (`WeylModule`)
 
-Author: Worker 239.
-
 This module gives explicit integral matrices for two kinds of representation of `2 × 2`
 matrices. Over every commutative ring `R`, each kind is multiplicative, and its values at the
 unipotent matrices are truncated exponentials of integral divided-power operators. Later modules

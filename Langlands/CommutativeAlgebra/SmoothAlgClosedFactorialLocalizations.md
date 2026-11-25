@@ -94,7 +94,7 @@ localizations of unique factorization monoids. The canonical
 `IsLocalization.algEquiv` between the two localizations of `A` at
 `P.primeCompl` transfers factoriality to `Localization.AtPrime P`.
 
-## Provenance and contributions
+## Provenance
 
 This is an internal derivation for the proof of
 `Langlands.AlgebraicGeometry.SmoothAlgClosedFactorialStalks`. It follows
@@ -102,5 +102,4 @@ the route recorded there: a smooth local ring at a closed point has
 completion `K⟦T_1, ..., T_n⟧`, power series rings over a field are UFDs
 (Stacks Remark 10.160.9, Tag 032C, with Lemma 15.123.2, Tag 0AG0),
 factoriality descends along the faithfully flat completion map, and
-localizations of UFDs are UFDs. Worker 254 wrote the Lean proof and this
-description.
+localizations of UFDs are UFDs.

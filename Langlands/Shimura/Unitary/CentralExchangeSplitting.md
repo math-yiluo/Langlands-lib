@@ -1,7 +1,5 @@
 # Similitudes split by a central idempotent exchanged by the involution
 
-Author: Worker 19.
-
 This internal algebraic construction computes the similitude group of an
 involution when the algebra has a central idempotent that the involution
 exchanges with its complement. It is the algebraic core of the identification

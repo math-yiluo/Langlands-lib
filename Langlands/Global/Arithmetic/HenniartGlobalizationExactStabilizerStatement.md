@@ -4,7 +4,7 @@ Module `Langlands.Global.Arithmetic.HenniartGlobalizationExactStabilizerStatemen
 namespace `Langlands.Global`. It imports the published
 `HenniartGlobalizationStatement`, `HenniartGlobalizationReduction` (only for
 the published `HenniartGlobalizationReductionStatement`, which the second
-implication below needs) and Task 7413's published
+implication below needs) and the published
 `HarrisProposition48ExactStabilizerStatement`, which defines
 `Harris.Proposition48ExactStabilizerStatement`; that proposition is not
 restated here.
@@ -72,7 +72,7 @@ hypotheses, in the same order and at the same universes. Its conclusion
 `HenniartGlobalizationStatement.{uK, uQ, uW, uP}` becomes
 `HenniartGlobalizationExactStabilizerStatement.{uK, uQ, uW, uP}`.
 
-A private audit (not submitted) compared the elaborated values. For the first
+An audit outside the Library compared the elaborated values. For the first
 statement, the constant `Harris.Proposition48Statement` occurs once in the
 published value; replacing it by `Harris.Proposition48ExactStabilizerStatement`
 (same universe arity) gives the new value exactly. For the second, the same
@@ -107,7 +107,7 @@ The first composes `h` with
 applies `h` to the five local hypotheses and then uses the first. Both use only
 the standard axioms. Neither converse is claimed.
 
-## Why the statements are true (the expected proof)
+## Why the statements are true
 
 This is a reading of the Library at commit `97bd11ee`; the proofs are not given
 here.
@@ -128,9 +128,12 @@ here.
   datum for the same characters. The restated proposition applies to it and
   gives the same conclusion. The exact-stabilizer datum has the same conjuncts
   in the same positions, so the rest of the proof is unchanged.
-- So, once the exact-stabilizer realization is proved, the same proof with
+- So, with the exact-stabilizer realization (proved as
+  `harrisDatumCharacterRealizationExactStabilizer`, module
+  `HenniartHarrisDatumExactStabilizerProof`), the same proof with
   `Proposition48ExactStabilizerStatement` gives the exact-stabilizer
-  reduction. The four local inputs `CommonClosureReciprocityExistence`,
+  reduction; it is proved as `henniartGlobalizationExactStabilizerReduction`
+  (module `HenniartGlobalizationExactStabilizerProof`). The four local inputs `CommonClosureReciprocityExistence`,
   `LocalInducedRestrictionStatement`, `AssociatedCentralCharacterStatement`
   and `LocalTransferReciprocityStatement` are proved in the Library, so the
   reduction and a proof of `AssociatedSupercuspidalInductionStatement` would
@@ -144,10 +147,11 @@ form of Proposition 4.8 is enough.
 ## What is not claimed
 
 Neither `HenniartGlobalizationExactStabilizerStatement` nor
-`HenniartGlobalizationExactStabilizerReductionStatement` is proved here.
-Their proofs belong to separate `lean.proof@1` tasks of the parent (Task
-7343). Only the two implications to the published statements are proved. The
-published `HenniartGlobalizationStatement` (the target of Task 5134),
+`HenniartGlobalizationExactStabilizerReductionStatement` is proved here; the
+second is proved as `henniartGlobalizationExactStabilizerReduction` (module
+`HenniartGlobalizationExactStabilizerProof`). Only the two implications to the
+published statements are proved here. The
+published `HenniartGlobalizationStatement`,
 `HenniartGlobalizationReductionStatement` and their proofs are unchanged.
 No totally complex form of the globalization is stated; the published
 globalization has none.
@@ -176,7 +180,7 @@ globalization has none.
   Lemma 4.7, printed pp.204–206 (statement of (4.12) on p.204, PDF p.28): with
   `G = Γ_F`, `H = Γ_{F'}` and `χ̃(*) = χ(*) ∘ N_{F̃/F'}`,
   `H = {g ∈ G | g χ̃(*) = χ̃(*)}`.
-- Design: operator plan note `operator-external-inputs-plan-2026-11-16`,
+- Design: plan note `operator-external-inputs-plan-2026-11-16`,
   Section 4.8, Remark 4.2 (TeX lines 859–894) and the paragraph "The remark
   and the Library's statements" (TeX lines 897–912). The plan note is
-  unreviewed design guidance, not a source of the statement.
+  design guidance, not a source of the statement.

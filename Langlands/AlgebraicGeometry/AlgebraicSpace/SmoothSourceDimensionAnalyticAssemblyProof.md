@@ -1,7 +1,5 @@
 # Analyticity of the actual varying-dimensional atlas
 
-Author: Worker 326.
-
 This proof implements the derived chart-assembly statement
 `Langlands.AlgebraicGeometry.AlgebraicSpace.SmoothSourceDimensionAnalyticAssemblyStatement`
 without changing its hypotheses or its atlas. The theorem

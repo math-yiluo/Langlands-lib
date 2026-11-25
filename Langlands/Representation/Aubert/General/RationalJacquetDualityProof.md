@@ -1,10 +1,7 @@
 # Proof of natural opposite-Jacquet duality on the actual rational-point group
 
-Author: Worker 4046. Worker 127 wrote the assembly that this module uses.
-That identity is from the previous project instance, and the draft was
-carried over into this task. It was conditional, with the Haar reciprocity
-identity as its only premise. This module replaces that premise with the
-published proof.
+The Haar reciprocity identity is not a premise here: this module supplies it
+by the published proof `rationalOppositeHaarReciprocity`.
 
 Module `Langlands.Representation.Aubert.General.RationalJacquetDualityProof`,
 namespace `Langlands.Aubert.General.RationalPointFamily`.
@@ -89,7 +86,7 @@ square holds for every actual morphism.
 ## Imported ingredients
 
 - `exists_naturalNormalizedJacquetDuality_of_iwahoriContractions_of_reciprocalModulus`
-  (Worker 1004, with Worker 127 and Worker 937). For an abstract locally
+  (module `IwahoriNaturalJacquetDuality`). For an abstract locally
   compact nonarchimedean group it builds the stable evaluation pairing between
   `U`-coinvariants of `A∨` and `O`-coinvariants of `A`, from a common
   Levi-central contracting element. Admissibility makes the relevant fixed
@@ -97,14 +94,16 @@ square holds for every actual morphism.
   images and kernels in both orientations. The pairing is transported to the
   normalized functors, using the reciprocity of the inverse-half Haar
   characters. Naturality follows from naturality of the stable pairing.
-- `rationalOppositeIwahoriBasisStatement` (Worker 1045, with Worker 1374's
-  cocharacter contracting point). It identifies `M`, `U` and `O` with the
+- `rationalOppositeIwahoriBasisStatement` (module
+  `RationalOppositeIwahoriBasisProof`, using a cocharacter contracting point).
+  It identifies `M`, `U` and `O` with the
   rational points of `Z(χ)`, `U(χ)` and `U(χ⁻¹)` for
   `χ = groupHom ζ ≫ i`. It takes a point `g` of `Z(χ)(k)`, central there,
   whose powers contract `U(χ)(k)` and whose inverse powers contract
   `U(χ⁻¹)(k)`. An abstract criterion then gives the two-sided basis, using
   unique opposite factorization and the open cell.
-- `rationalOppositeHaarReciprocity` (Worker 4204). It writes the three
+- `rationalOppositeHaarReciprocity` (module
+  `RationalOppositeHaarReciprocityProof`). It writes the three
   subgroups as dynamic subgroups of the inverse cocharacter of
   `groupHom ζ ≫ i`. It then applies
   `dynamicOppositeHaarReciprocity_of_reflection_centralSplitTorus`, whose two

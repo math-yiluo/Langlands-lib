@@ -1,7 +1,5 @@
 # Covariance of relative Hom in the target
 
-Author: Worker 139.
-
 This module extends the published `Langlands.GroupScheme.Cartier.Restriction`
 API. All group schemes are actual `Langlands.CommGroupScheme S` objects over
 an arbitrary scheme `S`; there are no finiteness or geometric hypotheses.

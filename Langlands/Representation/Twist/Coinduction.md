@@ -1,7 +1,7 @@
 # Character twists and the actual coinduced representation
 
-Worker 1763 constructs an explicit representation equivalence for the
-fixed-Haar duality task `e945d920-df9f-446c-9528-b488a3bee609`.
+This module constructs an explicit representation equivalence for the
+fixed-Haar duality argument.
 
 For a homomorphism `φ : H →* G`, an ambient unit-valued character `χ`, and
 an actual representation `ρ` of `H`, `coindTwistEquiv` identifies coinduction

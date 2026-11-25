@@ -45,37 +45,39 @@ theorem isogenyDegreeTateDeterminantCharZeroReduction :
       (Tate.PrimeAdic.Rational A (Over.mk (𝟙 (Scheme.Spec.obj
         (Opposite.op (CommRingCat.of k))))) p) :=
     (Tate.PrimeAdic.rationalEndAction (Over.mk (𝟙 _)) p A).toRingHom.comp (endToEnd0 A)
-  have hVp : ∀ f : A ⟶ A, Vp f = Tate.PrimeAdic.rationalMap (Over.mk (𝟙 _)) p f :=
-    fun f => rationalEndAction_homToHom0 A p f
+  have hVp : ∀ f : CategoryTheory.End A,
+      Vp f = Tate.PrimeAdic.rationalMap (Over.mk (𝟙 _)) p f.asHom :=
+    fun f => rationalEndAction_homToHom0 A p f.asHom
   let ρ : CategoryTheory.End A →+* Matrix (Fin (2 * g)) (Fin (2 * g)) ℚ_[p] :=
     (LinearMap.toMatrixAlgEquiv b).toRingHom.comp Vp
-  have hdet : ∀ f : A ⟶ A,
-      (ρ f).det = LinearMap.det (Tate.PrimeAdic.rationalMap (Over.mk (𝟙 _)) p f) := by
+  have hdet : ∀ f : CategoryTheory.End A,
+      (ρ f).det = LinearMap.det (Tate.PrimeAdic.rationalMap (Over.mk (𝟙 _)) p f.asHom) := by
     intro f
     rw [← hVp f]
     exact LinearMap.det_toMatrix b (Vp f)
   obtain ⟨δ, hδiso, hδline⟩ := hG1 k A g hA
   obtain ⟨y₀⟩ := nonempty_left A
-  have hD : DegreeData ρ δ (fun β : CategoryTheory.End A => IsIsogeny (β : A ⟶ A)) :=
-    { line := fun φ ψ => hδline φ ψ
+  have hD : DegreeData ρ (fun β : CategoryTheory.End A => δ β.asHom)
+      (fun β : CategoryTheory.End A => IsIsogeny β.asHom) :=
+    { line := fun φ ψ => hδline φ.asHom ψ.asHom
       mul := by
         intro β γ hβ hγ
-        change δ (γ ≫ β) = δ β * δ γ
-        rw [hδiso _ (hγ.comp hβ) y₀, hδiso β hβ y₀, hδiso γ hγ y₀,
-          finrank_comp_of_isIsogeny γ β hγ hβ ((hom γ).finrank y₀)
-            (fun y => finrank_eq_of_isIsogeny γ hγ y y₀) y₀ y₀]
+        change δ (γ.asHom ≫ β.asHom) = δ β.asHom * δ γ.asHom
+        rw [hδiso _ (hγ.comp hβ) y₀, hδiso β.asHom hβ y₀, hδiso γ.asHom hγ y₀,
+          finrank_comp_of_isIsogeny γ.asHom β.asHom hγ hβ ((hom γ.asHom).finrank y₀)
+            (fun y => finrank_eq_of_isIsogeny γ.asHom hγ y y₀) y₀ y₀]
         push_cast
         ring
       norm := by
         intro β hβ
-        rw [hdet, hδiso β hβ y₀, ← (hG23 k A p β).1 hβ y₀]
+        rw [hdet, hδiso β.asHom hβ y₀, ← (hG23 k A p β.asHom).1 hβ y₀]
         push_cast
         rfl
       zero := by
         intro β hβ
         rw [hdet]
-        exact (hG23 k A p β).2 hβ }
-  have key := hD.det_eq (show CategoryTheory.End A from α)
+        exact (hG23 k A p β.asHom).2 hβ }
+  have key := hD.det_eq (CategoryTheory.End.of α)
   rw [hdet] at key
   refine ⟨fun hiso y => ?_, fun hniso => (hG23 k A p α).2 hniso⟩
   rw [← key, hδiso α hiso y]

@@ -1,8 +1,8 @@
 # The Iwasawa decomposition of `GL_n(ℝ)` with continuous coordinates
 
-Helper module for the convergence part of the real local Rankin–Selberg theory (Task 7400,
-towards `Langlands.Global.RankinSelbergGlobal.RealPlaceFunctionalEquationStatement`).
-Authored by Worker 823. All declarations are proved; there are no hypotheses or axioms.
+Helper module for the convergence part of the real local Rankin–Selberg theory (towards
+`Langlands.Global.RankinSelbergGlobal.RealPlaceFunctionalEquationStatement`).
+All declarations are proved; there are no hypotheses or axioms.
 
 All declarations are in the namespace
 `Langlands.Global.RankinSelbergGlobal.RealIwasawa`. Throughout, `G = GL_n(ℝ)` is the

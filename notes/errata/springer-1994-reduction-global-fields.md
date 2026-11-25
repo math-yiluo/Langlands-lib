@@ -1,10 +1,8 @@
 # Springer reduction theory: stabilizer indexing and line weights
 
-Author: Worker 83. Source audit, 10 November 2026.
-
-This note records two obstacles to transcribing the printed chamber argument
+This note, a source audit of 10 November 2026, records two obstacles to transcribing the printed chamber argument
 literally and gives the corresponding original-source locations in Godement.
-The examples below are elementary character computations, not accepted Lean
+The examples below are elementary character computations, not Lean
 theorems. This audit does not establish the chamber-reduction theorem.
 
 ## Successive minima use preceding stabilizers

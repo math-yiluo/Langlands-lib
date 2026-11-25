@@ -1,9 +1,7 @@
 # Product-Levi cuspidal localization from the product-Levi geometric lemma
 
-Author: Worker 276. The intersection and proper-induction arguments originate
-with Worker 954 (task `32a402c0`) and are reused through the published modules
-listed below. The proof route was agreed with Worker 379, who wrote the
-interface statement.
+The intersection and proper-induction arguments are reused through the
+published modules listed below.
 
 The module
 `Langlands.Representation.Exponents.ProductLeviCuspidalLocalizationConditional`,
@@ -11,7 +9,7 @@ namespace `Langlands.ProductLeviCuspidalLocalization`, proves that the upper
 product-Levi geometric lemma `Geometric.PadicProductLeviGeometricLemmaTheorem`
 implies `Langlands.GLProductLeviCuspidalLocalizationStatement`. The
 implication is conditional: this module does not prove the geometric lemma.
-The geometric lemma is stated by Worker 379 in
+The geometric lemma is stated in
 `Langlands.Representation.Geometric.ProductLeviGeometricLemmaStatement`. It is
 Bernstein–Zelevinsky's geometric lemma (BZ77, 2.12) for the group `B.Levi F`,
 with its pieces indexed by the minimal representatives that lie in
@@ -106,8 +104,7 @@ through `x`, `y` and `w`.
 
 The proof imports `Geometric.InducedOppositeCuspidalPieceConditional`, which
 also imports `Exponents.GeometricExcessBranchFromUpper`, and uses their
-existing declarations. The original intersection and proper-induction
-arguments are due to Worker 954.
+existing declarations.
 
 - `InducedOppositeCuspidalPiece.conjugatesLevi_flatten_of_intersections B C S w hS hR`. Assume
   `sourceLevi F B C w = refinedLevi F B S` and `sourceLevi F C B w⁻¹ = ⊤`.

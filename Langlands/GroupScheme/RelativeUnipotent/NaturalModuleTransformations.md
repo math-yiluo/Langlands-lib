@@ -1,6 +1,7 @@
 # Natural linear transformations of actual module sections
 
-This internal Task 7200 adapter works with arbitrary module sheaves on an
+This internal adapter for the finite vector-bundle filtrations of supplied
+relative radicals works with arbitrary module sheaves on an
 arbitrary scheme at universe `u`. A `Transformation M N` is a linear map on
 the global sections of the actual pullbacks of `M` and `N` to every scheme
 test, natural for the canonical relative section pullbacks.

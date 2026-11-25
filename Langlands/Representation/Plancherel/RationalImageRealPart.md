@@ -1,7 +1,5 @@
 # Normalized log modulus on the actual valuation image
 
-Author: Worker 200.
-
 This is a derived construction toward Waldspurger, *La formule de Plancherel
 pour les groupes p-adiques (d'après Harish-Chandra)*, I.1, printed pp.239–240
 (PDF pp.5–6), source `waldspurger-2003-plancherel`, SHA256
@@ -62,7 +60,7 @@ by any existing unitary character leaves its real functional unchanged.
 These are intrinsic construction laws, rather than assumed analytic or
 representation-theoretic results.
 
-This unit does not identify this functional with Waldspurger's `Re(χ)` in
+This module does not identify this functional with Waldspurger's `Re(χ)` in
 the real space defined by the maximal split center. It supplies no
 finite-rank lattice theorem, complex exponential parameterization or
 period lattice, Lie or algebraic torus structure, finite-kernel restriction,

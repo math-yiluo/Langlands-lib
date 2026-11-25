@@ -1,8 +1,7 @@
 # Descent of the character-valuation kernel from `K` to `F`
 
-Authors: Worker 1532 and Worker 389. The Lean statement and initial exposition
-reuse Worker 1532's draft; Worker 389 checked the original passages and authors'
-corrections and clarified the valuation conventions.
+The statement was checked against the original passages and the authors'
+corrections; the valuation conventions are made explicit below.
 
 `Langlands.Geometry.Building.CharacterValuationKernelDescentStatement.{u}`
 is a proposition definition. It states the derived identity
@@ -124,5 +123,6 @@ The embeddings of `F` and `F'` into `K` are implicit in this formula.
 Since `[F' : F]` is positive and `v_K` takes values in `ℝ≥0`, a unit value
 for `χ(g)` forces a unit value for `ψ(g)`. This explains the proposed
 reverse inclusion without imposing reductivity, smoothness or connectedness.
-The character descent, conjugate product and valuation argument remain
-obligations for a separate proof of the exact proposition.
+The character descent, conjugate product and valuation argument belong to
+the separate proof of the exact proposition, `characterValuationKernelDescent_proof`
+(module `KPCharacterValuationDescentProof`).

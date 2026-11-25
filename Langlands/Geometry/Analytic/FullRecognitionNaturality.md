@@ -1,7 +1,5 @@
 # Full bounded naturality of recognition idempotence
 
-Author: Worker 36.
-
 This module constructs the functor from iterated full-recognition charts to
 their earlier full-recognition presentations. It proves that the already
 constructed pointwise bounded algebra equivalences intertwine every literal

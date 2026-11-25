@@ -63,19 +63,19 @@ def hom0 {X Y : RationalAlgebraAction S D} (f : X ⟶ Y) :
 
 /-- The defining equivariance equation, in actual rational Hom groups. -/
 theorem intertwines {X Y : RationalAlgebraAction S D} (f : X ⟶ Y) (d : D) :
-    comp0 _ _ _ (X.action d) (hom0 f) = comp0 _ _ _ (hom0 f) (Y.action d) :=
+    comp0 _ _ _ (X.action d).asHom (hom0 f) = comp0 _ _ _ (hom0 f) (Y.action d).asHom :=
   f.hom.comm d
 
 /-- Construct an equivariant morphism from an intertwining actual rational map. -/
 def homMk {X Y : RationalAlgebraAction S D}
     (f : Hom0 X.abelianScheme Y.abelianScheme)
-    (hf : ∀ d : D, comp0 _ _ _ (X.action d) f = comp0 _ _ _ f (Y.action d)) :
+    (hf : ∀ d : D, comp0 _ _ _ (X.action d).asHom f = comp0 _ _ _ f (Y.action d).asHom) :
     X ⟶ Y :=
   InducedCategory.homMk { hom := f, comm := hf }
 
 @[simp] theorem hom0_homMk {X Y : RationalAlgebraAction S D}
     (f : Hom0 X.abelianScheme Y.abelianScheme)
-    (hf : ∀ d : D, comp0 _ _ _ (X.action d) f = comp0 _ _ _ f (Y.action d)) :
+    (hf : ∀ d : D, comp0 _ _ _ (X.action d).asHom f = comp0 _ _ _ f (Y.action d).asHom) :
     hom0 (homMk f hf) = f := rfl
 
 @[simp] theorem hom0_id (X : RationalAlgebraAction S D) :
@@ -103,20 +103,20 @@ def underlyingIso {X Y : RationalAlgebraAction S D} (e : X ≅ Y) :
 has an equivariant inverse, obtained from its actual inverse equations. -/
 def isoMk {X Y : RationalAlgebraAction S D}
     (e : Rationalization.of X.abelianScheme ≅ Rationalization.of Y.abelianScheme)
-    (he : ∀ d : D, comp0 _ _ _ (X.action d) e.hom =
-      comp0 _ _ _ e.hom (Y.action d)) : X ≅ Y :=
+    (he : ∀ d : D, comp0 _ _ _ (X.action d).asHom e.hom =
+      comp0 _ _ _ e.hom (Y.action d).asHom) : X ≅ Y :=
   InducedCategory.isoMk (Action.mkIso e he)
 
 @[simp] theorem hom0_isoMk_hom {X Y : RationalAlgebraAction S D}
     (e : Rationalization.of X.abelianScheme ≅ Rationalization.of Y.abelianScheme)
-    (he : ∀ d : D, comp0 _ _ _ (X.action d) e.hom =
-      comp0 _ _ _ e.hom (Y.action d)) :
+    (he : ∀ d : D, comp0 _ _ _ (X.action d).asHom e.hom =
+      comp0 _ _ _ e.hom (Y.action d).asHom) :
     hom0 (isoMk e he).hom = e.hom := rfl
 
 @[simp] theorem hom0_isoMk_inv {X Y : RationalAlgebraAction S D}
     (e : Rationalization.of X.abelianScheme ≅ Rationalization.of Y.abelianScheme)
-    (he : ∀ d : D, comp0 _ _ _ (X.action d) e.hom =
-      comp0 _ _ _ e.hom (Y.action d)) :
+    (he : ∀ d : D, comp0 _ _ _ (X.action d).asHom e.hom =
+      comp0 _ _ _ e.hom (Y.action d).asHom) :
     hom0 (isoMk e he).inv = e.inv := rfl
 
 /-- The actual pulled-back abelian scheme with its induced rational algebra action. -/
@@ -135,10 +135,10 @@ def pullbackMap (b : S' ⟶ S) {X Y : RationalAlgebraAction S D} (f : X ⟶ Y) :
       (intertwines f d)
     exact (rationalBaseChangeHom_comp b
       (A := X.abelianScheme) (B := X.abelianScheme) (C := Y.abelianScheme)
-      (X.action d) (hom0 f)).symm.trans (h.trans
+      (X.action d).asHom (hom0 f)).symm.trans (h.trans
       (rationalBaseChangeHom_comp b
         (A := X.abelianScheme) (B := Y.abelianScheme) (C := Y.abelianScheme)
-        (hom0 f) (Y.action d))))
+        (hom0 f) (Y.action d).asHom)))
 
 /-- Pull back both the actual abelian scheme and its actual rational algebra action. -/
 def pullback (b : S' ⟶ S) : RationalAlgebraAction S D ⥤ RationalAlgebraAction S' D where
@@ -159,7 +159,8 @@ def pullback (b : S' ⟶ S) : RationalAlgebraAction S D ⥤ RationalAlgebraActio
 
 @[simp] theorem pullback_obj_action (b : S' ⟶ S)
     (X : RationalAlgebraAction S D) (d : D) :
-    ((pullback b).obj X).action d = rationalBaseChangeHom b (X.action d) := rfl
+    ((pullback b).obj X).action d =
+      CategoryTheory.End.of (rationalBaseChangeHom b (X.action d).asHom) := rfl
 
 @[simp] theorem hom0_pullback_map (b : S' ⟶ S)
     {X Y : RationalAlgebraAction S D} (f : X ⟶ Y) :
@@ -174,7 +175,7 @@ def pullbackForgetIso (b : S' ⟶ S) :
 def pullbackIdIso (X : RationalAlgebraAction S D) :
     (pullback (𝟙 S)).obj X ≅ X :=
   isoMk (rationalBaseChangeIdIso X.abelianScheme)
-    (fun d => rationalBaseChangeHom_id (X.action d))
+    (fun d => rationalBaseChangeHom_id (X.action d).asHom)
 
 /-- The actual direct-to-successive pullback comparison intertwines the actions. -/
 def pullbackCompIso (b : S' ⟶ S) (c : S'' ⟶ S')
@@ -182,7 +183,7 @@ def pullbackCompIso (b : S' ⟶ S) (c : S'' ⟶ S')
     (pullback (c ≫ b)).obj X ≅ (pullback c).obj ((pullback b).obj X) :=
   isoMk (rationalBaseChangeCompIso b c X.abelianScheme)
     (fun d => rationalBaseChangeHom_base_comp b c
-      (A := X.abelianScheme) (B := X.abelianScheme) (X.action d))
+      (A := X.abelianScheme) (B := X.abelianScheme) (X.action d).asHom)
 
 @[simp] theorem underlyingIso_pullbackIdIso (X : RationalAlgebraAction S D) :
     underlyingIso (pullbackIdIso X) = rationalBaseChangeIdIso X.abelianScheme := by

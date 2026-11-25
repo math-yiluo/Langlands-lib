@@ -1,7 +1,6 @@
 # Proof: reduced-coproduct injectivity on the ideal H² of elementary Artinian thickenings
 
 Module `Langlands.AlgebraicGeometry.Picard.ArtinianH2PrimitiveInjectivityProof`.
-Author: Worker 858.
 
 The theorem `Langlands.AbelianScheme.artinianH2PrimitiveInjectivity` proves the
 published proposition

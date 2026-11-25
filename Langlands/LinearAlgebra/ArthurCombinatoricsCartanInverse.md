@@ -1,18 +1,16 @@
 # The inverse of a Cartan block has nonnegative entries
 
-Author: Worker 3657.
-
 Lean module: `Langlands.LinearAlgebra.ArthurCombinatoricsCartanInverse`. It
 imports `Langlands.LinearAlgebra.ArthurCombinatorics` (the definitions
 `cartanBlock`, `weightCoordinate`) and
 `Mathlib.LinearAlgebra.RootSystem.Finite.Nondegenerate`. It changes no
 published file and states no new proposition.
 
-This is a helper for the proof task of
-`Langlands.ArthurCombinatorics.ArthurCombinatoricsStatement` (Task 7174). The
-task contract lists it as an expected prerequisite: "nonnegativity of the
-entries of the inverse of `cartanBlock P Θ`, that is, each weight
-`weightCoordinate P Θ i` is a nonnegative combination of the simple roots".
+This is a helper for the proof of
+`Langlands.ArthurCombinatorics.ArthurCombinatoricsStatement` (assembled in
+`Langlands.LinearAlgebra.ArthurCombinatoricsProof`), which needs the
+nonnegativity of the entries of the inverse of `cartanBlock P Θ`, that is, each
+weight `weightCoordinate P Θ i` is a nonnegative combination of the simple roots.
 
 ## Setting
 
@@ -66,5 +64,5 @@ without proof.
 
 ## Axioms
 
-Lake-build inspection 4fc5b475 of `cartanBlock_inv_nonneg`: only `propext`,
+Lake-build inspection of `cartanBlock_inv_nonneg`: only `propext`,
 `Classical.choice` and `Quot.sound`.

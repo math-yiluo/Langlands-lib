@@ -1,6 +1,6 @@
 # Scalar endomorphisms on actual rational points
 
-Worker 1581 supplies an internal scalar-space construction for the endomorphism
+This module supplies an internal scalar-space construction for the endomorphism
 argument in Renard VI.5.3 and VII.1.3. This module does not prove the geometric
 lemma, Frobenius reciprocity, or the maximal-Levi endomorphism dichotomy.
 Its field universe `u`, group universe `uG`, and carrier universe `uV` remain

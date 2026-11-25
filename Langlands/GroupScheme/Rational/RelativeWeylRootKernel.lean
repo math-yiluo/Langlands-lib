@@ -92,7 +92,7 @@ theorem IsSplitTorus.relativeWeylAction_mk_eq_one_iff (hT : IsSplitTorus T.toGrp
       | mem v hv =>
         obtain ⟨α, hα, rfl⟩ := hv
         rw [ratAut_toRat, hn α hα]
-      | zero => exact map_zero _
+      | zero => exact LinearEquiv.map_zero _
       | add x y hx hy ihx ihy => rw [map_add, ihx, ihy]
       | smul a x hx ih => rw [map_smul, ih]
     exact hfix x x.property

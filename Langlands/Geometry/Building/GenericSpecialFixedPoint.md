@@ -2,7 +2,7 @@
 
 Module `Langlands.Geometry.Building.GenericSpecialFixedPoint`.
 
-This derived unit proves the uniqueness clause of the special-stabilizer
+This module proves the uniqueness clause of the special-stabilizer
 identity in an abstract form. The setting is apartment data
 `D : KPApartmentData i ω` over an arbitrary field `k : Type u`. We assume that
 `G` is connected reductive (`hG`), that `i` is a maximal split torus (`hi`),
@@ -120,7 +120,7 @@ root groups at `x` contained in `K`, gives `z′ = x`. Therefore
 
 ## Provenance and scope
 
-This is a derived unit with an internal proof. It establishes the
+The proof of this module is internal. It establishes the
 fixed-point uniqueness that accompanies Bruhat–Tits II, Proposition 4.6.28(i)
 and Corollary 4.6.29(i) (printed pp. 135–136 / PDF pp. 132–133). It uses
 neither the common-apartment property nor the schematic arguments of that
@@ -129,6 +129,6 @@ lemma (the input of Kaletha–Prasad Lemma 7.7.3, printed p. 268 / PDF p. 299),
 and the filtration contraction lemma of `HeightContraction` for a regular
 centralizer element. The Lean statements are not quoted from either source.
 
-The unit does not construct `K`, the covering, the element `s` or the point
+The module does not construct `K`, the covering, the element `s` or the point
 `x` for any model. It assumes reduced relative roots. It does not prove the
 special-stabilizer statement itself.

@@ -39,7 +39,5 @@ which follows from étaleness, permits the imported degree-one cocycle
 criterion for acyclicity.
 
 Provenance is internal assembly of the imported ring-form, affine-coordinate,
-finite-cover, support-induction and cocycle results. The covering and quotient
-construction is by Worker 239; the generic-support and final induction
-assembly is by Worker 148. No conclusion of an affine descent statement is
+finite-cover, support-induction and cocycle results. No conclusion of an affine descent statement is
 assumed, and no published statement or definition is changed.

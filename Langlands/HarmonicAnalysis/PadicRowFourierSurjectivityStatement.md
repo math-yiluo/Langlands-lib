@@ -1,6 +1,6 @@
 # Row Fourier surjectivity for arbitrary p-adic Haar measure
 
-Worker 457 authored these derived harmonic-analysis statement targets.
+These are derived harmonic-analysis statement targets.
 Both declarations are Prop-valued definitions. This module supplies no proof.
 
 `Langlands.HarmonicAnalysis.PadicRowFourierSurjectivityStatement.{u} F T d`
@@ -66,7 +66,7 @@ If `Φ⁻(x) = Φ(-x)`, closure for `μ` supplies the Schwartz--Bruhat function
 `g = FT[ψ,μ](Φ⁻)`. Row self-duality then gives `FT[ψ,μ](g) = Φ`.
 The required kernel for `ν` is `κ = (c^d)⁻¹ * g`. This explains both the
 reflection sign and the inverse product factor. At dimension zero,
-`c^0 = 1`. This paragraph describes a future proof route; this module
+`c^0 = 1`. This paragraph describes a proof route; this module
 proves neither Haar uniqueness, integrability transport nor surjectivity.
 
 The consumer is Fourier smearing in Jacquet, Piatetski-Shapiro and Shalika,
@@ -85,9 +85,11 @@ measure existence; Definition 1 on p.106 defines the test functions;
 Proposition 2 on p.107 and Corollary 2 on p.108 give their Fourier
 preservation and admissibility. The passage from scalar inversion to the
 finite row product, the arbitrary-Haar factor `c^d`, and the two Lean targets
-are derived formulations. A future proof may reuse the existing separate
-row-compatibility proof task and a scalar self-dual-existence prerequisite;
-neither pending statement is used as evidence of its conclusion here.
+are derived formulations. A proof may reuse the separate row Fourier
+compatibility proof ([RowFourierCompatibilityProof](RowFourierCompatibilityProof.md))
+and scalar self-dual measure existence
+([PadicSelfDualMeasureExistsProof](PadicSelfDualMeasureExistsProof.md));
+neither is used as evidence of its conclusion here.
 
 Registered originals read for this statement:
 

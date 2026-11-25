@@ -5,12 +5,11 @@ Module `Langlands.Representation.Hecke.ContragredientDualModuleStatement`. Names
 The module contains one **statement**, the `Prop`-valued definition
 `ContragredientHeckeDualStatement`. It proves nothing.
 
-Worker 1222 wrote this statement unit under the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`. III.1.6 says that, under the III.1.4 equivalence, the
+III.1.6 says that, under the III.1.4 equivalence, the
 smooth contragredient corresponds to the dual module of I.4.1. The Library has both sides: the
 smooth contragredient `smoothContragredient`, and the I.4.1 dual `NonUnitalModuleDual.dualObject`
 ([NonUnitalModuleDualFunctor](../../Algebra/NonUnitalModuleDualFunctor.md)) of the Hecke
-module `heckeNondegenerateModule`. No published statement compares them. The published
+module `heckeNondegenerateModule`. The published
 `integratedAction_smoothDualPairing` ([SmoothTranspose](SmoothTranspose.md)) gives the
 pairing identity only for a measure invariant under inversion, that is for unimodular `G`.
 
@@ -20,7 +19,7 @@ The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French edition dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1222 read III.1.6, printed p.61 / PDF p.67:
+The text of III.1.6, printed p.61 / PDF p.67, was read:
 
 > Dans la section I.4.1, nous avons construit un foncteur de dualité de `M(H(G))` dans
 > `M(H(G))^d`. Comme l'algèbre `H(G)` est munie de l'anti-involution `T ↦ Ť` induite par
@@ -84,9 +83,9 @@ the bijection `e`. For clause 2,
 by the inversion formula for a left Haar measure, `∫ F(g⁻¹) dμ(g) = ∫ F(g) Δ(g) dμ(g)`. The
 right-hand side is `(e(ℓ) · Ť)(v)`.
 
-## Remaining obligations
+## Proof
 
-The proof is a separate obligation.
+The proof is `contragredientHeckeDual` in `ContragredientDualModuleProof`.
 
 ## Imports
 

@@ -1,7 +1,5 @@
 # Flatness of relative groups of multiplicative type
 
-Worker 324.
-
 This module provides the arbitrary-ring diagonalizable flatness instance and
 imports the published flatness results for every group of multiplicative type over an
 arbitrary scheme, using the Library's relative predicate. No smoothness,

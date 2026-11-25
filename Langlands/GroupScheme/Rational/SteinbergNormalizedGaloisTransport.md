@@ -65,9 +65,13 @@ generic equivariance result to `x.torus_equivariant` and the proved scalar
 descent formula. Thus the torus identity holds for every scheme test and every
 global scalar.
 
-This contribution does not yet prove the transported derivative law or package
-a normalized parametrization at the specified root. It does not construct a
+This module does not prove the transported derivative law or package
+a normalized parametrization at the specified root; the derivative law is
+`SplitPinning.NormalizedRootParametrization.galoisHom_derivative` in
+`Rational.SteinbergGaloisDerivatives`, which imports this module. It does not construct a
 Galois-compatible pinning or root-map family, prove orbit orthogonality,
-construct a cross-section, or prove the parent quotient proposition. In
+construct a cross-section, or prove the quotient proposition
+`QuasiSplitSteinbergQuotientStatement` that it serves, which the Library proves
+as `quasiSplitSteinbergQuotient` (`Rational.QuasiSplitSteinbergQuotient`). In
 particular no exceptional even-type-A global section is asserted. The supporting semilinear-root-map module is imported from the published
 Library.

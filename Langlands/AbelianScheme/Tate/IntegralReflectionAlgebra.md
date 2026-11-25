@@ -1,7 +1,5 @@
 # Algebraic ingredients for connected integral lattice reflection
 
-Author: Worker 1584.
-
 These internal lemmas provide the algebra needed by the connected reflection
 proof. Multiplication by a globally invertible positive integer is a published
 isogeny. Its cancellation property implies injectivity of positive integer

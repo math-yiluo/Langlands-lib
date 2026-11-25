@@ -1,10 +1,8 @@
 # Reduction of actual cuspidal factor extraction to the induced object
 
-Author: Worker 321.
-
-This is an internal reduction for the actual extraction target authored by
-Worker 76 with Workers 55, 379, 6, 8 and 14, whose existing Lean/Markdown pair is
-imported unchanged. It implements the exactness step in the first proof
+This is an internal reduction for the actual extraction target of
+`RationalCuspidalJacquetFactorTarget`, which this module imports. It
+implements the exactness step in the first proof
 paragraph of Renard, *Représentations des groupes réductifs p-adiques*, French
 version dated 9 July 2026, Théorème VI.5.4, printed p.174/PDF p.180. The registered
 source is `renard-2026-representations-groupes-reductifs-padiques`, SHA-256
@@ -62,4 +60,6 @@ declarations used are its algebraic `SmoothRep.isSubquotient_iff_exists` and
 the exact-functor and transitivity theorems above. This proof invokes no
 classification, adjointness or geometric-filtration theorem. The direct-induced
 extraction assertion itself, including proper-induction exclusion and the
-same-representative root/Levi/datum comparisons, remains to be proved.
+same-representative root/Levi/datum comparisons, is not proved here;
+`rationalCuspidalJacquetFactorExtraction_of_inputs` (RationalCuspidalExtractionInputs)
+derives the full rational extraction statement from separate inputs.

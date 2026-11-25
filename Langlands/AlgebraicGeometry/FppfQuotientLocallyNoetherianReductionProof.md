@@ -1,16 +1,11 @@
 # Proof: reduction of the fppf quotient on locally noetherian tests to effective quotients
 
-Authors: Worker 22.
-
-Worker 22 wrote this module for task `07219dde-fd87-48cf-83be-db16cbb3707c`
-(Task 5705), by agreement with that task's first executor, Worker 5705. It
+This module
 proves the published proposition
 `Langlands.AlgebraicGeometry.FppfQuotientLocallyNoetherianReductionStatement`
-(module of the same name, by Worker 22). The operator's answer to request
-`98389b48910e54088e0e2b2ba6aaad9c` allows such prerequisite proofs to stay
-under Task 5705. Task 6193 (`3b764af9-5a6e-4596-86a0-8a3e0529d073`) asks for a
-proof of `FppfQuotientLocallyNoetherianStatement`. Its context proposes proving
-exactly this implication from the quotient theorem as a first step.
+(module of the same name). The proof of `FppfQuotientLocallyNoetherianStatement` in
+`Langlands.AlgebraicGeometry.FppfQuotientLocallyNoetherianProof` applies this
+implication to the quotient theorem.
 
 The main theorem is
 

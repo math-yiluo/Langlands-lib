@@ -1,6 +1,6 @@
 # Nilpotent rigidity of diagonalizable actions on arbitrary schemes
 
-Worker 874. This is an internal extension of affine character-action nilpotent
+This is an internal extension of affine character-action nilpotent
 rigidity to actual categorical scheme actions. The coordinate action uses an
 arbitrary affine presentation over the base, so the acted-on affine scheme
 requires no group structure.
@@ -15,4 +15,5 @@ The affine case transports the categorical action through an affine
 presentation to the natural character action, then applies the homogeneous
 projection rigidity theorem. This module proves the affine case and invariance of every open. These are
 local ingredients for the arbitrary-scheme gluing argument; the module does not
-yet assert the full arbitrary-scheme rigidity theorem.
+assert the full arbitrary-scheme rigidity theorem, which is proved in
+[`DiagonalizableActionNilpotentRigidity`](DiagonalizableActionNilpotentRigidity.md).

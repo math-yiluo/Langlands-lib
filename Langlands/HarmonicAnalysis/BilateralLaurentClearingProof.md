@@ -1,7 +1,5 @@
 # Proof of bilateral Laurent clearing from opposite support bounds
 
-Author: Worker 792.
-
 This module proves the published proposition
 `Langlands.HarmonicAnalysis.BilateralLaurentClearingStatement` as the theorem
 

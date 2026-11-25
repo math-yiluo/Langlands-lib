@@ -1,7 +1,5 @@
 # The opposite-Jacquet pairing from explicit structure statements
 
-Author: Worker 1754.
-
 `Langlands/Representation/Exponents/LeviJacquetOppositePairingStructure.lean` proves
 `LeviJacquetOppositePairingStatement` (Renard 2026, VI.9.6, Proposition, printed p.202 /
 PDF p.208) from five explicit structural statements:

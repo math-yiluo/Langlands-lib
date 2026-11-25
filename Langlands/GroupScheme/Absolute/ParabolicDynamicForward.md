@@ -1,15 +1,13 @@
 # Parabolic subgroups are dynamic over their own field
 
-Author: Worker 4153.
-
 This internal helper module proves the forward direction of the published
 `Langlands.GroupScheme.ParabolicDynamicStatement` (Milne, Theorem 25.1): every
 parabolic subgroup is a dynamic parabolic of a cocharacter defined over the
 original field. It is a composition of published Library proofs and adds no new
 assertion from the literature. It does **not** prove
 `ParabolicDynamicStatement` itself, whose converse direction (every dynamic
-parabolic is parabolic) is not treated here. That full statement remains the
-target of its own proof task.
+parabolic is parabolic) is not treated here. That full statement is proved as
+`parabolicDynamic` in `Absolute.ParabolicDynamicProof`.
 
 ## Declarations
 
@@ -20,7 +18,7 @@ arbitrary universe `u`.
   from [SplitParabolicCocharacterProof](SplitParabolicCocharacterProof.md).
   The published reduction `splitParabolicCocharacterStatement_of_absoluteBorelOvergroup`
   (module `Absolute.SplitParabolicCocharacterAbsoluteReduction`) has three
-  structural hypotheses. All three are now published proofs:
+  structural hypotheses. All three are published proofs:
   `borelConjugacy` (`Absolute.BorelConjugacyProof`),
   `absoluteBorelOvergroupCocharacter` (`Absolute.BorelOvergroupCocharacterProof`)
   and `maximalTorusBaseChange` (`Torus.MaximalBaseChangeProof`). Applying the

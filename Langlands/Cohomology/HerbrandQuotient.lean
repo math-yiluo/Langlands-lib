@@ -631,7 +631,7 @@ theorem nonempty_linearEquiv_two :
   have : IsCyclic G := isCyclic_iff_exists_zpowers_eq_top.2 ⟨g, eq_top_iff.2 fun x _ => hg x⟩
   let : CommGroup G := IsCyclic.commGroup
   exact nonempty_linearEquiv_subquotient (φ := (Rep.applyAsHom A g - 𝟙 A).hom.toLinearMap)
-    (ψ := A.norm.hom.toLinearMap)
+    (ψ := A.norm.asHom.hom.toLinearMap)
     (Rep.FiniteCyclicGroup.groupCohomologyπEven A g hg 2 even_two).hom (by
       exact (ModuleCat.epi_iff_surjective _).1
         (epi_comp' (epi_iso_inv _) (epi_comp' inferInstance inferInstance)))
@@ -642,7 +642,7 @@ theorem nonempty_linearEquiv_one :
     Nonempty (groupCohomology A 1 ≃ₗ[k] Subquotient A.ρ.norm (A.ρ g - 1)) := by
   have : IsCyclic G := isCyclic_iff_exists_zpowers_eq_top.2 ⟨g, eq_top_iff.2 fun x _ => hg x⟩
   let : CommGroup G := IsCyclic.commGroup
-  exact nonempty_linearEquiv_subquotient (φ := A.norm.hom.toLinearMap)
+  exact nonempty_linearEquiv_subquotient (φ := A.norm.asHom.hom.toLinearMap)
     (ψ := (Rep.applyAsHom A g - 𝟙 A).hom.toLinearMap)
     (Rep.FiniteCyclicGroup.groupCohomologyπOdd A g hg 1 odd_one).hom (by
       exact (ModuleCat.epi_iff_surjective _).1
@@ -879,7 +879,7 @@ theorem mem_range_norm_trivialIntegers_iff [Fintype G] (x : ULift.{u} ℤ) :
   · rintro ⟨c, hc⟩
     refine ⟨ULift.up c, ?_⟩
     rw [trivialIntegers_norm_apply]
-    refine ULift.ext _ _ ?_
+    refine ULift.ext ?_
     show (Fintype.card G • c : ℤ) = x.down
     rw [nsmul_eq_mul, hc]
 
@@ -897,7 +897,7 @@ theorem subsingleton_groupCohomology_one_trivialIntegers :
     have hx' : Fintype.card G • x.down = 0 := by simpa using congrArg ULift.down hx
     have hy' : Fintype.card G • y.down = 0 := by simpa using congrArg ULift.down hy
     rw [smul_eq_zero] at hx' hy'
-    refine Subtype.ext (ULift.ext _ _ ?_)
+    refine Subtype.ext (ULift.ext ?_)
     rw [hx'.resolve_left Fintype.card_ne_zero, hy'.resolve_left Fintype.card_ne_zero]
   exact e.toEquiv.subsingleton_congr.2 ((Submodule.mkQ_surjective _).subsingleton)
 

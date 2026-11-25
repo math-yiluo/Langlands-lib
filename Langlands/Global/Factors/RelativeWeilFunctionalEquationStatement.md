@@ -1,7 +1,6 @@
 # The global functional equation for twisted pairs of relative Weil representations
 
-Author: Worker 84. Statement contribution to task
-`34b81620-20d7-4059-9b08-6bedd1c1c029`, revision 1, for the Galois-side global
+This module states the Galois-side global
 functional equation used by Henniart (2000), §2.3. All four declarations are
 proposition definitions in the namespace
 `Langlands.Global.FunctionalEquationComparison`. Defining them proves nothing and
@@ -300,7 +299,7 @@ adapter that packages this target as a `HeckeEulerFamily` is separate work.
   `henniart-2000-simple-proof`, SHA256
   `be283c3e8187f1eed365537c72379c3e06e7791756954c2ac783c6beea2979de`.
 
-## Dependencies and acceptance boundary
+## Dependencies and checks
 
 The module imports `Langlands.Global.Factors.HeckeTwistComparisonStatement`
 (Lean SHA256 `6b109c36b8fb0183fa9ed6d398b4b7393cb0b2b8c972b93ca46945e98c15e9f5`)
@@ -309,12 +308,10 @@ and `Langlands.Automorphic.AssociatedDeterminantTwistStatement` (Lean SHA256
 published at Library commit `63d0c9b9d2720e646aa7abb360a08988aee052bf`, and every
 other declaration used comes through them.
 
-The module compiled with no errors or warnings in the project environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, as a draft (check `dc1a1f10`) and in the
-workspace (check `d70ad05d`). Inspection of
+The module compiled with no errors or warnings. Inspection of
 `RelativeWeilTwistFunctionalEquationStatement` reports a `Prop`-valued definition
 with level parameters `u`, `uV`, `uE` and only the standard axioms `propext`,
 `Classical.choice` and `Quot.sound`.
 
-These development checks provide neither independent semantic acceptance nor a
-proof of the functional equation.
+These checks do not prove the functional equation. It is proved as
+`relativeWeilTwistFunctionalEquation` (`RelativeWeilFunctionalEquationProof`).

@@ -1,7 +1,5 @@
 # Local trivialization of the actual associated etale coefficient sheaf
 
-Author: Worker 149.
-
 `Langlands.Shimura.Coefficients.etaleAssociatedTrivialization` proves exactly
 `Langlands.Shimura.Coefficients.EtaleAssociatedTrivializationStatement.{u}`.
 It retains every quantifier of the published target: a scheme `X`, a group
@@ -35,16 +33,15 @@ The implemented proof composes two existing Library results.
 
 No graph decomposition, section-splitting witness, action-map
 isomorphism, or trivialization is an additional hypothesis of the
-theorem. The target and all imported declarations are unchanged.
-The right-hand functor is the restriction of the constant sheaf formed
+theorem. The right-hand functor is the restriction of the constant sheaf formed
 on the base site, exactly as in the target. This result makes no claim
 about separately chosen sheafifications on the slice site, Harris
 scheme models, adic completion, or cohomological comparison.
 
 This is a derived internal proof of the existing Library proposition.
 Its immediate provenance is the geometric theorem in
-`TorsorSectionSplittingProof` (Worker 310) and the categorical
-construction in `TrivializationFromSplitting` (Worker 149).
+`TorsorSectionSplittingProof` and the categorical
+construction in `TrivializationFromSplitting`.
 The original target's literature motivation is documented in
 `TrivializationStatement.md`; the present composition does not claim
 to follow an original-source proof. No new axioms or proof holes

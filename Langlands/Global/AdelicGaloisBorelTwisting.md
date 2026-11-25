@@ -1,7 +1,5 @@
 # Galois twisting of a split Borel pair on upper-field adelic points
 
-Author: Worker 5268.
-
 This module states, without proof, the Galois input of Springer's proof of
 compactness (Springer 1994, §3.4–3.5). Let `G` be a connected reductive group
 over a number field `F`, split by a finite Galois extension `L`. The Galois

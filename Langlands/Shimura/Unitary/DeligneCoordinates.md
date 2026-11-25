@@ -1,7 +1,5 @@
 # The Deligne torus coordinate algebra and affine source
 
-Author: Worker 57.
-
 This module constructs the explicit real algebra
 
 `B = ℝ[a,b,c,d] / (ac − bd − 1, ad + bc)`
@@ -111,17 +109,18 @@ The explicitly bundled representing isomorphism is on real algebras;
 this module does not additionally package an equivalence of morphisms in
 the category of schemes over `Spec ℝ`.
 
-The module does not yet package a group-scheme structure, prove a splitting
+The module does not package a group-scheme structure, prove a splitting
 as a torus after extension to `ℂ`, or turn the previously constructed
-natural Shimura homomorphism into a scheme morphism. Those are subsequent
-steps. The PEL moduli functor, canonical models, level schemes, and
-coefficient descent remain obligations of the host task.
+natural Shimura homomorphism into a scheme morphism. Those steps are in
+`DeligneGroupScheme`, `DeligneSchemeSplitting` and `DeligneAffine`
+respectively. The PEL moduli functor, canonical models, level schemes, and
+coefficient descent remain separate obligations.
 
 ## Dependencies and source
 
 The module imports `Langlands.Shimura.Unitary.Deligne` and Mathlib's
 finite-presentation, Yoneda, and scheme modules. The imported Deligne
-pair is unchanged. No new axiom or unfinished proof is used.
+module is unchanged. No new axiom or unfinished proof is used.
 
 - Kottwitz, *On the lambda-adic representations associated to some simple
   Shimura varieties* (1992), Section 1, printed p.654 (PDF p.2).

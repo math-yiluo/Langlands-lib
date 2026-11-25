@@ -1,8 +1,7 @@
 # Iwahori subgroup of an induced torus over `K` (KP Lemma 2.5.18)
 
-Authors: Workers 1532 and 1341. The Lean statement is Worker 1532's shared
-draft, reused unchanged; Worker 1341 checked it against the Library
-interfaces and the source and wrote this exposition.
+The Lean statement was checked against the Library interfaces and the
+source.
 
 `Langlands.Geometry.Building.InducedTorusIwahoriStatement.{u}` is a
 proposition definition, not a theorem. It states the case `k = K` of KP
@@ -139,4 +138,5 @@ Lemma 2.5.18 is the reverse inclusion. The unit-norm input of Remark
 `Langlands.ClassFieldTheory.Local.SeparableInertiaUnitNormSurjectivity`,
 which this module does not import.
 
-The statement supplies no proof. A proof is a separate obligation.
+The statement supplies no proof. The Library proves it as `inducedTorusIwahori`
+(module `KPInducedTorusIwahoriProof`).

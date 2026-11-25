@@ -24,7 +24,7 @@ cover it, and each has an open stabilizer. -/
 theorem exists_openSubgroup_preserving_compact_domain (hρ : IsContinuousAction ρ)
     (D : (presentationOf X).AnalyticDomain) (hD : IsCompact D.carrier) :
     ∃ H : OpenSubgroup G, ∀ g ∈ H, ∀ x ∈ D.carrier,
-      localizedSpaceFunctor.map (ρ g).hom x ∈ D.carrier := by
+      localizedSpaceFunctor.map (ρ g).asIso.hom x ∈ D.carrier := by
   classical
   let a := (presentationOf X).presentation.atlas
   obtain ⟨A, hA, hchart, hsub, hcov⟩ :=
@@ -65,10 +65,10 @@ def restrictDomain (l : ActionLift ρ f) (D : (presentationOf U).AnalyticDomain)
     exact hc.invariantDomainAction D hD
   equivariant g := by
     have hg := (invariantDomainInclusion (analyticActionOfAut l.action) D hD).comm g
-    change ((invariantDomainAction (analyticActionOfAut l.action) D hD).ρAut g).hom ≫
-      domainι U D = domainι U D ≫ (l.action g).hom at hg
-    have hrhs : (domainι U D ≫ (l.action g).hom) ≫ f =
-        (domainι U D ≫ f) ≫ (ρ g).hom := by
+    change ((invariantDomainAction (analyticActionOfAut l.action) D hD).ρAut g).asIso.hom ≫
+      domainι U D = domainι U D ≫ (l.action g).asIso.hom at hg
+    have hrhs : (domainι U D ≫ (l.action g).asIso.hom) ≫ f =
+        (domainι U D ≫ f) ≫ (ρ g).asIso.hom := by
       rw [Category.assoc, l.equivariant, Category.assoc]
     exact (Category.assoc _ _ _).symm.trans
       ((congrArg (fun p : domainObj U D ⟶ U => p ≫ f) hg).trans hrhs)
@@ -80,10 +80,10 @@ def precompIso (l : ActionLift ρ f) (e : V ≅ U) : ActionLift ρ (e.hom ≫ f)
   action := e.symm.conjAut.toMonoidHom.comp l.action
   isContinuousAction := l.isContinuousAction.conjAut e.symm
   equivariant g := by
-    change (e.symm.conjAut (l.action g)).hom ≫ e.hom ≫ f = _
+    change (e.symm.conjAut (l.action g)).asIso.hom ≫ e.hom ≫ f = _
     rw [Iso.conjAut_apply]
-    change (e.hom ≫ (l.action g).hom ≫ e.inv) ≫ e.hom ≫ f =
-      (e.hom ≫ f) ≫ (ρ g).hom
+    change (e.hom ≫ (l.action g).asIso.hom ≫ e.inv) ≫ e.hom ≫ f =
+      (e.hom ≫ f) ≫ (ρ g).asIso.hom
     simp only [Category.assoc, Iso.inv_hom_id_assoc, l.equivariant]
 
 end ActionLift
@@ -115,7 +115,7 @@ theorem nonempty_actionLift_of_isDistinguishedEtale
       g • x ∈ D.carrier := by
     obtain ⟨k, hk, he⟩ := g.property
     have he' : Subgroup.inclusion hH' g = k := Subtype.ext he.symm
-    change localizedSpaceFunctor.map (l.action (Subgroup.inclusion hH' g)).hom x ∈ D.carrier
+    change localizedSpaceFunctor.map (l.action (Subgroup.inclusion hH' g)).asIso.hom x ∈ D.carrier
     rw [he']
     exact hH k hk x hx
   have hO' : IsInvariantDomain (analyticActionOfAut l'.action) O := by

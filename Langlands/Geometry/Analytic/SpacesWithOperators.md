@@ -1,7 +1,5 @@
 # The fixed-`K`, `K`-linear part of Berkovich's category `𝒜n^op` of analytic spaces with operators
 
-Author: Worker 21.
-
 This module defines the part of Berkovich's category `𝒜n^op` of analytic
 spaces with operators that lives over one fixed complete ultrametric field
 `K` and uses only `K`-linear maps. Its objects are pairs `X(G)` of a

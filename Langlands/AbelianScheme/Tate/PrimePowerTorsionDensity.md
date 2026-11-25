@@ -1,7 +1,5 @@
 # Density and homomorphism detection for actual prime-power torsion
 
-Author: Worker 501.
-
 The theorem `PrimePowerTorsion.dense_locus A p` proves density of actual
 geometric prime-power torsion for any abelian scheme over the spectrum of an
 algebraically closed characteristic-zero field, at every natural prime `p`.

@@ -28,16 +28,17 @@ the numerator-square projections followed by their respective
 denominators. `localizedEtalePullback` chooses such a cone together with
 its `IsLimit`.
 
-This is the existence part of the host task. It does not assert that
-the base-changed projection is etale; that remaining geometric
-base-change obligation is needed for the full
-`LocalizedEtalePullbackStatement`. No assumption of that target or of
+This is the existence part of `LocalizedEtalePullbackStatement`. It does not assert that
+the base-changed projection is etale; that geometric base-change part
+is needed for the full `LocalizedEtalePullbackStatement`, which is proved
+in `LocalizedEtalePullbackProof`. No assumption of that target or of
 its etale conclusion occurs.
 
 The proof is internally derived from the actual original-domain gluing,
 full bounded-map separation, recognition comparisons and fraction
-calculus. The finite Banach base-change proof is reused unchanged from
-Worker 271 and Worker 640. Worker 250 supplied the recognition and
-categorical reduction constructions; the arbitrary-fraction transport
-here follows the existence part of that reduction. No external theorem
+calculus. The finite Banach base-change proof is reused unchanged. The
+recognition and categorical reduction constructions come from the Library
+modules imported through `RecognizedLocalizedPullbacks`; the
+arbitrary-fraction transport here follows the existence part of that
+reduction. No external theorem
 is transcribed.

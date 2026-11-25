@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.CommutativeAlgebra.Popescu.ArtinianFlatSubalgebraStatement
 import Langlands.CommutativeAlgebra.Popescu.ArtinianFlatInduction
 import Langlands.CommutativeAlgebra.Popescu.ArtinianFlatConstruction

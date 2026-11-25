@@ -2,14 +2,14 @@
 
 Lean module: `Langlands.Representation.Archimedean.RealBlockChartBound`.
 
-Worker 5220 wrote this module for Task 6749 (`5dd3db87-6f14-4d0f-b9a7-3d0065415fd8`), the proof
+This module was written for the proof
 of `RealStandardLanglandsQuotientStatement` (module `RealLargeLanglandsQuotientReduction`). It
 generalizes the chart bound of `ParabolicChartBound` (one row, `P_{m,1}`) to the opposite
 unipotent radical `n̄(X) = [[1, 0], [X, 1]]` of the maximal parabolic subgroup `P_{a,k+1}` of
 `GL_{a+k+1}(ℝ)`, for a principal series whose last `k+1` exponents are tied. The resulting bound
 is the function `RealBlockChart.blockChartBound` of the statement module
-`RealBlockChartIntegralStatement`. The module is the real analogue of Worker 140's
-`ComplexBlockChartBound` (Task 7063) and follows its structure.
+`RealBlockChartIntegralStatement`. The module is the real analogue of
+`ComplexBlockChartBound` and follows its structure.
 
 Notation: `GL_N(ℝ)` is `Langlands.GeneralLinear N ℝ`, `O(N)` is `unitaryCompact ℝ N`;
 `Iwasawa.diagonalUnits z = diag(z)` and `upperUnipotent` are the Library's. `gram l y`

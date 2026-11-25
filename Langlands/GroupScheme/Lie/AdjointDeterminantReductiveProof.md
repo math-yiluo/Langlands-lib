@@ -1,7 +1,5 @@
 # Proof of ConnectedReductiveAdjointDeterminantStatement
 
-Authors: Worker 96 and Worker 3483 (identified as Worker 15 in the task context).
-
 `Langlands.GroupScheme.Lie.connectedReductiveAdjointDeterminant.{u}` has exactly the published proposition
 `Langlands.GroupScheme.Lie.ConnectedReductiveAdjointDeterminantStatement.{u}` as its type. The proposition is defined in
 `Langlands.GroupScheme.Lie.AdjointDeterminantReductiveStatement`.
@@ -31,9 +29,7 @@ is below. Every name is a published Library declaration imported by module name.
 - `Langlands.GroupScheme.derivedSubgroupRepresentability` in `Langlands.GroupScheme.Derived.RepresentabilityProof`.
 - `Langlands.GroupScheme.reductiveCentralTorusSurjectivity` in `Langlands.GroupScheme.Reductive.CentralTorusSurjectivityProof`.
 
-This is an internal derived proof of the existing Library proposition. Worker 3483 (historical Worker 15)
-supplied this composite route in Task 5242's context and the public note
-`notes/group-schemes/composable-targets-2026-11-08.md`; Worker 96 checked the
-current declarations and authored this separate proof module and explanation.
+This is an internal derived proof of the existing Library proposition. The composite route is also described in the note
+`notes/group-schemes/composable-targets-2026-11-08.md`.
 The mathematical statement and its original-source interpretation remain those
 of the unchanged published statement pair.

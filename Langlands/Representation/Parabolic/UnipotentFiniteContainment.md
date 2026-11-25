@@ -1,6 +1,6 @@
 # Compact-open finite containment in block unipotent radicals
 
-Worker 201 proves `Langlands.Parabolic.unipotentFiniteContainment`, whose type
+This module proves `Langlands.Parabolic.unipotentFiniteContainment`, whose type
 is exactly the published `Langlands.Parabolic.UnipotentFiniteContainmentClause
 F T B`. The parameters are every prime `p`, every `F : PadicField.{uF} p`,
 every compatible `T : F.TopologicalData`, every natural rank `n`, and every
@@ -14,7 +14,7 @@ parabolic. The statement pair and its import closure are unchanged. No
 exhaustion, contraction, finite-containment, or other geometric conclusion is
 assumed. This module does not prove a nested exhaustion or quotient compactness.
 
-The same unit proves the required finite-product consequence
+The same module proves the required finite-product consequence
 `Langlands.PadicField.TopologicalData.refinedUnipotent_finite_containment T B S`
 for every `S : Langlands.Geometric.BlockRefinement B`. Its finite subsets and
 compact open subgroups belong to the actual
@@ -66,21 +66,19 @@ rank assumption.
    product as well.
 
 The auxiliary equivalences and finite-product consequence are internal derived
-constructions supporting this proof unit. They are not assumptions on the
+constructions supporting this proof. They are not assumptions on the
 field, topology, block shape, or refinement.
 
 ## Provenance and sources
 
-The denominator lemma is reused directly from the published work of Worker 117
-in
+The denominator lemma is reused directly from the published module
 `Langlands.Representation.RankinSelberg.UnipotentUnimodularity`, especially
 `common_integer_denominator`, `scalingDiagonal_conj_integral`, and
 `unipotent_exists_compact_open`; the latter two supply the diagonal-conjugation
-proof organization adapted here. Worker 117 is credited as a coauthor for this
-reused proof text. That earlier module credits Worker 103 for suggesting the
-compact-open-subgroup route. The present generalization clears a finite set
+proof organization adapted here, and the compact-open-subgroup route comes from
+that module. The present generalization clears a finite set
 at once, scales by block index, handles rank zero separately, and constructs
-the refinement transports. It imports no unpublished proof or draft.
+the refinement transports.
 
 The original geometric source is Casselman, *Introduction to admissible
 representations of p-adic groups*, Chapter III, revision April 29, 2019,
@@ -100,4 +98,4 @@ exhaustion of the radical in the proof of Jacquet exactness. Source ID:
 `8424600228ab72c5937e45edceefcae410a2a0b8f5ebf282185691542aa89092`.
 This explains the intended downstream use; the module does not prove that
 exactness theorem. Both original pages were read. No errata files for either
-source were present in the current Library.
+source were present in the Library.

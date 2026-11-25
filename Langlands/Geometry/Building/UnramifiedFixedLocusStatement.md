@@ -1,7 +1,5 @@
 # V 6 and V 5 at the Galois-fixed points of an unramified apartment
 
-Author: Worker 4707.
-
 Lean module: `Langlands.Geometry.Building.UnramifiedFixedLocusStatement`.
 
 This module states, without proof, two inputs for the published

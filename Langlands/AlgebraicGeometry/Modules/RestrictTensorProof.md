@@ -1,6 +1,6 @@
 # Open restriction commutes with the sheaf tensor product: proof
 
-This module proves the published proposition
+This module proves the proposition
 `Langlands.Scheme.Modules.RestrictTensorComparisonStatement` from
 `Langlands.AlgebraicGeometry.Modules.RestrictTensorStatement`, which it imports
 unchanged. It also imports Mathlib's
@@ -26,9 +26,9 @@ two clauses of the statement:
    the lemma `restrictTensorHom_app_tmul`.
 
 The comparison `restrictTensorHom` and its parts `restrictRingMap`,
-`restrictTensorLift` and `restrictTensorPresheafHom` are the published
+`restrictTensorLift` and `restrictTensorPresheafHom` are the
 definitions in `Langlands.AlgebraicGeometry.Modules.RestrictTensor`.
-`restrictTensorHom U M N` is the transpose, under the published
+`restrictTensorHom U M N` is the transpose, under
 `tensorHomEquiv`, of the presheaf map
 
 ```text
@@ -61,7 +61,7 @@ Induction on tensors shows that `g` is a left inverse of the canonical map.
    `(Opens.grothendieckTopology Y).W`, then `(sheafify Y).map f` is an
    isomorphism. The proof is Mathlib's
    `PresheafOfModules.inverseImage_W_toPresheaf_eq_inverseImage_isomorphisms`,
-   applied to the identity map of the structure ring sheaf (the published
+   applied to the identity map of the structure ring sheaf (the Library's
    `sheafify Y` is module sheafification along that identity).
 2. `restrictTensorLift_app_bijective`: each component
    `(restrictTensorLift U M N).app V` is bijective. It is the algebraic lemma
@@ -134,10 +134,9 @@ proves the open-immersion case directly for `restrictTensorHom`, and neither
 uses nor states the general pullback/tensor comparison
 `pullbackTensorComparisonApp`.
 
-Worker 207 wrote the original draft of this proof. Worker 870 adapted it to
-the published definitions and statement, removed the local elaboration option
-`backward.isDefEq.respectTransparency false` that the draft used in steps 5
-and 6, and revised this Markdown.
+The proof uses the Library's definitions and statement as they are, and
+does not need the local elaboration option
+`backward.isDefEq.respectTransparency false` in steps 5 and 6.
 
 ## Scope
 

@@ -6,9 +6,11 @@ geometric torsion conditional on two explicit geometric propositions:
 - `Langlands.GroupScheme.AlgebraicallyClosedFieldAmpleExistenceStatement`;
 - `Langlands.GroupScheme.FieldCubePullbackStatement`.
 
-Neither proposition is proved by this module. The construction does not
-complete the unconditional `GeometricTorsionRankStatement` proof task.
-Its provenance is the composition of the published Library results named
+Neither proposition is proved by this module. The unconditional
+`GeometricTorsionRankStatement` is proved as `geometricTorsionRank` in
+`Langlands.AbelianScheme.Tate.GeometricTorsionRankProof`, which applies
+`geometricTorsionRank_of_ample_and_cube` to the Library proofs of the two inputs.
+The provenance of this module is the composition of the published Library results named
 below; it introduces no new assertion from external literature.
 
 `fieldTorsionCardinality_of_ample_and_cube` proves the published
@@ -50,5 +52,9 @@ The construction is polymorphic in the scheme universe and covers every
 positive invertible level, including `n = 1`, and every specified smooth
 relative dimension, including `g = 0`. It needs ample existence only over
 algebraically closed fields; arbitrary-field ample existence and descent
-are not additional obligations for this assembly. An unconditional proof
-still requires published proofs of the two explicit geometric inputs.
+are not additional obligations for this assembly. The unconditional proof
+uses the Library proofs of the two explicit geometric inputs,
+`Langlands.GroupScheme.algebraicallyClosedFieldAmpleExistence` (module
+`Langlands.AbelianScheme.AlgebraicallyClosedFieldAmpleExistenceProof`) and
+`Langlands.GroupScheme.fieldCubePullback` (module
+`Langlands.AbelianScheme.FieldCubePullbackProof`).

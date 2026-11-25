@@ -53,10 +53,10 @@ theorem isSLocal_ulift_iff (N : Type v) [AddCommGroup N] [Module R N] :
   · intro h s
     constructor
     · intro x y hxy
-      exact ULift.ext _ _ ((h s).1 (congrArg ULift.down hxy))
+      exact ULift.ext ((h s).1 (congrArg ULift.down hxy))
     · intro x
       obtain ⟨y, hy⟩ := (h s).2 x.down
-      exact ⟨ULift.up y, ULift.ext _ _ hy⟩
+      exact ⟨ULift.up y, ULift.ext hy⟩
 
 variable (M : Type v) [AddCommGroup M] [Module R M]
 

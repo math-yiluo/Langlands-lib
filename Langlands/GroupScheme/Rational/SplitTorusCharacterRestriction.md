@@ -1,7 +1,5 @@
 # Character restriction along monomorphisms of actual split tori
 
-Author: Worker 1327.
-
 This internal derivation transfers the published
 `splitTorus.characterMap_surjective` from coordinate split tori to arbitrary
 actual split tori. It holds over every field and in every universe, including

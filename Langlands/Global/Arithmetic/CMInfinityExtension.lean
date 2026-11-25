@@ -1,6 +1,6 @@
 import Langlands.Global.Arithmetic.CMCharacterStatement
-import Langlands.ClassField.Global.PrincipalIdeleUnits
-import Langlands.ClassField.Global.IntegralIdeleClassQuotientFinite
+import Langlands.ClassFieldTheory.Global.PrincipalIdeleUnits
+import Langlands.ClassFieldTheory.Global.IntegralIdeleClassQuotientFinite
 
 /-! # Unramified realization of CM infinity types -/
 
@@ -91,7 +91,7 @@ theorem toCharacter_global_unit [IsCMField K] (a : InfinityType K)
     (IsCMField.unitsMulComplexConjInv K ε).property
   rw [h, map_one, map_one, one_zpow]
 
-open Langlands.ClassField.Global
+open Langlands.ClassFieldTheory.Global
 open IsDedekindDomain
 
 /-- The subgroup integral and invertible at every finite place is open. -/

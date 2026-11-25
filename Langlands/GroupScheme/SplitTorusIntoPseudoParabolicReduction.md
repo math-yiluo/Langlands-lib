@@ -1,6 +1,6 @@
 # Assembly of rational containment in pseudo-parabolic subgroups
 
-Worker 1392 implemented this conditional reduction for the proof task of
+This module is a conditional reduction for the proof of
 `SplitTorusIntoPseudoParabolicStatement`.
 
 `SplitTorusIntoPseudoParabolicReductionStatement` is the conditional

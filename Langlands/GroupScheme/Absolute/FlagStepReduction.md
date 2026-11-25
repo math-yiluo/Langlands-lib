@@ -18,10 +18,9 @@ every rational coset all-test fixed. The one-quotient fixedness adapter combines
 this with conjugacy to construct the required factor. The companion theorem
 applies the range-of-a-factor lemma to obtain precisely the flag-step
 conclusion. All four geometric assertions remain explicit inputs, so this is
-not an unconditional proof of the parent target.
+not an unconditional proof of `UnipotentTorusBorelsToAllBorelsStatement`.
 
 Provenance is internal composition of the named Library interfaces and quotient
-constructions, developed by Worker 1489 using the generic fixedness scope
-communicated by Worker 1460. The ambient group remains an arbitrary smooth
+constructions. The ambient group remains an arbitrary smooth
 connected affine group; reductivity and normalization of the unipotent subgroup
 by the torus are not added.

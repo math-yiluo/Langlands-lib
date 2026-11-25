@@ -1,6 +1,6 @@
 # Assembling pair conjugacy from a Borel conjugator
 
-Worker 881. This internal derived lemma combines a supplied rational conjugator
+This internal derived lemma combines a supplied rational conjugator
 for two Borel subgroup ranges with the published rational conjugacy of maximal
 tori in smooth connected solvable groups.
 

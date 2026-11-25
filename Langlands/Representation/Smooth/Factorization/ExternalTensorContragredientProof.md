@@ -1,7 +1,7 @@
 # The contragredient of an external tensor product: proof
 
-Worker 270 proves the unchanged published proposition
-`Langlands.AdmissibleExternalTensorContragredientStatement` by the theorem
+The unchanged published proposition
+`Langlands.AdmissibleExternalTensorContragredientStatement` is proved by the theorem
 `Langlands.admissibleExternalTensorContragredient` in
 `Langlands.Representation.Smooth.Factorization.ExternalTensorContragredientProof`.
 The group universes `uG₁`, `uG₂` and carrier universes `uV₁`, `uV₂` remain independent.

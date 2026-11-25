@@ -5,8 +5,7 @@ Module `Langlands.BruhatTits.Parabolic.SpecialCompactConjugacyStatement`. Namesp
 The module contains one **statement**, the `Prop`-valued definition
 `SpecialCompactParabolicConjugacyStatement`. It proves nothing.
 
-Worker 1222 wrote this statement unit under the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`. The V.5.1 Corollary has two assertions. The second,
+The V.5.1 Corollary has two assertions. The second,
 compactness of `G/P`, is published and proved (`DynamicParabolicQuotientCompactStatement`,
 proof `dynamicParabolicQuotientCompact`, and `ArbitraryParabolicQuotientCompactStatement`).
 The proof note [QuotientCompactProof](QuotientCompactProof.md) says: "The K0-conjugacy
@@ -19,7 +18,7 @@ The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French edition dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1222 read V.5.1, printed pp.122–123 / PDF pp.128–129:
+V.5.1, printed pp.122–123 / PDF pp.128–129, reads:
 
 > Théorème. Il existe un sous-groupe compact maximal `K₀` de `G`, ouvert, tel que
 > (1) `G = K₀ P_∅ = P_∅ K₀`. […]
@@ -68,9 +67,10 @@ By the published `StandardParabolicClassificationStatement`, `P(ζ) = g⁻¹ P_J
 `g ∈ G(F)` and some `J`. By (1), `g = p k` with `p ∈ P_∅(F) ⊂ P_J(F)` and `k ∈ K`. Then
 `g⁻¹ P_J g = k⁻¹ p⁻¹ P_J p k = k⁻¹ P_J k`.
 
-## Remaining obligations
+## Proof
 
-The proof is a separate obligation.
+The statement is proved separately, as `specialCompactParabolicConjugacy` in
+`Langlands.BruhatTits.Parabolic.SpecialCompactConjugacyProof`.
 
 ## Imports
 

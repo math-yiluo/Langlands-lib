@@ -4,9 +4,8 @@ The theorem
 `Langlands.Global.ArchimedeanGL.jointOrbitPolynomialAnnihilation` proves
 `JointOrbitPolynomialAnnihilationStatement K n` for an arbitrary number
 field in every universe and every natural rank, including zero. It imports the unchanged published statement from
-`Langlands.Global.ArchimedeanJointPolynomialStatement`. Worker 94 supplied
-the initial proof; Worker 88 inspected the imported constructions and
-prepared this focused contribution.
+`Langlands.Global.ArchimedeanJointPolynomialStatement`. The imported
+constructions were inspected.
 
 The proof first treats an arbitrary complex vector space, an invariant
 subspace `S`, and an ambient linear endomorphism `L`. The helper

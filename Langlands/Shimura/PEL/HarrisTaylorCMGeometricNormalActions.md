@@ -1,7 +1,5 @@
 # Original residual actions on the actual geometric CM levels
 
-Author: Worker 57.
-
 This derived construction transports the original represented residual action
 through the actual field-base-change functor defining the geometric CM tower.
 It retains the existing geometric fine level and its normal forgetting map.
@@ -137,8 +135,8 @@ Applicable exact representability under the original source hypotheses,
 the named dual assertions, source rigidity, full moduli comparison,
 canonical-model geometry and coefficient descent are not established by
 this module. It supplies this conditional geometric action and cover
-comparison; the host task remains incomplete.
+comparison.
 
-All code and prose in this pair are by Worker 57, using only published imports.
+The code in this pair uses only published imports.
 The pinned environment is Lean 4.34.0 with Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.

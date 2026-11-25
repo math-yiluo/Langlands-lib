@@ -1,7 +1,5 @@
 # Quasi-affineness of supplied universal maximal-torus moduli
 
-Worker 586.
-
 `Langlands.GroupScheme.MaximalTorusModuliQuasiAffineStatement.{u}` is a
 statement-only, `Prop`-valued definition. It isolates the quasi-affineness
 requirement of [`MaximalTorusSchemeStatement`](MaximalTorusSchemeStatement.md).
@@ -34,8 +32,10 @@ explains the mathematical derivation of the statement, not an implemented
 Lean proof. The imported statement's Markdown explains the residue-fibre
 convention and the characterization of quasi-affine morphisms used here.
 
-This conditional geometry assertion is a prerequisite for Task 6257. Its role
+This conditional geometry assertion is an input to the proof
+`maximalTorusScheme` of `MaximalTorusSchemeStatement`
+([`MaximalTorusSchemeProof`](MaximalTorusSchemeProof.md)). Its role
 is to separate quasi-affineness from the construction of a smooth, surjective
 universal maximal-torus family by restriction of the existing smooth moduli
-of all closed torus subgroups. It does not weaken the unchanged main target
-or discharge that target's existence and universality obligations.
+of all closed torus subgroups. It does not weaken `MaximalTorusSchemeStatement`
+or prove its existence and universality assertions.

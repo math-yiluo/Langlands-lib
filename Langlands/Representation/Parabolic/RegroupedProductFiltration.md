@@ -1,7 +1,5 @@
 # Actual full-product filtrations through ordered regrouping
 
-Author: Worker 494.
-
 This internal construction transports a supplied actual filtration in one
 factor of a regrouped normalized upper product to an actual invariant-subspace
 filtration of the original flat product. It uses the independently proved

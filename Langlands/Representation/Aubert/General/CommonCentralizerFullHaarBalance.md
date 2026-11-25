@@ -1,7 +1,5 @@
 # Full common-centralizer Haar balance under character detection
 
-Author: Worker 1776, adapting the published balance implementations of Workers 184 and 700.
-
 This internal deduction extends the existing torus-restricted five-factor balance
 from `CommonCentralizerDeterminantBalance` and `CommonCentralizerHaarBalance`.
 The algebraic character restriction along the displayed common split torus is
@@ -50,7 +48,7 @@ characters on the entire original acting-point group. These are the generic
 factorized correction expressions; identifying them with a particular datum's
 original epsilon corrections still requires that datum's geometric adapters.
 
-This contribution does not prove restriction injectivity, simultaneous dynamic
+This module does not prove restriction injectivity, simultaneous dynamic
 realization for an arbitrary represented geometric-lemma datum, or the closed
 represented orbit-comparison statement. It adds no premise to that statement;
 the detection premise belongs explicitly to these conditional helper theorems.

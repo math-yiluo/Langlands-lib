@@ -1,6 +1,6 @@
 # Finiteness of the intrinsic semistandard index
 
-Worker 363, Task 7515. `Langlands.GroupScheme.semistandardSpectralFiniteness`
+`Langlands.GroupScheme.semistandardSpectralFiniteness`
 proves `Langlands.GroupScheme.SemistandardSpectralFinitenessStatement.{u}`.
 Waldspurger defines semistandard parabolics with respect to a fixed maximal
 split torus in I.1, printed pp. 238–239, and uses their Levi fibers in the
@@ -9,7 +9,8 @@ original `waldspurger-2003-plancherel` were read directly. The Lean result is
 an internal geometric deduction for the Library's arbitrary-field
 group-scheme formulation. [Waldspurger (2003)](https://doi.org/10.1017/S1474748003000082)
 
-`semistandardSpectralDynamicCoverage` from Task 7514 gives, for each intrinsic
+`semistandardSpectralDynamicCoverage` (module
+`Rational.SemistandardSpectralDynamicCoverageProof`) gives, for each intrinsic
 triple, a cocharacter of the specified maximal split torus whose dynamic
 triple is the given index. The proof chooses one such cocharacter per index.
 It maps the index to a function from the subtype `relativeRoots i` to

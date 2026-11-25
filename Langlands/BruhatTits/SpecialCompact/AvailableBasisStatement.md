@@ -137,8 +137,9 @@ group scheme.
 
 The premise `𝔅.IsValid` supplies full availability for each literal standard
 Levi once its connected reductivity has been established. Proving that
-connected reductivity and constructing the geometric restriction remain
-obligations; they are not extra input certificates hiding the conclusion.
+connected reductivity and constructing the geometric restriction are part of
+the proof of this statement (`availableSimultaneousStandardBasis`, module
+`AvailableBasisProof`); they are not extra input certificates hiding the conclusion.
 The assignment may independently choose a torus in its datum for that Levi.
 The statement imposes no equality between that arbitrary choice and the
 ambient `D.S`. The conclusion instead constructs the requisite apartment
@@ -148,16 +149,16 @@ Transport between the inherited subgroup topology and the canonical
 rational-point topology of the represented Levi also requires proof.
 An algebraic point-group equivalence alone does not supply this comparison.
 
-## Sources, provenance and retained obligations
+## Sources, provenance and proof steps
 
 The target is derived packaging of published predicates, with the full
 corrected KP validity premise and a single fixed `D`, `ν`, `x` and `K0`.
 It follows the same-data convention of the supplied-data Iwasawa target.
-It leaves the general
+It is separate from the general
 `SimultaneousStandardBasisExistenceStatement` and the stronger
-`JointSpecialCompactBasisExistenceStatement` unchanged. Neither unrelated
-existential compact witnesses nor those statement definitions prove the
-new universal conditional target.
+`JointSpecialCompactBasisExistenceStatement`. Neither unrelated
+existential compact witnesses nor those statement definitions prove this
+universal conditional target.
 
 The original source correspondence is:
 
@@ -182,7 +183,7 @@ The original source correspondence is:
   `kaletha-prasad-2024-corrections`, SHA256
   `23293f51e58d5ceecb91f834743f68058b98431797d2531142415d013fdf61ed`.
 
-The remaining construction and proof obligations include:
+The construction and proof steps outside this statement include:
 
 1. Construct a valid corrected assignment, its maximal split torus
    comparisons and special vertices in the unrestricted generality.
@@ -201,8 +202,11 @@ The remaining construction and proof obligations include:
    characteristic or ramification specialization. Rank zero, trivial
    radicals and nonsplit groups remain included.
 
+Steps 2–4 are carried out in the proof of this statement,
+`availableSimultaneousStandardBasis` (module `AvailableBasisProof`).
+
 The existing generic compact-containment result and S22-to-Jacquet
 consumer retain their separate roles. This target neither duplicates
 their generic statements nor claims that forgetting openness proves the
-actual simultaneous basis. Jacquet exactness and the remaining Iwasawa
-and Cartan proofs are outside this focused statement contribution.
+actual simultaneous basis. Jacquet exactness and the Iwasawa
+and Cartan proofs are outside this statement module.

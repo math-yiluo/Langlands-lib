@@ -63,8 +63,8 @@ theorem adelicEquiv_localPoint_apply_of_eq {m : ℕ} {v : FinitePlace F} (h : Fi
     rw [← e]
     by_cases hij' : i = j
     · subst hij'
-      (simp; rfl)
-    · (simp [Matrix.one_apply_ne hij']; rfl)
+      simp
+    · simp [Matrix.one_apply_ne hij']
   have h2 : ((x : Matrix (Fin m) (Fin m) (Adeles F)) i j).2 =
       ((1 : Matrix (Fin m) (Fin m) (Adeles F)) i j).2 := by
     have e := AdelicGL.finite_apply F m x i j
@@ -118,8 +118,8 @@ theorem finite_padGL {m n : ℕ} (hle : m ≤ n) (x : AdelicGL F m) :
   · rfl
   · by_cases hij' : i = j
     · subst hij'
-      (simp; rfl)
-    · (simp [Matrix.one_apply_ne hij']; rfl)
+      simp
+    · simp [Matrix.one_apply_ne hij']
 
 theorem infinite_padGL {m n : ℕ} (hle : m ≤ n) (x : AdelicGL F m) :
     AdelicGL.infinite F n (padGL hle x) = padGL hle (AdelicGL.infinite F m x) := by
@@ -130,8 +130,8 @@ theorem infinite_padGL {m n : ℕ} (hle : m ≤ n) (x : AdelicGL F m) :
   · rfl
   · by_cases hij' : i = j
     · subst hij'
-      (simp; rfl)
-    · (simp [Matrix.one_apply_ne hij']; rfl)
+      simp
+    · simp [Matrix.one_apply_ne hij']
 
 theorem finiteComponent_pad {m n : ℕ} (hle : m ≤ n) (v : FinitePlace F) (g : Points F m) :
     finiteComponent F n v (pad F hle g) = padGL hle (finiteComponent F m v g) := by

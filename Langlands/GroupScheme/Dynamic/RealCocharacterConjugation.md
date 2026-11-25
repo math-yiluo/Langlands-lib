@@ -1,7 +1,5 @@
 # Internal Hermitian conjugation over real coefficient fields
 
-Author: Worker 1655.
-
 This internal construction proves scalar-extension comparisons and real
 internal cocharacter unitarization. Both coefficient fields have arbitrary
 universe `u`, and the matrix index is a finite type in `Type`.

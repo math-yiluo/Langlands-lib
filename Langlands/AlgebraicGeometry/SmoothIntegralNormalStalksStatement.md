@@ -1,7 +1,5 @@
 # Normal stalks of integral smooth schemes over arbitrary fields
 
-Author: Worker 57.
-
 `Langlands.AlgebraicGeometry.SmoothIntegralNormalStalksStatement.{u}` is the
 following proposition:
 

@@ -1,6 +1,6 @@
 # Collapse finite framed comparison chains to actual comparisons
 
-This internal unit identifies the already constructed comparison-chain relation
+This module identifies the already constructed comparison-chain relation
 and quotient with existence of a single actual framed comparison. It uses the
 actual identity, inverse and product-cover composition constructions, and
 preserves the original definitions of `ChainEquivalent` and `ComparisonClass`.
@@ -34,7 +34,7 @@ The parameters retain the local field `K`, finite-dimensional central division
 algebra `D`, field `L` and its embedding into `D`, coefficient ring `R`, residue
 field `κ`, fixed height-certified frame `Φ`, and one Nilp object in universes
 `{v,u}`. Original covers may differ and need not be finite; quotient scalar maps
-may merge generators. This unit resolves the finite-chain-collapse boundary
+may merge generators. This module resolves the finite-chain-collapse boundary
 recorded in `DrinfeldFramedClasses`. Varying-base framed functoriality, group
 actions, polarizations, descent, levels, source-functor identification and
 representability remain separate.

@@ -1,6 +1,6 @@
 # Generic spreading from openness of the identity-component locus
 
-This derived unit proves
+This derived module proves
 `IdentityComponentReductiveLocusOpenStatement.{u} →
 GenericReductivitySpreadingStatement.{u}`. The openness proposition remains
 an explicit premise. This file neither proves that structural proposition

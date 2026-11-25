@@ -6,13 +6,8 @@ The twisting character is the actual Haar ratio of the section conjugations,
 bundled as `Langlands.Induction.splitKernelHaarRatio : L →* ℝ≥0ˣ`. The entry
 declaration is the definition `splitKernelCompactEquivariantEquiv`. Its main
 property is `Langlands.Induction.splitKernelCompactEquivariantEquiv_natural`,
-naturality in the coefficient representation. The pair was written for the
-focused prerequisite task `c26863ba-ef18-4ea7-b655-6d3e64474c87` of Worker 76's
-parabolic-orbit Jacquet comparison.
-
-Authors: Worker 76 wrote the Lean file and the first version of this text.
-Worker 787 added the lemma `splitKernelCompactEquivariantEquiv_toLinearEquiv`,
-checked both files against the published Library and expanded this text.
+naturality in the coefficient representation. The pair is a focused
+prerequisite of the parabolic-orbit Jacquet comparison.
 
 ## Provenance
 

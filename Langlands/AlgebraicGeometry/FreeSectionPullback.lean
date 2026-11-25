@@ -146,7 +146,8 @@ theorem globalSectionBasis_pullback_toMatrix (f : Y ⟶ X)
     LinearMap.toMatrix
       (globalSectionBasis (globalFreePullbackIso f e) (f ⁻¹ᵁ U))
       (globalSectionBasis (globalFreePullbackIso f e) (f ⁻¹ᵁ U))
-      (sectionEndomorphism _ (f ⁻¹ᵁ U) ((AlgebraicGeometry.Scheme.Modules.pullback f).map a)) :=
+      (sectionEndomorphism _ (f ⁻¹ᵁ U)
+        (End.of ((AlgebraicGeometry.Scheme.Modules.pullback f).map a.asHom))) :=
   sectionPullback_toMatrix f M U _ _ (sectionPullback_globalSectionBasis f e U) a
 
 /-- Determinant transport with a target basis constructed from the actual free pullback. -/
@@ -159,7 +160,7 @@ theorem globalSectionBasis_pullback_determinant (f : Y ⟶ X)
     Langlands.Shimura.HodgeDeterminant.polynomial
       (globalSectionBasis (globalFreePullbackIso f e) (f ⁻¹ᵁ U))
       (fun i => sectionEndomorphism _ (f ⁻¹ᵁ U)
-        ((AlgebraicGeometry.Scheme.Modules.pullback f).map (a i))) :=
+        (End.of ((AlgebraicGeometry.Scheme.Modules.pullback f).map (a i).asHom))) :=
   sectionPullback_determinant f M U _ _ (sectionPullback_globalSectionBasis f e U) a
 
 end Langlands.Scheme.Modules

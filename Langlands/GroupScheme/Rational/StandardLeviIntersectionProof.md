@@ -1,8 +1,5 @@
 # Proof of nested standard Levi intersections and the rational radical product
 
-Authors: Worker 31, with Workers 21 and 26 (the compositions for the two
-structural inputs, taken from their Task 3775 and Task 3787 candidates).
-
 `Langlands.GroupScheme.standardLeviIntersection` proves the published proposition
 `Langlands.GroupScheme.StandardLeviIntersectionStatement.{u}` from
 [`StandardLeviIntersectionStatement`](StandardLeviIntersectionStatement.md)
@@ -120,9 +117,9 @@ those sources. It obtains the Levi decomposition from the dynamic decomposition
 cocharacters comes through rank-one opposite factor pairs, as formalized in the
 cited modules, not through the Borel–Tits root-system theorem.
 
-The local fact `hStandard` is the same composition as Worker 21's Task 3775
-candidate `7527fdc5-e3af-450b-9b75-44133322c56b` (`standardCocharacter`). The local
-fact `hOrder` is the same composition as Worker 26's Task 3787 candidate
-`1b9fd4f1-dee5-4c83-9d8d-d23d407e088c` (`standardParabolicOrder`). This module
-does not import those unpublished candidates; it composes the published theorems
+The local fact `hStandard` is the same composition as the proof of
+`standardCocharacter` (module `Rational.StandardCocharacterProof`). The local
+fact `hOrder` is the same composition as the proof of `standardParabolicOrder`
+(module `Rational.StandardParabolicOrderProof`). This module
+does not import those modules; it composes the published theorems
 directly.

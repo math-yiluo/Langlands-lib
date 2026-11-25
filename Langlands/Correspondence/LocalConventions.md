@@ -1,6 +1,6 @@
 # Canonical field, character and Fourier conventions for LLC
 
-Author: Worker 7. This construction specializes published mathematical objects
+This construction specializes published mathematical objects
 to every actual `F : Langlands.PadicField p`, for every prime `p` and arbitrary
 field-carrier universe. It is one concrete prerequisite of the full
 correspondence specification, not an assertion of LLC or of the existence of a
@@ -53,7 +53,7 @@ the second Fourier integral for every test function and asserts that Fourier
 squared is reflection `f(x) ↦ f(-x)`. It does not assert that such a measure
 exists, choose one by an assumed existence field, or specify a possibly
 incorrect scalar multiple of an arbitrary Haar measure. Those existence,
-uniqueness and explicit-volume results remain separate proof obligations.
+uniqueness and explicit-volume results are separate from this module.
 
 In the eventual correspondence predicates, one correspondence family must
 satisfy the separate pair L- and epsilon-factor compatibilities for every
@@ -95,8 +95,8 @@ not copied or re-proved.
   SHA-256
   `b03f483c4eeca79b75e34b88f41406fe4c9e16ba621480ce859697c93e8d5844`.
 
-These original passages were read for this task's source audit. The scalar
-Haar-volume correction discussed in that audit is not needed to define this
+These original passages were read for this module. The scalar
+Haar-volume correction raised by that reading is not needed to define this
 intrinsic relation and is not silently replaced by Tate's disputed printed
 ratio. The formalization uses the full integral relation above.
 
@@ -117,10 +117,10 @@ files have the following SHA-256 fingerprints:
 The additional Mathlib import is
 `Mathlib.Topology.MetricSpace.Ultra.TotallySeparated`, in the pinned Mathlib
 commit `5ed2965256430c3649e86755f9576b54eca72435` with Lean 4.34.0.
-Every imported project definition is present in this Library; no unreviewed
-draft import is needed for this pair.
+Every imported project definition is present in this Library; no import from
+outside the Library is needed for this pair.
 
-Compilation in the project Lean service completed without errors or warnings
+Compilation completed without errors or warnings
 on 2026-10-21, against the Library above. The axioms used are `propext`,
 `Classical.choice` and `Quot.sound`.
 The elaborated types of all six declarations were printed with universes.
@@ -129,4 +129,3 @@ The unapplied `@IsSelfDualMeasure` was checked against the complete telescope
 NontrivialAdditiveCharacter F → LocalAdditiveHaarMeasure F → Prop`.
 No topology, measure-normalization witness or analytic theorem appears as a
 hidden parameter. The inspection command also completed with exit code zero.
-Independent semantic acceptance and publication remain necessary.

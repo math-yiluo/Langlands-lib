@@ -7,7 +7,7 @@ Modified: FLT module names are prefixed by `Langlands.AnthropicFLT`; the FLT lak
 are set after the imports; the import of `P2M.Util` is dropped and its commands are replaced
 by standard Lean commands; universe levels are generalized. The paired Markdown file lists the changes.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_ProjSpace
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_ProjSpaceCover
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_ProjTwistDatum
@@ -382,8 +382,7 @@ omit hker in
 
 theorem ideal_𝓘ℓ_eq (i₀ : Fin (n + 1)) (V : (Proj 𝒜).affineOpens)
     (hV : (V : (Proj 𝒜).Opens) ≤ Proj.basicOpen 𝒜 (X i₀)) :
-    𝓘ℓ.ideal V = Ideal.span {restrictFun hV
-      (Proj.awayToSection 𝒜 (X i₀) (frac n k i₀ 1 ⟨ℓ, (MvPolynomial.mem_homogeneousSubmodule 1 ℓ).mpr hℓ⟩))} := by
+    𝓘ℓ.ideal V = Ideal.span {restrictFun hV (Proj.awayToSection 𝒜 (X i₀) (frac n k i₀ 1 ⟨ℓ, (MvPolynomial.mem_homogeneousSubmodule 1 ℓ).mpr hℓ⟩))} := by
   have hmap := 𝓘ℓ.map_ideal (U := V)
     (V := ⟨Proj.basicOpen 𝒜 (X i₀), Proj.isAffineOpen_basicOpen 𝒜 (X i₀) (ProjSpace.X_mem_one k n i₀) one_pos⟩) hV
   rw [← hmap, h𝓘ℓ i₀, Ideal.map_span]

@@ -1,6 +1,6 @@
 # Residue roots and nonzero generic torus restriction
 
-This internal supporting unit combines the published quasi-split centralizer
+This module combines the published quasi-split centralizer
 comparison and root restriction results with canonical integral-torus
 character specialization. It introduces no independent literature assertion.
 All declarations have arbitrary universe parameter `u` and impose no
@@ -64,6 +64,6 @@ locally finite type instances remain explicit.
 
 The actual integral morphism, residue comparison isomorphism, maximality,
 comparison equation, and root membership are hypotheses, not existence
-conclusions of this unit. No arbitrary lattice map replaces them. The
-module does not supply the recovered models or prove the host chamber
-statement.
+conclusions of this module. No arbitrary lattice map replaces them. The
+module does not supply the recovered models or prove the chamber
+statement `UnramifiedSpecialApartmentChamberStatement`.

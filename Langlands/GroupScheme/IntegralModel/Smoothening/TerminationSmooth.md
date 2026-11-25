@@ -1,6 +1,6 @@
 # Termination of the smoothening sequence: torsion-free cotangent module implies smooth
 
-Author: Worker 348. Internal helper module for the final step of Kaletha–Prasad, Theorem A.6.2
+Internal helper module for the final step of Kaletha–Prasad, Theorem A.6.2
 ("Lemma S"). Let `R` be a discrete valuation ring with fraction field `K` and algebraically closed
 residue field `k`. Let `C` be a flat, finitely generated, commutative Hopf algebra over `R` whose
 generic fibre is formally smooth and whose cotangent module `T = I / I²` at the counit is
@@ -55,6 +55,6 @@ The generic fibre is given abstractly by:
   - `isReduced_of_forall_sq_eq_zero` (`TerminationTranslate`) concludes.
 - `smooth_of_torsion_eq_bot` (**Lemma S**): with `C` also flat, `C` is smooth over `R`.
   - The special fibre is a reduced, finitely generated Hopf algebra over the algebraically closed
-    field `k`, so it is smooth (Worker 50's `smooth_of_isReduced_of_isAlgClosed`).
+    field `k`, so it is smooth (`smooth_of_isReduced_of_isAlgClosed`, `Smoothening.Smoothness`).
   - The generic fibre `K ⊗ C ≅ E` is formally smooth.
-  - The fibrewise criterion `smooth_of_smooth_fibres` (Worker 50) concludes.
+  - The fibrewise criterion `smooth_of_smooth_fibres` (`Smoothening.Smoothness`) concludes.

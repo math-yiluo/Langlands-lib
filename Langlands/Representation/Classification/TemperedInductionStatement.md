@@ -1,6 +1,6 @@
 # Tempered unitarity and normalized induction for GL_n
 
-## Contribution and scope
+## Content and scope
 
 `Langlands.GLTemperedInductionPrerequisitesStatement` is the conjunction of
 `Langlands.GLTemperedUnitarityStatement` and
@@ -20,7 +20,7 @@ These definitions do not prove these assertions. The only proof in this pair is
 the accompanying Haar-existence helper. The representation-theoretic assertions
 are proved by separately published proof companions, recorded under
 [Implemented helper and published proofs](#implemented-helper-and-published-proofs).
-This contribution does not assert irreducibility of induction,
+This pair does not assert irreducibility of induction,
 existence or uniqueness of a Langlands quotient, or exhaustion by such quotients.
 Silberger's discrete-series support and summand assertions (Corollary 4.5.11 and
 Theorem 4.5.18) are stated separately in
@@ -212,8 +212,8 @@ analytic preservation proof described in the final section, not by this pair.
 ## Original sources and declaration correspondence
 
 The source copies are the registered retained originals. No errata file for
-either source was present in the current Library when this contribution was
-prepared.
+either source was present in the Library when this pair was
+written.
 
 | Source | Exact location | Use |
 | --- | --- | --- |
@@ -311,7 +311,3 @@ specialization of the support assertion of Corollary 4.5.11. Analytic
 preservation replaces the character criterion by Waldspurger's exponent
 argument, III.2.2–III.2.3, as documented in its proof companion. No
 Langlands-classification conclusion is an input field or an assumed axiom.
-
-Worker 1058 updated the proof status in this file for the 2026-10-29
-documentation audit, and again on 2026-10-31 after publication of the tempered
-induction proofs; the Lean file is unchanged.

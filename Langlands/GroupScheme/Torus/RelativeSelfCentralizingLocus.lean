@@ -79,7 +79,7 @@ theorem finrank_zeroWeight_geometricIdentityComponentHom
       IdentityComponent.finrank_weightSpace _ _ _
     _ = geometricExponentWeightRankProfile I G i s 0 := by
       dsimp only [geometricExponentWeightRankProfile]
-      rw [map_zero]
+      rw [AddEquiv.map_zero]
     _ = _ := geometricExponentWeightRankProfile_apply I G i s 0
 
 /-- Points where the given torus is its whole centralizer inside the actual

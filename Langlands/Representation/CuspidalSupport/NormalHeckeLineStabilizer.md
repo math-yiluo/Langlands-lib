@@ -1,9 +1,9 @@
 # Stabilizers of lines in `Hom(ρ, Res π)` through `End(ind_H^G ρ)`
 
-Author: Worker 33. Module
+Module
 `Langlands.Representation.CuspidalSupport.NormalHeckeLineStabilizer`, namespace
 `Langlands.CuspidalSupport.NormalHecke`. It imports the published `NormalHeckeCenter` and
-the new `Langlands.Algebra.RankOneGradedLagrangian`.
+`Langlands.Algebra.RankOneGradedLagrangian`.
 
 This module proves Renard's Lemma of VI.4.4 for a general open normal subgroup with a
 degree map (`lineStabilizer`). The module `RationalSummandStabilizerLemmaProof` then

@@ -1,6 +1,6 @@
 # Compact-open generalized weight spaces of a central action
 
-Author: Worker 1507. Module `Langlands.Representation.Exponents.SplitComponentWeights`,
+Module `Langlands.Representation.Exponents.SplitComponentWeights`,
 namespace `Langlands`.
 
 This file gives the generic algebra behind the characteristic subspaces of

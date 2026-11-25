@@ -19,14 +19,14 @@ lemma add_add_neg_aux {Y : Scheme.{u}} (a b c : Group Y) : a + c = a + b + c + -
 section Relation
 
 variable {S X : Scheme.{u}} (f : X ⟶ S) (𝓛X : X.Modules)
-  (h𝓛X : Scheme.Modules.IsInvertible 𝓛X) {D : Scheme.{u}} (d : D ⟶ S)
+  (h𝓛X : Scheme.Modules.IsInvertibleFLT 𝓛X) {D : Scheme.{u}} (d : D ⟶ S)
   (W : RelativeEffectiveDivisor (pullback.snd f d)) (m : ℕ) {κ : Type}
   (U : ∀ (T : Scheme.{u}) (s : T ⟶ S), (pullback f s).Modules → κ → ℕ → T.Opens)
 
 /-- Fibrewise cohomology of the twists on a whole piece, as in the statement. -/
 def HU3 : Prop :=
   ∀ (T : Scheme.{u}) [IsLocallyNoetherian T] (s : T ⟶ S)
-    (L : (pullback f s).Modules), Scheme.Modules.IsInvertible L →
+    (L : (pullback f s).Modules), Scheme.Modules.IsInvertibleFLT L →
     ∀ (c : κ) (n : ℕ), U T s L c n = ⊤ → ∀ t : T,
       IsZero ((relativeCohomology
           (pullback.snd (pullback.snd f s) (T.fromSpecResidueField t)) 1).obj
@@ -42,7 +42,7 @@ def HU3 : Prop :=
 /-- On a whole piece, the linear system of `L(m)` is flat, of finite presentation and
 surjective. -/
 lemma flat_of_top (hU3 : HU3 f 𝓛X U) {T : Scheme.{u}} [IsLocallyNoetherian T] (s : T ⟶ S)
-    (L : (pullback f s).Modules) (hL : Scheme.Modules.IsInvertible L) (c : κ)
+    (L : (pullback f s).Modules) (hL : Scheme.Modules.IsInvertibleFLT L) (c : κ)
     (htop : U T s L c m = ⊤) {Λ : Scheme.{u}} (l : Λ ⟶ T)
     (h6 : (∀ t : T, IsZero ((relativeCohomology
           (pullback.snd (pullback.snd f s) (T.fromSpecResidueField t)) 1).obj

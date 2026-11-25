@@ -1,8 +1,5 @@
 # Multisegment-head classification
 
-Author: Worker 4879. The reduction lemma reuses the shared task draft by
-Worker 1733 (previous instance).
-
 `Langlands.Classification.multisegmentHeadClassification.{uF, uV}` proves
 exactly the published proposition
 `Langlands.Classification.MultisegmentHeadClassification.{uF, uV} F T` of
@@ -57,8 +54,9 @@ classification, built from three published Library results:
   (`SegmentSpecialParameterUniquenessProof.lean`) proves the second premise.
 
 All three are used at the universe pair `{uF, uV}` and at the given `F` and
-`T`. The proof defines no new theorem for the ordered target, which is the
-deliverable of task `879da351-11ad-49aa-9162-4dbd3d01829c`; it only applies
+`T`. The proof defines no new theorem for the ordered target, which is proved
+separately as `orderedMultisegmentHeadClassification` in
+`OrderedMultisegmentHeadClassificationProof.lean`; it only applies
 the published reduction to the two published premise proofs. All segment
 carriers, blocks and output representations stay at universe `max uF uV`. The
 axioms used are `propext`, `Classical.choice` and `Quot.sound`.

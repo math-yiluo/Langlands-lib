@@ -1,7 +1,5 @@
 # The almost-everywhere cuspidal `L²` subspace of the restriction split-centre quotient
 
-Author: Worker 112.
-
 Getz--Hahn (`getz-hahn-2024-automorphic-representations`) define
 `[G] = A_G G(F) \ G(A_F)` in (2.20)--(2.21), printed pp. 68--69. In
 (6.20)--(6.21), printed p. 168 (PDF p. 182), they define `L²_cusp([G])` as

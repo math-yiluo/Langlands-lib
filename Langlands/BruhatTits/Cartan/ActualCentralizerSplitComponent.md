@@ -1,7 +1,5 @@
 # The split component of the represented centralizer of a maximal split torus
 
-Author: Worker 1072 (task `0becf90b-3422-4e36-bbc1-55342700202d`).
-
 This module proves the split-component half of
 `Langlands.BruhatTits.Cartan.ActualCentralizerStructureStatement` (in
 [`ActualCentralizerStructureStatement`](ActualCentralizerStructureStatement.md))

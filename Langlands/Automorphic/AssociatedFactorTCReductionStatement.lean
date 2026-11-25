@@ -12,11 +12,11 @@ the Library's route:
   cuspidal pairs, the totally complex archimedean parameters and the totally complex completed
   equation imply the totally complex global functional equation (the totally complex form of
   `CuspidalPairFunctionalEquationReductionStatement`);
-* `Langlands.ClassField.Global.RelativeWeilGroup.AssociatedGammaReductionTCStatement`: the
+* `Langlands.ClassFieldTheory.Global.RelativeWeilGroup.AssociatedGammaReductionTCStatement`: the
   totally complex global functional equation implies the totally complex form of Henniart's
   Théorème 2.3 (the totally complex form of the published `associatedGamma_of_inputs`, whose
   second input `StableTwistPairGammaMatchStatement` is proved);
-* `Langlands.ClassField.Global.RelativeWeilGroup.AssociatedCuspidalFactorReductionTCStatement`:
+* `Langlands.ClassFieldTheory.Global.RelativeWeilGroup.AssociatedCuspidalFactorReductionTCStatement`:
   the totally complex forms of Théorème 2.4 and Corollaire 2.3 imply that of Corollaire 2.4
   (the totally complex form of `AssociatedCuspidalFactorReductionStatement`).
 
@@ -41,7 +41,7 @@ def CuspidalPairFunctionalEquationReductionTCStatement : Prop :=
 
 end Langlands.Global
 
-namespace Langlands.ClassField.Global.RelativeWeilGroup
+namespace Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 
 /-- The completed global Rankin–Selberg functional equation of cuspidal pairs over totally
 complex fields implies Henniart's Théorème 2.3 over totally complex fields. -/
@@ -56,4 +56,4 @@ def AssociatedCuspidalFactorReductionTCStatement : Prop :=
     AssociatedTemperedFactorTCStatement.{u, uV, uP, uQ, uE} →
       AssociatedCuspidalFactorTCStatement.{u, uV, uP, uQ, uE}
 
-end Langlands.ClassField.Global.RelativeWeilGroup
+end Langlands.ClassFieldTheory.Global.RelativeWeilGroup

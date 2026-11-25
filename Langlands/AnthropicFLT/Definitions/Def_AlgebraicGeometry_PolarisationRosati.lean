@@ -46,8 +46,8 @@ def IsSymmetric (𝓛 : A.Modules) : Prop :=
 
 def mumfordBundle (𝓛 : A.Modules) : (pullback f f).Modules :=
   (Scheme.Modules.pullback (addMor f L)).obj 𝓛 ⊗
-    ((Scheme.Modules.pullback (pullback.fst f f)).obj (Scheme.Modules.dual 𝓛) ⊗
-      (Scheme.Modules.pullback (pullback.snd f f)).obj (Scheme.Modules.dual 𝓛))
+    ((Scheme.Modules.pullback (pullback.fst f f)).obj (Scheme.Modules.dualFLT 𝓛) ⊗
+      (Scheme.Modules.pullback (pullback.snd f f)).obj (Scheme.Modules.dualFLT 𝓛))
 
 def sliceAt {T : Scheme.{u}} {t : T ⟶ Spec (CommRingCat.of S)} (x : SchemeHomOver t f) :
     pullback f t ⟶ pullback f f :=

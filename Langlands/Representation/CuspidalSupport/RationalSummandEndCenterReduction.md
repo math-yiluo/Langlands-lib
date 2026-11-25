@@ -1,7 +1,5 @@
 # Renard VI.4.4 from VI.4.1 and VI.3.2(ii): conditional reductions
 
-Author: Worker 1826.
-
 This module derives the three statements of Renard VI.4.4 — the Theorem
 `RationalSummandEndCenterStatement`, the Corollary
 `RationalSummandEndNoetherianStatement` and the Proposition

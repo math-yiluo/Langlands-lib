@@ -1,7 +1,5 @@
 # Tate isomorphisms of a finite class formation
 
-Author: Worker 272.
-
 This module proves the published proposition
 `Langlands.ClassFieldTheory.Local.ClassFormationTateIsomorphismsStatement`
 (module `Langlands.ClassFieldTheory.Local.ClassFormationCupLawsStatement`).

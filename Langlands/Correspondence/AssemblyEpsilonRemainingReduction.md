@@ -39,7 +39,10 @@ quantifier, and the imported full compatibility conclusion retains existence
 of a self-dual measure and compatibility for every such measure. The original
 target and its hypotheses are unchanged.
 
-This is a conditional supporting unit. It does not prove multisegment datum
-matching or segment-pair inheritance, and does not supply an unconditional
-proof of the host assembly target. Those two remaining premises must still
-be discharged before that task can be completed.
+This is a conditional module serving `AssemblyEpsilonInheritanceStatement`. It
+does not prove multisegment datum matching or segment-pair inheritance, and does
+not supply an unconditional proof of that assembly target. A proof of the target
+through this module needs those two premises. The Library proves the target as
+`assemblyEpsilonInheritance` in `AssemblyEpsilonInheritanceProof`, whose proof
+reaches `assemblyEpsilonInheritance_of_datumMatching_and_segmentPairs` (by way of
+`assemblyEpsilonInheritance_of_segmentHeads`) with both premises proved.

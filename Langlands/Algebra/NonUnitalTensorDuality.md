@@ -20,4 +20,4 @@ take h, x and m to `h(x)(f(m))`.
 
 These constructions require no finite-dimensionality, unit or universe equality.
 They implement Renard's direct tensor–Hom proof under the compatible coefficient
-hypothesis isolated in the published statement unit.
+hypothesis `NonUnitalBimoduleTensorScalars.InputCompatible`.

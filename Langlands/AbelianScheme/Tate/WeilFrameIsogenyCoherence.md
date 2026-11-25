@@ -1,6 +1,6 @@
 # Coherence of actual Weil-compatible frame isogenies
 
-Worker 142. This derived unit constructs direct composite and inverse transport
+This derived module constructs direct composite and inverse transport
 equivalences for the full and away Weil-compatible frames of actual abelian
 schemes over a common quasi-separated base. It uses the same constructed duals,
 dual geometry, inverse Poincare evaluations, integral dual-valued maps and
@@ -38,7 +38,7 @@ comparison and orders coprime to an arbitrary natural modulus. These laws do
 not require choosing roots of unity or a twist trivialization. The integral
 dual-valued maps are not asserted to be polarizations. No frame nonemptiness,
 nondegeneracy, finite-dimensional PEL specialization, topology or fixed-level
-coherence is asserted in this unit.
+coherence is asserted in this module.
 
 The provenance is restriction of the existing actual Tate isogeny maps to the
 already constructed compatible-frame subsets, with the actual Hom0 dual

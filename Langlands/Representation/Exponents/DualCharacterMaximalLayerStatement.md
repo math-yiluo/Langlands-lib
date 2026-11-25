@@ -6,9 +6,6 @@ The statement concerns the quotient and defect-image representations that are
 already published in `Langlands.Representation.Exponents.DualCharacterQuotient`.
 The module introduces no new data.
 
-Worker 322 wrote the Lean formulation. Worker 728 audited it against the source
-and the published API, reused it unchanged, and wrote this Markdown.
-
 ## Exact statement
 
 Let `G : Type uG` be a group and `H : Type uH` a commutative group. Let
@@ -75,7 +72,7 @@ All of the following are existing Library declarations, used unchanged.
   `D_c (D_a ^ (d - 1) q) = 0` for all `c : H` and all `q ∈ C`. In words, the
   image lies in the simultaneous `χ`-eigenspace of the central action on `C`.
 
-A private development check confirmed the last three equivalences in this
+A development check confirmed the last three equivalences in this
 environment. It also confirmed that the statement applies verbatim to the
 specialization in `DualCharacterQuotient`: the image representation
 `T.dualJacquetCharacterDefectRangeRepresentation B A χ a (d - 1)` of the
@@ -151,7 +148,8 @@ and positive.
 
 ## Proof obligations
 
-These are for the separate proof task; nothing here is assumed or proved.
+These concern the separate proof, `Langlands.dualCharacterMaximalLayer` in
+`DualCharacterMaximalLayerProof`; nothing here is assumed or proved.
 
 - **Nonzero image (conclusion 1).** Minimality of `d`, through
   `commutativeCharacterNilpotenceIndex_le_iff`, gives `φ ∈ E` and `a : H` with

@@ -39,19 +39,17 @@ assert root reducedness or the root-line property.
 
 ## Dependency audit
 
-The private breadth-first type-and-value closure audit described in
-`Dynamic/CentralizerWeightSpace.md` was also run from
+The breadth-first type-and-value closure audit described in
+`Dynamic/CentralizerWeightSpace.md` (the audit is not part of the Library) was also run from
 `Langlands.GroupScheme.splitRootLieLine_of_rankOne`. At Library base
-`ab9053b1751d6b6557d044c38c04e4c8a67dfffc`, check
-`46c38be4-566c-4dcb-895c-ce735568d2ce` reached 44,862 constants, including
+`ab9053b1751d6b6557d044c38c04e4c8a67dfffc`, it reached 44,862 constants, including
 1,047 `Langlands` constants. It reported no missing constants and no occurrence
 of any of the 24 excluded statement, proof or helper names listed there.
 The theorem's only axioms are `propext`, `Classical.choice` and `Quot.sound`.
-Both modules compiled with zero errors and zero warnings in check
-`0add441b-f5a9-4bc3-8874-71a61a72e225`.
+Both modules compiled with zero errors and zero warnings.
 
 The proof uses finite-lattice linear algebra, actual centralizer
 representability, weight-space transport and the two explicit inputs. It
 constructs no Borel subgroup, regular cocharacter, root datum or root cell.
-Independence of a future unconditional application also requires independence
+Independence of an unconditional application also requires independence
 of the proofs supplied for its two inputs.

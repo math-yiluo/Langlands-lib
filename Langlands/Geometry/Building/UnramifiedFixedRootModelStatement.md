@@ -1,7 +1,5 @@
 # Actual integral models and root depths at Galois-fixed apartment points
 
-Author: Worker 200.
-
 Lean module: `Langlands.Geometry.Building.UnramifiedFixedRootModelStatement`.
 
 This module states `UnramifiedFixedRootModelStatement.{u}` without proof. It is a

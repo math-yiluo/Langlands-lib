@@ -1,9 +1,9 @@
 # Positive supported relative Jacquet counts below an actual ambient count
 
-Worker 429 isolated this internal adapter while assembling the supported
-all-regular comparison. Worker 435 identified the existing quotient transport,
-second-adjointness and simple-map detection interfaces; Worker 166 confirmed
-that the nongeneric adapter is separate from his generic comparison work.
+This internal adapter is isolated from the supported all-regular comparison.
+It uses the existing quotient transport, second-adjointness and simple-map
+detection interfaces. The nongeneric adapter is separate from the generic
+comparison.
 This is derived mathematical infrastructure, with no claim to be a separately
 numbered theorem of the literature.
 

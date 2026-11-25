@@ -125,7 +125,7 @@ required for the exact identity and refinement.
 
 ## Provenance and sources
 
-This is an internal construction by Worker 56 from the published
+This is an internal construction from the published
 `DomainTopology`, `DomainSpectralTests`, `DomainSpectralTopology`,
 `DomainAutomorphism` and `RationalChartDomainComposition` APIs. It derives
 joint target-spectrum surjectivity, bound detection and finite-test

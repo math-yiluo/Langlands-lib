@@ -1,11 +1,11 @@
 # Height and `H₀` on the full minimal Levi
 
-This internal supporting unit supplies the height comparison needed to apply the
-published positive-part decay engine to actual rational points in Waldspurger
+This internal supporting module supplies the height comparison needed to apply the
+positive-part decay engine to actual rational points in Waldspurger
 (2003), Lemma VI.2.3, printed pp.299–301. The registered source is
 `waldspurger-2003-plancherel`, SHA256
 `4b6a6162cd0b3863703fb2f65d1698f926caf813114917f2084c16e38f2e30f7`.
-The proof is derived from the current Library's actual Cartan covering, heights
+The proof is derived from the Library's actual Cartan covering, heights
 and character-normalized valuation. It does not follow the source's analytic
 recurrence proof and does not prove the final orbit-decay theorem.
 
@@ -27,7 +27,7 @@ premise `StandardLeviCartanCovering F i ν ∅ K₀`. It also retains the ambien
 `IsAffineHom` and `LocallyOfFiniteType` instances, connected reductivity,
 maximal splitness, genericity and positive definiteness of `N`. The full target
 already assumes the standard-Levi covering for every standard index, so its
-empty-index case supplies this premise. The unit constructs no special compact,
+empty-index case supplies this premise. The module constructs no special compact,
 Cartan covering or structural existence data.
 
 The implemented proof proceeds as follows.
@@ -39,16 +39,16 @@ The implemented proof proceeds as follows.
    premises.
 2. `minimalLeviUniformizer y` reads the actual torus point `y(ϖ)` in the actual
    minimal Levi through `Standard.leviTorusHom` and `Standard.leviPointsEquiv`.
-   Its ambient value is the published `uniformizerPowers i y`. The identity
+   Its ambient value is `uniformizerPowers i y`. The identity
    `rationalMinimalH0_minimalLeviUniformizer` gives `H₀(y(ϖ)) = 1 ⊗ y`, with
-   the original positive-order sign convention. This is precisely the published
+   the original positive-order sign convention. This is precisely the
    `RenardCartan.centralizerValuation_uniformizerSection` formula transported
    to the minimal Levi.
 3. `rationalMinimalH0_eq_zero_of_mem_compact` pulls `K₀` back along the closed
-   minimal-Levi inclusion. The published `compact_comap_le_normKernel` puts
+   minimal-Levi inclusion. The lemma `compact_comap_le_normKernel` puts
    this compact subgroup in the Levi scheme's actual common norm kernel.
    `centralizerValuation_ker` therefore makes its `H₀` zero.
-4. `exists_rationalHeight_uniformizerPowers_le_seminorm` combines the published
+4. `exists_rationalHeight_uniformizerPowers_le_seminorm` combines
    `exists_rationalHeight_uniformizerPowers_le_sum` with the linear-form
    bound. Thus `σ(y(ϖ)) ≤ C₁ N(1 ⊗ y)` for a nonnegative constant `C₁`.
 5. The empty-index Levi covering writes every `m` as `k₁ f y(ϖ) k₂`, with

@@ -1,7 +1,5 @@
 # Milne 16.62–16.63: a torus can have no fixed tangents without definite weights
 
-Worker 75, Task 3483.
-
 The action of \(\mathbb G_m\) on \(\mathbb G_a^2\) by opposite weights refutes the
 strict-definiteness clause of Milne 16.62 and the assertion in 16.63 that every
 Luna map is an isomorphism. This is a paper counterexample, not a Lean proof.

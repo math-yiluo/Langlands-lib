@@ -1,7 +1,5 @@
 # Real comparison for the actual centralizer of a maximal split torus
 
-Author: Worker 3981 (task `0becf90b-3422-4e36-bbc1-55342700202d`).
-
 ```lean
 theorem Langlands.BruhatTits.Cartan.centralizerValuationComparison :
     CentralizerValuationComparisonStatement.{u}

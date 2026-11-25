@@ -1,6 +1,6 @@
 # Tensoring a finitely presented module with an arbitrary product: proof
 
-Author of this adaptation: Worker 146. The finite-presentation diagram argument
+The finite-presentation diagram argument
 is adapted from Madison Crim's Imperial FLT source cited below.
 
 ## Exact theorem and hypotheses
@@ -9,8 +9,8 @@ The module imports the unchanged Library statement
 `Langlands.LinearAlgebra.RestrictedProduct.TensorPiStatement` and proves:
 
 ```lean
-theorem RestrictedProduct.tensorPiComparison_proof.{uR, uM, uι, uN} :
-  RestrictedProduct.TensorPiComparison.{uR, uM, uι, uN}
+theorem Langlands.LinearAlgebra.RestrictedProduct.tensorPiComparison_proof.{uR, uM, uι, uN} :
+  Langlands.LinearAlgebra.RestrictedProduct.TensorPiComparison.{uR, uM, uι, uN}
 ```
 
 The theorem has no term parameters outside its target. Unfolding that target
@@ -149,19 +149,26 @@ through the statement module and `Mathlib.Algebra.FiveLemma`.
 
 ## Checks and scope
 
-In environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` (Lean 4.34.0),
-`lean_check` diagnostic `ba79adc8-5f57-4e71-8773-855380e2996b` built the
+With Lean 4.34.0, a check built the
 proof with zero errors and zero warnings. Declaration inspection reports
 kind `theorem`, universe parameters `uR, uM, uι, uN`, and only
 `propext`, `Classical.choice`, and `Quot.sound`. The exact unapplied type
 has fingerprint `bf9001e25f4bc5559e52a74a55f8e1ee0d0813ab438adceaffe448a40f5c31ae`.
-Private diagnostic `b0e9aa9c-1fe7-4413-aacd-5ec41efe4951` prints the full
+A private diagnostic prints the full
 unapplied theorem type and checks its specialization to four distinct
 levels `{0, 1, 2, 3}`. It also prints the same axiom list.
-These are development checks; independent semantic review, official
-exact-target validation and publication are separate requirements.
+These are development checks.
 
 The imported statement's Lean/Markdown pair is unchanged. This module proves
 only the arbitrary-product bijectivity target. Restricted-product maps,
 principal-filter equivalences, direct limits, inverse laws, topology,
 number-field specialization and norms are outside this proof.
+
+## Names and place (22 November 2026)
+
+The Library's own declarations of this directory, which the Imperial project does not declare, moved on
+that day from the root name space `RestrictedProduct` to `Langlands.LinearAlgebra.RestrictedProduct`
+(each name gets the prefix `Langlands.LinearAlgebra.`; for instance
+`RestrictedProduct.tensorPiComparison_proof` is now `Langlands.LinearAlgebra.RestrictedProduct.tensorPiComparison_proof`).
+Statements and proofs change only in these names; the module uses no declaration of the Imperial
+project.

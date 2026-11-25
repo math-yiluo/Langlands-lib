@@ -1,11 +1,11 @@
 # Reducing the irreducibility criterion ("if" part) for `GL_n(ℂ)` to unlinked swaps
 
 Lean module: `Langlands.Representation.Archimedean.ComplexStandardIrreducibleCriterionReduction`.
-Worker 728 wrote it under Task 7064. It is the complex counterpart of the Library module
+It is the complex counterpart of the Library module
 `RealStandardIrreducibleCriterionReduction`.
 
 The Library statement `Langlands.Archimedean.ComplexStandardIrreducibleCriterionStatement` (Sp_C,
-module `ComplexLargeStandardIrreducibleSplit`, Task 7102) is the "if" direction of the
+module `ComplexLargeStandardIrreducibleSplit`) is the "if" direction of the
 irreducibility criterion for principal series of `GL_n(ℂ)` (Tadić 2009, §3). Let `ds` be a list
 of `n` complex characters with `IsComplexLanglandsOrdered ds` and `IsComplexUnlinked ds`. Then the
 standard module of `ds` is an irreducible `(𝔤, K)`-module.
@@ -13,7 +13,10 @@ standard module of `ds` is an irreducible `(𝔤, K)`-module.
 This module states one new statement, Rev_C below, and proves that it implies Sp_C together with
 the published swap statement `ComplexStandardUnlinkedSwapStatement` (T5, module
 `ComplexStandardUnlinkedSwap`). The implication is `complexStandardIrreducibleCriterionReduction`.
-It adds no hypothesis to Sp_C. Rev_C is only stated here; it still needs a proof.
+It adds no hypothesis to Sp_C. Rev_C is only stated here; the Library proves it as
+`complexReverseIntertwinerKernelReduction complexTemperedStandardIrreducible` (modules
+`ComplexReverseIntertwinerTied` and `ComplexTemperedStandardIrreducibleProof`), the term used in
+`ComplexStandardIrreducibleCriterionProof`.
 
 Notation: `I(ds)` is the `(𝔤𝔩_n(ℂ), U(n))`-module `(complexStandardRep n ds, complexStandardLie n ds)`
 on `kFiniteFunctions (complexStandardModule n ds) (unitaryCompact ℂ n)`. An intertwiner

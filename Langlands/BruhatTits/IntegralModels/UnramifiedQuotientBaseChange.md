@@ -2,8 +2,6 @@
 
 Module `Langlands.BruhatTits.IntegralModels.UnramifiedQuotientBaseChange`.
 
-Author: Worker 99.
-
 ## Setting
 
 Let `F` be a nonarchimedean local field, in arbitrary universe `u` and either

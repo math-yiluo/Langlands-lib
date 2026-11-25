@@ -1,8 +1,8 @@
 # Actual rational norm characters on the literal standard Levi subgroup
 
-Authors: Worker 289 and Worker 34. Worker 34 identified the required actual
-Levi topology and rational norm interface for the normalized unramified trace
-calculation; Worker 289 implemented the construction and its proofs.
+The file supplies the actual Levi topology and rational norm interface
+required for the normalized unramified trace calculation, with the
+construction and its proofs.
 
 This internal adapter uses the exact `RationalPointFamily.levi i ν I`,
 where `I` is a finite set of the existing simple relative roots and
@@ -79,7 +79,7 @@ to compare their forward maps, and compose their continuous maps.
 They add no claim translated from external literature.
 
 The local-field scope allows both characteristics, arbitrary nonsplit and
-non-quasisplit groups, and no separate topology on the Levi. This unit does
+non-quasisplit groups, and no separate topology on the Levi. This file does
 not use Langlands classification, character independence, the geometric
 lemma, adjointness, cuspidal support or trace regularity. It does not prove
 same-Levi induction independence, the dense comparison of induced traces,

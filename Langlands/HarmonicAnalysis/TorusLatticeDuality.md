@@ -84,7 +84,7 @@ Hypotheses of the results:
 "`χ_n` trivial on `K`"; this module identifies that condition with membership in a finite-index
 sublattice. `DiscreteFourierUniqueness` decomposes finitely generated abelian groups as
 `ℤ^d × T` with `T` finite and proves uniqueness of character sums; it has no annihilators in the
-torus. `RationalRestrictionKernel` (Worker 200) proves finiteness of the actual restriction
+torus. `RationalRestrictionKernel` proves finiteness of the actual restriction
 kernel `Im X(G) → Im X(A_G)` under a finite-index premise on the central valuation image; its
 comparison with `latticeAnnihilator` in the circle coordinates of `Im X(G)` is not made here.
 

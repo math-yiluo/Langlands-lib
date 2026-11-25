@@ -1,7 +1,5 @@
 # Full rigidified Picard representability over a field: proof
 
-Author: Worker 943.
-
 `Langlands.AbelianScheme.fieldRigidifiedPicardRepresentability.{u}`, in module
 `Langlands.AlgebraicGeometry.Picard.FieldRigidifiedPicardRepresentabilityProof`,
 proves the unchanged statement

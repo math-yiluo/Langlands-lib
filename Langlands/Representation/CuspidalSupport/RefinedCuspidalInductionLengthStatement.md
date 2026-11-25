@@ -1,7 +1,5 @@
 # Admissibility and finite length of actual refined cuspidal induction
 
-Author: Worker 435.
-
 `Langlands.CuspidalSupport.RefinedCuspidalInductionFiniteLengthStatement`
 defines a closed proposition. This file supplies a statement, not its proof.
 The field universe `uF` and inducing-carrier universe `uV` are independent.

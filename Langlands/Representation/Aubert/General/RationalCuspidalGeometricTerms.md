@@ -1,6 +1,6 @@
 # Vanishing of actual geometric terms on rational cuspidal data
 
-Worker 167. This internal unit proves vanishing of actual source Jacquet
+This internal module proves vanishing of actual source Jacquet
 modules and actual geometric terms when the intrinsic source intersection
 is proper. Its representation-theoretic input is the original Levi
 cuspidality condition. It adds no geometric-lemma assumption or

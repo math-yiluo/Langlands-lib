@@ -1,7 +1,5 @@
 # Cartan decomposition of the general linear group
 
-Author: Worker 292.
-
 `Langlands.GeneralLinear.CartanDecompositionStatement` is a closed,
 universe-polymorphic `Prop`-valued definition. It states a theorem to be proved;
 this pair supplies no proof of the Cartan decomposition and assumes no such

@@ -1,6 +1,7 @@
 # Positive-real embedding in an actual split adelic torus
 
-Worker 112, using the actual-point topology support by Worker 94.
+The module uses the actual-point topology support
+(`GroupScheme.affinePointsTopologicalSpace`).
 This is an internal topological comparison of existing constructions. It
 uses the general split-torus coordinate homeomorphism and the proved
 closed embedding of positive scalar ideles.

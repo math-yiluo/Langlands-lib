@@ -15,12 +15,12 @@ the slice relation is an algebraic space presented by `E.U` and the quotient map
 
 The theorem is the composite of two results.
 
-- `etaleEquivalenceRelationAlgebraicSpaceQuotient_of` (Worker 1001, module
+- `etaleEquivalenceRelationAlgebraicSpaceQuotient_of` (module
   `EtaleEquivalenceRelationAlgebraicSpaceQuotientReduction`) derives the statement from
   `FppfSeparatedLocallyQuasiFiniteDescentStatement.{u}`. The quotient sheaf is shown to have
   representable diagonal, using the descent statement for the kernel pair. The quotient map
   from `E.U` is then étale and surjective.
-- `LocallyQuasiFiniteDescent.fppfSeparatedLocallyQuasiFiniteDescent` (Worker 1072, module
+- `LocallyQuasiFiniteDescent.fppfSeparatedLocallyQuasiFiniteDescent` (module
   `Descent.LocallyQuasiFiniteDescent.Proof`) proves that descent statement. It is Stacks
   Lemma 37.57.1 (Tag 02W8) in sheaf form.
 

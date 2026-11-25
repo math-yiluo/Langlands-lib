@@ -1,11 +1,8 @@
 # Unnormalized `Φ⁻` through the plus subgroup, and the two-orbit sequence
 
-Author: Worker 837.
-
 This helper module serves the positive-rank `Φ⁻` sequence of BZ77
 Proposition 4.13(c), the clause `RightPhiShortExact` of
-`Langlands.Derivative.MirabolicProductMinusCompatibilityStatement` (host task
-`6cd54f76-f453-4faa-818a-5843e1bbcaff`). It proves no clause of that
+`Langlands.Derivative.MirabolicProductMinusCompatibilityStatement`. It proves no clause of that
 proposition and does not import the statement module. It contains three
 generic pieces:
 
@@ -194,7 +191,7 @@ The direct imports are the published
 `Langlands.Representation.Derivative.MirabolicMinusExactnessProof`,
 `Langlands.Representation.Derivative.MirabolicProductRestrictionMackey` and
 `Langlands.Representation.Jacquet.LocalizationTransport`. Every imported
-module is independently accepted and published. No Library module is
+module is published. No Library module is
 modified. Proposition definitions in the closure supply types; none is used
 as a proof of its conclusion.
 
@@ -204,28 +201,29 @@ as a proof of its conclusion.
 | Plus subgroup data | `plusSubgroup`, `plusProjection`, `plusSuccessor`, `plusRadical` and their laws are group constructions (published `MirabolicProjection`). From `MirabolicPlus` only the character `thetaPlus` is used; on the radical it is `θ_ψ` by definition. No `Ψ⁺` or `Φ⁺` functor, plus-functor theorem, adjunction or exactness of a plus functor is used. |
 | Localization exactness | The published `characterLocalizationExactness` (`Jacquet.LocalizationExactnessProof`) proves exactness of character localization from compact detection of relations and smooth averaging. It uses no finiteness or classification input. |
 | Mackey filtration | `closedSubgroupMackeyFiltration` (published `Geometric.ClosedSubgroupMackeyProof`) is the closed-subgroup geometric lemma with trivial localization data. Its inputs are the published orbit-section extension and coset-orbit homeomorphism. The orbit enumeration `s` is a hypothesis of this module and is not proved here. |
-| Restriction-sequence module | `MirabolicProductRestrictionMackey` supplies only the generic `RepFunctorFiltration.exists_exact_of_two`. Its theorem `exists_exact_restrictedCompactInduction` and its imports `MirabolicProductRestrictionOrbits` and `MinusVanishing` are not used. No BZ77 4.13(a) conclusion is used, and the separate restriction-sequence owner is not duplicated. |
+| Restriction-sequence module | `MirabolicProductRestrictionMackey` supplies only the generic `RepFunctorFiltration.exists_exact_of_two`. Its theorem `exists_exact_restrictedCompactInduction` and its imports `MirabolicProductRestrictionOrbits` and `MinusVanishing` are not used. No BZ77 4.13(a) conclusion is used, and the separate restriction-sequence result is not duplicated. |
 | Countability and its closure | `Group.GL.CountabilityProof` (through the Mackey module) supplies σ-compactness of `GL_n`. Its import `Smooth.SmallRealizationProof` brings definitions of supercuspidality, contragredients and admissibility (`Classification.Supercuspidal*`, `Smooth.Contragredient.*`, `Smooth.Admissibility.*`). They are definitions and lower laws; no supercuspidal or finiteness conclusion is used. |
 | Rankin–Selberg and Whittaker modules in the closure | `RankinSelberg.Measures`, `QuotientIntegrals`, the unimodularity and last-row cutoff modules and `Whittaker.Algebraic` and `Whittaker.GeneralLinear` come with the generic induction and orbit infrastructure. They provide measure, compact-orbit and character constructions only. |
 | Structural induction statement | `Induction.StructuralStatement` supplies proposition definitions only, including `OpenSubgroupAdjunctionClause`; none is used as a proof. |
 | BZ77 4.13(d) and general Leibniz | No submodule-detection conclusion, general Leibniz proof or derivative-filtration theorem is used. `Filtration.Definitions` and `Filtration.QuotientFirstIso` supply filtration definitions and the first isomorphism theorem. |
 | Segment derivative and Jacquet formulas | No segment derivative formula, Ze80 §3.5 or §9.6, `SegmentFullJacquetFormula`, `SegmentHeadJacquetFormula`, `SegmentSocleJacquetFormula` or `SegmentSpecialJacquetExponentNormFormula` supplies a direct or transitive input. |
-| Individual segment existence | No individual special-head/reverse-socle or segment-socle/reverse-head existence conclusion, proof successor or downstream consequence is used. |
+| Individual segment existence | No individual special-head/reverse-socle or segment-socle/reverse-head existence conclusion, proof of one or downstream consequence is used. |
 | Linked and unlinked socle consumers | `UnlinkedSegmentSocleProductIrreducible`, `LinkedSegmentSocleReverseProductStructure`, `LinkedSegmentSoclePairReducible`, `JuxtaposedSegmentSocleReverseProductStructure` and `LinkedSegmentSocleReverseProductQuotientHom` are absent from the dependencies. |
-| Segment product and commutation consumers | No `SegmentSocleProductIrreducibility`, `AdjacentUnlinkedSegmentSocleSwap`, `TwoSegmentSocleCommutation`, `LinkedSegmentSocleGluing`, Ze80 4.2 or 9.7 criterion, or their successors or consequences is used. |
-| Special-head criterion and uniqueness | `SegmentHeadProductIrreducibility` and `GenericSegmentProductUniqueness`, their parent tasks, successors and downstream consequences supply no input. |
+| Segment product and commutation consumers | No `SegmentSocleProductIrreducibility`, `AdjacentUnlinkedSegmentSocleSwap`, `TwoSegmentSocleCommutation`, `LinkedSegmentSocleGluing`, Ze80 4.2 or 9.7 criterion, or their proofs or consequences is used. |
+| Special-head criterion and uniqueness | `SegmentHeadProductIrreducibility` and `GenericSegmentProductUniqueness`, their proofs and downstream consequences supply no input. |
 | Ordered existence and multisegment exhaustion | No `OrderedMultisegmentSocleExistence`, `MultisegmentSocleExhaustion`, ordered strong-head existence, special-head multisegment exhaustion, quotient coverage or ordered-conversion conclusion is used. |
-| Analytic, tempered and square-integrable classification | No analytic segment classification, `SegmentSpecialEssentialSquareIntegrability`, tempered uniqueness, `SquareIntegrableLanglandsClassification`, square-integrable or regular exhaustion, or Ze80 9.3 conclusion is used, including their successors and consequences. |
-| Two-supercuspidal consumers | Neither `TwoSupercuspidalNonadjacentProductIrreducible` nor `TwoSupercuspidalProductStructure`, their full-product assembly, successors or consequences is imported or used. |
+| Analytic, tempered and square-integrable classification | No analytic segment classification, `SegmentSpecialEssentialSquareIntegrability`, tempered uniqueness, `SquareIntegrableLanglandsClassification`, square-integrable or regular exhaustion, or Ze80 9.3 conclusion is used, including their proofs and consequences. |
+| Two-supercuspidal consumers | Neither `TwoSupercuspidalNonadjacentProductIrreducible` nor `TwoSupercuspidalProductStructure`, their full-product assembly, proofs or consequences is imported or used. |
 | Supercuspidal and single-block finiteness | No `SupercuspidalCoinvariantFinitenessStatement`, all-character single-block conclusion or downstream consequence supplies an input. No arbitrary-character finiteness theorem is used. |
-| Other Whittaker finiteness exclusions | `IrreducibleCoinvariantFinitenessStatement` and `LeviCuspidalCoinvariantFinitenessStatement`, their parent and proof tasks and their consequences are absent, as is the prohibited mirabolic finite-length route. |
-| Host clauses and pending results | No host clause, mixed product, orbit-coverage proof, pending candidate, draft or consumer conclusion is imported or used. |
+| Other Whittaker finiteness exclusions | `IrreducibleCoinvariantFinitenessStatement` and `LeviCuspidalCoinvariantFinitenessStatement`, their proofs and their consequences are absent, as is the prohibited mirabolic finite-length route. |
+| Compatibility clauses and unproved results | No clause of `MirabolicProductMinusCompatibilityStatement`, mixed product, orbit-coverage proof, draft or consumer conclusion is imported or used. |
 | Parameters | `T`, `ψ`, `t`, the closed subgroup `H`, the orbit enumeration and all smooth carriers, including zero modules, are arbitrary. |
 
-These rows cover every named task in the host's inherited exclusion union,
-its mathematical conclusions, proof successors and downstream consequences.
+These rows cover every result named in the exclusion union of the
+product-minus compatibility, their mathematical conclusions, the modules that prove
+them and downstream consequences.
 A search over the source of the closure below and of this module found no
-excluded declaration name and no task identifier in Lean code. The only match
+excluded declaration name in Lean code. The only match
 of the word `Adjunction` is `OpenSubgroupAdjunctionClause`, noted above. The
 search also found no `sorry`, `admit`, `native_decide` or new axiom.
 `exists_exact_phiMinusUnnormalized_compactInduction` depends only on
@@ -236,7 +234,7 @@ search also found no `sorry`, `admit`, `native_decide` or new axiom.
 There are exactly 137 transitive project imports, excluding this module, at
 Library base `4bec44eec4c7f23def3d25d5c43f4f2a034af469`. The list is computed
 from the actual import lines. Every entry is published, and its Lean/Markdown
-pair in the workspace is byte-identical to that commit. Mathlib dependencies
+pair is byte-identical to that commit. Mathlib dependencies
 come from the pinned Lean environment.
 
 ```text

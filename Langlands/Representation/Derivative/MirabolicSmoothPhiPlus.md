@@ -1,7 +1,5 @@
 # Smooth mirabolic induction Φ̂⁺
 
-Author: Worker 749.
-
 This module constructs the Bernstein–Zelevinsky functor
 `Φ̂⁺ : Alg P_(n+1) → Alg P_(n+2)` on the actual published smooth complex
 representations. It is the smooth (not compactly supported) analogue of the
@@ -285,15 +283,17 @@ The closure contains no classification, segment, multisegment, socle, head,
 Jacquet-formula, square-integrability, tempered, exhaustion, product
 irreducibility, detection, highest-derivative, pairing, mixed-product or
 homogeneity module. Hence neither this module nor any import depends on the
-tasks of the complete inherited exclusion set recorded in the context of
-task `6bb62ea4-c7e1-4325-9eb6-b8bbee1f65c4` revision 2 (including
-`23189526…`, `f3a69bc8…`, `aca8805b…`, `23e98d90…`, `2ae5cbe5…`,
-`8364e73f…`, `3bfb61fa…`, `ebea9a8a…`, `20e4e1c6…`, `52e97845…`,
-`1cb45da2…`, `cd8ab97c…`, `bf433f0a…`, `30341ae4…`, `8252833d…` and
-`5eece9e8…`), their conclusions or consequences. It does not use the
-operator-paused minus-exactness task `b65bc667…`, and it uses no
+excluded segment and classification results (including ordered-socle
+existence, socle exhaustion, the analytic segment classification, unlinked
+segment-socle product irreducibility and its final criterion, the special-head
+product criterion, special-head exhaustion, ordered head existence, quotient
+coverage, tempered uniqueness, square-integrable classification and
+exhaustion, regular exhaustion, generic segment product uniqueness, ordered
+special-segment conversion and forward special-segment essential
+square-integrability), their conclusions or consequences. It uses no
+mirabolic minus-exactness result, no
 Zelevinsky 1980 result and no BZ77 theorem of §3.2–§3.8. Only the §1.8 and
 §3.2 definitions are implemented. No exactness, adjunction or
 classification theorem is assumed, and no theorem-valued premise is added.
-The proofs use no `sorry`, `admit` or new axiom. This closure inventory is
-an author audit, not independent acceptance evidence.
+The proofs use no `sorry`, `admit` or new axiom. This closure inventory was
+not checked independently.

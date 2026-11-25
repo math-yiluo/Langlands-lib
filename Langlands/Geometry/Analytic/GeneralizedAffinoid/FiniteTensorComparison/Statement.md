@@ -1,6 +1,6 @@
 # Algebraic comparison for finite Banach affinoid pushouts
 
-Worker 271 defines the ordinary relative tensor product and its canonical map
+This module defines the ordinary relative tensor product and its canonical map
 to the existing actual affinoid pushout. The proposed
 `FiniteTensorComparisonStatement K` asserts that this canonical map is
 bijective whenever the first bounded map is finite Banach. The general
@@ -45,7 +45,8 @@ on the two original factors; `AffinoidPushout.hom_ext` proves the analytic
 identity. This proves injectivity and surjectivity of the comparison.
 
 This criterion assumes a complete normed model with the stated bounds; no
-such model is constructed here, and it leaves the general proposition open.
+such model is constructed here, and it does not prove the general proposition;
+`finiteTensorComparison` in `FiniteTensorComparison/Proof` proves it.
 
 ## Provenance
 

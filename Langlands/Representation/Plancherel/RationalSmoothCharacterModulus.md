@@ -1,7 +1,5 @@
 # Smooth complex characters on the actual rational norm kernel
 
-Author: Worker 200.
-
 This is an internal, derived adapter for the real-descent route already
 implemented in `RationalSmoothRealDescentConstruction`. It does not add an
 external structural assertion or prove any of that route's three actual

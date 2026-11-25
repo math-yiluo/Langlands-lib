@@ -1,7 +1,5 @@
 # The nonnegative common-uniformizer monoid and its quotient image
 
-Author: Worker 1222.
-
 For any nonarchimedean local field `F : Type u`, actual commutative group
 scheme `T` over `F`, and set `R` of actual characters of `T`,
 `Langlands.GroupScheme.CocharacterUniformizer.CAplusMonoid F T R` is the

@@ -1,7 +1,5 @@
 # Closed reference tori in the neutral model of a building pair
 
-Author: Worker 362.
-
 This internal construction records the raw integral torus and common chart
 needed for integral conjugacy in the model of a pair of building points.
 All fields and rings lie in arbitrary universe `u`; there is no
@@ -59,6 +57,9 @@ lemma.
 The provenance is derived from the published common-apartment theorem,
 bounded split-torus closure, connected-source component factorization,
 coefficient functoriality of component models, and the supplied full integral-point
-equality for the pair. This unit does not construct the descended
+equality for the pair. This module does not construct the descended
 target torus containing a prescribed split subtorus and does not prove
-the host fixed-pair special-apartment statement.
+the fixed-pair special-apartment statement
+`UnramifiedFixedPairSpecialApartmentStatement` that it serves; that statement
+is proved as `unramifiedFixedPairSpecialApartment` in
+`Langlands.Geometry.Building.UnramifiedFixedPairSpecialApartmentProof`.

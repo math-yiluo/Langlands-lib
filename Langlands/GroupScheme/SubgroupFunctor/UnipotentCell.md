@@ -22,6 +22,6 @@ multiplication.
 The provenance is internal composition of the existing subgroup-product
 action, unipotent closed-orbit theorem, inversion comparison, connected-space
 criterion, and the characterization of a surjective open immersion as an
-isomorphism. This unit does not assert that an arbitrary dynamic cell is
+isomorphism. This module does not assert that an arbitrary dynamic cell is
 surjective; its open-immersion and unipotence hypotheses must be established
 for the actual factors to which it is applied.

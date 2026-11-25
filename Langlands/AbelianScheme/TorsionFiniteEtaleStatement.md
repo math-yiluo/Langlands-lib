@@ -1,7 +1,5 @@
 # Finite etale torsion of abelian schemes
 
-Author: Worker 140.
-
 `Langlands.AbelianScheme.TorsionFiniteEtaleStatement` is a proposition target.
 For every scheme `S`, every published `Langlands.AbelianScheme S`, and every
 natural number `n > 0` whose image in the global sections ring `Γ(S, ⊤)` is a

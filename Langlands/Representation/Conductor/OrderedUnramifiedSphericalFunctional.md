@@ -1,8 +1,8 @@
 # A normalized inverse-character functional on norm-ordered unramified principal series
 
 Module `Langlands.Representation.Conductor.OrderedUnramifiedSphericalFunctional`, namespace
-`Langlands.Conductor`. Part of the proof of `SphericalCorankOneFunctionalEquationStatement`
-(Task 5680). Nothing here uses `PadicField`. All results hold over every nonarchimedean local
+`Langlands.Conductor`. Part of the proof of `SphericalCorankOneFunctionalEquationStatement`.
+Nothing here uses `PadicField`. All results hold over every nonarchimedean local
 field `F` (`IsNonarchimedeanLocalField F`, any characteristic), with uniformizer `ϖ`, residue
 cardinality `q`, and `ρ = principalSeries hϖ n hq z`, `f₀ = sphericalSection hϖ n hq z`.
 

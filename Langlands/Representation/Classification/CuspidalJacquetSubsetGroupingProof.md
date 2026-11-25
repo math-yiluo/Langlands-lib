@@ -1,7 +1,5 @@
 # Proof of actual cuspidal Jacquet subset grouping
 
-Author: Worker 78.
-
 `Langlands.Classification.cuspidalJacquetSubsetGrouping` proves the internal
 proposition `Langlands.Classification.CuspidalJacquetSubsetGrouping.{uF,uV} F T`.
 It preserves the supplied field and topological data, independent field and
@@ -58,15 +56,13 @@ This is an internal finite consequence of the published local-interchange
 statement. Its proof uses that statement as a hypothesis and does not import
 its proof or any binary irreducibility theorem. A recursive source audit at
 Library base `676ac944440098acb714f6b953083e88bb89c9c2` resolves all 94 project
-modules, with no missing or unusual project imports and no excluded statement,
-conclusion or proof-successor names from the host task. Its only Classification
+modules, with no missing or unusual project imports. Its only Classification
 modules are the local-interchange statement, this statement and proof, and
 `Supercuspidal`. There is no global disjoint-support irreducibility, ordered
 quotient coverage, multisegment classification, analytic support assertion or
 one-integral-line conclusion among these inputs.
 
 Development compilation and theorem inspection report zero errors or warnings
-and only `propext`, `Classical.choice` and `Quot.sound`. These are development
-checks, not independent semantic acceptance or publication. The proof supplies
+and only `propext`, `Classical.choice` and `Quot.sound`. The proof supplies
 the conditional grouping result only; applying it to the entire complement
 requires its own corresponding outside-to-inside pair hypotheses.

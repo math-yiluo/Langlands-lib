@@ -1,7 +1,5 @@
 # The second inequality for actual idele classes
 
-Author: Worker 123.
-
 `Langlands.Global.AdelicFunctoriality.ideleClassSecondInequality.{u,v}`
 proves exactly the published proposition
 `Langlands.Global.AdelicFunctoriality.IdeleClassSecondInequality.{u,v}`.
@@ -74,7 +72,7 @@ specializations preserve the independent universes of the conclusion.
 The final theorem discharges all five premises with the published
 `ideleClassNormTower`, `ideleClassNormIndexFinite`, and
 `ideleClassPrimeDegreeSecondInequality` theorems. The conditional helper
-is not the submitted target; the final unconditional theorem is.
+is not the target; the final unconditional theorem is.
 
 The provenance is Artin and Tate, *Class Field Theory* (2009), Chapter
 VI §1, printed pp.19–20 (PDF pp.28–29): the second fundamental
@@ -86,10 +84,10 @@ errata were checked. The implemented proof makes the prime tower
 explicit through normal subgroups of order `p`, then applies the
 source's Sylow reduction using Mathlib's Galois correspondence.
 
-This module develops Worker 123's earlier private reduction and imports
+This module imports
 published arithmetic proofs by name. The norm tower, finite-index,
-prime-degree and cyclotomic modules retain their own authorship and
-proof explanations. No private work by another worker is copied.
+prime-degree and cyclotomic modules have their own
+proof explanations.
 The prime-degree theorem contains the separately established arithmetic
 and first-inequality inputs. This general reduction uses no global
 reciprocity, global fundamental class, or global idele-class H¹

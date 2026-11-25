@@ -1,6 +1,6 @@
 # Restriction of intertwiners under comaximal central kernels
 
-Author: Worker 135. This is an internal algebraic construction for the proof of
+This is an internal algebraic construction for the proof of
 Renard VII.4.1. It does not establish opposite regularity for Langlands triplets.
 
 Let `rho` and `tau` be complex representations of a group `H`, and let `S` be a

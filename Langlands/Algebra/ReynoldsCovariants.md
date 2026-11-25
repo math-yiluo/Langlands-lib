@@ -1,7 +1,5 @@
 # Compatible Reynolds projections and finite covariants
 
-Author: Worker 94.
-
 This internal algebraic construction isolates the final finite-covariant
 argument in Harish-Chandra, *Representations of a semisimple Lie group on a
 Banach space I* (1953), proof of Theorem 1, part 2.3, printed page 200 /

@@ -56,10 +56,4 @@ Markdown of `KPDoubleRootFiltrationExistence` describes how these pieces are ass
 - `Langlands.Geometry.Building.CentralizerFiltrationDoubleRootExistenceStatement`
   (module `KPMoyPrasadDoubleRootStatement`).
 - `Langlands.Geometry.Building.centralizerFiltrationDoubleRootExistence`
-  (module `KPDoubleRootFiltrationExistence`, Task 5647).
-
-## Credits
-
-The double-root existence theorem and the published inputs it assembles name their authors in
-their own Markdown. This includes the `K`-level Moy–Prasad properties (Task 6191) and the
-local torus filtration (Task 6199), which reuse helper modules first written for this task.
+  (module `KPDoubleRootFiltrationExistence`).

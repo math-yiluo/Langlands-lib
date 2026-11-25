@@ -1,6 +1,6 @@
 # Splitting from a reduced simply-laced relative root system
 
-Worker 227. This module defines a general proposition and the predicate in its
+This module defines a general proposition and the predicate in its
 hypothesis. It does not prove the proposition.
 
 ## The full relative root set
@@ -84,12 +84,14 @@ Remark 6.4.7's `²D_(2n), B_n` to `²D_n, B_(n-1)`. They contain no
 correction to Proposition 6.4.8 or Table 6.4.1. Milne's retained official
 errata snapshot of 4 November 2026 has no correction to the cited passages.
 
-## Remaining proof and application
+## Proof and application
 
 A proof must establish the finite-root folding criterion for actual
 relative roots and use quasi-split descent to show that the given maximal
 split torus is maximal as a torus. Neither obligation is assumed as an
 unproved theorem in this module: they remain the content of the proposition.
+The Library proves it as `quasiSplitSimplyLacedSplitting` (module
+`QuasiSplitSimplyLacedSplittingProof`).
 
 The module constructs no chamber, affine roots, Cartan matrix or positive
 marks. It does not show that the predicate holds for the maximal

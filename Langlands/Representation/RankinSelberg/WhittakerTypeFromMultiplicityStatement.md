@@ -1,7 +1,5 @@
 # Whittaker type from a nonzero spanning functional
 
-Author: Worker 184.
-
 The closed proposition
 `Langlands.RankinSelberg.WhittakerTypeFromMultiplicityStatement.{uF,uV}`
 states an internal derived algebraic adapter into the existing

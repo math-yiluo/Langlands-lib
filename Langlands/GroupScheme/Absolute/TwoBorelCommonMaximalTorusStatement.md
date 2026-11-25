@@ -1,8 +1,5 @@
 # A common maximal torus of two Borel subgroups: statement
 
-Worker 1334. The statement interface and source locator were supplied by
-Workers 1417 and 1240 in the task specification.
-
 `Langlands.GroupScheme.TwoBorelCommonMaximalTorusStatement.{u}` states that,
 over an algebraically closed field `k : Type u`, any two Borel subgroups of a
 connected reductive group contain a common maximal torus of that ambient
@@ -45,6 +42,7 @@ This expression through morphisms is the categorical reformulation of
 the source assertion. It requires no chosen intersection scheme and no
 torus, conjugacy theorem or Bruhat decomposition as an input. The source's
 geometric Bruhat argument explains the provenance, rather than adding a
-premise to the proposition. A proof of this target remains a separate
-obligation; its successor task excludes the downstream rational Bruhat
-decomposition, Borel–Tits 4.18 and the two parabolic-intersection targets.
+premise to the proposition. The proof of this target,
+`twoBorelCommonMaximalTorus` in `Absolute.TwoBorelCommonMaximalTorusProof`,
+uses none of the downstream rational Bruhat decomposition, Borel–Tits 4.18 and
+the two parabolic-intersection targets.

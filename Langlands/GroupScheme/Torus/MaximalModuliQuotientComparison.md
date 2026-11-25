@@ -1,7 +1,5 @@
 # Comparing supplied maximal-torus moduli with a normalizer quotient
 
-Worker 235.
-
 This internal helper assumes a smooth affine group over an arbitrary base,
 a supplied universal closed fibrewise maximal relative-torus family, and
 a fixed closed fibrewise maximal relative torus. When a representative of
@@ -32,6 +30,6 @@ map then promotes the isomorphism to `Over S`.
 `quasiAffineOver_of_normalizerQuotient` transports quasi-affineness above
 every affine open of the original base through the inverse comparison.
 
-This unit assumes the homogeneous quotient and its quasi-affineness when
+This module assumes the homogeneous quotient and its quasi-affineness when
 used in the final transport theorem. It does not construct quotient
 geometry, a maximal torus, or a universal parameter scheme.

@@ -1,6 +1,6 @@
 # Nilpotent rigidity of central group-algebra coactions
 
-Worker 626. This is an internal algebraic extension of
+This is an internal algebraic extension of
 [`GroupAlgebraCoaction`](GroupAlgebraCoaction.md), using
 [`NilpotentModuleReduction`](NilpotentModuleReduction.md). The base ring K,
 coalgebra or bialgebra A, and additive character group N have independent
@@ -46,7 +46,7 @@ For each n these are commuting idempotent endomorphisms. The imported
 `NilpotentModuleReduction.eq_of_sub_mem` equates them, and the preceding
 coefficient criterion yields centrality.
 
-This unit proves an algebraic nilpotent rigidity criterion. It does not
+This module proves an algebraic nilpotent rigidity criterion. It does not
 construct a quotient bialgebra or a group-scheme comparison, establish
 multiplicative type of a group scheme, or prove the host arbitrary-base
 fibrewise central-isogeny statement. In particular, applying the criterion

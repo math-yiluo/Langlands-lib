@@ -17,7 +17,7 @@ There is no topology on `V`, and neither finite dimensionality nor
 admissibility is assumed. `NonarchimedeanGroup G` supplies the topological
 group instance.
 
-The requested case of a locally compact Hausdorff group, a closed subgroup,
+The case of a locally compact Hausdorff group, a closed subgroup,
 and a smooth complex representation is obtained by setting `R = ℂ`;
 Mathlib infers weak local compactness from local compactness. Closedness of
 `P` and the Hausdorff assumption are unnecessary for this construction.
@@ -108,7 +108,7 @@ is the composition of the two support inclusions.
 
 ## Provenance and dependencies
 
-This is an internal derived construction, authored by Worker 53. Its
+This is an internal derived construction. Its
 mathematical inputs are the published definitions and theorems in:
 
 - [`Definitions`](Definitions.md): actual covariant, smooth and compactly
@@ -125,9 +125,7 @@ for a later closed-orbit extension argument; it does not assert or prove
 that extension theorem, a sheaf comparison, or global surjectivity of a
 restriction map.
 
-The module is checked in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` (Lean 4.34.0, Mathlib commit
-`5ed2965256430c3649e86755f9576b54eca72435`). The constructor's checked
+The module is checked with Lean 4.34.0, Mathlib commit
+`5ed2965256430c3649e86755f9576b54eca72435`. The constructor's checked
 universe parameters are `uR`, `uG`, `uV`, and its only axioms are `propext`,
-`Classical.choice`, and `Quot.sound`. Independent semantic review and
-publication are separate from these development checks.
+`Classical.choice`, and `Quot.sound`.

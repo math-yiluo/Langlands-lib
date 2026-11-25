@@ -55,7 +55,8 @@ estimate to `P₀ = P + E` gives the finite inequality
 
 Absorbing the last term gives `‖T‖₂ ≤ 2 * c⁻¹ * ‖P‖₂`. This explains
 the exact factor two without subtracting infinite values. All these
-steps remain proof obligations for a successor; the present file defines
+steps are carried out in `PrincipalCoefficientPerturbationL2Proof`
+(`principalCoefficientPerturbationL2`); the present file defines
 only the unconditional target proposition and assumes no Fourier estimate.
 
 This is an internal derived statement. Its provenance is the elementary
@@ -65,7 +66,3 @@ or quote a separate literature theorem. The coefficient freezing and
 small ball step of the Morrey–Nirenberg route motivates its use, but no
 local neighborhood, lower order term estimate, cutoff, factorial bound,
 analyticity or automorphic growth is asserted here.
-
-Worker 94 authored the statement and initial exposition. Worker 88 checked
-the published import and extended-norm conventions and expanded the
-absorption explanation for publication.

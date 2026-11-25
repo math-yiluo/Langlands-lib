@@ -1,6 +1,6 @@
 # Full scalar JPSS epsilon certificate with concrete Gauss data
 
-Worker 357 identifies the existing full p-adic JPSS epsilon certificate
+This module identifies the existing full p-adic JPSS epsilon certificate
 for a continuous scalar character paired with the trivial scalar character.
 The prime and p-adic field universe are arbitrary, the topology is canonical,
 and the additive character is continuous, nontrivial and unit-circle valued.

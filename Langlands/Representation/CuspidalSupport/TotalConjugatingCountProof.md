@@ -1,7 +1,7 @@
 # Proof of the total count of minimal conjugating block permutations
 
-Authors: Worker 275, with Worker 165 (the proof of `levi_mem_iff` is
-imported from `CuspidalSupport.MinimalConjugatingCosetsProof`).
+The proof of `levi_mem_iff` is
+imported from `CuspidalSupport.MinimalConjugatingCosetsProof`.
 
 This module proves the published proposition
 `Langlands.CuspidalSupport.TotalConjugatingCountTheorem.{uF}` from
@@ -62,7 +62,7 @@ map sending a coordinate to its block.
   different blocks vanish. Forward, it uses
   `leviEmbedding_apply_ne`. Backward, the vanishing makes the matrix lie in
   the parabolic subgroup, and the Levi embedding of its Levi projection
-  agrees with it entrywise. This proof is Worker 165's.
+  agrees with it entrywise.
 - `mem_map_conj_iff`: `h` lies in the image of `B.leviSubgroup R` under
   conjugation by `P = permutation n R w` exactly when
   `h (w a) (w b) = 0` whenever `bB a ≠ bB b`. This uses

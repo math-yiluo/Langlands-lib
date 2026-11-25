@@ -1,6 +1,6 @@
 # Actual matrix bridges for the dominant first-block calculation
 
-Worker 113. Derived coordinate infrastructure for the first-block route of
+Derived coordinate infrastructure for the first-block route of
 JPSS (1983), Sections 4.9 and 4.10(2), printed pages 416–419, registered as
 `jpss-1983-rankin-selberg` with SHA-256
 `d9feed6388ca5acf02ecc6a8cce984871a7c28f062ff441e45a71fa2d8962245`.
@@ -50,4 +50,5 @@ All identities hold over an arbitrary field for arbitrary natural `j,k`,
 including `j=0`, and all positive section block sizes. The module changes
 no measures and asserts no integrability or Laurent identity. Quotient
 disintegration, section coefficients, spectral weights, and the common
-first-block functional equation remain subsequent steps of the host task.
+first-block functional equation remain subsequent steps of the first-block
+calculation.

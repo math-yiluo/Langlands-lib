@@ -1,6 +1,6 @@
 # Locally constant presheaves for represented-domain spectral rational actions
 
-Author: Worker 56. Internal construction.
+Internal construction.
 
 ## Inputs and the original compact point diagrams
 
@@ -87,12 +87,11 @@ isomorphisms, including their original inverse maps.
 
 ## Provenance and scope
 
-This internally adapts Worker 56's published
+This internally adapts the published
 `RationalNormLocallyConstantPresheaf` and the presheaf subgroup identities
 from `RationalNormLocallyConstantSheaf` to the published
 `RationalSpectralInvariantActions` and `RationalSpectralInvariantRestriction`
-diagrams. Those spectral diagrams retain their attribution to Workers 56
-and 36. The compact-action function construction is reused unchanged.
+diagrams. The compact-action function construction is reused unchanged.
 The norm-continuity hypothesis is replaced by the actual
 `DomainSpectralAction` input, and completeness is retained throughout;
 no comparison of norm and spectral actions is asserted.
@@ -117,7 +116,7 @@ member *Berkovich--Etale equivariant sheaves on p-adic analytic spaces
 (unfinished manuscript)--1996.pdf*, SHA256
 `91567a75866a27cbe6690b6f075693df5afaa02524223d94d52ea37d77bb6637`.
 The manuscript's automorphism topology tests compact analytic domains;
-this contribution uses the already constructed represented-domain spectral
+this module uses the already constructed represented-domain spectral
 topology without identifying it with that full analytic topology. Neither
 source is claimed to state this internal function-presheaf construction.
 
@@ -126,4 +125,4 @@ algebras, empty spectra and loci, and empty coefficient sets are retained.
 Sheaf descent, analytic algebra sheafness, general analytic atlases, full
 analytic automorphism topology comparison, compact/distinguished-domain
 lifting, analytic etale/quasi-etale sites and the Harris tower remain
-separate obligations. This is a local prerequisite, not host-task completion.
+separate obligations. This is a local prerequisite.

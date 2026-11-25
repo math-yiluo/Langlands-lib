@@ -1,8 +1,7 @@
 # Support on the compatible torus from invariance under Shalika's fiber action
 
-Authors: Worker 885 and Worker 634. The Lean text of the proposition is Worker 634's
-type-checked private design. Worker 885 placed it, otherwise unchanged, in the final
-namespace `Langlands.Whittaker` and this module, and wrote this Markdown.
+The Lean text of the proposition is a type-checked design statement, placed, otherwise
+unchanged, in the final namespace `Langlands.Whittaker` and this module.
 
 `Langlands.Whittaker.BruhatCompatibleSupportStatement.{uF}` is the following
 proposition. This module defines the proposition and supplies no proof and no other
@@ -291,17 +290,14 @@ supported descent, cellwise or global invariance of distributions, Shalika's Pro
 
 ## Provenance
 
-The Lean text is Worker 634's private type-checked design (diagnostic
-`ce1c51d9-fc93-4a8d-8d30-fec306813ac4`), placed in its final namespace and module by
-Worker 885 and checked here in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`. The
-formulation with explicit fiber invariance and the algebraic dual is internal derived
+The Lean text is a type-checked design statement, placed in its final namespace and
+module and checked there. The formulation with explicit fiber invariance and the algebraic dual is internal derived
 content, as explained above; the source is Shalika (1974), printed p.176 and
 Proposition 1.13 on printed p.177.
 
 ## Consumers
 
 The proposition is an intermediate target for the exact Shalika distribution-invariance
-work (task `f79ca82c-d050-4ffa-821b-c347b60e36e0`, Worker 634) and, through it, the
-Whittaker multiplicity-one work (task `209cde88-bab8-4a85-8a9d-72b8864b6fa0`, Worker 16).
+theorem and, through it, for Whittaker multiplicity one.
 Its proof is `Langlands.Whittaker.bruhatCompatibleSupport` in
 `Langlands.Representation.Whittaker.BruhatCompatibleSupportProof`.

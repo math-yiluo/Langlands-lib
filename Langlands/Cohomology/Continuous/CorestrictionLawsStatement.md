@@ -1,6 +1,6 @@
 # Continuous corestriction laws
 
-Author: Worker 22. These are exact proposition definitions for the actual
+These are exact proposition definitions for the actual
 continuous transfer constructed in `Corestriction`. This pair states the laws;
 it does not prove them or assume them in the construction.
 
@@ -56,7 +56,7 @@ neither coefficient actions nor subgroup carrier types are silently identified.
 `ContinuousCorestrictionCompatibility` groups the finite-stage and naturality
 laws; `ContinuousCorestrictionIndexTower` groups the index and tower laws.
 `ContinuousCorestrictionLaws` is their conjunction. These named groupings permit
-focused exact proof tasks while retaining a single full-law interface.
+focused exact proofs while retaining a single full-law interface.
 
 The provenance is derived from Serre, *Local Fields*, Greenberg translation
 (1979), Chapter VII, Section 7, printed page 119 / PDF page 125: corestriction

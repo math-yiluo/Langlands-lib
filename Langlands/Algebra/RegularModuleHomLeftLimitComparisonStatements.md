@@ -1,8 +1,6 @@
 # Actual regular-Hom to left-limit comparison statements
 
-Worker 6 authored this statement unit for the whole Renard book program.
-Worker 734 checked it against the imported declarations and the source,
-and added the two reduced equal-carrier checks described below.
+The statement was checked against the imported declarations and the source.
 
 ## Source
 
@@ -60,7 +58,7 @@ not only at one chosen idempotent. Clause 3 is an explicit
 implementation compatibility. The vector `m` gives `a ↦ a • m` as in
 formula I.1.5.1, printed p.10/PDF16. Evaluating that map gives the
 family `e ↦ e • m` of I.1.4, printed p.9/PDF15. Clauses 2 and 3 are
-recorded as conclusions so that later units can use them directly.
+recorded as conclusions so that later modules can use them directly.
 Mathematically, both follow from clause 1: clause 2 from the
 left-linearity `RegularModuleHom.map_mul_left`, and clause 3 from the
 published theorem `RegularModuleHom.toLeftLimit_comp_canonical`. This
@@ -117,4 +115,4 @@ This pair supplies statement coverage only. It proves neither this
 comparison nor any completion theorem. The transported original scalar
 action on families, the topology and analytic completion, the completion
 functor, the nondegenerate-part comparison and the smoothing/completion
-adjunction are separate units.
+adjunction are outside this pair.

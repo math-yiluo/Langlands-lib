@@ -1,7 +1,5 @@
 # Counting left cosets in an antidominant Cartan double coset: proof
 
-Author: Worker 23.
-
 The closing theorem `Langlands.GeneralLinear.CartanQuotient.cartanCellCount`
 proves exactly the published
 `Langlands.GeneralLinear.CartanQuotient.CartanCellCountStatement.{uF}` of

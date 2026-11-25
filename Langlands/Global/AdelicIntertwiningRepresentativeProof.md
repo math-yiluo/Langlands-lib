@@ -69,5 +69,5 @@ lies in `M(F)`. The integral over `(V(F) ∩ wU(𝔸)w⁻¹) \ V(𝔸)` does not
 `w ↦ wm` for `m ∈ M(F)`. Steps 1 and 2 are new auxiliary lemmas: step 2 is the
 character-level analogue of the published norm-rigidity lemma for local fields, and holds
 over any field. The module proves only the representative independence. It is one premise
-of the symmetric-family density bridge `symmetricFamilyDensityBridge` used in Task 5697,
-and it does not prove `SpectralTransformStatement`.
+of the symmetric-family density bridge `symmetricFamilyDensityBridge` used toward the unitary
+spectral transform, and it does not prove `SpectralTransformStatement`.

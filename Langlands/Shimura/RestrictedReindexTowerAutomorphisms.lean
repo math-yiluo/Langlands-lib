@@ -40,7 +40,7 @@ def reindexAutHom : Aut T →* Aut (Φ.restrictedFunctor hΦ ⋙ T) :=
   ((Functor.whiskeringLeft _ _ Scheme.{u}).obj (Φ.restrictedFunctor hΦ)).mapAut T
 
 @[simp] theorem reindexAutHom_hom (α : Aut T) :
-    (reindexAutHom Φ hΦ T α).hom = Functor.whiskerLeft (Φ.restrictedFunctor hΦ) α.hom :=
+    (reindexAutHom Φ hΦ T α).asIso.hom = Functor.whiskerLeft (Φ.restrictedFunctor hΦ) α.asIso.hom :=
   rfl
 
 variable {T} {Γ : Type v} [Group Γ] (ρ : Γ →* (Aut T)ᵐᵒᵖ)
@@ -51,20 +51,20 @@ def reindexAutomorphisms : Γ →* (Aut (Φ.restrictedFunctor hΦ ⋙ T))ᵐᵒ�
   (MonoidHom.op (reindexAutHom Φ hΦ T)).comp ρ
 
 @[simp] theorem reindexAutomorphisms_hom (γ : Γ) :
-    (reindexAutomorphisms Φ hΦ ρ γ).unop.hom =
-      Functor.whiskerLeft (Φ.restrictedFunctor hΦ) (ρ γ).unop.hom :=
+    (reindexAutomorphisms Φ hΦ ρ γ).unop.asIso.hom =
+      Functor.whiskerLeft (Φ.restrictedFunctor hΦ) (ρ γ).unop.asIso.hom :=
   rfl
 
 variable {X : Scheme.{u}} {p : T ⟶ (Functor.const P.FullSubcategory).obj X}
-  (hρ : ∀ γ, (ρ γ).unop.hom ≫ p = p)
+  (hρ : ∀ γ, (ρ γ).unop.asIso.hom ≫ p = p)
 
 include hρ in
 /-- Restrictions of automorphisms over the base are over the base for the reindexed
 projections. -/
 theorem reindexAutomorphisms_over (γ : Γ) :
-    (reindexAutomorphisms Φ hΦ ρ γ).unop.hom ≫ reindexProjection Φ hΦ p =
+    (reindexAutomorphisms Φ hΦ ρ γ).unop.asIso.hom ≫ reindexProjection Φ hΦ p =
       reindexProjection Φ hΦ p :=
-  whiskerLeft_reindexProjection Φ hΦ p (ρ γ).unop.hom (hρ γ)
+  whiskerLeft_reindexProjection Φ hΦ p (ρ γ).unop.asIso.hom (hρ γ)
 
 /-! ## The action on colimit cohomology and the comparison -/
 
@@ -88,12 +88,12 @@ theorem automorphism_reindexComparison_apply (n : ℕ) (M : ModuleSheaf X R) (γ
     (x : ((reindexAutomorphismActionFunctor Φ hΦ ρ hρ R hT n).obj M).V.obj) :
     (RestrictedLevelColimit.reindexComparison Φ hΦ
         ((canonicalCoefficients R p M).cohomology n)).hom
-        ((((reindexAutomorphismActionFunctor Φ hΦ ρ hρ R hT n).obj M).ρ γ).hom.hom x) =
-      (((automorphismActionFunctor R p hT ρ hρ n).obj M).ρ γ).hom.hom
+        ((((reindexAutomorphismActionFunctor Φ hΦ ρ hρ R hT n).obj M).ρ γ).asHom.hom.hom x) =
+      (((automorphismActionFunctor R p hT ρ hρ n).obj M).ρ γ).asHom.hom.hom
         ((RestrictedLevelColimit.reindexComparison Φ hΦ
           ((canonicalCoefficients R p M).cohomology n)).hom x) :=
   ConcreteCategory.congr_hom
-    (canonicalPullback_reindexComparison Φ hΦ R p (ρ γ).unop.hom (hρ γ) M n) x
+    (canonicalPullback_reindexComparison Φ hΦ R p (ρ γ).unop.asIso.hom (hρ γ) M n) x
 
 end Automorphisms
 
@@ -128,17 +128,17 @@ abbrev awayAutomorphisms : Γ →* (Aut (awayLevelTower e K₀ T))ᵐᵒᵖ :=
   reindexAutomorphisms (awayOver e K₀) ((awayOver e K₀).mapsTo_inverseImage (P := P)) ρ
 
 theorem awayAutomorphisms_hom (γ : Γ) :
-    (awayAutomorphisms e K₀ ρ γ).unop.hom =
-      Functor.whiskerLeft (awayFunctor e P K₀) (ρ γ).unop.hom :=
+    (awayAutomorphisms e K₀ ρ γ).unop.asIso.hom =
+      Functor.whiskerLeft (awayFunctor e P K₀) (ρ γ).unop.asIso.hom :=
   rfl
 
 variable {X : Scheme.{u}} {p : T ⟶ (Functor.const P.FullSubcategory).obj X}
-  (hρ : ∀ γ, (ρ γ).unop.hom ≫ p = p)
+  (hρ : ∀ γ, (ρ γ).unop.asIso.hom ≫ p = p)
 
 include hρ in
 /-- Restrictions of automorphisms over the base are over the base for the away projections. -/
 theorem awayAutomorphisms_over (γ : Γ) :
-    (awayAutomorphisms e K₀ ρ γ).unop.hom ≫
+    (awayAutomorphisms e K₀ ρ γ).unop.asIso.hom ≫
         reindexProjection (awayOver e K₀) ((awayOver e K₀).mapsTo_inverseImage (P := P)) p =
       reindexProjection (awayOver e K₀) ((awayOver e K₀).mapsTo_inverseImage (P := P)) p :=
   reindexAutomorphisms_over (awayOver e K₀) _ ρ hρ γ
@@ -162,8 +162,8 @@ abbrev awayAutomorphismActionFunctor (n : ℕ) :
 theorem automorphism_awayComparison_apply (n : ℕ) (M : ModuleSheaf X R) (γ : Γ)
     (x : ((awayAutomorphismActionFunctor e K₀ ρ hρ R hT n).obj M).V.obj) :
     (awayCohomologyComparison e K₀ (canonicalCoefficients R p M) n).hom.hom
-        ((((awayAutomorphismActionFunctor e K₀ ρ hρ R hT n).obj M).ρ γ).hom.hom x) =
-      (((automorphismActionFunctor R p hT ρ hρ n).obj M).ρ γ).hom.hom
+        ((((awayAutomorphismActionFunctor e K₀ ρ hρ R hT n).obj M).ρ γ).asHom.hom.hom x) =
+      (((automorphismActionFunctor R p hT ρ hρ n).obj M).ρ γ).asHom.hom.hom
         ((awayCohomologyComparison e K₀ (canonicalCoefficients R p M) n).hom.hom x) :=
   automorphism_reindexComparison_apply (awayOver e K₀) _ ρ hρ R hT n M γ x
 

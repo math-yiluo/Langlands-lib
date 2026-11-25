@@ -26,8 +26,8 @@ composition fields. It introduces no assumed laws. Its target universe
 retains the universe of the actual module objects and their skeleton;
 no shrinking to `AddCommGrpCat.{u}` is claimed.
 
-Worker 148 authored this internal packaging and the direct proofs from
-Mathlib's module pullback isomorphisms and the published Picard class API.
+This is internal packaging, with direct proofs from Mathlib's module
+pullback isomorphisms and the published Picard class API.
 The geometric interpretation is the pullback of invertible sheaves in
 Stacks Section 17.25, Lemma 17.25.3, applied to the group of Definition
 17.25.9. The registered retained source is

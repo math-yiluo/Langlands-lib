@@ -1,7 +1,5 @@
 # Characterization of the affine evaluation topology
 
-Author: Worker 105.
-
 This proof combines the coordinate-algebra existence and uniqueness
 proofs for the four original affine-topology axioms derived from
 Conrad, *Weil and Grothendieck approaches to adelic points*

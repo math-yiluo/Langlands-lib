@@ -1,7 +1,5 @@
 # Gram congruence, quadratic isometry and tensor scalar extension
 
-Worker 863.
-
 This internal comparison connects the matrix descent construction to Mathlib
 quadratic forms. It works over a commutative ring with `2` invertible and an
 arbitrary finite coordinate type.

@@ -1,6 +1,6 @@
 # The actual induction rank for proper semistandard Levis
 
-Worker 277, Task 7277. This structural statement and its elementary adapters
+This structural statement and its elementary adapters
 prepare the rank induction preceding Waldspurger VIII.2. They do not prove
 strict rank decrease or any analytic assertion.
 
@@ -38,8 +38,9 @@ and the empty set of simple roots are retained.
   split rank and decomposes it as relative-root rank plus the intrinsic
   rational-character rank. Equality of the full torus ranks and cancellation
   of the latter summand give the assertion.
-- `SemistandardProperLeviRankStatement` is the outstanding exact Prop
-  target: for every field, every connected reductive `G`, every maximal
+- `SemistandardProperLeviRankStatement` is the exact Prop target, proved
+  as `semistandardProperLeviRank` in `Rational.SemistandardProperLeviRankProof`:
+  for every field, every connected reductive `G`, every maximal
   split torus, every intrinsic semistandard index with `p.parabolic ≠ ⊤`,
   and every closed connected reductive model of its literal Levi, the
   relative-root rank at the constructed lifted torus is strictly less than
@@ -61,18 +62,18 @@ and the empty set of simple roots are retained.
 
 | Input | Status and use |
 |---|---|
-| `SemistandardSpectralIndex` and all-test containment/decomposition | Published definitions of Task 7229; reused without a competing index or model carrier |
+| `SemistandardSpectralIndex` and all-test containment/decomposition | Published definitions of `Rational.SemistandardSpectralIndex`; reused without a competing index or model carrier |
 | `relativeRootRank`, `relativeRootSpan`, `relativeSimpleRootBasis` | Published actual root constructions and simple-root/rank comparison |
 | `relativeRankIdentity` | Published proof; supplies torus independence |
 | `IsRepresentedBy.factorHom`, `IsMaximalSplitTorus.of_comp` | Published structural constructions used by the torus lift |
-| `SemistandardProperLeviRankStatement` | New unproved structural target, explicit whenever a rank-decrease consequence is used |
-| Lower-rank VIII.1.2 finiteness | Not used here; Task 7275 supplies its local predicate and proper-support adapters |
-| Lower-rank local synthesis reconstruction | Not used here; Task 7276 supplies its separate local predicate for the actual constant-term Schwartz function |
+| `SemistandardProperLeviRankStatement` | Structural target stated here, explicit whenever a rank-decrease consequence is used; proved in `Rational.SemistandardProperLeviRankProof` |
+| Lower-rank VIII.1.2 finiteness | Not used here; its local predicate and proper-support adapters are not part of this module |
+| Lower-rank local synthesis reconstruction | Not used here; its separate local predicate for the actual constant-term Schwartz function is not part of this module |
 
 All field characteristics, nonsplit and non-quasisplit connected reductive
 groups and arbitrary field universe `u` are allowed. No representation
-carrier occurs in this structural unit; downstream analytic units retain
+carrier occurs in this structural module; downstream analytic modules retain
 an independent representation universe. No same-rank finiteness, general
 Fourier support, synthesis reconstruction, projection, kernel equality or
 Plancherel theorem is assumed or concluded. The global well-founded
-assembly remains with Task 3642, and all Task 4534 controls are preserved.
+assembly is not part of this module.

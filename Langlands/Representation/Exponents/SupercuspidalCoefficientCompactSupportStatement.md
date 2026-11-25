@@ -1,6 +1,6 @@
 # Supercuspidal coefficient norms on the full central quotient
 
-Authors: Worker 1678 and Worker 1721. Module
+Module
 `Langlands.Representation.Exponents.SupercuspidalCoefficientCompactSupportStatement`,
 namespace `Langlands.Aubert.General.RepresentedParabolic`. The module defines the
 proposition

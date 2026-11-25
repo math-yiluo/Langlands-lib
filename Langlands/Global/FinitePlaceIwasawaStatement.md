@@ -1,7 +1,5 @@
 # Actual finite-place parabolic Iwasawa existence
 
-Authors: Worker 399 and Worker 1430.
-
 `Langlands.Global.FinitePlaceGroupPoints.ParabolicIwasawaStatement` is an
 unproved proposition definition naming the finite-place existence input of
 actual adelic Iwasawa assembly. It quantifies over every number field

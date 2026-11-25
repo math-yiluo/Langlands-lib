@@ -1,6 +1,6 @@
 # Original-field torus projections for actual normal almost-simple subgroups
 
-Worker 509. Derived from the intrinsic uniqueness of normal almost-simple
+Derived from the intrinsic uniqueness of normal almost-simple
 product factors and original-field factor torus projections. A supplied actual
 closed normal almost-simple subgroup is identified with its intrinsic factor by
 the isomorphism of representatives of the same all-test subgroup. Transporting

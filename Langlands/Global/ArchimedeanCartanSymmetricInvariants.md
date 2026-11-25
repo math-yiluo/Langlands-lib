@@ -1,7 +1,5 @@
 # Fixed symmetric algebras and Cartan invariant restriction
 
-Author: Worker 94.
-
 This internal construction uses the actual symmetric algebras and conjugation
 maps in `ArchimedeanCartanSymmetricAlgebra`. It defines actual fixed subalgebras
 by requiring equality under every element of the specified group. The field

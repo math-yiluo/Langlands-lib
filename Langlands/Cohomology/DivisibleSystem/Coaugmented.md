@@ -1,11 +1,11 @@
 # Resolutions of ℓ-divisible systems by a coaugmented exact functor
 
-Author: Worker 61. Built on the published modules
+Built on the published modules
 `Langlands.Cohomology.DivisibleSystem` (ℓ-divisible systems, Harris 1999,
 (2.1)), `Langlands.Cohomology.CokernelComplex` (iterated-cokernel complexes of
 a coaugmented endofunctor), `Langlands.Sheaf.Equivariant.Godement.Smooth`
 (the smooth Godement functor), `Langlands.Cohomology.SmoothGodement.Statement`
-(Worker 3's statements about it) and
+(statements about it) and
 `Langlands.Cohomology.DivisibleSystem.Cokernel` (cokernel systems). All names
 below are in the namespace `Langlands.Cohomology.DivisibleSystem`. Write `T m` for `T.obj m`.
 
@@ -123,8 +123,9 @@ degree-zero smooth Godement functor, a transcription of Berkovich's `F` (see
 the Markdown of `Langlands.Sheaf.Equivariant.Godement.Smooth`).
 `smoothCoaugmentation R G X` is its coaugmentation. Its components are
 monomorphisms by a published instance. The exactness of `smoothZeroFunctor`
-is not proved in the Library. It is Worker 3's proposition
-`SmoothGodementZeroExactStatement R G X`, and every declaration below takes a
+is not proved in the Library. It is the proposition
+`SmoothGodementZeroExactStatement R G X` of
+`Langlands.Cohomology.SmoothGodement.Statement`, and every declaration below takes a
 proof `h` of it as an explicit argument.
 
 - `smoothGodementResidualSystem h T q` and `smoothGodementTermSystem h T q`
@@ -139,7 +140,7 @@ proof `h` of it as an explicit argument.
   carries the differential to the differential `d q (q + 1)` of that complex.
 
 The exactness lemmas of the general section apply to these systems directly.
-The smooth section does not need Worker 3's
+The smooth section does not need
 `SmoothGodementTermExactStatement` (exactness of the higher term functors):
 the term systems are obtained by iterating `cokernelSystem`, not by applying
 term functors to `T`.
@@ -147,8 +148,8 @@ term functors to `T`.
 ## Provenance and interpretation
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
-J. Math. Kyoto Univ. 39-2 (1999), section 2, printed p.304. Worker 61 read
-the page in the scanned original.
+J. Math. Kyoto Univ. 39-2 (1999), section 2, printed p.304. The page was read
+in the scanned original.
 
 1. "By induction". Harris gives no formula for `F_m^q`. The reading used here
    is the induction of the Godement resolution. `R 0 = T`, `F^q = F(R q)`
@@ -171,11 +172,11 @@ the page in the scanned original.
    assumption in the general section and by the published instance in the
    smooth section.
 4. Not proved. Harris's `R Γ`-acyclicity of the `F_m^q` is not proved or
-   stated here. For the smooth Godement complex, Worker 3's
+   stated here. For the smooth Godement complex,
    `SmoothGodementCompactAcyclicStatement` is a related statement, not used
    here.
-5. Sheaves. The smooth section works with Worker 13's smooth equivariant
-   sheaves on a topological space in place of Harris's étale sheaves in
+5. Sheaves. The smooth section works with the published smooth equivariant
+   sheaves on a topological space (`SmoothTopologicalSheaf`) in place of Harris's étale sheaves in
    smooth modules on `U(ẽ)` (see item 6 of the Markdown of
    `Langlands.Cohomology.DivisibleSystem`).
 

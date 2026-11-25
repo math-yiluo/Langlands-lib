@@ -6,9 +6,8 @@ page 419. The registered original is `jpss-1983-rankin-selberg`, SHA-256
 `d9feed6388ca5acf02ecc6a8cce984871a7c28f062ff441e45a71fa2d8962245`.
 The source supplies the displayed matrix. The residual and its character
 calculation are internally derived algebraic data used to formalize its
-covariance. Worker 484 supplied the residual design, Worker 1209 supplied the
-actual matrix and coordinate helpers, and Worker 1198 implemented these
-membership and character proofs.
+covariance. The actual matrix and coordinate helpers are imported from
+`TwoBlockDominantRectangularData`.
 
 The scalar field `K : Type uF` has arbitrary universe. With
 `a=m 0+1`, `b=m 1+1`, `c=j+k+1`, the hypotheses are

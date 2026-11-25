@@ -1,6 +1,6 @@
 # First adjointness and induction duality on represented Levi points
 
-Author: Worker 138. Namespace `Langlands.Aubert.General.RepresentedParabolic`.
+Namespace `Langlands.Aubert.General.RepresentedParabolic`.
 
 This internal adapter provides the unconditional Frobenius and induction-duality inputs
 to David Renard's Hom chain (VI.9.6.3), *Représentations des groupes réductifs p-adiques*,

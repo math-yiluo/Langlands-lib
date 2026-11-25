@@ -1,6 +1,6 @@
 # The actual coarse twist belongs to its real block
 
-Author: Worker 526. The namespace is
+The namespace is
 `Langlands.TemperedCoarseRealBlock`. This internal consequence of analytic
 temperedness retains independent field and coarse-carrier universes.
 

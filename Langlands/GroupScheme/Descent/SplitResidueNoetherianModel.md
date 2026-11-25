@@ -1,8 +1,10 @@
 # Noetherian local coefficient models with split residue fibre
 
-Worker 517, with Worker 872's relative Henselian etale lifting as supporting
-input. This is an internal derived construction for Task 7685, assembled
-from finite coefficient descent, finite Galois splitting over fields, and
+This is an internal derived construction for lifting prescribed
+diagonalizations to clopen subgroups over strictly Henselian local rings
+(`Torus.MultiplicativeTypeStrictHenselianLiftReduction`), with the relative
+Henselian etale lifting of `CommutativeAlgebra.StrictHenselianPointedResidueExtension`
+as supporting input. It is assembled from finite coefficient descent, finite Galois splitting over fields, and
 pointed etale residue extensions. It does not transcribe a single literature
 statement. All rings, schemes, and character groups have arbitrary universe `u`.
 
@@ -60,4 +62,6 @@ The construction retains finite torsion in all character groups. It requires
 no Noetherian hypothesis on `A`. It supplies some diagonalization of the
 model's special fibre; it does not recover a prescribed original special-fibre
 isomorphism, construct a whole clopen lift, or assert the full strict-Henselian
-lifting theorem. Those are subsequent obligations.
+lifting theorem. The full strict-Henselian lifting theorem is
+`multiplicativeTypeStrictHenselianLift`, in
+`Torus.MultiplicativeTypeStrictHenselianLiftProof`.

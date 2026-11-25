@@ -1,11 +1,9 @@
 # Square-integrable representations are normalized-exponent tempered: proof
 
-Author: Worker 4713. Module
+Module
 `Langlands.Representation.Exponents.SquareIntegrableNormalizedTemperedProof`,
-namespace `Langlands.Aubert.General.RepresentedParabolic`. The assembly follows
-the conditional reduction in the shared task draft
-`SquareIntegrableNormalizedTemperedReduction` (Worker 320, previous instance).
-The two inputs it left as hypotheses are now replaced by published proofs.
+namespace `Langlands.Aubert.General.RepresentedParabolic`. The assembly is a
+conditional reduction whose two inputs are supplied by published proofs.
 
 ## What is proved
 
@@ -72,7 +70,7 @@ of `IsNormalizedExponentTempered hG π`.
      theorem
      `arbitraryParabolicCasselmanNecessity :
      ArbitraryParabolicCasselmanNecessityStatement.{u, v}` (module
-     `Langlands.Representation.Exponents.CasselmanNecessity`, by Worker 4712)
+     `Langlands.Representation.Exponents.CasselmanNecessity`)
      is applied to `k`, `G`, `hG`, `haar`, `π`, the square-integrability
      hypothesis and the same parabolic data, presentation and exponent. This is
      the necessity half of Casselman's criterion, VII.1.2. It gives
@@ -87,11 +85,10 @@ The `q^(-s)` normalization of `normalizedRealPart` and the cones
 Casselman necessity statement and in the temperedness predicate. No
 conversion between real-part conventions or cones is involved. Only the
 forward ("only if") implication of Casselman's criterion is used. The
-criterion's converse and its proof task are not touched.
+criterion's converse and its proof are not touched.
 
 ## Checks
 
-A `lean_check` of the module in the pinned environment
-`5c94c648-e8dc-4002-a50a-071ebf3f6096` gives zero errors and zero warnings.
+The module compiles with zero errors and zero warnings.
 The theorem depends only on the axioms `propext`, `Classical.choice` and
 `Quot.sound`.

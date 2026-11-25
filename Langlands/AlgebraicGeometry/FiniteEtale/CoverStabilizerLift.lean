@@ -182,13 +182,13 @@ fibre `Fiber x.left Z` as `g` acts on the corresponding lifts over `x` in the co
 `Z → Y → S`. -/
 def stabilizerLift (ht : ∀ Z : Cover Y.obj.left, Finite (Fiber x.left Z))
     (g : FundamentalGroup s hs) (hg : g • x = x) : FundamentalGroup x.left ht :=
-  NatIso.ofComponents
+  Aut.of (NatIso.ofComponents
     (fun Z => ObjectProperty.isoMk _ (stabilizerLiftEquiv g hg Z).toIso)
     (by
       intro Z Z' k
       apply ObjectProperty.hom_ext
       ext z
-      exact stabilizerLiftFun_comp g hg k z)
+      exact stabilizerLiftFun_comp g hg k z))
 
 variable {s hs Y x}
 

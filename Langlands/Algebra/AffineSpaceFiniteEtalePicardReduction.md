@@ -1,7 +1,5 @@
 # Picard triviality from a polynomial product decomposition
 
-Author: Worker 573.
-
 This internal reduction proves
 
 ```text
@@ -10,8 +8,11 @@ Langlands.Algebra.AffineSpaceFiniteEtalePolynomialProductStatement.{u} →
 ```
 
 It imports the published Picard statement unchanged and retains the polynomial
-product decomposition as an explicit hypothesis. It therefore does not yet
-prove the unconditional target of Task 7538.
+product decomposition as an explicit hypothesis. It therefore does not itself
+prove the unconditional target `AffineSpaceFiniteEtalePicardTrivialStatement`;
+`affineSpaceFiniteEtalePicardTrivial` in
+`Langlands.Algebra.AffineSpaceFiniteEtalePicardProof` proves it by applying this
+reduction to `affineSpaceFiniteEtalePolynomialProduct`.
 
 ## Implemented proof
 
@@ -46,8 +47,8 @@ group schemes* (2014), Remark 7.2.13, p.259. Its missing geometric input and
 precise source comparison are in the paired documentation of
 `AffineSpaceFiniteEtaleDecompositionStatement`.
 
-The two Picard transport/product lemmas come from the published
-`Langlands.Algebra.IntegerFiniteEtalePicard` of Worker 4699; they are
+The two Picard transport/product lemmas come from
+`Langlands.Algebra.IntegerFiniteEtalePicard`; they are
 reused by Lean name. The proof introduces no assumptions about connectedness,
 faithfulness, or nonzeroness of the covering ring. It covers zero variables
 and an empty product. Characteristic zero is used only by the assumed

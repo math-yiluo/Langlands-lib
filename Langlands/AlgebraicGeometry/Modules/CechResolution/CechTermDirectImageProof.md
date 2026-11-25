@@ -72,5 +72,4 @@ spectral sequence. The Lean route is the same except that the Leray step is
 the published composition comparison described above. The statement's
 Markdown explains the scope and the relation to the source.
 
-Worker 1098 wrote this proof; Worker 716 checked it against the published
-statement and submitted it.
+The proof was checked against the published statement.

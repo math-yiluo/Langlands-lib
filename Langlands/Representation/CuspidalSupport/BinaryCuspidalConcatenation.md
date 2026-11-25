@@ -1,7 +1,5 @@
 # Binary concatenation of supplied cuspidal families
 
-Author: Worker 357.
-
 This module constructs the consecutive concatenation of two supplied cuspidal
 families of positive total ranks, retains their actual supplied representatives,
 and proves that its actual induction is the literal normalized binary product
@@ -175,7 +173,7 @@ actual equality transports of the block ranks. These are general induction,
 topology and tensor arguments, independent of any segment conclusion.
 
 `Classification.SupercuspidalSupport` supplies the existing cuspidal shape,
-actual induced product and representation-of-datum relation. This candidate
+actual induced product and representation-of-datum relation. This module
 uses their definitions and the supplied objects; it does not assume a
 support-classification theorem. `Induction.BinaryProduct` supplies the actual
 binary pair family, positive product, all-rank product and their proved
@@ -187,10 +185,8 @@ flattening comparison.
 
 The complete recursive project inventory below was checked against Library
 commit `0ebc0efd383ff160084af3b33ab2b7806f7a1dde`. It has 401 project modules,
-including this new pair, and 172 direct external import roots. Every inherited
-Lean/Markdown pair is present, nonempty and unchanged. There are no missing
-project imports, excluded task/name pattern matches, proof holes or imports of
-an unpublished candidate. The scan removes Lean comments and strings. Its
+including this module, and 172 direct external import roots. There are no missing
+project imports or proof holes. The scan removes Lean comments and strings. Its
 external inventory is a list of direct external roots, not a recursive Mathlib
 inventory.
 
@@ -198,7 +194,7 @@ The wider closure inherited from general flattening includes the lower
 cuspidal/Jacquet, finite-length and tensor-occurrence infrastructure. Its 18
 Classification modules are explicitly listed in the project inventory; they
 provide definitions, statement interfaces and general lower results. None of
-the excluded segment/head/socle, full segment Jacquet or classification
+the segment/head/socle, full segment Jacquet or classification
 conclusions is invoked by the proof route above. The extra
 `FlattenedTensorOccurrences` import is not used as a mathematical input by
 this construction. In particular the four derivative-named inherited modules
@@ -207,29 +203,15 @@ are only `MirabolicMinusExactnessStatement`, `MirabolicMinus`,
 segment derivative formula is used. The actual proof route was checked as
 well as the inventory; the import scan alone is not the independence argument.
 
-The unchanged host exclusions of task
-`8364e73f-14ec-4d14-8f2b-1555a7c1ce95` remain in force. The complete trusted
-operator responses `bd71b9185aab5d6eafffb7891bd3a3ca`,
-`0edda6122ce65ed7ac51603c37473920` and
-`30144f6f9b59540b88b6d4c1517892d9` were read in full. This candidate uses
-general induction infrastructure; it does not need the operator's conditional
-permission for a newly proved support-only derivative bound. Its proof uses
-none of Ze80 3.5/9.6 or their proof successors, the segment-socle part of
-8e5b4563, the full host criterion in either direction, or any conclusion of
-`30341ae4-65f2-4a0e-9283-763db01a409e`,
-`3bfb61fa-1129-4fc9-83fd-7fcfec22106e`,
-`ebea9a8a-9b21-4208-aa31-98c2dea1f8a3`,
-`20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584`,
-`8252833d-c269-41a9-824c-5879e531b23b`,
-`52e97845-36bb-457d-b76f-70753334b88c`,
-`1cb45da2-7007-4351-a694-594fb148b8d1`,
-`cd8ab97c-0b78-4bce-97c4-d307a28159a4`, or
-`bf433f0a-921a-428c-b0c0-6475438125ac`. No pending derivative, contragredient,
-product-subquotient or empty-product candidate is used.
+The construction uses general induction infrastructure and needs no
+support-only derivative bound. Its
+proof uses none of Ze80 3.5/9.6 or results proved from them, the segment-socle
+results, or the full `SegmentHeadProductIrreducibility` criterion in either
+direction.
 
 ## Remaining scope
 
-This contribution covers positive total ranks `a,b` only. It proves no
+This module covers positive total ranks `a,b` only. It proves no
 irreducibility, finite length, support classification, product derivative
 aggregation, nonlinkage survival, or linked converse. Extending this actual
 comparison to zero total ranks still requires the corresponding actual

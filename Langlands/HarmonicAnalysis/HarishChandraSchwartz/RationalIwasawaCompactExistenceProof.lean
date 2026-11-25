@@ -72,7 +72,7 @@ private theorem nonempty_valuationBuildingData (hG : IsConnectedReductive G) :
 variable (B : ValuationBuildingData G)
 
 local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
-local instance : TopologicalSpace (rationalPoints G) := rationalPointTopology F G.X
+local instance rationalIwasawaCompactExistenceProofTopologicalSpace : TopologicalSpace (rationalPoints G) := rationalPointTopology F G.X
 
 private theorem filtration_le_compactStabilizer (x : B.Apartment) (a : relativeRoots B.i) :
     B.filtration x a 0 ≤ B.compactStabilizer (B.apartmentMap x) := by

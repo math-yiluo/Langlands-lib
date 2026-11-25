@@ -1,7 +1,5 @@
 # Assembly of the maximal-cone selection
 
-Author: Worker 23.
-
 This module proves the published proposition
 `Langlands.GLMaximalConeJacquetQuotientStatement`
 (`Langlands.Representation.Classification.MaximalConeStatement`) from four

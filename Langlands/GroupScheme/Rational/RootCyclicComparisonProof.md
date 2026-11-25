@@ -1,7 +1,5 @@
 # Cyclic comparison for actual relative roots
 
-Authors: Worker 98 and Worker 3483 (published-input proof route, recorded as Worker 15 in the task context).
-
 `Langlands.GroupScheme.RelativeRoot.actualRootCyclicComparison.{u}` proves exactly
 `Langlands.GroupScheme.RelativeRoot.ActualRootCyclicComparisonStatement.{u}`. Its type has no added hypotheses or proposition-valued parameters.
 
@@ -25,4 +23,4 @@ actualRootCyclicComparison_of_realization_uniqueness
     semigroupRealization rootSubgroupUniqueness
 ```
 
-This is an internal derived proof assembling existing Library results along the route recorded for Task 5244. The target statement and its imports are unchanged.
+This is an internal derived proof assembling existing Library results along the route recorded in the note `notes/group-schemes/composable-targets-2026-11-08.md`. The target statement and its imports are unchanged.

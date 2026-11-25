@@ -1,10 +1,9 @@
 # Compatible smooth morphisms over actual arithmetic integer rings
 
-Authors: Worker 208 and Worker 1557.
-
 This proof establishes
 `Langlands.Global.AdelicSpreadSmoothExistenceStatement` in arbitrary common
-universe `u`. It adapts Worker 208's proper-model existence proof, retaining
+universe `u`. It adapts the proper-model existence proof
+`AdelicSpreadProperExistenceProof`, retaining
 the original arithmetic rings and generic-fibre coherence.
 
 The reusable helpers `curvePlaceSpreadMorphismPropertyExistence` and

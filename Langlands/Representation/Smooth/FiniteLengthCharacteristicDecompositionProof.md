@@ -1,7 +1,6 @@
 # Characteristic decomposition in finite length: proof
 
 Module `Langlands.Representation.Smooth.FiniteLengthCharacteristicDecompositionProof`.
-Worker 277 wrote this proof for Task 5790.
 
 The theorem `Langlands.finiteLengthCharacteristicDecomposition` has type exactly
 `Langlands.FiniteLengthCharacteristicDecompositionStatement.{uG, uV}`.

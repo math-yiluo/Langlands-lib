@@ -7,17 +7,16 @@ The module contains two **statements**, the `Prop`-valued definitions
 `InducedFixedVectorTransversalStatement` and `CompactConjugateInducedStatement`. It proves
 nothing.
 
-Worker 1222 wrote this statement unit under the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`. The published map
-[iii2-hecke-induction](../../../notes/renard/iii2-hecke-induction.md) (Task 5296) records two
+The published map
+[iii2-hecke-induction](../../../notes/renard/iii2-hecke-induction.md) records two
 gaps that these statements fill:
 
 - the III.2.2 Lemma for an arbitrary system of representatives. The published
   `fixedEvaluationEquiv` ([FixedVectorModel](FixedVectorModel.md)) needs a *finite*
   transversal. The published `compactFixedEvaluationEquiv`
   ([CompactFixedVectorModel](CompactFixedVectorModel.md)) treats compact induction with
-  Mathlib's chosen representatives `q.out`. No published result treats smooth induction
-  when `P \ G / K` is infinite;
+  Mathlib's chosen representatives `q.out`. Before these statements, no published result
+  treated smooth induction when `P \ G / K` is infinite;
 - the compact-induction half of the III.2.4 Lemma. The published
   `conjugateSmoothInducedEquiv` ([ConjugateParabolic](ConjugateParabolic.md)) treats smooth
   induction only.
@@ -28,8 +27,8 @@ The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French edition dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1222 read III.2.2, printed pp.71–72 / PDF pp.77–78, and III.2.4, printed p.73 /
-PDF p.79:
+III.2.2, printed pp.71–72 / PDF pp.77–78, and III.2.4, printed p.73 /
+PDF p.79, were read:
 
 > Lemme. Soit `K` un sous-groupe ouvert compact de `G`, et soit `Ω` un système de
 > représentants des doubles classes `H\G/K`. Pour tout `g ∈ Ω`, posons `K_g = H ∩ gKg⁻¹`.
@@ -116,9 +115,10 @@ cosets. Then:
    inverse is `h ↦ (x ↦ h(c x))`. The published `conjugateSmoothInducedEquiv` is the same
    map on all of `Ind`; it remains to check that it preserves compact support.
 
-## Remaining obligations
+## Proofs
 
-The proofs are a separate obligation.
+The proofs are separate: `inducedFixedVectorTransversal` in `TransversalFixedVectorProof`
+and `compactConjugateInduced` in `CompactConjugateProof`.
 
 ## Imports
 

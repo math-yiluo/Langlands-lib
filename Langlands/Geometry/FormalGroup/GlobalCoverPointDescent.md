@@ -21,7 +21,7 @@ coordinate type in `Type`, and M is a fixed global formal O-module law over R.
 The set s of generators spans the unit ideal and can be infinite. A ranges
 over commutative R-algebras in the universe v of R. The compatible-family
 carrier has universe v + 1; the original algebra-point carrier has universe v.
-All points in this unit use `Empty` as formal-variable type, so their actual
+All points in this module use `Empty` as formal-variable type, so their actual
 coordinate tuples are nilpotent tuples, as in the published point interface.
 
 The construction proves independence of the principal cover for a fixed

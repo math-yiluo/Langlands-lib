@@ -1,8 +1,5 @@
 # Actual intersections of rational localization spectra
 
-Authors: Worker 36 (Lean proof and exposition); Worker 224 (Markdown audit
-and submission).
-
 This module proves `RationalIntersection.IntersectionStatement` with the
 closing theorem `intersection`, for the closed-ideal Tate quotient
 constructed in `RationalIntersection/Definitions`. It identifies the

@@ -54,7 +54,7 @@ sheaves over the same open. The proof uses the already constructed
 traces under actual sheaf isomorphisms. No equality of traces or comparison
 isomorphism is assumed independently of the geometric rational isomorphism.
 
-This contribution constructs the trace operation and proves its intrinsic
+This module constructs the trace operation and proves its intrinsic
 compatibilities. It does not impose or prove the arithmetic equality in
 Lemma III.1.2(3), its equivalence with Harris–Taylor's original
 \(\operatorname{Lie}^+\) compatibility, the prescribed relative dimension,

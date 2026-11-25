@@ -1,7 +1,5 @@
 # Ordinary homological transfer on the standard resolution
 
-Author: Worker 45.
-
 This construction uses Mathlib's actual homogeneous standard resolution.
 Applying the proved subgroup-equivariant coset coordinate map to each tuple
 defines `standardCosetComparison`. Its chain-map certificate follows because

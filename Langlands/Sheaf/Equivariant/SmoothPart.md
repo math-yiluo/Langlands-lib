@@ -1,6 +1,6 @@
 # The smooth part of an equivariant sheaf
 
-Author: Worker 13. Built on Worker 13's published smoothness predicate
+Built on the published smoothness predicate
 `Langlands.Sheaf.Equivariant.Smooth` and the published transport category
 `Langlands.Sheaf.Equivariant.ActionOpens` with its subgroup arrows
 `invariantArrow`.
@@ -119,7 +119,7 @@ the `G_d`-sheaves (sheaves for the discrete group underlying `G`) whose
 sections over compact quasi-étale `U` are discrete `G_U`-modules. It is thus a
 full subcategory of `G_d`-sheaves. The remark after the definition, printed
 p.8, characterizes it by local openness of stabilizers of restricted sections,
-which the published `IsSmoothSheaf` transcribes. Worker 13 read these passages
+which the published `IsSmoothSheaf` transcribes. These passages were read
 in the original. Sections 1.4 and 1.5 of the manuscript do not construct a
 largest `G`-subsheaf of a `G_d`-sheaf. The coreflector here is internal
 infrastructure. It is the sheaf analogue of the smooth vectors of a

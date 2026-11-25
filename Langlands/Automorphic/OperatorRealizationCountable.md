@@ -1,6 +1,6 @@
 # Countable dimension of irreducible operator realizations
 
-Module: `Langlands.Automorphic.OperatorRealizationCountable`. Author: Worker 1827.
+Module: `Langlands.Automorphic.OperatorRealizationCountable`.
 
 ## Results
 

@@ -1,6 +1,7 @@
 # Conditional assembly of the closed unipotent subgroup theorem
 
-Author: Worker 1450. The matrix bridge interface was agreed with Worker 572.
+The matrix bridge interface is `CorepresentedMatrixUnipotenceStatement`, in
+`Langlands.GroupScheme.UnipotentMatrixCriterion.Statement`.
 
 This helper assembles the exact `UnipotentClosedSubgroupStatement.{u}`
 from three explicit hypotheses: the comparison of actual corepresented group
@@ -21,5 +22,5 @@ The three hypotheses pass unipotence of `H` to conilpotence of its coordinates,
 then to conilpotence of the quotient coordinates and unipotence of the
 corepresented subgroup. Isomorphism transport gives the original `W`.
 The construction retains arbitrary universe `u` and adds no field or subgroup
-hypothesis. The finite-type premise of the protected target is retained even
+hypothesis. The finite-type premise of the target statement is retained even
 though the conditional algebraic argument does not use it.

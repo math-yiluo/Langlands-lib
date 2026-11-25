@@ -1,6 +1,6 @@
 # Skeleton of the Noetherian-approximation proof
 
-Module `Langlands.AlgebraicGeometry.QuasiAffineApproximation.Skeleton`, by Worker 5045.
+Module `Langlands.AlgebraicGeometry.QuasiAffineApproximation.Skeleton`.
 It serves the proof of
 `Langlands.AlgebraicGeometry.AlgebraicSpace.QuasiAffineSourceAFNoetherianSchemeApproximationStatement`.
 The module states three interface propositions and shows how they combine. They are proved

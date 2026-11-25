@@ -1,7 +1,5 @@
 # Centralizing pair apartments from unit-fixed neutral models
 
-Authors: Worker 362 and Worker 249.
-
 This internal construction combines the actual split-source closure,
 containing-torus lift, coefficient residue comparison, and centralizing
 apartment construction. It works over any nonarchimedean local field `F`
@@ -47,6 +45,6 @@ endpoints in the chart translated by this same `g`.
 The provenance is composition of these named internal Library
 constructions. No descended containing torus or integral lift is retained
 as an additional input. Construction of the lower pair model and its
-exact full-model equality remains outside this conditional unit; in
-particular, this unit alone does not prove the host
-`UnramifiedFixedPairSpecialApartmentStatement`.
+exact full-model equality remains outside this conditional module; in
+particular, this module alone does not prove
+`UnramifiedFixedPairSpecialApartmentStatement`, the statement it serves.

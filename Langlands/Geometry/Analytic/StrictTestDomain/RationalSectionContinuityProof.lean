@@ -277,13 +277,13 @@ variable {K : Type u} [NormedField K] [IsUltrametricDist K] [CompleteSpace K]
   {P : PresentedStrictAffinoidAlgebra K} (d : RationalData K P)
   {G : Type v} [Group G] [TopologicalSpace G] [IsTopologicalGroup G]
   (ρ : G →* locusStabilizer d)
-  (hb : ∀ a : P, Continuous (fun g : G => (ρ g : Aut P).hom.toAlgHom a))
+  (hb : ∀ a : P, Continuous (fun g : G => (ρ g : Aut P).asIso.hom.toAlgHom a))
 
 omit [IsTopologicalGroup G] in
 include hb in
 /-- The action's base-section orbits inherit the given base orbit continuity. -/
 theorem continuous_section_baseMap (a : P) :
-    Continuous (fun g : G => (stabilizerSectionAction d (ρ g)).hom.toAlgHom (d.baseMap a)) := by
+    Continuous (fun g : G => (stabilizerSectionAction d (ρ g)).asIso.hom.toAlgHom (d.baseMap a)) := by
   simp_rw [stabilizerSectionAction_baseMap]
   exact d.baseMap.continuous.comp (hb a)
 
@@ -292,8 +292,8 @@ include hb in
 /-- Each section orbit is continuous at the identity, using the common local
 contraction bound derived from the finite rational presentation. -/
 theorem continuousAt_section_one (b : d.algebra) :
-    ContinuousAt (fun g : G => (stabilizerSectionAction d (ρ g)).hom.toAlgHom b) 1 := by
-  apply continuousAt_map_of_coordinates (fun g => (stabilizerSectionAction d (ρ g)).hom)
+    ContinuousAt (fun g : G => (stabilizerSectionAction d (ρ g)).asIso.hom.toAlgHom b) 1 := by
+  apply continuousAt_map_of_coordinates (fun g => (stabilizerSectionAction d (ρ g)).asIso.hom)
     (d.continuousAt_map_coordinates _ (fun a =>
       (continuous_section_baseMap d ρ hb a).continuousAt))
   intro i
@@ -304,9 +304,9 @@ theorem continuousAt_section_one (b : d.algebra) :
 include hb in
 /-- The actual fixed rational-quotient action has continuous section orbits. -/
 theorem continuous_section_orbit (b : d.algebra) :
-    Continuous (fun g : G => (stabilizerSectionAction d (ρ g)).hom.toAlgHom b) := by
+    Continuous (fun g : G => (stabilizerSectionAction d (ρ g)).asIso.hom.toAlgHom b) := by
   apply continuous_map_of_continuousAt_one
-    (fun g => (stabilizerSectionAction d (ρ g)).hom)
+    (fun g => (stabilizerSectionAction d (ρ g)).asIso.hom)
     (fun g h => ?_) (continuousAt_section_one d ρ hb) b
   change stabilizerSectionMap d (ρ (g * h)) =
     (stabilizerSectionMap d (ρ g)).comp (stabilizerSectionMap d (ρ h))

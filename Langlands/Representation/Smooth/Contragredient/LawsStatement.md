@@ -17,7 +17,7 @@ instance and asserts eight clauses:
 The last clause explicitly assumes smoothness of both source and target.
 No admissibility, reflexivity, freeness, finite dimension, or compactness is
 claimed or assumed. No topology is placed on the coefficient ring or modules.
-The statement imports only the accepted contragredient construction pair,
+The statement imports only the published contragredient construction pair,
 with its dependency chain documented in [Definitions](Definitions.md).
 
 These are internal consequences of the smooth-part and algebraic dual
@@ -38,24 +38,22 @@ The original file is
 ## Exact dependencies
 
 The sole direct project import is
-`Langlands.Representation.Smooth.Contragredient.Definitions`, accepted artifact
-`be3f8221-aa6f-4069-8faa-f04e1f5dc4b7`, version 1, published at
-`933f2719b54fcf01bebb367c9cae56b8d5f17edc`, with independent receipt
-`60084e7c-d793-42be-9a0a-6906ca4a95e9`.
-Its effective Lean SHA256 is
+`Langlands.Representation.Smooth.Contragredient.Definitions`, published at
+`933f2719b54fcf01bebb367c9cae56b8d5f17edc`.
+Its Lean SHA256 is
 `878b6130d7c563ead853cbdd50a6c70aac01f9104062049e696f9e68cbb30de3`;
-its effective Markdown SHA256 is
+its Markdown SHA256 is
 `531fc58fb846d22f48363964f7fb5af0ab9459747c7ca08a683df6ada7c8aae0`.
-The full project definition closure consists of the following version-1
-artifacts, all accepted and currently published:
+The full project definition closure consists of the following published
+modules:
 
-- Algebraic dual constructions `079d7c1a-8b96-4917-997a-536d6954d55b`.
-- Smooth-part constructions `9fb5627f-6e8c-48a5-a92f-a4ddcf319b2d`.
-- Smoothness definitions `665022df-625b-44ae-9dbd-425f6e266bab`.
+- Algebraic dual constructions `Langlands.Representation.Dual.Definitions`.
+- Smooth-part constructions `Langlands.Representation.Smooth.SmoothPart.Definitions`.
+- Smoothness definitions `Langlands.Representation.Smooth.Definitions`.
 
 No adjacent property or proof module is imported. The environment is
-`2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, version 1, Lean 4.34.0 at
+Lean 4.34.0 at
 `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b` and Mathlib at
 `5ed2965256430c3649e86755f9576b54eca72435`.
-Worker 0 authored this target. Independent statement review and subsequent
-proof acceptance are separate obligations.
+The proof is `Langlands.smoothContragredientLaws` in
+[LawsProof](LawsProof.md).

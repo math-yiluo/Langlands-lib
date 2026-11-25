@@ -24,17 +24,17 @@ def groupRestrictionCompIso (M : EquivariantDiagram F C) :
   hom :=
     { hom := 𝟙 M.obj
       comm i g := by
-        change M.ρ i ((ψ.app i).hom ((φ.app i).hom g)) ≫ 𝟙 _ =
-          𝟙 _ ≫ M.ρ i ((χ.app i).hom g)
+        change (M.ρ i ((ψ.app i).hom ((φ.app i).hom g))).asHom ≫ 𝟙 _ =
+          𝟙 _ ≫ (M.ρ i ((χ.app i).hom g)).asHom
         simp only [Category.comp_id, Category.id_comp]
-        exact congrArg (M.ρ i) (congrArg (fun f => f g) (h i)) }
+        exact congrArg (fun b => (M.ρ i b).asHom) (congrArg (fun f => f g) (h i)) }
   inv :=
     { hom := 𝟙 M.obj
       comm i g := by
-        change M.ρ i ((χ.app i).hom g) ≫ 𝟙 _ =
-          𝟙 _ ≫ M.ρ i ((ψ.app i).hom ((φ.app i).hom g))
+        change (M.ρ i ((χ.app i).hom g)).asHom ≫ 𝟙 _ =
+          𝟙 _ ≫ (M.ρ i ((ψ.app i).hom ((φ.app i).hom g))).asHom
         simp only [Category.comp_id, Category.id_comp]
-        exact congrArg (M.ρ i) (congrArg (fun f => f g) (h i)).symm }
+        exact congrArg (fun b => (M.ρ i b).asHom) (congrArg (fun f => f g) (h i)).symm }
   hom_inv_id := by apply Hom.ext; exact Category.id_comp _
   inv_hom_id := by apply Hom.ext; exact Category.id_comp _
 

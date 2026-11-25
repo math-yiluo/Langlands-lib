@@ -1,6 +1,6 @@
 # The idempotents `e_{K,τ}` of an irreducible compact representation: statement
 
-Author: Worker 6. Module `Langlands.Representation.CompactCoefficient.CompactProjectionDistributionStatement`, namespace `Langlands.Renard.CompactRepresentation`.
+Module `Langlands.Representation.CompactCoefficient.CompactProjectionDistributionStatement`, namespace `Langlands.Renard.CompactRepresentation`.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*, French edition dated 9 July 2026, IV.1.5, Theorem and proof, printed p.92 / PDF p.98, in the setting of IV.1.3–IV.1.4 (`G` a unimodular t.d. group, countable at infinity, with a bi-invariant Haar measure). The registered source ID is `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 
@@ -16,7 +16,7 @@ Renard identifies `H(G)` with `𝒟(G)` through the chosen Haar measure (IV.1.4)
 
 ## The Lean statement
 
-`CompactProjectionDistributionStatement` is a statement unit: nothing is proved.
+`CompactProjectionDistributionStatement` is a statement: nothing is proved.
 
 **Group and measure.** The binders are those of the published Bernstein–Zelevinsky statements (`CompactCoefficientProjectorStatement`). `G : Type u` is a Hausdorff, locally compact, totally disconnected topological group that is `SigmaCompactSpace`. It carries its Borel structure and a regular Haar measure `μ` that is also right invariant (unimodularity).
 
@@ -41,4 +41,4 @@ By (i), `e_{K,τ}` is the unique `e` with `IsProjector K hK e`. So (ii) and (iii
 
 - The irreducible representations `ρ` range over carriers in the universe `v` of `τ`. This loses nothing for a group countable at infinity, since irreducible smooth representations have countable dimension and so have copies in every universe. The uniqueness in (i) relies on the completeness theorem III.1.11 for these representations.
 - The operator `π(e_τ)` built from these idempotents, the formal degree `d(τ)` and the IV.1.4 Proposition are not stated here. The projector `π(e_τ)` on arbitrary smooth representations corresponds to the published `CompactCoefficientProjectorStatement`.
-- The proof is not formalized here.
+- The proof is not formalized here; it is `compactProjectionDistribution` in `CompactProjectionDistributionProof`.

@@ -45,6 +45,8 @@ private theorem weightInflation_eq_of_doubled_weights
     F.weightInflation x = y := by
   let : IsAddTorsionFree (characterLattice P.toSplitPinning.torus) :=
     LeviGluing.isAddTorsionFree_of_rootDatum P.rootDatum
+  have : HasUniqueDiv (characterLattice P.toSplitPinning.torus) :=
+    ⟨fun _ hn a b hab => eq_of_nsmul_eq_nsmul_of_addCommute hn (AddCommute.all a b) hab⟩
   apply nsmul_right_injective (n := 2) (by decide)
   calc
     _ = F.weightInflation ((2 : ℕ) • x) := (map_nsmul F.weightInflation 2 x).symm
@@ -130,7 +132,7 @@ private theorem weightInflation_componentProjection_D4 (a : p.index.Vertex)
     calc
       _ = S.rootEquiv.weightEquiv
           ((2 : ℕ) • p.index.absoluteFundamentalCharacter (p.isSimplyConnected hsc) a) :=
-        (map_nsmul S.rootEquiv.weightEquiv 2 _).symm
+        (S.rootEquiv.weightEquiv.toLinearMap.toAddMonoidHom.map_nsmul 2 _).symm
       _ = S.rootEquiv.weightEquiv (p.index.pinning.rootDatum.root a.val) :=
         congrArg S.rootEquiv.weightEquiv hω
       _ = S.pinning.rootDatum.root (S.rootEquiv.indexEquiv a.val) :=

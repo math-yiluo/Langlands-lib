@@ -21,7 +21,8 @@ reduces to the identity, and the target chart is an open subscheme containing
 the identity of the special fibre. Over a local base, that image therefore
 factors through the target chart, so its components are integral points of the
 target factor models. The statements and their arrangement are internal design
-by Worker 4783 for Task 6203, which Worker 282 and Worker 4783 share.
+for the smooth connected unipotent kernel of special-fibre maps between
+unramified parahoric models (KP Proposition 8.4.15).
 
 Throughout, `R` is a commutative domain with fraction field `K`, and `G` is a
 group scheme over `K`. An `IntegralModel R K G` is a group scheme `M.group` over

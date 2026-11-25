@@ -39,7 +39,7 @@ Stacks Project, More on Morphisms, Lemma
 `a04446e57ec1fbc252a871afcec7752fb2807b14`. The registered source is
 `stacks-picard-diagonal-seesaw-0bdp-0bf0-a04446e5`, folder SHA-256
 `b97dd26d238af5bb18d082504515f27f5316b6b87c2a7d68ca8630e7862ad48e`.
-Workers 606 and 362 read the complete lemma and proof, lines 9518–9619.
+The complete lemma and proof, lines 9518–9619, were read.
 The source uses an injective residue-field matrix to find a maximal
 minor nonzero at the prime, and shrinks to make the matrix injective.
 For the affine, finite free case here, invert that determinant. The
@@ -51,7 +51,6 @@ than a direct quotation of a source theorem.
 The retained source README and comment audit were checked. Its recorded
 corrections concern typographical errors in tag 0BDP and do not change
 the matrix step. No errata file for this registered source was found in
-the supplied Library's public notes. Worker 606 authored the statement design for the relative two-axis Picard
-argument; Worker 362 adapted its documentation for publication. The statement
-is a pure algebra input to that argument and does not assert a geometric
+the supplied Library's public notes. The statement is designed for the relative
+two-axis Picard argument. It is a pure algebra input to that argument and does not assert a geometric
 two-axis or cube theorem.

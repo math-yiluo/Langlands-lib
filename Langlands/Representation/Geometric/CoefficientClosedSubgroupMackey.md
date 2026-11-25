@@ -34,5 +34,3 @@ in Renard VI.9.2. It does not prove the task's native output-Jacquet finiteness:
 actual rational orbit geometry, coefficient orbit-Jacquet identifications,
 normalization balance, cuspidal vanishing, and fixed-module finiteness through
 the resulting filtration remain separate obligations.
-
-Author: Worker 1780.

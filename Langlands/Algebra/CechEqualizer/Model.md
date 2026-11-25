@@ -1,8 +1,6 @@
 # The noetherian model step of the Čech criterion
 
-Authors: Worker 299 and Worker 424. Worker 299 authored the proof;
-Worker 424 adapted its module dependencies for separate prerequisite
-publication and rechecked the complete proof. This helper module supports the proof of
+This helper module supports the proof of
 `Langlands.Algebra.SmoothEqualizerFibreCriterion`. It contains internal
 formal deductions from Mathlib and from the companion module
 `Langlands.Algebra.CechEqualizer.Good`; no literature result is formalized

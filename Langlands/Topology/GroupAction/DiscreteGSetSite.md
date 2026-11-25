@@ -1,7 +1,5 @@
 # Berkovich's site `P(G)` of discrete `G`-sets
 
-Author: Worker 21.
-
 For a topological group `G`, this module defines Berkovich's category `P(G)`
 of discrete `G`-sets and its Grothendieck topology. A `G`-set is discrete when
 every stabilizer is open. The coverings are the surjective families of

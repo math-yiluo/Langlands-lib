@@ -1,6 +1,6 @@
 # Chart-independent fixed-frame comparison in the actual base-change square
 
-This internal unit identifies the fixed-frame test comparison used by the
+This module identifies the fixed-frame test comparison used by the
 actual extended framing with the direct coefficient-map comparison having no
 target-chart parameter. It derives from complete formal coordinate equations
 and actual inverse laws; it makes no new literature assertion.
@@ -33,5 +33,7 @@ algebra, embedded field, coefficient and residue fields, fixed height-certified
 frame and Nilp objects in universes `{v,u}`. Covers may be infinite and scalar
 maps may merge generators. Generic identity-coordinate composition uses one
 finite coordinate type, as do these special atlases. Preservation of the
-original framed comparison square and descent to class functoriality remain
-further constructions.
+original framed comparison square and descent to class functoriality are
+outside this module; they are `framingSquare_baseChange` in
+`DrinfeldFramedComparisonBaseChange` and the functor of
+`DrinfeldFramedClassFunctor`.

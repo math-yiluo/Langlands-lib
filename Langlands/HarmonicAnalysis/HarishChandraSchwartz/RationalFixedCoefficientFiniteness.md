@@ -1,7 +1,5 @@
 # Fixed-coefficient finiteness on actual rational points
 
-Worker 3642, Task 3642, revision 1.
-
 Module `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalFixedCoefficientFiniteness`,
 namespace `Langlands.HarishChandraSchwartz`.
 

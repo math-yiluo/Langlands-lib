@@ -58,10 +58,10 @@ variable (a : Z ⟶ (Action.res C φ).obj Y)
 
 /-- Restriction along an equivariant cover map intertwines deck pullbacks. -/
 @[reassoc] theorem coverPullback_deck (F : Sheaf J (ModuleCat.{u} R)) (h : H) :
-    deckMap J (Y.ρ (φ h)) F ≫ coverPullback J a.hom F =
-      coverPullback J a.hom F ≫ deckMap J (Z.ρ h) F := by
-  change coverPullback J (Y.ρ (φ h)) F ≫ coverPullback J a.hom F =
-    coverPullback J a.hom F ≫ coverPullback J (Z.ρ h) F
+    deckMap J (Y.ρ (φ h)).asHom F ≫ coverPullback J a.hom F =
+      coverPullback J a.hom F ≫ deckMap J (Z.ρ h).asHom F := by
+  change coverPullback J (Y.ρ (φ h)).asHom F ≫ coverPullback J a.hom F =
+    coverPullback J a.hom F ≫ coverPullback J (Z.ρ h).asHom F
   rw [← coverPullback_comp, ← coverPullback_comp]
   exact congrArg (fun b => coverPullback J b F) (a.comm h).symm
 
@@ -71,19 +71,19 @@ variable (c : (Action.res (Sheaf J (ModuleCat.{u} R)) φ).obj F ⟶ E)
 
 /-- The combined cover and coefficient map intertwines the diagonal actions. -/
 @[reassoc] theorem crossCover_diagonal (h : H) :
-    (diagonal J Y F).ρ (φ h) ≫
+    ((diagonal J Y F).ρ (φ h)).asHom ≫
         (coverPullback J a.hom F.V ≫ (productSheaf J Z.V).map c.hom) =
       (coverPullback J a.hom F.V ≫ (productSheaf J Z.V).map c.hom) ≫
-        (diagonal J Z E).ρ h := by
-  change (deckMap J (Y.ρ (φ h)⁻¹) F.V ≫
-      (productSheaf J Y.V).map (F.ρ (φ h))) ≫ _ =
-    _ ≫ (deckMap J (Z.ρ h⁻¹) E.V ≫ (productSheaf J Z.V).map (E.ρ h))
+        ((diagonal J Z E).ρ h).asHom := by
+  change (deckMap J (Y.ρ (φ h)⁻¹).asHom F.V ≫
+      (productSheaf J Y.V).map (F.ρ (φ h)).asHom) ≫ _ =
+    _ ≫ (deckMap J (Z.ρ h⁻¹).asHom E.V ≫ (productSheaf J Z.V).map (E.ρ h).asHom)
   rw [Category.assoc, ← coverPullback_natural_assoc, ← Category.assoc,
     ← map_inv φ, coverPullback_deck J φ a F.V h⁻¹]
   simp only [Category.assoc]
-  have hc : F.ρ (φ h) ≫ c.hom = c.hom ≫ E.ρ h := c.comm h
+  have hc : (F.ρ (φ h)).asHom ≫ c.hom = c.hom ≫ (E.ρ h).asHom := c.comm h
   rw [← Functor.map_comp, hc, Functor.map_comp,
-    ← Category.assoc (deckMap J (Z.ρ h⁻¹) F.V), deckMap_natural]
+    ← Category.assoc (deckMap J (Z.ρ h⁻¹).asHom F.V), deckMap_natural]
   simp only [Category.assoc]
 
 /-- A compatible cover map and coefficient map induce a map of actual invariant sheaves. -/

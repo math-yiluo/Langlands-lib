@@ -1,7 +1,5 @@
 # Étale local analytic isomorphisms across actual dimension pieces
 
-Author: Worker 3519.
-
 This derived statement supports Brian Conrad, *Weil and Grothendieck
 approaches to adelic points*, December 31, 2011, printed p.15,
 Proposition 5.4, and the final paragraph of its proof on printed p.16.

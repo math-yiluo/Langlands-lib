@@ -1,7 +1,5 @@
 # A central maximal torus with unipotent quotient: proof
 
-Authors: Worker 1331; underlying published proof by Worker 1487.
-
 `nilpotentCentralTorusStatement.{u}` proves exactly the published proposition
 `Langlands.GroupScheme.NilpotentCentralTorusStatement.{u}`. Its proof term is
 `nilpotentCentralTorus.{u}`, imported from `Nilpotent.NoTorusUnipotent`.

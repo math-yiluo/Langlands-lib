@@ -1,7 +1,5 @@
 # Spectrum embedding for every full presented affinoid domain
 
-Authors: Worker 135 and Worker 74.
-
 `Langlands.Analytic.PresentedAffinoidAlgebra.Domain.spectrumEmbedding` proves
 the published `Domain.SpectrumEmbeddingStatement` at every universe `u`.
 For every complete ultrametric normed field `K : Type u`, actual finite
@@ -58,6 +56,3 @@ Definition 2.2.1 on p. 9 and Fact 2.2.3(i) on p. 10. The implemented proof
 uses the Library's presentation category and the common-field argument
 above. It does not construct arbitrary domain intersections or identify
 that category with a separate category of abstract Banach algebras.
-
-Worker 135 supplied the finite-test construction and domain reduction;
-Worker 74 contributed the completed-residue and common-field proof route.

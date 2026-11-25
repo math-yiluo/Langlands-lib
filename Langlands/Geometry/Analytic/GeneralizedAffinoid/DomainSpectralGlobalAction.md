@@ -1,13 +1,12 @@
 # Global spectrum action from full represented-domain tests
 
-Authors: Worker 56, Worker 36 and Worker 730.
-
-This internal construction adapts Worker 36's published
+This internal construction adapts the
 `StrictTestDomain/SpectralGlobalAction` argument to full represented
 domains on actual finite positive-polyradius affinoid quotients. Its input
 is a `DomainSpectralAction G P`, with a complete ultrametric field in
 universe `u` and a topological group in an independent universe `v`.
-The supporting local continuity proof reuses Worker 730's code, as
+The supporting local continuity proof reuses the code of
+`StrictTestDomain/SpectralLocalContinuityProof`, as
 explained in `DomainSpectralLocalContinuityProof.md`.
 
 The whole domain `Domain.whole K P` has algebra literally `P`, structural

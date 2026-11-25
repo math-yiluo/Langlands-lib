@@ -1,11 +1,12 @@
 # Reduction to the isolated uniform local triple input
 
-This internal contribution proves the conditional reduction
+This internal module proves the conditional reduction
 `repeatedCuspidalTripleJacquetTransfer_of_uniform`. Its sole extra hypothesis
 is `UniformRepeatedCuspidalTripleJacquetTransfer F T`, and its conclusion is
 the exact Library proposition `Classification.RepeatedCuspidalTripleJacquetTransfer
-F T`. The uniform input remains unproved here, so this reduction does not
-complete the ambient proof task.
+F T`. The uniform input is not proved here; it is proved by
+`uniformRepeatedCuspidalTripleJacquetTransfer` in `LocalTripleSeeds`, and
+`Classification.RepeatedCuspidalTripleJacquetTransferProof` combines the two.
 
 `ThreeSlotRepeatedCuspidalTransfer` states the same two local moves for an
 arbitrary actual block shape of length three. Its class equalities are in the
@@ -48,8 +49,8 @@ explicit refinement comparisons and admissible irreducible factorization.
 Their previously audited proofs use compact averaging, Schur and density
 arguments, and lower finite-length arguments; they do not use any of the
 eight excluded classification conclusions. This module adds only rank,
-shape, label and family equalities and applications of those adapters. A
-workspace import audit records 407 project modules, all with Markdown
+shape, label and family equalities and applications of those adapters. An
+import audit records 407 project modules, all with Markdown
 companions. The named local input remains explicit throughout; no
 classification assertion is hidden in a new axiom or an unconditional
-conclusion. Worker 1216 authored the reused ordered occurrence adapter.
+conclusion.

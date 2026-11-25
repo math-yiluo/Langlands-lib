@@ -1,16 +1,10 @@
 # Renard A.IX: the sum `E_S` of all supported subobjects
 
-Construction author: Worker 985. The construction was specified by Worker 6
-in task `c8426fba-3302-4900-b3c2-a48444229ba6`, a child of the Renard whole-book
-task `f5d1f399-a1f8-4ab5-a981-90b92abd4857`. Worker 985 wrote and checked the
-original pair without reusing a shared draft. The source-universe explanation
-was corrected by Worker 6 (prepared draft and analysis) and Worker 199
-(source checks, revision and submission) under task
-`341795fa-b07c-40cf-9f40-275ad3329d50`. This correction preserves every byte
-of the Lean construction and laws and of the published
-`SimpleSupportSumStatements` Lean/Markdown pair.
+The source-universe explanation of this page was later corrected. This
+correction preserves every byte of the Lean construction and laws and of the
+published `SimpleSupportSumStatements` Lean/Markdown pair.
 
-This construction unit defines the subobject `E_S` of David Renard,
+This construction module defines the subobject `E_S` of David Renard,
 *Représentations des groupes réductifs p-adiques*, French version dated
 9 July 2026, A.IX, printed page 268 / PDF page 274: the sum of all subobjects
 of `E` that lie in the supported full subcategory `M_S`. The module is
@@ -19,7 +13,7 @@ of `E` that lie in the supported full subcategory `M_S`. The module is
 `Langlands.CategoryTheory.Renard.SimpleSupport` and
 `Langlands.CategoryTheory.Renard.IndexedSubobjectSums` unchanged, by Lean name.
 
-The unit constructs the sum and proves only its defining and order-theoretic
+The module constructs the sum and proves only its defining and order-theoretic
 laws. It does not prove that `E_S` is supported on `S`.
 
 ## Source and reading record
@@ -28,12 +22,12 @@ The governing original is registered as
 `renard-2026-representations-groupes-reductifs-padiques`, file
 `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`,
 SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 985's original reading record reports recomputing the hash, reading
+The original reading record reports recomputing the hash, reading
 PDF273–275 (printed 267–269) in full, rendering and visually checking PDF274,
 and reading PDF269–270 (A.VI.2 axioms and A.VI.3) for the meaning of *somme*
-and the `JH` lemma cited below. For this correction, Worker 199 independently
-recomputed both source hashes, read original PDF269–270 and PDF273–275 in
-full, visually checked PDF274, and read supplementary errata PDF18–19.
+and the `JH` lemma cited below. For the correction, both source hashes were
+independently recomputed, original PDF269–270 and PDF273–275 were read in
+full, PDF274 was visually checked, and supplementary errata PDF18–19 were read.
 
 The passage on PDF274 reads: "Pour tout objet `E` de `M`, on note `E_S` la somme
 de tous les sous-objets de `E` qui sont dans `M_S`. Alors il est clair que
@@ -165,7 +159,7 @@ Mathlib's `CategoryTheory/Limits/SmallComplete.lean` implements the dual
 product argument for `SmallCategory`, where object and Hom universes agree;
 its existing instance is not being asserted to directly cover the independent
 universes here. No new Lean theorem proving this diagnosis is included in
-this unit. The unchanged public statement companion also records it and
+this module. The unchanged public statement companion also records it and
 retains the independent-family formulation. The original probe deriving
 `IsLUB` from `isLUB_subobjectSum_set` under the oversized hypothesis is a
 valid formal specialization, with the same degeneracy; the implemented
@@ -232,22 +226,21 @@ The source's next assertion, `E_S ∈ M_S`, is neither assumed nor proved, and i
 is not a field or premise of any declaration here. The source calls it clear.
 It would follow from A.VI.3 Lemma (iii) on PDF270,
 `JH(∑_{i∈I} M_i) = ⋃_{i∈I} JH(M_i)`, which the source proves in its
-Grothendieck setting using AB5. The following remain
-separate successor obligations of the whole-book program: support of `E_S`, and
+Grothendieck setting using AB5. The following are
+separate results outside this module: support of `E_S`, and
 hence its maximality among supported subobjects; closure properties and
 abelianness of `M_S`; the `JH` identities and zero detection; vanishing of Homs
 and intersections across disjoint supports, and `E_S ⊕ E_{S'} ⊂ E`; splitting
 by a subset or a partition, and subquotient splitting; and the equivalence with
-a product of categories. The JH-identity statement task
-`ada868b1-e8db-429c-b39a-64385889b0fd` is distinct and supplies no proof
-dependency for this construction. No Jordan–Hölder theorem is a premise or a
-result of this unit.
+a product of categories. The JH-identity statements
+(`Langlands.CategoryTheory.Renard.SimpleSubquotientIdentitiesStatements`) are distinct and
+supply no proof dependency for this construction. No Jordan–Hölder theorem is a premise or a
+result of this module.
 
 ## Development check
 
-Worker 985's original development record reports that the module compiled
-without errors or warnings in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`. Its inspection of `simpleSupportSum`
+The original development record reports that the module compiled
+without errors or warnings. Its inspection of `simpleSupportSum`
 reported a definition with level parameters `u, v` and axioms `propext`,
 `Classical.choice` and `Quot.sound` only. A private probe printed the complete
 unapplied types of all eight declarations and the definition body
@@ -261,23 +254,21 @@ general source setting: the oversized assumption is degenerate as explained
 above. Failure from smaller coproducts alone does not rule out the precise
 `Small.{w}` adapter. The file contains no proof holes and no new axioms.
 
-For this correction, Worker 199 read the complete affected pair, current
-statement pair, source-axiom definitions and canonical AB6 definition, the
-public Appendix A corrections note, and the complete Mathlib EssentiallySmall
-and SmallComplete files, in addition to the original passages recorded above.
-The source and errata observations remain bounded to those passages.
-Development check `a025b336-1e8c-4792-8c8a-0d105e5a9e04` compiled the unchanged
+For the correction, the complete affected pair, the statement pair, the
+source-axiom definitions and canonical AB6 definition, the public Appendix A
+corrections note, and the complete Mathlib EssentiallySmall and
+SmallComplete files were read, in addition to the original passages recorded
+above. The source and errata observations remain bounded to those passages.
+A development check compiled the unchanged
 construction without errors or warnings and inspected `simpleSupportSum` as
 a definition with independent `u, v` and only the three standard axioms.
-Private diagnostic `8260b2ce-5b78-4e8d-92cc-a022aba533a4` also completed with
-zero errors or warnings. It printed the complete unapplied type and body
+A private diagnostic also completed with zero errors or warnings. It printed the complete unapplied type and body
 with explicit arguments, universes and proofs, checked the defining equation
 by `rfl`, and checked the precise `Small.{w}` adapter both from
 `HasCoproducts.{w} C` and from `hG : IsSourceGrothendieck.{w} C`. The probe
-is excluded from the submitted pair.
-Native byte comparisons against admitted Library
+is not part of this pair.
+Native byte comparisons against Library commit
 `8c73c345a56c4d23f7e0056f0f55e31cebda2513` found the construction Lean, the
 statement Lean/Markdown pair and every imported project pair unchanged.
-The original construction and current statements are published; this
-correction requires its own independent review and publication. These
-development checks do not prove support, maximality or any later source result.
+These development checks do not prove support, maximality or any later
+source result.

@@ -1,7 +1,5 @@
 # The homomorphism equations for the actual Mumford map
 
-Author: Worker 944.
-
 The theorem
 
 ```lean

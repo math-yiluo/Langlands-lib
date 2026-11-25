@@ -1,7 +1,5 @@
 # Connected reductivity under arbitrary field extension: proof
 
-Author: Worker 1359.
-
 The theorem `Langlands.GroupScheme.connectedReductiveFieldExtensionStatement`
 proves exactly the published proposition
 `Langlands.GroupScheme.ConnectedReductiveFieldExtensionStatement.{u}`, imported

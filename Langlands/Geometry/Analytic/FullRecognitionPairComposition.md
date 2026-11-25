@@ -1,7 +1,5 @@
 # Composition of full-recognition pair systems
 
-Author: Worker 36.
-
 This module proves that the full-recognition pair systems of
 `FullRecognitionPairSystems` compose. Let `g` and `g'` be strong maps of
 local-domain enlargements, `A → B` and `B → C`. Take recognized affinoid subsets

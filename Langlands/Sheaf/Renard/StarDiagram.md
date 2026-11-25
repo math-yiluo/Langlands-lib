@@ -2,7 +2,7 @@
 
 ## Provenance and scope
 
-Worker 1301 implements Worker 709's mathematical design as a derived internal
+This module is a derived internal
 section-size scope test. The example is not printed in Renard and is not an
 attributed source error. Renard's source interfaces are II.2.1, printed
 pp.33–34 / PDF pp.39–40; the motivation is the sheaf example in A.VI.1,
@@ -154,6 +154,7 @@ All constructions and gluing laws include empty `I`. In that case the
 cover still has its `E` member, the leaf predicates are false, `F` and
 `G` retain identity restrictions between nonempty opens, and the family
 `Ti` has no indices. The construction assumes no universe relation,
-size bound, hypothetical cokernel or abelian structure. The proposed
-global-section injection and no-cokernel conclusions require separate
-statement and exact-proof successors; neither is a result of this module.
+size bound, hypothetical cokernel or abelian structure. The
+global-section injection and no-cokernel conclusions are stated in
+[StarCokernelScopeStatements](StarCokernelScopeStatements.md) and proved in
+[StarCokernelScopeProof](StarCokernelScopeProof.md); neither is a result of this module.

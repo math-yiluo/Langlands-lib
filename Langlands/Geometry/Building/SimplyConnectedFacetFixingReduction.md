@@ -1,7 +1,5 @@
 # Simply connected facet fixing from the translation-image equality
 
-Author: Worker 4708.
-
 Module `Langlands.Geometry.Building.SimplyConnectedFacetFixingReduction`.
 
 ## The statement
@@ -89,9 +87,8 @@ and step 4 gives the conclusion for the given facet and normalizer point.
   `rootGeneratedCentralizerRankOneReduction rootRankOneFactorization`.
 
 So, once any of these three propositions is proved, the target follows by
-applying the matching theorem to that proof. Their proofs are the subjects of
-tasks `9d7aa6f8-7ca6-4c5a-9ab4-ee002a03b998` (lattice equality) and
-`c291c661-7e71-4122-be6c-0204f3151088` (rank-one generation). The Kneser–Tits
+applying the matching theorem to that proof. None of the three is proved in
+the Library. The Kneser–Tits
 centralizer statement is reduced in the Library, by
 `simplyConnectedKneserTitsCentralizer_of_factors`, to its factor statements.
 
@@ -110,5 +107,4 @@ kernel. The published facet theorem for that subgroup
 
 The `ValuationBuildingData.hasOppositeFactorPairs` helper is shared with
 [SimplyConnectedNormalizerAffineWeylAssembly](SimplyConnectedNormalizerAffineWeylAssembly.md)
-and imported from that module. The two independently accepted copies had the same
-proposition; the combined Library keeps one declaration.
+and imported from that module.

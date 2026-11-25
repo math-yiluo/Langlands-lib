@@ -21,7 +21,7 @@ variable {C : Type u} [Category.{v} C] {J : GrothendieckTopology C}
 variable {I : Type wI} (points : I → J.Point.{max wI w})
 variable (R : Type (max wI w)) [CommRing R]
 
-local instance : HasProducts.{wI} (ModuleCat.{max wI w} R) := by
+private local instance : HasProducts.{wI} (ModuleCat.{max wI w} R) := by
   let := hasLimitsOfSizeShrink.{wI, wI} (ModuleCat.{max wI w} R)
   infer_instance
 

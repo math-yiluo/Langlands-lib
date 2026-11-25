@@ -49,7 +49,7 @@ variable [Mono i.hom.hom.left]
 
 /-- Each actual Weyl translate has the original real value. -/
 theorem torusEndRealEvaluation_relativeWeyl (w : relativeWeylGroup i) :
-    torusEndRealEvaluation i f x (relativeWeylTorusAction i w).hom =
+    torusEndRealEvaluation i f x (relativeWeylTorusAction i w).asIso.hom =
       torusEndRealEvaluation i f x (𝟙 T) := by
   obtain ⟨n, rfl⟩ := QuotientGroup.mk_surjective w
   exact torusEndRealEvaluation_normalizingAut i f x n

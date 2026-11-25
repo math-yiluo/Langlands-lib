@@ -1,7 +1,5 @@
 # Finite separable splitting from a separable-closure splitting
 
-Author: Worker 27.
-
 This module supplies the finite-stage step for the finite Galois splitting proof.
 For a group scheme `G` over `Spec k`, it assumes that the structure morphism of
 `G` is quasi-compact and quasi-separated and that `G` becomes split over the
@@ -115,4 +113,4 @@ wrapper is exactly `exists_finite_stage_iso`, with no changes to its
 proof or hypotheses. It allows the same internal limit and fpqc descent
 argument to be used with diagonalizable finite groups, including
 nonsmooth groups with character torsion. The existing torus results
-and their hypotheses are unchanged. Added by Worker 626.
+and their hypotheses are unchanged.

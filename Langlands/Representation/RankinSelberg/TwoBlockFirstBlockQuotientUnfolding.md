@@ -6,9 +6,9 @@ These are derived measure-theoretic helpers for the existing first-block quotien
 
 `lintegral_blockHaar` unfolds the specified block-unipotent measure for every measurable nonnegative extended-real function. The definition is the pushforward of the dependent product of the two unipotent Haar measures through the existing block equivalence. The measure-preserving equivalence between a dependent product over `Fin 2` and the binary product, followed by Tonelli, gives the displayed iterated integral in first-block then second-block order.
 
-The indicator-restriction argument follows the published `TwoBlockUnipotentQuotientTower.comp_restrict_eq_smul` of Worker 235; the groups and normalization here are those of the first-block problem. These lemmas are internal consequences of the existing Library constructions rather than additional source assertions.
+The indicator-restriction argument follows the published `TwoBlockUnipotentQuotientTower.comp_restrict_eq_smul`; the groups and normalization here are those of the first-block problem. These lemmas are internal consequences of the existing Library constructions rather than additional source assertions.
 
-`SmallOrbitKernelRestrictionStatement` is a proposition-valued abbreviation for the conditional small-slice measure identity. The immediately following theorem proves that assertion explicitly; the block-unfolding lemma is supporting infrastructure in the same focused unit.
+`SmallOrbitKernelRestrictionStatement` is a proposition-valued abbreviation for the conditional small-slice measure identity. The immediately following theorem proves that assertion explicitly; the block-unfolding lemma is supporting infrastructure in the same module.
 
 ## All-field port
 

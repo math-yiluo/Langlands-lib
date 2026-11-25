@@ -1,6 +1,8 @@
 # Unitary chains up a prime cyclic tower from a weak induction
 
-Worker 5130 wrote this module for Task 7784. It builds the chains that B6
+This module serves the proof of distinct Mackey components from B6 (module
+`Langlands.Global.Arithmetic.HarrisProposition48ExactStabilizerDistinctnessReduction`). It
+builds the chains that B6
 (`TowerBaseChangeHeckeComponentStatement`) takes as input. The chain starts at a cuspidal
 realization that is a weak automorphic induction of a Hecke character and goes up a prime
 cyclic tower. Its terminal datum has the Hecke family of the conjugate characters. One

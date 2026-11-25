@@ -10,7 +10,7 @@ be a commutative ring, `O` a finite projective commutative `A`-algebra that is
 a domain, `K` its fraction field, and `k` any `A`-algebra field. Let `M, M'`
 be integral models over `O` of a `K`-group `G`, and `N, N'` models of a
 `K`-group `H`. Integral models are affine, flat and locally of finite type.
-The local affine-total-space instance follows from their affine structure
+The local affine-total-space instance (private to the module) follows from their affine structure
 morphisms and the affine base `Spec O`; it adds no hypothesis.
 
 Suppose `e : M.Iso M' (Iso.refl G)` and

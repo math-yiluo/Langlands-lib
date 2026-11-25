@@ -145,10 +145,10 @@ and the geometric pullback-with-coefficients comparisons. Mathlib supplies
 actions, the over category, functor evaluation, and composable arrows.
 No new assertion is attributed to an external source.
 
-This unit removes an etaleness restriction from the input interface for
+This module removes an etaleness restriction from the input interface for
 single-scheme deck actions and supplies arbitrary original-map pullback.
 The older restriction-based `EtaleDeckAction` comparison, a bundled category
 and consumer functors for all such raw geometric inputs, the analytic-etale
 realization, arithmetic tower identifications, and the Harris/Shimura
 specializations remain separate construction obligations. It does not
-complete the host Harris framework.
+complete the Harris framework that it serves.

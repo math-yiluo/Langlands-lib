@@ -1,7 +1,5 @@
 # Berkovich's comparison `H^q(X{G}, F) ≅ H^q(X, b^*F)` for compact `X` (quasi-étale)
 
-Author: Worker 16.
-
 This module defines one proposition,
 `Langlands.Cohomology.AnalyticQuasiEtaleGlobalComparison.AnalyticQuasiEtaleGlobalComparisonStatement`.
 It gives the quasi-étale comparison of Berkovich's Theorem 1.6.1(ii) in the
@@ -10,23 +8,23 @@ Hausdorff analytic space `X`, then for every
 quasi-étale `G`-sheaf `F` the comparison maps `H^q(X{G}, F) → H^q(X, b^*F)` are
 isomorphisms in every degree `q`. It is a theorem-statement definition, not a
 proof. The isomorphism is the conclusion; it is not supplied as data or as a
-hypothesis. The comparison map itself is Worker 26's published construction.
+hypothesis. The comparison map itself is the Library's construction.
 
 ## Objects
 
-All objects are imported from Worker 26's module
+All objects are imported from the module
 `Langlands.Sheaf.Equivariant.AnalyticQuasiEtaleCohomology` (namespace
 `Langlands.Sheaf.Equivariant.Analytic`) and the modules it builds on, mainly
-Worker 26's `AnalyticGSheaves` and `TwistedGlobalSections` and Worker 21's
+`AnalyticGSheaves` and `TwistedGlobalSections` and the Library's
 analytic spaces, quasi-étale site and continuous actions.
 
 - `K : Type u` is a complete ultrametric normed field (`NormedField`,
-  `IsUltrametricDist`, `CompleteSpace`). `X` is an object of Worker 21's
+  `IsUltrametricDist`, `CompleteSpace`). `X` is an object of the Library's
   category of analytic spaces `LocalizedCategory.{u, v, v} (K := K)`.
 - `G : Type z` is a topological group (`IsTopologicalGroup`) and
   `ρ : G →* Aut X` an action of `G` on `X` by automorphisms.
 - `R : Type (max u (v + 1) uL)` is a commutative ring. Sheaves take values in
-  `R`-modules. This coefficient universe is the one of Worker 26's derived
+  `R`-modules. This coefficient universe is the one of the Library's derived
   functors.
 - `quasiEtaleGSheafCohomology ρ R q` models `H^q(X{G}, F)`. It is the
   `q`-th right derived functor of `quasiEtaleGSheafSections ρ R`, the model
@@ -41,13 +39,13 @@ analytic spaces, quasi-étale site and continuous actions.
   `quasiEtaleGSheafCohomology ρ R q ⋙ smoothForget R G` (the underlying modules
   of `H^q(X{G}, F)`) to
   `quasiEtaleGSheafRestriction ρ R ⋙ quasiEtaleCohomology X R q`. Here
-  `quasiEtaleGSheafRestriction` models Berkovich's `b^*`. Worker 26 defines the map
+  `quasiEtaleGSheafRestriction` models Berkovich's `b^*`. The map is defined
   as the base change, along the exact functors `b^*` and `smoothForget`, of the
   inclusion `Γ_{X{G}}(F) ⊆ (b^*F)(X)` of smooth global sections into all
   global sections.
-- `IsCompactSpace X`, from Worker 21's `LocalActionLifts`, says that the
+- `IsCompactSpace X`, from `LocalActionLifts`, says that the
   underlying topological space of `X` is compact and Hausdorff.
-- `IsContinuousAction ρ`, from Worker 21's `ContinuousAnalyticAction`, is
+- `IsContinuousAction ρ`, from `ContinuousAnalyticAction`, is
   Berkovich's continuity of an action: for every test triple `τ` (Berkovich's
   `ε ∈ E(X)`), the preimage under `ρ` of the set of automorphisms within `τ` of
   the identity is a neighbourhood of `1` in `G`.
@@ -61,22 +59,22 @@ analytic spaces, quasi-étale site and continuous actions.
 `IsIso` of a natural transformation means that it is a natural isomorphism.
 So the proposition asserts that each map `H^q(X{G}, F) → H^q(X, b^*F)` is a
 bijection, for every quasi-étale `G`-sheaf `F` of `R`-modules. These maps are
-natural in `F` and are the comparison maps that Worker 26 constructed.
+natural in `F` and are the comparison maps `quasiEtaleComparison`.
 Isomorphisms are not merely asserted to exist.
 
 Compactness and continuity are hypotheses of the proposition, not binders of
 the definition. The definition has two further instance binders, which are
-needed to define the source `H^q(X{G}, -)`. They are the same as in Worker
-26's declarations.
+needed to define the source `H^q(X{G}, -)`. They are the same as in the
+declarations of `AnalyticQuasiEtaleCohomology`.
 
 - `[Small.{max u (v + 1) uL} G]` is a size condition. It makes the twisted
-  quasi-étale site essentially small, which the published sheafification and
+  quasi-étale site essentially small, which the Library's sheafification and
   enough-injectives results on that site use. It holds, for example, when `G`
   lies in a universe at most `max u (v + 1) uL`.
 - `[(compactLiftSystem ρ).HasFiniteEquivariantRefinements (twistedQuasiEtaleTopology ρ)]`
   says that every covering sieve of a compact quasi-étale object with a lift
   of the action contains a finite family of arrows from such objects, each
-  locally equivariant, that generates a covering sieve. Worker 26 uses it to
+  locally equivariant, that generates a covering sieve. The Library uses it to
   make quasi-étale `G`-sheaves an abelian category with enough injectives. It
   is not proved in the Library. Geometrically it combines the finiteness of
   quasi-étale coverings of compact spaces with Berkovich's Key Lemma on lifts.
@@ -115,7 +113,7 @@ Printed page numbers equal PDF page numbers.
 
 ## Correspondence and modelling choices
 
-- The input sheaves are Worker 26's `QuasiEtaleGSheaf ρ`. The derived smooth
+- The input sheaves are the Library's `QuasiEtaleGSheaf ρ`. The derived smooth
   sections are computed in that model, and ordinary cohomology of the
   restriction is computed on the Library's generated `quasiEtaleTopology`.
   The manuscript uses Theorem 1.4.2 to pass from its equivariant site to
@@ -176,10 +174,12 @@ ordinary compact-base comparison.
 
 ## Role in the Harris framework
 
-This proposition is a theorem statement for Task 16, "Formalize the Harris and
-Berkovich cohomological theorem-statement framework". That task covers
+This proposition is a theorem statement of the Harris and Berkovich
+cohomological theorem-statement framework, which covers
 Berkovich's equivariant-sheaf comparisons as part of the geometric and
-cohomological input to Harris's weak automorphic induction. The task's
+cohomological input to Harris's weak automorphic induction. The
 coverage note `notes/henniart/harris-cohomology-coverage.md` lists which
-comparisons are stated and which remain open. No other Library statement uses
-this proposition yet.
+comparisons are stated and which remain open. The proposition is proved as
+`analyticQuasiEtaleGlobalComparison` in
+`Langlands.Cohomology.AnalyticQuasiEtaleGlobalComparison.Proof`, and
+`Langlands.Sheaf.Equivariant.AnalyticRepSmoothness` uses it.

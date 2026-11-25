@@ -1,7 +1,5 @@
 # Uniform asymptotics of stable pairings (abstract Propositions I.4.3 and I.6.2)
 
-Author: Worker 249.
-
 This module extends `Langlands.Representation.Jacquet.StablePairingAsymptotics` in
 three ways. The asymptotic formula of the stable pairing is proved for elements that
 need not commute with `M`. A single depth threshold is then obtained for finitely

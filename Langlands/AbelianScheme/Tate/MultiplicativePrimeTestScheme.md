@@ -6,7 +6,7 @@ in `Over S`. The induced map of global-section rings is
 
 ## Provenance and integral square
 
-This internal unit combines the actual restriction maps of `PrimeTestScheme`
+This module combines the actual restriction maps of `PrimeTestScheme`
 with the published `primeIntegralEquiv`, `primeRationalEquiv` and the
 finite-level law `levelEquiv_restrict`. No new original-literature assertion
 is used. The comparison targets the actual coherent families of roots of
@@ -44,4 +44,5 @@ injectivity, as for the integral case.
 
 These laws vary test schemes over a fixed base. They do not assert change
 of base `S`, geometric path transport, monodromy compatibility, rational
-topology, finite rank, a Weil pairing or completion of the parent PEL task.
+topology, finite rank, a Weil pairing or completion of the PEL level-structure
+construction.

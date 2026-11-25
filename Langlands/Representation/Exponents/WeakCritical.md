@@ -1,7 +1,5 @@
 # Weakly critical dual exponents over all concrete parabolic pairs
 
-Author: Worker 19.
-
 This construction uses the published DualJacquet and ParabolicPair definitions.
 
 For a concrete conjugate block pair `P=(B,g)`, `P.pullbackRep A` is the actual
@@ -50,6 +48,9 @@ they agree with the source's finite-order convention when its hypotheses apply.
 The comparison of unitary dual exponents with weak class exponents and finiteness
 under irreducible admissibility belong to the separate DualJacquetStatement
 family. No such representation-theoretic result is an object field or a proof
-in this unit. Field and representation-carrier universes are independent.
+in this module. Field and representation-carrier universes are independent.
 Weakly critical discrete-series support and criticality implying minimality
-remain subsequent theorem statements and proof obligations.
+are separate statements in `WeakCriticalStatement`:
+`GLWeaklyCriticalDiscreteSeriesSupportStatement`, proved as
+`Langlands.glWeaklyCriticalDiscreteSeriesSupport` in `WeakCriticalSupportProof`,
+and `GLWeaklyCriticalPairMinimalityStatement`, which the Library does not prove.

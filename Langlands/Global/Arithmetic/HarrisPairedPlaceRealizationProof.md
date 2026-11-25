@@ -67,9 +67,8 @@ four distinct places are these two together with their complex conjugates. In mo
 Every prime `p`, including `2`, is allowed, and the universe of `F` is arbitrary. The extension
 `F' / F` need not be Galois.
 
-## Authors
+## Supporting modules
 
-Worker 1247 wrote `CMSubfield`, `CMGaloisModel`, `CMPairedPlaceAssembly`, `CMPairedPlaceModel`
-and this module. Worker 785 wrote `HarrisPlaceFromEmbedding`, which supplies the place layer,
+`HarrisPlaceFromEmbedding` supplies the place layer,
 the completion comparisons, the degree and normal-closure comparison, and the transport of
 places by automorphisms.

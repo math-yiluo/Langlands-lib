@@ -1,6 +1,6 @@
 # The actual normal-root dichotomy for split maximal tori over arbitrary fields
 
-Worker 509. Derived extension of the published algebraically closed
+Derived extension of the published algebraically closed
 normal-root dichotomy to arbitrary fields when the specified maximal torus is
 split. It retains actual all-test root groups and full centralizers, imposes
 no characteristic restriction, and applies at every universe parameter.
@@ -32,6 +32,6 @@ the original ambient composite. The maps are obtained by lifting inclusions
 of represented subgroup functors; this construction is the arbitrary-field
 split analogue of the existing `normalRootPlacementOfRootLines`.
 
-This unit constructs no Cartan-component factor or root-datum matching of
+This module constructs no Cartan-component factor or root-datum matching of
 such a factor. Its provenance is internal derived interface material, and it
 uses no downstream local rank-one classification or Kneser–Tits input.

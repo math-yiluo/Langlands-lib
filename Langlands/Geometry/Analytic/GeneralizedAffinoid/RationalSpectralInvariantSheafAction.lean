@@ -22,7 +22,7 @@ def spectralInvariantSheafOperator (g : H) :
       (spectralInvariantSheafInclusion ρ H (CommAlgCat K)).obj (algebraSheaf K A) where
   hom := {
     app d := CommAlgCat.ofHom
-      ((spectralInvariantSectionAction ρ H d.unop).obj.ρ g).toAlgHom
+      ((spectralInvariantSectionAction ρ H d.unop).obj.ρ g).asHom.toAlgHom
     naturality d e f := by
       ext a
       exact congrArg
@@ -34,8 +34,9 @@ def spectralInvariantSheafAction :
     Action (Sheaf (SpectralInvariantChart.finiteRationalTopology ρ H) (CommAlgCat K)) H where
   V := (spectralInvariantSheafInclusion ρ H (CommAlgCat K)).obj (algebraSheaf K A)
   ρ := {
-    toFun := spectralInvariantSheafOperator ρ H
+    toFun := fun g => End.of (spectralInvariantSheafOperator ρ H g)
     map_one' := by
+      apply End.ext
       apply Sheaf.hom_ext
       apply NatTrans.ext
       funext d
@@ -43,8 +44,9 @@ def spectralInvariantSheafAction :
       ext a
       exact congrArg
         (fun h : BoundedAlgHom K d.unop.obj.algebra d.unop.obj.algebra => h a)
-        (spectralInvariantSectionAction ρ H d.unop).obj.ρ.map_one
+        (congrArg End.asHom (spectralInvariantSectionAction ρ H d.unop).obj.ρ.map_one)
     map_mul' g h := by
+      apply End.ext
       apply Sheaf.hom_ext
       apply NatTrans.ext
       funext d
@@ -52,7 +54,7 @@ def spectralInvariantSheafAction :
       ext a
       exact congrArg
         (fun f : BoundedAlgHom K d.unop.obj.algebra d.unop.obj.algebra => f a)
-        ((spectralInvariantSectionAction ρ H d.unop).obj.ρ.map_mul g h) }
+        (congrArg End.asHom ((spectralInvariantSectionAction ρ H d.unop).obj.ρ.map_mul g h)) }
 
 /-- The sheaf action retains the entire original restricted algebra presheaf. -/
 @[simp]
@@ -63,8 +65,8 @@ theorem spectralInvariantSheafAction_presheaf :
 @[simp]
 theorem spectralInvariantSheafAction_apply
     (g : H) (d : SpectralInvariantChart ρ H) (a : d.obj.algebra) :
-    (((spectralInvariantSheafAction ρ H).ρ g).hom.app (op d)).hom a =
-      ((spectralInvariantSectionAction ρ H d).obj.ρ g).toAlgHom a := rfl
+    (((spectralInvariantSheafAction ρ H).ρ g).asHom.hom.app (op d)).hom a =
+      ((spectralInvariantSectionAction ρ H d).obj.ρ g).asHom.toAlgHom a := rfl
 
 /-- The group action gives actual sheaf automorphisms, including their inverses. -/
 def spectralInvariantSheafAutomorphisms :
@@ -74,14 +76,14 @@ def spectralInvariantSheafAutomorphisms :
 @[simp]
 theorem spectralInvariantSheafAutomorphisms_hom_apply
     (g : H) (d : SpectralInvariantChart ρ H) (a : d.obj.algebra) :
-    (((spectralInvariantSheafAutomorphisms ρ H g).hom).hom.app (op d)).hom a =
-      ((spectralInvariantSectionAction ρ H d).obj.ρ g).toAlgHom a := rfl
+    (((spectralInvariantSheafAutomorphisms ρ H g).asIso.hom).hom.app (op d)).hom a =
+      ((spectralInvariantSectionAction ρ H d).obj.ρ g).asHom.toAlgHom a := rfl
 
 @[simp]
 theorem spectralInvariantSheafAutomorphisms_inv_apply
     (g : H) (d : SpectralInvariantChart ρ H) (a : d.obj.algebra) :
-    (((spectralInvariantSheafAutomorphisms ρ H g).inv).hom.app (op d)).hom a =
-      ((spectralInvariantSectionAction ρ H d).obj.ρ g⁻¹).toAlgHom a := rfl
+    (((spectralInvariantSheafAutomorphisms ρ H g).asIso.inv).hom.app (op d)).hom a =
+      ((spectralInvariantSectionAction ρ H d).obj.ρ g⁻¹).asHom.toAlgHom a := rfl
 
 /-- Evaluation of the sheaf action gives the action on each original quotient. -/
 def spectralInvariantSheafSectionAction (d : SpectralInvariantChart ρ H) :
@@ -96,14 +98,14 @@ theorem spectralInvariantSheafSectionAction_algebra (d : SpectralInvariantChart 
 @[simp]
 theorem spectralInvariantSheafSectionAction_apply
     (d : SpectralInvariantChart ρ H) (g : H) (a : d.obj.algebra) :
-    ((spectralInvariantSheafSectionAction ρ H d).ρ g).hom a =
-      ((spectralInvariantSectionAction ρ H d).obj.ρ g).toAlgHom a := rfl
+    ((spectralInvariantSheafSectionAction ρ H d).ρ g).asHom.hom a =
+      ((spectralInvariantSectionAction ρ H d).obj.ρ g).asHom.toAlgHom a := rfl
 
 /-- Naturality of the actual sheaf operators makes every restriction equivariant. -/
 def spectralInvariantSheafSectionRestriction {d e : SpectralInvariantChart ρ H} (f : d ⟶ e) :
     spectralInvariantSheafSectionAction ρ H e ⟶ spectralInvariantSheafSectionAction ρ H d where
   hom := (spectralInvariantSheafAction ρ H).V.obj.map f.op
-  comm g := (((spectralInvariantSheafAction ρ H).ρ g).hom.naturality f.op).symm
+  comm g := (((spectralInvariantSheafAction ρ H).ρ g).asHom.hom.naturality f.op).symm
 
 @[simp]
 theorem spectralInvariantSheafSectionRestriction_apply
@@ -114,22 +116,24 @@ theorem spectralInvariantSheafSectionRestriction_apply
 def spectralInvariantBaseAlgebraAction : Action (CommAlgCat K) H where
   V := CommAlgCat.of K A
   ρ := {
-    toFun g := CommAlgCat.ofHom ((spectralInvariantBaseAction ρ H).obj.ρ g).toAlgHom
+    toFun g := End.of (CommAlgCat.ofHom ((spectralInvariantBaseAction ρ H).obj.ρ g).asHom.toAlgHom)
     map_one' := by
+      apply End.ext
       apply CommAlgCat.hom_ext
       ext a
       exact congrArg (fun f : BoundedAlgHom K A A => f a)
-        (spectralInvariantBaseAction ρ H).obj.ρ.map_one
+        (congrArg End.asHom (spectralInvariantBaseAction ρ H).obj.ρ.map_one)
     map_mul' g h := by
+      apply End.ext
       apply CommAlgCat.hom_ext
       ext a
       exact congrArg (fun f : BoundedAlgHom K A A => f a)
-        ((spectralInvariantBaseAction ρ H).obj.ρ.map_mul g h) }
+        (congrArg End.asHom ((spectralInvariantBaseAction ρ H).obj.ρ.map_mul g h)) }
 
 @[simp]
 theorem spectralInvariantBaseAlgebraAction_apply (g : H) (a : A) :
-    ((spectralInvariantBaseAlgebraAction ρ H).ρ g).hom a =
-      (ρ.toMonoidHom (g : G)).hom.toAlgHom a := rfl
+    ((spectralInvariantBaseAlgebraAction ρ H).ρ g).asHom.hom a =
+      (ρ.toMonoidHom (g : G)).asIso.hom.toAlgHom a := rfl
 
 /-- The constructed whole-section identification intertwines the original action. -/
 def spectralInvariantWholeSectionIso :

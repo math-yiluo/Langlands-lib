@@ -1,7 +1,5 @@
 # Proof of the exact compact open orbit of the last row
 
-Author: Worker 714.
-
 `Langlands.RankinSelberg.lastRowCompactOrbit` proves
 `LastRowCompactOrbitStatement.{uF} F T n` for every implicit prime `p`, every
 `F : PadicField.{uF} p`, every supplied `T : F.TopologicalData` and every

@@ -1,8 +1,6 @@
 # Coordinate lines preserved by inner Tits discrepancies
 
-Author: Worker 239.
-
-This internal unit supplies an all-test matrix consequence of an actual local
+This internal module supplies an all-test matrix consequence of an actual local
 special-linear presentation `E`, a torus homomorphism into its target, and
 characters `χ` giving the local diagonal coordinates of that torus on every
 test and at every cover point. No presentation or characters are constructed

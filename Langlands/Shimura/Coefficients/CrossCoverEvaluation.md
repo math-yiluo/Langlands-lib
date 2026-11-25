@@ -1,7 +1,5 @@
 # Canonical evaluation across maps of covers
 
-Author: Worker 13.
-
 This internal construction extends the canonical evaluation in
 `TrivializationFromSplitting` to localization along any map into the cover. It
 proves compatibility with the actual maps in `CrossCover` and constructs a

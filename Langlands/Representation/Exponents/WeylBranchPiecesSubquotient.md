@@ -1,7 +1,5 @@
 # Elementary laws for actual subquotients
 
-Author: Worker 253.
-
 The module `Langlands.Representation.Exponents.WeylBranchPiecesSubquotient`
 proves closure laws for the predicate `WeylBranchPieces.IsSubquotient A X` of
 [`WeylBranchPiecesStatement`](WeylBranchPiecesStatement.md): `X` is an actual

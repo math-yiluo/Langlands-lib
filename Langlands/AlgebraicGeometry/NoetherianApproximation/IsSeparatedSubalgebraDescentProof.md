@@ -1,7 +1,5 @@
 # Descent of separatedness to finitely generated subalgebras (proof)
 
-Proof module of task `8b63dc1d-84d3-43fa-a1d5-9657a89c8df1`.
-
 ## Statement proved
 
 `Langlands.AlgebraicGeometry.NoetherianApproximation.isSeparatedSubalgebraDescent :
@@ -30,8 +28,8 @@ The ported FLT proof runs as follows; the Markdown files of the modules named he
 1. Affineness descends
    (`AlgebraicGeometry.exists_fg_subalgebra_isAffine_pullback_of_isAffine_pullback`): the base change
    to `Spec A` of a quasi-compact, quasi-separated scheme over `Spec A₀` is the limit of its base
-   changes to the `Spec T` (`AlgebraicGeometry.SubalgebraStages.nonempty_isLimit_cone`, ported by task
-   `80ab0ad1-6602-4bc6-8c52-3f88f45f4c83`), and Mathlib's `Scheme.exists_isAffine_of_isLimit` makes
+   changes to the `Spec T` (`AlgebraicGeometry.SubalgebraStages.nonempty_isLimit_cone`, ported with
+   `SchemeSubalgebraDescentProof`), and Mathlib's `Scheme.exists_isAffine_of_isLimit` makes
    some stage affine if the limit is.
 2. Surjectivity of ring maps descends
    (`Algebra.TensorProduct.exists_fg_subalgebra_surjective_map_of_surjective_map`): if
@@ -58,13 +56,13 @@ The ported FLT proof runs as follows; the Markdown files of the modules named he
 - `Langlands.AlgebraicGeometry.NoetherianApproximation.SubalgebraDescentStatements` (Library; the
   target statement).
 - `Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_IsSeparated_exists_fg_subalgebra_of_isSeparated_pullback_snd`
-  and its import closure. Seven further ported FLT modules of that closure are submitted with this
+  and its import closure. Seven further FLT modules of that closure are ported with this
   proof: the `Theorems/Thm_*` and `P2M/Sol/S_*` modules of the three theorems of steps 1–3, and the
   solution module of the root theorem. The other three modules of the closure,
   `Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_SubalgebraStages`,
   `Langlands.AnthropicFLT.P2M.Sol.S_AlgebraicGeometry_SubalgebraStages_nonempty_isLimit_cone` and
   `Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_SubalgebraStages_nonempty_isLimit_cone`, are
-  ported by task `80ab0ad1-6602-4bc6-8c52-3f88f45f4c83` and imported from the Library. All are ported
+  ported with `SchemeSubalgebraDescentProof` and imported from the Library. All are ported
   from the Anthropic Lean formalization of Fermat's Last Theorem, commit
   `6e837e75355538c7f80bab5b956861e86c4eacc2`, Apache License 2.0, Copyright 2026 Anthropic, PBC; see
   `licenses/Anthropic-FLT/` and the "Source and licence" section of each ported module's Markdown.

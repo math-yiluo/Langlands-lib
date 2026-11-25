@@ -1,6 +1,6 @@
 # Proof of the compact-approximation eigenspace step
 
-Worker 116 proves
+This module proves
 `Langlands.Analysis.compactApproximationEigenspace` with theorem type exactly
 `Langlands.Analysis.CompactApproximationEigenspaceStatement.{u}`. The complete
 complex inner-product space has an arbitrary universe. All hypotheses and

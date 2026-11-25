@@ -42,8 +42,7 @@ SGA 3 assumes only that `G` is quasi-separated. The statement assumes that
 `G` is separated, which is stronger. Then the unit section is a closed
 immersion, and `IdentityJet.scheme G n` is the infinitesimal neighbourhood
 of the unit section. It is used with a separated group in the proof of
-`Langlands.GroupScheme.LocalCentralKernelRepresentationStatement` in
-Task 7782.
+`Langlands.GroupScheme.LocalCentralKernelRepresentationStatement`.
 
 ## Registered sources
 

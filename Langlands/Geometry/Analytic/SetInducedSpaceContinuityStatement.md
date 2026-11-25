@@ -1,7 +1,5 @@
 # Statement: the spaces `X_Σ` of discrete `G`-sets are `G`-spaces
 
-Author: Worker 21.
-
 This module states, without proof, that Berkovich's space `X_Σ` of a
 `G`-space `X` and a discrete `G`-set `Σ` is a `G`-space. The space `X_Σ` and
 its action are constructed in module `SetInducedSpace` (`setInduced X S`).

@@ -1,7 +1,5 @@
 # The action of `GL_{d+1}(F)` on Drinfeld's upper half space
 
-Author: Worker 21.
-
 The module `DrinfeldAction` gives, for each invertible matrix `γ`, the map
 `z ↦ γ · z` of Drinfeld's upper half space `Ω` as a morphism of atlas
 presentations, `presentationHom K γ`. This module proves the group law and the

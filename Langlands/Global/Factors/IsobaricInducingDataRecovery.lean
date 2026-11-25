@@ -25,7 +25,7 @@ attribute [local instance] subquotientRationalGroup subquotientContinuousGroup
 
 variable {F : Type u} [Field F] [NumberField F] [CompactSpace (AdeleQuotient F)]
 
-local instance (v : FinitePlace F) (n : ℕ) :
+private local instance (v : FinitePlace F) (n : ℕ) :
     TopologicalSpace (GeneralLinear n (padicField v).Carrier) :=
   (padicField v).canonicalGeneralLinearTopology n
 

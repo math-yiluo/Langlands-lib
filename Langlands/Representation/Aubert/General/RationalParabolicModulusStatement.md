@@ -1,9 +1,8 @@
 # Modular characters of the actual rational-point group and its standard parabolics
 
-Authors: Worker 1415 and Worker 1423.
-
 `Langlands.Aubert.General.RationalPointFamily.RationalParabolicModulusStatement`
-is a proposition definition awaiting proof. It states two facts about the
+is a proposition definition; `RationalParabolicModulusProof` proves it as
+`rationalParabolicModulus`. It states two facts about the
 actual rational-point group `G(k)` and its actual standard parabolics:
 unimodularity of `G(k)`, and the identification of Mathlib's modular character
 of a standard parabolic `P = M ⋉ U` with the Library's Haar modulus of the
@@ -38,7 +37,8 @@ subset; there is no nonemptiness condition. `parabolic i ν I`, `levi i ν I` an
 `unipotent i ν I` are the published standard parabolic, Levi and unipotent
 point subgroups at `rootSet i ν I`. The explicit hypothesis
 `hStandard : StandardCocharacterStatement.{u}` is the published universal
-standard-cocharacter assertion, which remains unproved. The target is
+standard-cocharacter assertion, which the Library proves as
+`standardCocharacter`. The target is
 conditional on that assertion. The published theorem
 `isSemidirectDecomposition_of_standardCocharacterStatement` uses it to prove
 the actual decomposition `P = M ⋉ U` of these three subgroups. That
@@ -164,9 +164,9 @@ Both sides are homomorphisms on `P`, and every `p ∈ P` is `m u` with `m ∈ M`
 and `u ∈ U`. Hence `Δ_P(p) = Δ_P(m) = mod_U(m) = mod_U(p)`. So the
 all-of-`P` statement is equivalent to the source formula on `M`, given these
 trivialities. They are explanation for a proof and are not premises of the
-statement. That `U(k)` is a union of compact open subgroups remains a proof
-obligation. Continuity of Mathlib's modular character also remains a
-formal proof obligation; its file lists continuity as a TODO.
+statement. That `U(k)` is a union of compact open subgroups is not a premise
+either, nor is continuity of Mathlib's modular character; its file lists
+continuity as a TODO.
 
 ### Sanity check
 
@@ -178,8 +178,8 @@ scales `x` by `c₀⁻²`. So `Δ_B(t) = |c|²`. Renard's root formula gives
 
 ## Intended use
 
-The proof of `RationalNaturalInductionDualityStatement` (task
-`2137e0ce-8d32-43f5-b4ed-79824b68585f`) needs this identity. The Library's
+The proof of `RationalNaturalInductionDualityStatement`
+(`rationalNaturalInductionDuality`) needs this identity. The Library's
 normalized induction twists by `HaarModulus.closedHalfCharacter`, whose square
 is `closedRestrictCharacter`. The duality pairing of `Ind(σ)` with `Ind(σ̃)`
 gives functions transforming under this square. For unimodular `G(k)`, the

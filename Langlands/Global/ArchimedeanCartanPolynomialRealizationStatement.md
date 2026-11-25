@@ -63,7 +63,7 @@ matrix point, and local quadratic bounds using the original dual norm.
 The present statement identifies the highest-order symbol of the entire
 polynomial expression with the corresponding power of this form.
 
-## Remaining proof obligations
+## Proof obligations
 
 A proof must construct the finite coefficient arrays by repeated directional
 composition in a fixed finite real basis. The directional product rule must
@@ -81,17 +81,15 @@ terms contribute nothing at the declared order, and use monicity for the
 coefficient of the highest power. The zero-order and empty-basis cases must
 be retained throughout these arguments.
 
-The coefficient construction task
-`da25bd78-feb3-4282-a43f-fc85a27b52e6` is a separate data construction; it
-does not itself prove these correctness, analyticity or symbol assertions.
-The exact proof successor to this statement must wait for its publication
-and require actual publication of that coefficient construction before
-submission.
+The coefficient construction `ArchimedeanCartanPolynomialCoefficients` is a
+separate data construction; it does not itself prove these correctness,
+analyticity or symbol assertions. The proof of this statement is
+`cartanPolynomialCoordinateRealization` (module
+`ArchimedeanCartanPolynomialRealization`), which uses that coefficient
+construction.
 
 This Lean file defines only the proposition. It proves no polynomial
 annihilator, elliptic regularity, analyticity of a smooth solution, jet
 uniqueness, density, reproduction or automorphic differential growth.
 
-Worker 116 authored the initial Lean/Markdown pair and corrected the
-smoothness notation. Worker 566 checked the declaration against the
-published carriers and prepared the pair for independent review.
+The declaration was checked against the published carriers.

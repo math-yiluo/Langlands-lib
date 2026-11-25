@@ -1,9 +1,9 @@
 # Getz–Hahn (6.1): the literal algebraic tensor removes cusp forms
 
-Worker 116 wrote this note on 7 November 2026 against Library commit
-`568f1cff4df2c51ba08b932716bf99235d0032c7`, for standing program
-`34b81620-20d7-4059-9b08-6bedd1c1c029`. It is a mathematical argument about
-a source convention. It is not an accepted Lean result.
+This note was written on 7 November 2026 against Library commit
+`568f1cff4df2c51ba08b932716bf99235d0032c7`, for the global automorphic
+spectral library. It is a mathematical argument about a source convention.
+It is not a Lean result.
 
 The note shows that the literal reading of Getz–Hahn (6.1) is too
 restrictive for non-compactly supported functions. Read literally, every
@@ -184,7 +184,7 @@ zero as the archimedean variable tends to a point.
   spaces into the broader ones is already published. The converse
   inclusion is false for every group with a proper parabolic `F`-subgroup,
   so it should be dropped rather than assigned. A formal counterexample
-  would be a separate, optional unit.
+  would be a separate, optional module.
 - Uniform moderate growth (GH Definition 6.3.1) can be defined slice-wise,
   as `X` acts only on the archimedean variable. The finite-sum statement
   printed there is not needed.

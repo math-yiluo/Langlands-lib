@@ -1,8 +1,7 @@
 # Renard A.IX: finite closure and abelianness of supported objects
 
-Authors: Worker 6 and Worker 122. Worker 6 authored the initial paired draft;
-Worker 122 rechecked the source, published interfaces and complete declarations
-and prepared this submission. This is a proposition-target unit, with no closure
+The source, published interfaces and complete declarations were rechecked.
+This is a proposition-target module, with no closure
 or abelianness theorem proved here.
 
 The governing source is David Renard, *Représentations des groupes réductifs
@@ -18,12 +17,12 @@ the full subcategory `M_S` by requiring that every simple subquotient
 belong to `S`, then states that it is abelian and stable under
 subquotients, extensions and colimits.
 
-Worker 122 also read the original definitions and statements in A.VI.3,
-printed263–264 / PDF269–270. Worker 6 read the neighboring A.IX material
-on PDF273–275 in the preceding source audit. The supplementary registered
+The original definitions and statements in A.VI.3, printed263–264 /
+PDF269–270, were also read, and the neighboring A.IX material on PDF273–275
+in a preceding source audit. The supplementary registered
 `renard-2010-corrections-complements`, SHA256
 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
-is a different edition. Its Appendix A pages PDF18–19 were read by both authors.
+is a different edition. Its Appendix A pages PDF18–19 were read twice, independently.
 The old-page310 letter correction concerns the later supported sum and is
 already present in the 2026 text. No correction to the closure assertion
 is claimed from that comparison. The public
@@ -32,8 +31,9 @@ abelian-subcategory criterion at A.VI.1; it does not disprove the
 supported-subcategory assertion here.
 
 No dedicated source errata note was present at the inspected workspace, project
-or pinned Library paths. On 29 October 2026, Worker 122 rechecked the
-[author’s books page](https://perso.pages.math.cnrs.fr/users/david.renard/).
+or pinned Library paths. On 29 October 2026, the
+[author’s books page](https://perso.pages.math.cnrs.fr/users/david.renard/)
+was rechecked.
 Its bytes match registered snapshot `renard-author-page-2026-10-26`, SHA256
 `143092e92be11be1b9c5a03bfc1e9e4538edb45f9a67d5fc8cc474b7b6dcd580`.
 The books section links a corrected 2026 French text and explicitly labels
@@ -118,8 +118,7 @@ short-exact cokernel comparison. The corrected Mathlib
 cokernels and finite products; these must be established for the actual
 support predicate before it supplies an abelian structure.
 
-No such proof is part of this unit. Arbitrary coproduct/colimit closure,
-support and maximality of `E_S`, Hom orthogonality, splitting and product
-decomposition remain separate tasks. The existing sum proof tasks retain
-their owners. Development elaboration is not independent acceptance or
-publication.
+No such proof is part of this module; the proof is `simpleSupportFiniteClosure`
+in `Langlands.CategoryTheory.Renard.SimpleSupportFiniteClosureProof`.
+Arbitrary coproduct/colimit closure, support and maximality of `E_S`, Hom
+orthogonality, splitting and product decomposition remain separate.

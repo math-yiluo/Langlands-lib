@@ -1,7 +1,5 @@
 # Rational Hom and End for abelian schemes
 
-Author: Worker 6.
-
 This derived construction imports `Langlands.AbelianScheme.Basic` and `Langlands.CategoryTheory.Rationalization`. It specializes the generic tensor construction to the published category of abelian schemes over an arbitrary scheme S. The underlying bundle follows Basic's explicit-commutativity convention: its group scheme is commutative, smooth, proper, and has geometrically connected fibres. This module does not prove the separate equivalence with the source definition lacking explicit commutativity.
 
 `RationalCategory S` has precisely wrapped objects of `AbelianScheme S`, identified by `rationalObjectsEquiv`. `Hom0 A B` is Q tensor_Z Hom_S(A,B), using the actual additive group of group-scheme homomorphisms from Basic. The Z-linear equivalence `hom0TensorComm` identifies it with Hom_S(A,B) tensor_Z Q and sends q tensor f to f tensor q. The preadditive and Q-linear category instances are inherited from the generic construction.

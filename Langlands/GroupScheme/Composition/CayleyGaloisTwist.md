@@ -1,7 +1,5 @@
 # Galois twists of the split Cayley datum
 
-Author: Worker 161.
-
 Let `L/K` be a finite Galois extension and `P ∈ GL₈(L)` a change of basis.
 Suppose every Galois discrepancy `P σ(P)⁻¹` is an automorphism matrix of
 the split Cayley datum over `L`. This module transports the Zorn

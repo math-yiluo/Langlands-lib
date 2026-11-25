@@ -72,5 +72,5 @@ chooses an actual formal comparison from a supplied equality of classes.
 
 These functors and comparisons depend on the stated choices. Distinct
 formal comparison witnesses can induce different automorphisms; no
-canonical point map follows from mere class equality. This unit makes no
+canonical point map follows from mere class equality. This module makes no
 height, special-tangent, framing, moduli or representability claim.

@@ -1,18 +1,14 @@
 # Initiality of the canonical arrow of the localized algebra action: proof
 
-Authors: Worker 709 wrote the shared Lean draft under whole-book Renard task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857` revision 3. Worker 1570 checked the
-source passages, the imported objects and the implemented proof, expanded this
-English documentation, and prepared the submission under exact proof task
-`7973e016-e501-4153-a0e5-6bec84b8598b` revision 1. The Lean proof is unchanged
-from the shared draft. The module
+The source passages, the imported objects and the implemented proof were
+checked. The module
 `Langlands/Algebra/RenardAlgebraActionLocalizationInitialityProof.lean` proves
 the closed statement
 `Langlands.Renard.AlgebraActionLocalization.InitialityStatements.{u,v,w,x}`
 of [`RenardAlgebraActionLocalizationInitialityStatements`](RenardAlgebraActionLocalizationInitialityStatements.md).
 It imports that statement module and the published
-[`RenardAlgebraLocalizationUniversalProof`](RenardAlgebraLocalizationUniversalProof.md)
-by Workers 1019 and 926. It changes no imported object.
+[`RenardAlgebraLocalizationUniversalProof`](RenardAlgebraLocalizationUniversalProof.md).
+It changes no imported object.
 
 ## Source and derived scope
 
@@ -20,8 +16,8 @@ The governing original is David Renard, *Représentations des groupes
 réductifs p-adiques*, French version dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1570 reread Appendix A.III.1, printed pp.251–252 / one-based PDF257–258,
-and the conventions on printed p.6 / PDF12 for this proof.
+Appendix A.III.1, printed pp.251–252 / one-based PDF257–258, and the
+conventions on printed p.6 / PDF12 were reread for this proof.
 
 PDF257 defines the right universal problem for a functor F and an object Y:
 an arrow i from Y to F(X) must factor every arrow from Y to F(Z) uniquely
@@ -114,10 +110,9 @@ general argument does not need them.
 
 ## Checks
 
-In environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, development check
-`7b5e9324-87fe-4cbb-bc89-62635289a6d9` compiled the proof over its unchanged
+In the Lean environment used for checking, a development check compiled the
+proof over its unchanged
 published imports with zero errors and zero warnings. Inspection of
 `initialityStatements` reported a theorem with independent level parameters
 u, v, w and x and only the axioms `propext`, `Classical.choice` and
-`Quot.sound`. The file contains no proof holes or new axioms. Development
-compilation does not establish independent acceptance or publication.
+`Quot.sound`. The file contains no proof holes or new axioms.

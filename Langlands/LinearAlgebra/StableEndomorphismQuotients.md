@@ -6,7 +6,7 @@ three linear maps between them that appear in the proof of Lemma (iv) of David R
 *Représentations des groupes réductifs p-adiques*, French version dated 9 July 2026,
 Appendix C.II. Everything here is a definition or one of its basic laws.
 The kernel and image identities, the injectivity and surjectivity of the outer
-arrows, and exactness are left to separate successors (see "Excluded content").
+arrows, and exactness are not part of this module (see "Excluded content").
 
 ## Sources
 
@@ -27,11 +27,11 @@ arrows, and exactness are left to separate successors (see "Excluded content").
     source says contains `I_{k+1}`. Then come the kernel/image identities and the
     exact sequence `0 → E_{k+1} → E_k → F_k → F_{k+1} → 0`.
 
-  Worker 277 read the text of PDF pages 283–284 and visually checked a rendered
-  image of PDF page 284.
+  The text of PDF pages 283–284 was read and a rendered image of PDF page 284
+  was checked visually.
 - Author errata: registered `renard-2010-corrections-complements`, SHA256
-  `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`. The task
-  cites PDF pages 18–19. Worker 277 found the relevant entries on PDF page 19:
+  `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`, PDF
+  pages 18–19. The relevant entries are on PDF page 19:
   - "p. 321, l. 4 : remplacer l'indice k + 1 par k + 2". This fixes the image of
     `t̄ : E_{k+1} → E_k` to `N_k + t(N_{k+2})/N_k = N_k + (Im t ∩ N_{k+1})/N_k`.
     The 2026 text on PDF 284 already has this corrected index.
@@ -216,9 +216,10 @@ prove or assume:
   `0 → E_(k+1) → E_k → F_k → F_(k+1) → 0`;
 - the stabilization conclusions of Lemma (iv). The common first stabilization index
   is already covered by `FirstStabilizationIndexStatement` in
-  `Langlands.LinearAlgebra.StableEndomorphismStatements` and its published proof.
+  `Langlands.LinearAlgebra.StableEndomorphismStatements` and its proof
+  `firstStabilizationIndex` in `Langlands.LinearAlgebra.StableEndomorphismProofs`.
 
-These are substantive successor obligations. They can be stated about the
+These are substantive separate obligations. They can be stated about the
 actual maps above, for example as `LinearMap.ker (kerQuotientShift t k) = ⊥` or
 `LinearMap.range (kerToRangeQuotient t k) = LinearMap.ker (rangeQuotientShift t k)`,
 using the named projections and application laws. No definition record and no

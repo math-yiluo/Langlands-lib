@@ -8,7 +8,7 @@ with the twist `θ` attached to `σ`. The geometric terms in the simple twisted 
 pair the volume of a rational centralizer quotient with a twisted orbital integral. This
 proposition states finite volume and integrability for rational points whose norm is regular
 elliptic at a finite place of `L`, with the measure conditions of
-`GeneralLinearSimpleTwistedTraceFormulaStatement` (Task 7649).
+`GeneralLinearSimpleTwistedTraceFormulaStatement`.
 
 ## Notation from the Library
 
@@ -21,7 +21,8 @@ elliptic at a finite place of `L`, with the measure conditions of
   `GroupScheme.GeneralLinear.groupScheme (Fin n) (CommRingCat.of K)` over `Spec K`. The file
   declares two local instances, `IsAffine` and `Smooth` for this group scheme, from the Library
   theorems `GroupScheme.GeneralLinear.isAffine_groupScheme` and
-  `GroupScheme.GeneralLinear.smoothStatement`, as in Tasks 7604 and 7649. `Wₙ` is a local
+  `GroupScheme.GeneralLinear.smoothStatement`, as in `GeneralLinearEllipticCentralizerStatement`
+  and `GeneralLinearSimpleTwistedTraceFormulaStatement`. `Wₙ` is a local
   notation for `weilGroup K L GLₙ` (`Langlands.TraceFormula.AdelicGroupAutomorphism`), the Weil
   restriction `Res_{L/K}` of the base change of `GLₙ` to `L`.
 - `unitGaloisAut K L GLₙ σ : Aut Wₙ` is the algebraic automorphism of `W` attached to `σ`. The
@@ -34,14 +35,16 @@ elliptic at a finite place of `L`, with the measure conditions of
 - `normOneSubgroup K Wₙ` is `W(𝔸_K)¹`, the common kernel of the idelic norms of the
   `K`-rational algebraic characters of `W`. `rationalNormOneSubgroup K Wₙ` is the image `Γ` of
   `W(K) = GL_n(L)` in it.
-- `Φ : W(𝔸_K) → AdelicGL L n` composes three Library maps, as in Task 7649.
+- `Φ : W(𝔸_K) → AdelicGL L n` composes three Library maps, as in
+  `GeneralLinearSimpleTwistedTraceFormulaStatement`.
   `AdelicGaloisUnit.weilAdelicEquiv K L GLₙ` identifies Weil points over `𝔸_K` with points of
   the base change over `𝔸_L`. The next two maps are `AdelicGroupPoints.map` of
   `(GroupScheme.GeneralLinear.baseChangeIso (Fin n) (Spec.algebraMap K L)).hom` and
   `GeneralLinearGroupPoints.adelicHomeomorph L n` (group-scheme points to the adelic matrix
   group `AdelicGL L n = GL_n(𝔸_L)`).
 - `N(g) = ((List.range l).map fun k => adelicAut K (unitGaloisAut K L GLₙ σ ^ k) g).prod` is
-  the ordered product `g Θ(g) ⋯ Θ^{l-1}(g)` used in Task 7649. On `W(𝔸_K)¹` these are the
+  the ordered product `g Θ(g) ⋯ Θ^{l-1}(g)` used in `GeneralLinearSimpleTwistedTraceFormulaStatement`.
+  On `W(𝔸_K)¹` these are the
   iterates of `θ`.
 - `Langlands.Global.FinitePlace L` is a finite place `w` of `L`. `AdelicGL.finite` takes the
   finite-adelic component and `FiniteAdelicGL.localProjection L n w` the component at `w`.
@@ -74,7 +77,7 @@ in `W(𝔸_K)¹`. Then both of the following hold.
 
 The two assertions quantify over their measures independently. A choice of `μC`, `νC` and
 `νΓC` satisfying both compatibilities therefore gives both conclusions, as required for each
-class in Task 7649. The split form elaborates within the default heartbeat limit. Existence
+class in `GeneralLinearSimpleTwistedTraceFormulaStatement`. The split form elaborates within the default heartbeat limit. Existence
 of compatible measures is a separate proposition.
 
 ## Mathematical proof sketch
@@ -151,12 +154,12 @@ Getz–Hahn formula with the centralizer comparison of Arthur–Clozel and the r
 ellipticity test at a finite place. The result is expressed using the Library's norm-one
 group, compatible measures, and continuous compactly supported test functions.
 
-## Relation to other tasks
+## Relation to other statements
 
-- Task 7649 (`Langlands.TraceFormula.GeneralLinearSimpleTwistedTraceFormulaStatement`) uses
+- `Langlands.TraceFormula.GeneralLinearSimpleTwistedTraceFormulaStatement` uses
   the same `θ`, `Φ`, `N`, local regular ellipticity condition and measure hypotheses. To
   obtain its per-class conclusions, take `r = r j` and `φ = fOne`, using continuity and
-  compact support of `fOne` from the conclusion of Task 7600's
+  compact support of `fOne` from the conclusion of
   `Langlands.TraceFormula.PositiveQuotientTraceComparisonStatement`.
-- Task 7604 (`Langlands.TraceFormula.GeneralLinearEllipticCentralizerStatement`) is the
+- `Langlands.TraceFormula.GeneralLinearEllipticCentralizerStatement` is the
   untwisted analogue for `GL_n` over a number field.

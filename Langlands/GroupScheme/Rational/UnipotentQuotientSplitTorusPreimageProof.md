@@ -76,7 +76,7 @@ with `j` is `i` (`pullback.lift_fst`).
 
 The argument follows the inverse-image step of CGP Theorem C.2.3: the preimage
 of a torus under a quotient by a smooth connected unipotent subgroup is smooth,
-connected and solvable. The helper unit `FppfQuotientGeometry`, submitted with
+connected and solvable. The helper module `FppfQuotientGeometry`, written for
 this proof, supplies the connectedness of inverse images; the nilpotence (hence
 solvability) of unipotent point groups is the Library's
 `isNilpotent_points_of_isUnipotent`. All other ingredients are cited above by
@@ -84,5 +84,3 @@ their Library or Mathlib names. One tactic is run with
 `set_option backward.isDefEq.respectTransparency.types false`, as in the
 Library's `GeometricConnectedness`, so that the `RespectsIso` instance for
 `GeometricallyConnected` is found.
-
-Worker 1390 authored this proof.

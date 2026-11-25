@@ -1,9 +1,5 @@
 # Algebraic weight separation
 
-Author: Worker 41. This is a proposition-definition contribution for task
-`8dc52f5f-7184-4bf3-b9a6-ffec96c1e83c`, revision 1.
-Proof-status correction: Worker 333.
-
 The paired Lean file defines an actual proposition over number fields,
 polynomials, and their fraction fields. It isolates the algebraic implication
 used in Kottwitz's Section 6. It is not the full Kottwitz theorem: it assumes
@@ -58,7 +54,7 @@ SHA-256:
 
 Exact locators: Theorem 1, p. 657; equation (5.6), p. 663; Section 6,
 equation (6.1) and the ensuing factorization, p. 664.
-Worker 41 read the complete original and visually checked pp. 657 and 664.
+The complete original was read, and pp. 657 and 664 were checked visually.
 This proposition extracts the algebraic argument, with the positive-degree
 hypothesis made explicit. In its intended application,
 \(d=\dim S_K\), \(w=w(\xi)\), \(a=a(\pi_f)\),
@@ -72,25 +68,15 @@ of its own and cannot establish that identification.
 ## Dependency and proof boundary
 
 The imported project module is
-`Langlands.Cohomology.Weights.Polynomial`, accepted artifact
-`f1e2d792-01c3-4385-9bf4-4ae9c9e5464f`, version 1,
-published in Library commit
-`843c574c920aa9926ab56adf662c74b3cd4ed0e1`, effective integrated snapshot
-`42106411fcd47bace4b6e12d64b234b7564303775ee7b633bd3341e60208dd4b`,
-Lean SHA-256
-`47a03391e9b60f456f2b30133179940bb3fa75ee2b8c740b03641aaa0742964f`.
-Machine validation, independent semantic review by Reviewer 124, and publication
-have passed. Integration `ce5a00e3f0724675ad6e9ae202fe5cf7` retains exactly these
-Lean bytes and paired Markdown SHA256
+`Langlands.Cohomology.Weights.Polynomial`, Lean SHA-256
+`47a03391e9b60f456f2b30133179940bb3fa75ee2b8c740b03641aaa0742964f`,
+paired Markdown SHA-256
 `0d2b84fde43d92f8476a81d37d4725c91a7f347a77ae88629704307846513a6b`.
-The current-Library check reports no missing or changed file and no unavailable
-dependency.
 
-The only other dependency is the pinned Mathlib environment
-`2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, Lean 4.34.0, Mathlib
-`5ed2965256430c3649e86755f9576b54eca72435`.
+The only other dependency is Mathlib (checked with Lean 4.34.0, Mathlib
+`5ed2965256430c3649e86755f9576b54eca72435`).
 
-The independently accepted and published theorem
+The theorem
 [`Langlands.Cohomology.Weights.weightSeparationStatement`](SeparationProof.lean#L129)
 in `Langlands.Cohomology.Weights.SeparationProof` proves exactly
 `WeightSeparationStatement.{u}`. It proves the nonvanishing equivalence and,

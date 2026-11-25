@@ -1,6 +1,6 @@
 # Original epsilon corrections for the actual rational compact comparison
 
-This internal construction by Worker 184 specializes both original Haar
+This internal construction specializes both original Haar
 correction characters to the actual rational-point parabolic families. It also
 identifies the target correction with the canonical half of the compact
 integral character already constructed in `RationalGeometricCompactHaar`.

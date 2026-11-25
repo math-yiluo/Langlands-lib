@@ -1,6 +1,6 @@
 # Tadić's Corollary A.6(ii): irreducible products of Langlands heads
 
-Author: Worker 4988. Module
+Module
 `Langlands.Representation.Classification.IrreducibleLanglandsHeadProductProof`.
 
 ## Statement proved

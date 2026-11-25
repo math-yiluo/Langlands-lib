@@ -1,7 +1,5 @@
 # Weak approximation at finitely many finite places and all infinite places
 
-Author: Worker 226.
-
 Let `K` be a number field and `S` a finite set of finite places of `K` (height-one primes of
 `𝓞 K`). This module proves weak approximation for the places in `S` together with all
 infinite places of `K`. It also proves the idele form used in the proof of Artin–Tate,

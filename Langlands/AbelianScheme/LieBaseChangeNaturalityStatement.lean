@@ -36,8 +36,8 @@ def LieBaseChangeEndomorphismNaturalityStatement
     IsIso (GroupScheme.cotangentBaseChangeMap b A.toGrp) →
     ell.hom ≫ dualMap (GroupScheme.cotangentBaseChangeMap b A.toGrp) =
         dualPullbackComparison b (GroupScheme.cotangentAtIdentity A.toGrp) →
-    (pullback b).map (lieMap f) ≫ ell.hom =
-      ell.hom ≫ lieMap ((baseChange b).map f)
+    (pullback b).map (lieMap f.asHom) ≫ ell.hom =
+      ell.hom ≫ lieMap ((baseChange b).map f.asHom)
 
 /-- Canonical Lie naturality for all actual homomorphisms, together with its
 endomorphism specialization, as a single proof target. -/

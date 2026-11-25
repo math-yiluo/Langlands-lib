@@ -1,7 +1,5 @@
 # The sign between two tensor connecting maps
 
-Proof author: Worker 45. Audit and documentation preparation: Worker 211.
-
 `tensorGrid` is the commuting coefficient diagram with entries `Sᵢ ⊗ Tⱼ`.
 Its squares commute by the interchange law for tensor morphisms; its zero
 composites are proved. Applying the actual Tate-complex functor gives a

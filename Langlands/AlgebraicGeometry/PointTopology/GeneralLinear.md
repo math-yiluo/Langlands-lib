@@ -1,6 +1,6 @@
 # General linear point topology comparisons
 
-This unit constructs the comparison between the published evaluation topology
+This module constructs the comparison between the published evaluation topology
 on actual points of the general linear group scheme and the existing topology
 on matrix units `GL n S`. It uses the entry and inverse-entry coordinate ring
 from `Langlands.GroupScheme.GeneralLinear` and the actual affine scheme-point
@@ -15,7 +15,7 @@ Brian Conrad, *Weil and Grothendieck approaches to adelic points* (December 31,
 `fe4a9193aff4ef575665b40971f3da32f850a74d87b3f2d0fa28bba26b9cbabb`.
 Conrad describes the topology through evaluation of every coordinate-ring
 element, and proves that polynomial coordinate presentations yield that same
-topology. This unit applies that construction to the Library's explicit
+topology. This module applies that construction to the Library's explicit
 matrix-and-inverse presentation; the named GL scheme and its classification
 maps come from the imported Library, rather than a new choice of scheme.
 
@@ -80,4 +80,4 @@ actual scheme morphisms and the existing algebraic classification maps.
 
 This focused construction supplies the scheme/matrix topology bridge. General
 nonarchimedean group properties, second countability, subgroup results, and the
-remaining sections of the paper are separate obligations.
+remaining sections of the paper are not part of this module.

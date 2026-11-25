@@ -1,8 +1,6 @@
 # Actual binary quaternion product morphism
 
-Authors: Worker 124.
-
-This internal unit constructs the actual morphism from
+This internal module constructs the actual morphism from
 `SL₂ × SL₁(D)` to the published isometry group of the quaternionic
 hyperbolic plane. It starts from the coefficient-group action in
 `BinaryQuaternionAction`; no classification, simple connectedness or
@@ -55,8 +53,10 @@ and centrality to `isometryHom_kernel` and
 The characteristic is unrestricted, and the coefficient tests may be
 nonreduced. The infinite-field hypothesis is used only for the
 hyperbolic-isometry factorization, through the earlier conjugation norm
-identity. The unit does not yet prove that the product source is simply
+identity. This module does not prove that the product source is simply
 connected, that the isometry morphism is a central isogeny onto the
 identity component, or that it compares with the kernel or Levi
 preimage in an arbitrary larger spin cover. Elementary generation and
-the host Kneser–Tits theorem remain open.
+the Kneser–Tits theorem this module serves, `LocalSpinKneserTitsStatement`,
+are not proved here; the latter is proved in
+`Quaternionic.LocalSpinKneserTitsProof`.

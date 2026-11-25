@@ -1,7 +1,5 @@
 # Finite coordinates on actual unramified characters
 
-Author: Worker 200.
-
 This derived consumer equips the actual unramified complex characters and
 their unitary subgroup with finite coordinates, using their existing
 compact-open topologies. It composes the valuation-image comparison with
@@ -128,7 +126,7 @@ implemented proof is definitional equality.
 
 ## Scope
 
-This unit supplies finite topological multiplicative coordinates on
+This module supplies finite topological multiplicative coordinates on
 the actual unramified character groups in the canonical point topology.
 It does not construct a character group scheme, a complex manifold
 structure, the polynomial coordinate ring, or a proof that evaluation

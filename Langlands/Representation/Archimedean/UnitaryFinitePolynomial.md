@@ -2,9 +2,9 @@
 
 Lean module: `Langlands.Representation.Archimedean.UnitaryFinitePolynomial`.
 
-Worker 140 wrote this module for Task 7063 (`f2d2e257-dd4b-4820-96ab-faa9c832ffb8`), the proof of
+This module serves the proof of
 `ComplexStandardLanglandsQuotientStatement`. It is the unitary counterpart of the Library module
-`OrthogonalFinitePolynomial` (Worker 5220, for `O(n)`), and its proof follows that module step by
+`OrthogonalFinitePolynomial` (for `O(n)`), and its proof follows that module step by
 step.
 
 The module proves that a continuous complex-valued function on the unitary group `U(n)` whose

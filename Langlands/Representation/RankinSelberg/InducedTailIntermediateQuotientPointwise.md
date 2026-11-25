@@ -1,6 +1,6 @@
 # Localized comparison on the actual JPSS quotient
 
-Worker 318 derives this internal adapter from the pointwise intermediate-tail
+This internal adapter is derived from the pointwise intermediate-tail
 comparison and the actual chart and determinant density constructions. The
 result retains the diagonal extension hypothesis for every Schwartz function,
 full Whittaker type, a smooth test representation, and actual test coefficient

@@ -22,14 +22,16 @@ proof follows the recurrence. Continuous real linear moving fields and coordinat
 functionals are analytic. Analytic coefficient functions have analytic real
 Frechet derivatives; continuous bilinear evaluation, products, zero extension,
 finite sums, induction on Cartan iterates and the finite polynomial sum preserve
-analyticity. Acceptance of this proposition does not provide that proof.
+analyticity. This module does not provide that proof; the theorem
+`cartanPolynomialCoordinateOperator_analyticCoefficients` (module
+`ArchimedeanCartanPolynomialCoefficientAnalyticity`) proves the same property for every
+polynomial.
 
-This unit asserts only coefficient analyticity. It does not identify the action
+This module asserts only coefficient analyticity. It does not identify the action
 with `cartanAmbientPolynomial`, compute its highest-order symbol, prove
 ellipticity or establish analytic regularity of solutions. Those remain separate
 obligations in the published coordinate realization and joint-finite analyticity
 statements.
 
-Worker 116 formulated the proposition from the published coefficient construction.
-Worker 459 checked the full proposition telescope against the published carrier
-and prepared this pair for independent review.
+The proposition is formulated from the published coefficient construction. Its
+full telescope was checked against the published carrier.

@@ -1,9 +1,9 @@
 # Split maximal tori after a finite Galois extension
 
-Module `Langlands.GroupScheme.Torus.FiniteGaloisSplitMaximal`. Author: Worker 1391.
+Module `Langlands.GroupScheme.Torus.FiniteGaloisSplitMaximal`.
 
-This module is a helper for proof task `a41119fb-a633-4b81-a979-4b08e9ddbb15`, which proves
-`SimplyConnectedCoverExistenceStatement`. That proof follows Milne, *Algebraic Groups* (2017),
+This module is a helper for the proof of `SimplyConnectedCoverExistenceStatement` (proved as
+`simplyConnectedCoverExistence` in `SimplyConnected.CoverExistenceProof`). That proof follows Milne, *Algebraic Groups* (2017),
 Remark 23.60: build the cover over a field where the group is split, then descend it to `k`. For
 that route, every semisimple group must acquire a split maximal torus over some finite Galois
 extension.
@@ -42,8 +42,9 @@ different notion: a split Borel subgroup. This module does not formalize that de
 Proposition 21.64 (printed p. 443, PDF p. 459) states that a reductive group is splittable exactly
 when it is split in the sense of 17.101. Nothing in this module uses that equivalence.
 
-The Library had no predicate for split groups before this module. The split-group statements of
-task `157eb578-930f-46eb-b229-06b87342bae8` write the same condition out as an explicit
+The Library had no predicate for split groups before this module. The split-group statement
+`SplitSimplyConnectedCoverExistenceStatement` (module
+`SimplyConnected.SplitCoverExistenceStatement`) writes the same condition out as an explicit
 existential.
 
 ## `exists_finiteGalois_hasSplitMaximalTorus`
@@ -68,8 +69,8 @@ base change is, by definition, the base change of `T₀`. `i` is maximal by the 
 
 Let `G` be a semisimple group over `Spec k` (`IsSemisimple G`). Assume `hsplit`, `hbase` and `hss`.
 Then the first theorem's conclusion holds, and in addition `G_K` is semisimple. This matches the
-hypotheses of `SplitSimplyConnectedCoverExistenceStatement` (statement task
-`157eb578-930f-46eb-b229-06b87342bae8`) over `K`.
+hypotheses of `SplitSimplyConnectedCoverExistenceStatement` (module
+`SimplyConnected.SplitCoverExistenceStatement`) over `K`.
 
 Proof. `IsSemisimple G` contains `IsConnectedReductive G`, which supplies the smooth and affine
 structure morphism. The first theorem gives `K` and `HasSplitMaximalTorus G_K`, and

@@ -1,7 +1,5 @@
 # Equalizer loci of lifted points
 
-Author: Worker 105.
-
 This is support for Conrad's Example 5.13 (printed p.20).
 
 ## Setting

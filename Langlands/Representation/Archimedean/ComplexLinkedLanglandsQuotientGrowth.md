@@ -42,7 +42,8 @@ For every complex principal series, the elements of degree `≤ d` of the holomo
 through a space of operators of dimension at least `c (d + 1)^(n (n - 1))`. Mathematically, the
 annihilator of a principal series in the holomorphic `U(𝔤𝔩_n)` is the minimal primitive
 ideal `U · ker χ`, and `U / U ker χ` grows like the coordinate ring of the nilpotent cone, of
-dimension `n² - n` (Kostant). The planned proof is outlined below.
+dimension `n² - n` (Kostant). A proof is outlined below; the Library's proof is in
+`ComplexStandardHolomorphicGrowthProof`.
 
 ```lean
 def ComplexLinkedSmallGrowthStatement : Prop :=
@@ -66,7 +67,8 @@ submodule lies in a module induced from a finite-dimensional representation `F_p
 `GL_2(ℂ)` block (Vogan 1978, Lemma 6.5 and Corollary 6.6, p. 94). Its lowest `U(n)`-type
 gives `E`.
 
-Provenance: both statements are internal intermediate statements of Task 7064, in the
+Provenance: both statements are internal intermediate statements of the proof of
+`ComplexLinkedLanglandsQuotientNotLargeStatement`, in the
 Gelfand–Kirillov form of Vogan 1978, §6. The growth exponents are written as explicit
 inequalities. Gelfand–Kirillov dimension itself is not defined.
 
@@ -113,9 +115,13 @@ first, applied to `ds'`. Put `N = n (n - 1)`. A linked pair forces `n ≥ 2`
 
 So `S` and `v` satisfy `ComplexDualSubmoduleAnnihilatorStatement`.
 
-## Planned proofs of the two statements
+## Outlined proofs of the two statements
 
-These plans are not part of this module and are recorded here only as context.
+These outlines are not part of this module and are recorded here only as context. The Library
+proves both statements: `ComplexStandardHolomorphicGrowthStatement` in
+`ComplexStandardHolomorphicGrowthProof`, by a different argument (linear independence of symbol
+products, through jets of test functions), and `ComplexLinkedSmallGrowthStatement` along the
+second outline (`ComplexLinkedSmallGrowthAdjacent`, `ComplexLinkedSmallGrowthProof`).
 
 - `ComplexStandardHolomorphicGrowthStatement`. The Taylor coefficients at `1` of `U(n)`-finite
   functions separate `U(𝔫̄)`, so evaluation at `1` embeds a Verma module into the dual of

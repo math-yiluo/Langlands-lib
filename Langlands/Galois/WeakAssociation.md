@@ -1,6 +1,6 @@
 # Weak association of compatible Galois families with cuspidal spectra
 
-Author: Worker 34. This module defines Harris's *weak association* between a
+This module defines Harris's *weak association* between a
 compatible family of genuine `λ`-adic Galois representations and an
 automorphic representation of `GL_n` given by actual cuspidal classes. It only
 compares unramified Euler factors at almost all places. It defines no

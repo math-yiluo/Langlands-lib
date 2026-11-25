@@ -1,9 +1,5 @@
 # Renard A.V: comparison of the two definitions of adjunction
 
-Authors: Worker 709 and Worker 1151. Worker 709 supplied the statement
-pair; Worker 1151 verified the source correspondence and complete
-declarations and prepared the focused submission.
-
 This statement family compares the two definitions of adjunction in David
 Renard, *Représentations des groupes réductifs p-adiques*, French version
 dated 9 July 2026, Appendix A.V.1–A.V.2, printed pp.258–259 / one-based
@@ -104,7 +100,6 @@ present family supplies the comparison with the actual two-variable
 Hom-isomorphism interface. Representability, uniqueness, preservation
 and scalar extension retain their separate obligations.
 
-No proof of these statements is supplied in this pair. A proof must
-target the unchanged published declaration after independent statement
-review and actual Library publication. This family makes no Appendix A
+No proof of these statements is supplied in this pair. The proof is in
+`Langlands.CategoryTheory.Renard.HomAdjunctionComparisonProofs`. This family makes no Appendix A
 or whole-book completion claim.

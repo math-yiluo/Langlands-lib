@@ -20,7 +20,7 @@ open Polynomial
 
 universe u uQ uV uE
 
-namespace Langlands.ClassField.Global.RelativeWeilGroup
+namespace Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 
 open Langlands.Global Langlands.Global.CompletionPadic
 open Langlands.Global.FunctionalEquationComparison Langlands.Global.AdelicFunctoriality
@@ -203,4 +203,4 @@ theorem dualLFactor_eq_of_unramified
     (HeckeCharacter.isUnramifiedAt_inv hχz) hzP hzχ hzP' hS hS',
     eval_inv_algebraMap_total, hpoly]
 
-end Langlands.ClassField.Global.RelativeWeilGroup
+end Langlands.ClassFieldTheory.Global.RelativeWeilGroup

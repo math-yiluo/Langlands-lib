@@ -3,7 +3,8 @@
 This module is an internal analytic prerequisite. It shows that compact
 averages of smooth families can be differentiated under the integral sign. It
 is needed before derivative-topology density can be proved at a fixed finite
-level (Task 7293).
+level, toward multiplicity one for actual cuspidal operator realizations of
+`GL_(r+1)` (`CuspidalOperatorMultiplicityOneStatement`).
 
 ## The statement
 
@@ -122,8 +123,8 @@ continuous on the compact space `X` and `μ` is finite.
 
 This is an internal development, derived only from Mathlib's differential
 calculus on manifolds and its dominated differentiation theorem. No external
-source is translated. It extends Worker 779's shared draft for Task 7699
-(revision 1) by adding the evaluated identity as a conjunct of the statement.
+source is translated. The evaluated identity is included as a conjunct of the
+statement.
 
 The published `Langlands.Analysis.CompactManifoldWeightedIntegralStatement`
 (module `Langlands.Analysis.CompactManifoldWeightedIntegralStatement`) is a

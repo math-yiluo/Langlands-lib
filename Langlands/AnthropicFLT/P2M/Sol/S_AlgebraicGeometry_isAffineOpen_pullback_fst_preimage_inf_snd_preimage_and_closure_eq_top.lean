@@ -7,7 +7,7 @@ Modified: FLT module names are prefixed by `Langlands.AnthropicFLT`; the FLT lak
 are set after the imports; the import of `P2M.Util` is dropped. The paired Markdown file lists
 the changes.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_isAffineOpen_pullback_fst_preimage_inf_snd_preimage
 import Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_closure_range_pullback_fst_appTop_union_range_snd_appTop_eq_top
 set_option maxHeartbeats 4000000

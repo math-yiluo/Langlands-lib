@@ -61,8 +61,9 @@ characters of `M` restricted to its split component `A` span
 ## Statements
 
 `IntertwiningRootHyperplaneStatement` has the data and hypotheses of
-`Langlands.Global.IntertwiningMeromorphicContinuationStatement` (staged with
-this program; parabolics `P = MU` with presentation `r` and `Q = M'V`,
+`Langlands.Global.IntertwiningMeromorphicContinuationStatement` (module
+`Langlands.Global.AdelicIntertwiningContinuationStatement`; parabolics `P = MU`
+with presentation `r` and `Q = M'V`,
 `(w, c)` presenting an element of `W(P, Q)`, `π' : Q → M'` with
 `l' ≫ π' = 𝟙 M'`, a maximal compact `K` with `P(𝔸)K = Q(𝔸)K = G(𝔸)`, a closed
 matrix embedding `rho` and `φ ∈ 𝒜_P`). It quantifies continuation data

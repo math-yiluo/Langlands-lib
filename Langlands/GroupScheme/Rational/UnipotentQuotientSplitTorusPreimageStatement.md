@@ -1,7 +1,5 @@
 # The preimage of a split subtorus under a quotient by a unipotent subgroup
 
-Author: Worker 1413.
-
 `Langlands.GroupScheme.UnipotentQuotientSplitTorusPreimageStatement.{u}` is
 an unproved proposition at arbitrary universe `u`. For every field
 `k : Type u` and actual group scheme `G` over `Spec (CommRingCat.of k)` with

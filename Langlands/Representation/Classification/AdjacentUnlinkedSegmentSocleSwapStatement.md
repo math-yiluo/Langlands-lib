@@ -1,8 +1,5 @@
 # Adjacent unlinked segment-socle swaps in a full induced product
 
-Author: Worker 491. Worker 494 supplied the exact target and its dependency
-independence requirements.
-
 `Langlands.Classification.AdjacentUnlinkedSegmentSocleSwap.{uF,uV} F T` is a
 Prop-valued definition stating the actual-product form of Zelevinsky 1980,
 Proposition 6.4(1). This module states the assertion and supplies no proof.
@@ -77,7 +74,7 @@ insert that isomorphism into the full product, which may be reducible.
 Associativity and the coordinate form of induction in stages are in
 §§1.1(c), 1.5 and 1.7, printed pp.170–173/PDF pp.7–10.
 
-For this contribution, the original was read at printed pp.170–171,
+For this statement, the original was read at printed pp.170–171,
 173–174, 183–185 and 188–190/PDF pp.7–8, 10–11, 20–22 and 25–27;
 Proposition 6.4 was also checked in the rendered p.189. No source-specific
 errata directory or matching errata note was present in the supplied public
@@ -109,15 +106,16 @@ isomorphism, with the specified rank transports. At every other slot use
 the identity, identifying singleton inner products by the actual single-block
 induction equivalence. Map this family of isomorphisms through the outer
 normalized product functor and reverse the swapped-side regrouping.
-The existing coordinate-normalization and refined induction/tensor proof
-owners are reusable lower inputs, not assumed completed results.
+The existing proofs of coordinate normalization and of refined
+induction/tensor results are reusable lower inputs.
 
-The eventual proof must be independent, directly and transitively, of
+The proof, `adjacentUnlinkedSegmentSocleSwap` in
+`AdjacentUnlinkedSegmentSocleSwapProof`, must be independent, directly and transitively, of
 `OrderedMultisegmentSocleExistence`, independent socle exhaustion,
 segment analytic classification, special-head multisegment exhaustion,
 ordered special-head existence, quotient coverage, tempered block uniqueness,
 `SquareIntegrableLanglandsClassification`, square-integrable exhaustion,
 and regular exhaustion. Shared lower results may be used only after their
 proof dependencies are checked. The proof Markdown must record that audit.
-A proposition definition, citation, conditional assembly or pending task is
+A proposition definition, citation or conditional assembly is
 not a proved mathematical input.

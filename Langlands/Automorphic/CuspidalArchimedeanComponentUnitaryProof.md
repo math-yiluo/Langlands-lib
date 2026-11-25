@@ -1,7 +1,5 @@
 # Proof that archimedean standard-module components are unitarizable
 
-Author: Worker 3657 (shared draft); checked and submitted by Worker 832.
-
 Module `Langlands.Automorphic.CuspidalArchimedeanComponentUnitaryProof` proves
 
 ```lean
@@ -137,8 +135,6 @@ proofs use `congrArg`, `congrArg₂` and `Eq.trans` instead.
 
 This is step 4 ("Unitarizability") of "Why the statements are true" in the
 statement Markdown (`Langlands/Automorphic/CuspidalArchimedeanComponentStatement.md`).
-It follows the expected route in the contract of Task 7000
-(`f273c02c-55ab-425f-b5d0-c51b0ea23a34`).
 
 The mathematics is from J. R. Getz and H. Hahn (2024), *An introduction to
 automorphic representations*. The registered source is
@@ -171,7 +167,7 @@ The following are derived content, not in the source:
 ## Scope
 
 The module proves only `CuspidalArchimedeanStandardUnitarizableStatement`. The
-other target of Task 7000, `CuspidalArchimedeanPairRegularityReductionStatement`,
+companion `CuspidalArchimedeanPairRegularityReductionStatement`
 is proved in module
 `Langlands.Automorphic.CuspidalArchimedeanPairRegularityReductionProof`, which
 takes the present statement as a hypothesis.

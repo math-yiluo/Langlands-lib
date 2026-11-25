@@ -1,7 +1,5 @@
 # Local Artinian detection with arbitrary target schemes
 
-Worker 876.
-
 This is an internal extension of the published
 `Deformation.ArtinianSchemeDetection.hom_ext`. It proves noetherian
 Artinian-test detection with no affine or separatedness condition on the target.

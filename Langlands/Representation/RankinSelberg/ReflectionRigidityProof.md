@@ -1,6 +1,6 @@
 # Proof of polynomial rigidity under reciprocal reflection
 
-Worker 351 proves `Langlands.RankinSelberg.reflectionRigidity` with exactly the
+This module proves `Langlands.RankinSelberg.reflectionRigidity` with exactly the
 closed type `Langlands.RankinSelberg.ReflectionRigidityStatement`.
 
 The proof first evaluates the supplied rational identity at an arbitrary nonzero

@@ -1,6 +1,8 @@
 # Actual field products indexed by integral Cartan components
 
-Worker 632, using Worker 634's component-coordinate and normal-model interfaces.
+The module uses the component-coordinate interface `RootComponentCoordinates`
+(`Reductive.RootComponentCentralizerFactors`) and the normal-model interface
+`RootPartitionNormalModel` (`Reductive.RootPartitionNormalSubgroup`).
 
 For a supplied `RootComponentCoordinates M`, an algebraically closed field with
 an algebra structure over the pinned model's ring, and any supplied normal
@@ -11,8 +13,9 @@ restrict along each actual factor inclusion to the prescribed normal-model
 inclusion. No particular choice of normal model is required.
 
 First, injectivity of the actual character-lattice equivalence and of the root
-indexing shows that distinct component root sets are disjoint. Worker 634's
-component root sets already cover every actual field root, and the pinned
+indexing shows that distinct component root sets are disjoint. The
+component root sets of `Reductive.RootComponentCommutation` already cover
+every actual field root, and the pinned
 torus becomes a split maximal torus over the field. The generic
 `RootPartitionFamily` product isomorphisms therefore apply directly, preserving
 their exact inclusion compatibility. The module is an internal specialization

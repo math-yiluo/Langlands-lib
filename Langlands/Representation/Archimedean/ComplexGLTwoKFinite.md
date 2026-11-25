@@ -1,8 +1,8 @@
 # `U(2)`-finite functions of `GL_2(ℂ)` principal series as bottom-row polynomials
 
 Lean module: `Langlands.Representation.Archimedean.ComplexGLTwoKFinite` (namespace
-`Langlands.Archimedean.GLTwoKFinite`). Worker 728 wrote it for the proof of
-`ComplexGLTwoUnlinkedIrreducibleStatement` (the target of Task 7148; written under Task 7064).
+`Langlands.Archimedean.GLTwoKFinite`). It serves the proof of
+`ComplexGLTwoUnlinkedIrreducibleStatement` (module `ComplexGLTwoUnlinkedIrreducibleProof`).
 
 Provenance: internal, derived. It writes a `U(2)`-finite function as a polynomial on `U(2)`
 (Library `UnitaryFinitePolynomial`) and transports it to all of `GL_2(ℂ)` through the

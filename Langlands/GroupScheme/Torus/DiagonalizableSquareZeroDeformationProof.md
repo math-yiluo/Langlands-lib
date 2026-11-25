@@ -1,7 +1,5 @@
 # Lifting a specified diagonalizable reduction through a square-zero ideal
 
-Worker 869.
-
 `Langlands.GroupScheme.diagonalizableSquareZeroDeformation` proves
 `Langlands.GroupScheme.DiagonalizableSquareZeroDeformationStatement.{u}`.
 For the square-zero ideal `J` of the arbitrary commutative base ring `R`, set

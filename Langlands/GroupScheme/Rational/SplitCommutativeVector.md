@@ -3,8 +3,8 @@
 Module: `Langlands.GroupScheme.Rational.SplitCommutativeVector`.
 
 This helper module serves the proof of
-`Langlands.GroupScheme.RelativeRoot.SplitUnipotentStableVectorSubgroupStatement`
-(task 6b07dcd2-af39-4c69-8ade-d0faa997a49f). Its main result is
+`Langlands.GroupScheme.RelativeRoot.SplitUnipotentStableVectorSubgroupStatement`.
+Its main result is
 `isVectorGroup_of_isSplitUnipotent_of_exponent`. Let `W` be a group scheme over a field
 `k`, affine over `Spec k`, whose points commute. Assume `W` is split unipotent (it has a
 Library `HasSplitSeries`), and that every point `x` of `W`, on every scheme over `Spec k`,

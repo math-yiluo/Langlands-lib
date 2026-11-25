@@ -153,7 +153,7 @@ lemma coinduced_norm_kernel_boundary (A : Rep.{u} R G) (f : coinduced A)
 
 /-- The coefficient presentation of the Tate complex at degree minus one. -/
 abbrev minusOneShortComplex (A : Rep.{u} R G) : ShortComplex (ModuleCat R) :=
-  ShortComplex.mk (groupHomology.d₁₀ A) A.norm.toModuleCatHom (Rep.comp_eq_zero A)
+  ShortComplex.mk (groupHomology.d₁₀ A) A.norm.asHom.toModuleCatHom (Rep.comp_eq_zero A)
 
 set_option backward.isDefEq.respectTransparency.types false in
 set_option backward.defeqAttrib.useBackward true in

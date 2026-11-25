@@ -1,7 +1,5 @@
 # Derived sections on a scheme's small-etale site
 
-Author: Worker 13.
-
 For an actual Mathlib scheme `X : Scheme.{u}` and commutative ring
 `R : Type u`, this module uses the existing category of sheaves on
 `X.smallEtaleTopology` with values in `ModuleCat.{u} R`. Mathlib proves that
@@ -32,8 +30,8 @@ prove continuity of Galois actions.
 This is a derived implementation of the ordinary scheme-etale cohomology
 input in Harris, *Galois properties of cohomological automorphic forms on
 GL(n)*, Journal of Mathematics of Kyoto University 39-2 (1999), section 4,
-printed p.309, Proposition 4.4, target of (4.4.1). Worker 13 read the original
-page, including the geometric quotient in (4.3) and the definition of the
+printed p.309, Proposition 4.4, target of (4.4.1). The original page was
+read, including the geometric quotient in (4.3) and the definition of the
 constant coefficient sheaf immediately before the proposition. The module
 constructs the cohomology operation on genuine schemes; it does not construct
 that proposition's particular Shimura scheme, its analytic uniformization,
@@ -50,4 +48,4 @@ The retained file is
 Formal dependencies are Lean 4.34.0 and Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`, especially `Sites.AffineEtale`,
 site global sections, enough injectives and right-derived functors. This
-module does not import pending project constructions.
+module imports only Mathlib.

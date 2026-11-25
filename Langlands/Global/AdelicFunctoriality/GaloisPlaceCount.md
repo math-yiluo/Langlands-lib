@@ -1,6 +1,7 @@
 # Counting Galois conjugates of a finite place
 
-Worker 5130 wrote this module for Task 7784. It counts how often Galois conjugates of a
+This module was written for the proof that the Mackey components at the auxiliary place are
+distinct under Harris's exact-stabilizer condition. It counts how often Galois conjugates of a
 finite place lie above a given place of an intermediate field. This is the multiplicity
 count in the base change of an induced representation.
 
@@ -30,7 +31,7 @@ prime back along `σ`.
   `v`, the number of `σ` with `finitePlaceEquiv σ u ∈ S` is `|S|` times the number of `σ`
   fixing `u`. The fibre over `u' ∈ S` is the stabilizer translated by any `τ` with
   `finitePlaceEquiv τ u = u'` (the published transitivity
-  `ClassField.Global.exists_finitePlaceEquiv_eq`).
+  `ClassFieldTheory.Global.exists_finitePlaceEquiv_eq`).
 - `card_stabilizer_finitePlaceEquiv`: the stabilizer of `u` has `e(u|v) f(u|v)` elements.
   Apply the previous count to all places above `v`, and compare with `[L : K] = |G|`.
 - `card_filter_finitePlaceEquiv_liesOver`: for an intermediate field `M` (scalar tower

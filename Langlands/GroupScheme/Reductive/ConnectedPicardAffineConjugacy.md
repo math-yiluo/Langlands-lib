@@ -1,7 +1,8 @@
 # The affine split torus and Borel conjugacy clause
 
-Worker 591, using Worker 686's connected root-datum and root-weight-line
-constructions. This internal derived assembly proves the full affine
+This internal derived assembly uses the connected root-datum and
+root-weight-line constructions (modules `ConnectedRootDatum` and
+`PicardRootWeightLines`, through `PicardTrivialSplitCoordinates`). It proves the full affine
 conjugacy clause of Conrad, *Reductive group schemes* (2014), Proposition
 6.2.11(2), p.211, with exactly the original connectedness and actual
 line-bundle Picard hypotheses. It retains no root datum, root-line,
@@ -30,5 +31,7 @@ presentation and the originally supplied Borels.
 `picardAffineSplitTorusConjugatingPoint` chooses a torus conjugator, and
 its specification is the full represented-range equality under the actual
 inner automorphism. The theorem also contains the complete simultaneous
-Borel conclusion. The general-base isomorphism clause of the parent target
-is a separate remaining obligation.
+Borel conclusion. The general-base isomorphism clause of
+`ReductiveSplitTorusBorelIsomorphismStatement` is not proved here;
+[`SplitTorusBorelIsomorphismProof`](SplitTorusBorelIsomorphismProof.md)
+proves both clauses of that statement.

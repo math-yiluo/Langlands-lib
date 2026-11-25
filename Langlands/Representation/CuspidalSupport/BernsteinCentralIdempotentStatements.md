@@ -4,16 +4,13 @@ Module `Langlands.Representation.CuspidalSupport.BernsteinCentralIdempotentState
 Namespace `Langlands.CuspidalSupport`.
 Entry proposition `BernsteinCentralIdempotentStatements`; nothing is proved here.
 
-Worker 1222 wrote this statement unit under the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`.
-
 ## Source and provenance
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French edition dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1222 read VI.7.1–VI.7.5, printed pp.180–187 / PDF pp.186–193. The
+VI.7.1–VI.7.5, printed pp.180–187 / PDF pp.186–193, were read. The
 assertions stated here are in VI.7.4, "Idempotents centraux", printed
 pp.185–186 / PDF pp.191–192:
 
@@ -43,8 +40,8 @@ file does not use it (see "Formal choices").
 ## The objects
 
 All objects are published; this file constructs nothing. The setting is that
-of the companion VI.7.2 statement unit `BernsteinDecompositionStatements`
-(Worker 1222), on the standard-family framework of Worker 1153 (modules
+of the companion module `BernsteinDecompositionStatements` (statements of VI.7.2),
+on the standard-family framework (modules
 `BernsteinData` and `BernsteinBlock`):
 
 - `F : Type uF` is a nonarchimedean local field, `G` a group scheme over
@@ -163,11 +160,12 @@ The conjunction of the two statements.
 ## Scope
 
 This file states the assertions of the VI.7.4 paragraph quoted above and
-proves none of them. Proofs belong to a separate `lean.proof@1` task targeting
-`BernsteinCentralIdempotentStatements`. The first statement follows from the
+proves none of them. `bernsteinCentralIdempotentStatements_of_decomposition`
+(module `BernsteinHeckeIdealReduction`) derives
+`BernsteinCentralIdempotentStatements` from the Bernstein decomposition. The first statement follows from the
 Bernstein decomposition (`BernsteinDecompositionStatement`) by the A.IX
 argument. For two factors, the published module
-`Langlands.CategoryTheory.Renard.DecompositionCenterIdempotent` (Worker 1842)
+`Langlands.CategoryTheory.Renard.DecompositionCenterIdempotent`
 carries out that argument.
 
 Not stated:
@@ -178,7 +176,7 @@ Not stated:
   function. The remark describes the general situation, not a theorem.
 - The program sketched after the Remark (progenerators of `M(G)_Ω` and the
   centre of `M(G)_Ω`), which is carried out in VI.10. The VI.10 results are
-  stated in the published `BernsteinBlockCenterStatements` and related units.
+  stated in the published `BernsteinBlockCenterStatements` and related modules.
 
 The file imports `Langlands.Representation.CuspidalSupport.BernsteinBlock`,
 `Langlands.Representation.Category.Abelian` (the preadditive structure of
@@ -186,6 +184,5 @@ The file imports `Langlands.Representation.CuspidalSupport.BernsteinBlock`,
 `Langlands.Algebra.NonUnitalModuleRestrictScalars`,
 `Langlands.HarmonicAnalysis.GroupAction`, and Mathlib's
 `CategoryTheory.Center.Basic`, `Algebra.DirectSum.Basic` and
-`RingTheory.NonUnitalSubring.Basic` (environment
-`bb168ec3-1031-46d9-816b-5c2ed7bbe1a6`, Mathlib commit
+`RingTheory.NonUnitalSubring.Basic` (Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`).

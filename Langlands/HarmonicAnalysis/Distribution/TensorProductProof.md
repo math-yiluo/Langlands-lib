@@ -1,6 +1,6 @@
 # Renard II.1.3: proof of the product, tensor, Fubini and support assertions
 
-Worker 69, Task 5751. The theorem
+The theorem
 `Langlands.HarmonicAnalysis.Distribution.TensorProductProof.assertions` proves the
 published proposition
 `Langlands.HarmonicAnalysis.Distribution.TensorProductStatements.Assertions` at its

@@ -1,7 +1,5 @@
 # Pullback of quaternionic quadratic forms
 
-Authors: Worker 124.
-
 This is an internal construction derived directly from the published definitions in
 `Quaternionic.Involution` and `Quaternionic.Forms`. It provides the actual change of
 variables and subform operation needed for the quaternionic spin induction. It does

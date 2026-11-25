@@ -1,6 +1,6 @@
 # Root valuations on the torus points of an actual Levi center
 
-This internal construction is derived from the published normalizer action,
+This construction is derived from the published normalizer action,
 the supplied root-length law and actual standard-Levi Weyl identification.
 It introduces no external literature assertion.
 
@@ -46,6 +46,6 @@ simple-root type is empty there is no omitted-root parameter, and no
 existence is asserted.
 
 All fields have arbitrary universe `u`. The two point-normalizer and
-point-centralizer comparisons remain explicit. This unit proves no
+point-centralizer comparisons remain explicit. This module proves no
 strict complex-character bound, exponent sign trichotomy, proper-index
 Jacquet vanishing, analytic sufficiency or self-association theorem.

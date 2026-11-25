@@ -31,8 +31,8 @@ variable {X Y Z : Scheme.{u}}
 /-- Units as actual endomorphisms in the line-bundle core. -/
 def unitHomEquiv (L : LineBundle X) : Γ(X, ⊤)ˣ ≃ (Core.mk L ⟶ Core.mk L) :=
   (LineBundle.unitAutEquiv L).toEquiv.trans
-    { toFun := fun e => ⟨e⟩
-      invFun := fun e => e.iso
+    { toFun := fun e => ⟨e.asIso⟩
+      invFun := fun e => Aut.of e.iso
       left_inv := fun _ => rfl
       right_inv := fun _ => rfl }
 
@@ -48,10 +48,10 @@ lemma pullHom_unitHomEquiv (L : LineBundle X) (f : Y ⟶ X) (g : Z ⟶ Y)
   apply Core.hom_ext
   change (LineBundle.pullbackComp g f).inv.app L ≫
       ((LineBundle.pullback g).mapIso
-        (LineBundle.unitAut ((LineBundle.pullback f).obj L) r)).hom ≫
+        (LineBundle.unitAut ((LineBundle.pullback f).obj L) r).asIso).hom ≫
       (LineBundle.pullbackComp g f).hom.app L = _
   rw [LineBundle.pullback_mapIso_unitAut]
-  exact congrArg Iso.hom
+  exact congrArg (fun a => a.asIso.hom)
     (LineBundle.unitAutEquiv_conjugate ((LineBundle.pullbackComp g f).app L)
       (Units.map g.appTop.hom.toMonoidHom r))
 

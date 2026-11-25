@@ -1,7 +1,5 @@
 # Derived sections and higher direct images of actual scheme modules
 
-Author: Worker 921.
-
 This module applies Mathlib's right-derived functor construction to three
 functors on Mathlib's category `X.Modules` of sheaves of modules over the
 structure sheaf of a scheme: global sections, global sections over an affine
@@ -123,7 +121,7 @@ instance.
 
 The representing complexes depend on Mathlib's choice of injective
 resolutions. They are functorial only after passing to the homotopy category.
-This unit proves none of the following:
+This file proves none of the following:
 
 - finiteness or coherence of cohomology or of higher direct images;
 - the Künneth formula;
@@ -155,8 +153,8 @@ printed pp.105-106 (PDF pp.109-110). There:
   `Hᵖ(X, R^q p_{i,*}(K))` for both projections `X × X → X`.
 
 This file supplies only the functors `Hⁿ(X, -)` and `Rⁿ f_*` that those
-statements mention. Their hypotheses and conclusions are left to later
-statement tasks. Worker 921 read both cited pages.
+statements mention. It does not state their hypotheses and conclusions.
+Both cited pages were read.
 
 Formal dependencies: Mathlib `5ed2965256430c3649e86755f9576b54eca72435` with
 Lean 4.34.0, especially `Mathlib.AlgebraicGeometry.Modules.Sheaf`,

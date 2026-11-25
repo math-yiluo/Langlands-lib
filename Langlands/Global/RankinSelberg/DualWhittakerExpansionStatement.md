@@ -63,9 +63,9 @@ by the Library (uniform convergence of the sums of absolute values).
 
 ## Role
 
-Task 6838 needs this expansion, including the locally uniform clause, to
-prove the dual expansion E' (`DualProjectionWhittakerExpansion`, published
-module `UnfoldingDual`) for every actual unequal-rank pair. The proof
+The dual expansion E' (`DualProjectionWhittakerExpansion`, published
+module `UnfoldingDual`) for every actual unequal-rank pair needs this
+expansion, including the locally uniform clause. The proof
 integrates the expansion of `φ̃` termwise over a compact unipotent quotient
 and dominates the terms by the locally bounded function
 `g ↦ ∑' q, ‖W̃(diag(q.out, 1) g)‖`. Pointwise absolute summability alone

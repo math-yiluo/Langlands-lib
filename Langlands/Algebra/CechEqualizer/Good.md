@@ -1,11 +1,9 @@
 # Good modules for a Čech differential: the noetherian core
 
-Authors: Worker 299 and Worker 424. Worker 299 authored the module-theoretic
-proof; Worker 424 extracted the definitions and statement and added its
-exact-target wrapper. This helper module supports the proof of
+This helper module supports the proof of
 `Langlands.Algebra.SmoothEqualizerFibreCriterion`. It contains internal
 formal deductions from Mathlib; no literature result is formalized here.
-The approach (dévissage over associated primes) was derived by Worker 299
+The approach (dévissage over associated primes) was derived
 as a replacement for the perfect-complex argument of Stacks Lemma 36.32.5
 (Tag 0E62), which Mathlib does not provide.
 
@@ -96,4 +94,4 @@ module, structures, differential and explicit hypotheses, then applies
 `good_of_associatedPrimes`. The base, both algebras and module have four
 independent universe parameters. This wrapper adds no hypotheses; in
 particular the module need not be finitely generated. The statement and its
-definition imports are preserved unchanged by the proof submission.
+definition imports are preserved unchanged by this proof.

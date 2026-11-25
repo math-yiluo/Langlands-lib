@@ -1,7 +1,5 @@
 # CM character globalization and finite-unit prescription
 
-Author: Worker 35. Statement contribution to task
-`91266440-3276-48dc-ab77-8d1c1fa386e8`, revision 1.
 All declarations are proposition definitions.
 No existence theorem is proved or assumed by defining them.
 
@@ -65,7 +63,7 @@ The source's proof uses finiteness of the ideal class group and finite
 index of the units of the maximal real subfield inside the CM units.
 Those facts hold for a CM field without an imaginary-quadratic subfield.
 Its norm-killing argument therefore has the same conclusion for this
-formulation. A future proof must supply these facts, the relevant
+formulation. A proof must supply these facts, the relevant
 topological character extension, and the common positive multiplier;
 none is an input field of the target.
 
@@ -98,11 +96,12 @@ is kept explicit so that a later product with the Lemma 1 realization
 has exactly the stated infinity component. The Grunwald–Wang
 existence assertion used in this argument has its unconditional
 period-doubling allowance; no bound on the final character's order is
-asserted here. The published finite-order prescription statement
+asserted here. The existing finite-order prescription statement
 `FiniteOrderCharacterPrescriptionStatement` (module
 `Langlands.Global.Arithmetic.CharacterPrescriptionStatement`) is a
-separate, unproved theorem obligation, not an imported proof of this
-clause.
+separate theorem, proved as `finiteOrderCharacterPrescription_proof` in
+`Langlands.Global.Arithmetic.CharacterPrescriptionProof`; it is not an
+imported proof of this clause.
 
 ## Characters of integral units
 
@@ -155,14 +154,14 @@ property of Section 3.4, condition 3.
 `CMCharacterGlobalizationStatement` is the conjunction of these four
 complete targets, preserving their quantifiers. The local norm-pullback
 and stabilizer existence assertion behind Section 3.4, condition 3, is
-the separately published `AuxiliaryCharacterStatement` (module
+the separate `AuxiliaryCharacterStatement` (module
 `Langlands.Global.Arithmetic.AuxiliaryCharacterStatement`), stated over
 the project's p-adic field objects. Condition 3 depends only on the
 restriction of the local character to integral units, so a unit
 prescription at the auxiliary place can carry it. Transport between a
 number-field completion and those p-adic field objects is not part of
-this pair, and the Harris weak-induction output with its supercuspidal
-condition also remains separate.
+this module, and the Harris weak-induction output with its supercuspidal
+condition is also outside it.
 
 ## Original sources
 
@@ -193,31 +192,30 @@ condition also remains separate.
   Source `serre-1979-local-fields`, SHA256
   `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`.
 
-## Dependencies and acceptance boundary
+## Dependencies and validation boundary
 
-Every imported project module is published at Library commit
+Every imported project module is as in Library commit
 `30ceb5a0d89d8094c1663fc19f35416519b9a125`. The module imports
 `Langlands.Global.HeckeCharacter`, `Langlands.Global.InfinityType` and
 `Langlands.Global.AdelicFunctoriality.Isomorphism`; the other three
 modules below enter through these imports. The compiled sources are
 byte-identical to the Library files:
 
-| Module | Author | Lean SHA256 |
-| --- | --- | --- |
-| `Langlands.Global.Adelic` | Worker 2 | `b1b7213c47725ac26e0ce09b0e483e548c8a4e1f3fd4a4972cedb64b7ce8258e` |
-| `Langlands.Global.HeckeCharacter` | Worker 2 | `68525fbd6a536afefdb696f83491c0ddd60d506390cf7dcb9682c7688c3de18f` |
-| `Langlands.Global.InfinityType` | Worker 2 | `11287e03f4ac10451fc4a33d11e5aba337e2b5993cb1a9c96b9ff71ee5bae7c2` |
-| `Langlands.Global.AdelicFunctoriality.Infinite` | Worker 50 | `7fb0269ebb82579748b236b65ed5e48c332d08238db90c8df3602005e78c86a9` |
-| `Langlands.Global.AdelicFunctoriality.Finite` | Worker 50 | `e11f6163511b52a80ac95e88bb7101156aedcf08fe0ee29623a5d6ecc097bbc1` |
-| `Langlands.Global.AdelicFunctoriality.Isomorphism` | Worker 50 | `f9c46bd3c0ed01073c73cf748e279fd5393c479b587673e6c350440c7e73c749` |
+| Module | Lean SHA256 |
+| --- | --- |
+| `Langlands.Global.Adelic` | `b1b7213c47725ac26e0ce09b0e483e548c8a4e1f3fd4a4972cedb64b7ce8258e` |
+| `Langlands.Global.HeckeCharacter` | `68525fbd6a536afefdb696f83491c0ddd60d506390cf7dcb9682c7688c3de18f` |
+| `Langlands.Global.InfinityType` | `11287e03f4ac10451fc4a33d11e5aba337e2b5993cb1a9c96b9ff71ee5bae7c2` |
+| `Langlands.Global.AdelicFunctoriality.Infinite` | `7fb0269ebb82579748b236b65ed5e48c332d08238db90c8df3602005e78c86a9` |
+| `Langlands.Global.AdelicFunctoriality.Finite` | `e11f6163511b52a80ac95e88bb7101156aedcf08fe0ee29623a5d6ecc097bbc1` |
+| `Langlands.Global.AdelicFunctoriality.Isomorphism` | `f9c46bd3c0ed01073c73cf748e279fd5393c479b587673e6c350440c7e73c749` |
 
 The field, completion, idele and quotient transport is constructed
 in those dependencies with intrinsic algebraic and continuity proofs.
 No supplied map in this statement stands in for that construction.
 
 The module compiled with no errors or warnings under Lean 4.34.0 and
-Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`, in the project
-environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`. Inspection of
+Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`. Inspection of
 `CMCharacterGlobalizationStatement` reports a `Prop`-valued definition
 with level parameters `u` and `v` and only the standard axioms
 `propext`, `Classical.choice` and `Quot.sound`. All five definitions were
@@ -225,5 +223,6 @@ printed with explicit universes. Each returns `Prop`, and the final
 target keeps the independent universes `u` and `v` and every hypothesis
 described above.
 
-These development checks provide neither independent semantic
-acceptance nor proofs of the existence assertions.
+These development checks provide no proofs of the existence assertions.
+The conjunction `CMCharacterGlobalizationStatement` is proved by
+`cmCharacterGlobalization` in `CMCharacterGlobalizationProof`.

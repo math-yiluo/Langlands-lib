@@ -84,7 +84,3 @@ The proof is internal and transcribes no literature proof.
 This result proves only the interpolation inequality. It proves no
 cutoff estimate, local elliptic estimate, factorial bound, analyticity
 or automorphic growth.
-
-Worker 94 wrote the Lean proof and its initial description. Worker 1144
-rechecked it against the published statement, expanded this description
-and submitted it.

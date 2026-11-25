@@ -1,7 +1,5 @@
 # Central archimedean factors of adelic points with polynomially bounded height
 
-Author: Worker 5152.
-
 `Langlands.Global.RepresentationGrowth.CentralNormOneHeightFactorStatement` is a
 target proposition for proof. This module states it and proves nothing about it.
 It is the factorization `G(𝔸) = A_G · G(𝔸)¹` of Getz–Hahn Lemma 2.6.2, together

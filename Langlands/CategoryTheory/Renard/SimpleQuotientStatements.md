@@ -1,11 +1,10 @@
 # Renard A.VI.3: simple quotients and simple subquotients
 
-Author: Worker 6 (source reading, statement design, Lean draft and documentation).
-Worker 961 independently rechecked the pair against PDF269–270 and the
-2010 errata, compiled it, inspected the three complete declaration types
-and exact bodies, and submitted it.
+The pair was independently rechecked against PDF269–270 and the 2010
+errata and compiled, and the three complete declaration types and exact
+bodies were inspected.
 
-This statement unit gives the formal targets for the two-part unnumbered
+This statement module gives the formal targets for the two-part unnumbered
 Proposition in David Renard, *Représentations des groupes réductifs p-adiques*,
 French edition dated 9 July 2026, Appendix A.VI.3, printed page 264 / PDF270.
 It introduces three Prop-valued definitions and no proofs of their claims.
@@ -92,7 +91,7 @@ finite-type condition for this Proposition. Both assumptions are retained
 in both targets, including clause (i), whose Zorn argument only uses the
 finite-type object's subobject unions and abelian quotient constructions.
 No stronger standalone theorem with fewer category assumptions is
-asserted by this unit.
+asserted by this module.
 
 `IsSourceGrothendieck.{w} C` is the published source convention: existence
 of `w`-indexed coproducts together with the directed-subobject-sum
@@ -135,7 +134,7 @@ subobject using AB6 and applies clause (i). These are descriptions of the
 source proof, not implemented Lean proofs.
 
 The selection in clause (ii) must yield a nonzero finite-type subobject.
-A future proof must first show that zero objects are finite type, so
+A proof must first show that zero objects are finite type, so
 nonfinite type implies nonzero. It must then derive a nonzero finite-type
 subobject from the canonical AB6 cover: if every such subobject were zero,
 the zero subobject would bound them all, contradicting their least upper
@@ -147,9 +146,8 @@ This explanation makes explicit an intermediate justification omitted
 from the source's brief argument; it does not alter either source claim.
 
 The three definitions are internal formal targets for the cited source
-Proposition. Independent statement acceptance and publication must precede
-a separate proof task against the exact published aggregate target.
+Proposition. The aggregate target is proved by `simpleQuotientProposition`
+in `Langlands.CategoryTheory.Renard.SimpleQuotient`.
 Jordan–Hölder, numerical length, the following `JH` identities,
 semisimplicity, module examples and finite-type comparisons remain separate
-obligations. This file contains no new axioms or proof holes and claims
-no theorem acceptance.
+obligations. This file contains no new axioms or proof holes.

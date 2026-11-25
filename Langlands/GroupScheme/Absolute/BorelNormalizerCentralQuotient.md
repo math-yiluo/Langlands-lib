@@ -1,8 +1,5 @@
 # The multiplicative quotient step of Borel normalizer induction
 
-Authors: Worker 1369; Worker 1446 supplied the reused dimension and local
-normalizer induction helpers.
-
 This internal consequence uses the existing all-test subgroup and fppf
 quotient definitions. The field has arbitrary characteristic and universe
 `u`. The final normalizer assertions assume that the field is algebraically
@@ -29,7 +26,7 @@ The smooth surjective source descent theorem then makes `Q` smooth
 because the composite with its structure morphism is the smooth
 structure morphism of `G`. Surjectivity transfers connectedness. Finally,
 the closed embedding is monic and the preceding kernel equation shows
-that `q` kills it. Worker 1446's
+that `q` kills it.
 `Lie.dimension_lt_of_smooth_kills_gm` gives the strict decrease of the
 finite rank of the actual additive dual-number identity kernel. No
 comparison with a separate geometric dimension is used.
@@ -53,7 +50,7 @@ the preceding normalizer equality.
 The provenance is this composition of existing actual-kernel, smooth
 descent, Lie-dimension and rational-normalizer results. A centrality
 assumption is unnecessary once a quotient with the specified kernel
-exists. The intended central quotient consumer must still construct
+exists. A use of this module in the central quotient case must construct
 that affine fppf quotient and its Borel with the exact all-test inverse
 image. This module does not prove existence of those data, the
 unconditional Borel normalizer theorem, or a parabolic normalizer

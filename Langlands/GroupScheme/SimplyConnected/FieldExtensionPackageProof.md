@@ -1,7 +1,5 @@
 # The field-extension package for semisimplicity, simple connectedness and covers
 
-Author: Worker 4036.
-
 The theorem `Langlands.GroupScheme.simplyConnected_fieldExtension` proves
 exactly the published
 `Langlands.GroupScheme.SimplyConnectedFieldExtensionStatement.{u}` from

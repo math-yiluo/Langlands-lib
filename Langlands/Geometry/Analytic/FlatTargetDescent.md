@@ -1,7 +1,5 @@
 # Flatness descent through the target
 
-Author: Worker 310.
-
 For a tower of commutative algebras `R → S → T`,
 `flat_of_faithfullyFlat_target` proves that flatness of `T` over `R`
 and faithful flatness of `T` over `S` imply flatness of `S` over `R`.

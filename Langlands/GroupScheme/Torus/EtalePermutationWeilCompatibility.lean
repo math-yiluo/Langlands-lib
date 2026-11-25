@@ -183,7 +183,9 @@ theorem chartTensorEquiv_naturality (a : α) {T T' : Over (U a)} (m : T' ⟶ T)
       Function.comp_apply] using hw.symm
   | add x y hx hy =>
     funext i
-    simp only [map_add, Pi.add_apply, hx, hy]
+    rw [map_add (Algebra.TensorProduct.lTensor (S := (coaction U f I e H).invariants)
+      (coaction U f I e H).invariants (AffineWeilPoints.sectionsMap S ((Over.map (f a)).map m)))]
+    simp only [RingEquiv.map_add, RingHom.map_add, Pi.add_apply, hx, hy]
 
 /-- The actual Weil points in chart coordinates using the raw section scalars. -/
 def weilCoordinatePoints (a : α) (T : Over (U a)) :
@@ -298,7 +300,7 @@ theorem chartTensorAlong_local_permutation
     have hc := congrArg T.hom.appTop.hom (invariant_local_permutation U f I e H a b O σ Hσ c j)
     simpa only [appTop_comp_apply, Category.assoc] using hc
   | add x y hx hy =>
-    simp only [map_add, Pi.add_apply, hx, hy]
+    simp only [RingEquiv.map_add, Pi.add_apply, hx, hy]
 
 set_option maxHeartbeats 800000 in
 /-- Each original local coordinate permutation holds for the actual Weil

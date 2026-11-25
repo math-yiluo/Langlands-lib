@@ -35,6 +35,7 @@ the diagonal. Translation gives discreteness; the Hausdorff topological-group
 criterion gives closedness. The published diagonal-preserving adelic
 homeomorphism gives the absolute-value version.
 
-This unit declares the target and contains no proof. It does not claim a
+This module declares the target and contains no proof; the proof is
+`functionFieldAdelesDiscrete` in `FunctionFieldAdelesDiscreteProof`. It does not claim a
 compact adelic quotient, model descent, or a geometric point-space comparison;
-those and the remaining whole-paper assertions remain separate obligations.
+those and the remaining assertions of the paper remain separate obligations.

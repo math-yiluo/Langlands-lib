@@ -141,8 +141,8 @@ variable [HasDerivedCategory.{wX} (EtaleDerivedSections.ModuleSheaf X R)]
 this follows from the actual derived geometric identity law. -/
 theorem trivialEquivariantDerivedAction (F : EtaleDerivedSections.ModuleSheaf X R)
     (g : G) :
-    ((pullbackDerivedSectionsFunctor R (1 : G →* (Aut X)ᵐᵒᵖ)).obj
-      (trivialEquivariantSheaf X R G F)).ρ g =
+    (((pullbackDerivedSectionsFunctor R (1 : G →* (Aut X)ᵐᵒᵖ)).obj
+      (trivialEquivariantSheaf X R G F)).ρ g).asHom =
         𝟙 ((EtaleDerivedSectionsPlus.derivedSections X R).obj F) := by
   rw [pullbackDerivedSectionsFunctor_obj_ρ]
   exact derivedSectionsMap_id R F
@@ -157,7 +157,7 @@ omit [HasDerivedCategory.{wX} (EtaleDerivedSections.ModuleSheaf X R)] in
 restriction-comparison map, rather than an assumed cohomology action. -/
 theorem deckDerivedSectionsFunctor_obj_ρ
     (F : EtaleDerivedSections.ModuleSheaf X R) (g : G) :
-    ((deckDerivedSectionsFunctor R τ f hf).obj F).ρ g =
+    (((deckDerivedSectionsFunctor R τ f hf).obj F).ρ g).asHom =
       (derivedSectionsMap (aut τ g).hom R).app ((restriction f (ModuleCat.{u} R)).obj F) ≫
         (EtaleDerivedSectionsPlus.derivedSections Z R).map
           (((deckEquivariantFunctor R τ f hf).obj F).act g) := rfl
@@ -187,11 +187,11 @@ def deckDerivedSectionsMap :
 theorem deckDerivedSectionsMap_invariant
     (F : EtaleDerivedSections.ModuleSheaf X R) (g : G) :
     ((deckDerivedSectionsMap R τ f hf).app F).hom ≫
-        ((deckDerivedSectionsFunctor R τ f hf).obj F).ρ g =
+        (((deckDerivedSectionsFunctor R τ f hf).obj F).ρ g).asHom =
       ((deckDerivedSectionsMap R τ f hf).app F).hom := by
   have h := ((deckDerivedSectionsMap R τ f hf).app F).comm g
-  change ((pullbackDerivedSectionsFunctor R (1 : G →* (Aut X)ᵐᵒᵖ)).obj
-      (trivialEquivariantSheaf X R G F)).ρ g ≫ _ = _ at h
+  change (((pullbackDerivedSectionsFunctor R (1 : G →* (Aut X)ᵐᵒᵖ)).obj
+      (trivialEquivariantSheaf X R G F)).ρ g).asHom ≫ _ = _ at h
   erw [trivialEquivariantDerivedAction R F g, Category.id_comp] at h
   exact h.symm
 

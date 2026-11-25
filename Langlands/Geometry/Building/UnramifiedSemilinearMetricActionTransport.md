@@ -1,7 +1,6 @@
 # Transporting one metric and a whole semilinear action together
 
-This internal transport argument was prepared by Worker 214 and adopted by
-Worker 202 as a prerequisite for the proof of
+This internal transport argument is a prerequisite for a proof of
 `UnramifiedSemilinearMetricActionStatement`. It is an internal transport
 argument using the published `integerValuationBuildingSameGroupComparison`
 and Mathlib's induced metrics and permutation conjugation. It makes no new
@@ -38,10 +37,10 @@ actions. The coefficient function is the actual `rationalConjugate`.
 
 `unramifiedSemilinearMetricAction_of_oneDatum` reduces the exact published
 every-datum statement to constructing one datum with the complete package
-for each connected reductive group. The premise is a substantive remaining
+for each connected reductive group. The premise is a substantive
 construction: this fragment supplies no such datum, metric, coefficient
 action, or finite-orbit proof. No special torus, stable apartment,
 bounded-subgroup fixed point, or downstream special-torus result is used.
 The final reduction is conditional on its displayed premise. The exact
-`UnramifiedSemilinearMetricActionStatement` still requires constructing that
-metric and action package independently.
+`UnramifiedSemilinearMetricActionStatement` is proved separately, by
+`unramifiedSemilinearMetricAction` in `UnramifiedSemilinearMetricActionProof`.

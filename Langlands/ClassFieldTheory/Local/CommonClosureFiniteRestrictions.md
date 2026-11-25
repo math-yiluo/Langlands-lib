@@ -1,6 +1,6 @@
 # Finite Galois restrictions of actual fixing subgroups
 
-Worker 125. Internal infrastructure for Task 4919.
+Internal infrastructure.
 
 For a finite Galois intermediate field containing a specified finite
 intermediate base, `finiteRestrictionHom` restricts each actual ambient

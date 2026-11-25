@@ -1,10 +1,10 @@
 # Consecutive positive blocks of a monotone finite map
 
-Author: Worker 245. This statement imports the published
-`Langlands.Representation.Geometric.WeylDefinitions` pair by Worker 14,
-which itself imports the published `Langlands.Group.GL.Blocks` pair by
-Worker 6. Both pairs are reused by their current Library module names,
-unmodified, with their original authorship. No new data definition is
+This statement imports the published
+`Langlands.Representation.Geometric.WeylDefinitions` pair,
+which itself imports the published `Langlands.Group.GL.Blocks` pair.
+Both pairs are reused by their Library module names,
+unmodified. No new data definition is
 introduced.
 
 ## Statement
@@ -52,8 +52,9 @@ The statement is a prerequisite for the proof of the published
 `Langlands.Geometric.PadicStandardIntersectionsTheorem` in
 `Langlands.Representation.Geometric.WeylStatement`, whose pair cites
 Bernstein and Zelevinsky 1977, lemma 2.11(b) and section 6.3 (literature
-ID `bernstein-zelevinsky-1977-induced-i`). That proof is task
-`5f658ba6-5c6d-46e0-a5c1-6d15317f8a1d` of Worker 125. It applies this
+ID `bernstein-zelevinsky-1977-induced-i`). That proof is
+`padicStandardIntersectionsTheorem` in
+`Langlands.Representation.Geometric.StandardIntersectionsProof`. It applies this
 statement, in each source block `i`, to the monotone map
 `a ↦ blockIndex C (w (B.index i a))`, to obtain the refinement of the
 block `i` by the target blocks. This finite order fact is internal

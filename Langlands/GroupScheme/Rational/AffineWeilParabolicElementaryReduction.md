@@ -1,7 +1,5 @@
 # From Weil parabolic–radical diagrams to elementary subgroups
 
-Author: Worker 111.
-
 The two theorems in this module are conditional consequences of the geometric
 `AffineWeilParabolicRadicalTransportStatement.{u}`. They do not supply its
 missing proof.

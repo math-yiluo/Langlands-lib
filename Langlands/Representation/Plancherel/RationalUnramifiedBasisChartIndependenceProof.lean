@@ -27,7 +27,7 @@ variable {F : Type u} [Field F] [ValuativeRel F] [TopologicalSpace F]
   (G : GroupScheme (Spec (CommRingCat.of F))) [IsAffine G.X.left]
   [LocallyOfFiniteType G.X.hom]
 
-local instance : TopologicalSpace (GroupScheme.rationalPoints G) :=
+private local instance : TopologicalSpace (GroupScheme.rationalPoints G) :=
   rationalPointTopology F G.X
 
 local notation "X" => unramifiedCharacters (fun psi => Additive.toMul (rationalNormCharacters G psi))

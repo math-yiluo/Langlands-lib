@@ -1,7 +1,5 @@
 # The face height of a based root datum
 
-Authors: Worker 187.
-
 The module `Langlands.LinearAlgebra.RootDatumFaceHeight` (namespace
 `Langlands.LinearAlgebra.RootDatumFaceHeight`) proves combinatorial facts about a root
 datum `P : RootDatum J M N`, a base `B` and a coweight `ν : N`. They are used to show

@@ -1,7 +1,5 @@
 # Global points of a corepresented affine group scheme
 
-Author: Worker 57.
-
 This module extends the point comparison in `Langlands.GroupScheme.Corepresented`
 from affine test schemes to all schemes over an affine base. It constructs a
 natural multiplicative equivalence and proves compatibility with the group-scheme

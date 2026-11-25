@@ -1,8 +1,5 @@
 # Local closedness of actual upper Bruhat cells
 
-Author: Worker 780.
-Documentation correction (P3-059): Worker 1057.
-
 `Langlands.GeneralLinear.UpperBruhatLocalClosednessStatement.{u}` is a closed,
 transparent `Prop`-valued definition in
 `Langlands.Group.GL.UpperBruhatLocalClosednessStatement`. This module states the
@@ -133,5 +130,5 @@ The proposition is proved by the published theorem
 `Langlands.GeneralLinear.upperBruhatLocalClosedness` in
 `Langlands.Group.GL.UpperBruhatLocalClosednessProof`. It is a common geometry
 prerequisite for the Shalika distribution and Whittaker multiplicity-one
-developments. Neither this statement nor its proof is a proof of either parent
-theorem.
+developments. Neither this statement nor its proof is a proof of the main
+theorem of either development.

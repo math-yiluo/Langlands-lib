@@ -71,7 +71,7 @@ The statement uses the actual stalk maps, written explicitly with
 actual categorical base change: it sends `X` to `X_s = X ×_S Spec κ(s)` and
 `f` to the induced morphism `f_s : X_s ⟶ Y_s`, whose `.left` is the scheme
 morphism `f_s` of Stacks Section 37.16. The hypothesis is flatness of this
-whole scheme morphism, the form in which the parent proof (below) has it.
+whole scheme morphism, the form in which the proof of `FiberwiseFlatnessStatement` (below) has it.
 
 The point `s` is defined as `Y.hom (f.left x)`. The image of `x` in `S`,
 `X.hom x`, equals it by `Over.w f : f.left ≫ Y.hom = X.hom`; this equality is
@@ -121,23 +121,21 @@ single point, or the converse direction.
 
 ## Intended application
 
-The proof task `bd62242a-a240-4c31-a976-42e83d95485b` for the published
+The proof `fiberwiseFlatness` (module `Langlands.AlgebraicGeometry.FiberwiseFlatness`) of the published
 `Langlands.AlgebraicGeometry.FiberwiseFlatnessStatement` (Stacks Lemma 37.16.4)
 follows the 039C route: it applies Stacks Algebra Lemma 10.128.9 (tag 05UV,
-stated by task `9a978548-8ac6-4c7c-b3bf-40faac6282b8`) to
+stated as `Langlands.Algebra.LocalFiberwiseFlatnessStatement`) to
 `R = 𝒪_{S,s}`, `A = 𝒪_{Y,y}`, `B = M = 𝒪_{X,x}`. That lemma's fibre
 hypothesis is
 `Module.Flat (A ⊗[R] IsLocalRing.ResidueField R) ((A ⊗[R] IsLocalRing.ResidueField R) ⊗[A] B)`,
-which is the conclusion here. A private development check confirmed that this
-proposition yields the `hfiber` hypothesis of the parent's shared assembly
-draft by `fun S X Y f x => h S X Y f x`; that check is not part of this
-artifact.
+which is the conclusion here. `fiberwiseFlatness` obtains that hypothesis from
+`fiberStalkFlatness`, the proof of this proposition.
 
 ## Status
 
 This file states the bridge only. It is not proved here and is not installed
-as an axiom, instance or structure field; its proof is a separate exact-target
-task. In the pinned Mathlib, `Mathlib/AlgebraicGeometry/Fiber.lean` provides
+as an axiom, instance or structure field; its proof is `fiberStalkFlatness` in the separate module
+`Langlands.AlgebraicGeometry.FiberStalkFlatness`. In the pinned Mathlib, `Mathlib/AlgebraicGeometry/Fiber.lean` provides
 `Scheme.Hom.fiber`, `fiberι`, `fiberHomeo` and `asFiber` but no stalk
 comparison, and `Spec.fiberToSpecResidueFieldIso` identifies only the
 structure morphism of the fibre of an affine morphism.

@@ -1,7 +1,5 @@
 # Transporting closed-fibre rational sections to finite-field-valued points
 
-Author: Worker 208.
-
 This is derived infrastructure for the final paragraph of the proof of Theorem
 4.5 in Brian Conrad, *Weil and Grothendieck approaches to adelic points*
 (December 31, 2011), printed p.13. It transports an actual rational section of a
@@ -46,8 +44,9 @@ closed point `b`, then applies the transport construction.
 The threshold is on `κ(b)`. The cardinality inequality above does not turn a
 lower bound on `Nat.card K` into a lower bound on `Nat.card κ(b)`: for example,
 points of `Spec 𝔽₂` can have values in arbitrarily large extensions of `𝔽₂`
-while their image has residue field `𝔽₂`. Thus this unit supplies the
+while their image has residue field `𝔽₂`. Thus this module supplies the
 closed-image and exact transport steps, and records the precise scope of the
-threshold. The uniform estimate itself, its extension to all large fields of
-values, the global finite-exception assertion and adelic openness remain
-obligations of the parent task.
+threshold. The uniform estimate itself (proved as `uniformLangWeil` in
+`UniformLangWeilProof`), its extension to all large fields of values, the
+global finite-exception assertion and adelic openness are not part of this
+module.

@@ -53,6 +53,6 @@ The entry construction `absentQuotientRootDoubleIso` applies uniqueness of
 representatives to that equality. It compares any supplied representatives
 and preserves the original homomorphisms into `Q.quotient`, as proved by
 `absentQuotientRootDoubleIso_hom_comp`. The doubled character need not itself
-be an actual quotient root. This unit supplies support and functor
+be an actual quotient root. This module supplies support and functor
 comparisons only; the facet-depth criterion and derivative root datum
 remain separate obligations.

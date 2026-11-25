@@ -1,7 +1,5 @@
 # Positive-rank comparison using ambient matrix data
 
-Author: Worker 458.
-
 This internal extension proves `AmbientMatrixComparison.gammaFactor` for every
 positive rank `m + 2`. It retains independent field, original-carrier and
 ambient-carrier universes, full Whittaker type for the original representation,

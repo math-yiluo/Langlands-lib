@@ -74,7 +74,7 @@ composition compatibility in (11.21)(ii) with the line-bundle
 pairing comparison in (11.20), applied to a positive tensor power
 of an ample line bundle after passage to an algebraic closure.
 
-This proposition is an unproved **relative extension target** for
+This proposition is a **relative extension target** for
 the Library's exact polarization and finite pairing. The cited
 field corollary does not itself prove it over a general base.
 A proof must establish the relative compatibility of the
@@ -83,8 +83,9 @@ presentations, including any required descent and rigidity
 arguments, for these exact maps. Checking only geometric points
 does not establish the equality of scheme morphisms.
 
-The file introduces no proof or new axiom. A separate proof task
-must prove this exact declaration after its publication.
+The file introduces no proof or new axiom. The theorem
+`relativeFiniteWeilAlternation` in the module
+`FiniteWeilAlternationProof` proves this exact declaration.
 This target asserts neither Cartier perfectness nor
 nondegeneracy, transition compatibility, dual-homomorphism
 functoriality, an inverse-limit pairing, or a completed PEL

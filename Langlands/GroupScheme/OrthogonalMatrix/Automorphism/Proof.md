@@ -24,15 +24,15 @@ exactly `IsSimilitudeConj α` (`Automorphism/Conjugation`).
 
 Below, `α ≪≫ γ` is the composite automorphism: first `α`, then `γ`.
 
-1. `exists_isSimilitudeConj_comp_fix hn α` (`Automorphism/TorusNormalization`,
-   by Worker 1383) gives an automorphism `γ` with `IsSimilitudeConj γ` and
+1. `exists_isSimilitudeConj_comp_fix hn α` (`Automorphism/TorusNormalization`)
+   gives an automorphism `γ` with `IsSimilitudeConj γ` and
    `identityTorus (Fin n) L ≫ (α ≪≫ γ).hom = identityTorus (Fin n) L`, that
    is, `α ≪≫ γ` is the identity on the diagonal torus. There,
    `γ = SO.innerIso p ≪≫ specialConjIso (permGL L σ) 1 _`. The rational point
    `p` of `SO_{2n}` comes from the conjugacy of maximal split tori
    (`smoothMaximalSplitTorusConjugacy`). `σ` is a signed permutation of
    `Fin n ⊕ Fin n` that undoes the action on the root lattice
-   (`Automorphism/SignedPermutation`, by Worker 1383), and its permutation
+   (`Automorphism/SignedPermutation`), and its permutation
    matrix is orthogonal.
 2. `isSimilitudeConj_of_comp_identityTorus hn (α ≪≫ γ) hfix`
    (`Automorphism/RootScaling`) shows that `α ≪≫ γ` is conjugation by a

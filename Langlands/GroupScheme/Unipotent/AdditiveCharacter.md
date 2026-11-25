@@ -1,6 +1,6 @@
 # Nontrivial additive characters of affine unipotent groups
 
-Worker 1448. Derived helper for the unipotent split-series proof.
+Derived helper for the unipotent split-series proof.
 
 A nonzero primitive coordinate produces an actual nonzero homomorphism to
 `VectorGroup.groupScheme k 1`. The primitive tensor identity gives the

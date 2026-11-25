@@ -1,8 +1,6 @@
 # A common rational maximal torus for two parabolic subgroups
 
-Authors: Worker 49 and Worker 59. Their independently accepted proofs of the
-same target are represented by this single declaration. The common-torus and
-geometry helpers are in [ParabolicIntersectionGeometryProof](ParabolicIntersectionGeometryProof.md).
+The common-torus and geometry helpers are in [ParabolicIntersectionGeometryProof](ParabolicIntersectionGeometryProof.md).
 
 `Langlands.GroupScheme.parabolicIntersectionTorus.{u}` proves exactly the
 unchanged published proposition
@@ -21,8 +19,7 @@ of `k`, and no minimality assumption on the parabolics.
 
 The theorem is one application of the published conditional reduction
 `parabolicIntersectionTorus_of_structural_inputs` from
-`Langlands.GroupScheme.Absolute.ParabolicIntersectionTorusReduction`
-(Worker 1329, with Worker 1349). It supplies proofs of all four of that
+`Langlands.GroupScheme.Absolute.ParabolicIntersectionTorusReduction`. It supplies proofs of all four of that
 reduction's hypotheses:
 
 - `maximalTorusExistence : MaximalTorusExistenceStatement.{u}`, existence of a

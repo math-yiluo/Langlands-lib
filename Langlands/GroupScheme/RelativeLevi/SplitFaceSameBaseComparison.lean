@@ -51,7 +51,7 @@ variable {R : Type u} [CommRing R]
   (C : SplitParabolicFaceChart i P fam wt)
   (C' : SplitParabolicFaceChart i P fam' wt') (hb : C.base = C'.base)
 
-local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
+private local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
 
 /-- Relabel two charts through their actual common positive-root labels. -/
 def sameBaseIndexEquiv : Fin C.chart.dimension ≃ Fin C'.chart.dimension :=

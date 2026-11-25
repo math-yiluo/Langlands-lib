@@ -157,7 +157,8 @@ convergence domain.
 
 ## Scope
 
-The proof supplies no IV.1.1 analysis; that remains with the source theorem's owner.
+The proof supplies no IV.1.1 analysis; that analysis is the content of the premise
+`ConditionalParabolicIntertwiningStatement`.
 It claims nothing beyond the target conclusion: squared-modulus compatibility, the
 nonempty open rational region inside the actual full convergence domain, and nonempty
 `PairContinuation` data. Characteristic, splitness, quasisplitness and rank are

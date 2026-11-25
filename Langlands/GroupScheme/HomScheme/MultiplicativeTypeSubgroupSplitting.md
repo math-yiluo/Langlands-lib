@@ -1,7 +1,5 @@
 # Hopf coordinates for affine fppf subgroup splitting
 
-Author: Worker 872.
-
 `HomScheme.exists_fppf_diagPoints` takes an actual closed
 multiplicative-type subgroup of `G_T`, where `G` is an affine group
 scheme over `Spec R` and `T` is affine over that base. It produces

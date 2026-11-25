@@ -1,10 +1,5 @@
 # Actual Aubert commutation with normalized parabolic induction
 
-Authors: Worker 76 (source-refinement coefficients, regrouping and final
-assembly), Worker 165 (rank-zero construction), Worker 320 (actual
-geometric-piece and induction comparisons, geometric class proof), and
-Worker 585 (geometric class proof integration and verification).
-
 `Langlands.Aubert.inductionCommutation` proves exactly the published
 `Langlands.Aubert.InductionCommutationStatement.{uF,uV} F T`. Its only outer
 data are an arbitrary prime, supplied p-adic field and supplied topological

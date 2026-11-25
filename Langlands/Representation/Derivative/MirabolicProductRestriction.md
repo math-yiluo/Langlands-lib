@@ -1,7 +1,5 @@
 # Restriction of a binary product to the mirabolic subgroup: proof
 
-Author: Worker 1163.
-
 This module proves the published proposition
 `Langlands.Derivative.MirabolicProductRestrictionStatement.{uF,uV} F T` of
 module `Langlands.Representation.Derivative.MirabolicProductRestrictionStatement`
@@ -367,16 +365,16 @@ The published results used as proved inputs, with their modules, are:
   (`Matrix.det_succ_row`). No other declaration of these two modules, and none
   of the further modules they import, is used.
 
-No published proposition definition is used as a hypothesis, and no pending
-statement, draft or task is used.
+No published proposition definition is used as a hypothesis, and no unproved
+statement is used.
 
 ## Independence audit
 
 Every proved input above lies in the import closure listed, so its direct and
 transitive proof dependencies lie there too. The closure was checked module by
-module against each restriction of the task.
+module against each of the exclusions below.
 
-- **Consumer statements of the parent arrangements.** The closure contains no
+- **Segment and multisegment consumer statements.** The closure contains no
   module stating or proving `UnlinkedSegmentSocleProductIrreducible`,
   `LinkedSegmentSocleReverseProductStructure`, `LinkedSegmentSoclePairReducible`,
   `JuxtaposedSegmentSocleReverseProductStructure`,
@@ -394,28 +392,21 @@ module against each restriction of the task.
   only occurrences of `Exhaustion` are `UnipotentExhaustionClause` of
   `Parabolic.GeometricPrerequisitesStatement` and the section `Exhaustion` of
   `Jacquet.CharacterAveraging` (compact-open exhaustions of a unipotent group,
-  not classification exhaustions, and not used). Hence the proof is independent of the tasks
-  23e98d90-6055-4e35-91a9-b0f5d8a84961, a55c4267-7e3a-43f6-8bb1-ce319e1d0aa9,
-  8fa9f68b-fa1b-431a-97f6-5b163964d1fc, 7ff2a1e9-89dc-439e-a861-a567b3db92bf,
-  2ae5cbe5-0701-4509-88a0-db8cbeb35be4, e3634665-571b-4852-9f4c-bab8a1053434,
-  cded83f3-df9c-4018-bc61-dc54f5c1f9ab, 426911b4-6620-413f-8065-04b25287f3bd,
-  66e3b87c-647e-41e4-af18-df4d436765f0, c84cd52c-3ff3-4024-be50-8b84dd480888,
-  6780b79c-9526-46aa-b8b4-00377d68b1ea, 23189526-80b0-4828-a6d4-7ebec2cbeef5,
-  f3a69bc8-7312-4f82-8a7d-ea3c8188cb63, aca8805b-054f-4d56-8045-12db7f623404,
-  3bfb61fa-1129-4fc9-83fd-7fcfec22106e, ebea9a8a-9b21-4208-aa31-98c2dea1f8a3,
-  20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584, 8252833d-c269-41a9-824c-5879e531b23b,
-  52e97845-36bb-457d-b76f-70753334b88c, 30341ae4-65f2-4a0e-9283-763db01a409e,
-  1cb45da2-7007-4351-a694-594fb148b8d1, cd8ab97c-0b78-4bce-97c4-d307a28159a4,
-  bf433f0a-921a-428c-b0c0-6475438125ac, 5eece9e8-7f6b-4ea9-abea-a1f9f1b8c807,
-  8364e73f-14ec-4d14-8f2b-1555a7c1ce95, 67279e36-f3c2-42e3-9302-11729784042e,
-  4ca79bbd-589e-476b-9f65-661e799984b5, ed48ae06-964c-4c84-9e62-978f5a953ca7,
-  55ad1e10-62d8-46b7-a081-909ef0056426, b95105c6-f8bb-4641-ae53-2f49d1e7f034
-  and 92aea10f-62ac-4e0b-bd4a-9a80909797c5, their conclusions and successors.
+  not classification exhaustions, and not used). Hence the proof is independent of these
+  results, of the analytic segment classification
+  (`SegmentEssentialSquareIntegrableClassification`), the special-head
+  multisegment exhaustion (`MultisegmentHeadExhaustion`), the ordered head
+  existence (`OrderedMultisegmentHeadExistence`), the quotient coverage
+  (`OrderedMultisegmentQuotientExhaustion`), the ordered special-segment
+  conversion (`OrderedSegmentSquareIntegrableConversion`), tempered block
+  uniqueness (`TemperedBlockUniqueness`), square-integrable exhaustion
+  (`SquareIntegrableLanglandsExhaustion`), regular exhaustion
+  (`GLRegularLanglandsExhaustionStatement`) and the individual
+  special-head/reverse-socle and segment-socle/reverse-head existence results,
+  and of their conclusions and proofs.
 - **Two-supercuspidal arguments.** No module states or proves
   `TwoSupercuspidalNonadjacentProductIrreducible` or
-  `TwoSupercuspidalProductStructure`; tasks
-  3c9849a4-a6c0-43ac-9982-d15ed76bf1e9 and ab61f565-1427-4746-ba77-46097563e962
-  are not used.
+  `TwoSupercuspidalProductStructure`, and neither result is used.
 - **Derivative results.** No derivative formula, exactness or Leibniz result is
   used. The closure contains the definition modules `Derivative.MirabolicMinus`,
   `Derivative.MirabolicCharacter`, `Derivative.Iteration` and
@@ -426,7 +417,7 @@ module against each restriction of the task.
   `Derivative.MirabolicLatticeBox`. `MinusVanishing` proves
   `subsingleton_of_psiMinus_phiMinus`, the vanishing consequence of BZ77
   Proposition 3.2(e) (a representation of a mirabolic group with `Ψ⁻ = 0` and
-  `Φ⁻ = 0` is zero). It is an accepted and published proof, not a 4.13 or 4.14
+  `Φ⁻ = 0` is zero). It is a published proof, not a 4.13 or 4.14
   result, and it does not import this proof's statement. This proof uses
   neither that theorem nor any other declaration of `MinusVanishing` except the
   elementary matrix lemma `exists_lastRow_eq_of_ne_zero`. The closure contains
@@ -434,9 +425,7 @@ module against each restriction of the task.
   minus compatibility, 4.13(b–d) or 4.14 result (the only exactness
   proposition in the closure is the unused induction clause
   `InductionExactnessClause` of `Induction.StructuralStatement`); in
-  particular the mirabolic minus exactness of Worker 127's task
-  b65bc667-6951-4bd5-82af-10fb7046df7f is not used, and Worker 127 was not
-  contacted.
+  particular no mirabolic minus exactness result is used.
 - **Ze80.** No segment derivative formula (Ze80 §3.5, §9.6), segment
   irreducibility criterion (Ze80 4.2, 9.7), square-integrability result
   (Ze80 9.3), classification or exhaustion theorem occurs in the closure.
@@ -444,9 +433,8 @@ module against each restriction of the task.
   `Langlands.Whittaker.IrreducibleCoinvariantFinitenessStatement`,
   `LeviCuspidalCoinvariantFinitenessStatement` or
   `Langlands.Whittaker.SupercuspidalCoinvariantFinitenessStatement`, nor any
-  module of tasks 5ab445dc-d2b4-4072-80d1-6370870a4a26,
-  3ff5c8fb-397c-4345-bcb3-5d98a0993d18, 62de5903-b616-4b5c-88eb-a066b77c5467 or
-  the finite-length route of 5428fe2c-013c-482d-aa6e-7df43e7191aa. The
+  module proving them, the all-character single-block conclusion or mirabolic
+  finite length through that finiteness. The
   Whittaker modules in the closure are `Whittaker.Algebraic` and
   `Whittaker.GeneralLinear` (algebraic character infrastructure, already in the
   statement's closure) and `Whittaker.Iwasawa` (the Iwasawa decomposition used
@@ -464,7 +452,7 @@ module against each restriction of the task.
   `Smooth.SmallRealizationProof` for the countability certificate of `GL_N`.
   None of them states or proves an excluded result, and no supercuspidal
   conclusion is used by this proof.
-- **Proposition definitions and pending work.** The proposition definitions
+- **Proposition definitions.** The proposition definitions
   whose truth enters, directly or inside the cited published proofs, are proved
   by published theorems (`ClosedSubgroupMackeyFiltration`,
   `ClosedOrbitSectionExtension`, `ParabolicQuotientCompactClause`); the
@@ -476,9 +464,9 @@ module against each restriction of the task.
   `UnipotentHaarRightInvariantStatement`, `ProjectionAndNaturality` and the
   p-adic Fourier and conductor statements of `LocalFactor.Harmonic.Statement`)
   do not enter: the proofs of the two lemmas used are the Mathlib computations
-  described above. No pending statement, draft,
+  described above. No unproved statement,
   citation or conditional assembly is used as an input.
-- **Inherited conventions.** The supplied `T` and `T.topology` are used
+- **Conventions.** The supplied `T` and `T.topology` are used
   throughout, with the published explicit normalizations: the binary product's
   `δ_P^(1/2)`, and the mixed products' characters, including the case (III)
   factor `ε`, which `leviHalfModulus_eq_rightLeviCharacter` matches exactly. No

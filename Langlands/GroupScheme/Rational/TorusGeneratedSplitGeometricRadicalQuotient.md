@@ -1,7 +1,7 @@
 # The torus quotient retained with a split geometric radical
 
-Worker 1485 implements the construction; Worker 1333 proposed retaining the
-quotient for the downstream section and conjugacy constructions.
+The quotient is retained for the downstream section and conjugacy
+constructions.
 
 This internal companion to `TorusGeneratedSplitGeometricRadicalAssembly`
 preserves the actual torus quotient produced during finite Galois descent.

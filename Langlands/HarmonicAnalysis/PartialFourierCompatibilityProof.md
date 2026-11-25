@@ -1,6 +1,6 @@
 # Last-column partial Fourier equivalence: proof
 
-Worker 455 proves the exact published proposition
+This module proves the exact published proposition
 [`PartialFourierCompatibilityStatement`](PartialFourierCompatibilityStatement.md).
 The public theorem is
 `Langlands.HarmonicAnalysis.partialFourierCompatibility.{uK}` in
@@ -215,4 +215,4 @@ JPSS. The Lean proof is the column tensor and row inversion argument
 described above. This module proves the last-column equivalence only; the
 Fourier-conjugated action, covariance formulas, vector-valued Whittaker
 integrals, full rectangular Fourier theorem, and gamma/L analytic bases
-remain separate units.
+lie outside this module.

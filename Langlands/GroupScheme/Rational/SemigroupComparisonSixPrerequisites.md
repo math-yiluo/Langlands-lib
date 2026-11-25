@@ -1,6 +1,6 @@
 # Semigroup comparison from six structural prerequisites
 
-Worker 1372. Internal consequence of the published seven-input comparison
+Internal consequence of the published seven-input comparison
 assembly and the new radical-intersection derivation from a fixed torus
 containing the full centre.
 

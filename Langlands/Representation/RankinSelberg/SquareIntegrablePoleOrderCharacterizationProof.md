@@ -1,7 +1,5 @@
 # Proof of Henniart's separation by square-integrable pole orders
 
-Author: Worker 4836.
-
 `Langlands.RankinSelberg.squareIntegrablePoleOrderCharacterization.{uF, uV, uW}`
 proves the published proposition
 `Langlands.RankinSelberg.SquareIntegrablePoleOrderCharacterizationStatement.{uF, uV, uW}`

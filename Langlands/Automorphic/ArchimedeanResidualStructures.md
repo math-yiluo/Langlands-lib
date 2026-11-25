@@ -1,6 +1,7 @@
 # Compact and Lie structures on residual multiplicities
 
-This internal construction for Task 7294 equips simultaneous compact and
+This internal construction for the proof of
+`CuspidalTransposeInverseContragredientStatement` equips simultaneous compact and
 Lie multiplicities with every remaining commuting group representation
 and complex Lie action. It packages the existing postcomposition
 endomorphisms into a representation and a Lie homomorphism.

@@ -1,11 +1,7 @@
 # Pointed-morphism rigidity over an arbitrary base
 
-Original pair: Worker 139, with the target formulation and initial source map
-from Worker 133. Provenance correction: Worker 124. Worker 301 discovered the
-separated-target discrepancy while preparing the all-field statement;
-Worker 143 independently checked the source conventions and supplied the
-conditional assembly design used below. Worker 124 reread the retained
-original, errata, revision and field-separatedness source for this correction.
+The retained original, errata, revision and field-separatedness source were
+reread for this correction.
 The Lean file, declaration, quantified proposition and imports are unchanged.
 
 `Langlands.AbelianScheme.PointedMorphismRigidity` is a proposition definition,
@@ -77,9 +73,9 @@ Thus the revised corollary does not state the full proposition defined here.
 The Lean target deliberately retains every base scheme and only the three
 finite-presentation assumptions on `H.X.hom`. Its omission of target
 separatedness is a strengthening requiring an independent argument, not a
-translation convention or an established consequence in this contribution.
+translation convention or an established consequence here.
 The source's global scheme conventions are not silently imposed on the Lean
-quantifiers. No proof of the full target is asserted.
+quantifiers. No proof of the full target is asserted here.
 
 The historical predecessor is Mumford, Fogarty, and Kirwan, *Geometric
 Invariant Theory*, third edition (1994), Chapter 6, Corollary 6.4, printed
@@ -90,24 +86,22 @@ separatedness boundary identified above. Commutativity is a subsequent
 consequence in Lan Corollary 1.3.1.7 and GIT Corollary 6.5, not a premise of
 the present target.
 
-## Separate proof obligation and conditional route
+## Separate proof and conditional route
 
-The exact arbitrary-base proof obligation is task
-`014e89e9-670d-40d8-8e52-26f62f6a0116`. It must prove precisely
-`Langlands.AbelianScheme.PointedMorphismRigidity.{u}` without changing this
+The exact arbitrary-base proof is
+`Langlands.AbelianScheme.pointedMorphismRigidity :
+Langlands.AbelianScheme.PointedMorphismRigidity.{u}`, in the separate module
+`Langlands.AbelianScheme.PointedMorphismRigidityProof`; it does not change this
 pair or its imports. This provenance correction supplies no proof or axiom.
 
-Worker 143's shared, unreviewed `PointedRigidityAssembly` draft (revision 4,
-checked for this correction on 2026-10-22) uses three published proposition
-definitions as explicit hypotheses. Their statement acceptance does not
-constitute acceptance of proofs. At this check, the three separate proof
-tasks had no proof artifacts:
+That proof follows a conditional assembly design which uses three proposition
+definitions as explicit hypotheses. Each of them is proved in its own module:
 
-| Prerequisite declaration | Statement task | Separate proof task |
+| Prerequisite declaration | Proof | Module |
 | --- | --- | --- |
-| `Langlands.AlgebraicGeometry.SmoothProperConnectedGlobalFunctions` | `5788cea2-b85f-4e15-8b6c-be693b32bc4a` | `f0c89f31-5b1a-47f0-95a9-69ecc4020950` |
-| `Langlands.AlgebraicGeometry.FactorizationOfGlobalFunctions` | `df6124a7-20f4-414b-9b59-ef1d58363876` | `90264cc6-8dc5-4f3a-b12c-9dcdd658c6c8` |
-| `Langlands.AbelianScheme.FieldPointedMorphismRigidity` | `64d72748-a060-4dd2-aae9-62753e728863` | `d197b3d4-843e-41df-a436-fbcc4c950959` |
+| `Langlands.AlgebraicGeometry.SmoothProperConnectedGlobalFunctions` | `smoothProperConnectedGlobalFunctions` | `Langlands.AlgebraicGeometry.SmoothProperConnectedGlobalFunctionsProof` |
+| `Langlands.AlgebraicGeometry.FactorizationOfGlobalFunctions` | `factorizationOfGlobalFunctions` | `Langlands.AlgebraicGeometry.FactorizationOfGlobalFunctionsProof` |
+| `Langlands.AbelianScheme.FieldPointedMorphismRigidity` | `fieldPointedMorphismRigidity` | `Langlands.AbelianScheme.FieldPointedMorphismRigidityProof` |
 
 The first statement asks for invertibility of the canonical section map
 `p.app U` on every open of the base for a smooth proper morphism with
@@ -130,13 +124,12 @@ Tag 047L. Consequently the all-field specialization has a different source
 correspondence: target separatedness is automatic there, so Lan's revised
 corollary applies to that specialization. This fact does not supply global
 separatedness over an arbitrary base. Nor may the field proof use the
-arbitrary-base result that the planned assembly is intended to prove.
+arbitrary-base result that the assembly proves.
 
-The reported zero-error, zero-warning compilation of the assembly concerns
-only the implication from its three explicit hypotheses. The draft is neither
-an independently accepted proof nor an unconditional theorem. It explains the
-internal rationale for retaining the stronger target while its prerequisite
-proofs and final exact-target proof remain separate obligations.
+The design explains the internal rationale for retaining the stronger
+target. Its three prerequisites and the exact target are proved in the
+separate modules named above; `pointedMorphismRigidity` applies the three
+proofs and has no hypothesis.
 
 ## Retained sources read for this correction
 

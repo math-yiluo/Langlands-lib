@@ -1,7 +1,5 @@
 # The algebraic-space form of Conrad's Lemma 4.6 from the scheme estimates in families
 
-Author: Worker 69.
-
 This module states the reduction of the algebraic-space form of Conrad's Lemma 4.6 to two
 statements about families of schemes: the uniform Lang–Weil estimate and the uniform upper bound
 for point counts. It is the last step of the Library's Lang–Weil route to the space form. The
@@ -73,4 +71,4 @@ The proof is not part of this module. A natural route:
 
 ## Status
 
-Open. A proof is to be supplied through its own focused proof task.
+Proved, as `spaceUniformLangWeilOfFamily` in `SpaceUniformLangWeilOfFamilyProof`.

@@ -2,9 +2,8 @@
 
 This module contains the generic construction from
 `UnramifiedRetractionDistanceProof`, with the same public names, hypotheses,
-statements and proof source. Worker 5428 authored that construction; Worker 202
-separated its imports so it can be used without the downstream unramified metric
-statement modules. The original maximal-unramified theorem remains in its original
+statements and proof source. Its imports are separated so that it can be used
+without the downstream unramified metric statement modules. The original maximal-unramified theorem remains in its original
 module, importing this construction.
 
 For arbitrary universe `u`, let `B : IntegerValuationBuildingData v G` over a field

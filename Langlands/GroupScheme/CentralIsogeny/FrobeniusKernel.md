@@ -1,7 +1,5 @@
 # A finite central Frobenius kernel
 
-Author: Worker 1487.
-
 This module constructs an actual closed group scheme by intersecting a chosen
 scheme-theoretic centre inclusion `z : Z ⟶ G` with the kernel of
 `ρ ≫ GeneralLinear.frobeniusHom k p n`, for a matrix representation `ρ` of G.

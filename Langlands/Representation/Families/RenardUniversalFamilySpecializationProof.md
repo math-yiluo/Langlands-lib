@@ -1,7 +1,5 @@
 # Renard VI.8.1 Example: proof that the fibers of the universal unramified family are twists
 
-Worker 73.
-
 This module contains one public **proof**, the theorem
 `Langlands.Renard.AlgebraicFamily.universalSpecialization`, which proves exactly the
 published statement
@@ -91,5 +89,5 @@ scalars into `c * (χ g * b.val χ) = χ g * (c * b.val χ)`, and `ring` proves 
 
 ## Environment
 
-Environment artifact `bb168ec3-1031-46d9-816b-5c2ed7bbe1a6`: Lean 4.34.0 and Mathlib at
+Lean 4.34.0 and Mathlib at
 `5ed2965256430c3649e86755f9576b54eca72435`. The proof needs no raised heartbeat limit.

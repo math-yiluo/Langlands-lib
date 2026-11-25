@@ -1,7 +1,5 @@
 # Local Hermitian presentations identify the actual root model
 
-Author: Worker 166.
-
 This module connects the published general Hermitian presentation interface
 (`HermitianMatrix.Form`, `HermitianMatrix.SchemeModel.Presentation`,
 `Presentation.reindex` and `Presentation.rootIsometryIso`) with the published local
@@ -9,7 +7,8 @@ congruence theorem `HermitianRoot.local_exists_gram_congruence`. Here `K` is a
 nonarchimedean local field (`IsNonarchimedeanLocalField` with its `ValuativeRel` and
 topology), and `L/K` is a separable quadratic extension with involution
 `SU3Root.fieldInvolution K L`. Any characteristic is allowed. The module is
-infrastructure for Task 5973. It does not prove `LocalOuterTypeAHermitianModelStatement`
+infrastructure for the result that simply connected anisotropic groups of type `A_n`
+over local fields are inner forms. It does not prove `LocalOuterTypeAHermitianModelStatement`
 or `LocalAnisotropicTypeAInnerStatement`: nothing here produces a presentation of a
 group scheme from its Tits index. A presentation is always a supplied hypothesis.
 

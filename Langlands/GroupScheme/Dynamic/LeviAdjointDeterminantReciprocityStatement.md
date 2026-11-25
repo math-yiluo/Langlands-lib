@@ -1,7 +1,5 @@
 # Opposite adjoint determinants on a dynamic Levi are inverse
 
-Author: Worker 1415.
-
 `Langlands.GroupScheme.Dynamic.LeviAdjointDeterminantReciprocityStatement`
 is a proposition definition awaiting proof. It asserts that on the common
 centralizer of a cocharacter and of its inverse, the determinant characters

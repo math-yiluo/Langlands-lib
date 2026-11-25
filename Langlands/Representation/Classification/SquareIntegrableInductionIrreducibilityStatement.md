@@ -1,12 +1,9 @@
 # Irreducibility of square-integrable block induction
 
-Author: Worker 389.
-
 `Langlands.Classification.SquareIntegrableBlockInductionIrreducibility.{uF,uV}
 F T` states the irreducibility conclusion of
 [`SquareIntegrableBlockInduction`](TemperedBlockStatement.md), retaining its
-entire telescope and its block hypotheses. The parent statement was authored
-by Worker 15. This focused source-derived projection is a proposition
+entire telescope and its block hypotheses. This focused source-derived projection is a proposition
 definition returning `Prop`; this file contains no proof of it or of the parent.
 
 ## Exact scope
@@ -107,13 +104,14 @@ irreducibility theorem, with the necessary transport isomorphisms. None of
 these is assumed here. This route cannot use the parent block-induction theorem,
 tempered exhaustion or unitarity/genericity consequences as upstream inputs;
 it also cannot assume the separate downstream square-integrable Langlands
-classification. The recorded source assertions and open statement tasks are
+classification. The recorded source assertions and open statements are
 not proved inputs.
 
-## Remaining proof obligations
+## Proof obligations of the direct source routes
 
-Even the direct JS83 source formulation leaves its proof to be implemented.
-Following its unitary-mirabolic argument, or applying Ja77 directly, requires
+The direct JS83 source formulation leaves its proof to be implemented; the
+Library proof (`SquareIntegrableInductionIrreducibilityProof`) follows the
+Ku94 segment route instead. Following the JS83 unitary-mirabolic argument, or applying Ja77 directly, requires
 at least the following comparisons:
 
 - Complete the given positive forms to continuous unitary Hilbert
@@ -139,18 +137,17 @@ at least the following comparisons:
   comparison with the sources' matrix coefficients must address smooth-dual
   functionals on the actual admissible carriers.
 
-These are proof obligations, not extra hypotheses or claimed results of this
-pair. The independent successor proof must establish the exact proposition.
-Separate tensor, invariant-form, analytic-exponent and grouping tasks retain
-their owners. No analytic bridge or segment-classification prerequisite is
-implemented or duplicated in this statement contribution.
+These are proof obligations of those routes, not extra hypotheses or claimed
+results of this pair. A proof must establish the exact proposition.
+No analytic bridge or segment-classification prerequisite is
+implemented or duplicated in this statement module.
 
 ## Retained editions and reading extent
 
 The following already registered originals were read directly for this pair,
 and their SHA-256 hashes were verified. PDF page numbers are one-based.
 No source-specific errata directory or note for these IDs was present in the
-workspace or supplied Library on 2026-10-25. The public classification source
+Library on 2026-10-25. The public classification source
 boundary note was also consulted; absence of a retained erratum is not a claim
 that the literature has no corrections.
 
@@ -165,8 +162,7 @@ that the literature has no corrections.
   ID `provided-7fa6dd7a9bc39b0ef92f41d27dd4970725cdfbe795124370c63ffe3d8743b116`;
   SHA-256 `073cdfbdac1db264653544249d1060ba47704cc1678a5f545b9cd0ca5df46c8a`.
   Read §0, p.91 (PDF p.97), and Theorem 3.2/Corollary 3.3 with the proof,
-  pp.98–99 (PDF pp.104–105). Retained file:
-  `/home/taskhub/pilot/literature/Jacquet (1977), Generic representations, LNM 587.pdf`.
+  pp.98–99 (PDF pp.104–105).
 - **Ku94:** S. S. Kudla, *The local Langlands correspondence: the
   non-archimedean case*, Motives, Part 2, PSPM 55 (1994), 365–391.
   ID `kudla-1994-local-langlands-nonarchimedean`;

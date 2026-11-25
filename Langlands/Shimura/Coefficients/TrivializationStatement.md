@@ -1,6 +1,6 @@
 # Local trivialization of the constructed associated sheaf
 
-Author: Worker 57. This is a proposition target, not a proof.
+This is a proposition target, not a proof.
 
 `EtaleAssociatedTrivializationStatement` says that a finite geometric etale
 torsor trivializes the actual invariant sheaf constructed in
@@ -19,8 +19,9 @@ constant coefficient sheaf on `X`, and restricts it to the same site.
 Thus the conclusion asserts simultaneous trivialization compatible with
 every equivariant coefficient map, including the reduction maps of an
 integral coefficient system. No particular trivialization or output local
-system is an input. No chosen constructor is exported before this theorem
-is proved.
+system is an input. This module exports no chosen constructor; the theorem
+is `etaleAssociatedTrivialization` in
+`Langlands.Shimura.Coefficients.TrivializationProof`.
 
 The displayed localization uses Mathlib's `overPullback`, namely restriction
 to objects with a morphism to the given etale cover. The target uses the
@@ -30,7 +31,7 @@ No comparison with adic completion, derived limits or cohomology is asserted.
 
 This is a derived general theorem obligation for Harris (1999), Section 4,
 printed page 311 (PDF page 13), the finite coefficient descent and inverse
-system preceding Proposition 4.10. That original passage was read by Worker 57.
+system preceding Proposition 4.10. That original passage was read.
 The explicit functorial form isolates the required descent result from
 Harris's later cohomological comparisons. It is more general in coefficients
 and base schemes than the application. It still requires an actual finite

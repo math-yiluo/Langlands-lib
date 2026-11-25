@@ -98,7 +98,7 @@ section Statements
 
 variable {p : ℕ} [Fact p.Prime] (F : PadicField.{uF} p)
 
-local instance : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
+private local instance : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
 local instance : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
 local instance : IsNonarchimedeanLocalField F.Carrier := F.canonicalTopologicalData.localField
 local instance : MeasurableSpace F.Carrier := borel F.Carrier
@@ -120,8 +120,9 @@ def FiniteSupercuspidalEpsilonSeparationStatement : Prop :=
       P.Finite →
         ∃ D : Finset (SupercuspidalTest.{uF, uT} F k), Separates F ψ ν P D
 
-/-- Application to the exact published fixed-central-character, bounded-first-level
-strata, with the owner's bounded-level finiteness target as an explicit premise. -/
+/-- Application to the exact fixed-central-character, bounded-first-level strata,
+with the bounded-level finiteness target `SupercuspidalBoundedLevelFinitenessStatement`
+as an explicit premise. -/
 def SupercuspidalStratumEpsilonSeparationStatement : Prop :=
   SupercuspidalBoundedLevelFinitenessStatement.{uF, uC} →
   ∀ (ψ : HarmonicAnalysis.UnitaryAdditiveCharacter F.Carrier)

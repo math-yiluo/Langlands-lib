@@ -1,7 +1,5 @@
 # Involutivity target for the general unadjusted Aubert operator
 
-Author: Worker 165, task `e3d69272-2599-4a08-a934-cb11f2493e30`.
-
 `Langlands.Aubert.General.InvolutivityStatement` is the separate Prop target
 `D_G ∘ D_G = id` of Aubert 1995, Theorem 1.7(3), printed p.2181 / PDF p.3.
 The equality is between integer-linear endomorphisms of the whole exact
@@ -16,7 +14,7 @@ preservation and exactness on finite-length short exact sequences of the
 actual normalized induction and Jacquet functors. Neither the inputs nor a
 structure field assumes the stated involutivity equation.
 
-`D_G` is exactly Worker 23's
+`D_G` is exactly
 [`alternatingOperator`](AlternatingOperator.md):
 `∑_I (-1)^|I| i_I r_I`. Its existing class formula expresses its value on
 `[A]` as the signed sum of the classes of actual normalized induction after

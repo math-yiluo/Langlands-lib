@@ -5,7 +5,7 @@ Licensed under Apache License 2.0; see licenses/Anthropic-FLT/LICENSE, NOTICE,
 and ATTRIBUTION.md. Imports are prefixed; utility commands are replaced by
 standard Lean commands. See the paired Markdown for changes and provenance.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Theorems.Thm_HopfAlgebra_bijective_translate_and_map_mem_and_exists_comp_translate_eq
 import Langlands.AnthropicFLT.Theorems.Thm_PrimeSpectrum_eq_univ_of_isOpen_of_nonempty_of_forall_isMaximal
 import Langlands.AnthropicFLT.Theorems.Thm_HopfAlgebra_faithfullyFlat_of_flat_of_injective_of_isAlgClosed

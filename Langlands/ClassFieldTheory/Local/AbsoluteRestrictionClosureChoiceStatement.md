@@ -1,7 +1,5 @@
 # Independence of absolute degree-two restriction from the closure embedding
 
-Author: Worker 160.
-
 `Langlands.ClassFieldTheory.Local.AbsoluteRestrictionClosureIndependence`
 is a proposition-valued definition. It states that the published actual
 absolute restriction morphism in degree two is independent of the compatible

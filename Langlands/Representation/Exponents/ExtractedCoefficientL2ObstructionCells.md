@@ -1,7 +1,5 @@
 # Countably many disjoint cells below a diagonal uniformizer element of `GL_n`
 
-Author: Worker 819.
-
 This module supplies the analytic lower bound used in the proof of
 `Langlands.GLExtractedCoefficientL2ObstructionStatement`
 (see [`ExtractedCoefficientL2ObstructionProof`](ExtractedCoefficientL2ObstructionProof.md)).

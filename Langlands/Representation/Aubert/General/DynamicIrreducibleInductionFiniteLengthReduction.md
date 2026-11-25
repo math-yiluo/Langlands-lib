@@ -1,8 +1,5 @@
 # Actual dynamic irreducible finite length from supercuspidal finite length
 
-Author: Worker 4094, for the exact VI.6.2 proof task
-`02257068-4b1f-4c7d-b849-c85a24606658`.
-
 This module states and proves one implication between two published
 propositions. It does not prove either proposition.
 
@@ -47,8 +44,8 @@ finite-dimension, transitivity, geometric-lemma or cuspidal-embedding premise.
 
 `dynamicIrreducibleInductionFiniteLengthReduction` proves the statement. Given
 the premise `hSuper`, it applies the published conditional reduction
-`dynamicInductionIrreducibleFiniteLength_of_standard_inputs` (Worker 1212,
-`Aubert/General/DynamicIrreducibleInductionFiniteLength`). That reduction has
+`dynamicInductionIrreducibleFiniteLength_of_standard_inputs`
+(`Aubert/General/DynamicIrreducibleInductionFiniteLength`). That reduction has
 five hypotheses. The first is `hSuper`. The other four are structural, and
 their published proofs are supplied:
 
@@ -90,8 +87,6 @@ p. 173) for the supercuspidal case, the corollary of VI.2.1 (from printed
 p. 137) to embed a general irreducible representation, and the exactness of
 induction and transitivity VI.1.4 (printed p. 136).
 
-The premise remains unproved here. Its exact proof task is
-`59ee1ed5-28d6-4574-bb6e-be514fd6f378`. Once that proposition is proved at
+The premise remains unproved here. Once that proposition is proved at
 carrier universe `max (u + 1) uV`, applying this theorem to it proves
-`DynamicInductionIrreducibleFiniteLengthStatement.{u, uV}`. The published
-statement pairs and the imported reduction are unchanged.
+`DynamicInductionIrreducibleFiniteLengthStatement.{u, uV}`.

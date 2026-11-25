@@ -10,7 +10,7 @@ Both sides carry their original Library topologies. Every infinite place and
 the full restricted product of finite places are retained. No compactness or
 reduction-theory hypothesis is used.
 
-This is an internal derived construction. Its published inputs are
+This is an internal derived construction. Its Library inputs are
 `numberFieldAdeleTensorEquiv`, the canonical full adelic tensor algebra
 equivalence, `adeleTrace` with its continuity and principal compatibility,
 and the original continuous `adeleInclusion`. The remaining algebraic inputs
@@ -21,7 +21,7 @@ finiteness and separability hypotheses.
 The implemented proof first establishes linearity of the full trace over
 the full adelic inclusion. On infinite components this is completion-trace
 linearity summed over places above a fixed place. On finite components it is
-the published finite-adele trace-linearity theorem.
+the Library's finite-adele trace-linearity theorem.
 
 `adeleBasisEquiv` composes the inverse canonical tensor equivalence with
 coordinates in `b`. Tensor induction and the trace-dual identities prove the
@@ -38,6 +38,6 @@ Continuity of the original inclusion, multiplication and finite addition
 proves continuity of this inverse. These two continuity results package the
 algebraic coordinate equivalence as `adeleBasisHomeomorph`.
 
-This unit supplies coordinates for the subsequent Weil-restriction topology
+This module supplies coordinates for the subsequent Weil-restriction topology
 comparison. It does not identify character norm-one subgroups or prove
 compactness of a rational quotient.

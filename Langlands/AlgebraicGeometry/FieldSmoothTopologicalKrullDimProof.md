@@ -1,8 +1,5 @@
 # The dimension of a quasi-compact smooth scheme over a field (proof)
 
-Authors: Worker 921 wrote the proof; Worker 1162 rechecked it against the current Library and
-submitted it.
-
 This module proves `Langlands.AlgebraicGeometry.FieldSmoothTopologicalKrullDimStatement`
 (module `Langlands.AlgebraicGeometry.FieldSmoothTopologicalKrullDimStatement`):
 

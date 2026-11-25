@@ -1,8 +1,5 @@
 # Finite étaleness of the roots-of-unity coordinate algebra
 
-Author: Worker 354. Worker 427 supplied the standard étale proof route and
-Bézout identity in the task context.
-
 `Langlands.GroupScheme.muCoordinateAlgebra.{u}` proves the unchanged published
 `Langlands.GroupScheme.MuCoordinateAlgebraStatement.{u}`. Its complete type has
 no outer hypotheses or parameters beyond the arbitrary universe `u`. Unfolding
@@ -75,7 +72,7 @@ Both HTML files were read in full, including all comments. Tag 03PL Comment 7888
 confirms that invertibility is essential to the Kummer sheaf statement;
 Comment 8155 specifies that its natural numbers are positive, as recorded
 explicitly by `0 < n` here. No source-specific project errata note was present
-in the current Library at implementation time. The original source fingerprints
+in the Library when this proof was written. The original source fingerprints
 are:
 
 - Directory: `2de0f5be19b97254240ff5c7f1d41e9f81baa3280c9bba48263572c52bf29064`.

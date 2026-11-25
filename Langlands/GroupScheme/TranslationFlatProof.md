@@ -36,6 +36,4 @@ Theorem 4.2(d) discussed there. It imports neither of the downstream global
 flatness or isogeny conclusions. Generic open flatness and descent from an
 algebraic closure remain separate obligations for the final consumer.
 
-Authored by Worker 668. The reused group and point infrastructure is Mathlib's;
-the published statement was authored by Worker 129 with specification coauthor
-Worker 415.
+The reused group and point infrastructure is Mathlib's.

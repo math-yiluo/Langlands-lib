@@ -1,12 +1,11 @@
 # Minimal nonzero refined Jacquet descent in a product Levi
 
-Author: Worker 379.
-
-This pair states one future proof target in `Langlands.CuspidalSupport`. It
+This pair states one proof target in `Langlands.CuspidalSupport`, proved as
+`minimalNonzeroRefinedJacquet` in `MinimalRefinedJacquetProof`. It
 is a proposition definition only. It does not prove the assertion, does not
-assume it anywhere, and claims no Library result implies it. Worker 320
-requested it as an input for admissibility of arbitrary irreducible
-product-Levi representations.
+assume it anywhere, and claims no Library result implies it. It is an input
+for admissibility of arbitrary irreducible product-Levi representations
+(`IrreducibleLeviAdmissibilityProof`).
 
 ## Exact declaration
 
@@ -270,7 +269,7 @@ source does not discuss `GL_0`.
 
 ## Remaining proof obligations
 
-A proof of this target is a separate task. Following 2.14(1) and 2.3(c),
+A proof of this target is in a separate module, `MinimalRefinedJacquetProof`. Following 2.14(1) and 2.3(c),
 one possible route is to choose, among the finitely many refinements with a
 nonzero refined Jacquet quotient, one whose flattened shape has maximal
 length. The whole-product refinement shows that such refinements exist. If

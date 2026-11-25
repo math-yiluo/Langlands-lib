@@ -90,7 +90,7 @@ A bounded recheck of the official 00MK and 00MJ pages on 28 October 2026
 found the same mathematical passages and zero comments on both pages.
 No source-specific errata file was found in project or Library notes.
 
-Worker 439 wrote this assembly from the current Library interfaces and
+This assembly is written from the Library interfaces and
 Mathlib. The external feasibility audit
 `notes/reuse/anthropic-local-flatness-audit.md` was consulted during
 planning. This module includes no extracted external Lean code; the

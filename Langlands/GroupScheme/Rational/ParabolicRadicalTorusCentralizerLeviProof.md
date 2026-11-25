@@ -1,7 +1,5 @@
 # The centralizer Levi of a maximal torus of a parabolic radical
 
-Author: Worker 4388.
-
 `Langlands.GroupScheme.parabolicRadicalTorusCentralizerLevi` proves exactly the
 published `Langlands.GroupScheme.ParabolicRadicalTorusCentralizerLeviStatement.{u}`
 at arbitrary universe `u`, with no additional premise. The statement pair

@@ -1,7 +1,7 @@
 # Finite-source Hermitian presentations identify the actual model
 
 This internal construction completes the coordinate-to-scheme comparison used
-by Task 5813. It takes a separable quadratic extension `L/k`, two finite index
+for `OuterTypeARankOneHermitianStatement`. It takes a separable quadratic extension `L/k`, two finite index
 types `Source` and `Middle`, and a diagonal Hermitian form `H` on `Middle`.
 The fields have arbitrary common universe `u`, while the finite index types
 lie in `Type`. There is no characteristic assumption and no anisotropy
@@ -61,11 +61,11 @@ The result is an actual group-scheme isomorphism because `isoOfMatrixPoints`
 uses these natural equivalences on every test scheme. No affineness or finite
 type assumption on `G` is needed for this conditional construction.
 
-## Provenance and remaining obligations
+## Provenance and scope
 
 This is internal infrastructure derived from explicit matrix algebra and the
 published Hermitian point-model comparison. It transcribes no classification
 result from external literature. The quadratic extension, full presentation
-and Gram coordinates remain inputs. This unit does not construct a presentation
+and Gram coordinates remain inputs. This module does not construct a presentation
 from a Tits index, compare split rank with isotropic dimension, or prove the
 host `OuterTypeARankOneHermitianStatement`.

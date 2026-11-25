@@ -179,9 +179,9 @@ variable {G : Type z} [Group G] [TopologicalSpace G]
 preserves it and the restricted pullbacks converge spectrally to the identity
 on every section of the chart algebra. -/
 def IsGoodChart (σ : G →* Aut X) (c : (presentationOf X).presentation.atlas.Index) : Prop :=
-  (∀ᶠ g in 𝓝 (1 : G), localizedSpaceFunctor.map (σ g).hom ⁻¹'
+  (∀ᶠ g in 𝓝 (1 : G), localizedSpaceFunctor.map (σ g).asIso.hom ⁻¹'
       ((presentationOf X).chartDomain c).carrier = ((presentationOf X).chartDomain c).carrier) ∧
-    ∀ a, SpectralConvergesOn (𝓝 (1 : G)) (fun g => preservedChartPullback c (σ g).hom)
+    ∀ a, SpectralConvergesOn (𝓝 (1 : G)) (fun g => preservedChartPullback c (σ g).asIso.hom)
       (BoundedAlgHom.id K _) a
 
 omit [CompleteSpace K] in
@@ -198,39 +198,41 @@ theorem IsGoodChart.of_subset {σ : G →* Aut X}
   let S := presentationOf X
   let D := S.presentation.atlas.restrictionDomain k c hkc
   let res := S.presentation.atlas.restriction k c hkc
-  have hpre : ∀ᶠ g in 𝓝 (1 : G), localizedSpaceFunctor.map (σ g).hom ⁻¹'
+  have hpre : ∀ᶠ g in 𝓝 (1 : G), localizedSpaceFunctor.map (σ g).asIso.hom ⁻¹'
       (S.chartDomain k).carrier = (S.chartDomain k).carrier := by
     filter_upwards [hc.1, D.eventually_comap_mem_locus_iff hc.2] with g hg hD
     ext y
-    change localizedSpaceFunctor.map (σ g).hom y ∈ range (S.presentation.atlas.chart k) ↔
+    change localizedSpaceFunctor.map (σ g).asIso.hom y ∈ range (S.presentation.atlas.chart k) ↔
       y ∈ range (S.presentation.atlas.chart k)
     by_cases hy : y ∈ range (S.presentation.atlas.chart c)
     · obtain ⟨x, rfl⟩ := hy
-      rw [← chart_comap_preservedChartPullback (σ g).hom c hg x]
+      rw [← chart_comap_preservedChartPullback (σ g).asIso.hom c hg x]
       have := hD x
       rw [comap_id_apply] at this
       exact this
     · have hy' : y ∉ range (S.presentation.atlas.chart k) := fun h => hy (hkc h)
-      have hgy : localizedSpaceFunctor.map (σ g).hom y ∉ range (S.presentation.atlas.chart c) := by
+      have hgy :
+          localizedSpaceFunctor.map (σ g).asIso.hom y ∉ range (S.presentation.atlas.chart c) := by
         intro h
         apply hy
-        have h' : y ∈ localizedSpaceFunctor.map (σ g).hom ⁻¹' (S.chartDomain c).carrier := h
+        have h' : y ∈ localizedSpaceFunctor.map (σ g).asIso.hom ⁻¹' (S.chartDomain c).carrier := h
         rw [hg] at h'
         exact h'
       exact ⟨fun h => absurd (hkc h) hgy, fun h => absurd h hy'⟩
   refine ⟨hpre, fun b => ?_⟩
   have hconv : ∀ a, SpectralConvergesOn (𝓝 (1 : G))
-      (fun g => res.comp (preservedChartPullback c (σ g).hom)) (res.comp (BoundedAlgHom.id K _)) a :=
+      (fun g => res.comp (preservedChartPullback c (σ g).asIso.hom))
+        (res.comp (BoundedAlgHom.id K _)) a :=
     fun a => (hc.2 a).postcomp res
   have himg : HasImageIn K (res.comp (BoundedAlgHom.id K _)) D.locus := by
     intro x
     rw [BoundedAlgHom.comp_id]
     exact D.represents.hasImageIn x
   have hφD : ∀ᶠ g in 𝓝 (1 : G),
-      (preservedChartPullback k (σ g).hom).comp D.baseMap =
-        res.comp (preservedChartPullback c (σ g).hom) := by
+      (preservedChartPullback k (σ g).asIso.hom).comp D.baseMap =
+        res.comp (preservedChartPullback c (σ g).asIso.hom) := by
     filter_upwards [hc.1, hpre] with g hg hgk
-    exact (restriction_comp_preservedChartPullback (σ g).hom hkc hg hgk).symm
+    exact (restriction_comp_preservedChartPullback (σ g).asIso.hom hkc hg hgk).symm
   have hψD : (BoundedAlgHom.id K _).comp D.baseMap = res.comp (BoundedAlgHom.id K _) := by
     rw [BoundedAlgHom.id_comp, BoundedAlgHom.comp_id]
     rfl
@@ -251,7 +253,7 @@ theorem IsGoodChart.of_finite_cover {σ : G →* Aut X}
       ⋃ j ∈ t, range (S.presentation.atlas.chart j) :=
     Subset.antisymm hcov (iUnion₂_subset hsub)
   have : Finite t := ht.to_subtype
-  have hpre : ∀ᶠ g in 𝓝 (1 : G), localizedSpaceFunctor.map (σ g).hom ⁻¹'
+  have hpre : ∀ᶠ g in 𝓝 (1 : G), localizedSpaceFunctor.map (σ g).asIso.hom ⁻¹'
       (S.chartDomain W).carrier = (S.chartDomain W).carrier := by
     filter_upwards [Filter.eventually_all.mpr (fun j : t => (hgood j j.property).1)] with g hg
     have hy : ∀ z : S.presentation.space, z ∈ range (S.presentation.atlas.chart W) ↔
@@ -260,8 +262,8 @@ theorem IsGoodChart.of_finite_cover {σ : G →* Aut X}
     ext y
     constructor
     · intro h
-      obtain ⟨j, hj, hjm⟩ := (hy (localizedSpaceFunctor.map (σ g).hom y)).1 h
-      have hjm' : y ∈ localizedSpaceFunctor.map (σ g).hom ⁻¹'
+      obtain ⟨j, hj, hjm⟩ := (hy (localizedSpaceFunctor.map (σ g).asIso.hom y)).1 h
+      have hjm' : y ∈ localizedSpaceFunctor.map (σ g).asIso.hom ⁻¹'
           ((presentationOf X).chartDomain j).carrier := hjm
       rw [hg ⟨j, hj⟩] at hjm'
       exact (hy y).2 ⟨j, hj, hjm'⟩
@@ -269,7 +271,7 @@ theorem IsGoodChart.of_finite_cover {σ : G →* Aut X}
       obtain ⟨j, hj, hjy⟩ := (hy y).1 h
       have hjy' : y ∈ ((presentationOf X).chartDomain j).carrier := hjy
       rw [← hg ⟨j, hj⟩] at hjy'
-      exact (hy (localizedSpaceFunctor.map (σ g).hom y)).2 ⟨j, hj, hjy'⟩
+      exact (hy (localizedSpaceFunctor.map (σ g).asIso.hom y)).2 ⟨j, hj, hjy'⟩
   refine ⟨hpre, fun f ε hε => ?_⟩
   filter_upwards [hpre, Filter.eventually_all.mpr (fun j : t => (hgood j j.property).1),
     Filter.eventually_all.mpr (fun j : t => (hgood j j.property).2
@@ -278,12 +280,12 @@ theorem IsGoodChart.of_finite_cover {σ : G →* Aut X}
   obtain ⟨x', hx'⟩ := exists_restriction_comap_eq_aux S (hsub j hj) x hxj
   rw [← hx']
   let res := S.presentation.atlas.restriction j W (hsub j hj)
-  change x' (res (preservedChartPullback W (σ g).hom f - BoundedAlgHom.id K _ f)) ≤ ε
+  change x' (res (preservedChartPullback W (σ g).asIso.hom f - BoundedAlgHom.id K _ f)) ≤ ε
   rw [map_sub]
-  have hnat := restriction_comp_preservedChartPullback (σ g).hom (hsub j hj) hg (hgj ⟨j, hj⟩)
-  have e1 : res (preservedChartPullback W (σ g).hom f) =
-      preservedChartPullback j (σ g).hom (res f) := by
-    change (res.comp (preservedChartPullback W (σ g).hom)) f = _
+  have hnat := restriction_comp_preservedChartPullback (σ g).asIso.hom (hsub j hj) hg (hgj ⟨j, hj⟩)
+  have e1 : res (preservedChartPullback W (σ g).asIso.hom f) =
+      preservedChartPullback j (σ g).asIso.hom (res f) := by
+    change (res.comp (preservedChartPullback W (σ g).asIso.hom)) f = _
     rw [hnat]
     rfl
   rw [e1]

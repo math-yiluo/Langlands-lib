@@ -32,6 +32,6 @@ generator product by an element of degree at most `d - 1`. This includes `d = 0`
 where the difference is zero.
 
 The provenance is the generic quotient and symmetrization constructions and
-the actual matrix adjoint lift imported here. This unit does not identify the
+the actual matrix adjoint lift imported here. This module does not identify the
 direct sum of the symmetric powers with the symmetric algebra, prove a PBW
 isomorphism or central generation, or prove automorphic differential growth.

@@ -1,7 +1,5 @@
 # Relative representations along full affinoid-domain inclusions
 
-Author: Worker 36.
-
 This module constructs a full relative affinoid-domain representation from an
 existing inclusion `f : V ⟶ U` of full domains over the same presented algebra
 `A`. It also constructs a fully faithful functor

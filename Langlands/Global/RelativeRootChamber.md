@@ -76,10 +76,10 @@ The source motivation is:
 These source passages motivate the inequalities. The implementation is a
 derived internal construction on `PositiveRealTorusIntrinsic`,
 `PositiveRealTorusTopology`, `PositiveRealTorusEmbedding` and the unchanged
-shared `Rational.StandardParabolic` interface of Worker 1225. It is not a
+`Rational.StandardParabolic` interface. It is not a
 complete Siegel set: compact unipotent and Levi factors, a suitable maximal
 compact, actual minimal-parabolic comparisons, reduction/coverage, finite volume
-and the analytic Haar-modulus theorem remain separate obligations.
+and the analytic Haar-modulus theorem are separate statements.
 
 The local topology instances have explicit names and expose exactly
 `GroupScheme.affinePointsTopologicalSpace` on the actual affine-point

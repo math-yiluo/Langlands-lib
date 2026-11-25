@@ -1,6 +1,6 @@
 # Subgroup stabilizers under quotient actions
 
-Worker 692. This is an internal derivation from the Library's all-test subgroup
+This is an internal derivation from the Library's all-test subgroup
 stabilizers, fppf-local subgroup membership, and relative parabolic self-normalization.
 
 Restriction of an automorphic action along a group homomorphism pulls back its

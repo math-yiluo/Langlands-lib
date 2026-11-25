@@ -1,11 +1,8 @@
 # A torus centralizer equality near a regular residue fibre
 
-Worker 608, using Worker 652 and Worker 606's smooth monomorphism helper.
-
-This unit uses the independently reviewed `SmoothMonoLocalIso` helper. Its
-unchanged source is included for buildability while publication is pending;
-integration should reuse that same helper pair. This unit is an internal
-comparison construction and does not prove the host opposite Borel target.
+This module uses the smooth monomorphism helper `SmoothMonoLocalIso`
+(module `Langlands.GroupScheme.SmoothMonoLocalIso`). This module is an internal
+comparison construction and does not prove the opposite Borel target.
 
 Let a torus inclusion and a cocharacter of that torus be supplied, together with
 a representative of the ambient cocharacter centralizer. The comparison

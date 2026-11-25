@@ -1,7 +1,5 @@
 # Isogenies of reduced root data carry bases to bases
 
-Worker 613.
-
 This proof module proves the published proposition
 `Langlands.LinearAlgebra.RootDatumIsogenyBaseStatement` with its six independent
 type universes and unchanged hypotheses. The entry theorem is

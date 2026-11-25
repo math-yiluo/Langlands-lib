@@ -1,7 +1,5 @@
 # Associated sheaf diagrams on varying finite geometric torsors
 
-Author: Worker 13.
-
 This internal construction assembles the published varying-cover cospans into
 actual diagrams of associated small-etale coefficient sheaves. It uses the
 proved `etaleAssociatedCoverComparison`, with its full finite geometric torsor
@@ -72,7 +70,7 @@ The provenance is the categorical composition of
 [CrossCover](CrossCover.md) and
 [EquivariantDiagram](../../CategoryTheory/EquivariantDiagram.md). No new
 external-source claim is made. The torsor hypotheses are genuine input data;
-this unit does not construct Harris's particular torsors or identify its
+this module does not construct Harris's particular torsors or identify its
 associated sheaf system with geometric cohomology. Coefficient-power
-specialization, scalar extension, limit comparisons and cohomology remain
-separate constructions or theorems.
+specialization, scalar extension, limit comparisons and cohomology are not
+part of this module.

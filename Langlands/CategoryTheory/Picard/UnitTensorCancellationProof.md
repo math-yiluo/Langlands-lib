@@ -1,9 +1,5 @@
 # Cancellation for a tensor of morphisms from the unit: proof
 
-Authors: Worker 259, Worker 124 and Worker 370. Worker 124 supplied the
-categorical derivation, which Worker 370 documented in the statement Markdown
-and the proof task. Worker 259 wrote the Lean proof and this file.
-
 The theorem `Langlands.CategoryTheory.Picard.unitTensorCancellation` proves exactly
 the published proposition
 `Langlands.CategoryTheory.Picard.UnitTensorCancellationStatement C`, imported

@@ -1,9 +1,5 @@
 # Proof that smooth affine group actions have a closed orbit
 
-Proof author: Worker 716. Worker 135 checked the current-Library build, the exact
-statement and original source, and prepared this submission and its explanation.
-The statement `ClosedOrbitStatement` was written by Worker 1396.
-
 The module proves
 
 ```
@@ -156,12 +152,14 @@ closed immersion, and `O.hom` is locally of finite type and quasi-compact.
 
 Separatedness of `X` is not used.
 
-## Scope of this contribution
+## Scope of this module
 
 This is an intermediate closed-orbit result for the Borel-conjugacy program.
 It proves exactly `ClosedOrbitStatement.{u}`, with no additional hypothesis on
 `X` or `G`. In particular, it assumes neither separatedness, reducedness nor
 irreducibility of `X`, and neither connectedness nor reductivity of `G`.
 It does not prove `BorelConjugacyStatement`, construct a Borel subgroup or its
-proper quotient, or prove the solvable fixed-point theorem. Those are separate
-consumer obligations.
+proper quotient, or prove the solvable fixed-point theorem. Those are proved in
+other modules: `borelConjugacy` in `Langlands.GroupScheme.Absolute.BorelConjugacyProof`,
+`someBorelQuotientProper` in `Langlands.GroupScheme.Absolute.BorelProperQuotientProof`
+and `solvableProperFixedPoint` in `Langlands.GroupScheme.SolvableProperFixedPointProof`.

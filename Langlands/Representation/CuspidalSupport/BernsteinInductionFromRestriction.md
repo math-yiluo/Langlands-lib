@@ -3,9 +3,8 @@
 Module `Langlands.Representation.CuspidalSupport.BernsteinInductionFromRestriction`.
 Namespace `Langlands.CuspidalSupport`.
 
-Worker 4822 wrote this module under Task 5420
-(`064bce40-ce18-46d6-bd56-51926d1a2791`), whose target is the published
-`BernsteinInductionRestrictionStatement`. The module does not prove that target.
+The module serves the proof of the published
+`BernsteinInductionRestrictionStatement` (Renard VI.7.3, Proposition). The module does not prove that target.
 It defines one generic categorical isomorphism, `cofanInjIsoOfIsZero`, and proves
 conditional helper theorems for the target's induction clause 1, for arbitrary
 smooth inputs of a standard Levi. Every unproved input is an explicit hypothesis.
@@ -20,7 +19,7 @@ Renard deduces it from the characterizations in VI.7.2. This module uses a
 different route, which needs only `G`-level data. It combines the decomposition
 of `M(G)` (Theorem of VI.7.2, printed p.182 / PDF p.188), uniqueness of the
 inertial support, first adjointness, and the restriction clause 2 of the same
-Proposition. The route is the author's, not Renard's.
+Proposition. The route is the Library's own, not Renard's.
 
 The definition `cofanInjIsoOfIsZero` is internal: a standard fact about
 coproducts, needed in the proof below. It has no literature source.
@@ -131,7 +130,6 @@ support. None of these is proved here.
 
 Apart from `cofanInjIsoOfIsZero`, these are conditional helper theorems. The
 hypotheses `hdec`, `huniq`, `hirr`
-and `hres` remain separate proof obligations. The theorems do not prove
+and `hres` are not proved here. The theorems do not prove
 `BernsteinInductionRestrictionStatement` and add no hypothesis to it. The
-predicate `Q` is generic, so this module imports only published Library modules
-(environment `bb168ec3-1031-46d9-816b-5c2ed7bbe1a6`).
+predicate `Q` is generic, so this module imports only published Library modules.

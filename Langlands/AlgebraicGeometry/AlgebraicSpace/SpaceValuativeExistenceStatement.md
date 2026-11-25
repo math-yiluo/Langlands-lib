@@ -1,7 +1,5 @@
 # The valuative criterion for separated universally closed morphisms of algebraic spaces
 
-Author: Worker 78.
-
 `SpaceValuativeExistenceStatement` states the implication (1) ⇒ (3) of Lemma 67.42.3
 (Tag 0A3Y) of the Stacks Project, chapter *Morphisms of Algebraic Spaces*. The module only
 states it and contains no proof.

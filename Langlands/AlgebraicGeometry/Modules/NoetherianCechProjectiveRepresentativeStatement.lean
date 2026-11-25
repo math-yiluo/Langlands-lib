@@ -1,13 +1,13 @@
 /-
 Copyright 2026 Anthropic
 Licensed under the Apache License, Version 2.0.
-Adapted by Worker 137: Prop-valued interface strengthened to retain the
+Adapted in Langlands-lib: Prop-valued interface strengthened to retain the
 original-base cycle tests from the source construction; definition imports
 and unused proof binders adjusted.
 Source: Anthropic FLT commit 6e837e75355538c7f80bab5b956861e86c4eacc2.
 See licenses/Anthropic-FLT/LICENSE and licenses/Anthropic-FLT/NOTICE.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_OrderedAffineCoverComap
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_OModulePresheafOfModules
 

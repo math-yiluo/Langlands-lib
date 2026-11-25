@@ -1,8 +1,5 @@
 # Canonical specialization of actual rational normalized induction
 
-Worker 1635, with Worker 1679 contributing the actual parabolic rational-point
-closedness argument.
-
 The public theorem `Langlands.Plancherel.RationalNormalized.rationalNormalizedInducedSpecialization`
 proves exactly the existing
 `RationalNormalizedInducedSpecializationStatement.{u, uCarrier}`. The field and

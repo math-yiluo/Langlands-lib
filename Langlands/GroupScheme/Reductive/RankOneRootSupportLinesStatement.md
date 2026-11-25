@@ -23,12 +23,15 @@ proof. In particular, a supplied Mathlib `RootDatum` does not contain an
 `IsReduced` hypothesis, and this module does not infer the support assertion
 from the supplied datum alone.
 
-These are internal derived interfaces, isolated by Workers 785 and 777 from the
-independent cell construction in Task 7509. Their provenance is the explicit
+These are internal derived interfaces, isolated from the
+independent cell construction `splitRankOneRootCell_of_supportLines` in
+`Reductive.IndependentRootCellReduction`. Their provenance is the explicit
 pointwise support and line-space inputs of that construction, rather than an
 additional translation of a literature theorem. They retain the exact field,
 torus, root-datum, and rank hypotheses of the published root-cell target,
 without adding new assumptions to that target. Their independent geometric
-proof remains a separate obligation. The algebraically closed formulation is
+proof is not in this module: `algClosedRankOneRootSupportLines` in
+`Reductive.AlgClosedRankOneRootSupportLinesProof` proves the algebraically
+closed statement from the rank-one central cover. The algebraically closed formulation is
 a structural prerequisite; it does not replace or restrict the arbitrary-field
 root-cell target.

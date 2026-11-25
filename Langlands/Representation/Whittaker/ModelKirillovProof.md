@@ -1,7 +1,5 @@
 # Conditional Kirillov lifting into actual coefficient models
 
-Author: Worker 654.
-
 `Langlands.Whittaker.modelKirillovTransfer` proves exactly
 `Langlands.Whittaker.ModelKirillovTransferStatement.{uF,uV}`. Its explicit
 premise is `Langlands.WhittakerTypeKirillovStatement.{uF,uV}`. The proof

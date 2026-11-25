@@ -1,7 +1,5 @@
 # Normalized CM specialization of the actual polarized numerical tower
 
-Author: Worker 57.
-
 This internal construction specializes the existing actual Harris numerical
 polarized class tower to the normalized CM structure map. The signature charts
 are exactly those on `harrisCMSection E (algebraMap L F) τ₀`, where `L` is the

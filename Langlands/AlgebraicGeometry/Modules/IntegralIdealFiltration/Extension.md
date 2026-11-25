@@ -1,6 +1,6 @@
 # Killed sections extending multiples of the witness section
 
-Author: Worker 716. This is an internal helper module for
+This is an internal helper module for
 `Langlands.AlgebraicGeometry.Modules.coherentIntegralIdealFiltration`. Its predicates
 are derived devices for the proof.
 

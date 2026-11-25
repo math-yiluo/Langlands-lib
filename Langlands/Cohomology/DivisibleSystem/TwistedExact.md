@@ -1,13 +1,13 @@
 # Harris's `ℓ`-divisible Godement systems on a coreflective subcategory of twisted sheaves
 
-Author: Worker 26. Generalizes Worker 26's published modules
+Generalizes the published modules
 `Langlands.Cohomology.DivisibleSystem.TwistedGodement`, `TwistedTruncation` and
 `TwistedInverseLimit` from discrete sheaves to a coreflective exact subcategory. It uses:
 
-- `Langlands.Sheaf.Equivariant.TwistedExactGodement` (Worker 26, submitted with this module):
+- `Langlands.Sheaf.Equivariant.TwistedExactGodement`:
   `exactZeroFunctor`, `exactCoaugmentation`, `mono_exactCoaugmentation_of_jointlyFaithful` and
   `exactComplexFunctor`;
-- `Langlands.Sheaf.Equivariant.TwistedExactCompactComparison` (Worker 26):
+- `Langlands.Sheaf.Equivariant.TwistedExactCompactComparison`:
   `exactCompactSections`, `exactCompactDerived` and the left exactness of
   `exactCompactSections`;
 - the generic constructions that the published twisted modules use: `DivisibleSystem.map`
@@ -18,12 +18,14 @@ Author: Worker 26. Generalizes Worker 26's published modules
   `acyclicTruncatedSectionsHomologyIso` and `isZero_rightDerived_truncatedResolutionSystem_obj_X`
   (`DivisibleSystem.AcyclicTruncation`), and `acyclicTruncatedSectionsHomologyNatIso` from
   `TwistedInverseLimit`;
-- Worker 61's `quotientInvariantsLimit`, `quotientInvariantsLimitToRepExtend`,
+- from the generic `DivisibleSystem` modules (`InvariantLimit`, `InverseLimit`,
+  `ConstantInverseLimit`, `InvariantComparison`): `quotientInvariantsLimit`,
+  `quotientInvariantsLimitToRepExtend`,
   `quasiIso_quotientInvariantsLimitToRepExtend`, `quotientInvariantsInverseLimit`,
   `quotientInvariantsInverseLimitComparison`, `isIso_quotientInvariantsInverseLimitComparison`,
   `extendHomologyNatIso`, `extendLevelCohomologyLimitIso`, `mapHomologicalComplexHomologyIso`,
   `finite_of_rep_iso` and `Rep.ρ_eq_id_of_iso`;
-- Worker 3's statements `ProPInvariantSubcomplexStatement` and
+- the statements `ProPInvariantSubcomplexStatement` and
   `FiniteCohomologyInverseLimitStatement`. Neither is proved in the Library; both appear
   only as hypotheses `hS` and `hS'`.
 
@@ -71,7 +73,7 @@ of `incl`, `[EnoughInjectives 𝒜]`, points `Ψ : I' → J.Point.{w}` with a co
 The inverse-limit section takes the same data with coefficients `R : Type (max w uG)`, as in
 `TwistedInverseLimit`, a filtered preorder `ι : Type uG` and an antitone family
 `H : ι → Subgroup G` of normal subgroups of finite index with `Fintype` and `DecidableEq`
-instances on the quotients, and Worker 61's hypotheses `hK` and `hk`.
+instances on the quotients, and the hypotheses `hK` and `hk` of the generic constructions.
 
 ## Declarations
 
@@ -147,5 +149,6 @@ locally discrete sheaves of `LocalActionSmoothPart`.
 ## Not formalized here
 
 The exactness of the Godement functor, the joint faithfulness of the fibre functors, the
-acyclicity `hF`, the bound `hT`, Worker 3's statements, and any comparison with the
+acyclicity `hF`, the bound `hT`, the statements `ProPInvariantSubcomplexStatement` and
+`FiniteCohomologyInverseLimitStatement`, and any comparison with the
 published discrete-sheaf constructions.

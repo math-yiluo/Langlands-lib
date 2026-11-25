@@ -1,11 +1,7 @@
 # The central character of a weakly associated cuspidal realization
 
-Worker 1807 authored this statement unit for task
-`00c5b3b4-b058-4ec7-9851-be9b60052094`. Worker 1693, collaborator on the
-task, contributed the source and prerequisite audit that the sections
-"The almost-all-place argument", "Bridge to `AssociatedGammaStatement`" and
-"Source correspondence" rely on. The declaration lies in the namespace
-`Langlands.ClassField.Global.RelativeWeilGroup`. The module imports only
+The declaration lies in the namespace
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup`. The module imports only
 `Langlands.Automorphic.AssociatedDeterminantTwistStatement`.
 
 ## Statement
@@ -28,7 +24,8 @@ of `det S` exists, and the two are the same Hecke character. Neither
 character is a hypothesis. This is the global identity `det S = ω_Π ∘ τ_F`
 of Henniart 2000, §2.2. Henniart 1986, §4.3, uses it to compare the
 determinant and central-character terms of Lemma 4.2 at the places of `T`.
-The statement is not proved.
+The statement is proved by `associatedCentralCharacter` in
+`Langlands.Automorphic.AssociatedCentralCharacterProof`.
 
 ## Declaration
 
@@ -49,7 +46,7 @@ def AssociatedCentralCharacterStatement : Prop :=
 ```
 
 The hypotheses on `c`, `F`, `E`, `S` and `T` are exactly those that the
-published `Langlands.ClassField.Global.RelativeWeilGroup.AssociatedGammaStatement`
+published `Langlands.ClassFieldTheory.Global.RelativeWeilGroup.AssociatedGammaStatement`
 (in `Langlands.Automorphic.AssociatedFactorStatement`) places on one of its
 two pairs `(S, T)`, at the same universe levels.
 
@@ -162,7 +159,8 @@ sources establish only for the arithmetic fundamental class.
 
 ## The almost-all-place argument
 
-This argument is not formalized. Fix `c`, `F`, `E`, `S` and `T` as in the
+The proof in `AssociatedCentralCharacterProof` follows a different route for
+steps 1, 6, 7 and 8 (see its page). Fix `c`, `F`, `E`, `S` and `T` as in the
 statement, with `n = r + 1`. Each step names its prerequisites; the next
 section lists their status.
 
@@ -242,7 +240,7 @@ base `b8342b18a9c917d5ef97606f056f47113f610808`:
 | Existence of a central character for an actual irreducible cuspidal realization (Schur–Dixmier) | 1 | not stated in the Library |
 | Uniqueness of the central character from `space_nontrivial` and injective form inclusion | 2 | ingredients published; the deduction is not formalized |
 | Continuity of `det S` | 3 | proved: `Langlands.Weil.representationCharacterNormalization` |
-| Transfer surjective with commutator kernel | 3 | statement only: `Langlands.ClassField.Global.RelativeWeilGroup.RelativeWeilTransferReciprocityStatement` |
+| Transfer surjective with commutator kernel | 3 | statement only: `Langlands.ClassFieldTheory.Global.RelativeWeilGroup.RelativeWeilTransferReciprocityStatement` |
 | Transfer is a topological quotient map onto `C_F` (continuous descent of characters) | 3 | not stated; `continuous_transfer` gives continuity only under `IsEmbedding (ideleClassInclusion …)` |
 | Top coefficient of `det(1 − X A)` and of `∏ (1 − z_i X)` | 4 | elementary; not formalized |
 | `i = n` Hecke operator is the scalar double coset with exponent `0`; central character acts on spherical vectors by `ω_v(ϖ_v)` | 5 | definitions and inheritance chain published; the computation is not formalized |
@@ -263,8 +261,7 @@ is classical (Tate 1979, Prop. 1.6.1) but absent from the Library.
 
 ## Separate proof obligations
 
-A proof of the statement, to be a separate exact-target task after
-publication, must discharge:
+A proof of the statement along this argument must discharge:
 
 1. existence of a central character for every actual irreducible cuspidal
    realization (step 1);
@@ -373,7 +370,7 @@ inverse transfer, cuspidal realizations only), which apply here unchanged:
 
 ## Scope
 
-The module states one unproved theorem. It does not assert:
+The module states one theorem and does not prove it. It does not assert:
 
 - the existence of any weakly associated pair or local map;
 - the reciprocity law or the local–global compatibility of the transfer;

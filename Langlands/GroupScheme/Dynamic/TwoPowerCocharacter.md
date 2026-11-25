@@ -1,9 +1,9 @@
 # Internal two-power unitarization of cocharacters
 
-This internal construction by Worker 1655 develops the finite-support
+This internal construction develops the finite-support
 comparison needed to apply internal unitarization to an actual cocharacter.
 It retains a closed star-stable matrix realization as an input.
-The unconditional archimedean existence statement remains open.
+The unconditional archimedean existence statement is not proved here.
 
 `hermitian_projectors_of_normal_separating_support` applies the existing
 normal-matrix projector criterion to the subtype of a finite support.
@@ -65,5 +65,5 @@ representation.
 This construction neither supplies the initial closed star-stable
 realization of an arbitrary reductive group nor handles real descent.
 It also does not itself assemble the parabolic and Levi decomposition.
-Those obligations remain in the host task; the present unit supplies
+Those steps lie outside this module; the present module supplies
 cocharacter compatibility inside an existing complex realization.

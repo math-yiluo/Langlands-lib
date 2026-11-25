@@ -1,7 +1,5 @@
 # Actual quotient characters from finite-index coroot comparison
 
-Authors: Worker 1293; Worker 1435 contributed the saturated-span formulation.
-
 This is a derived construction for the character-image portion of the Levi
 cocenter root model. All character and cocharacter maps are those of the
 supplied actual commutative group schemes. It does not supply the geometric

@@ -10,7 +10,7 @@ The expected pushforward multiplier is the positive real number
     c_rect = |a|^((n+1) * sum_{i=0}^{j-1}(i+1)).
 
 `HasCharacterChangeRectangularMeasureLaw` explicitly assumes that the pushforward
-of the specified rectangular measure is c_rect times that measure. This unit
+of the specified rectangular measure is c_rect times that measure. This module
 defines the proposed multiplier and proves it is nonzero; it does not prove
 that any chosen Haar measure has this law. The quotient measure law remains
 the separate published predicate, with multiplier c_quot.

@@ -1,7 +1,5 @@
 # Ordered relative-root products onto the actual Dynamic radical
 
-Author: Worker 51.
-
 `Langlands.GroupScheme.RelativeRoot.dynamicRootOrderedProduct` proves exactly
 the published proposition `DynamicRootOrderedProductStatement.{u}` in
 [`RootProductStatement`](RootProductStatement.md), at arbitrary universe `u`.

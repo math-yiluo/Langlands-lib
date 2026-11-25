@@ -1,6 +1,7 @@
 # Unconditional linearity of original canonical face quotient comparisons
 
-This internal construction for Task 7200 proves linearity of the ORIGINAL
+This internal construction for the finite vector-bundle filtrations of
+supplied relative radicals proves linearity of the ORIGINAL
 actual `sameParabolicQuotientIso` over an arbitrary nontrivial commutative
 ring at universe `u`. The final interface has no supplied coordinate
 conjugator, coefficient chart, scalar-equivariance or linear-transition
@@ -111,4 +112,4 @@ reflection and arbitrary-ring positive scalar rigidity. The result
 closes the transition-linearity obligation for these original canonical
 face quotient comparisons. Module cocycle construction, effective
 vector-bundle descent and the final finite filtration statement remain
-parent-task obligations.
+separate steps.

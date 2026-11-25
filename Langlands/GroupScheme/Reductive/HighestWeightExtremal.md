@@ -1,6 +1,6 @@
 # Extremal coordinates from a supplied highest-weight representation
 
-This internal derived construction by Worker 1369 converts a supplied actual
+This internal derived construction converts a supplied actual
 highest-weight representation at integral rho into the representation data used
 by `IsRootDatumOf.canonicalRhoBigCellGeometricData`. It proves no representation
 existence theorem and does not prove `SteinbergBigCellStatement`.
@@ -79,4 +79,4 @@ identify the exact diagonal cocharacter.
 The provenance is an internal derivation from the existing Library definitions
 and proved character-basis, basis-change, dual-representation, integral-rho and
 lattice-pairing interfaces. No external source theorem or additional existence
-assumption is installed by this contribution.
+assumption is installed by this module.

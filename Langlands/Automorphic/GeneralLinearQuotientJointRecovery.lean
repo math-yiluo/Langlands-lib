@@ -18,25 +18,25 @@ namespace Langlands.Automorphic.GroupSchemeFunctions
 open Langlands.Global Langlands.Global.AdelicGroupPoints
 open Langlands.Global.PositiveRealTorus Langlands.GroupScheme
 
-local instance (F : Type u) [Field F] (n : ℕ) :
+private local instance (F : Type u) [Field F] (n : ℕ) :
     IsAffine (GroupScheme.GeneralLinear.groupScheme (Fin n) (CommRingCat.of F)).X.left :=
   GroupScheme.GeneralLinear.isAffine_groupScheme (Fin n) (CommRingCat.of F)
 
-local instance (F : Type u) [Field F] (n : ℕ) :
+private local instance (F : Type u) [Field F] (n : ℕ) :
     Smooth (GroupScheme.GeneralLinear.groupScheme (Fin n) (CommRingCat.of F)).X.hom :=
   GroupScheme.GeneralLinear.smoothStatement (Fin n) (CommRingCat.of F)
 
-local instance (F : Type u) [Field F] [NumberField F] (n : ℕ) :
+private local instance (F : Type u) [Field F] [NumberField F] (n : ℕ) :
     AddCommGroup (Langlands.Automorphic.RationalInvariantFunctions F n) := Submodule.addCommGroup _
-local instance (F : Type u) [Field F] [NumberField F] (n : ℕ) :
+private local instance (F : Type u) [Field F] [NumberField F] (n : ℕ) :
     AddCommGroup (Langlands.Automorphic.ContinuousRationalFunctions F n) := Submodule.addCommGroup _
-local instance (F : Type u) [Field F] [NumberField F] (n : ℕ) :
+private local instance (F : Type u) [Field F] [NumberField F] (n : ℕ) :
     AddCommGroup (FiniteSmoothRationalFunctions F n) := Submodule.addCommGroup _
-local instance (F : Type u) [Field F] [NumberField F] (n : ℕ) :
+private local instance (F : Type u) [Field F] [NumberField F] (n : ℕ) :
     AddCommGroup (AutomorphicForms F n) := Submodule.addCommGroup _
-local instance (F : Type u) [Field F] [NumberField F] (n : ℕ) :
+private local instance (F : Type u) [Field F] [NumberField F] (n : ℕ) :
     AddCommGroup (StableAutomorphicFunctions F n) := Submodule.addCommGroup _
-local instance (F : Type u) [Field F] [NumberField F] (n : ℕ)
+private local instance (F : Type u) [Field F] [NumberField F] (n : ℕ)
     (R : OperatorRealization F n) : AddCommGroup R.Space := Submodule.addCommGroup R.toSubmodule
 
 /-- If the class image of a represented operator realization lies in the closure of a jointly

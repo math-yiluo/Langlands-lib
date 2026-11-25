@@ -144,7 +144,7 @@ theorem splitValuation_eq_one_of_mem {Γ : Type*} [LinearOrderedCommGroupWithZer
   apply (cocharacterDualEquiv S hS).injective
   apply LinearMap.ext
   intro χ
-  rw [cocharacterDualEquiv_apply, splitValuation_pairing, toAdd_one, map_zero,
+  rw [cocharacterDualEquiv_apply, splitValuation_pairing, toAdd_one, LinearEquiv.map_zero,
     LinearMap.zero_apply]
   have h5 := (mem_characterValuationKernel.mp ht)
     ((rationalCharacters.equivCharacterLattice S).symm χ)

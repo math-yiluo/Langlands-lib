@@ -1,7 +1,5 @@
 # Minimal closed invariant subsets with finite orbits
 
-Authors: Worker 101 and Worker 239.
-
 This internal topological construction isolates part of the proposed
 nonzero-invariant argument for the Serre criterion. It does not construct
 the point equivalence relation of a scheme relation, prove finite fibers,
@@ -35,8 +33,7 @@ relation on points. The preimages of an invariant subset along `s` and `t`
 agree. For continuous open maps, taking preimages commutes with closure,
 so those preimages also agree for its closure.
 
-Worker 239 supplied the host finite-orbit strategy; Worker 101 supplied the
-finite-closure refinement and its implementation. All results here are
+All results here are
 internal and use only Mathlib topology and finite-order results. In
 particular, finiteness here does not prove that these points are closed in
 the resulting subspace. Constructing a restricted reduced étale relation

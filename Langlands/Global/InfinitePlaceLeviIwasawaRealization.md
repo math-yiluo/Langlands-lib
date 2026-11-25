@@ -1,7 +1,5 @@
 # Actual archimedean Levi-compatible Iwasawa assembly from realization
 
-Author: Worker 1655.
-
 This internal derived adapter applies the compatible diagonal polar construction
 to the actual infinite-place completion in arbitrary universe `u`. It proves all
 four conclusions on the original point groups once compatible realization on the
@@ -39,8 +37,9 @@ pairs and infinite places of `LeviCompatibleIwasawaStatement`, including its
 arbitrary universe. The final theorem proves that this realization statement
 implies the exact existing Iwasawa proposition by applying the pointwise
 adapter to each pair. The hypothesis remains unproved. In particular this is
-not an unconditional proof of `LeviCompatibleIwasawaStatement` and does not
-complete the host task.
+not an unconditional proof of `LeviCompatibleIwasawaStatement`; the Library
+proves that statement without this hypothesis, as
+`leviCompatibleIwasawaStatement` in `InfinitePlaceLeviIwasawaProof`.
 
 The provenance is internal composition of the published compatible completion
 analytic structure, actual-point base-change transport and the conditional

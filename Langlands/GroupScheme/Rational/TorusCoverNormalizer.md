@@ -1,7 +1,5 @@
 # Normalizer transport through an fppf change of acting group
 
-Author: Worker 1631.
-
 This internal derived construction generalizes the descent argument in the
 published `Adjoint/Normalizer` module to a supplied commuting square
 `i ≫ q = groupHom t ≫ j`. The ambient groups and the commutative acting groups
@@ -23,5 +21,5 @@ its underlying point is literally composition with `q`. `normalizingAut_comp`
 proves that the chosen source and target automorphisms commute with `t`.
 These claims follow from the supplied square, naturality of inner conjugation
 and cancellation against the target monomorphism. No source monomorphism is
-needed for this unit. It asserts no lifting of target normalizers or apartment
+needed for this module. It asserts no lifting of target normalizers or apartment
 axioms.

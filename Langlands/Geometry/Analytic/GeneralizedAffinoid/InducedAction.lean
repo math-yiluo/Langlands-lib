@@ -54,7 +54,7 @@ def family : AffinoidFamily.{u, v} K :=
 
 /-- The inverse of the forward subgroup operator is the geometric pullback. -/
 def pullback (g : G) (c : G ⧸ H) : BoundedAlgHom K X.obj.V X.obj.V :=
-  (X.actionAut (correction H g c)).inv
+  (X.actionAut (correction H g c)).asIso.inv
 
 @[simp]
 theorem pullback_one (c : G ⧸ H) :
@@ -88,9 +88,9 @@ theorem actionMap_mul (g h : G) :
 def action : Action (AffinoidFamily.{u, v} K) G where
   V := family H X
   ρ :=
-    { toFun := actionMap H X
-      map_one' := actionMap_one H X
-      map_mul' := actionMap_mul H X }
+    { toFun := fun g => End.of (actionMap H X g)
+      map_one' := End.ext (actionMap_one H X)
+      map_mul' := fun g h => End.ext (actionMap_mul H X g h) }
 
 /-- The inverses of the constructed bounded family maps are supplied by the group laws. -/
 def automorphisms : G →* Aut (family H X) :=

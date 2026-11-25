@@ -1,6 +1,6 @@
 # Continuous descent under finite full-domain refinements
 
-Worker 56 constructs actual restriction of compatible continuous families
+This module constructs actual restriction of compatible continuous families
 along a supplied refinement of finite full-domain covers. The restriction is
 an equivalence, and it preserves the continuous map obtained by gluing.
 The declarations are in
@@ -87,5 +87,5 @@ All constructions allow zero cover size, empty loci, zero quotient
 algebras and trivial valuation. They concern continuous maps on represented
 loci and supplied refinements in one ambient spectrum. Actual algebra
 sections, analytic structure sheaves, intersections, pullback stability
-along arbitrary analytic maps, analytic atlases and etale sites remain
-separate obligations.
+along arbitrary analytic maps, analytic atlases and etale sites lie
+outside this module.

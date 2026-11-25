@@ -1,7 +1,5 @@
 # Prime-to-`p` finite adeles of the rationals
 
-Author: Worker 300.
-
 This module builds the finite adeles of `ℚ` away from a natural number `p`. It
 uses the same completions, completed integers and restricted-product topology as
 the published full model `Langlands.Global.FiniteAdeles ℚ`. It also constructs
@@ -207,11 +205,12 @@ Original sources for the mathematical object:
   `S = {∞, p}`, `PrimeToFiniteAdeles p` corresponds to `A_ℚ^S` in this
   notation. Printed p.18 (PDF p.26) defines the "away from `S`" Tate modules
   `T^S A`, with limit over integers coprime to `S`, and prime-to-`p` isogenies.
-  This is the motivation for the prime-to-`p` scalar ring in parent task
-  `74795b53-92ee-4f6e-b0d3-bd3533def420`. Harris–Taylor use no `HeightOneSpectrum`
+  This is the motivation for the prime-to-`p` scalar ring in the formalization
+  of Tate modules, Weil pairings and invariant-orbit PEL level structures.
+  Harris–Taylor use no `HeightOneSpectrum`
   model, and the decomposition `A_L = A_L^S × L_S` is not formalized here.
 
-Worker 300 read Weil pp.59–60 and Harris–Taylor printed pp.18–20 directly through
+Weil pp.59–60 and Harris–Taylor printed pp.18–20 were read directly through
 text extraction of the registered PDFs, with hashes verified.
 
 The proofs are internal. They use Mathlib's `RestrictedProduct` API in

@@ -1,7 +1,5 @@
 # Harris CM representatives with normalized full integral Tate images
 
-Author: Worker 344.
-
 This internal adapter combines exact Tate lattice realization with the
 original Harris CM polarized model construction. It works over an
 existing connected admissible CM test base and at an original Harris

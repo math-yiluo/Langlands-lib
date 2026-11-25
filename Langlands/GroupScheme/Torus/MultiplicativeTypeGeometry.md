@@ -1,7 +1,5 @@
 # Geometry of finite-type groups of multiplicative type
 
-Author: Worker 1341.
-
 These are internal consequences of the published `IsMultiplicativeType`
 definition. They retain its arbitrary splitting extension and finitely
 generated full character group, including torsion.

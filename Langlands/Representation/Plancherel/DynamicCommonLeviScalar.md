@@ -1,6 +1,6 @@
 # The scalar `j` does not depend on `P ∈ P(M)` (target)
 
-Worker 5. The module
+The module
 `Langlands.Representation.Plancherel.DynamicCommonLeviScalar`
 states one Prop-valued target,
 `ConditionalDynamicCommonLeviScalarStatement`. It is Waldspurger's
@@ -74,13 +74,13 @@ uses the triples
 
 In each triple the end points are opposite, so the distance condition
 holds. The published composition target asks that `K ∩ U_G(ψ₁)` split along
-`ψ₀` and `K ∩ U_G(ψ₂)` split along `ψ₁`, in the sense of Worker 200's
+`ψ₀` and `K ∩ U_G(ψ₂)` split along `ψ₁`, in the sense of
 `CommonLeviSplitting.SplitsAlong` (module `CommonLeviCompactSplitting`).
 Up to `SplitsAlong.inverse`, which replaces the cocharacter along which one
 splits by its inverse, the eight splittings of the four triples are:
 `K ∩ U_G(ψ)` and `K ∩ U_G(ψ⁻¹)` split along `χ`, and `K ∩ U_G(χ)` and
 `K ∩ U_G(χ⁻¹)` split along `ψ`. These are exactly the four fields of
-Worker 200's structure `CommonLeviSplitting.IsCommonLeviSplitting K χ ψ`.
+the structure `CommonLeviSplitting.IsCommonLeviSplitting K χ ψ`.
 The target takes this structure as its hypothesis `_hs`.
 
 **The compact subgroup.** Both scalars are formed with one compact open
@@ -95,7 +95,7 @@ composition target asserts the four identities without constant factors.
 When `P` and `P'` are semistandard, Waldspurger's `K` has the four
 factorizations by I.1. The splittings are expected for it from Bruhat–Tits
 theory. The Library proves neither property for that `K`.
-Worker 200's `CommonLeviSplitting.exists_isCommonLeviSplitting` gives
+`CommonLeviSplitting.exists_isCommonLeviSplitting` gives
 arbitrarily small compact open `K` with the splitting. Such a `K` need not
 have the factorizations. The Library constructs no `K` with both
 properties.
@@ -175,15 +175,16 @@ target to the same data.
 
 ## Intended use and missing inputs
 
-The proof of the target is meant to follow Waldspurger's proof. The
-Library does not yet have all of its inputs.
+The proof of the target is meant to follow Waldspurger's proof. It needs
+the following inputs.
 
 1. The four instances of IV.1 (12) above, on the common region where the
    integrals of each triple converge, are instances of the published target
    `ConditionalDynamicCommonLeviCompositionStatement`, given `_hs`. That
-   target is unproved (proof tasks Task 7002
-   `01859916-3d8b-438c-816e-386388809766` and, for its structural
-   hypothesis, Task 7001 `7351966c-e13e-40a4-bf1d-6b627cd4da5f`). Its
+   target is proved as `conditionalDynamicCommonLeviComposition` (module
+   `DynamicCommonLeviCompositionProof`), and its structural hypothesis as
+   `distanceAdditiveRadicalFactorization` (module
+   `DynamicCommonLeviFactorizationProof`). Its
    pair families take a squared-modulus identity for each pair as a proof
    argument. The Library's opposite families obtain it from `hRefl` and
    `hCST` (`conditionalSquaredModulus`); for the pairs here that are not
@@ -191,19 +192,17 @@ Library does not yet have all of its inputs.
 2. The four operators `J_{P'|P}`, `J_{P|P̄'}`, `J_{P̄'|P̄}` and `J_{P̄|P'}` of
    pairs that are not opposite need rational continuations (Théorème IV.1.1)
    to make sense of the identities at the points where the scalars are
-   evaluated. The Library has continuation data only for opposite pairs.
-   The target does not take such data, so a proof must construct these
-   continuations or wait for them.
+   evaluated. The target does not take such data, so a proof must supply
+   these continuations.
 3. The cancellation of `J_{P'|P}` in
    `j_{P'} J_{P'|P} = J_{P'|P} j_P` needs the continued `J_{P'|P}` to be
    nonzero as a rational family.
 4. The compact pictures of `ψ` live on `Z_G(ψ)(F)` with `Aψ`. They must be
    identified with those of the common Levi `Z_G(χ)(F)` with `A`, as in the
-   transport step of the opposite-pair target (proof task Task 6924
-   `9fe80067-873a-442f-b6b5-c3a6191f7655`).
+   transport step of the proof `conditionalDynamicOppositePairScalar`
+   (module `DynamicOppositePairScalarProof`) of the opposite-pair target.
 
-No proof task is published with this target, because of the missing
-input 2.
+The Library has no proof of this target.
 
 ## Not proved here
 

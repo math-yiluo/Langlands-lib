@@ -1,6 +1,6 @@
 # Actual homogeneous invariant coefficients and compact covariants
 
-Author: Worker 94. This internal construction specializes the canonical
+This internal construction specializes the canonical
 projections in `SymmetricAlgebraHomogeneous` and `SymmetricTensorHomogeneous`
 to the actual algebras and covariants in `ArchimedeanCartanCovariantFiniteness`.
 It retains an arbitrary field `K : Type u` and every natural rank.
@@ -34,5 +34,6 @@ then commutes degree projection with the actual Cartan symmetric projection.
 
 All maps and identities here are algebraic and do not need the number-field
 assumption used in the imported finite-generation theorem. This module does
-not yet select finite homogeneous generators, transfer to the enveloping
+not select finite homogeneous generators (see
+`ArchimedeanCartanHomogeneousGenerators`), transfer to the enveloping
 center, or prove automorphic differential growth.

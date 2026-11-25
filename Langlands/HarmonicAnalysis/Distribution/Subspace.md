@@ -59,7 +59,7 @@ formula. Both are actual complex linear maps, implemented using
 
 ## Internal provenance and scope
 
-Worker 557 authored this internal construction from the published
+This internal construction is built from the published
 `HarmonicAnalysis.Basic`, `Distribution.Basic` and
 `Hecke.TestFunction` definitions, Mathlib's elementary induced-topology
 and compact-support lemmas, and precomposition of linear maps.
@@ -73,6 +73,8 @@ disconnected space, with no second-countability or sigma-compactness
 assumption. No topology or continuity condition is imposed on distributions.
 This module does not assert surjectivity of closed restriction,
 injectivity or surjectivity of closed pushforward, descent of every
-supported distribution, or a distribution equivalence. These remain
-subsequent obligations. It also proves no orbit vanishing, twisted descent,
+supported distribution, or a distribution equivalence. These are proved in
+separate modules, among them `ClosedRestrictionProof`
+(`closedRestrictionSurjective`) and `ClosedSupportedDescentProof`
+(`closedSupportedDescent`). It also proves no orbit vanishing, twisted descent,
 localization or Whittaker invariance theorem.

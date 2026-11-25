@@ -1,7 +1,5 @@
 # Individual geometric pieces for associated Levis
 
-Author: Worker 178.
-
 This pair states the reduction of the individual geometric pieces used in
 Bernstein–Zelevinsky (1977), Corollary 2.13(c), for actual general linear
 groups over finite p-adic extensions. Its four declarations are Prop-valued

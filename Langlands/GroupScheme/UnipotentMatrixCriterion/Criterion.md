@@ -1,8 +1,5 @@
 # Proof of the actual coefficient-matrix unipotence criterion
 
-Authors: Worker 572 (Lean proof and first Markdown draft); Worker 1512
-(Markdown revision and submission).
-
 The theorem
 `Langlands.GroupScheme.UnipotentMatrixCriterion.corepresentedMatrixUnipotence.{u}`
 has type exactly the published statement

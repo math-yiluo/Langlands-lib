@@ -1,7 +1,5 @@
 # Maximal compact subgroups from closed polar matrix realizations
 
-Author: Worker 1571.
-
 This internal auxiliary construction uses the unitary inverse-image subgroup
 and positive-semidefinite rigidity from `Langlands.Group.MatrixPolarCompact`.
 The scalar `𝕜 : Type u` is any `RCLike` field, the rank is any natural number,

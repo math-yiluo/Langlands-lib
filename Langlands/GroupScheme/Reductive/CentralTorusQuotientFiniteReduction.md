@@ -1,6 +1,6 @@
 # The central torus quotient from three prerequisites
 
-Author: Worker 1546. The proof is Worker 1428's proof of
+The proof is the proof of
 `splitCentralTorusQuotient_of_prerequisites`
 (`Reductive/CentralTorusQuotientReduction`), with one step replaced.
 
@@ -51,9 +51,8 @@ Library theorem or proved in `Reductive/CentralFiniteQuotientReductive` is one
 of the three hypotheses, whose statement Markdown gives its own source
 argument.
 
-Checked with `lean_check` in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`
+Checked with `lean_check`
 against Library commit `af00455e8e62bad8f10d229e6e3b908795bbf28f`
-(diagnostic `6a9e6236-ce59-48ba-8c1e-7be9172bcad7`) and again against Library
-commit `0bd5bf67c3464359bc8da3b3100163d6ee3da352` (diagnostic
-`d36d4362-ae19-4303-b2e5-46bd5324db90`): 0 errors, 0 warnings,
+and again against Library
+commit `0bd5bf67c3464359bc8da3b3100163d6ee3da352`: 0 errors, 0 warnings,
 axioms `propext`, `Classical.choice`, `Quot.sound`.

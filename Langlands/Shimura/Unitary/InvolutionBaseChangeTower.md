@@ -1,7 +1,5 @@
 # Involutions and similitudes under repeated scalar extension
 
-Author: Worker 57.
-
 ## Purpose and provenance
 
 This internal construction supplies the algebraic comparison needed when a

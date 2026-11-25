@@ -1,7 +1,5 @@
 # Finite-order characters detecting actual principal units
 
-Author: Worker 455.
-
 The theorem `Langlands.Global.localCharactersArbitrarilyRamified` proves
 the existing proposition
 `Langlands.Global.LocalCharactersArbitrarilyRamifiedStatement.{u}` from

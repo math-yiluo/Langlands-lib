@@ -24,8 +24,8 @@ def TowerBaseChangeHeckeComponentStatement : Prop :=
     D.IsSuccessiveWeakBaseChange.{uF,uK,uV,uW} →
     D'.IsSuccessiveWeakBaseChange.{uF,uK,uV,uW} →
     ∀ (r : ℕ) (S S' : CuspidalOperatorRealization F r),
-      ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter S →
-      ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter S' →
+      ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter S →
+      ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter S' →
       D.StartsAtCuspidal S.isoClass → D'.StartsAtCuspidal S'.isoClass →
       ∀ (μ μ' : Fin (r + 1) → HeckeCharacter K),
         (∀ i, (μ i).IsUnitary) → (∀ i, (μ' i).IsUnitary) →
@@ -51,8 +51,8 @@ def TowerBaseChangeHeckeComponentTCStatement : Prop :=
     D.IsSuccessiveWeakBaseChange.{uF,uK,uV,uW} →
     D'.IsSuccessiveWeakBaseChange.{uF,uK,uV,uW} →
     ∀ (r : ℕ) (S S' : CuspidalOperatorRealization F r),
-      ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter S →
-      ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter S' →
+      ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter S →
+      ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter S' →
       D.StartsAtCuspidal S.isoClass → D'.StartsAtCuspidal S'.isoClass →
       ∀ (μ μ' : Fin (r + 1) → HeckeCharacter K),
         (∀ i, (μ i).IsUnitary) → (∀ i, (μ' i).IsUnitary) →

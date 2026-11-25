@@ -1,7 +1,5 @@
 # Complementary-series unitarity on an open interval
 
-Author: Worker 84. Developed with Worker 607.
-
 `Langlands.Classification.ComplementarySeriesOpenIntervalUnitarity.{uF, uV} F T`
 isolates the first conclusion of the published
 `Langlands.Classification.ComplementarySeriesUnitarity.{uF, uV} F T`.
@@ -25,6 +23,6 @@ existence of an invariant positive definite Hermitian form; irreducibility
 means `Representation.IsIrreducible`. No additional admissibility or
 finite-length hypothesis is imposed.
 
-This focused proposition supports independent review of the interval proof.
+This focused proposition isolates the interval proof.
 The assertion that every irreducible actual subquotient at `α₀` is
 unitarizable remains a separate obligation of the full published target.

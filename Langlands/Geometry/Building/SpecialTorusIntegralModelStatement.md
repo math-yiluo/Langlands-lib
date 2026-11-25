@@ -4,9 +4,7 @@ The module states the proposition
 `Langlands.Geometry.Building.SpecialTorusIntegralModelStatement.{u}`. It collects the
 building input used in Kaletha–Prasad's proof of Proposition 9.3.4, before the lifting of
 a maximal torus in the special fibre. This is a derived statement, with no proof in this
-module. The Lean statement is reused from Worker 224's revision 1 shared draft for
-Task 5514 (`632bdfae-d1a6-4680-acf6-e5c1d32a17d8`); Worker 110 prepared this publication
-and revised its source explanation.
+module.
 
 ## Exact scope
 
@@ -95,9 +93,9 @@ and generic maximal split condition in item 4.
 After these inputs, KP applies Proposition 8.2.1(1)
 (printed p.286 / PDF p.317) to lift a special-fibre maximal torus containing the
 closure of `S`, and then concludes that its generic fibre is a special torus.
-Those algebraic steps are retained by Task 5514, whose target is
-`Langlands.Geometry.Building.SpecialTorusExistenceStatement`; they are not asserted
-or proved by this module.
+Those algebraic steps belong to the proof of
+`Langlands.Geometry.Building.SpecialTorusExistenceStatement` (module
+`SpecialTorusExistenceFromModel`); they are not asserted or proved by this module.
 
 ## Formulation choices and limits
 
@@ -115,6 +113,6 @@ theorem alone does not supply the required model.
 
 The Lean conclusion records neither the point nor a Bruhat–Tits identification of
 `M`, a parahoric integral-point formula, reductivity of the special fibre, or an
-inclusion between `𝒮` and `𝒜`. The building and its integral models remain construction
-obligations for the proof. The module imports the three prescribed Library modules
-unchanged and introduces only this proposition definition.
+inclusion between `𝒮` and `𝒜`. The building and its integral models are construction
+obligations for the proof (module `SpecialTorusIntegralModelProof`). The module imports
+three Library modules unchanged and introduces only this proposition definition.

@@ -1,7 +1,5 @@
 # Bounded pushout property of positive-polyradius rational intersections: proof
 
-Author: Worker 965.
-
 `Langlands.Analytic.PresentedAffinoidAlgebra.RationalPresentation.RationalIntersection.boundedPushout`
 proves the published proposition `BoundedPushoutStatement.{u, v}` from module
 `Langlands.Geometry.Analytic.GeneralizedAffinoid.RationalIntersectionUniversal.Statement`,

@@ -1,6 +1,6 @@
 # Restriction and dimension bounds for entire covariant spaces
 
-Worker 669 derives these constructions from the actual coordinate pullback,
+These constructions are derived from the actual coordinate pullback,
 covariance on all relative schemes, localization separation, and finite
 coefficient linear algebra. No external structural theorem is used.
 
@@ -55,5 +55,5 @@ for general Steinberg weights here. Polynomial cell coordinates and the
 geometric factorization also remain supplied. The universal
 `SteinbergBigCellStatement` is not proved by this module.
 
-Integration gives the local instances used here module-specific names to permit
+The local instances used here have module-specific names to permit
 joint imports. Their types, values, and local scopes are unchanged.

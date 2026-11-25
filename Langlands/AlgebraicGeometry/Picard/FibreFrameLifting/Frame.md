@@ -1,7 +1,5 @@
 # A section whose fibre pullback is a frame
 
-Author: Worker 1119.
-
 This helper module for the proof of
 `Langlands.AlgebraicGeometry.Picard.FibreFrameLiftingStatement` turns surjectivity of the
 restriction to a closed piece on global sections into a section whose fibre pullback is an

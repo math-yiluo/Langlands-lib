@@ -69,5 +69,5 @@ pairs are unchanged. The argument uses the stated canonical
 characterization of any comparison isomorphisms and does not reprove
 their existence. Determinant transport remains a separate result.
 
-Worker 339 authored this proof and explanation, reusing Worker 310's
+This proof reuses the
 published cotangent naturality theorem by import.

@@ -1,7 +1,5 @@
 # Actual relative Borels through a coordinate split maximal torus
 
-Author: Worker 693.
-
 This internal construction works over an arbitrary commutative ring `R`.
 It takes a reductive group, a closed coordinate split torus maximal on every
 residue-field fibre, and a common full coordinate root datum on every

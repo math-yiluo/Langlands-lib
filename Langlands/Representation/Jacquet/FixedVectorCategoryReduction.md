@@ -1,6 +1,6 @@
 # Remaining inputs for the fixed-vector category proposition
 
-Author: Worker 146. This is an internal derived statement and a conditional
+This is an internal derived statement and a conditional
 reduction for Renard VI.10.6, Proposition (iii)–(iv), printed p.214 / PDF
 p.220 of the French version dated 9 July 2026. It does not establish the
 unconditional published target.
@@ -36,4 +36,4 @@ the cyclic compact permutation generator and the existing Hecke
 equivalence, as implemented in `FixedVectorHeckeNoetherianReduction`.
 The inverse double-coset ring equivalence in `LevelHeckeInversion`
 transfers it to the opposite ring. All three input propositions remain
-unproved in this unit. The exact target and all its imports are unchanged.
+unproved in this module. The exact target and all its imports are unchanged.

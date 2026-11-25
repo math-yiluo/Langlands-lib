@@ -113,12 +113,8 @@ lemma relativeSpaceSymmetry_inv_comp_map (φ : B' →+* B) (β : Spec (CommRingC
   apply Limits.pullback.hom_ext
   · simp [relativeSpaceSymmetry, relativeSpace, Over.pullback, totalSpaceMap,
       Limits.pullback.map]
-    erw [Limits.pullback.lift_fst, Limits.pullback.lift_snd]
-    simp
   · simp [relativeSpaceSymmetry, relativeSpace, Over.pullback, totalSpaceMap,
       Limits.pullback.map]
-    erw [Limits.pullback.lift_snd, Limits.pullback.lift_fst]
-    simp
 
 /-- A lift of `familyLineBundle A M` along `totalSpaceMap` gives a lift of the underlying
 line bundle of `M` along the relative total-space map. -/

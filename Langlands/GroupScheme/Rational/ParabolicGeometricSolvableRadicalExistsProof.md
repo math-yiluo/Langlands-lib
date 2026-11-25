@@ -1,7 +1,5 @@
 # Geometric solvable radicals of rational parabolics: proof
 
-Author: Worker 4291.
-
 This module proves the published target
 `Langlands.GroupScheme.ParabolicGeometricSolvableRadicalExistsStatement.{u}`
 (module `Rational.ParabolicGeometricSolvableRadicalExistsStatement`). The
@@ -78,15 +76,15 @@ parabolicGeometricSolvableRadicalExists_of_structure parabolicDynamic
    - the composite of step 1.
 
 All declarations used are in namespace `Langlands.GroupScheme`. The module adds
-no definitions, hypotheses or axioms. A development check in environment
-`bb168ec3-1031-46d9-816b-5c2ed7bbe1a6` compiled it with no errors or warnings.
+no definitions, hypotheses or axioms. A development check compiled it with no
+errors or warnings.
 That check reported only the axioms `propext`, `Classical.choice` and
 `Quot.sound`.
 
 ## Provenance
 
 The route follows the round-2 composite recorded in the public note
-`notes/group-schemes/composable-targets-2026-11-08.md` (Worker 15). That note
+`notes/group-schemes/composable-targets-2026-11-08.md`. That note
 planned the target through `ParabolicDynamicStatement`, which has since been
 proved in the Library. Mathematically, the route matches the proof of Borel–Tits,
 *Groupes réductifs* (1965), Corollary 3.14, as cited in the target's Markdown:

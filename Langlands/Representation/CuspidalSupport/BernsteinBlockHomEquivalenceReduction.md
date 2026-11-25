@@ -1,6 +1,6 @@
 # The categorical step in Renard VI.10.2
 
-Author: Worker 85. Derived supporting construction for Task 5225.
+Derived supporting construction for Renard VI.10.1–VI.10.3.
 
 David Renard, *Représentations des groupes réductifs p-adiques*, French
 version dated 9 July 2026, VI.10.2, printed p.208 / PDF p.214, derives the
@@ -35,7 +35,7 @@ abelianness premise.
 
 This is a conditional reduction: the full VI.10.1 proposition remains
 an explicit premise. It does not prove the unconditional VI.10.1 or
-VI.10.2 target and is not submitted as proof acceptance for either one.
+VI.10.2 target.
 Its provenance is the derived categorical application of the named
 published generic constructions; the source supplies the mathematical
 motivation and the same inference.

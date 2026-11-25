@@ -15,7 +15,7 @@ The construction is elementary. In the rows `b, b + 1` of a block, the complex c
 `Z_c = κ_{b,c} + i κ_{b+1,c}` turns under the left rotation `r_b(φ)` of that block by
 `e^{iφ}`. So the block factor `Z_c^m Z_{c'} + Z̄_c^m Z̄_{c'}` has exactly the two Fourier
 modes `±(m + 1)`. The criterion `exists_KF` combines the Library's extension theorem
-`PrincipalSeriesExtension.principalSeriesExtension` with Worker 109's
+`PrincipalSeriesExtension.principalSeriesExtension` with
 `InductionStages.mem_realStandardModule_of_unitaryCompact` (module
 `RealInductionStagesFourier`). The module makes no literature claim.
 

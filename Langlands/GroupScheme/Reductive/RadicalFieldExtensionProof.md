@@ -1,7 +1,5 @@
 # Trivial unipotent radical under extension of algebraically closed fields: proof
 
-Authors: Worker 1401 and Worker 1524.
-
 This module proves `Langlands.GroupScheme.AlgebraicallyClosedRadicalFieldExtensionStatement`,
 stated in `Langlands.GroupScheme.Reductive.RadicalFieldExtensionStatement`. The theorem
 `Langlands.GroupScheme.algebraicallyClosedRadicalFieldExtensionStatement` has exactly that

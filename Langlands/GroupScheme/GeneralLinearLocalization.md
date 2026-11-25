@@ -1,7 +1,5 @@
 # General linear coordinates as a determinant localization
 
-Author: Worker 57.
-
 For a finite type `n` with decidable equality and a commutative ring `R`, this
 module constructs
 
@@ -19,13 +17,14 @@ localized matrix.
 This is an internal derivation from the published `GeneralLinear` coordinate
 quotient, its universal invertible matrix and classifying-map equivalence, and
 Mathlib's matrix determinant and localization APIs. It supplies the explicit
-comparison with the determinant localization that the earlier module left open.
+comparison with the determinant localization, which the imported `GeneralLinear`
+module does not construct.
 It does not introduce another independently chosen model of the group.
 
 The index type is small (`n : Type`); the base ring may lie in any universe.
 There is no field, positive-rank, nontrivial-ring or reducedness assumption.
 In particular, the construction also applies to the empty matrix index type.
-This contribution establishes an algebra equivalence with coordinate formulas.
+This module establishes an algebra equivalence with coordinate formulas.
 It does not assert smoothness, reductivity, a scheme-level open immersion, Harris
 PEL representability or the construction of scheme levels. The comparison is a
 prerequisite for later geometric results about the existing group scheme.

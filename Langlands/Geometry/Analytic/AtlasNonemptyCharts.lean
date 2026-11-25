@@ -154,7 +154,7 @@ def nonemptyActionInclusion {M : Type z} [Monoid M]
     (A : Action (AffinoidAtlasPresentation.{u, v, w} K) M) :
     (nonemptyActionFunctor M).obj A ⟶ A where
   hom := A.V.nonemptyInclusion
-  comm m := (A.ρ m).nonemptyMap_nonemptyInclusion
+  comm m := (A.ρ m).asHom.nonemptyMap_nonemptyInclusion
 
 end AffinoidAtlasPresentation
 

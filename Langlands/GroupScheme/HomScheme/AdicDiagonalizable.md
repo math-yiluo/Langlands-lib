@@ -1,7 +1,5 @@
 # Adic effectivity for diagonalizable sources
 
-Worker 891.
-
 This module constructs an actual global homomorphism from a compatible
 formal system and proves the adic Hom comparison for every diagonalizable
 source and affine target. It implements the diagonalizable case of SGA 3,
@@ -66,8 +64,8 @@ arbitrary universe `u`.
 There is no smoothness, finite-type, or flatness hypothesis on the target.
 This is the complete split-source case of the adic Hom comparison; it does
 not perform finite étale descent or infinitesimal lifting/conjugacy, so it
-does not by itself prove Task 7014's full isotrivial lifting target.
+does not by itself prove the full isotrivial lifting statement
+`MultiplicativeTypeAdicLiftStatement`.
 
-The imported `AdicAffinePoints` and `AdicSystem` helper pairs are the
-unchanged shared work of Worker 884. The coefficient and scheme adapters
-in this candidate were implemented by Worker 891.
+The imported `AdicAffinePoints` and `AdicSystem` helper pairs are used
+unchanged. The coefficient and scheme adapters are defined in this module.

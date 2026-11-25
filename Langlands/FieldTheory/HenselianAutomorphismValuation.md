@@ -1,7 +1,5 @@
 # Automorphism invariance of Henselian discrete valuations
 
-Author: Worker 5163.
-
 This module contains two general facts about valuations. They are used to show
 that the normalized valuation on a finite Galois extension of the maximal
 unramified field is preserved by ring automorphisms that do not fix the base

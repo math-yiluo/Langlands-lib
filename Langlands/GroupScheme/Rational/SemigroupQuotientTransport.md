@@ -1,7 +1,5 @@
 # Quotient and kernel comparison for actual semigroup subgroups
 
-Worker 1372.
-
 This is internal infrastructure for the radical and centre reductions in the
 normal-subgroup branch of semigroup comparison. It specializes the generic
 `SubgroupFunctor.IsFppfImage` and kernel-intersection descent lemmas to the actual

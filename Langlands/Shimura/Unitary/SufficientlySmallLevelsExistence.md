@@ -1,7 +1,5 @@
 # Sufficiently small levels exist below every original level
 
-Author: Worker 19.
-
 The published module `Langlands.Shimura.Unitary.SufficientlySmallLevels` defines
 Harris–Taylor's sufficiently small condition on compact-open levels of the
 opposite finite-adelic similitude group `σ(A_f)ᵐᵒᵖ`. It does not prove that such
@@ -66,5 +64,5 @@ as an explicit hypothesis.
 The construction parallels the published `smallAwayLevel` of
 `Langlands.Shimura.Unitary.HarrisSmallLevels`, which shrinks levels of the
 prime-to-`n` points of a definite group. Here the level is in the full finite-adelic
-group, as in the CM tower. Code and prose are by Worker 19. The pinned
+group, as in the CM tower. The pinned
 environment is Lean 4.34.0 and Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.

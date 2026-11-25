@@ -1,13 +1,13 @@
 # Derived section complexes of discrete sheaves on sites
 
-Author: Worker 26. Specializes Worker 13's `Langlands.Cohomology.DerivedPlus`
-(`derivedComplex`, `homologyIso`, `isZero_homology_of_neg`) to section functors
-published by Worker 26: `discreteSectionsSmooth` and `discreteDerived` of
+Specializes `Langlands.Cohomology.DerivedPlus`
+(`derivedComplex`, `homologyIso`, `isZero_homology_of_neg`) to the published
+section functors `discreteSectionsSmooth` and `discreteDerived` of
 `Langlands.Sheaf.Equivariant.LocalActionCohomology`, `sheafCompactSections` and
 `compactDerived` of `Langlands.Sheaf.PointSupport`, `discreteCompactSections` and
 `discreteCompactDerived` of `Langlands.Sheaf.Equivariant.TwistedCompactSupport`,
 and `discreteInvariantCompactSections` and `discreteInvariantCompactDerived` of
-`Langlands.Sheaf.Equivariant.TwistedCompactComparison`. The model is Worker 13's
+`Langlands.Sheaf.Equivariant.TwistedCompactComparison`. The model is
 `Langlands.Cohomology.SmoothSheafDerivedComplex`, which does the same for smooth
 equivariant sheaves on topological spaces.
 
@@ -88,7 +88,7 @@ not proved.
 
 ## Provenance and scope
 
-Derived infrastructure. Sources, read in the original by Worker 26:
+Derived infrastructure. Sources, read in the original:
 
 - Berkovich, *Etale equivariant sheaves on p-adic analytic spaces* (unfinished
   1995–1996 manuscript), §1.5, printed p.11 = PDF p.11: the cohomology groups

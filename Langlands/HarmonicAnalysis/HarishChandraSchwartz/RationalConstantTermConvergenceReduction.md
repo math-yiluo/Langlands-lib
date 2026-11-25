@@ -1,14 +1,11 @@
 # Radical convergence and the vanishing comparison from Proposition II.4.5
 
-Author: Worker 762, task `79ac4c17-fe39-4c1c-bb7f-f0d531569c87` (Task 7438, revision 1).
-
 Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalConstantTermConvergenceReduction`,
 namespace `Langlands.HarishChandraSchwartz`.
 
 ## Purpose
 
-Task 7438 asks for proofs of three closed propositions of the module
-`RationalCuspidalConvergenceStatements`:
+The module `RationalCuspidalConvergenceStatements` has three closed propositions:
 
 1. `RationalSchwartzCentralConvergenceStatement` (absolute convergence of the central integrals);
 2. `RationalSchwartzConstantTermConvergenceStatement` (integrability of `v ↦ f(x v y)` on every
@@ -16,7 +13,7 @@ Task 7438 asks for proofs of three closed propositions of the module
 3. `RationalCuspidalVanishingComparisonStatement` (the cuspidal submodule is cut out by the
    vanishing of the normalized standard constant terms alone).
 
-Their inputs are published Library propositions whose proofs are not yet available. This module
+Their inputs are published Library propositions. This module
 and the module `RationalCuspidalConvergenceReductions` reduce each target to these propositions,
 named as hypotheses, so that the final proofs are applications:
 
@@ -26,11 +23,17 @@ named as hypotheses, so that the final proofs are applications:
 | 2 | `RationalConstantTermEstimateStatement.schwartzConstantTermConvergence` (this module) | `RationalConstantTermEstimateStatement`, `JointSpecialCompactBasisExistenceStatement` |
 | 3 | `RationalConstantTermEstimateStatement.cuspidalVanishingComparison` (this module) | `RationalConstantTermEstimateStatement`, `JointSpecialCompactBasisExistenceStatement` |
 
-The hypotheses are the published statements of Task 5480 (`RationalSplitCenterHeightStatement`,
-module `RationalCentralProjection`), Task 5460 (`RationalConstantTermEstimateStatement`,
-Waldspurger's Proposition II.4.5 on actual points, module `RationalConstantTerm`) and Task 4169
-(`JointSpecialCompactBasisExistenceStatement`, module `BruhatTits.SpecialCompact.JointBasisStatement`).
-This module proves no part of them and no target unconditionally.
+The hypotheses are the published statements `RationalSplitCenterHeightStatement` (module
+`RationalCentralProjection`), `RationalConstantTermEstimateStatement` (Waldspurger's Proposition
+II.4.5 on actual points, module `RationalConstantTerm`) and
+`JointSpecialCompactBasisExistenceStatement` (module `BruhatTits.SpecialCompact.JointBasisStatement`).
+This module proves no part of them and no target unconditionally. In the Library,
+`RationalSplitCenterHeightStatement` is proved (`rationalSplitCenterHeight`, module
+`RationalSplitCenterHeightProof`), and target 1 follows as `rationalSchwartzCentralConvergence`
+(module `RationalSchwartzCentralConvergenceProof`). `RationalConstantTermEstimateStatement` and
+`JointSpecialCompactBasisExistenceStatement` are not proved in the Library, which has only
+conditional reductions of them (`rationalConstantTermAnalyticReduction`,
+`BruhatTits.SpecialCompact.jointSpecialCompactBasisExistence_of_remainingInputs`).
 
 ## The recorded proposition
 
@@ -78,7 +81,7 @@ RationalCuspidalVanishingComparisonStatement.{u}`.
 Proof. It is the published `RationalSchwartzConstantTermConvergenceStatement.vanishingComparison`
 applied to the previous theorem.
 
-## Remarks for the executors of Tasks 5480 and 5460
+## Remarks on the hypotheses
 
 These remarks explain the choice of hypotheses. Remark 2 is a mathematical explanation and is
 not formalized.
@@ -117,5 +120,5 @@ J. Inst. Math. Jussieu 2 (2003), 235–333 (literature id `waldspurger-2003-plan
 ## Dependencies
 
 The imported modules `RationalCuspidalConvergenceReductions` and `XiCompactComparison` are
-published in the Library (Worker 824). The helper module
-`RationalSpecialCompactConstantTermPremises` is part of this contribution.
+published in the Library. The helper module
+`RationalSpecialCompactConstantTermPremises` was ported together with this module.

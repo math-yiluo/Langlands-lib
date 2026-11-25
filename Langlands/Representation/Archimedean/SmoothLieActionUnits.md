@@ -1,6 +1,6 @@
 # The Lie algebra action on genuine smooth vectors of a units representation
 
-Worker 1028, Task 7767. This derived construction uses the actual units action and the genuine word-derivative topology of [SmoothUnitAction](SmoothUnitAction.md) and [SmoothUnitActionDerivative](SmoothUnitActionDerivative.md). It is a step toward the Lie action on the compact-finite vectors, not a Harish-Chandra module or smooth pairing theorem.
+This derived construction uses the actual units action and the genuine word-derivative topology of [SmoothUnitAction](SmoothUnitAction.md) and [SmoothUnitActionDerivative](SmoothUnitActionDerivative.md). It is a step toward the Lie action on the compact-finite vectors, not a Harish-Chandra module or smooth pairing theorem.
 
 Let `A` be a complete normed real algebra, let `E` be a complex normed space, and let `R` be a representation of `Aˣ` by bounded complex-linear operators on `E`. Write `D` for its genuine smooth carrier, `R∞` for its group action there, and `dR(X)` for `DerivativeSmoothVectors.operator` in the identity-chart direction `X : A`.
 

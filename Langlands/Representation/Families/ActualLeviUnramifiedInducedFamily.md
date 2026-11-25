@@ -58,7 +58,9 @@ canonical point topology is used, the ambient rational-point group is locally
 compact and nonarchimedean, and the actual parabolic, rational Levi, geometric
 unipotent radical, and isomorphic multiplication morphism remain explicit.
 Affineness of the ambient group and Levi is explicit and is available from
-their connected reductivity in the host statement.
+their connected reductivity in the statement this module serves,
+`InducedIrreducibilityOpenStatement` (Renard VI.8.4; module
+`RenardGenericIrreducibilityStatements`).
 
 This module is internal derived content. It uses the supporting actual Levi
 parameter transport (`normFamily`, `parameterEquiv`) and generic normalized

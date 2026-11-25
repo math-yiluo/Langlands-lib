@@ -3,7 +3,7 @@
 
 ## 25 October, rotation verification and definitions/Euler log
 
-Fresh root check 36e1cd6c-0f83-4099-8a9c-309f1370f503 passed with 0 errors/0 warnings, independent audit_u/audit_v, unchanged type fingerprint 3947a480b5b576718094cd7dba79d66c903b9e17396b4d9146cfba4c005318fc and only propext/Classical.choice/Quot.sound. No task candidates exist. This is development evidence, not acceptance.
+A fresh root check passed with 0 errors/0 warnings, independent audit_u/audit_v, unchanged type fingerprint 3947a480b5b576718094cd7dba79d66c903b9e17396b4d9146cfba4c005318fc and only propext/Classical.choice/Quot.sound. This is development evidence.
 
 Read complete original NormClass, CompletedRayL, RayCharacterData, NormResidueCharacter, EuclideanIdealLattice, ClassGroupLSeries, and continuous-log solution. NormClass uses determinant congruence and positivity of the norm for totally positive principal generators to descend the absolute-norm character to the narrow ray group. NormResidueCharacter constructs Dirichlet pullbacks, parity from the value at -1, and proves norm classes lie in the actual cyclotomic automorphism image via arithFrobAt. It does not assume class-field reciprocity or the desired global realization theorem. Its image containment is one-sided at this stage. CompletedRayL is an explicit gamma/discriminant factor times the partial ideal-class L-series; ray coefficients count actual nonzero ideals in a narrow ray class. RayCharacterData defines explicit parity, finite primitivity and trace/Gauss conditions, with Type0 carriers in the original.
 
@@ -11,7 +11,7 @@ The continuous-log proof constructs -log(1-chi(P) NP^-s), using absolute ideal s
 
 ## All shorter solutions and original theorem wrappers
 
-Read all fourteen original theorem wrappers and all ten previously unread short solutions. The wrappers expose precisely their solution statements, using p2m_exact_reverting, with some global negative attributes (the cleaned draft removed those). The splitting solution proves trivial inertia by injectivity of roots-of-unity reduction away from m; its chosen Frobenius fixes the primitive root and hence is the identity, bounding all residue elements by roots of X^q-X. The degree formula then yields the full number of primes and equal residue norms. This is cyclotomic, not the arbitrary-Galois base-prime adapter.
+Read all fourteen original theorem wrappers and all ten previously unread short solutions. The wrappers expose precisely their solution statements, using p2m_exact_reverting, with some global negative attributes (the cleaned version removed those). The splitting solution proves trivial inertia by injectivity of roots-of-unity reduction away from m; its chosen Frobenius fixes the primitive root and hence is the identity, bounding all residue elements by roots of X^q-X. The degree formula then yields the full number of primes and equal residue norms. This is cyclotomic, not the arbitrary-Galois base-prime adapter.
 
 The sign proof pairs complex embeddings and takes the product over real places. The entire-continuation solution only uses the nontrivial-character entire F clause of completedRayL_fe, multiplied by an entire reciprocal gamma/exponential factor. It does not consume the functional equation or primitivity/Gauss hypotheses. This suggests that a future focused port could expose only the continuation branch after a declaration-level dependency audit; the present 41-module closure still includes all analytic implementation.
 

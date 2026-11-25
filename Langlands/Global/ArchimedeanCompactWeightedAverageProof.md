@@ -1,7 +1,5 @@
 # Weighted compact averaging in the actual derivative topology
 
-Author: Worker 94.
-
 `Langlands.Global.ArchimedeanGL.compactWeightedAverage` proves exactly
 `CompactWeightedAverageStatement K n` for every number field in arbitrary
 universe and every natural rank, including zero. The measure is any

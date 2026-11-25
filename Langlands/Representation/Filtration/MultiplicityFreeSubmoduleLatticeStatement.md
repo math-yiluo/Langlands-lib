@@ -81,7 +81,7 @@ meets a support either entirely or not at all. A nonempty support therefore
 typically contains many actual representations; finiteness in the
 composition-factor sense concerns equivalence classes.
 
-This unit supplies only the generic finite-length support-lattice assertion.
+This module supplies only the generic finite-length support-lattice assertion.
 It does not supply segment support labels, the Basic Lemma 2.6 of the source,
 a description of the submodule lattice of a particular induced representation,
 or any classification statement.
@@ -150,7 +150,9 @@ The definitions come from
 Markdown describes the actual-series encoding of support and multiplicity
 freeness. The published Jordan–Hölder independence, multiplicity additivity
 and monotonicity, multiplicity transport and zero-factor deletion results in
-`Langlands.Representation.Filtration` are possible inputs for a later proof.
+`Langlands.Representation.Filtration` are possible inputs for a proof. The
+Library proves the statement as `Langlands.multiplicityFreeSubmoduleLattice`
+in `Filtration.MultiplicityFreeSubmoduleLatticeProof`.
 This statement neither restates nor replaces them. The generic Boolean
 closure statement `Combinatorics.OrientationClosureExtremaStatement` and the
 strong constituent extrema statement in `Classification` are separate and

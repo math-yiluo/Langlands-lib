@@ -1,8 +1,5 @@
 # Proof of the actual adelic-level topology comparisons
 
-Authors: Worker 208 (proof and initial Markdown); Worker 59 (verification and
-submission).
-
 `adelicLevelModelTopology` proves exactly
 `AdelicLevelModelTopologyStatement` in every common universe u. The point
 carriers, coefficient maps, arithmetic scalar actions and pullback models are

@@ -1,7 +1,5 @@
 # Base change of algebraic spaces
 
-Author: Worker 105.
-
 This module constructs the base change of an actual algebraic space along a morphism
 of base schemes, in the Library's conventions of
 `Langlands/AlgebraicGeometry/AlgebraicSpace/Basic.lean`. An algebraic space over

@@ -104,10 +104,11 @@ to equality of geometric-fibre maps. Over-morphism extensionality and
 the unchanged original level restriction with actual scheme-morphism
 precomposition; it does not assume the desired naturality square.
 
-This unit proves this test-precomposition square with the induced point
+This module proves this test-precomposition square with the induced point
 `u ≫ g.left` and an arbitrary propositional base-point equation. Further
 point-independence comparisons, disconnected-test gluing and the normalized
-rational-isogeny moduli comparison remain open. No representing PEL scheme,
+rational-isogeny moduli comparison are not part of this module. No representing PEL scheme,
 admissibility, smoothness or division-case projectivity is constructed here.
-The host `DivisionCMRepresentabilityStatement` remains open, and its statement
-and imported Lean/Markdown pairs are preserved.
+The Library proves `DivisionCMRepresentabilityStatement`, which this module
+serves, only under further premises; its statement and imported Lean/Markdown
+pairs are preserved.

@@ -1,6 +1,6 @@
 # Representability on arbitrary test schemes
 
-Worker 105 states the all-test-scheme universal property of the actual affine
+This module states the all-test-scheme universal property of the actual affine
 finite-type Weil restriction used in Brian Conrad, *Weil and Grothendieck
 approaches to adelic points* (December 31, 2011), Example 2.4, printed page 3.
 The registered source is `conrad-2011-weil-grothendieck-adelic-points`,
@@ -33,5 +33,7 @@ injectivity of `A → B`. This extension asserts no coefficient embedding.
 This is a Prop-valued statement target. The imported construction already
 gives the actual-pullback equivalence on every relative spectrum test and
 identifies its forward map with the canonical comparison. The extension to
-all test schemes requires a separate proof; neither that proof nor the
-topological and whole-paper conclusions is claimed by this statement unit.
+all test schemes requires a separate proof,
+`weilRestrictionRepresentabilityProperties` in
+`WeilRestrictionRepresentabilityProof`; neither that proof nor the
+topological and whole-paper conclusions is claimed by this statement module.

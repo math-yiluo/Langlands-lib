@@ -1,7 +1,5 @@
 # Exact reduction sequences for original CM coefficient sheaves
 
-Author: Worker 57.
-
 This derived construction descends the actual finite kernels of the full
 Harris lattice reductions on the original fine CM covers. It constructs
 short exact sequences whose second arrows are exactly the transitions of
@@ -43,7 +41,7 @@ remain premises. Here U is the fixed `SmallCMLevel D`. Representability
 is for the existing original CM moduli presheaf on
 `ComponentwiseAdmissibleCMBaseCategory`, with its inherited componentwise
 connected, locally Noetherian and geometric-point conditions. The tower
-is the existing Yoneda construction `cmSchemeTower ... q`. This unit
+is the existing Yoneda construction `cmSchemeTower ... q`. This module
 does not discharge these assertions or assume a replacement cover,
 associated sheaf, transition, exactness or comparison isomorphism.
 
@@ -226,13 +224,13 @@ passages. The allowance of any nonzero natural scalar and of exponent
 zero is an extension supplied by the imported arithmetic construction.
 
 No applicable representability, dual-existence, coarse-rigidity or
-source canonical-model theorem is proved here. This unit does not
+source canonical-model theorem is proved here. This module does not
 identify the kernel with an ideal-power quotient, prove finite freeness
 or exactness of global sections, supply arbitrary scheme inverse image,
 prove independence of the lattice, or construct the full lisse adic
 limit and cohomology. Those are separate obligations of the surrounding
 development.
 
-The code and prose in this pair are by Worker 57, using published
+The code and prose in this pair use published
 generic interfaces. The pinned environment is Lean 4.34.0 with Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.

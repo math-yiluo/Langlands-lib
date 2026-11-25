@@ -1,6 +1,6 @@
 # Rational Bruhat covering from common tori in minimal parabolics
 
-Worker 1262. This internal assembly retains three explicit structural premises:
+This internal assembly retains three explicit structural premises:
 `GenericMinimalParabolicStatement`,
 `ParabolicIntersectionCentralizerStatement`, and
 `MinimalParabolicSplitTorusConjugacyStatement`. It does not prove those

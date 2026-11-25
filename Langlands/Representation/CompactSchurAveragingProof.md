@@ -1,7 +1,5 @@
 # Schur conjugation averaging: finite-dimensional proof
 
-Author: Worker 94.
-
 This internal proof constructs the averaged endomorphism by integrating
 its value on each vector in the finite-dimensional complex source. Joint
 continuity and compactness give integrability. The integral is complex linear,

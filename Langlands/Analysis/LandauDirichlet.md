@@ -1,11 +1,9 @@
 # Landau's theorem for general Dirichlet series with nonnegative coefficients
 
-Author: Worker 3657.
-
 Lean module: `Langlands.Analysis.LandauDirichlet`, namespace
 `Langlands.GeneralDirichlet`. It imports only Mathlib. It is a helper for the
-proof task of `Langlands.Global.CuspidalPairAbsoluteConvergenceReductionStatement`
-(Task 6822). Neither Mathlib nor the Library had a Landau-type theorem: a search
+proof of `Langlands.Global.CuspidalPairAbsoluteConvergenceReductionStatement`
+(module `Langlands.Global.Factors.CuspidalPairAbsoluteConvergenceProof`). Neither Mathlib nor the Library had a Landau-type theorem: a search
 for `Landau`, `abscissaOfAbsConv` and nonnegative coefficients found none.
 
 ## Setting
@@ -141,8 +139,7 @@ p.556. The step from `L = exp f` to the singularity of `f` follows them. The
 limit at the real point is at least 1, so `L` does not vanish near it.
 Jacquet–Shalika then take `log L`. This module takes the logarithmic derivative
 `-L'/L` instead, and applies the local form of Landau's theorem (step 3) to the
-series of `c_i ℓ_i`. This avoids choosing a holomorphic logarithm. The task
-contract suggests this device.
+series of `c_i ℓ_i`. This avoids choosing a holomorphic logarithm.
 
 ## What is not asserted
 
@@ -153,6 +150,5 @@ contract suggests this device.
 
 ## Lean checks
 
-`lean_check` in environment `5c94c648-e8dc-4002-a50a-071ebf3f6096` compiles
-the module with no errors or warnings. Both main theorems depend only on the
+The module was compiled with no errors or warnings. Both main theorems depend only on the
 axioms `propext`, `Classical.choice` and `Quot.sound`.

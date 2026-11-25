@@ -1,7 +1,5 @@
 # The Kaletha–Prasad depth monoid of real, strict and infinite depths
 
-Author: Worker 1238.
-
 The module `Langlands.Geometry.Building.DepthIndex` constructs the totally ordered commutative monoid `ℝ̃ = (ℝ × {0, 1}) ∪ {∞}` of Kaletha–Prasad, Section 1.6, in the version that replaces the original section. The pair `(r, 0)` is the ordinary real depth `r`, the pair `(r, 1)` is the strict depth `r+`, and `∞` is a single greatest element. The module also constructs the operation `x ↦ x+`. It proves the computation laws that the source states, and the facts that rule out stronger algebraic structure.
 
 ## Source
@@ -104,4 +102,4 @@ All of these are in `DepthIndex.Example`:
 
 ## Scope
 
-This unit constructs no filtration, root group, valuation, root system, apartment or building. It also does not construct scalar multiplication on depths, the interval realization of `ℝ̃`, any completeness property, the convention `X_(∞+) = ∅`, or the source's correspondence between filtrations and functions (Fact 1.6.5).
+This module constructs no filtration, root group, valuation, root system, apartment or building. It also does not construct scalar multiplication on depths, the interval realization of `ℝ̃`, any completeness property, the convention `X_(∞+) = ∅`, or the source's correspondence between filtrations and functions (Fact 1.6.5).

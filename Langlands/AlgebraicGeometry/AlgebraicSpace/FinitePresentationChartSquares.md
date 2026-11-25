@@ -1,7 +1,5 @@
 # Affine finite-presentation chart squares
 
-Author: Worker 156.
-
 This internal supporting module constructs fixed affine scheme charts for a
 morphism of algebraic spaces over an affine scheme. It does not prove a
 limit-descent theorem. Every statement retains an arbitrary scheme universe

@@ -24,7 +24,7 @@ for the chosen ideal implies vanishing for the original coaction. This
 is exactly `HasFiniteSupportVanishingStep`.
 
 Provenance is internal composition of the imported generic-evaluation
-construction by Worker 239 with the evaluation and support-induction
-interfaces by Worker 148. This module adds no geometric descent assumption.
+construction (`GroupoidCoactionGenericEvaluation`) with the evaluation and
+support-induction interfaces. This module adds no geometric descent assumption.
 It does not itself prove closure of covering data under invariant
 quotients or assemble Noetherian quotient induction.

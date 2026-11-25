@@ -2,7 +2,7 @@
 
 Lean module: `Langlands.Representation.Archimedean.JacquetMinorNonvanishing`.
 
-Worker 5 wrote this module for Task 7069 (`79f2a631-6cbb-4805-97c7-163e69df5de3`), the proof of
+This module was written for the proof of
 `RealStandardIrreducibleCriterionStatement`. It supplies the test vector for the proof of
 `RealReverseIntertwinerKernelStatement`, which says that an intertwiner from a standard module to
 the reversed one kills every proper `(g, K)`-submodule. Take a real principal series of

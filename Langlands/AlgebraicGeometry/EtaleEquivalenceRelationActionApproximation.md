@@ -1,7 +1,5 @@
 # Approximation of actions on supplied cartesian systems
 
-Author: Worker 706.
-
 This internal derived helper joins finite-presentation factorization of an
 actual action map with eventual descent of its laws. It uses a supplied
 cofiltered diagram of cartesian morphisms of étale equivalence relations,

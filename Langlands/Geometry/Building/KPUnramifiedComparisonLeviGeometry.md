@@ -1,7 +1,5 @@
 # Generic descended vectors and constant Levi-root valuations
 
-Author: Worker 617.
-
 This is a derived helper for the Levi field of the concrete unramified
 comparison. It keeps the special torus and apartment lift of
 `KPUnramifiedApartmentLift` unchanged.

@@ -1,7 +1,5 @@
 # Berkovich's ordinary equivariant spectral sequences for compact bases
 
-Author: Worker 16.
-
 ## Source
 
 Vladimir Berkovich, *Étale equivariant sheaves on p-adic analytic spaces*

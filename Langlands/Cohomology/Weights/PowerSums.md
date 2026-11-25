@@ -1,6 +1,6 @@
 # Power sums and the alternating characteristic rational function
 
-Worker 951, Task 7903. The declarations are in `Langlands.Cohomology.Weights`.
+The declarations are in `Langlands.Cohomology.Weights`.
 
 `rootPowerSum P k` sums the `k`th powers of the roots in the coefficient field
 with their multiplicities. For a nonsplit polynomial over a general field it

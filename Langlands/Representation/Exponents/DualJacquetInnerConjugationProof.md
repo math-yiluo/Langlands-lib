@@ -1,7 +1,5 @@
 # Inner-conjugation invariance of the actual opposite-dual Jacquet spectrum
 
-Author: Worker 276.
-
 The theorem `Langlands.glDualJacquetInnerConjugation.{uF,uV}` has the complete
 unapplied type `Langlands.GLDualJacquetInnerConjugationStatement.{uF,uV}` from
 `Langlands.Representation.Exponents.DualJacquetInnerConjugationStatement`. The

@@ -161,7 +161,7 @@ end FieldModel
 namespace Chart
 
 variable (C : Chart ev M) {t : Spec (CommRingCat.of K) ⟶ X} (ht : ∀ z, t z ∈ C.W)
-  {n : ℕ} (τ : ∀ r, (Q r).tensorPow n ≅ 𝟙_ X.Modules) (hn : 0 < n) [IsAlgClosed K]
+  {n : ℕ} (τ : ∀ r, (Q r).tensorPowFLT n ≅ 𝟙_ X.Modules) (hn : 0 < n) [IsAlgClosed K]
 
 /-- The value at the field point of the gauge of the chart generator. -/
 def gaugeVal (r : Λ) : K :=
@@ -213,7 +213,7 @@ end Chart
 namespace FieldModel
 
 variable {t : Spec (CommRingCat.of K) ⟶ X} (F : FieldModel ev M t) (C : Chart ev M)
-  (ht : ∀ z, t z ∈ C.W) {n : ℕ} (τ : ∀ r, (Q r).tensorPow n ≅ 𝟙_ X.Modules) (hn : 0 < n)
+  (ht : ∀ z, t z ∈ C.W) {n : ℕ} (τ : ∀ r, (Q r).tensorPowFLT n ≅ 𝟙_ X.Modules) (hn : 0 < n)
   [IsAlgClosed K]
 
 /-- The normalized generator of the `r`-th target at the field point. -/
@@ -322,7 +322,7 @@ configurations. -/
 theorem exists_finset_equivalent [Finite Λ] [NeZero M] [IsAlgClosed K] {R : Type u}
     [CommRing R] (p : X ⟶ Spec (CommRingCat.of R)) {ι : Type*} (chart : ι → Chart ev M)
     (hcov : ∀ x, ∃ i, x ∈ (chart i).W) {n : ℕ} (hn : 0 < n)
-    (τ : ∀ r, (Q r).tensorPow n ≅ 𝟙_ X.Modules) {m : ℕ} (eqv : Fin (m + 1) ≃ (Fin M → Λ))
+    (τ : ∀ r, (Q r).tensorPowFLT n ≅ 𝟙_ X.Modules) {m : ℕ} (eqv : Fin (m + 1) ≃ (Fin M → Λ))
     (model : ∀ t : Spec (CommRingCat.of K) ⟶ X, FieldModel ev M t)
     (y : Spec (CommRingCat.of K) ⟶ ProjectiveSpace R m) :
     ∃ s : Finset (Spec (CommRingCat.of K) ⟶ X), ∀ t,

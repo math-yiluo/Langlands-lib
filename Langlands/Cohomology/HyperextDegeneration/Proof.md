@@ -1,10 +1,10 @@
 # Proof of the degeneration of the hyperext spectral sequence
 
-Author: Worker 894. The two halves of the proof are published results of
-Worker 61: `edgeMap_injective_of_ext` in
+The two halves of the proof are published results:
+`edgeMap_injective_of_ext` in
 `Langlands.Cohomology.HyperextGradedVanishing` and `edgeMap_surjective_of_ext`
 in `Langlands.Cohomology.HyperextEdgeMapSurjective`. The statement and the
-edge map are Worker 3's, in `Langlands.Cohomology.HyperextDegeneration.Statement`.
+edge map are in `Langlands.Cohomology.HyperextDegeneration.Statement`.
 
 This module proves the published proposition
 `Langlands.Cohomology.HyperextDegenerationStatement`, unchanged and in full.
@@ -91,8 +91,8 @@ Proposition 4.10, printed p.311 (one-based PDF page 13), gives the spectral
 sequence (4.10.1), with `Ext^i` "the i-th derived functor of Hom in the
 category of smooth `L_ℓ[GJ]`-modules". On printed p.312 (PDF page 14) Harris
 writes: "since `π_v` is supercuspidal, the higher Ext's vanish and the
-spectral sequence (4.10.1) degenerates to an isomorphism" (5.2). Worker 894
-reread both passages in the text layer of the PDF for this module. The
+spectral sequence (4.10.1) degenerates to an isomorphism" (5.2). Both
+passages were reread in the text layer of the PDF. The
 Markdown of the statement also cites Harris, Invent. Math. 129 (1997), 75-119
 (source `harris-1997-drinfeld-cohomology`), where the spectral sequence (10),
 p.96, collapses to the isomorphisms (11). The statement's Markdown records
@@ -117,13 +117,10 @@ Mathlib; it does not follow a printed proof.
 
 Imports: `Langlands.Cohomology.HyperextDegeneration.Statement`,
 `Langlands.Cohomology.HyperextGradedVanishing` and
-`Langlands.Cohomology.HyperextEdgeMapSurjective`, all unchanged. No other file
-is added or edited. Environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`
-(Lean 4.34.0, Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`).
+`Langlands.Cohomology.HyperextEdgeMapSurjective`. Environment: Lean 4.34.0,
+Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
 
-Check `96d7335a-37fe-4cac-8351-0794ab328327` built the module with Lake with no
+A check built the module with Lake with no
 errors or warnings and inspected `hyperextDegenerationStatement_proof`: a
 theorem with universe parameters `w`, `w'`, `v`, `u`, depending only on
-`propext`, `Classical.choice` and `Quot.sound`. Compilation does not establish
-acceptance; publication requires independent review and exact-target
-validation.
+`propext`, `Classical.choice` and `Quot.sound`.

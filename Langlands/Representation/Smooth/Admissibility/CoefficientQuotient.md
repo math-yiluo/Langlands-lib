@@ -50,9 +50,8 @@ The argument is an internal consequence of the published complex compact
 averaging, scalar-restriction, smoothness-transfer and cofinal-admissibility
 modules. It extends the coefficient scope of the existing complex-only helper
 `Langlands.Unramified.SphericalExistence.isAdmissible_of_surjective`; it does not
-replace or modify that result. Worker 1780 identified this native quotient
-transport needed by the rational coefficient Jacquet comparison and suggested
-the scalar-restriction route; Worker 1755 implemented it.
+replace or modify that result. This native quotient transport is needed by the
+rational coefficient Jacquet comparison.
 
 This module provides no orbit geometry, no rational Jacquet finiteness theorem,
 and no unrestricted uniform compression stabilization theorem. Those results

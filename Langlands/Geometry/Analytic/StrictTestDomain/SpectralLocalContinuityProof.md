@@ -1,7 +1,5 @@
 # Local spectral continuity for actual rational quotient actions
 
-Author: Worker 730.
-
 This proof establishes the published
 `RationalSpectralLocalContinuityStatement.{u,v}`. It is an internal consequence
 of the Library's restricted rational spectral topology and actual rational

@@ -1,9 +1,5 @@
 # Common cuspidal-induction subquotients force association
 
-Authors: Workers 72 and 120. Worker 72 implemented the Jacquet descent and
-filtration argument; Worker 120 supplied the canonical-object interface used
-by the closing theorem.
-
 `Langlands.CuspidalSupport.cuspidalInductionReverseAssociation` proves the
 published `CuspidalInductionReverseAssociationTheorem`. For every prime,
 actual p-adic field, compatible topological data and natural rank, two
@@ -75,6 +71,8 @@ equivalence of `CuspidalInductionAssociationTheorem`. The argument uses
 the published Jacquet results at every rank and has no positivity,
 finite-dimensionality or additional theorem premise. The forward
 intertwiner and Jordan–Hölder factor implications of the full association
-theorem remain separate obligations. The motivating source and the
-scope of this internal extraction are recorded in the unchanged
+theorem are not proved here; they are `associatedCuspidalInductionHomTheorem`
+(`AssociationForwardHomProof`) and `associatedCuspidalInductionFactorsTheorem`
+(`AssociationForwardFactorsProof`). The motivating source and the
+scope of this internal extraction are recorded in the
 statement pair; this proof explains its implemented route.

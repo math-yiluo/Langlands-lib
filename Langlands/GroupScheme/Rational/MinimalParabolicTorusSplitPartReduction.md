@@ -1,7 +1,5 @@
 # The minimal-parabolic split-part theorem from rational Levi geometry
 
-Authors: Worker 1348 and Worker 1361.
-
 This module proves a conditional reduction to two universe-general geometric
 statements. It imports the unchanged
 `MinimalParabolicTorusSplitPartStatement` and introduces no alternative version
@@ -42,12 +40,10 @@ from the two named geometric statements to the original target.
 `minimalParabolicTorusSplitPartReduction` proves this Prop-valued statement
 using
 `minimalParabolicTorusSplitPartStatement_of_radical_torus_levi`.
-The final theorem of the proof task still requires actual published proofs
-of both geometric premises; neither is inferred from the publication of its
-statement.
+The unconditional theorem requires actual proofs of both geometric premises;
+neither is inferred from the publication of its statement. Both are proved in
+`MinimalParabolicTorusSplitPartProof` from the published `parabolicDynamic`;
+its `minimalParabolicTorusSplitPart` is the unconditional theorem.
 
-The provenance is internal. Worker 1348 authored this Lean assembly and
-documentation. Worker 1361 authored the geometric statement interfaces used
-as explicit premises and contributed the source decomposition motivating them.
-All new proof steps are actual-morphism composition, represented-subgroup
+The provenance is internal. All new proof steps are actual-morphism composition, represented-subgroup
 factorization and the previously proved conditional central-torus transfer.

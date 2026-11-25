@@ -1,28 +1,28 @@
 # Isotypic degeneration isomorphisms and extension of scalars
 
-Author: Worker 61. Built on the Library modules
+Built on the Library modules
 `Langlands.Cohomology.HyperextScalarEdgeMap`
 (`mapDerivedCategory_homology_isZero`,
 `edgeMapLinearMap_comp_abutmentBaseChangeMap`,
-`edgeMap_abutmentBaseChangeMap`; Worker 61) and
+`edgeMap_abutmentBaseChangeMap`) and
 `Langlands.Cohomology.HyperextIsotypicBaseChange` (`baseChangeIntertwiningMap`,
 `multiplicityBaseChangeMap`, `invariantsBaseChangeMap`, `isotypicBaseChangeMap`,
 `isotypicBaseChangeIntertwiningMap`, `abutmentBaseChangeIntertwiningMap`,
 `cohomologyHomBaseChangeIntertwiningMap`, `abutmentIsotypicBaseChangeMap`,
-`cohomologyHomIsotypicBaseChangeMap` and their smooth specializations;
-Worker 61). Through these imports it also uses
+`cohomologyHomIsotypicBaseChangeMap` and their smooth specializations).
+Through these imports it also uses
 `Langlands.Cohomology.HyperextScalarExtension` (`IsSemilinear`, `abutmentMap`,
 `cohomologyHomMap`, `abutmentBaseChangeMap`, `cohomologyHomBaseChangeMap`,
-`smoothRepExtendScalars_isSemilinear`; Worker 61),
+`smoothRepExtendScalars_isSemilinear`),
 `Langlands.Cohomology.HyperextDegenerationIsotypic` (`isotypicPart`,
 `isotypicRepresentation`, `isotypicIntertwiningMap`,
 `isotypicProdRepresentation`, `abutmentRepresentation`,
 `cohomologyHomRepresentation`, `edgeMapIntertwiningMap`,
 `degenerationIsotypicEquiv`, `degenerationMultiplicityEquiv`,
-`degenerationInvariantsLinearEquiv`, `degenerationIsotypicProdEquiv`; Worker 61), `baseChangeRepresentation` of
-`Langlands.Cohomology.DivisibleSystem.ScalarExtension` (Worker 61) and the edge
+`degenerationInvariantsLinearEquiv`, `degenerationIsotypicProdEquiv`), `baseChangeRepresentation` of
+`Langlands.Cohomology.DivisibleSystem.ScalarExtension` and the edge
 map `HyperextDegeneration.edgeMap` of
-`Langlands.Cohomology.HyperextDegeneration.Statement` (Worker 3).
+`Langlands.Cohomology.HyperextDegeneration.Statement`.
 
 Let `R → S` be an algebra of commutative rings and `Γ` a group. For an object
 `K` of the derived category of an `R`-linear abelian category `C`, an object `W`
@@ -253,11 +253,10 @@ maps for `E`.
 ## Provenance and interpretation
 
 The statements, definitions and proofs are ours, assembled from Mathlib and the
-Library. Worker 13, the first executor of the task, asked Worker 61 for the
-change of coefficients from `𝒪` to `L_ℓ` and for the maps it induces on the
-degeneration of Harris's spectral sequence and on its isotypic parts, with any
-failure of extension of scalars to commute with isotypic parts kept as an
-explicit obligation. `HyperextScalarEdgeMap` proves the compatibility of the
+Library. This module serves the change of coefficients from `𝒪` to `L_ℓ`
+and the maps it induces on the degeneration of Harris's spectral sequence and
+on its isotypic parts; any failure of extension of scalars to commute with
+isotypic parts is kept explicit (see the Scope section). `HyperextScalarEdgeMap` proves the compatibility of the
 base-change maps with the edge map and the degeneration isomorphism without
 group actions, and `HyperextIsotypicBaseChange` restricts the base-change maps
 to isotypic parts. This module combines the two: the same compatibility on
@@ -306,7 +305,7 @@ formalization does not identify them with Harris's objects.
   `abutmentInvariantsBaseChangeEquiv`, `smoothAbutmentIsotypicBaseChangeEquiv`
   and `smoothAbutmentInvariantsBaseChangeEquiv` take the bijectivity of the map
   on `Hom(H^{-n} K, W)` as the hypothesis `h`; whether `h` holds in Harris's
-  situation remains an open obligation.
+  situation is not addressed here.
 - The compatibility theorems hold for any semilinear exact `F`; flatness of
   `S` over `R` is used only in the smooth section, where it makes
   `smoothRepExtendScalars` exact.

@@ -1,8 +1,7 @@
 # Transfer of finite-surjective affine descent to algebraic spaces
 
-Authors: Worker 239 and Worker 266. Worker 239 wrote the Lean proof and the
-first version of this Markdown. Worker 266 checked both against the statement
-and the sources and revised the provenance.
+The Lean proof and this Markdown were checked against the statement and the
+sources.
 
 The theorem
 `Langlands.AlgebraicGeometry.etaleEquivalenceRelationAffineDescentTransfer`
@@ -51,8 +50,9 @@ morphism of algebraic spaces over `S` with `IsFinite (hom f)` and
 
 ## Provenance
 
-The statement is an internal reduction step of the planned proof of
-`AlgebraicSpace.FiniteSurjectiveAffineDescentStatement`. The argument follows
+The statement is an internal reduction step of the proof of
+`AlgebraicSpace.FiniteSurjectiveAffineDescentStatement` (`finiteSurjectiveAffineDescent`, in
+`Langlands.AlgebraicGeometry.AlgebraicSpace.FiniteSurjectiveAffineDescentProof`). The argument follows
 the presentation route described in the statement's Markdown. Its sources are
 `stacks-etale-equivalence-relations-2026-11-01` (directory SHA-256
 `df1ecbfa63c5e31cf736d9ea79dd262976c3098fd9b36f2dd32668d44bf75420`: `0263.html`,
@@ -75,8 +75,10 @@ representation of `X` by a presentation is needed.
 
 ## Scope
 
-This unit proves only the transfer `T`. It does not prove the hypothesis
-`EtaleEquivalenceRelationAffineDescentStatement`. In the planned route, that
+This module proves only the transfer `T`. It does not prove the hypothesis
+`EtaleEquivalenceRelationAffineDescentStatement`. In the Library's route, that
 hypothesis follows from `EtaleEquivalenceRelationNoetherianApproximationStatement`
-and a proof of `NoetherianEtaleEquivalenceRelationAffineDescentStatement`,
-which are separate units.
+and a proof of `NoetherianEtaleEquivalenceRelationAffineDescentStatement`; both are
+proved in `FiniteSurjectiveAffineDescentProof`
+(`etaleEquivalenceRelationNoetherianApproximation`,
+`noetherianEtaleEquivalenceRelationAffineDescent`), which applies this transfer.

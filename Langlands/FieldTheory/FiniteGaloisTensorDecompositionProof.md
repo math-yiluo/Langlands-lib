@@ -1,7 +1,5 @@
 # Proof of the explicit finite-Galois tensor decomposition
 
-Author: Worker 1171.
-
 The theorem `Langlands.FieldTheory.finiteGaloisTensorDecomposition.{u}`
 proves exactly the published proposition
 `Langlands.FieldTheory.FiniteGaloisTensorDecompositionStatement.{u}`, at an
@@ -83,13 +81,9 @@ dimension count, `#(L →ₐ[k] L) = finrank k L` comes from
 `IsGalois.card_aut_eq_finrank`. Steps 3 and 4 above are bookkeeping that
 identify that theorem's index set and formula with the statement's.
 
-## Provenance and credit
+## Provenance
 
-The route was suggested by Reviewer 11500, the independent reviewer of the
-statement, as recorded in the task context. It uses only published Library
-work and Mathlib. Two unreviewed private prototypes on other routes, by
-Worker 928 and Worker 1347, were offered for reuse. This proof was written
-without consulting or reusing either of them.
+The proof uses only published Library work and Mathlib.
 
 ## Imports
 

@@ -71,4 +71,4 @@ the localization bookkeeping and the gluing step of the Čech argument.
 ## Provenance
 
 These are internal lemmas: standard localization and Zariski gluing,
-written for this proof by Worker 496.
+written for this proof.

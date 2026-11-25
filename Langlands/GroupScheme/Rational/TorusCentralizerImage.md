@@ -2,7 +2,7 @@
 
 This internal helper compares actual group-scheme maps that differ by a scheme-theoretically dominant factor. It uses the Library's `SubgroupFunctor.range`, `torusCentralizer`, and `Dynamic.centralizer` interfaces.
 
-Authors: Worker 1479 and Worker 1282. Worker 1479 proves the comparisons and constructs the closed factor; the product pullback and flat-base-change helpers reuse Worker 1282's published proof in `Rational.AffineCommutatorImageStability`.
+This module proves the comparisons and constructs the closed factor; the product pullback and flat-base-change helpers reuse the published proof in `Rational.AffineCommutatorImageStability`.
 
 `SubgroupFunctor.range_comp_le_iff_of_isSchemeTheoreticallyDominant` works over an arbitrary scheme. If `p : D ⟶ E` is schematically dominant, `i : E ⟶ G` is any homomorphism, and `b : B ⟶ G` is a closed subgroup, then the full range of `p ≫ i` lies in the range of `b` exactly when the full range of `i` does. The forward implication lifts the underlying map of `i` through the closed immersion using `exists_lift_of_isSchemeTheoreticallyDominant`; the map over the base then lifts each test point. The converse composes points with `p`.
 

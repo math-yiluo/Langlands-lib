@@ -1,6 +1,6 @@
 # Canonical Galois transport and descent of actual subproducts
 
-Worker 166. This internal construction concerns an actual finite simply connected
+This internal construction concerns an actual finite simply connected
 almost-simple product presentation `D` of the base change of a group `G` from a
 field `k` to a field `L`, all in an arbitrary universe. The base-changed ambient
 group is smooth and affine, as required for the canonical factor action. No
@@ -46,5 +46,5 @@ reflection proves normality of `j`.
 
 These are derived constructions using the existing product, canonical transport
 and subgroup-descent interfaces. No external structural premise is introduced.
-This module does not yet prove factor-action transitivity or the
+This module does not prove factor-action transitivity or the
 Weil-restriction classification.

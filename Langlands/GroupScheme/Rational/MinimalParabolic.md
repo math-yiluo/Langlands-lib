@@ -1,7 +1,5 @@
 # Minimal rational parabolic subgroups and their functors of points
 
-Author: Worker 1262.
-
 This module defines minimality among parabolic subgroups over the ground field.
 It uses the existing geometric `IsParabolicSubgroup`; it makes no identification
 with dynamic subgroups and proves no structural existence or conjugacy theorem.

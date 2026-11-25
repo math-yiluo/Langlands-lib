@@ -1,6 +1,6 @@
 # Coefficient automorphisms and finite Galois closed extension loci
 
-Author: Worker 114. This is a derived supporting unit for
+This is a derived supporting module for
 `HenselianExtensionPointEmbeddingStatement`. Its declarations are in the
 `ExtensionClosedRange` namespace. It proves finite Galois descent of points,
 constructs the coefficient-automorphism action on base-changed point carriers,
@@ -22,7 +22,7 @@ separated. On each residue-field point of the self-pullback, the two morphisms
 to `Spec L` differ by a Galois automorphism (`exists_galois_of_hom`), so the
 fixedness hypothesis gives a lift to the equalizer. Thus the equalizer's
 closed immersion is surjective. Its reduced target makes it an isomorphism,
-and the published single-cover fppf descent theorem produces `y`.
+and the single-cover fppf descent theorem produces `y`.
 
 ## Coefficient automorphisms and topology
 
@@ -40,7 +40,7 @@ coefficient change on charts defined over `K`.
 
 `chartExtensionMap c` evaluates an actual finite-type etale `K`-chart over `L`
 and maps it into `X_L(L)`. If `X` is locally of finite type, these maps cover
-every target point (`exists_chartExtensionMap_eq`), by the published
+every target point (`exists_chartExtensionMap_eq`), by
 `FieldPointEtaleLift.exists_affine_etale_point` and local finite-type
 inheritance for etale chart sources.
 
@@ -67,7 +67,9 @@ by the chart argument. The point space is Hausdorff by separatedness, so each
 equalizer is closed. The existing arbitrary-extension embedding supplies the
 embedding half of the final conclusion.
 
-The derived proof uses the published fppf descent, represented equalizer,
+The derived proof uses the Library's fppf descent, represented equalizer,
 field-point chart, scheme coefficient-continuity, and separated-space topology
-results. It introduces no new source assertion or axiom. The main task retains
-arbitrary-extension closedness and the exact whole-statement proof.
+results. It introduces no new source assertion or axiom. Arbitrary-extension
+closedness and the exact whole-statement proof are in
+`CompleteExtensionPointClosedRangeProof`, `HenselianExtensionClosedReduction`
+and `HenselianExtensionPointEmbeddingProof`.

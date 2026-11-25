@@ -1,6 +1,6 @@
 # Small colimits under normalized Jacquet restriction
 
-Author: Worker 1187. Internal category infrastructure for the Jacquet clause of
+Internal category infrastructure for the Jacquet clause of
 Renard VI.1.2 Corollary, proved for the published normalized functor and then
 transported to actual Levi points.
 
@@ -37,8 +37,9 @@ induction preservation clause nor the conjunction defined by
 `LeviParabolicFunctorsPreserveLimitsStatement`. Its constructions are derived
 category infrastructure, not a new translation of a separate source assertion.
 
-Worker 1751's naming repair gives the local represented-parabolic point
-topology instance the explicit name
+The local represented-parabolic point
+topology instance has the explicit name
 `jacquetColimitsRepresentedPointTopology`. This prevents a generated-name
 collision with `RepresentedStandardCuspidality` during combined import and
-kernel replay. Its topology and all mathematical declarations are unchanged.
+kernel replay. The name does not affect its topology or any mathematical
+declaration.

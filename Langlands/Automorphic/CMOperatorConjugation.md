@@ -1,6 +1,6 @@
 # CM conjugation of the concrete automorphic operator algebra
 
-Worker 2. This internal construction conjugates the existing actual operators by
+This internal construction conjugates the existing actual operators by
 the argument pullback constructed in `SmoothArithmeticActions`. Its differential
 calculation uses the proved arithmetic chain rule and enveloping covariance in
 `CenterFiniteArithmeticTransport`. It introduces no original-literature
@@ -40,6 +40,6 @@ is the whole-algebra covariance
  A(Cf)=C((c_A A)f).
 \]
 
-This unit does not require compactness of the additive adele quotient. It
+This module does not require compactness of the additive adele quotient. It
 does not assert that all automorphic forms are closed under compact
 translations or differentials, nor that the stable core equals all forms.

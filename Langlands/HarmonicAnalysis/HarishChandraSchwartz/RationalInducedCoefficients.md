@@ -1,12 +1,10 @@
 # The coefficient map `E_P^G` on actual rational points and Lemma VI.2.2
 
-Author: Worker 3642, task `1ef6854b-f0e9-4d96-bbe5-cb8c4b52f927` (revision 1).
-
 Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalInducedCoefficients`,
 namespace `Langlands.HarishChandraSchwartz`. It imports
 
-- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalTemperedInduction` (this author's
-  Unit 14): `isUnimodularModulus_standardUnipotentPoints`,
+- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalTemperedInduction`:
+  `isUnimodularModulus_standardUnipotentPoints`,
   `modularCharacter_standardParabolicPoints`, and through it `RationalXiLevi`
   (`rationalLeviXi = Ξ^{M_J}`, `rationalLeviData`, `compactSpace_subgroupOf_standardLevi`) and
   `RationalWeights` (`rationalXi = Ξ`, `rationalMinimalModulus = δ₀`,
@@ -15,7 +13,7 @@ namespace `Langlands.HarishChandraSchwartz`. It imports
   Lemma VI.2.2 in its two forms, `norm_coefficientMap_le_xi` (from its import
   `InducedCoefficientXi`) and `norm_twist_coefficientMap_le_xi`; the section `twistedSection`;
   and, through its imports, the compact picture `ProductInducedCompactPicture`
-  (`Plancherel.ProductCompactPicture`) and Worker 200's `CompactInduction.coefficientMap` with
+  (`Plancherel.ProductCompactPicture`) and `CompactInduction.coefficientMap` with
   its lemmas (`Plancherel.CompactProductInducedCoefficients`);
 - `Langlands.Representation.Aubert.General.RationalLeviNormTopology`: the norm characters
   `RationalPointFamily.leviRationalNormCharacters i ν I` of the rational characters of the
@@ -48,8 +46,8 @@ J.-L. Waldspurger, *La formule de Plancherel pour les groupes p-adiques, d'aprè
 J. Inst. Math. Jussieu 2 (2003), 235–333, DOI 10.1017/S1474748003000082 (literature id
 `waldspurger-2003-plancherel`, SHA256
 `4b6a6162cd0b3863703fb2f65d1698f926caf813114917f2084c16e38f2e30f7`). Page numbers are printed
-pages; the PDF page is the printed page minus 234. The author checked the quotations below on the
-text of PDF pages 54, 64 and 65.
+pages; the PDF page is the printed page minus 234. The quotations below were checked on the text
+of PDF pages 54, 64 and 65.
 
 - V.1, printed p. 288: "Pour `P ∈ P(M)` et `(ω, E) ∈ O_ℂ`, on pose
   `L(ω, P) = I_{P×P}^{G×G}(E ⊗ Ě)`. [...] On définit une application
@@ -221,7 +219,8 @@ type `Over.mk (𝟙 _) ⟶ G.X` rather than of `rationalPoints G`. For this reas
   `G(F) = P₀(F) K` and `m_P(P_I(F) ∩ K) ⊆ K`.
 - `hcoeff` is a hypothesis. For square-integrable `A` modulo the centre it is the conclusion of
   Corollary III.1.2. The actual statement of III.1.2 is the Library's
-  `RationalSquareIntegrableRapidDecayStatement` (unproved; proof task published).
+  `RationalSquareIntegrableRapidDecayStatement`, proved as `rationalSquareIntegrableRapidDecay`
+  in `RationalSquareIntegrableDecayProof`.
 - Only standard parabolics `P_I ⊇ P₀` are covered. The semi-standard case, and the passage from
   Waldspurger's `ψ ∈ C^∞(O, P)` to fixed elements of the compact picture, are not formalized
   here. The Library proves the abstract version of the latter for families of finite type

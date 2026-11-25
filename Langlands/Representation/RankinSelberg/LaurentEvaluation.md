@@ -1,9 +1,7 @@
 # Laurent evaluation at nonzero points and linear Laurent lifts
 
-Authors: Worker 233 and Worker 759. Written for task
-`28187cfe-fdc3-4489-8631-36882b53e61a`. Its intended consumer is the proof task
-`1f6f86ac-1105-4f57-b067-1fe692fb2683` for the published statement
-`Langlands.RankinSelberg.EqualRankContinuedFormsStatement`.
+This module is used by the proof (`EqualRankContinuedFormsProof`) of the published
+statement `Langlands.RankinSelberg.EqualRankContinuedFormsStatement`.
 
 This module is an internal algebraic interface for constructing the continued
 equal-rank trilinear forms. It works with these published objects, all in
@@ -188,7 +186,7 @@ independent universes. As above, each is an additive commutative monoid with a
   `trilinearPrecomp_apply` (simp, by `rfl`):
   `trilinearPrecomp T a b c f f' Φ = T (a f) (b f') (c Φ)`.
 
-In the intended consumer, `trilinearPostcomp (laurentEval x).toLinearMap
+In `EqualRankContinuedFormsProof`, `trilinearPostcomp (laurentEval x).toLinearMap
 (laurentLift P C hC)` evaluates a lifted trilinear continuation family at a
 spectral unit `x`.
 
@@ -214,7 +212,7 @@ The module imports `Langlands.Representation.RankinSelberg.RationalZeta` (for
 `laurentToRatFunc_toLaurent`, `laurentToRatFunc_T` and
 `laurentToRatFunc_injective`) and
 `Langlands.Representation.RankinSelberg.RationalContinuation` (for
-`spectralPoint`). Environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` uses
+`spectralPoint`). The pinned environment uses
 Lean 4.34.0 and Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
 The module compiles there without errors or warnings. Its declarations depend
 only on the standard axioms `propext`, `Classical.choice` and `Quot.sound`.

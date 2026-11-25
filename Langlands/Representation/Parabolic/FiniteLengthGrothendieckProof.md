@@ -1,7 +1,5 @@
 # Canonical Grothendieck maps for the actual normalized parabolic functors
 
-Author: Worker 23.
-
 `Langlands.Parabolic.normalizedParabolicGrothendieck.{uF,uV} F T` proves
 exactly
 `Langlands.Parabolic.NormalizedParabolicGrothendieckStatement.{uF,uV} F T`
@@ -173,10 +171,9 @@ and everything it imports are unchanged.
 The closure includes the finite-length theorem and its published inputs:
 admissibility of smooth finite-length representations, finite length of
 normalized product induction and irreducible-product induction, and the
-Jacquet finite-length and finite-generation results. The task asks to
-preserve Worker 395's finite-length task `2a216dfa`, Worker 325's tasks
-`62571b78` and `0717fd42`, and Worker 122's task `dac75ee7`. This module uses
-their work only through Worker 395's published theorem and its imports; it
+Jacquet finite-length and finite-generation results. This module uses
+them only through the published finite-length theorem of
+`Parabolic.FiniteLengthFunctorProof` and its imports; it
 duplicates none of their proofs. The closure also contains the definitional vocabulary
 module `Classification.Segments`, which defines segments and multisegments and
 records special constituents only by a relation. It contains no segment or
@@ -184,17 +181,17 @@ multisegment classification, exhaustion, existence or uniqueness statement.
 
 Every closure Lean source, including this module, was scanned without case
 sensitivity for the names of the excluded results and their proof modules.
-These are analytic segment classification (`aca8805b`), special-head
-multisegment exhaustion (`3bfb61fa`), ordered strong-head existence
-(`ebea9a8a`), quotient coverage (`20e4e1c6`), tempered block uniqueness
-(`52e97845`), `SquareIntegrableLanglandsClassification` (`1cb45da2`),
-square-integrable exhaustion (`cd8ab97c`) and regular exhaustion (`bf433f0a`).
+These are analytic segment classification, special-head
+multisegment exhaustion, ordered strong-head existence,
+quotient coverage, tempered block uniqueness,
+`SquareIntegrableLanglandsClassification`,
+square-integrable exhaustion and regular exhaustion.
 The scan covered the `SegmentEssentialSquareIntegrable`,
 `MultisegmentHeadExhaustion`, `OrderedMultisegmentHeadExistence`,
 `QuotientExhaustion`, `TemperedBlockUniqueness`,
 `SquareIntegrableLanglands{Classification,Exhaustion}` and
 `RegularLanglandsExhaustion` stems, and there are no matches. None of these
-conclusions, their proof successors, or their proof dependencies is an input.
+conclusions, their proofs, or their proof dependencies is an input.
 No irreducible basis, alternating operator, involutivity or Aubert
 irreducibility is proved or used.
 
@@ -203,7 +200,7 @@ irreducibility is proved or used.
 This is an internal assembly. Its mathematical content is the universal
 property of the exact Grothendieck group: an exact functor preserving finite
 length induces a unique additive map on classes. The construction and its
-uniqueness principle are the published generic units named above. The proof
+uniqueness principle are the published generic results named above. The proof
 supplies the actual preservation inputs and reconciles output-length witnesses.
 The precise all-rank formulation, existential witnesses and universe choices
 belong to the derived statement and are not attributed verbatim to literature.

@@ -1,7 +1,5 @@
 # Rational complement from restriction to the split center
 
-Author: Worker 1311.
-
 This internal reduction isolates the linear algebra needed for the intrinsic
 character/root complement. It uses the published actual character lattices,
 relative root span, and rationalized restriction maps. It introduces no

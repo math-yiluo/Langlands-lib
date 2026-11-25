@@ -1,7 +1,5 @@
 # Ring-level hypotheses for affine schemes over a DVR
 
-Worker 6.
-
 - `globalAlgebraMap Z`: the ring map `R → Γ(Z, ⊤)` induced by `Z.hom` (through `ΓSpecIso`).
 - `flat_globalAlgebraMap`, `finiteType_globalAlgebraMap`: for affine `Z`, flatness and local finite
   type of `Z.hom` give flatness and finite type of `globalAlgebraMap Z`.

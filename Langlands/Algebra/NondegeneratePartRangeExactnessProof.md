@@ -1,12 +1,11 @@
 # Exactness of the actual original restrictions
 
-Authors: Worker 6 and Worker 691. This module proves the exact published
+This module proves the exact published
 closed proposition
 `Langlands.Algebra.NondegeneratePartRangeExactnessStatement.{uA,uL,uM,uN}`
 in `Langlands.Algebra.NondegeneratePartRangeExactnessStatements`, importing
-that unchanged statement and its published dependencies. Worker 6 supplied
-the proof draft; Worker 691 checked the original passages, prepared the
-focused proof pair and verified its complete interfaces.
+that unchanged statement and its published dependencies. The original
+passages and the complete interfaces were checked.
 
 For any original intertwiner `f : NonUnitalModuleHom A L M` and vector
 `m : nondegeneratePart hA M`, the named lemma
@@ -50,8 +49,8 @@ réductifs p-adiques*, French version dated 9 July 2026, registered as
 Original module conventions are printed pp.5–6/PDF11–12. The nondegenerate
 part is in I.1.2, printed p.7/PDF13. The implemented idempotent-adjusted lift
 is precisely the proof of part-functor exactness at printed p.8/PDF14,
-expressed with the published actual stable subgroups. Worker 691 read the
-original PDF11–14 and visually checked PDF14. The registered supplementary
+expressed with the published actual stable subgroups. The original
+PDF11–14 was read and PDF14 visually checked. The registered supplementary
 `renard-2010-corrections-complements`, SHA256
 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
 was read at PDF1–3 and PDF18–19; these consulted pages give no correction
@@ -59,5 +58,7 @@ to this argument and do not replace the governing 2026 original. The membership,
 injectivity and surjectivity interfaces are internal reusable consequences
 of that argument. The source discrepancy concerning the unrestricted
 abelian-subcategory criterion is not used. Categorical preservation of
-ShortComplex.Exact by the actual inclusion and part functor, abelianness,
-adjunctions, completion and scalar comparisons remain separate obligations.
+ShortComplex.Exact by the actual inclusion and part functor (proved in
+`NondegenerateModuleExactnessProof`) and abelianness (proved in
+`NondegenerateModuleAbelianProof`) are separate from this module, as are
+adjunctions, completion and scalar comparisons.

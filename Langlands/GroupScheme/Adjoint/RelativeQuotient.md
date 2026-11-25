@@ -1,7 +1,5 @@
 # Supplied relative adjoint quotients and their inner actions
 
-Worker 795.
-
 This is an internal interface and adapter built from published Library
 definitions and descent theorems. It does not assert existence of a quotient.
 Its purpose is to supply the integral and generic action compatibility needed
@@ -63,7 +61,9 @@ All claims here are internal consequences of the imported published Lean
 results, as described above; no new literature assertion is made.
 In particular, no relative quotient, relative automorphism scheme, outer
 isomorphism component or torsor is constructed by this module. Existence
-of a relative quotient and of the required torsor remain separate
-obligations. The original
+of a relative quotient and of the required torsor are proved separately,
+by `relativeAdjointQuotientExistence` (`Adjoint.RelativeExistenceProof`)
+and `genericInnerIsomorphismTorsorExistence`
+(`Reductive.GenericInnerIsomorphismTorsorExistenceProof`). The original
 `GenericInnerIsomorphismTorsorExistenceStatement` and its dependencies are
 unchanged.

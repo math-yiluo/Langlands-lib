@@ -1,7 +1,5 @@
 # Scheme and point-image Weyl comparisons over local fields
 
-Author: Worker 1344.
-
 `Langlands.Aubert.General.RationalPointFamily.rationalWeylComparison` proves
 the exact published `RationalWeylComparisonStatement.{u}`. It identifies
 `GroupScheme.normalizerPoints i` and `GroupScheme.centralizerPoints i`

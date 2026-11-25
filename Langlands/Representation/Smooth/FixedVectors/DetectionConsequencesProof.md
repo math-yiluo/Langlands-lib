@@ -1,7 +1,5 @@
 # Proof of generation and length from compact-open detection
 
-Worker 1210, in coordination with Worker 189.
-
 `Langlands.compactOpenDetectionConsequences` targets the internal
 `Langlands.CompactOpenDetectionConsequencesStatement.{uG,uV}`. The group
 and carrier universes remain independent.
@@ -48,4 +46,4 @@ The proof includes the zero representation. It does not construct a
 compact open subgroup or establish irreducible detection on actual
 reductive rational points. The final Howe implication, its converse, the
 other source intermediate assertions, and the specially chosen subgroup
-bound remain separate obligations.
+bound are not part of this proof.

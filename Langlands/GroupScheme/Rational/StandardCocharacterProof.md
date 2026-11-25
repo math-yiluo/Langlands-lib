@@ -1,7 +1,5 @@
 # Proof of standard-cocharacter existence and the dynamic comparison
 
-Author: Worker 21.
-
 `Langlands.GroupScheme.standardCocharacter` proves the published proposition
 `Langlands.GroupScheme.StandardCocharacterStatement.{u}` from
 [`StandardCocharacterStatement`](StandardCocharacterStatement.md) exactly, at

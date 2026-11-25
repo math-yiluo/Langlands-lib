@@ -1,6 +1,6 @@
 # Transport from standard-Levi annihilators to a split component
 
-Worker 706, Task 6451. Module
+Module
 `Langlands.Representation.LanglandsClassification.ParabolicSplitComponentTransport`,
 namespace `Langlands.GroupScheme`.
 

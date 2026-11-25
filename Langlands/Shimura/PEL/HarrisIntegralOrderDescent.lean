@@ -72,7 +72,7 @@ theorem harrisIntegralFrame_order_full_image (X : PObj) (eta : Frame X)
       HarrisIntegralFrameCondition D C P compatibility h s X eta) (a : O) :
     letI := auxiliaryStarRing D C
     ∀ b : Full X, ∃ c : Full X,
-      Tate.rationalHomMap (Over.mk s) (fun _ => True) (X.actionObj.action a)
+      Tate.rationalHomMap (Over.mk s) (fun _ => True) (X.actionObj.action a).asHom
         ((toRat X) b) = (toRat X) c := by
   let := auxiliaryStarRing D C
   have hl := (harrisIntegralFrameCondition_iff_lattice
@@ -83,7 +83,7 @@ theorem harrisIntegralFrame_order_full_image (X : PObj) (eta : Frame X)
     rw [hl]
     exact ⟨b, rfl⟩
   have hc := harrisIntegralFrameLattice_order_mem D C P compatibility h s X eta a hb
-  change Tate.rationalHomMap (Over.mk s) (fun _ => True) (X.actionObj.action a)
+  change Tate.rationalHomMap (Over.mk s) (fun _ => True) (X.actionObj.action a).asHom
     ((toRat X) b) ∈ (lattice X eta : Set (Rat X)) at hc
   rw [hl] at hc
   obtain ⟨c, hc⟩ := hc
@@ -104,15 +104,16 @@ def harrisIntegralFrameActionRestriction (X : PObj) (eta : Frame X)
   let α : O →+* Rationalization.End X.actionObj.abelianScheme :=
     X.actionObj.action.toRingHom.comp (O).subtype
   have hex : ∀ a : O, ∃ g : CategoryTheory.End X.actionObj.abelianScheme,
-      Rationalization.ofHom g = α a := by
+      Rationalization.ofHom g.asHom = (α a).asHom := by
     intro a
-    exact Tate.exists_ofHom_eq_of_full_image htor hu s (α a)
+    obtain ⟨f, hf⟩ := Tate.exists_ofHom_eq_of_full_image htor hu s (α a).asHom
       (harrisIntegralFrame_order_full_image D C P compatibility h s X eta hn a)
+    exact ⟨CategoryTheory.End.of f, hf⟩
   let g : O → CategoryTheory.End X.actionObj.abelianScheme := fun a =>
     Classical.choose (hex a)
   have hg : ∀ a : O,
       Rationalization.ofEnd X.actionObj.abelianScheme (g a) = α a :=
-    fun a => Classical.choose_spec (hex a)
+    fun a => CategoryTheory.End.ext (Classical.choose_spec (hex a))
   refine {
     action := {
       toFun := g
@@ -120,21 +121,25 @@ def harrisIntegralFrameActionRestriction (X : PObj) (eta : Frame X)
       map_mul' := ?_
       map_zero' := ?_
       map_add' := ?_ }
-    agrees := hg }
-  · apply Tate.ofHom_injective hu X.actionObj.abelianScheme X.actionObj.abelianScheme
-    change Rationalization.ofEnd _ (g 1) = Rationalization.ofEnd _ 1
+    agrees := fun a => congrArg CategoryTheory.End.asHom (hg a) }
+  · apply CategoryTheory.End.ext
+    apply Tate.ofHom_injective hu X.actionObj.abelianScheme X.actionObj.abelianScheme
+    change (Rationalization.ofEnd _ (g 1)).asHom = (Rationalization.ofEnd _ 1).asHom
     rw [hg, map_one, map_one]
   · intro a b
+    apply CategoryTheory.End.ext
     apply Tate.ofHom_injective hu X.actionObj.abelianScheme X.actionObj.abelianScheme
-    change Rationalization.ofEnd _ (g (a * b)) = Rationalization.ofEnd _ (g a * g b)
+    change (Rationalization.ofEnd _ (g (a * b))).asHom = (Rationalization.ofEnd _ (g a * g b)).asHom
     rw [hg, α.map_mul a b,
       (Rationalization.ofEnd X.actionObj.abelianScheme).map_mul (g a) (g b), hg, hg]
-  · apply Tate.ofHom_injective hu X.actionObj.abelianScheme X.actionObj.abelianScheme
-    change Rationalization.ofEnd _ (g 0) = Rationalization.ofEnd _ 0
+  · apply CategoryTheory.End.ext
+    apply Tate.ofHom_injective hu X.actionObj.abelianScheme X.actionObj.abelianScheme
+    change (Rationalization.ofEnd _ (g 0)).asHom = (Rationalization.ofEnd _ 0).asHom
     rw [hg, map_zero, map_zero]
   · intro a b
+    apply CategoryTheory.End.ext
     apply Tate.ofHom_injective hu X.actionObj.abelianScheme X.actionObj.abelianScheme
-    change Rationalization.ofEnd _ (g (a + b)) = Rationalization.ofEnd _ (g a + g b)
+    change (Rationalization.ofEnd _ (g (a + b))).asHom = (Rationalization.ofEnd _ (g a + g b)).asHom
     rw [hg, α.map_add a b,
       (Rationalization.ofEnd X.actionObj.abelianScheme).map_add (g a) (g b), hg, hg]
 

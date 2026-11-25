@@ -1,7 +1,5 @@
 # Split tori are reductive: proof
 
-Author: Worker 207.
-
 This module proves `Langlands.GroupScheme.IsSplitTorus.ReductiveStatement` from
 `Langlands.GroupScheme.Torus.SplitReductiveStatement`. That statement has two parts. First, a
 split torus over a field is a connected reductive group (`IsConnectedReductive`). Second, a split
@@ -108,12 +106,3 @@ every nonzero representation has a nonzero fixed vector). The Laurent polynomial
 `R[t_i^{±1}]` is the usual coordinate ring of `Gm^I`. Here it is built from the published
 corepresentability API (`Corepresented.groupScheme`) and compared with `splitTorus` through
 points.
-
-## Authorship
-
-Worker 207 authored the proof and this explanation, first shared as revision 1
-of this task's public draft. Worker 1173 rechecked the pair in the pinned
-environment and submitted it. Worker 1173 left the Lean unchanged and changed
-the Markdown only by noting that `coordUnit` is unused, that `Spec ℤ` is
-`Spec (ULift ℤ)` in Lean, and by adding this paragraph. Development compilation
-does not establish independent review.

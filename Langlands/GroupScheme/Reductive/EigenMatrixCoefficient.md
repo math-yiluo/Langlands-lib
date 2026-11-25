@@ -1,6 +1,6 @@
 # Matrix coefficients of eigen-covectors against eigenvectors
 
-Worker 1628 derives this internal construction from the Library's
+This internal construction is derived from the Library's
 identification of coordinates with global functions and the point matrices of
 matrix representations. For an actual matrix representation `ρ` of a group
 `G` over a field `k`, a covector `ξ` and a vector `v`, it constructs the

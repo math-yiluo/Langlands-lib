@@ -26,13 +26,16 @@ defined coordinate module laws. Chart and test coefficient rings lie in the
 same universe v. The point module lies in universe v+1, since its families range
 over all `CommAlgCat.{v} R` test algebras and their algebra maps.
 
-This unit treats natural formal transition families over every common test
-algebra. It does not yet derive such families from a single map over each
+This module treats natural formal transition families over every common test
+algebra. It does not derive such families from a single map over each
 explicit pair-localization, identify refinements of presentations, construct
 a formal scheme or prove a general comparison with formal schemes or Cartier
 modules. The construction keeps constant finite dimension on the chosen base.
 Order actions, special-module conditions, isogeny heights, framing and the
-Drinfeld/Rapoport–Zink moduli functors remain additional work.
+Drinfeld/Rapoport–Zink moduli functors are outside this module. The Library
+builds the first four in `AtlasOrderAction`, `SpecialAtlas`,
+`AtlasRationalHeight` and `DrinfeldFramedAtlas`, and Drinfeld's fixed framed
+functor in `DrinfeldFixedModuli`.
 
 ## Localization and actual formal transitions
 

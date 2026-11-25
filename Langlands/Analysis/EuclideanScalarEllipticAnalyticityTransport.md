@@ -127,6 +127,3 @@ The module proves neither the canonical Euclidean regularity premise nor
 `ScalarEllipticAnalyticityStatement` itself. It contains no weighted
 estimate and no transport of uniform ellipticity, and it does not prove the
 joint-finite analyticity theorem that this implication is meant to serve.
-
-Worker 116 wrote the Lean proof and the first version of this explanation.
-Worker 1085 checked the proof and rewrote this explanation.

@@ -1,7 +1,5 @@
 # Finite lattice coefficient bounds from compression spectra
 
-Author: Worker 19.
-
 `Langlands.compressedLatticeCoefficientBound` proves the complete
 `CompressedLatticeCoefficientBoundStatement`. The argument stays on the
 finite-dimensional space of vectors fixed by the supplied compact open

@@ -31,7 +31,7 @@ Let `W : Type uW` be a complex vector space and `τ : Representation ℂ (GL_n(E
 `χ : Subgroup.center (GL_n(E)) →* ℂˣ` with `HasCentralCharacterRep τ χ`, let
 `A : SigmaIntertwiner σ n τ` be an isomorphism of `τ` onto `τ^σ = τ ∘ entrywiseAut σ n`,
 and let `μ` be a Haar measure on `GL_n(E)`. Apart from `0 < n`, these are the data of the
-Library's `Langlands.BaseChange.TwistedPseudoCoefficientExistenceStatement` (Task 7442),
+Library's `Langlands.BaseChange.TwistedPseudoCoefficientExistenceStatement`,
 which asserts (a) alone. Its Markdown writes `Π` (as HL do) for the representation called
 `τ` here. One locally constant, compactly supported `φ : SchwartzBruhat (GL_n(E))` must
 satisfy all four clauses:
@@ -69,7 +69,7 @@ HL and AC take their twisted pseudo-coefficients in `C^∞_c(G(E), χ)`, with ce
 covariance by `χ⁻¹` and compact support modulo the centre. HL II.5.14, Corollaire 1,
 identifies the regular twisted orbital integrals of any two such pseudo-coefficients
 of the same pair, so Proposition 2 (2) gives (c) for all of them. In the Library's
-`C^∞_c(G(E))` (Task 7442), adding `h` with weighted central average `h_χ = 0` preserves
+`C^∞_c(G(E))` (`Langlands.BaseChange.PseudoCoefficient`), adding `h` with weighted central average `h_χ = 0` preserves
 (a) but can change the orbital integrals. The statement therefore asks for one
 witness with (a)–(d). Changing a source intertwiner to a nonzero scalar multiple,
 as allowed by Schur's lemma for the admissible irreducible `τ`, is compensated by
@@ -142,16 +142,18 @@ set of (d) cannot exist at rank zero.
 HL prove II.5.14, Proposition 1 (2), on which Corollaire 1 rests, by a global argument
 with the twisted Deligne–Kazhdan trace formula. AC prove Lemma 2.12 by local descent.
 A later proof must avoid results that in turn require the statement being proved.
-The field hypothesis on `E` excludes the split case `E = F^l`, which the programme
-treats separately. `CharZero F` follows AC and the other base-change statements (Tasks
-7416, 7432 and 7442). HL also work in positive characteristic; the Library's separable
+The field hypothesis on `E` excludes the split case `E = F^l`, which the Library
+treats separately (`Langlands.BaseChange.SplitPlace`). `CharZero F` follows AC and other
+base-change statements of the Library (for instance `RegularTransferStatement`,
+`TwistedCharacterRegularValuesStatement` and `TwistedPseudoCoefficientExistenceStatement`). HL also work in positive characteristic; the Library's separable
 characteristic-polynomial test for regular semisimplicity agrees with HL's regularity
 here in characteristic zero.
 
 The definitions are reused under their published names: `IsCyclicAlgebra`,
-`IsSigmaElliptic` and `entrywiseAut` (Task 7405); `sigmaCentralizer`, `sigmaOrbitalIntegral`
+`IsSigmaElliptic` and `entrywiseAut` (`Langlands.BaseChange.Norm`); `sigmaCentralizer`, `sigmaOrbitalIntegral`
 and the Borel left-quotient instances `leftQuotientMeasurableSpace`, `leftQuotient_borelSpace`
-(Task 7416); `twistedDistribution`, `SigmaIntertwiner` and the `_of_finite` topology
-lemmas (Task 7432); `IsTwistedPseudoCoefficient`, `HasCentralCharacterRep`,
-`IsLeviSigmaStable` and `IsSigmaDiscreteSeries` (Task 7442); and
-`SigmaOrbitalIntegralsVanishOffElliptic` (this task).
+(`Langlands.BaseChange.OrbitalIntegral`); `twistedDistribution`
+(`Langlands.BaseChange.TwistedCharacter.Basic`); `SigmaIntertwiner` and the `_of_finite` topology
+lemmas (`Langlands.BaseChange.TwistedCharacter`); `IsTwistedPseudoCoefficient`, `HasCentralCharacterRep`,
+`IsLeviSigmaStable` and `IsSigmaDiscreteSeries` (`Langlands.BaseChange.PseudoCoefficient`); and
+`SigmaOrbitalIntegralsVanishOffElliptic` (`Langlands.BaseChange.EllipticOrbitalIntegral`).

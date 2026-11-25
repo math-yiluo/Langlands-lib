@@ -2,8 +2,6 @@
 
 Lean module: `Langlands.BruhatTits.IntegralModels.UnramifiedTorusIwahoriModelAssembly`.
 
-Author: Worker 5282, for Task 6162 (`40cc6939-3c2a-4f23-b897-bccdd7b7ca80`).
-
 This module reduces the published target
 `UnramifiedTorusIwahoriModelStatement.{u}` to four focused propositions and
 proves the reduction. It does not prove the target, and it proves none of the
@@ -24,29 +22,29 @@ UnramifiedTorusIwahoriModelStatement.{u}
 The inputs are:
 
 1. `IntegralModel.SmoothHomExtensionStatement` (published, module
-   `Langlands.GroupScheme.IntegralModel.SmoothHomExtension`; proof task
-   Task 6312). Over a Henselian discrete valuation ring with separably closed
+   `Langlands.GroupScheme.IntegralModel.SmoothHomExtension`; proved as
+   `smoothHomExtension` in `SmoothHomExtensionProof`). Over a Henselian discrete valuation ring with separably closed
    residue field, a generic homomorphism `f` extends from a smooth model `M`
    to an arbitrary model `N` when it carries `M.integralPoints` into
    `N.integralPoints`. This is KP Corollary 2.10.10 with Remark 2.10.19.
-2. `UnramifiedTorusBoundedModelStatement` (new, paired module of that name).
+2. `UnramifiedTorusBoundedModelStatement` (paired module of that name).
    Every torus over `K = inertiaFixedField F` has a smooth model over
    `O = fixedFieldIntegers F` whose integral points are exactly
    `characterValuationKernel (fixedFieldValuation F) T.toGrp`, the maximal
    bounded subgroup `T(K)^1`. This is KP Proposition B.7.2(2).
-3. `UnramifiedTorusConnectedBoundStatement` (new). For `T` split by a finite
+3. `UnramifiedTorusConnectedBoundStatement` (paired module of that name). For `T` split by a finite
    Galois `L`, every smooth model of `T` with geometrically connected fibres
    has integral points inside
    `torusNormIwahori K L (intermediateValuation F L) T`, that is `T(K)^0`.
    This is KP Corollary B.8.7 with the argument of Proposition B.8.8(3).
-4. `UnramifiedTorusIwahoriConnectedImageStatement` (new). For the same `T`
+4. `UnramifiedTorusIwahoriConnectedImageStatement` (paired module of that name). For the same `T`
    and `L`, `T(K)^0` is the image under some homomorphism `n : S ⟶ T.toGrp`
    of the integral points of a smooth model `W` of `S` with geometrically
    connected fibres. In the source, `W` is the Weil restriction of a split
    torus over the integers of `L`, and `n` is the norm (KP Lemma B.3.1 and
    Definition 2.5.13).
 
-The three new inputs quantify over exactly the target's `F`, `T` and `L`;
+Inputs 2–4 quantify over exactly the target's `F`, `T` and `L`;
 the second needs only that `T` is a torus. Each paired Markdown gives the
 exact source locations and scope.
 
@@ -137,5 +135,7 @@ expensive, and the heartbeat count is cumulative over the declaration.
 
 The module asserts no Néron mapping property, uniqueness of models, or
 independence from `L`. It constructs no Weil restriction model, no smooth
-model of `T(K)^1` and no norm surjectivity. Those are the open inputs 2–4.
-Input 1 is a published proposition with its own proof task.
+model of `T(K)^1` and no norm surjectivity. Those are inputs 2–4, proved
+in their own modules as `unramifiedTorusBoundedModel`,
+`unramifiedTorusConnectedBound` and `unramifiedTorusIwahoriConnectedImage`.
+Input 1 is a published proposition with its own proof, `smoothHomExtension`.

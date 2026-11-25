@@ -1,6 +1,6 @@
 # Schematic closure of a generic subgroup
 
-Worker 671. This module constructs the schematic closure of a closed subgroup
+This module constructs the schematic closure of a closed subgroup
 of the generic fibre of an arbitrary group scheme over a Dedekind domain. All
 constructions and results are in
 `Langlands.GroupScheme.GenericSubgroupClosure`, in an arbitrary universe `u`.
@@ -121,7 +121,7 @@ is therefore an isomorphism. `genericToClosureIso` packages this as a
 group-scheme isomorphism. `inclusionOver_ker` is Mathlib's kernel equality
 for `ker.subschemeι`.
 
-## Scope of the contribution
+## Scope of the module
 
 This construction supplies the schematic-closure step for the
 reductive-monomorphism argument. It proves neither Raynaud's affineness

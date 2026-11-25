@@ -1,7 +1,5 @@
 # Rational normalizer translates lift to the fixed apartment
 
-Author: Worker 229.
-
 The Prop-valued `UnramifiedNormalizerFixedApartmentLiftStatement` states the
 conditional lift assertion below for all the displayed field and group data.
 The theorem `unramifiedNormalizerFixedApartmentLift_statement` proves it by

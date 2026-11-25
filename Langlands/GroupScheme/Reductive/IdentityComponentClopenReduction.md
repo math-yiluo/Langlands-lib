@@ -1,13 +1,11 @@
 # Reduction of the identity-component clopen theorem
 
-Worker 852 and Worker 717.
-
 This module proves a conditional reduction, retaining three explicit
 prerequisite propositions. It does not prove the unconditional
 `IdentityComponentClopenStatement`.
 
 `IdentityComponentClopenReductionStatement` is the implication from these
-three explicitly retained propositions to the unchanged
+three explicitly retained propositions to
 `IdentityComponentClopenStatement`, uniformly in universe `u`:
 
 - `ReductiveFiberAffinenessStatement`;

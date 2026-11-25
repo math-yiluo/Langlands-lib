@@ -52,6 +52,6 @@ the Taylor coefficients. It also uses that the image of `J^k ⊗ N` is contained
 
 ## Provenance
 
-This is internal infrastructure for the 05FT proof, written by Worker 281. The identification of
+This is internal infrastructure for the 05FT proof. The identification of
 `S/J^k` with truncated polynomials along a section in the smooth locus is standard; compare
 the sketch in Stacks Remark 05FU.

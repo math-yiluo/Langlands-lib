@@ -1,6 +1,6 @@
 # Polynomial evaluation and trace comparison on actual Cartan spaces
 
-Author: Worker 94. Module:
+Module:
 `Langlands.Global.ArchimedeanCartanPolynomialDuality`. All public
 declarations lie in `Langlands.Global.ArchimedeanGL`. The constructions
 apply to every `K : Type u` with `Field K` and `NumberField K` and every
@@ -46,8 +46,8 @@ equals evaluating the original polynomial at that vector's actual full
 inclusion. `cartanSymmetricTraceEquiv_projection` proves the commuting
 comparison: symmetric projection on vectors corresponds under the trace
 equivalences to this polynomial restriction. This follows from the
-previous unit's projection-versus-dual-restriction identity on each
-generator and symmetric-algebra extensionality.
+projection-versus-dual-restriction identity of `ArchimedeanCartanTraceDuality`
+on each generator and symmetric-algebra extensionality.
 
 `liePolynomialConjugation` lifts precomposition of functionals with the
 inverse full-group conjugation. `cartanPolynomialConjugation` does the

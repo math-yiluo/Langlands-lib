@@ -1,6 +1,6 @@
 # Full component Galois lifts over a prescribed actual stabilizer field
 
-Worker 509. Derived from the full infinite Galois correspondence and the
+Derived from the full infinite Galois correspondence and the
 published actual separable scalar-extension comparison. A specified intermediate
 field of the ground field's separable closure is retained literally. If its
 pointwise fixing subgroup equals the chosen Cartan component's full stabilizer,

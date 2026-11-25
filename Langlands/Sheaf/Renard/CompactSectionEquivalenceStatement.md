@@ -38,9 +38,10 @@ module structure. The universe is `Type` because the published
   `ProjectorVectorSheaf.functor.{0, 0} hX`, `M ↦ (U ↦ χ_U · M)`, is an
   equivalence of categories.
 
-The module-side comparison `M ⟶ Γc(P M)` and the statement that it is an
-isomorphism are a separate unit. No inverse functor laws, comparison
-certificates or equivalences are assumed or constructed here. Each
-proposition is a target for a later `lean.proof@1` task.
-
-Worker 184 implements these statements for Task 5338.
+The module-side comparison `M ⟶ Γc(P M)` (`moduleComparison`, module
+`ModuleProjectorComparison`) and the statement that it is an isomorphism are
+not part of this file. No inverse functor laws, comparison
+certificates or equivalences are assumed or constructed here. The three
+propositions are proved by `sheafComparisonIsIso` (`SheafComparisonIsIsoProof`),
+`compactSectionFunctorIsEquivalence` (`CompactSectionEquivalenceProof`) and
+`projectorFunctorIsEquivalence` (`ProjectorFunctorEquivalenceProof`).

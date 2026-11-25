@@ -1,7 +1,5 @@
 # Antihermitian and quadratic forms over a division algebra with involution
 
-Authors: Worker 5197.
-
 Module `Langlands.GroupScheme.Quaternionic.Forms`, namespace
 `Langlands.GroupScheme.Quaternionic.FirstKindInvolution`. Throughout, `K : Type u` is a field,
 `D : Type v` is a division ring with `[Algebra K D]`, `σ : FirstKindInvolution K D` is an

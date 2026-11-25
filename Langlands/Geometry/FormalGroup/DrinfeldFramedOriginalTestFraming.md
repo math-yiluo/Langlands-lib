@@ -1,6 +1,6 @@
 # Actual original normalized and refined framings on restricted tests
 
-This internal unit identifies the original normalized framing appearing in the
+This module identifies the original normalized framing appearing in the
 constructed base-change square with direct scalar transport of the same actual
 old framing. It also constructs the corresponding transported framing on any
 specified original further refinement. It makes no new literature assertion.
@@ -28,4 +28,7 @@ algebra, embedded field, coefficient and residue fields, fixed height-certified
 frame and Nilp objects in universes `{v,u}`. Each given original chart generator
 must be invertible on the restricted test. Covers may be infinite and scalar
 maps may merge generators. New-refinement transport and preservation of
-original framed comparison squares remain further constructions.
+original framed comparison squares are outside this module;
+`DrinfeldFramedBaseChangeRefinedSquare` builds the framing squares on new
+further refinements, and `framingSquare_baseChange` in
+`DrinfeldFramedComparisonBaseChange` proves the preservation.

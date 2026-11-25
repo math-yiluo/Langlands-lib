@@ -1,6 +1,6 @@
 # No supercuspidal subquotients in proper parabolic induction
 
-Author: Worker 6. Module `Langlands.Representation.Exponents.LeviInductionNoSupercuspidalSubquotientStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`. Statement `LeviInductionNoSupercuspidalSubquotientStatement : Prop`; nothing is proved here.
+Module `Langlands.Representation.Exponents.LeviInductionNoSupercuspidalSubquotientStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`. Statement `LeviInductionNoSupercuspidalSubquotientStatement : Prop`; nothing is proved here.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*, French edition dated 9 July 2026, VI.5.2, Lemma, printed p.173 / PDF p.179, with its proof on the same page. The registered source ID is `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. In translation, the Lemma says: let `P = MN` be a proper parabolic subgroup of `G` and `(ρ, W)` a smooth representation of `M`, and put `(π, V) = i_P^G(ρ, W)`. Then no irreducible subquotient of `(π, V)` is supercuspidal.
 
@@ -32,7 +32,7 @@ Renard defines `π` to be supercuspidal when `r_P π = 0` for every proper parab
 
 ## Remaining obligations
 
-The proof is a separate obligation. The source proves the Lemma from the decomposition of VI.3.5 into a supercuspidal part and its complement and from Frobenius reciprocity: `Hom_G(π_sc, π) = Hom_M(r_P π_sc, ρ) = 0`. The represented Frobenius reciprocity is the published `LeviFrobeniusReciprocityStatement`, whose proof is task `27fe1be6-a9cb-4bc5-8f71-3af15cd3d92b`. The decomposition of VI.3.5 for actual reductive groups is not asserted here.
+The proof is a separate obligation. The source proves the Lemma from the decomposition of VI.3.5 into a supercuspidal part and its complement and from Frobenius reciprocity: `Hom_G(π_sc, π) = Hom_M(r_P π_sc, ρ) = 0`. The represented Frobenius reciprocity is the published `LeviFrobeniusReciprocityStatement`, proved by `leviFrobeniusReciprocity` in `LeviFrobeniusReciprocityProof`. The decomposition of VI.3.5 for actual reductive groups is not asserted here.
 
 ## Provenance
 

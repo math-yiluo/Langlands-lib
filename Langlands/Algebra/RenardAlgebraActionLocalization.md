@@ -1,14 +1,8 @@
 # Compatible algebra actions on actual endomorphism localization
 
-Authors: Worker 709 and Worker 926, for task
-`9c7386f8-303b-46a6-8f0b-06ae387874bf`, revision 1. Worker 709 read the
-passages below and implemented the construction, its fraction and
-canonical-map laws, the intertwiners, the adapters, the zero laws and the field
-constructor. Worker 926 independently reread the same source passages and
-errata pages and checked both PDF hashes. Worker 926 added the uniqueness laws
-`extendEnd_unique` and `localizedAction_unique`, the conditional unit law
-`localizedAction_one`, and `fieldLocalizedAction_eq` and
-`fieldLocalizedAction_iota`. Worker 926 also ran the declaration inspections.
+The source passages below were read, and reread independently together with
+the errata pages; both PDF hashes were checked, and the declarations were
+inspected.
 
 The module `Langlands/Algebra/RenardAlgebraActionLocalization.lean` constructs
 an actual compatible nonunital algebra action on the existing carrier
@@ -30,8 +24,8 @@ SHA256:
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 Printed body page = PDF page minus 6.
 
-Workers 709 and 926 read example 5, including its final sentence, and the global
-conventions on printed pp. 5–6 / PDF pp. 11–12. The final sentence reads: « Si B
+Example 5, including its final sentence, and the global
+conventions on printed pp. 5–6 / PDF pp. 11–12 were read. The final sentence reads: « Si B
 est une k-algèbre, on peut faire la même construction en remplaçant les
 k-espaces vectoriels par des B-modules, et les endomorphismes d'espaces
 vectoriels par des endomorphismes de B-modules. » It extends the
@@ -56,8 +50,9 @@ The actual homomorphism interface, extension to coefficient rings, fraction
 formulas, bundled linear intertwiners and named ambient-action adapters are
 **derived implementation content** realizing the construction part of the final
 sentence. These encodings and proofs are not quoted from the book. The book's
-extension also includes a B-linear universal property; that remains a separate
-statement and proof obligation.
+extension also includes a B-linear universal property; that is stated and
+proved separately, in `RenardAlgebraLocalizationUniversalStatements` and
+`RenardAlgebraLocalizationUniversalProof`.
 
 ## Inputs, universes and algebra hypotheses
 
@@ -211,7 +206,7 @@ Specializing a statement elaborated with independent carrier variables does
 not rerun instance search. No competing global B-action, scalar-tower or
 commuting-action instance is introduced by this module.
 
-## Zero actions, reuse and remaining obligations
+## Zero actions, reuse and scope
 
 `localizedAction_zero` states that localization of the zero compatible
 homomorphism is the zero homomorphism. Its commutation hypothesis is proved
@@ -228,27 +223,27 @@ specialization. It assumes `[Ring B]` and `h1 : ρ 1 = 1`, and concludes
 universes. Neither the main constructor nor any other declaration has the unit
 or unit-law hypothesis.
 
-The module imports the current published
+The module imports the published
 `Langlands.Algebra.CompatibleNonUnitalAction` and
-`Langlands.Algebra.RenardEndomorphismLocalization`, implemented by Worker 751
-with the attribution recorded in their paired Markdown. It reuses their
+`Langlands.Algebra.RenardEndomorphismLocalization`. It reuses their
 declarations by Lean name and copies no implementation bodies. In particular
 it relies on the existing actual `Localized`, `frac`, `iota`, `localizedEnd`,
 `localizedInv`, `localizedEquiv` and scalar-linear `factor` APIs, and on
 `NonUnitalModule.ofLinearEndHom` and `LinearIntertwiner`. No new axioms are
-introduced. In environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` the module
+introduced. In the Lean environment used for checking, the module
 compiled with no errors or warnings. Declaration inspections of
 `localizedAction`, `localizedAction_unique`, `iotaIntertwiner`,
 `localizedModule_isScalarTower`, `localizedAction_zero`, `localizedAction_one`,
 `fieldLocalizedAction` and `fieldLocalizedAction_frac` reported only `propext`,
 `Classical.choice` and `Quot.sound`.
 
-The B-linear universal property remains to be stated and proved over this
-actual action, with an independent target universe and actual compatible
-target actions and linear intertwiners. In particular this module does not
+The B-linear universal property over this actual action, with an independent
+target universe and actual compatible target actions and linear intertwiners,
+is stated and proved separately (`RenardAlgebraLocalizationUniversalStatements`
+and `RenardAlgebraLocalizationUniversalProof`). In particular this module does not
 assume or prove B-linearity of the scalar-linear universal factor for arbitrary
 targets. Kernel and quotient descriptions, the inverse-iterate converse,
 the surjective-canonical-map corollary, categorical packaging, localization
-exactness and the finite-localization proposition of C.II remain separate
-obligations. This construction does not close the whole final sentence of
+exactness and the finite-localization proposition of C.II are separate from
+this module. This construction does not close the whole final sentence of
 example 5 or any whole-book coverage claim.

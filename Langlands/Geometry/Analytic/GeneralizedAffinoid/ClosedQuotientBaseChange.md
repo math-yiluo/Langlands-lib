@@ -1,6 +1,6 @@
 # Actual closed quotients under bounded affinoid base change
 
-Worker 1685 constructs a bounded equivalence between the actual affinoid pushout
+This module constructs a bounded equivalence between the actual affinoid pushout
 of a presented closed quotient `A → A/J` along any bounded affinoid algebra map
 `f : A → B` and the presented quotient of `B` by the closed extension
 `f.closedIdealMap J`. Both algebras use their stored quotient norms. The
@@ -9,9 +9,8 @@ trivial coefficient valuations, nonreduced or zero algebras and empty spectra
 remain permitted.
 
 This is internal derived infrastructure from the actual bounded affinoid pushout,
-`ClosedQuotient` and Worker 1582's closed-ideal extension construction in
-`FiniteDomainIdealDescent`. The latter unchanged supporting pair is reused and
-credited. No new assertion from the original literature is used: the result is
+`ClosedQuotient` and the closed-ideal extension construction in
+`FiniteDomainIdealDescent`. No new assertion from the original literature is used: the result is
 proved by the two constructed bounded quotient universal properties.
 
 The new quotient map of `B` annihilates `f(J)`, so its composite with `f` descends
@@ -37,6 +36,6 @@ quotient map proves `rightMap_isAdmissibleEpi`. Thus both surjectivity and posit
 two-sided comparison with the actual quotient seminorm are conclusions.
 
 The proof uses no flatness theorem, open mapping theorem, strict-radius
-specialization or ideal-effectiveness assumption. In particular, this unit
+specialization or ideal-effectiveness assumption. In particular, this module
 supplies local quotient identification after a global ideal is given; it does
 not prove that a compatible finite family of local ideals descends.

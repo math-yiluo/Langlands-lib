@@ -1,7 +1,5 @@
 # Natural inner discrepancy cocycles from faithful actions
 
-Author: Worker 1472.
-
 This is an internal construction from the existing actual automorphic action,
 local group isomorphism and full-centre adjoint quotient interfaces. It does
 not assert quasi-split inner-form existence. Its provenance is the intrinsic

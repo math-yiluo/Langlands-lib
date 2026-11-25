@@ -1,7 +1,5 @@
 # Coefficient action on actual scheme components
 
-Author: Worker 1107.
-
 This internal derived construction compares coefficient conjugation on ordinary
 rational-component quotient groups with a constructed action on connected
 components of the actual base-changed scheme. Its provenance is the pullback

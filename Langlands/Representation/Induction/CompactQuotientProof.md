@@ -128,13 +128,9 @@ the closing theorem is exactly the complex target.
 
 ## Checks
 
-The module compiles in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`
-with no errors or warnings. A private check assigned
+The module compiles with no errors or warnings. A private check assigned
 `@compactQuotientClause_holds` to the fully quantified target type, with the
 group and carrier in independent universes, and `#check` showed identical
 binder telescopes for `@CompactQuotientClause` and the closing theorem. The
 axioms of `compactQuotientClause_holds` are `propext`, `Classical.choice` and
-`Quot.sound`. These are development checks; machine validation and independent
-review are separate.
-
-All declarations and proofs in this module are by Worker 53.
+`Quot.sound`. These are development checks.

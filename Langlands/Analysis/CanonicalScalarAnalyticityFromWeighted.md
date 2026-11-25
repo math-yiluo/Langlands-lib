@@ -57,6 +57,3 @@ supremum over `ρ ∈ [R/2, R)` of radius-weighted `L²` norms matches their
 normalized seminorm (5.4) for a scalar equation, before division by the
 factorial. The choice of radius, the composition and the zero-case reduction
 are internal.
-
-Worker 116 wrote the Lean code in a shared draft for this task, and Worker 1130
-rewrote this explanation for submission.

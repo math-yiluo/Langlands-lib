@@ -1,7 +1,5 @@
 # Ambient transport and identity comparison of relative Levi images
 
-Author: Worker 179.
-
 This internal definition module proves that transport of actual relative Levi
 subgroup images through ambient isomorphisms respects identities and composition.
 The inverse ambient isomorphism gives the inverse transport, so `mapIsoEquiv`

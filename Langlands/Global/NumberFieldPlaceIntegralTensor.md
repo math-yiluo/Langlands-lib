@@ -3,7 +3,7 @@
 This derived construction supplies local coefficient infrastructure for Conrad,
 *Weil and Grothendieck approaches to adelic points* (2011), Example 4.2,
 printed pages 9–10. It connects the actual local integral closure to the
-published completed tensor of the original global rings of integers.
+existing completed tensor of the original global rings of integers.
 
 For an original finite place p of a number field K, `localRing` is the actual
 valuation subring `valuationSubringAtPrime K p`, inside K. `completionMap`
@@ -36,10 +36,10 @@ integers, and the original local ring is the localization at p.
 integer ring and cancels the intervening base change.
 
 The comparison theorem proves that `tensorMap`, after this equivalence, equals
-the published `AdelicFunctoriality.IntegralTensor.tensorMap`. Its proof uses
+the existing `AdelicFunctoriality.IntegralTensor.tensorMap`. Its proof uses
 tensor induction: the pure-tensor case is the original coefficient formula,
 and addition follows from the ring homomorphism laws. Bijectivity transfers
-from the published original completed global-integer tensor equivalence.
+from the existing original completed global-integer tensor equivalence.
 `tensorEquiv` packages this result, retaining the original pure-tensor
 formula and the exact upper coefficient map on the right tensor factor.
 All original upper places above p occur.
@@ -47,5 +47,6 @@ All original upper places above p occur.
 K and L inhabit an arbitrary common universe. Both are number fields, with the
 given original field embedding; p is an actual height-one prime of the
 original lower integer ring. No local tensor decomposition is assumed. The
-actual global S-integer specialization, point topologies and full adelic Weil
-comparison remain obligations of the host task.
+actual global S-integer specialization (made in `NumberFieldSIntegerLocalTensor`),
+point topologies and full adelic Weil
+comparison are not part of this module.

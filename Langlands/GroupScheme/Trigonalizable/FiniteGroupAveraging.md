@@ -1,6 +1,6 @@
 # Equivariant factor-set averaging
 
-Author: Worker 3502 (Task 7944). Module
+Module
 `Langlands.GroupScheme.Trigonalizable.FiniteGroupAveraging`.
 
 `EtaleExtensionSplit.exists_equivariant_averaged_section` takes a group

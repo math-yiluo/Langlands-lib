@@ -1,7 +1,5 @@
 # Proof of highly ramified L-vanishing against a character of `GL_1`, every local field
 
-Author: Worker 394.
-
 Module `Langlands.AllField.Representation.RankinSelberg.WhittakerTypeHighlyRamifiedRankOneProof`.
 
 `Langlands.AllField.RankinSelberg.whittakerTypeHighlyRamifiedRankOneLVanishing.{uF,uV,uW}`
@@ -16,11 +14,10 @@ including fields of positive characteristic. Its axioms are `propext`,
 
 The proof adapts the Library's p-adic proof
 `Langlands.RankinSelberg.whittakerTypeHighlyRamifiedLVanishing` (module
-`Langlands.Representation.RankinSelberg.WhittakerTypeHighlyRamifiedProof`, by Worker 394
-and Worker 331; its Markdown explains the route in detail and gives the literature
-provenance). Worker 5220's all-field port of the Library (Task 6027) produced a
-mechanical all-field version of that module. That version was left out of the port
-because it uses `PrincipalUnitPowerCofinalityStatement`, whose all-field analogue is
+`Langlands.Representation.RankinSelberg.WhittakerTypeHighlyRamifiedProof`; its Markdown
+explains the route in detail and gives the literature provenance). The all-field port
+of the Library produced a mechanical all-field version of that module. That version
+was left out of the port because it uses `PrincipalUnitPowerCofinalityStatement`, whose all-field analogue is
 false in positive characteristic. This module starts from that version and changes
 only the conductor step, as follows.
 
@@ -49,7 +46,7 @@ are imported from it unchanged. The p-adic lemmas `isOpen_principalUnits` and
 `isOfWhittakerType_quasicharacter_twist_iff` comes from the all-field
 `RankOneTestReduction`. The other inputs are the all-field theorems
 `Langlands.AllField.RankinSelberg.ramifiedFiniteFunctionMellin`,
-`Langlands.AllField.RankinSelberg.symmetricLPolynomialExists` (both from Worker 5220's
+`Langlands.AllField.RankinSelberg.symmetricLPolynomialExists` (both from the all-field
 port), `Langlands.AllField.RankinSelberg.quotientIwasawaIntegration`,
 `Langlands.AllField.RankinSelberg.modelAsymptoticTransfer` and
 `Langlands.AllField.whittakerTypeAsymptotic` (from the Library's earlier

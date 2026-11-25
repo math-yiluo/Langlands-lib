@@ -145,24 +145,24 @@ existential choice of a finite family.
 The original is Jacquet–Piatetski-Shapiro–Shalika, *Rankin–Selberg
 Convolutions* (1983), registered as `jpss-1983-rankin-selberg`, SHA-256
 `d9feed6388ca5acf02ecc6a8cce984871a7c28f062ff441e45a71fa2d8962245`.
-Printed pp.404–405 and 427–439 were read in the preceding work; printed
-pp.435–437 were visually reread for the adjacent transformed calculation.
+Printed pp.404–405 and 427–439 were read for earlier modules of the Library;
+printed pp.435–437 were visually reread for the adjacent transformed calculation.
 Formula (7) chooses a finite family before the second vector. The
 complementary determinant orders in (9) give the finite coefficient
 convolution underlying (10). The transformed compact-average display on
 p.437 uses that same family with inverse transpose on its matrix
 coefficients. Extracting the outer calculation for supplied data and
 allowing arbitrary fixed second tests are internal formalization choices
-preserving that source requirement. The earlier bounded literature audit
-found no registered JPSS-specific erratum.
+preserving that source requirement. A bounded literature check found no
+registered JPSS-specific erratum.
 
-This unit proves actual matched fixed-shell integrals. It does not identify
+This module proves actual matched fixed-shell integrals. It does not identify
 the transformed before-kernel with the literal model-star diagonal
 restriction, prove the global dual finite zeta-product formula (14),
 provide rational matrix-value witnesses, prove model realization, or
-establish either parent gamma/L statement. Spectral summation, analytic
-continuation, functional equations and sign constants remain separate
-assembly steps. No parent multiplicativity result is used.
+establish the gamma or L multiplicativity statement that it serves. Spectral
+summation, analytic continuation, functional equations and sign constants
+remain separate assembly steps. Those multiplicativity results are not used.
 
 ## All-field port
 

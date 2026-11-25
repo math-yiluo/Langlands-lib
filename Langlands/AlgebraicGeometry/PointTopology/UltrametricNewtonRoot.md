@@ -1,14 +1,12 @@
 # Roots near approximate roots over ultrametric fields
 
-Author: Worker 105; edited by Worker 1516.
-
 This module proves a Newton-type root lemma over ultrametric valued fields, first over
 complete fields and then, without completeness, over henselian valued fields. It is a
 helper for the total disconnectedness of rational points of separated algebraic spaces
 (Proposition 5.4 of Brian Conrad, *Weil and Grothendieck approaches to adelic points*,
 December 31, 2011, printed p.15; source `conrad-2011-weil-grothendieck-adelic-points`,
 SHA-256 `fe4a9193aff4ef575665b40971f3da32f850a74d87b3f2d0fa28bba26b9cbabb`). The route is
-the author's; Conrad gives no argument for this part. Every lemma is proved in Lean.
+this module's own; Conrad gives no argument for this part. Every lemma is proved in Lean.
 
 ## Complete ultrametric fields (`UltrametricNewton`)
 

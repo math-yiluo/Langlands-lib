@@ -1,6 +1,6 @@
 # Harris (1998), Theorem 1.2: compatible families weakly associated to `Reg(n, E)`
 
-Author: Worker 34. This module states Harris's Theorem 1.2 over the Library's
+This module states Harris's Theorem 1.2 over the Library's
 actual cuspidal classes and genuine `λ`-adic Galois representations. The
 statements are `Prop` definitions; nothing here proves them.
 
@@ -33,8 +33,8 @@ On p.183 Harris assumes in practice that `ρ` is a sum of representations
 ## Library objects used
 
 - The weak-association definitions of `Langlands/Galois/WeakAssociation`
-  (this candidate) and the square-integrable components of
-  `Langlands/Automorphic/SquareIntegrableComponent` (this candidate).
+  and the square-integrable components of
+  `Langlands/Automorphic/SquareIntegrableComponent`.
 - `CuspidalOperatorRealization.IsoClass E r` (rank `r + 1`) and
   `PositiveRankCuspidalClass E` with its `rank` (published
   `CuspidalOperatorRealization`): actual irreducible cuspidal classes.
@@ -140,5 +140,7 @@ Lean.
 - **Provenance of the proof.** Harris attributes the theorem to Clozel (using
   Kottwitz's zeta functions and stable base change), to Taylor's removal of
   the multiplicity of `L^{S'}(s, π)^m`, and to Blasius and Clozel (1993,
-  Theorem 2.6) for the bad-parity cases. These inputs are separate obligations
-  of this task and are not asserted here.
+  Theorem 2.6) for the bad-parity cases. These inputs are not asserted here;
+  Clozel's theorems and Taylor's removal of the multiplicity are stated
+  separately in `Langlands/Galois/ClozelSelfDualStatements` and
+  `Langlands/Galois/TaylorMultiplicityRemovalStatement`.

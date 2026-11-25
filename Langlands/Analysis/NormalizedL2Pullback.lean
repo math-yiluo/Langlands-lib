@@ -50,7 +50,8 @@ def pullback (e : X ≃ᵐ Y) (c : ℝ≥0) (hmap : μ.map e = c • ν) :
       MemLp.coeFn_toLp (memLp_comp e c hmap g),
       Lp.coeFn_add ((memLp_comp e c hmap f).toLp (f ∘ e))
         ((memLp_comp e c hmap g).toLp (g ∘ e)),
-      (quasiMeasurePreserving e c hmap).ae_eq_comp (Lp.coeFn_add f g)] with x hfg hf hg hs ha
+      QuasiMeasurePreserving.ae_eq_comp (quasiMeasurePreserving e c hmap)
+        (Lp.coeFn_add f g)] with x hfg hf hg hs ha
     simp only [Function.comp_apply, Pi.add_apply] at *
     exact hfg.trans (ha.trans (hs.trans (by rw [hf, hg])).symm)
   map_smul' a f := by
@@ -58,7 +59,8 @@ def pullback (e : X ≃ᵐ Y) (c : ℝ≥0) (hmap : μ.map e = c • ν) :
     filter_upwards [MemLp.coeFn_toLp (memLp_comp e c hmap (a • f)),
       MemLp.coeFn_toLp (memLp_comp e c hmap f),
       Lp.coeFn_smul a ((memLp_comp e c hmap f).toLp (f ∘ e)),
-      (quasiMeasurePreserving e c hmap).ae_eq_comp (Lp.coeFn_smul a f)] with x haf hf hs ha
+      QuasiMeasurePreserving.ae_eq_comp (quasiMeasurePreserving e c hmap)
+        (Lp.coeFn_smul a f)] with x haf hf hs ha
     simp only [Function.comp_apply, Pi.smul_apply, RingHom.id_apply] at *
     exact haf.trans (ha.trans (hs.trans (by rw [hf])).symm)
 
@@ -162,7 +164,8 @@ theorem normalized_comp (e : X ≃ᵐ Y) (d : Y ≃ᵐ Z) (c b : ℝ≥0)
         (map_trans e d c b he hd) f := by
   apply Lp.ext
   filter_upwards [coeFn_normalized e c hc he (normalized d b hb hd f),
-    (quasiMeasurePreserving e c he).ae_eq_comp (coeFn_normalized d b hb hd f),
+    QuasiMeasurePreserving.ae_eq_comp (quasiMeasurePreserving e c he)
+      (coeFn_normalized d b hb hd f),
     coeFn_normalized (e.trans d) (c * b) (mul_ne_zero hc hb)
       (map_trans e d c b he hd) f] with x h₁ h₂ h₃
   simp only [Function.comp_apply] at h₂
@@ -176,7 +179,7 @@ theorem normalized_symm_apply (e : X ≃ᵐ Y) (c : ℝ≥0) (hc : c ≠ 0)
   apply Lp.ext
   filter_upwards [coeFn_normalized e.symm c⁻¹ (inv_ne_zero hc)
       (map_symm e c hc hmap) (normalized e c hc hmap f),
-    (quasiMeasurePreserving e.symm c⁻¹ (map_symm e c hc hmap)).ae_eq_comp
+    QuasiMeasurePreserving.ae_eq_comp (quasiMeasurePreserving e.symm c⁻¹ (map_symm e c hc hmap))
       (coeFn_normalized e c hc hmap f)] with y h₁ h₂
   simp only [Function.comp_apply] at h₂
   rw [h₁, h₂, smul_smul, normalization_inv,
@@ -189,7 +192,7 @@ theorem normalized_apply_symm (e : X ≃ᵐ Y) (c : ℝ≥0) (hc : c ≠ 0)
   apply Lp.ext
   filter_upwards [coeFn_normalized e c hc hmap
       (normalized e.symm c⁻¹ (inv_ne_zero hc) (map_symm e c hc hmap) f),
-    (quasiMeasurePreserving e c hmap).ae_eq_comp
+    QuasiMeasurePreserving.ae_eq_comp (quasiMeasurePreserving e c hmap)
       (coeFn_normalized e.symm c⁻¹ (inv_ne_zero hc) (map_symm e c hc hmap) f)]
     with x h₁ h₂
   simp only [Function.comp_apply] at h₂

@@ -1,7 +1,5 @@
 # Right translations on the coordinate algebra of a unipotent group
 
-Worker 1497.
-
 Internal support for the proof of the Kostant–Rosenlicht theorem
 (`Langlands.GroupScheme.UnipotentAffineOrbitClosedStatement`; Milne,
 *Algebraic Groups* (2017), Theorem 17.64). The setting is the published

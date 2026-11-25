@@ -1,7 +1,5 @@
 # Splitting normalized Jacquet characteristic spaces by real part
 
-Author: Worker 17.
-
 This internal algebraic unit implements the direct-sum step used in David
 Renard, *Représentations des groupes réductifs p-adiques*, French edition
 dated 9 July 2026, VII.2.3, printed p.229 / PDF p.235. The registered source

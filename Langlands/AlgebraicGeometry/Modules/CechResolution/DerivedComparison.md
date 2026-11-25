@@ -1,7 +1,5 @@
 # Named canonical derived Čech comparison
 
-Author: Worker 606.
-
 This internal extension of `CechResolution.Comparison` names the canonical
 map implicit in `nonempty_cechCochainComplex_iso`. For a ring object `R`,
 a scheme morphism `f : X ⟶ Spec R`, an ordered affine cover `𝒰`, and an

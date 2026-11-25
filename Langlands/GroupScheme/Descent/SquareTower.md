@@ -22,4 +22,4 @@ effective descent solution is assumed or proved.
 
 Both results are internal consequences of the existing pullback comparisons.
 They supply coherence identities for constructing integral descent data by
-generic rigidity; this unit constructs no such datum itself.
+generic rigidity; this module constructs no such datum itself.

@@ -1,7 +1,5 @@
 # A closed upper triangular embedding for a smooth connected solvable group
 
-Worker 1485.
-
 `Langlands.GroupScheme.SolvableTriangularEmbeddingStatement.{u}` is a
 Prop-valued statement at arbitrary universe `u`. No proof is supplied.
 

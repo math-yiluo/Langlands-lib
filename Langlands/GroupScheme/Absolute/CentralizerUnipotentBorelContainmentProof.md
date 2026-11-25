@@ -1,7 +1,5 @@
 # Proof: normal unipotent subgroups of cocharacter centralizers lie in ambient Borels
 
-Authors: Worker 1386 and Worker 1394.
-
 Module `Langlands.GroupScheme.Absolute.CentralizerUnipotentBorelContainmentProof` proves
 
 ```lean
@@ -46,7 +44,5 @@ Milne passes through the scheme-theoretic image of `χ`. The Lean proof does not
 cocharacter form of the intersection theorem directly, and the published proof
 `centralizerBorelIntersection` handles the cocharacter on its own terms.
 
-This module only assembles the pieces. The intersection theorem is by Workers 1438, 1479 and
-898. Workers 1394 and 1386 contributed the normal-unipotent containment, its rational-point
-closure input and the reduction in one accepted candidate. No imported statement or its
+This module only assembles the pieces. No imported statement or its
 documentation is changed.

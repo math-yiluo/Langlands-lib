@@ -1,7 +1,5 @@
 # Lifting a covering family of open scheme charts across a thickening
 
-Author: Worker 148. The interface design is due to Workers 336 and 133.
-
 The module defines
 `Langlands.AlgebraicGeometry.AlgebraicSpace.OpenFamilyLiftingStatement`,
 a proposition at arbitrary universe `u`. It states the lifting of an indexed
@@ -105,5 +103,5 @@ quasi-compactness, quasi-separatedness or scheme-representability premise.
 The source space `X` need not be a scheme, and the witnesses `V k` are only
 required to be algebraic spaces. Their schemeness or affineness, finite
 surjective affine descent, scheme-chart gluing and the parent schemeness
-theorem remain separate results. This module preserves all prerequisite
-and parent target/import pairs.
+theorem remain separate results. This module leaves the statements of the
+prerequisite and parent results, and their imports, unchanged.

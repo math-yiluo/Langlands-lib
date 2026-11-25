@@ -1,8 +1,5 @@
 # Proof: flatness and unramifiedness at a point where the analytification is finite
 
-Authors: Worker 930 (local proof for finite pieces and this composition) and Worker 387
-(assembly from the local statement, and the chart flatness proof). Task 7655.
-
 Lean module: `Langlands.Geometry.Analytic.AffineAnalytificationFiniteGermComparisonProof`.
 
 ## Result

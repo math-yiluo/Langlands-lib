@@ -133,7 +133,7 @@ def harrisEtaleDeckDerivedPlusSystem :
 
 /-- The source action is actually the identity, by derived geometric identity. -/
 theorem harrisEtaleTrivialDerivedPlusSystem_ρ (n : ℕᵒᵖ) (g : G) :
-    ((harrisEtaleTrivialDerivedPlusSystem (G := G) ρ p U m X Y hY).obj n).ρ g =
+    (((harrisEtaleTrivialDerivedPlusSystem (G := G) ρ p U m X Y hY).obj n).ρ g).asHom =
       𝟙 ((harrisEtaleDerivedPlusSystem ρ p U m X Y hY).obj n) :=
   trivialEquivariantDerivedAction R ((C).obj n) g
 
@@ -141,7 +141,7 @@ omit [HasDerivedCategory.{wX} (EtaleDerivedSections.ModuleSheaf X (HarrisCoeffic
 /-- The deck action is actual geometric derived pullback followed by the
 derived map of the canonically constructed coefficient structure morphism. -/
 theorem harrisEtaleDeckDerivedPlusSystem_ρ (n : ℕᵒᵖ) (g : G) :
-    ((harrisEtaleDeckDerivedPlusSystem ρ p U m X Y hY τ f hf).obj n).ρ g =
+    (((harrisEtaleDeckDerivedPlusSystem ρ p U m X Y hY τ f hf).obj n).ρ g).asHom =
       (EtalePullback.derivedSectionsMap (aut τ g).hom R).app
           ((harrisEtaleRestrictedCoefficientSystem ρ p U m X Y hY f).obj n) ≫
         (EtaleDerivedSectionsPlus.derivedSections Z R).map
@@ -179,7 +179,7 @@ def harrisEtaleDeckDerivedPlusForgetIso :
 /-- Every deck element fixes the actual Harris derived pullback map. -/
 theorem harrisEtaleDeckDerivedPlusPullback_invariant (n : ℕᵒᵖ) (g : G) :
     (harrisEtaleDerivedPlusPullback ρ p U m X Y hY f).app n ≫
-        ((harrisEtaleDeckDerivedPlusSystem ρ p U m X Y hY τ f hf).obj n).ρ g =
+        (((harrisEtaleDeckDerivedPlusSystem ρ p U m X Y hY τ f hf).obj n).ρ g).asHom =
       (harrisEtaleDerivedPlusPullback ρ p U m X Y hY f).app n := by
   have h := deckDerivedSectionsMap_invariant R τ f hf ((C).obj n) g
   rw [deckDerivedSectionsMap_app_hom] at h

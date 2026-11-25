@@ -1,6 +1,7 @@
 # Original-residue maximal-torus images from a full pair-fixer model
 
-This is an internal supporting result for Task 6009. It constructs bounded
+This is an internal supporting result for the existence of a maximal split
+torus whose `K`-units fix a prescribed Galois-fixed building point. It constructs bounded
 maximal split torus data in the actual neutral component from a bound on the
 full model, then uses coefficient comparison to preserve every maximal torus
 over the original residue field. All models, the building datum, the model
@@ -140,7 +141,9 @@ it is not asserted to descend to `F`. A reference integral source, its generic
 `F`-maximal split comparison, a maximal split residue-quotient map, and the
 other geometric hypotheses of `ResidueSplitTorusGenericLift` remain necessary
 for that application. The main
-`UnramifiedFixedPointSplitTorusStatement` remains a separate obligation.
+`UnramifiedFixedPointSplitTorusStatement` is proved separately, as
+`unramifiedFixedPointSplitTorus` in
+`Langlands.Geometry.Building.UnramifiedFixedPointSplitTorusProof`.
 
 The local coefficient, residue and valuation instances have explicit names
 unique to this module. This allows the pair-torus results to be imported

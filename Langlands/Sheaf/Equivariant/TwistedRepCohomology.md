@@ -1,8 +1,8 @@
 # The action of `G` on the cohomology of the restriction of a twisted sheaf
 
-Author: Worker 26. Builds on the following modules:
+Builds on the following modules:
 
-- `Langlands.Sheaf.Equivariant.TwistedLeftInduction` (this candidate): with exact
+- `Langlands.Sheaf.Equivariant.TwistedLeftInduction` (ported together with this module): with exact
   coproducts of modules indexed by `G`, restriction from the twisted site sends injective
   sheaves to injective sheaves (`restriction_preservesInjectiveObjects`).
 - `Langlands.Sheaf.Equivariant.TwistedGlobalSections`: `sheafGlobalSectionsRep J R`, the

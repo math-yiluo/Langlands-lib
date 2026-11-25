@@ -1,7 +1,6 @@
 # Local restriction of induced representations of relative Weil groups
 
-Author: Worker 84. Statement contribution to task
-`34b81620-20d7-4059-9b08-6bedd1c1c029`, revision 1. It supplies the local step
+This is a statement module. It supplies the local step
 of the Galois-side global functional equation (published target
 `Langlands.Global.FunctionalEquationComparison.RelativeWeilTwistFunctionalEquationStatement`):
 the local factors of an induced representation of `W_{E/F}` at a finite place `z`
@@ -14,7 +13,7 @@ definition that changes only the topology instance of a target, two proved
 is proved here and nothing is assumed.
 
 The target is
-`Langlands.ClassField.Global.RelativeWeilGroup.LocalInducedRestrictionStatement`.
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.LocalInducedRestrictionStatement`.
 Let `F ⊆ K ⊆ E` be number fields with `E/F` Galois, `z` a finite place of `F`,
 and `ι : W_{F_z} → W_{E/F}` a local map at a place `w` of `E` above `z`. The
 target says that there are maps `ιᵤ : W_{K_u} → W_{E/K}`, one for each place
@@ -116,7 +115,7 @@ published target above, `RelativeWeilTwistFunctionalEquationStatement`, elaborat
 published `relativeGaloisTopology` is the discrete topology. The published
 `IsTopologicalGroup` instance on `W_{E/F}`, the published `restrictionInclusion`,
 and the published statement
-`Langlands.ClassField.Global.RelativeWeilGroup.InducedCharacterGenerationStatement`
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.InducedCharacterGenerationStatement`
 (Brauer induction for `W_{E/F}`) use it. For a finite extension the two topologies
 are equal (`krullTopology_eq_relativeGaloisTopology`), but Lean treats them as
 different instances. The target therefore states the restriction formula with the
@@ -180,7 +179,8 @@ relative form, and differs from the source as follows.
    transfer induces `W_{E/K}^{ab} ≅ C_K`. This holds only in the arithmetic
    specialization. In the Library it is the published
    `RelativeWeilTransferReciprocityStatement`, which assumes the arithmetic
-   hypotheses and is a statement with no proof in the Library. `Restriction c` and
+   hypotheses; the Library proves it as `relativeWeilTransferReciprocity` (module
+   `Langlands.ClassFieldTheory.Global.RelativeWeilTransferReciprocityProof`). `Restriction c` and
    the local-map hypothesis alone do not make transfer the abelianization map. For
    example, take the zero class family and a quadratic extension `E/K`. Its class
    extension is `C_E ⋊ C₂`. An order-two section element `s` has transfer
@@ -234,8 +234,8 @@ The intended application is in the arithmetic specialization, where the publishe
 `Ind_{W_{E/K}}^{W_{E/F}} θ` at `z` with those of a Hecke character of `K`, apply
 the target to `x = [θ]` and use inductivity in degree zero of the local factors.
 Then write `θ = χ ∘ transfer c K E` for a character `χ` of `C_K`. This step needs
-the published `RelativeWeilTransferReciprocityStatement`, which is not proved in
-the Library, and fails for general `c` (item 2). Condition 1 then identifies
+the published `RelativeWeilTransferReciprocityStatement`, which the Library proves
+as `relativeWeilTransferReciprocity`, and fails for general `c` (item 2). Condition 1 then identifies
 `θ ∘ ιu` with `χ_u ∘ reciprocityUnits eu`, inverted. Together with
 `InducedCharacterGenerationStatement`, these steps reduce the Galois-side
 functional equation to the Hecke functional equation (Tate 1979, §3.5; Henniart
@@ -262,15 +262,13 @@ target are separate obligations.
 
 The relative single-field form, the characterization of the maps `ιu` by their
 transfer, the choice of the discrete topology, and the argument in item 4 are
-derived by Worker 84 for this program. They are not quoted from the sources. The
-zero-class-family example in item 2 is taken from Reviewer 16661's review of an
-earlier version of this pair (candidate `0f5236bb-257d-4eea-a650-53998c629cd5`).
+derived here. They are not quoted from the sources.
 
 ## Dependencies
 
-The module imports the published `Langlands.ClassField.Global.LocalRelativeWeilMap`
+The module imports the published `Langlands.ClassFieldTheory.Global.LocalRelativeWeilMap`
 (`IsLocalRelativeWeilMap`, `completionWeilMap`),
-`Langlands.ClassField.Global.RelativeWeilTransfer` (`transfer`),
+`Langlands.ClassFieldTheory.Global.RelativeWeilTransfer` (`transfer`),
 `Langlands.VirtualRepresentation.ExactInductionTwist` (`continuousInduce`, and
 through it `ExactRestriction` with `continuousRestrict`),
 `Langlands.Weil.Representation.InductionContinuity` (through it

@@ -34,6 +34,6 @@ projective actions. This is equality of scheme morphisms.
 
 This module is derived from the existing frame, tensor restriction, section
 transport and projective action APIs. It adds no local-freeness or invertibility
-premise beyond the supplied genuine frames and line charts. Constructing a
-global comparison by gluing, and the ordinary moduli representability theorem,
-remain further obligations.
+premise beyond the supplied genuine frames and line charts. The global
+comparison by gluing is constructed in `TensorLineInvariance` (`atlasIso`); the
+ordinary moduli representability theorem remains unproved.

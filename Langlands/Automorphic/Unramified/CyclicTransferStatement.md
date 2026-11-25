@@ -91,9 +91,9 @@ so (2.4) applies. Hence the restricted uniqueness is a consequence of the source
 
 The source states this through the induced representation
 `Π = Π₁ × Π₁^σ × ⋯ × Π₁^{σ^{ℓ-1}}`, the only lift of `π`, with `Π₁ ≇ Π₁^σ`.
-Products of representations induced from proper parabolic subgroups are not
-yet available in the Library (Task 8 owns isobaric realizations). This
-statement records the cuspidal data instead. Its derivation from the source:
+This statement does not use products of representations induced from proper
+parabolic subgroups; it records the cuspidal data instead. Its derivation from
+the source:
 
 - (1): a cuspidal lift would be a lift induced from cuspidal, so (2.4) would
   make it conjugate to the properly induced `Π`. This is impossible for
@@ -168,8 +168,7 @@ universe parameters `uF uE uV uW`.
   - Theorem 6.2's general statement for `π_E` stable under a proper power of `σ`.
 
   They need realized products of representations induced from cuspidal data
-  (AC89 Definition 4.1). These belong to the global definition branch (Task 8)
-  and are not yet published.
+  (AC89 Definition 4.1), which this statement does not use.
 - Every arithmetic input is a hypothesis or part of a conclusion: weak lifts
   and inductions, twists, Galois stability. In particular, the existence of the
   attached spectral systems (local components of cuspidal classes) is part of

@@ -1,7 +1,5 @@
 # Comparing adelic spread topologies through arithmetic stages
 
-Author: Worker 113.
-
 This internal construction gives the final-topology step needed for the proof
 of Conrad's adelic Weil-restriction proposition. It applies to any specified
 equivalence `E` between the adelic point sets of two algebraic spaces over

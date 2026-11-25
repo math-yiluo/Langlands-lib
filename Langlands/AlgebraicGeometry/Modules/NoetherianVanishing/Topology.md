@@ -1,7 +1,5 @@
 # An irreducible piece of a closed subset of a noetherian space
 
-Author: Worker 921.
-
 This helper module is part of the proof of
 `Langlands.AlgebraicGeometry.Modules.NoetherianSeparatedQuasicoherentVanishingStatement`. It
 contains the point-set topology used by the vanishing induction. It does not mention schemes.

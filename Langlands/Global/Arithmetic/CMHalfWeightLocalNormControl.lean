@@ -2,7 +2,7 @@ import Langlands.Global.Arithmetic.CMInfinityExtension
 import Langlands.Global.AdelicFunctoriality.LocalNormNeighborhood
 import Langlands.Global.AdelicFunctoriality.UnramifiedUnitNorm
 import Langlands.Global.AdelicFunctoriality.FinitePlaceDegreeTransfer
-import Langlands.ClassField.Global.IdeleGaloisDescentProof
+import Langlands.ClassFieldTheory.Global.IdeleGaloisDescentProof
 import Langlands.Topology.LocallyProfiniteProof
 import Mathlib.Topology.Algebra.GroupWithZero
 
@@ -12,7 +12,7 @@ noncomputable section
 
 open Algebra NumberField IsDedekindDomain IsDedekindDomain.HeightOneSpectrum Filter Topology
 open scoped NumberField Langlands.Global.AdelicFunctoriality.FiniteExtension
-open Langlands.ClassField.Global Langlands.Global.AdelicFunctoriality
+open Langlands.ClassFieldTheory.Global Langlands.Global.AdelicFunctoriality
 
 namespace Langlands.Global.CMHalfWeight
 

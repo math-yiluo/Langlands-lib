@@ -62,7 +62,14 @@ theorem dvrGenericRationalHom_bijective (B C : AbelianScheme S) :
 actual rational endomorphisms of its generic fibre. -/
 def dvrRationalEndEquiv (B : AbelianScheme S) :
     End0 B ≃ₐ[ℚ] End0 ((baseChange j).obj B) :=
-  AlgEquiv.ofBijective (rationalBaseChangeEnd j B) (dvrGenericRationalHom_bijective K B B)
+  AlgEquiv.ofBijective (rationalBaseChangeEnd j B) (by
+    have h := dvrGenericRationalHom_bijective K B B
+    refine ⟨fun f g hfg => ?_, fun g => ?_⟩
+    · have h1 : rationalBaseChangeHom j f.asHom = rationalBaseChangeHom j g.asHom :=
+        congrArg CategoryTheory.End.asHom hfg
+      exact CategoryTheory.End.ext (h.1 h1)
+    · obtain ⟨f, hf⟩ := h.2 g.asHom
+      exact ⟨CategoryTheory.End.of f, CategoryTheory.End.ext hf⟩)
 
 @[simp]
 theorem dvrRationalEndEquiv_apply (B : AbelianScheme S) (f : End0 B) :
@@ -78,7 +85,7 @@ def extendDvrRationalAction {A : Type} [Ring A] [Algebra ℚ A] (B : AbelianSche
 theorem rationalBaseChangeEnd_extendDvrRationalAction {A : Type} [Ring A] [Algebra ℚ A]
     (B : AbelianScheme S) (i : A →ₐ[ℚ] End0 ((baseChange j).obj B)) :
     (rationalBaseChangeEnd j B).comp (extendDvrRationalAction K B i) = i := by
-  ext a
+  ext a : 1
   exact (dvrRationalEndEquiv K B).apply_symm_apply (i a)
 
 theorem extendDvrRationalAction_unique {A : Type} [Ring A] [Algebra ℚ A] (B : AbelianScheme S)

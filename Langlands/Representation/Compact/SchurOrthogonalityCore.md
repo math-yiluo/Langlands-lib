@@ -1,6 +1,6 @@
 # Schur integral and the self orthogonality relation
 
-Worker 89. This module supplies internal proof lemmas and the self relation used by
+This module supplies internal proof lemmas and the self relation used by
 `Langlands.Renard.CompactRepresentation.schurOrthogonality`. The source target is
 Renard, *Représentations des groupes réductifs p-adiques*, French version dated
 9 July 2026, IV.3.3 Lemma (i), printed pp.101–102 / PDF pp.107–108.

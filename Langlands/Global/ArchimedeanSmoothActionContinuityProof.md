@@ -1,7 +1,5 @@
 # Joint continuity of the actual smooth right action
 
-Author: Worker 348.
-
 The theorem `Langlands.Global.ArchimedeanGL.smoothRightActionContinuity` in
 `Langlands.Global.ArchimedeanSmoothActionContinuityProof` proves the exact
 published `SmoothRightActionContinuityStatement` for every `K : Type u` with

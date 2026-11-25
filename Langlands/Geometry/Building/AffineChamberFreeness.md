@@ -3,8 +3,8 @@
 This internal adapter uses the existing affine Weyl group, root stabilizer,
 chamber subsets and actual affine-image action. The definitions of point
 separation and wall reflections come from the generic geometry prerequisite.
-The bundled chamber action and the coroot-conjugation helpers were authored by
-Worker 455; this adapter was authored by Worker 1622.
+The bundled chamber action and the coroot-conjugation helpers come from
+`AffineChamberAction`.
 
 Every member of a chamber is regular, and its root signs agree with those of
 every other member. The implemented separation predicate for chambers therefore

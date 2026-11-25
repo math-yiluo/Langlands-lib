@@ -1,6 +1,6 @@
 # Actual rank-one root factors and their local cells
 
-This internal support unit works over any field `k`, in arbitrary universes. It identifies both chamber unipotent factors of each actual simple-root Levi with its full intrinsic root functors, and constructs the corresponding local three-factor cell. No root reducedness or characteristic restriction is imposed. The main isomorphism proposition and the global Levi gluing proposition remain open.
+This internal support module works over any field `k`, in arbitrary universes. It identifies both chamber unipotent factors of each actual simple-root Levi with its full intrinsic root functors, and constructs the corresponding local three-factor cell. No root reducedness or characteristic restriction is imposed. The main isomorphism proposition `SplitCommonTorusIsomorphismStatement` and the global Levi gluing proposition `SplitCommonTorusLeviGluingStatement` are not proved here; both are proved in `Langlands.GroupScheme.Reductive.SplitIsomorphismProof`.
 
 ## Positive roots on a simple ray
 
@@ -28,4 +28,4 @@ Assume `G1` is connected and `P1` is a root datum realizing the actual roots of 
 
 The published three-factor cell theorems give an open immersion and dense image for multiplication of the negative root group, this middle centralizer, and the positive root group into the actual local Levi. Over an algebraically closed field, the published rational three-factor density theorem then states that every rational point of that Levi lies in the rational-point closure of those products. Algebraic closedness is used only in this final rational-point conclusion.
 
-This unit does not identify the middle centralizer with the common torus, transport the closure statement into the global graph, establish algebraic generation by simple roots, or prove either graph projection invertible. These remain separate obligations. All results are internal consequences of the named published interfaces and the earlier simple-root support units; no classification or global isomorphism result is used.
+This module does not identify the middle centralizer with the common torus, transport the closure statement into the global graph, establish algebraic generation by simple roots, or prove either graph projection invertible. These remain separate obligations. All results are internal consequences of the named published interfaces and the earlier simple-root support modules; no classification or global isomorphism result is used.

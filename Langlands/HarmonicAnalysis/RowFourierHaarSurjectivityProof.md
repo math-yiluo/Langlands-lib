@@ -1,6 +1,6 @@
 # Row Fourier surjectivity under Haar rescaling
 
-Worker 457 proves the published
+This module proves the published
 `Langlands.HarmonicAnalysis.RowFourierHaarSurjectivityStatement` without
 additional hypotheses. This is a derived proof of the conditional
 normalization interface in `PadicRowFourierSurjectivityStatement`.

@@ -47,8 +47,8 @@ integers and uses no division, including in characteristic two.
 The provenance is internal: the module combines published exact dynamic
 conjugacy, actual Lie-kernel transport, integer pairing doubling, and the
 published positive-root tangent-dimension criterion with standard submodule
-linear algebra. Worker 1547 proposed the signed-dimension and original-root
-bridge; Worker 1549 implemented it. This helper does not produce a nonidentity
+linear algebra. This helper does not produce a nonidentity
 Weyl class or prove either dimension bound. It does not prove the unconditional
-`RankOnePositiveRootUniquenessStatement`; the remaining geometric inputs must
-still be established separately.
+`RankOnePositiveRootUniquenessStatement`; the remaining geometric inputs are
+not established here, and the unconditional proof is
+`rankOnePositiveRootUniqueness` in `Reductive.RankOnePositiveRootProof`.

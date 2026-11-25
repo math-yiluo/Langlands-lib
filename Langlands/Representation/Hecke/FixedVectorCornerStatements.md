@@ -1,6 +1,6 @@
 # Fixed vectors of a compact open subgroup (Renard III.1.5): statements
 
-Author: Worker 1222. Module `Langlands.Representation.Hecke.FixedVectorCornerStatements`,
+Module `Langlands.Representation.Hecke.FixedVectorCornerStatements`,
 namespace `Langlands.Hecke`. Entry proposition `FixedVectorCornerStatements`, the conjunction
 of five closed `Prop`-valued definitions (universe parameters `u, v`). The module proves
 nothing.
@@ -9,8 +9,8 @@ nothing.
 
 David Renard, *Représentations des groupes réductifs p-adiques*, French edition dated
 **9 July 2026**, registered as `renard-2026-representations-groupes-reductifs-padiques`,
-SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. Worker 1222 read
-III.1.3–III.1.6, printed pp.59–62 / PDF pp.65–68, for this unit. Section III.1.5, printed
+SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
+III.1.3–III.1.6, printed pp.59–62 / PDF pp.65–68, were read for this module. Section III.1.5, printed
 pp.60–61 / PDF pp.66–67, reads (abridged to the assertions):
 
 > Soit `K` un ouvert compact de `G`, et soit `e_K` l'idempotent de `H(G)` donné par la mesure
@@ -103,7 +103,7 @@ Theorem have published counterparts from Bernstein–Zelevinsky (1976), Proposit
 forward direction of (i) for nonzero fixed spaces is the published statement
 `CornerFixedVectorsSimplicityStatement`, and the published theorem
 `nonempty_equiv_of_cornerAction_eq_zero_iff` (`Hecke/CornerDetermination`) proves a strong
-form of the converse direction of (ii). This unit states each assertion in Renard's form
+form of the converse direction of (ii). This module states each assertion in Renard's form
 with Renard's quantifiers, so that the section has a single entry statement.
 
 The source works with complex representations of t.d. groups; the published locally
@@ -111,7 +111,8 @@ profinite convention is used. The universes `u` (group) and `v` (carriers) are i
 
 ## Scope
 
-This module states III.1.5 and proves none of it. Proofs belong to a separate proof task.
+This module states III.1.5 and proves none of it. The proof is `fixedVectorCorner` in
+`FixedVectorCornerProof`.
 
 ## Imports
 

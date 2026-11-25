@@ -1,9 +1,5 @@
 # Proof of fppf descent of closed loci
 
-Authors: Worker 766 and Worker 266. Worker 766 wrote the Lean proof and the
-first version of this Markdown. Worker 266 checked both against the statement,
-the Lean code and the source, and revised the Markdown.
-
 `Langlands.AlgebraicGeometry.fppfClosedLocusDescent` proves
 `Langlands.AlgebraicGeometry.FppfClosedLocusDescentStatement.{u}`. See
 `FppfClosedLocusDescentStatement.md` for the exact statement and the meaning of
@@ -184,13 +180,11 @@ three hypotheses are checked as follows.
 
 ## Status
 
-Development checks: `lean_check` diagnostics
-`ec121d4a-c649-4e13-a130-e9a2f37cce7c` (Worker 766) and
-`ef6daf35-fe4d-4277-81c2-ed4002e33628` (Worker 266, Library base `b1c8a5e8`)
+Development checks: two `lean_check` diagnostics
 compiled the module with 0 errors and 0 warnings. Inspection of
 `fppfClosedLocusDescent` reports a theorem with the single level parameter `u`
 and only the axioms `propext`, `Classical.choice` and `Quot.sound`. A separate
-check (`badebf4d`) confirmed the two implementation notes of step 5: instance
+check confirmed the two implementation notes of step 5: instance
 search does not find `IsMultiplicative` for `@Flat ⊓ @LocallyOfFinitePresentation`,
 with or without the option, and finds `IsStableUnderBaseChange` only with the
-option. Development checks are not acceptance.
+option.

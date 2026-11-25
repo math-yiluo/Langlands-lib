@@ -1,7 +1,5 @@
 # Central-character data and the zero case for tempered representations
 
-Author: Worker 17.
-
 This internal supporting construction supplies the actual
 `Langlands.UnitaryCentralCharacter` datum required by the published
 square-integrability predicate. It assumes exactly normalized-exponent

@@ -4,7 +4,8 @@ This internal construction works over a complete ultrametric normed
 field `K` with a complete normed extension field `L`. The algebra,
 space and extension-field universes are independent. Source and
 target are saturated presentations whose space and chart-index
-universes are both the space universe, as in the localized target.
+universes are both the space universe, as in
+`LocalizedEtaleFieldPointPullbackStatement`.
 
 The faithful local representative of a full field point has a global
 chart on its source, so every point of that source maps into the
@@ -39,5 +40,5 @@ comparison.
 
 The provenance is internal, from the actual strong-map pullback,
 kernel-quotient descent, full-field-point functoriality and the
-common-chart detection theorem. This supporting unit makes no
+common-chart detection theorem. This module makes no
 claim to the final unconditional localized pullback preservation.

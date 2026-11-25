@@ -1,15 +1,13 @@
 # The fibrewise Čech criterion by noetherian approximation
 
-Authors: Worker 299 and Worker 424. Worker 299 authored the proof;
-Worker 424 adapted its module dependencies for separate prerequisite
-publication and rechecked the complete proof. This module proves the content of
+This module proves the content of
 `Langlands.Algebra.SmoothEqualizerFibreCriterion` in the parameterized form
 `Langlands.Algebra.CechEqualizer.mem_range_of_smooth`; the exact-target
 theorem is in `Langlands.Algebra.SmoothEqualizerFibreCriterionProof`. It
 uses the helper modules `Langlands.Algebra.CechEqualizer.Good`,
 `Langlands.Algebra.CechEqualizer.Model` and
 `Langlands.Algebra.CechEqualizer.Descent`. The argument is an internal
-derivation by Worker 299 (see the statement's Markdown for the relation to
+derivation (see the statement's Markdown for the relation to
 Stacks Lemma 36.32.5, Tag 0E62); it is not a formalization of the Stacks
 proof, which uses perfect complexes.
 

@@ -1,7 +1,5 @@
 # Points of smooth schemes over finite Galois extensions
 
-Worker 1296.
-
 This helper module shows that a nonempty smooth affine scheme over a field
 `K` has a point over a finite Galois extension of `K`. This is a standard fact
 (smooth schemes over a field have points over finite separable extensions). It
@@ -22,8 +20,8 @@ Proof.
    to `Ω ⊗[K] (R/m)` for a maximal ideal `m`, a tensor product of two field
    extensions of `K`, which is nontrivial.
 2. `Ω ⊗[K] R` is smooth over `Ω`, hence geometrically reduced over `Ω`
-   (published `PointTopology.isGeometricallyReduced_of_smooth`).
-3. The published theorem `separablyClosedRationalPoint` gives an
+   (`PointTopology.isGeometricallyReduced_of_smooth`).
+3. The theorem `separablyClosedRationalPoint` gives an
    `Ω`-algebra homomorphism `Ω ⊗[K] R → Ω`. Restricting to `R` gives
    `φ : R →ₐ[K] Ω`.
 4. `R` is of finite type over `K`. Let `t` be a finite generating set and `F`

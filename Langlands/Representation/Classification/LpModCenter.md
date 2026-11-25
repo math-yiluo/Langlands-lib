@@ -1,7 +1,7 @@
 # A fixed real exponent for coefficients modulo the center
 
-Authors: Worker 403 and Worker 158, who agreed the shared interface for the
-block tensor comparisons.
+This module is the shared interface for the block tensor comparisons
+(`Classification.BlockTensorLpStatement`).
 
 This module adds two predicates. `Langlands.IsLpModCenter ρ μ r` means that
 `ρ` is admissible and admits a smooth unitary central character `c` such that
@@ -17,7 +17,8 @@ space. The generic definition retains the same weak topological hypotheses as
 is required to be Haar. A Borel structure and a topological group instance are
 not additional hypotheses of this definition. The real parameter is unrestricted;
 its conversion by `ENNReal.ofReal` sends nonpositive values to zero.
-The common tensor comparison will separately restrict to `r ≥ 2`.
+The common tensor comparison `GLBlockTensorLpStatement` separately restricts to
+`r ≥ 2`.
 
 For a supplied compatible p-adic realization `T`,
 `Langlands.PadicField.TopologicalData.IsLp ρ r` quantifies over every Haar measure
@@ -35,7 +36,7 @@ predicate. The canonical GL lemma `T.isLp_two_iff` installs the same topology
 and Borel instances as both existing GL predicates and applies this equivalence
 under each of their measure quantifiers.
 
-This is internally derived interface content. Its provenance is the accepted
+This is internally derived interface content. Its provenance is the
 Library definitions in `Classification/Tempered` and
 `MatrixCoefficient/ModuloCenter`; it is not a newly asserted literature
 theorem. In particular the central character is existentially quantified as in

@@ -1,9 +1,8 @@
 # An almost-everywhere integral Iwasawa family on actual local points
 
-Worker 695.
-
-`Langlands.Global.IntegralIwasawaFamily.ExistenceStatement` is an unproved
-proposition definition at every universe `u`. For each number field `F : Type u`,
+`Langlands.Global.IntegralIwasawaFamily.ExistenceStatement` is a proposition
+definition at every universe `u` (proved as `existenceStatement` in
+`IntegralIwasawaFamilyProof`). For each number field `F : Type u`,
 each actual `F`-group scheme `G` satisfying the published
 `IsConnectedReductive G`, and each actual morphism `p : P ⟶ G` satisfying the
 published `IsParabolicSubgroup p`, it asks for one family of subgroups
@@ -102,23 +101,24 @@ every remaining place its evaluation at every integral model point lies in
 the same valuation subring. The denominator set depends on the function,
 independently of the integral point.
 
-## Remaining proof obligations and consumer boundary
+## Proof obligations and consumer boundary
 
 This module proves neither existence nor any of these structural inputs.
-A proof still has to construct the reductive and parabolic models from the
+A proof has to construct the reductive and parabolic models from the
 published hypotheses, prove the integral quotient/torsor argument and good
 integral maximality, and compare model points with the actual
 scheme-morphism carrier, evaluation topology and canonical valuation subring.
 It must also prove the finite-coordinate factorization and denominator
 arguments giving the explicit second and third conclusions.
+`IntegralIwasawaFamilyReduction` and `IntegralIwasawaFamilyProof` do this.
 
 The third conclusion applies to arbitrary selections from the full product
 of the `K v`: for each regular function the selected values form an actual
 finite adele. Constructing the corresponding algebra/scheme point and proving
-continuity of that product lift are further adapters owned by the actual
+continuity of that product lift are further adapters of the actual
 adelic coordinate development. The second conclusion supplies the
 elementwise cofinite membership needed for finite-support parabolic assembly.
 The generic `CoordinateCompactAssembly` results alone do not establish these
 actual adapters or this existence target. The full adelic
 `AdelicGroupPoints.ParabolicIwasawaStatement`, including the remaining local
-places and archimedean places, remains a separate proof target.
+places and archimedean places, is a separate statement.

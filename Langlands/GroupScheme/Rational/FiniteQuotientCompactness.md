@@ -1,7 +1,5 @@
 # Compactness from a compact subgroup and a finite schematic quotient
 
-Author: Worker 1567.
-
 This is internal infrastructure for the full scheme-center quotient compactness
 proof. It retains finite scheme data in every characteristic and makes no
 surjectivity claim for the rational points of a quotient morphism.

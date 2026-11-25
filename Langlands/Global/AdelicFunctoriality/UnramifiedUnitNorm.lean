@@ -85,7 +85,7 @@ theorem discreteValuation_eq_of_vle (v : Valuation F.Carrier ℤᵐ⁰)
   have := T.localField
   refine valuation_eq_of_isEquiv_of_surjective ?_ T.discreteValuation_surjective hs
   exact (Valuation.isEquiv_map_self_of_strictMono _
-    (IsNonarchimedeanLocalField.valueGroupWithZeroIsoInt F.Carrier).strictMono).trans
+    (IsNonarchimedeanLocalField.valueGroupWithZeroIsoInt F.Carrier).strictMono.injective).trans
     (valuativeRel_valuation_isEquiv T v hv)
 
 /-- Under the same hypothesis, the valuation-unit subgroup of `T` consists of the elements of

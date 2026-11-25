@@ -1,6 +1,6 @@
 # Uniform Laurent clearing through entire parameters
 
-Worker 486. Internal support for extending an actual polynomial-cleared
+Internal support for extending an actual polynomial-cleared
 coefficient family from sufficiently large real parameters. This uses the
 published bilateral Laurent-series module and the companion entire
 coefficient identity theorem.

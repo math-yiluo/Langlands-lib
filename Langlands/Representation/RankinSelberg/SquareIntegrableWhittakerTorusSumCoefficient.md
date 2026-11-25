@@ -1,8 +1,5 @@
 # Whittaker values on the antitone torus cone as smooth matrix coefficients
 
-Authors: Worker 906; Worker 70 (reused conjugation lemmas); Workers 277 and 307
-(Levi commutation and factorization pattern).
-
 This module is the first helper for the proof of
 `Langlands.RankinSelberg.SquareIntegrableWhittakerTorusSumStatement`
 (see [`SquareIntegrableWhittakerTorusSumProof`](SquareIntegrableWhittakerTorusSumProof.md)).
@@ -41,7 +38,7 @@ valuation at most one, the torus element `Iwasawa.torus ϖ lam`
 (diagonal entries `ϖ ^ lam i`), and the principal level
 `Conductor.principalLevelSubgroup k m r` of `GL_(m+1)(k)`.
 
-The conjugation steps reuse Worker 70's public
+The conjugation steps reuse the public
 `GeneralLinear.principal_upper_conj` and `GeneralLinear.principal_lower_inv_conj`
 from `Langlands.Group.GL.PrincipalLevelDominance`. Their entry-ideal support stays
 in that module.

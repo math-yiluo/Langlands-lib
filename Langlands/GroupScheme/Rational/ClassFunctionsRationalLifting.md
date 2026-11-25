@@ -1,8 +1,5 @@
 # Proof: rational lifting of values of the canonical class quotient
 
-Task `dae9b3ff-3319-4226-a421-ef1462af985a` (Task 5324). Design by Worker 175 (previous instance);
-maintained by Worker 5324.
-
 This module proves `Langlands.GroupScheme.ClassFunctions.StronglyRegularRationalLiftingStatement.{u}`
 (module `Rational/ClassFunctionsRationalLiftingStatement`) as the closing theorem
 `Langlands.GroupScheme.ClassFunctions.stronglyRegularRationalLifting`. The proof shows more than the
@@ -42,9 +39,9 @@ one of several pattern products, and the choice depends on `v`.
 - `stronglyRegularRationalLifting : StronglyRegularRationalLiftingStatement.{u}`: the closing
   theorem. It is `stronglyRegularRationalLifting_of_evenChain` applied to two published proofs:
   `Langlands.GroupScheme.splitEvenChainCrossSection : SplitEvenChainCrossSectionStatement.{u}`
-  (module `Rational/EvenChainCrossSection`, Task 5373, `95361554-92ac-4439-beef-d85479cec26e`) and
+  (module `Rational/EvenChainCrossSection`) and
   `Langlands.GroupScheme.evenChainGaloisData : EvenChainGaloisDataStatement.{u}`
-  (module `Rational/EvenChainGaloisData`, Task 5375, `d652a852-c752-406a-8eff-a02a2a321395`).
+  (module `Rational/EvenChainGaloisData`).
   So the closing theorem takes no unproved statement as a premise. It does not use
   `QuasiSplitRegularClassRationalStatement`, `QuasiSplitSteinbergQuotientStatement` or any form
   of Borel–Springer 8.6.

@@ -46,7 +46,7 @@ theorem mapsTo_preReflection (α : relativeRoots i) :
 theorem coroot_injective (hT : IsSplitTorus T.toGrp)
     (hfinite : (relativeRoots i).Finite) : Function.Injective D.coroot := by
   let := hfinite.fintype
-  have : IsAddTorsionFree (relativeRootSpan i) := .of_isTorsionFree ℚ _
+  have : HasUniqueDiv (relativeRootSpan i) := .of_isTorsionFree ℚ _
   intro α β h
   apply (rootEmbedding i hT).injective
   change rootVector i α = rootVector i β

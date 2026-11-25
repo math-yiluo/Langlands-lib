@@ -1,6 +1,6 @@
 # The factorization over S and the infinite places from the two pointwise premises
 
-Task 7397 asks for `ArchimedeanFactorizationStatement`, the factorization of the partial
+The target `ArchimedeanFactorizationStatement` is the factorization of the partial
 Rankin–Selberg Whittaker integrals over `S` and the infinite places, for both ranks (Cogdell
 2004, proof of Theorem 4.1, pp.219-220). This module reduces that target to the two remaining
 representation-theoretic premises.
@@ -125,6 +125,6 @@ The proof uses only the standard axioms.
 ## Provenance
 
 Internal. The splitting of Cogdell's argument into the premises A_U, A_E, B, C is that of the
-published reductions `ArchimedeanFactorizationReduction` (Worker 394) and
-`EqualArchimedeanFactorizationReduction` (Worker 261). This module only composes them with the
+published reductions `ArchimedeanFactorizationReduction` and
+`EqualArchimedeanFactorizationReduction`. This module only composes them with the
 proofs of B and C.

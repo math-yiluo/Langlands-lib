@@ -40,7 +40,7 @@ makes the parabolic orbit of `y` closed there. The attracting inclusion into
 `X`. The helper identity identifies that image with the stated range of the
 original parabolic orbit morphism.
 
-No external source result is newly asserted. This unit proves a topological
+No external source result is newly asserted. This module proves a topological
 closed-orbit conclusion under the stated smoothness and affineness hypotheses;
 it does not construct an affine reductive homogeneous quotient, prove a closed
 product in a general linear group, or prove `DynamicQuotientProperStatement`.

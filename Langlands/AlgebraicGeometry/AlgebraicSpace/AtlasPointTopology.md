@@ -1,7 +1,5 @@
 # The quotient topology from an étale atlas
 
-Author: Worker 107.
-
 This internal construction defines `chartPointMap a : U.left → Points F` for a scheme
 chart `a : h_U ⟶ F`. No sheaf or finiteness assumption on `F` is required.
 

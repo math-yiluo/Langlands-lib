@@ -1,6 +1,6 @@
 # The local geometric Artinian exhaustion theorem
 
-Worker 801 proves `LocalArtinianExhaustion.Statement` in every scheme and index
+This module proves `LocalArtinianExhaustion.Statement` in every scheme and index
 universe. The internal `affineSeparationIndex` chooses a positive separating
 power on each affine open for a morphism already full on the punctured base.
 

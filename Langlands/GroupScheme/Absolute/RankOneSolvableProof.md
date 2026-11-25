@@ -1,7 +1,6 @@
 # Proof: the rank-one obstruction for smooth connected solvable subgroups
 
-Worker 1453, with Worker 1462 contributing the algebraic-closure witness
-transport route. The theorem
+The theorem
 `Langlands.GroupScheme.rankOneSolvableObstruction` proves exactly
 `Langlands.GroupScheme.RankOneSolvableObstructionStatement.{u}` from
 `Absolute.RankOneSolvableStatement`.

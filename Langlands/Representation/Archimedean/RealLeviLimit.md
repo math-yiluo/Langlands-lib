@@ -2,11 +2,11 @@
 
 Lean module: `Langlands.Representation.Archimedean.RealLeviLimit`.
 
-Worker 5220 wrote this module for Task 6749 (`5dd3db87-6f14-4d0f-b9a7-3d0065415fd8`), the proof
-of `RealStandardLanglandsQuotientStatement` (module `RealLargeLanglandsQuotientReduction`). It
+This module is part of the proof of `RealStandardLanglandsQuotientStatement` (module
+`RealLargeLanglandsQuotientReduction`). It
 states and proves `RealLeviLimitStatement` (proof `realLeviLimit`). The statement is the limit
 step of the analytic argument for standard modules whose Langlands order has ties. It is
-conditional on two of my statements, `RealLeviChartIntegrableStatement` (module
+conditional on two statements, `RealLeviChartIntegrableStatement` (module
 `RealLeviChartIntegralStatement`) and `RealLeviParabolicIntegrationStatement` (module
 `RealLeviParabolicIntegrationStatement`). Both are hypotheses of the `Prop`; neither is proved
 here.
@@ -208,5 +208,6 @@ Since `∫_{K_M} ∫_X Ψ_n = 0` for all `n`, the limit `∫_{K_M} ∫_X Ψ` is 
 In the proof of `RealStandardLanglandsQuotientStatement` for lists with ties, the hypothesis
 `∫_{O(N)} u(κ g) h(κ) dκ = 0` for all `g` says that the matrix coefficients of `h` against the
 dual principal series vanish. This module turns that into the vanishing of a pairing over the
-Levi data `K_M × N̄_Q`, averaged over the tori of the induction blocks. The planned next steps of
-the proof (not part of this module) use it to show that such an `h` is zero.
+Levi data `K_M × N̄_Q`, averaged over the tori of the induction blocks. The later steps of the
+proof (not part of this module) apply it in `RealLeviLanglandsQuotient` to the vectors of a
+proper `(𝔤, K)`-submodule, against an annihilator of that submodule.

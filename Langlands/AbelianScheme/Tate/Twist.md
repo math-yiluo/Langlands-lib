@@ -29,10 +29,10 @@ roots as Mathlib's subgroup `rootsOfUnity n R` of `R`'s units, rather than
 assuming a family of torsion groups. Mathlib's
 `NumberTheory/Cyclotomic/CyclotomicCharacter.lean`, in particular
 `cyclotomicCharacter.spec`, supplies the proved character formula used below.
-The elementary divisibility-transition proof pattern is adapted from Worker
-143's published `Langlands.AbelianScheme.Tate.Integral`; the scalar and universal
-lift pattern follows Worker 92's prime-adic construction. This file imports only
-Mathlib and does not depend on either project's pending candidate.
+The elementary divisibility-transition proof pattern is adapted from the
+published `Langlands.AbelianScheme.Tate.Integral`; the scalar and universal
+lift pattern follows a prime-adic Tate-module construction. This file imports only
+Mathlib.
 
 ## Finite levels and transitions
 
@@ -118,13 +118,13 @@ For fields `K`, `L` and a `K`-algebra structure on `L`, `galoisAction` and
 particular be applied to a separable closure. They do not identify this group
 with the fundamental group of a scheme or construct a relative local system.
 
-## Remaining geometric obligations
+## Geometric scope
 
-This unit supplies the actual pointwise twist, not a construction of the
+This module supplies the actual pointwise twist, not a construction of the
 multiplicative group scheme or of the group schemes `mu_n`, nor their
 identification with the preceding roots of unity. Rank one, freeness,
 finite-level cardinality and profiniteness are not proved here. The source's
 rank-one conclusion over a separable closure away from the characteristic
 remains separate. Relative geometric monodromy, full and away-from-prime twists,
-and Weil pairings from duality of actual torsion kernels remain further units
-of the parent task. No arbitrary bilinear pairing is introduced here.
+and Weil pairings from duality of actual torsion kernels are not constructed
+in this module. No arbitrary bilinear pairing is introduced here.

@@ -70,6 +70,7 @@ theorem isIso_of_openCover {S : Scheme.{u}} {H G : GroupScheme S}
     intro j
     have h : IsIso ((baseChange (𝒰.f j)).map i).hom.hom.left := by
       have := hi j
+      set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
       infer_instance
     let hp := underlying_isPullback (𝒰.f j) i
     change IsIso (pullback.snd i.hom.hom.left (pullback.fst G.X.hom (𝒰.f j)))

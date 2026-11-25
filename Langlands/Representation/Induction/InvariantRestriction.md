@@ -1,6 +1,6 @@
 # Restriction of equivariant maps to invariants
 
-Author: Worker 61. Built on the published
+Built on the published
 `Langlands.Representation.Induction.PermutationInvariants`
 (`quotientMapOfLE_fiber_finite`, `invariantsEquivOfEquiv`,
 `pullbackInvariant`, `permutationInvariantsLinearEquiv`) and, through it, on
@@ -220,7 +220,7 @@ hypotheses are supplied by the published
 ## Provenance and interpretation
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
-J. Math. Kyoto Univ. 39-2 (1999), proof of Proposition 4.10 (Worker 61 read
+J. Math. Kyoto Univ. 39-2 (1999), proof of Proposition 4.10 (read on
 the rendered scanned pages):
 
 - printed p.305 (one-based PDF page 7), §2: "Since `p` is prime to `ℓ`, the

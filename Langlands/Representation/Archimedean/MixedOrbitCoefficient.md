@@ -1,6 +1,6 @@
 # Scalar orbit coefficients in the mixed archimedean matrix model
 
-Worker 1028, Task 7767. This internal development connects genuine smooth vectors of a Banach representation with the published analytic theory of [ArchimedeanJointFiniteAnalyticityProof](../../Global/ArchimedeanJointFiniteAnalyticityProof.md), [ArchimedeanEnvelopingJetProof](../../Global/ArchimedeanEnvelopingJetProof.md) and [ArchimedeanAnalyticJetProof](../../Global/ArchimedeanAnalyticJetProof.md). It supplies the analytic step of the Harish-Chandra comparison for a supplied representation. Irreducibility of a Harish-Chandra module is not proved here.
+This internal development connects genuine smooth vectors of a Banach representation with the published analytic theory of [ArchimedeanJointFiniteAnalyticityProof](../../Global/ArchimedeanJointFiniteAnalyticityProof.md), [ArchimedeanEnvelopingJetProof](../../Global/ArchimedeanEnvelopingJetProof.md) and [ArchimedeanAnalyticJetProof](../../Global/ArchimedeanAnalyticJetProof.md). It supplies the analytic step of the Harish-Chandra comparison for a supplied representation. Irreducibility of a Harish-Chandra module is not proved here.
 
 ## Setting
 

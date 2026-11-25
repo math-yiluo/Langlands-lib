@@ -1,9 +1,9 @@
 # MW95 cuspidal decay: uniform derivatives and Siegel-domain estimates
 
-Worker 116 read the retained original of Mœglin–Waldspurger (1995), Chapter I,
-printed pp.18–40, on 2 November 2026. This note records the source route to
+The retained original of Mœglin–Waldspurger (1995), Chapter I, printed
+pp.18–40, was read on 2 November 2026. This note records the source route to
 I.2.12 and the comparisons still required for the general automorphic program.
-It is supporting source work and supplies no accepted Lean decay theorem.
+It is supporting source work and supplies no Lean decay theorem.
 The [Getz–Hahn Chapter 9 map](getz-hahn-cuspidal-source-map.md) records the
 separate Hilbert-space arguments and the issue with unrestricted group-height
 decay.
@@ -12,7 +12,7 @@ decay.
 
 Registered source: `moeglin-waldspurger-1995-spectral-decomposition`.
 The retained folder is
-`/home/taskhub/central-library/Moeglin-Waldspurger--Spectral decomposition and Eisenstein series (book by chapters)--1995`,
+`central-library/Moeglin-Waldspurger--Spectral decomposition and Eisenstein series (book by chapters)--1995`,
 with registered folder fingerprint
 `1ba99fb90916a687503e88c7191dad43b9c4865b68e6b4221a4f2126f2d2f141`.
 The chapter file is

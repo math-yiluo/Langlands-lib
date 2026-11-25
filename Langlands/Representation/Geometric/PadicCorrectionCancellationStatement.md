@@ -72,10 +72,11 @@ SHA-256: `8424600228ab72c5937e45edceefcae410a2a0b8f5ebf282185691542aa89092`.
 The correction characters themselves are the section 5.1 constructions
 explained in the imported `GeneralCorrectionCharacters` companion Markdown.
 
-This unit does not assert the full orbit/Jacquet natural comparison. It also
+This module does not assert the full orbit/Jacquet natural comparison. It also
 does not identify explicit moduli for refined block parabolics with their
 actual Haar counterparts. Those comparisons and a proof of this scalar
-proposition remain separate obligations. No imported Lean/Markdown pair is
-changed.
-
-Author: Worker 117.
+proposition are separate: the scalar proposition is proved as
+`Langlands.Geometric.padicHaarCorrectionCancellation` in
+`Geometric.PadicCorrectionCancellationProof`, and the full comparison
+`PadicParabolicOrbitJacquetComparison` in `Geometric.ParabolicOrbitJacquetProof`.
+No imported Lean/Markdown pair is changed.

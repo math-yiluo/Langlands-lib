@@ -1,6 +1,6 @@
 # Hermitian products of matrix coefficients on the central quotient
 
-Worker 577 constructs `Langlands.UnitaryCentralCharacter.coefficientProduct`.
+This module constructs `Langlands.UnitaryCentralCharacter.coefficientProduct`.
 For an actual representation `rho`, a prescribed actual unitary central character
 `c`, an algebraic functional `ell`, and vectors `u`, `v`, this is a complex function
 on the actual quotient `G / Z(G)`. Its value at the class of `g` is
@@ -56,8 +56,8 @@ claim to reproduce an external definition verbatim. It supplies the
 conjugate-first integrand for the integral-form route motivated by Casselman,
 *Introduction to the theory of admissible representations of p-adic reductive
 groups*, May 1, 1995, Proposition 2.5.4, printed/PDF pages 28–29.
-The parent target records literature ID
-`casselman-1995-admissible-representations` and retained SHA256
+The source is registered as literature ID
+`casselman-1995-admissible-representations`, with retained SHA256
 `78b921fc6331ad2b75389f37d15bd5ac3399e6cfc2d7555e1a4d666e0d42612a`.
 The original is retained at
 `/home/taskhub/central-library/Casselman--p-adic groups lecture notes/Introduction to representations of p-adic groups/Casselman--Introduction to the theory of admissible representations of p-adic reductive groups--1995.pdf`.
@@ -71,4 +71,4 @@ Direct project imports are `MatrixCoefficient.ModuloCenter` and
 `MatrixCoefficient.LawsProof`; no existing pair is changed. This pair proves
 only the descended function and its construction laws. Integrability,
 integration to a positive form, and construction of a unitary realization
-remain separate proof obligations.
+are not part of this module.

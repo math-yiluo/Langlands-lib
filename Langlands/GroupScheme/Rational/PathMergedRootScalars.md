@@ -14,4 +14,4 @@ To prove the action, the first reflection and its inverse fix `v_(i+2)`. The sec
 
 For any supplied parametrization `z` of `α`, `pathRootScalar_adjacent_ne_zero` compares `z` with this canonical conjugated map using the nonzero scalar from `RootParametrizationScalars`. At coordinate one, both descriptions of the action on `v_(i+2)` agree. Applying the `i`-th coordinate of the normalized path basis identifies `pathRootScalar z i (i+2)` with that comparison scalar, hence proves it nonzero in the original field. The argument holds over finite and imperfect fields and in every characteristic.
 
-This unit supplies merged-root coefficient nonvanishing. Merged representative matrices, modified-product characteristic polynomials and the canonical class-quotient cross-section remain further obligations.
+This module supplies merged-root coefficient nonvanishing. Merged representative matrices, modified-product characteristic polynomials and the canonical class-quotient cross-section remain further obligations.

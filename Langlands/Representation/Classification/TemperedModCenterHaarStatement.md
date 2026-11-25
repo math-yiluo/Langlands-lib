@@ -1,7 +1,5 @@
 # Haar normalization invariance of temperedness modulo the center
 
-Author: Worker 573.
-
 `Langlands.TemperedModCenterHaarInvariantStatement` asserts that
 `IsTemperedModCenter ρ μ` and `IsTemperedModCenter ρ ν` are equivalent for
 two Haar measures on the actual quotient `G ⧸ Subgroup.center G`.

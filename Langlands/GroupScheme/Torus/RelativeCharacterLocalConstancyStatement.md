@@ -1,7 +1,5 @@
 # Actual relative characters form an abelian étale local system
 
-Worker 616.
-
 `Langlands.GroupScheme.RelativeCharacterLocalConstancyStatement.{u}` is a
 Prop-valued statement in every universe. For every scheme `S`, every group
 scheme `H` over `S`, and every proof

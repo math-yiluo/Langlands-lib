@@ -1,7 +1,6 @@
 # Partial cuspidal pair L-functions from completed pole data
 
 Lean module `Langlands.Global.Factors.CuspidalPairPartialContinuation`.
-The proof adapts Worker 3657’s shared draft for Task 6446, revision 7.
 
 `partialPairContinuationReduction` proves
 `PartialPairContinuationReductionStatement.{u,uQ}`. Given the published

@@ -1,6 +1,6 @@
 # The character of the smooth contragredient with the modular factor
 
-Worker 278. This proof unit proves the unchanged
+This proof module proves the unchanged
 `Langlands.CharacterContragredientModularStatement` at its independent group
 and representation-space universes, without adding any hypotheses.
 The source is David Renard, *Représentations des groupes réductifs p-adiques*,

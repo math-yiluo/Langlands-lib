@@ -1,7 +1,5 @@
 # Statement: quotient maps carry parabolic and Borel subgroups to parabolic and Borel subgroups
 
-Worker 75.
-
 `Langlands.GroupScheme.QuotientParabolicImageStatement.{u} : Prop` is a statement-only,
 `Prop`-valued definition. This module does not prove it, and it adds no other definitions,
 theorems or axioms. It imports [`Reductive.QuasiSplit`](../Reductive/QuasiSplit.md), for
@@ -117,7 +115,9 @@ subgroup of `G_{k̄}`, then `H'_{k̄} = q_{k̄}(H_{k̄})` is a Borel subgroup of
   `P_{k̄}` contains a Borel subgroup of `G_{k̄}`.
 - **Borel over `k`.** By 17.66 the Borel subgroups of `G` are the algebraic subgroups that become
   Borel over `k̄`; this is `IsGeometricBorelSubgroup`. Its first component `IsBorelSubgroup i`
-  follows mathematically from the second (the Library does not prove this): a smooth connected
+  follows mathematically from the second (for a closed subgroup the Library proves this in
+  `isGeometricBorelSubgroup_of_baseChange_toAlgebraicClosure`, module
+  `Absolute.GeometricBorelDescent`): a smooth connected
   solvable closed subgroup of `G` containing `H` becomes one of `G_{k̄}` containing `H_{k̄}`, so it
   equals `H`.
 
@@ -126,8 +126,9 @@ subgroup of `G_{k̄}`, then `H'_{k̄} = q_{k̄}(H_{k̄})` is a Borel subgroup of
 - Only the image part for parabolic and Borel subgroups is stated, as in 17.69. Over an
   algebraically closed field, Proposition 17.20 in full (also maximal unipotent subgroups and
   maximal tori, and the converse that every such subgroup of `Q` is an image) is stated as
-  `AlgClosedQuotientSubgroupImageStatement` (candidate module
-  `Absolute.QuotientSubgroupImageStatement`, not yet in the Library).
+  `AlgClosedQuotientSubgroupImageStatement` (module
+  `Absolute.QuotientSubgroupImageStatement`), proved as `algClosedQuotientSubgroupImage`
+  ([`Absolute.QuotientSubgroupImageProof`](../Absolute/QuotientSubgroupImageProof.md)).
 - `Q` need not be reductive and `q` need not be central.
 
 ## Related Library results

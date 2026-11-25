@@ -10,8 +10,7 @@ The source is Brian Conrad, *Weil and Grothendieck approaches to adelic points*
 (2011), printed p.14: the henselian characterization and Lemma 5.3. It is
 registered as `conrad-2011-weil-grothendieck-adelic-points`, SHA256
 `fe4a9193aff4ef575665b40971f3da32f850a74d87b3f2d0fa28bba26b9cbabb`.
-Worker 105 authored the shared proof draft; Worker 1607 checked and prepared
-this proof for independent review. The coefficient embedding, fibre rationality
+The coefficient embedding, fibre rationality
 and local injectivity lemmas below are internal supporting results for this
 proof; their constructions are described here.
 
@@ -49,7 +48,7 @@ ultrametric inequality is assumed.
 Let `S` and `T` be local topological `R`-algebras, with `T` having continuous
 multiplication and open units. Let `f : S → T` be a local `R`-algebra map that
 is a topological embedding. Then `RingPoint.changeRing f` is a topological
-embedding from `S`-points to `T`-points. The affine case is the published
+embedding from `S`-points to `T`-points. The affine case is
 `affineSchemeCoefficientEmbeddings_proof`, applied to every affine open chart.
 The global statement is assembled as follows.
 
@@ -103,7 +102,7 @@ open, which is `isLocallyInjective_iff_isOpen_diagonal`.
 
 - `isOpenMap_completionSmoothPointMap`: for a smooth `f` over `K`, the map on
   `K̂`-points is open. Base change along `K → K̂` gives a smooth morphism over
-  `K̂` (`MorphismProperty.overPullbackMap`). The published
+  `K̂` (`MorphismProperty.overPullbackMap`).
   `isOpenMap_smoothSchemePointMap` applies to `K̂`, regarded as a nontrivially
   normed complete field (`completionNontriviallyNormedField`). The
   homeomorphisms `schemeBaseChangeTopology_proof` and the naturality

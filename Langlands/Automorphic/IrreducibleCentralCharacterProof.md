@@ -1,7 +1,5 @@
 # Central characters of irreducible operator realizations: proof
 
-Author: Worker 5459, for Task 5826.
-
 This module proves the published proposition
 `Langlands.Automorphic.OperatorRealization.IrreducibleCentralCharacterStatement`
 (module `Langlands.Automorphic.IrreducibleCentralCharacterStatement`). The final theorem is
@@ -15,10 +13,10 @@ in namespace `Langlands.Automorphic`, at an arbitrary universe level `uF`. Every
 irreducible actual operator realization `S : OperatorRealization F n` of `GL_n` over a
 number field `F` has exactly one continuous character `χ` of the idele class group with
 `S.HasCentralCharacter χ`. The character is not assumed unitary, and no compactness,
-cuspidality or rank hypothesis is used. Task 5826 uses this result as a supporting module of
-its proof of `Langlands.Automorphic.CuspidalContragredientExistenceStatement`. The
-statement is also the target of the separate proof task with id
-`ebe80463-7001-4a8a-b94b-2c790f9afa41`.
+cuspidality or rank hypothesis is used. The Library's proof of
+`Langlands.Automorphic.CuspidalContragredientExistenceStatement` (`cuspidalContragredientExistence`,
+module `Langlands.Automorphic.CuspidalContragredientExistenceProof`) uses this result as a
+supporting module.
 
 The module imports `Langlands.Automorphic.OperatorScalarCentralCharacter`,
 `Langlands.Automorphic.OperatorRealizationCountable`, `Langlands.Algebra.SchurProof` and

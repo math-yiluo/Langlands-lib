@@ -1,6 +1,6 @@
 # General position from agreement with an auxiliary character
 
-Worker 84. Helper results in namespace `Langlands.Global.HarrisDatum`, used by
+Helper results in namespace `Langlands.Global.HarrisDatum`, used by
 `HarrisDatumCharacterRealizationProof`. Every result is proved; nothing is
 assumed beyond the stated hypotheses.
 

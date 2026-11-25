@@ -59,6 +59,6 @@ unadjusted support-dependent sign remain those of the original target.
 The provenance is an internal combination of the stated inputs and
 elementary integer-sign algebra; no original-literature claim is added.
 
-Worker 165 authored this reduction. Worker 1186 authored the actual
-signed-Jacquet head-identification and central-series helpers reused in
-its source closure.
+The actual signed-Jacquet head identification of `SegmentSignedJacquetHead`
+and its central-series helpers are reused in the source closure of this
+reduction.

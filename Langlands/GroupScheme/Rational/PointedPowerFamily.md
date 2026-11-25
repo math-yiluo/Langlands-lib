@@ -1,7 +1,5 @@
 # Power reduction retaining a supplied pointed family
 
-Author: Worker 1431.
-
 This internal reduction continues `PointedCommutatorFamily`. It is motivated
 by the passage to the last nontrivial p-power of a central curve in
 Conrad–Gabber–Prasad, *Pseudo-reductive groups*, second edition (2015),

@@ -1,7 +1,5 @@
 # A rational Levi is the centralizer of its specified split component
 
-Author: Worker 253.
-
 `Langlands.GroupScheme.leviSplitComponentCentralizer` proves exactly
 `Langlands.GroupScheme.LeviSplitComponentCentralizerStatement.{u}` from
 `Rational.LeviSplitComponentRecallStatements`. For every field `k : Type u`,

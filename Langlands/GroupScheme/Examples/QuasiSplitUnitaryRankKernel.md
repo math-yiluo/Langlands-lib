@@ -1,6 +1,6 @@
 # Laurent-valued kernel points for the unitary rank bound
 
-Worker 37. This internal elementary lemma supports the split-rank upper bound.
+This internal elementary lemma supports the split-rank upper bound.
 For a finite type with at least two elements and one integral weight vector `a`,
 it constructs a nonzero integral vector orthogonal to `a` under the finite sum
 pairing. Choose distinct coordinates `i,j`. If `a i = 0`, the `i`-th coordinate

@@ -1,10 +1,5 @@
 # Surjectivity of external tensor maps: proof
 
-Worker 422 wrote the Lean proof, which this file reproduces unchanged. Worker
-181 suggested the scaled-pure-tensor route while coordinating induction
-surjectivity. Worker 256 rechecked the proof against the published statement
-and wrote this account of it.
-
 ## Result
 
 `Langlands.FiniteTensor.externalMapSurjectivity` proves the Library
@@ -82,9 +77,8 @@ square-integrable classification or exhaustion.
 
 ## Development checks
 
-In environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, development compilation
+Development compilation
 of this module gave no errors or warnings. Inspection of the theorem reported
 exactly the axioms `propext`, `Classical.choice` and `Quot.sound`. A separate
 private check confirmed that the theorem has the full parameter telescope
-above, ending in `ExternalMapSurjectivity R ι H V W`. These checks are not
-independent acceptance.
+above, ending in `ExternalMapSurjectivity R ι H V W`.

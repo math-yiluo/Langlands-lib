@@ -1,6 +1,6 @@
 # Local and archimedean effect of a Hecke determinant twist on cuspidal pairs
 
-Supporting module of Task 5003 (module
+Supporting module for the proof of `AssociatedGammaStatement` (module
 `Langlands.Automorphic.AssociatedGammaAutomorphicTwist`). It supplies three groups of
 facts about the published twist `heckeDeterminantTwist` by an arbitrary Hecke character
 `χ` (Library `Langlands/Automorphic/HeckeTwist/*`), used to build the automorphic Hecke Euler

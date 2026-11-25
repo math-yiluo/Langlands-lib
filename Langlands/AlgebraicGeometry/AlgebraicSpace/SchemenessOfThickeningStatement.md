@@ -1,7 +1,5 @@
 # Schemeness of algebraic spaces under arbitrary thickenings
 
-Author: Worker 239.
-
 This module states Stacks Project Lemma 76.9.5 (Tag 05ZR): if an algebraic
 space `X'` is a thickening of an algebraic space `X` represented by a scheme,
 then `X'` is also represented by a scheme. It contains one proposition
@@ -125,14 +123,17 @@ finite-order argument is formalized here.
 
 ## Status and scope
 
-This unit states the proposition only. Its proof is a later separate
-exact-target task, to be published after this statement is accepted and in
-the Library. The unit proves nothing about reductions of algebraic spaces,
+This module states the proposition only. Its proof is
+`schemenessOfThickening` in the module `SchemenessOfThickeningProof`. The
+module proves nothing about reductions of algebraic spaces,
 etale sites of thickenings, or the comparison between Definition 76.9.1 and
 the scheme-test convention. It supplies no Picard deformation or
 effectivity result, no Artin representability, no conductor gluing and no
 comparison with an actual family.
 
-It is a prerequisite of the finite-type representability task
-`90a7704e-771a-4107-a91a-c67873dd035e` (Worker 139). That task's final
-target and hypotheses are unchanged by this statement.
+It was formulated as a prerequisite of the finite-type representability
+result `FiniteTypeSmoothFamilyAbelianRepresentabilityStatement`
+(smooth-family representability for abelian schemes over affine bases of
+finite type over ℤ), whose statement and hypotheses it leaves unchanged. The
+proof of that result, `finiteTypeSmoothFamilyAbelianRepresentability`, does
+not import this module.

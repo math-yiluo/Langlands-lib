@@ -38,14 +38,12 @@ glGeometricExcessBranch_of_upper Geometric.padicGeometricLemma.{uF, uW}
 ```
 
 - `Langlands.glGeometricExcessBranch_of_upper` (module
-  `Langlands.Representation.Exponents.GeometricExcessBranchFromUpper`,
-  published earlier for this task) derives
+  `Langlands.Representation.Exponents.GeometricExcessBranchFromUpper`) derives
   `GLGeometricExcessBranchStatement.{uF,uV,uW}` from the proposition
   `Geometric.PadicGeometricLemmaTheorem.{uF,uW}`.
 - `Langlands.Geometric.padicGeometricLemma.{uF,uW}` (module
-  `Langlands.Representation.Geometric.GeometricLemmaProof`, published by
-  Workers 164 and 194 for task 67ebcf61) proves that proposition with no
-  premise. It is the normalized upper geometric lemma for positive-rank `GL`.
+  `Langlands.Representation.Geometric.GeometricLemmaProof`) proves that
+  proposition with no premise. It is the normalized upper geometric lemma for positive-rank `GL`.
 
 So the geometric lemma enters as a proved Library theorem, not as a premise
 of `glGeometricExcessBranch`. The theorem takes no supplied filtration,

@@ -24,11 +24,12 @@ integrand with the integrable shell integrand. The shell convergence conclusion
 applies to every test on this same half-plane.
 
 The private complex-power and spectral-bound proofs adapt the corresponding
-helpers in Worker 656's published `OneVariableMellinProof`, which in turn
-attributes their elementary power argument to Worker 235's
+helpers in `OneVariableMellinProof`, which in turn
+takes their elementary power argument from
 `RamifiedFiniteFunctionMellinProof`. Those adapted proofs, rather than any new
 original-source assertion, are the provenance of this internal strengthening.
-The imported shell theorem is Worker 277's published result. The mathematical
+The imported shell theorem is the published `finiteFunctionShellSeries` of
+`RankinSelberg.FiniteFunctionShellSeriesProof`. The mathematical
 context and original-source locators for the one-variable argument remain in
 the unchanged `OneVariableMellinProof.md`; no Fourier equation or normalized
 generator is asserted here.

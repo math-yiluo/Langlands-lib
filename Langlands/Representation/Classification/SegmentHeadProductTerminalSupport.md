@@ -1,7 +1,5 @@
 # Terminal supports for derivatives of supplied head products
 
-Author: Worker 357.
-
 This internal specialization constructs actual factor-derivative constituent
 data for an irreducible subquotient of a derivative of a supplied special-head
 product, or of a supplied subquotient of that product. At every original
@@ -11,7 +9,7 @@ to a supercuspidal support of the supplied derivative constituent.
 
 The entry constructor is
 `Langlands.Classification.segmentHeadProductTerminalSupportDataOfSubquotient`.
-The same focused unit provides its whole-product specialization and two
+The same module provides its whole-product specialization and two
 existential projections to terminal truncations and their support union.
 The full product irreducibility criterion is not established here.
 
@@ -147,8 +145,7 @@ ordered first/tail induction comparisons and general support addition. Its
 source-subquotient projection uses proved derivative exactness and actual
 subquotient transitivity. Its full paired proof explanation and dependency
 audit are in `ProductDerivativeSupportAggregation.md`. That constructor is
-independently accepted and published, and its current paired bytes equal the
-reviewed frozen pair.
+independently published.
 
 The general derivative finite-length route uses induction on composition
 length, an actual cuspidal-product embedding for a simple input, exactness,
@@ -170,30 +167,24 @@ are proposition interfaces; the actual `TwoSupercuspidalProductStructureProof`
 is absent. The completed route audit supplements the name scan: proposition
 definitions and imported statements are not used as proved inputs.
 
-The trusted operator rulings
-[bd71b9185aab5d6eafffb7891bd3a3ca](/home/taskhub/pilot/correspondence/bd71b9185aab5d6eafffb7891bd3a3ca.md),
-[0edda6122ce65ed7ac51603c37473920](/home/taskhub/pilot/correspondence/0edda6122ce65ed7ac51603c37473920.md),
-[30144f6f9b59540b88b6d4c1517892d9](/home/taskhub/pilot/correspondence/30144f6f9b59540b88b6d4c1517892d9.md),
-and [ed80148e21e7523abfc048f455e98eb0](/home/taskhub/pilot/correspondence/ed80148e21e7523abfc048f455e98eb0.md)
-were read in full. They permit independently proved general derivative
-theory, the newly proved exactly support-only bound, and its restricted
-length-two intermediate step. The reducibility permissions
-[2b33898bdd0a5ff1b9031be5155a06f0](/home/taskhub/pilot/correspondence/2b33898bdd0a5ff1b9031be5155a06f0.md)
-and [ca18fd5005bf5e12a3f7cade18dca865](/home/taskhub/pilot/correspondence/ca18fd5005bf5e12a3f7cade18dca865.md)
-were also read in full. They are confined to that support proof's base case.
+The independence boundary of this module admits independently proved
+general derivative theory, the exactly support-only bound, and its restricted
+length-two intermediate step. The permitted reducibility inputs are confined
+to that support proof's base case.
 This constructor invokes only its final support theorem, never `core_mid`,
 `core`, their at-most-one-simple-factor consequence or a replacement segment
 formula. The support proof's published Markdown records the detailed lower
 route and the same restrictions.
 
-The closure contains no Ze80 3.5/9.6 formula or proof successor, segment-socle
+The closure contains no Ze80 3.5/9.6 formula or proof of one, segment-socle
 derivative formula, full segment/head/socle/Jacquet formula, or downstream
-classification proof used as a premise. It is independent of parent
+classification proof used as a premise. It is independent of
 `GenericSegmentProductUniqueness`, multisegment exhaustion, ordered
 strong-head existence, quotient coverage, ordered conversion, tempered
 uniqueness, square-integrable classification and exhaustion, regular
-exhaustion, and the full host criterion in either direction. The
-segment-socle part of task `8e5b4563` is excluded. No derivative
+exhaustion, and the full criterion `SegmentHeadProductIrreducibility` in
+either direction. The segment-socle part of the derivative statements of
+`Classification.SegmentSocleDerivativesStatement` is excluded. No derivative
 irreducibility, truncated-head identification, multiplicity result or
 stronger support-proof intermediate result is added as a consumer input.
 The exact proof route and all inherited fingerprints have been reconciled;
@@ -201,12 +192,12 @@ there are no holes, new axioms, prohibited native syntax or missing pairs.
 
 ## Validation
 
-The private and ordinary entry modules compiled at this base through the
-approved Lean service with zero errors and zero warnings. The ordinary
+The private and ordinary entry modules compiled at this base with zero
+errors and zero warnings. The ordinary
 selected-constructor inspection used a Lake build, reports exactly the
 independent level parameters `uF,uV`, and reports only `propext`,
-`Classical.choice` and `Quot.sound`. Compilation and this author audit do
-not establish independent semantic acceptance.
+`Classical.choice` and `Quot.sound`. Compilation and this audit do
+not replace a semantic review.
 
 ## Complete project import inventory
 

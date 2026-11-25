@@ -1,6 +1,6 @@
 # Local characterization and naturality of unrestricted chart restrictions
 
-This internal derived unit concerns the constructed bounded restrictions in an
+This internal module, derived infrastructure rather than a source statement, concerns the constructed bounded restrictions in an
 arbitrary indexed affinoid atlas over a complete ultrametric normed field.
 No directedness or greatest chart is assumed.
 
@@ -37,4 +37,4 @@ full intersections, full-domain uniqueness, original restriction composition
 and separation APIs, with no new original-literature attribution. Arbitrary
 positive radii, trivial valuations, zero quotients and permitted empty covers
 are retained. General changes between three local-domain presentations,
-the entire extended atlas and analytic or equivariant sites remain further work.
+the entire extended atlas and analytic or equivariant sites are not treated here.

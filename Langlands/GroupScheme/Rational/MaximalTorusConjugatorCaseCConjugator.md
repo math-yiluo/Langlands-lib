@@ -1,7 +1,5 @@
 # A centralizer conjugator from a conjugation of Lie elements
 
-Author: Worker 1420.
-
 This internal, derived module supplies the step of Case C that turns a conjugation of Lie
 elements into the predicate `HasCentralizerConjugator` of module
 `MaximalTorusConjugatorCaseCAssembly`. It also contains the transport lemmas this step needs:

@@ -1,8 +1,8 @@
 # Arithmetic pair L-factors at unramified places
 
-Supporting module of Task 5003 (module
+Supporting module of the gamma comparison for weakly associated cuspidal pairs (module
 `Langlands.Automorphic.AssociatedGammaUnramifiedMatch`, namespace
-`Langlands.ClassField.Global.RelativeWeilGroup`). It computes the arithmetic side of the
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup`). It computes the arithmetic side of the
 outside-set matching used in the proof of `AssociatedGammaStatement` (Henniart 2000,
 Théorème 2.3): at a finite place where `S`, `S'` and the twisting Hecke character are
 unramified, the arithmetic pair L-factor of the twisted pair is the reciprocal of

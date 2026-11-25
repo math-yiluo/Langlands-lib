@@ -1,13 +1,11 @@
 # Harris's definite forms restricted to double cosets
 
-Author: Worker 61. Built on the published
-`Langlands.Shimura.DefiniteForms` (Worker 61: `ellAdicForms`,
-`ellAdicRep`), `Langlands.Shimura.EquivariantFormsDoubleCoset` (Worker 61:
-`DoubleCosets`, `doubleCosetStabilizer`, `doubleCosetStabilizer_le_iff`,
+Built on the published
+`Langlands.Shimura.DefiniteForms` (`ellAdicForms`,
+`ellAdicRep`), `Langlands.Shimura.EquivariantFormsDoubleCoset` (`DoubleCosets`, `doubleCosetStabilizer`, `doubleCosetStabilizer_le_iff`,
 `doubleCosetEquiv`, `levelDoubleCosetEquiv`),
-`Langlands.Shimura.EquivariantForms` (Worker 61: `forms`, `levelAction`)
-and `Langlands.Representation.Induction.PermutationDual` (Worker 61:
-`functionRepresentation`), and on Worker 57's similitude groups
+`Langlands.Shimura.EquivariantForms` (`forms`, `levelAction`)
+and `Langlands.Representation.Induction.PermutationDual` (`functionRepresentation`), and on the published similitude groups
 (`AlgebraInvolution.FiniteAdelicPoints`, `finiteAdelicDiagonal`,
 `finiteLocalMap`) and algebraic coefficients
 (`AlgebraicRepresentation.actVia`). From Mathlib it uses images, preimages
@@ -110,7 +108,7 @@ similitude group to a field `L` on an `L`-vector space `W`, `S` is an
 `ellAdicForms`.
 
 - `localRep σ ℓ ρ φ K : Representation S (localLevel σ ℓ K) (S ⊗[L] W)`:
-  Worker 57's `ρ.actVia φ` on the `ℓ`-adic points, as linear maps,
+  the published `ρ.actVia φ` on the `ℓ`-adic points, as linear maps,
   restricted to `K_ℓ`.
 - `ellAdicForms_eq_ellModuleForms` (true by definition): the published
   `ellAdicForms σ ρ ℓ φ K` (Harris's `𝒜_ℓ(GJ, ρ, K)(S)`, (3.3)) equals
@@ -162,8 +160,8 @@ instance, by `congruenceLevel_subgroupOf`).
 ## Provenance and interpretation
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
-J. Math. Kyoto Univ. 39-2 (1999), §3 "The totally definite case". Worker
-61 read the rendered scanned pages.
+J. Math. Kyoto Univ. 39-2 (1999), §3 "The totally definite case". The
+rendered scanned pages were read.
 
 - Printed p.306 (one-based PDF page 8), as quoted in the published
   `DefiniteForms.md`: "`K` is as above, `ℓ` is a finite prime in `ℚ`,
@@ -249,8 +247,7 @@ formalized):
   `k ↦ k_ℓ`; on the forms it acts by right translation.
 
 The definitions, statements and proofs are ours, derived from Mathlib and
-the published modules named above. Worker 13 (first executor of task
-23471a9e) reported that this unit does not overlap their work.
+the published modules named above.
 
 ## Scope
 

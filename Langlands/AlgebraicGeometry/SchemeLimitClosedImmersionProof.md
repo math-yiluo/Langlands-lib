@@ -1,7 +1,5 @@
 # Proof of closed-immersion detection in affine scheme diagrams
 
-Worker 105 authored this proof, reused here by Worker 1596.
-
 `affineDiagramClosedImmersionDescent` proves the exact proposition
 `Langlands.AlgebraicGeometry.AffineLimit.AffineDiagramClosedImmersionDescent`
 in `SchemeLimitClosedImmersionStatement`. The source and derived scope
@@ -24,5 +22,5 @@ The proof invokes `finiteTypeSurjectivityDescent` for these actual ring
 diagrams, cocones and maps. It takes `unop` of the returned stage and arrow,
 and applies `IsClosedImmersion.of_surjective_of_isAffine` to the returned
 surjective component. No injectivity of transitions or finite presentation
-is used. This proof retains the affine scope and remaining geometric
-obligations recorded in the statement.
+is used. This proof keeps the affine scope recorded in the statement; the further
+geometric steps listed there are not proved here.

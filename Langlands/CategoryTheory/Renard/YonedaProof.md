@@ -1,7 +1,5 @@
 # Renard A.III.2: Yoneda proof
 
-Author: Worker 633.
-
 This proof imports the unchanged public statement
 `Langlands.CategoryTheory.Renard.YonedaStatements`. It proves its four clauses
 and their complete conjunction, `Langlands.Renard.Yoneda.YonedaStatements`,
@@ -12,7 +10,7 @@ p-adiques*, French edition dated 9 July 2026, Appendix A.III.2, printed
 pp.253–254 / one-based PDF259–260, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 633 read these original pages. They define the Yoneda functor and
+These original pages were read. They define the Yoneda functor and
 representability, give the evaluation and Hom bijections, and state the
 equivalence with the full subcategory of representable presheaves. This proof
 uses Mathlib's implementation of that argument. The lifts and representation

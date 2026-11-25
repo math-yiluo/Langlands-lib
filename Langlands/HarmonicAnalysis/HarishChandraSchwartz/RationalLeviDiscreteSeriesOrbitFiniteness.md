@@ -1,12 +1,10 @@
 # Discrete-series orbits under topological group isomorphisms; Theorem VIII.1.2 for `M_I(F)`
 
-Author: Worker 3642, task `1ef6854b-f0e9-4d96-bbe5-cb8c4b52f927` (revision 1).
-
 Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalLeviDiscreteSeriesOrbitFiniteness`,
 namespace `Langlands.HarishChandraSchwartz`. It imports:
 
 - `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalDiscreteSeriesOrbitFinitenessStatement`
-  (Library, this author's Unit 2): `RationalDiscreteSeriesOrbitFinitenessStatement` (Theorem
+  (Library): `RationalDiscreteSeriesOrbitFinitenessStatement` (Theorem
   VIII.1.2 for a connected reductive group scheme, statement). Through its imports come
   `rationalDiscreteSeriesFixedOrbits`, the abstract `discreteSeriesFixedOrbits`,
   `DiscreteSeriesClass`, `IsDiscreteSeriesClass`, `DiscreteSeriesOrbitClass`, the action of
@@ -14,9 +12,9 @@ namespace `Langlands.HarishChandraSchwartz`. It imports:
   `UnitaryCentralCharacter`, `centralSubgroupCoefficientNorm`, `SmoothDualClass.HasFixedVector`,
   `SmoothDualClass.twist`, `IrreducibleAdmissibleRep.isoMk`, `equivOfRepresentationEq` and
   `rationalPoints_nonarchimedeanGroup`.
-- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalInducedCoefficients` (Library, Unit 19)
+- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalInducedCoefficients` (Library)
   for the local instances on `G(F)`, and `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalLeviScheme`
-  (Library, this author's) for `leviScheme_isAffineHom` and `leviScheme_locallyOfFiniteType`.
+  (Library) for `leviScheme_isAffineHom` and `leviScheme_locallyOfFiniteType`.
 - `Langlands.Representation.Aubert.General.RationalLeviNormTopology` (Library):
   `leviRationalPointHomeomorph i ν I : L(F) ≃ₜ* M_I(F)`, `leviRationalNormCharacters` and
   `leviRationalNormCharacters_apply_points`.
@@ -39,7 +37,7 @@ J.-L. Waldspurger, *La formule de Plancherel pour les groupes p-adiques, d'aprè
 J. Inst. Math. Jussieu 2 (2003), 235–333, DOI 10.1017/S1474748003000082 (literature id
 `waldspurger-2003-plancherel`, SHA256
 `4b6a6162cd0b3863703fb2f65d1698f926caf813114917f2084c16e38f2e30f7`). Printed page numbers; the
-PDF page is the printed page minus 234. The author checked the quotations on the rendered PDF
+PDF page is the printed page minus 234. The quotations were checked on the rendered PDF
 page 87.
 
 - Théorème VIII.1.2, printed p. 321: "Pour tout sous-groupe ouvert compact `H` de `G`, `Θ^H_G`
@@ -53,7 +51,7 @@ page 87.
 Waldspurger applies Theorem VIII.1.2 to the Levi subgroups `M` of `G`, viewed as reductive groups
 in their own right. In the Library, the statement `RationalDiscreteSeriesOrbitFinitenessStatement`
 concerns a connected reductive group scheme and its rational points, while the actual Levi
-subgroup `M_I(F)` of the units on actual points is a subgroup of `G(F)`. This module (provenance:
+subgroup `M_I(F)` of the actual-point modules is a subgroup of `G(F)`. This module (provenance:
 internal) supplies the adapter: the transport of all objects in `Θ^K` along a topological group
 isomorphism, applied to `L(F) ≃ₜ* M_I(F)`. The source does not discuss this identification.
 
@@ -112,7 +110,7 @@ Moreover: `G`, `H` nonarchimedean, `νG : I → (G →* ℝ≥0ˣ)`, `νH : I �
 
 ### Actual Levi subgroups (section `Rational`)
 
-The setting of Units 19–29: `F` a nonarchimedean local field, `G` a group scheme over `F` with
+The setting of the other actual-point modules: `F` a nonarchimedean local field, `G` a group scheme over `F` with
 `[IsAffineHom G.X.hom]`, `[LocallyOfFiniteType G.X.hom]`, `i` a maximal split torus, `ν` a
 cocharacter, `I` a finite set of simple roots, `M_I(F)` the subtype `𝐌` of `G(F)`, and
 `L = Standard.leviScheme i ν (rootSet i ν I)` the Levi group scheme (local notation `𝐋`).

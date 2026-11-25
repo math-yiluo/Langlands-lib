@@ -1,15 +1,16 @@
 # Berkovich's center map from an analytification to its scheme
 
-This unit defines the underlying continuous map of Berkovich's canonical morphism
+This module defines the underlying continuous map of Berkovich's canonical morphism
 `π : X^an → X`, for the Library's polynomial-locus analytification. It does this
 first for an affine analytification `Space K P` of a presented `K`-algebra `A`,
 with values in the prime spectrum of `A`. It then does it for the glued
 analytification `Space K f` of a scheme `X` locally of finite type over `K`, with
 values in `X`. A point goes to the prime ideal on which its multiplicative
-seminorm vanishes. The unit proves that these maps are continuous, natural for
+seminorm vanishes. The module proves that these maps are continuous, natural for
 the maps induced by `K`-algebra maps, and compatible with the gluing. It does not
-prove that `π` is surjective or describe its fibres. Those claims are left to a
-later statement unit.
+prove that `π` is surjective or describe its fibres. Surjectivity and the fibres
+over `K`-rational points are stated in `AnalytificationCenterStatement` and
+proved in `AnalytificationCenterProof`.
 
 ## Provenance
 
@@ -118,11 +119,13 @@ is assumed.
 
 ## Scope
 
-The unit imports the published `AffineAnalytificationSeminorm` and
-`SchemeAnalytificationSpace` unchanged and edits no published input. It defines
+The module imports the published `AffineAnalytificationSeminorm` and
+`SchemeAnalytificationSpace`. It defines
 only the underlying continuous map of `π`; no map of structure sheaves is
 constructed. It does not state that the center map is surjective, that it
 induces a bijection on closed points or on `K`-points, or that the preimage of
 `U` under `center K f` is the image of `ι K f U`. It does not compare the center
-map with the rational-point map of `SchemeAnalytificationRationalPoints`. Those
-claims are successor obligations of the parent task.
+map with the rational-point map of `SchemeAnalytificationRationalPoints`. Of
+these claims, surjectivity, the preimage of `U` and the comparison with the
+rational-point map are stated in `AnalytificationCenterStatement` and proved in
+`AnalytificationCenterProof`.

@@ -1,7 +1,5 @@
 # Haar normalization of the actual mirabolic minus functors
 
-Author: Worker 710.
-
 This internal adapter identifies the canonical inverse half of the actual
 radical Haar character with the determinant real-power characters used by
 `Langlands.Derivative.Mirabolic.psiMinus` and `phiMinus`. It also identifies
@@ -103,13 +101,14 @@ A recursive audit at Library base
 `84ad0affe3e3e8feae73b57da624fc1f16a6923b` found 60 imported `Langlands`
 modules, all with Lean and Markdown bytes matching that published tree.
 The closure contains no classification or segment module, no consumer
-nonadjacent or full-two-factor conclusion, and none of the prohibited
-independence conclusions of task `3c9849a4-a6c0-43ac-9982-d15ed76bf1e9`.
+nonadjacent or full-two-factor conclusion, and none of the conclusions
+excluded for the nonadjacent two-supercuspidal product
+`TwoSupercuspidalNonadjacentProductIrreducible`.
 Its only derivative modules are the actual mirabolic character and minus
 constructions. No derivative theorem is assumed: this module proves its
 normalization comparisons from the radical Haar theorem. The private
-closure inventory is an author audit, not independent acceptance evidence.
+closure inventory was made with the module; it is not an independent check.
 
 The module makes no assertion about the modular function of the full
 mirabolic group, derivative exactness, detection, highest-derivative
-pairings, or product irreducibility. Those remain separate obligations.
+pairings, or product irreducibility. Those are separate results.

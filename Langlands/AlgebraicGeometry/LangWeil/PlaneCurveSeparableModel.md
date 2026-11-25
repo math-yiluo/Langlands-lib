@@ -1,7 +1,5 @@
 # Separable models of absolutely irreducible plane curves
 
-Author: Worker 2969.
-
 These are derived implementation lemmas for the coordinate reduction on
 printed p.349 of Wolfgang M. Schmidt, *Zur Methode von Stepanov*, Acta
 Arithmetica 24 (1973), registered source

@@ -1,6 +1,6 @@
 # Factorial stalks of smooth schemes over algebraically closed fields
 
-This module proves the published Library proposition
+This module proves the Library proposition
 `Langlands.AlgebraicGeometry.SmoothAlgClosedFactorialStalks` with the exact interface
 
 ```lean
@@ -36,7 +36,7 @@ Each helper module has its own Markdown with the details.
 
 `smoothAlgClosedFactorialStalks_of_localizations` takes as hypothesis that every prime
 localization of a smooth algebra over an algebraically closed field in universe `u` is
-factorial. It follows the affine-chart argument of the published
+factorial. It follows the affine-chart argument of
 `Langlands.AlgebraicGeometry.SmoothDomainStalksProof`. Given a point `x`,
 `X.affineCover.exists_eq` supplies an affine chart `U` and a point `y` over `x`. The chart map
 is an open immersion, so its composite `q` with `p` is smooth.
@@ -64,16 +64,12 @@ with `MvPowerSeriesFactorial.uniqueFactorizationMonoid_of_coord`. That theorem t
 coordinate change `MvPowerSeriesFactorial.exists_algEquiv_coeff_single_zero_ne_zero` as its
 hypothesis. Nothing is left as an outer assumption.
 
-## Provenance and contributions
+## Provenance
 
 The statement's Markdown records the original derivation: Stacks Lemma 33.25.3 (Tag 056S,
 smooth over a field implies regular) with Lemma 15.123.2 (Tag 0AG0, a regular local ring is
 a UFD). The
 implemented proof avoids regularity and dimension theory. It instead uses the Cohen-type
 identification of the completion via formal smoothness, factoriality of power series rings
-via Weierstrass preparation, and faithfully flat descent. The scheme reduction adapts the
-published `SmoothDomainStalksProof`.
-
-Worker 254 wrote this module, `FlatLocalFactorialDescent`,
-`SmoothAlgClosedFactorialLocalizations` and `MvPowerSeriesFactorial`. Worker 1131 wrote
-`FormallySmoothLocalCompletion` and `MvPowerSeriesCoordinateChange`.
+via Weierstrass preparation, and faithfully flat descent. The scheme reduction adapts
+`SmoothDomainStalksProof`.

@@ -1,6 +1,6 @@
 # Actual coefficient recasting for the intermediate tail comparison
 
-Internal supporting constructions by Worker 318 for the comparison motivated by
+Internal supporting constructions for the comparison motivated by
 JPSS section 9.3, printed 456–457.
 The actual standard matrix character of `ψ.scale (-1)` equals the inverse
 matrix character of `ψ`. Its inverse matrix character equals the standard
@@ -28,7 +28,7 @@ membership theorems transport the representation by that same equality and
 retain actual coefficient-image membership. The smoothness adapter likewise
 transports a supplied smoothness proof by equality. These are equality
 transports only. The standard `whittakerRankCast` definition and its evaluation
-theorem now live in the imported [WhittakerRankCast](WhittakerRankCast.md) pair,
+theorem live in the imported [WhittakerRankCast](WhittakerRankCast.md) pair,
 with their original namespace and meaning. This module retains the inverse
 cast, both coefficient-image membership lemmas and the smoothness adapter.
 
@@ -47,8 +47,8 @@ The final lemma applies the published closed theorem
 the supplied p-adic topological realization and only assumes smoothness of
 the representation and membership in its actual inverse coefficient image.
 It adds no Whittaker-type, irreducibility, functional nonvanishing or measure
-assumptions. The separate cutoff proof has been independently accepted and
-published; this module imports `ZeroRowLastRowCutoffProof`. It does not prove
+assumptions. The separate cutoff proof is `ZeroRowLastRowCutoffProof`, which
+this module imports. It does not prove
 the intermediate-tail span inclusion.
 
 Provenance is internal derivation from the published character equalities,

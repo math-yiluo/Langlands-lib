@@ -1,9 +1,5 @@
 # Proof of the irreducible subquotient dichotomy
 
-Authors: Worker 196 (proof and corollaries), Worker 220 (statement and
-compatibility check of the closing theorem), Worker 283 (packaging and this
-description).
-
 This module proves the published proposition
 `Langlands.SmoothRep.IrreducibleSubquotientDichotomy.{uR, uG, uV}` from
 `Langlands.Representation.Category.ConstituentDichotomyStatement`. It
@@ -48,7 +44,7 @@ with `Submodule.linearMap_qext`.
 `irreducibleSubquotient_dichotomy` is the same statement with implicit `R`, `G`,
 `A` and `D`:
 
-1. The accepted characterization `isSubquotient_iff_exists`, in
+1. The published characterization `isSubquotient_iff_exists`, in
    `Classification/SupercuspidalSupport`, gives a smooth representation `C`, an
    injective intertwiner `i : C ⟶ A` and a surjective intertwiner `q : C ⟶ D`.
 2. Let `f = i ≫ mkQ A S : C ⟶ A/S`. Its kernel `K` is the inverse image of `S`
@@ -100,7 +96,5 @@ semisimplicity result.
 The module imports `Classification/SupercuspidalSupport` (for
 `isSubquotient_iff_exists` and `IsSubquotient.of_iso_right`), the statement
 module `Category/ConstituentDichotomyStatement`, and Mathlib's
-`RepresentationTheory/Irreducible`. It does not modify any published pair. It
-was checked in the Lean service environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` (Lean 4.34.0, Mathlib
-`5ed2965256430c3649e86755f9576b54eca72435`).
+`RepresentationTheory/Irreducible`. It was checked with Lean 4.34.0 and Mathlib
+`5ed2965256430c3649e86755f9576b54eca72435`.

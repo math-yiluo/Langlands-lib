@@ -1,7 +1,5 @@
 # Simple transitivity on actual relative Levi images
 
-Author: Worker 593.
-
 This internal helper applies the published theorem
 `Langlands.GroupScheme.relativeLeviConjugacy` to the actual image-valued
 moduli defined in `RelativeLevi.ModuliValue`. It introduces no independent

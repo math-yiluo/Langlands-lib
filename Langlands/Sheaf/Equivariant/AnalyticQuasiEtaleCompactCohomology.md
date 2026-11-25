@@ -1,12 +1,12 @@
 # Compactly supported cohomology of quasi-étale `G`-sheaves on analytic spaces
 
-Author: Worker 26. Uses the published `Langlands.Sheaf.Equivariant.AnalyticCompactSupport`
-(topology on `L`-valued points, Worker 26), `Langlands.Sheaf.Equivariant.AnalyticGSheaves`
-(twisted quasi-étale site, lifts on compact objects, quasi-étale `G`-sheaves, Worker 26),
+Uses the published `Langlands.Sheaf.Equivariant.AnalyticCompactSupport`
+(topology on `L`-valued points), `Langlands.Sheaf.Equivariant.AnalyticGSheaves`
+(twisted quasi-étale site, lifts on compact objects, quasi-étale `G`-sheaves),
 `Langlands.Sheaf.Equivariant.TwistedCompactSupport` (compactly supported sections and
-their derived functors on discrete sheaves of a twisted site, Worker 26) and
-`Langlands.Cohomology.DiscreteSheafDerivedComplex` (derived section complexes, Worker 26).
-From Worker 21 it uses the quasi-étale site `QuasiEtaleSite` and the points of that
+their derived functors on discrete sheaves of a twisted site) and
+`Langlands.Cohomology.DiscreteSheafDerivedComplex` (derived section complexes).
+It also uses the quasi-étale site `QuasiEtaleSite` and the points of that
 site given by `L`-valued points (`Langlands.Geometry.Analytic.OverSitePoints`:
 `QuasiEtaleSite.PointAxioms`, `QuasiEtaleSite.toPoint`,
 `QuasiEtaleSite.pointEquivariance`).
@@ -35,7 +35,7 @@ All declarations are in `Langlands.Sheaf.Equivariant.Analytic`.
 
 ## Data and universes
 
-- `K : Type u` is a complete ultrametric normed field and `X` an object of Worker 21's
+- `K : Type u` is a complete ultrametric normed field and `X` an object of
   `LocalizedCategory.{u, v, v} (K := K)`. Both `QuasiEtaleSite X` and
   `TwistedOver quasiEtale ρ` have objects in `Type (max u (v + 1))`. Morphisms of
   `QuasiEtaleSite X` lie in `Type (max u (v + 1))`, and morphisms of the twisted site
@@ -45,14 +45,16 @@ All declarations are in `Langlands.Sheaf.Equivariant.Analytic`.
 - `G : Type z` is a group and `ρ : G →* Aut X`. The smooth parts and the cohomology
   use `[TopologicalSpace G] [IsTopologicalGroup G]`.
 - Coefficients: `R : Type (max u (v + 1) uL)` is a commutative ring and sheaves take
-  values in `ModuleCat.{max u (v + 1) uL} R`. This is the universe of Worker 21's
+  values in `ModuleCat.{max u (v + 1) uL} R`. This is the universe of the
   points `QuasiEtaleSite.toPoint L x h`, which the published construction requires to
   be the universe of the modules. We write `w = max u (v + 1) uL`.
 - `[Small.{w} G]` is assumed for the statements about the twisted site. It holds,
   for example, when `G` lies in a universe at most `w`.
 - `h : ∀ x : P.obj X, QuasiEtaleSite.PointAxioms L x`: every `L`-valued point satisfies
-  the point axioms of the quasi-étale site. This is a hypothesis. Worker 21's module
-  proves no instance of it.
+  the point axioms of the quasi-étale site. This is a hypothesis. The statement
+  `QuasiEtaleSite.GeometricPointStatement` (module `QuasiEtaleGeometricPointStatement`)
+  asserts it for complete algebraically closed `L`, and `QuasiEtaleSite.geometricPoint`
+  (module `QuasiEtaleGeometricPointProof`) proves that statement; neither is used here.
 
 ## Size, sheafification and injectives
 
@@ -88,7 +90,7 @@ Under the finite equivariant refinements of the next sections, the published
 
 ## Supports
 
-- `quasiEtalePoints L h x` is Worker 21's point `QuasiEtaleSite.toPoint L x (h x)` of
+- `quasiEtalePoints L h x` is the point `QuasiEtaleSite.toPoint L x (h x)` of
   the quasi-étale topology, in universe `w`. Its fibre over a quasi-étale `U → X` is
   the set of `L`-valued points of `U` over `x`.
 - `isCompactlySupported_quasiEtalePoints_iff L h s`: for a presheaf `F` of modules on
@@ -100,10 +102,10 @@ Under the finite equivariant refinements of the next sections, the published
 
 ## Compactly supported sections
 
-In all the following, the topology `pointTopology L X`, Worker 21's action
+In all the following, the topology `pointTopology L X`, the action
 `EtaleSite.pointAction L ρ` on `L`-valued points, its continuity
 `continuousConstSMul_pointAction` and the local smallness above are supplied locally.
-Worker 21's `QuasiEtaleSite.pointEquivariance L ρ h` gives the published
+`QuasiEtaleSite.pointEquivariance L ρ h` gives the published
 `TwistedOver.PointEquivariance` of the family of points.
 
 - `quasiEtaleCompactSectionsRep L ρ h R`:
@@ -128,7 +130,7 @@ sieve of a compact quasi-étale object with a lift contains a finite family of a
 from compact quasi-étale objects with lifts, each locally equivariant, that generates a
 covering sieve. It is what makes discrete sheaves an abelian category with exact
 discrete-part coreflector. Geometrically it combines the finiteness of quasi-étale
-coverings of compact spaces with Berkovich's Key Lemma on lifts (compare Worker 21's
+coverings of compact spaces with Berkovich's Key Lemma on lifts (compare the
 statement `QuasiEtaleActionLiftStatement`). It is not proved here.
 
 - `quasiEtaleGSheafCompactCohomology L ρ h R q`:

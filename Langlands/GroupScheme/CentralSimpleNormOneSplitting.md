@@ -1,7 +1,5 @@
 # Splitting the actual reduced-norm-one group
 
-Authors: Worker 124.
-
 This internal construction identifies the actual scalar extension of the
 reduced-norm-one group of a finite-dimensional central simple algebra with
 the actual special-linear group of its reduced degree. A splitting chart

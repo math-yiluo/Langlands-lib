@@ -57,13 +57,13 @@ finite in number. Each step is described in the Markdown of its module.
   `Langlands.Algebra.CommutingDimensionRecurrence`,
   `Langlands.Algebra.CommutingDimensionNilpotent`,
   `Langlands.Algebra.CommutingDimensionPrimary` and
-  `Langlands.Algebra.SandwichDimensionBoundProof` (by Worker 307): the
+  `Langlands.Algebra.SandwichDimensionBoundProof`: the
   commuting-endomorphism dimension estimate (BZ76 Lemma 4.10) and the
   dimension bound.
 
 ## Checks
 
-A development `lean_check` built all fourteen modules with no errors or
+A development check built all fourteen modules with no errors or
 warnings. Inspection of `compactCoefficientFixedLevelFiniteness` reports
 universe parameters `uF, uV` and only the axioms `propext`,
-`Classical.choice` and `Quot.sound`. This is not independent acceptance.
+`Classical.choice` and `Quot.sound`.

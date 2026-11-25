@@ -1,6 +1,6 @@
 # Strict positivity of `j_P` at unitary points (target and reduction)
 
-Worker 5. `Langlands.Plancherel.ConditionalDynamicOppositeUnitaryPositiveStatement`
+`Langlands.Plancherel.ConditionalDynamicOppositeUnitaryPositiveStatement`
 is a Prop-valued target about the Library's canonical scalar `j_P` of
 `J_{P|P̄} J_{P̄|P}` (`conditionalCanonicalRationalScalar`). It says two things:
 

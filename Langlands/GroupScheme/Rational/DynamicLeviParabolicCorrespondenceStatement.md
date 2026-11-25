@@ -1,7 +1,5 @@
 # Actual parabolics in a represented dynamic Levi
 
-Author: Worker 1291.
-
 `DynamicLeviParabolicCorrespondenceStatement` is a proposition target, not a
 proof. Let `k : Type u` be any field, let `G` be connected reductive over `k`,
 and let `χ : Gm → G` be any actual cocharacter. For every closed group-scheme
@@ -42,8 +40,9 @@ The assumptions are only connected reductivity of `G`, the cocharacter, and
 the closed representative of its centralizer. In particular, reductivity of
 `L`, parabolicity of the extension and inverse image, the inverse laws, and
 the structural correspondence are not premises. Reductivity of arbitrary
-represented dynamic centralizers retains its separate statement and proof
-owner. No splitness, characteristic restriction, root-classification
+represented dynamic centralizers is the separate statement
+`DynamicCentralizerReductiveStatement`, proved by `dynamicCentralizerReductive`.
+No splitness, characteristic restriction, root-classification
 hypothesis, or general-linear model is imposed.
 
 The classical source is Renard, *Représentations des groupes réductifs

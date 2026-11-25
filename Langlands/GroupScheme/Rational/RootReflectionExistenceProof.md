@@ -1,7 +1,5 @@
 # Proof of intrinsic integral relative-root reflection existence
 
-Author: Worker 3922.
-
 `relativeRootReflectionExistence` proves the published proposition
 `RelativeRootReflectionExistenceStatement.{u}` exactly, at arbitrary universe
 `u`. It adds no hypothesis. Fix any field `k`, any connected reductive group

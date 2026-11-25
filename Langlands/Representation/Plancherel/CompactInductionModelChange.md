@@ -1,7 +1,5 @@
 # Actual changes between compact models of normalized induction
 
-Author: Worker 200.
-
 ## Provenance and purpose
 
 This is an internal construction from the published normalized compact-picture

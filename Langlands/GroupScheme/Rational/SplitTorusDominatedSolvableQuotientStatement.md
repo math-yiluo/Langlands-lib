@@ -1,7 +1,5 @@
 # Torus quotients of split-torus-dominated solvable groups
 
-Author: Worker 1485.
-
 `SplitTorusDominatedSolvableQuotientStatement.{u}` is a proposition target.
 For every field `k : Type u`, it concerns a smooth connected affine actual
 group scheme `H` that is solvable and has

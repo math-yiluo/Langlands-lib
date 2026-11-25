@@ -1,6 +1,6 @@
 # Actual finite-order determinant multiplication on automorphic forms
 
-Author: Worker 2. This internal construction restricts actual multiplication
+This internal construction restricts actual multiplication
 by a finite-order Hecke determinant character to the existing complex automorphic
 forms. The number field `F : Type u` and natural rank are arbitrary, including
 rank zero. All function carriers and their inherited topologies are unchanged.
@@ -24,7 +24,7 @@ formulas and the finite right-action identity retain the convention
 
 The enveloping formula is an equality in the existing finite-smooth ambient
 space: differentiating the multiplied form gives the multiplier of the
-differentiated original function. This unit does not assume or assert that
+differentiated original function. This module does not assume or assert that
 every such differentiated function belongs to the full automorphic space.
 
 With the explicit `CompactSpace (AdeleQuotient F)` instance required by the

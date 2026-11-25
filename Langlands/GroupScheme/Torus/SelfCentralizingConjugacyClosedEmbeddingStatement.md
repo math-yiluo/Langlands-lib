@@ -112,8 +112,8 @@ SGA 3 does not state this as a single result. The statement packages steps 1–6
 above, which SGA 3 carries out for `G/Z` and the representations `ρ_n` with kernel
 exactly the centre `Z`. Here the kernel of `ρ` is only assumed central. The
 self-centralizing torus then gives `Ker ρ ⊂ T`, and the same argument applies.
-The statement is a premise of the affineness proof of Task 7782 for the
-normalizer quotient. That proof combines it with
+The statement is a premise of the affineness proof
+`selfCentralizingTorusConjugacyQuotientAffine` for the normalizer quotient. That proof combines it with
 `Langlands.GroupScheme.TorusSubgroupModuli.GeneralLinearAffineSumStatement` and
 `Langlands.GroupScheme.RelativeTorusImageFactorizationStatement`.
 

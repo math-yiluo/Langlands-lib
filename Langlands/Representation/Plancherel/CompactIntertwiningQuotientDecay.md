@@ -85,6 +85,7 @@ the published `unramifiedLeviInductionCompactEquiv_symm_mul` equals
 
 The decay predicate and the integrability of `W` are hypotheses. For the actual groups of the
 conditional intertwining statement, `σ` can be the inverse opposite chart and `W` a negative
-power of the height (as in the separate candidate module `ParabolicOppositeQuotient`); proving the decay predicate on the
+power of the height (as in the separate module `ParabolicOppositeQuotient`); proving the decay predicate on the
 region of that statement requires the root-cone estimate and is not done here. No rational
-continuation, squared-modulus identity or completion of the host theorem is claimed.
+continuation, squared-modulus identity or completion of
+`ConditionalParabolicIntertwiningStatement` is claimed.

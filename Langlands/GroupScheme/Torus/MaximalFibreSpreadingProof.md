@@ -1,7 +1,5 @@
 # Spreading maximality from a fibre with reductive identity component
 
-Worker 855, with Worker 5600 (the separate fibre base-change helper).
-
 ## Result and source
 
 `Langlands.GroupScheme.maximalTorusFibreSpreading` proves exactly
@@ -54,8 +52,8 @@ contained in that torus. The existing comparison from the torus to `H` therefore
 has an inverse, as checked by cancellation of the subgroup monomorphisms.
 Consequently the geometric-fibre map `f` is an isomorphism.
 
-[`MaximalFibreSpreadingBaseChange`](MaximalFibreSpreadingBaseChange.md), supplied
-by Worker 5600, reflects this isomorphism to the original residue field using
+[`MaximalFibreSpreadingBaseChange`](MaximalFibreSpreadingBaseChange.md)
+reflects this isomorphism to the original residue field using
 fpqc descent along its algebraic closure. The underlying map of `f` is a
 monomorphism since its composite with `e ≫ c` is the closed immersion `i`.
 Both its source and target are smooth over `S`, and the target has geometrically

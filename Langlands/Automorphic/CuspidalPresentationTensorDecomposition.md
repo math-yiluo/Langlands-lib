@@ -1,10 +1,10 @@
 # Tensor decomposition for a supplied cuspidal spectral presentation
 
-This internal unit connects the exact finite spectral presentation supplied in
-the Rankin–Selberg task to the full carrier and all actual infinite source
+This internal module connects the exact finite spectral presentation supplied in
+the Rankin–Selberg statement `ArchimedeanFactorizationStatement` to the full carrier and all actual infinite source
 models. Its provenance is the Library's local admissible Schur theorem, actual
 finite-factor evaluation and actual infinite-place density models, together with
-the included restricted-tensor and finite-family tensor helper results. It is
+the restricted-tensor and finite-family tensor helper results. It is
 an algebraic ingredient toward Cogdell's factorization argument, not a claim
 that the global Whittaker factorization is already proved.
 
@@ -15,7 +15,7 @@ compactness of its additive adelic quotient, a rank `r + 1`, an actual cuspidal
 operator realization `T`, and the supplied
 `P : CuspidalSpectralPresentation.{u, uQ} T`. Assume every actual embedded
 `P.localComponent v` is irreducible and admissible. These are precisely the
-local conditions on the spectral presentation used by the parent task; no
+local conditions on the spectral presentation used by that statement; no
 finite-slice irreducibility or admissibility is added as a premise.
 
 The supplied finite slice is irreducible and admissible. There is also a
@@ -102,10 +102,8 @@ intertwining equivalence, which is what the prescribed-vector construction
 asserts. It does not choose local test data on the embedded local components
 or compare the global Whittaker functional with their local functionals.
 
-Three earlier pending helper pairs are included unchanged for coordinated
-integration: `FiniteFamilyGKTensor`, `CuspidalPlaceTensorDecomposition`, and
-`RestrictedTensor/Irreducibility`. Their independent review and publication
-are separate from this candidate's review. The global Whittaker functional's
+This module uses `FiniteFamilyGKTensor`, `CuspidalPlaceTensorDecomposition`, and
+`RestrictedTensor/Irreducibility`. The global Whittaker functional's
 ordinary and dual product formulas with one scalar, the smooth comparison for
-all infinite group elements, and archimedean integral nonvanishing remain
-open. This unit does not complete `ArchimedeanFactorizationStatement`.
+all infinite group elements, and archimedean integral nonvanishing are not
+established here. This module does not complete `ArchimedeanFactorizationStatement`.

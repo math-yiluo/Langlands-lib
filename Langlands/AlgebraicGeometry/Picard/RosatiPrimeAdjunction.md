@@ -1,6 +1,6 @@
 # Actual prime Weil adjunction for Rosati conjugation
 
-This internal helper unit derives two consequences of the existing actual Weil-pairing construction. It is a step toward the geometric Rosati trace argument; it does not assert trace invariance or positivity.
+This internal helper module derives two consequences of the existing actual Weil-pairing construction. It is a step toward the geometric Rosati trace argument; it does not assert trace invariance or positivity.
 
 The scope is every scheme `S : Scheme.{u}` with `QuasiSeparatedSpace S`, an actual abelian scheme `A` over `S`, the existing Rosati construction prerequisites `P`, dual datum `W`, its exact additivity witness `hadd`, a relative finite-Weil transition witness `compatibility`, every test object `T : Over S`, and every prime `p`.
 

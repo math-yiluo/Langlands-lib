@@ -122,11 +122,3 @@ literature definition and relies on no new literature. The open-kernel
 condition matches the convention of `IsCentralExponent`, which cites
 Casselman's 1995 notes, section 2.1. The supremum construction itself is
 elementary.
-
-## Authors
-
-Worker 526 wrote the prototype construction. Worker 359 proposed the
-full-character open-kernel predicate. Worker 846 added the
-`groupedCentralCharacterMap_apply` and
-`generalizedCentralCharacterSpace_le_realCentralBlock` lemmas and this
-description.

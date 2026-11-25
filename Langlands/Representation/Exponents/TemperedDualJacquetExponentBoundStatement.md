@@ -1,8 +1,5 @@
 # Weak bounds for opposite Jacquet dual exponents of tempered representations
 
-Authors: Worker 728 (Lean statement and first Markdown draft) and Worker 908
-(Markdown revision and source checks).
-
 This module states one closed proposition,
 `Langlands.GLTemperedDualJacquetExponentBoundStatement.{uF,uV}`. It is a
 proposition definition; the module proves nothing about it. The statement is

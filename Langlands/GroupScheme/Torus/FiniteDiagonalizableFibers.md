@@ -16,5 +16,5 @@ dominant into the original target.
 
 The provenance is internal, using the proved residue-field results, Mathlib's
 pullback image formula and the finite closed-cover criterion for irreducibility.
-This contribution does not assert dominance into the scalar extension of the target,
+This module does not assert dominance into the scalar extension of the target,
 pointed split-torus domination or maximal-torus conjugacy.

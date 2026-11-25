@@ -1,8 +1,5 @@
 # Proof: quotients of connected reductive groups by central subgroups
 
-Authors: Worker 1428 (Lean proof and Markdown) and Worker 1499 (Markdown
-revision and submission).
-
 `Langlands.GroupScheme.centralQuotientReductive` proves the proposition
 `Langlands.GroupScheme.CentralQuotientReductiveStatement.{u}` (module
 `Reductive/CentralQuotientReductiveStatement`). Let `k` be any field, `G` a
@@ -75,8 +72,7 @@ the nilpotent splitting (16.48) by the finiteness lemmas of
 `CentralPreimageTrivial`. These are derived from Library results on
 commutative groups, tori and unipotent groups.
 
-Checked with `lean_check` in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`
+Checked with `lean_check`
 against Library commit `dd78edadc914cf56ca81c595cee581a3570d415c`, together
-with the three helper modules (diagnostic
-`980ecc53-e56b-4d35-a240-bd6dc92d1068`, Lake build): 0 errors, 0 warnings,
+with the three helper modules (Lake build): 0 errors, 0 warnings,
 axioms `propext`, `Classical.choice`, `Quot.sound`.

@@ -22,7 +22,8 @@ the last evaluation detects the remaining coefficient. Joint evaluation is
 injective in each case and the equal dimensions give surjectivity. This
 proves all the frame evaluations are isomorphisms in the geometric fibres.
 
-This is the frame-specific linear algebra used for Task 7930 in the relative
+This is the frame-specific linear algebra used for the frame-normalized Hilbert
+locus (`FrameHilbertLocusStatement`; module `FrameHilbertLocusReduction`) in the relative
 analogue of step (VI) of Mumford, Fogarty and Kirwan, *Geometric Invariant
 Theory*, 3rd ed. (1994), Proposition 7.3, printed p. 134 (PDF p. 147),
 registered source `provided-ec58cb66687d0d54d9e39b6ec21281b651fe3a6d039f9b5d099c79791671233f`.

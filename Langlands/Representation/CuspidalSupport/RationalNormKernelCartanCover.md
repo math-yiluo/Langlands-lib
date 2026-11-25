@@ -46,9 +46,9 @@ the finite chamber argument permits an empty sum. No compactness assertion
 about the full central quotient is included.
 
 The provenance is internal: the proof adapts the published actual
-`rationalFiniteChamberCartanCover` argument of Worker 349, replacing its
+`rationalFiniteChamberCartanCover` argument, replacing its
 existential choice of generators by the prescribed-generator refinement.
-The corrected family and its kernel-valued evaluation come from Worker 1618's
-positive-generator construction. This adapter does not construct the
+The corrected family and its kernel-valued evaluation come from the
+positive-generator construction in `RationalNormKernelPositiveGenerators`. This adapter does not construct the
 same-compact geometric witness, a common Iwahori level, an actual kernel
 residual cover, a Hecke sandwich, or uniform coefficient support.

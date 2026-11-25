@@ -25,8 +25,8 @@ modules on a scheme `X` and `U` is an open of `X`.
 - `unitSection U ∈ Γ(𝟙, U)` is the section `1` of the structure sheaf (`unitSection_def`). It is
   compatible with restriction (`map_unitSection`), `g • unitSection U = g` (`smul_unitSection`), and
   `g ↦ g • unitSection U` is bijective (`smul_unitSection_bijective`).
-- `tensorPowSection s n ∈ Γ(L^{⊗n}, U)`, for `s ∈ Γ(L, U)`, is `s^{⊗n}`: the unit section for `n = 0`
-  and `s^{⊗n} ⊗ s` for `n + 1` (`tensorPowSection_zero`, `tensorPowSection_succ`,
+- `tensorPowSectionFLT s n ∈ Γ(L^{⊗n}, U)`, for `s ∈ Γ(L, U)`, is `s^{⊗n}`: the unit section for `n = 0`
+  and `s^{⊗n} ⊗ s` for `n + 1` (`tensorPowSectionFLT_zero`, `tensorPowSectionFLT_succ`,
   `tensorPowSection_one`). It commutes with restriction (`map_tensorPowSection`).
 
 **Frames.** For `s ∈ Γ(M, U)` and an open `V`:
@@ -47,7 +47,7 @@ Anthropic Lean formalization of Fermat's Last Theorem at commit
 `anthropic-flt-complete-lean-source-6e837e75`). That work is Copyright 2026 Anthropic, PBC, and is
 licensed under the Apache License, Version 2.0. Copies of its `LICENSE`, `NOTICE` and `ATTRIBUTION.md`
 are in `licenses/Anthropic-FLT/`. `ATTRIBUTION.md` has no row for this file, so no third-party notice
-applies. Declaration names and namespaces are FLT's. The port makes only these changes:
+applies. Declaration names and namespaces are FLT's, apart from the renames described under “Names changed by the Library” below. The port makes only these changes:
 
 - an attribution header is added above the imports;
 - the imports of the FLT modules `Definitions.Def_PresheafOfModules_InternalHom`,
@@ -71,3 +71,12 @@ applies. Declaration names and namespaces are FLT's. The port makes only these c
 ```
 
 The line numbers refer to the file without the attribution header.
+
+## Names changed by the Library (22 November 2026)
+
+weil-conjectures, on which the Library depends, declares 21 of the names of this extract itself, so that no module could import both. The Library renamed these 21 declarations: each keeps its name space and the last component of its name gets the marker `FLT` (`tensorPow` becomes `tensorPowFLT`, `tensorPow_zero` becomes `tensorPowFLT_zero`). In this file:
+
+- it declares `AlgebraicGeometry.Scheme.Modules.tensorPowSectionFLT` (FLT `AlgebraicGeometry.Scheme.Modules.tensorPowSection`), `AlgebraicGeometry.Scheme.Modules.tensorPowSectionFLT_succ` (FLT `AlgebraicGeometry.Scheme.Modules.tensorPowSection_succ`), `AlgebraicGeometry.Scheme.Modules.tensorPowSectionFLT_zero` (FLT `AlgebraicGeometry.Scheme.Modules.tensorPowSection_zero`);
+- its uses of `AlgebraicGeometry.Scheme.Modules.tensorPow` are uses of `tensorPowFLT` now.
+
+Statements and proofs are otherwise unchanged. Elsewhere on this page the names are given as they now are. The Lean file also imports `Langlands.MathlibBase` where FLT imports `Mathlib` (see `Langlands/MathlibBase.md`).

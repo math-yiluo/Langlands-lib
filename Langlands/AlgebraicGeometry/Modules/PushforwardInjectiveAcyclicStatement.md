@@ -1,10 +1,10 @@
 # Pushforwards of injective scheme modules are acyclic for global sections
 
-Author: Worker 727.
-
 `Langlands.AlgebraicGeometry.Modules.PushforwardInjectiveAcyclicStatement.{u}`
 is a `Prop`-valued definition. This module states the vanishing and supplies no
-proof. A separate exact-target proof of this proposition is still required.
+proof. The proposition is proved as
+`Langlands.AlgebraicGeometry.Modules.pushforwardInjectiveAcyclic` in the module
+`PushforwardInjectiveAcyclicProof`.
 
 ## Exact interface
 
@@ -55,8 +55,7 @@ Together with exactness of the pushforward along a closed immersion and the
 Library's acyclic-resolution comparison
 (`Langlands.Cohomology.AcyclicResolution`), this vanishing identifies
 `Hⁿ(Y, i_* M)` with `Hⁿ(X, M)` for a closed immersion `i : X ⟶ Y`. In the
-proof of Stacks tag 0BF3 (relative theorem of the cube, task
-`eab37f2b-d9cf-40e4-86ad-492608a9c630`) this identifies the cohomology of the
+proof of Stacks tag 0BF3 (relative theorem of the cube) this identifies the cohomology of the
 pushforward along a section axis with the cohomology of the axis itself.
 
 ## Original source

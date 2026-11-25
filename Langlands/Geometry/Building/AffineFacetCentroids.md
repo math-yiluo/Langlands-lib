@@ -1,6 +1,6 @@
 # Centroids and least original faces in affine root arrangements
 
-This unit derives affine averaging properties
+This module derives affine averaging properties
 directly from the existing original root-sign facet closures. It introduces
 no additional assertion from the literature.
 

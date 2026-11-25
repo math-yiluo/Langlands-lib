@@ -31,7 +31,7 @@ The original atlas supplies the explicit unramified full-degree integer
 subfield condition and the distinct geometric tangent characters. The
 coordinate type is `Fin d`. Geometric fields have universe `max u v`, as
 in `SpecialModule`. Existence of the unramified subfield and specialization
-to invariant 1/d remain separate obligations.
+to invariant 1/d are not proved here.
 
 ## Actual order actions and chart comparisons
 
@@ -78,7 +78,7 @@ does not supply these height certificates.
 comparison to a linear equivalence over the actual division order
 `IntegerRing K D`.
 
-This unit compares individual charts. It asserts no full compatible-family
+This module compares individual charts. It asserts no full compatible-family
 point comparison, independence of generator choices, iterated base change,
 refinement descent, equivalence with all formal schemes, framing module,
 Drinfeld moduli functor or representability.

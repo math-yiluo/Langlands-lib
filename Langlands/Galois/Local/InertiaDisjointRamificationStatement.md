@@ -1,7 +1,5 @@
 # Total ramification from disjointness with the inertia fixed field
 
-Author: Worker 107.
-
 ## Exact proposition and scope
 
 `Langlands.PadicField.InertiaDisjointTotallyRamified.{u}` is a proposition
@@ -64,7 +62,7 @@ Jean-Pierre Serre, *Local Fields*, translated by Marvin Jay Greenberg,
 Springer GTM 67 (1979), registered source `serre-1979-local-fields`,
 file `/home/taskhub/central-library/Serre--Local Fields--1979.pdf`, SHA256
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`.
-Worker 107 read these original passages:
+These original passages were read:
 
 - Chapter V, section 4, Lemmas 6–7 and the proof of Proposition 7,
   printed pages 89–90 / PDF pages 96–97. Lemma 7 derives total
@@ -103,8 +101,12 @@ It does not choose or enlarge the common stage, construct the finite
 models, or prove their disjointness. Those steps and the subsequent norm
 and solvability arguments are separate obligations.
 
-A future proof must justify the residue and unramified-subextension
-argument for arbitrary finite `D`. Applying a finite Galois unramified
-criterion directly to a potentially non-Galois `D` would not suffice.
+A proof by the source route must justify the residue and
+unramified-subextension argument for arbitrary finite `D`. Applying a finite
+Galois unramified criterion directly to a potentially non-Galois `D` would not
+suffice. The proof in the Library, `inertiaDisjointTotallyRamified` in
+`Langlands.Galois.Local.InertiaDisjointRamificationProof`, covers arbitrary
+finite `D` by another route: the absolute Galois residue-index identity and
+infinite Galois correspondence, without a maximal unramified subextension.
 This module adds only the proposition target and proves none of these
 arithmetic implications.

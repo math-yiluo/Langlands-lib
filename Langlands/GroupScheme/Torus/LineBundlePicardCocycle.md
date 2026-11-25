@@ -1,6 +1,6 @@
 # Torus cocycles from triviality of actual line bundles
 
-Worker 591. This internal derived adapter uses effective descent of natural
+This internal derived adapter uses effective descent of natural
 multiplicative unit cocycles to actual line bundles, rather than a comparison
 between sheaf and module Picard groups. Its intended application is Conrad,
 *Reductive group schemes* (2014), Proposition 6.2.11(2), pp.210–211.

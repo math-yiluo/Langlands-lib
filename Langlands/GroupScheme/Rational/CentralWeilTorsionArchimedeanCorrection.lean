@@ -1,4 +1,4 @@
-import Langlands.ClassField.Global.ArchimedeanNormPowerApproximation
+import Langlands.ClassFieldTheory.Global.ArchimedeanNormPowerApproximation
 import Langlands.GroupScheme.Rational.CentralNormOneArchimedeanCorrection
 import Langlands.GroupScheme.Rational.CentralWeilTorsionCocycleLift
 
@@ -11,7 +11,7 @@ universe u
 open CategoryTheory AlgebraicGeometry NumberField
 open scoped TensorProduct CategoryTheory.MonObj NumberField.LiesOver
 
-namespace Langlands.ClassField.Global.TensorUnitShapiro
+namespace Langlands.ClassFieldTheory.Global.TensorUnitShapiro
 
 set_option backward.isDefEq.respectTransparency false
 set_option backward.isDefEq.respectTransparency.types false
@@ -50,11 +50,11 @@ theorem exists_archimedeanTensorRadical (n : ℕ) (c : Gal(M/Kv) → (B ⊗[F] M
   change e (x ^ n) w = archimedeanTensorUnitsEquiv v (extendTensorUnit M (p.symm y)) w
   rw [archimedeanTensorUnitsEquiv_extend, show p (p.symm y) = y from p.apply_symm_apply y, hy]
 
-end Langlands.ClassField.Global.TensorUnitShapiro
+end Langlands.ClassFieldTheory.Global.TensorUnitShapiro
 
 namespace Langlands.GroupScheme.IsCentralIsogeny
 
-open GaloisPoint Langlands.ClassField.Global.TensorUnitShapiro
+open GaloisPoint Langlands.ClassFieldTheory.Global.TensorUnitShapiro
 
 set_option backward.isDefEq.respectTransparency false
 set_option backward.isDefEq.respectTransparency.types false

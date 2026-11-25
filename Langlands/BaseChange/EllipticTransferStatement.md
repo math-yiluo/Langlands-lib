@@ -16,7 +16,7 @@ supported in the (σ-)elliptic set. The statement is **not proved** here.
   - I.2.5, Définition (printed p. 17): concordant functions; I.2.5, Proposition (printed
     p. 18): (1) every `φ` supported in `G(E)_{σ-r}` is concordant with some `f` supported in
     `G(F)_r`; (2) every `f` supported in `G(F)_r` whose orbital integrals vanish at the
-    non-norms is concordant with some `φ` supported in `G(E)_{σ-r}`. This is Task 7416's
+    non-norms is concordant with some `φ` supported in `G(E)_{σ-r}`. This is
     `RegularTransferStatement`.
   - II.1.2 (printed pp. 55–56): the sets `G(F)_e` and `G(E)_{σ-e}`.
   - II.6.3 (printed p. 120) and II.6.4 (printed p. 121): the simple trace formula and its
@@ -33,8 +33,8 @@ supported in the (σ-)elliptic set. The statement is **not proved** here.
 Let `F : Type u` be a nonarchimedean local field of characteristic zero (`[Field F]
 [ValuativeRel F] [TopologicalSpace F] [IsNonarchimedeanLocalField F] [CharZero F]`), let
 `E : Type v` be a commutative `F`-algebra with `[TopologicalSpace E] [IsTopologicalRing E]
-[IsModuleTopology F E]`, `σ : E ≃ₐ[F] E`, `l n : ℕ`, and assume `IsCyclicAlgebra σ l` (Task
-7405: `E` is a finite reduced `F`-algebra of dimension `l`, `σ` has order `l`, and the
+[IsModuleTopology F E]`, `σ : E ≃ₐ[F] E`, `l n : ℕ`, and assume `IsCyclicAlgebra σ l`
+(`Langlands.BaseChange.Norm`: `E` is a finite reduced `F`-algebra of dimension `l`, `σ` has order `l`, and the
 σ-fixed elements are those of `F`). Let `GL_n(F)` and `GL_n(E)` carry their Borel σ-algebras
 (introduced locally with `letI ... := borel _` and `BorelSpace` instances `⟨rfl⟩`). For all
 Haar measures `μF` on `GL_n(F)` and `μE` on `GL_n(E)`:
@@ -48,8 +48,8 @@ Haar measures `μF` on `GL_n(F)` and `μE` on `GL_n(E)`:
   `IsSigmaEllipticSupported σ l φ` and `AreConcordant σ l μF μE φ f`.
 
 `IsEllipticSupported` and `IsSigmaEllipticSupported` are defined in
-`Langlands.BaseChange.EllipticSupport` (this task); `AreConcordant` and `VanishesOffNorms`
-are Task 7416's, the latter being the first half of `AreConcordant`.
+`Langlands.BaseChange.EllipticSupport`; `AreConcordant` and `VanishesOffNorms`
+are defined in `Langlands.BaseChange.OrbitalIntegral`, the latter being the first half of `AreConcordant`.
 
 ## Use
 
@@ -63,7 +63,7 @@ indicator of the elliptic set.
 
 ## Proof idea (not formalized)
 
-Combine Task 7416's `RegularTransferStatement` (HL I.2.5, Proposition) with a cut-off by the
+Combine `RegularTransferStatement` (HL I.2.5, Proposition) with a cut-off by the
 indicator of the elliptic set. Two separate facts are used: the elliptic sets are open and
 closed in the regular sets, which keeps the cut-off function locally constant with compact
 support, and they are unions of (σ-)conjugacy classes, which controls the orbital integrals of
@@ -123,10 +123,11 @@ norms is a hypothesis on `f`.
 
 ## Hypotheses
 
-- `CharZero F`, as in Tasks 7416, 7432 and 7446: the Library's `IsRegularSemisimple` and
+- `CharZero F`, as in the statements on orbital integrals, twisted characters and functions
+  whose orbital integrals vanish off the elliptic set: the Library's `IsRegularSemisimple` and
   `IsRegularElliptic` ask for a separable characteristic polynomial, which is HL's regularity
-  (II.1.2) in characteristic zero; the regular transfer used in the proof idea is Task 7416's
-  statement, which also assumes `CharZero F`. In characteristic zero, `IsEllipticSupported`
+  (II.1.2) in characteristic zero; the regular transfer used in the proof idea is
+  `RegularTransferStatement`, which also assumes `CharZero F`. In characteristic zero, `IsEllipticSupported`
   and `IsSigmaEllipticSupported` are HL's support conditions in `G(F)_e` and `G(E)_{σ-e}`.
   For the σ-elliptic set this also uses HL I.2.2: the elements associated with `δ` form one
   conjugacy class. For imperfect `F` the Library's notions would be strictly smaller. The
@@ -144,8 +145,8 @@ inside `AreConcordant` and `VanishesOffNorms`. Nothing is normalized.
 
 ## Dependencies and names
 
-The module imports `Langlands.BaseChange.EllipticSupport` (this task), Task 7416's
+The module imports `Langlands.BaseChange.EllipticSupport`,
 `Langlands.BaseChange.OrbitalIntegral` (`AreConcordant`, `VanishesOffNorms`) and the
-Library's `Langlands.HarmonicAnalysis.Basic` (`SchwartzBruhat`); Task 7405's
+Library's `Langlands.HarmonicAnalysis.Basic` (`SchwartzBruhat`);
 `IsCyclicAlgebra` (`Langlands.BaseChange.Norm`) comes through these imports. The names and
-argument orders are those cited in the task.
+argument orders are those of the published declarations.

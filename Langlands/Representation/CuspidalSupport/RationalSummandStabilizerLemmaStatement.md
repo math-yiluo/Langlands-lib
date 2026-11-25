@@ -1,6 +1,6 @@
 # Renard VI.4.4, Lemma: the groups T ⊂ H ⊂ N and restriction to T
 
-Author: Worker 1222. Module
+Module
 `Langlands.Representation.CuspidalSupport.RationalSummandStabilizerLemmaStatement`,
 namespace `Langlands.CuspidalSupport`. Statement
 `RationalSummandStabilizerLemmaStatement : Prop` (universe parameters `uF`, `uV`); nothing is
@@ -128,9 +128,10 @@ The statement asserts:
 - The second assertion of the Lemma (components) follows from the third and irreducibility
   of `ρ`; both are stated because the source states both.
 
-## Remaining obligations
+## Proof
 
-The proof is a separate obligation. The source proof uses the preliminary remarks of VI.4.4
+The proof is `rationalSummandStabilizerLemma` in `RationalSummandStabilizerLemmaProof`.
+The source proof uses the preliminary remarks of VI.4.4
 (the decomposition (VI.4.4.2), `π ≃ ind_H^G(ρ_H)`, `[N : H] = m`, and the replacement argument
 giving a `W` with `H = H̃`), Proposition VI.3.2 (iii) adapted to `T` and `H`, the duality
 between tori and lattices for `X(G)`, and the adjunction (VI.4.4.4) together with

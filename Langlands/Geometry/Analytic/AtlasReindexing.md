@@ -1,7 +1,5 @@
 # Transport of actual atlases along index equivalences
 
-Author: Worker 36.
-
 This is internal infrastructure for comparing constructed atlas presentations
 whose chart indices initially occupy different universes. It imports the
 published actual atlas, strong-map and strong quasi-isomorphism constructions.

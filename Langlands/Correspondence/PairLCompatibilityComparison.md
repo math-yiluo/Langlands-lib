@@ -1,7 +1,5 @@
 # Comparing compatible pair L-polynomials
 
-Author: Worker 422.
-
 This supporting helper module is derived from the existing
 `IsPairLCompatibleAt` definition. It is intended for the rank induction in
 `AssemblyLCharacterizationStatement`; it does not prove that statement or any

@@ -1,6 +1,6 @@
 # Admissibility and finite compact-group multiplicities
 
-Author: Worker 88. `admissibleFiniteMultiplicity` proves the exact Library
+`admissibleFiniteMultiplicity` proves the exact Library
 proposition `Langlands.Renard.CompactRepresentation.AdmissibleFiniteMultiplicityStatement`.
 It supplies IV.1.2 in the target `CompactGroupSmoothStatements`.
 

@@ -1,6 +1,6 @@
 # Unramified field characters on both sides of the correspondence
 
-Author: Worker 4803. Module `Langlands.Correspondence.HenniartTwistBridge`,
+Module `Langlands.Correspondence.HenniartTwistBridge`,
 namespace `Langlands.Henniart.Extension`.
 
 Internal bridges between the published twist operations. No literature

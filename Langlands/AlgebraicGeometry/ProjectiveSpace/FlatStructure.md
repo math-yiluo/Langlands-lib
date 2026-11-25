@@ -1,12 +1,9 @@
 # Flatness of polynomial projective space over its base
 
-Authors: Worker 5705.
-
 Helper module of the proof of
 `Langlands.AlgebraicGeometry.FlatProperEquivalenceRelationQuotientReductionStatement` (entry
-module `Langlands.AlgebraicGeometry.FlatProperEquivalenceRelationQuotientReductionProof`),
-written for Task 5705 (`07219dde-fd87-48cf-83be-db16cbb3707c`) under operator request
-`98389b48910e54088e0e2b2ba6aaad9c`. It contains no `sorry` and no new axioms.
+module `Langlands.AlgebraicGeometry.FlatProperEquivalenceRelationQuotientReductionProof`).
+It contains no `sorry` and no new axioms.
 
 ## Content
 

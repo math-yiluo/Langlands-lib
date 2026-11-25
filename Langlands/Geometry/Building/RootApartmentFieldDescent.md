@@ -49,7 +49,7 @@ The provenance is full root-valuation field descent, actual character,
 cocharacter, root-annihilator and normalizer base-change comparisons, and the
 existing orbit apartment construction and translation-stabilizer theorem.
 All are internal compositions; no new external assertion is introduced.
-This unit retains the initial upstairs apartment and original opposite
+This module retains the initial upstairs apartment and original opposite
 factor pairs. It does not establish inhabitance of the upstairs data, a
 building quotient comparison, affine-root or facet descent, the five
 geometric axiom witnesses, or the supplied-model building comparison.

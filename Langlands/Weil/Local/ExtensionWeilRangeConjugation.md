@@ -1,6 +1,6 @@
 # Conjugating the image of a local Weil map
 
-Author: Worker 5134. Module `Langlands.Weil.Local.ExtensionWeilRangeConjugation`.
+Module `Langlands.Weil.Local.ExtensionWeilRangeConjugation`.
 It is a helper for the proof of `HenniartGlobalizationStatement` (Henniart 2000, §3.4).
 
 Setting: `F` and `E` are p-adic fields (`PadicField p`) and `f : F → E` is an embedding
@@ -35,7 +35,7 @@ image of `E` in `\bar F`.
 
 ## Use
 
-In the planned proof of `HenniartGlobalizationStatement`, `E` is a completion `E'_u` of a global
+In the argument for `HenniartGlobalizationStatement`, `E` is a completion `E'_u` of a global
 field and `f` is the completion map from `F_v`. Then `extensionWeilMap F E f` is the
 Library's `completionWeilMap`, and `H` is the Weil group of a generator field `L'`. Here
 `L'` is identified with `E'_u` over `F_v` by an embedding `ψ` that differs from the

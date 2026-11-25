@@ -247,6 +247,7 @@ theorem weylGroup_map_eq_range (h : HasRelativeRootSystem i) :
     rintro _ ⟨j, rfl⟩
     obtain ⟨α, hα⟩ : P'.root j ∈ Set.range P.root := hrange ▸ Set.mem_range_self j
     have hcoroot : P'.coroot' j = P.coroot' α := by
+      have : Module.IsTorsionFree ℚ (relativeRootSpan i) := DivisionSemiring.to_moduleIsTorsionFree
       apply Module.Dual.eq_of_preReflection_mapsTo (x := P.root α) (Set.finite_range P.root)
         (span_range_rootVector i)
       · rw [hα]

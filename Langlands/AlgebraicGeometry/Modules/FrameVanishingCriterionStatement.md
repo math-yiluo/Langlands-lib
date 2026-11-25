@@ -24,10 +24,10 @@ global section `s : GlobalSections M`:
   `g.appLE U ⊤ hg a = 0`. Here `g.appLE U ⊤ hg a` is the pullback of the function `a` on
   `U` to a global function on `T`.
 
-`pullbackSection` is the published pullback of a global section of a module sheaf along a
+`pullbackSection` is the pullback of a global section of a module sheaf along a
 morphism (module `Langlands.AlgebraicGeometry.Modules.SectionResidue`), and `GlobalSections`
-is the published type of global sections (module
-`Langlands.AlgebraicGeometry.Modules.SectionLocus`); both are used unchanged. The published
+is the type of global sections (module
+`Langlands.AlgebraicGeometry.Modules.SectionLocus`); both are used unchanged. The
 predicate `VanishesAlong L g s` of `Langlands.AlgebraicGeometry.Picard.PointTangentSeparation`
 is by definition `pullbackSection g L.obj s = 0`, so for a line bundle `L` the statement
 applies directly to it: with `M = L.obj`, it says `VanishesAlong L g s ↔ g.appLE U ⊤ hg a = 0`.
@@ -52,8 +52,5 @@ given is its provenance; no literature statement is transcribed.
 * Through those local equations, the detection of rational points and of tangent vectors
   (`K[ε]`-points) by sections in the proof of the seed-existence statement
   `Langlands.GroupScheme.AlgebraicallyClosedSectionSeedExistenceStatement`
-  (proof task ff2d671a-f569-4f74-bab5-c409b9407294).
-
-The Lean text is, unchanged, the required statement text of statement task
-75c63d90-3732-4ddc-8eee-8d3c9f495992, which was published from the seed-existence proof task
-but never received an executor; it is therefore submitted here together with its proof.
+  (proved as `Langlands.GroupScheme.algebraicallyClosedSectionSeedExistence`, module
+  `Langlands.AbelianScheme.AlgebraicallyClosedSectionSeedExistenceProof`).

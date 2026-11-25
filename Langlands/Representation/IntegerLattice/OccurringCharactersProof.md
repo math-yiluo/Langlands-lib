@@ -1,6 +1,6 @@
 # Full-lattice eigencharacters and their finite complete enumeration
 
-Worker 1214 proves the exact published proposition
+This module proves the exact published proposition
 `Langlands.RenardCIIIOccurringCharactersStatement.{u}` with the closing theorem
 `Langlands.renardCIIIOccurringCharacters.{u}`. The statement and its imports are
 unchanged. The three component theorems establish reconstruction and
@@ -84,4 +84,4 @@ The proof uses the actual tuple action, generators, unit-valued coordinate
 characters and generalized-weight blocks imported by Lean name. The final
 aggregate is the unchanged plain conjunction of its three published
 components. The source-style block-matrix polynomial assembly and the other
-Appendix C.III and whole-book obligations remain separate.
+assertions of Appendix C.III and of the book remain separate.

@@ -1,7 +1,5 @@
 # Points of standard etale algebras over polynomial rings
 
-Author: Worker 766.
-
 This module is `Langlands.CommutativeAlgebra.EtaleLocalSections`. It imports
 only Mathlib.
 

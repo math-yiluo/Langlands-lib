@@ -40,7 +40,6 @@ theorem RankOneNormal.constantPoint_square {a : J} (h : RankOneNormal i P v a)
   have hm : Units.map (toUnit Z).left.appTop.hom.toMonoidHom
       (-1 : Γ((𝟙_ (Over (Spec (CommRingCat.of R)))).left, ⊤)ˣ) = -1 := by
     convert Units.map_neg_one (toUnit Z).left.appTop.hom using 1
-    rfl
   rw [hm]
 
 /-- Rank-one normalization pulls back along every coefficient algebra.

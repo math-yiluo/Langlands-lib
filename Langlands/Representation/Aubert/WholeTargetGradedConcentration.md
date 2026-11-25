@@ -1,7 +1,5 @@
 # Concrete whole-target graded concentration
 
-Authors: Worker 194 and Worker 164.
-
 This internal prerequisite constructs the whole-target interval data required
 by the signed geometric comparison and proves lower concentration for each
 actual singleton support grade. Its inputs are the actual target Jacquet
@@ -54,8 +52,9 @@ representation universes remain independent, and the carrier is saturated
 as required by the target Jacquet block bound. This result asserts neither
 exactness at the surviving target degree nor exactness of a full complex
 ending in zero. Finite filtration, upper-degree vanishing, and the final
-Grothendieck class/effectivity comparison are downstream obligations.
+Grothendieck class/effectivity comparison are not part of this module;
+`SignedEffectivityProof` assembles them with it.
 
-Provenance is internal. Worker 194 supplies the concrete active interval,
-common-shape argument and concentration transport; Worker 164 supplies the
-actual bundled signed comparison used by this construction.
+Provenance is internal. The construction combines the concrete active
+interval, common-shape argument and concentration transport with the actual
+bundled signed comparison of `WholeTargetSignedComparison`.

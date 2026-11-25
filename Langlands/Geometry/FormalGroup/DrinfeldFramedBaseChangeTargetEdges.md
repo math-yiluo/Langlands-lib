@@ -1,6 +1,6 @@
 # Exact edges of the actual framed base-change target square
 
-This internal unit identifies every edge of the actual pasted refined target
+This module identifies every edge of the actual pasted refined target
 square with the specified reduced comparison maps and the previously
 constructed framing target corrections. `baseChangeTargetSquare` packages
 exactly those four maps and their proved equation.
@@ -31,5 +31,7 @@ and fixed height-certified frame hypotheses and actual unit certificates
 remain explicit, with Nilp universes `{v,u}`. Covers may be infinite and maps
 may merge generators. The vertical identifications and final constructor have
 finite local heartbeat bounds for their large dependent types. Full original
-framed comparison preservation, class functoriality and representability
-remain subsequent constructions.
+framed comparison preservation, class functoriality and representability are
+outside this module; the first two are `framingSquare_baseChange` in
+`DrinfeldFramedComparisonBaseChange` and the functor of
+`DrinfeldFramedClassFunctor`, and representability remains separate.

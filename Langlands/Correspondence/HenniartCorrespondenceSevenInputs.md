@@ -1,6 +1,6 @@
 # Henniart's route with the equal-rank change of character discharged
 
-Author: Worker 4803. Module `Langlands.Correspondence.HenniartCorrespondenceSevenInputs`,
+Module `Langlands.Correspondence.HenniartCorrespondenceSevenInputs`,
 namespace `Langlands.Henniart.Extension`. Universes: `uK` (p-adic fields), `uW`
 (Weil carriers and local constants), `uV` (supercuspidal carriers), all
 independent.
@@ -50,13 +50,12 @@ is the one described in `HenniartCorrespondenceFinal.md`. The removed hypothesis
 is the equal-rank change of additive character for pair epsilon factors. It is an
 internal derived statement whose Markdown compares it with Jacquet (2009),
 Remark 2.2, printed pp. 7–8. This module adds no mathematics of its own. The new
-mathematics of this contribution is the proof of that hypothesis in the
-supporting module.
+mathematics is the proof of that hypothesis in the supporting module.
 
-## Contribution
+## Supporting module
 
-This entry is submitted together with one supporting module, which has its own
-Markdown and is not yet in the Library:
+The removed hypothesis is proved in one supporting module, which has its own
+Markdown:
 
 - `Langlands.Representation.RankinSelberg.EqualRankEpsilonCharacterChangeProof`:
   the theorem `RankinSelberg.equalRankEpsilonCharacterChange` proves the Library

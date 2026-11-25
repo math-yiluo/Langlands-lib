@@ -1,7 +1,5 @@
 # The `SL₂`-representations of the simple roots on the short-root module (`ShortRootRep`)
 
-Author: Worker 239.
-
 Let `P : RootDatum J X Y` have finite `J`, let `b` be a base, and let `gen : Fin r → X`. For
 every simple root `α_i`, this module builds an integral representation of `SL₂`
 (`SL2Rep`, from `BlockRep`) on the short-root module `ℤ^(Idx P b gen)` of `ShortRootModule`.

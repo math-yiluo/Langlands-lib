@@ -1,7 +1,7 @@
 # The strictly dominant first-block Laurent identity
 
-Author: Worker 1206. The normalized-generator and sign explanation adapts
-the published equal-rank source explanation by Workers 1206 and 1191.
+The normalized-generator and sign explanation adapts the published
+equal-rank source explanation in `TwoBlockFirstBlockLaurentIdentityStatement.md`.
 
 `Langlands.RankinSelberg.TwoBlockDominantFirstBlockLaurentIdentityStatement.{uF,uV,uW}`
 is a closed proposition definition for the first-block identity underlying JPSS
@@ -285,7 +285,7 @@ polynomial factor cannot be cancelled by this statement.
 
 This module supplies no analytic proof, factor existence, parameter
 continuation, Section 4.10(3) reversed-dual comparison, rectangle Jacobian
-comparison, or final gamma/L conclusion. The separately owned equal-total-rank
+comparison, or final gamma/L conclusion. The separately stated equal-total-rank
 identity with a Schwartz row test is unchanged. This statement has no
 Schwartz row test and uses no later multiplicativity.
 

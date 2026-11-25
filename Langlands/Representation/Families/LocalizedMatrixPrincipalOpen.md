@@ -1,6 +1,6 @@
 # Principal polynomial neighborhoods from localized coefficient matrices
 
-Worker 1444. This derived construction assembles the determinant and
+This derived construction assembles the determinant and
 polynomial-coordinate steps for a coefficient matrix family defined
 after one localization. It supplies no representation-theoretic
 finiteness or detection theorem.

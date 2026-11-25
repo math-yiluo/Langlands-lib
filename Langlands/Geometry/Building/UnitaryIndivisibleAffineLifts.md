@@ -1,6 +1,6 @@
 # Indivisible affine lifts from supplied multipliable unitary depths
 
-Worker 244. This internal unit combines the exact coordinate-to-affine-root
+This internal module combines the exact coordinate-to-affine-root
 bridges with the finite-tower central-jump theorem. The apartment is supplied;
 the coordinate and depth comparison premises remain explicit.
 
@@ -42,5 +42,7 @@ The argument is an internal composition of actual root forms, the two
 coordinate jump bridges and the finite-tower arithmetic, with no local
 classification or Kneser–Tits input. It does not prove existence of the
 actual coordinates or their exact depths for every quasi-split group and
-supplied compatible apartment. Those obligations remain necessary for the
+supplied compatible apartment. Those obligations are discharged by
+`QuasiSplitHenselianUnitaryDepths` and `AlgebraicRankOneCoordinatesExistenceProof`,
+which `QuasiSplitIndivisibleDerivativeLiftsProof` composes into the
 unconditional `QuasiSplitIndivisibleDerivativeLiftsStatement`.

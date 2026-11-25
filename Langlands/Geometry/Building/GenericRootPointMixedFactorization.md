@@ -1,6 +1,6 @@
 # Two-point sharp-fixer factorization of an actual root point
 
-This internal unit proves the elementary root-point case of the mixed
+This module proves the elementary root-point case of the mixed
 factorization needed for common apartments in the existing quotient.
 
 For arbitrary apartment data `D : KPApartmentData i ω` of an actual maximal

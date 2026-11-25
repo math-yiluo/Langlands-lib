@@ -34,8 +34,9 @@ of `P` on `V` by
 The proved covariance and uniform right stabilizer construct an actual element
 of `Induction.SmoothFunctions P τ`, with the displayed value at every `g`.
 Thus this is a smooth induced function for the specified subgroup and inducing
-representation. The module does not yet identify `τ` with the normalized
-opposite-parabolic induction in the host statement.
+representation. The module does not identify `τ` with the normalized
+opposite-parabolic induction in `AdjacentRankModelImageStatement`;
+`AdjacentRankNormalizedSection` specializes the construction to that induction.
 
 The actual induced section is bilinear in `Φ` and `v`, so the universal property
 of the algebraic tensor product gives a linear section map. Right translation
@@ -45,5 +46,8 @@ identities.
 
 The generic character formulation and finite-integration proof are internal
 derived content motivated by JPSS (10). The exact normalized lower-parabolic
-specialization, section spanning, Jacquet identity and closed host image theorem
-remain open.
+specialization, section spanning, Jacquet identity and closed image theorem
+are not part of this module. The specialization and the spanning are in
+`AdjacentRankNormalizedSection` and `AdjacentRankSectionSpanning`, and the image
+theorem `AdjacentRankModelImageStatement` is proved by `adjacentRankModelImage`
+in `AdjacentRankModelImageProof`.

@@ -1,6 +1,6 @@
 # The augmentation of the total complexes to the system itself
 
-Author: Worker 61. Built on `Langlands.Cohomology.DivisibleSystem.Total`
+Built on `Langlands.Cohomology.DivisibleSystem.Total`
 (finite-row total complexes of `ℓ`-divisible systems and the totalized
 augmentation of the standard resolutions) and
 `Langlands.Cohomology.DivisibleSystem.InvariantTotal` (Harris's complexes
@@ -153,8 +153,8 @@ and `ε : P ⟶ 𝟭 A`, as in the Total module.
 ## Provenance and interpretation
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
-J. Math. Kyoto Univ. 39-2 (1999), section 2, printed pp.305–306. Worker 61
-read both pages in the scanned original.
+J. Math. Kyoto Univ. 39-2 (1999), section 2, printed pp.305–306. Both pages
+were read in the scanned original.
 
 1. The augmentation. Harris resolves each `M_m^{q,H}` by (2.5), which ends
    `⋯ → K_m^{-1,q,H} → M_m^{q,H} → 0`, and lets `C_m^{•,H}` be the simple

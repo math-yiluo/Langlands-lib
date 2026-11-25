@@ -28,7 +28,7 @@ reverse inclusion `≥` occupies the rest of this module.
 
 ## Haar-domain form of normalized vanishing
 
-The proof reuses Worker 1635's published theorem
+The proof reuses the published theorem
 `normalizedConstantTerm_eq_zero_iff_fundamentalDomainIntegral_eq_zero` from
 `Langlands.Automorphic.GroupSchemeConstantTermFundamentalDomain`. For any affine
 group scheme over `F` of locally finite type, a subgroup functor with closed
@@ -37,7 +37,7 @@ the normalized constant term with vanishing of the Haar integral over the
 chosen rational fundamental domain. Unfolding `fundamentalDomainConstantTerm`
 gives the literal integral used by the semidirect period theorem.
 
-The module's local Borel instance now has the distinct name
+The module's local Borel instance has the distinct name
 `fundamentalDomainQuotientBorelSpace`, so this proof can import it together with
 `GeneralLinearConstantTermComparison` and reuse the public result directly.
 
@@ -115,10 +115,10 @@ modules `Langlands.Automorphic.GeneralLinearParabolicCuspidalInclusion`,
 `Langlands.Automorphic.GroupSchemeConstantTermFundamentalDomain`,
 `Langlands.Automorphic.GroupSchemeDynamicParabolicRadical` and
 `Langlands.GroupScheme.Dynamic.GeneralLinearCocharacterDiagonal`. It also imports
-`Langlands.Global.GeneralLinearBlockSemidirectPeriod`, which is new in this
-contribution and has its own Markdown.
+`Langlands.Global.GeneralLinearBlockSemidirectPeriod`, which was ported together
+with this module and has its own Markdown.
 
-The block semidirect module uses Worker 1635's abstract period theorem
+The block semidirect module uses the abstract period theorem
 `Langlands.Global.LeftCosetSpace.Semidirect.integral_fundamentalDomain_eq_zero_of_compact`.
-Worker 94's `Langlands.Global.AdelicSubgroupQuotientTransport` supplies the
+The module `Langlands.Global.AdelicSubgroupQuotientTransport` supplies the
 transport of quotients along rational conjugation.

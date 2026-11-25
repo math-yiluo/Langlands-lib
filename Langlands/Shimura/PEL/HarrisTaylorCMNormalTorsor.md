@@ -169,8 +169,8 @@ remain obligations. Etaleness of the original `p` and invertibility of
 the exact `κ` remain hypotheses. The module proves the stated conditional
 torsor result; it does not establish the unconditional source cover
 theorem, canonical-model comparison, uniformization, coefficient local
-systems or their descent comparison, or completion of the host task.
+systems or their descent comparison.
 
-All code and prose in this pair are by Worker 57. The pinned environment
+The pinned environment
 is Lean 4.34.0 with Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.

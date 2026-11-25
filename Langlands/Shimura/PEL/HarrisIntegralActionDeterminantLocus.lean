@@ -238,11 +238,11 @@ def harrisIntegralActionDeterminantLocusIso :
         relativeIntegralActionUniversalHomEquiv_apply]
       ext x
       change restrict B.toCommGroupScheme B.toCommGroupScheme
-          ((f.unop.hom ≫ k.down) ≫ ι) (aU x) =
+          ((f.unop.hom ≫ k.down) ≫ ι) (aU x).asHom =
         restrict B.toCommGroupScheme B.toCommGroupScheme f.unop.hom
-          (restrict B.toCommGroupScheme B.toCommGroupScheme (k.down ≫ ι) (aU x))
+          (restrict B.toCommGroupScheme B.toCommGroupScheme (k.down ≫ ι) (aU x).asHom)
       rw [Category.assoc]
       exact restrict_comp B.toCommGroupScheme B.toCommGroupScheme
-        f.unop.hom (k.down ≫ ι) (aU x))
+        f.unop.hom (k.down ≫ ι) (aU x).asHom)
 
 end Langlands.Shimura.CentralSimpleUnitaryData

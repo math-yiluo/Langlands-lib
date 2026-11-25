@@ -1,7 +1,5 @@
 # Three original canonical coefficient systems on actual common CM kernels
 
-Author: Worker 57.
-
 For actual small CM levels `T ≤ V ≤ U`, this internal construction puts the
 three original canonical coefficient systems on one finite residual quotient
 diagram inside `T`. It retains the original coefficient modules, inverse-unop
@@ -218,11 +216,12 @@ supplies their compatibility fields. The named original CM inclusion
 composition law proves the chain's exact composite. No new assertion
 from external literature or desired comparison output is assumed.
 
-This unit constructs the arithmetic common-cover input for three nested
+This module constructs the arithmetic common-cover input for three nested
 levels. Geometric torsors, associated sheaf systems on these common
-covers and comparison with the separate pulled systems are subsequent
-constructions. Reduced coefficient maps are not claimed to be injective
+covers and comparison with the separate pulled systems are not constructed
+in this module; the first two are constructed in
+`HarrisTaylorCMGeometricTripleCommon`. Reduced coefficient maps are not claimed to be injective
 or invertible; equality of the lattices, rational adic independence and
-Hecke compatibility are not established here. The containing task's
-representability, arithmetic existence, source-comparison and
-canonical-model obligations remain. This unit does not complete that task.
+Hecke compatibility are not established here. Representability, arithmetic
+existence, source comparison and canonical models are not treated in this
+module.

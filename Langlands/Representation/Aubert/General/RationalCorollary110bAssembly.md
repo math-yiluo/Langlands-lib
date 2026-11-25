@@ -1,7 +1,5 @@
 # Rational Corollary 1.10(b) from the rank-one and induced-Weyl targets
 
-Author: Worker 3942.
-
 This module proves that three separately published representation-theoretic
 targets together imply the exact Corollary 1.10(b) target
 `RationalCorollary110bStatement.{u, v}` of

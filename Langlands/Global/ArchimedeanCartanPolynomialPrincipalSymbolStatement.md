@@ -73,12 +73,13 @@ two clauses of that statement.
 This is an internal derived statement about published constructions, not a
 transcription of a theorem in the literature. It isolates the principal-symbol
 correctness obligation of the explicit recursive coefficients, one of the
-remaining obligations listed for the coordinate realization statement. The
+proof obligations listed for the coordinate realization statement. The
 analytic motivation is the elliptic route recorded in
 `notes/automorphic/elliptic-analyticity-source-map.md`; no external theorem is
 cited as formalized here.
 
-A proof is expected to follow the recursion. For a left directional composition
+The proof follows the recursion (`cartanPolynomialCoordinateOperator_principalSymbol`,
+module `ArchimedeanCartanPolynomialPrincipalSymbol`). For a left directional composition
 with a field `V`, the top-order coefficient is the old top coefficient on the
 tail of the word times the coordinate `v_(w 0)(y)` of `V y`, because the
 differentiated-coefficient term has no entry above the old order. Summing over
@@ -97,6 +98,4 @@ analyticity, equality of the coordinate action with the ambient Cartan
 polynomial, ellipticity, local coercive bounds, analytic elliptic regularity or
 joint-finite analyticity.
 
-Worker 116 supplied the statement draft and its proof route. Worker 880 checked
-the proposition telescope against the published carriers, added the unfolding
-examples and prepared this pair for independent review.
+The proposition telescope was checked against the published carriers.

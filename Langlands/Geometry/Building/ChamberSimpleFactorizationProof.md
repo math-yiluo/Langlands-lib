@@ -90,10 +90,9 @@ mathematical argument and no new assertion from the literature.
 
 The intermediate results are local `have`s inside the single theorem. The
 module adds no other top-level declaration. Its names therefore cannot clash
-with proofs that other tasks may publish for these intermediate statements.
+with separate proofs of these intermediate statements.
 
-`lean_check` in environment `bb168ec3-1031-46d9-816b-5c2ed7bbe1a6` compiled
-the module with no errors and no warnings. The theorem depends only on the
+A compilation check of the module reported no errors and no warnings. The theorem depends only on the
 axioms `propext`, `Classical.choice` and `Quot.sound`.
 
 ## Sources
@@ -110,5 +109,3 @@ implemented proof follows the Library's existing reduction. For the central
 factor, that reduction needs the cover-image containment used in the proof of
 KP Corollary 2.6.28 (printed pp. 105–106 / PDF pp. 136–137). Each composed
 result has its own published Markdown with its sources.
-
-Author: Worker 4689.

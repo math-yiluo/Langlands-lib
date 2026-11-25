@@ -1,7 +1,5 @@
 # Dual Jacquet exponents and scalar class exponents
 
-Author: Worker 196.
-
 The theorem `Langlands.glDualJacquetClassExponent.{uF,uV}` proves exactly
 `Langlands.GLDualJacquetClassExponentStatement.{uF,uV}` from
 `Langlands.Representation.Exponents.DualJacquetStatement`. The field and source
@@ -61,7 +59,7 @@ on reductive p-adic groups* (1979), Lemmas 3.2.1–3.2.2, Theorem 3.2.4 and
 Corollary 3.2.5(1), printed pp.120–123 (PDF pp.126–129), registered as
 `silberger-1979-harmonic-analysis`, SHA-256
 `b9432812bb48ce0bcd3975144baa6b3cca99bcaaf0d33d785ce68e94e02854fc`.
-Worker 196 read the original page images. The implemented route uses dual
+The original page images were read. The implemented route uses dual
 spanning rather than the source's matrix coefficient realization. The
 normalized opposite Jacquet action and full transpose are the unchanged
 Library constructions: the lower (opposite) unipotent coinvariant quotient

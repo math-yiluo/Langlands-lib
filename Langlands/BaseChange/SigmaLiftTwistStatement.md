@@ -41,7 +41,8 @@ instance is the first conjunct of `IsCyclicAlgebra σ l`. The topology
 lemmas for `GL_n(F)` in `LocalFieldTopology` take `F n`, and their
 finite-algebra counterparts in `TwistedCharacter` take `F E n`.
 `Langlands.BaseChange.PseudoCoefficient` supplies `IsSigmaDiscreteSeries σ n τ`
-for the discrete-series statements in Task 7449.
+for the discrete-series statements (`DiscreteSeriesSigmaLiftStatement`,
+`SigmaDiscreteDescentStatement`).
 
 ## Sources and provenance
 
@@ -54,7 +55,7 @@ Chapter 1, Proposition 6.8(ii), printed p. 59 (PDF p. 73), records
 the corresponding compatibility for tempered base change.
 
 HL formulate their remark in the irreducible setting. This statement
-uses the admissible distributional extension required by Task 7449.
+uses the admissible distributional extension that the discrete-series statements need.
 Twisting a trace inserts the character of the determinant, and the
 determinants of norm-associated elements are related by `N_{E/F}`.
 At each associated pair, the weights multiply both orbital integrals by
@@ -75,7 +76,7 @@ Arthur--Clozel, Chapter 1, Definition 6.1.
 
 The definition of `IsSigmaLift` requires `c ≠ 0`. HL II.4.6,
 Theorem (1), obtain `c = 1` for the Whittaker-normalized intertwiner.
-That normalization is outside the programme's current definitions.
+That normalization is outside the programme's definitions.
 Scaling an intertwiner by a nonzero scalar `a` scales its twisted
 trace and its lift constant by `a`. Equality of the underlying
 operators keeps the same intertwiner normalization in this statement.

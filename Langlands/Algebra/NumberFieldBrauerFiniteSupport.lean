@@ -1,5 +1,5 @@
 import Langlands.Algebra.NumberFieldBrauerSplitting
-import Langlands.ClassField.Global.IdeleFiniteInvariant
+import Langlands.ClassFieldTheory.Global.IdeleFiniteInvariant
 
 /-! # A central simple algebra is split at almost all finite places -/
 
@@ -13,7 +13,7 @@ open scoped Langlands.Global.AdelicFunctoriality.FiniteExtension
 namespace Langlands.Brauer
 
 open Langlands.BrauerComparison Langlands.CentralSimple
-open Langlands.ClassField.Global Langlands.ClassFieldTheory.Local
+open Langlands.ClassFieldTheory.Global Langlands.ClassFieldTheory.Local
 open Langlands.Global.AdelicFunctoriality Langlands.Global.CompletionPadic
 
 /-- The finite places where a central simple algebra over a number field is not split. -/

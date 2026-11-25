@@ -67,7 +67,7 @@ private theorem split_completionMap_comp_padicMap :
   have := Ideal.LiesOver.trans w.asIdeal v.asIdeal (rationalPlace v).asIdeal
   rw [padicMapAt_eq_of_rationalPlace_eq w (rationalPlace v) (split_rationalPlace_eq v w)]
   unfold padicMap
-  rw [← RingHom.comp_assoc, ClassField.Global.CompletionTower.completionMap_comp]
+  rw [← RingHom.comp_assoc, ClassFieldTheory.Global.CompletionTower.completionMap_comp]
 
 private def splitPadicEquiv (hs : SplitsCompletelyAt (N := E) v) :
     letI := (padicField v).algebra
@@ -119,7 +119,7 @@ variable [CompactSpace (AdeleQuotient F)]
 private theorem localComponent_hasFunctional_at
     {r : ℕ} {S : CuspidalOperatorRealization F r}
     (P : CuspidalSpectralPresentation.{uF, uV} S)
-    (hS : ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter S)
+    (hS : ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter S)
     (hI : (P.localComponent v).IsIrreducible)
     (hA : letI := (padicFieldAt v hp).canonicalTopologicalData.topology
       IsAdmissible (P.localComponent v).representation)

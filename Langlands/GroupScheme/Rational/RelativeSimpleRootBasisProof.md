@@ -1,7 +1,5 @@
 # Proof of the actual simple relative-root basis
 
-Author: Worker 53.
-
 Module `Langlands.GroupScheme.Rational.RelativeSimpleRootBasisProof`.
 
 ## Result
@@ -42,10 +40,9 @@ All three ingredients are published Library theorems.
    `HasRelativeRootSystem i`: a finite crystallographic root system on
    `relativeRootSpan i`, possibly nonreduced, with the evaluation pairing,
    whose roots are exactly the vectors `1 ⊗ α` for the actual relative roots
-   `α`. The same composition is the entire proof of Worker 23's
-   `relativeRootSystem` candidate for task
-   `51ecd216-d68e-4f71-afeb-6d7ff3683ec9`. That candidate is still awaiting
-   review, and this proof does not import it. The two steps are applied
+   `α`. The same composition is the entire proof of
+   `relativeRootSystem` (module `Rational.RelativeRootSystemProof`), and this
+   proof does not import it. The two steps are applied
    directly here.
 3. `relativeSimpleRootBasisStatement_of_relativeRootSystemStatement` (module
    `Rational.RelativeSimpleRootBasis`) derives
@@ -75,7 +72,7 @@ All three ingredients are published Library theorems.
      `Module.finrank_eq_nat_card_basis` then gives
      `relativeRootRank i = Nat.card (simpleRelativeRoots i ν)`.
 
-`lean_check` reports that the theorem depends only on the axioms `propext`,
+A compile check of the module reports that the theorem depends only on the axioms `propext`,
 `Classical.choice` and `Quot.sound`.
 
 ## Provenance

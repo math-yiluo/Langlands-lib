@@ -1,6 +1,6 @@
 # Renard VI.8.2–VI.8.3: proofs of flatness of induction and Jacquet modules and of admissibility of induction
 
-Author: Worker 68. Module
+Module
 `Langlands.Representation.Families.RenardFamilyParabolicFlatnessProof`, namespace
 `Langlands.Renard.AlgebraicFamily`. It proves the four unchanged published
 propositions of
@@ -20,7 +20,7 @@ The statement module, the functors module
 [RenardFamilyParabolicFunctors](RenardFamilyParabolicFunctors.md) and their imports
 are unchanged. The proofs add no hypothesis and no axiom. Every quantified field,
 group, parabolic (including `P = G`) and coefficient ring of the statements is
-covered. The development checks report only the axioms `propext`,
+covered. The only axioms used are `propext`,
 `Classical.choice` and `Quot.sound`.
 
 ## Source
@@ -30,7 +30,7 @@ David Renard, *Représentations des groupes réductifs p-adiques*, French versio
 SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`:
 VI.8.2, the opening paragraph with (VI.8.2.1) and the Lemma, printed pp. 189–190 /
 PDF pp. 195–196; VI.8.3, the opening paragraph, printed p. 191 / PDF p. 197.
-Worker 68 read PDF pp. 195–197. The statement Markdown records the source
+PDF pp. 195–197 were read for the proofs. The statement Markdown records the source
 correspondence of the targets. The proof routes below follow the source for
 induction. For the Jacquet module they use a different but elementary argument,
 explained in its section.
@@ -48,10 +48,10 @@ is a published helper. It derives this exact quotient compactness from
 `BruhatTits.DynamicParabolicQuotientCompactStatement`, and the published theorems
 `Langlands.GroupScheme.parabolicDynamic` (Milne 25.1) and
 `Langlands.BruhatTits.dynamicParabolicQuotientCompact` prove those two
-statements. The proof candidate `9528020c-5777-4963-8966-e4d5818f35b1` of task
-`c1ce4629-6768-4eb5-b4ee-0086526913ea` makes the same composition for
+statements. The theorem `arbitraryParabolicQuotientCompact` (module
+`Exponents/ArbitraryParabolicQuotientCompactProof`) makes the same composition for
 `ArbitraryParabolicQuotientCompactStatement`. This module does not depend on that
-candidate.
+theorem.
 
 ## General lemmas
 

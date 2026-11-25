@@ -1,7 +1,5 @@
 # Compact opposite-character mirabolic test functions: proof
 
-Author: Worker 11.
-
 This module proves the published proposition
 `Langlands.Whittaker.MirabolicUnitTestStatement.{uF} F T n` of
 [MirabolicUnitTestStatement](MirabolicUnitTestStatement.md). It changes
@@ -121,7 +119,7 @@ and compactly supported modulo `N_r`. Page 385 (§2.1) records the passage from
 `ψ` to `ψ̄`. JPSS gives no explicit construction of these functions. The
 compact open data built here are an internal construction for that choice;
 they are not a separately stated JPSS theorem. The Lean proof does not follow
-any argument from the source. Worker 11 re-read these three pages visually
+any argument from the source. These three pages were re-read visually
 in the retained file
 `/home/taskhub/central-library/Jacquet-Piatetski-Shapiro-Shalika--Rankin-Selberg Convolutions--1983.pdf`
 (SHA256 `d9feed6388ca5acf02ecc6a8cce984871a7c28f062ff441e45a71fa2d8962245`);

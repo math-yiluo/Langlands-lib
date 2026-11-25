@@ -1,11 +1,10 @@
 # Nonzero derivatives of subrepresentations of left mixed products
 
-Author: Worker 1129. Module
+Module
 `Langlands.Representation.Derivative.LeftMixedProductPhiHatIterate`, namespace
 `Langlands.Derivative.Mirabolic`. Main theorem:
 `hasNonzeroDerivative_leftMixed_subrepresentation`. The module's only
-definition is `leftMixedProductMap` (section `Map`); the record names it as its
-declaration.
+definition is `leftMixedProductMap` (section `Map`).
 
 This module proves the lower half of Zelevinsky's Proposition 5.3. Let `ρ` be
 a smooth representation of `GL_k` and `τ` one of the mirabolic group
@@ -76,14 +75,14 @@ All objects are published Library objects, used unchanged.
   (`Hom(A, Φ̂⁺σ) ≃ₗ[ℂ] Hom(Φ⁻A, σ)`), `phiHatPlusIterate T ψ n j`
   (`(Φ̂⁺)^j : P_(n+1) → P_(n+j+1)`; for `j + 1` it is `(Φ̂⁺)^j` followed by
   `Φ̂⁺` at rank `n + j`) and `mirabolicDerivativeOfOrderRightAdjoint T ψ N l hl`
-  (Worker 749, `MirabolicSmoothPhiPlus`, `…Adjunction`, `…Iterate`). The last
+  (`MirabolicSmoothPhiPlus`, `…Adjunction`, `…Iterate`). The last
   is `Y_l(θ)`: `Ψ⁺ θ`, lifted to the carrier universe `max uF uV`
   (`MixedProductTensor.liftFunctor`), then `(Φ̂⁺)^(l-1)`, then the rank cast
   `mirabolicRankCast` along `(N+1-l) + (l-1) = N`.
 - `leftPhiHatEmbedding T ψ ρ σ : ρ × Φ̂⁺(σ) → Φ̂⁺(ρ × σ)` and
-  `leftPhiHatEmbedding_injective` (`MirabolicSmoothPhiPlusProduct`, Worker
-  1129); `leftPhiHatSource T ψ ρ σ` is `ρ × Φ̂⁺(σ)`.
-- From `Mirabolic.LeftMixedProductSuccessor` (Worker 1129): `leftRadical`
+  `leftPhiHatEmbedding_injective` (`MirabolicSmoothPhiPlusProduct`);
+  `leftPhiHatSource T ψ ρ σ` is `ρ × Φ̂⁺(σ)`.
+- From `Mirabolic.LeftMixedProductSuccessor`: `leftRadical`
   (a radical element of `P_(k+n+1)` as an element of `leftSubgroup k n`),
   `leftProjection_leftRadical_fst` (its `GL_k` block is `1`),
   `leftProjection_leftRadical_snd_mem` (its mirabolic block lies in the radical
@@ -211,8 +210,8 @@ Section `Lower`.
 ## Import inventory and exclusion audit
 
 Direct imports: `Langlands.Representation.Derivative.MirabolicSmoothPhiPlusProduct`
-(the embedding `leftPhiHatEmbedding`; it brings in Worker 749's `Φ̂⁺` and its
-adjunction), `Langlands.Representation.Derivative.MirabolicSmoothPhiPlusIterate`
+(the embedding `leftPhiHatEmbedding`; it brings in the `Φ̂⁺` of
+`MirabolicSmoothPhiPlus` and its adjunction), `Langlands.Representation.Derivative.MirabolicSmoothPhiPlusIterate`
 (`phiHatPlusIterate`, `mirabolicDerivativeOfOrderRightAdjoint`),
 `Langlands.Representation.Derivative.LevelCalculus` (the three cast and
 nontriviality lemmas listed above) and `Mathlib.RingTheory.Flat.Basic`. No
@@ -289,10 +288,10 @@ the published derivative detection proof
 Rankin–Selberg compact-orbit geometric lemmas; and Whittaker characters and
 the Iwasawa decomposition.
 
-Audit against the exclusions of task `6bb62ea4-c7e1-4325-9eb6-b8bbee1f65c4`,
+Audit against the exclusions that apply to the Ze80 5.3 proof,
 condition by condition:
 
-- Inherited exclusion set of `b711af72` (ordered-socle existence and socle
+- Inherited exclusion set of the Ze80 6.2 route (ordered-socle existence and socle
   exhaustion, segment classification, segment-socle and special-head product
   criteria and exhaustions, `AdjacentUnlinkedSegmentSocleSwap`,
   `TwoSegmentSocleCommutation`, quotient coverage, tempered uniqueness,
@@ -301,31 +300,32 @@ condition by condition:
   special square-integrability): no module of the closure states, proves or
   imports any of these. The closure contains no segment, socle, head,
   classification, exhaustion or square-integrability module.
-- Detection-unit restrictions: no Ze80 §5.4 reduction or
+- Detection-proof restrictions: no Ze80 §5.4 reduction or
   strong-indecomposability conclusion, and no two-supercuspidal product
-  conclusion (`ab61f565`, `3c9849a4`). The published detection proof in the
-  closure is the general BZ77 one that the objective permits.
+  conclusion (`TwoSupercuspidalProductStructure`,
+  `TwoSupercuspidalNonadjacentProductIrreducible`). The published detection
+  proof in the closure is the general BZ77 one.
 - Nonadjacent-consumer and BZ77-only restrictions: no segment Jacquet formula
   (`SegmentFullJacquetFormula`, `SegmentHeadJacquetFormula`,
   `SegmentSocleJacquetFormula`, `SegmentSpecialJacquetExponentNormFormula`),
   no Ze80 §3.5 or §9.6 derivative formula, no Ze80 4.2, 9.3 or 9.7 result,
   no individual special-head, segment-socle or adjacent-commutation result.
-- Shared upstream restrictions of `3238f371` revision 2 and `2e5183b1`
-  revision 2: the closure has no `Langlands.Whittaker` finiteness module, no
-  result of `62de5903`, and none of the listed segment-socle, linked or
+- Shared upstream restrictions of the all-rank GL Leibniz route and its
+  exact-derivative statement: the closure has no `Langlands.Whittaker`
+  finiteness module, no all-character single-block finiteness result, and none of the listed segment-socle, linked or
   juxtaposed product structure results.
 - Whittaker-finiteness independence: the closure contains none of
   `Langlands.Whittaker.SupercuspidalCoinvariantFinitenessStatement`,
   `IrreducibleCoinvariantFinitenessStatement` or
   `LeviCuspidalCoinvariantFinitenessStatement`, and no mirabolic finite-length
   result.
-- Permitted-input conditions: the closure contains no derivative exactness
+- Conditions on the inputs: the closure contains no derivative exactness
   proof, no 4.14(a), highest-layer, Leibniz or `RestrictedProductLevel` result.
   `MirabolicMinusExactnessStatement` is present only as a proposition
   definition imported by `LevelCalculus`. It is a target, not a proved input,
-  and no lemma used here takes it as a hypothesis. Minus exactness task
-  `b65bc667` is neither used nor resumed.
+  and no lemma used here takes it as a hypothesis. Minus exactness is not
+  used.
 
-The `lean_check` inspection of `hasNonzeroDerivative_leftMixed_subrepresentation`
+The declaration inspection of `hasNonzeroDerivative_leftMixed_subrepresentation`
 (Lake build) reports only the axioms `propext`, `Classical.choice` and
 `Quot.sound`.

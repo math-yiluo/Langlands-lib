@@ -1,13 +1,9 @@
 # Regularity of the finite pair L-factors of unitary cuspidal realizations on `Re(s) ≥ 1`
 
-Authors: Worker 3657 (proof draft, Task 7358 shared drafts revisions 1–2) and
-Worker 829 (merge into one module, verification, submission).
-
 Lean module: `Langlands.Global.Factors.CuspidalFinitePairRegularityProof`. It
 proves the published statement
 `Langlands.Global.CuspidalFinitePairRegularityStatement` (module
-`Langlands.Global.Factors.CuspidalFinitePairRegularityStatement`) for Task 7358
-(`d1aad7bf-655e-4219-9022-9a2bdba3abe8`). It changes no published file.
+`Langlands.Global.Factors.CuspidalFinitePairRegularityStatement`).
 
 ## Main theorem
 
@@ -30,8 +26,7 @@ L-data `c`, a finite place `v`, and `s` with `1 ≤ Re s`. Then
 2. `cuspidalFinitePairRegularity`: the target. It applies (1) to the proof
    `RankinSelberg.UnitaryGeneric.unitaryGenericLPolynomialNonvanishing.{u, u, u}`
    of that local statement. The proof is imported from module
-   `Langlands.Representation.RankinSelberg.UnitaryGenericLPolynomialNonvanishingProof`,
-   the proof of Task 6387 (`9dcb3206-7035-4d1c-9cea-f620e42f9628`).
+   `Langlands.Representation.RankinSelberg.UnitaryGenericLPolynomialNonvanishingProof`.
 
 The local statement is used with all three universes equal to `u`, because the
 local components of a realization over `F : Type u` are carried in `Type u`.
@@ -79,10 +74,10 @@ irreducibility and admissibility `h v`, `h' v`).
   (display (11.21), p.305); the target is the nonvanishing of `P` on
   `Re(s) ≥ 1`. The pair data `c` define the polynomial through standard modules
   of Langlands data, not through Whittaker models.
-- The proof follows the route of the task and of the statement's Markdown:
+- The proof follows the route of the statement's Markdown:
   steps 1–4 above, then GH's deduction of Theorem 11.5.2 from Proposition 11.5.1
-  in the local proof of Task 6387. That proof's own Markdown gives its route and
-  sources.
+  in the local proof `RankinSelberg.UnitaryGeneric.unitaryGenericLPolynomialNonvanishing`.
+  That proof's own Markdown gives its route and sources.
 - Step 3 is JPSS, *Rankin-Selberg convolutions* (1983), Proposition (9.4),
   display (4), printed p.458, registered as `jpss-1983-rankin-selberg`: the
   L-factor of a generic pair equals that of its standard modules. It is already
@@ -95,7 +90,7 @@ finite pair data `c`.
 
 ## Lean checks
 
-`lean_check` in environment `5c94c648-e8dc-4002-a50a-071ebf3f6096` (lake build,
-inspecting `Langlands.Global.cuspidalFinitePairRegularity`) reports no errors or
+A check in the Lean environment in which the module was written (lake build,
+inspecting `Langlands.Global.cuspidalFinitePairRegularity`) reported no errors or
 warnings. The theorem depends only on `propext`, `Classical.choice` and
 `Quot.sound`.

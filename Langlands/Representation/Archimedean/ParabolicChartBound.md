@@ -11,7 +11,7 @@ last row `(x, 1)` and `κ ∈ O(m+1)`. The statement is
 
 The module also provides the integrable dominating functions used later for the partial Jacquet
 integral and the limit argument along `P_{m,1}` (modules `PartialJacquetIntegral` and
-`JacquetLimit`, Task 6749).
+`JacquetLimit`).
 
 Notation. Indices run over `Fin (m+1) = {0, …, m}`. `O(m+1)` is `unitaryCompact ℝ (m+1)`.
 Declarations without a prefix are in the namespace

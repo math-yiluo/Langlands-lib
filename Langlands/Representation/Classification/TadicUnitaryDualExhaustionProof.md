@@ -1,6 +1,6 @@
 # Tadic's generic-free unitary-dual exhaustion
 
-Author: Worker 4988. Module
+Module
 `Langlands.Representation.Classification.TadicUnitaryDualExhaustionProof`.
 
 ## Statement proved
@@ -86,9 +86,8 @@ is therefore unconditional as well.
 
 ## Provenance
 
-This is the target theorem of Task 4988. The composition follows Tadic's own
+The composition follows Tadic's own
 structure for the exhaustion half of Theorem D(ii): the induction of Theorem A.10,
 using Lemma 4.8(ii), Lemma 6.3, Corollary A.6(ii), Theorem A.8 and the
 classification of Langlands quotients. Some of the published ingredient proofs
 take routes other than Tadic's; their own Markdown files describe those routes.
-The statement and its import closure are unchanged.

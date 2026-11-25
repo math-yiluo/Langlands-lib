@@ -1,6 +1,6 @@
 # Unramified twists of pair epsilon factors
 
-Author: Worker 4803. Module
+Module
 `Langlands.Representation.RankinSelberg.UnramifiedTwistEpsilonProof`. The
 theorem `Langlands.RankinSelberg.unramifiedTwistEpsilon` proves
 `UnramifiedTwistEpsilonStatement.{uF, uV, uW}` (module `UnramifiedTwistStatement`)

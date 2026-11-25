@@ -1,6 +1,6 @@
 # Actual root-subgroup placement in simply connected product factors
 
-Worker 509. This is derived geometric comparison material over arbitrary
+This is derived geometric comparison material over arbitrary
 fields with a supplied split maximal torus at every universe parameter. The input is an actual
 `SimplyConnectedAlmostSimpleProduct` presentation of a semisimple group and
 an actual split maximal torus. For the datum-indexed conclusions, an actual
@@ -49,7 +49,7 @@ integral exponent. The published rank-one unit relation holds on this test,
 so commutation with both opposite root groups forces the ordered pairing to
 vanish. This does not extend the ambient group or its root datum.
 
-This unit does not prove the reverse implication, identify an actual factor's
+This module does not prove the reverse implication, identify an actual factor's
 root datum with the whole component, descend the matching, or establish a
 full-star factor comparison. All its placement and connectivity assertions
 apply over arbitrary fields with the specified split maximal torus. It uses

@@ -16,7 +16,7 @@ The conclusion is Mathlib's `QuasiIso φ`, meaning
 that the induced map on homology is an isomorphism in every degree.
 There are no flatness, finiteness or boundedness assumptions.
 
-Worker 137 derived this criterion from the kernel/image description of
+This criterion is derived from the kernel/image description of
 module homology. It connects the explicit tests used by the Library's
 `BoundedFlatComplexProjectiveStatement` and
 `BoundedFlatQuasiIsoBaseChangeStatement` with Mathlib's categorical

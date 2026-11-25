@@ -1,7 +1,5 @@
 # Local Zariski density through actual affine points
 
-Author: Worker 135.
-
 `Langlands.AlgebraicGeometry.PointTopology.rationalLocalDensity` proves
 `RationalLocalDensityStatement.{u}` for every nonarchimedean local field
 in arbitrary universe. The scheme is affine, integral, and smooth over

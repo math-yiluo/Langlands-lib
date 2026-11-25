@@ -1,6 +1,6 @@
 # Original forgetful functors and canonical natural endomorphisms
 
-This definition unit implements the forward construction in David
+This module of definitions implements the forward construction in David
 Renard, *Représentations des groupes réductifs p-adiques*, French version
 dated 9 July 2026, I.1.6, printed pages 11–12/PDF17–18. The registered
 source is `renard-2026-representations-groupes-reductifs-padiques`, SHA256
@@ -92,11 +92,13 @@ commutativity, countability or dimension assumption is added.
 
 The ambient extension, explicit additive maps and categorical ring are
 internal packaging of Renard's forgetful functor and forward action
-construction. This unit establishes no injectivity, surjectivity, inverse,
+construction. This module establishes no injectivity, surjectivity, inverse,
 classification, topology, closure or centre theorem. Recovering an element
 from a natural transformation by evaluation at the regular module requires
-that object to fit in the source category's carrier universe and belongs
-to a separate audited statement/proof unit.
+that object to fit in the source category's carrier universe and is done in
+other modules: the evaluation in `NondegenerateModuleNaturalEndEvaluation`,
+the classification in `NondegenerateModuleNaturalEndClassificationStatement`
+and its proof `NondegenerateModuleNaturalEndClassificationProof`.
 
 ## Interface checks
 

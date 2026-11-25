@@ -1,7 +1,5 @@
 # Topology and Haar measures of actual central quotients: proof
 
-Author: Worker 158.
-
 `Langlands.glBlockCentralQuotientTopology` proves the exact proposition
 `Langlands.GLBlockCentralQuotientTopologyStatement`. It covers every supplied
 compatible topology on every finite p-adic field in an arbitrary universe,

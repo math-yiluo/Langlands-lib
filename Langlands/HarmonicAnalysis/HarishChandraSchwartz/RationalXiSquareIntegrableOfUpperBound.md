@@ -1,7 +1,5 @@
 # Lemma II.1.5 of Waldspurger on actual rational points, from the upper bound of Lemma II.1.1
 
-Author: Worker 5, task `1ef6854b-f0e9-4d96-bbe5-cb8c4b52f927` (revision 1).
-
 Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalXiSquareIntegrableOfUpperBound`,
 namespace `Langlands.HarishChandraSchwartz`.
 
@@ -13,8 +11,9 @@ RationalXiUpperBoundStatement.{u} → RationalXiSquareIntegrableStatement.{u}`**
 So the Library's statement of Lemma II.1.5 on actual points (`RationalXiSquareIntegrableStatement`,
 module `RationalXiSquareIntegrable`) follows from the Library's statement of the upper bound of
 Lemma II.1.1 (`RationalXiUpperBoundStatement`, module `RationalXiUpperBoundStatement`). Both
-statements are unchanged. The upper bound is not proved here (its proof is the separate Task 5326),
-so Lemma II.1.5 is proved only conditionally on it. Every other ingredient of Waldspurger's proof
+statements are unchanged. The upper bound is not proved here (it is proved as
+`rationalXiUpperBound` in `RationalXiUpperBoundProof`), so this module proves Lemma II.1.5 only
+conditionally on it. Every other ingredient of Waldspurger's proof
 is proved in this module or already proved in the Library. The proof uses only the standard axioms
 `propext`, `Classical.choice` and `Quot.sound`.
 

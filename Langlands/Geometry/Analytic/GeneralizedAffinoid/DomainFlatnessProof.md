@@ -1,7 +1,5 @@
 # Algebraic flatness of full affinoid-domain restrictions
 
-Authors: Worker 5217 and Worker 2037.
-
 This module proves the Library statement
 `Langlands.Analytic.PresentedAffinoidAlgebra.Domain.FlatnessStatement`. Let `K`
 be a complete ultrametric normed field, `A` a presented affinoid algebra over

@@ -1,7 +1,5 @@
 # Rational-point adapters for conjugate algebraic parabolics
 
-Authors: Worker 1265 and Worker 113.
-
 This is an internal adapter on the published group-scheme, subgroup-functor
 and inner-automorphism constructions. It fixes the direction of rational-point
 conjugation needed by the Iwasawa statement family. Its algebraic core applies over any

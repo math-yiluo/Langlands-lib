@@ -1,8 +1,8 @@
 # Split closed subgroups of commutative groups containing images of split groups
 
 This helper module serves the proof of
-`Langlands.GroupScheme.RelativeRoot.SplitUnipotentStableVectorSubgroupStatement`
-(task 6b07dcd2-af39-4c69-8ade-d0faa997a49f). Let G be a smooth affine
+`Langlands.GroupScheme.RelativeRoot.SplitUnipotentStableVectorSubgroupStatement`.
+Let G be a smooth affine
 commutative group over a field k. A morphism ω : Y ⊗ S ⟶ G, with S split
 unipotent, that is a homomorphism on every rational fibre {y} × S factors
 through a smooth connected split unipotent closed subgroup of G, provided

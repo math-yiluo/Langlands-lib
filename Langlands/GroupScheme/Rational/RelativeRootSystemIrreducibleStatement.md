@@ -1,6 +1,7 @@
 # Statement: the relative root system of an almost-simple group is irreducible
 
-Worker 161, with Worker 227. Support statement for Task 6205.
+Support statement for the affine-diagram input for anisotropic groups over
+local fields (the building part of Kaletha–Prasad Theorem 10.3.1).
 
 `RelativeRootSystemIrreducibleStatement` is a proposition at every universe
 `u`. It states the following for every field `k : Type u`, every group scheme

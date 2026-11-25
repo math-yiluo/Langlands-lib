@@ -91,9 +91,10 @@ canonical section algebras and finite full-domain descent. The result includes
 nonreduced algebras, trivial valuations, arbitrary positive polyradii and empty
 finite families; no exclusion of these cases is imposed.
 
-This unit establishes reverse recognition and algebra/chart recovery for a
+This module establishes reverse recognition and algebra/chart recovery for a
 locally refining selected subatlas. Full naturality of the reverse recognized
-restriction maps, the two-sided recognized category equivalence, arbitrary
-equivalent-net invariance, maximal-atlas uniqueness and the analytic and
-equivariant site constructions remain separate work. It does not claim the
+restriction maps and the two-sided recognized category equivalence are proved
+in `SubatlasRecognitionEquivalence`. Arbitrary equivalent-net invariance,
+maximal-atlas uniqueness and the analytic and equivariant site constructions
+are not treated in this module. It does not claim the
 whole of Proposition 1.2.13 or completion of the Harris analytic foundations.

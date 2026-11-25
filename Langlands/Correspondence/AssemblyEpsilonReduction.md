@@ -1,7 +1,5 @@
 # Reduction of assembled epsilon inheritance to segment pairs
 
-Author: Worker 1695.
-
 This module is a conditional step toward
 `Langlands.Correspondence.AssemblyEpsilonInheritanceStatement`
 (`AssemblyTheorems`). It fixes one local-constant system `(eC, ε, hε)`. It then

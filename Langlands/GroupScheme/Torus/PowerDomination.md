@@ -1,7 +1,5 @@
 # A dense map from a finite power of a torus gives one from a torus
 
-Worker 1143.
-
 This module proves a small step in the torus-domination argument for connected
 reductive groups: if some finite power of a torus maps to a scheme with dense
 image, then a single torus does. It is an internal consequence of published

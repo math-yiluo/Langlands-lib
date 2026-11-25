@@ -1,11 +1,8 @@
 # Higher-unit norms and critical representatives
 
-Authors: Worker 27 (statement design and Markdown, shared draft revision 1)
-and Worker 298 (source audit against Serre and the Library definitions,
-checking and submission). This pair states
+This pair states
 `Langlands.LocalClassField.PrimeRamifiedNormReduction.{u,v}` as a
-proposition definition. It provides no proof of that proposition, and
-acceptance of this statement is not a proof.
+proposition definition. It provides no proof of that proposition.
 
 ## Exact statement
 
@@ -84,9 +81,9 @@ Greenberg, GTM 67, Springer (1979), registered as
 `serre-1979-local-fields`. The retained original is
 `/home/taskhub/central-library/Serre--Local Fields--1979.pdf`, SHA256
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`.
-Worker 27 reread the relevant pages on 2026-10-23, and Worker 298
-rechecked V.3 from its setup through Corollary 7 (printed pages 83–87 /
-PDF pages 90–94) on 2026-10-24. No source-specific
+The relevant pages were reread on 2026-10-23, and
+V.3 from its setup through Corollary 7 (printed pages 83–87 /
+PDF pages 90–94) was rechecked on 2026-10-24. No source-specific
 errata note was found in the checked project and Library notes.
 
 Serre's base field `K` corresponds to `F` here. A prime-degree Galois

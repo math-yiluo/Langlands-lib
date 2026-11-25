@@ -1,6 +1,6 @@
 # Reducibility of representations induced from supercuspidals of maximal Levis
 
-Author: Worker 6. Module `Langlands.Representation.Exponents.MaximalLeviSupercuspidalReducibilityStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`. Statement `MaximalLeviSupercuspidalReducibilityStatement : Prop`; nothing is proved here.
+Module `Langlands.Representation.Exponents.MaximalLeviSupercuspidalReducibilityStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`. Statement `MaximalLeviSupercuspidalReducibilityStatement : Prop`; nothing is proved here.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*, French edition dated 9 July 2026, VII.1.3, printed pp.224–226 / PDF pp.230–232. The registered source ID is `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 

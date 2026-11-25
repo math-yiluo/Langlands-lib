@@ -1,7 +1,5 @@
 # Proof that central extensions of `SL₂` by separated commutative groups split uniquely
 
-Worker 65, with Worker 794.
-
 `Langlands.GroupScheme.specialLinearCentralExtensionSplit` proves the published proposition
 `Langlands.GroupScheme.SpecialLinearCentralExtensionSplitStatement.{u}` exactly, in every
 universe `u`, with no added hypothesis. The statement's Lean/Markdown pair is unchanged. The
@@ -12,7 +10,7 @@ Panoramas et Synthèses 42–43, SMF, 2014, Proposition 4.3.1 (due to Gabber), p
 It is registered as `conrad-2014-reductive-group-schemes`. The implemented proof follows
 Conrad's construction of the section. It replaces his schematic density arguments by
 fppf-local computations with units, except in one step (commutativity of `D′`), where a
-relative density argument by Worker 794 is used. Its uniqueness argument differs from Conrad's:
+relative density argument is used. Its uniqueness argument differs from Conrad's:
 it uses the Library's relative fppf perfectness of `SL₂`.
 
 ## Declarations in this module
@@ -54,7 +52,7 @@ the four hypotheses of the statement. Let `X = toExt E z q hz hker hlift`.
 2. **Commutativity of `D′`.** `hD : X.DComm` is `dComm_of_separated` (module `DComm`). It
    uses `hi`, the monomorphism hypothesis on `z` and separatedness of `Z`. This is the only use
    of separatedness. `DComm` builds from the commutators of lifts of diagonal matrices a natural
-   bimultiplicative pairing of units with values in `Z`. Worker 794's `UnitPairing.eq_one`
+   bimultiplicative pairing of units with values in `Z`. `UnitPairing.eq_one`
    shows that such a pairing into a separated commutative group scheme is trivial.
 3. **Existence.** `s = X.section_ hD`. The point-level section `sigma` of `Cell` is Conrad's
    section `y′(a) h′(t) x′(b)` on the open cell. It is translated fppf-locally into the cell by
@@ -65,22 +63,22 @@ the four hypotheses of the statement. Let `X = toExt E z q hz hker hlift`.
    - `Cell`: the gluing and the multiplicativity of `sigma`.
    `Q_section` gives `slEquiv (x ≫ s ≫ q) = slEquiv x` for every point `x`. Hence `s ≫ q = 𝟙`
    by the Library's `hom_ext_points` and injectivity of `slEquiv`.
-4. **Uniqueness.** Worker 794's `binarySpecialLinear_section_unique` (module `Uniqueness`)
+4. **Uniqueness.** `binarySpecialLinear_section_unique` (module `Uniqueness`)
    shows that any two sections of `q` are equal. It uses only centrality of `z` and the
    kernel hypothesis. Two sections differ by a central homomorphism, which kills commutators.
    By the Library's relative fppf perfectness of `SL₂`, every point of `SL₂` is fppf-locally a
    product of commutators. Conrad instead shows directly that every homomorphism `SL₂ → Z` is
    trivial.
 
-The conclusion `∃! s, s ≫ q = 𝟙 (sl2 S)` follows. Here `sl2 S` (module `Points`) and Worker
-794's `binarySpecialLinear S` are by definition the statement's
+The conclusion `∃! s, s ≫ q = 𝟙 (sl2 S)` follows. Here `sl2 S` (module `Points`) and
+`binarySpecialLinear S` are by definition the statement's
 `(GroupScheme.baseChange (Gm.toSpecZ S)).obj (SpecialLinear.groupScheme (Fin 2) (CommRingCat.of (ULift.{u} ℤ)))`.
 
 ## Helper modules
 
 All under `Langlands/GroupScheme/SL2CentralExtension/`, each with its own Markdown file.
 
-By Worker 65 (part of this candidate):
+Written for this proof:
 
 - `Local`: fppf-local truth of properties of points (`Loc`), gluing and descent of equalities.
 - `Covers`: fppf covers from nowhere degenerate polynomials (local unit values and roots).
@@ -90,5 +88,5 @@ By Worker 65 (part of this candidate):
 - `Unipotent`, `Splitting`, `Torus`, `Cell`: the existence construction described above.
 - `DComm`: commutativity of `D′` for separated kernels.
 
-By Worker 794 (published separately; imported, not part of this candidate): `Density`,
+Published separately and imported here: `Density`,
 `TorsionDensity`, `UnitPairing` and `Uniqueness`.

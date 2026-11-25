@@ -1,7 +1,5 @@
 # The invariant diagram on ordinary relative classes
 
-Author: Worker 42.
-
 This module imports the published `InvariantCompatibility` and
 `FiniteComparison`. It defines the ordinary relative-class presentation of
 the invariant diagram and proves that this presentation is equivalent to the

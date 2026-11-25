@@ -15,7 +15,7 @@ set_option maxHeartbeats 800000
 namespace Langlands.Global.RankinSelbergGlobal.SelfPair
 
 open Automorphic CuspidalPairBoundaryNonvanishing
-open Langlands.ClassField.Global.RelativeWeilGroup (HasUnitaryCentralCharacter)
+open Langlands.ClassFieldTheory.Global.RelativeWeilGroup (HasUnitaryCentralCharacter)
 
 variable {F : Type u} [Field F] [NumberField F] [CompactSpace (AdeleQuotient F)]
   {r : ℕ}

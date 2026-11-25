@@ -1,6 +1,6 @@
 # Shared additive coordinate inclusions into the actual adeles
 
-Author: Worker 1692. These existing constructions are moved unchanged from
+These existing constructions are moved unchanged from
 `Factors/HeckeAdditiveComponents` to a shared module importing only `Adelic`.
 Their full names remain in `Langlands.Global.HeckeFunctionalEquation`.
 

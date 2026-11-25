@@ -1,11 +1,11 @@
 # Spectral residue comparisons and the inertia degree criterion
 
-This is a derived helper unit for
+This is a derived helper module for
 `Langlands.LocalGalois.Separable.SeparableUnramifiedStatement`. It constructs
 explicit integer and residue equivalences and proves the group theoretic
 criterion used by that target. It does not assert arithmetic unramifiedness or
-prove the whole target. Worker 1199 implemented the helpers in coordination
-with Worker 60's complementary finite arithmetic proof.
+prove the whole target. The helpers complement the finite arithmetic of
+`Langlands.Galois.Local.SeparableUnramifiedFiniteArithmetic`.
 
 ## Scope and provenance
 
@@ -101,6 +101,6 @@ handles the empty set.
 
 `finiteUnramifiedGaloisExhaustion_of_maximality` adds the target's independent
 `ArithmeticUnramified` predicate assuming `FiniteUnramifiedMaximality F`.
-The present unit supplies neither that maximality assumption nor the finite
+The present module supplies neither that maximality assumption nor the finite
 integer-ring arithmetic needed to prove it. No characteristic zero,
 perfectness of `F`, or completeness of the infinite fixed field is assumed.

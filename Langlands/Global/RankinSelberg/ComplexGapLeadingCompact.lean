@@ -36,6 +36,7 @@ local notation "N" => Langlands.GeneralLinear.upperUnipotent TailSize ℂ
 local notation "K" => unitaryCompact ℂ Size
 local notation "Ksmall" => unitaryCompact ℂ k
 
+set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
 private theorem blockSum_stack (g : H) (h : Langlands.GeneralLinear TailSize ℂ) (X : Small) :
     (blockSum (g, h)).val * stackRows k TailSize k X 0 = stackRows k TailSize k (g.val * X) 0 := by
   ext i j

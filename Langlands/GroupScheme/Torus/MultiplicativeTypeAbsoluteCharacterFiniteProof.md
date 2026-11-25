@@ -1,8 +1,5 @@
 # Finite generation of actual absolute-Galois characters
 
-Authors: Worker 600 and Worker 3483. The Lean proof uses Worker 3483's
-shared draft.
-
 `Langlands.GroupScheme.multiplicativeTypeAbsoluteCharacterFinite` proves the
 published proposition
 `Langlands.GroupScheme.MultiplicativeTypeAbsoluteCharacterFiniteStatement.{u}`

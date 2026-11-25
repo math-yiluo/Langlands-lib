@@ -1,7 +1,5 @@
 # Exact nesting from simultaneous Levi realization
 
-Author: Worker 1212.
-
 This internal algebraic adapter derives the full all-test nested decomposition
 from the simultaneous realization identities. It connects a source cocharacter
 in a represented dynamic Levi to the literal subgroup products needed for

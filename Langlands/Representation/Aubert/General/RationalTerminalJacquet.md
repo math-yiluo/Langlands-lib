@@ -1,6 +1,6 @@
 # Jacquet comparisons on the actual rational-point smooth category
 
-Worker 194 specializes the three published `TerminalJacquet` targets to the
+This module specializes the three published `TerminalJacquet` targets to the
 literal standard rational-point families and proves the intrinsic normalization
 adapter `standardLeviUnipotent_isUnimodular`. The source for the comparisons is
 Aubert's 1996 erratum, printed p.4690, Remark (1), from the definition of
@@ -98,10 +98,12 @@ finite length on `E`. The terminal cokernel remains present; no final
 vanishing is asserted. Proposition 3.2 remains unresolved.
 
 The topology, compact-limit, point-comparison, root and Coxeter inputs are
-intermediate obligations to discharge or match to the parent's itemized
-external structural ledger before final parent closure. The cuspidality
-and natural-comparison targets remain representation-theoretic proof
-obligations. No class formula is asserted here; those consequences require
+intermediate inputs, to be discharged or matched to the Library's itemized
+Chapter V structural ledger (`notes/renard/chapter-v-structural-inputs.md`).
+The cuspidality and associated-Levi comparison targets
+are representation-theoretic proof obligations that the Library does not
+prove; the fixed-Levi comparison is proved as `rationalFixedLeviComparison`
+in `RationalFixedLeviComparisonProof`. No class formula is asserted here; those consequences require
 separate finite-length and Euler arguments. Transitive imports reach
 classification modules, so this file makes no classification-independence
 claim.

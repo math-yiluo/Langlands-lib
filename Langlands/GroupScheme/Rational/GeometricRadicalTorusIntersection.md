@@ -1,7 +1,5 @@
 # Canonical intersections with a supplied geometric solvable radical
 
-Author: Worker 1441.
-
 `solvableRadicalTorusIntersection f r hr` constructs the canonical commutative
 scheme-theoretic intersection of an actual map `f : T → P`, with `T`
 commutative, and a supplied solvable radical `r : R → P`. The construction
@@ -56,6 +54,5 @@ representative-comparison and base-change APIs and the explicit named
 structural propositions. It does not prove any of those propositions.
 It also does not construct a solvable radical, a rational Levi, a largest
 central subtorus, or an unconditional proof of
-`ParabolicRadicalTorusLeviStatement`. The arbitrary-field host target is
-unchanged. All fields and algebraic closures here lie in the same arbitrary
+`ParabolicRadicalTorusLeviStatement`, which concerns arbitrary fields. All fields and algebraic closures here lie in the same arbitrary
 universe.

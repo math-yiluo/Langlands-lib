@@ -1,7 +1,5 @@
 # Surjective determinant norms under composition and equivalence
 
-Author: Worker 60.
-
 The two helpers in `Langlands.ClassFieldTheory.Local.InertiaNormTransport`
 apply Mathlib determinant-norm identities to the project's full field unit
 groups. They are algebraic transport results used in the final inertia norm

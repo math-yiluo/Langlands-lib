@@ -1,7 +1,5 @@
 # Non-unitarizability of `ν^s ρ × ν^(-s) ρ` for large negative `s`
 
-Author: Worker 1023.
-
 `Langlands.Classification.TwoBlockLargeExponentNonUnitarizable.{uF,uV} F T` is a
 proposition definition. It names the unbounded matrix coefficient step of the
 reducibility sketch in Zelevinsky 1980, Proposition 1.11, proof, printed p.175

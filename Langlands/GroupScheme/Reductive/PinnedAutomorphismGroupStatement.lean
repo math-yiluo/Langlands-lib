@@ -26,7 +26,7 @@ def PinnedAutomorphismGroupStatement : Prop :=
     [IsAffineHom G.X.hom] (p : SplitPinning G) (q : G ⟶ A) (hq : IsAdjointQuotient q),
     ∃ (inn : (Over.mk (𝟙 (Spec (CommRingCat.of k))) ⟶ A.X) →* CategoryTheory.Aut G)
       (π : CategoryTheory.Aut G →* p.basedRootDatumAut),
-      (∀ x, inn x = hq.innerAction.basePointIso x) ∧
+      (∀ x, inn x = Aut.of (hq.innerAction.basePointIso x)) ∧
       Function.Injective inn ∧
       π.ker = inn.range ∧
       ∀ θ, π (p.basedRootDatumAutLift θ) = θ

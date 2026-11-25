@@ -271,7 +271,7 @@ theorem isInvariantDomain_facetAnalyticDomain {S : Set (NormClass F (Fin (d + 1)
       ((Action.res _ H.subtype).obj (omegaAction F K d)) (facetAnalyticDomain K hS ε) := by
   intro g x hx
   have hg : SaturatedAtlasPresentation.localizedSpaceFunctor.map
-      ((omegaAction F K d).ρ (g : Matrix.GeneralLinearGroup (Fin (d + 1)) F)) x =
+      ((omegaAction F K d).ρ (g : Matrix.GeneralLinearGroup (Fin (d + 1)) F)).asHom x =
         actionMap K (g : Matrix.GeneralLinearGroup (Fin (d + 1)) F) x := by
     rw [localizedSpaceFunctor_map_omegaAction]
     rfl

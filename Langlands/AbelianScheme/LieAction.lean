@@ -21,15 +21,15 @@ variable {S : AlgebraicGeometry.Scheme.{u}}
 
 /-- The actual integral endomorphism ring acts on the relative Lie module. -/
 def lieEndAction (A : AbelianScheme S) : End A →+* CategoryTheory.End A.Lie where
-  toFun := (lieFunctor S).map
-  map_zero' := (lieFunctor S).map_zero A A
-  map_one' := (lieFunctor S).map_id A
-  map_add' := fun _ _ => (lieFunctor S).map_add
-  map_mul' := fun f g => (lieFunctor S).map_comp g f
+  toFun f := CategoryTheory.End.of ((lieFunctor S).map f.asHom)
+  map_zero' := congrArg CategoryTheory.End.of ((lieFunctor S).map_zero A A)
+  map_one' := congrArg CategoryTheory.End.of ((lieFunctor S).map_id A)
+  map_add' := fun _ _ => congrArg CategoryTheory.End.of (lieFunctor S).map_add
+  map_mul' := fun f g => congrArg CategoryTheory.End.of ((lieFunctor S).map_comp g.asHom f.asHom)
 
 @[simp]
 lemma lieEndAction_apply (A : AbelianScheme S) (f : End A) :
-    lieEndAction A f = lieMap f := rfl
+    lieEndAction A f = CategoryTheory.End.of (lieMap f.asHom) := rfl
 
 /-- Over an actual rational algebra base, rational endomorphisms act on Lie. -/
 def lieEnd0Action {R : CommRingCat.{u}} [Algebra ℚ R] (p : S ⟶ Spec R)
@@ -50,7 +50,8 @@ lemma lieEnd0Action_ofEnd {R : CommRingCat.{u}} [Algebra ℚ R] (p : S ⟶ Spec 
 lemma lieEnd0Action_tmul {R : CommRingCat.{u}} [Algebra ℚ R] (p : S ⟶ Spec R)
     (A : AbelianScheme S) (q : ℚ) (f : End A) :
     letI := Langlands.Scheme.Modules.rationalLinearOverBase p
-    lieEnd0Action p A (q ⊗ₜ[ℤ] f) = q • lieMap f := by
+    lieEnd0Action p A (CategoryTheory.End.of (q ⊗ₜ[ℤ] f.asHom)) =
+      CategoryTheory.End.of (q • lieMap f.asHom) := by
   let := Langlands.Scheme.Modules.rationalLinearOverBase p
   rfl
 

@@ -1,6 +1,6 @@
 # Actual constant-term decay from the three analytic prerequisites
 
-Worker 248, Task 5460. The Prop-valued statement
+The Prop-valued statement
 `RationalConstantTermAnalyticReductionStatement.{u}` is proved by
 `rationalConstantTermAnalyticReduction`, at arbitrary universe `u`. Its
 whole content is the implication
@@ -75,6 +75,8 @@ printed pp.262-263, with the change of minimal parabolic allowed by its
 following remark on p.263. Source: Waldspurger (2003), registered as
 `waldspurger-2003-plancherel`, SHA256
 `4b6a6162cd0b3863703fb2f65d1698f926caf813114917f2084c16e38f2e30f7`.
-The module deliberately retains the three unresolved analytic estimates
-as premises of this intermediate proposition. Their independent proofs
-and publication are needed for the host's unconditional target.
+The module deliberately retains the three analytic estimates as premises
+of this intermediate proposition. Two of them are proved in the Library
+(`rationalXiGlobalUpperBound`, `rationalLeviXiLowerBound`); with a proof of
+`RationalUnipotentWeightIntegrabilityStatement` the reduction gives
+`RationalConstantTermEstimateStatement` unconditionally.

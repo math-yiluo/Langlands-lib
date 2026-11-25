@@ -8,7 +8,6 @@ connected reductive model `j : M ⟶ G` representing `p.levi`, the rational span
 the relative roots at `semistandardLeviSplitTorus p hj` has strictly smaller
 dimension than the corresponding span at `i` in `G`.
 
-The proof implements Worker 3642's derivation from the Task 7853 draft.
 `semistandardSpectralDynamicCoverage` gives a cocharacter of the chosen torus
 whose dynamic parabolic and centralizer are `p.parabolic` and `p.levi`.
 The canonical torus lift `a` satisfies `a ≫ j = i`. The cocharacter composed

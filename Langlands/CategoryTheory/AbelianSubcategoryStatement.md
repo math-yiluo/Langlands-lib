@@ -1,6 +1,6 @@
 # Corrected abelian full-subcategory criteria and a dimension-one counterexample
 
-Author: Worker 633. This is a statement family, with transparent supporting
+This is a statement family, with transparent supporting
 definitions and the elementary membership proof needed to construct the actual
 line. None of the five substantive result targets is proved here.
 
@@ -110,14 +110,12 @@ The no-abelian target is independently stated as
 `¬ Nonempty (Abelian (DimensionLEOneModuleCat K))`.
 
 The counterexample and strengthened criteria follow the source discrepancy
-analysis in the public note `notes/renard/appendix-a-corrections.md`, authored by
-Worker 6. Their formal statement formulation here is derived content rather
+analysis in the public note `notes/renard/appendix-a-corrections.md`. Their formal statement formulation here is derived content rather
 than an attribution of these corrections to Renard.
 
-## Proposed reuse route and remaining proof obligations
+## Reuse route and proofs
 
-The approved Mathlib environment is
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, with Mathlib commit
+The statements were checked in a Lean environment with Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`.
 `Mathlib.CategoryTheory.Abelian.Subcategory` provides the abelian full-subcategory
 instance from zero containment and kernel, cokernel and finite-product closure.
@@ -125,7 +123,11 @@ instance from zero containment and kernel, cokernel and finite-product closure.
 subobject closure and cokernel closure from quotient closure.
 `Mathlib.CategoryTheory.ObjectProperty.EpiMono` supplies the all-monomorphism and
 all-epimorphism definitions used in the targets. These are reuse routes for
-future proofs; this file does not implement or claim those proofs.
+the proofs; this file does not implement or claim those proofs. The two general
+criteria are proved by `abelianOfKernelsCokernelsFiniteProducts_proof`
+(module `AbelianSubcategoryKernelsProof`) and
+`abelianOfSubobjectsQuotientsFiniteProducts_proof` (module
+`AbelianSubcategorySubobjectsProof`).
 
 For the concrete closure statements, the proposed route uses
 `ModuleCat.mono_iff_injective`, `ModuleCat.epi_iff_surjective`, finite-dimensional
@@ -136,13 +138,16 @@ on every pair of endomorphisms of the actual line taking `1` to prescribed
 scalars. The bound on `V` would contradict dimension two of the target. This
 excludes any internal product candidate. The proposed no-abelian argument then
 uses the finite products required by any abelian structure. These proof routes
-remain unimplemented here and need independent proof submissions against the
-accepted statement declarations.
+are not implemented here. The three concrete statements are proved by
+`dimensionLEOneClosedUnderSubobjectsQuotients_proof`,
+`dimensionLEOneLineHasNoBinaryProduct_proof` and `dimensionLEOneNotAbelian_proof`
+(modules `DimensionLEOneClosureProof`, `DimensionLEOneNoProductProof` and
+`DimensionLEOneNotAbelianProof`).
 
 The formal example uses existing unital `ModuleCat`. Submodules and quotients
 of unital vector spaces remain unital even in the book's larger possibly
 nonunital module setting, so the mathematical source discrepancy persists
-there. A formal embedding into that pending category is a separate adapter
+there. A formal embedding into that category is a separate adapter
 obligation. Equivalence of the source's AB0–AB3* axioms with Mathlib's definition,
 the general possibly nonunital module category, and A.VI.2 and later assertions
 are outside this statement family.

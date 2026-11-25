@@ -1,7 +1,5 @@
 # Positive two-block Jacquet-to-derivative comparison
 
-Author: Worker 723.
-
 This module states the positive-block clause of Zelevinsky (1980),
 Proposition 3.7(b): the ordinary `m`-th derivative of a representation of
 `GL_(k+m)` is naturally isomorphic to the partial derivative of its normalized
@@ -9,7 +7,9 @@ Jacquet module for the standard parabolic of shape `(k,m)`. It has one helper
 functor, `Langlands.Derivative.positiveTwoBlockNormalizedJacquet`, and one
 Prop-valued definition, the principal proposition
 `Langlands.Derivative.PartialDerivativeJacquetComparisonStatement.{uF, uV} F T`.
-It proves nothing. The comparison remains a proof obligation.
+It proves nothing. The comparison is proved as
+`Langlands.Derivative.partialDerivativeJacquetComparison` in
+`Langlands.Representation.Derivative.PartialDerivativeJacquetComparisonProof`.
 
 ## The helper functor
 
@@ -204,8 +204,9 @@ This is the positive-block clause only. The source allows all `k, m ≥ 0`; the
 published `BlockShape` requires positive blocks, so `(0, m)` and `(k, 0)` are
 not two-block shapes and are not covered:
 
-- `k = 0`: the single-block top-localization comparison belongs to the
-  separate task owned by Worker 288.
+- `k = 0`: the single-block top-localization comparison is the separate
+  `TopLocalization.topLocalizationIso` (module
+  `Derivative.TopLocalizationComparison`).
 - `m = 0`: the zeroth derivative is the identity functor
   (`generalLinearDerivative_zero`), and the partial derivative of second rank
   zero is naturally isomorphic to first-factor restriction
@@ -213,9 +214,9 @@ not two-block shapes and are not covered:
   handled by identity and partial-zero adapters elsewhere.
 
 Ze80 3.7(a), the exterior-tensor comparison, and the product or Leibniz
-filtration are separate tasks and are not stated here.
+filtration are not stated here.
 
-## Remaining proof obligation
+## Proof obligation
 
 A proof of `PartialDerivativeJacquetComparisonStatement F T` must construct,
 for every `ψ` and all positive `k` and `m`, an actual natural isomorphism
@@ -249,9 +250,9 @@ Neither the module nor its closure uses `SegmentHeadProductIrreducibility`,
 `GenericSegmentProductUniqueness`, `SquareIntegrableLanglandsClassification`,
 `UnlinkedSegmentSocleProductIrreducible`,
 `LinkedSegmentSocleReverseProductStructure`, `LinkedSegmentSoclePairReducible`,
-`SegmentSocleProductIrreducibility`, or any result of the excluded exhaustion,
+`SegmentSocleProductIrreducibility`, or any of the excluded exhaustion,
 existence, coverage, conversion, uniqueness, socle-commutation, gluing or
-segment-classification tasks.
+segment-classification results.
 
-Environment: `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, Lean 4.34.0, Mathlib
+Environment: Lean 4.34.0, Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.

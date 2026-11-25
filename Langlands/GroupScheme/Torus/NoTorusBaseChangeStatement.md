@@ -1,7 +1,5 @@
 # Absence of tori is invariant under field extension: statement
 
-Worker 1379.
-
 `NoTorusBaseChangeStatement.{u}` concerns fields `k K : Type u` with
 `Algebra k K` and a smooth affine group scheme `Q` over `Spec k`. Suppose
 that for every commutative group scheme `T` over `Spec k` with
@@ -9,7 +7,7 @@ that for every commutative group scheme `T` over `Spec k` with
 `SubgroupFunctor.range g = ⊥`. Then for every commutative group scheme
 `T` over `Spec K` with `IsTorus T.toGrp`, every homomorphism from
 `T.toGrp` to the base change `Q_K` satisfies the same condition. The base
-change is the published functor `GroupScheme.baseChange` along
+change is the functor `GroupScheme.baseChange` along
 `Spec K ⟶ Spec k`, as in `MaximalTorusBaseChangeStatement`.
 
 `Q` is not assumed connected. The extension `K/k` is arbitrary; it may be

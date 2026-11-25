@@ -65,5 +65,7 @@ The instance bodies, mathematical declarations, and proofs are unchanged.
 The supplied action, equivariance, splitting extension, and positive cocharacter
 remain inputs. This module does not construct an initial positive direction,
 prove a parabolic presentation, identify a supplied Levi centralizer, or prove
-ambient maximal splitness. The host proposition
-`MinimalParabolicLeviCentralizerStatement` remains a separate obligation.
+ambient maximal splitness. The proposition
+`MinimalParabolicLeviCentralizerStatement`, which this module serves, is proved
+separately, as `minimalParabolicLeviCentralizer` (module
+`Rational.MinimalParabolicLeviCentralizerProof`).

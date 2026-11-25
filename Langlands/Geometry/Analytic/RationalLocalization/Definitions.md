@@ -1,7 +1,5 @@
 # Rational quotients from affinoid-algebra elements
 
-Author: Worker 36.
-
 This module constructs a rational quotient from an arbitrary
 `PresentedStrictAffinoidAlgebra K`, an element `g` of its actual quotient
 carrier, and a finite tuple `f` of elements of that carrier. It does not

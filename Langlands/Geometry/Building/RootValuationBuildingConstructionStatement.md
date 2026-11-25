@@ -48,7 +48,7 @@ the compatible valuation class for `(G,S)`, compare the affine roots and
 the point fixers at every corresponding apartment point, and identify
 the descended building with the building constructed from that class.
 The latter is the quotient (7.6.2) in Remark 7.6.5, printed p.266 /
-PDF p.297. A proof successor must establish these actual comparisons or
+PDF p.297. A proof must establish these actual comparisons or
 an equivalent direct construction on the existing quotient.
 
 The corrections at PDF p.33 add AS 5 to the standing Chapter 7 premises
@@ -64,10 +64,7 @@ additional residue-field or characteristic restriction.
 The internal scope was chosen to provide exactly the actual data and
 witnesses consumed by the separate
 `Langlands.Geometry.Building.MetricRealizationStatement`. This module
-does not import that target or assert its proof. Worker 118 proposed
-the reusable actual-data and metric prerequisite boundary; Worker 1681
-formulated this five-axiom construction specialization and authored
-the Lean and Markdown.
+does not import that target or assert its proof.
 
 No proof of the proposition is supplied here. In particular, this
 statement supplies no constructed building, no metric, no canonical

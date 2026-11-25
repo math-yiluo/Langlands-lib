@@ -1,7 +1,8 @@
 # The actual smooth complex inside a standard Levi
 
-Internal construction by Worker 194, using Worker 23's actual subgroup
-functors and Levi indexing.
+Internal construction, using the actual subgroup functors of
+`General.Parabolic` and the Levi indexing `leviIndex` of
+`General.AlternatingOperator`.
 
 `LeviComplex.family L F J K` reads `K : Finset J` in the ambient root set
 using `leviIndex`, then takes the subgroup `F(K)` inside `L`. The proved

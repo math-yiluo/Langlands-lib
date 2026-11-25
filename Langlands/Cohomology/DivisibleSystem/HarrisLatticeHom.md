@@ -1,6 +1,6 @@
 # Freeness of Harris's lattice and Harris's system Hom(𝒪_m[C_p/H_p]^M, 𝓛_m)
 
-Author: Worker 61. Built on the published modules
+Built on the published modules
 `Langlands.Cohomology.DivisibleSystem.ReductionLattice`
 (`mono_powSMul_action_iff`, `mono_powSMul_harrisLatticeAction`),
 `Langlands.Cohomology.DivisibleSystem.IHomReduction`
@@ -16,7 +16,7 @@ place of `L`). Through their imports it uses `powSMul`
 (`Langlands.Cohomology.DivisibleSystem.FreeTorsionProjective`),
 `Induction.permutation`
 (`Langlands.Representation.Induction.PermutationModule`), `FinitePlacesAbove`
-(`Langlands.Global.AdelicFunctoriality.Norm`), Worker 57's
+(`Langlands.Global.AdelicFunctoriality.Norm`),
 `Langlands.Shimura.Coefficients.Lattice` (`CoefficientIntegers`,
 `StableCoefficientLattice` with `carrier` and its finiteness and freeness
 instances) and `Langlands.Shimura.Coefficients.HarrisLattice`
@@ -77,11 +77,11 @@ the product ring.
 ## Stable lattices at one place
 
 For the remaining sections, `A` is a finite-dimensional `ℚ`-algebra with
-Worker 13's involution `σ : AlgebraInvolution ℚ A`, `L : Type u` a number
+an involution `σ : AlgebraInvolution ℚ A`, `L : Type u` a number
 field, `W : Type u` an `L`-module and `ρ` an algebraic representation of
 `σ.baseChange L` on `W`, as in the published `HarrisLattice`; `p` is a finite
 place of `ℚ`. Here `l` is a finite place of `L` above `p`, `U` a subgroup of
-`σ.FiniteAdelicPoints`, and `Λ` is Worker 57's
+`σ.FiniteAdelicPoints`, and `Λ` is the published
 `StableCoefficientLattice ρ p l U`: a submodule `Λ.carrier` over the
 valuation ring `CoefficientIntegers l` (written `𝒪_l`) of `L_l ⊗_L W`, where
 `L_l` is the completion `FiniteCompletion L l`, that is a full lattice
@@ -99,7 +99,7 @@ instances make `Λ.carrier` finite and free over `𝒪_l`.
 ## Harris's lattice
 
 From here on `W` is finite over `L` and `U` is a compact open level of
-`σ.FiniteAdelicPoints`. Worker 57's `harrisLattice ρ p U` (written `𝓛`) is a
+`σ.FiniteAdelicPoints`. The published `harrisLattice ρ p U` (written `𝓛`) is a
 submodule of Harris's coefficient module `(L ⊗_ℚ ℚ_p) ⊗_L W` over
 `HarrisCoefficientIntegers L p`, the product `∏_{l | p} 𝒪_l` of the valuation
 rings at the places of `L` above `p`. The published `harrisLatticeEquiv ρ p U`
@@ -164,7 +164,7 @@ Let `X : Type u` be a `G`-set and `M : Type u` a finite free `R`-module.
 ## Provenance and interpretation
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
-J. Math. Kyoto Univ. 39-2 (1999) (Worker 61 read the rendered scanned pages):
+J. Math. Kyoto Univ. 39-2 (1999) (read in the rendered scanned pages):
 
 - §3, printed p.306 (one-based PDF page 8): "`L_v = L ⊗_ℚ ℚ_v`" for a place
   `v` of `ℚ`, so `L_ℓ` is in general a finite product of finite extensions of

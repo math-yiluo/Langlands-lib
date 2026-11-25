@@ -1,9 +1,7 @@
 # The unitized action of a compatible nonunital algebra action
 
-Author: Worker 734 read the cited passages, designed and implemented this module
-and wrote this note. No draft code by another worker was reused. The task
-(`2e6ba45d-844d-458a-aba5-3b706694aae6`, published by Worker 6) suggested
-building the action from `Unitization.lift` with `Module.compHom`.
+No other draft code was reused. The action is built from `Unitization.lift`
+with `Module.compHom`.
 
 The module `Langlands/Algebra/CompatibleUnitization.lean` (namespace
 `Langlands.Algebra.CompatibleUnitization`) adjoins a unit to a possibly
@@ -23,9 +21,9 @@ provides:
 4. the zero original action, in general and on the nonzero complex line `ℂ`
    with `A = ℂ`.
 
-Stable subspaces and quotients (part 3 of the task) are **not** in this module.
-They need the stable-subspace interface `Langlands.Algebra.CompatibleSubmodule`
-of task `225c0c50-f2f1-4da9-9cbd-b70bd64c5b33`, and are in the separate module
+Stable subspaces and quotients are **not** in this module.
+They need the stable-subspace interface `Langlands.Algebra.CompatibleSubmodule`,
+and are in the separate module
 `Langlands/Algebra/CompatibleUnitizationSubmodule.lean`, which imports both.
 
 The module imports the published bridge `Langlands.Algebra.CompatibleNonUnitalAction`
@@ -39,7 +37,7 @@ dated **9 July 2026**. This is the registered source
 `renard-2026-representations-groupes-reductifs-padiques`, at
 `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`,
 SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Printed page = PDF page minus 6. Worker 734 read these passages directly:
+Printed page = PDF page minus 6. These passages were read directly:
 
 - Chapter I, notation and conventions, printed pp. 5–6 / PDF pp. 11–12. Rings are
   not assumed unital, and modules over a unital ring are not assumed unital a
@@ -66,7 +64,7 @@ states the construction and the Hom formula in prose. The formula
 `x • m = x.fst • m + ρ x.snd m`, the uniqueness statements, the named adapters,
 the `k`-linear equivalence of Hom spaces, the centralizer description and the
 zero-action checks are not verbatim assertions of the author. Three choices are
-ours:
+this module's own:
 
 - the source's "`A`-module that is also a `ℂ`-vector space" is represented by
   an actual homomorphism `ρ` into `k`-linear endomorphisms, as in the bridge;
@@ -270,11 +268,11 @@ Section `Complex`, with `A = k = M = ℂ` and `ρ = 0 : ℂ →ₙₐ[ℂ] Modul
   `(1 : Unitization ℂ ℂ) • 1 = 1`. So the algebra unit of `A = ℂ` acts by zero
   and need not act as the identity, while the unit of the unitization does.
 
-## Deferred obligations
+## Scope
 
-The following remain separate obligations:
+The following are separate from this module:
 
-- part 3 of the task: the order isomorphism between stable `k`-subspaces of `ρ`
+- the order isomorphism between stable `k`-subspaces of `ρ`
   and `Submodule (Unitization k A) M`, and the restricted and quotient
   comparisons. These are in `Langlands/Algebra/CompatibleUnitizationSubmodule.lean`,
   not here;

@@ -141,8 +141,8 @@ Here `E = EuclideanSpace ℝ (Fin d)` with its standard measure `volume`.
   The definition unfolds by `rfl`. So the hypothesis may equally be given
   with the explicit function
   `y ↦ √(∑_{w : Fin k → Fin d} ‖D^k F(y)(e_{w 0}, …, e_{w (k-1)})‖²)`,
-  which is the form used by the constant-coefficient `L²` statement in
-  task `10d69993-68ea-4ade-a1cd-649023178c41`.
+  which is the form used by the constant-coefficient `L²` statement
+  `Langlands.Analysis.ConstantCoefficientEllipticL2EstimateStatement`.
 
 ## Proofs
 
@@ -250,16 +250,15 @@ here; they are not translations of a printed proof.
 
 The Euclidean basis-word norm is an internal convention. It matches the
 ordered-word convention of `Langlands.Analysis.CoordinateScalarDifferentialOperator`
-and of statement task `10d69993-68ea-4ade-a1cd-649023178c41`. It is not
+and of `Langlands.Analysis.ConstantCoefficientEllipticL2EstimateStatement`. It is not
 the paper's `|∇^j u|`, whose exact counting of mixed derivatives is not
 used.
 
 This module turns assumed `L²` factorial bounds into pointwise factorial
 bounds. It proves no analyticity statement or elliptic estimate, and it
 does not establish the assumed `L²` factorial bounds. The separate
-factorial-derivative unit
-(`Langlands.Analysis.FactorialDerivativeAnalyticity`, task
-`879255af-5725-46b9-8cbd-0ef6ca611174`) is not imported here.
+factorial-derivative module
+(`Langlands.Analysis.FactorialDerivativeAnalyticity`) is not imported here.
 
 The original is C. B. Morrey Jr. and L. Nirenberg, *On the analyticity of
 the solutions of linear elliptic systems of partial differential equations*,

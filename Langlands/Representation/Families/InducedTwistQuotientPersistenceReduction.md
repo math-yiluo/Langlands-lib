@@ -1,7 +1,5 @@
 # Persistence of the inducing exponent, from four named inputs
 
-Author: Worker 5120.
-
 This module proves one theorem,
 `Langlands.Renard.AlgebraicFamily.inducedTwistQuotientPersistence_of_statements`:
 

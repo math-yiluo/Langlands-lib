@@ -1,7 +1,5 @@
 # Harris's domains `U(f)` of Drinfeld's upper half space are distinguished
 
-Author: Worker 1003.
-
 This module states, without proof, item 2 of
 `DistinguishedCoveringStatement` (module `DrinfeldCoveringStatement`) on its
 own: Harris's domains `U(f) = Res⁻¹(B(f, ε))` are distinguished. It contains

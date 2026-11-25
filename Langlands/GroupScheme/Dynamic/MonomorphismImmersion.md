@@ -38,5 +38,7 @@ on all of `H`.
 
 The result holds in every universe and over arbitrary base schemes.
 The centralizer closedness assumption remains explicit. The conclusion
-is the ordinary locally closed immersion of schemes; this unit does not
-prove global closedness of `f` or the reductive host theorem.
+is the ordinary locally closed immersion of schemes; this module does not
+prove global closedness of `f` or the reductive closed-immersion theorem
+`ReductiveMonomorphismClosedImmersionStatement` (in
+`Langlands.GroupScheme.Reductive.MonomorphismClosedImmersionStatement`).

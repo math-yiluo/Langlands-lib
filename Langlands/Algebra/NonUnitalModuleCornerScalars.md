@@ -1,6 +1,6 @@
 # Inherited complex scalars and linear maps on the actual fixed part
 
-Worker 1149 constructed this pair from David Renard, *Représentations des
+This pair is constructed from David Renard, *Représentations des
 groupes réductifs p-adiques*, French version dated 9 July 2026. The governing
 registered source is `renard-2026-representations-groupes-reductifs-padiques`,
 SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`,
@@ -130,8 +130,8 @@ an independent `uP`. There are no dimension, admissibility, faithfulness,
 unit-action, or nontriviality hypotheses. Zero algebras, zero carriers,
 and the zero idempotent remain allowed.
 
-The dual restriction and extension belong to a subsequent construction
-pair. Their inverse identities, the fixed-part duality equivalence and
+The dual restriction and extension are constructed in
+`NonUnitalModuleDualFixedPartMaps`. Their inverse identities, the fixed-part duality equivalence and
 its naturality and right-corner comparison, comparison with full-dual
 fixed parts, duality exactness, bidual injection, I.4.2/I.4.3 comparisons,
-and admissible reflexivity remain separate statement/proof successors.
+and admissible reflexivity remain separate statement/proof pairs.

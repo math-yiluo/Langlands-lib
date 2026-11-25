@@ -1,6 +1,6 @@
 # Actual fixed-field splitting from restricted scalar defects
 
-This internal derived unit proves
+This internal derived module proves
 `Langlands.CentralSimple.split_over_fixedField_of_coprime_scalarDefect_power`.
 Let `L/k` be a finite Galois extension, `A` a finite-dimensional `k`-algebra,
 and `e : L ⊗[k] A ≃ₐ[L] Matrix (Fin n) (Fin n) L` an actual chart with
@@ -17,7 +17,7 @@ restricted scalar defect. The published subgroup/fixed-field Galois
 equivalence preserves its actual action on coefficients, so the same
 cochain transfers to `Gal(L/Lᴴ)`.
 
-To retain the actual algebra in this comparison, the unit constructs the
+To retain the actual algebra in this comparison, the module constructs the
 algebra equivalence cancelling two successive scalar extensions. This
 construction allows a noncommutative algebra and uses the tensor
 associator and right-unit equivalence. Its pure-tensor formula shows that
@@ -28,5 +28,5 @@ coboundary triviality. Matrix Hilbert 90 and the earlier fixed-algebra
 comparison then construct the claimed actual splitting.
 
 The subsidiary lemmas apply to any intermediate field or any actual
-subgroup, as indicated by their types. This unit does not assume that `H`
-is Sylow and does not yet assert that its fixed field has odd degree.
+subgroup, as indicated by their types. This module does not assume that `H`
+is Sylow and does not assert that its fixed field has odd degree.

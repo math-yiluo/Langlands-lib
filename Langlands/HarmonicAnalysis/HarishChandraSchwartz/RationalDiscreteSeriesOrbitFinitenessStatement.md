@@ -1,13 +1,11 @@
 # Waldspurger's Theorem VIII.1.2 on actual rational points (statement)
 
-Author: Worker 19, task `1ef6854b-f0e9-4d96-bbe5-cb8c4b52f927` (revision 1).
-
 Lean module:
 `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalDiscreteSeriesOrbitFinitenessStatement`,
 namespace `Langlands.HarishChandraSchwartz`. It imports
 
-- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalDiscreteSeriesOrbitFiniteness`
-  (Worker 249): `rationalDiscreteSeriesFixedOrbits` (Waldspurger's `Θ^H_G` for `G(F)`), and
+- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalDiscreteSeriesOrbitFiniteness`:
+  `rationalDiscreteSeriesFixedOrbits` (Waldspurger's `Θ^H_G` for `G(F)`), and
   through its imports `GroupScheme.rationalPoints`, `rationalPointTopology`,
   `rationalPoints_nonarchimedeanGroup`, `GroupScheme.rationalPoints.map`,
   `IsConnectedReductive`, `IsSplitComponent`, `IsSplitComponent.isCentralSplitTorus`,
@@ -26,9 +24,8 @@ Harish-Chandra*, J. Inst. Math. Jussieu 2 (2003), 235–333, DOI 10.1017/S147474
 `4b6a6162cd0b3863703fb2f65d1698f926caf813114917f2084c16e38f2e30f7`). Printed page numbers; the
 PDF page is the printed page minus 234.
 
-The passages below are those quoted in the Library's `RationalDiscreteSeriesOrbitFiniteness.md`
-(Worker 249). The present author could not open the PDF in this session and relies on these
-quotations.
+The passages below are those quoted in the Library's `RationalDiscreteSeriesOrbitFiniteness.md`;
+they were not checked again against the PDF for this page.
 
 - I.1, printed pp. 238–239: "On note `F` un corps local non archimédien de corps résiduel fini
   `F_q`. [...] Soit `G` un groupe linéaire algébrique réductif et connexe." and, for a
@@ -120,5 +117,5 @@ dimensionality of `p_χ(°C_H)` (Waldspurger's Proposition VIII.4.1 with Theorem
 the discrete series with central character `χ` on `A_G(F)` (for every continuous unitary `χ`
 trivial on `A_G(F) ∩ H`), and `finite_rationalDiscreteSeriesFixedOrbits_of_finite_central` proves
 it from the finiteness of the sets `E₂(G)^H_χ`. Neither input is proved for actual groups in the
-Library. This statement is the exact target for a later proof, either through Waldspurger's route
+Library. This statement is the exact target for a proof, either through Waldspurger's route
 (VIII.4.1, VIII.4.2, which use Theorem VII.2.5) or through a verified alternative route.

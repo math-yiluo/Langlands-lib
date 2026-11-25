@@ -23,7 +23,7 @@ variable {k : Type u} [Field k]
     (p : SplitPinning G)
     {n : Type} [Fintype n] [DecidableEq n]
 
-local instance : IsAffineHom p.torus.toGrp.X.hom := p.isSplitTorus.isAffineHom
+private local instance : IsAffineHom p.torus.toGrp.X.hom := p.isSplitTorus.isAffineHom
 
 /-- The endomorphism obtained by differentiating an actual cocharacter in a representation. -/
 def representationCocharacterAction (r : MatrixRepresentation G n)

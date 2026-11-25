@@ -43,5 +43,3 @@ The provenance is their internal algebraic combination. All actual short
 exact sequence relations, including nonsplit ones, are retained. There is
 no parabolic, Aubert, irreducible-image or classification theorem input,
 and no original literature statement is transcribed.
-
-Author: Worker 1186.

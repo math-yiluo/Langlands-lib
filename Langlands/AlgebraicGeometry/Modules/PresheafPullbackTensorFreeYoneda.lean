@@ -77,6 +77,7 @@ private lemma tensorGeneratorPullbackDiagram
   rw [hY, homEquiv_presheafPullbackTensorComparisonApp_app_tmul,
     presheafPullbackFreeYonedaIso_hom_unit]
   erw [hX]
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   change ((presheafPullbackFreeYonedaIso f V).hom.app _ ⊗ₘ
     (presheafPullbackFreeYonedaIso f W).hom.app _) _ = _
   erw [ModuleCat.MonoidalCategory.tensorHom_tmul

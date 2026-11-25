@@ -28,13 +28,13 @@ def pinningCoefficient (M : AffinePinnedModel.{u})
   (M.pinning t).symm
     (splitTorus.exponentProjection M.coordinates M.group M.inclusion
       (M.rootDatum.root t)
-      (Lie.targetMapLinear σ.hom (CommRingCat.of M.ring) (M.pinning s 1).val))
+      (Lie.targetMapLinear σ.asIso.hom (CommRingCat.of M.ring) (M.pinning s 1).val))
 
 /-- When the entire image is a scalar multiple of the target vector, the
 constructed projected coefficient is exactly that scalar. -/
 theorem pinningCoefficient_of_vector_eq
     (σ : CategoryTheory.Aut M.group) {s t : M.basis.support} {c : M.ring}
-    (hv : Lie.targetMapLinear σ.hom (CommRingCat.of M.ring) (M.pinning s 1).val =
+    (hv : Lie.targetMapLinear σ.asIso.hom (CommRingCat.of M.ring) (M.pinning s 1).val =
       c • (M.pinning t 1).val) :
     M.pinningCoefficient σ s t = c := by
   classical
@@ -51,29 +51,29 @@ has scalar one whenever the image of an original vector is a scalar multiple
 of another original vector. -/
 theorem pinning_coefficient_eq_one_of_localPinning
     (σ : CategoryTheory.Aut M.group)
-    (hpin : PreservesLocalPinning ((baseChange (𝟙 M.base)).mapIso σ))
+    (hpin : PreservesLocalPinning ((baseChange (𝟙 M.base)).mapIso σ.asIso))
     {s t : M.basis.support} {c : M.ring}
-    (hv : Lie.targetMapLinear σ.hom (CommRingCat.of M.ring) (M.pinning s 1).val =
+    (hv : Lie.targetMapLinear σ.asIso.hom (CommRingCat.of M.ring) (M.pinning s 1).val =
       c • (M.pinning t 1).val) : c = 1 := by
   have hlocal (A : Type u) [CommRing A] [IsLocalRing A] [Algebra M.ring A] :
       algebraMap M.ring A c = 1 := by
     obtain ⟨p, hp⟩ := hpin A (algebraBaseMap M.ring A)
       (by simp only [Category.comp_id]) (by simp only [Category.comp_id])
-    have hmap : ((baseChange (𝟙 M.base)).map σ.hom).hom.hom.left ≫
+    have hmap : ((baseChange (𝟙 M.base)).map σ.asIso.hom).hom.hom.left ≫
         pullback.fst M.group.X.hom (𝟙 M.base) =
-      pullback.fst M.group.X.hom (𝟙 M.base) ≫ σ.hom.hom.hom.left := by
+      pullback.fst M.group.X.hom (𝟙 M.base) ≫ σ.asIso.hom.hom.hom.left := by
       change pullback.lift _ _ _ ≫ _ = _
       exact pullback.lift_fst _ _ _
     have he := congrArg
       (fun k => k ≫ pullback.fst M.group.X.hom (𝟙 M.base)) (hp s)
     change (M.rootVectorPoint (𝟙 M.base) A (algebraBaseMap M.ring A) _ s ≫
-      ((baseChange (𝟙 M.base)).map σ.hom).hom.hom.left) ≫
+      ((baseChange (𝟙 M.base)).map σ.asIso.hom).hom.hom.left) ≫
         pullback.fst M.group.X.hom (𝟙 M.base) =
       M.rootVectorPoint (𝟙 M.base) A (algebraBaseMap M.ring A) _ (p s) ≫
         pullback.fst M.group.X.hom (𝟙 M.base) at he
     rw [Category.assoc, hmap, ← Category.assoc,
       rootVectorPoint_fst, rootVectorPoint_fst] at he
-    have hLie : Lie.targetMapLinear σ.hom A
+    have hLie : Lie.targetMapLinear σ.asIso.hom A
         (lieKernelMapLinear M.group (Algebra.ofId M.ring A) (M.pinning s 1).val) =
       lieKernelMapLinear M.group (Algebra.ofId M.ring A) (M.pinning (p s) 1).val := by
       apply Additive.toMul.injective
@@ -94,11 +94,11 @@ theorem pinning_coefficient_eq_one_of_localPinning
 exact chosen-vector equation over the original coefficient ring. -/
 theorem pinning_vector_eq_of_localPinning_of_scalar
     (σ : CategoryTheory.Aut M.group)
-    (hpin : PreservesLocalPinning ((baseChange (𝟙 M.base)).mapIso σ))
+    (hpin : PreservesLocalPinning ((baseChange (𝟙 M.base)).mapIso σ.asIso))
     {s t : M.basis.support} {c : M.ring}
-    (hv : Lie.targetMapLinear σ.hom (CommRingCat.of M.ring) (M.pinning s 1).val =
+    (hv : Lie.targetMapLinear σ.asIso.hom (CommRingCat.of M.ring) (M.pinning s 1).val =
       c • (M.pinning t 1).val) :
-    Lie.targetMapLinear σ.hom (CommRingCat.of M.ring) (M.pinning s 1).val =
+    Lie.targetMapLinear σ.asIso.hom (CommRingCat.of M.ring) (M.pinning s 1).val =
       (M.pinning t 1).val := by
   rw [hv, pinning_coefficient_eq_one_of_localPinning σ hpin hv, one_smul]
 
@@ -106,9 +106,9 @@ theorem pinning_vector_eq_of_localPinning_of_scalar
 lies on the chosen target line with a supplied scalar equation. -/
 theorem pinningCoefficient_eq_one_of_localPinning
     (σ : CategoryTheory.Aut M.group)
-    (hpin : PreservesLocalPinning ((baseChange (𝟙 M.base)).mapIso σ))
+    (hpin : PreservesLocalPinning ((baseChange (𝟙 M.base)).mapIso σ.asIso))
     {s t : M.basis.support} {c : M.ring}
-    (hv : Lie.targetMapLinear σ.hom (CommRingCat.of M.ring) (M.pinning s 1).val =
+    (hv : Lie.targetMapLinear σ.asIso.hom (CommRingCat.of M.ring) (M.pinning s 1).val =
       c • (M.pinning t 1).val) : M.pinningCoefficient σ s t = 1 := by
   rw [pinningCoefficient_of_vector_eq σ hv,
     pinning_coefficient_eq_one_of_localPinning σ hpin hv]

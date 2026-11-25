@@ -145,8 +145,10 @@ i = j}"), and `Rep(G)` is the category of
 finite-dimensional representations of `G` (printed p. 165, in the paragraph
 headed "Notes" after the proof of Theorem 9.2).
 
-Relation to the Library. The Library has no notion of linear reductivity and
-no statement of Proposition 12.54. Its
+Relation to the Library. Apart from this module, the Library has no statement
+of Proposition 12.54; its notion of linear reductivity, `IsLinearlyReductive`
+(in [`NagataReductionStatements`](NagataReductionStatements.md)), is the first
+condition above. Its
 `CharZeroReductiveSemisimpleRepresentationStatement` (in
 [`Reductive.SemisimpleRepresentationCharZeroStatement`](../Reductive/SemisimpleRepresentationCharZeroStatement.md),
 Milne's Theorem 22.42) uses the same semisimplicity condition for connected
@@ -176,12 +178,18 @@ entry, on p. 89 (proof of 4.14). Neither these nor its other entries (the
 nearest are on pp. 7, 13 and 15 of Chapter 1, and on A.64) concern the
 passages used.
 
-## For the later proof (not part of this unit)
+## For the proof (not part of this module)
+
+The Library proves the statement as
+`Langlands.GroupScheme.commutativeLinearlyReductiveMultiplicativeType` in
+[`LinearlyReductiveMultiplicativeTypeProof`](LinearlyReductiveMultiplicativeTypeProof.md).
 
 - Multiplicative type implies linearly reductive. This is the first part of
-  Milne's Theorem 12.30 ("Rep(G) is semisimple"). The same author has
-  submitted its Lean form, `MultiplicativeTypeRepresentationGaloisOrbitStatement`,
-  separately; it was not in the Library when this unit was written. Its first
+  Milne's Theorem 12.30 ("Rep(G) is semisimple"). Its Lean form is
+  `MultiplicativeTypeRepresentationGaloisOrbitStatement` (in
+  [`Rational.MultiplicativeTypeRepresentationStatement`](../Rational/MultiplicativeTypeRepresentationStatement.md)),
+  proved as `multiplicativeTypeRepresentationGaloisOrbit` in
+  [`Rational.MultiplicativeTypeRepresentationProof`](../Rational/MultiplicativeTypeRepresentationProof.md). Its first
   conjunct, applied with a separable closure `Ks` of `k` in universe `u`
   (for example `SeparableClosure k`), is exactly the first condition. It
   assumes only `[IsAffineHom G.X.hom]` and `IsMultiplicativeType G`.
@@ -198,8 +206,10 @@ passages used.
   subspace, and the supremum is `k e₁ ≠ k²`, contradicting the first
   condition. So `f = 0` and `u` is trivial. Since every homomorphism
   `G ⟶ 𝔾ₐ` is trivial, `G` satisfies condition (b) of Milne's Theorem 12.18,
-  which implies (a), multiplicative type. The same author has submitted
-  Theorem 12.18 as `MultiplicativeTypeCharacterizationStatement`; it was not
-  in the Library when this unit was written. A proof must construct the
+  which implies (a), multiplicative type. Theorem 12.18 is
+  `MultiplicativeTypeCharacterizationStatement` (in
+  [`MultiplicativeTypeCharacterizationStatement`](MultiplicativeTypeCharacterizationStatement.md)),
+  proved as `multiplicativeTypeCharacterization` in
+  [`MultiplicativeTypeCharacterizationProof`](MultiplicativeTypeCharacterizationProof.md). A proof must construct the
   homomorphism `𝔾ₐ → GL_2` and the correspondence between homomorphisms
   `G ⟶ 𝔾ₐ` and primitive elements of the coordinate algebra.

@@ -145,7 +145,7 @@ inside the proof. No field-cube theorem, represented Picard scheme, dual
 existence, translation-difference lifting or cohomology vanishing is used.
 Nothing excludes dimension zero, the trivial bundle or any characteristic.
 
-## Provenance, authorship and checks
+## Provenance and checks
 
 The target's mathematical provenance is Edixhoven, van der Geer and Moonen,
 *Abelian Varieties*, preliminary chapters, Lemma (7.16), printed p.104 / PDF
@@ -165,10 +165,7 @@ module-sheaf isomorphisms. This is the implemented proof route, rather than a
 formal represented-Picard comparison. The proof adds no new axiom or unproved
 mathematical premise.
 
-Worker 59 authored the Lean proof and this explanation. Workers 306 and 100
-supplied the exact specification and source/ownership context reused here.
 The Lean service compiled the entire module and inspected the theorem with
 zero errors and warnings in the pinned Lean 4.34.0 environment. Inspection
 reports universe parameter `u` and only `propext`, `Classical.choice` and
-`Quot.sound`. Compilation is development evidence; independent review and
-exact-target validation govern publication.
+`Quot.sound`. Compilation is development evidence.

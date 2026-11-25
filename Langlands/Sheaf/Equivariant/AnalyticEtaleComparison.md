@@ -1,8 +1,8 @@
 # Equivariant and plain compactly supported cohomology on the étale site
 
-Author: Worker 26. Uses Worker 26's modules
+Uses the modules
 `Langlands.Sheaf.Equivariant.TwistedExactCompactComparison` (the comparison maps for an
-exact abelian subcategory of sheaves on a twisted site, submitted together with this
+exact abelian subcategory of sheaves on a twisted site, ported together with this
 module), `Langlands.Sheaf.Equivariant.AnalyticEtaleCompactCohomology` (essential
 smallness of the étale and twisted étale sites, sheafification, enough injectives on the
 twisted site, the abelian structure and enough injectives of étale `G`-sheaves,
@@ -16,8 +16,8 @@ local smallness `etaleSite_locallySmall_points` and `Γ_{c,X{G}}` on étale `G`-
 `Langlands.Sheaf.Equivariant.LocalActionSmoothPart` (exactness of the inclusion of
 locally discrete sheaves). It also uses `Langlands.Sheaf.PointSupport`
 (`sheafCompactSections`, `compactDerived`) and
-`Langlands.Cohomology.DiscreteSheafDerivedComplex` (`sheafCompactComplex`). From Worker 21
-it uses the étale site `EtaleSite`, its topology `etaleTopology`, the point axioms
+`Langlands.Cohomology.DiscreteSheafDerivedComplex` (`sheafCompactComplex`), and
+the étale site `EtaleSite`, its topology `etaleTopology`, the point axioms
 `EtaleSite.PointAxioms`, the action `EtaleSite.pointAction` of `G` on `L`-valued points
 and `EtaleSite.pointEquivariance`.
 
@@ -49,18 +49,18 @@ All declarations are in `Langlands.Sheaf.Equivariant.Analytic`.
 
 As in `AnalyticEtaleCompactCohomology`:
 
-- `K : Type u` is a complete ultrametric normed field and `X` an object of Worker 21's
+- `K : Type u` is a complete ultrametric normed field and `X` an object of
   `LocalizedCategory.{u, v, v} (K := K)`.
 - `L : Type uL` is a normed field with `[NormedAlgebra K L]`, and
   `h : ∀ x, EtaleSite.PointAxioms L x` is the hypothesis that every `L`-valued point of
-  `X` satisfies Worker 21's point axioms.
+  `X` satisfies the point axioms `EtaleSite.PointAxioms`.
 - `G : Type z` is a group with `ρ : G →* Aut X` and `[TopologicalSpace G]`; from the
   section on comparison on, `[IsTopologicalGroup G]`.
 - `R : Type w` is a commutative ring, `w = max u (v + 1) uL`, and sheaves take values in
   `ModuleCat.{w} R`. Smooth representations are `SmoothRep.{w, z, w} R G`.
 - Statements that need the abelian structure of étale `G`-sheaves assume `[Small.{w} G]`
   and `[(distinguishedLiftSystem ρ).HasAdmissibleRefinements (twistedEtaleTopology ρ)]`,
-  the hypotheses of `AnalyticEtaleCompactCohomology`. Worker 26's module
+  the hypotheses of `AnalyticEtaleCompactCohomology`. The module
   `AnalyticEtaleRefinements` derives the second from three conditions on distinguished
   étale objects; this module does not import it.
 
@@ -123,11 +123,11 @@ No group appears here, except in the Kan extension theorem.
 
 ## Invariant cohomology and the comparison maps
 
-In this section `G` is a topological group. The topology on `L`-valued points, Worker
-21's action `EtaleSite.pointAction L ρ` with `continuousConstSMul_pointAction`, local
+In this section `G` is a topological group. The topology on `L`-valued points, the
+action `EtaleSite.pointAction L ρ` with `continuousConstSMul_pointAction`, local
 smallness, sheafification on both sites, enough injectives for étale `G`-sheaves and for
 module sheaves on the étale site, and the right Kan extensions are supplied locally. The
-`TwistedOver.PointEquivariance` used throughout is Worker 21's
+`TwistedOver.PointEquivariance` used throughout is
 `EtaleSite.pointEquivariance L ρ h`.
 
 - `etaleCompactInclusion L ρ h R`: the inclusion `Γ_{c,X{G}}(F) → Γ_c(X, b^*F)`, a
@@ -186,7 +186,7 @@ The following is a mathematical remark. It is not formalized.
 Supports are taken in the `L`-valued points. When some point of `|X|` is not the image of
 an `L`-valued point, the degree-zero inclusion `etaleCompactInclusion` need not be
 surjective, so (through the identification of `H^0` with sections, not formalized here)
-the degree-zero comparison map is not an isomorphism. Worker 16's example for the
+the degree-zero comparison map is not an isomorphism. The example for the
 quasi-étale model, in the coverage note `notes/henniart/harris-cohomology-coverage.md`
 (section "Retained source gaps and scope decisions"), adapts as follows. Take
 `K = ℚ_p` and `L = ℂ_p`, and assume the point axioms `h` for `L`. Let `G = ℤ_p` act on

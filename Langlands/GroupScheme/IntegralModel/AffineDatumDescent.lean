@@ -24,6 +24,7 @@ theorem smooth [Smooth H.X.hom] : Smooth s.obj.X.hom := by
   have : Smooth (pullback.snd s.obj.X.hom p) := by
     change Smooth ((GroupScheme.baseChange p).obj s.obj).X.hom
     rw [← Over.w s.iso.hom.hom.hom]
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
     infer_instance
   exact MorphismProperty.of_pullback_snd_of_descendsAlong
     (P := @Smooth) (Q := @Surjective ⊓ @Flat ⊓ @QuasiCompact)

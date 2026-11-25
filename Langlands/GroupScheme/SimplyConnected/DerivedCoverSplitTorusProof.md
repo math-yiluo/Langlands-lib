@@ -1,7 +1,5 @@
 # Maximal split tori through the simply connected cover of a derived subgroup
 
-Author: Worker 4101.
-
 The theorem `Langlands.GroupScheme.simplyConnectedDerivedCoverSplitTorus`
 proves the published proposition
 `SimplyConnectedDerivedCoverSplitTorusStatement.{u}` from

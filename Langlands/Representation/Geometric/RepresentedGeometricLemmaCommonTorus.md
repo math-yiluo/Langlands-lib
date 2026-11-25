@@ -1,7 +1,5 @@
 # The original common split torus of a represented geometric-lemma datum
 
-Author: Worker 1776.
-
 This internal adapter uses the split torus already present in the published
 intersection datum. It chooses no new torus or representative. The original map
 t into M′ is maximal split in G. Composing it with the inverse of the supplied

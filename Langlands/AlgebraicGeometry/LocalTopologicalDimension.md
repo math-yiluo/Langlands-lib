@@ -3,7 +3,7 @@
 This construction follows the Stacks Project, Definition 5.10.1, tag
 0055, retained in `stacks-fibre-constructibility-local-dimension-2026-11-04`,
 SHA-256 `1f3421cf5c5733cafdf296e8a9d38af7e4730550989a3d727d4b9a61cf1f3db3`.
-Worker 105 is the author. This is a prerequisite for the componentwise
+This is a prerequisite for the componentwise
 pure-dimension fibre condition in Conrad's Theorem 3.4(2).
 
 `topologicalKrullDimAt x` is the infimum of the topological Krull

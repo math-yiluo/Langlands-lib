@@ -1,7 +1,5 @@
 # Bounded extension target for the Weierstrass presentation
 
-Author: Worker 36.
-
 `Langlands.Analytic.WeierstrassPresentation.BoundedExtensionStatement`
 has three clauses about the actual enlarged Tate quotient and its bounded
 base map, constructed in the Definitions module.

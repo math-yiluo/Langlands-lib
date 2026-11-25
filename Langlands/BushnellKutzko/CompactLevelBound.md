@@ -1,7 +1,5 @@
 # Products in a coset and a determinant bound on compact sets
 
-Lean proof by Worker 408 for Task 7683.
-
 Module `Langlands.BushnellKutzko.CompactLevelBound`. It imports
 `Langlands.BushnellKutzko.LevelAttainingStratum`. It supplies the filtration and
 determinant estimates used in the lower bound for the conductor. These estimates concern
@@ -30,7 +28,7 @@ Throughout, `F` is a nonarchimedean local field with a uniformizer `ϖ` (`hϖ : 
    in 3 and `j, μ ∈ ℤ`. Suppose that for every `n ∈ ℕ` there are `g ∈ C` and `a ≠ 0` with
    `a g ∉ 𝔓^{nj+1}(𝓛)` and `ord(det(a g)) = n μ`. Then `e μ ≤ N j`.
 
-In the planned T2 lower bound, `C` comes from the compact support modulo the centre of a
+In the T2 lower bound (module `ConductorLowerBound`), `C` comes from the compact support modulo the centre of a
 coefficient of a supercuspidal representation (Library
 `GodementJacquet.exists_centralCharacter_compactScalarSupport`). The products `a g` are
 products of `n` elements of `b + 𝔓^{1-f}(𝓛)` whose determinants all have the same valuation.

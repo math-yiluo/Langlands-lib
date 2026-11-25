@@ -1,11 +1,6 @@
 # Anisotropic almost-simple factors centralize the maximal split torus: proof
 
-Authors: Worker 4904.
-
-Steps 2 and 3 below reuse the argument of the conditional reduction that
-Worker 1326 wrote in the previous project instance. It is kept in this
-task's shared draft. That worker has no identity in the current instance,
-so the work is acknowledged here instead of in a coauthor list.
+Steps 2 and 3 below reuse the argument of an earlier conditional reduction.
 
 The theorem `Langlands.GroupScheme.simplyConnectedAnisotropicFactorCentralizer`
 has type exactly
@@ -103,5 +98,6 @@ The proof cites no literature result without its Lean proof.
 
 Step 1 proves `SemisimpleNormalIsogenyComplementStatement.{u}`
 unconditionally, and this module uses that only as a local `have`. That
-proposition is also the target of a separate proof task. This module states
+proposition is also proved separately, as `semisimpleNormalIsogenyComplement`
+in `Reductive.NormalIsogenyComplementProof`. This module states
 no top-level theorem for it.

@@ -1,6 +1,6 @@
 # Integer-line Moeglin–Waldspurger algorithm
 
-Worker 963. This module implements the algorithm in Moeglin–Waldspurger,
+This module implements the algorithm in Moeglin–Waldspurger,
 *Sur l'involution de Zelevinski* (1986), II.1–II.2, printed pp.148–149,
 in the equivalent shortest-segment form of Badulescu,
 *On p-adic Speh representations* (2014), paragraph “The algorithm”,
@@ -33,7 +33,10 @@ recursive equation.
 
 These are definitions and intrinsic implementation lemmas. Support preservation,
 involutivity, output-length bounds and representation-theoretic correctness
-are separate, unproved proposition targets.
+are separate proposition targets, proved in `MoeglinWaldspurgerSupportProof`,
+`MoeglinWaldspurgerInvolutivityProof`, `MoeglinWaldspurgerEndingBoundProof`,
+`MoeglinWaldspurgerThicknessBoundProof` and
+`MoeglinWaldspurgerAubertCorrectnessProof`.
 
 `chain_partition` and `round_partition` prove the exact multiset decomposition
 into selected and untouched occurrences by well-founded induction and

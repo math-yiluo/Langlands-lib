@@ -1,7 +1,5 @@
 # Finite Galois descent of equivariant character maps
 
-Author: Worker 1548.
-
 This is internal supporting infrastructure for the induced-torus Weil
 decomposition proof. Its provenance is a derivation from the published
 canonical Čech descent, finite Galois tensor decomposition, split-torus

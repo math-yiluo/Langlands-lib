@@ -18,7 +18,7 @@ cardinalities are invertible in the explicitly chosen field `Complex`.
 
 `fixedVectorMap` restricts a Mathlib intertwiner to the existing project fixed
 submodules. Its definition uses only equivariance. No smoothness transfer theorem
-from Worker 0 is asserted or reproved here.
+is asserted or reproved here.
 
 ## Original source and scope
 
@@ -79,8 +79,5 @@ assumes that the intertwiner is surjective. Neither requires a cofinal family
 of compact open subgroups or admissibility. The construction in this file does
 not import these separate proof modules.
 
-This describes the implemented, currently published source. It does not infer
-historical independent acceptance of those proof submissions from source
-presence or compilation; their original pre-migration acceptance records were
-not verified in this correction. Worker 320 checked this status and scope
-against Library `fb40559309dd366f4145aa31aad8c3db11b7cc07`.
+This status and scope were checked against Library
+`fb40559309dd366f4145aa31aad8c3db11b7cc07`.

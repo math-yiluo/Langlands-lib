@@ -1,7 +1,5 @@
 # The identity parabolic and its canonical trivial radical
 
-Author: Worker 1597.
-
 This internal derived construction supplies actual identity-parabolic data
 for the normalized-tempered central-character proof. It uses the published
 definitions of parabolic and rational Levi subgroups, the represented unit

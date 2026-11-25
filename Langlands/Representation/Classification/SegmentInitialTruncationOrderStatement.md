@@ -1,9 +1,5 @@
 # Nonprecedence after one-step initial truncation
 
-Authors: Worker 700 and Worker 684. Worker 700 authored the shared statement
-and its initial explanation. Worker 684 reconciled the published prerequisite,
-read the original source passages and completed the import and declaration audit.
-
 This module states
 `Langlands.Classification.SegmentInitialTruncationOrder.{uF,uV} F T`
 as a proposition for every prime, p-adic field and supplied compatible topology.
@@ -33,11 +29,9 @@ of §4.1, printed p.184 / PDF page 21, and the one-step truncation is from
 §3.5, printed p.182 / PDF page 19.
 Registered source: `zelevinsky-1980-induced-ii`, SHA256
 `663c79f2ee236626385d242d83107410c1a3291ba5584d4b8abee9cf8af428ac`.
-Worker 700 read the original passages, including §6.2 again while preparing
-the shared draft. Worker 684 independently read §§3.5, 4.1 and 6.2 as extracted
-text and rendered original pages and verified the source fingerprint. No
-source-specific errata file was found in the supplied Library or project notes
-at submission.
+§§3.5, 4.1 and 6.2 were read in the original as extracted
+text and rendered original pages, and the source fingerprint was verified. No
+source-specific errata file was found in the supplied Library or project notes.
 
 The two clauses are a derived formulation rather than a separate named
 theorem quoted from the article. On one free integral twist line, the endpoint
@@ -53,11 +47,10 @@ integral-twist-freeness statement. No derivative, homogeneity, socle existence,
 product irreducibility or classification conclusion is assumed or asserted.
 No support-set deletion identity is included.
 
-The imported `Classification.SegmentInitialTruncation` has independent semantic
-acceptance and is published in the Library. Its public constructors keep the
-names and types used here. This contribution uses those public definitions;
-the earlier combined private compilation of unpublished drafts supplies no
-accepted dependency. The present module defines the proposition and supplies
+The imported `Classification.SegmentInitialTruncation` is published in the
+Library. Its public constructors keep the
+names and types used here. This module uses those public definitions.
+The present module defines the proposition and supplies
 no proof of either clause.
 
 ## Import independence
@@ -135,28 +128,27 @@ Representation.Classification.SegmentInitialTruncation
 Representation.Classification.CuspidalIntegralTwistFreenessStatement
 ```
 
-The closure contains no conclusion, proof successor or transitive proof
-dependency from the following excluded results. This full boundary must be
-retained in the separate exact proof task and any lower splits; shared lower
-proof inputs require their own independence checks.
+The closure contains no conclusion, proof or transitive proof
+dependency from the following excluded results. The proof module
+`Classification.SegmentInitialTruncationOrderProof` keeps the same boundary.
 
-| Excluded result | Task or public name |
+| Excluded result | Public name |
 | --- | --- |
-| Ordered-socle existence | `23189526-80b0-4828-a6d4-7ebec2cbeef5` |
-| Socle exhaustion | `f3a69bc8-7312-4f82-8a7d-ea3c8188cb63` |
-| Analytic segment classification | `aca8805b-054f-4d56-8045-12db7f623404` |
-| Unlinked segment-socle product irreducibility | `23e98d90-6055-4e35-91a9-b0f5d8a84961` |
-| Final segment-socle irreducibility criterion | `2ae5cbe5-0701-4509-88a0-db8cbeb35be4` |
+| Ordered-socle existence | `OrderedMultisegmentSocleExistence` |
+| Socle exhaustion | `MultisegmentSocleExhaustion` |
+| Analytic segment classification | `SegmentEssentialSquareIntegrableClassification` |
+| Unlinked segment-socle product irreducibility | `UnlinkedSegmentSocleProductIrreducible` |
+| Final segment-socle irreducibility criterion | `SegmentSocleProductIrreducibility` |
 | Adjacent unlinked segment-socle swap | `AdjacentUnlinkedSegmentSocleSwap` |
 | Two-segment socle commutation | `TwoSegmentSocleCommutation` |
-| Special-head product irreducibility criterion | `8364e73f-14ec-4d14-8f2b-1555a7c1ce95` |
-| Special-head exhaustion | `3bfb61fa-1129-4fc9-83fd-7fcfec22106e` |
-| Ordered special-head existence | `ebea9a8a-9b21-4208-aa31-98c2dea1f8a3` |
-| Quotient coverage | `20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584` |
-| Tempered block uniqueness | `52e97845-36bb-457d-b76f-70753334b88c` |
-| Square-integrable Langlands classification | `SquareIntegrableLanglandsClassification`, task `1cb45da2-7007-4351-a694-594fb148b8d1` |
-| Square-integrable exhaustion | `cd8ab97c-0b78-4bce-97c4-d307a28159a4` |
-| Regular exhaustion | `bf433f0a-921a-428c-b0c0-6475438125ac` |
-| Generic segment-product uniqueness | `GenericSegmentProductUniqueness`, task `30341ae4-65f2-4a0e-9283-763db01a409e` |
-| Ordered special-segment conversion | `8252833d-c269-41a9-824c-5879e531b23b` |
-| Forward special-segment essential square-integrability | `5eece9e8-7f6b-4ea9-abea-a1f9f1b8c807` |
+| Special-head product irreducibility criterion | `SegmentHeadProductIrreducibility` |
+| Special-head exhaustion | `MultisegmentHeadExhaustion` |
+| Ordered special-head existence | `OrderedMultisegmentHeadExistence` |
+| Quotient coverage | `OrderedMultisegmentQuotientExhaustion` |
+| Tempered block uniqueness | `TemperedBlockUniqueness` |
+| Square-integrable Langlands classification | `SquareIntegrableLanglandsClassification` |
+| Square-integrable exhaustion | `SquareIntegrableLanglandsExhaustion` |
+| Regular exhaustion | `GLRegularLanglandsExhaustionStatement` |
+| Generic segment-product uniqueness | `GenericSegmentProductUniqueness` |
+| Ordered special-segment conversion | `OrderedSegmentSquareIntegrableConversion` |
+| Forward special-segment essential square-integrability | `SegmentSpecialEssentialSquareIntegrability` |

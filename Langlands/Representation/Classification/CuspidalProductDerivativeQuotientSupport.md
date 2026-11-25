@@ -1,12 +1,9 @@
 # Irreducible quotients of derivatives of supercuspidal products
 
-Author: Worker 818.
-
-This internal helper pair belongs to task
-`f81d9b36-2615-4fec-abc2-50ef93d880bf`, the proof of
+This internal helper pair serves the proof of
 `Langlands.Classification.HighestDerivativeSupportShift`. It proves the
-*unshifted* support statement used in that proof. It does not prove the
-target: it contains no `ν`-shift and no highest-derivative pairing.
+*unshifted* support statement used in that proof. It does not prove
+`HighestDerivativeSupportShift`: it contains no `ν`-shift and no highest-derivative pairing.
 
 All declarations are in the namespace
 `Langlands.Classification.CuspidalProductDerivativeQuotientSupport`. The pair
@@ -157,7 +154,7 @@ Proposition 3.8 (printed p.453). This pair proves that quotient form, with
 multiplicities.
 
 The Lean route differs from BZ77 §4.8(a). It does not use the Leibniz rule
-4.5–4.6, which is not published. Instead it combines:
+4.5–4.6. Instead it combines:
 
 - Zelevinsky, *Induced representations of reductive p-adic groups II* (1980),
   literature ID `zelevinsky-1980-induced-ii`, SHA256
@@ -178,35 +175,34 @@ no erratum exists.
 
 ## Published inputs
 
-The module imports these published modules directly. Each used theorem has an
-independently accepted and published proof, or is part of a published
-`lean.definition` helper.
+The module imports these published modules directly. Each used theorem has a
+proof in the Library, or is part of a definition module.
 
-| Module | Publication | Mathematical use |
-| --- | --- | --- |
-| `Geometric.GeometricLemmaProof` | proof `f606bb75-3194-405e-ba6a-1edb4294d539`, task `67ebcf61-3d58-4499-9c0c-c847e90aaeb4` | `padicGeometricLemma`: gluing of the Jacquet module of an induced representation from geometric pieces |
-| `CuspidalSupport.JacquetVanishingHelpers` | definition `42536722-fde0-468f-b133-c8c3e83f47a3` | `geometricPieceFunctor_subsingleton_of_proper_source` |
-| `CuspidalSupport.AssociatedGeometricPiecesEquivalenceProof` | proof `d5bbef23-e882-4f12-a71a-00b8f6f5d329`, task `17247e03-9471-4f13-81fa-e4f7058619a0` | `fullRefinedJacquetEquiv`, `subgroupEqualityEquiv` |
-| `CuspidalSupport.MinimalConjugatingCosetsProof` | proof `ea18e1f7-2464-410e-b5e1-eadc8dd101e8`, task `d042dc77-fd25-4c92-b943-d456ffd86fe9` | `minimalConjugatingCosets`, `conjugatesLevi_inv` |
-| `CuspidalSupport.MinimalWeylTransportProof` | proof `6acd6deb-33b6-49ee-b5cf-7d9873163fb5`, task `2bef39b2-3425-40f0-87e2-9a9b776e2ac7` | `isLeviQuasicuspidal_transport` |
-| `CuspidalSupport.AssociationReduction` | definition `9488dbde-91c9-497f-8f66-52032c37017c` | `transportWeylEquiv`, `transport_transport`, `isIrreducible_transport`, `isAdmissible_transport` |
-| `CuspidalSupport.LeviTensorFactorizationProof` | proof `cf3ee414-c6f5-4dd2-a3cb-6d41533fcd9f`, task `334e2222-c3e9-47e3-b05c-2afe12f49e94` | `padicLeviCuspidalFactorization` |
-| `CuspidalSupport.CuspidalTensorProof` | proof `8513f998-61e8-49e4-b1a5-738e4315b437`, task `cece816e-aee9-40ca-9139-d770491b6178` | `glCuspidalTensor` |
-| `CuspidalSupport.CuspidalTensorAssociationProof` | proof `e209fa9f-5de2-4779-acbf-dac62583221c`, task `ee36e054-716f-492a-a0e3-e83b614d9431` | `glCuspidalTensorAssociation` |
-| `Parabolic.RefinedInductionTensorProof` | proof `91b8bcdb-14ac-4f94-a40c-1ac6a18295ae`, task `fa77b238-a6a2-47ae-9847-87e6de1267de` | `refinedInductionTensor` |
-| `Tensor.FlattenedGLRefinement` | definition `c8c667d5-4e53-4e1c-9f8d-cffa601c2d80` | `flattenedTensorRegroupEquiv` |
-| `Geometric.FlattenedLevi` | definition `f75012c9-3ab3-47ac-af97-e6a170537087` | `flattenedLeviEquiv` and its embedding lemmas |
-| `Shahidi.TwoBlocks` | definition `7b5082dd-9e5e-4d53-84b1-73ee7ba87a8d` | the shape `(a, b)` and `twoBlockLeviEquiv` |
-| `Derivative.PartialDerivativeJacquetComparisonProof` | proof `998f43e6-dc22-4288-98b7-7343dd9ebc1c`, task `a4119dcc-97b6-47e4-b150-d5e97a8f226b` | `partialDerivativeJacquetComparison` (Ze80 3.7(b)) |
-| `Derivative.Partial` | definition `c3edb686-84a2-4e40-9fb5-465fc3399c4e` | `partialDerivativeMk`, its surjectivity and action |
-| `Classification.SupercuspidalSupport` (through the imports) | definitions `5f04f9a1-f335-43e2-a9da-bb6850b4b838`, `6ee5d0b4-3f01-47de-94f4-06d2d3de92ce` | `cuspidalProductInduced`, `IsCuspidalConstituent`, `IsQuotient.isSubquotient` |
+| Module | Mathematical use |
+| --- | --- |
+| `Geometric.GeometricLemmaProof` | `padicGeometricLemma`: gluing of the Jacquet module of an induced representation from geometric pieces |
+| `CuspidalSupport.JacquetVanishingHelpers` | `geometricPieceFunctor_subsingleton_of_proper_source` |
+| `CuspidalSupport.AssociatedGeometricPiecesEquivalenceProof` | `fullRefinedJacquetEquiv`, `subgroupEqualityEquiv` |
+| `CuspidalSupport.MinimalConjugatingCosetsProof` | `minimalConjugatingCosets`, `conjugatesLevi_inv` |
+| `CuspidalSupport.MinimalWeylTransportProof` | `isLeviQuasicuspidal_transport` |
+| `CuspidalSupport.AssociationReduction` | `transportWeylEquiv`, `transport_transport`, `isIrreducible_transport`, `isAdmissible_transport` |
+| `CuspidalSupport.LeviTensorFactorizationProof` | `padicLeviCuspidalFactorization` |
+| `CuspidalSupport.CuspidalTensorProof` | `glCuspidalTensor` |
+| `CuspidalSupport.CuspidalTensorAssociationProof` | `glCuspidalTensorAssociation` |
+| `Parabolic.RefinedInductionTensorProof` | `refinedInductionTensor` |
+| `Tensor.FlattenedGLRefinement` | `flattenedTensorRegroupEquiv` |
+| `Geometric.FlattenedLevi` | `flattenedLeviEquiv` and its embedding lemmas |
+| `Shahidi.TwoBlocks` | the shape `(a, b)` and `twoBlockLeviEquiv` |
+| `Derivative.PartialDerivativeJacquetComparisonProof` | `partialDerivativeJacquetComparison` (Ze80 3.7(b)) |
+| `Derivative.Partial` | `partialDerivativeMk`, its surjectivity and action |
+| `Classification.SupercuspidalSupport` (through the imports) | `cuspidalProductInduced`, `IsCuspidalConstituent`, `IsQuotient.isSubquotient` |
 
 ## Independence audit
 
-The parent task requires independence from every segment derivative formula,
+The pair is kept independent of every segment derivative formula,
 every segment-socle, head or Jacquet formula, segment classification and the
-two-supercuspidal product results, and from all tasks listed in its
-Independence section and its additional BZ77-only restrictions.
+two-supercuspidal product results, and follows additional BZ77-only
+restrictions.
 
 - **Import closure.** The full import closure of this module at Library
   commit `a9fde2164dfeae002c8c27324c18bdcd395f447d` has 368 `Langlands`
@@ -221,14 +217,11 @@ Independence section and its additional BZ77-only restrictions.
   `InducedOppositeCuspidalPieceConditional`,
   `ProductLeviCuspidalJacquetAssembly` or two-supercuspidal product module is
   in the closure.
-- **Publishing tasks.** 362 closure modules belong to published artifacts. The
-  other five, `Group.GL.Transvection`,
+- **Infrastructure modules.** Five closure modules, `Group.GL.Transvection`,
   `HarmonicAnalysis.FiniteProductMeasureScaling`,
   `Representation.Compact.OrbitMeanTranslation`, `Representation.OrbitSpan`
   and `Topology.CompactNormCharacter`, are general infrastructure without
-  representation-theoretic conclusions. Every task ID recorded on those
-  artifacts was compared with the 33 task IDs in the parent's Independence and
-  BZ77-only sections. There is no match.
+  representation-theoretic conclusions.
 - **Mathematical dependencies.** The proof uses only the inputs in the table
   above. It uses no derivative of a segment and no socle or head statement. It
   uses no Leibniz rule, exactness of derivatives, irreducibility criterion,

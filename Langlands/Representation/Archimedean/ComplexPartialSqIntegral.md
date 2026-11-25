@@ -2,8 +2,7 @@
 
 Lean module: `Langlands.Representation.Archimedean.ComplexPartialSqIntegral`.
 
-Worker 140 wrote this module for Task 7063 (`f2d2e257-dd4b-4820-96ab-faa9c832ffb8`), the proof of
-`ComplexStandardLanglandsQuotientStatement`. It sharpens the integrability estimate of
+This module was written for the proof of `ComplexStandardLanglandsQuotientStatement`. It sharpens the integrability estimate of
 `ComplexParabolicChartBound` (which needs every exponent `< −1`) to the exact criterion for the
 chart bound of a principal-series function. This is needed for Langlands-ordered lists with ties
 (equal real parts of exponents), where some exponents equal `−1`.

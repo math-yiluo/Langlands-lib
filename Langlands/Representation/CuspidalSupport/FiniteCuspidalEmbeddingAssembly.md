@@ -1,6 +1,6 @@
 # Finite induced-cuspidal embedding assembly
 
-Worker 1570. This internal construction isolates the finite-sum and kernel
+This internal construction isolates the finite-sum and kernel
 argument of Renard VI.7.2, printed pp.182–183 / PDF pp.188–189, from the
 still-needed cuspidal projection theorem for the actual Levis. It does not
 prove the closed rational embedding statement.

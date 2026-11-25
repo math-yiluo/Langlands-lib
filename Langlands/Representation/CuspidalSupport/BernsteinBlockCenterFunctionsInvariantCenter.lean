@@ -73,8 +73,8 @@ def BernsteinInvariantCenterInclusionStatement : Prop :=
         let piD := rationalNormKernelSummandInduction (bernsteinLeviScheme i ν a.roots) ρ₀
         let I := bernsteinStandardRepresentedInductionFunctor.{uF, uV} i ν family a.roots
         ∀ ζ ∈ Subring.center (End piD),
-          (∀ ω ω', Assoc ω ω' → ∀ c : ℂ, (∀ φ : piD ⟶ twist ω, ζ ≫ φ = c • φ) →
-            ∀ φ' : piD ⟶ twist ω', ζ ≫ φ' = c • φ') →
-          I.map ζ ∈ Subring.center (End (I.obj piD))
+          (∀ ω ω', Assoc ω ω' → ∀ c : ℂ, (∀ φ : piD ⟶ twist ω, ζ.asHom ≫ φ = c • φ) →
+            ∀ φ' : piD ⟶ twist ω', ζ.asHom ≫ φ' = c • φ') →
+          End.of (I.map ζ.asHom) ∈ Subring.center (End (I.obj piD))
 
 end Langlands.CuspidalSupport

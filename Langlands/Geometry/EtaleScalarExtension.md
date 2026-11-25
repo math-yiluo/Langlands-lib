@@ -130,7 +130,7 @@ obtained from naturality of the inverse adjunction hom-set equivalence.
 
 ## Scope
 
-This unit constructs ordinary sheaf tensor extension on a fixed scheme and its
+This module constructs ordinary sheaf tensor extension on a fixed scheme and its
 universal coefficient maps. Geometric equivariance, compatibility with change
 of scheme or coefficient-ring composition, varying-scheme coefficient diagrams,
 ideal-reduction identifications, inverse systems, derived scalar comparisons,

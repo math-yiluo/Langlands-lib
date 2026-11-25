@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 
 /-! # Geometric reducedness of affine schemes from their global sections -/
 

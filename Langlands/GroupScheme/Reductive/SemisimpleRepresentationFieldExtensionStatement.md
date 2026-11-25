@@ -196,7 +196,7 @@ Proposition 4.19 with the same statement, and its errata snapshot of
 2026-11-04 (`milne-2022-algebraic-groups-errata-2026-11-04`) has no entry for
 pp. 90–91 (its Chapter 4 entry concerns the proof of 4.14 on p. 89).
 
-## For the later proof (not part of this unit)
+## For the proof (in `SemisimpleRepresentationFieldExtensionProof`, not part of this module)
 
 Milne's proof, printed p. 91 (PDF p. 107): "The proof is similar to that for
 representations of algebras (Bourbaki 1958, Chap. 8, §13, no. 4).

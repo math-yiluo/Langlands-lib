@@ -1,7 +1,5 @@
 # Uniform Laurent rationality for eventually recurrent sequences
 
-Worker 356 authored this pair from Worker 656's interface specification.
-
 ## Declaration and scope
 
 `Langlands.Analysis.EventuallyRecurrentLaurentSeriesStatement` is the sole new
@@ -139,7 +137,7 @@ Q.eval w ≠ 0,
 whenever `‖w‖ < ρ`. This new statement imports its statement module without
 redefining or reproving that ordinary generating-series result.
 
-For guidance toward a future proof, split the integer sequence into the
+For guidance toward a proof, split the integer sequence into the
 finite head `L ≤ n < N` and the tail `n = N + j`, and apply the existing
 theorem to `a j = c (j + N)` at `w = z ^ m`. The head is represented by the
 Laurent polynomial `H = ∑_{L ≤ n < N} c n * T (m * n)`, with the integer
@@ -149,7 +147,7 @@ Consequently multiplying the sum of head and tail by `D` leaves a Laurent
 polynomial. This explains why changing the cutoffs or finite head does
 not require a new denominator or radius.
 
-To obtain the reduced-denominator guard, a future proof must also justify
+To obtain the reduced-denominator guard, a proof must also justify
 regularity after this rational-function construction. Clearing the
 negative exponents in `H` gives an ordinary polynomial quotient whose
 denominator is a power of `X` times `Q(X ^ m)`. Both factors are nonzero
@@ -206,8 +204,8 @@ separate obligations.
 The imports are the existing natural-series statement and
 `Langlands.Representation.RankinSelberg.RationalZeta`, the latter providing
 the actual Laurent embedding and Mathlib's rational-function APIs.
-The target environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`,
-Lean 4.34.0, Mathlib commit
-`5ed2965256430c3649e86755f9576b54eca72435`. Existing Library pairs are
-unchanged. Compilation and proposition inspection establish well-formedness
-only; the exact mathematical proof is a later task.
+The statement was compiled with Lean 4.34.0 and Mathlib commit
+`5ed2965256430c3649e86755f9576b54eca72435`. Compilation and proposition
+inspection establish well-formedness only; the proof is
+`eventuallyRecurrentLaurentSeriesStatement_proof` in
+`Langlands.Analysis.EventuallyRecurrentLaurentSeriesProof`.

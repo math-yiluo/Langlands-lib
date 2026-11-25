@@ -1,7 +1,5 @@
 # Rational points avoiding the vanishing loci of tensor elements
 
-Authors: Worker 254, Worker 266.
-
 This module is commutative algebra. Everything lives in the namespace
 `Langlands.CommutativeAlgebra.TensorRationalPointDensity`.
 
@@ -73,8 +71,8 @@ previous lemma applies to both `f` and `f'`.
 
 This is internal infrastructure. It is not a numbered statement in Conrad,
 Gabber and Prasad, *Pseudo-reductive groups* (2nd ed.). It serves the proof of
-Proposition C.1.6 there (pseudo-completeness of `G/P`), in the formalization
-route designed by Worker 266: over a separably closed field, a rational point
+Proposition C.1.6 there (pseudo-completeness of `G/P`), in the Library's
+formalization route: over a separably closed field, a rational point
 of `G` translates a point over a field extension into a prescribed dense open
 subset (the open cell). The vanishing loci of `f` and `f'` are the
 complements of such open subsets. The argument is the standard one: a nonzero

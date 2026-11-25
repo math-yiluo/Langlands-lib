@@ -25,7 +25,7 @@ scheme-theoretic fibre are affine.
 These are internal consequences of the existing relative projective space,
 polynomial coordinate-cover proof, published `ProjSpace.isProper_π`, and
 Mathlib's pullback and morphism APIs. No external mathematical assertion is
-assumed. This unit does not prove section lifting or fibre ampleness spreading.
+assumed. This module does not prove section lifting or fibre ampleness spreading.
 
 The structure-map comparison reuses
 `ProjectiveSpace.toSpec_eq_projSpace_π` from `ProjectiveSpace.Charts`.

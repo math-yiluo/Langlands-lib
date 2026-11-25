@@ -1,7 +1,5 @@
 # Finite Laurent inequality neighborhoods
 
-Author: Worker 36.
-
 The module proves that every neighborhood of a point of the actual
 multiplicative spectrum contains a compact finite Laurent inequality
 locus with strictly positive thresholds, with the point in its interior.

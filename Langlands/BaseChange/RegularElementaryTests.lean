@@ -1,5 +1,5 @@
 import Langlands.BaseChange.TwistedDiagonalOpen
-import Langlands.ClassFieldTheory.Local.NYLL.UniverseZeroModel
+import Langlands.ClassFieldTheory.Local.UniverseZero.UniverseZeroModel
 import Langlands.LocalFactor.DeligneHenniartTopLayerOrders
 import Langlands.ClassFieldTheory.Local.NormExistenceClosedSupport
 import Langlands.Representation.Unramified.HeckeOperators
@@ -138,7 +138,7 @@ theorem isOpen_regularElementarySupport (E : PadicField.{v} p)
         (mem_unitSubgroup_iff_ord_eq_zero E D b).mp hb, add_zero]
     have horder := congrArg D.ord hz
     rw [D.ord_mul (a i).ne_zero ((map_ne_zero τ).mpr hne), D.ord_mul (a j).ne_zero hne,
-      LocalClassField.NYLL.ord_eq_of_algEquiv τ D D z, hord i, hord j] at horder
+      LocalClassField.UniverseZero.ord_eq_of_algEquiv τ D D z, hord i, hord j] at horder
     exact hij (hν.injective (add_right_cancel horder))
 
 /-- The characteristic function of the regular elementary support. -/

@@ -1,7 +1,9 @@
 # Rational root points fixing path weight lines
 
 This module is an internal prerequisite for the even type `A` case of the
-quasi-split Steinberg quotient task (Steinberg 1965, §9.10–9.19). In Steinberg's
+quasi-split Steinberg quotient `QuasiSplitSteinbergQuotientStatement` (Steinberg
+1965, §9.10–9.19), which the module `Rational.QuasiSplitSteinbergQuotient`
+proves. In Steinberg's
 substitute product `N'' = X_α σ_α ∏_{j ≠ m, m+1} X_j σ_j` for type `A_{2m}`, the
 middle basis vector of the standard representation is fixed by every factor. So
 `N''` lies in the hypersurface `f = 0`, where `f = det(1 - ·)`. This module proves the
@@ -92,5 +94,6 @@ hypotheses for the stated lines.
 The module concerns rational points only. It does not treat the parametrized factors
 `x_α(s)` over general tests, products such as `N''`, the polynomial matrix of the
 modified product, or the class function `f`. It also does not show that the
-representatives act on the moved lines by any particular scalar. These remain
-later even type `A` obligations of the host task.
+representatives act on the moved lines by any particular scalar. These are
+later even type `A` steps, left to the proof of
+`QuasiSplitSteinbergQuotientStatement`.

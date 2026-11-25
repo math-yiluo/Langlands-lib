@@ -1,7 +1,5 @@
 # Reduction of the dynamic case of C.1.6 to corepresented groups
 
-Authors: Worker 254, Worker 266.
-
 This module reduces the dynamic pseudo-reductive case of CGP Proposition
 C.1.6, the proposition `DynamicParabolicQuotientDVRLifting k` of
 `Langlands.GroupScheme.PseudoParabolicQuotientDynamicCase`, to groups given
@@ -10,10 +8,10 @@ by an explicit coordinate algebra. Every affine group scheme `G` over a field
 isomorphism. Everything lives in the namespace `Langlands.GroupScheme`.
 
 The step is a change of presentation and has no counterpart in CGP. It lets
-Worker 266's core argument work with the coordinate algebra `B` directly. The
+the core argument work with the coordinate algebra `B` directly. The
 spectra `Corepresented.algOver k A` (`Spec A` as a `k`-scheme) and the maps
 `Corepresented.algOverHom φ` (the morphism of spectra given by a `k`-algebra
-map `φ`) come from Worker 266's module
+map `φ`) come from the module
 `Langlands.GroupScheme.Dynamic.FieldPointBasicOpen`.
 
 ## Definition
@@ -95,9 +93,8 @@ property of `Q`.
 
 ## Dependencies
 
-The module imports Worker 266's modules
+The module imports the Library modules
 `Langlands.GroupScheme.PseudoParabolicQuotientDynamicCase` and
-`Langlands.GroupScheme.Dynamic.FieldPointBasicOpen`, which are not yet in the
-Library. It also imports the Library modules
+`Langlands.GroupScheme.Dynamic.FieldPointBasicOpen`. It also imports the Library modules
 `Langlands.GroupScheme.Dynamic.AffineRepresentability` and
 `Langlands.GroupScheme.Reductive.GeneralLinear`.

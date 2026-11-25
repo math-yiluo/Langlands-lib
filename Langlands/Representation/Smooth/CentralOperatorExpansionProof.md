@@ -1,6 +1,6 @@
 # Uniform finite expansion of central action operators
 
-Worker 189 proves the exact published proposition
+This module proves the exact published proposition
 `Langlands.CentralOperatorExpansionStatement.{uG,uA,uV}` with the closed theorem
 `Langlands.centralOperatorExpansion`. The group, parameter group and vector-space
 universes remain independent. The statement module and all its imported files

@@ -35,7 +35,7 @@ one-dimensional vector space as a space linearly isomorphic to its
 field. It preserves and reflects the existence of such a line
 trivialization.
 
-Worker 1333 authored this internal derived construction. It reuses the
+This is an internal derived construction. It reuses the
 complete actual weight-space comparison and the scalar-extension
 construction, without asserting an additional geometric structure
 theorem. The related coordinate construction

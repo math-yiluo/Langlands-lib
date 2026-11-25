@@ -1,7 +1,5 @@
 # Saturation of spans of simple coroots
 
-Author: Worker 1366.
-
 This is a derived internal lattice argument for the proof of
 `SplitTorusCentralizerDerivedSimplyConnectedStatement`. It makes no assertion
 about a group scheme or the existence of a root-datum comparison.

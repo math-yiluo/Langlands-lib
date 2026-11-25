@@ -5,7 +5,7 @@ import Langlands.Representation.Archimedean.RealBlockTestVector
 # The slice at the identity is surjective
 
 For lists `pre`, `core`, `post` of real blocks with `a = rank pre`, `r = rank core` and
-`n = rank (pre ++ core ++ post)`, Worker 109's slice at the identity,
+`n = rank (pre ++ core ++ post)`, the slice at the identity,
 `σ₁ F (g) = |det g|^(-c) F(diag(1_a, g, 1))`, maps the `O(n)`-finite functions of the standard
 module of `pre ++ core ++ post` onto the `O(r)`-finite functions of the standard module of
 `core` (`sliceK_one_surjective`).
@@ -17,7 +17,7 @@ character blocks of its position characters; the standard module of `core` lies 
 continuous `O(n)`-finite function on `O(n)` — a product of polynomial factors for the rows outside
 the middle block times a sign-averaged polynomial extension of `ψ` in the entries of the middle
 block — is the restriction of some `G'` in the standard module of `pre ++ coreC ++ post` with
-`σ₁ G' = c ψ`, `c ≠ 0` (`sliceK_one_surjective_of_none`). Worker 109's induced map `Ind T`
+`σ₁ G' = c ψ`, `c ≠ 0` (`sliceK_one_surjective_of_none`). The induced map `Ind T`
 then gives `σ₁ (Ind T G') = T (σ₁ G') = c ψ`.
 -/
 

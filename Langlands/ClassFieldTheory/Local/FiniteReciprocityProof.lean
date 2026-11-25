@@ -1,10 +1,10 @@
 import Langlands.ClassFieldTheory.Local.FiniteReciprocityStatement
-import Langlands.ClassFieldTheory.Local.NYLL.TypeZeroReciprocityProof
-import Langlands.ClassFieldTheory.Local.NYLL.TypeZeroNormTransferProof
-import Langlands.ClassFieldTheory.Local.NYLL.TypeZeroRestrictionProof
-import Langlands.ClassFieldTheory.Local.NYLL.ReciprocityUniverseTransportProof
-import Langlands.ClassFieldTheory.Local.NYLL.NormTransferUniverseTransportProof
-import Langlands.ClassFieldTheory.Local.NYLL.RestrictionUniverseTransportProof
+import Langlands.ClassFieldTheory.Local.UniverseZero.TypeZeroReciprocityProof
+import Langlands.ClassFieldTheory.Local.UniverseZero.TypeZeroNormTransferProof
+import Langlands.ClassFieldTheory.Local.UniverseZero.TypeZeroRestrictionProof
+import Langlands.ClassFieldTheory.Local.UniverseZero.ReciprocityUniverseTransportProof
+import Langlands.ClassFieldTheory.Local.UniverseZero.NormTransferUniverseTransportProof
+import Langlands.ClassFieldTheory.Local.UniverseZero.RestrictionUniverseTransportProof
 
 /-! # Finite abelian local reciprocity, norm, transfer and restriction -/
 
@@ -16,8 +16,8 @@ universe u v w
 clause, the norm and transfer diagrams and restriction compatibility, at arbitrary
 independent field universes. -/
 theorem finiteAbelianReciprocityTheorems : FiniteAbelianReciprocityTheorems.{u, v, w} :=
-  ⟨NYLL.finiteAbelianReciprocityUniverseTransport NYLL.finiteAbelianReciprocityTypeZero,
-    NYLL.finiteAbelianNormTransferUniverseTransport NYLL.finiteAbelianNormTransferTypeZero,
-    NYLL.finiteAbelianRestrictionUniverseTransport NYLL.finiteAbelianRestrictionTypeZero⟩
+  ⟨UniverseZero.finiteAbelianReciprocityUniverseTransport UniverseZero.finiteAbelianReciprocityTypeZero,
+    UniverseZero.finiteAbelianNormTransferUniverseTransport UniverseZero.finiteAbelianNormTransferTypeZero,
+    UniverseZero.finiteAbelianRestrictionUniverseTransport UniverseZero.finiteAbelianRestrictionTypeZero⟩
 
 end Langlands.LocalClassField

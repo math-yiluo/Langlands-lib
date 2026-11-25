@@ -1,7 +1,5 @@
 # Functorial actual pinned lifts
 
-Author: Worker 1472.
-
 This internal construction uses the published chosen pinned lifts and pinned
 rigidity theorem. For supplied split pinnings over any field in universe `u`,
 it constructs the identity and composition of actual pinned isomorphisms.

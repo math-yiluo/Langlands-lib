@@ -1,7 +1,5 @@
 # Quotient measures on the open lower-triangular cell
 
-Author: Worker 936.
-
 This module relates measures on the left coset space `N_m \ GL_m` to right
 Haar measures on the group `B̄_m` of invertible lower triangular matrices,
 through the open cell `β_m : B̄_m → N_m \ GL_m`, `b ↦ [b]`. It proves:

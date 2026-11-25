@@ -3,16 +3,15 @@
 This internal reduction proves `RootSubgroupVectorReductionStatement` from the
 Library's actual constructions and the focused support modules
 `RelativeRootMultiples`, `RootSubgroupVectorTransport`, `WeightSupportCongruence`,
-`WeightSupportVanishing` and `RootSubgroupCentrality`. The reused support and
-centrality modules were authored by Worker 1303; the arithmetic, coordinate
-transport and assembly were authored by Worker 1287.
+`WeightSupportVanishing` and `RootSubgroupCentrality`.
 
 The statement keeps five exact existing general propositions as premises:
 `RelativeRootSystemStatement`, `SemigroupRealizationStatement`,
 `SemigroupCommutatorStatement`, `CyclicRootFunctorComparisonStatement`, and
 `CyclicWeightFiltrationStatement`. Its conclusion is the exact existing
 `RootSubgroupVectorStatement`. It does not prove any of these five premises and
-does not discharge the final task unconditionally. The field and scheme universe
+does not prove `RootSubgroupVectorStatement` unconditionally; that proof is
+`rootSubgroupVector` (`RootSubgroupVectorProof`). The field and scheme universe
 remain arbitrary, and there is no reduced-root or quasi-split assumption.
 
 Given a connected reductive group and a maximal split torus, the root-system

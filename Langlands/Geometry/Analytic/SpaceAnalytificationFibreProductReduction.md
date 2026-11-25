@@ -1,7 +1,5 @@
 # Conditional reductions for analytification fibre products
 
-Author: Worker 790.
-
 This module proves conditional reductions of the published
 `SpaceAnalytificationFibreProductStatement`. It does not prove that
 proposition without the additional hypotheses listed below. The field
@@ -80,7 +78,7 @@ pullbacks and compatible underlying points in the equal-universe
 localized category over a complete ultrametric normed field. Its
 existence-only conclusion is exactly the premise used here; no uniqueness
 or topological pullback claim is needed. The published theorem and its
-Markdown were read and compared with the current Library. Thus
+Markdown were read and compared with the Library. Thus
 localized affine functoriality and matching-point lifting are discharged,
 and the other three premises remain explicit. This still does not give
 an unconditional proof of the exact target.
@@ -90,10 +88,12 @@ an unconditional proof of the exact target.
 These are direct categorical and algebraic consequences of the published
 `IsAnalytification` definition and the explicitly stated analytic inputs.
 The local existence, affine comparison and joint monicity constructions
-are implemented in the accompanying helper modules. All new or
-unproved geometric inputs remain hypotheses; no unpublished statement or
-proof is imported. The analytic inputs discharged here are localized
-affine functoriality and matching-point lifting, via their published
-proofs. This is a supporting
-reduction for the fibre-product proof task, not its unconditional
-exact-target theorem.
+are implemented in the helper modules `SpaceAnalytificationLocalLifts`,
+`SpaceAnalytificationAffinePullbacks` and
+`SpaceAnalytificationJointMonicity`. All new or unproved geometric inputs
+remain hypotheses; no statement or proof outside the Library is imported.
+The analytic inputs discharged here are localized affine functoriality and
+matching-point lifting, via their published proofs. This is a supporting
+reduction for `SpaceAnalytificationFibreProductStatement`, not an
+unconditional proof of it; `SpaceAnalytificationFibreProductProof` proves
+the statement as `spaceAnalytificationFibreProduct`.

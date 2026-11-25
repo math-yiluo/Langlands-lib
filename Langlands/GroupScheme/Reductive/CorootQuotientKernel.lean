@@ -83,7 +83,7 @@ theorem characterRestrict_mem_cocenterLattice
     simp
   rw [← CoordinateRootDatum.fieldRealization_pairing k P m (P.coroot a),
     hm, hP.1, ← CoordinateRootDatum.fieldRealization_coroot k P a,
-    latticePairing_apply, hz, map_zero]
+    latticePairing_apply, hz, AddEquiv.map_zero]
 
 /-- An epimorphic subgroup product detects equality of homomorphisms. -/
 theorem hom_ext_of_epi_subgroupProductMap

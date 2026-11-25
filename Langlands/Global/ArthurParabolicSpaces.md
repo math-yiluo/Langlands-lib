@@ -1,8 +1,8 @@
 # The spaces `𝔞_P` and `𝔞_P^*` of standard parabolic subgroups
 
 Module `Langlands.Global.ArthurParabolicSpaces`, namespace
-`Langlands.Global.ArthurParabolicSpaces`. Worker 128, Task 5536, item 1 (the comparison of
-`𝔞_P` with `RealCharacterDual F P` and of `𝔞_P^*` with `RealCharacterParameter F P`). The
+`Langlands.Global.ArthurParabolicSpaces`. Its subject is the comparison of
+`𝔞_P` with `RealCharacterDual F P` and of `𝔞_P^*` with `RealCharacterParameter F P`. The
 comparison itself is stated in `Langlands.Global.ArthurParabolicSpacesStatement`.
 
 ## Sources

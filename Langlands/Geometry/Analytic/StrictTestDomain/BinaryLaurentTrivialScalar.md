@@ -1,7 +1,5 @@
 # The actual binary Laurent amalgam over trivially normed scalars
 
-Author: Worker 572.
-
 This derived construction treats scalar degree-zero descent for the binary
 unit-radius Laurent cover over a presented strict affinoid base `P` when
 `∀ c : K, ‖c‖ ≤ 1`. It uses the published
@@ -30,7 +28,7 @@ This is an internal algebraic consequence of the published localization
 theorem and Mathlib's uniqueness of localizations. No further analytic
 source result is used. The proof does not require a nonzero or reduced
 base, a nonnilpotent `f`, or a nonempty lower or overlap locus. Localization
-at a denominator that forces the zero ring is allowed. This contribution
+at a denominator that forces the zero ring is allowed. This module
 constructs only the trivial-scalar branch; it does not prove the
 unconditional binary statement, higher Cech exactness, admissibility,
 arbitrary-radius descent, or descent for finite modules.

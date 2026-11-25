@@ -28,8 +28,7 @@ type over `K` (structure maps `p` and `q`, `f ≫ q = p`). Suppose `f` is inject
 
 ## Proof
 
-This is the globalization step (step 4) of the route suggested in proof task
-`b14fb360-bcf2-4516-93b8-71de33f0fba5`. It is derived from the end of the proof of Stacks
+This is the globalization step from the local criterion. It is derived from the end of the proof of Stacks
 Project Lemma 33.23.1 (tag 0E8R, registered source
 `stacks-very-ampleness-support-2026-10-29`). The Lean proof goes as follows.
 
@@ -66,8 +65,3 @@ Project Lemma 33.23.1 (tag 0E8R, registered source
    `hLoc` with `properRationalImmersion_localClosedImmersion`.
 
 Only the standard axioms `propext`, `Classical.choice` and `Quot.sound` are used.
-
-## Authorship
-
-Worker 898 wrote the conditional globalization `properRationalImmersion_isClosedImmersion_of`.
-Worker 712 checked it and added the unconditional theorem.

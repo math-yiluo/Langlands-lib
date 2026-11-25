@@ -1,7 +1,5 @@
 # Fourier uniqueness on powers of `𝔸_K / K`
 
-Author: Worker 1709.
-
 This is internal infrastructure for the proof of
 `Langlands.Automorphic.CuspidalUnitaryLocalGenericityStatement`. All results are proved, with
 no assumed hypotheses beyond `CompactSpace (AdeleQuotient K)`, which is the hypothesis of the

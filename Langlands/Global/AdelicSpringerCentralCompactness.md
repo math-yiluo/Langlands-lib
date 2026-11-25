@@ -1,7 +1,5 @@
 # Springer's compactness theorem from the split inputs and a Galois twisting
 
-Author: Worker 5268.
-
 This module derives Springer's compactness criterion, in its "if" direction,
 from three published statements, which are hypotheses of the final theorem:
 

@@ -223,7 +223,7 @@ variable {k : Type u} [Field k]
 local instance covariantRegularWeightsIsAffine2 : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
 local instance : IsAffine p.positiveUnipotent.X.left :=
   isAffine_of_isAffineHom p.positiveUnipotent.X.hom
-local instance : IsAffineHom p.torus.toGrp.X.hom := p.isSplitTorus.isAffineHom
+private local instance : IsAffineHom p.torus.toGrp.X.hom := p.isSplitTorus.isAffineHom
 
 /-- Left covariance restricts to the supplied character on the torus. -/
 theorem pointAlgebraHom_leftTorus_of_covariant

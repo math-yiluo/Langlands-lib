@@ -1,7 +1,5 @@
 # Canonical compact-to-smooth induction and support quotients
 
-Author: Worker 181.
-
 This internal construction packages the published canonical inclusion
 bijectivity into natural isomorphisms of the actual induction functors,
 their actual support subfunctors, and their actual successive quotients.
@@ -117,7 +115,7 @@ p-adic groups I* (1977): section 1.8, printed page 444 (PDF page 5), defines
 the two induction functors; proposition 1.9(e), printed page 445 (PDF page 6),
 states their coincidence for compact quotient; sections 5.3–5.4, printed
 page 461 (PDF page 22), use invariant support subspaces and their successive
-quotients. These three original pages were read for this contribution.
+quotients. These three original pages were read for this module.
 
 Registered source: `bernstein-zelevinsky-1977-induced-i`; PDF SHA-256:
 `8424600228ab72c5937e45edceefcae410a2a0b8f5ebf282185691542aa89092`.
@@ -133,11 +131,10 @@ outside this construction.
 
 ## Development checks
 
-The complete module and a private consumer file pass the project's Lake build
-in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`. Unapplied signature
+The complete module and a private consumer file pass the project's Lake build.
+Unapplied signature
 assignments check `compactSmoothIso` and `rawSupportGradedCompactSmoothIso`
 with independent coefficient, group, and input carrier universes. Inspection
 reports the latter's universe parameters as `uR`, `uG`, `uV`. The induction,
 support, and graded isomorphisms depend only on `propext`, `Classical.choice`,
-and `Quot.sound`. There are no errors or warnings. These development checks
-are separate from independent review and publication.
+and `Quot.sound`. There are no errors or warnings.

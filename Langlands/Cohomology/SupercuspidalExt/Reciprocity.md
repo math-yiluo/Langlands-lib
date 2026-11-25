@@ -1,15 +1,15 @@
 # Ext reciprocity for compact induction from an open subgroup
 
-Author: Worker 61. Built on the published
+Built on the published
 `Langlands.Representation.Induction.OpenAdjunction`
 (`smoothRestriction_preservesEpimorphisms`,
 `smoothCompactInduction_preservesMonomorphisms` and the specialization
-`SupercuspidalExt.compactInductionAdjunction`), Worker 13's
+`SupercuspidalExt.compactInductionAdjunction`),
 `Langlands.Cohomology.DerivedComparison` (`rightDerivedCompIso`,
 `compIsoOfResolution`, `complexIso`, `mapInjectiveResolution`,
-`mapHomologyIso`), Worker 13's `Langlands.Cohomology.SmoothExt` (`ext`,
-`extZeroIso`), Worker 13's `Langlands.Cohomology.SmoothHomComplex`
-(`homFunctor`) and Worker 3's `Langlands.Cohomology.SupercuspidalExt.Statement`
+`mapHomologyIso`), `Langlands.Cohomology.SmoothExt` (`ext`,
+`extZeroIso`), `Langlands.Cohomology.SmoothHomComplex`
+(`homFunctor`) and `Langlands.Cohomology.SupercuspidalExt.Statement`
 (the functors `restriction` and `compactInduction`). From Mathlib it uses
 `Functor.toRightDerivedZero`, `ShortComplex.mapHomologyIso`,
 `ShortComplex.mapCyclesIso`,
@@ -21,7 +21,7 @@ Composition `f ≫ g` is `f` followed by `g`.
 ## Degree zero of the derived-functor comparison
 
 This section is general homological algebra, in the namespace
-`Langlands.Cohomology.DerivedComparison`, next to Worker 13's comparison.
+`Langlands.Cohomology.DerivedComparison`, next to the comparison `rightDerivedCompIso`.
 
 - `map_homologyπ_comp_mapHomologyIso_inv S F`: for a short complex `S` with
   homology and a functor `F` preserving zero morphisms and the left homology of
@@ -92,7 +92,7 @@ Let `V` be a smooth representation of `H` and `W` one of `G`.
   `SmoothExt.ext R G ((compactInduction R G H).obj V) n ≅
   restriction R G H ⋙ SmoothExt.ext R H V n`, that is
   `Ext^n_G(c-Ind_H^G V, -) ≅ Ext^n_H(V, restriction of -)` for every `n`.
-  It is Worker 13's `rightDerivedCompIso` with `Φ` the Hom functor out of
+  It is `rightDerivedCompIso` with `Φ` the Hom functor out of
   `c-Ind_H^G V`, `P` the identity of `R`-modules, `T` restriction, `Ψ` the Hom
   functor out of `V` and `e = homFunctorIso R hH V`, preceded by the right
   unitor that identifies `ext` with `ext ⋙ 𝟭`. Its hypotheses on `T` are
@@ -129,15 +129,15 @@ contragredients. That proposition is not used here.
 
 Harris works with `Q̄_ℓ`-coefficients and his particular groups. Here `R` is
 any commutative ring and `G` any topological group, in one universe `u`, as in
-Worker 3's statement module.
+the statement module `Langlands.Cohomology.SupercuspidalExt.Statement`.
 
 ## Scope
 
-- This module does not prove Worker 3's
-  `CompactInductionExtReciprocityStatement`, although
-  `fun H hH V n => ⟨extCompactInductionIso R hH V n⟩` is the intended proof.
-  That proof is planned as a separate proof task, as agreed with Worker 13 and
-  Worker 3.
+- This module does not prove
+  `CompactInductionExtReciprocityStatement`. The proof
+  `fun H hH V n => ⟨extCompactInductionIso R hH V n⟩` is the theorem
+  `compactInductionExtReciprocity` in
+  `Langlands.Cohomology.SupercuspidalExt.ReciprocityProof`.
 - Harris's sums over `j`, the cohomology groups `H^j_c(M_N)` and `H^j_c(R_N)`,
   the group `GJ^0` and the identification of `H^j_c(M_N)` as a compact
   induction are not formalized. `extCompactInductionIso` requires `H` to be

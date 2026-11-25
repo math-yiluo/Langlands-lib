@@ -4,7 +4,7 @@ Module `Langlands.Analysis.SeveralComplex.Hartogs.SubMeanValue`, namespace
 `Langlands.Analysis.SeveralComplex`. This module supports Hartogs' lemma
 (`Langlands.Analysis.SeveralComplex.Hartogs.HartogsLemma`). That lemma is a step in the proof of
 Hartogs' theorem on separately holomorphic functions, which the proof of
-`Langlands.Analysis.Meromorphic.MeromorphicContinuationHolomorphicStatement` needs (Task 5431).
+`Langlands.Analysis.Meromorphic.MeromorphicContinuationHolomorphicStatement` needs.
 
 ## Provenance
 

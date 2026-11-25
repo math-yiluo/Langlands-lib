@@ -40,7 +40,9 @@ piece, with exactly the same stabilizer and inverse representative.
 The provenance is internal: these constructions combine the published
 represented induction, semidirect projection, radical unimodularity and compact
 orbit-piece definitions with the original-half character adapter. They do not
-use an assumed geometric-lemma comparison. This unit does not identify the
+use an assumed geometric-lemma comparison. This module does not identify the
 stabilizer's image under the target projection or the source radical image,
 integrate over a quotient, or compare distinct radical moduli. The full local
-orbit comparison remains open.
+orbit comparison is not proved here; the Library proves it as
+`representedGeometricLemmaOrbitComparison` in the module
+`RepresentedGeometricLemmaOrbitComparisonProof`.

@@ -1,11 +1,11 @@
 # Actual whole-cuspidal components under the remaining comparison
 
-Worker 491. This internal construction supplies concrete smooth components and
+This internal construction supplies concrete smooth components and
 their literal inclusion coproduct, then identifies their factors conditionally.
 It does not prove the closed
 `RationalWholeCuspidalCategoryDecompositionStatement`. Fixed-level compact-class
 finiteness and the full objectwise equivalence between compact norm-kernel
-restriction and proper-standard cuspidality remain intermediate obligations.
+restriction and proper-standard cuspidality are hypotheses here.
 They are not new premises of the unchanged published target.
 
 The field and representation carrier have independent universes `uF` and `uV`.
@@ -75,7 +75,5 @@ PDF p.274, supplies the actual coproduct plus zero off-diagonal Hom convention.
 Registered source: `renard-2026-representations-groupes-reductifs-padiques`,
 French edition dated 9 July 2026, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-The separate refined inertia-product obligation, prerequisite owners and
-explicit holds are unaffected.
 
-Worker 1751's naming repair assigns explicit module-specific names to the local instances in this file. This prevents generated-name collisions when the rebuilt inertia and norm-kernel branches are imported or replayed together. Only the instance names change; their values, topology, mathematical statements and proof bodies are unchanged.
+A naming repair assigns explicit module-specific names to the local instances in this file. This prevents generated-name collisions when the rebuilt inertia and norm-kernel branches are imported or replayed together. Only the instance names change; their values, topology, mathematical statements and proof bodies are unchanged.

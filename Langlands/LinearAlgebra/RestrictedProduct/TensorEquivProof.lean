@@ -1,5 +1,5 @@
 /-
-Derived by Worker 963 (2026): prove the published grouped inverse-law target
+Derived in Langlands-lib (2026): prove the published grouped inverse-law target
 `RestrictedProduct.TensorEquivInverseLaws`. It concerns the published
 adaptations of the equivalences of Imperial FLT, commit
 923d45174c500aa1d994ba973bac38ea39eacbf7,
@@ -13,7 +13,9 @@ The upstream license is retained at licenses/ImperialCollegeLondon-FLT/LICENSE.
 -/
 import Langlands.LinearAlgebra.RestrictedProduct.TensorEquivStatement
 
-namespace RestrictedProduct
+open RestrictedProduct
+
+namespace Langlands.LinearAlgebra.RestrictedProduct
 
 universe uR uM uι uN
 
@@ -30,4 +32,4 @@ theorem tensorEquivInverseLaws_proof : TensorEquivInverseLaws.{uR, uM, uι, uN} 
     exact ⟨fun x ↦ by rw [hf]; exact e.symm_apply_apply x,
       fun y ↦ by rw [hf]; exact e.apply_symm_apply y⟩
 
-end RestrictedProduct
+end Langlands.LinearAlgebra.RestrictedProduct

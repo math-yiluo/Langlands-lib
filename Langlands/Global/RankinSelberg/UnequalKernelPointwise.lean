@@ -8,7 +8,7 @@ noncomputable section
 open NumberField Langlands.Automorphic
 open Langlands.Global.HeckeFunctionalEquation Langlands.LocalFactor.Archimedean
 open Langlands.Global.CompletionPadic Langlands.Global.FiniteAdelicGL
-open Langlands.ClassField.Global.RelativeWeilGroup
+open Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 open scoped Classical CategoryTheory.MonObj
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false

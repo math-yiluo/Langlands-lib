@@ -1,6 +1,6 @@
 # Germ cohomology through neighbourhood cohomology
 
-Worker 749. This module is a derived helper. Its definitions and proofs are
+This module is a derived helper. Its definitions and proofs are
 internal. They use the published analytic étale site, the ordinary direct image
 `etaleUnderlyingSheaf`, the ordinary site points `underlyingTopologyPoint` and the
 germ cohomology `etaleUnderlyingGermCohomology` from

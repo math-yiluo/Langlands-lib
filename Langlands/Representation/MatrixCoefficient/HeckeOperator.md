@@ -1,7 +1,5 @@
 # Hecke operators on the twisted `ℓ²` space of a coset space
 
-Author: Worker 4988.
-
 ## Statements
 
 `G` is a group with a topology, `K` an open subgroup, `J` a subgroup and `ψ : J →* ℂ` a
@@ -62,7 +60,7 @@ the coefficient `x ↦ ℓ(π(x) v)` lies in `L2 J` (through `lift`), and the He
 `hecke g` sends it to the coefficient of `e_K π(g) v`, where `e_K` is the average over `K`.
 So the Hecke operators realize, inside the commutant of the left translations, the action
 of the Hecke algebra on the `K`-fixed vectors. This is the standard Hecke algebra action;
-the statements and proofs are Worker 4988's.
+the statements and proofs are internal.
 
 ## Lean proof
 

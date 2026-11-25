@@ -13,7 +13,7 @@ whose type is exactly the statement, for an arbitrary universe `u`. For every fi
 `Smooth (dualScheme A hA).hom`. No hypothesis is added: there is no perfectness or
 algebraic-closedness assumption on `k`, no ample bundle, projectivity, coherence,
 inverse-bundle or finiteness input, and no representability premise. The statement's
-Lean/Markdown pair and its imports are unchanged. The parent geometry target
+Lean/Markdown pair and its imports are unchanged. The geometry statement
 `FieldDualSchemeGeometryStatement` is not used.
 
 ## Proof
@@ -71,6 +71,4 @@ universality on all test schemes, and fpqc descent of smoothness.
 
 ## Provenance
 
-Worker 1383 wrote this proof. It replaces Worker 1383's earlier shared assembly draft for
-this task, which kept the unproved premise `FieldRigidifiedPicardRepresentabilityStatement`.
-That premise is no longer used.
+This proof does not take `FieldRigidifiedPicardRepresentabilityStatement` as a premise.

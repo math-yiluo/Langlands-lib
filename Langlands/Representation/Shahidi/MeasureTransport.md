@@ -1,6 +1,6 @@
 # Weighted measure conversions in Shahidi's normalization
 
-This unit implements two specific measure formulas from Shahidi,
+This module implements two specific measure formulas from Shahidi,
 *Fourier transforms of intertwining operators and Plancherel measures for
 GL(n)* (1984), printed pages 76–77, measure items 2 and 5. The registered
 source is `shahidi-1984-fourier`, SHA256
@@ -48,5 +48,6 @@ It also does not identify the matrix measure with a product of a fixed
 self-dual scalar measure: page 82 explicitly says the matrix measure need
 not be self-dual. Those choices and compatibility relations, the shared
 measure for the two Jacquet functionals, and the all-rank measure convention
-remain obligations of the parent Shahidi framework. No existence theorem,
+are outside this module; `LocalCoefficientGammaStatement` imposes them in its
+statement of Shahidi's Theorem 5.1. No existence theorem,
 Fourier compatibility theorem, or gamma-factor comparison is assumed here.

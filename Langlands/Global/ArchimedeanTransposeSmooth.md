@@ -1,6 +1,7 @@
 # Transpose inverse on actual archimedean smooth functions
 
-This is internal infrastructure for Task 7294 by Worker 264. It constructs the
+This is internal infrastructure for
+`CuspidalTransposeInverseContragredientStatement`. It constructs the
 pullback by transpose inverse on the Library's actual smooth-function space and
 identifies the induced actions with the algebra involutions in
 `ArchimedeanTransposeInverse`. The construction is derived from the definitions
@@ -57,6 +58,8 @@ between those two spans, so `isCenterFinite_smoothTranspose_iff` proves both
 preservation and reflection of center finiteness.
 
 This module concerns archimedean smooth functions and their actual differential
-operators. It does not yet construct an adelic automorphic realization or
-identify such a realization with a contragredient. Those remain separate steps
-of Task 7294.
+operators. It does not construct an adelic automorphic realization or
+identify such a realization with a contragredient. Those are separate steps
+towards `CuspidalTransposeInverseContragredientStatement`, which is proved as
+`cuspidalTransposeInverseContragredient` in
+`Langlands.Global.RankinSelberg.CuspidalTransposeInverseContragredientProof`.

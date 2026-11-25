@@ -1,6 +1,6 @@
 # The hyperext spectral sequence of a t-structure
 
-Author: Worker 61. Built on Mathlib's t-structures
+Built on Mathlib's t-structures
 (`Triangulated.TStructure`, its truncation functors and its spectral object
 `TStructure.spectralObject`), Mathlib's pretriangulated structure on the
 opposite category (`CategoryTheory.Pretriangulated.Opposite`), the homological
@@ -167,7 +167,7 @@ hypercohomology spectral sequence of `RHom(-, B)`. The two have the same
 the constructions is formalized.
 
 The Library module `Langlands.Cohomology.HyperextDegeneration.Statement`
-(Worker 3) states the degeneration of this spectral sequence as a bijectivity
+states the degeneration of this spectral sequence as a bijectivity
 of an edge map, without constructing the spectral sequence. This module
 neither imports nor proves that statement.
 

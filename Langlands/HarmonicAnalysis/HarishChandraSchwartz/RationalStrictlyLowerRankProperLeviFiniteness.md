@@ -30,7 +30,7 @@ All declarations are in `Langlands.HarishChandraSchwartz`.
 | Declaration | Exact content | Implemented proof or status |
 | --- | --- | --- |
 | `RationalStrictlyLowerRankProperLeviFinitenessStatement` | For every indicated field, connected reductive group and maximal split torus `i`, local orbit finiteness for groups of actual `relativeRootRank` strictly below `relativeRootRank i` implies `RationalSemistandard.ProperLeviOrbitFiniteness (i := i)`. | Prop-valued conditional target, established by the final theorem under the separate structural rank-decrease premise. |
-| `properLeviOrbitFiniteness_of_strictlyLowerRank` | The same implication at one group and torus, retaining `SemistandardProperLeviRankStatement` explicitly. | Introduces each proper intrinsic index and every closed connected reductive model of its literal Levi, then applies the published `rationalLocalOrbitFiniteness_properLevi_of_lowerRank`. The resulting local predicate is definitionally the owner's `LeviModel.LocalOrbitFiniteness`. |
+| `properLeviOrbitFiniteness_of_strictlyLowerRank` | The same implication at one group and torus, retaining `SemistandardProperLeviRankStatement` explicitly. | Introduces each proper intrinsic index and every closed connected reductive model of its literal Levi, then applies the published `rationalLocalOrbitFiniteness_properLevi_of_lowerRank`. The resulting local predicate is definitionally `LeviModel.LocalOrbitFiniteness` from `RationalSemistandardThetaFixed`. |
 | `properLeviOrbitFiniteness_of_rank_zero` | At relative semisimple rank zero, the proper-Levi premise holds under the same structural comparison without an analytic premise. | The published `semistandardParabolic_eq_top_of_rank_zero` contradicts properness of each putative index, so the universal predicate is vacuous. |
 | `rationalStrictlyLowerRankProperLeviFiniteness` | Establishes the packaged conditional target from `SemistandardProperLeviRankStatement`. | Introduces the global field, group and torus arguments and applies the first specialization theorem. |
 
@@ -50,14 +50,17 @@ The rank-zero result concerns semisimple rank zero and the empty proper part.
 
 ## Dependency boundary
 
-This unit imports `RationalStrictlyLowerRankOrbitFiniteness` and
+This module imports `RationalStrictlyLowerRankOrbitFiniteness` and
 `RationalSemistandardThetaFixed`. It leaves their definitions and statements
-unchanged. The structural rank-decrease assertion remains an explicit open
-target; the adapter proves no new structural rank theorem.
+unchanged. The structural rank-decrease assertion remains an explicit
+premise here; the adapter proves no new structural rank theorem (the Library
+proves that assertion, `SemistandardProperLeviRankStatement`, separately as
+`semistandardProperLeviRank` in
+`Langlands.GroupScheme.Rational.SemistandardProperLeviRankProof`).
 
 The conclusion is the local finiteness premise for the proper support
 interface. Actual proper Fourier support still requires that interface's
 separate support and fixed-level comparisons. Local synthesis reconstruction
 is a distinct lower-rank input for detecting zero induced constant terms and
-does not occur here. This unit constructs no Fourier family, synthesis,
+does not occur here. This module constructs no Fourier family, synthesis,
 inverse or projection, and uses no same-rank finiteness or Plancherel premise.

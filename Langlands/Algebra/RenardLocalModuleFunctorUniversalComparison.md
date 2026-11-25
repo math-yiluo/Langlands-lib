@@ -1,8 +1,8 @@
 # Universal-property comparison of the chosen local-module functor
 
-Author: Worker 1603. All declarations are in
+All declarations are in
 `Langlands.Renard.ModuleLocalization.UniversalComparison`. This internal construction packages
-the published objects and maps from
+the objects and maps from
 [RenardLocalModuleCategory](RenardLocalModuleCategory.md) into a functor and
 identifies that functor naturally with a specified Mathlib model.
 
@@ -17,13 +17,13 @@ Those two original pages were read for this construction. Example 4 views
 the localized module as a module over the original ring and uses the full
 subcategory of modules on which denominators act invertibly. The imported
 `IsSLocal` expresses invertibility in the actual endomorphism ring. The
-source's stronger scalar-inverse parenthesis is rejected by the published
+source's stronger scalar-inverse parenthesis is rejected by the
 integer/rational counterexample in
 [RenardModuleLocalization](RenardModuleLocalization.md); see also the
 [Appendix A corrections](../../notes/renard/appendix-a-corrections.md).
 
 The functors, explicit carrier transports, natural transformations and
-comparison below are internal packaging of these already published
+comparison below are internal packaging of these imported
 constructions. They are not a literal new assertion in Renard. They reuse
 Mathlib at commit `5ed2965256430c3649e86755f9576b54eca72435`, principally
 `Algebra/Category/ModuleCat/Localization.lean`, `Ulift.lean`,
@@ -32,11 +32,11 @@ There is no new localization quotient or assumed universal-property
 certificate. The comparison uses the actual localization instances,
 verified below by transport along explicit linear equivalences.
 
-This unit supplies no adjunction, polynomial-module restriction,
+This module supplies no adjunction, polynomial-module restriction,
 endomorphism-arrow transport, or source sequence-exactness statement or
 proof. In particular, Mathlib's existing exactness results motivate reuse
 of its functor, but this file makes no new exactness claim for the chosen
-functor. Those are separate publication obligations.
+functor. Those are outside this module.
 
 ## Independent universes and the chosen functor
 
@@ -46,14 +46,14 @@ Write `κ = max u v w`.
 
 `sourceRaiseFunctor.{u,v,w}` is exactly
 `ModuleCat.uliftFunctor.{max u w,v} R`, from `ModuleCat.{v} R` to
-`ModuleCat.{κ} R`. Its object at M is the published `raisedSource M`,
+`ModuleCat.{κ} R`. Its object at M is `raisedSource M`,
 with carrier `ULift.{max u w} M`. `sourceRaiseFunctor_obj`,
 `sourceRaiseFunctor_map_up` and `sourceRaiseFunctor_map_apply` identify its
 objects and its function `ULift.up ∘ f ∘ ULift.down`.
 
 `chosenLocalFunctor.{u,v,w} S` has target `LocalModuleCat.{u,κ} S`.
 Its object at M is exactly `canonicalLocalObject.{u,v,w} S M`, with carrier
-`ULift.{w} (LocalizedModule S M)` and the published locality proof.
+`ULift.{w} (LocalizedModule S M)` and the imported locality proof.
 Its map is `chosenLocalMap S f`. `chosenLocalMap_hom` identifies the
 underlying R-linear map as
 
@@ -73,7 +73,7 @@ ULift.up (LocalizedModule.mk m s) ↦
 
 The identity and composition laws `chosenLocalMap_id` and
 `chosenLocalMap_comp` follow by induction on localization representatives.
-`chosenLocalizationNatTrans` has components precisely the published
+`chosenLocalizationNatTrans` has components precisely
 `canonicalModuleMap S M`, from the raised source to the underlying chosen
 local object. Its naturality proof evaluates on raised elements and uses
 the representative formula at denominator one. Thus it works for every
@@ -123,7 +123,7 @@ maps, rather than arbitrary objectwise choices.
 
 ## The natural comparison and its intrinsic laws
 
-`canonicalModuleMap_isLocalizedModule` verifies that the published chosen
+`canonicalModuleMap_isLocalizedModule` verifies that the imported chosen
 map is a localization of the raised source, by transporting the ordinary
 `LocalizedModule.mkLinearMap` through the two `ULift.moduleEquiv` maps.
 `chosenMathlibLinearEquiv` is `IsLocalizedModule.linearEquiv` applied to
@@ -174,7 +174,7 @@ nonzero-denominator hypothesis. The fraction calculation uses invertible
 endomorphisms on local modules, so it also applies when the localized
 module collapses to zero.
 
-This module retains the independently reviewed universal-property construction.
+This module holds the universal-property construction.
 The explicit transport construction is available in
 [RenardLocalModuleFunctor](RenardLocalModuleFunctor.md). The two constructions
 keep their own definitions and intrinsic laws.

@@ -1,7 +1,5 @@
 # Normalizers of rational Levis with a supplied dynamic presentation
 
-Author: Worker 1739.
-
 This internal adapter concerns an original rational parabolic `p : P → G`
 of a connected reductive group over an arbitrary field and its original
 rational Levi `l : M → P`. It takes a single supplied cocharacter `χ` whose

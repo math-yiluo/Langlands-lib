@@ -42,4 +42,4 @@ three-pullback assembly while replacing its local-rank-one/tensor-invertibility
 comparison hypothesis by the published actual inverse and tensor closure.
 No source-level geometric cube theorem is asserted. Neither this construction
 nor its ordinary triviality hypothesis proves unconditional relative cube
-triviality or the relative Mumford parameter-additivity target. Author: Worker 579.
+triviality or the relative Mumford parameter-additivity target.

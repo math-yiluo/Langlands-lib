@@ -1,25 +1,27 @@
 # The dual-side Euler characteristic from its prerequisite statements
 
-Authors: Worker 935 wrote this module. It assembles Worker 1164's Steps 1–4
-(`Langlands.AlgebraicGeometry.Picard.MumfordDualDirectImages`), Worker 943's Steps 5 and 7
-(`Langlands.AlgebraicGeometry.Picard.AlgClosedFieldMumfordDualEulerReduction`) and Worker
-935's Step 6 (`Langlands.AlgebraicGeometry.Picard.FiniteFlatPointFibreSections`).
+This module assembles Steps 1–4
+(`Langlands.AlgebraicGeometry.Picard.MumfordDualDirectImages`), Steps 5 and 7
+(`Langlands.AlgebraicGeometry.Picard.AlgClosedFieldMumfordDualEulerReduction`) and
+Step 6 (`Langlands.AlgebraicGeometry.Picard.FiniteFlatPointFibreSections`).
 
 Module `Langlands.AlgebraicGeometry.Picard.AlgClosedFieldMumfordDualEulerFromPrerequisites`,
 namespace `Langlands.AbelianScheme`.
 
 ## Role and provenance
 
-This is internal infrastructure for task `6b1ab3e8-b3b0-4567-9251-7566e7a6dba3`, which
-proves the published `Langlands.AbelianScheme.AlgClosedFieldMumfordDualEulerStatement`. The
-source correspondence of that target was reviewed with the statement. It is the proof of
+This is internal infrastructure for the proof of the published
+`Langlands.AbelianScheme.AlgClosedFieldMumfordDualEulerStatement`. The
+source correspondence of that target is given in the statement's Markdown. It is the proof of
 Edixhoven, van der Geer and Moonen, *Abelian Varieties* (registered source
 `edixhoven-vandergeer-moonen-abelian-varieties-draft`), (9.11), formulas (8)–(10), printed
-p.132 (PDF p.136). This module proves the target from four published statements whose proofs
-are not yet in the Library. The anchor proposition `AlgClosedFieldMumfordDualEulerReductionStatement`
-is internal: it is exactly this implication, and it is proved in the same module. Once the
-four prerequisite proofs are published, the task's final proof applies
-`algClosedFieldMumfordDualEulerReduction` to them.
+p.132 (PDF p.136). This module proves the target from four published statements. The anchor proposition `AlgClosedFieldMumfordDualEulerReductionStatement`
+is internal: it is exactly this implication, and it is proved in the same module. The
+Library's proof `Langlands.AbelianScheme.algClosedFieldMumfordDualEuler` (module
+`Langlands.AlgebraicGeometry.Picard.AlgClosedFieldMumfordDualEulerProof`) imports this module
+but does not apply `algClosedFieldMumfordDualEulerReduction`: it takes the same steps with
+the proved prerequisites, and in Step 7 it uses the surjectivity of the Mumford map instead
+of `FieldDualSchemeGeometryStatement`.
 
 ## The anchor statement
 
@@ -82,5 +84,8 @@ The theorem uses no axioms beyond `propext`, `Classical.choice` and `Quot.sound`
 ## Assumptions
 
 The four prerequisite statements are hypotheses here and are not proved in this module.
-Their proof tasks are `32297f48` (Poincaré direct images), `5b778a75` (flat base change),
-`d0088789` (higher projection formula) and `19d345c7` (geometry of the dual over a field).
+The Library proves them as `Langlands.AbelianScheme.algClosedFieldPoincareDirectImage`
+(Poincaré direct images), `Langlands.AlgebraicGeometry.Modules.flatHigherDirectImageBaseChange`
+(flat base change), `Langlands.AlgebraicGeometry.Picard.lineBundleHigherProjectionFormula`
+(higher projection formula) and `Langlands.AbelianScheme.fieldDualSchemeGeometry` (geometry of
+the dual over a field).

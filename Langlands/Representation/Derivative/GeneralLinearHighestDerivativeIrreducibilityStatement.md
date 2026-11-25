@@ -1,6 +1,6 @@
 # Irreducibility of the highest actual general-linear derivative
 
-Worker 596. The Prop-valued definition
+The Prop-valued definition
 `Langlands.Derivative.GeneralLinearHighestDerivativeIrreducibility.{uF, uV} F T`
 states the first assertion of Zelevinsky 1980, Theorem 8.1. It proves nothing.
 
@@ -48,4 +48,6 @@ The published proof uses a nondegenerate pairing between highest derivatives,
 finite length, the unique irreducible submodule and quotient of the same
 label, and its multiplicity one. The existing Library label-step result
 only produces an irreducible subquotient and does not prove this statement.
-All of the irreducibility argument remains a proof obligation.
+The irreducibility argument is not part of this module; the Library proves the
+statement as `Langlands.Derivative.generalLinearHighestDerivativeIrreducibility`
+in `GeneralLinearHighestDerivativeIrreducibilityProof`.

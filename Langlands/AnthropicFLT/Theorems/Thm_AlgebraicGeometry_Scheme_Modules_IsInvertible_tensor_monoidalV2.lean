@@ -4,7 +4,7 @@ Ported from `Theorems/Thm_AlgebraicGeometry_Scheme_Modules_IsInvertible_tensor_m
 License, Version 2.0; see `licenses/Anthropic-FLT/LICENSE`, `NOTICE` and `ATTRIBUTION.md`.
 The paired Markdown file lists the changes made by the port.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_RelativePicardFunctor
 import Langlands.AnthropicFLT.Definitions.Def_PresheafOfModules_InternalHom
 import Langlands.AnthropicFLT.Theorems.Thm_PresheafOfModules_isMonoidal_inverseImage_W_toPresheaf
@@ -21,6 +21,6 @@ universe u
 
 open CategoryTheory MonoidalCategory
 theorem AlgebraicGeometry.Scheme.Modules.IsInvertible.tensor_monoidalV2 {X : AlgebraicGeometry.Scheme.{u}}
-    {L M : X.Modules} (hL : AlgebraicGeometry.Scheme.Modules.IsInvertible L)
-    (hM : AlgebraicGeometry.Scheme.Modules.IsInvertible M) :
-    AlgebraicGeometry.Scheme.Modules.IsInvertible (L ⊗ M) := by exact @_root_.P2MW.S_AlgebraicGeometry_Scheme_Modules_IsInvertible_tensor_monoidalV2.solution X L M hL hM
+    {L M : X.Modules} (hL : AlgebraicGeometry.Scheme.Modules.IsInvertibleFLT L)
+    (hM : AlgebraicGeometry.Scheme.Modules.IsInvertibleFLT M) :
+    AlgebraicGeometry.Scheme.Modules.IsInvertibleFLT (L ⊗ M) := by exact @_root_.P2MW.S_AlgebraicGeometry_Scheme_Modules_IsInvertible_tensor_monoidalV2.solution X L M hL hM

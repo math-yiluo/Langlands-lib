@@ -75,8 +75,8 @@ def towerAction : Action (SmoothRep.{0, 0, 0} R σ.FiniteAdelicPoints) Γ :=
 
 /-- The action of `γ ∈ Γ` on a class from level `U` is its action at level `U`. -/
 theorem towerAction_ρ_ι_apply (γ : Γ) (U : σ.SmallLevelCategory) (x : (F.obj (op U)).V) :
-    ((towerAction F hF).ρ γ).hom.hom ((ι (F ⋙ Action.forget (ModuleCat.{0} R) Γ) U).hom x) =
-      (ι (F ⋙ Action.forget (ModuleCat.{0} R) Γ) U).hom (((F.obj (op U)).ρ γ).hom x) :=
+    ((towerAction F hF).ρ γ).asHom.hom.hom ((ι (F ⋙ Action.forget (ModuleCat.{0} R) Γ) U).hom x) =
+      (ι (F ⋙ Action.forget (ModuleCat.{0} R) Γ) U).hom (((F.obj (op U)).ρ γ).asHom.hom x) :=
   smoothRepAction_ρ_ι_apply F hF γ U x
 
 /-- The action of `g ∈ G(A_f)` on a class from level `U`: it is the action of `op g⁻¹`, so the
@@ -100,9 +100,9 @@ theorem mem_inverseOpposite_restrictedConj (g : σ.FiniteAdelicPoints) (U : σ.S
 
 /-- The actions of `G(A_f)` and of `Γ` commute. -/
 theorem towerAction_comm (γ : Γ) (g : σ.FiniteAdelicPoints) (z : (towerAction F hF).V) :
-    ((towerAction F hF).ρ γ).hom.hom ((towerAction F hF).V.obj.ρ g z) =
-      (towerAction F hF).V.obj.ρ g (((towerAction F hF).ρ γ).hom.hom z) :=
-  Representation.IntertwiningMap.isIntertwining _ _ ((towerAction F hF).ρ γ).hom.hom g z
+    ((towerAction F hF).ρ γ).asHom.hom.hom ((towerAction F hF).V.obj.ρ g z) =
+      (towerAction F hF).V.obj.ρ g (((towerAction F hF).ρ γ).asHom.hom.hom z) :=
+  Representation.IntertwiningMap.isIntertwining _ _ ((towerAction F hF).ρ γ).asHom.hom.hom g z
 
 /-- The `Γ`-equivariant map from level `U` into the vectors of the tower fixed by the ordinary
 level `inverseOpposite U = {g | op g⁻¹ ∈ U}` of `G(A_f)`. -/
@@ -144,7 +144,7 @@ abbrev towerHeckeModule (U : σ.SmallLevelCategory) :
 theorem towerHeckeModule_ρ_smul (U : σ.SmallLevelCategory) (γ : Γ)
     (a : LevelHeckeAlgebra R (inverseOpposite U.obj).subgroup)
     (x : (towerHeckeModule F hF U).V) :
-    ((towerHeckeModule F hF U).ρ γ).hom (a • x) = a • ((towerHeckeModule F hF U).ρ γ).hom x :=
+    ((towerHeckeModule F hF U).ρ γ).asHom.hom (a • x) = a • ((towerHeckeModule F hF U).ρ γ).asHom.hom x :=
   heckeModuleActionFunctor_ρ_smul Γ _ (towerAction F hF) γ a x
 
 /-- The double coset `[K g K]` of the ordinary level `K = inverseOpposite U` acts on the

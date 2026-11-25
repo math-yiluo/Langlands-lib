@@ -64,6 +64,6 @@ In namespace `Langlands.AllFieldBZ.Geometric`:
 
 ## Provenance
 
-Written by Worker 71. It uses the same reduction as the Library proof (Library module
+This module uses the same reduction as the Library proof (Library module
 `Langlands/Representation/Geometric/IntersectionLeviDiagonalCharacterProof.lean`), with a
 different argument for the vanishing on transvections, so that it holds in every characteristic.

@@ -1,7 +1,5 @@
 # Algebraic fractions inside a target algebra
 
-Author: Worker 36.
-
 `Langlands.Analytic.fractionSubalgebra K phi s` is the actual subalgebra
 of elements b in the codomain B of an algebra map phi : A → B such that
 phi(s)^r b = phi(a) for some natural number r and some a in A. The

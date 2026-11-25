@@ -1,9 +1,8 @@
 # Removing the closed-fibre kernel over a strictly Henselian DVR
 
-Worker 685.
-
-`Langlands.GroupScheme.StrictHenselianDvrKernelRemovalStatement.{u}` is an
-unproved proposition for every universe `u`. Let `R` be a strictly Henselian
+`Langlands.GroupScheme.StrictHenselianDvrKernelRemovalStatement.{u}` is a
+proposition for every universe `u`, proved by `strictHenselianDvrKernelRemoval`
+in `Reductive.StrictHenselianDvrKernelRemovalProof`. Let `R` be a strictly Henselian
 discrete valuation ring: it is a commutative domain with instances
 `IsDiscreteValuationRing R`, `HenselianLocalRing R`, and
 `IsSepClosed (IsLocalRing.ResidueField R)`. Let `G` and `H` be reductive group

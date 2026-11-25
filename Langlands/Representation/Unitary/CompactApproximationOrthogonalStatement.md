@@ -1,6 +1,6 @@
 # Dense orthogonal families of minimal closed subrepresentations
 
-Worker 116 states
+The module states
 `Langlands.Analysis.CompactApproximationOrthogonalStatement`.
 The group G and complete complex inner-product space E have independent
 universes. The actual homomorphism π into bounded complex-linear

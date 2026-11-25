@@ -1,6 +1,6 @@
 # Isogenies of corresponding rank-one Levi subgroups
 
-This derived unit restricts a root-datum isogeny to corresponding cocharacter
+This derived module restricts a root-datum isogeny to corresponding cocharacter
 centralizers and realizes that restriction when the source centralizer has
 semisimple rank at most one. Its ambient groups are connected reductive over an
 arbitrary field, with specified split maximal tori and actual root data.

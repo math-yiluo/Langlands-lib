@@ -1,9 +1,7 @@
 # A unique fixed point in a finite simplex forces vertex transitivity
 
-Author: Worker 227.
-
 This is an internal affine-geometric support result for the building argument
-in Task 6205. It proves the finite-simplex implication used in the discussion
+giving the affine-diagram input for anisotropic groups over local fields. It proves the finite-simplex implication used in the discussion
 of Kaletha–Prasad, *Bruhat–Tits Theory: A New Approach*, §9.2.4 (printed p. 327,
 PDF p. 358), and in the proof of Theorem 10.3.1. The implemented proof uses
 orbit centroids and uniqueness of affine coordinates.

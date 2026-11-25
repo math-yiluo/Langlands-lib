@@ -1,6 +1,6 @@
 # Actual coefficient-extension comparisons for global order covers
 
-This internal unit constructs actual full-order formal comparisons between
+This module constructs actual full-order formal comparisons between
 coefficient extension of a global formal module restricted to a principal
 cover and restriction of its extended global module to the image cover.
 The construction uses the existing localization coefficient lifts and chart

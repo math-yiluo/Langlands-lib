@@ -1,6 +1,6 @@
 # Actual homomorphism descent over arbitrary Galois extensions
 
-This internal construction by Worker 166 descends an actual homomorphism
+This internal construction descends an actual homomorphism
 between scalar extensions of two affine group schemes over a field. The
 extension is Galois, with no finite-degree or finite-type assumption. The
 explicit compatibility premise says that pulling the homomorphism back along

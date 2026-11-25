@@ -1,10 +1,10 @@
 # Restriction and induction of actual Weil–Deligne pairs
 
-Worker 25 formalizes the Weil–Deligne restriction/induction statement family of
-task `f32f0f21-11a9-4bfd-9daa-e7541926d3be`. The entry proposition is
+This module formalizes the Weil–Deligne restriction/induction statement family.
+The entry proposition is
 `Langlands.WeilDeligneRepresentation.RestrictionInductionStatements`, the
-conjunction of the thirteen targets below. It uses Worker 17's actual
-`WeilDeligneRepresentation` pairs (finite-dimensional complex carriers,
+conjunction of the thirteen targets below. It uses the actual
+`WeilDeligneRepresentation` pairs of `Langlands.WeilDeligne.Basic` (finite-dimensional complex carriers,
 nilpotent monodromy, covariance `r(g) N r(g)⁻¹ = ν(g) N`) and their separate
 parameter predicates. It defines relations on actual pairs, not a replacement
 WD record or an assumed classification. The model relations are bound to the
@@ -119,10 +119,11 @@ are explicitly finite.
 
 ## Semisimplification and residue-degree normalization
 
-The last three targets reuse Worker 1's exact
-`Frobenius.IsSemisimplification` relation. That relation quantifies a linear
+The last three targets reuse the exact
+`Frobenius.IsSemisimplification` relation of `Langlands.WeilDeligne.FrobeniusStatements`.
+That relation quantifies a linear
 carrier identification, a unipotent correction commuting with the Weil action
-and N, and the corrected action. No theorem from Worker 1's statement family
+and N, and the corrected action. No theorem from the `FrobeniusStatements` family
 is assumed as a hypothesis.
 
 `RestrictionSemisimplificationCompatibility` transports any actual related
@@ -154,7 +155,7 @@ separate linear-algebra proposition, not an assumed root construction.
 For a residue-degree `f`, the actual arithmetic relation
 `d_F restricted to W_E = f*d_E` therefore permits comparison using the
 normalized degree of each field. The arithmetic identity and the actual
-residue cardinalities must still come from the construction tasks.
+residue cardinalities must still come from the arithmetic constructions.
 
 ## Source-to-declaration map
 
@@ -181,7 +182,7 @@ they are not attributed as literal numbered statements in the sources.
 | `SemisimplificationDegreeRescaling` | Derived from Deligne8.5–8.6/Tate4.1.3 and the characteristic-zero power/root calculus for unipotent operators, using the same corrected action. |
 | `RestrictionSemisimplificationCompatibility`, `InductionSemisimplificationCompatibility` | Tate2.1/4.1.2–4.1.3 and Deligne8.5–8.6; the correction, finite-coset and positive-power derivations are given above. |
 
-Original sources, read by Worker 25 for this family (locators re-verified on
+Original sources read for this family (locators re-verified on
 2026-10-20):
 
 - `tate-1979-number-theoretic-background`, retained Corvallis `Part II.pdf`,
@@ -200,8 +201,8 @@ Original sources, read by Worker 25 for this family (locators re-verified on
 
 ## Lean dependency map
 
-All imports are Lean modules of the current Library; no artifact identity is
-imported. Direct project imports and their transitive project closure:
+All imports are Lean modules of the Library. Direct project imports and their
+transitive project closure:
 
 | Module | Declarations used here | Lean SHA-256 |
 | --- | --- | --- |
@@ -225,9 +226,8 @@ imported. Direct project imports and their transitive project closure:
 | `Langlands.Representation.Dual.Definitions` | (generic algebraic dual, through `Dual`) | `53959e3b6cd0faad27f2566cbc9275fd537e5ab59d800f453bcbd61d05415ae5` |
 | `Langlands.Representation.Twist.Definitions` | (scalar character twist, through `Twist`) | `9e193a22784cba92e727402aac5117056433e796e37e1c76f8710e2ddd11d8cf` |
 
-The WD construction modules are authored by Worker 17 (construction companion
-task `650de61a-84c3-40d1-b791-0544af5824e1`); `FrobeniusStatements` is Worker 1's
-statement family (task `4bcfd048-60a1-4be4-a737-2fb8c48efc46`), of which only the
+The WD construction modules above are the construction companion of this
+family; `FrobeniusStatements` is a separate statement family, of which only the
 relation `Frobenius.IsSemisimplification` is used; none of its proposition targets
 is assumed. Mathlib is pinned at `5ed2965256430c3649e86755f9576b54eca72435`;
 `Mathlib.RepresentationTheory.FiniteIndex` and Mathlib's

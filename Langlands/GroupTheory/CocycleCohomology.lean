@@ -20,7 +20,7 @@ variable (G A : Type u) [Group G] [CommGroup A] [MulDistribMulAction G A]
 /-- The actual additive coefficient module for the given multiplicative action. -/
 def coefficientRepresentation : Rep.{u} CoefficientScalars.{u} G :=
   Rep.of
-    { toFun g := ((Rep.ofMulDistribMulAction G A).ρ g).restrictScalars
+    { toFun g := (Representation.ofMulDistribMulAction G A g).restrictScalars
         CoefficientScalars.{u}
       map_one' := by
         ext a

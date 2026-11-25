@@ -1,7 +1,5 @@
 # Ordered equal-exponent grouping
 
-Authors: Worker 175 (original statement draft); Worker 385 (publication preparation).
-
 `Langlands.Classification.OrderedExponentGrouping` is a `Prop`-valued
 definition in
 `Langlands.Representation.Classification.OrderedExponentGroupingStatement`.
@@ -41,8 +39,8 @@ coordinate condition used by
 `Langlands.Group.GL.RefinementCoordinates` after combining the fiber
 equivalences into a bijection of outer/inner labels with old block labels.
 
-The provenance is derived internal bookkeeping: Worker 175 isolated this
-finite specification for use in `SquareIntegrableEqualExponentGrouping`
+The provenance is derived internal bookkeeping: this finite specification is
+isolated for use in `SquareIntegrableEqualExponentGrouping`
 from the published `Langlands.Representation.Classification.TemperedBlockStatement`.
 It is not a transcription of a standalone literature theorem. The imported
 `BlockShape` definitions supply the ordered sizes and standard coordinates.

@@ -1,7 +1,5 @@
 # Maximal-torus conjugacy for compact real semisimple groups
 
-Worker 585.
-
 `Langlands.GroupScheme.realCompactMaximalTorusConjugacy` proves
 `RealCompactMaximalTorusConjugacyStatement`. For a semisimple group scheme
 over the real numbers with compact full real-point group, it produces

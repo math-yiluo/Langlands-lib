@@ -1,7 +1,5 @@
 # Unipotent field fibres of closed contracting subgroups
 
-Worker 851.
-
 This internal consequence of the published dynamic-subgroup theory applies
 to a smooth affine group scheme `G` over `Spec R`, for an arbitrary
 commutative ring `R`. Let `χ` be a cocharacter of `G` and let `j : H ⟶ G`

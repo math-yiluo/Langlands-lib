@@ -1,8 +1,5 @@
 # Upper-parabolic full-unipotent orbit parametrization and ordering
 
-Authors: Worker 197 (formal statement and documentation), Worker 330
-(precise interface and consumer design).
-
 `Langlands.Whittaker.UnipotentOrbitStatement.{uF}` is a closed, transparent
 `Prop`-valued definition. It states a geometric prerequisite for the induced
 Whittaker localization argument and supplies no proof.
@@ -89,7 +86,7 @@ The finite subtype and its within-block conditions come from those existing
 GL Weyl definitions. The exact matrix representative requirement is added
 for the downstream concrete calculations.
 
-## Existing results and remaining proof obligations
+## Existing results and proof obligations
 
 The imported Library pairs `Geometric.WeylDefinitions`, `GL.SingletonBlocks`,
 `GL.UpperUnipotent`, `GL.Padic`, and `Geometric.ClosedSubgroupDefinitions` are
@@ -97,7 +94,7 @@ reused unchanged. They supply the actual permutations, block shapes,
 subgroups, canonical topology and ordered orbit structure. No new substantial
 definition is introduced.
 
-A future proof may reuse
+A proof may reuse
 `Langlands.GeneralLinear.fieldUpperBruhatFactorizationTheorem` from
 `Langlands.Group.GL.UpperBruhatProof` and
 `Langlands.Geometric.padicParabolicBruhat` from
@@ -118,7 +115,9 @@ a general finite-orbit ordering once its closedness and topological hypotheses
 have been discharged for these groups. Its arbitrary representatives must
 also be matched bijectively to `W` and replaced by the exact permutation
 matrices, proving equality of orbit sets so that coverage, disjointness and
-open initial unions are retained. All these reductions remain separate proof
-obligations. The existing closed-subgroup Mackey filtration theorem concerns
+open initial unions are retained. These reductions are carried out in the
+proof, `Langlands.Whittaker.unipotentOrbit` in `UnipotentOrbitProof`, which
+uses `padicParabolicBruhat` and `closedSubgroupOrbitOrdering`. The existing
+closed-subgroup Mackey filtration theorem concerns
 the subsequent representation-theoretic step and is not asserted or proved
 by this module.

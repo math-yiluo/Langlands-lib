@@ -1,7 +1,5 @@
 # Finite-level approximation in `L²([G])`: proof
 
-Author: Worker 112.
-
 `Langlands.Global.RestrictionSplitCentre.quotientL2FiniteApproximation` proves
 the published `QuotientL2FiniteApproximationStatement` of
 `GroupSchemeRestrictionQuotientL2FiniteApproximationStatement`. The route

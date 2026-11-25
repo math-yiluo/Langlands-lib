@@ -1,6 +1,7 @@
 # Smoothness from a smooth open subgroup
 
-This derived unit defines `HasSmoothOpenSubgroup` using an actual group homomorphism
+This module, derived rather than taken from a source, defines
+`HasSmoothOpenSubgroup` using an actual group homomorphism
 that is an open immersion from a smooth group scheme. For a group scheme locally
 of finite type over a field, this property is equivalent to smoothness.
 

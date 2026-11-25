@@ -1,6 +1,6 @@
 # The derived subgroup maps onto every perfect fpqc quotient
 
-This unit proves, over a field `k`, that the derived subgroup `D` of a
+This module proves, over a field `k`, that the derived subgroup `D` of a
 smooth connected affine group `G` maps onto every quotient homomorphism
 `q : G ⟶ Q` that is quasi-compact, flat and surjective, provided `Q` is
 affine and locally of finite type and its derived subgroup functor is the
@@ -78,8 +78,7 @@ gives `⊤ = derivedSubgroup Q ≤ range inc`. By `surjective_of_top_le_range`,
 `IsDerivedSubgroup.surjective_comp_of_derivedSubgroup_eq_top` (namespace
 `Langlands.GroupScheme`) is the form used for a derived-subgroup inclusion
 `d : D ⟶ G` (`IsDerivedSubgroup d`). It is an internal proof-producing
-definition: a `def` whose type is the proposition below, so that it can be
-recorded as this unit's entry declaration. The linter options before it
+definition: a `def` whose type is the proposition below. The linter options before it
 suppress the warnings for a Prop-valued and class-valued `def`. It is used
 exactly like a theorem. There `G` is smooth, connected and
 affine over the field `k`, and `q` and `Q` are as above. It supplies the
@@ -97,7 +96,7 @@ Surjectivity is surjectivity of the underlying morphism of schemes. Over a
 field this is Milne's notion for homomorphisms of algebraic groups (Milne
 Appendix A.22: surjective iff surjective on closed points of the
 underlying varieties). The quotient `Q` and the morphism `q` are given; this
-unit does not construct quotients. Nor does it prove that any particular
+module does not construct quotients. Nor does it prove that any particular
 quotient is perfect. The two hypotheses are supplied separately when the
 lemma is applied to a central torus `T` with `G/T` semisimple (Milne 12.46(b)
 and 21.50).
@@ -116,5 +115,3 @@ pp.570-571 / PDF pp.586-587; its surjectivity sentence is on p.571. The
 errata page (snapshot 2026-11-02) has no entry for 6.16, 6.18, 12.45,
 12.46 or A.22. Its p.129 entry concerns only 6.19(c)-(e), and its p.570
 entry concerns footnote 3, which belongs to A.20.
-
-Authorship: Worker 1383.

@@ -1,8 +1,5 @@
 # Permutation matrices, Weyl elements and inverse transpose
 
-Author: Worker 16. This is a construction group for task
-`974e7b2e-4779-4b03-a8a1-6b81962d310c`, revision 2.
-
 The generic constructions act on `Matrix.GeneralLinearGroup (Fin n) R`, which
 is definitionally `Langlands.GeneralLinear n R`. Here `R` is any commutative
 ring in an arbitrary universe and `n` is any natural number. They therefore
@@ -70,7 +67,7 @@ inverse transpose is multiplicative, fixes `weylLong`, and is involutive, while
 
 ## Every finite p-adic extension
 
-For every prime `p`, every accepted `F : PadicField p` in any universe and every
+For every prime `p`, every `F : PadicField p` in any universe and every
 supplied `T : F.TopologicalData`, the three `TopologicalData.generalLinear...`
 definitions specialize inverse transpose, permutation conjugation and the
 Weyl--inverse-transpose homeomorphism. They use precisely `T.topology`.
@@ -78,7 +75,7 @@ The latter two install the existing `T.valuativeRel` and `T.localField`
 certificates to obtain the topological-ring instance. They do not assume an
 extra topological property of the matrix group.
 
-The three `canonicalGeneralLinear...` abbreviations use the accepted
+The three `canonicalGeneralLinear...` abbreviations use the existing
 `F.canonicalTopologicalData`. They therefore need only the algebraic p-adic
 field, not a caller-supplied realization. They introduce no global field
 topology and make no identification between spectral and residue-normalized
@@ -93,33 +90,24 @@ linéaire* (1981), section 1.2, formula (3), printed page 200 (PDF page 2).
 The original page was inspected. Literature ID: `jpss-1981-conductor`;
 SHA-256: `986b06d6c16221fd55f04480604a1b17bf11004a704ab16b78acdd131ae6d49d`.
 Its formula is `W̃(g) = W(w_r (g⁻¹)ᵀ)`: it uses left multiplication by the long
-Weyl representative, not conjugation by that representative. The current file
+Weyl representative, not conjugation by that representative. This file
 formalizes the matrix maps only; it does not assert a theorem on Whittaker models.
 The extension to arbitrary commutative rings, permutation conjugation,
 topological packaging and intrinsic map proofs are internal constructions.
 
 The imported `Langlands.Group.GL.Padic`, together with its companion
-`Langlands.Group.GL.Basic`, is accepted definition artifact
-`cd1132db-8cab-4cab-bd28-0c6164b44dbe`, version 1, published at commit
-`843c574c920aa9926ab56adf662c74b3cd4ed0e1`, with independent semantic receipt
-`7c88f2621a5047a9a85fe9ef375a8ed0`. Its final validation uses an incremental
-Lake build and exact declaration inspection. A fresh fetch verifies acceptance,
-publication and current Library membership without missing files or unavailable
-dependencies. The complete effective Basic/Padic pairs and final review were
-read, and their source hashes match the local imported files.
+`Langlands.Group.GL.Basic`, was checked with an incremental Lake build and
+exact declaration inspection. The complete Basic/Padic pairs were read, and
+their source hashes match the imported files.
 
 The exact transitive local-field definitions are:
 
-- `Langlands.LocalField.Definitions`, artifact
-  `ac4cb7d5-5dd1-44b6-9d56-f0ec6c70bce0`, version 1, publication commit
-  `1fe07fd211e579cc430734fd96ce959aadb7663d`.
-- `Langlands.LocalField.Canonical`, artifact
-  `c342ec21-e5ee-4ba4-aec6-b4c1b1e2b629`, version 1, publication commit
-  `9db46907db3181b0c1dfd287b8ab2f1f02054cab`.
+- `Langlands.LocalField.Definitions`.
+- `Langlands.LocalField.Canonical`.
 
-Their complete effective Lean/Markdown pairs were read and their exact hashes
-match the dependency closure of the published core construction. Basic and
-Padic are Worker 6's work; their imported constructions are reused without
+Their complete Lean/Markdown pairs were read and their exact hashes
+match the dependency closure of the published core construction. The imported
+constructions of Basic and Padic are reused without
 modification. This file introduces no new field or general-linear-group wrapper.
 
 The pinned environment is Lean 4.34.0 and Mathlib commit
@@ -128,5 +116,4 @@ audited in `LinearAlgebra.Matrix.Permutation`, `Data.Matrix.PEquiv`,
 `Data.Fin.Rev`, `Algebra.Group.Units.Hom`, `Topology.Algebra.Group.Units`,
 `Topology.Algebra.Group.Matrix` and `Topology.Instances.Matrix`.
 Native compilation of this unchanged Lean source and its exact dependency
-modules completed without errors or warnings. Compilation is development
-evidence; independent semantic review and publication establish acceptance.
+modules completed without errors or warnings.

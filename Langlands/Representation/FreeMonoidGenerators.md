@@ -1,9 +1,7 @@
 # Representations of free monoids given by generators
 
-Author: Worker 3657.
-
 Lean module: `Langlands.Representation.FreeMonoidGenerators`. It imports the
-draft module `Langlands.Representation.CommutingFamilyUniqueness`, the
+module `Langlands.Representation.CommutingFamilyUniqueness`, the
 Library modules `Langlands.Representation.Archimedean.GKModuleDensity` and
 `Langlands.Automorphic.OperatorSubquotientLocalComponentStatement` (for
 `Archimedean.gkHoms` and `Archimedean.IsGKIsotypic`), and Mathlib's
@@ -111,5 +109,5 @@ of admissibility.
 
 ## Check
 
-`lean_check` 37881b85 (module alone): 0 errors, 0 warnings; lake build
-dbe84f71 of the full Task 6817 draft: 0 errors, 0 warnings.
+A check of the module alone: 0 errors, 0 warnings; a Lake build of the full
+local-component determination proof: 0 errors, 0 warnings.

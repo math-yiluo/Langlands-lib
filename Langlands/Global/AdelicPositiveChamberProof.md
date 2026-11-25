@@ -44,7 +44,8 @@ J. Amer. Math. Soc. 37 (2024), §§2.1–2.2, pp. 190–191 (PDF pp. 4–5;
 character parameter space in the number-field case and use the positive Weyl
 chamber as the starting region for convergence. This proof establishes the
 nonemptiness used there, not convergence or continuation. The cocharacter
-argument adapts Worker 587's regular-parameter construction as documented in
-`AdelicIntertwiningCocycleReduction` (reproduced there by Worker 86). This module
+argument adapts the regular-parameter construction `exists_regularParameter`
+(module `AdelicEisensteinRegularRegion`) as documented in
+`AdelicIntertwiningCocycleReduction`. This module
 uses public algebraic results, not the private helpers or the analytic
 reductions, and does not need to rescale the witness at threshold zero.

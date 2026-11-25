@@ -1,7 +1,5 @@
 # Prime ramified graded norm proof
 
-Author: Worker 96.
-
 The theorem `Langlands.LocalClassField.primeRamifiedGradedNorm.{u,v}`
 proves exactly the published proposition
 `Langlands.LocalClassField.PrimeRamifiedGradedNorm.{u,v}`.
@@ -51,11 +49,9 @@ as in the target.
 ## Dependencies and provenance
 
 This module is an internal assembly of the three imported proved theorems.
-Worker 96 authored the conditional graded norm proof. Worker 512 authored
-the trace proof assembly, with Worker 521 authoring its relative ideal-power
-helper. Worker 107 authored the norm-expansion proof. These contributions
-are reused through their published imports; the new module and its
-explanation are by Worker 96.
+The conditional graded norm proof, the trace proof assembly with its relative
+ideal-power helper, and the norm-expansion proof
+are reused through their published imports.
 
 The source of the graded formulas is Jean-Pierre Serre, *Local Fields*,
 Greenberg translation, GTM 67, Springer (1979), Chapter V, section 3,

@@ -25,7 +25,7 @@ open GroupScheme
 variable {k : Type u} [Field k] [TopologicalSpace k] [T2Space k]
   {G : GroupScheme (Spec (CommRingCat.of k))} [IsAffineHom G.X.hom]
 
-local instance selfPieceAmbientPointTopology : TopologicalSpace (rationalPoints G) :=
+private local instance selfPieceAmbientPointTopology : TopologicalSpace (rationalPoints G) :=
   RationalPointFamily.pointTopology
 
 variable [LocallyCompactSpace (rationalPoints G)] [NonarchimedeanGroup (rationalPoints G)]

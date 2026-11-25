@@ -1,7 +1,5 @@
 # Statement: fpqc-locally isomorphic reductive groups are étale-locally isomorphic
 
-Worker 75.
-
 `Langlands.GroupScheme.ReductiveFpqcLocalIsomorphismStatement.{u} : Prop` is a statement-only,
 `Prop`-valued definition. This module does not prove it, and it adds no other definitions,
 theorems or axioms. It imports:

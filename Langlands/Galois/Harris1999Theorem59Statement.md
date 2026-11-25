@@ -1,6 +1,6 @@
 # Harris (1999), Theorem 5.9(i): a pure compatible family attached to `Π`
 
-Author: Worker 34. This module states part (i) of Harris's Theorem 5.9 over
+This module states part (i) of Harris's Theorem 5.9 over
 the Library's actual cuspidal classes and genuine `λ`-adic Galois
 representations. The statement is a `Prop` definition; nothing here proves
 it.
@@ -40,7 +40,8 @@ J. Math. Kyoto Univ. 39-2 (1999), 299-318. Registered original
   `L`-function of the unramified representation `Π_w`."
 
 The proof (p.315) cites Clozel 1991 under a parity hypothesis, removed in
-Clozel 1993; those inputs are separate statements of this task.
+Clozel 1993; those inputs are stated separately in
+`Langlands/Galois/ClozelSelfDualStatements`.
 
 ## Library objects used
 
@@ -137,4 +138,5 @@ excluded), with carriers in universe `uV`, and an integer `m`, such that
   chosen `ι`.
 - **Unramified matching only.** No ramified local compatibility is asserted.
   Part (ii), the identification of the restriction to a decomposition group at
-  `v` with `σ(Π_v)`, belongs to the parent task and is not stated here.
+  `v` with `σ(Π_v)`, is not stated here; derived consequences of it are
+  stated in `Langlands/Galois/Harris1999Theorem59iiParameterStatement`.

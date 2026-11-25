@@ -1,8 +1,8 @@
 # Proof that a finite Mumford map to the chosen dual over a field is surjective
 
-Authors: Worker 3613, with Worker 2029 (the two-projection lifting argument in the support
-module `Langlands.AlgebraicGeometry.Picard.FiniteTranslationDifferenceLifting` adapts Worker
-2029's proof of `Langlands.AbelianScheme.algClosedFieldTranslationDifferenceLifting_of_cube`).
+The two-projection lifting argument in the support module
+`Langlands.AlgebraicGeometry.Picard.FiniteTranslationDifferenceLifting` adapts the proof of
+`Langlands.AbelianScheme.algClosedFieldTranslationDifferenceLifting_of_cube`.
 
 Module `Langlands.AlgebraicGeometry.Picard.FieldFiniteMumfordMapSurjectiveProof`. Support
 module: `Langlands.AlgebraicGeometry.Picard.FiniteTranslationDifferenceLifting`.

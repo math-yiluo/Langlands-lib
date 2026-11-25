@@ -1,9 +1,6 @@
 # Covering and kernel assembly for the root-generated centralizer
 
-Authors: Worker 1325 and Worker 1746. The included earlier normalizer-separation
-composition credits Worker 1226.
-
-This internal supporting unit composes actual root-generated Bruhat
+This internal supporting module composes actual root-generated Bruhat
 covering with the actual lift-generated normalizer kernel computation.
 It proves the fixed-data centralizer inclusion under explicit structural
 inputs. It does not prove the unconditional
@@ -28,7 +25,7 @@ predicate. It asserts existence of an actual normalizer-point family `m`,
 indexed by the simple relative roots, whose Weyl classes are the chosen
 Coxeter simple generators, whose points lie in their corresponding `L_a`,
 and whose images in `N(k)/H0` satisfy all the Coxeter relations. This
-unit does not prove that this input exists.
+module does not prove that this input exists.
 
 `hasRootGeneratedBruhatCovering_rankOneLiftPoints` assumes splitness of
 the torus, an actual relative-root-system realization, a generic
@@ -62,7 +59,11 @@ stability, finiteness and linear independence of simple roots, so the
 earlier ordered-product argument proves the unipotent factorization.
 
 Provenance is internal composition of the earlier supporting covering,
-normality and kernel arguments. Worker 1746 authored the included
-normality and kernel modules; Worker 1325 authored the new ambient
-membership lemmas and covering/extraction assembly. The unconditional
-existence of all structural inputs remains a separate obligation.
+normality and kernel arguments. The unconditional
+existence of all structural inputs is not proved here;
+`rootGeneratedCentralizerRankOne_of_structuralPremises` (module
+`Rational.RootGeneratedCentralizerReduction`) derives them from
+`RelativeRootSystemStatement` and `RootRankOneFactorizationStatement`, and the
+Library proves `RootGeneratedCentralizerRankOneStatement` as
+`rootGeneratedCentralizerRankOne` (module
+`Rational.RootGeneratedCentralizerRankOneProof`).

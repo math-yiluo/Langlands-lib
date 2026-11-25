@@ -95,11 +95,13 @@ an application of the published
 `rootMapsGaloisCompatible_of_rootVectors` theorem.
 
 The supplied split pinning, descended-torus square, and character-compatible
-simple-root action remain inputs. This unit does not construct these data
+simple-root action remain inputs. This module does not construct these data
 from quasi-splitness, classify Galois orbits or prove their orthogonality,
 construct Steinberg's cross-section or its even-type-A substitutes, or prove
-the parent class-quotient theorem. In particular, it asserts no global
+the class-quotient theorem `QuasiSplitSteinbergQuotientStatement` that it
+serves, which the Library proves as `quasiSplitSteinbergQuotient`
+(`Rational.QuasiSplitSteinbergQuotient`). In particular, it asserts no global
 rational section of the quotient map.
 
-Integration gives the local instances used here module-specific names to permit
-joint imports. Their types, values, and local scopes are unchanged.
+The local instances used here carry module-specific names to permit joint
+imports. The names change none of their types, values, or local scopes.

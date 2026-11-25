@@ -1,6 +1,6 @@
 # Open descent and local geometry of full Isom schemes
 
-Worker 592. This is internal derived material from the published fppf sheaf
+This is internal derived material from the published fppf sheaf
 property of full `LocalGroupIso` families, change-of-base equivalences, and
 scheme representation gluing over open covers.
 

@@ -1,7 +1,5 @@
 # Local spectral continuity targets for rational quotient actions
 
-Author: Worker 36.
-
 `RationalSpectralLocalContinuityStatement.{u,v}` is a proposition definition
 with three conclusions. This file states the target; it supplies no proof.
 The coefficient field `K` is an arbitrary complete ultrametric normed field,
@@ -93,7 +91,7 @@ constructions.
 
 The registered Equish source folder is
 `provided-7bb3903652336bd799aad8853b8efd7ff3bcc0c7652745417f4745a14ac08e90`,
-receipt SHA256
+SHA256 digest
 `e046cadfb9dcec4b0cf6624f80d6316bf532416153b82023f5100bd1ab0726cd`.
 Its member
 `Berkovich--Etale equivariant sheaves on p-adic analytic spaces (unfinished manuscript)--1996.pdf`

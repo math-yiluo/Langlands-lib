@@ -1,7 +1,5 @@
 # Actual local Levi comparisons and their root subgroups
 
-Author: Worker 1444.
-
 This internal derived construction supplies local objects for the graph route to
 the common-torus isomorphism theorem. It combines published affine dynamic
 centralizers, generic kernel cocharacters, intrinsic root subgroup realization
@@ -59,7 +57,7 @@ root reducedness or commutator formulas.
 The provenance is internal composition of the cited imported Library results;
 the predicates and records package the inputs and actual constructed maps.
 They are intended for the graph construction motivated by Milne's
-*Algebraic Groups* (2017), 23.16–23.18. The present unit does not assert that
+*Algebraic Groups* (2017), 23.16–23.18. The present module does not assert that
 an arbitrary collection of local comparisons glues, or identify a collection
 indexed by all roots with a compatible global graph. Choosing simple roots,
 constructing the global factors, establishing density and proving projection

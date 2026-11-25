@@ -49,8 +49,8 @@ also provides its postcomposition form.
 `pullbackId`. `sectionDifferentialsSquareMap_id_base` specializes the resulting
 formula to the fixed-base differential map `relativeDifferentialsMap`, with
 the required transport along `eX ≫ g = eY`. These are specialization formulas;
-this module does not yet state the group cotangent or Lie base-change identity
+this module does not state the group cotangent or Lie base-change identity
 and composition laws.
 
-This unit is a prerequisite toward relative parabolic representability. It does
+This module is a prerequisite toward relative parabolic representability. It does
 not prove that representability theorem or construct its polarization.

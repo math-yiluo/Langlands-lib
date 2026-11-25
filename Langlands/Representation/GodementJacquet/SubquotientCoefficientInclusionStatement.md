@@ -56,7 +56,7 @@ from `A` to `σ`. A vector lifts through the actual surjection `q`, and
 smoothness of `σ` ensures its lift and its image in `σ` are smooth.
 Equivariance should identify the resulting coefficient functions pointwise.
 Passing to their complex spans should give the conclusion. This paragraph is
-a proposed proof route; this statement module does not implement it.
+the proof route of `SubquotientCoefficientInclusionProof`; this statement module does not implement it.
 The p-adic proof must additionally discharge compact-open cofinality for the
 canonical general-linear group.
 
@@ -69,12 +69,10 @@ constituent value module. No analytic existence, generator identity, Fourier
 identity, representation equivalence, gamma-factor equality or L-factor
 divisibility is stated here.
 
-## Authorship
+## Checks
 
-Worker 468 authored the prepared Lean and Markdown draft. Worker 55 checked
-the actual coefficient definitions, the smooth-dual extension API and the
-canonical topology, retained the Lean draft unchanged, and prepared this
-statement pair for review and publication.
+The actual coefficient definitions, the smooth-dual extension API and the
+canonical topology used by this statement were checked.
 
 ## All-field port
 

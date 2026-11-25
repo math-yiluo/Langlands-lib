@@ -1,7 +1,5 @@
 # Stabilizer fibres are equidimensional: proof
 
-Authors: Worker 5139, with Worker 79 (the finite-type argument, see below).
-
 Proof of `Langlands.AlgebraicGeometry.AlgebraicSpace.StabilizerFibreLocalDimensionStatement.{u}`
 (Stacks Project, Lemma 39.8.1, Tag 045X, for the fibres of the stabilizer scheme). The
 theorem is `Langlands.AlgebraicGeometry.AlgebraicSpace.stabilizerFibreLocalDimension`.
@@ -116,9 +114,10 @@ is locally of finite type. It factors as the action graph `lift a.hom (snd G.X V
 followed by `snd V V`, so the action graph is locally of finite type
 (`locallyOfFiniteType_of_comp`). Then `(proj a).left` is, up to the isomorphism
 `PreservesPullback.iso (Over.forget S)`, the scheme-level pullback of the action graph
-along the diagonal, and base change preserves the property. The Lean proof is Worker 79's
-lemma `locallyOfFiniteType_stabilizer` from their public draft for Task 5217
-(`UnipotentOrbitStratumAssemblyDraft.lean`), restated for `proj a`.
+along the diagonal, and base change preserves the property. The Lean proof restates
+for `proj a` a lemma `locallyOfFiniteType_stabilizer` written for the orbit-dimension
+strata of unipotent actions (Conrad's Example 5.5); that lemma is not a declaration of
+the Library.
 
 ## Proof of the target
 

@@ -1,6 +1,6 @@
 # Renard VI.2.1, (a) ⇔ (b): the reverse implication and a reduction to the joint statement
 
-Author: Worker 157. Module
+Module
 `Langlands.Representation.CuspidalSupport.SupercuspidalCoefficientCriterionReduction`,
 namespace `Langlands.Aubert.General.RepresentedParabolic`.
 
@@ -42,8 +42,8 @@ published statements, used unchanged.
   special point `x`, a closed subgroup scheme `j : Z ⟶ G` representing the torus
   centralizer, and a character comparison. At these, `K0 = D.specialCompactSubgroup x`
   has the special compact properties, the Iwasawa and Cartan comparisons and the
-  simultaneous basis property. Task 4169 (`8c39faa0-2a70-4fc4-a027-914987aba924`) owns
-  its proof.
+  simultaneous basis property. The Library proves it only under further inputs
+  (`BruhatTits.SpecialCompact.JointBasisFinalAssembly`).
 - `SupercuspidalCoefficientCriterionStatement.{u, v}` (module
   `Langlands.Representation.CuspidalSupport.SupercuspidalCoefficientCriterionStatement`;
   Renard VI.2.1 (a) ⇔ (b)). Let `A : SmoothRep.{0, u, v} ℂ G(F)` be a representation of
@@ -198,8 +198,8 @@ Library.
 
 ## What remains
 
-The one premise is `JointSpecialCompactBasisExistenceStatement.{u}`. When it is proved, the
-task target is `supercuspidalCoefficientCriterionReduction <proof>`.
+The one premise is `JointSpecialCompactBasisExistenceStatement.{u}`. When it is proved,
+`supercuspidalCoefficientCriterionReduction <proof>` proves the target statement.
 
 ## Imports
 

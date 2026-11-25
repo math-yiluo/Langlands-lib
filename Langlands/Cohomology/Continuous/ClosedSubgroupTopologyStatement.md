@@ -1,9 +1,9 @@
 # Finite-tuple extension and neighborhood detection for closed subgroups
 
-Author: Worker 205. This pair states two topological propositions about finite
+This pair states two topological propositions about finite
 tuples in profinite groups and their conjunction. It proves nothing; each
-proposition is a `Prop`-valued definition whose proof is a separate
-contribution.
+proposition is a `Prop`-valued definition whose proof is in
+`Langlands.Cohomology.Continuous.ClosedSubgroupTopologyProof`.
 
 All three declarations are in the namespace `Langlands.Continuous` and have
 one universe parameter `u`. The group `G` and the target `Y` both live in
@@ -59,9 +59,10 @@ Either clause can be used on its own by its name or by projection.
 
 These propositions are internally derived topology prerequisites, not
 quotations from the literature. They support the closed-normal continuous
-cohomology descent statement (task `72beaba6-b4c7-46d3-a92e-1c0436d470f3`)
-within the unramified `H^2` exhaustion work (task
-`3263cf33-f7d5-406a-95a6-75a5b789e94d`). They are not arithmetic assertions
+cohomology descent statement
+(`Langlands.Cohomology.Continuous.ClosedSubgroupDescentStatement`) within the
+unramified `H^2` exhaustion work
+(`Langlands.ClassFieldTheory.Local.UnramifiedH2Exhaustion`). They are not arithmetic assertions
 from Serre's *Local Fields*. No literature source is cited.
 
 The intended proof route uses two named facts. One is the published
@@ -86,15 +87,16 @@ totally disconnected group.
   `N`, and normal because `H` and `N` are normal. Each tuple in `U` has the same
   quotient image as a tuple in `H`.
 
-This route is a guide for the separate proof task. This pair implements no
-proof.
+This route is a guide for the proof in
+`Langlands.Cohomology.Continuous.ClosedSubgroupTopologyProof`. This pair
+implements no proof.
 
-The `[T2Space G]` hypothesis is included because the task specifies compact
-Hausdorff groups. The proof route above does not need it.
+The `[T2Space G]` hypothesis is included because the propositions are stated
+for compact Hausdorff groups. The proof route above does not need it.
 
 ## Environment
 
-Environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`: Lean 4.34.0
+Lean 4.34.0
 (`293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`), Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`. The module imports only
 `Mathlib.Topology.Algebra.Group.ClosedSubgroup`,

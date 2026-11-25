@@ -26,6 +26,8 @@ local notation "𝔗" => splitTorus.commGroupScheme (Spec (CommRingCat.of K)) (U
 theorem simple_mem_roots (i : Fin n) :
     (GeneralLinear.characterCoordEquiv (Fin n) K).symm (simple i) ∈
       roots (identityTorus (Fin n) K) := by
+  have : AddMonoidHomClass (characterLattice 𝔗 ≃ₗ[ℤ] (Fin n → ℤ)) (characterLattice 𝔗) (Fin n → ℤ) :=
+    SemilinearMapClass.instAddMonoidHomClass _
   rw [roots_identityTorus, mem_roots_iff]
   by_cases hi : i.val + 1 < n
   · refine Or.inr ⟨Sum.inl i, Sum.inl ⟨i.val + 1, hi⟩, ?_, ?_⟩
@@ -63,6 +65,10 @@ def simpleIndex (i : Fin n) : J :=
 @[simp] theorem corootCoord_simpleIndex (i : Fin n) :
     GeneralLinear.cocharacterCoordEquiv (Fin n) K (P.coroot (simpleIndex P hP i)) =
       simpleCoroot i := by
+  have : AddMonoidHomClass (characterLattice 𝔗 ≃ₗ[ℤ] (Fin n → ℤ)) (characterLattice 𝔗) (Fin n → ℤ) :=
+    SemilinearMapClass.instAddMonoidHomClass _
+  have : AddMonoidHomClass (cocharacterLattice 𝔗 ≃ₗ[ℤ] (Fin n → ℤ)) (cocharacterLattice 𝔗) (Fin n → ℤ) :=
+    SemilinearMapClass.instAddMonoidHomClass _
   by_cases hi : i.val + 1 < n
   · have hab : i ≠ (⟨i.val + 1, hi⟩ : Fin n) := by
       simp only [ne_eq, Fin.ext_iff]; omega
@@ -99,6 +105,8 @@ private theorem signedWeight_mem_or_neg_mem (d : ℕ) (hd : d = 1 ∨ d = 2)
 theorem rootCoord_mem_or_neg_mem (r : J) :
     GeneralLinear.characterCoordEquiv (Fin n) K (P.root r) ∈ positiveCone 1 ∨
       -(GeneralLinear.characterCoordEquiv (Fin n) K (P.root r)) ∈ positiveCone 1 := by
+  have : AddMonoidHomClass (characterLattice 𝔗 ≃ₗ[ℤ] (Fin n → ℤ)) (characterLattice 𝔗) (Fin n → ℤ) :=
+    SemilinearMapClass.instAddMonoidHomClass _
   rcases root_coroot_coordinates hP r with ⟨a, hr, _⟩ | ⟨a, b, _, hr, _⟩
   · rw [hr, characterCoord_signedCharacter]
     rcases a with a | a
@@ -111,6 +119,8 @@ theorem rootCoord_mem_or_neg_mem (r : J) :
 theorem corootCoord_mem_or_neg_mem (r : J) :
     GeneralLinear.cocharacterCoordEquiv (Fin n) K (P.coroot r) ∈ positiveCone 2 ∨
       -(GeneralLinear.cocharacterCoordEquiv (Fin n) K (P.coroot r)) ∈ positiveCone 2 := by
+  have : AddMonoidHomClass (cocharacterLattice 𝔗 ≃ₗ[ℤ] (Fin n → ℤ)) (cocharacterLattice 𝔗) (Fin n → ℤ) :=
+    SemilinearMapClass.instAddMonoidHomClass _
   rcases root_coroot_coordinates hP r with ⟨a, _, hr⟩ | ⟨a, b, _, _, hr⟩
   · rw [hr, map_nsmul, cocharacterCoord_signedCocharacter]
     rcases a with a | a
@@ -180,6 +190,8 @@ def base : P.Base where
     rw [coe_simpleSupport, linearIndepOn_range_iff (simpleIndex_injective P hP)]
     exact linearIndependent_coroot_simpleIndex P hP
   root_mem_or_neg_mem r := by
+    have : AddMonoidHomClass (characterLattice 𝔗 ≃ₗ[ℤ] (Fin n → ℤ)) (characterLattice 𝔗) (Fin n → ℤ) :=
+      SemilinearMapClass.instAddMonoidHomClass _
     have hset : P.root '' (simpleSupport P hP : Set J) =
         Set.range (fun i => P.root (simpleIndex P hP i)) := by
       rw [coe_simpleSupport]
@@ -192,6 +204,8 @@ def base : P.Base where
       apply mem_closure_of_coord_mem _ 1 _ (rootCoord_simpleIndex P hP)
       simpa only [map_neg] using h
   coroot_mem_or_neg_mem r := by
+    have : AddMonoidHomClass (cocharacterLattice 𝔗 ≃ₗ[ℤ] (Fin n → ℤ)) (cocharacterLattice 𝔗) (Fin n → ℤ) :=
+      SemilinearMapClass.instAddMonoidHomClass _
     have hset : P.coroot '' (simpleSupport P hP : Set J) =
         Set.range (fun i => P.coroot (simpleIndex P hP i)) := by
       rw [coe_simpleSupport]

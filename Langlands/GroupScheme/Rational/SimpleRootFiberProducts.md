@@ -4,7 +4,9 @@ Module `Langlands.GroupScheme.Rational.SimpleRootFiberProducts`, namespaces
 `Langlands.GroupScheme.LinkedRootParametrization`, `Langlands.GroupScheme.SplitPinning` and
 `Langlands.GroupScheme.SimpleRootFiber`.
 
-Worker 163, for Task 6836 (8c04a3ed-3fa6-4680-a59f-856738cb578b), SL2 half.
+Part of the SL2 half of the algebraic rank-one coordinates of
+`AlgebraicRankOneCoordinatesExistenceStatement`, assembled in
+`Geometry.Building.AlgebraicSL2RootCoordinatesConstruction`.
 
 ## Purpose
 
@@ -20,8 +22,9 @@ product hypotheses over the splitting field `K`:
 This module derives all four from the published proposition
 `Langlands.Geometry.Building.SplitRelativeRootGroupProductStatement`, taken as a hypothesis
 `hProd`, for the pinning `fiberPinning` and fiber `O = fiberSet a` of `SimpleRootFiberPinning`.
-Here `a` is a simple relative root with `2 • a` not a relative root. The proof of the product
-statement is Task 7010 (12fc0626-2b9d-44d7-b394-a63d76739556); it is not assumed here.
+Here `a` is a simple relative root with `2 • a` not a relative root. The product statement
+is proved as `splitRelativeRootGroupProduct` (module
+`Geometry.Building.SplitRelativeRootGroupProductProof`); that proof is not used here.
 
 ## Contents
 

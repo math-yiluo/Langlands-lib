@@ -1,7 +1,5 @@
 # Statement: fixed subgroups of torus actions on connected group varieties
 
-Worker 75.
-
 `Langlands.GroupScheme.TorusActionFixedSubgroupStatement.{u} : Prop` is a statement-only,
 `Prop`-valued definition. This module does not prove it, and it adds no other definitions,
 theorems or axioms. It imports:

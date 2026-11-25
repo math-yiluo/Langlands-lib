@@ -1,24 +1,26 @@
 # Idelic class field theory: consumers of `FiniteAbelianClassFieldStatement` and an audit of NYLL's global theory
 
-Worker 96 and Worker 818 prepared this note for Task 7345 (`d60e084d-9218-49be-9468-da445fab6919`, revision 1). Worker 96 wrote sections 1 to 4 and 7. Worker 818 wrote sections 5 and 6, which are merged here with small edits. The note answers the three deliverables of the task:
+The note answers three questions:
 
-1. which declarations on Task 0's route use the Library's `Langlands.Global.FiniteAbelianClassFieldStatement` (interface F of the operator's plan note, §2.6 and §4.4) or its five clauses, and whether the Library's proved class-formation form of reciprocity suffices for them;
+1. which declarations on the route of the proof of the local Langlands correspondence use the Library's `Langlands.Global.FiniteAbelianClassFieldStatement` (interface F of the plan note `operator-external-inputs-plan-2026-11-16`, §2.6 and §4.4) or its five clauses, and whether the Library's proved class-formation form of reciprocity suffices for them;
 2. an audit of the global class field theory of NYLL (Naganori Yamaguchi's repository `n-yamaguchi-0729/ClassFieldTheory`) at the commit followed by the Library's port, `fbd320cd`, and at its head, `b9a2dddb`;
-3. a recommendation. Section 7 also records the operator's decision on it (17 November 2026).
+3. a recommendation. Section 7 also records the decision taken on it (17 November 2026) and what the Library has since.
 
 The note accepts no external theorem and imports no external code into the Library. All Lean checks ran privately in the project's Lean service. Their records are in [the evidence directory](nyll-global-cft-evidence/): [edits.md](nyll-global-cft-evidence/edits.md), [diagnostics.md](nyll-global-cft-evidence/diagnostics.md) and [closure.md](nyll-global-cft-evidence/closure.md).
 
+Sections 1 to 6 describe the Library at commit `fcb85a7e` (section 1.1). Since then the Library has taken NYLL in as the library copy `Nyll/`, and it proves both the statement and the norm-kernel character that the route lacked (section 7.1).
+
 **Verdict.**
 
-- **No consumer.** No Library declaration uses the statement or any of its five clauses. In the planning graph, the only node that depends on the node of the statement is the node of `ArtinNormComparisonStatement`, and no node depends on that one. Where the route uses global class field theory, it uses the class-formation form, which is proved. The one natural future consumer is `WeakEquivalenceRigidityStatement` (Henniart 2000, §2.2), which is itself unused.
+- **No consumer.** No Library declaration uses the statement or any of its five clauses. In the plan of the proof, the only result that was to use the statement is `ArtinNormComparisonStatement`, and no result was to use that one. Where the route uses global class field theory, it uses the class-formation form, which is proved. The one natural future consumer is `WeakEquivalenceRigidityStatement` (Henniart 2000, §2.2), which is itself unused.
 - **The class-formation form does not give the clauses.** It identifies the abelianized relative Weil group with the idele class group as abstract groups. It gives no continuity, no Frobenius normalization, no uniqueness and no existence theorem.
 - **What NYLL has (both commits).** NYLL has the arithmetically normalized idelic Artin map of a finite abelian extension, with kernel equal to the norm group, surjective and continuous. Its Frobenius property is proved only at one chosen uniformizer per place. NYLL also has open subgroups containing congruence subgroups, and the class field of a closed subgroup of finite index, constructed as a separate type. NYLL does not have the uniqueness of the Artin map, its Frobenius property at an arbitrary uniformizer, class fields as subfields of `AlgebraicClosure K`, kernel rigidity in the Library's form, or the clause on Hecke characters.
 - **Normalization and bridge.** NYLL's `arithmetic…` maps are the inverses of its geometric `globalNormResidue…` maps, and they send the chosen uniformizer to Mathlib's arithmetic Frobenius, which is the Library's normalization. NYLL's comparison equivalence lands in Mathlib's `NumberField.IdeleClassGroup`, and the Library's `IdeleClasses` abbreviates that group. The bridge is therefore definitional, and it sends NYLL's one-place idele classes to the Library's `finiteClassInclusion` (checked in Lean).
 - **Compilation.** The 957-module import closure of the six NYLL modules we need (402,173 lines) compiles on the Library's pin (Lean 4.34.0) with 14 small edits in 14 files. The NYLL declarations of section 3 that a proof would use depend only on the standard axioms (section 4.3). The closure imports together with all 1749 modules of the Library's NYLL port with no clash at import.
 - **What remains for us.** These are short lemmas on the Library's side: almost-everywhere uniqueness, finiteness of ramified places, the arbitrary-uniformizer glue, transport along a K-isomorphism, and restriction of Frobenius. With commit `fbd320cd` a universe transport is also needed. Clause 2 needs no class field theory, and clause 5 is formal from clause 3.
-- **What the route lacks instead.** The cyclic base-change statements assume a Hecke character `η` with `η.HasNormKernel E`, and no Library declaration produces one. The Library already proves that the idele-class norm image is open and of finite index. What is missing is that for cyclic `E/F` the quotient is cyclic of order `[E : F]`, and the character this gives. Both follow from the proved class-formation form, without interface F (section 1.4).
-- **Recommendation (as filed).** Defer interface F until it has a consumer. If partial progress is wanted, prove clause 2 and the uniqueness lemmas from the Library alone. If F is wanted in full, use NYLL's head as a dependency once the Library moves to Mathlib `56a00585` (the plan note's configuration B, mode D). Otherwise use an adapted copy of `fbd320cd` (mode F). Prefer a dependency (D or F) to a port; use a light port only if package pins cannot be added (plan note §5.4).
-- **Operator's decision (17 November 2026; section 7.1).** Interface F is deferred: no NYLL import, the statement stays unproved, and its planning node and that of `ArtinNormComparisonStatement` are off the route. It reopens when a statement on the route needs the Frobenius-normalized idelic Artin map itself. In particular this happens if a proof of `WeakEquivalenceRigidityStatement` (Henniart 2000, §2.2) enters the route. Then lemmas U and R come first, followed by only those clauses of F that the proof uses. For that day the source is NYLL's head `b9a2dddb`, as a package dependency (mode D) after the Library's move to its Mathlib. Until then there is no adapted copy of `fbd320cd` and no light port. One task is published now for the norm-kernel character.
+- **What the route lacks instead.** The cyclic base-change statements assume a Hecke character `η` with `η.HasNormKernel E`, and no Library declaration produces one. The Library already proves that the idele-class norm image is open and of finite index. What is missing is that for cyclic `E/F` the quotient is cyclic of order `[E : F]`, and the character this gives. Both follow from the proved class-formation form, without interface F (section 1.4). The Library now proves this character, as `cyclicNormKernelCharacter` (`Langlands/Global/Arithmetic/CyclicNormKernelCharacterProof.lean`).
+- **Recommendation.** Defer interface F until it has a consumer. If partial progress is wanted, prove clause 2 and the uniqueness lemmas from the Library alone. If F is wanted in full, use NYLL's head as a dependency once the Library moves to Mathlib `56a00585` (the plan note's configuration B, mode D). Otherwise use an adapted copy of `fbd320cd` (mode F). Prefer a dependency (D or F) to a port; use a light port only if package pins cannot be added (plan note §5.4).
+- **Decision and later state (section 7.1).** On 17 November 2026 interface F was deferred, as recommended, with NYLL's head `b9a2dddb` named as the source for the day F was wanted, as a package dependency (mode D) after the Library's move to its Mathlib. The Library has since taken NYLL in as the library copy `Nyll/`, and proves the statement, as `finiteAbelianClassField` (`Langlands/Global/Arithmetic/ClassFieldProof.lean`), through bridge modules under `Langlands/ClassFieldTheory/Global/Artin/`.
 
 ## 1. The consumers
 
@@ -45,22 +47,22 @@ A search of all Lean files of the Library at `fcb85a7e` for the seven names give
 
 ### 1.3 Uses in the planning graph
 
-In the shared DAGs at revision 400 (the same edges as at revision 398), edges point from a node to the nodes it uses. One node uses `proof.finite-abelian-global-reciprocity` (the statement above): `proof.global-artin-norm-comparison` (the node of `ArtinNormComparisonStatement`; the edge reads "uses the exact arithmetic normalization predicate and the separately asserted normalized map existence"). No node uses `proof.global-artin-norm-comparison`. So neither node is on a path from Task 0's root.
+In the planning graph of the proof as it stood when this note was written, edges point from a node to the nodes it uses. One node used `proof.finite-abelian-global-reciprocity` (the statement above): `proof.global-artin-norm-comparison` (the node of `ArtinNormComparisonStatement`; the edge reads "uses the exact arithmetic normalization predicate and the separately asserted normalized map existence"). No node used `proof.global-artin-norm-comparison`. So neither node was on a path from the root of the graph, the local Langlands correspondence.
 
 ### 1.4 What the route uses instead
 
 Where the route needs global class field theory, it uses the class-formation form, which the Library has proved:
 
-- `Langlands.ClassField.Global.globalFundamentalClassStatement` (`ClassField/Global/FundamentalClassProof.lean:35`): `H¹(Gal(E/F), C_E) = 0` and a unique coherent family of global fundamental classes. It is used, for example, by `candidateExistenceReduction` (`Correspondence/HenniartCandidateExistenceReductionProof.lean:28`).
+- `Langlands.ClassFieldTheory.Global.globalFundamentalClassStatement` (`ClassField/Global/FundamentalClassProof.lean:35`): `H¹(Gal(E/F), C_E) = 0` and a unique coherent family of global fundamental classes. It is used, for example, by `candidateExistenceReduction` (`Correspondence/HenniartCandidateExistenceReductionProof.lean:28`).
 - `relativeWeilTransferReciprocity` (`ClassField/Global/RelativeWeilTransferReciprocityProof.lean:85`): for the arithmetic class family, the transfer `W_{E/F} →* C_F` (`RelativeWeilTransfer.lean:241`) is surjective with kernel the commutator subgroup. It is used by `transferCharacterFactorization` (`ClassField/Global/RelativeWeilCharacterFactorization.lean:99`), which is used in turn in `Automorphic/AssociatedCentralCharacter/DeterminantDescent.lean`, `Global/Factors/RelativeWeilFunctionalEquationAssembly.lean` and `LocalFactor/BrauerKernel/GlobalAssembly.lean`. The reciprocity character `reciprocityCharacter` of the determinant step (`Automorphic/AssociatedDeterminantTwistStatement.lean:31`) is defined from the transfer.
 
 Two further points:
 
-- **Characters with norm kernel.** The cyclic base-change statements (`Automorphic/Unramified/CyclicTransferStatement.lean`, `IsobaricCyclicTransferStatement.lean`, `CyclicTransferInputsTCStatement.lean`) quantify over Hecke characters `η` with `η.HasNormKernel E` (`CyclicTransferStatement.lean:29`): `η x = 1` exactly on the image of the idele-class norm from `E`. To apply them one needs such an `η` for a cyclic `E/F`, and no Library declaration produces one. Its existence says that the norm image is open with cyclic quotient of order `[E : F]`. The first part is in the Library:
+- **Characters with norm kernel.** The cyclic base-change statements (`Automorphic/Unramified/CyclicTransferStatement.lean`, `IsobaricCyclicTransferStatement.lean`, `CyclicTransferInputsTCStatement.lean`) quantify over Hecke characters `η` with `η.HasNormKernel E` (`CyclicTransferStatement.lean:29`): `η x = 1` exactly on the image of the idele-class norm from `E`. To apply them one needs such an `η` for a cyclic `E/F`, and at commit `fcb85a7e` no Library declaration produced one (it is now `cyclicNormKernelCharacter` (`Langlands/Global/Arithmetic/CyclicNormKernelCharacterProof.lean`), section 7.1). Its existence says that the norm image is open with cyclic quotient of order `[E : F]`. The first part is in the Library:
   - `Langlands.Global.AdelicFunctoriality.isOpenMap_ideleClassNorm` (`Global/AdelicFunctoriality/IdeleNormOpen.lean:414`) states that the idele-class norm `C_E → C_F` is an open map, for every extension, in independent universes. So its image is open, and closed as an open subgroup.
   - `ideleClassNormIndexFinite` (`Global/AdelicFunctoriality/IdeleClassNormIndexFiniteProof.lean:13`) states that the image has finite index dividing a power of `[E : F]`.
 
-  What is missing is that the quotient is cyclic of order `[E : F]` when `Gal(E/F)` is cyclic. This follows from the proved class-formation form: the transfer identifies `W_{E/F}^ab` with `C_F` and restricts to the norm on `C_E` (`transfer_comp_inclusion`, `ClassField/Global/RelativeWeilCharacterFactorization.lean:34`), which gives `C_F / N(C_E) ≅ Gal(E/F)^ab`. The hypotheses of `relativeWeilTransferReciprocity` are discharged by proved theorems, not open premises: `Langlands.ClassFieldTheory.Local.localRelativeClassFormation` (`ClassFieldTheory/Local/LocalRelativeClassFormationProof.lean:16`) gives the local invariant family `I` with class formation and arithmetic normalization, and `globalFundamentalClassStatement.2` applied to `I` gives the class family, as in `candidateExistenceReduction` (lines 31-36, where the local class formation is still a hypothesis). `RelativeWeilGroup.index_range_inclusion` (`ClassField/Global/RelativeWeilGroup.lean:68`) gives `C_E` index `[E : F]` in `W_{E/F}`. No Library declaration states this quotient yet. It needs neither the Frobenius normalization nor the uniqueness nor the existence theorem of interface F. (The version of this note filed with request `07efe25f` wrongly said that the Library does not state the openness.)
+  What is missing is that the quotient is cyclic of order `[E : F]` when `Gal(E/F)` is cyclic. This follows from the proved class-formation form: the transfer identifies `W_{E/F}^ab` with `C_F` and restricts to the norm on `C_E` (`transfer_comp_inclusion`, `ClassField/Global/RelativeWeilCharacterFactorization.lean:34`), which gives `C_F / N(C_E) ≅ Gal(E/F)^ab`. The hypotheses of `relativeWeilTransferReciprocity` are discharged by proved theorems, not open premises: `Langlands.ClassFieldTheory.Local.localRelativeClassFormation` (`ClassFieldTheory/Local/LocalRelativeClassFormationProof.lean:16`) gives the local invariant family `I` with class formation and arithmetic normalization, and `globalFundamentalClassStatement.2` applied to `I` gives the class family, as in `candidateExistenceReduction` (lines 31-36, where the local class formation is still a hypothesis). `RelativeWeilGroup.index_range_inclusion` (`ClassField/Global/RelativeWeilGroup.lean:68`) gives `C_E` index `[E : F]` in `W_{E/F}`. No Library declaration stated this quotient at commit `fcb85a7e`. It needs neither the Frobenius normalization nor the uniqueness nor the existence theorem of interface F. (An earlier version of this note wrongly said that the Library does not state the openness.)
 - **The one natural future consumer.** `WeakEquivalenceRigidityStatement` (`Automorphic/AssociatedUniquenessStatement.lean:81`; Henniart 2000, §2.2) is part of `AssociatedUniquenessStatement` (line 118). It says that weakly equivalent continuous semisimple representations of `W_{E/F}` are equivalent. We expect a proof to pass from `W_{E/F}` to Galois groups of finite abelian extensions and to use Chebotarev. That step would use the normalized reciprocity map, existence and the realization of finite-order characters, that is, clauses 1, 3 and 5. No Lean file imports `AssociatedUniquenessStatement.lean`.
 
 ### 1.5 Clause by clause
@@ -73,21 +75,21 @@ Two further points:
 | 4 Kernel rigidity | none | as clause 1 | No: it needs clause 1 (normalization and uniqueness) and Galois theory (section 6). |
 | 5 Finite-order characters | none | as clause 1 | No: it follows from clause 3. |
 
-So no clause is consumed on the route today, and what the route uses is proved, except the existence of `η` with `HasNormKernel`, which is independent of F (the task of section 7.1).
+So no clause is consumed on the route today, and what the route uses is proved, except the existence of `η` with `HasNormKernel`, which is independent of F (section 7.1).
 
 ## 2. Pins, sources, licence and closures
 
 | Item | NYLL `fbd320cd` | NYLL head | Library |
 |---|---|---|---|
 | Commit | [`fbd320cd8b1b06487c58227e92eb135794267709`](https://github.com/n-yamaguchi-0729/ClassFieldTheory/tree/fbd320cd8b1b06487c58227e92eb135794267709) (21 Oct 2026) | [`b9a2dddbf076eb96b768c333fd828d339ab3d9eb`](https://github.com/n-yamaguchi-0729/ClassFieldTheory/tree/b9a2dddbf076eb96b768c333fd828d339ab3d9eb) (13 Nov 2026) | `fcb85a7ef43356fec01e6ccf1605f08568c08cb0` |
-| Lean | `v4.35.0-rc2` | `v4.35.0` | `v4.34.0` (environment `5c94c648-e8dc-4002-a50a-071ebf3f6096`) |
+| Lean | `v4.35.0-rc2` | `v4.35.0` | `v4.34.0` |
 | Mathlib | `065356127b1dc0016f66b7283ce0ce2c4055aa55` | `56a005855ea1…` | `5ed2965256430c3649e86755f9576b54eca72435` |
 | Module system | no | every file (`module`, `public import`) | no |
 
 **Sources.**
 
 - `fbd320cd`: registered source `external-lean-reuse-snapshots-2026-10-21`, folder `n-yamaguchi-0729--ClassFieldTheory/source`, with `nyll-classfieldtheory-fbd320cd-supplement` for the omitted non-Lean files.
-- Head: a clone of the GitHub repository at the commit above (Worker 96), and a GitHub tarball of the same commit, 8,024,436 bytes, SHA-256 `c8e58c5d73decfcea1a79f7bf4ecfb5f358bd42f3ff3ab27aa5bb71d2bb022dd` (Worker 818). The head is not registered as a literature source. Every head reference in this note names the commit.
+- Head: a clone of the GitHub repository at the commit above, and a GitHub tarball of the same commit, 8,024,436 bytes, SHA-256 `c8e58c5d73decfcea1a79f7bf4ecfb5f358bd42f3ff3ab27aa5bb71d2bb022dd`. The head is not registered as a literature source. Every head reference in this note names the commit.
 
 **Licence.** Both commits carry the Apache-2.0 `LICENSE` and a `NOTICE`. All 957 files of the compiled closure carry the header "Copyright (c) 2026 Naganori Yamaguchi" and are released under Apache 2.0. None of them is among the third-party files listed in `NOTICE` (Christian Merten's pi1 files and the Anthropic FLT directories). A dependency or a copy has to keep `LICENSE`, `NOTICE` and the file headers.
 
@@ -175,9 +177,9 @@ At `fbd320cd` the Artin map and its theorems, the Frobenius comparison, the unit
 
 ### 4.1 Method
 
-The 957 modules of the six-root closure at `fbd320cd` were copied, with `LICENSE` and `NOTICE`, into a private draft directory and compiled with `lean_check` on environment `5c94c648` (Lean 4.34.0, Mathlib `5ed29652`). Each call has a 30-minute limit, and one call on the six roots from scratch exceeded it. The closure was therefore built in six layers of increasing import depth: depth at most 15, 30, 59, 75 and 95, then everything. The service's build cache kept the earlier layers. Every layer ended with no error and no warning. The last one, `913786b0-382e-4a71-b6b4-d1fd193018ff`, built the six roots in 791 s. The diagnostics are listed in [diagnostics.md](nyll-global-cft-evidence/diagnostics.md), section 1.
+The 957 modules of the six-root closure at `fbd320cd` were copied, with `LICENSE` and `NOTICE`, into a private draft directory and compiled with the project's Lean checking service (Lean 4.34.0, Mathlib `5ed29652`). Each call has a 30-minute limit, and one call on the six roots from scratch exceeded it. The closure was therefore built in six layers of increasing import depth: depth at most 15, 30, 59, 75 and 95, then everything. The service's build cache kept the earlier layers. Every layer ended with no error and no warning. The last one built the six roots in 791 s. The diagnostics are listed in [diagnostics.md](nyll-global-cft-evidence/diagnostics.md), section 1.
 
-Worker 818 made an independent check of the unchanged files. A build of the 986-module closure of `Theorems.GlobalClassFieldTheory.All`, with every file byte-identical to the snapshot (diagnostic `d089a2df-620c-452f-befe-8f63aee06539`, 235 s), fails in exactly five first-layer modules: `NormProperties`, `HenselianFinite`, `KummerDelta`, `ValuedAdicComplete` and `CyclicValueGroup`. These agree with the first-layer edits below. A textual scan found no `sorry`, `axiom`, `set_option`, `module`/`public import`, `native_decide` or `implemented_by` in that closure.
+The unchanged files were checked separately. A build of the 986-module closure of `Theorems.GlobalClassFieldTheory.All`, with every file byte-identical to the snapshot (235 s), fails in exactly five first-layer modules: `NormProperties`, `HenselianFinite`, `KummerDelta`, `ValuedAdicComplete` and `CyclicValueGroup`. These agree with the first-layer edits below. A textual scan found no `sorry`, `axiom`, `set_option`, `module`/`public import`, `native_decide` or `implemented_by` in that closure.
 
 ### 4.2 The edits
 
@@ -195,18 +197,18 @@ Most edits are inside proofs. Three touch definitions or statements, without cha
 
 ### 4.3 Declarations and axioms
 
-The module `NyllGlobalDiag` imports the six roots and prints the signatures and axioms of nineteen declarations (diagnostic `3c6e5461-795a-465e-affe-39d3a25b0652`; list and output in [diagnostics.md](nyll-global-cft-evidence/diagnostics.md), section 2). Each of the nineteen depends only on `propext`, `Classical.choice` and `Quot.sound`. Since `#print axioms` follows the definitions a declaration mentions, this also covers the definitions in their statements. Together these are every NYLL declaration named in section 3 except the wrapper `Theorems/GlobalClassFieldTheory/FiniteAbelianGlobalReciprocity.lean:31` and `ordinaryIdeleClassNormSubgroup_injective`, which a proof of the clauses would not use. The universe levels are as stated in section 3.6.
+The module `NyllGlobalDiag` imports the six roots and prints the signatures and axioms of nineteen declarations (list and output in [diagnostics.md](nyll-global-cft-evidence/diagnostics.md), section 2). Each of the nineteen depends only on `propext`, `Classical.choice` and `Quot.sound`. Since `#print axioms` follows the definitions a declaration mentions, this also covers the definitions in their statements. Together these are every NYLL declaration named in section 3 except the wrapper `Theorems/GlobalClassFieldTheory/FiniteAbelianGlobalReciprocity.lean:31` and `ordinaryIdeleClassNormSubgroup_injective`, which a proof of the clauses would not use. The universe levels are as stated in section 3.6.
 
 ### 4.4 Coexistence with the Library
 
 The plan note asks for a test that one module can import both NYLL's closure and the Library's port of NYLL's local theory, since the port reuses NYLL's names under `Langlands.NYLL.*` and `Langlands.ClassFieldTheory.Local.NYLL.*`. Two modules were checked at Library commit `fcb85a7e`:
 
-- `NyllCoexistDiag` (diagnostic `63bbdfc1-cdab-4be0-96e7-c73ce19c42fd`) imports `ClassFieldStatement.lean`, four modules of the port and the six NYLL roots, and checks the two bridge facts of section 3.5.
-- `NyllCoexistFullDiag` (diagnostic `0390f87b-26e0-4e6a-a671-a54868109762`) imports `ClassFieldStatement.lean`, all 1749 modules of the Library's port (through its 620 maximal modules) and the six NYLL roots.
+- `NyllCoexistDiag` imports `ClassFieldStatement.lean`, four modules of the port and the six NYLL roots, and checks the two bridge facts of section 3.5.
+- `NyllCoexistFullDiag` imports `ClassFieldStatement.lean`, all 1749 modules of the Library's port (through its 620 maximal modules) and the six NYLL roots.
 
-Both checks gave no error and no warning. There is no clash of declaration names at import. The check does not show how NYLL's instances and `simp` lemmas affect the elaboration of Library proofs that import the closure; that shows only when such proofs are written. By a textual count (Worker 818), the 957 modules contain about 690 instance declarations not marked `scoped` or `local` (plus 425 scoped or local ones and 105 `attribute [… instance …]` lines) and about 1,960 `simp` attributes. The plan note's figures of 220 and 900 (§5.4) refer to the closure of the local theory.
+Both checks gave no error and no warning. There is no clash of declaration names at import. The check does not show how NYLL's instances and `simp` lemmas affect the elaboration of Library proofs that import the closure; that shows only when such proofs are written. By a textual count, the 957 modules contain about 690 instance declarations not marked `scoped` or `local` (plus 425 scoped or local ones and 105 `attribute [… instance …]` lines) and about 1,960 `simp` attributes. The plan note's figures of 220 and 900 (§5.4) refer to the closure of the local theory.
 
-## 5. NYLL head `b9a2dddb` against `fbd320cd` (Worker 818)
+## 5. NYLL head `b9a2dddb` against `fbd320cd`
 
 Paths are under `Nyll/ClassFieldTheory/` at head. Every head file uses `module`, `public import` and `@[expose] public section`. With that syntax stripped, the normalized diff shows 245 changed common files in the global, theorem and definition directories, 8 new global files and none removed. The repository has 3820 files at head and 3129 at `fbd320cd`.
 
@@ -235,7 +237,7 @@ Paths are under `Nyll/ClassFieldTheory/` at head. Every head file uses `module`,
   Units are trivial at unramified places: `Reciprocity/FiniteIdeleArtin.lean:165` (`fbd320cd` :194). Neither commit states the form with an arbitrary uniformizer.
 - **Bridge.** `AlgebraicNumberTheory/Idele/ClassGroup/MathlibComparison.lean:106` `ideleClassGroupEquivMathlib_finitePlaceIdeleClass` and `MathlibTopologyComparison.lean:44` `ideleClassGroupContinuousMulEquivMathlib` are the head counterparts of `fbd320cd` :102 and :40.
 
-**Buildability probe of head on the Library's pin** (environment `5c94c648`). The private draft holds the 86 head modules that form the closure of `AlgebraicNumberTheory.Idele.ClassGroup.MathlibTopologyComparison` and `Definitions.FrobeniusAndHilbertClassFields.ArithmeticFrobeniusAt`, byte-identical to head. In diagnostic `e3f278b9-d133-45fb-9f78-a89f8194277c` the module syntax is accepted on the pin, since the pinned Mathlib itself uses the module system, and most modules build. There are 10 errors in 4 modules:
+**Buildability probe of head on the Library's pin.** The private draft holds the 86 head modules that form the closure of `AlgebraicNumberTheory.Idele.ClassGroup.MathlibTopologyComparison` and `Definitions.FrobeniusAndHilbertClassFields.ArithmeticFrobeniusAt`, byte-identical to head. In this check the module syntax is accepted on the pin, since the pinned Mathlib itself uses the module system, and most modules build. There are 10 errors in 4 modules:
 
 - `Idele/Extension/NormProperties:46`: the same unsolved product goal as at `fbd320cd`, which the `<;> rfl` edit fixes.
 - `GaloisCohomology/Cyclic/NormKernelVanishing:7`: it imports `Mathlib.GroupTheory.SpecificGroups.Cyclic.Subgroup`, which does not exist at the pin.
@@ -244,7 +246,7 @@ Paths are under `Nyll/ClassFieldTheory/` at head. Every head file uses `module`,
 
 Conclusion: head targets a newer Mathlib, and the drift already shows in its bottom 86 modules. Porting head to the pin means patching this drift on top of `fbd320cd`'s edits. The alternative is to wait for a Mathlib bump of the Library. For interface F, head has two advantages over `fbd320cd`: universe generality, which removes the universe transport entirely, and `mathlibGlobalArtin` defined directly on Mathlib's idele class group.
 
-## 6. What remains to be proved (Worker 818)
+## 6. What remains to be proved
 
 This section was checked against `ClassFieldStatement.lean`. NYLL paths are under `Nyll/ClassFieldTheory/` at head `b9a2dddb` unless marked `fbd320cd`. "Library-only" means the Library and its pinned Mathlib, without NYLL.
 
@@ -352,7 +354,7 @@ The proof order is:
 
 The only deep NYLL inputs are the clause-1 map with its chosen-section normalization and the existence of class fields with prescribed norm group. All other gaps are short lemmas on the Library's side: U, R, T, F, the uniformizer decomposition, the comparison of the group form of `IsArithFrobAt` with the `mapAlgHom` form, and the swap to the `⊥` Krull topology.
 
-## 7. Recommendation and decisions for the operator
+## 7. Recommendation and decisions
 
 The plan note (§4.4) recommends listing the consumers before taking NYLL's global theory, "the proved class-formation form may already suffice for them". The findings are:
 
@@ -361,7 +363,7 @@ The plan note (§4.4) recommends listing the consumers before taking NYLL's glob
 - NYLL gives the two deep inputs (the normalized map, and class fields with prescribed norm group).
 - What remains is a set of short lemmas (section 6).
 
-The operator has three decisions. They are filed as one request, `task7345-interface-f-scope-and-source`.
+Three decisions follow from them.
 
 **Q1. Is interface F wanted on the route now?**
 
@@ -384,27 +386,25 @@ Recommendation: **(b)** if F can wait for the Mathlib move, which costs nothing 
 - D or F: a package dependency, on head (D) or on the adapted copy of `fbd320cd` (F), pinned by commit and content hash. This needs pins of packages in the Library's environment file, which do not exist today.
 - P: a light port of the adapted closure, about 1000 modules and 400,000 lines, kept as a fork.
 
-In every mode only the five Library statements cross the boundary. NYLL's definitions occur only inside proofs (the bridge is definitional, section 3.5), so the review covers those statements plus an axiom check on the closure. A heavy port of this size is out of reach (plan note §5.3, criterion 2).
+In every mode only the five Library statements cross the boundary. NYLL's definitions occur only inside proofs (the bridge is definitional, section 3.5), so a check of the result covers those statements plus an axiom check on the closure. A heavy port of this size is out of reach (plan note §5.3, criterion 2).
 
 Recommendation: **D or F**, in line with the plan note's verdict for NYLL's global theory (§5.4).
 
 **Open risk, in every mode.** A module that imports both the closure and the Library's NYLL port now compiles (section 4.4). The effect of NYLL's global instances and `simp` lemmas on Library proofs that import the closure is still untested. It has to be tried on the first proof of clause 1.
 
-### 7.1 The operator's decision (17 November 2026)
+### 7.1 The decision (17 November 2026) and the Library now
 
-The operator answered the request (answer `a69781b7c489519ea61253c2b1c26dd9` to request `07efe25fa98a56da82e85b9e045270bd`).
-
-- **Q1: (a).** Interface F is deferred. Nothing from NYLL is imported now, and `FiniteAbelianClassFieldStatement` stays unproved. The planning nodes `proof.finite-abelian-global-reciprocity` (the statement) and `proof.global-artin-norm-comparison` (`ArtinNormComparisonStatement`) are marked off the route. Option (b) was not chosen: clause 2 and the lemmas U and R have no consumer either.
-- **What reopens F.** F reopens when a statement on Task 0's route needs the Frobenius-normalized idelic Artin map itself. In particular, this happens if a proof of `WeakEquivalenceRigidityStatement` (Henniart 2000, §2.2; section 1.4) enters the route. In that case the lemmas U and R of section 6.2 come first, since they need no NYLL. After them come only those clauses of F that that proof uses. Worker 96 sent this trigger to Worker 0 for the planning graph (message `7c34b0298a8c527e8c8fbb52cbf7e122`).
-- **Q2: (b), Q3: D**, for the day F is wanted. NYLL's head `b9a2dddb` is on exactly the pin (Lean 4.35.0, Mathlib `56a0058`) to which a move of the Library is being trialed. The environment that follows the move can pin packages by commit and content hash. Until then there is no adapted copy of `fbd320cd` and no light port.
+- **Q1: (a).** Interface F was deferred: nothing from NYLL was to be imported then, and `FiniteAbelianClassFieldStatement` was left unproved. The planning nodes `proof.finite-abelian-global-reciprocity` (the statement) and `proof.global-artin-norm-comparison` (`ArtinNormComparisonStatement`) were marked off the route. Option (b) was not chosen: clause 2 and the lemmas U and R had no consumer either.
+- **What reopens F.** F reopens when a statement on the route needs the Frobenius-normalized idelic Artin map itself. In particular, this happens if a proof of `WeakEquivalenceRigidityStatement` (Henniart 2000, §2.2; section 1.4) enters the route. In that case the lemmas U and R of section 6.2 come first, since they need no NYLL. After them come only those clauses of F that that proof uses.
+- **Q2: (b), Q3: D**, for the day F is wanted. NYLL's head `b9a2dddb` is on exactly the pin (Lean 4.35.0, Mathlib `56a0058`) to which a move of the Library was then being tried. The environment that follows the move can pin packages by commit and content hash. Until then there was to be no adapted copy of `fbd320cd` and no light port.
 - **What this note keeps for that day.**
-  - The 14 edits and the three diagnostics (`913786b0`, `3c6e5461` and `0390f87b`; section 4). They date the cost of an adaptation.
+  - The 14 edits and the three checks (the last layer of the build of the closure, `NyllGlobalDiag` and `NyllCoexistFullDiag`; section 4). They date the cost of an adaptation.
   - The list of what NYLL does not give, with the Library-side lemmas that close each gap (section 6).
   - The untested effect of NYLL's instances and `simp` lemmas on Library proofs (the open risk above). It is the first thing to try on clause 1.
-- **The one task published now.** The operator asked for one task for what the route does consume and the Library lacks:
+- **The norm-kernel character.** A statement was set for what the route does consume and the Library lacked:
   - (N): for a finite Galois extension `E/F` of number fields, the image of the idele-class norm is open in `IdeleClasses F`;
   - (H): for every cyclic `E/F`, there is a Hecke character of `F` with `HasNormKernel E`, and its order is `[E : F]`.
 
-  (N) turned out to be in the Library already (section 1.4), so the task covers (H) alone and cites (N) as proved. Its exact form was put to the executors of Task 7340 (the trace formula and cyclic base change). Worker 5743 agreed to it as proposed; the task lets Task 7340's executors change the hypothesis form later. It is Task 7475 (`f3e9b7a4-6895-4b0a-8229-4c115601c2df`): a statement `Langlands.Global.HeckeCharacter.CyclicNormKernelCharacterStatement` (for Galois `E/F` with cyclic Galois group, an `η` with `η.HasNormKernel E` exists, has order `[E : F]`, and its powers are the characters trivial on norms), followed by a proof task for it.
+  (N) turned out to be in the Library already (section 1.4), so the statement covers (H) alone and cites (N) as proved. The form of its hypotheses was chosen to suit the users of the trace formula and of cyclic base change. It is `Langlands.Global.HeckeCharacter.CyclicNormKernelCharacterStatement` (`Langlands/Global/Arithmetic/CyclicNormKernelCharacterStatement.lean`; for Galois `E/F` with cyclic Galois group, an `η` with `η.HasNormKernel E` exists, has order `[E : F]`, and its powers are the characters trivial on norms). The Library proves it, as `cyclicNormKernelCharacter` (`Langlands/Global/Arithmetic/CyclicNormKernelCharacterProof.lean`).
 
-Nothing else is published under Task 7345.
+**Later.** The Library has since taken NYLL in as the library copy `Nyll/`, and proves interface F: `finiteAbelianClassField` (`Langlands/Global/Arithmetic/ClassFieldProof.lean`) proves `FiniteAbelianClassFieldStatement` and each of its five clauses, from bridge modules under `Langlands/ClassFieldTheory/Global/Artin/` onto `Nyll/`. `ArtinNormComparisonStatement` and `WeakEquivalenceRigidityStatement` have no proof in the Library.

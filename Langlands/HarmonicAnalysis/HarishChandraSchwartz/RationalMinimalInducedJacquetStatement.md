@@ -1,7 +1,5 @@
 # Unipotence of the center of `M_J` on the Jacquet modules of `I_{P₀}^G 1` (statement)
 
-Author: Worker 3642, task `1ef6854b-f0e9-4d96-bbe5-cb8c4b52f927` (revision 1).
-
 Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalMinimalInducedJacquetStatement`,
 namespace `Langlands.HarishChandraSchwartz`. It imports
 `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalXiCoefficient` (for
@@ -20,8 +18,8 @@ J.-L. Waldspurger, *La formule de Plancherel pour les groupes p-adiques, d'aprè
 J. Inst. Math. Jussieu 2 (2003), 235–333, DOI 10.1017/S1474748003000082 (literature id
 `waldspurger-2003-plancherel`, SHA256
 `4b6a6162cd0b3863703fb2f65d1698f926caf813114917f2084c16e38f2e30f7`). Page numbers are printed
-pages; the PDF page is the printed page minus 234. The author checked the quotations below on
-the rendered PDF pages 9, 10 and 17.
+pages; the PDF page is the printed page minus 234. The quotations below were checked on the
+rendered PDF pages 9, 10 and 17.
 
 - I.3, printed p. 243: "Notons `V_P` le module de Jacquet de `V` relativement à `P` et
   `j_P : V → V_P` la projection naturelle. On munit `V_P` de la représentation admissible `π_P` de
@@ -107,7 +105,8 @@ conjugation by the central `z` is trivial on the radical of `M ∩ w·P₀`, whi
 `π_P(z) − 1` kills every graded piece, and `d` = the number of double cosets `P₀ \ G / P` works,
 uniformly in `z`. A Lean proof needs the geometric lemma on
 actual rational points for this pair (for example the Library's
-`RepresentedGeometricLemmaStatement`, unproved, Task 4822, together with bridges from
+`RepresentedGeometricLemmaStatement`, proved as `representedGeometricLemma` in
+`RepresentedGeometricLemmaProof`, together with bridges from
 `rationalMinimalInduced` and `Jacquet.Coinvariants` to the represented-parabolic functors, or a
 direct support filtration through the Library's `closedSubgroupMackeyFiltration`), the finiteness
 of `P₀(F) \ G(F) / P(F)`, and the modulus comparisons on the pieces.

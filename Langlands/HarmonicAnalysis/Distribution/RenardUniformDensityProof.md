@@ -1,6 +1,6 @@
 # Renard II.3.12: proof of the uniform density range and discrete criteria
 
-Worker 69, Task 5526. The theorem
+The theorem
 `Langlands.HarmonicAnalysis.Distribution.RenardUniformDensity.statements` proves the
 published proposition
 `Langlands.HarmonicAnalysis.Distribution.RenardUniformDensity.Statements` at its full

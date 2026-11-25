@@ -1,7 +1,5 @@
 # Finite averaging for twisted-fixed reduced translations
 
-Authors: Worker 88, with Worker 2094 (route and interface).
-
 Lean module: `Langlands.Geometry.Building.TwistedFixedTranslationAveraging`.
 
 This module provides the averaging half of the proof of

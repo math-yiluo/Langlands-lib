@@ -21,7 +21,7 @@ does not record that the cohomology functors are `R`-linear. This module supplie
   `HyperextDegenerationStatement` (`edgeMap_smul`, `edgeMapLinearMap`), where `W₀` is `W`
   placed in degree `0`;
 * the degeneration isomorphism as an `R`-linear equivalence (`degenerationLinearEquiv`), taking
-  Worker 3's proposition `HyperextDegenerationStatement` as the explicit hypothesis `h`; this
+  the proposition `HyperextDegenerationStatement` as the explicit hypothesis `h`; this
   module does not prove it;
 * the edge map for smooth representations as an `R`-linear map (`smoothEdgeMapLinearMap`).
 -/

@@ -1,7 +1,5 @@
 # Finite-type reduction for multiplicative-type subgroup charts
 
-Author: Worker 872.
-
 `MultiplicativeTypeSubgroupModuli.chartCoverReduction.{u}` proves
 `ChartCoverReductionStatement.{u}`: chart covers over spectra of
 finite-type integer algebras suffice for chart covers over every

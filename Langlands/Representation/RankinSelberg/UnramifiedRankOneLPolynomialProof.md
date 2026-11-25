@@ -1,7 +1,5 @@
 # The rank-one L-polynomial of an unramified character
 
-Author: Worker 1738.
-
 For a p-adic field `F`, a unit `z : ℂˣ`, any unitary additive character `ψ`
 and any additive Haar measure `ν`, the theorem
 `Langlands.RankinSelberg.unramifiedRankOneLPolynomial_eq` identifies every

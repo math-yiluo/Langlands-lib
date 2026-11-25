@@ -1,7 +1,5 @@
 # Restriction of local pairs to the bottom intermediate field
 
-Author: Worker 1695.
-
 This module compares local Weil–Deligne pairs over `F` with their restrictions
 to the bottom intermediate field `⊥ = baseExtension F` of the common closure. It
 supplies the base-to-local Euler polynomial comparison and the identifications of

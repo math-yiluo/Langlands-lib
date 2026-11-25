@@ -34,5 +34,5 @@ For the forward family implication it proves smoothness of global
 regular evaluations on inverse charts. For the reverse implication it
 first uses the published evaluation-topology criterion to obtain
 continuity and then uses the rational forward coordinates locally.
-These proof obligations remain open until a separate proof task is
-accepted and published.
+The theorem `regularAtlasComparison` in `RegularAtlasComparisonProof`
+discharges these proof obligations.

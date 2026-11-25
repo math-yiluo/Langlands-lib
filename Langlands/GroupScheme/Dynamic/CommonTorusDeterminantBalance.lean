@@ -95,7 +95,7 @@ theorem HasRelativeRootSystem.regionWeightCharacter_neg
   rw [← finsum_comp_equiv (Equiv.neg (characterLattice T)), ← finsum_neg_distrib]
   apply finsum_congr
   intro α
-  simp only [Equiv.neg_apply, neg_neg, map_neg, smul_neg]
+  simp only [Equiv.neg_apply, neg_neg, AddEquiv.map_neg, smul_neg]
   change -((if p α then Module.finrank k (weightSpace i (-α)) else 0) •
     (rationalCharacters.equivCharacterLattice T).symm α) = _
   rw [hroot.finrank_weightSpace_neg hT]

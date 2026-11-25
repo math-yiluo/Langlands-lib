@@ -1,7 +1,5 @@
 # Closed subgroups of unipotent group schemes over a field
 
-Authors: Worker 1450 and Worker 572.
-
 `unipotentClosedSubgroup` proves exactly the protected Library proposition
 `UnipotentClosedSubgroupStatement.{u}` at arbitrary universe `u`. It retains
 all hypotheses and the published meanings of `IsClosedSubgroup` and

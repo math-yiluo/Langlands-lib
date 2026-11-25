@@ -1,7 +1,5 @@
 # Equality of adjacent unequal-rank JPSS Laurent spans
 
-Author: Worker 180.
-
 `Langlands.RankinSelberg.unequalRankAdjacentBlockSpan.{uF,uV,uW}` proves
 the published [UnequalRankAdjacentBlockSpanStatement](UnequalRankBlockSpanStatement.md).
 Its complete telescope consists of implicit `{p : ℕ}` and `[Fact p.Prime]`,
@@ -182,10 +180,10 @@ ideals. Its stronger intermediate value-set equality follows from these
 explicit transfers, rather than being attributed as a separate assertion
 of the originals. Finite scalar integration, product-measure equivalences,
 and the p-adic assembly are internal implementation steps.
-The shared block-integration source proofs were authored by Worker 180
-and extracted into the public package by Worker 52. The finite-expansion
-dependency was coauthored by Worker 180 and Worker 451. Their published
-theorems are imported by name without copied declarations.
+The block-integration helper proofs are in the public package
+`UnequalRankBlockIntegrationProof`, and the finite-expansion dependency is
+`Langlands.HarmonicAnalysis.CompactCosetExpansion`. Their published theorems are imported by
+name without copied declarations.
 
 The proof assumes no analytic-existence theorem, common normalized generator,
 or functional equation. The target pair and its import closure are unchanged.

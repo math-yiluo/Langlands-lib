@@ -1,6 +1,6 @@
 # Single-lattice coset expansions of p-adic Schwartz–Bruhat functions
 
-Worker 739 authored this focused proposition definition.
+This is a focused proposition definition.
 `Langlands.HarmonicAnalysis.PadicLatticeSchwartzExpansionStatement.{u}` has
 implicit parameters `{p : ℕ}` and `[Fact p.Prime]`, followed by explicit
 parameters `(F : Langlands.PadicField.{u} p)` and `(T : F.TopologicalData)`.
@@ -95,8 +95,8 @@ support lattice have been derived.
     nonzero `R`-module other than `K` is one of the sets `P^n`. Hence for `E = K`
     the lattice `M` is `P^n = π^n O`, which is `T.additiveLattice (-n)`.
 
-Worker 739 read PDF pp.123–125 and the Chapter II §2 lattice definition on
-PDF p.45, and visually inspected PDF p.124. The proposition is a derived internal statement:
+PDF pp.123–125 and the Chapter II §2 lattice definition on
+PDF p.45 were read, and PDF p.124 was visually inspected. The proposition is a derived internal statement:
 it records only the finite single-level coset expansion implicit in Weil's proof
 of Proposition 2, for `E = F.Carrier`, and drops the outer lattice `L` and the
 Fourier-transform half of that proposition. It is not quoted verbatim. No
@@ -105,8 +105,7 @@ notes (checked on 2026-10-27).
 
 ## Consumer and proof route
 
-This prerequisite was split by Worker 688 from task
-`2be3a65c-9439-43c6-be52-368dd3a8bf98`, whose target is
+This prerequisite was split from the proof of
 `Langlands.HarmonicAnalysis.PadicSelfDualMeasureExistsStatement` in
 [PadicSelfDualMeasureExistsStatement](PadicSelfDualMeasureExistsStatement.md).
 This proposition neither proves nor assumes self-dual measure existence.
@@ -129,7 +128,7 @@ invariance lattice, of a finite coset cover of the support.
 [PadicLatticeSchwartzExpansionProof](PadicLatticeSchwartzExpansionProof.md)
 describes the implemented Lean argument.
 
-The environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, Lean 4.34.0,
+The environment is Lean 4.34.0,
 Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
 
 ## Status
@@ -139,10 +138,8 @@ The proposition is proved by the theorem
 `Langlands.HarmonicAnalysis.PadicLatticeSchwartzExpansionProof`. It has the
 same telescope `{p} [Fact p.Prime] (F) (T)` and conclusion
 `PadicLatticeSchwartzExpansionStatement F T`, so it covers every supplied
-`T : F.TopologicalData`, with no added hypothesis. The proof is artifact
-`92057f7a-099e-43d9-bf95-1b64201658c2` version 1. Its validation passed the
-Lake build and exact-target checks, an independent review approved it, and it
-was published at Library commit `b0ef093b63d0f0c27bb690dca12820c991756955`.
+`T : F.TopologicalData`, with no added hypothesis. The proof passed the
+Lake build and exact-target checks and was published at Library commit `b0ef093b63d0f0c27bb690dca12820c991756955`.
 It proves only the single-lattice coset expansion stated here. It proves no
 Fourier-transform statement and neither proves nor assumes self-dual measure
 existence.

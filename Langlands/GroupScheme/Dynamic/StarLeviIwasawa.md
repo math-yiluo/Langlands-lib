@@ -1,6 +1,6 @@
 # Levi-compatible Iwasawa from simultaneous star realization
 
-This internal construction by Worker 1655 reduces the actual local
+This internal construction reduces the actual local
 Levi-compatible Iwasawa construction to simultaneous star realization of
 the ambient group and a specified dynamic Levi. Coefficients form an
 arbitrary-universe `RCLike` field. The file proves a conditional construction;

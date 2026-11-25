@@ -1,6 +1,6 @@
 # Finite isolation on the existing product-induced smooth sections
 
-This derived unit implements finite parameter isolation directly in the torus
+This derived module implements finite parameter isolation directly in the torus
 coordinates of the existing packet section space. Its source motivation is
 Waldspurger VIII.4.2, printed p.330 (PDF p.96), where a section is chosen with
 one specified coefficient and zero values at the other classes in the finite
@@ -34,5 +34,6 @@ the packet's own torus coordinates, with no coordinate change.
 
 The generic section theorem retains all compact-picture, continuity,
 factorization, smoothness and finite-stabilizer inputs of the existing
-section interface. It proves no packet membership or cuspidality theorem and
-neither closed Task 7440 target.
+section interface. It proves no packet membership or cuspidality theorem, and
+neither the Waldspurger VIII.4.2 cuspidal coefficient equality nor the
+same-level coefficient lifting.

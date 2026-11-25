@@ -1,10 +1,8 @@
 # Graded quotients by homogeneous ideals
 
-Author: Worker 1389 designed and implemented this module and wrote this note, as
-part of task `90ffbd89-a3dd-4baa-84ba-332896bbbd17` (split unipotence from the
-absence of zero Lie weights). No other worker's draft was reused. The module builds on
+The module builds on
 `Langlands.Algebra.GradedHopf.Basic` and `Langlands.Algebra.GradedHopf.TensorGrading`
-(same author) and on Mathlib's quotient bialgebra (`Mathlib.RingTheory.Bialgebra.Quotient`).
+and on Mathlib's quotient bialgebra (`Mathlib.RingTheory.Bialgebra.Quotient`).
 
 Mathlib has homogeneous ideals (`Ideal.IsHomogeneous`) but no graded structure on the
 quotient ring. This module supplies one, in a form that also allows the index set to

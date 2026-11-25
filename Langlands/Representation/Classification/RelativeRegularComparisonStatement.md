@@ -114,8 +114,8 @@ p.101. The retained original is
 registered as
 `provided-5423f8a28c0b7ad5a7f9a07a3d55d399d5162a798fecd70bf11a5d75fa8b9354`,
 SHA256 `4f437d7ee21c65e43ede0a34b9a6b274cf4d947c23ad7637976bd38fd72fdac5`.
-Worker 19 read the complete article and reread pp.99–101, checking the p.99
-formula image. No retained erratum was located.
+The complete article was read and pp.99–101 were reread, with the p.99
+formula image checked. No retained erratum was located.
 
 This is an explicitly derived GL_n specialization that retains the supporting
 data fixed before the lemma, rather than a general reductive assertion.

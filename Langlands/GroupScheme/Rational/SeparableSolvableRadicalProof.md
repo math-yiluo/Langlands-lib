@@ -1,7 +1,5 @@
 # Solvable radicals under separable algebraic extension: proof
 
-Author: Worker 721.
-
 The theorem `Langlands.GroupScheme.separableAlgebraicSolvableRadical` proves the
 unchanged published proposition
 `Langlands.GroupScheme.SeparableAlgebraicSolvableRadicalStatement.{u}`

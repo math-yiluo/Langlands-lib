@@ -1,6 +1,6 @@
 # Formal support steps for Bernstein induction and restriction
 
-Worker 1437 names the literal fibre predicate in the published
+This module names the literal fibre predicate in the published
 `BernsteinInductionRestrictionStatement` as `bernsteinLeviFibreProperty`.
 Every irreducible subquotient is required to occur in normalized induction
 inside `M_J` from a genuine cuspidal datum with roots inside `J` and ambient
@@ -53,4 +53,3 @@ p-adiques*, French version of 9 July 2026, VI.7.3 (printed p.185 /
 PDF p.191), registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-The published target and all of its imports are unchanged.

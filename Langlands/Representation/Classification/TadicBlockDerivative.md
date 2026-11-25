@@ -1,6 +1,6 @@
 # The shifted highest derivative of a unitarizable `⟨a⟩`
 
-Author: Worker 5121. Module `Langlands.Representation.Classification.TadicBlockDerivative`,
+Module `Langlands.Representation.Classification.TadicBlockDerivative`,
 namespace `Langlands.Classification.TadicBlockDerivative`. Helper module of the proof of
 `Langlands.Classification.TadicBlockReductionFromInputs`.
 

@@ -1,6 +1,6 @@
 # Existence of the essential vector and the conductor exponent
 
-Author: Worker 11. This module, in namespace `Langlands.Conductor`, states the
+This module, in namespace `Langlands.Conductor`, states the
 main results about the essential vector and the conductor of an irreducible
 admissible generic representation of `GL_r(F)` over a nonarchimedean local
 field `F`. It states Jacquet's corrected existence theorem for the essential
@@ -201,9 +201,9 @@ The conjunction of the three statements above, with universe parameters
 - **The spherical function.** The published `inverseSphericalWhittaker` is
   Shintani's explicit spherical Whittaker function for the inverse standard
   character. That it satisfies Jacquet's characterization on page 516 is left
-  open in `Whittaker/Spherical.md`. I compared the explicit formula
-  `δ_B^{1/2}(ϖ^λ) s_λ(x)` with Jacquet's normalization of `I(t)` for
-  `x_i = q^{-t_i}` and found that they agree. This comparison is not a Lean
+  open in `Whittaker/Spherical.md`. The explicit formula
+  `δ_B^{1/2}(ϖ^λ) s_λ(x)` was compared with Jacquet's normalization of `I(t)` for
+  `x_i = q^{-t_i}`, and they agree. This comparison is not a Lean
   proof.
 - **Existence with the invariance condition.** Jacquet's Theorem 1 gives a
   `W` with the identity. Averaging `W` over the compact group
@@ -240,7 +240,7 @@ The conjunction of the three statements above, with universe parameters
 
 ## Lean checks
 
-The module compiles with `lean_check` in environment `3b864ddf` with no errors
+The module compiles with no errors
 or warnings. `EssentialConductorStatement` was inspected: it returns `Prop`,
 has universe parameters `uF uV`, and uses only `propext`, `Classical.choice`
 and `Quot.sound`. There is no `sorry` and no new axiom.

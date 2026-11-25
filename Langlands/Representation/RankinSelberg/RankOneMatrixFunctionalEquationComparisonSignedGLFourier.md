@@ -4,7 +4,7 @@ This internal derived prerequisite transfers the actual signed orbit Fourier
 exchange from the full additive matrix measure to the existing general linear
 Haar measure. It supplies genuine joint convergence and the equality of the two
 weighted product integrals, including their GL-outer averaged form. The gamma
-comparison and compact averaging extraction remain separate obligations.
+comparison and compact averaging extraction are not proved here.
 
 The field is every canonical `F : PadicField.{uF} p`, with `p` prime, and the
 size is `r = n + 1`, including `n = 0`. All topology, valuation, local field,
@@ -60,8 +60,8 @@ outside the inner unipotent average. Its proof uses `integral_prod_symm` with
 the two proved joint integrabilities, then `integral_const_mul`. Thus the
 averaged equality rests on actual product convergence.
 
-The provenance is internal. Worker 396's GLFourierBridge supplies full additive
-Haar transport and its normalization scalar, while Worker 623's
+The provenance is internal. The imported GLFourierBridge supplies full additive
+Haar transport and its normalization scalar, while the imported
 SignedOrbitFourier supplies the exact signed kernels and additive exchange.
 This module adapts the weighted pullback and Fubini argument of the former
 to the latter. It neither assumes nor proves a matrix or rank-one gamma

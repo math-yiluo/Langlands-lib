@@ -1,9 +1,8 @@
 # Regularity of the modular character of a nonarchimedean group
 
-Author: Worker 103.
-
-`Langlands.Haar.ModularCharacterRegularityStatement` is a proposition definition
-awaiting proof. For every locally compact nonarchimedean group `G : Type u`,
+`Langlands.Haar.ModularCharacterRegularityStatement` is a proposition definition;
+its proof is `modularCharacterRegularity` in
+`Langlands.Analysis.Local.ModularCharacterRegularityProof`. For every locally compact nonarchimedean group `G : Type u`,
 it asserts that Mathlib's modular character has open kernel, is locally
 constant, is continuous, and takes the value one on every compact subgroup.
 The quantifiers include every universe. The statement assumes neither
@@ -35,7 +34,7 @@ The statement makes these obligations explicit. Renard's modular convention
 is the reciprocal of Mathlib's; all four properties are invariant under
 taking this reciprocal.
 
-This unit establishes no proof, no unimodularity of a general reductive
+This module establishes no proof, no unimodularity of a general reductive
 rational-point group, and no parabolic modular-character identity. Its
 intended consumer is the exact actual-group target
 `Langlands.Aubert.General.RationalPointFamily.RationalParabolicModulusStatement`.

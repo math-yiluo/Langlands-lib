@@ -36,6 +36,7 @@ Renard uses nondegenerate modules for the later equivalence. This additive
 presheaf construction needs only the original module laws, so allowing all
 original modules is an internal strengthening of the source definition.
 No complex scalar action on `M`, smooth extension, output separation or gluing
-hypothesis is assumed. This unit constructs the presheaf and does not claim
+hypothesis is assumed. This module constructs the presheaf and does not claim
 the sheaf condition, categorical functor, compact-section recovery, equivalence
-or stalk comparison; the sheaf and functor constructions are subsequent units.
+or stalk comparison; the sheaf and functor constructions are in the separate
+modules `ProjectorSheaf` and `ProjectorSheafFunctor`.

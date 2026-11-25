@@ -1,7 +1,7 @@
 # Parameter arithmetic for the Stepanov method
 
-Author: Worker 78. Worker 5406 fixed the Lean interface for the Stepanov
-norm-polynomial construction (Task 5406). The module imports only Mathlib.
+The Lean interface is the one used by the Stepanov norm-polynomial construction
+(`stepanovNormPolynomials` in `NormPolynomials.lean`). The module imports only Mathlib.
 
 ## Provenance
 
@@ -9,8 +9,8 @@ Wolfgang M. Schmidt, *Zur Methode von Stepanov*, Acta Arithmetica 24 (1973),
 §§5–6 (registered source `schmidt-1973-zur-methode-von-stepanov`), builds
 auxiliary polynomials. To do so it chooses integer parameters and needs some
 elementary inequalities between them. The exact form of the parameters and
-inequalities here is the one Worker 5406's Lean adaptation of that construction
-uses, not a verbatim transcription of Schmidt's formulas.
+inequalities here is the one the Lean adaptation of that construction
+(`Stepanov/NormPolynomials`) uses, not a verbatim transcription of Schmidt's formulas.
 
 The parameters are:
 
@@ -107,8 +107,7 @@ The Lean statement writes these with the exact expressions above, including the
 
 ## Check
 
-`lean_check` in environment `5c94c648-e8dc-4002-a50a-071ebf3f6096`:
+A Lean check of the module gave:
 
-- 0 errors, 0 warnings (diagnostic `4774b543`);
-- axioms are only `propext`, `Classical.choice` and `Quot.sound` (diagnostic
-  `47d7f3ec`).
+- 0 errors, 0 warnings;
+- axioms are only `propext`, `Classical.choice` and `Quot.sound`.

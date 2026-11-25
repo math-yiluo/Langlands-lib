@@ -1,7 +1,5 @@
 # Adic completion of a discrete valuation ring
 
-Worker 519.
-
 For a DVR `R`, `DvrCompletion.isDomain_and_isDiscreteValuationRing` shows that
 `AdicCompletion (IsLocalRing.maximalIdeal R) R` is a domain and a DVR in the
 same universe. `DvrCompletion.maximalIdeal_eq_span` identifies its maximal

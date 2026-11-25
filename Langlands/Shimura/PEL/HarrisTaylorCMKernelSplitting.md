@@ -1,7 +1,5 @@
 # Actual splittings of the original CM kernel comparison
 
-Author: Worker 57.
-
 This derived construction proves that the original CM kernel pair is locally
 Noetherian and applies the existing component lift to its identity. The result
 is an actual section of the identical original kernel comparison. Packaging
@@ -136,15 +134,20 @@ specifies the polarized CM frame-orbit moduli and right frame action, and
 asserts smooth projective representability, finite-etale forgetting and the
 normal `U/V` Galois cover. These are the conventions retained by the imported
 objects. The new conditional splitting is not presented as the book's proof
-of that stronger cover assertion. The supplied publication/errata list was
-previously read in full and lists no correction to this passage.
+of that stronger cover assertion. The publication/errata list was
+read in full and lists no correction to this passage.
 
 No original-projection etaleness, rigidity, residual freeness, monomorphism of
 `κ` or comparison isomorphism is assumed. Only the displayed right-inverse
 identity is proved; this module proves no left-inverse identity or uniqueness
 or naturality of the classical choices. The section belongs to `κ`, not to
 the original forgetting projection `p`. Applicable representability,
-source-smallness rigidity, comparison with the complete source moduli problem,
-original etaleness, a full kernel inverse, canonical-model geometry and
-coefficient descent remain separate obligations. This contribution does not
-complete those source assertions or the host task.
+comparison with the complete source moduli problem, canonical-model geometry
+and coefficient descent are not proved in this module. Source-smallness
+rigidity is derived by `cmSmallLevelRigidity`
+(`HarrisTaylorCMSmallLevelRigidityProof`), original etaleness by
+`representedCMNormalProjection_etale_of_dominantCriterion`
+(`HarrisTaylorCMNormalSmoothEtale`) and a full kernel inverse by
+`representedCMNormalKernelSchemeIso` (`HarrisTaylorCMKernelSchemeIsomorphism`),
+each under named premises. This module does not complete those source
+assertions.

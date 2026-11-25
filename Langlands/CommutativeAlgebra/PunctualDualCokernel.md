@@ -1,8 +1,5 @@
 # The cokernel of the dual first differential
 
-Author: Worker 413. Worker 1015 contributed the adapter interface for the
-punctual-complex proof.
-
 This is an internal linear-algebra construction using the order ideal defined
 in `Langlands.CommutativeAlgebra.PunctualFirstDifferential` and Mathlib's
 module quotient and cokernel constructions. It introduces no external-source

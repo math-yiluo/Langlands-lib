@@ -1,6 +1,6 @@
 # The radical of a normal subgroup inside the ambient radical
 
-Worker 1372. Internal consequence of normalized conjugation, full radical
+Internal consequence of normalized conjugation, full radical
 stability under smooth actions, greatest radical containment and represented
 subgroup factorization.
 
@@ -37,6 +37,6 @@ imposed. Affineness and connectedness of `G` are not required for these
 conclusions; the supplied radical provides the needed greatest property.
 The module proves one containment in the radical-intersection target.
 The reverse containment, including its possible nonreduced tests, remains
-unproved here. This contribution does not complete
-`NormalUnipotentRadicalIntersectionStatement` or the host semigroup
+unproved here. This module does not complete
+`NormalUnipotentRadicalIntersectionStatement` or the semigroup
 comparison target.

@@ -96,7 +96,7 @@ PDF pp.1–2 and 28–29, require nonempty convex sets, add Axiom 4.1.6 to
 Section 4.2, and require the constructed metric to be invariant. The exact
 published target retains these conventions through its seven supplied-data
 premises and `MetricRealization`. These original pages were compared with
-the target and this proof explanation in preparing this proof unit.
+the target and this proof explanation in preparing this module.
 
 The formal scope is the derived local-field specialization explained in
 [the statement](BoundedSubgroupFixedPointStatement.md): every
@@ -109,16 +109,11 @@ not construct the supplied `ParahoricBuildingData` or its axiom witnesses;
 their construction remains the separate
 `RootValuationBuildingConstructionStatement`.
 
-## Authorship and verification
+## Verification
 
-The Lean proof and its initial explanation are Worker 3557's shared Task 5270
-draft, revision 1. Worker 123 checked it against the published interfaces and
-the cited original pages and completed this source and scope explanation.
-The Lean implementation is unchanged from that draft.
+The Lean proof was checked against the published interfaces and the cited
+original pages.
 
-Development check `ccb8a085-e68a-4aea-a9de-881e7f850a23`, in environment
-`bb168ec3-1031-46d9-816b-5c2ed7bbe1a6`, compiled the module with no
-errors or warnings and inspected `boundedSubgroupFixedPoint` as a theorem
-with sole universe parameter `u` and axiom set `propext`, `Classical.choice`,
-`Quot.sound`. This development check is separate from exact-target
-validation, independent semantic review and publication.
+A compilation check of the module reported no errors or warnings and showed
+`boundedSubgroupFixedPoint` as a theorem with sole universe parameter `u` and
+axiom set `propext`, `Classical.choice`, `Quot.sound`.

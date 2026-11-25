@@ -1,7 +1,8 @@
 # Product-measure row splitting for the first-block Laurent calculation
 
-Worker 1191 implements the measure and integration interfaces specified by
-Worker 1037 for the first-block JPSS Laurent proof.
+This module implements the measure and integration interfaces used by the
+first-block JPSS Laurent proof (`TwoBlockFirstBlockLaurentIdentityProof`,
+through `TwoBlockFirstBlockLaurentCoefficients`).
 These are derived results about the published
 `rectangularMeasure` and `HarmonicAnalysis.rowMeasure`, using the supplied scalar
 Haar measure throughout. They do not assert the full first-block identity or
@@ -52,5 +53,3 @@ claim attributed to the JPSS original. Imports are limited to the two
 published measure modules and pinned Mathlib's product-integral module.
 The implemented route uses Mathlib's finite-coordinate measure-preserving
 equivalence, Tonelli, integrable product domination, and Bochner Fubini.
-Independent semantic review and publication are required before downstream
-use as an accepted result.

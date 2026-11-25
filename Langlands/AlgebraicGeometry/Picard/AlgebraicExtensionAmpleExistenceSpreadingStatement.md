@@ -1,7 +1,5 @@
 # Spreading ample existence to a finite intermediate field
 
-Author: Worker 303.
-
 `Langlands.AlgebraicGeometry.Picard.AlgebraicExtensionAmpleExistenceSpreadingStatement.{u}`
 is a proposition definition. It states a result; it does not prove it.
 
@@ -77,21 +75,25 @@ The present proposition is steps 1–4, with the source's `k` and `K` renamed
   a finite intermediate field `E`, and the statement states the conclusion at
   `E`.
 - Step 5 is not needed, because `A_i` is already a field. Step 6 belongs to
-  the separate finite field-extension descent statement task
-  `b6d41202-09e5-4b0c-8f49-42a7c418e0df`, which was unpublished at this
-  module's working Library base. It is not part of this proposition.
+  the separate finite field-extension descent statement
+  `Langlands.AlgebraicGeometry.Picard.FiniteFieldExtensionAmpleExistenceDescentStatement`,
+  proved in the Library as `finiteFieldExtensionAmpleExistenceDescent`. It is not part of
+  this proposition.
 
 In step 1 the source does not use properness. It deduces quasi-compactness
 and quasi-separatedness of `X` from the ample sheaf on the base change. Here
 properness of `p` gives both directly. That is how the limit lemmas in steps
 3 and 4 get their hypotheses.
 
-This module states the proposition only. A future proof must construct or
+This module states the proposition only. A proof must construct or
 import actual finite-stage module sheaves and actual finite-stage ampleness,
 with whole affine generation opens. It may not take the spreading conclusion
-as an extra premise. The proof will have to read and register the cited Stacks
-limit lemmas (32.10.3 and 32.4.15) and their prerequisites, which this
-statement unit does not rely on.
+as an extra premise. The Library's proof
+`Langlands.AlgebraicGeometry.Picard.algebraicExtensionAmpleExistenceSpreading` (module
+`Langlands.AlgebraicGeometry.Picard.AlgebraicExtensionAmpleExistenceSpreadingProof`) builds the
+finite-stage line bundle directly, without the cited Stacks
+limit lemmas (32.10.3 and 32.4.15), which this
+statement does not rely on either.
 
 ## Original source and verification
 
@@ -99,13 +101,11 @@ statement unit does not rely on.
   [0BDB](https://stacks.math.columbia.edu/tag/0BDB). Registered source:
   `stacks-norms-field-ample-descent-2026-10-26`, file `0BDB.html`, directory
   SHA256 `af3256169e1d1a032cecd20fa228482bad8e1b478ccfc55a4a73c7ec187d9f5a`.
-  Worker 303 read the whole retained Section 33.15 (Lemmas 33.15.1–33.15.5
-  and their proofs) and its comment section. The section has no comments.
-  The working Library base has no erratum file for this source in
+  The whole retained Section 33.15 (Lemmas 33.15.1–33.15.5
+  and their proofs) and its comment section were read. The section has no comments.
+  The Library has no erratum file for this source in
   `notes/errata/`.
 
-The statement is pinned to environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, Lean 4.34.0 and Mathlib commit
-`5ed2965256430c3649e86755f9576b54eca72435`. It was compiled with
-`lean_check` with no errors or warnings, and the inspection reports a
+The statement was checked with Lean 4.34.0 and Mathlib commit
+`5ed2965256430c3649e86755f9576b54eca72435`. It compiled with no errors or warnings, and the inspection reports a
 `Prop`-valued definition with universe parameter `u`.

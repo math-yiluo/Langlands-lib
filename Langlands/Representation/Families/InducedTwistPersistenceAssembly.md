@@ -1,7 +1,5 @@
 # The two ends of the gallery, and helpers for the assembly
 
-Author: Worker 5120.
-
 This module proves the start and end steps of the gallery argument for
 `InducedTwistQuotientPersistenceStatement`, a split-torus factorization, and small
 helpers. All declarations are in `Langlands.InducedTwistPersistence`.

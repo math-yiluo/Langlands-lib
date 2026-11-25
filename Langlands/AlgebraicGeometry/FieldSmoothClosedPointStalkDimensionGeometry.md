@@ -5,8 +5,9 @@ is an internal conditional adapter. Its explicit argument asserts that every
 maximal ideal in a standard-smooth algebra of relative dimension `n` over any
 field in universe `u` has height `n`. Given that argument, it proves exactly
 `FieldSmoothClosedPointStalkDimensionStatement.{u}`. It does not independently
-establish that algebraic argument and is intended as a helper module in the
-single unconditional proof submission.
+establish that algebraic argument and is a helper module of the
+unconditional proof `fieldSmoothClosedPointStalkDimension` in
+`FieldSmoothClosedPointStalkDimensionProof`.
 
 The implemented reduction starts with the affine chart furnished by Mathlib's
 `SmoothOfRelativeDimension.exists_isStandardSmoothOfRelativeDimension`.
@@ -38,6 +39,6 @@ The statement's retained provenance was checked in the registered source
 `stacks-flasque-affine-vanishing-kunneth-a04446e5`, `varieties.tex`,
 `lemma-dimension-locally-algebraic`, closed-point item (2) and its proof.
 The implemented proof uses affine ideal height directly instead of the source's
-intermediate local topological dimension and differential rank. Worker 399
-authored this geometric adapter in coordination with Worker 669, who owns the
-algebraic dimension argument and final theorem.
+intermediate local topological dimension and differential rank. The
+algebraic dimension argument and the final theorem are in
+`FieldSmoothClosedPointStalkDimensionProof`.

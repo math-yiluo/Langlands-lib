@@ -1,6 +1,6 @@
 # Neutral integral points for bounded nonempty apartment subsets
 
-This internal successor to `UnramifiedNeutralZeroAssembly` discharges its
+This internal module builds on `UnramifiedNeutralZeroAssembly` and discharges its
 zero-fixer decomposition premise for every bounded nonempty apartment subset.
 The universe parameter `u` is arbitrary. The group is any actual affine group
 scheme over `K = inertiaFixedField F` with supplied
@@ -53,7 +53,8 @@ multiplicative equivalence. Its coercion theorem is reflexive because
 `MulEquiv.subgroupCongr` preserves each ambient rational point.
 
 The provenance is internal composition of the published normalizer proof,
-bounded zero-fixer reduction and neutral assembly. This contribution does not
+bounded zero-fixer reduction and neutral assembly. This module does not
 prove either torus premise, construct the full model, or extend the conclusion
-to translated apartment images. Those remain obligations of the complete
-`UnramifiedParahoricModelStatement`.
+to translated apartment images. Those are further parts of the complete
+`UnramifiedParahoricModelStatement`, which `unramifiedParahoricModel` (module
+`UnramifiedParahoricModelProof`) proves.

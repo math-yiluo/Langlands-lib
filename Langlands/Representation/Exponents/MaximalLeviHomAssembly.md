@@ -5,9 +5,11 @@ Module `Langlands.Representation.Exponents.MaximalLeviHomAssembly`.
 This module is a derived supporting construction and a conditional implication for
 Renard III.2.5 and VI.5.3, as used in VII.1.3. It does not give a closed proof of
 `MaximalLeviSupercuspidalInductionHomStatement`. Its main theorem takes the full
-`RepresentedGeometricLemmaStatement` as an explicit premise, and that statement is
-still unproved in the Library. The target statement and everything it imports are
-unchanged.
+`RepresentedGeometricLemmaStatement` as an explicit premise. The Library proves that
+statement as `representedGeometricLemma` (module
+`Langlands.Representation.Geometric.RepresentedGeometricLemmaProof`), and the target as
+`maximalLeviSupercuspidalInductionHom` (module
+`Langlands.Representation.Exponents.MaximalLeviSupercuspidalInductionHomProof`).
 
 ## Provenance
 
@@ -120,9 +122,8 @@ The proof does not use the identity double-coset index. Every piece that admits 
 nonzero map to `τ` gives one of the two alternatives, according to whether its
 representative lies in the Levi image.
 
-## Remaining obligation
+## Applying the implication
 
 To apply this implication without an extra premise, a closed proof of
-`RepresentedGeometricLemmaStatement.{u,v}` is still needed (Renard VI.5.1, task
-`c060fb34-b423-4ac5-8448-788ac7627913`). This module gives no such proof and does not
-complete the morphism task.
+`RepresentedGeometricLemmaStatement.{u,v}` is needed (Renard VI.5.1). The Library has
+one, `representedGeometricLemma`; this module gives no such proof.

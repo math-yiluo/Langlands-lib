@@ -1,7 +1,5 @@
 # Positive-root chart data for the actual contracting group
 
-Author: Worker 591.
-
 `SplitBorelPositiveChart i P` packages a regular integral cocharacter for
 the actual coordinate torus `i`, the actual affine contracting group of
 that cocharacter, an ordered family of additive root homomorphisms into

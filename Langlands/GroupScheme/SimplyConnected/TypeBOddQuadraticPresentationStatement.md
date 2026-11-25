@@ -1,7 +1,5 @@
 # Odd quadratic presentations of simply connected type-B groups
 
-Author: Worker 177.
-
 `Langlands.GroupScheme.TypeBOddQuadraticPresentationStatement.{u}` is an
 unproved general classification prerequisite. It applies to every field
 `K : Type u`, every affine locally finite type group scheme `G` over

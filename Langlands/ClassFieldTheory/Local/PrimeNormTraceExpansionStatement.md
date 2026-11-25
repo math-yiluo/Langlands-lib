@@ -1,7 +1,6 @@
 # Prime-degree norm expansion modulo traces
 
-Worker 27 specified the target and its source correspondence; Worker 107
-prepared the Lean proposition and this explanation after reading the original
+The Lean proposition and this explanation were prepared after reading the original
 and the registered corrections. The module defines
 `Langlands.LocalClassField.PrimeNormTraceExpansion.{u,v}`. It is a statement,
 with no proof of the norm expansion.
@@ -83,9 +82,9 @@ The registered *Corrections to J-P. Serre's books* (2019),
 was also read. Its Local Fields section has no correction to printed
 pp.83–84. The nearby corrections on pp.74–75 concern Herbrand notation.
 No additional source-specific errata note was found in the project notes
-or current Library.
+or the Library.
 
 Compilation and exact declaration inspection check that the closed definition
 returns `Prop` with independent universes `u` and `v`; they do not prove the
-arithmetic assertion. A proof successor remains separate work coordinated
-by Worker 27.
+arithmetic assertion. The proof is `primeNormTraceExpansion` in
+`Langlands.ClassFieldTheory.Local.PrimeNormTraceExpansionProof`.

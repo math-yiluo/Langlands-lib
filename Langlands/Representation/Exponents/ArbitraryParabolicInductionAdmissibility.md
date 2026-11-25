@@ -1,7 +1,5 @@
 # Continuous represented Levi projection and induction admissibility
 
-Authors: Worker 15 and Worker 1585.
-
 Module: `Langlands.Representation.Exponents.ArbitraryParabolicInductionAdmissibility`.
 Namespace: `Langlands.Aubert.General.RepresentedParabolic`.
 

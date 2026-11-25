@@ -56,7 +56,13 @@ theorem highestWeight_lowering_eq_zero_of_coroot_lt
     calc
       p.rootDatum.reflection i mu =
           p.rootDatum.reflection i lam + a • p.rootDatum.root i := by
-        simp only [mu, map_add, map_nsmul, map_neg,
+        have hneg : p.rootDatum.reflection i (-p.rootDatum.root i) =
+            -p.rootDatum.reflection i (p.rootDatum.root i) :=
+          (p.rootDatum.reflection i).toLinearMap.map_neg _
+        have hnsmul : p.rootDatum.reflection i (a • -p.rootDatum.root i) =
+            a • p.rootDatum.reflection i (-p.rootDatum.root i) :=
+          (p.rootDatum.reflection i).toLinearMap.toAddMonoidHom.map_nsmul a _
+        simp only [mu, LinearEquiv.map_add, hnsmul, hneg,
           RootPairing.reflection_apply_self, neg_neg]
       _ = lam - (m : ℤ) • p.rootDatum.root i + a • p.rootDatum.root i := by
         rw [RootPairing.reflection_apply]

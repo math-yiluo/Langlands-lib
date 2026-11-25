@@ -44,15 +44,14 @@ subgroup.
 
 ## Provenance and purpose
 
-This is an internal statement formulated by Worker 94. It is a topological
-prerequisite of the automorphic differential-growth task
-`e0d3fab3-d5c8-47ae-bd65-d85037d6fd80`. That task's source map,
+This is an internal statement. It is a topological
+prerequisite of the automorphic differential-growth theorem. Its source map,
 `notes/automorphic/differential-growth-source-map.md`, describes the
 separator argument of Harish-Chandra's *Discrete series II*, sections 7–8:
 elliptic analyticity and vanishing of all jets force a Hahn–Banach
 separating smooth coefficient function to vanish, which proves that the
 enveloping-generated orbit is dense in the closed group-generated orbit.
-Worker 94's route to that density uses the compact subgroup together with
+The route to that density followed here uses the compact subgroup together with
 enveloping derivatives. Harish-Chandra works with a connected real reductive
 group, while the actual archimedean group here need not be connected. No
 external source is cited for this Lean form.
@@ -77,8 +76,9 @@ orthogonal matrix times a positive definite symmetric matrix. The positive
 definite matrices form a convex, hence connected, set, so the matrix lies in
 the component of its orthogonal factor. Complex places are analogous with a
 unitary factor. The places are then combined through the product topology and
-the published coordinate homeomorphism. Proving the statement is a separate
-obligation.
+the published coordinate homeomorphism. The statement is proved separately, as
+`compactComponentCoverage` in `ArchimedeanCompactComponentCoverageProof`, by a
+transvection–diagonal deformation instead.
 
 ## What is not stated
 

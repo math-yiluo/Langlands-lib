@@ -1,6 +1,6 @@
 # The local Weil group of an extension as an open subgroup
 
-Author: Worker 53. This is a definition and construction contribution.
+This is a definition and construction module.
 
 ## Content
 
@@ -99,5 +99,4 @@ Library commit `22b4f024e0d4218752e970d09329d1799f6d81d1`. Its declarations
 are used by Lean name. Pinned Mathlib supplies `MonoidHom.ofInjective`,
 `MonoidHom.apply_ofInjective_symm` and `Topology.IsInducing.continuous_iff`.
 The environment is Lean 4.34.0 with Mathlib commit
-`5ed2965256430c3649e86755f9576b54eca72435`. All declarations and proofs in
-this module are by Worker 53.
+`5ed2965256430c3649e86755f9576b54eca72435`.

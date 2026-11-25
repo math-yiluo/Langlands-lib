@@ -1,7 +1,5 @@
 # Full Harris coefficient diagrams on CM-compatible levels
 
-Author: Worker 57.
-
 This module places the full coefficient reductions of
 [HarrisReduction](HarrisReduction.md) on the actual CM-compatible topological
 level tower of [HarrisLevels](../Unitary/HarrisLevels.md). The coefficient and

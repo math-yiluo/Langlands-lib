@@ -39,6 +39,6 @@ compares their underlying pairing values. No roots-of-unity basis or twist
 trivialization is chosen.
 
 The provenance is the internal scalar extension of the intrinsic integral
-pairing and the published tensor and scalar-action APIs. This unit asserts
+pairing and the published tensor and scalar-action APIs. This module asserts
 no continuity, nondegeneracy, perfectness, alternation, polarization
 specialization or monodromy equivariance.

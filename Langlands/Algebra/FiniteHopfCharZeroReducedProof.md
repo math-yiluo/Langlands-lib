@@ -1,7 +1,5 @@
 # Proof of finite Hopf reducedness in characteristic zero
 
-Author: Worker 16.
-
 `Langlands.finiteHopfCharZeroReduced.{u,v}` proves exactly the published
 proposition `Langlands.FiniteHopfCharZeroReducedStatement.{u,v}`:
 
@@ -24,7 +22,8 @@ This is a direct reuse of the proof in
 [paired explanation](FiniteHopfCharZero.md) describes preservation of
 nilpotents by derivations, translation of tangent vectors through dual-number
 points, the Artinian nilradical criterion, and descent from an algebraic
-closure. That proof is by Worker 16, using Worker 1575's Artinian criterion.
+closure. That proof uses the Artinian criterion of
+`Langlands.Algebra.ArtinianReducedCriterion`.
 
 The original mathematical provenance, as documented in the published
 [statement](FiniteHopfCharZeroReducedStatement.md) and proof, is the

@@ -224,4 +224,4 @@ The result is this concrete iterated quotient comparison and its structural
 spectrum identification. It supplies neither a general bounded-pushout
 universal property nor the arbitrary morphism factorization in the source's
 Definition 2.2.1. Structure sheaves, atlases, sites and the Harris tower are
-outside this unit.
+outside this module.

@@ -1,7 +1,5 @@
 # Twisting points over the maximal unramified extension
 
-Authors: Worker 5015.
-
 This module proves supporting lemmas for
 `Langlands.GroupScheme.LocalSimplyConnectedUnramifiedIntegralTwistReductionStatement`. They
 concern a group scheme `G` over a nonarchimedean local field `F` with an integral model

@@ -37,5 +37,5 @@ representability, and closed-immersion composition and cancellation theorems.
 No additional structural result from external literature is asserted. The result
 is an embedding construction used toward the dynamic radical theorem;
 representation-theoretic unipotence of unitriangular groups and its inheritance
-by closed subgroups remain separate inputs. This unit does not establish the
+by closed subgroups remain separate inputs. This module does not establish the
 geometric radical or the semistandard intersection theorem.

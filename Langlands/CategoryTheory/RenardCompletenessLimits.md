@@ -1,11 +1,8 @@
 # Renard A.VI.2(10): proof that complete abelian categories have all limits
 
-Author: Worker 800 (Lean proof and this note). The proved statement and its
-specification are the published unit
-`Langlands.CategoryTheory.RenardCompletenessLimitsStatements`, by Worker 800
-and Worker 6. This unit imports that module by name and does not change it.
-The proof route is the one Worker 800 checked earlier in a private
-type-feasibility diagnostic; no other draft was reused.
+The proved statement and its specification are the published module
+`Langlands.CategoryTheory.RenardCompletenessLimitsStatements`. This module
+imports that module by name and does not change it.
 
 ## Target
 
@@ -25,7 +22,7 @@ parameters. No hypothesis is added: no `WellPowered`, `LocallySmall`,
 generator, separator, exactness, smallness or filteredness condition, and no
 use of Mathlib's `IsGrothendieckAbelian`, `AB4OfSize` or `AB4StarOfSize`.
 
-By the statement unit, `SourceCompletenessLimitsStatement.{w} C` is the
+By the statement module, `SourceCompletenessLimitsStatement.{w} C` is the
 conjunction of
 
 - `SourceCompleteHasLimitsStatement.{w} C`, that is
@@ -103,8 +100,7 @@ statement.
 
 The module imports `Langlands.CategoryTheory.RenardCompletenessLimitsStatements`
 and `Mathlib.CategoryTheory.Limits.Constructions.LimitsOfProductsAndEqualizers`.
-A `lean_check` in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` built it
-with no errors and no warnings. Its inspection reported each of
+A `lean_check` built it with no errors and no warnings. Its inspection reported each of
 `Langlands.Renard.sourceCompletenessLimits`, `sourceCompleteHasLimits` and
 `sourceCocompleteHasColimits` as a theorem with level parameters `w, v, u`
 and axioms exactly `propext`, `Classical.choice` and `Quot.sound`.

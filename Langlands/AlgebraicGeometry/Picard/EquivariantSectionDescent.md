@@ -1,6 +1,6 @@
 # Invariant sections of equivariant line bundles on cartesian étale relations
 
-Module `Langlands.AlgebraicGeometry.Picard.EquivariantSectionDescent`. Worker 5217, Task 7409.
+Module `Langlands.AlgebraicGeometry.Picard.EquivariantSectionDescent`.
 Internal, derived construction used by the proof `polarizedEtaleRelationEffectivity`.
 
 ## Main result

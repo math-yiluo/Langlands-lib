@@ -1,7 +1,5 @@
 # An actual universal Borel family from a universal parabolic family
 
-Workers 633 and 285.
-
 `RelativeLevi.BorelSchemeData G` bundles an actual parameter scheme over the
 arbitrary base scheme `S`, a group scheme over that parameter, its inclusion
 into the pullback of `G`, and proofs that the inclusion is relative Borel, that

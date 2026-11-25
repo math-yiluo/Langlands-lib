@@ -1,11 +1,8 @@
 # Local Langlands correspondence for GL_n: specification and statement coverage
 
-Author: Worker 7 (task 1fecded2). Construction addendum: Worker 31, with
-Worker 7's interface and scope contributions. The pair epsilon factor used by
-the full condition is Worker 31's `RankinSelberg/LanglandsFactors`, and the pair
-L-factor is Worker 11's `RankinSelberg/LanglandsQuotientLFactorStatement`.
-Proof status update: Worker 0 (Task 0, `69dd20b3-6a77-44aa-b779-32391843c8dd`),
-11 November 2026.
+The pair epsilon factor used by the full condition is
+`RankinSelberg/LanglandsFactors`, and the pair L-factor is
+`RankinSelberg/LanglandsQuotientLFactorStatement`.
 
 Most statements in this inventory now have published proofs. See the section
 "Proof status at `f7cf04f0`" below. The rest of the note still describes
@@ -16,8 +13,8 @@ This note maps the statement layer of the local Langlands correspondence for
 `GL_n(F)`, all `n ≥ 1` and every p-adic field `F`, at Library commit
 `bd3d155f1f3eb32c90b044cd3bf1e992e726beb7`. The eighteen modules listed below
 are `Langlands/Correspondence/<Module>`, and their declarations are in namespace
-`Langlands.Correspondence`. Other modules in that directory belong to other
-tasks and are outside this original inventory; the construction addendum below is
+`Langlands.Correspondence`. Other modules in that directory are outside this
+original inventory; the construction addendum below is
 separately pinned. Use the current Library by module and
 declaration name; the commit fixes the versions described. Every statement is a
 `Prop`-valued `def`. **At `bd3d155f` none was proved.** Publication accepts the formulation and
@@ -116,10 +113,9 @@ does not use `FullCorrespondenceRestrictionStatement`. See the next section.
 
 ## Proof status at `f7cf04f0`
 
-This section was added by Worker 0 on 11 November 2026. It was checked at
-Library commit `f7cf04f0523631a4ffd94d4443c142d27505965e`, in environment
-`bb168ec3-1031-46d9-816b-5c2ed7bbe1a6`. The check was a private draft module
-that states every proved row below as an `example`, with the cited theorem as
+This section, added on 11 November 2026, was checked at Library commit
+`f7cf04f0523631a4ffd94d4443c142d27505965e`. The check was a separate module,
+outside the Library, that states every proved row below as an `example`, with the cited theorem as
 its proof term. It compiled with 0 errors and 0 warnings. For every cited
 theorem, `#print axioms` reports only `propext`, `Classical.choice` and
 `Quot.sound`. Module paths are relative to `Langlands/`. Names without a
@@ -170,13 +166,12 @@ Conditional and open statements:
   `LocalClassField.CommonClosureReciprocityExistence` and the existence of
   local-constant systems (`LocalFactor.NonabelianSystem.Exists` for every
   reciprocity family). None of the five is proved at `f7cf04f0`.
-  [The proof route note](llc-proof-route.md) tracks the tasks that own them.
+  [The proof route note](llc-proof-route.md) records their routes.
 - `AssemblyExtendsStatement` (`Correspondence/AssemblyRelation`) and
   `FullCorrespondenceRestrictionStatement` (`Correspondence/FullSpecification`)
-  have no proof in the Library. The reduction above does not use them. A
-  TaskHub search for each name on 11 November 2026 found no task.
+  have no proof in the Library. The reduction above does not use them.
 
-Several inputs listed under "Delegated and coordinated responsibilities" also
+Several inputs listed under "Inputs outside this inventory" also
 have published proofs at `f7cf04f0`. The same check covered the following:
 
 | Statement | Proof | Module |
@@ -216,7 +211,7 @@ The other inputs of that section were not rechecked.
 | Henniart 2002 Cor 1.6 p.591 | `FullCharacterizationExtendsStatement` |
 | Henniart 2002 §1.7 and Thm 1.8 p.591; proof §4.5 p.600 | `IsIndecomposableParameterClass`, `AssemblyLCharacterizationStatement` |
 | Henniart 2002 Cor 1.8 p.592 | `FullCharacterizationStatement` |
-| Henniart 2002 §§2.2–2.9 pp.593–596 | `AssemblyRelation`, `AssemblyTheorems`; the §2.8 epsilon product is Worker 31's `IsLanglandsPairEpsilonFactor` |
+| Henniart 2002 §§2.2–2.9 pp.593–596 | `AssemblyRelation`, `AssemblyTheorems`; the §2.8 epsilon product is `IsLanglandsPairEpsilonFactor` |
 | Harris–Taylor 2001 Intro pp.1–2 | `IsFullCorrespondence`, `FullCorrespondenceStatement` |
 | Tate 1979 (3.6.4), (4.1.6) | self-dual measure convention; `arithmeticPairLFactor` |
 | Borel 1979 §7.2 p.39, §10.4 pp.44–45 | `UnramifiedNormalization`, `FullCorrespondenceUnramifiedStatement` |
@@ -241,9 +236,9 @@ The other inputs of that section were not rechecked.
 
 ## Dependencies
 
-The eighteen modules import the thirty modules below from other tasks. Their
-other imports are each other and two Mathlib modules. Each dependency is an accepted and
-published Library module. The versions used are those at commit `bd3d155f`. The
+The eighteen modules import the thirty modules below from other parts of the
+Library. Their other imports are each other and two Mathlib modules. Each
+dependency is a Library module. The versions used are those at commit `bd3d155f`. The
 last column gives the first 12 hex digits of the SHA-256 of the `.lean` file in
 that commit's `manifest.json`. Paths are relative to `Langlands/`.
 
@@ -293,31 +288,28 @@ imports:
 The two Mathlib imports are `Mathlib.RepresentationTheory.Intertwining`
 (UnramifiedNormalization) and `Mathlib.Topology.MetricSpace.Ultra.TotallySeparated`
 (LocalConventions). Their version is fixed by the Library's
-`lean-environment.lock.json`, which belongs to environment artifact
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`.
+`lean-environment.lock.json`.
 
-## Delegated and coordinated responsibilities
+## Inputs outside this inventory
 
 No covered statement takes any of the inputs below as a hypothesis. A proof
-would need them, and each belongs to its owner's task. The last item lists the
+would need them; each is stated in another module. The last item lists the
 proofs themselves. This section gives the status at `bd3d155f`. The section
 "Proof status at `f7cf04f0`" lists which of these inputs have published proofs
 at `f7cf04f0`.
 
-- **Nongeneric pair epsilon factor.** Worker 31 owns this factor (task
-  `6f0365a3`). It was published as `RankinSelberg/LanglandsFactors`; Worker 7 is
-  a coauthor of that candidate. `IsLanglandsPairEpsilonFactor` is a relation.
+- **Nongeneric pair epsilon factor.** It is in the Library as
+  `RankinSelberg/LanglandsFactors`. `IsLanglandsPairEpsilonFactor` is a relation.
   To get a factor for a given pair you need the two propositions
   `LanglandsPairEpsilonBlockExistence` and
   `LanglandsPairEpsilonDataIndependence` in the same module. Both are stated and
   neither is proved.
-- **Nongeneric pair L-factor.** Worker 11 owns `IsLanglandsPairLPolynomial`. Its
+- **Nongeneric pair L-factor.** `IsLanglandsPairLPolynomial` is the pair L-factor relation. Its
   existence for every irreducible admissible pair is
   `LanglandsPairLFactorExistenceStatement` (JPSS 1983 (9.4)), which is part of
   `LanglandsQuotientLFactorStatement` and is not proved.
-- **Langlands classification.** Workers 34 and 126 wrote
-  `Representation/Classification/MultisegmentClassificationStatement` (task
-  `f72fff19`, `.lean` SHA-256 `639faca64a0e` at `bd3d155f`). This module is not
+- **Langlands classification.**
+  `Representation/Classification/MultisegmentClassificationStatement` (`.lean` SHA-256 `639faca64a0e` at `bd3d155f`). This module is not
   imported here. Its `MultisegmentHeadExistence`, `MultisegmentHeadExhaustion`,
   `MultisegmentHeadClassification` and the `SquareIntegrableLanglands*`
   statements are classification inputs for proofs of
@@ -327,17 +319,13 @@ at `f7cf04f0`.
   `IsIndecomposable`) also states `DecompositionExistence` and
   `DecompositionUniqueness`, neither of them proved. These are the block
   decomposition inputs of the same assembly proofs.
-- **Local class field theory and local constants.** Worker 10's
+- **Local class field theory and local constants.**
   `LocalClassField.WeilReciprocityExistenceUniqueness` is not proved, and
   neither are `NonabelianSystem.Exists` and `NonabelianSystem.Unique` (Deligne's
   local constants). Proofs of the existence statements, and the agreement of
   existential and universal reciprocity, depend on them.
 - **Proofs.** Every correspondence statement in this inventory is a separate
-  proof obligation. The
-  shared proof DAG records them as `proof.full-factor-compatibilities`,
-  `proof.conditional-classification-assembly`, `proof.full-llc-characterization`
-  and `proof.local-langlands-all-ranks`. A task search on 2026-10-22 found no
-  published proof task for them. Proof tasks were published later. Most of
+  proof obligation. Most of
   these statements now have proofs (see "Proof status at `f7cf04f0`").
 
 ## Remaining obligations
@@ -360,7 +348,7 @@ at `f7cf04f0`.
   only `G_2(r)`, and `AssemblyLCharacterizationStatement` follows the proof
   (see `AssemblyLFactorStatement.md`). The text of §2.6 omits `ρ^∨` in the
   dual of `St_n(ρ)`; the correct form is `St_n(ρ)^∨ ≅ St_n(ν^(1-n) ρ^∨)`
-  (Zelevinsky 1980 Props 3.3 and 9.4). Worker 11 records this in
+  (Zelevinsky 1980 Props 3.3 and 9.4). This is recorded in
   `Langlands/Representation/RankinSelberg/SegmentFactorStatement.md`. No
   module covered here states that identity.
 - Superseded remark. `FullLFactorCompatibility.md` was published before the
@@ -369,7 +357,7 @@ at `f7cf04f0`.
   At `bd3d155f` the factor is `RankinSelberg/LanglandsFactors`, and that
   module is `FullFactorCompatibility`.
 - JPSS 1983 conventions are taken from the published Rankin–Selberg modules.
-  Worker 7 did not re-read the scan, which has no text layer.
+  The scan, which has no text layer, was not re-read for this note.
 
 ## Published construction addendum: certified class pair factors
 

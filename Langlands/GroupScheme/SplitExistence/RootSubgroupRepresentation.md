@@ -1,6 +1,6 @@
 # Root maps of a Chevalley group represent the intrinsic root subgroups
 
-This internal unit connects the Chevalley groups of the split existence
+This internal module connects the Chevalley groups of the split existence
 construction (`ChevalleyData.ChevGroup`, module
 `Langlands.GroupScheme.SplitExistence.Centralizer`) with the Library's
 intrinsic root subgroups `RelativeRoot.subgroup`. For Chevalley data `D` of a
@@ -78,5 +78,5 @@ The results are an internal deduction from the published split existence
 construction and the published monic root parametrization criterion. The
 classical content is that the root groups of a Chevalley group are the images
 of its root exponentials (Steinberg, *Lectures on Chevalley groups*, §3). The
-unit constructs no valuation, commutator estimate or Weyl group relation. It
+module constructs no valuation, commutator estimate or Weyl group relation. It
 does not transport the structure to other split groups.

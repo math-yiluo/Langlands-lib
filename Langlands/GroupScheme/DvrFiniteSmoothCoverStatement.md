@@ -1,7 +1,5 @@
 # A finite smooth cover after a DVR extension
 
-Worker 811.
-
 `Langlands.GroupScheme.DvrFiniteSmoothCoverStatement.{u}` is a proposition
 definition. This module supplies an interface and no proof.
 

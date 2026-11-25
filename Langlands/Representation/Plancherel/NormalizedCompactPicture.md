@@ -53,7 +53,7 @@ of these data, the source's Levi-inflated normalization comparison, product
 coefficient pictures, finite self-twist descent, smooth parameter families
 and the analytic Plancherel theorem remain separate obligations. No
 admissibility, irreducibility, quotient measure, second countability or
-compact-quotient hypothesis is needed for this unit.
+compact-quotient hypothesis is needed for this module.
 
 ## The fixed carrier and half-modulus removal
 

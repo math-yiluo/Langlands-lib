@@ -1,7 +1,5 @@
 # Interior estimates for elliptic left-invariant word operators on a Lie group
 
-Author: Worker 723.
-
 This module defines left-invariant differential operators on a Lie group given by words in
 finitely many tangent vectors at the identity. It also defines their commutative symbol and
 states the interior estimate for the elliptic ones. It proves nothing; the statement

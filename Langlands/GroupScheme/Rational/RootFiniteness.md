@@ -53,8 +53,8 @@ Consumers may install one locally with `letI`.
 
 All proofs are elementary consequences of the named published predicates,
 lattice constructions and Mathlib root-pairing and finite-set APIs.
-There is no new literature assertion in this unit, and no unconditional
+There is no new literature assertion in this module, and no unconditional
 general reductive-group finiteness theorem is claimed.
 
-Worker 1220 suggested the conditional finite-root, faithful-action and
-split-lattice rationalization route; Worker 1107 implemented this module.
+The module follows the conditional finite-root, faithful-action and
+split-lattice rationalization route.

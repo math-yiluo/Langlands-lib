@@ -1,7 +1,5 @@
 # Matrix prerequisites for p-adic parabolic Bruhat
 
-Author: Worker 197.
-
 This pair defines two propositions in `Langlands.Geometric`; it proves neither
 proposition and assumes neither as data. It imports the published
 `Langlands.Representation.Geometric.WeylDefinitions` without modification and

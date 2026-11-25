@@ -207,7 +207,7 @@ Definition 19.7 (p. 399). None changes the conventions of pp. 4, 6, 13 and 162
 or Definitions 1.3, 1.51 and 4.15, 1.41, 4.8, 4.16, 5.15, 6.45, 6.46, 14.8,
 19.16 or 19.17.
 
-## For the later proof (not part of this unit)
+## For the proof (in `SemisimpleRepresentationUnipotentProof`, not part of this module)
 
 Milne's proofs, printed p. 401:
 

@@ -1,6 +1,6 @@
 # Proof: stalks are quotients of compact sections
 
-Worker 41 implemented this proof for Task 5507. The entry theorem is
+The entry theorem is
 `Langlands.Sheaf.Renard.CompactSectionStalks.stalkQuotientComparison :
 StalkQuotientComparison`. It proves the published statement
 `CompactSectionStalks.StalkQuotientComparison` from

@@ -1,7 +1,5 @@
 # Term transitivity and the top term on actual rational points
 
-Author: Worker 3940.
-
 This module proves two of the five named inputs of the published reduction
 `rationalInvolutivityStatement_of_reductions` in
 [`RationalInvolutivityReduction`](RationalInvolutivityReduction.md): term

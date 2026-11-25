@@ -1,7 +1,5 @@
 # Fixedness of actual roots and their opposite factor pairs
 
-Author: Worker 1368.
-
 This is internal derived content from the published actual-root subgroup,
 normalizer-conjugation, opposite-pair transport, uniqueness and rational
 nontriviality interfaces. It makes no new literature assertion.

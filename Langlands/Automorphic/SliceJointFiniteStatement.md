@@ -1,6 +1,6 @@
 # Joint differential finiteness of actual automorphic slices
 
-Author: Worker 94. Module:
+Module:
 `Langlands.Automorphic.SliceJointFiniteStatement`.
 The proposition is
 `Langlands.Automorphic.AutomorphicSliceJointFiniteStatement`.
@@ -44,13 +44,13 @@ The conclusion is asserted separately for each slice. It does not assert
 finite dimension of the ambient smooth-function space or a uniform bound on
 the joint-orbit dimensions as `b` varies.
 
-## Internal provenance and proof obligation
+## Internal provenance and proof
 
 This is an internal composition target for published interfaces, rather than
 a new transcription of a source theorem. Its definitions come from
 `Automorphic.Forms`, `Automorphic.CenterFinite`, and
 `Global.ArchimedeanJointFinite`; no new literature theorem is invoked.
-The intended proof uses the following separately stated prerequisites:
+The proof uses the following separately stated prerequisites:
 
 1. `SliceFinitenessStatement` transports the unchanged simultaneous center
    condition to a slice's center orbit and the infinite-subgroup condition
@@ -61,12 +61,13 @@ The intended proof uses the following separately stated prerequisites:
 3. `ArchimedeanGL.SeparateJointFiniteStatement` combines its center and
    compact differential finiteness to obtain `IsJointFinite`.
 
-These names specify the proposed composition route. They are not hypotheses
+These names specify the composition route. They are not hypotheses
 of `AutomorphicSliceJointFiniteStatement`, and their definitions alone supply
 no proof of it. The Lean file defines the proposition and checks its full
-parameter telescope; proving the implication remains a separate obligation.
+parameter telescope; the implication is proved as
+`automorphicSliceJointFinite` in `SliceJointFiniteProof`.
 Finite level and polynomial growth remain in the automorphic premise even
-though the proposed finiteness argument only needs its compact and center
+though the finiteness argument only needs its compact and center
 parts.
 
 No reproducing kernel, convolution approximation, analytic regularity, or

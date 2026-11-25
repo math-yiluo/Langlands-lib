@@ -3,7 +3,7 @@ import Langlands.TraceFormula.GroupSchemeCuspidalLocalTraceFactorizationStatemen
 /-!
 # Local trace factorization on an irreducible cuspidal summand, with the local factor isotypic
 
-This module strengthens `GroupSchemeCuspidalLocalTraceFactorizationStatement` (Task 7701). That
+This module strengthens `GroupSchemeCuspidalLocalTraceFactorizationStatement`. That
 statement provides, for an irreducible closed invariant subspace `P` of the group-scheme
 cuspidal space `L²_cusp([G])` and a finite place `v`, an irreducible admissible representation
 `ρ_v` of `G(F_v)` whose character splits off the traces on `P`, in untwisted and twisted form.
@@ -14,7 +14,8 @@ nonzero `G(F_v)`-equivariant linear map into `P` is isomorphic to `ρ_v`. Togeth
 clauses determine the class of `ρ_v` by `P`, so the local factor can be compared with local
 components given by other means.
 
-The argument is that of Task 7701. Since `G(F_v)` is of type I, the unitary representation on
+The argument is the one for `GroupSchemeCuspidalLocalTraceFactorizationStatement`. Since `G(F_v)`
+is of type I, the unitary representation on
 `P` is a Hilbert tensor product `π_v ⊗̂ π^v` with `G(F_v)` acting on the first factor
 (Getz–Hahn, Theorem 3.10.2; Folland, Theorem 7.17), and `ρ_v` is the representation on the
 smooth vectors of `π_v`. Composing an equivariant map into `P` with `id ⊗ λ` for a suitable

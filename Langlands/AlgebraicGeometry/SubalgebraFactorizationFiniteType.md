@@ -1,7 +1,5 @@
 # Local finite type from factorizations through finitely generated subalgebras
 
-Author: Worker 3643.
-
 Module `Langlands.AlgebraicGeometry.SubalgebraFactorizationFiniteType` proves an
 elementary sufficient criterion for local finite type, derived internally: a scheme `P`
 over `Spec R` is locally of finite type as soon as every morphism from the spectrum of an

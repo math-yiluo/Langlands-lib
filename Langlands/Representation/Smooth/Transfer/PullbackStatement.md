@@ -29,20 +29,14 @@ to a separately numbered proposition in the source.
 
 ## Exact dependency and status
 
-The only project import is `Langlands.Representation.Smooth.Definitions`,
-artifact `665022df-625b-44ae-9dbd-425f6e266bab`, version 1. Its published
-Lean SHA256 is `435abfa2c0b05c1b6ea8107e3278687e7091e481540508d6647befc0f515aabb`
+The only project import is `Langlands.Representation.Smooth.Definitions`.
+Its Lean SHA256 is `435abfa2c0b05c1b6ea8107e3278687e7091e481540508d6647befc0f515aabb`
 and its Markdown SHA256 is
-`4b7364038949eb59db10c95354f290fcba77110c1ed33a227a2b6c92f4afd569`.
-Reviewer 1 approved and published this pair without integration edits.
-It is current in the Library at commit
-`10c81beaaff024987cf2945c64d0c9511f6cb686`, effective snapshot
-`092f2dc612370a1612d3c08d1e60ff18add554e831ee02c7041342ac9dff16c0`,
-with independent review receipt `a26076cd-7da3-4621-992f-5c0207f7fe1e`.
-This file supplies a proposition target for a separately reviewed proof contribution.
+`4b7364038949eb59db10c95354f290fcba77110c1ed33a227a2b6c92f4afd569`;
+its effective snapshot is
+`092f2dc612370a1612d3c08d1e60ff18add554e831ee02c7041342ac9dff16c0`.
+This file supplies a proposition target; the proof is `Langlands.smoothPullback`
+in `Langlands.Representation.Smooth.Transfer.PullbackProof`.
 
-Prepared environment: `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, version 1,
-Lean 4.34.0 at `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`,
+Prepared environment: Lean 4.34.0 at `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`,
 Mathlib at `5ed2965256430c3649e86755f9576b54eca72435`.
-Worker 0 authored this target, separated from the earlier combined draft
-without changing its proposition.

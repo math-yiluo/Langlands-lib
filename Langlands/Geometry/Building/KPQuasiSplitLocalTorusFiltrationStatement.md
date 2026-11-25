@@ -1,7 +1,7 @@
 # KP Lemma 7.2.3 over `K = F^ur` for the torus filtration of quasi-split building data
 
 This module states one proposition, `QuasiSplitLocalTorusFiltrationStatement`. It says that
-the filtration `Z(K)_r = B.centralizerTorusFiltration hZ r` of D1 (the published torus
+the filtration `Z(K)_r = B.centralizerTorusFiltration hZ r` of `KPLocalMoyPrasadGroups` (the published torus
 filtration `localTorusFiltration` of the centralizer `Z` of quasi-split building data over
 the maximal unramified extension `K = F^ur`) is commutator friendly (KP Definition 7.2.1, the
 property that KP Lemma 7.2.3 asserts), root compatible, and stable under conjugation by
@@ -47,9 +47,9 @@ The statement quantifies over:
   unramified extension, the inertia fixed field), and
   `B : MaximalUnramified.BuildingData F H`, that is
   `IntegerValuationBuildingData (MaximalUnramified.valuation F) H`;
-- D1's binder (Task 5875, `079e96f3-eb4c-4477-8a40-a1acffc66e49`, module
-  `Langlands.Geometry.Building.KPLocalMoyPrasadGroups`): `hZ : IsTorus B.centralizer.Z`, which
-  makes `Z = B.centralizer.Z` a torus. D1 turns it into the torus that `localTorusFiltration`
+- the binder of the module
+  `Langlands.Geometry.Building.KPLocalMoyPrasadGroups`: `hZ : IsTorus B.centralizer.Z`, which
+  makes `Z = B.centralizer.Z` a torus. That module turns it into the torus that `localTorusFiltration`
   accepts: `B.centralizerTorus hZ` is `Z` with commutativity `hZ.isCommMonObj`, and the
   instance `centralizerTorus_isAffine` makes it affine.
 
@@ -59,7 +59,7 @@ characteristic, splitness or rank assumption. The binder `hZ` is exactly the con
 `Z` is a torus, that is, that `H` is quasi-split (KP §7.2: "When `G` is quasi-split, then
 `Z = T` is a maximal torus").
 
-The two groups are D1's definitions, imported from `KPLocalMoyPrasadGroups`:
+The two groups are definitions imported from `KPLocalMoyPrasadGroups`:
 
 - `Z(K)_r := B.centralizerTorusFiltration hZ r`, a subgroup of
   `rationalPoints B.centralizer.Z`. It is by definition (`centralizerTorusFiltration_eq`,
@@ -69,8 +69,8 @@ The two groups are D1's definitions, imported from `KPLocalMoyPrasadGroups`:
   `rationalPoints H`, with `j = B.centralizer.j`.
 
 The statement uses no second filtration of tori. If `Z` is presented by another torus
-`T` with `e : T.toGrp ≅ Z`, D1's transport lemma `centralizerTorusFiltration_eq_map_iso`
-gives `Z(K)_r = e(T(K)_r)`, so the statement also applies to that presentation.
+`T` with `e : T.toGrp ≅ Z`, the transport lemma `centralizerTorusFiltration_eq_map_iso` of
+`KPLocalMoyPrasadGroups` gives `Z(K)_r = e(T(K)_r)`, so the statement also applies to that presentation.
 
 ## The statement
 
@@ -111,19 +111,19 @@ The other clauses of Definition 7.2.1 — a decreasing separated filtration of `
 `Z(K)_0 = Z(K)^0` — are not part of this statement. For `localTorusFiltration` the Library
 already has them: `localTorusFiltration_antitone`, `iInf_localTorusFiltration_eq_bot`,
 `localTorusFiltration_le_characterValuationKernel` (every term lies in `T(K)^1`) and
-`localTorusFiltration_zero` (see (1) below). D1 restates them for `Z(K)_r` as
+`localTorusFiltration_zero` (see (1) below). `KPLocalMoyPrasadGroups` restates them for `Z(K)_r` as
 `centralizerTorusFiltration_antitone`, `iInf_centralizerTorusFiltration_eq_bot`,
 `centralizerTorusFiltration_le_characterValuationKernel` and
 `centralizerTorusFiltration_zero`.
 
 **The `2r` bound is left out on purpose.** The statement does not include the sharper bound
 `z ∈ Z(K)_{2r}` when `u ∈ U_{2a}(K)` or `u' ∈ U_{-2a}(K)`, the `K`-level analogue of
-`IsDoubleRootCommutatorFriendly` (module `KPMoyPrasadDoubleRootStatement`). In Task 5647's
-decomposition the bound is a step of the proof of S2 (Task 5892,
-`15ba3e2b-27c8-46a5-bf30-f511e8ee6c4f`, the group properties of `G(K)_{x,r}`): at the `K`
-level it follows from clause 1 above together with S2's other group properties, after a
-translation of `x` (KP Fact 7.3.8). Putting it here would make the proofs of S1 and S2
-depend on each other.
+`IsDoubleRootCommutatorFriendly` (module `KPMoyPrasadDoubleRootStatement`). The bound is a
+step of the proof of `LocalMoyPrasadGroupPropertiesStatement` (the group properties of
+`G(K)_{x,r}`), where it enters as `KPLocalDoubleRootCommutatorStatement`. At the `K`
+level it follows from clause 1 above together with the other group properties, after a
+translation of `x` (KP Fact 7.3.8). Putting it here would make the proofs of this statement
+and of `LocalMoyPrasadGroupPropertiesStatement` depend on each other.
 
 ## Why Lemma 7.2.3 applies to `localTorusFiltration`
 
@@ -171,8 +171,8 @@ version over `K` may be needed.
 
 ## Provenance
 
-Task 5890 (`4f714327-f957-4084-b29f-8d5288f15097`) is S1 of Task 5647's decomposition
-(Task 5647 proves `CentralizerFiltrationDoubleRootExistenceStatement`, KP §9.8 and Lemma
+This statement is an input to the proof of
+`CentralizerFiltrationDoubleRootExistenceStatement` (KP §9.8 and Lemma
 9.8.1). KP construct `Z(F)_r = Z(K)_{x,r} ∩ Z(F)` with `K = F^ur`, and the proof of Lemma
 9.8.1 uses Lemma 7.2.3 for the quasi-split group `H = G_K`. The clause forms are copied from
 the published `F`-level predicates so that the `F`-level reduction can use them directly.

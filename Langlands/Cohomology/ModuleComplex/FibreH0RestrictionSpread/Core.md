@@ -1,7 +1,5 @@
 # Spreading degree-zero bijectivity for finite free complexes
 
-Author: Worker 1119.
-
 Module `Langlands.Cohomology.ModuleComplex.FibreH0RestrictionSpread.Core`, namespace
 `Langlands.Cohomology.ModuleComplex.FibreH0Spread`. It is a helper for the proof of
 `Langlands.Cohomology.ModuleComplex.FibreH0RestrictionSpreadStatement` (see `Main.md`). It

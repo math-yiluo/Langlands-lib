@@ -1,7 +1,7 @@
 # The rational geometric-lemma K0 expansion from the parabolic points statement
 
 Module: `Langlands.Representation.Aubert.General.RationalGeometricK0Assembly`,
-namespace `Langlands.Aubert.General.RationalPointFamily`. Author: Worker 4021.
+namespace `Langlands.Aubert.General.RationalPointFamily`.
 
 `rationalGeometricK0Expansion_of_standardParabolicPoints` proves the published
 target `RationalGeometricK0ExpansionStatement.{u, v}`, the whole unapplied

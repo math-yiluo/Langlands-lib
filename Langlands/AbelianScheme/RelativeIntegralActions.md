@@ -8,8 +8,9 @@ arbitrary universe `u`. No noetherian, projective or representability
 hypothesis is needed for the constructions.
 
 For `T : Over S`, the ring is the actual categorical endomorphism ring
-of `(baseChange T.hom).obj B`. Its underlying set is exactly the
-published `Cartier.RelativeHom B.toCommGroupScheme B.toCommGroupScheme T`.
+of `(baseChange T.hom).obj B`. Its elements correspond to the elements of the
+published `Cartier.RelativeHom B.toCommGroupScheme B.toCommGroupScheme T`
+through `CategoryTheory.End.homEquiv` (an endomorphism and its underlying morphism).
 Multiplication has the existing categorical convention `f*g = g ≫ f`;
 addition is the pointwise commutative group law.
 
@@ -25,11 +26,18 @@ It includes the canonical iterated-pullback comparisons.
 
 `relativeEndRingFunctor B` packages these rings and restriction maps on
 the full category `(Over S)ᵒᵖ`. Its functor laws are the published
-`restrict_id` and `restrict_comp`. The theorem
-`relativeEndRingFunctor_forget` is a definitional equality with the
-published relative-Hom presheaf after forgetting its additive structure.
-It therefore fixes the same actual carriers and the same restriction
-maps used in the relative End representability target.
+`restrict_id` and `restrict_comp`. The natural isomorphism
+`relativeEndRingFunctorForgetIso` identifies it, after forgetting the ring
+structure, with the published relative-Hom presheaf after forgetting its
+additive structure. Its component at `T` is `CategoryTheory.End.homEquiv`:
+the forward map sends an endomorphism `f` to `f.asHom`
+(`relativeEndRingFunctorForgetIso_hom_app`), and the inverse sends a relative
+homomorphism `g` to `CategoryTheory.End.of g`
+(`relativeEndRingFunctorForgetIso_inv_app`); both are `simp` lemmas on elements
+of the two presheaves. Naturality holds by definition, since
+`relativeEndRestrict` is `Cartier.restrict` on underlying morphisms. The
+isomorphism therefore matches the actual carriers and the restriction maps used
+in the relative End representability target.
 
 For any finite integer basis `b : Basis I ℤ O` of a unital ring `O`,
 `relativeIntegralActionFunctor B b` assigns the universe lift of actual

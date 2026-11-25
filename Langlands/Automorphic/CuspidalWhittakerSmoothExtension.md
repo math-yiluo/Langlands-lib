@@ -120,5 +120,6 @@ assumptions.
 
 The provenance is internal: a composition of the published band-to-word
 estimate, actual Whittaker linearity and finite-word Hahn--Banach extension,
-prepared for the analytic comparison of Task 7293. No literature statement is
+prepared for the analytic comparison of Whittaker functions in the proof of multiplicity one
+for cuspidal operator realizations (`CuspidalOperatorMultiplicityOneStatement`). No literature statement is
 translated.

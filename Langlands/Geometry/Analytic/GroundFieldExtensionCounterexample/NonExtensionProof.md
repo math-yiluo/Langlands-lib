@@ -4,8 +4,7 @@
 `StrongHom` between the `F₄`-extensions of the source and target presentations
 retains every pair of charts admissible for `weakMap` with its ground-field
 extended pullback. The statement does not prescribe the new base map.
-This is the internal Task 7100 counterexample, using Worker 69's proof from
-shared draft revision 8. All declarations are in the namespace
+This is an internal counterexample. All declarations are in the namespace
 `Langlands.Analytic.GroundFieldExtensionCounterexample`.
 
 Write `ι` for the inclusions `targetInclusion` and `sourceInclusion`, `ι_L` for

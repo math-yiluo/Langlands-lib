@@ -1,7 +1,5 @@
 # The actual adjoint real cocharacter and root-annihilator comparison
 
-Author: Worker 1408.
-
 `AdjointRealCocharacterComparisonStatement` is a Prop-valued statement
 target. This file proves nothing. It quantifies over every field
 `k : Type u`, with the universe `u` arbitrary, every pair of group schemes
@@ -62,7 +60,8 @@ central isogeny from a simply connected group appears.
 
 Conclusion 3 follows from conclusions 1 and 2 by Mathlib's first isomorphism
 theorem. It is included as a separate conjunct because the apartment
-consumer needs exactly this map. Conclusion 1 together with the premise `h`
+construction that uses it (`translationEquiv` in
+`Geometry.Building.AdjointTranslation`) needs exactly this map. Conclusion 1 together with the premise `h`
 gives `IsAdjointSplitTorusComparison q i j p`. So the comparison interface
 becomes a consequence of this target and is not one of its inputs.
 
@@ -95,11 +94,15 @@ with KP's `V(A_G)`. This statement therefore uses the root annihilator
 directly and does not mention `A_G`. The identification of the root
 annihilator with the split component is the separate published target
 `RelativeSplitCentralDirectionsStatement` (in
-`Langlands.GroupScheme.Rational.RelativeCentralDirectionsStatement`), whose
-proof belongs to another task. This statement neither restates nor assumes
+`Langlands.GroupScheme.Rational.RelativeCentralDirectionsStatement`), proved
+as `relativeSplitCentralDirections` in
+`Langlands.GroupScheme.Rational.RelativeSplitCentralDirectionsProof`. This
+statement neither restates nor assumes
 that identification.
 
-The intended algebraic route, which the proof successor need not follow:
+The intended algebraic route, which a proof need not follow (the Library
+proves the statement as `adjointRealCocharacterComparison` in
+`Adjoint.RealCocharacterProof`):
 
 - Kernel of `p`. The published theorem
   `IsAdjointSplitTorusImage.mem_range_kernel_iff` identifies the actual

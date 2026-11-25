@@ -32,4 +32,5 @@ theorems, with no additional geometric or field hypotheses and no new external
 source assertion. The imported quotient-existence proof and conditional
 reduction have their own paired explanations of their constructions and
 provenance. This application discharges the quotient-existence premise of the
-conditional reduction and proves the unrestricted published host proposition.
+conditional reduction and proves the unrestricted published proposition
+`SmoothAlgebraicallyClosedUnipotentRadicalExtensionStatement.{u}`.

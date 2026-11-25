@@ -22,8 +22,8 @@ modules satisfying the three hypotheses are covered; no further hypothesis is ad
 
 ## Provenance
 
-Derived. The theorem only assembles results proved in other modules: the reduction of Worker
-379 (`ComplexJacquetModuleFiniteReduction`, with its bridge `ComplexJacquetBimoduleBridge`) and
+Derived. The theorem only assembles results proved in other modules: the reduction
+(`ComplexJacquetModuleFiniteReduction`, with its bridge `ComplexJacquetBimoduleBridge`) and
 the six Bernstein–Gelfand input proofs listed below. The assembly is ours.
 
 ## Proof

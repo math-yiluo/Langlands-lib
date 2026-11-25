@@ -1,7 +1,5 @@
 # Smoothness and connectedness of diagonalizable groups: statement
 
-Worker 3483.
-
 `Langlands.GroupScheme.DiagonalizableSmoothConnectedCriteriaStatement.{u}` is a
 proposition definition. This module does not prove it.
 
@@ -115,8 +113,9 @@ assumption does.
     (`Torus/Diagonalizable`), and `IsSplitTorus.smooth` (`Torus/Split`) and
     `IsSplitTorus.connectedSpace` (`Torus/SplitReductiveProof`) then give
     smoothness and connectedness of `D(Λ)`.
-- Parts 1 and 2 have no Lean declaration in the Library that was found by
-  searching for `Smooth` and `ConnectedSpace` of `Diagonalizable.groupScheme`.
+- Parts 1 and 2 are proved, together with part 3, by
+  `Diagonalizable.diagonalizableSmoothConnectedCriteria` (module
+  `Torus.DiagonalizableSmoothConnectedCriteriaProof`).
   Results a proof can build on include `smooth_gm` and `smooth_pi`
   (`GroupScheme/SmoothProducts`: `𝔾_m` and finite products of smooth group
   schemes are smooth), `muFiniteEtale` (`GroupScheme/MuFiniteEtaleProof`:
@@ -126,5 +125,5 @@ assumption does.
   ring).
 
 The published family-2 ledger (`notes/group-schemes/ledger-family-2-tori.md`,
-row D5) lists these criteria as an open target; this module supplies the
-statement.
+row D5) lists these criteria; this module supplies the statement, and
+`Torus.DiagonalizableSmoothConnectedCriteriaProof` proves it.

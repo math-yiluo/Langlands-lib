@@ -1,7 +1,5 @@
 # Statement: semisimple conjugation on a commutative unipotent normal subgroup
 
-Worker 75.
-
 `Langlands.GroupScheme.SemisimpleUnipotentCentralizerStatement.{u} : Prop` encodes
 Milne's Lemma 16.39. It does not prove the lemma. It is an input to the source proof
 of Theorem 16.40 (the Library's

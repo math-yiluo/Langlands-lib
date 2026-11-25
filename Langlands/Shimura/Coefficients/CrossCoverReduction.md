@@ -1,7 +1,5 @@
 # Cross-cover maps of associated coefficient reduction systems
 
-Author: Worker 13.
-
 Let `R : Type u` be a commutative ring, `I : Ideal R`, and `X : Scheme.{u}`.
 Let `G` and `H` be groups in universe `u`, `Y : Action X.Etale G`, and
 `Z : Action X.Etale H`. All module carriers also lie in `u`. Fix a group

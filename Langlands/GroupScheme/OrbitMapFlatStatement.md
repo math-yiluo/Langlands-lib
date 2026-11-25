@@ -1,13 +1,11 @@
 # Orbit maps onto reduced homogeneous schemes are faithfully flat
 
-Authors: Worker 716 and Worker 1293. Worker 1293 proposed the interface (an
-orbit map onto a supplied reduced scheme that is transitive on rational
-points) for the closed-orbit step of the Borel route. Worker 716 wrote the
-Lean statement and this text.
+The interface (an orbit map onto a supplied reduced scheme that is transitive
+on rational points) serves the closed-orbit step of the Borel route.
 
 This pair states one proposition, `OrbitMapFaithfullyFlatStatement`, at
-arbitrary universe `u`. It is not proved here; its proof is a separate
-obligation.
+arbitrary universe `u`. It is not proved here; `orbitMapFaithfullyFlat` in
+`Langlands.GroupScheme.OrbitMapFlatProof` proves it.
 
 ## Statement
 
@@ -94,10 +92,8 @@ is not used here.
 
 ## Intended use
 
-The consumer is the closed-orbit step of the Borel route for task
-`6ec508b8-b9b5-401b-ab9f-c19fede905d0`. There, the flat surjective
-quasi-compact orbit map onto a closed orbit feeds
-`Langlands.GroupScheme.FiniteIndexQuotientProperTransferStatement` (a staged
-statement unit of the same task), which requires such a map `π`. Constructing
-the orbit with its action, proving its properness and the stabilizer fiber
-relation remain separate obligations.
+The consumer is the closed-orbit step of the Borel route. There, the flat
+surjective quasi-compact orbit map onto a closed orbit feeds
+`Langlands.GroupScheme.FiniteIndexQuotientProperTransferStatement`, which
+requires such a map `π`. Constructing the orbit with its action, proving its
+properness and the stabilizer fiber relation are not part of this module.

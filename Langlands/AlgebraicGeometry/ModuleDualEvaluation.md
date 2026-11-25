@@ -213,9 +213,7 @@ by the sectionwise formula f ⊗ m ↦ f(m).
 The module only constructs the evaluation maps and identifies them. It does not
 prove that they are isomorphisms locally or globally, for local rank one, or for
 invertible modules. It also does not prove their naturality in M or N, a tensor and
-internal-Hom adjunction, or compatibility of internal Hom with restriction. Those
-belong to the parent task `45730c00-045d-4204-bf5f-1f49e61f733b` and its follow-up
-tasks.
+internal-Hom adjunction, or compatibility of internal Hom with restriction.
 
 ## Implementation notes
 

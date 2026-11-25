@@ -1,7 +1,5 @@
 # Mixed mirabolic two-orbit coverage and open-first ordering
 
-Author: Worker 1012.
-
 `Langlands.GeneralLinear.Mirabolic.MixedOrbit.MirabolicMixedOrbitCoverageStatement`
 is a proposition definition. It asserts the two geometric orbit enumerations
 from Bernstein–Zelevinsky (1977), §7.2, for 4.13(b),(c), at GL rank
@@ -171,12 +169,12 @@ The latter uses the actual quotient, actual `cosetOrbit` sets, disjointness
 and openness. The quoted group, matrix and topology construction laws introduce
 no representation-theoretic premise.
 
-## Audit against the complete inherited exclusions
+## Results not used
 
-The checks below cover mathematical conclusions, proof successors and
-transitive dependents as well as the named modules/tasks. No theorem proving
-any excluded conclusion is imported or used. There is no proof of the new
-orbit assertion whose dependencies could be replaced by a consumer premise.
+The checks below cover mathematical conclusions and their transitive
+dependents as well as the named modules. No theorem proving
+any excluded conclusion is imported or used. This file contains no proof of the
+orbit assertion whose dependencies could be replaced by a premise of a later result.
 
 1. **Plus functors and compatibility.** No plus functor, adjunction, BZ77
    4.13(d), general Leibniz proof or derivative compatibility is imported.
@@ -190,99 +188,61 @@ orbit assertion whose dependencies could be replaced by a consumer premise.
    constructions, not proofs of those comparisons.
 3. **Whittaker finiteness.** No `Langlands.Whittaker` module is imported.
    In particular the closure avoids
-   `SupercuspidalCoinvariantFinitenessStatement`
-   (`62de5903-b616-4b5c-88eb-a066b77c5467`),
-   `IrreducibleCoinvariantFinitenessStatement`
-   (`5ab445dc-d2b4-4072-80d1-6370870a4a26`),
-   `LeviCuspidalCoinvariantFinitenessStatement`
-   (`3ff5c8fb-397c-4345-bcb3-5d98a0993d18`) and the dependent finite-length
-   route `5428fe2c-013c-482d-aa6e-7df43e7191aa`. No arbitrary-character or
+   `SupercuspidalCoinvariantFinitenessStatement`,
+   `IrreducibleCoinvariantFinitenessStatement`,
+   `LeviCuspidalCoinvariantFinitenessStatement` and the dependent finite-length
+   route. No arbitrary-character or
    degenerate-character finiteness conclusion is used.
 4. **Segment-pair structure, commutation and gluing.** The closure has no
    segment, head, socle or Jacquet module. It avoids
-   `UnlinkedSegmentSocleProductIrreducible`
-   (`23e98d90-6055-4e35-91a9-b0f5d8a84961`),
-   `LinkedSegmentSocleReverseProductStructure`
-   (`a55c4267-7e3a-43f6-8bb1-ce319e1d0aa9`),
-   `LinkedSegmentSoclePairReducible`
-   (`8fa9f68b-fa1b-431a-97f6-5b163964d1fc`),
+   `UnlinkedSegmentSocleProductIrreducible`,
+   `LinkedSegmentSocleReverseProductStructure`,
+   `LinkedSegmentSoclePairReducible`,
    `JuxtaposedSegmentSocleReverseProductStructure` and
-   `LinkedSegmentSocleReverseProductQuotientHom`
-   (`7ff2a1e9-89dc-439e-a861-a567b3db92bf`),
-   `SegmentSocleProductIrreducibility`
-   (`2ae5cbe5-0701-4509-88a0-db8cbeb35be4`),
-   `AdjacentUnlinkedSegmentSocleSwap`
-   (`e3634665-571b-4852-9f4c-bab8a1053434`,
-   `cded83f3-df9c-4018-bc61-dc54f5c1f9ab`),
-   `TwoSegmentSocleCommutation`
-   (`426911b4-6620-413f-8065-04b25287f3bd`,
-   `66e3b87c-647e-41e4-af18-df4d436765f0`) and
-   `LinkedSegmentSocleGluing`
-   (`c84cd52c-3ff3-4024-be50-8b84dd480888`,
-   `6780b79c-9526-46aa-b8b4-00377d68b1ea`).
+   `LinkedSegmentSocleReverseProductQuotientHom`,
+   `SegmentSocleProductIrreducibility`,
+   `AdjacentUnlinkedSegmentSocleSwap`,
+   `TwoSegmentSocleCommutation` and
+   `LinkedSegmentSocleGluing`.
 5. **Individual and ordered existence, criteria and exhaustion.** The same
-   closure avoids individual special-head/reverse-socle existence
-   (`67279e36-f3c2-42e3-9302-11729784042e`), individual
-   segment-socle/reverse-head existence
-   (`4ca79bbd-589e-476b-9f65-661e799984b5`),
-   `OrderedMultisegmentSocleExistence`
-   (`23189526-80b0-4828-a6d4-7ebec2cbeef5`), socle exhaustion
-   (`f3a69bc8-7312-4f82-8a7d-ea3c8188cb63`),
-   `SegmentHeadProductIrreducibility`
-   (`8364e73f-14ec-4d14-8f2b-1555a7c1ce95`),
-   `GenericSegmentProductUniqueness`
-   (`30341ae4-65f2-4a0e-9283-763db01a409e`), multisegment special-head
-   exhaustion (`3bfb61fa-1129-4fc9-83fd-7fcfec22106e`), ordered strong-head
-   existence (`ebea9a8a-9b21-4208-aa31-98c2dea1f8a3`), quotient coverage
-   (`20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584`) and ordered conversion
-   (`8252833d-c269-41a9-824c-5879e531b23b`).
+   closure avoids individual special-head/reverse-socle existence, individual
+   segment-socle/reverse-head existence,
+   `OrderedMultisegmentSocleExistence`, socle exhaustion,
+   `SegmentHeadProductIrreducibility`,
+   `GenericSegmentProductUniqueness`, multisegment special-head
+   exhaustion, ordered strong-head
+   existence, quotient coverage and ordered conversion.
 6. **Classification and square integrability.** No classification module
-   is imported. The closure avoids analytic segment classification
-   (`aca8805b-054f-4d56-8045-12db7f623404`),
-   `SegmentSpecialEssentialSquareIntegrability`
-   (`5eece9e8-7f6b-4ea9-abea-a1f9f1b8c807`), tempered uniqueness
-   (`52e97845-36bb-457d-b76f-70753334b88c`),
-   `SquareIntegrableLanglandsClassification`
-   (`1cb45da2-7007-4351-a694-594fb148b8d1`), square-integrable exhaustion
-   (`cd8ab97c-0b78-4bce-97c4-d307a28159a4`) and regular exhaustion
-   (`bf433f0a-921a-428c-b0c0-6475438125ac`).
+   is imported. The closure avoids analytic segment classification,
+   `SegmentSpecialEssentialSquareIntegrability`, tempered uniqueness,
+   `SquareIntegrableLanglandsClassification`, square-integrable exhaustion
+   and regular exhaustion.
 7. **Segment derivatives, Jacquet formulas and Ze80.** No segment derivative
    formula, segment existence/Jacquet formula, or segment classification is
-   used, including parts (b),(d),(e),(f) of the inherited six-statement
-   contribution. The closure avoids `SegmentFullJacquetFormula`
-   (`ed48ae06-964c-4c84-9e62-978f5a953ca7`),
-   `SegmentHeadJacquetFormula`
-   (`55ad1e10-62d8-46b7-a081-909ef0056426`),
-   `SegmentSocleJacquetFormula`
-   (`b95105c6-f8bb-4641-ae53-2f49d1e7f034`) and
-   `SegmentSpecialJacquetExponentNormFormula`
-   (`92aea10f-62ac-4e0b-bd4a-9a80909797c5`).
+   used. The closure avoids `SegmentFullJacquetFormula`,
+   `SegmentHeadJacquetFormula`,
+   `SegmentSocleJacquetFormula` and
+   `SegmentSpecialJacquetExponentNormFormula`.
    Ze80 §§3.5, 9.6, Theorems 4.2, 9.3, 9.7 and classification/exhaustion
    results are not used.
 8. **Two-supercuspidal conclusions.** No supercuspidal theorem is imported.
-   The closure avoids `TwoSupercuspidalNonadjacentProductIrreducible`
-   (`3c9849a4-a6c0-43ac-9982-d15ed76bf1e9`) and
-   `TwoSupercuspidalProductStructure`
-   (`ab61f565-1427-4746-ba77-46097563e962`).
-9. **Dependency and control boundaries.** Pending statements, citations,
-   conditional assemblies and proof tasks are not proved orbit inputs.
+   The closure avoids `TwoSupercuspidalNonadjacentProductIrreducible` and
+   `TwoSupercuspidalProductStructure`.
+9. **Dependency boundaries.** Unproved statements, citations and
+   conditional assemblies are not proved orbit inputs.
    Missing derivative or tensor inputs are not replaced by assumptions
-   from consumers. The inherited operator pause of Worker 127, suspension
-   of Worker 8 and hold of Worker 114 remain intact; this work grants no
-   authority to resume them. No contact with Worker 127 was made.
+   taken from results that use this statement.
 
-The exact proof successor must retain all inherited restrictions directly
-and transitively and prove this unchanged Library proposition. Statement
-acceptance and source correspondence alone do not supply orbit geometry to
-the host mixed-minus proof or its consumers.
+The proposition is proved, unchanged and under the same exclusions, as
+`mirabolicMixedOrbitCoverage` in `Langlands.Group.GL.MirabolicMixedOrbitCoverageProof`.
+Source correspondence alone does not supply orbit geometry to
+the mixed-minus proof or the results that use it.
 
-## Development validation
+## Validation
 
-The exact proposition declaration compiled and was inspected in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, with Lean 4.34.0 and Mathlib
+The exact proposition declaration compiled and was inspected with Lean 4.34.0
+and Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`. The inspection reports a
 Prop-valued definition with only universe `uF`, no errors or warnings, and
 only `propext`, `Classical.choice` and `Quot.sound` in its axiom closure.
-This is development evidence. Independent semantic acceptance and publication
-remain required, and neither compilation nor statement acceptance proves the
-orbit assertion.
+Compilation of the statement does not prove the orbit assertion.

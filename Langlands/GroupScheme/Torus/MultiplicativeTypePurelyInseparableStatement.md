@@ -1,7 +1,5 @@
 # Statement: purely inseparable extensions do not change groups of multiplicative type
 
-Worker 75.
-
 `Langlands.GroupScheme.MultiplicativeTypePurelyInseparableStatement.{u} : Prop` is a
 statement-only, `Prop`-valued definition. This module does not prove it, and it adds no
 other definitions, theorems or axioms. It imports:
@@ -38,7 +36,7 @@ def MultiplicativeTypePurelyInseparableStatement : Prop :=
   `k'` that is separable over `k` lies in the image of `k`. So `k'/k` is a purely
   inseparable algebraic extension; it need not be finite.
 - `GroupScheme.baseChange (Spec.map (CommRingCat.ofHom (algebraMap k k')))`: the
-  published base-change functor along `Spec k' → Spec k` (module
+  base-change functor along `Spec k' → Spec k` (module
   `Langlands.AbelianScheme.GroupScheme`), the scheme pullback with its induced group law.
   On objects it sends `H` to `H_{k'}`; on morphisms it sends a homomorphism `f : G ⟶ H`
   to its base change `f_{k'} : G_{k'} ⟶ H_{k'}`. It is the same functor used in

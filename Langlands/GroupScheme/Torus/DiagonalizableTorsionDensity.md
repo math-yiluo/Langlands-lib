@@ -1,7 +1,5 @@
 # Torsion points are dense in a diagonalizable group
 
-Worker 732.
-
 Module `Langlands.GroupScheme.Torus.DiagonalizableTorsionDensity`. This is an internal
 helper module for the proof of
 `Langlands.GroupScheme.MultiplicativeTypeTorsionDensityStatement`

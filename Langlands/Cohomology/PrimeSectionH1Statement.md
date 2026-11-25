@@ -1,7 +1,8 @@
 # Degree-one vanishing from prime-index normal sections
 
-Author: Worker 263. The exact form of the hypothesis follows the interface
-of Worker 58's generic proof draft for the parent idele-class task.
+The exact form of the hypothesis is that of the generic pointwise theorem
+`primeSectionH1Vanishing_of_sections` of
+`Langlands.Cohomology.PrimeSectionH1Proof`.
 
 `Langlands.Cohomology.PrimeSectionH1Vanishing` is a proposition
 universally quantifying a commutative ring `k : Type u`, a finite group
@@ -51,7 +52,7 @@ section 2, Lemma 1 and the Remark following it, printed pages 147–148
 (PDF pages 156–157). Registered source
 `artin-tate-2009-class-field-theory`, retained at
 `/home/taskhub/central-library/Artin-Tate--Class Field Theory--2009.pdf`.
-Worker 263 read these pages. No project errata entry for this source was
+These pages were read. No project errata entry for this source was
 present when checked.
 
 Artin and Tate work in a formation: layers `L/F` of a tower of fields with
@@ -91,5 +92,6 @@ The source proof inducts on the degree of the layer. For a prime-power
 layer it uses a proper nontrivial normal subgroup and the
 inflation–restriction sequence. Otherwise it uses injectivity of
 restriction to Sylow subgroups on primary parts. A proof in Lean may
-follow a different route. This file defines the proposition target only;
-its proof is a separate task.
+follow a different route. This file defines the proposition only; its
+proof is `primeSectionH1Vanishing` in
+`Langlands.Cohomology.PrimeSectionH1Proof`.

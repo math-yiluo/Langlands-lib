@@ -133,6 +133,7 @@ lemma levelDataBaseChange_comp_multiple (U : HarrisLevel D) (x : DataS U) :
     rationalDualBaseChangeHom_homToHom0] at hm
   exact hm
 
+set_option maxHeartbeats 1000000 in
 /-- The polarized isogeny level map of the actual direct-to-successive
 comparison is the geometric Tate composition comparison. -/
 lemma levelIso_pullbackComp (U : HarrisLevel D) (x : DataS U)
@@ -177,18 +178,19 @@ lemma levelIso_pullbackComp (U : HarrisLevel D) (x : DataS U)
     (D.harrisHodgePELForm C) t
   apply Subtype.ext
   simp only [PolarizedWeilLevel.levelIso, Tate.weilAdelicLevelIsogeny,
-    Tate.weilAdelicLevelBaseChangeComp, InvariantOrbit.equiv, Equiv.coe_fn_mk,
-    InvariantOrbit.map_val]
+    Tate.weilAdelicLevelBaseChangeComp, InvariantOrbit.equiv, Equiv.coe_fn_mk]
   apply RightOrbit.map_congr (G := ScalarExtensionSimilitudes A A (Global.FiniteAdeles ℚ)
     (D.harrisHodgePELForm C))
   · apply Tate.weilAdelicFrameIsogeny_right
+  · intro y g
+    apply Tate.weilAdelicFrameBaseChangeComp_right
   · intro eta
     apply Subtype.ext
     apply LinearEquiv.ext
     intro v
     simp only [Tate.weilAdelicFrameIsogeny_apply, levelDataBaseChangeCompIso,
       RationalAlgebraAction.underlyingIso_pullbackCompIso]
-    exact congrFun (congrArg DFunLike.coe (Tate.rationalHomMap_ofHom
+    exact (congrFun (congrArg DFunLike.coe (Tate.rationalHomMap_ofHom
       (Over.mk t) (fun _ => True) (baseChangeCompIso b c x.1.actionObj.abelianScheme).hom))
       (eta.1 v) |>.trans
         (Tate.weilAdelicFrameBaseChangeComp_apply preservation composition unitCoherence
@@ -201,7 +203,7 @@ lemma levelIso_pullbackComp (U : HarrisLevel D) (x : DataS U)
           (dualD x.1).evaluation
           (dualC (pullB U x).1).hasDual (dualC (pullB U x).1).geometry
           (dualC (pullB U x).1).inversePoincare (dualC (pullB U x).1).evaluation
-          t eta v).symm
+          t eta v).symm : _)
 
 local notation "relAt" => PolarizedWeilLevel.isogenySetoid preservation composition
   unitCoherence associativity comparison symmetry stability square universality

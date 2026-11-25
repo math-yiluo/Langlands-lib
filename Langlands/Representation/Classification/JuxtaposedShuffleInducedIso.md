@@ -1,7 +1,5 @@
 # Products of shuffled twists of one cuspidal representation
 
-Author: Worker 1032.
-
 This internal helper of the proof of
 `Langlands.Classification.JuxtaposedSegmentSocleReverseProductStructure`
 (Zelevinsky 1980, Proposition 4.6, step (1), juxtaposed case) makes no literature

@@ -1,7 +1,5 @@
 # Local separatedness and the étale-chart topology
 
-Author: Worker 105.
-
 This proof module proves the two properties of Proposition 5.4 of Brian Conrad, *Weil and
 Grothendieck approaches to adelic points* (December 31, 2011), printed pp.14–16 (source
 `conrad-2011-weil-grothendieck-adelic-points`, SHA-256

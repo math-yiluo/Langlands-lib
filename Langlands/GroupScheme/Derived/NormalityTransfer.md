@@ -1,7 +1,7 @@
 # Normality transfer along a central product
 
-This internal reduction for the derived-subgroup semisimplicity proof is by
-Worker 1367 and uses Worker 1451's `Derived.EpiProductDetection` helpers. It
+This internal reduction for the derived-subgroup semisimplicity proof uses the
+`Derived.EpiProductDetection` helpers. It
 asserts no new derived-subgroup geometry.
 
 The first two normality lemmas identify normality of a subgroup functor with its

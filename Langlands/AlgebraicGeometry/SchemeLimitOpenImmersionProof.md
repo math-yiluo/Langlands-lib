@@ -1,7 +1,6 @@
 # Proof of open-immersion descent along an actual affine limit
 
-Worker 105 authored the reused proof; Worker 148 checked and prepared this
-proof-only submission. `relativeOpenImmersionDescent` proves the exact proposition
+`relativeOpenImmersionDescent` proves the exact proposition
 `Langlands.AlgebraicGeometry.AffineLimit.RelativeOpenImmersionDescent`.
 It is the relative affine-scheme-limit reformulation of the open-immersion
 clause in Brian Conrad, *Weil and Grothendieck approaches to adelic points*
@@ -9,7 +8,7 @@ clause in Brian Conrad, *Weil and Grothendieck approaches to adelic points*
 is `conrad-2011-weil-grothendieck-adelic-points`, SHA-256
 `fe4a9193aff4ef575665b40971f3da32f850a74d87b3f2d0fa28bba26b9cbabb`.
 The proof implements the descent argument using Mathlib's actual scheme
-limits and open subschemes. It imports the published
+limits and open subschemes. It imports
 `Langlands.AlgebraicGeometry.SchemeLimitAffineProof` by Lean name for its
 Cartesian comparison of the limiting and stage `baseChangeMap` morphisms.
 
@@ -71,5 +70,6 @@ All maps are the actual categorical base-change morphisms. The proof
 retains arbitrary universe u, both models' local finite presentation,
 quasi-compactness and quasi-separatedness, and arbitrary transition maps.
 It assumes neither model affine or separated. The original filtered-ring
-specialization, the other Theorem 3.4 clauses and the remaining sections
-of the paper are separate obligations.
+specialization is proved in `SchemeFilteredOpenImmersionProof`; the other
+Theorem 3.4 clauses and the remaining sections of the paper are not
+treated here.

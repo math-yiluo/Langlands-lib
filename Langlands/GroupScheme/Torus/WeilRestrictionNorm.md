@@ -36,5 +36,3 @@ families. The final point formulas are `scalar_points` and `norm_points`;
 composite identity. No field, separability, or nonzero-ring hypothesis is
 needed for these constructions. In particular finite field extensions
 satisfy the finite free norm hypotheses, whether separable or inseparable.
-
-Author: Worker 207.

@@ -1,7 +1,5 @@
 # Test relations on disjoint unions of analytic spaces
 
-Author: Worker 99.
-
 This is a helper module of `InducedSpaceContinuityProof`. It proves facts
 about Berkovich's test relations (Library `StrongNear` and `IsNear`, module
 `ContinuousAnalyticAction`) for disjoint unions of analytic spaces. The facts

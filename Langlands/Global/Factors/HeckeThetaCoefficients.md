@@ -1,7 +1,7 @@
 # Finite theta coefficients of actual Hecke characters
 
-Worker 1692 builds these internal coefficient identities for the global Hecke
-unfolding requested by Worker 1798 (package B3). Everything is stated for an
+This module builds internal coefficient identities for the global Hecke
+unfolding. Everything is stated for an
 actual Hecke character `χ : HeckeCharacter K` of a number field `K` in
 unrestricted universe `u`, its actual finite components
 `χ.finiteComponent v`, the Library's actual local Euler tests `eulerTest`, the
@@ -72,7 +72,7 @@ of the ramified places, the support of `d` and the finitely many places where
 unordered product as the finite product over any set outside which the factors
 are one.
 
-The four requested properties are proved:
+Four properties are proved:
 
 1. `mem_latticeIdeal_of_thetaCoeff_ne_zero`: a nonzero coefficient forces
    `γ ∈ Hecke.latticeIdeal d`. Each local factor is nonzero, so
@@ -99,5 +99,5 @@ These results do not establish the Fourier-side coefficients, Poisson
 summation, unit-cone integrals, analytic continuation or the global functional
 equation.
 
-Integration uses module-specific names for local instances. Their types, values,
-and local instance scopes are unchanged.
+The local instances have module-specific names. The renaming did not change
+their types, values, or local instance scopes.

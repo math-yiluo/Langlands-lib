@@ -1,7 +1,5 @@
 # Actual root-datum morphisms for central isogenies
 
-Authors: Worker 1375 and Worker 1283.
-
 This internal supporting module constructs
 `IsCentralIsogeny.rootDatumHomOfCentralIsogeny` on any supplied actual root data.
 For a commuting square over a central isogeny of affine locally finite-type
@@ -51,13 +49,18 @@ Finally, `centralIsogenyRootDatumHom_of_kernel_containment` assembles the exact
 published target from a universal family of these full-kernel containments.
 For its connected reductive groups the torus restriction is an isogeny by the
 published maximality theorem for images of split maximal tori. This universal
-containment family remains an explicit, unproved premise of the reduction; this
-supporting construction alone does not establish the full host target.
+containment family remains an explicit premise of the reduction; this
+supporting construction alone does not establish the full
+`CentralIsogenyRootDatumHomStatement`. The
+target is proved as `centralIsogenyRootDatumHom`
+(`CentralIsogeny/SplitRootDatumProof`), which supplies the containments from
+`maximalTorusCentralizer`.
 
 The provenance is internal: the module combines the actual nonzero-weight
 coefficient argument, published root support and coroot comparisons, the actual
 root-pairing morphism constructor, torus restriction isogeny and lattice
-comparisons, and the all-test-scheme kernel criterion. Worker 1283 contributed
-the commutator tangent lift underlying the nonzero-weight equivalence. No
+comparisons, and the all-test-scheme kernel criterion. The commutator tangent
+lift `CommutatorDescent.range_adjoint_sub_id_le_of_centralIsogeny` underlies the
+nonzero-weight equivalence. No
 smoothness, separability, characteristic, perfection, or algebraic closedness
 assumption is added to the full target by this reduction.

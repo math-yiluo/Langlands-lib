@@ -1,6 +1,6 @@
 # Reductive coefficient extensions from actual reductivity descent
 
-Worker 700. This internal derived unit specializes the published
+This internal derived module specializes the published
 `isReductive_baseChange_iff_eventually` theorem to the directed system of
 finitely generated coefficient subalgebras. It uses the actual reductivity
 descent proof, so no `DirectLimitReductiveStatement` premise remains.

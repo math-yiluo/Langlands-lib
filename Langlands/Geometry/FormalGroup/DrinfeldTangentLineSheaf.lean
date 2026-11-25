@@ -111,7 +111,7 @@ set_option maxHeartbeats 1000000 in
 def drinfeldTangentGradedPiSheaf :
     GradedPiSheaf d (X).sheaf (schemeScalar X ((Scheme.ΓSpecIso R).inv aπ)) :=
   affineGradedPiSheaf («R» := R) («M» := M) («d» := d) («W» := summand)
-    aπ (ModuleCat.ofHom t) (uniformizerPower ι Y uniformizer hPow)
+    aπ (End.of (ModuleCat.ofHom t)) (uniformizerPower ι Y uniformizer hPow)
     j p (tangentInclusion_projection ι χ ψ Y)
     (fun hk => tangentInclusion_projection_ne ι χ ψ Y hk)
     (tangentSum_projection_inclusion ι χ ψ Y)
@@ -124,7 +124,7 @@ def drinfeldTangentComponentSheafIso (i : ZMod d) :
     tilde (summand i) ≅
       (drinfeldTangentGradedPiSheaf ι χ ψ Y σ uniformizer hPow hComm hσ).componentSheaf i :=
   affineGradedPiSheafComponentIso («R» := R) («M» := M) («d» := d) («W» := summand)
-    aπ (ModuleCat.ofHom t) (uniformizerPower ι Y uniformizer hPow)
+    aπ (End.of (ModuleCat.ofHom t)) (uniformizerPower ι Y uniformizer hPow)
     j p (tangentInclusion_projection ι χ ψ Y)
     (fun hk => tangentInclusion_projection_ne ι χ ψ Y hk)
     (tangentSum_projection_inclusion ι χ ψ Y)

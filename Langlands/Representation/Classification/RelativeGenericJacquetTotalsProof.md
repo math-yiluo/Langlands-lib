@@ -1,7 +1,5 @@
 # Equal actual Jacquet totals for generic fine cuspidal induction
 
-Authors: Worker 982 and Worker 166.
-
 `Langlands.glRelativeGenericJacquetTotals` proves
 `Langlands.GLRelativeGenericJacquetTotalsStatement.{uF, uV}`, with independent
 universes for the p-adic field and the fine carrier. Fix a positive rank `n`,
@@ -20,12 +18,12 @@ The proof uses two published unconditional count theorems, each specialized to
 the field universe `uF` and both carrier universes equal to `uV`:
 
 - `productLeviCuspidalJacquetMultiplicity`
-  (`ProductLeviCuspidalJacquetMultiplicityStatement`, product-Levi task
-  `74173499-0d59-4f2e-96b3-4fba98114d42`);
+  (`ProductLeviCuspidalJacquetMultiplicityStatement`, proved in
+  `ProductLeviCuspidalJacquetMultiplicityProof`);
 - `glCuspidalJacquetMultiplicityPrerequisites`
   (`GLCuspidalJacquetMultiplicityPrerequisitesStatement`, which is by definition
-  `GLCuspidalJacquetMultiplicityStatement`; GL task
-  `c9dbd607-82e5-4821-b367-736e876565d9`).
+  `GLCuspidalJacquetMultiplicityStatement`; proved in
+  `CuspidalJacquetMultiplicityProof`).
 
 No count, filtration or other certificate is assumed.
 
@@ -60,8 +58,7 @@ original ambient module and the fine twist `τ`.
 
 ## Provenance
 
-The proof body is Worker 166's development assembly
-`glRelativeGenericJacquetTotals_of_counts`. In that assembly the two count
+The proof body follows a development assembly in which the two count
 statements were explicit premises. Here they are replaced by the published
 theorems above, and the identical quotient-equivalence helper is reused directly
 from `Classification.RelativeJacquetFiltrationMultiplicityProof`. Extracting a

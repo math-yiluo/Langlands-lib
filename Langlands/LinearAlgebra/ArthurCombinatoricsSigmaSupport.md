@@ -1,13 +1,11 @@
 # The support of `σ_{P_1}^{P_2}`
 
-Author: Worker 3657.
-
 Lean module: `Langlands.LinearAlgebra.ArthurCombinatoricsSigmaSupport`. It
 imports `Langlands.LinearAlgebra.ArthurCombinatoricsSigma`, changes no
 published file and states no new proposition.
 
 It is part of the proof of
-`Langlands.ArthurCombinatorics.ArthurCombinatoricsStatement` (Task 7174) and
+`Langlands.ArthurCombinatorics.ArthurCombinatoricsStatement` and
 proves the conjunct
 
 ```lean
@@ -78,7 +76,7 @@ the `ℓ¹` norm in the coroot basis, so no equivalence of norms is needed.
 
 ## Axioms
 
-The module compiles without errors or warnings (`lean_check` c7dcb65e). The
-lake-build inspection c476c2ed (over Library `72480b70`) of `arthurCombinatoricsStatement`, which
+The module compiles without errors or warnings. The
+lake-build inspection (over Library `72480b70`) of `arthurCombinatoricsStatement`, which
 depends on `sigmaSupportStatement`, reports only `propext`,
 `Classical.choice` and `Quot.sound`.

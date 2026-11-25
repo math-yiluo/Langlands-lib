@@ -1,6 +1,6 @@
 # Comparison of Harris's `C_m^{•,H}` with the underlying complexes
 
-Author: Worker 61. Built on `Langlands.Cohomology.DivisibleSystem.TotalExact`
+Built on `Langlands.Cohomology.DivisibleSystem.TotalExact`
 (`quasiIso_quotientInvariantsTotalSystemToExtend`) and
 `Langlands.Cohomology.DivisibleSystem.ProPInvariants` (`IsProPSubgroup`,
 `isSmooth_res_subtype`, `epi_smoothQuotientInvariants_map_projection_f`,
@@ -13,7 +13,7 @@ from the InvariantTotal module, `quotientInvariantsTotalSystem`; and from the
 TotalComparison module, `extendSystem`, `isIso_of_isIso_tower_app` and
 `quotientInvariantsTotalSystemToExtend`. It
 uses the Library's `Langlands.Cohomology.DerivedPlus` (`extendXMapIso`,
-`mapExtendIso`) and Worker 3's `Langlands.Cohomology.ProPInvariants.Statement`
+`mapExtendIso`) and `Langlands.Cohomology.ProPInvariants.Statement`
 (`invariantsInclusion`, `ProPInvariantsExactStatement` and
 `ProPInvariantSubcomplexStatement`). From Mathlib it uses extension of complexes
 along `ComplexShape.embeddingUpNat` (`HomologicalComplex.extend`, `extendMap`,
@@ -38,7 +38,7 @@ he resolves the `H`-invariants by
 (InvariantTotal) and prove that its map to the `H`-invariants extended to `ℤ` is
 a quasi-isomorphism (TotalExact). They also build the inclusion of the inflated
 `H`-invariants (Invariants), but do not prove it is a quasi-isomorphism. This
-module proves that, given Worker 3's proposition
+module proves that, given the proposition
 `ProPInvariantSubcomplexStatement`, and composes the two maps into one
 `G`-equivariant comparison at a fixed `H`.
 
@@ -103,7 +103,7 @@ group with a topology.
     and `Rep.ρ_eq_id_of_isZero` applies.
 
   So `hS` applies, at the prime `hH.prime`, the group `H`, the condition
-  `hH.isPGroup`, the ring `R` and `hR`. It gives that Worker 3's
+  `hH.isPGroup`, the ring `R` and `hR`. It gives that
   `invariantsInclusion R H` applied degreewise to `C'.extend e` is a
   quasi-isomorphism of complexes of `R`-modules. By `extendMapIso_hom_app` this
   map is isomorphic, as an arrow, to the extension of `invariantsInclusion R H`
@@ -225,7 +225,7 @@ InvariantTotal module.
 ## Pro-`p` subgroups
 
 `G` is a topological group, `H` a normal subgroup, `hH : IsProPSubgroup p H`
-and `hR : IsUnit (p : R)`. Here `hP` is a proof of Worker 3's
+and `hR : IsUnit (p : R)`. Here `hP` is a proof of
 `ProPInvariantsExactStatement`. From `hP`, the ProPInvariants module's
 `epi_smoothQuotientInvariants_map_projection_f hP hH hR K` gives the
 hypothesis `hK`.
@@ -246,16 +246,16 @@ hypothesis `hK`.
 ## Provenance and interpretation
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
-J. Math. Kyoto Univ. 39-2 (1999), section 2, printed pp.305–306. Worker 61
-read both pages in the scanned original.
+J. Math. Kyoto Univ. 39-2 (1999), section 2, printed pp.305–306. Both pages
+were read in the scanned original.
 
 1. The inclusion of invariants. Harris derives the quasi-isomorphism
    `G_m^•(U(ẽ)_F̄)^H ↪ G_m^•(U(ẽ)_F̄)` from the trivial action of `H` on the
-   cohomology and the exactness of `H⁰(H, •)`. Worker 3's
+   cohomology and the exactness of `H⁰(H, •)`. The proposition
    `ProPInvariantSubcomplexStatement` states this step for `ℤ`-graded
    complexes of smooth representations of a pro-`p` group, with `p`
-   invertible in the coefficients. It is not proved, here or (as of this
-   module) anywhere in the Library. Every quasi-isomorphism in this module
+   invertible in the coefficients. It is not proved, here or anywhere in the
+   Library. Every quasi-isomorphism in this module
    except `quasiIso_extendSystemComparison_tower_app` depends on the
    hypothesis `hS`. The transfer to `ℕ`-graded complexes of representations of
    `G`, restricted to `H`, is derived. So are the inflation and the

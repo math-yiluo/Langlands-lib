@@ -1,6 +1,6 @@
 # Actual positive-order identity jets and Lie determinant-dual ampleness
 
-This internal unit completes the transfer from actual identity-jet positivity
+This module completes the transfer from actual identity-jet positivity
 to actual Lie determinant-dual positivity, removing the previous explicit
 rank-locus base-change premise.
 
@@ -33,7 +33,7 @@ actual positive-order jet determinant tensored with the actual pullback of
 any line bundle from an affine base. The affine-base twist ampleness
 equivalence removes that factor and the first theorem applies. A
 stabilizing complement determinant can enter through this explicit factor;
-this unit does not assert the required determinant comparison.
+this module does not assert the required determinant comparison.
 
 The provenance is internal. The implementation combines actual open jet
 base change, actual determinant functoriality, the completed clopen rank

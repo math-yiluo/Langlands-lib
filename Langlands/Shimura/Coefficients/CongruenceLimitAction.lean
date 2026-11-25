@@ -168,8 +168,8 @@ def congruenceLevelLimitProjection (n : ℕᵒᵖ) :
 @[simp] theorem congruenceLevelLimitAction_apply
     (g : congruenceGroupLimit U I M hN)
     (x : (congruenceLevelLimitAction (X := X) U I M hN ι).obj.V) (n : ℕᵒᵖ) :
-    (((congruenceLevelLimitAction (X := X) U I M hN ι).obj.ρ g).hom x).val n =
-      ((congruenceLevelSpaces (X := X) U I M hN ι).ρ n (g.val n)).hom (x.val n) :=
+    (((congruenceLevelLimitAction (X := X) U I M hN ι).obj.ρ g).asHom.hom x).val n =
+      ((congruenceLevelSpaces (X := X) U I M hN ι).ρ n (g.val n)).asHom.hom (x.val n) :=
   rfl
 
 /-- Restrict along the constructed continuous map from the original compact level. -/
@@ -180,9 +180,9 @@ def congruenceOriginalLevelLimitAction : ContAction TopCat.{max v t} U.subgroup 
 /-- The restricted limit action is the original inverse-right level action in each coordinate. -/
 @[simp] theorem congruenceOriginalLevelLimitAction_apply (g : U.subgroup)
     (x : (congruenceOriginalLevelLimitAction (X := X) U I M hN ι).obj.V) (n : ℕᵒᵖ) :
-    (((congruenceOriginalLevelLimitAction (X := X) U I M hN ι).obj.ρ g).hom x).val n =
+    (((congruenceOriginalLevelLimitAction (X := X) U I M hN ι).obj.ρ g).asHom.hom x).val n =
       ((LevelSpace.normalLevelAction (X := X) ι U.subgroup
-        (congruenceKernel I M n.unop)).ρ g).hom (x.val n) :=
+        (congruenceKernel I M n.unop)).ρ g).asHom.hom (x.val n) :=
   rfl
 
 end General
@@ -290,8 +290,8 @@ def algebraicCompactCongruenceLimitProjection (n : ℕᵒᵖ) :
     (g : algebraicCompactCongruenceGroupLimit ρ p l U m hm)
     (x : (algebraicCompactCongruenceLimitAction (X := X) ρ p l U m hm ι).obj.V)
     (n : ℕᵒᵖ) :
-    (((algebraicCompactCongruenceLimitAction (X := X) ρ p l U m hm ι).obj.ρ g).hom x).val n =
-      ((algebraicCompactCongruenceSpaces (X := X) ρ p l U m hm ι).ρ n (g.val n)).hom
+    (((algebraicCompactCongruenceLimitAction (X := X) ρ p l U m hm ι).obj.ρ g).asHom.hom x).val n =
+      ((algebraicCompactCongruenceSpaces (X := X) ρ p l U m hm ι).ρ n (g.val n)).asHom.hom
         (x.val n) :=
   rfl
 
@@ -304,10 +304,10 @@ def algebraicCompactOriginalLevelLimitAction : ContAction TopCat.{max u t} U.sub
 @[simp] theorem algebraicCompactOriginalLevelLimitAction_apply (g : U.subgroup)
     (x : (algebraicCompactOriginalLevelLimitAction (X := X) ρ p l U m hm ι).obj.V)
     (n : ℕᵒᵖ) :
-    (((algebraicCompactOriginalLevelLimitAction (X := X) ρ p l U m hm ι).obj.ρ g).hom x).val n =
+    (((algebraicCompactOriginalLevelLimitAction (X := X) ρ p l U m hm ι).obj.ρ g).asHom.hom x).val n =
       ((LevelSpace.normalLevelAction (X := X) ι U.subgroup
         (congruenceKernel (coefficientScalarIdeal l m)
-          (algebraicCompactCoefficientLattice ρ p l U).action n.unop)).ρ g).hom (x.val n) :=
+          (algebraicCompactCoefficientLattice ρ p l U).action n.unop)).ρ g).asHom.hom (x.val n) :=
   rfl
 
 end AlgebraicCompact

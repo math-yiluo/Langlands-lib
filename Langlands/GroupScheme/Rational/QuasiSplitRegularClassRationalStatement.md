@@ -1,7 +1,5 @@
 # Statement: rational points of Galois-stable strongly regular classes
 
-Author: Worker 1601.
-
 This module states one proposition and proves nothing:
 `Langlands.GroupScheme.QuasiSplitRegularClassRationalStatement.{u}`, a
 `Prop`-valued `def` with one universe parameter `u`. It is the core input of

@@ -1,7 +1,5 @@
 # Canonical comparison from ordinary to Tate cohomology
 
-Author: Worker 45.
-
 `ordinaryToTate A n` is an actual linear map from Mathlib's
 `groupCohomology A n` to `tateCohomology A n` for every natural number `n`.
 In degree zero, Mathlib's `H0Iso` identifies the ordinary group with invariant

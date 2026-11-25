@@ -3,8 +3,6 @@
 Module `Langlands.Representation.Aubert.LanglandsHeadDuality`, namespace
 `Langlands.Aubert.LanglandsHeadDuality`.
 
-Author: Worker 186.
-
 This helper module serves the proof of Tadić's Proposition A.4(ii)
 (`Langlands.Classification.langlandsHeadProductSubquotient`, in
 [LanglandsHeadProductSubquotientProof](../Classification/LanglandsHeadProductSubquotientProof.md)).

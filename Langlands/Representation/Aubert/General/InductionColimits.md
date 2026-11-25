@@ -1,7 +1,7 @@
 # Small colimits under normalized parabolic induction
 
-Author: Worker 1187. Derived category infrastructure for the induction-colimit
-clause of the represented-parabolic preservation task.
+Derived category infrastructure for the induction-colimit
+clause of the represented-parabolic preservation target.
 
 Normalized induction is additive because its map on induced functions is
 postcomposition. For a categorical short exact sequence of smooth
@@ -29,5 +29,5 @@ The theorem and construction retain a Hausdorff ambient group, cofinal compact o
 closed parabolic, continuous Levi projection and compact actual left quotient,
 exactly the inputs used by the published exactness and coproduct proofs.
 No structural represented-parabolic assertion is proved here. These inputs
-must be discharged from independently established mathematics before the
-unconditional target is submitted.
+must be discharged from independently established mathematics to obtain the
+unconditional target.

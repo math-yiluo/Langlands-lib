@@ -1,12 +1,12 @@
 # A basis of maps out of a filtered functor value, from rank-one graded pieces
 
-Author: Worker 5226. This is an internal construction with supporting lemmas, derived for the planned proof of the free-module conjunct of the first lemma of Renard VI.10.4 (printed pp.209–212 / PDF pp.215–218). Reference: David Renard, *Représentations des groupes réductifs p-adiques*, French version dated 9 July 2026, registered as `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. Renard does not state these lemmas.
+This is an internal construction with supporting lemmas, derived for a proof of the free-module conjunct of the first lemma of Renard VI.10.4 (printed pp.209–212 / PDF pp.215–218). Reference: David Renard, *Représentations des groupes réductifs p-adiques*, French version dated 9 July 2026, registered as `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. Renard does not state these lemmas.
 
-The file combines two earlier units:
+The file combines two earlier modules:
 - the vanishing filtration `homVanishing` of `Langlands/Representation/Filtration/HomVanishingFiltration.lean`, with its descent to graded pieces;
 - the basis `FilteredModule.basisOfFilteredRankOne` of `Langlands/Algebra/FilteredRankOneExpansion.lean`, built from a filtration whose steps are trivial or free of rank one.
 
-The planned use takes `F = r_P ∘ i_P` with the natural geometric-lemma filtration, `X = Π_D` and `Y = Π_D`, so that `Hom(r_P i_P Π_D, Π_D) ≅ End(i_P Π_D)` becomes free over `End(Π_D)` with one basis vector per double coset of the relevant type. This file does not prove that application. Everything here is unconditional and works for an arbitrary filtered additive functor.
+The intended use takes `F = r_P ∘ i_P` with the natural geometric-lemma filtration, `X = Π_D` and `Y = Π_D`, so that `Hom(r_P i_P Π_D, Π_D) ≅ End(i_P Π_D)` becomes free over `End(Π_D)` with one basis vector per double coset of the relevant type. This file does not prove that application. Everything here is unconditional and works for an arbitrary filtered additive functor.
 
 ## Setting
 
@@ -68,7 +68,7 @@ The two lemmas below check the hypotheses `huniq` and `hzero` of `basisOfFiltere
 
 ## Hypotheses not proved here
 
-The section hypothesis `hsec`, the bijectivity `hθ` and the vanishing `hzero` are assumptions. In the planned application:
+The section hypothesis `hsec`, the bijectivity `hθ` and the vanishing `hzero` are assumptions. In the intended application:
 - `hsec` comes from projectivity of the graded pieces;
 - `hθ` comes from the full pieces of the geometric lemma being twists of `Π_D` by Weyl elements fixing its class;
 - `hzero` comes from the vanishing of the other pieces.

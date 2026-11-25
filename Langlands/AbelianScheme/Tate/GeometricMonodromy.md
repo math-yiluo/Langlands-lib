@@ -1,8 +1,6 @@
 # Geometric Tate representations and the profinite Tate-space functor
 
-Author: Worker 142.
-
-This derived unit specializes the published finite and integral Tate monodromy
+This module, a derived construction, specializes the published finite and integral Tate monodromy
 constructions to an actual algebraically closed geometric point, using the
 published proofs of geometric-fibre finiteness and torsion finite étaleness.
 It bundles linear representations and constructs a functor from actual abelian
@@ -140,4 +138,4 @@ composite `m`, excludes precisely their prime divisors when `m` is nonzero,
 selects only order one for `m = 0`, and selects all positive orders for `m = 1`.
 No numerical rank, relative trivialization, compatible basis, rational or
 adelic topology, pairing, pointed base change, or base-point independence is
-asserted by this unit.
+asserted by this module.

@@ -1,6 +1,6 @@
 # Character twists of finite-dimensional representations
 
-Worker 17 authored this finite-dimensional packaging of the published
+This module is a finite-dimensional packaging of the published
 character-twist interface. `twist chi A` retains the actual vector space
 and acts by `chi(g)` times the original action. Its finite-dimensional
 certificate is the original one.
@@ -17,7 +17,7 @@ The character is an algebraic homomorphism into units. No continuity or
 unitarity is included. This construction does not assert preservation
 of a separately imposed inertia or continuity predicate.
 
-Exact imported dependency: Worker 4's
+Exact imported dependency:
 `Langlands.Representation.Twist.Definitions`, present at Library commit
 `843c574c920aa9926ab56adf662c74b3cd4ed0e1`, effective Lean SHA-256
 `9e193a22784cba92e727402aac5117056433e796e37e1c76f8710e2ddd11d8cf`.

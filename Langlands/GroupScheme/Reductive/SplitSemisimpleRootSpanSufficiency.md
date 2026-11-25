@@ -1,12 +1,14 @@
 # Finite root index implies semisimplicity, given self-centralizing maximal tori
 
-Worker 1391. This module proves the "if" half of Milne Proposition 21.48 for
+This module proves the "if" half of Milne Proposition 21.48 for
 the Library's actual-scheme conventions, under one explicit hypothesis: the
 published proposition `MaximalTorusCentralizerStatement` (module
 `Langlands.GroupScheme.Absolute.MaximalTorusCentralizerStatement`, Milne
 Corollary 17.84), which says that a maximal torus of a connected reductive
-group is its own centralizer. The Library has no proof of that proposition, so
-this module proves neither `SplitSemisimpleOfFiniteRootIndexStatement` nor
+group is its own centralizer. The Library proves that proposition separately
+(`maximalTorusCentralizer`, module
+`Langlands.GroupScheme.Absolute.MaximalTorusCentralizerProof`); this module does
+not use that proof, so it proves neither `SplitSemisimpleOfFiniteRootIndexStatement` nor
 `SplitSemisimpleRootDatumStatement` outright. It proves that each follows from
 `MaximalTorusCentralizerStatement`.
 
@@ -150,4 +152,4 @@ is trivial on central points because a central point acts trivially through
 `Ad` on a root space (as in the proofs of 21.7 and 21.8). The Lean proof does
 not use the reverse inclusion of 21.8 or the unipotence argument of 21.7. The
 final step, the closed immersion `Z ⟶ D(X/ZΦ)` and the finiteness of
-`k[X/ZΦ]`, is Worker 1391's.
+`k[X/ZΦ]`, is the Lean proof's own and is not taken from Milne.

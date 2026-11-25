@@ -1,7 +1,5 @@
 # Reduction of the centralizer-derived theorem to algebraically closed fields
 
-Author: Worker 1366.
-
 This is an internal reduction for
 `SplitTorusCentralizerDerivedSimplyConnectedStatement`, with two explicit
 remaining hypotheses. It does not prove that statement unconditionally.

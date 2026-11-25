@@ -1,6 +1,6 @@
 # The Chevalley root function family of a Chevalley group
 
-This internal unit defines the root function family of Kaletha–Prasad's
+This module defines the root function family of Kaletha–Prasad's
 Chevalley valuation (*Bruhat–Tits Theory: A New Approach*, §6.1(a), the
 functions `φ_{o, a}` before Lemma 6.1.1) for the Chevalley groups of the split
 existence construction. It proves every axiom of the Library's
@@ -67,6 +67,6 @@ equivariance `u_isTorusEquivariant`.
 
 ## Scope
 
-This unit does not prove V 2, V 3 or V 5. It does not prove normalizer
+This module does not prove V 2, V 3 or V 5. It does not prove normalizer
 stability, and it does not transport the family to other split groups. All
 results are uniform in the universe and the characteristic.

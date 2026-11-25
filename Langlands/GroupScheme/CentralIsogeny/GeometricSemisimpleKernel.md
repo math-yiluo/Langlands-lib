@@ -1,7 +1,5 @@
 # The exact centre-tangent kernel after field extension
 
-Author: Worker 1487.
-
 This internal deduction transports the exact full-centre differential kernel
 through actual scheme base change. It uses the proved all-test identity
 `center_baseChange` and the published comparison between the actual

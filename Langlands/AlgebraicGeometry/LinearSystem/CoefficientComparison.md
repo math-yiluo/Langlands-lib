@@ -25,7 +25,7 @@ proves `relativeLinearSystemMap_toPolynomial`, by checking both projections
 of the pullback defining relative projective space over `Spec K`.
 
 For the actual coordinate sections on polynomial projective space,
-`integralLinearSystemMap_projectiveCoordinates` now identifies their integral
+`integralLinearSystemMap_projectiveCoordinates` identifies their integral
 linear-system morphism with the existing `polynomialToIntegral K n`.
 It uses the proved polynomial coordinate identity, not a comparison assumption.
 The definition `polynomialIntegralTwistIso` transports the existing
@@ -40,7 +40,7 @@ comparison's coordinate formula.
 
 The provenance is derived from the imported constructions, chart functoriality,
 coordinate identity and twist comparison. There is no new external-source
-assertion. This focused unit supplies the coefficient and twist bridge used
+assertion. This focused module supplies the coefficient and twist bridge used
 in subsequent relative projective constructions. The glued tautological
 line bundle and the ordinary large-level moduli representability theorem
-remain further obligations.
+are not part of this module.

@@ -1,7 +1,5 @@
 # Finite coverings of all full represented affinoid domains
 
-Author: Worker 36.
-
 For a complete ultrametric normed field `K : Type u` and an actual
 positive-polyradius presented affinoid algebra `A`, this module constructs
 `finiteDomainTopology K A`, a Grothendieck topology on the existing category

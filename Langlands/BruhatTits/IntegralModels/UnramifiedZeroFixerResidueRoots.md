@@ -39,11 +39,14 @@ every apartment subset and every zero datum. Henselianity and the algebraically
 closed residue field are the published properties of `fixedFieldIntegers F`.
 No model with the full one-fixer as integral points is assumed.
 
-This unit derives from the named Library constructions and proves no new
+This module derives from the named Library constructions and proves no new
 literature translation. It supplies the actual residue-root interpretation needed
 when an incident facet image contains a constructed root-model image. Determining
 the entire incident image, excluding the other root directions, classifying all
-parabolics, and proving the host facet-order bijection remain further obligations.
+parabolics, and proving the facet-order bijection
+`UnramifiedFacetParabolicOrderStatement` that it serves are not done here; that
+bijection is proved as `unramifiedFacetParabolicOrder` in
+`UnramifiedFacetParabolicOrderProof`.
 
 The residue torus, its inclusion, character specialization and root-model
 representability and closedness are reused from

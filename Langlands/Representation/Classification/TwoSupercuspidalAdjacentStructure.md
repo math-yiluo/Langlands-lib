@@ -1,9 +1,5 @@
 # Adjacent two-supercuspidal products: the algebraic part of Ze80 1.11(b)
 
-Author: Worker 892. Worker 163 preserved the Lean source from the author's
-shared draft and updated the dependency count and publication-scope wording
-when preparing the separate ordered Jacquet proof.
-
 This internal module proves the length-two structure and the actual ordered
 Jacquet factors of Zelevinsky 1980, Proposition 1.11(b). It also derives the
 complete proposition `Langlands.Classification.TwoSupercuspidalProductStructure`
@@ -213,7 +209,11 @@ Jacquet conjunct is `(adjacentStructure …).2`. A proof of the complete
 proposition must discharge the four inputs. This module proves none of them.
 The companion `TwoSupercuspidalAdjacentJacquetProof` supplies the two Jacquet
 inputs and proves the Jacquet conjunct without either irreducibility or
-reducibility as a premise; the other two conjuncts remain separate obligations.
+reducibility as a premise. The other two conjuncts need the nonadjacent
+irreducibility and the adjacent reducibility, proved in
+`TwoSupercuspidalNonadjacentIrreducibilityProof` and
+`TwoSupercuspidalAdjacentReducibilityProof`;
+`TwoSupercuspidalProductStructureProof` assembles the complete proposition.
 
 ## Provenance
 
@@ -246,8 +246,8 @@ Imports: the published statement modules
 `Filtration.JordanHolderProof` and `Shahidi.IntertwiningInduced`.
 
 The recursive project import closure has 185 modules, including this module.
-None is a module or theorem of a
-task on the contract's independence list, and a text search of their sources
+None of them states or proves one of the later results that this module must
+not depend on, and a text search of their sources
 finds none of the excluded declaration names. None is a derivative, segment
 product, segment Jacquet, square-integrability, tempered, classification or
 exhaustion result. The one segment-named module, `Classification.Segments`, is

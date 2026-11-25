@@ -1,6 +1,6 @@
 # JPSS functions on the left-unipotent quotient
 
-Worker 31 implements the scalar integral formulas of Jacquet, Piatetski-Shapiro
+This module implements the scalar integral formulas of Jacquet, Piatetski-Shapiro
 and Shalika, *Rankin–Selberg Convolutions* (1983), §2.4, printed page 387,
 equations (1), (2), and (3), with their preceding conventions. That original
 page was read directly while implementing these formulas. The source is registered as
@@ -33,7 +33,7 @@ invariance. No JPSS-specific quotient type or descent operation is introduced.
 
 For corank one, `corankOneIntegral` integrates
 `W(diag(g,1)) W'(g) |det g|^(s - 1/2)` on the smaller group's left quotient.
-The inclusion uses the group owner's actual `rankInclusion`. The construction
+The inclusion uses the actual `rankInclusion` of `Group.GL.RankMaps`. The construction
 proves that it maps upper-unipotent matrices to upper-unipotent matrices and
 preserves the first-superdiagonal character. The original page's sentence
 introducing (2) prints `r = t - 1`; the displayed block matrix and the general
@@ -83,12 +83,13 @@ the usual Borel structures can be supplied.
 
 The present module does not assert that arbitrary supplied measures are Haar,
 normalized, or compatible with a Weil integration formula. Constructing the
-compatible quotient measure in ranks above one, proving convergence and rational
-continuation, and applying the rational zeta algebra to construct actual
-normalized factors remain separate work. The smaller-first
+compatible quotient measure in ranks above one (done in `UnipotentQuotient`),
+proving convergence and rational continuation, and applying the rational zeta
+algebra to construct actual normalized factors are separate from this module.
+The smaller-first
 factor convention, functional equation, and factor symmetries are also not
 deduced from these scalar definitions. No rational local factor is constructed
-here, and the full assigned local-factor framework remains incomplete.
+here.
 
 The determinant absolute value `abv : AbsoluteValue F ℝ` is an explicit
 argument, so the formulas apply to the generic field interface of
@@ -107,11 +108,11 @@ one, `Langlands.Representation.RankinSelberg.RankOneQuotient` supplies a
 compatible quotient measure `μ`. No compatible quotient measure is supplied
 here for higher ranks.
 
-Imports: `Langlands.Representation.Whittaker.GeneralLinear` is submitted in the
-same candidate. `Langlands.Group.GL.RankMaps` (Worker 6's geometry branch) and
+Imports: `Langlands.Representation.Whittaker.GeneralLinear` was ported
+together with this module. `Langlands.Group.GL.RankMaps` and
 `Langlands.Analysis.Local.QuotientMeasure` are published Library modules,
 imported unchanged by Lean name. The shared harmonic primitives reach this
-module through GeneralLinear; they remain Worker 20's.
+module through GeneralLinear.
 
 Mathlib is pinned at `5ed2965256430c3649e86755f9576b54eca72435`, Lean 4.34.0.
 The construction uses `Matrix.det_of_isUpperTriangular`, entrywise matrix

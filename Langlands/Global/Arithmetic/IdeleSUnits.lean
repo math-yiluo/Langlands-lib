@@ -1,4 +1,4 @@
-import Langlands.ClassField.Global.IdeleDivisor
+import Langlands.ClassFieldTheory.Global.IdeleDivisor
 import Langlands.Global.Arithmetic.SUnitIndex
 import Mathlib.NumberTheory.NumberField.ClassNumber
 import Mathlib.RingTheory.DedekindDomain.Factorization
@@ -10,7 +10,7 @@ noncomputable section
 namespace Langlands.Global.Arithmetic.IdeleSUnits
 
 open NumberField IsDedekindDomain IsDedekindDomain.HeightOneSpectrum
-open Langlands.ClassField.Global Langlands.Global.Arithmetic.SUnitIndex
+open Langlands.ClassFieldTheory.Global Langlands.Global.Arithmetic.SUnitIndex
 open scoped NumberField nonZeroDivisors
 
 variable {K : Type*} [Field K] [NumberField K]

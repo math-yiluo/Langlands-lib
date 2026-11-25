@@ -1,6 +1,5 @@
 # Actual split-torus coordinates as a multiplicative homeomorphism
 
-Worker 112, using the actual-point topology support by Worker 94.
 This is an internal comparison construction from the published categorical
 split torus and its published Laurent-algebra model. No new identification
 of algebraic groups is assumed.

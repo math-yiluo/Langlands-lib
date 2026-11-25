@@ -1,7 +1,5 @@
 # Proof of the strong triangle inequality for spectrum seminorms
 
-Author: Worker 36.
-
 `Langlands.Analytic.spectrumNonarchimedean` proves the separate proposition
 `Langlands.Analytic.SpectrumNonarchimedeanStatement`. The module preserves
 the reusable declarations `seminorm_nonarchimedean_of_natCast` and

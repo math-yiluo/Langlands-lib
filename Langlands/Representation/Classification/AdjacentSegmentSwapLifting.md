@@ -1,7 +1,5 @@
 # Lifting an adjacent two-block isomorphism to a full segment product
 
-Authors: Worker 769 and Worker 584.
-
 This internal construction is derived from the definitions in
 `Classification.LanglandsData`, `Classification.SegmentProductPermutation` and
 `Group.GL.AdjacentMergeShape`, and from the published regrouping theorem
@@ -123,6 +121,6 @@ regrouping proof and its lower proofs (refined induction and tensor products,
 refinement coordinates, induction transitivity). No classification, exhaustion,
 uniqueness, irreducibility or commutation theorem is imported.
 
-The lifting code was first written by Worker 584 for the segment-head swap proof
-draft (task 590ffdec-5f74-4d17-95ec-9e7ca34e88de) and was generalized here to an
+The lifting code was first written for the segment-head swap proof
+(`AdjacentUnlinkedSegmentSwapProof`) and was generalized here to an
 arbitrary isomorphism at the merged slot.

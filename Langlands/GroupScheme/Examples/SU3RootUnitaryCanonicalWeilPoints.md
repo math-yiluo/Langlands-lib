@@ -1,6 +1,6 @@
 # Actual integral points of canonical restricted unitary models
 
-This derived unit identifies the actual integral-point image of the
+This module identifies the actual integral-point image of the
 canonical restricted unitary charts and lattice models. It composes the
 section square in `IntegralModel.AffineWeilPoints` with the published
 unitary coordinate and lattice membership theorems. Its provenance is
@@ -71,7 +71,7 @@ equalities of actual subgroups. Surjectivity of the generic
 parameter equivalence supplies the reverse inclusion for the map
 equality.
 
-This unit completes the integral-point comparison for these canonical
+This module completes the integral-point comparison for these canonical
 restricted unitary models. Identifying these parameters and depths
 with an ambient relative root group and supplied apartment data,
 constructing compatible isomorphisms to arbitrary supplied root

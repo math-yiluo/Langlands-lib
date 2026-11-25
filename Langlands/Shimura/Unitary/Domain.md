@@ -44,12 +44,11 @@ product homomorphism. `HarrisArchimedeanDomain` specializes its indices to the
 actual real embeddings of a totally real number field and takes the source
 dimension hypothesis `1 < n` explicitly. Identifying it with the domain of a prescribed global
 CM algebra, proving the complex ball description, and constructing canonical
-models and coefficient systems remain further work.
+models and coefficient systems are outside this module.
 
 Source correspondence: Harris 1997 p.89, Harris 1998 pp.180–182, Harris 1999
 pp.308–309, and Kottwitz 1992 p.654 (conjugacy class and centralizer quotient).
 These original passages have been read; Kottwitz p.654 was visually checked.
-All new implementations and intrinsic proofs are by Worker 57.
 
 ## Exact source and environment record
 

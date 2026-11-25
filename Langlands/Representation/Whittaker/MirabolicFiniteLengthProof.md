@@ -1,7 +1,5 @@
 # Finite length of restriction to the actual mirabolic subgroup: proof
 
-Author: Worker 11.
-
 This module proves the published proposition
 `Langlands.Whittaker.MirabolicFiniteLengthStatement.{uF,uV}` of
 [MirabolicFiniteLengthStatement](MirabolicFiniteLengthStatement.md):

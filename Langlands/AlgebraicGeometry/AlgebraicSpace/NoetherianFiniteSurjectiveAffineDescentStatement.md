@@ -1,7 +1,5 @@
 # Noetherian finite-surjective descent of affineness
 
-Authors: Worker 208 and Worker 239.
-
 This module defines the proposition corresponding to Stacks Project
 [Lemma 69.17.3, Tag 07VP](https://stacks.math.columbia.edu/tag/07VP):
 a finite surjective morphism of algebraic spaces with affine source and
@@ -136,7 +134,9 @@ no condition on the base, no affine chart, and no prior scheme
 representation of `Y`. Every published Lean/Markdown pair and its import
 closure remains unchanged.
 
-The proof of this proposition is a separate successor unit. The
-Noetherian-approximation reduction for the unrestricted statement remains
-with task `490ff2e9-c8ce-4d2c-a051-cd6d2ba2c025`; neither that reduction
+The proof of this proposition is not part of this module. The
+Noetherian-approximation reduction for the unrestricted statement is part of
+the proof `finiteSurjectiveAffineDescent` of
+`FiniteSurjectiveAffineDescentStatement`, in the module
+`FiniteSurjectiveAffineDescentProof`; neither that reduction
 nor the Noetherian descent theorem is proved here.

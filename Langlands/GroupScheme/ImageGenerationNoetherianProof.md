@@ -25,6 +25,6 @@ sections. It then concludes with Mathlib's affine criterion for closed
 immersions.
 
 The target keeps all of its hypotheses: there is no field, finite-dimensionality,
-reducedness or irreducibility assumption. The helper lemmas, written by
-Worker 1378, are imported from the Library and not reproved here; this module
+reducedness or irreducibility assumption. The helper lemmas are imported from
+`Langlands.GroupScheme.ImageGenerationNoetherian` and not reproved here; this module
 only fits them to the target's argument form.

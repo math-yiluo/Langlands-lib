@@ -1,7 +1,5 @@
 # A common maximal torus from an isomorphic special fibre
 
-Author: Worker 717.
-
 `Langlands.GroupScheme.HasCommonCoordinateMaximalTorus f` records a coordinate
 split torus `i : 𝔾_m^I → G` such that both `i` and `i ≫ f` are closed subgroup
 embeddings and maximal on every actual residue-field fibre. Thus the given
@@ -40,6 +38,6 @@ its image is the closed point by `IsLocalRing.comap_closedPoint`.
 
 This is an internal composition of the cited published Library lemmas and
 the local torus detection module. It supplies the common-torus step of the
-prescribed-map rigidity argument in Task 6422. It asserts no finiteness,
+prescribed-map rigidity argument of `Reductive.SpecialFibreIsogenyRigidity`. It asserts no finiteness,
 centrality, root-data compatibility, or generic-fibre invertibility of the
 ambient homomorphism.

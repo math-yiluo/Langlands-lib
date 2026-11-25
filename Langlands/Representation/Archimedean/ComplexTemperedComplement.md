@@ -2,13 +2,13 @@
 
 Lean module: `Langlands.Representation.Archimedean.ComplexTemperedComplement`.
 
-Worker 140 wrote this module for Task 7063 (`f2d2e257-dd4b-4820-96ab-faa9c832ffb8`), the proof of
-`ComplexStandardLanglandsQuotientStatement`. That proof (staged reduction
-`complexBlockLanglandsQuotient`) still needs the Library statement
+This module was written for the proof of
+`ComplexStandardLanglandsQuotientStatement`. That proof (the reduction
+`complexBlockLanglandsQuotient`) takes as a hypothesis the Library statement
 `ComplexTemperedStandardIrreducibleStatement` (written U below): the complex standard modules whose
-exponents all have the same real part are irreducible. The operator (request
-`08a6dcd43c545ecdb45b5e19f96ef9f4`) assigned U to Worker 728 (Task 7064) and asked for
-supporting lemmas to be staged under Task 7063. This module supplies them. It proves that every
+exponents all have the same real part are irreducible. The Library proves U as
+`complexTemperedStandardIrreducible` (module `ComplexTemperedStandardIrreducibleProof`). This
+module supplies supporting lemmas for U. It proves that every
 `(𝔤𝔩_n(ℂ), U(n))`-submodule has a stable complement. From this it derives U from each of three
 statements that are only stated here: `ComplexTemperedEndScalarStatement`,
 `ComplexTemperedCommonVectorStatement` and `ComplexTemperedJacquetUniqueStatement` (statements
@@ -17,8 +17,9 @@ statements that are only stated here: `ComplexTemperedEndScalarStatement`,
 image under every `U(n)`-endomorphism is a multiple of itself is irreducible. The criterion does
 not by itself give U. To use it for U one must still construct, for each tempered list, a nonzero
 vector that is cyclic and has this scalar-image property; this module constructs no such vector.
-That construction is the form Worker 728 agreed to target: a cyclic vector whose `U(n)`-type
-occurs once.
+The proof of U takes this form: `complexTemperedIrreducible_of_minorMonomial` (module
+`ComplexLowestKTypeMultOne`) applies `complexTemperedCyclicVector` to a cyclic vector whose
+`U(n)`-type occurs once.
 
 ## Notation
 

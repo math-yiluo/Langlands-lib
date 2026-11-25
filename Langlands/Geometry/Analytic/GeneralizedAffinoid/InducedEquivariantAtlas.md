@@ -1,7 +1,5 @@
 # Equivariant bounded atlases on induced affinoid spectra
 
-Author: Worker 56.
-
 This module constructs the full-group action by actual bounded morphisms
 of the quotient atlas built in [InducedAction](InducedAction.md), and lifts
 the functor of [InducedFunctor](InducedFunctor.md) to equivariant atlas

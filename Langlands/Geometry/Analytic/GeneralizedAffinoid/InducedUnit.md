@@ -1,7 +1,5 @@
 # Bounded identity-coset unit for actual affinoid induction
 
-Author: Worker 56.
-
 This module constructs the unit from a genuine affinoid subgroup action to its
 induced coset family, then realizes it as a natural subgroup-equivariant bounded
 atlas map on the actual balanced quotient. Its continuous map sends a point
@@ -162,7 +160,7 @@ family and atlas equations, and natural-transformation packaging are internal
 implementation results. They are not quoted as separate theorems from the
 manuscript.
 
-This contribution supplies the bounded atlas unit for genuine affinoid input
+This module supplies the bounded atlas unit for genuine affinoid input
 actions. It does not identify norm-orbit continuity with Berkovich's topology
 on analytic automorphisms, extend induction to arbitrary overlapping atlases,
 or prove the analytic extension universal property or an analytic adjunction.

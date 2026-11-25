@@ -225,7 +225,7 @@ variable {F : PadicField.{uF} p} (T : F.TopologicalData)
 abbrev determinantPowerCharacter (n : ℕ) (s : ℝ) : GeneralLinear n F.Carrier →* ℂˣ :=
   realPowerCharacter (T.determinantNorm n) s
 
-/-- Worker 167's determinant-power norm calculation, with the rank retained. -/
+/-- The determinant-power norm calculation, with the rank retained. -/
 theorem norm_determinantPowerCharacter_scalar (n : ℕ) (s : ℝ)
     (z : F.Carrierˣ) :
     ‖(T.determinantPowerCharacter n s (GeneralLinear.scalar z) : ℂ)‖ =

@@ -28,7 +28,7 @@ reflexivity. In particular the construction needs no topology, continuity,
 analyticity, polynomial structure, or nonzero value somewhere on its denominator.
 The support can be empty.
 
-Worker 12 authored this internal abstraction. Its provenance is the common
+This is an internal abstraction. Its provenance is the common
 algebraic part of the three published formulas, rather than a new theorem
 attributed to an original arithmetic source. The adapters and their comparison
 statement describe the precise relationship to those specialized constructions.

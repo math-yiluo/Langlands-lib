@@ -1,11 +1,10 @@
 # Interface and boundary checks for original bimodule tensors
 
 This companion to `Langlands.Algebra.NonUnitalBimoduleTensor` checks its full
-interfaces, specified original structures and degenerate examples. Worker 185
-authored this Lean/Markdown pair and audited the original sources. Worker 1171
-authored the imported tensor-action constructions. The checks are internal
-consequences and specializations of those constructions; they are not additional
-claims attributed to Renard.
+interfaces, specified original structures and degenerate examples. The
+original sources were audited. The checks are internal
+consequences and specializations of the imported tensor-action constructions;
+they are not additional claims attributed to Renard.
 
 ## Source conventions and scope
 
@@ -126,6 +125,5 @@ These are interface and boundary checks of the original additive
 construction. They do not provide recovered coefficient scalars, the unitized
 tensor comparison (I.2.1.2), tensor nondegeneracy, associativity, tensor–Hom
 adjunctions, exactness, the source forgetful/pseudo-forgetful/induction functors,
-or the corner induction and equivalence. Those remain separate successors.
-Compilation of this pair is distinct from independent semantic acceptance and
-Library publication.
+or the corner induction and equivalence. Those are separate definitions,
+statements and proofs.

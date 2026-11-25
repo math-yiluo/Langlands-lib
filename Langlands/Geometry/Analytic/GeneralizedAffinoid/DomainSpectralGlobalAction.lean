@@ -43,7 +43,7 @@ def globalSpectrum : ContAction TopCat.{u} G :=
 @[simp]
 theorem globalSpectrum_apply (g : G) (x : BanachSpectrum P) (a : P) :
     BanachSpectrum.toMulRingSeminorm
-      (ConcreteCategory.hom ((ρ.globalSpectrum).obj.ρ g) x) a =
-        x ((ρ.toMonoidHom g).inv.toAlgHom a) := rfl
+      (ConcreteCategory.hom ((ρ.globalSpectrum).obj.ρ g).asHom x) a =
+        x ((ρ.toMonoidHom g).asIso.inv.toAlgHom a) := rfl
 
 end Langlands.Analytic.PresentedAffinoidAlgebra.DomainAutomorphism.DomainSpectralAction

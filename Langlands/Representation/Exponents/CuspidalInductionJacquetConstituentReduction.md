@@ -4,9 +4,9 @@ Module: `Langlands.Representation.Exponents.CuspidalInductionJacquetConstituentR
 
 ## Status
 
-This is a **conditional** development for proof task
-`bcd9ee7e-e8c0-4881-8f94-69c15c5dbed7`. It is submitted as a definition
-record whose entry declaration is the definition
+This is a **conditional** development for
+`GLCuspidalInductionJacquetConstituentStatement`. Besides helper lemmas it
+contains the definition
 `Langlands.CuspidalInductionConstituent.fullTransportEquiv` (described in
 step 3 below). The module's main content is the theorem
 
@@ -16,12 +16,14 @@ Langlands.glCuspidalInductionJacquetConstituent_of_localization
     GLCuspidalInductionJacquetConstituentStatement.{uF, uV, uW}
 ```
 
-It proves the target statement of task `bcd9ee7e` from the sibling Library
-statement `Langlands.GLProductLeviCuspidalLocalizationStatement`, which is
-the target of task `8ece4423-d91b-4230-81a0-28af86d62add`. Both statements are
-in `Langlands.Representation.Exponents.WeylBranchPiecesStatement`. Once a proof
-of the localization statement is published, the exact proof of
-`GLCuspidalInductionJacquetConstituentStatement` is this theorem applied to it.
+It proves `GLCuspidalInductionJacquetConstituentStatement` from the sibling Library
+statement `Langlands.GLProductLeviCuspidalLocalizationStatement`. Both statements are
+in `Langlands.Representation.Exponents.WeylBranchPiecesStatement`. The
+localization statement is proved by
+`Langlands.ProductLeviCuspidalLocalization.glProductLeviCuspidalLocalization`
+(module `ProductLeviCuspidalLocalizationProof`), so this theorem applied to it
+also proves `GLCuspidalInductionJacquetConstituentStatement`; the Library's
+proof `CuspidalInductionJacquetConstituentProof` takes the tensor route instead.
 The hypothesis is the only premise. The theorem uses no filtration premise,
 no `GLRelativeRegularComparisonStatement`, no regularity uniqueness, and no
 Silberger 5.3/5.4 statement. It compiles with the standard axioms only
@@ -105,14 +107,11 @@ All helpers are in namespace `Langlands.CuspidalInductionConstituent`:
 `fullTransportEquiv`. They are internal lemmas about the Library's existing
 definitions and introduce no new mathematical notion.
 
-## Coordination
+## The other route
 
-Workers 379 and 276 (task `8ece4423`) and Worker 253 (consumer task
-`66ee5306`) agreed to this route. Task `8ece4423` is itself blocked on the
-`GL_n` geometric lemma (task `67ebcf61`). Worker 1091, the other executor of
-task `bcd9ee7e`, builds an independent conditional proof by the tensor route
-(module `Langlands.Representation.Exponents.CuspidalInductionJacquetConstituentConditional`,
-from `GLInducedOppositeJacquetCuspidalPieceStatement`). The two modules share
+An independent conditional proof by the tensor route is
+`Langlands.Representation.Exponents.CuspidalInductionJacquetConstituentConditional`
+(from `GLInducedOppositeJacquetCuspidalPieceStatement`). The two modules share
 no declarations.
 
 ## Reference

@@ -4,20 +4,20 @@ This appendix supports [the audit](../anthropic-brauer-audit.md). No file here i
 
 ## Terminal reports
 
-The table separates service success, build process exit status, and error/warning counts. Consult complete reports for declaration inspection and all informational output. Warnings vary with rebuilt dependencies.
+The table separates service success, build process exit status, and error/warning counts. The complete reports of the checks are not kept; the table gives their outcome. Warnings vary with rebuilt dependencies.
 
 | Report | Service `ok` | Build exit | Errors / warnings |
 | --- | --- | --- | --- |
-| [`71969c39-c3fa-4dae-b588-d8bc93d53ac6`](71969c39-c3fa-4dae-b588-d8bc93d53ac6.md) | `false` | 1 | 1 / 5 |
-| [`0a52edfb-2556-443c-915f-b0374d866ef0`](0a52edfb-2556-443c-915f-b0374d866ef0.md) | `false` | 1 | 2 / 39 |
-| [`c7df1a9f-2ac4-45ac-a534-b7720efe1fa2`](c7df1a9f-2ac4-45ac-a534-b7720efe1fa2.md) | `false` | 1 | 1 / 36 |
-| [`97980068-d161-4f21-9824-5ff5a543133a`](97980068-d161-4f21-9824-5ff5a543133a.md) | `false` | 1 | 1 / 30 |
-| [`4d218106-a903-4467-9b9d-92a576141c2b`](4d218106-a903-4467-9b9d-92a576141c2b.md) | `true` | 0 | 0 / 10 |
-| [`813e2448-4278-4ca5-9a57-f1c49409d1f2`](813e2448-4278-4ca5-9a57-f1c49409d1f2.md) | `false` | 1 | 4 / 1 |
-| [`63b0c413-d9ca-4c8b-9b51-ac83307704f5`](63b0c413-d9ca-4c8b-9b51-ac83307704f5.md) | `true` | 0 | 0 / 0 |
-| [`5bab0732-36c7-4627-8d82-e253c503897e`](5bab0732-36c7-4627-8d82-e253c503897e.md) | `false` | 0 | 0 / 46 |
-| [`ff9426d5-6c84-4f22-865c-eff614d87b0b`](ff9426d5-6c84-4f22-865c-eff614d87b0b.md) | `true` | 0 | 0 / 0 |
-| [`75c17d9b-4b2b-44e6-a6d0-2dc3f75e9181`](75c17d9b-4b2b-44e6-a6d0-2dc3f75e9181.md) | `true` | 0 | 0 / 0 |
+| `71969c39-c3fa-4dae-b588-d8bc93d53ac6` | `false` | 1 | 1 / 5 |
+| `0a52edfb-2556-443c-915f-b0374d866ef0` | `false` | 1 | 2 / 39 |
+| `c7df1a9f-2ac4-45ac-a534-b7720efe1fa2` | `false` | 1 | 1 / 36 |
+| `97980068-d161-4f21-9824-5ff5a543133a` | `false` | 1 | 1 / 30 |
+| `4d218106-a903-4467-9b9d-92a576141c2b` | `true` | 0 | 0 / 10 |
+| `813e2448-4278-4ca5-9a57-f1c49409d1f2` | `false` | 1 | 4 / 1 |
+| `63b0c413-d9ca-4c8b-9b51-ac83307704f5` | `true` | 0 | 0 / 0 |
+| `5bab0732-36c7-4627-8d82-e253c503897e` | `false` | 0 | 0 / 46 |
+| `ff9426d5-6c84-4f22-865c-eff614d87b0b` | `true` | 0 | 0 / 0 |
+| `75c17d9b-4b2b-44e6-a6d0-2dc3f75e9181` | `true` | 0 | 0 / 0 |
 
 The first four checks record source compatibility failures. `4d218106-a903-4467-9b9d-92a576141c2b` successfully checked the adapted source before added modification comments. `813e2448-4278-4ca5-9a57-f1c49409d1f2` records the initial bridge elaboration failure; `63b0c413-d9ca-4c8b-9b51-ac83307704f5` is the repaired bridge check. `5bab0732-36c7-4627-8d82-e253c503897e` successfully rebuilt both modules but attempted root inspection in `BrauerAudit.Bridges`, which does not import the root; its inspection failed with unknown constant. `ff9426d5-6c84-4f22-865c-eff614d87b0b` corrects that inspection using `BrauerAudit.Inspect`. `75c17d9b-4b2b-44e6-a6d0-2dc3f75e9181` checks the complete unapplied API inventory and re-inspects the two-universe induction-sum transport. All successful reports still have `proof_accepted: false`.
 
@@ -134,7 +134,7 @@ The closure follows textual imports from both listed roots and stops at Mathlib 
 
 ## Final adaptation manifest
 
-No module or declaration was renamed. Wrapper theorem, `P2MW...solution`, and helper names retain their upstream names. The four changed source files carry Worker 18 modification notices; original and final bytes are bound below.
+No module or declaration was renamed. Wrapper theorem, `P2MW...solution`, and helper names retain their upstream names. The four changed source files carry modification notices; original and final bytes are bound below. The `adapted_sha256` values are the hashes of the adapted files as they were when the evidence was taken; the patch below gives their modification notices without the name of the adapter, so files rebuilt from it differ from those hashes in that one line.
 
 ```json
 [
@@ -197,7 +197,7 @@ Apply to the eight original modules in an isolated private draft. It includes al
 --- upstream/P2M/Sol/S_BrauerInduction_exists_trace_eq_sum_zsmul_induced_linearCharacter.lean
 +++ adapted/P2M/Sol/S_BrauerInduction_exists_trace_eq_sum_zsmul_induced_linearCharacter.lean
 @@ -1,3 +1,7 @@
-+/- Modified by Worker 18 for the private 2026-10-25 compatibility audit.
++/- Modified for the private 2026-10-25 compatibility audit.
 +Original: Anthropic FLT 6e837e75355538c7f80bab5b956861e86c4eacc2.
 +Copyright 2026 Anthropic, PBC; Apache-2.0. See retained LICENSE, NOTICE
 +and the paired Markdown for the exact compatibility changes. -/
@@ -219,7 +219,7 @@ Apply to the eight original modules in an isolated private draft. It includes al
 @@ -1,4 +1,9 @@
  import Mathlib
 +
-+/- Modified by Worker 18 for the private 2026-10-25 compatibility audit.
++/- Modified for the private 2026-10-25 compatibility audit.
 +Original: Anthropic FLT 6e837e75355538c7f80bab5b956861e86c4eacc2,
 +Copyright 2026 Anthropic, PBC; Apache-2.0 (retained LICENSE and NOTICE).
 +The conjugation proof closes the residual definitional equality explicitly. -/
@@ -237,7 +237,7 @@ Apply to the eight original modules in an isolated private draft. It includes al
 --- upstream/P2M/Sol/S_ClassFunction_exists_one_eq_sum_zsmul_induced_one_of_hyperelementary.lean
 +++ adapted/P2M/Sol/S_ClassFunction_exists_one_eq_sum_zsmul_induced_one_of_hyperelementary.lean
 @@ -1,3 +1,7 @@
-+/- Modified by Worker 18 for the private 2026-10-25 compatibility audit.
++/- Modified for the private 2026-10-25 compatibility audit.
 +Original: Anthropic FLT 6e837e75355538c7f80bab5b956861e86c4eacc2.
 +Copyright 2026 Anthropic, PBC; Apache-2.0. See retained LICENSE, NOTICE
 +and the paired Markdown for the exact compatibility changes. -/
@@ -256,7 +256,7 @@ Apply to the eight original modules in an isolated private draft. It includes al
 --- upstream/P2M/Sol/S_ClassFunction_exists_trace_eq_sum_induced_linearCharacter_of_normal_comm_of_pow_prime_pow_mem.lean
 +++ adapted/P2M/Sol/S_ClassFunction_exists_trace_eq_sum_induced_linearCharacter_of_normal_comm_of_pow_prime_pow_mem.lean
 @@ -1,3 +1,7 @@
-+/- Modified by Worker 18 for the private 2026-10-25 compatibility audit.
++/- Modified for the private 2026-10-25 compatibility audit.
 +Original: Anthropic FLT 6e837e75355538c7f80bab5b956861e86c4eacc2.
 +Copyright 2026 Anthropic, PBC; Apache-2.0. See retained LICENSE, NOTICE
 +and the paired Markdown for the exact compatibility changes. -/
@@ -284,7 +284,7 @@ Apply to the eight original modules in an isolated private draft. It includes al
 
 ## Check recipes
 
-Copy the eight files above, preserve the notices in [source notices](notices.md), apply the patch, and create the three inspection files below. Every private Lean file also needs English same-stem Markdown. Use the project Lean service with environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, never a shell Lean executable. The final API module imports both roots of the experiment.
+Copy the eight files above, preserve the notices in [source notices](notices.md), apply the patch, and create the three inspection files below. Every private Lean file also needs English same-stem Markdown. The checks were run by the project's Lean checking service, not by a shell Lean executable. The final API module imports both roots of the experiment.
 
 ```json
 {
@@ -333,7 +333,7 @@ set_option pp.proofs false
 
 #### Private source declaration inspection
 
-Print complete unapplied root signatures and transitive axiom lists for the three external theorem wrappers. Does not establish semantic acceptance or host target coverage.
+Print complete unapplied root signatures and transitive axiom lists for the three external theorem wrappers. Does not establish semantic acceptance or coverage of the Library's target.
 
 
 ### `BrauerAudit/Bridges.lean`
@@ -418,7 +418,7 @@ set_option pp.universes true
 
 #### Private bridge feasibility experiments
 
-Worker 18's internal audit experiments, derived from the pinned Mathlib APIs and the published Library interfaces. No new theorem from external literature is asserted. Matrix transport uses the finite basis, units of the matrix algebra equivalence and trace invariance. Group transport uses Mathlib's arbitrary-universe finite-group equivalence; subgroup cardinality uses injectivity, and the normalized sum is reindexed by the group equivalence. The final rank-one bridge explicitly assumes `FiniteInducedCharacterFormulaStatement G`, specializes it to the existing scalar representation and evaluates its trace. It does not discharge that hypothesis or prove the Library Brauer targets. All experiments preserve separate group and representation-carrier universes.
+The internal audit experiments, derived from the pinned Mathlib APIs and the published Library interfaces. No new theorem from external literature is asserted. Matrix transport uses the finite basis, units of the matrix algebra equivalence and trace invariance. Group transport uses Mathlib's arbitrary-universe finite-group equivalence; subgroup cardinality uses injectivity, and the normalized sum is reindexed by the group equivalence. The final rank-one bridge explicitly assumes `FiniteInducedCharacterFormulaStatement G`, specializes it to the existing scalar representation and evaluates its trace. It does not discharge that hypothesis or prove the Library Brauer targets. All experiments preserve separate group and representation-carrier universes.
 
 
 ### `BrauerAudit/API.lean`
@@ -459,7 +459,7 @@ set_option pp.universes true
 
 #### Private full API inventory
 
-Worker 18 checks unapplied declarations with universe printing, for the audit only. This imports both experiments and the adapted source closure; it proves no additional statement.
+This file checks unapplied declarations with universe printing, for the audit only. This imports both experiments and the adapted source closure; it proves no additional statement.
 
 
 ## Full displayed types and axiom output

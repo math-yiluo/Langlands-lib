@@ -65,9 +65,7 @@ nonreduced relative root systems. Every positive multiple is retained.
 Representability, the geometry and both unipotence assertions are
 conclusions.
 
-Worker 1285 wrote the assembly and its reindexing lemma. The imported
-cyclic comparison and root Lie-image developments are due to Workers
-1283 and 1300. The imported torus unipotence proof is due to Workers
-1388 and 1398, and the splitness proof to Workers 1389 and 1419, using
-Worker 1324's grading adapter and Worker 1285's coordinate comparison.
-Those results are reused from the Library by Lean module name.
+The assembly and its reindexing lemma are in this module. The imported
+cyclic comparison and root Lie-image developments, the torus unipotence
+proof, and the splitness proof with its grading adapter and coordinate
+comparison are reused from the Library by Lean module name.

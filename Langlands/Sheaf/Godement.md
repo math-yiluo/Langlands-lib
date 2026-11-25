@@ -1,7 +1,5 @@
 # Godement complexes on sites with specified points
 
-Author: Worker 13.
-
 The input is a genuine Mathlib site `(C, J)`, a family of its points, and a
 coefficient category with the displayed products and colimits. A point here is
 Mathlib's `GrothendieckTopology.Point`: its fiber functor has the filtering and
@@ -31,7 +29,7 @@ expresses the direct image from the disjoint family as a product of skyscrapers.
 It is a derived site-theoretic version of the construction, with coefficient,
 point-fiber, indexing, object and morphism universes explicit.
 
-The original was read by Worker 13. The source registration is
+The passage was read in the original. The source registration is
 `provided-7bb3903652336bd799aad8853b8efd7ff3bcc0c7652745417f4745a14ac08e90`,
 folder digest
 `e046cadfb9dcec4b0cf6624f80d6316bf532416153b82023f5100bd1ab0726cd`.

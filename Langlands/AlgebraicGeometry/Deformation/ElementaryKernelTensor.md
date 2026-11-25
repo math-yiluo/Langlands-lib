@@ -72,7 +72,7 @@ ideal, to `algebraMap A.algebra R ((c • x).val) * r`.
 `algebraMap A.algebra R x.val * r`. Zero kernels and arbitrary kernel
 dimensions are included.
 
-This contribution constructs actual algebraic coefficient identifications.
-It does not yet identify a sheaf or its cohomology with a fibre-coefficient
+This module constructs actual algebraic coefficient identifications.
+It does not identify a sheaf or its cohomology with a fibre-coefficient
 tensor, compare Picard obstructions under coefficient quotients, construct a
 formal hull, or prove the field Picard atlas statement.

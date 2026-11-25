@@ -1,6 +1,6 @@
 import Langlands.Representation.Finite.DegreeZeroBrauerStatement
 import Langlands.Representation.Finite.InducedCharacterProof
-import Langlands.AnthropicFLT.Definitions.Def_ClassFunction_Induced
+import Langlands.Representation.Finite.ClassFunctionInduction
 
 set_option backward.isDefEq.respectTransparency.types false
 
@@ -19,23 +19,23 @@ def extend (S : Subgroup G) (f : S → ℂ) : G → ℂ :=
 /-- Normalized induction of functions, additive over the integers. -/
 def ind (S : Subgroup G) : (S → ℂ) →ₗ[ℤ] (G → ℂ) :=
   AddMonoidHom.toIntLinearMap
-    { toFun := fun f => ClassFunction.induced S (extend S f)
+    { toFun := fun f => inducedClassFunction S (extend S f)
       map_zero' := by
         funext g
-        simp [extend, ClassFunction.induced_apply]
+        simp [extend, inducedClassFunction_apply]
       map_add' := by
         intro f h
         have he : extend S (f + h) = extend S f + extend S h := by
           funext g
           simp only [extend, Pi.add_apply]
           split_ifs <;> simp
-        rw [he, ClassFunction.induced_add] }
+        rw [he, inducedClassFunction_add] }
 
 theorem ind_apply (S : Subgroup G) (f : S → ℂ) (g : G) :
     ind S f g = (Nat.card S : ℂ)⁻¹ *
       ∑ x : G, if hx : x⁻¹ * g * x ∈ S then f ⟨x⁻¹ * g * x, hx⟩ else 0 := by
-  change ClassFunction.induced S (extend S f) g = _
-  rw [ClassFunction.induced_apply]
+  change inducedClassFunction S (extend S f) g = _
+  rw [inducedClassFunction_apply]
   congr 1
   apply Finset.sum_congr rfl
   intro x _
@@ -77,10 +77,10 @@ theorem generator_mem (S : Subgroup G) (χ χ' : S →* ℂˣ) :
 theorem ind_ind (S : Subgroup G) (T : Subgroup S) (f : T → ℂ) :
     ind S (ind T f) = ind (T.map S.subtype)
       (fun t => f ((T.equivMapOfInjective S.subtype S.subtype_injective).symm t)) := by
-  change ClassFunction.induced S
-    (fun g => if hg : g ∈ S then ClassFunction.induced T (extend T f) ⟨g, hg⟩ else 0) = _
-  rw [ClassFunction.induced_induced]
-  apply ClassFunction.induced_congr
+  change inducedClassFunction S
+    (fun g => if hg : g ∈ S then inducedClassFunction T (extend T f) ⟨g, hg⟩ else 0) = _
+  rw [inducedClassFunction_inducedClassFunction]
+  apply inducedClassFunction_congr
   intro g hg
   obtain ⟨s, hs, rfl⟩ := hg
   change (if hg : (s : G) ∈ S then extend T f ⟨(s : G), hg⟩ else 0) =

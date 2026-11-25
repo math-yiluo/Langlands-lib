@@ -1,9 +1,5 @@
 # Cuspidality, cuspidal series and the support categories `Alg({I})`
 
-Implementation and documentation: Worker 379 (task
-`0a1bd7fb-66c2-4dcc-a3c8-6619f6fa10b4`, the complex-and-targets unit of the
-general Aubert program `46df6a68-5db4-4428-8044-05151d6ce1f6`).
-
 This module defines the predicates that pick out the representations to which
 Aubert's corrected Theorem 3.6 applies:
 
@@ -23,7 +19,7 @@ under `i ∘ r`) is not asserted here.
 
 ## Generic layer
 
-The module works over the generic standard families of Worker 23's adapter
+The module works over the generic standard families of the adapter
 modules `Langlands.Representation.Aubert.General.Parabolic` and
 `Langlands.Representation.Aubert.General.AlternatingOperator` (namespace
 `Langlands.Aubert.General`):
@@ -38,11 +34,10 @@ modules `Langlands.Representation.Aubert.General.Parabolic` and
 
 No reductive structure is constructed or assumed. For the rational points of a
 connected reductive group these families, the decompositions and the closedness
-facts are supposed to come from the owners of the shared Renard Chapter V
-objects. Any family of the stated shape can be substituted, and the predicates
+facts are supposed to come from the shared Renard Chapter V objects. Any family of the stated shape can be substituted, and the predicates
 then have the stated meaning for that family only.
 
-The functors are Worker 23's: `jacquetFunctor (h I) (hU I)` is the normalized
+The functors are those of the adapter modules: `jacquetFunctor (h I) (hU I)` is the normalized
 Jacquet functor `r^G_{L_I}`, `normalizedInductionFunctor (h I) (hU I)` is the
 normalized parabolic induction `i^G_{L_I}`, and `conjugationFunctor n hn` is the
 transport `σ ↦ (x ↦ σ(n⁻¹ x n))` from representations of `M I` to those of
@@ -77,7 +72,7 @@ of `L_J` are indexed by the subsets of `J` (`I : Finset J`, read in `ι` through
 `leviIndex J I`). For such `I` the parabolic of `M J` is
 `(P I) ∩ M J = (M I) ⋉ (U I ∩ M J)`, as subgroups of `M J`
 (`Subgroup.subgroupOf`). The hypothesis `hJ` supplies these decompositions; it
-is the same hypothesis as for Worker 23's `leviAlternatingOperator`, and `hM`
+is the same hypothesis as for `leviAlternatingOperator`, and `hM`
 says that `M J` is closed, so that `M J` is locally compact. The predicate
 states `r^{L_J}_{L_I}(σ) = 0` for every `I ⊊ J`. The Jacquet functor for `I` is
 the one of the adapter modules, taken for the subgroup `U I ∩ M J` of `M J`,
@@ -122,9 +117,8 @@ group `W` with `v(I) = J ⊆ S`. Aubert writes `W := N_G(T_0)/T_0` (p. 2180); fo
 nonsplit groups the relative Weyl group is `N_G(T_0)/Z_G(T_0)`. The relation
 `hn` is the Levi-level consequence `L_{v(I)} = v L_I v⁻¹` that the erratum
 records in its parenthesis. The relation itself, and its agreement with the root
-datum, belong to the structural framework: they are requirement A02 (actual simple
-roots, relative Weyl group and Levi transport) of the structural ledger of the
-general Aubert program.
+datum, belong to the structural framework (actual simple roots, relative Weyl
+group and Levi transport).
 With a weaker relation the predicate is weaker, and with a stronger one it is
 stronger, so the faithfulness of `Alg({I})` for an actual reductive group rests on
 that instantiation.
@@ -138,7 +132,7 @@ associated by an element `v ∈ W` with `v(I) = J`, and `n = v m` with `m` in th
 normalizer of `L_I`; since `σ` ranges over all irreducible cuspidal
 representations of `L_I`, and `Ad(m)σ` is again one of them, the two classes of
 induced representations coincide. So this instantiation is equivalent to the
-erratum's definition given that structural fact (again requirement A02). It needs
+erratum's definition given that structural fact. It needs
 no Weyl-group data, only the standard families. For the rational points of a
 connected reductive group, the published families
 `Langlands.Aubert.General.RationalPointFamily.parabolic`, `levi` and `unipotent`
@@ -190,7 +184,7 @@ implicit.
 * `conjugationFunctorOneIso`: for a subgroup `L` and the trivial membership
   condition for the element `1`, the conjugation transport
   `(conjugationFunctor 1 hn).obj σ` is isomorphic to `σ`, through the identity
-  linear map. This is a generic lemma about Worker 23's transport and holds for
+  linear map. This is a generic lemma about the transport `conjugationFunctor` and holds for
   any topological group.
 * `isInSupportCategory_cuspidalInduction`: if `hrefl : IsAssociate I I 1`, then
   for every irreducible cuspidal `σ` of `M I` the normalized induction

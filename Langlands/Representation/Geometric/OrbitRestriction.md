@@ -1,6 +1,6 @@
 # Smooth orbit restriction and adjacent support kernels
 
-Worker 112 implements actual restriction by evaluation along `q -> w^-1 q`,
+This module implements actual restriction by evaluation along `q -> w^-1 q`,
 with stabilizer covariance obtained by conjugation by `w^-1`. Pulling an ambient
 uniform open right stabilizer back to `Q` proves smoothness. The map is linear,
 intertwines right translation, and commutes pointwise with every inducing

@@ -1,29 +1,27 @@
 # The decomposition theorem for semisimple groups over a field: proof
 
-Authors: Worker 161 and Worker 162 (Task 6631).
-
 `Langlands.GroupScheme.simpleFactorDecomposition` proves the published statement
 `Langlands.GroupScheme.SimpleFactorDecompositionStatement.{u}` exactly, for an arbitrary
 universe `u`, with no further hypotheses. It covers every field `k : Type u` and every group
 scheme `G` over `Spec k` with `IsSemisimple G`, including the trivial group, where the index
 type is empty. The statement module
-[`SimpleFactorDecompositionStatement`](SimpleFactorDecompositionStatement.md) is unchanged;
-it formalizes Brian Conrad, *Reductive group schemes*, Theorem 5.1.19 (p.150). The clause
+[`SimpleFactorDecompositionStatement`](SimpleFactorDecompositionStatement.md)
+formalizes Brian Conrad, *Reductive group schemes*, Theorem 5.1.19 (p.150). The clause
 numbers below are those of its Markdown.
 
 ## Modules
 
 The proof uses four companion modules, all in `Langlands/GroupScheme/Reductive/`:
 
-- [`SimpleFactorPoints`](SimpleFactorPoints.md) (Worker 161): general facts about points,
+- [`SimpleFactorPoints`](SimpleFactorPoints.md): general facts about points,
   fppf-type lifting, commutants and finite products;
-- [`SimpleFactorPresentation`](SimpleFactorPresentation.md) (Worker 162):
+- [`SimpleFactorPresentation`](SimpleFactorPresentation.md):
   `SimpleFactor.exists_almostSimplePresentation`, a central isogeny `mul : pi A ⟶ G` from a
   finite product of almost-simple groups whose factor maps are closed immersions with
   normal range;
-- [`SimpleFactorCover`](SimpleFactorCover.md) (Worker 161): the structure
+- [`SimpleFactorCover`](SimpleFactorCover.md): the structure
   `AlmostSimpleCover G` and clause 1 for its factors;
-- [`SimpleFactorSubgroups`](SimpleFactorSubgroups.md) (Worker 161): the images `G_J` of
+- [`SimpleFactorSubgroups`](SimpleFactorSubgroups.md): the images `G_J` of
   subproducts and clauses 5–8.
 
 It also imports the published
@@ -70,7 +68,7 @@ of `SimpleFactorCover`, so the lemmas stated with the latter close the goals dir
 
 Conrad proves Theorem 5.1.19 by passing to a separable closure, applying the split case
 (Proposition 5.1.17, via root systems) and descending. The Lean proof does not use roots,
-separable closures or Galois descent. Worker 162's presentation is built by induction on
+separable closures or Galois descent. The presentation of `SimpleFactorPresentation` is built by induction on
 dimension from the published complement theorem `semisimpleNormalIsogenyComplement`. The
 identification of the minimal normal subgroups, the subgroups `G_J` and the uniqueness
 statements are then proved over `k` from the published dichotomy for almost-simple normal
@@ -81,5 +79,5 @@ subgroups (`IsAlmostSimple.range_le_or_commute_of_normal`), perfectness of semis
 
 ## Axioms
 
-`lean_check` reports that the theorem depends only on `propext`, `Classical.choice` and
+An axiom check reports that the theorem depends only on `propext`, `Classical.choice` and
 `Quot.sound`.

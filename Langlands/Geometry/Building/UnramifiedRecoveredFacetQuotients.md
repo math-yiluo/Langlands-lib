@@ -75,8 +75,9 @@ fixed-facet context; this does not add a mathematical hypothesis.
 The direct Library inputs are `UnramifiedRecoveredFacetMaps`,
 `ReductiveQuotientExistence`, `SeparableUnipotentRadicalProof`,
 `FppfQuotientComparison` and `Reductive.AlgebraicExtensionAscent`, as imported
-in the Lean file. This unit composes those constructions and does not assert a
-separate theorem from the literature. The remaining host argument requires an
+in the Lean file. This module composes those constructions and does not assert a
+separate theorem from the literature. The remaining argument for the
+fixed-point split-torus statement requires an
 actual facet-parabolic correspondence, residue tori and their lifts, and the
 apartment and unit-fixation argument. It does not prove
 `UnramifiedFixedPointSplitTorusStatement`.

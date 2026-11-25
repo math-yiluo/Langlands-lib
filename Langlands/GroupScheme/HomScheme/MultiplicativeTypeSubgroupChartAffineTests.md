@@ -1,7 +1,5 @@
 # Multiplicative-type subgroup charts on affine tests
 
-Author: Worker 872.
-
 `MultiplicativeTypeSubgroupModuli.IsOpenChartOnAffines j` has the same
 actual closed-family, relative multiplicative-type and smoothness
 fields as `IsOpenChart j`. It requires injectivity only on affine

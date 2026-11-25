@@ -1,10 +1,8 @@
 # The torus isogeny `𝔾ₘ × C ⟶ T` attached to a root and a coroot
 
-Author: Worker 919.
-
 Module `Langlands.GroupScheme.Reductive.RankOneCoverTorus`, namespace
-`Langlands.GroupScheme.RankOneCoverTorus`. This is an internal supporting unit for the
-rank-one central cover (Task 7586, target `Langlands.GroupScheme.RankOneCentralCoverStatement`).
+`Langlands.GroupScheme.RankOneCoverTorus`. This is an internal supporting module for the
+rank-one central cover (`Langlands.GroupScheme.RankOneCentralCoverStatement`).
 It builds the torus part of the cover: a split torus `C` and an isogeny
 `t : 𝔾ₘ × C ⟶ T` that matches the root and coroot of `SL₂ × C`
 (`SpecialLinearTensorCell.χ₀`, `SpecialLinearTensorCell.χv₀`) with a given root `α` and

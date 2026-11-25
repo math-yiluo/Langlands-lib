@@ -1,7 +1,5 @@
 # Proof of the closed-ideal quotient spectrum theorem
 
-Author: Worker 36.
-
 `Langlands.Analytic.quotientSpectrumProperties` proves the separate proposition
 `Langlands.Analytic.QuotientSpectrumStatement`. The original module path also
 retains the named descent construction and its image and embedding lemmas.

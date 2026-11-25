@@ -1,6 +1,6 @@
 # Comparing the chosen compact quotient with the actual valuation chamber
 
-This internal definition unit records the two explicit geometric obligations
+This module of definitions, of internal provenance, records the two explicit geometric obligations
 needed to identify the existing compact quotient with the existing norm quotient.
 It constructs that identification and transports any actual dominant valuation
 section to double-coset representatives, conditional on those obligations.
@@ -110,7 +110,9 @@ The norm kernel and subgroup used here do not identify either of those
 objects with `Z(F)^1` or `K₀`. Full corrected building validity, general
 existence, compactness and maximality, proof of the two comparison properties,
 and inheritance by the same `K₀` in standard Levi subgroups remain separate
-targets of the program. This unit does not complete the host task.
+targets. This module does not prove `AvailableRenardCartanStatement`, the
+statement it serves, whose conclusion includes `SpecialCompactRenardComparison`;
+the Library does not prove that statement.
 
 Source motivation and normalizations are inherited from the paired public
 modules `CentralizerValuation`, `DominantQuotient`,

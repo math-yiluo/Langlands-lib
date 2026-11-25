@@ -93,7 +93,7 @@ theorem IsWeightVectorCoordinates.rootBaseChange
 
 variable [IsAffineHom G.X.hom] [Smooth G.X.hom]
 
-local instance {H : GroupScheme (Spec (CommRingCat.of k))} [IsAffineHom H.X.hom] :
+private local instance {H : GroupScheme (Spec (CommRingCat.of k))} [IsAffineHom H.X.hom] :
     IsAffineHom ((GroupScheme.baseChange b).obj H).X.hom := by
   change IsAffineHom (CategoryTheory.Limits.pullback.snd H.X.hom b)
   infer_instance

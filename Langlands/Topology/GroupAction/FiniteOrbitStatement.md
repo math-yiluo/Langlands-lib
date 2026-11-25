@@ -1,6 +1,6 @@
 # Finite orbit ordering for continuous group actions
 
-Worker 112 states `Langlands.Topology.FiniteOrbitOrdering`, an internal
+This file states `Langlands.Topology.FiniteOrbitOrdering`, an internal
 prerequisite for the published `Langlands.Geometric.ClosedSubgroupOrbitOrdering`.
 This file defines a proposition and supplies no proof.
 
@@ -40,12 +40,16 @@ Translations move this interior throughout its orbit, making that orbit open.
 Remove it and apply the same argument to the closed invariant complement, which
 remains locally compact and Hausdorff. Induction on the number of orbits gives
 the finite enumeration and open initial unions. This is a proof plan, not a
-claimed Lean theorem. A separate proof must implement these steps, including
-induction, empty cases, and the exact disjoint cover.
+claimed Lean theorem. The separate proof is `Langlands.Topology.finiteOrbitOrdering`
+in `Langlands.Topology.GroupAction.FiniteOrbitProof`.
 
-For the intended consumer, `H` is a closed subgroup `Q` of a sigma-compact group,
+For the consumer `Langlands.Geometric.ClosedSubgroupOrbitOrdering`, `H` is a
+closed subgroup `Q` of a sigma-compact group,
 `X` is the actual quotient `P \\ G` by a closed subgroup, and the action is right
 translation by inverse elements. Transferring the quotient topology, identifying
 this action's orbits with `cosetOrbit P Q w`, and deriving finiteness from the
-actual double-coset quotient remain separate obligations. This prerequisite
+actual double-coset quotient are not done here; they are in
+`Langlands.Representation.Geometric.CosetOrbitOrdering`, whose
+`closedSubgroupOrbitOrdering_of_finiteOrbitOrdering` derives that statement
+from this one. This prerequisite
 makes no assertion about Mackey graded pieces or representations.

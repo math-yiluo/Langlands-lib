@@ -1,7 +1,5 @@
 # Actual fppf images of split tori
 
-Author: Worker 1375.
-
 This internal construction strengthens the published split-image
 factorization in `Rational.SplitTorusImage` by including flatness,
 surjectivity and local finite presentation of the projection onto the
@@ -26,7 +24,7 @@ local finite presentation.
 
 `IsSplitTorus.nonempty_fppfImage` follows the existing image-lattice
 construction of `IsSplitTorus.exists_factor_isSplitSubtorus` in
-`Rational.SplitTorusImage` (Author: Worker 228). Present the source by
+`Rational.SplitTorusImage`. Present the source by
 `D(ℤ^I)` and the affine target by its actual coordinate algebra. The
 published `SplitTorusImage.lattice` is the subgroup of exponents whose
 monomials lie in the image of the classifying coordinate map. Its group

@@ -4,7 +4,7 @@ Lean module: `Langlands.AlgebraicGeometry.LangWeil.CurvePlaneFibrePoints`, names
 `Langlands.AlgebraicGeometry.LangWeil.CurvePlane`.
 
 This module is a helper for the proof of
-`Langlands.AlgebraicGeometry.LangWeil.FamilyCurvePlaneComparisonStatement` (Task 5581).
+`Langlands.AlgebraicGeometry.LangWeil.FamilyCurvePlaneComparisonStatement`.
 Provenance: internal. It specializes the uniform hypersurface model of the Library
 (`Langlands.Algebra.GenericIrreducibilitySpreading.exists_hypersurfaceModel_uniform_of_separablyClosed_range`)
 to a finite field and compares rational points, as in the reduction of the curve case of

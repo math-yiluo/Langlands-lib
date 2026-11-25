@@ -1,7 +1,5 @@
 # Invariant cohomology of equivariant sheaves as derived `Hom` from the trivial representation
 
-Author: Worker 16.
-
 This module declares, in the namespace
 `Langlands.Cohomology.EquivariantComposite`, one auxiliary definition and
 three theorem-statement definitions. The statements are propositions, not
@@ -37,12 +35,12 @@ Declarations of other modules that are used:
   transport category of opens whose underlying presheaf is a sheaf;
   morphisms commute with restriction and with transport by `G`.
 - `EquivariantDerivedSections.invariantGlobalDerived R G X n` (module
-  `Langlands.Cohomology.EquivariantDerivedSections`, Worker 13): the `n`-th
+  `Langlands.Cohomology.EquivariantDerivedSections`): the `n`-th
   right derived functor, computed with injective resolutions of equivariant
   sheaves, of the invariant global sections `F ↦ Γ(X, F)^G`. It takes values
   in `ModuleCat R`. This is Tohoku's `H^n(X; G, F) = R^n Γ_X^G(F)` (5.2.3).
 - `EquivariantDerivedComplex.globalComplex R G X` (module
-  `Langlands.Cohomology.EquivariantDerivedComplex`, Worker 13): the derived
+  `Langlands.Cohomology.EquivariantDerivedComplex`): the derived
   global section complex `RΓ(X, F)`. It is an object of the bounded below
   derived category `DerivedCategory.Plus (Rep R G)`. It is
   `DerivedPlus.derivedComplex` of the section representation, that is,
@@ -60,15 +58,15 @@ Declarations of other modules that are used:
   (`IsTopologicalGroup G`, `HasStableNeighbourhoods G X`) it is abelian with
   enough injectives.
 - `SmoothSheafCohomology.invariantCompactDerived R G X n` (module
-  `Langlands.Cohomology.SmoothSheafCohomology`, Worker 13): the `n`-th right
+  `Langlands.Cohomology.SmoothSheafCohomology`): the `n`-th right
   derived functor, computed with injective resolutions in the smooth
   category, of the invariant compactly supported sections
   `F ↦ Γ_c(X, F)^G`. A section has compact support when its support, the
-  closed set of points where its germ is nonzero, is compact. Worker 13's
-  Markdown explains why this has the shape of Berkovich's
+  closed set of points where its germ is nonzero, is compact. The Markdown of
+  `SmoothSheafCohomology` explains why this has the shape of Berkovich's
   `H^n_c(X(G), F)`.
 - `SmoothSheafDerivedComplex.compactComplex R G X` (module
-  `Langlands.Cohomology.SmoothSheafDerivedComplex`, Worker 13): the derived
+  `Langlands.Cohomology.SmoothSheafDerivedComplex`): the derived
   compact section complex `RΓ_c(X, F)` in
   `DerivedCategory.Plus (SmoothRep R G)`. Its cohomology in degree `q` is the
   derived compact sections in the smooth category
@@ -256,7 +254,7 @@ Changes and source gap:
 
 - The analytic étale site is replaced by the ordinary topology of `X`, with
   the Library's smooth equivariant sheaves. This is the same transport made
-  by Worker 13's `SmoothSheafCohomology`. Coefficients are `R`-modules.
+  by `SmoothSheafCohomology`. Coefficients are `R`-modules.
 - The source asserts the spectral sequence for every topological group `G`.
   The example above shows that this fails for noncompact `G`, so the
   statement is restricted to compact `G`. No proof is printed beyond "the
@@ -320,30 +318,29 @@ subgroup of `GL_n(ℚ_p)`. Both
 statements apply to concrete data with Mathlib's standard derived categories,
 with morphism universes `w = w' = 1` over `u = 0`.
 
-`lean_check` in environment `bb168ec3-1031-46d9-816b-5c2ed7bbe1a6` (Lean
+Checks in a Lean environment (Lean
 4.34.0, Mathlib `5ed2965256430c3649e86755f9576b54eca72435`), over Library
 commit `e449cde988d4e97ab280b8d4d11262887ccc26e0`:
 
-- Diagnostic `7b1f23b2-025e-4c5d-a4f0-d181308c4e32` compiled the module with
+- One check compiled the module with
   no errors or warnings. It inspected `EquivariantCompositeStatements`:
   `statement_returns_prop: true`, level parameters `w, w', u`, axioms
   `propext`, `Classical.choice`, `Quot.sound`.
-- Diagnostics `a0d3e444-1906-4598-bc3c-87118db7e64e` and
-  `feef6399-237d-4918-a4a1-b3ab03861a85` inspected the two component
+- Two further checks inspected the two component
   propositions (`statement_returns_prop: true`). Their sources differ from the
   final module only in the module docstring.
-- Diagnostic `f4d28c2b-3267-4585-adf3-61bb44404ff4` compiled the test file
+- Another check compiled the test file
   above with no errors or warnings.
 
 ## Dependencies
 
 Library commit `e449cde988d4e97ab280b8d4d11262887ccc26e0`:
 
-- `Langlands.Cohomology.EquivariantDerivedComplex` (Worker 13):
+- `Langlands.Cohomology.EquivariantDerivedComplex`:
   `globalComplex`. It imports `EquivariantDerivedSections` with
   `invariantGlobalDerived`, and `Langlands.Sheaf.Equivariant` with
   `TopologicalSheaf`.
-- `Langlands.Cohomology.SmoothSheafDerivedComplex` (Worker 13):
+- `Langlands.Cohomology.SmoothSheafDerivedComplex`:
   `compactComplex`. It imports `SmoothSheafCohomology` with
   `invariantCompactDerived`, and the smooth sheaf and smooth representation
   modules with `SmoothTopologicalSheaf`, `HasStableNeighbourhoods` and

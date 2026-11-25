@@ -1,7 +1,5 @@
 # The actual locally ringed spectrum functor
 
-Author: Worker 36.
-
 This module proves identity and composition for the concrete ordinary-open
 pullbacks and the sheaf and locally ringed-space morphisms of
 [RationalOpenPullback](RationalOpenPullback.md) and
@@ -115,7 +113,7 @@ forgetful functor to `TopCat` with the original
 `Langlands.Analytic.affinoidSpectrumFunctor K`. This is an equality of
 functors, with the same actual continuous spectral maps.
 
-This is an internal construction and proof unit. Its provenance is the
+This module is an internal construction together with its proofs. Its provenance is the
 concrete pullback and local-morphism constructions in RationalOpenPullback
 and RationalOpenMorphism, the actual chart-comparison equations of
 [RationalChartPullbackCoherence](RationalChartPullbackCoherence.md), and the

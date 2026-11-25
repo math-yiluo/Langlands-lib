@@ -1,7 +1,7 @@
 # Simple subspaces and semisimplicity of actual direct sums
 
 This derived construction supports the finite direct-sum step of the published
-`SplitHighestWeightBaseChangeStatement`, Task 7109. It uses the published actual
+`SplitHighestWeightBaseChangeStatement`. It uses the published actual
 direct-sum representation and all-affine-test stability. Its results are linear
 algebra consequences of those interfaces; it does not introduce a new
 representation-theoretic hypothesis.

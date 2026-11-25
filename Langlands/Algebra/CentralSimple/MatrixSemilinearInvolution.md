@@ -1,13 +1,12 @@
 # Semilinear involutions descend from matrix algebras to division rings
 
-Author: Worker 166.
-
 This module proves that an involution of the second kind on a matrix algebra
 `Matrix ι ι D` over a division ring `D` gives an involution of the second kind on `D`
 itself, for the same automorphism of the base field. It is the pure-algebra corner step
 of the general-field implication `UnitaryDivisionCommutative K →
-UnitaryInvolutionSplitting K` (Worker 150's statement module
-`Langlands/Algebra/UnitaryInvolutionStatements`). That implication is part of Task 5973.
+UnitaryInvolutionSplitting K` (statement module
+`Langlands/Algebra/UnitaryInvolutionStatements`). That implication is
+`UnitaryDivisionSplittingStatement`, proved in `Langlands.Algebra.CentralSimple.UnitaryDivisionSplitting`.
 This module does not prove it: Wedderburn–Artin and the dimension count `finrank L D = 1`
 are not used here.
 
@@ -20,7 +19,7 @@ the hypothesis `hσ : ∃ ω, σ ω ≠ ω`. For an `L`-algebra `A`, a map `τ :
 - `τ (τ x) = x` (involutive),
 - `τ (algebraMap L A c) = algebraMap L A (σ c)` (restricts to `σ` on `L`).
 
-These are the four conjuncts of `Langlands.IsUnitaryInvolution σ τ` in Worker 150's
+These are the four conjuncts of `Langlands.IsUnitaryInvolution σ τ` in that
 statement module. This module states them separately so that it depends only on
 Mathlib.
 
@@ -109,7 +108,8 @@ algebra has an involution, then every Brauer-equivalent algebra has an involutio
 same kind". The book deduces that remark from the Albert–Riehm–Scharlau criterion via
 the norm algebra. This module instead proves the special case directly, by the
 elementary corner argument (`e B e ≅ D`, with `τ(e)` equivalent to `e`, followed by a
-twist by an inner automorphism) that Worker 150 outlined for Task 5973. Its hypotheses
+twist by an inner automorphism) outlined in the Markdown of
+`Langlands/Algebra/UnitaryInvolutionStatements`. Its hypotheses
 are weaker than the book's: no finite-dimensionality or centrality is assumed, and `σ`
 need only be a nontrivial ring endomorphism of `L`. The Lean statements are internal
 formulations; no external statement is transcribed.

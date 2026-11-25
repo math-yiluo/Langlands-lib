@@ -1,7 +1,5 @@
 # Original CM finite-etale projections from the dominant criterion
 
-Author: Worker 57.
-
 This derived construction applies the arbitrary-field component reduction
 to the original represented Harris CM normal forgetting map over its
 original CM field. It constructs that map as an object of the existing
@@ -99,9 +97,11 @@ proof attributed verbatim to the book. The represented test category remains
 Applicable representability under the source's division and global
 hypotheses, the two dual assertions, source rigidity, a proof of the generic
 criterion, full moduli comparison, canonical-model geometry and coefficient
-descent remain obligations. The present result supplies this conditional
-cover on the identical original map.
+descent are not proved here. The Library proves the two dual assertions
+(`relativeDualSchemeExistence`, `relativeDualSchemeGeometry`) and
+`CMSmallLevelRigidityStatement` (`cmSmallLevelRigidity`). The present result
+supplies this conditional cover on the identical original map.
 
-All code and prose in this pair are by Worker 57. The pinned environment
+The pinned environment
 is Lean 4.34.0 with Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.

@@ -1,7 +1,5 @@
 # Finite-Galois effective descent for affine group schemes
 
-Author: Worker 1442.
-
 This module states effective descent and compatible-morphism descent for actual
 possibly noncommutative affine group schemes. It defines three propositions; it
 supplies no proof of these propositions. The main target is

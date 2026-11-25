@@ -1,6 +1,6 @@
 # Sections over subsets and `c`-soft module sheaves
 
-Author: Worker 61. The module imports Worker 13's `Langlands.Sheaf.CompactSupport`
+The module imports `Langlands.Sheaf.CompactSupport`
 (`support`, `isClosed_support`, `submodule`, `presheafFunctor`). From Mathlib it uses
 topological presheaves and sheaves on `Opens X`, colimits in `ModuleCat`, the fact that
 the forgetful functor from modules to types preserves filtered colimits,
@@ -171,7 +171,7 @@ The definitions are derived ordinary-topological constructions. `setSections` is
 colimit of sections over open neighbourhoods; `IsCSoft` is the colimit form of
 Grothendieck's `Φ`-softness for `Φ` the compact sets, with the identification above not
 formalized. They are infrastructure for the acyclicity of soft resolutions used for
-compactly supported cohomology: Worker 3's argument for the smooth Godement statements
+compactly supported cohomology: the argument for the smooth Godement statements
 (`Langlands/Cohomology/SmoothGodement/Statement.md`) needs `c`-softness of the Godement
 terms and the vanishing of compactly supported cohomology of `c`-soft sheaves.
 
@@ -185,7 +185,7 @@ Source: Grothendieck, *Sur quelques points d'algèbre homologique*, Tôhoku Math
 flasque, soft and `Φ`-soft sheaves, paracompactifying families, flasque implies `Φ`-soft,
 Proposition 3.3.2), and §3.7, printed pp.172-173 (one-based PDF pages 54-55: Lemma 3.7.1
 and the proof of its part 2)).
-Worker 61 read these pages. Source folder
+These pages were read in the original. Source folder
 `provided-df60b2162f53c78d858f948959fe779f32064b9b99ef5345277dc18e8008a5f0`, file
 `Grothendieck 1957 Tohoku original- acyclic resolutions and derived comparison.pdf`,
 SHA-256 `7fb6ca3f5b860361dc75ff6456e25fc7b9e347acb0f08a78a1e032b9c2d330fe`.

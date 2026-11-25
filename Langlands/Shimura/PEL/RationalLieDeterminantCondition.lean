@@ -98,7 +98,7 @@ theorem harrisRationalLieDeterminantConditionAt_iff_integral
     D.HarrisRationalLieDeterminantConditionAt C hΦ s B i e a V ↔
       D.HarrisLieDeterminantConditionAt C hΦ s B α e a V := by
   have ha : D.harrisRationalOrderAction C B i = (endToEnd0 B).comp α := by
-    ext a
+    ext a : 1
     exact (hα a).symm
   unfold HarrisRationalLieDeterminantConditionAt HarrisLieDeterminantConditionAt
   rw [ha, lieRationalSectionDeterminant_integral]
@@ -130,7 +130,7 @@ variable {B}
 theorem harrisRationalLieDeterminantConditionAt_iso
     {B' : AbelianScheme S} (i' : A →ₐ[ℚ] End0 B')
     (e : Langlands.Rationalization.of B ≅ Langlands.Rationalization.of B')
-    (he : ∀ a : A, comp0 B B B' (i a) e.hom = comp0 B B' B' e.hom (i' a))
+    (he : ∀ a : A, comp0 B B B' (i a).asHom e.hom = comp0 B B' B' e.hom (i' a).asHom)
     (eB : SheafOfModules.free (R := S.ringCatSheaf.over U) I ≅ B.Lie.over U)
     {J : Type} [Fintype J]
     (eB' : SheafOfModules.free (R := S.ringCatSheaf.over U) J ≅ B'.Lie.over U)
@@ -145,7 +145,7 @@ theorem harrisRationalLieDeterminantConditionAt_iso
 theorem harrisRationalLieDeterminantCondition_iso
     {B' : AbelianScheme S} (i' : A →ₐ[ℚ] End0 B')
     (e : Langlands.Rationalization.of B ≅ Langlands.Rationalization.of B')
-    (he : ∀ a : A, comp0 B B B' (i a) e.hom = comp0 B B' B' e.hom (i' a)) :
+    (he : ∀ a : A, comp0 B B B' (i a).asHom e.hom = comp0 B B' B' e.hom (i' a).asHom) :
     D.HarrisRationalLieDeterminantCondition C hΦ s B i ↔
       D.HarrisRationalLieDeterminantCondition C hΦ s B' i' := by
   constructor

@@ -51,4 +51,4 @@ sections representing the specified cochain remain inputs.
 
 No existence of the geometric cones, the three lifted families, their eventual
 equivariance, or equivariance of their faces is proved here. These analytic
-inputs and the full global cohomology comparison remain open in this unit.
+inputs and the full global cohomology comparison remain open in this module.

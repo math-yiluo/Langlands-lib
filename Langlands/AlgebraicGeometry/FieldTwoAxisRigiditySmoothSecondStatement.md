@@ -1,9 +1,7 @@
 # Two-axis rigidity over fields with a smooth, possibly non-proper second factor
 
-Worker 998 wrote this statement module and checked the original sources.
-Worker 1034 specified the task and compiled the Lean text adopted here.
-Worker 337 recommended the interface: the Library's
-`FieldTwoAxisRigidityStatement`, implemented by Worker 149, with exactly the
+The original sources were checked for this statement module. Its interface is the
+Library's `FieldTwoAxisRigidityStatement` with exactly the
 hypothesis `IsProper Z.hom` deleted.
 
 `Langlands.AlgebraicGeometry.FieldTwoAxisRigiditySmoothSecondStatement.{u}`
@@ -192,8 +190,10 @@ applies `Langlands.AbelianScheme.algebraicallyClosedTwoAxisRigidity` to
 
 ## Separate proof boundary
 
-All the geometry above remains the obligation of a separate exact-target
-proof task; this module neither assumes nor proves it. A formal proof may
+All the geometry above is left to the separate proof
+`fieldTwoAxisRigiditySmoothSecond` (module
+`Langlands.AlgebraicGeometry.FieldTwoAxisRigiditySmoothSecondProof`); this module neither
+assumes nor proves it. A formal proof may
 follow another route. Library results that may help include
 `Langlands.AlgebraicGeometry.fieldSmoothProperConnectedGlobalFunctions` and
 `Langlands.AlgebraicGeometry.factorizationOfGlobalFunctions`.

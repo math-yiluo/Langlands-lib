@@ -4,16 +4,13 @@ Module `Langlands.Algebra.NondegenerateTensorHomExactnessStatements`.
 Namespace `Langlands.Algebra.NondegenerateTensorHomExactness`.
 Entry proposition `Statements`.
 
-Worker 1222 wrote this statement unit under the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`.
-
 ## Source and provenance
 
 The governing source is David Renard, *Représentations des groupes réductifs
 p-adiques*, French version dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1222 read I.2.2 on printed pp.15–16 / PDF pp.21–22 for this unit. The
+I.2.2 on printed pp.15–16 / PDF pp.21–22 was read for this module. The
 assertion is the unnumbered Proposition of I.2.2, printed p.15 / PDF p.21:
 
 > **Proposition.** Soit `A` une ℂ-algèbre à idempotents, et `X` un `A`-module
@@ -30,7 +27,7 @@ pp.218–219, for the proof. Exactness of a functor is defined in A.VIII.1,
 printed p.266 / PDF p.272, by preservation of one-sided exact sequences.
 
 The source works over complex algebras and lands in complex vector spaces.
-This unit works over an arbitrary associative `NonUnitalRing A` and lands in
+This module works over an arbitrary associative `NonUnitalRing A` and lands in
 integer modules, as the published Hom functors of A.VIII.2 do. A sequence of
 complex vector spaces is exact if and only if its underlying sequence of
 abelian groups is exact, so nothing is lost. The idempotented hypothesis and
@@ -97,17 +94,17 @@ independent.
 
 ## Scope and dependencies
 
-This file states the Proposition and proves none of it. Proofs belong to a
-separate `lean.proof@1` task targeting `Statements`. The other I.2.2
+This file states the Proposition and proves none of it. Its proof is
+`Langlands.Algebra.NondegenerateTensorHomExactness.statements`, in
+`NondegenerateTensorHomExactnessProof`. The other I.2.2
 assertions, the Theorem (I.2.2.1)–(I.2.2.4) and the Corollary
 (I.2.2.5)–(I.2.2.7), have published additive statements in
 `NonUnitalTensorHomAdjunctionStatements` and
 `NonUnitalTensorAssociativityStatements`; their coefficient and unitization
-comparisons remain open, as recorded there.
+comparisons are not part of those additive statements, as recorded there.
 
 The file imports `Langlands.Algebra.NonUnitalModuleTensor`,
 `Langlands.Algebra.NondegenerateModuleAbelianProof`,
 `Langlands.CategoryTheory.Renard.HomExactnessComparisonStatements` and pinned
-Mathlib `Mathlib.Algebra.Category.ModuleCat.Abelian` (environment
-`bb168ec3-1031-46d9-816b-5c2ed7bbe1a6`, Mathlib commit
+Mathlib `Mathlib.Algebra.Category.ModuleCat.Abelian` (Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`).

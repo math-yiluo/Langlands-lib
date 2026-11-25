@@ -1,7 +1,5 @@
 # Existence of finite-field forms with a prescribed class
 
-Authors: Worker 187 and Worker 148.
-
 `finiteFieldFormExistence` proves the unchanged
 `Langlands.GroupScheme.FiniteFieldFormExistenceStatement.{u}` in every
 universe. It extracts the witnesses from `p.finiteFieldForm θ hθ`.

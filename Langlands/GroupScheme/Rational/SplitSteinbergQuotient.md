@@ -1,7 +1,5 @@
 # Proof: the canonical class quotient on the supplied split Steinberg product
 
-Author: Worker 5055.
-
 The theorem `Langlands.GroupScheme.splitSteinbergQuotient` has exactly the
 published proposition `Langlands.GroupScheme.SplitSteinbergQuotientStatement.{u}`
 as its type. That proposition is defined in

@@ -1,9 +1,7 @@
 # Hopf points with the same kernel over a connected ring
 
-Author: Worker 1421.
-
-This is an internal module for the chart construction of task
-`45ac6e52-a4d8-4414-91f1-03c3be35223e`. Let `A` be an `R`-bialgebra, `D` an
+This is an internal module for the chart construction for the closed torus
+subgroup functor. Let `A` be an `R`-bialgebra, `D` an
 `R`-algebra and `M`, `N` abelian groups. Consider two closed-immersion Hopf
 points `α : A → D[M]` and `β : A → D[N]` (`HopfPointExtension.IsHopfPoint`
 with surjective `scalarExt`). These are two closed embeddings of the split

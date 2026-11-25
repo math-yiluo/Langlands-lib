@@ -1,6 +1,6 @@
 # Transport of axioms on actual valuation-building quotients
 
-This internal derived unit concerns two supplied `ValuationBuildingData`
+This module concerns two supplied `ValuationBuildingData`
 for the same actual group over the same nonarchimedean local field. It
 does not construct either datum or a source axiom witness. The carriers
 and actions are the existing valuation quotients and rational-points
@@ -39,7 +39,7 @@ These are internal consequences of the existing `mem_fixer`,
 encode KP Axiom 4.1.2 and AS 6 of Axiom 4.1.6. The geometric comparison
 is the kind required in the intended KP 9.6.6 application; its actual
 existence, every-point fixer comparisons, filtration identities and source
-witnesses remain separate construction obligations. This unit does not
+witnesses remain separate construction obligations. This module does not
 prove the unconditional `RootValuationBuildingConstructionStatement`.
 
 The provenance is internal and derived. The proofs use subgroup

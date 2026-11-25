@@ -1,9 +1,8 @@
 # Canonical identification of the initial actual subgroup term
 
-This internal construction identifies a smooth representation `ρ` with the
+This construction identifies a smooth representation `ρ` with the
 actual subgroup induction–coinvariant term for `P = G`, `U = {1}`.
 All declarations lie in `Langlands.Aubert.SubgroupTransition`.
-Author: Worker 194.
 
 `top_normalizes_bot` verifies the required subgroup normalization.
 `relations_bot` proves that trivial-character localization at the trivial
@@ -27,6 +26,6 @@ This equivalence supplies the initial-term identification for a subgroup
 family whose empty removed-root set has `P = G` and `U = {1}`. Establishing
 those identities for the shared actual standard-parabolic framework and
 the normalized induction/Jacquet comparison remains separate. In
-particular this unit makes no corrected exactness or terminal-vanishing
+particular this module makes no corrected exactness or terminal-vanishing
 claim. Its provenance is the existing quotient relations, covariance and
 canonical augmentation, whose intrinsic laws are proved here.

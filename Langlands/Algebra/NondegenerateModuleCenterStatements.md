@@ -7,8 +7,7 @@ The module contains two **statements**, the `Prop`-valued definitions
 `NondegenerateModuleCenterTheoremStatement` and `UnitalNondegenerateModuleCenterStatement`.
 It proves nothing.
 
-Worker 1222 wrote this statement unit under the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`. The published constructions it uses record the
+The published constructions this statement module uses record the
 assertions as missing. [NondegenerateModuleCenter](NondegenerateModuleCenter.md) builds the
 Lemma's action but "do[es] not assume the inverse or classification assertions of the I.1.7
 prose and theorem". [IdempotentedRingCenterComparison](IdempotentedRingCenterComparison.md)
@@ -23,7 +22,7 @@ The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French edition dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1222 read I.1.7, printed pp.12–13 / PDF pp.18–19. The completion
+I.1.7, printed pp.12–13 / PDF pp.18–19, was read for this module. The completion
 `Â = End_{A°}(A)` is that of I.1.3–I.1.6.
 
 > Lemme. Soit `φ ∈ Â = End_{A°}(A)` un morphisme commutant aussi avec l'action par
@@ -120,10 +119,14 @@ addition and multiplication because both act by composition of the actions on ea
    (Renard's appendix A.X example), applied through 1: the image of `A` in `Â` is all of `Â`
    when `A` has a unit.
 
-## Remaining obligations
+## Proofs
 
-The proofs are separate obligations. The published constructions supply all the maps; the
-inverse identities and the two bijectivity assertions remain to be proved.
+The proofs are in separate modules: `NondegenerateModuleCenterTheoremStatement` is proved by
+`Langlands.Algebra.NondegenerateModuleCenterProof.nondegenerateModuleCenterTheorem`, and
+`UnitalNondegenerateModuleCenterStatement` by
+`Langlands.Algebra.UnitalNondegenerateModuleCenterProof.unitalNondegenerateModuleCenter`.
+The published constructions supply all the maps; those proofs establish the
+inverse identities and the two bijectivity assertions.
 
 ## Imports
 

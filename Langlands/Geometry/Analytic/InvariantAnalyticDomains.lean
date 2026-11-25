@@ -233,7 +233,7 @@ variable {G : Type z} [Monoid G]
 into itself. -/
 def IsInvariantDomain (X : Action (LocalizedCategory.{u, v, w} (K := K)) G)
     (D : (presentationOf X.V).AnalyticDomain) : Prop :=
-  ∀ (g : G), ∀ x ∈ D.carrier, localizedSpaceFunctor.map (X.ρ g) x ∈ D.carrier
+  ∀ (g : G), ∀ x ∈ D.carrier, localizedSpaceFunctor.map (X.ρ g).asHom x ∈ D.carrier
 
 variable (X : Action (LocalizedCategory.{u, v, w} (K := K)) G)
   (D : (presentationOf X.V).AnalyticDomain) (hD : IsInvariantDomain X D)
@@ -243,11 +243,15 @@ action on `X`. -/
 def invariantDomainAction : Action (LocalizedCategory.{u, v, w} (K := K)) G where
   V := domainObj X.V D
   ρ :=
-    { toFun := fun g => domainRestrict D D (X.ρ g) (hD g)
+    { toFun := fun g => End.of (domainRestrict D D (X.ρ g).asHom (hD g))
       map_one' := by
+        apply End.ext
+        dsimp only
         refine (eq_domainLift _ _ _ _ ?_).symm
         rw [map_one, End.one_def, End.one_def, Category.id_comp, Category.comp_id]
       map_mul' := fun g h => by
+        apply End.ext
+        dsimp only
         refine (eq_domainLift _ _ _ _ ?_).symm
         rw [End.mul_def, Category.assoc, domainRestrict_comp, ← Category.assoc,
           domainRestrict_comp, map_mul, End.mul_def, Category.assoc] }
@@ -257,13 +261,13 @@ theorem invariantDomainAction_V : (invariantDomainAction X D hD).V = domainObj X
   rfl
 
 theorem invariantDomainAction_ρ (g : G) :
-    (invariantDomainAction X D hD).ρ g = domainRestrict D D (X.ρ g) (hD g) :=
+    ((invariantDomainAction X D hD).ρ g).asHom = domainRestrict D D (X.ρ g).asHom (hD g) :=
   rfl
 
 /-- The canonical morphism of an invariant domain is equivariant. -/
 def invariantDomainInclusion : invariantDomainAction X D hD ⟶ X where
   hom := domainι X.V D
-  comm g := domainRestrict_comp D D (X.ρ g) (hD g)
+  comm g := domainRestrict_comp D D (X.ρ g).asHom (hD g)
 
 @[simp]
 theorem invariantDomainInclusion_hom :
@@ -277,7 +281,8 @@ def invariantDomainLift {Y : Action (LocalizedCategory.{u, v, w} (K := K)) G} (f
     Y ⟶ invariantDomainAction X D hD where
   hom := domainLift D f.hom hf
   comm g := by
-    change Y.ρ g ≫ domainLift D f.hom hf = domainLift D f.hom hf ≫ domainRestrict D D (X.ρ g) (hD g)
+    change (Y.ρ g).asHom ≫ domainLift D f.hom hf =
+      domainLift D f.hom hf ≫ domainRestrict D D (X.ρ g).asHom (hD g)
     apply (cancel_mono (domainι X.V D)).1
     rw [Category.assoc, domainLift_comp, f.comm, Category.assoc, domainRestrict_comp,
       domainLift_comp_assoc]

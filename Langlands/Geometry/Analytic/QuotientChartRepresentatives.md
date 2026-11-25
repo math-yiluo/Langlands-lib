@@ -1,7 +1,5 @@
 # Whole-chart strong representatives of quotient arrows
 
-Author: Worker 36.
-
 This internal construction extracts full strong representatives of an arbitrary
 arrow in the actual source-refinement quotient on a locally refining family of
 original whole chart domains. It uses the existing complete strong-map category,
@@ -48,6 +46,6 @@ the constructed numerator data, rather than a new cover assumption.
 
 The field may be trivially valued. No nonemptiness, reducedness, directedness,
 or equality principle for seminorm-point maps is used. The field, ambient
-space and chart-index universes are independent. This unit constructs local
+space and chart-index universes are independent. This module constructs local
 strong representatives; arbitrary matching-family gluing, full analytic
-identification, and the etale and equivariant sites remain separate obligations.
+identification, and the etale and equivariant sites lie outside it.

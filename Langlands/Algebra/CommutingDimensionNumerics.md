@@ -15,7 +15,7 @@ The second then gives `D ≤ m*M - s*M + M² < m*M`, a contradiction.
 The implemented proof expands these power identities and finishes with
 ordered-ring arithmetic.
 
-Worker 307 authored this deduction. It replaces the source's maximal
+This deduction replaces the source's maximal
 dimension function and floor calculation by a direct induction step.
 This module proves no algebraic dimension estimate by itself.
 

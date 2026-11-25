@@ -1,7 +1,5 @@
 # The Deligne torus is reductive: statement
 
-Author: Worker 207.
-
 This module states that the real Deligne torus `𝕊 = Res_{ℂ/ℝ} 𝔾_m` is reductive, in the two
 senses defined in `Langlands.GroupScheme.Reductive.Basic`. It proves nothing. The only
 declaration is the `Prop`-valued definition `ReductiveStatement` in the namespace
@@ -15,7 +13,7 @@ def ReductiveStatement : Prop :=
 ```
 
 - `groupScheme` is the published real Deligne group scheme over `Spec (CommRingCat.of ℝ)`, from
-  `Langlands.Shimura.Unitary.DeligneGroupScheme` (Worker 57). Its points with values in a real
+  `Langlands.Shimura.Unitary.DeligneGroupScheme`. Its points with values in a real
   algebra `A` are the units of `QuadraticAlgebra A (-1) 0`, that is, of `A ⊗_ℝ ℂ`. So it is
   `Res_{ℂ/ℝ} 𝔾_m`, and its real points are `ℂˣ`.
 - `IsConnectedReductive groupScheme` (over the field `ℝ`) says four things. The group is smooth

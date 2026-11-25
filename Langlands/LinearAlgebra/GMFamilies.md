@@ -1,7 +1,6 @@
 # `(G, M)`-families
 
-Module `Langlands.LinearAlgebra.GMFamilies`, namespace `Langlands.GMFamily`. Worker 128, Task 5536,
-item 2. The lemmas of Arthur 2005, §17, about these objects are stated in
+Module `Langlands.LinearAlgebra.GMFamilies`, namespace `Langlands.GMFamily`. The lemmas of Arthur 2005, §17, about these objects are stated in
 `Langlands.LinearAlgebra.GMFamiliesStatement` (see its Markdown).
 
 The module defines Arthur's `(G, M)`-families and every object that his Lemmas 17.1 and 17.4–17.6
@@ -140,13 +139,13 @@ orthonormal bases of `𝔞_M^b` and `𝔞_M^L`), Proposition 7.1 and Corollary 7
     `H ↦ (H, H)`, which is Arthur's quotient convention on p.100: this quotient is `2^{n/2}` times
     the Euclidean measure of the antidiagonal, so `d = 2^{−n} dCoeff`.
 
-  Rank-one check (supplied by the reviewers of the first two versions of this unit): for
+  Rank-one check: for
   `𝔞_M^G = ℝ` and `(L₁, L₂) = (M, G)`, `dCoeff = 1`. In the first case `d` is the Gram volume of
   `(1, −1)/√2` and `(0, 1)`, which is `1/√2`. In the second, in coordinates `(x, y) = (t + s, t − s)`
   the product area is `dx dy = 2 dt ds`, so the quotient measure of the antidiagonal is `2 ds` in the
   coordinate `s` of `(s, −s)`; the map `(s, w) ↦ (s, −s + w)` from the antidiagonal times
   `𝔞_𝐌^𝐋 = {(0, w)}` pulls `dx dy` back to `ds dw`, so `d · 2 ds dw = ds dw` and `d = 1/2`. The
-  printed value is `√2`. Neither normalization gives the printed exponent `+n/2`, and this unit
+  printed value is `√2`. Neither normalization gives the printed exponent `+n/2`, and this module
   does not identify one that does. Lemma 17.6 is stated with the direct coefficient `dCoeff`,
   which is the coefficient of Arthur 1988, Corollary 7.4 (defined by the orthonormal-basis volume
   of p.356 for the pair `𝔞_M^{L₁}`, `𝔞_M^{L₂}`); the formula does not pass through the diagonal
@@ -180,7 +179,7 @@ orthonormal bases of `𝔞_M^b` and `𝔞_M^L`), Proposition 7.1 and Corollary 7
 - The model is a space with a root set, not an actual group. The comparison with the actual
   relative root system of a connected reductive group (the space `V T` of
   `Langlands.GroupScheme.ArthurRelative` with a Weyl-invariant inner product, and its relative
-  roots) is a separate unit of Task 5536.
+  roots) is not part of this module.
 - Choices of `P ⊆ Q` and `P₁ ⊆ P` (`famRestrict`, `inducedFamily`) use `Classical.choose`;
   independence of the choice is a property of families, not proved here.
 

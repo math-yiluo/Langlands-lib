@@ -1,6 +1,6 @@
 # Natural compact induction in stages
 
-Worker 777 states
+This module states
 `Langlands.Induction.CompactInductionTransitivityStatement.{uG,uV}`.
 This is a proposition definition and a target for a separate proof.
 Defining it does not assume its truth.
@@ -179,8 +179,9 @@ in `Langlands.Representation.Parabolic.RefinementInductionTransitivityProof`
 covers normalized smooth induction for parabolic refinements. It is a different
 result and is not duplicated here.
 
-This pair does not prove compact transitivity. It does not prove the parent
-geometric comparison either.
+This pair does not prove compact transitivity. It does not prove the
+normalized p-adic parabolic-orbit Jacquet comparison
+(`Langlands.Geometric.PadicParabolicOrbitJacquetComparison`) either.
 
 ## Proof obligations for the separate proof
 
@@ -222,8 +223,6 @@ subgroup. Every imported Lean/Markdown pair is preserved unchanged.
 
 ## Development check
 
-The pair compiled in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`
-with no errors or warnings. Declaration inspection reported level parameters
+The pair compiled with no errors or warnings. Declaration inspection reported level parameters
 `uG` and `uV` and `statement_returns_prop: true`. Its axioms were exactly
-`propext`, `Classical.choice` and `Quot.sound`. This is development evidence;
-independent semantic review and publication are separate.
+`propext`, `Classical.choice` and `Quot.sound`. This is development evidence.

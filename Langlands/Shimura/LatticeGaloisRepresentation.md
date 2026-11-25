@@ -37,11 +37,10 @@ same representation, and no statement of Harris is formalized.
   topology on `Module.End L A`), `Objects K L`, `HasEulerPolynomialAt` and
   `hasEulerPolynomialAt_iff`, `chosenClosureEmbedding` and
   `geometricFrobeniusLift`.
-- From `Langlands.Shimura.ContinuousGaloisAction` (candidate
-  `5c2f38db-a736-4706-aa12-6de9f8bf0b33`, accepted and awaiting
-  publication): `finiteRepresentation M`, the action as a finite-dimensional
-  representation. From `Langlands.Shimura.FrobeniusPolynomial` (same
-  candidate): `frobeniusEulerPolynomial` and
+- From the published `Langlands.Shimura.ContinuousGaloisAction`:
+  `finiteRepresentation M`, the action as a finite-dimensional
+  representation. From the published `Langlands.Shimura.FrobeniusPolynomial`:
+  `frobeniusEulerPolynomial` and
   `frobeniusEulerPolynomial_eq_along`.
 - From the published `Langlands.Shimura.DecompositionGroupAction`:
   `IsUnramifiedAt`, `IsUnramifiedAlong`, `localRestriction`.

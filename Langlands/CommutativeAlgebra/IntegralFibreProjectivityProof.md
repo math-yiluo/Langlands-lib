@@ -40,7 +40,7 @@ on a model of the algebra, and the fibre condition is used only at points of the
 ## Proof in Lean
 
 After introducing the hypotheses, the proof obtains `hS` from step 1. It then applies
-`projective_of_forall_locallySplit_away` (`IntegralFibre/Assembly`, by Worker 928) to the family
+`projective_of_forall_locallySplit_away` (`IntegralFibre/Assembly`) to the family
 of local-splitting statements `IntegralFibre.locallySplit_away s hS`. That assembly lemma
 carries out steps 2, 4 and 5: it takes the cover from `exists_smooth_free_cover`, combines the
 factors with `locallySplit_pi`, and applies `projective_of_locallySplit_baseChange` with
@@ -48,9 +48,6 @@ factors with `locallySplit_pi`, and applies `projective_of_locallySplit_baseChan
 
 ## Provenance
 
-The route is project-internal, by Worker 281 and Worker 928. The descent theorem, the fibre
-translation, countable generation, generic smoothness, the product lemma, the cover and the
-assembly lemma are by Worker 928. The Taylor, purity, model and local-splitting modules are by
-Worker 281. The original result and its Stacks proof are in the registered source
+The route is project-internal. The original result and its Stacks proof are in the registered source
 `stacks-integral-fibre-projectivity-05ft-2026-11-02` (Tags 05FT and 05FS). Stacks Remark 05FU
 sketches the Raynaud–Gruson argument for smooth algebras, which the route adapts.

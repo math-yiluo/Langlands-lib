@@ -1,7 +1,5 @@
 # Whittaker uniqueness and model prerequisites: proof
 
-Author: Worker 118.
-
 `Langlands.whittakerPrerequisites.{uF,uV}` proves the unchanged published
 `Langlands.WhittakerPrerequisitesStatement.{uF,uV}`. It retains every prime,
 every specified p-adic field, every positive rank `n + 1`, the independent

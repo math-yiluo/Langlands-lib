@@ -1,7 +1,5 @@
 # Finite coefficient models of actual closed torus-subgroup families
 
-Author: Worker 668.
-
 Fix a quasi-compact, separated, locally finitely presented group over the
 spectrum of a noetherian ring. For any algebra over that ring, every
 admissible subgroup of the pulled-back group has a finite coefficient
@@ -22,4 +20,5 @@ all-test range.
 This internal model uses the Library's finite coefficient group and
 homomorphism constructions, closed-immersion descent, and relative
 torus approximation. It supplies existence of models for the limit
-condition of Task 7705.
+condition in the proof of smooth torus-subgroup representability for
+groups with affine residue fibres.

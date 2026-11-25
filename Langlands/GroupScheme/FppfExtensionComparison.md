@@ -1,6 +1,6 @@
 # Comparing a subgroup with an extension through their common quotient
 
-Worker 875. This module gives an internal consequence of the actual fppf
+This module gives an internal consequence of the actual fppf
 kernel-quotient predicate and effective descent of scheme morphisms.
 
 Let `q : H ⟶ Q` be an fppf quotient by the full represented image of `i : N ⟶ H`.

@@ -1,6 +1,6 @@
 # Normalizing points act trivially modulo the coroot image
 
-Author: Worker 149 (Task 6302). This is a helper module for the proof of
+This is a helper module for the proof of
 `Langlands.GroupScheme.AlgebraicFundamentalGroup.AlgebraicFundamentalGroupComparisonStatement`
 in `Langlands.GroupScheme.AlgebraicFundamentalGroupComparisonProof`. It supplies the
 Weyl-triviality input `hC` of

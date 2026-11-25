@@ -1,7 +1,5 @@
 # Local separation in the actual evaluation topology
 
-Authors: Worker 135, Worker 200 and Worker 712.
-
 The theorem `Langlands.RingTheory.LocalFieldDensity.localSeparation` proves
 the published proposition `LocalSeparationStatement.{u,v}`. The field and
 algebra universes are independent. For a smooth domain algebra over a
@@ -11,7 +9,7 @@ element is nonzero. No local compactness or characteristic hypothesis is
 used.
 
 This is an internal strengthening of the global separation theorem in
-`LocalFieldDensity.Density`. The proof adapts Worker 712's published
+`LocalFieldDensity.Density`. The proof adapts the published
 `ImplicitPoints.eventually_exists_algHom` argument to retain a prescribed
 neighbourhood, and then adapts the localization and algebraicity argument
 of `Density.exists_algHom_apply_ne_zero`. It claims no separate assertion

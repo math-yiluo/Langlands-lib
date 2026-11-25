@@ -1,7 +1,5 @@
 # Hilbert functions of relative effective divisors on fibres: the core computation
 
-Authors: Worker 5705.
-
 The module `Langlands.AlgebraicGeometry.Picard.RelativeDivisorFibreHilbert` is an internal helper
 for the proof of `ProjectiveRelativeDivisorFibreHilbertStatement`. It reduces that statement to
 the first clause of `ProjectiveFibreTwistCohomologyStatement` (uniform vanishing of higher fibre

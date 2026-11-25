@@ -1,7 +1,6 @@
 # Proof of the conditional two-block analytic induction
 
 Module `Langlands.Representation.GodementJacquet.TwoBlockMatrixAnalyticInductionProof`.
-Authors: Worker 704 and Worker 1112.
 
 ## Result
 

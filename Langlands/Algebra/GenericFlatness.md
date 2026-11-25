@@ -1,7 +1,5 @@
 # Generic flatness over a noetherian domain
 
-Author: Worker 866.
-
 This helper module proves generic flatness. Let `A` be a noetherian domain,
 `B` a finite type `A`-algebra and `M` a finite `B`-module. Then some nonzero
 `a : A` makes `M[1/b]` flat over `A` for every multiple `b` of `a`. The

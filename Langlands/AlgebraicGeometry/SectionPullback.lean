@@ -116,7 +116,7 @@ theorem sectionPullback_comp (f : X ⟶ Y) (g : Y ⟶ Z)
 /-- Evaluate a sheaf endomorphism as an actual linear endomorphism on any open. -/
 def sectionEndomorphism (M : Y.Modules) (U : Y.Opens) :
     End M →+* Module.End Γ(Y, U) Γ(M, U) where
-  toFun a := (a.val.app (op U)).hom
+  toFun a := (a.asHom.val.app (op U)).hom
   map_zero' := rfl
   map_one' := rfl
   map_add' _ _ := rfl
@@ -132,9 +132,9 @@ theorem sectionPullback_toMatrix (f : X ⟶ Y) (M : Y.Modules) (U : Y.Opens)
     (LinearMap.toMatrix b b (sectionEndomorphism M U a)).map (f.app U).hom =
       LinearMap.toMatrix c c
         (sectionEndomorphism _ (f ⁻¹ᵁ U)
-          ((AlgebraicGeometry.Scheme.Modules.pullback f).map a)) :=
+          (End.of ((AlgebraicGeometry.Scheme.Modules.pullback f).map a.asHom))) :=
   Langlands.Shimura.HodgeDeterminant.toMatrix_semilinear_basis _ _ b c h _ _
-    (sectionPullback_naturality f a U)
+    (sectionPullback_naturality f a.asHom U)
 
 /-- Pulling a compatible finite section basis transports its determinant polynomial. -/
 theorem sectionPullback_determinant (f : X ⟶ Y) (M : Y.Modules) (U : Y.Opens)
@@ -147,8 +147,8 @@ theorem sectionPullback_determinant (f : X ⟶ Y) (M : Y.Modules) (U : Y.Opens)
         (Langlands.Shimura.HodgeDeterminant.polynomial b (fun i => sectionEndomorphism M U (a i))) =
       Langlands.Shimura.HodgeDeterminant.polynomial c
         (fun i => sectionEndomorphism _ (f ⁻¹ᵁ U)
-          ((AlgebraicGeometry.Scheme.Modules.pullback f).map (a i))) :=
+          (End.of ((AlgebraicGeometry.Scheme.Modules.pullback f).map (a i).asHom))) :=
   Langlands.Shimura.HodgeDeterminant.polynomial_semilinear_basis _ _ b c h _ _
-    (fun i => sectionPullback_naturality f (a i) U)
+    (fun i => sectionPullback_naturality f (a i).asHom U)
 
 end Langlands.Scheme.Modules

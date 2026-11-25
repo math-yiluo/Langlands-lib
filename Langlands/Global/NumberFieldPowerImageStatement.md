@@ -1,7 +1,5 @@
 # Non-open images of power maps on number-field adelic units
 
-Author: Worker 105.
-
 `NumberFieldPowerImageStatement` states, for number fields, the second counterexample in Brian Conrad,
 *Weil and Grothendieck approaches to adelic points* (December 31, 2011), printed
 p.11. The registered source is `conrad-2011-weil-grothendieck-adelic-points`,

@@ -40,7 +40,7 @@ theorem restrict_sectionAction_eq (F : (ActionOpens G X)ᵒᵖ ⥤ ModuleCat.{u}
     (hfix : ∀ h : H, (F.map (ActionOpens.invariantArrow H V hV h).op).hom
         ((F.map (ActionOpens.inclusionHom hVU).op).hom s) =
       (F.map (ActionOpens.inclusionHom hVU).op).hom s) (h : H) :
-    restrict F V (((sectionAction F).ρ (h : G)).hom s) = restrict F V s := by
+    restrict F V (((sectionAction F).ρ (h : G)).asHom.hom s) = restrict F V s := by
   have e : ActionOpens.invariantArrow H V hV h ≫ ActionOpens.inclusionHom hVU =
       ActionOpens.inclusionHom hVU ≫ ActionOpens.sectionArrow (h : G) := by
     apply ActionOpens.Hom.ext
@@ -65,7 +65,7 @@ theorem isSmooth_representation_of_isSmoothSheaf
   rintro ⟨s, hs⟩
   change IsCompact (Langlands.Sheaf.CompactSupport.support (ordinary F.obj) s) at hs
   let germEq : G → X → Prop := fun h y =>
-    (ordinary F.obj).Γgerm y (((sectionAction F.obj).ρ h).hom s) =
+    (ordinary F.obj).Γgerm y (((sectionAction F.obj).ρ h).asHom.hom s) =
       (ordinary F.obj).Γgerm y s
   let p : Set X → Prop := fun S => ∃ (H : OpenSubgroup G) (W : Set X), S ⊆ W ∧
     (∀ h ∈ H, ∀ y ∈ W, h • y ∈ W) ∧ ∀ h ∈ H, ∀ y ∈ W, germEq h y
@@ -87,30 +87,30 @@ theorem isSmooth_representation_of_isSmoothSheaf
       refine ⟨V.openSet, mem_nhdsWithin_of_mem_nhds (V.openSet.isOpen.mem_nhds hxV),
         H, V.openSet, subset_rfl, fun h hh y hy => hV ⟨h, hh⟩ y hy, fun h hh y hy => ?_⟩
       have hres := restrict_sectionAction_eq F.obj hVU (H : Subgroup G) hV hfix ⟨h, hh⟩
-      change (ordinary F.obj).Γgerm y (((sectionAction F.obj).ρ h).hom s) =
+      change (ordinary F.obj).Γgerm y (((sectionAction F.obj).ρ h).asHom.hom s) =
         (ordinary F.obj).Γgerm y s
-      rw [← (ordinary F.obj).Γgerm_res_apply y hy (((sectionAction F.obj).ρ h).hom s)
+      rw [← (ordinary F.obj).Γgerm_res_apply y hy (((sectionAction F.obj).ρ h).asHom.hom s)
           (i := homOfLE (show V.openSet ≤ ⊤ from le_top)),
         ← (ordinary F.obj).Γgerm_res_apply y hy s
           (i := homOfLE (show V.openSet ≤ ⊤ from le_top))]
       change (ordinary F.obj).germ V.openSet y hy
-          (restrict F.obj V (((sectionAction F.obj).ρ h).hom s)) =
+          (restrict F.obj V (((sectionAction F.obj).ρ h).asHom.hom s)) =
         (ordinary F.obj).germ V.openSet y hy (restrict F.obj V s)
       rw [hres]
   obtain ⟨H, W, hKW, hstab, hgerm⟩ := hp
   refine ⟨H, (Representation.mem_invariants _ _).2 fun h => ?_⟩
   apply Subtype.ext
-  change ((sectionAction F.obj).ρ (h : G)).hom s = s
+  change ((sectionAction F.obj).ρ (h : G)).asHom.hom s = s
   apply TopCat.Presheaf.section_ext ((toSheaf G X (ModuleCat.{u} R)).obj F) ⊤
   intro y _
-  change (ordinary F.obj).Γgerm y (((sectionAction F.obj).ρ (h : G)).hom s) =
+  change (ordinary F.obj).Γgerm y (((sectionAction F.obj).ρ (h : G)).asHom.hom s) =
     (ordinary F.obj).Γgerm y s
   by_cases hy : y ∈ W
   · exact hgerm h h.2 y hy
   · have hs0 : (ordinary F.obj).Γgerm y s = 0 := by
       by_contra hne
       exact hy (hKW hne)
-    have hhs0 : (ordinary F.obj).Γgerm y (((sectionAction F.obj).ρ (h : G)).hom s) = 0 := by
+    have hhs0 : (ordinary F.obj).Γgerm y (((sectionAction F.obj).ρ (h : G)).asHom.hom s) = 0 := by
       by_contra hne
       obtain ⟨k, hk, rfl⟩ := support_action_subset F.obj (h : G) s hne
       exact hy (hstab h h.2 k (hKW hk))

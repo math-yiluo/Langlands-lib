@@ -10,7 +10,7 @@ On the geometric side of the simple trace formula for `GL_n`, each rational conj
 `vol(Γ_γ \ C_γ) · ∫_{C_γ \ G(𝔸_F)¹} f¹(x⁻¹ γ x) dx`. This statement supplies the two analytic
 facts these terms need: the volume is finite, and the orbit function of a compactly supported
 continuous function is integrable. It is stated for all measures satisfying the compatibility
-conditions used in `GeneralLinearSimpleTraceFormulaStatement` (Task 7585).
+conditions used in `GeneralLinearSimpleTraceFormulaStatement`.
 
 ## Notation from the Library
 
@@ -60,7 +60,7 @@ the following hold:
 If no such measures exist the statement says nothing about that `r`. It does not assert that
 compatible measures exist.
 
-## Why it is true (for the reviewer)
+## Why it is true
 
 Let `p` be the characteristic polynomial of `r`, as a matrix in `GL_n(F)`. Since `p` is
 irreducible and separable over `F_v`, it is irreducible and separable over `F`, and
@@ -108,13 +108,13 @@ conventions of the Library: `G(𝔸_F)¹` in place of `A_G \ G(𝔸_F)`, the cen
 takes ellipticity as a hypothesis, while here finiteness of the volume is a conclusion from
 regular ellipticity at a finite place.
 
-## Relation to other tasks
+## Relation to other statements
 
-- Task 7585 (`Langlands.TraceFormula.GeneralLinearSimpleTraceFormulaStatement`) asserts
+- `Langlands.TraceFormula.GeneralLinearSimpleTraceFormulaStatement` asserts
   finite volumes and integrable orbit functions for the classes `r j` on its geometric side,
   with the same quantifiers over `μC`, `νC`, `νΓC`; this statement gives them, applied to
   `φ = fOne`, once `fOne` is known to be continuous with compact support, which is part of
-  the statement of Task 7600 (`Langlands.TraceFormula.PositiveQuotientTraceComparisonStatement`).
+  the statement of `Langlands.TraceFormula.PositiveQuotientTraceComparisonStatement`.
 - This module imports neither.
 
 ## What this module does not claim

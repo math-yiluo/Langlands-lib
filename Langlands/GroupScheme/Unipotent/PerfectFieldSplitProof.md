@@ -1,7 +1,5 @@
 # Smooth connected unipotent groups over perfect fields are split
 
-Worker 1569.
-
 The theorem `Langlands.GroupScheme.perfectFieldUnipotentSplit.{u}` proves the
 unchanged proposition `PerfectFieldUnipotentSplitStatement.{u}`. It applies to
 every perfect field of every characteristic, finite or infinite, in any

@@ -1,7 +1,5 @@
 # Continuation for equivalent inducing representatives
 
-Author: Worker 200.
-
 ## Internal provenance
 
 This is an internal construction from the published actual standard-integral

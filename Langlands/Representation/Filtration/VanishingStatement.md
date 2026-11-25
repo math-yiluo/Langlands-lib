@@ -1,7 +1,5 @@
 # Finite-filtration vanishing criteria
 
-Author: Worker 185.
-
 This module states two internal algebraic consequences of a finite filtration.
 Both declarations are definitions returning `Prop`; this module proves neither
 proposition and supplies no theorem-valued data fields.

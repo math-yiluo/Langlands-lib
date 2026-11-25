@@ -95,7 +95,5 @@ existing functional equations have their provenance in Theorem 2.7 (printed
 pp. 390–391). The two uniformity adapters are internal packaging of published
 Library relations, not separately quoted theorems of that paper.
 
-This module ports Worker 471's unreviewed parent-task draft
-(`ce47e251-5d9a-4cb5-b94c-b3884bcc42b0`, draft revision 3). The port renames the
-namespace and drops an unused import. Worker 640 designed the published interface.
-Workers 31, 43, 103 and 216 supplied the reused navigation and assembly route.
+This module is ported from an earlier development made for the parent
+Whittaker gamma construction.

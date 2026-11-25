@@ -90,7 +90,3 @@ topology on the representation carrier, self-duality, Whittaker condition or
 additional kernel premise. Distribution invariance and the given nonzero
 `eta` remain hypotheses. The separate Whittaker application must construct its
 functional and establish its distribution invariance.
-
-Worker 557 authored this proof pair using the published prerequisite APIs.
-Worker 16 supplied the substantive symmetry and kernel-comparison route in
-the task context.

@@ -34,10 +34,10 @@ theorem IsSemisimple.character_eq_of_fixed_roots
   classical
   have : Finite (characterLattice T ⧸ P.rootSpan ℤ) :=
     hG.finite_quotient_rootSpan hT hi hP
-  have : IsAddTorsionFree (ℚ ⊗[ℤ] characterLattice T) :=
-    IsAddTorsionFree.of_module_rat _
-  have : IsAddTorsionFree (characterLattice T) :=
-    hT.character_toRat_injective.isAddTorsionFree toRat
+  have : HasUniqueDiv (ℚ ⊗[ℤ] characterLattice T) :=
+    HasUniqueDiv.of_module_rat _
+  have : HasUniqueDiv (characterLattice T) :=
+    hT.character_toRat_injective.hasUniqueDiv toRat
   have hspan : P.rootSpan ℤ ≤ (f - LinearMap.id).ker := by
     apply Submodule.span_le.mpr
     rintro _ ⟨α, rfl⟩
@@ -54,7 +54,7 @@ theorem IsSemisimple.character_eq_of_fixed_roots
     rw [map_nsmul]
     exact hnχ
   have heq : f (n • χ) = n • χ := sub_eq_zero.mp (hspan hmem)
-  apply IsAddTorsionFree.nsmul_right_injective hn.ne'
+  apply HasUniqueDiv.nsmul_right_injective hn.ne'
   simpa only [map_nsmul] using heq
 
 /-- The root datum needed for character rigidity exists for a split maximal
@@ -123,7 +123,7 @@ variable {G : GroupScheme (Spec (CommRingCat.of k))} [IsAffineHom G.X.hom]
 local notation "G_L" => Functor.obj (GroupScheme.baseChange b) G
 local notation "j_L" => CategoryTheory.Functor.map (GroupScheme.baseChange b)
 
-local instance : IsAffineHom (G_L).X.hom :=
+private local instance : IsAffineHom (G_L).X.hom :=
   MorphismProperty.baseChange_obj (P := @IsAffineHom) b G.X inferInstance
 
 /-- For a maximal torus in a semisimple base change, fixedness of every actual

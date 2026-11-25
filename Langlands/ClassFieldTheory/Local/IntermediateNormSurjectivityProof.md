@@ -1,8 +1,7 @@
 # Inheritance of intermediate-field norm surjectivity
 
-Worker 107 authored the proof and this explanation. The final restriction-of-scalars
-step reuses Worker 68's upper-family helper from the shared finite norm/H2 draft;
-Worker 68 is credited as a coauthor for that contribution.
+The final restriction-of-scalars step is the same upper-family argument as
+`norm_surjective_restrictScalars` in [FiniteNormH2Proof](FiniteNormH2Proof.md).
 
 The theorem
 `Langlands.ClassFieldTheory.Local.intermediateNormSurjectivityInheritance.{u}`
@@ -64,7 +63,7 @@ Restriction of scalars leaves the carrier, field structure, and inclusion of
 `F` into `L` unchanged. The target explicitly uses the finite-dimensional
 instance `FiniteDimensional.right K (F.restrictScalars K) L`, so the hypothesis
 at that intermediate field has the required type directly. This is the step
-adapted from Worker 68's helper.
+that matches `norm_surjective_restrictScalars`.
 
 ## Provenance and scope
 

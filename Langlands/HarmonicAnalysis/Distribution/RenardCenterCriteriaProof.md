@@ -1,11 +1,11 @@
 # Renard II.3.13: proof of the criteria for conjugation invariance
 
-Worker 108, Task 5531. Source: Renard, *Représentations des groupes
+Source: Renard, *Représentations des groupes
 réductifs p-adiques*, French version of 9 July 2026, II.3.13 Corollary and
 proof, (II.3.13.2)–(II.3.13.3), printed pp.55–56 / PDF pp.61–62; source
 registration `renard-2026-representations-groupes-reductifs-padiques`.
 
-This proof unit proves the exact published
+This module proves the exact published
 `Langlands.HarmonicAnalysis.Distribution.RenardCenter.CriteriaStatement`,
 at the group universe `uG`, as the theorem
 `Langlands.HarmonicAnalysis.Distribution.RenardCenter.criteria`. For every
@@ -94,7 +94,7 @@ the translation identity (`translation_of_sandwich`).
 Renard proves these equivalences while identifying the center. He obtains
 (II.3.13.3) from (II.3.13.2) by taking `h = e_K * δ_g * e_K`, and calls the
 converse immediate from the formulas for `h * T` and `T * h`. As the
-statement unit records, applying the equivalences to an arbitrary algebraic
+statement module records, applying the equivalences to an arbitrary algebraic
 distribution is an internal extraction of that local-test argument. The
 Lean proof instead routes every criterion through the translation identity.
 It derives the trace identity by finite sampling of the Hecke element, and

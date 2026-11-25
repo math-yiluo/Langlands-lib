@@ -1,7 +1,5 @@
 # The stored algebra sheaf of all full affinoid domains
 
-Author: Worker 36.
-
 Fix a complete ultrametric normed field `K` and an actual presented affinoid
 algebra `A` with arbitrary positive polyradius. `algebraSheaf` is a commutative
 `K`-algebra sheaf on the independently constructed finite point-covering site of

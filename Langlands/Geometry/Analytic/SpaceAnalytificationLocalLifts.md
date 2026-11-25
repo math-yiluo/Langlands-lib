@@ -1,7 +1,5 @@
 # Conditional local lifts for analytification fibre products
 
-Author: Worker 790.
-
 `pointHom_changeRing` proves naturality of the Yoneda morphism of a
 ring-valued point under change of test algebra. The postcomposition law
 `pointHom_map` comes from the published `SpaceAnalytificationEtaleReduction`

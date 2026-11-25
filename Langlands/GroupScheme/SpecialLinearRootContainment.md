@@ -56,7 +56,7 @@ resulting value in `G(k)` with `rationalPoints.map a x`.
 The provenance is internal composition of explicit coordinate-root
 contractions, actual rational root generation, dynamic functoriality and
 the existing ambient dynamic-containment theorem. The ambient structural
-inputs and the specified source isomorphism remain premises. This unit
+inputs and the specified source isomorphism remain premises. This module
 does not require parabolic-dynamic presentation, centralizer reductivity,
 source reductivity or containment of all source parabolic-radical images.
 It does not construct split models of arbitrary factors, settle nonsplit

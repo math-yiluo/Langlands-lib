@@ -19,7 +19,8 @@ gives back the full finite adele ring of `ℚ`, via the map `q ⊗ a ↦ q · a`
 
 The Lean file only defines this proposition. It does not prove it, does not
 construct or choose an equivalence, and does not assume the statement anywhere.
-A separate proof task must establish it.
+Its proof is `integralFiniteAdeleRationalization` in
+`Langlands.Global.IntegralFiniteAdeleRationalizationProof`.
 
 ## Exact objects
 
@@ -88,8 +89,8 @@ the two rings does not satisfy the proposition. Pure tensors span the tensor
 product additively, so at most one additive map satisfies the formula. The proposition
 does not state this uniqueness separately.
 
-Mathematically, the content is that `q ⊗ a ↦ q · a` is bijective. The context
-of the requesting task suggests a proof plan. For surjectivity, show that every
+Mathematically, the content is that `q ⊗ a ↦ q · a` is bijective. A proof
+plan: for surjectivity, show that every
 finite adele has a common nonzero integer denominator, so that it has the form
 `(1/n) · a` with `a` integral. For injectivity, use the fact that tensoring
 with `ℚ` over `ℤ` is a localization, for example through
@@ -99,18 +100,19 @@ the inclusion. This plan is a pointer only; the Lean file contains no proof.
 ## Provenance and scope
 
 This is an internal auxiliary statement and is not quoted from any source. It
-was requested by Worker 212 for the exact proof task
-`a00cc878-6690-45e4-924b-a11707ae6bf1`. That task proves the published
-`Langlands.Global.RationalProfiniteIntegerAdeleComparison`. Its second clause
+serves the proof of the published
+`Langlands.Global.RationalProfiniteIntegerAdeleComparison`
+(`rationalProfiniteIntegerAdeleComparison` in
+`Langlands.Global.RationalProfiniteIntegerComparisonProof`). Its second clause
 asks for a `ℚ`-algebra equivalence
 `(ℚ ⊗[ℤ] ProfiniteIntegerRing) ≃ₐ[ℚ] FiniteAdeles ℚ` with
 `q ⊗ a ↦ q · e₀ a`, where `e₀ : ProfiniteIntegerRing ≃+* integralFiniteAdeles ℚ`.
 The present proposition is that clause with `ProfiniteIntegerRing` replaced by
-the integral subring itself and `e₀` replaced by the inclusion. The parent proof
-plans to transport this equivalence along a ring equivalence `e₀`. That
+the integral subring itself and `e₀` replaced by the inclusion. The proof of
+the comparison transports this equivalence along a ring equivalence `e₀`. That
 transport is not part of this statement. The proposition is also logically
 independent of the comparison between the residue ring and the `p`-adic
-product, and it has no prime-to-`p` variant. For the parent's literature
+product, and it has no prime-to-`p` variant. For the comparison's literature
 motivation (Harris–Taylor's rational Tate space `TA ⊗_ℤ ℚ`), see the
 Markdown of `Langlands.Global.RationalProfiniteIntegerAdeleComparison`. The
 present statement makes no further claim about that source.

@@ -1,7 +1,8 @@
 # The central sign over the infinite places and `S`
 
 Module `Langlands.Global.RankinSelberg.ArchimedeanCentralSignStatement`, namespace
-`Langlands.Global.RankinSelbergGlobal`. It states result 3 of Task 7136, the cancellation of
+`Langlands.Global.RankinSelbergGlobal`. It states the central-sign relation behind the
+semi-local functional equations, the cancellation of
 the central signs in Cogdell 2004, proof of Theorem 4.1, p.220.
 
 ## Statement
@@ -74,8 +75,8 @@ places are listed separately, and the statement is made without the exponent; th
 
 ## Choices of form
 
-* **Universal `ζ`.** `ζ_v` is any scalar with the property for some nonzero functional, as the
-  task requires; by uniqueness this is no stronger than asserting it for one.
+* **Universal `ζ`.** `ζ_v` is any scalar with the property for some nonzero functional; by
+  uniqueness this is no stronger than asserting it for one.
 * **Any `ψv`.** No condition is put on `ψv`, which only strengthens the statement.
 * The module declares the same two local instances as the targets (affineness and smoothness
   of the group scheme `GL_n`).

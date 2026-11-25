@@ -1,6 +1,6 @@
 # Linear algebra for standard Levi decompositions
 
-Worker 624, internal derived helpers for the proof of the corrected Renard V.3.13
+Internal derived helpers for the proof of the corrected Renard V.3.13
 statement. These lemmas concern real vector spaces and do not introduce a new
 source statement about group schemes.
 

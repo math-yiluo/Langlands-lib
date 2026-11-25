@@ -1,7 +1,5 @@
 # Transporting the torus property to a supplied cocenter
 
-Author: Worker 1282.
-
 This is a derived interface and conditional reduction built from the published
 `CocenterQuotientExistenceStatement`, actual fppf quotient comparison, and the
 proved finite Galois splitting theorem for field tori. It is not a numbered

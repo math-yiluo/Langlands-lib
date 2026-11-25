@@ -1,5 +1,5 @@
 import Langlands.Automorphic.AssociatedCentralCharacterStatement
-import Langlands.ClassField.Global.RelativeWeilTransferReciprocityProof
+import Langlands.ClassFieldTheory.Global.RelativeWeilTransferReciprocityProof
 import Langlands.Weil.Representation.Determinant
 import Mathlib.Analysis.InnerProductSpace.NormDet
 
@@ -32,7 +32,7 @@ theorem norm_determinantCharacter_of_isUnitary
 
 end Langlands.FiniteRepresentation
 
-namespace Langlands.ClassField.Global.RelativeWeilGroup
+namespace Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 
 open Langlands.Global
 
@@ -94,4 +94,4 @@ def associatedUnitaryCentralCharacter
     Classical.choose_spec
       (hasUnitaryCentralCharacter_of_associatedCentralCharacter F E c hcentral hc S T hassoc hS)⟩
 
-end Langlands.ClassField.Global.RelativeWeilGroup
+end Langlands.ClassFieldTheory.Global.RelativeWeilGroup

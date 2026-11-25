@@ -1,6 +1,6 @@
 # Central torus shifts of the actual spherical formula
 
-This internal unit derives constant torus translation identities from the
+This module derives constant torus translation identities from the
 published explicit Iwasawa and Jacobi–Trudi constructions. It introduces no
 representation theoretic or analytic hypothesis beyond those stated in Lean.
 
@@ -15,6 +15,6 @@ exponent plus the constant weight. On dominant cells the explicit spherical
 polynomial formula then gives multiplication by the determinant unit; on the
 other cells both sides vanish.
 
-The results concern the explicit spherical function. They do not yet assert
+The results concern the explicit spherical function. They do not assert
 stability of the finite numerator subspace, the full spherical Hecke
 transformation identity, an essential vector, or the conductor theorem.

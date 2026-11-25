@@ -1,7 +1,5 @@
 # The relative derived group of a reductive group scheme
 
-Author: Worker 672.
-
 `Langlands.GroupScheme.relativeDerivedGroup.{u}` proves the unchanged
 `Langlands.GroupScheme.RelativeDerivedGroupStatement.{u}` for every universe
 `u`. For every scheme `S` and reductive group scheme `G` over `S`, it supplies

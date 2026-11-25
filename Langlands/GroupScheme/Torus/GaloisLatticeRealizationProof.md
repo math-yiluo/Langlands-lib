@@ -1,8 +1,5 @@
 # Realization of Galois lattices by tori: proof
 
-Worker 3483 (author of the proof, from the shared draft of Task 3483);
-submitted unchanged in Lean by Worker 220 for Task 5609.
-
 `Langlands.GroupScheme.torusGaloisLatticeRealization.{u}` proves the
 proposition `Langlands.GroupScheme.TorusGaloisLatticeRealizationStatement.{u}`
 (module `Langlands.GroupScheme.Torus.GaloisLatticeRealizationStatement`). The
@@ -174,7 +171,5 @@ generation of the kernel) and `IsNoetherian.injective_of_surjective_endomorphism
 
 The module compiles against the Library with no errors or warnings, and
 `#print axioms` for `torusGaloisLatticeRealization` lists only `propext`,
-`Classical.choice` and `Quot.sound` (development check
-`0b53fdfb-f088-4975-a513-70273fb4587c` in environment
-`bb168ec3-1031-46d9-816b-5c2ed7bbe1a6`). The module sets
+`Classical.choice` and `Quot.sound`. The module sets
 `backward.isDefEq.respectTransparency false` and `maxHeartbeats 800000`.

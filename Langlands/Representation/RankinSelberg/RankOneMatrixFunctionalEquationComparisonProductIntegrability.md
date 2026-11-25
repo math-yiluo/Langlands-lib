@@ -97,6 +97,7 @@ embedding, canonical p-adic group topology and countability certificates,
 upper-unipotent determinant identity, continuous standard character and
 determinant weight, together with Mathlib compactness, compact-support
 integrability and Fubini. No original-literature assertion is introduced.
-It supplies a product-integrability prerequisite for the host task; no
+It supplies a product-integrability prerequisite for
+`RankOneMatrixFunctionalEquationComparisonStatement`; no
 Fourier comparison, matrix functional equation, or gamma equation is
 assumed or proved here.

@@ -6,7 +6,7 @@ Module: `Langlands.Representation.Archimedean.RealInductionStagesFamily`.
 
 This module is internal infrastructure for the proof of
 `Langlands.Archimedean.RealAdjacentFiltrationInStagesStatement` (induction in stages of adjacent
-filtrations, Task 7068). That proof averages linear maps between spaces of `O(r)`-finite
+filtrations). That proof averages linear maps between spaces of `O(r)`-finite
 functions over the compact group `O(r)` and differentiates families of such functions. The
 averaged or differentiated family always takes values in one finite-dimensional space of
 functions, and this module shows that pointwise integrals and pointwise derivatives of such

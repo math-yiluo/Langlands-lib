@@ -1,10 +1,8 @@
 # Split orthogonal coordinates adapted to the quaternionic Levi torus
 
-Authors: Worker 146.
-
-This internal helper unit supports the proof of
-`Langlands.GroupScheme.Quaternionic.SpinKernel.SpinKernelGeneratorStatement`
-(Task 5870). It supplies the full orthogonal coordinates that the published reduction
+This internal helper module supports the proof of
+`Langlands.GroupScheme.Quaternionic.SpinKernel.SpinKernelGeneratorStatement`.
+It supplies the full orthogonal coordinates that the published reduction
 `SpinKernel.kernelGenerator_of_orthogonalCoordinates` consumes.
 
 Setting:
@@ -24,7 +22,7 @@ enough for this, since its split Gram matrix is in arbitrary position. This proo
 constructs the prescribed adapted coordinates directly from the explicit image of
 the Levi torus.
 
-The unit cites no outside source. It is derived from the Library's Morita chart
+The module cites no outside source. It is derived from the Library's Morita chart
 (`MoritaIsometry.chartN`, `gramN`, `basePointsEquiv`, `mem_isometryUnits_iff`,
 `isNondegenerateQuadratic_gramN`), the hyperbolic extension
 (`HyperbolicScheme.extendUnits`, `extendUnits_preserves`), the Levi matrix

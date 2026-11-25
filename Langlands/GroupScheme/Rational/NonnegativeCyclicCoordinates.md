@@ -30,4 +30,4 @@ of scalars to a field.
 ring intrinsic conjugation theorem: a conjugator whose twisted orbit is constant
 preserves every one of these coordinate cutoffs. Relating the data to a particular
 root chart and proving invariance under changing maximal tori are separate steps
-of Task 7200.
+of the construction of finite vector-bundle filtrations for supplied relative radicals.

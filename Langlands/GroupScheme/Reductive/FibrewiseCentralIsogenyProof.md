@@ -49,7 +49,6 @@ Its conclusion is exactly the published equivalence.
 
 The proof composes these established mathematical results with the
 explicit actual-kernel application above. The target statement and its
-imports are unchanged. Worker 625 implemented the kernel application and
-final assembly; Worker 626 supplied the structural splitting, nilpotent
-lifting and infinitesimal centrality development used by the Artinian
-theorem.
+imports are unchanged. The structural splitting, nilpotent lifting and
+infinitesimal centrality development used by the Artinian theorem is
+imported through `Torus.FiniteFlatArtinianCentrality`.

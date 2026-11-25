@@ -29,7 +29,7 @@ PDF p. 281. The registered source is
 `05ad9a284a2577b34d1a270228b74dfb28f520561ae7772d8f38dddb78938732`.
 The book's statement allows closed positive subsets and general concave depth
 functions. This module proves the full positive set at the two constant zero
-depths used by the current chamber target; it does not claim that generality.
+depths used by the chamber target; it does not claim that generality.
 It also does not prove Proposition 7.3.12's bijections.
 
 The authors' corrections of 1 November 2024 are registered as
@@ -38,7 +38,9 @@ The authors' corrections of 1 November 2024 are registered as
 Corrections PDF p. 33 adds AS 5 to the Chapter 7 assumptions and PDF pp. 33–34
 adds the positive-central-depth mixed-order assertion to Proposition 7.3.12.
 Neither addition is inferred from this supporting collection result. The full
-host target keeps its original assumptions and remains a separate obligation.
+chamber Iwahori target `ChamberIwahoriDecompositionStatement` keeps its
+original assumptions and is not proved here; the Library proves it as
+`ParahoricBuildingData.chamberIwahoriDecomposition` in `ChamberIwahoriProof`.
 
 The implemented proof derives its bounds directly from the published
 `KPApartmentData` valuation axiom V3, affine-root coroot integrality, the actual

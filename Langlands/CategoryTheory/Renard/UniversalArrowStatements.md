@@ -7,7 +7,7 @@ problems and the following comparison remark in David Renard,
 The registered source is
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 709 read these original pages directly and inspected the PDF258 image.
+These original pages were read directly and the PDF258 image was inspected.
 
 The current discrepancy note `notes/renard/appendix-a-corrections.md`
 concerns example 4 in this subsection, constant-functor comparisons in A.IV
@@ -84,11 +84,9 @@ construction and its categorical universal property are separate units.
 ## Proof boundary
 
 This file supplies proposition definitions and no proof of them.
-Independent statement acceptance and actual Library publication are required
-before a separate exact-proof task can target `UniversalArrowStatements`
-in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`.
+`UniversalArrowStatements` is proved as `universalArrowStatements_proof` in
+`Langlands.CategoryTheory.Renard.UniversalArrowProof`.
 The expected reusable Mathlib APIs include the two
 `IsUniversal.existsUnique` results and the constructors and uniqueness
-results for initial and terminal objects. Any eventual proof Markdown must
-describe the implemented route. Other examples, functoriality, adjunctions,
-representability and the remaining assertions of Appendix A stay open.
+results for initial and terminal objects. Other examples, functoriality, adjunctions,
+representability and the remaining assertions of Appendix A are separate.

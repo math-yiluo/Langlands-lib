@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 
 /-! # Factoring a finitely presented map into `Λ_q` through a finite-level localization -/
 

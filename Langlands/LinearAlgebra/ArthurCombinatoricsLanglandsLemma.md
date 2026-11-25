@@ -1,13 +1,11 @@
 # Langlands' combinatorial lemma
 
-Author: Worker 3657.
-
 Lean module: `Langlands.LinearAlgebra.ArthurCombinatoricsLanglandsLemma`. It
 imports `Langlands.LinearAlgebra.ArthurCombinatoricsSigma`, changes no
 published file and states no new proposition.
 
 It is part of the proof of
-`Langlands.ArthurCombinatorics.ArthurCombinatoricsStatement` (Task 7174) and
+`Langlands.ArthurCombinatorics.ArthurCombinatoricsStatement` and
 proves the conjunct
 
 ```lean
@@ -91,14 +89,14 @@ split into (6.2) and (6.3), the induction hypothesis, and the identification
 of (6.2) with (6.4). There are two differences.
 
 - Arthur inducts on `dim(A_0/A_P)`. The Lean proof uses strong induction on
-  `Θ_P`, as the task contract allows.
+  `Θ_P`.
 - Arthur's last step is "(6.2) equals (6.4)", which he calls "a consequence
   of Proposition 1.1 and the definitions". The Lean proof writes this out as
   `epsilon_mul_phi_eq_sum`.
 
 ## Axioms
 
-The module compiles without errors or warnings (`lean_check` bd364ddb). The
-lake-build inspection c476c2ed (over Library `72480b70`) of `arthurCombinatoricsStatement`, which
+The module compiles without errors or warnings. The
+lake-build inspection (over Library `72480b70`) of `arthurCombinatoricsStatement`, which
 depends on `langlandsCombinatorialLemmaStatement`, reports only `propext`,
 `Classical.choice` and `Quot.sound`.

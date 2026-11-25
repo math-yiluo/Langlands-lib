@@ -1,6 +1,6 @@
 # Exact remaining inputs to the compact analytic étale comparison
 
-Worker 515. This is an internal composition of the existing support, local
+This is an internal composition of the existing support, local
 action and derived comparison constructions. It asserts no new theorem from
 external literature. The underlying source proposition remains Berkovich's
 Corollary 1.5.2(i), as documented in the unchanged statement module.
@@ -16,18 +16,18 @@ independent and match the statement modules.
 statement as a premise and proves its compact-space ordinary counterpart.
 For each compact Hausdorff space in that counterpart, it applies the compact
 premise to the same injective equivariant sheaf and positive degree. The
-published vanishing equivalence obtained from
+vanishing equivalence obtained from
 `etaleCompactCohomologyIsoOfCompactSpace` transfers this vanishing to actual
 ordinary étale cohomology of the restricted sheaf. It uses the supplied `h`
 and surjectivity of `pointProjection`. Consequently this theorem retains `h`
 as a proof input even though its resulting standalone global proposition
 does not bind `h`. No existence of a point field or of its point axioms is
 proved. `acyclic_iff_compactAcyclic` packages this transfer with projection
-from the conjunction, showing that the combined acyclicity task reduces to
+from the conjunction, showing that the combined acyclicity statement reduces to
 its compact-support component when `h` is given.
 
 `compactComparison_of_openDomains_of_openMap_of_compactAcyclic` concludes the
-exact published `AnalyticEtaleCompactComparisonStatement` from three explicit
+exact `AnalyticEtaleCompactComparisonStatement` from three explicit
 premises:
 
 - `EtaleOpenDomainStatement X`, étaleness of the canonical inclusions of open
@@ -41,11 +41,12 @@ premises:
 For the Hausdorff and surjectivity assumptions of the target, the first
 premise and `h` give `EtalePointLifting` by
 `etalePointLifting_of_openDomains`. The second premise gives openness of the
-structural map of every étale site object. Worker 627's
-`isIso_etaleCompactInclusion` therefore supplies the canonical degree-zero
+structural map of every étale site object.
+`isIso_etaleCompactInclusion` (in
+`Langlands.Sheaf.Equivariant.AnalyticEtaleCompactLocal`) therefore supplies the canonical degree-zero
 isomorphism: local discreteness fixes compactly supported sections under an
 open subgroup. The third premise supplies compact acyclicity of the same
-restricted injectives. The published
+restricted injectives. The Library's
 `isIso_etaleCompactComparison_of_injective_acyclic` then gives invertibility
 of the canonical comparison in every degree. Continuity of the action and
 Hausdorffness enter precisely through these stated inputs; no extra

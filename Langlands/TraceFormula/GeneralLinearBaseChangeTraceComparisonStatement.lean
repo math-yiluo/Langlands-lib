@@ -108,7 +108,7 @@ def GeneralLinearBaseChangeTraceComparisonStatement : Prop :=
     (IW : Type u) [Fintype IW]
     (eW : TW.toGrp ≅ splitTorus (Spec (CommRingCat.of K)) IW) (hcW : IsCentral iW)
     [(Measure.haar : Measure (normOneSubgroup K Wₙ)).IsMulRightInvariant],
-    iW ≫ (unitGaloisAut K L GLₙ σ).hom = iW →
+    iW ≫ (unitGaloisAut K L GLₙ σ).asIso.hom = iW →
     ∀ (hG : IsConnectedReductive GLₙ)
     (TG : CommGroupScheme (Spec (CommRingCat.of K))) (iG : TG.toGrp ⟶ GLₙ)
     (hiG : Function.Injective (characterRestrict iG))

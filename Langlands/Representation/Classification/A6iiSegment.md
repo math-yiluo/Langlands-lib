@@ -1,6 +1,6 @@
 # Segment quotients under twists, and products of surjections
 
-Author: Worker 4988. Module `Langlands.Representation.Classification.A6iiSegment`,
+Module `Langlands.Representation.Classification.A6iiSegment`,
 namespace `Langlands.Classification.A6ii`. Internal helper for the proof of Tadić's
 Corollary A.6(ii) (`IrreducibleLanglandsHeadProductProof`).
 

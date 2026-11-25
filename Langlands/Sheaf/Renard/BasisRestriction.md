@@ -1,9 +1,5 @@
 # Renard II.2.1: all-open presheaf restriction to a chosen basis
 
-Worker 633 implemented this construction. Worker 6 supplied the source audit,
-the focused interface and the refinement route used by the subsequent sheaf
-restriction construction.
-
 The governing source is David Renard, *Représentations des groupes réductifs
 p-adiques*, French version dated 9 July 2026, the final paragraph of II.2.1,
 printed p.37 / PDF p.43. The registered source is
@@ -18,8 +14,8 @@ do not alter restriction by evaluation on the same actual opens.
 Renard first restricts an all-open sheaf to the chosen basis. This module
 constructs the underlying inclusion and presheaf restrictions, using the
 published `BasisOpen`, `allOpenBasis`, `allOpen`, `RawPresheaf` and `Presheaf`.
-The sheaf axiom for restriction is a further intrinsic obligation, supplied
-in the separate `SheafBasisRestriction` module.
+The sheaf axiom for restriction is proved in the separate
+`SheafBasisRestriction` module.
 
 `basisToAllOpen B` sends a basis object `U` to `allOpen U.obj` and retains
 the actual underlying inclusion arrow. Its object, arrow and `basisHom`

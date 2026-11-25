@@ -1,7 +1,5 @@
 # Irreducible constituent extraction through an exact smooth functor
 
-Author: Worker 19.
-
 This internal algebraic construction transports a finite filtration of an actual
 smooth complex representation through a supplied functor preserving zero maps
 and actual short exact sequences. It then extracts an irreducible coarse
@@ -90,8 +88,9 @@ actual quotient irreducibility. Mathlib supplies module composition series from
 finite module length. This bridge neither asserts a representation finiteness
 theorem nor invokes a cuspidal or segment classification.
 
-Consequently this unit is independent of the eight classification tasks excluded
-by the repeated-transfer contract and their conclusions: analytic strong-head
+Consequently this module is independent of the eight classification results
+excluded for the repeated-factor transfers (`RepeatedCuspidalTripleJacquetTransfer`),
+of their proofs and of their conclusions: analytic strong-head
 classification, multisegment exhaustion, ordered strong-head existence, general
 ordered quotient coverage, tempered block uniqueness, square-integrable
 classification, square-integrable exhaustion and regular exhaustion. It invokes
@@ -99,4 +98,4 @@ no global support decomposition or equivalent classification. This generic
 extraction does not assert the local rank-three structure, ambient Jacquet
 refinement, or either final transfer. Inspection of the final theorem reports
 only `propext`, `Classical.choice` and `Quot.sound`, with universe parameters
-`uG`, `uH`, `uV`; this is development evidence, not independent acceptance.
+`uG`, `uH`, `uV`; this is development evidence, not an independent check.

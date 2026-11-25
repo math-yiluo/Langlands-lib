@@ -30,36 +30,38 @@ variable (L : Type u) [Field L] [NumberField L] [IsCMField L]
   (ρ : L →+* End M) (τ : L →+* End N)
   (f : (AlgebraicGeometry.Scheme.Modules.pullback b).obj M ⟶ N)
   (hf : ∀ t : L,
-    (AlgebraicGeometry.Scheme.Modules.pullback b).map (ρ t) ≫ f = f ≫ τ t)
+    (AlgebraicGeometry.Scheme.Modules.pullback b).map (ρ t).asHom ≫ f = f ≫ (τ t).asHom)
 
 omit [IsCMField L] [Algebra L K] [IsQuadraticExtension ℚ L] in
 include hc hf in
 /-- Tensor-action intertwiners after pullback use the actual pullback of coefficients. -/
 theorem sheafTensorAction_pullback (a : Γ(S, ⊤) ⊗[ℚ] L) :
-    (AlgebraicGeometry.Scheme.Modules.pullback b).map (sheafTensorAction L M ρ a) ≫ f =
-      f ≫ sheafTensorAction L N τ (coefficientMap L K Γ(S, ⊤) Γ(T, ⊤) c a) := by
+    (AlgebraicGeometry.Scheme.Modules.pullback b).map (sheafTensorAction L M ρ a).asHom ≫ f =
+      f ≫ (sheafTensorAction L N τ (coefficientMap L K Γ(S, ⊤) Γ(T, ⊤) c a)).asHom := by
   induction a using TensorProduct.inductionOn with
   | tmul r t =>
-    rw [coefficientMap_tmul, sheafTensorAction_tmul, sheafTensorAction_tmul,
-      pullback_map_smul, Linear.smul_comp, Linear.comp_smul, hf t]
+    rw [coefficientMap_tmul, sheafTensorAction_tmul, sheafTensorAction_tmul]
+    change (AlgebraicGeometry.Scheme.Modules.pullback b).map (r • (ρ t).asHom) ≫ f =
+      f ≫ (c r • (τ t).asHom)
+    rw [pullback_map_smul, Linear.smul_comp, Linear.comp_smul, hf t]
     rw [show c r = b.appTop r from congrArg (fun h : Γ(S, ⊤) →+* Γ(T, ⊤) => h r) hc]
   | add a d ha hd =>
     rw [map_add, map_add, map_add]
     change ((AlgebraicGeometry.Scheme.Modules.pullback b).map
-      ((sheafTensorAction L M ρ a : M ⟶ M) + sheafTensorAction L M ρ d)) ≫ f = _
+      ((sheafTensorAction L M ρ a).asHom + (sheafTensorAction L M ρ d).asHom)) ≫ f = _
     rw [Functor.map_add]
     change ((AlgebraicGeometry.Scheme.Modules.pullback b).map
-      (sheafTensorAction L M ρ a) +
-      (AlgebraicGeometry.Scheme.Modules.pullback b).map (sheafTensorAction L M ρ d)) ≫ f =
-      f ≫ ((sheafTensorAction L N τ (coefficientMap L K Γ(S, ⊤) Γ(T, ⊤) c a) : N ⟶ N) +
-        sheafTensorAction L N τ (coefficientMap L K Γ(S, ⊤) Γ(T, ⊤) c d))
+      (sheafTensorAction L M ρ a).asHom +
+      (AlgebraicGeometry.Scheme.Modules.pullback b).map (sheafTensorAction L M ρ d).asHom) ≫ f =
+      f ≫ ((sheafTensorAction L N τ (coefficientMap L K Γ(S, ⊤) Γ(T, ⊤) c a)).asHom +
+        (sheafTensorAction L N τ (coefficientMap L K Γ(S, ⊤) Γ(T, ⊤) c d)).asHom)
     rw [Preadditive.add_comp, Preadditive.comp_add, ha, hd]
 
 include hc hf in
 /-- Actual pullback and an ambient intertwiner preserve each complementary projector. -/
 theorem sheafProjector_pullback (conjugate : Bool) :
-    (AlgebraicGeometry.Scheme.Modules.pullback b).map (sheafProjector L K M ρ conjugate) ≫ f =
-      f ≫ sheafProjector L K N τ conjugate := by
+    (AlgebraicGeometry.Scheme.Modules.pullback b).map (sheafProjector L K M ρ conjugate).asHom ≫ f =
+      f ≫ (sheafProjector L K N τ conjugate).asHom := by
   simpa only [sheafProjector, coefficientMap_factorIdempotent] using
     sheafTensorAction_pullback L K b c hc ρ τ f hf
       (factorIdempotent L K Γ(S, ⊤) conjugate)
@@ -105,16 +107,16 @@ include hc hf in
 /-- The eigenmap intertwines the restrictions of any commuting ambient algebra actions. -/
 theorem sheafEigenPullbackMap_intertwines {A : Type z} [Ring A]
     (σ : A →+* End M) (υ : A →+* End N)
-    (hσ : ∀ (r : L) (a : A), ρ r ≫ σ a = σ a ≫ ρ r)
-    (hυ : ∀ (r : L) (a : A), τ r ≫ υ a = υ a ≫ τ r)
+    (hσ : ∀ (r : L) (a : A), (ρ r).asHom ≫ (σ a).asHom = (σ a).asHom ≫ (ρ r).asHom)
+    (hυ : ∀ (r : L) (a : A), (τ r).asHom ≫ (υ a).asHom = (υ a).asHom ≫ (τ r).asHom)
     (hA : ∀ a : A,
-      (AlgebraicGeometry.Scheme.Modules.pullback b).map (σ a) ≫ f = f ≫ υ a)
+      (AlgebraicGeometry.Scheme.Modules.pullback b).map (σ a).asHom ≫ f = f ≫ (υ a).asHom)
     (conjugate : Bool) (a : A) :
     (AlgebraicGeometry.Scheme.Modules.pullback b).map
-        (scalarEigensheafAction ρ (sheafFactorCharacter L K conjugate) σ hσ a) ≫
+        (scalarEigensheafAction ρ (sheafFactorCharacter L K conjugate) σ hσ a).asHom ≫
         sheafEigenPullbackMap L K b ρ τ f conjugate =
       sheafEigenPullbackMap L K b ρ τ f conjugate ≫
-        scalarEigensheafAction τ (sheafFactorCharacter L K conjugate) υ hυ a := by
+        (scalarEigensheafAction τ (sheafFactorCharacter L K conjugate) υ hυ a).asHom := by
   apply (cancel_mono (scalarEigensheafι τ (sheafFactorCharacter L K conjugate))).mp
   simp only [Category.assoc, scalarEigensheafAction_ι,
     sheafEigenPullbackMap_ι L K b c hc ρ τ f hf conjugate]
@@ -124,7 +126,7 @@ theorem sheafEigenPullbackMap_intertwines {A : Type z} [Ring A]
 
 variable (e : (AlgebraicGeometry.Scheme.Modules.pullback b).obj M ≅ N)
   (he : ∀ t : L,
-    (AlgebraicGeometry.Scheme.Modules.pullback b).map (ρ t) ≫ e.hom = e.hom ≫ τ t)
+    (AlgebraicGeometry.Scheme.Modules.pullback b).map (ρ t).asHom ≫ e.hom = e.hom ≫ (τ t).asHom)
 
 include hc he in
 /-- The full natural or conjugate eigensubsheaf commutes with actual scheme pullback.

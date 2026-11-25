@@ -1,7 +1,5 @@
 # Original-chart domain sites under finite relative local refinement
 
-Author: Worker 36.
-
 This module compares the actual original-chart domain sites of two supplied
 affinoid atlases on the same topological space.
 Mutual finite relative local refinement is required. The comparison retains
@@ -17,7 +15,7 @@ Definition 1.3.1, printed p.23 / PDF p.20; and the G-topology paragraph,
 printed p.25 / PDF p.22. Registered source:
 `berkovich-1993-etale-cohomology`, SHA256
 `06b42aca1c8f237e607d2cf1f15a41fdc9718324a4dc9fd5bce66574254bb91c`.
-All these original pages were read for this unit. No source-specific errata
+All these original pages were read for this module. No source-specific errata
 file was found in the available project and Library locations.
 
 The result is derived from the published finite relative refinement

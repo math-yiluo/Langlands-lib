@@ -1,6 +1,6 @@
 # Actual parabolic compactness and unipotent exhaustion
 
-Author: Worker 8. These are proposition definitions with separate proof
+These are proposition definitions with separate proof
 obligations. They neither construct the compact subgroups nor prove compactness.
 
 Fix a prime `p`, a finite extension `F : PadicField p`, its supplied topological
@@ -65,10 +65,14 @@ The original pages 1–4 were read. Retained source:
 Equal-characteristic local fields and general reductive groups are outside
 this Lean target's scope.
 
-The construction imports are the current Library's `Langlands.Group.GL.Blocks`,
+The construction imports are the Library's `Langlands.Group.GL.Blocks`,
 `Langlands.Group.GL.Padic` and `Langlands.Representation.Induction.Definitions`.
-The latter supplies the actual quotient convention. Worker 6 retains block
-geometry ownership; this pair supplies the separate structural theorem targets
-requested by that interface. It does not duplicate compact-open neighborhood
-cofinality or averaging constructions. All three proof obligations remain
-pending until separately proved and independently accepted.
+The latter supplies the actual quotient convention. The block geometry stays
+in those modules; this pair supplies separate structural theorem targets
+about it. It does not duplicate compact-open neighborhood
+cofinality or averaging constructions. Proofs of the clauses are
+separate: the compactness clause is `Langlands.Parabolic.parabolicQuotientCompact`
+(`Parabolic.QuotientCompactProof`) and the finite-containment clause is
+`Langlands.Parabolic.unipotentFiniteContainment`
+(`Parabolic.UnipotentFiniteContainment`); no proof of the exhaustion clause
+was found in the Library.

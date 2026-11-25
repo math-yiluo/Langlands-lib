@@ -1,7 +1,5 @@
 # Constancy of the geometric Picard-zero condition on connected components: proof
 
-Author: Worker 1028.
-
 This module proves the exact published proposition
 `Langlands.AbelianScheme.FieldPicardZeroComponentConstancyStatement.{u}`
 (theorem `Langlands.AbelianScheme.fieldPicardZeroComponentConstancy`). It

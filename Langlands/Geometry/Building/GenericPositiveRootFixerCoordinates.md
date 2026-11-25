@@ -1,6 +1,7 @@
 # Positive-root fixer coordinates over any field
 
-This internal support draft for Task 6309 extends the coordinate argument in the
+This internal support module for `UnramifiedZeroFixerAffineRootStatement`
+extends the coordinate argument in the
 published `ChamberPositiveCollection` and `PositiveRootFixerCoordinates` modules
 to any field, connected reductive group, maximal split torus, and supplied
 `KPApartmentData`. It adds no apartment axioms. It does not prove the zero/sharp

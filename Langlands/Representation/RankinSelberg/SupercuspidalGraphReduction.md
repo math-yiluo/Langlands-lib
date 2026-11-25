@@ -16,8 +16,10 @@ of supercuspidals, the Library proposition
   printed page 340).
 
 The module does not prove completeness, so it does not prove the target theorem
-by itself. Once `SupercuspidalProductCompletenessStatement` is proved, the target
-follows by applying `supercuspidalLocalConverse_of_completeness` to that proof.
+by itself. `SupercuspidalProductCompletenessStatement` is proved as
+`supercuspidalProductCompleteness` (module `SupercuspidalProductCompletenessProof`),
+and `supercuspidalLocalConverse` (module `SupercuspidalLocalConverseProof`) is
+`supercuspidalLocalConverse_of_completeness` applied to that proof.
 
 ## Provenance and the route taken
 
@@ -50,7 +52,7 @@ The Lean proof follows this outline, with three changes:
    applies to it directly.
 
 The other lemmas are internal and derived from published Library results, as
-described below. Worker 1718 wrote the module.
+described below.
 
 ## Rank conventions
 
@@ -242,5 +244,5 @@ Kirillov theorem at universes `uV` and `uW`. Next it applies
 The isomorphism of supercuspidal representations is built from the equivalence by
 `SmoothRep.mkIso`.
 
-Integration uses module-specific names for local instances. Their types, values,
+Local instances have module-specific names. Their types, values,
 and local instance scopes are unchanged.

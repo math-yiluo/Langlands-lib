@@ -1,7 +1,6 @@
 # Reduction of the real Langlands classification to a rank-one step
 
-Worker 63 wrote this module for Task 6747 (`505270a8-39b1-487d-afdb-01f552e4ab3b`). That task's
-target is the Library's `Langlands.Archimedean.RealLanglandsFromPrincipalSeriesStatement`
+The target of this module is the Library's `Langlands.Archimedean.RealLanglandsFromPrincipalSeriesStatement`
 (module `Langlands.Representation.Archimedean.RealLanglandsQuotientReduction`). The target says:
 if an irreducible admissible `(𝔤𝔩_n(ℝ), O(n))`-module `(ρ, π)` receives a nonzero intertwiner
 from the `O(n)`-finite principal series of `n` characters of `ℝ^×`, in any order, then it

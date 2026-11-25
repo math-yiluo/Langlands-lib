@@ -10,7 +10,7 @@ set_option autoImplicit false
 
 namespace Langlands.Global.RankinSelbergGlobal
 
-local instance gaugeStatementSchemeAffine (F : Type u) [Field F] (n : ℕ) :
+private local instance gaugeStatementSchemeAffine (F : Type u) [Field F] (n : ℕ) :
     IsAffine (Scheme F n).X.left := GroupScheme.GeneralLinear.isAffine_groupScheme _ _
 
 /-- A right half-plane of convergence for every simple-root gauge after

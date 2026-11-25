@@ -1,6 +1,6 @@
 # Weak approximation in the original global-field completions
 
-Worker 208. This derived infrastructure supplies the finite-completion
+This derived infrastructure supplies the finite-completion
 approximation used in Conrad, *Weil and Grothendieck approaches to adelic points*
 (2011), printed p.10, Example 4.3. It reuses Mathlib's general weak approximation
 theorem and the published actual completion comparisons, rather than assuming

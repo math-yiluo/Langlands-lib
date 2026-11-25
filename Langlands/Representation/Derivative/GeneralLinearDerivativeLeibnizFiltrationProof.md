@@ -1,8 +1,5 @@
 # The actual derivative Leibniz filtration in every rank
 
-Authors: Worker 593 (final theorem, boundary and restriction helpers, source
-and dependency audit) and Worker 984 (positive assembly contribution).
-
 The theorem `Langlands.Derivative.generalLinearDerivativeLeibnizFiltration`
 proves the unchanged Library proposition
 `Langlands.Derivative.GeneralLinearDerivativeLeibnizFiltrationStatement`.
@@ -226,23 +223,22 @@ and independent universes are preserved throughout.
 ## Published mathematical inputs and their proof provenance
 
 All mathematical inputs are imported by Lean name. The following
-publication checks distinguish proved inputs from proposition definitions,
-private drafts and conditional constructions.
+checks distinguish proved inputs from proposition definitions
+and conditional constructions.
 
-| Input | Verified proof and publication |
+| Input | Verified proof |
 | --- | --- |
-| Full right mixed-product derivative filtration | `rightMixedProductDerivativeFiltration`, independently approved by Reviewer 7605 without qualifications and published at Library commit `676ac944440098acb714f6b953083e88bb89c9c2`. |
-| Full left mixed-product derivative formula | `leftMixedProductDerivative` and its `Iso`/`Vanishing` projections, independently approved by Reviewer 7469 without qualifications and published at `b4b4160d118213b51ef28eb814f1828ac3902ada`. The published contribution includes its higher-order and vanishing proof modules. |
-| Actual differentiated restriction sequence | Unconditional `leibnizRestrictionDerivativeExact`, independently approved by Reviewer 6365 and published at `cb42061b82d3b398d42ee1f25159daec0f54e40d`. |
-| Quotient-to-piece bridge | `LeibnizQuotientPiece`, independently approved by Reviewer 6427 without qualifications and published at `8f53f05bb76983088fd64f190658c6ac4c3edc1b`; its explicit comparison and vanishing data are supplied from the proved left theorem. |
-| Positive assembly | `LeibnizPositiveGluing`, independently approved by Reviewer 6495 without qualifications and published at `7ad6e7323f2d14f5ccf8d30daa428878acda72c4`; all three conditional arguments are discharged in this entry. |
+| Full right mixed-product derivative filtration | `rightMixedProductDerivativeFiltration`, proved in `RightMixedProductDerivativeFiltrationProof`. |
+| Full left mixed-product derivative formula | `leftMixedProductDerivative` and its `Iso`/`Vanishing` projections, proved in `LeftMixedProductDerivativeProof`. Its proof includes its higher-order and vanishing proof modules. |
+| Actual differentiated restriction sequence | Unconditional `leibnizRestrictionDerivativeExact`, proved in `LeibnizRestrictionExact`. |
+| Quotient-to-piece bridge | `LeibnizQuotientPiece`, a proved module; its explicit comparison and vanishing data are supplied from the proved left theorem. |
+| Positive assembly | `LeibnizPositiveGluing`, a proved module; all three conditional arguments are discharged in this entry. |
 | Boundary, tensor, casts, indices, piece comparisons and general filtration operations | Published constructions in the complete closure below. The order-zero, rank-zero, finite-index, one-step, zero-length, transport, reindexing and splicing results are actual proved maps or constructions; none assumes the all-rank assertion. |
 
-The full right and left contributions, including every extra repository
-path of their frozen publications, and the quotient bridge were compared
-against the workspace and the audited Library tree. Both Lean and Markdown
-bytes agree. Independent semantic approval and publication were checked
-separately from compilation. The source assertions themselves supply no
+The full right and left proofs, including every extra module ported with
+them, and the quotient bridge were compared
+against the audited Library tree. Both Lean and Markdown
+bytes agree. The source assertions themselves supply no
 unproved premise.
 
 The mathematical trace through the lower inputs is as follows.
@@ -263,11 +259,11 @@ The mathematical trace through the lower inputs is as follows.
 
 ## Condition-by-condition inherited independence audit
 
-Each exclusion here applies to the named conclusion, its proof successors
+Each exclusion here applies to the named conclusion, its proofs
 and every downstream consequence, directly and transitively. Repeated
 conditions inherited through several consumers retain their full scope.
-The complete import closure was scanned for the excluded declaration names
-and inherited task identifiers, with no Lean-code matches. The body and
+The complete import closure was scanned for the excluded declaration names,
+with no Lean-code matches. The body and
 provenance audit above checks the mathematical route as well; a name scan
 alone would not establish independence.
 
@@ -275,27 +271,26 @@ alone would not establish independence.
 | --- | --- |
 | Actual natural filtration, complete feasible enumeration, repeated/zero grades, unchanged target and imports | The displayed differentiated sequence and generic splice construct the actual flag. The index-split equivalence covers precisely all feasible pairs, including zero pieces. Only this final Lean/Markdown pair is new; the statement and all imported pairs are unchanged. |
 | All ranks, order zero, top order, arbitrary GL₀ carriers, independent universes, supplied topology/character, no extra object hypotheses | The exhaustive case split and boundary constructions above cover these cases. No admissibility, irreducibility, finite dimension/length, genericity, nonzero or chosen vector, universe saturation or theorem-valued premise remains. |
-| Only proved, independently accepted and published upstream inputs | The two full mixed proofs discharge the positive helper's premises. Restriction, exactness, tensor and general filtration operations are published proved constructions. No citation, proposition definition, draft, pending task or conditional consumer supplies a missing proof. |
-| `UnlinkedSegmentSocleProductIrreducible`, `LinkedSegmentSocleReverseProductStructure`, `LinkedSegmentSoclePairReducible` | No segment product structure or reducibility theorem occurs in the closure or the mathematical route. This includes tasks `23e98d90-6055-4e35-91a9-b0f5d8a84961`, `a55c4267-7e3a-43f6-8bb1-ce319e1d0aa9` and `8fa9f68b-fa1b-431a-97f6-5b163964d1fc`. |
-| `JuxtaposedSegmentSocleReverseProductStructure`, `LinkedSegmentSocleReverseProductQuotientHom` | No such structure or quotient-Hom conclusion, including task `7ff2a1e9-89dc-439e-a861-a567b3db92bf`, supplies an input. The quotients here are explicit general module quotients. |
-| `SegmentSocleProductIrreducibility` | No criterion or consequence of task `2ae5cbe5-0701-4509-88a0-db8cbeb35be4` is used; the construction applies to arbitrary smooth representations. |
-| `AdjacentUnlinkedSegmentSocleSwap` and `TwoSegmentSocleCommutation` | Neither adjacent commutation task `e3634665-571b-4852-9f4c-bab8a1053434`, successor `cded83f3-df9c-4018-bc61-dc54f5c1f9ab`, nor tasks `426911b4-6620-413f-8065-04b25287f3bd` and `66e3b87c-647e-41e4-af18-df4d436765f0` is used. The GL₀ swap is the elementary tensor flip. |
-| `LinkedSegmentSocleGluing` | No linked gluing from tasks `c84cd52c-3ff3-4024-be50-8b84dd480888` or `6780b79c-9526-46aa-b8b4-00377d68b1ea` is used. The splice here is general short-exact-sequence filtration algebra. |
-| `OrderedMultisegmentSocleExistence` and socle exhaustion | No ordered existence, essential-subobject or exhaustion conclusion from tasks `23189526-80b0-4828-a6d4-7ebec2cbeef5` or `f3a69bc8-7312-4f82-8a7d-ea3c8188cb63` enters. |
-| Individual special-head/reverse-socle and segment-socle/reverse-head existence | Neither task `67279e36-f3c2-42e3-9302-11729784042e` nor `4ca79bbd-589e-476b-9f65-661e799984b5` supplies any premise. No segment or head/socle module occurs. |
-| Every segment derivative formula and the parent six-statement clauses (b), (d), (e), (f) | None is used. The derivatives and all mixed comparisons are general BZ77 constructions for arbitrary smooth inputs; no segment formula is an upstream hypothesis. |
-| `SegmentFullJacquetFormula`, `SegmentHeadJacquetFormula`, `SegmentSocleJacquetFormula`, `SegmentSpecialJacquetExponentNormFormula` | No formula from tasks `ed48ae06-964c-4c84-9e62-978f5a953ca7`, `55ad1e10-62d8-46b7-a081-909ef0056426`, `b95105c6-f8bb-4641-ae53-2f49d1e7f034` or `92aea10f-62ac-4e0b-bd4a-9a80909797c5` is used. General Jacquet quotient exactness and compact character averaging do not depend on them. |
-| Analytic segment classification and forward `SegmentSpecialEssentialSquareIntegrability` | No result of `aca8805b-054f-4d56-8045-12db7f623404` or `5eece9e8-7f6b-4ea9-abea-a1f9f1b8c807` supplies an input. |
-| `SegmentHeadProductIrreducibility` and `GenericSegmentProductUniqueness` | No conclusion of tasks `8364e73f-14ec-4d14-8f2b-1555a7c1ce95` or `30341ae4-65f2-4a0e-9283-763db01a409e` enters. Neither genericity nor a product irreducibility criterion appears among the proof's premises. |
-| Special-head multisegment exhaustion, ordered strong-head existence, quotient coverage, ordered conversion | No conclusion of `3bfb61fa-1129-4fc9-83fd-7fcfec22106e`, `ebea9a8a-9b21-4208-aa31-98c2dea1f8a3`, `20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584` or `8252833d-c269-41a9-824c-5879e531b23b` is used. Finite enumeration here concerns derivative orders, not representation coverage. |
-| Tempered uniqueness and `SquareIntegrableLanglandsClassification` | No conclusion of `52e97845-36bb-457d-b76f-70753334b88c` or `1cb45da2-7007-4351-a694-594fb148b8d1` enters. The incidental supercuspidal-definition imports above provide no classification theorem. |
-| Square-integrable and regular exhaustion | Neither `cd8ab97c-0b78-4bce-97c4-d307a28159a4` nor `bf433f0a-921a-428c-b0c0-6475438125ac` supplies a proof input. |
-| `TwoSupercuspidalNonadjacentProductIrreducible` and `TwoSupercuspidalProductStructure` | No conclusion of `3c9849a4-a6c0-43ac-9982-d15ed76bf1e9` or full-product assembly `ab61f565-1427-4746-ba77-46097563e962` enters. This general theorem is upstream of those consumers. |
+| Only proved and published upstream inputs | The two full mixed proofs discharge the positive helper's premises. Restriction, exactness, tensor and general filtration operations are published proved constructions. No citation, proposition definition, unproved statement or conditional consumer supplies a missing proof. |
+| `UnlinkedSegmentSocleProductIrreducible`, `LinkedSegmentSocleReverseProductStructure`, `LinkedSegmentSoclePairReducible` | No segment product structure or reducibility theorem occurs in the closure or the mathematical route. |
+| `JuxtaposedSegmentSocleReverseProductStructure`, `LinkedSegmentSocleReverseProductQuotientHom` | No such structure or quotient-Hom conclusion supplies an input. The quotients here are explicit general module quotients. |
+| `SegmentSocleProductIrreducibility` | No criterion or consequence of it is used; the construction applies to arbitrary smooth representations. |
+| `AdjacentUnlinkedSegmentSocleSwap` and `TwoSegmentSocleCommutation` | Neither the adjacent commutation, its proof, nor the two-segment commutation results is used. The GL₀ swap is the elementary tensor flip. |
+| `LinkedSegmentSocleGluing` | No linked gluing is used. The splice here is general short-exact-sequence filtration algebra. |
+| `OrderedMultisegmentSocleExistence` and socle exhaustion | No ordered existence, essential-subobject or exhaustion conclusion enters. |
+| Individual special-head/reverse-socle and segment-socle/reverse-head existence | Neither existence result supplies any premise. No segment or head/socle module occurs. |
+| Every segment derivative formula and clauses (b), (d), (e), (f) of the six derivative statements of `Classification.SegmentSocleDerivativesStatement` | None is used. The derivatives and all mixed comparisons are general BZ77 constructions for arbitrary smooth inputs; no segment formula is an upstream hypothesis. |
+| `SegmentFullJacquetFormula`, `SegmentHeadJacquetFormula`, `SegmentSocleJacquetFormula`, `SegmentSpecialJacquetExponentNormFormula` | No such formula is used. General Jacquet quotient exactness and compact character averaging do not depend on them. |
+| Analytic segment classification and forward `SegmentSpecialEssentialSquareIntegrability` | No such result supplies an input. |
+| `SegmentHeadProductIrreducibility` and `GenericSegmentProductUniqueness` | No conclusion of either enters. Neither genericity nor a product irreducibility criterion appears among the proof's premises. |
+| Special-head multisegment exhaustion, ordered strong-head existence, quotient coverage, ordered conversion | No such conclusion is used. Finite enumeration here concerns derivative orders, not representation coverage. |
+| Tempered uniqueness and `SquareIntegrableLanglandsClassification` | No such conclusion enters. The incidental supercuspidal-definition imports above provide no classification theorem. |
+| Square-integrable and regular exhaustion | Neither supplies a proof input. |
+| `TwoSupercuspidalNonadjacentProductIrreducible` and `TwoSupercuspidalProductStructure` | No conclusion of these or of the full-product assembly `TwoSupercuspidalProductStructureProof` enters. This general theorem is upstream of those consumers. |
 | Ze80 §§3.5/9.6 segment derivatives, 4.2/9.7 criteria, 9.3 analytic/square-integrability results, classification or exhaustion; circular linked-pair converse | No Ze80 result is a proof input. The positive-rank source route is the independently proved general BZ77 restriction and mixed-minus route. |
-| `IrreducibleCoinvariantFinitenessStatement`, `LeviCuspidalCoinvariantFinitenessStatement`, `SupercuspidalCoinvariantFinitenessStatement`, all-character single-block finiteness | None is imported or used. This covers parent tasks `5ab445dc-d2b4-4072-80d1-6370870a4a26`, `3ff5c8fb-397c-4345-bcb3-5d98a0993d18` and `62de5903-b616-4b5c-88eb-a066b77c5467`, their successors and downstream consequences. |
-| Dependent mirabolic finite-length route `5428fe2c-013c-482d-aa6e-7df43e7191aa` | No mirabolic finite-length proof is used. Minus exactness uses compact finite-orbit means on arbitrary smooth carriers. The conservative detection import has the independent general rank/Fourier proof described above. |
-| Consumer assemblies, including `TwoBlockDerivativePieces` and zero-factor/unit/two-block-shape helpers | No such assembly or its conclusion proves an upstream input here. All conditional arguments actually used are discharged by the independently published full general mixed theorems. |
-| Ownership and operator controls | No contact or wake of Worker 127 is required or made. Reading and importing the already published minus-exactness theorem grants no authority over that worker. Separate final Levi/all-character finiteness adapters remain downstream. |
+| `IrreducibleCoinvariantFinitenessStatement`, `LeviCuspidalCoinvariantFinitenessStatement`, `SupercuspidalCoinvariantFinitenessStatement`, all-character single-block finiteness | None is imported or used. This covers their proofs and downstream consequences. |
+| Dependent mirabolic finite-length route | No mirabolic finite-length proof is used. Minus exactness uses compact finite-orbit means on arbitrary smooth carriers. The conservative detection import has the independent general rank/Fourier proof described above. |
+| Consumer assemblies, including `TwoBlockDerivativePieces` and zero-factor/unit/two-block-shape helpers | No such assembly or its conclusion proves an upstream input here. All conditional arguments actually used are discharged by the published full general mixed theorems. |
 
 ## Complete direct and transitive import inventory
 
@@ -449,17 +444,15 @@ fields and proof tactics, without project consumer conclusions.
 - `Mathlib.Topology.LocallyConstant`: `Basic`.
 - `Mathlib.Topology.Order`: `Compact`.
 
-The complete project Lean-code scan found no excluded declaration/task
-identifier and no proof holes, added axioms or prohibited execution syntax.
+The complete project Lean-code scan found no excluded declaration
+and no proof holes, added axioms or prohibited execution syntax.
 The broader name scan was reconciled with the actual bodies: its extra
 hits are finite-length predicates, elementary supercuspidal-definition and
 contragredient infrastructure, matrix upper-head notation, compact-character
 relation detection, and the independent mirabolic derivative-detection
 import discussed above. This scan supplements the mathematical dependency
-trace and does not substitute for independent semantic review.
+trace and does not replace it.
 
-The final declaration recompiles in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` with universe parameters `uF,uV`
+The final declaration recompiles with universe parameters `uF,uV`
 and only the kernel assumptions `propext`, `Classical.choice` and
-`Quot.sound`. Development compilation is separate from the required
-exact-target validation and independent review of this proof.
+`Quot.sound`.

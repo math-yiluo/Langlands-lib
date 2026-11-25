@@ -1,7 +1,7 @@
 # Normalized Haar distributions on compact subgroups
 
-This definition unit constructs Renard's `e_Γ` for every compact subgroup,
-including compact subgroups that are not open. It reuses the published
+This definition module constructs Renard's `e_Γ` for every compact subgroup,
+including compact subgroups that are not open. It reuses the existing
 `Distribution G` and `compactlySupported` submodule. The group is Hausdorff,
 locally compact and totally disconnected, with its supplied topology.
 
@@ -11,7 +11,9 @@ version of 9 July 2026, registered as
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 Locator: II.3.11, first paragraph and displayed definition, printed p.51 /
 PDF p.57. The same paragraph evaluates `e_Γ` on locally constant functions;
-comparison with the published extended pairing remains a statement obligation.
+comparison with the extended pairing is the separate statement
+`RenardCompactSubgroup.ExtendedIntegralStatement` of
+`RenardCompactSubgroupStatements`.
 
 `Distribution.compactSubgroupDistribution K hK` is the concrete complex-linear
 functional `f ↦ ∫ k:K, f(k) dμ_K`, using the actual subgroup with its induced
@@ -30,10 +32,13 @@ The coercion theorem is definitional, and `compactSubgroupHaar_apply` records
 the exact ambient-test integral. This construction supplies the compact support
 needed for the definition; it does not assert the later uniqueness, translation
 invariance, extended mass-one pairing, product, conjugation or Hecke membership
-formulas. Those II.3.11–II.3.12 assertions require their own statements and proofs.
+formulas. Those II.3.11–II.3.12 assertions have their own statements, in
+`RenardCompactSubgroupStatements` and `RenardHeckeStatements`, proved in
+`RenardCompactSubgroupProof` and `RenardHeckeProof`.
 
 The existing `Hecke.HeckeAlgebra.normalizedIndicator` is a function realization
 for compact **open** subgroups relative to an ambient Haar measure. It does not
 replace this distribution on arbitrary compact subgroups; its exact density
-comparison is a subsequent obligation. No new distribution carrier or second
+comparison is the separate statement `RenardHecke.NormalizedIndicatorStatement`
+of `RenardHeckeStatements`. No new distribution carrier or second
 Hecke algebra is introduced here.

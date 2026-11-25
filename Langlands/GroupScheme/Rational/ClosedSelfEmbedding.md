@@ -1,6 +1,6 @@
 # Closed self-embeddings of affine algebraic groups
 
-Worker 1717. This internal development proves that a closed embedding of an affine
+This internal development proves that a closed embedding of an affine
 algebraic object over a field into itself is an isomorphism. It is support for the
 self-intersection analysis of the geometric lemma in the proof of the endomorphism
 dichotomy of Renard VI.5.3: a Levi subgroup `M` contained in a conjugate `z M z⁻¹`

@@ -1,7 +1,5 @@
 # Analytic temperedness of actual GL block tensors
 
-Author: Worker 403.
-
 `Langlands.glBlockTensorTempered` proves the exact closed proposition
 `Langlands.GLBlockTensorTemperedStatement.{uF, uV}` from
 [BlockTensorAnalyticStatement](BlockTensorAnalyticStatement.md).
@@ -24,10 +22,10 @@ and every Borel and Haar quantifier.
 
 This proof specializes the published common finite-exponent comparison
 `Langlands.glBlockTensorLp` from
-[BlockTensorLpProof](BlockTensorLpProof.md), authored by Worker 450, at
+[BlockTensorLpProof](BlockTensorLpProof.md) at
 `r = 2 + ε` for every real `ε > 0`. The inequality `2 ≤ 2 + ε` follows from
 nonnegativity of `ε`. It uses the two compatibility lemmas in
-[TemperedLpProof](TemperedLpProof.md), authored by Workers 403 and 363:
+[TemperedLpProof](TemperedLpProof.md):
 `Langlands.isTemperedModCenter_iff_forall_isLp` for a fixed quotient Haar
 measure and `T.isTempered_iff_forall_isLp` for each canonical GL factor.
 

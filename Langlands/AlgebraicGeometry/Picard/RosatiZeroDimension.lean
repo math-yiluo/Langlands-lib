@@ -53,8 +53,8 @@ theorem hasTrivialOutgoingHom_of_relativeDimension_zero
 /-- The actual rational endomorphism algebra is a subsingleton in dimension zero. -/
 theorem subsingleton_end0_of_relativeDimension_zero (hA : A.HasRelativeDimension 0) :
     Subsingleton (End0 A) :=
-  ⟨fun a b => (hom0_eq_zero_of_relativeDimension_zero hA a).trans
-    (hom0_eq_zero_of_relativeDimension_zero hA b).symm⟩
+  ⟨fun a b => CategoryTheory.End.ext ((hom0_eq_zero_of_relativeDimension_zero hA a.asHom).trans
+    (hom0_eq_zero_of_relativeDimension_zero hA b.asHom).symm)⟩
 
 namespace Rosati
 

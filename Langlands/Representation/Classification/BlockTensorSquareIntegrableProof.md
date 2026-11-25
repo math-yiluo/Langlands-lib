@@ -1,7 +1,5 @@
 # Square-integrability of actual GL block tensors
 
-Author: Worker 158.
-
 `Langlands.glBlockTensorSquareIntegrable` proves exactly the closed proposition
 `Langlands.GLBlockTensorSquareIntegrableStatement.{uF,uV}` in
 [BlockTensorAnalyticStatement](BlockTensorAnalyticStatement.md).

@@ -1,7 +1,5 @@
 # Derivatives of root parametrizations over an arbitrary ring
 
-Worker 163.
-
 Module `Langlands.GroupScheme.Reductive.AffineRootLieDerivative`, namespace
 `Langlands.GroupScheme.LocalSplitCell`. It works over an arbitrary commutative ring `R`
 (no locality, no Noetherian hypothesis) and a group scheme `G` over `Spec R` with

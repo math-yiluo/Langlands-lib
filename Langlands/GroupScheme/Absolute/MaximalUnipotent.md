@@ -1,7 +1,5 @@
 # Maximal smooth connected unipotent subgroups
 
-Worker 883.
-
 `IsMaximalUnipotentSubgroup i` means that `i` is a closed immersion, its source
 is smooth, connected and unipotent, and every factorization through another
 smooth connected unipotent closed subgroup is an isomorphism. It is

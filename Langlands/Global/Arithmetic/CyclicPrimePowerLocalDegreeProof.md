@@ -40,6 +40,6 @@ Markdown. The conclusion here is full completed-field degree, as used in
 Chapter VII §3, Lemma 5, printed page 49 (PDF page 58); it makes no claim
 of unramifiedness or full residue degree.
 
-Worker 65 authored this assembly. All arithmetic inputs are imported from
+All arithmetic inputs are imported from
 their published proofs. The final theorem has no additional hypotheses,
 and the target statement and its full import closure are unchanged.

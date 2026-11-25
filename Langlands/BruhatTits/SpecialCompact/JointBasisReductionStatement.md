@@ -16,7 +16,7 @@ are, in order:
 1. `∃ 𝔅 : KPBuildingAssignment.{u}, 𝔅.IsValid`: some assignment satisfies the
    full corrected KP Definition 4.1.26 for every connected reductive group over
    every nonarchimedean local field in universe `u`. This is the content of the
-   KP program's target `Langlands.Geometry.Building.BruhatTitsAvailabilityStatement`
+   statement `Langlands.Geometry.Building.BruhatTitsAvailabilityStatement`
    (KP Theorem 9.2.7, Definition 4.1.26 part), written out here so that the
    reduction does not depend on that module.
 2. `ValidAssignmentTorusRebasingStatement`: a valid assignment can be rebased so
@@ -39,7 +39,7 @@ are, in order:
    special vertex, of available data for the Levi at the same torus (Renard
    V.5.1(5)).
 
-The conclusion is `JointSpecialCompactBasisExistenceStatement.{u}`, unchanged.
+The conclusion is exactly `JointSpecialCompactBasisExistenceStatement.{u}`.
 It quantifies over every universe-`u` field `F` with `Field`, `ValuativeRel`,
 `TopologicalSpace` and `IsNonarchimedeanLocalField`, every connected reductive
 `G/Spec F`, every maximal split torus inclusion `i : S.toGrp ⟶ G` and every
@@ -66,7 +66,8 @@ clauses with the same `Z`, `j`, `s` and `h`. For every `J`, premise 7 gives
 available Levi data at the same torus whose special compact subgroup is the
 preimage of `K_0`, and premise 5 for the Levi gives the Levi Iwasawa products.
 This describes the intended common-witness construction; implementing the
-transports and proving the implication belong to a separate proof task.
+transports and proving the implication are done in `JointBasisReductionProof`,
+whose theorem `jointBasisReduction` proves this statement.
 
 ## Sources and provenance
 

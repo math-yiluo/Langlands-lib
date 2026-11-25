@@ -1,7 +1,8 @@
 # Exact Frobenius-origin quotient tests of actual affine groups
 
 Let `G` be an actual affine group scheme over a field `k` of exponential
-characteristic `p`, and let `r` be a height. This derived unit forms the
+characteristic `p`, and let `r` be a height. This module, derived rather than
+taken from a source, forms the
 image of the actual identity augmentation ideal under the coordinate
 ring's `p^r` power endomorphism. `quotientAlgebra G p r` is the quotient
 coordinate algebra by this ideal, `quotientMap` is its algebra map, and

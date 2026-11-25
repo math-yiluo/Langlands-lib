@@ -1,5 +1,5 @@
 import Langlands.Automorphic.InducedReciprocityBasic
-import Langlands.ClassField.Global.LocalRelativeWeilMapStatement
+import Langlands.ClassFieldTheory.Global.LocalRelativeWeilMapStatement
 import Langlands.Global.Factors.RelativeWeilLocalHecke
 import Langlands.Global.Factors.HeckeEulerProduct
 import Langlands.Global.AdelicFunctoriality.UnramifiedUnitNorm
@@ -152,10 +152,10 @@ variable {F K : Type u} [Field F] [Field K] [NumberField F] [NumberField K] [Alg
 `w` over `v`. -/
 theorem extensionResidueDegree_completionPadicAlgHom :
     Weil.Local.extensionResidueDegree (padicField v) (towerPadicField v w)
-        (ClassField.Global.RelativeWeilGroup.completionPadicAlgHom v w) =
+        (ClassFieldTheory.Global.RelativeWeilGroup.completionPadicAlgHom v w) =
       w.asIdeal.inertiaDeg (𝓞 F) := by
   have hcard := Weil.Local.extensionResidueCardinality (padicField v) (towerPadicField v w)
-    (ClassField.Global.RelativeWeilGroup.completionPadicAlgHom v w)
+    (ClassFieldTheory.Global.RelativeWeilGroup.completionPadicAlgHom v w)
   rw [residueCardinality_padicFieldAt w (residuePrime_eq v w),
     HeckeEulerProduct.residueCardinality_eq, ← topologicalData_eq_canonicalTopologicalData,
     HeckeEulerProduct.residueCardinality_eq,
@@ -166,7 +166,7 @@ end Tower
 
 end Langlands.Global.CompletionPadic
 
-namespace Langlands.ClassField.Global.RelativeWeilGroup
+namespace Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 
 open NumberField
 open scoped NumberField
@@ -374,4 +374,4 @@ theorem weakInductionAssociation_reduction :
     WeakInductionAssociationReductionStatement.{u, uV, uP} :=
   fun hrec hmap hres => weakInductionAssociation_of_local hrec hmap hres
 
-end Langlands.ClassField.Global.RelativeWeilGroup
+end Langlands.ClassFieldTheory.Global.RelativeWeilGroup

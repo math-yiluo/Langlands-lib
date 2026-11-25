@@ -1,6 +1,6 @@
 # Naturality of the actual Bochner integrated action
 
-Worker 116 states
+The module states
 `Langlands.Analysis.IntegratedIsometricNaturalityStatement`.
 For a measurable group G, a complete complex normed space E, any measure μ,
 a norm-preserving group homomorphism π into bounded complex-linear
@@ -59,9 +59,9 @@ integrand with the weighted orbit of Ux. This needs no completeness
 instance on Q. The pinned Mathlib theorem
 `LinearIsometry.integral_comp_comm` applies to these two maps.
 
-This file defines the proposition only. A separate exact published-target
-child must prove it. No convolution law, Dirac sequence, symmetry,
+This file defines the proposition only. Its proof is in
+`Langlands.Representation.Unitary.IntegratedIsometricNaturalityProof`. No convolution law, Dirac sequence, symmetry,
 compactness, strong approximation, decomposition, finite multiplicity,
 automorphic quotient or concrete Hilbert realization is asserted here.
-In particular, the abstract compact-approximation criteria still require
-these remaining operator hypotheses in an actual application.
+In particular, in an actual application the abstract compact-approximation
+criteria also require these other operator hypotheses.

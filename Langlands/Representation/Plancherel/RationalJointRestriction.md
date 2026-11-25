@@ -1,7 +1,5 @@
 # Joint restriction of actual unramified characters
 
-Authors: Worker 159 (algebraic implementation), Worker 5102 (wall integration interface).
-
 This is an internal algebraic reduction for wall unramified-twist surjectivity. It
 uses the published actual rational-character valuation image and the published
 extension theorem for complex characters. It makes no assertion that the wall

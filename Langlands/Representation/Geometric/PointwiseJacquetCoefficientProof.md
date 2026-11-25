@@ -1,10 +1,9 @@
 # Proof of pointwise block Weyl cancellation
 
-Worker 1186 assembled this proof and its reversal bridge. Its fixed-permutation
-case split adapts Worker 379's published `TypeASolomonCoefficientProof`.
-The explanation below adapts Worker 320's independently assembled shared
-pointwise draft and source dictionary. Worker 165 checked the dependency
-boundary, subgroup orientation, signs and treatment of rank zero.
+The fixed-permutation case split of this proof adapts
+`TypeASolomonCoefficientProof`. The explanation below uses the source
+dictionary recorded in `PointwiseJacquetCoefficientStatement.md`. The dependency
+boundary, subgroup orientation, signs and treatment of rank zero have been checked.
 
 `Langlands.Geometric.pointwiseJacquetCoefficientStatement` proves exactly
 `Langlands.Geometric.PointwiseJacquetCoefficientStatement`, with no external
@@ -86,8 +85,8 @@ It assembles three cases from the published lower helpers:
   the actual intersection condition, and changes the sign. The
   fixed-point-free involution cancels the sum.
 
-This case split adapts the fixed-permutation argument inside Worker 379's
-total-coefficient proof. It uses the stronger information retained by the
+This case split adapts the fixed-permutation argument inside the
+total-coefficient proof `TypeASolomonCoefficientProof`. It uses the stronger information retained by the
 lower helpers; it does not infer a pointwise identity from the final
 total-coefficient theorem.
 
@@ -171,7 +170,7 @@ this new entry, has 25 modules of lower finite block, matrix, permutation,
 cut and local-field mathematics. No classification or exhaustion proof
 is used, including any excluded analytic segment, special-head,
 strong-head, quotient-coverage, tempered-uniqueness, square-integrable or
-regular-exhaustion conclusion or proof successor. The public statement
+regular-exhaustion conclusion or any module proving one. The public statement
 pair and all its transitive imports are unchanged.
 
 This finite identity is an input for later Jacquet compatibility. It

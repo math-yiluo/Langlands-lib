@@ -31,7 +31,7 @@ proves it when `δ` is the modular character of `P` and `G` is unimodular.
 
 `modularCharacter` is Mathlib's `MeasureTheory.Measure.modularCharacter`. For a
 locally compact group `H` it is the factor in `map (· * q) haar = Δ(q) • haar`, so
-`μ(E q⁻¹) = Δ(q) μ(E)`. Worker 235's module
+`μ(E q⁻¹) = Δ(q) μ(E)`. The module
 `Langlands.Analysis.Local.ModularCompactAverage` shows that the compact average is
 right invariant on functions with `φ(q x) = Δ_P(q) φ(x)`. This is the covariance
 condition of the I.1 functional with `H = P`, so `Δ_P` plays the role of
@@ -124,11 +124,11 @@ representation. That comparison remains an open proof obligation, as stated in
 Uniqueness of Haar measure (`haarMeasure_unique`) gives the formula.
 
 `modularCharacter_eq_one_of_mem_compactOpen`: `P ∩ K` is a compact open subgroup of
-`P`. It is compact because `P` is closed. Worker 235's
+`P`. It is compact because `P` is closed.
 `ModularCompactAverage.modularCharacter_eq_one_of_mem` applies.
 
 `compactAverage_mul_right`: by `isMulRightInvariant_haar`, `haar` is right
-invariant. Worker 235's `ModularCompactAverage.setIntegral_mul_right_eq` gives
+invariant. `ModularCompactAverage.setIntegral_mul_right_eq` gives
 `∫_K φ(x g) dμ = ∫_K φ(x) dμ` for the set integrals over `K` with `μ = haar`. Both
 sides are integrals for the restriction of `μ` to `K`. That restriction is
 `μ(K) • normalizedHaar K`. Cancel the factor `μ(K)`, which is positive and finite.

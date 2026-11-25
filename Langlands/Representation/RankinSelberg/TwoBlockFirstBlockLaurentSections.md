@@ -1,7 +1,5 @@
 # First-block coefficient functions of a two-block section
 
-Author: Worker 1037.
-
 This is derived internal material for JPSS (1983), Section 4.9, printed pages
 416–418. The original first block is evaluated along `diag(v, 1)`. The module
 uses the published lower induced sections `TwoBlockJacquet.Sections` and the scalar

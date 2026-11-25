@@ -1,7 +1,5 @@
 # Restrictions between fibre product charts with included ranges
 
-Author: Worker 21.
-
 The module `FibreProductChartSystem` glues the fibre product `X ×_S Y` from the
 charts `V ×_W U` of pairs of charts with a common base chart. Its restriction
 maps exist only for componentwise inclusions of pairs. An atlas of the glued

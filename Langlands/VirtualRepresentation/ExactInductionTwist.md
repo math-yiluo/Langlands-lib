@@ -1,7 +1,6 @@
 # Twists, restriction and induction on the actual exact quotient
 
-Worker 1763 derives this auxiliary unit for fixed-Haar duality task
-`e945d920-df9f-446c-9528-b488a3bee609`.
+This auxiliary module is derived for use in fixed-Haar duality.
 
 The actual representation equivalence `induceTwistEquiv` specializes
 `Langlands.coindTwistEquiv` to subgroup inclusion and the finite-dimensional

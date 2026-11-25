@@ -1,7 +1,5 @@
 # Every assembly of a supercuspidal map extends it
 
-Author: Worker 5731.
-
 This module proves the published proposition
 `Langlands.Correspondence.AssemblyExtendsStatement` (module `AssemblyRelation`):
 

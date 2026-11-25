@@ -1,7 +1,5 @@
 # Full affinoid-domain localization at original atlas chart containments
 
-Authors: Worker 36 and Worker 56.
-
 `AtlasAffinoidDomainLocalization.lean` constructs restriction of full affinoid
 domains along an original atlas chart containment and an equivalence with the
 ordinary category of domains over its relative chart domain. Both directions
@@ -98,7 +96,7 @@ equalities concern the actual represented algebras, bounded maps and spectra.
 ## Provenance and scope
 
 This is a derived original-atlas construction. Its implementation substantially
-adapts Worker 56's published
+adapts the published
 `Langlands/Geometry/Analytic/GeneralizedAffinoid/RationalChartDomainLocalization.lean`
 and its proof pattern. Here the original chart restriction's
 `restriction_hom_ext` replaces rational-quotient bounded-map cancellation,

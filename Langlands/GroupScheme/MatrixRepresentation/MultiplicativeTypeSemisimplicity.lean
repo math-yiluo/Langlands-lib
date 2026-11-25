@@ -58,7 +58,7 @@ theorem isSemisimple_of_iSup_characterSpace_eq_top (ρ : MatrixRepresentation G 
     ⟨hstable, hatom.ne_bot, fun U _ hU => hatom.le_iff.mp hU⟩
   exact (le_sSup hsimple) (Submodule.mem_span_singleton_self v)
 
-local instance : IsAffineHom
+private local instance : IsAffineHom
     ((GroupScheme.baseChange (algebraBaseMap k K)).obj G).X.hom :=
   inferInstanceAs (IsAffineHom (Limits.pullback.snd G.X.hom (algebraBaseMap k K)))
 

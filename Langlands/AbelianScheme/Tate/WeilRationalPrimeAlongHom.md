@@ -51,7 +51,7 @@ already constructed intrinsic Weil pairings and actual Tate maps,
 followed by their existing prime-extraction comparisons. Any actual
 polarization can be substituted for the homomorphism; its polarization
 predicate is unnecessary for this construction. No arbitrary pairing
-or trivialization of the roots-of-unity twist is supplied. This unit
+or trivialization of the roots-of-unity twist is supplied. This module
 asserts no alternation, nondegeneracy, perfectness, continuity, or
 monodromy equivariance. Relative finite transition compatibility remains
 an explicit theorem hypothesis.

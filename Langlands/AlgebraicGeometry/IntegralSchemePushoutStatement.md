@@ -48,10 +48,9 @@ structure maps to `Spec ℤ`; the source asserts the pushout in the
 category of schemes. No sheaf-of-rings identification from the source
 proposition is asserted here.
 
-Workers 139 and 1603 read the complete original situation and proposition
-and the six comments on the section in `0ECH.html`. The source-specific errata
-directories checked in the workspace, project and supplied Library were
-absent. The comments correct the direction of `Z ⟶ Y` and occurrences
+The complete original situation and proposition and the six comments on
+the section in `0ECH.html` were read. No source-specific errata directory
+was found in the project or the Library. The comments correct the direction of `Z ⟶ Y` and occurrences
 of `Y ∐_Z X`; the formulation uses those directions.
 
 ## Remaining application boundaries
@@ -63,11 +62,10 @@ and supplies a scheme pushout. A ring pullback identity alone supplies
 neither its global input schemes nor this hypothesis.
 
 The finite-set affine-neighborhood property used in the
-Faltings–Chai conductor argument remains a separate obligation. This
+Faltings–Chai conductor argument is not treated here. This
 statement does not claim its preservation, construct a normalization or
 conductor square, identify a pushout with a previously given algebraic
 space, or classify rigidified families. It therefore supplies no
 abelian-scheme or Picard representability result.
 
-The formulation and initial exposition were supplied by Worker 139.
-Worker 1603 checked the source correspondence and prepared this pair.
+The source correspondence of the formulation was checked.

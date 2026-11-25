@@ -44,7 +44,7 @@ theorem normalQuotientAction_isContinuous (hN : IsOpen (N : Set U)) :
   apply (Action.isContinuous_def _).mpr
   apply continuous_prod_of_discrete_left.mpr
   intro g
-  exact ((normalQuotientAction (X := X) ι U N).ρ g).hom.continuous
+  exact ((normalQuotientAction (X := X) ι U N).ρ g).asHom.hom.continuous
 
 /-- The existing residual action, now certified in Mathlib's continuous-action category. -/
 def normalQuotientContinuousAction (hN : IsOpen (N : Set U)) :

@@ -33,4 +33,6 @@ arithmetic justify the statement without an additional literature assertion.
 No ampleness, positive exponent, exact support dimension, or positivity premise
 is required. In particular `n = 0` and `d = 0` are included. This statement is a
 supporting identity; it supplies neither its proof nor the host ample positivity
-theorem. Worker 689 specified the interface and its role in the integral step.
+theorem. It is used in the integral step,
+`integral_lineBundleEulerPolynomial_coeff_pos` (module
+`Langlands.AlgebraicGeometry.Modules.IntegralAmpleEulerCoefficientProof`).

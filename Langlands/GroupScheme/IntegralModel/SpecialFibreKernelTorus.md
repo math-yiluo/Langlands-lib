@@ -14,8 +14,9 @@ kernel is unipotent.
 
 This module proves that argument for integral models over a general base. It
 does not mention buildings or parahoric subgroups. The statements and their
-arrangement are internal design by Worker 4783 for Task 6203, which Worker 282
-and Worker 4783 share. No statement here comes from the literature.
+arrangement are internal design for the smooth connected unipotent kernel of
+special-fibre maps between unramified parahoric models (KP Proposition
+8.4.15). No statement here comes from the literature.
 
 Throughout, `R` is a domain with fraction field `K`, and `G` is a group scheme
 over `K`. An `IntegralModel R K G` is a group scheme `M.group` over `R` with an

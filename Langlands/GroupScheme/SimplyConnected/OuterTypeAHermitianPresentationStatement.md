@@ -1,12 +1,10 @@
 # An all-test Hermitian matrix presentation of outer type A groups
 
-Author: Worker 195.
-
 Module: `Langlands.GroupScheme.SimplyConnected.OuterTypeAHermitianPresentationStatement`.
 
 `Langlands.GroupScheme.OuterTypeAHermitianPresentationStatement.{u}` is a
 prerequisite statement for the outer type A part of the local rank-one
-classification (Task 5813, `OuterTypeARankOneHermitianStatement`). It is not
+classification (`OuterTypeARankOneHermitianStatement`). It is not
 proved here. It says that a simply connected group of absolute type `A_n`
 whose star action is the reversal of the Dynkin chain and whose two end
 vertices are distinguished is the special unitary group of a nonsingular
@@ -55,7 +53,7 @@ such that:
 1. (Star field.) An absolute Galois element `τ` fixes `ι₀(L)` pointwise if and
    only if `d.star τ` fixes every vertex. Thus `ι₀(L)` is the fixed field of
    the kernel of the star action (the field `TitsIndexData.starField` of
-   `OuterTypeAQuadraticExtension`, when that module is available).
+   `OuterTypeAQuadraticExtension`).
 2. (Hermitian.) `(J.map c)ᵀ = J`, where `c` is the nontrivial automorphism of
    `L/K` (`(SU3Root.fieldInvolution K L).bar`), and `J.det` is a unit.
 3. (Injective.) Every `ρ T` is injective.

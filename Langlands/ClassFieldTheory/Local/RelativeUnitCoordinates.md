@@ -1,7 +1,5 @@
 # Relative unit filtrations and literal residue coordinates
 
-Author: Worker 27.
-
 This is a derived algebraic construction using the published
 `Langlands.LocalField.RelativeIntegers` and
 `Langlands.ClassFieldTheory.Local.GradedUnitCoordinates`. It extends their

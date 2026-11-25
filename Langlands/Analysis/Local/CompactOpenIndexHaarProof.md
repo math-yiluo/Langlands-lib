@@ -1,7 +1,5 @@
 # Haar characters from compact-open indices: proof
 
-Authors: Worker 103 (original proof draft), Worker 1643 (verification and submission).
-
 `Langlands.Haar.compactOpenIndexHaar` proves exactly
 `Langlands.Haar.CompactOpenIndexHaarStatement.{u}` for every universe `u`,
 without additional outer hypotheses. It imports the published statement

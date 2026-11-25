@@ -31,8 +31,8 @@ left multiplication by the constant image of `t` moves `x ≫ q`. It applies
 rational lift, then applies the first construction. Properness of `Q`
 supplies the separatedness required by that density argument.
 
-The provenance is internal composition of the named Library constructions,
-developed by Workers 1549 and 1547. Neither construction assumes that the whole
+The provenance is internal composition of the named Library constructions.
+Neither construction assumes that the whole
 torus centralizer is contained in `P`, finiteness of the Weyl group, or a
 characteristic bound. They retain the actual torus factor, internal conjugacy,
 smooth proper exact quotient, and supplied nonfixed section or moving test

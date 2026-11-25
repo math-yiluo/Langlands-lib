@@ -32,4 +32,4 @@ and `kaletha-prasad-2024-corrections` (SHA-256
 `SimpleReflectionPositivityStatement` is the Prop-valued universal statement on
 the given affine torsor, and `simpleReflectionPositivity` proves it from the
 positive-root corollary. These lemmas prove the geometric step, not the group factorization or the
-full chamber Iwahori decomposition. Author: Worker 1647.
+full chamber Iwahori decomposition.

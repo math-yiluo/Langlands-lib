@@ -1,10 +1,9 @@
 # Joint finiteness of genuine scalar orbit coefficients
 
-Worker 94 proves an internal algebraic finiteness step for orbit density.
+This module proves an internal algebraic finiteness step for orbit density.
 The scalar coefficient construction and its actual derivative identity
 are imported from the published `ArchimedeanScalarOrbitDifferentiation`
-module. Their independently published contributions retain their own
-authorship. This helper constructs the joint intertwiner and transfers
+module. This helper constructs the joint intertwiner and transfers
 finiteness; it does not itself prove density.
 
 The complex linear coefficient map is composed with the inverse of the

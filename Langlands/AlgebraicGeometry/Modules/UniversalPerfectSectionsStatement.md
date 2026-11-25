@@ -5,8 +5,6 @@ The Prop-valued declaration
 states the objectwise perfect proper direct-image and arbitrary affine
 base-change result for an actual line bundle on a smooth proper family.
 This file supplies a statement, with no proof of that proposition.
-Worker 1013 prepared this pair using Worker 606's shared statement design;
-Worker 606 is a coauthor.
 
 ## Complete statement and conventions
 
@@ -107,8 +105,7 @@ has chapter title *Derived Categories of Schemes*. The registration's
 citation metadata incorrectly calls it *More on Flatness*; the source
 bytes and citation ID are unchanged.
 
-Worker 1013 read each of the following original statements and complete
-proofs, also previously read by Worker 606:
+Each of the following original statements and complete proofs was read:
 
 - Lemma 36.30.4 ([tag 0B91](https://stacks.math.columbia.edu/tag/0B91)),
   `lemma-flat-proper-perfect-direct-image-general`, lines 7524–7544:
@@ -144,12 +141,14 @@ statement. The usual derived-section composition comparison identifies
 that direct-image description with the right-derived functor of the
 whole section composite used here. Together with the affine derived
 pullback comparison and the K-flatness observation above, these are
-mathematical proof obligations for the successor proof. The present
+mathematical proof obligations for a proof of the proposition; the
+Library's proof is `universalPerfectSections` in
+`UniversalPerfectSectionsProof`. The present
 statement retains only objectwise existence from the source's functorial
 comparisons. This is a specialized statement design derived from the
 original, rather than a verbatim transcription of its full generality.
 
-Worker 1013 checked the current four tag pages and available comments on
+The current four tag pages and available comments were checked on
 2026-10-29. The retained supplementary source is
 `stacks-universal-perfect-sections-comments-20261029`, folder SHA-256
 `cff02c7e0ac074ddd354bad94a42f7c59ebfe956042ad86360bba27b73d7c1d5`.
@@ -161,10 +160,10 @@ file for the original source was present in the supplied public locations.
 
 ## Scope
 
-This is one objectwise statement unit. It asserts no naturality of chosen
+This is one objectwise statement. It asserts no naturality of chosen
 isomorphisms, compatibility with restriction maps, residue-field H1
 restriction comparison, Künneth, local two-axis triviality or relative
-cube detection. Those remain separate statements and proofs. Neither
+cube detection. Those are not part of this statement. Neither
 this proposition nor local minimal finite free representatives alone
 prove local triviality. The imported definitions are published; the
 geometric perfect-direct-image and base-change proposition is only stated

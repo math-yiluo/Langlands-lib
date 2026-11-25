@@ -1,6 +1,6 @@
 # Full-domain intersections between two members of a special cover
 
-Worker 1685 constructs the literal full local-domain intersection of any full
+This module constructs the literal full local-domain intersection of any full
 domains `U` and `V` in two original members of a finite chart family with
 represented original overlaps. When that pair's original genuine tensor overlap
 map is admissible, the genuine tensor map of the two unchanged domain algebras
@@ -17,9 +17,8 @@ printed p.20 / PDF p.17, registered source
 `berkovich-1993-etale-cohomology`, SHA256
 `06b42aca1c8f237e607d2cf1f15a41fdc9718324a4dc9fd5bce66574254bb91c`.
 The implementation derives the result from the actual `SpecialChartCover`,
-Worker 1582's `DomainProduct`, the full-domain pullback construction and the
-proved admissible pushout construction. Supporting helper pairs are reused
-unchanged and credited.
+`DomainProduct`, the full-domain pullback construction and the
+proved admissible pushout construction.
 
 `domainIntersection` pulls the full product domain `U.product V` back to the
 original overlap algebra along the actual finite-presentation overlap map.
@@ -45,6 +44,7 @@ required two-sided quotient-seminorm comparison and surjectivity.
 
 The inputs here must be full domains in two original members of the given
 finite special-cover family. Arbitrary local domains inside its union may span
-several members. Descent across the finite product cover is still needed to
-prove the full `SpecialSetIntersectionStatement`; it is not assumed or proved
-by this unit.
+several members. Descent across the finite product cover is needed to
+prove the full `SpecialSetIntersectionStatement` (proved as
+`specialSetIntersection` in `SpecialSetIntersectionProof`); it is not assumed
+or proved by this module.

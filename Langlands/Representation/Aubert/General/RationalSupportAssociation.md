@@ -1,7 +1,7 @@
 # Root association and the actual support-category conjugation witness
 
-Authors: Worker 593 and Worker 165. Worker 165 supplied the assembly route
-from the existing character-image and structural-conjugation declarations.
+The assembly route comes from the existing character-image and
+structural-conjugation declarations.
 
 This internal adapter derives the actual Levi-conjugation condition from
 the existing `rootAssociation` predicate, keeping the same rational point.

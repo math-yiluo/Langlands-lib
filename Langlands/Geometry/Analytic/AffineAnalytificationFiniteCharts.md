@@ -1,9 +1,7 @@
 # Finite algebra maps give finite Banach chart maps on analytifications
 
-Author: Worker 99.
-
-This module is internal infrastructure for Task 7653, which asks that affine
-analytification detect quasi-finite maps. Let `K` be a complete, ultrametric,
+This module is internal infrastructure for the proof that affine
+analytification detects quasi-finite maps (`AffineAnalytificationQuasiFiniteProof`). Let `K` be a complete, ultrametric,
 nontrivially normed field. Let `A` and `B` be commutative `K`-algebras with
 finite polynomial presentations `P` and `Q`, and let `f : A →ₐ[K] B`. The
 module shows the following. If `f` is module-finite, then over each original
@@ -91,7 +89,7 @@ Fix chart levels `m` (for `Q`) and `n` (for `P`).
   `scaleRoots (q k) (scale ^ m)`. The normalized coordinates of the second
   block satisfy `X - C (scale ^ n • coordinate t)`, where `coordinate t` is
   the `t`-th coordinate of the `n`-th chart algebra of `P`. Both families have
-  unit-ball coefficients. Worker 695's `finite_of_monic_normalized_coordinates`
+  unit-ball coefficients. `finite_of_monic_normalized_coordinates`
   (module `MonicPresentationFiniteness`) then gives finiteness.
 - `exists_isFiniteBanach_preimage` (main result): assume `f.toRingHom` is
   finite and let `n : ChartIndex K P`. Then there is an index `S` of the

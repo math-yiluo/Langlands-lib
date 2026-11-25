@@ -26,10 +26,10 @@ def groupRestriction : EquivariantDiagram E C ⥤ EquivariantDiagram D C where
     { obj := M.obj
       ρ i := (M.ρ i).comp (φ.app i).hom
       comm {i j} f g := by
-        change M.ρ i ((φ.app i).hom g) ≫ M.obj.map f =
-          M.obj.map f ≫ M.ρ j ((φ.app j).hom ((D.map f).hom g))
+        change (M.ρ i ((φ.app i).hom g)).asHom ≫ M.obj.map f =
+          M.obj.map f ≫ (M.ρ j ((φ.app j).hom ((D.map f).hom g))).asHom
         rw [M.comm]
-        exact congrArg (fun b => M.obj.map f ≫ M.ρ j b)
+        exact congrArg (fun b => M.obj.map f ≫ (M.ρ j b).asHom)
           (congrArg (fun b : D.obj i ⟶ E.obj j => b.hom g) (φ.naturality f)).symm }
   map c :=
     { hom := c.hom

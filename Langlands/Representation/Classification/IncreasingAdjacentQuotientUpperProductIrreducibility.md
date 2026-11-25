@@ -1,7 +1,7 @@
 # Increasing adjacent quotient times its upper factor
 
-Author: Worker 168. Worker 19 supplied the actual three-factor quotient
-presentation used to close this proof.
+The actual three-factor quotient presentation used to close this proof is in
+`Induction.ThreeFactorProductPresentation`.
 
 The internal proposition
 `Langlands.Classification.IncreasingAdjacentQuotientUpperProductIrreducibility`
@@ -21,9 +21,9 @@ rank is `((d+d)+d)`. The conclusion uses the actual quotient and product
 objects, with upper-parabolic normalization from `T`. There is no
 additive-character or product-presentation premise in the public proposition.
 The nonzero proper invariant subspace `S` is supplied: existence of such a
-subspace is a separate assertion. This unit supplies local rank-three
-irreducibility for the host repeated-triple argument; the ambient Jacquet
-extraction and both transfer implications remain separate host obligations.
+subspace is a separate assertion. This module supplies local rank-three
+irreducibility for the repeated-triple argument that uses it; the ambient
+Jacquet extraction and both transfer implications are not proved here.
 
 ## Implemented proof
 
@@ -73,13 +73,13 @@ object directly from the definition.
 
 `proper_derivative_data` discharges the two derivative hypotheses for
 `M = Q × A`, using the proved first and second common-rank derivative
-units. At order `d`, every actual nonzero Leibniz grade is transported `Q`
+results. At order `d`, every actual nonzero Leibniz grade is transported `Q`
 or `A × A`. Their irreducible actual subquotients have support `{B,A}` or
 `{A,A}`, respectively, so the datum of `A` occurs. At order `2d`, every
 irreducible actual derivative subquotient occurs in transported `A`;
 composing its actual support presentation gives the singleton support.
 Both derivative objects have finite group-algebra composition length by
-those units. Equality elimination removes the prescribed rank transports.
+those results. Equality elimination removes the prescribed rank transports.
 
 `irreducible_of_product_presentation` applies the obstruction to every
 irreducible actual subquotient of `Q × A`. At this intermediate helper only,
@@ -133,10 +133,9 @@ The recursive project import closure contains 964 modules. Relative to
 Library base `676ac944440098acb714f6b953083e88bb89c9c2`, 961 project Lean
 files are byte-identical to the base. The three absent entries are this
 entry, `AdjacentQuotientUpperProductFirstDerivative`, and
-`Induction.ThreeFactorProductPresentation`. The latter two are separately
-staged prerequisite units with their own independent review and integration
-gates. All project modules have nonempty Markdown companions. External
-imports are from Lean and Mathlib. The integrated
+`Induction.ThreeFactorProductPresentation`. The latter two are separate
+prerequisite modules of the Library. All project modules have nonempty
+Markdown companions. External imports are from Lean and Mathlib. The Library's
 `Derivative.LocalPositiveLeibniz` is used unchanged, including its published
 left mixed-product comparison, vanishing and right filtration proofs.
 
@@ -176,7 +175,7 @@ on simple actual subquotients.
 
 Imported broad classification proposition definitions and conditional
 assembly helpers are not applied as proved classification conclusions.
-No used proof invokes the host's excluded analytic strong-head
+No used proof invokes the excluded analytic strong-head
 classification, ordered strong-head existence, general ordered quotient
 coverage, multisegment exhaustion, tempered block uniqueness,
 square-integrable Langlands classification, square-integrable exhaustion

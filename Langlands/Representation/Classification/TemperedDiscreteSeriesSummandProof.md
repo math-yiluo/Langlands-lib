@@ -1,7 +1,5 @@
 # Discrete-series summands of irreducible tempered GL representations
 
-Author: Worker 388.
-
 `Langlands.glTemperedDiscreteSeriesSummand` proves exactly the closed
 proposition `Langlands.GLTemperedDiscreteSeriesSummandStatement.{uF, uV, uW}`
 from `TemperedSupportStatement`. It retains every quantified premise of

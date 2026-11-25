@@ -1,10 +1,8 @@
 # Finite-length and irreducible consequences of the corrected Theorem 3.6
 
-Implementation and documentation: Worker 379 (task
-`0a1bd7fb-66c2-4dcc-a3c8-6619f6fa10b4`, the complex-and-targets unit of the
-general Aubert program `46df6a68-5db4-4428-8044-05151d6ce1f6`). The complex and
-its terminal cokernel are Worker 194's constructions; this module only states
-targets about them.
+The complex and its terminal cokernel are constructed in other modules
+(`Complex`, `StandardComplex`, `Terminal`); this module only states targets
+about them.
 
 This module states, as separate proposition targets, Aubert's Corollaire 3.9
 (1995, printed p. 2189), its finite-length specialization for the support
@@ -14,7 +12,7 @@ assertions these need. Nothing here is proved.
 ## Data
 
 All targets are `Prop`-valued definitions in namespace `Langlands.Aubert.General`
-of the data of Worker 194's standard complex and of `SupportCategory`:
+of the data of the standard complex (`StandardComplex`) and of `SupportCategory`:
 
 * `ι` with `[LinearOrder ι] [Fintype ι]` (the simple roots `S`, ordered to fix
   the exterior signs of the complex), and `G` locally compact nonarchimedean;
@@ -26,7 +24,7 @@ of the data of Worker 194's standard complex and of `SupportCategory`:
   `SupportCategoryStatements`;
 * the association relation `IsAssociate`.
 
-Representations `E` have carriers in `Type (max uI uG uV)`. Worker 194's
+Representations `E` have carriers in `Type (max uI uG uV)`.
 `StandardComplex.sharpObject` sends carriers in `Type (max uG uV')` to carriers in
 `Type (max uI uG uV')`; it is used here at `uV' = max uI uV`, so `E`, `E#` and
 `(E#)#` all lie in `SmoothRep.{0, uG, max uI uG uV} ℂ G`, and their classes lie
@@ -37,7 +35,7 @@ actual cokernel of the differential into the degree `|S| - |I|` of the normalize
 smooth complex `E_J = i_J r_J E` (Aubert's (3.5)/(3.7); erratum p. 4690,
 "`E#` = coker `d_{|I|}`"). It depends on `I` only through `|I|`.
 
-`D_G` is Worker 23's `alternatingOperator P M U h hclosed hfl`, the unadjusted
+`D_G` is `alternatingOperator P M U h hclosed hfl` (module `AlternatingOperator`), the unadjusted
 operator `∑_{I ⊆ S} (-1)^{|I|} i_I ∘ r_I` of Aubert's Définition 1.5 on
 `SmoothRep.FiniteLengthGrothendieckGroup` (the exact finite-length Grothendieck
 group). It needs the finite-length hypotheses
@@ -63,9 +61,9 @@ For every `hfl`, every `I`, every `E ∈ Alg({I})` and finite-length proofs
 
 Source: Corollaire 3.9 (a), p. 2189, "(-1)^{|I|}[E#] = D_G([E])", stated there for
 `E ∈ 𝔈(I)`. The target is its finite-length specialization of the corrected
-Theorem 3.6: it asks the formula for every finite-length member of `Alg({I})`, as
-the task requires. It follows from three facts: exactness of the complex before
-the terminal degree (Worker 194's corrected Theorem 3.6 target), vanishing of the
+Theorem 3.6: it asks the formula for every finite-length member of `Alg({I})`.
+It follows from three facts: exactness of the complex before
+the terminal degree (the corrected Theorem 3.6 target), vanishing of the
 terms `E_J` with `|J| < |I|` (`SupportCategoryJacquetVanishingTarget`), and
 additivity of classes along exact sequences. Then the Euler characteristic gives
 `(-1)^{|S|-|I|} [E#] = ∑_J (-1)^{|S|-|J|} [E_J] = (-1)^{|S|} D_G([E])`. Membership
@@ -87,7 +85,7 @@ quotients and extensions. It is the retention of the support type that iterating
 Corollaire 3.9 (b), p. 2189: for `E ∈ 𝔈(I)`, `E#` is irreducible. Aubert writes
 "si `E` est irréductible, `E#` est aussi un G-module irréductible"; members of
 `𝔈(I)` are irreducible by Notation 1.6. `SmoothRep.IsIrreducible` includes
-`E# ≠ 0`, so this is the actual nonzero irreducibility the task asks for.
+`E# ≠ 0`, so this is the actual nonzero irreducibility.
 
 ### `SharpCuspidalSeriesTarget`
 
@@ -118,17 +116,18 @@ representation uses, besides `SharpClassFormulaTarget` and
 * `SupportCategoryDecompositionTarget` (support decomposition, Renard VI.7.2);
 * `SupportCategoryJacquetVanishingTarget` and the other support targets of
   `SupportCategoryStatements`;
-* termwise finite length `ParabolicFiniteLength` (Worker 23's named hypothesis,
-  Renard VI.6.2, VI.6.4) and its consequence
+* termwise finite length `ParabolicFiniteLength` (the named hypothesis of
+  `AlternatingOperator`, Renard VI.6.2, VI.6.4) and its consequence
   `inductionJacquet_hasFiniteLength`;
-* Worker 194's corrected Theorem 3.6 exactness target
+* the corrected Theorem 3.6 exactness target
   `Langlands.Aubert.General.CorrectedTheorem36Statement` (module
   `Aubert.General.CorrectedTheorem36`) and the terminal-cokernel constructions of
   `Aubert.General.StandardComplex`.
 
 The proof of Corollaire 3.9 also needs Aubert's Théorème 1.7 (involutivity of
-`D_G` and its compatibility with induction), whose general targets belong to the
-sibling task `e3d69272`.
+`D_G` and its compatibility with induction), whose general targets are
+`InvolutivityStatement` (module `InvolutivityTarget`) and
+`InductionCompatibilityStatement` (module `InductionTarget`).
 
 ## Faithfulness and scope
 

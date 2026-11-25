@@ -1,7 +1,5 @@
 # Composition of original own-system CM lattice inverse-image morphisms
 
-Author: Worker 57.
-
 This internal construction proves the composition law for the original
 geometric Harris coefficient morphisms at three nested small CM levels.
 Each level uses its own independently constructed canonical lattice.
@@ -250,7 +248,7 @@ from `HarrisTaylorCMGeometricLatticeInverseImage`.
 Consequently the successive comparison retains the same direct cover
 coordinate and the same original reduced coefficient inclusion.
 
-## Provenance and remaining scope
+## Provenance and scope
 
 This is an internal deduction from
 `HarrisTaylorCMGeometricLatticeInverseImage`,
@@ -266,7 +264,6 @@ or desired comparison equality is introduced as a premise.
 The result establishes nested-level composition for these three original
 canonical-lattice systems. General commensurability comparisons, arbitrary
 lattice independence, rational adic independence, Hecke compatibility,
-and the remaining exact-source representability, geometric-existence,
-descent and canonical-model obligations are outside this unit.
+and the exact-source representability, geometric-existence,
+descent and canonical-model assertions are outside this module.
 The structural and representability premises above remain explicit.
-This contribution does not complete the containing task.

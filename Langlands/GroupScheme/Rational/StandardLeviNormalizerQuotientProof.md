@@ -6,7 +6,7 @@ Namespace `Langlands.GroupScheme`. Universe parameter `u`.
 The main theorem is `standardLeviNormalizerQuotient`. Its type is exactly the published
 statement `Langlands.GroupScheme.StandardLeviNormalizerQuotientStatement`, from
 `Langlands.GroupScheme.Rational.StandardLeviWeylStatements` (Renard 2026, V.4.3, (V.4.3.3),
-printed p.119 / PDF p.125). It adds no hypothesis. Worker 131 wrote this proof for Task 5688.
+printed p.119 / PDF p.125). It adds no hypothesis.
 
 Setting: `k` is a nonarchimedean local field, `G` a connected reductive group over `k`,
 `i : T ⟶ G` a maximal split torus, `ν` a generic cocharacter and `I` a finite set of simple

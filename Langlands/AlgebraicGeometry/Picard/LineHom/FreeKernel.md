@@ -67,9 +67,8 @@ follows from `replacementKernelEquiv_symm_mapKernel` and the Library lemma
 
 ## Provenance
 
-This is an internal helper, requested by the Hom-proof task
-(b792240c-c046-4cc7-9705-872daf853dd0) with exactly this statement for
-`exists_kernel_solutions_model`. Its content is standard commutative algebra: a
+This is an internal helper for the line-bundle Hom proof; it is imported by
+`LineHom.NoetherianModelProof`. Its content is standard commutative algebra: a
 finitely generated projective module is a direct summand of a finite free module,
 and kernels of maps between such modules, after any base change, are cut out by
 finitely many linear equations. The replacement map is the usual

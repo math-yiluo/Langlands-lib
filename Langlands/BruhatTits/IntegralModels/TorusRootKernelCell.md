@@ -18,8 +18,8 @@ This module applies the general lemma of
 torus/root model families of the published module `TorusRootModelFamily`. It
 records the factorization needed there as a named hypothesis,
 `OrderedFixerFactorization`, and does not prove it. The definitions and the
-theorem are internal design by Worker 4783 for Task 6203, which Worker 282 and
-Worker 4783 share. They do not formalize a literature statement in this form.
+theorem are internal design for the proof of KP Proposition 8.4.15
+(`UnramifiedModelKernelStatement`). They do not formalize a literature statement in this form.
 
 Notation. `F` is a non-archimedean local field, `K` its maximal unramified
 extension (`inertiaFixedField F`) with integers `O` (`fixedFieldIntegers F`),
@@ -95,7 +95,7 @@ the pointwise fixer of `Ω` in the reduced building.
 The conclusion has exactly the form of the closed-point range hypothesis of
 the ordered open-chart bridge for torus/root families
 (`TorusRootModelFamilyData.smooth_connected_kernel_of_orderedOpenCharts`,
-candidate `7fdea9eb`, not yet in the Library this module is built against).
+module `TorusRootKernelOpenChart`).
 
 ## Scope
 

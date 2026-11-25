@@ -4,8 +4,8 @@ This module constructs the maps from actual integral Tate limits to their
 prime-adic components and to the products of those components. It proves
 continuity, compatibility with away restriction, and naturality for actual
 group-scheme homomorphisms. It does not assert that the comparison maps are
-isomorphisms. Those exact-map assertions belong to a subsequent statement
-unit and a separate proof task.
+isomorphisms. Those exact-map assertions are stated in `PrimeComparisonStatement`
+and proved in `PrimeComparisonProof`.
 
 ## Actual carriers and coordinate projections
 
@@ -120,15 +120,15 @@ The coordinate maps and naturality laws here are derived from those limit
 conventions and the published actual `Integral` and `PrimeAdic`
 constructions. The arbitrary test scheme and commutative group scheme are
 explicit generalizations. The construction follows the published
-`Tate/TwistPrimeComparison` coordinate-projection pattern by Worker 92,
-adapted by Worker 142 to actual group-scheme torsion and actual
+`Tate/TwistPrimeComparison` coordinate-projection pattern,
+adapted to actual group-scheme torsion and actual
 homomorphisms. It is not a statement that the source presents these Lean
 interfaces or proves a decomposition theorem at the cited location.
 
 No finiteness, invertibility of torsion orders on `S`, or characteristic-zero
 assumption is required for these coordinate maps and their intrinsic laws.
 Such hypotheses remain necessary when invoking separate finite-étaleness
-or full-rank results. This unit proves neither bijectivity nor inverse
+or full-rank results. This module proves neither bijectivity nor inverse
 continuity of the product comparison maps, and makes no claim about scalar
 comparison with profinite integers, rationalization, restricted products,
 Weil pairings, or monodromy.

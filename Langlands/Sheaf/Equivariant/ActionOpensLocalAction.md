@@ -1,8 +1,8 @@
 # Local actions on the transport category of opens
 
-Author: Worker 13. Built on the generic local action systems of
+Built on the generic local action systems of
 `Langlands.Sheaf.Equivariant.LocalAction`, the published transport category
-`Langlands.Sheaf.Equivariant.ActionOpens`, Worker 61's transport site
+`Langlands.Sheaf.Equivariant.ActionOpens`, the transport site
 `Langlands.Sheaf.Equivariant.Site`, and the published smooth equivariant
 sheaves of `Langlands.Sheaf.Equivariant.Smooth`.
 
@@ -75,7 +75,7 @@ on p-adic analytic spaces* (unfinished 1995–1996 manuscript), section 1.4,
 printed pp.7–8, which are PDF pages 7–8, describes the canonical actions of
 subgroups on sections. The remark after Definition 1.4.1 on printed p.8
 characterizes equivariant sheaves by open stabilizers on distinguished
-neighbourhoods. Worker 13 read these passages in the original. The published
+neighbourhoods. These passages were read in the original. The published
 `IsSmoothSheaf` transcribes this remark to the ordinary topological transport
 site. The present module identifies it with the generic remark-form condition
 `IsLocallyDiscrete` of `LocalAction` for one explicit local action system.
@@ -99,6 +99,6 @@ member
 member SHA-256
 `91567a75866a27cbe6690b6f075693df5afaa02524223d94d52ea37d77bb6637`.
 
-The module `Langlands.Sheaf.Equivariant.LocalAction` is part of the same
-candidate. All other imported modules are present in Library commit
+The module `Langlands.Sheaf.Equivariant.LocalAction` is ported together with
+this module. All other imported modules are present in Library commit
 `ddb0a9c0d562246b405e8f1149220107e7407d1d`.

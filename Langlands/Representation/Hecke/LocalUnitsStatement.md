@@ -32,5 +32,3 @@ it does not contain or claim a proof. The finite-family formulation is internal
 rather than a quotation of a separate original-source theorem. It concerns
 convolution local units; representation actions and corner algebra structures
 are separate modules.
-
-Worker 86 authored this statement and explanation.

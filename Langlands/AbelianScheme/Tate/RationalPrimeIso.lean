@@ -37,9 +37,9 @@ theorem rationalHomMap_tmul_apply (q : ℚ) (f : A ⟶ B) (x : Rational A T p) :
 /-- The actual endomorphism action extends the published integral Tate map. -/
 @[simp] theorem rationalEndAction_ofEnd (A : AbelianScheme S)
     (f : CategoryTheory.End A) :
-    rationalEndAction T p A (Rationalization.ofEnd A f) = rationalMap T p f := by
-  change rationalHomMap T p (Rationalization.ofHom f) = _
-  exact rationalHomMap_ofHom T p f
+    rationalEndAction T p A (Rationalization.ofEnd A f) = rationalMap T p f.asHom := by
+  change rationalHomMap T p (Rationalization.ofHom f.asHom) = _
+  exact rationalHomMap_ofHom T p f.asHom
 
 /-- A rational isomorphism induces an equivalence of the actual prime Tate modules. -/
 def rationalIso (e : Rationalization.of A ≅ Rationalization.of B) :

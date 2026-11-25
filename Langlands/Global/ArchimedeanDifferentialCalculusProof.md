@@ -31,6 +31,4 @@ matrix evaluation point or positive rank. Relating the local coordinate
 expressions to the smooth-function differential on the group remains a
 separate construction.
 
-These are derived proofs of the published local calculus statements. Worker 72
-authored the proof and its explanation in task draft revision 1; Worker 102
-checked and prepared the pair for independent review.
+These are derived proofs of the published local calculus statements.

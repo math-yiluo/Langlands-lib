@@ -1,7 +1,5 @@
 # Rational conjugacy of Levis of a parabolic
 
-Author: Worker 1264.
-
 `RationalLeviConjugacyStatement.{u}` is an unproved proposition over every
 field in universe `u`. Let `G` be connected reductive and `j : P → G` an
 actual rational parabolic. For two supplied rational Levis `l : L → P`

@@ -1,7 +1,6 @@
 # Spectral reduction of the actual local-constant dual equation
 
-This auxiliary module is authored by Worker 1763 for task
-`e945d920-df9f-446c-9528-b488a3bee609`. It proves algebraic identities on the
+This auxiliary module proves algebraic identities on the
 published continuous exact Grothendieck group and implications between the two
 published duality statements. It does not prove either functional equation
 without a functional equation as a premise.

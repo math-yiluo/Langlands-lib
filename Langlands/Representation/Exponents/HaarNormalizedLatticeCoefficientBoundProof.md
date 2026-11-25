@@ -1,7 +1,5 @@
 # Actual normalized Jacquet spectra give Haar-weighted coefficient decay
 
-Author: Worker 19.
-
 `Langlands.haarNormalizedLatticeCoefficientBound` proves the complete
 `HaarNormalizedLatticeCoefficientBoundStatement`. The supplied geometric
 conditions stay explicit; the proof adds no hypotheses to that statement.

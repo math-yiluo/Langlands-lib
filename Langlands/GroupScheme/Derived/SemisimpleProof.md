@@ -1,7 +1,5 @@
 # Proof: actual derived subgroups of connected reductive groups are semisimple
 
-Author: Worker 4065.
-
 `Langlands.GroupScheme.derivedSubgroupSemisimple` proves exactly the published
 proposition `Langlands.GroupScheme.DerivedSubgroupSemisimpleStatement.{u}`
 (module [`SemisimpleStatement`](SemisimpleStatement.md)). It keeps the

@@ -32,8 +32,8 @@ def ArithmeticComapUnitaryCentralCharacterStatement : Prop :=
   ∀ (K : Type uK) (L : Type uL) [Field K] [NumberField K] [Field L] [NumberField L]
     [CompactSpace (AdeleQuotient K)] [CompactSpace (AdeleQuotient L)]
     (e : K ≃+* L) (r : ℕ) (S : CuspidalOperatorRealization L r),
-    ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter S →
-      ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter (S.arithmeticComap e)
+    ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter S →
+      ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter (S.arithmeticComap e)
 
 /-- Arithmetic pullback along a ring isomorphism `e : K ≃+* L` preserves a
 supercuspidal component: if the cuspidal class `c` over `L` has a supercuspidal

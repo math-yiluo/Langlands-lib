@@ -110,7 +110,7 @@ theorem tensorEquiv_tmul (a : p.Completion)
     (b : (((numberFieldExceptionalPreimage (L := L) S : Finset (FinitePlace L)) :
       Set (FinitePlace L)).integer L)) (q : AdelicFunctoriality.InfinitePlacesAbove L p) :
     tensorEquiv K L S p (a ⊗ₜ[(S : Set (FinitePlace K)).integer K] b) q =
-      NumberField.LiesOver.completionMap a * algebraMap L q.1.Completion (b : L) := by
+      NumberField.LiesOver.completionMap p q.1 a * algebraMap L q.1.Completion (b : L) := by
   simp only [tensorEquiv, AlgEquiv.trans_apply, coefficientBaseChangeEquiv_tmul,
     numberFieldSIntegersFractionTensorEquiv_tmul, map_one, one_mul]
   rfl

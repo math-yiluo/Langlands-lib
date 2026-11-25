@@ -1,6 +1,6 @@
 # Concrete supercuspidal class inclusion and relations
 
-Author: Worker 7. This module places the published supercuspidal class space
+This module places the published supercuspidal class space
 inside the automorphic class space of `AutomorphicRelations`, and restricts the
 automorphic relations to it. It is the automorphic domain of the
 supercuspidal part of the local Langlands correspondence. It states no part of
@@ -93,14 +93,14 @@ Casselman 1995, section 5.1, p.46
 passages were read in the originals.
 
 All imported class spaces, maps and lemmas are published Library
-declarations of Worker 23's classification branch:
+declarations of the classification branch:
 `Langlands.Representation.Classification.Supercuspidal` and
 `Langlands.Representation.Classification.SupercuspidalTwist`. They are
 imported, not copied.
 
 ## Validation
 
-The module compiles in the project Lean service without errors or warnings,
+The module compiles without errors or warnings,
 together with `AutomorphicRelations` and `LocalConventions`. The relations
 have no hypotheses beyond the field, the rank, the characters, the classes
 and the scalars where applicable.

@@ -1,8 +1,6 @@
 # From a type-A star cocycle to Hermitian discrepancies
 
-Author: Worker 239.
-
-This internal unit concerns the actual star field of supplied Tits index
+This internal module concerns the actual star field of supplied Tits index
 data and a local special-linear presentation on a finite Galois cover.
 Its construction is derived from the imported star-field, coordinate
 change, inner-cocycle and Hermitian normalization results.

@@ -81,7 +81,3 @@ SHA-256 `be283c3e8187f1eed365537c72379c3e06e7791756954c2ac783c6beea2979de`.
 It chooses real and imaginary quadratic fields split at `p` with a disjointness
 condition. The generic implication proved here is the project's stronger
 arithmetic prerequisite, rather than a verbatim assertion of that passage.
-
-Worker 1199 implemented the tensor, idempotent, degree, continuity and closing
-arguments. Worker 60 contributed the two rational-prime helpers, folded into
-this module from their checked private draft.

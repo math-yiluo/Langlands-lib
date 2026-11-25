@@ -1,7 +1,5 @@
 # Associated full Harris coefficients on exact geometric CM levels
 
-Author: Worker 57.
-
 This module constructs the full integral-scalar coefficient system directly
 from the exact geometric CM coefficient covers. It gives the invariant
 inclusions, determines the transitions by their section equations, and
@@ -40,7 +38,7 @@ objects obtained from this q. The additional premises
 `hRigid : CMGeometricCoarseRigidity ... U.obj` are explicit. The geometric
 torsors imported from
 [HarrisTaylorCMGeometricCoefficientDiagram](HarrisTaylorCMGeometricCoefficientDiagram.md)
-already use the published dominant-unramified-etale proof. No torsor,
+already use the dominant-unramified-etale proof. No torsor,
 coefficient sheaf, trivialization or desired comparison is an additional
 output premise.
 
@@ -90,7 +88,7 @@ after composition with the comparison leg.
 `cmHarrisGeometricAssociatedCoefficientSystemInclusion k`, written ι_k,
 is the actual invariant inclusion into coefficient-valued sections on
 Ybar_k. It is a monomorphism. The `_invariant` theorem says that this
-inclusion is fixed by the published diagonal action, combining the
+inclusion is fixed by the diagonal action, combining the
 coefficient action with the inverse-right action on the cover coordinate.
 
 For `f : i ⟶ j`, let `b_f = Ybar.obj.map f` and let `c_f` be the map
@@ -103,7 +101,7 @@ F.map f ≫ ι_j ≫ coverPullback b_f
 ```
 
 The theorem `_map_unique` proves that this equation determines the actual
-transition uniquely among all maps F_i → F_j. It applies the published
+transition uniquely among all maps F_i → F_j. It applies the
 transition extensionality theorem and the displayed equation. Thus the
 maps are compatible invariant-section reductions on the exact cover
 diagram.
@@ -164,7 +162,7 @@ Ypull = (etaleTorsorDiagramPullback π G).obj Y.
 ```
 
 This generic pullback of covers permits an arbitrary base morphism.
-Let `e : Ybar ≅ Ypull` be the already published
+Let `e : Ybar ≅ Ypull` be the existing
 `cmHarrisGeometricCoefficientEtaleDiagramPullbackIso`.
 Its components are the canonical cartesian comparisons of the exact
 geometric scheme levels, and it respects all cover transitions and actions.
@@ -185,9 +183,9 @@ naturality for every specified system transition.
 Finally, `_hom_inclusion` proves that the forward comparison commutes
 with the actual invariant inclusions and pulls back only the cover
 coordinate along e.hom. The proof first uses the component formula and
-then the published pure-cover-change inclusion identity.
+then the pure-cover-change inclusion identity.
 
-## Provenance and remaining scope
+## Provenance and scope
 
 This is an internal specialization of
 `HarrisTaylorCMGeometricCoefficientDiagram`,
@@ -197,7 +195,7 @@ This is an internal specialization of
 `HarrisTaylorCMCoefficientDiagram`. The generic invariant, transition,
 evaluation, section-splitting and contravariant cover-change proofs
 provide the intrinsic laws. The exact geometric covers provide their
-geometric premises. The contribution adds no external-literature claim;
+geometric premises. The module adds no external-literature claim;
 original-source provenance remains with the imported arithmetic and
 geometric constructions.
 
@@ -206,11 +204,13 @@ applying the arbitrary scheme inverse-image functor to the original
 coefficient system. This module does not identify that functor with
 association on pulled-back covers. It therefore does not identify F
 with that existing inverse-image system. The arbitrary-morphism descent
-comparison remains a separate generic obligation; etaleness of π is
-neither assumed nor proved here.
+comparison is the generic result of `Coefficients.EtaleInverseImageVaryingSystem`,
+and `HarrisTaylorCMGeometricInverseImageComparison` uses it to identify F with
+the inverse-image system; etaleness of π is neither assumed nor proved here.
 
-Exact source-moduli existence, rigidity, canonical-model geometry and
-the other named premises remain obligations. There is no new
+Exact source-moduli existence, canonical-model geometry and the other named
+premises are not proved here; the rigidity premise at small levels follows
+from `cmSmallLevelRigidity` (`HarrisTaylorCMSmallLevelRigidityProof`) through
+`CMSmallLevelRigidityStatement.rigid`. There is no new
 quotient-ring scalar comparison, inverse-limit construction, lisse-adic
-theorem or cohomology assertion. This focused construction does not
-complete the host task.
+theorem or cohomology assertion.

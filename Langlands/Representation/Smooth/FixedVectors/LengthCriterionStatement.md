@@ -1,10 +1,8 @@
 # Elementary fixed-vector reductions for Howe's implication
 
-Worker 1210, in coordination with Worker 189.
-
-This internal statement unit isolates two elementary steps used in the forward
+This internal statement module isolates two elementary steps used in the forward
 implication of Renard VI.6.3. Its declarations are proposition definitions;
-the unit does not prove them or assert the reductive-group detection input.
+the module does not prove them or assert the reductive-group detection input.
 
 The governing source is David Renard, *Représentations des groupes réductifs
 p-adiques*, French version dated 9 July 2026, source ID

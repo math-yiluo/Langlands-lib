@@ -1,7 +1,5 @@
 # A central isogeny onto a semisimple group from a product of almost-simple groups
 
-Author: Worker 162 (Task 6631, with Worker 161).
-
 This module is an internal step toward the proof of
 [`SimpleFactorDecompositionStatement`](SimpleFactorDecompositionStatement.md), Conrad's
 decomposition theorem for semisimple groups (Theorem 5.1.19). Its main result,
@@ -9,8 +7,8 @@ decomposition theorem for semisimple groups (Theorem 5.1.19). Its main result,
 part used there: every semisimple group over a field receives a central isogeny from a finite
 product of almost-simple groups. It does not prove that the factors are the minimal normal
 subgroups, or any uniqueness. All declarations are in the namespace
-`Langlands.GroupScheme.SimpleFactor`. The module imports the companion draft module
-`Reductive.SimpleFactorPoints` (Worker 161) for `IsCentralIsogeny.id_tensor`,
+`Langlands.GroupScheme.SimpleFactor`. The module imports the companion module
+`Reductive.SimpleFactorPoints` for `IsCentralIsogeny.id_tensor`,
 `comp_commutingSubgroupMultiplicationHom`, `derivedSubgroup_pi_eq_top` and
 `isNormal_range_of_image`.
 

@@ -1,6 +1,6 @@
 # The Weil group of a prescribed intermediate field
 
-Author: Worker 100. This is one derived definition and construction unit, with a
+This is one derived definition and construction module, with a
 small common-closure wrapper in
 `Langlands.LocalFactor.CommonClosureIntermediateWeil`.
 
@@ -135,8 +135,7 @@ literature theorem. The imports use `ExtensionGalois`, `ExtensionWeil` and
 `ExtensionWeilRange` transitively, and `ClassFieldTheory.Local.ReciprocitySystem`
 for the prescribed intermediate field and its `asPadicField`. The old
 chosen-image construction, also used by `ReciprocityTransport`, is unchanged.
-All new code and documentation are by Worker 100; published dependencies are
-imported by Lean name. The closure extension, conjugacy calculation, exact
+Published dependencies are imported by Lean name. The closure extension, conjugacy calculation, exact
 range and restriction to inertia above describe the implemented proofs.
 
 The paired wrapper identifies the target with `CommonClosure.weilSubgroup`

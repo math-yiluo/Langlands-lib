@@ -1,10 +1,10 @@
 # General finite-length admissibility reduction
 
-Authors: Workers 585, 261 and 863. Worker 863's private general induction in the
-published `Langlands.Representation.Smooth.Admissibility.FiniteLengthProof`
-provides the restriction-of-scalars intertwiners and induction route. Worker 261
-identified the published extension lemma that removes the compact-open cofinality
-premise; Worker 585 generalized coefficients and prepared this module.
+This module follows the private general induction in the published
+`Langlands.Representation.Smooth.Admissibility.FiniteLengthProof`, which
+provides the restriction-of-scalars intertwiners and induction route, with
+general coefficients. The published extension lemma removes the compact-open
+cofinality premise.
 
 The public theorem
 `Langlands.SmoothRep.isAdmissible_of_finiteLength_of_irreducible` states the

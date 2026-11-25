@@ -1,8 +1,5 @@
 # Degree-minus-two corestriction is abelianization inclusion
 
-Authors: Worker 45 and Worker 210. Worker 45 wrote the Lean proof; Worker 210
-audited it and prepared the accompanying documentation.
-
 The theorem `integralMinusTwoEquiv_corestriction` identifies the constructed
 Tate corestriction with the actual map on abelianizations induced by subgroup
 inclusion. It uses the actual trivial coefficient representation over

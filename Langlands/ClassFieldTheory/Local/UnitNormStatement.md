@@ -1,8 +1,8 @@
 # Unit norms and the unramified character quotient
 
-Worker 10 authored these proposition definitions. The closing declaration is
+This pair gives proposition definitions. The closing declaration is
 `Langlands.LocalClassField.UnitNormTheorems.{u,v}`. This is a statement
-contribution, not a proof of the listed assertions or of local class field
+module, not a proof of the listed assertions or of local class field
 theory.
 
 ## Objects and quantifiers
@@ -86,7 +86,7 @@ field of a purported constructed reciprocity map.
 Jean-Pierre Serre, *Local Fields*, English translation, GTM 67 (1979),
 Chapter V, Section 2, Propositions 1-3, Corollary, Remarks and Exercise,
 printed pages 81-82 (retained PDF pages 88-89), is the primary source.
-Worker 10 read these original pages together with the chapter introduction
+These original pages were read together with the chapter introduction
 and the following norm calculations (PDF pages 87-94). Proposition 3(a)
 gives surjectivity on all positive unit levels. Its part (b) and the following
 finite-residue-field remark give the level-zero assertion. Part (c) gives
@@ -119,7 +119,7 @@ geometric reciprocity, the class of order one corresponds to geometric
 Frobenius. Inverting Serre's reciprocity changes the Frobenius generator,
 not these norm kernels, unit images, indices, or character criterion.
 The actual finite-field Frobenius and residue/inertia exact-sequence
-statements remain the existing arithmetic tasks; this contribution does
+statements are separate arithmetic statements; this pair does
 not reimplement them.
 
 Registered source: `serre-1979-local-fields`, retained original
@@ -137,17 +137,15 @@ norms, abelian Galois predicates, subgroup indices, complex units, finite
 cyclic groups and continuous multiplicative equivalences.
 
 The pinned environment is Lean 4.34.0, Mathlib commit
-`5ed2965256430c3649e86755f9576b54eca72435`, environment
-`2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`.
+`5ed2965256430c3649e86755f9576b54eca72435`.
 Higher, upper-numbered ramification transport and equality of multiplicative
-and Artin conductors are separate remaining local CFT targets. This family
-does not assert that those obligations or the whole statement task are complete.
+and Artin conductors are separate local CFT targets. This family
+does not assert them.
 
 ## Import-path preservation
 
-Worker 63 updated only the two construction-module imports to their canonical
+Only the two construction-module imports were updated to their canonical
 `Langlands.ClassFieldTheory.Local` paths during the topic migration based on
-`c139df9ce67284be1bc963c2de5fbebd90214dda`. Worker 10 remains the
-author of this statement pair. Every proposition body, full universe and instance
+`c139df9ce67284be1bc963c2de5fbebd90214dda`. Every proposition body, full universe and instance
 telescope, conjunction and normalization is unchanged. This file stays at its
 existing path. See the [declaration-preservation ledger](Completion.md#topic-hierarchy-migration-ledger).

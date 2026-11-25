@@ -1,8 +1,5 @@
 # Automorphy of isobaric sums of cuspidal representations, at the finite places
 
-Author: Worker 3657. Statement contribution to task
-`34b81620-20d7-4059-9b08-6bedd1c1c029`, revision 1.
-
 **Scope.** This module states one proposition and proves nothing:
 
 - `Langlands.Global.CuspidalIsobaricRealizationStatement`.
@@ -15,10 +12,11 @@ cuspidal automorphic representations `π_1, …, π_k` of `GL_(n_i)(𝔸_F)` wit
 sum `π_(1,v) ⊞ ⋯ ⊞ π_(k,v)`. That local isobaric sum is also a subquotient of
 the normalized induced representation `i(π_(1,v), …, π_(k,v))`.
 
-The same contribution adds the definition module
+The definition module
 `Langlands.Representation.Classification.IsobaricSum`
 (`Langlands/Representation/Classification/IsobaricSum.lean` and `.md`), with
-the local relation `PadicField.TopologicalData.IsIsobaricSum`. The statement
+the local relation `PadicField.TopologicalData.IsIsobaricSum`, is ported
+together with this module. The statement
 module defines one `local instance`: the canonical topology on `GL_n(F_v)`, as
 in `CuspidalInducingDataRigidityStatement`. Everything else is Library
 vocabulary:
@@ -38,14 +36,14 @@ vocabulary:
   `OperatorSubquotient.localRepresentation`
   (`Langlands/Automorphic/OperatorSubquotient.lean`).
 
-**Why it is here.** Getz–Hahn 10.7.5 is in the L4 list of this task's
-contract. The program ledger `notes/automorphic/global-program-coverage.md`
-has no public statement for it. The Library already has the data side of
+**Why it is here.** The program ledger
+`notes/automorphic/global-program-coverage.md` lists Getz–Hahn 10.7.5 among
+the L4 targets with no public statement. The Library already has the data side of
 isobaric representations, the multisets `Automorphic.IsobaricData F` of
 positive-rank cuspidal classes, but no statement that such data are realized
 by automorphic representations.
 
-**Proof target.** A later proof task should prove the Library statement
+**Proof target.** The proof target is the Library statement
 `Langlands.Global.CuspidalIsobaricRealizationStatement`. Its universe
 parameters are `u` (the number field, every local carrier and the
 multisegments) and `uQ` (the factor universe of the spectral presentations).
@@ -168,7 +166,7 @@ above. It is weaker than GH in three ways, recorded in §6.
 
 ## 4. Relation to other statements
 
-- **`CuspidalInducingDataRigidityStatement`** (GH 10.7.2), accepted by review.
+- **`CuspidalInducingDataRigidityStatement`** (GH 10.7.2).
   It shares the setup. At the places where all `σ_(i,v)` are unramified, the
   spherical subquotient of `i(σ_(1,v), …, σ_(k,v))` is `⊞_i σ_(i,v)` (GH Theorem
   10.6.3). So 10.7.2 says that the unramified local components of `Q` at almost
@@ -183,7 +181,7 @@ above. It is weaker than GH in three ways, recorded in §6.
   L-functions. It does not use `IsIsobaricSum`, and neither statement is
   derived from the other.
 
-## 5. Proof route (for the proof task; not part of the statement)
+## 5. Proof route (not part of the statement)
 
 GH's route has three inputs:
 
@@ -199,7 +197,13 @@ GH's route has three inputs:
   description of those subquotients. The Library has no global parabolically
   induced representation or Eisenstein series for this purpose.
 
-The second and third inputs are not in the Library at this time.
+At the finite places the Library proves the second input as
+`Langlands.Global.cuspidalIsobaricFiniteFamily` (module
+`Langlands.Global.Factors.CuspidalIsobaricFiniteFamily`), and
+`Langlands.Global.cuspidalIsobaricRealizationReduction` (module
+`Langlands.Global.Factors.CuspidalIsobaricRealizationReduction`) derives this
+statement from `CuspidalInducedConstituentAutomorphyStatement`, the
+finite-place form of the third input, which the Library does not prove.
 
 ## 6. Not asserted
 
@@ -237,7 +241,7 @@ to this formalization:
   together with the local subquotient property (§3);
 - only the finite places are covered.
 
-The Lean files were checked with `lean_check` in environment
-`5c94c648-e8dc-4002-a50a-071ebf3f6096`, with no errors and no warnings. The
+The Lean files were checked in the Lean environment in which they were
+written, with no errors and no warnings. The
 declaration is a `def` returning `Prop`, with universe parameters `u` and `uQ`
 and axioms `propext`, `Classical.choice`, `Quot.sound`.

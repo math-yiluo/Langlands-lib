@@ -1,7 +1,5 @@
 # Fpqc reflection of the relative torus property
 
-Author: Worker 668.
-
 A group scheme is a relative torus if and only if it becomes a relative
 torus after a flat, surjective, quasi-compact base change. The predicate is
 the Library's étale-local splitting into finite split tori.
@@ -19,4 +17,7 @@ change of an étale splitting cover.
 
 This is an internal consequence of the Library's fpqc morphism-property
 descent, field torus comparison and torus fibre spreading. It supplies
-reflection of the torus condition in closed-subgroup descent for Task 7705.
+reflection of the torus condition in closed-subgroup descent for the proof
+`smoothAffineFiberTorusSubgroupRepresentability` of
+`SmoothAffineFiberTorusSubgroupRepresentabilityStatement` (smooth torus-subgroup
+representability for groups with affine residue fibres).

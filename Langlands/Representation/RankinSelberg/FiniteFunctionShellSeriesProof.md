@@ -133,23 +133,19 @@ as `c n * z ^ n` (`summable_congr`, `tsum_congr`) gives the second and third
 conclusions. A negative `L`, `N = 0`, `Φ 0 ≠ 0` and the zero function `η` need
 no separate case.
 
-## Provenance and attribution
+## Provenance
 
-Worker 277 wrote this proof; no other draft was reused. It follows the route
+This proof follows the route
 described in the statement's Markdown, which labels the statement a derived
 internal step. That Markdown cites Jacquet–Piatetski-Shapiro–Shalika,
 *Rankin-Selberg Convolutions* (1983), printed pp. 391–392, display (6), and
 Jacquet–Piatetski-Shapiro–Shalika, *Automorphic forms on GL(3) I* (1979),
 §(2.2), for finite functions. The analytic ingredients come from the three
-published proofs listed above, whose own authors are recorded in their
-Markdown. This module only combines them.
+published proofs listed above. This module only combines them.
 
 ## Checks
 
-`lean_check` in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` compiled
-the module with no errors or warnings. Inspecting
+The module compiled with no errors or warnings. Inspecting
 `Langlands.RankinSelberg.finiteFunctionShellSeries` showed universe parameter
 `uF` and only the axioms `propext`, `Classical.choice` and `Quot.sound`. The
-module contains no `sorry`, `admit` or new axiom. Compilation does not
-establish acceptance. Independent review, the Lake build and the exact-target
-check remain required.
+module contains no `sorry`, `admit` or new axiom.

@@ -1,8 +1,8 @@
 # Dynamic normalized functors in a closed represented subgroup
 
-This internal adapter identifies the actual normalized induction and Jacquet
+This adapter identifies the actual normalized induction and Jacquet
 functors in a closed representative with those in its literal subgroup of
-ambient points. It supports the actual-Levi comparison in the proof task for
+ambient points. It supports the actual-Levi comparison in the proof of
 Renard VI.6.2. It proves comparison and finite-length equivalence, without
 asserting finite length of induction.
 

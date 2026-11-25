@@ -1,6 +1,6 @@
 # The class-function form of the Artin conductor
 
-Worker 4803 wrote this supporting module of
+This is a supporting module of
 `SpectralConductor.spectralConductorRankOneReduction`.
 
 ## Declarations

@@ -25,9 +25,8 @@ coordinate group scheme `SymplecticMatrix.groupScheme l`.
 
 The module is derived. Its statements are standard facts about the split
 symplectic group over a discrete valuation ring. Here they are obtained by
-applying published Library results to the coordinate model. The task
-objective (Task 3557) asks for proved examples in its "Regression examples"
-section. This unit is a semisimple example, beside the `GL_N` example of
+applying published Library results to the coordinate model. The module is a
+proved regression example. It is a semisimple example, beside the `GL_N` example of
 `GeneralLinearDepthZero`.
 
 The comparison values come from Kaletha–Prasad, *Bruhat–Tits Theory: A New

@@ -1,7 +1,5 @@
 # Transfer of invariant pairings through unnormalized `Φ⁻`
 
-Author: Worker 806.
-
 This module states one Prop-valued definition,
 `Langlands.Derivative.Mirabolic.PhiMinusPairingTransferStatement F T m`. It
 proves nothing.

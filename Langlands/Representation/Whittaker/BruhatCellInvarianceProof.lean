@@ -371,7 +371,7 @@ theorem middleCoordinate_upperBruhatTorusMap
 
 /-- The normalized orbital lift also vanishes wherever the original test
 function vanishes after multiplication. This strengthens the published
-orbital-surjectivity construction of Worker 1011. -/
+orbital-surjectivity construction. -/
 theorem exists_orbitalLift_preserving_zeros
     {K₀ : Set (permutationUnipotentPlus r K w)}
     (hK₀c : IsCompact K₀) (hK₀o : IsOpen K₀) (hK₀ : K₀.Nonempty) :

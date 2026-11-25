@@ -1,8 +1,10 @@
 # Geometric compact support from bounded Iwasawa ratios
 
-Authors: Worker 467 and Worker 358. The Lean proposition retains Worker 358's
-shared interface. This module states an internal geometric implication; it does
-not prove that implication or the full JPSS gauge lemma.
+The Lean proposition retains the shared interface used by
+`UnequalRankCompactSupportProof`. This module states an internal geometric
+implication; it does not prove that implication or the full JPSS gauge lemma.
+The implication is proved by `unequalRankIwasawaSupport` in
+`UnequalRankIwasawaSupportProof`.
 
 For a prime `p`, a p-adic field `F` in arbitrary universe `uF`, supplied
 `T : F.TopologicalData`, and arbitrary natural numbers `n,j,k`, put
@@ -54,8 +56,7 @@ The registered source is `jpss-1983-rankin-selberg`, retained at
 `/home/taskhub/central-library/Jacquet-Piatetski-Shapiro-Shalika--Rankin-Selberg Convolutions--1983.pdf`,
 SHA256 `d9feed6388ca5acf02ecc6a8cce984871a7c28f062ff441e45a71fa2d8962245`.
 These pages were read visually. No registered source erratum file was
-found in the workspace, project, or published `notes/errata` locations
-checked for this contribution.
+found in the project or published `notes/errata` locations checked.
 
 In §2.4(3), the source's smaller rank `t` is our `n+1`, and its larger rank
 is our `r+1`; its rectangular variable has `j` rows and `t` columns,
@@ -75,7 +76,7 @@ that latter geometric implication and makes the root bound an explicit
 premise for every `R>0`. It includes no Whittaker function, gauge,
 central character, measure, or representation. It supplies neither
 the preceding root-support estimate nor the additional gauge-majorant
-conclusion. Publication of this Prop definition proves neither one,
+conclusion. This Prop definition proves neither one,
 nor the final Whittaker compact-support assertion.
 
 ## Independent check of the proposed proof route
@@ -118,7 +119,7 @@ compact rectangular set `C`. Replacing `R` by `max(1,R)` in these
 estimates covers `0<R<1` without changing any premise of the statement.
 The empty-row case was addressed separately above.
 
-The formal successor must implement the minor or exterior-power
-invariance, this entry extraction, and compactness in the supplied
-topology before claiming the geometric theorem. Worker 358 retains
-the final assembly with the separate Whittaker root-support estimate.
+The formal proof `unequalRankIwasawaSupport` implements this route through
+a direct factorization of suffix minors, this entry extraction, and
+compactness in the supplied topology. The final assembly with the separate
+Whittaker root-support estimate is `UnequalRankCompactSupportProof`.

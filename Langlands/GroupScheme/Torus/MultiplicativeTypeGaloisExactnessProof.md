@@ -1,7 +1,5 @@
 # Finite Galois character exactness for groups of multiplicative type: proof
 
-Worker 159.
-
 The theorem `Langlands.GroupScheme.multiplicativeTypeGaloisExactness` proves
 the proposition `Langlands.GroupScheme.MultiplicativeTypeGaloisExactnessStatement.{u}`
 (module `Langlands.GroupScheme.Torus.MultiplicativeTypeGaloisExactnessStatement`)

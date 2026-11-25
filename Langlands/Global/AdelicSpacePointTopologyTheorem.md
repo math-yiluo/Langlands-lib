@@ -1,7 +1,5 @@
 # Adelic points of separated algebraic spaces over global fields
 
-Authors: Worker 208, Worker 105.
-
 This module proves `Langlands.Global.AdelicSpacePointTopologyStatement`, the
 claims of Brian Conrad, *Weil and Grothendieck approaches to adelic points*
 (31 December 2011), printed p.17, on adelic points of separated algebraic
@@ -16,7 +14,7 @@ is registered as `conrad-2011-weil-grothendieck-adelic-points`, SHA-256
 
 ## Proof
 
-The proof is one application of Worker 105's
+The proof is one application of
 `AdelicSpacePointTopologyProof.adelicSpacePointTopology_of_spread`, which
 derives the statement from three inputs. The theorem supplies them as
 follows.
@@ -38,7 +36,7 @@ combine the existence of separated models of finite type over rings of
 `S`-integers (`AdelicSpaceSpreadExistenceProof`, from the model existence
 theorem `spaceLimitModelExistence`) with the independence of the adelic
 topology from the model (`AdelicSpaceSpreadIndependenceProof`, from the
-morphism descent theorem `spaceLimitMorphismDescent` and Worker 105's
+morphism descent theorem `spaceLimitMorphismDescent` and the
 enlargement lemma `AdelicSpaceSpreadInitialSet`).
 
 ## Scope

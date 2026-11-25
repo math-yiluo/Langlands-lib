@@ -6,7 +6,9 @@ This internal assembly retains exactly two uniform mathematical prerequisites:
 Neither prerequisite is proved here. The conditional theorem concludes the whole
 unapplied `RationalSupportCategoryJacquetVanishingStatement.{u,v}`.
 It is supporting work for that exact proof obligation, which remains open
-until both prerequisites have been discharged.
+until both prerequisites have been discharged. The first prerequisite is
+proved as `BruhatTits.dynamicParabolicQuotientCompact`; the Library proves the
+second only conditionally.
 
 ## Certified witness
 
@@ -55,8 +57,8 @@ or the actual Jacquet module.
 
 ## Dependencies and provenance
 
-This is derived internal content assembled by Worker 158 with Worker 593's
-compactness adapter and agreed whole-target interface. It introduces no new
+This is derived internal content, assembled with the published compactness
+adapter and whole-target interface. It introduces no new
 direct literature assertion. The imported target and its dependency pairs
 are preserved.
 

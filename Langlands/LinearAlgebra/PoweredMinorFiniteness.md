@@ -54,7 +54,8 @@ invertible matrix, by the previous lemma.
 ## Use and provenance
 
 This is an internal elementary lemma. It formalizes the linear algebra in the
-context of Task 8069 (`TorsionBracketMapStatement`). After trivializing the
+context of the finiteness of labelled torsion configuration classes in the
+fibres of a projective bracket map (`TorsionBracketMapStatement`). After trivializing the
 `n`-th powers of the evaluation lines, the `n`-th powers of the maximal
 minors of the joint evaluations give a point of projective space. On a fibre
 over a geometric point, the normalized evaluation coefficients therefore have

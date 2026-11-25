@@ -1,7 +1,5 @@
 # Rank-one Levi factors generate the cocenter of the minimal Levi: proof
 
-Authors: Worker 183, Worker 187.
-
 The module `Langlands.GroupScheme.SimplyConnected.RankOneLeviCocenterGenerationProof` proves
 
 ```

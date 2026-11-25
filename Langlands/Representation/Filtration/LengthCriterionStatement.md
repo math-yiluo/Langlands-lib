@@ -1,7 +1,6 @@
 # Bounded chains and actual representation composition length
 
-Worker 122 authored this statement pair from the target specification supplied
-by Worker 170. Provenance: internal algebraic bridge.
+Provenance: internal algebraic bridge.
 
 `Langlands.ObjectCompositionLengthCriterion.{uK,uG,uV}` is a proposition
 definition, with no proof of the proposition. For every field `k : Type uK`,
@@ -66,8 +65,10 @@ a `CompositionSeries` of the module's submodule lattice with head bottom and
 last top. It also provides
 `isFiniteLength_iff_isNoetherian_isArtinian`. These are the relevant interfaces
 for proving the second clause after constructing the comparison above.
-Proving the uniform chain bound and its converse remains a separate proof
-obligation. This module supplies the target for that work.
+The uniform chain bound and its converse are proved by
+`Langlands.objectCompositionLengthCriterion` in
+`Langlands.Representation.Filtration.LengthCriterionProof`. This module
+supplies the target for that proof.
 
 ## Source motivation and scope
 

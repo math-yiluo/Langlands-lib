@@ -1,7 +1,5 @@
 # Local vanishing of simply connected cocycles on finite separable covers
 
-Authors: Worker 5015, Worker 62.
-
 The theorem `Langlands.GroupScheme.localSimplyConnectedCocycleVanishing` proves exactly the
 published proposition `Langlands.GroupScheme.LocalSimplyConnectedCocycleVanishingStatement.{u}`
 (module `Langlands.GroupScheme.SimplyConnected.LocalCocycleVanishingStatement`). It holds at an

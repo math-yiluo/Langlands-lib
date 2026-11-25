@@ -1,7 +1,5 @@
 # Local unit generators for a unit cocycle along a faithfully flat algebra
 
-Author: Worker 1072.
-
 This module states one proposition, `Langlands.Algebra.UnitCocycleLocalUnitsStatement`
 (universe parameter `u`). It is the affine algebraic input to the effectivity of
 faithfully flat descent of unit cocycles to line bundles

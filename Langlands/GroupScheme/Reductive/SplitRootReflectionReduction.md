@@ -1,7 +1,5 @@
 # Integral reflections of a split maximal torus from Weyl-group rationality
 
-Worker 835.
-
 This module constructs actual `RelativeRootReflectionData i` for every split
 maximal torus `i : T.toGrp ⟶ G` of a connected reductive group over an
 arbitrary field. It takes one explicit input,
@@ -127,6 +125,6 @@ This module does not prove Weyl-group rationality. It also does not assert
 that the representatives centralize the full kernel in `G`, or that `L`
 equals Milne's `C_G(T_α)`. It does not assemble the root datum itself. That
 assembly from integral reflection data and the finite Weyl image is a
-separate step (Worker 1223's finite-Weyl-image assembly). The
+separate step (the finite-Weyl-image assembly `Reductive.RootDatumFiniteWeylAssembly`). The
 universe `u` and the field are arbitrary, and the characteristic is
 unrestricted.

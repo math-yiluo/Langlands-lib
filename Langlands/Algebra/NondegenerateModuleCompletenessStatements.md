@@ -63,10 +63,11 @@ a nondegenerate source has this property by equivariance.
 The published general theorems `Langlands.Renard.sourceCompleteHasLimits`
 and `sourceCocompleteHasColimits` then give the all-diagram conclusions
 using the actual abelian category. This module supplies statements only,
-and neither that route nor compilation constitutes an accepted proof.
+and neither that route nor compilation constitutes a proof. The four
+statements are proved in `NondegenerateModuleCompletenessProof`.
 
 The previously read supplementary 2010-edition corrections do not replace
 the governing 2026 source. The supplement is registered as
 `renard-2010-corrections-complements`, SHA256
 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`;
-PDF pp.1–2 and 18–19 were consulted for this unit.
+PDF pp.1–2 and 18–19 were consulted for this module.

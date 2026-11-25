@@ -1,7 +1,5 @@
 # Detecting torsion-kernel vanishing at one geometric point
 
-Authors: Worker 410 and Worker 1584.
-
 This internal helper is derived from the published finite étale geometric fibre
 functor and the actual torsion scheme constructions. It supplies the
 connected-base geometric step in

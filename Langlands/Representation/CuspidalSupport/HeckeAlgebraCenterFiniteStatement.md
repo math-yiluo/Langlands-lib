@@ -1,10 +1,10 @@
 # The Hecke algebra of a compact open subgroup is finite over the Bernstein centre: statement
 
-Author: Worker 6. Module `Langlands.Representation.CuspidalSupport.HeckeAlgebraCenterFiniteStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`.
+Module `Langlands.Representation.CuspidalSupport.HeckeAlgebraCenterFiniteStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*, French edition dated 9 July 2026, VI.10.7, Corollary and its proof, printed p.216 / PDF p.222. The registered source ID is `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 
-This is a statement unit: nothing is proved.
+This module only states the result: nothing is proved.
 
 ## The source
 
@@ -14,7 +14,7 @@ In the proof, Renard takes the representation `𝒟(G/K)` of compactly supported
 
 ## The Lean statement
 
-`HeckeAlgebraCenterFiniteStatement` uses the same group data as the companion VI.10.7 Theorem statement `FiniteTypeCenterAdmissibleStatement` (Worker 6, candidate `e9b7e8ee-d4da-4c47-a6ad-76d84a3d0e18`):
+`HeckeAlgebraCenterFiniteStatement` uses the same group data as the companion VI.10.7 Theorem statement `FiniteTypeCenterAdmissibleStatement`:
 
 - a nonarchimedean local field `k : Type u`, of any characteristic;
 - a group scheme `G` over `Spec k` with `hG : IsConnectedReductive G`, whose rational points carry the canonical topology `RationalPointFamily.pointTopology` and are assumed locally compact and nonarchimedean;

@@ -1,7 +1,5 @@
 # Adjoint Weil presentations from supplied finite products
 
-Worker 632.
-
 This internal construction converts a supplied actual finite product
 decomposition into the existence witness required by the affine adjoint
 Weil-restriction target. The motivating source is Brian Conrad,

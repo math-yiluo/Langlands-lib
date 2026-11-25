@@ -1,6 +1,6 @@
 # Tate's `ε₁` normalization and its Galois equivariance
 
-Worker 33 wrote this module for task `e534647a`. It covers Tate 1979,
+This module covers Tate 1979,
 (3.6.10) and (3.6.11), in the nonarchimedean case. These give the explicit
 rank-one formula for the local constant `ε₁(V, ψ) = ε_D(V, ψ, dx₁)`, where
 `dx₁` gives the ring of integers volume one, and its compatibility with every

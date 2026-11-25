@@ -1,7 +1,5 @@
 # Proof that power maps have non-open image on number-field adelic units
 
-Author: Worker 105.
-
 `numberFieldPowerImage` proves `NumberFieldPowerImageStatement`: for every number
 field `K` and every `n ≥ 2`, the image of `x ↦ x ^ n` is not open in `(Adeles K)ˣ`,
 and the image of the actual power morphism is not open on punctured-line points.

@@ -1,6 +1,6 @@
 # Order-linear coherence for actual atlas refinements
 
-This derived unit constructs formal order-linear isomorphisms comparing
+This module constructs formal order-linear isomorphisms comparing
 direct with successive restriction and comparing different selected source
 charts on an equal finer cover. Their evaluations identify the actual
 full-family restriction maps.

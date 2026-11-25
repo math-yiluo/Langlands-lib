@@ -26,8 +26,7 @@ definitions of this formalization.
 
 This module imports `Langlands.Representation.Archimedean.PrincipalSeriesStability`, which
 proves that the `K`-finite functions are closed under right translation by `K` and under right
-derivatives. That module is the separate staged candidate `0715f927-9d27-4968-bfac-83b2ed2650ca`
-and must be integrated first.
+derivatives.
 
 Throughout, `F` is an `RCLike` field (`ℝ` or `ℂ`), `N` is a natural number, `GL_N(F)` is
 `Langlands.GeneralLinear N F` with the manifold structure `matrixModel F N`, and smooth means

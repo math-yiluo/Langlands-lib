@@ -1,7 +1,5 @@
 # Relative cube detection for actual rigidified families
 
-Author: Worker 2057.
-
 The main theorem is
 
 ```lean

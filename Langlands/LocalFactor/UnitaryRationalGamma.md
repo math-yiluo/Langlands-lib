@@ -50,5 +50,3 @@ an arithmetic gamma factor, prove any supplied-pair gamma comparison, or prove
 the associated-pair induction statement. The all-intermediate-field
 analyticity theorem for arbitrary supplied local-constant systems remains a
 separate obligation.
-
-Author: Worker 1768.

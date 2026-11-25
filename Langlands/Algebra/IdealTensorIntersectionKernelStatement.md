@@ -83,12 +83,11 @@ source `anthropic-flt-complete-lean-source-6e837e75`, content SHA256
 revision `6e837e75355538c7f80bab5b956861e86c4eacc2`.
 That proof first derives the sum-ideal injectivity from a presentation
 property; this statement takes the required injectivity directly.
-The accepted documentary audit
+The documentary audit
 `notes/reuse/anthropic-local-flatness-audit.md` records development
-feasibility and is not an accepted proof dependency.
+feasibility and is not a proof dependency.
 
-Worker 439 supplied the exact mathematical target in the task specification;
-Worker 651 authored this proposition definition and explanation. No external proof text is extracted in this
+No external proof text is extracted in this
 pair. The external source is Copyright 2026 Anthropic, PBC, licensed
 under Apache-2.0, with its `LICENSE`, `NOTICE`, and `ATTRIBUTION.md`
 retained in the registered source folder. No per-file attribution row

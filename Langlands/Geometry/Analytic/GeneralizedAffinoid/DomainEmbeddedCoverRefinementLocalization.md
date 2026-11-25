@@ -1,6 +1,6 @@
 # Finite-cover refinement localization at a specified embedded domain
 
-Author: Worker 36, adapting Worker 56's published
+This module adapts the
 `DomainCoverRefinementTransport` construction.
 
 For a particular full represented domain `d : Domain K A` and a proof

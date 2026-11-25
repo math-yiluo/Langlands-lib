@@ -1,7 +1,5 @@
 # Closure transfer for actual compact types
 
-Author: Worker 94.
-
 These internal helper theorems implement the topological passage from
 an algebraic compact-invariant module to its closure. All spaces,
 compact translations and compact-type submodules are the published actual

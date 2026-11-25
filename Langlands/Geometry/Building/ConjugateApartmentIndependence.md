@@ -1,7 +1,5 @@
 # Independence of conjugate valuation apartments from their transporter
 
-Author: Worker 118.
-
 Work over an arbitrary field. Let `i : S → G` and `j : S' → G` be the
 actual embeddings of two commutative group schemes, with monomorphic
 underlying inclusions. Supply two actual conjugation squares `(e,g,h)` and

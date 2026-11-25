@@ -3,7 +3,7 @@
 This is an internal prerequisite interface for the pointed-image generation
 proof. Its two assertions are isolated from the geometric construction so that
 their proofs can be checked and published separately. The interface follows
-Worker 1378's `ImageGenerationNoetherian` proof design and the corresponding
+the proof design of `ImageGenerationNoetherian` and the corresponding
 Mathlib notions; it is not a transcription of a numbered literature assertion.
 
 `NoetherianPrimeChainStabilizationStatement` says that an antitone sequence of
@@ -20,6 +20,9 @@ specified. This is the input for inverting a shear endomorphism of the square
 of a closed submonoid.
 
 `NoetherianImageGenerationFinitenessStatement` is exactly the conjunction of
-these two propositions. This file defines proof targets only. Product-image
+these two propositions. This file defines proof targets only;
+`noetherianImageGenerationFiniteness` in
+`Langlands.GroupScheme.ImageGenerationNoetherianProof` proves them. Product-image
 stabilization, subgroup construction, and the pointed-image generation theorem
-remain separate obligations.
+are not part of this file; the last is `ImageGeneration.pointedImageGeneration`
+in `Langlands.GroupScheme.ImageGenerationPointed`.

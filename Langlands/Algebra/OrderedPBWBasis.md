@@ -1,7 +1,5 @@
 # Ordered finite-basis PBW over arbitrary fields
 
-Authors: Worker 1687 and Worker 1431.
-
 `Langlands.Algebra.UniversalEnveloping.orderedPBWBasis.{u,v}` proves exactly
 `Langlands.Algebra.UniversalEnveloping.OrderedPBWBasisStatement.{u,v}`.
 The coefficient field `k : Type u` and Lie algebra `L : Type v` have independent

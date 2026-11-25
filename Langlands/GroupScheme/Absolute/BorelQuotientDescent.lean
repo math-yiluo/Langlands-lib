@@ -136,7 +136,8 @@ theorem isBorelSubgroup_of_quotient_square
       (P := MorphismProperty.isomorphisms Scheme)
       (Q := @Surjective ⊓ @Flat ⊓ @QuasiCompact)
       hlefts ⟨⟨inferInstance, inferInstance⟩, inferInstance⟩
-      (inferInstance : IsIso fB.hom.hom.left)
+      (set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
+        inferInstance : IsIso fB.hom.hom.left)
   have : IsIso ((Over.forget _).map f.hom.hom) := ‹IsIso f.hom.hom.left›
   have : IsIso f.hom.hom := isIso_of_reflects_iso _ (Over.forget _)
   have : IsIso ((Mon.forget _).map f.hom) := ‹IsIso f.hom.hom›

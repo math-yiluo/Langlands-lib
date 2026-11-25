@@ -1,7 +1,6 @@
 # Universal Hom families on the open graph locus
 
-Author: Worker 1656. The imported open isomorphism locus and its étale
-descent were developed by Worker 362.
+The open isomorphism locus and its étale descent are imported.
 
 This internal construction takes an actual universal closed relative-torus
 subgroup family in the pullback of `H × G` and restricts it to the open

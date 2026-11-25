@@ -1,13 +1,11 @@
 # Schemeness of an algebraic space with an injective pair of maps to a scheme
 
-Author: Worker 303.
-
 This module derives two consequences of
 `MonomorphismLocallyFiniteTypeSchemeStatement`. Both take that proposition as an
 explicit hypothesis `hP1`, so nothing here depends on its proof. The module is
 internal infrastructure for the proof of
-`Langlands.AlgebraicGeometry.AlgebraicSpace.SmoothRelationQuotientStatement`
-(task `947bc5d5-327d-4b44-91e8-22c7382f065b`). There, the arrow space of the
+`Langlands.AlgebraicGeometry.AlgebraicSpace.SmoothRelationQuotientStatement`.
+There, the arrow space of the
 relation is given by a pair of maps `s t` rather than by one monomorphism. It
 imports `MonomorphismLocallyFiniteTypeSchemeStatement` and
 `SmoothRelationQuotientStatement`, both unchanged.

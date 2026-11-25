@@ -1,7 +1,5 @@
 # Topology on actual adelic group-scheme points
 
-Author: Worker 94.
-
 Let `F` be any number field and `G` the actual group scheme over `Spec F`.
 Assume that its underlying scheme is affine. The three adelic point groups
 retain their existing scheme-morphism carriers and group laws, with the
@@ -9,7 +7,7 @@ global-function evaluation topology. The imported
 `affinePointsIsTopologicalGroup` supplies their topological group structure
 from the topological ring structure of each coefficient algebra.
 
-This unit supplies Hausdorff instances for full, finite and archimedean
+This module supplies Hausdorff instances for full, finite and archimedean
 adelic points. For a structure morphism locally of finite type it also supplies
 local compactness. The finite coefficient ring has its actual restricted-product
 topology; its local compactness is the published
@@ -39,7 +37,7 @@ number-field coefficient rings of §2.3, printed pp.55–57. Registered source
 The local-compactness argument is exactly the previously proved
 finite-coordinate argument and coefficient local compactness.
 
-This unit does not identify general adelic points with a restricted product
+This module does not identify general adelic points with a restricted product
 of local group points. It makes no second-countability assertion, no
 discreteness or closedness assertion about rational points, and no quotient,
 measure, finite-volume or reduction-theory assertion.

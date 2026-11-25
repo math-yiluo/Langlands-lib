@@ -41,9 +41,10 @@ theorem comp_eq_constantPoint {H : GroupScheme (Spec (CommRingCat.of k))}
 
 /-- The action of `A(k)` on `G`, as a group homomorphism to `Aut G`. -/
 def innerHom : (Over.mk (𝟙 (Spec (CommRingCat.of k))) ⟶ A.X) →* CategoryTheory.Aut G where
-  toFun x := hq.innerAction.basePointIso x
+  toFun x := Aut.of (hq.innerAction.basePointIso x)
   map_one' := by
     apply Aut.ext
+    apply Iso.ext
     apply hom_ext_points
     intro W g
     rw [AutomorphicAction.comp_basePointIso_hom, constantPoint_one,
@@ -52,6 +53,7 @@ def innerHom : (Over.mk (𝟙 (Spec (CommRingCat.of k))) ⟶ A.X) →* CategoryT
     rw [Grp.id_hom_hom, Category.comp_id]
   map_mul' x y := by
     apply Aut.ext
+    apply Iso.ext
     apply hom_ext_points
     intro W g
     rw [AutomorphicAction.comp_basePointIso_hom, constantPoint_mul,
@@ -62,14 +64,14 @@ def innerHom : (Over.mk (𝟙 (Spec (CommRingCat.of k))) ⟶ A.X) →* CategoryT
       AutomorphicAction.comp_basePointIso_hom]
 
 theorem innerHom_apply (x : Over.mk (𝟙 (Spec (CommRingCat.of k))) ⟶ A.X) :
-    innerHom hq x = hq.innerAction.basePointIso x := rfl
+    innerHom hq x = Aut.of (hq.innerAction.basePointIso x) := rfl
 
 /-- Faithfulness of the inner action makes the homomorphism injective. -/
 theorem innerHom_injective : Function.Injective (innerHom (G := G) hq) := by
   intro x y hxy
   apply hq.innerAction_isFaithful x y
   intro W t g
-  have h := congrArg (fun σ : CategoryTheory.Aut G => g ≫ σ.hom.hom.hom) hxy
+  have h := congrArg (fun σ : CategoryTheory.Aut G => g ≫ σ.asIso.hom.hom.hom) hxy
   simp only [innerHom_apply, AutomorphicAction.comp_basePointIso_hom] at h
   rw [comp_eq_constantPoint, comp_eq_constantPoint]
   exact h
@@ -79,20 +81,20 @@ theorem innerHom_injective : Function.Injective (innerHom (G := G) hq) := by
 /-- An automorphism of `G` carries central points to central points. -/
 theorem comp_mem_center (σ : CategoryTheory.Aut G) {T : Over (Spec (CommRingCat.of k))}
     {c : T ⟶ G.X} (hc : c ∈ (center G).carrier T) :
-    c ≫ σ.hom.hom.hom ∈ (center G).carrier T := by
+    c ≫ σ.asIso.hom.hom.hom ∈ (center G).carrier T := by
   rw [mem_center]
   intro T' a y
-  have hid : σ.inv.hom.hom ≫ σ.hom.hom.hom = 𝟙 G.X := by
+  have hid : σ.asIso.inv.hom.hom ≫ σ.asIso.hom.hom.hom = 𝟙 G.X := by
     rw [← Grp.comp_hom_hom, Iso.inv_hom_id, Grp.id_hom_hom]
-  have hy : (y ≫ σ.inv.hom.hom) ≫ σ.hom.hom.hom = y := by
+  have hy : (y ≫ σ.asIso.inv.hom.hom) ≫ σ.asIso.hom.hom.hom = y := by
     rw [Category.assoc, hid, Category.comp_id]
-  have hcomm := hc T' a (y ≫ σ.inv.hom.hom)
-  change (a ≫ c ≫ σ.hom.hom.hom) * y = y * (a ≫ c ≫ σ.hom.hom.hom)
+  have hcomm := hc T' a (y ≫ σ.asIso.inv.hom.hom)
+  change (a ≫ c ≫ σ.asIso.hom.hom.hom) * y = y * (a ≫ c ≫ σ.asIso.hom.hom.hom)
   rw [← hy, ← Category.assoc, ← MonObj.mul_comp, ← MonObj.mul_comp, hcomm.eq]
 
 include hq in
 /-- Composing an automorphism with the quotient map kills the centre. -/
-theorem killsCenter_comp (σ : CategoryTheory.Aut G) : KillsCenter (σ.hom ≫ q) := by
+theorem killsCenter_comp (σ : CategoryTheory.Aut G) : KillsCenter (σ.asIso.hom ≫ q) := by
   intro T c hc
   rw [Grp.comp_hom_hom, ← Category.assoc]
   exact hq.killsCenter T _ (comp_mem_center σ hc)
@@ -101,7 +103,7 @@ theorem killsCenter_comp (σ : CategoryTheory.Aut G) : KillsCenter (σ.hom ≫ q
 the action of the image of the point under the automorphism of `A` induced by `σ`. -/
 theorem conj_innerHom (σ : CategoryTheory.Aut G)
     (x : Over.mk (𝟙 (Spec (CommRingCat.of k))) ⟶ A.X) :
-    innerHom hq (x ≫ (hq.desc (σ.hom ≫ q) (killsCenter_comp hq σ)).hom.hom) =
+    innerHom hq (x ≫ (hq.desc (σ.asIso.hom ≫ q) (killsCenter_comp hq σ)).hom.hom) =
       σ * innerHom hq x * σ⁻¹ := by
   let := hq.flat
   let := hq.surjective
@@ -109,20 +111,21 @@ theorem conj_innerHom (σ : CategoryTheory.Aut G)
   let := hq.isAdjoint.isSemisimple.isConnectedReductive.isAffineHom
   let : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
   let : IsAffine A.X.left := isAffine_of_isAffineHom A.X.hom
-  let σA := hq.desc (σ.hom ≫ q) (killsCenter_comp hq σ)
-  have hσA : q ≫ σA = σ.hom ≫ q := hq.comp_desc _ _
+  let σA := hq.desc (σ.asIso.hom ≫ q) (killsCenter_comp hq σ)
+  have hσA : q ≫ σA = σ.asIso.hom ≫ q := hq.comp_desc _ _
   apply Aut.ext
+  apply Iso.ext
   apply hom_ext_points
   intro W g
   change g ≫ (hq.innerAction.basePointIso (x ≫ σA.hom.hom)).hom.hom.hom =
-    ((g ≫ σ.inv.hom.hom) ≫ (hq.innerAction.basePointIso x).hom.hom.hom) ≫ σ.hom.hom.hom
+    ((g ≫ σ.asIso.inv.hom.hom) ≫ (hq.innerAction.basePointIso x).hom.hom.hom) ≫ σ.asIso.hom.hom.hom
   rw [AutomorphicAction.comp_basePointIso_hom, AutomorphicAction.comp_basePointIso_hom,
     ← constantPoint_comp]
   apply AutomorphicAction.hom_ext_of_local_quotient_lift q (A.constantPoint x W)
   intro V b h hb
-  have hid : σ.inv.hom.hom ≫ σ.hom.hom.hom = 𝟙 G.X := by
+  have hid : σ.asIso.inv.hom.hom ≫ σ.asIso.hom.hom.hom = 𝟙 G.X := by
     rw [← Grp.comp_hom_hom, Iso.inv_hom_id, Grp.id_hom_hom]
-  have hl : b ≫ A.constantPoint x W ≫ σA.hom.hom = (h ≫ σ.hom.hom.hom) ≫ q.hom.hom := by
+  have hl : b ≫ A.constantPoint x W ≫ σA.hom.hom = (h ≫ σ.asIso.hom.hom.hom) ≫ q.hom.hom := by
     rw [← Category.assoc, hb, Category.assoc, ← Grp.comp_hom_hom, hσA, Grp.comp_hom_hom,
       Category.assoc]
   rw [hq.innerAction.naturality, hl, hq.innerAction_act_lift, ← Category.assoc,
@@ -195,8 +198,9 @@ element is trivial. -/
 theorem eq_one_of_innerHom_eq_lift (x : Over.mk (𝟙 (Spec (CommRingCat.of k))) ⟶ A.X)
     (θ : p.basedRootDatumAut) (h : innerHom hq x = p.basedRootDatumAutLift θ) : θ = 1 := by
   have hsq : p.inclusion ≫ (hq.innerAction.basePointIso x).hom =
-      CommGroupScheme.groupHom (p.basedRootDatumAutTorusLift θ).hom ≫ p.inclusion := by
-    have h' : hq.innerAction.basePointIso x = (p.basedRootDatumAutLift θ : G ≅ G) := h
+      CommGroupScheme.groupHom (p.basedRootDatumAutTorusLift θ).asIso.hom ≫ p.inclusion := by
+    have h' : hq.innerAction.basePointIso x = (p.basedRootDatumAutLift θ).asIso :=
+      congrArg Aut.asIso h
     rw [h']
     exact p.basedRootDatumAutLift_square θ
   obtain ⟨n, hn⟩ := exists_isNormalizingPoint hq p x _ hsq
@@ -213,34 +217,34 @@ theorem eq_one_of_innerHom_eq_lift (x : Over.mk (𝟙 (Spec (CommRingCat.of k)))
 followed by a pinned lift of a based automorphism. -/
 theorem exists_eq_innerHom_mul_lift_of_normalizes (f : CategoryTheory.Aut G)
     (t : p.torus ≅ p.torus)
-    (hf : p.inclusion ≫ f.hom = CommGroupScheme.groupHom t.hom ≫ p.inclusion) :
+    (hf : p.inclusion ≫ f.asIso.hom = CommGroupScheme.groupHom t.hom ≫ p.inclusion) :
     ∃ (x : Over.mk (𝟙 (Spec (CommRingCat.of k))) ⟶ A.X) (θ : p.basedRootDatumAut),
       f = innerHom hq x * p.basedRootDatumAutLift θ := by
   let : IsClosedImmersion p.inclusion.hom.hom.left := p.isMaximalTorus.2.1
   have hG := p.isConnectedReductive
   let δ : p.rootDatum.Aut := rootDatumEquivOfTorusCompatibleIso hG hG p.isSplitTorus
-    p.isSplitTorus p.isMaximalTorus p.isMaximalTorus f t hf p.isRootDatum p.isRootDatum
+    p.isSplitTorus p.isMaximalTorus p.isMaximalTorus f.asIso t hf p.isRootDatum p.isRootDatum
   have hδ (χ : characterLattice p.torus) : δ.weightMap χ = t.hom ≫ χ :=
     rootDatumEquivOfTorusCompatibleIso_weightMap hG hG p.isSplitTorus
-      p.isSplitTorus p.isMaximalTorus p.isMaximalTorus f t hf p.isRootDatum p.isRootDatum χ
+      p.isSplitTorus p.isMaximalTorus p.isMaximalTorus f.asIso t hf p.isRootDatum p.isRootDatum χ
   let θ := p.basedRootDatumProjection δ⁻¹
   have hW : θ.val * δ ∈ p.rootDatum.weylGroup := by
     have h := p.basedRootDatumProjection_correction δ⁻¹
     rwa [inv_inv] at h
-  let tθ := p.basedRootDatumAutTorusLift θ
+  let tθ := (p.basedRootDatumAutTorusLift θ).asIso
   have hθχ (χ : characterLattice p.torus) : θ.val.weightMap χ = tθ.inv ≫ χ := by
     rw [← RootPairing.Equiv.weightEquiv_apply, ← p.basedRootDatumAutTorusLift_character θ]
     rfl
-  have hinv : p.inclusion ≫ (p.basedRootDatumAutLift θ).inv =
+  have hinv : p.inclusion ≫ (p.basedRootDatumAutLift θ).asIso.inv =
       CommGroupScheme.groupHom tθ.inv ≫ p.inclusion := by
     rw [Iso.comp_inv_eq, Category.assoc, p.basedRootDatumAutLift_square θ,
       ← Category.assoc]
     change p.inclusion = CommGroupScheme.groupHom (tθ.inv ≫ tθ.hom) ≫ p.inclusion
     rw [Iso.inv_hom_id]
     exact (Category.id_comp _).symm
-  have hf' : p.inclusion ≫ (f * (p.basedRootDatumAutLift θ)⁻¹).hom =
+  have hf' : p.inclusion ≫ (f * (p.basedRootDatumAutLift θ)⁻¹).asIso.hom =
       CommGroupScheme.groupHom (tθ.symm ≪≫ t).hom ≫ p.inclusion := by
-    change p.inclusion ≫ (p.basedRootDatumAutLift θ).inv ≫ f.hom = _
+    change p.inclusion ≫ (p.basedRootDatumAutLift θ).asIso.inv ≫ f.asIso.hom = _
     rw [← Category.assoc, hinv, Category.assoc, hf, ← Category.assoc]
     rfl
   have hσ : characterAut (tθ.symm ≪≫ t) ∈ weylImage p.inclusion := by
@@ -254,9 +258,9 @@ theorem exists_eq_innerHom_mul_lift_of_normalizes (f : CategoryTheory.Aut G)
       Iso.symm_inv, Category.assoc, Iso.inv_hom_id_assoc, Iso.hom_inv_id_assoc]
     rfl
   obtain ⟨x, hx⟩ := p.exists_adjointPoint_of_weylImage hq
-    (f * (p.basedRootDatumAutLift θ)⁻¹) (tθ.symm ≪≫ t) hf' hσ
+    (f * (p.basedRootDatumAutLift θ)⁻¹).asIso (tθ.symm ≪≫ t) hf' hσ
   refine ⟨x, θ, ?_⟩
-  have hx' : innerHom hq x = f * (p.basedRootDatumAutLift θ)⁻¹ := hx
+  have hx' : innerHom hq x = f * (p.basedRootDatumAutLift θ)⁻¹ := Aut.ext hx
   rw [hx', inv_mul_cancel_right]
 
 /-- Every automorphism of `G` is the action of a point of `A(k)` followed by a pinned
@@ -269,18 +273,18 @@ theorem exists_eq_innerHom_mul_lift (σ : CategoryTheory.Aut G) :
   have : Smooth G.X.hom := hG.smooth
   have : ConnectedSpace G.X.left := hG.connectedSpace
   obtain ⟨g, e, hge⟩ := smoothMaximalSplitTorusConjugacy k G p.torus p.torus
-    (p.inclusion ≫ σ.hom) p.inclusion
-    ((p.isMaximalTorus.comp_iso σ).isMaximalSplitTorus p.isSplitTorus)
+    (p.inclusion ≫ σ.asIso.hom) p.inclusion
+    ((p.isMaximalTorus.comp_iso σ.asIso).isMaximalSplitTorus p.isSplitTorus)
     (p.isMaximalTorus.isMaximalSplitTorus p.isSplitTorus)
-  let a : CategoryTheory.Aut G := G.innerIso g
+  let a : CategoryTheory.Aut G := Aut.of (G.innerIso g)
   obtain ⟨x, θ, hxθ⟩ := exists_eq_innerHom_mul_lift_of_normalizes hq p (a * σ)
     (CommGroupScheme.isoOfGroupIso e) (by
-      change p.inclusion ≫ σ.hom ≫ (G.innerIso g).hom = e.hom ≫ p.inclusion
+      change p.inclusion ≫ σ.asIso.hom ≫ (G.innerIso g).hom = e.hom ≫ p.inclusion
       rw [← Category.assoc]
       exact hge)
   refine ⟨(g ≫ q.hom.hom)⁻¹ * x, θ, ?_⟩
   have hg : innerHom hq (g ≫ q.hom.hom) = a :=
-    SplitPinning.innerAction_basePointIso_lift hq g
+    congrArg Aut.of (SplitPinning.innerAction_basePointIso_lift hq g)
   rw [map_mul, map_inv, hg, mul_assoc, ← hxθ, inv_mul_cancel_left]
 
 end PinnedAutomorphismGroup

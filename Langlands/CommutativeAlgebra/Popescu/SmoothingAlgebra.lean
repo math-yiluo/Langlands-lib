@@ -1,5 +1,5 @@
 import Langlands.CommutativeAlgebra.Popescu.LocalLifting
-import Mathlib
+import Langlands.MathlibBase
 
 /-! # The algebra `A[x, z]/(xᵢⁿ - Σⱼ zᵢⱼ aⱼ)` of the proof of Stacks Lemma 10.3 (07FE) -/
 

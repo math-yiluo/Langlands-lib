@@ -1,6 +1,6 @@
 # Full star naturality for an embedded orthogonal root component
 
-Worker 509. Derived interface for an injective integral root embedding whose
+Derived interface for an injective integral root embedding whose
 image is orthogonal to all outside roots and preserves the supplied simple bases.
 The ambient and component lattices and full root sets need not be equivalent.
 An ambient reflection in the component restricts to the matching component

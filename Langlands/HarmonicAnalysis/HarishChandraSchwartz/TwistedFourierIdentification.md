@@ -36,7 +36,7 @@ source uses it implicitly. The torus coordinates are derived as in `TwistedFouri
 - `f̂(ω ⊗ χ, G)` for a given constant `d` is
   `coefficientFourierTransform (A.twist χ hχ) hw hA' hT' hΞ hσ d f = d (A ⊗ χ)(f̌)`. For
   `d = d(ω)`, the source's `d(ω ⊗ χ) = d(ω)` is the Library's
-  `representationFormalDegree_unitaryTwist` (Worker 200), which is not used here: the family
+  `representationFormalDegree_unitaryTwist`, which is not used here: the family
   theorem takes one fixed `d`.
 - `Im X(G)` is replaced by a torus `J → Circle` with characters `χ z` satisfying
   `χ z g = ∏ⱼ zⱼ^{n(g)ⱼ}` (hypothesis `hχn`) for a lattice map `n` as in `TwistedFourierFamily`.
@@ -95,7 +95,8 @@ The data of the identification section with `χ` replaced by a family
 
 - `TwistedFourierFamily` proves the smoothness for `A(f χ_z)`. This module identifies those
   operators with the Fourier transforms of the Library's twisted representations.
-- Worker 200's `productCompactTwistTensorEquiv ν χ A`, for an unramified character `χ`, has the
+- `productCompactTwistTensorEquiv ν χ A` (module `Representation.Plancherel.ProductCompactPicture`),
+  for an unramified character `χ`, has the
   same definition as `twistTensorEquiv A χ.val.toMonoidHom …`; this module does not use it.
 
 ## Open obligations

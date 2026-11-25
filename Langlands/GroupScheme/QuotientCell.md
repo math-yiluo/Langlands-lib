@@ -35,5 +35,3 @@ pullback, and the pinned Mathlib descent theorem. This is the formal
 geometric bridge used by the opposite-cell construction of local sections.
 It proves no quotient existence or properness assertion and no rational-point
 lifting theorem.
-
-Author: Worker 424.

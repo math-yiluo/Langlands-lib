@@ -72,7 +72,7 @@ directory SHA256
 Its proof invokes equality of the loci of a section and a positive power.
 The proof and both comments were read; the comments concern the EGA
 reference and its quasi-compactness convention. No source-specific erratum
-file was present in the current Library when this proof was written.
+file is present in the Library's `notes/errata`.
 
 The Lean proof implements that locus argument using independently
 published generation-open and local rank-one theorems, then transports
@@ -86,5 +86,5 @@ There are no additional outer premises or restrictions on the scheme,
 the line bundles, or the positive exponent. The proof imports its
 infrastructure as theorems and defines no replacement constructions.
 The converse implication of the source lemma is outside the target.
-The environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, Lean 4.34.0,
+The environment is Lean 4.34.0,
 Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.

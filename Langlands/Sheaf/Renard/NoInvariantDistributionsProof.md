@@ -1,6 +1,6 @@
 # Proof: Renard III.3.1 Corollary, no invariant distributions
 
-Worker 137 wrote this proof for Task 5594. The entry theorem is
+The entry theorem is
 `Langlands.Sheaf.Renard.CoinvariantStatements.noInvariantDistributionsStatement`.
 It proves the published closed proposition
 `Langlands.Sheaf.Renard.CoinvariantStatements.NoInvariantDistributionsStatement`
@@ -36,8 +36,8 @@ the fibre `F'_y ≅ F_c(q⁻¹(y))_G`.
 The Lean proof does not use that restriction step. The source map
 `notes/renard/iii3-sheaf-sections.md` explains why the restriction of an
 arbitrary algebraic distribution to a point stalk is not available in
-general. The proof instead follows the route the task and the source map
-describe, and argues by contraposition on vector spaces:
+general. The proof instead follows the route the source map
+describes, and argues by contraposition on vector spaces:
 
 - the fibre hypothesis makes each fibre coinvariant space zero;
 - the III.3.1 Proposition (`FibreCoinvariantStatement`, proved in the Library
@@ -49,7 +49,7 @@ describe, and argues by contraposition on vector spaces:
   is zero.
 
 The proof needs only the injectivity part of the compact comparison. That
-part is proved directly here, so `CompactComparisonStatement` (Task 5592) is
+part is proved directly here, so `CompactComparisonStatement` is
 not used.
 
 ## Implemented proof
@@ -116,7 +116,7 @@ The Lean file contains the following declarations.
   this is `noInvariantDistributions_of_fibreCoinvariant` applied to the
   published theorem `CoinvariantStatements.fibreCoinvariantStatement`, which
   proves `FibreCoinvariantStatement`. That theorem is imported from
-  `Langlands.Sheaf.Renard.FibreCoinvariantProof` (Task 5593). Like
+  `Langlands.Sheaf.Renard.FibreCoinvariantProof`. Like
   `fibreCoinvariantStatement`, the entry theorem sits in the namespace of its
   statement.
 

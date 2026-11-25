@@ -110,14 +110,15 @@ theorem homEquiv_apply (k : T.obj ⟶ Z) :
   have hv := harrisIntegralCMClosedActionLocusFullHomEquiv_apply
     D C P p B W lam endScheme endIso T k
   refine hv.trans ?_
-  ext a
+  ext a : 1
+  apply CategoryTheory.End.ext
   change Langlands.GroupScheme.Cartier.restrict B.toCommGroupScheme B.toCommGroupScheme
-      (k ≫ inc) (rawAction a) =
+      (k ≫ inc) (rawAction a).asHom =
     Langlands.GroupScheme.Cartier.restrict B.toCommGroupScheme B.toCommGroupScheme k
       (Langlands.GroupScheme.Cartier.restrict B.toCommGroupScheme B.toCommGroupScheme
-        inc (rawAction a))
+        inc (rawAction a).asHom)
   exact Langlands.GroupScheme.Cartier.restrict_comp B.toCommGroupScheme B.toCommGroupScheme
-    k inc (rawAction a)
+    k inc (rawAction a).asHom
 
 /-- Every full joint action has exactly one actual classifying morphism,
 specified by literal equality with the restriction of the universal action. -/
@@ -153,9 +154,10 @@ theorem universalAction_condition :
     ⟨Z, inferInstance⟩
   have hc := universalAction_restrict_condition D C P R p B hB W lam Q (𝟙 Z)
   have he : (relativeEndRestrict B (𝟙 Z)).comp aZ = aZ := by
-    ext a
+    ext a : 1
+    apply CategoryTheory.End.ext
     exact Langlands.GroupScheme.Cartier.restrict_id B.toCommGroupScheme
-      B.toCommGroupScheme Z (aZ a)
+      B.toCommGroupScheme Z (aZ a).asHom
   rw [he] at hc
   exact hc
 

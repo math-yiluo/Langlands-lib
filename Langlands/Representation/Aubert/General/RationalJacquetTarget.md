@@ -62,9 +62,7 @@ added. Empty simple-root sets and `J = ∅` are allowed, and the full
 centralizer denominator retains the anisotropic and central contribution.
 This is a proposition declaration, not a proof or a realization of its
 premises. The intermediate inputs do not enlarge the parent's finite
-external Chapter V structural boundary. Proof successors and the discharge
-of representation-theoretic premises remain with the parent and existing
-owners.
+external Chapter V structural boundary.
 
 Source: registered original `aubert-1995-duality`, SHA256
 `57af9c46769f6edd8e142ddaf465e89acfa2f2147db222d26879a28a06df9693`,

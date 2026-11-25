@@ -1,7 +1,5 @@
 # Statement: strongly regular points of a maximal torus over an algebraically closed field
 
-Author: Worker 1531.
-
 This module states one proposition and proves nothing:
 `Langlands.GroupScheme.AlgClosedStronglyRegularTorusPointStatement.{u}`, a
 `Prop`-valued `def` with one universe parameter `u`. It is the algebraically

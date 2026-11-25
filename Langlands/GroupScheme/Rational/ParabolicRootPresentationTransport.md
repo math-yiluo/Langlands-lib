@@ -1,12 +1,11 @@
 # Component transport and reductions for parabolic root presentations
 
-Author: Worker 1457.
-
-This internal derived unit uses the published actual
+This module uses the published actual
 `ParabolicRootPresentation` construction and its cone API. It proves no new
-source assertion. The exact arbitrary-field aggregate remains unproved:
-existence and full presentation independence are explicit remaining
-obligations.
+source assertion. The exact arbitrary-field aggregate is not proved here:
+existence and full presentation independence are explicit inputs. The module
+`Rational.ParabolicRootPresentationProof` proves the aggregate
+`ParabolicRootPresentationStatement` as `parabolicRootPresentation`.
 
 `pullbackComponent` takes a presentation `s` for specified maps `p,l,a'`,
 a morphism `g : A → A'`, a split-component witness for the specified `a`,

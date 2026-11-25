@@ -1,7 +1,5 @@
 # Rational-function algebra for segment-pair epsilon factors
 
-Author: Worker 1695.
-
 This module contains elementary algebra in `RatFunc K` used to compare gamma
 factors of segment pairs. All results are proved unconditionally, with only the
 standard axioms.

@@ -1,7 +1,5 @@
 # Points normalizing the diagonal torus of `GL_n` act by permutations
 
-Worker 274.
-
 This is a helper module for the proof of `GeneralLinearRootDatumStatement`. It proves
 `weylImage_diagonalTorus n k : weylImage (diagonalTorus n k) =
 (permutationAction n k).range` over a field `k` (Milne, Example 21.40, printed

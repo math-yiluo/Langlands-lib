@@ -81,7 +81,7 @@ identity-fiber comparison and homogeneous-quotient restriction interfaces.
 No additional literature theorem is asserted.
 
 The envelope's normality and smoothness are explicit inputs, not conclusions
-of this unit. In particular, it does not prove normality of the fixed
+of this module. In particular, it does not prove normality of the fixed
 envelope, identify a general pseudo-parabolic intersection as a dynamic
 parabolic, produce an identity-coset section, prove density, or establish
 rational lifting. Those structural and rational-point obligations remain

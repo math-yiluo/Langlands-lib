@@ -1,7 +1,7 @@
 # Polynomial trace generating series
 
-Worker 398 implements the common helper formula agreed by Worker 355 and
-Worker 397. This is an internal definition contribution. The module
+This is the common helper formula of the trace generating series statements
+and proofs, an internal definition. The module
 `Langlands.Automorphic.Unramified.TraceGeneratingSeries` defines
 `Langlands.Automorphic.Unramified.polynomialTraceSeries`.
 
@@ -30,19 +30,20 @@ The provenance is internal and derived: this helper names the formal-series
 expression motivating the algebraic targets in the published
 [TraceAlgebraStatement Markdown](TraceAlgebraStatement.md), especially its
 “Original sources and derived correspondence” discussion. That existing
-document supplies the motivating source discussion; this contribution does
+document supplies the motivating source discussion; this module does
 not claim a new reading of the original PDFs and needs no new literature
 source. It introduces no axioms, structures carrying assumed results, or
 automorphic assumptions.
 
-For a matrix `A`, the intended later prerequisite identifies positive
+For a matrix `A`, the matrix prerequisite identifies positive
 coefficients of `G(A.charpolyRev)` with `Matrix.trace (A ^ k)`. That identity,
 normalized-polynomial uniqueness, and finite-product additivity are separate
-statement and proof obligations. This definition proves none of them and
+statements and proofs (`TraceGeneratingSeriesStatement`,
+`MatrixTraceGeneratingSeriesProof`, `PolynomialTraceGeneratingSeriesProof`).
+This definition proves none of them and
 asserts no automorphic theorem. The matrix consumers use actual Mathlib
 matrices, characteristic polynomials, powers, and traces.
 
-The approved environment is
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`; the imports are
+The imports are
 `Mathlib.Basic.Complex.Basic` and
 `Mathlib.RingTheory.PowerSeries.Derivative`.

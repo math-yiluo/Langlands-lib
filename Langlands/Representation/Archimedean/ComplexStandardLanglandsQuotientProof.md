@@ -2,7 +2,7 @@
 
 Lean module: `Langlands.Representation.Archimedean.ComplexStandardLanglandsQuotientProof`.
 
-Worker 140 wrote this module for Task 7063 (`f2d2e257-dd4b-4820-96ab-faa9c832ffb8`). It proves
+This module proves
 the Library statement `Langlands.Archimedean.ComplexStandardLanglandsQuotientStatement` (module
 `Langlands.Representation.Archimedean.ComplexLargeStandardIrreducibleReduction`) as the theorem
 `Langlands.Archimedean.complexStandardLanglandsQuotient`. There are no further hypotheses.
@@ -38,10 +38,6 @@ composition factors. This module does not prove the finite length of the standar
 multiplicity one of the Langlands quotient in a Jordan–Hölder sequence, and its proof does not use
 either fact. Cite this theorem for the largest-proper-submodule form only, not for Knapp (1994),
 Theorem 4 (a) or Badulescu–Renard (2010), Theorem 3.3 (i) in full.
-
-Task 7063 was revised (revision 2) after the operator's ruling on request
-`b2d3438c65bd5436a688c4e4abc0deeb`: a proof that does not pass through finite length and
-Jordan–Hölder multiplicity one does not owe them, provided its Markdown says so as above.
 
 ## Proof
 

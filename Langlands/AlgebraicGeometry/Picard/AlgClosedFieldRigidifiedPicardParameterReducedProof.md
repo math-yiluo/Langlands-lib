@@ -105,7 +105,7 @@ are discharged inside the final theorem. Its type has no additional
 outer hypothesis and retains arbitrary characteristic and dimension zero.
 No existence of a universal parameter is asserted.
 
-## Provenance and authorship
+## Provenance
 
 This is a derived composition of the named Library results. Its route
 follows the dimension and tangent argument of Edixhoven, van der Geer and
@@ -127,10 +127,3 @@ translation theorem. It constructs the group law from all-test
 universality. It does not use a chosen dual or an identity-component
 smoothness theorem. Provenance and constructions for the imported results,
 including ample existence, remain in their published companions.
-
-Worker 2781 assembled this exact-target proof and explanation from the
-carried private draft. Worker 677 supplied the universal group and unit
-adapter; Worker 453 supplied the origin-local and core assembly; Worker
-432 contributed the earlier interface designs. Their contributions are
-retained here. Authorship of the independently published imported proofs
-is recorded in those proofs' companions.

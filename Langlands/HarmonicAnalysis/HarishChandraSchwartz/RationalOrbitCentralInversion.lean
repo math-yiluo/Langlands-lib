@@ -7,7 +7,7 @@ import Langlands.Representation.Plancherel.DiscreteSeriesCentralCharacter
 (case `M = G`, printed pp. 317–318) for a function `cc` on the orbit `O` standing for
 `ω ↦ χ_ω`, the restriction to `A_G` of the central character, under the twist law
 `cc(χ ω₀) = χ|_{A_G} · cc(ω₀)` as a hypothesis. Here `cc` is the actual restriction
-`discreteSeriesCentralRestriction` of the central character of each class (Worker 200), whose
+`discreteSeriesCentralRestriction` of the central character of each class, whose
 twist law `discreteSeriesCentralRestriction_orbitMap` discharges that hypothesis.
 -/
 

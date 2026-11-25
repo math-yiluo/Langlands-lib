@@ -1,7 +1,5 @@
 # Proof of equal-rank rank-one extension reverse L-divisibility
 
-Author: Worker 719.
-
 This module proves the published proposition
 `Langlands.RankinSelberg.EqualRankRankOneExtensionLDivisibilityStatement.{uF,uV,uW}`
 from `Langlands.Representation.RankinSelberg.EqualRankRankOneExtensionDivisibilityStatement`

@@ -1,7 +1,5 @@
 # Twisted pair L compatibility of supercuspidal correspondences
 
-Author: Worker 1706.
-
 This module proves the premise `SupercuspidalTwistedPairLInheritance` of module
 `AssemblyLSegmentReduction`. Every supercuspidal correspondence `c0` is compatible
 with pair L-factors after the first factor is twisted by `ν^x`, `x ∈ ℕ`. The

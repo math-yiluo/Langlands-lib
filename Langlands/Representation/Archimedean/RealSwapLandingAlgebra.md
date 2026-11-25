@@ -6,7 +6,7 @@ Lean module: `Langlands.Representation.Archimedean.RealSwapLandingAlgebra`, name
 ## Role and provenance
 
 This module is an internal step in the proof of
-`Langlands.Archimedean.RealCharacterInducedFiltrationStatement` (Task 7133). It proves the
+`Langlands.Archimedean.RealCharacterInducedFiltrationStatement`. It proves the
 Library statement `RealSwapLandingInducedFirstStatement` (module `RealSwapLandingStatement`)
 from a hypothesis `SpecialLanding`, defined here. `SpecialLanding` asks for the same landing
 conclusion only at the parameters `δ = n + 2` with `n ∈ ℕ`, and only for some multipliers

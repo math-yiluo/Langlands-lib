@@ -19,10 +19,10 @@ The text and rendered source page were read directly.
 
 The Lean construction proves this lift independence at the elementary group
 level, for every subgroup containing `Z_G(T)`. Thus it applies to standard Levis
-once the shared reductive adapter supplies their actual subgroup values and
-centralizer containment. It does not prove that an arbitrary overgroup is a
+once their actual subgroup values and
+centralizer containment are supplied. It does not prove that an arbitrary overgroup is a
 Levi, that a conjugated Levi is standard, or that a root-label description
-matches these actual subgroups. Those remain separate realization obligations.
+matches these actual subgroups. Those are separate realization obligations.
 
 ## Declarations and proof route
 
@@ -62,7 +62,7 @@ differ by inner conjugation. The existing `conjugationEquiv` continues to take
 an actual ambient element and the subgroup image equality. Continuity,
 pullback of smooth representations, compatibility of normalization and
 lift independence up to representation isomorphism or on exact K0 classes
-remain separate obligations owned by the actual-functor adapter. In
+are not part of this construction. In
 particular this construction neither assumes nor proves Weyl-conjugacy of
 induced K0 classes, Aubert identity (1.2), or any Theorem 1.7 assertion.
 

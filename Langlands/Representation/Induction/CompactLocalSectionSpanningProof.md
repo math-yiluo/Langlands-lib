@@ -133,20 +133,17 @@ public declaration is `compactLocalSectionSpanning`.
 
 The finite-support decomposition above is internal. It is derived from the
 published actual-function definitions, the right-translation action and the
-double-coset section construction. The task suggested a related route through
+double-coset section construction. A related route goes through
 selected distinct double cosets. The implemented route is the induction
 described above instead. Bernstein and Zelevinsky (1977), section 5.17, is
-cited by the task as motivation only. That section is Case IV of the proof of
+cited as motivation only. That section is Case IV of the proof of
 their Theorem 5.2, where an averaging map on induced functions is defined. It
-states no spanning lemma, and this module neither quotes nor formalizes it. No
-draft of another worker was reused.
+states no spanning lemma, and this module neither quotes nor formalizes it.
 
 ## Development check
 
-The module compiles in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`
-(Lean 4.34.0, Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`),
-with no errors or warnings. Inspection of
+The module compiles with Lean 4.34.0 and Mathlib commit
+`5ed2965256430c3649e86755f9576b54eca72435`, with no errors or warnings. Inspection of
 `Langlands.Induction.compactLocalSectionSpanning` reports a theorem with level
 parameters `uG` and `uV`. Its axioms are only `propext`, `Classical.choice`
-and `Quot.sound`. These development checks are not independent acceptance or
-publication.
+and `Quot.sound`.

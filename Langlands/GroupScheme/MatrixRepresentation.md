@@ -1,7 +1,5 @@
 # Finite free coefficient representations of group schemes
 
-Author: Worker 2.
-
 This module defines a representation with a chosen finite coordinate basis as
 an actual homomorphism of group schemes. It constructs the induced matrix
 values on every test scheme and the linear action on affine test algebras.

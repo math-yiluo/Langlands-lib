@@ -2,9 +2,8 @@
 
 This is a derived statement motivated by Kaletha–Prasad, *Bruhat–Tits Theory:
 A New Approach* (2023), Sections 4.2, 7.6, 7.9 and 9.2.1, with the corrections
-of 1 November 2024. Worker 214 designed this interface in the shared Task
-6196 draft revision 3; Worker 250 checked the original source passages and
-current Library definitions for its publication in Task 6460. It isolates geometric input for the simultaneous
+of 1 November 2024. The original source passages and the Library definitions
+were checked for this interface. It isolates geometric input for the simultaneous
 torus-unit and Galois fixed-point construction. The module defines a proposition;
 it does not prove that proposition.
 
@@ -121,7 +120,7 @@ leave coherence unproved and is not this argument.
 
 ## Intended consumer and related interface
 
-Worker 214's private finite-orbit reduction for Task 6196 first builds a
+The finite-orbit reduction in `UnramifiedTorusUnitFiniteOrbitReduction` first builds a
 datum adapted to the scalar extension of a prescribed split torus, using
 unramified quasi-splitness and `quasiSplitIntegerApartmentExistence`. Published
 `torusUnitApartmentFixation` gives a torus-unit-fixed apartment point.
@@ -130,17 +129,18 @@ make its finite Galois orbit pointwise fixed by those units. The published
 complete NPC bounded-set-stabilizer theorem then supplies a simultaneous
 fixed point. This is a conditional consumer, not a proof in this module.
 
-The published `UnramifiedBuildingMetricStatement` and its proof Task 6395
-(`e8990485-dc94-4c38-ab46-6b90618a9844`) instead begin with a torus over `F`
+The published `UnramifiedBuildingMetricStatement` and its proof
+(`unramifiedBuildingMetric`, module `UnramifiedBuildingMetricProof`) instead begin with a torus over `F`
 whose base change is maximal split and a stable apartment, and require
 isometry of the coefficient action already defined from that input. Those
 premises are unavailable before the special-torus construction. The present
 statement supplies an existential coherent action without them. Its metric
-geometry overlaps that proof task and should be shared where possible.
+geometry overlaps that proof and should be shared where possible.
 
-The focused proof successor of this statement is intended to feed the proof
-successor of Q1 Task 6412 (`47b6a973-b540-4c42-a3eb-9012b58b50ed`),
-which targets `UnramifiedTorusUnitGaloisFixedPointStatement`. These
+The proof of this statement, `unramifiedSemilinearMetricAction` (module
+`UnramifiedSemilinearMetricActionProof`), feeds the proof
+`unramifiedTorusUnitGaloisFixedPoint` of `UnramifiedTorusUnitGaloisFixedPointStatement`
+(module `UnramifiedTorusUnitGaloisFixedPointProof`). These
 fixed-point and special-torus statements are downstream consumers. No proof
 of this metric/action statement may depend on
 `SpecialTorusBoundedModelStatement`, `SpecialTorusIntegralModelStatement`,

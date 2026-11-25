@@ -120,5 +120,5 @@ group is `Sp_{2N}` with `2N = m δ`, and the Witt torus of rank `r` acts on the 
 pair through `δ` equal diagonal coordinates (Tits 1966, Table II, type `C_n`, where the
 distinguished vertices are `δ, 2δ, …, rδ`). The proofs were written for this module. They use
 the Library's group-scheme, split-torus and symplectic-matrix infrastructure, and the modules
-`AntihermitianSplitRankLower`, `AntihermitianSplitRankUpper` (copied from Task 5986) and
+`AntihermitianSplitRankLower`, `AntihermitianSplitRankUpper`,
 `AntihermitianWittBlock`, `DegreeSplittingDarboux` and `DegreeSplittingIso`.

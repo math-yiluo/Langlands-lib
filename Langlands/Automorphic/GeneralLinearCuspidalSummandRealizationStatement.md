@@ -263,6 +263,6 @@ translate `x ↦ f(x k)` is determined by its values at finitely many points.
 
 ## Use
 
-This module links the trace-formula work on irreducible summands of `S` (for example Task 7701,
+This module links the trace-formula work on irreducible summands of `S` (for example
 `Langlands.TraceFormula.GroupSchemeCuspidalLocalTraceFactorizationStatement`) to the local
 components and `L`-functions that the Library defines for cuspidal operator realizations.

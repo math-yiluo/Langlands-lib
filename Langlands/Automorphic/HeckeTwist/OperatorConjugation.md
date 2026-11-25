@@ -1,7 +1,5 @@
 # Conjugation of the automorphic operator algebra by any Hecke multiplier
 
-Author: Worker 5136.
-
 This internal module conjugates the Library's concrete automorphic operator
 algebra `automorphicOperatorAlgebra F n` by multiplication with `χ ∘ det`, for an
 arbitrary Hecke character `χ` (no finite-order hypothesis). Write `M_χ` for the

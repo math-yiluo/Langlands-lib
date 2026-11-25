@@ -60,29 +60,29 @@ private theorem involutionCompatible_of_faithful_restriction
     (h : CompatibleK ((rationalBaseChangeEnd b B).toRingHom.comp i) (pull lam)) :
     CompatibleS i lam := by
   intro r
-  change comp0 B B DA (i r) lam = comp0 B DA DA lam (dualS (i (star r)))
+  change comp0 B B DA (i r).asHom lam = comp0 B DA DA lam (dualS (i (star r)).asHom)
   apply hinj
-  have hleft : rationalBaseChangeHom b (comp0 B B DA (i r) lam) =
-      comp0 BK BK DB (rationalBaseChangeHom b (i r)) (rationalBaseChangeHom b lam) :=
-    rationalBaseChangeHom_comp b (i r) lam
-  have hright : rationalBaseChangeHom b (comp0 B DA DA lam (dualS (i (star r)))) =
+  have hleft : rationalBaseChangeHom b (comp0 B B DA (i r).asHom lam) =
+      comp0 BK BK DB (rationalBaseChangeHom b (i r).asHom) (rationalBaseChangeHom b lam) :=
+    rationalBaseChangeHom_comp b (i r).asHom lam
+  have hright : rationalBaseChangeHom b (comp0 B DA DA lam (dualS (i (star r)).asHom)) =
       comp0 BK DB DB (rationalBaseChangeHom b lam)
-        (rationalBaseChangeHom b (dualS (i (star r)))) :=
-    rationalBaseChangeHom_comp b lam (dualS (i (star r)))
+        (rationalBaseChangeHom b (dualS (i (star r)).asHom)) :=
+    rationalBaseChangeHom_comp b lam (dualS (i (star r)).asHom)
   rw [hleft, hright]
   apply cancel_comp0_iso cmp
-  have hnat : comp0 DB DB DK (rationalBaseChangeHom b (dualS (i (star r))))
+  have hnat : comp0 DB DB DK (rationalBaseChangeHom b (dualS (i (star r)).asHom))
         (homToHom0 (cmp).hom) =
-      comp0 DB DK DK (homToHom0 (cmp).hom) (dualK (rationalBaseChangeHom b (i (star r)))) :=
+      comp0 DB DK DK (homToHom0 (cmp).hom) (dualK (rationalBaseChangeHom b (i (star r)).asHom)) :=
     dualHom0_baseChange_of_naturality P.preservation P.stability P.composition
       P.unitCoherence P.associativity P.comparison P.symmetry P.universality P.compatibility b B
       W.hasDual W.geometry W.inverseBundle W.evaluation WK.hasDual WK.geometry
       WK.inverseBundle WK.evaluation B W.hasDual W.geometry W.inverseBundle W.evaluation
-      WK.hasDual WK.geometry WK.inverseBundle WK.evaluation addS addK naturality (i (star r))
+      WK.hasDual WK.geometry WK.inverseBundle WK.evaluation addS addK naturality (i (star r)).asHom
   calc
-    _ = comp0 BK BK DK (rationalBaseChangeHom b (i r)) (pull lam) :=
+    _ = comp0 BK BK DK (rationalBaseChangeHom b (i r).asHom) (pull lam) :=
       comp0_assoc _ _ _
-    _ = comp0 BK DK DK (pull lam) (dualK (rationalBaseChangeHom b (i (star r)))) := h r
+    _ = comp0 BK DK DK (pull lam) (dualK (rationalBaseChangeHom b (i (star r)).asHom)) := h r
     _ = _ := by
       change comp0 BK DK DK
         (comp0 BK DB DK (rationalBaseChangeHom b lam) (homToHom0 (cmp).hom)) _ = _

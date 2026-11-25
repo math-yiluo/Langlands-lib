@@ -33,11 +33,13 @@ of the actual integral Rosati form. -/
 def polarizedAutTraceBallEmbedding :
     AutLam ↪ Langlands.rationalBilinearBall (integralTraceForm P W hadd lam)
       (geometricEndomorphismTrace A 1) where
-  toFun f := ⟨f.val.hom, (polarizedAut_integralTraceForm_self P W hadd lam f).le⟩
+  toFun f := ⟨CategoryTheory.End.of f.val.asIso.hom,
+    (polarizedAut_integralTraceForm_self P W hadd lam f).le⟩
   inj' f g h := by
     apply Subtype.ext
+    apply Aut.ext
     apply Iso.ext
-    exact congrArg Subtype.val h
+    exact congrArg CategoryTheory.End.asHom (congrArg Subtype.val h)
 
 /-- Symmetry and strict positivity of the actual rational trace form imply
 finiteness when the actual integral endomorphisms form a finite free lattice. -/
@@ -47,12 +49,13 @@ theorem finite_polarizedAutGroup_of_traceForm [CharZero k]
     (hpos : ∀ a : End0 A, a ≠ 0 → 0 < traceForm P W hadd lam a a) :
     Finite AutLam := by
   have hball := Langlands.finite_rational_bilinear_le (integralTraceForm P W hadd lam)
-    (fun a b => hsym (homToHom0 a) (homToHom0 b))
-    (fun a ha => hpos (homToHom0 a) (by
+    (fun a b => hsym (endToEnd0 A a) (endToEnd0 A b))
+    (fun a ha => hpos (endToEnd0 A a) (by
       intro h
       apply ha
+      apply CategoryTheory.End.ext
       apply homToHom0_injective_of_charZero A A
-      exact h.trans (map_zero homToHom0).symm))
+      exact (congrArg CategoryTheory.End.asHom h).trans (map_zero homToHom0).symm))
     (geometricEndomorphismTrace A 1)
   have := hball.to_subtype
   exact Finite.of_injective (polarizedAutTraceBallEmbedding P W hadd lam)

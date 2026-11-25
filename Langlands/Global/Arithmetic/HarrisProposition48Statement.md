@@ -125,41 +125,36 @@ infinitesimal character is `λ = μ + δ` with `μ` dominant integral and
 
 Even-rank check (`n = 2`, worked out in derived choice 11 of the
 `HarrisSetup` Markdown): components `(z/|z|)^{±1}` at the two places above
-`τ` satisfy the datum, and give `λ = (1/2, −1/2)` and `μ = (0, 0)`. The
-rejected version of this statement (below) used integral `IsAlgebraic ξ`.
+`τ` satisfy the datum, and give `λ = (1/2, −1/2)` and `μ = (0, 0)`. Suppose
+instead that the datum required integral `IsAlgebraic ξ`.
 Then every `b_w` is even and `λ` is integral, so `μ = λ − δ` has
 half-integral entries and condition 2 could not hold together with
 condition 1 for that `ξ`. These remarks are not formalized.
 
-## Reduction, translation obligations and proof owners
+## Reduction and translation obligations
 
-Task 6413 `bca10e59-d4e2-40a4-be9b-5d70eaa1acd2` publishes the
-input statements and proof plan. The published derived
+The published derived
 `Langlands.Global.Harris.Proposition48ReductionStatement`, in
 `Langlands.Global.Arithmetic.HarrisProposition48ReductionStatement`,
 has fourteen explicit input statements as hypotheses and concludes
 `Proposition48Statement.{uF,0,0,0,uV}` for arbitrary independent
-`uF,uV`. Its focused proof owner is Task 7213
-`b517f901-0ac4-4ae4-a08e-b8b88a3b0fec`. The exact original proposition's
-final proof assembly belongs to Task 6702
-`0aa2189a-e878-4144-9d41-b76799d87cfc`. A theorem that retains the
-fourteen inputs as assumptions does not discharge that final target.
+`uF,uV`. It is proved as `proposition48Reduction` (module
+`HarrisProposition48ReductionProof`). A theorem that retains the
+fourteen inputs as assumptions does not prove `Proposition48Statement` itself.
 
-The source-to-declaration route and all input proof owners are recorded
-in [the Proposition 4.8 route note](../../../notes/harris/proposition-48-route.md).
-The shared DAG node `proof.harris-global-input` records the same four
-translation obligations:
+The source-to-declaration route and the inputs are recorded
+in [the Proposition 4.8 route note](../../../notes/harris/proposition-48-route.md),
+with the following four translation obligations:
 
-| Obligation | Published handling and remaining proof owner |
+| Obligation | Published handling |
 | --- | --- |
-| Missing sum in Definition 1.3(b), p.186 | `Langlands.Automorphic.Unramified.WeakInduction.inducedEulerPolynomial` uses the product over all places above, expressing the direct sum of the local induced parameters. Tasks 7221 `528311c0-f3fd-4553-ad48-a6bed4282b5a` and 7222 `95f79351-962f-4e98-a877-d3ca1aa759e1` own construction of the actual branch spectral attachments and their Euler equalities. |
-| Mackey rank and the `p = 2` detail in Lemma 4.7, pp.204–206 | The published theorem `Langlands.Global.harrisGeneralPosition`, module `Langlands.Global.Arithmetic.HarrisGeneralPositionProof`, proves Lemma 4.7 including residue characteristic two, with normalized reciprocity explicit. The published `Proposition48MackeyStepStatement` uses the exact global child rank `[D·a(E'):D]`. Task 7219 `03216936-611f-40ff-9fbf-4aca7b6cec03` owns its global child construction and place transports; the local theorem alone does not supply these. |
-| General-coefficient Theorem 1.7 dependency, p.202 Remark | The published `Langlands.GaloisRepresentation.HarrisSupercuspidalLocalComparisonStatement`, module `Langlands.Galois.HarrisSupercuspidalLocalComparisonStatement`, states the derived pairwise comparison for arbitrary regular algebraic type, sourced to Harris 1999 Theorem 5.9(ii), pp.314–315, with equations (5.4)–(5.6) and Lemma 5.8, pp.313–314. Task 6846 `2aa19068-4bd1-4522-8eb4-6d6a159e5e77` owns its proof. Task 7221 `528311c0-f3fd-4553-ad48-a6bed4282b5a` owns the common-weight normalized monomial witnesses needed by the prime branch. |
-| Half-integral twists along the induction, p.191 | Published `Proposition48AuxiliaryParityNormalizationStatement` and `Proposition48AuxiliaryParityUntwistStatement` separately require a genuine conjugate-inverse CM character, norm correction of the inherited parity and an actual determinant untwist. Task 7218 `8a1e00f3-5223-4c5a-9994-f8f08331ceda` owns their decomposition and proof tasks. Tasks 7221 `528311c0-f3fd-4553-ad48-a6bed4282b5a` and 7222 `95f79351-962f-4e98-a877-d3ca1aa759e1` own the branch realizations and weight normalization. |
+| Missing sum in Definition 1.3(b), p.186 | `Langlands.Automorphic.Unramified.WeakInduction.inducedEulerPolynomial` uses the product over all places above, expressing the direct sum of the local induced parameters. The actual branch spectral attachments and their Euler equalities are obligations of the branch proofs. |
+| Mackey rank and the `p = 2` detail in Lemma 4.7, pp.204–206 | The published theorem `Langlands.Global.harrisGeneralPosition`, module `Langlands.Global.Arithmetic.HarrisGeneralPositionProof`, proves Lemma 4.7 including residue characteristic two, with normalized reciprocity explicit. The published `Proposition48MackeyStepStatement` uses the exact global child rank `[D·a(E'):D]`. Its global child construction and place transports are proved by `proposition48MackeyStep` (module `Langlands.Global.Arithmetic.HarrisProposition48MackeyStepProof`); the local theorem alone does not supply these. |
+| General-coefficient Theorem 1.7 dependency, p.202 Remark | The published `Langlands.GaloisRepresentation.HarrisSupercuspidalLocalComparisonStatement`, module `Langlands.Galois.HarrisSupercuspidalLocalComparisonStatement`, states the derived pairwise comparison for arbitrary regular algebraic type, sourced to Harris 1999 Theorem 5.9(ii), pp.314–315, with equations (5.4)–(5.6) and Lemma 5.8, pp.313–314. The common-weight normalized monomial witnesses needed by the prime branch are obligations of the prime branch. |
+| Half-integral twists along the induction, p.191 | Published `Proposition48AuxiliaryParityNormalizationStatement` and `Proposition48AuxiliaryParityUntwistStatement` separately require a genuine conjugate-inverse CM character, norm correction of the inherited parity and an actual determinant untwist. The branch realizations and weight normalization are obligations of the branches. |
 
-These are statements and assigned proof obligations, except for the named
-published Lemma 4.7 theorem. This documentation update changes no Lean
-declaration, datum, signature or universe parameter.
+These are statements and proof obligations, except for the named
+published theorems (Lemma 4.7 and the Mackey step).
 
 ## Not claimed
 
@@ -196,15 +191,3 @@ declaration, datum, signature or universe parameter.
   Theorem 5.9(ii), pp.314–315; equations (5.4)–(5.6) and Lemma 5.8,
   pp.313–314. This is the source of the derived general-coefficient
   comparison input, not a proof supplied by the present module.
-
-## Revision
-
-This statement replaces candidate `66d7ff71-1c22-4ccb-bf8b-7a43be9a62e2`,
-which Reviewer 3482 rejected because the datum then required `IsAlgebraic ξ`
-(integral infinity type), contrary to the parity normalization of p.195 for
-even `n`. The Lean statement is unchanged apart from its docstring. The
-correction is in the datum: `Langlands/Global/Arithmetic/HarrisSetup` now
-uses `IsAlgebraicAfterTwist ([E' : E] - 1) ξ` (its section Correction).
-This version updates the Hypotheses section, adds the section on the
-consistency of the infinity type and one item under Not claimed, and
-cites pp.191–195 of Harris.

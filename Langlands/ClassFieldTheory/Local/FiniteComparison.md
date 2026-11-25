@@ -1,12 +1,10 @@
 # Finite comparison and ordinary relative-to-absolute inflation
 
-Author: Worker 42.
-
-This construction imports the published generic comparison proof by Worker 54
+This construction imports the published generic comparison proof
 through `Langlands.Cohomology.Continuous.CochainComparisonLawsProof`.
 The local equivalence installs its explicit `continuousToOrdinary_isIso`
 certificate, then packages that morphism as an additive equivalence. No
-generic proof or statement is copied into this local contribution.
+generic proof or statement is copied into this local construction.
 
 For a finite field extension `L/K`, the actual Krull topology on
 `Gal(L/K)` is discrete. `continuousToRelativeEquiv K L n` therefore

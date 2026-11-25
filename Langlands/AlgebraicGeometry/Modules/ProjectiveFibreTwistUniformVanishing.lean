@@ -26,9 +26,9 @@ section Twist
 variable {X : Scheme.{u}} (𝓛 : X.Modules)
 
 /-- `F(n) ≅ F ⊗ 𝓛^{⊗ n}`. -/
-def twistTensorPowIso (F : X.Modules) : (n : ℕ) → twist 𝓛 F n ≅ F ⊗ 𝓛.tensorPow n
+def twistTensorPowIso (F : X.Modules) : (n : ℕ) → twist 𝓛 F n ≅ F ⊗ 𝓛.tensorPowFLT n
   | 0 => (ρ_ F).symm
-  | n + 1 => whiskerRightIso (twistTensorPowIso F n) 𝓛 ≪≫ α_ F (𝓛.tensorPow n) 𝓛
+  | n + 1 => whiskerRightIso (twistTensorPowIso F n) 𝓛 ≪≫ α_ F (𝓛.tensorPowFLT n) 𝓛
 
 /-- Pullback commutes with twisting. -/
 def pullbackTwistIso {Y : Scheme.{u}} (φ : Y ⟶ X) {𝓛' : Y.Modules}
@@ -38,10 +38,10 @@ def pullbackTwistIso {Y : Scheme.{u}} (φ : Y ⟶ X) {𝓛' : Y.Modules}
   | 0 => Iso.refl _
   | n + 1 => Scheme.Modules.pullbackTensorObjIso φ _ _ ≪≫ tensorIso (pullbackTwistIso φ e F n) e
 
-lemma isInvertible_twist {F : X.Modules} (h𝓛 : Scheme.Modules.IsInvertible 𝓛)
-    (hF : Scheme.Modules.IsInvertible F) : ∀ n : ℕ, Scheme.Modules.IsInvertible (twist 𝓛 F n)
+lemma isInvertible_twist {F : X.Modules} (h𝓛 : Scheme.Modules.IsInvertibleFLT 𝓛)
+    (hF : Scheme.Modules.IsInvertibleFLT F) : ∀ n : ℕ, Scheme.Modules.IsInvertibleFLT (twist 𝓛 F n)
   | 0 => hF
-  | n + 1 => (isInvertible_twist h𝓛 hF n).tensor_monoidalV2 h𝓛
+  | n + 1 => Scheme.Modules.IsInvertible.tensor_monoidalV2 (isInvertible_twist h𝓛 hF n) h𝓛
 
 end Twist
 
@@ -59,7 +59,7 @@ def homologyBaseChangeIdIso {R : CommRingCat.{u}} (K : CochainComplex (ModuleCat
 /-- **Fibre model with sections.** As `exists_fibreModel`, and moreover the homology of the model
 in degree `n ≥ 0` is the cohomology of the restriction of `F` over `V`. -/
 theorem exists_fibreModel_sections {Y T : Scheme.{u}} (g : Y ⟶ T) [IsProper g] [Flat g]
-    (F : Y.Modules) (hF : Scheme.Modules.IsInvertible F) {V : T.Opens} (hV : IsAffineOpen V)
+    (F : Y.Modules) (hF : Scheme.Modules.IsInvertibleFLT F) {V : T.Opens} (hV : IsAffineOpen V)
     [IsNoetherianRing Γ(T, V)] :
     ∃ K : CochainComplex (ModuleCat.{u} Γ(T, V)) ℤ, ModuleComplex.IsStrictlyPerfect K ∧
       (∀ (t : T) (ht : t ∈ V),
@@ -73,7 +73,7 @@ theorem exists_fibreModel_sections {Y T : Scheme.{u}} (g : Y ⟶ T) [IsProper g]
     delta affineRestrict
     infer_instance
   obtain ⟨K, hK, hmod⟩ := exists_perfectModel (affineRestrict g hV)
-    ((Scheme.Modules.pullback (g ⁻¹ᵁ V).ι).obj F) (hF.pullback _)
+    ((Scheme.Modules.pullback (g ⁻¹ᵁ V).ι).obj F) (Scheme.Modules.IsInvertible.pullbackFLT (hL := hF) _)
   refine ⟨K, hK, fun t ht => ?_, fun n => ?_⟩
   · obtain ⟨e⟩ := hmod (T.residueField t) (T.evaluation V t ht)
     have hsq : IsPullback (pullback.fst (affineRestrict g hV) (Spec.map (T.evaluation V t ht)) ≫
@@ -145,9 +145,9 @@ attribute [local instance] MvPolynomial.gradedAlgebra
 neighbourhood `V` and `n₀` such that `Hᵖ(X_{t'}, F(n)_{t'}) = 0` for `t' ∈ V`, `n ≥ n₀`, `p > 0`. -/
 theorem uniformVanishing (A : Type u) [CommRing A] [IsNoetherianRing A] {X : Scheme.{u}}
     (f : X ⟶ Spec (CommRingCat.of A)) (𝓛X : X.Modules) (N : ℕ) (𝔓 : 𝓛X.ProjPresentation f N)
-    [IsProper f] [Flat f] (h𝓛 : Scheme.Modules.IsInvertible 𝓛X) [IsClosedImmersion 𝔓.toProj]
+    [IsProper f] [Flat f] (h𝓛 : Scheme.Modules.IsInvertibleFLT 𝓛X) [IsClosedImmersion 𝔓.toProj]
     (T : Scheme.{u}) [IsLocallyNoetherian T] (s : T ⟶ Spec (CommRingCat.of A))
-    (F : (pullback f s).Modules) (hF : Scheme.Modules.IsInvertible F) (t₀ : T) :
+    (F : (pullback f s).Modules) (hF : Scheme.Modules.IsInvertibleFLT F) (t₀ : T) :
     ∃ V : T.Opens, t₀ ∈ V ∧ ∃ n₀ : ℕ, ∀ t' ∈ V, ∀ n p : ℕ, n₀ ≤ n → 0 < p →
       IsZero (fibreCohomology (pullback.snd f s) t'
         (twist ((Scheme.Modules.pullback (pullback.fst f s)).obj 𝓛X) F n) p) := by
@@ -174,12 +174,12 @@ theorem uniformVanishing (A : Type u) [CommRing A] [IsNoetherianRing A] {X : Sch
   have : IsClosedImmersion 𝔓'.toProj :=
     MorphismProperty.of_isPullback (P := @IsClosedImmersion) hpb ‹_›
   let L := (Scheme.Modules.pullback (ι ≫ pullback.fst f s)).obj 𝓛X
-  have hL : Scheme.Modules.IsInvertible L := h𝓛.pullback _
-  have hFY : Scheme.Modules.IsInvertible ((Scheme.Modules.pullback ι).obj F) := hF.pullback _
+  have hL : Scheme.Modules.IsInvertibleFLT L := Scheme.Modules.IsInvertible.pullbackFLT (hL := h𝓛) _
+  have hFY : Scheme.Modules.IsInvertibleFLT ((Scheme.Modules.pullback ι).obj F) := Scheme.Modules.IsInvertible.pullbackFLT (hL := hF) _
   obtain ⟨d₀, hd₀⟩ := CechBridge.exists_isZero_relativeCohomology_tensor_tensorPow 𝔓' hL
     ((Scheme.Modules.pullback ι).obj F) hFY
   refine ⟨V, ht₀, d₀, fun t' ht' n p hn hp => ?_⟩
-  have hFn := FibreTwist.isInvertible_twist _ (h𝓛.pullback (pullback.fst f s)) hF n
+  have hFn := FibreTwist.isInvertible_twist _ (Scheme.Modules.IsInvertible.pullbackFLT (hL := h𝓛) (pullback.fst f s)) hF n
   obtain ⟨K, hK, hfib, hsec⟩ := exists_fibreModel_sections gT
     (twist ((Scheme.Modules.pullback (pullback.fst f s)).obj 𝓛X) F n) hFn hV
   refine isZero_fibreCohomology_of_model gT _ hK (fun t ht m => (hfib t ht).1 m) (fun m hm => ?_)

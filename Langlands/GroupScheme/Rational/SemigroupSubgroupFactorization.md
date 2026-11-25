@@ -38,7 +38,7 @@ The original block-versus-other-positive-closure exclusion, occurring
 zero weights, original ordering and empty index case are those of the
 unchanged product predicate.
 
-The provenance is internal: this unit assembles the published normalized
+The provenance is internal: this module assembles the published normalized
 conjugation, represented stable-subgroup actions, actual semidirect
 factorization and equivariant ordered-product transport. It constructs no
 decomposition of an arbitrary solvable group and proves neither scalar

@@ -1,7 +1,5 @@
 # Comparison targets for actual adelic-level model points
 
-Author: Worker 208.
-
 `AdelicLevelModelComparisonStatement` combines the curve-place and
 number-field comparison targets for the actual maps constructed in
 `AdelicLevelModelPoints`. All fields and schemes occupy one arbitrary

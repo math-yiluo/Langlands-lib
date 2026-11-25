@@ -1,7 +1,5 @@
 # Galois-invariant real valuations over a Henselian valuation ring
 
-Author: Worker 1651.
-
 `Langlands.FieldTheory.HenselianRealGaloisProlongationStatement.{u,v}` is
 an unproved proposition. It asserts that, for any field `K : Type u`, any
 valuation `ν : Valuation K ℝ≥0` whose actual valuation subring is

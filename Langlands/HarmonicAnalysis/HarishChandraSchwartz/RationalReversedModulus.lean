@@ -40,7 +40,7 @@ attribute [local instance] rationalWeightsIsAffine rationalWeightsTopology
   rationalWeightsTopologicalGroup rationalWeightsT2Field rationalWeightsLocallyCompact
   rationalWeightsMeasurableSpace rationalWeightsBorelSpace
 
-local instance : NonarchimedeanGroup (rationalPoints G) :=
+private local instance : NonarchimedeanGroup (rationalPoints G) :=
   Plancherel.rationalPoints_nonarchimedeanGroup G
 
 variable {i : S.toGrp ⟶ G} {ν : cocharacterLattice S} {J : Set (characterLattice S)}

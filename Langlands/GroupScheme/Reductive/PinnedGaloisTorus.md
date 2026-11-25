@@ -1,7 +1,5 @@
 # Actual torus descent for a supplied pinned Galois action
 
-Author: Worker 187.
-
 This internal construction supplements `PinnedGaloisDatum` and
 `PinnedGaloisBorel`. For fields `k` and `K` in universe `u`, an affine group
 scheme `G` over `Spec K`, a split pinning `p`, and a supplied based action

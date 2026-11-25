@@ -1,7 +1,5 @@
 # Existence of a Peirce frame for an isotropic idempotent
 
-Author: Worker 622.
-
 This module proves, for a Cayley datum `c` over an arbitrary field `K`
 (no characteristic assumption, so characteristic two is included), that an
 isotropic vector `e` of trace one has a dual pair of triples in its two
@@ -19,9 +17,10 @@ finite-dimensional linear algebra.
 - `e (v a) = 0`, `T(v a) = 0` and `b(v a, e) = 0` for every `a`;
 - `b(u a, v b) = 1` if `a = b` and `0` otherwise.
 
-Here `e y` is the multiplication `c.multiplication e y`. The statement was
-fixed in advance by Worker 118, who consumes it to build a weighted
-self-dual frame `e, 1 - e, u, v` of the Cayley algebra.
+Here `e y` is the multiplication `c.multiplication e y`. The statement is
+the one consumed by `IsotropicCayleyAutomorphismRankProof` to build a
+weighted self-dual frame `e, 1 - e, u, v` of the Cayley algebra (the
+`PeirceFrame` of `CayleyPeirceFrame`).
 
 ## Auxiliary declarations
 

@@ -75,5 +75,5 @@ instances introduced here are local. No geometric-point, finite-fibre,
 finite-etaleness, or order-invertibility assumption is needed for these
 continuity results on the previously defined test-point limits. Such
 hypotheses remain relevant to their separate geometric finiteness and
-compactness assertions. This unit does not construct a restricted product of
+compactness assertions. This module does not construct a restricted product of
 local Tate vector spaces, a Weil pairing, or a PEL moduli functor.

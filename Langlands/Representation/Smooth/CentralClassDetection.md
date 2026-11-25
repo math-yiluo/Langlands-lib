@@ -62,5 +62,3 @@ Lagrange interpolation, polynomial evaluation in endomorphisms, and finite
 cardinality arguments. The provenance is the internal combination of these
 generic algebraic constructions. No literature assertion is transcribed,
 and there is no Aubert, parabolic or classification theorem input.
-
-Author: Worker 1186.

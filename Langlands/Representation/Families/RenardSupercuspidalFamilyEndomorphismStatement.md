@@ -18,9 +18,9 @@ dated **9 July 2026**:
 - Induction of `(M, B)`-modules: VI.8.2, printed pp. 189–190 / PDF pp. 195–196.
 
 Literature ID `renard-2026-representations-groupes-reductifs-padiques`, file
-`/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`,
+`Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`,
 SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 709 read PDF pages 195–201.
+PDF pages 195–201 were read for this statement.
 
 The Example reads: "Soit `P = MN` un sous-groupe parabolique de `G`, et soit
 `(ρ, W)` une représentation supercuspidale irréductible de `M`. On reprend les
@@ -108,27 +108,26 @@ action of `G(F)` is of the form `f ↦ b • f` for some `b ∈ B`.
 The VI.8 progress note
 [algebraic-families-progress](../../../notes/renard/algebraic-families-progress.md)
 lists the Example as row (Ex6), not stated at Library `7e84f6ad`. A proof may use the
-published statements of the inputs of the source's argument. They are unproved at
-the time of writing:
+published statements of the inputs of the source's argument:
 
 - `EndomorphismScalarStatement` in
   [RenardFamilyEndomorphismStatement](RenardFamilyEndomorphismStatement.md), the
-  VI.8.6 Proposition for a general `B`, with proof task
-  `69958e59-18ba-448c-be38-d73030086488`;
+  VI.8.6 Proposition for a general `B`, proved as `endomorphismScalar` in
+  [RenardFamilyEndomorphismProof](RenardFamilyEndomorphismProof.md);
 - `GenericInducedIrreducibilityStatement` in
   [RenardGenericIrreducibilityStatements](RenardGenericIrreducibilityStatements.md),
-  Theorem VI.8.5, with proof task `822bbd74-8853-4535-87b2-aede25e9a259`;
+  Theorem VI.8.5, which the Library proves only from further statements;
 - the VI.8.1 statements of
-  [RenardFamilyStatements](RenardFamilyStatements.md), with proof tasks
-  `f10ce878-b279-4004-8426-7e12cf971e20` and
-  `eb5ee8fa-29f5-4671-9ecd-e6259db108d3`.
+  [RenardFamilyStatements](RenardFamilyStatements.md), all of which the Library
+  proves.
 
-This module asserts none of them. A proof of the statement is a separate
-obligation, which must prove the declaration unchanged.
+This module asserts none of them.
+[RenardSupercuspidalFamilyEndomorphismReduction](RenardSupercuspidalFamilyEndomorphismReduction.md)
+proves the declaration, unchanged, from three inputs.
 
 ## Environment
 
-Environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`: Lean 4.34.0 at
+Lean 4.34.0 at
 `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`, Mathlib at
 `5ed2965256430c3649e86755f9576b54eca72435`. The project imports are
 `RenardFamilyParabolicFunctors`, `ArbitraryParabolicLeviPoints` (Levi point

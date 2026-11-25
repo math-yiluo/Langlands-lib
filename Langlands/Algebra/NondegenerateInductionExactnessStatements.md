@@ -1,6 +1,6 @@
 # Exactness and injective preservation for the actual induction functors
 
-Worker 691 states, without proving, the unnumbered theorem and corollary in
+This module states, without proving, the unnumbered theorem and corollary in
 David Renard, *Représentations des groupes réductifs p-adiques*, French version
 dated 9 July 2026, I.2.4, printed pp.18–19 / PDF pp.24–25.
 The registered original is
@@ -17,7 +17,7 @@ definitions. Each binds all its ring, action, idempotentedness, commutation
 and source nondegeneracy inputs internally. Their arbitrary-ring additive scope
 is an internal generalization of Renard's complex-algebra setting. The actual
 integer-tensor quotient and original additive Hom are reused. Complex-linear,
-coefficient and unitization agreement remain separate obligations of the parent.
+coefficient and unitization agreement are not part of these statements.
 
 `NondegenerateFInductionExactnessTheorem` uses the specified left A-action on
 the actual additive carrier B and exactly `NonUnitalModule.rightRegular B`.
@@ -86,9 +86,10 @@ with the input when it is nondegenerate. An A-action on that input must be
 defined before claiming an A-linear identification. The injectivity corollary
 uses the actual adjunction `F ⊣ I` and exactness of F, identifying the
 contravariant integer-module Hom functor with `Hom_A(F(-), X)`. These are
-provenance and later proof obligations, and provide no proof of these targets.
+provenance for the proofs, and provide no proof of these targets.
 The common carrier setting agrees with the separate categorical adjunction
-statement; any use of that result must await its actual proof.
+statement `NondegenerateFInductionAdjunctionTheorem`, which is proved by
+`Langlands.Algebra.NondegenerateInductionAdjunction.nondegenerateFInductionAdjunction`.
 
 The supplementary registered `renard-2010-corrections-complements`, SHA256
 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
@@ -104,7 +105,10 @@ The companion checks cover complete unapplied types, exact unfolding,
 independent and unequal universes, named structures, original object/map
 formulas, the common-universe equality, regular integer actions and subsingleton
 interfaces. Zero rings and trivial nondegenerate modules are permitted.
-The main assertions are unproved. Their exact-target proofs are separate
-successors after publication, as are generic tensor/Hom exactness, coefficient
-bridges, scalar restriction and the remaining I.2.3 comparisons. This statement
-unit does not complete I.2.4 or the whole book.
+The main assertions are not proved here. Their exact-target proofs are
+`Langlands.Algebra.nondegenerateFInductionExactness`,
+`Langlands.Algebra.nondegeneratePInductionExactness` and
+`Langlands.Algebra.nondegenerateIInductionInjectivity`, in separate modules.
+Generic tensor/Hom exactness, coefficient bridges, scalar restriction and the
+remaining I.2.3 comparisons are also outside this statement module. It does not
+complete I.2.4 or the whole book.

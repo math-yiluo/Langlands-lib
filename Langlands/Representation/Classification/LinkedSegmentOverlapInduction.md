@@ -1,7 +1,5 @@
 # The induced side of the identity piece
 
-Author: Worker 1033.
-
 Fix an overlap configuration `O : OverlapConfig T n` (see
 [LinkedSegmentOverlapShapes](LinkedSegmentOverlapShapes.md)). The published
 identity geometric piece `geometricPieceFunctor T O.B O.C 1 O.S O.R _ _` is the

@@ -1,10 +1,10 @@
 # Regularity of every right derivative in the real coefficient model
 
-This internal supporting result for Task 7400 is in namespace
+This internal supporting result towards `RealPlaceFunctionalEquationStatement` is in namespace
 `Langlands.Global.RankinSelbergGlobal`. It proves
 `RealLocalWhittakerRegularityStatement` for the specified coefficient space
 `realWhittakerModel`. It supplies the regularity hypotheses needed by a
-future gauge or convergence estimate. It proves neither convergence nor a
+gauge or convergence estimate. It proves neither convergence nor a
 functional equation.
 
 The namespace `RealLocalWhittaker` contains the following definitions.
@@ -29,7 +29,7 @@ intertwiner's possibly negative bound constant by its maximum with zero
 supplies the explicitly nonnegative convention used here.
 
 `rightDerivative_mem_model` proves stability under an arbitrary real
-matrix right derivative. For a generating function `B f`, the published
+matrix right derivative. For a generating function `B f`, the Library's
 real standard-module Lie action gives a source vector
 `f' = realStandardLie (1 ⊗ X) f` whose underlying function is the right
 derivative of `f`. The last clause of `IsRealWhittakerIntertwiner` then
@@ -46,10 +46,10 @@ List induction gives `iteratedRightDerivative_mem_model`.
 same left character, and has a polynomial height bound. The constant and
 exponent may depend on the function and on the entire finite list of
 directions. In particular the result applies to all finite words in the
-matrix units, as required by the proposed gauge-estimate route.
+matrix units, as required by the gauge-estimate route.
 
-The argument uses the already published real standard-module
+The argument uses the Library's real standard-module
 `(g,K)` action and its derivative formula, and the internal coefficient
-model and height estimates. Worker 5665's complex-place model organization
+model and height estimates. The organization of the complex-place model
 informed the reused real model definition. This proof uses no external
 analytic theorem and establishes no new global-to-local model membership.

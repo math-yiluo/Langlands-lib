@@ -35,7 +35,8 @@ its actual cube.
 Only the existing relative polarization field of the datum is used to choose
 the geometric presentation. The dimension, degree and level fields need no
 extra conditions for this consequence. The proposition therefore applies over
-all fields, including the algebraically closed fields of the host theorem.
+all fields, including the algebraically closed fields of
+`CubicFibreCohomologyStatement`.
 
 This module supplies the statement target. Higher cohomology vanishing,
 the degree of multiplication by six, the Euler-square identity and the final

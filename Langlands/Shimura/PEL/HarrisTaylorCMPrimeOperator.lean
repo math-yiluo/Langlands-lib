@@ -14,7 +14,7 @@ set_option backward.isDefEq.respectTransparency false
 set_option backward.isDefEq.respectTransparency.types false
 set_option backward.defeqAttrib.useBackward true
 
-local instance (p : Nat.Primes) : Fact p.val.Prime := ⟨p.property⟩
+private local instance (p : Nat.Primes) : Fact p.val.Prime := ⟨p.property⟩
 
 namespace Langlands.Shimura.PEL.HarrisTaylorCMWeilLevel
 
@@ -92,7 +92,7 @@ theorem selfIsoPrimeTateOperator_eq_id_of_levelIso_fixed
         comparison symmetry stability square universality compatibility h A
         (D.harrisHodgePELForm C) s hs htor hu additivity X X
         ((hodgeLevelFunctor D C).obj U) q e he a = a →
-      (let f : End0 X.actionObj.abelianScheme := RationalAlgebraAction.hom0 e.hom
+      (let f : End0 X.actionObj.abelianScheme := CategoryTheory.End.of (RationalAlgebraAction.hom0 e.hom)
        IsOfFinOrder f) →
       selfIsoPrimeTateOperator D C preservation composition unitCoherence associativity
         comparison symmetry stability square universality s X v e = LinearMap.id := by
@@ -100,7 +100,7 @@ theorem selfIsoPrimeTateOperator_eq_id_of_levelIso_fixed
   intro a q e he hfixed hfin
   apply PrimeComparison.rationalHomMap_eq_id_of_extraction_fixed
     (Over.mk s) (Rat.HeightOneSpectrum.primesEquiv v).val
-    X.actionObj.abelianScheme (RationalAlgebraAction.hom0 e.hom)
+    X.actionObj.abelianScheme (CategoryTheory.End.of (RationalAlgebraAction.hom0 e.hom))
   exact rationalFullToPrime_fixed_of_levelIso_fixed D C preservation composition
     unitCoherence associativity comparison symmetry stability square universality
     compatibility h s hs htor hu additivity X U v hsmall a q e he hfixed hfin

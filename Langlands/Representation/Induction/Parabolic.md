@@ -1,7 +1,5 @@
 # Normalized parabolic induction from standard block Levi subgroups
 
-Author: Worker 23.
-
 This module constructs normalized parabolic induction for the standard upper
 block parabolic `P = B.parabolic F` of `GL_n(F)`. The parabolic, its actual Levi
 product `B.Levi F` and the block projection `B.leviProjection F : P →* B.Levi F`

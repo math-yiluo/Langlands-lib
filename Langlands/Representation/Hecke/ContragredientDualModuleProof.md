@@ -1,6 +1,6 @@
 # The smooth contragredient is the nondegenerate Hecke dual
 
-Worker 280 proves exactly
+This module proves exactly
 `Langlands.Hecke.ContragredientHeckeDualStatement.{u, v}` in
 `contragredientHeckeDual`. The group universe `u` and representation-space
 universe `v` remain independent. The hypotheses are precisely the published
@@ -82,8 +82,6 @@ The construction retains the actual published smooth dual, Hecke action, and
 
 ## Verification
 
-The proof module compiles in the task's prepared Lean environment
-`5c94c648-e8dc-4002-a50a-071ebf3f6096`. Its final declaration has the exact
+The proof module compiles. Its final declaration has the exact
 published proposition as its type; all helpers are proved from published
-imports. Independent semantic review and submission validation are required
-for acceptance.
+imports.

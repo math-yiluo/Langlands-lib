@@ -1,7 +1,5 @@
 # Identity and composition of actual nested finite-cover transport
 
-Author: Worker 56.
-
 This module compares finite full-domain covers transported along identity and
 composite rational-chart inclusions. It restores the targets using actual domain
 isomorphisms, constructs cover isomorphisms and natural isomorphisms, and proves

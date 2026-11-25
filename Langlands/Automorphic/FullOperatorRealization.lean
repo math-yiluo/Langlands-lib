@@ -157,6 +157,6 @@ theorem generatedFormOperatorRealization_ne_bot {f : AutomorphicForms F n} (hf :
   intro h
   apply hf
   have he := congrArg (stableAutomorphicEquiv F n) h
-  simpa only [ContinuousLinearEquiv.apply_symm_apply, map_zero] using he
+  simpa only [ContinuousLinearEquiv.apply_symm_apply, ContinuousLinearEquiv.map_zero] using he
 
 end Langlands.Automorphic

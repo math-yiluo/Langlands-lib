@@ -31,9 +31,9 @@ indexed by the natural numbers. Openness, finite index, and equality to
 ## Internal provenance and scope
 
 This is an internal generic prerequisite for the JPS coordinate-unit
-invariance proof task `97e96190-2043-4279-bd83-d5b3ec8911b4`. Worker 454
-specified the generic interface. Worker 625 supplied the proposed Baire
-argument: a compact Hausdorff group is a Baire space, so a countable closed
+invariance proof (`Langlands.Whittaker.jpsCoordinateUnitInvariance`, module
+`Langlands.Representation.Whittaker.JPSCoordinateUnitInvarianceProof`).
+The proposed Baire argument is: a compact Hausdorff group is a Baire space, so a countable closed
 cover has a member with nonempty interior; a subgroup with nonempty
 interior is open. Compactness gives finitely many cosets of this open
 subgroup. The pointwise cover puts finitely many coset representatives
@@ -42,12 +42,12 @@ single member containing the open subgroup and all those representatives.
 That member is the whole group.
 
 This argument motivates the target; this module supplies the proposition
-definition only. A proof is a separate contribution after independent
-acceptance and Library publication of this statement. No theorem explicitly
+definition only. The proof is `Langlands.Topology.compactGroupClosedSubgroupCover`
+in `Langlands.Topology.CompactGroupClosedSubgroupCoverProof`. No theorem explicitly
 stated by JPS, or any other original literature, is claimed as its source.
 
-The parent application must construct its actual closed subgroups, prove
-their monotonicity and pointwise cover, and apply the generic result.
+The JPS application constructs its actual closed subgroups, proves
+their monotonicity and pointwise cover, and applies the generic result.
 This statement itself contains no function, norm, or coordinate-unit data.
 
 ## Dependencies
@@ -56,6 +56,6 @@ The statement uses only Mathlib's group, subgroup, topology, compactness,
 and separation structures. It imports
 `Mathlib.Topology.Algebra.Group.Basic` and
 `Mathlib.Topology.Compactness.Compact`; it has no project mathematical
-dependencies. The approved environment is
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, with Lean 4.34.0 and Mathlib commit
+dependencies. The environment is
+Lean 4.34.0 with Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`.

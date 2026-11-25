@@ -18,7 +18,7 @@ it imports. Its import closure contains no module under `Langlands/NYLL/`.
 
 ## What is proved
 
-The target is the conjunction of three host propositions:
+The target is the conjunction of three propositions:
 
 - `FiniteAbelianReciprocity.{u, v}`: for every finite abelian extension `E/F` of
   p-adic fields given as separate fields, and arbitrary supplied topological data
@@ -39,22 +39,22 @@ clauses in full.
 ## Proof
 
 Each conjunct is the published universe transport applied to the universe-zero
-proof of the same host proposition:
+proof of the same proposition:
 
 | Conjunct | Universe-zero proof | Published transport |
 | --- | --- | --- |
-| `FiniteAbelianReciprocity.{u, v}` | `NYLL.finiteAbelianReciprocityTypeZero` ([`TypeZeroReciprocityProof`](NYLL/TypeZeroReciprocityProof.lean)) | `NYLL.finiteAbelianReciprocityUniverseTransport` |
-| `FiniteAbelianNormTransfer.{u, v, w}` | `NYLL.finiteAbelianNormTransferTypeZero` ([`TypeZeroNormTransferProof`](NYLL/TypeZeroNormTransferProof.lean)) | `NYLL.finiteAbelianNormTransferUniverseTransport` |
-| `FiniteAbelianRestriction.{u, v, w}` | `NYLL.finiteAbelianRestrictionTypeZero` ([`TypeZeroRestrictionProof`](NYLL/TypeZeroRestrictionProof.lean)) | `NYLL.finiteAbelianRestrictionUniverseTransport` |
+| `FiniteAbelianReciprocity.{u, v}` | `UniverseZero.finiteAbelianReciprocityTypeZero` ([`TypeZeroReciprocityProof`](UniverseZero/TypeZeroReciprocityProof.lean)) | `UniverseZero.finiteAbelianReciprocityUniverseTransport` |
+| `FiniteAbelianNormTransfer.{u, v, w}` | `UniverseZero.finiteAbelianNormTransferTypeZero` ([`TypeZeroNormTransferProof`](UniverseZero/TypeZeroNormTransferProof.lean)) | `UniverseZero.finiteAbelianNormTransferUniverseTransport` |
+| `FiniteAbelianRestriction.{u, v, w}` | `UniverseZero.finiteAbelianRestrictionTypeZero` ([`TypeZeroRestrictionProof`](UniverseZero/TypeZeroRestrictionProof.lean)) | `UniverseZero.finiteAbelianRestrictionUniverseTransport` |
 
 All names are in `Langlands.LocalClassField`. Each transport theorem proves that
 the universe-zero alias in
-[`TypeZeroStatement`](NYLL/TypeZeroStatement.lean) implies the host proposition
+[`TypeZeroStatement`](UniverseZero/TypeZeroStatement.lean) implies the corresponding conjunct
 at arbitrary independent universes
-([`UniverseTransportStatement`](NYLL/UniverseTransportStatement.lean)). The
+([`UniverseTransportStatement`](UniverseZero/UniverseTransportStatement.lean)). The
 transports are in the published modules `ReciprocityUniverseTransportProof`,
 `NormTransferUniverseTransportProof` and `RestrictionUniverseTransportProof`
-under `Langlands/ClassFieldTheory/Local/NYLL/`. The theorem is the anonymous
+under `Langlands/ClassFieldTheory/Local/UniverseZero/`. The theorem is the anonymous
 constructor of the three resulting proofs.
 
 At universe zero, every reciprocity isomorphism is the quotient of the Library's
@@ -72,12 +72,10 @@ universe transport, are the same choices. It claims no uniqueness and no
 coherence over all fields at once. The mathematical source of the target is
 Serre, *Local Fields*, XIII.4, Propositions 8, 10, 12 and 13 with their
 corollaries (source `serre-1979-local-fields`), in the geometric convention of
-the target's Markdown. The proof assembles published Library theorems, following
-the route of Task 7335. It does not follow Serre's arguments.
+the target's Markdown. The proof assembles published Library theorems, through
+the Library's own finite Artin symbol. It does not follow Serre's arguments.
 
-The module compiled without errors or warnings in environment
-`5c94c648-e8dc-4002-a50a-071ebf3f6096` (Lean 4.34.0, Mathlib commit
+The module compiled without errors or warnings (Lean 4.34.0, Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`). Inspection of
 `finiteAbelianReciprocityTheorems` reports universe parameters `u`, `v`, `w` and
-the axioms `propext`, `Classical.choice` and `Quot.sound` only. Worker 56
-authored it.
+the axioms `propext`, `Classical.choice` and `Quot.sound` only.

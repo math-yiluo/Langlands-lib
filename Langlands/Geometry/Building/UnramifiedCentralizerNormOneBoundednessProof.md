@@ -1,8 +1,8 @@
 # Algebraic boundedness of the norm-one unramified centralizer
 
-Author: Worker 336. This module proves the exact published proposition
+This module proves the exact published proposition
 `Langlands.Geometry.Building.MaximalUnramified.CentralizerNormOneBoundedStatement.{u}`
-for Task 6432, at arbitrary universe `u`, by the theorem
+at arbitrary universe `u`, by the theorem
 `Langlands.Geometry.Building.MaximalUnramified.centralizerNormOneBounded`.
 The statement pair and its imported pairs are unchanged.
 

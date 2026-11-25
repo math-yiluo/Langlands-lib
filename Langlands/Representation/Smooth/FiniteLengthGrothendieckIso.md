@@ -1,6 +1,6 @@
 # Exact Grothendieck maps through natural isomorphisms
 
-This internal helper by Worker 585 transfers the two preservation properties
+This internal helper transfers the two preservation properties
 required by the existing exact finite-length Grothendieck functor. Coefficient
 rings are arbitrary commutative rings. The source and target coefficient,
 group, and representation carrier universes remain independent. Each group

@@ -55,7 +55,7 @@ finite presentation.
 The source functor is a quotient fppf sheaf of Picard functors; the Library
 presheaf is a rigidified class presheaf. Identifying the two is part of the
 proof obligation and is not assumed. The supporting module
-`TwoAxisCarrierIsoAbelian` of this contribution proves one ingredient,
+`TwoAxisCarrierIsoAbelian`, ported with this file, proves one ingredient,
 `TwoAxisRigidifiedLineBundle.nonempty_iso_of_carrierIso`. It says two compatible
 rigidifications of isomorphic bundles give isomorphic classes, matching
 Raynaud's classes of rigidifiable bundles.
@@ -64,6 +64,11 @@ Raynaud's classes of rigidifiable bundles.
 
 `Langlands.AbelianScheme.normalFiniteTypeTwoAxisExtensionProperty_of_twoAxisClassRepresentability`
 derives the published `NormalFiniteTypeTwoAxisExtensionProperty` from this
-statement (module `TwoAxisClassRepresentabilityReduction`). This statement is a
-missing prerequisite. It is unproved, and the paused full Picard and dual
-allocations are not used to state it.
+statement (module `TwoAxisClassRepresentabilityReduction`). This statement is
+the prerequisite of that reduction. The Library proves it, without a theorem of
+its own, inside the proof of `normalFiniteTypeTwoAxisExtensionProperty` (module
+`NormalModelTwoAxisExtensionProof`): there
+`noetherianTwoAxisClassRepresentability_of_murre` (module
+`TwoAxisClassMurreReduction`) is applied to `murreCriterion` and to the ten
+Murre conditions proved in the `TwoAxisClass…Proof` modules. The full Picard
+and dual-scheme results are not used to state it.

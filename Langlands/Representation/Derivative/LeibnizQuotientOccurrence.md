@@ -1,7 +1,5 @@
 # Actual quotient occurrences in binary-product derivatives
 
-Author: Worker 357.
-
 This internal construction returns a surjection from an actual invariant
 subspace of a binary-product derivative onto a supplied quotient of a
 first-factor derivative. The second factor is differentiated to full order
@@ -165,21 +163,10 @@ and [LeibnizConstituentExtraction](LeibnizConstituentExtraction.md).
 The contraction's underlying general linear algebra is documented in
 [OneFactorQuotient](../Tensor/OneFactorQuotient.md).
 
-The full host task remains
-`8364e73f-14ec-4d14-8f2b-1555a7c1ce95`. Trusted operator decisions
-[bd71b9185aab5d6eafffb7891bd3a3ca](/home/taskhub/pilot/correspondence/bd71b9185aab5d6eafffb7891bd3a3ca.md)
-and
-[0edda6122ce65ed7ac51603c37473920](/home/taskhub/pilot/correspondence/0edda6122ce65ed7ac51603c37473920.md)
-permit independently proved and published general derivative
-infrastructure while preserving all its exclusions. The further
-support-only ruling
-[30144f6f9b59540b88b6d4c1517892d9](/home/taskhub/pilot/correspondence/30144f6f9b59540b88b6d4c1517892d9.md)
-and the limitations in
-[ed80148e21e7523abfc048f455e98eb0](/home/taskhub/pilot/correspondence/ed80148e21e7523abfc048f455e98eb0.md),
-[2b33898bdd0a5ff1b9031be5155a06f0](/home/taskhub/pilot/correspondence/2b33898bdd0a5ff1b9031be5155a06f0.md)
-and
-[ca18fd5005bf5e12a3f7cade18dca865](/home/taskhub/pilot/correspondence/ca18fd5005bf5e12a3f7cade18dca865.md)
-are retained. No support-bound proof or restricted intermediate is an
+The construction serves the special-head product criterion
+`SegmentHeadProductIrreducibility` and keeps all its exclusions. It uses
+only independently proved and published general derivative
+infrastructure. No support-bound proof or restricted intermediate is an
 input to this module.
 
 The used proof bodies consist of the general filtration, its canonical
@@ -190,27 +177,26 @@ actual subquotient presentation. In particular:
 - Neither Ze80 §§3.5/9.6 nor any segment derivative formula or proof
   successor is imported or used. No derivative of a segment is
   identified, asserted irreducible, or given a multiplicity.
-- The excluded segment/head/socle Jacquet formulas, exponent formula
-  and tasks `ed48ae06-964c-4c84-9e62-978f5a953ca7`,
-  `b95105c6-f8bb-4641-ae53-2f49d1e7f034`,
-  `55ad1e10-62d8-46b7-a081-909ef0056426`,
-  `92aea10f-62ac-4e0b-bd4a-9a80909797c5`, the segment-socle product
-  criterion `2ae5cbe5-0701-4509-88a0-db8cbeb35be4`, and the
-  segment-socle part of task `8e5b4563` supply no input.
-- The host criterion in either direction and parent uniqueness
-  `30341ae4-65f2-4a0e-9283-763db01a409e` supply no input. Neither do
-  multisegment exhaustion `3bfb61fa-1129-4fc9-83fd-7fcfec22106e`,
-  ordered strong-head existence `ebea9a8a-9b21-4208-aa31-98c2dea1f8a3`,
-  quotient coverage `20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584`,
-  ordered conversion `8252833d-c269-41a9-824c-5879e531b23b`,
-  tempered uniqueness `52e97845-36bb-457d-b76f-70753334b88c`,
-  square-integrable classification `1cb45da2-7007-4351-a694-594fb148b8d1`,
-  square-integrable exhaustion `cd8ab97c-0b78-4bce-97c4-d307a28159a4`,
-  or regular exhaustion `bf433f0a-921a-428c-b0c0-6475438125ac`.
+- The excluded segment/head/socle Jacquet formulas and exponent formula
+  (`SegmentFullJacquetFormula`, `SegmentSocleJacquetFormula`,
+  `SegmentHeadJacquetFormula`,
+  `SegmentSpecialJacquetExponentNormFormula`), the segment-socle product
+  criterion `SegmentSocleProductIrreducibility`, and the
+  segment-socle derivative results supply no input.
+- The special-head product criterion in either direction and
+  `GenericSegmentProductUniqueness` supply no input. Neither do
+  multisegment exhaustion,
+  ordered strong-head existence,
+  quotient coverage,
+  ordered conversion,
+  tempered uniqueness,
+  square-integrable classification,
+  square-integrable exhaustion,
+  or regular exhaustion.
 - `SegmentHeadSupportStep`, `SegmentHeadJacquetReduction`,
   `core_mid`, the restricted length-two consequence, and
-  `TwoSupercuspidalProductStructureProof` are absent. The limited
-  reducibility permission for the separate support proof is unused.
+  `TwoSupercuspidalProductStructureProof` are absent. No reducibility
+  result of the separate support proof is used.
 - The classification-named inherited modules are exactly
   `ConstituentRelations`, `Segments`, `Supercuspidal`,
   `SupercuspidalContragredientAux`,
@@ -219,11 +205,11 @@ actual subquotient presentation. In particular:
   subquotient, equivalence and twist infrastructure, with no
   excluded classification or segment conclusion.
 - No Whittaker/Levi/supercuspidal coinvariant-finiteness or dependent
-  mirabolic-finite-length conclusion is used. No pending candidate
-  supplies an imported pair or proof dependency.
+  mirabolic-finite-length conclusion is used.
 
 This focused constructor does not complete the special-head product
-irreducibility criterion. Its quotient and nonzero-top premises remain
+irreducibility criterion, which the Library proves separately, as
+`Langlands.Classification.segmentHeadProductIrreducibility`. Its quotient and nonzero-top premises remain
 explicit obligations for applications. It supplies neither an occurrence
 for a linked pair without those inputs, nor replacement nonoccurrence,
 nor the linked converse or the reduction from an arbitrary family.
@@ -234,20 +220,16 @@ Recursive native traversal at published Library commit
 `442ff746325df5b6d721fee75d430a65c33d09f0` finds 368 project modules
 including this entry and 145 distinct external frontier imports. All 367
 inherited Lean/Markdown pairs are nonempty and byte-identical to that
-Library. No inherited pair is edited and no missing module is supplied
-by staging. The full code scan, after removing nested comments and
+Library. No inherited pair is edited and no module is missing.
+The full code scan, after removing nested comments and
 string literals, finds no proof hole, new axiom, prohibited execution
-syntax, or match for the inherited excluded-name and task-identifier
-inventory. The used-body audit above supplements this scan.
+syntax, or match for the inherited excluded names. The used-body audit
+above supplements this scan.
 
-Development compilation `d335e4af-06ac-42ec-9e9a-a51d2f6976da` and the
-Lake build and exact declaration inspection
-`485914cb-37bf-4023-8a36-76ef5cd0a86a` in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` succeed with zero errors and
+Development compilation, the
+Lake build and exact declaration inspection succeed with zero errors and
 warnings. Inspection reports a definition with independent level
 parameters `uF,uV` and only `propext`, `Classical.choice` and `Quot.sound`.
-These are development checks; independent semantic review and Library
-publication remain required.
 
 The following grouped inventories expand each prefix with its immediate
 module suffixes to give the complete audited module names.

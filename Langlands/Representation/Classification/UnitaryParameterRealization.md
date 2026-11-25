@@ -1,6 +1,6 @@
 # Actual unitary parameter realizations
 
-Author: Worker 1431. Derived finite construction.
+Derived finite construction.
 
 This pair packages actual inducing parameters for a prescribed smooth
 representation and assembles finite products of supplied realizations. It is

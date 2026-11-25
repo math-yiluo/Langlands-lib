@@ -1,7 +1,7 @@
 # Finite-kernel surjective homomorphisms over algebraically closed fields are isogenies
 
 Lean module: `Langlands.GroupScheme.AlgClosedFiniteKernelHomIsogeny`, namespace
-`Langlands.GroupScheme.HomIsogeny`. Author: Worker 195.
+`Langlands.GroupScheme.HomIsogeny`.
 
 The Library proves that an endomorphism `f : G ⟶ G` of a smooth, proper, geometrically
 connected commutative group over a field is an isogeny when its kernel is finite

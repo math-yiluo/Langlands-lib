@@ -126,8 +126,7 @@ higher derivatives of `C^k` maps between normed spaces, which follows from
 Schwarz's theorem for second derivatives by induction on the order. No
 literature statement is formalized verbatim, and the Lean proof is
 independent of any text. The module was written to support the scalar
-elliptic regularity chain of task `d7081753-2858-442a-bd34-eda72b059529`.
-There, cutoff and factorial estimates sum over words of basis directions and
+elliptic regularity chain. There, cutoff and factorial estimates sum over words of basis directions and
 need to reorder and regroup iterated derivatives of `ContDiffOn ℝ ∞`
 functions on balls.
 

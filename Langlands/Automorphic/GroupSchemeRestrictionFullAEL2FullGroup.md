@@ -1,7 +1,5 @@
 # The almost-everywhere cuspidal condition over the full adelic group
 
-Author: Worker 112.
-
 Getz--Hahn (`getz-hahn-2024-automorphic-representations`), (6.20)--(6.21),
 printed p. 168, define `L²_cusp([G])` for `[G] = A_G G(F) \ G(A_F)`. A class
 is cuspidal when, for the unipotent radical `N` of every proper parabolic,

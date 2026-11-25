@@ -1,6 +1,6 @@
 # Smooth connected affine groups of dimension one
 
-Worker 881. `Langlands.GroupScheme.oneDimensionalGroupForms.{u}` proves
+`Langlands.GroupScheme.oneDimensionalGroupForms.{u}` proves
 `Langlands.GroupScheme.OneDimensionalGroupFormsStatement.{u}`, the published
 statement of Milne, *Algebraic Groups* (2017), Corollary 16.16, printed p. 329.
 It gives the finite separable multiplicative form and the finite purely

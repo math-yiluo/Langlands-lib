@@ -61,15 +61,15 @@ character integrals.
 This is an internal derivation from the Library's actual test functions,
 character conductor, normalized Haar measures, shell formulas, geometric
 series and Laurent-module criterion. The compact-open normalization proof
-specializes `MatrixUnitValueProof`, authored by Worker 704. The public
+specializes `MatrixUnitValueProof`. The public
 complex-power and spectral-threshold helpers are reused from the published
-`TateCharacterDenominator` arguments of Workers 357 and 656, retaining
-Worker 235's attribution for the elementary complex-power argument. The
-separately reviewed shell and denominator results retain their statements and proofs;
-the denominator helpers are now public for this reuse.
+`TateCharacterDenominator` arguments; the elementary complex-power argument
+comes from `RamifiedFiniteFunctionMellinProof`. The
+shell and denominator results retain their statements and proofs;
+the denominator helpers are public for this reuse.
 
 The result proves scalar normalized generation. It does not assert a JPSS
 pair-factor comparison, an epsilon-factor comparison, full abelian Tate
 local analysis, or the closed supercuspidal correspondence.
 
-The identical helper proofs are reused from `Langlands.Representation.GodementJacquet.TateCharacterDenominator`; their local copies have been removed.
+The identical helper proofs are reused from `Langlands.Representation.GodementJacquet.TateCharacterDenominator`; this module has no local copies of them.

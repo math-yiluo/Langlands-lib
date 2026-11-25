@@ -33,7 +33,7 @@ def HilbertSchemeUniversalFamilyStatement : Prop :=
   ∀ (A : Type u) [CommRing A] {X : Scheme.{u}}
     (f : X ⟶ Spec (CommRingCat.of A)) (𝓛X : X.Modules),
     Flat f → LocallyOfFinitePresentation f →
-    Scheme.Modules.IsInvertible 𝓛X → Scheme.Modules.ClosedImmersionBySections 𝓛X f →
+    Scheme.Modules.IsInvertibleFLT 𝓛X → Scheme.Modules.ClosedImmersionBySections 𝓛X f →
     ∃ (H : Scheme.{u}) (πH : H ⟶ Spec (CommRingCat.of A))
       (W : (pullback f πH).IdealSheafData),
       LocallyOfFinitePresentation πH ∧ IsSeparated πH ∧

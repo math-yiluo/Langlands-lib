@@ -1,7 +1,5 @@
 # Actual open charts of the admissible-subgroup presheaf
 
-Author: Worker 1726.
-
 This internal module constructs the map `OpenCharts.chartMap` from an actual
 chart scheme to the total presheaf of admissible subgroup functors and proves
 that it is a relatively representable open immersion.

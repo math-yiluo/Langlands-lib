@@ -1,7 +1,6 @@
 # A simply connected split pinning of type `C_n` of the symplectic group
 
-Author: Worker 31, for Task 5986 (`8494af77-9d10-4c2f-b1cd-60dc371fb195`). This is an internal
-helper module (namespace `Langlands.GroupScheme.SymplecticMatrix`). It builds a split pinning
+This is an internal helper module (namespace `Langlands.GroupScheme.SymplecticMatrix`). It builds a split pinning
 of the split symplectic group `SymplecticMatrix.groupScheme (Fin n) k` over any field `k`,
 for every `n`. The coroots of the pinning span the cocharacter lattice, and its simple roots
 are numbered by `Fin n` so that their pairings are the entries of Mathlib's Cartan matrix

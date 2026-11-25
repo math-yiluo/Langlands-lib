@@ -36,7 +36,7 @@ mapping theorem to this same source. Every compatible scalar-preserving map to
 an actual Artinian test lifts across every surjective augmented test arrow.
 It retains the whole original map, rather than only its residue values.
 
-This unit constructs the source and initial stage required by the Picard
+This module constructs the source and initial stage required by the Picard
 source tower. The tangent-basis restriction theorem remains the published
 `FiniteBasisPicardFamily.existsUnique_parameter`. Conversion to the full
 specified-isomorphism point-fibre lifting predicate, and formal versality of

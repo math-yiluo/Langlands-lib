@@ -1,6 +1,6 @@
 # Prescribed additive tensor smoothing and naturality
 
-Worker 1205 proves the entire unchanged Library proposition
+This module proves the entire unchanged Library proposition
 `Langlands.Algebra.NonUnitalTensorSmoothingStatements.TensorSmoothing.{uA,uN,uM,uN',uM'}`.
 The exact-target theorem is
 `Langlands.Algebra.NonUnitalTensorSmoothingProof.tensorSmoothing`; the module
@@ -14,8 +14,9 @@ p-adiques*, French version dated 9 July 2026, I.4.3, printed p.25 / one-based
 PDF p.31. It is registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1205 read this passage, the conventions at I.1.1–I.1.2, printed pp.5–7 /
-PDF11–13, and I.2.1–I.2.2, printed pp.14–16 / PDF20–22. The registered
+This passage, the conventions at I.1.1–I.1.2, printed pp.5–7 /
+PDF11–13, and I.2.1–I.2.2, printed pp.14–16 / PDF20–22, were read for this
+proof. The registered
 `renard-2010-corrections-complements`, SHA256
 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
 PDF1–2, was also read; the 2026 edition governs.
@@ -115,5 +116,5 @@ examples also specialize it to the unequal assignments `(0,1,2,3,4)` and
 
 This proof supplies the additive tensor-smoothing family. Scalar refinements,
 actual dual-completion maps and comparisons, the Hom-chain, representability
-and formula (I.4.3.1) remain separate obligations. None is assumed or proved
+and formula (I.4.3.1) are outside this module. None is assumed or proved
 here.

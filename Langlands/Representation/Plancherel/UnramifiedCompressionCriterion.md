@@ -1,7 +1,6 @@
 # Normalized coefficient Jacquet finiteness and actual compact compression
 
-Worker 1755, with interface and reuse guidance from Worker 1751. Internal
-normalization comparison for the actual unramified coefficient models used
+Internal normalization comparison for the actual unramified coefficient models used
 in Renard 2026 VI.9.2, printed p.199 / PDF p.205.
 Registered source `renard-2026-representations-groupes-reductifs-padiques`,
 SHA256
@@ -60,6 +59,8 @@ This criterion applies in particular to the existing
 once their coefficient finiteness inputs have been proved. It does not
 prove those inputs. In the source's universal supercuspidal case, native
 Jacquet fixed-space finiteness is obtained from the coefficient geometric
-lemma, which remains a separate representation-theoretic obligation.
+lemma; in the Library it is the separate statement
+`RationalSupercuspidalJacquetFamilyFiniteStatement`, proved in
+`UnramifiedRationalJacquetFinitenessProof`.
 The arbitrary norm-family and topological-group setting of this adapter is
 derived scope. The norm-family, group and carrier universes are independent.

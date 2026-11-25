@@ -1,8 +1,7 @@
 # Coroots of the diagonal torus of the special linear group
 
 Helper module for the proof of
-`Langlands.GroupScheme.SpecialLinearSimplyConnectedPinningStatement`. Author: Worker 61
-(Task 5703). Let `P` be any root datum attached to the diagonal torus of `SL_{n+1}` over a
+`Langlands.GroupScheme.SpecialLinearSimplyConnectedPinningStatement`. Let `P` be any root datum attached to the diagonal torus of `SL_{n+1}` over a
 field `k`, in the Library's sense
 `IsRootDatumOf (diagonalTorus n (CommRingCat.of k)) P`. This module computes the coroots of
 `P` and shows that they span the cocharacter lattice. The root datum itself is not

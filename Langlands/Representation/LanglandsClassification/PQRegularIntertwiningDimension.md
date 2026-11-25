@@ -1,8 +1,9 @@
 # The dimension consequence of regularity and the identity support piece
 
-Author: Worker 135. This internal algebraic construction uses the published
+This internal algebraic construction uses the published
 normalized induction, Jacquet functor and identity support image for arbitrary
-represented rational parabolics. It is an intermediate result for Task 5282;
+represented rational parabolics. It is an intermediate result for the proof of
+the VII.4.1 Lemma (`PP̄`-regularity of Langlands triplets);
 it does not prove regularity of Langlands triplets.
 
 For two parabolics with the same Levi scheme, a split component `a`, and a

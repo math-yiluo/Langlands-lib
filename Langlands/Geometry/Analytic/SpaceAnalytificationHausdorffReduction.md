@@ -1,7 +1,5 @@
 # Hausdorffness from affine étale chart relations
 
-Author: Worker 309.
-
 This internal topological reduction applies to the existing `PointFamily` and
 `IsAnalytification` definitions. `AffineEtaleChartRelationsClosed p` says that,
 for every pair of finitely presented affine étale test points of the algebraic

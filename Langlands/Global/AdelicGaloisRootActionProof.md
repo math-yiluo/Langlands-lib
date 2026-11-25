@@ -1,7 +1,5 @@
 # Proof of Lemma Q: the Galois action on the simple roots
 
-Author: Worker 2 (statement module and helper `RadicalGaloisInnerTransport` by Worker 5268).
-
 This module proves the statement
 `Langlands.Global.AdelicGaloisUnit.SplitBorelGaloisRootActionStatement` from the module
 `Langlands.Global.AdelicGaloisRootAction`. The theorem is

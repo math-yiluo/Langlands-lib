@@ -1,7 +1,5 @@
 # Actual homomorphism descent along arbitrary surjective étale maps
 
-Author: Worker 693.
-
 This internal construction extends the existing fpqc homomorphism descent
 argument to arbitrary surjective étale maps without a quasi-compactness
 assumption. Both base schemes and all group schemes are arbitrary.
@@ -25,7 +23,7 @@ upstairs map by the solution comparisons gives a map compatible with canonical
 data. `baseChange_descendHomOfEtale` gives the recovery square and
 `descendHomOfEtale_unique` its uniqueness.
 
-The source of this unit is the internal published `Descent.FpqcHomDescent`
+The source of this module is the internal published `Descent.FpqcHomDescent`
 construction and its compatibility lemma, together with fppf effective
 epimorphisms and faithful pullback from Mathlib. No object-effectivity
 assumption is introduced, and no descent solution is constructed here.

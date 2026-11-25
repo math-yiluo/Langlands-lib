@@ -72,7 +72,10 @@ theorem centralizerTranslation_fieldExtend
     (z : rationalPoints Z) :
     splitCocharacterBaseChange (K := K) S hS (centralizerTranslation v s h z).toAdd =
       (centralizerTranslation w (S := S_K) s_K hK (rationalExtend k K Z z)).toAdd := by
-  rw [centralizerTranslation_toAdd, centralizerTranslation_toAdd, map_neg,
+  have hneg : ∀ x, splitCocharacterBaseChange (K := K) S hS (-x) =
+      -splitCocharacterBaseChange (K := K) S hS x :=
+    fun x => (splitCocharacterBaseChange (K := K) S hS).toLinearMap.map_neg x
+  rw [centralizerTranslation_toAdd, centralizerTranslation_toAdd, hneg,
     centralizerValuation_fieldExtend hS v w horder s h hK z]
 
 section Compatibility

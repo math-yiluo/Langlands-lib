@@ -1,10 +1,9 @@
 # Valuative extension of rigidified Picard-zero classes, assuming four focused propositions
 
-Authors: Worker 1031 and Worker 150 (`exists_algClosed_valuation_domination`).
-
 This module reduces the target proposition
 `Langlands.AbelianScheme.PicardZeroValuativeExtensionStatement` to four published
-propositions that are not yet proved:
+propositions (all proved in the Library; see the Markdown of
+`PicardZeroValuativeExtensionProof`):
 
 - `Langlands.AbelianScheme.AlgClosedFieldTranslationDifferenceLiftingStatement`
   (`h1`): over an algebraically closed field, a translation-invariant line bundle
@@ -32,8 +31,8 @@ Its curried form is
   PicardZeroValuativeExtensionReductionStatement`, the implication stated in
 module `Langlands.AlgebraicGeometry.Picard.PicardZeroValuativeExtensionReductionStatement`.
 None of the four hypotheses is proved or assumed anywhere else in the module.
-Once all four are proved, applying this theorem to the four proofs proves the
-target. The other inputs are proved Library results:
+Applying this theorem to the four proofs proves the target; the module
+`PicardZeroValuativeExtensionProof` does so. The other inputs are proved Library results:
 `Langlands.Scheme.Modules.pullbackTensorComparisonIsIso`,
 `Langlands.SchemeModule.RigidifiedModule.pullbackCoherence`,
 `fieldLineBundleTriviality`, `picardZeroPullback`, `picardZeroFamilyBaseChange`,
@@ -44,8 +43,8 @@ All declarations are in the namespace `Langlands.AbelianScheme`.
 
 The target is a derived formulation about the Library's `PicardZeroClasses`,
 not a verbatim source theorem; see the Markdown of
-`PicardZeroValuativeExtensionStatement`. The proof follows the Mumford route
-from the context of task `322a2874-8b1c-4e61-b7cc-e0d154742640`. Pass to an
+`PicardZeroValuativeExtensionStatement`. The proof follows the Mumford route.
+Pass to an
 algebraic closure `K'` of `K` and a valuation ring `R'` of `K'` dominating `R`.
 Over `K'` the class is a translation difference `t_x^*L ⊗ N` (Mumford,
 *Abelian varieties*, §8 Theorem 1; here the hypothesis `h1`). The ample line
@@ -125,7 +124,7 @@ Its pullback to `K'` agrees with that of the given class by a direct computation
 - `exists_picardZero_extension_of_isAlgClosed'` is the same statement for an
   arbitrary `c` with `hc : Spec.map (algebraMap R K) ≫ b = c`. It is proved by
   `subst`.
-- `exists_algClosed_valuation_domination R K` (Worker 150) produces
+- `exists_algClosed_valuation_domination R K` produces
   `K' = AlgebraicClosure K`, which lies in universe `u`, and a valuation subring
   `R'` of `K'` dominating the image of `R`. It uses Mathlib's
   `IsLocalRing.exists_factor_valuationRing` applied to `R → K → K'`. It returns a

@@ -1,10 +1,8 @@
 # Proof of the stable even-path geometry statement
 
-Author: Worker 4348.
-
 Lean module: `Langlands.LinearAlgebra.RootDatumEvenPathGeometryProof`. It proves
 the published statement `Langlands.LinearAlgebra.EvenPathOrbitGeometryStatement`
-(module `Langlands.LinearAlgebra.RootDatumEvenPathGeometryStatement`; Task 5736):
+(module `Langlands.LinearAlgebra.RootDatumEvenPathGeometryStatement`):
 
 ```lean
 theorem Langlands.LinearAlgebra.evenPathOrbitGeometry :
@@ -12,7 +10,7 @@ theorem Langlands.LinearAlgebra.evenPathOrbitGeometry :
 ```
 
 Provenance: internal. The statement is an internal combinatorial prerequisite
-of the even-chain Galois-data proof (Task 5375). Its Markdown and the Markdown of
+of the even-chain Galois-data proof. Its Markdown and the Markdown of
 the published helper module `RootDatumPairedPaths` give the source account
 (Steinberg 1965, 9.4 and the notation before 9.11). This proof adds no new
 mathematical claim beyond the statement. The closing theorem has no hypotheses

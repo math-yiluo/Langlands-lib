@@ -1,7 +1,5 @@
 # Finite length and exactness of the actual product-Levi refinement functors
 
-Author: Worker 717.
-
 `Langlands.Parabolic.normalizedRefinedFiniteLengthExactness.{uF,uV} F T`
 proves exactly the published proposition
 `Langlands.Parabolic.NormalizedRefinedFiniteLengthExactnessStatement.{uF,uV} F T`
@@ -173,7 +171,7 @@ structure built from `T.valuativeRel` and `T.localField`.
 The two surjectivity lemmas `isClosed_refinedParabolic` and
 `normalizedRefinedInducedMap_surjective` are restated and re-proved verbatim in
 this namespace. The originals are the identically named lemmas of the published
-`Classification.NestedInductionProof` (Worker 379). Importing that module would
+`Classification.NestedInductionProof`. Importing that module would
 add it and `Classification.NestedInductionStatement`, which this proof does not
 otherwise need, to the import closure. Its remaining imports are in the closure
 already.
@@ -216,8 +214,8 @@ through these imports.
 
 The audit used Library commit `b22e185743f7c318f709e14e422801f4360105d5`.
 The transitive project import closure has 603 modules, all with nonempty
-paired Markdown. None of the excluded tasks' proof modules exists in this
-Library:
+paired Markdown. None of the proof modules of the excluded results exists in
+this Library:
 
 - analytic segment classification;
 - special-head multisegment exhaustion;
@@ -235,7 +233,7 @@ OrderedMultisegmentQuotientExhaustion, TemperedBlockUniqueness,
 SquareIntegrableLanglandsClassification, SquareIntegrableLanglandsExhaustion,
 RegularLanglandsExhaustion}Proof`. A case-insensitive scan of every Lean source
 in the closure found none of their statement or proof names. So no excluded
-conclusion, proof successor or transitive proof dependency is used.
+conclusion, proof of one, or transitive proof dependency is used.
 
 The only deep lower input is the standard all-rank theorem
 `normalizedParabolicFiniteLength`. Its own Markdown documents its route and

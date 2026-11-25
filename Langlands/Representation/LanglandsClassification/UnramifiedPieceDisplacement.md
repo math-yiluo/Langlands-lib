@@ -1,6 +1,6 @@
 # Nonzero displacement of an actual unramified geometric-lemma piece
 
-This internal supporting unit derives a nonzero source-cone displacement for
+This internal module derives a nonzero source-cone displacement for
 the original unramified parameter of every nonidentity geometric-lemma piece
 of two parabolics with the same actual Levi embedding. It combines the
 imported normalizer correction and original-character comparison with the
@@ -63,12 +63,15 @@ formula to `b = groupHom f ≫ a'` for any supplied `a' : A' → D.L'` and
 `f : A → A'` whose composite with `D.lQ' ≫ D.q'` is `a`. Its left side is
 exactly the existing `D.unramifiedPieceRealPart pres.isCompatible.splitComponent
 a' f ψ`. No split-component property of `a'` is needed for this character
-comparison; it will be needed separately for tempered exponent transfer.
+comparison; it is needed separately for tempered exponent transfer.
 
 The definition `D.unramifiedPieceDisplacement pres ψ a' f` is the existing
 Levi component parameter minus this existing piece parameter.
 `D.unramifiedPieceDisplacement_mem_nonnegCone_and_ne_zero` proves that the
 actual difference lies in `pres.nonnegCone` and is nonzero under the same
-hypotheses. The sign is the source parabolic cone sign. This unit does not yet
+hypotheses. The sign is the source parabolic cone sign. This module does not
 identify the opposite parabolic cone, establish spectral separation of the
-full tempered twisted piece, or prove the host regularity proposition.
+full tempered twisted piece, or prove the regularity proposition
+`LanglandsTripletOppositeRegularityStatement` that it serves. The Library
+proves that proposition as `langlandsTripletOppositeRegularity` in
+`LanglandsTripletRegularityProof`, which depends on this module.

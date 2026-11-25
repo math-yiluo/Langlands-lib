@@ -1,9 +1,7 @@
 # Simultaneous dynamic realization of extension from a Levi
 
-Authors: Worker 1291 and Worker 717.
-
-Worker 717 supplied the explicit simultaneous P/Z/U realization interface
-needed by its consumer; Worker 1291 wrote the proposition and documentation.
+The proposition gives the explicit simultaneous P/Z/U realization interface
+needed by its consumer.
 
 `DynamicLeviCocharacterRealizationStatement` is a proposition target.
 For every connected reductive group scheme `G` over any field `k : Type u`,
@@ -65,4 +63,5 @@ functors, together with arbitrary-universe and all-test quantification,
 is an explicit Library target motivated by those structural and weight
 descriptions. It is not claimed as a literal quotation, an implemented
 construction, or a proved consequence of the correspondence. Its proof,
-including simultaneous equality on every test scheme, is separate.
+including simultaneous equality on every test scheme, is separate
+(`dynamicLeviCocharacterRealization` in `Dynamic.LeviCocharacterRealizationProof`).

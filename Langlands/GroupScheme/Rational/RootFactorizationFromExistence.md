@@ -1,6 +1,6 @@
 # The full actual rank-one conclusion from opposite-pair existence
 
-This internal derived unit isolates the remaining geometric obligation in
+This internal derived module isolates the remaining geometric input of
 the actual rank-one factorization proof. `HasOppositeFactorPairs` says only
 that every nonidentity rational point of every actual relative root
 subgroup has an ordered opposite pair whose product normalizes the given
@@ -37,5 +37,5 @@ forgets the extra conclusions, yielding the stated equivalence.
 
 All results have arbitrary universe and field. Their provenance is internal
 composition of the imported actual root, coroot, rational-point and fpqc
-inversion proofs. This unit does not prove opposite-pair existence or claim
+inversion proofs. This module does not prove opposite-pair existence or claim
 the unconditional `RootRankOneFactorizationStatement`.

@@ -67,7 +67,7 @@ def conjugationAut (G : GroupScheme S) (n : ℕ) :
 @[reassoc (attr := simp)]
 theorem conjugationAut_inclusion (G : GroupScheme S) (n : ℕ)
     (g : Over.mk (𝟙 S) ⟶ G.X) :
-    (conjugationAut G n g).hom.left ≫ inclusion G n =
+    (conjugationAut G n g).asIso.hom.left ≫ inclusion G n =
       inclusion G n ≫ (G.innerIso g).hom.hom.hom.left :=
   map_inclusion (G.innerIso g).hom n
 
@@ -135,7 +135,7 @@ def baseChangedConjugationAut (n : ℕ) :
 
 @[reassoc (attr := simp)]
 theorem baseChangedConjugationAut_inclusion (n : ℕ) (g : Over.mk b ⟶ G.X) :
-    (baseChangedConjugationAut G b n g).hom.left ≫
+    (baseChangedConjugationAut G b n g).asIso.hom.left ≫
         (separatedBaseChangeOverIso G b n).inv.left ≫
           inclusion ((GroupScheme.baseChange b).obj G) n =
     (separatedBaseChangeOverIso G b n).inv.left ≫
@@ -145,8 +145,8 @@ theorem baseChangedConjugationAut_inclusion (n : ℕ) (g : Over.mk b ⟶ G.X) :
   let e := separatedBaseChangeOverIso G b n
   let c := conjugationAut ((GroupScheme.baseChange b).obj G) n
     ((baseChangeBasePointsEquiv b G).symm g)
-  have he : (baseChangedConjugationAut G b n g).hom ≫ e.inv = e.inv ≫ c.hom := by
-    change (e.inv ≫ c.hom ≫ e.hom) ≫ e.inv = _
+  have he : (baseChangedConjugationAut G b n g).asIso.hom ≫ e.inv = e.inv ≫ c.asIso.hom := by
+    change (e.inv ≫ c.asIso.hom ≫ e.hom) ≫ e.inv = _
     simp
   rw [← Category.assoc, ← Over.comp_left, he, Over.comp_left, Category.assoc]
   exact congrArg (e.inv.left ≫ ·) (conjugationAut_inclusion _ n _)

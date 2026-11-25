@@ -1,6 +1,6 @@
 # Actual roots and reduced quotients for a chosen target class
 
-This derived unit takes actual torus and ambient-group isomorphisms over an
+This module takes actual torus and ambient-group isomorphisms over an
 arbitrary field, their commuting square with the embedded tori, and two
 supplied apartment data with the same scalar function. The inclusions are
 monomorphisms on their underlying schemes and both ambient structural
@@ -31,5 +31,5 @@ Equality elimination reduces the chosen-target statements to those
 existing transports. No common-apartment axiom or chart injectivity is
 needed to construct this quotient equivalence. Both apartment data, the
 actual isomorphisms and the one matching-family premise remain inputs;
-the unit constructs no such premise for arbitrary data and asserts no
+the module constructs no such premise for arbitrary data and asserts no
 unconditional building or reductive-group existence theorem.

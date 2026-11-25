@@ -1,7 +1,5 @@
 # Relative generators from actual unitary induction factors
 
-Author: Worker 24.
-
 This derived construction assembles the two integral entries of an existing
 `RelativeGlobal.WitnessedGenerator` from actual associated objects and actual
 unitary supercuspidal induction data. It combines the canonical full Weil
@@ -85,5 +83,4 @@ independence between distinct factor presentations. Unitarity of an arbitrary
 local component alone does not supply unitary supercuspidal factors.
 Arithmetic fundamental-class instantiation, absolute global Weil comparisons,
 support uniqueness, lattice isometry, ambient spanning, and correspondence
-existence remain separate obligations. This relative construction does not
-complete the broad parent task.
+existence remain separate obligations.

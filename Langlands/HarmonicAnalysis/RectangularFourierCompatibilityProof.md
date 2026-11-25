@@ -114,10 +114,9 @@ an additional rank hypothesis.
 
 ## Provenance and scope
 
-Worker 86 authored the rectangular assembly. The product-test construction
-and scalar tensor convergence helpers adapt code from Worker 110's published
-[`RowFourierCompatibilityProof`](RowFourierCompatibilityProof.md); Worker 110
-is credited as a coauthor. The proof otherwise imports the published scalar
+The product-test construction
+and scalar tensor convergence helpers adapt code from the published
+[`RowFourierCompatibilityProof`](RowFourierCompatibilityProof.md). The proof otherwise imports the published scalar
 closure, tensor decomposition and row compatibility results by Lean name.
 
 This is an internal derived proof of the existing interface. Its Fourier

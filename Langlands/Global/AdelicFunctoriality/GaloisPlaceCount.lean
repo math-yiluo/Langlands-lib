@@ -1,5 +1,5 @@
 import Langlands.Global.AdelicFunctoriality.FiniteComparisonReduction
-import Langlands.ClassField.Global.IdeleLocalInjectivity
+import Langlands.ClassFieldTheory.Global.IdeleLocalInjectivity
 import Mathlib.NumberTheory.RamificationInertia.Galois
 
 /-!
@@ -135,7 +135,7 @@ theorem card_filter_finitePlaceEquiv_mem [IsGalois K L] (v : HeightOneSpectrum (
   rw [Finset.card_eq_sum_card_fiberwise H, ← smul_eq_mul, ← Finset.sum_const]
   refine Finset.sum_congr rfl fun u' hu' => ?_
   have : u'.asIdeal.LiesOver v.asIdeal := hS u' hu'
-  obtain ⟨τ, hτ⟩ := Langlands.ClassField.Global.exists_finitePlaceEquiv_eq v u u'
+  obtain ⟨τ, hτ⟩ := Langlands.ClassFieldTheory.Global.exists_finitePlaceEquiv_eq v u u'
   rw [Finset.filter_filter]
   symm
   refine Finset.card_nbij' (fun s => s * τ) (fun σ => σ * τ⁻¹) ?_ ?_ ?_ ?_
@@ -161,7 +161,7 @@ theorem card_stabilizer_finitePlaceEquiv [IsGalois K L] (v : HeightOneSpectrum (
       q.1.asIdeal.ramificationIdx (𝓞 K) * q.1.asIdeal.inertiaDeg (𝓞 K) =
         u.asIdeal.ramificationIdx (𝓞 K) * u.asIdeal.inertiaDeg (𝓞 K) := by
     intro q
-    obtain ⟨τ, hτ⟩ := Langlands.ClassField.Global.exists_finitePlaceEquiv_eq v u q.1
+    obtain ⟨τ, hτ⟩ := Langlands.ClassFieldTheory.Global.exists_finitePlaceEquiv_eq v u q.1
     rw [← hτ, ramificationIdx_finitePlaceEquiv_algEquiv, inertiaDeg_finitePlaceEquiv_algEquiv]
   have hdeg := card_mul_eq_finrank_of_forall (L := L) v _ hall
   have hcount := card_filter_finitePlaceEquiv_mem v u (placesAbove L v)
@@ -169,7 +169,7 @@ theorem card_stabilizer_finitePlaceEquiv [IsGalois K L] (v : HeightOneSpectrum (
   have hall' : (Finset.univ.filter fun σ : L ≃ₐ[K] L =>
       finitePlaceEquiv σ.toRingEquiv u ∈ placesAbove L v) = Finset.univ := by
     refine Finset.filter_true_of_mem fun σ _ => mem_placesAbove.mpr ?_
-    exact Langlands.ClassField.Global.liesOver_finitePlaceEquiv v u σ
+    exact Langlands.ClassFieldTheory.Global.liesOver_finitePlaceEquiv v u σ
   rw [hall', Finset.card_univ, ← Nat.card_eq_fintype_card, IsGalois.card_aut_eq_finrank,
     ← hdeg] at hcount
   have hpos : 0 < (placesAbove L v).card :=
@@ -195,7 +195,7 @@ theorem card_filter_finitePlaceEquiv_liesOver {M : Type u} [Field M] [NumberFiel
     card_stabilizer_finitePlaceEquiv v u]
   obtain ⟨u'⟩ := nonempty_finitePlacesAbove (L := L) w
   have : u'.1.asIdeal.LiesOver v.asIdeal := Ideal.LiesOver.trans u'.1.asIdeal w.asIdeal v.asIdeal
-  obtain ⟨τ, hτ⟩ := Langlands.ClassField.Global.exists_finitePlaceEquiv_eq v u u'.1
+  obtain ⟨τ, hτ⟩ := Langlands.ClassFieldTheory.Global.exists_finitePlaceEquiv_eq v u u'.1
   have he : u.asIdeal.ramificationIdx (𝓞 K) = u'.1.asIdeal.ramificationIdx (𝓞 K) := by
     rw [← hτ, ramificationIdx_finitePlaceEquiv_algEquiv]
   have hf : u.asIdeal.inertiaDeg (𝓞 K) = u'.1.asIdeal.inertiaDeg (𝓞 K) := by
@@ -203,7 +203,7 @@ theorem card_filter_finitePlaceEquiv_liesOver {M : Type u} [Field M] [NumberFiel
   have : IsGalois M L := IsGalois.tower_top_of_isGalois K M L
   have hdeg := card_mul_eq_finrank_of_forall (K := M) (L := L) w
     (u'.1.asIdeal.ramificationIdx (𝓞 M) * u'.1.asIdeal.inertiaDeg (𝓞 M)) (fun q => by
-      obtain ⟨τ', hτ'⟩ := Langlands.ClassField.Global.exists_finitePlaceEquiv_eq w u'.1 q.1
+      obtain ⟨τ', hτ'⟩ := Langlands.ClassFieldTheory.Global.exists_finitePlaceEquiv_eq w u'.1 q.1
       rw [← hτ', ramificationIdx_finitePlaceEquiv_algEquiv, inertiaDeg_finitePlaceEquiv_algEquiv])
   rw [he, hf, Ideal.ramificationIdx_tower (R := 𝓞 K) w.asIdeal u'.1.asIdeal,
     Ideal.inertiaDeg_tower (R := 𝓞 K) w.asIdeal u'.1.asIdeal, ← hdeg]
@@ -270,12 +270,12 @@ theorem card_filter_rightCosetFamily_liesOver {M : Type u} [Field M] [NumberFiel
       have : (finitePlaceEquiv h.toRingEquiv
           (finitePlaceEquiv τ.toRingEquiv u)).asIdeal.LiesOver w.asIdeal := hτ
       have h1 := finitePlaceEquiv_algEquiv_inv_apply h (finitePlaceEquiv τ.toRingEquiv u)
-      have h2 := Langlands.ClassField.Global.liesOver_finitePlaceEquiv w
+      have h2 := Langlands.ClassFieldTheory.Global.liesOver_finitePlaceEquiv w
         (finitePlaceEquiv h.toRingEquiv (finitePlaceEquiv τ.toRingEquiv u)) h⁻¹
       rwa [h1] at h2
     · intro hτ
       have := hτ
-      exact Langlands.ClassField.Global.liesOver_finitePlaceEquiv w
+      exact Langlands.ClassFieldTheory.Global.liesOver_finitePlaceEquiv w
         (finitePlaceEquiv τ.toRingEquiv u) h
   have hcount := card_filter_finitePlaceEquiv_liesOver (M := M) v u w
   -- Reindex by inversion.

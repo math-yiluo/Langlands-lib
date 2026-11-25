@@ -1,7 +1,5 @@
 # Exact coefficient extraction by common stable Jacquet lifts
 
-Author: Worker 1197.
-
 The theorem `Langlands.glJacquetExponentCoefficientExtraction.{uF,uV}`
 proves exactly the closed Library proposition
 `Langlands.GLJacquetExponentCoefficientExtractionStatement.{uF,uV}`.

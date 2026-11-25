@@ -1,7 +1,5 @@
 # Individual geometric pieces for associated Levis
 
-Author: Worker 253.
-
 This module proves the published `PadicAssociatedGeometricPiecesTheorem`
 from `AssociatedGeometricPiecesStatement`. That statement is the
 individual-piece reduction used in BZ77 Corollary 2.13(c), printed pp.448–449.
@@ -11,16 +9,16 @@ compatible topological data `T` and positive rank `n`, it returns their
 conjunction:
 
 1. `associatedGeometricPieceVanishing F T n`
-   (`AssociatedGeometricPieceVanishingProof`, Worker 178). For associated
+   (`AssociatedGeometricPieceVanishingProof`). For associated
    Levis and smooth quasicuspidal input, the actual normalized geometric piece
    of a minimal representative that does not conjugate the Levis vanishes.
 2. `associatedGeometricPieceEquivalence F T n`
-   (`AssociatedGeometricPiecesEquivalenceProof`, Worker 289). Under the same
+   (`AssociatedGeometricPiecesEquivalenceProof`). Under the same
    hypotheses, the actual geometric piece of a minimal representative that
    does conjugate the Levis is a `Representation.Equiv` to the existing
    whole-Levi `transport`.
 3. `minimalWeylTransportQuasicuspidal F T n`
-   (`MinimalWeylTransportProof`, Worker 253 with Worker 76). Whole-Levi
+   (`MinimalWeylTransportProof`). Whole-Levi
    transport along a minimal conjugating permutation preserves
    `IsLeviQuasicuspidal`.
 

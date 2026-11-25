@@ -2,9 +2,8 @@
 
 `Langlands.squareIntegrableInductionEmbeddingCone` proves exactly
 [`Langlands.SquareIntegrableInductionEmbeddingConeStatement`](SquareIntegrableInductionEmbeddingConeStatement.md).
-Worker 320 supplied the proof draft; Worker 544 checked its interfaces,
-dependency independence and complete quantified target, and prepared these
-paired modules for publication.
+Its interfaces, dependency independence and complete quantified target were
+checked.
 
 An injective intertwiner from the explicitly nontrivial source is nonzero.
 The complex-linear equivalence
@@ -36,12 +35,11 @@ covariance and right translation, and its matching upper Jacquet module uses
 the inverse half-modulus.
 
 The provenance is the internal composition of these published algebraic and
-analytic results. A recursive source audit of both new modules and their 426
+analytic results. A recursive source audit of both modules and their 426
 project modules found no missing imports and no occurrence of the excluded
 segment-classification, ordered-head, quotient-coverage, tempered-block
 uniqueness, square-integrable-exhaustion or regular-exhaustion declarations or
-their proof names. Every existing Lean/Markdown import pair agrees with the
-Library base. The scalar Jacquet-cone input uses local central-scalar detection,
+their proof names. The scalar Jacquet-cone input uses local central-scalar detection,
 Jacquet admissibility, scalar compatibility and the analytic strict exponent
 criterion. This proof constructs no segment head and supplies neither factor
 commutation nor analytic classification.

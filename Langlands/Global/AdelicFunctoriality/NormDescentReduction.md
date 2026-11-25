@@ -5,7 +5,7 @@ adelic and idelic norm. Its input is the exact arithmetic equation saying
 that the norm of a principal adele is the principal adele of the determinant
 field norm. That equation remains an explicit hypothesis of this module's
 constructions. The unconditional principal formula and idele-class norm
-are supplied by the separate published modules described below.
+are supplied by the separate modules described below.
 
 `ideleNorm_principal_of_principal_formula` applies equality of units to the
 principal-adele equation. The resulting equation uses the actual field-unit

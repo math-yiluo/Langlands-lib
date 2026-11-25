@@ -6,9 +6,8 @@ The record `IndependentSteinbergInputs` contains actual root-datum existence,
 rank-one root cells, root Lie lines, integral coroot generation for simply
 connected groups, and opposite factor pairs over algebraically closed fields.
 Its name does not certify any proof of those propositions. The reduction
-asserts none of their existence proofs, and does not complete the
-unconditional target until independently proved inputs satisfying the host
-exclusions are provided and reviewed.
+asserts none of their existence proofs, and gives the
+unconditional target only together with proofs of those inputs.
 
 For an algebraically closed field `k : Type u` of positive prime
 characteristic `q` and an actual simply connected group `G`, the generic
@@ -36,7 +35,8 @@ Steinberg/Borel assembly, canonical linked-root choice and root-line/root-cell
 proofs are not used. This is derived internal assembly of Library algebra and
 the supplied-data support; it adds no new external source assertion.
 
-The included opposite-pair covering modules were contributed by Worker 1407.
-Their independent publication and the structural existence proofs remain
-separate obligations. This conditional reduction is not evidence that any
-of these premises has been discharged under the host exclusions.
+The structural existence proofs are separate:
+`steinbergBigCellIndependent` (module
+`Reductive.SteinbergBigCellIndependentProof`) proves all five inputs from the
+rank-one central cover and applies this reduction. This conditional reduction
+is not by itself a proof of any of these premises.

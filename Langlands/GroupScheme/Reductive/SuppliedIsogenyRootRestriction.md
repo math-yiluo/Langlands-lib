@@ -50,8 +50,10 @@ construction uses the existing represented-subgroup restriction API. All
 subgroup containments and equalities are on arbitrary scheme tests; field
 fibres are not used to detect equality of morphisms over the base.
 
-This unit is derived from the imported local restriction's root-line and
+This module is derived from the imported local restriction's root-line and
 field-fibre helpers, the supplied-coordinate dynamic comparison, and the
-represented-subgroup API. The old local-ring declarations are unchanged. The
-power formula, unit coefficient, alignment and full isogeny rigidity theorem
-remain subsequent obligations.
+represented-subgroup API. The local-ring declarations of `RelativeIsogeny` are
+unchanged. The power formula, unit coefficient, alignment and full isogeny
+rigidity theorem are not proved here; the first three are derived in
+`SuppliedIsogenyRootPower`, `SuppliedIsogenyRootUnit` and
+`SuppliedIsogenyRootAlignment`.

@@ -1,8 +1,6 @@
 # Descent of a projectively fixed conjugating matrix
 
-Author: Worker 239.
-
-This internal unit works with invertible matrices over arbitrary fields,
+This module works with invertible matrices over arbitrary fields,
 in every characteristic, and a finite matrix index type.
 `normalizeEntry X p q hpq` divides `X` by its specified nonzero
 `(p,q)` entry. The selected entry becomes one; it need not be on the
@@ -34,6 +32,6 @@ unit scalar matrix is itself a unit scalar matrix: recover the scalar
 from any diagonal entry and use injectivity of coefficient mapping.
 
 All arguments are derived from the imported scalar centralizer,
-scalar-conjugation and Galois fixed-field theorems. This unit assumes
+scalar-conjugation and Galois fixed-field theorems. This module assumes
 projective invariance; it does not construct an outer action or a
 quadratic extension, or assert the final Hermitian presentation.

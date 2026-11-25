@@ -67,7 +67,7 @@ theorem tensor_isUnitary
 
 end WeilDeligneRepresentation
 
-namespace ClassField.Global.RelativeWeilGroup
+namespace ClassFieldTheory.Global.RelativeWeilGroup
 
 open Langlands.Global Langlands.Global.AdelicFunctoriality Langlands.Global.CompletionPadic
 
@@ -128,6 +128,6 @@ theorem tensor_isUnitary_of_isBaseRestriction_localPairClass
     (isUnitary_of_isBaseRestriction_localPairClass ι hS hA)
     (isUnitary_of_isBaseRestriction_localPairClass_dual ι hS hB)
 
-end ClassField.Global.RelativeWeilGroup
+end ClassFieldTheory.Global.RelativeWeilGroup
 
 end Langlands

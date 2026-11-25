@@ -26,7 +26,8 @@ algebraic dual. It assumes neither irreducibility nor admissibility.
 The final theorem constructs the escaping data for every actual simple-root
 subset that omits a simple root, using the connected reductive, maximal split
 torus, standard-cocharacter, relative-root-system and closed-radical
-hypotheses already present in the uniform-support host target. It then applies
+hypotheses already present in the uniform-support statement
+`RationalNormKernelUniformSupportStatement`. It then applies
 the preceding result. Properness is an omitted actual simple root, so the
 theorem adds no positive-rank assumption on the ambient group.
 

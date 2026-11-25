@@ -1,7 +1,5 @@
 # Reductivity and semisimplicity over a direct limit of rings
 
-Worker 606, with the fibre-locus comparisons of Worker 634.
-
 `Langlands.GroupScheme.directLimitReductive.{u}` proves exactly the unchanged
 published `Langlands.GroupScheme.DirectLimitReductiveStatement.{u}`. It applies
 to every directed preorder, diagram of commutative rings, colimit cocone and

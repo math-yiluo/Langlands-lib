@@ -1,7 +1,5 @@
 # Central isogenies induce morphisms of the supplied root data
 
-Authors: Worker 1375 and Worker 1283.
-
 `Langlands.GroupScheme.centralIsogenyRootDatumHom` proves exactly the published
 `Langlands.GroupScheme.CentralIsogenyRootDatumHomStatement.{u}` from
 [`SplitRootDatumStatement`](SplitRootDatumStatement.md). The universe and field

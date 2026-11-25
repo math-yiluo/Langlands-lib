@@ -21,7 +21,7 @@ variable {F : Type uF} [Field F] [ValuativeRel F] [TopologicalSpace F]
   (i : T.toGrp ⟶ G) (ν : cocharacterLattice T)
 
 local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
-local instance : TopologicalSpace (rationalPoints G) := pointTopology
+local instance standardLeviInertialClassTopologicalSpace : TopologicalSpace (rationalPoints G) := pointTopology
 
 variable [LocallyCompactSpace (rationalPoints G)] [NonarchimedeanGroup (rationalPoints G)]
   (family : BernsteinStandardFamily i ν)

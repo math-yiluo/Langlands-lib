@@ -1,7 +1,5 @@
 # Analytic tempered induction from the actual GL block Levi
 
-Author: Worker 200.
-
 `Langlands.glTemperedInduction` proves exactly
 `Langlands.GLTemperedInductionStatement.{uF,uV}` from
 `Langlands.Representation.Classification.TemperedInductionStatement`.
@@ -33,8 +31,7 @@ general linear topological group, then introduces the unchanged target.
 Write `htemp` for its analytic hypothesis at the original `μ`.
 
 First, `glLeviTemperedUnitarity.{uF,uV}` from
-[LeviTemperedUnitarityProof](LeviTemperedUnitarityProof.md), by Workers 551
-and 560, applies to exactly `hσ` and `htemp`. It gives an actual invariant
+[LeviTemperedUnitarityProof](LeviTemperedUnitarityProof.md) applies to exactly `hσ` and `htemp`. It gives an actual invariant
 positive definite Hermitian form on the supplied carrier through
 `IsUnitarizable σ`. That published proof derives the needed factorization
 and analytic comparisons internally. No tensor presentation is a
@@ -42,7 +39,7 @@ hypothesis of the present theorem.
 
 Second, `htemp.isAdmissible.1` supplies smoothness.
 `glNormalizedParabolicInductionUnitarity.{uF,uV}` from
-[../Induction/UnitaryProof](../Induction/UnitaryProof.md), by Worker 117,
+[../Induction/UnitaryProof](../Induction/UnitaryProof.md)
 uses this smoothness and the input form to prove unitarizability of the
 actual induced action. Its published construction integrates the scalar
 pairing over a compact picture and proves positivity and invariance under
@@ -68,8 +65,8 @@ Its group universe is `uF`, while its carrier universe is `max uF uV`,
 the universe of the actual induced function space.
 
 Finally, `glTemperedInductionPreservation.{uF,uV}` from
-[TemperedInductionPreservationProof](TemperedInductionPreservationProof.md),
-by Worker 540, receives exactly the original irreducibility and analytic
+[TemperedInductionPreservationProof](TemperedInductionPreservationProof.md)
+receives exactly the original irreducibility and analytic
 hypotheses, including the same input `μ`. It supplies the final analytic
 conjunct. The proof returns these three results as the required conjunction.
 
@@ -95,8 +92,7 @@ present assembly leaves no analytic bridge or measure-invariance premise.
 This module composes the named published theorems. It uses no downstream
 tempered exhaustion, square-integrable block induction, tempered
 unitarity-and-genericity aggregate, or regular Langlands classification
-proof. The target statement and all imported Lean and Markdown pairs
-are preserved.
+proof.
 
 ## Original sources and provenance
 
@@ -123,7 +119,7 @@ Both sources formulate temperedness by weak coefficient bounds.
 The implemented `L^(2+ε)` comparisons are the published analytic
 necessity, sufficiency, Haar and tensor proofs identified above and
 documented in the imported proof pairs. The source assertions alone
-are not used as formal implications. This contribution's new proof is
+are not used as formal implications. This module's proof is
 the internal assembly of those results. No source-specific errata file
 for either original was present in the supplied project or current
 Library notes when checked on 2026-10-31.

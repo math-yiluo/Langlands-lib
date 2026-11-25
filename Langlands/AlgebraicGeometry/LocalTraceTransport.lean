@@ -25,8 +25,8 @@ theorem localSectionTrace_overlap
     {U' W : Y.Opens} {J : Type u} [Fintype J]
     (e' : SheafOfModules.free (R := Y.ringCatSheaf.over U') J ≅ M.over U')
     (a : End M) (i : W ⟶ U) (j : W ⟶ U') :
-    localSectionTrace e (a.over U) (Over.mk i) =
-      localSectionTrace e' (a.over U') (Over.mk j) := by
+    localSectionTrace e (End.of (a.asHom.over U)) (Over.mk i) =
+      localSectionTrace e' (End.of (a.asHom.over U')) (Over.mk j) := by
   rw [localSectionTrace_eq_trace, localSectionTrace_eq_trace]
   rfl
 
@@ -36,7 +36,7 @@ theorem localSectionTrace_pullback_transport (f : X ⟶ Y)
     (h : ((AlgebraicGeometry.Scheme.Modules.pullback f).obj M).over (f ⁻¹ᵁ U) ≅
       N.over (f ⁻¹ᵁ U))
     (a : End (M.over U)) (b : End (N.over (f ⁻¹ᵁ U)))
-    (hab : localHomPullback f U a ≫ h.hom = h.hom ≫ b) (V : Over U) :
+    (hab : localHomPullback f U a.asHom ≫ h.hom = h.hom ≫ b.asHom) (V : Over U) :
     f.app V.left (localSectionTrace e a V) =
       localSectionTrace (chartFreePullbackTransportIso f e h) b
         (Over.mk ((TopologicalSpace.Opens.map f.base).map V.hom)) := by
@@ -53,7 +53,7 @@ theorem localSectionTrace_pullback_transport_any_chart (f : X ⟶ Y)
     (e' : SheafOfModules.free (R := X.ringCatSheaf.over (f ⁻¹ᵁ U)) J ≅
       N.over (f ⁻¹ᵁ U))
     (a : End (M.over U)) (b : End (N.over (f ⁻¹ᵁ U)))
-    (hab : localHomPullback f U a ≫ h.hom = h.hom ≫ b) (V : Over U) :
+    (hab : localHomPullback f U a.asHom ≫ h.hom = h.hom ≫ b.asHom) (V : Over U) :
     f.app V.left (localSectionTrace e a V) =
       localSectionTrace e' b
         (Over.mk ((TopologicalSpace.Opens.map f.base).map V.hom)) := by

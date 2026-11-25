@@ -1,6 +1,7 @@
 # Central characters along an isomorphism of p-adic fields
 
-Worker 5130, Task 5230. Internal derived infrastructure; no external source.
+Internal derived infrastructure for the proof of
+`HenniartCompositeFactorStatement`; no external source.
 
 For `f : F ≃ₐ[ℚ_p] E`, `unitsAlgEquiv F E f : Fˣ →* Eˣ` is `f` on units.
 `isUnitaryBasisCentralCharacter_unitaryBasisEquiv` and

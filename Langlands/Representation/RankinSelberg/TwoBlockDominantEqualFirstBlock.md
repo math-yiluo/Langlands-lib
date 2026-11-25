@@ -1,6 +1,6 @@
 # First-block Laurent laws for actual equal-rank Jacquet coefficients
 
-Worker 484 supplies this internal specialization of the published ordinary
+This module is an internal specialization of the published ordinary
 Jacquet functional theorem, the first-block Laurent identity and the
 unequal-rank functional equation. It discharges the first-block epsilon
 premise for the original equal-rank induced coefficient model at sufficiently

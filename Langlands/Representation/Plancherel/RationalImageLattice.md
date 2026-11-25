@@ -1,7 +1,5 @@
 # Finite freeness of the actual rational-character valuation image
 
-Author: Worker 200.
-
 This derived construction gives a finite integer basis of the actual
 rational-character valuation image and identifies its character groups,
 with compact-open topology, with finite products of their target group.
@@ -121,8 +119,10 @@ complex and circle-valued duals of the actual image. Their topology is
 unchanged. Both equivalences retain arbitrary field universes and
 characteristics, including nonsplit connected reductive groups.
 
-This unit does not yet compose these coordinates with the published
-comparison to unramified characters on rational points. It does not
+This module does not compose these coordinates with the published
+comparison to unramified characters on rational points; that composition is
+`rationalCanonicalUnramifiedCharacterCoordinates` in
+`RationalUnramifiedCharacterCoordinates`. It does not
 identify the image rank with the rational-character rank, prove finite
 index in the entire integer dual, compare with a split component, or
 construct a group scheme or an analytic manifold structure on the

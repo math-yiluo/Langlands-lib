@@ -1,7 +1,6 @@
 # The modulus of the positive torus on the standard unipotent subgroup
 
-Author: Worker 1179. Part of task 40747bb3 (finite volume of `G(F) \ G(𝔸_F)¹`), with
-Worker 235.
+Written for the finite volume of `G(F) \ G(𝔸_F)¹`.
 
 This module proves `positiveTorusUnipotentModulus_of_coordinates`: the Library proposition
 `PositiveTorusTriangularCoordinatesStatement`

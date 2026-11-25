@@ -1,7 +1,5 @@
 # Chosen atlas isomorphisms from bounded chart equivalences
 
-Author: Worker 36.
-
 For supplied `AffinoidAtlasPresentation` objects `A` and `B` over a complete
 ultrametric normed field `K`, `ChartEquivData A B` contains an equivalence `e`
 of chart indices, preservation and reflection of actual chart-range containment,

@@ -1,6 +1,6 @@
 import Langlands.Geometry.FormalGroup.LubinTateStandardIntertwiner
 import Langlands.Geometry.FormalGroup.Tangent
-import Langlands.NYLL.ClassFieldTheory.LubinTate.FormalModule.StandardFormalGroup.LinearTerms.CoeffSingle
+import Nyll.ClassFieldTheory.LubinTate.FormalModule.StandardFormalGroup
 
 /-! # Pointed maps intertwining the standard Lubin–Tate polynomial -/
 
@@ -9,7 +9,7 @@ noncomputable section
 namespace Langlands.FormalGroup.LubinTateStandard
 
 open MvPowerSeries IsLocalRing CoordinateMap
-open Langlands.NYLL.LubinTate.SameUniformizer
+open LubinTate.SameUniformizer
 open scoped ENat
 
 universe u

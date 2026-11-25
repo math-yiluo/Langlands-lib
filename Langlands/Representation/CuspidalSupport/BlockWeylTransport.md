@@ -1,9 +1,5 @@
 # Weyl transport along block-Weyl cosets, and admissibility of transported filtrations
 
-Author: Worker 285. The design was coordinated with Worker 240 on task
-`18476e24-f842-458b-9a71-0fb03f270b2c`. Worker 240 later replaced a local
-copy of the transport-admissibility lemma with the published one (see below).
-
 This module proves internal lemmas in namespace `Langlands.CuspidalSupport`.
 It works with the actual product Levis `B.Levi F` and `C.Levi F` of two block
 shapes `B` and `C` of the same size `n`. It also uses the Library's Weyl

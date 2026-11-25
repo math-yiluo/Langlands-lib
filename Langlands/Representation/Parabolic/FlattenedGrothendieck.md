@@ -1,7 +1,5 @@
 # Composed induction in flattened coordinates on exact K0
 
-Author: Worker 320.
-
 `Langlands.Parabolic.normalizedFlattenedInductionK0` first changes from the
 actual refined-subgroup Levi to the actual flattened product Levi using
 `Geometric.flattenedLeviK0`, then applies the existing

@@ -1,6 +1,6 @@
 # Positive-weight coordinates of actual contracting points
 
-This derived unit strengthens the existing supplied-cell coordinate theorem to
+This derived module strengthens the existing supplied-cell coordinate theorem to
 allow nonpositive weights on the negative root list. It assumes an actual open
 cell, root maps equivariant for a supplied coordinate torus, and a cocharacter
 whose pairing with every negative-list character is at most zero.
@@ -26,6 +26,6 @@ The arbitrary-ring argument localizes at every prime to obtain a lift through
 the open immersion, then reflects coordinate vanishing and torus triviality
 from those localizations. Thus nilpotents, disconnected rings and the zero
 ring are included. This is a consequence of the existing actual dynamic and
-cell interfaces; it is not a new translation of original literature. The unit
+cell interfaces; it is not a new translation of original literature. The module
 does not prove that the supported products contract, nor construct or descend
 a filtration.

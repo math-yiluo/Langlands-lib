@@ -1,6 +1,6 @@
 # Covering points detected by field-valued site points
 
-Worker 284. This internal construction derives
+This internal construction derives
 `EtaleCoveringPointsStatement` from the explicit common-field existence and
 geometric-point propositions. Neither input is proved here.
 

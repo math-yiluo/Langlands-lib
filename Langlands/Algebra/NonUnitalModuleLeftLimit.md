@@ -1,9 +1,5 @@
 # The actual additive left-image inverse limit of an original module
 
-Authors: Worker 6 (construction and intrinsic proofs) and Worker 185
-(source/interface audit and submission). This is the additive definition
-unit for task `3bae5926-2206-436d-8184-88931a1f66ed`.
-
 The governing original is David Renard, *Représentations des groupes
 réductifs p-adiques*, French version dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
@@ -13,7 +9,8 @@ supply the nonunital original actions, corner order and module
 inverse limit. The actual left-image transitions, compatible-family
 description and canonical map are on printed p.9/PDF15.
 The following Hom description and scalar action on printed p.10/PDF16
-are distinct successors. The registered supplementary 2010 errata
+are treated separately (the scalar action in
+`NonUnitalModuleLeftLimitAction`). The registered supplementary 2010 errata
 `renard-2010-corrections-complements`, SHA256
 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
 was consulted at PDF pages 1–3. Its opening Chapter I corrections concern
@@ -99,7 +96,8 @@ No topology, analytic completion, scalar action on the
 family carrier, Hom comparison, completion functor or
 smoothing/completion adjunction is installed or claimed.
 In particular, the correct original `A`-action is a
-separate construction; coordinatewise scalar action
+separate construction, in `NonUnitalModuleLeftLimitAction`;
+coordinatewise scalar action
 does not in general preserve these compatibility
 equations. The subsequent action need not be
-nondegenerate. These remain explicit successor obligations.
+nondegenerate.

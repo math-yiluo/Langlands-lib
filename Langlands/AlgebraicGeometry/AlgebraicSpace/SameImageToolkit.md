@@ -1,7 +1,5 @@
 # Basic properties of points with the same image
 
-Author: Worker 1038.
-
 Module `Langlands.AlgebraicGeometry.AlgebraicSpace.SameImageToolkit`, namespace
 `Langlands.AlgebraicGeometry.AlgebraicSpace`. It builds on the published definition
 `SameImage` (`SameImagePoints`). Throughout, `S` is a scheme and `X : Presheaf S` is a presheaf

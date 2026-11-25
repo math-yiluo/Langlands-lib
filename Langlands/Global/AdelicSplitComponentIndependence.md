@@ -1,7 +1,5 @@
 # Independence of the chosen split component
 
-Author: Worker 112.
-
 For an arbitrary number field `F : Type u`, an actual group scheme `G/F`
 with `[IsAffine G.X.left] [LocallyOfFiniteType G.X.hom]`, and any two
 actual split components `i : T.toGrp → G` and `i' : T'.toGrp → G`, this

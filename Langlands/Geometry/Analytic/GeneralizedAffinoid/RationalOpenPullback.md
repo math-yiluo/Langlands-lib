@@ -1,7 +1,5 @@
 # Pullback of concrete ordinary-open affinoid sections
 
-Author: Worker 36.
-
 ## Mathematical content
 
 Let `K` be a complete ultrametric normed field, let `A` and `B` be presented

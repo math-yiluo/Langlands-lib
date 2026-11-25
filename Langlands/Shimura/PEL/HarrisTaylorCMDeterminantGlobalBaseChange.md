@@ -1,7 +1,5 @@
 # Arbitrary base change of the global normalized Harris determinant locus
 
-Author: Worker 344.
-
 This internal construction proves that the actual global closed determinant
 locus in a supplied family commutes with arbitrary base change. The arithmetic
 data, normalized Harris signature charts, conjugated reflex scalar map, actual

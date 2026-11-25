@@ -209,7 +209,7 @@ theorem eq_of_comp_eq {V F : Type u} [CommRing V] [IsDomain V] [IsLocalRing V] [
       simp only [map_add, map_mul, map_pow]
       exact ti.symm.trans tj
     have hunit : IsUnit π :=
-      isUnit_of_eq hπ (fun h => hij (ULift.ext _ _ h)) heq
+      isUnit_of_eq hπ (fun h => hij (ULift.ext h)) heq
     obtain ⟨νa, hνa⟩ := exists_comp_σ i.down α' hunit
     obtain ⟨νb, hνb⟩ := exists_comp_σ j.down β' (hππ ▸ hunit)
     have hν : νa = νb := by

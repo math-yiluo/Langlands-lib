@@ -1,7 +1,5 @@
 # Local special-fibre detection for split-torus homomorphisms
 
-Author: Worker 717.
-
 This internal module collects consequences of the published open
 closed-immersion and isomorphism loci for split-torus homomorphisms. Every
 result is quantified in an arbitrary universe. The base ring is any
@@ -39,6 +37,7 @@ change, then by composition with the isomorphic special-fibre map of `f`.
 
 The provenance is internal composition of these published Library results
 and Mathlib's local-spectrum topology. This module supplies a torus
-embedding step for the prescribed-map rigidity argument in Task 6422. It
+embedding step for the prescribed-map rigidity argument in the proof that
+fibrewise isogenies of reductive group schemes are isogenies. It
 asserts neither maximality of the resulting torus nor invertibility of an
 ambient reductive homomorphism.

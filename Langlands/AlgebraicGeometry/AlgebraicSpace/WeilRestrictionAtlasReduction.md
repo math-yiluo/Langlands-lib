@@ -1,7 +1,5 @@
 # Reduction of restricted atlases to restricted schemes over test schemes
 
-Author: Worker 185.
-
 This is derived infrastructure for the affine-atlas step in Conrad, *Weil and
 Grothendieck approaches to adelic points* (December 31, 2011), Lemma 5.10,
 printed pp.17–18 (registered source

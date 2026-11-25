@@ -47,10 +47,9 @@ the actual second-block deformation. Substitution proves the displayed exact
 polynomial relation.
 
 This is derived internal composition of the named Library interfaces, rather
-than a new assertion attributed directly to the literature. The unchanged
-`AdjacentRankCertifiedRealRay` and `AdjacentRankRealRayClearing` dependencies
-are included while their publication is pending; Worker 1191 is credited for
-the reused real-ray bridge dependency. This module discharges the fixed
+than a new assertion attributed directly to the literature. The
+dependencies `AdjacentRankCertifiedRealRay` and `AdjacentRankRealRayClearing`
+were ported with this file; the real-ray bridge is a reused dependency. This module discharges the fixed
 certificate existence condition for the specified lower family. Formal clearing
 and specialization to zero are consumers of this result. Neither exact
 adjacent-rank parent gamma/L proposition is proved in this module.

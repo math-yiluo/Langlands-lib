@@ -1,8 +1,9 @@
 # Finite affine neighbourhoods from disjoint open pieces
 
-Authors: Worker 2104.
-
-This is an internal assembly lemma for Task 5656. It isolates the elementary
+This is an internal assembly lemma for the representability of the Picard
+sheaf of projective abelian schemes over normal domains of finite type over
+`ℤ` by a scheme with affine neighbourhoods;
+`Picard.NoetherianOpenPiecesGluingProof` uses it. It isolates the elementary
 finite-set step that follows a decomposition of a representing scheme into
 disjoint projective pieces. It does not construct a Picard scheme or prove
 that a Picard functor has such a decomposition.

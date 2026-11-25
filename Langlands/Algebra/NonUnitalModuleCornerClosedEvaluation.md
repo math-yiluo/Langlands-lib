@@ -1,6 +1,6 @@
 # Evaluation under subobject closure
 
-Worker 133. This module proves the inverse-induction clause
+This module proves the inverse-induction clause
 `NonUnitalModuleCornerSimpleStatements.CornerInductionInverseStatement`.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*,
@@ -8,7 +8,7 @@ The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 `renard-2026-representations-groupes-reductifs-padiques`, I.3.2,
 printed p.22 / PDF p.28, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 133 read printed pp.19–22.
+Printed pp.19–22 were read.
 
 First, generatedness descends through every categorical epimorphism:
 the published concrete epi criterion makes it surjective, and the published

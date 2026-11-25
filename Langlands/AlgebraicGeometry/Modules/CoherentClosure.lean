@@ -221,6 +221,9 @@ lemma biprod (hM : HasFiniteAffineSections M) (hN : HasFiniteAffineSections N) :
   have := hM U
   have := hN U
   let F := SheafOfModules.evaluation.{u} X.ringCatSheaf (op U.1)
+  have : F.PreservesZeroMorphisms := inferInstanceAs
+    (SheafOfModules.forget X.ringCatSheaf ⋙
+      PresheafOfModules.evaluation.{u} _ (op U.1)).PreservesZeroMorphisms
   have := preservesBinaryBiproducts_of_preservesBinaryProducts F
   let e : F.obj (M ⊞ N) ≅ ModuleCat.of Γ(X, U.1) (Γ(M, U.1) × Γ(N, U.1)) :=
     F.mapBiprod M N ≪≫ ModuleCat.biprodIsoProd _ _

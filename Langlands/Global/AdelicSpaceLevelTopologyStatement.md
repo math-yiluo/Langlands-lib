@@ -1,7 +1,5 @@
 # Topological properties of adelic-level points of algebraic spaces
 
-Author: Worker 105.
-
 `AdelicSpaceLevelTopologyStatement` states the topological claims that Brian Conrad,
 *Weil and Grothendieck approaches to adelic points* (December 31, 2011), makes on
 printed p.17 after Corollary 5.7, for global fields of both characteristics. The

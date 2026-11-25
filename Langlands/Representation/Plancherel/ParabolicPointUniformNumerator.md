@@ -1,11 +1,9 @@
 # The uniform regular numerator for actual rational-point parabolics
 
-Author: Worker 1615.
-
-This module is a supporting construction for the host task proving
+This module is a supporting construction for
 `Langlands.Plancherel.ConditionalParabolicIntertwiningStatement`. It removes
 the structural hypotheses of `CompactIntertwiningUniformNumerator` for the
-actual rational-point data of the host statement. It then combines the uniform
+actual rational-point data of that statement. It then combines the uniform
 numerator with the published weak-regularity and local-divisibility theorems.
 
 ## Opposite Iwahori bases of dynamic subgroups
@@ -54,9 +52,9 @@ parabolic `P(λ)`. The published `centralizer_inverseCocharacter` and
 `eq_one_of_mem_opposite_unipotent_of_mem_parabolic` give normalization and the
 trivial intersection.
 
-## The host-level numerator and rationality
+## The numerator and rationality for the data of the statement
 
-The section `Host` takes the actual data of the host statement: presentations
+The section `Host` takes the actual data of `ConditionalParabolicIntertwiningStatement`: presentations
 `r` and `r'` with the same Levi composite (`hLevi : l ≫ p = l' ≫ p'`) and the
 same split component, geometric radicals `n` and `n'`, and subgroups `Ppt`,
 `Upt`, `U'pt` of `G(k)` given with their defining equalities to the actual
@@ -88,6 +86,6 @@ numerator input is the theorem above.
 The module does not prove full convergence, local domination, radical
 unimodularity or the squared-modulus compatibility. These remain explicit
 inputs, exactly as in the published weak-regularity theorem. It does not choose
-the region or prove the host theorem. All steps are internal compositions of
+the region or prove `ConditionalParabolicIntertwiningStatement`. All steps are internal compositions of
 the published Library declarations named above and of
 `CompactIntertwiningUniformNumerator`; no literature theorem replaces a proof.

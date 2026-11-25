@@ -6,8 +6,8 @@
 > `[IsTopologicalGroup G]` as a section variable, but the body of the definition
 > does not use it, so Lean leaves it out of the definition. The elaborated
 > proposition therefore quantifies over every group `G` with an arbitrary
-> topology. The intended setting, that of the source and of the task that
-> requested this statement, is a topological group. The proposition stays in the
+> topology. The intended setting, that of the source, is a topological group.
+> The proposition stays in the
 > Library unproved.
 >
 > It is replaced by
@@ -22,7 +22,7 @@
 > counterpart `analyticEtaleGodementCompactAcyclic_of_correctedLocal_and_ordinary`
 > in the corrected module, with the same conclusion and ordinary premise.
 >
-> The rest of this page describes the original unit as it was published. Its
+> The rest of this page describes the original module as it was published. Its
 > description of the hypotheses omits the topological-group hypothesis for the
 > reason above.
 
@@ -76,5 +76,5 @@ reduction and actual Godement natural isomorphism extend this to every input
 The conditional theorem uses neither equivariant compact/global comparison,
 parent restricted-injective acyclicity nor injectivity preservation by
 equivariant restriction. Neither the local statement nor the ordinary compact
-vanishing premise is discharged by this unit. Raw point-product acyclicity alone
+vanishing premise is discharged by this module. Raw point-product acyclicity alone
 cannot justify passing through the locally discrete coreflector.

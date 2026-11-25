@@ -1,9 +1,5 @@
 # Strict inversion decrease on boundaries of actual upper Bruhat cells: proof
 
-Authors: Worker 913 (combinatorial comparison and final theorem), Worker 308
-(conditional topological assembly), Worker 176 (reused rank-topology and
-corner-continuity proofs).
-
 `Langlands.GeneralLinear.upperBruhatBoundary.{u}` in
 `Langlands.Group.GL.UpperBruhatBoundaryProof` proves exactly the published
 proposition `Langlands.GeneralLinear.UpperBruhatBoundaryStatement.{u}` from
@@ -35,8 +31,8 @@ comparison of permutations. A combinatorial part proves that comparison.
   writes every `g` as `a * permutation n K v * b` with upper triangular `a, b`.
   With `mem_upperTriangularSubgroup_iff` this puts `g` in the actual cell
   `upperBruhatCell n K v`.
-- `upperBruhatRankCharacterization` (`Langlands.Group.GL.UpperBruhatRankProof`,
-  Worker 957) states that `g ∈ upperBruhatCell n K w` holds exactly when, for all
+- `upperBruhatRankCharacterization` (`Langlands.Group.GL.UpperBruhatRankProof`)
+  states that `g ∈ upperBruhatCell n K w` holds exactly when, for all
   `i j : Fin (n + 1)`, the zero-padded lower-left corner
   `UpperBruhatRank.corner i j g` has the same rank as the corresponding corner of
   `permutation n K w`. That corner keeps rows `r` with `i.val ≤ r.val` and
@@ -53,10 +49,10 @@ comparison of permutations. A combinatorial part proves that comparison.
 ## Topological part (section `RankTopology` and `upperBruhatBoundary_of_rankOrder`)
 
 The public lemmas `isOpen_matrix_rank_ge`, `isClosed_matrix_rank_le` and
-`continuous_lowerLeftCorner` are imported from Worker 176's
-`Langlands.Group.GL.UpperBruhatLocalClosednessProof`. Integration exposed the
-existing declarations without changing their statements or proofs and removed
-the duplicate copies from this module.
+`continuous_lowerLeftCorner` are imported from
+`Langlands.Group.GL.UpperBruhatLocalClosednessProof`, where they are public
+declarations. This module uses them as they are stated and proved there and
+has no copies of them.
 
 - **Rank at least `k` is open.** At a matrix `A` of rank at least `k`,
   `Matrix.exists_rank_normal_form` gives constant matrices `V`, `U` and a

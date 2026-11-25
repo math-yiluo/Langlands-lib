@@ -1,6 +1,6 @@
 # Finite type from structural atlases
 
-This internal supporting unit uses the published algebraic-space morphism
+This internal supporting module uses the published algebraic-space morphism
 predicates and finite-presentation chart construction. It proves no new
 limit-descent clause.
 
@@ -29,8 +29,9 @@ The final equivalence removes precisely these two finite-type conditions
 from the published definition of properness. Under the same atlas hypotheses,
 a morphism is proper exactly when it is separated and universally closed.
 Universal closedness retains its original meaning on the points of every
-scheme-tested presheaf fibre product. Its descent along limits remains an
-independent obligation of the host task.
+scheme-tested presheaf fibre product. Its descent along limits is an
+independent step toward `SpaceLimitPropertyDescentStatement`, the statement
+this module serves, and is not proved here.
 
 The base-change version applies this equivalence over any affine new base;
 the existing structural-atlas and diagonal base-change theorems retain all

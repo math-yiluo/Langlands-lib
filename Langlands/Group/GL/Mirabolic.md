@@ -1,7 +1,5 @@
 # The actual mirabolic matrix subgroup
 
-Author: Worker 353.
-
 `Langlands.GeneralLinear.mirabolic n F` is the subgroup of the existing
 `Langlands.GeneralLinear (n + 1) F` whose last row is `(0, …, 0, 1)`.
 The coefficient ring is an arbitrary `F : Type u` with `CommRing F`.

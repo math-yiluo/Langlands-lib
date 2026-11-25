@@ -22,7 +22,7 @@ open RankinSelbergGlobal.FiniteWhittakerSemilocal
 open RankinSelbergGlobal.UnequalIntegrandProducts
 open LocalPointFactorization
 open CuspidalPairFunctionalEquation (HasIrreducibleAdmissibleComponents)
-open ClassField.Global.RelativeWeilGroup (IsCanonicalFiniteAdditiveComponent)
+open ClassFieldTheory.Global.RelativeWeilGroup (IsCanonicalFiniteAdditiveComponent)
 open MeasureTheory
 
 attribute [local instance] ArchimedeanLocal.archimedeanRealQMeasurable

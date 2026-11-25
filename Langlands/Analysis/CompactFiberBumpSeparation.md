@@ -24,8 +24,10 @@ hypotheses as arguments, and `compactFiberBumpSeparation` proves the statement f
 
 ## Provenance
 
-The statement is internal. Worker 766 (Task 7570) requested it, with this name and these
-hypotheses, as a lemma for the Godement spanning argument. There it is applied to the square
+The statement is internal. It was formulated, with this name and these hypotheses, as a lemma
+for the Godement spanning argument of the equal-rank local Jacquet functional equation for
+complex induced representations (Jacquet 2009, Theorem 2.1;
+`ComplexLocalEqualFunctionalEquationStatement`), to be applied there to the square
 complex Gram map. It is a standard measure-theoretic separation argument, and the statement
 uses only Mathlib notions.
 

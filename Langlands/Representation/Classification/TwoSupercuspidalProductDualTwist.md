@@ -1,17 +1,15 @@
 # Smooth dual and `|det|` twist of normalized block products
 
-Authors: Worker 745, with proofs adapted from Worker 264 and Worker 6.
-Worker 264 wrote the proof that `productSmoothDual` adapts. Worker 6 wrote the
-proof that `productCharacterTwist` adapts, and the three private lemmas, which
-are copied verbatim. Worker 745 wrote the rest and did the adaptation. The
+The proofs of `productSmoothDual` and `productCharacterTwist` adapt published
+Library proofs, and the three private lemmas are copied verbatim from one. The
 section "Reused published proofs" below gives the exact sources.
 
 This module proves the identity
 `ν · (ρ_1 × … × ρ_r)~ ≅ ν ρ_1~ × … × ν ρ_r~` for normalized products of
 admissible blocks of `GL_n`, where `ν = |det|` and `~` is the smooth
 contragredient. It also specializes the identity to two supercuspidal blocks.
-It is an input to the proof of Ze80 Proposition 1.11(a) (task
-`3c9849a4-a6c0-43ac-9982-d15ed76bf1e9`), which follows BZ77 Theorem 4.2.
+It is an input to the proof of Ze80 Proposition 1.11(a)
+(`TwoSupercuspidalNonadjacentIrreducibilityProof`), which follows BZ77 Theorem 4.2.
 
 ## Source
 
@@ -100,11 +98,11 @@ All equivalences are `Representation.Equiv`, wrapped in `Nonempty`.
 
 ## Reused published proofs
 
-Two proofs in this module come from published Library proofs by other workers.
+Two proofs in this module come from published Library proofs.
 All locations refer to Library commit
 `9076dbdeff7e1d9a1bddd23c2f62e11d180814a1`.
 
-- `productSmoothDual` adapts Worker 264's proof of
+- `productSmoothDual` adapts the proof of
   `twistedProductOrdinaryDual`, in
   `Langlands/Representation/Classification/TwistedProductOrdinaryDualProof.lean`,
   lines 52–74. The Lean steps are the same: the external tensor product `σ`,
@@ -113,17 +111,17 @@ All locations refer to Library commit
   blocks `ν^(s_i) δ_i`. It therefore drops the admissibility-of-twist step and
   the final segment-factor equivalence `e3`.
 - `determinant_parabolic`, `determinant_leviEmbedding` and
-  `blockTensor_determinant_twist` are copied verbatim from Worker 6's
+  `blockTensor_determinant_twist` are copied verbatim from
   `Langlands/Representation/Classification/TwistedProductCharacterTwistProof.lean`,
   lines 15–73. They are private there, so they cannot be imported.
-- `productCharacterTwist` adapts Worker 6's proof of
+- `productCharacterTwist` adapts the proof of
   `twistedProductCharacterTwist` in the same file, lines 78–128. The
   adaptation applies it to the blocks `δ i` instead of the segment factors
   `ν^(s_i) δ_i`. It drops the per-block commutation step `hblock`, and the rest
   of the proof is unchanged.
 
-Worker 745 wrote `absCharacter`, `productDualTwist`, `dualTwist` and
-`twoBlockDualTwist`.
+`absCharacter`, `productDualTwist`, `dualTwist` and
+`twoBlockDualTwist` are original to this module.
 
 ## Provenance and dependency audit
 
@@ -149,6 +147,6 @@ Their transitive `Langlands` closure has 209 modules at Library commit
 modules. Nothing in this module uses their propositions as hypotheses or
 consequences. The closure contains no derivative, segment, socle, head,
 multisegment, Langlands-classification, square-integrability, tempered,
-exhaustion or product-irreducibility module. So no excluded result of task
-`3c9849a4-a6c0-43ac-9982-d15ed76bf1e9` is used. This audit covers this module
+exhaustion or product-irreducibility module. So no result excluded from the
+proof of Ze80 1.11(a) is used. This audit covers this module
 only. It does not certify the dependency closure of a later consumer.

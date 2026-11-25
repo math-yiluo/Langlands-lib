@@ -158,7 +158,7 @@ variable {G : Type z} [Group G] [TopologicalSpace G]
 `d(σ, 1_X) < (U, f, t)`, that is, `σ(U) = U` and `ρ(σ*f - f) ≤ t`. -/
 def nearIdentity {X : LocalizedCategory.{u, v, w} (K := K)} (τ : TestTriple (presentationOf X)) :
     Set (Aut X) :=
-  {σ | IsNear τ σ.hom (𝟙 X)}
+  {σ | IsNear τ σ.asIso.hom (𝟙 X)}
 
 theorem one_mem_nearIdentity {X : LocalizedCategory.{u, v, w} (K := K)}
     (τ : TestTriple (presentationOf X)) : (1 : Aut X) ∈ nearIdentity τ :=

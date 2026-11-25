@@ -1,6 +1,6 @@
 # Nonvanishing consequences of actual normalized first adjointness
 
-Worker 1216 derives these internal consequences of the actual normalized
+This module derives these internal consequences of the actual normalized
 first-adjointness equivalence. The hypotheses are the same actual semidirect
 decomposition `P = M ⋉ U`, closedness of `U`, local compactness and
 nonarchimedeanness of `G`, and explicit `IsUnimodularModulus U hU`.
@@ -40,7 +40,7 @@ and smooth orbit functions, as described in its paired Markdown.
 No classification, character-independence, geometric-lemma or
 cuspidal-support theorem is used in these consequences.
 
-This unit proves nonvanishing for subobjects of induction. Nonvanishing for
+This module proves nonvanishing for subobjects of induction. Nonvanishing for
 quotient constituents, an actual two-factor geometric sequence, the vanishing
 at other proper standard subsets and the full
 `RationalRankOneJacquetModulesStatement` remain separate proof obligations.

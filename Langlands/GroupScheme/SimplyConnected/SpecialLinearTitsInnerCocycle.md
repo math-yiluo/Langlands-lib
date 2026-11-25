@@ -1,8 +1,6 @@
 # Inner representatives of the actual special-linear Galois discrepancy
 
-Author: Worker 239.
-
-This internal unit works with the actual `LocalGroupIso E` from the special
+This internal module works with the actual `LocalGroupIso E` from the special
 linear group over a field-extension cover to a group scheme over a field `K`.
 The algebraic lemmas need only that the cover field `L` is a `K`-algebra; no
 finiteness, Galois, or classification hypothesis is used.
@@ -26,7 +24,8 @@ family of inner representatives.
 Dividing the representatives by their eigenvalues on a supplied common coordinate
 line preserves their all-test discrepancy formula. `normalized_identity` and
 `normalized_cocycle` give the identity and composition laws for that normalized
-family, by the scalar uniqueness and normalization unit. These are suitable for
+family, by the scalar uniqueness and the normalization module
+`SpecialLinearNormalizedCocycle`. These are suitable for
 matrix Hilbert 90, once the line-preservation hypotheses are available.
 
 Finally, if the local coordinate matrix of a supplied point of `G` is

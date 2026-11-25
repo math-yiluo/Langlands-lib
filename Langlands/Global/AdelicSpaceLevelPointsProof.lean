@@ -1,6 +1,6 @@
 import Langlands.AlgebraicGeometry.AlgebraicSpace.SpaceProductPointsSurjective
 import Langlands.Global.AdelicSpaceLevelPointsStatement
-import Langlands.NYLL.ValuedFieldTheory.Valuation.ValuedAdicComplete.CompleteProof
+import Nyll.ValuedFieldTheory.Valuation.ValuedAdicComplete
 
 /-!
 # Adelic-level points of separated finite type algebraic spaces
@@ -37,7 +37,7 @@ theorem isAdicComplete_adicCompletionIntegers (A : Type u) [CommRing A] [IsDedek
     (K : Type u) [Field K] [Algebra A K] [IsFractionRing A K] (v : HeightOneSpectrum A) :
     IsAdicComplete (IsLocalRing.maximalIdeal (v.adicCompletionIntegers K))
       (v.adicCompletionIntegers K) :=
-  Langlands.NYLL.ValuationTheory.Valuations.rankOneDiscreteValuationSubring_isAdicComplete
+  ValuationTheory.Valuations.rankOneDiscreteValuationSubring_isAdicComplete
     (K := v.adicCompletion K) (Gamma := WithZero (Multiplicative ℤ))
 
 /-- Change of coefficients along an isomorphism is bijective. -/

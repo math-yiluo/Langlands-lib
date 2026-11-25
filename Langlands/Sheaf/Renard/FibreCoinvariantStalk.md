@@ -2,7 +2,7 @@
 
 Helper module for the proof of Renard III.3.1, Proposition
 (`Langlands.Sheaf.Renard.CoinvariantStatements.FibreCoinvariantStatement`).
-Worker 136 wrote it for Task 5593. It has no new definitions of mathematical
+It has no new definitions of mathematical
 objects. It only describes the ordinary stalk at a point `y` of the published
 vector sheaf `ProjectorVectorSheaf.presheaf hY hM` attached to a nondegenerate
 module `M` over the pointwise test algebra `PointwiseTestAlgebra.Carrier Y`.
@@ -49,8 +49,8 @@ target-test action, and the stalk is `F′_y`. The two facts here are the
 surjectivity of the stalk map and the description of its kernel, which Renard's
 proof takes from the Remark of II.2.5 (`F′_y = F′_c(Y)/L″`). This module
 re-proves them directly for the stalk of Mathlib's presheaf. It does not use the
-published `CompactSectionStalks` statements or the unproved II.2.5 module
-comparison.
+published `CompactSectionStalks` statements or the II.2.5 module
+comparison (`ModuleComparisonIsIso`).
 
 ## Source
 

@@ -6,7 +6,7 @@ import Langlands.Representation.RankinSelberg.LaurentEvaluation
 import Langlands.LocalFactor.Inductive.LocalInductionAux
 import Langlands.Global.CompletionPadicTower
 import Langlands.Global.Factors.RelativeWeilLocalEpsilonTransport
-import Langlands.ClassField.Global.LocalRelativeWeilMap
+import Langlands.ClassFieldTheory.Global.LocalRelativeWeilMap
 import Langlands.Global.AdelicFunctoriality.Trace
 
 /-!
@@ -579,7 +579,7 @@ end LocalFactorTransport
 
 section TraceTransport
 
-open ClassField.Global.RelativeWeilGroup
+open ClassFieldTheory.Global.RelativeWeilGroup
 
 variable {F K : Type u} [Field F] [Field K] [NumberField F] [NumberField K]
   [Algebra F K] (v : HeightOneSpectrum (𝓞 F)) (w : HeightOneSpectrum (𝓞 K))

@@ -1,7 +1,5 @@
 # Anisotropy of the actual finite-separable norm-one torus
 
-Author: Worker 1107.
-
 This module declares a proposition about the actual group scheme of norm-one
 units of a finite separable field extension. It supplies a statement definition;
 its Lean proof is a separate obligation.

@@ -1,7 +1,5 @@
 # Tensor and dual operations on actual finite-product algebraic differentials
 
-Author: Worker 2.
-
 This internal construction extends the published tensor and dual differential
 operations to representations of an actual finite categorical product of
 general linear group schemes. It proves the first-order matrix rules and
@@ -134,8 +132,10 @@ tensor and dual scheme representations and coordinate equivalences and
 Mathlib's tensor, matrix and module-dual operations. No external-literature
 identification is asserted.
 
-This unit constructs linear endomorphism families and their coordinate
+This module constructs linear endomorphism families and their coordinate
 comparisons. Bundled product Lie actions, restriction-of-scalars
 identifications, sheaf or analytic tangent comparisons, compact
-differentiation and attachment to automorphic coefficient cochains remain
-separate work. It asserts no new cohomology construction.
+differentiation and attachment to automorphic coefficient cochains are not
+part of it; the bundled product Lie action is in
+`MatrixRepresentationProductDifferentialLie`. It asserts no new cohomology
+construction.

@@ -1,7 +1,5 @@
 # Uniform target blocks and divisible source refinements
 
-Author: Worker 167.
-
 This internal supporting module concerns finite coordinates of ordered block
 shapes over an arbitrary field. It assumes that the source-Levi intersection of
 a permutation is a specified standard refinement. It assumes no
@@ -72,12 +70,12 @@ commutation, exhaustion, or derivatives.
 
 The used Library inputs and their provenance are:
 
-| Input | Published location and originating task | Role and independence |
+| Input | Published location | Role and independence |
 | --- | --- | --- |
-| `SegmentEdge.sameBlock_of_sourceLevi_eq` | `Langlands.Representation.Classification.SegmentEdgeCombinatorics`, supporting unit of task `b331611c-526d-4925-87fe-ea67ed6e6fed` | Tests a source-intersection equality with transposition matrices. Only this finite coordinate lemma is used; the task's segment Jacquet theorem is not assumed. |
-| `TotalConjugatingCount.card_blockIndex_fiber` | `Langlands.Representation.CuspidalSupport.TotalConjugatingCountProof`, task `5becc159-1242-4fa4-9102-79aa6e2726c0` | Counts coordinates by the published block-index equivalence. No representation result enters this lemma. |
-| `BlockShape.rankCast` | `Langlands.Group.GL.SingleBlock`, task `7c0e046b-2807-40d0-bf95-992a26ddaa3f` | Transports only the asserted total rank, preserving ordered sizes. |
-| `mem_sourceLevi_iff` | `Langlands.Representation.Geometric.StandardIntersectionsProof`, task `5f658ba6-5c6d-46e0-a5c1-6d15317f8a1d` | The matrix-entry membership criterion, independent of geometric-lemma filtration or classification conclusions. |
+| `SegmentEdge.sameBlock_of_sourceLevi_eq` | `Langlands.Representation.Classification.SegmentEdgeCombinatorics`, a supporting module of the proof of `SegmentFullJacquetFormula` | Tests a source-intersection equality with transposition matrices. Only this finite coordinate lemma is used; the segment Jacquet theorem `SegmentFullJacquetFormula` is not assumed. |
+| `TotalConjugatingCount.card_blockIndex_fiber` | `Langlands.Representation.CuspidalSupport.TotalConjugatingCountProof` | Counts coordinates by the published block-index equivalence. No representation result enters this lemma. |
+| `BlockShape.rankCast` | `Langlands.Group.GL.SingleBlock` | Transports only the asserted total rank, preserving ordered sizes. |
+| `mem_sourceLevi_iff` | `Langlands.Representation.Geometric.StandardIntersectionsProof` | The matrix-entry membership criterion, independent of geometric-lemma filtration or classification conclusions. |
 | Block-coordinate laws, `BlockShape.ext_of_size`, finite cardinality inequalities | Existing `Blocks`, `WeylDefinitions` and Mathlib infrastructure | Actual coordinate embeddings, shape extensionality, and injective finite-cardinality comparison. |
 
 The recursive project import closure has 77 modules. Its classification imports
@@ -86,6 +84,7 @@ twist infrastructure and `SegmentEdgeCombinatorics`. The rest is finite matrix,
 block, normalization, twist and representation infrastructure. No excluded
 classification, product criterion, commutation, exhaustion, quotient-Hom or
 derivative conclusion is imported or used. The general geometric lemma, full
-segment Jacquet formula, and shuffle Jacquet formula remain separate proof
-obligations. This supporting definition unit does not discharge the parent's
-unconditional proof target.
+segment Jacquet formula, and shuffle Jacquet formula are separate results,
+proved in `Geometric.GeometricLemmaProof`, `SegmentFullJacquetProof` and
+`TwoSegmentSocleShuffleJacquetProof`. This supporting module does not prove
+the unconditional `JuxtaposedSegmentSocleReverseProductStructure`.

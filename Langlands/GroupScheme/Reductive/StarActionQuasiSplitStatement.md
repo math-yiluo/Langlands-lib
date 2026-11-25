@@ -1,7 +1,6 @@
 # The star action of a quasi-split group is the natural action: statement
 
-Author: Worker 15, for the algebraic and reductive group-scheme program
-`2b5e4a00-9d44-49a4-9c89-979fb5b6233e` (Task 3483). The module contains one
+The module contains one
 `Prop`-valued definition and no proof.
 
 ## The statement

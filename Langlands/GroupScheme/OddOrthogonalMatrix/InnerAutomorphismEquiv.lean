@@ -35,8 +35,10 @@ theorem NumberedPinning.isAdjoint (p : NumberedPinning G n) : IsAdjoint G :=
 theorem NumberedPinning.isAdjointQuotient_id (p : NumberedPinning G n) :
     IsAdjointQuotient (𝟙 G) := by
   apply isAdjointQuotient_of_fppf_kernel_range (𝟙 G) p.pinning.isConnectedReductive
-    p.pinning.isConnectedReductive p.center_eq_bot (by infer_instance) (by infer_instance)
-    (by infer_instance)
+    p.pinning.isConnectedReductive p.center_eq_bot
+    (by set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in infer_instance)
+    (by set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in infer_instance)
+    (by set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in infer_instance)
   rw [p.center_eq_bot]
   apply SubgroupFunctor.ext
   intro T
@@ -49,7 +51,7 @@ theorem NumberedPinning.isAdjointQuotient_id (p : NumberedPinning G n) :
 /-- The adjoint-quotient inner action is ordinary inner conjugation here. -/
 theorem NumberedPinning.innerHom_id (p : NumberedPinning G n)
     (x : Over.mk (𝟙 (Spec (CommRingCat.of K))) ⟶ G.X) :
-    PinnedAutomorphismGroup.innerHom p.isAdjointQuotient_id x = G.innerIso x := by
+    PinnedAutomorphismGroup.innerHom p.isAdjointQuotient_id x = Aut.of (G.innerIso x) := by
   rw [PinnedAutomorphismGroup.innerHom_apply]
   have h := SplitPinning.innerAction_basePointIso_lift p.isAdjointQuotient_id x
   simpa using h
@@ -72,13 +74,13 @@ def NumberedPinning.innerAutEquiv (p : NumberedPinning G n) (hn : 2 ≤ n) :
 
 @[simp] theorem NumberedPinning.innerAutEquiv_apply (p : NumberedPinning G n) (hn : 2 ≤ n)
     (x : Over.mk (𝟙 (Spec (CommRingCat.of K))) ⟶ G.X) :
-    p.innerAutEquiv hn x = G.innerIso x := rfl
+    p.innerAutEquiv hn x = Aut.of (G.innerIso x) := rfl
 
 /-- The unique original-field conjugating point implements the actual automorphism. -/
 theorem NumberedPinning.innerAutEquiv_symm_spec (p : NumberedPinning G n) (hn : 2 ≤ n)
     (σ : CategoryTheory.Aut G) :
-    G.innerIso ((p.innerAutEquiv hn).symm σ) = σ :=
-  (p.innerAutEquiv hn).apply_symm_apply σ
+    G.innerIso ((p.innerAutEquiv hn).symm σ) = σ.asIso :=
+  congrArg Aut.asIso ((p.innerAutEquiv hn).apply_symm_apply σ)
 
 /-- Original-field rational points of the actual odd identity component
 identify with its full automorphism group. -/

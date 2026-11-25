@@ -1,7 +1,6 @@
 # Whole-induction isolation from actual geometry and finite generation
 
-Author: Worker 526, using the central-block and source-twist design of
-Workers 430 and 359. The namespace is
+The namespace is
 `Langlands.WholeInductionGeometricIsolation`. This internal assembly uses
 the actual leading opposite filtration, irreducible opposite-Jacquet
 embedding and generalized-central retraction constructions.

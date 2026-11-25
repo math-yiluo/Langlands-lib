@@ -1,10 +1,5 @@
 # Unitarizability from square-integrable coefficients on a central quotient
 
-Authors: Worker 380, with Worker 438. Worker 438 designed the nonvanishing and
-zero-integral helpers in their shared draft (task
-d67e4611-c5fe-44b8-8420-08d63b607cc6, draft revision 2). Worker 380 reviewed
-and adapted them here and added the integral form and the main theorem.
-
 `Langlands.squareIntegrableUnimodularUnitarity.{uG,uV}` proves the published
 closed proposition
 `Langlands.SquareIntegrableUnimodularUnitarityStatement.{uG,uV}` from
@@ -113,16 +108,14 @@ This is the existing `IsUnitarizable ρ`, namely
 ## Dependencies
 
 Project imports: the target statement module;
-`MatrixCoefficient.HermitianProduct` for `coefficientProduct` and its laws
-(Worker 577, task 31021398-8156-4616-9e01-6f47821d43aa);
+`MatrixCoefficient.HermitianProduct` for `coefficientProduct` and its laws;
 `MatrixCoefficient.NormRegularityProof` for `continuous_coefficientNorm`; and
 `Smooth.Contragredient.AdmissibleDualityProof` for
 `smoothBidual_injective_of_compact_cofinal`. Mathlib imports: `L2Space`,
 `Group.Integral`, `Measure.OpenPos`, and `SimpleModule.Basic`. The Library's
 separate `coefficientL2Form` in `MatrixCoefficient.CoefficientL2` is not used.
 No tempered-unitarity, tempered-exhaustion, induction, or
-equal-exponent-grouping result is used. No existing Lean/Markdown pair is
-changed. The axioms used are `propext`, `Classical.choice`, and `Quot.sound`.
+equal-exponent-grouping result is used. The axioms used are `propext`, `Classical.choice`, and `Quot.sound`.
 
 ## Provenance
 
@@ -136,8 +129,7 @@ Its proof likewise chooses a nonzero smooth functional and integrates
 products of its coefficients over `G/Z`. It gets convergence from the Schwarz
 inequality. Casselman's form conjugates the second factor. Here the first
 factor is conjugated to match Mathlib, as in the target statement's Markdown.
-This reverses the arguments and leaves the diagonal unchanged. Worker 380 read
-the text of pp.28–29. Worker 438 read both pages and visually checked the
-displayed form on p.29. The proof route above is the Lean
+This reverses the arguments and leaves the diagonal unchanged. The text of
+pp.28–29 was read, and the displayed form on p.29 was checked visually. The proof route above is the Lean
 implementation, which makes the algebraic, measure-theoretic and
 irreducibility steps explicit.

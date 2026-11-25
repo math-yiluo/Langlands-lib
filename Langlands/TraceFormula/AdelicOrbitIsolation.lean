@@ -35,11 +35,11 @@ private theorem isTwistedConjugate_of_finiteSupportCutoff {H : Type u} [Group H]
   rw [← twistedConj_mul, hyt]
   exact hz₀
 
-local instance (K : Type u) [Field K] (n : ℕ) :
+private local instance (K : Type u) [Field K] (n : ℕ) :
     IsAffine (GroupScheme.GeneralLinear.groupScheme (Fin n) (CommRingCat.of K)).X.left :=
   GroupScheme.GeneralLinear.isAffine_groupScheme (Fin n) (CommRingCat.of K)
 
-local instance (K : Type u) [Field K] (n : ℕ) :
+private local instance (K : Type u) [Field K] (n : ℕ) :
     Smooth (GroupScheme.GeneralLinear.groupScheme (Fin n) (CommRingCat.of K)).X.hom :=
   GroupScheme.GeneralLinear.smoothStatement (Fin n) (CommRingCat.of K)
 
@@ -199,17 +199,17 @@ theorem adelicOrbitIsolation : AdelicOrbitIsolationStatement.{u} := by
     have hr' : (r.val : AdelicGroupPoints K Wₙ) = AdelicGroupPoints.rational K Wₙ (rW r) :=
       congrArg Subtype.val (hrW r).symm
     have hθ (z : HW) : pW (θ z : AdelicGroupPoints K Wₙ) =
-        (Wₙ).affinePointsTarget (unitGaloisAut K L GLₙ σ).hom (placeCompletion K (.inr v)) (pW z) := by
+        (Wₙ).affinePointsTarget (unitGaloisAut K L GLₙ σ).asIso.hom (placeCompletion K (.inr v)) (pW z) := by
       change atPlace K Wₙ (.inr v)
-        (AdelicGroupPoints.map K Wₙ Wₙ (unitGaloisAut K L GLₙ σ).hom z) = _
+        (AdelicGroupPoints.map K Wₙ Wₙ (unitGaloisAut K L GLₙ σ).asIso.hom z) = _
       exact atPlace_map K Wₙ _ (.inr v) z
     rw [map_mul pW, map_mul pW, map_inv pW, hr', hθ] at hx'
     obtain ⟨a, ha⟩ := hcutW (rW r) (Finset.mem_image_of_mem rW hr) ⟨pW x, hx'⟩
     refine ⟨rationalNormOne K Wₙ a, ⟨a, rfl⟩, ?_⟩
     have ht : θ (rationalNormOne K Wₙ a) =
         rationalNormOne K Wₙ ((Wₙ).affinePointsTarget
-          (unitGaloisAut K L GLₙ σ).hom (CommAlgCat.of K K) a) :=
-      mapNormOne_rationalNormOne K Wₙ Wₙ (unitGaloisAut K L GLₙ σ).hom a
+          (unitGaloisAut K L GLₙ σ).asIso.hom (CommAlgCat.of K K) a) :=
+      mapNormOne_rationalNormOne K Wₙ Wₙ (unitGaloisAut K L GLₙ σ).asIso.hom a
     change (rationalNormOne K Wₙ a)⁻¹ * r.val * θ (rationalNormOne K Wₙ a) = D
     rw [← hrW r, ht, ← map_inv, ← map_mul, ← map_mul, ha]
 

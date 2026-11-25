@@ -1,6 +1,6 @@
 # Renard II.3.10: all compact distribution convolution laws
 
-Worker 150, Task 5394. The theorem `RenardConvolution.statements` proves exactly
+The theorem `RenardConvolution.statements` proves exactly
 `Langlands.HarmonicAnalysis.Distribution.RenardConvolution.Statements.{uG}`,
 retaining its unrestricted group universe and all nine conjuncts. Source:
 Renard, French version of 9 July 2026, II.3.10, printed pp.50–51 /

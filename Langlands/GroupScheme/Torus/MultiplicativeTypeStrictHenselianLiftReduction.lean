@@ -115,9 +115,11 @@ theorem multiplicativeTypeStrictHenselianLift_of_completeLocalDeformation
   let jH : C₁ ⟶ H := j₁ ≫ d.iso.inv
   have hopH : IsOpenImmersion jH.hom.hom.left := by
     change IsOpenImmersion (j₁.hom.hom.left ≫ d.iso.inv.hom.hom.left)
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
     infer_instance
   have hclH : IsClosedImmersion jH.hom.hom.left := by
     change IsClosedImmersion (j₁.hom.hom.left ≫ d.iso.inv.hom.hom.left)
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
     infer_instance
   have : IsIso ((baseChange sp).map jH) := by
     dsimp only [jH]

@@ -1,7 +1,5 @@
 # Statement: central extensions of `SL₂` split uniquely
 
-Worker 75.
-
 `Langlands.GroupScheme.SpecialLinearCentralExtensionSplitStatement.{u} : Prop` is a
 statement-only, `Prop`-valued definition. This module does not prove it, and it adds no
 other definitions, theorems or axioms. It imports:

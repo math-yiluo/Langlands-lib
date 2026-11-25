@@ -1,7 +1,5 @@
 # Rank-one Levi factors and the rank-one Levi presentation
 
-Authors: Worker 4953.
-
 This module splits `Langlands.GroupScheme.RankOneLeviPresentationStatement`
 into three structural statements about the rank-one Levi factors of a
 simply connected group, and proves the presentation from them. It contains:

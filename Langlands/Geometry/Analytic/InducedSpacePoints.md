@@ -1,7 +1,5 @@
 # Points of disjoint unions and of induced analytic spaces
 
-Author: Worker 5254.
-
 This module computes, on points of the underlying topological spaces, the
 summand inclusions of the chosen disjoint union `localizedSigmaCofan` in the
 localized category of analytic spaces, and the structure morphisms of
@@ -68,6 +66,6 @@ a copy of X", "if gg_i = g_jh, h ∈ H, then g|_{X_i} = f_j h f_i^{-1} :
 X_i → X_j", and "ϕ′|_{X_i} = g_i ϕ f_i^{-1}". The formulas here are these
 descriptions, read on points of the Library's construction. The module is an
 internal helper for the proof of Berkovich's Example 1.2.1(i)
-(`QuasiEtaleSiteEquivalenceStatement`, Task 5695). The definition
+(`QuasiEtaleSiteEquivalenceStatement`). The definition
 `pointCoset` and the formulas are computed here and are not stated in the
 source.

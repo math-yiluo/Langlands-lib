@@ -1,8 +1,5 @@
 # Smooth finite coefficients for actual enveloping conjugation
 
-Authors: Worker 94; Worker 566 (the published finite continuous coefficient
-argument adapted here).
-
 This internal helper strengthens the coefficient regularity in
 `ArchimedeanAdjointCoefficientsProof`. For every actual complex enveloping
 element it constructs a finite fixed family of enveloping elements and
@@ -14,7 +11,8 @@ Addition, multiplication and complex scalar multiplication preserve such
 expansions. Tensor-product induction handles complexified Lie generators;
 quotient and tensor-algebra induction handle every enveloping element.
 
-The proof follows Worker 566's published algebraic induction with smooth
+The proof follows the published algebraic induction of
+`ArchimedeanAdjointCoefficientsProof` with smooth
 coefficient functions in place of continuous ones. Pointwise smooth products,
 constants and inversion pullbacks are constructed on the existing smooth
 carrier. There is no topology on the enveloping algebra and no extra

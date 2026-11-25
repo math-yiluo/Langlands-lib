@@ -1,6 +1,6 @@
 # Same-compact Cartan transport and chamber equivalence under global validity
 
-This internal derived unit constructs
+This internal derived module constructs
 `validSpecialCompactStandardLeviChamberEquiv` at arbitrary universe `u` and
 proves the ambient and same-compact standard-Levi Cartan comparisons used in
 that construction. Its field is any nonarchimedean local field, and its group
@@ -8,7 +8,7 @@ is any connected reductive group scheme over that field. The hypothesis is a
 supplied globally valid corrected KP assignment. No such assignment is
 constructed. Global validity is stronger than single-group local availability,
 so this does not prove `AvailableRenardCartanStatement` or the unconditional
-joint existence target of Task 4169.
+joint existence target `JointSpecialCompactBasisExistenceStatement`.
 
 `specialCompactCartanComparison_changeCentralizer` transports a supplied
 special-compact Cartan comparison between two actual representatives of the

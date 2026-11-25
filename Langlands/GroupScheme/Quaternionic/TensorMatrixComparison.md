@@ -1,7 +1,5 @@
 # Scalar extension of matrices with involution
 
-Authors: Worker 124.
-
 Let `K` be a commutative ring, `D` a `K`-algebra with a possibly
 noncommutative underlying ring, and `R` a commutative `K`-algebra. The finite
 product tensor equivalence, applied to rows and columns, identifies

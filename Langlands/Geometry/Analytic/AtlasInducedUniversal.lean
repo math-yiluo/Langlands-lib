@@ -19,47 +19,47 @@ variable {K : Type u} [NormedField K] [IsUltrametricDist K] [CompleteSpace K]
 /-- Complete target actions compose in geometric order. -/
 theorem targetAction_comp
     (Y : Action (AffinoidAtlasPresentation.{u, max z v, max z w} K) G) (g k : G) :
-    Y.ρ k ≫ Y.ρ g = Y.ρ (g * k) :=
-  (Y.ρ.map_mul g k).symm
+    (Y.ρ k).asHom ≫ (Y.ρ g).asHom = (Y.ρ (g * k)).asHom :=
+  (congrArg End.asHom (Y.ρ.map_mul g k)).symm
 
 /-- Descend the prescribed full target-action arrow from every original coset copy. -/
 def extendMap (f : normalizedAction H X ⟶
     (Action.res (AffinoidAtlasPresentation.{u, max z v, max z w} K) H.subtype).obj Y) :
     copies H X ⟶ Y.V :=
   AtlasDisjointUnion.desc (component H X) (component_hasNonemptyCharts H X)
-    (fun c => f.hom ≫ Y.ρ c.out)
+    (fun c => f.hom ≫ (Y.ρ c.out).asHom)
 
 /-- Restriction recovers the complete prescribed bounded arrow on each copy. -/
 @[simp]
 theorem copy_extendMap (f : normalizedAction H X ⟶
     (Action.res (AffinoidAtlasPresentation.{u, max z v, max z w} K) H.subtype).obj Y)
     (c : G ⧸ H) :
-    copy H X c ≫ extendMap H f = f.hom ≫ Y.ρ c.out :=
+    copy H X c ≫ extendMap H f = f.hom ≫ (Y.ρ c.out).asHom :=
   AtlasDisjointUnion.inclusion_desc _ _ _ c
 
 /-- Correction equivariance holds for all chosen charts and bounded pullbacks. -/
 theorem extendMap_equivariant (f : normalizedAction H X ⟶
     (Action.res (AffinoidAtlasPresentation.{u, max z v, max z w} K) H.subtype).obj Y)
     (g : G) :
-    copiesActionMap H X g ≫ extendMap H f = extendMap H f ≫ Y.ρ g := by
+    copiesActionMap H X g ≫ extendMap H f = extendMap H f ≫ (Y.ρ g).asHom := by
   apply AtlasDisjointUnion.hom_ext (component H X) (component_hasNonemptyCharts H X)
   intro c
   let f₀ : X.V.nonemptyPresentation ⟶ Y.V := f.hom
-  have hc (d : G ⧸ H) : copy H X d ≫ extendMap H f = f₀ ≫ Y.ρ d.out :=
+  have hc (d : G ⧸ H) : copy H X d ≫ extendMap H f = f₀ ≫ (Y.ρ d.out).asHom :=
     copy_extendMap H f d
   have hf : localAction H X (correction H g c) ≫ f₀ =
-      f₀ ≫ Y.ρ (correction H g c : G) := f.comm (correction H g c)
+      f₀ ≫ (Y.ρ (correction H g c : G)).asHom := f.comm (correction H g c)
   change copy H X c ≫ (copiesActionMap H X g ≫ extendMap H f) =
-    copy H X c ≫ (extendMap H f ≫ Y.ρ g)
+    copy H X c ≫ (extendMap H f ≫ (Y.ρ g).asHom)
   calc
     _ = localAction H X (correction H g c) ≫
         (copy H X (g • c) ≫ extendMap H f) := by
       rw [← Category.assoc, copy_action, Category.assoc]
     _ = localAction H X (correction H g c) ≫
-        (f₀ ≫ Y.ρ (g • c).out) := by rw [hc]
-    _ = (f₀ ≫ Y.ρ (correction H g c : G)) ≫ Y.ρ (g • c).out := by
+        (f₀ ≫ (Y.ρ (g • c).out).asHom) := by rw [hc]
+    _ = (f₀ ≫ (Y.ρ (correction H g c : G)).asHom) ≫ (Y.ρ (g • c).out).asHom := by
       rw [← Category.assoc, hf]
-    _ = f₀ ≫ Y.ρ (g * c.out) := by
+    _ = f₀ ≫ (Y.ρ (g * c.out)).asHom := by
       rw [Category.assoc, targetAction_comp, ← correction_spec]
     _ = _ := by
       rw [← Category.assoc, hc, Category.assoc, targetAction_comp]
@@ -77,10 +77,10 @@ theorem unitMap_extendMap (f : normalizedAction H X ⟶
     unitMap H X ≫ extendMap H f = f.hom := by
   let f₀ : X.V.nonemptyPresentation ⟶ Y.V := f.hom
   have hf : localAction H X (identityRepresentative H)⁻¹ ≫ f₀ =
-      f₀ ≫ Y.ρ ((identityRepresentative H)⁻¹ : H) :=
+      f₀ ≫ (Y.ρ ((identityRepresentative H)⁻¹ : H)).asHom :=
     f.comm (identityRepresentative H)⁻¹
   have hc : copy H X (identityCoset H) ≫ extendMap H f =
-      f₀ ≫ Y.ρ (identityRepresentative H : G) :=
+      f₀ ≫ (Y.ρ (identityRepresentative H : G)).asHom :=
     copy_extendMap H f (identityCoset H)
   change unitMap H X ≫ extendMap H f = f₀
   rw [unitMap, Category.assoc, hc, ← Category.assoc, hf,
@@ -111,8 +111,8 @@ theorem extendToAction_restrictFromAction (p : copiesAction H X ⟶ Y) :
   intro c
   change copy H X c ≫ extendMap H (restrictFromAction H p) = copy H X c ≫ p₀
   rw [copy_extendMap]
-  change (unitMap H X ≫ p₀) ≫ Y.ρ c.out = copy H X c ≫ p₀
-  have hp : copiesActionMap H X c.out ≫ p₀ = p₀ ≫ Y.ρ c.out := p.comm c.out
+  change (unitMap H X ≫ p₀) ≫ (Y.ρ c.out).asHom = copy H X c ≫ p₀
+  have hp : copiesActionMap H X c.out ≫ p₀ = p₀ ≫ (Y.ρ c.out).asHom := p.comm c.out
   rw [Category.assoc, ← hp, ← Category.assoc, unitMap_action]
 
 /-- Relative Hom correspondence with normalized source and arbitrary atlas-action target. -/
@@ -188,7 +188,7 @@ theorem extendToAction_naturality_right (f : normalizedAction H X ⟶
 theorem extendMap_baseMap (f : normalizedAction H X ⟶
     (Action.res (AffinoidAtlasPresentation.{u, max z v, max z w} K) H.subtype).obj Y)
     (c : G ⧸ H) (x : X.V.space) :
-    (extendMap H f).baseMap ⟨c, x⟩ = (Y.ρ c.out).baseMap (f.hom.baseMap x) := rfl
+    (extendMap H f).baseMap ⟨c, x⟩ = (Y.ρ c.out).asHom.baseMap (f.hom.baseMap x) := rfl
 
 /-- The chosen chart is exactly the input target chart followed by the target action. -/
 @[simp]
@@ -196,7 +196,7 @@ theorem extendMap_indexMap (f : normalizedAction H X ⟶
     (Action.res (AffinoidAtlasPresentation.{u, max z v, max z w} K) H.subtype).obj Y)
     (c : G ⧸ H) (i : X.V.nonemptyPresentation.atlas.Index) :
     (extendMap H f).indexMap ⟨c, i⟩ =
-      (Y.ρ c.out).indexMap (f.hom.indexMap i) := rfl
+      (Y.ρ c.out).asHom.indexMap (f.hom.indexMap i) := rfl
 
 /-- The bounded pullback is the actual contravariant composite of the supplied maps. -/
 @[simp]
@@ -204,6 +204,6 @@ theorem extendMap_pullback (f : normalizedAction H X ⟶
     (Action.res (AffinoidAtlasPresentation.{u, max z v, max z w} K) H.subtype).obj Y)
     (c : G ⧸ H) (i : X.V.nonemptyPresentation.atlas.Index) :
     (extendMap H f).pullback ⟨c, i⟩ =
-      (f.hom.pullback i).comp ((Y.ρ c.out).pullback (f.hom.indexMap i)) := rfl
+      (f.hom.pullback i).comp ((Y.ρ c.out).asHom.pullback (f.hom.indexMap i)) := rfl
 
 end Langlands.Analytic.AtlasInducedAction

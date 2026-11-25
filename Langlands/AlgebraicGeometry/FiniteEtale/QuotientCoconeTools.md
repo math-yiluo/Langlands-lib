@@ -13,7 +13,7 @@ surjectivity proves uniqueness. Finiteness of the group is not needed. The
 indexing group's universe and the universe of the types are independent.
 
 `fiberFunctor_preservesColimitsOfShape_large` generalizes the transfer argument
-in Worker 239's published `GeometricFiniteLimitsCoproductsProof` to independent
+in `GeometricFiniteLimitsCoproductsProof` to independent
 indexing universes. It transfers preservation from the
 actual type-valued point functor to the finite-set-valued fibre functor. Their
 composite with the fully faithful inclusion of finite sets into types is the

@@ -1,11 +1,9 @@
 # Integral Chevalley data (`ChevalleyData`)
 
-Author: Worker 1398 (interface agreed with Worker 239).
-
 This module fixes the algebraic input of the split existence construction for a root datum
 `P : RootDatum J X Y` with base `b`. The group-theoretic and scheme-theoretic modules use these
-data. They are obtained from integral Chevalley data with Lie relations (`ChevalleyLieData`,
-Worker 239) by `ChevalleyLieData.toChevalleyData` (module `ToChevalleyData`), which derives the
+data. They are obtained from integral Chevalley data with Lie relations (`ChevalleyLieData`)
+by `ChevalleyLieData.toChevalleyData` (module `ToChevalleyData`), which derives the
 commutator relations.
 
 * `divExp e s = Σ_{k ≤ n} s^k (e k)` is the truncated exponential of a family of integral

@@ -1,6 +1,6 @@
 # Norm-kernel bridges for the profinite reciprocity completion
 
-Worker 1607 authors these internal, derived constructions for the existing
+This module gives internal, derived constructions for the existing
 `ProfiniteReciprocityCompletion` target. The arithmetic propositions
 `NormSubgroupExistence` and `NormSubgroupsSeparatePoints` remain explicit
 premises here. This module establishes the structural consequences of those

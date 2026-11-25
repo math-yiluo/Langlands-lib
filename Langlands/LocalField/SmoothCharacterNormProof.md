@@ -1,7 +1,7 @@
 # Proof of the real norm decomposition of a smooth scalar character
 
-Author: Worker 723. The helper arguments adapt published Library proofs by
-Worker 23 and Worker 225; see "Attribution and independence" below.
+The helper arguments adapt published Library proofs; see "Attribution and
+independence" below.
 
 The theorem
 `Langlands.PadicField.TopologicalData.smoothCharacterNormDecomposition F T`
@@ -115,15 +115,15 @@ Evaluating both identities at `ϖ` gives `q⁻¹ ^ c = q⁻¹ ^ (-logb q r)`. Ta
 ## Attribution and independence
 
 The three topological and character-theoretic helpers adapt published
-Library proofs. Two of them follow the arguments of Worker 23:
+Library proofs. Two of them follow the arguments of
 `norm_eq_one_of_isOpen_ker` and `norm_eq_zpow_ord_of_isOpen_ker` in
 [RealPartExistence](../Representation/Exponents/RealPartExistence.md), and
 `normalizedAbs_eq_one_iff_discreteValuation` in
 [NormalizedCharacter](../Group/GL/NormalizedCharacter.md). The compactness
-proof follows Worker 225's `CuspidalSupport.isCompact_ker_normalizedAbsUnits` in
+proof follows `CuspidalSupport.isCompact_ker_normalizedAbsUnits` in
 [DeterminantUnitCentralCompactnessProof](../Representation/CuspidalSupport/DeterminantUnitCentralCompactnessProof.md).
-The final exponent calculation follows Worker 23's
-`norm_eq_normalizedAbs_rpow_of_isOpen_ker`.
+The final exponent calculation follows
+`norm_eq_normalizedAbs_rpow_of_isOpen_ker`, also in RealPartExistence.
 
 These arguments are reimplemented here rather than imported. The published
 originals live in modules that also import general linear group modules
@@ -141,8 +141,7 @@ This module instead imports only the following:
 The local subgroup `K` is built from `T.normalizedAbs` directly, not from
 `T.normalizedAbsUnits`. Consequently, no proof input depends on a
 classification, square-integrability, exhaustion or representation-theoretic
-result. In particular, nothing here depends on the tasks excluded by the task
-contract.
+result.
 
 ## Provenance and scope
 

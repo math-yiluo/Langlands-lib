@@ -1,7 +1,5 @@
 # Actual Cayley presentations of type-G2 groups
 
-Author: Worker 177.
-
 `Langlands.GroupScheme.TypeG2CayleyPresentationStatement` is an
 unproved structural proposition over every field `K`, in every
 characteristic. Its input is an actual affine, locally finite type,

@@ -1,7 +1,5 @@
 # Nonempty joint convergence interior of the c-family (statement)
 
-Author: Worker 986, task `f27f47c6-b5d0-4d3d-888a-4b73f31c1d94` (Task 7826, revision 1).
-
 Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalWeakExpansionJointDomain`,
 namespace `Langlands.HarishChandraSchwartz.WeakExpansion`.
 
@@ -51,7 +49,7 @@ nor nonemptiness of this set.
 
 **Definition `CDomainInteriorNonemptyStatement`.** Its explicit arguments are
 `hG hi hν I I' hζ hζ' n hn hKc sc hs π mu`. It also takes the instance argument
-`[BorelSpace (M(F)/C_M)]` as an explicit binder (operator ruling 8), with the measurable structure
+`[BorelSpace (M(F)/C_M)]` as an explicit binder, with the measurable structure
 and Haar instance of `μ`. Its body has three premises:
 
 1. `π` is square integrable modulo `C_M` for `μ` (`IsSquareIntegrableModCentralSubgroup`);

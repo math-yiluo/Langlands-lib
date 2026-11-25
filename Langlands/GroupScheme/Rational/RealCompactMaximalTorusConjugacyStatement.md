@@ -1,7 +1,5 @@
 # Maximal-torus conjugacy for compact real semisimple groups
 
-Worker 862.
-
 `Langlands.GroupScheme.RealCompactMaximalTorusConjugacyStatement : Prop`
 is the compact-form version of Cartan's maximal-torus conjugacy theorem,
 with no universe parameters. The module defines this proposition and

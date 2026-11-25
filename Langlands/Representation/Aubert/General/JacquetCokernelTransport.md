@@ -1,6 +1,6 @@
 # Natural Jacquet transport of the actual sharp cokernel
 
-Worker 1300. Internal algebraic bridge for the associated-Levi comparison.
+Internal algebraic bridge for the associated-Levi comparison.
 This module does not prove that comparison or its geometric ingredients.
 
 `jacquetFunctor_mapsShortExactIntertwiners` reformats the published theorem

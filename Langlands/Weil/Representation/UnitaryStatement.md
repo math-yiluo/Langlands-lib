@@ -1,7 +1,7 @@
 # Unitary operation statements for finite-dimensional representations
 
-Worker 25 formalizes this bounded statement family, coordinated with Worker 24's
-need for actual unitary bases in Henniart representation lattices. The entry
+This module formalizes a bounded statement family, needed for actual unitary
+bases in Henniart representation lattices. The entry
 proposition is `Langlands.FiniteRepresentation.UnitaryOperations`. It states
 three preservation and reflection results; it does not prove them.
 
@@ -56,8 +56,8 @@ and contragredients among the correspondence operations.
 - Literature ID: `henniart-2000-simple-proof`.
 - Original PDF SHA-256:
   `be283c3e8187f1eed365537c72379c3e06e7791756954c2ac783c6beea2979de`.
-- Worker 25 read both original pages for this contribution and verified the
-  original file hash.
+- Both original pages were read directly, and the original file hash was
+  verified.
 
 That passage motivates the operation conventions and the unitary character
 condition. It is not being cited as an explicit statement of these three
@@ -74,7 +74,7 @@ Lean proofs.
 
 The direct dependency pairs `Predicates`, `Dual` and `Twist` are published in
 Library commit `30ceb5a0d89d8094c1663fc19f35416519b9a125`. Their Lean
-declarations, rather than submission identities, are the mathematical imports.
+declarations are the mathematical imports.
 The pinned Mathlib commit is
 `5ed2965256430c3649e86755f9576b54eca72435`; its `InnerProductSpace.Core`
 supplies the positive-form laws used by `IsUnitary`.

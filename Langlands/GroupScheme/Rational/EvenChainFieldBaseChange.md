@@ -90,8 +90,8 @@ closed field (for arbitrary data) be transported to an arbitrary field.
 
 ## Provenance
 
-Internal formalization step (route step 2 of the task context of Task 5373: passing to an
-algebraic closure). It adapts the published field base change of pinnings, root maps and
+Internal formalization step of the proof of the split even-path cross-section
+(`SplitEvenChainCrossSectionStatement`): passing to an algebraic closure. It adapts the published field base change of pinnings, root maps and
 representatives (`Reductive/PinningBaseChange`, `Rational/SteinbergRootFieldBaseChange`,
 `Rational/SteinbergFieldBaseChange`) and of class functions (`Rational/ClassFunctionsBaseChange`).
 No result of Steinberg (1965) is formalized here.

@@ -3,7 +3,7 @@
 This module collects the orthogonal-group facts needed to apply the real finite-product
 expansion `RealLocalEqualShiftedProducts` to both sides of Jacquet's equal-rank functional
 equation. The compact group is `O = Matrix.unitaryGroup (Fin j) ℝ`, the real orthogonal group,
-mapped into `GL_j(ℝ)` by `Unitary.toUnits`. This is the group and embedding used by Worker 771's
+mapped into `GL_j(ℝ)` by `Unitary.toUnits`. This is the group and embedding used by
 `RealStandardCompactBanach.exists_compactProjection_coefficients`. Throughout, `F_b` is the
 real square Fourier integral `rectangularFourierIntegral (realScaledCharacter b) (realSelfDualMeasure b)`:
 `F_b Φ (X) = ∫ Φ(Y) ψ_b(∑_{a,c} Y_{ac} X_{ac}) dY` for the entrywise self-dual product measure
@@ -25,13 +25,13 @@ real square Fourier integral `rectangularFourierIntegral (realScaledCharacter b)
   `∫ κ(k) d(det k⁻¹) Ψ(k⁻¹ A) dν(k) = Ψ(A)` for every `A`. Then
   `∫ κ(k) d(det k⁻¹) F_bΨ(k⁻¹ X) dν(k) = F_bΨ(X)` for every `X`, with the same weight and
   character.
-* `matrixTransform_eq_realRectangularSchwartzFourier`: Worker 823's trace-pairing square
-  Fourier transform `RealSquareFourier.matrixTransform b Φ`, with phase `ψ_b(tr(Xᵀ Y))` and
+* `matrixTransform_eq_realRectangularSchwartzFourier`: the trace-pairing square
+  Fourier transform `RealSquareFourier.matrixTransform b Φ` (module `RealSquareFourierMarginal`), with phase `ψ_b(tr(Xᵀ Y))` and
   the product self-dual measure, equals `realRectangularSchwartzFourier b Φ` as a function.
 * `mem_finiteWeights_of_finiteDimensional`: a continuous weight `κ` whose left translates
   `k ↦ κ(x⁻¹ k)` span a finite-dimensional space of functions lies in
-  `CompactRepresentativeWeights.finiteWeights`. That is the hypothesis of Worker 771's compact
-  projection.
+  `CompactRepresentativeWeights.finiteWeights`. That is the hypothesis of the compact
+  projection `exists_compactProjection_coefficients`.
 * `finiteDimensional_toUnits_span`: the finite left orbit condition of
   `RealOrthogonalSchwartzDensityStatement` uses the compact subgroup
   `unitaryCompact ℝ j ⊆ GL_j(ℝ)` and `Φ(k⁻¹ X)`. The lemma shows it implies the same condition

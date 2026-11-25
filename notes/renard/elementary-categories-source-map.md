@@ -1,6 +1,6 @@
 # Renard A.I–A.II: elementary categorical correspondences
 
-Worker 709, 3 November 2026. This note maps the introductory category and
+This note, dated 3 November 2026, maps the introductory category and
 functor notation, A.I.1, the factor-map and order-bound assertions of A.I.2,
 the uniqueness and zero-object assertions of A.I.4, and the full/faithful
 definitions of A.II.2 to existing Mathlib declarations. It complements the
@@ -15,7 +15,7 @@ réductifs p-adiques*, French version dated 9 July 2026, registered source
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 The retained file is
-`/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`.
+`central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`.
 Original PDF253–257, printed pp.247–251, were read; PDF254 and PDF257 were
 also visually inspected. The exact passages used here are:
 
@@ -34,8 +34,7 @@ these pages, including A.I.3 and the equivalence criterion, are outside
 this note's selected scope.
 
 All Mathlib paths below are relative to its source tree at commit
-`5ed2965256430c3649e86755f9576b54eca72435`, approved environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`. The cited ranges were read.
+`5ed2965256430c3649e86755f9576b54eca72435`. The cited ranges were read.
 Use independent object and Hom universes:
 `C : Type u₁`, `[Category.{v₁} C]`,
 `D : Type u₂`, `[Category.{v₂} D]`.
@@ -248,8 +247,7 @@ literal inclusion.
 
 ## Verification and scope
 
-Private Lean-service recovery check
-`98e4a2b3-ed3f-4108-ac75-e88f6370b468` compiled these correspondence
+A separate Lean check compiled these correspondence
 probes with zero errors and warnings. It checked category and functor
 laws, inverse and cancellation formulas, the monic factor map, both
 binary and indexed bound formulas and conditional uniqueness,
@@ -257,11 +255,11 @@ initial/terminal/zero uniqueness and the zero iff condition,
 full/faithful conditions, the `Nonempty FullyFaithful` correspondence,
 the actual full-subcategory Hom equivalence, the abelian criterion, and
 the internal natural-number counterexample. Object, Hom and family-index
-universes remain independent. These probes are private development
-evidence; they are not new independently accepted Lean artifacts.
+universes remain independent. These probes are development
+evidence; they are not Lean files of the Library.
 
-The existing Library proof modules cited above remain their own
-mathematical contributions. This source map adds documentation for
+The existing Library proof modules cited above keep their own
+mathematical content. This source map adds documentation for
 direct reuse. It does not complete A.I, A.II, Appendix A or the
 [whole-book program](coverage.md). In particular A.I.3, later categorical
 examples and constructions, and the remaining obligations recorded in

@@ -13,7 +13,9 @@ Its local `IsAffine` and `Smooth` instances come from
 `weilGroup K L GLₙ`, the Weil restriction to `K` of the base change of `GLₙ` to `L`.
 Then `AdelicGroupPoints K Wₙ` is `Wₙ(𝔸_K)` with its adelic topology.
 
-The map `Φ : Wₙ(𝔸_K) → AdelicGL L n` is the same composite used in Tasks 7649 and 7660.
+The map `Φ : Wₙ(𝔸_K) → AdelicGL L n` is the same composite used in
+`GeneralLinearSimpleTwistedTraceFormulaStatement` and
+`GeneralLinearTwistedEllipticCentralizerStatement`.
 
 1. `AdelicGaloisUnit.weilAdelicEquiv K L GLₙ` takes a point of `Wₙ(𝔸_K)` to an
    `𝔸_L`-point of `AffineWeil.unitBaseChange K L GLₙ`.
@@ -78,8 +80,10 @@ The map `Φ : Wₙ(𝔸_K) → AdelicGL L n` is the same composite used in Tasks
 ## Provenance
 
 This is derived content connecting two Library descriptions of the twist.
-Tasks 7649 (the simple twisted trace formula) and 7660 (its per-class facts)
-use `Φ` on the adelic points of the Weil restriction. Task 7573 (twisted
+`GeneralLinearSimpleTwistedTraceFormulaStatement` (the simple twisted trace formula) and
+`GeneralLinearTwistedEllipticCentralizerStatement` (its per-class facts)
+use `Φ` on the adelic points of the Weil restriction.
+`TwistedEllipticClassFinitenessStatement` (twisted
 elliptic class finiteness) uses the entrywise action and the diagonal
 rational points on `GL_n(𝔸_L)`.
 

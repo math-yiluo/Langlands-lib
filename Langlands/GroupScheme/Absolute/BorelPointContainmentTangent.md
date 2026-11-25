@@ -1,7 +1,5 @@
 # Tangent surjectivity of the conjugation map
 
-Author: Worker 1095.
-
 This helper module of the proof of `BorelPointContainmentStatement` proves
 Lemma B. It is a criterion for the conjugation map `(x, h) ↦ x j(h) x⁻¹` of
 `BorelPointContainmentDensity` to be surjective on rational tangent vectors

@@ -1,7 +1,5 @@
 # Woundness under separable algebraic field extension
 
-Author: Worker 1608.
-
 `Langlands.GroupScheme.UnipotentWoundSeparableExtensionStatement.{u}`
 is a Prop-valued target. This file states the result and supplies no
 proof.

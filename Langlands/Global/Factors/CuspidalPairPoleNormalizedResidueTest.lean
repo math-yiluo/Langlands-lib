@@ -21,7 +21,7 @@ namespace Langlands.Global.CuspidalPairPoles
 open Automorphic CompletionPadic RankinSelbergGlobal RankinSelbergGlobal.EqualSchwartzTensor
 open LocalFactor.Archimedean FiniteWhittakerDual InfiniteWhittakerSlice
 open CuspidalPairFunctionalEquation
-open ClassField.Global.RelativeWeilGroup (IsCanonicalFiniteAdditiveComponent)
+open ClassFieldTheory.Global.RelativeWeilGroup (IsCanonicalFiniteAdditiveComponent)
 
 variable {F : Type u} [Field F] [NumberField F] [CompactSpace (AdeleQuotient F)]
   {r : ℕ} {T : CuspidalOperatorRealization F r}

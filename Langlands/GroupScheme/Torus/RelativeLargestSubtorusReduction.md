@@ -1,6 +1,6 @@
 # Reduction of the largest-subtorus statement to universal existence
 
-Worker 632. This internal conditional reduction proves the unchanged published
+This internal conditional reduction proves the unchanged published
 `RelativeMultiplicativeTypeLargestSubtorusStatement.{u}` from existence of an
 `IsUniversalSubtorus` for each relative multiplicative-type group. It retains the
 arbitrary-base and universe scope; the premise is an explicit proof input.

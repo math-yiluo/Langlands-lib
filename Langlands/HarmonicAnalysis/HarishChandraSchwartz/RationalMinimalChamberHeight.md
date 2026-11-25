@@ -1,13 +1,13 @@
 # Height control on the full minimal chamber in the norm kernel
 
-This is a derived supporting unit for Waldspurger, *La formule de Plancherel
+This is a derived supporting module for Waldspurger, *La formule de Plancherel
 pour les groupes p-adiques (d'après Harish-Chandra)*, Proposition VIII.3.1,
 printed p.323: the maximal-root sectors, inequality (1), and the compact
 relative-rank-zero case at the start of the proof. The registered original
 is `waldspurger-2003-plancherel`, DOI
 [10.1017/S1474748003000082](https://doi.org/10.1017/S1474748003000082).
 The implementation uses the Library's integer `characterOrder` and its
-published positive-sign chamber convention: each simple-root order is
+existing positive-sign chamber convention: each simple-root order is
 nonnegative. These are discrete order coordinates; the statement does not
 identify them literally with the source's real logarithm coordinates.
 
@@ -54,7 +54,7 @@ The height proof writes an arbitrary torus point as a torus norm-kernel
 point times its uniformizer-section representative, using
 `CocharacterUniformizer.isUniformizerLatticeSection`. The torus norm
 kernel is compact by `SplitTorus.isCompact_commonNormKernel`. Its actual
-image in `G(F)` supplies a compact subgroup for the published
+image in `G(F)` supplies a compact subgroup for
 `exists_rationalHeight_le_of_mem_rationalCartanCell`, with singleton
 centralizer factor `{1}`. The valuation identity
 `CocharacterUniformizer.mem_normKernel_mul_section_inv_iff` shows that
@@ -80,5 +80,5 @@ and the displayed generic cocharacters. The height does not need compact
 adaptation, and no Cartan covering, Xi estimate, convergence or spectral
 premise is assumed. The auxiliary compact subgroup constructed inside
 the proof is not identified with any supplied special compact or
-Xi-defining subgroup. This unit proves the chamber geometry and height
+Xi-defining subgroup. This module proves the chamber geometry and height
 input, not the conjugation integral estimate of Proposition VIII.3.1.

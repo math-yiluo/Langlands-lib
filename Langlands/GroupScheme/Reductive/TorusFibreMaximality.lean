@@ -58,6 +58,7 @@ local instance affine_fieldPullback {k : Type u} [Field k]
   MorphismProperty.pullback_snd G.X.hom b inferInstance
 
 set_option maxHeartbeats 4000000 in
+set_option synthInstance.maxHeartbeats 200000 in
 /-- A maximal torus in any algebraically closed field-valued fibre certifies
 self-centralization in the chosen original geometric fibre at its image.
 The comparison uses actual zero weights and their relative ranks. -/
@@ -100,7 +101,7 @@ theorem mem_geometricSelfCentralizingTorusLocus_of_maximal_fieldPoint
       Module.Free.of_divisionRing k (exponentWeightSpace I H j 0)
     dsimp only [exponentWeightRank]
     rw [Module.rankAtStalk_eq_finrank_of_free,
-      exponentWeightSpace_eq_weightSpace k I H j 0, map_zero]
+      exponentWeightSpace_eq_weightSpace k I H j 0, AddEquiv.map_zero]
     rfl
   exact (mem_geometricSelfCentralizingTorusLocus_iff I G i hi _).mpr
     (hr.symm.trans (hfield.trans hdim))

@@ -1,6 +1,6 @@
 # Finite-order twists of finite-image Weil classes
 
-Author: Worker 4803. Module `Langlands.Correspondence.HenniartFiniteTwist`, namespace
+Module `Langlands.Correspondence.HenniartFiniteTwist`, namespace
 `Langlands.Henniart.Extension`. A supporting module of `HenniartSurjectivityStepProof`;
 it defines no statement.
 

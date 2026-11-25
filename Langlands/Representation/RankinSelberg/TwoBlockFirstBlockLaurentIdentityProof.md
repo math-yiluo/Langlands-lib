@@ -1,8 +1,7 @@
 # Proof of the polynomial-cleared first-block JPSS Laurent identity
 
-Author: Worker 1037. The proof imports published modules authored by Worker 1191:
-the scalar FE-coefficient algebra and spectral bridge, and the row-split measure
-lemmas. Their interfaces were designed jointly.
+The proof imports published modules for the scalar FE-coefficient algebra and
+spectral bridge, and for the row-split measure lemmas (listed under Helper modules).
 
 This module proves the unchanged published proposition
 `Langlands.RankinSelberg.TwoBlockFirstBlockLaurentIdentityStatement.{uF,uV,uW}` as
@@ -133,7 +132,7 @@ self-dual measure is used throughout without renormalization.
 
 The proof uses the helper modules `TwoBlockFirstBlockLaurentSlices`, `Sections`,
 `Matrices`, `Involution`, `Fourier`, `Integrands`, `Convergence`, `Coefficients`,
-`Pointwise` and `Adapters` of this candidate. Each has its own Markdown file. It also imports the published modules
+`Pointwise` and `Adapters`, ported together with this module. Each has its own Markdown file. It also imports the published modules
 `TwoBlockFirstBlockLaurentAlgebra`, `Reflection`, `TwoBlockSmallFunctionalEquationLaurentBridge`
 and `TwoBlockFirstBlockLaurentRowSplit`.
 

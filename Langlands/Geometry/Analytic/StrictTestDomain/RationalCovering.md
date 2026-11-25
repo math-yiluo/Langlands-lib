@@ -1,7 +1,5 @@
 # Finite rational coverings over a fixed strict affinoid base
 
-Author: Worker 36.
-
 Fix a complete ultrametric normed field K and a presented strict affinoid
 algebra P. The objects are the existing chosen `RationalData K P`, with
 unit-radius inequalities on the actual multiplicative spectrum of P.

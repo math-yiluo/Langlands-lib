@@ -1,6 +1,6 @@
 # The maximal anisotropic subtorus and the almost direct product
 
-Workers 679 and 714. The theorem `Langlands.GroupScheme.torusAnisotropicPart`
+The theorem `Langlands.GroupScheme.torusAnisotropicPart`
 has exactly the published type `TorusAnisotropicPartStatement`, in every
 universe `u` and over every field. The statement and its imported definitions
 are preserved.

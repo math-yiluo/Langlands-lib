@@ -20,7 +20,7 @@ namespace Langlands.Global.PoleComparison
 
 open NumberField Langlands.Weil.Local
 open Langlands.VirtualRepresentation Langlands.VirtualRepresentation.RelativeGlobal
-open Langlands.Global.CompletionPadic Langlands.ClassField.Global
+open Langlands.Global.CompletionPadic Langlands.ClassFieldTheory.Global
 open Langlands.Global.AdelicFunctoriality
 open Langlands.LocalFactor.NonabelianSystem.FieldTransport
 

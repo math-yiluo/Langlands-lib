@@ -172,10 +172,12 @@ coordinate-block hypothesis. Zero quotients and empty loci are allowed.
 All quotients and maps use the chosen original scalar presentations; no
 independence from those choices is asserted here.
 
-This unit establishes the product quotient, its structural spectrum
-intersection, and the two contractive restrictions. A bounded pushout
-universal property, an isometric comparison with an iterated relative
-rational quotient, and factorization of arbitrary morphisms whose spectral
-images lie in the intersection remain separate obligations. Analytic
+This module establishes the product quotient, its structural spectrum
+intersection, and the two contractive restrictions. The bounded pushout
+universal property is `boundedPushout` in `RationalIntersectionUniversal`,
+and the isometric comparison with an iterated relative rational quotient is
+`equiv` in `RationalIntersectionIterated`; factorization of arbitrary
+morphisms whose spectral images lie in the intersection remains a separate
+obligation. Analytic
 structure sheaves, atlases, etale sites, equivariant sites, and the Harris
 tower are not constructed in this module.

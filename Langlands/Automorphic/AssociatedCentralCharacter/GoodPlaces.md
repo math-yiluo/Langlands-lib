@@ -1,9 +1,7 @@
 # The Hecke character of `det S` at the good places of a weak association
 
-Author: Worker 5151.
-
 This helper module of the proof
-`Langlands.ClassField.Global.RelativeWeilGroup.associatedCentralCharacter` (module
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.associatedCentralCharacter` (module
 `Langlands.Automorphic.AssociatedCentralCharacterProof`) shows: if `det S = δ ∘ τ_F` and
 `S` is weakly associated with a spectral system `s` of rank `n`, then at cofinitely many
 finite places `v` of `F` the character `δ` is unramified and its value `δ_v(ϖ_v)` at the
@@ -29,7 +27,7 @@ Proof: take the place `w = placeAbove E v`. The unramified match supplies a loca
 Weil map `ι` for `w`, and `IsUnramifiedMatchAt.determinantCharacter_eq_prod` gives
 `det S(ι Fr) = ∏ z_i`, with `Fr` the geometric Frobenius of `W_{F_v}`. Rewriting `det S`
 as `δ ∘ τ_F`, the published `reciprocityCharacter_eq_finiteUniformizerValue` (module
-`Langlands.ClassField.Global.RelativeWeilUnramifiedTwist`) evaluates
+`Langlands.ClassFieldTheory.Global.RelativeWeilUnramifiedTwist`) evaluates
 `(δ ∘ τ_F)(ι Fr)` as `δ.finiteUniformizerValue v`, since `Fr` has degree one
 (`localGeometricFrobenius_degree`).
 

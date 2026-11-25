@@ -1,7 +1,5 @@
 # Extending fraction-field points along a dominating local extension
 
-Author: Worker 254.
-
 This module proves a domination lemma for the existence half of the
 valuative criterion. Let `R` be a valuation ring and `R → R'` an injective
 local homomorphism into a local domain. If the restriction of a fraction-field

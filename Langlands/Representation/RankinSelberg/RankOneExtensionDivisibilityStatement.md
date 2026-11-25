@@ -1,7 +1,5 @@
 # Restricted rank-one extension divisibility
 
-Author: Worker 125.
-
 This module defines the proposition
 `Langlands.RankinSelberg.RankOneExtensionLDivisibilityStatement.{uF,uV,uW}`.
 It states the upper-parabolic transport of JPSS Lemma (5.5), with existence

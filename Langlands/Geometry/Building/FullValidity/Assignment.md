@@ -1,8 +1,8 @@
 # Definition 4.1.26: availability of Bruhat–Tits theory
 
 This module assembles the full corrected KP Definition 4.1.26 from its ten axioms, on actual
-building and integral-model data. It is the final unit of task
-`129deca1-ce21-411b-9b79-7e94545fe26d`. It contains:
+building and integral-model data. It is the last of the `FullValidity` modules that
+build this predicate. It contains:
 
 * the supplied data for one group, `KPBuildingDatum`;
 * a choice of such data for all groups, `KPBuildingAssignment`;

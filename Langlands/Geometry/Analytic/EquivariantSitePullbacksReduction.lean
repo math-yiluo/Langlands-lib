@@ -36,13 +36,13 @@ cospan leg is quasi-étale. The underlying localized object is unchanged. -/
 def pullbackOfForget (hf : SaturatedAtlasPresentation.quasiEtale (forget.map f)) :
     GSpace.{u, v, v} K G := by
   let ρ := pullbackActionOnForget f g h
-  let Y : Action (LocalizedCategory.{u, v, v} (K := K)) G := ⟨P, (Aut.toEnd P).comp ρ⟩
+  let Y : Action (LocalizedCategory.{u, v, v} (K := K)) G := ⟨P, (Aut.toEnd (X := P)).comp ρ⟩
   letI : T2Space (localizedSpaceFunctor.obj (forget.obj A)) := A.2.1
   letI : T2Space (localizedSpaceFunctor.obj (forget.obj B)) := B.2.1
   have hρ : Y.ρAut = ρ := by
     apply MonoidHom.ext
     intro a
-    exact Aut.ext rfl
+    exact Aut.ext (Iso.ext rfl)
   refine ⟨Y, (hasCompactPairPreimages_of_quasiEtale h hf).1, ?_⟩
   rw [hρ]
   exact isContinuousAction_of_isPullback_of_quasiEtale h hf A.2.2 B.2.2

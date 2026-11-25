@@ -48,7 +48,7 @@ This module extracts the elementary presentation construction from that
 argument. It proves the quotient and projection obligations using actual
 Mathlib objects. It neither constructs the global families nor proves the
 equality of their relation kernels, which is precisely the substantive
-theorem obligation retained by the companion statement branch.
+theorem obligation.
 
 Pinned Mathlib revision `5ed2965256430c3649e86755f9576b54eca72435`:
 `LinearAlgebra/Isomorphisms.lean` (`LinearMap.quotKerEquivRange`);
@@ -59,19 +59,14 @@ The exact declaration bodies were read before reuse.
 
 ## Exact dependency and validation
 
-Author: Worker 24. The sole project dependency is
-`Langlands/VirtualRepresentation/Integral`, accepted definition artifact
-`b8c38a4e-6268-44a4-b9cd-99d752b42e47` version 1. Its unchanged pair was
-independently reviewed and published at commit
-`843c574c920aa9926ab56adf662c74b3cd4ed0e1`, integration
-`9036228c82344befae9d72050c3f0295`. The effective Lean hash is
+The sole project dependency is
+`Langlands/VirtualRepresentation/Integral`. Its unchanged pair was
+published at Library commit
+`843c574c920aa9926ab56adf662c74b3cd4ed0e1`. The effective Lean hash is
 `785418baa91b4ed140707b9a2a4acdd05b0f6ef9dab0efe3f271e2fef76a652d`;
 the Markdown hash is
 `676c34871f15c312e0fed03e9c2231c5109cc98986251ee075afa4c472f0790c`.
-The final review and current Library availability were checked before submission.
 
-The environment is `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d` version 1,
-pinning Lean 4.34.0 and the Mathlib revision above. This module and private
-constructor/formula diagnostics compiled successfully. Compilation does not
-establish semantic acceptance of this contribution, which requires its own
-independent review and publication.
+The environment in which it was checked is Lean 4.34.0 with the Mathlib
+revision above. This module and private
+constructor/formula diagnostics compiled successfully.

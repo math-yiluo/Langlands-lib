@@ -1,6 +1,6 @@
 # Actual stabilized Grassmannian jets and Lie determinant-dual ampleness
 
-This internal unit assembles the complete actual determinant positivity
+This module assembles the complete actual determinant positivity
 transfer for a supplied Grassmannian affine-point comparison. It does not
 construct that geometric comparison.
 
@@ -35,4 +35,4 @@ actual free-frame, chosen determinant, biproduct, base pullback, ampleness
 locality and jet-to-Lie results. For a parabolic application the actual
 affine classification morphism, its exact affine-point comparison, the
 finite-basis base complement and a positive order must still be supplied.
-This unit by itself does not prove the finite-parabolic target.
+This module by itself does not prove the finite-parabolic target.

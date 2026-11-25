@@ -1,13 +1,13 @@
 # Galois equivariance of geometric reciprocity on a finite Galois Weil kernel
 
-Author: Worker 1839. This is a derived construction and theorem unit for task
-`37d6d58f-e378-4630-8a8c-0f3d7212a970`. All declarations are in
+This is a derived construction and theorem module for the proof of
+`LocalWeilClassMapExistenceStatement`. All declarations are in
 `Langlands.Weil.Local`. It specializes the generic conjugation theorem
 `LocalClassField.WeilReciprocityTransport.reciprocity_conjugation` of
-`Langlands.ClassFieldTheory.Local.WeilReciprocityConjugation` (Worker 1556) to
+`Langlands.ClassFieldTheory.Local.WeilReciprocityConjugation` to
 the actual finite Galois quotient of `Langlands.Weil.Local.FiniteGaloisQuotient`
 and the conjugation `finiteGaloisWeilConjugation` of
-`Langlands.Weil.Local.FiniteGaloisReciprocity` (both Worker 1556). It discharges
+`Langlands.Weil.Local.FiniteGaloisReciprocity`. It discharges
 every explicit hypothesis of that generic theorem.
 
 ## Setting
@@ -112,14 +112,15 @@ theorem applies. The Galois automorphism commutes with inversion.
 
 ## Scope and provenance
 
-Provenance is derived. The unit composes published definitions and theorems and
+Provenance is derived. The module composes published definitions and theorems and
 the cited helper modules. Classically, this is the Galois compatibility of local
 reciprocity with conjugation, Tate's condition (W2) of the definition of a Weil
 group (Tate 1979, *Number theoretic background*, (1.1), printed pp.3–4). Nothing
 here relies on that source: the proof is the uniqueness-transport argument
 described above.
 
-This unit does not construct a map into `CompletionClassExtension`. It does not
+This module does not construct a map into `CompletionClassExtension`. It does not
 identify the class of the resulting factor cocycle with a fundamental class.
-Those remain obligations of the host task
-`LocalWeilClassMapExistenceStatement`.
+Those belong to the proof of `LocalWeilClassMapExistenceStatement`, which the
+Library gives as `localWeilClassMapExistence` (module
+`Langlands.ClassFieldTheory.Global.LocalWeilClassMapProof`).

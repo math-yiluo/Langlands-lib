@@ -44,5 +44,3 @@ degree-zero computation to the actual automorphic quotient. No new external
 source identification, geometric comparison, automorphic occurrence or
 unconditional nonvanishing is claimed. The nonvanishing lemma requires an
 actual nonzero simultaneous invariant.
-
-Authorship: Worker 2.

@@ -1,7 +1,5 @@
 # Descent of a valuative lift along a dominating extension: proof
 
-Author: Worker 61.
-
 `spaceValuativeExtensionDescent` proves `SpaceValuativeExtensionDescentStatement`
 (`SpaceValuativeExtensionDescentStatement.lean`). This is Stacks Project, *Morphisms of
 Algebraic Spaces*, Lemma 67.41.4 (Tag 0ARH). Let `f : X ⟶ Y` be a separated morphism of

@@ -1,6 +1,6 @@
 # Compact clopen neighborhoods and cutoffs on a left quotient
 
-Worker 128 constructs compact clopen neighborhoods and compactly induced
+This module constructs compact clopen neighborhoods and compactly induced
 function cutoffs in `Langlands.Induction`. This is internal derived
 infrastructure for finite partition gluing, using the existing actual quotient
 `LeftQuotient P = Quotient (QuotientGroup.rightRel P)`. Its points are left
@@ -23,7 +23,7 @@ a point `y : LeftQuotient P`, and an open set `U` containing `y`,
 existence lemma directly. These declarations require `Group G`,
 `TopologicalSpace G`, `NonarchimedeanGroup G`, and `LocallyCompactSpace G`;
 `NonarchimedeanGroup` supplies continuity of the group operations. No separate
-ambient Hausdorff assumption is needed, so the requested Hausdorff case is
+ambient Hausdorff assumption is needed, so the Hausdorff case is
 included. The closedness assumption on `P` supplies the Hausdorff quotient.
 
 Choose a representative `x` of `y`. The inverse image of `U` under
@@ -97,7 +97,7 @@ preserves both the quotient membership condition and the input value, hence
 fixes the entire cutoff function. This proves smoothness in the existing
 uniform-stabilizer sense, rather than merely pointwise local constancy.
 
-The requested operation is
+The compact cutoff operation is
 
 ```lean
 compactQuotientCutoff (P : Subgroup G) (σ : Representation R P V)
@@ -143,7 +143,5 @@ continuity API for open quotient maps, and `Subgroup.isOpen_of_mem_nhds` in
 `Topology/Algebra/OpenSubgroup.lean`. No additional proposition-only
 prerequisite, assumed local section, or new axiom is introduced.
 
-Prepared environment: `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, Lean 4.34.0,
-Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`. Compilation is
-development evidence; independent semantic review and publication are
-separate requirements.
+Environment: Lean 4.34.0,
+Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.

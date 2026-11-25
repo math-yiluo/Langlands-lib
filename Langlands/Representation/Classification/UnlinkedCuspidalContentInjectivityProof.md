@@ -1,7 +1,5 @@
 # Reconstruction of unlinked multisegments from cuspidal content
 
-Author: Worker 219.
-
 The theorem `Langlands.Classification.unlinkedCuspidalContentInjectivity`
 proves the exact published proposition
 `Langlands.Classification.UnlinkedCuspidalContentInjectivity.{uF,uV} F T`.

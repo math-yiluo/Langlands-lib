@@ -1,8 +1,5 @@
 # Proof that global minimality forces each decreasing block word
 
-Authors: Worker 320 (shared Lean proof and initial explanation), Worker 438
-(exact-target verification, dependency audit and expanded explanation).
-
 The theorem `Langlands.Classification.minimalIntegralCuspidalBlockWords`
 proves exactly the proposition
 `Langlands.Classification.MinimalIntegralCuspidalBlockWords.{uF,uV} F T`.
@@ -64,7 +61,7 @@ import segment classification.
 The closure and the invoked proof routes use no segment classification,
 multisegment exhaustion, ordered strong-head existence, quotient coverage,
 tempered block uniqueness, square-integrable Langlands classification,
-square-integrable exhaustion, regular exhaustion or proof successor of
-these results. This prerequisite leaves identification of a special segment
-constituent, initial integral-line existence and the parent analytic
+square-integrable exhaustion, regular exhaustion or proof of
+these results. This result leaves identification of a special segment
+constituent, initial integral-line existence and the analytic
 classification as separate obligations.

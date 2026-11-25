@@ -1,6 +1,6 @@
 # Nonzero spherical vectors and positive quotient measure for self-pairs
 
-Worker 837. Internal helpers for Task 6821.
+Internal helpers for the proof of `CuspidalSelfPairContinuationStatement`.
 
 A genuine supplied cuspidal spectral presentation includes a restricted tensor
 equivalence onto a nonzero finite slice. Its tensor exceptional set is contained
@@ -12,14 +12,14 @@ set the action fixes this tensor. The tensor equivalence, inclusion of the finit
 slice and inverse of the full realization's finite-image equivalence carry it to
 the required nonzero spherical vector.
 
-The published cuspidal Whittaker expansion then shows that the Whittaker function
+The Library's cuspidal Whittaker expansion then shows that the Whittaker function
 of every nonzero vector is nonzero somewhere. Otherwise every term of its
 expansion vanishes, its cusp function is zero, and injectivity of the cusp-function
 map forces the vector to be zero. This uses Cogdell (2004), Theorem 1.1, through
-the imported published proof.
+the imported Library proof.
 
 The measure on the adelic Whittaker quotient has full support. The proof uses its
-published regularity, nonzeroness and right-translation invariance. A nonzero
+regularity, nonzeroness and right-translation invariance from the Library. A nonzero
 regular measure has a compact set of nonzero mass. The right translates of a
 nonempty open set cover that compact set, and a finite subcover shows that the
 open set cannot have zero measure. This is an internal homogeneous-space argument

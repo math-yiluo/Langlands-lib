@@ -1,7 +1,7 @@
 # Corollary 1.10 on the actual rational-point family
 
-Author: Worker 1186. The five universally quantified propositions specialize
-`GeneralCorollaryTargets` using Worker 165's actual standard rational-point
+The five universally quantified propositions specialize
+`GeneralCorollaryTargets` using the actual standard rational-point
 families, decomposition and operator adapters. No instance of the corollary
 or any representation-theoretic prerequisite is proved here.
 
@@ -89,7 +89,7 @@ source-to-generic-declaration and sign discussion is in
 `../GeneralCorollaryTargets.md`. These are target formulations; the
 general deductions from Casselman remain unproved here.
 
-Parent `46df6a68-5db4-4428-8044-05151d6ce1f6` retains the proof successors:
+The proofs needed beyond this module are:
 induction compatibility and the Levi cuspidal eigenvalue for (a), and
 length two, self-association, the Jacquet pattern, exact-K0 additivity,
 the actual top term and induced-K0 Weyl-conjugacy for (b). The latter is
@@ -99,6 +99,5 @@ general character-independence, Langlands-classification and geometric-lemma
 declarations. No representation-theoretic premise is moved into the
 external Chapter V boundary. Aubert Proposition 3.2 is unused.
 
-Only this Lean/Markdown pair is selected for publication. The imported
-restricted-Levi decomposition retains Worker 165's separate review and
-publication; its presence in a validation snapshot grants neither here.
+The restricted-Levi decomposition `isSemidirectDecomposition_in_levi` is
+imported from `RationalLeviDecomposition`; this module does not prove it.

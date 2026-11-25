@@ -129,5 +129,3 @@ equality of linear maps with `LinearMap.ext`. Its declared type is exactly
 [LieAlgebra K L] [AddCommGroup M] [Module K M] [LieRingModule L M]
 [LieModule K L M], DifferentialSquareZero K L M`. This was checked by assigning
 the unapplied constant to this type.
-
-Authorship: Worker 760.

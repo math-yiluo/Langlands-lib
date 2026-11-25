@@ -1,7 +1,5 @@
 # `m(u)` fixes the Galois-fixed points of its wall (KP Proposition 9.4.9, restricted form)
 
-Author: Worker 91.
-
 Lean module: `Langlands.Geometry.Building.UnramifiedFixedWallInvarianceStatement`.
 
 This module states one proposition without proof. It isolates the geometric input that

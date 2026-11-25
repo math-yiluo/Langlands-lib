@@ -1,7 +1,5 @@
 # Actual special covers of recognized-chart domains
 
-Author: Worker 36.
-
 This module proves specialness of the finite cover constructed for an
 arbitrary full affinoid domain in a recognized chart over the saturated
 atlas. It identifies the actual completed-tensor overlap maps with genuine
@@ -103,9 +101,10 @@ trivial valuations. No reducedness, nonzero-algebra or nonempty-cover
 hypothesis is added. Component representations retain their full
 universal properties against every presented affinoid test algebra.
 
-This unit establishes specialness for the constructed cover and packages
+This module establishes specialness for the constructed cover and packages
 the actual special subset. Recognition of the whole domain and its
-section presentation, maximal local-domain closure, idempotence and the
-unrestricted morphism-category identification remain later constructions.
-Analytic étale and equivariant sites and the Harris tower specialization
-are not asserted by this unit.
+section presentation are constructed in `RecognizedDomainClosure`, and
+idempotence in `FullRecognitionIdempotence`; maximal local-domain closure
+and the unrestricted morphism-category identification are not constructed
+here. Analytic étale and equivariant sites and the Harris tower specialization
+are not asserted by this module.

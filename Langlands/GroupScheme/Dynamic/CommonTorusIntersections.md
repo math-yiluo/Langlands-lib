@@ -1,6 +1,6 @@
 # All-test intersection products for common cocharacters
 
-This internal derived unit proves both ordered products in the published
+This module proves both ordered products in the published
 `SubgroupFunctor.SemistandardIntersectionProducts` predicate. It uses the
 existing dynamic definitions and the closed invariant subgroup decomposition
 from `Dynamic.StableIntersection`. It imports no new structural assertion from
@@ -25,6 +25,6 @@ is no nesting, maximality, splitness, perfectness, characteristic, or
 reduced-test hypothesis, and the universe is arbitrary. In particular the
 common commutative acting group need not itself be a torus.
 
-This unit does not prove the actual parabolic-in-centralizer, reductive Levi,
+This module does not prove the actual parabolic-in-centralizer, reductive Levi,
 or geometric radical part of the general semistandard intersection statement.
 Those are separate structural obligations.

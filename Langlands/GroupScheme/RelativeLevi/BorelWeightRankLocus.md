@@ -1,6 +1,6 @@
 # The clopen locus with no opposite nonzero adjoint weight ranks
 
-Worker 647. The internal definition
+The internal definition
 `Langlands.GroupScheme.splitTorus.noOppositeWeightRankLocus` applies to a
 smooth affine group scheme `P` over an arbitrary affine base `Spec r`,
 with a specified homomorphism from the standard split torus of finite

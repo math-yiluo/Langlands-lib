@@ -3,8 +3,9 @@
 This module states one internal comparison family for the published
 [common interface](Definitions.md) and [adapters](Adapters.md). Its exact target
 is `Langlands.LocalFactor.RegularEvaluation.ComparisonStatement`; the four
-named component definitions and the aggregate return `Prop`. This contribution
-contains statements only. A later proof must prove this published aggregate.
+named component definitions and the aggregate return `Prop`. This module
+contains statements only; the aggregate is proved as `comparisonStatement` in
+`RegularEvaluation.ComparisonProof`.
 
 ## Common notation and exact scope
 
@@ -41,7 +42,7 @@ forward and inverse input clauses, and
 ∀ x : S, regularFactorValue A x = value P.eval (e x).
 ```
 
-The accepted [Euler definitions](../Euler/Definitions.md) define `S` by
+The published [Euler definitions](../Euler/Definitions.md) define `S` by
 `P.eval z ≠ 0` and `regularFactorValue` by inverting the nonzero denominator
 unit. The adapter is the identity equivalence after unfolding those subtypes.
 The comparison uses the actual evaluator; it does not reinterpret evaluation
@@ -90,7 +91,7 @@ the two input clauses, and
 ∀ x : F.RegularPoint, F.eval x = value F.denominator (e x).
 ```
 
-The source is the accepted [reciprocal-entire API](../Analytic/ReciprocalEntire.md).
+The source is the published [reciprocal-entire API](../Analytic/ReciprocalEntire.md).
 Its evaluator constructs a unit from the inverse scalar, whereas the generic
 evaluator inverts a denominator unit. This statement compares the resulting
 units and does not change either body. The comparison is only at regular
@@ -145,15 +146,14 @@ an evaluator at excluded inputs. No inverse to `spectralVariable` is asserted.
 and conjoins them in the order Euler, spectral Euler, reciprocal-entire,
 p-adic abelian. Its four universes `uK`, `uV`, `uW`, and `uF` are independent.
 Its type is `Prop`, with the carrier and instance quantifiers inside the
-proposition, so the later exact-target proof must not move these assumptions
-outside the target.
+proposition, so the exact-target proof in `RegularEvaluation.ComparisonProof`
+keeps these assumptions inside the target.
 
-Worker 64 authored this statement and its documentation. The mathematical
-provenance is internal: it compares Worker 12's published adapters directly
-with the published specialized formulas. Euler and reciprocal-entire source
-work is credited to Worker 20; the [p-adic source](../Abelian/Padic.md) credits
-Workers 33 and 20. Their original-source references remain in those imported
-modules. The substitution value equations specialize the common interface's
+The mathematical
+provenance is internal: it compares the published adapters directly
+with the published specialized formulas of the Euler, reciprocal-entire and
+[p-adic](../Abelian/Padic.md) modules. Their original-source references remain
+in those imported modules. The substitution value equations specialize the common interface's
 `value_mapInput`; the p-adic domain equation reuses its published theorem.
 These dependencies justify the formulation without attributing a new arithmetic
 assertion to external literature.
@@ -161,4 +161,4 @@ assertion to external literature.
 Only this Lean/Markdown pair is added. All original specialized declarations,
 including conductors, germs, poles, rational factors, Gamma normalizations,
 and epsilon expressions, are retained. No local functional equation or proof
-of the comparison family is submitted here.
+of the comparison family is part of this module.

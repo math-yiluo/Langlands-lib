@@ -1,8 +1,9 @@
 # Higher direct images and restriction to an open of the base
 
-Authors: Worker 727 and Worker 1013. Worker 1013 requested the comparison and
-the vanishing interface for the reverse affine base-change proof (task
-7584bcbd).
+The comparison and the vanishing interface serve the proof of affine base
+change from vanishing higher direct images (`higherDirectImageVanishingAffineBaseChange`,
+module `HigherDirectImageVanishingAffineBaseChangeProof`, which uses
+`isZero_higherDirectImage_pullback`).
 
 Module `Langlands.AlgebraicGeometry.Modules.HigherDirectImageOpenRestriction`,
 namespace `Langlands.AlgebraicGeometry.Modules.DerivedSections`. Take a morphism

@@ -1,7 +1,5 @@
 # Ordinary and Tate cup comparison
 
-Authors: Worker 45 (proof draft); Worker 210 (author audit and submission documentation).
-
 This is the implementation of `Langlands.Tate.OrdinaryTateCupLaws`. The main
 lemma `ordinaryToTate_cup` compares the published explicit ordinary cochain cup
 with the published dimension-shifted Tate cup in every natural bidegree. The
@@ -63,8 +61,7 @@ normalization, naturality, boundary and ordinary-class induction theorems.
 Its use of scalar-split shift sequences explains why the broader ring
 generality requires no additional tensor-exactness premise.
 
-The file imports the independently published `OrdinaryCupLawsProof` and
+The file imports the `OrdinaryCupLawsProof` and
 `OrdinaryCupBoundaryProof` modules unchanged, together with the published
-comparison, shift and Tate-cup infrastructure. Only this new proof pair is
-part of the contribution. The theorem concerns every natural bidegree; it
+comparison, shift and Tate-cup infrastructure. The theorem concerns every natural bidegree; it
 makes no assertion about negative ordinary degrees.

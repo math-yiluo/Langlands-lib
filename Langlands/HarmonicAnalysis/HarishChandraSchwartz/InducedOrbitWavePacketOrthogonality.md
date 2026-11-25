@@ -2,14 +2,14 @@
 
 Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.InducedOrbitWavePacketOrthogonality`,
 namespace `Langlands.HarishChandraSchwartz`. It imports
-`Langlands.HarmonicAnalysis.HarishChandraSchwartz.InducedOrbitWavePacketPairing` (Worker 249):
+`Langlands.HarmonicAnalysis.HarishChandraSchwartz.InducedOrbitWavePacketPairing`:
 formula (1) of the proof of Proposition VII.2.2
 (`pairing_inducedOrbitWavePacket_eq_integral_productPairing`), its converse direction
 `pairing_inducedOrbitWavePacket_eq_zero` and the weighted orbit product
 `unitaryOrbitWeightedProductPairing`. Through its imports it uses the wave packet
 `inducedOrbitWavePacket` (`OrbitWavePacket`), the section `fourierOrbitSection` (`ψ_f[O, P]`,
 `InducedFourierCoherence`), `pairing`, `Space Ξ σ`, `L2Weights` and `HasTemperedCoefficients`
-(`TemperedPairing`), and, from Worker 200's `ProductInducedOrbitForm` and the modules below it, the
+(`TemperedPairing`), and, from `ProductInducedOrbitForm` and the modules below it, the
 section space `productInducedSmoothOrbitSections` (`C^∞(O, P)`), the positive form
 `unitaryOrbitRepresentativeProductForm` on `L(ω, P)` at a representative, the scalar orbit pairing
 `unitaryOrbitProductPairing` with `unitaryOrbitProductPairing_representative`,
@@ -208,7 +208,7 @@ representative `A`.
 
 ## Relation to the Library
 
-- `productInducedSmoothOrbitCore` (`ProductInducedOrbitForm`, Worker 200) is the unweighted
+- `productInducedSmoothOrbitCore` (`ProductInducedOrbitForm`) is the unweighted
   positive core `∫_O (q_ω, r_ω) dω` on `C^∞(O, P)`;
   `unitaryOrbitWeightedProductCore_one_inner` identifies it with the weighted core for `u = 1`.
   The weighted core is needed to state the wave-packet hypothesis with the weight of the wave

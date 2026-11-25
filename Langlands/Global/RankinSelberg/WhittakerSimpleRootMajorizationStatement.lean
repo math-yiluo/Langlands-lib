@@ -13,7 +13,7 @@ namespace Langlands.Global.RankinSelbergGlobal
 
 open Unfolding
 
-local instance gaugeStatementSchemeAffine (F : Type u) [Field F] (n : ℕ) :
+private local instance gaugeStatementSchemeAffine (F : Type u) [Field F] (n : ℕ) :
     IsAffine (Scheme F n).X.left := GroupScheme.GeneralLinear.isAffine_groupScheme _ _
 
 /-- A pointwise adelic gauge estimate for an analytic decay space with one

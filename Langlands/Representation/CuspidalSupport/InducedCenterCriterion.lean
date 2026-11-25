@@ -363,7 +363,7 @@ theorem fullPieces_separated (hG : IsConnectedReductive G) {zj zk : rationalPoin
       (∀ n : ℕ, 0 < n → t ^ n ∉ Plancherel.rationalCommonNormKernel M) →
         ∀ v : σ, σ.representation t v = v → v = 0)
     (ζ : letI := leviPointTopology l hl; σ ⟶ σ)
-    (hζc : letI := leviPointTopology l hl; ζ ∈ Subring.center (End σ))
+    (hζc : letI := leviPointTopology l hl; End.of ζ ∈ Subring.center (End σ))
     {Aj Ak : letI := leviPointTopology l hl
       SmoothRep.{0, u, max u v} ℂ (rationalPoints M) ⥤ Rep.{max u v} ℂ (rationalPoints M)}
     (αj : letI := leviPointTopology l hl; Aj ≅ Dj.pieceFunctor)
@@ -377,8 +377,8 @@ theorem fullPieces_separated (hG : IsConnectedReductive G) {zj zk : rationalPoin
     d = 0 := by
   have := hl.isConnectedReductive.isAffineHom
   let := leviPointTopology l hl
-  have hζcomm (x : End σ) : x ≫ ζ = ζ ≫ x :=
-    ((Subring.mem_center_iff (R := End σ)).mp hζc x).symm
+  have hζcomm (x : σ ⟶ σ) : x ≫ ζ = ζ ≫ x :=
+    (congrArg End.asHom ((Subring.mem_center_iff (R := End σ)).mp hζc (End.of x))).symm
   obtain ⟨c', hc', χ, hχ⟩ := exists_center_norm_ne_of_fullPieces hG Dj Dk hw
   have hψj : Dj.fullLeviPointsEquiv c' ∈ Subgroup.center (rationalPoints M) :=
     (mulEquiv_apply_mem_center_iff Dj.fullLeviPointsEquiv c').mpr hc'
@@ -421,7 +421,7 @@ theorem leviJacquetSupportFiltration_graded_separated (hG : IsConnectedReductive
       (∀ n : ℕ, 0 < n → t ^ n ∉ Plancherel.rationalCommonNormKernel M) →
         ∀ v : σ, σ.representation t v = v → v = 0)
     (ζ : letI := leviPointTopology l hl; σ ⟶ σ)
-    (hζc : letI := leviPointTopology l hl; ζ ∈ Subring.center (End σ))
+    (hζc : letI := leviPointTopology l hl; End.of ζ ∈ Subring.center (End σ))
     (j k : Fin n) (hjk : j < k)
     (d : letI := leviPointTopology l hl
       ((leviJacquetSupportFiltration.{u, max u v} p l r hp hr hl hmul
@@ -480,14 +480,14 @@ theorem leviInduction_map_mem_center_of_twistedCommutation (hG : IsConnectedRedu
       (∀ n : ℕ, 0 < n → t ^ n ∉ Plancherel.rationalCommonNormKernel M) →
         ∀ v : σ, σ.representation t v = v → v = 0)
     (ζ : letI := leviPointTopology l hl; σ ⟶ σ)
-    (hζc : letI := leviPointTopology l hl; ζ ∈ Subring.center (End σ))
+    (hζc : letI := leviPointTopology l hl; End.of ζ ∈ Subring.center (End σ))
     (hζ : letI := leviPointTopology l hl
       ∀ (w : rationalPoints G) (φ : M ≅ M), φ.hom ≫ l ≫ p = l ≫ p ≫ (G.innerIso w).hom →
         ∀ T : σ →ₗ[ℂ] σ, (∀ (m : rationalPoints M) (v : σ),
           T (σ.representation m v) = σ.representation (rationalPoints.map φ.hom m) (T v)) →
         ∀ v : σ, T (SmoothRep.hom ζ v) = SmoothRep.hom ζ (T v)) :
     letI := leviPointTopology l hl
-    (leviInductionFunctor p l r hp hr hl hmul).map ζ ∈
+    End.of ((leviInductionFunctor p l r hp hr hl hmul).map ζ) ∈
       Subring.center (End ((leviInductionFunctor p l r hp hr hl hmul).obj σ)) := by
   have := hl.isConnectedReductive.isAffineHom
   let := leviPointTopology l hl
@@ -543,18 +543,19 @@ theorem leviInduction_map_mem_center_of_twistedCommutation (hG : IsConnectedRedu
   let mk := Jacquet.Localization.mk (I.obj σ).representation (pointImage (r ≫ p)) 1
   have hmk : Function.Surjective mk := Jacquet.Localization.mk_surjective _ _ _
   refine (Subring.mem_center_iff (R := End (I.obj σ))).mpr fun a => ?_
-  have hx : SmoothRep.hom (I.map ζ ≫ a) = SmoothRep.hom (a ≫ I.map ζ) := by
+  have hx : SmoothRep.hom (I.map ζ ≫ a.asHom) = SmoothRep.hom (a.asHom ≫ I.map ζ) := by
     apply eF.injective
     refine Representation.IntertwiningMap.ext (LinearMap.ext fun w => ?_)
     obtain ⟨f, rfl⟩ := hmk w
-    change eF (SmoothRep.hom (I.map ζ ≫ a)) (mk f) = eF (SmoothRep.hom (a ≫ I.map ζ)) (mk f)
+    change eF (SmoothRep.hom (I.map ζ ≫ a.asHom)) (mk f) =
+      eF (SmoothRep.hom (a.asHom ≫ I.map ζ)) (mk f)
     rw [heF, heF]
-    have h1 := key (eF (SmoothRep.hom a)) (mk f)
-    have h2 := heF (SmoothRep.hom a) (SmoothRep.hom (I.map ζ) f)
-    have h3 := heF (SmoothRep.hom a) f
-    change eF (SmoothRep.hom a) (mk (SmoothRep.hom (I.map ζ) f)) = _ at h1
+    have h1 := key (eF (SmoothRep.hom a.asHom)) (mk f)
+    have h2 := heF (SmoothRep.hom a.asHom) (SmoothRep.hom (I.map ζ) f)
+    have h3 := heF (SmoothRep.hom a.asHom) f
+    change eF (SmoothRep.hom a.asHom) (mk (SmoothRep.hom (I.map ζ) f)) = _ at h1
     rw [h2, h3] at h1
     exact h1
-  exact congrArg SmoothRep.ofHom hx
+  exact End.ext (congrArg SmoothRep.ofHom hx)
 
 end Langlands.Aubert.General.RepresentedParabolic

@@ -1,6 +1,6 @@
 # The actual spherical denominator product
 
-This internal unit applies the coordinate denominator polynomial from
+This module applies the coordinate denominator polynomial from
 `SphericalDenominator` to the actual lower-bounded model series from
 `SphericalSeries`. It also supplies the algebraic step from a uniform upper
 bound on all scalar specializations to finite support. The upper bound is an
@@ -119,7 +119,7 @@ unit-tuple specialization of this product, then its actual support over the
 symmetric torus algebra is finite. The lower bound is proved here from the
 model data; the upper bound remains a premise.
 
-## Provenance and remaining obligations
+## Provenance and what is not proved here
 
 This is an internal deduction from the preceding spherical constructions,
 finite sums and separation by evaluations. Its proof route explicitly

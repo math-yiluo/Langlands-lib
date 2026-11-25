@@ -1,8 +1,8 @@
 # Exact stabilizers and irreducibility of all Mackey constituents
 
-Worker 60 authored these group-theoretic helpers and their application to the
+This module holds group-theoretic helpers and their application to the
 Library's actual Mackey constituents. The imported
-`GeneralPositionInductionProof` is Worker 34's finite-coordinate
+`GeneralPositionInductionProof` is the finite-coordinate
 irreducibility argument. The two modules are internal components of the joint
 proof of `Langlands.Global.GeneralPositionOfExactStabilizerStatement`.
 
@@ -47,7 +47,8 @@ The implemented steps are:
    witness `n : N` distinguishing each two distinct right cosets. The
    quotient relation tests membership of `b a⁻¹`; taking inverses
    reconciles this with the preceding membership condition.
-   `induce_irreducible_of_exactStabilizer` applies Worker 34's criterion
+   `induce_irreducible_of_exactStabilizer` applies the criterion
+   `induce_irreducible_of_separation` of `GeneralPositionInductionProof`
    to prove irreducibility of the induced character of `G` itself.
 3. `normal_le_conjugate` and `normal_subgroupOf_le_conjugate` place the
    normal subgroup inside every Mackey inducing subgroup.

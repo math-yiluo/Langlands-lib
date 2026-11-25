@@ -1,7 +1,5 @@
 # Ordered tails of tempered Langlands data
 
-Author: Worker 111.
-
 This is an internal restriction construction from the published
 `Classification.LanglandsData` and `Group.GL.HeadTailBlocks` modules.
 It introduces no classification or analytic theorem.

@@ -8,4 +8,4 @@ The proof takes closures of the selected generic component and its complementary
 
 This is an internal construction from the imported actual-fibre and closed-support comparisons. Its route implements the generic-fibre step in EGA IV3 Proposition 9.7.12, printed p.83 (retained PDF zero-based page81), whose proof spreads the selected generic clopen piece and uses geometric-connectedness spreading. Source: Grothendieck and Dieudonné, *Éléments de géométrie algébrique IV, Troisième partie* (1966), registered as `ega-iv3-grothendieck-dieudonne-1966`, SHA-256 `f365212b38f20608ba34c21ae3ee40bbae1b42d9d3dff01a85356f9cc819c23e`. The original IV4 List III errata, printed pp.352–353 (retained PDF zero-based pages350–351), passes from corrections to §8 to §10 and makes no correction to 9.7.12.
 
-The generic-constancy input remains an explicit premise. This unit does not prove it, global constructibility, or the host openness theorem.
+The generic-constancy input remains an explicit premise. This module does not prove it, global constructibility, or the openness statement `FlatFinitePresentationOpennessStatement` that it serves.

@@ -1,7 +1,5 @@
 # Statement: every torus over a field splits over a finite Galois extension
 
-Author: Worker 770.
-
 This module states that every torus over a field, in the sense of the Library
 definition `IsTorus`, becomes a split torus after base change to a finite
 Galois extension of the base field. It only defines the proposition and proves
@@ -91,7 +89,9 @@ intermediate step must prove it, or state it as its own target.
 
 `IsTorus T` supplies only some splitting field `K₀`, and it assumes neither
 affineness nor finite type of `T`. The sources apply as follows. This outline
-is for the separate proof task; this module proves none of it.
+is for the proof, which is `torusFiniteGaloisSplitting` in
+[`FiniteGaloisSplittingProof`](FiniteGaloisSplittingProof.md); this module
+proves none of it.
 
 1. `Spec K₀ → Spec k` is faithfully flat and quasi-compact. So `IsTorus T` is
    exactly an fpqc trivialization `T_{K₀} ≅ 𝔾_m^r` with one cover. Hence `T`
@@ -121,6 +121,6 @@ vocabulary. Two changes are derived and need no new idea. The finite separable
 extension is enlarged to its Galois closure, which preserves splitting. The
 conclusion is the existing scheme-level `IsSplitTorus`, not "diagonalizable".
 
-This proposition is a missing prerequisite for Galois descent of tori,
-requested for the algebraic-groups programme. Only the statement is defined
-here. The proof is a separate obligation.
+This proposition is a prerequisite for Galois descent of tori. Only the
+statement is defined here. The proof is `torusFiniteGaloisSplitting` in
+`FiniteGaloisSplittingProof`.

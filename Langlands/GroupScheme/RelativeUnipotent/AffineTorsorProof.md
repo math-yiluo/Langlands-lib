@@ -1,6 +1,7 @@
 # Affine torsors under finite vector-bundle group series
 
-Worker 595, with the vector-bundle cocycle constructions of Workers 645 and 682.
+This module uses the vector-bundle cocycle constructions of
+`VectorBundleSeriesCocycle` and `AffineCocycleReduction`.
 
 `Langlands.GroupScheme.relativeUnipotentAffineTorsor` proves exactly the published
 `Langlands.GroupScheme.RelativeUnipotentAffineTorsorStatement.{u}` in every universe

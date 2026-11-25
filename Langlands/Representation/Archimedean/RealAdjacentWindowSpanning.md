@@ -1,6 +1,6 @@
 # Spanning by adjacent low and high Fourier windows
 
-This internal derived unit concerns the actual compact-finite principal-series
+This module concerns the actual compact-finite principal-series
 space `PrincipalSeriesAnnihilator.KFin n χ`, with its compact Haar inner product.
 It uses no additional literature premise.
 
@@ -30,6 +30,6 @@ consequence. Given any complex module `E`, a surjective map `T` from this
 principal series to `E` that kills the range of `P` remains surjective after
 composition with `Q`. It decomposes each preimage into the two ranges.
 
-The endomorphisms are inputs here. This unit does not construct their concrete
+The endomorphisms are inputs here. This module does not construct their concrete
 rank-one Frobenius formulas, identify an induction-block subspace, or prove
 the unrestricted two-induction-block filtration.

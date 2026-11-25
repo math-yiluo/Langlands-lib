@@ -1,6 +1,6 @@
 # Actual generalized-weight support and common eigenvectors
 
-Proof by Worker 189. This module proves the unchanged published proposition
+This module proves the unchanged published proposition
 `Langlands.CommutingTupleGeneralizedWeightSupportStatement.{u}` with the closing
 theorem `Langlands.commutingTupleGeneralizedWeightSupport`.
 
@@ -48,8 +48,8 @@ Its proof uses scalar differences and common kernels, without choosing
 a triangularization basis or using a decomposition.
 
 The restriction and commutation arguments follow the published
-`Langlands.Representation.Exponents.DualEigenfunctionalExistence` module by
-Worker 23, whose common-kernel theorem is imported by Lean name. The present
+`Langlands.Representation.Exponents.DualEigenfunctionalExistence` module,
+whose common-kernel theorem is imported by Lean name. The present
 proof applies that theorem directly on the block rather than on its dual.
 The scalar-difference nilpotence theorem is a Mathlib result.
 

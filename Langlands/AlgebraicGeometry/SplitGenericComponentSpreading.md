@@ -1,11 +1,13 @@
 # Conditional spreading of split generic components
 
-Worker 105. This derived construction implements the closed-cover assembly in
+This derived construction implements the closed-cover assembly in
 the proof of Stacks Lemma 37.28.4 (055G), using the actual closure constructions.
 It explicitly assumes the full geometric-irreducibility spreading proposition
-`FiniteTypeGeometricallyIrreducibleGenericSpreading`, the still unproved
-Stacks 0559 target. It does not prove that proposition or finite generic
-splitting (0551).
+`FiniteTypeGeometricallyIrreducibleGenericSpreading`, the Stacks 0559 target,
+which the Library proves separately as
+`finiteTypeGeometricallyIrreducibleGenericSpreading` in
+`GeometricIrreducibilityProof`. This module does not prove that proposition or
+finite generic splitting (0551).
 
 The source for the assembly is registered collection
 `stacks-fibre-constructibility-local-dimension-2026-11-04`, SHA256
@@ -56,4 +58,4 @@ No reducedness, properness, smoothness, flatness, separatedness or
 quasi-separatedness is imposed. The morphism is locally of finite type
 and quasi-compact, and the base is Noetherian. Finite generic splitting,
 unconditional spreading, generic connectedness constancy and the full
-Conrad descent theorem remain separate obligations.
+Conrad descent theorem are not proved in this module.

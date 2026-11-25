@@ -1,6 +1,6 @@
 # Compact compression on images of generator presentations
 
-Worker 1751. This is internal infrastructure obtained by composing the
+This is internal infrastructure obtained by composing the
 published generator-presentation, actual coproduct-carrier, compact averaging,
 and stable-endomorphism results.
 

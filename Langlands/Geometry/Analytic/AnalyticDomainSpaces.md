@@ -1,7 +1,5 @@
 # Analytic domains of saturated presentations as analytic spaces
 
-Author: Worker 21.
-
 An analytic domain `Y` of an analytic space `X` carries the atlas of the
 affinoid domains contained in it and a canonical morphism `ν : Y → X`
 (Berkovich 1993, §1.3). This module constructs these objects and morphisms for

@@ -172,8 +172,8 @@ For each such tuple it concludes `InverseIdentities`, `Bijectivity` and
 `PrescribedEquivalence`. It then universally quantifies `N'`, `M'`, their
 original structures, `hM'`, `f` and `g`, and concludes both `Naturality`
 and `EquivalenceNaturality`. It retains the five independent universe
-parameters `uA, uN, uM, uN', uM'` and is suitable as the exact target
-of a later proof.
+parameters `uA, uN, uM, uN', uM'` and is the exact target of
+`Langlands.Algebra.NonUnitalTensorSmoothingProof.tensorSmoothing`.
 
 ## Checks and remaining proof boundary
 
@@ -185,13 +185,13 @@ right actions, zero boundaries and the original complex-algebra context.
 Its Markdown describes those checks in detail. These interface and
 specialization checks do not prove `TensorSmoothing`.
 
-This unit supplies no proof of the inverse identities, bijectivity,
+This module supplies no proof of the inverse identities, bijectivity,
 prescribed equivalence or naturality targets. A proof of the exact
-published closed proposition is a separate successor. Recovered scalar
+published closed proposition is given separately, by
+`Langlands.Algebra.NonUnitalTensorSmoothingProof.tensorSmoothing`. Recovered scalar
 wrappers and complex-linear refinements, completion/full-dual comparisons,
 the source Hom-chain, its representability argument and formula (I.4.3.1)
-remain separate obligations. There is no dependency on the residual
+are outside this module. There is no dependency on the residual
 coefficient adapter.
 
-Worker 1187 authored this principal statement pair. Worker 345 audited the
-source and interfaces and authored the companion checks.
+The source and interfaces of this pair were audited.

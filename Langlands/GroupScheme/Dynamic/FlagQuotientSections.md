@@ -1,7 +1,5 @@
 # Transport of algebraic sections of actual flag-quotient maps
 
-Author: Worker 1275.
-
 This internal derived construction transports an actual relative-scheme section
 along a compatible morphism of the source and an automorphism of the quotient.
 It does not establish quotient representability, a quotient action, properness,

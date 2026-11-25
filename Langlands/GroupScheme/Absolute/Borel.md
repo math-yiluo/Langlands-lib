@@ -1,7 +1,5 @@
 # Solvable, Borel and parabolic subgroups over a field
 
-Worker 1234.
-
 This module defines the absolute structure notions for group schemes over a
 field: solvable group schemes, Borel subgroups, parabolic subgroups, Borel pairs
 and regular cocharacters. It defines notions only. The structure theorems about
@@ -96,14 +94,13 @@ For `i : P ⟶ G`, `IsParabolicSubgroup i` is a structure with three fields:
 
 This definition is **derived from Milne, Theorem 17.16**. Milne, Definition
 17.15, calls a subgroup variety `P` of a connected group variety `G` over any
-field parabolic when `G/P` is complete. Quotients `G/P` are not available in
-the Library. Theorem 17.16 shows that `P` is parabolic if and only if it
+field parabolic when `G/P` is complete. Theorem 17.16 shows that `P` is parabolic if and only if it
 contains a Borel subgroup. Borel subgroups are defined over an algebraically
 closed field, and `G/P` is complete if and only if its base change
 `G_{k̄}/P_{k̄}` is, so the criterion is applied to `P_{k̄}` in `G_{k̄}`.
 
 The field `smooth` records that Milne's parabolic subgroups are subgroup
-varieties, that is, smooth, as the task requires. Without it, in characteristic
+varieties, that is, smooth. Without it, in characteristic
 `p` the closed subgroup of `GL_2` cut out by `c^p = 0`, with `c` the lower-left
 entry, would count as parabolic. It contains the upper triangular Borel
 subgroup, but its coordinate ring contains the nonzero nilpotent `c`, so it is

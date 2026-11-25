@@ -1,7 +1,6 @@
 # Canonical cohomology pullback and change of the affine base ring
 
 Module `Langlands.AlgebraicGeometry.Modules.CohomologyPullbackBaseRing`.
-Author: Worker 134.
 
 ## Main result
 

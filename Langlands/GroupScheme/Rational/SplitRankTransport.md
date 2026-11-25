@@ -1,6 +1,6 @@
 # Transport and finite-rank comparison for split subtori
 
-Worker 1271. This internal development supplies formal consequences of the published
+This internal development supplies formal consequences of the published
 split-torus, lattice and split-rank constructions. It does not establish ambient
 rational conjugacy, existence of maximal extensions, or rank attainment.
 

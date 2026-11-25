@@ -121,7 +121,10 @@ This is exactly the remaining maximality clause of `IsSplitComponent aM`.
 Every module prefix in this table is `Langlands.GroupScheme.`. All structural
 inputs used by the proof are published theorems. The proof uses rational
 conjugacy in `R`; the stronger assertion of conjugacy by the unipotent radical
-is not needed. No sibling split-component statement is assumed. This unit proves
+is not needed. No sibling split-component statement is assumed. This module proves
 only `ParabolicSplitComponentLeviStatement`; the other statements and their
-conjunction remain separate obligations. The target Lean/Markdown pair and its
-imports are unchanged.
+conjunction are proved in their own modules, the conjunction
+`ParabolicSplitComponentStatements` as `parabolicSplitComponents` in
+`Rational.ParabolicSplitComponentStatementsProof`. The statement module
+`Rational.ParabolicSplitComponentStatements` and its imports do not depend on
+this module.

@@ -1,8 +1,8 @@
 # Conjugation and isomorphism of pairs `(J, λ)`
 
-Source: C. J. Bushnell and P. C. Kutzko, *The admissible dual of GL(N) via compact open subgroups* (1993), Theorem (5.7.1), printed p. 195 (PDF p. 207), where two simple types `(J₁, λ₁)`, `(J₂, λ₂)` are shown to satisfy `J₂ = x⁻¹J₁x` and `λ₂ ≅ λ₁^x` for some `x ∈ G`, with `λ₁^x(h) = λ₁(x h x⁻¹)` as in (5.1.7), printed p. 160. This is definition 6 of Task 7427, which spells out the convention as a left action: `g·(J, λ) = (gJg⁻¹, λ^{g⁻¹})` with `λ^{g⁻¹}(gjg⁻¹) = λ(j)`. With `g = x⁻¹`, `g·(J₁, λ₁) = (x⁻¹J₁x, λ₁^x)`, so the two formulations describe the same relation.
+Source: C. J. Bushnell and P. C. Kutzko, *The admissible dual of GL(N) via compact open subgroups* (1993), Theorem (5.7.1), printed p. 195 (PDF p. 207), where two simple types `(J₁, λ₁)`, `(J₂, λ₂)` are shown to satisfy `J₂ = x⁻¹J₁x` and `λ₂ ≅ λ₁^x` for some `x ∈ G`, with `λ₁^x(h) = λ₁(x h x⁻¹)` as in (5.1.7), printed p. 160. The definitions here spell out the convention as a left action: `g·(J, λ) = (gJg⁻¹, λ^{g⁻¹})` with `λ^{g⁻¹}(gjg⁻¹) = λ(j)`. With `g = x⁻¹`, `g·(J₁, λ₁) = (x⁻¹J₁x, λ₁^x)`, so the two formulations describe the same relation.
 
-A pair is a subgroup `J` of a group `G` together with a representation `ρ : Representation ℂ J W` on a complex vector space `W`. The definitions make sense for any group `G`; in Task 7427, `G = Aut_F(V)` and `J` is compact open.
+A pair is a subgroup `J` of a group `G` together with a representation `ρ : Representation ℂ J W` on a complex vector space `W`. The definitions make sense for any group `G`; for the simple types of BK93 (`SimpleTypes`), `G = Aut_F(V)` and `J` is compact open.
 
 ## Definitions
 

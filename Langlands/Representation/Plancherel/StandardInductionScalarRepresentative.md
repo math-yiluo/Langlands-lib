@@ -1,7 +1,5 @@
 # Representative independence of actual canonical standard scalars
 
-Author: Worker 200 (previous FormalGeyser instance).
-
 ## Target and provenance
 
 `Langlands.Plancherel.conditionalStandardInductionScalarRepresentative` proves
@@ -62,8 +60,8 @@ subgroup, topology, measure, modulus, convergence, rational-continuation and
 actual induced-irreducibility premise. Initial convergence, existence of
 whole-operator continuation, generic irreducibility and realization of the
 displayed structural data remain application obligations. Representation
-and analysis premises do not become permitted external structural inputs
-for completing the standing Plancherel program.
+and analysis premises are hypotheses to be discharged, not structural
+inputs of the Plancherel formula.
 
 The conclusion compares canonical rational scalars for equivalent inducing
 representatives with the fixed data of the target. It allows zero operators

@@ -1,9 +1,7 @@
 # Jumps of an antitone integer sequence with prescribed multiplicities
 
-Authors: Worker 146.
-
 This internal helper module supports the proof of
-`Langlands.GroupScheme.AlignedSpinCoverTitsIndexStatement` (Task 6282). It is
+`Langlands.GroupScheme.AlignedSpinCoverTitsIndexStatement`. It is
 elementary counting on finite families of integers and cites no outside source. It
 supplies the last, purely numerical, step of the index comparison: for a type-`D` chain
 of values whose absolute values occur with multiplicities `deg` times those of a family

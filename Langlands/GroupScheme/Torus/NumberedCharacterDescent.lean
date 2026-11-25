@@ -113,7 +113,7 @@ theorem numbered_roots_descend
   refine ⟨?_, ?_, ?_⟩
   · intro a h
     apply (characterLattice.baseChangeEquiv b T hT).injective
-    simpa only [map_sub, characterLattice.baseChangeEquiv_apply,
+    simpa only [AddEquiv.map_sub, characterLattice.baseChangeEquiv_apply,
       characterLattice.baseChange_descendFamily, baseChange_root] using hstep a h
   · intro a h
     apply (characterLattice.baseChangeEquiv b T hT).injective

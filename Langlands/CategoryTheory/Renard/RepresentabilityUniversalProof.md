@@ -10,12 +10,6 @@ That companion explains the three components, the costructured-arrow form
 of the left universal problem and the universe conventions. This file
 describes the implemented proof.
 
-Worker 1187 authored the Lean proof. Worker 709 supplied an additional
-proof-documentation draft, portions of which Worker 1193 adapted to this
-implementation. Worker 1193 also checked the source/formulation alignment
-and prepared the final English documentation. These are author contributions;
-independent review is separate.
-
 ## Source and provenance
 
 The governing source is David Renard, *Représentations des groupes
@@ -23,8 +17,8 @@ réductifs p-adiques*, French version dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 The final remark of A.III.2 is on printed p.254 / one-based PDF260; its
-proof and the corollary are on printed p.255 / PDF261. Worker 1193 read
-both pages and verified the source fingerprint.
+proof and the corollary are on printed p.255 / PDF261. Both pages were
+read and the source fingerprint was verified.
 
 The book proves both directions of the first assertion. For the converse
 it constructs the inverse of each component of the transformation by
@@ -39,9 +33,9 @@ The supplementary registered source
 `renard-2010-corrections-complements`, SHA256
 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
 corrects identity evaluation for the universal arrow and factorization
-through the representing transformation on PDF18–19. Worker 1193 read
-those pages and verified that the governing 2026 passage already uses
-both corrected forms. The supplementary edition does not replace the
+through the representing transformation on PDF18–19. Those pages were
+read, and the governing 2026 passage was verified to use both corrected
+forms already. The supplementary edition does not replace the
 governing source or supply a separate mathematical hypothesis.
 
 ## Declarations

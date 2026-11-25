@@ -1,6 +1,6 @@
 # The coordinate Galois discrepancy and its torus action
 
-This internal derived unit specializes the actual torus-compatible Galois
+This internal derived module specializes the actual torus-compatible Galois
 discrepancy to `SpecialLinearTitsCocycle.Presentation`. It supplies an
 automorphism of the split special linear model over the stage field and an
 automorphism of its fixed coordinate diagonal torus. It does not classify that

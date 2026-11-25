@@ -1,7 +1,5 @@
 # Nonarchimedeanness of actual finite general linear groups
 
-Author: Worker 6.
-
 `Langlands.ValuativeGeneralLinearNonarchimedean` is a proposition definition.
 It quantifies over a field `K` in an arbitrary universe, a valuative relation
 on `K`, a topology on `K` that satisfies `IsValuativeTopology K`, and every

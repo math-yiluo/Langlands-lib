@@ -1,7 +1,5 @@
 # Proof: existence of quasi-split inner forms of connected reductive field groups
 
-Author: Worker 4768.
-
 This module proves the published Library proposition
 `Langlands.GroupScheme.QuasiSplitInnerFormExistenceStatement`
 (module `Langlands.GroupScheme.Rational.QuasiSplitInnerFormExistenceStatement`)

@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 
 /-! # A homogeneous polynomial constant along an affine line forces a constant parameter -/
 

@@ -1,6 +1,6 @@
 # The identity support image for opposite rational parabolics: statement
 
-Author: Worker 135. This module defines the closed proposition
+This module defines the closed proposition
 `Langlands.Aubert.General.RepresentedParabolic.OppositeIdentitySupportStatement`
 and proves nothing. The local-field universe `u` and inducing-carrier universe
 `v` are independent.
@@ -27,8 +27,8 @@ David Renard, *Représentations des groupes réductifs p-adiques*, French versio
 of 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 135 read VII.3.1–VII.3.3, printed pp.232–234 / PDF pp.238–240, and
-VII.4.1, printed pp.241–242 / PDF pp.247–248.
+VII.3.1–VII.3.3, printed pp.232–234 / PDF pp.238–240, and VII.4.1, printed
+pp.241–242 / PDF pp.247–248, were read.
 
 This is a derived prerequisite, rather than a separately numbered assertion
 of the book. VII.3.2 identifies `F^{<1}_{PQ}/F^{<=1}_{PQ}` with the identity
@@ -45,10 +45,14 @@ The generality of arbitrary rational parabolics follows the convention
 explicitly described at the start of VII.3.1: the standard-Levi restriction
 there is only for notation, and the results transport by conjugation.
 
-## Retained proof obligation
+## Proof
 
-One must prove the actual support-image equivalence, including the geometric
-opposition and support-quotient comparisons. The source argument above is not
-a Lean proof. `PQSupportGradedStatement` already states the quotient comparison
-for general pairs with the same Levi, but is itself unproved; this statement
-isolates only the opposite identity-image case needed by Task 5282.
+The source argument above is not a Lean proof. The actual support-image
+equivalence, including the geometric opposition and support-quotient
+comparisons, is proved by `oppositeIdentitySupport` in
+`Langlands.Representation.Intertwining.OppositeIdentitySupportProof`.
+`PQSupportGradedStatement` states the quotient comparison for general pairs
+with the same Levi and is proved by `pqSupportGraded`
+(`Langlands.Representation.Intertwining.PQIdentitySupportProof`); this
+statement isolates only the opposite identity-image case needed for Renard's
+Lemma VII.4.1 (`PP̄`-regularity of Langlands triplets).

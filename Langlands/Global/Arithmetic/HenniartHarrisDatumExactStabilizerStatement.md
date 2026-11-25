@@ -1,8 +1,8 @@
 # Henniart's datum characters under the exact Weil stabilizer condition
 
 Module `Langlands.Global.Arithmetic.HenniartHarrisDatumExactStabilizerStatement`,
-namespace `Langlands.Global`. It imports the published
-`HenniartHarrisDatumStatement` and Task 7413's published
+namespace `Langlands.Global`. It imports
+`HenniartHarrisDatumStatement` and
 `HarrisProposition48ExactStabilizerData`, which defines
 `Harris.IsProposition48ExactStabilizerDatum`; the datum is not restated here.
 
@@ -28,12 +28,12 @@ In the exact-stabilizer datum, the conjunct on the auxiliary character `χs`
 is `GeneralPosition.HasExactWeilStabilizer F F' (weilCharacter F e F' χs)`:
 the stabilizer in `W_F`, acting by conjugation, of the restriction of the
 Weil character of `χs` to `W_{F̃}` is exactly `W_{F'}`. This is Harris's
-condition (4.12), read on the Weil side (the published definition,
+condition (4.12), read on the Weil side (the existing definition,
 `GeneralPositionStatement.lean`, line 107).
 
 ## The single change
 
-The published declaration is `HarrisDatumCharacterRealizationStatement`
+The existing declaration is `HarrisDatumCharacterRealizationStatement`
 (`Langlands/Global/Arithmetic/HenniartHarrisDatumStatement.lean`, line 90).
 The new declaration has the same binders in the same order, the same instance
 arguments, the same universe parameters `uF uE uE' uL`, the same hypotheses
@@ -50,33 +50,33 @@ becomes
 Harris.IsProposition48ExactStabilizerDatum e χ χs K₀ P Ps ξ
 ```
 
-The published `IsProposition48ExactStabilizerDatum`
+The existing `IsProposition48ExactStabilizerDatum`
 (`HarrisProposition48ExactStabilizerData.lean`, line 40) is
 `IsProposition48Datum` with its one conjunct
 `IsInGeneralPosition F F' (weilCharacter F e F' χs)` replaced by
 `HasExactWeilStabilizer F F' (weilCharacter F e F' χs)`, all other conjuncts
 in the same order.
 
-A private audit (not submitted) compared the elaborated values. The constant
-`IsProposition48Datum` occurs once in the published value; replacing it by
+An audit outside the Library compared the elaborated values. The constant
+`IsProposition48Datum` occurs once in the existing declaration's value; replacing it by
 `Harris.IsProposition48ExactStabilizerDatum` gives the new value, with the
 same type, universe parameters and reducibility, once Lean's auto-generated
 auxiliary proof constants (`_proof_k`) are identified. These constants are
-proofs that Lean abstracts out of an elaborated term. The published module
-reuses the ones it first generated for `IsPairedPlaceConfiguration` (where
+proofs that Lean abstracts out of an elaborated term. The module
+`HenniartHarrisDatumStatement` reuses the ones it first generated for `IsPairedPlaceConfiguration` (where
 `F` is an implicit binder), while this module generates its own (with `F`
 explicit), so they differ in name and binder information. Proofs are
 irrelevant, and the audit also checked that the two values (after the
 replacement) are definitionally equal at reducible transparency.
 
-## Relation to the published statement
+## Relation to the existing statement
 
-Every exact-stabilizer datum is a datum: the published theorem
+Every exact-stabilizer datum is a datum: the theorem
 `Harris.IsProposition48ExactStabilizerDatum.isProposition48Datum`
-(`HarrisProposition48ExactStabilizerData.lean`, line 57) applies the published
+(`HarrisProposition48ExactStabilizerData.lean`, line 57) applies the
 theorem `Langlands.Global.generalPositionOfExactStabilizer` ((4.12) implies
 general position) to the replaced conjunct. So the realization stated here is
-stronger than the published one. The module proves this:
+stronger than the existing one. The module proves this:
 
 ```
 theorem harrisDatumCharacterRealizationStatement_of_exactStabilizer
@@ -87,19 +87,19 @@ theorem harrisDatumCharacterRealizationStatement_of_exactStabilizer
 It applies `h` to the same data and maps the datum with
 `isProposition48Datum`. It uses only the standard axioms.
 
-On the consumer side the published
+On the consumer side
 `Harris.proposition48ExactStabilizerStatement_of_proposition48Statement`
-(`HarrisProposition48ExactStabilizerStatement.lean`, line 54) proves that the
-published `Proposition48Statement` implies `Proposition48ExactStabilizerStatement`.
+(`HarrisProposition48ExactStabilizerStatement.lean`, line 54) proves that
+`Proposition48Statement` implies `Proposition48ExactStabilizerStatement`.
 The realization here produces exactly the datum that the restated proposition
 takes as hypothesis.
 
-## Why the statement is true (the expected proof)
+## Why the statement is true
 
 This is a reading of the Library at commit `97bd11ee`; the proof is not
 given here.
 
-- The published proof `harrisDatumCharacterRealization_of_halfWeight`
+- The existing proof `harrisDatumCharacterRealization_of_halfWeight`
   (`HarrisDatumCharacterRealizationProof.lean`, line 66) builds `χ`, `χs`,
   `ξ` and proves the conjuncts of the datum one by one. It uses general
   position at one place only: the auxiliary character comes from
@@ -117,15 +117,16 @@ given here.
 - Stopping before that last step gives the exact-stabilizer conjunct. Every
   other conjunct and the condition on units are proved as before. The
   half-weight input is supplied by `cmHalfWeightCharacter`, as in the
-  published unconditional `harrisDatumCharacterRealization`
+  unconditional `harrisDatumCharacterRealization`
   (`HenniartHarrisDatumProof.lean`, line 11).
 
 ## What is not claimed
 
-`HarrisDatumCharacterRealizationExactStabilizerStatement` is not proved here.
-Its proof belongs to a separate `lean.proof@1` task of the parent (Task
-7343). Only the implication to the published statement is proved. The
-published `HarrisDatumCharacterRealizationStatement`, its proof and the
+`HarrisDatumCharacterRealizationExactStabilizerStatement` is not proved here;
+it is proved as `harrisDatumCharacterRealizationExactStabilizer` (module
+`HenniartHarrisDatumExactStabilizerProof`). Only the implication to the
+existing statement is proved here. The
+existing `HarrisDatumCharacterRealizationStatement`, its proof and the
 common-base `HenniartHarrisDatumStatement` are unchanged. The common-base form
 is not restated here.
 
@@ -152,7 +153,7 @@ is not restated here.
   Lemma 4.7, printed pp.204–206 (statement of (4.12) on p.204, PDF p.28): with
   `G = Γ_F`, `H = Γ_{F'}` and `χ̃(*) = χ(*) ∘ N_{F̃/F'}`,
   `H = {g ∈ G | g χ̃(*) = χ̃(*)}`.
-- Design: operator plan note `operator-external-inputs-plan-2026-11-16`,
+- Design: plan note `operator-external-inputs-plan-2026-11-16`,
   Section 4.8, Remark 4.2 (TeX lines 859–894) and the paragraph "The remark
   and the Library's statements" (TeX lines 897–912). The plan note is
-  unreviewed design guidance, not a source of the statement.
+  design guidance, not a source of the statement.

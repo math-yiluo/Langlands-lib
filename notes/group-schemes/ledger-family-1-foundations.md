@@ -1,8 +1,7 @@
 # Group-scheme ledger, family 1: group-scheme and affine foundations
 
-Author: Worker 3483, 10 November 2026, for the algebraic and reductive group-scheme program
-`2b5e4a00-9d44-49a4-9c89-979fb5b6233e` (Task 3483). This note is the source-to-declaration
-ledger for family 1 of that program's contract. Family 1 covers:
+This note, dated 10 November 2026, is the source-to-declaration
+ledger for family 1 of the algebraic and reductive group-scheme program. Family 1 covers:
 
 - group schemes over a general base, their homomorphisms, closed subgroups, normality,
   kernels and base change;
@@ -11,8 +10,7 @@ ledger for family 1 of that program's contract. Family 1 covers:
 - images, monomorphisms and flatness of homomorphisms;
 - quotients and the representability results that later quotient constructions use.
 
-It describes Library commit `f2c5495316f5a5631bc8c11875b7509d93271fe5` and environment
-`bb168ec3-1031-46d9-816b-5c2ed7bbe1a6`. Lean names are in `Langlands.GroupScheme` unless a
+It describes Library commit `f2c5495316f5a5631bc8c11875b7509d93271fe5`. Lean names are in `Langlands.GroupScheme` unless a
 namespace is shown. Module paths are relative to `Langlands/GroupScheme/` unless they start
 with `Langlands/`.
 
@@ -24,28 +22,24 @@ says nothing about its status.
 ## Status codes and evidence
 
 Each row gives the source assertion with its locator, the exact Lean statement and its
-hypotheses, a status, the evidence, and the owner task.
+hypotheses, a status and the evidence.
 
 - **D (definition or internal result).** A published construction, or a published theorem
-  that is not a proposition declaration. The evidence is its module path. No owner task is
-  needed.
+  that is not a proposition declaration. The evidence is its module path.
 - **P (published proof).** The Library at the commit above contains a theorem whose type is
-  exactly the statement. The evidence is that theorem and its module path. The author also
-  type-checked `example : S := proof` for every P row in a private module. That check
-  passed with no errors or warnings, and `#print axioms` reported only `propext`,
-  `Classical.choice` and `Quot.sound`; it is not public evidence. No further proof work or
-  owner task is needed.
+  exactly the statement. The evidence is that theorem and its module path. Every P row was
+  also type-checked as `example : S := proof`, with no errors or warnings, and
+  `#print axioms` reported only `propext`, `Classical.choice` and `Quot.sound`. No further
+  proof work is needed.
 - **C (composite, not published).** No published theorem has the statement as its type, but
   a term built only from published theorems has it: a projection out of a published
-  conjunction, a tuple of published proofs, or the short term shown. The author
-  type-checked it in the same private module, with axioms `propext`, `Classical.choice` and
-  `Quot.sound`. What is missing is a named wrapper theorem, not mathematics. The row names
-  the owner task, or says that there is none.
+  conjunction, a tuple of published proofs, or the short term shown. It was
+  type-checked in the same way, with axioms `propext`, `Classical.choice` and
+  `Quot.sound`. What is missing is a named wrapper theorem, not mathematics.
 - **O (open).** A Lean statement exists, but no published proof and no composite from
   published results is known.
 
-The labels "accepted" and "published" are used only for artifacts that passed independent
-review.
+The label "published" means: in the Library.
 
 Source locators use these registered sources, cited by source id:
 
@@ -198,7 +192,7 @@ p.75 (PDF 91), and Theorem 5.39, printed p.108 (PDF 124).
 - Lean: `FiniteTypeMonomorphismStatement` (`FiniteTypeMonomorphismStatement`). Hypotheses: a
   field; `G`, `H` locally of finite type, quasi-compact and separated; `f` a monomorphism.
   Conclusion: `f` is a closed immersion.
-- Status O. Owner task: none found.
+- Status O.
 
 **D4. Flatness propagates by translation.** Source: derived from the translation argument
 in Milne, *Abelian Varieties*, Proposition 8.1 and its proof, p.12; Milne treats abelian
@@ -271,8 +265,7 @@ varieties.
     have := hsm
     exact ⟨Q, q, haff, inferInstance, hq.2.2.2⟩
   ```
-
-  Owner task: none. It was the input of an older reduction whose conclusion now has a direct
+ It was the input of an older reduction whose conclusion now has a direct
   proof.
 
 **E4. Homogeneous quotients `G/H`.** Source: Milne 2017, Definition 5.20 and Propositions
@@ -333,8 +326,8 @@ is smooth with nonempty geometrically connected fibres.
   subgroup `i : H ⟶ G` with `H` smooth and with **geometrically connected fibres**
   (`GeometricallyConnected H.X.hom`). Conclusion: a closed subgroup `j : N ⟶ G`, locally of
   finite presentation, representing the normalizer functor of `range i`.
-- Status O. Owner task: Task 4817 (`4444bc4c-9692-4a32-acfc-dbae06ccea66`), which has no
-  proof candidate.
+- Status O at the commit above. The Library now proves it, as `smoothConnectedNormalizer`
+  (`SmoothConnectedNormalizerProof.lean`).
 
 ## F. Geometric integrality and image generation
 
@@ -348,7 +341,7 @@ p.107 (PDF 133). These rows feed the commutator and image constructions of famil
   `SmoothConnectedAffineProductIntegralStatement` (the product of two such groups is affine,
   locally of finite type, quasi-compact and geometrically integral). Status P:
   `smoothConnectedAffineGeometry` (`SmoothConnectedGeometryProof`). The two components are
-  status C: `smoothConnectedAffineGeometry.1` and `.2`. Owner task: none.
+  status C: `smoothConnectedAffineGeometry.1` and `.2`.
 - `PointedImageGenerationStatement` (`ImageGenerationStatement`): for `G` smooth affine and a
   pointed geometrically integral affine `V` of finite type with `f : V → G` sending the point
   to `1`, the subgroup generated by the image of `f` is smooth and connected. Status P:
@@ -363,15 +356,13 @@ p.107 (PDF 133). These rows feed the commutator and image constructions of famil
   and the two previous P rows. Status C:
   `⟨smoothConnectedAffineGeometry, ImageGeneration.pointedImageGeneration,
   pointedImageEnvelopeStability⟩`.
-  Owner task: none.
 - `ImageGeneration.NoetherianImageGenerationFinitenessStatement` (`ImageGenerationNoetherianStatement`),
   the conjunction of `ImageGeneration.NoetherianPrimeChainStabilizationStatement` (descending
   chains of primes in a noetherian ring stabilize) and
   `ImageGeneration.NoetherianAffineClosedEndomorphismStatement`
   (a closed immersion of a noetherian affine scheme into itself is an isomorphism). Source:
   internal. Status P: `ImageGeneration.noetherianImageGenerationFiniteness`
-  (`ImageGenerationNoetherianProof`). The two components are status C: `.1` and `.2`. Owner
-  task: none.
+  (`ImageGenerationNoetherianProof`). The two components are status C: `.1` and `.2`.
 
 ## G. The Hopf faithful-flatness input of D1
 
@@ -389,7 +380,7 @@ Status C. The published theorem
 `Langlands.AnthropicFLT.Theorems.Thm_HopfAlgebra_faithfullyFlat_subalgebra_of_comul_mem_span_of_antipode_mem`,
 outside `Langlands/GroupScheme/`) has the same hypotheses and conclusion, with independent
 universes for `k` and `H`. Applying it to `K` and the two stability hypotheses proves the
-statement for every field `k`. No named theorem for the statement exists. Owner task: none.
+statement for every field `k`. No named theorem for the statement exists.
 
 This statement is the input of D1's published proof. `affineHomImage`
 (`AffineHomImageProof`) applies `affineHomImage_of_hopfSubalgebraFaithfullyFlat`
@@ -406,8 +397,9 @@ components of `ImageGeneration.NoetherianImageGenerationFinitenessStatement`,
 `AffineHomImageHopfAdapter.HopfSubalgebraFaithfullyFlatStatement` (G). Two statements are
 open (O):
 
-1. `FiniteTypeMonomorphismStatement` (D3, Milne Theorem 5.34). Owner task: none found.
-2. `SmoothConnectedNormalizerStatement` (E9, Conrad Proposition 2.1.6). Owner task: Task 4817.
+1. `FiniteTypeMonomorphismStatement` (D3, Milne Theorem 5.34).
+2. `SmoothConnectedNormalizerStatement` (E9, Conrad Proposition 2.1.6).
 
-The wrapper theorems for the C rows need no new mathematics; the program will collect them,
-with those of the other families, in one proof task.
+The wrapper theorems for the C rows need no new mathematics. Both open statements are now
+proved in the Library: `finiteTypeMonomorphism` (`FiniteTypeMonomorphismProof.lean`) and
+`smoothConnectedNormalizer` (`SmoothConnectedNormalizerProof.lean`).

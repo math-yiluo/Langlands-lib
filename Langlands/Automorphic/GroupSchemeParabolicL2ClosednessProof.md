@@ -36,7 +36,4 @@ and analytic right-Haar premises are retained. This does not prove literal
 GH6.1 tensor smoothness, density, action/submodule packaging or the spectral
 results. The general results are imported from the published
 `Langlands.Analysis.Local.NormalizedCompactPeriodL2Proof` and
-`Langlands.Analysis.Local.QuotientPeriodAEEqProof` modules. Worker 116
-implemented this proof in the parent draft; Worker 1684 adopted the Lean
-unchanged and updated this submission account. The published target and
-its dependency pairs are unchanged.
+`Langlands.Analysis.Local.QuotientPeriodAEEqProof` modules.

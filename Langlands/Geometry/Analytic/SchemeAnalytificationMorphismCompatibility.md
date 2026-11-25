@@ -26,12 +26,13 @@ uses neither continuity of the function nor center surjectivity.
 
 `compatibility_of_range_and_seminorm_injective` uses the rational-center helpers in
 [`AnalytificationCenterComparison`](AnalytificationCenterComparison.md),
-reusing Worker 325's published rational-center proofs. It proves both compatibility clauses from the source and target
+reusing the published rational-center proofs. It proves both compatibility clauses from the source and target
 chart preimage-range formulas and injectivity of point seminorms on target charts.
 This exposes the precise remaining inputs without requiring center surjectivity.
 
 `compatibility_of_center` specializes these lemmas using the scheme clauses of the
-still separate `AnalytificationCenterStatement`. The preimage formula supplies
+separate statement `AnalytificationCenterStatement` (proved in
+`AnalytificationCenterProof`). The preimage formula supplies
 center naturality, and the rational-center formulas and singleton fibers supply
 rational-point naturality. This route uses no rational-point topology or affine
 strong-map functoriality theorem. These helpers are conditional implications, and

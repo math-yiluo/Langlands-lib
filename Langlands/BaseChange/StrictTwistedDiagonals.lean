@@ -1,6 +1,6 @@
 import Langlands.BaseChange.Norm
 import Langlands.Representation.Whittaker.Iwasawa
-import Langlands.ClassFieldTheory.Local.NYLL.UniverseZeroModel
+import Langlands.ClassFieldTheory.Local.UniverseZero.UniverseZeroModel
 
 /-! # Intertwining diagonals of distinct orders -/
 
@@ -41,7 +41,7 @@ theorem exists_diagonalUnits_of_strict_twistedConj {a b : Fin n → E.Carrierˣ}
     by_contra hz
     have hv := congrArg (D).ord (hentry i j)
     rw [(D).ord_mul (a i).ne_zero ((map_ne_zero τ).mpr hz),
-      (D).ord_mul hz (b j).ne_zero, LocalClassField.NYLL.ord_eq_of_algEquiv τ D D,
+      (D).ord_mul hz (b j).ne_zero, LocalClassField.UniverseZero.ord_eq_of_algEquiv τ D D,
       ← hOrd j, add_comm ((D).ord (x i j))] at hv
     exact hij (hDistinct (add_right_cancel hv))
   have hxdiag : x.val = diagonal (fun i => x i i) := by

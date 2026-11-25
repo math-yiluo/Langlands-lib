@@ -1,6 +1,6 @@
 # Positive integral rays of actual relative roots
 
-Worker 1314. This derived supporting module constructs a finite enumeration and
+This derived supporting module constructs a finite enumeration and
 develops consequences of the
 unchanged actual relative-root and indivisibility definitions in
 `Rational.RootProductStatement`. Its final theorem has type
@@ -67,5 +67,5 @@ Mathlib root-pairing results. Its source application is Kaletha–Prasad,
 nonreduced discussion after Definition 2.6.7. The 1 November 2024 corrections,
 registered as `kaletha-prasad-2024-corrections`, PDF p.25, change later material
 in section 2.6 and notation in section 2.11, leaving these passages unchanged.
-The full general relative-root-system existence theorem remains owned by
-task `51ecd216-d68e-4f71-afeb-6d7ff3683ec9`. It is not introduced as an axiom.
+The full general relative-root-system existence theorem is `relativeRootSystem`
+in `Rational.RelativeRootSystemProof`, not this module. It is not introduced as an axiom.

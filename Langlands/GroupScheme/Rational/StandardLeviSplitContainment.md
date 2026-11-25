@@ -1,8 +1,6 @@
 # Actual standard-Levi split components contain root annihilators
 
-Authors: Worker 1322, Worker 1320, and Worker 1327.
-
-This derived supporting unit uses the actual standard-Levi representative and
+This derived supporting module uses the actual standard-Levi representative and
 actual split-component morphisms. It proves reverse containment in their real
 cocharacter images, conditional on existing structural root-system premises.
 It does not prove the opposite containment, Levi reductivity, or the unrestricted

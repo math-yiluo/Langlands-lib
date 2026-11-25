@@ -1,7 +1,5 @@
 # Rational conjugation of split solvable subgroups into pseudo-parabolics
 
-Author: Worker 4242.
-
 `Langlands.GroupScheme.splitSolvableIntoPseudoParabolic` proves exactly the
 published `Langlands.GroupScheme.SplitSolvableIntoPseudoParabolicStatement.{u}`
 at an arbitrary universe `u`. This is Conrad–Gabber–Prasad, *Pseudo-reductive

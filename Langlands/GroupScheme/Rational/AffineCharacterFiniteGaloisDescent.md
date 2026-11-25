@@ -1,8 +1,5 @@
 # Finite-Galois descent of affine character evaluations
 
-Authors: Worker 706 and Worker 1366. Worker 706 supplied the complete five-module
-proof draft. Worker 1366 checked it against the public statement, added the
-exact-target theorem wrapper and completed the companion explanations.
 This is derived internal mathematics using existing Library and Mathlib
 constructions; no external-source proof correspondence is claimed.
 
@@ -62,7 +59,7 @@ of point coordinates. `modelValue_field_compare` applies that equality to
 the descended unit and uses its image equality to identify the result
 with the ambient character value.
 
-`finiteCharacter_rationalEval` now uses the existing
+`finiteCharacter_rationalEval` uses the existing
 `valueE_baseChangeCoeffEquiv` comparisons for actual rational character
 evaluation. The reconstructed character's value formula rewrites the
 finite-field side to `modelValue`; `modelValue_field_compare` compares

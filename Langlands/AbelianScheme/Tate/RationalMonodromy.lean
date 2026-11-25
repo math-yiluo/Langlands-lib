@@ -129,7 +129,7 @@ theorem rationalMonodromy_endAction (f : Rationalization.End A)
     (g : FundamentalGroup s hfin) (x : Rational A (Over.mk s) P) :
     rationalMonodromy s hfin htor A P hu g (rationalEndAction A (Over.mk s) P f x) =
       rationalEndAction A (Over.mk s) P f (rationalMonodromy s hfin htor A P hu g x) :=
-  rationalMonodromy_homMap s hfin htor P hu f g x
+  rationalMonodromy_homMap s hfin htor P hu f.asHom g x
 
 /-- Any action through actual rational endomorphisms commutes with monodromy. -/
 theorem rationalMonodromy_algebraAction {D : Type*} [Ring D] [Algebra ℚ D]

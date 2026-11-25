@@ -1,6 +1,6 @@
 # Canonical big-cell data from a supplied highest-weight representation
 
-This internal construction by Worker 1369 composes the published
+This internal construction composes the published
 `HighestWeightExtremal` and `CanonicalRhoBigCell` constructions. It supplies
 the first six laws of the Steinberg big-cell conclusion from a highest-weight
 representation at integral rho. It does not prove `SteinbergBigCellStatement`.
@@ -56,9 +56,9 @@ conditional definition, not an invoked theorem.
 
 The provenance is an internal derivation from the imported Library results;
 no external source is cited. Split pinning, integral coroot span, highest-weight
-existence, Bruhat covering and the entire-space seventh law remain separate
-obligations for the exact host target. No characteristic assumption is needed
-for these conditional constructions.
+existence, Bruhat covering and the entire-space seventh law are hypotheses of
+these constructions, not results of this module. No characteristic assumption is
+needed for these conditional constructions.
 
-Integration gives the local instances used here module-specific names to permit
-joint imports. Their types, values, and local scopes are unchanged.
+The local instances used here have module-specific names to permit joint
+imports. The renaming changes no type, value or local scope.

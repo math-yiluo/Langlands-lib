@@ -1,7 +1,5 @@
 # Exponential-polynomial coefficients of commuting invertible tuples
 
-Author: Worker 709.
-
 `Langlands.CommutingTupleMatrixCoefficientExponentialPolynomialStatement.{u}`
 is a closed Prop-valued definition. It states the tuple formulation of the
 coefficient proposition in David Renard, *Représentations des groupes

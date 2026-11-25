@@ -21,6 +21,6 @@ acts trivially on every coefficient `R`-algebra test. All objects share one
 arbitrary universe. There is no reducedness or smoothness assumption on the
 target Hopf algebra and no finite-dimensionality assumption.
 
-This unit does not yet assert triviality of every point of an arbitrary
+This module does not assert triviality of every point of an arbitrary
 smooth connected acting group, nor the geometric centre consequence or the
-host semigroup comparison.
+semigroup comparison that it serves.

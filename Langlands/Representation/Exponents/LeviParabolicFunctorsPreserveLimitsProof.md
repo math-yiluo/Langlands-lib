@@ -1,6 +1,6 @@
 # Proof of limit and colimit preservation by the normalized parabolic functors
 
-Author: Worker 4814, task `27fe1be6-a9cb-4bc5-8f71-3af15cd3d92b`. Module
+Module
 `Langlands.Representation.Exponents.LeviParabolicFunctorsPreserveLimitsProof`, namespace
 `Langlands.Aubert.General.RepresentedParabolic`.
 

@@ -1,6 +1,6 @@
 # Extending stable images by unramified twists
 
-Author: Worker 4803. Module `Langlands.Correspondence.HenniartExtension`,
+Module `Langlands.Correspondence.HenniartExtension`,
 namespace `Langlands.Henniart.Extension`.
 
 Henniart (2000), §4.4, printed p. 453 (PDF p. 15): for an irreducible `σ`,

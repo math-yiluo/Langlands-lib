@@ -1,6 +1,6 @@
 # Compact group finiteness and compact differential finiteness
 
-Author: Worker 94. Module:
+Module:
 `Langlands.Global.ArchimedeanCompactGroupFiniteStatement`.
 The proposition is
 `Langlands.Global.ArchimedeanGL.CompactGroupFiniteDifferentialStatement`.
@@ -59,7 +59,7 @@ Retained PDF:
 `/home/taskhub/pilot/literature/Harish-Chandra, Discrete series for semisimple Lie groups II- Explicit determination of the characters (1966).pdf`.
 SHA256:
 `3ad72529bddbfe96e537bc3f49df6aa3223169c2abbe265d858c32c48545f3d9`.
-Worker 94 rechecked its fingerprint and pp.18–19; the product symbols on p.18
+Its fingerprint and pp.18–19 were rechecked; the product symbols on p.18
 were visually checked when constructing the imported joint-orbit module.
 No applicable source erratum was found in the supplied notes.
 

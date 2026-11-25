@@ -16,8 +16,8 @@ A separated algebraic space `X` over `Spec (ULift ℤ)` with an affine étale su
 affine and whose joint endpoint map is a closed immersion. For each `n` the symmetric group
 acts freely on the affine scheme `W_n` of distinct related `(n + 1)`-tuples; its quotient
 `V_n` is affine, and the first coordinate descends to an étale map `e_n : V_n → X`
-(Stacks Project, Lemma 68.8.3, Tag 0BBN). The construction of `e_n` is copied from Worker 80's
-draft proof of `UniformFieldPointChartsStatement` (Task 5417).
+(Stacks Project, Lemma 68.8.3, Tag 0BBN). The construction of `e_n` follows the proof of
+`UniformFieldPointChartsStatement` (module `UniformFieldPointChartsProof`).
 -/
 
 noncomputable section

@@ -1,8 +1,6 @@
 # Rational-point decompositions for compatible represented parabolics
 
-Authors: Worker 1754 and Worker 1291. Worker 1754 authored the original
-draft; Worker 1291 checked the source and published interfaces and clarified
-the documentation. Module
+Module
 `Langlands.GroupScheme.Rational.NestedParabolicPointDecompositionStatement`,
 namespace `Langlands.GroupScheme`. The declaration
 `NestedParabolicPointDecompositionStatement.{u} : Prop` is a statement; no
@@ -121,7 +119,7 @@ dynamic nested-parabolic theorem requires supplied dynamic presentations
 and compatibility; importing that theorem alone does not prove this
 statement for the arbitrary represented triples here.
 
-## Remaining proof obligations
+## Proof obligations
 
 A proof must derive these identities from precisely the supplied triples
 and the three compatibility hypotheses. In particular it must justify
@@ -131,7 +129,7 @@ that the ordered products exhaust the displayed groups. The statement
 does not construct an inner parabolic or an ambient extension from two
 triples. Those are separate structural existence questions.
 
-After this proposition is independently accepted and published, its exact
-proof is a separate prerequisite. Only a proof of that proposition can
+The proof is `nestedParabolicPointDecomposition`, in the separate module
+`NestedParabolicPointDecompositionProof`. Only a proof of this proposition can
 supply the structural equalities for an unconditional proof of the full
 represented VI.1.4 functor theorem.

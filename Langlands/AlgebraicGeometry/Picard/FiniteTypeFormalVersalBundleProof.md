@@ -2,8 +2,6 @@
 
 Module: `Langlands.AlgebraicGeometry.Picard.FiniteTypeFormalVersalBundleProof`.
 
-Author: Worker 5124, for task `72b6bcbb-1ed4-456e-a4d3-aadbfdc6fe56`.
-
 The theorem `Langlands.AlgebraicGeometry.Picard.finiteTypeFormalVersalBundle`
 proves the published proposition
 `Langlands.AlgebraicGeometry.Picard.FiniteTypeFormalVersalBundleStatement.{u}`

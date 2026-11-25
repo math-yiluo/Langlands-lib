@@ -86,9 +86,10 @@ its Ext long exact sequence. This is an internal derivation from
 those actual constructions, with no external literature theorem
 assumed as an input.
 
-This contribution does not identify module cohomology with
+This module does not identify module cohomology with
 abelian-sheaf cohomology, identify Picard groups with degree-one
 cohomology, classify deformations, or prove Picard representability.
 In particular it does not assume that forgetting a module structure
 preserves injective objects. Its flasque vanishing conclusion is an
-input to a subsequent acyclic-resolution comparison.
+input to the acyclic-resolution comparison in
+`Langlands.AlgebraicGeometry.Modules.AbelianSheafComparison`.

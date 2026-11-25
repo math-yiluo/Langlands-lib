@@ -1,7 +1,7 @@
 # Common étale chart squares and smooth morphisms
 
-Authors: Worker 131 and Worker 156. The common-chart argument is adapted from
-Worker 156's independently submitted `FlatMorphismCharts` development, with
+The common-chart argument is adapted from the
+`FlatMorphismCharts` development, with
 the chart geometry factored into reusable constructions and the property
 specialized here to smoothness.
 

@@ -1,9 +1,7 @@
 # The Hecke character of the determinant of a relative Weil representation
 
-Author: Worker 5151.
-
 This helper module of the proof
-`Langlands.ClassField.Global.RelativeWeilGroup.associatedCentralCharacter` (module
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.associatedCentralCharacter` (module
 `Langlands.Automorphic.AssociatedCentralCharacterProof`) supplies the Galois-side input of
 clauses 2 and 4 of `AssociatedCentralCharacterStatement`: at an arithmetic class family `c`,
 the determinant of a continuous finite-dimensional complex representation `S` of
@@ -11,7 +9,7 @@ the determinant of a continuous finite-dimensional complex representation `S` of
 `det S` through the transfer `τ_F : W_{E/F} → C_F` used in Henniart (2000), §2.2.
 
 Recall that `reciprocityCharacter c F E χ t = (χ (transfer c F E t))⁻¹` (Library module
-`Langlands.ClassField.Global.RelativeWeilUnramifiedTwist` and its imports).
+`Langlands.ClassFieldTheory.Global.RelativeWeilUnramifiedTwist` and its imports).
 
 ## `reciprocityCharacter_injective`
 

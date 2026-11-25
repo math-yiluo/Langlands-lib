@@ -1,8 +1,6 @@
 # Full quasi-isomorphism fractions for localized isomorphisms
 
-Author: Worker 208.
-
-This derived internal unit proves that the actual localization reflects
+This internal module proves that the actual localization reflects
 isomorphisms into full strong quasi-isomorphisms. The field, space and
 original chart-index universes `u, v, w` are independent. The field is
 complete and ultrametric; no separation hypothesis is imposed.
@@ -37,10 +35,8 @@ this selected fraction interprets exactly as the original isomorphism.
 The definition returns actual fraction data and the proved numerator
 condition. It assumes neither a supplied fraction nor a supplied
 geometric inverse. Its provenance is the Library's right-fraction
-calculus plus the included proved domain cancellation and two-out-of-six
+calculus plus the imported proved domain cancellation and two-out-of-six
 results; no external theorem claim is made.
 
-The same contribution includes `LocalizedEtaleComposition`, whose paired
-Markdown explains the application to the existing analytic étale site.
-The previous helper pairs are unchanged dependencies included pending
-integration.
+`LocalizedEtaleComposition` (ported with this file) has a page that
+explains the application to the existing analytic étale site.

@@ -1,7 +1,7 @@
 # Ordered root products from local opposite factor pairs
 
-Worker 1302, adapting Worker 1315's published assembly argument and local
-interface guidance. This internal construction defines
+This internal construction, adapting the published assembly argument of
+`DynamicRootProductAssembly`, defines
 `RelativeRoot.orderedRootSubgroupProductEmbeddingOfFactorPairs`. Its underlying
 function multiplies the actual relative-root subgroup points in the supplied
 order on every scheme test.

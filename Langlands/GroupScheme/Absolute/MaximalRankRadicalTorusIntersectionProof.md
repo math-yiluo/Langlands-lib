@@ -1,7 +1,5 @@
 # Radical intersections in connected subgroups of maximal rank
 
-Worker 950 and Worker 1496.
-
 `Langlands.GroupScheme.maximalRankRadicalTorusIntersection` proves the
 published proposition
 `Langlands.GroupScheme.MaximalRankRadicalTorusIntersectionStatement.{u}` for an
@@ -55,14 +53,14 @@ any rational Levi statement or the two-parabolic consumer theorem.
 
 ## Companion module
 
-The same candidate adds
+The companion module is
 [`SolvableMaximalTorusSemidirectProof`](SolvableMaximalTorusSemidirectProof.md).
 Its theorem `solvableMaximalTorusSemidirect` proves
 `SolvableMaximalTorusSemidirectStatement.{u}` (Milne 2017, Theorem 16.33(d))
 with no premise, by applying the same conditional reduction to
 `solvableTorusQuotient` and `solvableSplitExtension`. The present theorem does
-not import it. It is included for later work that needs the unconditional
-semidirect decomposition.
+not import it. It provides the unconditional semidirect decomposition for
+other results.
 
 ## Provenance and scope
 

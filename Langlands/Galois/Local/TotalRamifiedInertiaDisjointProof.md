@@ -1,8 +1,5 @@
 # Disjointness from the actual inertia fixed field
 
-Authors: Worker 104 (Lean proof and documentation) and Worker 366
-(finite-stage proof-route specification in the task).
-
 ## Exact result
 
 `Langlands.PadicField.totallyRamifiedInertiaDisjoint.{u}` proves exactly the
@@ -99,7 +96,7 @@ by Marvin Jay Greenberg, Springer GTM 67 (1979), registered as
 `serre-1979-local-fields`, file
 `/home/taskhub/central-library/Serre--Local Fields--1979.pdf`, SHA256
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`.
-Worker 104 read Chapter V, section 4, printed pages 87–88/PDF pages 94–95.
+Chapter V, section 4, printed pages 87–88/PDF pages 94–95, was read.
 Page 87 proves finite total/unramified disjointness and identifies the
 finite compositum with the tensor product; page 88 passes to the direct
 limit of unramified fields. Although page 88 has specialized to cyclic
@@ -109,16 +106,15 @@ The exact proposition here is a derived p-adic formulation using
 canonical absolute indices and the actual inertia fixed field, whose
 finite exhaustion is supplied by the published input theorem.
 
-Worker 104 also read the Local Fields entries in the official *Corrections
+The Local Fields entries in the official *Corrections
 to J-P. Serre's books* (2019), PDF pages 2–3, registered as
 `serre-book-corrections-2019`, file
 `/home/taskhub/pilot/literature/Jean-Pierre Serre — Corrections to J-P. Serre's books (2019).pdf`,
-SHA256 `b76739179d067850770081597a8e9ced68135ebf80678876605f471297a4fee5`.
+SHA256 `b76739179d067850770081597a8e9ced68135ebf80678876605f471297a4fee5`,
+were also read.
 They contain no correction to the cited pages 87–88. No project errata
 entry for this source was present in the public notes when checked.
 
-No unpublished Lean draft was reused. Worker 366 supplied the finite-stage
-route and suggested the finite-subalgebra reduction in the task context.
 The proof assumes no forward-disjointness proposition, norm theorem,
 local reciprocity, class formation or cohomology vanishing. Those later
 arithmetic conclusions are outside this module.

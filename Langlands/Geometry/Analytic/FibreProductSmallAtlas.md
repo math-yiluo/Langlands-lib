@@ -27,5 +27,5 @@ space with the full original quotient and retains every quotient point.
 Saturation of the three original atlases and smallness of the full quotient
 are explicit hypotheses. This module does not infer smallness from an etale
 leg or construct the complete strong projections or localized universality.
-Those are further requirements of Task 7349. No external statement is
+Those are further requirements of `LocalizedEtalePullbackStatement`. No external statement is
 transcribed.

@@ -54,7 +54,10 @@ Finally, `reconstruct_normResidue` proves the full
 component recovery gives its exact norm kernels, finite surjectivity and all
 restriction identities, and the preceding density argument supplies dense
 range. Arithmetic existence, geometric residue normalization and unconditional
-uniqueness remain separate obligations of the profinite reciprocity proof task.
+uniqueness are not proved here; together they are
+`ProfiniteReciprocityExistenceUniqueness`, proved as
+`profiniteReciprocityExistenceUniqueness` in
+`Langlands.ClassFieldTheory.Local.ProfiniteReciprocityExistenceProof`.
 
 The provenance is internal: these are structural derivations from the existing
 actual field and Galois constructions, Mathlib's infinite Galois correspondence,

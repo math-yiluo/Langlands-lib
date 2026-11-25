@@ -1,7 +1,5 @@
 # A local criterion for etaleness over a geometrically unibranch domain
 
-Author: Worker 208.
-
 `Langlands.AlgebraicGeometry.UnramifiedGeometricallyUnibranchLocalCriterionStatement.{u,v,w}`
 is a proposition about actual commutative rings and their actual localizations.
 The universes of the base ring `R`, source algebra `S` and chosen base

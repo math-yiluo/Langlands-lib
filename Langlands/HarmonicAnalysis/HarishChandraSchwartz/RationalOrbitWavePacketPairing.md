@@ -3,20 +3,20 @@
 Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalOrbitWavePacketPairing`,
 namespace `Langlands.HarishChandraSchwartz`. It imports:
 
-- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalOrbitCentralInversion` (Worker 249,
-  published as candidate `81fd7d32`): `rationalOrbitCentralCharacter` (the restriction `χ_ω` to
+- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalOrbitCentralInversion`:
+  `rationalOrbitCentralCharacter` (the restriction `χ_ω` to
   `A_G` of the central character of `ω`), `rationalOrbitCentralCharacter_orbitMap`,
   `integral_rationalOrbitCentralInversion` and `integral_rationalOrbitCentralInversion_eq_zero`;
   through its imports `rationalOrbitInversionIntegrand`, `finite_setOf_unitaryUnramifiedCharacter_mul_eq`,
   `unitaryUnramifiedCharacter_apply_of_mem`, the orbit `discreteSeriesOrbit`, the orbit map
   `discreteSeriesOrbitMap` with `isOpenQuotientMap_discreteSeriesOrbitMap`, the I.1 orbit
   measure `rationalNormalizedDiscreteSeriesOrbitMeasure`, `discreteSeriesCentralRestriction`
-  and `continuous_discreteSeriesCentralRestriction` (Worker 200);
+  and `continuous_discreteSeriesCentralRestriction`;
 - `Langlands.HarmonicAnalysis.HarishChandraSchwartz.KernelQuotient`: the central projection
   `centralProjection` and `integral_centralProjection_mul_conj`
   (`∫_{A\G} (p_χ φ)(q̇) conj(K(q̇)) dν(q) = ∫_G conj(K) φ dμ_G` for `χ`-covariant `K`), with the
   quotient-measure compatibility `IsCompatible` of `Langlands.Analysis.Local.QuotientMeasure`;
-- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.HermitianSchurOrthogonality` (Worker 249):
+- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.HermitianSchurOrthogonality`:
   `hermitianCoefficientIntegrand`, `hermitianCoefficientPairing`,
   `integrable_hermitianCoefficientIntegrand`, `hermitianCoefficientPairing_eq_zero`,
   `hermitianCoefficientPairing_eq_inner`, `isUnitarizable_of_isSquareIntegrable`, and through
@@ -28,7 +28,7 @@ namespace `Langlands.HarishChandraSchwartz`. It imports:
 - `Langlands.HarmonicAnalysis.HarishChandraSchwartz.SchwartzAction`:
   `CompactOpenSubgroup.cofinal` (every open subgroup contains a compact open subgroup, given a
   compact open subgroup);
-- `Langlands.Analysis.Local.NormalSubgroupHaarModulus` (Worker 1423):
+- `Langlands.Analysis.Local.NormalSubgroupHaarModulus`:
   `normalLeftQuotientHomeomorph A : A\G ≃ₜ G/A` for a normal subgroup `A`;
 - for the local instances on `G(F)`: `Langlands.GroupScheme.Rational.PointTopology`
   (`rationalPointTopology`, `rationalPoints_nonarchimedeanGroup`, `rationalPoint_t2Space`,
@@ -280,8 +280,8 @@ Here `A_G ∩ G¹` is `Subtype.val ⁻¹' rationalCommonNormKernel G`.
   `f_ψ ∈ C(G)` (Proposition VI.3.1) and the bound of coefficients of `ω'` by a multiple of `Ξ`,
   neither of which is used here.
 - The hypothesis `hcont` comes in the source from `ψ ∈ C^∞(O, G)` (Lemma VI.2.1 (i)). The
-  Library has `continuous_unitaryOrbitCoefficient` (`ProductInducedOrbitCoefficientSmoothness`,
-  Worker 200) for the orbit coefficients of a product-induced discrete series, under all the
+  Library has `continuous_unitaryOrbitCoefficient` (`ProductInducedOrbitCoefficientSmoothness`)
+  for the orbit coefficients of a product-induced discrete series, under all the
   premises listed in that module's Markdown (among them `HasLaurentUnitaryCoordinates ν e` and
   `Continuous e` for the torus coordinates `e`); it is stated for a different model of the
   sections and this module does not use it.

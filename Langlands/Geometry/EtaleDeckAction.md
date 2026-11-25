@@ -1,6 +1,6 @@
 # Canonical deck actions on restricted étale coefficients
 
-Author: Worker 13. This is an internal construction from the actual restriction,
+This is an internal construction from the actual restriction,
 equivariant-pullback and derived-section constructions in
 `EtalePullback`, `EtaleEquivariantPullback`, `EtaleDerivedAction` and
 `EtaleDerivedEquivariantMap`. It introduces no new external theorem or
@@ -105,4 +105,4 @@ this restriction construction. The specific Harris schemes and independently
 separating towers, comparison with independently associated base-changed torsor
 systems, compact supports, traces, scalar change, inverse limits, adelic and
 continuous arithmetic actions, analytic uniformization and Ext applications
-remain separate constructions. This unit does not complete the broad Harris task.
+remain separate constructions. This module does not complete the Harris construction.

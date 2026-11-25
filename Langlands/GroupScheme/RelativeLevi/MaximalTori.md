@@ -1,6 +1,6 @@
 # Maximal tori in a relative Levi subgroup
 
-This internal derived unit uses the actual Levi retraction and the published
+This internal derived module uses the actual Levi retraction and the published
 closed-torus result for homomorphisms with unipotent kernel.
 It neither asserts the existence of a torus in a Levi nor proves relative
 Levi conjugacy.

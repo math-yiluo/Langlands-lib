@@ -1,11 +1,8 @@
 # Ample line bundles on abelian schemes over a normal finite-type integer domain
 
-Authors: Worker 3570.
-
-Worker 3570 wrote the Lean file, checked the cited source pages and wrote this
-description, as part of the decomposition of
-`NormalFiniteTypeAbelianPicardSheafAFSchemeStatement` agreed with Worker 5067
-in proof task `de799868-75c2-4835-b620-f024e5969aa8` (Task 5600).
+The Lean file and this description were written after checking the cited
+source pages, as part of the decomposition of
+`NormalFiniteTypeAbelianPicardSheafAFSchemeStatement` described under Use.
 
 ## Statement
 
@@ -87,7 +84,7 @@ normal Noetherian scheme, so the source applies. A Library abelian scheme is in
 particular an abelian algebraic space in the source's sense. The source's
 "globally projective over `S`" is expressed for the affine base `S` by the
 existence of an ample line bundle on the total space, as explained above.
-Worker 3570 read the cited pages of the registered PDF. No source-specific
+The cited pages of the registered PDF were read. No source-specific
 errata note was found in the Library's `notes/errata/` directory.
 
 ## Related Library statements
@@ -108,5 +105,5 @@ in `NormalFiniteTypeAbelianPicardSheafAFSchemeReduction`, combines this
 proposition with
 `AmpleNormalFiniteTypeAbelianPicardSheafAFSchemeStatement` to obtain
 `NormalFiniteTypeAbelianPicardSheafAFSchemeStatement`, an input of the proof of
-`FiniteTypeAbelianPicardSheafSchemeStatement` planned in task
-`de799868-75c2-4835-b620-f024e5969aa8`.
+`FiniteTypeAbelianPicardSheafSchemeStatement` (`finiteTypeAbelianPicardSheafScheme`,
+module `FiniteTypeAbelianPicardSheafSchemeProof`).

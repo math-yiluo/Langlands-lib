@@ -1,7 +1,5 @@
 # The two-axis class presheaf has small values: proof
 
-Author: Worker 384.
-
 The module `Langlands.AlgebraicGeometry.Picard.TwoAxisClassSmallValuesProof`
 proves
 

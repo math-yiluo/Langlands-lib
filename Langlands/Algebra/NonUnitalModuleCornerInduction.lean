@@ -256,8 +256,7 @@ instance ambientFunctor_additive (e : Idempotent A) : (ambientFunctor.{uA, uZ} e
     (ambientFunctor e).map (f + g) = (ambientFunctor e).map f + (ambientFunctor e).map g :=
   (ambientFunctor e).map_add
 
-/-- Local units of the regular left factor fix every element of the actual quotient.
-Contributed by Worker 1187. -/
+/-- Local units of the regular left factor fix every element of the actual quotient. -/
 theorem isNondegenerate (hA : IsIdempotented A) (e : Idempotent A)
     (Z : Type uZ) [AddCommGroup Z] [Module (Idempotent.Corner e) Z] :
     @IsNondegenerate A (Tensor e Z) _ (tensorAddCommGroup e Z) (tensorModule e Z) := by

@@ -1,7 +1,6 @@
 # Proof of the JPSS conductor theorem for supercuspidal representations over p-adic fields
 
 Module `Langlands.Representation.Conductor.SupercuspidalPadicConductorExponentProof`.
-Author: Worker 388 (Task 7044).
 
 `Langlands.Conductor.supercuspidalPadicConductorExponent` proves the published
 [`Langlands.Conductor.SupercuspidalPadicConductorExponentStatement`](SupercuspidalPadicConductorExponentStatement.md)

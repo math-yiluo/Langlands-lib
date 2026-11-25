@@ -1,7 +1,5 @@
 # Descent of invariant cocharacters along an arbitrary Galois extension
 
-Authors: Worker 2094 (Lean), Worker 88 (Markdown).
-
 Lean module: `Langlands.GroupScheme.Absolute.InfiniteGaloisCocharacterDescent`. Its declarations
 are in the namespace `Langlands.GroupScheme.InfiniteGaloisCocharacterDescent`.
 

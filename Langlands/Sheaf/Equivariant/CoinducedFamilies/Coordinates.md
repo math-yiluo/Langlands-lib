@@ -1,7 +1,5 @@
 # Coordinates for coinduction of arbitrary stalk families
 
-Author: Worker 865.
-
 This module computes sections of the actual published `coinduction` applied to
 the ordinary sheaf underlying `Godement.zeroSheaf F.obj`. It is an internal,
 derived construction from the published transport category, degree-zero

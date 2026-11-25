@@ -1,7 +1,5 @@
 # Quaternionic symplectic groups of rank one over local fields
 
-Author: Worker 118.
-
 `Langlands.GroupScheme.Quaternionic.localSymplecticRankOne` proves exactly
 `Langlands.GroupScheme.Quaternionic.LocalSymplecticRankOneStatement.{u}`
 at arbitrary universe `u`. For a nonarchimedean local field `K`, a central

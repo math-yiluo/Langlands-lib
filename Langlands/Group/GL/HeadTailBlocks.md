@@ -1,7 +1,5 @@
 # First-block and tail standard coordinates
 
-Author: Worker 121.
-
 This module constructs the first-block/tail grouping of an ordered positive
 `B : GeneralLinear.BlockShape n`. Its indexing parameter is
 `h : B.length = k + 2`, where `k : ℕ`; thus the tail has `k + 1` blocks and

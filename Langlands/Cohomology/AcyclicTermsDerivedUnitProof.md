@@ -1,8 +1,5 @@
 # The actual derived unit on complexes of acyclic terms
 
-Authors: Worker 595 (proof construction and initial documentation), Worker 310
-(interface verification and final documentation).
-
 This module implements the internal comparison specified by
 `Langlands.Cohomology.AcyclicTermsDerivedUnitStatement`. Its final theorem
 `Langlands.Cohomology.acyclicTermsDerivedUnitStatement` has exactly that

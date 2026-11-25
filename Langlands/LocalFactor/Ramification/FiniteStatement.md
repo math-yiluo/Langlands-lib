@@ -1,6 +1,6 @@
 # Finite-Galois Artin and Swan conductor statements
 
-Worker 70 states one coherent family about the published rational Artin and Swan
+This module states one coherent family about the published rational Artin and Swan
 conductor sums. These are proposition definitions, with no theorem proofs or
 new arithmetic constructions. The combined target is
 `Langlands.Ramification.Padic.FiniteGaloisConductorStatement`.
@@ -128,7 +128,16 @@ fixed-space codimension to vanish. In finite dimension zero codimension means
 the entire space is fixed. These observations give component 6. Component 7
 then uses the already published decomposition and the vanishing of Swan.
 These explanations describe mathematical derivations of the statement family;
-no corresponding Lean theorem proofs are claimed by this module.
+no corresponding Lean theorem proofs are claimed by this module. The Lean
+proofs are in other modules: component 1 is
+`Langlands.Ramification.Padic.finiteGaloisConductorIntegrality`
+(`Langlands.LocalFactor.Ramification.FiniteIntegralityProof`), component 2 is
+`Langlands.Ramification.Padic.finiteGaloisConductorExactSequence`
+(`Langlands.LocalFactor.Ramification.FiniteExactSequenceProof`), and
+`Langlands.LocalFactor.Ramification.FiniteFormalPropertiesProof` proves
+components 3–7 (`finiteGaloisConductorDirectSum`, `finiteGaloisConductorDual`,
+`finiteGaloisConductorUnramifiedTwist`, `finiteGaloisConductorVanishing`,
+`finiteGaloisTameArtin`) and the combined target (`finiteGaloisConductor`).
 
 ## Reuse and scope
 
@@ -149,8 +158,6 @@ missing. No Artin-character construction, comparison between distinct
 extensions, upper numbering, reciprocity transport, epsilon system, or
 Weil–Deligne factor is asserted.
 
-Prepared environment: `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, Lean 4.34.0,
+Prepared environment: Lean 4.34.0,
 Lean commit `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`,
 Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
-Independent semantic acceptance and current Library publication are separate
-from compilation.

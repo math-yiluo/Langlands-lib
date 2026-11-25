@@ -114,7 +114,7 @@ The lemmas:
 
 The module proves none of its hypotheses: the unit-level theorems, the
 inertia comparison or `HerbrandInputRel`. It does not perform the induction
-step of DH81 4.8. Worker 1698's module `DeligneHenniartUpperComparison`
+step of DH81 4.8. The module `DeligneHenniartUpperComparison`
 treats that step. Its upper groups `weilUpperSubgroup F L s` are the
 preimages of the same standalone upper groups under the inverse of the same
 equivalence, so they equal `intermediateUpperGroup F L s`. This module states

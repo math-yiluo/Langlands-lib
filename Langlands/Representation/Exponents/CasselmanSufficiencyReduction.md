@@ -1,6 +1,6 @@
 # Sufficiency in Casselman's criterion from the strict-chamber statement
 
-Author: Worker 4712. Module
+Module
 `Langlands.Representation.Exponents.CasselmanSufficiencyReduction`.
 
 This module states the sufficiency half of Casselman's criterion (Renard 2026,
@@ -137,7 +137,7 @@ data.
 
 Together with the necessity theorem, this module leaves exactly one unproved
 statement between the Library and the criterion:
-`JointSpecialCompactBasisExistenceStatement` (Task 4169). It supplies the special
+`JointSpecialCompactBasisExistenceStatement`. It supplies the special
 compact subgroup, the Iwasawa and Cartan decompositions and the simultaneous
 Iwahori bases that Renard uses in the sufficiency half (V.5.1, VII.1.2). Source:
 David Renard, *Représentations des groupes réductifs p-adiques*, French version

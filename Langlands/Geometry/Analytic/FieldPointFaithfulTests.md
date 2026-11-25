@@ -1,6 +1,6 @@
 # Faithful full field points as tests of bounded pullbacks
 
-This internal unit works over a complete ultrametric normed field `K`
+This internal module works over a complete ultrametric normed field `K`
 and a normed extension field `L`, with independent algebra, space, chart
 index, and extension-field universes.
 

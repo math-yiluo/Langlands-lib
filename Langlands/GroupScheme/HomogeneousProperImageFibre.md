@@ -2,9 +2,6 @@
 
 Module `Langlands.GroupScheme.HomogeneousProperImageFibre`.
 
-Workers 1095 and 1506. Worker 1506 wrote the predicate and the two theorem
-statements, and sketched the proof route. Worker 1095 wrote the Lean proofs.
-
 Throughout, `k` is a field, `Spec k` means `Spec (CommRingCat.of k)`, and a
 rational point of a `k`-scheme `O` is a morphism `Over.mk (𝟙 (Spec k)) ⟶ O` over
 `Spec k`.
@@ -72,8 +69,9 @@ in `O` to its image in one fibre, where the induction hypothesis on `N`
 applies. The base case of the induction is the trivial group. The predicate
 `HasOnePointProperImages` is the induction hypothesis chosen for the Lean proof.
 It is not a definition from the literature. Constructing `W` and `f`, proving
-`hf` and `horb`, and running the induction are done in Worker 1506's modules for
-the same task, not here.
+`hf` and `horb`, and running the induction are done in
+`Langlands.GroupScheme.SolvableOrbitProperImageFiniteProof` and the modules it
+imports, not here.
 
 ## Proof of `subsingleton_range_of_fibres`
 

@@ -1,10 +1,7 @@
 # The corrected support filtration of the general Aubert complex
 
-Implementation and documentation: Worker 379 (task
-`0a1bd7fb-66c2-4dcc-a3c8-6619f6fa10b4`, the complex-and-targets unit of the
-general Aubert program `46df6a68-5db4-4428-8044-05151d6ce1f6`). The complex, its
-terms and its transition maps are Worker 194's (`Aubert.General.Complex`,
-`Aubert.General.StandardComplex`).
+The complex, its terms and its transition maps are those of
+`Aubert.General.Complex` and `Aubert.General.StandardComplex`.
 
 This module constructs the support filtration that the 1996 erratum uses to prove
 the corrected Theorem 3.6, in the form repaired by Ban and Jantzen (2016,
@@ -96,7 +93,7 @@ the removed roots `s`, so that `J = S \ s`:
 * `term P M U h hclosed A s` is `Complex.termObject` for the removed-root
   families; it is definitionally `i_J r_J A` (`StandardComplex.termObject_eq`).
 * `transition P M U h hclosed hδ hP hU A hst`, for `s ⊆ t` (so `J' ⊆ J`), is
-  Worker 194's actual transition `φ^J_{J'}` as a morphism of smooth
+  the actual transition `φ^J_{J'}` of `Aubert.General.Complex` as a morphism of smooth
   representations. At each point it applies the canonical quotient map
   `r_J A → r_{J'} A` (`Complex.transition_eval`).
 

@@ -32,7 +32,7 @@ including nonaffine and nonreduced tests. No call to the unconditional
 The actual chosen full-root pair and simple-root family are noncomputable
 choices from these proved conditional constructions. The imported existing
 canonical linked-root structure is used only for its fields, not its
-existence proof or canonical choice. This unit reuses the clean generic
+existence proof or canonical choice. This module reuses the clean generic
 parts of root isolation, monicity, equivariance and subgroup uniqueness,
 while replacing both contaminated existence inputs with explicit supplied
 statements. It adds no external source assertion or final-target premise.

@@ -1,7 +1,5 @@
 # Root subgroups generate an isotropic almost-simple group
 
-Authors: Worker 180.
-
 `Langlands.GroupScheme.IsotropicRootSubgroupGenerationStatement` is an
 unproved proposition at arbitrary universe `u`. This module states it and
 proves nothing.

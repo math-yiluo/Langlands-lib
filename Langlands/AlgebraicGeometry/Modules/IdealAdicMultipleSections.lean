@@ -46,6 +46,7 @@ def scalarToMultiple (a : J) :
   naturality {U V} i := by
     ext m
     apply Subtype.ext
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
     change scalar f V.unop a • M.val.map i m =
       M.val.map i (scalar f U.unop a • m)
     rw [M.val.map_smul]

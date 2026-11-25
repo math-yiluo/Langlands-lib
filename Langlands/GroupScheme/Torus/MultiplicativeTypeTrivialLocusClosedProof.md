@@ -1,9 +1,7 @@
 # Proof: the trivial locus of a homomorphism from a group of multiplicative type is closed
 
-Worker 488.
-
 The theorem `Langlands.GroupScheme.multiplicativeTypeTrivialLocusClosed.{u}` proves the
-unchanged published proposition
+proposition
 `Langlands.GroupScheme.MultiplicativeTypeTrivialLocusClosedStatement.{u}`. It has no additional
 parameters or hypotheses:
 
@@ -27,7 +25,7 @@ registered as `sga3-expose-ix-gille-polo-2009`, file
 `Grothendieck - SGA 3 Expose IX, Groupes de type multiplicatif, homomorphismes dans un schema en groupes (Gille-Polo recomposed edition, vers.pdf`,
 SHA-256 `7c1e3d5b9d01ad01d0dd7b8b62045d012052e7890fb37adc3e7934ebb5fd6fc3`. The statement of
 Corollaire 5.3 is on recomposed p.49 (PDF page 19, margin 60) and the closedness argument is on
-recomposed p.50 (PDF page 20). I read both pages for this proof.
+recomposed p.50 (PDF page 20). Both pages were read for this proof.
 
 The source reduces closedness to the kernel `K = Ker(u)`, a closed subscheme of `H` because `G`
 is separated. It then cites VIII 6.4, or gives a schematic-density argument. The Lean proof
@@ -161,12 +159,12 @@ Fix `S, H, G`, the multiplicative-type witness, the separatedness of `G.X.hom`, 
 
 ## Dependencies and verification
 
-The module imports the published target, `Torus.AffineRelativeDiagonalizable` (for
+The module imports the statement module `Torus.MultiplicativeTypeTrivialLocusClosedStatement`,
+`Torus.AffineRelativeDiagonalizable` (for
 `Diagonalizable.relativeModelIso`, which also brings in `RelativeMultiplicativeType`),
 `Torus.CentralRigidityReduction` (for the zero-homomorphism lemmas), and Mathlib's
 `AlgebraicGeometry.Morphisms.Flat`, `AlgebraicGeometry.Morphisms.UniversallyOpen` and
-`LinearAlgebra.DirectSum.Finsupp`. The target and every file it imports are unchanged. The
-proof introduces no axioms and no replacement statement. In development checks with the task's
-environment `5c94c648-e8dc-4002-a50a-071ebf3f6096`, the module compiles without warnings and
-the main theorem depends only on `propext`, `Classical.choice` and `Quot.sound`. Independent
-semantic review and official validation are required for acceptance.
+`LinearAlgebra.DirectSum.Finsupp`. The
+proof introduces no axioms and no replacement statement. In development checks, the module
+compiles without warnings and the main theorem depends only on `propext`, `Classical.choice`
+and `Quot.sound`.

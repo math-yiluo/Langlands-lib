@@ -1,6 +1,6 @@
 # From a completed global equation to the comparison-engine format
 
-Supporting module of Task 5003 (module `Langlands.Automorphic.AssociatedGammaCompletedEquation`), glue step G1 of the proof of
+Supporting module (module `Langlands.Automorphic.AssociatedGammaCompletedEquation`), glue step G1 of the proof of
 `AssociatedGammaStatement`. It converts a completed global functional equation into the
 three inputs `Admissible`, `HasEulerProductsOutside` and `FunctionalEquation` of the
 published finite comparison engine (`Langlands.Global.FunctionalEquationComparison`,

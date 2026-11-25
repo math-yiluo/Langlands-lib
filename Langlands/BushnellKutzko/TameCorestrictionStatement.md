@@ -5,7 +5,8 @@ Source: Bushnell–Kutzko, *The admissible dual of GL(N) via compact open subgro
 p. 28, Definition (1.3.3), its following paragraph, and Proposition (1.3.4),
 printed p. 29 (PDF pp. 40–41).
 
-`TameCorestrictionStatement` is a proposition definition, with no proof.
+`TameCorestrictionStatement` is a proposition definition, with no proof in this
+file; `tameCorestriction` (module `TameCorestrictionProof`) proves it.
 For every nonarchimedean local field `F`, finite-dimensional `F`-vector space
 `V`, and field `E` acting compatibly on `V`, it asserts:
 
@@ -17,12 +18,12 @@ For every nonarchimedean local field `F`, finite-dimensional `F`-vector space
   `𝓛.endFiltration n = 𝔓^n` is the intersection `𝔓^n ∩ End_E(V)`.
 
 The last intersection is written as a preimage under restriction of scalars.
-No choice of a chain over `E` and no unproved subfield-order theorem is assumed.
-The field action is the representation of a subfield of `End_F(V)` used in
-Task 7398; for nonzero `V` the field-action map is injective. The zero space
+No choice of a chain over `E` and no subfield-order theorem is assumed.
+The field action is the representation of a subfield of `End_F(V)` given by
+`[Module E V]` and `[IsScalarTower F E V]`; for nonzero `V` the field-action map is injective. The zero space
 causes no exception to this statement. All three type universes are independent.
 
-Existence is the consequence of (1.3.4)(i) requested in T1, without additionally
+Existence is the consequence of (1.3.4)(i) stated in T1, without additionally
 specifying the additive characters used there to construct a map. The unit
 comparison is the paragraph following (1.3.3), and the radical image equality is
 (1.3.4)(ii). This statement does not include every auxiliary assertion of

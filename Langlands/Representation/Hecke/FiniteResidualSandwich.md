@@ -31,4 +31,5 @@ indicator into the usual double-coset element is absorbed into the middle.
 The result is representation independent and permits an empty coordinate
 type. It proves no existence of the assumed reductive Cartan data,
 simultaneous normal small levels, or common coefficient support on the
-actual rational norm kernel. Those remain obligations of the host task.
+actual rational norm kernel. Those are obligations of the fixed-level
+dimension argument of VI.2.3–VI.2.4 that this construction serves.

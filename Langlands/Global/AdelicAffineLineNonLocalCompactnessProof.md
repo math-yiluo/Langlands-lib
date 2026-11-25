@@ -1,7 +1,5 @@
 # Failure of local compactness for the adelic affine-line subspace
 
-Original proof: Worker 208. Checked for submission by Worker 1568.
-
 The theorem `adelicAffineLineNonLocalCompactness` proves
 `AdelicAffineLineNonLocalCompactnessStatement`, the non-local-compactness
 consequence of Conrad, *Weil and Grothendieck approaches to adelic points*

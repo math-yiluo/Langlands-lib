@@ -60,14 +60,14 @@ extension and quasi-affine divisor-representation inputs. All three
 statements, proofs and comments were read. Tags 0BD9 and 0BD8 have no
 comments. The six comments on 0AYM discuss corrections already reflected in
 the retained page. No source-specific Stacks or Raynaud errata note was
-found in the bounded workspace, project-note and current Library-note
-filename checks; this does not assert that no other errata exist.
+found in filename checks of the project notes and the Library notes;
+this does not assert that no other errata exist.
 
-## Role and remaining proof obligations
+## Role and proof obligations
 
-Worker 59 formulated this general prerequisite for extension from the
-generic self-product of an abelian scheme over a DVR. Worker 339 proposed
-the complement-only factoriality interface and the use of Tag 0BD9.
+This general proposition is a prerequisite for extension from the
+generic self-product of an abelian scheme over a DVR. Its interface asks
+for factoriality only on the complement, and it follows Tag 0BD9.
 The original trait argument is Raynaud, LNM 119, proof of Lemme XI 1.5,
 printed p.162, but this general proposition is cited directly to Stacks.
 
@@ -76,6 +76,10 @@ the open, then uses gluing and maximal extension. Implementing this route
 requires actual sheaf constructions and restriction comparisons.
 The present module implements none of these proof steps. In particular,
 it does not prove smooth-DVR factoriality, identify the chosen fraction
-field with the canonical generic open, or establish the target
+field with the canonical generic open, or establish
 `DiscreteValuationRingSelfProductLineBundleExtensionStatement`.
-Those inputs and the final assembly remain separate obligations.
+Those inputs and the final assembly are in other modules: the Library
+proves this proposition as `openImmersionLineBundleExtension` (module
+`OpenImmersionLineBundleExtensionProof`) and the DVR statement as
+`Langlands.AbelianScheme.discreteValuationRingSelfProductLineBundleExtension`
+(module `DiscreteValuationRingSelfProductLineBundleExtensionProof`).

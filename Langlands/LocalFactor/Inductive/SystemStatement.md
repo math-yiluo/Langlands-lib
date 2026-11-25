@@ -1,13 +1,12 @@
 # Induction of local constants in arbitrary degree
 
-Worker 33 wrote this proposition definition for task `e534647a` (row 10 of the
-local-factor coverage map). The declaration is
+This module is a proposition definition. The declaration is
 `Langlands.LocalFactor.Inductive.SystemInductionCorrectionStatement`. It is a
 statement only: no proof is claimed and nothing is assumed as an axiom.
 
 ## Objects
 
-Every object comes from Worker 20's common-closure local-constant interface:
+Every object comes from the Library's common-closure local-constant interface:
 
 - `Langlands.LocalFactor.CommonClosure`: finite intermediate extensions `E ⊆ L` of
   Mathlib's algebraic closure of `F` (`Extension F`) and their Weil subgroups
@@ -43,8 +42,8 @@ The power is an integer power in `ℂ^×`.
 
 Tate (3.4.1) and (3.4.8) assert only degree-zero inductivity:
 `ε(Ind V_L, ψ) = ε(V_L, ψ ∘ Tr)` for virtual `V_L` of degree zero. In
-`NonabelianSystem` this is the clause `InductionRelation` of `IsSystem`. The task
-contract forbids inferring an arbitrary-degree identity from it without the
+`NonabelianSystem` this is the clause `InductionRelation` of `IsSystem`. An
+arbitrary-degree identity cannot be inferred from it without the
 correction. This statement gives the corrected arbitrary-degree form. It is a
 derived consequence of the system property. Apply `InductionRelation` to the
 degree-zero class `x - n[1_L]` (with the given `μ_E` and `μ_L`, which
@@ -54,8 +53,7 @@ arbitrary Haar measures it also carries the measure normalization: both sides
 scale in the same way under the Haar scaling law, so the identity holds for every
 pair `μ_E`, `μ_L`.
 
-The companion `Langlands.LocalFactor.Inductive.Statement`, submitted separately
-for review, states the same
+The companion `Langlands.LocalFactor.Inductive.Statement` states the same
 correction (`DegreeCorrectionStatement`) for every function that is inductive in
 degree zero in Tate's (2.3.2) sense, on the extension-embedding model of
 `Langlands.LocalFactor.Inductive.Definitions`. This module states it for the
@@ -80,10 +78,9 @@ model the system specification uses.
 
 ## Dependencies and status
 
-The only project import is `Langlands.LocalFactor.NonabelianSystem` (Worker 20,
-published in the Library), which imports `Langlands.LocalFactor.CommonClosure`. A development check in
-environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` compiled the module with no
+The only project import is `Langlands.LocalFactor.NonabelianSystem` (published
+in the Library), which imports `Langlands.LocalFactor.CommonClosure`. A development check
+compiled the module with no
 errors or warnings. Inspection reports a definition returning `Prop`, with
 universe parameters `uF uV` and only the axioms `propext`, `Classical.choice` and
 `Quot.sound`. Compilation does not establish the truth of the statement.
-Independent semantic review is required.

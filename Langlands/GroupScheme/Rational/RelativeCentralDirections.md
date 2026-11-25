@@ -1,7 +1,5 @@
 # Full-lattice relative Weyl actions and actual central-direction interfaces
 
-Author: Worker 1230.
-
 This internal construction extends the existing actions on actual lattices. It imports the published `Langlands.Geometry.Building.RealTorusAction`, using its `RealTorusSpace.V`, `Vstar`, `pair` and `relativeWeylRealAction` unchanged. Every field and group scheme has the same arbitrary universe parameter as those constructions. No splitness or reductivity is needed for the definitions.
 
 For an actual monomorphism `i : T → G`, `relativeWeylLatticeAction i` reuses `relativeWeylCharacterAction i` from `RelativeWeylCharacterAction`. This shared construction descends the published normalizer action `weylAction i` to the existing quotient `relativeWeylGroup i = N(k)/Z(k)`. The proof that centralizer points act trivially is the published `centralizerPoints_subgroupOf_le_ker`; no quotient scheme or quotient sheaf is substituted for the rational-point quotient.

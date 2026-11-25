@@ -1,7 +1,5 @@
 # Whittaker multiplicity one over every nonarchimedean local field: proof
 
-Author: Worker 5089.
-
 `Langlands.Whittaker.localFieldMultiplicityOne.{uF,uV}` proves exactly the published
 `Langlands.Whittaker.LocalFieldMultiplicityOneStatement.{uF,uV}` from
 `Langlands.Representation.Whittaker.LocalFieldMultiplicityOneStatement`, unapplied and

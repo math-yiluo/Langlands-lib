@@ -1,7 +1,6 @@
 # Compact subsets of unipotent rational points lie in compact subgroups
 
-Author: Worker 16, as a helper for task `27fe1be6-a9cb-4bc5-8f71-3af15cd3d92b`
-(Renard VI.1.2 and VI.1.3 for represented parabolics). Module
+A helper for Renard VI.1.2 and VI.1.3 for represented parabolics. Module
 `Langlands.GroupScheme.Rational.UnipotentCompactSubgroups`, namespace
 `Langlands.GroupScheme`.
 

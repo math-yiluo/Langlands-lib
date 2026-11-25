@@ -1,7 +1,5 @@
 # Represented fppf quotients of groups of multiplicative type
 
-Author: Worker 1467.
-
 This internal derived development proves stability of the published
 `IsMultiplicativeType` predicate under flat surjective homomorphisms locally
 of finite presentation between actual group schemes over a field.

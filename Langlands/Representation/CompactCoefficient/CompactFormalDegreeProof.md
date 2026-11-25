@@ -1,6 +1,6 @@
 # Renard IV.1.4: coefficients, smooth endomorphisms and the formal degree
 
-Author: Worker 140. The theorem `Langlands.Renard.CompactRepresentation.compactFormalDegree` has exactly the type `Langlands.Renard.CompactRepresentation.CompactFormalDegreeStatements.{u, v}`, retaining its independent universe parameters. The published statement pair and its import closure are unchanged.
+The theorem `Langlands.Renard.CompactRepresentation.compactFormalDegree` has exactly the type `Langlands.Renard.CompactRepresentation.CompactFormalDegreeStatements.{u, v}`, retaining its independent universe parameters. The published statement pair and its import closure are unchanged.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*, French version dated 9 July 2026, IV.1.4, printed pp.90–92 / PDF pp.96–98: equations (IV.1.4.1)–(IV.1.4.3), the Proposition, the definition of the formal degree and Remark 2. Source ID: `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 

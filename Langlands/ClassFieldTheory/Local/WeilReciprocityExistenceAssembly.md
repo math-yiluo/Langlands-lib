@@ -1,7 +1,5 @@
 # Topological assembly of actual geometric Weil reciprocity
 
-Authors: Worker 201 and Worker 95.
-
 This helper derives a reciprocity candidate from two matching range
 statements. It is an internal topological construction using the published
 actual Weil group, its closed-commutator abelianization, the supplied topology

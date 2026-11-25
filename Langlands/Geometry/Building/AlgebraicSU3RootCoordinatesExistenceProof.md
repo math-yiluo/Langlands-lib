@@ -2,8 +2,6 @@
 
 Module `Langlands.Geometry.Building.AlgebraicSU3RootCoordinatesExistenceProof`.
 
-Worker 5397, for Task 7011 (bd3178b2-02c0-43b9-8b80-4300e506db00).
-
 ## The theorem
 
 ```
@@ -45,8 +43,7 @@ algebraicSU3RootCoordinatesExistence_of_product_of_adjacent splitRelativeRootGro
 It uses three published Library results; this module adds no new mathematics.
 
 1. `Langlands.Geometry.Building.algebraicSU3RootCoordinatesExistence_of_product_of_adjacent`
-   (module `Langlands.Geometry.Building.AlgebraicSU3RootCoordinatesConstruction`, Worker 163,
-   Task 6836) has type
+   (module `Langlands.Geometry.Building.AlgebraicSU3RootCoordinatesConstruction`) has type
    `SplitRelativeRootGroupProductStatement.{u} → AdjacentSimpleRootSpecialLinearStatement.{u} →
    AlgebraicSU3RootCoordinatesExistenceStatement.{u}`.
    It is the construction of the coordinates. It splits `Z` over a finite Galois extension
@@ -72,7 +69,7 @@ It uses three published Library results; this module adds no new mathematics.
 Neither proposition is assumed: each hypothesis of the construction is discharged by its
 published proof. The proof assumes none of `QuasiSplitValuedRankOneCoordinatesStatement`,
 `QuasiSplitR2RootUnitaryCoordinatesStatement` or `QuasiSplitCoordinateApartmentStatement`,
-nor any other unproved proposition. `lean_check` of the declaration reports the axioms
+nor any other unproved proposition. An axiom check of the declaration reports the axioms
 `propext`, `Classical.choice` and `Quot.sound`.
 
 ## Source

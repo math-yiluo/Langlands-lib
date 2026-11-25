@@ -20,8 +20,9 @@ carrier, Whittaker-type and irreducibility hypotheses, and every field of
 
 This is a conditional reduction statement. It does not prove either analytic
 base, assert that the bases are available, or establish the unconditional
-generic irreducible theorem. The original generic statement is preserved and
-remains the host task's exact target.
+generic irreducible theorem. The original generic statement is preserved; the
+Library proves it as `genericMatrixFunctionalEquation` in the module
+`GenericMatrixFunctionalEquationProof`.
 
 The provenance is internal and derived. The intended reduction uses the
 published arbitrary-carrier supercuspidal-product embedding and the admissible
@@ -29,8 +30,10 @@ Schur central character, restricts that character to scalar matrices, applies
 finite-product closure of full matrix data, and descends along the actual image
 of the embedding. Its image is a genuine subrepresentation and is equivalent
 to the original source. These structural steps explain the implication; their
-proof and the finite-product and descent inputs require their own validation
-and independent review. No additional literature claim is introduced here.
+proof is `genericMatrixFunctionalEquationReduction` in the module
+`GenericMatrixFunctionalEquationReductionProof`, which takes the finite-product
+and descent inputs from `FiniteProductMatrixFunctionalEquationProof` and
+`SubquotientFunctionalEquationDescent`. No additional literature claim is introduced here.
 
 ## All-field port
 

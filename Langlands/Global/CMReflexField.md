@@ -1,6 +1,6 @@
 # Reflex fields of CM types and Clozel's field `E = F_c R`
 
-Author: Worker 34. For a CM field `K` with a CM type `Φ` (published
+For a CM field `K` with a CM type `Φ` (published
 `Langlands/Global/CMType`), this module defines the reflex field `R` of
 `(K, Φ)` as a subfield of `ℂ`. For an embedding `ι₀ : K → ℂ` it defines
 Clozel's field `E = F_c R`, the compositum of `ι₀(K)` and `R`. It proves that

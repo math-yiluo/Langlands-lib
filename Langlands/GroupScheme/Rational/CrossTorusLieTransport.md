@@ -2,8 +2,8 @@
 
 This is derived internal infrastructure built from the published actual
 Lie kernels, their linear target maps, the all-coefficient-algebra weight-space
-definition, and the character and cocharacter congruences. Worker 118 identified
-the cross-torus interface for apartment consumers. No external structure theorem
+definition, and the character and cocharacter congruences. The cross-torus
+interface is intended for apartment consumers. No external structure theorem
 is introduced.
 
 Let `R` be a commutative ring object, `S` and `S'` commutative group schemes over

@@ -88,7 +88,7 @@ theorem hopfAlgebra_finite [IsFinite G.X.hom] :
   rw [← isFinite_algSpec_iff]
   change IsFinite ((hopfSpec R).obj (op (AffineCoordinates.hopfAlgebra G))).X.hom
   rw [hopfSpec_hom_eq]
-  infer_instance
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in infer_instance
 
 /-- The coordinate Hopf algebra of a flat group scheme is a flat module. -/
 theorem hopfAlgebra_flat [Flat G.X.hom] :
@@ -96,7 +96,7 @@ theorem hopfAlgebra_flat [Flat G.X.hom] :
   rw [← flat_algSpec_iff]
   change Flat ((hopfSpec R).obj (op (AffineCoordinates.hopfAlgebra G))).X.hom
   rw [hopfSpec_hom_eq]
-  infer_instance
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in infer_instance
 
 /-- The coordinate Hopf algebra of a group scheme locally of finite presentation is finitely
 presented. -/
@@ -106,7 +106,7 @@ theorem hopfAlgebra_finitePresentation [LocallyOfFinitePresentation G.X.hom] :
   change LocallyOfFinitePresentation
     ((hopfSpec R).obj (op (AffineCoordinates.hopfAlgebra G))).X.hom
   rw [hopfSpec_hom_eq]
-  infer_instance
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in infer_instance
 
 /-- The coordinate Hopf algebra of a finite, flat group scheme locally of finite presentation
 is a projective module. -/

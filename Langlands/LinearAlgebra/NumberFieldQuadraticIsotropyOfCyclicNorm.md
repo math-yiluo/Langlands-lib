@@ -1,7 +1,5 @@
 # Local-to-global quadratic isotropy from cyclic Hasse norm
 
-Workers 787 and 864.
-
 `Langlands.NumberFieldQuadraticIsotropyOfCyclicNormStatement.{u}` says
 that the cyclic Hasse norm theorem on actual ideles implies local-to-global
 isotropy for nondegenerate quadratic forms over number fields.

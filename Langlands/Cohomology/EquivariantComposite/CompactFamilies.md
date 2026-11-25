@@ -1,7 +1,5 @@
 # Compact indexed families and smooth cofree representations
 
-Author: Worker 141.
-
 Internal support for the compact composite proof. The ordinary family presheaf
 assigns arbitrary coefficient entries to the points of an open set. Its compact
 sections use the existing actual germ-support submodule. Each row of an indexed
@@ -28,5 +26,6 @@ compact. This proves that assembling the rows supplies the inverse.
 between smooth compact sections of the actual indexed-family sheaf and the
 smooth cofree representation on the module of compact ordinary families. It is
 an objectwise isomorphism for every coefficient family, with arbitrary
-commutative coefficients and the host task's assumptions. No naturality in the
+commutative coefficients and the assumptions of the compact composite statement
+`CompactGroupCompactCompositeStatement`. No naturality in the
 coefficient family or derived composite identification is asserted here.

@@ -35,7 +35,7 @@ representatives.
 `subspaceInclusion` composes this descended map with the actual inclusion of
 `P` into `Q.Space`. It is injective, has invariant range exactly `P`, and
 sends the new class of a numerator vector to its original quotient class.
-Thus this unit constructs a presentation of every supplied invariant subspace,
+Thus this module constructs a presentation of every supplied invariant subspace,
 not merely a relation asserting that such a presentation exists.
 
 Provenance is internal: this is the subspace form of the module quotient
@@ -43,8 +43,8 @@ correspondence applied to the published actual automorphic quotient and its
 faithful numerator inclusion. The construction directly reuses Mathlib
 submodule preimage, image, inclusion and kernel, the published equivariant
 quotient lift, and genuine representation equivalences. It imports only
-`Langlands.Automorphic.OperatorSubquotient`; no pending image, compatible-map
-or lattice-correspondence candidate is required.
+`Langlands.Automorphic.OperatorSubquotient`; no image, compatible-map
+or lattice-correspondence construction for quotients is required.
 
 No nonzero subspace, irreducibility, cuspidal or spectral existence is assumed
 or constructed here. The quotient is not embedded into the function space,

@@ -1,7 +1,5 @@
 # Haar normalization and membership in Lp
 
-Author: Worker 158.
-
 `Langlands.HaarMemLpInvariantStatement` is a closed proposition asserting that
 `MemLp f r mu` is equivalent to `MemLp f r nu` for any two Haar measures on the
 same second-countable locally compact topological group. The group lies in an

@@ -5,8 +5,8 @@ with an actual algebra `K → L`. This module constructs the maps
 `A_K → A_L`, `J_K → J_L` and `C_K → C_L` that view an adele of `K` as an
 adele of `L`. They go in the opposite direction to the norm maps of `Norm`,
 and are different maps. All declarations are in
-`Langlands.Global.AdelicFunctoriality`; the namespace and the file name were
-agreed with Worker 50, who owns the norm side of this directory.
+`Langlands.Global.AdelicFunctoriality`, the namespace of the norm side of this
+directory (`Norm`).
 
 ## Finite places
 

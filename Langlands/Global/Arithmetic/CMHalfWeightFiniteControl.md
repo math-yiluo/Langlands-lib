@@ -1,7 +1,5 @@
 # Finite neighborhoods separating CM conjugation ratios
 
-Author: Worker 1692.
-
 This internal helper develops the finite-neighborhood step needed for the
 weight-one character construction of Harris–Taylor, proof of Corollary VII.2.8,
 printed pp.244–245 (PDF pp.252–253). The registered source is

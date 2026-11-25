@@ -35,7 +35,7 @@ variable [CompactSpace (AdeleQuotient F)] {r : ℕ} (T : CuspidalOperatorRealiza
 the full band space, before comparing any vector derivatives. -/
 theorem scalarGeneratorLifts_of_coefficients
     (hc : CuspidalHilbertOrbitCoefficientStatement.{u})
-    (hT : Langlands.ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T) :
+    (hT : Langlands.ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T) :
     Langlands.Archimedean.ScalarGeneratorLifts
       (fun (w : CuspidalHilbertOrbitCoefficient.BandHilbertSpace F r) (v : T.Space)
         (g : ArchimedeanGL F (r + 1)) => CuspidalHilbertOrbitCoefficient.coefficient T w v

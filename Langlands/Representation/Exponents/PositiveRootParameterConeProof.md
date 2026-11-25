@@ -18,5 +18,5 @@ No flattening index is replaced: all values of the given parameter are
 evaluated through `D.flattenBlockEquiv R`.
 
 The final theorem assembles this equivalence for all ranks and refinements.
-This is internal finite linear algebra suggested by Worker 156; it uses no
+This is internal finite linear algebra; it uses no
 analytic or representation-theoretic support theorem.

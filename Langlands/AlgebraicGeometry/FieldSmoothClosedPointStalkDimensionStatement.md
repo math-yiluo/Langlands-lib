@@ -68,8 +68,8 @@ retained: without it the statement would be false.
 
 This file defines the proposition only. It provides no proof of the dimension
 equality or of the prerequisite comparison between the rank of the
-differentials and the fibre dimension. A separate proof task is to prove this
-exact published proposition.
+differentials and the fibre dimension. The proposition is proved in
+`FieldSmoothClosedPointStalkDimensionProof`.
 
 ## Derived provenance
 

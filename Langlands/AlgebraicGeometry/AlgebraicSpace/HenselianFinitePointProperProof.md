@@ -1,7 +1,5 @@
 # Finite maps of algebraic spaces are proper on rational points
 
-Author: Worker 105.
-
 Proof of `Langlands.AlgebraicGeometry.AlgebraicSpace.HenselianFinitePointProperStatement.{u}`,
 Corollary 5.12 of Brian Conrad, *Weil and Grothendieck approaches to adelic points*
 (December 31, 2011), printed p.20. The entry theorem is `henselianFinitePointProper`.

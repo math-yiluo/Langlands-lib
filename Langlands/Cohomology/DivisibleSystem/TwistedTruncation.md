@@ -1,24 +1,24 @@
 # Truncated discrete Godement resolutions and compact cohomology on a twisted site
 
-Author: Worker 26. This module specializes the generic constructions of Lemma 2.2 bis and
+This module specializes the generic constructions of Lemma 2.2 bis and
 (2.3) to the discrete Godement functor and the smooth compactly supported sections on a
 twisted site. It uses:
 
-- Worker 26's `Langlands.Cohomology.DivisibleSystem.TwistedGodement`:
+- `Langlands.Cohomology.DivisibleSystem.TwistedGodement`:
   `discreteZeroFunctor_additive` and `discreteGodementResolutionSystem`.
-- Worker 26's `Langlands.Cohomology.DivisibleSystem.AcyclicTruncation`:
+- `Langlands.Cohomology.DivisibleSystem.AcyclicTruncation`:
   `truncatedResolutionAugmentation`, `truncatedResolutionAugmentation_quasiIso`,
   `isZero_rightDerived_truncatedResolutionSystem_obj_X`, `acyclicTruncatedSectionsSystem` and
   `acyclicTruncatedSectionsHomologyIso`.
-- Worker 61's `Langlands.Cohomology.DivisibleSystem.Truncation`: `truncatedResolutionSystem`,
+- `Langlands.Cohomology.DivisibleSystem.Truncation`: `truncatedResolutionSystem`,
   `truncatedResolutionHom`, `truncatedResolutionHom_quasiIso` and
   `isZero_truncatedResolutionSystem_obj_X`.
-- Worker 26's `Langlands.Sheaf.Equivariant.TwistedGodement`: `discreteZeroFunctor`,
+- `Langlands.Sheaf.Equivariant.TwistedGodement`: `discreteZeroFunctor`,
   `discreteCoaugmentation` and `mono_discreteCoaugmentation_of_jointlyFaithful`.
-- Worker 26's `Langlands.Sheaf.Equivariant.TwistedCompactSupport`: `PointEquivariance`,
+- `Langlands.Sheaf.Equivariant.TwistedCompactSupport`: `PointEquivariance`,
   `discreteCompactSections` and `discreteCompactDerived`.
 - `Langlands.Cohomology.AcyclicResolution.Comparison`: `AcyclicResolution.resolutionComparison`.
-- Worker 26's `Langlands.Sheaf.Equivariant.LocalActionDiscretePart`, through its instance
+- `Langlands.Sheaf.Equivariant.LocalActionDiscretePart`, through its instance
   `discreteSheaf_enoughInjectives`: discrete sheaves have enough injectives when sheaves of
   modules on the twisted site do.
 
@@ -115,7 +115,7 @@ cohomology above `D` transports `hT` along the (2.3) isomorphism.
 ## Provenance and scope
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)* (1999), §2, read in
-the original by Worker 26 (checked against the page images).
+the original (checked against the page images).
 
 Printed p.303 = PDF p.5:
 

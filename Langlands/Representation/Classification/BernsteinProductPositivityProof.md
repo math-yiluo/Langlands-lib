@@ -1,7 +1,5 @@
 # Proof of positivity of binary products with unitary top shifted derivatives
 
-Author: Worker 210.
-
 The closing theorem
 `Langlands.Classification.bernsteinUnitaryTopDerivativeProductPositivity F T`
 proves exactly the published proposition

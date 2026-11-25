@@ -1,7 +1,5 @@
 # Actual diagonalizable models on local adic quotients
 
-Worker 356 and Worker 748.
-
 For a commutative local ring `A`, `LocalAdic.Ring A n` is the actual quotient
 `A / maximalIdeal(A)^(n+1)`. Its defining ideal is contained in the proper
 maximal ideal, so the quotient is nonzero. Surjectivity of the quotient map

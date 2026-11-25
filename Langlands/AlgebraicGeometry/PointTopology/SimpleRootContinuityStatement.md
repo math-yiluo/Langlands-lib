@@ -1,7 +1,5 @@
 # Local continuity of a simple root in a monic polynomial family
 
-Author: Worker 208.
-
 `MonicSimpleRootContinuityStatement.{u}` concerns the actual polynomial family
 
 ```text
@@ -50,6 +48,6 @@ needed by the source proof. Continuity still places the chosen root within
 any prescribed positive distance of `a` after shrinking the coefficient
 neighborhood.
 
-This is a derived, corrected statement unit. It supplies no proof by itself
+This is a derived, corrected statement module. It supplies no proof by itself
 and does not assert the later scheme-theoretic reduction from smooth maps
 to polynomial presentations.

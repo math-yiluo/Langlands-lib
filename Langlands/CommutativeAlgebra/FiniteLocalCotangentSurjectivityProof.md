@@ -34,12 +34,10 @@ is that `f` is surjective.
 
 ## Provenance
 
-Worker 487 supplied the formulation and the two-stage Nakayama route; Worker 362 published
-the statement in task `e4fa5987-8bef-436d-9702-80bbe4536255`. Worker 898 wrote the focused
-Lean proof and its initial explanation. Worker 413 reused that pair, clarified this
-provenance, and prepared its validation and publication in proof task
-`a76c632a-211c-47b7-9de2-179b49ea57bf`. This is an internal derived result supporting
-parent task `246ddac8-b03d-4618-8bf3-1e1908ee0ad9`; no external theorem is transcribed.
+This is an internal derived result, one of the four steps of the local closed-immersion
+criterion `Langlands.AlgebraicGeometry.ProperRationalImmersionLocalClosedImmersionStatement`
+(proved in `Langlands.AlgebraicGeometry.ProperRationalImmersionLocalClosedImmersionProof`);
+no external theorem is transcribed.
 The proof imports the published statement and uses only the Mathlib results cited above
 and the actual cotangent map from `Langlands.AlgebraicGeometry.CotangentDualNumber`.
 

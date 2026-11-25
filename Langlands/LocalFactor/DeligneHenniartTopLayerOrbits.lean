@@ -1,4 +1,5 @@
 import Langlands.LocalFactor.DeligneHenniartTopLayerTrace
+import Mathlib.Algebra.Group.Action.Pointwise.Finset
 
 /-!
 # Fixed fields, stabilizers and ramp sums for the top-layer congruence

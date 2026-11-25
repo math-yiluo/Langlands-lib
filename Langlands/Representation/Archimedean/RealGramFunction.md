@@ -1,9 +1,9 @@
 # Gram expressions are `O(n)`-finite principal-series functions
 
-Author: Worker 3657. Module `Langlands.Representation.Archimedean.RealGramFunction`. Helper module
+Module `Langlands.Representation.Archimedean.RealGramFunction`. Helper module
 of the proof that real standard modules are nonzero (`Langlands.Archimedean.realStandardNontrivial`,
-module `Langlands.Representation.Archimedean.RealStandardNontrivialProof`), used in Task 7003. It
-changes no published file.
+module `Langlands.Representation.Archimedean.RealStandardNontrivialProof`), used in the proof of
+`CuspidalArchimedeanStandardGenericStatement`.
 
 The Library module `PrincipalSeriesGramFormula` shows that every `O(n)`-finite function of a real
 principal series is a Gram expression. This module goes the other way. For every polynomial `P` in
@@ -85,10 +85,8 @@ for the nonvanishing proof. It does not follow a literature source and claims no
 
 ## Lean checks
 
-`lean_check` in environment `5c94c648-e8dc-4002-a50a-071ebf3f6096`: check df5040a1 (module
-alone) and check 949e5803 (built with the other three nonvanishing modules). No errors or
+`lean_check` on the module alone and built with the other three nonvanishing modules: no errors or
 warnings. Axioms: `propext`, `Classical.choice`, `Quot.sound`.
 
-Worker 771 recompiled the unchanged Lean source with all four helpers and the
-Task 7400 adapter in check `72836723-7d39-41ef-9c5b-1d032346f939`, with no errors
-or warnings. This Markdown corrects the indexing description of `gram i`.
+The Lean source was also compiled with all four helpers and an adapter module, with no errors or
+warnings.

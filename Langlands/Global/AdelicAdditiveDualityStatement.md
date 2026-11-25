@@ -1,14 +1,12 @@
 # Additive self-duality and the diagonal annihilator of the actual adeles
 
-Author: Worker 1592.
-
 `Langlands.Global.AdelicAdditiveDualityStatement.{u}` is a proposition
 definition for every `K : Type u` with `[Field K] [NumberField K]`. For every
 `ψ : Langlands.HarmonicAnalysis.UnitaryAdditiveCharacter (Adeles K)` trivial
 on the actual diagonal image of `K`, it states both the topological additive
 self-duality of the adeles under the multiplication pairing and the equality
 of the diagonal field with its annihilator. This file states the result;
-its proof is a separate obligation.
+its proof is `adelicAdditiveDuality_proof` in the module `AdelicAdditiveDualityProof`.
 
 ## Actual objects and character hypotheses
 
@@ -96,8 +94,8 @@ Retained original:
 `/home/taskhub/central-library/Weil--Basic number theory (book, 2nd edition)--1973.pdf`.
 SHA256:
 `32fff78f8ccc5d6378907941e26746c34e20fc3adf5096508844cfe8a301e33b`.
-PDF page numbers here are one-based. Worker 1592 read these original pages
-directly and visually checked the theorem on printed p.66. No source-specific
+PDF page numbers here are one-based. These original pages were read
+directly and the theorem on printed p.66 was visually checked. No source-specific
 errata file was present in the checked Library or project notes.
 
 Weil treats finite-dimensional vector spaces over an A-field. Here the field

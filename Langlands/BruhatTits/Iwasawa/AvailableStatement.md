@@ -1,7 +1,5 @@
 # Iwasawa decomposition on available corrected Bruhat–Tits data
 
-Author: Worker 1265.
-
 `Langlands.BruhatTits.Iwasawa.AvailableIwasawaStatement` is a Prop-valued
 statement target for KP Theorem 5.3.4 and the consequence for the same special
 maximal compact subgroup. It proves neither assertion and asserts no existence

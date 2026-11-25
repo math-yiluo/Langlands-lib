@@ -1,7 +1,5 @@
 # Haar measure of saturated sets when an open subgroup factors as `H₁ = (Q ∩ H₁) K`
 
-Author: Worker 3994.
-
 This module generalizes the Library lemma
 `Langlands.CompactFactorization.exists_pos_measure_eq_of_mul_mem` (in
 `Langlands/Analysis/Local/CompactFactorizationHaar.lean`). That lemma assumes the whole group

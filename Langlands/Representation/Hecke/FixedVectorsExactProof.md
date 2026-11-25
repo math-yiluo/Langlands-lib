@@ -1,6 +1,6 @@
 # Exactness of compact-open fixed vectors
 
-Author: Worker 136. The theorem `Langlands.Hecke.fixedVectorsExact` proves exactly
+The theorem `Langlands.Hecke.fixedVectorsExact` proves exactly
 `Langlands.Hecke.FixedVectorsExactStatement.{u,v}` with independent universes.
 It is Proposition (iv) of Renard III.1.5.
 
@@ -8,7 +8,7 @@ The original source is David Renard, *Représentations des groupes réductifs p-
 French version dated 9 July 2026, printed pp.60–61 / PDF pp.66–67, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 136 read these two PDF pages. Renard refers to exactness of the idempotent
+These two PDF pages were read for the proof. Renard refers to exactness of the idempotent
 functor in I.3.1; the implemented proof instead uses the published finite-orbit
 averaging map, which requires no measure on the group.
 

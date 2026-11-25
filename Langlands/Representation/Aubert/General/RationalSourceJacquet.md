@@ -1,6 +1,6 @@
 # Actual source Jacquet maps from the literal rational Levi family
 
-This internal adapter uses the unchanged simple-root labels of the actual point
+This adapter uses the unchanged simple-root labels of the actual point
 Coxeter system. The generic `intersectionLeviIndex` reads `intersectionSubset`
 as a finite subset of the subtype `J`. Its `leviIndex` is exactly the original
 intersection subset: no label is discarded, because the defining subset is
@@ -45,6 +45,6 @@ The provenance is internal and consists of the named published definitions,
 the source comparison and point-intersection transport, and the exactness
 theorem named above. The two twisted structural properties and the final
 rational-point Aubert induction-compatibility proposition remain unproved by
-this unit. Its Jacquet and compact-limit premises are already present for the
+this module. Its Jacquet and compact-limit premises are already present for the
 literal restricted families in the final target; no premise is added to that
 target.

@@ -37,6 +37,7 @@ private theorem compIso_hom_fst :
   have hi : (baseChangeCompIso b c G).inv.hom.hom.left ≫
       (baseChangeCompIso b c G).hom.hom.hom.left = 𝟙 _ :=
     congrArg (fun f => f.hom.hom.left) (baseChangeCompIso b c G).inv_hom_id
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   apply (cancel_epi (baseChangeCompIso b c G).inv.hom.hom.left).mp
   simp only [← Category.assoc, hi, Category.id_comp]
   exact (baseChangeCompIso_inv_fst b c G).symm

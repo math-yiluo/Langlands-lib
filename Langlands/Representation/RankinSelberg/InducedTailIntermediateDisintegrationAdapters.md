@@ -1,6 +1,6 @@
 # Rank and density adapters for actual lower-block disintegration
 
-Worker 318 implements internal adapters between the actual lower-block
+This module implements internal adapters between the actual lower-block
 quotient coordinates used by the intermediate-tail calculation and the
 published measure-disintegration statement.
 

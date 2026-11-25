@@ -4,16 +4,13 @@ Module `Langlands.Representation.CuspidalSupport.BernsteinCuspAdjunctionStatemen
 Namespace `Langlands.CuspidalSupport`.
 Entry proposition `BernsteinCuspAdjunctionStatement`. Nothing is proved here.
 
-Worker 1222 wrote this statement unit under the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`.
-
 ## Source and provenance
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French edition dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1222 read VI.7.2, printed pp.181–184 / PDF pp.187–190. The assertion
+VI.7.2, printed pp.181–184 / PDF pp.187–190, was read. The assertion
 stated here is the second Lemma of VI.7.2, printed p.182 / PDF p.188.
 
 Before the Lemma, Renard defines (printed p.182):
@@ -137,7 +134,7 @@ as in the published VI.7.2 statement `BernsteinDecompositionStatements`.
 
 ## Relation to existing work
 
-- Worker 1751's published `RationalCuspidalInducedEmbeddingStatement`
+- The published `RationalCuspidalInducedEmbeddingStatement`
   (module `Langlands.Representation.CuspidalSupport.RationalCuspidalInducedEmbeddingStatement`)
   states the consequence drawn in the paragraph after the Lemma: every smooth
   representation embeds in a finite direct sum of normalized inductions of
@@ -145,18 +142,19 @@ as in the published VI.7.2 statement `BernsteinDecompositionStatements`.
   functors, the adjunction, exactness or faithfulness. Statement (iii) here,
   with clause 1, implies the existence of such an embedding at the saturated
   universe. This implication is not formalized.
-- Worker 6's published `RationalCuspidalCategory` defines the factors of the
+- The published `RationalCuspidalCategory` defines the factors of the
   VI.3.5 decomposition and the decomposition predicate. It proves no
   decomposition. Clause 1 here is a consequence of that decomposition.
-- The published `BernsteinDecompositionStatements` (Worker 1222) states the
-  Theorem and first Lemma of VI.7.2. Its Markdown lists this second Lemma as a
-  remaining obligation, which this unit addresses.
+- The published `BernsteinDecompositionStatements` states the
+  Theorem and first Lemma of VI.7.2. Its Markdown lists this second Lemma as
+  not stated there; this module states it.
 
 ## Scope
 
-This file states the second Lemma of VI.7.2 and proves nothing. Proofs belong
-to a separate `lean.proof@1` task targeting
-`BernsteinCuspAdjunctionStatement`. Renard's route: compose the
+This file states the second Lemma of VI.7.2 and proves nothing.
+`bernsteinCuspAdjunction_of_wholeDecomposition` (module
+`BernsteinCuspAdjunctionAssembly`) derives `BernsteinCuspAdjunctionStatement`
+from VI.3.5. Renard's route: compose the
 Frobenius reciprocity of `r_P^G ⊣ i_P^G` with the adjunctions `sc ⊣ ι`, and use
 finiteness of the set of standard parabolics to replace the product of Hom
 groups by Homs into the coproduct (i); exactness of `r_P^G`, `i_P^G` and of
@@ -175,5 +173,4 @@ The file imports `Langlands.Representation.CuspidalSupport.BernsteinBlock`,
 `Langlands.Representation.Smooth.FiniteLengthGrothendieck` (for
 `SmoothRep.IsShortExact`), `Langlands.Representation.Category.Abelian`, and
 Mathlib's `CategoryTheory.Pi.Basic`, `CategoryTheory.Discrete.Basic` and
-`CategoryTheory.Adjunction.Basic` (environment
-`bb168ec3-1031-46d9-816b-5c2ed7bbe1a6`).
+`CategoryTheory.Adjunction.Basic`.

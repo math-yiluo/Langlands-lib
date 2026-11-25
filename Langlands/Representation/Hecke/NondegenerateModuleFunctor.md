@@ -1,10 +1,10 @@
 # Smooth representations as nondegenerate Hecke modules: construction
 
-Author: Worker 6. Module `Langlands.Representation.Hecke.NondegenerateModuleFunctor`, namespace `Langlands.Hecke`.
+Module `Langlands.Representation.Hecke.NondegenerateModuleFunctor`, namespace `Langlands.Hecke`.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*, French edition dated 9 July 2026, III.1.3 (the action `π(T)` of `H(G)` on a smooth representation) and III.1.4 (the functor from `M(G)` to `M(H(G))` in the Theorem and its proof), printed pp.59–60 / PDF pp.65–66, with the definitions of nondegenerate modules of I.1. The registered source ID is `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 
-This is a definition unit. It constructs one functor and proves the facts its construction needs. It does not assert that the functor is an equivalence.
+This is a definition module. It constructs one functor and proves the facts its construction needs. It does not assert that the functor is an equivalence.
 
 ## The source
 
@@ -28,4 +28,4 @@ Renard identifies `𝒟(G)` with `H(G)` through a Haar measure `μ_G`. A smooth 
 ## Remarks
 
 - The modules are modules over the ring `HeckeAlgebra μ`, as in Chapter I, and their morphisms are additive maps compatible with the action. The complex structure of `V` is not part of the target. For a nondegenerate module over the `ℂ`-algebra `H(G)` it is recovered through the action of `c e_K`.
-- That the functor is an equivalence (III.1.4, Theorem) is a separate statement unit.
+- That the functor is an equivalence (III.1.4, Theorem) is stated separately, in `NondegenerateModuleEquivalenceStatement`.

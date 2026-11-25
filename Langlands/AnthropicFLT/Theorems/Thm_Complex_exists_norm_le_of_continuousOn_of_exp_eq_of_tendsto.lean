@@ -24,7 +24,7 @@ diffs):
 Declaration names and namespaces are unchanged. The mathematical hypotheses and conclusions of the
 source are retained.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.P2M.Sol.S_Complex_exists_norm_le_of_continuousOn_of_exp_eq_of_tendsto
 
 set_option maxHeartbeats 4000000

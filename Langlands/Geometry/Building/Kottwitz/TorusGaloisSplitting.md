@@ -1,9 +1,10 @@
 # A splitting extension normal over the local ground field
 
 This internal helper strengthens the existing finite Galois splitting-field
-construction in `KPZeroDatumConstruction` for the Galois-equivariance argument
-of Task 6300. Its provenance is the published torus splitting theorem and
-Mathlib's primitive element, normal compositum, and field-tower results.
+construction in `KPZeroDatumConstruction` for the argument for Galois
+equivariance and rational descent of the torus Kottwitz map. Its provenance is
+the published torus splitting theorem and Mathlib's primitive element, normal
+compositum, and field-tower results.
 
 For a nonarchimedean local field `F`, let `K = UnramifiedClosure F` and
 `E = SeparableClosure F`. For every actual `F`-torus, `exists_normal_splitting`

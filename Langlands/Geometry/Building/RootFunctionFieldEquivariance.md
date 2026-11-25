@@ -2,7 +2,7 @@
 
 For arbitrary fields k and K in universe u, actual field restriction evaluates
 an upstairs family on the pulled-back character and the extended original
-rational point. This internal unit packages that same function as equivariant
+rational point. This module packages that same function as equivariant
 maps for the two existing actions.
 
 For a supplied split torus, fieldRestrictTranslationHom uses the inverse of

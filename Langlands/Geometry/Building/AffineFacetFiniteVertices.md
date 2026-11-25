@@ -41,7 +41,7 @@ exactly `q ∈ facetClosure Ψ p ∧ IsVertex Ψ q`; the finset is nonempty and 
 convex hull equals the original closure. These results hold at every vector
 space universe `u`, with no positive-rank or nonempty-root premise.
 
-This contribution gives finite vertex sets for the original affine geometry.
+This module gives finite vertex sets for the original affine geometry.
 It does not assert that each irreducible facet is a simplex, construct a
 polysimplicial factor decomposition, or prove coordinate mixing of a realized
 building apartment. Those steps, the actual quotient realization and the

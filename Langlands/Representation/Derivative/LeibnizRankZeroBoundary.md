@@ -1,7 +1,5 @@
 # Rank-zero boundaries of the Leibniz filtration
 
-Author: Worker 984.
-
 BZ77 Corollary 4.14(c) says that the `k`-th derivative of the product `ρ × σ` is glued
 from the products `ρ^(j) × σ^(k-j)`. The published statement module
 `Langlands.Representation.Derivative.GeneralLinearDerivativeLeibnizFiltrationStatement`
@@ -42,9 +40,9 @@ directly verified"). This module only uses the Lean construction.
 
 - `Langlands.Representation.Derivative.GeneralLinearDerivativeLeibnizFiltrationStatement`
   (published): `leibnizIndices`, `LeibnizIndex`, `leibnizSource`, `leibnizPiece`.
-- `Langlands.Representation.Derivative.RankCastCompat` (Worker 593, with Worker 984
-  as coauthor): `generalLinearRankCastDerivativeIso`.
-- `Langlands.Representation.Derivative.ZeroRankTensor` (Worker 969):
+- `Langlands.Representation.Derivative.RankCastCompat`:
+  `generalLinearRankCastDerivativeIso`.
+- `Langlands.Representation.Derivative.ZeroRankTensor`:
   `ZeroRankTensor.binaryRightZeroIso`, `ZeroRankTensor.generalLinearDerivativeTensorIso`.
 
 The module uses these two modules without changing them. It also uses the published
@@ -60,8 +58,8 @@ The direct imports are the statement module, `RankCastCompat`, `ZeroRankTensor`
 and the shared `Langlands.Group.GL.ReindexCongr` helper.
 At Library base `9a8ca758097242bde4147f33304f43fceef22fa4`, a recursive scan of the
 `import Langlands.…` lines gives a transitive project closure of exactly these 77
-modules, not counting this module. Integration adds only `ReindexCongr` to that
-closure, for 78 dependencies; its sole dependency `GL.Basic` is already listed.
+modules, not counting this module. The direct import `ReindexCongr` adds only
+itself to that closure, for 78 dependencies; its sole dependency `GL.Basic` is already listed.
 Each has a nonempty paired Markdown file:
 
 - `Langlands.Group.GL`: `Basic`, `BlockModulus`, `Blocks`, `Mirabolic`, `MirabolicMixedProductSubgroups`, `MirabolicOppositeIntersection`, `MirabolicProjection`, `MirabolicRadical`, `Nonarchimedean`, `NonarchimedeanStatement`, `NormalizedCharacter`, `OppositeBlocks`, `Padic`, `PadicBlocks`, `RankMaps`, `RankReindex`, `UpperUnipotent`.
@@ -85,7 +83,7 @@ No Lean file in this closure mentions segments, socles, classification, exhausti
 supercuspidals or finiteness (case-insensitive text scan). In particular, the closure
 does not contain `Langlands.Whittaker.SupercuspidalCoinvariantFinitenessStatement`,
 `IrreducibleCoinvariantFinitenessStatement`, `LeviCuspidalCoinvariantFinitenessStatement`,
-or any module of the excluded segment, two-supercuspidal or classification tasks. The two
+or any module of the excluded segment, two-supercuspidal or classification results. The two
 `Whittaker` modules only define additive characters, Whittaker functionals and function
 models, with elementary lemmas about them.
 
@@ -102,8 +100,8 @@ The proofs use only the following inputs:
   which are explicit isomorphisms built from coinvariant algebra on pure tensors.
 
 No Prop-valued statement definition is used as a hypothesis. The proofs use no
-exactness, finite-length, admissibility or irreducibility theorem, and no conclusion of
-an excluded consumer task. The constructions hold for arbitrary carriers in universe
+exactness, finite-length, admissibility or irreducibility theorem, and no excluded
+consumer conclusion. The constructions hold for arbitrary carriers in universe
 `uV`, arbitrary `GL_0` carriers and every continuous nontrivial additive character
 `ψ`. They cover every order `d` up to the nonzero rank, including `d = 0` and the top
 order, and the case where both ranks are zero.
@@ -111,9 +109,9 @@ order, and the case where both ranks are zero.
 ## Related Library modules
 
 This module neither imports nor duplicates the following related modules.
-`GeneralLinearDerivativeLeibnizBoundary` (Worker 593) proves the order-zero (`d = 0`)
+`GeneralLinearDerivativeLeibnizBoundary` proves the order-zero (`d = 0`)
 gluing for all ranks. The rank-zero boundaries here cover every order instead.
-`LeibnizIndices` and `LeibnizPieceCompat` (Worker 593) handle index splitting and the
+`LeibnizIndices` and `LeibnizPieceCompat` handle index splitting and the
 positive-order pieces. They have no declaration in common with this module. The
 existing `Langlands.RankinSelberg.reindex_finCongr_self` is reused from
 `Langlands.Group.GL.ReindexCongr`, which retains its original statement and proof

@@ -106,7 +106,7 @@ def harrisIntegralCMFullActionPolarizedRestriction :
       P.unitCoherence P.associativity P.comparison P.symmetry P.stability
       P.square P.universality (D.harrisHodgePELIntegralOrder C) X := by
   letI := auxiliaryStarRing D C
-  exact ⟨a, fun x => (D.harrisHodgePELRationalAction_coe C BT a x).symm⟩
+  exact ⟨a, fun x => congrArg CategoryTheory.End.asHom (D.harrisHodgePELRationalAction_coe C BT a x).symm⟩
 
 /-- The ambient prescribed dimension supplies precisely the missing numerical
 conjunct of the unchanged normalized CM condition. -/

@@ -1,6 +1,6 @@
 # The rank-one factorization and the rank-one exchange at a chamber point
 
-This derived, internal unit proves the rank-one part of Kaletha–Prasad
+This module proves the rank-one part of Kaletha–Prasad
 Proposition 7.1.1(1) on the apartment of `KPApartmentData`, without AS 1, and
 deduces the rank-one exchange used in the Iwahori factorization at a chamber
 point (Kaletha–Prasad Proposition 7.3.12). Opposite factor pairs (the

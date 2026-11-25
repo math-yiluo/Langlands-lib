@@ -1,9 +1,7 @@
 # Scalar matrices acting through a Hecke character
 
-Author: Worker 5137.
-
 This helper module belongs to the proof of
-`Langlands.ClassField.Global.RelativeWeilGroup.AssociatedCentralCharacterStatement` (Task 5210).
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.AssociatedCentralCharacterStatement`.
 It prepares the proof in `Langlands.Automorphic.CentralCharacterTopCoefficient` that an
 irreducible cuspidal realization has central character `δ` as soon as `δ_v(ϖ_v)` is the top
 Satake coefficient at almost every place. The definitions `ScalarActsBy` and

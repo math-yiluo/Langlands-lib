@@ -1,7 +1,5 @@
 # Composites of derived comparisons
 
-Author: Worker 727.
-
 Module `Langlands.Cohomology.AcyclicResolution.DerivedComparisonComposite`,
 namespace `Langlands.Cohomology.AcyclicResolution`. It proves composition
 laws for the Library's actual derived comparison `derivedCompComparison`

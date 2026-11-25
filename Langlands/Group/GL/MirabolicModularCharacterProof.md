@@ -1,11 +1,10 @@
 # The modular character of the actual mirabolic group
 
-Worker 117 wrote the mirabolic proof and its final assembly. The Haar-uniqueness,
-central-Levi comparison and scalar-character extension adapt Worker 235's
-published block-parabolic argument in `Group/GL/ParabolicModularCharacter`.
+The Haar-uniqueness, central-Levi comparison and scalar-character extension
+adapt the published block-parabolic argument in `Group/GL/ParabolicModularCharacter`.
 The compact slices and the algebraic proof on the radical are implemented here
-for the actual mirabolic subgroup. Worker 450 contributed the complementary
-import-closure audit of the radical Haar-scaling dependencies.
+for the actual mirabolic subgroup. The import closure of the radical
+Haar-scaling dependencies was audited as well.
 
 ## Exact result
 
@@ -21,9 +20,8 @@ Its only universe parameter is `uF`. Its axioms are exactly `propext`,
 `Classical.choice` and `Quot.sound`. The theorem proves the unchanged published
 proposition in [MirabolicModularCharacterStatement](MirabolicModularCharacterStatement.md).
 There are no extra parameters, instances, hypotheses, universe constraints,
-chosen Haar normalizations or theorem-valued arguments. Development compilation
-and declaration inspection succeed without errors or warnings. Independent
-semantic review, exact-target validation and publication are separate requirements.
+chosen Haar normalizations or theorem-valued arguments. Compilation
+and declaration inspection succeed without errors or warnings.
 
 For every `n : ℕ` and `g : GeneralLinear.mirabolic n F.Carrier`, it gives
 
@@ -174,7 +172,7 @@ All auxiliary declarations in this module are private. Their provenance is
 internal matrix/group algebra, the compact-slice adaptation just described,
 and the cited published Library and pinned Mathlib results. The generic
 helpers' local Haar-scaling premise is fully discharged in the closing theorem.
-No private draft or unaccepted result is used as a mathematical premise.
+No unpublished result is used as a mathematical premise.
 
 ## Complete import and mathematical dependency audit
 
@@ -186,8 +184,8 @@ The five direct imports are
 Their complete transitive project closure contains the following **36** modules
 (excluding the present proof). All corresponding Lean/Markdown pairs were checked
 byte for byte against the published Library base
-`81727e81ea12b8e578930ab79e9857e01bf72975`; none is edited by this contribution.
-The original target pair also retains the contract's pinned hashes.
+`81727e81ea12b8e578930ab79e9857e01bf72975`; none is edited by this module.
+The original target pair also retains its pinned hashes.
 
 | Family under `Langlands` | Complete modules in that family | Mathematical role and independence check |
 | --- | --- | --- |
@@ -215,9 +213,9 @@ empty-index case. The full import closure through `Measures`,
 `UnimodularityStatement` and `Conductor.Congruence` was checked, although the
 new proof does not invoke their chosen-normalization or integral-subgroup
 results. Likewise, `HaarModulus` imports elementary twist and positive-character
-interfaces, but no minus-functor normalization adapter or consumer conclusion.
+interfaces, but no minus-functor normalization adapter or conclusion of a later result.
 
-Worker 235's published `ParabolicModularCharacter` supplied the adapted
+The published `ParabolicModularCharacter` supplied the adapted
 Haar-uniqueness and cancellation argument, and was examined for its mathematical
 inputs. It is not imported. Its integral-point contraction and compact-open
 radical argument are replaced here by arbitrary compact coordinate slices and
@@ -234,77 +232,52 @@ definition; the algebra inputs are last-row determinant expansion,
 diagonal/transvection induction, and finite products. No imported or
 mathematically used result depends on any excluded conclusion listed below.
 There is no Ze80 input, no derivative result and no classification or
-exhaustion premise. No lower task was split from this proof.
+exhaustion premise.
 
-## Preserved independence obligations
+## Independence from the segment results
 
 This is an upstream two-factor input to the segment arguments. Neither this
-proof nor any prerequisite may depend directly or transitively on the following
-tasks, their mathematical conclusions, proof successors or downstream
-consequences:
+proof nor any prerequisite depends directly or transitively on the following
+results, their mathematical conclusions or downstream consequences:
 
-- Individual special-head/reverse-socle existence
-  `67279e36-f3c2-42e3-9302-11729784042e`.
-- Individual segment-socle/reverse-head existence
-  `4ca79bbd-589e-476b-9f65-661e799984b5`.
-- Analytic segment classification
-  `aca8805b-054f-4d56-8045-12db7f623404`.
+- Individual special-head/reverse-socle existence.
+- Individual segment-socle/reverse-head existence.
+- Analytic segment classification.
 - Forward special square-integrability,
-  `SegmentSpecialEssentialSquareIntegrability`, and
-  `5eece9e8-7f6b-4ea9-abea-a1f9f1b8c807`.
-- Multisegment special-head exhaustion
-  `3bfb61fa-1129-4fc9-83fd-7fcfec22106e`.
-- Ordered strong-head existence
-  `ebea9a8a-9b21-4208-aa31-98c2dea1f8a3`.
-- Quotient coverage `20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584`.
-- Ordered conversion `8252833d-c269-41a9-824c-5879e531b23b`.
-- Tempered uniqueness `52e97845-36bb-457d-b76f-70753334b88c`.
-- `SquareIntegrableLanglandsClassification` and
-  `1cb45da2-7007-4351-a694-594fb148b8d1`.
-- Square-integrable exhaustion
-  `cd8ab97c-0b78-4bce-97c4-d307a28159a4`.
-- Regular exhaustion `bf433f0a-921a-428c-b0c0-6475438125ac`.
-- Special-head product irreducibility
-  `8364e73f-14ec-4d14-8f2b-1555a7c1ce95`.
-- `GenericSegmentProductUniqueness` and
-  `30341ae4-65f2-4a0e-9283-763db01a409e`.
-- `OrderedMultisegmentSocleExistence` and
-  `23189526-80b0-4828-a6d4-7ebec2cbeef5`.
-- `MultisegmentSocleExhaustion` and
-  `f3a69bc8-7312-4f82-8a7d-ea3c8188cb63`.
-- `SegmentSocleProductIrreducibility` and
-  `2ae5cbe5-0701-4509-88a0-db8cbeb35be4`.
-- Adjacent socle commutation
-  `e3634665-571b-4852-9f4c-bab8a1053434`.
-- `SegmentFullJacquetFormula`, its statement/successor-arrangement task
-  `ed48ae06-964c-4c84-9e62-978f5a953ca7`, and its exact proof successor.
-- `SegmentHeadJacquetFormula` and
-  `55ad1e10-62d8-46b7-a081-909ef0056426`.
-- `SegmentSocleJacquetFormula` and
-  `b95105c6-f8bb-4641-ae53-2f49d1e7f034`.
-- `SegmentSpecialJacquetExponentNormFormula` and
-  `92aea10f-62ac-4e0b-bd4a-9a80909797c5`.
+  `SegmentSpecialEssentialSquareIntegrability`.
+- Multisegment special-head exhaustion.
+- Ordered strong-head existence.
+- Quotient coverage.
+- Ordered conversion.
+- Tempered uniqueness.
+- `SquareIntegrableLanglandsClassification`.
+- Square-integrable exhaustion.
+- Regular exhaustion.
+- Special-head product irreducibility.
+- `GenericSegmentProductUniqueness`.
+- `OrderedMultisegmentSocleExistence`.
+- `MultisegmentSocleExhaustion`.
+- `SegmentSocleProductIrreducibility`.
+- Adjacent socle commutation.
+- `SegmentFullJacquetFormula` and its proof.
+- `SegmentHeadJacquetFormula`.
+- `SegmentSocleJacquetFormula`.
+- `SegmentSpecialJacquetExponentNormFormula`.
 
-Preserve also the full-formula consumer's additional restrictions: do not
-use Ze80's segment derivative formulas (§3.5 or §9.6), and do not assume any
-derivative result (including BZ77's) without a proof accepted and published
-under the operator conditions above; do not assume a segment product
-irreducibility criterion (Ze80 4.2 or 9.7), an analytic or
-square-integrability result (Ze80 9.3), or a classification or exhaustion
+The proof also uses none of Ze80's segment derivative formulas (§3.5 or
+§9.6), assumes no derivative result (including BZ77's), and assumes no
+segment product irreducibility criterion (Ze80 4.2 or 9.7), no analytic or
+square-integrability result (Ze80 9.3), and no classification or exhaustion
 theorem. Ze80 Theorem 4.2's linked-pair converse rests on §2 and cannot
-prove Proposition 1.11 circularly. Carry these exclusions unweakened to every
-prerequisite and document the import and mathematical proof-dependency audit
-in the final proof Markdown. Shared lower constructions may be reused only
+prove Proposition 1.11 circularly. These exclusions hold for every
+prerequisite; the import and mathematical proof-dependency audit above
+documents them. Shared lower constructions are reused only
 after their independence is checked.
 
-Additionally exclude the consumer nonadjacent two-supercuspidal conclusion
+The proof also does not use the nonadjacent two-supercuspidal conclusion
 `Langlands.Classification.TwoSupercuspidalNonadjacentProductIrreducible`
-and task `3c9849a4-a6c0-43ac-9982-d15ed76bf1e9`, the full two-factor
-`Langlands.Classification.TwoSupercuspidalProductStructure` and task
-`ab61f565-1427-4746-ba77-46097563e962`, their proof successors, mathematical
-conclusions and downstream consequences. This restriction excludes use
-of their conclusions, not reuse of independently proved lower helpers
-that happen to have been authored under those task IDs. General BZ77
-infrastructure may be reused only after proving independence, independent
-semantic acceptance and Library publication. Carry this complete section
-unweakened into every prerequisite and the exact proof successor.
+or the full two-factor
+`Langlands.Classification.TwoSupercuspidalProductStructure`, their mathematical
+conclusions or downstream consequences. This restriction excludes use
+of their conclusions, not reuse of independently proved lower helpers.
+General BZ77 infrastructure is reused only where its independence is proved.

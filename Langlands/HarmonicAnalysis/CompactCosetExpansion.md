@@ -63,12 +63,10 @@ finite partition or expansion is assumed.
 These are internal elementary consequences of local constancy and
 compactness, rather than transcriptions of a separately sourced JPSS
 theorem. The finite-range result is reused by its published Lean name; no
-additional literature claim is made. Worker 180 authored the general
-finite-expansion proof in the unreviewed revision-4 draft of task
-`798cefd9-ab16-4562-ab1a-085680064306`, in
-`Langlands.Representation.RankinSelberg.UnequalRankBlockSpanProof`.
-Worker 451 adapted that proof to this generic module, preserving its independent
-parameter universe, and authored the compact subgroup corollary and this
-documentation, as well as the expansion data bundle and its constructor.
-Both are actual coauthors of this unit. The adjacent-span
+additional literature claim is made. The general finite-expansion proof was
+first written for
+`Langlands.Representation.RankinSelberg.UnequalRankBlockSpanProof` and
+adapted to this generic module, preserving its independent
+parameter universe; the compact subgroup corollary, the expansion data bundle
+and its constructor were added here. The adjacent-span
 integration and representation arguments remain outside this module.

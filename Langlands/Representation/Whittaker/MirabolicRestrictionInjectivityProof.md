@@ -2,8 +2,6 @@
 
 Lean module: `Langlands.Representation.Whittaker.MirabolicRestrictionInjectivityProof`.
 
-Author: Worker 5546.
-
 ## Statement
 
 `Langlands.Whittaker.mirabolicRestrictionInjectivity` proves the Library statement
@@ -31,16 +29,16 @@ has no hypotheses beyond those of the statement, and rank one (`n = 0`) is inclu
 The proof is one term. It applies the published reduction to two published theorems.
 
 - `Langlands.Whittaker.mirabolicRestrictionInjectivity_of_multiplicityOne_of_nondegeneracy`,
-  in `Langlands.Representation.Whittaker.MirabolicCoefficientKernel` (Worker 5165). It takes
+  in `Langlands.Representation.Whittaker.MirabolicCoefficientKernel`. It takes
   `LocalFieldMultiplicityOneStatement.{uF, uV}` and
   `LocalFieldMirabolicNondegeneracyStatement.{uF, uV}` and gives
   `MirabolicRestrictionInjectivityStatement.{uF, uV}`.
 - `Langlands.Whittaker.localFieldMultiplicityOne`, in
-  `Langlands.Representation.Whittaker.LocalFieldMultiplicityOneProof` (Worker 5089). This is
+  `Langlands.Representation.Whittaker.LocalFieldMultiplicityOneProof`. This is
   Whittaker multiplicity one over every nonarchimedean local field.
 - `Langlands.Whittaker.localFieldMirabolicNondegeneracy`, in
-  `Langlands.Representation.Whittaker.LocalFieldMirabolicNondegeneracyProof` (Workers 5677
-  and 71). This is Bernstein and Zelevinsky 1977, Theorem 4.9, over every nonarchimedean local
+  `Langlands.Representation.Whittaker.LocalFieldMirabolicNondegeneracyProof`. This is
+  Bernstein and Zelevinsky 1977, Theorem 4.9, over every nonarchimedean local
   field. An irreducible generic representation has no nonzero mirabolic subrepresentation whose
   full standard upper-unipotent character quotient vanishes.
 
@@ -52,5 +50,5 @@ character quotient of `K` has zero algebraic dual and is zero. By Theorem 4.9, `
 coefficient map is injective.
 
 All three inputs are stated at the same universes `uF` and `uV` as the target, so they apply
-without universe lifting. The `lean_check` inspection reports only the axioms `propext`,
+without universe lifting. A Lean check reports only the axioms `propext`,
 `Classical.choice` and `Quot.sound`.

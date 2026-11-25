@@ -34,12 +34,12 @@ outer parameters or hypotheses besides the universe `u`.
 - `P : X.Modules` and `N : X'.Modules` are arbitrary module sheaves, and
   `a : P ⟶ g_* N` is an arbitrary morphism into the actual pushforward.
 - `pushforwardBaseChangeOf f (Spec.map φ) f' g w a :
-  (Spec.map φ)^* (f_* P) ⟶ f'_* N` is the published Library comparison (module
+  (Spec.map φ)^* (f_* P) ⟶ f'_* N` is the Library comparison (module
   `Langlands.AlgebraicGeometry.Modules.PushforwardBaseChangeOf`): the
   `Spec.map φ`-pullback/pushforward adjunct of `f_* a` followed by the
   pushforward square isomorphism.
 - `scalarSectionsBaseChangeMapOf φ f f' g w a :
-  T ⊗_R Γ(X, P) ⟶ Γ(X', N)` is the published `T`-linear map in the same module:
+  T ⊗_R Γ(X, P) ⟶ Γ(X', N)` is the `T`-linear map in the same module:
   the extension-of-scalars adjunct of the map on relative global sections
   induced by `a`, composed with the Library's composition and base-ring
   identifications. Here `Γ(X, P)` is the `R`-module
@@ -57,7 +57,7 @@ For `a` the unit of `g^* ⊣ g_*` at a module `M` (so `P = M` and
 (`AffineDirectImageBaseChange.lean`), whose conclusion and scalar hypothesis
 are about `pushforwardBaseChange (Spec.map φ) f f' g w M` and
 `scalarSectionsBaseChangeMap φ f f' g w M`. These are the unit cases of the two
-maps above, by the published unit-recovery lemmas `pushforwardBaseChangeOf_unit`
+maps above, by the unit-recovery lemmas `pushforwardBaseChangeOf_unit`
 and `scalarSectionsBaseChangeMapOf_unit` (both hold by `rfl`). This proposition
 is the same implication for an arbitrary `a`; the Library result does not
 cover the general case.
@@ -73,7 +73,7 @@ Cohomology of Sheaves, section "The base change map" (tag 02N6, label
 `fa9747d0082afbf8b09244dcc6c260f8a122e5e3b4a3c69e2273506d76e18a42`). In the
 proof of Lemma 02N7, the base change map is obtained from a map
 `β : I^• ⟶ g'_* J^•` into a pushforward, by applying `f_*`, identifying
-`f_* g'_* = g_* f'_*`, and taking the adjunct along `g`. The published
+`f_* g'_* = g_* f'_*`, and taking the adjunct along `g`. The Library's
 `pushforwardBaseChangeOf` is this construction in a single degree, with `a` in
 the role of `β`. Stacks constructs the map but does not prove this
 invertibility criterion. The mathematical reason to expect it is that a
@@ -82,24 +82,18 @@ it is one on global sections, and that the global sections of the pullback of
 a quasi-coherent module along `Spec T ⟶ Spec R` are `T ⊗_R -` of the original
 sections.
 
-This contribution only states the proposition. Its proof is the subject of a
-subsequent task.
+This module only states the proposition. Its proof is
+`pushforwardBaseChangeOfIso` (module `PushforwardBaseChangeOfIsoProof`).
 
 ## Intended use
 
-In the affine case of flat base change for higher direct images (parent task
-`5b778a75-e74b-4ae4-9232-6735e3eefa47`), the comparison is applied to the
-components of the Library chain map `CechResolution.cechPullback`. The plan
-is to identify the scalar maps there with the components of the Library's
+In the affine case of flat base change for higher direct images (module
+`FlatBaseChange.AffineCase`), the comparison is applied to the
+components of the Library chain map `CechResolution.cechPullback`. There
+the scalar maps are identified with the components of the Library's
 scalar Čech sections map, which are invertible by
 `isIso_scalarCechSectionsMap_of_isPullback_of_isSeparated`
-(`CechResolution/AffineSectionsBaseChange.lean`), and to obtain
-quasi-coherence of both direct images from the Čech-term statement
+(`CechResolution/AffineSectionsBaseChange.lean`), and
+quasi-coherence of both direct images comes from the Čech-term statement
 `CechResolution.CechTermDirectImageStatement`. Neither step is part of this
 proposition.
-
-## Authorship
-
-Worker 1098 wrote the Lean file and the first version of this Markdown, shared
-as revision 1 of this task's draft. Worker 950 kept the Lean unchanged and
-expanded the unit-case comparison and the provenance in this Markdown.

@@ -1,10 +1,8 @@
 # Full-slice equality under restriction of scalars
 
-Author: Worker 160.
-
-This internal construction for Task 5360 supplies the full test-scheme
+This internal construction supplies the full test-scheme
 comparison needed in the equalizer route to the diagonal of a Weil
-restriction. It is derived from the definitions of represented equalizers,
+restriction (`WeilRestrictionDiagonalProof`). It is derived from the definitions of represented equalizers,
 the structural slice maps and pullback uniqueness. Its representability
 and finiteness conclusions use the existing Library construction
 `quasiAffineWeilRestrictionPresheafIso` and its scheme properties.

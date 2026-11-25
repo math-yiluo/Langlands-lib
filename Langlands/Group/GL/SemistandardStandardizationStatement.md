@@ -34,10 +34,11 @@ such eigenspace has its original block dimension. Ordering these coordinate
 lines block by block gives the required row permutation; invertibility then
 gives an invertible matrix on each block. This rationale describes the intended
 result, not an implemented proof. The Lean file contains only the Prop-valued
-definition. An exact proof requires a separate contribution.
+definition. The proof is `glSemistandardStandardization` in the separate module
+`Langlands.Group.GL.SemistandardStandardizationProof`.
 
-This interface serves the semistandard conjugacy proof and existing geometry
-task `926567c9-a739-4eec-8a22-6f9c2b21ebf0`. It imports only the block-pair,
+This interface serves the semistandard conjugacy proof and the existing
+geometry results. It imports only the block-pair,
 singleton-block, and permutation definitions, so it does not depend on any
 Langlands classification statement. In particular, it is not a conditional
 replacement for the final conjugacy theorem.

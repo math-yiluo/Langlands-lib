@@ -2,11 +2,11 @@
 
 This internal proof module adapts `MoyPrasadRankOne` and
 `MoyPrasadDoubleRefinement` to the actual maximal-unramified building data.
-The commutator predicate and ordinary rank-one proof are reused from
-Worker 359’s Task 6191 revision-10 draft, with coauthorship.
-`LocalTorusCommutatorFriendly` is exactly the explicit first clause of S1
+`LocalTorusCommutatorFriendly` is exactly the explicit first clause of
+`QuasiSplitLocalTorusFiltrationStatement`
 that is the sole extra premise in `LocalMoyPrasadPositiveProductStatement`.
-It does not include any other clause of S1 or any part of S2.
+It does not include any other clause of `QuasiSplitLocalTorusFiltrationStatement` or any
+part of `LocalMoyPrasadGroupPropertiesStatement`.
 
 For two root-filtration elements in opposite directions at depths `r,s ≥ 0`
 with positive sum, the proof uses the field-independent actual rank-one

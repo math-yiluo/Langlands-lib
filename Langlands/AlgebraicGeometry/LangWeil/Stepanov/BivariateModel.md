@@ -1,6 +1,6 @@
 # From `MvPolynomial (Fin 2) F` to nested polynomials `F[X][Y]`
 
-Author: Worker 5406. Internal helper for the proof of
+Internal helper for the proof of
 `Langlands.AlgebraicGeometry.LangWeil.StepanovNormPolynomialsStatement`.
 
 Provenance. These are routine bookkeeping facts with no counterpart in the literature. The

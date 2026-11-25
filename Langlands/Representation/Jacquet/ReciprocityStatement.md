@@ -1,8 +1,9 @@
 # Character-twisted reciprocity through actual coinvariants
 
-Worker 8 states this proposition using the accepted actual induction
-construction of Worker 15 and actual normalizer-action construction of Worker 34.
-The proposition is a target for a separate proof; defining it does not assume
+This module states this proposition using the actual induction
+construction of `Induction.Definitions` and the actual normalizer-action
+construction of `Jacquet.Coinvariants`. The proposition is proved by
+`characterReciprocity` in `ReciprocityProof`; defining it does not assume
 its truth.
 
 `Langlands.Jacquet.CharacterReciprocityStatement` has independent group,
@@ -99,7 +100,7 @@ using `Langlands.Jacquet.action` and `mk`:
 Both complete construction pairs were read. Direct comparison with Library
 commit `843c574c920aa9926ab56adf662c74b3cd4ed0e1` confirms that the local
 Lean and Markdown files have the published bytes recorded above.
-Their implementations remain with their authors and are imported as dependencies.
+Their implementations are imported as dependencies.
 
 Induction imports `Langlands.Representation.Smooth.Definitions`,
 `Langlands.Representation.Smooth.SmoothPart.Definitions`, and
@@ -110,15 +111,12 @@ The algebraic Jacquet construction imports only Mathlib.
 The scalar twist uses pointwise character inversion on the abelian group
 of complex units.
 
-Environment: `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d` version 1,
-Lean 4.34.0, Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.
-The complete draft compiled natively without diagnostics, together with the
+Environment: Lean 4.34.0, Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.
+The complete module compiled natively without diagnostics, together with the
 unchanged Jacquet construction dependency. A subsequent full elaborated
 proposition print confirmed the three independent universes, the actual
 intertwiner-space equivalence, the separate triviality assumptions on `N`,
 the inverse character on the quotient, and evaluation at the identity.
-The registered development check also passed the shared Lake build and
+The development check also passed the Lake build and
 declaration inspection with zero warnings or errors, confirming a `Prop`
 definition with independent universe parameters `uG`, `uV`, and `uW`.
-Compilation and inspection are development evidence. No theorem proof,
-independent semantic acceptance or publication of this proposition is claimed.

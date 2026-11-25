@@ -74,8 +74,7 @@ of the represented locus. No pointwise fixation condition is imposed.
 This is an internal construction from the preceding full represented-domain
 tests and Mathlib's group filter basis and open subgroup APIs. The proof pattern
 for the basis, explicit topology, neighborhood criteria, and finite reindexing
-adapts the published `StrictTestDomain.SpectralTopology`, with Worker 36
-credited as coauthor. That earlier module ranges over unit-radius rational
+adapts the published `StrictTestDomain.SpectralTopology`. That earlier module ranges over unit-radius rational
 presentations. The present module ranges over full represented domains over
 arbitrary positive-polyradius presented algebras and uses the different
 algebra-retaining base transport and its proved full-map identities. Neither

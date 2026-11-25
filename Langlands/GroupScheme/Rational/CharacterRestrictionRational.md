@@ -1,7 +1,5 @@
 # Rational scalar extension of integral character restriction
 
-Author: Worker 1321.
-
 This internal adapter applies `RationalSpan.rationalizationEquiv` to the actual
 group-scheme Hom-lattice map `characterRestrict`. Given injectivity of that
 integral map and finite index of its image, it proves bijectivity of the existing

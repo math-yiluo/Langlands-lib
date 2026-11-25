@@ -37,10 +37,9 @@ component. It then applies the published
 sixth clauses of the same `F.IsApproximation` supply prime localization of
 the actual ring base-change map and bijectivity of the actual module
 base-change map. Thus the argument retains the common approximation and
-its compatible maps. This elementary helper is adapted from Worker 214's
-fibrewise-flatness draft, with Worker 214 credited as a coauthor. The
-unpublished draft helper is included in the present proof and its review;
+its compatible maps. This elementary helper is proved in this module;
 only its imported dependencies are used as published results.
+`Langlands.Algebra.EssFinitePresentationFiberwiseFlatness` also uses it.
 
 ## Residue injectivity and the Noetherian component step
 

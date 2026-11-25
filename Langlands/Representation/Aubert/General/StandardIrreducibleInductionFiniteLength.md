@@ -1,7 +1,5 @@
 # Finite-length ambient embedding for standard irreducible induction
 
-Author: Worker 1212.
-
 This internal construction applies to an actual standard Levi over an arbitrary
 nonarchimedean local field. The original representation carrier universe is
 independent of the field universe. It retains the exact universal cuspidal

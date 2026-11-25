@@ -4,10 +4,6 @@
 is a universe-polymorphic definition of type `Prop`. This module states the
 result and supplies no proof.
 
-Worker 712 implemented this pair. Worker 689 and Worker 100 published the task
-contract, which supplied the specification, the source selection and the reuse
-boundaries.
-
 ## Exact statement
 
 The checked declaration, in namespace `Langlands.AlgebraicGeometry.Picard`
@@ -23,8 +19,7 @@ def FieldBaseChangeAmpleReflectionStatement : Prop :=
 ```
 
 Its type is `Prop`, with the single universe parameter `u`. Here `LineBundle`
-is `Langlands.AlgebraicGeometry.Picard.LineBundle`, so the body is literally
-the proposition displayed in the task contract.
+is `Langlands.AlgebraicGeometry.Picard.LineBundle`.
 
 The proposition quantifies over:
 
@@ -60,9 +55,7 @@ map). So every such `b` is `Spec.map φ` for a unique ring homomorphism
 `φ : k → K`, which is a field embedding and makes `K` a field extension of
 `k`. Conversely, an algebra structure gives the instance
 `b := Spec.map (CommRingCat.ofHom (algebraMap k K))`. A private check
-compiled both this specialization and the one to `K := AlgebraicClosure k`,
-together with the `Iff.rfl` identification of the declaration with the
-contract's displayed text.
+compiled both this specialization and the one to `K := AlgebraicClosure k`.
 
 ### Actual bundles, pullback and ampleness
 
@@ -166,14 +159,14 @@ and the existence of sections over `X` are consequences, not premises.
 `59d0167308d941af551e6682a937e5c9fcc307cc26b5687d92ad81b0eb231b0c`, retained
 at
 `literature/Stacks Project - Fixed-bundle ampleness under field extension, fpqc descent (Tags 0D2P and 02LB, HTML snapshot 2026-11-02)`.
-Worker 712 read the complete page `0D2P.html` (Lemma 35.25.6, statement and
-proof, no comments). The proof of (2) ⇒ (1) shows that `f` is
+The complete page `0D2P.html` (Lemma 35.25.6, statement and
+proof, no comments) was read. The proof of (2) ⇒ (1) shows that `f` is
 quasi-compact and separated (Lemmas 35.23.1, 35.23.6 and Morphisms 29.38.3).
 It then uses that `𝒜 = ⨁_{d ≥ 0} f_*𝓛^{⊗d}` commutes with flat base change
 (Cohomology of Schemes, Lemma 30.5.2) and that `𝒪_{X,x} → 𝒪_{Xᵢ,xᵢ}` is
 faithfully flat. Finally `r_{𝓛,ψ} : X → Proj_S(𝒜)` is an open immersion by
-Lemma 35.23.18, and Morphisms, Lemma 29.38.4 concludes. Worker 712 also read
-the whole of Section 35.25 in `02LB.html`, with its three section comments
+Lemma 35.23.18, and Morphisms, Lemma 29.38.4 concludes. The whole of
+Section 35.25 in `02LB.html` was also read, with its three section comments
 (#7749, September 2022; #7994 and #7995, January 2023). They concern why the
 diagonal in the proof of Lemma 35.25.1 is an isomorphism. A reference was
 added there, and nothing changes Lemma 35.25.6.
@@ -182,21 +175,21 @@ added there, and nothing changes Lemma 35.25.6.
 `42e3c9b9a073a223fab83518d24f49215baffa88c4eb11c2f72a0a95cec4ac17`, retained
 at
 `literature/Stacks Project - Field base-change preservation of ampleness (HTML snapshot 2026-10-26)`.
-Worker 712 read Definition 29.38.1 in `01VG.html` and Lemma 29.38.5 in
-`01VK.html`, with its proof and comments. The two comments (#2703, #2741,
+Definition 29.38.1 in `01VG.html` and Lemma 29.38.5 in
+`01VK.html`, with its proof and comments, were read. The two comments (#2703, #2741,
 August 2017) add the reference EGA II, Corollary 4.6.6.
 
 **`stacks-descent-ed88ff78-2026`**, The Stacks Project, *Descent*, version
 ed88ff78 compiled 14 July 2026, file SHA256
 `28e718bac216bb7c4584e9edb1d25d6420ee19a6cd536742c58599242ff8cad4`.
-Worker 712 read PDF page 19, Section 6 (online Section 35.6, tag 0CDQ,
-"Galois descent for quasi-coherent sheaves"), whose second paragraph contains
-the fpqc covering statement quoted above. Worker 712 also read PDF page 63,
+PDF page 19, Section 6 (online Section 35.6, tag 0CDQ,
+"Galois descent for quasi-coherent sheaves"), was read; its second paragraph contains
+the fpqc covering statement quoted above. PDF page 63 was also read,
 where Lemma 25.6 (tag 0D2P) and its proof agree with the HTML page.
 
-The working Library base has no erratum file for these sources.
+The Library has no erratum file for these sources.
 
-## Proof obligations for the future exact-target proof
+## Proof obligations for the exact-target proof
 
 A proof of this whole proposition must work with the published definitions,
 with no extra outer hypothesis. The source theorems do not construct the
@@ -230,4 +223,6 @@ A route that literally follows the source would first need Library
 definitions of relative ampleness and of restriction to preimages of affine
 opens, which the Library does not have.
 
-This module adds no axiom and discharges none of these obligations.
+This module adds no axiom and discharges none of these obligations. The
+exact-target proof is `fieldBaseChangeAmpleReflection`, in
+`Langlands.AlgebraicGeometry.Picard.FieldBaseChangeAmpleReflectionProof`.

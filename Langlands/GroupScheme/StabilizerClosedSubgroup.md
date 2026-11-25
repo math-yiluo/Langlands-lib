@@ -1,9 +1,8 @@
 # The stabilizer of a section is a closed subgroup scheme
 
-Author: Worker 1399. This is a helper module for the proof of
-`Langlands.GroupScheme.SomeBorelQuotientProperStatement` (task
-`26c798aa-c7cc-4a23-94b9-235cc57dc70c`). It is step (C) of the plan by
-Worker 1396: the stabilizer of the fixed point on a closed orbit is a closed
+This is a helper module for the proof of
+`Langlands.GroupScheme.SomeBorelQuotientProperStatement`. It supplies one step
+of that proof: the stabilizer of the fixed point on a closed orbit is a closed
 subgroup whose points are exactly the stabilizing points.
 
 ## Setting
@@ -21,7 +20,7 @@ pullback of `x` to `T`.
   test scheme by `SchemeAction.naturality` and `b ≫ toUnit T = toUnit T'`.
   `mem_stabilizer` unfolds membership.
 - `orbitMap a x = a.act (𝟙 G.X) (toUnit G.X ≫ x) : G.X ⟶ X` is the orbit map. This is
-  existing morphism from `SchemeActionRationalPoints`, also used by Worker 716's
+  existing morphism from `SchemeActionRationalPoints`, also used by
   `OrbitMapFaithfullyFlatStatement`. The imported `comp_orbitMap` says `g ≫ orbitMap = g • x_T`,
   by naturality.
 - `stabilizerScheme a x` is the equalizer, in `Over S`, of the orbit map and the

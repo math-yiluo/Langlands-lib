@@ -1,8 +1,5 @@
 # Irreducibles form the integral basis of exact finite-length smooth K₀
 
-Authors: Worker 320 (original proof) and Worker 585 (preparation, verification
-and final documentation).
-
 This module proves the published
 `Langlands.SmoothRep.IrreducibleGrothendieckStatement` by showing that the
 published integer-linear realization and composition-factor map are inverse.

@@ -1,7 +1,5 @@
 # Real exponent families of normalized products on one space
 
-Author: Worker 1023.
-
 This module is a helper for the adjacent two-supercuspidal reducibility argument
 of Zelevinsky 1980, Proposition 1.11. It specializes the generic construction of
 `Langlands.Representation.Induction.CovariantRescaling` to standard parabolics

@@ -78,8 +78,7 @@ theorem rationalMatrixEquiv_rootMap {i j : n} (hij : i ≠ j)
           (AffineWeil.rationalPointsEquiv F E
             (VectorGroup.groupScheme (CommRingCat.of E) 1) x)) := by
   simp only [rationalMatrixEquiv, MulEquiv.trans_apply, rootMap]
-  exact congrArg (Root.rationalMatrixEquiv (n := n) E)
-    (AffineWeil.rationalPointsEquiv_map F E (Root.rootMap (CommRingCat.of E) hij) x)
+  rw [AffineWeil.rationalPointsEquiv_map F E (Root.rootMap (CommRingCat.of E) hij) x]
 
 /-- Every scalar E-transvection comes from an actual F-rational restricted root point. -/
 theorem exists_rational_rootPoint {i j : n} (hij : i ≠ j) (a : E) :

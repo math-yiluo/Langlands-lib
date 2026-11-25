@@ -1,8 +1,5 @@
 # Same-sigma opposite-to-upper discrete-series induction comparison
 
-Author: Worker 470. Worker 1058 updated the proof status for the 2026-10-29
-documentation audit; the Lean file is unchanged.
-
 `Langlands.GLTemperedDiscreteSeriesOppositeToUpperStatement` is a proposition
 definition. It isolates one implication needed by the published
 `GLTemperedDiscreteSeriesSummandStatement`. This statement pair proves no
@@ -161,7 +158,7 @@ The sources are the registered retained originals:
 
 Silberger's one-based PDF page is the printed page plus six; Waldspurger's
 is the printed page minus 234. The decisive formulas were checked in page
-images. No errata note for either registered source was found in the current
+images. No errata note for either registered source was found in the
 Library during preparation.
 
 This is a derived, focused consequence of the source results, specialized
@@ -173,9 +170,9 @@ both inductions and identifies `π` as a summand of each when its equivalent
 Jacquet conditions hold. An opposite embedding gives the corresponding
 Jacquet quotient through actual first adjointness, and hence the required
 class occurrence. This explains the narrower implication stated here; it
-does not make the parent summand proposition a hypothesis or input of this
+does not make the summand proposition a hypothesis or input of this
 statement. The published theorem `Langlands.glTemperedDiscreteSeriesSummand`
-proves that parent proposition and uses
+proves that summand proposition and uses
 `glTemperedDiscreteSeriesOppositeToUpper`.
 
 Theorem 4.5.18's proof refers to Theorem 3.3.1 with a temperedness condition
@@ -201,6 +198,6 @@ upper map on the actual function spaces, keeping the given `σ` in both
 inductions. [The proof's documentation](DiscreteSeriesOppositeToUpperProof.md)
 lists each published theorem the proof uses.
 
-The proof does not use `GLTemperedInductionStatement` or the parent summand
+The proof does not use `GLTemperedInductionStatement` or the summand
 theorem. No assumed proof package or replacement for the fixed inducing
 representation is an input to this statement.

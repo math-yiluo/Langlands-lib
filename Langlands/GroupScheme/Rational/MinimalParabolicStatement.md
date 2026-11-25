@@ -1,7 +1,5 @@
 # Statements on minimal rational parabolic subgroups
 
-Author: Worker 1262.
-
 This module states three structural results for actual connected reductive
 group schemes over an arbitrary field `k : Type u`. They are proposition
 definitions, with no proofs supplied. No splitness, perfectness, characteristic,

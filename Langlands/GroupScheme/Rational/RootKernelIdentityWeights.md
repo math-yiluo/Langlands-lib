@@ -1,6 +1,6 @@
 # Integral weights in the full-kernel identity component
 
-This internal supporting unit works over an arbitrary field in universe `u`.
+This internal supporting module works over an arbitrary field in universe `u`.
 Let `T` be a split torus, `i : T → G` a homomorphism into an affine group of
 locally finite type, and `j : C → G` a smooth affine representative of the
 all-test centralizer of the full scheme-theoretic kernel of a character `a`.
@@ -41,6 +41,6 @@ ambient root `a` remains a relative root in the component.
 
 These are internal consequences of the published full-kernel invariant,
 smooth differential, identity-component, and weight-transport constructions.
-No reduced kernel or restricted test schemes are used. This unit does not
+No reduced kernel or restricted test schemes are used. This module does not
 assert centralizer reductivity or construct a rational normalizing
 representative, integral coroot, or reflection.

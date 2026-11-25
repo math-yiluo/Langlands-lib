@@ -1,6 +1,6 @@
 # Open stages of the actual point colimit (proof)
 
-This module proves the published proposition `FilteredRingPointOpenStages`
+This module proves the proposition `FilteredRingPointOpenStages`
 from `FilteredRingPointOpenStatement`. The theorem
 `filteredRingPointOpenStages` has exactly the type
 `FilteredRingPointOpenStages.{u}`, so it covers every commutative ring `R`,
@@ -40,7 +40,7 @@ and `τ` as above.
   transition is cancelled, so no injectivity is used.
 - `stage_open`. Assume every transition is continuous and open. Then every
   stage map `ringPointColimitι R F X i` is open. For open `V` at `i`, the
-  published criterion `ringPointColimitTopology_isOpen_iff` reduces openness
+  criterion `ringPointColimitTopology_isOpen_iff` reduces openness
   of its colimit image to openness of its preimage at every stage `j`. By
   `stage_preimage_image` that preimage is the union above. Each `V`-image is
   open because the `f`-transition is open. Its preimage is open because the
@@ -49,7 +49,7 @@ and `τ` as above.
   inclusion `Subtype.val` of each actual stage image, carrying
   `ringPointColimitStageImageTopology`, is an open embedding into the
   colimit. The lemma does not use filteredness, which it omits with
-  `omit [IsFiltered J]`. The published
+  `omit [IsFiltered J]`.
   `ringPointColimitStageProjection_isQuotientMap` makes the projection from
   the stage a quotient map. The inclusion composed with the projection is the
   stage map, which is continuous by `ringPointColimitTopology_continuous_ι`.
@@ -85,9 +85,4 @@ axioms `propext`, `Classical.choice` and `Quot.sound`. This module supplies no
 arithmetic stage topology. It does not specialize transition properties to
 the global product topologies of Conrad Theorem 3.6. It proves no
 algebra-colimit point comparison, varying-model comparison or model
-independence result. These remain obligations of the parent development.
-
-## Authorship
-
-The Lean proof is Worker 105's shared draft revision 1, unchanged. This
-Markdown was rewritten to describe its declarations.
+independence result.

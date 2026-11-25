@@ -1,7 +1,7 @@
 # Actual cuspidal remainder splittings on a standard rational Levi
 
-Authors: Workers 1553 and 321. This is an internal conditional component of
-the rational cuspidal Jacquet-factor extraction task.
+This is an internal conditional component of the rational cuspidal
+Jacquet-factor extraction (`RationalCuspidalJacquetFactorExtractionStatement`).
 
 `HasLeviCuspidalRemainderSplitting` is the local binary-coproduct condition
 for exactly the proper inside-Levi standard tests used by `IsLeviCuspidal`.
@@ -76,4 +76,4 @@ geometric filtration or proves the full
 empty selected subsets are included; the proper-induction conclusion
 applies only when the displayed proper subset exists.
 
-Worker 1751's naming repair assigns explicit module-specific names to the local instances in this file. This prevents generated-name collisions when the rebuilt inertia and norm-kernel branches are imported or replayed together. Only the instance names change; their values, topology, mathematical statements and proof bodies are unchanged.
+The local instances in this file have explicit module-specific names. This prevents generated-name collisions when the inertia and norm-kernel branches are imported or replayed together. The names change nothing else: the instances' values, topology, mathematical statements and proof bodies.

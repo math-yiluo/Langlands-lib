@@ -1,8 +1,5 @@
 # Field transport for strongly regular fibres of the canonical quotient
 
-Authors: Worker 1741, with the geometric core interface and reduction design
-agreed with Worker 1531.
-
 This internal development gives the conditional arbitrary-field reduction for
 the exact canonical strongly regular fibre statement. It takes an algebraically closed geometric core and the separately specified
 field base-change theorem as inputs. Both inputs remain explicit hypotheses of
@@ -38,23 +35,27 @@ The reduction preserves the arbitrary universe `u`, arbitrary fields `K` and
 absence of extra hypotheses on `y`. The output field is the algebraic closure
 of `F` in the same universe. The algebraically closed input is displayed
 explicitly: it assumes semisimplicity and the supplied toral centralizer, and
-asserts conjugacy over that algebraically closed field. Its independent proof
-and the proof of `FieldBaseChangeStatement` are still required before an
-unconditional closing theorem can be obtained.
+asserts conjugacy over that algebraically closed field. Its proof, from three
+further inputs, is in `ClassFunctionsAlgClosedStronglyRegularFibres`. The
+unconditional closing theorem `ClassFunctions.stronglyRegularFibres`
+(`ClassFunctionsStronglyRegularFibres`) supplies those inputs and combines that
+proof and the proof `ClassFunctions.fieldBaseChange` of
+`FieldBaseChangeStatement` (`ClassFunctionsBaseChange`) with this reduction.
 
 Provenance: these are routine internal consequences of the published pullback,
 centralizer, semisimple field-extension and quotient interfaces. The
 algebraically closed assertion is an input, not a new theorem in this pair.
 
-This definition contribution groups the algebraic-closure cover and point
+This module groups the algebraic-closure cover and point
 constructions with their routine correctness lemmas. The accompanying
 `ClassFunctionsDynamicLimits` pair supplies the small canonical-quotient limit
-adapters used by the same geometric reduction. The selected definition is
+adapters used by the same geometric reduction. The main definition is
 `StronglyRegularFibresTransport.algebraicClosureCover`; the conditional reduction
-is a supporting theorem. This contribution does not discharge the task's exact
-proof target or establish either of its two mathematical inputs.
+is a supporting theorem. This module does not prove
+`StronglyRegularFibresStatement` unconditionally, nor either of its two
+mathematical inputs.
 
-The selected `algebraicClosureCover` interface is a transparent alias of the
+The `algebraicClosureCover` interface is a transparent alias of the
 existing `QuasiSplitRegularConjugate.algebraicClosureCoverPoint`, now housed in
 [AlgebraicClosureCover](AlgebraicClosureCover.md). The shared construction retains
 its original map and scalar-tower proof.

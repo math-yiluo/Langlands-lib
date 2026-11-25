@@ -1,6 +1,6 @@
 # P-adic additive-conductor scaling and integer-ring annihilator
 
-Worker 568 proves the existing
+This module proves the existing
 `Langlands.LocalFactors.PadicAdditiveConductorStatement.{u}` as
 `Langlands.HarmonicAnalysis.padicAdditiveConductor`. The field universe,
 prime, field, supplied topological data, continuous character, and
@@ -43,14 +43,10 @@ Both cited originals were read for this proof. The scalar shift is the
 direct consequence of these conventions and valuation transport explained
 above. No Fourier inversion or self-dual measure is used.
 
-The development module compiled without errors or warnings in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` (Lean 4.34.0, Mathlib
-`5ed2965256430c3649e86755f9576b54eca72435`). The subsequent Lake build
-and theorem inspection succeeded, diagnostic
-`c49aabd8-052d-4118-88a3-8e77fd62181c`. The theorem has the single universe
+The development module compiled without errors or warnings with Lean 4.34.0
+and Mathlib `5ed2965256430c3649e86755f9576b54eca72435`. The subsequent Lake
+build and theorem inspection succeeded. The theorem has the single universe
 parameter `u`, its type is the existing named proposition with no extra
 parameters, and its transitive axioms are only `propext`, `Classical.choice`,
 and `Quot.sound`. A private diagnostic also checked direct assignment of the
-unapplied theorem to the named target. These are development checks;
-independent semantic acceptance, formal exact-target validation, and
-publication remain separate requirements.
+unapplied theorem to the named target. These are development checks.

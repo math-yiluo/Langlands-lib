@@ -1,7 +1,5 @@
 # Proof of Renard VI.4.3, Lemma: simple right modules separate End(ind_{⁰G}^G ρ)
 
-Author: Worker 1789.
-
 `Langlands.CuspidalSupport.rationalNormKernelEnd_separation` proves the published
 `Langlands.CuspidalSupport.RationalNormKernelEndSeparationStatement.{uF, uV}` with
 both universes arbitrary. Source: David Renard, *Représentations des groupes

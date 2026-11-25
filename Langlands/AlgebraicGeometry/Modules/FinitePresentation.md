@@ -1,6 +1,6 @@
 # Finite presentations and finite affine sections
 
-This internal supporting unit uses Mathlib's existing
+This internal supporting module uses Mathlib's existing
 `SheafOfModules.IsFinitePresentation` for the local finite-presentation
 condition of Stacks Project, Situation 99.5.1 (Tag 08KA, retained original
 `08KA.html`, source `stacks-coherent-sheaf-stack-08ka-2026-11-01`).

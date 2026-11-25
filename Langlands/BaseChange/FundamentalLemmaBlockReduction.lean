@@ -26,9 +26,9 @@ section Padic
 
 variable {p : ℕ} [Fact p.Prime] (F : PadicField.{u} p)
 
-local instance (K : PadicField p) : TopologicalSpace K.Carrier := K.canonicalTopologicalData.topology
-local instance (K : PadicField p) : ValuativeRel K.Carrier := K.canonicalTopologicalData.valuativeRel
-local instance (K : PadicField p) : IsNonarchimedeanLocalField K.Carrier :=
+private local instance (K : PadicField p) : TopologicalSpace K.Carrier := K.canonicalTopologicalData.topology
+private local instance (K : PadicField p) : ValuativeRel K.Carrier := K.canonicalTopologicalData.valuativeRel
+private local instance (K : PadicField p) : IsNonarchimedeanLocalField K.Carrier :=
   K.canonicalTopologicalData.localField
 local instance (K : PadicField p) (n : ℕ) : TopologicalSpace (GeneralLinear n K.Carrier) :=
   K.canonicalGeneralLinearTopology n

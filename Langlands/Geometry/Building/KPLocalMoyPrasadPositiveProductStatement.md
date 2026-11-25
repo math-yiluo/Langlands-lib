@@ -116,8 +116,9 @@ integer-valued root-datum geometry over the actual maximal unramified field,
 and `hZ` is precisely the torus-centralizer condition for the quasi-split
 scope. Thus the requisite geometry is a consequence to establish from these
 data, not a new apartment-axiom premise of the target. In particular, this
-does not infer AS5 from root-valuation axioms alone. The proof successor must
-justify whatever geometric consequences its route uses. The field `K` has
+does not infer AS5 from root-valuation axioms alone. A proof of the statement must
+justify whatever geometric consequences its route uses; the Library's proof is
+`localMoyPrasadPositiveProduct` (module `KPLocalMoyPrasadPositiveProductProof`). The field `K` has
 infinite residue field and is not being treated as a nonarchimedean local
 field; only `F` has that assumption.
 

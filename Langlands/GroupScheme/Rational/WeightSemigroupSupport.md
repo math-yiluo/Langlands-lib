@@ -1,7 +1,5 @@
 # Actual weight support and semigroup subgroup order
 
-Author: Worker 1312.
-
 This internal API is derived from the published definitions in
 `Rational.WeightSemigroup` and `Rational.RootSubgroupStructureStatement`.
 It proves no representability, smoothness, maximality or exact dynamic

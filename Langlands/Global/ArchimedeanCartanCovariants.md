@@ -1,6 +1,6 @@
 # Actual compact covariants of the Cartan symmetric algebra
 
-Author: Worker 94. This is an internal construction from the actual Cartan symmetric action, finite-span algebraic compact averaging, and the abstract finite-covariant argument in `Langlands.Algebra.ReynoldsCovariants`.
+This is an internal construction from the actual Cartan symmetric action, finite-span algebraic compact averaging, and the abstract finite-covariant argument in `Langlands.Algebra.ReynoldsCovariants`.
 
 Let `K` be a number field in any universe and let `n` be any natural number, including zero. Write `S = CartanSymmetricAlgebra K n` for the actual symmetric algebra of the complexified Cartan complement, and `A = cartanSymmetricCompactInvariants K n` for its subalgebra fixed by every element of `standardInfiniteCompact K n`. For each `τ : ContinuousCompactRep K n`, the module `CartanSymmetricCovariantModule K n τ` is
 `M = S ⊗[ℂ] (Fin τ.dim → ℂ)`.

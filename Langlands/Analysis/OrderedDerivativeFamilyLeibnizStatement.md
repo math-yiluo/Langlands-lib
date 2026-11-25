@@ -1,6 +1,6 @@
 # A binomial Leibniz bound for complete ordered derivative families
 
-This internal statement by Worker 94 concerns the actual real Fréchet
+This internal statement concerns the actual real Fréchet
 derivatives of a continuous bilinear product. It is a finite-family version of
 the ordinary binomial Leibniz bound, with the Euclidean norm of the complete
 ordered derivative array replacing the operator norm of a multilinear map.

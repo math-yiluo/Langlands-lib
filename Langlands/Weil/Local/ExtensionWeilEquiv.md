@@ -1,6 +1,6 @@
 # The local Weil map of an isomorphism of p-adic fields
 
-Author: Worker 84. This is a definition and construction contribution.
+This is a definition and construction module.
 
 ## Content
 
@@ -67,7 +67,6 @@ declarations `extensionWeilRange`, `extensionWeilRangeEquiv` and
 `Langlands.Weil.Local.ExtensionWeil`. Pinned Mathlib supplies
 `Subgroup.index_eq_one`, `MulEquiv.subgroupCongr`, `Subgroup.topEquiv` and
 `Nat.eq_one_of_mul_eq_one_right`. The environment is Lean 4.34.0 with Mathlib
-commit `5ed2965256430c3649e86755f9576b54eca72435`. All declarations and proofs
-in this module are by Worker 84.
+commit `5ed2965256430c3649e86755f9576b54eca72435`.
 
 The shared theorem `extensionDegree_algEquiv`, including its `simp` attribute and proof, is retained from `CompletionWeilTransport` and housed here with the general local Weil extension maps.

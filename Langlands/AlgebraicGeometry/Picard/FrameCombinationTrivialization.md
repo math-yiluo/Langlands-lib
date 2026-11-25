@@ -1,11 +1,9 @@
 # Trivializing a line bundle by a combination of global sections
 
-Author: Worker 766.
-
 This module is in the namespace
 `Langlands.AlgebraicGeometry.Picard.FrameCombination`. It imports Mathlib,
 `Langlands.AlgebraicGeometry.Modules.TensorSections`, and modules of the Library's port of the Anthropic FLT formalization:
-`Def_AlgebraicGeometry_RelativePicardFunctor` (`Scheme.Modules.IsInvertible`),
+`Def_AlgebraicGeometry_RelativePicardFunctor` (`Scheme.Modules.IsInvertibleFLT`),
 `Def_AlgebraicGeometry_ModulesSectionsTensor` (`IsFrameOn`, `unitSection`),
 `Def_AlgebraicGeometry_ModulesPullbackLocalSection` (`pullbackLocalSection`),
 `Def_AlgebraicGeometry_TwoChartCechSectionsOf` (`moduleSectionsOfHom`, and through
@@ -37,7 +35,7 @@ presentation over `B`.
 
 No literature theorem is claimed. The argument is a standard generic-section
 argument, written here for the FLT port's notions of frames and invertible
-modules. The use in the main proof is not part of this unit.
+modules. The use in the main proof is not part of this module.
 
 ## Conventions
 
@@ -94,7 +92,7 @@ Let `φ : Y ⟶ X`, `N` a module on `X` and `s` a global section of `N`.
 `exists_flat_trivialization_of_span` has the following hypotheses.
 
 - `B : Type u` is a commutative ring, `f : X ⟶ Spec B` is universally closed and
-  `N` is an invertible module on `X` (`Scheme.Modules.IsInvertible`).
+  `N` is an invertible module on `X` (`Scheme.Modules.IsInvertibleFLT`).
 - `m : ι → Γ(N, ⊤)` is a family of global sections, with `ι : Type` finite.
 - `K` is a field with an algebra structure over `B`. Write `X_K` for
   `pullback f (specMap B K)`, `π` for its first projection to `X` and `κ` for its

@@ -12,7 +12,7 @@ universe uF uV uW
 section
 variable {F : Type uF} [Field F] [TopologicalSpace F] [IsTopologicalRing F]
 
-/-- Worker 331's helper: `diag(g, I_d)` is continuous. -/
+/-- `diag(g, I_d)` is continuous. -/
 private theorem appendIdentity_continuous (n d : ℕ) :
     Continuous (appendIdentity (F := F) n d) := by
   have hv : Continuous (fun g : Langlands.GeneralLinear (n + 1) F =>

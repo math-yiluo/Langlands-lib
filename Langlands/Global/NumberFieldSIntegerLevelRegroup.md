@@ -58,7 +58,7 @@ proof is the inverse identity for that actual upper coordinate
 homeomorphism. Together with the previous module's exact component law,
 this retains the original local counits and literal lower projections.
 
-This unit treats finite adelic levels, including both real and complex
+This module treats finite adelic levels, including both real and complex
 infinite completions. Compatibility as levels enlarge, the comparison to
 the original generic schemes, and the final full adelic Weil
-homeomorphism remain separate host obligations.
+homeomorphism are not part of this module.

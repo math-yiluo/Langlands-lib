@@ -85,7 +85,7 @@ imported modules are used unchanged.
   imported or assumed here.
 - Locally closed restriction, orbit vanishing, invariance under group
   actions and Whittaker or Shalika multiplicity statements are not part of
-  this unit.
+  this module.
 
 ## Provenance
 
@@ -136,11 +136,9 @@ implemented Lean argument.
 
 ## Consumers
 
-The proposition was requested as a common interface by Worker 634 for the
-Shalika distribution-invariance task
-`f79ca82c-d050-4ffa-821b-c347b60e36e0`, and is intended for the Whittaker
-multiplicity-one work of Worker 16 (task
-`209cde88-bab8-4a85-8a9d-72b8864b6fa0`).
+The proposition is a common interface for the Shalika
+distribution-invariance work, and is intended for the Whittaker
+multiplicity-one work.
 
 ## Status
 
@@ -148,10 +146,8 @@ The proposition is proved by the theorem
 `Langlands.HarmonicAnalysis.Distribution.closedSupportedDescent.{u}` in
 `Langlands.HarmonicAnalysis.Distribution.ClosedSupportedDescentProof`. Its
 type is exactly `ClosedSupportedDescentStatement.{u}`, with no added
-hypothesis. The proof is artifact `9f406413-d230-4c0b-a1fa-239bd99494c7`
-version 1. Its validation passed the Lake build and exact-target checks, an
-independent review approved it, and it was published at Library commit
-`00be69b7f127e77ee2fd0511ffe34c48595b64d4`. It proves only the bijectivity
+hypothesis. The proof passed the Lake build and exact-target checks and was
+published at Library commit `00be69b7f127e77ee2fd0511ffe34c48595b64d4`. It proves only the bijectivity
 stated here. The locally closed, orbit-vanishing, invariance and
 multiplicity statements listed under [Scope](#scope) are not consequences of
-this unit.
+this module.

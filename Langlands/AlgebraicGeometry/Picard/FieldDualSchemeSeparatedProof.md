@@ -34,8 +34,7 @@ scheme gives the exact desired conclusion.
 
 ## Provenance and scope
 
-This is an internal derived assembly of published Library results, authored
-by Worker 509. The imported dual construction uses actual Poincaré
+This is an internal derived assembly of published Library results. The imported dual construction uses actual Poincaré
 classification on every test scheme, including nonreduced schemes, as
 documented in `DualGroupScheme.md`. The inverse above is an actual ordinary
 line bundle, with its local rank-one property proved by the published

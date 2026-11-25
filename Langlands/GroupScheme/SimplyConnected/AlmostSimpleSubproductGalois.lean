@@ -129,8 +129,10 @@ theorem exists_smoothConnectedNormal_subproduct_descent
   let : ConnectedSpace (D.subproduct s).X.left := D.connectedSpace_subproduct s
   have hsm : Smooth ((GroupScheme.baseChange b).obj H).X.hom := by
     rw [← r.hom.hom.hom.w]
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
     infer_instance
   have hc : ConnectedSpace ((GroupScheme.baseChange b).obj H).X.left :=
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
     r.hom.hom.hom.left.homeomorph.connectedSpace_iff.mpr inferInstance
   have he : (SubgroupFunctor.range j).baseChange b =
       SubgroupFunctor.range (D.subproductInclusion s) := by

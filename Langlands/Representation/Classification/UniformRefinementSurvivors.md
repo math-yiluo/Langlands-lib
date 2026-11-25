@@ -1,7 +1,5 @@
 # Divisible uniform refinement indices
 
-Author: Worker 167.
-
 This internal supporting module identifies the finite minimal-permutation
 indices whose specified standard source refinements have divisible piece sizes.
 It completes the converse to the whole-target implication in
@@ -95,31 +93,32 @@ previously proved label parametrization. It cites no original literature.
 The proved Library inputs used by the implementation and the reused
 parametrization are:
 
-| Input | Published location and originating task | Role and independence |
+| Input | Published location | Role and independence |
 | --- | --- | --- |
-| `sourceBlockEmbedding`, `inverse_same_source_block` | `Classification.UniformRefinementCombinatorics`, supporting unit of task `0c90f7e4-78fa-43fd-8736-238bb3e8617d` | Actual piece-coordinate embedding and the divisibility-to-containment direction, with the intersection equality retained. |
-| `SegmentEdge.sameBlock_of_sourceLevi_eq` | `Classification.SegmentEdgeCombinatorics`, supporting unit of task `b331611c-526d-4925-87fe-ea67ed6e6fed` | Transposition matrices detect exactly when two coordinates belong to one refinement piece. The full segment Jacquet theorem is unused. |
-| `exists_index_of_blockIndex_eq` | `Geometric.WeylUniquenessProof`, task `9ad51693-f8a1-45de-949a-72d07ecc13b9` | Decomposes a coordinate in a known block using the actual block coordinate equivalence. |
-| `TotalConjugatingCount.card_blockIndex_fiber` | `CuspidalSupport.TotalConjugatingCountProof`, task `5becc159-1242-4fa4-9102-79aa6e2726c0` | Counts the coordinates in a block; no representation-theoretic result is used. |
-| `wholeTargetEquivShuffles`, `assignmentFromSubset`, `permutationFromLabels` | `Classification.TwoSourceShuffleLabels` and `Classification.UniformTargetBlockLabels`, supporting units of task `0c90f7e4-78fa-43fd-8736-238bb3e8617d` | Actual finite labeling and increasing-coordinate permutation constructions. |
-| `index_strictMono` | `Geometric.WeylMinimalRepresentativeProof`, task `6e35399b-9029-438e-9663-5ce96ab02576` | The reused label parametrization uses the prefix-sum order on block coordinates. |
+| `sourceBlockEmbedding`, `inverse_same_source_block` | `Classification.UniformRefinementCombinatorics`, supporting module | Actual piece-coordinate embedding and the divisibility-to-containment direction, with the intersection equality retained. |
+| `SegmentEdge.sameBlock_of_sourceLevi_eq` | `Classification.SegmentEdgeCombinatorics`, a supporting module of the proof of `SegmentFullJacquetFormula` | Transposition matrices detect exactly when two coordinates belong to one refinement piece. The full segment Jacquet theorem is unused. |
+| `exists_index_of_blockIndex_eq` | `Geometric.WeylUniquenessProof` | Decomposes a coordinate in a known block using the actual block coordinate equivalence. |
+| `TotalConjugatingCount.card_blockIndex_fiber` | `CuspidalSupport.TotalConjugatingCountProof` | Counts the coordinates in a block; no representation-theoretic result is used. |
+| `wholeTargetEquivShuffles`, `assignmentFromSubset`, `permutationFromLabels` | `Classification.TwoSourceShuffleLabels` and `Classification.UniformTargetBlockLabels`, supporting modules | Actual finite labeling and increasing-coordinate permutation constructions. |
+| `index_strictMono` | `Geometric.WeylMinimalRepresentativeProof` | The reused label parametrization uses the prefix-sum order on block coordinates. |
 | `blockIndex_index`, coordinate inverse laws, equivalence and finite-subset cardinality laws | Published `Geometric.WeylDefinitions`, `Group.GL.Blocks`, and Mathlib | Coordinate decomposition, bijection transport, and `Fintype.card_finset_len`. |
 
 The recursive project import closure contains 80 modules, all unchanged from
-the current Library. Its classification imports are exactly
+the Library. Its classification imports are exactly
 `ConstituentRelations`, `SegmentEdgeCombinatorics`, `Segments`, `Supercuspidal`,
 `SupercuspidalTwist`, `TwoSourceShuffleLabels`,
 `UniformRefinementCombinatorics`, and `UniformTargetBlockLabels`. The remaining
 imports provide lower matrix, block, field, twist, representation, and finite
 Weyl infrastructure. There is no direct or transitive use of any excluded
 classification, product irreducibility, commutation, gluing, exhaustion,
-quotient-Hom, or derivative conclusion in the parent task's independence
-conditions.
+quotient-Hom, or derivative conclusion in the independence conditions of
+`JuxtaposedSegmentSocleReverseProductStructure`.
 
 The divisibility predicate is only a finite predicate on supplied refinements.
 This module does not assert that it characterizes nonzero geometric-lemma
 pieces. It supplies neither a geometric-lemma filtration nor a Jacquet
 representation formula. The full segment Jacquet formula, the shuffle Jacquet
-formula, and the unconditional parent
-`JuxtaposedSegmentSocleReverseProductStructure` remain separate proof
-obligations.
+formula, and the unconditional
+`JuxtaposedSegmentSocleReverseProductStructure` are separate results, proved in
+`SegmentFullJacquetProof`, `TwoSegmentSocleShuffleJacquetProof` and
+`JuxtaposedSegmentSocleReverseProductStructureProof`.

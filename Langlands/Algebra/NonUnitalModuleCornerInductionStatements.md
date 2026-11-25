@@ -5,10 +5,9 @@ This module states the natural isomorphism in David Renard,
 9 July 2026, I.3.2, formula (I.3.2.1), printed page 20 / PDF page 26.
 The displayed map is `z ↦ e ⊗ z` from a unital `eAe`-module to the
 `e`-fixed part of its actual induced module. The principal declarations are
-closed, unproved `Prop` definitions. This contribution supplies statement
-coverage and small intrinsic typing helpers. Worker 1155 implemented the
-statements; Worker 6 supplied the mathematical interface specification and
-preliminary universe and named-instance audit.
+closed `Prop` definitions, not proved in this module; the proofs are in
+`NonUnitalModuleCornerInductionProof`. This module supplies statement
+coverage and small intrinsic typing helpers.
 
 ## Sources and internal strengthening
 
@@ -17,7 +16,7 @@ The governing source is registered as
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`,
 at
 `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`.
-The author read Chapter I conventions, printed pages 5–7 / PDF pages
+The passages read are the Chapter I conventions, printed pages 5–7 / PDF pages
 11–13; I.2.1–I.2.2, printed pages 14–16 / PDF pages 20–22; and
 I.3.1–I.3.2, printed pages 19–20 / PDF pages 25–26.
 
@@ -45,7 +44,7 @@ to use the published nondegenerate induction functor.
 
 All declarations are in
 `Langlands.Algebra.NonUnitalModuleCornerInduction`. The module imports the
-published construction by its Lean name and preserves its authorship.
+published construction by its Lean name.
 It uses `rightCornerModule e` on the original additive group of `A`,
 `cornerModule e Z` on the original additive group of `Z`, and the actual
 `Tensor e Z`, with its inherited `tensorAddCommGroup` and original
@@ -156,8 +155,8 @@ the published nondegenerate category.
 
 `CornerInductionFixedPartTheorem` is the conjunction, in order, of the
 pointwise existence, independent-carrier naturality, ambient natural
-isomorphism and nondegenerate-adapter closed targets. It is the single
-exact target intended for the focused proof successor.
+isomorphism and nondegenerate-adapter closed targets. It is proved as
+`cornerInductionFixedPart` in `NonUnitalModuleCornerInductionProof`.
 
 ## Boundaries
 
@@ -167,11 +166,11 @@ modules; the statements impose no impossible nonzero example.
 The universe lift does not constrain either carrier universe to
 contain the ring universe.
 
-No principal target is proved in this module. The possible later
-proof using the balanced pairing
-`(a,z) ↦ sandwichCorner e a • z` is an alternate internal route, not
-source evidence, an implemented proof or a premise here.
+No principal target is proved in this module. The proof in
+`NonUnitalModuleCornerInductionProof` uses the balanced pairing
+`(a,z) ↦ sandwichCorner e a • z`, an alternate internal route that is not
+source evidence or a premise here.
 The two complex scalar structures mentioned by Renard, generatedness,
 membership in `M(A,e)`, quotient comparisons, simple-class
 correspondence, and equivalences of larger module categories remain
-separate successors. This statement unit does not complete I.3.
+separate results. This module does not complete I.3.

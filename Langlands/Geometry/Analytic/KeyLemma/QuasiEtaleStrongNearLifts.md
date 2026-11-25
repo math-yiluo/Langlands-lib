@@ -1,7 +1,5 @@
 # Near lifts along quasi-étale maps, for strong maps
 
-Author: Worker 57.
-
 This module proves `IsQuasiEtale.hasStrongNearLifts`. Let `g` be a
 quasi-étale strong map between the saturations of affinoid atlas
 presentations `A` and `B`, where the space of `A` is compact and
@@ -56,7 +54,7 @@ and `T` and an index type `ι`.
 
 `hasStrongNearLifts_of_liftCharts` assumes that the space of the
 saturation of `A` is Hausdorff. It also assumes that `g` has a finite
-cover by lift charts (`HasFiniteLiftChartCover g`, from Worker 786's
+cover by lift charts (`HasFiniteLiftChartCover g`, from
 module `QuasiEtaleLiftChartCover`) and that its localization is rigid
 (`IsRigid`, the uniqueness half of Key Lemma 7.2 in the Library).
 The conclusion is `HasStrongNearLifts g`.
@@ -123,6 +121,7 @@ preserved by precomposition (`StrongNear.precomp`).
 ## The quasi-étale case
 
 `IsQuasiEtale.hasStrongNearLifts` applies the gluing theorem. The lift
-chart cover is Worker 786's `IsQuasiEtale.hasFiniteLiftChartCover`.
+chart cover is `IsQuasiEtale.hasFiniteLiftChartCover` from
+`QuasiEtaleLiftChartCover`.
 Rigidity is the Library's `isRigid_of_quasiEtale`, applied to the
 localization of `g` with the compact Hausdorff source.

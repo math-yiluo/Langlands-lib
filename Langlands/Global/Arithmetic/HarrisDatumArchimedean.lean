@@ -96,21 +96,21 @@ theorem mk_lift (τ : InfinitePlace E) (w : InfinitePlace E') : InfinitePlace.mk
 
 theorem extensionEmbedding_completionMap_of_eq (τ : InfinitePlace E) (w : InfinitePlace E')
     [w.LiesOver τ] (h : w.embedding.comp (algebraMap E E') = τ.embedding) (x : τ.Completion) :
-    extensionEmbedding w (LiesOver.completionMap x) = extensionEmbedding τ x := by
+    extensionEmbedding w (LiesOver.completionMap τ w x) = extensionEmbedding τ x := by
   have : ComplexEmbedding.LiesOver w.embedding τ.embedding := ⟨h⟩
   have := liesOver_extensionEmbedding w τ
   exact liesOver_extensionEmbedding_apply w τ (φ := extensionEmbedding w)
 
 theorem extensionEmbedding_completionMap_of_ne (τ : InfinitePlace E) (w : InfinitePlace E')
     [w.LiesOver τ] (h : ¬ w.embedding.comp (algebraMap E E') = τ.embedding) (x : τ.Completion) :
-    extensionEmbedding w (LiesOver.completionMap x) = star (extensionEmbedding τ x) := by
+    extensionEmbedding w (LiesOver.completionMap τ w x) = star (extensionEmbedding τ x) := by
   have h' := (InfinitePlace.LiesOver.embedding_comp_eq_or_conjugate_embedding_comp_eq w τ).resolve_left h
   have : ComplexEmbedding.LiesOver (ComplexEmbedding.conjugate w.embedding) τ.embedding := ⟨h'⟩
   have := liesOver_conjugate_extensionEmbedding w τ
   have hx := liesOver_extensionEmbedding_apply w τ
     (φ := ComplexEmbedding.conjugate (extensionEmbedding w)) (x := x)
   rw [ComplexEmbedding.conjugate_coe_eq] at hx
-  change star (extensionEmbedding w (LiesOver.completionMap x)) = extensionEmbedding τ x at hx
+  change star (extensionEmbedding w (LiesOver.completionMap τ w x)) = extensionEmbedding τ x at hx
   rw [← hx, star_star]
 
 omit [Algebra E E'] in
@@ -137,8 +137,8 @@ theorem infiniteComponent_completionMap (χ : HeckeCharacter E') (A : InfinityTy
         star (extensionEmbedding τ x) ^ A (ComplexEmbedding.conjugate (lift τ w)) := by
   classical
   rw [infiniteComponent_eq_atInfinity, hχ, toCharacter_single]
-  change (extensionEmbedding w (LiesOver.completionMap (x : τ.Completion))) ^ _ *
-      star (extensionEmbedding w (LiesOver.completionMap (x : τ.Completion))) ^ _ = _
+  change (extensionEmbedding w (LiesOver.completionMap τ w (x : τ.Completion))) ^ _ *
+      star (extensionEmbedding w (LiesOver.completionMap τ w (x : τ.Completion))) ^ _ = _
   by_cases h : w.embedding.comp (algebraMap E E') = τ.embedding
   · rw [extensionEmbedding_completionMap_of_eq τ w h, lift_of_eq h]
   · rw [extensionEmbedding_completionMap_of_ne τ w h, lift_of_ne h, star_star,
@@ -158,14 +158,14 @@ theorem infiniteComponent_completionMap_twist (χ : HeckeCharacter E') (t : Infi
   classical
   have hy := hχ (single w (Units.map (LiesOver.completionMap (v := τ) (w := w)).toMonoidHom x))
   rw [norm_coordinate_single, toCharacter_single, ← infiniteComponent_eq_atInfinity] at hy
-  have hnorm : ‖extensionEmbedding w (LiesOver.completionMap (x : τ.Completion))‖ =
+  have hnorm : ‖extensionEmbedding w (LiesOver.completionMap τ w (x : τ.Completion))‖ =
       ‖extensionEmbedding τ x‖ := by
     by_cases h : w.embedding.comp (algebraMap E E') = τ.embedding
     · rw [extensionEmbedding_completionMap_of_eq τ w h]
     · rw [extensionEmbedding_completionMap_of_ne τ w h, Complex.star_def, Complex.norm_conj]
-  change _ * ((‖extensionEmbedding w (LiesOver.completionMap (x : τ.Completion))‖ : ℝ) : ℂ) =
-      (extensionEmbedding w (LiesOver.completionMap (x : τ.Completion))) ^ _ *
-      star (extensionEmbedding w (LiesOver.completionMap (x : τ.Completion))) ^ _ at hy
+  change _ * ((‖extensionEmbedding w (LiesOver.completionMap τ w (x : τ.Completion))‖ : ℝ) : ℂ) =
+      (extensionEmbedding w (LiesOver.completionMap τ w (x : τ.Completion))) ^ _ *
+      star (extensionEmbedding w (LiesOver.completionMap τ w (x : τ.Completion))) ^ _ at hy
   rw [hnorm] at hy
   rw [hy]
   by_cases h : w.embedding.comp (algebraMap E E') = τ.embedding

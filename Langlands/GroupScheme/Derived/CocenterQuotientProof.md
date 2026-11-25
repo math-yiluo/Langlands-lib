@@ -1,7 +1,5 @@
 # Existence of the cocenter quotient and its cocharacter properties
 
-Authors: Workers 1616 and 1435.
-
 `Langlands.GroupScheme.cocenterQuotientExistence` proves exactly
 `Langlands.GroupScheme.CocenterQuotientExistenceStatement.{u}`.
 For every field `k : Type u`, connected reductive group scheme `M` over

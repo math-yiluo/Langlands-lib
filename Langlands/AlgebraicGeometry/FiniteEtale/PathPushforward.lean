@@ -77,8 +77,8 @@ theorem pathPushforward_symm (p : fiberFunctor s hs ≅ fiberFunctor t ht) :
 
 /-- On loops the path pushforward is exactly the existing induced fundamental-group map. -/
 theorem pathPushforward_aut (g : FundamentalGroup s hs) :
-    pathPushforward b hsb hsb g =
-      fundamentalGroupMap b s (s ≫ b) rfl hs hsb g :=
+    pathPushforward b hsb hsb g.asIso =
+      (fundamentalGroupMap b s (s ≫ b) rfl hs hsb g).asIso :=
   (fundamentalGroupMap_apply b s (s ≫ b) rfl hs hsb g).symm
 
 /-- If a morphism over `b` carries a lift to `x`, it also carries its path transport
@@ -109,6 +109,10 @@ theorem fundamentalGroupMap_path_conjugation
     fundamentalGroupMap b t (t ≫ b) rfl ht htb (Aut.autMulEquivOfIso p g) =
       Aut.autMulEquivOfIso (pathPushforward b hsb htb p)
         (fundamentalGroupMap b s (s ≫ b) rfl hs hsb g) := by
+  apply Aut.ext
+  change (fundamentalGroupMap b t (t ≫ b) rfl ht htb (Aut.autMulEquivOfIso p g)).asIso =
+    (pathPushforward b hsb htb p).symm ≪≫
+      (fundamentalGroupMap b s (s ≫ b) rfl hs hsb g).asIso ≪≫ pathPushforward b hsb htb p
   simp only [fundamentalGroupMap_apply]
   apply Iso.ext
   simp [pathPushforward, Aut.autMulEquivOfIso, Category.assoc]

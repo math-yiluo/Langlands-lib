@@ -17,7 +17,7 @@ namespace Langlands.Automorphic.Unramified
 
 open Filter Polynomial
 open Langlands.Global Langlands.Global.AdelicFunctoriality Langlands.Unramified
-open ClassField.Global.RelativeWeilGroup (HasUnitaryCentralCharacter)
+open ClassFieldTheory.Global.RelativeWeilGroup (HasUnitaryCentralCharacter)
 open scoped NumberField
 
 private theorem isUnitary_of_cofinite_uniformizer

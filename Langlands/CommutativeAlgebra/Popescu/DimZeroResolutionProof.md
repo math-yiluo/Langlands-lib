@@ -1,7 +1,6 @@
 # Proof: resolving the local problem at a minimal prime
 
 Module `Langlands.CommutativeAlgebra.Popescu.DimZeroResolutionProof`.
-Author: Worker 2971 (Task 6374).
 
 ## Statement proved
 
@@ -103,5 +102,5 @@ Notation: `H_{A/R}` is `singularIdeal R A`, `h_A` is `singularRadical R f`, `Λ_
 
 ## Checks
 
-`lean_check` with environment `5c94c648-e8dc-4002-a50a-071ebf3f6096`: 0 errors, 0 warnings.
+The module compiles with 0 errors and 0 warnings.
 The axioms are `propext`, `Classical.choice` and `Quot.sound`.

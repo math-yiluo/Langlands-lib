@@ -1,6 +1,6 @@
 # Evaluation of compact equal-rank integrals
 
-This internal derived unit specializes `compactSliceLaurent` to the actual
+This module, whose provenance is internal and derived, specializes `compactSliceLaurent` to the actual
 equal-rank integrand at spectral parameter zero. The definition
 `compactEqualRankLaurent` requires compact topological support on the
 left-unipotent quotient and uses its actual determinant-slice integrals.

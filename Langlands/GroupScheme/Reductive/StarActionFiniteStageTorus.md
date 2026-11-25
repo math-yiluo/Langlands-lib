@@ -1,9 +1,10 @@
 # Finite-stage comparison retaining the torus
 
 This is derived internal infrastructure for `SpecialLinearTitsCocycleStatement`.
-The construction extends Worker 61 and Worker 5375's finite-stage proof by
+The construction extends the finite-stage proof of
+`Reductive.StarActionFiniteStageProof` by
 retaining information its existential statement hides. The original construction
-is reused with attribution. The added conclusions expose the commutative
+is reused from that module. The added conclusions expose the commutative
 inclusion square and the character formula already established by that construction.
 
 `StarActionFiniteStage.stageCharacter` first pulls a character back along the

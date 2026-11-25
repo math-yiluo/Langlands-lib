@@ -38,7 +38,7 @@ Transfer along an order isomorphism `e : Subobject X ≃o Subobject Y`:
   subobjects has a maximal element) transfers from `Y` to `X`. Map the set by `e`,
   take a maximal element of the image, and pull it back.
 
-Fully faithful functors. Let `F : C ⥤ D` preserve monomorphisms. Worker 1582's
+Fully faithful functors. Let `F : C ⥤ D` preserve monomorphisms.
 `functorSubobjectMap F X` (module `NoetherianReflection`) sends a subobject `P` to
 `Subobject.mk (F.map P.arrow)`.
 

@@ -1,7 +1,5 @@
 # Actual maximal tori and roots of split-torus centralizers
 
-Author: Worker 1352.
-
 This internal construction combines published torus extension, split-torus
 centralizer, central-root restriction, and dynamic Lie comparisons. It does
 not construct root data or compare derived coroots.

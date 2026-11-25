@@ -1,6 +1,6 @@
 # Scalar linearity for root automorphisms
 
-Worker 1368. This internal construction uses the Library's represented-root,
+This internal construction uses the Library's represented-root,
 natural vector-coordinate and unique-weight-scalar interfaces.
 
 Precomposing weight coordinates with an actual equivariant automorphism gives

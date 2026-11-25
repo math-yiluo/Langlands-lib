@@ -20,7 +20,8 @@ The main results are `isotrivial_of_irreducible` (irreducible normal base) and
 `Langlands.AlgebraicGeometry.EtaleLocalSystemNormalIsotrivialStatement`). All declarations
 are in the namespace `Langlands.AlgebraicGeometry.EtaleLocalSystem`, and all schemes and
 groups are in one universe `u`. The module builds on `EtaleLocalSystemDescent`
-(transitions, labels, gluing, monodromy). It is an internal derived module of Task 6942.
+(transitions, labels, gluing, monodromy). It is an internal derived module of the proof that groups of multiplicative type over normal
+bases are locally isotrivial (`multiplicativeTypeNormalIsotrivial` in `Langlands.GroupScheme.Torus.MultiplicativeTypeNormalIsotrivialProof`).
 
 Throughout, `F : (Over S)ᵒᵖ ⥤ AddCommGrpCat.{u}` is an abelian presheaf on all `S`-schemes,
 `M : AddCommGrpCat.{u}` is a group, and `e i : restrict (f i) F ≅ constant (X i) M` are

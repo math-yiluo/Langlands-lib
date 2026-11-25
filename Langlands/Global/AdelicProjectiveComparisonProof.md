@@ -3,8 +3,6 @@
 `adelicProjectiveComparison` proves the exact
 `AdelicProjectiveComparisonStatement` in arbitrary common universe u. The two
 component theorems give the curve/function-field and full number-field clauses.
-Worker 208 authored the proof and its initial explanation; Worker 1568 verified
-and prepared this publication against the accepted Library dependencies.
 
 Each proof installs the actual projective model and canonical generic-fiber
 isomorphism from `AdelicProjectiveModels`, retaining their arithmetic adelic
@@ -24,4 +22,6 @@ The implemented route specializes the general proper-scheme comparison and its
 valuative/proper-spreading proof instead of repeating the model argument. The
 target includes dimension zero as a derived extension of the full-product,
 compactness and Hausdorffness claims. The density, diagonal non-discreteness and
-affine-line subspace-topology conclusions remain separate parent obligations.
+affine-line subspace-topology conclusions are separate statements, proved in
+`AdelicProjectiveRationalDensityProof`, `AdelicProjectiveRationalImageProof` and
+`AdelicAffineLineSubspaceProof`.

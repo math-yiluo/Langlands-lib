@@ -1,6 +1,6 @@
 # Actual Cartan components over their finite stabilizer fields
 
-Worker 509. Derived interface material comparing actual Cartan components
+Derived interface material comparing actual Cartan components
 over their finite separable stabilizer fields, retaining their full star
 images. All groups and Tits indices are actual Library objects, and the
 results apply over arbitrary fields at every universe parameter.

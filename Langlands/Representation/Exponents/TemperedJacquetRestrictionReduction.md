@@ -1,7 +1,5 @@
 # The exact unitary restriction target reduced to Jacquet admissibility
 
-Author: Worker 1629.
-
 This derived reduction assembles existing constructions for Renard 2026,
 VII.2.3 and VII.2.4, printed p.229 / PDF p.235. It provides two conditional
 routes to the unchanged `TemperedJacquetUnitaryRestrictionStatement`.

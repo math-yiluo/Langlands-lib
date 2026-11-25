@@ -2,7 +2,7 @@
 
 Lean module: `Langlands.Geometry.Building.RootFieldDescentValue`.
 
-This is internal infrastructure on the way to KP Lemma C.5.3 (Task 6392). It
+This is internal infrastructure on the way to KP Lemma C.5.3. It
 computes the values of every point of the actual apartment class of a maximal
 split torus on the actual root-field points of a relative root with no higher
 multiples. As a consequence, the filtration subgroups `U_{a,y,r}` of

@@ -2,8 +2,9 @@
 
 Module: `Langlands.AlgebraicGeometry.Picard.VersalSmoothNeighbourhoodStatement`.
 
-Author: Worker 1420, for task `3fa23029-256e-47ed-ad64-e5ea33971b1a`. The
-statement's shape was agreed with Worker 1653, who plans its proof.
+Its proof from openness of versality is `versalSmoothNeighbourhood_of_openness`
+(module `VersalSmoothNeighbourhoodOfOpenness`); openness of versality is proved
+as `picardOpennessOfVersality` (module `PicardOpennessOfVersalityProof`).
 
 This module contains one proposition, `VersalSmoothNeighbourhoodStatement.{u}`,
 which is not proved here. It is an intermediate statement for the proof of

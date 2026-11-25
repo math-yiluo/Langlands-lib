@@ -1,7 +1,5 @@
 # Rank-one type-D spin identification from the classical presentation
 
-Author: Worker 180.
-
 `Langlands.GroupScheme.typeDRankOneSpin_of_classicalTypeDSpinPresentation.{u}`
 proves
 

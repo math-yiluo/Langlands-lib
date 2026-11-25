@@ -1,7 +1,5 @@
 # Faithfulness of the actual rational Tate action at every prime
 
-Author: Worker 501.
-
 The theorem `Langlands.AbelianScheme.Tate.fieldPrimeRationalFaithfulness` proves
 the published `FieldPrimeRationalFaithfulnessStatement` with its full universe
 parameter. It applies to every algebraically closed characteristic-zero field,

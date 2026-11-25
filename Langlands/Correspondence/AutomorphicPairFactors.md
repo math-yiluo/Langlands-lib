@@ -1,8 +1,5 @@
 # Certified pair factors on automorphic classes
 
-Author: Worker 31. Worker 7 contributed the scope and interface coordination,
-including the matching L-factor adapter and the explicit topology-instance names.
-
 This module proves representative independence and uniqueness for the existing
 class relations `IsAutomorphicPairLPolynomial` and
 `IsAutomorphicPairEpsilonFactor`. It constructs the rational L-factor from a
@@ -136,7 +133,6 @@ classification constructor whose block universe is `max uF uA` is not silently
 identified with this class adapter whose block universe is `uA`; no universe
 lowering is supplied.
 
-The complete module compiles in the authorized Lean service without errors or
+The complete module compiles without errors or
 warnings, proof holes or new axioms. All topology instances have explicit
-module-specific names. Independent semantic review and publication remain
-separate from this development check.
+module-specific names.

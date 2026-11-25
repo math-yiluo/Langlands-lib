@@ -1,7 +1,5 @@
 # The actual empty normalized product unit
 
-Author: Worker 357.
-
 This module constructs an actual representation equivalence, including its
 inverse, from normalized induction for every rank-zero block shape to the
 existing binary product unit. It also exposes evaluation formulas, compatibility
@@ -122,8 +120,7 @@ Mathlib tensor algebra, with no new literature assertion. Existing
 linear equivalence to the scalar field. Its classification imports are not
 used here. The new construction reuses the lower general full-subgroup API,
 returns the actual unit representation equivalence, and supplies evaluation,
-map compatibility and smooth isomorphism APIs. No existing Library pair is
-changed.
+map compatibility and smooth isomorphism APIs.
 
 ## Independence audit and remaining obligations
 
@@ -132,7 +129,7 @@ The recursive inventory below was checked against Library commit
 pairs are present, nonempty and unchanged; the 41st project module is this
 new pair. The external list records 51 direct external import roots, not a
 recursive Mathlib inventory. The scan removes Lean comments and strings and
-found no proof holes, missing project imports, excluded task/name patterns,
+found no proof holes, missing project imports, excluded result/name patterns,
 or classification modules. No derivative or mirabolic representation module
 is imported; the group-only mirabolic modules concern matrix subgroups.
 
@@ -146,28 +143,20 @@ vector algebra. The Jacquet-named imported module provides positive-character
 infrastructure, not a Jacquet formula. No derivative formula, segment, head,
 socle, support, or classification conclusion is invoked.
 
-This respects the unchanged exclusions of host task
-`8364e73f-14ec-4d14-8f2b-1555a7c1ce95` and the complete trusted operator
-responses `bd71b9185aab5d6eafffb7891bd3a3ca`,
-`0edda6122ce65ed7ac51603c37473920`, and
-`30144f6f9b59540b88b6d4c1517892d9`, read in full. In particular no conclusion
-of tasks `30341ae4-65f2-4a0e-9283-763db01a409e`,
-`3bfb61fa-1129-4fc9-83fd-7fcfec22106e`,
-`ebea9a8a-9b21-4208-aa31-98c2dea1f8a3`,
-`20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584`,
-`8252833d-c269-41a9-824c-5879e531b23b`,
-`52e97845-36bb-457d-b76f-70753334b88c`,
-`1cb45da2-7007-4351-a694-594fb148b8d1`,
-`cd8ab97c-0b78-4bce-97c4-d307a28159a4`, or
-`bf433f0a-921a-428c-b0c0-6475438125ac` is used. The further excluded segment,
+In particular no conclusion of generic segment-product uniqueness,
+multisegment exhaustion, ordered strong-head existence, quotient coverage,
+ordered conversion, tempered uniqueness,
+`SquareIntegrableLanglandsClassification`, square-integrable exhaustion or
+regular exhaustion is used. The further excluded segment,
 head, socle, full Jacquet and derivative conclusions, including Ze80 3.5/9.6
-and their proof successors, do not occur as inputs. The operator's permission
-for a newly proved support-only bound is not needed by this construction.
+and the modules that prove them, do not occur as inputs. A
+support-only bound is not needed by this construction.
 
-This focused unit supplies only the actual empty-product boundary. Binary
+This focused module supplies only the actual empty-product boundary. Binary
 cuspidal-family concatenation, support addition, product derivative support
-aggregation, nonlinkage survival, the linked converse, and the full
-`SegmentHeadProductIrreducibility` criterion remain separate obligations.
+aggregation, nonlinkage survival and the linked converse are not part of it;
+the full `SegmentHeadProductIrreducibility` criterion is proved in
+`Langlands.Representation.Classification.SegmentHeadProductIrreducibilityProof`.
 
 ## Recursive project inventory
 

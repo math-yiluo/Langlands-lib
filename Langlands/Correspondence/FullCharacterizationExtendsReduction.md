@@ -3,8 +3,8 @@
 This module proves the published proposition
 `Langlands.Correspondence.FullCharacterizationExtendsStatement.{uF, uP, uA} F`
 (Henniart 2002, Corollary 1.6; proof in Section 3.4) **from three explicit
-hypotheses**, labelled H1, H2 and H4 (the labels of the extension task, where
-H3, H5, H6 and the Langlands-epsilon comparison were inputs since discharged).
+hypotheses**, labelled H1, H2 and H4 (the inputs H3, H5, H6 and the
+Langlands-epsilon comparison are proved and imported; see below).
 It is a conditional reduction, not a proof of the target: the theorem
 `fullCharacterizationExtends_of_inputs` takes each of the three inputs as an
 argument. Its axioms are `propext`, `Classical.choice` and `Quot.sound`.
@@ -20,67 +20,64 @@ appeal to Theorem 1.4 is replaced by the local converse theorem (H1), together
 with uniqueness of the local-constant system (H4), which identifies the epsilon
 factors attached to the two correspondences. The theorem
 `FullCharacterizationExtendsInputs.fullCharacterizationExtends` derives the
-target from it. Once H1, H2 and H4 are proved, the target follows by applying
-this theorem to the triple of the three proofs.
+target from it. With proofs of H1, H2 and H4 the target follows:
+`fullCharacterizationExtends` (module `FullCharacterizationExtendsProof`) applies
+`fullCharacterizationExtends_of_inputs` to them.
 
 ## Inputs
 
-Published Library statements (none of them is proved yet):
+Published Library statements, each proved in a separate module:
 
 - H1 `RankinSelberg.SupercuspidalLocalConverseStatement.{uF, uA, uA}`: the
   local converse theorem for supercuspidals, with epsilon tests against
-  supercuspidals of ranks `1, …, n - 1` (Henniart 1993).
+  supercuspidals of ranks `1, …, n - 1` (Henniart 1993). Proved as
+  `RankinSelberg.supercuspidalLocalConverse` (`SupercuspidalLocalConverseProof`).
 - H2 `RankinSelberg.SupercuspidalLFactorCharacterizationStatement.{uF, uA, uA}`:
   Henniart 2002, Theorem 1.6(b). An irreducible admissible representation of
   `GL(n + 2)` is supercuspidal iff its Langlands pair L-polynomial against every
   irreducible supercuspidal representation of rank `r + 1 ≤ n + 1` is `1`.
+  Proved as `RankinSelberg.supercuspidalLFactorCharacterization`
+  (`SupercuspidalLFactorCharacterizationProof`).
 - H4 `∀ eC : ReciprocityFamily F, NonabelianSystem.Unique.{uF, uP} F eC`:
   uniqueness of local-constant systems for one reciprocity family. This is the
   `F`-instance of the all-field `LocalFactor.NonabelianSystemUniquenessStatement`
   (published in `Langlands/LocalFactor/NonabelianUniquenessStatement.lean`,
-  which reduces it to the unproved degree-zero generation statement
-  `CommonClosureDegreeZeroGenerationStatement`). Its proof is the subject of
-  task `3c5513a4-268f-4bf2-9d47-354e4e4e41ec`.
+  which reduces it to the degree-zero generation statement
+  `CommonClosureDegreeZeroGenerationStatement`). It is proved as
+  `LocalFactor.NonabelianSystem.unique` (`Langlands/LocalFactor/NonabelianUniquenessProof.lean`).
 
 Proved inputs (imported):
 
 - H3, uniqueness of the normalized common-closure reciprocity family:
   `LocalClassField.commonClosureReciprocityUniqueness` in
   `Langlands/ClassFieldTheory/Local/ReciprocitySystemUniquenessProof.lean`
-  (proof candidate `55840d2a-451c-4014-92d1-d49b6fe2b172` of task
-  `0fbeee3f-f26c-48f6-adbe-8a6fc8c84c5f`, published at Library commit `8fb2236b`). It proves
-  `LocalClassField.CommonClosureReciprocityUniqueness`, which earlier draft
-  revisions took as a hypothesis.
+  (published at Library commit `8fb2236b`). It proves
+  `LocalClassField.CommonClosureReciprocityUniqueness`.
 - H5, the lower-rank parameter criterion `L = 1`:
   `arithmeticPairLFactor_weilPairClass_eq_one` in
-  `Langlands/Correspondence/LowerRankWeilFactor.lean` (Worker 1684's candidate
-  `4e4fbf12-71c6-4d28-8367-1fd3b5c23337`, published at Library commit
+  `Langlands/Correspondence/LowerRankWeilFactor.lean` (published at Library commit
   `86cf8f89`). For continuous irreducible Weil classes `σ` of rank `r + 1` and
   `σ'` of smaller rank `t + 1`, the arithmetic pair L-factor of their
-  zero-monodromy pair classes is `1` (Henniart 2002, Section 3.1). Earlier
-  draft revisions took it as the hypothesis `LowerRankWeilPairLFactorTrivial`.
+  zero-monodromy pair classes is `1` (Henniart 2002, Section 3.1).
 - `RankinSelberg.IsLanglandsPairEpsilonFactor.isPadicSymmetricEpsilonFactor_of_isSupercuspidal`
   in `Langlands/Representation/RankinSelberg/SupercuspidalLanglandsEpsilon.lean`
-  (Worker 1699's candidate `e28e8836-93e1-43df-995c-1eb8dc060917`, published
+  (published
   at Library commit `86cf8f89`). On a pair of supercuspidal representations, an epsilon factor
   defined through square-integrable Langlands data is the symmetric JPSS
-  epsilon factor (`IsPadicSymmetricEpsilonFactor`) of the pair. Earlier draft
-  revisions assumed this as a seventh hypothesis.
+  epsilon factor (`IsPadicSymmetricEpsilonFactor`) of the pair.
 - H6, existence of zero-monodromy classes: `exists_zeroMonodromyParameter` in
-  `Langlands/Correspondence/IrreducibleZeroMonodromy.lean` (Worker 1684's
-  candidate `de171588-6cff-40dc-9d60-974faca4cc21`, published at Library commit
+  `Langlands/Correspondence/IrreducibleZeroMonodromy.lean` (published at Library commit
   `8b3ba080`). Every continuous irreducible Weil class `σ` of rank `n` has a
   zero-monodromy parameter class `D` (`IsZeroMonodromyOf F σ D`); this is the
   classical fact that an irreducible Weil representation is
-  Frobenius-semisimple. Earlier draft revisions took it as the hypothesis
-  `ZeroMonodromyExistence`.
+  Frobenius-semisimple.
 
 ## Helper lemmas
 
 - `parameterForget_injective` and `IsZeroMonodromyOf.unique` are imported from
-  Worker 422's published module `Langlands.Correspondence.ZeroMonodromyExtension`
+  the published module `Langlands.Correspondence.ZeroMonodromyExtension`
   (Library commit `8fb2236b`): a Weil class has at most one zero-monodromy
-  parameter class. Earlier draft revisions carried local copies of them.
+  parameter class.
 - `IsZeroMonodromyOf.parameterForget_eq`: the pair class underlying a
   zero-monodromy parameter class of `σ` is `weilPairClass F σ`.
 - `isZeroMonodromyOf_of_rankOne`: in rank one, a Weil class and a parameter
@@ -153,8 +150,6 @@ bundled conjunction and applies `fullCharacterizationExtends_of_inputs`.
 ## Status
 
 This module proves only the conditional theorems above, not the target
-statement itself. An unconditional proof of the target still needs proofs of
-H1 (task `76ef879c-d009-4d6a-8ead-0667c5bab317`), H2 (task
-`99282d49-8140-483c-8dfc-8411be315345`) and H4 (task
-`3c5513a4-268f-4bf2-9d47-354e4e4e41ec`). Worker 422's zero-monodromy helper
-lemmas were used in earlier revisions of this module and are now imported.
+statement itself. The unconditional proof `fullCharacterizationExtends` is in
+`FullCharacterizationExtendsProof`, which applies
+`fullCharacterizationExtends_of_inputs` to the proofs of H1, H2 and H4.

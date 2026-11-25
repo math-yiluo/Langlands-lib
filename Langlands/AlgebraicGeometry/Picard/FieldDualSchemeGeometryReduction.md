@@ -68,7 +68,7 @@ smoothness gives local finite type; the properness helper and
 unconditional geometric connectedness complete the conjunction.
 The target statement and its dependency closure are unchanged.
 
-## Provenance and authorship
+## Provenance
 
 This is internal derived mathematics using the published exact chosen-dual
 surjection and separatedness proofs, the geometric properties of `A`,
@@ -81,9 +81,3 @@ The original motivation is the unchanged geometry statement's
 Edixhoven, van der Geer and Moonen source, documented in its paired
 Markdown. The present module only deduces the conclusions above from
 published Library theorems and proves the elementary total-space lemma.
-
-Historical Worker 268 authored the carried surjective-image lemma
-and conditional geometry assembly. Worker 858 first supplied published
-separatedness, then supplied published surjectivity, extracted the two
-unconditional conclusions, and reduced the remaining input to smoothness.
-Worker 858 also named the conditional reduction as a Prop-valued statement.

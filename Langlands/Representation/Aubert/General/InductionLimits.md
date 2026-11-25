@@ -1,7 +1,7 @@
 # Small limits under normalized parabolic induction
 
-Author: Worker 1187. Internal category infrastructure for the induction limit
-clause of the represented-parabolic preservation task.
+Internal category infrastructure for the induction limit
+clause of the represented-parabolic preservation target.
 
 The published first-adjointness linear equivalence is converted into a
 categorical adjunction on carriers in `Type (max uG uV)`. The forward categorical
@@ -21,7 +21,7 @@ The smooth carrier lift preserves limits at this size by the preceding
 smooth-part argument. Their composite, and hence the naturally isomorphic
 original induction functor, preserves these limits.
 
-This unit retains the explicit premise `IsUnimodularModulus U hU` required by
+This module retains the explicit premise `IsUnimodularModulus U hU` required by
 the published first-adjointness construction. It proves no unconditional
 represented-parabolic target, no existence of a root presentation and no
 radical unimodularity theorem. The unconditional target must discharge that

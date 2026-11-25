@@ -1,7 +1,6 @@
 # Independence of choices and continuity of the star action: statements
 
-Author: Worker 15, for the algebraic and reductive group-scheme program
-`2b5e4a00-9d44-49a4-9c89-979fb5b6233e` (Task 3483). The module contains two
+The module contains two
 `Prop`-valued definitions and no proofs. They concern `GaloisPinningData.galoisAction`
 and `GaloisPinningData.starAction` of the module `Reductive/StarAction`.
 
@@ -36,11 +35,13 @@ pinning. Milne (below) asserts this independence, citing his 21.43. The statemen
 it explicit through an actual `E`-point and the map it induces on character lattices.
 
 The torus condition is part of the data. Both tori are defined over `k`, and their
-base changes are split maximal tori of `G_E`. The intended proof uses three facts.
+base changes are split maximal tori of `G_E`. The proof
+(`StarActionIndependence.starActionIndependence`, module
+`Reductive.StarActionIndependenceProof`) uses three facts.
 Maximal split tori of a smooth connected affine group are conjugate by rational
 points. The Weyl group is realized by rational normalizer points (`IsRootDatumOf`).
 The based isomorphism induced by `G(E)` is unique, so applying `σ` to `g` changes it
-only by a Weyl element. These are proof obligations.
+only by a Weyl element.
 
 ## Continuity
 
@@ -60,7 +61,8 @@ modulo this fixer by its restriction to `L`, and `L` has only finitely many
 `TorusLatticeGaloisContinuityStatement` for the torus of `d`: a root-datum automorphism
 with trivial weight and coweight maps permutes no roots. The star part follows from
 the ordinary part, since `starAction` is `basedRootDatumProjection` after
-`galoisAction`. These deductions are proof obligations.
+`galoisAction`. These deductions are made in `Reductive.StarActionContinuityProof`
+(`starActionContinuity`).
 
 ## Source and provenance
 

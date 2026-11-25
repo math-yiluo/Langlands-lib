@@ -60,7 +60,6 @@ dimension zero is the singleton extension described by the target.
 Positive-dimensional proper-subset, nonclosedness and nondiscreteness
 conclusions of Example 4.3 are separate obligations.
 
-Worker 208 authored the reused proof and its argument description. Worker 1557
-checked the published dependencies and original source and prepared this focused
-proof pair for submission. All dependencies are imported from the published
-Library; this contribution supplies only the rational-density proof.
+The published dependencies and the original source were checked against this
+proof. All dependencies are imported from the published Library; this module
+supplies only the rational-density proof.

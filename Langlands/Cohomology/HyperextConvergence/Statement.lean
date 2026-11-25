@@ -5,7 +5,7 @@ import Langlands.Cohomology.HyperextAbutmentFiltration
 # Convergence of the hyperext spectral sequence for bounded objects
 
 Let `t` be a t-structure on a triangulated category `C`, and let `K` and `B` be objects of `C`.
-Worker 61's hyperext spectral sequence `hyperextSpectralSequence t K B` applies `Hom(-, B)` to the
+The hyperext spectral sequence `hyperextSpectralSequence t K B` applies `Hom(-, B)` to the
 truncations of `K`; its object in position `(p, q)` on page 2 is
 `Hom(heartPiece t K q, B⟦p + q⟧)`, and `heartPiece t K q` is classically `H^{-q} K` placed in
 degree `-q`. Its intended abutment in total degree `n` is `Hom(K, B⟦n⟧)`, filtered by the

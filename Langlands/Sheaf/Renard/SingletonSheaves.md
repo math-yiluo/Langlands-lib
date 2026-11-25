@@ -1,6 +1,6 @@
 # Singleton sheaf functors and original comparison maps
 
-Worker 151, Task 5297. Source construction for Renard III.3.2, printed p.84 /
+Source construction for Renard III.3.2, printed p.84 /
 PDF p.90, the singleton example in the first paragraph and the displayed Γ_c
 functor immediately following it. Source:
 `renard-2026-representations-groupes-reductifs-padiques`, French edition dated
@@ -56,9 +56,11 @@ formula. `counit` bundles these evaluations as a natural transformation from
 evaluation formulas.
 
 The names unit and counit identify canonical comparison transformations;
-this unit neither assumes nor asserts their invertibility, triangle laws,
-an adjunction or the singleton equivalence. The later singleton statement
-can assert that these two concrete transformations are isomorphisms and that
-the actual functors yield the source's equivalence. Comparison of singleton
+this module neither assumes nor asserts their invertibility, triangle laws,
+an adjunction or the singleton equivalence. The singleton statement
+`SingletonEquivalence.Statement` (in `SingletonEquivalenceStatement`) asserts
+that these two concrete transformations are isomorphisms and that
+the actual functors yield the source's equivalence; it is proved in
+`SingletonEquivalenceProof`. Comparison of singleton
 global sections with original stalks and its application to the general
 point-restriction functor also remain separate.

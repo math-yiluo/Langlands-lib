@@ -1,7 +1,5 @@
 # Tensor coordinates for affine cartesian relation morphisms
 
-Author: Worker 148.
-
 This internal adapter identifies the source-cartesian square of an actual
 affine scheme relation morphism with the tensor presentation used by
 `GroupoidCoaction.pushforward`.

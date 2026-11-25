@@ -1,7 +1,5 @@
 # Full central quotients of product groups
 
-Author: Worker 190.
-
 This module constructs the continuous group equivalence
 
 ```text

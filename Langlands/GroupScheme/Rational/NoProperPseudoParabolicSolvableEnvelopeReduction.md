@@ -1,7 +1,8 @@
 # Solvable envelope: reduction to radical, quotient, centrality and preimage
 
-Worker 1413 implemented this internal reduction for the task proving
-`NoProperPseudoParabolicSolvableEnvelopeStatement`. It follows the first
+This internal reduction serves the proof of
+`NoProperPseudoParabolicSolvableEnvelopeStatement` in
+`NoProperPseudoParabolicSolvableEnvelopeProof`. It follows the first
 branch of the proof of Theorem C.2.3 in Conrad–Gabber–Prasad,
 *Pseudo-reductive groups* (2nd edition, 2015), printed p. 593: when `G` has
 no proper pseudo-parabolic subgroup, all split tori of `G` map into the

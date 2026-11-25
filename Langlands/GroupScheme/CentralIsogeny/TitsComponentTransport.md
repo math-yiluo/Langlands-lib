@@ -1,6 +1,6 @@
 # Component realization reduces to simply connected groups
 
-This derived internal unit uses the actual Cartan/star equivalence constructed
+This derived internal module uses the actual Cartan/star equivalence constructed
 for a central isogeny. It preserves and reflects Cartan connectivity, restricts
 the vertex bijection to the entire component, and identifies the full
 absolute-Galois stabilizer subgroup exactly. These statements use every
@@ -29,5 +29,5 @@ premise, and apply the complete witness transport. No unconditional component
 realization theorem is claimed here.
 
 The connectivity and simultaneous-lift transport proofs adapt the existing
-full-index transport constructions by Worker 509 to the weaker Cartan/star
+full-index transport constructions to the weaker Cartan/star
 comparison; the missing zero-vertex field is unnecessary for this purpose.

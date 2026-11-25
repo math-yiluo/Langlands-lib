@@ -1,7 +1,8 @@
 # Connected models of torus Iwahori subgroups
 
-This is an unproved general torus prerequisite for the neutral-point
-equality in KP Theorem 8.3.13. It concerns arbitrary tori over the maximal
+This is a general torus prerequisite for the neutral-point
+equality in KP Theorem 8.3.13, proved as `unramifiedTorusIwahoriModel` in
+`UnramifiedTorusIwahoriModelProof`. It concerns arbitrary tori over the maximal
 unramified extension of a nonarchimedean local field, independently of
 any reductive ambient group, building, apartment or bounded subset.
 
@@ -104,4 +105,6 @@ Applying this general existence statement to the torus used in
 Theorem 8.3.13 still requires the ambient torus map, its extension to the
 ambient integral model, the root models, the generated-subgroup
 identification, openness, finite index and the connected-generation
-argument. Those KP-specific obligations remain in the parent task.
+argument. Those KP-specific steps belong to the proof of
+`UnramifiedParahoricModelStatement` (`unramifiedParahoricModel`, module
+`UnramifiedParahoricModelProof`).

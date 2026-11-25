@@ -132,7 +132,7 @@ in the source for groups countable at infinity.
 
 ## Intended use
 
-The statement is a prerequisite of the proof task
-`6884361c-0ab2-41b3-8098-9c070c4a1b3e`: fixed-level finiteness of compact-coefficient
+The statement is a prerequisite for a proof of
+fixed-level finiteness of compact-coefficient
 classes for product-Levi determinant-unit groups (BZ76 Theorem 4.14 via 4.16). That
 argument needs actual corner elements separating inequivalent classes.

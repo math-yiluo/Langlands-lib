@@ -1,7 +1,5 @@
 # Representations of `SL₂` assembled from root strings (`StringRep`)
 
-Author: Worker 239.
-
 Fix `α : X` and an additive map `pair : X →+ ℤ`, which stands for `⟨·, α^∨⟩`. This module
 assembles the blocks `gam m` of `WeylModule` along the `α`-strings of a finite family of weights
 `ω : C → X`. The result is an integral representation of `2 × 2` matrices on `ℤ^C` whose

@@ -1,7 +1,5 @@
 # Laurent coordinates of invariant cocharacters
 
-Worker 1272.
-
 This derived construction supplies the coordinate part of the descent step in
 Milne, *Algebraic Groups* (2017), Theorem 25.1, printed page 544 (PDF page 560).
 Its mathematical inputs are the existing actual cocharacter transport,
@@ -38,10 +36,10 @@ coefficient-extension identity of `descendAlgHom`.
 `descendedMorphism` composes this Laurent point with the canonical Laurent
 presentation of the actual multiplicative group over `k`, obtaining a morphism
 of schemes over `Spec k`. `laurentPoint_descendedMorphism` records its value on
-the universal point. This module does not yet identify the base change of this
+the universal point. This module does not identify the base change of this
 scheme morphism with the original cocharacter or prove that it respects the
 group laws. Those are the remaining geometric steps to a descended group-scheme
-homomorphism. No finite type, smoothness, reductivity, perfectness, or
+homomorphism; `CocharacterDescentGroup` carries them out. No finite type, smoothness, reductivity, perfectness, or
 characteristic assumption is used in this coordinate construction.
 
 The universal Laurent point is reused as `Gm.laurentPoint` from

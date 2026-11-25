@@ -1,7 +1,5 @@
 # Repeated-factor cuspidal triple Jacquet transfers
 
-Author: Worker 19. Statement specification: Worker 320.
-
 This module defines the proposition
 `Langlands.Classification.RepeatedCuspidalTripleJacquetTransfer.{uF,uV} F T`.
 It states both local transfers used in the proof of Jantzen (2000),
@@ -88,7 +86,7 @@ Groups*, Canadian Journal of Mathematics 52 (2000), no.3, 539–581,
 [DOI 10.4153/CJM-2000-025-7](https://doi.org/10.4153/CJM-2000-025-7).
 Literature ID: `jantzen-2000-square-integrable-classical-i`.
 The retained original is
-`/home/taskhub/pilot/literature/Jantzen (2000), On Square-Integrable Representations of Classical p-adic Groups.pdf`,
+`literature/Jantzen (2000), On Square-Integrable Representations of Classical p-adic Groups.pdf`,
 SHA256 `539eee93dd339c42bf6d065bbb1969ab0e2c6c54699c5b4447a2166a3ddf9428`.
 Section 1.2, PDF pp.3–4 / printed pp.541–542, and the complete proof of
 Lemma 2.2.2, PDF pp.7–9 / printed pp.545–547, were read directly; the latter
@@ -147,7 +145,9 @@ lower proof. Neither establishes the asserted rank-three uniqueness or
 two-branch structure. Likewise, pair or segment-head commutation alone
 does not prove these transfers.
 
-The future proof must remain directly and transitively independent of
+The proof of these transfers, `repeatedCuspidalTripleJacquetTransfer` in
+`RepeatedCuspidalTripleJacquetTransferProof`, must remain directly and
+transitively independent of
 the parent analytic strong-head classification, multisegment exhaustion,
 ordered strong-head existence, ordered quotient coverage, tempered block
 uniqueness, square-integrable Langlands classification, square-integrable

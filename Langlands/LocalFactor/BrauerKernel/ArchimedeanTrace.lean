@@ -48,7 +48,7 @@ theorem ringEquivRealOfIsReal_localTrace (r : NumberField.InfinitePlace k)
   rw [← hx]
   have hfin : Module.finrank r.Completion u.Completion = 1 :=
     (isUnramified_of_isReal (F := k) hu).finrank_eq_one r
-  have ht : InfiniteExtension.localTrace r u (NumberField.LiesOver.completionMap y) = y := by
+  have ht : InfiniteExtension.localTrace r u (NumberField.LiesOver.completionMap r u y) = y := by
     change Algebra.trace r.Completion u.Completion (algebraMap r.Completion u.Completion y) = y
     rw [Algebra.trace_algebraMap, hfin, one_smul]
   rw [ht, ringEquivRealOfIsReal_completionMap r u hr hu y]

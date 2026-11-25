@@ -1,6 +1,6 @@
 # Integral away comparison for every supplied normalized full comparison
 
-Worker 18 proves
+This module proves
 `Langlands.Global.PrimeToIntegralProfiniteIntegerAdeleComparisons` by the theorem
 `Langlands.Global.primeToIntegralProfiniteIntegerAdeleComparisons`. Its result is
 exactly the imported proposition, with no outer parameters or additional
@@ -9,12 +9,11 @@ exports its existing density lemma for reuse here, with the same statement and p
 
 The proof is an internal construction from the published residue-limit rings,
 their canonical p-adic projections, and the actual integral restricted-product
-adele rings. It adapts the prime-power injectivity argument of Worker 205's
+adele rings. It adapts the prime-power injectivity argument of
 `ProfiniteIntegerPadicProductComparisonProof`, the product and completed-integer
-identifications of Worker 212's `IntegralFiniteAdelePadicProduct`, and reuses
-Worker 18's integer-density proof in `ProfiniteIntegerCompletionComparisonProof`.
-Workers 205 and 212 are credited for these adapted components. No additional
-literature statement is asserted.
+identifications of `IntegralFiniteAdelePadicProduct`, and reuses
+the integer-density proof in `ProfiniteIntegerCompletionComparisonProof`.
+No additional literature statement is asserted.
 
 ## Retained primes and places
 

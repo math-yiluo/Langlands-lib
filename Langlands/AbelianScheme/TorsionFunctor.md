@@ -68,7 +68,7 @@ actual torsion inclusions and naturality given by `torsionMap_ι`.
 All assertions include zero and negative integers and arbitrary base
 schemes, including bases with nilpotents. No finiteness, étaleness,
 smoothness, separatedness, connectedness, or characteristic hypothesis
-is imposed. This unit supplies the restriction step for constructing
+is imposed. This module supplies the restriction step for constructing
 a sum of torsion images; it does not construct that sum, an abelian
 quotient, an integral model for a rational action, or a CM
 representing scheme.

@@ -1,6 +1,6 @@
 # Local-constant systems along an isomorphism of p-adic fields
 
-Worker 5130, Task 5230. Internal derived infrastructure; no external source.
+Internal derived infrastructure; no external source.
 
 `PadicField.AbelianTransport.haarMeasure_scale` says that the Library's pushforward
 of Haar measures along a field isomorphism commutes with positive scaling. It is

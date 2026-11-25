@@ -65,5 +65,5 @@ is supplied; the irreducible-base assumption is used by its constructor.
 
 Identifying the actual generic residue-field extension, proving etaleness at
 this prime, finite closed-image shrinking, the scheme cover, and splitting the
-geometric irreducible components remain further obligations. This unit does not
+geometric irreducible components remain further obligations. This module does not
 claim full Stacks 0551 or completion of Conrad's geometric-fibre results.

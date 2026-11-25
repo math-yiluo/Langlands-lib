@@ -1,6 +1,6 @@
 # Henniart's three-input route with the supercuspidal p-adic conductor premise
 
-Worker 619, Task 7045. The theorem
+The theorem
 `Langlands.Henniart.Extension.supercuspidalCorrespondenceHenniartSupercuspidalConductor`
 proves exactly the published proposition
 `Langlands.Henniart.Extension.SupercuspidalCorrespondenceHenniartSupercuspidalConductorStatement.{uK,uW,uV}`,
@@ -64,7 +64,8 @@ The supporting generic-conductor comparison applies the restricted JPSS
 p-adic field. The other route arguments use the published arithmetic
 conductor, epsilon and finiteness results.
 
-All changes are in four new Lean/Markdown pairs. The target pair, its
-dependencies, the p-adic field modules and the existing route modules remain
-unchanged. No full generic conductor premise or deferred JPSS generation
-assertion is used.
+The adaptation consists of four Lean/Markdown pairs: this one,
+`HenniartSupercuspidalConductorSurjectivity`, `HenniartSupercuspidalConductorFiniteness`
+and `Representation.Conductor.SupercuspidalPadicGenericConductor`. It uses the target
+pair, its dependencies, the p-adic field modules and the existing route modules as they
+are. No full generic conductor premise or unproved JPSS generation assertion is used.

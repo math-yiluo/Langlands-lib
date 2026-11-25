@@ -1,6 +1,6 @@
 # Unramified finite epsilon factors at conductor zero
 
-Worker 1692, internal derived support for the actual Hecke functional equation.
+Internal derived support for the actual Hecke functional equation.
 The module uses the existing fixed-Haar epsilon expression without changing its
 spectral convention.
 

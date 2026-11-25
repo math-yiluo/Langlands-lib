@@ -1,6 +1,6 @@
 # Reduction of the equal-rank factorization premise to the archimedean theory
 
-Module `Langlands.Global.RankinSelberg.EqualSemilocalFactorizationReduction`. Author: Worker 5014.
+Module `Langlands.Global.RankinSelberg.EqualSemilocalFactorizationReduction`.
 
 ## 1. Content and status
 
@@ -23,10 +23,10 @@ semi-local functional equation. This module contains, in the namespace
   need in order to elaborate, as in the module `EqualSemilocalReduction`.
 
 The theorem is a **conditional reduction**. It does not prove (P): its four premises are
-open statements, stated in the Library by Task 7136 and proved nowhere in the Library. It is
-an intermediate result of Task 7124 in the sense of the "Intermediate results" section of
-that task's revision 1. The task's required result, an unconditional proof of (P), stays
-open.
+statements of the archimedean theory collected in `ArchimedeanSemilocalTheoryStatement`.
+Three of them are proved nowhere in the Library; the fourth, `ArchimedeanCentralSignStatement`,
+is proved by `archimedeanCentralSign` (module `ArchimedeanCentralSignProof`). It is an
+intermediate result towards (P), whose unconditional proof stays open.
 
 ## 2. The statement
 
@@ -73,9 +73,9 @@ ArchimedeanFactorizationStatement ∧ ArchimedeanCentralSignStatement` (module
 `ArchimedeanFactorizationStatement`. The unequal-rank components are not used.
 
 **Provenance.** The statement is internal: an implication between published Library
-statements, written for Task 7124. Its argument follows the sketch "Derivation of
-`EqualSemilocalFactorizationStatement`" in the Markdown of `ArchimedeanSemilocalTheoryStatement`
-(Task 7136), which in turn follows Cogdell 2004, proof of Theorem 4.1, pp.219–220 (the global
+statements. Its argument follows the sketch "Derivation of
+`EqualSemilocalFactorizationStatement`" in the Markdown of `ArchimedeanSemilocalTheoryStatement`,
+which in turn follows Cogdell 2004, proof of Theorem 4.1, pp.219–220 (the global
 integral is a constant times the product of the archimedean and the local integrals at `S`,
 and the archimedean functional equations multiply). The source citations of the four
 premises are in their own Markdown.
@@ -151,4 +151,7 @@ The four retained premises are `ComplexEqualFunctionalEquationStatement`,
 `ArchimedeanCentralSignStatement`. Proving them needs the archimedean Rankin–Selberg theory of
 Jacquet and Shalika in the Library's normalizations, the factorization of global Whittaker
 functions and of the partial integrals into local ones, and the global triviality of the
-central character at `−1`; see the Markdown of the three statement modules of Task 7136.
+central character at `−1`; see the Markdown of the three statement modules
+`ArchimedeanFunctionalEquationStatement`, `ArchimedeanFactorizationStatement` and
+`ArchimedeanCentralSignStatement`. The last premise is proved in the Library
+(`archimedeanCentralSign`, module `ArchimedeanCentralSignProof`).

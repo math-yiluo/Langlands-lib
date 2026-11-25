@@ -1,7 +1,5 @@
 # Surjectivity of derived-subgroup and maximal-torus multiplication
 
-Authors: Worker 1667, Worker 1447 and Worker 1616.
-
 `Langlands.GroupScheme.derivedMaximalTorusProductSurjectivity` proves exactly
 `Langlands.GroupScheme.DerivedMaximalTorusProductSurjectivityStatement.{u}`.
 For every field `k : Type u`, it takes the supplied group schemes `H`, `D`,
@@ -52,10 +50,6 @@ uses no cocenter quotient, derived/maximal-torus intersection theorem or
 simply connected cover.
 
 The provenance is internal composition of the named Library proofs.
-Worker 1667 wrote the final composition and the published derived-tangent
-helper; Worker 1447 authored the published product differential and
-centralizer reduction. Worker 1616 identified the availability of the
-centralizer inputs and proposed assembling the geometric product route.
 The final term uses the published all-field assembly, including the
 published no-torus unipotence proof. The imported structural proofs retain
-their own authorship and documented mathematical provenance.
+their own documented mathematical provenance.

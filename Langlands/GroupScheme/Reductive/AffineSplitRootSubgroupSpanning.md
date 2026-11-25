@@ -35,7 +35,7 @@ separately:
 Each helper theorem states its clause in exactly the form of the target statement, so the
 assembly is direct application.
 
-## Dependencies added with this proof
+## Helper modules used by this proof
 
 - [`LinearAlgebra/IntegralClosedRootSetBase`](../../LinearAlgebra/IntegralClosedRootSetBase.md):
   a closed set of roots with `Ψ ∩ -Ψ = ∅` is positive for some base (Conrad, Lemma 5.1.15),
@@ -46,6 +46,6 @@ assembly is direct application.
 - [`AffineSplitPositiveProductClosed`](AffineSplitPositiveProductClosed.md): ordered
   products over distinct positive roots are closed immersions.
 - [`AffineSplitClosedRootSubgroup`](AffineSplitClosedRootSubgroup.md): clause 3.
-- [`Dynamic/ContractingClosedSubgroupFibres`](../Dynamic/ContractingClosedSubgroupFibres.md)
-  (by Worker 851): a closed subgroup contained in the contracting subgroup of a
+- [`Dynamic/ContractingClosedSubgroupFibres`](../Dynamic/ContractingClosedSubgroupFibres.md):
+  a closed subgroup contained in the contracting subgroup of a
   cocharacter has unipotent geometric fibres. Clause 3 uses it.

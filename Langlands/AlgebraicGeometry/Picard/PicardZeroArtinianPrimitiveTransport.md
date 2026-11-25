@@ -1,7 +1,5 @@
 # Artinian lifting of Picard-zero families from lifting of primitive line bundles
 
-Author: Worker 225.
-
 This module connects the lifting statement for primitive line bundles,
 `Langlands.AbelianScheme.ArtinianPrimitiveLineBundleLiftingStatement` (module
 `Langlands.AlgebraicGeometry.Picard.ArtinianPrimitiveLineBundleLiftingStatement`), to the
@@ -29,8 +27,8 @@ of Abelian Varieties*, Chapter I, Remark 1.5(c); see the Markdown of
 `PicardZeroArtinianLiftingStatement`. `hQ` is the theorem of the square for
 geometrically Picard-zero line bundles over a one-point base. `hP` is the lifting of
 such primitive bundles along an elementary Artinian thickening. Both are internal
-interfaces chosen for the split of task `d1735ac9-6af5-4460-8c3a-b09a43c01ffa` between
-its two executors, and this module is internal glue code. It does not formalize a
+interfaces chosen to split the proof of the target into steps, and this module is
+internal glue code. It does not formalize a
 source theorem.
 
 ## Declarations and proofs

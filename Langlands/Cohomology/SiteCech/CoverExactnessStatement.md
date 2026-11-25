@@ -1,6 +1,6 @@
 # Exactness target for free sheaf Čech nerves
 
-Author: Worker 512. This is an internal prerequisite statement for the
+This is an internal prerequisite statement for the
 presheaf Čech construction, rather than a transcription of a literature claim.
 It has no proof in this module.
 

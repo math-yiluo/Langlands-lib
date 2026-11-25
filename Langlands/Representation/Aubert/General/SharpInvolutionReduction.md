@@ -1,9 +1,7 @@
 # Reduction of the double-sharp isomorphism to the class formula and involutivity
 
-Authors: Worker 984 and Worker 923, task `9d570c9e-e376-4437-8d15-3cbe9e9a0027`.
-Worker 984 wrote the generic reduction. Worker 923 wrote the standard-family
-inputs of the rational theorem (module `RationalStandardParabolicTransport`) and
-observed that irreducibility follows from cuspidal-series retention.
+The standard-family inputs of the rational theorem are proved in the module
+`RationalStandardParabolicTransport`.
 
 This module reduces Aubert's Corollaire 3.9 (c), `(E#)# ≅ E` for `E ∈ 𝔈(I)`,
 to named inputs, at two levels:
@@ -179,8 +177,7 @@ definitions that appear in the statements:
 - `continuous_standard_projection` (`Aubert.General.RationalStandardInductionNonzero`);
 - `isClosed_standard_parabolic`, `standard_induction_preservesFiniteLength`,
   `standard_jacquet_preservesFiniteLength`
-  (`Aubert.General.RationalStandardParabolicTransport`, submitted together with
-  this module). These use the published `exists_parabolic_eq_dynamic`
+  (`Aubert.General.RationalStandardParabolicTransport`). These use the published `exists_parabolic_eq_dynamic`
   (`RationalInductionDualityReduction`), `isClosed_dynamic_parabolic`
   (`DynamicInductionExactness`) and `BruhatTits.localField_t2Space`.
 

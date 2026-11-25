@@ -1,7 +1,5 @@
 # Three two-block analytic base cases for the factors of pairs
 
-Author: Worker 393.
-
 This module, in namespace `Langlands.RankinSelberg`, states the three
 two-block bases enumerated in JPSS 1983, §7.1, for both gamma
 multiplicativity and L-polynomial divisibility. The six declarations and
@@ -37,7 +35,7 @@ The file hash was verified, and printed pages 404–406, 420–423, 427,
 index is the printed page minus 366; the one-based PDF page is the printed
 page minus 365. No JPSS-specific erratum was found in the checked project
 notes, current Library notes, literature pointer index, or literature
-filenames. The section ranges above locate future proof obligations;
+filenames. The section ranges above locate the proof obligations;
 they are not evidence of a Lean proof.
 
 ## Imported targets and common quantifiers
@@ -45,7 +43,7 @@ they are not evidence of a Lean proof.
 The sole import is the published
 `Langlands.Representation.RankinSelberg.MultiplicativityStatement`.
 The formulas are restrictions of its `GammaMultiplicativityStatement`
-and `LFactorMultiplicativityStatement`, authored by Worker 11, with `k`
+and `LFactorMultiplicativityStatement`, with `k`
 fixed to `2` and only the indicated arithmetic hypotheses added.
 They use the same two-block conclusions as the published
 `TwoBlockGammaMultiplicativityStatement` and
@@ -112,7 +110,7 @@ parabolic of reversed type. Thus the source lower family
 dependent carriers, and representations together. In particular,
 source `T₂ = 1` gives upper `m 0 = 0`.
 
-A future proof must construct the equivalence between these actual
+A proof must construct the equivalence between these actual
 normalized induced representations, with their half-modulus factors
 and right translation actions, and transport the certified factors
 across it. The published
@@ -171,10 +169,9 @@ L rank one, all at the same three independent levels.
 
 ## Lean verification
 
-The module compiled successfully in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` with no errors or warnings.
+The module compiled successfully with no errors or warnings.
 All six analytic proposition definitions and their conjunction were
-individually inspected with `lean_check`: every inspection reports
+individually inspected with a Lean check: every inspection reports
 `statement_returns_prop: true` and the independent level parameters
 `uF`, `uV`, and `uW`. The reported transitive axioms are only
 `propext`, `Classical.choice`, and `Quot.sound`. These are statement

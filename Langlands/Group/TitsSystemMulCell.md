@@ -2,7 +2,7 @@
 
 This module is pure group theory. It derives the multiplication axiom `mul_mem_cell` of
 `Langlands.Group.IsTitsSystem` for one element `s` from a factorization of `B` adapted to `s`.
-It does not assume a Tits system. It supports the proof task for
+It does not assume a Tits system. It serves the proof of
 `Langlands.GroupScheme.RelativeTitsSystemStatement`, where the hypotheses below are rank-one
 statements about root subgroups. Those statements are not proved here. The module adds no
 axioms.

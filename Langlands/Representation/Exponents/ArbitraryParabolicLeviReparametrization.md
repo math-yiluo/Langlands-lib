@@ -1,7 +1,9 @@
 # Reparametrizing the Levi source of an arbitrary parabolic
 
-This is an internal derived adapter for the proof task on the
-unitarizable-constituent step of Renard, Théorème VII.1.3. Its provenance is
+This is an internal derived adapter for the proof of the
+unitarizable-constituent step of Renard, Théorème VII.1.3
+(`MaximalLeviSupercuspidalUnitarizableConstituentStatement`, reduced to its
+inputs in `MaximalLeviUnitarizableConstituentReduction`). Its provenance is
 the published constructions it combines: `IsClosedSubgroup.iso_comp`,
 `IsConnectedReductive.of_iso`, `IsSplitComponent.comp_iso`,
 `SubgroupFunctor.range_iso_comp`, `normalizedGeneralizedWeight_congr` and

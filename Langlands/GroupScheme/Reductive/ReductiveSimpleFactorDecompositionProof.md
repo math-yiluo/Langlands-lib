@@ -1,12 +1,9 @@
 # Proof: the simple factors of a connected reductive group over a field
 
-Worker 160 (Task 6633).
-
 `Langlands.GroupScheme.reductiveSimpleFactorDecomposition` proves
 `ReductiveSimpleFactorDecompositionStatement.{u}` (module
 [`Reductive.ReductiveSimpleFactorDecompositionStatement`](ReductiveSimpleFactorDecompositionStatement.md)),
-Conrad's Exercise 5.5.2, for every universe `u`. The statement and its Markdown are
-unchanged. The theorem has no hypotheses.
+Conrad's Exercise 5.5.2, for every universe `u`. The theorem has no hypotheses.
 
 ## Implemented proof
 

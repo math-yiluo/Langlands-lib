@@ -1,9 +1,9 @@
 # Geometric compatible refinements and minimal-parabolic split components
 
-Author: Worker 1445. This internal derived development combines the published
+This internal derived development combines the published
 compatible-cocharacter construction and minimality bridge with the proved
 dynamic-to-geometric parabolic recognition theorem. Its original-Levi corollary
-reuses Worker 1264's supplied-presentation construction. It asserts no additional
+reuses the supplied-presentation construction of `OriginalLeviCocharacter`. It asserts no additional
 literature theorem.
 
 All fields have the arbitrary universe `u`. Groups, morphisms, cocharacters and
@@ -87,4 +87,5 @@ ambient-maximality theorem.
 The initial dynamic presentation remains a hypothesis of this corollary.
 Constructing it for an arbitrary geometric minimal parabolic, assembling the
 specified solvable-radical factor, and proving the exact unconditional
-`MinimalParabolicLeviCentralizerStatement` remain obligations of the host task.
+`MinimalParabolicLeviCentralizerStatement` are not done here; that statement is
+proved by `minimalParabolicLeviCentralizer` in `MinimalParabolicLeviCentralizerProof`.

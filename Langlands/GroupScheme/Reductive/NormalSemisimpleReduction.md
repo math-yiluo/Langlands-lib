@@ -1,6 +1,6 @@
 # Normal semisimple subgroups under full-centre containment
 
-This internal construction belongs to Worker 1566's proof of generation by
+This internal construction belongs to the proof of generation by
 normal almost-simple subgroups. It proves a conditional reduction over every
 field, with arbitrary characteristic and universe, from the published
 `NormalReductiveCenterStatement` to semisimplicity of smooth connected
@@ -27,5 +27,5 @@ The provenance is the internal composition of the published
 `Reductive.FiniteCenterBaseChange` interfaces. The code implements the
 construction just described. Full-centre containment remains an explicit
 unproved structural premise in this file. This reduction supplies neither
-an unconditional normal-subgroup semisimplicity theorem nor the assigned
+an unconditional normal-subgroup semisimplicity theorem nor the
 almost-simple generation theorem.

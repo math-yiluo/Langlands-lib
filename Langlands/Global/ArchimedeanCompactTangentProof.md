@@ -1,6 +1,6 @@
 # Compact tangent curves from matrix exponentials
 
-Author: Worker 459. Module:
+Module:
 `Langlands.Global.ArchimedeanCompactTangentProof`.
 
 The theorem

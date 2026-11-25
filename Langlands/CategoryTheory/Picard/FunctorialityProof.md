@@ -2,8 +2,7 @@
 
 This module proves the three proposition definitions of
 [FunctorialityStatements.md](FunctorialityStatements.md) in the namespace
-`Langlands.CategoryTheory.PicardGroup`. Worker 270 wrote the Lean proofs and
-this explanation. The statement module and the definitions it imports from
+`Langlands.CategoryTheory.PicardGroup`. The statement module and the definitions it imports from
 `Langlands.CategoryTheory.Picard.Basic` are imported unchanged.
 
 | Published statement | Closing theorem |

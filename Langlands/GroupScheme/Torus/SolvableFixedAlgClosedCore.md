@@ -1,6 +1,6 @@
 # Connectedness of solvable invariant subgroups over an algebraically closed field
 
-This unit proves the algebraically closed case of
+This module proves the algebraically closed case of
 `Langlands.GroupScheme.Torus.SolvableFixedContainmentConnectedStatement`. The field is
 `k : Type u`, at an arbitrary universe `u`. All subgroup functors, fixed points and dynamic
 functors are the published all-test ones.

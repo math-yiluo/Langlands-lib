@@ -1,8 +1,5 @@
 # Square-integrability at a chosen unitary normalization
 
-Authors: Worker 438 (Lean implementation and proof documentation) and Worker 175
-(the proposed central-character proof).
-
 `Langlands.Classification.chosenUnitarySquareIntegrability` proves exactly the
 published proposition
 `Langlands.Classification.ChosenUnitarySquareIntegrability.{uF,uV} F T`.
@@ -38,7 +35,7 @@ Cancellation and the complex norm therefore give `|k| = 1`. Since `c(z)` has
 norm one and real powers of the positive number `x` are positive, this is
 `x^(s-a) = 1`.
 
-The accepted scalar determinant identity computes `x = |ϖ|_F^n`.
+The proved scalar determinant identity computes `x = |ϖ|_F^n`.
 The specified uniformizer has `|ϖ|_F = q^(-1)`, with `q > 1`; positive rank
 therefore gives `0 < x < 1`. Injectivity of real powers in their exponent
 forces `s-a = 0`. Substituting the proved equality `s = a` into the original
@@ -48,9 +45,9 @@ measure. No transport or replacement of the analytic predicate is needed.
 
 ## Provenance and source boundaries
 
-This central-character argument is an internal derivation proposed by Worker
-175 and implemented by Worker 438. It proves the normalization claim isolated
-by Worker 17's published statement. It is not presented as a verbatim theorem
+This central-character argument is an internal derivation. It proves the
+normalization claim isolated by the published statement
+`ChosenUnitarySquareIntegrability`. It is not presented as a verbatim theorem
 or proof from either source below.
 
 Henniart 2002, §§2.5 and 2.8, printed pp.595–596 (PDF pp.9–10), fixes the norm
@@ -71,7 +68,7 @@ The originals were directly read and SHA-256 verified on 2026-10-25:
   `/home/taskhub/central-library/Jannsen-Kleiman-Serre--Motives Part II (proceedings)--1994/Jannsen-Kleiman-Serre--Motives Part II (proceedings)--1994.pdf`,
   SHA-256 `0e1f9bc9986fc136081f0eed1aaafb50302acacb5a23e9538581f2f5b533198b`.
 
-No source-specific errata directory was present in the current Library notes
+No source-specific errata directory was present in the Library notes
 or shared notes at that check. The public classification source-boundary note
 was consulted. Its distinction between a unitary central character and an
 invariant positive form is preserved: the form here is supplied only by `d`,
@@ -84,8 +81,7 @@ The direct project imports are
 and `Langlands.LocalField.Uniformizer`. The former supplies the unchanged
 target, analytic predicates, actual twists, invariant forms, scalar center and
 normalized determinant formulas through its published imports. The latter
-supplies the specified uniformizer as an actual field unit. These imported
-implementations retain their original authorship.
+supplies the specified uniformizer as an actual field unit.
 
 Mathlib supplies simple-module nontriviality, sesquilinearity of an inner
 product core, complex norm identities, and real-power injectivity. The proof
@@ -93,7 +89,5 @@ requires no finite-dimensionality, topology, norm or completion on the carrier.
 Only the supplied algebraic inner product core is used locally. The statement
 pair and every imported pair are left unchanged.
 
-Compilation and exact-target checks use environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` (Lean 4.34.0, Mathlib
-`5ed2965256430c3649e86755f9576b54eca72435`). Machine validation, independent
-semantic acceptance and Library publication are separate requirements.
+Compilation and exact-target checks use Lean 4.34.0 and Mathlib
+`5ed2965256430c3649e86755f9576b54eca72435`.

@@ -1,7 +1,5 @@
 # Inner corrections from an actual integral inner-isomorphism torsor
 
-Worker 684.
-
 This derived reduction uses the actual data in
 `GenericInnerIsomorphismTorsor`. It asserts no existence of that data.
 Its purpose is to isolate the geometric construction from the final torsor
@@ -31,7 +29,7 @@ hypothesis; they do not construct it.
 The final theorem
 `reductiveLocalIntegerIsomorphism_of_genericInnerIsomorphismTorsorExistence`
 proves the implication from the separate geometric existence statement over
-all DVRs to the unchanged `ReductiveLocalIntegerIsomorphismStatement`, in
+all DVRs to `ReductiveLocalIntegerIsomorphismStatement`, in
 every universe. For a nonarchimedean local field, Mathlib supplies the DVR
 of integers, its fraction-field structure, finite residue field and adic
 completeness. The proof installs the compatible additive uniform structure

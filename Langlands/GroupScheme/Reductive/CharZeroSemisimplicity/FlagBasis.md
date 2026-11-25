@@ -1,7 +1,5 @@
 # Bases adapted to a finite decreasing flag of subspaces
 
-Author: Worker 1498.
-
 This module contains pure linear algebra over a field `k`. It is an internal helper
 for the proof of
 `Langlands.GroupScheme.ReductiveCharZeroSemisimplicityStatement`, where it turns a

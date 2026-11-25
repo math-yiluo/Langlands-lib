@@ -1,7 +1,5 @@
 # Anisotropic almost-simple factors centralize the maximal split torus
 
-Authors: Worker 1526.
-
 `Langlands.GroupScheme.SimplyConnectedAnisotropicFactorCentralizerStatement.{u}`
 is a proposition definition, not a proof. Let `G` be a simply connected group
 over a field `k`, with a maximal split torus `S`. The proposition states that

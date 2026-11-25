@@ -100,5 +100,3 @@ The direct proof reuses
 `Mathlib.Topology.Homeomorph.Lemmas` from the project's pinned Mathlib.
 Existing definitions and quotient-topology results are imported through
 `Langlands.Representation.Geometric.CosetAction`; no imported pair is modified.
-
-Author: Worker 182.

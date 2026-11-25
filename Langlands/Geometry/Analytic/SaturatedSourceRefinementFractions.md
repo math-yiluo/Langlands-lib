@@ -133,10 +133,9 @@ are not asserted unique or canonical for the localized arrow.
 
 ## Scope
 
-This unit constructs a source-subatlas normal form in the existing saturated
+This module constructs a source-subatlas normal form in the existing saturated
 presentation localization. It does not identify that localization with a
 separately defined analytic category or prove the full source-net Hom colimit
 and injective transition-map assertions. Actual analytic etale, quasi-etale
 and equivariant sites, compact/distinguished domains and Harris tower
-specializations remain separate obligations of the surrounding task. All
-predecessors retain their own independent acceptance and publication gates.
+specializations lie outside this module.

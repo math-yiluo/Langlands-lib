@@ -1,6 +1,6 @@
 # Smoothness of a graded fixed quotient
 
-This is an internal algebraic construction by Worker 1345 for the proof of
+This is an internal algebraic construction for the proof of
 `Langlands.GroupScheme.Diagonalizable.FixedSubgroupSmoothStatement`. It records
 the degree-zero averaging argument independently of the geometric adapter. It
 is not itself a proof of that published group-scheme statement.

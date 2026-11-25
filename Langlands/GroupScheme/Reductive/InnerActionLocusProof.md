@@ -1,7 +1,5 @@
 # The clopen inner-action locus for reductive group schemes
 
-Worker 647.
-
 `Langlands.GroupScheme.reductiveInnerActionLocus.{u}` proves
 `Langlands.GroupScheme.ReductiveInnerActionLocusStatement.{u}` for every
 universe `u`. It takes the supplied full-centre fppf quotient and compatible

@@ -1,6 +1,6 @@
 # Left-covariant coordinate subspaces and finite regular subspaces
 
-Worker 1330 derived this internal coalgebra construction from the Library's left and
+This internal coalgebra construction is derived from the Library's left and
 right translation operators. Let `K` be a field, `B` a `K`-coalgebra, `C` a `K`-vector
 space, `r : B →ₗ[K] C` a linear map, and `χ : C`. The module does not assume that
 `r` is a subgroup restriction or that `χ` is a character.

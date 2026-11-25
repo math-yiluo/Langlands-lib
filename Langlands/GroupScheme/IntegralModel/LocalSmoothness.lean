@@ -33,6 +33,7 @@ theorem isSmooth_of_reductive_localField
         M.genericIso.hom.hom.hom.left ≫ G.X.hom := by
       exact M.genericIso.hom.hom.hom.w.symm
     rw [he]
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
     infer_instance
   have : Smooth (pullback.snd M.group.X.hom (Spec.algebraMap ↥𝒪[F] 𝓀[F])) :=
     hSpecial.smooth

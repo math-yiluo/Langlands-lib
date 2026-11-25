@@ -1,6 +1,6 @@
 # Jacquet detection on a Bernstein block from the induced progenerator (Renard VI.10.3)
 
-Author: Worker 5225. Derived supporting result for Task 5225.
+Derived supporting result for Renard VI.10.1–VI.10.3.
 
 David Renard, *Représentations des groupes réductifs p-adiques*, French
 version dated 9 July 2026 (registered source
@@ -16,17 +16,18 @@ The Library states this Proposition as `BernsteinBlockJacquetFaithfulStatement`:
 for every block object `X` with nontrivial carrier there is a nonzero
 morphism from `Π_D` (transported to the literal standard Levi) to the
 normalized Jacquet module of `X` along the standard parabolic of `a.roots`.
-This module derives that statement from three unproved Library
-propositions, which are explicit premises:
+This module derives that statement from three Library
+propositions without an unconditional proof in the Library, which are
+explicit premises:
 
 - `BernsteinInducedProgeneratorStatement.{uF, uV}` (`hProg`), Renard
-  VI.10.1, Theorem. It is a target of Task 5225 and is not proved here. Only
+  VI.10.1, Theorem. It is not proved here. Only
   its block membership and its generator conjunct are used.
 - `RepresentedParabolic.InducedProgeneratorIndependenceStatement.{uF, max uF uV}`
-  (`hIndep`), Renard VI.10.1, Lemma, Proposition and Corollary. It is a
-  target of Task 5225 and is not proved here.
+  (`hIndep`), Renard VI.10.1, Lemma, Proposition and Corollary. It is not
+  proved here.
 - `RepresentedParabolic.LeviSecondAdjointnessStatement.{uF, uV}` (`hAdj`),
-  Renard VI.9.6, second adjointness, owned by another task.
+  Renard VI.9.6, second adjointness.
 
 ## Route of the Lean proof
 
@@ -174,8 +175,7 @@ fixes the carrier level `max uF uV`.
 ## Scope
 
 This module is a conditional reduction for the Proposition of VI.10.3. Its
-three premises are unproved: two are targets of Task 5225 and one belongs
-to another task. It does not prove `BernsteinBlockJacquetFaithfulStatement`
-and is not submitted as acceptance of that target. The premise `hProg`
+three premises are not proved here. It does not prove
+`BernsteinBlockJacquetFaithfulStatement`. The premise `hProg`
 contributes only membership and the generator property; projectivity and
 finite generation are not used.

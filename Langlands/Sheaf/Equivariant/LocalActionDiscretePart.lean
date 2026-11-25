@@ -48,14 +48,15 @@ def IsLocallyEquivariant {U V : T} {H H' : OpenSubgroup G}
     (f : V ⟶ U) : Prop :=
   ∀ K : OpenSubgroup G, K ≤ H' → ∃ M : OpenSubgroup G, M ≤ H ∧
     ∀ h : (H : Subgroup G), (h : G) ∈ M → ∃ k : (H' : Subgroup G), (k : G) ∈ K ∧
-      (b k).unop ≫ f = f ≫ (a h).unop
+      (b k).unop.asHom ≫ f = f ≫ (a h).unop.asHom
 
 /-- An arrow intertwining two local actions on a common open subgroup is locally
 equivariant. -/
 theorem isLocallyEquivariant_of_intertwines {U V : T} {H H' : OpenSubgroup G}
     {a : (H : Subgroup G) →* (End U)ᵐᵒᵖ} {b : (H' : Subgroup G) →* (End V)ᵐᵒᵖ}
     {f : V ⟶ U} (N : OpenSubgroup G) (hNH : N ≤ H) (hNH' : N ≤ H')
-    (hf : ∀ (g : G) (hg : g ∈ N), (b ⟨g, hNH' hg⟩).unop ≫ f = f ≫ (a ⟨g, hNH hg⟩).unop) :
+    (hf : ∀ (g : G) (hg : g ∈ N), (b ⟨g, hNH' hg⟩).unop.asHom ≫ f =
+      f ≫ (a ⟨g, hNH hg⟩).unop.asHom) :
     IsLocallyEquivariant a b f := by
   intro K _
   refine ⟨N ⊓ K, inf_le_left.trans hNH, fun h hh => ?_⟩
@@ -86,10 +87,11 @@ theorem IsDiscreteSection.of_finite_family {F : Tᵒᵖ ⥤ A} {U : T} {H : Open
   apply hsep
   intro i
   obtain ⟨k, hkK, hk⟩ := hM i h (hhM i)
-  have h₁ : F.map (f i).op (F.map (a h).unop.op s) = F.map (f i ≫ (a h).unop).op s := by
+  have h₁ : F.map (f i).op (F.map (a h).unop.asHom.op s) =
+      F.map (f i ≫ (a h).unop.asHom).op s := by
     rw [op_comp, F.map_comp, CategoryTheory.comp_apply]
-  have h₂ : F.map ((b i k).unop ≫ f i).op s =
-      F.map (b i k).unop.op (F.map (f i).op s) := by
+  have h₂ : F.map ((b i k).unop.asHom ≫ f i).op s =
+      F.map (b i k).unop.asHom.op (F.map (f i).op s) := by
     rw [op_comp, F.map_comp, CategoryTheory.comp_apply]
   rw [h₁, ← hk, h₂, hK i k hkK]
 

@@ -1,6 +1,6 @@
 # Open and closed immersions of analytic spaces
 
-This unit defines open and closed immersions in the Library's localized category
+This module defines open and closed immersions in the Library's localized category
 of analytic spaces, `SaturatedAtlasPresentation.LocalizedCategory`, as two
 morphism properties `openImmersion` and `closedImmersion`. It also defines the
 underlying chart-level notion of closed immersion for strong maps between
@@ -13,12 +13,13 @@ constructed saturations. It proves the following basic facts.
 It also proves that an admissible epimorphism of normed algebras is a finite
 Banach algebra map.
 
-The unit makes no further claim. It does not prove that either class is stable
+The module makes no further claim. It does not prove that either class is stable
 under composition, base change or extension of the ground field. It does not
 prove that a closed immersion is a homeomorphism onto a closed subset, or a
 monomorphism. It does not prove that the localized notion of closed immersion
 can be tested on any chosen presentation. No comparison with algebraic open or
-closed immersions is stated here; that is the subject of later statements.
+closed immersions is stated here; for affine analytifications it is stated in
+`AffineAnalytificationAnalyticImmersionStatement`.
 
 ## Provenance
 
@@ -66,7 +67,7 @@ The pages below were read in the registered files.
   formalized here.
 - Conrad, printed p.19, in the proof of Proposition 5.11(3), uses that the
   analytification of separated algebraic spaces locally of finite type is
-  compatible with open and closed immersions. That is why this unit is needed.
+  compatible with open and closed immersions. That is why this module is needed.
 
 ## Derived formulation
 

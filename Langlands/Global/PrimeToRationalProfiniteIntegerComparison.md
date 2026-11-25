@@ -1,9 +1,7 @@
 # Normalized prime-to-modulus residue and finite-adele comparison
 
-Author: Worker 142.
-
-This module states the missing comparison between the published away residue
-scalar ring and the published finite adeles away from a natural modulus. It
+This module states the comparison between the existing away residue
+scalar ring and the existing finite adeles away from a natural modulus. It
 also states compatibility with restriction from the full scalar rings. Both
 declarations return `Prop`; the module proves neither declaration and supplies
 no unconditional comparison map.
@@ -13,7 +11,9 @@ no unconditional comparison map.
 `PrimeToRationalProfiniteIntegerAdeleComparison h m` takes a natural number
 `m` and an explicit proof
 `h : Langlands.Global.RationalProfiniteIntegerAdeleComparison`. The full
-comparison remains a separate mathematical obligation.
+comparison is a separate statement, proved as
+`rationalProfiniteIntegerAdeleComparison` in
+`Langlands.Global.RationalProfiniteIntegerComparisonProof`.
 
 The full comparison proposition existentially supplies a topological ring
 equivalence from `ProfiniteIntegerRing` to `integralFiniteAdeles ℚ`, normalized
@@ -38,7 +38,7 @@ rings. `primeToIntegralFiniteAdeles m` is its everywhere-integral subring with
 the inherited subspace topology. All topology here is the existing topology;
 the ambient adele ring retains the restricted-product topology.
 `primeToIntegralRestriction m` and `primeToFiniteRestriction m` are the
-published restrictions from the full integral and finite adeles.
+existing restrictions from the full integral and finite adeles.
 
 For prime `m = p`, these are the prime-to-`p` rings. For positive composite `m`,
 they omit the primes dividing `m`. The statement also includes `m = 1` (all
@@ -91,8 +91,9 @@ place identifications, followed by clearing the finitely many denominator
 primes in a restricted adele. The integer normalization fixes the continuous
 integral comparison on the dense integer residue families, so the away maps
 must be compatible with the full normalized witnesses. This explains the
-formulation; none of this route is proved in the submitted module. It belongs
-to a separate exact-target proof task after publication.
+formulation; none of this route is proved in this module. The proposition
+is proved as `primeToRationalProfiniteIntegerAdeleComparisons` in
+`Langlands.Global.PrimeToRationalProfiniteIntegerComparisonProof`.
 
 The motivation is Harris and Taylor, *The Geometry and Cohomology of Some
 Simple Shimura Varieties* (2001), Chapter I, printed p.18 (PDF p.26), which

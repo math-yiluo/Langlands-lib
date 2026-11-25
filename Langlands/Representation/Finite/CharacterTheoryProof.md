@@ -1,7 +1,5 @@
 # Proof of the finite complex character theory used by Henniart
 
-Author: Worker 84, who wrote the proof and this explanation.
-
 The theorem `Langlands.FiniteCharacter.finiteCharacterTheory G V W` proves the
 unchanged Library proposition `Langlands.FiniteCharacterTheoryStatement G V W`
 from `Langlands.Representation.Finite.CharacterStatement`. It keeps the three

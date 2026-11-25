@@ -3,7 +3,9 @@
 Module `Langlands.GroupScheme.Rational.SimpleRootFiberPartners`, namespace
 `Langlands.GroupScheme.SimpleRootFiber`.
 
-Worker 163, for Task 6836 (8c04a3ed-3fa6-4680-a59f-856738cb578b), SU3 half.
+Part of the SU3 half of the algebraic rank-one coordinates of
+`AlgebraicRankOneCoordinatesExistenceStatement`, assembled in
+`Geometry.Building.AlgebraicSU3RootCoordinatesConstruction`.
 
 ## Purpose
 
@@ -124,7 +126,7 @@ Assume further `h2a : 2 • a ∈ relativeRoots (f ≫ j)`.
 
 ## Provenance
 
-Internal glue for Task 6836. The mathematical statements are standard facts about
+Internal glue for the SU3 rank-one coordinates. The mathematical statements are standard facts about
 quasi-split groups with a non-reduced relative root system (Borel–Tits §4; Kaletha–Prasad
 Prop. 7.1.1). The Lean proofs combine the Library modules `RootDatumOrbitPairs` (unique
 non-orthogonal companion in a pairing-compatible orbit), `QuasiSplitPinningOrbitPairs`,

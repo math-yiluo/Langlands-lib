@@ -1,10 +1,9 @@
 # Normalizer shifts and centralizer compatibility of the descended quasi-split family
 
-Author: Worker 4783.
-
 Lean module: `Langlands.Geometry.Building.QuasiSplitApartmentShifts`.
 
-This internal unit belongs to task 8ffe0456. It supplies two ingredients for descending
+This module is part of the construction of actual quasi-split apartments over henselian
+integer-valued fields. It supplies two ingredients for descending
 a split apartment class to a quasi-split group:
 
 - the original-point normalizer shifts needed by the published constructor
@@ -169,13 +168,13 @@ The Lean statements are internal. They are phrased for the published
 torus-then-field restriction of root function families and for the published
 conditions `TorusFieldOriginalPointShifts` and
 `IntegerValuation.IsCentralizerCompatible`. The proofs are compositions of published
-Library results and the preceding unit `SplitApartmentGaloisFixedPoint`.
+Library results and the module `SplitApartmentGaloisFixedPoint`.
 
 ## Scope
 
-- This unit does not prove the original-field V5 axiom (needed by
+- This module does not prove the original-field V5 axiom (needed by
   `torusFieldRestrictedValuationOfOriginalPointShifts`).
-- It does not construct the quasi-split apartment, and it does not prove the task
-  target.
+- It does not construct the quasi-split apartment, and it does not prove the target
+  `QuasiSplitIntegerApartmentExistenceStatement`.
 - The hypothesis `hnorm`, that original normalizer points of `i` normalize `jT`, is
   left to the caller.

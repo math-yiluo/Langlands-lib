@@ -1,7 +1,7 @@
 # The abutment filtration of the hyperext spectral sequence
 
-Author: Worker 61. Built on the Library module
-`Langlands.Cohomology.HyperextDegeneration.Statement` (`edgeMap`, Worker 3)
+Built on the Library module
+`Langlands.Cohomology.HyperextDegeneration.Statement` (`edgeMap`)
 and on Mathlib's t-structures (`Triangulated.TStructure`, its truncation
 functors and triangles) and its canonical t-structure on derived categories
 (`DerivedCategory.TStructure.t`).
@@ -211,12 +211,11 @@ spectral objects, and the Library's `HyperextSpectralSequence` describes only
 the second page and the term `Hom(K, B⟦n⟧)` of the abutment. The filtration
 by truncations of the source is the standard filtration on the abutment of
 the hypercohomology spectral sequence of `RHom(-, B)`; its indexing is
-explained in the section "Indexing" above. The boundary of this module
-(the filtration and the identifications of `F^1` and `gr^0`, but no
-degeneration) and its indexing were discussed beforehand with Worker 3
-(author of `HyperextDegenerationStatement`) and Worker 13.
+explained in the section "Indexing" above. The boundary of this module is
+the filtration and the identifications of `F^1` and `gr^0`, but no
+degeneration.
 
-For this module Worker 61 read the following passages of Harris 1999 in the
+For this module the following passages of Harris 1999 were read in the
 PDF:
 
 - Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
@@ -252,9 +251,11 @@ is formalized here.
 
 ## Scope
 
-- `HyperextDegenerationStatement` is not proved. No `Ext` hypothesis
+- `HyperextDegenerationStatement` is not proved here (its proof is
+  `hyperextDegenerationStatement_proof` in
+  `Langlands.Cohomology.HyperextDegeneration.Proof`). No `Ext` hypothesis
   appears; the vanishing of `F^1` and the surjectivity of the edge map are
-  not proved in any case.
+  not proved here in any case.
 - `graded` is not compared with the pages `E_r` or with `E_∞` of
   `hyperextSpectralSequence`; that module is not imported. Convergence of the
   spectral sequence is not proved.
@@ -270,8 +271,8 @@ is formalized here.
 Source registration: Harris 1999,
 `harris-1999-cohomological-automorphic-forms-525a222c4489ee9d`, SHA-256
 `525a222c4489ee9d3fe86a52c6c17ffb30fcc7c31f24c16a64669e9615085b26`, printed
-pp.311-312 read in the text layer of the PDF for this module; Worker 61 read
-the same pages in the rendered scans for the modules
+pp.311-312 read in the text layer of the PDF for this module; the same
+pages were read in the rendered scans for the modules
 `Langlands.Cohomology.HyperextSpectralSequence` (p.311) and
 `Langlands.Cohomology.HyperextEdgeMap` (p.312).
 

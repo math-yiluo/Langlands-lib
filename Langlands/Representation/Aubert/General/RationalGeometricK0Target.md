@@ -1,7 +1,7 @@
 # Geometric-lemma K0 expansion on the actual rational-point family
 
 `Langlands.Aubert.General.RationalPointFamily.RationalGeometricK0ExpansionStatement`
-is the unproved actual rational-point target for Aubert 1995, identity (1.3),
+is the actual rational-point target for Aubert 1995, identity (1.3),
 printed p.2181 / PDF p.3. It specializes the published
 `General.GeometricK0ExpansionStatement` and its actual normalized intersection
 terms. It constructs no new geometric filtration and proves no expansion.
@@ -93,18 +93,18 @@ There is no splitness, quasisplitness, characteristic-zero or positive-rank
 restriction. The finite label set may be empty. The full centralizer
 remains the denominator; no identification with the split torus is made.
 
-Worker 165 authors this specialization. The actual normalized functor/K0
-adapters retain Worker 23's ownership; the geometric filtration and
-orbit-functor comparisons retain Worker 14 and the Renard owners.
-The parent task `46df6a68-5db4-4428-8044-05151d6ce1f6` owns the
-focused proof successor and final assembly. Its proof must specialize
-the actual geometric filtration, identify the graded pieces with the
-displayed normalized intersection composites, and apply
+The actual normalized functor/K0 adapters, the geometric filtration and
+the orbit-functor comparisons are in their own modules.
+The proof of this target is `rationalGeometricK0Expansion` in
+`RationalGeometricK0Expansion`. It specializes
+the actual geometric filtration, identifies the graded pieces with the
+displayed normalized intersection composites, and applies
 `SmoothRep.filtrationGrothendieckStatement`. The orbit inversion,
 both Haar correction twists, modulus and half-modulus comparisons,
-smooth realization and any compact-induction/full-induction comparison
-remain obligations. These representation-theoretic assertions and all
-finite-length premises are outside the parent's permitted final external
+smooth realization and the compact-induction/full-induction comparison
+are handled in `RationalGeometricOrbitOrdering`, `RationalGeometricOrbitTerm`
+and `RationalGeometricOrbitSource`. These representation-theoretic assertions
+and all finite-length premises are outside the permitted final external
 Chapter V structural boundary. The structural intersection premise
 is visible and is not added to that boundary by this target.
 No classification-independence claim is made. Proposition 3.2

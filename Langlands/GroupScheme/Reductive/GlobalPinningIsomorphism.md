@@ -1,7 +1,7 @@
 # Based global isomorphisms from coherent actual root frames
 
-Worker 591, using Worker 686's actual chart constructions. This internal
-adapter assumes supplied full global coordinate root data, chosen bases
+This internal adapter uses the actual chart constructions of
+`Reductive/GlobalPinningTransitions`. It assumes supplied full global coordinate root data, chosen bases
 matched by one full root-datum equivalence, coherent actual root frames,
 and the exact affine pinned isomorphism theorem.
 
@@ -41,5 +41,6 @@ The frame coherence input has exactly the original-group dual-number
 point meaning of `AffineRootFrames.IsCoherent`. This module does not
 construct frames from a Picard hypothesis, select bases from supplied
 Borels, produce the root-datum map from local group isomorphisms, or
-prove the affine pinned theorem. Those remain separate obligations for
-the parent isomorphism statement.
+prove the affine pinned theorem. Those are separate steps of the proof of
+`ReductiveSplitTorusBorelIsomorphismStatement`, which the Library proves as
+`reductiveSplitTorusBorelIsomorphism` (`Reductive/SplitTorusBorelIsomorphismProof`).

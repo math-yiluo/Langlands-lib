@@ -23,7 +23,7 @@ namespace OpenSubgroupTransport
 theorem strictActionPullback_comp_baseMap (X : ρ.OpenSubgroupTransport)
     (g : G) (c : G ⧸ X.subgroup.toSubgroup) :
     (X.strictActionPullback g c).comp X.domain.obj.baseMap =
-      X.domain.obj.baseMap.comp (ρ.toMonoidHom (X.actionChartElement g c : G)).inv := by
+      X.domain.obj.baseMap.comp (ρ.toMonoidHom (X.actionChartElement g c : G)).asIso.inv := by
   have h := X.chartSectionAction_comp_baseMap (X.actionChartElement g c)⁻¹
   simpa only [strictActionPullback, map_inv, InvMemClass.coe_inv,
     Aut.Aut_inv_def, Iso.symm] using h
@@ -43,8 +43,8 @@ theorem cosetMap_smul (f : X ⟶ Y) (g : G) (c : G ⧸ X.subgroup.toSubgroup) :
     rw [mul_assoc]
 
 private theorem ambientInv_comp_equivariance (r s : G) :
-    (ρ.toMonoidHom r).inv.comp (ρ.toMonoidHom s).inv =
-      (ρ.toMonoidHom (s * r)).inv := by
+    (ρ.toMonoidHom r).asIso.inv.comp (ρ.toMonoidHom s).asIso.inv =
+      (ρ.toMonoidHom (s * r)).asIso.inv := by
   rw [map_mul]
   rfl
 

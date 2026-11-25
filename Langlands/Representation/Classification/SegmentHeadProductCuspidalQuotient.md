@@ -1,9 +1,5 @@
 # Actual cuspidal quotients of special-head products
 
-Authors: Worker 357 (independent-universe construction and data bundle),
-Worker 328 (the adapted support-realization construction), and Worker 627
-(the adapted dependent rank-transport pattern).
-
 `Langlands.Classification.segmentHeadProductCuspidalQuotient` constructs
 `SegmentHeadProductCuspidalQuotientData T d` for every
 `d : T.SegmentProductDatum.{uV,uF} n` with `d.HasSegmentHeads`.
@@ -58,10 +54,8 @@ specified normalized product map.
 
 The shared [SegmentProductCuspidalMembers](SegmentProductCuspidalMembers.md)
 module supplies the ordered refinement in namespace
-`Langlands.Classification.SegmentProductCuspidalEmbedding`. It reuses the
-published implementation by Worker 1070, with the attribution to Workers 328
-and 627 retained in its companion. Each segment block is refined into a
-uniform shape of its segment length and positive cuspidal rank. The
+`Langlands.Classification.SegmentProductCuspidalEmbedding`. Each segment
+block is refined into a uniform shape of its segment length and positive cuspidal rank. The
 flattened labels correspond consecutively to pairs of a segment index
 and a member index. The family `memberFamily` takes the corresponding
 `Segment.member`, and `memberRepresentatives` uses the determinant-power
@@ -103,7 +97,8 @@ ordered induction, tensor and support constructions. The flat member
 construction adapts `SegmentHeadProductCuspidalSupportProof`; the new data
 bundle records its actual morphism before any product irreducibility
 premise is imposed. The dependent rank-transport argument ultimately
-adapts Worker 627's equality-elimination pattern. No tempered theorem or
+adapts the equality-elimination pattern of
+`TemperedSpecialSegmentRefinementAssembly`. No tempered theorem or
 hypothesis is used by that argument.
 
 The original structural context is Zelevinsky, *Induced representations of
@@ -122,11 +117,14 @@ filenames or project notes; the source-boundary note
 
 ## Dependency audit
 
-The submitted version's transitive import inventory against supplied Library
+This audit was made while the member helpers were still in this module (see
+the end of this section). The module's transitive import inventory against
+Library commit
 `e3944f764d2c00d53ac87227e98601bb667f348f` has 138 project modules including
 this module, and 90 external import roots. All 137 inherited project
 Lean/Markdown pairs match that Library byte for byte. Relative to the
-current support-realization proof closure, this replaces its root and
+closure of the support-realization proof
+`SegmentHeadProductCuspidalSupportProof`, this replaces its root and
 statement module by this construction module; the remaining imported
 modules are identical.
 
@@ -160,13 +158,12 @@ classification, square-integrable exhaustion, regular exhaustion or
 special-head product irreducibility conclusion. Inherited essential and
 tempered definitions impose no extra hypotheses on this construction.
 The derivative results and independence audits needed for the full criterion
-remain separate obligations.
+are not part of this module.
 
-Integration replaces the duplicated member helpers with the identical published
-implementation in the shared member module. The public quotient data and support
-conclusion are unchanged, and the shared module imports only the lower
-construction dependencies.
+The member helpers are not duplicated here: the module uses the identical
+implementation in the shared member module, which imports only the lower
+construction dependencies. The public quotient data and support conclusion are
+the same as with the helpers in this module.
 
-The submitted module and constructor inspection compile successfully with only
-`propext`, `Classical.choice` and `Quot.sound` as axioms. Development
-compilation is not independent semantic acceptance or publication.
+The module and a constructor inspection compile with only `propext`,
+`Classical.choice` and `Quot.sound` as axioms.

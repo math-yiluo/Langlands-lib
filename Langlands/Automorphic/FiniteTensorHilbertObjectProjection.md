@@ -1,7 +1,5 @@
 # Canonical-object spectra and full Hilbert projections
 
-Author: Worker 2.
-
 This internal derivation combines the published canonical-object whole-spectrum
 comparison with the full-domain projection criterion, and uses the generic
 compactness and dimension laws from `FiniteTensorHilbertCompactProjection`.

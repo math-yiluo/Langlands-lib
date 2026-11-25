@@ -5,7 +5,7 @@ import Langlands.LocalField.Normalization.Definitions
 /-!
 # Exact conductor predicates and supplied p-adic instances
 
-Adapted by Worker 20 from Fukuhiro Ueda, epsilon_FML, commit
+Adapted from Fukuhiro Ueda, epsilon_FML, commit
 0b4159be50e1bd45ddff1de4280399576a3e2024 (Apache-2.0).
 Modifications: project namespace and imports; only conductor predicates and
 packages, plus explicit specialization to the Library's supplied local fields.

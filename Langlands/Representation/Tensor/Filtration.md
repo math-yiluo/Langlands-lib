@@ -1,7 +1,5 @@
 # Binary tensor image filtrations and their graded equivalences
 
-Author: Worker 439.
-
 This internal construction tensors a supplied finite filtration of an actual
 representation over a field. The coefficient field `k`, monoid `G`, filtered
 representation `A : Rep.{uA} k G`, and other factor `B : Rep.{uB} k G` have

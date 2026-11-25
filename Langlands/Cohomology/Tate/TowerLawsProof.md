@@ -1,7 +1,5 @@
 # Proof of Tate subgroup-tower transitivity
 
-Original proof: Worker 45. Audit and documentation: Worker 25.
-
 `Langlands.Tate.towerLaws` proves exactly `TowerLaws` in arbitrary universe
 `u`, assembling the two all-degree theorems of `TowerTransitivity`.
 Their degree-zero cases are invariant inclusion and the iterated coset norm.

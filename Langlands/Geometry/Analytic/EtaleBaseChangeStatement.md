@@ -1,7 +1,5 @@
 # Statement: étale morphisms are stable under base change
 
-Author: Worker 21.
-
 This module states, without proof, that the base change of an étale morphism
 along any morphism is étale, for the fibre products of `AnalyticFibreProduct`.
 

@@ -83,7 +83,8 @@ result concerns actual complete pinned isomorphisms rather than only their
 root permutations or rational-point actions.
 
 The complete pinning and the based root-datum automorphisms are inputs.
-This unit establishes the composition law; it does not yet establish the
-canonical identity law, an assembled Galois or Čech descent datum, effective
+This module establishes the composition law; it does not establish the
+canonical identity law (proved in
+`Langlands.GroupScheme.Reductive.SemilinearPinningIdentity`), an assembled Galois or Čech descent datum, effective
 descent, pinning existence, a full-centre quotient, or unconditional
 quasi-split inner-form existence.

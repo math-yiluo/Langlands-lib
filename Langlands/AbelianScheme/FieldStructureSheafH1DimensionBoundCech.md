@@ -1,7 +1,5 @@
 # The `H¹` dimension bound for abelian schemes over a field, from Künneth and vanishing
 
-Author: Worker 274.
-
 This module proves `Langlands.AbelianScheme.fieldStructureSheafH1DimensionBound_of`: the
 published proposition `Langlands.AbelianScheme.FieldStructureSheafH1DimensionBoundStatement`
 follows from two hypotheses,
@@ -21,7 +19,7 @@ degrees `n > d`). Hence `fieldStructureSheafH1DimensionBound_of_statements` prov
 proposition from these two statements and the Künneth detection statement. Finally,
 `fieldStructureSheafH1DimensionBound_of_dim_of_vanishing` discharges the Künneth detection
 statement with `Langlands.Cohomology.Cech.kunnethDetection` (module
-`Langlands.AlgebraicGeometry.CechKunneth`, by Worker 921), so the published proposition follows
+`Langlands.AlgebraicGeometry.CechKunneth`), so the published proposition follows
 from the two published statements alone.
 
 It contains no `sorry` and no new axioms. It is an intermediate step of the proof; the final

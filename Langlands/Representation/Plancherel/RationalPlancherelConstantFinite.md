@@ -1,6 +1,6 @@
 # Finiteness of `γ(M_α|M)` and of `c(G|M)`
 
-Worker 5. This module proves that the rank-one constants `γ(M_α|M)` in
+This module proves that the rank-one constants `γ(M_α|M)` in
 Waldspurger's constant
 
 `c(G|M) = γ(G|M)⁻¹ ∏_{α ∈ Σ_red(P)} γ(M_α|M)`

@@ -38,8 +38,3 @@ module does not identify inverse-conjugated scalars in fine tuple coordinates.
 It supplies no fine full-central character, real-exponent projection,
 strict exclusion of a Weyl branch, geometric-lemma theorem, isolation or Hom
 comparison. The provenance is internal, and the implemented proofs use only the imported constructions and elementary intertwiner transport.
-
-Worker 526 implemented this construction. Workers 359 and 430 supplied
-coordinate, normalization and same-power transport guidance during the
-parent Hom-comparison investigation. This attribution supplies no analytic
-comparison result.

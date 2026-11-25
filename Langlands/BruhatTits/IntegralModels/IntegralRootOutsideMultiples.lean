@@ -46,6 +46,8 @@ theorem exists_integral_root_point_outside_nsmul
           (n • T.characterSpecialization hT a)).carrier _ ∧
       D.neutral.integralPointMap x ∉ rootGroupPoints i (n • a) := by
   let : Smooth Q.quotient.X.hom := hQ.2.2.smooth
+  have : AddMonoidHomClass (characterLattice S ≃+ characterLattice T.specialFibre) _ _ :=
+    AddEquivClass.instAddMonoidHomClass _
   have hs := hT.baseChange (IntegralModel.residueBaseMap R)
   have ha0 : a ≠ 0 := by
     intro hz

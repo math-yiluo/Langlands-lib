@@ -31,12 +31,12 @@ section RankOne
 
 variable {F : Type u} [Field F] [NumberField F]
 
-local instance : AddCommGroup (RationalInvariantFunctions F 1) := Submodule.addCommGroup _
-local instance : AddCommGroup (ContinuousRationalFunctions F 1) := Submodule.addCommGroup _
-local instance : AddCommGroup (FiniteSmoothRationalFunctions F 1) := Submodule.addCommGroup _
-local instance : AddCommGroup (AutomorphicForms F 1) := Submodule.addCommGroup _
-local instance : AddCommGroup (StableAutomorphicFunctions F 1) := Submodule.addCommGroup _
-local instance (T : OperatorRealization F 1) : AddCommGroup T.Space := Submodule.addCommGroup _
+private local instance : AddCommGroup (RationalInvariantFunctions F 1) := Submodule.addCommGroup _
+private local instance : AddCommGroup (ContinuousRationalFunctions F 1) := Submodule.addCommGroup _
+private local instance : AddCommGroup (FiniteSmoothRationalFunctions F 1) := Submodule.addCommGroup _
+private local instance : AddCommGroup (AutomorphicForms F 1) := Submodule.addCommGroup _
+private local instance : AddCommGroup (StableAutomorphicFunctions F 1) := Submodule.addCommGroup _
+private local instance (T : OperatorRealization F 1) : AddCommGroup T.Space := Submodule.addCommGroup _
 
 private def valueAtOne (T : OperatorRealization F 1) : T.Space →ₗ[ℂ] ℂ :=
   (ContinuousMap.evalCLM ℂ (1 : AdelicGL F 1)).toLinearMap.comp

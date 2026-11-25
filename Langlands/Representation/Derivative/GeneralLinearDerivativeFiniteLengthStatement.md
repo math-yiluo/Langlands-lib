@@ -1,7 +1,5 @@
 # Finite-length preservation by the general-linear derivatives
 
-Author: Worker 749.
-
 This module states that every published Bernstein–Zelevinsky derivative
 `generalLinearDerivative T ψ N k hk` of
 `Langlands.Representation.Derivative.Iteration` sends a smooth representation
@@ -9,8 +7,9 @@ of finite length to a smooth representation of finite length. It has one
 Prop-valued definition, the principal proposition
 `Langlands.Derivative.GeneralLinearDerivativeFiniteLengthStatement.{uF, uV} F T`.
 This proposition definition supplies no proof. It proves nothing and
-constructs no functor. Finite length of the derivatives remains a proof
-obligation.
+constructs no functor. Finite length of the derivatives is proved
+separately: `generalLinearDerivativeFiniteLength` in
+`GeneralLinearDerivativeFiniteLengthProof`.
 
 ## The principal proposition
 
@@ -232,10 +231,9 @@ No Haar-modulus comparison is needed for this statement.
 
 The formulation through `SmoothRep.HasFiniteLength`, the quantification of
 `ψ`, `N`, `k`, `hk` and `A` in one proposition, and the use of the direct form
-instead of `PreservesFiniteLength` are internal choices that follow the task
-contract.
+instead of `PreservesFiniteLength` are internal choices.
 
-## Remaining proof obligation
+## Proof obligation
 
 A proof of `GeneralLinearDerivativeFiniteLengthStatement F T` must show, for
 every `ψ`, every `N`, every `k ≤ N` and every finite-length `A`, that
@@ -253,8 +251,8 @@ then use finite-length preservation by normalized products and closure of
 finite length under extensions and subobjects; finally extend to all
 finite-length inputs by a composition series and exactness. Such a proof
 needs actual induction over finite products, carrier transports along rank
-equalities and the rank-zero cases. This route is not an accepted proof and
-is not required.
+equalities and the rank-zero cases. This route is not part of the statement;
+the proof in `GeneralLinearDerivativeFiniteLengthProof` follows its main steps.
 
 ## Imports and independence
 
@@ -272,8 +270,8 @@ classification, segment, multisegment, square-integrable, tempered, socle,
 cuspidal-support, parabolic-induction, Jacquet-formula, irreducibility,
 exactness, Leibniz-filtration or plus-functor module.
 
-Neither the module nor its closure uses the special-head product criterion of
-task `8364e73f-14ec-4d14-8f2b-1555a7c1ce95`,
+Neither the module nor its closure uses the special-head product criterion
+`SegmentHeadProductIrreducibility`,
 `GenericSegmentProductUniqueness`, `SquareIntegrableLanglandsClassification`,
 `SegmentFullJacquetFormula`, `SegmentHeadJacquetFormula`,
 `SegmentSocleJacquetFormula`, `SegmentSpecialJacquetExponentNormFormula`, or
@@ -282,7 +280,6 @@ quotient coverage, ordered conversion, tempered uniqueness, square-integrable,
 regular or socle exhaustion, analytic segment classification, special-segment
 square-integrability, segment-socle irreducibility, unlinked or linked socle
 structure, socle commutation, linked socle gluing or ordered socle existence
-tasks. It uses no result of Zelevinsky 1980, in particular none of its
-segment derivative formulas, and nothing from task
-`8e5b4563-0365-41c7-b134-70f2a0b36292`. These exclusions apply to every proof
-of this statement and to all of its prerequisites.
+results. It uses no result of Zelevinsky 1980, in particular none of its
+segment derivative formulas, and nothing from the derivative statements
+`SupercuspidalDerivativesStatement` and `SegmentSocleDerivativesStatement`.

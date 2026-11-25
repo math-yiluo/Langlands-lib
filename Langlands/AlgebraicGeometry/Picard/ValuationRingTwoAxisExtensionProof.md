@@ -35,6 +35,6 @@ premises need no further use.
 The provenance of this final proof is an internal composition of the
 two published results. The geometric construction is explained in
 `MumfordProductGenericExtension.md` and `ProjectiveGenericExtension.md`.
-The projectivity proof by Workers 281 and 928 is explained in
+The projectivity proof is explained in
 `IntegralFibreProjectivityProof.md`. This module imports those results
 without changing the target or their hypotheses.

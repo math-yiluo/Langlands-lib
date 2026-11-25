@@ -1,6 +1,6 @@
 # Residual original Hom action interface checks
 
-Author: Worker 702. This internal companion imports
+This internal companion imports
 `NonUnitalBimoduleHomActions`; that module's paired Markdown supplies the
 source citations, intrinsic proof explanations and mathematical limits.
 No new source assertion is made here.

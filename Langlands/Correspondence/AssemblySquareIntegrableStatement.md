@@ -1,7 +1,5 @@
 # Essentially square-integrable assembly images
 
-Author: Worker 1700.
-
 This module states one proposition, `AssemblySquareIntegrablePreimageStatement`.
 It is a statement only. Nothing is proved, and no correspondence is assumed.
 

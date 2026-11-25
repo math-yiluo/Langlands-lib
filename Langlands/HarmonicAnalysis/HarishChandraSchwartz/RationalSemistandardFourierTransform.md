@@ -1,6 +1,7 @@
 # Actual Fourier tensors for every semistandard parabolic
 
-This is the first construction unit of Task 7260. It specializes the published
+This is the first construction step of the full Fourier product family
+(`RationalSemistandardFourierFamily` is the second). It specializes the published
 actual operator construction to the literal subgroups of every intrinsic
 `SemistandardSpectralIndex i`. It does not assert smooth orbit dependence,
 inter-parabolic covariance, or Fourier support finiteness.
@@ -108,7 +109,8 @@ freely supplied character functional.
 The transform is defined on the literal Levi subgroup and does not depend on a
 representing scheme model. The imported model comparison fixes every actual
 Levi element, unitary character value, and inducing representation; it merely
-reindexes orbit sections. That reindexing will be used in the product unit.
+reindexes orbit sections. That reindexing is used in the product family
+(`RationalSemistandardFourierFamily`).
 Changing compact pictures uses the specified tensor equivalences above.
 
 Changing split-component presentations uses the imported
@@ -117,7 +119,7 @@ The normalization lemma deliberately displays equality of the actual formal
 degrees: arbitrary independently scaled quotient Haar measures do not imply
 that equality. Standard comparison for the same central quotient is fully
 proved here; comparison of a whole product with independently supplied split
-components and measures will retain the precise normalization condition in the
-product unit. The standard theorem also retains closedness of the chosen matrix
+components and measures retains the precise normalization condition in
+`RationalSemistandardFourierFamily`. The standard theorem also retains closedness of the chosen matrix
 representation, its height compatibility with `K`, the Levi Iwasawa pair, and
 `IsRationalLeviTempered`, exactly as the existing standard transform does.

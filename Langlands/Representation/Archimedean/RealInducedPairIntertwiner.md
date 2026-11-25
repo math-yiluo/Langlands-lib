@@ -1,6 +1,6 @@
 # Intertwining of the four-crossing induced-pair map
 
-Worker 765 derives this supporting result from the concrete position exponents,
+This supporting result is derived from the concrete position exponents,
 the four-crossing map of `RealInducedPairFrobenius`, the proved intertwining
 criterion for `blockFrobMap`, and the proved composition calculus in
 `RealStandardFiltration`. No external literature or classification result is

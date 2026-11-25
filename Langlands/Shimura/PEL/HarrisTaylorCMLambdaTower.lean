@@ -191,7 +191,7 @@ local notation "ιlev" => ι ((Hlev) ⋙ Action.forget (ModuleCat.{0} (FiniteCom
 /-- `γ ∈ Gal(F̄/F)` acts on a class from level `U` by its action at level `U`. -/
 theorem cmHarrisLambdaTowerCohomology_ρ_ι_apply (γ : Field.absoluteGaloisGroup F)
     (U : SmallCMLevel D) (x : ((Hlev).obj (op U)).V) :
-    ((Htow).ρ γ).hom.hom ((ιlev U).hom x) = (ιlev U).hom ((((Hlev).obj (op U)).ρ γ).hom x) :=
+    ((Htow).ρ γ).asHom.hom.hom ((ιlev U).hom x) = (ιlev U).hom ((((Hlev).obj (op U)).ρ γ).asHom.hom x) :=
   towerAction_ρ_ι_apply (Hlev) (hHlev) γ U x
 
 /-- `g ∈ GG(A_f)` sends a class from level `U` to the class at the conjugate level through the
@@ -209,7 +209,7 @@ theorem cmHarrisLambdaTowerCohomology_representation_ι_apply
 /-- The actions of `GG(A_f)` and of `Gal(F̄/F)` on `H^d(S, W)_λ` commute. -/
 theorem cmHarrisLambdaTowerCohomology_comm (γ : Field.absoluteGaloisGroup F)
     (g : D.rationalInvolution.FiniteAdelicPoints) (z : (Htow).V) :
-    ((Htow).ρ γ).hom.hom ((Htow).V.obj.ρ g z) = (Htow).V.obj.ρ g (((Htow).ρ γ).hom.hom z) :=
+    ((Htow).ρ γ).asHom.hom.hom ((Htow).V.obj.ρ g z) = (Htow).V.obj.ρ g (((Htow).ρ γ).asHom.hom.hom z) :=
   towerAction_comm (Hlev) (hHlev) γ g z
 
 /-! ## Fixed vectors and the level Hecke algebra -/
@@ -261,11 +261,11 @@ theorem cmHarrisLambdaTowerHeckeModule_ρ_smul (U : SmallCMLevel D)
     ((cmHarrisLambdaTowerHeckeModule D C preservation composition
   unitCoherence associativity comparison symmetry stability square universality
   dualityNaturality polarizationStability compatibility h htor q p ρ existence geometry hRigid
-      l degree U).ρ γ).hom (a • x) =
+      l degree U).ρ γ).asHom.hom (a • x) =
       a • ((cmHarrisLambdaTowerHeckeModule D C preservation composition
   unitCoherence associativity comparison symmetry stability square universality
   dualityNaturality polarizationStability compatibility h htor q p ρ existence geometry hRigid
-      l degree U).ρ γ).hom x :=
+      l degree U).ρ γ).asHom.hom x :=
   towerHeckeModule_ρ_smul (Hlev) (hHlev) U γ a x
 
 /-! ## Isotypic parts and multiplicity spaces -/

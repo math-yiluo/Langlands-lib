@@ -1,7 +1,5 @@
 # Split-part transfer through the central torus of a represented centralizer
 
-Authors: Worker 1348 and Worker 1361.
-
 This is an internal, conditional assembly result over arbitrary fields, with
 universe parameter `u`. Its inputs include an ambient maximal split torus and
 an actual closed representative of its all-test centralizer. It asserts no
@@ -39,13 +37,14 @@ in `Rational.TorusSplitPartTransfer` gives the conclusion.
 `CentralTorusSplitTransferStatement` is the Prop-valued uniform formulation;
 `centralTorusSplitTransfer` proves it using the preceding theorem. The explicit
 universal property for `z` can be supplied by
-`IsLargestCentralSubtorus.greatest` when that interface is available.
+`IsLargestCentralSubtorus.greatest` (`Rational.LeviSubgroup`).
 This module does not assume or prove that any particular parabolic has these
 data. Those geometric existence and comparison results, and their application
-to the unchanged minimal-parabolic target, remain separate obligations.
+to the unchanged minimal-parabolic target, are not part of this module; the
+target is proved as `minimalParabolicTorusSplitPart` in
+`Rational.MinimalParabolicTorusSplitPartProof`.
 
-The provenance is internal. Worker 1348 authored the Lean argument and this
-documentation. Worker 1361 contributed the proposed rational-Levi and largest
-central-subtorus interfaces motivating the assembly. The proof itself uses only
+The provenance is internal. The rational-Levi and largest central-subtorus
+interfaces of `Rational.LeviSubgroup` motivate the assembly. The proof itself uses only
 the existing actual-morphism factorization, centrality, split-torus and ambient
 transfer APIs.

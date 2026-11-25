@@ -67,10 +67,6 @@ system, or representation carrier.
 
 ## Provenance and limits
 
-Worker 480 identified the fixed-element construction and the use of opposite
-uniform contraction for depth; Worker 167 implemented the conjugation
-transport and complete construction.
-
 All new content is derived internally from the two imported public modules,
 elementary group identities, subgroup normalizers and conjugation of open
 subgroups. This file introduces no additional literature claim. The imported

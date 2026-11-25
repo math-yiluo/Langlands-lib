@@ -1,6 +1,6 @@
 # Clopen rank loci from actual finite local frames
 
-This internal unit decomposes a supplied actual finite frame cover by
+This internal module decomposes a supplied actual finite frame cover by
 rank. Let `a : FiniteLocalFrames M` for a module sheaf `M` on an
 arbitrary scheme `X`. The rank of a chart is the finite integer already
 stored in `a`; no global constant-rank hypothesis is imposed.
@@ -38,5 +38,5 @@ every rank locus.
 The provenance is internal. This is a decomposition and frame-cover
 construction from existing actual finite frames, their section bases,
 scheme germ maps, affine neighborhoods and actual pullback.
-It proves no ampleness assertion and does not yet identify these
+It proves no ampleness assertion and does not identify these
 module pullbacks with any group scheme's cotangent sheaf.

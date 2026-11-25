@@ -1,7 +1,5 @@
 # Proof: the compact mirabolic twisted pairing is one-dimensional
 
-Author: Worker 805.
-
 ```lean
 theorem Langlands.Whittaker.mirabolicCompactTwistedPairing {p : ℕ} [Fact p.Prime]
     (F : PadicField.{uF} p) (T : F.TopologicalData) (n : ℕ) :

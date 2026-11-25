@@ -1,7 +1,5 @@
 # Natural duality for normalized induction from a compact-picture integral
 
-Author: Worker 715.
-
 This module proves Casselman's compact-group pairing argument for the smooth
 dual of an induced representation, in a general form. The input is a scalar
 compact-picture integral, taken as a hypothesis. The module states no new

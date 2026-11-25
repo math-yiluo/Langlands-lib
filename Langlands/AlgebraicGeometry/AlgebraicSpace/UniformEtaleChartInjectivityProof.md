@@ -1,7 +1,5 @@
 # Uniform injectivity of affine étale charts over normed extensions: proof
 
-Author: Worker 196.
-
 `uniformEtaleChartInjectivity` proves `UniformEtaleChartInjectivityStatement`
 (`UniformEtaleChartInjectivityStatement.lean`). Let `K` be a nontrivially normed field, `X` a
 separated algebraic space over `Spec K`, `U` an affine scheme locally of finite type over `K` and
@@ -14,7 +12,7 @@ values of `p` and of `q` have norm at most `R`, corresponding values differ in n
 ## Provenance
 
 The statement is a derived internal prerequisite, not a numbered result of the literature. The
-proof follows the idempotent route in the context of Task 5366. The only imported result outside
+proof follows the idempotent route described below. The only imported result outside
 the statement's import closure is the Library port
 `P2MW.S_AlgebraicGeometry_closure_range_pullback_fst_appTop_union_range_snd_appTop_eq_top.solution`
 (module `Langlands.AnthropicFLT.P2M.Sol.S_AlgebraicGeometry_closure_range_pullback_fst_appTop_union_range_snd_appTop_eq_top`).

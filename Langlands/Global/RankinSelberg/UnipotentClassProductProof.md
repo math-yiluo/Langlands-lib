@@ -1,7 +1,7 @@
 # Proof of premise B: products over the classes `unipotentIntegralClasses`
 
 This module proves `Langlands.Global.RankinSelbergGlobal.UnipotentClassProductStatement`,
-premise B of the published reduction `ArchimedeanFactorizationReduction` (Task 7397). The
+premise B of the published reduction `ArchimedeanFactorizationReduction`. The
 main theorem is
 
 ```

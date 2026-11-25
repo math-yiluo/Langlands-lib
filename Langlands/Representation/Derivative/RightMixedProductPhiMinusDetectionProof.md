@@ -202,20 +202,19 @@ misrepresented as a formal Haar-modulus comparison.
 
 ## Published inputs and their proof provenance
 
-All mathematical inputs are imported by their Lean names from the unchanged
-Library base `b22e185743f7c318f709e14e422801f4360105d5`. The following receipt
-identifiers record the audit of that public content; none is a mathematical
-hypothesis. Each cited candidate has independent semantic acceptance and public
-integration, with no unresolved reviewer qualifications.
+All mathematical inputs are imported by their Lean names from the
+Library base `b22e185743f7c318f709e14e422801f4360105d5`. The table gives the
+Library commit of each published input; none is a mathematical
+hypothesis.
 
-| Published input | Verified receipt and publication | Use and provenance |
+| Published input | Library commit | Use and provenance |
 | --- | --- | --- |
-| `MixedProductDerivativeStatement` | `845a8c59-87c5-4a25-bc55-aca6bdf165ad`, Reviewer 5791; `6cb15022e66f7f1f171e7e8d563e74b92072e5ba` | Supplies the exact proposition only. No other proposition defined alongside it is used as a theorem. |
-| `MirabolicHighestDerivativeDescent` and `MirabolicDerivativeVanishing` | `f957ae76-3779-4436-bdcb-98bc63561e07`, Reviewer 4988; `2b8beb8bd3034a40aeb5dc7b2de17b607fae8d11` | Both pairs were included in the accepted proof's repository paths and match the frozen and integrated content. The semantic review explicitly checks the radical-triviality/Fourier argument. The former imports the latter to maintain a module chain; the radical-triviality proof does not use its joint-detection conclusion or any later pairing theorem. |
-| `MinusVanishing` | `c6026915-8731-45a8-bd21-ef1ac39654b8`, Reviewer 4480; `771cfc69d1ff795522e29cdead1b7c40f1a1c308` | The current pair matches its frozen publication. Uses compact radical-box averaging, elementary Levi transitivity and finite Fourier inversion; no segment, finite-length or Whittaker-finiteness result is an input. |
-| `Mirabolic.MixedProducts` | `ba418fcc-1120-4c27-b77c-05734e9bc195`, Reviewer 4998; `2b8beb8bd3034a40aeb5dc7b2de17b607fae8d11` | The current pair matches the accepted documentation correction's frozen publication. The concrete compact-induction/smooth-part construction proves the evaluation, action, support and injectivity laws used here. Its normalization scope is as explained above. |
-| `Analysis.Local.QuotientTopology` | `c3fe4e0d-cd8f-41b2-ac23-9a4d45950dd7`, Reviewer 253; `ef274d37c255e4b25a990dd377d10e2da436807d` | Current content matches the integrated publication. Integration consolidated the quotient projection into an abbreviation for `Induction.quotientMap` and added its defining import; the frozen pre-integration pair is therefore not byte-identical. The compact-lift theorem uses an open quotient map, compact neighborhoods and a finite subcover, followed by intersection with the closed preimage of the compact set. |
-| `Group.GL.MirabolicMixedProductSubgroups` | `c2f9e770-dee5-4272-b796-46339512ca35`, Reviewer 4335; `4e6ed28ccc687ea7e0123318bc2516e1f4b79d11` | Current content matches the frozen and integrated pair. Provides actual matrix subgroups, coordinate identities and closedness, proved by matrix algebra and inherited topology. The review checks all ranks and its ten-module independent project closure. |
+| `MixedProductDerivativeStatement` | `6cb15022e66f7f1f171e7e8d563e74b92072e5ba` | Supplies the exact proposition only. No other proposition defined alongside it is used as a theorem. |
+| `MirabolicHighestDerivativeDescent` and `MirabolicDerivativeVanishing` | `2b8beb8bd3034a40aeb5dc7b2de17b607fae8d11` | Both pairs belong to the same published proof and match its content. The radical-triviality/Fourier argument was checked. The former imports the latter to maintain a module chain; the radical-triviality proof does not use its joint-detection conclusion or any later pairing theorem. |
+| `MinusVanishing` | `771cfc69d1ff795522e29cdead1b7c40f1a1c308` | The pair matches its publication. Uses compact radical-box averaging, elementary Levi transitivity and finite Fourier inversion; no segment, finite-length or Whittaker-finiteness result is an input. |
+| `Mirabolic.MixedProducts` | `2b8beb8bd3034a40aeb5dc7b2de17b607fae8d11` | The pair matches its publication, including a documentation correction. The concrete compact-induction/smooth-part construction proves the evaluation, action, support and injectivity laws used here. Its normalization scope is as explained above. |
+| `Analysis.Local.QuotientTopology` | `ef274d37c255e4b25a990dd377d10e2da436807d` | The content matches the published pair, in which the quotient projection is an abbreviation for `Induction.quotientMap` with its defining import. The compact-lift theorem uses an open quotient map, compact neighborhoods and a finite subcover, followed by intersection with the closed preimage of the compact set. |
+| `Group.GL.MirabolicMixedProductSubgroups` | `4e6ed28ccc687ea7e0123318bc2516e1f4b79d11` | The content matches the published pair. Provides actual matrix subgroups, coordinate identities and closedness, proved by matrix algebra and inherited topology. All ranks and its ten-module independent project closure were checked. |
 
 The complete required pairs `MixedProductDerivativeStatement`, `MixedProducts`,
 `MirabolicMixedProductSubgroups`, `MirabolicMinus` and `Homogeneity`, and the
@@ -259,59 +258,59 @@ The shared lower proof routes were checked as follows.
 
 ## Condition-by-condition independence audit
 
-Both complete exclusion sets in the task's context bind this proof and every
-prerequisite. The table below audits their union, including the operator's
-conditions. Every exclusion includes the mathematical conclusion, its proof
-successors and its transitive proof dependencies/downstream consequences; an
-absence claim is not limited to an exact task identifier or filename. The full
+Two complete exclusion sets apply to this proof and every
+prerequisite. The table below audits their union. Every exclusion includes the
+mathematical conclusion, the modules that prove it and its transitive proof
+dependencies/downstream consequences; an absence claim is not limited to an
+exact declaration name or filename. The full
 project import closure is listed in the next section. It has no classification,
 segment, cuspidal-derivative, product-irreducibility or Whittaker-finiteness module.
-The actual proof dependencies are the elementary constructions and accepted
-Fourier lemmas described above. No conditional draft, pending repair, unproved
+The actual proof dependencies are the elementary constructions and published
+Fourier lemmas described above. No unproved
 Prop definition, citation or consumer conclusion is used as proof evidence.
 
 | Binding condition or excluded conclusion | Audit result |
 | --- | --- |
-| BZ77-only general derivative route; no unproved derivative input | The only substantive general derivative input is the independently accepted and published radical-triviality/Fourier route identified above. The remaining derivative imports construct the specified functors, statements and rank casts. |
-| Ze80 segment derivative formulas §§3.5 or 9.6; six-statement consumer `2e5183b1-01e9-44fb-b26c-f4521a25c7c7` items (b),(d),(e),(f) | No segment formula, parent conjunct, or proof depending on one is imported or used. |
-| Segment-socle part of `8e5b4563-0365-41c7-b134-70f2a0b36292` | Neither it nor its cuspidal-derivative part is needed. The proof is for arbitrary smooth factors. |
-| `OrderedMultisegmentSocleExistence`, `23189526-80b0-4828-a6d4-7ebec2cbeef5` | No ordered-socle construction or existence input. |
-| `MultisegmentSocleExhaustion`, `f3a69bc8-7312-4f82-8a7d-ea3c8188cb63` | No socle exhaustion or classification input. |
-| Analytic segment classification, `aca8805b-054f-4d56-8045-12db7f623404` | No analytic segment or classification module. |
-| `UnlinkedSegmentSocleProductIrreducible`, `23e98d90-6055-4e35-91a9-b0f5d8a84961` | No segment product irreducibility input. |
-| `LinkedSegmentSocleReverseProductStructure`, `a55c4267-7e3a-43f6-8bb1-ce319e1d0aa9`; `LinkedSegmentSoclePairReducible`, `8fa9f68b-fa1b-431a-97f6-5b163964d1fc` | No linked-product structure or reducibility input. |
-| `JuxtaposedSegmentSocleReverseProductStructure`, `LinkedSegmentSocleReverseProductQuotientHom`, `7ff2a1e9-89dc-439e-a861-a567b3db92bf` | No juxtaposed-segment construction or quotient-hom input. |
-| `SegmentSocleProductIrreducibility`, `2ae5cbe5-0701-4509-88a0-db8cbeb35be4` | No final socle-product criterion. |
-| `AdjacentUnlinkedSegmentSocleSwap`, `e3634665-571b-4852-9f4c-bab8a1053434`, `cded83f3-df9c-4018-bc61-dc54f5c1f9ab` | No adjacent socle commutation input. |
-| `TwoSegmentSocleCommutation`, `426911b4-6620-413f-8065-04b25287f3bd`, `66e3b87c-647e-41e4-af18-df4d436765f0` | No two-segment commutation input. |
-| `LinkedSegmentSocleGluing`, `c84cd52c-3ff3-4024-be50-8b84dd480888`, `6780b79c-9526-46aa-b8b4-00377d68b1ea` | No gluing input. |
-| `SegmentHeadProductIrreducibility`, `8364e73f-14ec-4d14-8f2b-1555a7c1ce95` | No special-head product criterion. |
-| Special-head exhaustion, `3bfb61fa-1129-4fc9-83fd-7fcfec22106e` | No special-head or multisegment exhaustion. |
-| Ordered special/strong-head existence, `ebea9a8a-9b21-4208-aa31-98c2dea1f8a3` | No ordered-head existence input. |
-| Quotient coverage, `20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584` | No classification quotient coverage. |
-| Ordered special-segment conversion, `8252833d-c269-41a9-824c-5879e531b23b` | No head/socle conversion input. |
-| Tempered block uniqueness, `52e97845-36bb-457d-b76f-70753334b88c` | No tempered uniqueness input. |
-| `SquareIntegrableLanglandsClassification`, `1cb45da2-7007-4351-a694-594fb148b8d1` | No square-integrable classification. |
-| Square-integrable exhaustion, `cd8ab97c-0b78-4bce-97c4-d307a28159a4` | No square-integrable exhaustion. |
-| Regular exhaustion, `bf433f0a-921a-428c-b0c0-6475438125ac` | No regular exhaustion. |
-| `GenericSegmentProductUniqueness`, `30341ae4-65f2-4a0e-9283-763db01a409e` | No generic segment uniqueness or parent consumer assumption. |
-| `SegmentSpecialEssentialSquareIntegrability`, `5eece9e8-7f6b-4ea9-abea-a1f9f1b8c807` | No forward special-segment square-integrability input. |
-| Individual special-head/reverse-socle existence, `67279e36-f3c2-42e3-9302-11729784042e` | No individual head or reverse-socle construction. |
-| Individual segment-socle/reverse-head existence, `4ca79bbd-589e-476b-9f65-661e799984b5` | No individual socle or reverse-head construction. |
-| `SegmentFullJacquetFormula`, `ed48ae06-964c-4c84-9e62-978f5a953ca7`, and its exact proof successor | No segment full-Jacquet formula or consequence. |
-| `SegmentHeadJacquetFormula`, `55ad1e10-62d8-46b7-a081-909ef0056426` | No segment head-Jacquet formula. |
-| `SegmentSocleJacquetFormula`, `b95105c6-f8bb-4641-ae53-2f49d1e7f034` | No segment socle-Jacquet formula. |
-| `SegmentSpecialJacquetExponentNormFormula`, `92aea10f-62ac-4e0b-bd4a-9a80909797c5` | No segment exponent-norm formula. |
+| BZ77-only general derivative route; no unproved derivative input | The only substantive general derivative input is the published radical-triviality/Fourier route identified above. The remaining derivative imports construct the specified functors, statements and rank casts. |
+| Ze80 segment derivative formulas §§3.5 or 9.6; items (b),(d),(e),(f) of the six statements of `Classification.SegmentSocleDerivativesStatement` | No segment formula, conjunct of those statements, or proof depending on one is imported or used. |
+| Segment-socle part of the six statements of `Classification.SegmentSocleDerivativesStatement` | Neither it nor its cuspidal-derivative part is needed. The proof is for arbitrary smooth factors. |
+| `OrderedMultisegmentSocleExistence` | No ordered-socle construction or existence input. |
+| `MultisegmentSocleExhaustion` | No socle exhaustion or classification input. |
+| Analytic segment classification | No analytic segment or classification module. |
+| `UnlinkedSegmentSocleProductIrreducible` | No segment product irreducibility input. |
+| `LinkedSegmentSocleReverseProductStructure`; `LinkedSegmentSoclePairReducible` | No linked-product structure or reducibility input. |
+| `JuxtaposedSegmentSocleReverseProductStructure`, `LinkedSegmentSocleReverseProductQuotientHom` | No juxtaposed-segment construction or quotient-hom input. |
+| `SegmentSocleProductIrreducibility` | No final socle-product criterion. |
+| `AdjacentUnlinkedSegmentSocleSwap` | No adjacent socle commutation input. |
+| `TwoSegmentSocleCommutation` | No two-segment commutation input. |
+| `LinkedSegmentSocleGluing` | No gluing input. |
+| `SegmentHeadProductIrreducibility` | No special-head product criterion. |
+| Special-head exhaustion | No special-head or multisegment exhaustion. |
+| Ordered special/strong-head existence | No ordered-head existence input. |
+| Quotient coverage | No classification quotient coverage. |
+| Ordered special-segment conversion | No head/socle conversion input. |
+| Tempered block uniqueness | No tempered uniqueness input. |
+| `SquareIntegrableLanglandsClassification` | No square-integrable classification. |
+| Square-integrable exhaustion | No square-integrable exhaustion. |
+| Regular exhaustion | No regular exhaustion. |
+| `GenericSegmentProductUniqueness` | No generic segment uniqueness or consumer assumption. |
+| `SegmentSpecialEssentialSquareIntegrability` | No forward special-segment square-integrability input. |
+| Individual special-head/reverse-socle existence | No individual head or reverse-socle construction. |
+| Individual segment-socle/reverse-head existence | No individual socle or reverse-head construction. |
+| `SegmentFullJacquetFormula` and its proof `segmentFullJacquetFormula` (`Classification.SegmentFullJacquetProof`) | No segment full-Jacquet formula or consequence. |
+| `SegmentHeadJacquetFormula` | No segment head-Jacquet formula. |
+| `SegmentSocleJacquetFormula` | No segment socle-Jacquet formula. |
+| `SegmentSpecialJacquetExponentNormFormula` | No segment exponent-norm formula. |
 | Segment product criteria Ze80 4.2 or 9.7; analytic/square-integrability Ze80 9.3; circular use of Ze80 4.2 for Proposition 1.11 | No result from Ze80 is used in the proof or shared lower proof routes. |
-| Combined Ze80 §5.4 reduction and mirabolic strong indecomposability, including `ff4738d8-47e3-433b-bedc-629bc2d492a7` | No strong-indecomposability consumer conclusion is imported or assumed. |
-| `TwoSupercuspidalNonadjacentProductIrreducible`, `3c9849a4-a6c0-43ac-9982-d15ed76bf1e9` | No two-supercuspidal irreducibility input. |
-| `TwoSupercuspidalProductStructure`, `ab61f565-1427-4746-ba77-46097563e962`, including adjacent composition/Jacquet conjuncts | No full-product structure or its conjuncts. |
-| Ze80 6.2 consumer `b711af72-fdf9-4b32-a450-937911426822` and GL Leibniz consumer `3238f371-e9a2-42ce-8b5d-9c4d3400ff55` | Neither consumer establishes this input. Their conclusions, successors and dependents are outside the closure. |
-| `SupercuspidalCoinvariantFinitenessStatement`, all-character single-block `62de5903-b616-4b5c-88eb-a066b77c5467` | No supercuspidal coinvariant finiteness statement, proof, successor or consequence. |
-| `IrreducibleCoinvariantFinitenessStatement`, `5ab445dc-d2b4-4072-80d1-6370870a4a26` | No parent Whittaker finiteness or consequence. |
-| `LeviCuspidalCoinvariantFinitenessStatement`, `3ff5c8fb-397c-4345-bcb3-5d98a0993d18` | No Levi-cuspidal finiteness or consequence. |
-| Mirabolic finite-length route `5428fe2c-013c-482d-aa6e-7df43e7191aa` | No such route, pending repair, or assumption. Defining `HasFiniteLength` in a general category module supplies no finite-length theorem and is not used here. |
-| Operator-paused minus exactness `b65bc667-6951-4bd5-82af-10fb7046df7f`; Worker 127's pause | No minus-exactness module or theorem is used, no replacement task was created, and the paused worker/task was not contacted or resumed. Existing finite-length ownership/waits were also left intact. |
+| Combined Ze80 §5.4 reduction and mirabolic strong indecomposability | No strong-indecomposability consumer conclusion is imported or assumed. |
+| `TwoSupercuspidalNonadjacentProductIrreducible` | No two-supercuspidal irreducibility input. |
+| `TwoSupercuspidalProductStructure`, including adjacent composition/Jacquet conjuncts | No full-product structure or its conjuncts. |
+| The Ze80 6.2 consumers and the GL Leibniz consumers | Neither consumer establishes this input. Their conclusions, the modules that prove them and their dependents are outside the closure. |
+| `SupercuspidalCoinvariantFinitenessStatement` (all-character single-block) | No supercuspidal coinvariant finiteness statement, proof or consequence. |
+| `IrreducibleCoinvariantFinitenessStatement` | No Whittaker finiteness or consequence. |
+| `LeviCuspidalCoinvariantFinitenessStatement` | No Levi-cuspidal finiteness or consequence. |
+| Mirabolic finite-length route | No such route or assumption. Defining `HasFiniteLength` in a general category module supplies no finite-length theorem and is not used here. |
+| Minus exactness | No minus-exactness module or theorem is used. |
 | BZ77 4.13(a)–(c), 4.14 and other mixed-product/Leibniz consumers | None is used. Companion proposition definitions are not treated as proved results. |
 | Supplied topology, normalization and full rank/universe scope | The exact supplied objects are retained; the proof uses carrier-level vanishing and character-independent support. No extra hypothesis or Haar-modulus comparison is smuggled into the target. |
 
@@ -323,9 +322,8 @@ The four direct imports are
 `Langlands.Analysis.Local.QuotientTopology`, and
 `Mathlib.Topology.Algebra.Field`. Recursively resolving the project imports in
 the audited Library yields exactly the following 101 modules, including the
-three project roots and excluding this new proof module. There are no missing
-project imports. All their Lean/Markdown pairs remain unchanged by this
-contribution. The names under `Whittaker` and `RankinSelberg` have the elementary
+three project roots and excluding this proof module. There are no missing
+project imports. The names under `Whittaker` and `RankinSelberg` have the elementary
 roles described above; their presence is not use of the excluded finiteness
 or consumer theorems.
 

@@ -1,7 +1,5 @@
 # Uniqueness of compact real semisimple forms
 
-Authors: Worker 844 and Worker 689.
-
 `Langlands.GroupScheme.realCompactFormUniqueness` proves
 `Langlands.GroupScheme.RealCompactFormUniquenessStatement`.
 The connected reductive structures supplied by semisimplicity give a closed

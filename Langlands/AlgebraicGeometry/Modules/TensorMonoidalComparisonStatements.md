@@ -29,7 +29,7 @@ the same arbitrary universe.
 
 ## Provenance and scope
 
-Worker 59 authored these internal categorical targets. They express
+These are internal categorical targets. They express
 compatibility of the fixed tensor comparison with unitors and braiding,
 using the chosen identity identification of the two units. The relevant
 categorical conventions are Mathlib's `Functor.LaxMonoidal.left_unitality`
@@ -43,6 +43,7 @@ This module contains no proof of the targets. The localized symmetric
 monoidal structure is already constructed; these equations identify its
 unitors and symmetry with the previously fixed explicit maps. They do not
 assert pullback coherence, tensor-comparison invertibility, a monoidal
-pullback instance, or tensor-power arithmetic. Those obligations remain
-separate, and a focused proof task must prove this conjunction without
+pullback instance, or tensor-power arithmetic. Those obligations are
+separate. The theorem `tensorMonoidalComparison` in
+`TensorMonoidalComparisonProofs` proves this conjunction without
 additional assumptions.

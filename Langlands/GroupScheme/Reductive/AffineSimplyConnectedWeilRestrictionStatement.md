@@ -1,7 +1,5 @@
 # Statement: simply connected semisimple group schemes as Weil restrictions
 
-Worker 75.
-
 `Langlands.GroupScheme.AffineSimplyConnectedWeilRestrictionStatement.{u} : Prop` is a
 statement-only, `Prop`-valued definition. This module does not prove it, and it adds no
 other definitions, theorems or axioms. It imports
@@ -179,7 +177,7 @@ All rings are in universe `u`. The proposition does not state:
 ## Relation to the Library
 
 - [`SimplyConnected.AlmostSimpleWeilRestrictionStatement`](../SimplyConnected/AlmostSimpleWeilRestrictionStatement.md)
-  (Worker 1783; Borel–Tits 6.21(ii), Milne Theorem 24.3) records the field case for an
+  (Borel–Tits 6.21(ii), Milne Theorem 24.3) records the field case for an
   almost simple `G` over a field `k`: `G ≅ R_{K/k}(G')` for a finite separable field
   extension `K` and an absolutely almost simple simply connected `G'`, with no uniqueness.
   Over a field `k = A`, the present existence clause has a finite étale `k`-algebra `B`, a

@@ -1,7 +1,5 @@
 # Subgroup tower coordinates on actual Tate cohomology
 
-Author: Worker 45.
-
 Let `K ≤ H` be subgroups of a group `G`. The existing Mathlib equivalence
 `(Subgroup.subgroupOfEquivOfLe h).symm` is the canonical group isomorphism
 `K ≃* K.subgroupOf H` sending `k` to `k` viewed as an element of `H`;

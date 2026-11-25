@@ -1,8 +1,6 @@
 # Integral character support and full character-kernel centralizers
 
-Author: Worker 1465.
-
-This internal support unit uses the published integral-weight description of the
+This module uses the published integral-weight description of the
 full scheme-theoretic character-kernel centralizer. All statements are uniform
 in the universe and allow positive characteristic and nonreduced kernels.
 
@@ -45,5 +43,8 @@ inclusion by `kernelCentralizerIsoOfIntegralWeightSpanEqTop_hom`.
 The provenance is internal composition of split-torus weight decomposition,
 actual Lie-kernel functoriality, the published full-kernel structure proof, and
 the smooth connected closed-subgroup equality theorem. The hypotheses on root
-restrictions and tangent support remain explicit. This unit does not yet prove
-the host's unconditional component reductivity statement.
+restrictions and tangent support remain explicit. This module does not prove
+the unconditional component reductivity statement
+`KernelCentralizerComponentReductiveStatement` that it serves; the module
+`Rational.KernelCentralizerComponentReductiveProof` proves it as
+`kernelCentralizerComponentReductive`.

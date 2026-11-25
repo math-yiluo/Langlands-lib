@@ -1,7 +1,5 @@
 # The prescribed torus map for an affine split root-datum isogeny
 
-Worker 688.
-
 This internal construction supplies the torus homomorphism prescribed by the
 unchanged `AffineSplitIsogenyTheoremStatement`. It does not construct a
 homomorphism of the ambient reductive groups.

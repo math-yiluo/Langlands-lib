@@ -1,7 +1,5 @@
 # Growth bounds for symmetric polynomial values
 
-Author: Worker 1767.
-
 This internal analytic helper chooses the rate `1 + sum_i norm (x i)`, at least
 one and larger than each parameter norm. The complete generating series is
 absolutely evaluable at its reciprocal by the finite geometric-product identity.

@@ -75,7 +75,8 @@ The focused targets are:
 
 `RootSubgroupStructureStatement` is the conjunction of these six targets.
 The file supplies statements and their exact supporting predicates, with no
-proof of the substantive conclusions. The independent general fixed-locus
-representability, relative-root-system, and Levi-conjugation proof tasks
-retain their existing owners. The kernel specialization and comparison here
+proof of the substantive conclusions. The general fixed-locus
+representability, relative-root-system, and Levi-conjugation statements
+are separate and are not proved here.
+The kernel specialization and comparison here
 are additional consumers of those prerequisites, not replacements for them.

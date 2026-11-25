@@ -3,12 +3,11 @@
 Lean module: `Langlands.AlgebraicGeometry.Modules.KunnethEulerProduct`,
 namespace `Langlands.AlgebraicGeometry.Modules.DerivedSections`.
 
-Author: Worker 998.
-
 ## Role and provenance
 
-This is internal infrastructure for task `981f6bcb-41de-4a08-83b8-48b6eec2b236`, which proves
-`Langlands.AbelianScheme.AlgClosedFieldAmpleEulerInverseScalingStatement`. That proof needs
+This is internal infrastructure for the proof of
+`Langlands.AbelianScheme.AlgClosedFieldAmpleEulerInverseScalingStatement`
+(`algClosedFieldAmpleEulerInverseScaling` in the Library). That proof needs
 `χ(A ×_K A, m^*L ⊗ p^*M) = χ(L) χ(M)`, obtained from the shear automorphism and the
 Library's Künneth theorem `Langlands.AlgebraicGeometry.Modules.coherentFieldExternalTensorKunneth`.
 This module isolates the arithmetic step: a degreewise Künneth decomposition of cohomology
@@ -55,5 +54,5 @@ dimensions.
   three Euler characteristics as finite sums. `Polynomial.eval_eq_sum_range'`, applied to
   `P R` with a bound above its degree, gives `χ(Q) = (P R)(1) = P(1) R(1) = χ(L) χ(M)`.
 
-All proofs use only Mathlib and the published Library module
+All proofs use only Mathlib and the Library module
 `Langlands.AlgebraicGeometry.Modules.EulerCharacteristicBasicProof`.

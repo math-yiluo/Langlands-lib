@@ -1,7 +1,5 @@
 # Finite étale affinoid objects under a bounded base isomorphism
 
-Author: Worker 36.
-
 This derived construction transports the existing category
 `AlgebraicallyFiniteEtaleAffinoidUnder Q` along a bounded isomorphism
 `e : P ≅ Q` of actual presented strict affinoid algebras. An object with

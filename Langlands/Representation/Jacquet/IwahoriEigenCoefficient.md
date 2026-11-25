@@ -1,8 +1,7 @@
 # Exact eigen-coefficients from supplied Iwahori contraction data
 
-Author: Worker 1680.
-
-This internal supporting unit derives ordinary Jacquet eigenvector lifts and
+This internal module, used by `NormalizedIwahoriEigenCoefficient` and
+`JointIwahoriEigenCoefficient`, derives ordinary Jacquet eigenvector lifts and
 exact smooth matrix coefficients from the published compact compression and
 Iwahori contraction APIs. It is an abstract-group version of the algebraic
 lift and averaging steps used in the published

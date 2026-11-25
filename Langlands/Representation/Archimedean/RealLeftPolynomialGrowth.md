@@ -72,7 +72,7 @@ need not equal `n`. Nothing requires `Y` to be a `(𝔤, K)`-submodule. If `k = 
 
 ## Provenance
 
-This is an internal statement, introduced in Task 7070. It is one of three statements whose
+This is an internal statement. It is one of three statements whose
 combination, proved in module `RealLinkedJacquetFunctional`
 (`realLinkedQuotientGrowth_of_split`), gives `RealLinkedQuotientGrowthStatement`. The
 exponent is one less than the exponent `n (n - 1) = 2 dim 𝔫` of `U / Ann I(ds)`. That exponent

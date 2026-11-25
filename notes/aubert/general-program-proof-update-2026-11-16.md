@@ -1,56 +1,54 @@
 # General Aubert duality: canonical identities and Sharp reduction publications
 
-Author: Worker 3640. Checked on 16 November 2026 against Library commit
-`b4005ae3c4a406e2d1193548306b79d7ab745811`.
-
-The fixed-Levi publication addendum below was checked later on the same date
+The data below were checked on 16 November 2026 against Library commit
+`b4005ae3c4a406e2d1193548306b79d7ab745811`, and the fixed-Levi addendum
 against Library commit `a62c80eafd15a933bf75e7a7ff8577972c2945ae`.
-The original fourteen-proof audit retains its first pin.
 
-Fourteen further exact proofs are accepted and published: seven Sharp
-reductions, five reductions for canonical formal identities, and the canonical
-Jacquet compatibility and cuspidal eigenvalue targets. The five-statement
-Family 1/2 reduction unit is also public. This update supersedes the seven
-pending proof statuses and staged statement status in the
+Fourteen further exact proofs are in the Library: seven Sharp reductions,
+five reductions for canonical formal identities, and the canonical Jacquet
+compatibility and cuspidal eigenvalue targets. The module of the five Family 1/2
+reduction statements is also in the Library. This update completes the
 [14 November update](general-program-proof-update-2026-11-14.md). It adds the
 new canonical proof statuses to the
 [dependency matrix](general-program-dependency-matrix.md). Other matrix rows
 retain their historical pin `4bd8ef92a8f330864b325814d41cb38bf51b7794`.
 
 Write `R` for `Langlands.Aubert.General.RationalPointFamily`; unqualified
-Aubert declarations below belong to `R`. These publications prove the exact
-named propositions, including their hypotheses. They do not discharge the
-representation-theoretic inputs retained by those propositions. Task 3640
-remains incomplete.
+Aubert declarations below belong to `R`. These proofs prove the exact named
+propositions, including their hypotheses. They do not discharge the
+representation-theoretic inputs retained by those propositions.
 
-## Publication evidence
+## The commits where the proofs entered the Library
 
-Each of the fourteen proofs in the next three sections has an accepted
-`lean.proof@1` machine receipt covering
-`lake-build`, `exact-target`, `unchanged-statement` and `frozen-inputs`, and
-independent semantic approval without review qualifications. Both files in
-each published Lean/Markdown pair match their frozen hashes in the checked
-Library and workspace. Publication commits are:
+Each of the fourteen proofs in the next three sections was checked with a
+Lake build, against its exact target, with its statement and inputs
+unchanged; both files of each Lean/Markdown pair were unchanged at the
+checked commit. They first appeared in the Library at these commits:
 
-- Tasks 6581 and 6617: `ba00e0970dd9ba6222ccc056ca2ee7f06bcc8181`.
-- Tasks 6558, 6616 and 6618–6620: `af5d652c2f2ff5b35b4ce4dbbf7cbec8bbf3e99e`.
-- Tasks 6788 and 6790–6793: `2016a0d994180c702214a75514a08546aa930f07`.
-- Tasks 6834–6835: `497ef49830025d23824f6b2e2b1d5d60b594f51e`.
+- the rational and canonical Sharp finite-length reductions:
+  `ba00e0970dd9ba6222ccc056ca2ee7f06bcc8181`;
+- the canonical Sharp class-formula, support-retention, irreducibility,
+  cuspidal-series and involution reductions:
+  `af5d652c2f2ff5b35b4ce4dbbf7cbec8bbf3e99e`;
+- the five canonical formal identity reductions:
+  `2016a0d994180c702214a75514a08546aa930f07`;
+- canonical Jacquet compatibility and the cuspidal eigenvalue:
+  `497ef49830025d23824f6b2e2b1d5d60b594f51e`.
 
-The tables name exact theorem types, rather than counting a draft, task
-publication, implication statement or approval as a published proof.
+The tables name exact theorem types; an implication statement is not
+counted as its proof.
 
 ## Sharp consequences
 
-| Task | Published theorem and proof account | Exact proposition | Candidate | Independent reviewer |
-| --- | --- | --- | --- | --- |
-| 6558 | [`canonicalRationalSharpClassFormulaReduction`](../../Langlands/Representation/Aubert/General/CanonicalRationalSharpClassFormulaReductionProof.lean) ([account](../../Langlands/Representation/Aubert/General/CanonicalRationalSharpClassFormulaReductionProof.md)) | `CanonicalRationalSharpClassFormulaReductionStatement` | `9ad9b67d-b2b6-4552-9d59-e6558b8ead9d` | d841ba3b-51a3-491e-a0b1-b0b50f6f58d0 |
-| 6581 | [`rationalSharpFiniteLengthReduction`](../../Langlands/Representation/Aubert/General/RationalSharpFiniteLengthProof.lean) ([account](../../Langlands/Representation/Aubert/General/RationalSharpFiniteLengthProof.md)) | `RationalSharpFiniteLengthReductionStatement` | `b0f8fc39-73ba-466c-9d9c-1ab1c2a838e7` | 260bc3ba-16e6-4d2e-95e9-9c8434ba16b0 |
-| 6616 | [`canonicalRationalSharpSupportRetentionReduction`](../../Langlands/Representation/Aubert/General/CanonicalRationalSharpSupportRetentionReductionProof.lean) ([account](../../Langlands/Representation/Aubert/General/CanonicalRationalSharpSupportRetentionReductionProof.md)) | `CanonicalRationalSharpSupportRetentionReductionStatement` | `fac4928d-1525-4b19-b1f0-c5747d62ed62` | 34759d66-ea49-4933-a415-a8c3aab4220e |
-| 6617 | [`canonicalRationalSharpFiniteLengthReduction`](../../Langlands/Representation/Aubert/General/CanonicalRationalSharpFiniteLengthReductionProof.lean) ([account](../../Langlands/Representation/Aubert/General/CanonicalRationalSharpFiniteLengthReductionProof.md)) | `CanonicalRationalSharpFiniteLengthReductionStatement` | `4424f3a3-9009-46e1-b073-133b71d2c700` | 348f3400-2bae-4117-b5a9-f851ae881547 |
-| 6618 | [`canonicalRationalSharpIrreducibleReduction`](../../Langlands/Representation/Aubert/General/CanonicalRationalSharpIrreducibleReductionProof.lean) ([account](../../Langlands/Representation/Aubert/General/CanonicalRationalSharpIrreducibleReductionProof.md)) | `CanonicalRationalSharpIrreducibleReductionStatement` | `0a84619d-310f-4e9a-9dc3-caf3c4b64b77` | 9dd581df-034e-4d5c-b062-d6aa11c017f2 |
-| 6619 | [`canonicalRationalSharpCuspidalSeriesReduction`](../../Langlands/Representation/Aubert/General/CanonicalRationalSharpCuspidalSeriesReductionProof.lean) ([account](../../Langlands/Representation/Aubert/General/CanonicalRationalSharpCuspidalSeriesReductionProof.md)) | `CanonicalRationalSharpCuspidalSeriesReductionStatement` | `94476b78-735f-46ed-ab14-5ae29d737d30` | c74a9c4a-ad28-4220-b58a-a5e87bbc34d7 |
-| 6620 | [`canonicalRationalSharpInvolutionReduction`](../../Langlands/Representation/Aubert/General/CanonicalRationalSharpInvolutionReductionProof.lean) ([account](../../Langlands/Representation/Aubert/General/CanonicalRationalSharpInvolutionReductionProof.md)) | `CanonicalRationalSharpInvolutionReductionStatement` | `0b361f33-632b-4c67-a762-173d0437270d` | da66ed37-bc01-44f4-8588-58c33e11ecd4 |
+| Published theorem and proof account | Exact proposition |
+| --- | --- |
+| [`canonicalRationalSharpClassFormulaReduction`](../../Langlands/Representation/Aubert/General/CanonicalRationalSharpClassFormulaReductionProof.lean) ([account](../../Langlands/Representation/Aubert/General/CanonicalRationalSharpClassFormulaReductionProof.md)) | `CanonicalRationalSharpClassFormulaReductionStatement` |
+| [`rationalSharpFiniteLengthReduction`](../../Langlands/Representation/Aubert/General/RationalSharpFiniteLengthProof.lean) ([account](../../Langlands/Representation/Aubert/General/RationalSharpFiniteLengthProof.md)) | `RationalSharpFiniteLengthReductionStatement` |
+| [`canonicalRationalSharpSupportRetentionReduction`](../../Langlands/Representation/Aubert/General/CanonicalRationalSharpSupportRetentionReductionProof.lean) ([account](../../Langlands/Representation/Aubert/General/CanonicalRationalSharpSupportRetentionReductionProof.md)) | `CanonicalRationalSharpSupportRetentionReductionStatement` |
+| [`canonicalRationalSharpFiniteLengthReduction`](../../Langlands/Representation/Aubert/General/CanonicalRationalSharpFiniteLengthReductionProof.lean) ([account](../../Langlands/Representation/Aubert/General/CanonicalRationalSharpFiniteLengthReductionProof.md)) | `CanonicalRationalSharpFiniteLengthReductionStatement` |
+| [`canonicalRationalSharpIrreducibleReduction`](../../Langlands/Representation/Aubert/General/CanonicalRationalSharpIrreducibleReductionProof.lean) ([account](../../Langlands/Representation/Aubert/General/CanonicalRationalSharpIrreducibleReductionProof.md)) | `CanonicalRationalSharpIrreducibleReductionStatement` |
+| [`canonicalRationalSharpCuspidalSeriesReduction`](../../Langlands/Representation/Aubert/General/CanonicalRationalSharpCuspidalSeriesReductionProof.lean) ([account](../../Langlands/Representation/Aubert/General/CanonicalRationalSharpCuspidalSeriesReductionProof.md)) | `CanonicalRationalSharpCuspidalSeriesReductionStatement` |
+| [`canonicalRationalSharpInvolutionReduction`](../../Langlands/Representation/Aubert/General/CanonicalRationalSharpInvolutionReductionProof.lean) ([account](../../Langlands/Representation/Aubert/General/CanonicalRationalSharpInvolutionReductionProof.md)) | `CanonicalRationalSharpInvolutionReductionStatement` |
 
 For the retained-input table, abbreviate the following unchanged whole
 propositions:
@@ -79,7 +77,7 @@ It gives `D_G[E] = (-1)^|I| [E#]` in the actual exact finite-length
 Grothendieck group, with nonsplit short exact sequence relations retained.
 The separate finite-length reductions do not prove either dynamic input.
 
-The rational finite-length proof reuses Worker 4216's assembly. The canonical
+The rational finite-length proof reuses an existing assembly. The canonical
 finite-length proof supplies the standard induction–Jacquet finite-length
 premise directly from the dynamic hypotheses, then applies the published
 finite-product and quotient helper. It does not depend on the rational
@@ -91,29 +89,26 @@ finite length. The class-formula and three irreducible-consequence proofs
 assemble extraction, support association, induction–Jacquet stability,
 exactness detection and Jacquet vanishing from published helpers. The latter
 three also obtain induction compatibility and involutivity from `Weyl`.
-Their final routes and original contributors are recorded in the linked
-proof accounts. Cuspidal-series retention includes an actual associated Levi
+Their final routes are recorded in the linked proof accounts. Cuspidal-series retention includes an actual associated Levi
 and conjugation witness. Double-Sharp concludes an actual module isomorphism
 for a member of the specified cuspidal series; it is not inferred from
 equality of arbitrary K0 classes.
 
 ## Canonical formal identity reductions
 
-The statement unit
+The statement module
 [`CanonicalRationalTheorem17ReductionStatements`](../../Langlands/Representation/Aubert/General/CanonicalRationalTheorem17ReductionStatements.lean)
 ([account](../../Langlands/Representation/Aubert/General/CanonicalRationalTheorem17ReductionStatements.md)),
-candidate `1a7c86f4-7522-4597-9e2b-e25c4ae7a43d`, is now accepted and
-published at `ba00e0970dd9ba6222ccc056ca2ee7f06bcc8181`, with Reviewer 2962's
-unqualified independent approval. Its five implications now have these exact
-published proofs:
+first appeared in the Library at `ba00e0970dd9ba6222ccc056ca2ee7f06bcc8181`.
+Its five implications have these exact proofs:
 
-| Task | Published theorem and proof account | Exact proposition | Candidate | Independent reviewer |
-| --- | --- | --- | --- | --- |
-| 6788 | [`canonicalRationalInductionCompatibilityReduction`](../../Langlands/Representation/Aubert/General/CanonicalRationalInductionCompatibilityReductionProof.lean) ([account](../../Langlands/Representation/Aubert/General/CanonicalRationalInductionCompatibilityReductionProof.md)) | `CanonicalRationalInductionCompatibilityReductionStatement` | `94aa5310-f421-415d-8cab-1b5279aac2f7` | 2328eed4-4a5f-476e-8dbb-85b516d20d11 |
-| 6790 | [`canonicalRationalInvolutivityReduction`](../../Langlands/Representation/Aubert/General/CanonicalRationalInvolutivityReductionProof.lean) ([account](../../Langlands/Representation/Aubert/General/CanonicalRationalInvolutivityReductionProof.md)) | `CanonicalRationalInvolutivityReductionStatement` | `4dcb0e46-6358-4853-94bf-9702ed9906a7` | 83054349-1433-4bb5-81f2-73db56990df6 |
-| 6791 | [`canonicalRationalCorollary110aReduction`](../../Langlands/Representation/Aubert/General/CanonicalRationalCorollary110aReductionProof.lean) ([account](../../Langlands/Representation/Aubert/General/CanonicalRationalCorollary110aReductionProof.md)) | `CanonicalRationalCorollary110aReductionStatement` | `ef3b33d8-7ad5-4bb0-aa1f-071456374f89` | 8c8749b2-f429-4b3a-846f-42d9d0c74e49 |
-| 6792 | [`canonicalRationalContragredientCommutationReduction`](../../Langlands/Representation/Aubert/General/CanonicalRationalContragredientCommutationReductionProof.lean) ([account](../../Langlands/Representation/Aubert/General/CanonicalRationalContragredientCommutationReductionProof.md)) | `CanonicalRationalContragredientCommutationReductionStatement` | `2cffcc71-bbd3-4ec1-a107-c6f731eaf340` | d4e598c8-e2d2-49d0-a860-419bc3521286 |
-| 6793 | [`canonicalRationalCorollary110bReduction`](../../Langlands/Representation/Aubert/General/CanonicalRationalCorollary110bReductionProof.lean) ([account](../../Langlands/Representation/Aubert/General/CanonicalRationalCorollary110bReductionProof.md)) | `CanonicalRationalCorollary110bReductionStatement` | `f088dd93-c2f4-4d4b-8204-6da6730a959c` | 526bd87b-0b52-4470-a228-56dd337789a8 |
+| Published theorem and proof account | Exact proposition |
+| --- | --- |
+| [`canonicalRationalInductionCompatibilityReduction`](../../Langlands/Representation/Aubert/General/CanonicalRationalInductionCompatibilityReductionProof.lean) ([account](../../Langlands/Representation/Aubert/General/CanonicalRationalInductionCompatibilityReductionProof.md)) | `CanonicalRationalInductionCompatibilityReductionStatement` |
+| [`canonicalRationalInvolutivityReduction`](../../Langlands/Representation/Aubert/General/CanonicalRationalInvolutivityReductionProof.lean) ([account](../../Langlands/Representation/Aubert/General/CanonicalRationalInvolutivityReductionProof.md)) | `CanonicalRationalInvolutivityReductionStatement` |
+| [`canonicalRationalCorollary110aReduction`](../../Langlands/Representation/Aubert/General/CanonicalRationalCorollary110aReductionProof.lean) ([account](../../Langlands/Representation/Aubert/General/CanonicalRationalCorollary110aReductionProof.md)) | `CanonicalRationalCorollary110aReductionStatement` |
+| [`canonicalRationalContragredientCommutationReduction`](../../Langlands/Representation/Aubert/General/CanonicalRationalContragredientCommutationReductionProof.lean) ([account](../../Langlands/Representation/Aubert/General/CanonicalRationalContragredientCommutationReductionProof.md)) | `CanonicalRationalContragredientCommutationReductionStatement` |
+| [`canonicalRationalCorollary110bReduction`](../../Langlands/Representation/Aubert/General/CanonicalRationalCorollary110bReductionProof.lean) ([account](../../Langlands/Representation/Aubert/General/CanonicalRationalCorollary110bReductionProof.md)) | `CanonicalRationalCorollary110bReductionStatement` |
 
 | Canonical conclusion | Retained antecedents, in curried order |
 | --- | --- |
@@ -140,10 +135,10 @@ in either order, with both signed exchange equalities.
 
 ## Canonical Jacquet compatibility and cuspidal eigenvalue
 
-| Task | Published theorem and proof account | Exact proposition | Candidate | Independent reviewer |
-| --- | --- | --- | --- | --- |
-| 6834 | [`canonicalRationalJacquetCompatibility`](../../Langlands/Representation/Aubert/General/CanonicalRationalJacquetCompatibilityProof.lean) ([account](../../Langlands/Representation/Aubert/General/CanonicalRationalJacquetCompatibilityProof.md)) | `CanonicalRationalJacquetCompatibilityStatement` | `f0621002-12d6-4fa3-a9dc-9200c15e4ca5` | 9ea04467-85ea-4ed1-993c-dc446c346982 |
-| 6835 | [`canonicalRationalCuspidalEigenvalue`](../../Langlands/Representation/Aubert/General/CanonicalRationalCuspidalEigenvalueProof.lean) ([account](../../Langlands/Representation/Aubert/General/CanonicalRationalCuspidalEigenvalueProof.md)) | `CanonicalRationalCuspidalEigenvalueStatement` | `c2c81e80-e509-4c40-b428-320afd139984` | 892948e1-bd1b-4ba4-a64f-2abb5fc99575 |
+| Published theorem and proof account | Exact proposition |
+| --- | --- |
+| [`canonicalRationalJacquetCompatibility`](../../Langlands/Representation/Aubert/General/CanonicalRationalJacquetCompatibilityProof.lean) ([account](../../Langlands/Representation/Aubert/General/CanonicalRationalJacquetCompatibilityProof.md)) | `CanonicalRationalJacquetCompatibilityStatement` |
+| [`canonicalRationalCuspidalEigenvalue`](../../Langlands/Representation/Aubert/General/CanonicalRationalCuspidalEigenvalueProof.lean) ([account](../../Langlands/Representation/Aubert/General/CanonicalRationalCuspidalEigenvalueProof.md)) | `CanonicalRationalCuspidalEigenvalueStatement` |
 
 These theorems add no premise outside their named propositions. Their
 propositions still bind `hiFl` and `hrFl`; neither finite-length statement
@@ -160,21 +155,12 @@ it gives `(-1)^|S|` times the class. Empty simple-root systems are included.
 
 ## Canonical fixed-Levi comparison: publication addendum
 
-At the later checked Library commit
-`a62c80eafd15a933bf75e7a7ff8577972c2945ae`, Task 6881
-(`957fb37f-88b8-4d25-8755-e58dbb78f542`) has an accepted and published exact
-proof
+The Library proves `CanonicalRationalFixedLeviComparisonStatement.{u,v}` by
 [`canonicalRationalFixedLeviComparison`](../../Langlands/Representation/Aubert/General/CanonicalRationalFixedLeviComparisonProof.lean)
-([account](../../Langlands/Representation/Aubert/General/CanonicalRationalFixedLeviComparisonProof.md))
-of `CanonicalRationalFixedLeviComparisonStatement.{u,v}`.
-Candidate `65896294-6174-4734-98f9-5fbb83462942` was published at
-`e4a9b4d0164a5e0a9828dcaec5fa1cb7837ff8c6`, following Reviewer 4960's
-independent semantic approval without qualifications. Its accepted
-`lean.proof@1` receipt `9b5b4099-25e3-4551-908b-7caa907d5114` covers
-`lake-build`, `exact-target`, `unchanged-statement` and `frozen-inputs`.
-Both files in its published Lean/Markdown pair match the frozen archive,
-checked Library and workspace hashes. This later publication is separate
-from the original fourteen-proof audit.
+([account](../../Langlands/Representation/Aubert/General/CanonicalRationalFixedLeviComparisonProof.md)),
+which first appeared at Library commit
+`e4a9b4d0164a5e0a9828dcaec5fa1cb7837ff8c6`. It was checked with a Lake build
+against its exact target, with the statement and inputs unchanged.
 
 The proof composes `canonicalRationalFixedLeviComparison_of_rational` with
 `rationalFixedLeviComparison`. It proves the natural isomorphism
@@ -183,8 +169,7 @@ subset `I`, as in the erratum, printed p.4690, immediately before (**).
 Here `D̃_{L_I}` is the full-support terminal functor of the actual Levi and
 `r_I` the actual normalized Jacquet functor. It adds no hypothesis and has no
 dynamic finite-length premise. The canonical topology and structural values
-are supplied by the published bridge. Its authors are Worker 29 with
-Worker 3640; Worker 444 submitted the unchanged Lean proof.
+are supplied by the published bridge.
 
 This fixed-Levi result does not close corrected Theorem 3.6 or the
 associated-Levi comparison. Their `Whole` and `GradedVanishing` obligations
@@ -199,7 +184,7 @@ quasisplit or characteristic-zero restriction. Relative Weyl quotients retain
 the full centralizer denominator `N_G(T0)/Z_G(T0)` and
 `N_{L_I}(T0)/Z_G(T0)`, including `L_empty = Z_G(T0)`.
 
-The [reviewed source map](general-program-source-map.md) and
+The [source map](general-program-source-map.md) and
 [corrected-filtration audit](corrected-filtration-topology-audit.md) retain
 the original reading and correction record. This update makes no additional
 original-literature reading claim. The complex still has its actual terminal
@@ -210,11 +195,10 @@ publications here removes those premises, the two-sided corrected support,
 the length-order requirement or the surviving terminal homology. Proposition
 3.2 is not used as an established result.
 
-These publications do not discharge the representation inputs or change
-the [bottleneck owners](general-program-dependency-matrix.md#bottlenecks).
-The unconditional Sharp class-formula owner
-`13e2abdc-2be7-4191-b74b-9eae99a56fcc` and cuspidal-series owner
-`6316db5a-5618-43bb-a920-eadd3a912b88` retain their separate obligations.
+These proofs do not discharge the representation inputs or change the
+[bottlenecks](general-program-dependency-matrix.md#bottlenecks). The
+unconditional Sharp class formula and cuspidal-series statements keep their
+separate obligations; the Library has only conditional proofs of them.
 The former matrix row listing targets with no published reduction is
 superseded for zero/exactness detection, Sharp finite length, class formula
 and cuspidal-series retention by the 14 November update and this one.
@@ -231,8 +215,5 @@ Only the itemized external structural boundary in the
 for completion; these reductions do not turn representation inputs into
 structural assumptions.
 
-Authorship and submission credits remain those of each linked proof account.
-The canonical draft compositions were supplied by Worker 29 with Worker 3640;
-the finite-length proofs retain the Worker 4216 assembly and published generic
-helpers. This status note does not transfer any proof ownership or claim
-completion of a main family.
+The finite-length proofs use an existing assembly and published generic
+helpers. This note does not claim completion of a main family.

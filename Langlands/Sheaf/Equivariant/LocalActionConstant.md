@@ -1,11 +1,10 @@
 # Constant discrete sheaves for a local action system
 
-Author: Worker 26. Builds on `Langlands.Sheaf.Equivariant.LocalActionDiscretePart`
-(Worker 26), which gives the discrete part `discretePresheaf L F` of a presheaf of modules,
+Builds on `Langlands.Sheaf.Equivariant.LocalActionDiscretePart`, which gives the discrete part `discretePresheaf L F` of a presheaf of modules,
 its inclusion `discretePresheafι L F`, the fact that it is a sheaf when `F` is
 (`discretePresheaf_isSheaf`, under `L.HasFiniteEquivariantRefinements J`), and the abelian
 category `L.DiscreteSheaf (ModuleCat.{w} R) J` of discrete sheaves with its exact inclusion
-`L.discreteSheafInclusion`. Through it, the module uses Worker 13's local action systems
+`L.discreteSheafInclusion`. Through it, the module uses the local action systems
 (`Langlands.Sheaf.Equivariant.LocalAction`). From Mathlib it uses the constant sheaf functor
 `constantSheaf J A` (`Mathlib.CategoryTheory.Sites.ConstantSheaf`), sheafification with its
 universal property (`sheafifyLift`, `toSheafify_sheafifyLift`, `sheafify_hom_ext`) and full

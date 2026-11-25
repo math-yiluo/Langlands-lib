@@ -2,13 +2,13 @@
 
 Lean module: `Langlands.Representation.Archimedean.RealBlockChartIntegralStatement`.
 
-Worker 5220 wrote this module for Task 6749 (`5dd3db87-6f14-4d0f-b9a7-3d0065415fd8`), the proof
+This module was written for the proof
 of `RealStandardLanglandsQuotientStatement` (module `RealLargeLanglandsQuotientReduction`). It
-states one proposition and proves nothing. The proposition is the analytic input for the Langlands
+states one proposition and proves nothing; the proposition is proved as `realBlockChartIntegrable`
+in `RealBlockChartIntegralProof`. The proposition is the analytic input for the Langlands
 lemma along the maximal parabolic subgroup `P_{a,k}` of `GL_{a+k}(ℝ)` when the last `k` exponents
 are tied (equal real parts); see "Use" below. It is the real analogue of
-`ComplexBlockChartIntegrableStatement` (module `ComplexBlockChartIntegralStatement`, Worker 140,
-Task 7063).
+`ComplexBlockChartIntegrableStatement` (module `ComplexBlockChartIntegralStatement`).
 
 ## Definitions
 
@@ -57,7 +57,7 @@ raised to `(σ_l − σ_{l−1})/2`, where `σ_l = Re s_l + (n−1)/2 − l`
 `Re s_{l−1} = Re s_l` the exponent is `−1/2`, which is the exponent of `rowGram X j` for
 `j ≥ 1` above.
 
-Intended proof (for a proof task): induction on `k`. Integrate row `0` of `X`, `x ∈ ℝ^a`. With
+Intended proof: induction on `k`. Integrate row `0` of `X`, `x ∈ ℝ^a`. With
 `X'` the remaining rows and `Q = 1 + X'ᵀX'`, the matrix determinant lemma
 (Mathlib `Matrix.det_add_replicateCol_mul_replicateRow`) gives
 `colGram X l = colGram X' l · (1 + x_{≤l} Q_{≤l}^{-1} x_{≤l}ᵀ)`, where `Q_{≤l}` is the top-left
@@ -73,7 +73,10 @@ remaining integrand is a constant times `blockChartBound ε X'`. Tonelli conclud
 
 ## Use
 
-In Task 6749, ties of the Langlands order among character blocks are handled by the Langlands lemma
-along `P_{a,k}` with the last block of `k` tied exponents: this statement gives the convergence of
+In the proof of `RealStandardLanglandsQuotientStatement` for which this module was written, ties
+of the Langlands order among character blocks are handled by the Langlands lemma along `P_{a,k}`
+with the last block of `k` tied exponents: this statement gives the convergence of
 the partial Jacquet integral `∫ h(n̄(X) g) dX` over `N̄_{P_{a,k}}` and the dominating function for
-the limit argument (where the exponents `ε_l` become `max(ε_l, −1)`).
+the limit argument (where the exponents `ε_l` become `max(ε_l, −1)`). The Library's proof of
+that statement (`RealLargeLanglandsQuotientInjectiveProof`) goes through `realLeviLanglandsQuotient`
+and does not import `RealBlockChartIntegralProof`.

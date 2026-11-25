@@ -1,7 +1,5 @@
 # Gamma factors of pairs of segment heads as epsilon-times-L-ratio expressions
 
-Author: Worker 1695.
-
 This module shows that a pair of segment heads `(π, σ)` has an epsilon monomial
 `e`, an L-polynomial `P` and a polynomial `D` with `D(0) = 1` such that
 `rationalGammaExpression δ e P D` is the product of the gamma factors of the

@@ -1,7 +1,5 @@
 # Coset coordinates and the relative norm on coinvariants
 
-Author: Worker 45.
-
 For a subgroup `H` of `G`, fix the representatives supplied by the actual
 left-coset quotient. `schreierElement H g q` is the subgroup element
 `q.out⁻¹ * g * (g⁻¹ • q).out`. Its membership certificate is proved from

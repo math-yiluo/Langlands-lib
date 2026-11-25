@@ -1,8 +1,8 @@
 # Universal tensor values of extension-field characters
 
-Author: Worker 706; verified and documented for the exact descent proof by
-Worker 1366. All constructions here are derived internal interfaces built
-from the actual Library coordinate algebra, characters and point maps.
+All constructions here are derived internal interfaces for the proof of
+`AffineCharacterFiniteGaloisDescentStatement`, built from the actual Library
+coordinate algebra, characters and point maps.
 
 Let `G/k` be any affine group scheme over a field, and write
 `Coord G = CharacterUnits.Coord G`. For a field extension `E/k`,

@@ -1,7 +1,5 @@
 # Scalar p-adic Fourier closure for every supplied Haar measure
 
-Author: Worker 1679.
-
 `Langlands.HarmonicAnalysis.padicFourierClosure.{u}` proves exactly
 `Langlands.LocalFactors.PadicFourierClosureStatement.{u}` from
 [the published target](../LocalFactor/Harmonic/Statement.md).

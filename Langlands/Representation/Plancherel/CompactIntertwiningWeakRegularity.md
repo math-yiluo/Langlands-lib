@@ -187,6 +187,6 @@ Several obligations remain separate:
 - full convergence on the saturated orbit region;
 - one common nonzero regular numerator for the whole standard operator;
 - openness of the region;
-- the host theorem `ConditionalParabolicIntertwiningStatement`.
+- the theorem `ConditionalParabolicIntertwiningStatement`.
 
 This module proves none of them.

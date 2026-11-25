@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 
 /-! # Fibrewise regular elements of flat local extensions -/
 

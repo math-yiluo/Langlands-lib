@@ -1,7 +1,5 @@
 # Covering points from pointwise lifting squares
 
-Author: Worker 621.
-
 This is an internal categorical reduction for sites defined by jointly
 surjective families. Let `C` be a category and `F : C ⥤ Type w` a functor
 giving the points of its objects. No faithfulness or preservation of limits

@@ -98,7 +98,7 @@ Reductive p-adic Groups* (1979), registered as
 `b9432812bb48ce0bcd3975144baa6b3cca99bcaaf0d33d785ce68e94e02854fc`.
 Its one-based PDF page is the printed page plus six. The decisive formulas
 on pp.121–123,187–189,193 were checked in rendered page images.
-No errata note for this source was present in the current Library.
+No errata note for this source was present in the Library.
 
 | Source location | Correspondence |
 | --- | --- |
@@ -157,7 +157,7 @@ I.1(5), p.241 (Cartan double-coset measure), Theorem I.4.1, p.245 (Jacquet
 coefficient asymptotic), Lemma II.1.1, p.251 (spherical-function bound), and
 §III.2 / Proposition III.2.2, pp.265–266 (weak inequality and exponent
 criterion). Its one-based PDF page is printed page minus 234. No errata note
-for this source was present in the current Library. Borel Haar measures on
+for this source was present in the Library. Borel Haar measures on
 these locally compact second-countable quotients differ by a positive finite
 scalar, which does not change membership in any of the finite `L^r` spaces
 used here. This justifies the stated quantification over every such measure.
@@ -194,6 +194,3 @@ components are proved, by `glWeaklyMinimalStandardPairExistence` and
 the refinement as a whole is unproved. This pair does not claim the whole of
 Theorem 4.5.18, induction irreducibility, support uniqueness, or Langlands
 quotient classification.
-
-Worker 1058 updated the proof status in this file for the 2026-10-29
-documentation audit; the Lean file is unchanged.

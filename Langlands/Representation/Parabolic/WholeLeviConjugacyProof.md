@@ -1,7 +1,5 @@
 # Weyl conjugacy invariance of finite-length normalized induction: proof
 
-Author: Worker 757.
-
 The theorem `Langlands.Parabolic.wholeLeviInductionConjugacy` proves the
 published proposition `Langlands.Parabolic.WholeLeviInductionConjugacy.{uF, uV, uW}`
 from `Parabolic/WholeLeviConjugacyStatement`. The statement pair and its
@@ -285,31 +283,27 @@ factorization. Their cuspidal theorems (adjacent assembly, association of
 cuspidal data) are not used, and `CuspidalSupport/AdjacentMatchingAssembly`
 is not imported.
 
-Main proved inputs and their authors: finite-length preservation
-(`FiniteLengthFunctorProof`, Worker 395); the irreducible two-factor case
-(`TwoFactorProductConstituentCommutativityProof`, Worker 763); irreducible
-Levi admissibility (Worker 171); admissible Levi factorization (Worker 161);
-induction factor matching (Workers 250 and 181); graded refinement
-(Worker 122); minimal conjugating cosets (Worker 165); block permutation
-tensors (Worker 289); association reduction helpers (Worker 242);
-admissibility of normalized induction (Workers 162 and 172); normalized
-induction in stages (`RefinementInductionTransitivityProof`, Worker 162).
+Main proved inputs: finite-length preservation
+(`FiniteLengthFunctorProof`); the irreducible two-factor case
+(`TwoFactorProductConstituentCommutativityProof`); irreducible
+Levi admissibility; admissible Levi factorization;
+induction factor matching; graded refinement;
+minimal conjugating cosets; block permutation
+tensors; association reduction helpers;
+admissibility of normalized induction; normalized
+induction in stages (`RefinementInductionTransitivityProof`).
 
-The transitive closure of this module's imports in the workspace Library
+The transitive closure of this module's imports in the Library
 (base commit `b22e185743f7c318f709e14e422801f4360105d5`) was checked file by
 file. It has 695 `Langlands` modules. None of them is, or proves, an excluded
-result: analytic segment classification
-(aca8805b-054f-4d56-8045-12db7f623404), special-head multisegment exhaustion
-(3bfb61fa-1129-4fc9-83fd-7fcfec22106e), ordered strong-head existence
-(ebea9a8a-9b21-4208-aa31-98c2dea1f8a3), quotient coverage
-(20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584), tempered block uniqueness
-(52e97845-36bb-457d-b76f-70753334b88c), `SquareIntegrableLanglandsClassification`
-(1cb45da2-7007-4351-a694-594fb148b8d1), square-integrable exhaustion
-(cd8ab97c-0b78-4bce-97c4-d307a28159a4) or regular exhaustion
-(bf433f0a-921a-428c-b0c0-6475438125ac). No module name or Lean file in the
+result: analytic segment classification,
+special-head multisegment exhaustion, ordered strong-head existence,
+quotient coverage, tempered block uniqueness,
+`SquareIntegrableLanglandsClassification`,
+square-integrable exhaustion or regular exhaustion. No module name or Lean file in the
 closure refers to these results; the only match of the search patterns is the
-definition `IsSegmentHead` in `Classification/Segments`. The excluded task
-IDs occur only in the Markdown of
+definition `IsSegmentHead` in `Classification/Segments`. At that commit,
+references to the excluded results occurred only in the Markdown of
 `Classification/TwoFactorProductConstituentCommutativityStatement`,
 `CuspidalSupport/IrreducibleLeviAdmissibilityProof`,
 `CuspidalSupport/MinimalRefinedJacquetProof`,

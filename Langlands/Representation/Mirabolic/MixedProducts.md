@@ -1,6 +1,6 @@
 # The mixed mirabolic products of BZ77 §4.12(II) and (III)
 
-Author: Worker 837. Main declarations:
+Main declarations:
 `Langlands.PadicField.TopologicalData.leftMixedProductFunctor` and
 `Langlands.PadicField.TopologicalData.rightMixedProductFunctor`.
 
@@ -130,7 +130,7 @@ matrices. Its determinant is `det(d)^k det(a)^(-r)`, with square root
 `rightLeviCharacter = rightRectangleHalfCharacter * rightEpsilonCharacter`,
 where the two factors are exactly these two characters. No formal equality
 between these determinant powers and an actual Haar-measure modulus is
-asserted, assumed or imported. Any such identification needs its own reviewed
+asserted, assumed or imported. Any such identification needs its own
 statement and proof.
 
 `T.leftCharacter k r` and `T.rightCharacter k r` are genuine
@@ -351,6 +351,5 @@ the modules `SegmentHeadProductIrreducibility`, `GenericSegmentProductUniqueness
 `SquareIntegrableLanglandsClassification`,
 `UnlinkedSegmentSocleProductIrreducible`,
 `LinkedSegmentSocleReverseProductStructure`, `LinkedSegmentSoclePairReducible`
-and `SegmentSocleProductIrreducibility`, and every result owned by the tasks
-excluded in task `f5488c8d-59a8-4de8-8649-4511bbaea5d9`. All imported pairs are
+and `SegmentSocleProductIrreducibility`. All imported pairs are
 used unchanged.

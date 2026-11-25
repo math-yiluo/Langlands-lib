@@ -1,6 +1,6 @@
 # Finite full-central action on an actual opposite Jacquet module
 
-Author: Worker 526. This is an internal specialization of the published
+This is an internal specialization of the published
 opposite-Jacquet admissibility and finite-generation theorems and
 `Smooth.CentralOperatorExpansionProof`.
 

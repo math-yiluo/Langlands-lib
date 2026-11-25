@@ -99,6 +99,7 @@ theorem sourceConjugate_comp (hi : IsClosedSubgroup i) (σ : K ≃ₐ[k] K)
     (hσ : SubgroupFunctor.range (radicalGaloisHom i σ) = SubgroupFunctor.range i) :
     sourceConjugate hi σ hσ ≫ i.hom.hom.left =
       i.hom.hom.left ≫ TensorCoordinates.conjugate k K G.X σ := by
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   apply (cancel_epi (sourceIso hi σ hσ).hom.hom.hom.left).mp
   have h := congrArg (fun f => f.hom.hom.left) (sourceIso_hom_comp hi σ hσ)
   change (sourceIso hi σ hσ).hom.hom.hom.left ≫ i.hom.hom.left =

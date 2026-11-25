@@ -35,6 +35,6 @@ on every member, an actual ambient conjugating point with that certificate.
 This use of classical choice makes no canonicity claim.
 
 The provenance is the composition of the local maximal-torus, supplied-torus
-conjugacy, pullback-point, and cover-composition constructions. This unit
+conjugacy, pullback-point, and cover-composition constructions. This module
 does not prove the three supplied propositions, produce global points in
 the unipotent radical, or prove `RelativeLeviConjugacyStatement`.

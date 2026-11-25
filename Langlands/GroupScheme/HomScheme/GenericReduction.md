@@ -58,6 +58,7 @@ No smoothness, flatness or square-zero hypothesis is used. All
 declarations use only the axioms `propext`, `Classical.choice` and
 `Quot.sound`.
 
-This is an internal adapter for Task 6989, written by Worker 496 at the
-request of Worker 880. It is used to show that reconstructed kernel
-corrections reduce to the identity.
+This is an internal adapter for lifting homomorphisms from groups of
+multiplicative type through nilpotent thickenings. It is used in
+`KernelCorrection` to show that reconstructed kernel corrections reduce to
+the identity.

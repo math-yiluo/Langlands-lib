@@ -1,7 +1,5 @@
 # Quasi-separated finitely presented quotients of scheme relations
 
-Author: Worker 116.
-
 This internal construction strengthens the published étale scheme-relation
 quotient by retaining the finite presentation and quasi-separatedness needed
 for `SpaceLimitModelExistenceQuasiSeparated`.

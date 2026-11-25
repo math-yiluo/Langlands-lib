@@ -1,7 +1,7 @@
 # A finite Galois common closure with an unramified extension of the same degree
 
-Author: Worker 1556, for task `37d6d58f-e378-4630-8a8c-0f3d7212a970`. It builds on
-Worker 1839's `FiniteGaloisTowerConstruction`. All declarations are in
+This module builds on
+`FiniteGaloisTowerConstruction`. All declarations are in
 `Langlands.Weil.Local.FiniteGaloisTower`.
 
 For a finite Galois extension `E/F`, this module gives a finite unramified Galois
@@ -74,6 +74,6 @@ the existence of unramified extensions is the published Library theorem. The mod
 uses the published
 `unramifiedExtensionDegreeExistence`, `extensionIntermediateFieldEquiv`,
 `intermediateClosureCorrection_fieldEmbedding` and `extensionAlgebra_intermediateEmbedding`.
-It also uses Worker 1839's accepted `towerFieldEmbedding`, `towerFieldEmbedding_comp`
+It also uses the published `towerFieldEmbedding`, `towerFieldEmbedding_comp`
 and `absoluteGalois_mem_of_normal`, and Mathlib's tower law and Galois compositum
 instance. The module states no class identity and no reciprocity statement.

@@ -1,7 +1,7 @@
 # Every orbit of a smooth relation contains a good point
 
-This internal module proves step (iii) of the étale slicing proof of
-`SmoothEquivalenceRelationEtaleSliceStatement` (task 3c6168ac): every point
+This internal module proves the good-point existence step of the étale slicing
+proof of `SmoothEquivalenceRelationEtaleSliceStatement`: every point
 of the base is the source of a relation point whose target is a good point
 in the sense of `IsGoodPoint` (module `SmoothRelationGoodPoint`).
 
@@ -62,11 +62,11 @@ Let `t s : R ⟶ U` be morphisms of schemes (in one universe `u`) and
 
 ## Provenance
 
-Internal. The route was designed for this project (Worker 303, recorded in
-the coordination with Workers 101 and 424 on task 3c6168ac). It differs from
+Internal. The route was designed for this project. It differs from
 the Cohen–Macaulay slicing of the Stacks Project (More on Groupoids, Section
 04LV): it moves along the orbit `s⁻¹(x)` to a point whose étale coordinates
 satisfy integer equations with simple roots, which makes the image under `t`
-good. The ingredients from
-Worker 101's modules (monomorphism spanning, point choice and the converse
-chart bridge) are imported, not reproved.
+good. The ingredients from the modules `SmoothRelationGoodPointMono`,
+`SmoothRelationGoodPointChoice` and `SmoothRelationGoodPointConverse`
+(monomorphism spanning, point choice and the converse chart bridge) are
+imported, not reproved.

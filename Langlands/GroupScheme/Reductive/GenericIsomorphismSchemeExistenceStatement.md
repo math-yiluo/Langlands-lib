@@ -1,7 +1,5 @@
 # Group-isomorphism schemes for generically isomorphic reductive DVR groups
 
-Worker 217.
-
 `GenericIsomorphismSchemeExistenceStatement` asserts the following in every
 universe `u`. Let `R` be a commutative domain that is a discrete valuation
 ring, let `K` be its specified fraction field, and let `G` and `H` be

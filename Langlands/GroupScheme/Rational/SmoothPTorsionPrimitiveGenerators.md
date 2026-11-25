@@ -1,7 +1,5 @@
 # Primitive generators for smooth commutative groups of prime exponent
 
-Worker 1552, task `f02d1dea-6430-41df-bf80-bd95f132e32f`.
-
 This internal composition supplies primitive algebra generators for the
 arbitrary-field vector embedding assertion in CGP B.1.10. It applies to any
 smooth commutative affine actual group scheme over a field of prime

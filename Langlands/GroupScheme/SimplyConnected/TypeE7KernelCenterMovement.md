@@ -20,5 +20,5 @@ the downstream local rank-one classification or Kneser--Tits results.
 The entry proposition `Langlands.GroupScheme.TitsIndexData.E7BranchMarkedCenterMovementStatement` records the precise scope of
 `hasCenterMovingAutomorphism_of_E7_branch_mark`: its explicit hypotheses are universally quantified in a
 Prop-valued definition. The implemented theorem and proof are retained.
-This unit is submitted as a statement because its mathematical entry is
+This module is given as a statement because its mathematical entry is
 a proposition, rather than a data construction.

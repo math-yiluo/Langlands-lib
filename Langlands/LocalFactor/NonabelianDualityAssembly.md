@@ -26,4 +26,6 @@ proved spectral reduction supplies the aggregate dual functional equation.
 
 The implementation proves the existence and assembly lemmas described here.
 The generation and rank-one equations remain explicit premises of the final
-two theorems. This unit does not prove the unconditional task target.
+two theorems. This module does not prove their conclusions unconditionally; the
+theorem `dualFunctionalEquation` in `Langlands.LocalFactor.NonabelianDualityProof`
+proves `DualFunctionalEquationStatement` without premises.

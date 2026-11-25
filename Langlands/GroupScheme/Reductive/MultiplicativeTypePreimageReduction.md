@@ -1,7 +1,5 @@
 # Multiplicative-type preimages: reduction to the extension statement
 
-Worker 324.
-
 This module gives a conditional reduction for the multiplicative-type part of
 the normal-central theorem. It assumes the proposition
 `MultiplicativeTypeFpqcExtensionStatement.{u}` and centrality of the actual

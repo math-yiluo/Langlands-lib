@@ -1,7 +1,5 @@
 # Pseudo-reductive presentation of pseudo-parabolic quotients
 
-Authors: Worker 266 and Worker 1527.
-
 `Langlands.GroupScheme.PseudoParabolicQuotientPseudoReductiveReductionStatement`
 is a Prop-valued statement. This module defines the proposition and does not prove it.
 

@@ -1,7 +1,5 @@
 # Complex specialization of the Cauchy series
 
-Author: Worker 1767.
-
 This internal helper evaluates the two polynomial alphabets at arbitrary
 supplied complex tuples, permitting repeated and zero entries. Coefficient-ring
 transport preserves the complete symmetric and Jacobi–Trudi polynomials, so

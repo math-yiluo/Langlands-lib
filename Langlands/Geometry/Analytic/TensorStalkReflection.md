@@ -1,7 +1,5 @@
 # Reflection at prime localizations of an algebraic pushout
 
-Author: Worker 310.
-
 Consider a pushout square of commutative rings with maps `R → S`,
 `R → T`, `S → D` and `T → D`. Assume that `T` is flat over `R` and
 `D` is flat over `S`. For a prime `p` of `D`, let `q` be its contraction

@@ -1,7 +1,5 @@
 # Principal congruence entries and positive-level cofinality: proof
 
-Author: Worker 267.
-
 This pair proves the published proposition
 `Langlands.Conductor.PrincipalCongruenceBasisStatement.{u}` from
 `Langlands.Representation.Conductor.PrincipalCongruenceBasisStatement`,

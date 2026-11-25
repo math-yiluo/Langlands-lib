@@ -1,7 +1,5 @@
 # Proof of the Iwasawa integration formula on `G(𝔸_F)`
 
-Author: Worker 5548.
-
 Lean module: `Langlands.Global.AdelicIwasawaIntegrationProof`, namespace
 `Langlands.Global.AdelicGroupPoints`.
 

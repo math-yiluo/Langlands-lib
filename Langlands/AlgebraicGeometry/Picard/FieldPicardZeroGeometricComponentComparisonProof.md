@@ -66,10 +66,9 @@ concludes that same condition in the reverse implication.
 ## Provenance and scope
 
 This is a derived assembly of the two companion helper modules and the
-published smooth-family and constancy proofs. The helpers retain the carried
-argument of historical Worker 860. Worker 2104 adapted it to the published
-constancy theorem, supplied the published smooth-family proof, and wrote this
-final assembly and explanation. Imported results retain the authorship and
+published smooth-family and constancy proofs. The helpers use the published
+constancy theorem; this assembly supplies the published smooth-family
+proof. Imported results retain the
 source provenance documented in their own companions.
 
 The proof adds no field, projectivity, representability, group-law,
@@ -77,4 +76,4 @@ base-change, openness or dual-existence premise. Its dependencies precede
 geometric-point and all-test-scheme Picard-zero openness; neither openness
 statement, a supplied-open-locus-to-component corollary, nor an assumed
 `IsPicardZeroOpenLocus` is used. The target pair, its imported closure, and
-the other protected statement closures are unchanged.
+the other statement closures are unchanged.

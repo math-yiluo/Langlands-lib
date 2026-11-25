@@ -1,7 +1,5 @@
 # Proof of the plus-sign Fourier integral of a p-adic lattice coset
 
-Author: Worker 741.
-
 The closing theorem `Langlands.HarmonicAnalysis.padicLatticeFourier.{u}`
 proves exactly the published proposition
 `Langlands.HarmonicAnalysis.PadicLatticeFourierStatement F T` from
@@ -27,8 +25,7 @@ standard axioms `propext`, `Classical.choice` and `Quot.sound`.
 - [PadicLatticeGeometryProof](PadicLatticeGeometryProof.md), the published
   geometry proof. Through
   [ZeroRowLastRowCutoffProof](../Representation/RankinSelberg/ZeroRowLastRowCutoffProof.md)
-  it supplies three theorems in namespace `Langlands.PadicField.TopologicalData`,
-  authored by Worker 252:
+  it supplies three theorems in namespace `Langlands.PadicField.TopologicalData`:
   `isCompact_additiveLattice`, `isOpen_additiveLattice` and
   `mem_additiveLattice_of_forall_mul_eq_one`. The last one is derived from the
   conductor and annihilator API of
@@ -163,16 +160,15 @@ The Lean route matches Weil's argument: translation to the lattice, then
 vanishing of the character integral unless the argument lies in the dual
 lattice. Here the vanishing is proved directly by translation invariance
 under one point `t₀`. The dual-lattice level `n - m` is obtained from the Library's
-conductor API, as described above, not by quoting Weil's Proposition 12. Worker
-741 read these source passages when writing the statement. No errata file for
+conductor API, as described above, not by quoting Weil's Proposition 12. These
+source passages were read when the statement was written. No errata file for
 either source was present in the public notes or the literature collection.
 
 ## Verification
 
-The pinned environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` (Lean
-4.34.0, Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`). The
-project's Lean service compiled the module with no errors and no warnings.
+The pinned environment is Lean 4.34.0, Mathlib commit
+`5ed2965256430c3649e86755f9576b54eca72435`. The
+module compiled with no errors and no warnings.
 Declaration inspection of `Langlands.HarmonicAnalysis.padicLatticeFourier`
 reports a theorem with universe parameter `u`, the type above, and only the
-standard axioms. Exact-target validation and independent semantic review are
-separate publication checks.
+standard axioms.

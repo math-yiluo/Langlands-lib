@@ -1,9 +1,7 @@
 # Existence of strictly local affine limits of étale neighbourhoods
 
-Workers 252 and 521.
-
-`Langlands.AlgebraicGeometry.strictLocalEtaleLimitExistence.{u}` proves the
-published `StrictLocalEtaleLimitExistenceStatement.{u}`. For an affine
+`Langlands.AlgebraicGeometry.strictLocalEtaleLimitExistence.{u}` proves
+`StrictLocalEtaleLimitExistenceStatement.{u}`. For an affine
 scheme `S` and a point `s`, it constructs a `StrictLocalEtaleLimit S s`
 whose ring and index category are in universe `u`.
 

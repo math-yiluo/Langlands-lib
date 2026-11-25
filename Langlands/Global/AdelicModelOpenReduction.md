@@ -1,7 +1,5 @@
 # From local maps to actual adelic openness
 
-Authors: Worker 208 and Worker 1525.
-
 `adelicModelOpenReduction` proves exactly
 `Langlands.Global.AdelicModelOpenReductionStatement.{u}`, for an arbitrary
 universe `u`. Its declared type is that proposition, and the proof is the

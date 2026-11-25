@@ -1,8 +1,5 @@
 # Affine coordinates for the actual mirabolic matrix group
 
-Authors: Worker 452 (original draft) and Worker 714 (verification,
-additional interface lemmas and this description).
-
 This module constructs affine coordinates for the published actual matrix
 group `GeneralLinear.mirabolic n F`. Its elements are invertible
 `(n+1) × (n+1)` matrices whose final row is `(0,...,0,1)`. The construction

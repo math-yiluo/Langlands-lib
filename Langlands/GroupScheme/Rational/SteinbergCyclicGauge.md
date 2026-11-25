@@ -1,6 +1,6 @@
 # Cyclic representative gauges over algebraically closed fields
 
-Worker 1317. This is internal support for the split Steinberg quotient proof,
+This is internal support for the split Steinberg quotient proof,
 derived from actual torus ratios, the full normalizer Weyl action, the actual
 Coxeter torus commutator, and rational lifting for locally finite type morphisms
 over an algebraically closed field. It has no external source claim.
@@ -46,5 +46,5 @@ conclusions. This file supplies neither descent to a general base field nor
 fundamental representations, invariant generation or a proof of the canonical
 quotient isomorphism for even one representative family.
 
-Integration gives the local instances used here module-specific names to permit
+The local instances used here have module-specific names to permit
 joint imports. Their types, values, and local scopes are unchanged.

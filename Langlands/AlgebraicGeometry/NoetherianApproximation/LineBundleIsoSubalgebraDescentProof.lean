@@ -24,7 +24,7 @@ variable {A₀ A : Type u} [CommRing A₀] [CommRing A] [Algebra A₀ A]
 `A₀`-subalgebras of `A`. -/
 theorem exists_fg_nonempty_iso_pullback (T : FGIndex A₀ A) {Y : Scheme.{u}}
     (fY : Y ⟶ Spec (CommRingCat.of (FGStage T))) [QuasiCompact fY] [QuasiSeparated fY]
-    (M N : Y.Modules) (hM : Scheme.Modules.IsInvertible M) (hN : Scheme.Modules.IsInvertible N)
+    (M N : Y.Modules) (hM : Scheme.Modules.IsInvertibleFLT M) (hN : Scheme.Modules.IsInvertibleFLT N)
     (h : Nonempty
       ((Scheme.Modules.pullback (pullback.fst fY (Spec.map (CommRingCat.ofHom (fgToLimit T))))).obj M ≅
        (Scheme.Modules.pullback (pullback.fst fY
@@ -60,8 +60,8 @@ theorem lineBundleIsoSubalgebraDescent : LineBundleIsoSubalgebraDescentStatement
     exists_fg_nonempty_iso_pullback i (pullback.snd f₀ ι₀)
       ((Scheme.Modules.pullback (pullback.fst f₀ ι₀)).obj M)
       ((Scheme.Modules.pullback (pullback.fst f₀ ι₀)).obj N)
-      ((isInvertible_of_isLocallyFreeRankOne hM).pullback _)
-      ((isInvertible_of_isLocallyFreeRankOne hN).pullback _) h₀
+      (Scheme.Modules.IsInvertible.pullbackFLT (hL := isInvertible_of_isLocallyFreeRankOne hM) _)
+      (Scheme.Modules.IsInvertible.pullbackFLT (hL := isInvertible_of_isLocallyFreeRankOne hN) _) h₀
   rw [nonempty_iso_pullback_pullback_iff] at hj
   refine ⟨j.1, j.2, fun x hx => hij (Algebra.subset_adjoin hx), ?_⟩
   intro X' a' f' hpb'

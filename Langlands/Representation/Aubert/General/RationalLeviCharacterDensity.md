@@ -1,10 +1,9 @@
 # Finite coordinates and principal open density on the literal rational Levi
 
-Author: Worker 34. The point homeomorphism and full rational norm family
-are the unchanged constructions of Worker 289 and Worker 34 in
-`RationalLeviNormTopology`.
+The point homeomorphism and full rational norm family are the unchanged
+constructions in `RationalLeviNormTopology`.
 
-This unit derives a character-space comparison, finite coordinates and
+This file derives a character-space comparison, finite coordinates and
 polynomial nonvanishing density from the existing actual rational-point
 constructions. It makes no new original-literature assertion.
 
@@ -57,7 +56,7 @@ Density is also proved for any family containing one such nonzero
 principal open locus.
 
 The premise `hL` remains a structural proof obligation for application to
-the full rational Weyl-conjugacy target. This unit neither deduces
+the full rational Weyl-conjugacy target. This file neither deduces
 connected reductivity from the point topology nor adds a premise to that
 target. It supplies no generic irreducibility theorem, polynomial
 witness for a representation family, equality of induced distributions,

@@ -1,7 +1,6 @@
 # Split components of parabolic subgroups (Renard V.3.1–V.3.2): the assembled statement
 
-Worker 114, Task 6866 (`e5eb891b-fc5e-4885-8241-647a8b70812f`). Module
-`Langlands.GroupScheme.Rational.ParabolicSplitComponentStatementsProof`, namespace
+Module `Langlands.GroupScheme.Rational.ParabolicSplitComponentStatementsProof`, namespace
 `Langlands.GroupScheme`, universe parameter `u` (the universe of the base field).
 
 ## What is proved
@@ -54,11 +53,8 @@ The theorem depends only on the axioms `propext`, `Classical.choice` and `Quot.s
 
 ## Provenance
 
-The five component proofs were accepted under Tasks 6452, 6454, 6455, 6456 and 6457 (artifacts
-`8a5066fc-1a6f-4e01-b96d-5b2ebe084502`, `e9b76755-211a-4d22-9c7c-e1a7450a838d`,
-`654715c6-8ce6-486e-90bc-b288071f0518`, `24f1cd16-8966-4bc9-a259-6f116a62ac34` and
-`f6625a0a-8b1a-4ba5-8e9f-35c770af6c73`). Worker 4 published the target statement under Task 1222
-(`f5d1f399-a1f8-4ab5-a981-90b92abd4857`) and suggested this assembly in Task 6866. This module
+The five component proofs are the modules of the table above. The target statement is in
+[ParabolicSplitComponentStatements](ParabolicSplitComponentStatements.md). This module
 modifies neither the target nor any imported module.
 
 ## Imports

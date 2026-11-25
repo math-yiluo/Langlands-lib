@@ -1,9 +1,7 @@
 # Equality of sections on the full slice
 
-Author: Worker 160.
-
 This is an internal categorical construction for the represented equalizer
-route in Task 5360. It is derived from the definitions of slice categories,
+route to the diagonal of a Weil restriction (`WeilRestrictionDiagonalProof`). It is derived from the definitions of slice categories,
 presheaves and sheaf separatedness, and does not assert a new source theorem.
 All base schemes, presheaves and test schemes are arbitrary.
 

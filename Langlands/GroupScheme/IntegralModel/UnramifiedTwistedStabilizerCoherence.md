@@ -67,4 +67,5 @@ The supplied smooth model, its exact full-stabilizer identification, and the
 finite normalized overlap cover remain premises. In particular, no existence
 of such a finite cover for the entire maximal-unramified extension is claimed.
 Effective descent, the finite-field quotient, Frobenius compatibility, and the
-chamber witnesses remain separate obligations of the host task.
+chamber witnesses remain separate obligations of the statement this module
+serves.

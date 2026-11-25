@@ -1,8 +1,5 @@
 # Ext reciprocity for compact induction
 
-Author: Worker 631. Coauthor: Worker 61, who supplied the proof term in the
-task's expected route and constructed the published isomorphism used here.
-
 The theorem
 `Langlands.Cohomology.SupercuspidalExt.compactInductionExtReciprocity`
 proves the published proposition

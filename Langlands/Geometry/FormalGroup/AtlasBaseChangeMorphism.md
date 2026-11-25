@@ -86,7 +86,7 @@ isomorphism. Preservation of composition and identity transports its two
 formal inverse equations. `Iso.baseChange_onPoints` gives the same square
 with the full-family linear equivalences.
 
-This unit extends maps between equal-cover atlases. Base change of arbitrary
+This module extends maps between equal-cover atlases. Base change of arbitrary
 refinements and of comparisons between different covers remains separate.
 It supplies no varying-base quotient functor, order-linearity, height,
 framing, moduli triple or representability assertion.

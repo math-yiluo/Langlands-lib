@@ -1,7 +1,5 @@
 # Borel subgroup presentations and conjugated containment
 
-Worker 1293.
-
 This module derives elementary transport lemmas from the published definitions
 of `IsSolvableGroupScheme` and `IsBorelSubgroup`. The base field is arbitrary,
 of arbitrary characteristic and universe. No Borel existence or conjugacy

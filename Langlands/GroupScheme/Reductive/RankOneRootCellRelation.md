@@ -1,9 +1,7 @@
 # Points of the additive group, character values and the open cell
 
-Author: Worker 239.
-
 Module `Langlands.GroupScheme.Reductive.RankOneRootCellRelation`. This is an internal
-supporting unit for the proof of `SplitRankOneRootCellStatement`. It sets up notation and
+supporting module for the proof of `SplitRankOneRootCellStatement`. It sets up notation and
 elementary identities for points of `𝔾ₐ`, for values of characters, and for points of an
 open cell `xm(Y) t xp(X)`. It proves no theorem from the literature.
 

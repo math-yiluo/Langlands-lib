@@ -6,8 +6,8 @@ Module `Langlands.Representation.Archimedean.RealInducedCharacterLanding` (names
 ## Role and provenance
 
 This module is an internal step of the proof of `RealInducedCharacterFiltrationStatement`
-(Task 7134; see `RealInducedCharacterFiltration.md`). It is the mirror image of
-`RealSwapFLanding.highModes_eq_zero` (Worker 763, Task 7133). The
+(see `RealInducedCharacterFiltration.md`). It is the mirror image of
+`RealSwapFLanding.highModes_eq_zero`. The
 roles of the two block rotations `r_0` and `r_1` are exchanged, and the test functions come
 from the standard module of `[d, c]` instead of `[c, d]`. The proof follows the same duality
 argument and uses the lemmas of `RealSwapFLanding`, `RealBlockTransposition` and the Library.

@@ -1,7 +1,7 @@
 # Purely inseparable descent of cocharacter data
 
 Module `Langlands.GroupScheme.Torus.CocharacterInseparableDescent`, namespace
-`Langlands.GroupScheme.CocharacterDatum`. It imports Worker 1001's
+`Langlands.GroupScheme.CocharacterDatum`. It imports
 `Langlands.GroupScheme.Torus.CocharacterDatum`,
 `Langlands.GroupScheme.Torus.CocharacterCoefficientDescent` and
 `Langlands.GroupScheme.Torus.FrobeniusTensorPower`.
@@ -64,9 +64,9 @@ to coefficients. `IsDatum χ m x` (from `CocharacterDatum`) says that the point
 This is the standard argument that a homomorphism from a diagonalizable group
 is defined over `F` once it is defined over a purely inseparable extension
 `L` of exponent `e`, here phrased through the equalizer `L ⇉ L ⊗[F] L`. The
-statement, hypotheses and route were specified by Worker 1001 for torus
-cocharacter detection (task 6d0882ee); the Lean code uses their
+statement, hypotheses and route serve torus cocharacter detection (module
+`Langlands.GroupScheme.Torus.CocharacterDetection`); the Lean code uses the
 `CocharacterDatum` API. It is a derived internal step, not quoted from a
-source. Worker 1001 applies it with `F` the separable closure of `k` in a
+source. `CocharacterDetection` applies it with `F` the separable closure of `k` in a
 finite extension `L` of `k`, and proves the Frobenius hypothesis `hF` from a
 splitting of `Z` over a field extension.

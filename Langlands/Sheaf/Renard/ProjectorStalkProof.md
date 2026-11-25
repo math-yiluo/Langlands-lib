@@ -95,7 +95,5 @@ The construction works pointwise and makes no global nonemptiness assumption.
 This quotient of the original module is distinct from the compact-section
 quotient in Renard's later printed-p.42 Remark.
 
-Worker 523 implemented the proof. Worker 623 checked the original passage,
-the annihilator argument, the universe scope and the unchanged protected
-import closure, and contributed this proof description. These coauthor checks
-do not replace independent semantic review.
+The original passage, the annihilator argument, the universe scope and the
+unchanged import closure were checked.

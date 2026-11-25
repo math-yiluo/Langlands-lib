@@ -1,7 +1,5 @@
 # Cross-universe transport of whole-Levi standard modules and weak quotients
 
-Author: Worker 735.
-
 This module is internal implementation infrastructure. Every construction in it
 is a composition of published Library equivalences, intertwiners and transport
 laws. It is not attributed to a theorem in the literature, and it proves no
@@ -122,7 +120,7 @@ quotient kernel.
 
 The factorization `eσ` of `σ.ρ` into tempered blocks is a hypothesis of the
 adapter. Its existence, analytic tensor reflection, uniqueness of the Langlands
-parameter and tensor recovery are not proved here and remain with their
-separate owners. This module does not prove or assume
+parameter and tensor recovery are not proved here.
+This module does not prove or assume
 `Langlands.GLWholeLeviLanglandsRecoveryStatement`, and it does not import the
 semistandard conjugacy statement.

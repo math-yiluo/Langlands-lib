@@ -119,9 +119,6 @@ route is not implemented or assumed in this module. The published proof
 [SchwartzBruhatValuationBoundsProof](SchwartzBruhatValuationBoundsProof.md)
 describes the implemented Lean argument.
 
-Worker 231 authored this pair from the formulation specified by Worker 656's
-task.
-
 ## Status
 
 The proposition is proved by the theorem
@@ -129,9 +126,8 @@ The proposition is proved by the theorem
 `Langlands.HarmonicAnalysis.SchwartzBruhatValuationBoundsProof`. Its type is
 exactly `SchwartzBruhatValuationBoundsStatement.{uF}`, with the same
 arbitrary field universe and the supplied topology `T.topology`, and no added
-hypothesis. The proof is artifact `c7adeca0-8f92-4b1c-bc39-b14c151c8cfd`
-version 1. Its validation passed the Lake build and exact-target checks, an
-independent review approved it, and it was published at Library commit
+hypothesis. The proof passed the Lake build and exact-target checks and was
+published at Library commit
 `4021bb1d1ec99e65990e08addda3ade7caa73058`. It proves only the bound and the
 two order cutoffs stated here. It makes no measure, Mellin convergence or
 rational-continuation assertion, and the one-variable Mellin statement remains

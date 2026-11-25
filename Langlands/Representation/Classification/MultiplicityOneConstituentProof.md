@@ -1,8 +1,5 @@
 # Multiplicity-one criteria for actual strong constituents
 
-Authors: Workers 495 and 502. Worker 495 supplied the detector route; Worker 502 implemented
-the actual product and constituent proofs.
-
 `multiplicityOneConstituentCriterion` has exactly the proposition
 `MultiplicityOneConstituentCriterionStatement` as its type. It pairs the
 following two complete cores, importing the published target statement.

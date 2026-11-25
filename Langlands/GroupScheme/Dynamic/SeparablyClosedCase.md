@@ -38,7 +38,7 @@ Proof as implemented, with `Ω = AlgebraicClosure k`.
 3. `DynamicFlagQuotientExistenceStatement` for `(H, χ'')` gives a proper `Q₀`
    with exact fibers and local sections. The parabolic `P_H(χ'')` is
    represented by a smooth (`dynamicSmooth`) closed subgroup whose structure
-   map is surjective (`surjective_hom`, the unit is a section). Worker 254's
+   map is surjective (`surjective_hom`, the unit is a section).
    `Dynamic.flat_surjective_quasiCompact_of_localSections` then makes `π₀`
    flat, surjective and quasi-compact.
 4. The base change `q_Ω` is flat, surjective and quasi-compact, and its fibers
@@ -48,9 +48,9 @@ Proof as implemented, with `Ω = AlgebraicClosure k`.
 5. `hker_of_kernel` with `hc` (for the radical `U`) gives the kernel condition.
    `exists_algHom_tensor_ne_zero` with `hrat` gives the density hypothesis; it
    needs `B` to be a domain (`isDomain_of_smooth_connected`) and geometrically
-   reduced (`isGeometricallyReduced_of_smooth`), both from Worker 254's
+   reduced (`isGeometricallyReduced_of_smooth`), both from
    `CorepresentedSmoothGeometry`.
-6. Worker 254's `isDomain_tensor`, `isDiscreteValuationRing_tensor` and
+6. `isDomain_tensor`, `isDiscreteValuationRing_tensor` and
    `isFractionRing_tensor` (for the purely inseparable extension `Ω/k`) make
    `Ω ⊗ R` a DVR with fraction field `Ω ⊗ Frac R`.
 7. `exists_extension_of_comparison` concludes.

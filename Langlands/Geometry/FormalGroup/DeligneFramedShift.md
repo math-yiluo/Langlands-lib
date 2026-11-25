@@ -127,13 +127,13 @@ ones at degree `i+n`, and translation is a bijection on `ZMod d`.
 four data using these formulas. For every integer `i` and point on the old
 zero locus at `i+n`, the required equality is between the old component
 determinant at `i+n` and `pi^n` times the old normalized frame determinant at
-`i+n`. In particular, this unit asserts no unconditional preservation of
+`i+n`. In particular, this module asserts no unconditional preservation of
 condition (c) or full admissibility by a raw shift.
 
-This contribution constructs nonnegative shifts and their actual determinant
+This module constructs nonnegative shifts and their actual determinant
 law. It does not construct inverse or arbitrary-integer framed shifts,
 zero/addition comparisons of framed shifts, a normalized GL/PGL action, or
 its central-scalar laws. Compatibility with base change, an independent
 exterior-subsheaf comparison, and formal representability remain outside this
-unit. The integer variable in the stalk formulas is a translate of a frame;
+module. The integer variable in the stalk formulas is a translate of a frame;
 it does not enlarge the natural-number domain of `shiftNat`.

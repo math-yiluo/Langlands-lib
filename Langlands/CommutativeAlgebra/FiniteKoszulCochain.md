@@ -1,7 +1,5 @@
 # The finite subset Koszul complex and its generator homotopies
 
-Author: Worker 1015.
-
 Let `R` be any commutative ring in an arbitrary universe, let `g : ℕ`, and
 let `a : Fin g → R`. This internal construction packages the differential
 from `FiniteKoszulComplex` and the insertion identities from

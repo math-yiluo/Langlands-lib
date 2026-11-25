@@ -1,7 +1,5 @@
 # Fibrewise isogenies of reductive group schemes are isogenies
 
-Worker 685, with Worker 717.
-
 `Langlands.GroupScheme.reductiveFibrewiseIsogeny.{u}` proves the unchanged
 published proposition `ReductiveFibrewiseIsogenyStatement.{u}` for every
 universe. For any scheme `S`, reductive group schemes `G'` and `G` over

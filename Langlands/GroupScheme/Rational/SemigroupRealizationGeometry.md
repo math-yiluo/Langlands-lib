@@ -1,7 +1,7 @@
 # Geometric realization of the generated semigroup subgroup
 
 For a smooth affine group over any field in universe `u`, an actual split-torus
-automorphic action and any additive character semigroup, this internal unit
+automorphic action and any additive character semigroup, this internal module
 identifies the original all-test generated semigroup functor with the range of
 the actual connected coordinate subgroup. Empty semigroups and semigroups
 containing zero are included.
@@ -34,6 +34,6 @@ equality. No realization or full-Lie theorem is assumed as an extra premise.
 
 The provenance is internal composition of the imported actual coordinate
 subgroup, tangent computation, generator factorization and represented
-Lie-image uniqueness results. This unit does not prove unipotence, a finite
+Lie-image uniqueness results. This module does not prove unipotence, a finite
 Ga-series, or the full `SemigroupRealizationStatement`; those structural
 conclusions remain separate obligations.

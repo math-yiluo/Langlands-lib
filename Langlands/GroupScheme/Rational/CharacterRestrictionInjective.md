@@ -13,7 +13,7 @@ The argument is derived, not quoted. Renard (V.2.2) deduces injectivity from
 the structure of reductive groups over a nonarchimedean local field. Here the
 structure input is isolated in `CentralSplitTorusCharacterStatement`. The
 remaining step is the factorization of central split tori through the split
-component, proved below from Worker 1178's
+component, proved below from
 `Langlands.GroupScheme.exists_largestCentralSplitTorus` in
 `Langlands.GroupScheme.Rational.SplitComponentProof`.
 

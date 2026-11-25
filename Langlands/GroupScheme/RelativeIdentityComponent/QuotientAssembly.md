@@ -1,7 +1,5 @@
 # Group structure on supplied identity-component quotients
 
-Worker 852.
-
 This internal construction starts with a group scheme `G` smooth over an
 arbitrary scheme `S`, an inclusion `i : H → G` satisfying
 `IsRelativeIdentityComponent G i`, and supplied data

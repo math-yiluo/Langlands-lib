@@ -30,4 +30,4 @@ twisted orbit is constant. `conjugate_low_coordinates` proves preservation of ev
 supported-coordinate cutoff, by the arbitrary-ring intrinsic weight-subgroup
 conjugation theorem in `Rational/CyclicWeightConjugation`. This is an algebra-point
 result; identifying it with a particular root chart, or proving compatibility
-under a change of maximal torus, remains a separate obligation for Task 7200.
+under a change of maximal torus, is not part of this module.

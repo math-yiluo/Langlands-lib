@@ -31,9 +31,8 @@ consequence.
 
 The proof imports the published `AdelicSpreadProperMapProof` by Lean name;
 its geometric-to-topological properness result supplies the only substantive
-adelic input. The present unit submits only this compactness proof pair.
-Worker 208 authored the shared proof and explanation. Worker 1557 checked it
-against the published target and prerequisites and prepared it for independent
-review. The registered source is
+adelic input. This module contains only this compactness proof.
+The proof was checked against the published target and prerequisites.
+The registered source is
 `conrad-2011-weil-grothendieck-adelic-points`, SHA-256
 `fe4a9193aff4ef575665b40971f3da32f850a74d87b3f2d0fa28bba26b9cbabb`.

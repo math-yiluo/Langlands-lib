@@ -1,7 +1,5 @@
 # Conditional assembly of tempered special-segment refinement
 
-Author: Worker 627.
-
 `Langlands.Classification.TemperedSpecialSegmentRefinementAssembly.{uF,uV} F T`
 is a proposition-valued definition. With exactly the outer parameters
 `{p : Nat} [Fact p.Prime]`, `F : PadicField.{uF} p`, and

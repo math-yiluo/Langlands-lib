@@ -1,7 +1,5 @@
 # Rational points over a henselian field and over its completion
 
-Author: Worker 105.
-
 `HenselianCompletionPointEmbeddingStatement` states part (2) of Proposition 5.11 of
 Brian Conrad, *Weil and Grothendieck approaches to adelic points* (December 31, 2011),
 printed p.18. The registered source is `conrad-2011-weil-grothendieck-adelic-points`,

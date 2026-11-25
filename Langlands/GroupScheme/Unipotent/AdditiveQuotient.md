@@ -1,6 +1,6 @@
 # Represented fppf additive quotients
 
-Worker 1448. This is an internal derived construction from the published
+This is an internal derived construction from the published
 coordinate, geometric-integrality and dominant-homomorphism results.
 
 For an arbitrary field `k : Type u` and an actual smooth connected affine
@@ -63,7 +63,7 @@ fppf quotient back to the original group scheme.
 ## Scope
 
 This construction proves neither smoothness nor connectedness of the
-kernel of the chosen quotient. It does not yet construct a finite
+kernel of the chosen quotient. It does not construct a finite
 represented Ga-series and does not prove
 `PerfectFieldUnipotentSplitStatement` or
 `AlgebraicallyClosedSplitSolvableStatement`. The trivial group is excluded

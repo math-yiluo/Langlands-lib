@@ -1,6 +1,6 @@
 # A multiplicity-one detector identifies simple endpoints
 
-Author: Worker 502. This is a derived internal algebraic interface with no
+This is a derived internal algebraic interface with no
 external source citation.
 
 `SimpleEndpointMultiplicityOneStatement` concerns an additive functor from

@@ -1,7 +1,5 @@
 # Unconditional covariant exhaustion by Steinberg-type products
 
-Author: Worker 165. Worker 3483 supplied the composite term in Task 5311's context.
-
 `Langlands.GroupScheme.steinbergCovariantExhaustion` has exactly the type
 `Langlands.GroupScheme.SteinbergCovariantExhaustionStatement.{u}`, defined in
 `Langlands.GroupScheme.Reductive.SteinbergCovariantExhaustionStatement`, for arbitrary

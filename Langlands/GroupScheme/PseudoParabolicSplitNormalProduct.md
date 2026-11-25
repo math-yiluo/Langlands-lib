@@ -1,7 +1,5 @@
 # A normal split product inside a supplied pseudo-parabolic
 
-Author: Worker 60.
-
 This is a derived construction over every field `k : Type u`, for a smooth
 affine group scheme `G`, a cocharacter `χ`, a supplied split ground-field
 unipotent radical `n : V → G`, and a supplied represented product

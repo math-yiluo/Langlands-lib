@@ -1,7 +1,5 @@
 # Reducing the strictly Henselian DVR isogeny criterion to two local inputs
 
-Worker 685.
-
 `StrictHenselianDvrFibrewiseIsogenyStatement` restricts the published
 `ReductiveFibrewiseIsogenyStatement` to spectra of strictly Henselian discrete
 valuation rings. It quantifies over every universe, every domain DVR `R` that

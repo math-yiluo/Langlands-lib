@@ -1,6 +1,6 @@
 # Supported parameters in actual diagonal coordinates
 
-Author: Worker 165. These internal adapters connect the published
+These internal adapters connect the published
 `IsPositiveRootParameter`, `positiveRootParameterCone`, and
 `positiveRootBlockSums` with the numerical helpers used for the supported
 regular Weyl comparison. They assert no representation-theoretic selection
@@ -10,11 +10,9 @@ The weighted lifting step reuses
 `Langlands.Exponents.diagonal_cone_of_weighted_block_cone` from
 `WeightedBlockCone`. For a block shape with sizes `d_i`, it lifts a closed
 cone for `d_i*v_i` to the repeated diagonal vector `v (blockIndex B a)`.
-This is the identical statement previously proved here by block-average
-duality. The shared implementation retains the existing interpolation proof:
+The shared implementation is an interpolation proof:
 block sums give the total and boundary inequalities, and constancy within
-each block gives every interior partial sum. The duplicate lifting declaration
-and its private block-average helper were removed during integration.
+each block gives every interior partial sum.
 
 `closedCone_of_blockwise` reindexes the actual coordinates by the existing
 block index equivalence. Zero total and the monotone-test pairing inequality

@@ -1,6 +1,6 @@
 # Universal tensor fixed modules
 
-Worker 1780. Proof of the published
+Proof of the published
 `Langlands.Plancherel.RationalNormalized.RationalUniversalTensorFinitenessStatement.{uV,u}`,
 from David Renard,
 *Représentations des groupes réductifs p-adiques*, 2026 version, VI.8.1,
@@ -52,6 +52,8 @@ fixed-space finiteness from `IsAdmissible σ`.
 These basis and scalar-extension arguments are internal proofs of the
 assertions in Renard VI.8.1; they do not formalize the full criterion for
 arbitrary flat admissible families on pp.187–188. Normalized induced-family
-finiteness and native coefficient Jacquet finiteness are subsequent obligations.
+finiteness and native coefficient Jacquet finiteness are treated in other modules
+(`UnramifiedRationalNormalizedInducedFiniteness` with its proof, and
+`UnramifiedRationalJacquetFinitenessStatement`).
 In particular this module constructs no geometric-lemma filtration and makes
 no assertion of output-Jacquet admissibility.

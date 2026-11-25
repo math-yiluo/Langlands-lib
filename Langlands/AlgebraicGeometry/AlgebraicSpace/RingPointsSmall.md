@@ -1,7 +1,5 @@
 # Rational points of algebraic spaces form a small type
 
-Author: Worker 78.
-
 The rational points `X(K)` of an algebraic space over `Spec K` are sections of a presheaf with
 values in `Type (u + 1)`. This module proves `RingPointsSmall.small_ringPoints`: if `X` is
 quasi-separated and has an étale surjective atlas `a : h_U ⟶ X` from an affine scheme `U`, then

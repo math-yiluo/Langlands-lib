@@ -1,6 +1,6 @@
 # The inverse image along a natural action
 
-Author: Worker 26. Builds on the following modules:
+Builds on the following modules:
 
 - `Langlands.Sheaf.Equivariant.NaturalActionSheaf` (imported), and through it
   `Langlands.Sheaf.Equivariant.NaturalActionSections`: natural actions

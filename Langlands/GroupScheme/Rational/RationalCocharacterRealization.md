@@ -1,7 +1,8 @@
 # Integral realizations of rational cocharacter directions
 
-This is an internal structural construction for the rational parabolic gallery
-in Task 5515. A rational direction of a split torus `A` is a rational linear
+This is an internal structural construction for the rational parabolic gallery,
+in the argument for the existence of an irreducible induced unramified twist.
+A rational direction of a split torus `A` is a rational linear
 functional on `ℚ ⊗[ℤ] characterLattice A`. Evaluation at an actual character is
 a rational linear form on this space of directions. The existing
 `rationalCocharacterEvaluation`, imported from `RelativeReflectionPairing`,
@@ -37,4 +38,4 @@ The proof uses only the imported published structural results and elementary
 ordered rational arithmetic. It claims no new result from the external
 representation-theoretic literature. It does not construct actual rank-one
 wall models or prove either gallery existence target or the final
-irreducible-induced-twist proposition; those remain separate obligations.
+irreducible-induced-twist proposition; those are outside this module.

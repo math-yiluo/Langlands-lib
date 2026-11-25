@@ -1,7 +1,5 @@
 # Proof of the flattened-refinement full modulus comparison
 
-Author: Worker 776.
-
 This file proves the exact closed proposition
 `Langlands.Parabolic.FlattenedRefinementModulusStatement.{uF}` as the theorem
 `Langlands.Parabolic.flattenedRefinementModulus`. The theorem's type is that

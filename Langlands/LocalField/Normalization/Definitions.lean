@@ -89,8 +89,8 @@ noncomputable def discreteValuation : Valuation F.Carrier ℤᵐ⁰ :=
   letI := T.valuativeRel
   letI := T.localField
   (ValuativeRel.valuation F.Carrier).map
-    (IsNonarchimedeanLocalField.valueGroupWithZeroIsoInt F.Carrier).toMonoidWithZeroHom
-    (IsNonarchimedeanLocalField.valueGroupWithZeroIsoInt F.Carrier).strictMono.monotone
+    ⟨(IsNonarchimedeanLocalField.valueGroupWithZeroIsoInt F.Carrier).toMonoidWithZeroHom,
+      (IsNonarchimedeanLocalField.valueGroupWithZeroIsoInt F.Carrier).strictMono.monotone⟩
 
 /-- A chosen element of valuation `exp (-1)`, hence a uniformizer. -/
 noncomputable def uniformizer : F.Carrier := by

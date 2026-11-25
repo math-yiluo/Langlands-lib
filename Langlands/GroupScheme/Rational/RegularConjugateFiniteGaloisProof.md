@@ -1,7 +1,5 @@
 # Proof: finite Galois conjugacy to a point with toral centralizer
 
-Worker 1296.
-
 `Langlands.GroupScheme.regularConjugateFiniteGalois` proves the Library
 statement `Langlands.GroupScheme.RegularConjugateFiniteGaloisStatement.{u}`
 (module `Langlands.GroupScheme.Rational.RegularConjugateFiniteGaloisStatement`),

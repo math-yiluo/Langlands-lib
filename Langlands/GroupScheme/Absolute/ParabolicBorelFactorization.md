@@ -21,8 +21,7 @@ factor equation back to the original inclusion.
 This is internal category-theoretic content derived from the Library definitions
 in `Absolute/Borel` and the transport and base-change APIs. It does not assert
 general field-extension preservation of Borels or parabolics, or establish
-parabolic self-normalization. Worker 1346 supplied the adapter direction;
-Worker 1297 implemented the construction and proof.
+parabolic self-normalization.
 
 The entry `IsParabolicSubgroup.borelFactorizationOfIsAlgClosed` chooses data
 `BorelFactorization i` from the proved existential

@@ -1,7 +1,5 @@
 # Convergence of the hyperext spectral sequence in Cartan–Eilenberg's Case 1, and its covariant form
 
-Author: Worker 16.
-
 This module declares four theorem-statement definitions in the namespace
 `Langlands.Cohomology.HyperextConvergence`. They are propositions, not
 proofs. Their conclusions are the vanishing of differentials, the
@@ -9,7 +7,7 @@ isomorphisms and the zero objects, and nothing is supplied as data or as a
 hypothesis about the spectral sequence. No proof is given here; the truth
 arguments below explain why the statements hold.
 
-The first three definitions concern Worker 61's hyperext spectral sequence
+The first three definitions concern the Library's hyperext spectral sequence
 of `K` and `B` for a t-structure. They assert its convergence when `K` is
 bounded above and `B` is bounded below. These are the boundedness conditions
 of Cartan and Eilenberg's Case 1. The companion module
@@ -33,11 +31,11 @@ compact groups (see "Application").
 Generic part. `C` is a category with objects in `Type u` and morphisms in
 `Type v`, two independent universes. It is preadditive, has a zero object, a
 shift by `ℤ` by additive functors, and is pretriangulated and triangulated
-(`IsTriangulated`). These are the instances of Worker 61's module
+(`IsTriangulated`). These are the instances of the module
 `Langlands.Cohomology.HyperextSpectralSequence`. Declarations of other
 modules that are used:
 
-- `HyperextSpectralSequence.hyperextSpectralSequence t K B` (Worker 61): for a
+- `HyperextSpectralSequence.hyperextSpectralSequence t K B`: for a
   t-structure `t` on `C` and objects `K` and `B`, Mathlib's
   `E₂`-cohomological spectral sequence of the spectral object obtained by
   applying `Hom(-, B)` to the truncations of `K`. Objects are indexed by
@@ -45,12 +43,12 @@ modules that are used:
   object in position `(p, q)` on page 2 is `Hom(heartPiece t K q, B⟦p + q⟧)`
   (`secondPageIso`). `heartPiece t K q` lies in degrees `≥ -q` and `≤ -q`;
   classically it is `H^{-q}(K)` placed in degree `-q`.
-- `HyperextSpectralSequence.opTStructure t` (Worker 61): the t-structure on
+- `HyperextSpectralSequence.opTStructure t`: the t-structure on
   `Cᵒᵖ` in which `op X` lies in degrees `≤ n` exactly when `X` lies in
   degrees `≥ -n` for `t`, and in degrees `≥ n` exactly when `X` lies in
   degrees `≤ -n` (`opTStructure_isLE_iff`, `opTStructure_isGE_iff`).
 - `HyperextAbutment.filtration t K B n p` and `HyperextAbutment.graded`
-  (Worker 61, module `Langlands.Cohomology.HyperextAbutmentFiltration`): the
+  (module `Langlands.Cohomology.HyperextAbutmentFiltration`): the
   subgroup `F^p` of `Hom(K, B⟦n⟧)` of morphisms that factor through
   `K ⟶ τ_{≥ p - n} K`, and `gr^p = F^p / F^{p+1}`. The same module proves
   `F^p = Hom(K, B⟦n⟧)` for `p ≤ 0` when `B` lies in degrees `≥ 0`
@@ -182,14 +180,14 @@ Let `R` be a commutative ring and `G` a group acting by homeomorphisms on a
 space `X`. Let `F` be an equivariant sheaf of `R`-modules. Take for `C` the
 category `Rep R G`, for `K` the derived global section complex
 `ι(EquivariantDerivedComplex.globalComplex R G X F)`, and for `A` the trivial
-representation `Rep.trivial R G R`. Worker 13's
-`isZero_globalComplex_homology` shows that `K` lies in degrees `≥ 0`. So
+representation `Rep.trivial R G R`.
+`EquivariantDerivedComplex.isZero_globalComplex_homology` shows that `K` lies in degrees `≥ 0`. So
 `op K` lies in degrees `≤ 0` and `op A₀` in degrees `≥ 0` for the opposite
 t-structure (the test below proves this). Then:
 
 - page 2 of the covariant spectral sequence is
   `Ext^p_{Rep R G}(R, H^q(X, F))` by `CovariantSecondPageStatement` and
-  Worker 13's `globalComplexHomologyIso`. For `R = ℤ` this is the group
+  `globalComplexHomologyIso`. For `R = ℤ` this is the group
   cohomology `H^p(G, H^q(X, F))`;
 - by `HyperextHalfBoundedConvergenceStatements` for `D(Rep R G)ᵒᵖ` with
   `b = c = 0`, the position `(p, q)` is stable from page
@@ -201,7 +199,7 @@ t-structure (the test below proves this). Then:
 
 This is Tohoku's second spectral sequence `II_2^{p,q} = H^p(G, H^q(X, A))`,
 abutting to `H^n(X; G, A)` ((5.2.5), p.200), with the identifications only
-asserted to exist. In the same way, with `SmoothRep R G`, Worker 13's
+asserted to exist. In the same way, with `SmoothRep R G`,
 `SmoothSheafDerivedComplex.compactComplex`, the trivial smooth representation
 `EquivariantComposite.trivialSmoothRep R G` and
 `CompactGroupCompactCompositeStatement`, one obtains Berkovich's
@@ -245,8 +243,8 @@ Correspondence with the Lean statements:
 For `T(A, C) = Hom(C, A)` with `A` a module in degree `0`, (4) reads
 `Ext^q(H_p(C), A) ⇒ ℋ^{p+q}`. With `K = C` and `H_p(C) = H^{-p}(K)`, and
 with the two indices exchanged so that the filtration degree comes first,
-this is `Ext^p(H^{-q}(K), A) ⇒ Hom(K, A⟦p + q⟧)`. That is Worker 61's spectral
-sequence for `B` in the heart (`c = 0`, `B` also in degrees `≤ 0`). The
+this is `Ext^p(H^{-q}(K), A) ⇒ Hom(K, A⟦p + q⟧)`. That is the spectral
+sequence `hyperextSpectralSequence` for `B` in the heart (`c = 0`, `B` also in degrees `≤ 0`). The
 filtrations agree: a morphism `K → A⟦n⟧` lies in `F^p` exactly when it
 vanishes on the part of `K` in degrees `< p - n`, that is, when its
 components have `Ext`-degree `≥ p`. Symmetrically, for `C` a module and `A` a
@@ -257,11 +255,11 @@ Changes, all derived reformulations or generalizations:
 
 - An arbitrary triangulated category with a t-structure replaces complexes
   of modules and Cartan–Eilenberg resolutions.
-- For `B` not in the heart, Worker 61's spectral sequence filters by
+- For `B` not in the heart, `hyperextSpectralSequence` filters by
   truncations of `K` only. Its page 2 is then `Hom(H^{-q}(K)[q], B⟦p + q⟧)`.
   Cartan and Eilenberg's second spectral sequence instead resolves both
-  variables. The generic statements assert convergence of Worker 61's
-  spectral sequence under Case 1 boundedness. They do not compare it with
+  variables. The generic statements assert convergence of
+  `hyperextSpectralSequence` under Case 1 boundedness. They do not compare it with
   Cartan and Eilenberg's sequence in that case.
 - The covariant form is obtained by passing to the opposite category,
   rather than by a separate construction.
@@ -298,7 +296,7 @@ there, so `HyperextConvergence.Statement` already covers them.
 
 ## Nonvacuity and checks
 
-A private test file, not part of this module, compiled the following over
+A test file, not part of this module, compiled the following over
 it and over `Langlands.Cohomology.EquivariantComposite.Statement`:
 
 ```lean
@@ -361,16 +359,16 @@ representations. The hypotheses of the Tohoku application hold for every
 equivariant sheaf. The three statements can be applied together to it, at
 morphism universes `w = w' = 1` over `u = 0`.
 
-`lean_check` in environment `bb168ec3-1031-46d9-816b-5c2ed7bbe1a6` (Lean
-4.34.0, Mathlib `5ed2965256430c3649e86755f9576b54eca72435`), over Library
+Checks in Lean
+4.34.0, Mathlib `5ed2965256430c3649e86755f9576b54eca72435`, over Library
 commit `31e40c5ae36490ae0e69099d9dca183c6e478d98`:
 
-- Diagnostic `eaa71530-dfa0-4e19-8280-ee44b08f4a36` compiled the module with
+- A first diagnostic compiled the module with
   no errors or warnings and inspected
   `HyperextHalfBoundedConvergenceStatements`: `statement_returns_prop: true`,
   level parameters `v, u`, axioms `propext`, `Classical.choice`,
   `Quot.sound`.
-- Diagnostic `008d034d-0ca0-408e-824f-ceb42f0c2edf` compiled the module and
+- A second diagnostic compiled the module and
   the test file with no errors or warnings and inspected
   `CovariantSecondPageStatement`: `statement_returns_prop: true`, level
   parameters `w, w', v, u`, the same axioms.
@@ -379,9 +377,9 @@ commit `31e40c5ae36490ae0e69099d9dca183c6e478d98`:
 
 Library commit `31e40c5ae36490ae0e69099d9dca183c6e478d98`:
 
-- `Langlands.Cohomology.HyperextSpectralSequence` (Worker 61):
+- `Langlands.Cohomology.HyperextSpectralSequence`:
   `hyperextSpectralSequence`, `opTStructure`, `heartPiece`.
-- `Langlands.Cohomology.HyperextAbutmentFiltration` (Worker 61):
+- `Langlands.Cohomology.HyperextAbutmentFiltration`:
   `HyperextAbutment.graded`.
 - Mathlib `Algebra.Homology.DerivedCategory.Ext.Basic` (`Abelian.Ext`,
   `HasExt`) and `Algebra.Homology.DerivedCategory.TStructure`
@@ -391,7 +389,7 @@ Library commit `31e40c5ae36490ae0e69099d9dca183c6e478d98`:
 
 - The canonical isomorphisms `E_∞^{p,q} ≅ gr^p`, their naturality, and
   canonical forms of the covariant identifications.
-- A comparison of Worker 61's spectral sequence with Cartan and Eilenberg's
+- A comparison of `hyperextSpectralSequence` with Cartan and Eilenberg's
   second spectral sequence when `B` is not in the heart, and the first
   spectral sequence.
 - Tohoku's edge homomorphisms (5.2.6)–(5.2.7), the five-term exact sequences

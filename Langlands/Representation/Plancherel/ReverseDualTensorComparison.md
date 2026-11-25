@@ -39,9 +39,9 @@ radical unimodularity and compactness of the two actual left quotients.
 No irreducibility hypothesis is used.
 
 This helper has no continuation data or character parameter. In particular,
-it does not yet identify `J` and `R` with the continued standard integrals, prove
+it does not identify `J` and `R` with the continued standard integrals, prove
 a nonempty generic locus, or assert unitary regularity or coefficient/form
 preservation. Those applications require the actual common-Levi family
-adapter owned by Task 7244 and the subsequent closed targets. The bijectivity
-witness for `R` is an explicit local algebraic input here, not a permanent
-structural hypothesis of the remaining closed extension targets.
+adapter (`ActualCommonLeviTensor`, which applies this helper) and the subsequent
+closed targets. The bijectivity witness for `R` is an explicit local algebraic
+input here, not a permanent structural hypothesis of the closed extension targets.

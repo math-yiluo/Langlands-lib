@@ -31,7 +31,7 @@ projective.
 
 ## Provenance
 
-The decomposition follows Worker 281's route to Tag 05FT: cover by smooth localizations, local
+The decomposition follows the project's route to Tag 05FT: cover by smooth localizations, local
 splitness on each factor, then descent of projectivity. It replaces the Stacks Project route
-through Noetherian approximation and Tag 05FS. Worker 928 wrote this module. The module is
+through Noetherian approximation and Tag 05FS. The module is
 internal to the project.

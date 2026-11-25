@@ -1,8 +1,10 @@
 # The direct cyclic cuspidal fiber statement
 
-Worker 44. `CyclicCuspidalFiberStatement` is a proposition definition for
+`CyclicCuspidalFiberStatement` is a proposition definition for
 Arthur–Clozel III.3.1 on actual full cuspidal classes with supplied genuine
-spectral systems. The analytic theorem remains to be proved.
+spectral systems. The Library does not prove the analytic theorem;
+`CyclicCuspidalFiberReduction` derives it from arithmetic order and partial
+pair L-function inputs.
 
 ## Original source and scope
 

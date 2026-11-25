@@ -1,6 +1,6 @@
 # Height control on translated cocharacter sublattices
 
-Author: Worker 836, Task 5326. Internal helper for the Xi upper-bound proof.
+Internal helper for the Xi upper-bound proof.
 
 `exists_submodule_basis_coord_height` bounds the sum of the absolute integral
 coordinates in any submodule of the cocharacter lattice of a split torus.

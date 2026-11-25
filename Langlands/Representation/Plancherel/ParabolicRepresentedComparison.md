@@ -40,7 +40,7 @@ either and cites no external source.
 
 ## The actual comparison
 
-The setting is that of the host target: a nonarchimedean local field, an
+The setting is that of `ConditionalParabolicGenericIrreducibilityStatement`: a nonarchimedean local field, an
 affine connected reductive `G` with canonical point topology, the actual maps
 `p`, `l`, `a`, `n`, the compatible root presentation `pres`, the
 geometric-radical witness `hn`, the literal semidirect decomposition `h` and
@@ -74,8 +74,8 @@ radical closedness `hU`.
   isomorphism above. The last step is the existing
   `RepresentedParabolic.selectedLeviJacquetEquivUnitary`.
 - `parabolicJacquetHom_rank_le_representedUnitary`: suppose the literal
-  induction is admissible and `σ` satisfies the host's exact
-  `IsSquareIntegrableModCentralSubgroup` predicate for the range of
+  induction is admissible and `σ` satisfies the exact
+  `IsSquareIntegrableModCentralSubgroup` predicate of that statement for the range of
   `parabolicSplitComponentPointHom pres`, with any quotient Haar measure.
   Then the rank of Hom from the whole literal `J(I(σ))` into `σ` is at most
   the rank of Hom from the represented unitary Jacquet module of the
@@ -88,5 +88,5 @@ module proves no bound on the represented unitary Hom space, no geometric
 filtration and no irreducibility. Its purpose is to let a represented-model
 bound on that unitary Hom space be applied to the literal target.
 
-Integration gives the local instances used here module-specific names to permit
-joint imports. Their types, values, and local scopes are unchanged.
+The local instances used here have module-specific names to permit
+joint imports.

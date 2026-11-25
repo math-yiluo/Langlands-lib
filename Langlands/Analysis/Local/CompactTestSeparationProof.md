@@ -44,6 +44,5 @@ operator. Its source motivation and remaining actual-period/smoothness
 obligations are recorded in the target Markdown. This is an internal
 analytic prerequisite; the normalized quotient period, all-parabolic
 cuspidal realization, source smoothness, and spectral conclusions remain
-separate obligations. Worker 116 implemented this cutoff-power proof
-using the pinned Mathlib APIs. Worker 1580 adopted the Lean proof
-unchanged and expanded this explanation for the focused proof task.
+separate obligations. This cutoff-power proof uses the pinned Mathlib
+APIs.

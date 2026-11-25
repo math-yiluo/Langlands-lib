@@ -52,7 +52,7 @@ theorem id0_ne_zero_of_faithful {S : Scheme.{u}} {B : AbelianScheme S}
     {R : Type*} [Ring R] [Nontrivial R] (i : R →+* End0 B)
     (hi : Function.Injective i) : id0 B ≠ 0 := by
   intro h
-  change (1 : End0 B) = 0 at h
+  replace h : (1 : End0 B) = 0 := CategoryTheory.End.ext h
   have h' : i 1 = i 0 := by simpa only [map_one, map_zero] using h
   exact one_ne_zero (hi h')
 

@@ -1,6 +1,6 @@
 # The exponent of the epsilon factor of a pair from the change of additive character
 
-Author: Worker 4803. Module `Langlands.Representation.RankinSelberg.PairEpsilonExponentProof`,
+Module `Langlands.Representation.RankinSelberg.PairEpsilonExponentProof`,
 namespace `Langlands.RankinSelberg`. Universes: `uF` (p-adic fields), `uV` and `uW`
 (carriers of the two representations), independent.
 

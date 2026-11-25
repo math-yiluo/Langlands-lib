@@ -85,8 +85,10 @@ parameters with the actual published model proofs: the vertex proof uses the
 integer-valued common-apartment and boundedness results over the maximal
 unramified field; the maximal-bounded proof uses a stable lattice, schematic
 closure and smoothening; and the intersection proof uses diagonal closure and
-smoothening. These proof inputs do not consume any of the forbidden
-unramified-descent descendant statements in the host task.
+smoothening. These proof inputs do not use
+`UnramifiedFixedPairSpecialApartmentStatement` or any unramified-descent result
+derived from it: no module importing that statement lies in the import closure
+of this module.
 
 This construction generalizes the apartment-subset recovery
 interface in `UnramifiedFixedSubsetRecovery` to arbitrary quotient pairs and
@@ -96,4 +98,6 @@ The construction supplies a model in which one may subsequently close a torus
 whose units fix the pair. It does not construct a special torus or a common
 apartment, and it does not prove
 `UnramifiedFixedPairSpecialApartmentStatement`. Obtaining the special torus
-and the apartment comparison remains an independent obligation.
+and the apartment comparison is a separate step; the theorem
+`unramifiedFixedPairSpecialApartment` in `UnramifiedFixedPairSpecialApartmentProof`
+proves that statement from this construction.

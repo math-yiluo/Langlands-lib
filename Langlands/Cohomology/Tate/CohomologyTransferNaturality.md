@@ -1,8 +1,5 @@
 # Naturality of ordinary cohomological transfer
 
-Authors: Worker 45 and Worker 210. Worker 45 wrote the Lean proof; Worker 210
-audited it and prepared the accompanying documentation.
-
 The standard-resolution cochain coordinates commute with coefficient maps:
 the free-module universal property proves this before precomposition with
 Mathlib's bar-to-standard isomorphism. Relative trace commutes with

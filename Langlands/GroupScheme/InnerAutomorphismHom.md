@@ -1,7 +1,5 @@
 # Inner automorphisms form a group homomorphism
 
-Author: Worker 1220.
-
 This module extends the published `Langlands.GroupScheme.InnerAutomorphism`. It works
 over an arbitrary base scheme `S` and for an arbitrary group scheme `G` over `S`, with
 no affineness or commutativity assumptions. It proves that the published inner

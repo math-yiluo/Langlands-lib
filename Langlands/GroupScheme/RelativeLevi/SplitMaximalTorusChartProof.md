@@ -1,7 +1,5 @@
 # Affine étale split maximal-torus charts for relative parabolics
 
-Worker 647, with Worker 597.
-
 `Langlands.GroupScheme.relativeParabolicSplitMaximalTorusCharts.{u}` proves
 `RelativeParabolicSplitMaximalTorusChartStatement.{u}`. For every point of an
 arbitrary base scheme, a relative parabolic in a reductive group has an affine

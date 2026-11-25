@@ -1,8 +1,9 @@
 # Canonical additive associativity of original balanced tensors
 
-Worker 691 states an intrinsic additive generalization motivated by David
+This module states an intrinsic additive generalization motivated by David
 Renard, French version dated 9 July 2026, I.2.2.4 and I.2.2.7 (printed
-pages 15–16 / PDF21–22). The main propositions are unproved. Only elementary
+pages 15–16 / PDF21–22). The main propositions are not proved here; they are
+proved in `NonUnitalTensorAssociativity`. Only elementary
 evaluation pairings, balancing and biadditivity needed for the nested
 published quotient lifts are constructed here.
 
@@ -43,18 +44,18 @@ in all three variables. The eight universes are independent; the second
 existence conjunct ensures target witnesses are supplied even when their
 carrier universes differ from the source universes.
 
-The intended direct proof successor constructs the two nested lifts,
+The direct proof in `NonUnitalTensorAssociativity` constructs the two nested lifts,
 establishes their triple-tensor values and uses tensor extensionality twice
 to prove the inverse identities and naturality. That principal proof is not
-part of this statement unit.
+part of this module.
 
 The registered source is
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 691 read the conventions at printed pages 5–7 / PDF11–13,
+The conventions at printed pages 5–7 / PDF11–13,
 I.2.1 at printed page 14 / PDF20 and the entire theorem, corollary,
 corollary proof and three-variable naturality remark at printed pages 15–16 /
-PDF21–22. The theorem is complex-linear and uses complex unitizations;
+PDF21–22 were read. The theorem is complex-linear and uses complex unitizations;
 the corollary uses nondegenerate modules over complex algebras with
 idempotents and the comparison I.2.1.2. The book refers the theorem's proof
 to bibliography [34], pages 97–98, which was not read here. The nested
@@ -69,10 +70,10 @@ these passages do not change the elementary additive construction here.
 
 Additive associativity alone is not full coverage of I.2.2.4 or I.2.2.7.
 Comparisons with actual unitized tensors and canonical coefficient
-structures, and coefficient-linearity of the associator, remain parent
-obligations. Extra outer actions, pentagon coherence, tensor-Hom
+structures, and coefficient-linearity of the associator, are not treated
+here. Extra outer actions, pentagon coherence, tensor-Hom
 equivalences, exactness, categorical adjunctions and source
-forgetful/induction constructions are separate units.
+forgetful/induction constructions are separate results.
 
 The companion `NonUnitalTensorAssociativityChecks` checks complete unapplied
 telescopes and exact unfoldings, including complementary unequal 0/1

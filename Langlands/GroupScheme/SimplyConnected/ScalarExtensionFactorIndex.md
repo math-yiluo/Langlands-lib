@@ -1,6 +1,6 @@
 # Actual geometric root-factor labels under scalar extension
 
-Worker 509. Derived from the actual torus/group comparison retained in scalar
+Derived from the actual torus/group comparison retained in scalar
 extension pinning data, all-test root subgroup transport, and uniqueness of
 actual root-factor placement. The canonical ambient tower isomorphism identifies
 the entire actual root subgroup for every matched root. Transporting an actual

@@ -1,6 +1,6 @@
 # Tensor containment for geometric irreducibility specialization
 
-Worker 336. This internal supporting module extends the uniform power
+This internal supporting module extends the uniform power
 containment in `GenericIrreducibilityHypersurface` to scalar extensions.
 It is a derived algebraic argument for the affine spreading proof, rather than
 a separate assertion from the literature or a proof of the full spreading target.

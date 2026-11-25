@@ -1,7 +1,5 @@
 # Lie differentials of actual finite-product matrix representations
 
-Author: Worker 2.
-
 This module proves that the constructed linear differential of an actual
 representation of a finite product of general linear group schemes preserves
 the pointwise matrix commutator. It bundles the same map as

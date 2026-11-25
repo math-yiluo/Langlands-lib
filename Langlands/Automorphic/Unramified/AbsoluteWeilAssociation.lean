@@ -1,4 +1,4 @@
-import Langlands.ClassField.Global.AbsoluteLocalWeilMap
+import Langlands.ClassFieldTheory.Global.AbsoluteLocalWeilMap
 import Langlands.Automorphic.Unramified.RelativeWeilAssociation
 
 /-! # Representations of the absolute Weil group and weak association
@@ -12,7 +12,7 @@ local-to-global Weil maps exist. No local map, representation or spectrum is con
 
 noncomputable section
 
-namespace Langlands.ClassField.Global
+namespace Langlands.ClassFieldTheory.Global
 
 open Langlands.Global Langlands.Global.AdelicFunctoriality Langlands.Global.CompletionPadic
 open Langlands.Unramified
@@ -304,4 +304,4 @@ end Cuspidal
 
 end WeilMapSystem
 
-end Langlands.ClassField.Global
+end Langlands.ClassFieldTheory.Global

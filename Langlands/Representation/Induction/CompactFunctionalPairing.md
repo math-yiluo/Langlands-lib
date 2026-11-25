@@ -1,12 +1,10 @@
 # A nonzero pairing from an inverse-character functional
 
-Authors: Worker 605 and Worker 805.
-
 This internal construction extends the published
 `Langlands.Induction.FormsFunctional.exists_standardForm` from two compact
 inductions to compact induction paired with an arbitrary smooth
 representation. The product, integration, local-section evaluation and
-admissible-subgroup arguments adapt Worker 805's published
+admissible-subgroup arguments adapt the published
 `CompactFormsFunctional` construction. No new claim about an original
 literature statement is made.
 

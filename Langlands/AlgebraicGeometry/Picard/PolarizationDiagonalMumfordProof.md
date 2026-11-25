@@ -65,13 +65,13 @@ result is then `mumfordSchemeMap_poincareDiagonal_eq_mul`, whose point hypothesi
 
 ## Helper modules
 
-The proof uses these new modules, all part of this contribution:
+The proof uses these helper modules:
 
 - `LineBundleIsoClassGroup`: the commutative group of isomorphism classes of line bundles,
   with pullback as a homomorphism;
 - `PoincareSliceSymmetry`: the proposition `PoincareSliceSymmetric`;
 - `PoincarePointClasses`: point classes of families; Mumford maps have symmetric slices;
-- `PoincareSliceSymmetryBaseChange` (by Worker 943): descent of slice symmetry along base
+- `PoincareSliceSymmetryBaseChange`: descent of slice symmetry along base
   change;
 - `PoincareDiagonalClasses`: bilinearity of Poincaré classes and the pointwise identity
   `t ≫ Λ((1, λ₀)^* P) = (t ≫ λ₀)^2`.

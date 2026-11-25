@@ -1,7 +1,5 @@
 # Smooth dual restriction and rank zero for Harish-Chandra's criterion
 
-Author: Worker 200.
-
 This statement pair isolates two elementary obligations of the full published
 `Langlands.CuspidalSupport.LeviHarishChandraTheorem` without changing that
 proposition or its imports. The conjunction
@@ -34,8 +32,8 @@ Russian Mathematical Surveys 31:3 (1976), 1–68 (BZ76), registered as
 `bernstein-zelevinsky-1976-representations-gln`. Its retained original is
 `/home/taskhub/central-library/Bernstein-Zelevinsky--Representations of the group GL(n,F) where F is a non-archimedean local field (survey)--1976.pdf`,
 SHA256 `72dc22eb9991112936a88327f00d0f02a16a2bf8747518ca0ecfeeadd188e50c`.
-Worker 200 read printed/PDF p.26, pp.28–31 and pp.34–35 directly. No source
-errata note was found in the current Library.
+Printed/PDF p.26, pp.28–31 and pp.34–35 were read directly. No source
+errata note was found.
 
 In the proof of Theorem 3.21, (3) implies (4), on p.35, BZ76 observes that
 restriction to the open subgroup `G°` leaves the smooth contragredient space

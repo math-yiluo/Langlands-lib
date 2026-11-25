@@ -1,7 +1,5 @@
 # Relative effective Cartier divisors as actual closed subschemes
 
-Author: Worker 1543.
-
 For an actual ideal sheaf datum `I : X.IdealSheafData`,
 `Langlands.AlgebraicGeometry.Picard.IsEffectiveCartierIdeal I` means that
 the actual module sheaf

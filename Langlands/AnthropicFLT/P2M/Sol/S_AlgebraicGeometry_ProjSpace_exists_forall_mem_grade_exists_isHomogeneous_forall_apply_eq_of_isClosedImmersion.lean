@@ -7,7 +7,7 @@ Modified: FLT module names are prefixed by `Langlands.AnthropicFLT`; the FLT lak
 are set after the imports; the import of `P2M.Util` is dropped. The paired Markdown file lists
 the changes.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_ProjSpace
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_ProjSpaceCover
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_ProjTwistDatum
@@ -544,7 +544,7 @@ theorem absorb (K : ℕ) {D' : ProjSpaceCech.GradedModule A n} (σ : ProjSpaceCe
       simp only [ProjSpaceCech.GradedModule.freeGrade, not_le.mpr hneg, if_false] at hfk
       exact hfk
     rw [this, map_zero, map_zero, map_zero]
-    exact zero_mem _
+    exact Submodule.zero_mem _
   push_neg at hneg
   rw [ProjSpaceCech.GradedModule.freeGrade_of_nonneg A n hneg] at hfk
   replace hfk : (f k : MvPolynomial (Fin (n + 1)) A).IsHomogeneous (((d : ℤ) + σ.d₀ k).toNat) :=

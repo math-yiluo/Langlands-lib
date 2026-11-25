@@ -1,6 +1,6 @@
 # Tensor embeddings of coordinates lying in a product of covariant spaces
 
-Worker 1330 derives this internal support from the published regular-subspace,
+This internal support is derived from the published regular-subspace,
 covariant-product and tensor-intertwiner constructions and from the
 injectivity lemma `Chevalley.coordinateProduct_injective`. It turns the
 containment of a finite regular coordinate subspace in a product `X Y` of
@@ -10,7 +10,7 @@ product of two finite regular representations.
 Mumford–Fogarty–Kirwan, *Geometric Invariant Theory*, third enlarged edition
 (1994), Appendix to Chapter 1, Section A, printed p.192, asserts that the
 torus-invariant regular functions form an increasing union of copies of
-`W_(mρ) ⊗ W_(mρ)`. The derivation here is the author's own and is not taken from
+`W_(mρ) ⊗ W_(mρ)`. The derivation here is this file's own and is not taken from
 that page. Covariant spaces model the `W`, and the injectivity behind the word
 "copies" comes from an explicit density hypothesis. The file constructs no
 Borel subgroup, line bundle, Steinberg module or exhaustion; those enter only

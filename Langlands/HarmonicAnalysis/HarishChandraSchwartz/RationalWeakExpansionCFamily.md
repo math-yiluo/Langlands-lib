@@ -1,7 +1,5 @@
 # The c-family `c_{P'|P}(s, ω)` and the weighted family `c̃_{P'|P}(s, ω)`
 
-Author: Worker 131, task `b2eba110-082e-4b07-9076-f64b90cd0dc3` (Task 7454, revision 1), item 4.
-
 Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalWeakExpansionCFamily`,
 namespace `Langlands.HarishChandraSchwartz.WeakExpansion`.
 
@@ -40,7 +38,7 @@ measure constructions. Rationality and regularity are targets (module
   takes `K'` to be the compact subgroup of the lower density package, which under
   `CommonCompactNormalization` is `K ∩ M'(F)` read on the Levi scheme; this is the literal compact
   picture `I^{K∩M'×K∩M'}_{K∩M'∩s·P×K∩M'∩s·P}` of printed p.294.
-- `hCST : CentralSplitTorusCharacterStatement` is used, through Worker 614's published lemma `squaredModulus_of_centralSplitTorusCharacter`, to discharge the squared-modulus premise
+- `hCST : CentralSplitTorusCharacterStatement` is used, through the published lemma `squaredModulus_of_centralSplitTorusCharacter` (module `DynamicCommonLeviSquaredModulus`), to discharge the squared-modulus premise
   of the standard integrals. It is one of the hypotheses that `µ^G` already takes.
 
 ## Groups
@@ -52,7 +50,7 @@ The three relevant cocharacters of `T`, composed with `i`, are
 - `ψ_α = auxiliaryCocharacter i α (n·ζ) ∘ i` for `α = ζ'` and `α = -ζ'`. For `α = ζ'` this is
   `cParabolicCocharacter` and its parabolic is `P_s = (M' ∩ s·P)U'`; for `α = -ζ'` it is
   `cOppositeParabolicCocharacter` and gives `P̃_s = (M' ∩ s·P)Ū'` (module
-  `RationalWeakExpansionAuxiliaryParabolics`, Worker 614).
+  `RationalWeakExpansionAuxiliaryParabolics`).
 
 Proved here:
 
@@ -231,11 +229,11 @@ this module are stated for every `n`.
   `RationalDynamicSource.gammaReal`, `productInducedCoefficientTransport`,
   `productInducedCompactEquiv`, `plancherelDensity`, `rationalUnramifiedCharacterRestrict`,
   `unramifiedCharactersHomeomorph`, `parameterTransport`, `rationalFunction_value_eq`,
-  `DynamicOppositeCanonicalScalar.radical_unimodular`, `SubgroupFunctor.map_comap`; from Task 7454
-  units: `conjugatedCocharacter_dynamic`, `lowerCocharacter_dynamic`, `lowerLeviConjugation`
-  (Worker 614), `auxiliaryParabolic_geometry`, `auxiliaryCocharacter`
-  (`RationalWeakExpansionAuxiliaryParabolics`, Worker 614),
-  `squaredModulus_of_centralSplitTorusCharacter` (`DynamicCommonLeviSquaredModulus`, Worker 614),
+  `DynamicOppositeCanonicalScalar.radical_unimodular`, `SubgroupFunctor.map_comap`; from the
+  other weak-expansion modules: `conjugatedCocharacter_dynamic`, `lowerCocharacter_dynamic`,
+  `lowerLeviConjugation` (`RationalWeakExpansionLowerGeometry`), `auxiliaryParabolic_geometry`,
+  `auxiliaryCocharacter` (`RationalWeakExpansionAuxiliaryParabolics`),
+  `squaredModulus_of_centralSplitTorusCharacter` (`DynamicCommonLeviSquaredModulus`),
   `lowerUnramifiedCharacterConjugation`, `LowerDensityPackage`
   (`RationalWeakExpansionLowerOrbit`), `DensityPackage` (`DynamicOrbitPlancherelWeight`).
 - New definitions: `evalOneLinear`, `factorTranslation`, `FactorConverges`, `factorIntertwiner`,

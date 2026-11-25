@@ -114,7 +114,10 @@ theorem SpecialLinear.FinSucc.eq_or_eq_neg_of_mem_roots_one
   · exact Or.inl ((GeneralLinear.characterCoordEquiv (Fin 1) k).injective hc)
   · apply Or.inr
     apply (GeneralLinear.characterCoordEquiv (Fin 1) k).injective
-    simpa only [map_neg] using hc
+    have hneg : GeneralLinear.characterCoordEquiv (Fin 1) k (-β) =
+        -(GeneralLinear.characterCoordEquiv (Fin 1) k β) :=
+      (GeneralLinear.characterCoordEquiv (Fin 1) k).toLinearMap.map_neg β
+    simpa only [hneg] using hc
 
 variable (C : CommGroupScheme (Spec (CommRingCat.of k)))
   [IsAffineHom

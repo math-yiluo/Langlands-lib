@@ -1,7 +1,5 @@
 # Existence of actual cuspidal contragredients without a unitary center
 
-Author: Worker 5003.
-
 `Langlands.Automorphic.CuspidalContragredientExistenceStatement.{uF}` is a Prop-valued
 definition for a later proof. It states exactly:
 

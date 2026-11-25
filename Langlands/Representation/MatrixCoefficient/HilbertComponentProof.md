@@ -1,7 +1,5 @@
 # A closed coefficient component in the actual central L2 completion
 
-Authors: Worker 386 and Worker 801.
-
 This module proves
 `Langlands.squareIntegrableCoefficientHilbertComponent :
 SquareIntegrableCoefficientHilbertComponentStatement.{uG,uV}` with no
@@ -77,10 +75,9 @@ algebraically irreducible `ρ` on `V`, a Borel Haar measure `μ` on
 
 ## Provenance
 
-Worker 386 wrote the two transfer lemmas and the two applications to the
-completion. In that draft the irreducibility application still took the
-comparison statement as an explicit input. Worker 801 replaced that input
-with the published proof `admissibleAlgebraicToClosedIrreducibility`,
-added `toHilbertIntertwiner`, and assembled the final theorem from the
-published coefficient, central L2, completion and completed-intertwiner
-APIs.
+The module contains the two transfer lemmas, the two applications to the
+completion and `toHilbertIntertwiner`. The irreducibility application uses
+the published proof `admissibleAlgebraicToClosedIrreducibility` instead of
+taking the comparison statement as an explicit input. The final theorem is
+assembled from the published coefficient, central L2, completion and
+completed-intertwiner APIs.

@@ -1,8 +1,5 @@
 # The unadjusted alternating induction–Jacquet operator
 
-Implementation and documentation: Worker 1180. Mathematical specification:
-Worker 320 (task `a145f2e4-6268-470c-b7bc-0d6946db41d0`).
-
 This module defines the unadjusted alternating sum of Aubert's Definition 1.5
 on the exact Grothendieck group of finite-length smooth complex representations
 of `GL_n` over a p-adic field. It first names the integer-linear maps induced by
@@ -213,31 +210,24 @@ attributed verbatim to the literature.
 Not established here: Aubert's Theorem 1.7 (involutivity, commutation with
 induction, Jacquet restriction and contragredients), the sign-adjusted
 operator, images of irreducibles, an irreducible basis, and segment
-socle-to-special-quotient comparisons. These require later units.
+socle-to-special-quotient comparisons.
 
 ## Imports and independence
 
 Direct imports: `Langlands.Representation.Parabolic.FiniteLengthGrothendieckProof`
-and `Langlands.Representation.CuspidalSupport.FiniteBlockShapes`. No existing
-Library file is edited; the group, functor, preservation and K0 proof pairs are
-reused unchanged.
+and `Langlands.Representation.CuspidalSupport.FiniteBlockShapes`. The group,
+functor, preservation and K0 proof pairs are reused unchanged.
 
-The recursive project import closure, computed from actual import lines at
-Library base `5265467bd3fd94308df2e30a20d91abedd90f413`, has 599 modules.
-`FiniteBlockShapes` already lies in the closure of
+The recursive project import closure, computed from actual import lines, has
+603 modules. `FiniteBlockShapes` already lies in the closure of
 `FiniteLengthGrothendieckProof`, so this module adds no project dependency
-beyond the closure of the published K0 proof, which Worker 320 audited against
-the exclusions below. A text search of all 599 closure sources finds none of
-the target declarations or target statement modules of the excluded tasks:
-analytic segment classification `aca8805b-054f-4d56-8045-12db7f623404`;
-special-head multisegment exhaustion `3bfb61fa-1129-4fc9-83fd-7fcfec22106e`;
-ordered strong-head existence `ebea9a8a-9b21-4208-aa31-98c2dea1f8a3`;
-quotient coverage `20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584`; tempered block
-uniqueness `52e97845-36bb-457d-b76f-70753334b88c`;
-`SquareIntegrableLanglandsClassification` /
-`1cb45da2-7007-4351-a694-594fb148b8d1`; square-integrable exhaustion
-`cd8ab97c-0b78-4bce-97c4-d307a28159a4`; and regular exhaustion
-`bf433f0a-921a-428c-b0c0-6475438125ac`. The searched names were
+beyond the closure of the published K0 proof, which was audited against
+the exclusions below. A text search of all 603 closure sources finds none of
+the target declarations or target statement modules of the excluded results:
+analytic segment classification; special-head multisegment exhaustion;
+ordered strong-head existence; quotient coverage; tempered block uniqueness;
+`SquareIntegrableLanglandsClassification`; square-integrable exhaustion; and
+regular exhaustion. The searched names were
 `segmentEssentialSquareIntegrableClassification`,
 `multisegmentHeadExhaustion`, `orderedMultisegmentHeadExistence`,
 `orderedMultisegmentQuotientExhaustion`, `temperedBlockUniqueness`,
@@ -250,10 +240,7 @@ uniqueness `52e97845-36bb-457d-b76f-70753334b88c`;
 
 ## Development validation
 
-`lean_check` in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` compiled the
-module with zero errors and zero warnings (diagnostic
-`98082296-3990-4d6b-8e9a-862de8e81fd8`). Inspection of
-`Langlands.Aubert.alternatingOperator` reports kind `definition`, level
-parameters `["uF", "uV"]`, and only `propext`, `Classical.choice` and
-`Quot.sound` as axioms. Compilation is not acceptance; independent semantic
-review and Library publication are separate requirements.
+A Lean check compiled the module with zero errors and zero warnings.
+Inspection of `Langlands.Aubert.alternatingOperator` reports kind `definition`,
+level parameters `["uF", "uV"]`, and only `propext`, `Classical.choice` and
+`Quot.sound` as axioms.

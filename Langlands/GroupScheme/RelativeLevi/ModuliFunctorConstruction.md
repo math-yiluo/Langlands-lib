@@ -16,7 +16,7 @@ equalities for all subgroup functors.
 `moduliFunctorOfStability` assembles these maps into a contravariant functor on
 `Over S`, with values in `Type (u+1)` and object values the actual `LeviImage` of
 the pullback of `P`. Its premise remains explicit. This module does not define
-the unconditional moduli functor requested by the host task.
+the unconditional moduli functor; that is `RelativeLevi.moduliFunctor` in `ModuliFunctor`.
 `moduliInclusionOfStability` forgets the existence of a Levi presentation as a
 natural transformation into `subgroupPresheaf P`.
 

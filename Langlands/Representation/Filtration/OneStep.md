@@ -1,7 +1,5 @@
 # Natural one-step representation filtration
 
-Author: Worker 593.
-
 This internal construction takes an arbitrary functor `F : C ⥤ Rep R G`,
 with a commutative coefficient ring, acting monoid and independent source and
 carrier universes. `RepSubfunctor.zero F` and `RepSubfunctor.full F` are the

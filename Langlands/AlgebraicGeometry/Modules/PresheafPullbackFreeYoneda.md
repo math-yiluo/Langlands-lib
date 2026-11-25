@@ -10,12 +10,12 @@ presheafPullbackFreeYonedaIso f V : L(A_Y(V)) ≅ A_X(F(V)),
 
 where `F = TopologicalSpace.Opens.map f.base`,
 `A_Z(U) = (PresheafOfModules.free Z.ringCatSheaf.obj).obj (yoneda.obj U)`,
-and `L` is the published `presheafPullback f`. All universes are arbitrary.
+and `L` is the Library's `presheafPullback f`. All universes are arbitrary.
 There are no additional hypotheses on `f`, the schemes, or the open.
 
 ## Construction and inverse identities
 
-Write `U` for the published `presheafPushforward f`. The functor
+Write `U` for the Library's `presheafPushforward f`. The functor
 `P ↦ (A_Y(V) ⟶ U(P))` has two explicit corepresentations:
 
 - `e`, corepresented by `L(A_Y(V))`, is the one from
@@ -69,21 +69,19 @@ isomorphism law.
 
 ## Provenance and scope
 
-This is internal derived mathematical infrastructure implemented by Worker 536,
-using the supplied Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`
-in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`. The inputs are the
-pinned Mathlib modules `Algebra/Category/ModuleCat/Presheaf/Pullback.lean`,
+This is internal derived mathematical infrastructure, written for Mathlib
+commit `5ed2965256430c3649e86755f9576b54eca72435`. The inputs are the
+Mathlib modules `Algebra/Category/ModuleCat/Presheaf/Pullback.lean`,
 `Generator.lean`, `Free.lean`, and the adjunction/corepresentation APIs.
 It is not a transcription of an external source theorem.
 
-The imported Library module
-`Langlands.AlgebraicGeometry.Modules.PresheafPullbackTensor` and all its
-imports are unchanged. The ring morphism is written with explicit source
+The module imports the Library module
+`Langlands.AlgebraicGeometry.Modules.PresheafPullbackTensor`. The ring morphism is written with explicit source
 and target presheaves as `Functor.whiskerRight f.c (forget₂ CommRingCat RingCat)`,
-the same morphism used by the published functor aliases. The elaboration
+the same morphism used by the Library's functor aliases. The elaboration
 option `backward.isDefEq.respectTransparency false` permits unfolding the
 existing category presentations and adds no assumption.
 
 This module identifies pullback on individual free generators. The tensor
-comparison on generator pairs and the unrestricted comparison remain separate
+comparison on generator pairs and the unrestricted comparison are separate
 constructions and proofs.

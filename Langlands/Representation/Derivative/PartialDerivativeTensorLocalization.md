@@ -57,7 +57,7 @@ and carriers remaining in `Type uV`. This construction by itself does not prove
 The sole direct project import is the unchanged published
 `Derivative.PartialDerivativeTensorStatement`. Its definitions supply the raw
 binary tensor source and first-factor target. Its `Iteration` import supplies
-only definitions in this unit: no ordinary derivative theorem is invoked.
+only definitions in this module: no ordinary derivative theorem is invoked.
 
 The mathematical proof dependencies are `Localization.lift`,
 `mk_apply_subgroup`, `mk_surjective`, `hom_ext`, `mapLinear`,
@@ -73,7 +73,7 @@ classification or segment theorem enters any proof.
 The project import graph was followed recursively from the source files, rather
 than inferred from module titles. It has the 62 modules listed below (excluding
 this new module). Each edge was read from the actual `import` declarations.
-Every imported Library file is unchanged. The full task exclusion set binds
+Every imported Library file is unchanged. The full exclusion set below binds
 this internal helper and any consumer; the checks apply as follows.
 
 | Binding exclusion | Import and proof dependency finding |
@@ -82,10 +82,10 @@ this internal helper and any consumer; the checks apply as follows.
 | Multisegment, ordered strong-head, quotient coverage, ordered conversion, tempered, square-integrable, regular and socle exhaustion/classification | None occurs; no exhaustion or existence theorem is a proof input. |
 | Individual segment head/socle existence, analytic segment classification and special square-integrability | None occurs; no segment construction is a proof input. |
 | Unlinked/linked/adjacent/two-segment socle irreducibility, reducibility, commutation, gluing, juxtaposed structure, quotient-Hom and ordered multisegment socle existence | None occurs, directly or through any imported theorem. |
-| Two-supercuspidal product structure/irreducibility, segment derivative formulas and all segment Jacquet or exponent formulas; excluded parent clauses (b),(d),(e),(f) | None occurs. The proof uses the actual localization definitions and proves its maps from their relation spans. |
+| Two-supercuspidal product structure/irreducibility, segment derivative formulas and all segment Jacquet or exponent formulas; the excluded clauses (b),(d),(e),(f) of the six statements of `Classification.SegmentSocleDerivativesStatement` | None occurs. The proof uses the actual localization definitions and proves its maps from their relation spans. |
 | Irreducible, Levi-cuspidal and supercuspidal Whittaker coinvariant finiteness and the prohibited mirabolic finite-length route | None occurs; no finite-length or finite-dimension theorem is a proof input. |
 | `SupercuspidalDerivatives` proper-derivative vanishing and finrank-one conclusions | Neither occurs, and no top-derivative comparison helper is imported here. |
-| Pending or merely accepted but unpublished BZ77 derivative inputs | No such input is used. The construction is proved directly from published quotient and tensor APIs. |
+| BZ77 derivative inputs that are unproved or not in the Library | No such input is used. The construction is proved directly from published quotient and tensor APIs. |
 
 The imported smooth admissibility and matrix-coefficient laws are elementary
 infrastructure already in the fixed target closure. They supply no prohibited

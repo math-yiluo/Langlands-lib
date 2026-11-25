@@ -1,6 +1,6 @@
 # Opposite factor pairs in Chevalley groups
 
-This internal unit proves that the Chevalley groups of the split existence
+This internal module proves that the Chevalley groups of the split existence
 construction have the Library's opposite factor pairs. Every nonidentity
 rational point of a root subgroup has an explicit pair of points of the
 opposite root subgroup whose product with it normalizes the torus. This is the
@@ -97,6 +97,6 @@ The `SL₂` computations are classical (Steinberg, *Lectures on Chevalley
 groups*, §3). The rest is an internal deduction from the published split
 existence construction (`φ_upper`, `φ_lower`, `φ_diag`, `weyl_conj`, `weylPoint`,
 `isNormalizingPoint_weylPoint`) and the root-group coordinates of
-`RootSubgroupRepresentation`. The unit proves neither uniqueness of the pairs
+`RootSubgroupRepresentation`. The module proves neither uniqueness of the pairs
 nor valuation axioms. Uniqueness is the published
 `IsOppositeFactorPair.eq`.

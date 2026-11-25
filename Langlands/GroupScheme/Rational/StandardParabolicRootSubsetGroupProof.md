@@ -39,8 +39,7 @@ that ray, and the subgroup of a positive multiple is contained in the
 subgroup of the indivisible root. Thus both allowed ambient root sets
 supply the generators required by the parabolic and centralizer arguments.
 
-Worker 255 contributed `StandardRootSubsetPairing` and `StandardRootSubsetWeyl`.
-The latter proves the fourth conjunct using the published relative Weyl
+The supporting module `StandardRootSubsetWeyl` proves the fourth conjunct using the published relative Weyl
 Coxeter realization. A standard
 cocharacter's pairing stabilizer is the standard Coxeter subgroup. Every
 root of the Levi root closure pairs to zero, so its integral root reflections

@@ -1,6 +1,6 @@
 # The rank-one stage of Henniart's induction
 
-Author: Worker 4803. Module `Langlands.Correspondence.HenniartRankOneStageProof`,
+Module `Langlands.Correspondence.HenniartRankOneStageProof`,
 namespace `Langlands.Henniart.Extension`. Universes: `uK` (p-adic fields), `uW`
 (Weil carriers), `uV` (supercuspidal carriers), `uE` (local-constant values in
 the candidate properties), all independent.

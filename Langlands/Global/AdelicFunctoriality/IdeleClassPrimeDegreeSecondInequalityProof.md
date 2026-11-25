@@ -1,7 +1,5 @@
 # The prime-degree second inequality for actual idele classes
 
-Author: Worker 145.
-
 The theorem
 `Langlands.Global.AdelicFunctoriality.ideleClassPrimeDegreeSecondInequality.{u,v}`
 proves exactly the unchanged proposition
@@ -25,9 +23,9 @@ of `ideleClassKummerPrimeDegreeSecondInequality_of.{v}`:
 
 - `Langlands.Global.cyclicNonsplitPrimeStatement.{v,v}` supplies nonsplit
   finite primes outside any prescribed finite set;
-- `Langlands.ClassField.Global.ideleClassGaloisDescent.{v,v}` supplies
+- `Langlands.ClassFieldTheory.Global.ideleClassGaloisDescent.{v,v}` supplies
   descent for the actual idele classes;
-- `Langlands.ClassField.Global.cyclicIdeleClassHerbrandQuotient.{v,v}`
+- `Langlands.ClassFieldTheory.Global.cyclicIdeleClassHerbrandQuotient.{v,v}`
   supplies the cyclic Herbrand identity and both cohomology finiteness
   assertions.
 
@@ -65,12 +63,10 @@ separate Herbrand dependency. The registered original is
 The imported modules' paired Markdown describes their implemented
 arguments and their differences from the source.
 
-The cyclotomic construction is by Worker 269 with Worker 123's tower
-index lemmas; the Kummer proof is by Worker 226; the finite-index proof
-is by Worker 248; the nonsplit-prime proof is by Worker 212; and the
-Herbrand assembly is by Worker 343. These results and the norm tower
-and Galois descent proofs are imported by name from their published
-modules, which retain their authorship. No private draft is copied.
+The cyclotomic construction with its tower index lemmas, the Kummer proof,
+the finite-index proof, the nonsplit-prime proof, the Herbrand assembly,
+and the norm tower and Galois descent proofs are imported by name from
+their published modules.
 The target pair and all imported pairs are unchanged. The proof adds no
 axiom and uses no global idele-class H¹ vanishing, general second
 inequality, global reciprocity, or global fundamental class as an input.

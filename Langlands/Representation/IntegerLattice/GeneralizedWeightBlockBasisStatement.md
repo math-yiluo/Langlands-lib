@@ -1,8 +1,5 @@
 # One common triangular basis on each actual generalized-weight block
 
-Statement prepared by Worker 709; source and scope checked and explanation
-expanded by Worker 308.
-
 `Langlands.CommutingTupleGeneralizedWeightBlockBasisStatement` is a closed
 Prop-valued definition with arbitrary carrier universe `u`. It states the
 common triangular basis assertion for the actual block and generators
@@ -114,7 +111,7 @@ The correction to old p.322, line -4, puts the whole scalar-times-unipotent
 factor under its later integer power. The 2026 PDF286 already has that
 grouping. It changes none of the five equations in this statement.
 
-## Scope and remaining obligations
+## Scope
 
 Every natural `d` is included. For `d = 0`, the block is the whole space and
 the conclusion still requires an actual basis; only the generator
@@ -126,11 +123,13 @@ rank, nonzero-block, diagonalizability or unitarity condition is imposed.
 
 This is a source-facing statement about constructed blocks. The independent
 `Langlands.CommutingNilpotentStrictUpperBasisStatement` instead concerns a
-supplied commuting nilpotent family over an arbitrary field. A future proof
-may use that result after proving nilpotence and commutation of the actual
-differences. The present module neither assumes nor proves that generic
+supplied commuting nilpotent family over an arbitrary field. The proof,
+`Langlands.commutingTupleGeneralizedWeightBlockBasis` in
+`GeneralizedWeightBlockBasisProof`, uses that result after proving
+nilpotence and commutation of the actual differences. The present module neither assumes nor proves that generic
 result, the generalized-weight decomposition, support identification,
 multivariable factorization or the whole Appendix C.III proposition.
 
-A proof of this exact proposition remains a separate obligation. Publishing
+The proof of this exact proposition is the separate
+`GeneralizedWeightBlockBasisProof`. Publishing
 this statement does not prove the existence of its common basis.

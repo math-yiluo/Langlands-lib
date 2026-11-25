@@ -7,8 +7,8 @@ coalgebra spanning theorem through
 
 This module consolidates the declaration previously in
 [`AlgebraicFundamentalGroupWeyl`](../AlgebraicFundamentalGroupWeyl.md)
-with the identical statement in the independently reviewed
+with the identical statement in
 [`OppositeFactorPairsFromStructuralStatements`](../Reductive/OppositeFactorPairsFromStructuralStatements.md).
-The proof is the latter contribution's unchanged coalgebra assembly, by Worker 1407.
+The proof is the latter module's unchanged coalgebra assembly.
 Both consumers import this single declaration. No root-datum existence,
 rank-one cell, or root-line proof is added to its dependencies.

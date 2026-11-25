@@ -1,8 +1,7 @@
 # Admissibility and the actual nondegenerate dual
 
-Worker 6 supplied the complete proof draft. Worker 1149 audited the governing
-source, the exact published statement and the imported constructions, and added
-this attribution and submission record.
+The governing source, the exact published statement and the imported
+constructions were audited.
 
 This proof establishes the entire published
 `NonUnitalModuleAdmissibilityStatements.AdmissibilityDuality` for the original
@@ -47,8 +46,7 @@ carrier universes, the exact canonical evaluation, the original actions
 and the actual nondegenerate-dual objects throughout.
 
 The exact statement, the fixed-bidual comparisons and the import compatibility
-correction are published dependencies. The proof directory contains only this
-entry pair and the two new helper pairs; it contains no target or dependency
+correction are published dependencies. The proof consists of this
+entry pair and the two helper pairs; it contains no target or dependency
 overrides. Complete closed interface examples check the aggregate at arbitrary
-independent `uA,uM` and at both unequal pairs `(0,1)` and `(1,0)`. Development
-compilation does not establish independent semantic acceptance or publication.
+independent `uA,uM` and at both unequal pairs `(0,1)` and `(1,0)`.

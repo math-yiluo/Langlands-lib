@@ -1,7 +1,5 @@
 # Normalization of projective special-linear conjugation cocycles
 
-Author: Worker 239.
-
 This derived internal matrix-algebra unit removes the projective scalar
 ambiguity from conjugating matrices that preserve a supplied coordinate line.
 It works over any commutative ring and finite decidable matrix index type;

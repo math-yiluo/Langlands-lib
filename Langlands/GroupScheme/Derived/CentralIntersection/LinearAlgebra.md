@@ -1,7 +1,5 @@
 # Linear algebra for the central intersection finiteness proof
 
-Author: Worker 1408.
-
 This internal helper module collects elementary algebra used by the
 scheme-theoretic argument in
 `Langlands.GroupScheme.Derived.CentralIntersection.AlgClosed`. It is derived

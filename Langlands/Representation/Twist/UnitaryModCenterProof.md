@@ -1,7 +1,5 @@
 # Unitary twists and analytic coefficients modulo the full center
 
-Author: Worker 429.
-
 The theorem `Langlands.unitaryTwistModCenter` proves the closed proposition
 `Langlands.UnitaryTwistModCenterStatement.{uG,uV}`, with independent group and
 complex-module universes. It preserves and reflects square-integrability and

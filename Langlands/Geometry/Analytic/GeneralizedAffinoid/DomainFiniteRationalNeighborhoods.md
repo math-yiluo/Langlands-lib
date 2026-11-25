@@ -1,7 +1,5 @@
 # Finite ambient rational covers from finite-union neighborhoods
 
-Author: Worker 84.
-
 This internal construction extends `DomainRationalNeighborhoodCover` to
 neighborhoods that are finite unions of ambient rational chart loci. It is
 intended for a scalar-descent argument in which a rational chart over an

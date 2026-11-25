@@ -1,6 +1,6 @@
 # Actual corank coefficients and entire specialization
 
-Worker 486. This internal consumer combines the published corank entire-slice
+This internal consumer combines the published corank entire-slice
 theorem with the actual unramified Laurent kernel and packages the separate
 second-block deformation proposition for coefficient-image vectors.
 

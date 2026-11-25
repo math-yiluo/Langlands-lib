@@ -1,7 +1,5 @@
 # Renard C.I: convexity and the finite-sum power comparison
 
-Worker 709 authored the shared draft, reused here by Worker 1200,
-who checked the original pages and prepared this statement contribution.
 The closed Prop-valued declaration
 `Langlands.Renard.CommutativeDimensionPowerAssemblyStatement`
 formulates the numerical comparison in the opening reduction of David Renard,
@@ -16,13 +14,13 @@ The governing registered original is
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`,
 at
 `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`.
-Workers 709 and 1200 read PDF281–282 and visually checked PDF281, including
+Two readers read PDF281–282 and visually checked PDF281, including
 the exponent comparison, convexity assertion and displayed finite
 sum following the successive characteristic-space refinements.
 The registered supplementary source
 `renard-2010-corrections-complements`, SHA256
 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
-was read on PDF18–19 by both workers. Its old printed p.317 correction changes
+was read on PDF18–19 by both readers. Its old printed p.317 correction changes
 the exponent comparison to a weak inequality. The 2026 edition
 already uses the weak inequality and governs this statement.
 
@@ -68,31 +66,36 @@ is an equality.
 The positive generator count is essential for this unrestricted
 finite-sum comparison. If `l = 0`, the exponent is zero and
 two entries equal to one would require `2 ≤ 1`.
-The zero-generator scalar-algebra case retains its separate
-published base-case assertions. This statement does not narrow
+The zero-generator scalar-algebra case has its separate
+base-case assertions. This statement does not narrow
 their domain or claim that this finite-sum comparison holds at
 zero generators.
 
-## Proof provenance and remaining obligations
+## Proof provenance and separate results
 
-The published theorem
+The theorem
 `Langlands.Renard.renardExponent_eq_dimensionExponent` identifies
 the source exponent with
 `Langlands.CommutingDimension.dimensionExponent l = 2 - 2/2^l`.
-The successor lower bound is the published
+The successor lower bound is
 `Langlands.CommutingDimension.dimensionExponent_succ_ge_one`.
 Mathlib's `convexOn_rpow` in
 `Mathlib.Analysis.Convex.SpecificFunctions.Basic` supplies convexity
-of real powers with exponent at least one on the nonnegative half-line. The published generic
+of real powers with exponent at least one on the nonnegative half-line. The generic
 `Langlands.CommutingDimension.sum_rpow_le` proves the finite-sum
 inequality for every nonnegative real family and exponent at
-least one by finite-set induction. These are possible proof
-tools; the new Lean file only states the source assertions.
+least one by finite-set induction. The proof
+`commutativeDimensionPowerAssembly` in
+`Langlands.Algebra.RenardCommutativeDimensionPowerAssemblyProof` uses these
+tools; this Lean file only states the source assertions.
 
 The actual joint generalized eigenspaces and original actions
-have a separate construction unit. Their finite support,
+have a separate construction module,
+`Langlands.Algebra.RenardCommutingGeneralizedEigenspaceBlocks`. Their finite support,
 independence, spanning, dimension sum, restriction-image
 dimension comparison and assembly of the nilpotent reduction
-remain separate statement and proof obligations. This numerical
+are separate statements with their own proofs (in
+`RenardCommutingGeneralizedEigenspaceDecompositionProof` and
+`RenardCommutativeDimensionNilpotentReductionProof`). This numerical
 statement assumes no block decomposition, nilpotent bound or
 recurrence, and it asserts no algebra-dimension estimate.

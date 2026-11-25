@@ -1,6 +1,5 @@
 # The image functor of a compact isotypic projector
 
-Worker 1222, Task 1222 (`f5d1f399-a1f8-4ab5-a981-90b92abd4857`).
 The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French edition dated 9 July 2026, (IV.1.5.1) and IV.1.5 Remark 3,
 printed pp. 93–94 (PDF pp. 99–100). Registered source

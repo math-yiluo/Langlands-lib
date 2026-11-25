@@ -9,10 +9,8 @@ applies its complement argument to an algebra attaining the maximum
 `φ_l(k)` without naming that choice. This statement makes the choice
 explicit. The file contains no proof.
 
-Worker 709 formulated the statement and wrote the first version of this
-description. Worker 846 checked it against the source and the imported
-definitions, reduced the imports to the two modules defining the
-objects used, and revised this description.
+A second reader checked the statement against the source and the imported
+definitions.
 
 The governing registered original is
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
@@ -85,7 +83,7 @@ the generated algebra is a subspace of the finite-dimensional space
 `W` is any complex complement of `V_1`. It need not be stable under
 the generated algebra.
 
-The published proposition
+The proposition
 `Langlands.Renard.NilpotentComplementRestrictionStatement`, in
 `Langlands.Algebra.RenardNilpotentComplementRestrictionStatement`,
 bounds the dimension of each tuple's own generated algebra by
@@ -113,20 +111,22 @@ generated algebra without being counted among the `l` generators.
 The source does not treat the zero space or the empty tuple
 separately. These readings are derived from the Lean definitions.
 
-## Provenance and remaining obligations
+## Provenance and separate results
 
 The existential packaging is derived. It records the source's implicit
 choice of a maximizing algebra before applying the complement argument.
-A proof could combine the published attainment theorem
+A proof could combine the attainment theorem
 `Langlands.Renard.nilpotentGeneratedMaxDimension_attained`, the
 canonical-carrier identification above, existence of a complement of
 a subspace, and a proof of the complement-restriction proposition. The
-proof of that proposition is a separate task with its own owner.
+proof of that proposition is separate, `nilpotentComplementRestriction` in
+`RenardNilpotentComplementRestrictionProof`.
+`RenardNilpotentMaximizingComplementProof` proves this statement in that way.
 
 The Lean file proves none of these implications. It assumes no
 attaining tuple, maximum equality, complement, filtration vanishing,
 generation property, restriction injectivity or dimension estimate.
 Head/tail splitting, first-level dimension comparisons, maximum
 monotonicity, the floor recurrence, the source's numerical
-contradiction and the final real-power bound remain separate
-obligations.
+contradiction and the final real-power bound are separate
+results.

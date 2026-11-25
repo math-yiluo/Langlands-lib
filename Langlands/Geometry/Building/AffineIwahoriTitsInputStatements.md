@@ -9,8 +9,8 @@ proved here. `AffineIwahoriTitsInputStatement` is their conjunction.
 The module then proves the two remaining inputs, and it derives the published
 `AffineIwahoriTitsStatement` from the five statements, the published
 `AffineRankOneTwoCellStatement` and the published
-`IwahoriWeylExactSequenceStatement`. These three statements are unproved, so
-`AffineIwahoriTitsStatement` remains unproved. Worker 1565 is the author.
+`IwahoriWeylExactSequenceStatement`. This module does not prove those three
+statements, so it does not prove `AffineIwahoriTitsStatement` outright.
 
 ## Notation
 

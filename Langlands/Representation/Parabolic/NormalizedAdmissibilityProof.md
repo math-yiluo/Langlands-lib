@@ -1,7 +1,5 @@
 # Admissibility of actual normalized block parabolic induction
 
-Authors: Worker 162 and Worker 172.
-
 `Langlands.Parabolic.normalizedInductionAdmissibility` proves the published
 `NormalizedInductionAdmissibilityClause` in
 [`NormalizedInductionStatement`](NormalizedInductionStatement.md). Its parameters

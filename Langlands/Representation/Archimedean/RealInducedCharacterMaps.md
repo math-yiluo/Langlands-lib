@@ -8,8 +8,7 @@ This is the first of five modules that together prove the filtration statement
 `RealInducedCharacterFiltration.md`). It fixes notation for an induction block and builds its
 *tail maps*: Frobenius maps between a standard module that contains the induction block `d`
 and the standard module in which `d` is replaced by two characters. The maps are instances of
-the block Frobenius maps `blockFrobMap` of module `RealBlockFrobeniusMap` (Task 7067,
-Library). Their multipliers are the Library's multipliers from module
+the block Frobenius maps `blockFrobMap` of module `RealBlockFrobeniusMap` (Library). Their multipliers are the Library's multipliers from module
 `RealBlockMultiplier`.
 
 Notation. `d : ComplexCharacterData` is an induction block with weight `m` and exponent `t`,

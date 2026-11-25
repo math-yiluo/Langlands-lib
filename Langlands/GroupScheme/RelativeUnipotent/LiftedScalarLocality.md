@@ -1,6 +1,7 @@
 # Local reflection of original scalar compatibility
 
-This internal Task 7200 adapter defines the scalar operation on the original
+This internal adapter for the finite vector-bundle filtrations of supplied
+relative radicals defines the scalar operation on the original
 group points prescribed by an actual module point chart. Agreement of the
 operations for two charts gives scalar-linearity of their actual section
 transition.

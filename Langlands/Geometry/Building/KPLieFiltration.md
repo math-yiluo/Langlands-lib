@@ -58,7 +58,7 @@ In the namespace `LieFiltrationData`, for `L : P.LieFiltrationData`, a point
   - `affineRootLie_le_rootLie`: each such `u_ψ` lies in `u_{α,x,r}`.
   - `rootLie_le_rootLieSpace`: `u_{α,x,r} ≤ u_α`.
   - `rootLie_antitone`: `u_{α,x,s} ≤ u_{α,x,r}` for `r ≤ s`.
-- **`lieFiltration x r`** (the declaration of this unit), the lattice
+- **`lieFiltration x r`** (the main declaration of this module), the lattice
   `𝔤_{x,r}`. It is defined as
   `centralizerLieImage r ⊔ ⨆ (ψ : P.affineRoots) (_ : r ≤ ψ x), u_ψ`, the
   `𝒪`-span of `z_r` and of the `u_ψ` for `ψ ∈ Ψ_{x,r}`.

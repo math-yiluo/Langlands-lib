@@ -8,7 +8,7 @@ matrix integrals. Field and representation-carrier universes are independent.
 
 This is internal derived content following the compact averaging computation
 of Jacquet, Piatetski-Shapiro and Shalika, *Automorphic forms on GL(3)* (1979),
-printed pages 186–187, equations (3.1.3)–(3.1.4). It reuses Worker 249's generic
+printed pages 186–187, equations (3.1.3)–(3.1.4). It reuses the generic
 Fubini lemma and compact-integration smooth functional from `LeftAveraging`
 and `WhittakerAveraging`. The latter module's local instances have explicit
 names so it can be imported together with `GodementJacquet.AnalyticData`.

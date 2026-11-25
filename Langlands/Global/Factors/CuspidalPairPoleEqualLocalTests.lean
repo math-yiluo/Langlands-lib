@@ -24,7 +24,7 @@ open LocalFactor.Archimedean
 open InfiniteWhittakerSlice FiniteWhittakerDual FiniteWhittakerSemilocal FiniteWhittakerTensor
 open EqualSchwartzTensor
 open CuspidalPairFunctionalEquation (HasIrreducibleAdmissibleComponents)
-open ClassField.Global.RelativeWeilGroup (IsCanonicalFiniteAdditiveComponent)
+open ClassFieldTheory.Global.RelativeWeilGroup (IsCanonicalFiniteAdditiveComponent)
 
 attribute [local instance 100] LieRing.ofAssociativeRing
 

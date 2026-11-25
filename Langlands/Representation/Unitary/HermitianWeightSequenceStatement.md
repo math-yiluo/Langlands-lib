@@ -1,6 +1,6 @@
 # A shrinking sequence of continuous Hermitian weights
 
-Worker 116 formulates the internal proposition
+The module formulates the internal proposition
 `Langlands.Analysis.HermitianWeightSequenceStatement`.
 Let G be an actual locally compact Hausdorff topological group with its
 Borel measurable space. Assume that the neighborhood filter at its
@@ -60,10 +60,10 @@ allows this stronger support formulation. It does not construct a smooth
 Dirac sequence, identify the Haar modular character, prove continuity of
 that concrete character, or prove μ.inv = μ.withDensity d.
 
-This file defines a Prop-valued target and contains no proof. A separate
-exact published-target proof child is required. The intended integrated
+This file defines a Prop-valued target and contains no proof. The proof
+is in `Langlands.Representation.Unitary.HermitianWeightSequenceProof`. The intended integrated
 operator application also needs its actual measurable continuous
 representation, the inversion-density measure identity for symmetry,
 and compactness. Smooth automorphic realization, the split-center
-quotient and comparison with existing algebraic Hecke operators remain
-separate obligations.
+quotient and comparison with existing algebraic Hecke operators are not
+part of this statement.

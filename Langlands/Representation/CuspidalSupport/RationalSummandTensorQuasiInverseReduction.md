@@ -2,7 +2,7 @@
 
 Module `Langlands.Representation.CuspidalSupport.RationalSummandTensorQuasiInverseReduction`.
 Namespace `Langlands.CuspidalSupport`. Universe parameters `uF uV`.
-Worker 143 wrote this module for Task 5607, the proof of
+The module serves the proof of
 `RationalSummandTensorQuasiInverseStatement`.
 
 Source: David Renard, *Représentations des groupes réductifs p-adiques*, French
@@ -10,8 +10,8 @@ version dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 Locator: VI.4.1, the functors (VI.4.1.3) and (VI.4.1.4), the Theorem and its
-proof, printed pp.150–151 / PDF pp.156–157. Worker 143 read these pages for
-this unit. The evaluation is defined on printed p.150 (PDF p.156):
+proof, printed pp.150–151 / PDF pp.156–157. These pages were read for
+this module. The evaluation is defined on printed p.150 (PDF p.156):
 "ev_E : Hom_G(Π, τ) ⊗_R V_Π → E, α ⊗ w ↦ α(w)", with `R = End_G(Π)`.
 
 ## The definition
@@ -129,7 +129,7 @@ target.
 
 ## Provenance
 
-This is an internal derived unit. Renard proves the quasi-inverse assertion
+This is an internal derivation. Renard proves the quasi-inverse assertion
 (printed pp.150–151) as follows. `F = G_Π ∘ F_Π` is right exact and commutes
 with direct sums; `ev_{V_Π}` is the isomorphism `R ⊗_R V_Π ≅ V_Π`; every `E`
 in the block has a presentation `⊕_I V_Π → ⊕_J V_Π → E → 0` (Lemma A.VIII.2);

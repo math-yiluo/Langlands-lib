@@ -1,7 +1,7 @@
 # Actual coefficient comparisons for supplied integer-facet models
 
-This internal derived unit constructs coefficient comparisons of the original
-supplied facet models. Its integral base is a strictly Henselian discrete
+This module, derived from existing Library results, constructs coefficient
+comparisons of the original supplied facet models. Its integral base is a strictly Henselian discrete
 valuation ring with the specified fraction field. The field, universe and
 characteristics are arbitrary. The individual models and their exact full
 integral-point descriptions remain supplied.

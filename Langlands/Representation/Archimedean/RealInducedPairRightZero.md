@@ -46,8 +46,8 @@ earlier ranges, and spanning required by the actual adjacent filtration.
 ## Provenance and scope
 
 This is an internal consequence of proved constructions in the Library.
-The five induced-character helper pairs are reused unchanged from the work
-of Workers 763 and 764; the landing theorems, uncertainty theorem used inside
+The five induced-character helper pairs are reused unchanged from the proof
+of `RealInducedCharacterFiltrationStatement`; the landing theorems, uncertainty theorem used inside
 the hard case, and zero-weight reduction are proved inputs. No additional
 literature claim, supplied intertwiner or classification premise is assumed.
 

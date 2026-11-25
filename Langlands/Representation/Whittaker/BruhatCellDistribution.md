@@ -1,8 +1,5 @@
 # Distributions on actual upper Bruhat cells
 
-Authors: Worker 634 (original interface and proofs) and Worker 1005
-(source verification and expanded documentation).
-
 This interface packages the cellwise distribution convention of Shalika (1974),
 Proposition 1.8, printed p.175, using the actual cell subtype from
 `Langlands.Group.GL.UpperBruhatCells` and the algebraic distributions from
@@ -20,10 +17,10 @@ SHA256 `788c5d124024c768aa47c4e8b179475fbcf5b0882a518ae60b19cdc88089f087`.
 Proposition 1.8 is on printed p.175, PDF page 6 (zero-based index 5).
 The translation definitions are on printed p.174, PDF page 5; the
 transpose test-function argument in the proof is on printed p.178, PDF
-page 9. Worker 1005 read these three pages and visually checked pp.175
-and 178. Worker 634 previously read printed pp.173–179 and visually
-checked pp.176–178. No matching source-specific errata note was found
-in the current project or Library notes.
+page 9. These three pages were read, and pp.175 and 178 visually
+checked; printed pp.173–179 were also read, and pp.176–178 visually
+checked. No matching source-specific errata note was found in the
+project or Library notes.
 
 The source's equation is
 `T (L_(u₁⁻¹) R_u₂ f) = χ(u₁u₂) * T f`. Its definitions of left and

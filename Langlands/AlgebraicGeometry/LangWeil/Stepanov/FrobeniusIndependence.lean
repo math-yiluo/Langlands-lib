@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 
 /-!
 # Frobenius independence modulo an absolutely irreducible plane curve

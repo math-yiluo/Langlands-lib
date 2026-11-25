@@ -1,7 +1,5 @@
 # Reversal of irreducible normalized products through contragredients
 
-Author: Worker 375.
-
 ## Statements
 
 Throughout, `p` is a prime, `F : PadicField.{uF} p`, `T : F.TopologicalData`,

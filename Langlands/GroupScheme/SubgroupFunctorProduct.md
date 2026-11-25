@@ -1,7 +1,5 @@
 # Exact products of subgroup functors
 
-Author: Worker 1291.
-
 This is an internal elementary construction on the existing
 `Langlands.GroupScheme.SubgroupFunctor` architecture. It introduces no structural
 theorem about reductive groups. All definitions and lemmas hold over an arbitrary

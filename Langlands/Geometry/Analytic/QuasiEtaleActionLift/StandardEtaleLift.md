@@ -1,7 +1,5 @@
 # Nearby lifts through a standard étale presentation
 
-Author: Worker 786.
-
 This internal lemma gives the algebraic step for lifts of nearby maps in
 Berkovich, *Vanishing cycles for formal schemes* (1994), §7, Lemma 7.3
 and the affinoid case of Key Lemma 7.2. A reference map out of a finite

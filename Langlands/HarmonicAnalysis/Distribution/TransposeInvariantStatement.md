@@ -103,7 +103,7 @@ and the Gelfand–Kazhdan realization target
 `Langlands.GelfandKazhdanContragredientStatement` are separate propositions.
 They are proved by the separate published theorems
 `Langlands.genericContragredient` and `Langlands.gelfandKazhdanContragredient`,
-not by this unit or by its proof.
+not by this module or by its proof.
 
 ## Status
 
@@ -111,9 +111,8 @@ The proposition is proved by the theorem
 `Langlands.generalLinearConjugationDistributionTranspose.{uF}` in
 `Langlands.HarmonicAnalysis.Distribution.TransposeInvariantProof`. Its type is
 exactly `GeneralLinearConjugationDistributionTransposeStatement.{uF}`, with
-the same field universe and no added hypothesis. The proof is artifact
-`a273f153-573e-4de5-a169-47a467c37f10` version 1. Its validation passed the
-Lake build and exact-target checks, an independent review approved it, and it
-was published at Library commit `910a6df80701415e9aa68c646393c66ac9bc7512`.
+the same field universe and no added hypothesis. The proof passed the Lake
+build and exact-target checks and was published at Library commit
+`910a6df80701415e9aa68c646393c66ac9bc7512`.
 It proves only the transpose invariance of conjugation-invariant
 distributions stated here.

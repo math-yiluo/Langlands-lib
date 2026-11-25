@@ -1,6 +1,7 @@
 # Ramified gamma stability for the two Hecke families
 
-Supporting module of Task 5003 (module
+Supporting module of the gamma comparison for weakly associated cuspidal pairs,
+`AssociatedGammaStatement` (module
 `Langlands.Automorphic.AssociatedGammaRamifiedStability`). It derives the
 `RamifiedGammaStability` input of the published two-twist engine for the automorphic and
 arithmetic Hecke families. Henniart 2000, Théorème 2.3 uses twists that are highly ramified at
@@ -10,8 +11,9 @@ the other bad places, where the stable comparison of Henniart 1986, Lemma 4.2 ap
 
 - `exists_isCharacterTwist`: every class has a twist by every quasi-character (published
   `isCharacterTwist_iff_eq_twist`).
-- `ramifiedGammaStability_families`: assume `StableTwistPairGammaMatchStatement` (proof Task
-  6211), `CuspidalLocalGenericityStatement` (proved in the Library as
+- `ramifiedGammaStability_families`: assume `StableTwistPairGammaMatchStatement` (proved in the Library as
+  `ClassFieldTheory.Global.RelativeWeilGroup.stableTwistPairGammaMatchStatement`),
+  `CuspidalLocalGenericityStatement` (proved in the Library as
   `Automorphic.CuspidalPairPartialGamma.localGenericity`) and
   `ArithmeticPairEpsilonExistenceStatement` (proved in the Library as
   `Correspondence.arithmeticPairEpsilonExistence`). Assume also that the setups use

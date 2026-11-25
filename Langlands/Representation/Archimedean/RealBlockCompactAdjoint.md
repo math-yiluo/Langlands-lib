@@ -1,6 +1,6 @@
 # Adjoint block Fourier multipliers in the compact principal-series model
 
-This internal derived unit uses the existing normalized Haar inner product on
+This internal derived module uses the existing normalized Haar inner product on
 `PrincipalSeriesAnnihilator.KFin n χ`. It introduces no literature premise.
 
 `RealBlockCompactAdjointStatement` quantifies arbitrary rank `n`, position `p` with
@@ -33,5 +33,6 @@ The compact inner product is its defining Haar integral. Fourier uniqueness uses
 finite Fourier inversion on the compact group and principal-series uniqueness
 from restriction to that group.
 
-This unit supplies compact harmonic analysis for Task 7135. It does not identify
+This module supplies compact harmonic analysis for the filtration of the `GL_4(ℝ)`
+standard module of two induction blocks. It does not identify
 an intertwiner's range or prove the two-induction-block filtration.

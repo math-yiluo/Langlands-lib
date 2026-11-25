@@ -91,14 +91,15 @@ O-linearity structure on the induced map is not constructed here.
 `DeterminantNormalized`, with the nonzero image of pi in F required by
 the last construction. It packages the two conditions above and the
 existing all-integer, stalkwise framed determinant normalization. The
-latter still has its documented boundary: no comparison with an
+latter has its documented boundary: no comparison with an
 independently constructed equality of exterior-power subsheaves is
-proved. Accordingly this conjunction is a predicate on these constructed
+proved here; `determinantSubsheavesNormalized_iff` in
+`DeligneDeterminantSubsheaf` proves it. Accordingly this conjunction is a predicate on these constructed
 sheaf data, not a theorem identifying it with a separately defined
 Deligne moduli functor.
 
 The stalk infrastructure and quotient construction are derived directly
-from the stated sheaf operations and source map u. This unit does not
+from the stated sheaf operations and source map u. This module does not
 construct admissible isomorphism classes, base change, a PGL action,
 representability, or a generic fibre, and proves no existence theorem
 for admissible data. Specialization to actual Nilp algebras is available

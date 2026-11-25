@@ -1,8 +1,8 @@
 # Renard II.3.9: quotient, compact-induction and module comparisons
 
 Helper module for the proof of
-`Langlands.HarmonicAnalysis.HomogeneousFunctions.Renard.Statements`
-(Worker 67, Task 5524). It proves the last three conjuncts:
+`Langlands.HarmonicAnalysis.HomogeneousFunctions.Renard.Statements`.
+It proves the last three conjuncts:
 `quotientTest : QuotientTestStatement`,
 `compactInduction : CompactInductionStatement` and
 `pointwiseModuleSheaf : PointwiseModuleSheafStatement`, each at the full

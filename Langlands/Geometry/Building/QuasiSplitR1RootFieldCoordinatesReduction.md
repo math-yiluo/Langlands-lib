@@ -1,8 +1,10 @@
 # Type R1 root field coordinates from the structural statements
 
-This internal unit reduces the published
+This module reduces the published
 `QuasiSplitR1RootFieldCoordinatesStatement.{u}` to four published structural
-statements, none of which is proved in the Library:
+statements, each proved elsewhere in the Library
+(`Langlands.GroupScheme.quasiSplitTorusCentralizerExistence`,
+`maximalSplitTorusConjugacy`, `rootDatumExistence` and `relativeRootSystem`):
 
 - `QuasiSplitTorusCentralizerExistenceStatement.{u}`: some maximal split torus
   of a quasi-split group has a centralizer represented by a closed torus.
@@ -62,6 +64,6 @@ chosen from this nonempty type, for the same data and the same four premises.
 
 ## Scope
 
-All four structural statements remain explicit premises. The unit does not
+All four structural statements remain explicit premises. The module does not
 prove the R1 statement unconditionally, the R2 statement, or apartment
 existence.

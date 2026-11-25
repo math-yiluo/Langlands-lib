@@ -3,10 +3,9 @@
 `properDescent` proves exactly
 `Langlands.AlgebraicGeometry.SchemeLimitModel.ProperDescent` in arbitrary
 universe `u`. The statement's paired Markdown records its source and scope.
-Worker 105 authored the shared proof. Worker 706 reuses it here, adapting
-the relative diagram helper calls to the current published
+The relative diagram helper calls use the
 `SchemeLimitModel.Geometry.morphismDiagram` and
-`morphismDiagram_cartesian` declarations.
+`morphismDiagram_cartesian` declarations (module `SchemeLimitFiberLoci`).
 
 The original source is Brian Conrad, *Weil and Grothendieck approaches to
 adelic points* (December 31, 2011), printed pp. 5–6, Theorem 3.4(2),
@@ -14,14 +13,14 @@ properness clause and its preceding finite-presentation convention.
 Registered source `conrad-2011-weil-grothendieck-adelic-points`, SHA-256
 `fe4a9193aff4ef575665b40971f3da32f850a74d87b3f2d0fa28bba26b9cbabb`.
 The model-existence and relative assertions are derived supporting forms;
-the other properties and whole-paper obligations remain separate.
+the other properties are not treated here.
 
-The private `properSubalgebraDescent` first invokes the published separatedness
+The private `properSubalgebraDescent` first invokes the separatedness
 subalgebra descent theorem. The resulting finitely generated
 `A₀`-subalgebra `T` of the final ring `A` is noetherian because `A₀` is
 noetherian. The prescribed model pulled
 back to `T` is separated. An actual iterated pullback identifies its further
-base change to the final ring with the given proper morphism. The published
+base change to the final ring with the given proper morphism. The
 properness subalgebra theorem now gives a finitely generated `T`-subalgebra
 `U`. Restrict scalars to the starting ring: finite generation follows from
 composition of finite-type algebras. A second actual iterated pullback
@@ -58,7 +57,7 @@ morphism. The converse is base-change stability. Sources need not be affine.
 The private spectrum and initial-ring helpers use the actual spectrum
 limit and the actual under-category algebra tail, reindexing stages by
 `op` and `unop`. The finite-presentation helper derives local finite
-presentation of the relative morphism using the published
+presentation of the relative morphism using
 `Langlands.AlgebraicGeometry.locallyOfFinitePresentation_of_comp`, and its
 quasi-compactness and quasi-separatedness by composition cancellation.
 The six public intermediate theorems instantiate these helpers for

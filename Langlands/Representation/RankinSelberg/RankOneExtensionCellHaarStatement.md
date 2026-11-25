@@ -1,7 +1,5 @@
 # Haar measure of `GL_(t+2)` in upper-cell/lower-block coordinates
 
-Authors: Worker 802, Worker 867.
-
 `Langlands.RankinSelberg.RankOneExtensionCellHaarStatement.{uF}` is a closed
 proposition definition. It states that the published Haar measure on
 `GL_(t+2)(F)` is a positive finite multiple of the pushforward of an explicit

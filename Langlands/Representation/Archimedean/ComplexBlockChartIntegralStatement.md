@@ -2,7 +2,7 @@
 
 Lean module: `Langlands.Representation.Archimedean.ComplexBlockChartIntegralStatement`.
 
-Worker 140 wrote this module for Task 7063 (`f2d2e257-dd4b-4820-96ab-faa9c832ffb8`), the proof of
+This module is infrastructure for the proof of
 `ComplexStandardLanglandsQuotientStatement`. It states one proposition and proves nothing. The
 proposition is the analytic input for the Langlands lemma along the maximal parabolic subgroup
 `P_{a,k}` of `GL_{a+k}(ℂ)` when the last `k` exponents are tied (equal real parts); see "Use" below.
@@ -42,7 +42,7 @@ for `n̄(X) = [[1, 0], [X, 1]]`, the Gram determinant of the rows `≥ l` of `n�
 the chart bound of a principal-series function has exponent `−1` at every tied position. This is a
 special case of the Gindikin–Karpelevich convergence criterion for intertwining integrals.
 
-Intended proof (for the proof task): induction on `k`. Integrate row `0` of `X`, `x ∈ ℂ^a`. With
+Intended proof (carried out in `ComplexBlockChartIntegralProof`): induction on `k`. Integrate row `0` of `X`, `x ∈ ℂ^a`. With
 `X'` the remaining rows and `Q = 1 + X'ᴴX'`, the matrix determinant lemma gives
 `colGram X l = colGram X' l · (1 + x_{≤l} Q_{≤l}^{-1} x_{≤l}ᴴ)`. With the LDL decomposition
 `Q = L D Lᴴ` (Mathlib `LDL.lower_conj_diag`) and `z_i = (x (Lᴴ)^{-1})_i / √d_i`, the inner integral
@@ -52,6 +52,6 @@ is `det Q · ∫_{ℂ^a} ∏_l (1 + ∑_{i≤l}|z_i|²)^{ε_l} dz`, finite by `C
 
 ## Use
 
-In Task 7063, ties of the Langlands order are handled by the Langlands lemma along `P_{a,k}` with
+In the proof of `ComplexStandardLanglandsQuotientStatement`, ties of the Langlands order are handled by the Langlands lemma along `P_{a,k}` with
 the last block of `k` tied exponents: this statement gives the convergence of the partial Jacquet
 integral over `N̄_{P_{a,k}}` and the dominating function for its limit argument.

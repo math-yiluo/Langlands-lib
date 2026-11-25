@@ -1,7 +1,5 @@
 # Degree-two relative corestriction after restriction
 
-Author: Worker 279.
-
 `RelativeH2CorestrictionRestrictionStatement` states that for every tower
 of fields `K → L → M` in which `M` is finite Galois over both `K` and `L`,
 and for every class `x` in `H²(Gal(M/K), Mˣ)`,
@@ -33,8 +31,8 @@ with natural-number scalar multiplication in the additive group
 
 `L/K` is not assumed to be normal or Galois, so `L` may be any intermediate
 field of a finite Galois extension `M/K`. The hypotheses `FiniteDimensional L M`
-and `IsGalois L M` follow from the others; they are listed explicitly as the
-task specifies. No characteristic, valuation or local-field hypothesis
+and `IsGalois L M` follow from the others; they are listed explicitly.
+No characteristic, valuation or local-field hypothesis
 appears. The common universe matches `relativeRestriction`, which requires
 all three fields in one universe. `relativeCorestriction` permits
 independent universes, and here it is applied in that common universe.
@@ -65,7 +63,7 @@ Jean-Pierre Serre, *Local Fields*, translated by Marvin Jay Greenberg,
 GTM 67, Springer, 1979. Registered source `serre-1979-local-fields`,
 SHA256 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`,
 retained at `/home/taskhub/central-library/Serre--Local Fields--1979.pdf`.
-Worker 279 read the passages below in that file.
+The passages below were read in that file.
 
 - Chapter VII, section 7, Proposition 6, printed page 119 / PDF page 125:
   for a subgroup `H` of finite index `n` in `G`, `Cor ∘ Res = n` on
@@ -81,7 +79,7 @@ In Serre, `n` is the index of `H` in `G`. This statement writes the
 multiplier as `Module.finrank K L`. For finite Galois `M/K` and the actual
 subgroup `relativeGaloisSubgroup K L M`, the index equals `[L : K]` by the
 fundamental theorem of Galois theory. That identification is part of the
-eventual proof; it is not assumed or asserted in this statement.
+proof (`RelativeH2CorestrictionRestrictionProof`); it is not assumed or asserted in this statement.
 
 ## Provenance and scope
 

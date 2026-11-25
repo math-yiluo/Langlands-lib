@@ -1,6 +1,6 @@
 # `PP̄`-regularity of Langlands triplets (Renard VII.4.1, Lemma): statement
 
-Author: Worker 1222. Module
+Module
 `Langlands.Representation.LanglandsClassification.LanglandsTripletRegularityStatement`,
 namespace `Langlands.Aubert.General.RepresentedParabolic`. The module contains one
 **statement**, the closed `Prop`-valued definition
@@ -11,8 +11,8 @@ nothing.
 
 David Renard, *Représentations des groupes réductifs p-adiques*, French edition dated
 **9 July 2026**, registered as `renard-2026-representations-groupes-reductifs-padiques`,
-SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. Worker 1222
-read VII.3.1–VII.3.5 and VII.4, printed pp.232–246 / PDF pp.238–252, for this unit.
+SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
+VII.3.1–VII.3.5 and VII.4, printed pp.232–246 / PDF pp.238–252, were read for this module.
 
 The Lemma of VII.4.1, printed p.241 / PDF p.247, reads:
 
@@ -86,8 +86,9 @@ The provenance is the source Lemma.
   `J_{P̄|P}(σψ)`. The published
   [PQIntertwiningOperatorStatement](../Intertwining/PQIntertwiningOperatorStatement.md)
   characterizes `J_{Q|P}(σ)` only relative to an identification `e` of
-  `F^{<1̄}_{PQ}/F^{≤1̄}_{PQ}(E)` with `E`, because the integral over `N̄ ∩ U` is not yet
-  formalized. Clause 2 states the dimension without naming the operator. Once the
+  `F^{<1̄}_{PQ}/F^{≤1̄}_{PQ}(E)` with `E`, not through the integral over `N̄ ∩ U`; the
+  integral form is the separate `PQIntegralIntertwiningOperatorStatement`, proved as
+  `pqIntegralIntertwiningOperator`. Clause 2 states the dimension without naming the operator. Once the
   dimension is one, every nonzero intertwining operator, in particular any `J_{P̄|P}(σψ)`
   of that statement, spans the space.
 - **`PQ`-regularity.** `IsPQRegular` is condition (i) of the VII.3.3 Lemma. Renard defines
@@ -103,7 +104,8 @@ The provenance is the source Lemma.
 
 This module states the VII.4.1 Lemma and proves it in no part. The Definition of VII.4.1
 is the published `IsLanglandsTriplet`, and the Theorem of VII.4.2 is the published
-`LanglandsClassificationStatement`. A proof belongs to a separate proof task.
+`LanglandsClassificationStatement`. The proof is `langlandsTripletOppositeRegularity`,
+in the separate module `LanglandsTripletRegularityProof`.
 
 ## Imports
 

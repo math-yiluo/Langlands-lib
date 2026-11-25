@@ -51,6 +51,7 @@ theorem openInStabilizer_iff {i : H ⟶ G} {n : ℕ} {j : N ⟶ G} (hj : IsClose
     rw [Category.assoc, hk.isoOfIsRepresentedBy_hom_comp hrep, hb, ha])
   have : IsOpenImmersion b.hom.hom.left := hbopen
   rw [← he]
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   exact inferInstanceAs (IsOpenImmersion (b.hom.hom.left ≫ e.hom.hom.hom.left))
 
 /-- Every test of a finite-flat jet parameter with closed universal stabilizer
@@ -146,6 +147,7 @@ theorem exists_open_of_openInStabilizer_familyHom {G : GroupScheme S} [IsSeparat
       change IsOpenImmersion ((baseChange b.left).map a).hom.hom.left ↔
         IsOpenImmersion (((baseChange b.left).map a).hom.hom.left ≫
           (familySourceComparison N g b).hom.hom.hom.left)
+      set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
       exact (MorphismProperty.cancel_right_of_respectsIso @IsOpenImmersion _ _).symm
     exact hopen.trans (openInStabilizer_iff (isClosedSubgroup_familyHom j hj (b ≫ g))
       hrep'' f hf).symm

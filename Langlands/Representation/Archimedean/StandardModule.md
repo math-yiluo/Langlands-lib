@@ -1,8 +1,6 @@
 # Standard modules of `GL_n(ℝ)` and `GL_n(ℂ)` and their parameters
 
-Author: Worker 35. Definition contribution to task
-`91266440-3276-48dc-ab77-8d1c1fa386e8`, revision 1.
-This is the third archimedean unit for Shahidi's Theorem 3.1 (1985). It
+This is the third archimedean module for Shahidi's Theorem 3.1 (1985). It
 builds on `Langlands.Representation.Archimedean.GeneralLinear`, and it
 attaches Weil-group data to Banach representations of `GL_N(ℝ)`,
 `GL_N(ℂ)` and of the pair Levi subgroups. The Weil-group data are lists
@@ -406,7 +404,7 @@ These points explain the formalization. None is proved in Lean.
    Here the character of `ℝˣ` itself is the position character, which is
    the normalization of local class field theory for `ℝ`.
 
-## Relation to other Library units
+## Relation to other Library modules
 
 The blocks and their Weil representations, `L`- and `ε`-factors are
 the Library's (`Langlands.LocalFactor.ArchimedeanAttachment`,

@@ -71,7 +71,7 @@ variable {K : Type u} [NormedField K] [IsUltrametricDist K] [CompleteSpace K]
 /-- In `ULift ℤ`, a nonzero natural number is a non-zero-divisor. -/
 theorem isSMulRegular_uLiftInt_natCast {ℓ : ℕ} (hℓ : ℓ ≠ 0) :
     IsSMulRegular (ULift.{w} ℤ) (ℓ : ULift.{w} ℤ) := fun _ _ hab =>
-  ULift.ext _ _ (mul_left_cancel₀ (Int.natCast_ne_zero.2 hℓ) (congrArg ULift.down hab))
+  ULift.ext (mul_left_cancel₀ (Int.natCast_ne_zero.2 hℓ) (congrArg ULift.down hab))
 
 section Constant
 

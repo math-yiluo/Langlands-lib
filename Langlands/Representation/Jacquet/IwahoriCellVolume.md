@@ -1,6 +1,6 @@
 # Volumes of Iwahori double cosets in the central quotient
 
-Author: Worker 4712. Module `Langlands.Representation.Jacquet.IwahoriCellVolume`,
+Module `Langlands.Representation.Jacquet.IwahoriCellVolume`,
 namespace `Langlands.Jacquet`. This is a supporting module for the necessity half
 of Casselman's criterion (Renard 2026, VII.1.2).
 

@@ -1,14 +1,12 @@
 # Rank-one self-association from a normalizing Weyl element
 
-Author: Worker 63.
-
-This internal supporting unit restates the representation-theoretic content of
+This internal supporting module restates the representation-theoretic content of
 the published `RationalRankOneSelfAssociationStatement` in normalizer form and
 proves that the two forms are equivalent at the full rational scope. The
 normalizer form asks for one actual rational point. It must normalize the torus
 point image and the maximal standard Levi `L_J`, and it must lie outside `L_J`.
-The unit proves neither form. The implication from reducible cuspidal
-induction to such a point is still open.
+The module proves neither form. The Library does not prove the implication from
+reducible cuspidal induction to such a point.
 
 ## Pure Coxeter step
 
@@ -90,7 +88,7 @@ This is an obligation predicate. Its definition supplies no witness.
 
 `rankOneAssociatedSubsetEquality_of_normalizingWeyl` assumes the actual Levi
 Weyl identification and `Z_G(T) ≤ M J` for every `J`. Under these
-assumptions it derives Worker 167's published `rankOneAssociatedSubsetEquality`
+assumptions it derives the published `rankOneAssociatedSubsetEquality`
 from `rankOneNormalizingWeyl`, using `associatedSubset_eq_of_normalizing_point`.
 
 `rankOneNormalizingWeyl_of_selfAssociation` assumes the identification and
@@ -129,8 +127,8 @@ which derives `Z_G(T₀(F)) ≤ L_J` from the premise
 `rationalRankOneNormalizingWeyl_of_selfAssociation` proves the converse
 through `rankOneNormalizingWeyl_of_selfAssociation`.
 `rationalRankOneSelfAssociation_iff_normalizingWeyl` pairs the two
-implications. It is an equivalence between two propositions that are both
-still unproved. It proves neither of them.
+implications. It is an equivalence between two propositions, neither of which
+the Library proves. It proves neither of them.
 
 ## Dependencies and provenance
 
@@ -143,10 +141,10 @@ added. For orientation only: the published
 it. Moving that conclusion to the standard family and to a point of
 `N_G(T₀(F))` is not done here.
 
-| Published declaration | Use in this unit |
+| Published declaration | Use in this module |
 | --- | --- |
 | `RationalRankOneSelfAssociationStatement`, `rankOneSelfAssociation` | Target and generic target, preserved unchanged. |
-| `rankOneAssociatedSubsetEquality`, `rationalRankOneSelfAssociation_of_associatedSubsetEquality` (Worker 167) | Equality-only predicate and its reduction to the target. |
+| `rankOneAssociatedSubsetEquality`, `rationalRankOneSelfAssociation_of_associatedSubsetEquality` | Equality-only predicate and its reduction to the target. |
 | `IsMaximalStandard`, `IsCorollaryLeviCuspidal` | The rank-one and restricted-cuspidality hypotheses, reused unchanged. |
 | `exists_minimal_in_doubleCoset`, `isMinimal_inv`, `longestRep_mem`, `length_le_longestRep`, `mem_minimalReps`, `standardSubgroup_empty`, `simple_mem_standardSubgroup` | Intrinsic Coxeter constructions in `RelativeWeylIndexing`. |
 | `minimalityLengthCriterion_proof`, `longestSurvivor_proof`, `exists_conj_simple_eq_of_isMinimal`, `mem_of_simple_mem_standardSubgroup`, `mem_positiveSimpleSet` | Published intrinsic Coxeter proofs. |
@@ -158,6 +156,6 @@ The proofs use no Langlands classification, character independence,
 geometric lemma, adjointness or cuspidal-support theorem. The representation
 functors occur only in the inherited hypotheses, and no theorem about
 irreducibility or composition factors is applied. Aubert Proposition 3.2 is
-not used. To complete the original task one must still prove
-`RationalRankOneNormalizingWeylStatement` (or the equality form) from the
-reducibility hypothesis.
+not used. A proof of `RationalRankOneSelfAssociationStatement` by this route
+still needs `RationalRankOneNormalizingWeylStatement` (or the equality form)
+proved from the reducibility hypothesis.

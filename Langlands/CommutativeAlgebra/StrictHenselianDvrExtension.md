@@ -1,6 +1,6 @@
 # Faithfully flat strictly Henselian DVR extensions
 
-Worker 252. The theorem
+The theorem
 `Langlands.CommutativeAlgebra.strictHenselianDvrExtension.{u}` proves the
 unchanged published proposition
 `Langlands.CommutativeAlgebra.StrictHenselianDvrExtensionStatement.{u}`.

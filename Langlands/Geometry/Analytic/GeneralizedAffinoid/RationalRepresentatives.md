@@ -1,7 +1,5 @@
 # Changing representatives in a weighted rational presentation
 
-Author: Worker 56.
-
 This module constructs `RationalPresentation.representativeEquiv`, an actual
 isometric bounded algebra equivalence between weighted rational quotients
 whose chosen denominator and numerator series represent the same elements
@@ -107,7 +105,7 @@ printed/PDF page 4, describe weighted restricted series and spectra; the
 quotient-norm paragraph and Definitions 2.1.1–2.1.2 on page 7 describe
 affinoid presentations; Exercise 2.2.2(ii), page 9, gives the rational
 quotient equations in terms of elements of the base algebra. These pages
-were read directly for this contribution. No source-specific errata file
+were read directly for this module. No source-specific errata file
 was found in the supplied project or public Library notes.
 
 The representative comparison is a derived algebraic and normed
@@ -118,8 +116,8 @@ series for its analytic-domain theorem. This module uses the already
 published direct field-coefficient presentation and proves only that equal
 classes give the specified isometric comparison. It does not compare
 arbitrary base presentations, identify relative series, prove reverse
-spectrum inclusion or analytic-domain representability, or complete the
-parent analytic-space/site task.
+spectrum inclusion or analytic-domain representability, or construct
+analytic spaces and their sites.
 
 Registered original: `berkovich-2009-trieste-analytic-spaces`, PDF SHA256
 `8cfe4f6f35d5e717ac67c5c8f5ef9ff9185f460bbe5f9a10aeacd84cddeeb2ca`, at

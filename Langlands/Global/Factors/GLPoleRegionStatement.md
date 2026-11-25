@@ -23,7 +23,7 @@ The module introduces no substitute types and assumes no local-factor theorem.
 
 Fix a prime `p`, a p-adic field `F : PadicField.{uF} p` and a realization
 `T : F.TopologicalData`. The statements install `T`'s topology, valuation
-and local-field structure, and Borel σ-algebras, exactly as Worker 11's
+and local-field structure, and Borel σ-algebras, exactly as the
 published `Langlands.RankinSelberg.EqualRankAnalyticStatement` and
 `UnequalRankAnalyticStatement` do. The objects used are:
 
@@ -43,7 +43,7 @@ published `Langlands.RankinSelberg.EqualRankAnalyticStatement` and
 - `Langlands.GeneralLinear.IsSupercuspidal σ`, from
   `Classification/Supercuspidal`. It means admissible, with vanishing actual
   Jacquet module for every proper block parabolic and each of its conjugates.
-- The published JPSS relations of Worker 31's
+- The published JPSS relations of
   `Langlands/Representation/RankinSelberg/LocalFactor`:
   - `IsEqualRankLPolynomial q ψ abv μ π σ P` and
     `IsUnequalRankLPolynomial q ψ abv j k μ ν π σ P`. Each says that `P(0) = 1`
@@ -214,8 +214,8 @@ formalization makes the following documented choices.
   Henniart §4.4. The identification `π^ι ≅ π^∨` for irreducible `π` is the
   Gelfand–Kazhdan theorem, not used here. The conclusion is then the
   hypothesis that `GammaPolynomialSeparationStatement` needs for the gamma
-  factor of the JPSS functional equation (Worker 11's
-  `Langlands/Representation/RankinSelberg/FunctionalEquationStatement`).
+  factor of the JPSS functional equation
+  (`Langlands/Representation/RankinSelberg/FunctionalEquationStatement`).
 - **Supercuspidality.** Henniart §2.5 defines supercuspidal representations
   by compact support of coefficients modulo the center. The Library's
   predicate is vanishing of every proper Jacquet module. Together with
@@ -234,7 +234,7 @@ formalization makes the following documented choices.
     show that positive rescaling of the measure does not change the L-polynomial.
   - The existence of a compatible `μ` is the separate published proposition
     `QuotientHaarExistenceStatement`.
-  - The existence of the L-polynomials is JPSS Theorem 2.7, Worker 11's
+  - The existence of the L-polynomials is JPSS Theorem 2.7,
     `Theorem27Statement`.
   - Neither existence is assumed. The conclusion is stated for every `P` and
     `Pdual` satisfying the relations.
@@ -278,7 +278,7 @@ convolutions*, Amer. J. Math. 105 (1983), 367-464. Registered source:
 `jpss-1983-rankin-selberg`, SHA-256 `d9feed63…62245`. This scan has no text
 layer. The conventions used here are those of the published modules that
 implement its §2.1 and Theorem 2.7: `π^ι`, `𝒲(π; ψ)`, `𝒲(π'; ψ̄)`, the zeta
-integrals and the normalized generator. Their authors read the scan; see
+integrals and the normalized generator. The scan was read for those modules; see
 `RankinSelberg/LocalFactor.md`, `AnalyticStatement.md` and
 `FunctionalEquationStatement.md`.
 

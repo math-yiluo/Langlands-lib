@@ -2,7 +2,8 @@
 
 For an actual group-scheme representation `rho : G -> GL(n)` over a field
 `k` and a finite ordered family of supplied maps `x_i : Ga -> G`, this
-derived unit considers the original action at `x_0(t_0) ... x_(d-1)(t_(d-1))`.
+module, derived rather than taken from a source, considers the original
+action at `x_0(t_0) ... x_(d-1)(t_(d-1))`.
 The subgroup images need not commute. All products preserve their given
 order, and the rightmost endomorphism acts first on column vectors.
 
@@ -46,6 +47,6 @@ vanishes at every tuple with the specified power relations.
 No infinitude or characteristic hypothesis is needed. The supplied field
 and all commutative test algebras have universe `u`; the representation
 index type is finite. These statements concern the specified ordered
-family. The unit does not construct root coordinates, a Frobenius-kernel
+family. The module does not construct root coordinates, a Frobenius-kernel
 group scheme, an entire induced-space comparison or Steinberg
 irreducibility, and does not prove `SteinbergBigCellStatement`.

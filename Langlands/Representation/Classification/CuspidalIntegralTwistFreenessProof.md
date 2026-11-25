@@ -1,7 +1,5 @@
 # Integral twist freeness of positive-rank cuspidal data
 
-Author: Worker 495.
-
 The theorem `Langlands.Classification.cuspidalIntegralTwistFreeness` proves
 the exact published proposition
 `Langlands.Classification.CuspidalIntegralTwistFreeness.{uF,uV} F T`.

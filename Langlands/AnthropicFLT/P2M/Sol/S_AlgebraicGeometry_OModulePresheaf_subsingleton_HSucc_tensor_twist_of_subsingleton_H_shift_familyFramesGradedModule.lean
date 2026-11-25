@@ -5,7 +5,7 @@ Anthropic, PBC, licensed under the Apache License, Version 2.0; see
 `licenses/Anthropic-FLT/LICENSE`, `NOTICE` and `ATTRIBUTION.md`.
 Modified: FLT module names are prefixed by `Langlands.AnthropicFLT`; the FLT lakefile options are set after the imports; the import of `P2M.Util` is dropped. The paired Markdown file lists the changes.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_OModulePresheafTensor
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_OModulePresheafFamilyFramesGradedModule
 import Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_OModulePresheaf_exists_framesCompat_res_eq_prod_frameUnit_pow_smul_res_of_isQuasicoherent
@@ -118,7 +118,7 @@ def c {i : ℕ} (s : (𝔘 ι).Idx i) (v : Fin (i + 1)) : Fin (r + 1) := (s.1 v)
 theorem c_injective {i : ℕ} (s : (𝔘 ι).Idx i) : Function.Injective (c s) := fun a b h => by
   have h' : s.1 a = s.1 b := by
     have : (s.1 a).down = (s.1 b).down := h
-    exact ULift.ext _ _ this
+    exact ULift.ext this
   exact s.2.injective h'
 
 def ch {i : ℕ} (s : (𝔘 ι).Idx i) : Fin (r + 1) := c s 0

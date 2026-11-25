@@ -19,7 +19,7 @@ in `G`, and so do their unipotent radicals.
 The theorem `maximalLeviConeComplementFromParabolicDynamic` proves the
 implication by combining two modules.
 
-- Worker 1334's `MaximalLeviConeComplementLine.maximalLeviConeComplement_of_line`
+- `MaximalLeviConeComplementLine.maximalLeviConeComplement_of_line`
   derives the target statement from one line hypothesis. For the data of the
   target, every real character `y` of `A` vanishing on the central
   cocharacters lies in `Submodule.span ℝ {x}`.
@@ -32,13 +32,15 @@ implication by combining two modules.
 
 The proof uses `ParabolicDynamicStatement` only as the antecedent of the
 implication and does not prove it. Hence this module does not prove
-`MaximalLeviConeComplementStatement` unconditionally. Once
-`ParabolicDynamicStatement` has a published proof, applying this theorem to
-that proof gives the target.
+`MaximalLeviConeComplementStatement` unconditionally.
+`ParabolicDynamicStatement` is proved as `parabolicDynamic` (module
+`Absolute.ParabolicDynamicProof`), and `maximalLeviConeComplement` (module
+`Rational.MaximalLeviConeComplementProof`) applies this theorem to that proof
+to give the target.
 
 ## Provenance
 
 This proposition is internal, with no literature source of its own. It
-records the reduction of the task's target statement to the Library
-statement `ParabolicDynamicStatement`, which is not yet proved. The two modules it combines are
+records the reduction of `MaximalLeviConeComplementStatement` to the Library
+statement `ParabolicDynamicStatement`. The two modules it combines are
 described in their own Markdown files.

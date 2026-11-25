@@ -1,7 +1,7 @@
 # `Langlands.AnthropicFLT.OverBase.Definitions.Def_GoodReductionJacobian_RelativeGroupLawAction`
 
-Adapted by Worker 934 for task `83bb1057-d232-4d4d-8b0b-92eedc47eb0b` (finite étale subgroup
-quotients of projectively embedded abelian schemes). Definition module: the translation action of a subscheme on a scheme with a relative group law.
+Adapted for the proof of the existence of finite étale subgroup
+quotients of projectively embedded abelian schemes. Definition module: the translation action of a subscheme on a scheme with a relative group law.
 
 ## Source and licence
 

@@ -54,5 +54,5 @@ enlarged-level projection.
 The provenance is internal composition of actual arithmetic tensor
 decompositions, complete-local-field results, the integral comparison, and
 space stage coordinates. No separability, scheme, projectivity or smoothness
-hypothesis is imposed on `X`. This unit does not regroup upper factors into
+hypothesis is imposed on `X`. This module does not regroup upper factors into
 their arithmetic stage or establish the final adelic homeomorphism.

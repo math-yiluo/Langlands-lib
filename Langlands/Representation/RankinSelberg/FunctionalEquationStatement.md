@@ -1,13 +1,16 @@
 # JPSS functional equations on actual coefficient images
 
-Author: Worker 11. This file defines three proposition targets in namespace
+This file defines three proposition targets in namespace
 `Langlands.RankinSelberg`:
 
 - `EqualRankFunctionalEquationStatement n`,
 - `UnequalRankFunctionalEquationStatement n r`,
 - `Theorem27Statement`, the whole of JPSS Theorem 2.7 (see "The family statement").
 
-None is proved, and none is assumed anywhere. The first two restate Theorem
+The first two are proved by `equalRankFunctionalEquation`
+(`EqualRankFunctionalEquationProof`) and `unequalRankFunctionalEquation`
+(`UnequalRankFunctionalEquationProof`); `Theorem27Statement` is not proved in
+the Library, and none is assumed anywhere. The first two restate Theorem
 2.7(iii), displays (1) and (2), of Jacquet--Piatetski-Shapiro--Shalika (JPSS),
 *Rankin--Selberg convolutions*, Amer. J. Math. 105 (1983), printed page 391.
 The common data, the scope `IsOfWhittakerType`, the integrals, the quotient
@@ -206,7 +209,7 @@ has no text layer; the pages were read visually.
 
 ## Lean checks
 
-The module compiles with `lean_check` in environment `3b864ddf` with no errors
+The module compiles with no errors
 or warnings. `UnequalRankFunctionalEquationStatement` and `Theorem27Statement`
 were inspected: each returns `Prop`, has universe parameters `uF uV uW`, and
 uses only the axioms `propext`, `Classical.choice` and `Quot.sound`. The

@@ -12,7 +12,7 @@ class relation. No representation, isobaric sum or spectrum is constructed.
 
 noncomputable section
 
-namespace Langlands.ClassField.Global
+namespace Langlands.ClassFieldTheory.Global
 
 open Langlands.Global Langlands.Global.CompletionPadic Langlands.Unramified Langlands.Automorphic
 
@@ -124,4 +124,4 @@ theorem isWeaklyAssociatedIsobaric_inflate {K : FiniteGaloisIntermediateField F 
 
 end WeilMapSystem
 
-end Langlands.ClassField.Global
+end Langlands.ClassFieldTheory.Global

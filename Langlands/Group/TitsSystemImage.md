@@ -16,7 +16,7 @@ it on every image representative. `IsTitsSystem.ker_subgroupMap_le` derives the
 needed kernel containment from the Borel-kernel hypothesis, and
 `IsTitsSystem.map_imageProjection` transports to this canonical projection. The
 construction descends the source homomorphism through the surjective normalizer
-image map using Mathlib's `MonoidHom.liftOfSurjective`. This unit supplies no
+image map using Mathlib's `MonoidHom.liftOfSurjective`. This module supplies no
 Bruhat–Tits geometric inputs.
 
 The proof first identifies image Bruhat cells by lifting their three factors.

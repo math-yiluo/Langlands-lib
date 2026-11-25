@@ -37,8 +37,8 @@ well. No finiteness, reductivity, connectedness, maximality, primitive-root,
 or characteristic restriction is used in the assembly.
 
 The provenance is an internal composition of the actual full-kernel
-descent construction authored by Workers 1335 and 1339 and the integral
-coroot extraction authored by Worker 1225. It finishes the algebraic
+descent construction of `RootKernelDivisibility` and the integral
+coroot extraction of `IntegralCoroot`. It finishes the algebraic
 assembly after the quotient-factorization step in Conrad–Gabber–Prasad,
 *Pseudo-reductive groups*, second edition (2015), C.2.15 Step 2, printed
 pp.604–605 (PDF pp.630–631), registered source

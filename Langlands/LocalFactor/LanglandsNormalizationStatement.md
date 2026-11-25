@@ -1,6 +1,6 @@
 # Langlands' normalization of local constants
 
-Worker 33 wrote this module for task `e534647a`. It covers Tate's comparison
+This module covers Tate's comparison
 of the Deligne and Langlands conventions for local constants (Tate 1979,
 §3.6) and Deligne's absolute-value formula (5.7.2). The main declaration is
 `Langlands.LocalFactor.LanglandsNormalizationStatement`. It is a proposition

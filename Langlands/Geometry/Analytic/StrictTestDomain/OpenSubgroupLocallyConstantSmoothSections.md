@@ -1,7 +1,5 @@
 # Full smooth local sections on the finite rational transport site
 
-Author: Worker 13.
-
 This internal construction proves smoothness of the entire locally constant
 section module of the actual sheaf on
 `OpenSubgroupTransport.finiteTopology`. It constructs the full category of
@@ -135,9 +133,8 @@ constructed locally constant sheaf enters the argument.
 
 The general locally smooth category imposes its displayed condition on
 actual sheaves; the coefficient functor supplies a constructed family of
-objects satisfying it. This unit does not identify the rational transport
+objects satisfying it. This module does not identify the rational transport
 site with a full analytic or etale site, or construct structure-sheaf
 descent, compact-support or derived cohomology, arithmetic coefficient
-systems, or the Harris specialization. These remain obligations of the
-broader task. No arbitrary-limit or colimit preservation claim is made
+systems, or the Harris specialization. No arbitrary-limit or colimit preservation claim is made
 for the locally smooth inclusion or its evaluation functors.

@@ -39,8 +39,8 @@ theorem isLocallyGood_of_pullback_of_small
     {f : U ⟶ B} {g : V ⟶ B} {p : P ⟶ U} {q : P ⟶ V} (hP : IsPullback p q f g)
     {σ : G →* Aut P} {σU : G →* Aut U} {σV : G →* Aut V}
     (hU : IsContinuousAction σU) (hV : IsContinuousAction σV)
-    (hp : ∀ h, (σ h).hom ≫ p = p ≫ (σU h).hom)
-    (hq : ∀ h, (σ h).hom ≫ q = q ≫ (σV h).hom) :
+    (hp : ∀ h, (σ h).asIso.hom ≫ p = p ≫ (σU h).asIso.hom)
+    (hq : ∀ h, (σ h).asIso.hom ≫ q = q ≫ (σV h).asIso.hom) :
     IsLocallyGood σ := fun y =>
   isLocallyChartCovered_of_pairCharts hP.w (IsGoodChart σ) (fun c W hW => by
     have := hS c.algebra

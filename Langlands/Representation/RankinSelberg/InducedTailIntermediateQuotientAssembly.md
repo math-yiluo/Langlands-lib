@@ -1,7 +1,7 @@
 # Actual quotient-to-span assembly for the intermediate tail
 
-Worker 318 combines the actual quotient comparison with the integral and span
-assembly by Worker 829. This internal derivation keeps the diagonal extension,
+This module combines the actual quotient comparison with the integral and span
+assembly of `InducedTailIntermediateIntegralAssembly`. This internal derivation keeps the diagonal extension,
 the full representation's Whittaker type, the test representation's smoothness,
 and the lower-block measure transfer as hypotheses.
 
@@ -37,7 +37,7 @@ measurable. The continuity lemma makes its actual quotient integrand Borel
 measurable, so the measure-transfer hypothesis applies to this function.
 Continuity of the determinant density gives its measurability, and its
 definition makes it finite everywhere. The localizers are nonempty subgroups,
-so their real volumes are positive. Worker 829's
+so their real volumes are positive.
 `mem_zetaSpan_of_localized_disintegration` then gives the result, removing the
 nonzero scalar only at the Laurent-span step.
 

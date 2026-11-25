@@ -1,6 +1,6 @@
 # The open cell through a fixed point of a homogeneous space
 
-Internal helper module of the Task 7586 proof of
+Internal helper module of the proof of
 `Langlands.GroupScheme.RankOneCentralCoverStatement`. It works over a field `k`. A group scheme
 `G` over `Spec k` acts on a scheme `X` over `Spec k` by `a : SchemeAction G X`, and
 `x : Spec k ⟶ X` is a rational point. Nothing here is specific to reductive groups.
@@ -91,4 +91,4 @@ Internal. The cell and limit arguments follow the Białynicki-Birula style limit
 in the Library (`Dynamic/SchemeActionLimit`, `Dynamic/BruhatCellLimit`). The Chevalley map is the
 classical device of Chevalley's theorem on quotients, applied only to obtain a map to an affine
 scheme with prescribed fibres. All steps are proved in Lean from the named Library results and
-the Task 7586 helper modules `Dynamic/TwoSidedConstancy` and `Dynamic/GmOrbitInversion`.
+the helper modules `Dynamic/TwoSidedConstancy` and `Dynamic/GmOrbitInversion` of the same proof.

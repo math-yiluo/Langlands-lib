@@ -1,7 +1,5 @@
 # Canonical symmetric gamma construction inputs from Whittaker type
 
-Author: Worker 471.
-
 `Langlands.RankinSelberg.whittakerTypeGammaConstructionInput` proves exactly
 `Langlands.RankinSelberg.WhittakerTypeGammaConstructionInputStatement.{uF,uV,uW}`.
 It covers every prime, canonical p-adic field, nontrivial unitary additive
@@ -101,11 +99,9 @@ retained scan. No separate source erratum note was present in the checked
 project and Library locations.
 
 This theorem is an internal consequence of those results in the Library's
-canonical p-adic interfaces. The imported analytic proofs are due to Workers
-64 and 329, and the functional-equation proofs to Workers 216 and 103.
-The published adapter companion records the contributions of Workers 31, 43,
-103, 216, 471, 640 and 724. Their paired Markdown explains the substantive
-proofs and transport arguments used here. This assembly proves the
+canonical p-adic interfaces. The paired Markdown of the imported analytic
+and functional-equation proofs and of the published adapter companion
+explains the substantive proofs and transport arguments used here. This assembly proves the
 construction-input proposition; factor construction and later comparison
 identities are separate declarations.
 

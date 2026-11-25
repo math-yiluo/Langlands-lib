@@ -1,7 +1,5 @@
 # Proof: the affine agreement locus from the noetherian case and noetherian approximation
 
-Author: Worker 848.
-
 This module proves the published proposition
 `Langlands.AbelianScheme.RigidifiedClassesEqualizerClosedAffineFromNoetherianStatement`:
 
@@ -54,6 +52,8 @@ Introduce the two hypotheses `hNoeth` (noetherian case) and `hApprox` (approxima
 
 ## Use
 
-Together with proofs of the two hypotheses (proof tasks `00ab6acd-8b6c-4595-8df8-3fbdac0bdd4d`
-and `a825ba6f-ac5b-43b7-8794-52b2039388f7`), this gives the affine statement, which the reduction in task `e3d4a3ab-f378-42af-87c5-0cd4caec7b2e` uses to prove
-the published `Langlands.AbelianScheme.RigidifiedClassesEqualizerClosedStatement`.
+Together with proofs of the two hypotheses (`rigidifiedClassesEqualizerClosedNoetherianAffine`
+and `rigidifiedClassesNoetherianApproximation`), this gives the affine statement
+(`rigidifiedClassesEqualizerClosedAffine`), which the reduction `rigidifiedClassesEqualizerClosedReduction` uses to prove
+the published `Langlands.AbelianScheme.RigidifiedClassesEqualizerClosedStatement`
+(`rigidifiedClassesEqualizerClosed`).

@@ -109,8 +109,8 @@ theorem numericalActionClassOf_eq_iff_rationalIso (X Y : RationalAlgebraAction S
       numericalActionClassOf L K s n E Y hY ↔
         ∃ e : Langlands.Rationalization.of X.abelianScheme ≅
             Langlands.Rationalization.of Y.abelianScheme,
-          ∀ a : A, comp0 _ _ _ (X.action a) e.hom =
-            comp0 _ _ _ e.hom (Y.action a) := by
+          ∀ a : A, comp0 _ _ _ (X.action a).asHom e.hom =
+            comp0 _ _ _ e.hom (Y.action a).asHom := by
   rw [Subtype.ext_iff]
   exact RationalAlgebraAction.classOf_eq_iff_rationalIso
 

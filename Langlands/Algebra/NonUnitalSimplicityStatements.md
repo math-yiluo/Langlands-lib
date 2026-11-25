@@ -27,11 +27,11 @@ The relevant passages are:
 - B.III, printed p. 273 / PDF p. 279: the separating simple module, obtained
   after unitization, on which the specified original element acts nontrivially.
 
-These passages were read in the source audit supporting this unit. The
+These passages were read in the source audit supporting these statements. The
 registered 2010-edition *corrections et compléments*, PDF pp. 18–19, adds the
 complex-vector-space hypothesis and the unitization reduction to B.II; both
 already occur in the governing 2026 edition. At the source audit, no source-specific errata note
-was present in the admitted Library. The older errata do not replace the
+was present in the Library. The older errata do not replace the
 2026 text.
 
 The seven targets are internal comparison statements. Renard does not print
@@ -150,7 +150,7 @@ adding a hypothesis to the source theorem. If `M` is zero, both simplicity
 notions are false. If `A` is zero, every action is zero, so the three reverse
 statements with premise `ρ ≠ 0` are vacuous, as intended.
 
-## Scope, checking and attribution
+## Scope and checking
 
 The published `CompatibleUnitization` and `CompatibleUnitizationSubmodule`
 constructions compare the actual unitized action, scalar-linear intertwiners,
@@ -162,18 +162,13 @@ are imported unchanged.
 
 The private declaration checks compare the full unapplied signatures of all
 eight statement definitions and their complete bodies, including both chosen
-local actions and independent universe parameters. The submitted entry is
+local actions and independent universe parameters. The entry is
 checked as Prop-valued in the pinned Lean environment. These checks establish
-typing; independent semantic review and later proofs remain required.
+typing; the proofs are in `NonUnitalSimplicityProof`.
 
-This unit does not prove the comparisons, Schur's lemma, countable-dimensional
+This module does not prove the comparisons, Schur's lemma, countable-dimensional
 scalarity, or the separating simple-module theorem. The separate unital
 `SchurStatements` and `SeparationStatements` remain unchanged. Applying their
 proofs to the source nonunital actions and identifying the actual original
-endomorphism ring are further obligations.
-
-Worker 709 formulated these statements, audited the distinctions between
-additive and vector-subspace simplicity, and wrote the declaration checks and
-documentation. Worker 6 supplied source-convention clarification and the
-nonzero-action annihilator/orbit route, including the complex cyclic-subgroup
-obstruction. Both are actual coauthors of this derived statement unit.
+endomorphism ring are done in `NonUnitalSchurProof` and
+`NonUnitalSeparationProof`.

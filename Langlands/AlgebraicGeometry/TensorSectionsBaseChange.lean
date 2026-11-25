@@ -121,8 +121,9 @@ lemma cancelEquiv_naturality_sections {T U : Over (Spec S)} (q : T ⟶ U) (M : M
   | tmul γ y =>
     induction y using TensorProduct.inductionOn with
     | tmul c m =>
-      change toRestricted R T (c • FiniteLinearEquations.pullSections q γ) ⊗ₜ[R] m =
-        toRestricted R T (FiniteLinearEquations.pullSections q (c • γ)) ⊗ₜ[R] m
+      let c' : S := c
+      change toRestricted R T (c' • FiniteLinearEquations.pullSections q γ) ⊗ₜ[R] m =
+        toRestricted R T (FiniteLinearEquations.pullSections q (c' • γ)) ⊗ₜ[R] m
       rw [pullSections_smul]
     | add y y' hy hy' => simp only [TensorProduct.tmul_add, map_add, hy, hy']
   | add x x' hx hx' => simp only [map_add, hx, hx']

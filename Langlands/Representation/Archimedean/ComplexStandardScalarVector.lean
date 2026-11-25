@@ -90,7 +90,7 @@ theorem IsScalarVector.of_equiv {ds es : List ComplexCharacterData}
     apply Φ.injective
     rw [LinearEquiv.apply_symm_apply, hΦ, LinearEquiv.apply_symm_apply]
   refine ⟨fun h0 => h.1 ?_, fun E hE => ?_⟩
-  · rw [← Φ.apply_symm_apply f₀, h0, map_zero]
+  · rw [← Φ.apply_symm_apply f₀, h0, LinearEquiv.map_zero]
   · obtain ⟨a, ha⟩ := h.2 (Φ.toLinearMap ∘ₗ E ∘ₗ Φ.symm.toLinearMap) (fun k f => by
       simp only [LinearMap.comp_apply, LinearEquiv.coe_coe]
       rw [hΦs, hE, hΦ])

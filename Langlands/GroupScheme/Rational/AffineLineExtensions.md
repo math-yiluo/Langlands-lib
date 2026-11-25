@@ -1,7 +1,5 @@
 # Affine-line constancy under subgroups and extensions
 
-Author: Worker 1478.
-
 This internal construction develops closure properties of the existing
 `HasConstantAffineLineMaps` predicate. It concerns actual group schemes
 over every field `k : Type u`. No smoothness, connectedness, affineness,

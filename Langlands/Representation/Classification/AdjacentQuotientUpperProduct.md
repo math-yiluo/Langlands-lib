@@ -84,13 +84,8 @@ explicit independent universe arguments.
 The three direct imports are `Derivative.LocalPositiveLeibniz`,
 `Classification.TwoSupercuspidalTopDerivatives`, and
 `Classification.TwoSupercuspidalBinaryProductBridge`. Their recursive
-closure contains 903 project modules including this entry, with paired
-Markdown. The other locally authored prerequisite entries are the first
-two just named; both were staged separately with successful machine
-validation and remain subject to independent review and publication. The
-remaining 900 Lean modules are unchanged from published Library base
-`e058cb4d3adbd71764731d87c4cbfcb5805696e8`. External imports are from Mathlib
-and Lean.
+closure contains 914 project modules including this one, with paired
+Markdown. External imports are from Mathlib and Lean.
 
 The actual positive-rank gluing proof derives the full left mixed-product
 isomorphism and vanishing by mirabolic-rank induction from the proved
@@ -113,7 +108,7 @@ freeness. Actual Whittaker multiplicity one and admissibility then give
 finrank one. This route uses individual cuspidal support existence and
 uniqueness, not global support decomposition or ordered quotient coverage.
 Its complete support-shift, pairing, duality and geometric argument is
-documented in the separately submitted top-derivative pair.
+documented on the page of `Classification.TwoSupercuspidalTopDerivatives`.
 
 The binary-product bridge uses the actual rank-zero tensor equivalence and
 Mathlib tensor finrank, with all rank equalities retained. Its imported
@@ -121,17 +116,21 @@ conditional two-supercuspidal product-structure proposition supplies no
 proof premise here. The new filtration-to-isomorphism helpers use only the
 actual quotient first-isomorphism construction and unique-index algebra.
 
-No used proof depends on the host's excluded analytic segment
+No used proof depends on the analytic segment
 classification, special-head or ordered-head existence, multisegment
 exhaustion, global support decomposition, ordered quotient coverage,
 tempered uniqueness, regular or square-integrable exhaustion, or
 square-integrable Langlands classification, including renamed conclusions
-or proof successors. No segment-product irreducibility result is used.
+or the files that prove them. No segment-product irreducibility result is used.
 
-## Remaining host obligations
+## What this file does not prove
 
 Top dimension one alone does not prove irreducibility: nonvanishing on all
-irreducible actual subquotients remains to be established. This unit proves
+irreducible actual subquotients is also needed and is not established here;
+the irreducibility of `Q × A` is proved in
+`Classification.IncreasingAdjacentQuotientUpperProductIrreducibility`. This file proves
 no proper-derivative support formula, proper-subspace existence, local
 rank-three transfer or ambient transfer. The exact repeated-cuspidal
-triple conjunction remains open.
+triple conjunction, `RepeatedCuspidalTripleJacquetTransfer`, is proved in
+`Classification.RepeatedCuspidalTripleJacquetTransferProof`, whose import
+closure includes this file.

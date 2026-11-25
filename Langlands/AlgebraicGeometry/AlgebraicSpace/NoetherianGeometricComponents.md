@@ -4,7 +4,8 @@ This internal supporting construction extends the exact affine-base component
 count to arbitrary scheme bases and proves constructibility of every level
 set over a Noetherian base. It combines the existing actual geometric-fibre
 component transport, generic constancy and Noetherian topological induction.
-It does not prove the arbitrary-ring host assertion.
+It does not prove the arbitrary-ring assertion
+`GeometricFibreComponentsConstructibleStatement`.
 
 `schemeGeometricFibreComponentCount X p` is the extended natural cardinality
 of the actual connected components of the quotient point space of the
@@ -12,7 +13,7 @@ presheaf product of `X` with the canonical geometric point at `p`. The
 topology is the published `pointTopology`. The scheme and algebraic space
 lie in the same universe; the point space has the universe prescribed by
 `Points`. The affine comparison theorem is definitional equality with
-`geometricFibreComponentCount B X p` from the host development.
+`geometricFibreComponentCount B X p` from `GeometricFibreComponentGeometry`.
 
 `schemeGeometricFibreComponentCount_baseChange` assumes an etale surjective
 scheme atlas whose structural morphism is locally of finite type and
@@ -58,8 +59,11 @@ satisfying `FinitePresentationOverRing B X`, and every natural number `n`.
 The finite-presentation hypothesis supplies an etale surjective atlas whose
 structure morphism is locally finitely presented and quasi-compact. Local
 finite presentation implies local finite type, so the preceding theorem
-applies, and the count agrees definitionally with the host count.
+applies, and the count agrees definitionally with the count of
+`GeometricFibreComponentsConstructibleStatement`.
 
-The unrestricted `GeometricFibreComponentsConstructibleStatement` still
+The unrestricted `GeometricFibreComponentsConstructibleStatement` further
 requires approximation from arbitrary commutative rings by Noetherian
-models. The host statement and its import closure are unchanged.
+models; `GeometricFibreComponentsProof` proves it through
+`GeometricComponentApproximation`. That statement and its import closure are
+unchanged.

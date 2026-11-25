@@ -1,6 +1,6 @@
 # Pseudo-reductive and connected reductive groups over algebraically closed fields
 
-Worker 1372. Internal consequence of the published transport of trivial
+Internal consequence of the published transport of trivial
 unipotent radical along bijective field maps and the published implication
 from connected reductivity to pseudo-reductivity.
 
@@ -29,5 +29,6 @@ their full range functors with the trivial subgroup.
 
 There is no perfect-field comparison hypothesis. This module establishes
 only the algebraically closed specialization. The general perfect-field
-comparison and the structural inputs to semigroup intersection comparison
-remain separate obligations.
+comparison is `PerfectFieldPseudoReductiveStatement`, proved by
+`perfectFieldPseudoReductive` (`Reductive/PerfectFieldProof`); the structural
+inputs to semigroup intersection comparison are not treated here.

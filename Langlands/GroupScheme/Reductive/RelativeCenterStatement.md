@@ -1,7 +1,5 @@
 # Statement: the relative reductive centre
 
-Worker 673.
-
 `Langlands.GroupScheme.ReductiveRelativeCenterStatement.{u}` is a
 statement-only definition returning `Prop`. It has no proof in this module.
 

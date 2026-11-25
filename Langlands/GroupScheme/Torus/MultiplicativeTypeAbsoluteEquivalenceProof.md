@@ -1,7 +1,5 @@
 # The absolute-Galois character anti-equivalence: proof
 
-Workers 132 and 336.
-
 The theorem `Langlands.GroupScheme.multiplicativeTypeAbsoluteEquivalence` proves the
 proposition `Langlands.GroupScheme.MultiplicativeTypeAbsoluteEquivalenceStatement.{u}`
 (module `Langlands.GroupScheme.Torus.MultiplicativeTypeAbsoluteEquivalenceStatement`).

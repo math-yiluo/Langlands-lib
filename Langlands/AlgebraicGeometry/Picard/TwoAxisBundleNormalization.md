@@ -1,6 +1,6 @@
 # Normalizing an actual bundle along both unit axes
 
-Worker 513 authored this internal construction from the published ordinary
+This is an internal construction from the published ordinary
 line-bundle class group, projection pullbacks and two-axis adjustment.
 It normalizes an existing bundle and recovers an existing restricted bundle
 when that restricted bundle has trivial restrictions to both unit axes.

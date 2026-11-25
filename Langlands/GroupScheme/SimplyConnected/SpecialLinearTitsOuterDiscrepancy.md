@@ -1,8 +1,6 @@
 # Outer discrepancies after trivialising the inner subgroup
 
-Author: Worker 239.
-
-This internal unit develops the actual all-test Galois discrepancy of a
+This internal module develops the actual all-test Galois discrepancy of a
 local presentation from `SL_(n+1)` to a group scheme over an arbitrary
 field `K`, on a cover `Spec L`. It uses the existing discrepancy
 composition law and the inverse-transpose homomorphism `θ`.
@@ -32,6 +30,6 @@ linear group then gives a unit scalar `b` such that
 `X θ(σ(X)) = b I`.
 
 These are internal consequences of the imported algebraic constructions.
-The unit does not construct a cover or a trivialisation of its inner
+The module does not construct a cover or a trivialisation of its inner
 subgroup, descend a matrix to a fixed field, or assert the final
 Hermitian presentation.

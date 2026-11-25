@@ -1,6 +1,6 @@
 # Laurent polynomials along orthogonal idempotent matrices: the closure argument
 
-Author: Worker 1532. Uses `ExponentialPolynomial` by Worker 1045.
+Uses `ExponentialPolynomial`.
 
 Namespace: `Langlands.BruhatTits.RationalPoints.CentralNormKernel`. Internal helper for the
 proof of `CentralNormKernelCompactnessStatement`. It is pure algebra over the explicit
@@ -32,7 +32,7 @@ generic block-scalar point, and `evalLaurent_comp_classify` says its classifying
 ## Grouping by values
 
 - `eq_zero_of_finset_sum_mul_pow_eq_zero` and `eq_zero_of_finset_sum_pow_mul_eval_eq_zero` are
-  the Finset forms of Worker 1045's `eq_zero_of_sum_mul_pow_eq_zero` (Vandermonde) and
+  the Finset forms of `eq_zero_of_sum_mul_pow_eq_zero` (Vandermonde) and
   `eq_zero_of_sum_pow_mul_eval_eq_zero` (exponential polynomials, characteristic zero), indexing by
   the elements of the finset.
 - `sum_mul_eq_zero_of_pow`: if `x ↦ x ^ q` is injective on `K` and

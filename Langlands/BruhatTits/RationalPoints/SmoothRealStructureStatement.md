@@ -1,7 +1,5 @@
 # Local-point prerequisites for smooth real characters
 
-Authors: Workers 118 and 6.
-
 This module states three local-point obligations used by the proof route for
 Renard V.3.19. Every declaration is a proposition definition. No compactness,
 cocompactness, or derived-point annihilation theorem is proved here.
@@ -43,7 +41,7 @@ The registered source is Renard, *Représentations des groupes réductifs
 p-adiques*, French edition dated 9 July 2026,
 `renard-2026-representations-groupes-reductifs-padiques`, SHA-256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-The original passages read for this unit are V.2.1, printed p.104 / PDF p.110;
+The original passages read for this module are V.2.1, printed p.104 / PDF p.110;
 V.2.2–V.2.3, printed pp.105–106 / PDF pp.111–112; V.2.5–V.2.6, printed
 pp.107–108 / PDF pp.113–114; and V.3.19, printed p.115 / PDF p.121.
 The supplementary registered source
@@ -80,29 +78,34 @@ annihilation by ambient smooth real homomorphisms, without asserting equality
 with abstract commutators. Its provenance is this explicitly identified
 proof prerequisite.
 
-## Ownership and proof boundary
+## Imports and proof boundary
 
 The algebraic derived subgroup and scheme center are imported from the shared
-algebraic-group program. Their representability, central-product, and
-commutative-target annihilation interfaces remain with that program.
+algebraic-group modules (`Langlands.GroupScheme.Derived.Basic` and
+`Langlands.GroupScheme.Rational.CenterSplitComponent`). Their representability,
+central-product, and commutative-target annihilation interfaces are in other
+modules under `Langlands.GroupScheme.Derived`, not in this module.
 Scheme epimorphy supplies neither surjectivity on local points nor
 cocompactness or finite index there. In equal characteristic an inseparable
-isogeny can have infinite-index image on rational points; this unit makes
+isogeny can have infinite-index image on rational points; this module makes
 no finite-index claim.
 
 `CenterSplitComponentCompactnessStatement` is a related existing target for
 `Z(F)/A(F)` with an actual maximal central split torus. It is not repeated
 here: compactness of `Z ∩ K` concerns a different subset and needs a comparison
 with the valuation kernel. Likewise, the final
-`Langlands.Plancherel.RationalSmoothRealDescentStatement` is separately owned;
+`Langlands.Plancherel.RationalSmoothRealDescentStatement` is a separate statement;
 this module does not introduce a competing norm-kernel annihilation or
 unique-factorization target.
 
-After these prerequisites are proved, one must still prove their application
-to norm-kernel annihilation: compact groups have trivial smooth real image;
+Beyond these prerequisites, their application to norm-kernel annihilation
+needs its own proof: compact groups have trivial smooth real image;
 the derived clause kills `D`; the remaining compact quotient has finite
 smooth image, which is trivial in the torsion-free real group. Those
 topological and quotient steps, and the unique factorization through the
-existing valuation-image projection, are further proof obligations. They
-are not supplied by this statement pair or assumed as new Renard external
-structural hypotheses.
+existing valuation-image projection, are proved separately:
+`rationalSmoothRealDescent_of_structure` (module
+`Langlands.Representation.Plancherel.RationalSmoothRealDescentConstruction`)
+derives `RationalSmoothRealDescentStatement` from
+`SmoothRealStructureStatement`. They are not supplied by this module or
+assumed as new Renard external structural hypotheses.

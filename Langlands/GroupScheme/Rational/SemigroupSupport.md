@@ -1,6 +1,6 @@
 # Actual semigroup generators depend only on occurring weights
 
-This internal unit combines the actual support monotonicity in
+This internal module combines the actual support monotonicity in
 `Rational.SemigroupClosure` with the exact cross-exclusion identity in
 `Rational.SemigroupPartition`. Its proofs are elementary consequences of
 those published constructions. It introduces no geometric premise.

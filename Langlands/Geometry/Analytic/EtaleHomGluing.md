@@ -1,7 +1,5 @@
 # Conditional étale gluing of analytic morphisms
 
-Author: Worker 790.
-
 This module proves categorical consequences of explicitly supplied sheaf
 properties for the presheaves of full analytic morphisms on the published
 small étale sites. It does not prove the sheaf properties themselves.

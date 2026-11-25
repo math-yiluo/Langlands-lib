@@ -1,6 +1,6 @@
 # Dominant coefficient bounds from finitely many Jacquet faces
 
-Author: Worker 836, Task 5326. Internal derived proof helpers.
+Internal derived proof helpers for the Xi upper-bound proof.
 
 `exists_lattice_casselman_pairings` obtains the lattice form of the published
 uniform Casselman asymptotics from the simultaneous standard basis property.

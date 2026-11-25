@@ -1,7 +1,5 @@
 # Full degree of induced determinant-polynomial products
 
-Author: Worker 398.
-
 This module proves the published closed proposition
 `Langlands.Automorphic.Unramified.InductionPolynomialDegreeStatement` without
 changing its statement or hypotheses. Its theorem is

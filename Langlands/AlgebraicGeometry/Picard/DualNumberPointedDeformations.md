@@ -47,6 +47,6 @@ with the actual ordinary deformation kernel already computed by the
 `pullbackTensorComparisonIsIsoStatement` argument of the ordinary class
 construction. The groupoid and automorphism comparisons do not use it.
 
-This unit computes the classes and automorphisms of the actual pointed
+This module computes the classes and automorphisms of the actual pointed
 dual-number deformation groupoid. It does not construct a smooth chart,
 general Artin-ring deformations, or a Rim–Schlessinger equivalence.

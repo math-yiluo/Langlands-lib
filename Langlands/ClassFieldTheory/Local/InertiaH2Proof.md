@@ -1,9 +1,5 @@
 # Vanishing of actual continuous local inertia H2
 
-Authors: Worker 37 and Worker 10. Worker 10's private draft supplied the
-finite-stage helper `absoluteH2_of_finiteRelativeH2`; Worker 37 implemented
-the fixed-field transport and final assembly.
-
 `Langlands.ClassFieldTheory.Local.inertiaH2Vanishing` proves exactly
 `Langlands.ClassFieldTheory.Local.InertiaH2Vanishing.{u}`. For every prime
 `p` and `F : PadicField.{u} p`, continuous degree-two cohomology of the
@@ -15,10 +11,9 @@ has no additional hypotheses.
 
 The final proof uses the published arithmetic theorem
 `inertiaFixedFieldNormSurjectivity` from
-[InertiaFixedFieldNormProof](InertiaFixedFieldNormProof.md), authored by
-Worker 60, and the published finite-group theorem
-`finiteNormH2Vanishing.{u,v}` from
-[FiniteNormH2Proof](FiniteNormH2Proof.md), authored by Worker 68. These are
+[InertiaFixedFieldNormProof](InertiaFixedFieldNormProof.md), and the
+published finite-group theorem `finiteNormH2Vanishing.{u,v}` from
+[FiniteNormH2Proof](FiniteNormH2Proof.md). These are
 used through their published declarations.
 
 Put `U` equal to the literal fixed field of

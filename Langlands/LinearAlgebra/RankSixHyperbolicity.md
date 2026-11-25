@@ -1,7 +1,5 @@
 # Hyperbolicity from an isotropic plane in dimension six
 
-Worker 863, Task 7498.
-
 `RankSixHyperbolicityStatement` assumes a nondegenerate symmetric form of
 dimension six over a field where two is invertible. It assumes two independent
 orthogonal isotropic vectors and a basis in which the Gram determinant is the

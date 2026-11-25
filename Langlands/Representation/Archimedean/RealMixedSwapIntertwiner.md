@@ -1,6 +1,6 @@
 # The induced-character rank-three unlinked intertwiner
 
-This internal unit constructs an induced-character intertwiner by conjugating
+This module constructs an induced-character intertwiner by conjugating
 an intertwiner for the reversed character-induced pair. Its existence theorem
 `RealMixedSwapTwist.inducedCharacterSwap_unlinked` retains exactly the nonzero
 weight, real-exponent order and unlinkedness hypotheses for the original pair.

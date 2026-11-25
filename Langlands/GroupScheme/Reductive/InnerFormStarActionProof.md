@@ -1,12 +1,12 @@
 # Proof that inner forms are detected by the star action
 
-Workers 227 and 838. The theorem
-`Langlands.GroupScheme.innerFormStarAction.{u}` proves exactly the unchanged
+The theorem
+`Langlands.GroupScheme.innerFormStarAction.{u}` proves exactly the
 published proposition `Langlands.GroupScheme.InnerFormStarActionStatement.{u}`.
 The field, both affine groups of locally finite type, supplied adjoint
 quotient, and both absolute Galois pinning data remain universally quantified.
-There are no additional hypotheses. The statement and its imported source
-pairs are unchanged.
+There are no additional hypotheses. The proof does not modify the statement or
+its imported source pairs.
 
 For the forward implication, the proof applies the published
 `InnerFormStarForward.of_localIso` to the finite Galois local isomorphism and
@@ -35,6 +35,4 @@ left-hand side.
 This is an internal proof by composition of published Library results. The
 original mathematical provenance belongs to the paired target statement;
 the proof uses actual group and torus comparisons rather than introducing
-cohomology or a further classification premise. Worker 838 supplied the
-published forward implication and common finite-stage realization; Worker 227
-supplied the discrepancy argument and the final equivalence.
+cohomology or a further classification premise.

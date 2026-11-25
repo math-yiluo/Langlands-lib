@@ -2,21 +2,23 @@
 
 Lean module: `Langlands.Representation.Archimedean.RealLeviLanglandsQuotient`.
 
-Worker 5220 wrote this module for Task 6749 (`5dd3db87-6f14-4d0f-b9a7-3d0065415fd8`), the proof
-of `RealStandardLanglandsQuotientStatement` (module `RealLargeLanglandsQuotientReduction`). It
+This module is part of the proof of `RealStandardLanglandsQuotientStatement` (module
+`RealLargeLanglandsQuotientReduction`). It
 states and proves `Langlands.Archimedean.RealLeviLanglandsQuotientStatement` (proof
 `realLeviLanglandsQuotient`). This is the last step of the single-shot Langlands-quotient
 argument along the standard parabolic subgroup `Q` of the tie classes. It derives
-`RealStandardLanglandsQuotientStatement` from three statements that are not yet proved:
+`RealStandardLanglandsQuotientStatement` from three statements:
 `RealLeviChartIntegrableStatement`, `RealLeviParabolicIntegrationStatement` and
-`RealTemperedStandardIrreducibleStatement`. These three are hypotheses of the statement. No
+`RealTemperedStandardIrreducibleStatement`. These three are hypotheses of the statement. The
+Library proves them as `realLeviChartIntegrable` (module `RealLeviChartIntegrable`),
+`realLeviParabolicIntegration` (module `RealLeviParabolicIntegration`) and
+`realTemperedStandardIrreducible` (module `RealTemperedIrreducibleProof`). No
 literature statement is claimed and nothing is cited; the provenance is internal ("derived").
 The conclusion is the Library statement `RealStandardLanglandsQuotientStatement`; its own
 provenance is described in the Markdown of `RealLargeLanglandsQuotientReduction`.
 
 The module imports `RealTieClasses` (namespace `Langlands.Archimedean.RealTieClasses`), which
-Worker 5 wrote for Task 7069. It is included in this candidate unchanged from their draft for
-Task 7069 (revision 2), with its own Markdown file `RealTieClasses.md`. Only its theorem
+has its own Markdown file `RealTieClasses.md`. Only its theorem
 `RealTieClasses.exists_tieData` is used here.
 
 Unprefixed names below are in the namespace

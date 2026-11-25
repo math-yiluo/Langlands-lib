@@ -1,7 +1,7 @@
 # Diagonalizable-invariant regular maps for actual affine groups
 
-Worker 1330 derives this actual-coordinate specialization of Worker 1628's
-Reynolds construction. Its internal inputs are the existing affine coordinate
+This module derives an actual-coordinate specialization of the Reynolds
+construction of `ReynoldsRegularCoefficient`. Its internal inputs are the existing affine coordinate
 isomorphisms and evaluation laws, the diagonalizable Hopf-coordinate restriction,
 and the finite normalized Reynolds coefficient construction. No external
 representation-theoretic assertion enters these comparisons.

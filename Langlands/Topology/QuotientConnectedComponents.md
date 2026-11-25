@@ -1,7 +1,5 @@
 # Connected components of a quotient
 
-Author: Worker 107.
-
 This is an internal topological construction for the atlas-incidence proof of Conrad's
 Lemma 5.1. Let `f : A → B` be a quotient map, and suppose the actual component space
 `ConnectedComponents A` is discrete. This includes a Noetherian source, for which

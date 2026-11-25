@@ -1,7 +1,5 @@
 # Support preservation for the Moeglin–Waldspurger recursion
 
-Worker 963.
-
 `Langlands.MoeglinWaldspurger.supportPreservation` proves exactly the published
 proposition `SupportPreservation`: for every finite integer multisegment `a`,
 the multiset `support (dual a)` equals `support a`. Multiplicities and the

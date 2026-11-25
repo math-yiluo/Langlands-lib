@@ -1,6 +1,6 @@
 # The normalized unit for induced arbitrary atlas actions
 
-Author: Worker 56. Namespace: `Langlands.Analytic.AtlasInducedAction`.
+Namespace: `Langlands.Analytic.AtlasInducedAction`.
 
 This internal construction supplies the actual bounded unit from the
 same-space nonempty-chart restriction of any supplied categorical subgroup
@@ -53,4 +53,4 @@ the normalized source only: removing empty charts generally has no inverse
 in the chosen-chart category. An unrestricted original-source unit or
 adjunction is not claimed. Arbitrary-target extension and its Hom
 correspondence, quotient functoriality, analytic automorphism continuity,
-refinement localization and analytic sites remain separate obligations.
+refinement localization and analytic sites are not treated here.

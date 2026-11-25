@@ -35,7 +35,7 @@ kernel, changes coordinates to that basis, and applies the preceding theorem.
 Affineness of the acting torus follows from the supplied splitting.
 
 The field characteristic and universe are arbitrary. The labels may repeat or
-be zero, and dimension zero is permitted. This unit proves diagonalization of
+be zero, and dimension zero is permitted. This module proves diagonalization of
 the supplied linear vector action. Identification of the original semigroup
 subgroups with coordinate blocks, the central-unipotent induction, and the full
 `SemigroupOrderedProductStatement` remain separate obligations.

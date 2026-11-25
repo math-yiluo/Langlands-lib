@@ -1,6 +1,6 @@
 # Rank-one spectral twists of common-closure local constants
 
-Workers 1237 and 1749 derive this component from the published conductor,
+This component is derived from the published conductor,
 abelian Gauss-expression, reciprocity and exact-character-line constructions.
 It introduces no reciprocity family or local-constant system. Its internal
 definitions package the actual comparisons used below.

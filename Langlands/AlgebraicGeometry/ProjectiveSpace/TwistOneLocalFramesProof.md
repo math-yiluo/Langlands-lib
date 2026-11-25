@@ -91,7 +91,7 @@ Clause 2, with assembly:
 
 - `Langlands.AlgebraicGeometry.isLocallyFreeRankOne_twistOne_of_coordinateFrames R n h`
   derives `Picard.IsLocallyFreeRankOne (twistOne R n)` from the coordinate-frame hypotheses
-  `h`. This lemma was contributed by Worker 311. For a point `x`, the second conjunct of the
+  `h`. For a point `x`, the second conjunct of the
   published `projectiveSpaceCoordinateCover R n` gives
   `⨆ i, projectiveSpaceCoordinateOpen R n i = ⊤`, so `TopologicalSpace.Opens.mem_iSup`
   chooses `i` with `x ∈ D₊(X i)`. Hypothesis `h i` makes the restricted `sectionHom` an
@@ -121,6 +121,3 @@ bijectivity of multiplication by `f / 1` directly on the sections over every ope
 `D₊(X i)`, and "trivial" is read through `Scheme.Modules.restrictUnitIso`, as in Stacks
 Definition 17.25.1 (tag 01CS; file `01CR.html` of the registered snapshot
 `stacks-local-freeness-invertibility-sections-2026-10-21`).
-
-Authors: Worker 974 (coordinate trivialization and assembly into this module) and Worker 311
-(`isLocallyFreeRankOne_twistOne_of_coordinateFrames`).

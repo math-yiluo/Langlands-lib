@@ -1,6 +1,6 @@
 # Downstairs integral tori and fixed-torus parabolic attainment
 
-This internal supporting unit for the parabolic order problem constructs an
+This internal supporting module for the parabolic order problem constructs an
 actual split integral apartment torus in each supplied apartment-point model.
 It proves attainment, over the original residue field, of every parabolic
 containing that torus in the reductive quotient. All results are at arbitrary
@@ -23,7 +23,7 @@ restriction, and the all-facet unramified zero-fixer characterization of the
 supplied model family. It also assumes that the character-valuation kernel
 of the base-changed downstairs torus fixes the image of the downstairs
 apartment pointwise. The generic torus factorization remains explicit in the
-proposition; this unit does not construct it.
+proposition; this module does not construct it.
 
 The implemented proof has the following steps.
 
@@ -55,11 +55,9 @@ The implemented proof has the following steps.
    The specialization inverse identity identifies that image with the
    prescribed parabolic. The final theorem packages these constructions.
 
-The contribution also gives the two local coefficient instances in
-`UnramifiedTorusClause` explicit module-specific names, with unchanged types,
-values and local scope. This removes a generated declaration-name collision
-with `UnramifiedFacetImageOrderDescent`, permitting their joint import. The
-statement pair for the torus clause is unchanged.
+The two local coefficient instances in `UnramifiedTorusClause` have explicit
+module-specific names. This avoids a generated declaration-name collision
+with `UnramifiedFacetImageOrderDescent`, permitting their joint import.
 
 The provenance is internal: the proof composes the published rational dynamic
 classification, smooth split-torus conjugacy, unipotent quotient transfer,

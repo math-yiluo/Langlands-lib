@@ -1,7 +1,5 @@
 # Continuous coefficient-place point maps
 
-Author: Worker 57.
-
 ## Construction and hypotheses
 
 Let `A` be a rational algebra with rational-linear anti-involution `σ`.

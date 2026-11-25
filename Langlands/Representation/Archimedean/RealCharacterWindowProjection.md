@@ -1,6 +1,6 @@
 # Concrete adjacent window projections on four real characters
 
-This internal derived unit uses the published rank-one Frobenius maps and
+This internal derived module uses the published rank-one Frobenius maps and
 binomial support formula, together with the compact adjacent-window spanning
 theorem. No literature premise is added.
 
@@ -33,7 +33,7 @@ span the entire actual four-character compact-finite standard module.
 `realCharacterWindowProjection` proves it by the preceding transport and
 the compact low/high multiplier identities.
 
-This supplies concrete maps for the negative-inner-weight range route in
-Task 7135. Identifying the middle-high range with an induced-block module,
-restricting the two-block quotient, and proving the unrestricted filtration
-remain separate obligations.
+This supplies concrete maps for the negative-inner-weight range route of the
+filtration of the `GL_4(ℝ)` standard module of two induction blocks. Identifying
+the middle-high range with an induced-block module, restricting the two-block
+quotient, and proving the unrestricted filtration are not part of this module.

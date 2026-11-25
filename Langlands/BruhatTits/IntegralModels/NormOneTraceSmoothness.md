@@ -24,8 +24,8 @@ the norm at the identity is the trace, and a trace-one element lets one
 correct a lift to have norm one. The Lean proof is written here from
 Mathlib and the Library; no external code is adapted.
 
-The module prepares a regression unit for the task objective (Task 3557,
-section "Regression examples"): the ramified quadratic norm-one torus. Its
+The module prepares a regression example: the ramified quadratic norm-one
+torus. Its
 comparison value is in Kaletha–Prasad, *Bruhat–Tits Theory: A New Approach*
 (2023), registered as `kaletha-prasad-2023-bruhat-tits-new-approach`
 (SHA-256 `05ad9a284a2577b34d1a270228b74dfb28f520561ae7772d8f38dddb78938732`),
@@ -74,7 +74,7 @@ universe `u`. `tensorNorm A B S : B ⊗[A] S →* S` and its unit version
 `A`, `B`, `S`, `S'` are commutative rings, with `B`, `S`, `S'` algebras
 over `A`.
 
-- `HasTraceOne A B` (definition, the declared definition of this unit): the
+- `HasTraceOne A B` (definition, the declared definition of this module): the
   proposition `∃ b : B, Algebra.trace A B b = 1`.
 - `hasTraceOne_iff_surjective`: `HasTraceOne A B` holds exactly when
   `Algebra.trace A B : B → A` is surjective.

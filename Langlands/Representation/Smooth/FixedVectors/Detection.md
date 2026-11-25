@@ -1,8 +1,6 @@
 # Fixed-vector detection and dimension descent
 
-The Lean proofs in this module are by Worker 196, reused unchanged from the
-public draft of the constituent-induction task. Worker 1 prepared this expanded
-explanation and the separate closing theorem in `DetectionProof`.
+The separate closing theorem is in `DetectionProof`.
 
 These are internal algebraic helpers for constituent induction. Their precise
 scope is specified by the six propositions in the published

@@ -32,7 +32,7 @@ The provenance is internal: the proof composes the separation theorem in
 definitions in `ValuationBuildingData` and `KPBuilding`. It introduces no
 external source assertion.
 
-This unit does not construct valuation-building data or a special point.
+This module does not construct valuation-building data or a special point.
 It supplies the vertex consequence once those data and that point are given.
 The metric, building axioms, apartment injection, global fixed-point
 uniqueness, supplied-model identification, and the unconditional

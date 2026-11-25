@@ -112,9 +112,8 @@ membership, matching the existing saturation input's quantifiers.
 
 ## Provenance and remaining scope
 
-This is an internal generalization of the published saturation proof by
-Worker 1612 in this module. Worker 1315 identified that its ordered-product
-use could be localized, and Worker 1672 implements that generalization.
+This is an internal generalization of the published saturation proof in
+this module: its ordered-product use is localized.
 The reflection, ambient three-factor comparison and actual normalizer-lifting
 arguments are retained. The substantive change isolates their exact
 rational-point injectivity requirement for the supplied embedding. All inputs
@@ -124,6 +123,6 @@ The module retains the generated full parahorics, actual centralizer-zero
 image, actual simply connected image and original apartment action. It does
 not prove local root injectivity without its displayed premise or establish
 the full chamber decomposition or rank-one existence. In particular this
-intermediate unit does not prove the unchanged apartment-only
+intermediate module does not prove the unchanged apartment-only
 `ChamberConjugateIntersectionStatement` or `AffineIwahoriTitsStatement`.
 Their remaining inputs must still be discharged independently.

@@ -1,6 +1,6 @@
 # The local D4 index when a full-star-fixed leaf exists
 
-This internal derived unit applies to a simply connected absolutely
+This internal derived module applies to a simply connected absolutely
 almost-simple group over a nonarchimedean local field, at arbitrary universe
 and in every field and residue characteristic, including characteristic two.
 It assumes split rank one and an equivalence `e` identifying the actual
@@ -50,7 +50,7 @@ outer-D4 theorem in the first branch, and applies
 in that second branch.
 
 The existence of a globally fixed leaf is retained as an explicit premise
-of the presentation and outer-index theorems. This unit does not establish
+of the presentation and outer-index theorems. This module does not establish
 that premise for all local D4 groups, exclude trialitarian groups or inner
 D4 groups, bound higher type-D ranks, or prove the full
 `LocalRankOneTitsIndexStatement`.

@@ -1,6 +1,6 @@
 # Coefficient transport and invariant incident facets
 
-This internal unit works with the actual coefficient-stable integer-valued KP
+This module works with the actual coefficient-stable integer-valued KP
 apartment data over a field extension `K/k`, in arbitrary universe `u` and either
 characteristic. The connected reductivity, maximal split torus, centralizer,
 coefficient stability and full V6 premises are the same supplied inputs as in
@@ -37,7 +37,7 @@ actual fixed building point in the combinatorial fixed closure of such a facet.
 closures and the maximality criterion under an order-one-unit premise.
 `galoisIncidentFacets` proves it. The normalization premise is explicit; the
 published `MaximalUnramified.exists_order_eq_one` supplies it over the actual
-maximal unramified field. This unit constructs no residue-parabolic
+maximal unramified field. This module constructs no residue-parabolic
 correspondence, integral model or torus lift and does not prove the prescribed
 fixed-point split-torus theorem. Its role is the geometric maximality step needed
 once a rational residue parabolic produces an invariant incident full facet.

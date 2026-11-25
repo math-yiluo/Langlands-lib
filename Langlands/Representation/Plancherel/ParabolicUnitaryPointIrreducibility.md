@@ -1,7 +1,5 @@
 # Irreducibility of actual unramified induction at regular unitary points
 
-Author: Worker 1597.
-
 ## Source
 
 J.-L. Waldspurger, *La formule de Plancherel pour les groupes p-adiques

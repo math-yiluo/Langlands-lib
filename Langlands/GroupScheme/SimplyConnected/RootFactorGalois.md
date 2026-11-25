@@ -1,6 +1,7 @@
 # Full Galois and star covariance of actual root-factor placement
 
-Worker 509. This unit is derived interface material for Task 7291, using the
+This module is derived interface material for realizing the Cartan components
+of a semisimple Tits index by actual simply connected factors, using the
 published full root-datum star action, actual all-test root subgroups, and
 canonical Galois transport of actual almost-simple normal product factors.
 It cites no additional external result.
@@ -31,7 +32,7 @@ intertwines every element of the full absolute Galois group.
 `cartanComponentStabilizer_le_factorStabilizer` proves subgroup containment.
 `cartanComponentStabilizer_eq_factorStabilizer` gives equality of the full
 subgroups conditional on the explicitly supplied reverse component
-identification. This unit does not claim that reverse identification.
+identification. This module does not claim that reverse identification.
 
 The constructions are at every universe parameter `u`, over arbitrary fields;
 no characteristic, perfectness, local-field, or classification hypothesis is used.

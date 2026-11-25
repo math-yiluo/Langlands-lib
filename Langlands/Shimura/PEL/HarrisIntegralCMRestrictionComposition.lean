@@ -49,9 +49,10 @@ private theorem relative_restrict_comp {S : Scheme.{0}}
     (f : T' ⟶ T) (g : T'' ⟶ T') :
     (relativeEndRestrict B g).comp (relativeEndRestrict B f) =
       relativeEndRestrict B (g ≫ f) := by
-  ext v
+  ext v : 1
+  apply CategoryTheory.End.ext
   exact (Langlands.GroupScheme.Cartier.restrict_comp
-    B.toCommGroupScheme B.toCommGroupScheme g f v).symm
+    B.toCommGroupScheme B.toCommGroupScheme g f v.asHom).symm
 
 omit [IsCMField F] [IsScalarTower ℚ F A]
   [QuasiSeparatedSpace T.left] [QuasiSeparatedSpace T'.left]

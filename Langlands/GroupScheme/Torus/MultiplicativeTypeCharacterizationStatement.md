@@ -195,9 +195,9 @@ extension in place of `Ks` as `MultiplicativeTypeFiniteGaloisSplittingStatement`
 Milne's Corollary 12.19) and a pure-coalgebra descent step of (c) ⇒ (d) as
 `SeparablyClosedGroupLikeSpanningStatement` (in
 [`RingTheory.Coalgebra.SeparablyClosedGroupLikeSpanningStatement`](../../RingTheory/Coalgebra/SeparablyClosedGroupLikeSpanningStatement.md)).
-It has no statement of the equivalences of Theorem 12.18 and no statement
-relating multiplicative type to `Hom(G, 𝔾ₐ)` or to coétale coordinate
-coalgebras.
+Apart from this module, it has no statement of the equivalences of Theorem
+12.18 and no statement relating multiplicative type to `Hom(G, 𝔾ₐ)` or to
+coétale coordinate coalgebras.
 
 Corrected reprint. The 2022 corrected reprint (in the project literature
 folder, registered as `milne-2022-algebraic-groups`, SHA-256
@@ -222,7 +222,11 @@ p. 7 entry, on the paragraph following Definition 1.3 (algebraic
 subgroups), and the Appendix A entries (A.64 on p. 584, and a remark on
 sheaves of `k`-algebras).
 
-## For the later proof (not part of this unit)
+## For the proof (not part of this module)
+
+The Library proves the statement as
+`Langlands.GroupScheme.multiplicativeTypeCharacterization` in
+[`MultiplicativeTypeCharacterizationProof`](MultiplicativeTypeCharacterizationProof.md).
 
 Milne's proof (printed pp. 237–238) goes (a) ⇒ (b) ⇒ (c) ⇒ (d) ⇒ (a).
 

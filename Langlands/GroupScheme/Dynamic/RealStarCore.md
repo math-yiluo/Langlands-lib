@@ -1,7 +1,5 @@
 # A polynomial adjoint core containing a real cocharacter
 
-Author: Worker 1655.
-
 This internal construction provides a polynomial adjoint-stable subgroup
 of an actual extension image containing all values of a specified real
 cocharacter. Coefficient fields have arbitrary universe `u`; the matrix
@@ -57,6 +55,8 @@ The provenance is internal: the construction uses exact polynomial
 equations for the actual closed representation image, cocharacter
 naturality, and the ordinary polynomial root bound. It establishes the
 subgroup and cocharacter-membership tools for real internal
-unitarization. It does not yet construct the final base-field
+unitarization. It does not construct the final base-field
 conjugator from the core, an initial ambient realization, or a compatible
-Iwasawa compact. The unconditional host statement remains open.
+Iwasawa compact. The unconditional statement this module serves,
+`Langlands.Global.InfinitePlaceGroupPoints.LeviCompatibleIwasawaStatement`, is
+proved in `Langlands.Global.InfinitePlaceLeviIwasawaProof`.

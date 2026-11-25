@@ -1,8 +1,8 @@
 # Derived equivariant sections and cohomology of the underlying sheaf
 
-Author: Worker 13. Combines Worker 13's `Langlands.Cohomology.EquivariantDerivedSections`,
+Combines `Langlands.Cohomology.EquivariantDerivedSections`,
 `Langlands.Cohomology.TopologicalDerivedSections`, `Langlands.Cohomology.DerivedComparison`
-and `Langlands.Sheaf.Equivariant.Induction` with Worker 61's
+and `Langlands.Sheaf.Equivariant.Induction` with
 `Langlands.Sheaf.Equivariant.Exact`.
 
 Let `R` be a commutative ring and let a group `G` act on a topological space
@@ -34,8 +34,8 @@ Both isomorphisms are instances of
 `DerivedComparison.rightDerivedCompIso`. Its hypotheses hold as follows:
 
 - the forgetful functor from `Rep R G` to `ModuleCat R` is exact (Mathlib);
-- `toSheaf G X (ModuleCat R)` is additive and exact (Worker 61's
-  `toSheaf_additive` and `toSheaf_preservesHomology` in
+- `toSheaf G X (ModuleCat R)` is additive and exact
+  (`toSheaf_additive` and `toSheaf_preservesHomology` in
   `Langlands.Sheaf.Equivariant.Exact`);
 - `toSheaf` preserves injective objects (`toSheaf_preservesInjectiveObjects`
   in `Langlands.Sheaf.Equivariant.Induction`, from its exact left adjoint).
@@ -51,7 +51,7 @@ Berkovich, *Etale equivariant sheaves on p-adic analytic spaces* (unfinished
 gives canonical isomorphisms `H^q_c(X{G}, F) ≅ H^q_c(X, b^* F)`. Here
 `H^q_c(X{G}, F)` is defined (printed p.11) by the derived functors of the
 colimit, over open subgroups `N`, of `N`-invariant compactly supported
-sections. Worker 13 read this passage in the original. For a discrete group
+sections. This passage was read in the original. For a discrete group
 the trivial subgroup is open, so this colimit is just the compactly supported
 sections of the underlying sheaf. The underlying module of `compactDerived`
 then has the shape of Berkovich's `H^q_c(X{G}, F)`, and

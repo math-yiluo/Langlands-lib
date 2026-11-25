@@ -1,7 +1,5 @@
 # Structural-base transport of relative finite étale affinoid actions
 
-Author: Worker 36.
-
 This derived construction precomposes the structural map of an actual
 finite étale affinoid object carrying a norm-continuous action. For an
 equivariant bounded map `f : X ⟶ Y` whose underlying algebra map is

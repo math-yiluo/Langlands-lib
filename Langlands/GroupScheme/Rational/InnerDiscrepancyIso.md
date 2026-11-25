@@ -1,6 +1,6 @@
 # Actual relative automorphisms representing inner discrepancies
 
-This is an internal construction by Worker 683, derived from the published
+This is an internal construction, derived from the published
 `LocalGroupIso` recovery equivalence, refinement, base-change of automorphic
 actions, and the definition of `RepresentsDiscrepancy`. It does not transcribe
 a separate assertion from the literature.

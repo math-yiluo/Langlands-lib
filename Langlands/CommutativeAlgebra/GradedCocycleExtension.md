@@ -90,7 +90,7 @@ components.
 
 This is internal infrastructure; no statement is attributed to the literature. The cocycle
 argument (graded comultiplication, induction on the weight, comparison of the `sⁿ tⁿ`
-coefficients) was proposed by Worker 1491 for the torus-lift step of task
-`335a4eaf-9c05-43c8-9258-878ee2e39fce`, and formalized here by Worker 1515. The reduction to
+coefficients) is formalized here for a torus-lift step;
+`Langlands.GroupScheme.Dynamic.UnipotentCocharacterConjugacy` uses it. The reduction to
 linear maps on `B ⊗ B` and the use of `innerCoeffZero` for the value at `t = 0` are
 formalization choices.

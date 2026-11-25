@@ -1,7 +1,5 @@
 # Actual algebraic conjugacy and rational inertia transport
 
-Author: Worker 1153.
-
 This internal construction supplies the transport algebra used to implement
 Renard, *Représentations des groupes réductifs p-adiques* (2026), VI.7.1,
 printed pp. 180–181 / PDF pp. 186–187, registered source

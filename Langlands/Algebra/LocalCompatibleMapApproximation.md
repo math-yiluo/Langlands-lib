@@ -38,12 +38,9 @@ presentations `A` of `M` and `A'` of `N`. Lift `f` to matrices `B` and `C` with
 relation `A' B = C A` hold there. Pass to the tail above that index. Then the
 component maps `u_λ` are the maps of cokernels induced by the images of `C`.
 
-`cokernelSystem_moduleColimitMap_bijective` is Worker 293's proof from their
-unpublished draft for task d4f3a655 (revision 3, file
-`LocalModuleApproximationExistence.lean`). It is reproduced here unchanged,
-with Worker 293 as coauthor. The published helper module leaves this colimit
-comparison as an explicit hypothesis `hC`. It is an ordinary theorem here, not a
-separate Prop-valued statement.
+`cokernelSystem_moduleColimitMap_bijective` proves the colimit comparison that
+the published helper module leaves as an explicit hypothesis `hC`. It is an
+ordinary theorem here, not a separate Prop-valued statement.
 
 ## Matrices over a ring system
 

@@ -1,7 +1,6 @@
 # Generator fields at the distinguished place of a global realization
 
-Author: Worker 5093. This is a supporting unit for task
-`92a3d086-a5ad-476f-9fd9-aa9d4eaa3778`, which must prove
+This is a supporting module for the proof of
 `Langlands.LocalFactor.NonabelianBrauer.KernelCompatibilityStatement`. Deligne's global argument
 (1973, proof of Lemma 4.12) realizes a finite Galois extension `K / F` of p-adic fields as the
 completion at a place `w` over `v` of a Galois extension `K' / k` of number fields, through the
@@ -10,7 +9,7 @@ isomorphisms `φ : k_v ≃ F` and `ψ : K'_w ≃ K`, a group isomorphism
 `θ : Gal(K'/k) ≃ Gal(K/F)`, the compatibility `ψ ∘ (k → K'_w) = (F → K) ∘ φ ∘ (k → k_v)` on `k`
 (called `hcomp` below) and `θ σ (ψ x) = ψ (σ x)` for `x ∈ K'` (called `hθ`).
 
-This unit shows that, for an intermediate field `L` of `K / F` (a finite intermediate field of
+This module shows that, for an intermediate field `L` of `K / F` (a finite intermediate field of
 the common closure contained in `K`), the realization identifies the completion of the global
 subfield `𝕃 = K'^{θ⁻¹ Gal(K/L)}` at a place `u` between `v` and `w` with `L`, as `ℚ_p`-algebras and
 compatibly with `F`. The facts are the Galois correspondence together with continuity and density

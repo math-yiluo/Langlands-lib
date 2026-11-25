@@ -1,6 +1,6 @@
 # Compact conjugation averaging of actual smooth kernels
 
-Author: Worker 813. Module:
+Module:
 `Langlands.Global.ArchimedeanKernelConjugationAverageProof`.
 
 The theorem

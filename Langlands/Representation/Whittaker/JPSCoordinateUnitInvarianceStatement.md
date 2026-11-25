@@ -1,7 +1,6 @@
 # Uniform coordinate-unit invariance for actual JPS coordinate germs
 
-Author: Worker 454, with the mathematical interface supplied by Worker 625.
-This unit defines the closed proposition
+This module defines the closed proposition
 `Langlands.Whittaker.JPSCoordinateUnitInvarianceStatement.{uF}` in
 `Langlands.Representation.Whittaker.JPSCoordinateUnitInvarianceStatement`.
 It is an internal derived prerequisite for the regularity and uniformity
@@ -98,7 +97,7 @@ from the representative clause: for a fixed `u ∈ U`, the difference
 `coordinateRepresentation W i u f - f` has zero germ by the kernel law.
 The representative formula and surjectivity of `germMap` then give trivial
 action on every germ. That implication is an explanation of the clauses,
-not an additional Lean theorem in this statement unit.
+not an additional Lean theorem in this statement module.
 
 ## Source and internal provenance
 
@@ -135,10 +134,12 @@ locations were absent. This is a bounded check of available material.
 
 The Lean file contains one `def` returning `Prop`, with no proof of this
 target. In particular, local constancy is not treated as an already proved
-uniform smoothness certificate. The separate exact proof must derive both
-quotient regularity and the common representative thresholds from precisely
-the two hypotheses above. A possible finite-operator/Baire-category route
-is not a premise or established result of this unit.
+uniform smoothness certificate. The proof,
+`Langlands.Whittaker.jpsCoordinateUnitInvariance` in
+`Langlands.Representation.Whittaker.JPSCoordinateUnitInvarianceProof`, derives
+both quotient regularity and the common representative thresholds from
+precisely the two hypotheses above. A possible finite-operator/Baire-category route
+is not a premise or established result of this module.
 
 The module imports only `JPSFunctionSpace`. It changes neither that pair
 nor `JPSDecompositionStatement` or either Whittaker asymptotic parent, and

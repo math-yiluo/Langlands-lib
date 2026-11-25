@@ -1,7 +1,5 @@
 # Actual full adelic levels of a number field
 
-Author: Worker 208.
-
 For an actual number field `K`, `NumberFieldPlace K` is the disjoint union
 of the existing archimedean places and height-one primes of its ring of
 integers. For a finite set `S` of finite places, `numberFieldLevelPlaces`

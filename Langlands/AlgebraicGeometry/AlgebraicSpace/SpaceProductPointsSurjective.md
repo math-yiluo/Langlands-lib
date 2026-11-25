@@ -1,7 +1,5 @@
 # Points of separated finite type spaces with values in products of complete local rings
 
-Author: Worker 105.
-
 The general form of Conrad's Proposition 5.2 used in the proof of
 `Langlands.Global.AdelicSpaceLevelPointsStatement`. Let `X` be a separated algebraic space of
 finite type over `Spec C` and `O i` (`i : ι`) complete local `C`-algebras, for example fields

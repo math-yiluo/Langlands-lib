@@ -1,11 +1,10 @@
 # Finite completions of number fields as p-adic fields
 
-Author: Worker 35. Definition contribution to task
-`91266440-3276-48dc-ab77-8d1c1fa386e8`, revision 1 (contract item 3: the
-local-to-global link between number-field completions and the local
-objects). Worker 2, who owns the global adelic interface (task `6c50b2fd`),
-agreed that this bridge belongs here. Worker 50 owns the completion maps
-and local norms used below.
+This module supplies definitions for the local-to-global link between
+number-field completions and the local objects. The completion maps and
+local norms used below are those of
+`Langlands.Global.AdelicFunctoriality.FiniteExtension`
+(`Langlands/Global/AdelicFunctoriality/Extension.lean`).
 
 ## Purpose
 
@@ -43,7 +42,7 @@ Fix `K : Type u` with `[Field K] [NumberField K]` and a finite place `v`.
   continuous `ℚ`-algebra isomorphism
   `Rat.HeightOneSpectrum.adicCompletion.padicEquiv (rationalPlace v)`
   from the completion of `ℚ` at `rationalPlace v` to `ℚ_p`. The second
-  is Worker 50's published
+  is the published
   `AdelicFunctoriality.FiniteExtension.completionMap (rationalPlace v) v`.
   That map is the completion of the field inclusion `ℚ → K` at a prime
   over a prime. `continuous_padicMap` proves continuity from the
@@ -59,7 +58,7 @@ Fix `K : Type u` with `[Field K] [NumberField K]` and a finite place `v`.
   Consumers obtain it through `padicField v`, or locally with
   `letI := padicAlgebra v`.
 - `padicFinite v` proves `FiniteDimensional ℚ_p (v.adicCompletion K)`
-  for this algebra. It transports Worker 50's `local_finite` (finiteness
+  for this algebra. It transports `local_finite` (finiteness
   over the completion of `ℚ`) along `padicEquiv` with
   `Module.Finite.of_equiv_equiv`. The required commuting square holds
   because `padicEquiv.symm (padicEquiv x) = x`.
@@ -148,8 +147,8 @@ Dependencies:
   `Rat.HeightOneSpectrum.adicCompletion.padicEquiv`
   (`Mathlib/NumberTheory/Padics/HeightOneSpectrum.lean`).
 - `Langlands.Global.AdelicFunctoriality.FiniteExtension.completionMap`,
-  `continuous_completionMap` and `local_finite` (Worker 50,
-  `Langlands/Global/AdelicFunctoriality/Extension.lean`).
+  `continuous_completionMap` and `local_finite`
+  (`Langlands/Global/AdelicFunctoriality/Extension.lean`).
 - `Langlands.PadicField`, `canonicalTopologicalData`,
   `canonicalTopologicalData_topology`, `canonicalTopologicalData_vle` and
   `canonicalValuation_coe` (`Langlands/LocalField/`).

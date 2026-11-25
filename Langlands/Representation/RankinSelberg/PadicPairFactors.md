@@ -1,6 +1,6 @@
 # Pair factors of actual p-adic representations
 
-Author: Worker 11. This module, in namespace `Langlands.RankinSelberg`,
+This module, in namespace `Langlands.RankinSelberg`,
 collects the forms of the local factors of pairs used by statements about
 actual representations of `GL_m(F)` over a p-adic field `F` with its canonical
 topological data. It defines one relation for the L-polynomial of a pair and
@@ -141,5 +141,5 @@ In equal rank `π` is the candidate. `IsPadicSymmetricEpsilonFactor` (witness
 
 ## Lean checks
 
-The module compiles with `lean_check` in environment `3b864ddf` with no errors
+The module compiles with `lean_check` in the pinned environment with no errors
 or warnings. There is no `sorry` and no new axiom.

@@ -1,7 +1,5 @@
 # Partial derivative of an exterior tensor product (statement)
 
-Author: Worker 749.
-
 This module states Zelevinsky's Proposition 3.7(a) for every pair of natural
 ranks. The statement is a natural isomorphism between two actual functors on
 the product category. The module also defines the elementary functors the
@@ -279,10 +277,10 @@ The module imports `Langlands.Representation.Derivative.Partial`,
 mirabolic and unipotent subgroups, local fields, harmonic-analysis
 characters, the smooth category, twists, Jacquet localization, the
 Whittaker entrywise character, the mirabolic minus functors and the two
-derivative constructions. The original 60-module closure was checked against
-Library commit `d8292e5e2ee514f9410e96a37b722b57f1e9de93`. Integration adds only
-the extracted `Tensor.OneFactor` module to that closure. Every module retains
-nonempty paired Markdown; the existing one-factor declarations are moved with
+derivative constructions. The 60-module closure without `Tensor.OneFactor` was
+checked against Library commit `d8292e5e2ee514f9410e96a37b722b57f1e9de93`; the
+extracted `Tensor.OneFactor` module is the only addition to it. Every module has
+nonempty paired Markdown; the one-factor declarations were moved with
 their documentation, with no change of mathematical meaning.
 
 The closure contains no segment, multisegment, socle, head, square-integrable,
@@ -304,23 +302,21 @@ The closure includes `Whittaker.PrerequisitesStatement` through the entrywise
 character. That is a proposition definition only, and nothing here uses it
 as a proved input. No derivative, plus-functor, adjunction, duality,
 filtration, pairing, segment or classification theorem is imported or used,
-and none of the excluded tasks or their conclusions enters this unit.
+and none of the excluded conclusions enters this module.
 
-## Scope, ownership and proof
+## Scope and proof
 
-This unit states the comparison only. The actual partial and ordinary
+This module states the comparison only. The actual partial and ordinary
 derivative constructions are used as definitions; they are not comparison
-proofs. The intended exact proof successor targets this unchanged proposition,
-with proposed module `Langlands.Representation.Derivative.PartialDerivativeTensorProof`
-and theorem `Langlands.Derivative.partialDerivativeTensor`. It will construct
-the natural isomorphism from the concrete tensor quotient and an
-independently accepted top-localization comparison. The `k = 0`
-top-localization adapter is arranged with Worker 288's task
-`62de5903-b616-4b5c-88eb-a066b77c5467`. The positive two-block Jacquet
-comparison is Worker 357's task `087df35f-27e7-46d2-b882-e873faefe447`.
-Worker 710 owns the minus-normalization bridge `cc7a2ee5-94fa-4f70-bad6-23a025910130`.
-These are coordination pointers. None of them is a premise of this proposition
-or a proved input.
+proofs. The proposition is proved, unchanged, as
+`Langlands.Derivative.partialDerivativeTensor` in
+`Langlands.Representation.Derivative.PartialDerivativeTensorProof`. That proof
+constructs the natural isomorphism from the concrete tensor quotient and the
+top-localization comparison `TopLocalization.topLocalizationIso` (module
+`Derivative.TopLocalizationComparison`). The positive two-block Jacquet
+comparison is the separate `PartialDerivativeJacquetComparisonStatement`, and
+the minus-normalization bridge is `Derivative.MirabolicMinusNormalization`.
+None of them is a premise of this proposition or a proved input.
 
-Environment: `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, Lean 4.34.0, Mathlib
+Environment: Lean 4.34.0, Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.

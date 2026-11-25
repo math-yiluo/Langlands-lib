@@ -1,7 +1,5 @@
 # Reduction of the central Isogeny Theorem to the Isomorphism Theorem
 
-Author: Worker 277.
-
 This internal assembly proves one conditional result,
 `Langlands.GroupScheme.splitCentralIsogenyExistence_of_commonTorusIsomorphism`.
 It is a proof-producing `def` whose type is the implication below, with the

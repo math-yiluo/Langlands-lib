@@ -16,9 +16,9 @@ universe uF uA uW
 
 variable {p : ℕ} [Fact p.Prime] (F : PadicField.{uF} p)
 
-local instance : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
-local instance : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
-local instance : IsNonarchimedeanLocalField F.Carrier :=
+private local instance : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
+private local instance : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
+private local instance : IsNonarchimedeanLocalField F.Carrier :=
   F.canonicalTopologicalData.localField
 local instance (n : ℕ) : IsTopologicalGroup (GeneralLinear n F.Carrier) :=
   F.canonicalTopologicalData.generalLinearTopologicalGroup n
@@ -70,7 +70,7 @@ local instance instTopologicalSpaceCarrier_automorphicGammaRigidity :
 local instance : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
 local instance : IsNonarchimedeanLocalField F.Carrier :=
   F.canonicalTopologicalData.localField
-local instance (n : ℕ) : IsTopologicalGroup (GeneralLinear n F.Carrier) :=
+local instance automorphicGammaRigidityIsTopologicalGroup (n : ℕ) : IsTopologicalGroup (GeneralLinear n F.Carrier) :=
   F.canonicalTopologicalData.generalLinearTopologicalGroup n
 
 /-- A class smooth-dual relation identifies a supplied representative with the
@@ -167,7 +167,7 @@ theorem hasUnitarySupercuspidalProductOfClassSelfPairGamma
 
 end Langlands.Correspondence
 
-namespace Langlands.ClassField.Global.RelativeWeilGroup
+namespace Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 
 universe u uV uE uW uQ
 
@@ -251,4 +251,4 @@ theorem localComponent_unitarySupercuspidalProduct_of_selfPairMatch
     (Automorphic.cuspidalUnitaryLocalGenericity F r T hT P v hI hA ψ)
     (Automorphic.cuspidalUnitaryLocalUnitarity F r T hT P v hI hA) hmatch
 
-end Langlands.ClassField.Global.RelativeWeilGroup
+end Langlands.ClassFieldTheory.Global.RelativeWeilGroup

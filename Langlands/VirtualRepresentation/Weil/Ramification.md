@@ -1,10 +1,10 @@
 # Intrinsic Weil last-break labels and constituent extrema
 
-Worker 34 implemented the p-adic declarations in
-`Langlands.VirtualRepresentation.LocalWeil.Ramification`, following Worker 46's
-intrinsic threshold construction and including the fixed-space interface
-requested by Worker 38. Worker 210 generalized these constructions in Task
-7415. The representation carrier universe is independent of the field and
+The p-adic declarations in
+`Langlands.VirtualRepresentation.LocalWeil.Ramification` follow an
+intrinsic threshold construction and include a fixed-space interface.
+This module also generalizes these constructions to local fields of either
+characteristic. The representation carrier universe is independent of the field and
 closure universes.
 
 ## Local fields of either characteristic
@@ -34,8 +34,8 @@ described below have the same suffixes in both namespaces.
 
 The common implementation in `LocalWeil.SepClosed.Ramification.Spectral`
 uses the actual `Langlands.Ramification.Local.absoluteUpperRamificationGroup
-K₀ K Ω hbase` from Task 7403 and the actual
-`Langlands.Weil.Local.SepClosed.localProjection K Ω` from Task 7404.
+K₀ K Ω hbase` and the actual
+`Langlands.Weil.Local.SepClosed.localProjection K Ω`.
 `K₀` is the complete locally compact ultrametric normed base and `K` is
 finite over `K₀`. The hypothesis `hbase` identifies the norm comparison on
 `K₀` with its valuative relation. The local-field interface sets `K₀ = K`
@@ -188,7 +188,7 @@ is essential; the zero element satisfies every upper-bound predicate.
 
 ## Original sources and exact scope
 
-The original sources read for this unit are:
+The original sources read for this module are:
 
 - P. Deligne and G. Henniart, *Sur la variation, par torsion, des constantes
   locales d'equations fonctionnelles de fonctions L*, Invent. Math. 64
@@ -235,10 +235,10 @@ finite-inertia upper jumps and Swan/rank, and identify zero labels for the
 intended unramified and tame objects. None of those arithmetic conclusions
 is inferred from `Real.sInf_nonneg` or inserted into a construction input.
 
-The basis and lattice specialize the imported generic Weil lattice. This unit does
+The basis and lattice specialize the imported generic Weil lattice. This module does
 not identify it with exact K0 or change the published split `Realization`.
 The exact Jordan–Hoelder comparison is separate. There is no epsilon system,
 stability theorem, arbitrary chosen inverse, supplied break function,
 finite-inertia presentation, or assumed source-interpretation theorem in
 any definition. All dependencies are imported by their current Lean names;
-no unaccepted break or inertia-presentation draft is used.
+no unpublished break or inertia-presentation module is used.

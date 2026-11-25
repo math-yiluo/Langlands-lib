@@ -9,12 +9,12 @@ in `ConditionalParabolicIntertwiningStatement`. The arguments are elementary
 consequences of existing Library and Mathlib results; they do not rely on a new
 external representation-theoretic or analytic assertion.
 
-This unit proves no radical-unimodularity, squared-modulus, convergence or
+This module proves no radical-unimodularity, squared-modulus, convergence or
 rationality assertion. In particular it does not prove
 `ConditionalParabolicIntertwiningStatement`. Its cone results apply to every
 real threshold, so they can be used at the threshold ultimately supplied by the
 analytic proof. Nonemptiness is already a separate Library result and is not
-reproved here. The target module and all its imports remain unchanged.
+reproved here.
 
 ## The stabilizer and the actual orbit
 
@@ -99,5 +99,4 @@ published orbit and actual-region interfaces and
 `Mathlib.Topology.Algebra.Group.Pointwise` for openness of pointwise products.
 The substantive declaration dependencies and proof routes are named above.
 Lean compilation of the module succeeds with no errors or warnings. This is a
-development check; independent semantic review and publication are still
-required.
+development check.

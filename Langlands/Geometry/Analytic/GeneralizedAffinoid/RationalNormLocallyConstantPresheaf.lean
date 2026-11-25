@@ -17,7 +17,7 @@ variable {K : Type u} [NormedField K] [IsUltrametricDist K]
   {A : PresentedAffinoidAlgebra K}
   {G : Type v} [Group G] [TopologicalSpace G] [IsTopologicalGroup G]
   (ρ : G →* Aut A)
-  (hρ : ∀ a : A, Continuous (fun g : G => (ρ g).hom.toAlgHom a))
+  (hρ : ∀ a : A, Continuous (fun g : G => (ρ g).asIso.hom.toAlgHom a))
 
 local instance (H : OpenSubgroup G) : IsTopologicalGroup H :=
   Topology.IsInducing.subtypeVal.isTopologicalGroup (SubgroupClass.subtype H)
@@ -41,9 +41,9 @@ theorem normInvariantLocusLocallyConstantPresheaf_action_apply (H : OpenSubgroup
     (d : NormInvariantChart ρ hρ H) {C : Type w} (g : H)
     (f : DiscreteLocallyConstant d.obj.locus C) (x : d.obj.locus) :
     (DiscreteLocallyConstant.toLocallyConstant (ConcreteCategory.hom
-      (((normInvariantLocusLocallyConstantPresheaf ρ hρ H C).obj (Opposite.op d)).obj.ρ g)
+      (((normInvariantLocusLocallyConstantPresheaf ρ hρ H C).obj (Opposite.op d)).obj.ρ g).asHom
         f)) x =
-      f (ConcreteCategory.hom ((normInvariantLocusAction ρ hρ H d).obj.ρ g⁻¹) x) := rfl
+      f (ConcreteCategory.hom ((normInvariantLocusAction ρ hρ H d).obj.ρ g⁻¹).asHom x) := rfl
 
 @[simp]
 theorem normInvariantLocusLocallyConstantPresheaf_map_apply (H : OpenSubgroup G)
@@ -74,10 +74,10 @@ theorem normInvariantSpectrumLocallyConstantPresheaf_action_apply (H : OpenSubgr
     (f : DiscreteLocallyConstant (BanachSpectrum d.obj.algebra) C)
     (x : BanachSpectrum d.obj.algebra) :
     (DiscreteLocallyConstant.toLocallyConstant (ConcreteCategory.hom
-      (((normInvariantSpectrumLocallyConstantPresheaf ρ hρ H C).obj (Opposite.op d)).obj.ρ g)
+      (((normInvariantSpectrumLocallyConstantPresheaf ρ hρ H C).obj (Opposite.op d)).obj.ρ g).asHom
         f)) x =
       f (BanachSpectrum.comap
-        ((normInvariantSectionAction ρ hρ H d).actionAut g⁻¹).inv.toBoundedRingHom x) := rfl
+        ((normInvariantSectionAction ρ hρ H d).actionAut g⁻¹).asIso.inv.toBoundedRingHom x) := rfl
 
 @[simp]
 theorem normInvariantSpectrumLocallyConstantPresheaf_map_apply (H : OpenSubgroup G)

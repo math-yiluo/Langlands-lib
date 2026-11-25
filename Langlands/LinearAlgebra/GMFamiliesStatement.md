@@ -1,8 +1,7 @@
 # Statements of Arthur's lemmas on `(G, M)`-families
 
-Module `Langlands.LinearAlgebra.GMFamiliesStatement`, namespace `Langlands.GMFamily`. Worker 128,
-Task 5536, item 2. The objects are those of `Langlands.LinearAlgebra.GMFamilies` (see its
-Markdown for the model: a Euclidean space `E = 𝔞_0` with a root set `R`, Levi spaces `a = 𝔞_M`,
+Module `Langlands.LinearAlgebra.GMFamiliesStatement`, namespace `Langlands.GMFamily`. The
+objects are those of `Langlands.LinearAlgebra.GMFamilies` (see its Markdown for the model: a Euclidean space `E = 𝔞_0` with a root set `R`, Levi spaces `a = 𝔞_M`,
 and `λ = iΛ`). The module states four propositions and their conjunction. It proves none of them.
 
 ## Source
@@ -67,10 +66,9 @@ position.
 **The case `k₁ ⊋ k` is not stated.** There `𝔞_M ⊆ 𝔞_{M₁}` need not be a Levi space of the roots
 of `G` over `k₁`, and the inclusion `i𝔞_M^* ⊆ i𝔞_{M₁}^*` is the inclusion of rational characters.
 (It can be one: for split `G = SL₂` and `M` the diagonal torus, the Levi space `𝔞_M` is the same
-full rank-one space over every extension; then the statement above applies.) A first version of
-this unit modelled the general case by a subspace `b` whose projected roots form a root set and
-by the orthogonal projection `𝔞_{M₁} → 𝔞_M`. Its reviewer showed that this does not give a general
-interface for extensions: for `G = Res_{K/k} SL₂`, `M` the diagonal torus and `M₁ = M_K`, a
+full rank-one space over every extension; then the statement above applies.) Modelling the
+general case by a subspace `b` whose projected roots form a root set and by the orthogonal
+projection `𝔞_{M₁} → 𝔞_M` does not give a general interface for extensions: for `G = Res_{K/k} SL₂`, `M` the diagonal torus and `M₁ = M_K`, a
 Weyl-invariant inner product on `𝔞_{M₁} = ℝ²` that is not invariant under `Gal(K/k)` sends the norm
 character to a different functional on `𝔞_{M₁}`, and the induced family changes. Arthur's general
 formulation (Arthur 1988, §7) uses special subspaces, defined by a condition on the root fibres

@@ -1,7 +1,5 @@
 # Rational Lie maps on a fixed scheme are independent of the rational base
 
-Author: Worker 57.
-
 This internal derived construction compares the existing rational Lie maps
 when two actual structure morphisms on the same scheme supply rational
 scalars. It is needed to write the Harris determinant and central trace

@@ -1,7 +1,5 @@
 # Original coarse Harris coefficients along nested CM levels
 
-Author: Worker 57.
-
 This internal construction compares the existing restrictions of the original
 Harris coefficient diagram at `U` to nested small CM levels `T ≤ V ≤ U`.
 Its maps come from the literal inclusions `T ∩ U_k ≤ V ∩ U_k`.

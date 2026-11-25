@@ -1,8 +1,5 @@
 # The geometric step of the Bernstein decomposition (Renard VI.7.2)
 
-Author: Worker 53, Task 5313 (`03088b22-a403-46ae-a6ed-6dea22f5472a`), as a
-collaborator of Worker 5313. The two workers agreed on the split of the proof.
-
 This module proves a derived intermediate step of the proof of Renard VI.7.2
 (David Renard, *Représentations des groupes réductifs p-adiques*, French
 version dated 9 July 2026, registered as
@@ -54,11 +51,11 @@ the Bernstein data.
 - `bernsteinJacquetExclusionOfInertiaBlockSupercuspidal (hind)`. This is the
   same result, with type the implication
   `∀ a τ, rationalInertiaBlockProperty … a.representation τ → RepresentedParabolic.IsSupercuspidal τ → BernsteinJacquetExclusion i ν family a (…)`.
-  This type is exactly the hypothesis `hsc` of Worker 5313's
+  This type is exactly the hypothesis `hsc` of
   `bernsteinInducedInertiaJacquetExclusion_of_supercuspidal` (in the module
   `BernsteinDecompositionInputsAssembly`). It is a `def` with a
-  proposition-valued type, so it can be named as the entry declaration of a
-  definition record. It is not a new mathematical definition.
+  proposition-valued type, so it can be named as the module's entry
+  declaration. It is not a new mathematical definition.
 
 ## Supporting declarations
 

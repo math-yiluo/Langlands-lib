@@ -30,5 +30,5 @@ inclusion of local full domains.
 
 The provenance is internal: finite domain-cover gluing and its exact local
 equations, the universal law for general chart change, and its proved
-transitivity. This unit does not construct extension of a general strong atlas
+transitivity. This module does not construct extension of a general strong atlas
 map or assert that all original strong-map families satisfy intrinsic coherence.

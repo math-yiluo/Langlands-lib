@@ -59,7 +59,7 @@ The proof uses the rank-one, bijectivity and epsilon components of the stronger
 correspondence predicates. Their remaining compatibility clauses need no
 additional construction for this uniqueness implication.
 
-## Provenance and remaining obligations
+## Provenance and premises
 
 The conceptual rank-induction route is Henniart, *Une preuve simple des
 conjectures de Langlands pour GL(n) sur un corps p-adique*, Inventiones
@@ -71,9 +71,12 @@ formulations, rather than a claimed verbatim theorem from that article.
 
 The two remaining inputs are precisely
 `RankinSelberg.SupercuspidalLocalConverseStatement.{uF,uA,uA}` and
-`LocalFactor.NonabelianSystemUniquenessStatement.{uF,uP}`. Their proof tasks,
-and the separate actual common-closure generation proof task, remain independent
-mathematical obligations. No numerical surjectivity theorem or global
+`LocalFactor.NonabelianSystemUniquenessStatement.{uF,uP}`. They are proved
+separately, as `RankinSelberg.supercuspidalLocalConverse`
+(`SupercuspidalLocalConverseProof`) and `LocalFactor.nonabelianSystemUniqueness`
+(`NonabelianUniquenessProof`); the actual common-closure generation is proved
+as `LocalFactor.commonClosureDegreeZeroGeneration`
+(`CommonClosureGenerationProof`). No numerical surjectivity theorem or global
 automorphic construction is used here: surjectivity is extracted from an
 already supplied correspondence premise. In particular, the result gives no
 existence of such a correspondence.

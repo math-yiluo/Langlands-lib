@@ -37,5 +37,5 @@ actual supplied quotient maps.
 This is an internal composition of those published results; it adds no
 source assertion or modification to the target or its imports. It does not
 assert existence of the represented quotients quantified over in the target.
-Worker 702 assembled the final proof, using Worker 673's structural
-reduction and the jointly developed supporting results.
+The final proof is assembled from the structural reduction and its
+supporting results.

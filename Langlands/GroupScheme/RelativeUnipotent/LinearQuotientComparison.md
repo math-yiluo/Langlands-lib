@@ -1,6 +1,7 @@
 # Linear comparisons of common-weight vector quotients
 
-This internal adapter for Task 7200 constructs actual quotient comparisons from
+This internal adapter for the finite vector-bundle filtrations of supplied
+relative radicals constructs actual quotient comparisons from
 compatible isomorphisms of consecutive terms, proves their equivariance, and
 extracts actual linear equivalences between finite free vector quotients.
 The commutative base ring and universe are arbitrary, and the two finite
@@ -56,7 +57,7 @@ or inverse-equivariance premise is introduced.
 The provenance is internal: this combines existing full fppf quotient
 uniqueness, actual action naturality and local lift descent, the actual
 affine/global-section coordinate comparison, and the arbitrary-ring
-`VectorWeightLinearity` construction. This unit supplies no root charts or
+`VectorWeightLinearity` construction. This module supplies no root charts or
 different-torus comparisons.
 The compatible term isomorphisms, their actual equivariance, and equivariance
 of the geometric quotient maps remain explicit inputs. Linearity of the

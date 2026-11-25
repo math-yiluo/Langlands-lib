@@ -1,5 +1,5 @@
 import Langlands.Global.AdelicFunctoriality.IdeleClassNormIndexReduction
-import Langlands.ClassField.Global.IntegralIdeleClassQuotientFinite
+import Langlands.ClassFieldTheory.Global.IntegralIdeleClassQuotientFinite
 
 /-! # Proof of the idele-class norm index lemma -/
 
@@ -12,6 +12,6 @@ independent universes, the range of the actual idele-class norm `C_L → C_K` ha
 and that index divides some power of `[L : K]`. -/
 theorem ideleClassNormIndexFinite : IdeleClassNormIndexFinite.{u, v} :=
   ideleClassNormIndexFinite_of_integralIdeleClassQuotientFinite
-    Langlands.ClassField.Global.integralIdeleClassQuotientFinite
+    Langlands.ClassFieldTheory.Global.integralIdeleClassQuotientFinite
 
 end Langlands.Global.AdelicFunctoriality

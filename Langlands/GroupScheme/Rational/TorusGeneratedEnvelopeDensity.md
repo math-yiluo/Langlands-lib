@@ -1,6 +1,6 @@
 # Rational density from finite Galois torus splitting
 
-Worker 1436. This internal bridge derives rational density of the fixed torus
+This internal bridge derives rational density of the fixed torus
 envelope from the explicit proposition `TorusFiniteGaloisSplittingStatement`.
 Every field has arbitrary universe `u`; density uses an infinite ground field.
 There is no assumption of perfectness, reductivity or characteristic zero.
@@ -38,7 +38,7 @@ rational point is not an additional existence premise.
 The provenance is internal: the new assertions compose the published finite
 Galois norm-density theorem, dominant-image density, and the fixed-envelope
 pointed torus domination theorem. The finite Galois torus-splitting proposition
-is an explicit input throughout and is not proved in this module. This unit
+is an explicit input throughout and is not proved in this module. This module
 therefore does not establish unconditional envelope density or the all-field
 pseudo-parabolic rational-lifting theorem. It adds no such input to either
 unchanged published target.

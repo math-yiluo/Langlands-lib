@@ -153,8 +153,8 @@ Set `ψ = relativeLinearSystemMap π hgen`. Then:
 
 This proves the implication `CubicFieldEmbeddingStatement →
 FrameEmbeddingExistenceStatement`, not `FrameEmbeddingExistenceStatement`
-itself. Once `CubicFieldEmbeddingStatement` is proved (Task 7747), applying
-this theorem to that proof yields the target. The mathematical route is that of
+itself. Applying this theorem to a proof of `CubicFieldEmbeddingStatement`
+yields the target. The mathematical route is that of
 the statement's Markdown and of Mumford–Fogarty–Kirwan, *Geometric Invariant
 Theory*, 3rd ed. (1994), §7.2, printed p.131 (PDF p.144 of registered source
 `provided-ec58cb66687d0d54d9e39b6ec21281b651fe3a6d039f9b5d099c79791671233f`).

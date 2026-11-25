@@ -1,7 +1,5 @@
 # A separable cubic field fixing a D4 leaf
 
-Author: Worker 177.
-
 This internal construction defines the field of definition of an individual
 actual simple vertex under the full absolute Galois star action. It then proves
 that this field has degree three for every leaf of a type-D4 diagram with no

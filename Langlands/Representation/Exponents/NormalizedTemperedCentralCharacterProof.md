@@ -1,7 +1,5 @@
 # Unitarity of central characters of nonzero normalized-exponent tempered representations
 
-Authors: Worker 1597 and Worker 1598.
-
 `Langlands.Aubert.General.RepresentedParabolic.normalizedTemperedCentralCharacter`
 proves exactly the published
 `NormalizedTemperedCentralCharacterStatement.{u, v}`. Every prescribed scalar
@@ -46,9 +44,7 @@ present proof.
 ## Scope and provenance
 
 This is an internal composition of the published proofs and constructions
-imported by the Lean file. Worker 1598 contributed the identity-Jacquet and
-split-unitarity arguments; Worker 1597 contributed the identity-parabolic
-data, regularity, full-center extension and final composition. The final
+imported by the Lean file. The final
 theorem adds no structural or representation-theoretic premise.
 
 The target retains arbitrary characteristic and nonsplit ambient groups,
@@ -61,5 +57,6 @@ finite dimensionality, or character regularity.
 The original-source locators and necessary nonzero correction remain in
 [NormalizedTemperedCentralCharacterStatement.md](NormalizedTemperedCentralCharacterStatement.md).
 This proof uses the normalized exponent parameter throughout. The separate
-corrected-source comparison with the raw-log parameter in Renard V.3.20
-remains a distinct obligation.
+corrected-source comparison with the raw-log parameter in Renard V.3.20 is
+`NormalizedTemperedLogarithmicComparisonStatement`, proved as
+`normalizedTemperedLogarithmicComparison` in a distinct module.

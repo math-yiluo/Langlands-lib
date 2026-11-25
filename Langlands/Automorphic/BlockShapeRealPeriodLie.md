@@ -15,6 +15,6 @@ this ideal, and hence it kills each of the real upper block generators.
 This is an internal application of the actual block differential and
 period identities in the Library. It prepares the differentiation of
 projected constant-term sections at the standard compact arguments in
-Task 6823.
+the proof of `CuspidalSupportExistenceStatement`.
 
 The decomposition of real Lie directions is proved in [Block-shape real Lie decomposition](BlockShapeRealLieDecomposition.md).

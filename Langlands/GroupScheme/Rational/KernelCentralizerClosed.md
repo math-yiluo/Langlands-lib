@@ -1,6 +1,6 @@
 # Closed-representability reductions for character-kernel centralizers
 
-This derived unit uses the existing scheme-theoretic kernel, its commutative
+This module uses the existing scheme-theoretic kernel, its commutative
 group law, and the actual all-test centralizer. `characterKernelComm` retains
 the inherited commutative structure on exactly the existing character kernel;
 it introduces no different subgroup.

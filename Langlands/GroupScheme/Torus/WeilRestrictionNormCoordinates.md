@@ -1,7 +1,5 @@
 # Embedding coordinates for Weil-restriction norms
 
-Author: Worker 1587.
-
 This internal algebra interface is derived from the published finite separable
 tensor decomposition and Mathlib's Galois norm formula. It describes the tensor
 algebra of a finite product of intermediate fields using their embeddings into

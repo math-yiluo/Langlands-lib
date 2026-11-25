@@ -1,11 +1,7 @@
 import Langlands.Global.RankinSelberg.UnfoldingGL
 import Langlands.Global.AdelicGLStandardCompact
 
-/-! # Padding preserves the standard adelic compact subgroup
-
-Adapted from Worker 269's compact-padding draft, with the gauge-dependent
-parts removed by Worker 254.
--/
+/-! # Padding preserves the standard adelic compact subgroup -/
 
 noncomputable section
 universe u

@@ -1,6 +1,6 @@
 # Semigroup intersection with a connected solvable subgroup
 
-Worker 1345. This is a derived application of the published semigroup
+This is a derived application of the published semigroup
 intersection consumers and their now proved geometric prerequisites.
 
 `SemigroupSolvableIntersectionStatement.{u}` isolates the solvable alternative

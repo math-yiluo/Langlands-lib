@@ -156,7 +156,7 @@ variable {S₀ X₀ : Scheme.{u}} {ε : S₀ ⟶ X₀}
 
 /-- Multiply the rigidification of a rigidified line bundle by a global unit of the base. -/
 def rigAct (r : Γ(S₀, ⊤)ˣ) (L : RigidifiedLineBundle ε) : RigidifiedLineBundle ε :=
-  ⟨⟨L.obj.carrier, unitAut _ r ≪≫ L.obj.rigidification⟩, L.property⟩
+  ⟨⟨L.obj.carrier, (unitAut _ r).asIso ≪≫ L.obj.rigidification⟩, L.property⟩
 
 lemma smul_comp_rigidification (c : Γ(S₀, ⊤)) (L : RigidifiedLineBundle ε) :
     (c • 𝟙 (structureModule S₀)) ≫ L.obj.rigidification.hom =
@@ -184,7 +184,7 @@ lemma rigAct_iso_self_iff (r : Γ(S₀, ⊤)ˣ) (L : RigidifiedLineBundle ε) :
     let v : Γ(X₀, ⊤)ˣ := ⟨c, c', by rw [mul_comm]; exact hcc, hcc⟩
     have hφ : e.hom.hom.val = (v : Γ(X₀, ⊤)) • 𝟙 L.obj.carrier := hc
     have hp := e.hom.hom.property
-    change ((unitAut _ r).hom ≫ L.obj.rigidification.hom) ≫
+    change ((unitAut _ r).asIso.hom ≫ L.obj.rigidification.hom) ≫
       (Scheme.Modules.pullback ε).map e.hom.hom.val = L.obj.rigidification.hom at hp
     rw [hφ, pullback_map_smul, CategoryTheory.Functor.map_id, Linear.comp_smul,
       Category.comp_id, unitAut_hom, smul_comp_rigidification, smul_smul] at hp
@@ -202,10 +202,10 @@ lemma rigAct_iso_self_iff (r : Γ(S₀, ⊤)ˣ) (L : RigidifiedLineBundle ε) :
           rw [h2, mul_one]
       _ = r := by rw [← mul_assoc, h3, one_mul]
   · rintro ⟨v, rfl⟩
-    refine ⟨RigidifiedLineBundle.isoMk (unitAut L.obj.carrier v⁻¹) ?_⟩
-    change ((unitAut _ (Units.map ε.appTop.hom.toMonoidHom v)).hom ≫
+    refine ⟨RigidifiedLineBundle.isoMk (unitAut L.obj.carrier v⁻¹).asIso ?_⟩
+    change ((unitAut _ (Units.map ε.appTop.hom.toMonoidHom v)).asIso.hom ≫
       L.obj.rigidification.hom) ≫
-        (Scheme.Modules.pullback ε).map (unitAut L.obj.carrier v⁻¹).hom =
+        (Scheme.Modules.pullback ε).map (unitAut L.obj.carrier v⁻¹).asIso.hom =
       L.obj.rigidification.hom
     rw [unitAut_hom, unitAut_hom, pullback_map_smul, CategoryTheory.Functor.map_id,
       Linear.comp_smul, Category.comp_id, smul_comp_rigidification, smul_smul]
@@ -224,14 +224,14 @@ lemma exists_iso_rigAct (M N : RigidifiedLineBundle ε)
     ObjectProperty.isoMk _ (M.obj.rigidification ≪≫
       (Scheme.Modules.pullback ε).mapIso ((LineBundle.forget X₀).mapIso ψ) ≪≫
         N.obj.rigidification.symm)
-  obtain ⟨r, hr⟩ := (LineBundle.unitAutEquiv (LineBundle.trivial S₀)).surjective a
-  have hr' : (unitAut (structureModule S₀) r).hom =
+  obtain ⟨r, hr⟩ := (LineBundle.unitAutEquiv (LineBundle.trivial S₀)).surjective (Aut.of a)
+  have hr' : (unitAut (structureModule S₀) r).asIso.hom =
       M.obj.rigidification.hom ≫ (Scheme.Modules.pullback ε).map ψ.hom.hom ≫
         N.obj.rigidification.inv :=
-    congrArg (fun b : LineBundle.trivial S₀ ≅ LineBundle.trivial S₀ ↦ b.hom.hom) hr
+    congrArg (fun b : Aut (LineBundle.trivial S₀) ↦ b.asIso.hom.hom) hr
   refine ⟨r, ⟨RigidifiedLineBundle.isoMk ((LineBundle.forget X₀).mapIso ψ) ?_⟩⟩
   change M.obj.rigidification.hom ≫ (Scheme.Modules.pullback ε).map ψ.hom.hom =
-    (unitAut _ r).hom ≫ N.obj.rigidification.hom
+    (unitAut _ r).asIso.hom ≫ N.obj.rigidification.hom
   rw [hr']
   simp
 
@@ -251,9 +251,9 @@ def actIso {T : Over S} (r : Γ((relativeSpace g).obj T, ⊤)ˣ) {L M : relative
     (e : L ≅ M) : actObj f g z hz r L ≅ actObj f g z hz r M :=
   RigidifiedLineBundle.isoMk
     ((RigidifiedLineBundle.forgetToRigidified _ ⋙ RigidifiedModule.forget _).mapIso e) (by
-      change ((unitAut _ r).hom ≫ L.obj.rigidification.hom) ≫
+      change ((unitAut _ r).asIso.hom ≫ L.obj.rigidification.hom) ≫
         (Scheme.Modules.pullback _).map e.hom.hom.val =
-          (unitAut _ r).hom ≫ M.obj.rigidification.hom
+          (unitAut _ r).asIso.hom ≫ M.obj.rigidification.hom
       rw [Category.assoc, e.hom.hom.property])
 
 /-- The unit action on classes. -/
@@ -270,7 +270,7 @@ lemma actClasses_one {T : Over S} (q : Classes f g z hz T) :
     actClasses f g z hz 1 q = q := by
   refine Quotient.inductionOn q (fun L ↦ Quotient.sound ⟨?_⟩)
   refine RigidifiedLineBundle.isoMk (Iso.refl _) ?_
-  change ((unitAut _ 1).hom ≫ L.obj.rigidification.hom) ≫
+  change ((unitAut _ 1).asIso.hom ≫ L.obj.rigidification.hom) ≫
     (Scheme.Modules.pullback _).map (𝟙 _) = L.obj.rigidification.hom
   simp
 
@@ -279,9 +279,9 @@ lemma actClasses_mul {T : Over S} (r s : Γ((relativeSpace g).obj T, ⊤)ˣ)
     actClasses f g z hz (r * s) q = actClasses f g z hz r (actClasses f g z hz s q) := by
   refine Quotient.inductionOn q (fun L ↦ Quotient.sound ⟨?_⟩)
   refine RigidifiedLineBundle.isoMk (Iso.refl _) ?_
-  change ((unitAut _ (r * s)).hom ≫ L.obj.rigidification.hom) ≫
+  change ((unitAut _ (r * s)).asIso.hom ≫ L.obj.rigidification.hom) ≫
     (Scheme.Modules.pullback _).map (𝟙 _) =
-      (unitAut _ r).hom ≫ (unitAut _ s).hom ≫ L.obj.rigidification.hom
+      (unitAut _ r).asIso.hom ≫ (unitAut _ s).asIso.hom ≫ L.obj.rigidification.hom
   simp [smul_smul, mul_comm]
 
 lemma forgetClasses_actClasses {T : Over S} (r : Γ((relativeSpace g).obj T, ⊤)ˣ)
@@ -296,10 +296,10 @@ lemma pullback_rigidification_unitAut {S₀ X₀ S₁ X₁ : Scheme.{u}} {ε₀ 
     (M : RigidifiedModule ε₀) (r : Γ(S₀, ⊤)ˣ) :
     (pullbackUnitIso b).inv ≫
         (Scheme.Modules.pullback b).map
-          ((unitAut (SheafOfModules.unit S₀.ringCatSheaf) r).hom ≫ M.rigidification.hom) ≫
+          ((unitAut (SheafOfModules.unit S₀.ringCatSheaf) r).asIso.hom ≫ M.rigidification.hom) ≫
           (RigidifiedModule.squarePullbackIso a b comm).hom.app M.carrier =
       (unitAut (SheafOfModules.unit S₁.ringCatSheaf)
-          (Units.map b.appTop.hom.toMonoidHom r)).hom ≫
+          (Units.map b.appTop.hom.toMonoidHom r)).asIso.hom ≫
         (pullbackUnitIso b).inv ≫ (Scheme.Modules.pullback b).map M.rigidification.hom ≫
           (RigidifiedModule.squarePullbackIso a b comm).hom.app M.carrier := by
   have hu := congrArg Iso.hom

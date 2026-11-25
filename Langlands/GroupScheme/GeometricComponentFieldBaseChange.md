@@ -132,7 +132,7 @@ section homomorphism and three laws are projections of this package. Naming the
 actual maps this way avoids repeatedly unfolding the large pullback-tower
 construction when specializing to chosen closures.
 
-This unit constructs neither an embedding-independent comparison nor an
+This module constructs neither an embedding-independent comparison nor an
 absolute Galois restriction homomorphism. It does not assert effective descent,
 surjectivity on rational points, or an identification with the points of an
 fppf quotient.

@@ -1,7 +1,5 @@
 # Analytic Weierstrass division and preparation at unit radius
 
-Author: Worker 56.
-
 `RestrictedSeries.WeierstrassStatement A` combines the division and
 preparation propositions for actual one-variable restricted series over
 `A`. The coefficient ring is a complete, nontrivial, ultrametric normed

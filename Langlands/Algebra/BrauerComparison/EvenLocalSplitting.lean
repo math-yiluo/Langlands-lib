@@ -1,6 +1,6 @@
 import Langlands.Algebra.BrauerComparison.BaseChangeChart
 import Langlands.Algebra.BrauerComparison.RelativeTwoTorsion
-import Langlands.ClassField.Global.GlobalReciprocityProof
+import Langlands.ClassFieldTheory.Global.GlobalReciprocityProof
 import Langlands.ClassFieldTheory.Local.FiniteArtinTransferReduction
 
 /-! # Even-degree splitting of Brauer two-torsion over p-adic fields -/
@@ -13,7 +13,7 @@ open scoped TensorProduct
 namespace Langlands.BrauerComparison
 
 open Langlands.Brauer Langlands.CentralSimple
-open Langlands.ClassField.Global Langlands.ClassFieldTheory.Local
+open Langlands.ClassFieldTheory.Global Langlands.ClassFieldTheory.Local
 
 universe u
 

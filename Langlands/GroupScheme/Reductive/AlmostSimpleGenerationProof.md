@@ -1,7 +1,5 @@
 # Generation of semisimple groups by normal almost-simple subgroups: proof
 
-Worker 4565 assembled this proof.
-
 `Langlands.GroupScheme.semisimpleAlmostSimpleGeneration` proves exactly the
 existing `Langlands.GroupScheme.SemisimpleAlmostSimpleGenerationStatement.{u}`
 at arbitrary universe `u`. For every algebraically closed field `k : Type u`

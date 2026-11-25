@@ -24,4 +24,4 @@ the range of `f`, and this is `⊤` because `f` is surjective.
 ## Provenance
 
 This is a standard fact, stated here because the 05FT proof needs it. It is internal to the
-project; Worker 281 proposed the statement and Worker 928 proved it.
+project.

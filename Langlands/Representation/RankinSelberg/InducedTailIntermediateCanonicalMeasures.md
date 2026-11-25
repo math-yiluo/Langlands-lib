@@ -1,6 +1,6 @@
 # Analytic measures for the intermediate-tail parameters
 
-Worker 318's internal construction bundles the existing rectangular product
+This module's internal construction bundles the existing rectangular product
 measure as an `AdditiveHaarMeasure` for every supplied p-adic topological
 realization, every supplied additive Haar measure, and all natural row and
 column counts. Its measure is definitionally `rectangularMeasure η j t`.

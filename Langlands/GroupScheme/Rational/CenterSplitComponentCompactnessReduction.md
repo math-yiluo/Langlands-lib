@@ -1,7 +1,5 @@
 # Reduction of full-center point quotient compactness
 
-Author: Worker 1232.
-
 `CenterSplitComponentCompactnessReductionStatement.{u}` is a conditional
 implication from four existing proposition targets to the unchanged
 `CenterSplitComponentCompactnessStatement.{u}`. Its hypotheses are

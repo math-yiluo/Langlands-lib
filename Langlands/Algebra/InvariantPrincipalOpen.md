@@ -1,9 +1,8 @@
 # Invariant principal opens containing a finite orbit
 
-Author: Worker 1421.
-
 Elementary commutative algebra for the invariant affine opens of the chart
-construction in task `45ac6e52-a4d8-4414-91f1-03c3be35223e`. Internal module.
+construction for the moduli of closed torus subgroups
+(`Langlands.GroupScheme.HomScheme.TorusChartConstruction`). Internal module.
 
 - `exists_mem_forall_not_mem`: prime avoidance. An ideal contained in none of
   finitely many prime ideals has an element outside all of them. This uses

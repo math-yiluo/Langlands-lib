@@ -2,7 +2,7 @@ import Langlands.BushnellKutzko.TameCorestriction
 
 /-! # Tame corestriction existence and lattice images
 
-Bushnell–Kutzko 1993, (1.3.2)–(1.3.4), printed pp. 28–29; Task 7412, T1.
+Bushnell–Kutzko 1993, (1.3.2)–(1.3.4), printed pp. 28–29; T1.
 -/
 
 open ValuativeRel

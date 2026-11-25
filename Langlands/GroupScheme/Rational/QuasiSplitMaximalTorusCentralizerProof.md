@@ -1,7 +1,5 @@
 # Proof: maximal tori containing a maximal split torus in quasi-split groups
 
-Author: Worker 4696.
-
 `Langlands.GroupScheme.quasiSplitMaximalTorusCentralizer` proves exactly the
 published proposition
 `Langlands.GroupScheme.QuasiSplitMaximalTorusCentralizerStatement.{u}` of

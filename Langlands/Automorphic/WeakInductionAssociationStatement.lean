@@ -20,7 +20,7 @@ noncomputable section
 
 universe u uV uP
 
-namespace Langlands.ClassField.Global
+namespace Langlands.ClassFieldTheory.Global
 
 open scoped NumberField
 open Langlands.Global Langlands.Automorphic
@@ -65,4 +65,4 @@ def WeakInductionAssociationStatement : Prop :=
 
 end RelativeWeilGroup
 
-end Langlands.ClassField.Global
+end Langlands.ClassFieldTheory.Global

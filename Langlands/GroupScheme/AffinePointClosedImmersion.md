@@ -1,7 +1,5 @@
 # Closed immersions on actual affine group points
 
-Author: Worker 112.
-
 This internal adapter uses the existing regular-function evaluation topology
 on actual group-scheme points. It is derived from the published
 `affinePointsRingPointHomeomorph` and the actual affine-scheme point mapping

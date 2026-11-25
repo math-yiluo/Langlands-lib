@@ -1,7 +1,5 @@
 # Positive-rank quasicuspidal embedding
 
-Author: Worker 238.
-
 `Langlands.CuspidalSupport.normalizedQuasicuspidalEmbedding` proves the
 published `Langlands.CuspidalSupport.NormalizedQuasicuspidalEmbeddingTheorem.{uF,uV} F T n`
 for every prime `p`, `F : PadicField.{uF} p`, `T : F.TopologicalData` and

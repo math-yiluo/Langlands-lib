@@ -8,7 +8,7 @@ import Mathlib.RingTheory.Finiteness.Basic
 
 The categorical finite-type and composition-chain hypotheses are used directly.
 The unrestricted subquotient is a simple quotient of a cyclic subrepresentation.
-Its cyclic route generalizes Worker 379's complex-coefficient proof.
+Its cyclic route generalizes the complex-coefficient proof.
 -/
 
 noncomputable section

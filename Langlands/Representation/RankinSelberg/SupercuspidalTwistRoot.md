@@ -1,6 +1,6 @@
 # Contragredient twist parameters give denominator roots
 
-This internal derived unit proves the converse direction needed for the
+This internal module, with derived provenance, proves the converse direction needed for the
 equal-rank supercuspidal L-factor calculation. The field and the two
 representation carriers have independent universes. The topology is the
 canonical topology of the supplied p-adic field.

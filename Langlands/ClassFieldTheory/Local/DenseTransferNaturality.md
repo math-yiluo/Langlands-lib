@@ -1,6 +1,6 @@
 # Transfer naturality through a continuous map with dense range
 
-Worker 125. Internal group-theoretic infrastructure for Task 4919.
+Internal group-theoretic infrastructure.
 
 `subgroupPreimageMap` is the continuous restriction of an actual group
 homomorphism to the inverse image of a subgroup. If the homomorphism has

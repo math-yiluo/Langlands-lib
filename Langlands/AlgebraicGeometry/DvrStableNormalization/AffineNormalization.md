@@ -1,7 +1,5 @@
 # Relative normalizations over an affine scheme
 
-Worker 6.
-
 - `finite_geometricallyReduced_normalization`: let `Z` be affine over `Spec R'`, and `φ : W → Z.left`
   quasi-compact and quasi-separated. Suppose the integral closure of `Γ(Z, ⊤)` in `Γ(W, φ⁻¹ ⊤)` is a
   finite `Γ(Z, ⊤)`-module and reduced after `F ⊗[R'] -` for every field `F`. Then the normalization

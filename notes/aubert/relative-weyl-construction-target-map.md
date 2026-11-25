@@ -3,8 +3,8 @@
 This note maps the subgroup and finite-Coxeter prerequisites of the general
 Aubert program to five Lean/Markdown pairs. It distinguishes constructed
 objects and implemented helper proofs from proposition targets. It is the
-finite and subgroup part of the source table for task
-`e3d69272-2599-4a08-a934-cb11f2493e30`, not a completed table or proof of
+finite and subgroup part of the source table for the general relative-Weyl
+modules of the program, not a completed table or proof of
 Theorem 1.7 or Corollary 1.10. Their actual representation-functor and
 Grothendieck-group specializations remain required.
 
@@ -28,7 +28,7 @@ The registered originals are:
 
 The original passages and complete five Lean/Markdown pairs were read
 directly. Aubert p.2180 actually prints the torus denominator in
-`N_G(T0)/T0` and `N_(L_I)(T0)/T0`. The task instead requires the
+`N_G(T0)/T0` and `N_(L_I)(T0)/T0`. The formalization instead requires the
 full-centralizer convention at general reductive scope, explicitly given
 by Renard V.4.1:
 `W_G = N_G(A0)/Z_G(A0) = N_G(A0)/M0`.
@@ -181,22 +181,22 @@ earlier every-lift formula with `actualRightIntersection_mk`.
 Those intersection and faithfulness results remain proof obligations;
 the conditional cardinality helper supplies none of them.
 
-## Required actual realization and proof owners
+## Required actual realization and proof obligations
 
 The intended specialization is to a connected reductive group over a
 nonarchimedean local field, including positive characteristic, nonsplit
 and nonquasisplit groups and the empty simple-root set. The generic
 parameters above do not by themselves establish that specialization.
 
-| Requirement still needed | Source and ownership |
+| Requirement still needed | Source and the work it belongs to |
 | --- | --- |
-| Identify actual rational points and the image `T0(F)`, and compare the scheme-defined normalizer and centralizer points with the abstract normalizer and centralizer of that image. Produce the quotient equivalence and compatibility of conjugation and root action. | The algebraic-groups/relative-roots owners, Workers 1107/207 and 1220/176, have received this requirement. The comparison is required over the infinite local fields in scope; no equality over arbitrary fields is inferred from notation. |
-| Realize the reduced relative simple roots, finite quotient, simple reflections, actual Coxeter system, length and positive-root action. | S09/S13/S17, with the central summand retained. Relative-root owners 1220/176 coordinate with 1107/207; root/character owners 339/274 provide their shared lattice interfaces. |
-| Construct the actual standard `P_I,L_I,U_I`, minimal Levi `L_empty=Z_G(T0)`, full Levi `L_S=G`, centralizer containment, faithful subset indexing and the root-group intersections. | S06/S14/S15 and the retained D06 deductions. Requirements are with 1107/207. The three actual targets and the equality-test criterion remain consuming proof obligations. |
-| Compare `|J|` with `dim A0 - dim A_(L_J)` and `|S|-|J|` with `dim A_(L_J) - dim A_G`, retaining the empty case. | Renard V.3.6–V.3.7 and V.3.12–V.3.13, pp.111–112 / PDF pp.117–118. Retained D04 dimension comparisons using S09/S12, routed by Worker 1186 to 1220/176. The sign exponents are root-set cardinalities; the total split rank cannot replace them. |
+| Identify actual rational points and the image `T0(F)`, and compare the scheme-defined normalizer and centralizer points with the abstract normalizer and centralizer of that image. Produce the quotient equivalence and compatibility of conjugation and root action. | This belongs to the algebraic-group and relative-root work. The comparison is required over the infinite local fields in scope; no equality over arbitrary fields is inferred from notation. |
+| Realize the reduced relative simple roots, finite quotient, simple reflections, actual Coxeter system, length and positive-root action. | S09/S13/S17, with the central summand retained. It belongs to the relative-root work together with the algebraic-group work; the root and character modules provide their shared lattice interfaces. |
+| Construct the actual standard `P_I,L_I,U_I`, minimal Levi `L_empty=Z_G(T0)`, full Levi `L_S=G`, centralizer containment, faithful subset indexing and the root-group intersections. | S06/S14/S15 and the retained D06 deductions. These belong to the algebraic-group work. The three actual targets and the equality-test criterion remain consuming proof obligations. |
+| Compare `|J|` with `dim A0 - dim A_(L_J)` and `|S|-|J|` with `dim A_(L_J) - dim A_G`, retaining the empty case. | Renard V.3.6–V.3.7 and V.3.12–V.3.13, pp.111–112 / PDF pp.117–118. Retained D04 dimension comparisons using S09/S12, in the relative-root work. The sign exponents are root-set cardinalities; the total split rank cannot replace them. |
 | Identify length-defined positive sets and reflection-label images with the source's signed root images, including `J'=w_J⁻¹(J)`. | S17 plus the intrinsic minimum and associated-subset laws. These comparisons retain proof obligations under D06; reflection equality alone is insufficient. |
-| Supply the rational-point and subgroup topologies, continuity of actual conjugation and the instances used by smooth representations. | S01/S04, routed to Worker 118, who directed the point-topology part to the Conrad program and Workers 105/208. Existing affine point-topology constructions are starting interfaces, not the whole subgroup realization. |
-| Construct actual normalized functors, conjugation pullback along the inverse equivalence, exact K0 maps and normalization comparisons. | Shared adapter task `593ef603-6672-4424-976c-14e11e920d9c`, Worker 23 with transport owner 1180. Exactness and representation transport are representation-theoretic obligations, outside the external structural rows. |
+| Supply the rational-point and subgroup topologies, continuity of actual conjugation and the instances used by smooth representations. | S01/S04; the point-topology part belongs to the Conrad point-topology work. Existing affine point-topology constructions are starting interfaces, not the whole subgroup realization. |
+| Construct actual normalized functors, conjugation pullback along the inverse equivalence, exact K0 maps and normalization comparisons. | The shared [adapter modules](general-adapter-dependency-table.md). Exactness and representation transport are representation-theoretic obligations, outside the external structural rows. |
 
 For the sign comparison, strict right-length increase gives positivity of
 `w α_i` by S17. Reflection equivariance together with positivity selects the
@@ -215,49 +215,31 @@ used here. Its companion
 [`Rational.Statement`](../../Langlands/GroupScheme/Rational/Statement.md)
 defines `HasRelativeRootSystem` and `RelativeRootSystemStatement` as
 propositions; their presence is not a proof or the required Coxeter bridge.
-The comparison requirement preserves these existing owners and objects.
+The comparison requirement preserves these existing objects.
 
-## Remaining representation targets and publication evidence
+## Remaining representation targets and the Library
 
-Worker 165 still owes the five actual class-level Theorem 1.7 targets and
-the geometric-lemma K0 specialization using Worker 23's exact adapters;
-Worker 14 owns the coordinated general geometric-lemma work.
-Worker 1186 owns the Corollary 1.10 targets, including the relative-rank-one
-length-two and Jacquet assertions, and the separately named Weyl-conjugacy
-target for induced K0 classes. The last is representation theory behind
+The five actual class-level Theorem 1.7 targets and the geometric-lemma K0
+specialization use the exact adapters of the adapter modules; the general
+geometric lemma is separate work. The Corollary 1.10 targets include the
+relative-rank-one length-two and Jacquet assertions, and the separately named
+Weyl-conjugacy target for induced K0 classes. The last is representation theory behind
 Aubert (1.2), not Chapter V structural data. Its classification and
 character-independence dependencies must be recorded when instantiated.
-Worker 76 owns the later proof tasks, final assembly and dependency matrix.
+The proofs, the final assembly and the
+[dependency matrix](general-program-dependency-matrix.md) belong to the
+general program.
 The operator remains the unadjusted sum `sum_I (-1)^|I| i_I r_I`;
 none of these finite targets proves a representation identity for it.
 
-At inspection on 2 November 2026, the first three pairs were independently
-accepted and published in Library commit
-`47cd8b71e79c9bb4aba6d9cc2664cb09fbff441c`:
+The first three pairs (`RelativeWeyl`, `RelativeWeylIndexing`,
+`RelativeWeylIndexingTargets`) first appeared in the Library at commit
+`47cd8b71e79c9bb4aba6d9cc2664cb09fbff441c`; the other two
+(`RelativeWeylConjugation`, `RelativeWeylMultiplicityTargets`) entered it
+later. The module dependencies run from the quotient to indexing and
+conjugation, from indexing to the indexing targets, and from conjugation and
+the indexing targets to the multiplicity targets.
 
-| Pair | Candidate | Independent reviewer |
-| --- | --- | --- |
-| `RelativeWeyl` | `710b68e8-2925-45ef-976e-0eb5961fa051` | Reviewer 8594 |
-| `RelativeWeylIndexing` | `fec609d4-e718-4c45-b5f6-9cf7b0567c21` | Reviewer 8622 |
-| `RelativeWeylIndexingTargets` | `c17b0a7c-9355-4d4a-9273-53d767a9da2f` | Reviewer 8632 |
-
-The next two had successful machine validation and independent semantic
-approval but remained staged and unpublished at their inspection:
-`RelativeWeylConjugation`, candidate
-`e0f54c4d-be80-427c-b222-f91152e73cba`, Reviewer 8659; and
-`RelativeWeylMultiplicityTargets`, candidate
-`c1317573-5135-4aae-a15a-48e206331c14`, Reviewer 8665.
-Integration order is quotient before indexing and conjugation, indexing
-before indexing targets, and conjugation plus indexing targets before
-multiplicity targets. These identifiers record evidence and do not name
-mathematical imports.
-
-Recovery check `6f5a9af5-594f-45d7-ae45-1ec8b23c4525` compiled all five
-modules with no diagnostics and confirmed that
-`actualIntersectionEqualityCriterion` returns `Prop`. This development
-check is not independent proof acceptance. No completion of the host task
-or proof of a declared target follows from these receipts.
-
-Authors: Worker 165, with Worker 164's source-row analysis, subgroup-action
-scope analysis and identification of the actual-Levi/Weyl equality-test gap,
-and Worker 1186's rank/sign and actual-realization requirement refinements.
+A recovery check compiled all five modules with no diagnostics and confirmed
+that `actualIntersectionEqualityCriterion` returns `Prop`. This development
+check is not a proof of a declared target.

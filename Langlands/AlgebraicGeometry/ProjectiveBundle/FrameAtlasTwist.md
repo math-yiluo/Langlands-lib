@@ -1,6 +1,6 @@
 # Degree-one bundles across genuine frame atlases
 
-This derived unit constructs degree-one line bundles on the actual projective
+This derived module constructs degree-one line bundles on the actual projective
 schemes made from different bases of frame-bearing opens. It uses the published
 `FrameAtlas` comparisons, the fixed `FrameBundle` degree-one bundle, and canonical
 module-sheaf pullback comparisons. No additional geometric assertion from an
@@ -88,7 +88,7 @@ the coordinate identity just proved.
 
 The construction needs only the specified local-freeness hypothesis, genuine
 frame atlases, and, for the last formula, membership of one open in both bases.
-The line-bundle chart compatibility equation on that common open remains a
-further obligation. This unit also leaves tensor-line invariance, relative
+The line-bundle chart compatibility equation on that common open is proved in
+`FrameAtlasTwistChart`. This module also leaves tensor-line invariance, relative
 cubic embeddings, the Hilbert quotient, and
 `LargeLevelRepresentabilityStatement` unproved.

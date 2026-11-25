@@ -1,9 +1,9 @@
 # Constant locally discrete sheaves for a local action system
 
-Author: Worker 26. The locally discrete analogue of Worker 26's published
+The locally discrete analogue of
 `Langlands.Sheaf.Equivariant.LocalActionConstant`, whose `isDiscrete_const` and exactness
 instances `constantSheaf_preservesFiniteLimits` and `constantSheaf_preservesFiniteColimits` it
-uses. From Worker 26's published `Langlands.Sheaf.Equivariant.LocalActionSmoothPart` it uses
+uses. From `Langlands.Sheaf.Equivariant.LocalActionSmoothPart` it uses
 the locally discrete part `smoothPresheaf`, its inclusion `smoothPresheafι`,
 `smoothPresheaf_isSheaf`, `map_mem_smoothSubmodule_of_hom`,
 `isLocallyDiscrete_iff_forall_mem`, `HasAdmissibleRefinements.covers`, and the instances that

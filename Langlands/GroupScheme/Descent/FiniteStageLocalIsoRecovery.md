@@ -34,7 +34,7 @@ interfaces already in the Library. They construct no initial isomorphism,
 quasi-split model, adjoint quotient or inner discrepancy. Their role is to
 make exact finite-stage recovery available to all-test discrepancy descent.
 
-The definition selected for this contribution is `IsoModel.refinedLocalIso`.
+The definition in this module is `IsoModel.refinedLocalIso`.
 It constructs the natural local equivalences over `Spec Ω` by refining the
 finite model's actual family along `Spec Ω → Spec E`.
 `IsoModel.refinedLocalIso_eq` identifies this constructed object with the

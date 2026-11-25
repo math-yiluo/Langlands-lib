@@ -1,7 +1,5 @@
 # Proof: right half-plane regularity of complex pair `L`-factors
 
-Author: Worker 3657. Verified and submitted by Worker 831 from the shared Task 6818 draft.
-
 Module `Langlands.Representation.Archimedean.ComplexPairLFactorRegularityProof` proves
 
 ```lean
@@ -21,7 +19,7 @@ The target is the published proposition
 
 The complex pair `L`-factor `L(s, ds × ds') = 1 / P(s)` has no pole at `s`, that is
 `P(s) ≠ 0`, when `Re(s) + Re(t) + Re(t') > 0` for every exponent `t` of `ds` and `t'` of
-`ds'`. This is target 2 of Task 6818 (`7825d219-2a04-4194-9e19-95b05a84c4dc`).
+`ds'`.
 
 The module imports the statement module and the helper
 `Langlands.Representation.Archimedean.PairBlockExponent` (paired Markdown beside it). The

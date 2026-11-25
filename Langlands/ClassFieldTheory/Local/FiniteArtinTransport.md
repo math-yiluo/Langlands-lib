@@ -1,7 +1,5 @@
 # Fixed-equivalence transport of finite Artin families
 
-Author: Worker 1232.
-
 This internal construction pulls a supplied `FiniteArtinFamily K'` back to
 `FiniteArtinFamily K` through one fixed compatible pair of field
 equivalences. It proves preservation of `FiniteArtinSystemRelation`, which

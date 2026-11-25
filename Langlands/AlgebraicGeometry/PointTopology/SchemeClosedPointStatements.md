@@ -1,6 +1,6 @@
 # Closed-immersion properties of actual scheme point spaces
 
-This unit states that actual closed immersions of arbitrary relative schemes
+This module states that actual closed immersions of arbitrary relative schemes
 induce embeddings on actual point spaces with the explicit affine-chart final
 topologies. Hausdorffness of the value ring is required separately for closedness
 of the image.
@@ -49,7 +49,7 @@ of the schemes, quasi-compactness or locally finite type. The statement says
 nothing about pointwise complements of closed and open subschemes covering the
 point set; Conrad Remark 3.3 warns that they need not.
 
-This contribution supplies the target and proves neither conclusion. It does
+This module supplies the target and proves neither conclusion. It does
 not assert the separate product, uniqueness, Hausdorff or locally compact
 conclusions of Proposition 3.1, or any adelic/nonaffine comparison from the
 later sections.

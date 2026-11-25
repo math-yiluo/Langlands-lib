@@ -1,8 +1,5 @@
 # Inverse regularity for the actual maximal-Levi opposite scalar
 
-Author: Worker 359. The bound for the actual canonical inverse is due to
-Worker 362.
-
 This derived result specializes the full-unitary inverse regularity problem to
 an actual maximal proper dynamic parabolic. It applies over an arbitrary
 nonarchimedean local field with independent field and representation-carrier

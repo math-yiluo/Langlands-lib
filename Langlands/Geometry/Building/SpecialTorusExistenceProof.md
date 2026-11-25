@@ -3,9 +3,8 @@
 This module proves the Library proposition
 `Langlands.Geometry.Building.SpecialTorusExistenceStatement.{u}` (Kaletha–Prasad, *Bruhat–Tits
 Theory: A New Approach*, Proposition 9.3.4, printed p. 332) at arbitrary universe `u`, in equal
-and mixed characteristic. The statement module
-`Langlands.Geometry.Building.UnramifiedSpecialApartmentStatement` and its Markdown are
-unchanged. The theorem has no premise: there is no extra hypothesis and no supplied building,
+and mixed characteristic. The statement is defined in the module
+`Langlands.Geometry.Building.UnramifiedSpecialApartmentStatement`. The theorem has no premise: there is no extra hypothesis and no supplied building,
 point, integral model or torus.
 
 ## Declaration
@@ -33,7 +32,7 @@ It combines two theorems.
    a maximal `K`-split torus of `G_K`. This is the building part of the proof of KP 9.3.4.
 2. `Langlands.Geometry.Building.specialTorusExistence_of_integralModel :
    SpecialTorusIntegralModelStatement.{u} → SpecialTorusExistenceStatement.{u}`, in the helper
-   module `Langlands.Geometry.Building.SpecialTorusExistenceFromModel` of this contribution. Its
+   module `Langlands.Geometry.Building.SpecialTorusExistenceFromModel`, ported with this file. Its
    Markdown describes the proof in full. In short, it does the following.
    * It takes the centralizer `Z` of `𝒮` in `M` and a maximal torus `T₀` of the special fibre
      of `M` that contains the special fibre of `𝒮`.
@@ -48,10 +47,10 @@ It combines two theorems.
 
 The rank count replaces the apartment argument that KP use for maximality.
 
-## Modules of this contribution
+## Modules ported with this file
 
-Besides this module and `SpecialTorusExistenceFromModel`, the contribution adds four helper
-modules, each with its own Markdown:
+Besides this module and `SpecialTorusExistenceFromModel`, four helper modules were ported with
+this file, each with its own Markdown:
 
 * `Langlands.GroupScheme.Torus.ResidueRankComparison`: ranks of closed split tori compared
   with a maximal torus of a residue fibre.

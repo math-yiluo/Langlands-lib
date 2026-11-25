@@ -28,7 +28,7 @@ theorem ActionLift.exists_agreeOn [IsTopologicalGroup G]
   refine ⟨N, hN, ha, hb, fun g hg => ?_⟩
   have h' := h g hg
   rw [Category.comp_id, Category.id_comp] at h'
-  exact Iso.ext h'.symm
+  exact Aut.ext (Iso.ext h'.symm)
 
 /-- **Existence of lifts** of a continuous action along a rigid morphism `f` with compact
 source, from lifts of near-identity automorphisms. -/
@@ -38,12 +38,13 @@ theorem nonempty_actionLift_of_automorphismLift [IsTopologicalGroup G]
     (hL : ∀ E : Finset (TestTriple (presentationOf U)),
       ∃ D : Finset (TestTriple (presentationOf X)), ∀ σ : Aut X,
         (∀ τ ∈ D, σ ∈ nearIdentity τ) →
-          ∃ ψ : U ⟶ U, ψ ≫ f = f ≫ σ.hom ∧ ∀ τ ∈ E, IsNear τ ψ (𝟙 U)) :
+          ∃ ψ : U ⟶ U, ψ ≫ f = f ≫ σ.asIso.hom ∧ ∀ τ ∈ E, IsNear τ ψ (𝟙 U)) :
     Nonempty (ActionLift ρ f) := by
   classical
   obtain ⟨E₀, hE₀⟩ := hf
   -- Lifts near the identity are unique.
-  have huniq : ∀ (σ : Aut X) (ψ₁ ψ₂ : U ⟶ U), ψ₁ ≫ f = f ≫ σ.hom → ψ₂ ≫ f = f ≫ σ.hom →
+  have huniq : ∀ (σ : Aut X) (ψ₁ ψ₂ : U ⟶ U), ψ₁ ≫ f = f ≫ σ.asIso.hom →
+      ψ₂ ≫ f = f ≫ σ.asIso.hom →
       (∀ τ ∈ E₀, IsNear τ ψ₁ (𝟙 U)) → (∀ τ ∈ E₀, IsNear τ ψ₂ (𝟙 U)) → ψ₁ = ψ₂ :=
     fun σ ψ₁ ψ₂ h₁ h₂ n₁ n₂ =>
       hE₀ U (𝟙 U) ψ₁ ψ₂ (h₁.trans h₂.symm) fun τ hτ => ⟨(n₁ τ hτ).symm, (n₂ τ hτ).symm⟩
@@ -64,7 +65,7 @@ theorem nonempty_actionLift_of_automorphismLift [IsTopologicalGroup G]
     exact Set.mem_iInter₂.1 hg τ hτ
   have hHopen : IsOpen (H : Set G) := Subgroup.isOpen_of_mem_nhds H hHnhds
   -- The chosen lifts.
-  have hex : ∀ h : H, ∃ ψ : U ⟶ U, ψ ≫ f = f ≫ (ρ h).hom ∧ ∀ τ ∈ E₀, IsNear τ ψ (𝟙 U) :=
+  have hex : ∀ h : H, ∃ ψ : U ⟶ U, ψ ≫ f = f ≫ (ρ h).asIso.hom ∧ ∀ τ ∈ E₀, IsNear τ ψ (𝟙 U) :=
     fun h => hD₀ (ρ h) ((hmemH h).1 h.2)
   choose ψ hψf hψn using hex
   have hψ_one : ψ 1 = 𝟙 U := by
@@ -87,8 +88,8 @@ theorem nonempty_actionLift_of_automorphismLift [IsTopologicalGroup G]
   -- The action.
   let act : H →* Aut U :=
     { toFun := fun h => ⟨ψ h, ψ h⁻¹, hψ_inv h, hψ_inv' h⟩
-      map_one' := Iso.ext hψ_one
-      map_mul' := fun h h' => Iso.ext (hψ_mul h h') }
+      map_one' := Aut.ext (Iso.ext hψ_one)
+      map_mul' := fun h h' => Aut.ext (Iso.ext (hψ_mul h h')) }
   have hcont : IsContinuousAction act := by
     intro τ
     obtain ⟨D, hD⟩ := hL (insert τ E₀)

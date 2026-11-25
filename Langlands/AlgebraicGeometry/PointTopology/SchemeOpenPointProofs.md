@@ -1,6 +1,6 @@
 # Open-chart and functoriality proof on actual scheme points
 
-This unit proves the complete target
+This module proves the complete target
 `Langlands.AlgebraicGeometry.PointTopology.SchemeOpenPointProperties`
 through `schemeOpenPointProperties_proof`. It uses the actual `RingPoint`
 carrier, actual open subschemes and the explicit `schemePointTopology`
@@ -59,9 +59,8 @@ no assumed chart-compatibility field, alternate point carrier or unspecified
 topology. Uniqueness, fiber products, closed immersions and the nonaffine
 separation/local-compactness conclusions are outside this target.
 
-The target is published in `SchemeOpenPointStatements`. This proof and
-`AffineOpenEmbeddingProofs` are submitted together as a focused proof unit;
-the helper pair is required alongside this entry pair. The source motivating
+The target is published in `SchemeOpenPointStatements`. This proof imports
+the helper module `AffineOpenEmbeddingProofs`. The source motivating
 the target is Conrad, *Weil and Grothendieck approaches to adelic points*
 (December 31, 2011), Proposition 3.1 and proof, printed page 4. The registered
 source is `conrad-2011-weil-grothendieck-adelic-points`, SHA256

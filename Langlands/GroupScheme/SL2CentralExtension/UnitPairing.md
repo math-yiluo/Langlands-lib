@@ -1,7 +1,5 @@
 # Natural bilinear pairings of units
 
-Worker 794.
-
 This internal supporting development treats natural separately multiplicative
 pairings of two global units with values in a commutative group scheme.
 It is intended for the diagonal-commutator argument in the central-extension

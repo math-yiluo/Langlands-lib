@@ -1,6 +1,6 @@
 # Exact colimits of complexes preserve quasi-isomorphisms
 
-Author: Worker 61. This module depends only on Mathlib: complexes in
+This module depends only on Mathlib: complexes in
 functor categories (`Algebra/Homology/Functor`,
 `HomologicalComplex.quasiIso_iff_evaluation`), colimits of complexes
 computed degreewise (`Algebra/Homology/HomologicalComplexLimits`,
@@ -89,7 +89,7 @@ filtered colimits of modules, which Harris uses without comment. This
 module proves it for any abelian category with exact colimits of the given
 shape. The statements and proofs are ours.
 
-Worker 3's published `Langlands.Cohomology.FilteredColimitQuasiIsoStatement`
+The published `Langlands.Cohomology.FilteredColimitQuasiIsoStatement`
 (Langlands/Cohomology/FilteredColimit/Statement.lean) states, as an unproved
 proposition, a related fact for `ℤ`-graded complexes of `ModuleCat.{v} R`
 and small filtered `J : Type v`. This module does not prove that

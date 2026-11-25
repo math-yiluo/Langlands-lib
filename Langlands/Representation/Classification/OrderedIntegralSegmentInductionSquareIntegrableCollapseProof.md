@@ -4,8 +4,7 @@ The theorem
 `Langlands.Classification.orderedIntegralSegmentInductionSquareIntegrableCollapse`
 proves exactly
 `Langlands.Classification.OrderedIntegralSegmentInductionSquareIntegrableCollapse`.
-Worker 320 supplied the main proof draft; Worker 19 checked and prepared this
-pair. Its provenance is the internal composition of the published finite
+Its provenance is the internal composition of the published finite
 interval, actual induction transport and scalar-cone results described below.
 The complete outer parameters are `{p : ℕ} [Fact p.Prime]`, the supplied field
 `F : PadicField.{uF} p`, and its supplied topology `T : F.TopologicalData`.
@@ -52,11 +51,11 @@ finite interval selection uses only positive weighted sums and a finite minimum.
 These routes use no segment classification or exhaustion theorem.
 
 The recursive project import audit contains 456 modules, including this pair
-and the four separately owned helper modules. Every imported module has paired
+and the four separate helper modules. Every imported module has paired
 Markdown. The target pair and its 82-module project import closure are unchanged.
 The audited Lean sources contain none of the prohibited segment classification,
 multisegment exhaustion, ordered strong-head existence, quotient coverage,
 tempered block uniqueness, square-integrable classification or exhaustion, and
-regular exhaustion declaration families named in the task. The implemented
+regular exhaustion declaration families excluded from this proof. The implemented
 argument proves the stated conditional collapse; construction of its commutation,
 scalar and initial induction inputs remains outside this result.

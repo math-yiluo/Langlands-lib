@@ -18,7 +18,7 @@ normalized fiber sum `groupStandardTotalSystemMap` of the StandardMap module alo
 `G ⧸ H' ⟶ G ⧸ H`, followed by the map of standard total complexes induced by the inclusion of
 the `H`-invariants into the `H'`-invariants. Followed by the comparison
 `quotientInvariantsTotalSystemToRepExtend` for `H'`, it is the comparison for `H`
-(`quotientInvariantsTransition_comp_toRepExtend`). So, given Worker 3's unproved
+(`quotientInvariantsTransition_comp_toRepExtend`). So, given the unproved
 `ProPInvariantSubcomplexStatement`, it is a quasi-isomorphism at every level at which `H` acts
 trivially on the cohomology, for `H`, `H'` pro-`p` and `p` invertible in `R`.
 

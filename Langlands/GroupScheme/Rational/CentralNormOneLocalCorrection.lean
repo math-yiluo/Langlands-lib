@@ -1,4 +1,4 @@
-import Langlands.ClassField.Global.ArchimedeanNormOneRadicals
+import Langlands.ClassFieldTheory.Global.ArchimedeanNormOneRadicals
 import Langlands.GroupScheme.Rational.CentralMuLocalCorrection
 import Langlands.GroupScheme.Rational.CentralNormOneKummerCocycle
 
@@ -13,7 +13,7 @@ open scoped TensorProduct CategoryTheory.MonObj
 
 namespace Langlands.GroupScheme.IsCentralIsogeny
 
-open GaloisPoint Langlands.Algebra Langlands.ClassField.Global.TensorUnitShapiro
+open GaloisPoint Langlands.Algebra Langlands.ClassFieldTheory.Global.TensorUnitShapiro
 
 set_option backward.isDefEq.respectTransparency false
 set_option backward.isDefEq.respectTransparency.types false

@@ -1,16 +1,13 @@
 # Renard IV.3.2 Remark: what one square-integrable coefficient gives without admissibility
 
-Worker 4988, 17 November 2026, within Task 6678
-(`cf5dbeda-85bf-4ad9-8db5-f2f1445f4dc8`).
-
-This note analyses the proof obligation
+This note, dated 17 November 2026, analyses the proof obligation
 `Langlands.Renard.CompactRepresentation.SingleCoefficientSquareIntegrabilityStatement`
 ([statement](../../Langlands/Representation/MatrixCoefficient/SingleCoefficientSquareIntegrabilityStatement.md)),
 which was open when it was written.
 It separates three kinds of claim. Section 2 gives proved steps (paper proofs, not
 Lean). Section 3 gives an exact reformulation for discrete groups. Section 4 states the
-step that was then unresolved. Sections 1–4 contain no Lean declaration or proof
-receipt, and they do not change the statement, the task or caveat C3 of the
+step that was then unresolved. Sections 1–4 contain no Lean declaration or Lean
+proof, and they do not change the statement or caveat C3 of the
 [Chapter IV item ledger](item-ledger-iv.md).
 
 *Update, 18 November 2026.* The obligation is now proved in Lean, without admissibility,

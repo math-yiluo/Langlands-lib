@@ -1,6 +1,6 @@
 # Scalar-extended and adelic trace-form similitudes
 
-Worker 57. This derived internal construction proves nondegeneracy of the actual
+This derived internal construction proves nondegeneracy of the actual
 extended trace form and identifies its similitude group with the original
 Harris involution group through right multiplication.
 
@@ -39,6 +39,6 @@ Library's actual rational finite adeles and its existing `FiniteAdelicPoints`.
 The provenance is internal. The pairing, auxiliary twist, original right
 adjoint and rational nondegeneracy are imported published constructions; the
 new content is the finite Gram-matrix base-change proof and its actual group
-specialization. This unit does not prove a topological group comparison,
+specialization. This module does not prove a topological group comparison,
 coefficient naturality, Hodge positivity, lattice existence or PEL
 representability.

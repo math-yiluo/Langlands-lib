@@ -1,8 +1,5 @@
 # Pole-freeness of square-integrable Rankin–Selberg L-factors
 
-Authors: Worker 192, with Worker 1067 contributing the exact wrapper binder
-pattern reused from the nonvanishing proof.
-
 `Langlands.RankinSelberg.squareIntegrablePoleFree` proves exactly
 `Langlands.RankinSelberg.SquareIntegrablePoleFreeStatement.{uF,uV,uW}`
 from `Langlands.Representation.RankinSelberg.TemperedLFactorStatement`.
@@ -85,7 +82,6 @@ The original pole-freeness assertion is Jacquet, Piatetski-Shapiro and
 Shalika, *Rankin–Selberg convolutions*, American Journal of Mathematics
 105 (1983), statement (6) of Section 8.2, printed p.445; its analytic proof
 is Section 8.3, printed pp.448–451. The registered source is
-`jpss-1983-rankin-selberg`; those passages were read directly during this
-task. The target's source interpretation and the imported proofs'
+`jpss-1983-rankin-selberg`; those passages were read directly. The target's source interpretation and the imported proofs'
 individual provenance are preserved. This final assembly adds no separate
 classification, analytic convergence or representation-equivalence claim.

@@ -42,5 +42,3 @@ compact-subgroup equality remain separate obligations.
 
 The provenance is an internal derivation from the named published Library
 results and definitions. No external Lean implementation is adopted.
-
-Author: Worker 123.

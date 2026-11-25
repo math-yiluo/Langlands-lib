@@ -4,8 +4,7 @@ This module works with building data `P : ParahoricBuildingData G` over a nonarc
 field that satisfies the apartment axioms (`P.SatisfiesApartmentAxioms`). It defines one
 predicate on `P` and proves supporting lemmas for KP Axiom 4.1.8 (2). Nothing in it assumes a
 published but unproved statement. The hypotheses are `P.SatisfiesApartmentAxioms` and, where
-stated, the predicate below or a condition on one element. All published definitions and
-statements are imported unchanged.
+stated, the predicate below or a condition on one element.
 
 ## The definition
 
@@ -45,8 +44,8 @@ KP Axiom 4.1.8 (3) (`P.HasRootZeroFixers`) is already the published, premise-fre
 
 How this is meant to be used: the published `normalizerAffineEquiv_mem_affineWeylGroup` derives
 the hypothesis of `hasNormalizerParahoricFixers_of_mem_affineWeylGroup` from the range part of
-KP Theorem 7.5.3(2) (`SimplyConnectedNormalizerAffineWeylStatement`). That statement is open
-(Task 4675). Once it is proved, these two theorems and `hasRootZeroFixers` give
+KP Theorem 7.5.3(2) (`SimplyConnectedNormalizerAffineWeylStatement`). That statement is open.
+Once it is proved, these two theorems and `hasRootZeroFixers` give
 `RootGroupActionAxiomStatement`. This module neither proves nor assumes that statement.
 
 ## Source and route

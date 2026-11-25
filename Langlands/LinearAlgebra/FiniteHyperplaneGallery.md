@@ -1,6 +1,7 @@
 # Finite chamber galleries along rational segments
 
-This is internal linear algebra for Task 5515. `SparseInterval s a b`
+This is internal linear algebra for the existence of an irreducible induced
+unramified twist for arbitrary irreducible Levi data. `SparseInterval s a b`
 means that the open interval from `a` to `b` contains at most one member
 of a finite set of rational breakpoints.
 

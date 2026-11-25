@@ -1,6 +1,6 @@
 # Rank-one minimality among arbitrary ground-field pseudo-parabolics
 
-This derived unit works over an arbitrary field and universe. The ambient
+This derived module works over an arbitrary field and universe. The ambient
 group is smooth, connected and affine. Its chosen actual maximal split torus
 has every nonzero relative Lie root equal to an integral multiple of one
 specified character `a`. The cocharacter `ν` pairs positively with `a`,
@@ -46,7 +46,7 @@ with that trivial subgroup. Thus
 this presentation with the preceding minimality proof.
 
 All statements concern the actual group schemes, integral lattices and
-subgroup functors on every relative scheme test. The unit is an internal
+subgroup functors on every relative scheme test. The module is an internal
 deduction from the cited Library APIs and the included same-torus
 rank-one comparison. It does not prove the supplied conjugacy statement,
 connectedness of the parabolic representative, properness, cyclicity of

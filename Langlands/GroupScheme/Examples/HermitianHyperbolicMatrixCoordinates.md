@@ -1,7 +1,5 @@
 # Matrix coordinates for a hyperbolic Hermitian splitting
 
-Author: Worker 176.
-
 This internal construction converts the product coordinates of
 `HermitianHyperbolicReduction` into function coordinates on the existing
 `HermitianRoot.Index`, and then into an actual invertible Gram-congruence

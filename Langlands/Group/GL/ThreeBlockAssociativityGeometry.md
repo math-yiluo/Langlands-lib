@@ -1,7 +1,5 @@
 # Literal two-grouping geometry for three positive blocks
 
-Author: Worker 838.
-
 This internal module collects, at the single total rank `C + (A + B)`, the
 ordered refinement data that the proposition
 `Parabolic.OrderedProductRegrouping` needs for both bracketings of three

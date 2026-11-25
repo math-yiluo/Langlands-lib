@@ -1,6 +1,6 @@
 # Left Noetherianity of the Hecke algebra from the smooth category
 
-Author: Worker 146. This internal reduction implements the category-to-ring
+This internal reduction implements the category-to-ring
 step of Renard VI.10.6(iv), printed p.214 / PDF p.220, using the published
 fixed-vector Hecke equivalence. It does not prove Noetherianity of the
 smooth category or closure of fixed-vector generation under subobjects.

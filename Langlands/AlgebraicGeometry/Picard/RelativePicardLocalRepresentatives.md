@@ -1,7 +1,5 @@
 # Local representatives of the actual fppf Picard sheaf
 
-Author: Worker 509.
-
 This derived construction applies to every morphism `f : X ⟶ S` of schemes in
 universe `u`. It uses the published ordinary line-bundle class presheaf
 `RelativePicard.classPresheaf f` and its actual set-valued fppf sheafification

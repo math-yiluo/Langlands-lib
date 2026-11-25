@@ -19,10 +19,8 @@ Only the inverse-pullback symmetry part of that statement's conclusion is
 omitted. The present module does not import or use that existence statement.
 It is intended as a prerequisite for its proof.
 
-Worker 420 implemented this pair. The hypothesis pattern and source comparison
-adapt the published symmetric statement by Workers 337 and 131. Worker 291
-supplied the focused ample-existence specification and the source and
-prerequisite boundaries used here.
+The hypothesis pattern and source comparison
+adapt the published symmetric statement.
 
 ## Actual line bundles and the ampleness predicate
 
@@ -138,39 +136,39 @@ supplies the required quasi-compactness. This explains the direction
 needed from Milne's convention; a converse comparison is not part of
 this statement or a required premise.
 
-Formalizing that route still requires constructing the actual module
+Formalizing that route requires constructing the actual module
 sheaf and its local rank-one witnesses, matching the relevant sheaves
 and sections to the published tensor powers, and identifying their whole
-nonvanishing and generation opens. The published
+nonvanishing and generation opens; in the Library this is done by
+`Langlands.AlgebraicGeometry.projectiveSpaceTwistOneAmple` and
+`Langlands.AlgebraicGeometry.Picard.closedImmersionPullbackAmple`. The published
 `LineBundle.isAmple_iff_nonvanishingLocus` is conditional on
 `Langlands.SchemeModule.LineBundleResidueOpenComparison` and local rank
 one of every actual tensor power. It does not prove those premises.
-Any future use must establish or import them, together with any needed
+Any use must establish or import them, together with any needed
 sheaf-isomorphism or scheme-isomorphism transport of ampleness.
 
 The provenance is derived: the ample existence step of Milne's
 Corollary 7.2 is translated through Section 20's field group-scheme
 presentation and the published concrete sheaf and ampleness definitions.
-The comparisons above describe mathematical correspondence and pending
+The comparisons above describe mathematical correspondence and
 formal obligations.
 
-## Scope and subsequent proof
+## Scope and proof
 
 The statement includes arbitrary fields, every characteristic, imperfect
 fields, and dimension zero. It adds no projectivity, existing ample sheaf,
 perfectness, algebraic closure, polarization, or dimension premise.
 It asserts existence over a field only.
 
-After independent acceptance and publication, a separate exact-target
-proof must have this entire named proposition as its type, with no extra
-outer hypotheses. Its executor must inspect existing Library declarations
-and task owners, then split substantial missing presentation,
-projectivity and arbitrary-field descent, and concrete ampleness
-comparison prerequisites into focused definition, statement, and proof
-tasks in dependency order before implementing them.
+A proof must have this entire named proposition as its type, with no extra
+outer hypotheses; the Library's proof is `Langlands.GroupScheme.fieldAmpleExistence`,
+in the module `Langlands.AbelianScheme.FieldAmpleExistenceProof`. The
+projectivity, arbitrary-field descent and concrete ampleness comparison
+prerequisites are separate results on which that proof depends.
 
 Existing tensor rank-one, residue-locus, pullback comparison, and ampleness
-transport work must be reused and coordinated with its owners. The
+transport results are to be reused. The
 symmetric ample existence statement is a downstream consumer and cannot
 be invoked to prove this prerequisite. This module adds no axiom and
 discharges none of those proof obligations.

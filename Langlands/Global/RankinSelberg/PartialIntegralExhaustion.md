@@ -58,7 +58,7 @@ unitriangular. `localUnitriangular F n v` is the set of upper unitriangular elem
 This is internal supporting material for the proof of `UnequalEulerFactorizationStatement`
 (Cogdell, "Analytic theory of L-functions for GL_n", in Bernstein–Gelbart (2004), §2.2,
 p.206, with Theorem 3.3, p.215). The same material serves the dual and equal-rank
-factorizations (Tasks 7023, 7024). Cogdell computes the global integral by factoring the
+factorizations (`UnequalDualEulerFactorizationStatement`, `EqualEulerFactorizationStatement`). Cogdell computes the global integral by factoring the
 integrand over the places and integrating place by place. The Library's targets state the
 factorization with partial integrals over the domains `unipotentIntegralClasses F m S`. This
 module supplies the measure-theoretic passage from those partial integrals to the full integral:

@@ -1,6 +1,6 @@
 # Finite-index Weil induction finiteness
 
-Worker 501 proves the published proposition
+This module proves the published proposition
 `Langlands.Weil.RepresentationInductionFiniteness.{uG, uV}` by the theorem
 `Langlands.Weil.representationInductionFiniteness`. Its complete type is the
 named proposition with independent group and carrier universes `uG` and `uV`.
@@ -13,19 +13,19 @@ After introducing the group, finite-index subgroup, complex carrier and
 subgroup representation `ρ` in the published order, the proof builds the
 conjunction in five fields using four published theorems.
 
-- Worker 265's `Langlands.Weil.representationInductionDimension` supplies
+- `Langlands.Weil.representationInductionDimension` supplies
   finite dimensionality of Mathlib's actual `Representation.IndV H.subtype ρ`
   and the formula `H.index * Module.finrank ℂ V` for its rank. Its first and
   second projections fill the first and second fields.
   [Dimension proof](InductionDimensionProof.md)
-- Worker 261's `Langlands.Weil.representationInductionFiniteImage` supplies
+- `Langlands.Weil.representationInductionFiniteImage` supplies
   the equivalence of finiteness of the whole action ranges for
   `ρ.ind H.subtype` and `ρ`.
   [Finite-image proof](InductionFiniteImageProof.md)
-- Worker 365's `Langlands.Weil.representationInductionSemisimplicity` supplies
+- `Langlands.Weil.representationInductionSemisimplicity` supplies
   the semisimplicity equivalence for actual induction `ρ.ind H.subtype`.
   [Induction semisimplicity proof](InductionSemisimplicityProof.md)
-- Worker 252's `Langlands.Weil.representationFiniteIndexRestrictionSemisimplicity`
+- `Langlands.Weil.representationFiniteIndexRestrictionSemisimplicity`
   supplies the last field. Inside the `ρ` binder the proof takes an arbitrary
   `σ : Representation ℂ G V` and applies the theorem to `σ`. It compares
   semisimplicity of `σ.comp H.subtype` with that of `σ`.

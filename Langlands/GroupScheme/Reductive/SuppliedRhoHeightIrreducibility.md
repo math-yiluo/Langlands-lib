@@ -1,13 +1,13 @@
 # Entire-space Steinberg-height irreducibility from supplied root coordinates
 
-This derived internal unit assumes an actual split pinning, integral coroot
+This derived internal module assumes an actual split pinning, integral coroot
 span, and a supplied `SimpleRootCoordinateFamily` over an algebraically closed
 field `k`. Let `q : ℕ` be its exponential characteristic, expressed by
-`ExpChar k q`, and let `r : ℕ` be a height. The unit proves the existing
+`ExpChar k q`, and let `r : ℕ` be a height. The module proves the existing
 `CanonicalRhoSteinbergHeightIrreducibility`
 interface under these inputs. This is conditional support for law 7 of the
 independent Steinberg big-cell construction; existence of the supplied
-structural data remains an outstanding obligation.
+structural data is not proved by this module.
 
 For any supplied highest-weight representation of weight `(q^r - 1) rho`,
 the highest weight space is nonzero. Choose a nonzero highest vector. The
@@ -26,8 +26,8 @@ The result applies at every height, hence fills the published fixed-height
 interface from the supplied family.
 
 Only generic scalar eigenrow and coefficient-space algebra are reused. The
-lower and upper dimension arguments come from the supplied-family units,
+lower and upper dimension arguments come from the supplied-family modules,
 not the existing unconditional canonical-rho height theorem. No canonical
-linked-root choice, excluded root-dimension proof, Borel identification of a
-regular dynamic subgroup, or old Borel/big-cell assembly is used. This unit
+linked-root choice, root-dimension proof, Borel identification of a
+regular dynamic subgroup, or canonical-rho Borel/big-cell assembly is used. This module
 adds no external source assertion.

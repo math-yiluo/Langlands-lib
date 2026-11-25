@@ -1,7 +1,5 @@
 # Longest-representative Jacquet compatibility for the general Aubert operator
 
-Author: Worker 165, task `e3d69272-2599-4a08-a934-cb11f2493e30`.
-
 `Langlands.Aubert.General.JacquetCompatibilityStatement` is the separate
 Prop target for the second equation of Aubert 1995, Theorem 1.7(2), printed
 p.2181 / PDF p.3:
@@ -38,7 +36,7 @@ It contains no K0 identity. The elementary helper
 `x ∈ M_J ↔ n⁻¹ x n ∈ M_(J')`. Its proof writes membership in the image
 as an actual preimage and cancels the conjugations in both directions.
 
-The transport in the target is exactly Worker 23's
+The transport in the target is exactly
 `conjugationK0 n` from [`AlternatingOperator`](AlternatingOperator.md),
 using this derived membership equivalence. It sends a representation of
 `M_(J')` to one of `M_J` by pullback along the continuous equivalence
@@ -55,8 +53,8 @@ Levi operator are the unadjusted signed sums of the actual induction/Jacquet
 maps, with their upstream actual-representation class formulas.
 There is no extra sign and no replacement of the associated subset by `J`.
 
-This is a target on actual subgroup data, pending the connected-reductive
-rational-point specialization. In addition to the named representation
+This is a target on actual subgroup data; the connected-reductive
+rational-point specialization is separate. In addition to the named representation
 prerequisites and compatibility proof, that specialization must realize the
 maximal split torus, its abstract normalizer/full-centralizer quotient,
 the relative-root Coxeter system, standard-Levi root identification and

@@ -1,7 +1,5 @@
 # Separated spaces over non-archimedean fields: totally disconnected rational points
 
-Author: Worker 105; edited by Worker 1516.
-
 This proof module proves the remaining separated-space property of Proposition 5.4 of
 Brian Conrad, *Weil and Grothendieck approaches to adelic points* (December 31, 2011),
 printed p.15 (source `conrad-2011-weil-grothendieck-adelic-points`, SHA-256

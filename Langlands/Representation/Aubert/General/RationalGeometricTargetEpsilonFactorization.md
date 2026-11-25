@@ -1,6 +1,6 @@
 # Factorization of the original rational target epsilon
 
-This internal deduction by Worker 184 completes the target counterpart of
+This internal deduction completes the target counterpart of
 `RationalGeometricEpsilonFactorization`. It uses the actual standard radical
 intersection product, the original inducing-side semidirect decomposition,
 forward conjugation, and the actual continuous semidirect Haar product.

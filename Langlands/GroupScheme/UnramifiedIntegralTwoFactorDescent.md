@@ -1,7 +1,5 @@
 # Two-factor descent using a smooth integral intersection model
 
-Author: Worker 510.
-
 This internal derived helper uses `unramifiedIntegralCosetDescent`. It concerns
 actual coefficient points of group schemes, with `K = inertiaFixedField F`,
 the maximal unramified extension.

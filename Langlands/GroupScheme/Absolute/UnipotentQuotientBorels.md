@@ -67,7 +67,9 @@ The actual published inputs are provided by:
 - `Langlands.GroupScheme.Rational.MinimalPseudoParabolicRangeReduction`
   and `Langlands.GroupScheme.ClosedSubgroupMonomorphism`.
 
-This unit supplies algebraic Borel correspondence for a given quotient.
+This module supplies algebraic Borel correspondence for a given quotient.
 It constructs no integral model, facet association, residue-torus lift or
 prescribed-point apartment. `UnramifiedFixedPointSplitTorusStatement`
-remains open.
+is not proved here; it is proved as
+`Geometry.Building.unramifiedFixedPointSplitTorus` in
+`Geometry.Building.UnramifiedFixedPointSplitTorusProof`.

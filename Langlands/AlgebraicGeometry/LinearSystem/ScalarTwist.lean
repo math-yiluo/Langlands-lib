@@ -20,7 +20,7 @@ namespace Langlands.Scheme.Modules
 @[simp]
 lemma unitAut_hom_app_top {X : Scheme.{u}} (M : X.Modules) (c : Γ(X, ⊤)ˣ)
     (m : GlobalSections M) :
-    (unitAut M c).hom.app ⊤ m = (c : Γ(X, ⊤)) • m := by
+    (unitAut M c).asIso.hom.app ⊤ m = (c : Γ(X, ⊤)) • m := by
   rw [unitAut_hom_app]
   change X.presheaf.map (𝟙 (op (⊤ : X.Opens))) (c : Γ(X, ⊤)) • m = _
   simp
@@ -36,7 +36,7 @@ def identityScalarPullbackIso {X : Scheme.{u}} (M : X.Modules)
     (f : X ⟶ X) (w : f = 𝟙 X) (c : Γ(X, ⊤)ˣ) :
     (Scheme.Modules.pullback f).obj M ≅ M :=
   (Scheme.Modules.pullbackCongr w).app M ≪≫
-    (Scheme.Modules.pullbackId X).app M ≪≫ Scheme.Modules.unitAut M c
+    (Scheme.Modules.pullbackId X).app M ≪≫ (Scheme.Modules.unitAut M c).asIso
 
 /-- The canonical comparison over an identity scheme map, followed by a unit
 scalar, has the expected coordinate formula. -/
@@ -44,7 +44,7 @@ lemma pullback_identity_scalar_coordinate {X : Scheme.{u}} (M : X.Modules)
     (f : X ⟶ X) (w : f = 𝟙 X) (c : Γ(X, ⊤)ˣ) (s : GlobalSections M) :
     (identityScalarPullbackIso M f w c).hom.app ⊤
         (pullbackSection f M s) = (c : Γ(X, ⊤)) • s := by
-  change (Scheme.Modules.unitAut M c).hom.app ⊤
+  change (Scheme.Modules.unitAut M c).asIso.hom.app ⊤
     (((Scheme.Modules.pullbackId X).hom.app M).app ⊤
       (((Scheme.Modules.pullbackCongr w).hom.app M).app ⊤
         (pullbackSection f M s))) = _
@@ -83,9 +83,9 @@ lemma relativeLinearActionTwistIso_smulOfUnit
           (RelativeProjectiveSpace.twistOne S n).obj ≪≫
         (Scheme.Modules.pullbackId (RelativeProjectiveSpace S n)).app
           (RelativeProjectiveSpace.twistOne S n).obj ≪≫
-        Scheme.Modules.unitAut (RelativeProjectiveSpace.twistOne S n).obj
+        (Scheme.Modules.unitAut (RelativeProjectiveSpace.twistOne S n).obj
           (Units.map (Scheme.Modules.scalarsFromBase
-            (RelativeProjectiveSpace.toBase S n ≫ a)).toMonoidHom c) := by
+            (RelativeProjectiveSpace.toBase S n ≫ a)).toMonoidHom c)).asIso := by
   apply pullback_comparison_scalar (RelativeProjectiveSpace.twistOne S n).property
     (RelativeProjectiveSpace.twistOneCoordinate S n)
     (isOpenCover_trivializationOpen

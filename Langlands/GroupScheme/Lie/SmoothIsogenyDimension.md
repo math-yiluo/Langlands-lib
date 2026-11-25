@@ -17,7 +17,7 @@ so these modules are finite-dimensional.
 The implemented proof has three steps. First,
 `finrank_kernel_cast_eq_ringKrullDim` composes the published
 `Lie.finrank_kernel_eq_cotangent` with
-`AlgebraicGeometry.Smooth.isRegularLocalRing_stalk` and
+`AlgebraicGeometry.Smooth.isRegularLocalRing_stalkFLT` and
 `IsRegularLocalRing.iff_finrank_cotangentSpace`. Thus the natural-number
 finrank, cast into `WithBot ℕ∞`, equals the Krull dimension of the actual
 identity stalk. The regularity input is imported from the Library's

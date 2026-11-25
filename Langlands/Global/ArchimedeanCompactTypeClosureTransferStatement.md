@@ -1,7 +1,5 @@
 # Closure transfer for actual compact-type intersections
 
-Author: Worker 94.
-
 `Langlands.Global.ArchimedeanGL.CompactTypeClosureTransferStatement K n`
 is an internal topological prerequisite for the differential-growth argument.
 It uses the published actual compact subgroup, its representation on

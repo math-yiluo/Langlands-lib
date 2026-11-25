@@ -1,7 +1,5 @@
 # Strongly regular fibres of the canonical class-function quotient
 
-Author: Worker 5035.
-
 This module proves the published proposition
 `Langlands.GroupScheme.ClassFunctions.StronglyRegularFibresStatement.{u}`
 (`Rational/ClassFunctionsStronglyRegularFibresStatement`):

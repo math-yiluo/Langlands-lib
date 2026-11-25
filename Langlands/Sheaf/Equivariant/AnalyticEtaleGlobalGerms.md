@@ -1,6 +1,6 @@
 # Global étale sections detected by field-valued point germs
 
-Worker 515. This is an internal construction and proof derived from the
+This is an internal construction and proof derived from the
 published analytic étale site, its point axioms, and the filtered-colimit
 description of site-point fibers. No new literature theorem is assumed.
 

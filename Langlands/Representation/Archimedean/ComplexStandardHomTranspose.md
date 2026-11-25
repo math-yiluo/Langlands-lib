@@ -1,7 +1,7 @@
 # Transposition of intertwinings between complex principal series
 
-Worker 729 wrote this module for Task 7055 (`fbfc1fa1-a863-4424-800e-92f30996a1be`), whose
-target is the Library's `Langlands.Archimedean.ComplexLanglandsQuotientUniqueStatement`. The
+This module was written for the proof of the Library's
+`Langlands.Archimedean.ComplexLanglandsQuotientUniqueStatement`. The
 module states one statement (TP). It proves nothing. The declaration is in the namespace
 `Langlands.Archimedean`. It imports `Langlands.Representation.Archimedean.PrincipalSeriesGKModule`
 and `Langlands.Representation.Archimedean.ComplexLanglandsQuotientReduction`; the latter gives
@@ -34,8 +34,8 @@ inverse characters. The intended `T'` is the transpose of `T` under the contragr
 dualities `X(c)^∨ ≅ X(c⁻¹)` and `X(d)^∨ ≅ X(d⁻¹)`. The statement only asserts that some
 nonzero map exists.
 
-**Provenance.** Derived. TP is an intermediate statement of the uniqueness proof for Task 7055
-and no cited source states it in this form. It is the standard fact that the `U(n)`-finite
+**Provenance.** Derived. TP is an intermediate statement of the uniqueness proof for
+`ComplexLanglandsQuotientUniqueStatement` and no cited source states it in this form. It is the standard fact that the `U(n)`-finite
 dual of a principal series is the principal series of the inverse character. The expected
 proof runs as follows.
 
@@ -63,10 +63,10 @@ it comes from step 2.
 
 ## Use
 
-The follow-up module `ComplexStandardOppositeOrderHomReduction` (Worker 729) applies TP to a
+The follow-up module `ComplexStandardOppositeOrderHomReduction` applies TP to a
 nonzero map `T : X(d) → X(c)` and then applies `ComplexStandardHomExponentStatement` (module
 `ComplexStandardHomExponent`) to both `T` and `T'`. Since the exponents of `c⁻¹` and `d⁻¹`
 are the negatives of those of `c` and `d`, this bounds the real parts of the exponents of `d`
 by those of `c` in the opposite dominance order. Together with E this proves
-`ComplexStandardOppositeOrderHomStatement`, the statement from Worker 727's module
+`ComplexStandardOppositeOrderHomStatement`, the statement from the module
 `ComplexLanglandsQuotientUniqueReduction`.

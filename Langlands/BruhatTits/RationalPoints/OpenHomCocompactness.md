@@ -1,7 +1,5 @@
 # Cocompactness through an open homomorphism
 
-Author: Worker 723.
-
 This module proves two lemmas about topological groups. It uses only Mathlib and
 introduces no definitions. It is internal infrastructure for the cocompactness
 reduction in `CentralDerivedNormKernelCocompactnessReduction`. It has no literature

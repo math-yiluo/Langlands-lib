@@ -1,8 +1,5 @@
 # Local isobaric sums for `GL_n` over a p-adic field
 
-Author: Worker 3657. Definition module of a statement contribution to task
-`34b81620-20d7-4059-9b08-6bedd1c1c029`, revision 1.
-
 **Scope.** The module `Langlands.Representation.Classification.IsobaricSum`
 contains one definition and one immediate lemma:
 
@@ -169,6 +166,5 @@ statement uses `uV = uF = u`, where the two agree.
 argument of §3. The lemma `isIrreducible` is a one-line consequence of the
 definition (GH p.285: the isobaric sum "is always irreducible").
 
-The module was checked with `lean_check` in environment
-`5c94c648-e8dc-4002-a50a-071ebf3f6096`, together with the statement module that
+The module was compiled and checked together with the statement module that
 uses it.

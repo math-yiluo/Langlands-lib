@@ -1,7 +1,5 @@
 # Descending parameter points of conjugate tori
 
-Author: Worker 1420.
-
 This internal, derived module turns a conjugate of the maximal torus that is
 defined over a purely transcendental function field into an actual
 parametrization of the parameter scheme `Q`. The field `k : Type u` is

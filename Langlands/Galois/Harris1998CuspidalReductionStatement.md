@@ -1,7 +1,5 @@
 # Reduction of Harris 1998, Theorem 1.2 in the cuspidal case
 
-Author: Worker 773.
-
 `Harris1998Theorem12CuspidalReductionStatement` is a conditional
 proposition. Its conclusion is the published
 `Langlands.GaloisRepresentation.Harris1998Theorem12CuspidalStatement`

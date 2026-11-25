@@ -1,13 +1,11 @@
 # Free finite group actions on affine schemes from ring actions
 
-Author: Worker 1421.
-
 A group `Γ : Type u` acting on a commutative ring `B : Type u` by ring
 automorphisms acts on `Spec B`. This module packages the action as a Library
 `FiniteFreeSchemeAction Γ (Spec B)` (from
 `Langlands.AlgebraicGeometry.FiniteFreeSchemeActionRelation`), under a pointwise
 freeness hypothesis. It is an internal module for the chart construction of
-task `45ac6e52-a4d8-4414-91f1-03c3be35223e`.
+`Langlands.GroupScheme.HomScheme.TorusChartConstruction`.
 
 - `specIso e`: the automorphism `Spec.map e` of `Spec B` for a ring
   automorphism `e`, with inverse `Spec.map e⁻¹`.

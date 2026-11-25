@@ -1,7 +1,5 @@
 # Semisimplicity under arbitrary field extension
 
-Author: Worker 1294.
-
 The theorem `Langlands.GroupScheme.isSemisimpleFieldExtension` proves exactly
 the published `Langlands.GroupScheme.IsSemisimpleFieldExtensionStatement.{u}`
 from `Langlands.GroupScheme.SimplyConnected.FieldExtensionStatement`.

@@ -1,7 +1,5 @@
 # The actual signed cut complex
 
-Author: Worker 164.
-
 This module constructs the finite signed complex whose terms are actual
 normalized parabolic induction after normalized Jacquet restriction. Its degree
 objects are smooth representations, its differentials are actual equivariant

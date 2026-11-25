@@ -1,6 +1,6 @@
 # Involutive matching of Hermitian inducing parameters
 
-Worker 1765 derives an involutive matching from the actual Hermitian parameter
+This module derives an involutive matching from the actual Hermitian parameter
 symmetry used in Henniart 2000, Appendix A.2, printed p.453. This is an auxiliary
 construction for applying the corrected Appendix pole argument, not a proof of
 unitary-generic classification or of the associated-pair induction theorem.

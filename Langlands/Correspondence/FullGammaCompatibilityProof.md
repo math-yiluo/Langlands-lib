@@ -1,6 +1,6 @@
 # Gamma compatibility of full families from L, epsilon and duality
 
-Author: Worker 1698. This module proves the published Library proposition
+This module proves the published Library proposition
 `Langlands.Correspondence.FullGammaFromFactorsStatement` of
 `Langlands/Correspondence/FullGammaCompatibility`. The closing theorem is
 
@@ -102,5 +102,5 @@ proved here through Mathlib's `TensorProduct.dualDistribEquiv`.
 
 ## Validation
 
-The module compiles in the project Lean service with no errors or warnings.
+The module compiles with no errors or warnings.
 There is no `sorry` and no new axiom.

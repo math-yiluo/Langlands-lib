@@ -1,7 +1,5 @@
 # Rational reduction to a compact finite part with polynomial archimedean height
 
-Author: Worker 5152.
-
 `Langlands.Global.RepresentationGrowth.AdelicRationalHeightReductionStatement` is a
 target proposition for proof. This module states it and proves nothing about it.
 

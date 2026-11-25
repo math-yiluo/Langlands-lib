@@ -1,6 +1,6 @@
 # Ordinary derivatives from bounded root filtrations
 
-This internal supporting unit defines `HasBoundedRootFiltrations` for supplied
+This module defines `HasBoundedRootFiltrations` for supplied
 integer-valuation building data: for each actual relative root there is an
 apartment point and a real depth at which its filtration is algebraically
 bounded. The valuative relation used for boundedness need only be nontrivial;

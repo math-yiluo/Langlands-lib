@@ -10,6 +10,6 @@ Now consider two supplied face charts of one affine reductive group over a nontr
 
 `coordinateConjugateTermIso` constructs the actual term isomorphism from this range equality. Its ambient inclusion equation retains the two original inclusions; no conjugator occurs in the resulting equation. The weights remain the original unscaled canonical face heights.
 
-The coordinate matrix, actual parabolic conjugator and exact square are explicit inputs. This unit does not assert their local existence or perform base change, faithfully flat reflection, or global filtration descent. The nontrivial-ring premise is explicit from actual root-data/sign comparison.
+The coordinate matrix, actual parabolic conjugator and exact square are explicit inputs. This module does not assert their local existence or perform base change, faithfully flat reflection, or global filtration descent. The nontrivial-ring premise is explicit from actual root-data/sign comparison.
 
 Provenance: internal combination of full original parabolic normalization, actual coordinate-torus full-root transport, all-test root-range face-term transport, and uniqueness of actual subgroup representatives.

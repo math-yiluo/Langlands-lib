@@ -19,9 +19,9 @@ The premises are precisely:
 
 The equal-rank supercuspidal formula is supplied by the published
 `supercuspidalEqualRankLFactor` theorem. It is not a remaining premise.
-The three listed premises are not proved here. Thus this contribution is
-conditional support for the pole-existence task and does not complete its
-unconditional target.
+The three listed premises are not proved here. Thus this module is
+conditional support for the pole-existence statement and does not prove it
+unconditionally.
 
 `hasSupercuspidalPolePartner_of_selectedBlockPole` first unpacks
 `TemperedSupercuspidalPoleBridge.HasSelectedBlockPole`. It retains the actual
@@ -64,7 +64,7 @@ to the original source and remain those already obtained above.
 
 The provenance is internal: the module only composes the named mathematical
 interfaces, without a new claim about the literature. The selected-block
-interface and its partner construction are Worker 1779's contribution;
-its classification helper was developed by Workers 1722 and 1779.
-Those modules are imported at their own paths, without copying their
+interface and its partner construction are in
+`TemperedSupercuspidalPoleBridge`; its classification helper is in
+`TemperedTwistSupercuspidalPoleClassification`. Those modules are imported at their own paths, without copying their
 arguments into this adapter.

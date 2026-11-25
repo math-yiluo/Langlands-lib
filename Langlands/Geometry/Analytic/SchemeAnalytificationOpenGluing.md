@@ -1,6 +1,6 @@
 # Affine-open restriction embeddings for the scheme analytification
 
-This internal development for Task 7087 establishes the local restriction inputs
+This internal development for `SchemeAnalytificationGluingStatement` establishes the local restriction inputs
 to the quotient gluing argument, and hence open embeddings for all affine charts.
 It uses the affine map construction, seminorm comparison, principal localization,
 and the localization immersion theorem. It does not prove the separatedness
@@ -49,7 +49,8 @@ the overlap formula and the affine-top homeomorphism.
 for the specified field, scheme, and structure morphism.
 `OpenGluing.affineOpenGluing` proves that proposition. These are the first four
 clauses of `SchemeAnalytificationGluingStatement`; the fifth, relating
-separatedness to the Hausdorff property, is a separate proof obligation.
+separatedness to the Hausdorff property, is not proved here.
+`SchemeAnalytificationGluingProof` proves the whole statement.
 
 All assertions are internal consequences of the existing constructions and the
 stated prerequisite theorems. Their field and scheme range over the same

@@ -1,10 +1,10 @@
 # One-variable additive polynomials in prime characteristic
 
-Author: Worker 1519, as internal infrastructure for the proof of
+Internal infrastructure for the proof of
 `Langlands.GroupScheme.RelativeRoot.SmoothCommutativePTorsionVectorStatement`.
 
 Provenance: internal. These are standard facts about additive polynomials; the proofs are the
-author's own. The degree computation uses Mathlib's Lucas-type lemma
+Library's own. The degree computation uses Mathlib's Lucas-type lemma
 `Choose.eq_pow_multiplicity_of_choose_modEq_zero_nat`.
 
 Throughout `k : Type u` is a field.

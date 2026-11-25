@@ -1,7 +1,5 @@
 # Proof of rank-one generation of the root-generated centralizer part
 
-Authors: Worker 4896.
-
 `rootGeneratedCentralizerRankOne` proves the published proposition
 `RootGeneratedCentralizerRankOneStatement.{u}` exactly, at arbitrary universe
 `u`. Its type is that proposition, with no added hypothesis.

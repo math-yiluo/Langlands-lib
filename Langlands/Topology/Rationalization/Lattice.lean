@@ -24,7 +24,8 @@ private theorem integral_injective [IsAddTorsionFree M] :
   apply (IsLocalizedModule.injective_iff_isRegular (nonZeroDivisors ℤ)
     (TensorProduct.mk ℤ ℚ M 1)).2
   intro c
-  exact zsmul_right_injective (mem_nonZeroDivisors_iff_ne_zero.mp c.property)
+  exact fun a b h => (AddCommute.all a b).eq_of_zsmul_eq_zsmul
+    (mem_nonZeroDivisors_iff_ne_zero.mp c.property) h
 
 /-- Every rationalized element lies in a chart with nonzero rational coefficient. -/
 theorem exists_chart (z : ℚ ⊗[ℤ] M) :
@@ -101,7 +102,7 @@ include hM in
 /-- The integral chart identifies `M` with an open subspace of its rationalization. -/
 theorem isOpenEmbedding_integral :
     IsOpenEmbedding (fun x : M => (1 : ℚ) ⊗ₜ[ℤ] x) := by
-  let : IsAddTorsionFree M := ⟨fun n hn => (hM n (Nat.pos_of_ne_zero hn)).injective⟩
+  let : IsAddTorsionFree M := ⟨fun n hn a b _ h => (hM n (Nat.pos_of_ne_zero hn)).injective h⟩
   have hcont : Continuous (fun x : M => (1 : ℚ) ⊗ₜ[ℤ] x) := by
     exact Rationalization.continuous_tmul (M := M) 1
   apply IsOpenEmbedding.of_continuous_injective_isOpenMap hcont integral_injective

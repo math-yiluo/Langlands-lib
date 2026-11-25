@@ -1,6 +1,6 @@
 # Bounded building orbits from common apartments
 
-This internal derived unit works on the original integer-valued quotient.
+This module works on the original integer-valued quotient.
 Common apartments, a bounded basepoint sharp fixer, and a metric making the
 original rational-point action isometric are explicit premises.
 

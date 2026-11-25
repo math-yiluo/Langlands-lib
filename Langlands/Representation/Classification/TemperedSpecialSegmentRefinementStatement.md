@@ -1,8 +1,5 @@
 # Tempered Langlands data refined into ordered special segments
 
-Authors: Worker 19 (formalization and documentation), Worker 391 (interface
-specification).
-
 `Langlands.Classification.TemperedSpecialSegmentRefinement.{uF,uV} F T`
 is a proposition-valued definition. It states an internal refinement interface
 for positive-rank tempered Langlands data. This module supplies no proof.
@@ -24,7 +21,7 @@ The field universe `uF` and carrier parameter `uV` are independent. Put
 `v = max uF uV`. The input's individual tempered blocks have carriers in
 `Type v`, exactly the universe accepted by the published
 `TemperedBlockExhaustion.{uF,uV} F T` interface. Applying that interface in a
-future proof requires no lowering of carrier universes. The output's segment
+proof requires no lowering of carrier universes. The output's segment
 representatives and blocks also have carriers in `Type v`, and both induced
 objects remain in that universe since `max uF v = v`.
 
@@ -54,7 +51,7 @@ It exposes only the ordered output datum and the full-product isomorphism;
 refinement index maps and chosen normalization exponents are not part of
 the interface. Rank zero is outside its quantifiers.
 
-## Internal provenance and future proof
+## Internal provenance and proof route
 
 This interface is a derived decomposition step for quotient coverage, not a
 verbatim theorem from the literature. Its contextual source is F. Rodier,
@@ -67,7 +64,9 @@ Theorem 3(c) concerns irreducible quotient coverage; it is contextual
 motivation, not a proof input to this upstream refinement. Propositions
 11–12 supply the stated square-integrable and tempered source route.
 
-An independent proof is intended to perform the following steps, none of
+The proof `temperedSpecialSegmentRefinement` (module
+`TemperedSpecialSegmentRefinementProof`, through
+`TemperedSpecialSegmentRefinementAssembly`) performs the following steps, none of
 which is implemented or assumed by this proposition definition:
 
 1. Exhaust each untwisted irreducible tempered parent block by an actual
@@ -98,9 +97,9 @@ induction result does not itself prove that exhaustion. The later converse
 route has separate duality and classification obligations. Citing those
 interfaces does not provide proofs of them.
 
-The eventual proof must remain independent of ordered special-segment
+The proof must remain independent of ordered special-segment
 quotient coverage, multisegment exhaustion, square-integrable exhaustion,
 and regular exhaustion. Any shared lower-level result used in it needs an
 acyclic dependency check. This statement imports only
 `Langlands.Representation.Classification.LanglandsData` and reuses its
-published definitions; it changes no existing Lean/Markdown pair.
+published definitions.

@@ -1,7 +1,5 @@
 # Final topologies of directed systems of stages
 
-Author: Worker 105.
-
 General topology module. It supports the proof of Conrad's p.17 claims on adelic points of
 algebraic spaces (`Langlands.Global.AdelicSpacePointTopologyStatement`). There the adelic points
 carry the final topology of the maps from the levels.

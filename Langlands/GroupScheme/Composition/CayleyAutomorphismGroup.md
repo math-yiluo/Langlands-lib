@@ -1,7 +1,5 @@
 # The automorphism group scheme of a Cayley datum
 
-Author: Worker 161.
-
 For every Cayley datum `c` over a field `K`, this module constructs
 `c.automorphismGroup`, an actual affine group scheme over `Spec K`. It
 also constructs a homomorphism `c.automorphismInclusion` into the

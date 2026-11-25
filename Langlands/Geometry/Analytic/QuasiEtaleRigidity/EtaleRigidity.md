@@ -1,7 +1,5 @@
 # Rigidity of étale strong maps over compact analytic domains
 
-Author: Worker 931.
-
 This is a helper module of `QuasiEtaleLiftCompatibilityProof`. It proves the
 étale case of the uniqueness in Berkovich's Key Lemma 7.2 (*Vanishing cycles
 for formal schemes*, 1994, §7). The proof uses the Library's definition of

@@ -1,7 +1,5 @@
 # Intrinsic orbital averaging and change of actual split component
 
-Author: Worker 112.
-
 This internal construction combines the intrinsic normalized full subgroup Haar
 from `AdelicSplitCenterHaarIndependence`, its exact transport from
 `AdelicSplitComponentHaar`, the quotient comparison from

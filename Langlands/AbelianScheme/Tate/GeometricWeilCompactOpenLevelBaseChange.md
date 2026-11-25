@@ -1,7 +1,5 @@
 # Base change of actual geometric Weil-compatible level towers
 
-Author: Worker 142.
-
 This derived module supplies the geometric proofs to pointed and canonical
 base change of the actual full and away compact-open Weil level towers.
 It uses only the original base's torsion-order invertibility hypothesis.
@@ -191,7 +189,7 @@ has its corresponding version with prefix
 `weilPrimeToAdelicCompactOpenLevel`. The away proofs use exactly the
 restricted-order geometric witnesses and pulled-back units above.
 
-This unit constructs base-change transformations of the actual geometric
+This module constructs base-change transformations of the actual geometric
 fixed-orbit towers under the displayed duality and coherence inputs.
 Rank, frame nonemptiness, positivity, nondegeneracy, a polarization
 predicate for `lam`, and construction or representability of the PEL

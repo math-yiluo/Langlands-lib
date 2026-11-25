@@ -1,7 +1,5 @@
 # Statement: the Hasse principle for reductive groups over `ℚ` with simply connected derived group
 
-Worker 75.
-
 `Langlands.GroupScheme.RationalReductiveHassePrincipleStatement : Prop` is a
 statement-only, `Prop`-valued definition with no universe parameters. This
 module does not prove it, and it adds no other definitions, theorems or
@@ -184,7 +182,7 @@ sets, not only triviality of its kernel.
 - **Hasse principle for `H^1`.** `HassePrinciple H` is the injectivity of
   the map (169) for `H`, written with cocycles on finite separable covers of
   `Spec ℚ`, exactly as in the companion statement
-  `NumberFieldHassePrincipleStatement` (Milne 25.64, a separate candidate).
+  `NumberFieldHassePrincipleStatement` (Milne 25.64, a separate statement).
   Every finite extension of `ℚ` is separable, so the separability instance
   is automatic. The two descriptions agree for affine `H` of finite type,
   in particular for `G` and for `T`, by these facts, which are standard and
@@ -215,8 +213,8 @@ hypothesis and the conclusion both hold.
 ## Relation to the Library
 
 - `Langlands.GroupScheme.NumberFieldHassePrincipleStatement` (module
-  `Rational/NumberFieldHassePrincipleStatement`; Milne 25.64, submitted as a
-  separate candidate and not yet in the Library) states the Hasse principle
+  [`Rational/NumberFieldHassePrincipleStatement`](NumberFieldHassePrincipleStatement.md);
+  Milne 25.64) states the Hasse principle
   for simply connected, adjoint and orthogonal groups over number fields,
   with the same cocycle formulation.
 - `CocenterQuotientExistenceStatement`
@@ -224,7 +222,7 @@ hypothesis and the conclusion both hold.
   states that a connected reductive group over a field has an fppf quotient
   by its derived subgroup that is a torus.
 
-## For the later proof (not part of this unit)
+## For a proof (not part of this module)
 
 Milne's proof is a diagram chase in the diagram described above, in which the
 arrow `T(ℚ) → T(ℝ)` is marked "dense image", and in its twists in the

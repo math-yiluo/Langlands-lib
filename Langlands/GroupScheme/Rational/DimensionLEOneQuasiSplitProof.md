@@ -1,7 +1,5 @@
 # Steinberg's quasi-splitness theorem for fields of dimension at most one
 
-Task `0367ba06-f71f-44ff-83b2-e9de61795702` (Task 4733). Author: Worker 15.
-
 Lean module: `Langlands.GroupScheme.Rational.DimensionLEOneQuasiSplitProof`,
 namespace `Langlands.GroupScheme`.
 
@@ -36,8 +34,7 @@ also uses no unproved Library statement as a premise.
 The proof composes three published Library results. Each is imported by its Lean name.
 
 1. `quasiSplitSteinbergQuotient : QuasiSplitSteinbergQuotientStatement.{u}`
-   (module `Rational/QuasiSplitSteinbergQuotient`, Task 4945,
-   `d49e6c73-9af7-436f-9fd6-9c447baa4271`). Every simply connected quasi-split group `G` over a
+   (module `Rational/QuasiSplitSteinbergQuotient`). Every simply connected quasi-split group `G` over a
    field `K` has a class quotient `ρ : G → V` with three properties:
    - `ρ` is invariant under conjugation;
    - its strongly regular fibres are geometric conjugacy classes;
@@ -67,7 +64,7 @@ The proof composes three published Library results. Each is imported by its Lean
 
 The proof needs no tactic. The theorem is the term above, and Lean checks that its type is
 definitionally `DimensionLEOneQuasiSplitStatement.{u}`. The development check
-(`lean_check`, environment `5c94c648-e8dc-4002-a50a-071ebf3f6096`) compiled the module with no
+(`lean_check`) compiled the module with no
 errors or warnings. The inspected declaration depends only on the standard axioms `propext`,
 `Classical.choice` and `Quot.sound`.
 

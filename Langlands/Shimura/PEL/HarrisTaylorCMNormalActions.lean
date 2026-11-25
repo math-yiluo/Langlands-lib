@@ -101,11 +101,13 @@ def smallCMNormalLevelAction {B : Type u} [Category.{v} B]
     (T : SmallCMLevel D ⥤ B) : Action B U.obj.subgroup where
   V := T.obj V
   ρ :=
-    { toFun g := T.map (smallCMNormalInverseArrow D U V hVU g)
+    { toFun g := End.of (T.map (smallCMNormalInverseArrow D U V hVU g))
       map_one' := by
+        apply End.ext
         change T.map (smallCMNormalInverseArrow D U V hVU 1) = 𝟙 _
         simp
       map_mul' g k := by
+        apply End.ext
         rw [smallCMNormalInverseArrow_mul, T.map_comp]
         rfl }
 
@@ -160,6 +162,7 @@ local notation "levelAction" => smallCMNormalLevelAction D U V hVU (baseTower R)
 theorem representedCMNormalBaseAction_kernel :
     V.obj.subgroup.subgroupOf U.obj.subgroup ≤ (levelAction).ρ.ker := by
   intro g hg
+  refine (MonoidHom.mem_ker).mpr (End.ext ?_)
   change (baseTower R).map (smallCMNormalInverseArrow D U V hVU g) = 𝟙 _
   have hgid :
       (smallCMNormalInverseArrow D U V hVU g).hom.element⁻¹ *
@@ -185,7 +188,7 @@ local notation "baseAction" => representedCMNormalQuotientBaseAction D C preserv
   dualityNaturality polarizationStability compatibility h htor R U V hVU
 
 @[simp] theorem representedCMNormalQuotientBaseAction_mk (g : U.obj.subgroup) :
-    (baseAction).ρ (QuotientGroup.mk g) =
+    ((baseAction).ρ (QuotientGroup.mk g)).asHom =
       (baseTower R).map (smallCMNormalInverseArrow D U V hVU g) := rfl
 
 /-- Forgetting the actual quotient action gives an action by actual Scheme morphisms. -/
@@ -200,7 +203,7 @@ local notation "schemeAction" => representedCMNormalQuotientAction D C preservat
 
 /-- A quotient representative acts by the original actual inverse-right transition. -/
 @[simp] theorem representedCMNormalQuotientAction_mk (g : U.obj.subgroup) :
-    (schemeAction).ρ (QuotientGroup.mk g) =
+    ((schemeAction).ρ (QuotientGroup.mk g)).asHom =
       (schemes R).map (smallCMNormalInverseArrow D U V hVU g) := rfl
 
 /-- Every residual element gives an automorphism of the actual fine scheme. -/
@@ -211,17 +214,18 @@ def representedCMNormalQuotientAutomorphism (g : ResidualGroup) :
 @[simp] theorem representedCMNormalQuotientAutomorphism_hom (g : ResidualGroup) :
     (representedCMNormalQuotientAutomorphism D C preservation composition unitCoherence
       associativity comparison symmetry stability square universality dualityNaturality
-      polarizationStability compatibility h htor R U V hVU g).hom = (schemeAction).ρ g := rfl
+      polarizationStability compatibility h htor R U V hVU g).asIso.hom =
+        ((schemeAction).ρ g).asHom := rfl
 
 @[simp] theorem representedCMNormalQuotientAutomorphism_inv (g : ResidualGroup) :
     (representedCMNormalQuotientAutomorphism D C preservation composition unitCoherence
       associativity comparison symmetry stability square universality dualityNaturality
-      polarizationStability compatibility h htor R U V hVU g).inv =
-        (schemeAction).ρ g⁻¹ := rfl
+      polarizationStability compatibility h htor R U V hVU g).asIso.inv =
+        ((schemeAction).ρ g⁻¹).asHom := rfl
 
 /-- The residual action is over the original CM field. -/
 theorem representedCMNormalQuotientAction_over (g : ResidualGroup) :
-    (schemeAction).ρ g ≫ (R V).base.obj.hom = (R V).base.obj.hom := by
+    ((schemeAction).ρ g).asHom ≫ (R V).base.obj.hom = (R V).base.obj.hom := by
   induction g using QuotientGroup.induction_on with
   | H g =>
     exact representedCMSchemeTower_over D C preservation composition unitCoherence
@@ -232,7 +236,7 @@ theorem representedCMNormalQuotientAction_over (g : ResidualGroup) :
 theorem representedCMNormalQuotientBaseAction_mk_classes (g : U.obj.subgroup)
     (S : DisBases) (f : S ⟶ (R V).base) :
     (R V).represents.hom.app (Opposite.op S)
-        (ULift.up (f ≫ (baseAction).ρ (QuotientGroup.mk g))) =
+        (ULift.up (f ≫ ((baseAction).ρ (QuotientGroup.mk g)).asHom)) =
       ((moduli).map (smallCMNormalInverseArrow D U V hVU g)).app (Opposite.op S)
         ((R V).represents.hom.app (Opposite.op S) (ULift.up f)) :=
   representedCMBaseTower_map_classes D C preservation composition unitCoherence
@@ -249,7 +253,7 @@ local notation "projection" => representedCMNormalProjection D C preservation co
 
 /-- The quotient action preserves forgetting, by equality of actual coarse target cosets. -/
 @[reassoc] theorem representedCMNormalProjection_invariant (g : ResidualGroup) :
-    (schemeAction).ρ g ≫ projection = projection := by
+    ((schemeAction).ρ g).asHom ≫ projection = projection := by
   induction g using QuotientGroup.induction_on with
   | H g =>
     change (schemes R).map (smallCMNormalInverseArrow D U V hVU g) ≫

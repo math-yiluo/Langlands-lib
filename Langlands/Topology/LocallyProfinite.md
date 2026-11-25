@@ -15,8 +15,8 @@ opening space and group definitions.
 - Literature ID: `renard-2026-representations-groupes-reductifs-padiques`.
 - Original: `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`.
 - SHA256: `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-- Worker 595 checked the title/date, 296-page count and full hash and read PDF
-  page 36 in full.
+- The title/date, 296-page count and full hash were checked, and PDF page 36
+  was read in full.
 
 The source explicitly requires a separated space and a neighborhood basis of
 compact opens at each point. Here separated means Hausdorff, implemented by
@@ -33,7 +33,8 @@ is retained at
 Its opening corrections, in particular PDF page 2's Baire correction at printed
 2010 page 35, were checked. The governing 2026 page already states that
 countable intersections of dense opens are dense. This is a source check;
-the Baire proposition is a separate successor.
+the Baire proposition is stated separately, as `DenseOpenIntersections` in
+`Langlands.Topology.LocallyProfiniteStatements`.
 
 ## Transparent predicates and basis laws
 
@@ -55,7 +56,7 @@ neighborhoods `U`; `U` need not be open. Every witness `V` is a neighborhood
 because it is open and contains `x`. This gives the source's neighborhood
 basis condition directly.
 
-The following are short intrinsic laws, proved in the same definition unit:
+The following are short intrinsic laws, proved in the same definition module:
 
 | Declaration, with prefix `Langlands.Topology.` | Content |
 | --- | --- |
@@ -152,17 +153,19 @@ The only project import is the already published compact-open subgroup basis
 module. Mathlib imports are
 `Mathlib.Topology.Separation.Profinite` and
 `Mathlib.Topology.Algebra.Nonarchimedean.TotallyDisconnected`.
-The approved environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`:
+The environment is
 Lean 4.34.0 at commit `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`,
 Mathlib at commit `5ed2965256430c3649e86755f9576b54eca72435`.
-This unit is independent of the Renard idempotented-ring core.
+This module is independent of the Renard idempotented-ring core.
 
 The definition is source-derived; the auxiliary predicate, equivalences and
 conversion proofs are intrinsic consequences using the named Mathlib and
 Library interfaces. No new axiom is introduced.
 
-Separate successors at the same source locator are Van Dantzig's theorem,
-the locally closed subspace lemma, the finite subordinate pairwise-disjoint
-compact-open refinement lemma, and the Baire proposition. The refinement
+Van Dantzig's theorem, the locally closed subspace lemma, the finite
+subordinate pairwise-disjoint compact-open refinement lemma, and the Baire
+proposition, at the same source locator, are stated separately in
+`Langlands.Topology.LocallyProfiniteStatements` and proved in
+`Langlands.Topology.LocallyProfiniteProof`. The refinement
 sets need not lie inside the compact set being covered. None of these source
-results is assumed or proved in this definition unit.
+results is assumed or proved in this definition module.

@@ -1,7 +1,5 @@
 # Smooth algebra maps are open on complete-field points
 
-Author: Worker 208.
-
 `smoothAlgebraPointOpen` proves `SmoothAlgebraPointOpenStatement` in independent
 universes for K, A and B. It uses the actual
 smooth local normal form at the kernel of each field-valued point. The kernel is

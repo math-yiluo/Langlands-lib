@@ -22,7 +22,7 @@ case. This module proves the reducible case and reduces the statement to the gen
 are built by Frobenius reciprocity
 with block multipliers (module `RealBlockFrobeniusMap`). The multipliers are the binomial and
 tail multipliers of module `RealBlockMultiplier`. The module is internal infrastructure for the
-proof of `Langlands.Archimedean.RealCharacterPairFiltrationStatement` (Task 7067), so it has no
+proof of `Langlands.Archimedean.RealCharacterPairFiltrationStatement`, so it has no
 literature sources. It contains no definitions of mathematical objects: `cd`, `dc`, `indBlock`
 and `sigma0` below are notation.
 

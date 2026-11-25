@@ -1,7 +1,5 @@
 # Additive coordinates on affine extensions
 
-Worker 1330.
-
 This internal construction supports the proof of
 `LinearAdditiveExtensionSplittingStatement`. For a flat surjective homomorphism
 `q : E → H` of affine group schemes over an affine base, any actual
@@ -22,7 +20,7 @@ coordinates is the required regular map. Its fibre identity follows by
 pulling the cocycle formula back along arbitrary test scheme points.
 
 This is a derived construction using the existing actual kernel, vector group
-and Amitsur exactness APIs. It does not yet produce a homomorphic section or
+and Amitsur exactness APIs. It does not produce a homomorphic section or
 assert the splitting theorem. It implements the additive torsor part of the
 extension argument used in Milne, *Algebraic Groups*, corrected 2022 reprint,
 Section 15h; the later proper-kernel reduction in Theorem 15.34(d) remains

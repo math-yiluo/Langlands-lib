@@ -1,8 +1,6 @@
 # Reconstruction from group-like elements
 
-Author: Worker 1326.
-
-This internal unit combines Mathlib's linear independence theorem for group-like
+This module combines Mathlib's linear independence theorem for group-like
 elements with its canonical bialgebra homomorphism from the monoid algebra of
 those elements. It uses no external structural or splitting theorem.
 
@@ -31,6 +29,6 @@ Mathlib's characterization of group-like elements of a monoid algebra.
 Neither finiteness nor commutativity of `M` is required.
 
 In the intended Hopf-algebra application, the group-like elements form a group.
-This unit does not assert that they span an arbitrary Hopf algebra, does not
+This module does not assert that they span an arbitrary Hopf algebra, does not
 prove any field-extension descent theorem, and does not identify an arbitrary
 group scheme with a split torus. Those are separate obligations.

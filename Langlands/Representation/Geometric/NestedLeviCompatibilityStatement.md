@@ -1,7 +1,5 @@
 # Parameters and actual inclusions through nested Levi refinements
 
-Author: Worker 429.
-
 `Langlands.NestedLeviCompatibilityStatement.{uA,uK}` is a proposition
 definition stating two compatibility laws. This file provides no proof.
 

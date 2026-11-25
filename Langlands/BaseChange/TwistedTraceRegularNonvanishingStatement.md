@@ -43,7 +43,7 @@ every `A : SigmaIntertwiner σ n τ` and every Haar measure `μ` on `GL_n(E)`, t
 
 For `σ = id`, `l = 1` and `E = F` it is the corresponding untwisted statement for `GL_n(F)`.
 
-## Why it is true (sketch for the reviewer)
+## Why it is true (sketch)
 
 The one-character case of the lemma in HL II.2.8 (printed p. 69) gives a point of
 nonvanishing in the σ-regular set. In characteristic zero the argument is as follows.
@@ -60,8 +60,9 @@ nonvanishing in the σ-regular set. In characteristic zero the argument is as fo
    (Arthur–Clozel, Chapter 1, Proposition 2.2) in the field case and the product reduction of
    HL II.2.8 for cyclic algebras. The field theorem can use a normalized intertwiner: by Schur's
    lemma any `A` differs from it by a nonzero scalar. The Library's
-   `TwistedCharacterRegularValuesStatement` states local constancy; Task 7847
-   (`bf3ad17e-4e22-43b1-949a-8b224a9ea9fb`) covers twisted local integrability and regular-set
+   `TwistedCharacterRegularValuesStatement` states local constancy;
+   `TwistedCharacterLocalIntegrabilityStatement` and `SigmaRegularOpenConullStatement` (module
+   `RegularSetOpenConullStatement`) state twisted local integrability and regular-set
    conullness. Since the distribution is nonzero, `Θ^A_τ(δ) ≠ 0` for some σ-regular `δ`.
 3. Choose a compact open neighbourhood `U` of `δ` inside the σ-regular set on which `Θ^A_τ`
    is constant. The indicator of `U` has twisted trace `μ(U) Θ^A_τ(δ)`, which is nonzero

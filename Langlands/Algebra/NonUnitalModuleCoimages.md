@@ -167,7 +167,3 @@ independent `uA,uM` and at `(0,1)` and `(1,0)`, for 117 assignments. The
 checks use the pinned Lean-service environment; inspection of
 `concreteCoimageOpIsImage` retains exactly the independent `uA,uM` levels
 and uses only `propext`, `Classical.choice`, and `Quot.sound`.
-
-Worker 6 authored the initial quotient/descent/colimit draft. Worker 490
-reused it and supplied the selected-object comparisons, the opposite image
-universal property, complete interface checks, and final documentation.

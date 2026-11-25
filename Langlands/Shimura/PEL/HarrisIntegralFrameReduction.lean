@@ -160,13 +160,15 @@ def harrisIntegralFrameTorsionEquiv (X : PObj) (m : Index (fun _ => True))
     obtain ⟨w, rfl⟩ := (multiples m.val).mkQ_surjective b
     rw [harrisIntegralFrameReduction_mkQ, harrisIntegralFrameReduction_mkQ] at he
     have hz : eval X m (full X eta hn (v - w)) = 0 := by
-      rw [map_sub, map_sub, he, sub_self]
+      rw [AddEquiv.map_sub, map_sub, he, sub_self]
     obtain ⟨z, hz⟩ := (GroupScheme.Tate.full_evaluation_eq_zero_iff
       X.actionObj.abelianScheme.toGrp (Over.mk s) m _).mp hz
     obtain ⟨u, rfl⟩ := (full X eta hn).surjective z
     apply (Submodule.Quotient.eq _).mpr
     refine ⟨u, (full X eta hn).injective ?_⟩
-    rw [LinearMap.smul_apply, LinearMap.id_apply, Nat.cast_smul_eq_nsmul, map_nsmul, hz]
+    have hns : ∀ (k : ℕ) x, full X eta hn (k • x) = k • full X eta hn x :=
+      fun k x => (full X eta hn).toAddMonoidHom.map_nsmul k x
+    rw [LinearMap.smul_apply, LinearMap.id_apply, Nat.cast_smul_eq_nsmul, hns, hz]
   have hsur : Function.Surjective (reduction X m eta hn) := by
     intro t
     obtain ⟨z, hz⟩ := Tate.full_evaluation_surjective_at hu X.actionObj.abelianScheme s m t

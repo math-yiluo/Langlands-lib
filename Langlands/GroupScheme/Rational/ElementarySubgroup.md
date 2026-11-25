@@ -1,7 +1,5 @@
 # The elementary subgroup from actual parabolic radicals
 
-Authors: Worker 1331.
-
 This module defines the subgroup `parabolicElementarySubgroup G` of the actual
 rational points `G(k)` over an arbitrary field `k : Type u`. It uses all actual
 parabolic subgroup embeddings `p : P ⟶ G` and all actual represented geometric

@@ -4,16 +4,13 @@ Module `Langlands.Representation.Compact.CompactBlockDecompositionStatements`.
 Namespace `Langlands.Renard.CompactRepresentation`.
 Entry proposition `CompactBlockDecompositionStatements`.
 
-Worker 1222 wrote this statement unit under the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`.
-
 ## Source and provenance
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French edition dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1222 read IV.1.3–IV.1.7, printed pp.89–96 / PDF pp.95–102. The
+IV.1.3–IV.1.7, printed pp.89–96 / PDF pp.95–102, were read. The
 assertions stated here are in IV.1.6 (printed p.94 / PDF p.100, proof ending
 on printed p.95) and the first part of IV.1.7 (printed p.95 / PDF p.101).
 
@@ -175,8 +172,9 @@ and `v` (carriers).
 
 ## Scope
 
-This file states the assertions and proves none of them. Proofs belong to a
-separate `lean.proof@1` task targeting `CompactBlockDecompositionStatements`. The source's proofs use the
+This file states the assertions and proves none of them. The proof of
+`CompactBlockDecompositionStatements` is `compactBlockDecomposition` in
+`Langlands.Representation.Compact.CompactBlockDecompositionProof`. The source's proofs use the
 projectors `π(e_τ)` of IV.1.5, Lemma A.VII and the IV.1.4 Theorem.
 
 The file imports `Langlands.Representation.CompactCoefficient.Classes`,
@@ -186,6 +184,5 @@ The file imports `Langlands.Representation.CompactCoefficient.Classes`,
 `Mathlib.CategoryTheory.Preadditive.Projective.Basic`,
 `Mathlib.CategoryTheory.Preadditive.Injective.Basic`,
 `Mathlib.RepresentationTheory.Semisimple` and
-`Mathlib.MeasureTheory.Measure.Haar.Basic` (environment
-`bb168ec3-1031-46d9-816b-5c2ed7bbe1a6`, Mathlib commit
+`Mathlib.MeasureTheory.Measure.Haar.Basic` (Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`).

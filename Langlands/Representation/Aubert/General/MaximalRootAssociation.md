@@ -1,6 +1,6 @@
 # The two possible standard associates of a maximal root subset
 
-Worker 167. This is an internal finite-root deduction for the actual rational
+This is an internal finite-root deduction for the actual rational
 point families. It uses the published `rootAssociation` predicate and Coxeter
 proofs, and introduces no representation-theoretic premise.
 

@@ -1,7 +1,7 @@
 # Pair gamma comparison for principal-series constituents
 
 Module `Langlands.Automorphic.PrincipalSeriesGammaMatchStatement` defines one proposition,
-`Langlands.ClassField.Global.RelativeWeilGroup.PrincipalSeriesPairGammaMatchStatement`
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.PrincipalSeriesPairGammaMatchStatement`
 (universes `u`, `uV`, `uE`). It is a statement only; nothing is proved here.
 
 ## Statement

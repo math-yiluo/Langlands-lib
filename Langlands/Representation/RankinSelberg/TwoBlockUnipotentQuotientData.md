@@ -3,8 +3,6 @@
 Module `Langlands.Representation.RankinSelberg.TwoBlockUnipotentQuotientData`,
 namespace `Langlands.RankinSelberg.TwoBlockUnipotentQuotient`.
 
-Author: Worker 778.
-
 This module is a definitions unit for the first unfolding in JPSS (1983),
 Section 4.6. It constructs the block-diagonal unipotent subgroup `H`, the
 intermediate left quotient `H \ G`, the projection `H \ G → N \ G`, the radical

@@ -1,11 +1,9 @@
 # Proof of the associated central character statement
 
-Authors: Worker 5151, with Worker 5137 (automorphic half).
-
 The theorem
-`Langlands.ClassField.Global.RelativeWeilGroup.associatedCentralCharacter :
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.associatedCentralCharacter :
 AssociatedCentralCharacterStatement.{u, uV, uP}` proves the published statement
-`Langlands.ClassField.Global.RelativeWeilGroup.AssociatedCentralCharacterStatement`
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.AssociatedCentralCharacterStatement`
 (module `Langlands.Automorphic.AssociatedCentralCharacterStatement`), unchanged and at
 arbitrary universes `u`, `uV`, `uP`. It uses no hypotheses beyond those of the statement
 and only the axioms `propext`, `Classical.choice` and `Quot.sound`.
@@ -33,7 +31,7 @@ Fix `c`, `F`, `E`, `r`, `S` and `T` with `IsWeaklyAssociatedClass S T.isoClass`.
    `AssociatedCentralCharacter.GoodPlaces`) shows that at cofinitely many finite places
    `v`, `δ` is unramified at `v`, `v` is not exceptional for `P`, and
    `δ_v(ϖ_v) = elementaryCoefficient (P.spectralSystem.eigenvalues v hs) (r + 1)`.
-4. **Central character.** Worker 5137's
+4. **Central character.**
    `Langlands.Automorphic.CuspidalOperatorRealization.hasCentralCharacter_of_eventually_elementaryCoefficient`
    (module `Langlands.Automorphic.CentralCharacterTopCoefficient`) turns step 3 into
    `T.HasCentralCharacter δ`. This gives clause 1.
@@ -59,7 +57,7 @@ route for steps 1, 6, 7 and 8:
   `Langlands.Global.IdeleClosedSubgroupDensity`) shows that it is everything.
 - For local–global compatibility at good places (step 6), the proof uses the published
   `RelativeWeilGroup.reciprocityCharacter_eq_finiteUniformizerValue` (module
-  `Langlands.ClassField.Global.RelativeWeilUnramifiedTwist`). This holds at places all of
+  `Langlands.ClassFieldTheory.Global.RelativeWeilUnramifiedTwist`). This holds at places all of
   whose places above in `E` have ramification index one, split or not. Cofinitely many
   places of `F` have this property.
 - The identity `det S(ι Fr) = z_1 ⋯ z_n` (step 4) is in
@@ -68,8 +66,6 @@ route for steps 1, 6, 7 and 8:
   `CentralCharacterTopCoefficient`.
 
 ## Modules of this proof, in dependency order
-
-Worker 5151:
 
 - `Langlands.Automorphic.AssociatedCentralCharacter.DeterminantDescent`: continuous
   descent of `det S` through the transfer, and injectivity of
@@ -82,7 +78,7 @@ Worker 5151:
 - `Langlands.Automorphic.AssociatedCentralCharacter.CentralCharacterUniqueness`: step 5
   above, from `space_nontrivial` and the injectivity of the inclusion of forms.
 
-Worker 5137 (copied verbatim from their draft revision 1 of Task 5210):
+The automorphic half:
 
 - `Langlands.Representation.Unramified.TopHeckeOperator`: the top standard Hecke operator
   is the scalar diagonal `ϖ_v · 1` and acts by the top elementary coefficient.

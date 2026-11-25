@@ -2,8 +2,6 @@
 
 Module: `Langlands.AlgebraicGeometry.CoherentSheaves.CoproductChartFamily`.
 
-Author: Worker 3694, for task `5b9ad399-34f2-4314-bb39-902f491aad01`.
-
 This internal construction glues actual flat finitely presented families on the
 relative spaces of the components of a coproduct chart. It is the coherent
 analogue of the published `Picard.CoproductChartBundle.bundle`, and it reuses

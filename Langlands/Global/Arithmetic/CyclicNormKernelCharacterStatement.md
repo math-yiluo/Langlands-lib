@@ -2,7 +2,8 @@
 
 This is a proposition definition, derived from global reciprocity and elementary
 character theory of finite cyclic groups. It does not supply a Lean proof.
-Its formulation follows the shared draft of Worker 96 for Task 7345.
+Its formulation follows the audit `notes/reuse/nyll-global-cft-audit.md`,
+section 7.1.
 
 ## Sources and provenance
 
@@ -105,8 +106,7 @@ The consumers' hypothesis that `σ` generates, expressed by
 `∀ τ, τ ∈ Subgroup.zpowers σ`, supplies this cyclicity. In prime degree
 the same instance follows from `IsGalois.card_aut_eq_finrank` and
 `isCyclic_of_prime_card`. The fields retain the independent universes
-`uF` and `uE` of the requested formulation. No changes to the proposed
-hypotheses, third clause or universes have been made.
+`uF` and `uE`.
 
 ## Library consumers
 
@@ -123,11 +123,12 @@ The following existing declarations in namespace
   `CyclicPrimeIsobaricSelfTwistStatement`, `CyclicRegularOrbitLiftStatement`
   and `CyclicStableIsobaricDescentStatement`.
 
-Clause 1 supplies their character premise once proved. Clause 2 specifies
+Clause 1 supplies their character premise; the proposition is proved as
+`cyclicNormKernelCharacter` in `CyclicNormKernelCharacterProof`. Clause 2 specifies
 its exact order, while clause 3 identifies all twists by characters trivial
 on norms with the powers used in Arthur–Clozel's descent arguments.
 
-## Published ingredients for the future proof
+## Published ingredients for the proof
 
 These are possible proof inputs, not additional hypotheses of the proposition.
 Besides norm openness, finite norm index is proved by
@@ -137,13 +138,13 @@ relative-Weil-group ingredients:
 
 - `Langlands.ClassFieldTheory.Local.localRelativeClassFormation` supplies
   local invariant families with arithmetic normalization;
-- `Langlands.ClassField.Global.globalFundamentalClassStatement` supplies
+- `Langlands.ClassFieldTheory.Global.globalFundamentalClassStatement` supplies
   a compatible global fundamental-class family;
-- `Langlands.ClassField.Global.RelativeWeilGroup.relativeWeilTransferReciprocity`
+- `Langlands.ClassFieldTheory.Global.RelativeWeilGroup.relativeWeilTransferReciprocity`
   gives surjective transfer with commutator kernel;
-- `Langlands.ClassField.Global.RelativeWeilGroup.transfer_comp_inclusion`
+- `Langlands.ClassFieldTheory.Global.RelativeWeilGroup.transfer_comp_inclusion`
   identifies its restriction to `C_E` with the idele-class norm;
-- `Langlands.ClassField.Global.RelativeWeilGroup.projection_surjective`,
+- `Langlands.ClassFieldTheory.Global.RelativeWeilGroup.projection_surjective`,
   `exact` and `index_range_inclusion` give the extension by `Gal(E/F)`.
 
 The class-formation and relative-Weil results use fields in one universe.

@@ -4,8 +4,7 @@ Module `Langlands.Global.AdelicIntertwiningCocycleReduction` states and proves a
 reduction of the Library's `Langlands.Global.IntertwiningCocycleStatement`
 (Bernstein–Lapid, Theorem 2.3 (5); module
 `Langlands.Global.AdelicIntertwiningCocycleStatement`) to four statements.
-Worker 86 wrote it for Task 5503, whose target is that statement. The module
-does not prove the cocycle relation outright: the four statements remain
+The module does not prove the cocycle relation outright: the four statements remain
 premises.
 
 ## Source
@@ -55,7 +54,10 @@ The premises:
   domain of holomorphy.
 - (GI) `EisensteinGenericInjectivityStatement` (new, module
   `Langlands.Global.AdelicEisensteinGenericInjectivityStatement`): BL (8.4)
-  for any pointwise continuations, on an open dense set in each chart.
+  for any pointwise continuations, on an open dense set in each chart. The
+  Library proves it:
+  `Langlands.Global.eisensteinGenericInjectivity` in the module
+  `Langlands.Global.AdelicEisensteinGenericInjectivityProof`.
 
 The Markdown files of the two new modules give their sources and
 correspondence.
@@ -201,7 +203,7 @@ The meromorphic-function arguments use helpers from the functional-equation deve
     with the split-component cocharacter;
   - nonemptiness of the regular region in every chart.
 
-Worker 86 added the following lemmas:
+The module adds the following lemmas:
 
 - `OpenDenseInCoordinates` with `.inter`, `.preimage` and `.iInter` (finite
   intersections of open dense sets);

@@ -5,7 +5,7 @@ schemes over `Spec k` with `G` affine over the base, let `p` be a supplied
 split pinning of `G`, and let `q : G ⟶ A` satisfy `IsAdjointQuotient q`
 (connected reductive source, adjoint target, flat, surjective and locally of
 finite presentation, with kernel the actual scheme-theoretic centre, and the
-universal property for maps killing the centre). This internal unit proves that
+universal property for maps killing the centre). This internal module proves that
 every automorphism of `G` which normalizes the pinned torus through an element
 of the actual Weyl image is the inner action `hq.innerAction.basePointIso x`
 of some ground-field point `x` of `A`.

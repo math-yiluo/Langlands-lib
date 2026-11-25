@@ -1,7 +1,8 @@
 # Local outer quotient models before a global Isom scheme is supplied
 
-Worker 812, reusing Worker 182's action transport identities. This internal
-adapter uses the actual base-change comparisons, full local-chart
+This internal adapter reuses the action transport identities of
+`Langlands.GroupScheme.IsomorphismSchemeActionTransport`. It
+uses the actual base-change comparisons, full local-chart
 representation, and supplied outer quotient. No new literature theorem or
 global Isom scheme is assumed.
 
@@ -27,7 +28,7 @@ parameter projections gives a common `U` structure to the test. The published
 `ChangeOfBase.test` and `testIso` make that structure and its old-base
 identification explicit. Restricting the chart families to this identification
 and applying the family base-change equivalence recovers `I`'s universal
-families. Worker 182's `baseChangeFamily_twist` identifies their source actions.
+families. `baseChangeFamily_twist` identifies their source actions.
 The unique local orbit point supplied by `O` is transported to the original
 test by the group-point equivalence, and refinement by the inverse test
 isomorphism recovers the original family equation. Conversely, an original

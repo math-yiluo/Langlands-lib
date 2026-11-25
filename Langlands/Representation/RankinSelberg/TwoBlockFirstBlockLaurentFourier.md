@@ -1,7 +1,5 @@
 # The partial Fourier value on the first-block fiber
 
-Author: Worker 1037.
-
 This is derived internal material for JPSS (1983), Section 4.9. It concerns the
 first-block fibers of the integrand of (4.7.1). The published partial Fourier value
 `TwoBlockLowerUnfolding.partialSection h ψ μ Φ g` is

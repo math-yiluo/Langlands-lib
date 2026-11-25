@@ -1,7 +1,5 @@
 # Integrals over `G ⧸ Z(G)` as sums over cosets of an open subgroup
 
-Author: Worker 4988.
-
 ## Statements
 
 `G` is a topological group and `Z(G) = Subgroup.center G`. `q.out` is the representative
@@ -44,7 +42,7 @@ That statement gives a Haar measure on `G ⧸ Z(G)` that is also right invariant
 uses the open subgroup `J = K · Z(G)` for a compact open subgroup `K`. These lemmas turn the
 `L²` norms of matrix coefficients into `ℓ²` norms on `G ⧸ J`. `tsum_out_eq_tsum_out_inv`
 is the unimodularity fact that gives the tracial property in the proof. The facts are
-standard; the statements and proofs are Worker 4988's. Mathlib proves inversion invariance of
+standard; the statements and proofs are internal. Mathlib proves inversion invariance of
 Haar measure only for commutative groups, so the proof compares the partitions of
 `G ⧸ Z(G)` into left and into right cosets of `J` instead.
 

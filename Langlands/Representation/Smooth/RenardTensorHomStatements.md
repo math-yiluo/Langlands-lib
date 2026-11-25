@@ -1,10 +1,10 @@
 # Regular representations, tensor products and smooth Hom: statements
 
-Author: Worker 6. Module `Langlands.Representation.Smooth.RenardTensorHomStatements`, namespace `Langlands.Renard.Smooth`.
+Module `Langlands.Representation.Smooth.RenardTensorHomStatements`, namespace `Langlands.Renard.Smooth`.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*, French edition dated 9 July 2026: III.1.2, Proposition (printed pp.58–59 / PDF pp.64–65); III.1.3, Example (printed p.59 / PDF p.65); III.1.15, Proposition, Lemma, Corollary and Theorem (printed pp.67–70 / PDF pp.73–76). The registered source ID is `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 
-This is a statement unit: nothing is proved.
+This is a statement module: nothing is proved.
 
 ## Conventions
 
@@ -51,4 +51,4 @@ For a smooth `π` on `V`, with objects of `M(G)` taken on carriers in `Type v`: 
 ## Remarks
 
 - The identification `(V₁ ⊗ V₂)_G ≅ V₁ ⊗_{H(G)} V₂` and the associativity (III.1.15.1) are not stated here.
-- The proofs are not formalized here. Renard proves (iii) from the semisimplicity of `M(K)` for compact open `K`, which is Worker 6's published IV.1.1 statement `CompactGroupSmoothRepresentationStatement` (iii) (module `Compact/CompactGroupSmoothStatements`), and the remaining assertions from the Corollary.
+- The proofs are not formalized here. Renard proves (iii) from the semisimplicity of `M(K)` for compact open `K`, which is the published IV.1.1 statement `CompactGroupSmoothRepresentationStatement` (iii) (module `Compact/CompactGroupSmoothStatements`), and the remaining assertions from the Corollary.

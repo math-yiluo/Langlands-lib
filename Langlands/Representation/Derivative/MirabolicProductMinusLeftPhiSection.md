@@ -1,7 +1,5 @@
 # Actual nested left-orbit quotient and section action
 
-Author: Worker 499.
-
 This module constructs `leftPhiStagesCoefficientEquiv` in
 `Langlands.Derivative.MirabolicProductMinus`. It identifies the actual
 nested stages coefficient quotient with localization at the whole actual
@@ -10,7 +8,8 @@ the exact section-action formula, its identity-orbit external-tensor formula,
 and naturality for arbitrary stabilizer intertwiners on independent carrier
 universes. These are algebraic constructions toward BZ77 Proposition 4.13(b).
 The compact-induction comparison, Haar ratio, normalized representation
-comparison and final six-part host theorem remain separate obligations.
+comparison and final six-part statement
+`MirabolicProductMinusCompatibilityStatement` are proved in other modules.
 
 ## Source and provenance
 
@@ -29,7 +28,7 @@ printed pp.456–457 (PDF pages 17–18), gives the left mixed subgroup;
 §4.13(b), printed p.458 (PDF page 19), states the corresponding
 functorial comparisons. Section 7.2, printed p.471 (PDF page 32),
 gives the two orbit representatives. These passages and relevant page
-images were read during this task. The bounded supplied-source and
+images were read for this construction. The bounded supplied-source and
 public-note errata search found no applicable BZ77 entry; no global
 absence is asserted.
 
@@ -39,8 +38,7 @@ the published actual matrix projection and successor, orbit stabilizers and
 stages, radical character, quotient transport and section action. BZ77
 motivates their p-adic specialization; it does not literally state these
 arbitrary-commutative-ring adapters. No representation comparison from the
-source or pending proof is assumed. Worker 499 wrote the construction;
-no peer draft contributes a proof body.
+source or unproved statement is assumed.
 
 ## Parameters, actual groups and characters
 
@@ -73,11 +71,11 @@ H'_i = H_i.subgroupOf P_i.
 Here `i : Fin 2` is arbitrary. The published representative `0` is the
 descending cycle and `1` is the identity. The ambient group containing
 `G` is `mirabolic (k+r+2) R = P_(k+r+3)(R)`, and
-`L = P_(k+r+2)(R)`. The positive GL factor in the eventual host has
-rank `k+1`. The source mirabolic factor for Phi-minus is
+`L = P_(k+r+2)(R)`. The positive GL factor in the eventual compatibility
+statement has rank `k+1`. The source mirabolic factor for Phi-minus is
 `mirabolic (r+1) R = P_(r+2)(R)`, whose output is `P_(r+1)(R)`.
-Thus the host indexing `phiMinus T ψ r : P_(r+2) -> P_(r+1)` is
-retained. This unit introduces neither `P_0` nor Phi-minus on `P_1`.
+Thus the indexing `phiMinus T ψ r : P_(r+2) -> P_(r+1)` of that statement is
+retained. This module introduces neither `P_0` nor Phi-minus on `P_1`.
 
 `plusKernelRadicalEquiv` identifies `ker p` with the actual
 `radical (k+r+2) R`, using `projection_eq_one_iff` in one direction
@@ -266,7 +264,7 @@ The following audit covers both direct and transitive mathematical inputs.
 
 | Condition | Actual dependency finding |
 | --- | --- |
-| Six host mixed-minus conclusions | No host conclusion or proof is imported. Only the nested coefficient transport, actual unnormalized section formulas and naturality are constructed. The final natural isomorphisms, exact sequence and conjunction remain obligations. |
+| Six mixed-minus conclusions of the statement | No conclusion of the statement or proof of one is imported. Only the nested coefficient transport, actual unnormalized section formulas and naturality are constructed. The final natural isomorphisms, exact sequence and conjunction are proved in other modules. |
 | Plus functors, adjunction, BZ77 §4.13(d) | No plus functor, adjunction or submodule-detection conclusion supplies an input. The elementary matrix subgroup `plusSubgroup` and its projection/section are the permitted actual group maps. |
 | General Leibniz and derivative formulas | No general Leibniz proof, segment derivative formula, Ze80 §3.5 or §9.6 formula, or unproved BZ77 derivative result supplies an input. The positive radical character is an explicit matrix construction. |
 | Segment head, socle and Jacquet formulas | No individual special-head or segment-socle existence, linked/unlinked or juxtaposed reverse-product conclusion, quotient homomorphism, or full/head/socle/special Jacquet formula supplies an input. |
@@ -274,19 +272,17 @@ The following audit covers both direct and transitive mathematical inputs.
 | Special-head criterion and generic uniqueness | Neither the special-head product criterion nor generic segment-product uniqueness is used. |
 | Ordered existence and exhaustion | No ordered multisegment-socle existence, socle or special-head exhaustion, ordered strong-head existence, quotient coverage or ordered conversion supplies an input. |
 | Analytic, tempered, square-integrable conclusions | No segment classification, forward special essential square-integrability, tempered uniqueness, square-integrable classification or exhaustion, regular exhaustion, or Ze80 9.3 assertion supplies an input. |
-| Two-supercuspidal consumers | Neither nonadjacent product irreducibility, product structure nor its full-product assembly is used. No parent six-statement conclusion (b),(d),(e),(f) supplies an input. |
+| Two-supercuspidal consumers | Neither nonadjacent product irreducibility, product structure nor its full-product assembly is used. |
 | Supercuspidal and single-block finiteness | No supercuspidal coinvariant-finiteness statement, all-character single-block conclusion, arbitrary-character finiteness theorem or consequence supplies an input. |
 | Other Whittaker finiteness | No irreducible or Levi-cuspidal finiteness conclusion, consequence or prohibited mirabolic finite-length route supplies an input. |
 | Generality | All natural k,r including zero, the supplied character/topology and independent ring and carrier universes are retained. The complete coefficient representation and actual intersection are used. There is no chosen unit vector, finite-dimensional, admissible, finite-length, generic, nonzero-object or theorem-valued premise. |
-| Published inputs and target preservation | Every imported pair is unchanged and public. Pending statements, drafts, source formulas and citations are not theorem premises. No host statement or its imported pair is modified. |
-| Separate owners and user controls | This focused construction does not duplicate a restriction sequence, exactness proof or generic compact-induction comparison. Worker 127's operator pause, Worker 8's suspension, Worker 114's hold and all current suspensions remain binding; no peer message waives them. |
+| Published inputs | Every imported pair is unchanged and public. Unproved statements, source formulas and citations are not theorem premises. |
+| Separate results | This focused construction does not duplicate a restriction sequence, exactness proof or generic compact-induction comparison. |
 
 A source scan of this entry and its complete project closure finds no
-occurrence in Lean code of the host's 38 excluded task identifiers
-or 24 named consumer declarations, and no proof holes, new axioms or
-unsafe evaluation commands. This supplements the mathematical dependency
-audit above. Compilation and declaration inspection are development
-checks; independent acceptance and publication remain required.
+occurrence in Lean code of 24 excluded consumer declarations, and no
+proof holes, new axioms or unsafe evaluation commands. This supplements
+the mathematical dependency audit above.
 
 ## Complete project import closure
 

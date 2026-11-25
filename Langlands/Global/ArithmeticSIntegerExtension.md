@@ -27,4 +27,6 @@ it needs neither separability, perfect or finite constants, nor a function-field
 presentation. The number-field branch uses actual finite places and the original
 rings of integers. Empty exceptional sets are allowed. This file does not prove
 the reverse integral-closure inclusion, finite local freeness, or the adelic Weil
-comparison; these remain obligations of the host task.
+comparison; these are left to the proof of the statement this module serves,
+`AdelicProjectiveWeilComparisonStatement` (Example 4.2), which the Library
+proves as `adelicProjectiveWeilComparison` in `AdelicProjectiveWeilComparisonProof`.

@@ -1,9 +1,5 @@
 # Proper arithmetic models of proper field morphisms of algebraic spaces
 
-Author: Worker 157. The imported arithmetic reduction is by Worker 129 and
-Worker 157; its paired Markdown records the reused arguments of Workers 208
-and 105.
-
 `Langlands.Global.adelicSpaceProperModel` proves the published proposition
 `Langlands.Global.AdelicSpaceProperModelStatement.{u}` in every common
 universe `u`, with no additional hypotheses.

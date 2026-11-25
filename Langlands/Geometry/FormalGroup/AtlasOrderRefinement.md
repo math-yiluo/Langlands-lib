@@ -1,6 +1,6 @@
 # Order actions under principal-cover refinement
 
-This derived unit restricts an actual formal order action along a
+This module restricts an actual formal order action along a
 `BasicAtlas.CoverRefinement` and upgrades its full-family restriction and
 gluing equivalence to linearity over that order.
 
@@ -8,7 +8,7 @@ gluing equivalence to linearity over that order.
 
 Drinfeld, *Coverings of p-adic symmetric regions* (1976), printed p.109
 (PDF page 3), paragraph immediately before section 2, permits formal groups
-obtained by gluing formal groups over localizations. This unit implements
+obtained by gluing formal groups over localizations. This module implements
 order-compatible refinement within that convention; its constructions are
 derived infrastructure, not separately stated theorems of Drinfeld.
 

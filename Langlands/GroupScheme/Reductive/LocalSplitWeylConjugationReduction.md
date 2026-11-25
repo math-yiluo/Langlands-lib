@@ -33,9 +33,9 @@ Setting of both statements: a commutative local ring `R`, a reductive group sche
   same proof.
 
 The two assumed statements are not proved here. Their content matches the theorems
-`rootPartner_unique` and `isWeylPoint_rescale` of Worker 521's modules
+`rootPartner_unique` and `isWeylPoint_rescale` of the modules
 `LocalSplitRootPairUniqueness` and `LocalSplitRootPairRescaling`. Those modules are not
-imported here, and the host Isomorphism Theorem is not proved in this module.
+imported here, and the Isomorphism Theorem is not proved in this module.
 
 ## Provenance
 

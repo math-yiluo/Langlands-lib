@@ -1,6 +1,6 @@
 # Rational-isogeny transport of actual Weil-compatible level orbits
 
-Worker 142. This derived unit applies the actual full and away compatible-frame
+This derived module applies the actual full and away compatible-frame
 isogeny equivalences of `WeilFrameIsogeny` to the geometrically fixed right-orbit
 sets `WeilAdelicLevel` and `WeilPrimeToAdelicLevel`. The source and target are
 actual abelian schemes over the same quasi-separated base, with constructed
@@ -42,7 +42,7 @@ the away version selects those coprime to an arbitrary natural modulus,
 including the prime-to-p case. Its modules and actual twist use the same
 coupled scalar comparison. There is no assertion of frame nonemptiness,
 polarization nondegeneracy, compact-open topology, or identity/composition
-of geometric multiplier equations in this unit.
+of geometric multiplier equations in this module.
 
 The provenance is the specialization of the existing geometric Tate,
 twist, compatible-frame and invariant-orbit constructors to the actual

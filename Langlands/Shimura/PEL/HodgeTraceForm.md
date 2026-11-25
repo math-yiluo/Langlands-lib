@@ -1,6 +1,6 @@
 # The actual trace Hodge form and its signed diagonal formula
 
-Worker 57. This internal construction uses the published `TracePairingBaseChange`
+This internal construction uses the published `TracePairingBaseChange`
 and `RealPositivity` to form the real bilinear expression psi(x,y h0(i)) on
 the actual real tensor algebra. It takes an arbitrary rational skew unit beta,
 without assuming positivity of its auxiliary involution or its Hodge form.

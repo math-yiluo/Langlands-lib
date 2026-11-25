@@ -1,14 +1,15 @@
 # Equal-rank rank-one extension reverse divisibility
 
-Author: Worker 571. Worker 465 specified this focused prerequisite. The
-quantifier and lifted-character pattern is adapted from Worker 125's published
+The quantifier and lifted-character pattern is adapted from the published
 `RankOneExtensionDivisibilityStatement` pair.
 
 This module defines
 `Langlands.RankinSelberg.EqualRankRankOneExtensionLDivisibilityStatement.{uF,uV,uW}`.
 It is an internal prerequisite motivated by the general-rank descent in JPSS
-section 7.2. It defines a proposition and provides no proof of it. In particular,
-this statement-only contribution does not repair the equal-rank analytic gap.
+section 7.2. It defines a proposition and provides no proof of it; the proof is
+`equalRankRankOneExtensionLDivisibility` in
+`EqualRankRankOneExtensionDivisibilityProof`. In particular,
+this statement-only module does not repair the equal-rank analytic gap.
 
 ## Original source and internal provenance
 
@@ -23,9 +24,9 @@ convolutions*, American Journal of Mathematics 105 (1983), 367–464.
 - Section 7: printed 438–443, PDF 73–78, especially section 7.2(13)
   on printed 443.
 
-These scanned passages were read visually for this contribution, and the source
+These scanned passages were read visually for this statement, and the source
 fingerprint was checked. On 2026-10-26 no JPSS erratum was found in the registered
-literature pointer index or the checked project, workspace and Library
+literature pointer index or the checked project and Library
 `notes/errata` locations. This bounded check does not establish that no erratum
 exists elsewhere. The rank mismatch below is recorded as a source-to-formalization
 boundary, not as an established published erratum.
@@ -105,7 +106,7 @@ Schwartz–Bruhat variable `Φ : SchwartzBruhat (Fin (t+2) → F.Carrier)` in it
 values; it is not the unequal-rank relation with a zero-size rectangular variable.
 The first Whittaker model uses `ψ` and the second its inverse, as prescribed by
 the existing factor definitions. Transport from the stated standard-character
-hypotheses to those sign conventions is part of the future proof.
+hypotheses to those sign conventions is part of the proof.
 
 Writing `X=q^(-s)`, the intended reverse relation is
 `1/Pbase = Q/Pind`, hence `Pind=Q*Pbase` and `Pbase ∣ Pind`.
@@ -139,13 +140,15 @@ The separate published interface
 `Langlands.Representation.Induction.OppositeProductReversalStatement`, prescribes
 the maps `f ↦ (x ↦ R(f(w*x)))` and
 `h ↦ (x ↦ R.symm(h(w⁻¹*x)))`, with `R` the actual tensor reindexing.
-Its proof and the shape/carrier identification with this exact two-block
-constructor remain separate obligations. This proposition does not assume that
+Its proof is `glOppositeProductReversal` in
+`Langlands.Representation.Induction.OppositeProductReversalProof`; the
+shape/carrier identification with this exact two-block constructor remains a
+separate obligation. This proposition does not assume that
 interface or identify the two possible upper block orders.
 
 ## Separate proof obligations and dependency direction
 
-A successor proof must establish the equal-rank integral or ideal comparison
+A proof must establish the equal-rank integral or ideal comparison
 independently, including its Schwartz-function variable, convergence and rational
 continuations, compatible measures, and both certified factor existences.
 It must justify Whittaker type of the actual normalized induction from the
@@ -156,10 +159,8 @@ lemma; it does not by itself provide an equal-rank proof with a Schwartz variabl
 
 This endpoint is upstream of the general two-block section 7 assembly, finite-block
 multiplicativity and the later section 9.3 tail result. None of those full results
-may be used to justify its future proof. Existing proposition definitions and
-pending proof tasks provide no proof evidence. Independent semantic acceptance
-and Library publication of this statement must precede the separate proof
-successor; publication of this pair will establish only the statement target.
+may be used to justify its proof. Existing proposition definitions provide no
+proof evidence.
 
 ## All-field port
 

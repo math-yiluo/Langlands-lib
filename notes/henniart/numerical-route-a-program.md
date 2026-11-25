@@ -1,16 +1,11 @@
 # Henniart's numerical correspondence: a Route A program plan
 
-Author: Worker 5733, for Task 5584 (`35ad7726-c0bc-499a-ba29-69e4bc6e3c2a`).
-Written on 15 November 2026 at the operator's request (message
-`54eb87cf37b25c8c9dd7e6142595b02c`, answering request
-`826ec76dbc445453a1185b21a50315ff`). Checked against Library commit
-`72480b70c88adff84a438bd7029d64ee3977469c`. Revised the same day after review
-`4e6fac13`: the level parameters of R6, the strong Artin input of R10, the
-Laumon and Wintenberger locators, the BDKV page rule, and the order of R10 and
-R11.
+This note, written on 15 November 2026, was checked against Library commit
+`72480b70c88adff84a438bd7029d64ee3977469c`; what it says the Library contains is
+said of that commit.
 
-This note is a planning document. It proves nothing, it publishes no task, and
-it does not decide whether Route A is started; the operator takes that decision.
+This note is a planning document. It proves nothing, and it does not decide
+whether Route A is followed.
 It refines Route A of the
 [route study for the orbit counts](numerical-count-route-study.md), which is
 cited below as "the route study". The route study compares the routes; this
@@ -23,7 +18,7 @@ printed page = PDF page + 495. For Arthur–Clozel 1989 ("AC"), printed page =
 PDF page − 14. For the BDKV volume, which contains [DKV] and [De2], printed
 page = PDF page − 4. Bibliography keys in brackets are those of H88.
 
-## 1. Where Task 5584 stands
+## 1. Where the surjectivity proof stands
 
 - The published `Langlands.Henniart.numericalOrbitReduction` proves
   `Langlands.Henniart.NumericalOrbitReductionStatement`: it derives
@@ -33,25 +28,27 @@ page = PDF page − 4. Bibliography keys in brackets are those of H88.
   supercuspidal class `π`.
 - The published `Langlands.Henniart.supercuspidalOrbitStratumFiniteness`
   (module `Correspondence/HenniartOrbitStratumFinitenessProof`) proves that
-  every `Numerical.supercuspidalOrbitStratum K k a` is finite. This is unit U1
+  every `Numerical.supercuspidalOrbitStratum K k a` is finite. This is lemma U1
   of the route study.
 - The published `Langlands.Conductor.supercuspidalPadicConductorExponent`
-  (Task 7044, module
+  (module
   `Representation/Conductor/SupercuspidalPadicConductorExponentProof`) proves
   the JPSS conductor theorem for supercuspidal representations over p-adic
   fields.
-- A private development check by Worker 5733, which is not published, composes
-  these. It builds on a derivation by Worker 0. It proves the second premise,
+- A development check outside the Library composes these. It proves the second
+  premise,
   `Numerical.conductor K π ≠ ⊤`, and that `NumericalOrbitCountStatement`
   implies `NumericalSurjectivityStatement` at arbitrary universes `uK`, `uW`,
   `uV`. It compiles at commit `72480b70` with 0 errors and 0 warnings and uses
   only the standard axioms.
 
-So the only open premise of Task 5584 is `NumericalOrbitCountStatement`. Route A
+So the only open premise of `NumericalSurjectivityStatement` is
+`NumericalOrbitCountStatement`; a search by name in the present Library finds
+no proof of either. Route A
 does not compute the counts. It constructs, in every rank, a numerical
 injection that is also surjective. That is, the map is injective, preserves
 conductors and commutes with unramified twists, as in
-`Numerical.IsNumericalInjection`. Unit U2 of the route study then gives the
+`Numerical.IsNumericalInjection`. Lemma U2 of the route study then gives the
 counts: Weil-side finiteness transfers through the bijection from U1, and the
 strata have equal `Set.ncard`. The published reduction then gives the target.
 This is Henniart's own logical shape. In H88 §1.9 (p. 502) and §6.8 (pp. 520–522)
@@ -65,10 +62,10 @@ Route A here means the proof of H88 Théorème 1.2 for fields of characteristic 
 not needed for the p-adic target.
 
 Size classes. They are estimates, calibrated on Lean module counts at commit
-`72480b70`. One unit is a focused statement and proof pair of about the size of
+`72480b70`. One pair is a statement module and its proof module, of about the size of
 U1 (`HenniartOrbitStratumFinitenessProof.lean`, 290 lines).
 
-- **S**: one to three units.
+- **S**: one to three such pairs.
 - **M**: about 10–40 modules. For comparison, `LocalFactor/Ramification` has
   35 Lean modules.
 - **L**: about 100–300 modules. For comparison, `Representation/Conductor` (the
@@ -80,9 +77,10 @@ U1 (`HenniartOrbitStratumFinitenessProof.lean`, 290 lines).
 "Harris branch" means the chain behind premise 1 (candidate existence) of the
 published three-premise entry, as recorded in
 [the LLC proof-route note](llc-proof-route.md). That chain runs through
-`Henniart.candidateExistenceReduction`, Harris 1998 Prop. 4.8 (Task 6702 and
-`Global.Harris.Proposition48ReductionStatement` with its fourteen inputs), and
-the cohomological branch of Harris 1999, Thm 5.9 (Task 34, `bd93b48c`). "H4"
+`Henniart.candidateExistenceReduction`, Harris 1998 Prop. 4.8
+(`Global.Harris.Proposition48ReductionStatement` with its fourteen inputs), and
+the cohomological branch of Harris 1999, Thm 5.9 (see
+[the Galois-family coverage note](galois-family-coverage.md)). "H4"
 means the discharge stage of the global program in
 [the global program coverage note](../automorphic/global-program-coverage.md)
 (Arthur–Clozel III.3.1, III.4.2, III.5.1, III.6.2), which that note keeps as
@@ -427,9 +425,9 @@ small step.
 | R5 | Local JL: Harris 1999 §5 uses the local correspondence in its transfer `JL(π_f)`, stated as the relation `JacquetLanglands.IsHarrisJacquetLanglandsTransfer` with no existence theorem. A proof of the local JL theorem would serve both. Route A also needs the ε/conductor clause, which the Harris branch does not use. The proof in [DKV] is global (simple trace formula). | `JacquetLanglandsCharZeroStatement` (stated, unproved, no ε clause); `segmentEssentialSquareIntegrableClassification` (proved); `Representation/GodementJacquet` for `GL_n` |
 | R6 | Nothing | Nothing |
 | R7 | Nothing | `numericalOrbitReduction`, `supercuspidalOrbitStratumFiniteness`, `FiniteOrbitCountingStatement` (all proved); the classification behind `fullCorrespondenceStatement_of_supercuspidalCorrespondence` |
-| R8 | **Strong overlap.** The weak cyclic transfer statements of AC Ch. III are stated in `Automorphic/Unramified/CyclicTransferStatement` and `IsobaricCyclicTransferStatement`. These include `CyclicRegularInductionStatement` (AC III, Lemma 6.4 with Thm 6.2), `CyclicStableDescentStatement` (Lemma III.6.3) and `CyclicRegularOrbitLiftStatement`. They are inputs 11–13 of `Proposition48ReductionStatement`, under planning Task 6699. H88 §6.5 case II uses the same Lemma III.6.4 and Thm III.6.2. Local base change itself (AC Ch. 1, §6; III.5.1) has no Library object. Harris 1999 Thm 5.9 needs base change with supercuspidal-place control (cohomological branch), and H4 lists III.5.1. One local base-change development would serve Route A, H4 and the cohomological branch. | Weak transfer definitions and statements (unproved); local Rankin–Selberg factors of [JPS2] (`Representation/RankinSelberg`) for H88 §6.4 |
+| R8 | **Strong overlap.** The weak cyclic transfer statements of AC Ch. III are stated in `Automorphic/Unramified/CyclicTransferStatement` and `IsobaricCyclicTransferStatement`. These include `CyclicRegularInductionStatement` (AC III, Lemma 6.4 with Thm 6.2), `CyclicStableDescentStatement` (Lemma III.6.3) and `CyclicRegularOrbitLiftStatement`. They are inputs 11–13 of `Proposition48ReductionStatement`. H88 §6.5 case II uses the same Lemma III.6.4 and Thm III.6.2. Local base change itself (AC Ch. 1, §6; III.5.1) has no Library object. Harris 1999 Thm 5.9 needs base change with supercuspidal-place control (cohomological branch), and H4 lists III.5.1. One local base-change development would serve Route A, H4 and the cohomological branch. | Weak transfer definitions and statements (unproved); local Rankin–Selberg factors of [JPS2] (`Representation/RankinSelberg`) for H88 §6.4 |
 | R9 | Nothing | `LocalClassField.finiteUpperReciprocityTheorems` (proved; finite abelian upper-numbering reciprocity, for the APF input); the ported characteristic-free Herbrand functions and ramification groups; the p-adic Herbrand bridge `LocalFactor/Ramification/Herbrand` |
-| R10 | **Strong overlap with Henniart 2000's global machinery**, which the Harris branch feeds. The overlapping inputs are: the global Rankin–Selberg functional equation for cuspidal pairs (`Global.CuspidalPairGlobalFunctionalEquationStatement`, Task 5493); stability of pair factors under highly ramified twists (`RelativeWeilGroup.stableTwistPairGammaMatchStatement`, proved); globalization of local Galois data (the Library states Henniart 2000's globalization as `Global.RelativeGaloisGlobalization`, which the unproved `HenniartGlobalizationStatement` derives from Harris 1998 Prop. 4.8; H88 §7.4 needs less, namely a global Galois extension realizing a given local one at one place with the full Galois group as decomposition group); and the AC Ch. III weak transfers above. The strong Artin input that H88 §7.4 needs, AC III Prop. 7.2 (solvable Galois groups, characters spanned by inductions along subnormal cyclic series), is not stated in the Library. | The global inputs just listed; `Weil.Local` for induced and restricted Weil representations |
+| R10 | **Strong overlap with Henniart 2000's global machinery**, which the Harris branch feeds. The overlapping inputs are: the global Rankin–Selberg functional equation for cuspidal pairs (`Global.CuspidalPairGlobalFunctionalEquationStatement`); stability of pair factors under highly ramified twists (`RelativeWeilGroup.stableTwistPairGammaMatchStatement`, proved); globalization of local Galois data (the Library states Henniart 2000's globalization as `Global.RelativeGaloisGlobalization`, which the unproved `HenniartGlobalizationStatement` derives from Harris 1998 Prop. 4.8; H88 §7.4 needs less, namely a global Galois extension realizing a given local one at one place with the full Galois group as decomposition group); and the AC Ch. III weak transfers above. The strong Artin input that H88 §7.4 needs, AC III Prop. 7.2 (solvable Galois groups, characters spanned by inductions along subnormal cyclic series), is not stated in the Library. | The global inputs just listed; `Weil.Local` for induced and restricted Weil representations |
 | R11 | Nothing | Same as R7 |
 | R12 | Nothing | U1, `numericalOrbitReduction`, `supercuspidalPadicConductorExponent` (proved) |
 
@@ -490,8 +488,7 @@ This updates the route study in three places:
 
 ## 6. A possible order of work
 
-This is a suggestion for the operator's decision. It is not a plan of record,
-and no task has been published for it.
+This is a suggestion, not a plan of record.
 
 1. **Statements only.** State the deep inputs as named propositions:
    - the Weil-side count for small Swan exponent over p-adic fields (the
@@ -513,16 +510,16 @@ and no task has been published for it.
    and R12. It is local and of size L. It needs no missing source: [Ko2] and
    [Ko3] are present. This mirrors the Library's treatment of Henniart 2000 through the
    published three-premise entry. It would isolate the deep inputs and show
-   exactly which of them Task 5584 needs.
+   exactly which of them the surjectivity proof needs.
 3. **Discharge.** Discharge the deep inputs together with the Harris branch and
    H4, where they overlap:
-   - local base change with the AC Ch. III statements of planning Task 6699 and
-     with H4;
+   - local base change with the AC Ch. III statements (inputs 11–13 of
+     `Proposition48ReductionStatement`) and with H4;
    - local JL with the Harris 1999 transfer;
    - Théorème 1.9 after local base change, with AC III Prop. 7.2 (the strong
      Artin conjecture for characters spanned by inductions along subnormal
-     cyclic series of a solvable group; see R10), Task 5493 and the
-     globalization inputs.
+     cyclic series of a solvable group; see R10), the global Rankin–Selberg
+     functional equation for cuspidal pairs and the globalization inputs.
 
    The Weil-side count (Laumon and close fields) is independent of everything
    else, shares nothing with the other branches, and is the most remote item.

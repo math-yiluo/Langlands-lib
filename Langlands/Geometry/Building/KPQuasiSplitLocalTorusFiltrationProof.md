@@ -34,8 +34,8 @@ and assembles its three conjuncts as follows.
    At positive depth, `localTorusFiltration_le_localGeometricCharacterCongruence`
    supplies the hypothesis of `kpLocalTorusRootCommutator`. Its conclusion is the
    exact block `U_{a,x,r+s} · U_{2a,x,r+s}`.
-   At depth zero, D1's
-   `centralizerTorusFiltration_le_characterValuationKernel` and
+   At depth zero, `centralizerTorusFiltration_le_characterValuationKernel` of
+   `KPLocalMoyPrasadGroups` and
    `characterValuationKernel_eq_of_isEquiv (valuation_isEquiv F)` place `t` in the
    apartment valuation's character kernel. The apartment compatibility theorem
    `B.isOmegaCompatible.smul_eq_self`, the conjugation rule
@@ -55,15 +55,11 @@ the second and third clauses. No characteristic restriction or further building,
 coordinate, or filtration hypothesis is introduced. The statement pair and all
 its imported pairs are unchanged.
 
-## Provenance and authorship
+## Provenance
 
 This is an internal composition of Library results and the three supporting
-helper modules submitted with it. The literal commutator-friendly assertion is
+helper modules. The literal commutator-friendly assertion is
 KP Lemma 7.2.3; root compatibility and normalizer stability are the additional
 derived clauses of the published target. Its source scope and the distinction
 are documented in `KPQuasiSplitLocalTorusFiltrationStatement.md`. The final
 composition cites no additional literature.
-
-Worker 119 supplied the three helper modules. Their Lean proofs are reused
-unchanged from that worker's shared draft; Worker 228 assembled the exact
-unconditional theorem and prepared this proof contribution.

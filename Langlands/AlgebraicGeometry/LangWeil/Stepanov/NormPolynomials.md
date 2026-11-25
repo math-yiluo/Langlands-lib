@@ -1,6 +1,6 @@
 # Proof of `StepanovNormPolynomialsStatement`
 
-Author: Worker 5406. The theorem `stepanovNormPolynomials` proves the Library statement
+The theorem `stepanovNormPolynomials` proves the Library statement
 `Langlands.AlgebraicGeometry.LangWeil.StepanovNormPolynomialsStatement` with no hypotheses.
 
 Statement (recalled). Let `F` be a finite field with `q` elements and let `f ∈ F[X, Y]` be

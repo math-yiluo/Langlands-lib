@@ -1,7 +1,5 @@
 # The relative Weyl group is the same over every connected test scheme
 
-Author: Worker 3870.
-
 `Langlands.GroupScheme.relativeWeylGroupRestrict_bijective` proves the exact published
 proposition `Langlands.GroupScheme.RelativeWeylGroupRestrictStatement.{u}` (module
 `Langlands.GroupScheme.Rational.TorusNormalizerStatement`) at an arbitrary universe `u`.

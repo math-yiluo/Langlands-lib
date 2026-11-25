@@ -42,6 +42,6 @@ See the Markdown of these modules for the mathematics. In short:
 
 ## Provenance
 
-Derived, internal proof of the Library statement JE (Task 7179). The statement is a form of the
+Derived, internal proof of the Library statement JE. The statement is a form of the
 classical description of the exponents of Jacquet modules of principal series of `GL_n(ℂ)`. The
 route and all its ingredients are proved in the modules listed above.

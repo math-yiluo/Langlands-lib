@@ -1,6 +1,6 @@
 # Radical intersection from a torus containing the full centre
 
-Worker 1372. Internal conditional construction using normal unipotent
+Internal conditional construction using normal unipotent
 commutation, closed split-torus/unipotent intersection, actual radical
 quotients, quotient subgroup descent and schematic homomorphism images.
 

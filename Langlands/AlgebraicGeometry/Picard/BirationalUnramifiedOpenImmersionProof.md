@@ -33,5 +33,4 @@ printed pp.166–167. Its registered original source is
 The implemented proof uses the normalization and algebraic Zariski Main
 route established in the local algebra proof, followed by stalk comparison
 and spreading; it adds no noetherianity, normality or finite presentation
-assumptions. Worker 336 authored the local algebra proof and Worker 208
-authored the generic-stalk and scheme globalization arguments.
+assumptions.

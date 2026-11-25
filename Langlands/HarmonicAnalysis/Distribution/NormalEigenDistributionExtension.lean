@@ -43,7 +43,7 @@ def fixedSupportShiftedField (hW : ContDiffOn ℝ ∞ W Ω) (hb : ContDiffOn ℝ
     (hK : (K : Set X) ⊆ Ω) : 𝓓_{K}(X, ℝ) →L[ℝ] 𝓓_{K}(X, ℝ) :=
   let W₀ := (exists_contDiff_eqOn_compact hW hK).choose
   let b₀ := (exists_contDiff_eqOn_compact hb hK).choose
-  ((ContDiffMapSupportedIn.bilinLeftCLM (ContinuousLinearMap.apply ℝ ℝ (E := X)).flip
+  ((ContDiffMapSupportedIn.bilinLeftCLM (ContinuousLinearMap.apply ℝ ℝ (E' := X)).flip
     (g := W₀) (exists_contDiff_eqOn_compact hW hK).choose_spec.1).comp
     (ContDiffMapSupportedIn.fderivCLM ℝ ⊤ ⊤)) +
     ContDiffMapSupportedIn.bilinLeftCLM (ContinuousLinearMap.mul ℝ ℝ)

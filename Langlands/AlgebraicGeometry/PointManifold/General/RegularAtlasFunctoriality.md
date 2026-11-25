@@ -16,7 +16,7 @@ regular evaluation is smooth by
 regular functions along `f`, using `General.RegularSmooth.postcomp`,
 proves the same test property for the actual postcomposition map.
 `General.RegularAtlas.contMDiff_iff_regularSmooth` for the target then
-gives actual manifold smoothness. That published criterion accepts a
+gives actual manifold smoothness. That criterion accepts a
 charted source without a source manifold hypothesis.
 
 `RegularAtlas.postcompDiffeomorph A B f`, for an actual relative
@@ -35,15 +35,15 @@ have the same carrier and different model dimensions. Empty point
 spaces and zero dimensions are included. This is independence up to the
 specified identity diffeomorphism; it does not equate chosen atlases.
 
-The carrier throughout is the published `PointTopology.RingPoint k X k`,
+The carrier throughout is `PointTopology.RingPoint k X k`,
 with its existing topology from global regular-function evaluation.
 This module chooses no atlas and supplies no algebraic chart-existence
 theorem.
 
-This is an internal universe generalization of Worker 383's actual-map
+This is an internal universe generalization of the actual-map
 helper constructions in
-`PointManifold.RegularAtlasCanonicalityProof`, using the independently
-published `General.RegularAtlasComparisonProof` and
-`General.RegularEvaluation` APIs. Worker 94 adapted those constructions
-and exposed the identity comparison directly. No original-literature
+`PointManifold.RegularAtlasCanonicalityProof`, using the
+`General.RegularAtlasComparisonProof` and
+`General.RegularEvaluation` APIs. It adapts those constructions
+and exposes the identity comparison directly. No original-literature
 theorem is transcribed here.

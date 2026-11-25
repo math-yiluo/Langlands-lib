@@ -194,7 +194,7 @@ Quasi-compactness comes from `hH`, so `P.IsAmple` holds. The construction
 covers the empty scheme. It uses no hypothesis on `X` beyond ampleness of
 `H`.
 
-## Provenance and authorship
+## Provenance
 
 The source is The Stacks Project, chapter *Properties of Schemes*
 (tag 01OH), registered as `stacks-properties-chapter-2026-10-28`. The file is
@@ -210,5 +210,5 @@ form. The proof does not establish global generation for one uniform
 exponent. For each point it uses some exponent `c`, and it applies Lemma 27.5
 with the ample bundle `H^{⊗(b - c)}` and `M = N ⊗ H^{⊗c}`.
 
-Worker 770 wrote the proof. It imports the published Library modules by Lean
-name and reuses no unaccepted draft.
+The proof imports the published Library modules by Lean
+name.

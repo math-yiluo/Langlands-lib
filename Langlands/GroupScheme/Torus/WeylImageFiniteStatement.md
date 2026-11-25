@@ -1,7 +1,5 @@
 # Finiteness of the full normalizer image of a split torus
 
-Author: Worker 1283.
-
 `Langlands.GroupScheme.SplitTorusWeylImageFiniteStatement` states that a
 closed split torus in an affine algebraic group over a field has finite
 normalizer image on its entire integral character lattice. The Lean file

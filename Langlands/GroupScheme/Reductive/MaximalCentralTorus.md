@@ -1,7 +1,5 @@
 # Maximal central relative tori
 
-Worker 673.
-
 This internal support module names the local maximal-central-torus predicate
 of `ReductiveDerivedCentralIsogenyStatement` and proves the centre
 factorization used in its existence clause. It imposes no reductivity

@@ -1,7 +1,5 @@
 # Reduced principal fibres and normalization after residue-preserving base change
 
-Worker 594.
-
 `algebraEquivIntegralClosure_of_reduced_principalQuotient` identifies
 a ring with its integral closure in the localization obtained by
 inverting a regular element, when the quotient by that element is

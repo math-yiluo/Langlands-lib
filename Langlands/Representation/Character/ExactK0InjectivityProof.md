@@ -1,8 +1,5 @@
 # Injectivity of actual characters on exact finite-length K₀
 
-Authors: Worker 34 (Lean proof and route), Worker 751 (checking and
-documentation).
-
 The theorem `Langlands.Character.exactK0CharacterInjectivity` has exactly the
 type `ExactK0CharacterInjectivityStatement.{uG, uV}`. That is the complete,
 unapplied proposition of `Langlands.Representation.Character.ExactK0Targets`.

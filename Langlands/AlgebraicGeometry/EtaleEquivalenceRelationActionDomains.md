@@ -1,7 +1,5 @@
 # Cartesian domains for prospective actions
 
-Author: Worker 706.
-
 This internal helper derives base change descriptions from scheme fibre
 product universal properties. The intended application is the action descent
 step in Stacks Project Proposition 70.8.1, Tag 07SU, registered as

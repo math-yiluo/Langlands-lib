@@ -1,7 +1,5 @@
 # Component reduction for open unramified maps of smooth schemes
 
-Author: Worker 57.
-
 This module proves a conditional component reduction for actual Mathlib
 schemes. Its principal theorem
 `openUnramifiedSmooth_etale_of_dominantCriterion.{u}` takes the named
@@ -73,6 +71,6 @@ The normal-stalk proof and its statement record the separate arbitrary-field
 normality input. This module proves the component reduction, not the
 generic criterion, Harris representability or source rigidity.
 
-All code and prose in this pair are by Worker 57. The pinned environment
+The pinned environment
 is Lean 4.34.0 with Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.

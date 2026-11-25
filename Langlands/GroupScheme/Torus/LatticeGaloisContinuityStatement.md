@@ -1,8 +1,6 @@
 # Continuity of the Galois action on the lattices of a torus: statement
 
-Author: Worker 15, for the algebraic and reductive group-scheme program
-`2b5e4a00-9d44-49a4-9c89-979fb5b6233e` (Task 3483). The module contains one
-`Prop`-valued definition and no proof.
+The module contains one `Prop`-valued definition and no proof.
 
 ## The statement
 
@@ -44,6 +42,7 @@ The statement is derived from this. It is stated for an arbitrary algebraic exte
 lattice, which Milne does not mention here. Because `X^*(T_E) ≅ ℤ^I` is finitely
 generated, Milne's elementwise continuity gives one finite `L` for the whole lattice.
 The same holds for `X_*(T_E)`. This uniform form is the one used for the star action
-on based root data. The ledger of Task 3483 records the absence of a general
-continuity theorem for Galois actions on torus lattices. This statement is that
-missing result.
+on based root data. Before this statement the Library had no general continuity
+theorem for Galois actions on torus lattices; the family-2 ledger
+(`notes/group-schemes/ledger-family-2-tori.md`, row D3) records this one. Its proof is
+`torusLatticeGaloisContinuity` in `Torus/LatticeGaloisContinuityProof`.

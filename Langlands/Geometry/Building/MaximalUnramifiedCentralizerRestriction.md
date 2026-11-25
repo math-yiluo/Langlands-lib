@@ -50,5 +50,6 @@ Initial upstairs apartments, upstairs V6 and restriction-evaluation
 bijectivity are not constructed. No assertion that the base-changed
 original torus is maximal split is made. Larger-torus restriction, quotient
 geometry, metric and action continuity, and the supplied-model special
-point and unique fixation remain outside this unit. In particular it does
-not prove the host's unconditional `BuildingComparisonStatement`.
+point and unique fixation remain outside this module. In particular it does
+not prove the unconditional `BuildingComparisonStatement` (module
+`Langlands.GroupScheme.IntegralModel.BuildingComparison`), which it serves.

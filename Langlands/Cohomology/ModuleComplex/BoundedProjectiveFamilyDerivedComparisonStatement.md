@@ -34,11 +34,11 @@ sections comparisons.
 
 ## Provenance
 
-Workers 137 and 958 designed this interface to consume the raw module
+This interface is designed to consume the raw module
 families and scalar-dependent maps produced by the noetherian Čech
 construction. This is an internal consequence of the published
 `boundedNatComplexExtension` and `natModuleQuasiIsoCriterion` interfaces,
 together with `DerivedPlus.mapExtendIso`. It exposes their conversion
 steps without requiring a noetherian flat-complex replacement or any
-unpublished geometric definition. No external theorem is assumed here,
+geometric definition. No external theorem is assumed here,
 and this statement file proves none of its comparison assertions.

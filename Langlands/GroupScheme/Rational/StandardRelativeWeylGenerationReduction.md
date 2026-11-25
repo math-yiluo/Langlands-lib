@@ -1,10 +1,9 @@
 # Standard relative Weyl generation from the Coxeter statement
 
-Worker 1235. This internal reduction derives the published
+This internal reduction derives the published
 `StandardRelativeWeylGenerationStatement` (Borel–Tits 5.17: the reflections in a set `J`
 of simple relative roots generate the standard relative Weyl subgroup of `J`) from the
-published `RelativeWeylCoxeterStatement`. This is the route that the task context
-recommends. It keeps the universe `u`, an arbitrary field, nonreduced relative roots and
+published `RelativeWeylCoxeterStatement`. It keeps the universe `u`, an arbitrary field, nonreduced relative roots and
 rank zero. The module proves neither statement unconditionally.
 
 ## Linear-algebra helpers

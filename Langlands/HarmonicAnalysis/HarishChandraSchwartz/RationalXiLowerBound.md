@@ -1,10 +1,8 @@
 # The minimal modulus on `U₀(F)` and the lower bound of Lemma II.1.1 for the actual `Ξ`
 
-Author: Worker 19, task `1ef6854b-f0e9-4d96-bbe5-cb8c4b52f927` (revision 1).
-
 Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalXiLowerBound`, namespace
 `Langlands.HarishChandraSchwartz`. It is a companion of
-`Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalWeights` (same author and candidate), whose
+`Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalWeights` (ported together with this module), whose
 definitions `rationalMinimalModulus` (`δ₀`) and `rationalXi` (`Ξ`) and whose setting and local
 instances it uses.
 
@@ -21,7 +19,8 @@ J. Inst. Math. Jussieu 2 (2003), 235–333 (literature id `waldspurger-2003-plan
   records Waldspurger's proof of the lower bound through a factorization `H = (H ∩ P₀) V` with
   `V = H ∩ Ū₀` and `m⁻¹ V m ⊆ K`, which is the route used here.
 
-The present author could not open the PDF in this session and relies on these Library quotations.
+The quotations above are taken from these Library pages; they were not checked again against the
+PDF for this page.
 
 ## Hypotheses
 

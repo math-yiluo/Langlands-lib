@@ -1,6 +1,6 @@
 # Exact semigroup factors in an actual semidirect product
 
-This internal unit works with an actual action of an affine smooth group `K`
+This internal module works with an actual action of an affine smooth group `K`
 on an affine smooth group `G` over any field and universe. A split torus `S`
 acts on `G` and commutes with the `K` action. The constructed external action
 on `G ⋊ K` fixes `K` on every test scheme.

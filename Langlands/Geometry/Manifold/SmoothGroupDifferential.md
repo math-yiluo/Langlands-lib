@@ -50,9 +50,9 @@ The remaining laws describe this same definition:
   smoothness premise.
 
 The linearity and left-translation identities that do not use the smooth
-group law omit that instance from their Lean hypotheses. This unit constructs
+group law omit that instance from their Lean hypotheses. This module constructs
 one directional derivative and proves its intrinsic laws. Bundling it on the
 existing adelic smooth-function spaces, compatibility with the original
 matrix differential, the Lie bracket and enveloping algebra action,
 exponential-curve comparison, growth conditions, measures and cuspidal
-realizations remain separate obligations.
+realizations are not part of this module.

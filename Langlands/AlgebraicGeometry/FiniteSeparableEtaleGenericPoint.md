@@ -45,6 +45,6 @@ the two specified field identifications, this actual induced map is exactly
 `Spec(algebraMap K L)`. The proof cancels the residue-field point, which is a
 monomorphism, and uses the already proved equations over the base.
 
-This unit handles the domain cover's fraction field and its actual generic
+This module handles the domain cover's fraction field and its actual generic
 residue field. It does not prove the nonreduced irreducible-base case, construct
 a geometric-component splitting extension, or discharge full Stacks 0551.

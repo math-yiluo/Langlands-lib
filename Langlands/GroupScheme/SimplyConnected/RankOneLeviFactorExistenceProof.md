@@ -1,7 +1,5 @@
 # Existence of rank-one Levi factors
 
-Authors: Worker 4896.
-
 `Langlands.GroupScheme.rankOneLeviFactorExistence` proves exactly the published
 proposition `Langlands.GroupScheme.RankOneLeviFactorExistenceStatement.{u}`
 (module `Langlands.GroupScheme.SimplyConnected.RankOneLeviFactors`), in

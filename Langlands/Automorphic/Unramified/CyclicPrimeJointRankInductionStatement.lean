@@ -9,7 +9,7 @@ set_option autoImplicit false
 namespace Langlands.Automorphic.Unramified
 
 open Langlands.Global Langlands.Automorphic.CuspidalOperatorRealization
-open Langlands.ClassField.Global.RelativeWeilGroup (HasUnitaryCentralCharacter)
+open Langlands.ClassFieldTheory.Global.RelativeWeilGroup (HasUnitaryCentralCharacter)
 
 section Rank
 

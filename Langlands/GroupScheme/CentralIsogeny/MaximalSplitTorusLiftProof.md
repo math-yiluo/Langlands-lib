@@ -14,7 +14,7 @@ flat, surjective and locally of finite presentation.
 The proof combines two results.
 
 1. `IsCentralIsogeny.exists_pow_eq_one_kernel` (module
-   `Langlands.GroupScheme.CentralIsogeny.KernelTorsion`, contributed by Worker 1384). For a
+   `Langlands.GroupScheme.CentralIsogeny.KernelTorsion`). For a
    central isogeny `π` over a field, there is `N > 0` with `x ^ N = 1` for every point `x` of
    `kernel π`.
 2. `CentralSplitTorusLift.statement_of_kernel_exponent` (module

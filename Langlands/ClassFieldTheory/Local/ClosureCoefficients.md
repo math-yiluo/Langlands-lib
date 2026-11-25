@@ -1,7 +1,5 @@
 # Coefficient inclusion from an actual intermediate field
 
-Author: Worker 42.
-
 `continuous_unitAction` first proves joint continuity of the actual
 automorphism action on discrete units of an algebraic field extension.
 It uses the explicit open unit stabilizers from `Cohomology` and Mathlib's

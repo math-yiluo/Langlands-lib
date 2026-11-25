@@ -1,7 +1,5 @@
 # Homogeneous quotient for a closed relative identity component
 
-Worker 852.
-
 `Langlands.GroupScheme.RelativeIdentityComponent.ClopenQuotientStatement.{u}`
 is a statement-only proposition. Let `S` be any scheme, `G → S` a smooth
 separated quasi-compact group scheme, and `i : H → G` a supplied relative

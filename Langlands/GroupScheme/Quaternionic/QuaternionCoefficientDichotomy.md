@@ -1,7 +1,5 @@
 # Split and division quaternion coefficient algebras
 
-Worker 863, Task 7498.
-
 `QuaternionCoefficientDichotomyStatement` concerns a central quaternion division
 algebra scalar-extended to any field. The extended algebra is a domain or admits
 an algebra isomorphism to the two-by-two matrix algebra over the extension field.

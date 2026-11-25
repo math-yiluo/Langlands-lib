@@ -1,7 +1,5 @@
 # Almost-simple covers of semisimple groups over a field
 
-Author: Worker 161 (Task 6631, with Worker 162).
-
 This module is an internal step toward the proof of
 [`SimpleFactorDecompositionStatement`](SimpleFactorDecompositionStatement.md), Conrad's
 decomposition theorem for semisimple groups (*Reductive group schemes*, Theorem 5.1.19,
@@ -64,7 +62,7 @@ An `AlmostSimpleCover G` consists of
   `IsClosedSubgroup`.
 
 The structure is internal to this proof. A central isogeny `pi A ⟶ G` with closed factor
-maps (Worker 162's `exists_almostSimplePresentation` in
+maps (`exists_almostSimplePresentation` in
 [`SimpleFactorPresentation`](SimpleFactorPresentation.md)) gives one; the image of a
 subproduct, with its quotient map, gives another (`IsSubfamilyImage.subcover` in
 [`SimpleFactorSubgroups`](SimpleFactorSubgroups.md)). Only quasi-compactness, flatness and

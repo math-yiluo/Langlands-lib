@@ -157,7 +157,8 @@ theorem coordinate_smooth (hM : M.IsSmooth) :
     Algebra.Smooth R (AffineCoordinates.hopfAlgebra M.group) := by
   let : Smooth M.group.X.hom := hM
   have h : Smooth (((AffineCoordinates.hopfSpecIso M.group).hom.hom.hom).left ≫
-      M.group.X.hom) := inferInstance
+      M.group.X.hom) :=
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in inferInstance
   rw [Over.w] at h
   change Smooth (Spec.map (CommRingCat.ofHom
     (algebraMap R (AffineCoordinates.hopfAlgebra M.group)))) at h
@@ -166,7 +167,8 @@ theorem coordinate_smooth (hM : M.IsSmooth) :
 /-- Flatness of the model is flatness of its Hopf-coordinate algebra. -/
 theorem coordinate_flat : Module.Flat R (AffineCoordinates.hopfAlgebra M.group) := by
   have h : Flat (((AffineCoordinates.hopfSpecIso M.group).hom.hom.hom).left ≫
-      M.group.X.hom) := inferInstance
+      M.group.X.hom) :=
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in inferInstance
   rw [Over.w] at h
   change Flat (Spec.map (CommRingCat.ofHom
     (algebraMap R (AffineCoordinates.hopfAlgebra M.group)))) at h
@@ -267,7 +269,7 @@ theorem reconstructedHom_isOpenImmersion
   let := hopen
   change IsOpenImmersion
     (e.inv.hom.hom.left ≫ Spec.map (CommRingCat.ofHom iB.toAlgHom.toRingHom))
-  infer_instance
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in infer_instance
 
 /-- Evaluation in the reconstructed model is restriction along the Hopf map. -/
 theorem reconstructedModel_evaluationEquiv

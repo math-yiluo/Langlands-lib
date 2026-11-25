@@ -1,7 +1,5 @@
 # Actual right-hand quotient in the positive Jacquet comparison
 
-Author: Worker 593.
-
 This module constructs the composite quotient map into the actual functor
 
 ```
@@ -196,25 +194,24 @@ The retained originals are
 `/home/taskhub/central-library/Zelevinsky--Induced representations of reductive p-adic groups II, irreducible representations of GL(n)--1980.pdf`
 and
 `/home/taskhub/central-library/Bernstein-Zelevinsky--Induced representations of reductive p-adic groups I--1977.pdf`.
-All the cited pages were read and visually inspected during this task, and
-both original-file fingerprints were verified again for this unit.
+All the cited pages were read and visually inspected, and
+both original-file fingerprints were verified.
 No applicable source-specific errata file was found in the checked
 literature/public-note locations; this is a bounded check.
 
 ## Imports, independence and scope
 
-At the reviewed submission, the sole direct project import was
+The first direct project import is
 `Derivative.PartialDerivativeJacquetComparisonStatement`. Its transitive
 project closure had 65 modules including that statement and 130 paired
 Lean/Markdown files, all matching Library commit
-`7b0be54f6fdff0448d87d389ed9dc8b01c6f048f` byte for byte. The candidate added
-only this pair. The directly reused `Partial`, `Parabolic`, `TwoBlocks`,
+`7b0be54f6fdff0448d87d389ed9dc8b01c6f048f` byte for byte. The directly reused `Partial`, `Parabolic`, `TwoBlocks`,
 `Coinvariants`, `PositiveCharacter`, `BlockModulus` and upper-unipotent pairs
 were read in full.
 
-Integration additionally imports the published `Derivative.TopLocalizationData`
-and reuses its `determinantNorm_upper`, removing the repeated norm lemma.
-The target pair and all imported pairs remain unchanged. Relative to Library
+The module additionally imports the published `Derivative.TopLocalizationData`
+and reuses its `determinantNorm_upper` instead of a repeated norm lemma.
+Relative to Library
 `3a4a075669d8c6e332c349566f8c1a7f96d2f5e6`, the final transitive project
 closure contains 88 imported modules. The additional imports provide quotient
 measure and top-localization infrastructure; the reused theorem's proof uses
@@ -233,9 +230,9 @@ representation, twist, quotient and character constructions. Its
 unproved truth is not used. No duality, multiplicity-one or finiteness
 theorem enters the implemented arguments.
 
-The full positive/socle exclusions of the parent task and the stronger
-BZ77/Whittaker-finiteness restrictions of the shared localization-tower
-task were checked against the actual closure and these proof inputs.
+The full positive/socle exclusions of the comparison proof and the
+stronger BZ77/Whittaker-finiteness restrictions of the shared
+localization tower were checked against the actual closure and these proof inputs.
 There is no classification, segment, multisegment, special-head, socle,
 tempered, square-integrable, exhaustion, coverage, ordered-conversion,
 two-supercuspidal product, segment-Jacquet-formula or consumer finiteness
@@ -247,16 +244,18 @@ input. In particular the closure avoids `SegmentHeadProductIrreducibility`,
 `SegmentSocleProductIrreducibility`, `SupercuspidalDerivatives`,
 `SupercuspidalCoinvariantFinitenessStatement`,
 `IrreducibleCoinvariantFinitenessStatement` and
-`LeviCuspidalCoinvariantFinitenessStatement`, their excluded proof successors
+`LeviCuspidalCoinvariantFinitenessStatement`, the modules that prove them
 and their downstream theorem routes. No plus, adjunction, pairing,
 derivative filtration or exterior-tensor comparison is used.
 
-This unit does not import a pending localization tower, identify the
+This module does not import a localization tower, identify the
 combined subgroup or its character, compare the left-hand derivative
-kernel, or construct the final natural isomorphism. Those remain separate
-obligations of the comparison proof. The functorial constructions here
+kernel, or construct the final natural isomorphism. Those are separate
+parts of the comparison proof, in `PartialDerivativeJacquetRHSComparison`,
+`PartialDerivativeJacquetLHS` and `PartialDerivativeJacquetComparisonProof`.
+The functorial constructions here
 cover positive `k,m`; the arbitrary-rank determinant lemma does not extend
 the two-block comparison to either boundary.
 
-Environment: `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, Lean 4.34.0, Mathlib
+Environment: Lean 4.34.0, Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.

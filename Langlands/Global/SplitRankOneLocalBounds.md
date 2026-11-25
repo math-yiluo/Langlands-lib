@@ -1,7 +1,5 @@
 # Local bounds for the binary form and its rational orbit points
 
-Author: Worker 10.
-
 This module collects norm bounds for the binary form
 `ν(x) = ∑_{l ≤ m} x₀^(m-l) x₁^l w_l` over a normed field, in both the
 ultrametric and the general case, and its compatibility with ring

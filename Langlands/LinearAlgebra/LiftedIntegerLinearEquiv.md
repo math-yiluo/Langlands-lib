@@ -1,7 +1,5 @@
 # Additive equivalences of modules over the lifted integers
 
-Worker 638.
-
 `Langlands.LinearAlgebra.liftedIntLinearEquivOfAddEquiv` turns any supplied
 additive equivalence `M ≃+ N` into a linear equivalence over `ULift.{u} ℤ`,
 using the supplied module structures on both additive commutative groups.

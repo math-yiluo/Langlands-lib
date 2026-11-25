@@ -1,12 +1,10 @@
 # Conditional squared-modulus compatibility for actual rational parabolics
 
-Author: Worker 1615.
-
-This module is a supporting construction for the host task proving
+This module is a supporting construction for
 `Langlands.Plancherel.ConditionalParabolicIntertwiningStatement`. It reduces
 the squared-modulus input of the published
 `ConditionalParabolicIntertwiningInputs` (module
-`ParabolicIntertwiningReduction`) to two open structural statements of the
+`ParabolicIntertwiningReduction`) to two structural statements of the
 Library:
 
 - `RelativeRootSystemStatement` (module `GroupScheme.Rational.Statement`):
@@ -17,7 +15,9 @@ Library:
   rational character of a connected reductive group is nonzero on some
   central split torus.
 
-Neither statement is proved here; both stay explicit premises.
+Neither statement is proved here; both stay explicit premises. The Library
+proves them as `relativeRootSystem` (`GroupScheme.Rational.RelativeRootSystemProof`)
+and `centralSplitTorusCharacter` (`GroupScheme.Rational.CentralSplitTorusCharacterProof`).
 
 ## Setting
 
@@ -117,7 +117,7 @@ takes `j` from `parabolic_exists_torusLeviFactor` and `hroot` from `hRS`
 applied to the maximal split torus `r.isCompatible.maximalSplit`. Injectivity
 comes from `hS` as above.
 
-## Reduction of the host inputs
+## Reduction of `ConditionalParabolicIntertwiningInputs`
 
 `ConditionalParabolicAnalyticInputs.{u, uV}` is a proposition (a `def` of
 type `Prop`). It has exactly the binders, local instances and `let`
@@ -148,9 +148,9 @@ Nothing here proves it.
 
 This module does not prove `RelativeRootSystemStatement`,
 `CentralSplitTorusCharacterStatement`, convergence or domination. It does not
-prove the host theorem. Its two final theorems carry the structural
+prove `ConditionalParabolicIntertwiningStatement`. Its two final theorems carry the structural
 statements and the analytic inputs as explicit premises, and they are not
-the host proof. The content is an internal adapter. It transfers the
+a proof of that statement. The content is an internal adapter. It transfers the
 published equal-centralizer Haar balance from dynamic subgroups of a
-presentation torus to the actual radicals of the host statement. No
+presentation torus to the actual radicals of that statement. No
 literature theorem replaces a proof.

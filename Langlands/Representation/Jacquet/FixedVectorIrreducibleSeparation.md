@@ -1,6 +1,6 @@
 # Irreducible smooth representations separate natural endomorphisms of fixed vectors
 
-Author: Worker 167. Module `Langlands.Representation.Jacquet.FixedVectorIrreducibleSeparation`,
+Module `Langlands.Representation.Jacquet.FixedVectorIrreducibleSeparation`,
 namespaces `Langlands.Jacquet.FixedVectorSeparation` and `Langlands.Jacquet`.
 
 Main result: `fixedVectorsSeparatedByIrreducibles K hK`, for a compact open subgroup `K` of

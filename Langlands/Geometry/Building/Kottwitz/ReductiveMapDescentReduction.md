@@ -1,6 +1,6 @@
 # Formal reduction of reductive Kottwitz descent
 
-This derived proof unit proves
+This module proves
 `ReductiveKottwitzDescentReductionStatement` and
 `ReductiveKottwitzRationalRestrictionStatement`. It implements the cocenter,
 z-extension and rational restriction steps in Kaletha–Prasad, *Bruhat–Tits

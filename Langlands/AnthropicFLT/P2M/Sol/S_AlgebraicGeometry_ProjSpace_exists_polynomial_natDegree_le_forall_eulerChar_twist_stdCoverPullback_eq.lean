@@ -7,7 +7,7 @@ Modified: FLT module names are prefixed by `Langlands.AnthropicFLT`; the FLT lak
 are set after the imports; the import of `P2M.Util` is dropped and its commands are replaced
 by standard Lean commands. The paired Markdown file lists the changes.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_ProjSpace
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_ProjSpaceCover
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_ProjTwistDatum
@@ -145,20 +145,20 @@ theorem solution
   rw [← hpev d]
   congr 1
 
-  have hlam := OModulePresheaf.nonempty_cechEquiv_ofModules_of_iso (ι ≫ ProjSpace.π k n) (λ_ (L.tensorPow d))
+  have hlam := OModulePresheaf.nonempty_cechEquiv_ofModules_of_iso (ι ≫ ProjSpace.π k n) (λ_ (L.tensorPowFLT d))
     (ProjSpace.stdCoverPullback ι)
   rw [C5bSol.eulerChar_eq_of_nonempty_equiv (ProjSpace.stdCoverPullback ι) hlam.1 hlam.2.1]
   symm
 
   have key : ∀ (φ : Z ⟶ Proj (MvPolynomial.homogeneousSubmodule (Fin (n + 1)) k)) [IsAffineHom φ],
       𝔓.toProj = φ →
-      (OModulePresheaf.ofModules (ι ≫ ProjSpace.π k n) (L.tensorPow d)).eulerChar (ProjSpace.stdCoverPullback φ) =
+      (OModulePresheaf.ofModules (ι ≫ ProjSpace.π k n) (L.tensorPowFLT d)).eulerChar (ProjSpace.stdCoverPullback φ) =
         (ProjSpace.twist (ι ≫ ProjSpace.π k n) φ d).eulerChar (ProjSpace.stdCoverPullback φ) := by
     intro φ _ hφ
     subst hφ
     obtain ⟨e, -, hnat, hbij⟩ :=
       Scheme.Modules.ProjPresentation.exists_linearMap_sections_tensorPow_twistObj_monoidalV2 𝔓 d
-    refine C5bSol.eulerChar_eq_of_natFamily (F := OModulePresheaf.ofModules _ (L.tensorPow d))
+    refine C5bSol.eulerChar_eq_of_natFamily (F := OModulePresheaf.ofModules _ (L.tensorPowFLT d))
       (G := ProjSpace.twist _ 𝔓.toProj d)
       { app := fun U => (e U).toAddMonoidHom
         smul := fun U r x => ?_

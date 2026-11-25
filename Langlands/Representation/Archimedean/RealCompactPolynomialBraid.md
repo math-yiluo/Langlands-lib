@@ -1,6 +1,6 @@
 # Compact polynomial braids with first parameter one or two
 
-This internal derived unit proves two infinite families of exact polynomial
+This module proves two infinite families of exact polynomial
 identities in any complex associative unital algebra. It uses the
 central-factorial operators D_n(X)=`RealCompactPolynomialRelations.factor X n`,
 with D_0=1, D_1=X and D_(n+2)=(X²+(n+1)²)D_n. Suppose
@@ -35,4 +35,6 @@ general two-parameter polynomial braid, identify this sequence with actual
 Frobenius tail multipliers, or compare the full rank-three or rank-four
 crossing composites. The scalar normalizations and actual parity signs of
 those operators require separate verification. The GL4 kernel-image condition
-and unrestricted two-induction-block filtration remain open.
+and the unrestricted two-induction-block filtration are not treated here; the
+Library proves that filtration as `realInducedInducedFiltration` in
+`RealInducedInducedFiltrationProof`.

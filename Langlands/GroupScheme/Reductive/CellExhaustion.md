@@ -1,6 +1,6 @@
 # Exhaustion of invariant coordinates by products of covariant coordinates
 
-Worker 1628 derives these internal results from standard Hopf-algebra
+These internal results are derived from standard Hopf-algebra
 identities and from localization. They are the algebraic core of an
 exhaustion step. Mumford–Fogarty–Kirwan, *Geometric Invariant Theory*, third
 enlarged edition (1994), Appendix to Chapter 1, Section A, printed p.192,
@@ -8,7 +8,7 @@ states that the torus-invariant regular functions on a reductive group form an
 increasing union of copies of tensor squares of section modules. That page
 gives no argument for this. The argument below, through an open cell and lifts
 of invariant functions to the product of the group with itself, is the
-author's own reconstruction and is not taken from that page.
+Library's own reconstruction and is not taken from that page.
 
 Everything is stated for an abstract commutative Hopf algebra with two
 bialgebra maps to other Hopf algebras. The geometric input is a list of
@@ -180,8 +180,9 @@ Assume `IsCellLift r s d f n F`.
 ## Density of the cell
 
 - `ofConv_pointMap_mul_inv_apply`: the value of `w ∈ A` at
-  `i(b) i'(b')⁻¹` is the value at `(b, b')` of Worker 1330's
-  `differenceComorphism r s w`, the comorphism of `(p, q) ↦ i(p) i'(q)⁻¹`.
+  `i(b) i'(b')⁻¹` is the value at `(b, b')` of
+  `differenceComorphism r s w` (`Reductive/CovariantProductInjective.lean`),
+  the comorphism of `(p, q) ↦ i(p) i'(q)⁻¹`.
 - `injective_differenceComorphism`: under (Dec) and the hypothesis that `d` is
   left regular (a non-zero-divisor), `differenceComorphism r s` is injective.
   If `w` lies in its kernel, take the localization `A → A[1/d]` as a point.
@@ -194,5 +195,5 @@ The results are purely algebraic. Nothing here shows that hypotheses (C1)–(C3)
 (Dec) or left regularity of `d` hold for any particular subgroups. For
 coordinate algebras of actual group schemes, translating (Inv) and (Dec) from
 scheme points to algebra-map points, and identifying the antipode with
-inversion, are left to later units. No statement about irreducibility,
+inversion, are not done in this file. No statement about irreducibility,
 dimension or injectivity of multiplication maps is made here.

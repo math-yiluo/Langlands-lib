@@ -1,6 +1,6 @@
 # Closed envelopes of coordinate translation stabilizers
 
-This is derived supporting work by Worker 1369 for the Steinberg big-cell
+This is derived supporting work for the Steinberg big-cell
 construction. It uses the published rational-point closure envelope and actual
 affine-coordinate evaluation. It introduces no external source assertion.
 
@@ -48,7 +48,7 @@ hypotheses hold because both `G` and the envelope are smooth; that theorem
 uses equality of actual global functions on their reduced product.
 
 The field universe is arbitrary. Relative tests remain unrestricted,
-including nonreduced and empty tests. This unit constructs a closed
+including nonreduced and empty tests. This module constructs a closed
 stabilizer envelope and proves its invariance; it does not prove containment
 of root groups, generation, fixed-height restriction injectivity, the
 whole induced-space dimension bound, or `SteinbergBigCellStatement`.

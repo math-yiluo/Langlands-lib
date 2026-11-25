@@ -221,7 +221,7 @@ theorem lieTensorRestriction_tmul (conjugate : Bool) {U V : S.Opens}
       (sectionFieldAction L B.Lie (imaginaryLieAction L s B i) U)
       (sectionRestrictionAlgebra K j) (B.Lie.val.restrictₛₗ j.op)
       (fun t x => (PresheafOfModules.naturality_apply
-        (imaginaryLieAction L s B i t).val j.op x).symm) conjugate m)
+        (imaginaryLieAction L s B i t).asHom.val j.op x).symm) conjugate m)
 
 /-- The Lie-first tensor modules and their actual restrictions form a presheaf. -/
 def lieTensorPresheaf (conjugate : Bool) : S.PresheafOfModules where
@@ -322,7 +322,7 @@ private theorem lieEigenProjection_val_app (conjugate : Bool) (U : S.Opens)
       (moduleProjector_add_other L K Γ(S, U) Γ(B.Lie, U) ρ conjugate)
   have h := congrArg
     (fun x : Γ(B.Lie, U) => (sheafProjector L K B.Lie (imaginaryLieAction L s B i)
-      conjugate).app U x) hsum
+      conjugate).asHom.app U x) hsum
   rw [map_add, sheafProjector_apply_of_mem L K B.Lie
     (imaginaryLieAction L s B i) conjugate U hp] at h
   have hzero := sheafProjector_other_apply_of_mem L K B.Lie

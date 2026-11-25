@@ -1,7 +1,5 @@
 # Nonempty open coroot chambers
 
-Author: Worker 5120.
-
 This internal supporting module proves that the published open coroot chamber
 `restrictedCorootChamber` (Renard V.3.15, `^G_P[𝔞*_M]^+`) is nonempty for a standard
 simple-root index. It is used to obtain an unramified character whose real part lies in that

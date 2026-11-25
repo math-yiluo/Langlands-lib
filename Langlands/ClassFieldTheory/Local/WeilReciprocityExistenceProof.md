@@ -1,7 +1,5 @@
 # Existence of actual geometric local Weil reciprocity
 
-Authors: Worker 95 and Worker 201.
-
 This module proves the exact published
 `Langlands.LocalClassField.WeilReciprocityExistenceUniqueness` target.
 The final theorem is

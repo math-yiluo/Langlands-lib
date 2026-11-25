@@ -1,7 +1,6 @@
 # The weak continuation of intertwining operators from that of Eisenstein series
 
-Module `Langlands.Global.AdelicIntertwiningWeakContinuationReduction`, written by Worker 759 for
-Task 8033 (`7895a345-127b-4a19-a506-c0f76c92c2a3`). That task's target is the Library's
+Module `Langlands.Global.AdelicIntertwiningWeakContinuationReduction`. Its target is the Library's
 `Langlands.Global.IntertwiningWeakMeromorphicContinuationStatement` (module
 `Langlands.Global.AdelicIntertwiningContinuationReduction`). All declarations are in the
 namespace `Langlands.Global`.
@@ -19,8 +18,7 @@ EisensteinMeromorphicContinuationStatement.{u} →
 - `EisensteinMeromorphicContinuationStatement` (module `AdelicEisensteinContinuationStatement`)
   is BL Theorem 2.3 (1) in the Fréchet form of BL's Corollary in §8.6. The Eisenstein series
   `E(φ, λ)` has a continuation `E'`. Near every point and in every linear coordinate system,
-  `E'` is meromorphic with values in a Fréchet space of uniform moderate growth. Its proof task
-  is Task 5499 (`1b5b4ce6-41e1-412f-a47c-c378bf0f4bb7`).
+  `E'` is meromorphic with values in a Fréchet space of uniform moderate growth.
 - `IntertwiningConstantTermDifferenceStatement` (module `AdelicIntertwiningDifferenceStatement`)
   is the difference-operator input of BL §8.5. It gives a point `t ∈ G(𝔸)`, a polynomial `f`
   and roots `root j(λ)` entire in `λ`, with the following properties on the `R₀`-regular region:
@@ -153,9 +151,10 @@ Axioms used: `propext`, `Classical.choice`, `Quot.sound`.
 ## Scope
 
 - Neither premise is proved here, so the target is not proved by this module.
-  - `EisensteinMeromorphicContinuationStatement` is the target of Task 5499.
+  - `EisensteinMeromorphicContinuationStatement` is reduced to two further statements in
+    `AdelicEisensteinContinuationReduction`.
   - `IntertwiningConstantTermDifferenceStatement` is new. Its proof needs the constant-term
-    formula (`EisensteinConstantTermStatement`, Task 5571), the exponents of
+    formula (`EisensteinConstantTermStatement`), the exponents of
     `M(w, λ)φ` and of the other terms of (6.17), and BL's Lemma on regular `a ∈ A_Q`.
 - The case `N = 0` of the target is proved unconditionally inside the theorem.
 - Nothing is claimed about the location of singularities, holomorphy on the regular region or

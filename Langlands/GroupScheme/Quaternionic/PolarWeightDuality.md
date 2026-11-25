@@ -1,7 +1,5 @@
 # Polar duality between opposite pieces of a spanning decomposition
 
-Author: Worker 186.
-
 This module supplies linear algebra for the weight calculation of a split torus
 acting by isometries of a quaternionic quadratic form. It is an internal derived
 result. It imports the Library's definitions of quotient-valued quadratic forms,

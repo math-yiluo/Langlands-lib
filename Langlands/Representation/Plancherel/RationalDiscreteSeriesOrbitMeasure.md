@@ -1,7 +1,5 @@
 # Measures on actual rational-point discrete-series twist orbits
 
-Author: Worker 200.
-
 This derived adapter specializes `DiscreteSeriesOrbitMeasure` to the shared
 actual rational-point group, its canonical topology and every rational norm
 character. Waldspurger, *La formule de Plancherel pour les groupes p-adiques

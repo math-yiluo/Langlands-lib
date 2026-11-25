@@ -1,7 +1,5 @@
 # Full Tate images of reverse multiplication factorizations
 
-Author: Worker 1730.
-
 This is an internal algebraic consequence of the published full Tate limit and
 the coordinate-division result in `FullEvaluationKernel`. It applies to any two
 commutative group schemes `G`, `H`, any test scheme `T`, and actual homomorphisms

@@ -1,7 +1,5 @@
 # Transferring spectral tests to represented affinoid domains
 
-Author: Worker 786.
-
 This internal formulation gives the finite-test estimate for restriction to
 an affinoid domain used in Berkovich, *Vanishing cycles for formal schemes*
 (1994), §6, Proposition 6.1 and §7, Key Lemma 7.2. A structural map

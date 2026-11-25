@@ -161,10 +161,13 @@ either reading. Its Appendix A corrections are only on pp. 570 and 582. None
 concerns 17.101, 17.104, 18.5, 18.19, 18.22, 18.24, 19.10, 19.15, 19.22,
 21.50, 21.64 or A.77.
 
-## For the later proof (not part of this unit)
+## For a proof (not part of this module)
 
-Milne's route can be followed; the Library does not yet contain its main
-inputs.
+Milne's route can be followed. The Library proves the statement as
+`splitSemisimpleSimplyConnectedPicard` in `SplitPicardReduction`, by applying
+`splitSemisimplePicardReduction` to the two geometric inputs
+`splitCentralIsogenyPicardCharacterLifting` and
+`splitSemisimplePicardTrivialCover`.
 
 - **If.** Milne's proof of 18.19 (printed p. 392, PDF p. 408) reads: "Let
   φ: G′ → G be a multiplicative isogeny of connected group varieties. In the

@@ -1,7 +1,5 @@
 # The juxtaposed case of Proposition 4.6, step (2)
 
-Author: Worker 1033.
-
 The published statement `LinkedSegmentSocleReverseProductQuotientHom` (module
 `LinkedSegmentSocleReverseProductStepsStatement`) extends step (2) of Zelevinsky
 1980, Proposition 4.6 to juxtaposed segments. There it follows from statement 1,

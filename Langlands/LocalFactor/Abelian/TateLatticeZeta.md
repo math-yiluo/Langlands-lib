@@ -1,8 +1,8 @@
 # Lattice-coset zeta integrals
 
-Worker 1248. Internal lemmas computing the published zeta integral
-`PadicAbelian.zeta` on indicators of valuation-lattice cosets. They use Worker
-1786's convergence theorem `zeta_integrable` and shell formula
+Internal lemmas computing the published zeta integral
+`PadicAbelian.zeta` on indicators of valuation-lattice cosets. They use the
+convergence theorem `zeta_integrable` and shell formula
 `setIntegral_zeta_orderShell`.
 
 * `cosetTest m b`: the indicator of `{z | z - b ∈ π^(-m) O}` as a Schwartz–Bruhat

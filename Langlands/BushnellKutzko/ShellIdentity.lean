@@ -22,7 +22,7 @@ gives the **shell identity**
 (`setIntegral_ord_det_eq_of_functionalEquation`). When `r ≠ 0` the integrand cannot vanish on
 the shell (`exists_ord_det_eq_of_functionalEquation`).
 
-This is piece An3 of the analytic part of the proof of T2 (Task 7683).
+This belongs to the analytic part of the proof of T2 (see `ConductorFormula`).
 -/
 
 noncomputable section
@@ -91,7 +91,7 @@ theorem measurableSet_ord_det_eq (j : ℤ) :
       K.canonicalTopologicalData.ord (Matrix.det g.val) = j} :=
   ((isClosed_discrete ({j} : Set ℤ)).preimage (continuous_ord_det K)).measurableSet
 
-/-- **The shell identity** (piece An3). Assume functional-equation data for `σ` with both Euler
+/-- **The shell identity**. Assume functional-equation data for `σ` with both Euler
 polynomials `1`, unit `c` and exponent `a`. Let `Φ` be a matrix test function whose Fourier
 transform vanishes at every `g ∈ GL_{n+1}(K)` with `ord(det g) < j₀`, and let `f` be a bi-smooth
 coefficient of `σ` whose shifted zeta integral against `Φ` has the constant rational value `r`.

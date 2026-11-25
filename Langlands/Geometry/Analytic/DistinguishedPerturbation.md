@@ -1,7 +1,5 @@
 # Small perturbations of distinguished series
 
-Author: Worker 56.
-
 Adding an actual restricted series of norm strictly less than one to a
 normalized distinguished series preserves distinguishedness at the same
 degree. The leading coefficient becomes `1 + a` with `norm a < 1`. Its unit is

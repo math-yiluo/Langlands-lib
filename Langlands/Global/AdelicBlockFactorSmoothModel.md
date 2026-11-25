@@ -1,6 +1,6 @@
 # Smooth adelic block-factor sections in a genuine normed tensor model
 
-Author: Worker 2. Provenance: internal construction using the published actual
+Provenance: internal construction using the published actual
 block tensor action, representation transport and adelic section APIs, and
 Mathlib's indexed tensor basis. No new original-literature identification is made.
 

@@ -31,7 +31,7 @@ universe u uQ
 namespace Langlands.Global.CuspidalPairFunctionalEquation
 
 open scoped NumberField
-open Langlands.Global.CompletionPadic Langlands.ClassField.Global.RelativeWeilGroup
+open Langlands.Global.CompletionPadic Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 
 variable {F : Type u} [Field F] [NumberField F] [CompactSpace (AdeleQuotient F)]
 

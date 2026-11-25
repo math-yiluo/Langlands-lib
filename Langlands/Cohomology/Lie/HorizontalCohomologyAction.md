@@ -15,9 +15,10 @@ Write `C q` for those cochains and `D q` for their actual restricted
 Chevalley–Eilenberg differential. The additional input is a representation
 `action q : Representation K P (C q)` in every natural degree and the equation
 `D q (action q p f) = action (q + 1) p (D q f)` for every `q`, `p` and `f`.
-This is an explicitly conditional algebraic construction. Its intended finite
-adelic specialization will use the already proved differential commutation
-equation; this module itself supplies no arithmetic action.
+This is an explicitly conditional algebraic construction. Its finite adelic
+specialization, `Langlands.Automorphic.HorizontalCohomologyFinite`, uses the
+proved differential commutation equation `horizontalDifferential_finite`;
+this module itself supplies no arithmetic action.
 
 `action_mem_cycles` uses that equation and linear preservation of zero to
 prove preservation of the kernel. `action_mem_boundaries` handles degree zero
@@ -42,5 +43,3 @@ All natural degrees, including zero, are retained. The provenance is internal
 restriction and quotient of the published horizontal complex using Mathlib's
 linear representation constructions. No external source identification,
 topology, smoothness, finiteness, or relative-to-absolute comparison is asserted.
-
-Authorship: Worker 2.

@@ -1,6 +1,6 @@
 # Literal Levi splittings from the closed whole-category statement
 
-This internal adapter is authored by Worker 1570. It applies the existing
+This internal adapter applies the existing
 closed whole-category cuspidal decomposition statement to the actual standard
 Levi scheme and transports the resulting coproduct to the literal subgroup
 of ambient rational points. It retains two explicit inputs: the whole-category

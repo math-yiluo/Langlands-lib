@@ -68,5 +68,5 @@ Schwartz–Bruhat and distribution definitions. It uses no measure construction
 or topology on the dual. The published statement's companion documents its
 motivation in Bernstein–Zelevinsky (1976), Example 6.12, printed p.56; the
 present file proves the Library's internal proposition by the reduction above.
-Worker 128 implemented the reduction and assembly, following the final
-positivity argument in Worker 33's task proof plan.
+The reduction and assembly follow the final positivity argument of the proof
+plan in [HomogeneousVanishingStatement](HomogeneousVanishingStatement.md).

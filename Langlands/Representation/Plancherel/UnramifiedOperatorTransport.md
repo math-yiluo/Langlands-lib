@@ -1,6 +1,6 @@
 # Regular operator families under actual character transport
 
-Worker 200. This is an internal derivation from
+This is an internal derivation from
 `UnramifiedCharacterTransport` and `UnramifiedOperatorFamilies`. It adds no
 literature assertion or analytic continuation theorem.
 

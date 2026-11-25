@@ -1,7 +1,5 @@
 # The chosen special vertex and its actual compact stabilizer
 
-Worker 1229, task `219b673d-b7f3-47fb-9019-d1642687d4ac`.
-
 This focused definition adapter fixes the subgroup and the quotient map used
 by the special maximal compact targets. All declarations are in
 `Langlands.Geometry.Building.KPApartmentData`.
@@ -79,7 +77,7 @@ index `J`, and the literal pointwise product of the intersections with the
 actual standard Levi and unipotent groups. S19(5) requires an actual
 standard-Levi group-scheme adapter, its inherited apartment and its minimal
 parabolic compatibility. Those statement targets are not part of this
-definition unit. Iwasawa, Cartan and the smaller simultaneous basis remain
+definition module. Iwasawa, Cartan and the smaller simultaneous basis remain
 sibling targets.
 
 `KPApartmentData` supplies only the split-torus part of V 6. Full corrected

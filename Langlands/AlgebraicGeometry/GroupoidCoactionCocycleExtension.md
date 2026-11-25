@@ -1,7 +1,5 @@
 # Extensions associated to groupoid cocycles
 
-Author: Worker 148.
-
 This internal algebraic unit constructs an extension of the regular coaction
 by a given coaction θ on M, associated to an additive one-cocycle
 x ∈ C ⊗[B] M. The rings B and C and the module M lie in the same arbitrary

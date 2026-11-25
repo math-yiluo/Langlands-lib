@@ -1,11 +1,8 @@
 # Inverse-power extensions characterize endomorphism localization
 
-Authors: Worker 709 (statement design and draft) and Worker 922
-(source recheck, compilation and submission).
-
-This statement unit covers the converse in the final paragraph of the proof
+This statement module covers the converse in the final paragraph of the proof
 of Renard's A.III.1 unnumbered lemma (ii), printed253/PDF259. It also states
-the resulting unique comparison with the actual published localization.
+the resulting unique comparison with the actual localization.
 The module imports only `Langlands.Algebra.RenardEndomorphismLocalization`.
 All four new declarations are proposition definitions in
 `Langlands.Renard.EndomorphismLocalization`; none is proved here.
@@ -19,7 +16,7 @@ lemma, printed252–253/PDF258–259. Registered source:
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 Original file:
 `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`.
-PDF258–259 were read and PDF259 was visually inspected for this unit.
+PDF258–259 were read and PDF259 was visually inspected for this module.
 On 28 October 2026 the file's SHA256 was rechecked, PDF258–259 were
 reread, and rendered PDF259 was checked for the displayed union, the
 restriction condition and the invertibility hypothesis of the converse.
@@ -48,7 +45,7 @@ localization is a derived consequence of the converse and the uniqueness
 of solutions to a universal problem, recalled at the top of PDF258.
 These extensions and the explicit set-union encoding are not attributed
 verbatim to the book. No result about the quotient L/K is assumed or
-implemented in this unit.
+implemented in this module.
 
 ## Actual objects, hypotheses and universes
 
@@ -105,7 +102,7 @@ and hypotheses above satisfies
 HasUniversalProperty.{u, v, x, w} a β.toLinearMap j
 ```
 
-This reuses the published predicate. It quantifies over every actual
+This reuses the imported predicate. It quantifies over every actual
 R-module `W : Type w`, every `b : Module.End R W` with `IsUnit b`, and
 every linear f from V to W intertwining a with b. It concludes that
 there exists a unique linear g from M to W such that
@@ -146,18 +143,19 @@ The imported public module supplies the actual `Localized`, `iota`,
 `localizedEnd`, `localizedEquiv`, fraction formulas, `factor`,
 `factor_intertwines`, `factor_comp_iota`, `factor_unique`,
 `eq_of_intertwines`, `hasUniversalProperty`, and
-`HasUniversalProperty`. No unpublished draft is imported.
-The independent proof successor must prove the exact published
+`HasUniversalProperty`.
+The theorem `localizationExtensionStatements` in
+`RenardLocalizationExtensionProof` proves the exact
 `LocalizationExtensionStatements` declaration. A possible route
 constructs the actual factor from `Localized a` to M, proves it
 bijective from injectivity of j and the inverse-power exhaustion,
 then transports the existing universal property. This is a proposed
-route, not an implemented or accepted proof.
+route, not a proof in this module; the proof module follows it.
 
 The canonical localization kernel theorem, power-kernel quotient,
 injectivity of its induced operator, comparison with that quotient,
 the surjective-canonical-map corollary, general possibly nonunital
 algebra-action extension, categorical packaging, exactness and the
-final C.II finite-localization proposition remain separate obligations.
-This statement unit does not establish the complete source lemma or
-whole-book completion.
+final C.II finite-localization proposition are outside this module.
+This statement module does not establish the complete source lemma or
+a completion of the whole book.

@@ -1,6 +1,6 @@
 # Scalar cancellation in restrictions of tensor contractions
 
-This internal derived unit constructs a tensor contraction from two actual
+This internal derived module constructs a tensor contraction from two actual
 chart comparisons and proves its restriction law. All schemes have the same
 arbitrary universe. The construction needs an isomorphism from the pullback
 of a module `A` to a local module `L`, and an isomorphism from the pullback
@@ -32,7 +32,7 @@ global unit on `U`. Then `tensorChartContractionIso_restrict` proves
 Thus the inverse scalar in the restricted second coordinate cancels
 the extra scalar in the transition of the local target module.
 Both coordinate restriction equations are explicit hypotheses of this generic
-lemma; this unit does not assert them for any particular projective atlas.
+lemma; this module does not assert them for any particular projective atlas.
 
 The proof first applies contraction pullback compatibility and moves the scalar
 onto the structure-module factor using `tensorContraction_scaled`. The two
@@ -43,5 +43,6 @@ restriction of the smaller contraction.
 All assertions are derived from existing canonical tensor comparisons, their
 proved right-unitor compatibility, actual scalar automorphisms, and tensor
 compatibility of equal-composite pullback. No new literature assertion is used.
-Application to the genuine tensor-frame atlas, the global degree-one
-comparison, and the ordinary-moduli representability theorem remain open.
+Application to the genuine tensor-frame atlas and the global degree-one
+comparison are in `TensorLineTwistGluing`; the ordinary-moduli representability
+theorem remains open.

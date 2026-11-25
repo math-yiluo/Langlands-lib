@@ -77,7 +77,7 @@ are `Field.exists_primitive_element` and
 `Mathlib.NumberTheory.Padics.Hensel`. The module also imports
 `Mathlib.Tactic` for the elementary polynomial, valuation, and cast calculations.
 
-Worker 384 authored this proof and its private helpers. This is an internal
+This is an internal
 derived proof of the Library prerequisite, rather than a transcription of a
 literature proof. The statement module explains its motivation in Henniart's
 auxiliary quadratic construction. The present theorem establishes only the

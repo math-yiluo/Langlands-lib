@@ -56,15 +56,14 @@ gluing reduction applied to the restriction gluing data
 open embeddings, with ranges described by the local center. Its paired Markdown gives
 the details.
 
-## Credit
+## Modules and sources
+
+The proof imports the following modules:
 
 * `SchemeAnalytificationAnalyticStructure` and its helper modules
   `AffineAnalytificationLocalDomainMaps`, `SchemeAnalytificationAffinoidPoints`,
-  `SchemeAnalytificationLocalCharts` and `SchemeAnalytificationAtlas`: Worker 901
-  (Task 7120).
-* `SchemeAnalytificationOpenGluing` and `SchemeAnalytificationRestrictionCoherence`:
-  Worker 344 (Task 7087).
-* This assembly module: Worker 901.
+  `SchemeAnalytificationLocalCharts` and `SchemeAnalytificationAtlas`.
+* `SchemeAnalytificationOpenGluing` and `SchemeAnalytificationRestrictionCoherence`.
 
 The target's mathematical sources are Berkovich 1990, Theorem 3.4.1 and step (3) of
 its proof, and Berkovich 1993, Proposition 1.3.3, as cited in the target's paired

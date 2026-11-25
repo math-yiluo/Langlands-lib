@@ -1,6 +1,6 @@
 # Effective geometric descent with quasi-coherence and relative flatness
 
-This internal unit uses the actual ordinary module categories of schemes in
+This internal module uses the actual ordinary module categories of schemes in
 an arbitrary universe `u`, and the rank-independent, all-scheme-test `Datum`
 and `Str` of `LineBundleFlatDescentStr`.
 
@@ -42,7 +42,7 @@ and surjective. Flatness of `g` permits composition of relative flatness
 from `q` to `q ≫ g = p ≫ f`, reducing to the previous consequence.
 These relative-flatness results need no quasi-coherence premise.
 
-The provenance is internal: this unit composes the specified geometric
+The provenance is internal: this module composes the specified geometric
 effectivity, quasi-coherence detection, compatible-isomorphism uniqueness,
 and actual relative-stalk-flatness descent results. It introduces no
 literature assertion. It does not assert finite presentation,

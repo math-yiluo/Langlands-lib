@@ -1,7 +1,5 @@
 # Contragredient transfer and conjugate coinvariants
 
-Author: Worker 115.
-
 This module supplies supporting constructions and proved transfer lemmas for
 `Langlands.GeneralLinear.SupercuspidalContragredientStatement`. It does not
 prove that complete statement. In particular, smooth separation and bidual

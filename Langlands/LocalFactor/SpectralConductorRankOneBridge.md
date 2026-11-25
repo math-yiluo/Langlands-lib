@@ -1,6 +1,6 @@
 # From the rank-one statement to the class sums of `M/L`
 
-Worker 4803 wrote this supporting module of
+This is a supporting module of
 `SpectralConductor.spectralConductorRankOneReduction`.
 
 ## Galois groups of `M/L` inside `Gal(M/F)`

@@ -4,4 +4,4 @@ A continuous kernel on a second-countable compact space with a finite Borel meas
 
 The smooth real-angle lift gives jointly continuous iterated angular derivatives of each torus slice. Compactness bounds finitely many such derivatives uniformly across the slices. The existing Fourier kernel factorization and the continuous kernel trace-class criterion then give the result.
 
-This is an internal result for the smoothing operators of the real compact-picture representation in Task 7534.
+This is an internal result for the smoothing operators of the real compact-picture representation in `Langlands.Representation.Archimedean.RealPrincipalSeriesTraceClass`.

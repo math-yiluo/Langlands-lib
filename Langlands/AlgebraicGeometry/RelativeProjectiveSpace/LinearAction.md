@@ -30,5 +30,5 @@ from the existing affine comparison and the universal property of relative
 projective space. The action identities follow by the two-projection
 extensionality lemma and the existing identities for the actual polynomial
 projective action. No additional external source assertion is used.
-This unit constructs coefficient linear actions; it does not construct a
+This module constructs coefficient linear actions; it does not construct a
 projective bundle for a nontrivial locally free sheaf or a moduli quotient.

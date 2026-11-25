@@ -76,9 +76,9 @@ through `ρ.rangeRestrict`.
 This is an internal linear-algebra construction derived from Mathlib's
 subspace, basis, matrix-coordinate and solvable-group APIs and the
 published upper triangular group construction. No external structural
-theorem is assumed. Worker 1399 designed the full-flag preservation
-interface for the geometric consumer; Worker 135 implemented the
-constructions and proofs.
+theorem is assumed. The full-flag preservation interface is designed
+for the geometric consumer
+(`Langlands.GroupScheme.Absolute.GeneralLinearSolvableStabilizerProof`).
 
 The result supplies the algebraic solvability step once a preserved full
 flag has been obtained. It constructs neither a geometric flag variety

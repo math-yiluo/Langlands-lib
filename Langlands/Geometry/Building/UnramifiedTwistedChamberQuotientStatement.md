@@ -1,7 +1,9 @@
 # Geometric quotient input at a twisted-fixed point
 
-`UnramifiedTwistedChamberQuotientStatement` is a derived, unproved prerequisite
+`UnramifiedTwistedChamberQuotientStatement` is a derived prerequisite
 for the Lang correction route to `UnramifiedTwistedGeneratorChamberStatement`.
+The Library proves it as `unramifiedTwistedChamberQuotient` (module
+`UnramifiedTwistedChamberQuotientProof`).
 Its hypotheses are exactly those of that statement and of
 `UnramifiedTwistedChamberThroughFixedPointStatement`, at arbitrary universe `u`.
 
@@ -10,8 +12,8 @@ Its hypotheses are exactly those of that statement and of
 Let `F` be the supplied nonarchimedean local field, `K = inertiaFixedField F`,
 `Γ = Aut(K/F)`, and `G_K = baseChanged F K G`. The supplied maximal split torus,
 apartment class `D`, centralizer `C`, V6 compatibility, and coefficient stability
-`hD` determine the same building `B` and coefficient action `A.action σ` as the
-host statement. The map `c : Γ → G(K)` satisfies the same crossed-homomorphism
+`hD` determine the same building `B` and coefficient action `A.action σ` as
+`UnramifiedTwistedGeneratorChamberStatement`. The map `c : Γ → G(K)` satisfies the same crossed-homomorphism
 identity and is trivial on the fixing subgroup of a finite subextension. The
 point `y` is fixed by every twisted action `z ↦ c σ • A.action σ z`.
 
@@ -60,5 +62,5 @@ geometric obligations. The source motivates this packaging; the cited chamber
 existence assertion alone does not supply the displayed quotient witnesses.
 The separate conditional reduction uses Lang's theorem on the resulting actual
 finite-field group. Neither this module nor that reduction proves the present
-existence statement, the supplied building data's existence, or the final host
-target unconditionally.
+existence statement, the supplied building data's existence, or
+`UnramifiedTwistedGeneratorChamberStatement` unconditionally.

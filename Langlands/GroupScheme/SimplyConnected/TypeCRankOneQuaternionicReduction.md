@@ -1,7 +1,5 @@
 # Extracting the quaternionic rank-one model from type-C classification
 
-Authors: Worker 178, Worker 64.
-
 `Langlands.GroupScheme.typeCRankOneQuaternionic_of_typeCDivisionForm.{u}`
 proves that the explicit premise `TypeCDivisionFormStatement.{u}` implies the
 unchanged `TypeCRankOneQuaternionicStatement.{u}`. It does not prove the

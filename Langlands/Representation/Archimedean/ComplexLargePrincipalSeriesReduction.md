@@ -2,8 +2,7 @@
 
 Lean module: `Langlands.Representation.Archimedean.ComplexLargePrincipalSeriesReduction`.
 
-Worker 4713 wrote this module for task `fc034a99-91a8-4782-be5f-e660ac20383c` (Task 6758). That
-task's target is the Library's `Langlands.Archimedean.ComplexLargePrincipalSeriesStatement` (V1,
+The target of this module is the Library's `Langlands.Archimedean.ComplexLargePrincipalSeriesStatement` (V1,
 module `Langlands.Representation.Archimedean.ComplexGenericStandardInjectiveReduction`). V1 says
 that every irreducible admissible large `(𝔤𝔩_n(ℂ), U(n))`-module `(ρ, π)` has the standard-module
 parameter of some list `ds` of complex characters (`HasComplexStandardParameter n ρ π ds`):

@@ -1,7 +1,5 @@
 # Actual ideal-power quotient complexes of sheaf diagrams
 
-Author: Worker 13.
-
 This module constructs ideal-power reduction systems for actual complexes of
 diagrams of module-valued sheaves. It uses the published sectionwise quotient
 and sheafification functors, proves their additivity, and applies Mathlib's
@@ -129,9 +127,9 @@ Mathlib constructions are in `CategoryTheory.Sites.Abelian`,
 `Algebra.Homology.Additive`, `Algebra.Homology.HomologicalComplexLimits`,
 `CategoryTheory.Limits.Preserves.Limits` and
 `CategoryTheory.Limits.FunctorCategory.Basic`. No new assertion from the
-original literature is attributed to this internal unit.
+original literature is attributed to this internal module.
 
 The result concerns ordinary complexes and ordinary inverse limits. Exactness,
 derived completion, cohomology comparison, comparison with associated
 coefficient quotients, smooth or continuous actions, lisse-adic properties and
-the Harris specialization remain separate obligations.
+the Harris specialization are not part of this module.

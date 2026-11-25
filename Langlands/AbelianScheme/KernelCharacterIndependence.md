@@ -52,7 +52,7 @@ that this function descends through the existing quotient by bundle
 isomorphism, giving `trivialHomPullbackClassCharacter`. Its `_classOf`
 lemma computes the function on a representative.
 
-This unit is internally derived from the imported normalized comparison,
+This module is internally derived from the imported normalized comparison,
 actual relative units, and actual character interfaces. It implements the
 trivialization-independence step motivated by Edixhoven–van der
 Geer–Moonen, *Abelian Varieties*, preliminary build 2012-02-08,
@@ -61,5 +61,6 @@ the inverse to the actual projection on units rather than selecting a
 local scalar. The character retains the orientation specified in
 `KernelTranslationScalar` and its evaluation formula. Comparison with
 replacement of the bundle by its test-scheme pullback and tensor
-compatibility are subsequent units. No effective descent, quotient
+compatibility are proved in `KernelCharacterNaturality` and
+`KernelCharacterTensor`. No effective descent, quotient
 equivalence, representability or duality is asserted.

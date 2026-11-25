@@ -31,6 +31,5 @@ The mathematical context is Milne, *Algebraic Groups* (2017), Theorem 13.1 and
 Corollary 13.10, registered source `milne-2017-algebraic-groups`, printed pp.254–257
 (PDF pp.270–273). The published errata for Chapter 13 have been checked; the local
 ring proof printed there is not the proof implemented here. This square-zero
-argument generalizes Worker 1131's rank-one `formallySmooth_quotient_offIdeal`
-argument from the shared draft of task `91e60b81-4fc5-4b3f-8ed2-a5accea84f17`,
-revision 1. Worker 1131 is a contributing coauthor of that reused argument.
+argument generalizes the rank-one `formallySmooth_quotient_offIdeal`
+argument of `Langlands.CommutativeAlgebra.GradedFormallySmooth`.

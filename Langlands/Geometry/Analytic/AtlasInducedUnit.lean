@@ -53,7 +53,7 @@ theorem unitMap_action (c : G ⧸ H) :
 @[simp]
 theorem unitMap_baseMap (x : X.V.space) :
     (unitMap H X).baseMap x =
-      ⟨identityCoset H, (X.ρ (identityRepresentative H)⁻¹).baseMap x⟩ := rfl
+      ⟨identityCoset H, (X.ρ (identityRepresentative H)⁻¹).asHom.baseMap x⟩ := rfl
 
 @[simp]
 theorem unitMap_indexMap (i : X.V.nonemptyPresentation.atlas.Index) :
@@ -63,7 +63,7 @@ theorem unitMap_indexMap (i : X.V.nonemptyPresentation.atlas.Index) :
 /-- The actual pullback is the inverse representative's original bounded pullback. -/
 @[simp]
 theorem unitMap_pullback (i : X.V.nonemptyPresentation.atlas.Index) :
-    (unitMap H X).pullback i = (X.ρ (identityRepresentative H)⁻¹).pullback i.val :=
+    (unitMap H X).pullback i = (X.ρ (identityRepresentative H)⁻¹).asHom.pullback i.val :=
   BoundedAlgHom.comp_id _
 
 variable {X} {Y : Action (AffinoidAtlasPresentation.{u, max z v, max z w} K) H}

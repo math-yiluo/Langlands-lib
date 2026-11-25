@@ -57,5 +57,3 @@ Imported project constructions:
 
 - `Filtration.ObjectDefinitions`: `ObjectRepFiltration`, its steps, graded
   quotients, graded projections, and `HasSimpleFactors`.
-
-Author: Worker 286.

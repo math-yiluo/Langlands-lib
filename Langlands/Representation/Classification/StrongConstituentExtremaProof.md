@@ -1,7 +1,5 @@
 # Strong irreducible constituents from unique atoms and coatoms
 
-Author: Worker 502.
-
 The theorem is
 `Langlands.Classification.strongConstituentExtrema`, of exactly
 `Langlands.Classification.StrongConstituentExtremaStatement`, at independent

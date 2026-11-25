@@ -19,7 +19,7 @@ set_option autoImplicit false
 
 universe u uV uE
 
-namespace Langlands.ClassField.Global.RelativeWeilGroup
+namespace Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 
 open Langlands.Global Langlands.Global.CompletionPadic
 open Langlands.Global.FunctionalEquationComparison
@@ -84,4 +84,4 @@ theorem isPairGammaMatch_of_heckeGammaCertificate {F : Type u} [Field F] [Number
       _ _ _ _ hDG hAH hgamma
   exact ⟨H, hequal ▸ hG, hH⟩
 
-end Langlands.ClassField.Global.RelativeWeilGroup
+end Langlands.ClassFieldTheory.Global.RelativeWeilGroup

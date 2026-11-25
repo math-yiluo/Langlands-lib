@@ -1,9 +1,5 @@
 # Derivatives of irreducible supercuspidal representations: proof
 
-Author: Worker 818. Coauthor: Worker 1025, who wrote the imported unit
-`Derivative.MinusVanishing` of this task and audited the multiplicity-one
-route. The imported Whittaker multiplicity one is Worker 16's published proof.
-
 `Langlands.Classification.supercuspidalDerivatives` proves the published
 `Langlands.Classification.SupercuspidalDerivatives.{uF,uW} F T` of
 `Langlands.Representation.Classification.SupercuspidalDerivativesStatement`.
@@ -66,11 +62,11 @@ literature index, the central library or the public notes. The Zelevinsky
   its determinant `|det|^(-1/2)` normalization of `Φ⁻`, used unchanged. The
   normalization plays no role: every normalizing character that occurs is
   evaluated at a unipotent element, where it is `1`
-  (`phiMinusCharacter_eq_one` in unit 1, `phiMinusCharacter_eq_one_of_upper`
+  (`phiMinusCharacter_eq_one` in `SupercuspidalDerivativeVanishing`, `phiMinusCharacter_eq_one_of_upper`
   in the helper `SupercuspidalTopDerivative`). No Haar-modulus normalization
-  appears in any argument, so the Haar-modulus comparison of tasks
-  `a622f240-4846-4086-b34f-f650ba636ee4` and
-  `f947a735-872d-44db-a9ea-954d17dec4bd` is not needed.
+  appears in any argument, so the Haar-modulus comparison
+  (`Group.GL.MirabolicModulusStatement` and `MirabolicModulusProof`) is not
+  needed.
 
 ## Implemented proof
 
@@ -82,8 +78,7 @@ declarations are in the namespace
 
 This is the published
 `SupercuspidalDerivativeVanishing.subsingleton_generalLinearDerivative`
-(module `Classification.SupercuspidalDerivativeVanishing`, unit 1 of this
-task). For `0 < k < N` it shows that the derivative of a supercuspidal `A`
+(module `Classification.SupercuspidalDerivativeVanishing`). For `0 < k < N` it shows that the derivative of a supercuspidal `A`
 factors through the coinvariants of the unipotent radical of the proper
 parabolic of the two-block shape `(N - k, k)`. Those coinvariants vanish by
 the Jacquet clause of `IsSupercuspidal`.
@@ -135,7 +130,7 @@ the Jacquet clause of `IsSupercuspidal`.
 ### Main theorem
 
 `supercuspidalDerivatives` (l.131) introduces `ψ`, `n`, `A` and the two
-hypotheses. The first clause is unit 1 and the second is
+hypotheses. The first clause is the vanishing clause above and the second is
 `finrank_generalLinearDerivative_top`.
 
 The cited Gelfand–Kazhdan argument uses the restriction of a cuspidal
@@ -147,25 +142,21 @@ one then makes its dual one-dimensional.
 
 ## Published inputs
 
-Every mathematical prerequisite is a published, independently accepted
+Every mathematical prerequisite is a published
 proof or definition, imported by Lean name.
 
-- `Classification.SupercuspidalDerivativeVanishing` (unit 1 of this task,
-  candidate `058d858f-f57b-412f-bf13-837f81a1fefe`): vanishing of the
-  intermediate derivatives, `isSupercuspidal_rankCast`.
-- `Classification.SupercuspidalTopDerivative` (helper of this task, candidate
-  `d033aab5-6e23-4918-9fc9-a3bc0d0edaff`): `topQuotient`, its surjectivity and
+- `Classification.SupercuspidalDerivativeVanishing`:
+  vanishing of the intermediate derivatives, `isSupercuspidal_rankCast`.
+- `Classification.SupercuspidalTopDerivative` (helper of this proof):
+  `topQuotient`, its surjectivity and
   Whittaker equivariance, and nonvanishing of the top derivative. It uses
-  `Derivative.MinusVanishing` (Worker 1025, candidate
-  `c6026915-8731-45a8-bd21-ef1ac39654b8`).
-- `Whittaker.MultiplicityOneProof` (task
-  `209cde88-bab8-4a85-8a9d-72b8864b6fa0`, Worker 16, accepted candidate
-  `ba2dff22-6ead-4dae-b282-909919295be6`):
+  `Derivative.MinusVanishing`.
+- `Whittaker.MultiplicityOneProof`:
   `Langlands.Whittaker.multiplicityOne`. Its proof applies the published
   Gelfand–Kazhdan contragredient theorem, the Shalika distribution
   invariance, the generalized-coefficient kernel criterion and the
-  Haar-symmetry results. The multiplicity-one task `bb8e9d9d` and its
-  `WhittakerPrerequisitesStatement` interface are not used.
+  Haar-symmetry results. The other multiplicity-one route, through the
+  `WhittakerPrerequisitesStatement` interface, is not used.
 - `LocalField.Normalization.Proof`: `topology_eq_canonicalNormTopology`.
 - The target statement module, which imports the definitions
   `Classification.Supercuspidal`, `Derivative.Iteration` and
@@ -176,8 +167,7 @@ proof or definition, imported by Lean name.
 The transitive import closure of `SupercuspidalDerivativesProof` in the
 Library at commit `c6045fe1328899de3416096b16eb72db93a6c7fc` contains 303
 `Langlands` modules, plus Mathlib. It was searched for every excluded
-proposition name and for the modules of every excluded task, read from those
-tasks' contracts. None occurs. The statement modules in the closure only
+proposition name and for the modules of every excluded result. None occurs. The statement modules in the closure only
 define propositions. Each one is either the target, the statement of a
 published proof used above, or a statement imported by a published proof
 module. No statement is used as a hypothesis. The only modules in the
@@ -204,57 +194,54 @@ Condition by condition:
   is used unchanged; no stand-in functor is used.
 - **Universes.** Level parameters `uF`, `uW`, independent.
 - **Proved inputs only.** All inputs are listed under "Published inputs".
-  No pending task, draft, citation or proposition definition is used as a
+  No unproved statement, citation or proposition definition is used as a
   proof.
 - **Haar-modulus normalization.** Not used (see above).
-- **Worker 357's units.** Minus/GL derivative exactness (`b65bc667`,
-  `30fc529b`), the BZ77 4.5/4.6 Leibniz filtration, binary and mixed products
-  (`85af02b8`, `fb4abf4e`), partial derivatives (`e9266fda`) and Ze80 3.7/3.8
-  are not used. The only derivative modules in the closure are
+- **Other derivative results.** Minus/GL derivative exactness, the BZ77
+  4.5/4.6 Leibniz filtration, binary and mixed products, partial derivatives
+  and Ze80 3.7/3.8 are not used. The only derivative modules in the closure are
   `Derivative.MirabolicMinus`, `MirabolicCharacter`, `MirabolicLatticeBox`,
   `Iteration` and `MinusVanishing`.
 - **Independence section.** None of `UnlinkedSegmentSocleProductIrreducible`,
-  `LinkedSegmentSocleReverseProductStructure`, `LinkedSegmentSoclePairReducible`
-  (tasks `23e98d90`, `a55c4267`, `8fa9f68b`),
+  `LinkedSegmentSocleReverseProductStructure`, `LinkedSegmentSoclePairReducible`,
   `JuxtaposedSegmentSocleReverseProductStructure`,
-  `LinkedSegmentSocleReverseProductQuotientHom` (`7ff2a1e9`),
-  `SegmentSocleProductIrreducibility` (`2ae5cbe5`),
-  `AdjacentUnlinkedSegmentSocleSwap` (`e3634665`, `cded83f3`),
-  `TwoSegmentSocleCommutation` (`426911b4`, `66e3b87c`),
-  `LinkedSegmentSocleGluing` (`c84cd52c`, `6780b79c`),
-  `OrderedMultisegmentSocleExistence` (`23189526`), socle exhaustion
-  (`f3a69bc8`), segment analytic classification (`aca8805b`), special-head
-  exhaustion (`3bfb61fa`), ordered special-head existence (`ebea9a8a`),
-  quotient coverage (`20e4e1c6`), ordered conversion (`8252833d`), tempered
-  block uniqueness (`52e97845`), `GenericSegmentProductUniqueness`
-  (`30341ae4`), `SquareIntegrableLanglandsClassification` (`1cb45da2`),
-  square-integrable exhaustion (`cd8ab97c`), regular exhaustion (`bf433f0a`)
-  or forward special-segment square-integrability (`5eece9e8`), nor any of
+  `LinkedSegmentSocleReverseProductQuotientHom`,
+  `SegmentSocleProductIrreducibility`,
+  `AdjacentUnlinkedSegmentSocleSwap`,
+  `TwoSegmentSocleCommutation`,
+  `LinkedSegmentSocleGluing`,
+  `OrderedMultisegmentSocleExistence`, socle exhaustion,
+  segment analytic classification, special-head
+  exhaustion, ordered special-head existence,
+  quotient coverage, ordered conversion, tempered
+  block uniqueness, `GenericSegmentProductUniqueness`,
+  `SquareIntegrableLanglandsClassification`,
+  square-integrable exhaustion, regular exhaustion
+  or forward special-segment square-integrability, nor any of
   their statement or proof modules, is in the closure or used.
-- **Special-head criterion.** `SegmentHeadProductIrreducibility`
-  (`8364e73f`) is not used.
+- **Special-head criterion.** `SegmentHeadProductIrreducibility` is not used.
 - **BZ77-only upstream restrictions.** No segment derivative formula, no
-  segment socle/head existence (`67279e36`, `4ca79bbd`), no segment Jacquet
-  formula (`SegmentFullJacquetFormula`/`ed48ae06`,
-  `SegmentHeadJacquetFormula`/`55ad1e10`, `SegmentSocleJacquetFormula`/`b95105c6`,
-  `SegmentSpecialJacquetExponentNormFormula`/`92aea10f`), no segment
+  segment socle/head existence, no segment Jacquet
+  formula (`SegmentFullJacquetFormula`,
+  `SegmentHeadJacquetFormula`, `SegmentSocleJacquetFormula`,
+  `SegmentSpecialJacquetExponentNormFormula`), no segment
   classification, no `SegmentSpecialEssentialSquareIntegrability`,
   `MultisegmentSocleExhaustion` or other consumer conclusion in the list. Not
-  used: `TwoSupercuspidalNonadjacentProductIrreducible` (`3c9849a4`) and
-  `TwoSupercuspidalProductStructure` (`ab61f565`); no `TwoSupercuspidal`
+  used: `TwoSupercuspidalNonadjacentProductIrreducible` and
+  `TwoSupercuspidalProductStructure`; no `TwoSupercuspidal`
   module is in the closure. Parent statements (b), (d), (e), (f) are not used.
 - **Full-formula consumer restrictions.** No Ze80 segment derivative formula
   (§3.5, §9.6), no segment product irreducibility criterion (Ze80 4.2, 9.7),
   no analytic or square-integrability result (Ze80 9.3), no classification or
-  exhaustion theorem. Every derivative result used (units 1, 2 and the
-  helper) is published.
+  exhaustion theorem. Every derivative result used
+  (`SupercuspidalDerivativeVanishing`, `Derivative.MinusVanishing` and the
+  helper `SupercuspidalTopDerivative`) is published.
 - **Whittaker-finiteness independence.** Not used:
-  `IrreducibleCoinvariantFinitenessStatement` (`5ab445dc`),
-  `LeviCuspidalCoinvariantFinitenessStatement` and its proof `3ff5c8fb`, and
-  the mirabolic finite-length route `MirabolicFiniteLength` (`5428fe2c`).
+  `IrreducibleCoinvariantFinitenessStatement`,
+  `LeviCuspidalCoinvariantFinitenessStatement` and its proof, and
+  the mirabolic finite-length route `MirabolicFiniteLength`.
   None of their modules is in the closure. The finiteness of the top
   derivative is a consequence of multiplicity one here, not an input.
-- **Validation.** `lean_check` in environment
-  `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`: lake build, 0 errors, 0 warnings.
+- **Validation.** `lean_check`: lake build, 0 errors, 0 warnings.
   The axioms are `propext`, `Classical.choice` and `Quot.sound`. No `sorry`,
   `admit` or new axiom is used.

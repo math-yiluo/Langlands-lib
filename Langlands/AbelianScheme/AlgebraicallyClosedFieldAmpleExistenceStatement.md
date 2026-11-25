@@ -18,13 +18,12 @@ with exactly one added hypothesis, the instance `IsAlgClosed K`. The
 universe, group object, commutativity instance, three geometric hypotheses
 and conclusion are unchanged. The module does not import the
 arbitrary-field statement and is not its proof. It is the
-algebraically closed input to the arbitrary-field reduction coordinated by
-Worker 404, whose remaining inputs are the separate finite-extension
+algebraically closed input to the arbitrary-field reduction in
+`Langlands.AbelianScheme.FieldAmpleExistenceProof`, whose other inputs are the separate finite-extension
 descent and finite-stage spreading statements.
 
-Worker 299 implemented this pair. The hypothesis pattern, conclusion and
-source comparison adapt the published arbitrary-field statement by
-Worker 420. Worker 404 supplied the focused specification.
+The hypothesis pattern, conclusion and
+source comparison adapt the published arbitrary-field statement.
 
 ## Actual line bundles and the ampleness predicate
 
@@ -92,7 +91,7 @@ The opening definition of Section 20, p.42, calls a group scheme over `S`
 an abelian scheme when it is proper and smooth with connected geometric
 fibres, and states that the fibres are then abelian varieties. For
 `S = Spec K` this gives the three geometric hypotheses of the Lean
-statement. They are kept in the parent's form, so `GeometricallyConnected`
+statement. They are kept in the arbitrary-field statement's form, so `GeometricallyConnected`
 is not replaced by connectedness even though `K` is algebraically closed.
 
 Milne's conventions, pp.2–3, take a variety to be separated and of finite
@@ -106,7 +105,7 @@ regularity, finite type gives noetherianity, and a connected noetherian
 regular scheme is integral because its irreducible components are disjoint
 and open. The unit section supplies a point. Corollary 2.4, p.3, shows that
 the group law of an abelian variety is commutative; the instance
-`IsCommMonObj G.X` is retained only to match the parent statement. This
+`IsCommMonObj G.X` is retained only to match the arbitrary-field statement. This
 paragraph explains the source correspondence; the module proves none of
 these facts in Lean, and dimension zero is not excluded.
 
@@ -160,19 +159,20 @@ through Section 20's group-scheme presentation into the published concrete
 sheaf and ampleness definitions, with the hypotheses of the published
 arbitrary-field statement plus `IsAlgClosed K`.
 
-## Scope and subsequent proof
+## Scope and proof
 
 The statement covers every universe, every characteristic, and dimension
 zero. Its only addition to the arbitrary-field statement is algebraic
 closure. It adds no projectivity, geometric integrality, dimension,
 polarization, existing ample sheaf, model, compatibility or certificate
-premise; an eventual proof must derive such geometric inputs from the
+premise; a proof must derive such geometric inputs from the
 given hypotheses.
 
-After independent acceptance and publication, a separate exact-target
-proof must have this entire named proposition as its type, with no extra
-outer hypotheses. The concrete projective-space, actual projectivity and
-twisting-sheaf prerequisites are coordinated with Worker 404. Existing
+A proof must have this entire named proposition as its type, with no extra
+outer hypotheses; the Library's proof is
+`Langlands.GroupScheme.algebraicallyClosedFieldAmpleExistence`, in the module
+`Langlands.AbelianScheme.AlgebraicallyClosedFieldAmpleExistenceProof`. The concrete projective-space, actual projectivity and
+twisting-sheaf prerequisites are separate results. Existing
 source-presentation, geometric-integrality, tensor-rank-one, residue,
 pullback-comparison and ampleness-transport work is to be reused rather
 than duplicated. This module adds no axiom and discharges none of those

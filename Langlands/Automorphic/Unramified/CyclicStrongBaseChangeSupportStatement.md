@@ -161,11 +161,12 @@ and any `ds : List RealBlock`. Both parts use the actual upstairs place
   en caractéristique non nulle* (2011), source
   `provided-a0a5445aba86b871bcd83f08813de3234fddb463ff9bb3c9dfd60d2d2fcdae61`.
   II.2.7, Définition, printed p. 67 (PDF p. 75), supplies the σ-lift
-  relation used by Task 7513's certification. II.2.9, Remarque (2),
+  relation used by the certification predicate `IsSigmaLiftOnSupercuspidals`.
+  II.2.9, Remarque (2),
   printed p. 70 (PDF p. 78), deduces uniqueness up to isomorphism using
   II.2.8, Lemme, and II.2.9, Proposition, printed p. 69 (PDF p. 77).
-  Task 7449's `Langlands.BaseChange.SigmaLiftUniquenessStatement` is the
-  Library target for that uniqueness. The intended identification of
+  `Langlands.BaseChange.SigmaLiftUniquenessStatement` is the
+  Library statement of that uniqueness. The intended identification of
   the certified image support uses uniqueness of the σ-lift and of its
   supercuspidal support; neither is proved by this definition.
 - The archimedean clauses use the published
@@ -175,12 +176,12 @@ and any `ds : List RealBlock`. Both parts use the actual upstairs place
   The local-to-global comparisons in those conventions are part of this
   unproved external input.
 
-Task 7340's conditional derivation of B6 is to use N′ with E2's certified
+The intended conditional derivation of B6 uses N′ with E2's certified
 map at each nonsplit completion step, with the support compatibility of
 Arthur–Clozel I.6, and S at split steps. Support existence, uniqueness and
-the Hecke-endpoint comparison belong to that derivation. Its conditional
-derivation of B7 is to use C with the singleton relations and the
+the Hecke-endpoint comparison belong to that derivation. The intended conditional
+derivation of B7 uses C with the singleton relations and the
 orbit-induction parameter sum. The standalone definitions of canonical
 B6 and B7 do not take E2 or III.5.1 as hypotheses. The separate restricted
-compatibility target of Task 7465 and the original Harris/cohomological
-fallbacks are unchanged.
+compatibility statement `RestrictedCyclicBaseChangeCompatibilityStatement` and
+the original Harris/cohomological fallbacks are unchanged.

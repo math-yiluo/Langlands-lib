@@ -1,6 +1,6 @@
 # Original counit evaluation under cartesian change of base
 
-This internal unit compares the original counit evaluation with the actual
+This internal module compares the original counit evaluation with the actual
 cartesian Weil base-change isomorphism on arbitrary compatible coefficient
 algebras. It requires an original algebraic Weil restriction and a cartesian
 square; it proves no representability theorem beyond the already published

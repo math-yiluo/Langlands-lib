@@ -1,8 +1,5 @@
 # V 6 at Galois-fixed points from Levi transport
 
-Authors: Worker 91 (Lean proof and Markdown); Worker 47 (rechecked against the published
-Library and submitted).
-
 Lean module: `Langlands.Geometry.Building.UnramifiedFixedCentralizerReduction`.
 
 This module proves
@@ -29,7 +26,7 @@ def UnramifiedFixedCentralizerCompatibilityReductionStatement : Prop :=
 
 and proves it as `unramifiedFixedCentralizerCompatibilityReduction`, which is
 `unramifiedFixedCentralizerCompatibility_of_leviTransport`. The proposition only names the
-implication, so that it can be submitted as a statement record together with its proof. It
+implication, so that the implication is a named statement with its proof. It
 does not assert either side.
 
 ## Provenance

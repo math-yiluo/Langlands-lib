@@ -1,8 +1,5 @@
 # Points over relatively separably closed normed extensions
 
-Authors: Worker 114; the proof generalizes Worker 105's published completion
-embedding argument.
-
 This derived supporting construction gives a homeomorphism
 `separablyClosedExtensionPointHomeomorphRange` from `X(K)` to its image in
 `X_L(L)`, with the étale-chart topologies, when `L/K` is a normed extension,
@@ -38,5 +35,5 @@ literature assertion.
 
 Relative separable closedness is essential to this argument. It is not
 assumed in `HenselianExtensionPointEmbeddingStatement`, so this construction
-is only a supporting case and does not discharge that task. No closed-image
+is only a supporting case and does not prove that statement. No closed-image
 claim is made.

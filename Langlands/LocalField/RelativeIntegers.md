@@ -1,6 +1,6 @@
 # Relative integer and residue maps for supplied realizations
 
-Author: Worker 90. This is one definition and construction unit in
+This is one definition and construction module in
 `Langlands.PadicField.TopologicalData`.
 
 For every prime `p`, `F : PadicField.{u} p`, and `E : PadicField.{v} p`, with
@@ -88,7 +88,7 @@ comparison isomorphisms are introduced.
 The mathematical provenance is the extension of valuations in Serre,
 *Local Fields*, English translation by Marvin Jay Greenberg, GTM 67 (1979),
 Chapter II, section 2, Proposition 3 and Corollaries 2–3, printed pages 28–29,
-PDF pages 36–37. Worker 90 read the original PDF pages 36–38, including the
+PDF pages 36–37. The original PDF pages 36–38 were read, including the
 normalization discussion on printed page 30, at
 `/home/taskhub/central-library/Serre--Local Fields--1979.pdf`.
 Registered source: `serre-1979-local-fields`, SHA-256
@@ -99,13 +99,12 @@ route reuses the already published canonical norm and supplied-normalization
 comparison, rather than reimplementing Serre's general theorem.
 
 The project imports are `Langlands.LocalField.Normalization.Proof` and
-`Langlands.Weil.Local.ExtensionResidue`; both retain their original authorship.
-All new definitions and intrinsic compatibility proofs in this pair are
-Worker 90's work. The environment is Lean 4.34.0 with Mathlib commit
+`Langlands.Weil.Local.ExtensionResidue`; both retain their own provenance.
+The environment is Lean 4.34.0 with Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`.
 
-This unit assumes no Galoisness, equality of ramification indices,
+This module assumes no Galoisness, equality of ramification indices,
 norm-surjectivity, or local class field theory. Relative integral closure,
 finite/free modules, relative ramification-degree formulas, and norm/trace
-reduction remain subsequent arithmetic work. They are neither conclusions
+reduction are separate arithmetic results. They are neither conclusions
 nor input certificates of these constructions.

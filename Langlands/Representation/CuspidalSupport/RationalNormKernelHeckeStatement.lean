@@ -95,9 +95,9 @@ def RationalNormKernelHeckeStatement : Prop :=
       ∃ e : End I ≃ₗ[ℂ] rationalNormKernelHecke G ρ,
         (∀ (α : End I) (g : GroupScheme.rationalPoints G) (w : ρ),
           (e α : GroupScheme.rationalPoints G → Module.End ℂ ρ) g w =
-            eval (rationalCommonNormKernel G) ρ.representation (SmoothRep.hom α (f w)).1 g) ∧
+            eval (rationalCommonNormKernel G) ρ.representation (SmoothRep.hom α.asHom (f w)).1 g) ∧
         (∀ (φ : rationalNormKernelHecke G ρ) (v : I) (x : GroupScheme.rationalPoints G),
-          eval (rationalCommonNormKernel G) ρ.representation (SmoothRep.hom (e.symm φ) v).1 x =
+          eval (rationalCommonNormKernel G) ρ.representation (SmoothRep.hom (e.symm φ).asHom v).1 x =
             ∑ᶠ q : LeftQuotient (rationalCommonNormKernel G),
               (φ : GroupScheme.rationalPoints G → Module.End ℂ ρ) q.out
                 (eval (rationalCommonNormKernel G) ρ.representation v.1 (q.out⁻¹ * x))) ∧

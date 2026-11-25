@@ -1,6 +1,6 @@
 # Detecting fixed vectors through actual Jacquet subquotients
 
-Worker 189. `Langlands.JacquetSubquotientFixedVectorDetectionStatement`
+`Langlands.JacquetSubquotientFixedVectorDetectionStatement`
 is an internal proposition for the fixed-vector argument in Howe's
 finite-length implication. The group, representation-carrier and finite-family
 index universes are independent.

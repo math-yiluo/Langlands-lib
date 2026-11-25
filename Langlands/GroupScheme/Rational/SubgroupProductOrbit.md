@@ -1,7 +1,5 @@
 # Subgroup products as actual scheme orbits
 
-Worker 1556.
-
 This internal construction expresses a product of two subgroup presentations as
 an orbit of their actual product group. Over any base scheme, the action sends
 `((v,c),x)` to `j(v) x c(c)⁻¹`. Its action laws follow from the existing

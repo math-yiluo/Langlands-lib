@@ -1,6 +1,6 @@
 # Positive descent for an actual normalized subgroup
 
-This derived unit connects an actual equivariant monomorphic inclusion to
+This module connects an actual equivariant monomorphic inclusion to
 integral Weyl averaging, Galois descent, and a specified split component. It uses
 the canonical actions on actual character and cocharacter lattices. It does not
 construct the geometric root system or the initial positive direction.
@@ -95,12 +95,12 @@ rational point.
 All results are derived from the published actual equivariance, tangent-weight
 comparison, Weyl averaging, individual Galois weight-space transport, integral
 central descent, and split-component range interfaces. Their proofs above
-describe the implemented Lean route. This unit retains the relative root-system
+describe the implemented Lean route. This module retains the relative root-system
 realization, the splitting extension, the initial positive direction, the actual
 action and equivariant inclusion, and the specified component and lift. It does
 not infer these from parabolic minimality and does not prove
 `MinimalParabolicLeviCentralizerStatement`, ambient maximal splitness, or the
-radical and centralizer equalities of that target.
+radical and centralizer equalities of that statement.
 
 All nine local instances for base-changed affineness, smoothness, connectedness
 and monomorphisms have explicit names distinguishing this module, the Galois

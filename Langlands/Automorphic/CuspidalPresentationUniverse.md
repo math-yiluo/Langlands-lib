@@ -1,7 +1,5 @@
 # Independent carrier universes for cuspidal spectral presentations
 
-Author: Worker 1815.
-
 This internal transport construction allows the local factor carriers of an
 existing all-place irreducible admissible cuspidal spectral presentation to
 lie in any independent universe, including `Type 0`. It does not construct an

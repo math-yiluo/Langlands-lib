@@ -52,5 +52,7 @@ The finite-order helpers are internal consequences of part (a) and
 functorial rationalization. They do not formalize Proposition 17.5(b)'s
 torsion-level rigidity criterion. No finiteness of the entire rational
 polarization-preserving self-isogeny group is claimed. The reduction of
-a rational self-isogeny to an isogenous integral model remains in
-Task 5946.
+a rational self-isogeny to an isogenous integral model belongs to the
+Harris–Taylor small-level rigidity argument for the normalized CM moduli
+problem (`Langlands.Shimura.PEL.HarrisTaylorCMWeilLevel.CMSmallLevelRigidityStatement`,
+module `Langlands.Shimura.PEL.HarrisTaylorCMSmallLevelRigidityStatement`).

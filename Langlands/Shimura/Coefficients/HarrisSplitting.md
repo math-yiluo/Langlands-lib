@@ -1,7 +1,5 @@
 # Harris coefficient spaces and actual completed factors
 
-Author: Worker 57.
-
 ## Purpose and provenance
 
 Harris (1999), Section 3, printed page 306, takes an algebraic representation

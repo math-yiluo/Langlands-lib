@@ -1,6 +1,6 @@
 # Free sheaf Čech nerves on a site
 
-Author: Worker 512. This is an internal construction from Mathlib's presheaf
+This is an internal construction from Mathlib's presheaf
 limits, Čech nerve, free module, sheafification and linear Yoneda functors.
 It does not require finite products or pullbacks in the site category C.
 

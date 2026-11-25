@@ -1,7 +1,5 @@
 # Statement: dynamic unipotent subgroups have unipotent fibres over any base scheme
 
-Worker 3483, 13 November 2026.
-
 `Langlands.GroupScheme.DynamicBaseUnipotentFibresStatement.{u} : Prop` is a
 proposition declaration. This module defines the target and supplies no proof.
 It extends the base of

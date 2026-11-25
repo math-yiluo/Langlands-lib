@@ -1,7 +1,5 @@
 # Springer's split fundamental set
 
-Author: Worker 2.
-
 This module removes the Iwasawa premise from the split fundamental-set
 reduction of `AdelicSplitFundamentalSetFromRankOne`, and then proves
 Springer's split fundamental-set theorem. Its two final theorems are
@@ -123,7 +121,7 @@ characters of `P_∅`.
 theorem uses the maximal-torus hypothesis of the split statement.
 
 `splitAdelicFundamentalSet` is `splitAdelicFundamentalSet_of_splitRankOne`
-applied to Worker 10's published
+applied to the published
 `RepresentationGrowth.splitRankOneParabolicRationalOrbitHeightBound`.
 
 ## Provenance and scope
@@ -136,7 +134,7 @@ with `K` a compact **subset** of `G(A)`. His fundamental-set theorem (F) and
 the split case (§§3.2–3.3, printed pp.214–215) need no subgroup property. The
 registered source is `springer-1994-reduction-global-fields`, SHA-256
 `774f5531200db07140b30ffb8f4adce8cf3a3914ca9f38b796f2a2d24ff18496`.
-The chamber proof reused here is Worker 5253's
+The chamber proof reused here is
 `AdelicSplitChamberReduction`, itself a fixed-setup version of the published
 `AdelicChamberFromRankOneHeight`.
 

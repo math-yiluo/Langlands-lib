@@ -1,6 +1,6 @@
 # Divisibility of actual division-algebra splitting degrees
 
-This internal derived supporting unit proves two theorems. Throughout, `D` is
+This internal derived module proves two theorems. Throughout, `D` is
 a division ring that is a finite-dimensional `k`-algebra, and `L` is a field
 that is a finite-dimensional extension of `k`.
 

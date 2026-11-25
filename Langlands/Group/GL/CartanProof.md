@@ -1,7 +1,5 @@
 # Proof of the Cartan decomposition of `GL_m` over a discretely valued field
 
-Author: Worker 305.
-
 The closing theorem `Langlands.GeneralLinear.Cartan.cartanDecomposition` has
 exactly `Langlands.GeneralLinear.CartanDecompositionStatement.{uF, uΓ}` as its
 type, with both universes independent. It introduces the field `F`, the value

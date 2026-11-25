@@ -21,8 +21,8 @@ Sources:
 - Bushnell–Henniart–Kutzko (1998), (6.1.2), as quoted in the route note: `f(π, ψ) =
   n(1 + c(ψ) + m/e)`, giving `a(π) = n(1 + ℓ(π))` for supercuspidals of rank `n ≥ 2`. In rank one this formula also holds for ramified characters; an unramified character instead has `a(π) = ℓ(π) = 0`, which is covered by the truncated subtraction in T2.
 
-`SupercuspidalSwanLevelStatement.{uK, uV} : Prop` is an unproved statement; a later
-`lean.proof@1` task proves it.
+`SupercuspidalSwanLevelStatement.{uK, uV} : Prop` is a statement; the theorem
+`supercuspidalSwanLevel` (module `SupercuspidalSwanLevelProof`) proves it.
 
 ## Statement
 
@@ -38,16 +38,16 @@ Here `Numerical.conductor K π` is `GeneralLinear.SupercuspidalClass.firstFixedL
 level at which the JPSS congruence subgroup has a nonzero fixed vector. Its interpretation as
 the conductor exponent `a(π)` uses the comparison described below. The truncated difference
 `c − n`, with `n = k + 1`, is the Swan conductor `sw(π)` of the route note. So the statement is
-`sw(π) = n · ℓ(π)`. It is Task 7370's `HasSupercuspidalSwan K π (n · ℓ(π))` written out
-(`∃ a, conductor K π = a ∧ a − (k + 1) = s`), stated without depending on Task 7370 or Task 7373,
-which are not in the Library.
+`sw(π) = n · ℓ(π)`. It is `HasSupercuspidalSwan K π (n · ℓ(π))` (module
+`Langlands.Correspondence.HenniartRefinedStrata`) written out
+(`∃ a, conductor K π = a ∧ a − (k + 1) = s`), stated directly rather than through that definition.
 
 Sanity checks: in rank one (`k = 0`), `π` is a quasicharacter `χ`; for unramified `χ`,
 `a(χ) = 0` and `ℓ = 0`, and `0 − 1 = 0` in `ℕ`; for ramified `χ` with `a(χ) = c ≥ 1`, `χ` is
 trivial on `U^c` but not on `U^{c−1}`, so `ℓ = c − 1 = c − (k + 1)`. In level zero, `sw(π) = 0`
 and `ℓ(π) = 0`.
 
-## Proof route (for the proof task)
+## Proof route
 
 Every supercuspidal `π` of positive level contains a nondegenerate fundamental stratum
 (Bushnell 1987, Theorem 2′ and §3); Bushnell 1987, Theorem 3 with Bushnell–Fröhlich (3.3.8)

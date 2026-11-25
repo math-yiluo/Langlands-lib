@@ -1,7 +1,5 @@
 # Ordered segment products and square-integrable Langlands data
 
-Author: Worker 78.
-
 `Langlands.Classification.OrderedSegmentSquareIntegrableConversion.{uF,uV} F T`
 is a proposition definition. It states an internal derived conversion interface;
 it neither proves the conversion nor assumes it as an axiom. Its only direct

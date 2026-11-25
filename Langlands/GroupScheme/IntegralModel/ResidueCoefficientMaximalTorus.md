@@ -1,8 +1,6 @@
 # Maximal residue tori under actual coefficient extension
 
-Author: Worker 362.
-
-This internal transport unit concerns a local coefficient extension `R → A`,
+This transport module concerns a local coefficient extension `R → A`,
 the induced residue-field extension `k_R → k_A`, and an integral model `M`
 over the local domain `R` with fraction field `K`. The coefficient ring
 `A` is local and the coefficient map is local. The first two lemmas do not
@@ -66,9 +64,12 @@ The provenance is derived from the published maximal-torus field-extension
 proof, the actual coefficient square and its naturality, the published
 bounded-torus preservation theorem, and maximal-torus transport. Integral
 lifting, splitting, the generic bound and the supplied model comparison
-remain inputs; this unit does not assert their existence from building
+remain inputs; this module does not assert their existence from building
 fixed points. A lift supplied through a residue source isomorphism can
 provide the original residue-maximality input using
-`IsMaximalTorus.iso_comp` and its exact residue square. The unit supplies
+`IsMaximalTorus.iso_comp` and its exact residue square. The module supplies
 the actual residue-maximality input needed for integral conjugacy; it does
-not prove the host fixed-pair special-apartment statement.
+not prove the fixed-pair special-apartment statement it serves,
+`UnramifiedFixedPairSpecialApartmentStatement`, which is proved as
+`unramifiedFixedPairSpecialApartment` in
+`Langlands.Geometry.Building.UnramifiedFixedPairSpecialApartmentProof`.

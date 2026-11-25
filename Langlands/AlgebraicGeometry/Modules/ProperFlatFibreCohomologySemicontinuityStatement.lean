@@ -52,7 +52,7 @@ invertible module on `Y`. Then
 * the Euler characteristic `t ↦ χ(F_t)` is locally constant. -/
 def ProperFlatFibreCohomologySemicontinuityStatement : Prop :=
   ∀ (T Y : Scheme.{u}) [IsLocallyNoetherian T] (g : Y ⟶ T), IsProper g → Flat g →
-    ∀ F : Y.Modules, Scheme.Modules.IsInvertible F →
+    ∀ F : Y.Modules, Scheme.Modules.IsInvertibleFLT F →
       (∀ (t : T) (p : ℕ), Module.Finite (T.residueField t) (fibreCohomology g t F p)) ∧
       (∀ t : T, ∃ V : T.Opens, t ∈ V ∧ ∃ b : ℕ, ∀ t' ∈ V, ∀ p : ℕ, b ≤ p →
         IsZero (fibreCohomology g t' F p)) ∧

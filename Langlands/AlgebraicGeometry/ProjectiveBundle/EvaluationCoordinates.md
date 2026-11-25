@@ -1,6 +1,6 @@
 # Evaluation in actual local frame coordinates
 
-This derived unit connects genuine finite module-sheaf frames and their internal
+This derived module connects genuine finite module-sheaf frames and their internal
 duals to actual evaluation sections. Its inputs are module sheaves on a scheme
 `S`, isomorphisms from the free sheaf with basis `ULift (Fin (n + 1))` on opens,
 and a morphism of module sheaves. It proves the coordinate transformation law
@@ -38,5 +38,5 @@ from the definition of scalar multiplication in module-sheaf pushforward.
 The provenance is internal and derived from the published
 `ProjectiveBundle.LocalFrame` and `ModuleDualLocalFree` constructions and
 module-sheaf naturality. No external source assertion is introduced.
-The unit does not assert generation, construct a global linear-system map,
+The module does not assert generation, construct a global linear-system map,
 or prove a cubic immersion or moduli representability.

@@ -1,6 +1,6 @@
 # Normalized character twists and spectral abelian epsilon
 
-Worker 1555 derives this internal comparison from the constructed actual
+This module derives an internal comparison from the constructed actual
 conductors, the continuous normalized absolute-value power character, and
 the existing fixed-Haar abelian epsilon expressions. No original-literature
 assertion or functional equation is added.

@@ -1,7 +1,5 @@
 # The invariant unit for arbitrary modules
 
-Authors: Worker 1203 and Worker 101.
-
 This internal step of the Serre criterion proof concerns the canonical map
 `inducedUnit t N` from an invariant-ring module `N` to the invariants of its
 extension of scalars `B ⊗[A] N`, where `A = invariantRing t`. It assumes

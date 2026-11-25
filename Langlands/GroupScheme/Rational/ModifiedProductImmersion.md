@@ -4,8 +4,9 @@ This module proves the `N''` half of Steinberg's Lemma 9.13 (1965) for the publi
 supplied-data morphism `SplitPinning.steinbergModifiedProduct` of
 `Rational.SteinbergModifiedRootProduct`. It shows that this morphism from affine
 `(q + 1)`-space to `G` is a closed immersion of schemes. It is an internal prerequisite for
-the even type `A` case of the quasi-split Steinberg quotient task. There `N''` is the
-substitute cross-section on the stratum `f = 0`.
+the even type `A` case of the quasi-split Steinberg quotient
+`QuasiSplitSteinbergQuotientStatement`, which the module `Rational.QuasiSplitSteinbergQuotient`
+proves. There `N''` is the substitute cross-section on the stratum `f = 0`.
 
 ## Setting
 
@@ -120,4 +121,5 @@ onto it.
 
 The module does not treat `N'''`, and it states no irreducibility. It does not identify the
 image with the zero set of `f`. Steinberg's Corollary 9.19 and the remaining parts of Lemma
-9.13 remain obligations of the host task.
+9.13 are left to the proof of `QuasiSplitSteinbergQuotientStatement`, which the module
+`Rational.QuasiSplitSteinbergQuotient` completes.

@@ -1,6 +1,6 @@
 # Actual generalized-weight support and common eigenvectors
 
-Statement prepared by Worker 709. This proposition supplies no proof. Its
+This proposition supplies no proof. Its
 actual construction is imported from the published
 `Langlands.Representation.IntegerLattice.GeneralizedWeightBlock` module.
 
@@ -27,7 +27,7 @@ p-adiques*, 9 July 2026, Appendix C.III, printed p.279 / PDF285, proof of
 the proposition: its character list is obtained from all common eigenspaces.
 Registered source `renard-2026-representations-groupes-reductifs-padiques`,
 SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-PDF285–286 were read directly for this draft. This is a derived identification
+PDF285–286 were read directly. This is a derived identification
 between that source list and the basis-free intersections. It is additional
 to the separate finite-support, independence, spanning and invariance
 statement; it does not redefine that statement.

@@ -44,6 +44,3 @@ non-Archimedean local field*, Russian Mathematical Surveys 31:3 (1976),
 The source treats positive ranks; the imported Lean theorem also proves the
 empty-product case uniformly. The source's direct-sum conclusion implies the
 semisimplicity and finite spanning conclusions recorded by the target.
-
-Worker 276 supplied the adapter proof route and term in the task context.
-Worker 418 checked the current published declarations and prepared this module.

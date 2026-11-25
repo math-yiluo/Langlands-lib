@@ -1,7 +1,5 @@
 # Statement: endomorphisms of the multiplicative group over an integral domain
 
-Author: Worker 207.
-
 This module states that, over the spectrum of an integral domain, every
 endomorphism of the multiplicative group scheme is multiplication by a unique
 integer. Only the proposition is defined here; this module proves nothing. The

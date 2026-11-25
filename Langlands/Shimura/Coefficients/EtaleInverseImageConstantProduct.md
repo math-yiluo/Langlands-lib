@@ -125,7 +125,7 @@ external-literature assertion. The Markdown describes the implemented Lean
 proofs, which use the published geometric comparisons and literal cover maps.
 
 No finiteness, torsor, group-action, rigidity, reduced lattice injectivity or
-invertibility premise is used. This unit does not itself prove the CM
+invertibility premise is used. This module does not itself prove the CM
 coarse-tower inverse-image comparison, composition of original lattice-system
 morphisms, representability, existence of canonical models, or the remaining
 source-specific Harris geometry. Those are separate consumer obligations.

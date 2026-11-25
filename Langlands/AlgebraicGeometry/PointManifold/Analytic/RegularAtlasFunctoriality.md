@@ -13,7 +13,7 @@ the two actual point maps. `independence` applies this construction to the
 identity scheme isomorphism: the underlying equivalence is `Equiv.refl`,
 with both charted-space structures explicit, even for different model dimensions.
 
-Worker 115 adapts Workers 94 and 383's published
+This module adapts the published
 `PointManifold.General.RegularAtlasFunctoriality` to analytic calculus over
 the coefficient field. This is an internal consequence of the chart criterion;
 it assumes the supplied atlases and does not establish existence itself.

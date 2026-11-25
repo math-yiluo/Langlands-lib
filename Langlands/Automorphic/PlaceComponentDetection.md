@@ -1,9 +1,9 @@
 # Detecting stable subspaces by a compact type
 
 Module `Langlands.Automorphic.PlaceComponentDetection`, namespace
-`Langlands.Automorphic.PlaceComponent`. Worker 174 wrote it as a step towards
-`Langlands.Automorphic.CuspidalArchimedeanIrreducibleAdmissibleComponentStatement` (G1, Task 5992,
-`8a7f44bc-c7bc-4ceb-96aa-6eff19b38f97`). Provenance: internal; elementary representation
+`Langlands.Automorphic.PlaceComponent`. It is a step towards
+`Langlands.Automorphic.CuspidalArchimedeanIrreducibleAdmissibleComponentStatement` (proved in
+`PlaceComponentExistence`). Provenance: internal; elementary representation
 theory of compact groups built on `Langlands.Representation.CompactMaschke`.
 
 Setting: `κ` is a representation of a compact group `K` and `π` a Lie action on a complex

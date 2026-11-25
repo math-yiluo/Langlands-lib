@@ -14,7 +14,7 @@ to see that the denominators `ε + 2i + 1 + ν` of
 `genericSeq ν ε m = ∏_{i<m} (ε + 2i + 1 - ν) / (ε + 2i + 1 + ν)` do not vanish. This module
 replaces it by exactly that condition, `ν ≠ -(ε + 2m + 1)` for all `m : ℕ`.
 
-The variant is needed for the character/character swap of Task 7069
+The variant is needed for the character/character swap
 (`Langlands.Archimedean.RealCharacterSwapStatement`): two unlinked characters whose exponents
 have the same real part give `re ν = 0`, outside the Library hypothesis. For characters,
 unlinked means exactly that `ν` avoids `±(ε + 2m + 1)`, with `ε` the parity of the pair.

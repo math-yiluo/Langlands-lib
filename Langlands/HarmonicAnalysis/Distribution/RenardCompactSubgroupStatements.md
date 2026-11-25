@@ -1,6 +1,6 @@
 # Compact-subgroup distribution formulas
 
-This statement unit covers Renard II.3.11 on Hausdorff locally compact totally
+This statement module covers Renard II.3.11 on Hausdorff locally compact totally
 disconnected groups. Every subgroup in these targets is an actual `Subgroup G`
 with its induced topology and an explicit compactness proof. Openness and
 countability are not assumed. The distribution, support, extended pairing and
@@ -44,4 +44,5 @@ The declarations are in
 `Prop`-valued definitions and carry no proof claim. In particular the existing
 function-valued compact-open normalized indicator identities do not supply
 proofs of the arbitrary-compact-subgroup identities stated here. Their
-compact-open density comparison belongs to II.3.12 and is a separate unit.
+compact-open density comparison belongs to II.3.12 and is a separate statement,
+`RenardHecke.NormalizedIndicatorStatement` of `RenardHeckeStatements`.

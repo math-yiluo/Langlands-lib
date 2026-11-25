@@ -1,7 +1,5 @@
 # Base change and path transport of actual Weil-compatible levels
 
-Author: Worker 142.
-
 This module proves that actual pointed base change commutes with path transport
 on Weil-compatible frames and on their monodromy-fixed right orbit classes.
 It constructs diagonal frame comparisons and diagonal fixed-level pullbacks.

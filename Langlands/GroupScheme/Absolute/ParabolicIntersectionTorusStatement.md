@@ -1,7 +1,5 @@
 # A common rational maximal torus for two parabolic subgroups
 
-Author: Worker 308.
-
 `Langlands.GroupScheme.ParabolicIntersectionTorusStatement.{u}` states
 the first assertion of Borel–Tits, *Groupes réductifs* (1965),
 Proposition 4.7, printed page 88 (zero-based PDF page 34).

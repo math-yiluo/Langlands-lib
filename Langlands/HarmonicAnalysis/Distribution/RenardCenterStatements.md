@@ -1,6 +1,6 @@
 # Renard II.3.13: the categorical center and conjugation invariance
 
-This statement unit covers the Corollary and its proof, including
+This statement module covers the Corollary and its proof, including
 (II.3.13.2)–(II.3.13.3), in Renard,
 *Représentations des groupes réductifs p-adiques*, French version dated
 9 July 2026, II.3.13, printed pp.55–56 / PDF pp.61–62.
@@ -10,16 +10,16 @@ There is no countability or unimodularity restriction.
 
 The namespace is
 `Langlands.HarmonicAnalysis.Distribution.RenardCenter`.
-The unit reuses the original full dual, its already constructed essential
+The module reuses the original full dual, its already constructed essential
 compactness submodules, the actual compact convolution and both full Hecke
-actions. Conjugation invariance is exactly the published
+actions. Conjugation invariance is exactly the existing
 `Distribution.IsConjugationInvariant`, invariance under pushforward by
 every actual inner homeomorphism. There is no replacement definition of
 conjugation invariance or of a categorical center.
 
 `TraceCondition μ T` is (II.3.13.2): for every scalar test `f` and Hecke
 distribution `h`, `T(f * h) = T(h * f)`. The two scalar convolutions are
-the published `rightConvolveTest` and `leftConvolveTest`, represented by
+`rightConvolveTest` and `leftConvolveTest`, represented by
 tests with exactly those pointwise values. This retains the distinction
 between scalar test/distribution convolution and the left-Haar product
 of two bare density functions on a nonunimodular group.
@@ -47,7 +47,7 @@ The categorical object in `CategoricalComparisonSpecification` is
 definitionally `CatCenter` of the category of nondegenerate original
 Hecke modules. Its elements are actual natural transformations of the
 identity, with original module intertwiners as components, and its ring
-is the published named `NondegenerateModuleCenter.ring`.
+is the named `NondegenerateModuleCenter.ring`.
 For `G : Type uG`, the module-carrier universe is explicitly
 `max uG uM`, where `uM` is arbitrary. Thus it contains the Hecke carrier
 universe, as needed for reconstruction on the regular module. The target
@@ -58,11 +58,11 @@ The comparison is a bijection onto the actual subtype of
 predicate. It preserves addition and the specified two-sided convolution
 product and sends the categorical identity to the actual `dirac 1`.
 It is tied to the actual completion comparison `E` by requiring that
-each central transformation is exactly the published
+each central transformation is exactly
 `NondegenerateModuleCenter.fromCommutantRingHom hA x` for a compatible
 family `x` whose value is `E T`, with `T` the same underlying distribution.
 This equality is an equality of entire natural transformations; in
-particular it fixes every module component by the published
+particular it fixes every module component by the
 compatible-family action. The classification is not replaced by an
 arbitrary bijection to a carrier named “center”.
 
@@ -72,4 +72,5 @@ comparison, the centrality criterion and this categorical comparison.
 These are conclusions, not assumed classification hypotheses.
 `Statements` conjoins it with `CriteriaStatement`.
 No proof is included. The algebra and completion targets are separate
-units reused here by their Lean names.
+modules (`RenardEssentialProductsStatements`, `RenardCompletionStatements`)
+reused here by their Lean names.

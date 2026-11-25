@@ -40,7 +40,7 @@ finite-over, all-pieces restriction and strong-map chart APIs; no external
 statement is transcribed. The conclusions concern recognized affinoid pieces,
 which may comprise several original local domains. They do not assert that a
 finite recognized source piece is a single original chart, construct a global
-pullback, or prove etale base change. Those remain obligations of the host task.
+pullback, or prove etale base change. Those lie outside this module.
 
 `ControlledFiniteEtalePairsStatement` quantifies these choices for both actual
 strong maps, the two prescribed ambient points with equal image, a source

@@ -1,9 +1,10 @@
 # Affine fibre squares in presheaf-model form
 
 This conditional derivation takes `AffineAnalytificationFibreProductStatement`
-(Task 7168) and `AffineAnalytificationLocalizedFunctorialityStatement` (Task 7119)
+and `AffineAnalytificationLocalizedFunctorialityStatement`
 as hypotheses. `AffineAnalytificationLocalizedFunctorialityProof` supplies the
-second hypothesis in the Library.
+second hypothesis in the Library, and `AffineAnalytificationFibreProductProof`
+the first.
 
 `isPullback_localizedHom_of_isPullback_ty`: let `Spec D` with `a : A → D` and `b : B → D` be
 a presheaf fibre product of `ty f : Spec A → Spec C` and `ty g : Spec B → Spec C`, for
@@ -11,8 +12,8 @@ a presheaf fibre product of `ty f : Spec A → Spec C` and `ty g : Spec B → Sp
 the analytified square
 `localizedHom a, localizedHom b, localizedHom f, localizedHom g` is a pullback. This is the
 presheaf-model form of affine fibre products used by the existence reduction
-(`AnalyticInputs.affPullback`). It is also the form of Worker 790's
-`AffineTestPullbackPreservation`.
+(`AnalyticInputs.affPullback`). It is also the form of
+`AffineTestPullbackPreservation` (module `SpaceAnalytificationJointMonicity`).
 
 Proof:
 1. Make `A`, `B` and `D` into `C`-algebras through `f`, `g` and `a ∘ f`, with the evident

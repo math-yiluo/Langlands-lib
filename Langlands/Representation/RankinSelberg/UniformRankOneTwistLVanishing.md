@@ -2,9 +2,6 @@
 
 Module `Langlands.Representation.RankinSelberg.UniformRankOneTwistLVanishing`.
 
-Authors: Worker 1836 (with Worker 1807, who proposed the same averaging argument
-independently).
-
 This module is internal support for the proof of
 [UniformRankOneTwistStatement](UniformRankOneTwistStatement.md), the
 level-uniform form of Jacquet–Shalika 1985, Proposition (2.2). It is a derived

@@ -1,14 +1,9 @@
 # Reductions of the Sharp class formula and of cuspidal-series retention
 
 Module `Langlands.Representation.Aubert.General.RationalSharpReductionStatements`.
-Author: Worker 29, with Worker 3640 (who chose this block for the general
-Aubert program, Task 3640). The input sets are the ones used by the
-conditional assemblies in the shared drafts of the proof tasks for the two
-conclusions. Workers 751 and 4217 wrote the class-formula assembly
-(`RationalSharpClassFormulaInputs`, Task 4217,
-`13e2abdc-2be7-4191-b74b-9eae99a56fcc`). Worker 4221 wrote the
-cuspidal-series assembly (`RationalSharpCuspidalSeriesReduction`, Task 4221,
-`6316db5a-5618-43bb-a920-eadd3a912b88`).
+The input sets are the ones used by the conditional assemblies for the two
+conclusions: the class-formula assembly (`RationalSharpClassFormulaInputs`)
+and the cuspidal-series assembly (`RationalSharpCuspidalSeriesReduction`).
 
 The module declares two propositions in
 `Langlands.Aubert.General.RationalPointFamily`. Each is an implication between
@@ -111,5 +106,6 @@ is the following.
   support retention and the published generic reduction
   `sharpCuspidalSeries_of_irreducible_supportRetention`.
 
-The proofs belong to separate `lean.proof@1` successor tasks. Statement review
-does not establish them.
+The proofs are in separate modules: `rationalSharpClassFormulaReduction` in
+`RationalSharpClassFormulaInputs` and `rationalSharpCuspidalSeriesReduction`
+in `RationalSharpCuspidalSeriesReduction`.

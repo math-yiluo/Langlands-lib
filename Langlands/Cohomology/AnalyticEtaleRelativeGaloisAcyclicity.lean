@@ -82,14 +82,14 @@ private def stageDeckAut (E : EtaleGermGaloisCover V)
   let d := E.stageCover hU
   refine
     { toFun := fun γ =>
-        { hom := (d.deck γ).left
-          inv := (d.deck γ⁻¹).left
-          hom_inv_id := congrArg (fun f => f.left) (show d.deck γ ≫ d.deck γ⁻¹ = 𝟙 _ by
+        { asIso.hom := (d.deck γ).left
+          asIso.inv := (d.deck γ⁻¹).left
+          asIso.hom_inv_id := congrArg (fun f => f.left) (show d.deck γ ≫ d.deck γ⁻¹ = 𝟙 _ by
             rw [← d.deck_mul, inv_mul_cancel, d.deck_one])
-          inv_hom_id := congrArg (fun f => f.left) (show d.deck γ⁻¹ ≫ d.deck γ = 𝟙 _ by
+          asIso.inv_hom_id := congrArg (fun f => f.left) (show d.deck γ⁻¹ ≫ d.deck γ = 𝟙 _ by
             rw [← d.deck_mul, mul_inv_cancel, d.deck_one]) }
-      map_one' := Iso.ext (congrArg (fun f => f.left) d.deck_one)
-      map_mul' := fun γ δ => Iso.ext (congrArg (fun f => f.left) (d.deck_mul γ δ)) }
+      map_one' := Aut.ext (Iso.ext (congrArg (fun f => f.left) d.deck_one))
+      map_mul' := fun γ δ => Aut.ext (Iso.ext (congrArg (fun f => f.left) (d.deck_mul γ δ))) }
 
 variable {L : Type uL} [NormedField L] [NormedAlgebra K L]
 variable [IsTopologicalGroup G] [T2Space (localizedSpaceFunctor.obj X)]
@@ -173,12 +173,12 @@ theorem isZero_groupCohomology_relativeGaloisGerm
       S.obj.property ha hb rt (s d)
       ⟨1, fun _ => (ι etale ρ).obj W, fun _ => (ι etale ρ).map f, fun _ => hdisc d, hcov⟩
   let deck := stageDeckAut E j.property.1
-  have hdeck γ : (deck γ).hom ≫ ((EtaleGermGaloisCover.coverDiagram.{u, v, uL} E).obj j).hom =
+  have hdeck γ : (deck γ).asIso.hom ≫ ((EtaleGermGaloisCover.coverDiagram.{u, v, uL} E).obj j).hom =
       ((EtaleGermGaloisCover.coverDiagram.{u, v, uL} E).obj j).hom :=
     MorphismProperty.Over.w ((E.stageCover j.property.1).deck γ)
   have hfree (γ : E.Γ) (p : (localizedFieldPointFunctor L).obj
       ((EtaleGermGaloisCover.coverDiagram.{u, v, uL} E).obj j).left)
-      (hp : (localizedFieldPointFunctor L).map (deck γ).hom p = p) : γ = 1 := by
+      (hp : (localizedFieldPointFunctor L).map (deck γ).asIso.hom p = p) : γ = 1 := by
     let Fp := localizedFieldPointFunctor (K := K) L
     let inc := restrictEtaleInclusion X ((nbhdOpen X y).obj j.obj) E.source.obj
     change Fp.map ((E.stageCover j.property.1).deck γ).left p = p at hp
@@ -189,7 +189,7 @@ theorem isZero_groupCohomology_relativeGaloisGerm
   let σ := (D.coveringAt j).representation F
   have hσ (γ : ULift.{max u (v + 1) uL} E.Γ) (x : (D.repDiagram R F).obj (op j)) :
       σ γ x = S.obj.obj.map
-        (deckEndomorphism _ (deck γ.down⁻¹) (hdeck γ.down⁻¹)).op x := rfl
+        (deckEndomorphism _ (deck γ.down⁻¹).asIso (hdeck γ.down⁻¹)).op x := rfl
   obtain ⟨N, a, hmono, hz, hmem⟩ :=
     exists_galoisFixedSubrepresentation_of_discreteSections hS hdT lT deck hdeck hfree σ hσ t ht n
   exact ⟨op j, b.op, N, a, hmono, hz, hmem⟩

@@ -1,7 +1,5 @@
 # Closed subgroups of groups of multiplicative type
 
-Author: Worker 1232.
-
 These are derived helpers for the full-center multiplicative-type reduction.
 They use the existing `IsMultiplicativeType`, actual field base change,
 and the proved `Diagonalizable.closedSubgroupPresentation`.

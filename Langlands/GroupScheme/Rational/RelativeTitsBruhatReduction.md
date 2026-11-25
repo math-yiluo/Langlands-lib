@@ -1,6 +1,6 @@
 # Bruhat consequences for the actual relative Tits data
 
-This internal supporting unit derives the kernel and ambient-group generation
+This internal supporting module derives the kernel and ambient-group generation
 clauses needed for `RelativeTitsSystemStatement`. It uses the published rational
 Bruhat predicate as an explicit premise and does not prove that predicate or the
 full Tits-system target. Its constructions use the existing categorical rational
@@ -33,4 +33,6 @@ two Weyl classes. Thus disjointness needs no full endpoint equality.
 These are derived group-theoretic consequences of published definitions and
 predicates. No full standard-parabolic point theorem, Tits-standard-parabolic
 comparison, rank-one multiplication rule, or nondegeneracy assertion is used.
-The structural Bruhat and endpoint proofs remain separate obligations.
+The structural Bruhat and endpoint statements are proved separately, as
+`rationalBruhat` (module `Rational.RationalBruhatProof`) and
+`standardParabolicEndpoints` (module `Rational.StandardParabolicEndpointsProof`).

@@ -1,8 +1,6 @@
 # Finite freeness from local integral lattices
 
-Author: Worker 210.
-
-This internal algebraic reduction is designed for the integral Hom groups in Task 7305. It is derived from the local-lattice step in the corrected proof of Milne, *Abelian Varieties* (1986 article, author revision 2 January 2022), Theorem 12.5, pp.21–22, registered as `milne-abelian-varieties-1986-author-2022`. The full registered errata snapshot was read and confirms that the proof correction is incorporated. The module uses a different algebraic finish: finite reduction modulo two bounds independent families, avoiding the source's prime-adic coefficient approximation. It asserts no geometric input for abelian schemes.
+This internal algebraic reduction is designed for the integral Hom groups of abelian schemes in `Langlands.AbelianScheme.HomFiniteFreeProof`. It is derived from the local-lattice step in the corrected proof of Milne, *Abelian Varieties* (1986 article, author revision 2 January 2022), Theorem 12.5, pp.21–22, registered as `milne-abelian-varieties-1986-author-2022`. The full registered errata snapshot was read and confirms that the proof correction is incorporated. The module uses a different algebraic finish: finite reduction modulo two bounds independent families, avoiding the source's prime-adic coefficient approximation. It asserts no geometric input for abelian schemes.
 
 `FiniteFreeStatement` says that an abelian group `M` with an injective integer-linear map `f` into a rational vector space `V` is finite free if `M/2M` is finite and every inverse image of a finite-dimensional rational subspace of `V` is a finitely generated integer submodule. Both universes are arbitrary and independent. The integer module is the canonical one on an additive commutative group. `ModN M 2` is Mathlib's quotient by the range of multiplication by two.
 

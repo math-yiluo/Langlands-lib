@@ -1,6 +1,6 @@
 # Unitary-component untwists of actual opposite Jacquet subrepresentations
 
-Worker 148. This internal construction combines the published irreducible
+This internal construction combines the published irreducible
 Jacquet-subrepresentation selector and positive unramified realization for an
 individual exponent of the actual opposite standard Jacquet family. The original
 standard Levi, its split component, and its canonical point topology are retained.
@@ -26,7 +26,7 @@ is asserted.
 ambient representation and an explicit finite-length hypothesis on the chosen
 opposite Levi Jacquet module. The published exact exponent comparison
 identifies the supplied exponent with a generalized character on the actual
-Levi-point module. After transport of actual Jacquet admissibility, the accepted
+Levi-point module. After transport of actual Jacquet admissibility, the
 generic scalar-character existence theorem gives the irreducible source,
 injective inclusion and scalar exponent. Private helpers separate these
 certificates, and classical choice selects the source from this existence proof.
@@ -39,6 +39,6 @@ constructs the full result record, and classical choice supplies the entry
 definition; the construction asserts existence rather than canonical selection.
 
 The provenance is internal, through the published selection, realization,
-admissibility and twist APIs. This contribution does not prove preservation of
+admissibility and twist APIs. This module does not prove preservation of
 Jacquet finite length, the positive-part cone decomposition, temperedness of the
 untwist, an induction quotient, or the Langlands classification.

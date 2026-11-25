@@ -21,8 +21,7 @@ the stronger conclusion for every natural matrix size `m`, so the positivity
 hypothesis is not used. Only the standard axioms `propext`, `Classical.choice`
 and `Quot.sound` are used.
 
-The supporting theorem and its new helper modules were written by Worker 289
-and are integrated together with this file:
+The supporting theorem and its helper modules are
 `CentralDivisionTensorCubeNonSplit`, `SylowTwoOddSplitting`,
 `FixedFieldScalarDefect`, `TensorCubeScalarDefect` and
 `DivisionSplittingDegree`, all under `Langlands/Algebra/`, each with its own

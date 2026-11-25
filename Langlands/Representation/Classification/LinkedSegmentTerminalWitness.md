@@ -83,9 +83,8 @@ Ann. Sci. ENS (4) 13 (1980), 165--210, registered
 The first paragraph on printed page 201 defines the distinguishing segment
 as the intersection of the first segment with the negative one-twist of the
 second, and says its characteristic function cannot be decomposed by
-terminal truncations of the replacement union and intersection. Worker 357
-read printed pages 198--201 and viewed the retained page-201 image
-`.private/tmp/pdf-pages/ad6f50781a84e3a6-p38.png`. No applicable errata file
+terminal truncations of the replacement union and intersection. Printed
+pages 198--201 were read and the page-201 image was viewed. No applicable errata file
 was found in the supplied public notes. The constructor is a derived actual
 witness interface for that elementary geometry; it does not import the
 source's segment derivative or product assertions.
@@ -109,20 +108,18 @@ modules, and no scanned excluded conclusion. The complete inventories follow.
 The used bodies of the coordinate, membership, replacement and endpoint
 lemmas were read directly.
 
-This closure uses none of the host's excluded segment, special-head, segment
-socle, full Jacquet, multisegment or Langlands classification conclusions,
-Ze80 3.5/9.6 or their proof successors, `SegmentHeadSupportStep`,
-`SegmentHeadJacquetReduction`, or the restricted `core_mid` intermediate.
-The basic segment/socle relation definitions in `Segments` assert no such
-proved conclusion. No pending candidate is consumed. The six trusted operator
-rulings at correspondence files `bd71b9185aab5d6eafffb7891bd3a3ca`,
-`0edda6122ce65ed7ac51603c37473920`, `30144f6f9b59540b88b6d4c1517892d9`,
-`ed80148e21e7523abfc048f455e98eb0`, `2b33898bdd0a5ff1b9031be5155a06f0`
-and `ca18fd5005bf5e12a3f7cade18dca865` were read in full. This elementary
-closure invokes neither the general-derivative permissions nor the support
-proof's restricted reducibility exception.
+This closure uses none of the segment, special-head, segment socle, full
+Jacquet, multisegment or Langlands classification conclusions excluded from
+the proof of `SegmentHeadProductIrreducibility`, Ze80 3.5/9.6 or their proofs,
+`SegmentHeadSupportStep`, `SegmentHeadJacquetReduction`, or the restricted
+`core_mid` intermediate. The basic segment/socle relation definitions in
+`Segments` assert no such proved conclusion. This elementary closure invokes
+no general derivative result and no restricted reducibility result of the
+support proof.
 
-The host's full `SegmentHeadProductIrreducibility` iff remains unproved.
+This constructor does not prove the full `SegmentHeadProductIrreducibility`
+iff, which is proved separately as `segmentHeadProductIrreducibility` in
+`Classification.SegmentHeadProductIrreducibilityProof`.
 In particular this constructor supplies no actual derivative constituent,
 no nonoccurrence theorem about a smooth representation, and no isomorphism
 between original and replacement products. Those require separately proved

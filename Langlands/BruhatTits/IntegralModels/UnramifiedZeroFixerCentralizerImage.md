@@ -34,6 +34,8 @@ functor on every test scheme. The schematic-image statement assumes the
 comparison map is quasi-compact; the integral lift and factorization do not.
 
 The provenance is internal composition of the named Library constructions and
-theorems. No new literature translation is asserted. This unit proves centralizer
-containment. Parabolicity, exact root support and the host facet-order bijection
-remain further obligations.
+theorems. No new literature translation is asserted. This module proves centralizer
+containment. Parabolicity, exact root support and the facet-order bijection
+`UnramifiedFacetParabolicOrderStatement` that it serves are not proved here; that
+bijection is proved as `unramifiedFacetParabolicOrder` in
+`UnramifiedFacetParabolicOrderProof`.

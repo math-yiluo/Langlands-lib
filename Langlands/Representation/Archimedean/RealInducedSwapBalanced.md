@@ -1,6 +1,6 @@
 # Balanced scalar normalizations of regular crossing families
 
-This internal unit allows reciprocal scalar normalizations of the explicit
+This module allows reciprocal scalar normalizations of the explicit
 generic crossing families. Such a normalization is needed when a central zero
 in one direction accompanies a pole in the other.
 

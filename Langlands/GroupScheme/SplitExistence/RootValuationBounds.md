@@ -1,7 +1,5 @@
 # Valuation bounds for root elements of a Chevalley group
 
-Author: Worker 1620.
-
 Lean module: `Langlands.GroupScheme.SplitExistence.RootValuationBounds`.
 
 ## Content

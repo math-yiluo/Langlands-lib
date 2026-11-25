@@ -33,7 +33,7 @@ linear distribution operator range with the underlying submodule of this
 algebra image. This is an image statement, with no injectivity claim.
 
 The earlier universal-quotient orbit-range comparison gives the remaining
-conclusions without an ordered-coordinate presentation. The unit proves
+conclusions without an ordered-coordinate presentation. The module proves
 `mem_originOrbitSpan`: the original vector belongs to its intrinsic
 Frobenius-origin orbit span. Multiplication proves
 `distributionAction_mem_originOrbitSpan`: every quotient distribution preserves
@@ -44,12 +44,13 @@ algebras. Finally, `originOrbitSpan_le` shows that the span is contained in ever
 subspace containing the vector and stable under all quotient distributions.
 Together these lemmas give its usual cyclic-subspace characterization.
 
-This is an internal derived unit with no external citations. Its provenance is
+This is an internal derived module with no external citations. Its provenance is
 the actual quotient bialgebra, the published original coefficient identities,
 Mathlib's convolution construction, the existing distribution action, and the
 universal-quotient orbit-range theorem. No smoothness, reducedness, perfection,
 ordered-coordinate
 existence, finite-dimensional quotient, or Steinberg representation is assumed.
-The unit proves neither independence of the distribution operator images nor a
+The module proves neither independence of the distribution operator images nor a
 comparison with an entire induced representation. The general Steinberg
-big-cell proposition remains unproved.
+big-cell proposition is not proved here; the module
+`Reductive.SteinbergBigCellProof` proves it (`steinbergBigCell`).

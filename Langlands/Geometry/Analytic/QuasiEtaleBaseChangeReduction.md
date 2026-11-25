@@ -1,7 +1,5 @@
 # Quasi-étale base change from local domain–étale factorizations
 
-Author: Worker 974.
-
 This module proves two unconditional results and one conditional reduction,
 in the namespace `Langlands.Analytic.SaturatedAtlasPresentation`, for a
 complete ultrametric normed field `K : Type u` and the localized category

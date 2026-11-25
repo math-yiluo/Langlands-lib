@@ -30,8 +30,11 @@ and finite-product norms, and nonzeroness is elementary vector-space algebra.
 No support classification or common-line conclusion enters the adapter.
 
 The recursive project import audit contains 423 modules with no unresolved
-imports or occurrence of any conclusion name excluded by the host task.
+imports or occurrence of any conclusion name excluded for the proof of
+`SquareIntegrableIntegralCuspidalJacquetWordExistence` that this adapter serves.
 The adapter adds only the supplied-factor scalar calculation and elementary
 tensor nonzeroness to the audited actual scalar Jacquet cone route.
-The full host proof still requires its own audit after the occurrence,
-grouping and integer-orbit constructions have been assembled.
+The proof of that proposition
+(`Classification.SquareIntegrableIntegralCuspidalJacquetWordProof`), which
+assembles the occurrence, grouping and integer-orbit constructions, has its
+own dependency audit.

@@ -1,8 +1,7 @@
 # Actual localization under explicit stable-ideal finiteness
 
-Worker 709 prepared this internal statement; Worker 1108 rechecked it
-against the source passage and the imported interfaces and submitted it.
-It proves no result and does not select an unstated meaning of nonunital
+This internal statement was checked against the source passage and the
+imported interfaces. It proves no result and does not select an unstated meaning of nonunital
 finiteness in Renard.
 
 `Langlands.Renard.AlgebraActionLocalization.StableIdealFiniteLocalizationStatement`
@@ -62,21 +61,21 @@ réductifs p-adiques*, French version dated 9 July 2026, registered source
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`,
 at
 `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`.
-Worker 709 reread printed279/PDF285 and visually inspected its rendered
-form for this statement. Earlier original readings of the global
+For this statement printed279/PDF285 was reread and its rendered form
+visually inspected. Earlier original readings covered the global
 conventions at printed6/PDF12, the unitization passage at printed14/PDF20,
 the actual localization at printed252–253/PDF258–259, the stability
 definition at printed276/PDF282, and the module finite-type example at
-printed248–249/PDF254–255 are recorded in the parent audit. Worker 1108
+printed248–249/PDF254–255. A second check
 reread printed279/PDF285, printed276/PDF282, printed6/PDF12,
 printed14/PDF20, printed248–249/PDF254–255 and printed252–253/PDF258–259
-in the text of the file with the SHA256 above. The current
-Library (commit `bdce8590d41d03345054fcf495b6551bb7641a5e`) contains no
+in the text of the file with the SHA256 above. The
+Library at commit `bdce8590d41d03345054fcf495b6551bb7641a5e` contained no
 `notes/errata` file for this source, and the registered author-page
-snapshot labels its only errata as those of the 2010 edition. The parent
-also read PDF18–19 of the registered older supplement
-`renard-2010-corrections-complements`; those pages do not resolve the
-nonunital finiteness convention here.
+snapshot labels its only errata as those of the 2010 edition. PDF18–19 of
+the registered older supplement
+`renard-2010-corrections-complements` were also read; those pages do not
+resolve the nonunital finiteness convention here.
 
 The source proposition assumes a commutative Noetherian complex algebra,
 a finite module, and a finite actual localization. It concludes eventual
@@ -101,6 +100,6 @@ localization argument instead.
 
 The all-additive-ideals convention, categorical comparisons, canonical
 complex scalar recovery, nondegenerate categories, exactness, and the
-remaining source-convention identification and full-book obligations
-remain separate. A proof successor must use this exact statement after
-independent acceptance and publication.
+remaining source-convention identification are outside this statement.
+The proof module `Langlands.Algebra.RenardStableIdealFiniteLocalizationProof`
+proves this exact statement as `stableIdealFiniteLocalization`.

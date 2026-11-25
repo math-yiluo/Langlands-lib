@@ -1,7 +1,5 @@
 # Canonical norm-one comparison for affine Weil restriction
 
-Author: Worker 686.
-
 `Langlands.Global.AdelicWeilRestriction.normOneComparison` proves
 `NormOneComparisonStatement` in arbitrary universe `u`. For an extension
 `L/F` of number fields and an affine group scheme `G` locally of finite type

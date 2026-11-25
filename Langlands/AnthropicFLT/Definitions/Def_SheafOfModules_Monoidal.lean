@@ -4,7 +4,7 @@ Ported from `Definitions/Def_SheafOfModules_Monoidal.lean` of the Anthropic Lean
 License, Version 2.0; see `licenses/Anthropic-FLT/LICENSE`, `NOTICE` and `ATTRIBUTION.md`.
 The paired Markdown file lists the changes made by the port.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_PresheafOfModules_InternalHom
 import Langlands.AnthropicFLT.Theorems.Thm_PresheafOfModules_isMonoidal_inverseImage_W_toPresheaf
 set_option maxHeartbeats 4000000
@@ -68,12 +68,12 @@ def sheafifyUnitIso : (sheafifyFunctor 𝒪 h𝒪).obj (𝟙_ (PMod 𝒪)) ≅
     (unit (ringSheaf 𝒪 h𝒪) : SheafOfModules.{u} (ringSheaf 𝒪 h𝒪)) :=
   sheafifyCounitIso 𝒪 h𝒪 (unit (ringSheaf 𝒪 h𝒪))
 
-instance monoidalCategory : MonoidalCategory (SheafOfModules.{u} (ringSheaf 𝒪 h𝒪)) :=
+instance monoidalCategoryFLT : MonoidalCategory (SheafOfModules.{u} (ringSheaf 𝒪 h𝒪)) :=
   letI := presheafW_isMonoidal 𝒪 h𝒪
   inferInstanceAs (MonoidalCategory
     (LocalizedMonoidal (L := sheafifyFunctor 𝒪 h𝒪) (W := presheafW J 𝒪) (sheafifyUnitIso 𝒪 h𝒪)))
 
-instance symmetricCategory : SymmetricCategory (SheafOfModules.{u} (ringSheaf 𝒪 h𝒪)) :=
+instance symmetricCategoryFLT : SymmetricCategory (SheafOfModules.{u} (ringSheaf 𝒪 h𝒪)) :=
   letI := presheafW_isMonoidal 𝒪 h𝒪
   inferInstanceAs (SymmetricCategory
     (LocalizedMonoidal (L := sheafifyFunctor 𝒪 h𝒪) (W := presheafW J 𝒪) (sheafifyUnitIso 𝒪 h𝒪)))
@@ -85,7 +85,7 @@ instance sheafifyFunctor_monoidal : (sheafifyFunctor 𝒪 h𝒪).Monoidal :=
 
 @[simp] theorem tensorUnit_eq : 𝟙_ (SheafOfModules.{u} (ringSheaf 𝒪 h𝒪)) = unit _ := rfl
 
-instance monoidalClosed : MonoidalClosed (SheafOfModules.{u} (ringSheaf 𝒪 h𝒪)) :=
+instance monoidalClosedFLT : MonoidalClosed (SheafOfModules.{u} (ringSheaf 𝒪 h𝒪)) :=
   Monoidal.Reflective.monoidalClosed (sheafifyAdj 𝒪 h𝒪)
 
 def tensorIsoSheafify (L M : SheafOfModules.{u} (ringSheaf 𝒪 h𝒪)) :
@@ -120,7 +120,7 @@ variable {X}
 
 abbrev Scheme.Modules.tensor (L M : X.Modules) : X.Modules := L ⊗ M
 
-abbrev Scheme.Modules.dual (L : X.Modules) : X.Modules := (ihom L).obj (𝟙_ X.Modules)
+abbrev Scheme.Modules.dualFLT (L : X.Modules) : X.Modules := (ihom L).obj (𝟙_ X.Modules)
 
 @[simp] theorem Scheme.Modules.tensorUnit_eq :
     𝟙_ X.Modules = SheafOfModules.unit X.ringCatSheaf := rfl

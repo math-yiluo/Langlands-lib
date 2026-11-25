@@ -1,8 +1,5 @@
 # The first differential of a punctual perfect complex
 
-Author: Worker 413. Worker 1015 contributed the first-differential interface
-and the ideal-generation strategy.
-
 This internal development supplies the first-differential reduction for the
 punctual perfect complex proof. It is derived directly from linear algebra,
 Mathlib's Nakayama lemma and the ascending chain condition, and the published
@@ -59,6 +56,6 @@ proper, the ideal-theoretic separation lemma would put it in a first-order
 ideal `J`, and the constructed homology isomorphism would contradict that
 condition. Thus the order ideal equals `m`, including when `R` is a field.
 
-This supporting unit proves generation of the maximal ideal by the first
+This supporting module proves generation of the maximal ideal by the first
 differential. It does not prove acyclicity or the final homology
 identification in `RegularLocalPunctualComplexStatement`.

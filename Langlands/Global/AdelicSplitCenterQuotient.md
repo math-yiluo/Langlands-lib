@@ -1,7 +1,5 @@
 # Actual positive-central rational quotient and norm-one comparison
 
-Author: Worker 112.
-
 Let `F` be a number field, `G` an actual group scheme over `Spec F`,
 `T` an actual commutative group scheme, and `i : T.toGrp ⟶ G` an actual
 morphism. The definition `positiveRationalSubgroup` is the supremum of
@@ -72,4 +70,4 @@ and the general injective finite-index restriction theorem remain separate
 obligations. The construction includes rank zero but makes no reductive,
 connectedness or smoothness assumption. Compatible Haar and quotient measure
 transport, Haar normalization, analytic unimodularity, reduction coverage,
-and finite volume are not asserted in this unit.
+and finite volume are not asserted in this module.

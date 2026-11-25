@@ -1,6 +1,6 @@
 # Lie images for homomorphisms with smooth scheme-theoretic kernel
 
-This internal derived unit compares the two actual Lie images that occur
+This module, internal and derived, compares the two actual Lie images that occur
 when a homomorphism is replaced by its schematic image. It uses the existing
 `SchematicImage` construction and the actual dual-number identity kernels.
 
@@ -34,7 +34,7 @@ restriction.
 
 The motivating consumer is the computation of Lie weights of the schematic
 image of an integral-model comparison in a special-fibre quotient. This
-unit supplies a geometric comparison once that composite's full kernel is
+module supplies a geometric comparison once that composite's full kernel is
 proved smooth. It supplies neither the kernel smoothness for that consumer
 nor its root-filtration calculation or facet sign formula. All assertions
 are derived from the existing Library theorems named above; no additional

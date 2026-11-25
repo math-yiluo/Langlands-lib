@@ -1,7 +1,5 @@
 # Relative quasi-split data from compatible actual descent solutions
 
-Author: Worker 693.
-
 This internal assembly works over arbitrary schemes along any surjective étale
 map. It assumes actual solutions of the ambient, Borel and torus data; it does
 not assume the downstairs Borel or maximal-torus properties.

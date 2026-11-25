@@ -1,6 +1,6 @@
 # Compatibility of the fixed closed torus envelope with algebraic closure
 
-Worker 1523. This module states, as two propositions, that the fixed closed
+This module states, as two propositions, that the fixed closed
 envelope of ground-field tori is compatible with base change to the algebraic
 closure. Neither proposition is proved here.
 
@@ -62,7 +62,7 @@ connected, affine over a field) are those of the source; `Infinite k` and
 
 ## Use
 
-`TorusGeneratedEnvelope.isNormal_of_algebraicClosure_envelope_eq` (Worker 1436's
+`TorusGeneratedEnvelope.isNormal_of_algebraicClosure_envelope_eq` (the
 reduction module `Rational.TorusGeneratedEnvelopeNormalityReduction`) takes
 exactly this equality for `toAlgebraicClosure k` as an explicit hypothesis and
 concludes normality of any actual representative of the envelope. With both

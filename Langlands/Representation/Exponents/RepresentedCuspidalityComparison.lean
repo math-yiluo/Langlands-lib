@@ -144,7 +144,7 @@ variable {k : Type u} [Field k] [TopologicalSpace k] [T2Space k]
   (i : T.toGrp ⟶ G) [Mono i.hom.hom.left] (ν : cocharacterLattice T)
   [Fintype (SimpleRoot i ν)]
 
-local instance : TopologicalSpace (rationalPoints G) := pointTopology
+private local instance : TopologicalSpace (rationalPoints G) := pointTopology
 
 variable [LocallyCompactSpace (rationalPoints G)]
   [NonarchimedeanGroup (rationalPoints G)]

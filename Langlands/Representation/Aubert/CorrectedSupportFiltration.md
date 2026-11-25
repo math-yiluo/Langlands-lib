@@ -1,7 +1,5 @@
 # Corrected actual support filtrations
 
-Author: Worker 194.
-
 This internal prerequisite constructs corrected support subfunctors of actual
 normalized induction and their actual images in normalized Jacquet modules.
 It constructs the resulting finite filtration for a supplied increasing

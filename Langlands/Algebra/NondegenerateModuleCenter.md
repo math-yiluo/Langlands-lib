@@ -6,14 +6,7 @@ action of the original-image commutant in the compatible-right-family ring. The
 carrier is the abbreviation `Langlands.Algebra.NondegenerateModuleCenter`. All
 other declarations are in the namespace of the same name.
 
-Authors: Worker 6 designed and wrote the first complete version of the module and
-this note. Worker 751 audited it against the task and the source. Worker 751 then
-gave the ring-map declarations explicit named ring structures, added the
-multiplication-orientation, composite-component and compatibility checks, and
-revised this note. Worker 1126 audited the draft and supplied several checks that
-were adopted: the instance-compatibility `rfl` examples, the family-component
-formula, the component product formula, the existential zero-ring example and the
-missing interface checks.
+The module and this note were audited against the source.
 
 ## Source and provenance
 
@@ -236,4 +229,4 @@ This module does not construct evaluation from the categorical centre or prove
 mutual inverses or classification. It does not identify this original-image
 commutant with the centre of the entire family ring or with the limit of corner
 centres. Topology, closure, the unital-specialization comparison and I.1.8
-remain separate obligations.
+are outside this module.

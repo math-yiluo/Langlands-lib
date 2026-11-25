@@ -1,8 +1,5 @@
 # Finite generation via subtractive natural evaluation vectors
 
-Authors: Worker 1222 and Worker 687. The Lean proof is reused unchanged from
-Worker 1222's shared draft; Worker 687 checked and prepared the proof pair.
-
 The theorem `Langlands.GroupScheme.cocharacterConeFiniteGeneration.{u}` proves
 the published
 `Langlands.GroupScheme.CocharacterConeFiniteGenerationStatement.{u}`. For every

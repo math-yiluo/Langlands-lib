@@ -7,7 +7,7 @@ embeddings with exactly the existing `orderedChamberBlockProduct` and
 
 The results are conditional on the published
 `RelativeRoot.DynamicRootOrderedProductStatement` at the same arbitrary universe
-`u`. This statement is a premise here, not a theorem established by this unit.
+`u`. This statement is a premise here, not a theorem established by this module.
 The ambient group is connected reductive over a field in universe `u`, and the
 chosen torus inclusion is a maximal split torus. The order `a : Fin n → X*(S)`
 may be any injective enumeration whose range is exactly the indivisible positive
@@ -42,7 +42,7 @@ Restricting an injective product to these subsets gives the two embeddings.
 The empty index set and the empty apartment subset retain their published
 definitions and are included.
 
-This unit proves no exact range or chamber factorization statement. In
+This module proves no exact range or chamber factorization statement. In
 particular it does not prove `DynamicRootOrderedProductStatement`, sharp or full
 Iwahori product ranges, equality of full and sharp unipotent intersections, or
 the central and normalizer intersections. Its provenance is the internal

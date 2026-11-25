@@ -1,7 +1,5 @@
 # Statement: isogenies of root data carry bases to bases
 
-Worker 75.
-
 `Langlands.LinearAlgebra.RootDatumIsogenyBaseStatement.{u₁, u₂, u₃, u₄, u₅, u₆} : Prop`
 is a statement-only, `Prop`-valued definition. This module does not prove it, and it adds
 no other definitions, theorems or axioms. It imports

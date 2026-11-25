@@ -1,7 +1,5 @@
 # The conditional structural reduction for no-torus unipotence
 
-Author: Worker 1487.
-
 `Langlands.GroupScheme.noTorusStructuralReduction.{u}` proves exactly
 `NoTorusStructuralReductionStatement.{u}`. The theorem is conditional on
 the six structural propositions listed in that statement; it does not

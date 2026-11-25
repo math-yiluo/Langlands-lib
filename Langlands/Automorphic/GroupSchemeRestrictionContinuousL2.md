@@ -1,7 +1,5 @@
 # Continuous square-integrable functions on `[G]` and the unitary pairing
 
-Author: Worker 112.
-
 The published module `UnitaryCharacterPairing` works with a topological group
 `H`, subgroups `Γ₀` and `Z`, and a unitary character `ω` of `Z`. It constructs
 the invariant pairing `∫ conj f * g` on continuous functions on `H` that are

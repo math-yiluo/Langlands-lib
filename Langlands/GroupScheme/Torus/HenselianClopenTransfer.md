@@ -1,6 +1,6 @@
 # Transfer of etale Hom families into a prescribed Henselian algebra
 
-Worker 872. This derived construction uses relative Henselian etale lifting
+This derived construction uses relative Henselian etale lifting
 and the Noetherian local clopen criterion over a residue-field extension.
 
 Let `A` be any Henselian local `P`-algebra with a compatible field quotient

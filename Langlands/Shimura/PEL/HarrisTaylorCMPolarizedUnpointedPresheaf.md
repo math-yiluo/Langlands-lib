@@ -1,7 +1,5 @@
 # The actual unpointed normalized CM polarized tower presheaf
 
-Author: Worker 57.
-
 This derived construction assembles compatible geometric-point families and
 their actual pullbacks into a presheaf on actual unpointed CM bases. The
 category contains actual schemes over the CM field; no geometric point or

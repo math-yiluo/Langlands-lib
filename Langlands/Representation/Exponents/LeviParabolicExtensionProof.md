@@ -40,5 +40,7 @@ is used.
 This is a derived proof using the existing Library interfaces. The statement's
 geometric provenance remains the Borel–Tits packaging recorded in its unchanged
 Markdown; the proof here follows the actual retraction and inverse-image route
-described above. Worker 1452 assembled the extension and its parabolic geometry;
-Worker 74 supplied the preimage-radical and original-Levi multiplication helpers.
+described above. Its parabolic geometry is in `LeviParabolicPreimageGeometry`;
+the preimage-radical and original-Levi multiplication helpers are in
+`Langlands.GroupScheme.Rational.LeviPreimageUnipotentRadical` and
+`Langlands.GroupScheme.Rational.LeviPreimageMultiplication`.

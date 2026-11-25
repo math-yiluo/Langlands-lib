@@ -1,6 +1,7 @@
 # Real standard modules in rank one
 
-This internal edge-case derivation supports Task 7158. It states and proves
+This internal edge-case derivation supports the proof of
+`RealTemperedStandardIrreducibleStatement`. It states and proves
 `RealRankOneStandardIrreducibleStatement`: every list of real blocks of total
 rank one has an irreducible actual compact-finite standard module. The
 equal-exponent condition is unnecessary in rank one.
@@ -35,4 +36,5 @@ The rank-one list reduction uses the shared `RealBlockRankOne` lemma.
 The proof uses the Library's actual standard-module and character
 definitions and smoothness lemmas. It uses no positive-form, R-group,
 Langlands quotient or classification theorem. Higher-rank irreducibility
-remains a separate obligation.
+is not proved here; for equal exponents the Library proves it as
+`realTemperedStandardIrreducible` (module `RealTemperedIrreducibleProof`).

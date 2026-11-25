@@ -1,12 +1,12 @@
 # Renard VI.2.1 and VI.3.4–VI.3.5: compact restriction and decompositions
 
-Worker 6, with Workers 164, 1510 and 491, records the source correspondence
-and publication checks made on 3–4 November 2026. The original four units
-publish factor constructions and four proposition declarations. The
-4 November update adds the published forward compact-restriction proof,
-its retained geometric premises, and the published converse statement
-with its separate proof successor. None of the four universal decomposition
-and finiteness propositions has a published proof in this update. This map
+This note records the source correspondence and Library checks made on
+3–4 November 2026. The original four modules publish factor constructions and
+four proposition declarations. The 4 November update adds the published
+forward compact-restriction proof, its retained geometric premises, and the
+published converse statement, which the Library now proves (see below). None
+of the four universal decomposition and finiteness propositions is proved in
+the Library. This map
 covers selected assertions of VI.2.1 and VI.3.4–VI.3.5.
 
 The original is David Renard, *Représentations des groupes réductifs
@@ -18,12 +18,12 @@ this update were reread from that original.
 
 ## Source passages
 
-| Locator | Printed / PDF pages | Role in these units |
+| Locator | Printed / PDF pages | Role in these modules |
 | --- | --- | --- |
 | IV.1.3, definition and coefficient criterion | 89–90 / 95–96 | Compactness via averaged vector-valued functions, and its equivalence with compact support of all smooth-dual scalar coefficients; the section assumes unimodularity. |
 | IV.1.6, notations | 94 / 100 | The factor of actual direct sums of one irreducible compact type. Its other notations test irreducible subquotients; VI.3.4's remaining factor below retains that theorem's arbitrary-subquotient wording. |
 | IV.1.7, proposition and beginning of proof | 95 / 101 | Condition (KF), counting compact irreducible isomorphism classes with nonzero fixed vectors, and the locally finite sum of compact-type projectors. |
-| VI.2.1, definition, first remark, theorem and proof | 137–139 / 143–145 | Cuspidality by vanishing of proper Jacquet modules, its proper-standard formulation, and the compact-restriction criterion used in VI.3.5. The forward proof below retains chosen geometric premises; the converse is a separate statement and proof task. |
+| VI.2.1, definition, first remark, theorem and proof | 137–139 / 143–145 | Cuspidality by vanishing of proper Jacquet modules, its proper-standard formulation, and the compact-restriction criterion used in VI.3.5. The forward proof below retains chosen geometric premises; the converse is a separate statement and proof. |
 | VI.2.3, theorem and following remark; VI.2.4, proposition | 140–141 / 146–147 | Uniform admissibility, embedding an irreducible norm-kernel representation in a restriction, and a support bound uniform over irreducible supercuspidal representations at fixed level. |
 | VI.3.3, concluding orbit remark | 145 / 151 | The source identifies supercuspidal inertia classes with conjugation orbits of compact irreducible norm-kernel types. |
 | VI.3.4, theorem and proof | 145–146 / 151–152 | Decomposition of the entire norm-kernel category, proved through (KF); the concluding inertia-class finiteness remark is a separate target. |
@@ -94,10 +94,10 @@ ambient object, with one component in each full factor, and off-diagonal
 zero morphisms. It retains the possibly large class index without assuming
 coproducts for every family of that size. These assertions do not separately
 construct an equivalence of categories or projection functors. The factor
-units also prove their stated intrinsic isomorphism/subquotient transport
+modules also prove their stated intrinsic isomorphism/subquotient transport
 and constructor-evaluation lemmas; these do not prove a decomposition.
 
-## Universal propositions and proof tasks
+## Universal propositions
 
 The [VI.3.4 statement pair](../../Langlands/Representation/CuspidalSupport/RationalNormKernelDecompositionStatement.md)
 and [VI.3.5 statement pair](../../Langlands/Representation/CuspidalSupport/RationalWholeCuspidalDecompositionStatement.md)
@@ -118,62 +118,51 @@ or category decomposition is a premise. Admissibility, finite dimension,
 finite length, a central character and a finite restriction family are
 also absent from the premises.
 
-| Prop-valued declaration | Conclusion | Published proof-task contract |
-| --- | --- | --- |
-| `RationalNormKernelFixedLevelFinitenessStatement` | Every compact open subgroup `K` of the actual norm kernel has finite `Langlands.CompactCoefficientClass.fixedStratum K.toSubgroup`. This counts isomorphism classes with a nonzero actual fixed vector. | `f0509729-26fc-412c-8866-c1c63c1b4c1e`, revision 1 |
-| `RationalNormKernelCategoryDecompositionStatement` | `IsRationalNormKernelCategoryDecomposition` for all the compact-class sum factors and the remaining factor. | `29860e9c-5487-42d7-a099-1ada20bc898e`, revision 1 |
-| `RationalWholeCuspidalCategoryDecompositionStatement` | `IsRationalWholeCuspidalCategoryDecomposition` of the entire smooth category into its two factors. | `4bee987a-093b-4054-bd65-7360168351d2`, revision 1 |
-| `RationalCuspidalInertiaProductDecompositionStatement` | `IsRationalCuspidalInertiaProductDecomposition` of that entire category into all cuspidal inertia factors and the remaining factor. | `b1a82b53-e942-41b3-9f25-dec52736e712`, revision 1 |
+| Prop-valued declaration | Conclusion |
+| --- | --- |
+| `RationalNormKernelFixedLevelFinitenessStatement` | Every compact open subgroup `K` of the actual norm kernel has finite `Langlands.CompactCoefficientClass.fixedStratum K.toSubgroup`. This counts isomorphism classes with a nonzero actual fixed vector. |
+| `RationalNormKernelCategoryDecompositionStatement` | `IsRationalNormKernelCategoryDecomposition` for all the compact-class sum factors and the remaining factor. |
+| `RationalWholeCuspidalCategoryDecompositionStatement` | `IsRationalWholeCuspidalCategoryDecomposition` of the entire smooth category into its two factors. |
+| `RationalCuspidalInertiaProductDecompositionStatement` | `IsRationalCuspidalInertiaProductDecomposition` of that entire category into all cuspidal inertia factors and the remaining factor. |
 
-Direct checks on 4 November 2026 found all four proof tasks at revision 1.
-Worker 485 owns the fixed-level task and Worker 491 owns the two-factor
-whole-category task; both have supporting submissions, without a published
-proof of their exact universal conclusion. The norm-kernel decomposition
-and refined inertia-product tasks remain ready without submitted artifacts.
-The norm-kernel decomposition task requires the exact fixed-level proof
-task's revision 1 under `lean.proof@1`; the refined inertia-product task
-similarly requires the exact whole-category splitting proof task's
-revision 1. These contracts preserve the dependency order.
+The Library does not prove any of the four (no theorem has one of them as its
+type); they appear as hypotheses of reductions such as
+`RationalCuspidalInertiaFinitenessReduction.lean` and
+`BernsteinDecompositionStatementsFromInputs.lean` in
+`Langlands/Representation/CuspidalSupport/`. The proof of the norm-kernel
+decomposition uses the fixed-level finiteness, and the proof of the refined
+inertia-product decomposition uses the whole-category splitting.
 
-## Verified publications
+## In the Library
 
-At Library base `3362d2b69c660edc82f22f7158de73cf8d9e3519`, all four records
-were independently accepted, public, and approved without qualifications.
-Their eight Lean/Markdown file hashes matched both the workspace and that
-Library checkout. Each module is under
+The four modules below were checked against Library
+`3362d2b69c660edc82f22f7158de73cf8d9e3519`; their eight Lean/Markdown files
+matched that commit. Each module is under
 `Langlands.Representation.CuspidalSupport`.
 
-| Module and scope | Candidate | Independent reviewer | Publication commit |
-| --- | --- | --- | --- |
-| `RationalNormKernelCategory`: VI.3.4 factors and intrinsic lemmas | `5576b25d-68d5-4bfd-b0f1-ee32d1a79758` | Reviewer 11889 | `d651c06c32b90676853a4e79f91b86385a8cd650` |
-| `RationalNormKernelDecompositionStatement`: two VI.3.4 propositions | `86c260b0-ee45-456e-a427-841ecc8bc919` | Reviewer 12021 | `cee2a2bc97a749578ef334ef7bda18162ecb6e78` |
-| `RationalCuspidalCategory`: VI.3.5 factors and intrinsic lemmas | `11762eab-aebf-4dec-8607-61e3ded88c18` | Reviewer 11785 | `1fddae33727cfcfcc52ed326c69373200a28ff87` |
-| `RationalWholeCuspidalDecompositionStatement`: two VI.3.5 propositions | `bcd5617f-0fd0-4c0b-b52b-1597f1ab75d6` | Reviewer 11977 | `e0b64667d848b7b76f6f20b029ab4105a635091d` |
+| Module and scope | First appeared at Library commit |
+| --- | --- |
+| `RationalNormKernelCategory`: VI.3.4 factors and intrinsic lemmas | `d651c06c32b90676853a4e79f91b86385a8cd650` |
+| `RationalNormKernelDecompositionStatement`: two VI.3.4 propositions | `cee2a2bc97a749578ef334ef7bda18162ecb6e78` |
+| `RationalCuspidalCategory`: VI.3.5 factors and intrinsic lemmas | `1fddae33727cfcfcc52ed326c69373200a28ff87` |
+| `RationalWholeCuspidalDecompositionStatement`: two VI.3.5 propositions | `e0b64667d848b7b76f6f20b029ab4105a635091d` |
 
-The five modules comprising these four units and the reused
-`RationalCuspidalInertiaFinitenessStatement` compile without diagnostics in
-environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`; the continuation check
+The five modules comprising these four and the reused
+`RationalCuspidalInertiaFinitenessStatement` compile without diagnostics; a further check
 also inspected `RationalNormKernelFixedLevelFinitenessStatement` as
-Prop-valued with independent `uF` and `uV`. Compilation and statement
-acceptance do not prove any of the four propositions.
+Prop-valued with independent `uF` and `uV`. Compilation of the
+statements does not prove any of the four propositions.
 
 ## VI.2.1: forward proof and converse target
 
-On 4 November 2026, exact record checks verified the following two units
-as independently accepted and public. Both were published at commit
-`d2a3dab5880b35349069e39d96304f678174efff` and remain unchanged in the
-checked Library `287810195716cc1b54418e03760ba867de3f695e`. Their four
-entry Lean/Markdown hashes match the frozen accepted records, workspace
-and checked Library.
+The following two modules first appeared in the Library at commit
+`d2a3dab5880b35349069e39d96304f678174efff` and were unchanged in Library
+`287810195716cc1b54418e03760ba867de3f695e`, checked on 4 November 2026.
 
-| Unit | Candidate and policy | Independent reviewer | Accepted machine receipt |
-| --- | --- | --- | --- |
-| [Cuspidality implies compact restriction](../../Langlands/Representation/Aubert/General/RationalCuspidalCompactRestrictionProof.md) | `cad2db8e-5206-4d1f-b72e-4c768c5a29c6`, `lean.proof@1` | Reviewer 13074, no qualifications | `a1ced486-a3f3-400c-8358-a4d407ca69e7` |
-| [Compact restriction implies cuspidality: statement](../../Langlands/Representation/Aubert/General/RationalCompactRestrictionCuspidalStatement.md) | `ca1a3b4e-8b05-40fc-b12c-265f2fb4dde4`, `lean.statement@1` | Reviewer 13011, no qualifications | `6bfd66c5-90c0-4bd9-b0f6-31183f26f1a2` |
-
-The respective published integrations are
-`601737d06aad4713865498e689e149d0` and
-`be0758e3ed8b4a36a4f3836c2e335f03`.
+| Module | Kind |
+| --- | --- |
+| [Cuspidality implies compact restriction](../../Langlands/Representation/Aubert/General/RationalCuspidalCompactRestrictionProof.md) | proof |
+| [Compact restriction implies cuspidality: statement](../../Langlands/Representation/Aubert/General/RationalCompactRestrictionCuspidalStatement.md) | statement |
 
 The forward theorem
 `Langlands.Aubert.General.rationalCuspidalCompactRestriction.{u,v}`
@@ -210,24 +199,23 @@ module. It adds no chosen special compact, basis, Cartan or compact-escape
 premise, and no admissibility, irreducibility, length or dimension
 restriction.
 
-The exact converse proof successor is
-`bf6a4dc2-104a-4496-8025-757fefc3b847`, revision 1, under `lean.proof@1`;
-the current check found it ready without submitted artifacts. The source
+The Library proves the converse, as `rationalCompactRestrictionCuspidal` in
+[RationalCompactRestrictionCuspidalProof](../../Langlands/Representation/Aubert/General/RationalCompactRestrictionCuspidalProof.md). The source
 proof on printed p.138 / PDF p.144 chooses an Iwahori fixing subgroup
 (V.5.2) and a strictly contracting element in the norm kernel (V.3.25).
 Its powers escape compact sets; compactness and averaging give an
 eventual zero, and III.2.9 puts the vector in the Jacquet relation space.
-The successor must supply these existence and comparison steps under the
+A proof must supply these existence and comparison steps under the
 unchanged telescope. The product-general-linear result
 `Langlands.CuspidalSupport.LeviHarishChandraConverseTheorem` has different
 field, group, subgroup and cuspidality predicates and does not prove this
 general proposition.
 
-Neither the forward theorem with its retained premises nor the accepted
-converse statement supplies the full VI.2.1 equivalence or any of the four
+Neither the forward theorem with its retained premises nor the
+converse supplies the full VI.2.1 equivalence or any of the four
 universal conclusions above. In particular, the chosen geometric
-witnesses, the converse proof, the fixed-level finiteness proof and the
-categorical assembly remain distinct obligations.
+witnesses, the fixed-level finiteness proof and the categorical assembly
+remain distinct obligations.
 
 ## Remaining source arguments
 
@@ -266,18 +254,13 @@ comparison in both directions under the unchanged telescope, establish
 cuspidality under actual unramified twists and the orbit/class
 identification, and assemble the full categorical conclusion. The forward
 proof above discharges one implication when its geometric data are
-available; its existence premises and the converse proof remain separate.
+available; its existence premises remain separate, and the converse is proved separately.
 The proper-standard/all-proper-parabolic
 comparison and the shared literal-Levi, topology and standard-family
 comparisons also remain program obligations. A.IX's existing constructions
 can be reused only with their actual hypotheses and universe conventions;
 they do not establish these representation-theoretic inputs.
 
-Workers 164 and 1510 identified the universal norm-kernel and whole-category
-prerequisites in their dependency audit. Worker 491 contributed the
-converse formulation and whole-category consumer audit. Worker 6 read the
-original passages, implemented the original four published units, verified
-the publication records and prepared this map and its VI.2.1 update.
-Existing owners and operator-directed holds remain unchanged. The four
+The original passages were read for this map. The four
 universal proof conclusions and the other assertions of VI.2 and VI.3
-remain obligations of the whole-book program.
+remain obligations of the whole-book coverage.

@@ -1,9 +1,9 @@
 # Conditional conversion of the real Rankin–Selberg conventions
 
-Worker 771, Task 7400. This is an internal reduction, with an implemented proof,
-to three named open premises. Its conclusion is exactly the published
+This is an internal reduction, with an implemented proof,
+to three named premises. Its conclusion is exactly the Library statement
 `Langlands.Global.RankinSelbergGlobal.RealPlaceFunctionalEquationStatement.{u}`.
-It does not prove that conclusion unconditionally or complete Task 7400.
+It does not prove that conclusion unconditionally.
 
 The entry proposition is
 `RealPlaceJacquetConventionReductionStatement`; its proof is
@@ -33,16 +33,15 @@ expresses the desired source-convention equation using the Library epsilon at
 normalizations remain part of that premise. No analytic theorem is inferred
 from the source citation alone.
 
-The module imports the published
+The module imports the Library's
 `ArchimedeanFunctionalEquationStatement` and Mathlib tactics. It changes neither
-the published target nor its dependencies. The environment is
-`5c94c648-e8dc-4002-a50a-071ebf3f6096` (Lean 4.34.0, Mathlib
-`5ed2965256430c3649e86755f9576b54eca72435`).
+the Library target nor its dependencies. The module was checked with Lean 4.34.0
+and Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.
 
 ## The three retained premises
 
 `RealJacquetRestrictionEquationStatement` has an unequal-rank conjunct and an
-equal-rank conjunct. Both retain the published target's complete global data:
+equal-rank conjunct. Both retain the Library target's complete global data:
 a number field with compact additive adelic quotient; a unitary additive
 character trivial on the field; the four actual cuspidal realizations and their
 contragredience hypotheses; the real place and its additive component `a`;
@@ -87,7 +86,8 @@ realEqualDualIntegral (-a) D W W' Φ s
   = (c * d) * realEqualDualIntegral a D W W' Φ s.
 ```
 
-This is a separate open input. Invariance of the quotient measure under
+This is a separate input; the Library proves it as `realEqualDualReflection`
+(module `RealPlaceEqualReflection`). Invariance of the quotient measure under
 reflection, covariance of the Whittaker restrictions under the central element,
 and the resulting integral change of variables are not proved here.
 
@@ -95,7 +95,7 @@ and the resulting integral change of variables are not proved here.
 
 `RealJacquet.realSign_neg`, `realToComplex_neg` and `block_determinant_neg`
 prove multiplicativity under negation directly from the explicit characters.
-`block_epsilon_neg` expands the published block epsilon formula; absolute
+`block_epsilon_neg` expands the Library's block epsilon formula; absolute
 values do not change under negation. List induction then proves `epsilon_neg`
 and its pair specialization `pair_epsilon_neg`:
 
@@ -120,7 +120,7 @@ This helper explains the reflection input but does not discharge it.
 element on a nonzero complex representation has square one. Apply the action
 twice to a nonzero vector and cancel scalar multiplication. The wrapper
 `realMinusOneScalar_sq` applies this to `-1` in the actual real compact group.
-When a scalar action exists, the published choice specification identifies it;
+When a scalar action exists, the Library's choice specification identifies it;
 when it does not, the defined fallback scalar is one. Thus the square identity
 is unconditional, but it does not assert that the fallback acts as a scalar.
 
@@ -139,7 +139,7 @@ two holomorphy clauses, two meromorphic functions, two half-plane agreement
 clauses, and the multiplied-out equation in the codiscrete filter. The integral
 functions and kernels are separate arguments, accommodating the iterated dual
 block integral. `UnequalEquation` and `EqualEquation` specialize this package
-to the actual published real-place integrals and pair factors.
+to the actual Library real-place integrals and pair factors.
 
 `EquationPackage.change_factor` changes only the sign-times-epsilon expression
 using its supplied pointwise identity. All analytic data are reused.
@@ -154,7 +154,7 @@ premise. `pair_epsilon_neg`, central compatibility and `unequal_sign` give the
 exact target sign `d^r`. In equal ranks it first applies `reflect_dual` with
 `k = c * d`; its square is one by `realMinusOneScalar_sq`. It then applies
 `change_factor`, using `pair_epsilon_neg`, central compatibility and
-`equal_sign`. The resulting two packages are definitionally the published
+`equal_sign`. The resulting two packages are definitionally the Library's
 unequal and equal statements. The universe remains free and every original
 binder, including all quotient measures and the equal-rank base case, is
 preserved. The three premises remain explicit hypotheses of the proved

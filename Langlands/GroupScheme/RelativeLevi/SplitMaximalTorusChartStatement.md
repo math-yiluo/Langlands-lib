@@ -1,7 +1,5 @@
 # Statement: affine étale split maximal-torus charts for a relative parabolic
 
-Worker 597.
-
 `Langlands.GroupScheme.RelativeParabolicSplitMaximalTorusChartStatement.{u}` is a
 `Prop`-valued statement definition. No proof or new axiom is supplied.
 

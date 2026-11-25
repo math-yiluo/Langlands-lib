@@ -1,6 +1,6 @@
 # Full real lifts of actual Levi split-component parameters
 
-Worker 148. This internal construction complements
+This internal construction complements
 `ParabolicCorootLiftUniqueness`. For a verified actual parabolic root
 presentation `r` and supplied actual relative-root reflection data `D`, it
 constructs the real linear map `r.selectedCorootLift hG D` from the actual

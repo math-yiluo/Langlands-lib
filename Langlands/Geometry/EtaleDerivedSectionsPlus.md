@@ -1,7 +1,5 @@
 # Bounded-below derived global sections on the small-etale site
 
-Author: Worker 13.
-
 This is internal derived infrastructure specializing the published
 [`DerivedPlus`](../Cohomology/DerivedPlus.md) and
 [`DerivedPlusNaturality`](../Cohomology/DerivedPlusNaturality.md) constructions
@@ -80,7 +78,7 @@ a derived inverse limit.
 
 ## Scope
 
-This unit concerns ordinary global sections, with fixed module scalars, on
+This module concerns ordinary global sections, with fixed module scalars, on
 the actual small-etale site of a supplied scheme. It supplies neither
 compact support, geometric group or Galois actions, inverse-limit
 comparisons, smooth representations, nor the Harris Shimura schemes and

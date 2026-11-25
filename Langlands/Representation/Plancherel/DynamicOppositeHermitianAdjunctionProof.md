@@ -1,6 +1,6 @@
 # Proof of the Hermitian adjunction of the opposite standard integrals
 
-Worker 5, Task 6449. This module proves the published target
+This module proves the published target
 `Langlands.Plancherel.ConditionalDynamicOppositeHermitianAdjunctionStatement`
 (module `DynamicOppositeHermitianAdjunctionStatement`):
 
@@ -175,9 +175,8 @@ J.-L. Waldspurger, *La formule de Plancherel pour les groupes p-adiques
 10.1017/S1474748003000082, registered `waldspurger-2003-plancherel`: IV.1 (11)
 (printed p.283), proof of IV.3 (6) (printed p.287), and I.1 (2) (printed
 p.240) for the Iwasawa formula. Waldspurger states (11) without proof. The
-route implemented here follows the context of Task 6449: pointwise
-integrals, `M`-invariance, and exchange of the two Iwasawa integrals with
-cutoffs.
+route implemented here is: pointwise integrals, `M`-invariance, and exchange
+of the two Iwasawa integrals with cutoffs.
 
 ## Axioms
 

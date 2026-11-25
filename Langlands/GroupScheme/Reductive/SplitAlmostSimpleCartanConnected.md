@@ -1,6 +1,6 @@
 # Connectedness of the actual integral Cartan diagram of a split almost-simple group
 
-Worker 509. Derived from the published irreducibility of the actual relative root
+Derived from the published irreducibility of the actual relative root
 system and the published integral-to-rational actual-root/base comparison. Over an
 arbitrary field, a supplied split maximal torus and actual reduced root datum of
 an almost-simple group have connected simple Cartan diagram. The proof assembles

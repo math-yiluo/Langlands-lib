@@ -1,7 +1,5 @@
 # Split products with a normal right factor
 
-Author: Worker 60.
-
 This derived construction works over every field `k : Type u`. Let `G` be
 affine, and let `i : H → G` and `j : N → G` be closed subgroups with `H`
 and `N` smooth, connected and split unipotent. Only `range j` is required

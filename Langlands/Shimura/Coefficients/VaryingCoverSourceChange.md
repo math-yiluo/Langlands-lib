@@ -1,7 +1,5 @@
 # Source changes of compatible coefficient trivializations
 
-Author: Worker 13.
-
 This module constructs change-of-source comparisons for the compatible
 associated and constant coefficient diagrams. It proves that the actual
 invariant-section trivialization commutes with these comparisons, naturally
@@ -144,11 +142,11 @@ There is no filteredness, cofinality or separating-tower assertion.
 
 The comparisons are on the actual induced slices of `X.Etale`; no
 identification with an independently formed geometric site or constant
-sheaf is assumed. This unit constructs ordinary local sheaf diagrams and
+sheaf is assumed. This module constructs ordinary local sheaf diagrams and
 their maps. Particular Harris geometry, derived source-change functors,
 global or compact-support cohomology, inverse limits, smooth or Galois
-actions, uniformization and the Ext spectral sequence remain separate
-obligations.
+actions, uniformization and the Ext spectral sequence are not part of this
+module.
 
 Formal environment: Lean 4.34.0 and the Mathlib commit given above.
 All intrinsic naturality, invertibility and compatibility obligations are

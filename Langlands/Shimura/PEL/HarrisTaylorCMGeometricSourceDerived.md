@@ -1,10 +1,8 @@
 # Derived source diagrams for exact geometric CM coefficients
 
-Author: Worker 57.
-
 This internal specialization constructs source-local association, invariant
 evaluation and source change on the actual unbounded derived categories of the
-published exact geometric CM coefficient diagrams. The comparisons are natural
+exact geometric CM coefficient diagrams. The comparisons are natural
 in all derived coefficient objects and morphisms and commute with shifts.
 Their single-degree formulas recover the existing Harris coefficient source
 maps with their original reductions.
@@ -40,7 +38,7 @@ The following premises remain explicit:
   `geometry : RelativeDualSchemeGeometryStatement`, and
   `hRigid : CMGeometricCoarseRigidity ... U.obj`.
 
-These are the inputs of the published exact geometric torsor construction.
+These are the inputs of the exact geometric torsor construction.
 No source sheaf, evaluation map, source-change comparison or derived
 compatibility is supplied as an additional premise. The exact representability
 and geometric premises are retained, rather than discharged by this module.
@@ -74,7 +72,7 @@ independent wK, wL and wM for S_k, S_l and S_kl. These instances specify the
 available derived-category localizations; they do not supply any of the
 comparison maps proved below.
 
-All results are internal deductions from the published
+All results are internal deductions from
 [HarrisTaylorCMGeometricSourceChange](HarrisTaylorCMGeometricSourceChange.md),
 [HarrisTaylorCMGeometricAssociatedSystem](HarrisTaylorCMGeometricAssociatedSystem.md),
 [VaryingCoverDerivedLocalTrivialization](../Coefficients/VaryingCoverDerivedLocalTrivialization.md)
@@ -82,8 +80,7 @@ and [VaryingCoverDerivedSourceChange](../Coefficients/VaryingCoverDerivedSourceC
 The generic source-change construction uses
 [SourceSliceExact](../../Sheaf/SourceSliceExact.md) and
 [ExactDerivedSquare](../../Cohomology/ExactDerivedSquare.md).
-No new assertion is attributed directly to external literature, and no
-unpublished draft is reused.
+No new assertion is attributed directly to external literature.
 
 ## Fixed-source derived association and evaluation
 
@@ -99,7 +96,7 @@ invariant sheaves of the whole equivariant coefficient diagram and restricts
 them to the source Y_k. B_k makes the original coefficient diagram constant
 on the same source. Their actual trivialization
 `t_k : F_k ≅ B_k` evaluates invariant sections along `Y.obj.map i.hom` at
-`i : Under k`. Its invertibility follows from the published geometric
+`i : Under k`. Its invertibility follows from the geometric
 section-splitting construction. Exactness of F_k follows from this
 trivialization and the proved exactness of B_k; exactness of invariants is
 not assumed separately.
@@ -113,7 +110,7 @@ DB_k = B_k.mapDerivedCategory : DerivedCategory Ccoeff ⥤ DerivedCategory S_k.
 ```
 
 Both have `CommShift ℤ` and `IsTriangulated` instances inherited from the
-published exact derived functors.
+exact derived functors.
 
 `cmHarrisGeometricAssociatedCoefficientSourceDerivedTrivialization` constructs
 `dt_k : DF_k ≅ DB_k` by the generic descent of t_k through localization at
@@ -180,7 +177,7 @@ dt_k.hom.app M_d
   = σ_F_k,d(M).hom ≫ s_d.map (t_k.hom.app M) ≫ σ_B_k,d(M).inv.
 ```
 
-Here `t_k.app M` is exactly the published
+Here `t_k.app M` is exactly
 `cmHarrisGeometricAssociatedCoefficientSourceTrivialization ... k`. The proof
 specializes the generic single-degree localization theorem, so it identifies
 the particular evaluation map, rather than only asserting an isomorphism
@@ -188,7 +185,7 @@ between the same objects.
 
 ## Derived restriction, reindexing and source change
 
-For `f : k → l`, let P_f and Q_f be the published
+For `f : k → l`, let P_f and Q_f be
 `cmHarrisGeometricCoefficientSourceRestriction f` and
 `cmHarrisGeometricCoefficientSourceReindex f`. P_f postcomposes an Under l
 diagram by slice restriction along Y.obj.map f; Q_f precomposes an Under k
@@ -201,7 +198,7 @@ Q_f : S_k ⥤ S_kl.
 
 The module supplies named additive, finite-limit-preserving and
 finite-colimit-preserving instances for these two existing CM functors by
-unfolding them to the published generic source functors. Its new
+unfolding them to the generic source functors. Its new
 `cmHarrisGeometricCoefficientSourceRestrictionDerivedFunctor` and
 `cmHarrisGeometricCoefficientSourceReindexDerivedFunctor` are DP_f and DQ_f.
 Both commute with shifts and are triangulated.
@@ -253,7 +250,7 @@ da_f.hom.app M_d
 where `a_f = cmHarrisGeometricAssociatedCoefficientSourceChangeIso ... f`.
 The constant theorem replaces F by B, da_f by dc_f, and a_f by
 `cmHarrisGeometricConstantCoefficientSourceChangeIso ... f`. Both proofs
-specialize the published generic single-degree square formula at M. Thus the
+specialize the generic single-degree square formula at M. Thus the
 middle maps are exactly the existing ordinary CM comparisons; their original
 transitions and coefficient reductions are unchanged.
 
@@ -289,15 +286,16 @@ The sites are induced slices of the one actual geometric small-etale site J.
 The construction includes the full reachable source diagram for each fixed
 finite cover; it does not assert that one finite cover trivializes every
 coefficient exponent. All representability, dual existence/geometry,
-coarse-rigidity and other displayed premises remain obligations of their
-separate developments.
+coarse-rigidity and other displayed premises are not proved in this module;
+coarse rigidity at small levels follows from `cmSmallLevelRigidity`
+(`HarrisTaylorCMSmallLevelRigidityProof`).
 
 This module treats the integral associated and original full-lattice constant
 source functors. It does not add derived scalar-restricted quotient diagrams,
 arbitrary scheme inverse-image/association comparisons, canonical-model
 identification, completed adic objects, choice independence, tensor comparison,
 compact-support cohomology or uniformization. The existing geometric sheaf
-cohomology construction remains separate, and the host task is incomplete.
+cohomology construction is separate.
 
 Formal environment: Lean 4.34.0, Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`.

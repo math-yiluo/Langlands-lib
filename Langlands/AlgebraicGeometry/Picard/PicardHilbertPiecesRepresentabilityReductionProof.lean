@@ -135,7 +135,7 @@ theorem picardHilbertPiecesRepresentabilityReduction :
       rfl)
     have hkq : k₁ ≫ q = z ≫ π := Over.OverMorphism.ext pullback.condition
     have hqq : (uliftYoneda.{u + 1}.obj Q).map k₁.op qq =
-        (uliftYoneda.{u + 1}.map π).app (op T₁) (ULift.up z) := ULift.ext _ _ hkq
+        (uliftYoneda.{u + 1}.map π).app (op T₁) (ULift.up z) := ULift.ext hkq
     have hx1 : (RelativePicard.classSheafPresheaf f).map k₁.op
         (RelativePicard.sheafClassOf f T L) =
           (abelMap f 𝓛X h𝓛X d W m Z₀).app (op T₁) (ULift.up z) := by

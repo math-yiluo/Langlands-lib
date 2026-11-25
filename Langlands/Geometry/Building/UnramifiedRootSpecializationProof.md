@@ -1,7 +1,5 @@
 # Proof of structural unramified root specialization
 
-Author: Worker 407.
-
 Lean module: `Langlands.Geometry.Building.UnramifiedRootSpecializationProof`.
 
 The theorem `Langlands.Geometry.Building.unramifiedRootSpecialization` proves
@@ -16,8 +14,8 @@ no new axiom.
 The proof is a single term. It combines two published Library theorems:
 
 - `unramifiedRootSpecialization_of_fixedResidueRootModel` from
-  [UnramifiedRootSpecializationReduction](UnramifiedRootSpecializationReduction.md)
-  (Worker 407). It proves
+  [UnramifiedRootSpecializationReduction](UnramifiedRootSpecializationReduction.md).
+  It proves
   `UnramifiedFixedResidueRootModelStatement.{u} → UnramifiedRootSpecializationStatement.{u}`.
   For a Galois-fixed upper point, it takes the fixed-point model, its closed
   split integral torus and the reductive quotient of its special fibre. The
@@ -25,8 +23,8 @@ The proof is a single term. It combines two published Library theorems:
   `IntegralTorusData.rootSpecializationData`, and reduction compatibility
   follows from the integral and positive root-point identities.
 - `unramifiedFixedResidueRootModel` from
-  [UnramifiedFixedResidueRootModelProof](UnramifiedFixedResidueRootModelProof.md)
-  (Worker 99, Task 6751). It proves the hypothesis
+  [UnramifiedFixedResidueRootModelProof](UnramifiedFixedResidueRootModelProof.md).
+  It proves the hypothesis
   [UnramifiedFixedResidueRootModelStatement](UnramifiedFixedResidueRootModelStatement.md)
   at the same universe.
 

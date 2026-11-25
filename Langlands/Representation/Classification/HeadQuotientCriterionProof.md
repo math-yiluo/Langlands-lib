@@ -1,7 +1,5 @@
 # The two-irreducible-quotient criterion for a strong head
 
-Author: Worker 341.
-
 This proof module proves the published `HeadQuotientCriterionStatement` in
 `Langlands.Classification`, with independent group universe `uG` and carrier
 universe `uV`. Its aggregate theorem is `headQuotientCriterion`; the two component

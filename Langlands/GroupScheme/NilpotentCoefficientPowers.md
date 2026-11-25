@@ -1,6 +1,6 @@
 # Powers in nilpotent coefficient kernels
 
-Worker 801 supplies an internal extension of the published square-zero kernel
+This module supplies an internal extension of the published square-zero kernel
 power theorem to arbitrary nilpotent ideals. The actual affine group scheme is
 over an arbitrary ring in universe `u`; it need not be smooth or commutative.
 

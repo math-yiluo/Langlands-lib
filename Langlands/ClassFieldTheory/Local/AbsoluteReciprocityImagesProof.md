@@ -1,7 +1,5 @@
 # Compact passage from finite to absolute reciprocity images
 
-Author: Worker 1760.
-
 This internal derived construction associates to a subgroup of the actual
 absolute Galois abelianization its `finiteAbelianSubgroupLocus`: the intersection,
 over all actual finite abelian extensions in the chosen closure, of the
@@ -74,9 +72,7 @@ surjectivity of the reciprocity candidate is assumed in this reduction.
 
 ## Verification
 
-The complete module builds in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` with zero errors and warnings.
+The complete module builds with zero errors and warnings.
 Inspection of `absoluteReciprocityImages_of_finite` reports the unrestricted
 universe parameter `u` and only `propext`, `Classical.choice`, and
-`Quot.sound` as axioms. Independent semantic review and publication remain
-separate requirements.
+`Quot.sound` as axioms.

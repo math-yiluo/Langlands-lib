@@ -1,7 +1,5 @@
 # Square-integrable data of multisegment heads
 
-Author: Worker 1706.
-
 This module proves the premise `MultisegmentHeadDatumExistence` of module
 `AssemblyLReduction` without any hypothesis. It then removes that premise from the
 reduction of `Langlands.Correspondence.AssemblyLInheritanceStatement`.

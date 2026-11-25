@@ -1,7 +1,5 @@
 # Hyperbolic splitting and rank-one Hermitian coordinates
 
-Author: Worker 176.
-
 This module constructs linear coordinates for a nondegenerate Hermitian space
 with a nonzero isotropic vector. Under the additional bound that every actual
 totally isotropic submodule has dimension at most one, the middle space is
@@ -12,8 +10,8 @@ There is no characteristic restriction.
 The main constructions are `HermitianRoot.hyperbolicMiddle`,
 `hyperbolicProjection`, `hyperbolicCoordinates` and `negativeMiddlePairing`.
 Their intrinsic lemmas culminate in `exists_rankOne_diagonal_coordinates`.
-This is a linear-algebra component of Task 5813, not a proof of
-`OuterTypeARankOneHermitianStatement`. The module does not construct a quadratic
+This is a linear-algebra component toward
+`OuterTypeARankOneHermitianStatement`, not a proof of it. The module does not construct a quadratic
 extension from an index or identify an arbitrary group scheme with a unitary
 model.
 
@@ -70,7 +68,7 @@ This module is an internal elementary derivation. Its ingredients are linear
 and semilinear map operations, finite-dimensional submodule arguments, the
 published quadratic-extension trace-one element, and the published
 anisotropic Hermitian diagonalization theorem. It does not transcribe or
-assert an external classification theorem. Relating a general matrix form's
-Witt index to the submodule bound, transporting these coordinates into matrix
-congruences, and constructing the all-test presentation of the given group
-remain separate obligations.
+assert an external classification theorem. Transporting these coordinates into
+matrix congruences is done in `HermitianHyperbolicMatrixCoordinates`. Relating a
+general matrix form's Witt index to the submodule bound and constructing the
+all-test presentation of the given group are not part of this module.

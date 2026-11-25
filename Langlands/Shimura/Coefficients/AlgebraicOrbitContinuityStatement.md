@@ -1,8 +1,6 @@
 # Continuity of algebraic coefficient orbit maps
 
-Author: Worker 57. This is a proposition target, not a proof. Worker 1060
-updated the application and proof-status section after the 2026-10-29
-documentation audit (finding P3-040).
+This is a proposition target, not a proof.
 
 The published theorem `Langlands.Shimura.Coefficients.algebraicOrbitContinuity`,
 in `Langlands.Shimura.Coefficients.AlgebraicOrbitContinuityProof`, proves this
